@@ -4,9 +4,9 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/bu
 translated_by: "n8n + AI"
 ---
 
-عنصر `<button>` در HTML یک عنصر تعاملی است که کاربر می‌تواند با ماوس، صفحه‌کلید، لمس، فرمان صوتی یا هر فناوری کمکی دیگر آن را فعال کند. پس از فعال‌شدن، یک عمل مانند ارسال یک فرم (form) یا باز کردن یک دیالوگ (dialog) انجام می‌دهد.
+عنصر **`<button>`** در [HTML](/en-US/docs/Web/HTML) یک عنصر تعاملی است که کاربر می‌تواند با ماوس، صفحه‌کلید، لمس، فرمان صوتی یا سایر فناوری‌های کمکی آن را فعال کند. پس از فعال‌سازی، عملی مثل ارسال [فرم](/en-US/docs/Learn_web_development/Extensions/Forms) یا باز کردن دیالوگ انجام می‌دهد.
 
-به‌طور پیش‌فرض، دکمه‌های HTML به شکلی نمایش داده می‌شوند که شبیه پلتفرم عامل user agent است، اما می‌توانید با استفاده از CSS ظاهر آن‌ها را تغییر دهید.
+به‌طور پیش‌فرض، دکمه‌های HTML ظاهری مشابه پلتفرمی دارند که user agent روی آن اجرا می‌شود؛ اما می‌توانید ظاهر آن‌ها را با [CSS](/en-US/docs/Web/CSS) تغییر دهید.
 
 ```html interactive-example
 <button class="favorite styled" type="button">Add to favorites</button>
@@ -45,118 +45,116 @@ translated_by: "n8n + AI"
 }
 ```
 
-## ویژگی‌ها (Attributes)
+## Attributes
 
-ویژگی‌های این عنصر شامل [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes) (ویژگی‌های سراسری) نیز می‌شود.
+attributeهای این عنصر شامل [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes) می‌شود.
 
 - `autofocus`
-  - : یک ویژگی Boolean است. اگر وجود داشته باشد، مشخص می‌کند که دکمه به‌محض بارگذاری صفحه، focus (تمرکز ورودی) بگیرد. **فقط یک عنصر در سند می‌تواند این ویژگی را داشته باشد.**
+  - : این Boolean attribute مشخص می‌کند که وقتی صفحه بارگذاری می‌شود، دکمه باید focus بگیرد. **فقط یک element در سند می‌تواند این attribute را داشته باشد.**
 
 - `command`
-  - : عملی را که باید روی یک عنصر تحت کنترل، که توسط دکمهٔ `<button>` با ویژگی `commandfor` مشخص شده، انجام شود را تعیین می‌کند. مقادیر ممکن عبارتند از:
+  - : عملی را که قرار است روی عنصر تحت کنترل یک دکمهٔ `<button>` (که با ویژگی `commandfor` مشخص شده) انجام شود، تعیین می‌کند. مقادیر ممکن عبارت‌اند از:
     - `"show-modal"`
-      - : دکمه، یک `<dialog>` را به‌صورت modal نمایش می‌دهد. اگر dialog از قبل modal باشد، هیچ اقدامی انجام نمی‌شود. این معادل declarative برای فراخوانی متد `HTMLDialogElement.showModal()` روی عنصر `<dialog>` است.
+      - : دکمه یک عنصر `<dialog>` را به‌صورت modal نمایش می‌دهد. اگر dialog از قبل modal باشد، هیچ اقدامی انجام نمی‌شود. این روش معادل declarative فراخوانی متد `HTMLDialogElement.showModal()` روی عنصر `<dialog>` است.
     - `"close"`
-      - : دکمه، یک عنصر `<dialog>` را می‌بندد. اگر dialog از قبل بسته باشد، هیچ اقدامی انجام نمی‌شود. این معادل declarative برای فراخوانی متد `HTMLDialogElement.close()` روی عنصر `<dialog>` است. وقتی با ویژگی `value` استفاده شود، مقدار دکمه به‌عنوان ویژگی `returnValue` به dialog منتقل می‌شود.
+      - : دکمه یک عنصر `<dialog>` را می‌بندد. اگر dialog از قبل بسته باشد، هیچ اقدامی انجام نمی‌شود. این روش معادل declarative فراخوانی متد `HTMLDialogElement.close()` روی عنصر `<dialog>` است. وقتی با ویژگی `value` استفاده شود، مقدار دکمه به‌عنوان ویژگی `returnValue` به dialog منتقل می‌شود.
     - `"request-close"`
-      - : دکمه، یک رویداد `cancel` روی عنصر `<dialog>` ایجاد می‌کند تا از مرورگر بخواهد آن را ببندد و سپس یک رویداد `close` رخ می‌دهد. این رفتار با دستور `close` تفاوت دارد؛ در این حالت توسعه‌دهندگان می‌توانند روی رویداد `cancel` متد `Event.preventDefault()` را فراخوانی کنند تا از بسته‌شدن `<dialog>` جلوگیری شود. اگر dialog از قبل بسته باشد، هیچ اقدامی انجام نمی‌شود. این معادل declarative برای فراخوانی متد `HTMLDialogElement.requestClose()` روی عنصر `<dialog>` است. وقتی با ویژگی `value` دکمه استفاده شود، مقدار به‌عنوان ویژگی `returnValue` به dialog منتقل می‌شود.
+      - : دکمه یک رویداد `cancel` روی عنصر `<dialog>` فعال می‌کند تا از مرورگر بخواهد آن را ببندد، و پس از آن یک رویداد `close` رخ می‌دهد. تفاوت این دستور با `close` در این است که نویسندگان می‌توانند روی رویداد `cancel` متد `Event.preventDefault()` را صدا بزنند تا از بسته شدن `<dialog>` جلوگیری کنند. اگر dialog از قبل بسته باشد، هیچ اقدامی انجام نمی‌شود. این روش معادل declarative فراخوانی متد `HTMLDialogElement.requestClose()` روی عنصر `<dialog>` است. وقتی با ویژگی `value` دکمه استفاده شود، مقدار به‌عنوان ویژگی `returnValue` به dialog منتقل می‌شود.
     - `"show-popover"`
-      - : دکمه، یک popover مخفی را نمایش می‌دهد. اگر سعی کنید یک popover که در حال نمایش است را دوباره نمایش دهید، هیچ اقدامی انجام نمی‌شود. برای جزئیات بیشتر به Popover API مراجعه کنید. این معادل مقدار `show` برای ویژگی `popovertargetaction` است و همچنین معادل declarative برای فراخوانی متد `HTMLElement.showPopover()` روی عنصر popover است.
+      - : دکمه یک popover مخفی را نمایش می‌دهد. اگر تلاش کنید popoverی که در حال نمایش است را دوباره نمایش دهید، هیچ اقدامی انجام نمی‌شود. برای جزئیات بیشتر به Popover API مراجعه کنید. این معادل تنظیم مقدار `show` برای ویژگی [`popovertargetaction`](#popovertargetaction) است و همچنین معادل declarative برای فراخوانی متد `HTMLElement.showPopover()` روی عنصر popover به شمار می‌رود.
     - `"hide-popover"`
-      - : دکمه، یک popover در حال نمایش را مخفی می‌کند. اگر سعی کنید یک popover که از قبل مخفی است را دوباره مخفی کنید، هیچ اقدامی انجام نمی‌شود. برای جزئیات بیشتر به Popover API مراجعه کنید. این معادل مقدار `hide` برای ویژگی `popovertargetaction` است و همچنین معادل declarative برای فراخوانی متد `HTMLElement.hidePopover()` روی عنصر popover است.
+      - : دکمه یک popover در حال نمایش را مخفی می‌کند. اگر تلاش کنید popoverی که از قبل مخفی است را مخفی کنید، هیچ اقدامی انجام نمی‌شود. برای جزئیات بیشتر به Popover API مراجعه کنید. این معادل تنظیم مقدار `hide` برای ویژگی [`popovertargetaction`](#popovertargetaction) است و همچنین معادل declarative برای فراخوانی متد `HTMLElement.hidePopover()` روی عنصر popover به شمار می‌رود.
     - `"toggle-popover"`
-      - : دکمه، وضعیت یک popover را بین نمایش و مخفی‌بودن تغییر می‌دهد. اگر popover مخفی باشد، نمایش داده می‌شود و اگر در حال نمایش باشد، مخفی می‌شود. برای جزئیات بیشتر به Popover API مراجعه کنید. این معادل مقدار `toggle` برای ویژگی `popovertargetaction` است و همچنین معادل declarative برای فراخوانی متد `HTMLElement.togglePopover()` روی عنصر popover است.
-    - Custom values
-      - : این ویژگی می‌تواند مقادیر سفارشی را نشان دهد که با دو خط تیره (`--`) شروع می‌شوند. دکمه‌هایی با مقدار سفارشی، رویداد `CommandEvent` را روی عنصر کنترل‌شده ارسال می‌کنند.
+      - : دکمه یک popover را بین حالت نمایش و مخفی جابه‌جا می‌کند. اگر popover مخفی باشد، نمایش داده می‌شود و اگر در حال نمایش باشد، مخفی می‌شود. برای جزئیات بیشتر به Popover API مراجعه کنید. این معادل تنظیم مقدار `toggle` برای ویژگی [`popovertargetaction`](#popovertargetaction) است و همچنین معادل declarative برای فراخوانی متد `HTMLElement.togglePopover()` روی عنصر popover به شمار می‌رود.
+    - مقادیر سفارشی
+      - : این ویژگی می‌تواند مقادیر سفارشی‌ای را نشان دهد که با دو خط تیره (`--`) شروع می‌شوند. دکمه‌هایی که مقدار سفارشی دارند، رویداد `CommandEvent` را روی عنصر کنترل‌شده به راه می‌اندازند.
 
-- `commandfor`  
-  - عنصر `<button>` را به یک دکمه‌ی فرمان تبدیل می‌کند و یک عنصر تعاملی مشخص را با استفاده از فرمانی که در attribute [`command`](#command) دکمه تعریف شده کنترل می‌کند. مقدار `commandfor` باید id عنصری باشد که قرار است کنترل شود. این attribute نسخه‌ای عمومی‌تر از [`popovertarget`](#popovertarget) است.
+- `commandfor`
+  - : یک عنصر `<button>` را به یک دکمهٔ فرمان (command button) تبدیل می‌کند؛ با صدور فرمان مشخص‌شده در attribute [`command`](#command) دکمه، عنصر تعاملی موردنظر را کنترل می‌کند. مقدار `commandfor` باید ID عنصری باشد که قرار است کنترل شود. این attribute نسخهٔ عمومی‌تری از [`popovertarget`](#popovertarget) است.
+- [`disabled`](/en-US/docs/Web/HTML/Reference/Attributes/disabled)
+  - : این attribute بولی مانع تعامل کاربر با دکمه می‌شود: دکمه نه قابل فشار است و نه قابل فوکوس.
+- [`form`](/en-US/docs/Web/HTML/Reference/Attributes/form)
+  - : عنصر `<form>` ای که دکمه باید با آن مرتبط شود (_مالک فرم_). مقدار این attribute باید `id` یک `<form>` در همان سند باشد. (اگر این attribute تنظیم نشود، `<button>` با عنصر `<form>` جد خود، در صورت وجود، مرتبط می‌شود.)
 
-- [`disabled`](/en-US/docs/Web/HTML/Reference/Attributes/disabled)  
-  - این attribute بولین از تعامل کاربر با دکمه جلوگیری می‌کند: دکمه قابل کلیک یا فوکوس نیست.
+    این attribute به شما اجازه می‌دهد عناصر `<button>` را به `<form>`هایی در هر نقطه از سند مرتبط کنید، نه فقط داخل یک `<form>`. همچنین می‌تواند اثر عنصر `<form>` جد را لغو کند.
+- `formaction`
+  - : URLای که اطلاعات ارسال‌شده توسط دکمه را پردازش می‌کند. این attribute، [`action`](/en-US/docs/Web/HTML/Reference/Elements/form#action) مربوط به مالک فرم دکمه را لغو می‌کند. اگر مالک فرمی وجود نداشته باشد، تأثیری ندارد.
+- `formenctype`
+  - : اگر دکمه یک دکمهٔ submit باشد (داخل `<form>` قرار داشته باشد یا به آن مرتبط شده باشد و `type="button"` نداشته باشد)، مشخص می‌کند داده‌های فرم ارسالی چگونه کدگذاری شوند. مقادیر ممکن:
+    - `application/x-www-form-urlencoded`: مقدار پیش‌فرض در صورت استفاده‌نکردن از attribute.
+    - `multipart/form-data`: برای ارسال عناصر {{HTMLElement("input")}} که attribute [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) آن‌ها روی `file` تنظیم شده، استفاده می‌شود.
+    - `text/plain`: به‌عنوان ابزاری برای دیباگ مشخص شده؛ نباید برای ارسال واقعی فرم استفاده شود.
 
-- [`form`](/en-US/docs/Web/HTML/Reference/Attributes/form)  
-  - عنصر `<form>`ای که دکمه به آن متصل می‌شود (مالک فرم دکمه). مقدار این attribute باید `id` یک `<form>` در همان سند باشد. (اگر این attribute تنظیم نشود، `<button>` به عنصر `<form>`‌ای که ancestor آن است متصل می‌شود، در صورت وجود.)  
-  - این attribute به شما امکان می‌دهد عناصر `<button>` را به `<form>`هایی در هر جای سند متصل کنید، نه فقط داخل یک `<form>`. همچنین می‌تواند یک `<form>` ancestor را نادیده بگیرد.
+    اگر این attribute مشخص شود، attribute [`enctype`](/en-US/docs/Web/HTML/Reference/Elements/form#enctype) مالک فرم دکمه را لغو می‌کند.
+- `formmethod`
+  - : اگر دکمه یک دکمهٔ submit باشد (داخل `<form>` قرار داشته باشد یا به آن مرتبط شده باشد و `type="button"` نداشته باشد)، این attribute روش [HTTP](/en-US/docs/Web/HTTP/Reference/Methods) مورد استفاده برای ارسال فرم را مشخص می‌کند. مقادیر ممکن:
+    - `post`: داده‌های فرم در بدنهٔ درخواست HTTP هنگام ارسال به سرور قرار می‌گیرند. زمانی از این روش استفاده کنید که فرم حاوی اطلاعاتی است که نباید عمومی باشد، مانند اعتبارنامه‌های ورود.
+    - `get`: داده‌های فرم به URL اکشن فرم اضافه می‌شوند و با `?` جدا می‌شوند و URL نهایی به سرور ارسال می‌شود. از این روش زمانی استفاده کنید که فرم [عوارض جانبی ندارد](/en-US/docs/Glossary/Idempotent)، مانند فرم‌های جستجو.
+    - `dialog`: این روش نشان می‌دهد که دکمه، [dialog](/en-US/docs/Web/HTML/Reference/Elements/dialog) مرتبط با خود را می‌بندد و داده‌های فرم را اصلاً ارسال نمی‌کند.
 
-- `formaction`  
-  - آدرسی (URL) که اطلاعات ارسال‌شده توسط دکمه را پردازش می‌کند. این attribute مقدار [`action`](/en-US/docs/Web/HTML/Reference/Elements/form#action) مالک فرم دکمه را نادیده می‌گیرد. اگر مالک فرمی وجود نداشته باشد، کاری انجام نمی‌دهد.
+    اگر مشخص شود، این attribute، attribute [`method`](/en-US/docs/Web/HTML/Reference/Elements/form#method) مربوط به مالک فرم دکمه را لغو می‌کند.
+- `formnovalidate`
+  - : اگر دکمه یک دکمهٔ submit باشد، این attribute بولی مشخص می‌کند که فرم هنگام ارسال [اعتبارسنجی](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation) نشود. اگر این attribute مشخص شود، attribute [`novalidate`](/en-US/docs/Web/HTML/Reference/Elements/form#novalidate) مالک فرم دکمه را لغو می‌کند.
 
-- `formenctype`  
-  - اگر دکمه از نوع submit باشد (داخل یا متصل به یک `<form>` باشد و `type="button"` نداشته باشد)، مشخص می‌کند که داده‌های فرم هنگام ارسال چگونه کدگذاری شوند. مقادیر ممکن:  
-    - `application/x-www-form-urlencoded`: پیش‌فرض در صورت عدم استفاده از attribute.  
-    - `multipart/form-data`: برای ارسال عناصر {{HTMLElement("input")}} که attribute [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) آنها `file` است استفاده می‌شود.  
-    - `text/plain`: به عنوان ابزار اشکال‌زدایی مشخص شده و نباید برای ارسال واقعی فرم استفاده شود.  
-  - اگر این attribute مشخص شود، مقدار [`enctype`](/en-US/docs/Web/HTML/Reference/Elements/form#enctype) مالک فرم دکمه را نادیده می‌گیرد.
-
-- `formmethod`  
-  - اگر دکمه از نوع submit باشد (داخل یا متصل به یک `<form>` باشد و `type="button"` نداشته باشد)، این attribute [روش HTTP](/en-US/docs/Web/HTTP/Reference/Methods) مورد استفاده برای ارسال فرم را مشخص می‌کند. مقادیر ممکن:  
-    - `post`: داده‌های فرم در بدنه‌ی درخواست HTTP به سرور فرستاده می‌شوند. وقتی فرم حاوی اطلاعاتی مانند رمز عبور است که نباید عمومی باشد از این روش استفاده کنید.  
-    - `get`: داده‌های فرم به انتهای URL مشخص‌شده در `action` فرم اضافه می‌شوند (با جداکننده `?`) و URL حاصل به سرور ارسال می‌شود. این روش را زمانی استفاده کنید که فرم [اثر جانبی ندارد](/en-US/docs/Glossary/Idempotent)، مثل فرم‌های جستجو.  
-    - `dialog`: این روش نشان می‌دهد که دکمه، [dialog](/en-US/docs/Web/HTML/Reference/Elements/dialog) متصل به خود را می‌بندد و داده‌های فرم را اصلاً ارسال نمی‌کند.  
-  - اگر مشخص شود، این attribute مقدار [`method`](/en-US/docs/Web/HTML/Reference/Elements/form#method) مالک فرم دکمه را نادیده می‌گیرد.
-
-- `formnovalidate`  
-  - اگر دکمه از نوع submit باشد، این attribute بولین مشخص می‌کند که فرم هنگام ارسال [اعتبارسنجی](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation) نشود. اگر این attribute مشخص شود، مقدار [`novalidate`](/en-US/docs/Web/HTML/Reference/Elements/form#novalidate) مالک فرم دکمه را نادیده می‌گیرد.  
-  - این attribute در عناصر [`<input type="image">`](/en-US/docs/Web/HTML/Reference/Elements/input/image) و [`<input type="submit">`](/en-US/docs/Web/HTML/Reference/Elements/input/submit) نیز موجود است.
+    این attribute روی عناصر [`<input type="image">`](/en-US/docs/Web/HTML/Reference/Elements/input/image) و [`<input type="submit">`](/en-US/docs/Web/HTML/Reference/Elements/input/submit) نیز در دسترس است.
 
 - `formtarget`
-  - : اگر دکمه یک دکمهٔ submit باشد، این attribute یک نام تعریف‌شده توسط نویسنده یا یک کلیدواژه استاندارد با پیشوند underscore است که مشخص می‌کند پاسخ ارسال فرم کجا نمایش داده شود. این مقدار، `name` یا کلیدواژه‌ای برای یک _browsing context_ (یک تب، پنجره یا `<iframe>`) است. اگر این attribute مشخص شده باشد، [`target`](/en-US/docs/Web/HTML/Reference/Elements/form#target) مربوط به فرمِ مالکِ دکمه را override می‌کند. کلیدواژه‌های زیر معانی خاصی دارند:
-    - `_self`: پاسخ در همان browsing context فعلی بارگذاری می‌شود. اگر attribute مشخص نشده باشد، این مقدار پیش‌فرض است.
-    - `_blank`: پاسخ در یک browsing context جدید بدون نام بارگذاری می‌شود — معمولاً یک تب یا پنجره جدید، بسته به تنظیمات مرورگر کاربر.
-    - `_parent`: پاسخ در browsing context والدِ context فعلی بارگذاری می‌شود. اگر والد وجود نداشته باشد، این گزینه مثل `_self` عمل می‌کند.
-    - `_top`: پاسخ در browsing context سطح بالا (یعنی browsing context که جدِ context فعلی است و والد ندارد) بارگذاری می‌شود. اگر والد وجود نداشته باشد، این گزینه مثل `_self` عمل می‌کند.
+  - : اگر دکمه از نوع submit باشد، این ویژگی یک نام تعریف‌شده توسط نویسنده یا یک کلیدواژهٔ استاندارد با پیشوند زیرخط است که مشخص می‌کند پاسخ ارسال فرم کجا نمایش داده شود. این مقدار، `name` یا کلیدواژه‌ای برای یک _browsing context_ (زبانه، پنجره، یا `<iframe>`) است. اگر این ویژگی مشخص شده باشد، بر ویژگی [`target`](/en-US/docs/Web/HTML/Reference/Elements/form#target) متعلق به فرمِ صاحب دکمه اولویت دارد. کلیدواژه‌های زیر معانی خاصی دارند:
+    - `_self`: پاسخ را در همان browsing context فعلی بارگذاری کن. این رفتار پیش‌فرض وقتی است که ویژگی مشخص نشده باشد.
+    - `_blank`: پاسخ را در یک browsing context جدید بدون نام بارگذاری کن — معمولاً یک زبانه یا پنجره جدید، بسته به تنظیمات مرورگر کاربر.
+    - `_parent`: پاسخ را در browsing context والدِ زمینهٔ فعلی بارگذاری کن. اگر والد وجود نداشته باشد، این گزینه مانند `_self` عمل می‌کند.
+    - `_top`: پاسخ را در browsing context سطح بالا بارگذاری کن (یعنی زمینه‌ای که جدِ زمینهٔ فعلی است و والد ندارد). اگر والد وجود نداشته باشد، این گزینه مانند `_self` عمل می‌کند.
 
 - `interestfor`
-  - : عنصر `<button>` را به عنوان یک **interest invoker** تعریف می‌کند. مقدار آن، `id` یک عنصر هدف است که وقتی روی عنصر invoker علاقه (interest) نشان داده شود یا از بین برود (مثلاً با هاور/خروج هاور یا فوکوس/از فوکوس خارج شدن)، به نحوی تحت تأثیر قرار می‌گیرد (معمولاً نمایش داده می‌شود یا پنهان می‌شود). برای جزئیات و مثال‌های بیشتر، [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) را ببینید.
+  - : عنصر `<button>` را به عنوان یک **interest invoker** تعریف می‌کند. مقدار آن `id` یک عنصر هدف است که وقتی علاقه (interest) روی عنصر invoker نشان داده شود یا از بین برود (مثلاً با قرار دادن/برداشتن نشانگر روی آن یا فوکوس/از دست دادن فوکوس)، به نحوی تحت تأثیر قرار می‌گیرد (معمولاً نمایش داده یا پنهان می‌شود). برای جزئیات و مثال‌های بیشتر به [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) مراجعه کنید.
 
 - `name`
-  - : نام دکمه است که وقتی دکمه برای ارسال فرم استفاده می‌شود، به‌صورت یک جفت با `value` دکمه به‌عنوان بخشی از داده‌های فرم ارسال می‌شود.
+  - : نام دکمه است که وقتی آن دکمه برای ارسال فرم استفاده می‌شود، همراه با `value` دکمه به‌صورت یک جفت در داده‌های فرم ارسال می‌شود.
 
 - `popovertarget`
-  - : عنصر `<button>` را به یک دکمه کنترل popover تبدیل می‌کند؛ مقدار خود را به‌عنوان ID عنصر popover ای که باید کنترل شود می‌گیرد. برقراری رابطه بین یک popover و دکمه invoker آن با استفاده از attribute `popovertarget` دو اثر مفید اضافه دارد:
-    - مرورگر یک رابطه ضمنی [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) و [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) بین popover و invoker ایجاد می‌کند و هنگام نمایش، popover را در موقعیت منطقی در ترتیب ناوبری با کیبورد (keyboard focus navigation) قرار می‌دهد. این کار popover را برای کاربران کیبورد و فناوری کمکی (AT) دسترس‌پذیرتر می‌کند (همچنین به [ویژگی‌های دسترس‌پذیری Popover](/en-US/docs/Web/API/Popover_API/Using#popover_accessibility_features) مراجعه کنید).
-    - مرورگر یک مرجع anchor ضمنی بین این دو ایجاد می‌کند و در نتیجه موقعیت‌دهی popover نسبت به کنترل‌هایش با استفاده از [CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning) بسیار راحت می‌شود. برای جزئیات بیشتر به [Popover anchor positioning](/en-US/docs/Web/API/Popover_API/Using#popover_anchor_positioning) مراجعه کنید.
+  - : عنصر `<button>` را به یک دکمهٔ کنترل popover تبدیل می‌کند؛ مقدار آن، `id` عنصر popover مورد نظر برای کنترل است. برقراری رابطه بین یک popover و دکمهٔ invoker آن با استفاده از ویژگی `popovertarget` دو اثر مفید اضافی دارد:
+    - مرورگر یک رابطهٔ ضمنی [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) و [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) بین popover و invoker ایجاد می‌کند و وقتی popover نمایش داده می‌شود، آن را در موقعیت منطقی در ترتیب ناوبری فوکوس صفحه‌کلید قرار می‌دهد. این کار popover را برای کاربران صفحه‌کلید و فناوری کمکی (AT) در دسترس‌تر می‌کند (همچنین به [ویژگی‌های دسترس‌پذیری Popover](/en-US/docs/Web/API/Popover_API/Using#popover_accessibility_features) مراجعه کنید).
+    - مرورگر یک مرجع anchor ضمنی بین این دو ایجاد می‌کند که موقعیت‌دهی popoverها نسبت به کنترل‌هایشان را با استفاده از [CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning) بسیار راحت می‌کند. برای جزئیات بیشتر به [Popover anchor positioning](/en-US/docs/Web/API/Popover_API/Using#popover_anchor_positioning) مراجعه کنید.
 
 - `popovertargetaction`
-  - : مشخص می‌کند چه اقدامی روی عنصر popover ای که توسط یک `<button>` کنترل‌کننده کنترل می‌شود انجام شود. مقادیر ممکن عبارتند از:
+  - : عملیاتی را که روی یک عنصر popover کنترل‌شده توسط یک دکمهٔ `<button>` انجام می‌شود مشخص می‌کند. مقادیر ممکن عبارت‌اند از:
     - `"hide"`
-      - : دکمه یک popover نمایش‌داده‌شده را پنهان می‌کند. اگر تلاش کنید یک popover از قبل پنهان را پنهان کنید، هیچ اقدامی انجام نمی‌شود.
+      - : دکمه، یک popover نمایش‌داده‌شده را پنهان می‌کند. اگر تلاش کنید یک popover از قبل پنهان را پنهان کنید، هیچ عملی انجام نمی‌شود.
     - `"show"`
-      - : دکمه یک popover پنهان را نمایش می‌دهد. اگر تلاش کنید یک popover که در حال نمایش است را دوباره نشان دهید، اقدامی صورت نمی‌گیرد.
+      - : دکمه، یک popover پنهان را نمایش می‌دهد. اگر تلاش کنید یک popover در حال نمایش را نمایش دهید، هیچ عملی انجام نمی‌شود.
     - `"toggle"`
-      - : دکمه وضعیت popover را بین نمایش و پنهان بودن تغییر می‌دهد. اگر popover پنهان باشد، نمایش داده می‌شود؛ اگر در حال نمایش باشد، پنهان می‌شود. اگر `popovertargetaction` حذف شود، `"toggle"` عمل پیش‌فرضی است که توسط دکمه کنترل‌کننده انجام می‌شود.
+      - : دکمه وضعیت popover را بین نمایش و پنهان بودن تغییر می‌دهد. اگر popover پنهان باشد، نمایش داده می‌شود؛ اگر در حال نمایش باشد، پنهان می‌شود. اگر `popovertargetaction` حذف شده باشد، `"toggle"` عمل پیش‌فرضی است که توسط دکمهٔ کنترل انجام می‌شود.
 
 - `type`
-  - : رفتار پیش‌فرض دکمه. مقادیر ممکن عبارت‌اند از:
-    - `submit`: دکمه داده‌های فرم را به سرور ارسال می‌کند. اگر این ویژگی برای دکمه‌های مرتبط با یک `<form>` مشخص نشده باشد، یا مقدار آن خالی یا نامعتبر باشد، این مقدار پیش‌فرض است.
+  - : رفتار پیش‌فرض دکمه. مقادیر ممکن عبارتند از:
+    - `submit`: دکمه داده‌های فرم را به سرور ارسال می‌کند. اگر این attribute برای دکمه‌های مرتبط با یک `<form>` مشخص نشده باشد، یا مقدار آن خالی یا نامعتبر باشد، این مقدار پیش‌فرض است.
     - `reset`: دکمه همه کنترل‌ها را به مقادیر اولیه بازنشانی می‌کند، مانند [\<input type="reset">](/en-US/docs/Web/HTML/Reference/Elements/input/reset). (این رفتار معمولاً کاربران را آزار می‌دهد.)
-    - `button`: دکمه رفتار پیش‌فرضی ندارد و در حالت پیش‌فرض با فشردن، کاری انجام نمی‌دهد. می‌توان اسکریپت‌های سمت کلاینت را به شنیدن رویدادهای این عنصر گماشت؛ این رویدادها هنگام رخ دادنشان فعال می‌شوند.
+    - `button`: دکمه هیچ رفتار پیش‌فرضی ندارد و به طور پیش‌فرض با فشردن کاری انجام نمی‌دهد. اسکریپت‌های سمت کلاینت می‌توانند به رویدادهای element گوش دهند؛ این رویدادها هنگام رخ دادن فعال می‌شوند.
 
 - `value`
-  - : مقداری را تعریف می‌کند که هنگام ارسال داده‌های فرم، همراه با `name` دکمه ارسال می‌شود. این مقدار، وقتی فرم با این دکمه ارسال می‌شود، در پارامترها به سرور منتقل می‌شود. وقتی با فرمان‌های `close` یا `request-close` استفاده شود، ویژگی `value` مقدار `returnValue` عنصر `<dialog>` کنترل‌شده را تنظیم می‌کند.
+  - : مقدار مرتبط با `name` دکمه را هنگام ارسال با داده‌های فرم تعریف می‌کند. این مقدار وقتی فرم با این دکمه ارسال می‌شود، در پارامترها به سرور فرستاده می‌شود. وقتی همراه با دستورهای `close` یا `request-close` استفاده شود، attribute دکمه (`value`)، `returnValue` عنصر `<dialog>` موردنظر را تنظیم می‌کند.
 
-## نکته‌ها
+## یادداشت‌ها
 
-دکمه ارسال (submit) که ویژگی `formaction` برایش تنظیم شده اما فرم مرتبط ندارد، هیچ کاری نمی‌کند. باید صاحب فرم را تعیین کنید؛ یا آن را در یک `<form>` قرار دهید یا ویژگی `form` را به `id` فرم موردنظر تنظیم کنید.
+یک دکمه submit که attribute `formaction` روی آن تنظیم شده باشد، بدون فرم مرتبط هیچ کاری انجام نمی‌دهد. باید یک فرم مشخص کنید؛ یا آن را در یک `<form>` قرار دهید، یا attribute `form` را برابر با id فرم موردنظر قرار دهید.
 
-عناصر `<button>` بسیار راحت‌تر از عناصر `<input>` استایل می‌گیرند. می‌توانید محتوای HTML داخلی اضافه کنید (مثل `<i>`، `<br>` یا حتی `<img>`) و از شبه‌عنصرهای `::after` و `::before` برای رندر پیچیده استفاده کنید.
+عناصر `<button>` خیلی راحت‌تر از عناصر `<input>` استایل می‌گیرند. می‌توانید محتوای HTML داخلی اضافه کنید (مثل `<i>`، `<br>` یا حتی `<img>`) و از pseudo-elementهای `::after` و `::before` برای رندر پیچیده استفاده کنید.
 
-اگر دکمه‌های شما برای ارسال داده‌های فرم به سرور نیستند، حتماً ویژگی `type` آن‌ها را روی `button` قرار دهید. در غیر این صورت، سعی می‌کنند داده‌های فرم را ارسال کنند و پاسخ (ناموجود) را بارگذاری کنند که ممکن است وضعیت فعلی سند را از بین ببرد.
+اگر دکمه‌های شما برای ارسال داده‌های فرم به سرور نیستند، حتماً attribute نوع (`type`) آن‌ها را روی `button` تنظیم کنید. در غیر این صورت، سعی می‌کنند داده‌های فرم را ارسال کنند و پاسخ (ناموجود) را بارگذاری کنند که احتمالاً وضعیت فعلی سند را از بین می‌برد.
 
-در حالی که `<button type="button">` رفتار پیش‌فرضی ندارد، می‌توان رویدادگردان‌ها را برای فعال‌سازی رفتارها اسکریپت‌نویسی کرد. یک دکمه فعال می‌تواند با استفاده از [JavaScript](/en-US/docs/Learn_web_development/Core/Scripting) اقدامات برنامه‌پذیری انجام دهد، مثلاً حذف یک مورد از فهرست.
+در حالی که `<button type="button">` رفتار پیش‌فرضی ندارد، می‌توان برای event handlerها اسکریپت نوشت تا رفتارها را فعال کنند. یک دکمه فعال می‌تواند با [JavaScript](/en-US/docs/Learn_web_development/Core/Scripting) کارهای برنامه‌پذیر انجام دهد، مثلاً حذف یک آیتم از فهرست.
 
-به‌طور پیش‌فرض، عامل کاربر دکمه‌ها را با `display: flow-root` استایل می‌دهد که یک [بافت قالب‌بندی بلوکی](/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context) جدید ایجاد می‌کند و فرزندان دکمه را تا زمانی که سرریز نکنند، هم به‌صورت افقی و هم عمودی وسط‌چین می‌کند. اگر دکمه به‌عنوان یک کانتینر فلکس یا گرید تعریف شود، فرزندان مانند آیتم‌های فلکس یا گرید رفتار می‌کنند. دکمه‌ای که `display: inline` دارد، طوری استایل می‌شود که گویی مقدار `display: inline-block` تنظیم شده است.
+به طور پیش‌فرض، user agentها دکمه‌ها را با `display: flow-root` استایل می‌دهند؛ این کار یک [block formatting context](/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context) جدید ایجاد می‌کند و فرزندان دکمه را تا زمانی که سرریز نکنند، هم به صورت افقی و هم عمودی در مرکز قرار می‌دهد. اگر دکمه به عنوان یک flex container یا grid container تعریف شود، فرزندان به صورت آیتم‌های flex یا grid رفتار می‌کنند. دکمه‌ای که `display: inline` گرفته باشد، طوری استایل می‌شود که انگار مقدار `display: inline-block` تنظیم شده است.
 
 ## دسترس‌پذیری
 
 ### دکمه‌های آیکونی
 
-دکمه‌هایی که فقط یک آیکون نمایش می‌دهند، نام دسترس‌پذیر (accessible name) ندارند. نام‌های دسترس‌پذیر اطلاعاتی را برای فناوری کمکی مانند صفحه‌خوان‌ها فراهم می‌کنند تا هنگام تجزیه سند و تولید [درخت دسترس‌پذیری](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis) به آن دسترسی داشته باشند. سپس فناوری کمکی از درخت دسترس‌پذیری برای پیمایش و دستکاری محتوای صفحه استفاده می‌کند.
+دکمه‌هایی که فقط یک آیکون نمایش می‌دهند، _accessible name_ ندارند. نام‌های دسترس‌پذیر اطلاعاتی را برای فناوری کمکی، مانند screen readerها، فراهم می‌کنند تا هنگام تجزیه سند و تولید [یک درخت دسترس‌پذیری](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis) به آن‌ها دسترسی داشته باشند. سپس فناوری کمکی از درخت دسترس‌پذیری برای پیمایش و دستکاری محتوای صفحه استفاده می‌کند.
 
-برای دادن نام دسترس‌پذیر به دکمه آیکونی، متنی را در عنصر `<button>` قرار دهید که عملکرد دکمه را به‌طور خلاصه توصیف کند.
+برای دادن یک accessible name به دکمه آیکونی، متنی در عنصر `<button>` قرار دهید که عملکرد دکمه را به طور خلاصه توصیف کند.
 
-#### مثال‌ها
+#### مثال
 
 ```html
 <button name="favorite">
@@ -170,67 +168,65 @@ translated_by: "n8n + AI"
 </button>
 ```
 
-##### نتیجه
+اگر میخواهید متن دکمه را بهصورت بصری پنهان کنید، یک راه دسترسپذیر این است که با [ترکیبی از خصوصیتهای CSS](https://www.a11yproject.com/posts/how-to-hide-content/) آن را از روی صفحه حذف کنید، اما همچنان آن را برای فناوریهای کمکی قابل پردازش نگه دارید.
 
-اگر میخواهید متن دکمه را به صورت بصری مخفی کنید، یک روش دسترسپذیر این است که از [ترکیبی از ویژگیهای CSS](https://www.a11yproject.com/posts/how-to-hide-content/) استفاده کنید تا آن را از نظر بصری از صفحه حذف کنید، اما همچنان برای فناوریهای کمکی قابل تحلیل باقی بماند.
+با این حال، شایان ذکر است که قابل مشاهده نگه داشتن متن دکمه میتواند به افرادی کمک کند که با معنای آیکون آشنا نیستند یا هدف دکمه را متوجه نمیشوند. این موضوع بهویژه برای افرادی که از نظر فنی چندان ماهر نیستند یا ممکن است برداشتهای فرهنگی متفاوتی از آیکونی که دکمه استفاده میکند داشته باشند، اهمیت دارد.
 
-با این حال، شایان ذکر است که قابل مشاهده نگه داشتن متن دکمه میتواند به افرادی کمک کند که ممکن است با معنای آیکون آشنا نباشند یا هدف دکمه را درک نکنند. این موضوع بهویژه برای افرادی که از نظر فنی چندان ماهر نیستند یا ممکن است برداشتهای فرهنگی متفاوتی از آیکون مورد استفاده دکمه داشته باشند، اهمیت دارد.
+- [نام دسترسپذیر چیست؟ | Vispero](https://vispero.com/resources/what-is-an-accessible-name/)
+- [درک WCAG از MDN، توضیحات راهنمای 4.1](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Robust#guideline_4.1_—_compatible_maximize_compatibility_with_current_and_future_user_agents_including_assistive_technologies)
+- [درک معیار موفقیت 4.1.2 | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/ensure-compat-rsv.html)
 
-- [What is an accessible name? | Vispero](https://vispero.com/resources/what-is-an-accessible-name/)
-- [MDN Understanding WCAG, Guideline 4.1 explanations](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Robust#guideline_4.1_—_compatible_maximize_compatibility_with_current_and_future_user_agents_including_assistive_technologies)
-- [Understanding Success Criterion 4.1.2 | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/ensure-compat-rsv.html)
-
-### اندازه و نزدیکی
+### اندازه و فاصله
 
 #### اندازه
 
-عناصر تعاملی مانند دکمهها باید ناحیهای به اندازه کافی بزرگ داشته باشند تا به راحتی فعال شوند. این کار به گروههای مختلفی از افراد کمک میکند، از جمله افرادی که مشکلات کنترل حرکتی دارند و افرادی که از ورودیهای غیردقیق مانند قلم لمسی یا انگشت استفاده میکنند. حداقل اندازه تعاملی ۴۴×۴۴ [پیکسل CSS](/en-US/docs/Glossary/CSS_pixel) توصیه میشود.
+عناصر تعاملی مانند دکمهها باید ناحیهای به اندازه کافی بزرگ داشته باشند تا بهراحتی فعال شوند. این کار به افراد مختلفی کمک میکند، از جمله افرادی که مشکلات کنترل حرکتی دارند و افرادی که از ورودیهای غیردقیق مانند قلم لمسی یا انگشت استفاده میکنند. حداقل اندازه تعاملی ۴۴×۴۴ [پیکسل CSS](/en-US/docs/Glossary/CSS_pixel) توصیه میشود.
 
-- [Understanding Success Criterion 2.5.5: Target Size | W3C Understanding WCAG 2.1](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)
-- [Target Size and 2.5.5 | Adrian Roselli](https://adrianroselli.com/2019/06/target-size-and-2-5-5.html)
-- [Quick test: Large touch targets - The A11Y Project](https://www.a11yproject.com/posts/large-touch-targets/)
+- [درک معیار موفقیت 2.5.5: اندازه هدف | W3C Understanding WCAG 2.1](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)
+- [اندازه هدف و 2.5.5 | Adrian Roselli](https://adrianroselli.com/2019/06/target-size-and-2-5-5.html)
+- [آزمون سریع: اهداف لمسی بزرگ - پروژه A11Y](https://www.a11yproject.com/posts/large-touch-targets/)
 
-#### نزدیکی
+#### فاصله
 
-اگر حجم زیادی از محتوای تعاملی (از جمله دکمهها) در مجاورت بصری نزدیک یکدیگر قرار گرفته باشد، باید فضایی بین آنها وجود داشته باشد. این فاصلهگذاری برای افرادی که مشکلات کنترل حرکتی دارند مفید است، زیرا ممکن است به طور تصادفی محتوای تعاملی اشتباهی را فعال کنند.
+مقادیر زیادی از محتوای تعاملی — از جمله دکمهها — که از نظر بصری نزدیک به یکدیگر قرار دارند، باید با فاصله از هم جدا شوند. این فاصلهگذاری برای افرادی که مشکلات کنترل حرکتی دارند و ممکن است بهطور تصادفی محتوای تعاملی اشتباهی را فعال کنند، مفید است.
 
-فاصلهگذاری را میتوان با استفاده از ویژگیهای CSS مانند `margin` ایجاد کرد.
+فاصلهگذاری را میتوان با استفاده از خصوصیتهای CSS مانند `margin` ایجاد کرد.
 
-- [Hand tremors and the giant-button-problem - Axess Lab](https://axesslab.com/hand-tremors/)
+- [لرزش دست و مشکل دکمه بزرگ - Axess Lab](https://axesslab.com/hand-tremors/)
 
 ### اطلاعات وضعیت ARIA
 
-برای توصیف وضعیت یک دکمه، ویژگی ARIA صحیح استفاده از [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) است و نه [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) یا [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected). برای اطلاعات بیشتر، اطلاعات مربوط به [ARIA button role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role) را بخوانید.
+برای توصیف وضعیت یک دکمه، ویژگی ARIA درست [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) است و نه [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) یا [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected). برای اطلاعات بیشتر، مطلب مربوط به [نقش دکمه ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role) را بخوانید.
 
 ### استایل دکمهها
 
-بهتر است حلقه فوکوس پیشفرض عناصر دارای فوکوس را بازنویسی نکنید. اگر استایلهای دکمه بازنویسی میشوند، مهم است که **مطمئن شوید حالت فوکوس کنتراست کافی دارد** تا افراد با شرایط بینایی ضعیف بتوانند آن را درک کنند و افراد با تفاوتهای شناختی آن را بفهمند.
+بهترین کار این است که حلقه فوکوس پیشفرض عناصری که فوکوس میگیرند را بازنویسی نکنید. اگر استایلهای دکمه بازنویسی میشوند، مهم است که **اطمینان حاصل کنید وضعیت فوکوس کنتراست کافی دارد** تا افرادی که مشکلات بینایی خفیف دارند بتوانند آن را درک کنند و افرادی با تفاوتهای شناختی آن را بفهمند.
 
-شبهکلاس `:focus-visible` میتواند برای اعمال استایل به عنصری که `:focus` دارد استفاده شود، فقط زمانی که قواعد اکتشافی عامل کاربر تشخیص دهد که فوکوس باید برجسته شود، مانند زمانی که `<button>` فوکوس صفحهکلید دریافت میکند. برای اطلاعات بیشتر، [focus vs :focus-visible](/en-US/docs/Web/CSS/Reference/Selectors/:focus-visible#focus_vs_focus-visible) را ببینید.
+شبهکلاس `:focus-visible` را میتوان برای اعمال استایل به عنصری که دارای `:focus` است استفاده کرد، فقط زمانی که الگوریتمهای عامل کاربر تعیین کنند که فوکوس باید برجسته شود، مثلاً وقتی یک `<button>` فوکوس کیبورد دریافت میکند. برای اطلاعات بیشتر به [مقایسه :focus با :focus-visible](/en-US/docs/Web/CSS/Reference/Selectors/:focus-visible#focus_vs_focus-visible) مراجعه کنید.
 
-نسبت کنتراست رنگ با مقایسه روشنایی متن دکمه و مقادیر رنگ پسزمینه با پسزمینهای که دکمه روی آن قرار دارد تعیین میشود. برای مطابقت با [راهنمای دسترسپذیری محتوای وب (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)، نسبت ۴.۵:۱ برای محتوای متنی و ۳:۱ برای متن بزرگ لازم است. (متن بزرگ به صورت ۱۸.۶۶ پیکسل و `bold` یا بزرگتر، یا ۲۴ پیکسل یا بزرگتر تعریف میشود.)
+نسبت کنتراست رنگ با مقایسه درخشندگی (Luminosity) مقدار رنگ متن دکمه و پسزمینه آن با پسزمینهای که دکمه روی آن قرار دارد، تعیین میشود. برای مطابقت با [دستورالعملهای دسترسپذیری محتوای وب (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) فعلی، نسبت 4.5:1 برای محتوای متنی و 3:1 برای متن بزرگ لازم است. (متن بزرگ بهصورت حداقل 18.66 پیکسل با وزن `bold` یا بزرگتر، یا حداقل 24 پیکسل تعریف شده است.)
 
-- [WebAIM: Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
-- [MDN Understanding WCAG, Guideline 1.4 explanations](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
-- [Understanding Success Criterion 1.4.3 | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
+- [WebAIM: بررسی کنتراست رنگ](https://webaim.org/resources/contrastchecker/)
+- [توضیحات MDN درباره WCAG، راهنمای ۱.۴](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
+- [درک معیار موفقیت ۱.۴.۳ | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
 
 ### کلیک کردن و فوکوس
 
-اینکه کلیک روی یک `<button>` یا دکمه‌های `<input>` به‌صورت پیش‌فرض فوکوس می‌گیرند یا نه، بسته به مرورگر و سیستم‌عامل متفاوت است. بیشتر مرورگرها به دکمه‌ای که کلیک می‌شود فوکوس می‌دهند، اما [سافاری به‌عمد این کار را نمی‌کند](https://webkit.org/b/22261#c68).
+اینکه کلیک روی یک `<button>` یا `<input>` از نوع دکمه، به‌طور پیش‌فرض باعث فوکوس شود یا نه، به مرورگر و سیستم‌عامل بستگی دارد. اکثر مرورگرها به دکمه‌ای که روی آن کلیک می‌شود فوکوس می‌دهند، اما [سافاری به‌صورت عمدی این کار را نمی‌کند](https://webkit.org/b/22261#c68).
 
 ## مثال‌ها
 
-### ساخت یک دکمهٔ ساده
+### ساخت یک دکمه ساده
 
-این مثال یک دکمهٔ قابل‌کلیک می‌سازد. ویژگیِ `type="button"` تضمین می‌کند که دکمه رفتار پیش‌فرضی نداشته باشد. می‌توانید این دکمه را با جاوااسکریپت یا ویژگی‌هایی مانند `command` و `commandfor` تعاملی کنید.
+این مثال یک دکمه قابل کلیک می‌سازد. وجود attribute با مقدار `type="button"` تضمین می‌کند که دکمه هیچ رفتار پیش‌فرضی نداشته باشد. می‌توانید این دکمه را با استفاده از JavaScript یا attributeهایی مثل `command` و `commandfor` تعاملی کنید.
 
 ```html
 <button type="button" name="button">I'm a button</button>
 ```
 
-### استفاده از مقدار `request-close` برای ویژگیِ `command`
+### استفاده از مقدار `request-close` برای attribute مربوط به `command`
 
-در این مثال، المان `dialog` دو دکمهٔ رادیویی دارد که تعیین می‌کنند آیا dialog می‌تواند بسته شود یا نه. **Yes** یا **No** را انتخاب کنید و سپس برای امتحان بستن dialog روی **Request to Close** کلیک کنید. اگر **Yes** انتخاب شود، dialog بسته می‌شود؛ اگر **No** انتخاب شود، dialog باز می‌ماند و در عوض یک پیام نشان می‌دهد.
+در این مثال، دیالوگ دو دکمه رادیویی دارد که مشخص می‌کنند آیا دیالوگ می‌تواند بسته شود یا نه. گزینه **Yes** یا **No** را انتخاب کنید و سپس روی **Request to Close** کلیک کنید تا تلاش کند دیالوگ را ببندد. اگر **Yes** انتخاب شده باشد، دیالوگ بسته می‌شود؛ اگر **No** انتخاب شده باشد، دیالوگ باز می‌ماند و به جای آن یک پیام نمایش می‌دهد.
 
 ```html
 <button type="button" commandfor="mydialog" command="show-modal">
@@ -281,26 +277,26 @@ dialog.addEventListener("cancel", (e) => {
 });
 ```
 
-دکمهٔ **Open Dialog** با استفاده از `command="show-modal"` المان `<dialog>` را باز می‌کند.
+دکمه **Open Dialog** با استفاده از `command="show-modal"`، element `<dialog>` را باز می‌کند.
 
-دکمهٔ **Request to Close** دارای `command="request-close"` است که با استفاده از ویژگیِ `commandfor="mydialog"` المان `<dialog>` را هدف می‌گیرد. وقتی روی آن کلیک شود، از `<dialog>` می‌پرسد که آیا می‌تواند بسته شود (برخلاف ویژگیِ `command="close"` که بلافاصله `<dialog>` را می‌بندد). این کار با گوش دادن به رویداد `cancel` بررسی می‌کند که آیا `<dialog>` [`cancelable`](/en-US/docs/Web/API/Event/cancelable) است.
+دکمه **Request to Close** دارای `command="request-close"` است که با استفاده از attribute مربوط به `commandfor="mydialog"`، element `<dialog>` را هدف قرار می‌دهد. وقتی روی آن کلیک می‌شود، از `<dialog>` می‌پرسد که آیا می‌تواند بسته شود (برخلاف attribute مربوط به `command="close"` که بلافاصله `<dialog>` را می‌بندد). این کار با استفاده از رویداد `cancel` بررسی می‌کند که آیا رویداد `cancelable` است یا خیر.
 
 وقتی رویداد `cancelable` باشد، مقدار دکمه‌های رادیویی بررسی می‌شود:
 
-- اگر روی `yes` تنظیم شده باشد، dialog بسته می‌شود.
-- اگر روی `no` تنظیم شده باشد، ویژگیِ `hidden` از روی پیام حذف می‌شود و متد [`preventDefault()`](/en-US/docs/Web/API/Event/preventDefault) فراخوانی می‌شود که از رفتار پیش‌فرض بستن `<dialog>` جلوگیری می‌کند.
+- اگر روی `yes` تنظیم شده باشد، دیالوگ بسته می‌شود.
+- اگر روی `no` تنظیم شده باشد، attribute مربوط به `hidden` روی پیام هشدار غیرفعال می‌شود و متد [`preventDefault()`](/en-US/docs/Web/API/Event/preventDefault) فراخوانی می‌شود که از رفتار پیش‌فرض بسته شدن `<dialog>` جلوگیری می‌کند.
 
-### استفاده از ویژگیِ `value` با دستور `close` در dialog
+### استفاده از attribute `value` به‌همراه command مربوط به `close` در دیالوگ
 
-هنگامی که دکمهٔ **Cancel** یا **Delete** کلیک می‌شود، دیالوگ بسته شده و `returnValue` آن به مقدار ویژگی `value` دکمهٔ مربوطه تنظیم می‌شود.  
-هندلر رویداد `close` مقدار `dialog.returnValue` را بررسی می‌کند تا بفهمد کاربر کدام اقدام را انتخاب کرده و نتیجه را روی صفحه نشان می‌دهد.
+این مثال نشان می‌دهد که چگونه می‌توان با استفاده از attribute مربوط به `value` در دکمه و command از نوع `close`، مقدار property `returnValue` در یک dialog را مقداردهی کرد.
+
+وقتی کاربر روی دکمهٔ **Cancel** یا **Delete** کلیک کند، dialog بسته می‌شود و `returnValue` آن به مقدار `value` همان دکمه تنظیم می‌شود. شنوندهٔ رویداد `close` سپس مقدار `dialog.returnValue` را بررسی می‌کند تا بفهمد کاربر کدام عملیات را انتخاب کرده و نتیجه را به نمایش درمی‌آورد.
 
 #### HTML
 
-در ابتدای HTML، یک دکمهٔ **Delete Record** تعریف شده که از ویژگی `commandfor` برای تعیین دیالوگی که باید باز شود استفاده می‌کند.
+در ابتدای HTML، دکمه‌ای به نام **Delete Record** تعریف شده که با استفاده از attribute «commandfor» مشخص می‌کند کدام dialog باید باز شود.
 
-در داخل دیالوگ، دکمه‌های **Cancel** و **Delete** با ویژگی `commandfor` مشخص می‌کنند که به دیالوگ فعلی اعمال می‌شوند.  
-همچنین ویژگی `command` را روی `"close"` و ویژگی `value` را به ترتیب روی `"cancel"` و `"delete"` تنظیم می‌کنند — مقدار دکمهٔ انتخاب‌شده به‌صورت خودکار هنگام کلیک، در `returnValue` دیالوگ کپی می‌شود.
+در داخل dialog، دکمه‌های **Cancel** و **Delete** با attribute «commandfor» به dialog جاری اشاره می‌کنند. همچنین attribute «command» آنها روی `"close"` و attribute «value» به ترتیب روی `"cancel"` و `"delete"` تنظیم شده است. وقتی روی هرکدام از این دکمه‌ها کلیک شود، مقدار دکمهٔ انتخابی به‌صورت خودکار در `returnValue` dialog کپی می‌شود.
 
 ```html
 <button commandfor="confirm-dialog" command="show-modal">Delete Record</button>
@@ -339,7 +335,7 @@ function log(text) {
 
 #### JavaScript
 
-کد از یک event listener برای رویداد `close` استفاده می‌کند تا `returnValue` دیالوگ را ثبت کند.
+این کد با یک شنوندهٔ رویداد `close` مقدار `returnValue` dialog را ثبت می‌کند.
 
 ```js
 const dialog = document.getElementById("confirm-dialog");
@@ -360,24 +356,72 @@ dialog.addEventListener("close", () => {
 
 #### نتایج
 
-{{ EmbedLiveSample('using_the_value_attribute_with_dialog_close_command', 100, 200) }}
-
 ## خلاصهٔ فنی
 
-| ویژگی | توضیحات |
-|--------|----------|
-| **دسته‌های محتوایی** | [Flow content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#flow_content), [Phrasing content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content), [Interactive content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#interactive_content), [Listed](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#listed), [Labelable](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#labelable), [Submittable](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#submittable) و [form-associated](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#form-associated_content) element, همچنین palpable content. |
-| **محتوای مجاز** | [Phrasing content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content) – اما نباید شامل [Interactive content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#interactive_content) باشد. اگر `<button>` اولین فرزند یک [customizable select element](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select) باشد، می‌تواند حاوی صفر یا یک عنصر `<selectedcontent>` نیز باشد. |
-| **حذف تگ** | ندارد؛ هر دو تگ شروع و پایان الزامی هستند. |
-| **والدین مجاز** | هر عنصری که [phrasing content](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content) را بپذیرد. |
-| **نقش ARIA ضمنی** | `button` |
-| **نقش‌های ARIA مجاز** | `checkbox`, `combobox`, `link`, `menuitem`, `menuitemcheckbox`, `menuitemradio`, `option`, `radio`, `switch`, `tab` |
-| **DOM interface** | `HTMLButtonElement` |
-
-## مشخصات فنی
-
-مشخصات رسمی این عنصر را می‌توانید در [HTML Living Standard](https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element) و نیز [HTML 5.2 و بعد آن](https://www.w3.org/TR/html52/sec-forms.html#the-button-element) مشاهده کنید.
-
-## سازگاری مرورگرها
-
-اطلاعات سازگاری مرورگرها با این عنصر در جدول زیر آمده است.
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories">دسته‌بندی محتوا</a>
+      </th>
+      <td>
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content">محتوای جریانی</a>،
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content">محتوای عبارتی</a>،
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#interactive_content">محتوای تعاملی</a>،
+        عنصر <a href="/en-US/docs/Web/HTML/Guides/Content_categories#form-associated_content">مرتبط با فرم</a>
+        از نوع <a href="/en-US/docs/Web/HTML/Guides/Content_categories#listed">listed</a>،
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#labelable">labelable</a> و
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#submittable">submittable</a>،
+        محتوای قابل لمس (palpable content).
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">محتوای مجاز</th>
+      <td>
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content">محتوای عبارتی</a>،
+        اما نباید هیچ
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#interactive_content">محتوای تعاملی</a>
+        وجود داشته باشد. اگر <code>&lt;button&gt;</code> اولین فرزند یک
+        <a href="/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select">عنصر customizable select</a>
+        باشد، می‌تواند صفر یا یک عنصر <code>&lt;selectedcontent&gt;</code> نیز داشته باشد.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">حذف تگ</th>
+      <td>هیچ؛ تگ شروع و تگ پایان هر دو الزامی هستند.</td>
+    </tr>
+    <tr>
+      <th scope="row">والدهای مجاز</th>
+      <td>
+        هر عنصری که
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content">محتوای عبارتی</a>
+        را بپذیرد.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">نقش ARIA ضمنی</th>
+      <td>
+        <code><a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role">button</a></code>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">نقش‌های ARIA مجاز</th>
+      <td>
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role"><code>checkbox</code></a>،
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role"><code>combobox</code></a>،
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/link_role"><code>link</code></a>،
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role"><code>menuitem</code></a>،
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a>،
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role"><code>menuitemradio</code></a>،
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role"><code>option</code></a>،
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role"><code>radio</code></a>،
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/switch_role"><code>switch</code></a>،
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role"><code>tab</code></a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">رابط DOM</th>
+      <td><code>HTMLButtonElement</code></td>
+    </tr>
+  </tbody>
+</table>
