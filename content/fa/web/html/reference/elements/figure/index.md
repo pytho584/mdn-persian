@@ -4,69 +4,38 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/fi
 translated_by: "n8n + AI"
 ---
 
-عنصر `<figure>` در HTML، یک محتوای خودکفا را نمایش می‌دهد که می‌تواند یک توضیح اختیاری (caption) همراه داشته باشد. این توضیح با استفاده از عنصر `<figcaption>` مشخص می‌شود. خود figure، caption و محتوایش به‌عنوان یک واحد واحد در نظر گرفته می‌شوند.
+# عنصر `<figure>`
 
-```html
-<figure>
-  <img
-    src="/shared-assets/images/examples/elephant.jpg"
-    alt="Elephant at sunset" />
-  <figcaption>An elephant at sunset</figcaption>
-</figure>
-```
+عنصر **`<figure>`** [HTML](/en-US/docs/Web/HTML) محتوای مستقلی را نمایش می‌دهد که احتمالاً شامل یک توضیح (caption) اختیاری است؛ توضیح با استفاده از عنصر `<figcaption>` تعریف می‌شود. در ارجاع‌ها، `<figure>`، توضیح آن و محتویاتش به عنوان یک واحد در نظر گرفته می‌شوند.
 
-```css
-figure {
-  border: thin silver solid;
-  display: flex;
-  flex-flow: column;
-  padding: 5px;
-  max-width: 220px;
-  margin: auto;
-}
+## ویژگی‌ها
 
-img {
-  max-width: 220px;
-  max-height: 150px;
-}
-
-figcaption {
-  background-color: #222222;
-  color: white;
-  font: italic smaller sans-serif;
-  padding: 3px;
-  text-align: center;
-}
-```
-
-## ویژگی‌ها (Attributes)
-
-این عنصر فقط شامل [ویژگی‌های سراسری (global attributes)](/en-US/docs/Web/HTML/Reference/Global_attributes) است.
+این عنصر فقط شامل [ویژگی‌های سراسری](/en-US/docs/Web/HTML/Reference/Global_attributes) است.
 
 ## نکات استفاده
 
-- معمولاً `<figure>` برای تصویر، نمودار، دیاگرام، قطعه کد و موارد مشابه به کار می‌رود که در جریان اصلی سند به آن اشاره می‌شود، اما می‌توان آن را بدون تأثیر بر جریان اصلی به بخش دیگری از سند یا ضمیمه منتقل کرد.
-- برای اضافه کردن caption به `<figure>`، یک عنصر `<figcaption>` داخل آن قرار دهید (به‌عنوان فرزند اول یا آخر). اولین `<figcaption>` که درون figure پیدا شود به‌عنوان caption آن در نظر گرفته می‌شود.
-- `<figcaption>` نام دسترسی‌پذیر (accessible name) را برای `<figure>` والد فراهم می‌کند.
+- معمولاً `<figure>` برای تصویر، نگاره، نمودار، تکه‌کد و غیره استفاده می‌شود که در جریان اصلی سند به آن ارجاع داده می‌شود، اما می‌توان آن را بدون تأثیر بر جریان اصلی، به بخش دیگری از سند یا پیوست منتقل کرد.
+- می‌توان با قرار دادن یک `<figcaption>` در داخل `<figure>` (به عنوان فرزند اول یا آخر)، یک توضیح به آن متصل کرد. اولین `<figcaption>` یافت‌شده در figure به عنوان توضیح آن نمایش داده می‌شود.
+- `<figcaption>` نام قابل دسترس (accessible name) را برای `<figure>` والد فراهم می‌کند.
 
 ## مثال‌ها
 
 ### تصاویر
 
 ```html
-<!-- فقط یک تصویر -->
+<!-- Just an image -->
 <figure>
   <img src="favicon-192x192.png" alt="The beautiful MDN logo." />
 </figure>
 
-<!-- تصویر با caption -->
+<!-- Image with a caption -->
 <figure>
   <img src="favicon-192x192.png" alt="The beautiful MDN logo." />
   <figcaption>MDN Logo</figcaption>
 </figure>
 ```
 
-### قطعه کد
+### قطعه‌های کد
 
 ```html
 <figure>
@@ -97,7 +66,7 @@ function NavigatorExample() {
 </figure>
 ```
 
-### شعر
+### شعرها
 
 ```html
 <figure>
@@ -113,22 +82,75 @@ function NavigatorExample() {
 </figure>
 ```
 
-<figure> عنصری است که محتوای مستقل مانند تصاویر، نمودارها، کدها و غیره را همراه با یک توضیح اختیاری (عنصر <figcaption>) گروه‌بندی می‌کند. جدول زیر مشخصات این عنصر را نشان می‌دهد.
+## خلاصه فنی
 
-| ویژگی | توضیح |
-|-------|-------|
-| [دسته‌بندی محتوا](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories) | [محتواهای جریانی](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#flow_content)، [محتواهای قابل لمس](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#palpable_content) |
-| محتوای مجاز | یک عنصر `<figcaption>` و سپس [محتواهای جریانی](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#flow_content)؛ یا محتواهای جریانی و سپس یک `<figcaption>`؛ یا فقط محتواهای جریانی |
-| حذف تگ | هیچکدام – هر دو تگ شروع و پایان اجباری هستند |
-| والد مجاز | هر عنصری که [محتواهای جریانی](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#flow_content) را می‌پذیرد |
-| نقش ARIA ضمنی | [figure](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/figure_role) |
-| نقش‌های ARIA مجاز | اگر فرزند `figcaption` نداشته باشد: [هر نقشی](https://w3c.github.io/html-aria/#dfn-any-role)؛ در غیر این صورت هیچ نقشی مجاز نیست |
-| رابط DOM | `HTMLElement` |
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories"
+          >دسته‌بندی محتوا (Content categories)</a
+        >
+      </th>
+      <td>
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
+          >محتویات جریانی (Flow content)</a
+        >,
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#palpable_content"
+          >محتویات قابل لمس (palpable content)</a
+        >.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">محتوای مجاز (Permitted content)</th>
+      <td>
+        یک عنصر <code>&lt;figcaption&gt;</code> و سپس
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
+          >محتویات جریانی (Flow content)</a
+        >؛ یا محتویات جریانی و سپس یک عنصر <code>&lt;figcaption&gt;</code>؛ یا فقط محتویات جریانی.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">حذف تگ (Tag omission)</th>
+      <td>هیچ‌کدام؛ هر دو تگ شروع و پایان الزامی هستند.</td>
+    </tr>
+    <tr>
+      <th scope="row">والدین مجاز (Permitted parents)</th>
+      <td>
+        هر عنصری که
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
+          >محتویات جریانی (Flow content)</a
+        > را بپذیرد.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">نقش ARIA ضمنی (Implicit ARIA role)</th>
+      <td>
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/figure_role"
+          >figure</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">نقش‌های ARIA مجاز (Permitted ARIA roles)</th>
+      <td>
+        بدون فرزند
+        <code>&lt;figcaption&gt;</code>:
+        <a href="https://w3c.github.io/html-aria/#dfn-any-role">هر نقشی (any)</a>،
+        در غیر این صورت هیچ نقش مجازی وجود ندارد.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">رابط DOM (DOM interface)</th>
+      <td><code>HTMLElement</code></td>
+    </tr>
+  </tbody>
+</table>
 
-## مشخصات
+## مشخصات (Specifications)
 
-## سازگاری مرورگرها
+## سازگاری مرورگرها (Browser compatibility)
 
-## همچنین ببینید
+## همچنین ببینید (See also)
 
-- عنصر [`<figcaption>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/figcaption)
+- عنصر `<figcaption>`
