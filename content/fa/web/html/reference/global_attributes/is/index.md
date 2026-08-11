@@ -4,16 +4,16 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attr
 translated_by: "n8n + AI"
 ---
 
-> **توجه:**  
-> Safari برنامه‌ای برای پشتیبانی از `customized built-in elements` ندارد (به [این issue](https://github.com/WebKit/standards-positions/issues/97) مراجعه کنید) و مرورگرهای دیگر در حال بررسی راه‌حل‌های جایگزین برای سفارشی‌سازی عناصر داخلی هستند (ببینید: [این discussion](https://github.com/WICG/webcomponents/issues/1029)). برای اطلاعات پشتیبانی، بخش [سازگاری مرورگرها](#browser_compatibility) را بررسی کنید.
+> [!NOTE]
+> [سافاری برنامه‌ای برای پشتیبانی از customized built-in elements ندارد](https://github.com/WebKit/standards-positions/issues/97) و [فروشندگان مرورگر در حال بررسی راه‌حل‌های جایگزین برای سفارشی‌سازی built-in ها هستند](https://github.com/WICG/webcomponents/issues/1029). برای اطلاعات پشتیبانی، بخش [سازگاری مرورگر](#سازگاری-مرورگر) را ببینید.
 
-ویژگی سراسری **`is`** به شما امکان می‌دهد مشخص کنید که یک عنصر HTML استاندارد باید مانند یک عنصر داخلی سفارشی‌سازی‌شده‌ (customized built-in element) رفتار کند (برای جزئیات بیشتر، [استفاده از عناصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements) را ببینید).
+**`is`** یک [global attribute](/en-US/docs/Web/HTML/Reference/Global_attributes) است که به شما امکان می‌دهد مشخص کنید یک عنصر استاندارد HTML باید مانند یک customized built-in element تعریف‌شده رفتار کند (برای جزئیات بیشتر، [استفاده از custom elements](/en-US/docs/Web/API/Web_components/Using_custom_elements) را ببینید).
 
-این ویژگی فقط زمانی قابل استفاده است که نام عنصر سفارشی مشخص‌شده در سند جاری با موفقیت [تعریف شده](/en-US/docs/Web/API/CustomElementRegistry/define) باشد و نوع عنصری که به آن اعمال می‌شود را گسترش دهد.
+این attribute فقط زمانی قابل استفاده است که نام custom element مشخص‌شده با موفقیت در سند فعلی [تعریف شده](/en-US/docs/Web/API/CustomElementRegistry/define) باشد و نوع عنصری را که روی آن اعمال می‌شود گسترش دهد.
 
 ## مثال‌ها
 
-کد زیر از مثال [word-count-web-component](https://github.com/mdn/web-components-examples/tree/main/word-count-web-component) گرفته شده است (همچنین [مشاهده نسخه زنده](https://mdn.github.io/web-components-examples/word-count-web-component/)).
+کد زیر از مثال [word-count-web-component](https://github.com/mdn/web-components-examples/tree/main/word-count-web-component) گرفته شده است ([نسخهٔ زنده را هم ببینید](https://mdn.github.io/web-components-examples/word-count-web-component/)).
 
 ```js
 // Create a class for the element
@@ -37,8 +37,8 @@ customElements.define("word-count", WordCount, { extends: "p" });
 
 ## مشخصات
 
-## سازگاری مرورگرها
+## سازگاری مرورگر
 
 ## همچنین ببینید
 
-- تمام [ویژگی‌های سراسری](/en-US/docs/Web/HTML/Reference/Global_attributes)
+- همهٔ [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes).
