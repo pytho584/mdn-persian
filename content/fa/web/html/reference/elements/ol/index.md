@@ -4,65 +4,44 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ol
 translated_by: "n8n + AI"
 ---
 
-# `<ol>`: عنصر لیست مرتب HTML
+عنصر `<ol>` در HTML یک لیست مرتب (ordered list) از آیتم‌ها را نشان می‌دهد — معمولاً به‌صورت یک لیست شماره‌دار نمایش داده می‌شود.
 
-عنصر **`<ol>`** در HTML یک لیست مرتب از آیتم‌ها را نشان می‌دهد که معمولاً به‌صورت یک لیست شماره‌دار نمایش داده می‌شود.
+## ویژگی‌ها (Attributes)
 
-```html
-<ol>
-  <li>Mix flour, baking powder, sugar, and salt.</li>
-  <li>In another bowl, mix eggs, milk, and oil.</li>
-  <li>Stir both mixtures together.</li>
-  <li>Fill muffin tray 3/4 full.</li>
-  <li>Bake for 20 minutes.</li>
-</ol>
-```
+این عنصر همچنین [ویژگی‌های سراسری (global attributes)](/en-US/docs/Web/HTML/Reference/Global_attributes) را می‌پذیرد.
 
-```css
-li {
-  font:
-    1rem "Fira Sans",
-    sans-serif;
-  margin-bottom: 0.5rem;
-}
-```
-
-## ویژگی‌ها
-
-این عنصر ویژگی‌های سراسری HTML را نیز می‌پذیرد.
-
-- `compact` (منسوخ، غیر استاندارد)
-  - : این ویژگی Boolean نشان می‌دهد که لیست باید به‌صورت فشرده نمایش داده شود. نحوهٔ تفسیر آن به مرورگر بستگی دارد. به‌جای آن از CSS استفاده کنید: برای رسیدن به اثری مشابه، می‌توانید از ویژگی CSS `line-height` با مقدار `80%` استفاده کنید.
+- `compact` {{Deprecated_inline}} {{non-standard_inline}}
+  - : این ویژگی Boolean به مرورگر پیشنهاد می‌دهد که لیست را به صورت فشرده نمایش دهد. تفسیر این ویژگی به مرورگر بستگی دارد. به جای آن از [CSS](/en-US/docs/Web/CSS) استفاده کنید: برای ایجاد اثری مشابه `compact`، می‌توانید از ویژگی CSS {{cssxref("line-height")}} با مقدار `80%` استفاده کنید.
 - `reversed`
-  - : این ویژگی Boolean ترتیب آیتم‌های لیست را برعکس می‌کند. شماره‌ها از بزرگ به کوچک نمایش داده می‌شوند.
+  - : این ویژگی Boolean مشخص می‌کند که آیتم‌های لیست به ترتیب معکوس (از بالا به پایین) شماره‌گذاری شوند. یعنی شماره‌ها از بالا (بزرگترین) شروع شده و کاهش می‌یابند.
 - `start`
-  - : یک عدد صحیح که شمارش آیتم‌های لیست را از آن شروع می‌کند. همیشه به‌صورت عدد عربی (۱، ۲، ۳ و...) نوشته می‌شود، حتی اگر نوع شماره‌گذاری (`type`) حروف یا اعداد رومی باشد. برای مثال، برای شروع شماره‌گذاری از حرف «d» یا عدد رومی «iv» از `start="4"` استفاده کنید.
+  - : یک عدد صحیح که شمارش آیتم‌های لیست از آن شروع می‌شود. همیشه به صورت عدد عربی (1, 2, 3, …) نوشته می‌شود، حتی اگر نوع شماره‌گذاری (`type`) حروف یا اعداد رومی باشد. مثلاً اگر می‌خواهید شماره‌گذاری از حرف «d» یا عدد رومی «iv» شروع شود، از `start="4"` استفاده کنید.
 - `type`
   - : نوع شماره‌گذاری را تعیین می‌کند:
     - `a` برای حروف کوچک انگلیسی
     - `A` برای حروف بزرگ انگلیسی
     - `i` برای اعداد رومی کوچک
     - `I` برای اعداد رومی بزرگ
-    - `1` برای اعداد (پیش‌فرض)
+    - `1` برای اعداد معمولی (پیش‌فرض)
 
-    نوع مشخص‌شده برای کل لیست به‌کار می‌رود، مگر اینکه درون یکی از عنصرهای {{HTMLElement("li")}} از ویژگی `type` متفاوتی استفاده شده باشد.
+    نوع مشخص‌شده برای کل لیست اعمال می‌شود، مگر اینکه روی یک عنصر {{HTMLElement("li")}} داخل آن، ویژگی [`type`](/en-US/docs/Web/HTML/Reference/Elements/li#type) متفاوتی تنظیم شده باشد.
 
     > [!NOTE]
-    > اگر نوع شمارهٔ لیست اهمیت خاصی ندارد (مثلاً در اسناد حقوقی یا فنی که به شماره یا حرف آیتم‌ها ارجاع داده می‌شود)، به‌جای این ویژگی از CSS و پراپرتی `list-style-type` استفاده کنید.
+    > اگر نوع شماره‌گذاری از نظر معنایی مهم نیست (مثلاً در اسناد حقوقی یا فنی که به آیتم‌ها با شماره/حرف ارجاع داده می‌شود)، بهتر است از ویژگی CSS {{CSSxRef("list-style-type")}} استفاده کنید.
 
-## نکات استفاده
+## نکات استفاده (Usage notes)
 
-معمولاً آیتم‌های لیست مرتب با یک نشانگر (marker) در ابتدا نمایش داده می‌شوند؛ مثل یک عدد یا حرف.
+معمولاً آیتم‌های یک لیست مرتب با یک نشانگر (marker) مانند عدد یا حرف در ابتدا نمایش داده می‌شوند.
 
-عنصر `<ol>` و {{HTMLElement("ul")}} (یا عنصر معادل {{HTMLElement("menu")}}) می‌توانند به‌دلخواه درون یکدیگر تودرتو شوند و هر جا لازم بود بین `<ol>`، `<ul>` (یا `<menu>`) جابجا شوید.
+عناصر `<ol>` و {{HTMLElement("ul")}} (و معادل {{HTMLElement("menu")}}) می‌توانند تا هر سطحی تودرتو (nest) شوند و به دلخواه بین `<ol>`، `<ul>` (یا `<menu>`) جابه‌جا شوند.
 
-هر دو عنصر `<ol>` و {{HTMLElement("ul")}} یک لیست از آیتم‌ها را نشان می‌دهند. تفاوت در این است که در `<ol>` ترتیب آیتم‌ها معنی‌دار است. برای نمونه:
+تفاوت `<ol>` و {{HTMLElement("ul")}} در این است که در `<ol>` ترتیب آیتم‌ها مهم است. مثلاً:
 
 - مراحل یک دستور پخت
-- راهنمای گام‌به‌گام مسیر
-- فهرست مواد تشکیل‌دهنده بر اساس نسبت کاهشی در برچسب‌های اطلاعات تغذیه‌ای
+- مسیرهای گام‌به‌گام
+- لیست مواد تشکیل‌دهنده به ترتیب کاهش درصد در برچسب‌های تغذیه‌ای
 
-برای تشخیص اینکه از کدام لیست استفاده کنید، ترتیب آیتم‌ها را تغییر دهید؛ اگر معنا عوض شد، از `<ol>` استفاده کنید، در غیر این صورت می‌توانید از {{HTMLElement("ul")}} یا اگر لیست شما یک منو است، از {{HTMLElement("menu")}} بهره ببرید.
+برای انتخاب نوع لیست، ترتیب آیتم‌ها را تغییر دهید؛ اگر معنی محتوا تغییر کرد، از `<ol>` استفاده کنید، وگرنه از {{HTMLElement("ul")}} یا اگر لیست منو است از {{HTMLElement("menu")}}.
 
 ## مثال‌ها
 
@@ -77,9 +56,7 @@ li {
 </ol>
 ```
 
-نتیجه: نمایش یک لیست شماره‌دار با آیتم‌های Fee, Fi, Fo, Fum.
-
-### استفاده از نوع اعداد رومی
+### استفاده از نوع شماره‌گذاری رومی
 
 ```html
 <ol type="i">
@@ -88,8 +65,6 @@ li {
   <li>Conclusion</li>
 </ol>
 ```
-
-نتیجه: لیستی شماره‌گذاری‌شده با اعداد رومی کوچک (i, ii, iii).
 
 ### استفاده از ویژگی start
 
@@ -103,25 +78,22 @@ li {
 </ol>
 ```
 
-نتیجه: لیست شماره‌گذاری از ۴ شروع می‌شود و آیتم‌ها به‌ترتیب ۴، ۵، ۶ نمایش داده می‌شوند.
-
 ### لیست‌های تودرتو
 
 ```html
 <ol>
-  <li>first item</li>
+  <li>First item</li>
   <li>
-    second item
-    <ul>
-      <li>sub item</li>
-      <li>sub item</li>
-    </ul>
+    Second item
+    <ol>
+      <li>Second item first subitem</li>
+      <li>Second item second subitem</li>
+      <li>Second item third subitem</li>
+    </ol>
   </li>
-  <li>third item</li>
+  <li>Third item</li>
 </ol>
 ```
-
-نتیجه: یک لیست مرتب که درون آیتم دوم آن یک لیست نامرتب تودرتو قرار دارد.
 
 ```html
 <ol>
@@ -139,6 +111,8 @@ li {
   <li>third item</li>
 </ol>
 ```
+
+#### نتیجه
 
 ### لیست نامرتب درون لیست مرتب
 
@@ -159,61 +133,23 @@ li {
 </ol>
 ```
 
+#### نتیجه
+
 ## خلاصه فنی
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        دسته‌بندی‌های محتوا (Content categories)
-      </th>
-      <td>
-        محتوای جریانی (Flow content)، و در صورتی که عنصر <code>&#x3C;ol></code> حداقل یک عنصر <code>&#x3C;li></code> به عنوان فرزند داشته باشد، محتوای محسوس (palpable content).
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">محتوای مجاز (Permitted content)</th>
-      <td>
-        صفر یا چند عنصر <code>&#x3C;li></code>، <code>&#x3C;script></code> و <code>&#x3C;template></code>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">حذف تگ (Tag omission)</th>
-      <td>هیچ‌کدام، هر دو تگ شروع و پایان اجباری هستند.</td>
-    </tr>
-    <tr>
-      <th scope="row">والدهای مجاز (Permitted parents)</th>
-      <td>
-        هر عنصری که محتوای جریانی (Flow content) را بپذیرد.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">نقش ARIA ضمنی (Implicit ARIA role)</th>
-      <td>
-        <code>list</code>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">نقش‌های ARIA مجاز (Permitted ARIA roles)</th>
-      <td>
-        <code>directory</code>, <code>group</code>,
-        <code>listbox</code>, <code>menu</code>,
-        <code>menubar</code>, <code>none</code>,
-        <code>presentation</code>,
-        <code>radiogroup</code>, <code>tablist</code>,
-        <code>toolbar</code>, <code>tree</code>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">رابط DOM (DOM interface)</th>
-      <td><code>HTMLOListElement</code></td>
-    </tr>
-  </tbody>
-</table>
+| ویژگی | توضیح |
+|-------|-------|
+| [دسته‌بندی محتوا](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories) | [محتوی جریانی](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#flow_content) و اگر فرزندان `<ol>` حداقل یک عنصر `<li>` داشته باشند، [محتوی قابل لمس](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#palpable_content) |
+| محتوای مجاز | صفر یا بیشتر عنصر `<li>`، `<script>` و `<template>` |
+| حذف تگ | مجاز نیست؛ هر دو تگ شروع و پایان اجباری هستند |
+| والدین مجاز | هر عنصری که [محتوی جریانی](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories#flow_content) را بپذیرد |
+| نقش ARIA ضمنی | `list` |
+| نقش‌های ARIA مجاز | `directory`، `group`، `listbox`، `menu`، `menubar`، `none`، `presentation`، `radiogroup`، `tablist`، `toolbar`، `tree` |
+| رابط DOM | `HTMLOListElement` |```
 
-- سایر عناصر HTML مرتبط با لیست: {{HTMLElement("ul")}}, {{HTMLElement("li")}}, {{HTMLElement("menu")}}
-- ویژگی‌های CSS که می‌توانند برای استایل‌دهی عنصر `<ol>` مفید باشند:
-  - ویژگی {{CSSxRef("list-style")}} برای انتخاب نحوه نمایش شماره ترتیب
-  - [CSS counters](/en-US/docs/Web/CSS/Guides/Counter_styles/Using_counters)، برای مدیریت لیست‌های تودرتوی پیچیده
-  - ویژگی {{CSSxRef("line-height")}} برای شبیه‌سازی ویژگی منسوخ‌شده‌ی `compact`
-  - ویژگی {{CSSxRef("margin")}} برای کنترل تورفتگی لیست
+- سایر المان‌های HTML مرتبط با لیست: `<ul>`، `<li>`، `<menu>`
+- خصوصیات CSS که ممکن است برای استایل‌دهی به المان `<ol>` مفید باشند:
+  - ویژگی `list-style`، برای انتخاب نحوهٔ نمایش اعداد ترتیبی
+  - [شمارنده‌های CSS](/en-US/docs/Web/CSS/Guides/Counter_styles/Using_counters)، برای مدیریت لیست‌های تو در تو پیچیده
+  - ویژگی `line-height`، برای شبیه‌سازی صفت منسوخ `compact`
+  - ویژگی `margin`، برای کنترل تورفتگی لیست
