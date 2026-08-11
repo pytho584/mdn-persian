@@ -4,9 +4,9 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/fi
 translated_by: "n8n + AI"
 ---
 
-# عنصر `<figcaption>`
+# عنصر `<figcaption>` — شرح تصویر
 
-عنصر `<figcaption>` در [HTML](/en-US/docs/Web/HTML) یک caption یا legend است که بقیهٔ محتوای عنصر والد خود یعنی `<figure>` را توصیف می‌کند و برای `<figure>` یک نام دسترس‌پذیر (accessible name) فراهم می‌کند.
+عنصر **`<figcaption>`** در [HTML](/en-US/docs/Web/HTML) نمایانگر یک عنوان یا شرح است که بقیهٔ محتوای عنصر والد خود، یعنی [`<figure>`](/en-US/docs/Web/HTML/Reference/Elements/figure)، را توصیف می‌کند. این عنصر به `<figure>` یک [accessible name](/en-US/docs/Glossary/Accessible_name) (نام قابل‌دسترس) می‌دهد.
 
 ## مثال تعاملی
 
@@ -45,23 +45,23 @@ figcaption {
 
 ## ویژگی‌ها
 
-این عنصر فقط [ویژگی‌های سراسری (global attributes)](/en-US/docs/Web/HTML/Reference/Global_attributes) را شامل می‌شود.
+این عنصر فقط شامل [ویژگی‌های سراسری](/en-US/docs/Web/HTML/Reference/Global_attributes) است.
 
 ## مثال‌ها
 
-برای مشاهدهٔ مثال‌های `<figcaption>`، به صفحهٔ [`<figure>`](/en-US/docs/Web/HTML/Reference/Elements/figure) مراجعه کنید.
+برای مثال‌های مربوط به `<figcaption>`، صفحهٔ [`<figure>`](/en-US/docs/Web/HTML/Reference/Elements/figure) را ببینید.
 
 ## خلاصهٔ فنی
 
-| عنوان | مقدار |
-|---|---|
-| دسته‌بندی محتوا (Content categories) | هیچکدام. |
-| محتوای مجاز (Permitted content) | محتوای جریان (Flow content). |
-| حذف تگ (Tag omission) | هیچکدام؛ هر دو تگ شروع و پایان الزامی هستند. |
-| والدهای مجاز (Permitted parents) | یک عنصر `<figure>`؛ عنصر `<figcaption>` باید اولین یا آخرین فرزند آن باشد. |
-| نقش ARIA ضمنی (Implicit ARIA role) | هیچ نقش متناظری ندارد (No corresponding role). |
-| نقش‌های ARIA مجاز (Permitted ARIA roles) | [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role)، [`none`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/none_role)، [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) |
-| رابط DOM (DOM interface) | `HTMLElement` |
+| | |
+| --- | --- |
+| [دسته‌بندی محتوا (Content categories)](/en-US/docs/Web/HTML/Guides/Content_categories) | هیچ‌کدام. |
+| محتوای مجاز | [محتوای جریان (Flow content)](/en-US/docs/Web/HTML/Guides/Content_categories#flow_content). |
+| حذف تگ | هیچ‌کدام؛ تگ شروع و پایان هر دو اجباری هستند. |
+| والد مجاز | یک عنصر [`<figure>`](/en-US/docs/Web/HTML/Reference/Elements/figure)؛ عنصر `<figcaption>` باید اولین یا آخرین فرزند آن باشد. |
+| نقش ARIA ضمنی | [نقش متناظری ندارد](https://w3c.github.io/html-aria/#dfn-no-corresponding-role). |
+| نقش‌های ARIA مجاز | [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role)، [`none`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/none_role)، [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) |
+| رابط DOM | [`HTMLElement`](/en-US/docs/Web/API/HTMLElement) |
 
 ## همچنین ببینید
 
