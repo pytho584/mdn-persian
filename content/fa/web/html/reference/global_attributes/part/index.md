@@ -4,24 +4,26 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attr
 translated_by: "n8n + AI"
 ---
 
-ویژگی **`part`** یک [ویژگی سراسری](global attribute) HTML است که شامل فهرستی از نام‌های part عنصر (با فاصله از هم جدا شده‌اند) می‌باشد. نام‌های part به CSS اجازه می‌دهد تا عناصر خاصی را درون یک shadow tree از طریق شبه‌عنصر {{CSSxRef("::part")}} انتخاب و استایل‌دهی کند.
+# ویژگی سراسری `part`
 
-برای نمونه‌ای از کاربرد، به [ویژگی `exportparts`](exportparts attribute) مراجعه کنید.
+ویژگی سراسری **`part`** فهرستی از نام‌های بخش (part) عنصر است که با فاصله از هم جدا می‌شوند. این نام‌ها به CSS اجازه می‌دهد عناصر خاصی را در یک درخت سایه (shadow tree) انتخاب کرده و با استفاده از شبه‌عنصر `::part` آن‌ها را استایل دهد.
+
+برای مشاهده مثال استفاده، به ویژگی [`exportparts`](/en-US/docs/Web/HTML/Reference/Global_attributes/exportparts) مراجعه کنید.
 
 ## مشخصات
 
-{{Specifications}}
+مشخصات این ویژگی در استاندارد HTML تعریف شده است.
 
-## سازگاری با مرورگرها
+## سازگاری مرورگر
 
-{{Compat}}
+برای اطلاع از جزئیات سازگاری مرورگرها، به نسخه اصلی این صفحه در MDN مراجعه کنید.
 
 ## جستارهای وابسته
 
-- [ویژگی `exportparts`](exportparts) HTML
-- عناصر `<template>` و `<slot>` HTML
-- شبه‌عناصر CSS `::part` و `::slotted`
-- [رابط `ShadowRoot`](ShadowRoot)
+- ویژگی HTML [`exportparts`](/en-US/docs/Web/HTML/Reference/Global_attributes/exportparts)
+- عناصر HTML `template` و `slot`
+- شبه‌عنصرهای CSS `::part` و `::slotted`
+- رابط [`ShadowRoot`](/en-US/docs/Web/API/ShadowRoot)
 - ویژگی `Element.part`
-- [استفاده از قالب‌ها و slotها](Using templates and slots)
-- [ماژول Scoping در CSS](CSS scoping)
+- [استفاده از قالب‌ها و slotها](/en-US/docs/Web/API/Web_components/Using_templates_and_slots)
+- [ماژول حوزه‌بندی CSS](/en-US/docs/Web/CSS/Guides/Scoping)
