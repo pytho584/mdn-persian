@@ -4,27 +4,28 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attr
 translated_by: "n8n + AI"
 ---
 
-ویژگی سراسری (global attribute) **`itemtype`** آدرس (URL) واژگان (vocabulary) را مشخص می‌کند که برای تعریف `itemprop`ها (ویژگی‌های آیتم) در ساختار داده استفاده خواهد شد.
+attribute سراسری **`itemtype`** URL واژگان (vocabulary) را مشخص می‌کند که برای تعریف `itemprop`ها (property های آیتم) در ساختار داده استفاده می‌شود.
 
-[`itemscope`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemscope) برای تنظیم محدوده‌ای استفاده می‌شود که در آن، واژگان تعیین‌شده توسط `itemtype` در ساختار داده فعال خواهد بود.
+از [`itemscope`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemscope) برای تعیین محدوده‌ای در ساختار داده استفاده می‌شود که واژگان تعیین‌شده توسط `itemtype` در آن فعال خواهد بود.
 
-گوگل و دیگر موتورهای جستجوی مهم از واژگان [schema.org](https://schema.org/) برای داده‌های ساختاریافته پشتیبانی می‌کنند. این واژگان مجموعه‌ای استاندارد از نام نوع‌ها (type names) و نام ویژگی‌ها (property names) ارائه می‌دهد. برای مثال، `MusicEvent` به یک اجرای کنسرت اشاره دارد و ویژگی‌های [`startDate`](https://schema.org/startDate) و [`location`](https://schema.org/location) جزئیات کلیدی کنسرت را مشخص می‌کنند. در این حالت، [`MusicEvent`](https://schema.org/MusicEvent) همان آدرسی است که در `itemtype` استفاده می‌شود و `startDate` و `location` به‌عنوان `itemprop`هایی هستند که [`MusicEvent`](https://schema.org/MusicEvent) آن‌ها را تعریف می‌کند.
+گوگل و دیگر موتورهای جستجوی اصلی از واژگان [schema.org](https://schema.org/) برای داده‌های ساختاریافته پشتیبانی می‌کنند. این واژگان مجموعه‌ای استاندارد از نام typeها و propertyها را تعریف می‌کند. برای مثال، `MusicEvent` یک اجرای کنسرت را نشان می‌دهد و property های [`startDate`](https://schema.org/startDate) و [`location`](https://schema.org/location) جزئیات کلیدی کنسرت را مشخص می‌کنند. در این حالت، [`MusicEvent`](https://schema.org/MusicEvent) همان URL مورد استفاده برای `itemtype` است و `startDate` و location به‌عنوان `itemprop`هایی هستند که [`MusicEvent`](https://schema.org/MusicEvent) تعریف می‌کند.
 
 > [!NOTE]
-> اطلاعات بیشتر درباره ویژگی‌های `itemtype` را می‌توانید در <https://schema.org/Thing> بیابید.
+> اطلاعات بیشتر درباره attributeهای `itemtype` در آدرس <https://schema.org/Thing> موجود است.
 
-- ویژگی **`itemtype`** باید مقداری داشته باشد که مجموعه‌ای نامرتب از توکن‌های یکتا باشد. این توکن‌ها به بزرگی/کوچکی حروف حساسند (case-sensitive)، هرکدام باید یک URL معتبر و مطلق باشند و همگی باید با یک واژگان یکسان تعریف شده باشند. مقدار ویژگی باید حداقل یک توکن داشته باشد.
-- نوع‌های آیتم (item types) باید همگی نوع‌هایی باشند که در مشخصات قابل‌اعمال (مانند [schema.org](https://schema.org/)) تعریف شده‌اند و همگی برای استفاده با همان واژگان تعریف شده باشند.
-- ویژگی `itemtype` فقط روی عنصرهایی قابل تنظیم است که ویژگی `itemscope` روی آن‌ها مشخص شده باشد.
-- ویژگی `itemid` فقط روی عنصرهایی قابل تنظیم است که هم ویژگی `itemscope` و هم ویژگی `itemtype` روی آن‌ها مشخص شده باشد. این ویژگی فقط باید روی عنصرهایی تنظیم شود که دارای ویژگی `itemscope` هستند و ویژگی `itemtype` آن‌ها واژگانی را تعیین می‌کند که طبق تعریف آن واژگان، از شناسه‌های سراسری (global identifiers) برای آیتم‌ها پشتیبانی نمی‌کند.
-- معنای دقیق یک شناسه سراسری توسط مشخصات همان واژگان تعیین می‌شود. تعیین اینکه آیا چند آیتم با شناسه سراسری یکسان (خواه در یک صفحه یا صفحات مختلف) مجاز هستند و همچنین قوانین پردازش مربوط به آن واژگان در صورت وجود چند آیتم با شناسه یکسان، به مشخصات همان واژگان واگذار شده است.
+- attribute **`itemtype`** باید مقداری داشته باشد که مجموعه‌ای بدون ترتیب از token های یکتا و case-sensitive باشد؛ هر token یک URL معتبر و مطلق است و همگی باید از یک واژگان استفاده کنند. مقدار این attribute باید حداقل یک token داشته باشد.
+- type های آیتم باید همگی type هایی باشند که در مشخصات مربوطه (مانند [schema.org](https://schema.org/)) تعریف شده‌اند و همگی برای استفاده از یک واژگان تعریف شده باشند.
+- attribute `itemtype` فقط روی elementهایی قابل استفاده است که attribute `itemscope` داشته باشند.
+- attribute `itemid` فقط روی elementهایی قابل استفاده است که هم attribute `itemscope` و هم attribute `itemtype` داشته باشند. این attribute فقط باید روی elementهایی با `itemscope` مشخص شود که attribute `itemtype` آن‌ها واژگانی را تعیین می‌کند که طبق مشخصات آن واژگان، از شناسه‌های سراسری (global identifier) برای آیتم‌ها پشتیبانی نمی‌کند.
+- معنای دقیق یک شناسه سراسری توسط مشخصات واژگان تعیین می‌شود. این مشخصات تعیین می‌کنند که آیا چند آیتم با شناسه سراسری یکسان (خواه در یک صفحه یا صفحات مختلف) مجاز هستند و همچنین قوانین پردازش آن واژگان در مواجهه با چند آیتم با شناسه یکسان چگونه است.
 
 ## مثال‌ها
 
 ### نمایش داده‌های ساختاریافته برای یک محصول
 
-این مثال از ویژگی‌های microdata برای نمایش داده‌های ساختاریافته یک محصول استفاده می‌کند، به این صورت:
+این مثال از attribute های microdata برای نمایش داده‌های ساختاریافته یک محصول استفاده می‌کند، به صورت زیر:
 
+```markdown
 <table class="standard-table">
   <tbody>
     <tr>
@@ -48,8 +49,7 @@ translated_by: "n8n + AI"
       <td>itemprop</td>
       <td>description</td>
       <td>
-        Executive Anvil نسبت به سندان کلاسیک ACME باریک‌تر است و برای مسافر
-        تجاری‌ای که به دنبال چیزی برای انداختن از ارتفاع است، عالی است.
+        سبک‌تر از سندان کلاسیک ACME؛ سندان Executive Anvil برای مسافرِ کاری که دنبال وسیله‌ای برای انداختن از ارتفاع است، عالی است.
       </td>
     </tr>
     <tr>
@@ -128,7 +128,7 @@ translated_by: "n8n + AI"
 </table>
 
 > [!NOTE]
-> ابزار [Structured Data Testing Tool](https://developers.google.com/search/docs/appearance/structured-data) گوگل، ابزار کاربردی‌ای برای استخراج ساختارهای microdata از HTML است. می‌توانید آن را روی HTML نشان‌داده‌شده در همین‌جا امتحان کنید.
+> ابزار «Structured Data Testing Tool» گوگل، ابزاری کاربردی برای استخراج ساختارهای microdata از HTML است. می‌توانید همین HTML که در بالا نشان داده شده را داخل آن امتحان کنید.
 
 #### HTML
 
@@ -148,9 +148,11 @@ translated_by: "n8n + AI"
     business traveler looking for something to drop from a height.
     <br />
   </span>
+</div>
 ```
 
-Product #: <span itemprop="mpn">925872<br /></span>
+```markdown
+  Product #: <span itemprop="mpn">925872<br /></span>
   <span
     itemprop="aggregateRating"
     itemscope
@@ -183,6 +185,7 @@ Product #: <span itemprop="mpn">925872<br /></span>
     </span>
   </p>
 </div>
+```
 
 #### نتیجه
 
@@ -190,8 +193,8 @@ Product #: <span itemprop="mpn">925872<br /></span>
 
 ## همچنین ببینید
 
-- [Other different global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes)
-- سایر global attributes مرتبط با microdata:
+- [سایر ویژگی‌های سراسری (global attributes)](/en-US/docs/Web/HTML/Reference/Global_attributes)
+- سایر ویژگی‌های سراسری مرتبط با ریزداده (microdata):
   - [`itemid`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemid)
   - [`itemprop`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemprop)
   - [`itemref`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemref)
