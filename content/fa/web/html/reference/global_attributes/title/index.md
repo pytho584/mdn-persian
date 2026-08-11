@@ -4,9 +4,7 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attr
 translated_by: "n8n + AI"
 ---
 
-# ویژگی سراسری `title`
-
-ویژگی سراسری **`title`** حاوی متنی است که اطلاعات تکمیلی درباره‌ی عنصر مربوطه ارائه می‌دهد. این متن معمولاً به‌صورت یک tooltip هنگام قرار گرفتن نشانگر روی عنصر نمایش داده می‌شود.
+The **`title`** [global attribute](/en-US/docs/Web/HTML/Reference/Global_attributes) متنی را نگه می‌دارد که اطلاعات راهنمایی درباره عنصری که به آن تعلق دارد ارائه می‌دهد.
 
 ```html interactive-example
 <p>
@@ -30,19 +28,19 @@ iframe {
 }
 ```
 
-کاربرد اصلی ویژگی `title` برچسب‌گذاری عناصر `<iframe>` برای فناوری‌های کمکی است.
+کاربرد اصلی `title` برای برچسب‌گذاری عناصر {{HTMLElement("iframe")}} است تا فناوری‌های کمکی (assistive technology) بتوانند آن‌ها را تشخیص دهند.
 
-ویژگی `title` همچنین می‌تواند برای برچسب‌گذاری کنترلها در [جدول‌های داده](/en-US/docs/Web/HTML/Reference/Elements/table) استفاده شود.
+همچنین می‌توان از `title` برای برچسب‌گذاری کنترل‌ها در [جدول‌های داده](/en-US/docs/Web/HTML/Reference/Elements/table) استفاده کرد.
 
-اگر `title` به [`<link rel="stylesheet">`](/en-US/docs/Web/HTML/Reference/Elements/link) اضافه شود، یک استایل‌شیت جایگزین ایجاد می‌کند. هنگام تعریف استایل‌شیت جایگزین با `<link rel="alternate">`، این ویژگی الزامی است و باید به یک رشته‌ی غیرخالی تنظیم شود.
+وقتی `title` به [`<link rel="stylesheet">`](/en-US/docs/Web/HTML/Reference/Elements/link) اضافه شود، یک stylesheet جایگزین (alternate stylesheet) ایجاد می‌کند. هنگام تعریف stylesheet جایگزین با `<link rel="alternate">`، این attribute الزامی است و باید یک رشته غیرخالی باشد.
 
-اگر روی تگ آغازین `<abbr>` قرار گیرد، `title` باید نمایش کامل مخفف یا سرواژه باشد. به‌جای استفاده از `title`، در صورت امکان، در نخستین استفاده، مخفف را به‌صورت متن ساده کامل بنویسید و از `<abbr>` برای نشانه‌گذاری مخفف استفاده کنید. این کار باعث می‌شود همه‌ی کاربران بدانند مخفف یا سرواژه به کدام نام یا عبارت اشاره دارد و در عین حال به عامل‌های کاربر (user agents) راهنمایی می‌دهد که محتوا را چگونه اعلام کنند.
+اگر `title` روی تگ شروع {{htmlelement('abbr')}} قرار بگیرد، باید شکل کامل آن مخفف یا سرواژه را نشان دهد. در صورت امکان، به جای استفاده از `title`، شکل کامل مخفف را در اولین استفاده به صورت متن ساده بنویسید و از `<abbr>` برای نشانه‌گذاری مخفف استفاده کنید. این کار باعث می‌شود همه کاربران بدانند مخفف به چه نام یا عبارتی اشاره دارد و در عین حال به user agentها هم راهنمایی می‌دهد که محتوا را چگونه اعلام کنند.
 
-در حالی که می‌توان از `title` برای ارائه‌ی یک برچسب مرتبط به‌صورت برنامه‌نویسی برای عنصر `<input>` استفاده کرد، این کار روش خوبی نیست. به‌جای آن از `<label>` استفاده کنید.
+اگرچه می‌توان از `title` برای ارائه برچسب مرتبط برنامه‌نویسی‌شده (programmatically associated label) برای عنصر {{HTMLElement("input")}} استفاده کرد، این کار توصیه نمی‌شود. به جای آن از {{HTMLElement("label")}} استفاده کنید.
 
-## چندخطی بودن title
+## عنوان‌های چندخطی (Multiline titles)
 
-ویژگی `title` می‌تواند شامل چند خط باشد. هر کاراکتر `U+000A LINE FEED` (`LF`) نشان‌دهنده‌ی یک خط جدید است. باید احتیاط کرد، چون این یعنی در مثال زیر محتوا در دو خط رندر می‌شود:
+attribute `title` می‌تواند چند خط داشته باشد. هر کاراکتر `U+000A LINE FEED` (`LF`) نشان‌دهنده یک خط جدید است. باید دقت کنید، چون این یعنی مثال زیر در دو خط نمایش داده می‌شود:
 
 ### HTML
 
@@ -62,7 +60,7 @@ multiline title">
 
 ### JavaScript
 
-می‌توانیم ویژگی `title` را پرس‌وجو کنیم و آن را در عنصر `<pre>` خالی به‌صورت زیر نمایش دهیم:
+می‌توانیم attribute `title` را دریافت کرده و آن را در عنصر خالی `<pre>` به این صورت نمایش دهیم:
 
 ```js
 const span = document.querySelector("span");
@@ -70,11 +68,15 @@ const output = document.querySelector("#output");
 output.textContent = span.title;
 ```
 
-## ارث‌بری ویژگی title
+### نتیجه
 
-اگر عنصری ویژگی `title` نداشته باشد، آن را از والد خود به ارث می‌برد؛ والد نیز ممکن است از والد خود به ارث ببرد و همین‌طور ادامه پیدا کند.
+{{EmbedLiveSample('Multiline_titles')}}
 
-اگر این ویژگی برابر رشته‌ی خالی تنظیم شود، یعنی `title`های اجداد مرتبط نیستند و نباید در tooltip این عنصر استفاده شوند.
+## ارث‌بری attribute عنوان
+
+اگر عنصری attribute `title` نداشته باشد، آن را از parent خودش به ارث می‌برد؛ و parent هم به نوبه خود ممکن است آن را از parent خودش به ارث ببرد و همین طور ادامه پیدا می‌کند.
+
+اگر این attribute برابر با رشته خالی (`""`) باشد، یعنی titleهای ancestorها نامرتبط هستند و نباید در tooltip این عنصر استفاده شوند.
 
 ### HTML
 
@@ -85,13 +87,32 @@ output.textContent = span.title;
 </div>
 ```
 
-این مشکل به دلیل پشتیبانی نامنظم مرورگرها و همچنین تحلیل اضافی‌ای است که فناوری کمکی روی صفحهٔ رندر شده توسط مرورگر انجام می‌دهد. اگر به اثری شبیه tooltip نیاز دارید، بهتر است از [use a more accessible technique](https://inclusive-components.design/tooltips-toggletips/) استفاده کنید که با روش‌های مرور بالا قابل دسترسی است.
+### نتیجه
+
+{{EmbedLiveSample('Title_attribute_inheritance')}}
+
+## نکات دسترس‌پذیری
+
+استفاده از attribute `title` برای این گروه‌ها بسیار مشکل‌ساز است:
+
+- افرادی که فقط از دستگاه‌های لمسی استفاده می‌کنند
+- افرادی که با صفحه‌کلید کار می‌کنند
+- افرادی که از فناوری‌های کمکی مثل screen reader یا ذره‌بین استفاده می‌کنند
+- افرادی که اختلال در مهارت‌های حرکتی ظریف دارند
+- افرادی که مشکلات شناختی دارند
+
+این مشکل به‌دلیل پشتیبانی ناسازگار browser ها رخ می‌دهد و با تجزیه‌ی صفحه‌ی رندر شده توسط فناوری‌های کمکی (assistive technology) تشدید می‌شود. اگر افکت tooltip مد نظر است، بهتر است از [تکنیک دسترس‌پذیرتری](https://inclusive-components.design/tooltips-toggletips/) استفاده کنید که با روش‌های مرور ذکرشده قابل دسترسی باشد.
 
 - [3.2.5.1. The title attribute | W3C HTML 5.2: 3. Semantics, structure, and APIs of HTML documents](https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute)
 - [Using the HTML title attribute – updated | Vispero](https://vispero.com/resources/using-the-html-title-attribute-updated/)
 - [Tooltips & Toggletips - Inclusive Components](https://inclusive-components.design/tooltips-toggletips/)
 - [The Trials and Tribulations of the Title Attribute - 24 Accessibility](https://www.24a11y.com/2017/the-trials-and-tribulations-of-the-title-attribute/)
 
+## مشخصات
+
+## سازگاری مرورگر
+
 ## همچنین ببینید
 
-- همهٔ [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes).
+- همه‌ی [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes).
+- `HTMLElement.title` که این attribute را بازتاب می‌دهد.
