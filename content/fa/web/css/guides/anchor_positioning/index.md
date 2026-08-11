@@ -4,14 +4,12 @@ source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_position
 translated_by: "n8n + AI"
 ---
 
-# CSS anchor positioning
+ماژول **CSS anchor positioning** قابلیت‌هایی را تعریف می‌کند که به کمک آن‌ها می‌توانید المان‌ها را به یکدیگر متصل کنید. برخی المان‌ها به عنوان **المان‌های anchor** تعریف می‌شوند؛ سپس **المان‌های anchor-positioned** می‌توانند با توجه به اندازه و موقعیت المان‌های anchor که به آن‌ها متصل شده‌اند، اندازه و موقعیت بگیرند.
 
-ماژول **CSS anchor positioning** امکاناتی را فراهم می‌کند که به شما اجازه می‌دهد عناصر را به یکدیگر متصل کنید. برخی عناصر به عنوان **anchor elements** (عناصر لنگر) تعریف می‌شوند؛ **anchor-positioned elements** (عناصر دارای موقعیت‌دهی لنگر) می‌توانند اندازه و موقعیت‌شان بر اساس اندازه و مکان عناصر لنگر مربوطه تنظیم شود.
+علاوه بر این، این مشخصات سازوکارهایی را فقط با CSS ارائه می‌دهد که با آن‌ها می‌توانید:
 
-علاوه بر این، این مشخصات مکانیزم‌های صرفاً CSS ارائه می‌دهد برای:
-
-- تعیین مجموعه‌ای از موقعیت‌های جایگزین برای یک عنصر لنگرشده؛ وقتی موقعیت پیش‌فرض رندر باعث سرریز شدن از بلاک شامل‌کننده یا خارج از صفحه شود، مرورگر تلاش می‌کند عنصر را در موقعیت‌های جایگزین رندر کند.
-- اعلام شرایطی که در آن عناصر دارای موقعیت‌دهی لنگر باید مخفی شوند، در موقعیت‌هایی که اتصال آن‌ها به عناصر لنگر مناسب نیست.
+- مجموعه‌ای از موقعیت‌های جایگزین برای یک المان anchor تعیین کنید؛ اگر موقعیت رندر پیش‌فرض باعث شود که المان از containing block خود سرریز کند یا خارج از صفحه رندر شود، مرورگر تلاش می‌کند المان anchor را در موقعیت‌های جایگزین رندر کند.
+- شرایطی را اعلام کنید که بر اساس آن‌ها، المان‌های anchor-positioned در مواقعی که اتصال آن‌ها به المان‌های anchor مناسب نیست، پنهان شوند.
 
 ## مرجع
 
@@ -26,7 +24,7 @@ translated_by: "n8n + AI"
 - `position-try` (shorthand)
 - `position-visibility`
 
-### At-rules و توصیفگرها
+### At-rule‌ها و توصیفگرها
 
 - `@position-try`
 
@@ -35,7 +33,7 @@ translated_by: "n8n + AI"
 - [`anchor()`](/en-US/docs/Web/CSS/Reference/Values/anchor)
 - [`anchor-size()`](/en-US/docs/Web/CSS/Reference/Values/anchor-size)
 
-### انواع داده و مقادیر
+### انواع داده و مقدارها
 
 - [`anchor-center`](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using#centering_on_the_anchor_using_anchor-center)
 - [`<anchor-side>`](/en-US/docs/Web/CSS/Reference/Values/anchor#anchor-side)
@@ -46,81 +44,76 @@ translated_by: "n8n + AI"
 
 ### ویژگی‌های HTML
 
-- [`anchor`](/en-US/docs/Web/HTML/Reference/Global_attributes/anchor)
+- [`anchor`](/en-US/docs/Web/HTML/Reference/Global_attributes/anchor) (غیراستاندارد)
 
 ### رابط‌ها
 
 - `CSSPositionTryDescriptors`
 - `CSSPositionTryRule`
-- `HTMLElement.anchorElement`
+- `HTMLElement.anchorElement` (غیراستاندارد)
 
 ## راهنماها
 
-- [استفاده از CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using)
-  - : راهنمای مقدماتی برای مفاهیم اساسی موقعیت‌یابی لنگر، شامل ارتباط دادن، موقعیت‌دهی و تنظیم اندازه عناصر نسبت به لنگرشان.
+- [Using CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using)
+  - : راهنمای مقدماتی برای مفاهیم اساسی موقعیت‌دهی anchor؛ از جمله ارتباط برقرار کردن، موقعیت‌دهی و اندازه‌دهی المان‌ها نسبت به anchor آن‌ها.
 
-- [گزینه‌های جایگزین و پنهان‌سازی شرطی برای سرریز](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Try_options_hiding)
-  - : راهنمایی برای مکانیزم‌هایی که CSS anchor positioning برای جلوگیری از سرریز شدن عناصر دارای موقعیت‌دهی لنگر از عناصر شامل‌کننده یا viewport فراهم می‌کند، شامل گزینه‌های جایگزین position-try و پنهان‌سازی شرطی عناصر.
+- [Fallback options and conditional hiding for overflow](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Try_options_hiding)
+  - : راهنمایی درباره سازوکارهایی که CSS anchor positioning برای جلوگیری از سرریز شدن المان‌های anchor-positioned از عناصر شامل‌کننده یا viewport ارائه می‌دهد؛ از جمله گزینه‌های fallback موقعیت و مخفی کردن شرطی المان‌ها.
 
-- [استفاده از container queries لنگرشده](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Anchored_container_queries)
-  - : توضیح می‌دهد که چگونه از container queries لنگرشده برای اعمال شرطی استایل‌ها به عناصر دارای موقعیت‌دهی لنگر استفاده کنید، بسته به اینکه کدام گزینه‌های جایگزین position-try روی آن‌ها فعال هستند.
+- [Using anchored container queries](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Anchored_container_queries)
+  - : توضیح می‌دهد که چگونه از container queries متصل به anchor استفاده کنید تا استایل‌ها را به‌صورت شرطی روی المان‌های anchor-positioned اعمال کنید، بسته به اینکه کدام گزینه‌های fallback موقعیت روی آن‌ها فعال است.
 
 ## مفاهیم مرتبط
 
-- ماژول [CSS logical properties and values](/en-US/docs/Web/CSS/Guides/Logical_properties_and_values):
-  - [inset-block-start](/en-US/docs/Web/CSS/inset-block-start)
-  - [inset-block-end](/en-US/docs/Web/CSS/inset-block-end)
-  - [inset-inline-start](/en-US/docs/Web/CSS/inset-inline-start)
-  - [inset-inline-end](/en-US/docs/Web/CSS/inset-inline-end)
-  - [inset-block](/en-US/docs/Web/CSS/inset-block)
-  - [inset-inline](/en-US/docs/Web/CSS/inset-inline)
-  - [inset](/en-US/docs/Web/CSS/inset) (shorthand)
-  - [inline-size](/en-US/docs/Web/CSS/inline-size)
-  - [min-block-size](/en-US/docs/Web/CSS/min-block-size)
-  - [min-inline-size](/en-US/docs/Web/CSS/min-inline-size)
-  - [block-size](/en-US/docs/Web/CSS/block-size)
-  - [max-block-size](/en-US/docs/Web/CSS/max-block-size)
-  - [max-inline-size](/en-US/docs/Web/CSS/max-inline-size)
-  - [margin-block](/en-US/docs/Web/CSS/margin-block)
-  - [margin-block-end](/en-US/docs/Web/CSS/margin-block-end)
-  - [margin-block-start](/en-US/docs/Web/CSS/margin-block-start)
-  - [margin-inline](/en-US/docs/Web/CSS/margin-inline)
-  - [margin-inline-end](/en-US/docs/Web/CSS/margin-inline-end)
-  - [margin-inline-start](/en-US/docs/Web/CSS/margin-inline-start)
-  - [Inset properties](/en-US/docs/Glossary/Inset_properties) — مدخل واژه‌نامه
-
-- ماژول [CSS positioned layout](/en-US/docs/Web/CSS/Guides/Positioned_layout):
-  - [top](/en-US/docs/Web/CSS/top)
-  - [left](/en-US/docs/Web/CSS/left)
-  - [bottom](/en-US/docs/Web/CSS/bottom)
-  - [right](/en-US/docs/Web/CSS/right)
-
-- ماژول [CSS box model](/en-US/docs/Web/CSS/Guides/Box_model):
-  - [width](/en-US/docs/Web/CSS/width)
-  - [height](/en-US/docs/Web/CSS/height)
-  - [min-width](/en-US/docs/Web/CSS/min-width)
-  - [min-height](/en-US/docs/Web/CSS/min-height)
-  - [max-width](/en-US/docs/Web/CSS/max-width)
-  - [max-height](/en-US/docs/Web/CSS/max-height)
-  - [margin](/en-US/docs/Web/CSS/margin)
-  - [margin-bottom](/en-US/docs/Web/CSS/margin-bottom)
-  - [margin-left](/en-US/docs/Web/CSS/margin-left)
-  - [margin-right](/en-US/docs/Web/CSS/margin-right)
-  - [margin-top](/en-US/docs/Web/CSS/margin-top)
-
-- ماژول [CSS box alignment](/en-US/docs/Web/CSS/Guides/Box_alignment):
-  - [align-items](/en-US/docs/Web/CSS/align-items)
-  - [align-self](/en-US/docs/Web/CSS/align-self)
-  - [justify-items](/en-US/docs/Web/CSS/justify-items)
-  - [justify-self](/en-US/docs/Web/CSS/justify-self)
-  - [place-items](/en-US/docs/Web/CSS/place-items)
-  - [place-self](/en-US/docs/Web/CSS/place-self)
-
-## مشخصات
+- [خواص و مقادیر منطقی CSS](/en-US/docs/Web/CSS/Guides/Logical_properties_and_values) ماژول:
+  - `inset-block-start`
+  - `inset-block-end`
+  - `inset-inline-start`
+  - `inset-inline-end`
+  - `inset-block`
+  - `inset-inline`
+  - `inset` (shorthand)
+  - `inline-size`
+  - `min-block-size`
+  - `min-inline-size`
+  - `block-size`
+  - `max-block-size`
+  - `max-inline-size`
+  - `margin-block`
+  - `margin-block-end`
+  - `margin-block-start`
+  - `margin-inline`
+  - `margin-inline-end`
+  - `margin-inline-start`
+  - [Inset properties](/en-US/docs/Glossary/Inset_properties) — اصطلاح واژه‌نامه
+- [چیدمان موقعیت‌دار CSS](/en-US/docs/Web/CSS/Guides/Positioned_layout) ماژول:
+  - `top`
+  - `left`
+  - `bottom`
+  - `right`
+- [مدل جعبه CSS](/en-US/docs/Web/CSS/Guides/Box_model) ماژول:
+  - `width`
+  - `height`
+  - `min-width`
+  - `min-height`
+  - `max-width`
+  - `max-height`
+  - `margin`
+  - `margin-bottom`
+  - `margin-left`
+  - `margin-right`
+  - `margin-top`
+- [تراز جعبه CSS](/en-US/docs/Web/CSS/Guides/Box_alignment) ماژول:
+  - `align-items`
+  - `align-self`
+  - `justify-items`
+  - `justify-self`
+  - `place-items`
+  - `place-self`
 
 ## همچنین ببینید
 
-- ماژول [CSS scroll anchoring](/en-US/docs/Web/CSS/Guides/Scroll_anchoring)
-- [آموزش: CSS positioning](/en-US/docs/Learn_web_development/Core/CSS_layout/Positioning)
-- ماژول [CSS logical properties and values](/en-US/docs/Web/CSS/Guides/Logical_properties_and_values)
-- [آموزش: تعیین اندازه المان‌ها در CSS](/en-US/docs/Learn_web_development/Core/Styling_basics/Sizing)
+- ماژول [لنگر انداختن اسکرول CSS](/en-US/docs/Web/CSS/Guides/Scroll_anchoring)
+- [یادگیری: موقعیت‌دهی CSS](/en-US/docs/Learn_web_development/Core/CSS_layout/Positioning)
+- ماژول [خواص و مقادیر منطقی CSS](/en-US/docs/Web/CSS/Guides/Logical_properties_and_values)
+- [یادگیری: اندازه‌دهی عناصر در CSS](/en-US/docs/Learn_web_development/Core/Styling_basics/Sizing)
