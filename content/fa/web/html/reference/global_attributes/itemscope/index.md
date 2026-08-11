@@ -4,61 +4,32 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attr
 translated_by: "n8n + AI"
 ---
 
-**`itemscope`** یک ویژگی سراسری (global attribute) از نوع boolean است که دامنهٔ ابرداده‌های مرتبط را تعریف می‌کند. با قرار دادن ویژگی `itemscope` روی یک عنصر، یک آیتم جدید ایجاد می‌شود که منجر به تولید تعدادی جفت‌نام-مقدار مرتبط با آن عنصر می‌شود.
+**`itemscope`** یک ویژگی (attribute) سراسری از نوع boolean است که محدودهٔ ابرداده‌های مرتبط را مشخص می‌کند. با تنظیم `itemscope` روی یک عنصر، یک آیتم جدید ایجاد می‌شود که شامل مجموعه‌ای از جفت‌های نام-مقدار (name-value pairs) مرتبط با آن عنصر است.
 
-ویژگی مرتبط [`itemtype`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemtype) برای مشخص کردن URL معتبر یک واژگان (مانند [schema.org](https://schema.org/)) استفاده می‌شود که آیتم و بافت ویژگی‌های آن را توصیف می‌کند. در تمام مثال‌های زیر، واژگان مورد استفاده از [schema.org](https://schema.org/) است.
+ویژگی مرتبط دیگر، [`itemtype`](/fa/docs/Web/HTML/Reference/Global_attributes/itemtype)، برای تعیین URL معتبر یک واژگان (vocabulary) مانند [schema.org](https://schema.org/) استفاده می‌شود که زمینهٔ آیتم و ویژگی‌های آن را توصیف می‌کند. در تمام مثال‌های زیر، واژگان از [schema.org](https://schema.org/) گرفته شده است.
 
-هر عنصر HTML می‌تواند ویژگی `itemscope` داشته باشد. یک عنصر `itemscope` که `itemtype` مرتبط ندارد، باید حتماً `itemref` مرتبط داشته باشد.
+هر عنصر HTML می‌تواند دارای `itemscope` باشد. یک عنصر دارای `itemscope` که `itemtype` هم ندارد، باید حتماً `itemref` داشته باشد.
 
-> [!NOTE]
-> اطلاعات بیشتر درباره ویژگی‌های `itemtype` در <https://schema.org/Thing>
+> **توجه:** اطلاعات بیشتر دربارهٔ ویژگی `itemtype` را در <https://schema.org/Thing> ببینید.
 
 ## نکات استفاده
 
 ### ویژگی‌های id در itemscope
 
-وقتی ویژگی `itemscope` را روی یک عنصر قرار می‌دهید، یک آیتم جدید ایجاد می‌شود. این آیتم از گروهی از جفت‌نام-مقدار تشکیل شده است. برای عناصری که هم `itemscope` و هم `itemtype` دارند، می‌توانید یک ویژگی [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) نیز مشخص کنید. از ویژگی `id` می‌توان برای تنظیم یک شناسهٔ جهانی برای آیتم جدید استفاده کرد. شناسهٔ جهانی به آیتم اجازه می‌دهد با دیگر آیتم‌های موجود در صفحات وب ارتباط برقرار کند.
+وقتی `itemscope` را روی یک عنصر قرار می‌دهید، یک آیتم جدید ساخته می‌شود. این آیتم شامل گروهی از جفت‌های نام-مقدار است. برای عناصری که هم `itemscope` و هم `itemtype` دارند، می‌توانید ویژگی [`id`](/fa/docs/Web/HTML/Reference/Global_attributes/id) را نیز مشخص کنید. از `id` برای تعیین یک شناسهٔ سراسری (global identifier) برای آیتم جدید استفاده می‌شود. این شناسه به آیتم اجازه می‌دهد با سایر آیتم‌های موجود در صفحات دیگر وب ارتباط برقرار کند.
 
 ## مثال‌ها
 
 ### نمایش داده‌های ساختاریافته برای یک فیلم
 
-مثال زیر `itemtype` را برابر `http://schema.org/Movie` قرار داده و چهار ویژگی `itemprop` مرتبط را مشخص کرده است.
+مثال زیر `itemtype` را به صورت `http://schema.org/Movie` تعیین کرده و چهار ویژگی `itemprop` مرتبط را مشخص می‌کند.
 
-<table class="standard-table">
-  <tbody>
-    <tr>
-      <td rowspan="6">itemscope</td>
-      <td>Itemtype</td>
-      <td colspan="2">Movie</td>
-    </tr>
-    <tr>
-      <td>itemprop</td>
-      <td>(itemprop name)</td>
-      <td>(itemprop value)</td>
-    </tr>
-    <tr>
-      <td>itemprop</td>
-      <td>director</td>
-      <td>James Cameron</td>
-    </tr>
-    <tr>
-      <td>itemprop</td>
-      <td>genre</td>
-      <td>Science Fiction</td>
-    </tr>
-    <tr>
-      <td>itemprop</td>
-      <td>name</td>
-      <td>Avatar</td>
-    </tr>
-    <tr>
-      <td>itemprop</td>
-      <td>Trailer</td>
-      <td>https://youtu.be/0AY1XIkX7bY</td>
-    </tr>
-  </tbody>
-</table>
+| `itemscope` | `itemtype` | `itemprop` (نام ویژگی) | `itemprop` (مقدار ویژگی) |
+|-------------|------------|------------------------|---------------------------|
+| ✅          | Movie      | director               | James Cameron             |
+|             |            | genre                  | Science Fiction           |
+|             |            | name                   | Avatar                    |
+|             |            | trailer                | https://youtu.be/0AY1XIkX7bY |
 
 ```html
 <div itemscope itemtype="https://schema.org/Movie">
@@ -74,13 +45,7 @@ translated_by: "n8n + AI"
 
 ### نمایش داده‌های ساختاریافته برای یک دستور پخت
 
-در مثال زیر چهار ویژگی `itemscope` وجود دارد. هر ویژگی `itemscope` دامنهٔ ویژگی `itemtype` متناظر خود را تعیین می‌کند. `itemtype`های `Recipe`، `AggregateRating` و `NutritionInformation` در این مثال بخشی از داده‌های ساختاریافتهٔ [schema.org](https://www.schema.org/) برای یک دستور پخت هستند که توسط اولین `itemtype` یعنی `http://schema.org/Recipe` مشخص شده است.
-
-```html
-<!-- کد مثال دوم که فعلاً در مستند اصلی موجود نیست -->
-```
-
-مثالی از ساختار میکرودیتا برای یک دستور پخت (Recipe) در جدول زیر آمده است. این جدول نحوهٔ استفاده از ویژگی‌های `itemscope`, `itemtype` و `itemprop` را برای تعریف داده‌های ساختاریافته نشان می‌دهد.
+در مثال زیر چهار ویژگی `itemscope` وجود دارد. هر `itemscope` محدودهٔ `itemtype` متناظر خود را مشخص می‌کند. `itemtype`های `Recipe`، `AggregateRating` و `NutritionInformation` در این مثال بخشی از داده‌های ساختاریافته [schema.org](https://www.schema.org/) برای یک دستور پخت هستند که توسط اولین `itemtype` یعنی `http://schema.org/Recipe` مشخص شده است.
 
 <table class="standard-table">
   <tbody>
@@ -198,9 +163,11 @@ translated_by: "n8n + AI"
 </table>
 
 > [!NOTE]
-> ابزار مفیدی برای استخراج ساختارهای میکرودیتا از HTML، [Rich Results Testing Tool](https://search.google.com/test/rich-results) گوگل است. آن را روی HTML نشان‌داده‌شده در همین مثال امتحان کنید.
+> ابزار کاربردی برای استخراج ساختارهای microdata از HTML، ابزار [Rich Results Testing Tool](https://search.google.com/test/rich-results) گوگل است. آن را روی HTML نشان‌داده‌شده امتحان کنید.
 
-```markdown
+#### HTML
+
+```html
 <div itemscope itemtype="https://schema.org/Recipe">
   <h2 itemprop="name">Grandma's Holiday Apple Pie</h2>
   <img
@@ -269,10 +236,9 @@ translated_by: "n8n + AI"
 
 ## همچنین ببینید
 
-- [سایر ویژگی‌های سراسری](/en-US/docs/Web/HTML/Reference/Global_attributes)
-- سایر ویژگی‌های سراسری مرتبط با Microdata:
+- [Other different global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes)
+- سایر ویژگی‌های سراسری (global attributes) مرتبط با microdata:
   - [`itemid`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemid)
   - [`itemprop`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemprop)
   - [`itemref`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemref)
   - [`itemtype`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemtype)
-```
