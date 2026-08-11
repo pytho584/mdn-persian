@@ -4,7 +4,7 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/sp
 translated_by: "n8n + AI"
 ---
 
-The **`<span>`** [HTML](/en-US/docs/Web/HTML) element یک کانتینر توکار (inline) عمومی برای محتوای نحوی (phrasing content) است که ذاتاً معنی مشخصی ندارد. از آن می‌توان برای گروه‌بندی عناصر به‌منظور اعمال استایل (با استفاده از خصوصیت‌های [`class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) یا [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id)) یا برای زمانی که عناصر مقادیر صفات مشترک دارند — مثل [`lang`](/en-US/docs/Web/HTML/Reference/Global_attributes/lang) — استفاده کرد. `<span>` تنها زمانی باید به‌کار رود که هیچ عنصر معنایی (semantic) دیگری مناسب نباشد. `<span>` بسیار شبیه عنصر `<div>` است، اما `<div>` یک [block-level element](/en-US/docs/Glossary/Block-level_content) است در حالی که `<span>` یک [inline-level element](/en-US/docs/Glossary/Inline-level_content) محسوب می‌شود.
+عنصر **`<span>`** [HTML](/en-US/docs/Web/HTML) یک ظرف (container) درون‌خطی (inline) عمومی برای محتوای phrasing است و به خودی خود معنای خاصی را نشان نمی‌دهد. می‌توان از آن برای گروه‌بندی عناصر به‌منظور استایل‌دادن (با استفاده از attributeهای [`class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) یا [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id)) یا به دلیل اشتراک در مقدار attributeهایی مانند [`lang`](/en-US/docs/Web/HTML/Reference/Global_attributes/lang) استفاده کرد. فقط زمانی باید از آن استفاده کرد که هیچ عنصر معنایی دیگری مناسب نباشد. `<span>` شباهت زیادی به عنصر `<div>` دارد، اما `<div>` یک عنصر [block-level](/en-US/docs/Glossary/Block-level_content) است در حالی که `<span>` یک عنصر [inline-level](/en-US/docs/Glossary/Inline-level_content) است.
 
 ```html interactive-example
 <p>
@@ -25,13 +25,13 @@ span.ingredient {
 }
 ```
 
-## Attributes
+## ویژگی‌ها
 
-این عنصر فقط شامل [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes) است.
+این عنصر فقط [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes) را شامل می‌شود.
 
-## Example
+## مثال
 
-### Example 1
+### مثال ۱
 
 #### HTML
 
@@ -39,9 +39,9 @@ span.ingredient {
 <p><span>Some text</span></p>
 ```
 
-#### Result
+#### نتیجه
 
-### Example 2
+### مثال ۲
 
 #### HTML
 
@@ -61,9 +61,9 @@ li span {
 }
 ```
 
-#### Result
+#### نتیجه
 
-## Technical summary
+## خلاصه فنی
 
 <table class="properties">
   <tbody>
@@ -83,7 +83,7 @@ li span {
       </td>
     </tr>
     <tr>
-      <th scope="row">Permitted content</th>
+      <th scope="row">محتوای مجاز</th>
       <td>
         <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content"
           >Phrasing content</a
@@ -91,19 +91,25 @@ li span {
       </td>
     </tr>
     <tr>
-      <th scope="row">Tag omission</th>
-      <td>هیچ‌یک؛ تگ شروع و پایان هر دو الزامی هستند.</td>
+      <th scope="row">حذف تگ</th>
+      <td>هیچ؛ هم تگ شروع و هم تگ پایانی الزامی هستند.</td>
     </tr>
     <tr>
-      <th scope="row">Permitted parents</th>
+      <th scope="row">والدین مجاز</th>
       <td>
-        هر عنصری که <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content"
-          >phrasing content</a> را بپذیرد، یا هر عنصری که <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
-          >flow content</a> را بپذیرد.
+        هر عنصری که
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content"
+          >phrasing content</a
+        >
+        را بپذیرد، یا هر عنصری که
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
+          >flow content</a
+        >
+        را بپذیرد.
       </td>
     </tr>
     <tr>
-      <th scope="row">Implicit ARIA role</th>
+      <th scope="row">نقش ARIA ضمنی</th>
       <td>
         <a href="https://w3c.github.io/html-aria/#dfn-no-corresponding-role"
           >No corresponding role</a
@@ -111,22 +117,22 @@ li span {
       </td>
     </tr>
     <tr>
-      <th scope="row">Permitted ARIA roles</th>
-      <td>Any</td>
+      <th scope="row">نقش‌های ARIA مجاز</th>
+      <td>هر نقش</td>
     </tr>
     <tr>
-      <th scope="row">DOM interface</th>
+      <th scope="row">رابط DOM</th>
       <td>
-        HTMLSpanElement
+        <code>HTMLSpanElement</code>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Specifications
+## مشخصات
 
-## Browser compatibility
+## سازگاری مرورگر
 
-## See also
+## همچنین ببینید
 
-- HTML <div> element
+- عنصر `<div>` در HTML
