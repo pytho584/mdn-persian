@@ -4,58 +4,31 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/li
 translated_by: "n8n + AI"
 ---
 
-عنصر **`<li>`** در [HTML](/en-US/docs/Web/HTML) برای نمایش یک آیتم در فهرست استفاده می‌شود. این عنصر باید داخل یک عنصر والد قرار بگیرد: یک فهرست مرتب (`<ol>`)، یک فهرست نامرتب (`<ul>`)، یا یک منو (`<menu>`). در منوها و فهرست‌های نامرتب، آیتم‌ها معمولاً با نقطه (بولت) نمایش داده می‌شوند. در فهرست‌های مرتب، معمولاً با یک شمارندهٔ صعودی در سمت چپ نمایش داده می‌شوند؛ مثل عدد یا حرف.
-
-```html interactive-example
-<p>Apollo astronauts:</p>
-
-<ul>
-  <li>Neil Armstrong</li>
-  <li>Alan Bean</li>
-  <li>Peter Conrad</li>
-  <li>Edgar Mitchell</li>
-  <li>Alan Shepard</li>
-</ul>
-```
-
-```css interactive-example
-p,
-li {
-  font:
-    1rem "Fira Sans",
-    sans-serif;
-}
-
-p {
-  font-weight: bold;
-}
-```
+عنصر **`<li>`** در [HTML](/en-US/docs/Web/HTML) برای نمایش یک آیتم در لیست استفاده می‌شود. این عنصر حتماً باید درون یک عنصر والد قرار گیرد: یک لیست مرتب (`<ol>`) ، یک لیست نامرتب (`<ul>`) یا یک منو (`<menu>`). در منوها و لیست‌های نامرتب، آیتم‌های لیست معمولاً با نقاط گلوله (bullet points) نمایش داده می‌شوند. در لیست‌های مرتب، معمولاً یک شمارنده صعودی (مانند عدد یا حرف) در سمت چپ آن‌ها نشان داده می‌شود.
 
 ## ویژگی‌ها (Attributes)
 
-این عنصر شامل [ویژگی‌های سراسری (global attributes)](/en-US/docs/Web/HTML/Reference/Global_attributes) می‌شود.
+این عنصر شامل [ویژگی‌های سراسری (global attributes)](/en-US/docs/Web/HTML/Reference/Global_attributes) است.
 
 - `value`
-  - : این attribute عدد صحیح، مقدار ترتیبی فعلی آیتم فهرست را مشخص می‌کند، همان‌طور که عنصر `<ol>` تعریف کرده است. تنها مقدار مجاز برای این attribute عدد است؛ حتی اگر فهرست با اعداد رومی یا حروف نمایش داده شود. آیتم‌هایی که بعد از این آیتم قرار می‌گیرند، شماره‌گذاری را از این مقدار ادامه می‌دهند. این attribute برای فهرست‌های نامرتب (`<ul>`) یا منوها (`<menu>`) معنایی ندارد.
-
-- `type` (منسوخ‌شده)
-  - : این attribute کاراکتری، نوع شماره‌گذاری را مشخص می‌کند:
-    - `a`: حروف کوچک انگلیسی
-    - `A`: حروف بزرگ انگلیسی
+  - : این ویژگی از نوع عدد صحیح (integer) است و مقدار ترتیبی فعلی آیتم لیست را مشخص می‌کند که توسط عنصر `<ol>` تعریف می‌شود. تنها مقدار مجاز برای این ویژگی یک عدد است، حتی اگر لیست با اعداد رومی یا حروف نمایش داده شود. آیتم‌های لیست بعد از این آیتم، شماره‌گذاری را از این مقدار ادامه می‌دهند. این ویژگی برای لیست‌های نامرتب (`<ul>`) یا منوها (`<menu>`) معنایی ندارد.
+- `type` (منسوخ)
+  - : این ویژگی از نوع کاراکتری است و نوع شماره‌گذاری را مشخص می‌کند:
+    - `a`: حروف کوچک (lowercase)
+    - `A`: حروف بزرگ (uppercase)
     - `i`: اعداد رومی کوچک
     - `I`: اعداد رومی بزرگ
     - `1`: اعداد
 
-    این نوع، نوع شماره‌گذاری عنصر والد `<ol>` را (در صورت وجود) لغو می‌کند.
+    این نوع شماره‌گذاری، نوع تعیین‌شده توسط عنصر والد `<ol>` (در صورت وجود) را نادیده می‌گیرد.
 
-    > [!NOTE]
-    > این attribute منسوخ شده است؛ به جای آن از ویژگی CSS `list-style-type` استفاده کنید.
+    > **توجه:** این ویژگی منسوخ شده است. به جای آن از ویژگی CSS `list-style-type` استفاده کنید.
 
 ## مثال‌ها
 
 برای مثال‌های بیشتر، صفحات `<ol>` و `<ul>` را ببینید.
 
-### فهرست مرتب
+### لیست مرتب
 
 ```html
 <ol>
@@ -65,9 +38,7 @@ p {
 </ol>
 ```
 
-#### نتیجه
-
-### فهرست مرتب با مقدار سفارشی
+### لیست مرتب با مقدار سفارشی
 
 ```html
 <ol type="I">
@@ -77,9 +48,7 @@ p {
 </ol>
 ```
 
-#### نتیجه
-
-### فهرست نامرتب
+### لیست نامرتب
 
 ```html
 <ul>
@@ -89,68 +58,20 @@ p {
 </ul>
 ```
 
-#### نتیجه
-
-## خلاصه فنی
-
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories">رده‌های محتوا</a>
-      </th>
-      <td>هیچکدام.</td>
-    </tr>
-    <tr>
-      <th scope="row">محتوای مجاز</th>
-      <td>
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content">Flow content</a>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">حذف تگ</th>
-      <td>
-        اگر بعد از آیتم لیست بلافاصله یک <code>&lt;li&gt;</code> دیگر بیاید، یا اگر در عنصر والد محتوای دیگری نباشد، تگ بسته شدن می‌تواند حذف شود.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">والدین مجاز</th>
-      <td>
-        یک عنصر <code>&lt;ul&gt;</code>، <code>&lt;ol&gt;</code> یا <code>&lt;menu&gt;</code>. اگرچه استفاده معتبری نیست، <code>&lt;dir&gt;</code> منسوخ نیز می‌تواند والد باشد.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">نقش ARIA ضمنی</th>
-      <td>
-        <code><a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listitem_role">listitem</a></code> زمانی که فرزند <code><a href="/en-US/docs/Web/HTML/Reference/Elements/ol">ol</a></code>، <code><a href="/en-US/docs/Web/HTML/Reference/Elements/ul">ul</a></code> یا <code><a href="/en-US/docs/Web/HTML/Reference/Elements/menu">menu</a></code> باشد.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">نقش‌های ARIA مجاز</th>
-      <td>
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role"><code>menuitem</code></a>،
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a>،
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role"><code>menuitemradio</code></a>، <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role"><code>option</code></a>،
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/none_role"><code>none</code></a>، <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role"><code>presentation</code></a>،
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role"><code>radio</code></a>، <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role"><code>separator</code></a>،
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role"><code>tab</code></a>، <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treeitem_role"><code>treeitem</code></a>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">رابط DOM</th>
-      <td><code>HTMLLIElement</code></td>
-    </tr>
-  </tbody>
-</table>
-
-## مشخصات
-
-## سازگاری با مرورگرها
+| ویژگی | مقدار |
+| --- | --- |
+| رده‌های محتوا | هیچ. |
+| محتوای مجاز | محتوای جریانی (Flow content). |
+| حذف تگ | تگ پایانی را می‌توان حذف کرد اگر آیتم لیست بلافاصله با یک عنصر `<li>` دیگر دنبال شود، یا اگر محتوای دیگری در عنصر والد وجود نداشته باشد. |
+| والدهای مجاز | یک عنصر `<ul>`، `<ol>` یا `<menu>`. اگرچه استفادهٔ استاندارد نیست، عنصر منسوخ `<dir>` نیز می‌تواند والد باشد. |
+| نقش ARIA ضمنی | `listitem` زمانی که فرزند `ol`، `ul` یا `menu` باشد. |
+| نقش‌های ARIA مجاز | `menuitem`، `menuitemcheckbox`، `menuitemradio`، `option`، `none`، `presentation`، `radio`، `separator`، `tab`، `treeitem` |
+| رابط DOM | `HTMLLIElement` |
 
 ## جستارهای وابسته
 
-- سایر عناصر HTML مرتبط با لیست: `<ul>`، `<ol>`، `<menu>` و `<dir>` منسوخ
-- ویژگی‌های CSS که می‌توانند برای استایل‌دهی `<li>` مفید باشند:
-  - ویژگی `list-style` برای انتخاب نحوه نمایش شماره‌ها
-  - [شمارنده‌های CSS (CSS counters)](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Counter_styles/Using_counters) برای مدیریت لیست‌های تو در تو
-  - ویژگی `margin` برای کنترل فاصله از حاشیه آیتم لیست
+- سایر عناصر HTML مرتبط با لیست: [`<ul>`](/en-US/docs/Web/HTML/Reference/Elements/ul)، [`<ol>`](/en-US/docs/Web/HTML/Reference/Elements/ol)، [`<menu>`](/en-US/docs/Web/HTML/Reference/Elements/menu)، و عنصر منسوخ [`<dir>`](/en-US/docs/Web/HTML/Reference/Elements/dir).
+- ویژگی‌های CSS که می‌توانند برای استایل‌دهی به عنصر `<li>` مفید باشند:
+  - ویژگی `list-style`، برای انتخاب نحوهٔ نمایش شماره ترتیبی.
+  - [شمارنده‌های CSS](/en-US/docs/Web/CSS/Guides/Counter_styles/Using_counters)، برای مدیریت لیست‌های تو در تو.
+  - ویژگی `margin`، برای کنترل تورفتگی آیتم لیست.
