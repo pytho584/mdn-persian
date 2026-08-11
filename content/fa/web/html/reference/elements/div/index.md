@@ -4,76 +4,46 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/di
 translated_by: "n8n + AI"
 ---
 
-The **`<div>`** [HTML](/en-US/docs/Web/HTML) element is the generic container for flow content. It has no effect on the content or layout until styled in some way using CSS (e.g., styling is directly applied to it, or some kind of layout model like [Flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) is applied to its parent element).
+عنصر `<div>` یک محفظه (container) عمومی برای محتوای جریان (flow content) در HTML است. این عنصر تا زمانی که با CSS (مثلاً با اعمال مستقیم استایل، یا استفاده از مدل‌های layout مانند Flexbox روی والد) استایل‌دهی نشود، هیچ تأثیری روی محتوا یا چیدمان ندارد.
 
-```html interactive-example
-<div class="warning">
-  <img
-    src="/shared-assets/images/examples/leopard.jpg"
-    alt="An intimidating leopard." />
-  <p>Beware of the leopard</p>
-</div>
-```
-
-```css interactive-example
-.warning {
-  border: 10px ridge red;
-  background-color: yellow;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.warning img {
-  width: 100%;
-}
-
-.warning p {
-  font: small-caps bold 1.2rem sans-serif;
-  text-align: center;
-}
-```
-
-به‌عنوان یک کانتینر "خالص"، عنصر `<div>` ذاتاً نمایندهٔ چیزی نیست. در عوض برای گروه‌بندی محتوا استفاده می‌شود تا بتوان آن را به‌راحتی با صفت‌های [`class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) یا [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) استایل داد، یا ناحیه‌ای از سند را به‌عنوان نوشته‌شده به زبان دیگری علامت‌گذاری کرد (با استفاده از صفت [`lang`](/en-US/docs/Web/HTML/Reference/Global_attributes/lang))، و موارد مشابه.
+به‌عنوان یک محفظهٔ «خالص»، عنصر `<div>` به‌خودی‌خود چیزی را نشان نمی‌دهد. در عوض، از آن برای گروه‌بندی محتوا استفاده می‌شود تا بتوان با attributeهای `class` یا `id` به راحتی به آن استایل داد، یا بخشی از سند را به زبانی دیگر مشخص کرد (با attribute `lang`) و غیره.
 
 ## Attributes
 
-This element includes the [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes).
+این عنصر شامل [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes) است.
 
 > [!NOTE]
-> The `align` attribute is obsolete; do not use it anymore. Instead, you should use CSS properties or techniques such as [CSS Grid](/en-US/docs/Web/CSS/Guides/Grid_layout) or [CSS Flexbox](/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox) to align and position `<div>` elements on the page.
+> attribute `align` منسوخ شده است و دیگر نباید استفاده شود. برای تراز و موقعیت‌دهی به `<div>`ها از ویژگی‌ها یا تکنیک‌های CSS مانند [CSS Grid](/en-US/docs/Web/CSS/Guides/Grid_layout) یا [CSS Flexbox](/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox) استفاده کنید.
 
-## Usage notes
+## نکات استفاده
 
-- The `<div>` element should be used only when no other semantic element (such as article or nav) is appropriate.
+- عنصر `<div>` را فقط زمانی استفاده کنید که هیچ عنصر معنایی دیگری (مانند `<article>` یا `<nav>`) مناسب نباشد.
 
-## Accessibility
+## دسترسی‌پذیری (Accessibility)
 
-The `<div>` element has [an implicit role of `generic`](https://w3c.github.io/aria/#generic), and not none. This may affect certain ARIA combination declarations that expect a direct descendant element with a certain role to function properly.
+عنصر `<div>` [نقش ضمنی `generic`](https://w3c.github.io/aria/#generic) دارد، نه `none`. این موضوع ممکن است روی برخی اعلان‌های ترکیبی ARIA که برای عملکرد صحیح به یک عنصر فرزند مستقیم با نقش خاص نیاز دارند، تأثیر بگذارد.
 
-## Examples
+## مثال‌ها
 
-### A basic example
+### یک مثال ساده
 
 ```html
 <div>
   <p>
-    Any kind of content here. Such as &lt;p&gt;, &lt;table&gt;. You name it!
+    هر نوع محتوایی اینجا می‌تواند باشد. مثل &lt;p&gt;، &lt;table&gt;. هر چیزی که دوست دارید!
   </p>
 </div>
 ```
 
-#### Result
+### یک مثال با استایل
 
-### A styled example
-
-This example creates a shadowed box by applying a style to the `<div>` using CSS. Note the use of the [`class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) attribute on the `<div>` to apply the style named "shadowbox" to the element.
+در این مثال، با اعمال استایل CSS به `<div>` یک جعبهٔ سایه‌دار ایجاد شده است. توجه کنید که از attribute `class` روی `<div>` برای اعمال استایل `"shadowbox"` استفاده شده است.
 
 #### HTML
 
 ```html
 <div class="shadowbox">
-  <p>Here's a very interesting note displayed in a lovely shadowed box.</p>
+  <p>در اینجا یک نکتهٔ بسیار جالب در یک جعبهٔ سایه‌دار زیبا نمایش داده شده است.</p>
 </div>
 ```
 
@@ -89,66 +59,42 @@ This example creates a shadowed box by applying a style to the `<div>` using CSS
 }
 ```
 
-#### Result
+## خلاصهٔ فنی
 
-## Technical summary
+|                     |                                           |
+| ------------------- | ----------------------------------------- |
+| محتوای مجاز         | [محتوای جریان](/en-US/docs/Web/HTML/Reference/Content_categories#flow_content) |
+| حذف تگ              | هیچ‌کدام، تگ شروع و پایان اجباری است.    |
+| والد مجاز           | هر عنصری که [محتوای جریان](/en-US/docs/Web/HTML/Reference/Content_categories#flow_content) را بپذیرد. |
+| نقش ARIA ضمنی       | `generic`                                 |
+| نقش‌های ARIA مجاز   | هر نقشی                                     |
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories"
-          >Content categories</a
-        >
-      </th>
-      <td>
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
-          >Flow content</a
-        >, <a href="/en-US/docs/Web/HTML/Guides/Content_categories#palpable_content">palpable content</a>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Permitted content</th>
-      <td>
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
-          >Flow content</a
-        >.<br />یا (در WHATWG HTML): اگر والد یک عنصر <dl> باشد: یک یا چند عنصر <dt> که به دنبال آن یک یا چند عنصر <dd> قرار می‌گیرند، که به‌صورت اختیاری می‌توانند با عناصر <script> و <template> درهم‌آمیخته شوند.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Tag omission</th>
-      <td>هیچ‌کدام — هر دو تگ شروع و پایان اجباری هستند.</td>
-    </tr>
-    <tr>
-      <th scope="row">Permitted parents</th>
-      <td>
-        هر عنصر که <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
-          >flow content</a
-        > را می‌پذیرد.<br />یا (در WHATWG HTML): عنصر <dl>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Implicit ARIA role</th>
-      <td>
-        <code
-          ><a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/generic_role"
-            >generic</a
-          ></code
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Permitted ARIA roles</th>
-      <td>هر کدام</td>
-    </tr>
-    <tr>
-      <th scope="row">DOM interface</th>
-      <td><code>HTMLDivElement</code></td>
-    </tr>
-  </tbody>
-</table>
+## مشخصات
 
-## See also
+| Specification                         |
+| ------------------------------------- |
+| [HTML Living Standard](https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element) |
 
-- المان‌های بخش‌بندی معنایی: <section>, <article>, <nav>, <header>, <footer>
-- عنصر <span> برای استایل‌دهی به phrasing content
+## سازگاری با مرورگرها
+
+{{Compat}}
+
+## همچنین ببینید
+
+- عناصر بخش‌بندی معنایی: {{HTMLElement("section")}}, {{HTMLElement("article")}}, {{HTMLElement("nav")}}, {{HTMLElement("header")}}, {{HTMLElement("footer")}}
+- {{HTMLElement("span")}} عنصر محفظهٔ مشابه برای محتوای درون‌خطی
+
+| ویژگی | مقدار |
+| --- | --- |
+| دسته‌بندی محتوا | [محتوای جریان (Flow content)](/en-US/docs/Web/HTML/Guides/Content_categories#flow_content)، [محتوای قابل‌لمس (palpable content)](/en-US/docs/Web/HTML/Guides/Content_categories#palpable_content) |
+| محتوای مجاز | [محتوای جریان (Flow content)](/en-US/docs/Web/HTML/Guides/Content_categories#flow_content). یا (در WHATWG HTML): اگر والد یک عنصر `<dl>` باشد، یک یا چند عنصر `<dt>` و به‌دنبال آن یک یا چند عنصر `<dd>`، که به‌صورت اختیاری با عناصر `<script>` و `<template>` مخلوط می‌شوند. |
+| حذف تگ | هیچ؛ هر دو تگ شروع و پایان اجباری هستند. |
+| عناصر والد مجاز | هر عنصری که [محتوای جریان (Flow content)](/en-US/docs/Web/HTML/Guides/Content_categories#flow_content) را بپذیرد. یا (در WHATWG HTML): عنصر `<dl>`. |
+| نقش ضمنی ARIA | [`generic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/generic_role) |
+| نقش‌های مجاز ARIA | هر نقشی |
+| رابط DOM | `HTMLDivElement` |
+
+## همچنین ببینید
+
+- عناصر بخش‌بندی معنایی: `<section>`، `<article>`، `<nav>`، `<header>`، `<footer>`
+- عنصر `<span>` برای استایل‌دهی به محتوای عبارتی (phrasing content)
