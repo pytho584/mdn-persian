@@ -4,19 +4,23 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attr
 translated_by: "n8n + AI"
 ---
 
-**`virtualkeyboardpolicy`** یک ویژگی سراسری (global attribute) و از نوع شمارشی (enumerated attribute) است. وقتی روی عنصری تنظیم شود که محتوایش قابل ویرایش باشد (مثلاً عنصر `<input>` یا `<textarea>`، یا عنصری که ویژگی `contenteditable` روی آن تنظیم شده)، رفتار کیبورد مجازی را در دستگاه‌هایی مانند تبلت، تلفن همراه، یا سایر دستگاه‌هایی که ممکن است کیبورد سخت‌افزاری در دسترس نباشد، کنترل می‌کند.
+ویژگی سراسری `virtualkeyboardpolicy` یک ویژگی از نوع شمارشی (enumerated) است. وقتی روی عنصری قرار می‌گیرد که محتوایش قابل ویرایش است (مثلاً یک `<input>` یا `<textarea>`، یا عنصری که ویژگی [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) روی آن تنظیم شده)، رفتار کیبورد مجازی روی صفحه را در دستگاه‌هایی مثل تبلت، تلفن همراه یا هر دستگاهی که کیبورد فیزیکی ندارد کنترل می‌کند.
 
-این ویژگی باید یکی از مقادیر زیر را بپذیرد:
+این ویژگی باید یکی از مقادیر زیر را داشته باشد:
 
-- `auto` یا رشته‌ای _خالی_، که به‌صورت خودکار کیبورد مجازی را وقتی عنصر فوکوس یا لمس می‌شود نشان می‌دهد.
-- `manual`، که فوکوس و لمس روی عنصر را از وضعیت کیبورد مجازی جدا می‌کند.
+- `auto` یا یک رشتهٔ خالی (_empty string_): کیبورد مجازی وقتی عنصر فوکوس یا tapped شود به‌طور خودکار نمایش داده می‌شود.
+- `manual`: فوکوس و tap روی عنصر را از وضعیت کیبورد مجازی جدا می‌کند.
 
 ## مشخصات
 
-## سازگاری مرورگر
+{{Specifications}}
 
-## همچنین ببینید
+## سازگاری با مرورگرها
 
-- [همهٔ ویژگی‌های سراسری](/en-US/docs/Web/HTML/Reference/Global_attributes)
+{{Compat}}
+
+## جستارهای وابسته
+
+- همهٔ [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes)
 - `HTMLElement.contentEditable` و `HTMLElement.isContentEditable`
-- VirtualKeyboard API
+- `VirtualKeyboard API`
