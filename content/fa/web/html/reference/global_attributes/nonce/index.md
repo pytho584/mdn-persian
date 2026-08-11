@@ -4,23 +4,23 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attr
 translated_by: "n8n + AI"
 ---
 
-```markdown
-**`nonce`** یک attribute سراسری (global attribute) است که یک nonce (عدد یک‌بار مصرف) رمزنگاری شده را تعریف می‌کند. این مقدار توسط [Content Security Policy (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) برای تعیین این که آیا یک درخواست (fetch) برای یک عنصر خاص مجاز است یا خیر، استفاده می‌شود.
+# ویژگی سراسری `nonce` در HTML
+
+**`nonce`** یک [ویژگی سراسری](/en-US/docs/Web/HTML/Reference/Global_attributes) است که یک nonce رمزنگاری‌شده («عددی که فقط یک بار استفاده می‌شود») را در قالب یک ویژگی محتوایی تعریف می‌کند. [سیاست امنیت محتوا (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) می‌تواند از این nonce استفاده کند تا مشخص کند آیا یک درخواست (fetch) برای عنصر موردنظر مجاز است یا خیر.
 
 ## توضیحات
 
-attribute `nonce` برای لیست سفید (allowlist) کردن عناصر خاص، مثل یک اسکریپت یا استایل inline خاص مفید است. با استفاده از آن می‌توانید از دستور `unsafe-inline` در CSP که تمام اسکریپت‌ها و استایل‌های inline را مجاز می‌کند، اجتناب کنید.
+ویژگی `nonce` برای مجاز کردن عناصر خاص مفید است؛ مثلاً یک اسکریپت داخلی مشخص یا عنصرهای style خاص. به کمک آن می‌توانید از دستور `unsafe-inline` در CSP اجتناب کنید، زیرا آن دستور اجازه می‌دهد _همه_ اسکریپت‌ها یا استایل‌های داخلی اجرا شوند.
 
-> **توجه:**  
-> تنها زمانی از `nonce` استفاده کنید که چاره‌ای جز استفاده از محتوای اسکریپت یا استایل inline ناامن ندارید. اگر به `nonce` نیاز ندارید، از آن استفاده نکنید. اگر اسکریپت شما ایستا است، می‌توانید به جای آن از یک hash CSP استفاده کنید. (به یادداشت‌های استفاده در [unsafe inline script](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/script-src#unsafe_inline_script) مراجعه کنید.) همیشه سعی کنید از محافظت‌های CSP به طور کامل بهره ببرید و تا حد امکان از nonce و اسکریپت‌های inline ناامن خودداری کنید.
+> **نکته:** فقط در مواردی از `nonce` استفاده کنید که چاره‌ای جز استفاده از محتوای اسکریپت یا استایل داخلی ندارید. اگر به `nonce` نیازی نیست، از آن استفاده نکنید. اگر اسکریپت شما ایستا است، می‌توانید به‌جای آن از هش CSP استفاده کنید. (به یادداشت‌های مربوط به [unsafe inline script](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/script-src#unsafe_inline_script) مراجعه کنید.) همیشه سعی کنید تا جایی که ممکن است از محافظت‌های CSP بهره ببرید و از nonce یا اسکریپت‌های داخلی ناامن اجتناب کنید.
 
-### استفاده از nonce برای لیست سفید یک عنصر `<script>`
+## استفاده از nonce برای مجاز کردن یک عنصر `<script>`
 
-برای لیست سفید یک اسکریپت inline با استفاده از مکانیزم nonce، چند مرحله را باید دنبال کنید:
+برای مجاز کردن یک اسکریپت داخلی با استفاده از مکانیزم nonce، چند مرحله لازم است:
 
-#### تولید مقادیر
+### تولید مقدار
 
-از سرور وب خود، یک رشته تصادفی با حداقل 128 بیت داده که با مولد اعداد تصادفی امن رمزنگاری شده تولید کنید. Nonce باید هر بار که صفحه بارگذاری می‌شود متفاوت باشد (nonce فقط یک بار!). برای مثال، در nodejs:
+در سمت وب‌سرور، یک رشته تصادفی که با base64 کدگذاری شده و حداقل ۱۲۸ بیت داده دارد، با یک مولد اعداد تصادفی امن از نظر رمزنگاری تولید کنید. nonce باید هر بار که صفحه بارگذاری می‌شود، متفاوت باشد (nonce فقط یک بار!). برای مثال، در nodejs:
 
 ```js
 import crypto from "node:crypto";
@@ -29,9 +29,9 @@ crypto.randomBytes(16).toString("base64");
 // '8IBTHwOdqNKAWeKl7plt8g=='
 ```
 
-#### لیست سفید اسکریپت inline
+### مجاز کردن اسکریپت داخلی
 
-nonce تولید شده در کد بک‌اند شما باید برای اسکریپت inline که می‌خواهید مجاز کنید استفاده شود:
+حالا باید nonce تولیدشده در کد سمت backend خود را برای اسکریپت داخلی‌ای که می‌خواهید مجاز کنید، به کار ببرید:
 
 ```html
 <script nonce="8IBTHwOdqNKAWeKl7plt8g==">
@@ -39,7 +39,7 @@ nonce تولید شده در کد بک‌اند شما باید برای اسک�
 </script>
 ```
 
-#### ارسال nonce با هدر CSP
+### ارسال nonce با هدر CSP
 
 در نهایت، باید مقدار nonce را در یک هدر [`Content-Security-Policy`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy) ارسال کنید (با پیشوند `nonce-`):
 
@@ -47,21 +47,21 @@ nonce تولید شده در کد بک‌اند شما باید برای اسک�
 Content-Security-Policy: script-src 'nonce-8IBTHwOdqNKAWeKl7plt8g=='
 ```
 
-### دسترسی به nonce و مخفی‌سازی nonce
+## دسترسی به nonce و پنهان‌سازی آن
 
-به دلایل امنیتی، attribute محتوایی `nonce` مخفی است (یک رشته خالی برگردانده می‌شود).
+به دلایل امنیتی، ویژگی محتوایی `nonce` پنهان است (یک رشته خالی برمی‌گردد).
 
 ```js example-bad
 script.getAttribute("nonce"); // returns empty string
 ```
 
-تنها راه دسترسی به nonce، property [`nonce`](/en-US/docs/Web/API/HTMLElement/nonce) است:
+پراپرتی [`nonce`](/en-US/docs/Web/API/HTMLElement/nonce) تنها راه دسترسی به nonce است:
 
 ```js example-good
 script.nonce; // returns nonce value
 ```
 
-مخفی‌سازی nonce از استخراج اطلاعات nonce توسط مهاجمان از طریق مکانیسم‌هایی که می‌توانند داده‌ها را از attributes محتوایی مانند این بگیرند، جلوگیری می‌کند:
+پنهان‌سازی nonce به جلوگیری از خروج داده‌های nonce توسط مهاجمان کمک می‌کند؛ مهاجمان می‌توانند از مکانیزم‌هایی که داده‌ها را از ویژگی‌های محتوایی می‌گیرند، به این شکل استفاده کنند:
 
 ```css example-bad
 script[nonce~="whatever"] {
@@ -72,6 +72,5 @@ script[nonce~="whatever"] {
 ## همچنین ببینید
 
 - [`HTMLElement.nonce`](/en-US/docs/Web/API/HTMLElement/nonce)
-- [Content Security Policy](/en-US/docs/Web/HTTP/Guides/CSP)
+- [سیاست امنیت محتوا (CSP)](/en-US/docs/Web/HTTP/Guides/CSP)
 - CSP: [`script-src`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/script-src)
-```
