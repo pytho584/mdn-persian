@@ -4,19 +4,20 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attr
 translated_by: "n8n + AI"
 ---
 
-ویژگی سراسری HTML **`itemref`** به شما امکان می‌دهد ویژگی‌هایی (properties) را که از نوادگان (descendants) یک عنصر دارای [`itemscope`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemscope) نیستند، به آن آیتم (item) متصل کنید.
+ویژگی‌هایی که فرزندِ مستقیمِ عنصری با attribute `itemscope` نیستند، می‌توانند با استفاده از **`itemref`** که یک [global attribute](/en-US/docs/Web/HTML/Reference/Global_attributes) است، به یک آیتم مرتبط شوند.
 
-`itemref` فهرستی از شناسه‌های عناصر (element IDs) – نه `itemid`ها – را در جای دیگری از سند مشخص می‌کند که ویژگی‌های اضافی را ارائه می‌دهند.
+`itemref` فهرستی از `id` عناصر (نه `itemid`ها) را در جای دیگری از سند فراهم می‌کند تا ویژگی‌های اضافی را شامل شود.
 
-ویژگی `itemref` فقط روی عناصری قابل استفاده است که ویژگی `itemscope` روی آنها تعیین شده باشد.
+attribute `itemref` فقط روی عناصری قابل استفاده است که `itemscope` داشته باشند.
 
-> **نکته:** ویژگی `itemref` بخشی از مدل داده‌ای microdata محسوب نمی‌شود. این فقط یک ساختار نحوی (syntactic construct) است تا به نویسندگان کمک کند در صفحاتی که داده‌های مورد نظر از ساختار درختی ساده‌ای پیروی نمی‌کنند، حاشیه‌نویسی (annotation) اضافه کنند. برای مثال، به نویسنده اجازه می‌دهد داده‌های یک جدول را طوری علامت‌گذاری کند که هر ستون یک آیتم مجزا را تعریف کند، در حالی که ویژگی‌ها داخل سلول‌ها باقی می‌مانند.
+> [!NOTE]
+> `itemref` بخشی از مدل داده‌ی microdata نیست. این صرفاً یک ساختار نحوی است که به نویسندگان کمک می‌کند تا داده‌هایی را که الگوی درختی مناسبی ندارند، در صفحه نشانه‌گذاری کنند. مثلاً امکان نشانه‌گذاری داده‌ها در یک جدول را فراهم می‌کند، به‌طوری که هر ستون یک آیتم جداگانه تعریف کند و ویژگی‌ها در سلول‌ها باقی بمانند.
 
 ## مثال‌ها
 
 ### نمایش داده‌های ساختاریافته برای یک گروه موسیقی
 
-این مثال از ویژگی‌های microdata برای نمایش داده‌های ساختاریافته زیر (به فرمت [JSON-LD](https://json-ld.org/)) استفاده می‌کند:
+این مثال از attributeهای microdata برای نمایش داده‌های ساختاریافته‌ی زیر (در قالب [JSON-LD](https://json-ld.org/)) استفاده می‌کند:
 
 ```json
 {
@@ -52,8 +53,8 @@ translated_by: "n8n + AI"
 
 ## همچنین ببینید
 
-- [سایر ویژگی‌های سراسری HTML](/en-US/docs/Web/HTML/Reference/Global_attributes)
-- سایر ویژگی‌های سراسری مرتبط با microdata:
+- [سایر global attributeها](/en-US/docs/Web/HTML/Reference/Global_attributes)
+- سایر global attributeهای مرتبط با microdata:
   - [`itemid`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemid)
   - [`itemprop`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemprop)
   - [`itemscope`](/en-US/docs/Web/HTML/Reference/Global_attributes/itemscope)
