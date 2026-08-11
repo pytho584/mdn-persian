@@ -4,17 +4,19 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a"
 translated_by: "n8n + AI"
 ---
 
-The **`<a>`** [HTML](/en-US/docs/Web/HTML) element (or _anchor_ element)، با [attribute `href`](#href)، یک هایپرلینک به صفحات وب، فایل‌ها، آدرس‌های ایمیل، مکان‌هایی در همان صفحه یا هر چیزی که یک URL بتواند به آن ارجاع دهد، ایجاد می‌کند.
+الان که این متن را می‌خوانی، یعنی داری با عنصر `<a>` سروکار داری. این عنصر HTML که به آن anchor (لنگر) هم می‌گویند، با استفاده از صفت `href` یک لینک (hypertext link) به مقصدهای مختلف می‌سازد: صفحات وب، فایل‌ها، آدرس ایمیل، جای مشخصی در همان صفحه، یا هر چیزی که یک URL بتواند به آن اشاره کند.
 
-محتوای داخل هر `<a>` باید مقصد لینک را نشان دهد. اگر attribute `href` موجود باشد، فشردن کلید Enter در زمانی که عنصر `<a>` فوکوس شده باشد، آن را فعال می‌کند.
+محتوایی که داخل هر `<a>` می‌نویسید باید نشان بدهد که لینک به کجا می‌رود. اگر صفت `href` وجود داشته باشد، وقتی روی عنصر `<a>` فوکوس دارید و دکمه Enter را می‌زنید، لینک فعال می‌شود.
+
+<!-- demo interactive embedded -->
 
 ```html interactive-example
-<p>You can reach Michael at:</p>
+<p>می‌توانید با مایکل از این راه‌ها تماس بگیرید:</p>
 
 <ul>
-  <li><a href="https://example.com">Website</a></li>
-  <li><a href="mailto:m.bluth@example.com">Email</a></li>
-  <li><a href="tel:+123456789">Phone</a></li>
+  <li><a href="https://example.com">وب‌سایت</a></li>
+  <li><a href="mailto:m.bluth@example.com">ایمیل</a></li>
+  <li><a href="tel:+123456789">تلفن</a></li>
 </ul>
 ```
 
@@ -24,173 +26,177 @@ li {
 }
 ```
 
-## Attributes
+## صفت‌ها (Attributes)
 
-This element's attributes include the [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes).
+این عنصر شامل تمام [صفت‌های سراسری (global attributes)](/en-US/docs/Web/HTML/Reference/Global_attributes) است.
 
-- `attributionsrc` deprecated non-standard
-  - : مشخص می‌کند که می‌خواهید مرورگر هدر `Attribution-Reporting-Eligible` را ارسال کند. در سمت سرور این هدر برای آغاز ارسال هدر `Attribution-Reporting-Register-Source` در پاسخ استفاده می‌شود تا یک منبع attribution مبتنی بر navigation ثبت شود.
+- `attributionsrc` {{deprecated_inline}} {{non-standard_inline}}
+  - : مشخص می‌کند که مرورگر باید هدر `{{httpheader("Attribution-Reporting-Eligible")}}` را ارسال کند. در سمت سرور، این هدر برای فعال‌سازی ارسال هدر `{{httpheader("Attribution-Reporting-Register-Source")}}` در پاسخ استفاده می‌شود و یک منبع انتساب (attribution source) مبتنی بر ناوبری ثبت می‌کند. (برای اطلاعات بیشتر به [Attribution Reporting API](/en-US/docs/Web/API/Attribution_Reporting_API) مراجعه کنید.)
 
-    مرورگر داده‌های منبع مرتبط با منبع attribution مبتنی بر navigation را (همان‌طور که در هدر پاسخ `Attribution-Reporting-Register-Source` ارائه شده) هنگامی که کاربر روی لینک کلیک می‌کند ذخیره می‌کند. برای جزئیات بیشتر به Attribution Reporting API مراجعه کنید.
+    وقتی کاربر روی لینک کلیک می‌کند، مرورگر داده‌های مربوط به این منبع انتساب را (که در هدر پاسخ `{{httpheader("Attribution-Reporting-Register-Source")}}` مشخص شده) ذخیره می‌کند. دو حالت برای این صفت وجود دارد:
 
-    دو نسخه از این attribute وجود دارد که می‌توانید تنظیم کنید:
-    - بولی، یعنی فقط نام `attributionsrc`. این مشخص می‌کند که می‌خواهید هدر `Attribution-Reporting-Eligible` به همان سروری که `href` به آن اشاره می‌کند ارسال شود. این وقتی مناسب است که ثبت منبع attribution را در همان سرور مدیریت می‌کنید.
-    - مقداری که شامل یک یا چند URL است، برای مثال:
+    - حالت Boolean: فقط نام `attributionsrc` را بنویسید. یعنی هدر `{{httpheader("Attribution-Reporting-Eligible")}}` به همان سروری فرستاده می‌شود که صفت `href` به آن اشاره می‌کند. این برای وقتی مناسب است که ثبت منبع انتساب را در همان سرور انجام می‌دهید.
+    - مقدار شامل یک یا چند URL: برای مثال:
 
       ```html
       attributionsrc="https://a.example/register-source
       https://b.example/register-source"
       ```
 
-      این حالت زمانی مفید است که منبع درخواست‌شده روی سروری که کنترلش را دارید نباشد، یا می‌خواهید ثبت منبع attribution را در سرور دیگری انجام دهید. در این حالت می‌توانید یک یا چند URL را به‌عنوان مقدار `attributionsrc` مشخص کنید. وقتی درخواست منبع رخ دهد، هدر `Attribution-Reporting-Eligible` علاوه بر مبدأ منبع، به URLهای مشخص‌شده در `attributionsrc` نیز ارسال خواهد شد. این URLها سپس می‌توانند با ارسال هدر `Attribution-Reporting-Register-Source` به تکمیل ثبت کمک کنند.
+      این حالت مفید است وقتی منبع درخواست‌شده روی سروری نیست که شما کنترل می‌کنید، یا فقط می‌خواهید ثبت منبع انتساب را روی سرور دیگری انجام دهید. در این حالت، یک یا چند URL را به عنوان مقدار `attributionsrc` مشخص می‌کنید. وقتی درخواست منبع انجام می‌شود، هدر `{{httpheader("Attribution-Reporting-Eligible")}}` علاوه بر سرور مبدأ، به URL(های) مشخص‌شده در `attributionsrc` هم فرستاده می‌شود. آن URLها می‌توانند با هدر `{{httpheader("Attribution-Reporting-Register-Source")}}` پاسخ دهند و ثبت را کامل کنند.
 
       > [!NOTE]
-      > مشخص‌کردن چند URL به این معنی است که می‌توان منابع attribution متعددی را برای یک ویژگی ثبت کرد. برای مثال ممکن است کمپین‌های مختلفی داشته باشید که می‌خواهید موفقیتشان را اندازه‌گیری کنید و این شامل تولید گزارش‌های متفاوت بر اساس داده‌های مختلف می‌شود.
+      > مشخص کردن چندین URL یعنی می‌توان چند منبع انتساب را روی یک ویژگی ثبت کرد. مثلاً ممکن است چند کمپین مختلف داشته باشید که می‌خواهید موفقیت هرکدام را اندازه بگیرید و گزارش‌های متفاوتی روی داده‌های مختلف تولید کنید.
 
-    عناصر `<a>` نمی‌توانند به‌عنوان attribution triggers استفاده شوند، فقط به‌عنوان sources قابل استفاده‌اند.
+    عناصر `<a>` فقط می‌توانند به عنوان منبع (source) استفاده شوند، نه به عنوان trigger.
 
 - `download`
-  - : باعث می‌شود مرورگر URL لینک‌شده را به‌عنوان یک دانلود در نظر بگیرد. می‌توان از آن با یا بدون مقدار `filename` استفاده کرد:
-    - بدون مقدار، مرورگر یک نام/پسوند فایل را پیشنهاد می‌دهد که از منابع مختلف تولید می‌شود:
-      - هدر HTTP `Content-Disposition`
-      - بخش نهایی در مسیر URL (`pathname`)
-      - نوع MIME (از هدر HTTP `Content-Type`، ابتدای یک `data:` URL، یا `Blob.type` برای یک `blob:` URL)
+  - : باعث می‌شود مرورگر با URL لینک‌شده مثل یک فایل دانلودی رفتار کند. می‌تواند بدون مقدار یا با یک `filename` استفاده شود:
+    - بدون مقدار: مرورگر یک نام و پسوند فایل پیشنهاد می‌دهد که از منابع مختلف می‌آید:
+      - هدر HTTP `{{HTTPHeader("Content-Disposition")}}`
+      - آخرین بخش مسیر URL (path) در [()](/en-US/docs/Web/API/URL/pathname)
+      - نوع رسانه (media type) (از هدر `{{HTTPHeader("Content-Type")}}`، شروع یک [`data:` URL](/en-US/docs/Web/URI/Reference/Schemes/data)، یا `{{domxref("Blob.type")}}` برای یک [`blob:` URL](/en-US/docs/Web/URI/Reference/Schemes/blob))
 
-- `filename`: تعیین یک مقدار به عنوان نام فایل پیشنهاد می‌شود. کاراکترهای `/` و `\` به آندرلاین (`_`) تبدیل می‌شوند. سامانهٔ فایل‌ها ممکن است برخی کاراکترهای دیگر را در نام فایل ممنوع کند، پس مرورگرها در صورت نیاز نام پیشنهادی را تنظیم می‌کنند.
+-   `filename`: تعریف یک مقدار برای آن، آن مقدار را به‌عنوان نام فایل پیشنهاد می‌دهد. کاراکترهای `/` و `\` به زیرخط (`_`) تبدیل می‌شوند. سیستم‌های فایل ممکن است کاراکترهای دیگری را در نام فایل ممنوع کنند، بنابراین مرورگرها در صورت لزوم نام پیشنهادی را تنظیم می‌کنند.
 
-> [!NOTE]
->
-> - `download` فقط برای [same-origin URLs](/en-US/docs/Web/Security/Defenses/Same-origin_policy) یا schemeهای `blob:` و `data:` کار می‌کند.
-> - نحوهٔ رفتار مرورگرها هنگام دانلود بسته به مرورگر، تنظیمات کاربر و عوامل دیگر متفاوت است. ممکن است قبل از شروع دانلود از کاربر پرسیده شود، یا فایل به‌صورت خودکار ذخیره شود، یا مستقیماً باز شود — یا در یک برنامهٔ خارجی یا در خود مرورگر.
-> - اگر هدر `Content-Disposition` اطلاعات متفاوتی نسبت به صفت `download` داشته باشد، رفتار حاصل ممکن است متفاوت باشد:
->   - اگر هدر یک `filename` مشخص کند، بر نام تعیین‌شده در صفت `download` ارجحیت دارد.
->   - اگر هدر یک disposition با مقدار `inline` مشخص کند، Chrome و Firefox صفت را اولویت می‌دهند و آن را به‌عنوان دانلود در نظر می‌گیرند. نسخه‌های قدیمی Firefox (قبل از 82) هدر را ارجح می‌دانستند و محتوا را به‌صورت inline نمایش می‌دادند.
+    > [!NOTE]
+    >
+    > - `download` فقط برای [URLهای هم‌ریشه](/en-US/docs/Web/Security/Defenses/Same-origin_policy) یا طرح‌های `blob:` و `data:` کار می‌کند.
+    > - نحوه برخورد مرورگرها با دانلودها بسته به مرورگر، تنظیمات کاربر و عوامل دیگر متفاوت است. ممکن است قبل از شروع دانلود از کاربر تأیید گرفته شود، یا فایل به‌طور خودکار ذخیره شود، یا در یک برنامه خارجی یا خود مرورگر باز شود.
+    > - اگر هدر `Content-Disposition` اطلاعاتی متفاوت از ویژگی `download` داشته باشد، رفتار نهایی ممکن است متفاوت باشد:
+    >   - اگر هدر یک `filename` مشخص کند، آن نام بر نام فایل مشخص‌شده در ویژگی `download` اولویت دارد.
+    >   - اگر هدر disposition را `inline` تعیین کند، کروم و فایرفاکس به ویژگی `download` اولویت داده و آن را به‌عنوان یک دانلود در نظر می‌گیرند. نسخه‌های قدیمی فایرفاکس (قبل از ۸۲) به هدر اولویت می‌دادند و محتوا را به‌صورت درون‌خطی نمایش می‌دادند.
 
 - `href`
-  - : URL که لینک به آن اشاره می‌کند. لینک‌ها محدود به URLهای مبتنی بر HTTP نیستند — آن‌ها می‌توانند از هر scheme آدرسی که مرورگرها پشتیبانی می‌کنند استفاده کنند:
-    - شماره‌های تلفن با URLهای `tel:`
-    - آدرس‌های ایمیل با URLهای `mailto:`
-    - پیامک‌ها با URLهای `sms:`
-    - کد اجرایی با [`javascript:` URLs](/en-US/docs/Web/URI/Reference/Schemes/javascript)
-    - در حالی که مرورگرهای وب ممکن است سایر schemeها را پشتیبانی نکنند، وب‌سایت‌ها می‌توانند با استفاده از [`registerProtocolHandler()`](/en-US/docs/Web/API/Navigator/registerProtocolHandler) آنها را ثبت کنند
+  - : نشانی اینترنتی (URL) که لینک به آن اشاره می‌کند. لینک‌ها محدود به URLهای مبتنی بر HTTP نیستند – می‌توانند از هر طرح URL که مرورگرها پشتیبانی می‌کنند استفاده کنند:
+    - شماره تلفن با URLهای `tel:`
+    - آدرس ایمیل با URLهای `mailto:`
+    - پیامک با URLهای `sms:`
+    - کد اجرایی با [URLهای `javascript:`](/en-US/docs/Web/URI/Reference/Schemes/javascript)
+    - اگرچه مرورگرهای وب ممکن است از طرح‌های URL دیگر پشتیبانی نکنند، وب‌سایت‌ها می‌توانند با [`registerProtocolHandler()`](/en-US/docs/Web/API/Navigator/registerProtocolHandler) این کار را انجام دهند.
 
-    علاوه بر این، ویژگی‌های دیگر URL می‌توانند بخش‌های خاصی از منبع را مشخص کنند، از جمله:
-    - بخش‌هایی از یک صفحه با فرگمنت‌های سند (document fragments)
-    - بخش‌های خاصی از متن با [text fragments](/en-US/docs/Web/URI/Reference/Fragment/Text_fragments)
-    - قطعاتی از فایل‌های رسانه‌ای با media fragments
+    علاوه بر این، ویژگی‌های URL دیگری می‌توانند بخش‌های خاصی از منبع را مشخص کنند، از جمله:
+    - بخش‌های یک صفحه با قطعات سند (document fragments)
+    - بخش‌های متنی خاص با [قطعات متن](/en-US/docs/Web/URI/Reference/Fragment/Text_fragments)
+    - قطعات فایل‌های رسانه‌ای با قطعات رسانه
 
 - `hreflang`
-  - : نشانه‌ای از زبان انسانی (human language)ِ URL لینک‌شده. عملکرد داخلی خاصی ندارد. مقادیر مجاز همان مقادیر صِفت سراسری [`lang`](/en-US/docs/Web/HTML/Reference/Global_attributes/lang) هستند.
+  - : به زبان انسانیِ URL مقصد اشاره می‌کند. عملکرد داخلی ندارد. مقادیر مجاز همان مقادیر [attribute سراسری `lang`](/en-US/docs/Web/HTML/Reference/Global_attributes/lang) هستند.
 - `interestfor`
-  - : عنصر `<a>` را به‌عنوان یک **interest invoker** تعریف می‌کند. مقدار این صفت، `id` عنصر هدف است؛ عنصری که هنگام نمایش یا از دست رفتن «interest» روی عنصر فراخواننده (مثلاً با hover/unhover یا focus/blur) به شکلی تحت تأثیر قرار می‌گیرد (معمولاً نشان داده یا پنهان می‌شود). برای جزئیات و مثال‌ها، بخش Using interest invokers را ببینید.
+  - : عنصر `<a>` را به‌عنوان **interest invoker** تعریف می‌کند. مقدار آن `id` عنصر هدف است. وقتی روی عنصر invoker علاقه نشان داده شود یا از بین برود (مثلاً با هاور کردن/برداشتن هاور یا فوکوس/از فوکوس خارج شدن)، عنصر هدف به نحوی تحت تأثیر قرار می‌گیرد (معمولاً نمایش یا مخفی می‌شود). برای جزئیات و مثال‌های بیشتر، [استفاده از interest invokerها](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) را ببینید.
 - `ping`
-  - : فهرستی از URLها جداشده با فاصله. وقتی لینک دنبال می‌شود، مرورگر درخواست‌های POST با بدنه `PING` به آن URLها ارسال می‌کند. معمولاً برای ردیابی استفاده می‌شود.
+  - : فهرستی از URLها که با فاصله جدا شده‌اند. وقتی لینک دنبال شود، مرورگر درخواست‌های `POST` با بدنهٔ `PING` به آن URLها ارسال می‌کند. معمولاً برای ردیابی استفاده می‌شود.
 - `referrerpolicy`
-  - : میزان اطلاعاتِ referrer که هنگام دنبال کردن لینک ارسال می‌شود.
-    - `no-referrer`: هدر Referer ارسال نخواهد شد.
-    - `no-referrer-when-downgrade`: هدر Referer به originهایی که از TLS (HTTPS) استفاده نمی‌کنند ارسال نخواهد شد.
-    - `origin`: ارجاع ارسالی به origin صفحه ارجاع‌دهنده محدود می‌شود: scheme، host و port آن.
-    - `origin-when-cross-origin`: ارجاعی که به originهای دیگر فرستاده می‌شود به scheme، host و port محدود خواهد شد. ناوبری‌ها روی همان origin همچنان شامل مسیر (path) خواهند بود.
-    - `same-origin`: برای same origin ارجاع ارسال می‌شود، اما درخواست‌های cross-origin هیچ اطلاعات referrer نخواهند داشت.
-    - `strict-origin`: فقط origin سند به‌عنوان referrer ارسال می‌شود وقتی سطح امنیت پروتکل ثابت بماند (HTTPS→HTTPS)، و به مقصدِ کمتر امن (HTTPS→HTTP) ارسال نخواهد شد.
-    - `strict-origin-when-cross-origin` (پیش‌فرض): هنگام درخواست same-origin یک URL کامل ارسال می‌شود، هنگام ماندن سطح امنیت پروتکل فقط origin ارسال می‌شود (HTTPS→HTTPS)، و به مقصدِ کمتر امن (HTTPS→HTTP) هیچ هدر ارسال نمی‌شود.
-    - `unsafe-url`: referrer شامل origin و مسیر (path) خواهد بود (ولی شامل fragment، password یا username نمی‌شود). این مقدار ناامن است؛ زیرا originها و مسیرها را از منابع محافظت‌شده با TLS به مقصدهای ناامن لو می‌دهد.
-
+  - : مشخص می‌کند هنگام دنبال کردن لینک، چه مقدار از [referrer](/en-US/docs/Web/HTTP/Reference/Headers/Referer) ارسال شود.
+    - `no-referrer`: هدر `Referer` ارسال نخواهد شد.
+    - `no-referrer-when-downgrade`: هدر `Referer` به originهایی که TLS (HTTPS) ندارند ارسال نمی‌شود.
+    - `origin`: referrer ارسالی به origin صفحهٔ ارجاع‌دهنده محدود می‌شود: یعنی [scheme](/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL)، host و port آن.
+    - `origin-when-cross-origin`: referrer ارسالی به دیگر originها به scheme، host و port محدود می‌شود. ناوبری‌ها (navigations) روی همان origin همچنان مسیر (path) را شامل می‌شوند.
+    - `same-origin`: برای same origin یک referrer ارسال می‌شود، اما درخواست‌های cross-origin هیچ اطلاعات referrer ندارند.
+    - `strict-origin`: فقط زمانی که سطح امنیت پروتکل یکسان باشد (HTTPS→HTTPS)، origin سند را به عنوان referrer ارسال کن، اما به مقصد کم‌امنیت‌تر (HTTPS→HTTP) ارسال نکن.
+    - `strict-origin-when-cross-origin` (پیش‌فرض): برای درخواست same-origin، URL کامل ارسال کن؛ وقتی سطح امنیت پروتکل یکسان است (HTTPS→HTTPS) فقط origin ارسال کن؛ و به مقصد کم‌امنیت‌تر (HTTPS→HTTP) هیچ هدری ارسال نکن.
+    - `unsafe-url`: referrer شامل origin و مسیر (path) خواهد بود (اما [fragment](/en-US/docs/Web/API/HTMLAnchorElement/hash)، [password](/en-US/docs/Web/API/HTMLAnchorElement/password) یا [username](/en-US/docs/Web/API/HTMLAnchorElement/username) را شامل نمی‌شود). **این مقدار ناامن است**، چون origin و path را از منابع محافظت‌شده با TLS به originهای ناامن درز می‌دهد.
 - [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel)
-  - : رابطه‌ی URL لینک‌شده به‌صورت لیستی از link typeها جداشده با فاصله.
+  - : رابطهٔ URL مقصد را به صورت نوع‌های لینک (link types) که با فاصله جدا شده‌اند مشخص می‌کند.
 - `target`
-  - : مکان نمایش URL لینک‌شده، به‌عنوان نام یک browsing context (یک تب، پنجره، یا `iframe`). کلیدواژه‌های زیر معانی ویژه‌ای برای محل بارگذاری URL دارند:
-    - `_self`: browsing context فعلی. (پیش‌فرض)
-    - `_blank`: معمولاً یک تب جدید، اما کاربران می‌توانند مرورگر را طوری تنظیم کنند که به‌جای تب، پنجرهٔ جدید باز کند.
-    - `_parent`: browsing context والدِ کنونی. اگر والد وجود نداشته باشد، مانند `_self` رفتار می‌کند.
-    - `_top`: بالاترین browsing context؛ به‌عبارت دیگر «بالا‌ترین» کانتکستی که جد (ancestor) کانتکست فعلی است. اگر جدی وجود نداشته باشد، مانند `_self` رفتار می‌کند.
-    - `_unfencedTop`: امکان می‌دهد فریم‌های محصور (fenced frames) جاسازی‌شده به فریم سطح بالا ناوبری کنند (یعنی عبور فراتر از ریشهٔ fenced frame، برخلاف مقصدهای رزروشدهٔ دیگر). توجه داشته باشید که اگر این مقدار خارج از زمینهٔ fenced frame استفاده شود، ناوبری همچنان موفق خواهد بود، اما مانند یک کلیدواژهٔ رزروشده عمل نخواهد کرد.
+  - : تعیین می‌کند URL مقصد کجا نمایش داده شود؛ به عنوان نامی برای یک _browsing context_ (تب، پنجره یا `<iframe>`). کلمات کلیدی زیر معنای خاصی برای محل بارگذاری URL دارند:
+    - `_self`: همان browsing context فعلی. (پیش‌فرض)
+    - `_blank`: معمولاً یک تب جدید، اما کاربران می‌توانند مرورگر را طوری پیکربندی کنند که به جای آن یک پنجرهٔ جدید باز کند.
+    - `_parent`: browsing context والدِ context فعلی. اگر والدی نباشد، مانند `_self` عمل می‌کند.
+    - `_top`: بالاترین browsing context. به بیان دقیق‌تر، یعنی «بالاترین» context که جدِ context فعلی است. اگر جدی وجود نداشته باشد، مانند `_self` عمل می‌کند.
+    - `_unfencedTop`: به [fenced frames](/en-US/docs/Web/API/Fenced_frame_API) جاسازی‌شده اجازه می‌دهد تا frame سطح بالا را ناوبری کنند (یعنی برخلاف سایر مقصدهای رزروشده، از ریشهٔ fenced frame عبور کنند). توجه داشته باشید که اگر این مقدار خارج از context فنس‌شده استفاده شود، ناوبری همچنان موفق خواهد بود، اما مانند یک کلمهٔ کلیدی رزروشده رفتار نخواهد کرد.
 
-    > [!NOTE]
-    > قرار دادن `target="_blank"` روی عناصر `<a>` به‌طور ضمنی همان رفتار `rel` مربوط به [`rel="noopener"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/noopener) را فراهم می‌کند که باعث نمی‌شود `window.opener` تنظیم شود.
+> [!NOTE]
+> تنظیم `target="_blank"` روی عناصر `<a>` به‌طور ضمنی همان رفتار `rel` را دارد که تنظیم [`rel="noopener"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/noopener) ارائه می‌دهد؛ یعنی `window.opener` را تنظیم نمی‌کند.
 
 - `type`
-  - : اشاره به فرمت URL مرتبط دارد، با MIME type. هیچ عملکرد داخلی خاصی ارائه نمی‌دهد.
+  - : به فرمت URL مقصد با استفاده از {{Glossary("MIME type")}} اشاره می‌کند. عملکرد داخلی ندارد.
 
-### Deprecated attributes
+### ویژگی‌های منسوخ‌شده (Deprecated attributes)
 
-- `charset` 
-  - : به character encoding آدرس اشاره می‌کرد.
+- `charset` {{Deprecated_Inline}}
+  - : به {{Glossary("character encoding")}} (رمزگذاری کاراکتر) URL مقصد اشاره می‌کرد.
 
-    > [!NOTE]
-    > این صفت منسوخ شده و نباید توسط نویسندگان استفاده شود. از هدر HTTP Content-Type در سرور برای تعیین encoding استفاده کنید.
+    > **نکته:**
+    > این ویژگی منسوخ شده و **نویسندگان نباید از آن استفاده کنند**. به جای آن از هدر HTTP {{HTTPHeader("Content-Type")}} در URL مقصد استفاده کنید.
 
-- `coords` 
-  - : همراه با صفت `shape` استفاده می‌شد. فهرستی جداشده با کاما از مختصات است.
-- `name` 
-  - : برای تعریف یک موقعیت هدف احتمالی در صفحه ضروری بود. در HTML 4.01، می‌شد از هر دو `id` و `name` روی `<a>` استفاده کرد مشروط بر اینکه مقادیرشان یکسان باشد.
+- `coords` {{Deprecated_Inline}}
+  - : همراه با [ویژگی `shape`](#shape) استفاده می‌شد. یک فهرست مختصات که با کاما جدا شده‌اند.
+- `name` {{Deprecated_Inline}}
+  - : برای تعریف یک موقعیت هدف در یک صفحه لازم بود. در HTML 4.01، `id` و `name` هر دو می‌توانستند روی `<a>` استفاده شوند، به شرطی که مقدار یکسانی داشتند.
 
-    > [!NOTE]
-    > به جای آن از صفت سراسری `id` استفاده کنید.
+    > **نکته:**
+    > به جای آن از ویژگی سراسری [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) استفاده کنید.
 
-- `rev` 
-  - : لینک معکوس را مشخص می‌کرد؛ مخالف صفت `rel`. به‌خاطر ایجاد سردرگمی منسوخ شد.
-- `shape` 
-  - : شکل ناحیهٔ هایپرلینک در یک image map را تعیین می‌کرد.
+- `rev` {{Deprecated_Inline}}
+  - : یک لینک معکوس را مشخص می‌کرد؛ برعکس [ویژگی `rel`](#rel). به دلیل ایجاد سردرگمی زیاد منسوخ شد.
+- `shape` {{Deprecated_Inline}}
+  - : شکل ناحیه‌ی هایپرلینک در یک نقشه تصویری (image map).
 
-    > [!NOTE]
-    > به‌جای آن از عنصر `area` برای نقشه‌های تصویر استفاده کنید.
+    > **نکته:**
+    > برای نقشه‌های تصویری از عنصر {{HTMLElement("area")}} استفاده کنید.
 
-## Accessibility
+## دسترسی‌پذیری (Accessibility)
 
-### Strong link text
+### متن لینک قوی (Strong link text)
 
-محتوای داخل لینک باید نشان دهد لینک به کجا می‌رود، حتی زمانی که خارج از زمینه قرار گرفته باشد.
+**محتوای داخل یک لینک باید مشخص کند که لینک به کجا می‌رود**، حتی خارج از زمینه.
 
-#### Inaccessible, weak link text
+#### متن لینک ضعیف و غیرقابل دسترس
 
-خطای رایج این است که تنها روی کلماتی مثل "click here" یا "here" لینک زده شود:
+یک اشتباه رایج این است که فقط کلمات "اینجا کلیک کنید" یا "اینجا" را لینک کنیم:
 
 ```html example-bad
-<p>Learn more about our products <a href="/products">here</a>.</p>
+<p>برای آشنایی بیشتر با محصولات ما <a href="/products">اینجا</a> کلیک کنید.</p>
 ```
 
-##### Result
+##### نتیجه
 
-#### Accessible, strong link text
+{{EmbedLiveSample('Inaccessible, weak link text', '100%', '50')}}
 
-خوشبختانه این مشکل به‌راحتی قابل حل است و در واقع نسخهٔ درست اغلب کوتاه‌تر هم هست:
+#### متن لینک قوی و دسترس‌پذیر
+
+خوشبختانه این مشکل به راحتی قابل حل است و حتی از نسخهٔ غیرقابل دسترس کوتاه‌تر است!
 
 ```html example-good
-<p>Learn more <a href="/products">about our products</a>.</p>
+<p>بیشتر دربارهٔ <a href="/products">محصولات ما</a> بدانید.</p>
 ```
 
-##### Result
+##### نتیجه
 
-نرم‌افزارهای کمکی میانبری برای فهرست کردن همهٔ لینک‌های صفحه دارند. با این حال، متن قوی لینک به همهٔ کاربران کمک می‌کند — میانبر «فهرست همهٔ لینک‌ها» رفتار اسکن سریع صفحه توسط کاربران بینا را شبیه‌سازی می‌کند.
+{{EmbedLiveSample('Accessible, strong link text', '100%', '50')}}
 
-### onclick events
+نرم‌افزارهای کمکی میانبرهایی برای فهرست کردن همهٔ لینک‌های یک صفحه دارند. با این حال، متن لینک قوی به نفع همهٔ کاربران است – میانبر «فهرست همه لینک‌ها» تقلیدی از نحوهٔ مرور سریع صفحات توسط کاربران بینا است.
 
-عنصرهای anchor اغلب به‌عنوان دکمه‌های جعلی سوءاستفاده می‌شوند با تنظیم `href` روی `#` یا `javascript:void(0)` تا از بازنشانی صفحه جلوگیری شود، و سپس به رویداد `click` آنها گوش می‌دهند.
+### رویدادهای onclick
 
-این مقادیر تقلبی `href` هنگام کپی/کشیدن لینک، باز کردن در تب/پنجرهٔ جدید، بوکمارک کردن، یا زمانی که JavaScript در حال بارگذاری است، خطا می‌دهد یا غیرفعال است، باعث رفتار غیرمنتظره می‌شوند. همچنین معانی نادرستی به فناوری‌های کمکی مانند screen readerها منتقل می‌کنند.
+از عناصر لنگر (anchor) اغلب به عنوان دکمه‌های تقلبی استفاده می‌شود، با تنظیم `href` روی `#` یا [`javascript:void(0)`](/en-US/docs/Web/URI/Reference/Schemes/javascript) برای جلوگیری از بارگذاری مجدد صفحه، و سپس گوش دادن به رویدادهای `click`.
 
-به جای آن از `button` استفاده کنید. به طور کلی، باید فقط از hyperlink برای ناوبری به یک URL واقعی استفاده شود.
+این مقادیر جعلی `href` باعث رفتار غیرمنتظره هنگام کپی/کشیدن لینک‌ها، باز کردن لینک در تب/پنجره جدید، بوکمارک کردن، یا وقتی جاوااسکریپت در حال بارگذاری است، خطا دارد یا غیرفعال است، می‌شوند. همچنین معانی نادرستی را به فناوری‌های کمکی مانند screen reader منتقل می‌کنند.
 
-### External links and linking to non-HTML resources
+به جای آن از یک {{HTMLElement("button")}} استفاده کنید. به طور کلی، **شما فقط باید از یک هایپرلینک برای ناوبری به یک URL واقعی استفاده کنید**.
 
-لینک‌هایی که با `target="_blank"` در تب/پنجرهٔ جدید باز می‌شوند، یا لینک‌هایی که به فایل دانلود اشاره می‌کنند، باید نشان دهند هنگام دنبال کردن لینک چه اتفاقی می‌افتد.
+### لینک‌های خارجی و لینک به منابع غیر HTML
 
-افرادی که مشکلات بینایی دارند، با کمک screen readerها ناوبری می‌کنند، یا مسائل شناختی دارند ممکن است با باز شدن ناگهانی تب، پنجره یا برنامهٔ جدید سردرگم شوند. نرم‌افزارهای قدیمی صفحه‌خوان ممکن است حتی این رفتار را اعلام نکنند.
+لینک‌هایی که از طریق `target="_blank"` در یک تب/پنجره جدید باز می‌شوند، یا لینک‌هایی که به یک فایل دانلودی اشاره دارند، باید نشان دهند که پس از کلیک چه اتفاقی می‌افتد.
 
-#### Link that opens a new tab/window
+افرادی که مشکل بینایی دارند، با فناوری screen reader کار می‌کنند، یا مشکلات شناختی دارند، ممکن است با باز شدن ناگهانی یک تب یا پنجره جدید سردرگم شوند. نرم‌افزارهای قدیمی screen reader ممکن است اصلاً این رفتار را اعلام نکنند.
+
+#### لینکی که در یک تب/پنجره جدید باز می‌شود
 
 ```html
 <a target="_blank" href="https://www.wikipedia.org">
-  Wikipedia (opens in new tab)
+  ویکی‌پدیا (در تب جدید باز می‌شود)
 </a>
 ```
 
-##### Result
+##### نتیجه
 
-#### Link to a non-HTML resource
+{{EmbedLiveSample('Link that opens a new tab/window')}}
 
-اگر از یک آیکن برای نشان دادن رفتار لینک استفاده می‌کنید، مطمئن شوید که آن آیکن یک صفت `alt` دارد تا هدفش را توصیف کند. اگر آیکن نمایش داده نشود، محتوای `alt` همچنان رفتار لینک را منتقل خواهد کرد.
+#### لینک به یک منبع غیر HTML
+
+اگر از یک آیکون برای نشان دادن رفتار لینک استفاده می‌شود، مطمئن شوید که یک [`alt` attribute](/en-US/docs/Web/HTML/Reference/Elements/img#alt) (ویژگی alt) برای توصیف هدف آن وجود دارد. در صورت نبود آیکون، محتوای ویژگی `alt` همچنان رفتار لینک را منتقل خواهد کرد.
 
 ```html
 <p>
@@ -224,9 +230,9 @@ This element's attributes include the [global attributes](/en-US/docs/Web/HTML/R
 - [G200: Opening new windows and tabs from a link only when necessary](https://www.w3.org/TR/WCAG20-TECHS/G200.html)
 - [G201: Giving users advanced warning when opening a new window](https://www.w3.org/TR/WCAG20-TECHS/G201.html)
 
-### Skip links
+### لینک‌های پرش
 
-یک پیوند پرش (skip link) پیوندی است که در اولین بخش ممکن از محتوای عنصر body قرار می‌گیرد و به شروع محتوای اصلی صفحه اشاره می‌کند. معمولاً با CSS پیوند پرش خارج از صفحه پنهان می‌شود تا زمانی که فوکوس پیدا کند قابل مشاهده شود.
+یک **لینک پرش (Skip link)** پیوندی است که در ابتدای محتوای عنصر body قرار می‌گیرد و به شروع محتوای اصلی صفحه اشاره می‌کند. معمولاً CSS این لینک را تا وقتی فوکس نگیرد، خارج از دید پنهان می‌کند.
 
 ```html
 <body>
@@ -252,38 +258,38 @@ This element's attributes include the [global attributes](/en-US/docs/Web/HTML/R
 
 #### نتیجه
 
-پیوندهای پرش به کاربران کیبورد اجازه می‌دهند از محتوای تکراری در صفحات متعدد عبور کنند و مستقیماً به بخش‌های مهم مانند ناوبری هدر بپرند.
+لینک‌های پرش به کاربران صفحه‌کلید اجازه می‌دهند از محتوای تکراری در چندین صفحه، مثل ناوبری هدر، عبور کنند.
 
-پیوندهای پرش برای افرادی که با فناوری کمکی مانند کنترل سوئیچ، فرمان صوتی، یا ابزارهایی مانند mouth sticks/head wands ناوبری می‌کنند بسیار مفیدند، زیرا حرکت از میان لینک‌های تکراری می‌تواند زمان‌بر یا دشوار باشد.
+این لینک‌ها به‌ویژه برای افرادی مفیدند که با کمک فناوری‌های کمکی مانند کنترل سوییچی، فرمان صوتی، یا چوب دهانی/عصای سر حرکت می‌کنند؛ جایی که عبور از پیوندهای تکراری می‌تواند خسته‌کننده باشد.
 
 - [WebAIM: "Skip Navigation" Links](https://webaim.org/techniques/skipnav/)
 - [How-to: Use Skip Navigation links](https://www.a11yproject.com/posts/skip-nav-links/)
 - [MDN / Understanding WCAG, Guideline 2.4 explanations](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Operable#guideline_2.4_%e2%80%94_navigable_provide_ways_to_help_users_navigate_find_content_and_determine_where_they_are)
 - [Understanding Success Criterion 2.4.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html)
 
-### اندازه و فاصله
+### اندازه و نزدیکی
 
 #### اندازه
 
-عناصر تعاملی، مثل لینک‌ها، باید ناحیه‌ای به اندازه کافی بزرگ فراهم کنند تا فعال‌سازی آن‌ها آسان باشد. این امر به گروه‌های مختلفی از افراد کمک می‌کند، از جمله کسانی که مشکلات کنترل حرکتی دارند یا از ورودی‌های کم‌دقت مثل صفحه‌لمس استفاده می‌کنند. حداقل اندازهٔ پیشنهادی 44×44 CSS pixels است.
+المان‌های تعاملی، مانند لینک‌ها، باید ناحیه‌ای به اندازه کافی بزرگ در اختیار بگذارند تا فعال کردنشان آسان باشد. این کار به طیف گسترده‌ای از افراد کمک می‌کند، از جمله افرادی که مشکلات کنترل حرکتی دارند و افرادی که از ورودی‌های دقیق مثل تاچ‌اسکرین استفاده می‌کنند. حداقل اندازه پیشنهادی ۴۴×۴۴ پیکسل CSS است.
 
-لینک‌های متنی در متن معمولی (text-only links) از این الزام مستثنا هستند، اما باز هم بهتر است مطمئن شوید متن کافی لینک شده تا فعال‌سازی آن آسان باشد.
+لینک‌های صرفاً متنی در محتوای متنی از این الزام معاف هستند، اما همچنان بهتر است مطمئن شوید بخش کافی از متن لینک می‌شود تا به راحتی قابل فعال‌سازی باشد.
 
 - [Understanding Success Criterion 2.5.5: Target Size](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)
 - [Target Size and 2.5.5](https://adrianroselli.com/2019/06/target-size-and-2-5-5.html)
 - [Quick test: Large touch targets](https://www.a11yproject.com/posts/large-touch-targets/)
 
-#### فاصله
+#### نزدیکی
 
-عناصر تعاملی که در نزدیکی بصری یکدیگر قرار دارند باید با فاصله‌ای از هم جدا شوند. فاصله‌گذاری به افرادی که مشکلات کنترل حرکتی دارند کمک می‌کند تا به اشتباه آیتمِ نادرست را فعال نکنند.
+المان‌های تعاملی، مانند لینک‌ها، که از نظر بصری نزدیک به هم قرار دارند، باید با فاصله از هم جدا شوند. این فاصله‌گذاری به افرادی که مشکلات کنترل حرکتی دارند کمک می‌کند، زیرا در غیر این صورت ممکن است به طور تصادفی محتوای تعاملی اشتباهی را فعال کنند.
 
-فاصله می‌تواند با استفاده از ویژگی‌های CSS مانند margin ایجاد شود.
+این فاصله را می‌توان با استفاده از ویژگی‌های CSS مثل `margin` ایجاد کرد.
 
 - [Hand tremors and the giant-button-problem](https://axesslab.com/hand-tremors/)
 
-## Examples
+## مثال‌ها
 
-### Linking to an absolute URL
+### لینک به یک URL مطلق
 
 #### HTML
 
@@ -293,7 +299,7 @@ This element's attributes include the [global attributes](/en-US/docs/Web/HTML/R
 
 #### نتیجه
 
-### Linking to relative URLs
+### پیوند به URLهای نسبی
 
 #### HTML
 
@@ -312,10 +318,9 @@ a {
 }
 ```
 
-#### Result
+#### نتیجه
 
-
-### Linking to an element on the same page
+### پیوند به یک element در همان صفحه
 
 ```html
 <!-- <a> element links to the section below -->
@@ -325,49 +330,46 @@ a {
 <h2 id="Section_further_down">Section further down</h2>
 ```
 
-#### Result
-
+#### نتیجه
 
 > [!NOTE]
-> می‌توانید از `href="#top"` یا fragment خالی (`href="#"`) برای لینک دادن به بالای صفحهٔ جاری استفاده کنید، همان‌طور که در مشخصهٔ HTML تعریف شده است: https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier.
+> می‌توانید از `href="#top"` یا fragment خالی (`href="#"`) برای پیوند به بالای صفحه‌ی جاری استفاده کنید؛ [طبق تعریف در مشخصات HTML](https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier).
 
-### Linking to an email address
+### پیوند به یک نشانی ایمیل
 
-برای ساختن لینک‌هایی که برنامهٔ ایمیل کاربر را باز می‌کنند تا پیام جدیدی ارسال کند، از scheme `mailto:` استفاده کنید:
+برای ساخت لینک‌هایی که برنامه‌ی ایمیل کاربر را باز می‌کنند تا پیام جدیدی ارسال کنند، از اسکیم `mailto:` استفاده کنید:
 
 ```html
 <a href="mailto:nowhere@mozilla.org">Send email to nowhere</a>
 ```
 
-#### Result
+#### نتیجه
 
+برای جزئیات مربوط به URLهای `mailto:`، مانند افزودن موضوع (subject) یا بدنه (body)، به [لینک‌های ایمیل](/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links#email_links) یا RFC 6068 مراجعه کنید.
 
-برای جزئیات دربارهٔ URLهای `mailto:`، مثل اضافه کردن subject یا body، به بخش Email links در آموزش ساختاردهی محتوا مراجعه کنید یا RFC 6068.
-
-### Linking to telephone numbers
+### پیوند به شماره تلفن
 
 ```html
 <a href="tel:+49.157.0156">+49 157 0156</a>
 <a href="tel:+1(800)555-0123">(800) 555-0123</a>
 ```
 
-#### Result
+#### نتیجه
 
+رفتار لینک `tel:` بسته به قابلیت‌های دستگاه متفاوت است:
 
-رفتار لینک‌های `tel:` بسته به قابلیت‌های دستگاه متفاوت است:
+- دستگاه‌های سلولی به‌صورت خودکار شماره را شماره‌گیری می‌کنند.
+- بیشتر سیستم‌عامل‌ها برنامه‌هایی برای تماس دارند، مانند Skype یا FaceTime.
+- وب‌سایت‌ها می‌توانند با `registerProtocolHandler` تماس برقرار کنند، مانند `web.skype.com`.
+- رفتارهای دیگر شامل ذخیره‌ی شماره در مخاطبین یا ارسال شماره به دستگاه دیگر است.
 
-- دستگاه‌های تلفن همراه شماره را به‌طور خودکار شماره‌گیری می‌کنند.
-- اکثر سیستم‌عامل‌ها برنامه‌هایی برای برقراری تماس دارند، مثل Skype یا FaceTime.
-- وب‌سایت‌ها می‌توانند با استفاده از registerProtocolHandler، مانند `web.skype.com`، تماس تلفنی راه‌اندازی کنند.
-- رفتارهای دیگر شامل ذخیرهٔ شماره در دفترچهٔ مخاطبین یا ارسال شماره به دستگاه دیگری است.
+برای آشنایی با نحو (syntax)، ویژگی‌های اضافی و جزئیات دیگر درباره‌ی اسکیم URL `tel:`، به RFC 3966 مراجعه کنید.
 
-برای نحو، قابلیت‌های اضافی و جزئیات دیگر دربارهٔ scheme `tel:` به RFC 3966 مراجعه کنید.
+### استفاده از download attribute برای ذخیره‌ی `<canvas>` به صورت PNG
 
-### Using the download attribute to save a <canvas> as a PNG
+برای ذخیره‌ی محتوای یک `<canvas>` به عنوان تصویر، می‌توانید لینکی بسازید که `href` آن، داده‌ی canvas به صورت URL از نوع `data:` (ساخته‌شده با JavaScript) باشد و `download` attribute نام فایل PNG دانلودی را مشخص کند:
 
-برای ذخیرهٔ محتوای عنصر <canvas> به‌عنوان یک تصویر، می‌توانید یک لینک بسازید که مقدار `href` آن دادهٔ canvas به‌صورت یک URL از نوع `data:` باشد (توسط JavaScript ساخته شده) و صفت `download` نام فایل PNG دانلودشده را مشخص کند.
-
-#### Example painting app with save link
+#### مثال برنامه‌ی نقاشی با لینک ذخیره
 
 ##### HTML
 
@@ -429,79 +431,61 @@ document
   );
 ```
 
-##### Result
+##### نتیجه
 
+## امنیت و حریم خصوصی
 
-## Security and privacy
+المان‌های `<a>` می‌توانند پیامدهایی برای امنیت و حریم خصوصی کاربران داشته باشند. برای اطلاعات بیشتر به [هدر `Referer`: نگرانی‌های حریم خصوصی و امنیت](/en-US/docs/Web/Privacy/Guides/Referer_header:_privacy_and_security_concerns) مراجعه کنید.
 
-عناصر `<a>` می‌توانند تأثیراتی بر امنیت و حریم خصوصی کاربران داشته باشند. برای اطلاعات بیشتر به Referer header: privacy and security concerns مراجعه کنید.
+## خلاصه فنی
 
-استفاده از `target="_blank"` بدون [`rel="noreferrer"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/noreferrer) و [`rel="noopener"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/noopener) وب‌سایت را در معرض حملات سوءاستفاده از API `window.opener` قرار می‌دهد. توجه داشته باشید که در نسخه‌های جدیدتر مرورگرها، تنظیم `target="_blank"` به‌صورت ضمنی همان محافظتِ `rel="noopener"` را فراهم می‌کند. برای جزئیات بیشتر به [browser compatibility](#browser_compatibility) مراجعه کنید.
+استفاده از `target="_blank"` بدون `rel="noreferrer"` و `rel="noopener"` باعث می‌شود وب‌سایت در معرض حملات سوءاستفاده از API `window.opener` قرار گیرد. البته توجه داشته باشید که در نسخه‌های جدیدتر مرورگرها، تنظیم `target="_blank"` به طور ضمنی همان محافظتی را فراهم می‌کند که `rel="noopener"` ارائه می‌دهد. برای جزئیات بیشتر به [browser compatibility](#browser_compatibility) مراجعه کنید.
 
-## خلاصهٔ فنی
-
+```markdown
 <table class="properties">
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories"
-          >Content categories</a
-        >
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories">Content categories</a>
       </th>
       <td>
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
-          >Flow content</a
-        >,
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content"
-          >phrasing content</a
-        >,
-        <a
-          href="/en-US/docs/Web/HTML/Guides/Content_categories#interactive_content"
-          >interactive content</a
-        >، palpable content.
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content">Flow content</a>,
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content">phrasing content</a>,
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#interactive_content">interactive content</a>, palpable content.
       </td>
     </tr>
     <tr>
-      <th scope="row">Permitted content</th>
+      <th scope="row">محتوای مجاز</th>
       <td>
-        <a
-          href="/en-US/docs/Web/HTML/Guides/Content_categories#transparent_content_model"
-          >Transparent</a
-        >، به‌استثنای این‌که هیچ فرزندی نباید
-        <a
-          href="/en-US/docs/Web/HTML/Guides/Content_categories#interactive_content"
-          >interactive content</a
-        > یا یک عنصر
-        <code>&lt;a&gt;</code> باشد، و هیچ فرزندی نباید صفت مشخص‌شده
-        <a
-          href="/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex"
-          >tabindex</a
-        > را داشته باشد.
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#transparent_content_model">Transparent</a>، به این استثنا که هیچ نواده‌ای نمی‌تواند
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#interactive_content">interactive content</a> یا یک
+        <code>&lt;a&gt;</code> element باشد، و هیچ نواده‌ای نمی‌تواند یک
+        <a href="/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex">tabindex</a> attribute تعیین‌شده داشته باشد.
       </td>
     </tr>
     <tr>
-      <th scope="row">Tag omission</th>
-      <td>ندارد؛ هم تگ شروع و هم تگ پایان اجباری هستند.</td>
+      <th scope="row">حذف تگ</th>
+      <td>هیچ؛ هم تگ شروع و هم تگ پایان اجباری هستند.</td>
     </tr>
     <tr>
-      <th scope="row">Permitted parents</th>
+      <th scope="row">والدین مجاز</th>
       <td>
-        هر عنصری که <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
-          >flow content</a
-        > را می‌پذیرد، اما دیگر عناصر <code>&lt;a&gt;</code> را نه.
+        هر element که <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content">flow content</a> را می‌پذیرد، اما نه
+        <code>&lt;a&gt;</code> element های دیگر.
       </td>
     </tr>
     <tr>
-      <th scope="row">Implicit ARIA role</th>
+      <th scope="row">نقش ARIA ضمنی</th>
       <td>
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/link_role"><code>link</code></a> زمانی که صفت <code>href</code> حضور دارد، در غیر این صورت
+        هنگامی که <code>href</code> attribute وجود داشته باشد:
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/link_role"><code>link</code></a>، در غیر این صورت
         <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/generic_role"><code>generic</code></a>
       </td>
     </tr>
     <tr>
-      <th scope="row">Permitted ARIA roles</th>
+      <th scope="row">نقش‌های ARIA مجاز</th>
       <td>
-        <p>وقتی صفت <code>href</code> حضور دارد:</p>
+        <p>هنگامی که <code>href</code> attribute وجود داشته باشد:</p>
         <ul>
           <li><a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role"><code>button</code></a></li>
           <li><a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role"><code>checkbox</code></a></li>
@@ -514,27 +498,28 @@ document
           <li><a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role"><code>tab</code></a></li>
           <li><a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treeitem_role"><code>treeitem</code></a></li>
         </ul>
-        <p>وقتی صفت <code>href</code> حضور ندارد:</p>
+        <p>هنگامی که <code>href</code> attribute وجود نداشته باشد:</p>
         <ul>
-          <li>هر نقش</li>
+          <li>هر نقشی</li>
         </ul>
       </td>
     </tr>
     <tr>
-      <th scope="row">DOM interface</th>
-      <td>HTMLAnchorElement</td>
+      <th scope="row">رابط DOM</th>
+      <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement"><code>HTMLAnchorElement</code></a></td>
     </tr>
   </tbody>
 </table>
 
-## Specifications
+## مشخصات
 
-## Browser compatibility
+## سازگاری مرورگر
 
-## See also
+## همچنین ببینید
+```
 
-- `<link>` مشابه `<a>` است، ولی برای پیوندهای متادیتا که برای کاربران نامرئی هستند استفاده می‌شود.
-- `:link` یک شبه‌کلاس (pseudo-class) در CSS است که با عناصر `<a>` که در صفت `href` یک URL دارند و کاربر هنوز آن را بازدید نکرده است، مطابقت می‌کند.
-- `:visited` یک شبه‌کلاس (pseudo-class) در CSS است که با عناصر `<a>` که در صفت `href` یک URL دارند و کاربر قبلاً آن را بازدید کرده است، مطابقت می‌کند.
-- `:any-link` یک شبه‌کلاس (pseudo-class) در CSS است که با عناصر `<a>` که صفت `href` دارند مطابقت می‌کند.
-- [Text fragments](/en-US/docs/Web/URI/Reference/Fragment/Text_fragments) دستورات user-agent هستند که به URLها اضافه می‌شوند و به نویسندگان محتوا اجازه می‌دهند بدون نیاز به داشتن ID، به متن خاصی در صفحه لینک دهند.
+- `<link>` مشابه `<a>` است، اما برای ابرپیوندهای فراداده‌ای که برای کاربران نامرئی هستند.
+- `:link` یک شبه‌کلاس CSS است که عناصر `<a>` دارای URL در ویژگی `href` را که کاربر هنوز از آن بازدید نکرده، مطابقت می‌دهد.
+- `:visited` یک شبه‌کلاس CSS است که عناصر `<a>` دارای URL در ویژگی `href` را که کاربر قبلاً از آن بازدید کرده، مطابقت می‌دهد.
+- `:any-link` یک شبه‌کلاس CSS است که عناصر `<a>` دارای ویژگی `href` را مطابقت می‌دهد.
+- [Text fragments](/en-US/docs/Web/URI/Reference/Fragment/Text_fragments) دستوراتی هستند که توسط user-agent به URLها اضافه می‌شوند و به نویسندگان محتوا امکان می‌دهند بدون نیاز به ID، به متن خاصی در یک صفحه لینک بدهند.
