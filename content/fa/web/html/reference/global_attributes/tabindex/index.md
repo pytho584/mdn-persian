@@ -4,77 +4,46 @@ source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attr
 translated_by: "n8n + AI"
 ---
 
-[ویژگی سراسری](/en-US/docs/Web/HTML/Reference/Global_attributes) **`tabindex`** به توسعه‌دهندگان امکان می‌دهد تا عناصر HTML را قابل فوکوس کنند، اجازه دهند یا مانع از فوکوس ترتیبی آن‌ها شوند (معمولاً با کلید <kbd>Tab</kbd>، از این رو نام آن) و ترتیب نسبی آن‌ها را در پیمایش ترتیبی فوکوس تعیین کنند.
+`tabindex` یک [ویژگی سراسری](/en-US/docs/Web/HTML/Reference/Global_attributes) در HTML است که به توسعه‌دهندگان اجازه می‌دهد المان‌های HTML را قابل تمرکز (focusable) کنند، امکان تمرکز متوالی (معمولاً با کلید <kbd>Tab</kbd>، از این رو نام آن) را فعال یا غیرفعال کنند و ترتیب نسبی آن‌ها را در پیمایش متوالی با فوکوس تعیین کنند.
 
-```html interactive-example
-<p>Click anywhere in this pane, then try tabbing through the elements.</p>
+این ویژگی یک عدد صحیح به عنوان مقدار می‌پذیرد و نتایج متفاوتی بسته به مقدار عدد دارد:
 
-<label>First in tab order:<input type="text" /></label>
+> **نکته:** اگر یک المان HTML رندر شود و دارای ویژگی `tabindex` با هر مقدار عدد صحیح معتبر باشد، می‌توان با جاوااسکریپت (با فراخوانی متد [`focus()`](/en-US/docs/Web/API/HTMLElement/focus)) یا با کلیک ماوس آن را متمرکز کرد. مقدار `tabindex` مشخص می‌کند که آیا المان «قابل پیمایش با Tab» (tabbable) است یا نه (یعنی با پیمایش متوالی صفحه‌کلید، معمولاً با کلید <kbd>Tab</kbd> قابل دسترسی است).
 
-<div tabindex="0">Tabbable due to tabindex.</div>
+- یک **مقدار منفی** (عدد دقیق不重要، معمولاً `tabindex="-1"`) به این معنی است که المان از طریق پیمایش متوالی صفحه‌کلید قابل دسترسی نیست.
 
-<div>Not tabbable: no tabindex.</div>
+  > **نکته:** `tabindex="-1"` می‌تواند برای المان‌هایی مفید باشد که مستقیماً با کلید <kbd>Tab</kbd> قابل پیمایش نیستند، اما باید بتوان فوکوس صفحه‌کلید را روی آن‌ها تنظیم کرد. مثال‌ها شامل یک پنجره مودال خارج از صفحه است که وقتی ظاهر می‌شود باید فوکوس شود، یا یک پیام خطای ارسال فرم که بلافاصله پس از ارسال ناموفق باید فوکوس شود.
 
-<label>Third in tab order:<input type="text" /></label>
-```
+- `tabindex="0"` به این معنی است که المان باید در پیمایش متوالی صفحه‌کلید، پس از همه مقادیر مثبت `tabindex`، قابل فوکوس باشد. ترتیب پیمایش فوکوس این المان‌ها با ترتیب آن‌ها در سند تعیین می‌شود.
+- یک **مقدار مثبت** به این معنی است که المان باید در پیمایش متوالی صفحه‌کلید قابل فوکوس باشد، با ترتیبی که با مقدار عدد تعیین می‌شود. یعنی `tabindex="4"` قبل از `tabindex="5"` و `tabindex="0"` فوکوس می‌شود، اما بعد از `tabindex="3"`. اگر چند المان مقدار مثبت یکسانی داشته باشند، ترتیب نسبی آن‌ها با توجه به موقعیتشان در سند تعیین می‌شود. حداکثر مقدار مجاز برای `tabindex` 32767 است.
+- اگر ویژگی `tabindex` بدون مقدار مشخصی استفاده شود، اینکه المان قابل فوکوس است یا نه توسط مرورگر تعیین می‌شود.
 
-```css interactive-example
-p {
-  font-style: italic;
-  font-weight: bold;
-}
+  > **هشدار:** توصیه می‌شود فقط از مقادیر `0` و `1-` برای `tabindex` استفاده کنید. از استفاده از مقادیر `tabindex` بزرگتر از `0` و ویژگی‌های CSS که می‌توانند ترتیب المان‌های قابل فوکوس HTML را تغییر دهند (مانند [ترتیب‌دهی آیتم‌های فلکس](/en-US/docs/Web/CSS/CSS_flexible_box_layout/Ordering_flex_items)) خودداری کنید. این کار برای افرادی که برای پیمایش از صفحه‌کلید یا فناوری‌های کمکی استفاده می‌کنند، پیمایش و تعامل با محتوای صفحه را دشوار می‌کند. در عوض، سند را با المان‌ها در یک توالی منطقی بنویسید.
 
-div,
-label {
-  display: block;
-  letter-spacing: 0.5px;
-  margin-bottom: 1rem;
-}
-
-div:focus {
-  font-weight: bold;
-}
-```
-
-این ویژگی یک عدد صحیح را به عنوان مقدار می‌پذیرد و نتیجه بسته به مقدار آن عدد متفاوت است:
-
-> [!NOTE]
-> اگر یک عنصر HTML رندر شود و ویژگی `tabindex` با هر مقدار صحیحی داشته باشد، می‌توان آن را با جاوااسکریپت (با فراخوانی متد [`focus()`](/en-US/docs/Web/API/HTMLElement/focus)) یا به‌صورت دیداری با کلیک ماوس فوکوس کرد. مقدار خاص `tabindex` تعیین می‌کند که آیا عنصر «قابل تب» (tabbable) است؛ یعنی آیا می‌توان از طریق پیمایش ترتیبی صفحه‌کلید، معمولاً با کلید <kbd>Tab</kbd>، به آن دسترسی داشت.
-
-- یک _مقدار منفی_ (مقدار دقیق منفی مهم نیست، معمولاً `tabindex="-1"`) یعنی عنصر از طریق پیمایش ترتیبی صفحه‌کلید قابل دسترسی نیست.
-
-  > [!NOTE]
-  > `tabindex="-1"` ممکن است برای عناصری مفید باشد که نباید مستقیماً با کلید <kbd>Tab</kbd> به آن‌ها ناوبری شود، اما باید فوکوس صفحه‌کلید روی آن‌ها قرار گیرد. مثال‌ها شامل یک پنجرهٔ modal خارج از صفحه است که باید وقتی نمایش داده می‌شود فوکوس گیرد، یا پیام خطای ارسال فرم که باید بلافاصله هنگام ارسال فرم نامعتبر فوکوس شود.
-
-- `tabindex="0"` یعنی عنصر باید در پیمایش ترتیبی صفحه‌کلید قابل فوکوس باشد، بعد از هر مقدار مثبت `tabindex`. ترتیب ناوبری فوکوس این عناصر با ترتیب آن‌ها در سند منبع تعیین می‌شود.
-
-- یک _مقدار مثبت_ یعنی عنصر باید در پیمایش ترتیبی صفحه‌کلید قابل فوکوس باشد و ترتیب آن با مقدار عدد مشخص شود. یعنی `tabindex="4"` قبل از `tabindex="5"` و `tabindex="0"` فوکوس می‌شود، اما بعد از `tabindex="3"`. اگر چند عنصر مقدار مثبت یکسانی برای `tabindex` داشته باشند، ترتیب آن‌ها نسبت به یکدیگر بر اساس جایگاهشان در سند منبع است. حداکثر مقدار مجاز برای `tabindex` برابر ۳۲۷۶۷ است.
-
-- اگر ویژگی `tabindex` بدون مقدار مشخص شده باشد، این user agent است که تعیین می‌کند آیا عنصر قابل فوکوس است یا خیر.
-
-  > [!WARNING]
-  > توصیه می‌شود فقط از `0` و `1-` به عنوان مقادیر `tabindex` استفاده کنید. از استفاده از مقادیر بزرگ‌تر از `0` برای `tabindex` و از ویژگی‌های CSS که می‌توانند ترتیب عناصر قابل فوکوس HTML را تغییر دهند ([ترتیب آیتم‌های فلکس](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Ordering_items)) خودداری کنید. این کار برای افرادی که برای ناوبری یا استفاده از فناوری کمکی به صفحه‌کلید وابسته‌اند، پیمایش و کار با محتوای صفحه را دشوار می‌کند. در عوض، سند را طوری بنویسید که عناصر در توالی منطقی قرار داشته باشند.
-
-بعضی از عناصر HTML قابل‌فوکوس به‌طور پیش‌فرض توسط [عامل کاربری (user agent)](/en-US/docs/Glossary/User_agent) یک مقدار `tabindex` برابر با `0` دریافت می‌کنند. این عناصر عبارتند از: `<a>` یا `<area>` دارای ویژگی `href`، `<button>`، `<frame>` (منسوخ شده)، `<iframe>`، `<input>`، `<object>`، `<select>`، `<textarea>`، عنصر SVG `<a>` و `<summary>` که خلاصه‌ای برای `<details>` فراهم می‌کند. توسعه‌دهندگان نباید ویژگی `tabindex` را به این عناصر اضافه کنند مگر اینکه رفتار پیش‌فرض را تغییر دهد (مثلاً مقدار منفی باعث می‌شود عنصر از ترتیب ناوبری فوکوس حذف شود).
+برخی از عناصر HTML قابل‌focus، به‌طور پیش‌فرض توسط user agent (عامل کاربر) یک مقدار `tabindex` برابر با `0` دریافت می‌کنند. این عناصر عبارتند از: {{HTMLElement("a")}} یا {{HTMLElement("area")}} با attribute `href`، {{HTMLElement("button")}}، {{HTMLElement("frame")}} (منسوخ شده)، {{HTMLElement("iframe")}}، {{HTMLElement("input")}}، {{HTMLElement("object")}}، {{HTMLElement("select")}}، {{HTMLElement("textarea")}}، عنصر SVG {{SVGElement("a")}} و همچنین {{HTMLElement("summary")}} که خلاصه‌ای برای {{HTMLElement("details")}} ارائه می‌دهد. توسعه‌دهندگان نباید attribute `tabindex` را به این عناصر اضافه کنند مگر اینکه رفتار پیش‌فرض را تغییر دهند (مثلاً با مقدار منفی می‌توان عنصر را از ترتیب ناوبری focus خارج کرد).
 
 > [!WARNING]
-> ویژگی `tabindex` نباید روی عنصر `<dialog>` استفاده شود.
+> attribute `tabindex` نباید در عنصر {{HTMLElement("dialog")}} استفاده شود.
 
 ## نکات دسترسی‌پذیری (Accessibility)
 
-از به‌کارگیری `tabindex` همراه با [محتوای غیرتعاملی (non-interactive content)](/en-US/docs/Web/HTML/Guides/Content_categories#interactive_content) برای قابل‌فوکوس کردن چیزی که قرار است تعاملی باشد، خودداری کنید. مثلاً استفاده از `<div>` به جای `<button>` برای نمایش یک دکمه.
+از استفاده از attribute `tabindex` به‌همراه محتوای غیرتعاملی ([non-interactive content](/en-US/docs/Web/HTML/Guides/Content_categories#interactive_content)) برای قابل‌focus کردن با صفحه‌کلید عناصری که قرار است تعاملی باشند، خودداری کنید. مثلاً استفاده از {{HTMLElement("div")}} برای توصیف یک دکمه به‌جای {{HTMLElement("button")}}.
 
-اجزای تعاملی که با عناصر غیرتعاملی ساخته می‌شوند در [درخت دسترسی‌پذیری (accessibility tree)](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis) قرار نمی‌گیرند. این موضوع باعث می‌شود فناوری‌های کمکی نتوانند به این اجزا برسند و آن‌ها را کنترل کنند. محتوا باید به‌صورت معنایی با عناصر تعاملی (`<a>`، `<button>`، `<details>`، `<input>`، `<select>`، `<textarea>` و غیره) توصیف شود. این عناصر نقش‌ها و حالت‌های داخلی دارند که وضعیت را به دسترسی‌پذیری اعلام می‌کنند – در غیر این صورت باید با [ARIA](/en-US/docs/Web/Accessibility/ARIA) مدیریت می‌شد.
+کامپوننت‌های تعاملی که با عناصر غیرتعاملی ساخته می‌شوند، در [accessibility tree](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis) قرار نمی‌گیرند. این کار باعث می‌شود فناوری‌های کمکی نتوانند به این کامپوننت‌ها دسترسی پیدا کرده و آن‌ها را کنترل کنند. بهتر است محتوا به‌صورت معنایی با عناصر تعاملی (مانند {{HTMLElement("a")}}، {{HTMLElement("button")}}، {{HTMLElement("details")}}، {{HTMLElement("input")}}، {{HTMLElement("select")}}، {{HTMLElement("textarea")}} و غیره) توصیف شود. این عناصر به‌طور پیش‌فرض نقش‌ها (roles) و حالت‌هایی (states) دارند که وضعیت را به accessibility اعلام می‌کنند؛ در غیر این صورت باید این کار را با [ARIA](/en-US/docs/Web/Accessibility/ARIA) مدیریت کنید.
 
-- [Using the tabindex attribute | Vispero](https://vispero.com/resources/using-the-tabindex-attribute/)
+- [استفاده از attribute tabindex | Vispero](https://vispero.com/resources/using-the-tabindex-attribute/)
 
 ## مشخصات
 
+{{Specifications}}
+
 ## سازگاری با مرورگرها
 
-## همچنین ببینید
+{{Compat}}
+
+## جستارهای وابسته
 
 - تمام [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes)
-- `HTMLElement.tabIndex` که این attribute را منعکس می‌کند
-- مشکلات دسترسی‌پذیری `tabindex`: [Don't Use Tabindex Greater than 0](https://adrianroselli.com/2014/11/dont-use-tabindex-greater-than-0.html) نوشتهٔ Adrian Roselli
-- Reading order
+- {{domxref("HTMLElement.tabIndex")}} که این attribute را بازتاب می‌دهد
+- مشکلات دسترسی‌پذیری `tabindex`: [از Tabindex بزرگ‌تر از 0 استفاده نکنید](https://adrianroselli.com/2014/11/dont-use-tabindex-greater-than-0.html) نوشتهٔ Adrian Roselli
+- {{glossary("Reading order")}}
