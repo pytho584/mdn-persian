@@ -1,0 +1,64 @@
+---
+title: "CSSNumericValue: min() method"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/min"
+status: "needs-translation"
+---
+
+---
+title: "CSSNumericValue: min() method"
+short-title: min()
+slug: Web/API/CSSNumericValue/min
+page-type: web-api-instance-method
+browser-compat: api.CSSNumericValue.min
+---
+
+{{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
+
+The **`min()`** method of the {{domxref("CSSNumericValue")}} interface returns the lowest value from among those values passed.
+The passed values must be of the same type.
+
+## Syntax
+
+```js-nolint
+min()
+min(number1)
+min(number1, number2)
+min(number1, number2, /* …, */ numberN)
+```
+
+### Parameters
+
+- `number1`, …, `numberN` {{optional_inline}}
+  - : Either a number or a {{domxref('CSSNumericValue')}}.
+
+### Return value
+
+A {{domxref('CSSUnitValue')}}.
+
+### Exceptions
+
+- {{jsxref("TypeError")}}
+  - : Thrown if an invalid type was passed to the method.
+
+## Examples
+
+### Basic usage
+
+As stated earlier, all passed values must be of the same type and value.
+Some of the following examples illustrate what happens when they are not.
+
+```js
+// Prints "1cm"
+console.log(CSS.cm("1").min(CSS.cm("2")).toString());
+
+// Prints "max(1cm, 0.393701in)"
+console.log(CSS.cm("1").max(CSS.in("0.393701")).toString());
+```
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
