@@ -1,16 +1,68 @@
 ---
 title: "text-align CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-align"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-ویژگی `text-align` در CSS
-تراز افقی محتوای `inline-level` را درون یک عنصر block یا سلول جدول تنظیم می‌کند. در حقیقت عملکردی مشابه `vertical-align` اما در جهت افقی دارد.
+---
+title: "`text-align` CSS property"
+short-title: text-align
+slug: Web/CSS/Reference/Properties/text-align
+page-type: css-property
+browser-compat: css.properties.text-align
+sidebar: cssref
+---
 
-## نحو
+The **`text-align`** [CSS](/en-US/docs/Web/CSS) property sets the horizontal alignment of the inline-level content inside a block element or table-cell box. This means it works like {{cssxref("vertical-align")}} but in the horizontal direction.
+
+{{InteractiveExample("CSS Demo: text-align")}}
+
+```css interactive-example-choice
+text-align: start;
+```
+
+```css interactive-example-choice
+text-align: end;
+```
+
+```css interactive-example-choice
+text-align: center;
+```
+
+```css interactive-example-choice
+text-align: justify;
+```
+
+```html interactive-example
+<section id="default-example">
+  <div id="example-element">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
+  </div>
+</section>
+```
+
+```css interactive-example
+section {
+  font-size: 1.5em;
+}
+
+#default-example > div {
+  width: 250px;
+}
+```
+
+## Syntax
 
 ```css
-/* مقدارهای کلیدی */
+/* Keyword values */
 text-align: start;
 text-align: end;
 text-align: left;
@@ -19,11 +71,11 @@ text-align: center;
 text-align: justify;
 text-align: match-parent;
 
-/* مقدارهای تراز بلوکی (نحو غیر استاندارد) */
+/* Block alignment values (Non-standard syntax) */
 text-align: -moz-center;
 text-align: -webkit-center;
 
-/* مقدارهای سراسری */
+/* Global values */
 text-align: inherit;
 text-align: initial;
 text-align: revert;
@@ -31,35 +83,43 @@ text-align: revert-layer;
 text-align: unset;
 ```
 
-### مقادیر
+### Values
 
-این ویژگی با یکی از مقدارهای کلیدی زیر تعیین می‌شود:
+This property is specified as one of the following keyword values:
 
 - `start`
-  - : معادل `left` اگر جهت متن چپ‌به‌راست باشد و `right` اگر جهت متن راست‌به‌چپ باشد.
+  - : The same as `left` if direction is left-to-right and `right` if direction is right-to-left.
 - `end`
-  - : معادل `right` اگر جهت متن چپ‌به‌راست باشد و `left` اگر جهت متن راست‌به‌چپ باشد.
+  - : The same as `right` if direction is left-to-right and `left` if direction is right-to-left.
 - `left`
-  - : محتوای inline در امتداد لبهٔ چپ خط تراز می‌شود.
+  - : The inline contents are aligned to the left edge of the line box.
 - `right`
-  - : محتوای inline در امتداد لبهٔ راست خط تراز می‌شود.
+  - : The inline contents are aligned to the right edge of the line box.
 - `center`
-  - : محتوای inline در مرکز خط قرار می‌گیرد.
+  - : The inline contents are centered within the line box.
 - `justify`
-  - : تراز دوطرفه. محتوا طوری توزیع می‌شود که لبه‌های چپ و راست متن با لبه‌های چپ و راست خط هم‌تراز شوند – به‌جز آخرین خط.
+  - : The inline contents are justified. Spaces out the content to line up its left and right edges to the left and right edges of the line box, except for the last line.
 - `match-parent`
-  - : مشابه `inherit`، با این تفاوت که مقدارهای `start` و `end` بر اساس ویژگی `direction` والد محاسبه شده و به مقدار مناسب `left` یا `right` تبدیل می‌شوند.
+  - : Similar to `inherit`, but the values `start` and `end` are calculated according to the parent's {{cssxref("direction")}} and are replaced by the appropriate `left` or `right` value.
 
-## دسترس‌پذیری
+## Accessibility
 
-فاصله‌های ناهماهنگ میان واژه‌ها که در متن‌های `justify` ایجاد می‌شوند، ممکن است برای افراد دارای مشکلات شناختی مانند نارساخوانی دردسرساز شود.
+The inconsistent spacing between words created by justified text can be problematic for people with cognitive concerns such as Dyslexia.
 
-- [مستندات MDN برای درک WCAG، توضیحات اصل ۱.۴](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
-- [درک معیار موفقیت ۱.۴.۸ | درک WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html)
+- [MDN Understanding WCAG, Guideline 1.4 explanations](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
+- [Understanding Success Criterion 1.4.8 | Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html)
 
-## مثال‌ها
+## Formal definition
 
-### ترازبندی start
+{{CSSInfo}}
+
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Start alignment
 
 #### HTML
 
@@ -80,26 +140,13 @@ text-align: unset;
 }
 ```
 
-### متن وسط‌چین
+#### Result
+
+{{EmbedLiveSample("Start_alignment","100%","100%")}}
+
+### Centered text
 
 #### HTML
-
-```html
-<p class="center">
-  این یک متن نمونه برای نمایش تراز وسط است.
-</p>
-```
-
-#### CSS
-
-```css
-.center {
-  text-align: center;
-  border: solid;
-}
-```
-
-### مثال با center
 
 ```html
 <p class="example">
@@ -118,7 +165,13 @@ text-align: unset;
 }
 ```
 
-### مثال با justify
+#### Result
+
+{{EmbedLiveSample("Centered_text", "100%", "100%")}}
+
+### Example using "justify"
+
+#### HTML
 
 ```html
 <p class="example">
@@ -137,14 +190,18 @@ text-align: unset;
 }
 ```
 
-### ترازبندی جدول
+#### Result
 
-این مثال استفاده از `text-align` را روی عناصر `<table>` نشان می‌دهد:
+{{EmbedLiveSample('Example using "justify"',"100%","100%")}}
 
-- عنصر `<caption>` به‌صورت راست‌چین تنظیم شده است.
-- دو عنصر `<th>` اول، ترازبندی چپ را از `text-align: left` تعیین‌شده روی `<thead>` به ارث می‌برند، در حالی که عنصر سوم راست‌چین شده است.
-- درون عنصر `<tbody>`، سطر اول راست‌چین، سطر دوم وسط‌چین و سطر سوم از ترازبندی پیش‌فرض (چپ) استفاده می‌کند.
-- در هر سطر، برخی سلول‌ها (c12، c31) طوری تنظیم شده‌اند که ترازبندی سطر را لغو کنند.
+### Table alignment
+
+This example demonstrates the use of `text-align` on {{htmlelement("table")}} elements:
+
+- The {{htmlelement("caption")}} is set to right-aligned.
+- The first two {{htmlelement("th")}} elements inherit the left alignment from the `text-align: left` set on the {{htmlelement("thead")}}, while the third is set to right-aligned.
+- Inside the {{htmlelement("tbody")}} element, the first row is set to right-aligned, the second is set to center-aligned, and the third uses the default (left) alignment.
+- Within each row, some cells (c12, c31) are set to override the alignment of the row.
 
 #### HTML
 
@@ -209,8 +266,18 @@ caption {
 }
 ```
 
-## همچنین ببینید
+#### Result
 
-- `margin: auto`
-- `margin-left: auto`
-- `vertical-align`
+{{EmbedLiveSample('Table alignment', "100%", "200")}}
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- {{Cssxref("margin","margin: auto")}}, {{Cssxref("margin-left","margin-left: auto")}}, {{Cssxref("vertical-align")}}
