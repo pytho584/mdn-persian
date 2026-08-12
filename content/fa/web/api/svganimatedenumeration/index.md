@@ -1,0 +1,64 @@
+---
+title: "SVGAnimatedEnumeration"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimatedEnumeration"
+status: "needs-translation"
+---
+
+---
+title: SVGAnimatedEnumeration
+slug: Web/API/SVGAnimatedEnumeration
+page-type: web-api-interface
+browser-compat: api.SVGAnimatedEnumeration
+---
+
+{{APIRef("SVG")}}
+
+The **`SVGAnimatedEnumeration`** interface describes attribute values which are constants from a particular enumeration and which can be animated.
+
+From SVG 2, both `baseVal` and `animVal` reflect the non-animated value of the attribute.
+The allowed values of its properties depend on the associated attribute.
+
+## Instance properties
+
+- {{domxref("SVGAnimatedEnumeration.baseVal", "baseVal")}}
+  - : An integer that is the base value of the given attribute before applying any animations.
+- {{domxref("SVGAnimatedEnumeration.animVal", "animVal")}} {{ReadOnlyInline}}
+  - : This is the same as [`baseVal`](/en-US/docs/Web/API/SVGAnimatedEnumeration/baseVal) in SVG 2.
+
+## Instance methods
+
+The `SVGAnimatedEnumeration` interface does not provide any specific methods.
+
+## Examples
+
+## Basic usage
+
+Consider this snippet with a {{SVGElement("clipPath")}} element: Its {{SVGAttr("clipPathUnits")}} is associated with a `SVGAnimatedEnumeration` object.
+
+```html
+<svg viewBox="0 0 100 100" width="200" height="200">
+  <clipPath id="clip1" clipPathUnits="userSpaceOnUse">
+    <circle cx="50" cy="50" r="35" />
+  </clipPath>
+
+  <!-- Some reference rect to materialized to clip path -->
+  <rect id="r1" x="0" y="0" width="45" height="45" />
+</svg>
+```
+
+The following JavaScript gets the element, and logs the `baseVal` and `animVal` of the {{domxref("SVGClipPathElement.clipPathUnits")}} property.
+These values should be the same.
+
+```js
+const clipPathElt = document.getElementById("clip1");
+console.log(clipPathElt.clipPathUnits.baseVal); // Logs 1 that correspond to userSpaceOnUse
+console.log(clipPathElt.clipPathUnits.animVal); // Logs 1 that correspond to userSpaceOnUse
+```
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
