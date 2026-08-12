@@ -1,21 +1,32 @@
 ---
 title: "<details> HTML details disclosure element"
 source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-عنصر `<details>` یک ویجت بازشونده (disclosure widget) در HTML ایجاد می‌کند که محتوای آن فقط در حالت باز (open) نمایش داده می‌شود. برای این ویجت باید یک برچسب یا عنوان با استفاده از عنصر `<summary>` ارائه شود.
+---
+title: "`<details>` HTML details disclosure element"
+short-title: <details>
+slug: Web/HTML/Reference/Elements/details
+page-type: html-element
+browser-compat: html.elements.details
+sidebar: htmlsidebar
+---
 
-یک ویجت بازشونده معمولاً با یک مثلث کوچک نمایش داده می‌شود که برای نشان دادن وضعیت باز یا بسته می‌چرخد (یا کج می‌شود) و یک برچسب در کنار آن قرار دارد. محتوای عنصر `<summary>` به‌عنوان برچسب ویجت استفاده می‌شود و محتوای `<details>` توضیح دسترس‌پذیر (accessible description) برای `<summary>` را فراهم می‌کند.
+The **`<details>`** [HTML](/en-US/docs/Web/HTML) element creates a disclosure widget in which information is visible only when the widget is toggled into an open state. A summary or label must be provided using the {{HTMLElement("summary")}} element.
 
-```html
+A disclosure widget is typically presented onscreen using a small triangle that rotates (or twists) to indicate open/closed state, with a label next to the triangle. The contents of the `<summary>` element are used as the label for the disclosure widget. The contents of the `<details>` provide the {{glossary("accessible description")}} for the `<summary>`.
+
+{{InteractiveExample("HTML Demo: &lt;details&gt;", "tabbed-shorter")}}
+
+```html interactive-example
 <details>
-  <summary>جزئیات</summary>
-  چیزی به‌اندازه‌ای کوچک که از توجه معمولی دور بماند.
+  <summary>Details</summary>
+  Something small enough to escape casual notice.
 </details>
 ```
 
-```css
+```css interactive-example
 details {
   border: 1px solid #aaaaaa;
   border-radius: 4px;
@@ -38,35 +49,39 @@ details[open] summary {
 }
 ```
 
-ویجت `<details>` می‌تواند در یکی از دو حالت باشد. حالت پیش‌فرض _بسته_ فقط مثلث و برچسب داخل `<summary>` را نشان می‌دهد (اگر `<summary>` وجود نداشته باشد، مرورگر یک متن پیش‌فرض نمایش می‌دهد).
+A `<details>` widget can be in one of two states. The default _closed_ state displays only the triangle and the label inside `<summary>` (or a {{Glossary("user agent")}}-defined default string if no `<summary>`).
 
-وقتی کاربر روی ویجت کلیک کند یا با فاصله (space bar) روی آن فوکس کند، ویجت باز می‌شود و محتوای خود را آشکار می‌کند. به دلیل چرخش مثلث برای نمایش باز و بسته شدن، به این ویجت‌ها گاهی "twisty" هم می‌گویند.
+When the user clicks on the widget or focuses it then presses the space bar, it "twists" open, revealing its contents. The common use of a triangle which rotates or twists around to represent opening or closing the widget is why these are sometimes called "twisty".
 
-می‌توانید با CSS ظاهر ویجت را استایل دهید و با تنظیم یا حذف attribute `open` آن را به صورت برنامه‌نویسی باز و بسته کنید. در حال حاضر راهی داخلی برای انیمیت کردن تغییر حالت بین باز و بسته وجود ندارد.
+You can use CSS to style the disclosure widget, and you can programmatically open and close the widget by setting/removing its [`open`](#open) attribute. Unfortunately, at this time, there's no built-in way to animate the transition between open and closed.
 
-وقتی ویجت بسته است، ارتفاع آن فقط به اندازه‌ی مثلث و برچسب است. وقتی باز می‌شود، محتوای داخل آن را نمایش می‌دهد.
+By default when closed, the widget is only tall enough to display the disclosure triangle and summary. When open, it expands to display the details contained within.
 
-پیاده‌سازی‌های کاملاً مطابق استاندارد به طور خودکار `display: list-item` را روی عنصر `<summary>` اعمال می‌کنند. می‌توانید از این ویژگی یا pseudo-element `::marker` برای سفارشی‌سازی ویجت بازشونده استفاده کنید.
+Fully standards-compliant implementations automatically apply the CSS `{{cssxref("display")}}: list-item` to the {{HTMLElement("summary")}} element. You can use this or the {{cssxref("::marker")}} pseudo-element to [customize the disclosure widget](/en-US/docs/Web/HTML/Reference/Elements/summary#changing_the_summarys_icon).
 
-## ویژگی‌ها (Attributes)
+## Attributes
 
-این عنصر شامل ویژگی‌های سراسری (global attributes) نیز می‌شود.
+This element includes the [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes).
 
 - `open`
-  - : یک ویژگی Boolean که مشخص می‌کند جزئیات (محتوای داخل `<details>) در حال حاضر قابل مشاهده هستند یا خیر. اگر این ویژگی وجود داشته باشد، جزئیات نمایش داده می‌شوند و اگر وجود نداشته باشد، پنهان می‌مانند. به طور پیش‌فرض این ویژگی وجود ندارد یعنی جزئیات قابل مشاهده نیستند.
+  - : This Boolean attribute indicates whether the details — that is, the contents of the `<details>` element — are currently visible. The details are shown when this attribute exists, or hidden when this attribute is absent. By default this attribute is absent which means the details are not visible.
 
-    > **توجه:** برای پنهان کردن جزئیات باید این ویژگی را به طور کامل حذف کنید. `open="false"` باعث نمایش جزئیات می‌شود چون این ویژگی از نوع Boolean است.
+    > [!NOTE]
+    > You have to remove this attribute entirely to make the details hidden. `open="false"` makes the details visible because this attribute is Boolean.
 
 - `name`
-  - : این ویژگی به چند عنصر `<details>` اجازه می‌دهد به هم متصل شوند به طوری که فقط یکی در یک زمان باز باشد. این کار به توسعه‌دهندگان امکان می‌دهد بدون نیاز به اسکریپت‌نویسی، المان‌های UI مثل آکاردئون (accordion) ایجاد کنند.
+  - : This attribute enables multiple `<details>` elements to be connected, with only one open at a time. This allows developers to easily create UI features such as accordions without scripting.
 
-    ویژگی `name` یک نام گروه را مشخص می‌کند. به چند عنصر `<details>` مقدار `name` یکسان بدهید تا در یک گروه قرار گیرند. فقط یکی از عناصر گروه می‌تواند در یک زمان باز باشد – باز کردن یکی باعث بسته شدن دیگری می‌شود. اگر چند عنصر گروه‌بندی شده ویژگی `open` را داشته باشند، فقط اولین عنصر در ترتیب سورس (source order) به صورت باز نمایش داده می‌شود.
+    The `name` attribute specifies a group name — give multiple `<details>` elements the same `name` value to group them. Only one of the grouped `<details>` elements can be open at a time — opening one will cause another to close. If multiple grouped `<details>` elements are given the `open` attribute, only the first one in the source order will be rendered open.
 
-    > **توجه:** عناصر `<details>` برای قرار گرفتن در یک گروه نیازی به مجاورت در سورس ندارند.
+    > [!NOTE]
+    > `<details>` elements don't have to be adjacent to one another in the source to be part of the same group.
 
-علاوه بر رویدادهای معمولی که المان‌های HTML پشتیبانی می‌کنند، المان `<details>` از رویداد `toggle` هم پشتیبانی می‌کند. این رویداد هر بار که حالت المان بین باز و بسته تغییر کند، روی `<details>` ارسال می‌شود. رویداد _بعد از_ تغییر حالت فرستاده می‌شود؛ با این حال، اگر حالت قبل از اینکه مرورگر بتواند رویداد را ارسال کند چند بار تغییر کند، رویدادها ادغام می‌شوند تا فقط یک رویداد ارسال شود.
+## Events
 
-برای تشخیص تغییر حالت ویجت، می‌توانید از یک شنوندهٔ رویداد (event listener) برای رویداد `toggle` استفاده کنید:
+In addition to the usual events supported by HTML elements, the `<details>` element supports the {{domxref("HTMLElement/toggle_event", "toggle")}} event, which is dispatched to the `<details>` element whenever its state changes between open and closed. It is sent _after_ the state is changed, although if the state changes multiple times before the browser can dispatch the event, the events are coalesced so that only one is sent.
+
+You can use an event listener for the `toggle` event to detect when the widget changes state:
 
 ```js
 details.addEventListener("toggle", (event) => {
@@ -78,11 +93,11 @@ details.addEventListener("toggle", (event) => {
 });
 ```
 
-## مثال‌ها
+## Examples
 
-### یک مثال پایه از disclosure
+### A basic disclosure example
 
-این مثال یک المان پایهٔ `<details>` را همراه با یک `<summary>` نشان می‌دهد.
+This example shows a basic `<details>` element with a `<summary>`.
 
 ```html
 <details>
@@ -95,9 +110,13 @@ details.addEventListener("toggle", (event) => {
 </details>
 ```
 
-### ساخت یک باکس باز disclosure
+#### Result
 
-برای اینکه باکس `<details>` در حالت باز شروع به کار کند، attribute بولی `open` را اضافه کنید:
+{{EmbedLiveSample("A_basic_disclosure_example", 650, 150)}}
+
+### Creating an open disclosure box
+
+To start the `<details>` box in its open state, add the Boolean `open` attribute:
 
 ```html
 <details open>
@@ -110,9 +129,13 @@ details.addEventListener("toggle", (event) => {
 </details>
 ```
 
-### چند باکس disclosure همنام
+#### Result
 
-چند باکس `<details>` قرار داده‌ایم که همه `name` یکسانی دارند تا فقط یکی در هر زمان باز باشد:
+{{EmbedLiveSample("Creating_an_open_disclosure_box", 650, 150)}}
+
+### Multiple named disclosure boxes
+
+We include several `<details>` boxes, all with the same name so only one can be open at a time:
 
 ```html
 <details name="requirements">
@@ -140,11 +163,15 @@ details.addEventListener("toggle", (event) => {
 </details>
 ```
 
-سعی کنید همهٔ ویجت‌های disclosure را باز کنید. وقتی یکی را باز می‌کنید، بقیه به‌طور خودکار بسته می‌شوند.
+#### Result
 
-### سفارشی‌سازی ظاهر
+{{EmbedLiveSample("Multiple named disclosure boxes", 650, 150)}}
 
-حالا کمی CSS اعمال می‌کنیم تا ظاهر باکس disclosure را سفارشی کنیم.
+Try opening all the disclosure widgets. When you open one, all the others automatically close.
+
+### Customizing the appearance
+
+Now let's apply some CSS to customize the appearance of the disclosure box.
 
 #### CSS
 
@@ -179,10 +206,10 @@ details:open > summary {
 }
 ```
 
-این CSS ظاهری شبیه به رابط تب‌دار ایجاد می‌کند؛ با کلیک روی تب، باز شده و محتویات آن نمایان می‌شود.
+This CSS creates a look similar to a tabbed interface, where clicking the tab opens it to reveal its contents.
 
 > [!NOTE]
-> در مرورگرهایی که شبه‌کلاس `:open` را پشتیبانی نمی‌کنند، می‌توانید از attribute selector با نام `details[open]` برای استایل دادن به المان `<details>` در حالت باز استفاده کنید.
+> In browsers that don't support the {{cssxref(":open")}} pseudo-class, you can use the attribute selector `details[open]` to style the `<details>` element when it is in the open state.
 
 #### HTML
 
@@ -197,52 +224,74 @@ details:open > summary {
 </details>
 ```
 
-## خلاصهٔ فنی
+#### Result
+
+{{EmbedLiveSample("Customizing_the_appearance", 650, 150)}}
+
+See the {{htmlelement("summary")}} page for an [example of customizing the disclosure widget](/en-US/docs/Web/HTML/Reference/Elements/summary#changing_the_summarys_icon).
+
+## Technical summary
 
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">دسته‌بندی محتوا</th>
+      <th scope="row">
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories"
+          >Content categories</a
+        >
+      </th>
       <td>
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content">محتوای جریانی</a>، ریشهٔ بخش‌بندی، محتوای تعاملی، محتوای قابل لمس.
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
+          >Flow content</a
+        >, sectioning root, interactive content, palpable content.
       </td>
     </tr>
     <tr>
-      <th scope="row">محتوای مجاز</th>
+      <th scope="row">Permitted content</th>
       <td>
-        یک عنصر <code>&lt;summary&gt;</code> و سپس <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content">محتوای جریانی</a>.
+        One {{HTMLElement("summary")}} element followed by
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
+          >flow content</a
+        >.
       </td>
     </tr>
     <tr>
-      <th scope="row">حذف تگ</th>
-      <td>هیچکدام، هر دو تگ شروع و پایان اجباری هستند.</td>
+      <th scope="row">Tag omission</th>
+      <td>None, both the starting and ending tag are mandatory.</td>
     </tr>
     <tr>
-      <th scope="row">والدین مجاز</th>
+      <th scope="row">Permitted parents</th>
       <td>
-        هر عنصری که <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content">محتوای جریانی</a> را بپذیرد.
+        Any element that accepts
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
+          >flow content</a
+        >.
       </td>
     </tr>
     <tr>
-      <th scope="row">نقش ARIA ضمنی</th>
+      <th scope="row">Implicit ARIA role</th>
       <td><a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role"><code>group</code></a></td>
     </tr>
     <tr>
-      <th scope="row">نقش‌های ARIA مجاز</th>
-      <td>هیچ <code>role</code> مجاز نیست</td>
+      <th scope="row">Permitted ARIA roles</th>
+      <td>No <code>role</code> permitted</td>
     </tr>
     <tr>
-      <th scope="row">رابط DOM</th>
-      <td><code>HTMLDetailsElement</code></td>
+      <th scope="row">DOM interface</th>
+      <td>{{domxref("HTMLDetailsElement")}}</td>
     </tr>
   </tbody>
 </table>
 
 ## Specifications
 
+{{Specifications}}
+
 ## Browser compatibility
+
+{{Compat}}
 
 ## See also
 
-- `<summary>`
-- `::details-content`
+- {{HTMLElement("summary")}}
+- {{cssxref("::details-content")}}
