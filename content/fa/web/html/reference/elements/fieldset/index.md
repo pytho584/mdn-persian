@@ -1,12 +1,21 @@
 ---
 title: "<fieldset> HTML field set element"
 source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/fieldset"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-# `<fieldset>` - عنصر گروه‌بندی فیلد در HTML
+---
+title: "`<fieldset>` HTML field set element"
+short-title: <fieldset>
+slug: Web/HTML/Reference/Elements/fieldset
+page-type: html-element
+browser-compat: html.elements.fieldset
+sidebar: htmlsidebar
+---
 
-المان **`<fieldset>`** در [HTML](/en-US/docs/Web/HTML) برای گروه‌بندی چندین کنترل و برچسب (المان {{HTMLElement("label")}}) درون یک فرم وب استفاده می‌شود.
+The **`<fieldset>`** [HTML](/en-US/docs/Web/HTML) element is used to group several controls as well as labels ({{HTMLElement("label")}}) within a web form.
+
+{{InteractiveExample("HTML Demo: &lt;fieldset&gt;", "tabbed-standard")}}
 
 ```html interactive-example
 <form>
@@ -37,38 +46,39 @@ input {
 }
 ```
 
-همانطور که در مثال بالا دیده می‌شود، `<fieldset>` گروه‌بندی بخشی از فرم HTML را فراهم می‌کند و یک المان {{htmlelement("legend")}} درون آن به عنوان عنوان `<fieldset>` عمل می‌کند. این المان ویژگی‌های کمی دارد که مهم‌ترین آن‌ها `form` و `disabled` هستند. ویژگی `form` می‌تواند `id` یک {{htmlelement("form")}} در همان صفحه را بگیرد تا `<fieldset>` بخشی از آن فرم باشد، حتی اگر داخل آن نباشد. ویژگی `disabled` هم به شما اجازه می‌دهد تا `<fieldset>` و تمام محتویاتش را یک‌جا غیرفعال کنید.
+As the example above shows, the `<fieldset>` element provides a grouping for a part of an HTML form, with a nested {{htmlelement("legend")}} element providing a caption for the `<fieldset>`. It takes few attributes, the most notable of which are `form`, which can contain the `id` of a {{htmlelement("form")}} on the same page, allowing you to make the `<fieldset>` part of that `<form>` even if it is not nested inside it, and `disabled`, which allows you to disable the `<fieldset>` and all its contents in one go.
 
-## ویژگی‌ها
+## Attributes
 
-این المان شامل [ویژگی‌های سراسری](/en-US/docs/Web/HTML/Reference/Global_attributes) است.
+This element includes the [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes).
 
 - [`disabled`](/en-US/docs/Web/HTML/Reference/Attributes/disabled)
-  - : اگر این ویژگی بولین تنظیم شود، تمام کنترل‌های فرمی که از فرزندان `<fieldset>` هستند، غیرفعال می‌شوند؛ یعنی قابل ویرایش نیستند و همراه {{htmlelement("form")}} ارسال نمی‌شوند. همچنین هیچ رویداد تعاملی مانند کلیک ماوس یا رویدادهای مرتبط با فوکوس دریافت نمی‌کنند. مرورگرها به طور پیش‌فرض این کنترل‌ها را خاکستری نمایش می‌دهند. توجه کنید که المان‌های فرم داخل {{HTMLElement("legend")}} غیرفعال نمی‌شوند.
+  - : If this Boolean attribute is set, all form controls that are descendants of the `<fieldset>`, are disabled, meaning they are not editable and won't be submitted along with the {{htmlelement("form")}}. They won't receive any browsing events, like mouse clicks or focus-related events. By default browsers display such controls grayed out. Note that form elements inside the {{HTMLElement("legend")}} element won't be disabled.
 - [`form`](/en-US/docs/Web/HTML/Reference/Attributes/form)
-  - : این ویژگی مقدار ویژگی [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) المان {{HTMLElement("form")}}ای را می‌گیرد که می‌خواهید `<fieldset>` بخشی از آن باشد، حتی اگر داخل آن فرم نباشد. توجه داشته باشید که استفاده از این ویژگی می‌تواند گیج‌کننده باشد — اگر می‌خواهید المان‌های {{HTMLElement("input")}} داخل `<fieldset>` با فرم مرتبط شوند، باید ویژگی `form` را مستقیماً روی آن عناصر قرار دهید. می‌توانید با جاوااسکریپت و استفاده از [HTMLFormElement.elements](/en-US/docs/Web/API/HTMLFormElement/elements) بررسی کنید که کدام عناصر با یک فرم مرتبط هستند.
+  - : This attribute takes the value of the [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute of a {{HTMLElement("form")}} element you want the `<fieldset>` to be part of, even if it is not inside the form. Please note that usage of this is confusing — if you want the {{HTMLElement("input")}} elements inside the `<fieldset>` to be associated with the form, you need to use the `form` attribute directly on those elements. You can check which elements are associated with a form via JavaScript, using {{domxref("HTMLFormElement.elements")}}.
 - `name`
-  - : نام مرتبط با گروه.
+  - : The name associated with the group.
 
-> **نکته:** عنوان مربوط به `<fieldset>` توسط اولین المان {{HTMLElement("legend")}} که داخل آن قرار گرفته است مشخص می‌شود.
+    > [!NOTE]
+    > The caption for the fieldset is given by the first {{HTMLElement("legend")}} element nested inside it.
 
-## استایل‌دهی با CSS
+## Styling with CSS
 
-برای `<fieldset>` ملاحظات خاصی در استایل‌دهی وجود دارد.
+There are several special styling considerations for `<fieldset>`.
 
-به طور پیش‌فرض، مقدار `display` آن `block` است و یک [بافت قالب‌بندی بلوکی](/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context) ایجاد می‌کند. اگر `<fieldset>` با مقدار `display` در سطح خطی (inline-level) استایل داده شود، مانند `inline-block` رفتار می‌کند، در غیر این صورت مانند `block`. به طور پیش‌فرض، یک حاشیه `groove` به ضخامت `2px` دور محتوا و کمی padding پیش‌فرض وجود دارد. این المان به طور پیش‌فرض `min-inline-size: min-content` دارد.
+Its {{cssxref("display")}} value is `block` by default, and it establishes a [block formatting context](/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context). If the `<fieldset>` is styled with an inline-level `display` value, it will behave as `inline-block`, otherwise it will behave as `block`. By default there is a `2px` `groove` border surrounding the contents, and a small amount of default padding. The element has {{cssxref("min-inline-size", "min-inline-size: min-content")}} by default.
 
-اگر یک {{htmlelement("legend")}} وجود داشته باشد، روی حاشیه `block-start` قرار می‌گیرد. `<legend>` اندازه‌اش به محتوا جمع می‌شود و همچنین یک بافت قالب‌بندی ایجاد می‌کند. مقدار `display` آن به حالت بلوکی تبدیل می‌شود (مثلاً `display: inline` مانند `block` رفتار می‌کند).
+If a {{htmlelement("legend")}} is present, it is placed over the `block-start` border. The `<legend>` shrink-wraps, and also establishes a formatting context. The `display` value is blockified. (For example, `display: inline` behaves as `block`.)
 
-یک جعبهٔ ناشناس (anonymous box) محتویات `<fieldset>` را در خود نگه می‌دارد و برخی ویژگی‌ها را از `<fieldset>` به ارث می‌برد. اگر `<fieldset>` با `display: grid` یا `display: inline-grid` استایل‌دهی شده باشد، آن جعبهٔ ناشناس یک بافتار قالب گرید (grid formatting context) خواهد بود. اگر `<fieldset>` با `display: flex` یا `display: inline-flex` استایل‌دهی شده باشد، آن جعبهٔ ناشناس یک بافتار قالب فلکس (flex formatting context) خواهد بود. در غیر این صورت، یک بافتار قالب بلوکی (block formatting context) ایجاد می‌کند.
+There will be an anonymous box holding the contents of the `<fieldset>`, which inherits certain properties from the `<fieldset>`. If the `<fieldset>` is styled with `display: grid` or `display: inline-grid`, then the anonymous box will be a grid formatting context. If the `<fieldset>` is styled with `display: flex` or `display: inline-flex`, then the anonymous box will be a flex formatting context. Otherwise, it establishes a block formatting context.
 
-شما آزادید که `<fieldset>` و `<legend>` را هر طور که برای طراحی صفحه‌تان مناسب است استایل دهید.
+You can feel free to style the `<fieldset>` and `<legend>` in any way you want to suit your page design.
 
-## نمونه‌ها
+## Examples
 
-### `<fieldset>` پایه
+### Basic fieldset
 
-این مثال شامل یک `<fieldset>` با یک `<legend>` است و یک کنترل درون آن قرار دارد.
+This example includes a `<fieldset>` with a `<legend>`, with a single control inside it.
 
 ```html
 <form action="#">
@@ -80,11 +90,13 @@ input {
 </form>
 ```
 
-#### نتیجه
+#### Result
 
-### `<fieldset>` غیرفعال
+{{ EmbedLiveSample('Basic_fieldset', '100%', '80') }}
 
-این مثال یک `<fieldset>` غیرفعال را با دو کنترل درون آن نشان می‌دهد. توجه کنید که هر دو کنترل به دلیل قرار گرفتن داخل یک `<fieldset>` غیرفعال، غیرفعال شده‌اند.
+### Disabled fieldset
+
+This example shows a disabled `<fieldset>` with two controls inside it. Note how both the controls are disabled due to being inside a disabled `<fieldset>`.
 
 ```html
 <form action="#">
@@ -102,68 +114,84 @@ input {
 </form>
 ```
 
-#### نتیجه
+#### Result
 
-## خلاصهٔ فنی
+{{ EmbedLiveSample('Disabled_fieldset', '100%', '110') }}
+
+## Technical summary
 
 <table class="properties">
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories">دسته‌بندی محتوا (Content categories)</a>
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories"
+          >Content categories</a
+        >
       </th>
       <td>
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content">محتوای جریانی (Flow content)</a>،
-        ریشهٔ بخش‌بندی (sectioning root)،
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#listed">فهرست‌شده (listed)</a>،
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#form-associated_content">عنصر مرتبط با فرم (form-associated element)</a>،
-        محتوای قابل لمس (palpable content).
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
+          >Flow content</a
+        >,
+        sectioning root,
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#listed"
+          >listed</a
+        >,
+        <a
+          href="/en-US/docs/Web/HTML/Guides/Content_categories#form-associated_content"
+          >form-associated</a
+        >
+        element, palpable content.
       </td>
     </tr>
     <tr>
-      <th scope="row">محتوای مجاز</th>
+      <th scope="row">Permitted content</th>
       <td>
-        یک عنصر اختیاری <code>&lt;legend&gt;</code> و سپس محتوای جریانی.
+        An optional {{HTMLElement("legend")}} element, followed by flow
+        content.
       </td>
     </tr>
     <tr>
-      <th scope="row">حذف تگ</th>
-      <td>هیچ‌کدام؛ هر دو تگ شروع و پایان اجباری هستند.</td>
+      <th scope="row">Tag omission</th>
+      <td>None, both the starting and ending tag are mandatory.</td>
     </tr>
     <tr>
-      <th scope="row">والدین مجاز</th>
+      <th scope="row">Permitted parents</th>
       <td>
-        هر عنصری که
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content">محتوای جریانی</a>
-        را می‌پذیرد.
+        Any element that accepts
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content"
+          >flow content</a
+        >.
       </td>
     </tr>
     <tr>
-      <th scope="row">نقش ARIA ضمنی</th>
+      <th scope="row">Implicit ARIA role</th>
       <td><a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role"><code>group</code></a></td>
     </tr>
     <tr>
-      <th scope="row">نقش‌های ARIA مجاز</th>
+      <th scope="row">Permitted ARIA roles</th>
       <td>
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radiogroup_role"><code>radiogroup</code></a>،
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role"><code>presentation</code></a>،
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/none_role"><code>none</code></a>
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radiogroup_role"><code>radiogroup</code></a>,
+        <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role"><code>presentation</code></a>, <a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/none_role"><code>none</code></a>
       </td>
     </tr>
     <tr>
-      <th scope="row">رابط DOM</th>
-      <td><code>HTMLFieldSetElement</code></td>
+      <th scope="row">DOM interface</th>
+      <td>{{domxref("HTMLFieldSetElement")}}</td>
     </tr>
   </tbody>
 </table>
 
-## مشخصات
+## Specifications
 
-## سازگاری مرورگر
+{{Specifications}}
 
-## جستارهای وابسته
+## Browser compatibility
 
-- عنصر `<legend>`
-- عنصر `<input>`
-- عنصر `<label>`
-- عنصر `<form>`
+{{Compat}}
+
+## See also
+
+- The {{HTMLElement("legend")}} element
+- The {{HTMLElement("input")}} element
+- The {{HTMLElement("label")}} element
+- The {{HTMLElement("form")}} element
