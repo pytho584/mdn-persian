@@ -1,0 +1,29 @@
+---
+title: "VisualViewport: width property"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/width"
+status: "needs-translation"
+---
+
+---
+title: "VisualViewport: width property"
+short-title: width
+slug: Web/API/VisualViewport/width
+page-type: web-api-instance-property
+browser-compat: api.VisualViewport.width
+---
+
+{{APIRef("CSSOM view API")}}
+
+The **`width`** read-only property of the {{domxref("VisualViewport")}} interface returns the width of the visual viewport, in CSS pixels, or `0` if current document is not fully active.
+
+## Value
+
+A double.
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
