@@ -1,30 +1,75 @@
 ---
 title: "line-height CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-height"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-# `line-height`
+---
+title: "`line-height` CSS property"
+short-title: line-height
+slug: Web/CSS/Reference/Properties/line-height
+page-type: css-property
+browser-compat: css.properties.line-height
+sidebar: cssref
+---
 
-خصوصیت **`line-height`** در [CSS](/en-US/docs/Web/CSS) ارتفاع یک line box را در [حالت نوشتار افقی](/en-US/docs/Web/CSS/Reference/Properties/writing-mode#vertical-rl) تعیین می‌کند. در حالت نوشتار عمودی، عرض line box را مشخص می‌کند. این خصوصیت معمولاً برای تنظیم فاصلهٔ بین خطوط متن استفاده می‌شود. برای عناصر block-level در حالت افقی، ارتفاع ترجیحی line boxهای درون عنصر را مشخص می‌کند و برای عناصر inline [غیرجایگزین](/en-US/docs/Glossary/Replaced_elements)، ارتفاعی را تعیین می‌کند که برای محاسبهٔ ارتفاع line box به کار می‌رود.
+The **`line-height`** [CSS](/en-US/docs/Web/CSS) property sets the height of a line box in horizontal [writing modes](/en-US/docs/Web/CSS/Reference/Properties/writing-mode#vertical-rl). In vertical writing modes, it sets the width of a line box. It's commonly used to set the distance between lines of text. On block-level elements in horizontal writing modes, it specifies the preferred height of line boxes within the element, and on non-[replaced](/en-US/docs/Glossary/Replaced_elements) inline elements, it specifies the height that is used to calculate line box height.
 
-## نحو
+{{InteractiveExample("CSS Demo: line-height")}}
+
+```css interactive-example-choice
+line-height: normal;
+```
+
+```css interactive-example-choice
+line-height: 2.5;
+```
+
+```css interactive-example-choice
+line-height: 3em;
+```
+
+```css interactive-example-choice
+line-height: 150%;
+```
+
+```css interactive-example-choice
+line-height: 32px;
+```
+
+```html interactive-example
+<section id="default-example">
+  <div class="transition-all" id="example-element">
+    Far out in the uncharted backwaters of the unfashionable end of the western
+    spiral arm of the Galaxy lies a small unregarded yellow sun.
+  </div>
+</section>
+```
+
+```css interactive-example
+#example-element {
+  font-family: "Georgia", serif;
+  max-width: 200px;
+}
+```
+
+## Syntax
 
 ```css
-/* مقدار کلیدی */
+/* Keyword value */
 line-height: normal;
 
-/* مقادیر بدون واحد: از ضرب این عدد
-در اندازهٔ فونت عنصر استفاده می‌شود */
+/* Unitless values: use this number multiplied
+by the element's font size */
 line-height: 3.5;
 
-/* مقادیر <length> */
+/* <length> values */
 line-height: 3em;
 
-/* مقادیر <percentage> */
+/* <percentage> values */
 line-height: 34%;
 
-/* مقادیر سراسری */
+/* Global values */
 line-height: inherit;
 line-height: initial;
 line-height: revert;
@@ -32,56 +77,59 @@ line-height: revert-layer;
 line-height: unset;
 ```
 
-خصوصیت `line-height` به یکی از شکل‌های زیر تعیین می‌شود:
+### Values
 
-- یک `<number>`
-- یک `<length>`
-- یک `<percentage>`
-- کلیدواژهٔ `normal`.
-
-### مقادیر
+This property is specified as a single value from the following list:
 
 - `normal`
-  - : بسته به عامل کاربر (user agent) متفاوت است. مرورگرهای دسکتاپ (از جمله فایرفاکس) مقداری پیش‌فرض در حدود **`1.2`** استفاده می‌کنند که به `font-family` عنصر بستگی دارد.
-- `<number>` (بدون واحد)
-  - : مقدار استفاده‌شده حاصل ضرب این {{cssxref("&lt;number&gt;")}} بدون واحد در اندازهٔ فونت خود عنصر است. مقدار محاسبه‌شده همان `<number>` تعیین‌شده خواهد بود. در بیشتر موارد، **این روش پیشنهادی** برای تنظیم `line-height` است و از نتایج غیرمنتظرهٔ ناشی از وراثت جلوگیری می‌کند.
+  - : Depends on the user agent. Desktop browsers (including Firefox) use a default value of roughly **`1.2`**, depending on the element's `font-family`.
+- `<number>` (unitless)
+  - : The used value is this unitless {{cssxref("&lt;number&gt;")}} multiplied by the element's own font size. The computed value is the same as the specified `<number>`. In most cases, **this is the preferred way** to set `line-height` and avoid unexpected results due to inheritance.
 - `<length>`
-  - : مقدار {{cssxref("&lt;length&gt;")}} مشخص‌شده در محاسبهٔ ارتفاع line box به کار می‌رود. مقادیری که با واحد **em** داده شوند ممکن است نتایج غیرمنتظره‌ای ایجاد کنند (مثال زیر را ببینید).
+  - : The specified {{cssxref("&lt;length&gt;")}} is used in the calculation of the line box height. Values given in **em** units may produce unexpected results (see example below).
 - `<percentage>`
-  - : نسبت به اندازهٔ فونت خود عنصر. مقدار محاسبه‌شده حاصل ضرب این {{cssxref("&lt;percentage&gt;")}} در اندازهٔ فونت محاسبه‌شدهٔ عنصر است. مقادیر **درصدی** ممکن است نتایج غیرمنتظره‌ای ایجاد کنند (مثال دوم را در ادامه ببینید).
+  - : Relative to the font size of the element itself. The computed value is this {{cssxref("&lt;percentage&gt;")}} multiplied by the element's computed font size. **Percentage** values may produce unexpected results (see the second example below).
 
-## دسترس‌پذیری
+## Accessibility
 
-برای محتوای پاراگراف اصلی، حداقل مقدار `1.5` را برای `line-height` در نظر بگیرید. این کار به افرادی که دچار کم‌بینایی هستند یا مشکلات شناختی مانند دیسلکسی دارند کمک می‌کند. اگر صفحه برای بزرگ‌نمایی متن زوم شود، استفاده از مقدار بدون واحد تضمین می‌کند که ارتفاع خط به‌طور متناسب مقیاس‌بندی شود.
+Use a minimum value of `1.5` for `line-height` for main paragraph content. This will help people experiencing low vision conditions, as well as people with cognitive concerns such as Dyslexia. If the page is zoomed to increase the text size, using a unitless value ensures that the line height will scale proportionately.
 
 [W3C Understanding WCAG 2.2](https://w3c.github.io/wcag/guidelines/22/#visual-presentation)
 
-## مثال‌ها
+## Formal definition
 
-### مثال پایه
+{{cssinfo}}
+
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Basic example
 
 ```css
-/* همهٔ دستورات زیر ارتفاع خط نهایی یکسانی دارند */
+/* All rules below have the same resultant line height */
 
-/* عدد/بدون واحد */
+/* number/unitless */
 div {
   line-height: 1.2;
   font-size: 10pt;
 }
 
-/* طول */
+/* length */
 div {
   line-height: 1.2em;
   font-size: 10pt;
 }
 
-/* درصد */
+/* percentage */
 div {
   line-height: 120%;
   font-size: 10pt;
 }
 
-/* خلاصهٔ font */
+/* font shorthand */
 div {
   font:
     10pt/1.2 "Bitstream Charter",
@@ -90,27 +138,27 @@ div {
 }
 ```
 
-اغلب، تنظیم `line-height` با استفاده از shorthand `font` (همانطور که در بالا نشان داده شد) راحت‌تر است، اما این کار مستلزم آن است که خصوصیت `font-family` نیز تعیین شده باشد.
+It is often more convenient to set `line-height` by using the {{cssxref("font")}} shorthand as shown above, but this requires the `font-family` property to be specified as well.
 
-### ترجیح استفاده از اعداد بدون واحد برای مقادیر line-height
+### Prefer unitless numbers for line-height values
 
-این مثال نشان می‌دهد که چرا استفاده از مقادیر `<number>` به جای مقادیر `<length>` بهتر است. ما از دو عنصر `<div>` استفاده می‌کنیم. div اول، با حاشیه سبز، از یک مقدار بدون واحد `line-height` استفاده می‌کند. div دوم، با حاشیه قرمز، از مقدار `line-height` تعریف‌شده با واحد `em` استفاده می‌کند.
+This example shows why it is better to use {{cssxref("&lt;number&gt;")}} values instead of {{cssxref("&lt;length&gt;")}} values. We will use two {{HTMLElement("div")}} elements. The first div, with the green border, uses a unitless `line-height` value. The second div, with the red border, uses a `line-height` value defined in `em`s.
 
 #### HTML
 
 ```html
 <div class="box green">
-  <h1>با استفاده از line-height بدون واحد از نتایج غیرمنتظره جلوگیری کنید.</h1>
-  line-heightهای مبتنی بر طول و درصد، رفتار وراثت ضعیفی دارند.
+  <h1>Avoid unexpected results by using unitless line-height.</h1>
+  Length and percentage line-heights have poor inheritance behavior.
 </div>
 
 <div class="box red">
-  <h1>با استفاده از line-height بدون واحد از نتایج غیرمنتظره جلوگیری کنید.</h1>
-  line-heightهای مبتنی بر طول و درصد، رفتار وراثت ضعیفی دارند
+  <h1>Avoid unexpected results by using unitless line-height.</h1>
+  Length and percentage line-heights have poor inheritance behavior
 </div>
 
-<!-- line-height اولین <h1> بر اساس font-size خودش محاسبه می‌شود (30px × 1.1) = 33px -->
-<!-- line-height دومین <h1> از font-size div قرمز به دست می‌آید (15px × 1.1) = 16.5px، که احتمالاً چیزی نیست که انتظار دارید -->
+<!-- The first <h1> line-height is calculated from its own font-size   (30px × 1.1) = 33px -->
+<!-- The second <h1> line-height results from the red div's font-size  (15px × 1.1) = 16.5px, probably not what you want -->
 ```
 
 #### CSS
@@ -138,11 +186,13 @@ h1 {
 }
 ```
 
-#### نتیجه
+#### Result
 
-### فاصله بین خطوط در حالت‌های نوشتار عمودی
+{{EmbedLiveSample('Prefer_unitless_numbers_for_line-height_values', 600, 200)}}
 
-خصوصیت `line-height` می‌تواند برای تنظیم فاصله بین خطوط عمودی در حالت‌های نوشتار عمودی استفاده شود.
+### Space between lines in vertical writing modes
+
+The `line-height` property can be used to adjust space between vertical lines in vertical writing modes.
 
 ```html hidden
 <div class="haiku">
@@ -175,9 +225,19 @@ h1 {
 }
 ```
 
-#### نتیجه
+#### Result
 
-## همچنین ببینید
+{{EmbedLiveSample('Space between lines in vertical writing modes', '100%', 650)}}
 
-- `font`، `font-size`
-- `Leading`
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- {{Cssxref("font")}}, {{Cssxref("font-size")}}
+- {{glossary("Leading")}}
