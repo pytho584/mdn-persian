@@ -1,0 +1,29 @@
+---
+title: "ElementInternals: role property"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/role"
+status: "needs-translation"
+---
+
+---
+title: "ElementInternals: role property"
+short-title: role
+slug: Web/API/ElementInternals/role
+page-type: web-api-instance-property
+browser-compat: api.ElementInternals.role
+---
+
+{{APIRef("Web Components")}}
+
+The **`role`** property of the {{domxref("ElementInternals")}} interface returns the [WAI-ARIA role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) for the element. For example, a checkbox might have [`role="checkbox"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role). It reflects the `role` attribute; it does not return the element's implicit ARIA role, if any, unless explicitly set.
+
+## Value
+
+A string which contains an ARIA role. A full list of ARIA roles can be found on the [ARIA techniques page](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques).
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
