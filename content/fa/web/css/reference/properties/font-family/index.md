@@ -1,27 +1,80 @@
 ---
 title: "font-family CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-ویژگی `font-family` در CSS یک لیست اولویت‌بندی‌شده از یک یا چند نام خانوادهٔ فونت (font family) و/یا نام‌های خانوادهٔ عمومی (generic family) را برای عنصر انتخاب‌شده مشخص می‌کند.
+---
+title: "`font-family` CSS property"
+short-title: font-family
+slug: Web/CSS/Reference/Properties/font-family
+page-type: css-property
+browser-compat: css.properties.font-family
+sidebar: cssref
+---
 
-مقادیر با کاما از هم جدا می‌شوند تا نشان دهند گزینه‌های جایگزین هستند. مرورگر اولین فونتی را در این لیست انتخاب می‌کند که روی سیستم نصب باشد یا با استفاده از قاعدهٔ `@font-face` قابل دانلود باشد.
+The **`font-family`** [CSS](/en-US/docs/Web/CSS) property specifies a prioritized list of one or more font family names and/or generic family names for the selected element.
 
-معمولاً استفاده از ویژگی خلاصهٔ `font` برای تنظیم هم‌زمان `font-size` و دیگر ویژگی‌های مربوط به فونت راحت‌تر است.
+{{InteractiveExample("CSS Demo: font-family")}}
 
-همیشه باید حداقل یک نام خانوادهٔ عمومی در لیست `font-family` قرار دهید، چون هیچ تضمینی نیست که یک فونت مشخص در دسترس باشد. این کار به مرورگر اجازه می‌دهد در صورت نیاز یک فونت جایگزین (fallback) قابل‌قبول انتخاب کند.
+```css interactive-example-choice
+font-family: "Georgia", serif;
+```
 
-ویژگی `font-family` یک لیست از فونت‌ها را، از بالاترین اولویت تا پایین‌ترین، مشخص می‌کند. انتخاب فونت با رسیدن به اولین فونت موجود در سیستم کاربر متوقف *نمی‌شود*. بلکه انتخاب فونت *کاراکتر به کاراکتر* انجام می‌شود؛ یعنی اگر فونت در دسترس، گلیف (glyph) لازم برای یک کاراکتر را نداشته باشد، فونت‌های بعدی در لیست امتحان می‌شوند. وقتی یک فونت فقط در برخی [استایل‌ها](/en-US/docs/Web/CSS/Reference/Properties/font-style)، [حالت‌ها](/en-US/docs/Web/CSS/Reference/Properties/font-variant)، یا [اندازه‌ها](/en-US/docs/Web/CSS/Reference/Properties/font-size) در دسترس باشد، این ویژگی‌ها هم ممکن است بر انتخاب خانوادهٔ فونت تأثیر بگذارند.
+```css interactive-example-choice
+font-family: "Gill Sans", sans-serif;
+```
 
-## نحوهٔ نگارش
+```css interactive-example-choice
+font-family: sans-serif;
+```
+
+```css interactive-example-choice
+font-family: serif;
+```
+
+```css interactive-example-choice
+font-family: cursive;
+```
+
+```css interactive-example-choice
+font-family: system-ui;
+```
+
+```html interactive-example
+<section id="default-example">
+  <p id="example-element">
+    London. Michaelmas term lately over, and the Lord Chancellor sitting in
+    Lincoln's Inn Hall. Implacable November weather. As much mud in the streets
+    as if the waters had but newly retired from the face of the earth, and it
+    would not be wonderful to meet a Megalosaurus, forty feet long or so,
+    waddling like an elephantine lizard up Holborn Hill.
+  </p>
+</section>
+```
+
+```css interactive-example
+section {
+  font-size: 1.2em;
+}
+```
+
+Values are separated by commas to indicate that they are alternatives. The browser will select the first font in the list that is installed or that can be downloaded using a {{CSSxRef("@font-face")}} at-rule.
+
+It is often convenient to use the shorthand property {{CSSxRef("font")}} to set `font-size` and other font related properties all at once.
+
+You should always include at least one generic family name in a `font-family` list, since there's no guarantee that any given font is available. This lets the browser select an acceptable fallback font when necessary.
+
+The `font-family` property specifies a list of fonts, from highest priority to lowest. Font selection _does not_ stop at the first font in the list that is on the user's system. Rather, font selection is done _one character at a time_, so that if an available font does not have a glyph for a needed character, the latter fonts are tried. When a font is only available in some [styles](/en-US/docs/Web/CSS/Reference/Properties/font-style), [variants](/en-US/docs/Web/CSS/Reference/Properties/font-variant), or [sizes](/en-US/docs/Web/CSS/Reference/Properties/font-size), those properties may also influence which font family is chosen.
+
+## Syntax
 
 ```css
-/* یک نام خانوادهٔ فونت و یک نام خانوادهٔ عمومی */
+/* A font family name and a generic family name */
 font-family: "Gill Sans Extrabold", sans-serif;
 font-family: "Goudy Bookletter 1911", sans-serif;
 
-/* فقط یک نام خانوادهٔ عمومی */
+/* A generic family name only */
 font-family: serif;
 font-family: sans-serif;
 font-family: monospace;
@@ -35,7 +88,7 @@ font-family: ui-rounded;
 font-family: math;
 font-family: fangsong;
 
-/* مقادیر سراسری */
+/* Global values */
 font-family: inherit;
 font-family: initial;
 font-family: revert;
@@ -43,69 +96,79 @@ font-family: revert-layer;
 font-family: unset;
 ```
 
-ویژگی `font-family` یک یا چند خانوادهٔ فونت را که با کاما از هم جدا شده‌اند فهرست می‌کند. هر خانوادهٔ فونت به‌صورت یک `<family-name>` یا یک `<generic-name>` مشخص می‌شود.
+The `font-family` property lists one or more font families, separated by commas. Each font family is specified as either a `<family-name>` or a `<generic-name>` value.
 
-مثال زیر دو خانوادهٔ فونت را فهرست می‌کند، اولی با یک `<family-name>` و دومی با یک `<generic-name>`:
+The example below lists two font families, the first with a `<family-name>` and the second with a `<generic-name>`:
 
 ```css
 font-family: "Gill Sans Extrabold", sans-serif;
 ```
 
-### مقادیر
+### Values
 
 - `<family-name>`
-  - : نام یک خانوادهٔ فونت. این مقدار باید یا یک {{cssxref("string")}} تکی باشد یا دنباله‌ای از مقادیر {{cssxref("custom-ident")}} که با فاصله جدا شده‌اند. مقادیر رشته‌ای باید داخل گیومه قرار بگیرند اما می‌توانند هر کاراکتر یونیکدی را شامل شوند. شناسه‌های سفارشی (custom identifiers) گیومه نمی‌خورند، ولی برخی کاراکترها باید escape شوند. بهتر است نام خانوادهٔ فونت‌هایی که شامل فاصله، رقم یا نشانه‌های نقطه‌گذاری (به‌جز خط تیره) هستند را داخل گیومه بگذارید.
+  - : The name of a font family. This must be either a single {{cssxref("string")}} value or a space-separated sequence of {{cssxref("custom-ident")}} values. String values must be quoted but may contain any Unicode character. Custom identifiers are not quoted, but certain characters must be escaped.
 
-    همچنین ببینید [نام‌های معتبر خانواده فونت](#valid_family_names).
+    It is good practice to quote font family names that contain white space, digits, or punctuation characters other than hyphens.
+
+    See also [Valid family names](#valid_family_names).
 
 - `<generic-name>`
-  - : خانواده‌های فونت عمومی (generic) یک سازوکار جایگزین هستند؛ روشی برای حفظ بخشی از هدف نویسندهٔ stylesheet وقتی هیچ‌یک از فونت‌های مشخص‌شده در دسترس نباشند. نام‌های خانوادهٔ عمومی کلمات کلیدی هستند و نباید داخل گیومه قرار بگیرند. خانوادهٔ فونت عمومی باید آخرین آیتم در لیست نام‌های خانوادهٔ فونت باشد. کلمات کلیدی زیر تعریف شده‌اند:
+  - : Generic font families are a fallback mechanism, a means of preserving some of the style sheet author's intent when none of the specified fonts are available. Generic family names are keywords and must not be quoted. A generic font family should be the last item in the list of font family names. The following keywords are defined:
     - `serif`
-      - : حروف (گلیف‌ها) دارای خطوط انتهایی کامل، انتهای پهن یا باریک، یا واقعاً دندانه‌دار (سریف) هستند.
+      - : Glyphs have finishing strokes, flared or tapering ends, or have actual serifed endings.
 
-        برای مثال: Lucida Bright, Lucida Fax, Palatino, Palatino Linotype, Palladio, URW Palladio, serif.
+        For example: Lucida Bright, Lucida Fax, Palatino, Palatino Linotype, Palladio, URW Palladio, serif.
 
     - `sans-serif`
-      - : حروف دارای انتهای ساده و بدون تزئین هستند.
+      - : Glyphs have stroke endings that are plain.
 
-        برای مثال: Open Sans, Fira Sans, Lucida Sans, Lucida Sans Unicode, Trebuchet MS, Liberation Sans, Nimbus Sans L, sans-serif.
+        For example: Open Sans, Fira Sans, Lucida Sans, Lucida Sans Unicode, Trebuchet MS, Liberation Sans, Nimbus Sans L, sans-serif.
 
     - `monospace`
-      - : همهٔ حروف دارای عرض ثابت و یکسانی هستند.
+      - : All glyphs have the same fixed width.
 
-        برای مثال: Fira Mono, DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, Monaco, Lucida Console, monospace.
+        For example: Fira Mono, DejaVu Sans Mono, Menlo, Consolas, Liberation Mono, Monaco, Lucida Console, monospace.
 
     - `cursive`
-      - : حروف در فونت‌های شکسته (cursive) عموماً دارای اتصالات یا دیگر ویژگی‌های شکسته فراتر از نوع ایتالیک هستند. گلیف‌ها به‌طور جزئی یا کامل به هم متصل می‌شوند و نتیجه بیشتر شبیه دست‌خط با قلم یا قلم‌مو به نظر می‌رسد تا حروف چاپی.
+      - : Glyphs in cursive fonts generally have either joining strokes or other cursive characteristics beyond those of italic typefaces. The glyphs are partially or completely connected, and the result looks more like handwritten pen or brush writing than printed letter work.
 
-        برای مثال: Brush Script MT, Brush Script Std, Lucida Calligraphy, Lucida Handwriting, Apple Chancery, cursive.
+        For example: Brush Script MT, Brush Script Std, Lucida Calligraphy, Lucida Handwriting, Apple Chancery, cursive.
 
     - `fantasy`
-      - : فونت‌های فانتزی (fantasy) عمدتاً فونت‌های تزئینی هستند که نمایش‌های فانتزی و بازی‌گوشانه‌ای از کاراکترها دارند.
+      - : Fantasy fonts are primarily decorative fonts that contain playful representations of characters.
 
-        برای مثال: Papyrus, Herculanum, Party LET, Curlz MT, Harrington, fantasy.
+        For example: Papyrus, Herculanum, Party LET, Curlz MT, Harrington, fantasy.
 
     - `system-ui`
-      - : گلیف‌ها از فونت رابط کاربری پیش‌فرض در یک پلتفرم مشخص گرفته می‌شوند. از آنجا که سنت‌های تایپوگرافی در سراسر جهان بسیار متفاوت است، این خانوادهٔ عمومی برای فونت‌هایی ارائه شده که به‌خوبی در دسته‌های عمومی دیگر جای نمی‌گیرند.
+      - : Glyphs are taken from the default user interface font on a given platform. Because typographic traditions vary widely across the world, this generic is provided for typefaces that don't map cleanly into the other generics.
         > [!NOTE]
-        > همان‌طور که از نامش پیداست، `system-ui` برای آن است که عناصر رابط کاربری شبیه برنامه‌های بومی (native) به نظر برسند و برای حروفچینی پاراگراف‌های بلند متن مناسب نیست. ممکن است باعث شود فونت نمایش‌داده‌شده برای برخی کاربران مطلوب نباشد – برای مثال، فونت پیش‌فرض CJK در ویندوز ممکن است خط لاتین را ضعیف نمایش دهد و ویژگی `lang` هم روی فونت نمایشی تأثیر نگذارد. برخی سیستم‌عامل‌ها امکان شخصی‌سازی `system-ui` را نمی‌دهند، درحالی‌که مرورگرها عموماً اجازهٔ شخصی‌سازی خانواده فونت `sans-serif` را می‌دهند. برای پاراگراف‌های بلند، به‌جای آن از `sans-serif` یا یک خانواده فونت غیر از رابط کاربری استفاده کنید.
+        > As the name implies, `system-ui` is intended to make UI elements look like native apps, and not for typesetting large paragraphs of text. It may cause the displayed typeface to be undesirable for some users—for example, the default Windows CJK font may render Latin scripts poorly, and the `lang` attribute may not affect the displayed font. Some operating systems do not allow customizing `system-ui`, while browsers generally allow customizing the `sans-serif` font family. For large paragraphs, use `sans-serif` or some other non-UI font family instead.
     - `ui-serif`
-      - : فونت سریف (serif) پیش‌فرض رابط کاربری.
+      - : The default user interface serif font.
     - `ui-sans-serif`
-      - : فونت بدون‌سریف (sans-serif) پیش‌فرض رابط کاربری.
+      - : The default user interface sans-serif font.
     - `ui-monospace`
-      - : فونت تک‌فاصله (monospace) پیش‌فرض رابط کاربری.
+      - : The default user interface monospace font.
     - `ui-rounded`
-      - : فونت پیش‌فرض رابط کاربری که دارای ویژگی‌های گردشده است.
+      - : The default user interface font that has rounded features.
     - `math`
-      - : فونتی که به نگرانی‌های سبکی خاص نمایش ریاضیات می‌پردازد: بالانویس و پایین‌نویس، کروشه‌هایی که چند خط را می‌پیمایند، عبارت‌های تودرتو و حروف دوبل با معانی متمایز.
-        شیوه‌نامه‌های عامل کاربر (UA) ممکن است `math { font-family: math }` را تنظیم کنند تا عنصر `<math>` به‌طور پیش‌فرض از فونت‌های مناسب استفاده کند.
+      - : Font that addresses the particular stylistic concerns of representing mathematics: superscript and subscript, brackets that cross several lines, nesting expressions, and double struck glyphs with distinct meanings.
+        UA stylesheets may set `math { font-family: math }` so that the {{MathMLElement("math")}} element uses appropriate fonts by default.
     - `fangsong`
-      - : سبکی خاص از کاراکترهای چینی که بین فرم Song سریف‌دار و Kai شکسته‌نگار قرار می‌گیرد. این سبک اغلب برای اسناد دولتی استفاده می‌شود.
+      - : A particular style of Chinese characters that are between serif-style Song and cursive-style Kai forms. This style is often used for government documents.
 
-## مثال‌ها
+## Formal definition
 
-### چند خانواده فونت متداول
+{{cssinfo}}
+
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Some common font families
 
 ```css
 .serif {
@@ -145,31 +208,31 @@ div {
 
 ```html hidden
 <div class="serif">This is an example of a serif font.</div>
+
+<div class="sansserif">This is an example of a sans-serif font.</div>
+
+<div class="monospace">This is an example of a monospace font.</div>
+
+<div class="cursive">This is an example of a cursive font.</div>
+
+<div class="fantasy">This is an example of a fantasy font.</div>
+
+<div class="fangsong">This is an example of a fangsong font.</div>
+
+<div class="math">This is an example of a math font: ℝ, ∫, ∑…</div>
 ```
 
-```html
-<div class="sansserif">این یک نمونه از فونت sans-serif است.</div>
+{{EmbedLiveSample("Some_common_font_families", 600, 220)}}
 
-<div class="monospace">این یک نمونه از فونت monospace است.</div>
+### Valid family names
 
-<div class="cursive">این یک نمونه از فونت cursive است.</div>
-
-<div class="fantasy">این یک نمونه از فونت fantasy است.</div>
-
-<div class="fangsong">این یک نمونه از فونت fangsong است.</div>
-
-<div class="math">این یک نمونه از فونت math است: ℝ, ∫, ∑…</div>
-```
-
-### نام‌های معتبر خانواده فونت
-
-اعلان‌های زیر معتبر هستند:
+The following declarations are valid:
 
 ```css example-good
 font-family: "Goudy Bookletter 1911", sans-serif;
 ```
 
-اعلان‌های زیر نامعتبر هستند:
+The following declarations are invalid:
 
 ```css-nolint example-bad
 font-family: Goudy Bookletter 1911, sans-serif;
@@ -181,7 +244,7 @@ font-family: #POUND, sans-serif;
 font-family: Hawaii 5-0, sans-serif;
 ```
 
-مثال زیر از نظر فنی معتبر است اما توصیه نمی‌شود:
+The following example is technically valid but is not recommended:
 
 ```css
 font-family:
@@ -189,10 +252,18 @@ font-family:
   sans-serif;
 ```
 
-## همچنین ببینید
+## Specifications
 
-- `font-style`
-- `font-weight`
-- `font-variant-emoji`
-- SVG `font-family` attribute
-- [آموزش: اصول استایل‌دهی متن و فونت](/en-US/docs/Learn_web_development/Core/Text_styling/Fundamentals)
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- {{cssxref("font-style")}}
+- {{cssxref("font-weight")}}
+- {{cssxref("font-variant-emoji")}}
+- SVG {{SVGAttr("font-family")}} attribute
+- [Learn: Fundamental text and font styling](/en-US/docs/Learn_web_development/Core/Text_styling/Fundamentals)
