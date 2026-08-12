@@ -1,25 +1,84 @@
 ---
 title: "gap CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/gap"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-ویژگی خلاصه‌ی **`gap`** در CSS فاصله‌ها (که به آن‌ها gutter هم گفته می‌شود) را بین سطرها و ستون‌ها در containerهای [چیدمان چندستونی](/en-US/docs/Web/CSS/Guides/Multicol_layout)، [flex](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) و [grid](/en-US/docs/Web/CSS/Guides/Grid_layout) تنظیم می‌کند.
+---
+title: "`gap` CSS property"
+short-title: gap
+slug: Web/CSS/Reference/Properties/gap
+page-type: css-shorthand-property
+browser-compat: css.properties.gap
+sidebar: cssref
+---
 
-## ویژگی‌های تشکیل‌دهنده
+The **`gap`** [CSS](/en-US/docs/Web/CSS) [shorthand property](/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties) sets the gaps (also called {{glossary("gutters")}}) between rows and columns on [multi-column](/en-US/docs/Web/CSS/Guides/Multicol_layout), [flex](/en-US/docs/Web/CSS/Guides/Flexible_box_layout), and [grid](/en-US/docs/Web/CSS/Guides/Grid_layout) containers.
 
-این ویژگی خلاصه‌ای برای دو ویژگی زیر است:
+{{InteractiveExample("CSS Demo: gap")}}
 
-- `row-gap`
-- `column-gap`
+```css interactive-example-choice
+gap: 0;
+```
 
-## ساختار
+```css interactive-example-choice
+gap: 10%;
+```
+
+```css interactive-example-choice
+gap: 1em;
+```
+
+```css interactive-example-choice
+gap: 10px 20px;
+```
+
+```css interactive-example-choice
+gap: calc(20px + 10%);
+```
+
+```html interactive-example
+<section class="default-example" id="default-example">
+  <div class="example-container">
+    <div class="transition-all" id="example-element">
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
+      <div>Four</div>
+      <div>Five</div>
+    </div>
+  </div>
+</section>
+```
+
+```css interactive-example
+#example-element {
+  border: 1px solid #c5c5c5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 200px;
+}
+
+#example-element > div {
+  background-color: rgb(0 0 255 / 0.2);
+  border: 3px solid blue;
+}
+```
+
+## Constituent properties
+
+This property is a shorthand for the following CSS properties:
+
+- {{cssxref("row-gap")}}
+- {{cssxref("column-gap")}}
+
+## Syntax
 
 ```css
-/* مقدار کلیدی */
+/* Keyword value */
 gap: normal;
 
-/* یک مقدار */
+/* One value */
 gap: 20px;
 gap: 1em;
 gap: 3vmin;
@@ -28,7 +87,7 @@ gap: 16%;
 gap: 100%;
 gap: calc(10% + 20px);
 
-/* دو مقدار */
+/* Two values */
 gap: 20px 10px;
 gap: 1em 0.5em;
 gap: 3vmin 2vmax;
@@ -37,7 +96,7 @@ gap: 16% 100%;
 gap: 21px 82%;
 gap: calc(20px + 10%) calc(10% - 5px);
 
-/* مقادیر سراسری */
+/* Global values */
 gap: inherit;
 gap: initial;
 gap: revert;
@@ -45,54 +104,62 @@ gap: revert-layer;
 gap: unset;
 ```
 
-## مقادیر
+### Values
 
 - `normal`
-  - : مقداری معادل `1em` در containerهای multi-column و `0` در سایر contextها.
-- `<length>`
-  - : اندازهٔ فاصله به‌صورت یک مقدار `<length>` نامنفی.
-- `<percentage>`
-  - : اندازهٔ فاصله به‌صورت یک مقدار `<percentage>` نامنفی که نسبت به اندازهٔ [content box](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area) عنصر container در آن بُعد محاسبه می‌شود.
+  - : A value of `1em` on multi-column containers and `0` in all other contexts.
+- {{CSSxRef("&lt;length&gt;")}}
+  - : The size of the gap as a non-negative {{CSSxRef("&lt;length&gt;")}} value.
+- {{CSSxRef("&lt;percentage&gt;")}}
+  - : The size of the gap as a non-negative {{CSSxRef("&lt;percentage&gt;")}} value relative to the [content box](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area) size of the container element in that dimension.
 
-## توضیحات
+## Description
 
-ویژگی `gap` فاصلهٔ بین ستون‌ها و سطرها را تعیین می‌کند و تأثیر آن بسته به اینکه container از نوع grid، flexbox یا چیدمان چندستونی باشد، متفاوت است.
+The `gap` property defines gaps between columns and rows, with the effect of the definition depending on whether the container is a grid container, a flexbox container, or a multi-column layout container.
 
-این ویژگی خلاصه به‌صورت یک مقدار برای `<'row-gap'>` و سپس (به‌صورت اختیاری) یک مقدار برای `<'column-gap'>` نوشته می‌شود. مقدار پیش‌فرض هر دو ویژگی زیرین `normal` است، اما اگر فقط یک مقدار اعلام شود، همان مقدار برای هر دو به‌کار می‌رود. `<'row-gap'>` و `<'column-gap'>` می‌توانند به‌صورت `<length>`، `<percentage>` یا کلیدواژهٔ `normal` مشخص شوند.
+The shorthand property is specified as a value for `<'row-gap'>`, followed optionally by a value for `<'column-gap'>`. While the default value is `normal` for both sub-properties, if only one value is declared, that value applies to both. Both `<'row-gap'>` and `<'column-gap'>` can each be specified as a `<length>`, a `<percentage>`, or the keyword `normal`.
 
-مقادیر درصدی gap همیشه نسبت به اندازهٔ [content box](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area) عنصر container محاسبه می‌شوند. وقتی اندازهٔ container قطعی باشد، رفتار در تمام حالت‌های چیدمان کاملاً مشخص و یکسان است.
+Percentage gap values are always calculated against the [content box](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area) size of the container element. The behavior is well-defined and consistent across layout modes when the container size is definite.
 
-فاصله‌های ایجادشده فضایی خالی با عرض یا ارتفاع اندازهٔ مشخص‌شده برای gap می‌سازند، درست مانند یک آیتم یا track خالی. فضای قابل مشاهده بین عناصر ممکن است با مقدار `gap` تعیین‌شده تفاوت داشته باشد، زیرا marginها، paddingها و تراز توزیع‌شده می‌توانند جدایی بین عناصر را بیشتر از آنچه `gap` تعیین کرده، افزایش دهند.
+The generated gaps create empty spaces that have the width or height of the gap's specified size, much like an empty item or track. The visible space between elements may differ from the provided `gap` value because margins, padding, and distributed alignment may increase the separation between elements beyond what is determined by `gap`.
 
-فاصله‌ها می‌توانند شامل جداکننده‌های دیداری به‌عنوان تزئینات gap باشند. اگر بین ستون‌ها، سطرها یا هردو خطوط تزئینی وجود داشته باشد، آن‌ها در وسط gap خود ظاهر می‌شوند اما تأثیری بر اندازهٔ فاصله ندارند. این خطوط تزئینی را می‌توان با استفاده از ویژگی خلاصهٔ `rule` به فضای خالی اضافه کرد.
+Gaps may contain visible separators as gap decorations. If there are decorative rules between the columns, rows, or both, they will appear in the middle of their gap, but have no effect on the gaps' size. These decorative lines can be added to the otherwise "empty space" by using the {{cssxref("rule")}} shorthand.
 
-### در چیدمان‌های grid
+### In grid layouts
 
-در [چیدمان شبکه‌ای CSS](/en-US/docs/Web/CSS/Guides/Grid_layout) ویژگی `gap` فاصلهٔ بین سطرها و ستون‌ها را تعیین می‌کند. مقدار اول فاصلهٔ بین سطرها و مقدار دوم فاصلهٔ بین ستون‌ها را مشخص می‌کند. اگر فقط یک مقدار داده شود، همان مقدار برای هر دو بعد استفاده می‌شود.
+In [CSS grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout), the `gap` property defines the space between rows and columns. The first value defines the gutter between rows, and the second defines the gutter between columns. If only one value is included, that value is used for both dimensions.
 
-مقادیر درصدی بر اساس اندازهٔ [content box](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area) عنصر container محاسبه می‌شوند. اندازه‌های درصدی چرخه‌ای (cyclic percentage sizes) برای تعیین مشارکت در [intrinsic size](/en-US/docs/Glossary/Intrinsic_Size) نسبت به صفر محاسبه می‌شوند، اما هنگام چیدمان محتوا بر اساس content box کانتینر شبکه‌ای محاسبه می‌شوند. دو مثال در بخش مثال‌ها این موضوع را با [اندازهٔ صریح container](#percentage_gap_value_and_explicit_container_size) و [اندازهٔ ضمنی container](#percentage_gap_value_and_implicit_container_size) نشان می‌دهند.
+Percentage values are calculated against the [content box](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area) size of the container element. Cyclic percentage sizes resolve against zero for determining {{glossary("intrinsic size")}} contributions but resolve against the grid container's content box when laying out the contents. Two examples below demonstrate percentage gap values with [explicit container size](#percentage_gap_value_and_explicit_container_size) and [implicit container size](#percentage_gap_value_and_implicit_container_size) in the examples section.
 
-تأثیر مقادیر مثبت `gap` مانند این است که grid lineها ضخامت پیدا کرده‌اند: track شبکه‌ای بین دو grid line برابر با فضای بین شکاف‌هایی است که نمایندهٔ آن‌ها هستند. اگر یک آیتم شبکه چندین سطر یا ستون را بپوشاند، برای اندازه‌گیری track، شکاف به‌عنوان یک track اضافی، خالی و با اندازهٔ ثابت از جنس همان بعد در نظر گرفته می‌شود. برای مثال، اگر روی یک شبکهٔ ۳×۳ از باکس‌های `100px` در `100px` ویژگی `gap: 10px` تنظیم شود، آیتم شبکه‌ای که دو ستون عمودی را می‌پوشاند `210px` عرض خواهد داشت و اگر هر سه ستون را بپوشاند `320px` عرض پیدا می‌کند.
+The effect of positive `gap` values is as though the grid lines acquired thickness: the grid track between two grid lines is the space between the gutters that represent them. If a grid item spans multiple rows or columns, for the purpose of track sizing, the gutter is treated as an extra, empty, fixed-size track of the specified size, added to the dimension in the spanning direction. For example, if `gap: 10px` is set on a 3x3 grid of 100px by 100px boxes, if a grid item spans two vertical columns, it's width would be `210px`. If it spans all three, it has a width of `320px`.
 
-فضای بین سطرها و ستون‌های شبکه ممکن است به دلیل فضای اضافه‌شده توسط ویژگی‌های {{cssxref("justify-content")}} و {{cssxref("align-content")}} بین trackها، بزرگ‌تر از مقدار `gap` باشد.
+The space between grid rows and columns may be larger than the value of the `gap` property due to space added between tracks by the {{cssxref("justify-content")}} and {{cssxref("align-content")}} properties.
 
-شکاف‌ها فقط بین trackهای شبکهٔ ضمنی (implicit grid) ظاهر می‌شوند. اگر شبکه‌ای بین trackها قطعه‌قطعه شود، هیچ فاصله‌ای بین آن trackها اضافه نمی‌شود. قبل از اولین track یا بعد از آخرین track شکافی وجود ندارد و اگر یک track جمع شود، شکافی نخواهد داشت.
+Gutters only appear between tracks of the implicit grid. If a grid is fragmented between tracks, no gutter spacing is added between those tracks. There is no gutter before the first track or after the last track, and if a track is collapsed, it will have no gutter.
 
-نسخه‌های اولیهٔ مشخصات CSS Grid این ویژگی را `grid-gap` نام‌گذاری کرده بودند. برای حفظ سازگاری با وب‌سایت‌های قدیمی، مرورگرها `grid-gap` را به‌عنوان نام مستعار `gap` می‌پذیرند.
+Early versions of the CSS grid specification called this property `grid-gap`. To maintain compatibility with legacy websites, browsers accept `grid-gap` as an alias for `gap`.
 
-### در Flexbox
+### In flexbox
 
-در یک flex container، ویژگی `gap` فاصلهٔ بین آیتم‌های flex و خطوط flex را تعیین می‌کند. اینکه مقدار اول فاصلهٔ بین آیتم‌ها باشد یا بین خطوط، به جهت بستگی دارد. آیتم‌های flex بر اساس مقدار ویژگی {{cssxref("flex-direction")}} در سطرها یا ستون‌ها چیده می‌شوند. برای سطرها (مقادیر `row` (پیش‌فرض) یا `row-reverse`)، مقدار اول فاصلهٔ بین خطوط flex را مشخص می‌کند و مقدار دوم فاصلهٔ بین آیتم‌های داخل هر خط. اگر فقط یک مقدار داده شود، برای هر دو بعد استفاده می‌شود.
+With flex containers, the `gap` property defines the space between both flex items and flex lines. Whether the first value is the gap between flex items or between flex lines depends on the direction. Flex items are laid out in either rows or columns depending on the value of the {{cssxref("flex-direction")}} property. For rows (`row` (the default) or `row-reverse`), the first value defines the gap between flex lines, and the second value defines the gap between items within each line. If only one value is included, that value is used for both dimensions.
 
-برای ستون‌ها (`column` یا `column-reverse`)، مقدار اول فاصلهٔ بین آیتم‌های flex درون یک خط flex را مشخص می‌کند و مقدار دوم فاصلهٔ بین خطوط flex را. باز هم اگر فقط یک مقدار داده شود، برای هر دو بعد استفاده می‌شود.
+For columns (`column` or `column-reverse`), the first value defines the gap between flex items within a flex line, and the second value defines the gaps between each flex line. Again, if only one value is included, that value is used for both dimensions.
 
-### در چیدمان چندستونی
+### In multi column layouts
 
-در [چیدمان چندستونی CSS](/en-US/docs/Web/CSS/Guides/Multicol_layout)، این ویژگی فاصلهٔ بین ستون‌ها و ردیف‌های ستونی را تعیین می‌کند. مقدار اول فاصلهٔ بین جعبه‌های ستونی مجاور را مشخص می‌کند، در حالی که مقدار دوم اندازهٔ فاصلهٔ بین ردیف‌های ستونی را مشخص می‌کند (اگر چند ردیف توسط ویژگی {{cssxref("column-height")}} ایجاد شده باشند).
+In [CSS multi-column layout](/en-US/docs/Web/CSS/Guides/Multicol_layout), the property defines the gutter between columns and rows of columns. The first value defines the gap between adjacent column boxes, while the second value defines the size of the gutter between rows of column boxes, if multiple rows were established by the {{cssxref("column-height")}} property.
 
-## مثال‌ها
+## Formal definition
 
-### چیدمان Flex
+{{cssinfo}}
+
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Flex layout
 
 #### HTML
 
@@ -126,7 +193,11 @@ gap: unset;
 }
 ```
 
-### چیدمان Grid
+#### Result
+
+{{EmbedLiveSample("Flex_layout", "auto", 250)}}
+
+### Grid layout
 
 #### HTML
 
@@ -160,7 +231,11 @@ gap: unset;
 }
 ```
 
-### چیدمان چندستونی
+#### Result
+
+{{EmbedLiveSample("Grid_layout", "auto", 250)}}
+
+### Multi-column layout
 
 #### HTML
 
@@ -180,9 +255,13 @@ gap: unset;
 }
 ```
 
-### مقدار درصدی gap و اندازه صریح container
+#### Result
 
-اگر container دارای اندازه‌ای ثابت (fixed size) باشد، محاسبات مقدار درصدی gap بر اساس اندازه خود container انجام می‌شود. بنابراین رفتار gap در تمام چیدمان‌ها یکسان خواهد بود. در مثال زیر دو container وجود دارد، یکی با چیدمان grid و دیگری با چیدمان flex. هر container پنج عنصر فرزند قرمز رنگ ۲۰ در ۲۰ پیکسلی دارد. ارتفاع هر دو container به‌طور صریح با `height: 200px` برابر با ۲۰۰ پیکسل تنظیم شده و gap با `gap: 12.5% 0` مقداردهی شده است.
+{{EmbedLiveSample("Multi-column_layout", "auto", "120px")}}
+
+### Percentage gap value and explicit container size
+
+If the container has a fixed size set, then gap percentage value calculations are based on the size of the container. Thus, gap behavior is consistent across all layouts. In the following example, there are two containers, one with a grid layout and the other with a flex layout. The containers have five red 20x20px children. Both containers are explicitly set to 200px high using `height: 200px` and the gap is set with `gap: 12.5% 0`.
 
 ```html
 <span>Grid</span>
@@ -232,11 +311,13 @@ body > div {
 }
 ```
 
-حالا با استفاده از [برگه Inspector در ابزارهای توسعه‌دهنده وب](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/open_the_inspector/index.html) عناصر grid و flex را بررسی کنید. برای دیدن gapهای واقعی، نشانگر موس را روی تگ‌های `<div id="grid">` و `<div id="flex">` در Inspector نگه دارید. متوجه خواهید شد که gap در هر دو حالت یکسان و برابر ۲۵ پیکسل است.
+{{EmbedLiveSample("Explicit container size", "auto", "200px")}}
 
-### مقدار درصدی gap و اندازه ضمنی container
+Now inspect the grid and flex elements using [Inspector tab in Web Developer Tools](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/open_the_inspector/index.html). In order to see the actual gaps hover mouse over `<div id="grid">` and `<div id="flex">` tags in the inspector. You will notice that the gap is the same in both cases which is 25px.
 
-اگر اندازه به‌طور صریح روی container تنظیم نشده باشد، gap درصدی در چیدمان‌های grid و flex رفتار متفاوتی خواهد داشت. در مثال زیر ارتفاع containerها به‌طور صریح مشخص نشده است.
+### Percentage gap value and implicit container size
+
+If size is not explicitly set on the container, then the percentage gap behaves differently in case of grid and flex layouts. In the following example the containers don't have height explicitly set.
 
 ```html hidden
 <span>Grid</span>
@@ -282,16 +363,26 @@ body > div {
 }
 ```
 
-در چیدمان grid، gap درصدی تأثیری در ارتفاع واقعی grid ندارد. ارتفاع container با فرض gap صفر (`0px`) محاسبه می‌شود، بنابراین ارتفاع واقعی ۱۰۰ پیکسل (۵ × ۲۰px) به‌دست می‌آید. سپس gap درصدی واقعی با استفاده از ارتفاع content box محاسبه می‌شود: `12.5px` (۱۲.۵٪ × ۱۰۰px). این gap درست قبل از رندر شدن اعمال می‌شود. بنابراین ارتفاع grid همچنان ۱۰۰ پیکسل باقی می‌ماند، اما به دلیل gap درصدی که بعداً اضافه می‌شود، سرریز رخ می‌دهد.
+{{EmbedLiveSample("Implicit container size", "auto", "200px")}}
 
-در چیدمان flex، gap درصدی همیشه مقدار صفر را نتیجه می‌دهد.
+In case of the grid layout, percentage gap doesn't contribute to the actual height of the grid. The container's height is calculated using `0px` gap, so the actual height turns out to be 100px (20px x 5). Then the actual percentage gap is calculated using the content box's height, the gap turns out to be `12.5px` (100px x 12.5%). The gap is applied just before rendering. Thus the grid remains 100px high but it overflows due to the percentage gap added later just before rendering.
 
-## همچنین ببینید
+In case of the flex layout, the percentage gap always results in zero value.
 
-- [row-gap](/en-US/docs/Web/CSS/row-gap)
-- [column-gap](/en-US/docs/Web/CSS/column-gap)
-- [مفاهیم پایه‌ای گرید: gutters](/en-US/docs/Web/CSS/Guides/Grid_layout/Basic_concepts#gutters)
-- ماژول [CSS box alignment](/en-US/docs/Web/CSS/Guides/Box_alignment)
-- ماژول [CSS flexible box layout](/en-US/docs/Web/CSS/Guides/Flexible_box_layout)
-- ماژول [CSS grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout)
-- ماژول [CSS multi-column layout](/en-US/docs/Web/CSS/Guides/Multicol_layout)
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- {{CSSxRef("row-gap")}}
+- {{CSSxRef("column-gap")}}
+- [Basic concepts of grid layout: gutters](/en-US/docs/Web/CSS/Guides/Grid_layout/Basic_concepts#gutters)
+- [CSS box alignment](/en-US/docs/Web/CSS/Guides/Box_alignment) module
+- [CSS flexible box layout](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) module
+- [CSS grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout) module
+- [CSS multi-column layout](/en-US/docs/Web/CSS/Guides/Multicol_layout) module
