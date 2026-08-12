@@ -6,11 +6,12 @@ icon: vscode
 cover: >-
   .gitbook/assets/FromKlickpin.com-54184001763550470-pin-id-54184001763550470-ezgif.com-video-to-gif-converter.gif
 coverY: 0
+coverHeight: 416
 layout:
   width: default
   cover:
     visible: true
-    size: hero
+    size: full
     mask: radial
   title:
     visible: true
