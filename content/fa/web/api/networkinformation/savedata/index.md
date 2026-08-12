@@ -1,0 +1,34 @@
+---
+title: "NetworkInformation: saveData property"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/saveData"
+status: "needs-translation"
+---
+
+---
+title: "NetworkInformation: saveData property"
+short-title: saveData
+slug: Web/API/NetworkInformation/saveData
+page-type: web-api-instance-property
+browser-compat: api.NetworkInformation.saveData
+---
+
+{{APIRef("Network Information API")}} {{AvailableInWorkers}}
+
+The **`saveData`** read-only
+property of the {{domxref("NetworkInformation")}} interface returns `true` if the user has set a reduced data usage option on the user agent.
+
+## Value
+
+A boolean value.
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- {{HTTPHeader("Save-Data")}}
