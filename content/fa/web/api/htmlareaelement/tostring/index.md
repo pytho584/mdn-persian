@@ -1,0 +1,55 @@
+---
+title: "HTMLAreaElement: toString() method"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/toString"
+status: "needs-translation"
+---
+
+---
+title: "HTMLAreaElement: toString() method"
+short-title: toString()
+slug: Web/API/HTMLAreaElement/toString
+page-type: web-api-instance-method
+browser-compat: api.HTMLAreaElement.toString
+---
+
+{{ApiRef("URL API")}}
+
+The **`HTMLAreaElement.toString()`** {{Glossary("stringifier")}}
+method returns a string containing the whole URL. It is a read-only
+version of {{domxref("HTMLAreaElement.href")}}.
+
+## Syntax
+
+```js-nolint
+toString()
+```
+
+### Parameters
+
+None.
+
+### Return value
+
+A string containing the element's complete URL.
+
+## Examples
+
+### Calling toString on an area element
+
+```js
+// An <area id="myArea" href="/en-US/docs/HTMLAreaElement"> element is in the document
+const area = document.getElementById("myArea");
+area.toString(); // returns 'https://developer.mozilla.org/en-US/docs/HTMLAreaElement'
+```
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- The {{domxref("HTMLAreaElement")}} interface it belongs to.
