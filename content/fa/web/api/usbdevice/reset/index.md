@@ -1,0 +1,43 @@
+---
+title: "USBDevice: reset() method"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/reset"
+status: "needs-translation"
+---
+
+---
+title: "USBDevice: reset() method"
+short-title: reset()
+slug: Web/API/USBDevice/reset
+page-type: web-api-instance-method
+status:
+  - experimental
+browser-compat: api.USBDevice.reset
+---
+
+{{APIRef("WebUSB API")}}{{SeeCompatTable}}{{SecureContext_Header}}{{AvailableInWorkers}}
+
+The **`reset()`** method of the {{domxref("USBDevice")}}
+interface returns a {{jsxref("Promise")}} that resolves when the device is reset and all
+app operations canceled and their promises rejected.
+
+## Syntax
+
+```js-nolint
+reset()
+```
+
+### Parameters
+
+None.
+
+### Return value
+
+A {{jsxref("Promise")}}.
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
