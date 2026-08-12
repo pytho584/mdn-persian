@@ -1,35 +1,84 @@
 ---
 title: "border CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-ویژگی **`border`** یک [shorthand](/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties) در CSS است که حاشیهٔ یک عنصر را مشخص می‌کند. این ویژگی مقادیر `border-width`, `border-style` و `border-color` را در خود جای می‌دهد.
+---
+title: "`border` CSS property"
+short-title: border
+slug: Web/CSS/Reference/Properties/border
+page-type: css-shorthand-property
+browser-compat: css.properties.border
+sidebar: cssref
+---
 
-## ویژگی‌های زیرمجموعه
+The **`border`** [shorthand](/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties) [CSS](/en-US/docs/Web/CSS) property sets an element's border. It sets the values of {{Cssxref("border-width")}}, {{Cssxref("border-style")}}, and {{Cssxref("border-color")}}.
 
-این ویژگی خلاصه‌ای از ویژگی‌های زیر است:
+{{InteractiveExample("CSS Demo: border")}}
 
-- `border-width`
-- `border-style`
-- `border-color`
+```css interactive-example-choice
+border: solid;
+```
 
-## نحوهٔ نوشتن
+```css interactive-example-choice
+border: dashed red;
+```
+
+```css interactive-example-choice
+border: 1rem solid;
+```
+
+```css interactive-example-choice
+border: thick double #32a1ce;
+```
+
+```css interactive-example-choice
+border: 4mm ridge rgb(211 220 50 / 0.6);
+```
+
+```html interactive-example
+<section class="default-example" id="default-example">
+  <div class="transition-all" id="example-element">
+    This is a box with a border around it.
+  </div>
+</section>
+```
+
+```css interactive-example
+#example-element {
+  background-color: #eeeeee;
+  color: darkmagenta;
+  padding: 0.75em;
+  width: 80%;
+  height: 100px;
+}
+```
+
+## Constituent properties
+
+This property is a shorthand for the following CSS properties:
+
+- {{cssxref("border-width")}}
+- {{cssxref("border-style")}}
+- {{cssxref("border-color")}}
+
+## Syntax
 
 ```css
-/* فقط سبک */
+/* style */
 border: solid;
 
-/* عرض | سبک */
+/* width | style */
 border: 2px dotted;
 
-/* سبک | رنگ */
+/* style | color */
 border: outset #ff3333;
 
-/* عرض | سبک | رنگ */
+/* width | style | color */
 border: medium dashed green;
 
-/* مقادیر سراسری */
+/* Global values */
 border: inherit;
 border: initial;
 border: revert;
@@ -37,36 +86,44 @@ border: revert-layer;
 border: unset;
 ```
 
-ویژگی `border` را می‌توان با یک، دو یا سه مقدار از فهرست زیر تعیین کرد. ترتیب این مقادیر مهم نیست.
+The `border` property may be specified using one, two, or three of the values listed below. The order of the values does not matter.
 
 > [!NOTE]
-> اگر سبک (style) حاشیه تعریف نشود، حاشیه دیده نخواهد شد، زیرا مقدار پیش‌فرض سبک `none` است.
+> The border will be invisible if its style is not defined. This is because the style defaults to `none`.
 
-### مقادیر
+### Values
 
 - `<line-width>`
-  - : ضخامت حاشیه را مشخص می‌کند. اگر ذکر نشود، مقدار پیش‌فرض `medium` در نظر گرفته می‌شود. به `border-width` مراجعه کنید.
-- `<line-style>`
-  - : سبک حاشیه را مشخص می‌کند. اگر ذکر نشود، مقدار پیش‌فرض `none` است. به `border-style` مراجعه کنید.
-- `<color>`
-  - : رنگ حاشیه را مشخص می‌کند. اگر ذکر نشود، از `currentColor` استفاده می‌شود. به `border-color` مراجعه کنید.
+  - : Sets the thickness of the border. Defaults to `medium` if absent. See {{Cssxref("border-width")}}.
+- {{cssxref("&lt;line-style&gt;")}}
+  - : Sets the style of the border. Defaults to `none` if absent. See {{Cssxref("border-style")}}.
+- {{cssxref("&lt;color&gt;")}}
+  - : Sets the color of the border. Defaults to `currentColor` if absent. See {{Cssxref("border-color")}}.
 
-## توضیحات
+## Description
 
-مانند همهٔ ویژگی‌های shorthand، هر مقدار فرعی که حذف شود، به [مقدار اولیهٔ](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#initial_value) خود تنظیم می‌شود. نکتهٔ مهم اینکه `border` نمی‌تواند برای مشخص کردن یک مقدار سفارشی برای `border-image` استفاده شود، بلکه آن را به مقدار اولیه‌اش یعنی `none` بازمی‌گرداند.
+As with all shorthand properties, any omitted sub-values will be set to their [initial value](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#initial_value). Importantly, `border` cannot be used to specify a custom value for {{cssxref("border-image")}}, but instead sets it to its initial value, i.e., `none`.
 
-ویژگی shorthand `border` به‌ویژه وقتی مفید است که بخواهید هر چهار حاشیه یکسان باشند. اما اگر می‌خواهید حاشیه‌ها با یکدیگر تفاوت داشته باشند، می‌توانید از ویژگی‌های منفرد `border-width`, `border-style` و `border-color` استفاده کنید که برای هر طرف مقدار جداگانه‌ای می‌پذیرند. همچنین می‌توانید با ویژگی‌های فیزیکی (مانند `border-top`) و منطقی (مانند `border-block-start`) حاشیه، یک حاشیه را به‌تنهایی هدف قرار دهید.
+The `border` shorthand is especially useful when you want all four borders to be the same. To make them different from each other, however, you can use the longhand {{Cssxref("border-width")}}, {{Cssxref("border-style")}}, and {{Cssxref("border-color")}} properties, which accept different values for each side. Alternatively, you can target one border at a time with the physical (e.g., {{Cssxref("border-top")}} ) and logical (e.g., {{Cssxref("border-block-start")}}) border properties.
 
-### تفاوت حاشیه و outline
+### Borders vs. outlines
 
-حاشیه‌ها و [outline](/en-US/docs/Web/CSS/Reference/Properties/outline)ها بسیار شبیه‌اند، اما outlineها تفاوت‌های زیر را دارند:
+Borders and [outlines](/en-US/docs/Web/CSS/Reference/Properties/outline) are very similar. However, outlines differ from borders in the following ways:
 
-- outlineها هیچ فضایی اشغال نمی‌کنند، زیرا بیرون از محتوای عنصر رسم می‌شوند.
-- طبق مشخصات، outlineها ملزم به مستطیلی بودن نیستند، هرچند معمولاً مستطیلی‌اند.
+- Outlines never take up space, as they are drawn outside of an element's content.
+- According to the spec, outlines don't have to be rectangular, although they usually are.
 
-## مثال‌ها
+## Formal definition
 
-### یک حاشیهٔ بیرون‌آمدهٔ صورتی
+{{cssinfo}}
+
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Setting a pink outset border
 
 #### HTML
 
@@ -89,21 +146,23 @@ div {
 }
 ```
 
-#### نتیجه
+#### Result
 
-## مشخصات
+{{EmbedLiveSample('Setting_a_pink_outset_border')}}
 
-برای مشاهدهٔ جزئیات دقیق مشخصات فنی این ویژگی، به مستندات اصلی MDN مراجعه کنید.
+## Specifications
 
-## سازگاری با مرورگرها
+{{Specifications}}
 
-اطلاعات مربوط به پشتیبانی مرورگرها در جدول سازگاری مستندات اصلی MDN در دسترس است.
+## Browser compatibility
 
-## همچنین ببینید
+{{Compat}}
 
-- [border-width](/en-US/docs/Web/CSS/border-width)
-- [border-style](/en-US/docs/Web/CSS/border-style)
-- [border-color](/en-US/docs/Web/CSS/border-color)
-- [outline](/en-US/docs/Web/CSS/outline)
+## See also
+
+- {{Cssxref("border-width")}}
+- {{Cssxref("border-style")}}
+- {{Cssxref("border-color")}}
+- {{Cssxref("outline")}}
 - [Backgrounds and borders](/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders)
 - [Learn CSS: Backgrounds and borders](/en-US/docs/Learn_web_development/Core/Styling_basics/Backgrounds_and_borders)
