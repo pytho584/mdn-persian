@@ -1,19 +1,72 @@
 ---
 title: "font-weight CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-weight"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-ویژگی **`font-weight`** در [CSS](/en-US/docs/Web/CSS) میزان ضخامت (یا bold بودن) فونت را تعیین می‌کند. ضخامت‌های در دسترس به فونت خانواده‌ای که در حال حاضر با {{cssxref("font-family")}} تنظیم شده بستگی دارد.
+---
+title: "`font-weight` CSS property"
+short-title: font-weight
+slug: Web/CSS/Reference/Properties/font-weight
+page-type: css-property
+browser-compat: css.properties.font-weight
+sidebar: cssref
+---
 
-## نحوه نگارش
+The **`font-weight`** [CSS](/en-US/docs/Web/CSS) property sets the weight (or boldness) of the font. The weights available depend on the {{cssxref("font-family")}} that is currently set.
+
+{{InteractiveExample("CSS Demo: font-weight")}}
+
+```css interactive-example-choice
+font-weight: normal;
+```
+
+```css interactive-example-choice
+font-weight: bold;
+```
+
+```css interactive-example-choice
+font-weight: lighter;
+```
+
+```css interactive-example-choice
+font-weight: bolder;
+```
+
+```css interactive-example-choice
+font-weight: 100;
+```
+
+```css interactive-example-choice
+font-weight: 900;
+```
+
+```html interactive-example
+<section id="default-example">
+  <p id="example-element">
+    London. Michaelmas term lately over, and the Lord Chancellor sitting in
+    Lincoln's Inn Hall. Implacable November weather. As much mud in the streets
+    as if the waters had but newly retired from the face of the earth, and it
+    would not be wonderful to meet a Megalosaurus, forty feet long or so,
+    waddling like an elephantine lizard up Holborn Hill.
+  </p>
+</section>
+```
+
+```css interactive-example
+section {
+  font-size: 1.2em;
+}
+```
+
+## Syntax
 
 ```css
-/* مقادیر کلیدی <font-weight-absolute> */
+/* <font-weight-absolute> keyword values */
 font-weight: normal;
 font-weight: bold;
 
-/* مقادیر عددی <font-weight-absolute> [1,1000] */
+/* <font-weight-absolute> numeric values [1,1000] */
 font-weight: 100;
 font-weight: 200;
 font-weight: 300;
@@ -24,11 +77,11 @@ font-weight: 700; /* bold */
 font-weight: 800;
 font-weight: 900;
 
-/* مقادیر کلیدی نسبی به عنصر والد */
+/* Keyword values relative to the parent */
 font-weight: lighter;
 font-weight: bolder;
 
-/* مقادیر سراسری */
+/* Global values */
 font-weight: inherit;
 font-weight: initial;
 font-weight: revert;
@@ -36,51 +89,51 @@ font-weight: revert-layer;
 font-weight: unset;
 ```
 
-ویژگی `font-weight` با استفاده از یکی از مقادیر `<font-weight-absolute>` یا یک مقدار نسبی، مطابق فهرست زیر مشخص می‌شود.
+### Values
 
-### مقادیر
+This property is specified as a single value from the following list:
 
 - `normal`
-  - : ضخامت فونت معمولی. معادل `400`.
+  - : Normal font weight. Same as `400`.
 
 - `bold`
-  - : ضخامت فونت بولد. معادل `700`.
+  - : Bold font weight. Same as `700`.
 
 - `<number>`
-  - : یک مقدار {{cssxref("&lt;number&gt;")}} بین ۱ و ۱۰۰۰ که هر دو مقدار شامل این بازه می‌شوند. اعداد بزرگ‌تر نشان‌دهنده ضخامت‌هایی هستند که نسبت به اعداد کوچک‌تر بولدتر (یا هم‌سطح) هستند. این امکان کنترل دقیق را برای [فونت‌های متغیر](#فونت‌های_متغیر) فراهم می‌کند. برای فونت‌های غیر متغیر، اگر ضخامت دقیق مشخص‌شده در دسترس نباشد، از یک الگوریتم [ضخامت جایگزین](#ضخامت‌های_جایگزین) استفاده می‌شود — مقادیر عددی که بر ۱۰۰ بخش‌پذیرند با نام‌های رایج ضخامت مطابقت دارند، همانطور که در بخش [نگاشت نام‌های رایج ضخامت](#نگاشت_نام‌های_رایج_ضخامت) در زیر توضیح داده شده است.
+  - : A {{cssxref("&lt;number&gt;")}} value between 1 and 1000, both values included. Higher numbers represent weights that are bolder than (or as bold as) lower numbers. This allows fine-grain control for [variable fonts](#variable_fonts). For non-variable fonts, if the exact specified weight is unavailable, a [fallback weight](#fallback_weights) algorithm is used — numeric values that are divisible by 100 correspond to common weight names, as described in the [Common weight name mapping](#common_weight_name_mapping) section below.
 
 - `lighter`
-  - : یک واحد ضخامت فونت نسبی، نازک‌تر از عنصر والد. توجه داشته باشید که برای محاسبه ضخامت نسبی فقط چهار ضخامت در نظر گرفته می‌شود؛ به بخش [معنای ضخامت‌های نسبی](#معنای_ضخامت‌های_نسبی) در زیر مراجعه کنید.
+  - : One relative font weight lighter than the parent element. Note that only four font weights are considered for relative weight calculation; see the [Meaning of relative weights](#meaning_of_relative_weights) section below.
 
 - `bolder`
-  - : یک واحد ضخامت فونت نسبی، ضخیم‌تر از عنصر والد. توجه داشته باشید که برای محاسبه ضخامت نسبی فقط چهار ضخامت در نظر گرفته می‌شود؛ به بخش [معنای ضخامت‌های نسبی](#معنای_ضخامت‌های_نسبی) در زیر مراجعه کنید.
+  - : One relative font weight heavier than the parent element. Note that only four font weights are considered for relative weight calculation; see the [Meaning of relative weights](#meaning_of_relative_weights) section below.
 
-### ضخامت‌های جایگزین
+### Fallback weights
 
-اگر ضخامت دقیق داده شده در دسترس نباشد، آنگاه از قاعده زیر برای تعیین ضخامتی که واقعاً رندر می‌شود استفاده می‌شود:
+If the exact weight given is unavailable, then the following rule is used to determine the weight actually rendered:
 
-- اگر ضخامت هدف داده شده بین `400` و `500` (شامل هر دو) باشد:
-  - به دنبال ضخامت‌های در دسترس بین ضخامت هدف و `500`، به ترتیب صعودی بگرد.
-  - اگر موردی پیدا نشد، به دنبال ضخامت‌های در دسترس کوچک‌تر از ضخامت هدف، به ترتیب نزولی بگرد.
-  - اگر موردی پیدا نشد، به دنبال ضخامت‌های در دسترس بزرگ‌تر از `500`، به ترتیب صعودی بگرد.
+- If the target weight given is between `400` and `500` inclusive:
+  - Look for available weights between the target and `500`, in ascending order.
+  - If no match is found, look for available weights less than the target, in descending order.
+  - If no match is found, look for available weights greater than `500`, in ascending order.
 
-- اگر ضخامتی کمتر از `400` داده شود، به دنبال ضخامت‌های در دسترس کوچک‌تر از ضخامت هدف، به ترتیب نزولی بگرد. اگر موردی پیدا نشد، به دنبال ضخامت‌های در دسترس بزرگ‌تر از ضخامت هدف، به ترتیب صعودی بگرد.
+- If a weight less than `400` is given, look for available weights less than the target, in descending order. If no match is found, look for available weights greater than the target, in ascending order.
 
-اگر وزنی بزرگ‌تر از `500` تعیین شود، ابتدا وزن‌های موجود که بزرگ‌تر از مقدار هدف هستند، به ترتیب صعودی جستجو می‌شوند. اگر موردی پیدا نشد، وزن‌های موجود که کوچک‌تر از هدف هستند، به ترتیب نزولی بررسی می‌شوند.
+- If a weight greater than `500` is given, look for available weights greater than the target, in ascending order. If no match is found, look for available weights less than the target, in descending order.
 
 > [!NOTE]
-> الگوریتم وزن جایگزین فقط هنگام رندرینگ به کار می‌رود. مقدار محاسبه‌شده (computed value) ویژگی همچنان همان مقدار مشخص‌شده (specified value) باقی می‌ماند.
+> The fallback weight algorithm is only used for rendering. The computed value of the property is still the specified value.
 
-### معنای وزن‌های نسبی
+### Meaning of relative weights
 
-زمانی که `lighter` یا `bolder` مشخص می‌شود، نمودار زیر نشان می‌دهد که وزن مطلق قلم برای آن عنصر چگونه تعیین می‌شود.
+When `lighter` or `bolder` is specified, the below chart shows how the absolute font weight of the element is determined.
 
-توجه کنید که وقتی از وزن‌های نسبی استفاده می‌کنید، فقط چهار وزن قلم در نظر گرفته می‌شوند — thin (۱۰۰)، normal (۴۰۰)، bold (۷۰۰) و heavy (۹۰۰). اگر خانوادهٔ قلم وزن‌های بیشتری در دسترس داشته باشد، این وزن‌ها برای محاسبهٔ وزن نسبی نادیده گرفته می‌شوند.
+Note that when using relative weights, only four font weights are considered — thin (100), normal (400), bold (700), and heavy (900). If a font family has more weights available, they are ignored for the purposes of relative weight calculation.
 
 <table class="standard-table">
   <thead>
     <tr>
-      <th>مقدار به‌ارث‌برده</th>
+      <th>Inherited value</th>
       <th><code>bolder</code></th>
       <th><code>lighter</code></th>
     </tr>
@@ -134,11 +187,11 @@ font-weight: unset;
   </tbody>
 </table>
 
-### نگاشت نام‌های رایج وزن
+### Common weight name mapping
 
-مقادیر عددی `100` تا `900` تقریباً با نام‌های رایج وزن زیر مطابقت دارند (مشاهدهٔ [مشخصات OpenType](https://learn.microsoft.com/en-us/typography/opentype/spec/os2#usweightclass)):
+The numerical values `100` to `900` roughly correspond to the following common weight names (see the [OpenType specification](https://learn.microsoft.com/en-us/typography/opentype/spec/os2#usweightclass)):
 
-| مقدار | نام رایج وزن                                                                                                                       |
+| Value | Common weight name                                                                                                                 |
 | ----- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | 100   | Thin (Hairline)                                                                                                                    |
 | 200   | Extra Light (Ultra Light)                                                                                                          |
@@ -151,13 +204,13 @@ font-weight: unset;
 | 900   | Black (Heavy)                                                                                                                      |
 | 950   | [Extra Black (Ultra Black)](https://learn.microsoft.com/en-us/dotnet/api/system.windows.fontweights?view=netframework-4.8#remarks) |
 
-### قلم‌های متغیر
+### Variable fonts
 
-هرچند بسیاری از قلم‌ها یک وزن مشخص متناظر با یکی از اعداد [نگاشت نام‌های رایج وزن](#common_weight_name_mapping) دارند، اغلب قلم‌های متغیر بازه‌ای از وزن‌ها را پشتیبانی می‌کنند که دانه‌بندی بسیار ظریف‌تری را فراهم می‌آورد و به طراحان و توسعه‌دهندگان کنترل بیشتری روی وزن انتخابی می‌دهد.
+While many fonts have a particular weight corresponding to one of the numbers in [Common weight name mapping](#common_weight_name_mapping), most variable fonts support a range of weights providing much finer granularity, giving designers and developers more control over the chosen weight.
 
-در قلم‌های متغیر TrueType یا OpenType، از تغییر `wght` برای پیاده‌سازی عرض‌های متغیر استفاده می‌شود.
+For TrueType or OpenType variable fonts, the "wght" variation is used to implement varying widths.
 
-این نسخهٔ نمایشی با `font-weight: 500;` بارگذاری می‌شود. مقدار ویژگی `font-weight` را در سلکتور `.sample` تغییر دهید تا وزن متن تغییر کند (مثلاً ۲۰۰ یا ۷۰۰). در بلوک‌های کد زیر روی «Play» کلیک کنید تا مثال را در MDN Playground ویرایش کنید:
+This demo loads with `font-weight: 500;` set. Change the value of the `font-weight` property in the `.sample` selector to see the weight of the text change (e.g., 200, 700). Click "Play" in the code blocks below to edit the example in the MDN Playground:
 
 ```html live-sample___font-weight-example
 <p class="sample">
@@ -182,20 +235,26 @@ font-weight: unset;
 }
 ```
 
-## دسترسی‌پذیری
+{{EmbedLiveSample("font-weight-example", "", "200px")}}
 
-افرادی که دچار کم‌بینایی هستند ممکن است در خواندن متنی که با `font-weight` مقدار `100` (Thin/Hairline) یا `200` (Extra Light) تنظیم شده است مشکل داشته باشند، به‌ویژه اگر فونت [نسبت کنتراست رنگ پایینی](/en-US/docs/Web/CSS/Reference/Properties/color#accessibility) داشته باشد.
+## Accessibility
 
-- [توضیحات MDN دربارهٔ درک WCAG، راهنمای 1.4](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
-- [درک معیار موفقیت 1.4.8 | W3C درک WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html)
+People experiencing low vision conditions may have difficulty reading text set with a `font-weight` value of `100` (Thin/Hairline) or `200` (Extra Light), especially if the font has a [low contrast color ratio](/en-US/docs/Web/CSS/Reference/Properties/color#accessibility).
 
-## تعریف رسمی
+- [MDN Understanding WCAG, Guideline 1.4 explanations](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
+- [Understanding Success Criterion 1.4.8 | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html)
 
-## نحو رسمی
+## Formal definition
 
-## مثال‌ها
+{{cssinfo}}
 
-### تنظیم وزن فونت
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Setting font weights
 
 #### HTML
 
@@ -234,14 +293,22 @@ span {
 }
 ```
 
-## مشخصات
+#### Result
 
-## سازگاری مرورگرها
+{{EmbedLiveSample("Setting_font_weights","400","300")}}
 
-## همچنین ببینید
+## Specifications
 
-- [`font-family`](/en-US/docs/Web/CSS/font-family)
-- [`font-style`](/en-US/docs/Web/CSS/font-style)
-- SVG [`font-weight`](/en-US/docs/Web/SVG/Attribute/font-weight) attribute
-- [یادگیری: اصول پایه استایل‌دهی متن و فونت](/en-US/docs/Learn_web_development/Core/Text_styling/Fundamentals)
-- [ماژول فونت‌های CSS](/en-US/docs/Web/CSS/Guides/Fonts)
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- {{cssxref("font-family")}}
+- {{cssxref("font-style")}}
+- SVG {{SVGAttr("font-weight")}} attribute
+- [Learn: Fundamental text and font styling](/en-US/docs/Learn_web_development/Core/Text_styling/Fundamentals)
+- [CSS fonts](/en-US/docs/Web/CSS/Guides/Fonts) module
