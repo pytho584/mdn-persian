@@ -1,10 +1,21 @@
 ---
 title: "<tbody> HTML table body element"
 source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/tbody"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-المان `<tbody>` یک [element](/en-US/docs/Web/HTML) در HTML است که مجموعه‌ای از ردیف‌های جدول (المان‌های `<tr>`) را در بر می‌گیرد و نشان می‌دهد که این ردیف‌ها بدنهٔ داده‌های اصلی جدول را تشکیل می‌دهند.
+---
+title: "`<tbody>` HTML table body element"
+short-title: <tbody>
+slug: Web/HTML/Reference/Elements/tbody
+page-type: html-element
+browser-compat: html.elements.tbody
+sidebar: htmlsidebar
+---
+
+The **`<tbody>`** [HTML](/en-US/docs/Web/HTML) element encapsulates a set of table rows ({{HTMLElement("tr")}} elements), indicating that they comprise the body of a table's (main) data.
+
+{{InteractiveExample("HTML Demo: &lt;tbody&gt;", "tabbed-taller")}}
 
 ```html interactive-example
 <table>
@@ -73,49 +84,47 @@ td {
 
 ## Attributes
 
-این المان شامل [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes) است.
+This element includes the [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes).
 
-### Attributes منسوخ‌شده
+### Deprecated attributes
 
-attributeهای زیر منسوخ شده‌اند و نباید استفاده شوند. در اینجا فقط برای مرجع هنگام به‌روزرسانی کدهای قدیمی و از نظر تاریخی ثبت شده‌اند.
+The following attributes are deprecated and should not be used. They are documented below for reference when updating existing code and for historical interest only.
 
 - `align` {{deprecated_inline}}
-  - : تراز افقی هر سلول بدنه را مشخص می‌کند. مقادیر ممکن {{Glossary("enumerated")}} عبارتند از `left`، `center`، `right`، `justify` و `char`. در صورت پشتیبانی، مقدار `char` محتوای متنی را بر اساس کاراکتر مشخص‌شده در attribute [`char`](#char) و offset تعریف‌شده توسط attribute [`charoff`](#charoff) تراز می‌کند. به جای این attribute از خاصیت CSS {{cssxref("text-align")}} استفاده کنید.
+  - : Specifies the horizontal alignment of each body cell. The possible {{Glossary("enumerated")}} values are `left`, `center`, `right`, `justify`, and `char`. When supported, the `char` value aligns the textual content on the character defined in the [`char`](#char) attribute and on offset defined by the [`charoff`](#charoff) attribute. Use the {{cssxref("text-align")}} CSS property instead, as this attribute is deprecated.
 
 - `bgcolor` {{deprecated_inline}} {{non-standard_inline}}
-  - : رنگ پس‌زمینهٔ هر سلول بدنه را تعریف می‌کند. مقدار آن یک رنگ HTML است: یا یک کد RGB هگزادسیمال ۶ رقمی ([6-digit hexadecimal RGB code](/en-US/docs/Web/CSS/Reference/Values/hex-color)) با پیشوند `#`، یا یک کلیدواژهٔ رنگ ([color keyword](/en-US/docs/Web/CSS/Reference/Values/named-color)). سایر مقادیر CSS {{cssxref("&lt;color&gt;")}} پشتیبانی نمی‌شوند. به جای این attribute از خاصیت CSS {{cssxref("background-color")}} استفاده کنید.
+  - : Defines the background color of each body cell. The value is an HTML color; either a [6-digit hexadecimal RGB code](/en-US/docs/Web/CSS/Reference/Values/hex-color), prefixed by a `#`, or a [color keyword](/en-US/docs/Web/CSS/Reference/Values/named-color). Other CSS {{cssxref("&lt;color&gt;")}} values are not supported. Use the {{cssxref("background-color")}} CSS property instead, as this attribute is deprecated.
 
 - `char` {{deprecated_inline}}
-  - : تراز محتوای هر سلول بدنه را نسبت به یک کاراکتر مشخص می‌کند. برای مثال، هنگام تراز اعداد یا مقادیر پولی از نقطه (`.`) استفاده می‌شود. اگر [`align`](#align) روی `char` تنظیم نشده باشد، این attribute نادیده گرفته می‌شود.
+  - : Specifies the alignment of the content to a character of each body cell. Typical values for this include a period (`.`) when attempting to align numbers or monetary values. If [`align`](#align) is not set to `char`, this attribute is ignored.
 
 - `charoff` {{deprecated_inline}}
-  - : تعداد کاراکترهای offset محتوای سلول بدنه از کاراکتر تراز مشخص‌شده توسط attribute [`char`](#char) را تعیین می‌کند.
+  - : Specifies the number of characters to offset the body cell content from the alignment character specified by the [`char`](#char) attribute.
 
 - `valign` {{deprecated_inline}}
-  - : تراز عمودی هر سلول بدنه را مشخص می‌کند. مقادیر ممکن {{Glossary("enumerated")}} عبارتند از `baseline`، `bottom`، `middle` و `top`. به جای این attribute از خاصیت CSS {{cssxref("vertical-align")}} استفاده کنید.
+  - : Specifies the vertical alignment of each body cell. The possible {{Glossary("enumerated")}} values are `baseline`, `bottom`, `middle`, and `top`. Use the {{cssxref("vertical-align")}} CSS property instead, as this attribute is deprecated.
 
-## نکات استفاده
+## Usage notes
 
-(بخش "Usage notes" در متن ورودی وجود ندارد، بنابراین نیازی به ترجمه نیست)
+- The `<tbody>` is placed after any {{HTMLElement("caption")}}, {{HTMLElement("colgroup")}}, and {{HTMLElement("thead")}} elements.
+- If {{HTMLElement("tr")}} elements are specified as direct children of the {{HTMLElement("table")}} (see "tag omission" in the [technical summary](#technical_summary) for a description of when this is valid), then the markup generated by the browser will include a `<tbody>` element that encapsulates them. As a result, CSS selectors such as `table > tr` will not select these elements. See also the [Not specifying a body](#not_specifying_a_body) example.
+- It's permitted to use more than one `<tbody>` per table as long as they are all consecutive. This allows to divide the rows ({{HTMLElement("tr")}} elements) in large tables into sections, each of which may be separately formatted if so desired. If not marked up to be consecutive elements, browsers will correct this author error, ensuring any {{HTMLElement("thead")}} and {{HTMLElement("tfoot")}} elements are rendered as the first and last elements of the table, respectively.
+- Along with its related {{HTMLElement("thead")}} and {{HTMLElement("tfoot")}} elements, the `<tbody>` element provides useful {{Glossary("semantics", "semantic")}} information and can be used when rendering for either screen or print. Specifying such table content groups also provides valuable contextual information for assistive technologies, including screen readers and search engines.
+- When printing a document, in the case of a multipage table, the {{HTMLElement("thead")}} and {{htmlelement("tfoot")}} elements usually specify information that remains the same—or at least very similar—on each page, while the `<tbody>` element's contents generally will differ from page to page.
+- When a table is presented in a screen context (such as a window) that is not large enough to display the entire table, the {{Glossary("user agent")}} may let the user scroll the contents of the {{HTMLElement("thead")}}, `<tbody>`, {{htmlelement("tfoot")}}, and {{HTMLElement("caption")}} blocks separately from one another for the same parent {{htmlelement("table")}}.
 
-- عنصر `<tbody>` بعد از {{HTMLElement("caption")}}، {{HTMLElement("colgroup")}} و {{HTMLElement("thead")}} قرار می‌گیرد.
-- اگر عناصر {{HTMLElement("tr")}} به‌عنوان فرزند مستقیم {{HTMLElement("table")}} مشخص شده باشند (برای توضیح شرایط معتبر بودن این کار به [خلاصه فنی](#technical_summary) مراجعه کنید)، مرورگر یک عنصر `<tbody>` می‌سازد که آن‌ها را در بر می‌گیرد. در نتیجه، انتخاب‌گرهای CSS مثل `table > tr` این عناصر را انتخاب نمی‌کنند. برای مثال به [مشخص نکردن body](#not_specifying_a_body) مراجعه کنید.
-- استفاده از بیش از یک `<tbody>` در هر جدول مجاز است، به شرطی که همه آن‌ها پشت سر هم قرار بگیرند. این کار امکان تقسیم سطرها (عناصر {{HTMLElement("tr")}}) در جدول‌های بزرگ به بخش‌هایی را فراهم می‌کند که هر کدام را می‌توان به‌صورت جداگانه قالب‌بندی کرد. اگر به‌صورت عناصر پشت‌سر هم نشانه‌گذاری نشده باشند، مرورگر این خطای نویسنده را تصحیح می‌کند و اطمینان حاصل می‌کند که عناصر {{HTMLElement("thead")}} و {{HTMLElement("tfoot")}} به‌ترتیب اولین و آخرین عناصر جدول رندر می‌شوند.
-- عنصر `<tbody>` به همراه عناصر مرتبط {{HTMLElement("thead")}} و {{HTMLElement("tfoot")}} اطلاعات معنایی (semantic) مفیدی ارائه می‌دهد و می‌تواند هنگام رندر برای صفحه‌نمایش یا چاپ استفاده شود. مشخص کردن چنین گروه‌های محتوایی برای جدول، اطلاعات زمینه‌ای ارزشمندی برای فناوری‌های کمکی از جمله صفحه‌خوان‌ها و موتورهای جست‌وجو فراهم می‌کند.
-- هنگام چاپ یک سند، در صورت وجود جدول چندصفحه‌ای، عناصر {{HTMLElement("thead")}} و {{HTMLElement("tfoot")}} معمولاً اطلاعاتی را مشخص می‌کنند که در هر صفحه ثابت (یا حداقل بسیار مشابه) باقی می‌ماند، در حالی که محتوای عنصر `<tbody>` معمولاً از صفحه‌ای به صفحه دیگر متفاوت است.
-- وقتی جدولی در زمینه‌ای صفحه‌نمایش (مثل یک پنجره) نمایش داده می‌شود که به اندازه کافی بزرگ نیست تا کل جدول را نشان دهد، عامل کاربر (user agent) ممکن است به کاربر اجازه دهد محتوای بلوک‌های {{HTMLElement("thead")}}، `<tbody>`، {{HTMLElement("tfoot")}} و {{HTMLElement("caption")}} را به‌صورت جداگانه از یکدیگر برای همان {{HTMLElement("table")}} والد اسکرول کند.
+## Examples
 
-## مثال‌ها
+See {{HTMLElement("table")}} for a complete table example introducing common standards and best practices.
 
-برای یک مثال کامل از جدول که استانداردها و بهترین روش‌های رایج را معرفی می‌کند، به {{HTMLElement("table")}} مراجعه کنید.
+### Not specifying a body
 
-### مشخص نکردن body
-
-این مثال نشان می‌دهد که اگر سطرها درون یک عنصر گروه‌بندی جدول (`<tbody>`، `<tfoot>` یا `<thead>`) قرار نگیرند و به‌عنوان فرزند مستقیم عنصر {{HTMLElement("table")}} باشند (مانند این مثال)، مرورگر به‌طور خودکار عناصر {{HTMLElement("tr")}} را درون یک `<tbody>` قرار می‌دهد.
+This example demonstrates that the browser automatically encapsulates {{HTMLElement("tr")}} elements within a `<tbody>` element if the rows are not nested within a table grouping element (`<tbody>`, `<tfoot>`, or `<thead>`) and are, as in this example, the direct children of the {{HTMLElement("table")}} element.
 
 #### HTML
 
-در اینجا یک جدول بسیار ساده با چند سطر جدول (عناصر {{HTMLElement("tr")}}) که شامل داده‌هایی (عناصر {{HTMLElement("td")}}) درباره دانشجویان است، ساخته شده است.
+Here, a very basic table with some table rows ({{HTMLElement("tr")}} elements) containing data ({{HTMLElement("td")}} elements) about students is created.
 
 ```html
 <table>
@@ -142,7 +151,7 @@ attributeهای زیر منسوخ شده‌اند و نباید استفاده �
 
 #### CSS
 
-به CSS این مثال توجه کنید که در آن یک {{cssxref("background-color")}} برای عنصر `<tbody>` مشخص شده و `tbody` به‌عنوان بخشی از یک {{Glossary("css_selector", "CSS selector")}} اضافی استفاده شده است. همچنین می‌توانید از {{Glossary("developer_tools", "ابزارهای توسعه مرورگر")}} برای بررسی وجود عنصر `<tbody>` در {{Glossary("dom", "DOM")}} استفاده کنید.
+Note the CSS in the example, where a {{cssxref("background-color")}} is specified for the `<tbody>` element and the `tbody` is used as a part of an additional {{Glossary("css_selector", "CSS selector")}}. Alternatively, {{Glossary("developer_tools", "browser developer tools")}} can be used to check the presence of the `<tbody>` element in the {{Glossary("dom", "DOM")}}.
 
 ```css
 tbody {
@@ -170,23 +179,19 @@ td {
 }
 ```
 
-#### نتیجه
+#### Result
 
-(خروجی تعاملی در اینجا نمایش داده می‌شود)
+{{EmbedLiveSample("Not_specifying_a_body", 650, 100)}}
 
-### ساختار پایه body
+### Basic body structure
 
-(در اینجا محتوای بخش "Basic body structure" وجود ندارد، اما در صورت وجود، مشابه بازنویسی می‌شد.)
-
-### بدنهٔ اصلی (Basic body structure)
-
-این مثال، جدول ساده‌ای را که در [مثال قبلی](#not_specifying_a_body) معرفی شد، گسترش و بهبود می‌دهد.
+This example extends and enhances the basic table from the [previous example](#not_specifying_a_body).
 
 #### HTML
 
-در اینجا از یک سرجدول (عنصر `<thead>`) استفاده می‌کنیم و یک `<tbody>` را به‌صورت صریح تعریف می‌کنیم تا جدول را به بخش‌های معنایی (semantic) تقسیم کنیم. سرجدول شامل سرستون‌ها (عناصر `<th>`) است. عنصر `<tbody>` بخش بدنهٔ جدول را نشان می‌دهد که شامل چندین ردیف (عناصر `<tr>`) با داده‌های اصلی جدول است – در اینجا اطلاعات هر دانشجو.
+We introduce a table head ({{HTMLElement("thead")}} element) and explicitly use a `<tbody>` element to structure the table into {{Glossary("semantics", "semantic")}} sections. The table head contains the column headers ({{HTMLElement("th")}} elements). The `<tbody>` element represents the body section of the table, which contains a number of rows ({{HTMLElement("tr")}} elements) with the table's main data, which is the data of each student.
 
-استفاده از این گروه‌های محتوایی جدول و نشانه‌گذاری semantic نه‌تنها برای نمایش بصری (از طریق استایل‌دهی CSS) و ارائهٔ اطلاعات زمینه‌ای به فناوری‌های کمکی مفید است، بلکه تعریف صریح `<tbody>` به مرورگر کمک می‌کند ساختار مورد نظر جدول را ایجاد کند و از نتایج ناخواسته جلوگیری نماید.
+The use of such table content groups and {{Glossary("semantics", "semantic")}} markup is not only useful for visual presentation (via CSS styling) and contextual information for assistive technologies; moreover, the explicit use of the `<tbody>` element helps the browser to create the intended table structure, avoiding unwanted results.
 
 ```html
 <table>
@@ -223,7 +228,7 @@ td {
 
 #### CSS
 
-استایل CSS تقریباً مشابه [مثال قبلی](#not_specifying_a_body) است، با این تفاوت که اندکی استایل پایه برای برجسته‌سازی سرجدول اضافه شده تا سرستون‌ها از داده‌های بدنه متمایز شوند. مانند [مثال بالا](#not_specifying_a_body)، از [type selector](/en-US/docs/Web/CSS/Reference/Selectors/Type_selectors) `tbody` برای استایل‌دهی به سلول‌های بدنه استفاده شده است.
+The CSS is nearly unchanged from the [previous example](#not_specifying_a_body), except for some basic styling to highlight the table head so that the headers of the columns stand out from the data in the table body. As in the [example above](#not_specifying_a_body), the `tbody` [type selector](/en-US/docs/Web/CSS/Reference/Selectors/Type_selectors) is used to style the body cells.
 
 ```css
 tbody {
@@ -257,133 +262,19 @@ td {
 }
 ```
 
-#### نتیجه
+#### Result
 
 {{EmbedLiveSample("Basic_body_structure", 650, 140)}}
 
-### چند بدنه (Multiple bodies)
+### Multiple bodies
 
-این مثال، جدول [مثال بالا](#basic_body_structure) را بیشتر گسترش می‌دهد و با معرفی چندین بخش بدنه، آن را بهبود می‌بخشد.
+This example extends and enhances the table from the [example above](#basic_body_structure) even more by introducing multiple body sections.
 
-استفاده از چندین عنصر `<tbody>` امکان ایجاد گروه‌بندی ردیف‌ها را در یک جدول فراهم می‌کند. هر بدنهٔ جدول می‌تواند یک یا چند ردیف سرصفحهٔ مخصوص خود داشته باشد؛ اما **در هر جدول تنها یک عنصر `<thead>` مجاز است**. به همین دلیل، می‌توان از عناصر `<tr>` حاوی `<th>` برای ایجاد سرصفحه‌های درون هر `<tbody>` استفاده کرد.
+Using multiple `<tbody>` elements allows creating row groupings within a table. Each table body can potentially have its own head row or rows; however, _there may only be one {{HTMLElement("thead")}} element per table_! Because of that, {{HTMLElement("tr")}} with {{HTMLElement("th")}} elements can be used to create headers within each `<tbody>`.
 
 #### HTML
 
-بر اساس جدول [مثال پایهٔ قبلی](#basic_body_structure)، دانشجویان بیشتری اضافه شده و به‌جای ذکر رشتهٔ هر دانشجو در هر ردیف، دانشجویان بر اساس رشته گروه‌بندی شده‌اند. هر رشته درون یک بلوک `<tbody>` مجزا قرار گرفته است. اولین ردیف (عنصر `<tr>`) هر بلوک به عنوان سرصفحهٔ آن بلوک عمل می‌کند و عنوان رشته را درون یک عنصر `<th>` که با ویژگی [`colspan`](/en-US/docs/Web/HTML/Reference/Elements/th#colspan) در هر سه ستون جدول گسترش یافته، نمایش می‌دهد. هر ردیف باقی‌مانده درون هر `<tbody>` یک دانشجو را نشان می‌دهد.
-
-```html
-<table>
-  <thead>
-    <tr>
-      <th>Student ID</th>
-      <th>Name</th>
-      <th>Major</th>
-      <th>Credits</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th colspan="4">Computer Science</th>
-    </tr>
-    <tr>
-      <td>3741255</td>
-      <td>Jones, Martha</td>
-      <td>Computer Science</td>
-      <td>240</td>
-    </tr>
-    <tr>
-      <td>4077830</td>
-      <td>Pierce, Benjamin</td>
-      <td>Computer Science</td>
-      <td>200</td>
-    </tr>
-    <tr>
-      <td>5151701</td>
-      <td>Kirk, James</td>
-      <td>Computer Science</td>
-      <td>190</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <th colspan="4">Russian Literature</th>
-    </tr>
-    <tr>
-      <td>3971244</td>
-      <td>Nim, Victor</td>
-      <td>Russian Literature</td>
-      <td>220</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <th colspan="4">Astrophysics</th>
-    </tr>
-    <tr>
-      <td>4100332</td>
-      <td>Petrov, Alexandra</td>
-      <td>Astrophysics</td>
-      <td>260</td>
-    </tr>
-    <tr>
-      <td>8892377</td>
-      <td>Toyota, Hiroko</td>
-      <td>Astrophysics</td>
-      <td>210</td>
-    </tr>
-  </tbody>
-</table>
-```
-
-#### CSS
-
-استایل CSS مشابه مثال قبلی است، با این تفاوت که برای تأکید بر سرصفحه‌های هر بدنه (که با `<th>` مشخص شده‌اند) یک استایل متمایز اضافه شده است.
-
-```css
-tbody {
-  background-color: #e4f0f5;
-}
-
-tbody > tr > th {
-  background-color: #2c5e77;
-  color: white;
-  text-align: left;
-}
-
-tbody > tr > td:last-of-type {
-  text-align: center;
-}
-
-thead {
-  border-bottom: 2px solid rgb(160 160 160);
-  background-color: #2c5e77;
-  color: white;
-}
-
-tbody + tbody {
-  border-top: 2px solid rgb(160 160 160);
-}
-```
-
-```css hidden
-table {
-  border-collapse: collapse;
-  border: 2px solid rgb(140 140 140);
-  font-family: sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-}
-
-th,
-td {
-  border: 1px solid rgb(160 160 160);
-  padding: 8px 10px;
-}
-```
-
-#### نتیجه
-
-{{EmbedLiveSample("Multiple_bodies", 650, 250)}}
+Building on the table in the [previous basic example](#basic_body_structure), more students are added and, instead of listing each student's major on each row, the students are grouped by major. Note that each major is enclosed within its own `<tbody>` block, with the first row ({{HTMLElement("tr")}} element) serving as the head of the block, displaying the major title within a {{HTMLElement("th")}} element that uses the [`colspan`](/en-US/docs/Web/HTML/Reference/Elements/th#colspan) attribute to span the header across all three columns of the table. Each remaining row within each major's `<tbody>` represents one student.
 
 ```html
 <table>
@@ -444,7 +335,7 @@ td {
 
 #### CSS
 
-بیشتر CSS دست‌نخورده باقی مانده است. با این حال، یک استایل کمی ظریف‌تر برای سلول‌های header (عنوان ستون) که مستقیماً داخل `<tbody>` قرار دارند (در مقابل آن‌هایی که در `<thead>` هستند) اضافه شده است. از این استایل برای headerهایی استفاده می‌شود که نشان‌دهندهٔ رشتهٔ مربوط به هر بخش جدول هستند.
+Most of the CSS is unchanged. However, a slightly more subtle style is added for header cells contained directly within a `<tbody>` (as opposed to those that reside in the {{HTMLElement("thead")}}). This is used for the headers indicating each table section's corresponding major.
 
 ```css
 tbody > tr > th {
@@ -464,7 +355,30 @@ thead {
 }
 ```
 
+```css hidden
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 6px 8px;
+  text-align: left;
+}
+
+tbody > tr > td:last-of-type {
+  text-align: center;
+}
+```
+
 #### Result
+
+{{EmbedLiveSample("Multiple_bodies", 650, 300)}}
 
 ## Technical summary
 
@@ -518,11 +432,20 @@ thead {
     </tr>
   </tbody>
 </table>
-```
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
 
 - [Learn: HTML table basics](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics)
-- `<caption>`, `<col>`, `<colgroup>`, `<table>`, `<td>`, `<tfoot>`, `<th>`, `<thead>`, `<tr>`: سایر عناصر مرتبط با جدول
-- `background-color`: خاصیت CSS برای تنظیم رنگ پس‌زمینهٔ هر سلول بدنه
-- `border`: خاصیت CSS برای کنترل حاشیه‌های سلول‌های بدنه
-- `text-align`: خاصیت CSS برای تراز افقی محتوای هر سلول بدنه
-- `vertical-align`: خاصیت CSS برای تراز عمودی محتوای هر سلول بدنه
+- {{HTMLElement("caption")}}, {{HTMLElement("col")}}, {{HTMLElement("colgroup")}}, {{HTMLElement("table")}}, {{HTMLElement("td")}}, {{HTMLElement("tfoot")}}, {{HTMLElement("th")}}, {{HTMLElement("thead")}}, {{HTMLElement("tr")}}: Other table-related elements
+- {{cssxref("background-color")}}: CSS property to set the background color of each body cell
+- {{cssxref("border")}}: CSS property to control borders of body cells
+- {{cssxref("text-align")}}: CSS property to horizontally align each body cell content
+- {{cssxref("vertical-align")}}: CSS property to vertically align each body cell content
