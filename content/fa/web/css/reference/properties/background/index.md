@@ -1,12 +1,21 @@
 ---
 title: "background CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-## `background` ویژگی CSS
+---
+title: "`background` CSS property"
+short-title: background
+slug: Web/CSS/Reference/Properties/background
+page-type: css-shorthand-property
+browser-compat: css.properties.background
+sidebar: cssref
+---
 
-ویژگی **`background`** یک [کوتاه‌نویس](/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties) در [CSS](/en-US/docs/Web/CSS) است که تمام ویژگی‌های مربوط به پس‌زمینه را (مانند رنگ، تصویر، مبدأ، اندازه و شیوهٔ تکرار) به‌طور هم‌زمان تنظیم می‌کند.
+The **`background`** [shorthand](/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties) [CSS](/en-US/docs/Web/CSS) property sets all background style properties at once, such as color, image, origin, size, and repeat method.
+
+{{InteractiveExample("CSS Demo: background")}}
 
 ```css interactive-example-choice
 background: green;
@@ -46,9 +55,9 @@ background:
 }
 ```
 
-## ویژگی‌های تشکیل‌دهنده
+## Constituent properties
 
-این ویژگی کوتاه‌نویسی برای ویژگی‌های زیر است:
+This property is a shorthand for the following CSS properties:
 
 - {{cssxref("background-attachment")}}
 - {{cssxref("background-clip")}}
@@ -59,22 +68,22 @@ background:
 - {{cssxref("background-repeat")}}
 - {{cssxref("background-size")}}
 
-## سینتکس
+## Syntax
 
 ```css
-/* استفاده از یک <background-color> */
+/* Using a <background-color> */
 background: green;
 
-/* استفاده از یک <bg-image> و <repeat-style> */
+/* Using a <bg-image> and <repeat-style> */
 background: url("test.jpg") repeat-y;
 
-/* استفاده از یک <visual-box> و <'background-color'> */
+/* Using a <visual-box> and <'background-color'> */
 background: border-box red;
 
-/* یک تصویر، وسط‌چین شده و مقیاس‌بندی شده */
+/* A single image, centered and scaled */
 background: no-repeat center/80% url("../img/image.png");
 
-/* مقادیر سراسری */
+/* Global values */
 background: inherit;
 background: initial;
 background: revert;
@@ -82,53 +91,53 @@ background: revert-layer;
 background: unset;
 ```
 
-### مقادیر
+### Values
 
 - `<attachment>`
-  - : نحوهٔ چسبیدن (پیوستگی) تصویر پس‌زمینه را مشخص می‌کند. به {{cssxref("background-attachment")}} مراجعه کنید. پیش‌فرض: `scroll`.
+  - : See {{cssxref("background-attachment")}}. Default: `scroll`.
 - `<visual-box>`
-  - : ناحیه‌ای که عملیات برش (clip) و مبدأ (origin) پس‌زمینه را تعیین می‌کند. به {{cssxref("background-clip")}} و {{cssxref("background-origin")}} مراجعه کنید. مقادیر پیش‌فرض به ترتیب `border-box` و `padding-box` است.
+  - : See {{cssxref("background-clip")}} and {{cssxref("background-origin")}}. Default: `border-box` and `padding-box` respectively.
 - `<'background-color'>`
-  - : رنگ پس‌زمینه را تعیین می‌کند. به {{cssxref("background-color")}} مراجعه کنید. پیش‌فرض: `transparent`.
+  - : See {{cssxref("background-color")}}. Default: `transparent`.
 - `<bg-image>`
-  - : تصویر پس‌زمینه را مشخص می‌کند. به {{cssxref("background-image")}} مراجعه کنید. پیش‌فرض: `none`.
+  - : See {{Cssxref("background-image")}}. Default: `none`.
 - `<bg-position>`
-  - : موقعیت تصویر پس‌زمینه را تعیین می‌کند. به {{cssxref("background-position")}} مراجعه کنید. پیش‌فرض: `0% 0%`.
+  - : See {{cssxref("background-position")}}. Default: `0% 0%`.
 - `<repeat-style>`
-  - : نحوهٔ تکرار تصویر پس‌زمینه را تعیین می‌کند. به {{cssxref("background-repeat")}} مراجعه کنید. پیش‌فرض: `repeat`.
+  - : See {{cssxref("background-repeat")}}. Default: `repeat`.
 - `<bg-size>`
-  - : اندازهٔ تصویر پس‌زمینه را مشخص می‌کند. به {{cssxref("background-size")}} مراجعه کنید. پیش‌فرض: `auto`.
+  - : See {{cssxref("background-size")}}. Default: `auto`.
 
-## توضیحات
+## Description
 
-ویژگی کوتاه‌نویس `background` به شما امکان می‌دهد تمام ویژگی‌های پس‌زمینه را در یک اعلان واحد مشخص کنید. پس‌زمینه در زیر محتوای یک عنصر قرار می‌گیرد. هنگامی که چند مقدار پس‌زمینه دارید که با ویرگول از هم جدا شده‌اند، هر کدام یک لایهٔ پس‌زمینه را تشکیل می‌دهند و لایه‌های بعدی روی لایه‌های قبلی رسم می‌شوند.
+The `background` shorthand property enables you to declare all CSS background properties in a single declaration. The background lies underneath the content of an element. When you have multiple, comma-separated background values, each is a background layer that is painted on top of the previous layers.
 
-ویژگی `background` به‌صورت یک یا چند لایه (که با ویرگول جدا می‌شوند) مشخص می‌شود. هر لایه می‌تواند صفر، یک یا دو مؤلفهٔ `<visual-box>` و صفر یا یک مؤلفه از نوع `<attachment>`، `<bg-image>`، `<bg-position>`، `<bg-size>` و `<repeat-style>` داشته باشد. اگر دو مقدار برای `<bg-position>`، `<bg-size>` یا `<repeat-style>` داده شود، مقدار اول برای محور افقی و مقدار دوم برای محور عمودی در نظر گرفته می‌شود. اگر تنها یک مقدار بنویسید، همان مقدار برای هر دو بعد اعمال می‌شود.
+The `background` property is specified as one or more background layers, separated by commas. Each layer may include zero, one, or two `<visual-box>` components and zero or one `<attachment>`, `<bg-image>`, `<bg-position>`, `<bg-size>`, and `<repeat-style>` components. If two `<bg-position>`, `<bg-size>`, or `<repeat-style>` components are specified, the first value is the horizontal value and the second value is the vertical value. If only a single value is set, that value is applied to both dimensions.
 
-مؤلفهٔ `<'background-color'>` فقط می‌تواند در آخرین لایهٔ پس‌زمینه ظاهر شود.
+The `<'background-color'>` component may only be included in the last background layer specified.
 
-ویژگی‌های جزئی‌ای که در اعلان کوتاه‌نویس `background` مقداردهی نشده‌اند، به مقادیر پیش‌فرض خود بازمی‌گردند.
+Component properties not set in the `background` shorthand property value declaration are set to their default values.
 
-### ترتیب ویژگی‌های تشکیل‌دهنده
+### Component property order
 
-از آنجا که برخی از ویژگی‌های تشکیل‌دهنده نوع مقادیر مشترکی دارند، ترتیب آن‌ها در shorthand اهمیت پیدا می‌کند.
+Because some of the component properties share value types, the order of those component properties within the shorthand is important.
 
-مقدار `<bg-size>` باید بلافاصله بعد از `<bg-position>` و با جداکنندهٔ `/` بیاید. برای نمونه: `10px 10px / 80% 80%` یعنی تصویر پس‌زمینه ۸۰٪ ارتفاع و ۸۰٪ عرض element را می‌پوشاند و در فاصلهٔ `10px` از بالا و `10px` از چپ گوشهٔ بالا-چپ element قرار می‌گیرد. در `<bg-position>`، اگر هر دو مقدار طول باشند، یا یکی طول و دیگری `center`، اولین مقدار موقعیت افقی و دومی موقعیت عمودی را تعیین می‌کند.
+The `<bg-size>` value may only be included immediately after `<bg-position>`, separated with the `/` character. For example: `10px 10px / 80% 80%` means the background image is `80%` as tall and as wide as the element, and will be positioned `10px` from the top and `10px` from the left of the element's top-left corner. Within the `<bg-position>`, if both values are lengths, or one is a length and the other is `center`, the first value refers to the horizontal position and the second value refers to the vertical position.
 
-هر لایهٔ پس‌زمینه می‌تواند صفر، یک یا دو مقدار [`<visual-box>`](/en-US/docs/Web/CSS/Reference/Values/box-edge#visual-box) داشته باشد. اگر فقط یک مقدار بیاید، هم {{cssxref("background-origin")}} و هم {{cssxref("background-clip")}} را تنظیم می‌کند. اگر دو مقدار وجود داشته باشد، اولی `background-origin` و دومی `background-clip` را مشخص می‌کند. اگر هیچ مقدار `<visual-box>`ای نباشد، `background-origin` به `padding-box` و `background-clip` به `border-box` پیش‌فرض می‌شود.
+Each background layer can include zero, one, or two [`<visual-box>`](/en-US/docs/Web/CSS/Reference/Values/box-edge#visual-box) values. If only one value is included, it sets both {{cssxref("background-origin")}} and {{cssxref("background-clip")}}. If two values are present, the first occurrence specifies the `background-origin` and the second specifies the `background-clip` value. If no `<visual-box>` values are present, the `background-origin` defaults to `padding-box` and the `background-clip` defaults to `border-box`.
 
-برای دیگر ویژگی‌های پس‌زمینه الزامی در ترتیب وجود ندارد، اما ترتیب زیر برای یکدستی و خوانایی توصیه می‌شود؛ به خاطر داشته باشید که هیچ‌کدام از این مقادیر اجباری نیستند:
+While there is no order requirement for the other background properties, the following order is recommended for consistency and legibility; remember that none of the values are required:
 
 `<bg-image> <bg-position> / <bg-size> <repeat-style> <attachment> <bg-clip> <bg-origin> <'background-color'>`
 
-`background` زیر دقیقاً تمام مقادیر پیش‌فرض را با همین ترتیب مشخص می‌کند:
+The following `background` explicitly sets all the default values in this order:
 
 ```css
 background: none 0% 0% / auto auto repeat scroll border-box padding-box
   transparent;
 ```
 
-سه خط CSS زیر با خط بالا معادل هستند، حتی اگر ترتیب متفاوت باشد:
+The following three lines of CSS are equivalent to the above, even if the order differs:
 
 ```css
 background: none;
@@ -136,28 +145,36 @@ background: transparent;
 background: repeat scroll 0% 0% / auto padding-box border-box none transparent;
 ```
 
-### ترتیب نمایش تصاویر
+### Image painting order
 
-اگر چند پس‌زمینه که با ویرگول جدا شده‌اند تعریف شوند، چند لایهٔ پس‌زمینه روی هم ایجاد می‌کنند. اولین پس‌زمینه در لیست، لایهٔ بالایی را می‌سازد. اگر لایهٔ بالایی ناحیهٔ شفافی نداشته باشد، تنها همان لایه دیده خواهد شد.
+If multiple comma-separated backgrounds are included, they create multiple background layers on top of one another. The first background in the list creates the top layer. If the top layer contains no transparent areas, this is the only layer that will be visible.
 
-آخرین لایه، لایهٔ زیرین است. رنگ پس‌زمینه همواره در این لایه قرار می‌گیرد.
+The last layer is the bottom layer. The background color is always included in this layer.
 
-### اعمال پس‌زمینهٔ body روی کل سند
+### Body background applied to the entire document
 
-اگر مقدار محاسبه‌شدهٔ `background-image` برای عنصر {{htmlelement("html")}} (ریشه `:root`) برابر با `none` و `background-color` آن `transparent` باشد، مرورگر استایل‌های `background` تنظیم‌شده روی {{htmlelement("body")}} را به `:root` منتقل می‌کند و با `<body>` چنان رفتار می‌کند که گویی `background: initial` تنظیم شده است. به عبارت دیگر، عنصر `<html>` تمام استایل‌های `background` مربوط به `<body>` را دریافت می‌کند و ویژگی‌های پس‌زمینهٔ `<body>` به مقادیر اولیهٔ خود بازمی‌گردند.
+If the document {{htmlelement("html")}} `:root` element's computed `background-image` value is `none` and its `background-color` is `transparent`, the browser will transfer the `background` styles set on the {{htmlelement("body")}} element onto the `:root` and treat the `<body>` as if `background: initial` were set. In other words, the `<html>` element gets all the `background` styles set on the `<body>` element, and the `<body>` element's background properties are set to their initial values.
 
-به همین دلیل، نویسندگان مشخصه توصیه می‌کنند استایل‌های پس‌زمینهٔ سند را در بلوک `body` تنظیم کنید، نه در `html`. با این حال توجه داشته باشید که استفاده از containment این رفتار را غیرفعال می‌کند. وقتی ویژگی {{cssxref("contain")}} روی `<html>` یا `<body>` مقداری غیر از `none` داشته باشد، ویژگی `background` و تمام زیرویژگی‌های آن از `<body>` به عنصر ریشه `<html>` انتشار نمی‌یابند.
+Because of this behavior, the specification authors recommend setting your document's background styles in your `body` style block rather than your `html` style block. However, it's important to note that using containment disables this behavior. When the {{cssxref("contain")}} property is set to anything other than `none` on either the `<html>` or `<body>` element, the `background` property and any longhand components do not propagate from the `<body>` element to the root `<html>` element.
+
+## Formal definition
+
+{{cssinfo}}
+
+## Formal syntax
+
+{{csssyntax}}
 
 ## Accessibility
 
-مرورگرها اطلاعات خاصی دربارهٔ تصاویر پس‌زمینه در اختیار فناوری‌های کمکی قرار نمی‌دهند. این موضوع به‌ویژه برای صفحه‌خوان‌ها اهمیت دارد، زیرا صفحه‌خوان حضور تصویر را اعلام نمی‌کند و در نتیجه چیزی به کاربر منتقل نمی‌شود. اگر تصویر حاوی اطلاعاتی است که برای درک هدف کلی صفحه ضروری است، بهتر است آن را به‌صورت مفهومی درون سند توصیف کنید.
+Browsers do not provide any special information on background images to assistive technology. This is important primarily for screen readers, as a screen reader will not announce its presence and therefore convey nothing to its users. If the image contains information critical to understanding the page's overall purpose, it is better to describe it semantically in the document.
 
-- [توضیحات راهنمای ۱.۱ درک WCAG از MDN](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.1_%E2%80%94_providing_text_alternatives_for_non-text_content)
-- [Understanding Success Criterion 1.1.1 | درک WCAG 2.0 از W3C](https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html)
+- [MDN Understanding WCAG, Guideline 1.1 explanations](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.1_—_providing_text_alternatives_for_non-text_content)
+- [Understanding Success Criterion 1.1.1 | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html)
 
-## نمونه‌ها
+## Examples
 
-### تنظیم پس‌زمینه با کلمات کلیدی رنگی و تصاویر
+### Setting backgrounds with color keywords and images
 
 #### HTML
 
@@ -183,7 +200,19 @@ background: repeat scroll 0% 0% / auto padding-box border-box none transparent;
 }
 ```
 
-## همچنین ببینید
+#### Result
+
+{{EmbedLiveSample("Setting_backgrounds_with_color_keywords_and_images")}}
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
 
 - {{cssxref("box-decoration-break")}}
 - [Using gradients](/en-US/docs/Web/CSS/Guides/Images/Using_gradients)
