@@ -1,12 +1,21 @@
 ---
 title: "<option> HTML option element"
 source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/option"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-عنصر `<option>` در HTML برای تعریف یک گزینه درون یک `<select>`، `<optgroup>` یا `<datalist>` استفاده می‌شود. بنابراین `<option>` می‌تواند آیتم‌های منو در پنجره‌های بازشو و سایر لیست‌های آیتم‌ها در یک سند HTML را نمایش دهد.
+---
+title: "`<option>` HTML option element"
+short-title: <option>
+slug: Web/HTML/Reference/Elements/option
+page-type: html-element
+browser-compat: html.elements.option
+sidebar: htmlsidebar
+---
 
-مثال تعاملی
+The **`<option>`** [HTML](/en-US/docs/Web/HTML) element is used to define an item contained in a {{HTMLElement("select")}}, an {{HTMLElement("optgroup")}}, or a {{HTMLElement("datalist")}} element. As such, `<option>` can represent menu items in popups and other lists of items in an HTML document.
+
+{{InteractiveExample("HTML Demo: &lt;option&gt;", "tabbed-standard")}}
 
 ```html interactive-example
 <label for="pet-select">Choose a pet:</label>
@@ -37,46 +46,91 @@ select {
 
 ## Attributes
 
-این عنصر شامل [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes) نیز می‌شود.
+This element includes the [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes).
 
-- `disabled`
-  - : اگر این Boolean attribute تنظیم شده باشد، این گزینه قابل انتخاب نیست. معمولاً مرورگرها چنین کنترلی را به صورت خاکستری نشان می‌دهند و هیچ رویداد مرورگری مانند کلیک ماوس یا فوکس دریافت نمی‌کند. اگر این attribute تنظیم نشده باشد، عنصر همچنان ممکن است غیرفعال شود اگر یکی از اجدادش یک `<optgroup>` غیرفعال باشد.
+- [`disabled`](/en-US/docs/Web/HTML/Reference/Attributes/disabled)
+  - : If this Boolean attribute is set, this option is not checkable. Often browsers grey out such control and it won't receive any browsing event, like mouse clicks or focus-related ones. If this attribute is not set, the element can still be disabled if one of its ancestors is a disabled {{HTMLElement("optgroup")}} element.
 - `label`
-  - : این attribute متنی برای برچسبی است که معنی گزینه را نشان می‌دهد. اگر attribute `label` تعریف نشده باشد، مقدار آن برابر با محتوای متنی عنصر خواهد بود.
+  - : This attribute is text for the label indicating the meaning of the option. If the `label` attribute isn't defined, its value is that of the element text content.
 - `selected`
-  - : اگر وجود داشته باشد، این Boolean attribute نشان می‌دهد که گزینه به صورت پیش‌فرض انتخاب شده است. اگر عنصر `<option>` فرزند یک `<select>` باشد که attribute `multiple` آن تنظیم نشده است، فقط یک `<option>` از آن `<select>` می‌تواند attribute `selected` را داشته باشد.
+  - : If present, this Boolean attribute indicates that the option is initially selected. If the `<option>` element is the descendant of a {{HTMLElement("select")}} element whose [`multiple`](/en-US/docs/Web/HTML/Reference/Elements/select#multiple) attribute is not set, only one single `<option>` of this {{HTMLElement("select")}} element may have the `selected` attribute.
 - `value`
-  - : محتوای این attribute مقداری است که در صورت انتخاب شدن این گزینه، همراه با فرم ارسال می‌شود. اگر این attribute حذف شود، مقدار از محتوای متنی عنصر option گرفته می‌شود.
+  - : The content of this attribute represents the value to be submitted with the form, should this option be selected. If this attribute is omitted, the value is taken from the text content of the option element.
 
 ## Styling with CSS
 
-استایل‌دهی به عناصر `<option>` از نظر تاریخی بسیار محدود بوده است. [Customizable select elements](/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select) ویژگی‌های جدیدتری را توضیح می‌دهد که امکان شخصی‌سازی کامل آن‌ها را مانند هر عنصر معمولی DOM فراهم می‌کند.
+Styling `<option>` elements has historically been highly limited. [Customizable select elements](/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select) explains newer features that enable their full customization, just like any regular DOM element.
 
 ### Legacy option styling
 
-در مرورگرهایی که از ویژگی‌های مدرن شخصی‌سازی پشتیبانی نمی‌کنند (یا در پروژه‌های قدیمی که نمی‌توان از آن‌ها استفاده کرد)، استایل‌های موجود برای عناصر `<option>` به مرورگر و سیستم‌عامل بستگی دارد. بسته به سیستم‌عامل، `font-size` `<select>` والد در Firefox و Chromium رعایت می‌شود. Chromium ممکن است علاوه بر این اجازه تنظیم `color`، `background-color`، `font-family`، `font-variant` و `text-align` را بدهد.
+In browsers that don't support the modern customization features (or legacy codebases where they can't be used), the styling available on `<option>` elements depends on the browser and operating system. Depending on the operating system, the {{cssxref("font-size")}} of the owning `<select>` is respected in Firefox and Chromium. Chromium may additionally allow {{cssxref("color")}}, {{cssxref("background-color")}}, {{cssxref("font-family")}}, {{cssxref("font-variant")}}, and {{cssxref("text-align")}} to be set.
 
-جزئیات بیشتر درباره استایل‌دهی قدیمی `<option>` را می‌توانید در [our guide to advanced form styling](/en-US/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling) پیدا کنید.
+You can find more details about legacy `<option>` styling in [our guide to advanced form styling](/en-US/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling).
 
 ## Examples
 
-برای مثال‌ها به `<select>` مراجعه کنید.
+See {{HTMLElement("select")}} for examples.
 
-```markdown
-| [دسته‌بندی محتوا (Content categories)](/en-US/docs/Web/HTML/Guides/Content_categories) | هیچ‌کدام. |
-| محتوای مجاز (Permitted content) | در عناصر سنتی `<select>`، فقط محتوای متنی مجاز است، و احتمالاً شامل کاراکترهای escape شده (مانند `&eacute;`) نیز هست. در [عناصر select قابل تنظیم](/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select)، عناصر `<option>` می‌توانند هر محتوای دلخواهی داشته باشند. |
-| حذف تگ (Tag omission) | تگ شروع اجباری است. تگ پایان اختیاری است اگر این عنصر بلافاصله بعد از یک عنصر `<option>` دیگر یا یک `<optgroup>` بیاید، یا اگر عنصر والد محتوای دیگری نداشته باشد. |
-| والدهای مجاز (Permitted parents) | یک عنصر `<select>`، `<optgroup>` یا `<datalist>`. |
-| نقش ARIA ضمنی (Implicit ARIA role) | [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role) |
-| نقش‌های ARIA مجاز (Permitted ARIA roles) | هیچ `role` مجاز نیست. |
-| رابط DOM (DOM interface) | [`HTMLOptionElement`](/en-US/docs/Web/API/HTMLOptionElement) |
+## Technical summary
 
-## مشخصات
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories"
+          >Content categories</a
+        >
+      </th>
+      <td>None.</td>
+    </tr>
+    <tr>
+      <th scope="row">Permitted content</th>
+      <td>
+        In traditional <code>&lt;select&gt;</code> elements, only text content is permitted, possibly with escaped characters (like
+        <code>&#x26;eacute;</code>). In <a href="/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select">customizable select elements</a>, <code>&lt;option&gt;</code> elements can have any arbitrary content.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Tag omission</th>
+      <td>
+        The start tag is mandatory. The end tag is optional if this element is
+        immediately followed by another <code>&#x3C;option></code> element or an
+        {{HTMLElement("optgroup")}}, or if the parent element has no
+        more content.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Permitted parents</th>
+      <td>
+        A {{HTMLElement("select")}}, an
+        {{HTMLElement("optgroup")}} or a
+        {{HTMLElement("datalist")}} element.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Implicit ARIA role</th>
+      <td><a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role"><code>option</code></a></td>
+    </tr>
+    <tr>
+      <th scope="row">Permitted ARIA roles</th>
+      <td>No <code>role</code> permitted</td>
+    </tr>
+    <tr>
+      <th scope="row">DOM interface</th>
+      <td>{{domxref("HTMLOptionElement")}}</td>
+    </tr>
+  </tbody>
+</table>
 
-## سازگاری با مرورگر
+## Specifications
 
-## جستارهای وابسته
+{{Specifications}}
 
-- سایر عناصر مرتبط با فرم: [`<form>`](/en-US/docs/Web/HTML/Element/form)، [`<legend>`](/en-US/docs/Web/HTML/Element/legend)، [`<label>`](/en-US/docs/Web/HTML/Element/label)، [`<button>`](/en-US/docs/Web/HTML/Element/button)، [`<select>`](/en-US/docs/Web/HTML/Element/select)، [`<datalist>`](/en-US/docs/Web/HTML/Element/datalist)، [`<optgroup>`](/en-US/docs/Web/HTML/Element/optgroup)، [`<fieldset>`](/en-US/docs/Web/HTML/Element/fieldset)، [`<textarea>`](/en-US/docs/Web/HTML/Element/textarea)، [`<input>`](/en-US/docs/Web/HTML/Element/input)، [`<output>`](/en-US/docs/Web/HTML/Element/output)، [`<progress>`](/en-US/docs/Web/HTML/Element/progress)، [`<meter>`](/en-US/docs/Web/HTML/Element/meter).
-- [عناصر select قابل تنظیم](/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select)
-```
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- Other form-related elements: {{HTMLElement("form")}}, {{HTMLElement("legend")}}, {{HTMLElement("label")}}, {{HTMLElement("button")}}, {{HTMLElement("select")}}, {{HTMLElement("datalist")}}, {{HTMLElement("optgroup")}}, {{HTMLElement("fieldset")}}, {{HTMLElement("textarea")}}, {{HTMLElement("input")}}, {{HTMLElement("output")}}, {{HTMLElement("progress")}} and {{HTMLElement("meter")}}.
+- [Customizable select elements](/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select)
