@@ -3,10 +3,9 @@ title: 'HTML: HyperText Markup Language'
 source: https://developer.mozilla.org/en-US/docs/Web/HTML
 translated_by: n8n + AI
 icon: vscode
-cover: >-
-  .gitbook/assets/FromKlickpin.com-54184001763550470-pin-id-54184001763550470-ezgif.com-video-to-gif-converter.gif
+cover: .gitbook/assets/923519467352071967.jfif
 coverY: 0
-coverHeight: 416
+coverHeight: 248
 layout:
   width: default
   cover:
