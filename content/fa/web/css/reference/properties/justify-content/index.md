@@ -1,12 +1,23 @@
 ---
 title: "justify-content CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/justify-content"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-The [CSS](/en-US/docs/Web/CSS) **`justify-content`** property تعیین می‌کند مرورگر چگونه فضا را بین آیتم‌های محتوا و اطراف آن‌ها در طول محور اصلی (main axis) یک کانتینر فلکس و محور خطی (inline axis) کانتینرهای گرید و مولتی‌کال اعمال کند.
+---
+title: "`justify-content` CSS property"
+short-title: justify-content
+slug: Web/CSS/Reference/Properties/justify-content
+page-type: css-property
+browser-compat: css.properties.justify-content
+sidebar: cssref
+---
+
+The [CSS](/en-US/docs/Web/CSS) **`justify-content`** property defines how the browser distributes space between and around content items along the {{Glossary("main axis")}} of a flex container and the [inline axis](/en-US/docs/Glossary/Logical_properties#inline_direction) of grid and multicol containers.
 
 The interactive example below demonstrates some `justify-content` values using grid layout.
+
+{{InteractiveExample("CSS Demo: justify-content")}}
 
 ```css interactive-example-choice
 justify-content: start;
@@ -91,76 +102,80 @@ justify-content: unset;
 
 ### Values
 
-این خصوصیت با یکی از مقادیر کلیدی زیر مشخص می‌شود:
+This property is specified as one of the following keyword values:
 
 - `start`
-  - : آیتم‌ها به‌صورت چسبیده به یکدیگر به سمت لبه شروع ظرف تراز (alignment container) در محور اصلی جابه‌جا می‌شوند.
+  - : The items are packed flush to each other toward the start edge of the alignment container in the main axis.
 
 - `end`
-  - : آیتم‌ها به‌صورت چسبیده به یکدیگر به سمت لبه پایان ظرف تراز در محور اصلی جابه‌جا می‌شوند.
+  - : The items are packed flush to each other toward the end edge of the alignment container in the main axis.
 
 - `flex-start`
-  - : آیتم‌ها به‌صورت چسبیده به یکدیگر به سمت لبه شروع ظرف تراز در سمت main-start کانتینر فلکس قرار می‌گیرند.
-    این مقدار فقط برای آیتم‌های لایوت فلکس اعمال می‌شود. برای آیتم‌هایی که فرزند یک کانتینر فلکس نیستند، این مقدار مانند `start` رفتار می‌کند.
+  - : The items are packed flush to each other toward the start edge of the alignment container on the flex container's main-start side.
+    This only applies to flex layout items. For items that are not children of a flex container, this value is treated like `start`.
 
 - `flex-end`
-  - : آیتم‌ها به‌صورت چسبیده به یکدیگر در لبه انتهایی ظرف تراز در سمت main-end کانتینر فلکس قرار می‌گیرند.
-    این مقدار فقط برای آیتم‌های لایوت فلکس اعمال می‌شود. برای آیتم‌هایی که فرزند یک کانتینر فلکس نیستند، این مقدار مانند `end` رفتار می‌کند.
+  - : The items are packed flush to each other at the end edge of the alignment container on the flex container's main-end side.
+    This only applies to flex layout items. For items that are not children of a flex container, this value is treated like `end`.
 
 - `center`
-  - : آیتم‌ها به‌صورت چسبیده به یکدیگر به سمت مرکز ظرف تراز در طول محور اصلی قرار می‌گیرند.
+  - : The items are packed flush to each other toward the center of the alignment container along the main axis.
 
 - `left`
-  - : آیتم‌ها به‌صورت چسبیده به یکدیگر به سمت لبهٔ چپ ظرف تراز قرار می‌گیرند. وقتی محور افقی این خصوصیت موازی محور خطی (inline axis) نباشد، مانند زمانی که [`flex-direction: column;`](/en-US/docs/Web/CSS/Reference/Properties/flex-direction) تنظیم شده است، این مقدار مانند `start` رفتار می‌کند.
+  - : The items are packed flush to each other toward the left edge of the alignment container. When the property's horizontal axis is not parallel with the inline axis, such as when [`flex-direction: column;`](/en-US/docs/Web/CSS/Reference/Properties/flex-direction) is set, this value behaves like `start`.
 
 - `right`
-  - : آیتم‌ها به‌صورت چسبیده به یکدیگر به سمت لبهٔ راست ظرف تراز در محور مربوطه قرار می‌گیرند. اگر محور این خصوصیت موازی محور خطی (در یک کانتینر گرید) یا محور اصلی (در یک کانتینر فلکس) نباشد، این مقدار مانند `start` رفتار می‌کند.
+  - : The items are packed flush to each other toward the right edge of the alignment container in the appropriate axis. If the property's axis is not parallel with the inline axis (in a grid container) or the main-axis (in a flexbox container), this value behaves like `start`.
 
 - `normal`
-  - : رفتار می‌کند مانند `stretch`، به جز در مورد کانتینرهای چندستونی (multi-column) که `column-width` آن‌ها غیر از `auto` باشد، در این حالت ستون‌ها عرض مشخص‌شدهٔ `column-width` را می‌گیرند و به‌جای کشیده‌شدن برای پر کردن کانتینر امتداد نمی‌یابند. از آن‌جا که `stretch` در کانتینرهای فلکس مانند `start` رفتار می‌کند، `normal` نیز مانند `start` رفتار می‌کند.
+  - : Behaves as `stretch`, except in the case of multi-column containers with a non-`auto` {{cssxref("column-width")}}, in which case the columns take their specified `column-width` rather than stretching to fill the container. As `stretch` behaves as `start` in flex containers, `normal` also behaves as `start`.
 
 - `space-between`
-  - : آیتم‌ها به‌طور یکنواخت درون کانتینر تراز沿 محور اصلی (main axis) توزیع می‌شوند. فاصله بین هر جفت آیتم مجاور یکسان است. اولین آیتم با لبهٔ main-start کاملاً هم‌راستا است و آخرین آیتم با لبهٔ main-end کاملاً هم‌راستا است.
+  - : The items are evenly distributed within the alignment container along the main axis. The spacing between each pair of adjacent items is the same. The first item is flush with the main-start edge, and the last item is flush with the main-end edge.
 
 - `space-around`
-  - : آیتم‌ها به‌طور یکنواخت درون کانتینر تراز沿 محور اصلی توزیع می‌شوند. فاصله بین هر جفت آیتم مجاور یکسان است. فضای خالی قبل از اولین آیتم و بعد از آخرین آیتم برابر نصف فضای بین هر جفت آیتم مجاور است. اگر تنها یک آیتم وجود داشته باشد، در مرکز قرار می‌گیرد.
+  - : The items are evenly distributed within the alignment container along the main axis. The spacing between each pair of adjacent items is the same. The empty space before the first and after the last item equals half of the space between each pair of adjacent items. If there is only one item, it will be centered.
 
 - `space-evenly`
-  - : آیتم‌ها به‌طور یکنواخت درون کانتینر تراز沿 محور اصلی توزیع می‌شوند. فاصله بین هر جفت آیتم مجاور، فاصله بین لبهٔ main-start و اولین آیتم، و فاصله بین لبهٔ main-end و آخرین آیتم همگی دقیقاً یکسان‌اند.
+  - : The items are evenly distributed within the alignment container along the main axis. The spacing between each pair of adjacent items, the main-start edge and the first item, and the main-end edge and the last item, are all exactly the same.
 
 - `stretch`
-  - : اگر اندازهٔ ترکیبی آیتم‌ها沿 محور اصلی کمتر از اندازهٔ کانتینر تراز باشد، هر آیتم‌هایی که اندازهٔ آن‌ها `auto` است به‌طور مساوی (نه نسبتاً) افزایش اندازه می‌یابند، در حالی که هنوز محدودیت‌های اعمال‌شده توسط `max-height`/`max-width` (یا عملکرد معادل) رعایت می‌شود، به‌طوری که اندازهٔ ترکیبی دقیقاً کانتینر تراز را沿 محور اصلی پر کند.
+  - : If the combined size of the items along the main axis is less than the size of the alignment container, any `auto`-sized items have their size increased equally (not proportionally), while still respecting the constraints imposed by {{cssxref("max-height")}}/{{cssxref("max-width")}} (or equivalent functionality), so that the combined size exactly fills the alignment container along the main axis.
 
     > [!NOTE]
-    > برای [flexboxes](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts)، مقدار `stretch` مانند `flex-start` یا `start` رفتار می‌کند. دلیل این است که در فلکس‌باکس‌ها، کشش (stretching) با استفاده از ویژگی `flex-grow` کنترل می‌شود.
+    > For [flexboxes](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts), the `stretch` value behaves as `flex-start` or `start`. This is because, in flexboxes, stretching is controlled using the {{CSSXref("flex-grow")}} property.
 
 - `safe`
-  - : اگر آیتم از کانتینر تراز بیرون بزند، آیتم طوری تراز می‌شود که انگار حالت تراز `start` است. تراز دلخواه اجرا نخواهد شد.
+  - : If the item overflows the alignment container, then the item is aligned as if the alignment mode is `start`. The desired alignment will not be implemented.
 
 - `unsafe`
-  - : حتی اگر آیتم از کانتینر تراز بیرون بزند، تراز دلخواه اجرا می‌شود. بر خلاف `safe` که برای جلوگیری از سرریز، تراز دلخواه را نادیده می‌گیرد.
+  - : Even if the item overflows the alignment container, the desired alignment will be implemented. Unlike `safe`, which will ignore the desired alignment in favor of preventing overflow.
 
 ## Description
 
-تعریف‌شده در ماژول [CSS box alignment](/en-US/docs/Web/CSS/Guides/Box_alignment)، `justify-content` بر روی کانتینرهای چندستونی (multicol)، کانتینرهای فلکس و کانتینرهای گرید اعمال می‌شود. این ویژگی بر روی کانتینرهای بلاک اعمال نمی‌شود و اثری بر آن‌ها ندارد.
+Defined in the [CSS box alignment](/en-US/docs/Web/CSS/Guides/Box_alignment) module, `justify-content` applies to multicol containers, flex containers, and grid containers. The property does not apply to and has no effect on block containers.
 
-این ویژگی بسیاری از کلیدواژه‌ها را با ویژگی `align-content` مشترک دارد، اما همهٔ آن‌ها را نه! `justify-content` در هم‌ترازی بر اساس baseline دخالتی ندارد، و بنابراین مقادیر baseline را قبول نمی‌کند.
+This property shares many keyword values with the {{cssxref("align-content")}} property, but not all! `justify-content` isn't involved in baseline alignment, and therefore does not take baseline values.
 
-در [قالب‌بندی‌های فلکس](/en-US/docs/Web/CSS/Guides/Flexible_box_layout)، این ویژگی تعیین می‌کند که فضای مثبت آزاد چگونه بین یا دور آیتم‌های فلکس沿 محور اصلی توزیع شود. این ویژگی بر فضای بین عناصر در یک خط تأثیر می‌گذارد، نه بر فضای بین خطوط. تراز پس از اعمال طول‌ها و marginهای اتوماتیک انجام می‌شود، که بدین معنی است که هنگامی که یک یا چند آیتم فلکس در یک خط مقدار `flex-grow` بزرگ‌تر از `0` داشته باشند، این ویژگی بی‌اثر است چون فضایی برای توزیع در آن خط وجود ندارد. همچنین، از آن‌جا که کشش沿 محور اصلی توسط `flex` کنترل می‌شود، مقدار `stretch` مانند `flex-start` رفتار می‌کند.
+In [flex layouts](/en-US/docs/Web/CSS/Guides/Flexible_box_layout), the property defines how positive free space is distributed between or around flex items along the main axis. This property impacts the space between elements in a line, not the space between lines. The alignment is done after the lengths and auto margins are applied, which means that when one or more flex items in a line have a {{cssxref("flex-grow")}} factor greater than `0`, the property has no effect as there is no space to distribute along that line. Also, as stretching along the main axis is controlled by {{cssxref("flex")}}, the `stretch` value behaves as `flex-start`.
 
-در [قالب‌بندی گرید](/en-US/docs/Web/CSS/Guides/Grid_layout)، این ویژگی فضای در دسترس را بین یا اطراف ستون‌های گرید (grid columns) توزیع می‌کند، نه بین آیتم‌های گرید. اگر کانتینر گرید بزرگ‌تر از خود گرید باشد، می‌توان از `justify-content` برای تراز کردن گرید沿 محور خطی (inline axis) و هم‌ترازی ستون‌های گرید استفاده کرد.
+With [grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout), this property distributes available space between or around grid columns, not grid items. If the grid container is larger than the grid itself, the `justify-content` property can be used to justify the grid along the inline axis, aligning the grid columns.
 
 Grid `auto` track sizes (and only `auto` track sizes) can be stretched by the `align-content` and `justify-content` properties. Therefore by default, an `auto` sized track will take up any remaining space in the grid container. As the grid's inline size has to be less than the grid container's inline size for there to be space to distribute, the property has no effect in this case.
 
 ## Formal definition
 
+{{cssinfo}}
+
 ## Formal syntax
+
+{{csssyntax}}
 
 ## Examples
 
 ### Basic grid example
 
-در این مثال، یک گرید داریم که از کانتینر گرید خود باریک‌تر است، و از `justify-content` برای توزیع فضای در دسترس به‌طور مساوی در اطراف و بین ستون‌های گرید استفاده می‌کنیم.
+In this example, we have a grid that is narrower than its grid container, and we use `justify-content` to distribute the available space evenly around and between the grid columns.
 
 #### HTML
 
@@ -204,9 +219,9 @@ div {
 }
 ```
 
-ما عرض کانتینر را روی `500px` تنظیم می‌کنیم و سه ستون هر کدام `80px` عرض مشخص می‌کنیم، که به این معنی است `260px` فضای قابل توزیع بین یا اطراف آن‌ها وجود دارد. سپس `justify-content: space-evenly` را تنظیم می‌کنیم، که یعنی قبل، بین و بعد از هر ستون `65px` فاصله خواهد بود.
+We set the container width to `500px` and specify three columns, each `80px` wide, meaning there is `260px` of available space to distribute between or around them. We then set `justify-content: space-evenly`, which means there will be `65px` of space before, between, and after each column.
 
-ما عرض‌ها (و رنگ‌های پس‌زمینه) متفاوتی تنظیم می‌کنیم تا نشان دهیم که چطور توجیه (justification) روی ستون‌ها اعمال می‌شود.
+We set different widths (and background colors) to demonstrate how the justification is applied to the columns.
 
 ```css
 .container {
@@ -234,11 +249,13 @@ div:nth-last-of-type(3) {
 
 #### Result
 
-توجه کنید که `justify-contents` ستون‌ها را تراز می‌کند و تأثیری روی آیتم‌ها یا تراز داخل نواحی گرید ندارد. آیتم‌های گرید، حتی آن‌هایی که از سل گرید خود خارج می‌شوند، بر توجیه ستون‌ها تأثیر نمی‌گذارند.
+{{EmbedLiveSample("Basic grid example", "100%", 220)}}
+
+Note that `justify-contents` aligns the columns and has no effect on the items or alignment in grid areas. Grid items, even those that overflow their grid cell, do not impact column justification.
 
 ### The safe keyterm
 
-این مثال کلیدواژه `safe` را نشان می‌دهد. ما چهار آیتم فلکس مرکزی داریم که اجازهٔ پیچش (wrap) ندارند و در نتیجه از تک‌خط کانتینر فلکس خود سرریز می‌کنند. با اضافه کردن `safe` به `center` در `justify-content`، محتوای سرریز شده رفتار می‌کند گویی حالت تراز `start` است.
+This example demonstrates the `safe` keyterm. We specify four centered flex items that are not allowed to wrap, and as a result, overflow their single flex-line container. By adding `safe` to `center` in the `justify-content` property, overflowing content behaves as if the alignment mode is `start`
 
 ```html hidden
 <p><code>justify-content: center;</code></p>
@@ -280,7 +297,7 @@ div {
 }
 ```
 
-کانتینر روی `center` تنظیم شده است، و هر کانتینری به جز اولی، کلیدواژه `safe` را اضافه کرده است:
+The container is set to `center`, with every container other than the first having the `safe` keyword added:
 
 ```css
 .container {
@@ -305,11 +322,13 @@ div {
 
 #### Result
 
+{{EmbedLiveSample("the safe keyword", "100%", 260)}}
+
 As an item overflows the alignment container, with `safe` included the alignment mode behaves as `start` and the `center` alignment is not implemented. The `safe` keyterm has no effect if the items do not overflow the container.
 
 ### Visualizing flex item distribution
 
-این مثال شامل یک طرح فلکس چندخطی با شکستن (wrapping) است. آیتم دوم فلکس دارای فاکتور رشد مثبت (flex growth factor) است و تمام فضای آزاد در خط اول فلکس را مصرف می‌کند.
+This example includes a multi-line wrapping flex layout. The second flex item has a positive flex growth factor, consuming all the available free space in the first flex line.
 
 #### CSS
 
@@ -400,11 +419,17 @@ justifyContent.addEventListener("change", (evt) => {
 
 #### Result
 
+{{EmbedLiveSample("Visualizing_flex_item_distribution", "100%", 180)}}
+
 Select different keywords from the drop-down menu to visualize the different `justify-content` keyword values. Because an item on the first line can grow, there is no available space on that line for the `justify-content` property to distribute. With the `space-between` value, the first item on each line is flush with the main-start edge, and the last item is flush with the main-end edge. As a result, if a line has only one item, it will be aligned with the main-start edge (as seen in the last line). This is not the case for other `space-*` values, such as `space-evenly` and `space-around`, which center one-item flex-lines.
 
 ## Specifications
 
+{{Specifications}}
+
 ## Browser compatibility
+
+{{Compat}}
 
 ## See also
 
