@@ -1,0 +1,42 @@
+---
+title: "BluetoothRemoteGATTCharacteristic: writeValueWithResponse() method"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValueWithResponse"
+status: "needs-translation"
+---
+
+---
+title: "BluetoothRemoteGATTCharacteristic: writeValueWithResponse() method"
+short-title: writeValueWithResponse()
+slug: Web/API/BluetoothRemoteGATTCharacteristic/writeValueWithResponse
+page-type: web-api-instance-method
+status:
+  - experimental
+browser-compat: api.BluetoothRemoteGATTCharacteristic.writeValueWithResponse
+---
+
+{{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
+
+The **`BluetoothRemoteGATTCharacteristic.writeValueWithResponse()`** method sets a {{domxref("BluetoothRemoteGATTCharacteristic")}} object's `value` property to the bytes contained in a given {{jsxref("ArrayBuffer")}}, {{jsxref("TypedArray")}}, or {{jsxref("DataView")}}, [writes the characteristic value with required response](https://webbluetoothcg.github.io/web-bluetooth/#writecharacteristicvalue), and returns the resulting {{JSxRef("Promise")}}.
+
+## Syntax
+
+```js-nolint
+writeValueWithResponse(value)
+```
+
+### Parameters
+
+- `value`
+  - : An {{jsxref("ArrayBuffer")}}, {{jsxref("TypedArray")}}, or {{jsxref("DataView")}}.
+
+### Return value
+
+A {{jsxref("Promise")}}.
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
