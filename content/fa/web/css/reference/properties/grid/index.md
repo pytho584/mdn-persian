@@ -1,28 +1,37 @@
 ---
 title: "grid CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-ویژگی **`grid`** [CSS](/en-US/docs/Web/CSS) یک [ویژگی خلاصه (shorthand property)](/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties) است که تمام ویژگی‌های grid صریح و ضمنی را در یک اعلان مشخص می‌کند.
+---
+title: "`grid` CSS property"
+short-title: grid
+slug: Web/CSS/Reference/Properties/grid
+page-type: css-shorthand-property
+browser-compat: css.properties.grid
+sidebar: cssref
+---
 
-با استفاده از `grid` می‌توانید یک محور را با {{cssxref("grid-template-rows")}} یا {{cssxref("grid-template-columns")}} مشخص کنید و سپس نحوه تکرار خودکار محتوا در محور دیگر را با استفاده از ویژگی‌های ضمنی grid یعنی {{cssxref("grid-auto-rows")}}، {{cssxref("grid-auto-columns")}} و {{cssxref("grid-auto-flow")}} تعیین کنید.
+The **`grid`** [CSS](/en-US/docs/Web/CSS) property is a [shorthand property](/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties) that sets all of the explicit and implicit grid properties in a single declaration.
 
-### نمونه تعاملی
+Using `grid` you specify one axis using {{cssxref("grid-template-rows")}} or {{cssxref("grid-template-columns")}}, you then specify how content should auto-repeat in the other axis using the implicit grid properties: {{cssxref("grid-auto-rows")}}, {{cssxref("grid-auto-columns")}}, and {{cssxref("grid-auto-flow")}}.
 
-```css
+{{InteractiveExample("CSS Demo: grid")}}
+
+```css interactive-example-choice
 grid: auto-flow / 1fr 1fr 1fr;
 ```
 
-```css
+```css interactive-example-choice
 grid: auto-flow dense / 40px 40px 1fr;
 ```
 
-```css
+```css interactive-example-choice
 grid: repeat(3, 80px) / auto-flow;
 ```
 
-```html
+```html interactive-example
 <section class="default-example" id="default-example">
   <div class="example-container">
     <div class="transition-all" id="example-element">
@@ -34,7 +43,7 @@ grid: repeat(3, 80px) / auto-flow;
 </section>
 ```
 
-```css
+```css interactive-example
 #example-element {
   border: 1px solid #c5c5c5;
   display: grid;
@@ -62,11 +71,11 @@ grid: repeat(3, 80px) / auto-flow;
 ```
 
 > [!NOTE]
-> ویژگی‌های فرعی که مشخص نکنید، مانند معمول برای shorthandها، به مقدار اولیه خود تنظیم می‌شوند. همچنین، ویژگی‌های فاصله (gutter) با این shorthand بازنشانی نمی‌شوند.
+> The sub-properties you don't specify are set to their initial value, as normal for shorthands. Also, the gutter properties are NOT reset by this shorthand.
 
-## ویژگی‌های تشکیل‌دهنده
+## Constituent properties
 
-این ویژگی برای ویژگی‌های زیر shorthand محسوب می‌شود:
+This property is a shorthand for the following CSS properties:
 
 - {{cssxref("grid-auto-columns")}}
 - {{cssxref("grid-auto-flow")}}
@@ -78,7 +87,7 @@ grid: repeat(3, 80px) / auto-flow;
 ## Syntax
 
 ```css
-/* مقادیر <'grid-template'> */
+/* <'grid-template'> values */
 grid: none;
 grid: "a" 100px "b" 1fr;
 grid: [line-name1] "a" 100px [line-name2];
@@ -87,21 +96,21 @@ grid: "a" minmax(100px, max-content) "b" 20%;
 grid: 100px / 200px;
 grid: minmax(400px, min-content) / repeat(auto-fill, 50px);
 
-/* مقادیر <'grid-template-rows'> /
-   [ auto-flow && dense? ] <'grid-auto-columns'>? */
+/* <'grid-template-rows'> /
+   [ auto-flow && dense? ] <'grid-auto-columns'>? values */
 grid: 200px / auto-flow;
 grid: 30% / auto-flow dense;
 grid: repeat(3, 200px) / auto-flow 300px;
 grid: [line1] minmax(20em, max-content) / auto-flow dense 40%;
 
-/* مقادیر [ auto-flow && dense? ] <'grid-auto-rows'>? /
-   <'grid-template-columns'> */
+/* [ auto-flow && dense? ] <'grid-auto-rows'>? /
+   <'grid-template-columns'> values */
 grid: auto-flow / 200px;
 grid: auto-flow dense / 30%;
 grid: auto-flow 300px / repeat(3, 200px);
 grid: auto-flow dense 40% / [line1] minmax(20em, max-content);
 
-/* مقادیر سراسری */
+/* Global values */
 grid: inherit;
 grid: initial;
 grid: revert;
@@ -112,25 +121,28 @@ grid: unset;
 ### Values
 
 - `<'grid-template'>`
-  - : ویژگی {{cssxref("grid-template")}} شامل {{cssxref("grid-template-columns")}}، {{cssxref("grid-template-rows")}} و {{cssxref("grid-template-areas")}} را تعریف می‌کند.
+  - : Defines the {{cssxref("grid-template")}} including {{cssxref("grid-template-columns")}}, {{cssxref("grid-template-rows")}} and {{cssxref("grid-template-areas")}}.
 - `<'grid-template-rows'> / [ auto-flow && dense? ] <'grid-auto-columns'>?`
-  - : با مشخص‌کردن صریح مسیرهای ردیف از طریق ویژگی {{cssxref("grid-template-rows")}} (و تنظیم {{cssxref("grid-template-columns")}} روی `none`) و مشخص‌کردن نحوه تکرار خودکار مسیرهای ستون از طریق {{cssxref("grid-auto-columns")}} (و تنظیم {{cssxref("grid-auto-rows")}} روی `auto`) یک جریان خودکار ایجاد می‌کند. همچنین {{cssxref("grid-auto-flow")}} متناسباً روی `column` تنظیم می‌شود و اگر `dense` مشخص شده باشد، آن نیز لحاظ می‌شود.
+  - : Sets up an auto-flow by setting the row tracks explicitly via the {{cssxref("grid-template-rows")}} property (and the {{cssxref("grid-template-columns")}} property to `none`) and specifying how to auto-repeat the column tracks via {{cssxref("grid-auto-columns")}} (and setting {{cssxref("grid-auto-rows")}} to `auto`). {{cssxref("grid-auto-flow")}} is also set to `column` accordingly, with `dense` if it's specified.
 
-    سایر ویژگی‌های فرعی `grid` به مقادیر اولیه خود بازنشانی می‌شوند.
-
-- `[ auto-flow && dense? ] <'grid-auto-rows'>? / <'grid-template-columns'>`
-  - : با مشخص‌کردن صریح مسیرهای ستون از طریق ویژگی {{cssxref("grid-template-columns")}} (و تنظیم {{cssxref("grid-template-rows")}} روی `none`) و مشخص‌کردن نحوه تکرار خودکار مسیرهای ردیف از طریق {{cssxref("grid-auto-rows")}} (و تنظیم {{cssxref("grid-auto-columns")}} روی `auto`) یک جریان خودکار ایجاد می‌کند. همچنین {{cssxref("grid-auto-flow")}} متناسباً روی `row` تنظیم می‌شود و اگر `dense` مشخص شده باشد، آن نیز لحاظ می‌شود.
-
-    سایر ویژگی‌های فرعی `grid` به مقادیر اولیه خود بازنشانی می‌شوند.
+    All other `grid` sub-properties are reset to their initial values.
 
 - `[ auto-flow && dense? ] <'grid-auto-rows'>? / <'grid-template-columns'>`
-  - : با تنظیم صریح مسیرهای ستونی از طریق پراپرتی `grid-template-columns` (و پراپرتی `grid-template-rows` روی `none`) و مشخص‌سازی نحوۀ تکرار خودکار مسیرهای سطری با `grid-auto-rows` (و تنظیم `grid-auto-columns` روی `auto`)، یک جریان خودکار (auto-flow) ایجاد می‌کند. همچنین مطابق انتظار `grid-auto-flow` روی `row` تنظیم می‌شود و در صورت مشخص‌شدن، `dense` نیز اعمال می‌شود.
+  - : Sets up an auto-flow by setting the column tracks explicitly via the {{cssxref("grid-template-columns")}} property (and the {{cssxref("grid-template-rows")}} property to `none`) and specifying how to auto-repeat the row tracks via {{cssxref("grid-auto-rows")}} (and setting {{cssxref("grid-auto-columns")}} to `auto`). {{cssxref("grid-auto-flow")}} is also set to `row` accordingly, with `dense` if it's specified.
 
-    تمام زیرپراپرتی‌های دیگر `grid` به مقادیر اولیه‌شان بازنشانی می‌شوند.
+    All other `grid` sub-properties are reset to their initial values.
 
-## مثال‌ها
+## Formal definition
 
-### ایجاد یک طرح‌بندی گرید
+{{cssinfo}}
+
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Creating a grid layout
 
 #### HTML
 
@@ -162,9 +174,26 @@ grid: unset;
 }
 ```
 
-#### نتیجه
+#### Result
 
-## همچنین ببینید
+{{EmbedLiveSample("Creating_a_grid_layout", "100%", 150)}}
 
-- [قرارگیری مبتنی بر خط با CSS Grid](/en-US/docs/Web/CSS/Guides/Grid_layout/Line-based_placement)
-- [نواحی الگوی گرید: شورت‌هندهای تعریف گرید](/en-US/docs/Web/CSS/Guides/Grid_layout/Grid_template_areas#grid_definition_shorthands)
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- {{cssxref("grid-template")}}
+- {{cssxref("grid-template-rows")}}
+- {{cssxref("grid-template-columns")}}
+- {{cssxref("grid-template-areas")}}
+- {{cssxref("grid-auto-columns")}}
+- {{cssxref("grid-auto-rows")}}
+- {{cssxref("grid-auto-flow")}}
+- [Line-based placement with CSS grid](/en-US/docs/Web/CSS/Guides/Grid_layout/Line-based_placement)
+- [Grid template areas: grid definition shorthands](/en-US/docs/Web/CSS/Guides/Grid_layout/Grid_template_areas#grid_definition_shorthands)
