@@ -1,0 +1,29 @@
+---
+title: "VisualViewport: offsetLeft property"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport/offsetLeft"
+status: "needs-translation"
+---
+
+---
+title: "VisualViewport: offsetLeft property"
+short-title: offsetLeft
+slug: Web/API/VisualViewport/offsetLeft
+page-type: web-api-instance-property
+browser-compat: api.VisualViewport.offsetLeft
+---
+
+{{APIRef("CSSOM view API")}}
+
+The **`offsetLeft`** read-only property of the {{domxref("VisualViewport")}} interface returns the offset of the left edge of the visual viewport from the left edge of the layout viewport in CSS pixels, or `0` if current document is not fully active.
+
+## Value
+
+A double.
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
