@@ -1,0 +1,53 @@
+---
+title: "HID: connect event"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/HID/connect_event"
+status: "needs-translation"
+---
+
+---
+title: "HID: connect event"
+short-title: connect
+slug: Web/API/HID/connect_event
+page-type: web-api-event
+status:
+  - experimental
+browser-compat: api.HID.connect_event
+---
+
+{{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
+
+The **`connect`** event of the {{domxref("HID")}} interface fires when the user agent connects to a HID device.
+
+## Syntax
+
+Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+
+```js-nolint
+addEventListener("connect", (event) => { })
+
+onconnect = (event) => { }
+```
+
+## Event type
+
+A {{domxref("HIDConnectionEvent")}}. Inherits from {{domxref("Event")}}.
+
+{{InheritanceDiagram("HIDConnectionEvent")}}
+
+## Examples
+
+In the following example an event listener is registered to listen for the connection of a device. The name of the device is then printed to the console using {{domxref("HIDDevice.productName")}}.
+
+```js
+navigator.hid.addEventListener("connect", ({ device }) => {
+  console.log(`HID connected: ${device.productName}`);
+});
+```
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
