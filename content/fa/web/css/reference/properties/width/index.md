@@ -1,23 +1,66 @@
 ---
 title: "width CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-ویژگی `width` در CSS
-========================
+---
+title: "`width` CSS property"
+short-title: width
+slug: Web/CSS/Reference/Properties/width
+page-type: css-property
+browser-compat: css.properties.width
+sidebar: cssref
+---
 
-ویژگی **`width`** در [CSS](/en-US/docs/Web/CSS) عرض یک عنصر را تعیین می‌کند. به‌طور پیش‌فرض، عرض [ناحیهٔ محتوا](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area) را مشخص می‌کند؛ اما اگر مقدار {{cssxref("box-sizing")}} را برابر با `border-box` قرار دهید، آن‌گاه عرض [ناحیهٔ حاشیه](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#border_area) تعیین می‌شود.
+The **`width`** [CSS](/en-US/docs/Web/CSS) property sets an element's width. By default, it sets the width of the [content area](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area), but if {{cssxref("box-sizing")}} is set to `border-box`, it sets the width of the [border area](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#border_area).
 
-مقدار مشخص‌شده برای `width` تا زمانی که در محدودهٔ تعریف‌شده توسط {{cssxref("min-width")}} و {{cssxref("max-width")}} باقی بماند، روی ناحیهٔ محتوا اعمال می‌شود.
+{{InteractiveExample("CSS Demo: width")}}
 
-- اگر مقدار `width` از `min-width` کوچک‌تر باشد، `min-width` آن را لغو می‌کند.
-- اگر مقدار `width` از `max-width` بزرگ‌تر باشد، `max-width` آن را لغو می‌کند.
+```css interactive-example-choice
+width: 150px;
+```
+
+```css interactive-example-choice
+width: 20em;
+```
+
+```css interactive-example-choice
+width: 75%;
+```
+
+```css interactive-example-choice
+width: auto;
+```
+
+```html interactive-example
+<section class="default-example" id="default-example">
+  <div class="transition-all" id="example-element">
+    This is a box where you can change the width.
+  </div>
+</section>
+```
+
+```css interactive-example
+#example-element {
+  display: flex;
+  flex-direction: column;
+  background-color: #5b6dcd;
+  height: 80%;
+  justify-content: center;
+  color: white;
+}
+```
+
+The specified value of `width` applies to the content area so long as its value remains within the values defined by {{cssxref("min-width")}} and {{cssxref("max-width")}}.
+
+- If the value for `width` is less than the value for `min-width`, then `min-width` overrides `width`.
+- If the value for `width` is greater than the value for `max-width`, then `max-width` overrides `width`.
 
 > [!NOTE]
-> از آنجا که `width` یک ویژگی هندسی است، روی عناصر SVG مانند {{SVGElement("svg")}}، {{SVGElement("rect")}}، {{SVGElement("image")}} و {{SVGElement("foreignObject")}} نیز اعمال می‌شود. برای `<svg>` مقدار `auto` معادل `100%` و برای سایر عناصر معادل `0` در نظر گرفته می‌شود. همچنین مقادیر درصدی برای `<rect>` نسبت به عرض viewport SVG محاسبه می‌شوند. مقدار CSS مربوط به `width` هر مقدار مشخصهٔ SVG ({{SVGAttr("width")}}) روی آن عنصر را بازنویسی می‌کند.
+> As a geometric property, `width` also applies to the {{SVGElement("svg")}}, {{SVGElement("rect")}}, {{SVGElement("image")}}, and {{SVGElement("foreignObject")}} SVG elements, with `auto` resolving to `100%` for `<svg>` and `0` for other elements, and percent values being relative to the SVG viewport width for `<rect>`. The CSS `width` property value overrides any SVG {{SVGAttr("width")}} attribute value set on the SVG element.
 
-## سینتکس
+## Syntax
 
 ```css
 /* <length> values */
@@ -48,45 +91,53 @@ width: revert-layer;
 width: unset;
 ```
 
-### مقادیر
+### Values
 
 - {{cssxref("&lt;length&gt;")}}
-  - : عرض را به‌عنوان یک مقدار طولی مشخص می‌کند.
+  - : Defines the width as a distance value.
 - {{cssxref("&lt;percentage&gt;")}}
-  - : عرض را به‌عنوان درصدی از عرض [بلوک دربرگیرنده (containing block)](/en-US/docs/Web/CSS/Guides/Display/Containing_block) تعریف می‌کند.
+  - : Defines the width as a percentage of the [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block)'s width.
 - `auto`
-  - : مرورگر عرض را برای عنصر موردنظر محاسبه و انتخاب می‌کند.
+  - : The browser will calculate and select a width for the specified element.
 - {{cssxref("max-content")}}
-  - : عرض ترجیحی ذاتی (intrinsic preferred width).
+  - : The intrinsic preferred width.
 - {{cssxref("min-content")}}
-  - : عرض حداقل ذاتی (intrinsic minimum width).
+  - : The intrinsic minimum width.
 - {{cssxref("fit-content")}}
-  - : از فضای موجود استفاده می‌کند، اما نه بیشتر از [max-content](/en-US/docs/Web/CSS/Reference/Values/max-content)؛ یعنی `min(max-content, max(min-content, stretch))`.
+  - : Use the available space, but not more than [max-content](/en-US/docs/Web/CSS/Reference/Values/max-content), i.e., `min(max-content, max(min-content, stretch))`.
 - {{cssxref("anchor-size()")}}
-  - : عرض را نسبت به یک بعد از عنصر لنگر (anchor) تنظیم می‌کند. برای عنصری که با لنگر موقعیت‌دهی شده، پارامتر اول به‌طور پیش‌فرض عرض لنگر مرتبط را می‌گیرد. اگر روی عنصری غیر از آن اعمال شود، عرض را به مقدار fallback تنظیم می‌کند. اگر fallback تعریف نشده باشد، این اعلان نادیده گرفته می‌شود.
+  - : Sets the width relative to a dimension of an anchor element. When defining the `width` of an anchor-positioned element, the first parameter defaults to the associated anchor's width. If applied to a non-anchor-positioned element, it sets the width to the fallback value. If no fallback is defined, the declaration is ignored.
 - {{cssxref("calc-size()")}}
-  - : عرض را به یک اندازه ذاتی اصلاح‌شده تنظیم می‌کند.
+  - : Sets the width to a modified intrinsic size.
 - [`fit-content(<length-percentage>)`](/en-US/docs/Web/CSS/Reference/Values/fit-content_function)
-  - : از فرمول fit-content استفاده می‌کند، با این تفاوت که فضای موجود با آرگومان مشخص‌شده جایگزین می‌شود و عرض را طبق فرمول `min(maximum size, max(minimum size, <length-percentage>))` محدود می‌کند.
+  - : Uses the fit-content formula with the available space replaced by the specified argument, clamping the width according to the formula `min(maximum size, max(minimum size, <length-percentage>))`.
 - `stretch`
-  - : عرض [margin box](/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model#parts_of_a_box) عنصر را برابر عرض [بلوک دربرگیرنده (containing block)](/en-US/docs/Web/CSS/Guides/Display/Containing_block#identifying_the_containing_block) تنظیم می‌کند. این مقدار سعی می‌کند margin box فضای در دسترس بلوک دربرگیرنده را پر کند، بنابراین به‌نوعی شبیه `100%` عمل می‌کند اما اندازه نهایی را به margin box اعمال می‌کند نه به جعبه‌ای که توسط [box-sizing](/en-US/docs/Web/CSS/Reference/Properties/box-sizing) تعیین می‌شود.
+  - : Sets the width of the element's [margin box](/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model#parts_of_a_box) to the width of its [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block#identifying_the_containing_block). It attempts to make the margin box fill the available space in the containing block, so in a way behaving similar to `100%` but applying the resulting size to the margin box rather than the box determined by [box-sizing](/en-US/docs/Web/CSS/Reference/Properties/box-sizing).
 
-## دسترسی‌پذیری
+## Accessibility
 
-اطمینان حاصل کنید که عناصری که `width` برای آنها تنظیم شده، هنگام بزرگنمایی صفحه برای افزایش اندازه متن، بریده نشوند و محتوای دیگر را نپوشانند.
+Ensure that elements set with a `width` aren't truncated and/or don't obscure other content when the page is zoomed to increase text size.
 
 - [MDN Understanding WCAG, Guideline 1.4 explanations](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
 - [Understanding Success Criterion 1.4.4 | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html)
 
-## مثال‌ها
+## Formal definition
 
-### عرض پیش‌فرض
+{{CSSInfo}}
 
-این مثال کاربرد پایه و مقدار پیش‌فرض `auto` را نشان می‌دهد.
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Default width
+
+This example demonstrates basic usage and the default `auto` value.
 
 #### HTML
 
-دو پاراگراف قرار می‌دهیم؛ یکی با یک نام کلاس.
+We include two paragraphs; one with a class name.
 
 ```html
 <p>The MDN community writes really great documentation.</p>
@@ -95,7 +146,7 @@ width: unset;
 
 #### CSS
 
-همه پاراگراف‌ها را با پس‌زمینه طلایی تنظیم می‌کنیم و به‌صراحت `width` پاراگراف دوم را `auto` می‌کنیم.
+We make all paragraphs have a gold background, explicitly setting the second paragraph's `width` to `auto`.
 
 ```css
 p {
@@ -106,17 +157,19 @@ p.has-width {
 }
 ```
 
-#### نتیجه
+#### Results
 
-از آنجا که مقدار پیش‌فرض `width` برابر `auto` است، هر دو پاراگراف عرض یکسانی دارند.
+{{EmbedLiveSample("Default width", 600, 100)}}
 
-### استفاده از واحدهای طول
+As `width` defaults to `auto`, both paragraphs are the same width.
 
-این مثال مقادیر طولی عرض را نشان می‌دهد.
+### Using length units
+
+This example demonstrates length width values.
 
 #### HTML
 
-دو عنصر {{htmlelement("div")}} همراه با کمی متن قرار می‌دهیم.
+We include two {{htmlelement("div")}} elements with some text.
 
 ```html
 <div class="px_length">Width measured in px</div>
@@ -125,7 +178,7 @@ p.has-width {
 
 #### CSS
 
-عرض عنصر `px_length` برابر `200px` و عنصر `em_length` برابر `20em` تنظیم می‌شود. همچنین هر دو عنصر مقادیر متفاوتی برای `background-color`، `color` و `border` دارند تا هنگام نمایش بتوان آنها را از هم تشخیص داد.
+The `px_length` element is set to `200px` while the `em_length` element is set to be `20em` wide. Both elements also have different {{cssxref("background-color")}}, {{cssxref("color")}}, and {{cssxref("border")}} values to enable differentiating between the two when rendered.
 
 ```css
 .px_length {
@@ -145,17 +198,19 @@ p.has-width {
 }
 ```
 
-#### نتیجه
+#### Results
 
-عنصر `px_length` همیشه ۲۰۰ پیکسل عرض خواهد داشت. عرض رندر شدهٔ عنصر `em_length` به اندازه فونت بستگی دارد.
+{{EmbedLiveSample("Using length units", 600, 60)}}
 
-### استفاده از مقادیر درصدی
+The `px_length` element will always be 200px wide. The rendered width of the `em_length` element depends on the font size.
 
-این مثال نحوه استفاده از مقادیر درصدی را نشان می‌دهد.
+### Using percentages
+
+This example demonstrates using percentage values.
 
 #### HTML
 
-یک عنصر `<div>` به همراه متنی درون آن قرار می‌دهیم.
+We include one {{htmlelement("div")}} element with some text.
 
 ```html
 <div class="percent">Width in percentage</div>
@@ -163,7 +218,7 @@ p.has-width {
 
 #### CSS
 
-عرض (`width`) عنصر را برابر با `۲۰٪` عرض والدش تنظیم می‌کنیم.
+We set the `width` of the element to be `20%` of the width of its parent container.
 
 ```css
 .percent {
@@ -174,15 +229,17 @@ p.has-width {
 }
 ```
 
-#### نتیجه
+#### Results
 
-### استفاده از اندازه‌های ذاتی
+{{EmbedLiveSample("Using percentages", 600, 60)}}
 
-این مثال `max-content` و `min-content` را مقایسه می‌کند و `calc-size` را معرفی می‌کند.
+### Using intrinsic sizes
+
+This example compares `max-content` and `min-content`, and introduces `calc-size`.
 
 #### HTML
 
-سه پاراگراف با محتوای یکسان قرار می‌دهیم؛ فقط نام کلاس‌ها متفاوت است.
+We include three paragraphs with the same content; just their class names differ.
 
 ```html
 <p class="max-green">The MDN community writes really great documentation.</p>
@@ -192,7 +249,7 @@ p.has-width {
 
 #### CSS
 
-عرض (`width`) یک پاراگراف را `max-content`، دیگری را `min-content` و سومی را با استفاده از تابع `calc-size()` دو برابر `min-content` تنظیم می‌کنیم. به هر کدام `background-color` و `border-style` متفاوتی می‌دهیم تا قابل تشخیص باشند.
+We set one paragraph's `width` to `max-content`, the second to `min-content`, and the third to be twice the size of the `min-content` by using the `calc-size()` function. Each is given a different {{cssxref("background-color")}} and {{cssxref("border-style")}} to enable differentiating between the two.
 
 ```css
 p.max-green {
@@ -229,17 +286,19 @@ p.min-pink {
 }
 ```
 
-#### نتیجه
+#### Results
 
-مثال `max-content` به اندازهٔ پهنای متن کشیده می‌شود. مثال `min-content` به اندازهٔ پهنای بلندترین کلمه است. مقدار `calc-size()` طوری تنظیم شده که دو برابر `min-content` باشد.
+{{EmbedLiveSample("Using intrinsic sizes", 600, 230)}}
 
-### استفاده از کلمه کلیدی `stretch`
+The `max-content` example is as wide as the text. The `min-content` example is as wide as the widest word. The `calc-size()` example is set to be twice as wide as the `min-content`.
 
-این مثال مقدار `stretch` را درون یک ظرف [flex](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) نشان می‌دهد.
+### Using the stretch keyword
+
+This example demonstrates the `stretch` value within a [flex](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) container.
 
 #### HTML
 
-یک والد به همراه دو فرزند قرار می‌دهیم.
+We include a parent container with two child elements.
 
 ```html
 <div class="parent">
@@ -250,7 +309,7 @@ p.min-pink {
 
 #### CSS
 
-با استفاده از ویژگی `display` والد را به یک ظرف flex تبدیل کرده و عرض فرزند دوم را برابر `stretch` قرار می‌دهیم.
+We use the {{cssxref("display")}} property to make the parent a flex container, and set the second child's `width` the `stretch`.
 
 ```css
 .parent {
@@ -281,17 +340,19 @@ p.min-pink {
 }
 ```
 
-#### نتیجه
+#### Result
 
-به طور پیش‌فرض، آیتم‌های flex به اندازهٔ محتوای خود عریض هستند. مقدار `stretch` باعث می‌شود عنصر تا جایی که فضای موجود اجازه می‌دهد عریض شود، در غیر این صورت باکس margin آن محدود به عرض بلوک دربرگیرنده‌اش می‌ماند.
+{{EmbedLiveSample("Using the stretch keyword", "auto", 100)}}
 
-### استفاده از تابع `anchor-size()`
+By default, flex items are as wide as their content. The `stretch` value makes the element as wide as the available space allows, with the element's margin box otherwise clamped to the width of its containing block.
 
-این مثال استفاده از تابع `anchor-size()` برای تعریف عرض یک عنصر position شده با anchor را نشان می‌دهد؛ عرض را چند برابر ارتفاع anchor تنظیم کرده‌ایم.
+### Using the anchor-size() function
+
+This example demonstrates using the `anchor-size()` function to define the width of an anchor-positioned element; we defined its width as a multiple of its anchor's height.
 
 #### HTML
 
-دو عنصر `<div>` تعریف می‌کنیم: یک عنصر `anchor` و یک عنصر `infobox` که نسبت به anchor موقعیت‌دهی می‌شود.
+We specify two {{htmlelement("div")}} elements: one `anchor` element and one `infobox` element that we'll position relative to the anchor.
 
 ```html
 <div class="anchor">⚓︎</div>
@@ -303,26 +364,7 @@ p.min-pink {
 
 #### CSS
 
-مقادیر `anchor-name` و `position` را مشخص کرده و سپس از تابع `anchor-size()` درون مقدار `width` استفاده می‌کنیم.
-
-```css
-.anchor {
-  anchor-name: --my-anchor;
-  width: fit-content;
-  border: 1px solid;
-}
-
-.infobox {
-  position: fixed;
-  position-anchor: --my-anchor;
-  left: anchor(right);
-  top: anchor(top);
-  width: calc(anchor-size(height) * 2);
-  border: 1px solid;
-}
-```
-
-ما عنصر `anchor` را که یک `<div>` است، با اختصاص دادن {{cssxref("anchor-name")}} به عنوان عنصر anchor معرفی می‌کنیم. عنصر موقعیت‌دهی‌شده، ویژگی {{cssxref("position")}} خود را روی `absolute` تنظیم کرده و از طریق ویژگی {{cssxref("position-anchor")}} به عنصر anchor مرتبط می‌شود. همچنین ابعاد `height` و `width` مطلق را برای anchor تعیین می‌کنیم و عرض عنصر anchor-positioned را با استفاده از تابع `anchor-size()` به‌عنوان مقدار ویژگی `width`، برابر با عرض anchor قرار می‌دهیم. به‌عنوان یک ویژگی اضافه، از تابع `anchor-size()` برای تعیین موقعیت {{cssxref("left")}} infobox هم استفاده می‌کنیم تا فاصلهٔ بین anchor و infobox، یک‌چهارم ارتفاع anchor شود.
+We declare the `anchor` `<div>` as an anchor element by giving it an {{cssxref("anchor-name")}}. The positioned element has its {{cssxref("position")}} property set to `absolute`, and is associated with the anchor element via its {{cssxref("position-anchor")}} property. We also set absolute {{cssxref("height")}} and `width` dimensions on the anchor and define the width of the anchor-positioned element to be the width of the anchor using the `anchor-size()` function as the value of the `width` property. As a bonus, we also use the `anchor-size()` function to define the infobox's {{cssxref("left")}} position, making the gap between the anchor and the infobox one quarter of the height of the anchor.
 
 ```css hidden
 .anchor {
@@ -368,22 +410,28 @@ body {
 }
 ```
 
-#### نتایج
+#### Results
 
-توجه کنید که عرض infobox همیشه با عرض عنصر anchor یکسان است.
+{{EmbedLiveSample("Using the anchor-size() function", "auto", 200)}}
 
-## مشخصات
+Note how the infobox's width is always the same as the anchor element's width.
 
-## سازگاری با مرورگرها
+## Specifications
 
-## همچنین ببینید
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
 
 - {{cssxref("height")}}
 - {{cssxref("box-sizing")}}
 - {{cssxref("min-width")}}, {{cssxref("max-width")}}
 - {{cssxref("block-size")}}, {{cssxref("inline-size")}}
-- ویژگی SVG {{SVGAttr("width")}}
-- [معرفی مدل جعبه‌ای CSS](/en-US/docs/Web/CSS/Guides/Box_model/Introduction) راهنما
-- ماژول [مدل جعبه‌ای CSS](/en-US/docs/Web/CSS/Guides/Box_model)
-- ماژول [موقعیت‌دهی با anchor در CSS](/en-US/docs/Web/CSS/Guides/Anchor_positioning)
-- ماژول [مقادیر و واحدهای CSS](/en-US/docs/Web/CSS/Guides/Values_and_units)
+- SVG {{SVGAttr("width")}} attribute
+- [Introduction to the CSS box model](/en-US/docs/Web/CSS/Guides/Box_model/Introduction) guide
+- [CSS box model](/en-US/docs/Web/CSS/Guides/Box_model) module
+- [CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning) module
+- [CSS values and units](/en-US/docs/Web/CSS/Guides/Values_and_units) module
