@@ -1,12 +1,23 @@
 ---
 title: "display CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-ویژگی `display` در [CSS](/en-US/docs/Web/CSS) تعیین می‌کند که یک المان به‌عنوان یک جعبهٔ بلوکی یا درون‌خطی رفتار کند، و همچنین چیدمانی که برای فرزندانش به‌کار می‌رود – مانند [flow layout](/en-US/docs/Web/CSS/Guides/Display/Flow_layout)، [grid](/en-US/docs/Web/CSS/Guides/Grid_layout) یا [flex](/en-US/docs/Web/CSS/Guides/Flexible_box_layout).
+---
+title: "`display` CSS property"
+short-title: display
+slug: Web/CSS/Reference/Properties/display
+page-type: css-property
+browser-compat: css.properties.display
+sidebar: cssref
+---
 
-به‌طور رسمی، ویژگی `display` نوع نمایش بیرونی و درونی یک المان را مشخص می‌کند. نوع بیرونی، نحوهٔ شرکت المان در [flow layout](/en-US/docs/Web/CSS/Guides/Display/Flow_layout) را تعیین می‌کند؛ نوع درونی، چیدمان فرزندان را مشخص می‌کند. برخی از مقادیر `display` در مشخصات جداگانهٔ خودشان به‌طور کامل تعریف شده‌اند. برای مثال جزئیات اتفاقاتی که با اعلام `display: flex` رخ می‌دهد، در مشخصات CSS Flexible Box Model تعریف شده است.
+The **`display`** [CSS](/en-US/docs/Web/CSS) property sets whether an element is treated as a [block or inline box](/en-US/docs/Web/CSS/Guides/Display/Flow_layout) and the layout used for its children, such as [flow layout](/en-US/docs/Web/CSS/Guides/Display/Flow_layout), [grid](/en-US/docs/Web/CSS/Guides/Grid_layout) or [flex](/en-US/docs/Web/CSS/Guides/Flexible_box_layout).
+
+Formally, the **`display`** property sets an element's inner and outer _display types_. The outer type sets an element's participation in [flow layout](/en-US/docs/Web/CSS/Guides/Display/Flow_layout); the inner type sets the layout of children. Some values of `display` are fully defined in their own individual specifications; for example the detail of what happens when `display: flex` is declared is defined in the CSS Flexible Box Model specification.
+
+{{InteractiveExample("CSS Demo: display")}}
 
 ```css interactive-example-choice
 display: block;
@@ -69,10 +80,10 @@ code {
 }
 ```
 
-## نحو
+## Syntax
 
 ```css
-/* مقدارهای کوتاه display */
+/* short display */
 display: none;
 display: contents;
 display: block;
@@ -90,7 +101,7 @@ display: inline-grid-lanes;
 display: table;
 display: inline-table;
 
-/* مقدارهای کامل display */
+/* full display */
 display: block flow;
 display: block flow-root;
 display: inline flow;
@@ -104,7 +115,7 @@ display: inline grid;
 display: block table;
 display: inline table;
 
-/* مقادیر سراسری */
+/* global values */
 display: inherit;
 display: initial;
 display: revert;
@@ -112,24 +123,26 @@ display: revert-layer;
 display: unset;
 ```
 
-ویژگی `display` در CSS با استفاده از مقادیر کلیدی مشخص می‌شود.
+The CSS `display` property is specified using keyword values.
 
-## مقادیر گروه‌بندی‌شده
+## Grouped values
 
-مقادیر کلیدی را می‌توان در شش دستهٔ کلی قرار داد.
+The keyword values can be grouped into six value categories.
 
-### بیرونی
+### Outside
 
-- `block`
-  - : المان یک جعبهٔ بلوکی تولید می‌کند که در جریان عادی، قبل و بعد از خود شکست خط ایجاد می‌کند.
-- `inline`
-  - : المان یک یا چند جعبهٔ درون‌خطی تولید می‌کند که پیش و پس از خود شکست خط ایجاد نمی‌کنند. در جریان عادی، اگر فضا وجود داشته باشد، المان بعدی در همان خط قرار می‌گیرد.
+- {{CSSxRef("&lt;display-outside&gt;")}}
+  - : These keywords specify the element's outer display type, which is essentially its role in flow layout:
+    - `block`
+      - : The element generates a block box, generating line breaks both before and after the element when in the normal flow.
+    - `inline`
+      - : The element generates one or more inline boxes that do not generate line breaks before or after themselves. In normal flow, the next element will be on the same line if there is space.
 
 > [!NOTE]
-> وقتی ویژگی display فقط با یک مقدار **بیرونی** مشخص می‌شود (مثلاً `display: block` یا `display: inline`)، مقدار درونی به‌طور پیش‌فرض `flow` در نظر گرفته می‌شود (یعنی `display: block flow` و `display: inline flow`).
+> When a display property is specified with only an **outer** value (e.g., `display: block` or `display: inline`), the inner value defaults to `flow` (e.g., `display: block flow` and `display: inline flow`).
 
 > [!NOTE]
-> می‌توانید از سینتکس تک‌مقداری به‌عنوان جایگزینی برای سینتکس چندکلیدواژه‌ای استفاده کنید؛ برای مثال `display: inline flex` می‌تواند این fallback را داشته باشد:
+> You may use the single-value syntax as a fallback for multi-keyword syntax, for example `display: inline flex` could have the following fallback
 >
 > ```css
 > .container {
@@ -138,109 +151,122 @@ display: unset;
 > }
 > ```
 >
-> برای اطلاعات بیشتر، [استفاده از سینتکس چندکلیدواژه‌ای با display در CSS](/en-US/docs/Web/CSS/Guides/Display/Multi-keyword_syntax) را ببینید.
+> See [Using the multi-keyword syntax with CSS display](/en-US/docs/Web/CSS/Guides/Display/Multi-keyword_syntax) for more information.
 
 ### Inside
 
 - {{CSSxRef("&lt;display-inside&gt;")}}
-  - : این کلیدواژه‌ها نوع نمایش داخلی عنصر را مشخص می‌کنند و تعیین می‌کنند که محتوای آن در چه نوع formatting contextای چیده می‌شود (به شرطی که عنصر یک عنصر جایگزین‌شده نباشد). اگر یکی از این کلیدواژه‌ها به‌تنهایی به‌عنوان یک مقدار واحد استفاده شود، نوع نمایش خارجی عنصر به‌طور پیش‌فرض `block` خواهد بود (به جز `ruby` که پیش‌فرض آن `inline` است).
+  - : These keywords specify the element's inner display type, which defines the type of formatting context that its contents are laid out in (assuming it is a non-replaced element). When one of these keywords is used by itself as a single value, the element's outer display type defaults to `block` (with the exception of `ruby`, which defaults to `inline`).
     - `flow`
-      - : عنصر، محتوای خود را با استفاده از flow layout (طرح‌بندی block و inline) می‌چیند.
+      - : The element lays out its contents using flow layout (block-and-inline layout).
 
-        اگر نوع نمایش خارجی آن `inline` باشد و در یک formatting context از نوع block یا inline شرکت کند، یک جعبه inline تولید می‌کند. در غیر این‌صورت یک جعبه block.
+        If its outer display type is `inline`, and it is participating in a block or inline formatting context, then it generates an inline box. Otherwise it generates a block box.
 
-        بسته به مقدار سایر propertyها (مانند {{CSSxRef("position")}}، {{CSSxRef("float")}} یا {{CSSxRef("overflow")}}) و اینکه آیا خودش در یک formatting context از نوع block یا inline شرکت می‌کند، یا یک [block formatting context](/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context) (BFC) جدید برای محتوایش ایجاد می‌کند یا محتوایش را با formatting context والد ادغام می‌کند.
+        Depending on the value of other properties (such as {{CSSxRef("position")}}, {{CSSxRef("float")}}, or {{CSSxRef("overflow")}}) and whether it is itself participating in a block or inline formatting context, it either establishes a new [block formatting context](/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context) (BFC) for its contents or integrates its contents into its parent formatting context.
 
     - `flow-root`
-      - : عنصر یک جعبه block تولید می‌کند که یک [block formatting context](/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context) جدید ایجاد می‌کند و ریشه formatting را مشخص می‌کند.
+      - : The element generates a block box that establishes a new [block formatting context](/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context), defining where the formatting root lies.
     - `table`
-      - : این عناصر مانند عناصر HTML {{HTMLElement("table")}} رفتار می‌کنند. یک جعبه در سطح block تعریف می‌کند.
+      - : These elements behave like HTML {{HTMLElement("table")}} elements. It defines a block-level box.
     - `flex`
-      - : عنصر مانند یک عنصر در سطح block رفتار می‌کند و محتوای خود را بر اساس [مدل flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) می‌چیند.
+      - : The element behaves like a block-level element and lays out its content according to the [flexbox model](/en-US/docs/Web/CSS/Guides/Flexible_box_layout).
     - `grid`
-      - : عنصر مانند یک عنصر در سطح block رفتار می‌کند و محتوای خود را بر اساس [مدل grid](/en-US/docs/Web/CSS/Guides/Grid_layout/Basic_concepts) می‌چیند.
+      - : The element behaves like a block-level element and lays out its content according to the [grid model](/en-US/docs/Web/CSS/Guides/Grid_layout/Basic_concepts).
     - `grid-lanes`
-      - : عنصر مانند یک عنصر در سطح block رفتار می‌کند و محتوای خود را با استفاده از masonry layout می‌چیند. ستون‌ها با {{cssxref("grid-template-columns")}} تعریف می‌شوند و مانند یک grid صلب عمل می‌کنند، در حالی که آیتم‌ها در جهت block طوری بسته‌بندی می‌شوند که فاصله بین آیتم‌های با اندازه‌های مختلف پر شود. برای جزئیات بیشتر [Masonry layout](/en-US/docs/Web/CSS/Guides/Grid_layout/Masonry_layout) را ببینید.
-
+      - : The element behaves like a block-level element and lays out its content using grid lanes layout. Columns are defined by {{cssxref("grid-template-columns")}} and behave like a strict grid, while items are packed in the block direction to fill gaps between items of different sizes. See [Grid lanes layout](/en-US/docs/Web/CSS/Guides/Grid_layout/Grid_lanes) for details.
     - `inline-grid-lanes`
-      - : عنصر مانند یک عنصر در سطح inline رفتار می‌کند و محتوای خود را با استفاده از masonry layout می‌چیند. ردیف‌ها با {{cssxref("grid-template-rows")}} تعریف می‌شوند و مانند یک grid صلب عمل می‌کنند، در حالی که آیتم‌ها در جهت inline بسته‌بندی می‌شوند. برای جزئیات بیشتر [Masonry layout](/en-US/docs/Web/CSS/Guides/Grid_layout/Masonry_layout) را ببینید.
+      - : The element behaves like an inline-level element and lays out its content using grid lanes layout. Rows are defined by {{cssxref("grid-template-rows")}} and behave like a strict grid, while items are packed in the inline direction to fill gaps between items of different sizes. See [Grid lanes layout](/en-US/docs/Web/CSS/Guides/Grid_layout/Grid_lanes) for details.
     - `ruby`
-      - : عنصر مانند یک عنصر در سطح inline رفتار می‌کند و محتوای خود را بر اساس مدل ruby formatting می‌چیند. مانند عناصر متناظر HTML {{HTMLElement("ruby")}} رفتار می‌کند.
+      - : The element behaves like an inline-level element and lays out its content according to the ruby formatting model. It behaves like the corresponding HTML {{HTMLElement("ruby")}} elements.
 
 > [!NOTE]
-> وقتی یک ویژگی display فقط با یک مقدار **inner** (مانند `display: flex` یا `display: grid`) مشخص می‌شود، مقدار outer به‌طور پیش‌فرض `block` در نظر گرفته می‌شود (مثلاً `display: block flex` و `display: block grid`).
+> When a display property is specified with only an **inner** value (e.g., `display: flex` or `display: grid`), the outer value defaults to `block` (e.g., `display: block flex` and `display: block grid`).
 
 ### List Item
 
 - {{CSSxRef("&lt;display-listitem&gt;")}}
-  - : عنصر یک جعبه block برای محتوا و یک جعبه inline جداگانه برای list-item تولید می‌کند.
+  - : The element generates a block box for the content and a separate list-item inline box.
 
-مقدار تکی `list-item` باعث می‌شود عنصر مانند یک آیتم لیست رفتار کند.
-این می‌تواند همراه با {{CSSxRef("list-style-type")}} و {{CSSxRef("list-style-position")}} استفاده شود.
+A single value of `list-item` will cause the element to behave like a list item.
+This can be used together with {{CSSxRef("list-style-type")}} and {{CSSxRef("list-style-position")}}.
 
-`list-item` همچنین می‌تواند با هر کلیدواژه {{CSSxRef("&lt;display-outside&gt;")}} و کلیدواژه `flow` یا `flow-root` از {{CSSxRef("&lt;display-inside&gt;")}} ترکیب شود.
+`list-item` can also be combined with any {{CSSxRef("&lt;display-outside&gt;")}} keyword and the `flow` or `flow-root` {{CSSxRef("&lt;display-inside&gt;")}} keyword.
 
 > [!NOTE]
-> اگر مقدار داخلی (inner) مشخص نشود، به‌طور پیش‌فرض `flow` در نظر گرفته می‌شود.
-> اگر مقدار خارجی (outer) مشخص نشود، جعبه اصلی (principal box) نوع نمایش خارجی `block` خواهد داشت.
+> If no inner value is specified, it will default to `flow`.
+> If no outer value is specified, the principal box will have an outer display type of `block`.
 
 ### Internal
 
-- `<display-internal>`
-  - : برخی از مدل‌های چیدمان مانند `table` و `ruby` ساختار داخلی پیچیده‌ای دارند و فرزندان و نوادگان آن‌ها می‌توانند نقش‌های مختلفی ایفا کنند. این بخش مقادیر نمایش «داخلی» را تعریف می‌کند که فقط در همان حالت چیدمان خاص معنا دارند.
+- {{CSSxRef("&lt;display-internal&gt;")}}
+  - : Some layout models such as `table` and `ruby` have a complex internal structure, with several different roles that their children and descendants can fill.
+    This section defines those "internal" display values, which only have meaning within that particular layout mode.
     - `table-row-group`
-      - : این عناصر مانند عناصر HTML `<tbody>` رفتار می‌کنند.
+      - : These elements behave like {{HTMLElement("tbody")}} HTML elements.
     - `table-header-group`
-      - : این عناصر مانند عناصر HTML `<thead>` رفتار می‌کنند.
+      - : These elements behave like {{HTMLElement("thead")}} HTML elements.
     - `table-footer-group`
-      - : این عناصر مانند عناصر HTML `<tfoot>` رفتار می‌کنند.
+      - : These elements behave like {{HTMLElement("tfoot")}} HTML elements.
     - `table-row`
-      - : این عناصر مانند عناصر HTML `<tr>` رفتار می‌کنند.
+      - : These elements behave like {{HTMLElement("tr")}} HTML elements.
     - `table-cell`
-      - : این عناصر مانند عناصر HTML `<td>` رفتار می‌کنند.
+      - : These elements behave like {{HTMLElement("td")}} HTML elements.
     - `table-column-group`
-      - : این عناصر مانند عناصر HTML `<colgroup>` رفتار می‌کنند.
+      - : These elements behave like {{HTMLElement("colgroup")}} HTML elements.
     - `table-column`
-      - : این عناصر مانند عناصر HTML `<col>` رفتار می‌کنند.
+      - : These elements behave like {{HTMLElement("col")}} HTML elements.
     - `table-caption`
-      - : این عناصر مانند عناصر HTML `<caption>` رفتار می‌کنند.
+      - : These elements behave like {{HTMLElement("caption")}} HTML elements.
     - `ruby-base`
-      - : این عناصر مانند عناصر HTML `<rb>` رفتار می‌کنند.
+      - : These elements behave like {{HTMLElement("rb")}} HTML elements.
     - `ruby-text`
-      - : این عناصر مانند عناصر HTML `<rt>` رفتار می‌کنند.
+      - : These elements behave like {{HTMLElement("rt")}} HTML elements.
     - `ruby-base-container`
-      - : این عناصر به‌عنوان جعبه‌های ناشناس (anonymous boxes) تولید می‌شوند.
+      - : These elements are generated as anonymous boxes.
     - `ruby-text-container`
-      - : این عناصر مانند عناصر HTML `<rtc>` رفتار می‌کنند.
+      - : These elements behave like {{HTMLElement("rtc")}} HTML elements.
 
 ### Box
 
-- `<display-box>`
-  - : این مقادیر تعیین می‌کنند که آیا یک عنصر اصلاً جعبه‌های نمایشی تولید می‌کند یا خیر.
+- {{CSSxRef("&lt;display-box&gt;")}}
+  - : These values define whether an element generates display boxes at all.
     - `contents`
-      - : این عناصر به‌خودی‌خود جعبه مشخصی تولید نمی‌کنند. آن‌ها با جعبه مجازی (pseudo-box) و جعبه‌های فرزند جایگزین می‌شوند. توجه کنید که مشخصه CSS Display Level 3 نحوه تأثیر مقدار `contents` بر «عناصر غیرمعمول» را تعریف می‌کند — عناصری که صرفاً با مفاهیم جعبه CSS رندر نمی‌شوند، مانند عناصر جایگزین‌شده. برای جزئیات بیشتر به [Appendix B: Effects of display: contents on Unusual Elements](https://drafts.csswg.org/css-display/#unbox) مراجعه کنید.
+      - : These elements don't produce a specific box by themselves. They are replaced by their pseudo-box and their child boxes. Please note that the CSS Display Level 3 spec defines how the `contents` value should affect "unusual elements" — elements that aren't rendered purely by CSS box concepts such as replaced elements. See [Appendix B: Effects of display: contents on Unusual Elements](https://drafts.csswg.org/css-display/#unbox) for more details.
+
     - `none`
-      - : نمایش عنصر را غیرفعال می‌کند، به‌طوری که هیچ تأثیری بر چیدمان ندارد (سند طوری رندر می‌شود که انگار عنصر وجود ندارد). تمام عناصر نواده نیز نمایششان غیرفعال می‌شود. برای اینکه عنصری فضایی را که در حالت عادی اشغال می‌کند حفظ کند، اما چیزی رندر نکند، به‌جای آن از ویژگی `visibility` استفاده کنید.
+      - : Turns off the display of an element so that it has no effect on layout (the document is rendered as though the element did not exist). All descendant elements also have their display turned off.
+        To have an element take up the space that it would normally take, but without actually rendering anything, use the {{CSSxRef("visibility")}} property instead.
 
 ### Precomposed
 
-- `<display-legacy>`
-  - : CSS 2 از یک نحو تک‌کلیدواژه و از پیش ترکیب‌شده برای ویژگی `display` استفاده می‌کرد که برای انواع block-level و inline-level یک مدل چیدمان یکسان، به کلیدواژه‌های جداگانه نیاز داشت.
+- {{CSSxRef("&lt;display-legacy&gt;")}}
+  - : CSS 2 used a single-keyword, precomposed syntax for the `display` property, requiring separate keywords for block-level and inline-level variants of the same layout mode.
     - `inline-block`
-      - : عنصر یک جعبه block تولید می‌کند که همراه با محتوای اطراف جریان می‌یابد، انگار که یک جعبه inline واحد است (رفتاری شبیه به عنصر جایگزین‌شده). معادل `inline flow-root` است.
+      - : The element generates a block box that will be flowed with surrounding content as if it were a single inline box (behaving much like a replaced element would).
+
+        It is equivalent to `inline flow-root`.
+
     - `inline-table`
-      - : مقدار `inline-table` نگاشتی مستقیم در HTML ندارد. مانند عنصر HTML `<table>` رفتار می‌کند، اما به‌عنوان یک جعبه inline، نه block-level. درون جعبه table یک بافت block-level است. معادل `inline table` است.
+      - : The `inline-table` value does not have a direct mapping in HTML. It behaves like an HTML {{HTMLElement("table")}} element, but as an inline box, rather than a block-level box. Inside the table box is a block-level context.
+
+        It is equivalent to `inline table`.
+
     - `inline-flex`
-      - : عنصر مانند یک عنصر inline-level رفتار می‌کند و محتوای خود را طبق مدل flexbox می‌چیند. معادل `inline flex` است.
+      - : The element behaves like an inline-level element and lays out its content according to the flexbox model.
+
+        It is equivalent to `inline flex`.
+
     - `inline-grid`
-      - : عنصر مانند یک عنصر inline-level رفتار می‌کند و محتوای خود را طبق مدل grid می‌چیند. معادل `inline grid` است.
+      - : The element behaves like an inline-level element and lays out its content according to the grid model.
 
-### کدام نحو را باید استفاده کنید؟
+        It is equivalent to `inline grid`.
 
-ماژول [CSS display](/en-US/docs/Web/CSS/Guides/Display) یک سینتکس چندکلمه‌ای را برای مقادیر ویژگی `display` توصیف می‌کند که با آن می‌توانید نمایش **بیرونی** و **درونی** را به‌طور صریح تعریف کنید.
-مقادیر تک‌کلمه‌ای (مقادیر پیش‌ساختهٔ `<display-legacy>`) برای حفظ سازگاری با نسخه‌های قبلی پشتیبانی می‌شوند.
+### Which syntax should you use?
 
-برای نمونه، با استفاده از دو مقدار می‌توانید یک flex container درون‌خطی را این‌گونه مشخص کنید:
+The [CSS display module](/en-US/docs/Web/CSS/Guides/Display) describes a multi-keyword syntax for values you can use with the `display` property to explicitly define **outer** and **inner** display.
+The single keyword values (precomposed `<display-legacy>` values) are supported for backward-compatibility.
+
+For example, using two values you can specify an inline flex container as follows:
 
 ```css
 .container {
@@ -248,7 +274,7 @@ display: unset;
 }
 ```
 
-همین را با مقدار قدیمی تک‌کلمه‌ای نیز می‌توان مشخص کرد:
+This can also be specified using the legacy single value:
 
 ```css
 .container {
@@ -256,102 +282,108 @@ display: unset;
 }
 ```
 
-برای اطلاعات بیشتر دربارهٔ این تغییرات، به راهنمای [استفاده از سینتکس چندکلمه‌ای با display در CSS](/en-US/docs/Web/CSS/Guides/Display/Multi-keyword_syntax) مراجعه کنید.
+For more information on these changes, see the [Using the multi-keyword syntax with CSS display](/en-US/docs/Web/CSS/Guides/Display/Multi-keyword_syntax) guide.
 
-## توضیحات
+## Description
 
-صفحات مربوط به انواع مختلف مقادیری که می‌توان برای `display` تنظیم کرد، شامل مثال‌های متعددی از کاربرد آن مقادیر هستند — بخش [Syntax](#syntax) را ببینید. همچنین، منابع زیر را مشاهده کنید که مقادیر گوناگون display را به‌طور عمیق پوشش می‌دهند.
+The individual pages for the different types of value that `display` can have set on it feature multiple examples of those values in action — see the [Syntax](#syntax) section. In addition, see the following material, which covers the various values of display in depth.
 
-### مقادیر چندکلمه‌ای
+### Multi-keyword values
 
-- [استفاده از سینتکس چندکلمه‌ای با display در CSS](/en-US/docs/Web/CSS/Guides/Display/Multi-keyword_syntax)
+- [Using the multi-keyword syntax with CSS display](/en-US/docs/Web/CSS/Guides/Display/Multi-keyword_syntax)
 
-### طرح‌بندی جریانی CSS (display: block, display: inline)
+### CSS Flow Layout (display: block, display: inline)
 
-- [طرح‌بندی block و inline در جریان عادی](/en-US/docs/Web/CSS/Guides/Display/Block_and_inline_layout)
-- [طرح‌بندی جریانی و overflow](/en-US/docs/Web/CSS/Guides/Display/Flow_layout_and_overflow)
-- [طرح‌بندی جریانی و حالت‌های نوشتار](/en-US/docs/Web/CSS/Guides/Display/Flow_layout_and_writing_modes)
-- [آشنایی با formatting contextها](/en-US/docs/Web/CSS/Guides/Display/Formatting_contexts)
-- [درون جریان و بیرون از جریان](/en-US/docs/Web/CSS/Guides/Display/In_flow_and_out_of_flow)
+- [Block and inline layout in normal flow](/en-US/docs/Web/CSS/Guides/Display/Block_and_inline_layout)
+- [Flow layout and overflow](/en-US/docs/Web/CSS/Guides/Display/Flow_layout_and_overflow)
+- [Flow layout and writing modes](/en-US/docs/Web/CSS/Guides/Display/Flow_layout_and_writing_modes)
+- [Introduction to formatting contexts](/en-US/docs/Web/CSS/Guides/Display/Formatting_contexts)
+- [In flow and out of flow](/en-US/docs/Web/CSS/Guides/Display/In_flow_and_out_of_flow)
 
 ### display: flex
 
-- [مفاهیم پایه flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts)
-- [ترازبندی آیتم‌ها در یک flex container](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Aligning_items)
-- [کنترل نسبت آیتم‌های flex در راستای محور اصلی](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Controlling_flex_item_ratios)
-- [تسلط بر شکستن خط آیتم‌های flex](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Wrapping_items)
-- [مرتب‌سازی آیتم‌های flex](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Ordering_items)
-- [ارتباط flexbox با سایر روش‌های طرح‌بندی](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Relationship_with_other_layout_methods)
-- [کاربردهای معمول flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Use_cases)
+- [Basic concepts of flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts)
+- [Aligning items in a flex container](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Aligning_items)
+- [Controlling ratios of flex items along the main axis](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Controlling_flex_item_ratios)
+- [Mastering wrapping of flex items](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Wrapping_items)
+- [Ordering flex items](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Ordering_items)
+- [Relationship of flexbox to other layout methods](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Relationship_with_other_layout_methods)
+- [Typical use cases of flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Use_cases)
 
 ### display: grid
 
-- [مفاهیم پایه grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout/Basic_concepts)
-- [ارتباط با سایر روش‌های طرح‌بندی](/en-US/docs/Web/CSS/Guides/Grid_layout/Relationship_with_other_layout_methods)
-- [جانمایی مبتنی بر خط](/en-US/docs/Web/CSS/Guides/Grid_layout/Line-based_placement)
-- [نواحی قالب grid](/en-US/docs/Web/CSS/Guides/Grid_layout/Grid_template_areas)
-- [طرح‌بندی با استفاده از خطوط grid نام‌گذاری‌شده](/en-US/docs/Web/CSS/Guides/Grid_layout/Named_grid_lines)
-- [جانمایی خودکار در grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout/Auto-placement)
-- [ترازبندی آیتم‌ها در CSS grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout/Box_alignment)
-- [gridها، مقادیر منطقی و حالت‌های نوشتار](/en-US/docs/Web/CSS/Guides/Grid_layout/Logical_values_and_writing_modes)
-- [CSS grid layout و دسترسی‌پذیری](/en-US/docs/Web/CSS/Guides/Grid_layout/Accessibility)
-- [پیاده‌سازی طرح‌بندی‌های رایج با استفاده از grid](/en-US/docs/Web/CSS/Guides/Grid_layout/Common_grid_layouts)
-- [Masonry layout](/en-US/docs/Web/CSS/Guides/Grid_layout/Masonry_layout)
+- [Basic concepts of grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout/Basic_concepts)
+- [Relationship to other layout methods](/en-US/docs/Web/CSS/Guides/Grid_layout/Relationship_with_other_layout_methods)
+- [Line-based placement](/en-US/docs/Web/CSS/Guides/Grid_layout/Line-based_placement)
+- [Grid template areas](/en-US/docs/Web/CSS/Guides/Grid_layout/Grid_template_areas)
+- [Layout using named grid lines](/en-US/docs/Web/CSS/Guides/Grid_layout/Named_grid_lines)
+- [Auto-placement in grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout/Auto-placement)
+- [Aligning items in CSS grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout/Box_alignment)
+- [Grids, logical values and writing modes](/en-US/docs/Web/CSS/Guides/Grid_layout/Logical_values_and_writing_modes)
+- [CSS grid layout and accessibility](/en-US/docs/Web/CSS/Guides/Grid_layout/Accessibility)
+- [Realizing common layouts using grids](/en-US/docs/Web/CSS/Guides/Grid_layout/Common_grid_layouts)
+- [Grid lanes layout](/en-US/docs/Web/CSS/Guides/Grid_layout/Grid_lanes)
 
-### انیمیت کردن display
+### Animating display
 
-[مرورگرهای پشتیبانی‌کننده](#browser_compatibility) خصوصیت `display` را با [نوع انیمیشن گسسته](/en-US/docs/Web/CSS/Guides/Animations/Animatable_properties#discrete) متحرک‌سازی می‌کنند. این معمولاً به این معنی است که خصوصیت در نیمهٔ راه بین دو مقدار، از یکی به دیگری تغییر وضعیت می‌دهد.
+[Supporting browsers](#browser_compatibility) animate `display` with a [discrete animation type](/en-US/docs/Web/CSS/Guides/Animations/Animatable_properties#discrete). This generally means that the property will flip between two values 50% through animating between the two.
 
-یک استثنا وجود دارد و آن زمانی است که از/به `display: none` انیمیشن می‌سازید. در این حالت، مرورگر بین دو مقدار جابه‌جا می‌شود تا محتوای متحرک‌شده در تمام طول انیمیشن نمایش داده شود. برای نمونه:
+There is one exception, which is when animating to or from `display: none`. In this case, the browser will flip between the two values so that the animated content is shown for the entire animation duration. So for example:
 
-- هنگام انیمیشن‌سازی `display` از `none` به `block` (یا یک مقدار `display` قابل مشاهده‌ی دیگر)، مقدار در `0%` زمان انیمیشن به `block` تغییر می‌کند تا در سراسر انیمیشن قابل مشاهده باشد.
-- هنگام انیمیشن‌سازی `display` از `block` (یا یک مقدار `display` قابل مشاهده‌ی دیگر) به `none`، مقدار در `100%` زمان انیمیشن به `none` تغییر می‌کند تا در سراسر انیمیشن قابل مشاهده بماند.
+- When animating `display` from `none` to `block` (or another visible `display` value), the value will flip to `block` at `0%` of the animation duration so it is visible throughout.
+- When animating `display` from `block` (or another visible `display` value) to `none`, the value will flip to `none` at `100%` of the animation duration so it is visible throughout.
 
-این رفتار برای ساخت انیمیشن‌های ورود/خروج کاربردی است؛ مثلاً وقتی می‌خواهید یک ظرف (container) را با `display: none` از DOM حذف کنید، اما به‌جای ناپدید شدن ناگهانی، با {{cssxref("opacity")}} محو شود.
+This behavior is useful for creating entry/exit animations where you want to for example remove a container from the DOM with `display: none`, but have it fade out with {{cssxref("opacity")}} rather than disappearing immediately.
 
-هنگام انیمیشن‌سازی `display` با [CSS animations](/en-US/docs/Web/CSS/Guides/Animations)، باید مقدار آغازین `display` را در یک keyframe صریح (مثلاً با `0%` یا `from`) مشخص کنید. برای نمونه به [استفاده از CSS animations](/en-US/docs/Web/CSS/Guides/Animations/Using) مراجعه کنید.
+When animating `display` with [CSS animations](/en-US/docs/Web/CSS/Guides/Animations), you need to provide the starting `display` value in an explicit keyframe (for example using `0%` or `from`). See [Using CSS animations](/en-US/docs/Web/CSS/Guides/Animations/Using) for an example.
 
-هنگام انیمیشن‌سازی `display` با [CSS transitions](/en-US/docs/Web/CSS/Guides/Transitions)، دو ویژگی اضافی نیاز است:
+When animating `display` with [CSS transitions](/en-US/docs/Web/CSS/Guides/Transitions), two additional features are needed:
 
-- {{cssxref("@starting-style")}} مقادیر آغازین ویژگی‌هایی که می‌خواهید transition از آن‌ها شروع شود را هنگام اولین نمایش عنصر فراهم می‌کند. این کار برای جلوگیری از رفتار غیرمنتظره ضروری است. به‌طور پیش‌فرض، CSS transitions در اولین به‌روزرسانی استایل یک عنصر یا زمانی که نوع `display` از `none` به نوع دیگری تغییر کند، فعال نمی‌شوند.
-- [`transition-behavior: allow-discrete`](/en-US/docs/Web/CSS/Reference/Properties/transition-behavior) باید در اعلان {{cssxref("transition-property")}} (یا شکل خلاصه {{cssxref("transition")}}) تنظیم شود تا transitionهای `display` فعال شوند.
+- {{cssxref("@starting-style")}} provides starting values for properties you want to transition from when the animated element is first shown. This is needed to avoid unexpected behavior. By default, CSS transitions are not triggered on an element's first style update or when the `display` type changes from `none` to another type.
+- [`transition-behavior: allow-discrete`](/en-US/docs/Web/CSS/Reference/Properties/transition-behavior) needs to be set on the {{cssxref("transition-property")}} declaration (or the {{cssxref("transition")}} shorthand) to enable `display` transitions.
 
-برای نمونه‌هایی از transition ویژگی `display`، به صفحه‌های [`@starting-style`](/en-US/docs/Web/CSS/Reference/At-rules/@starting-style#examples) و [`transition-behavior`](/en-US/docs/Web/CSS/Reference/Properties/transition-behavior#examples) مراجعه کنید.
+For examples of transitioning the `display` property, see the [`@starting-style`](/en-US/docs/Web/CSS/Reference/At-rules/@starting-style#examples) and [`transition-behavior`](/en-US/docs/Web/CSS/Reference/Properties/transition-behavior#examples) pages.
 
-## دسترسی‌پذیری
+## Accessibility
 
 ### display: none
 
-استفاده از مقدار `display: none` روی یک عنصر، آن را از [درخت دسترسی‌پذیری](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis) حذف می‌کند. در نتیجه، خود عنصر و تمام عناصر فرزند آن دیگر توسط فناوری‌های صفحه‌خوان اعلام نمی‌شوند.
+Using a `display` value of `none` on an element will remove it from the [accessibility tree](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis). This will cause the element and all its descendant elements to no longer be announced by screen reading technology.
 
-اگر می‌خواهید عنصر را فقط از نظر بصری پنهان کنید، یک جایگزین دسترس‌پذیرتر استفاده از [ترکیبی از ویژگی‌ها](https://webaim.org/techniques/css/invisiblecontent/) است تا عنصر از صفحه پنهان شود اما همچنان برای فناوری‌های کمکی مانند صفحه‌خوان‌ها در دسترس بماند.
+If you want to visually hide the element, a more accessible alternative is to use [a combination of properties](https://webaim.org/techniques/css/invisiblecontent/) to remove it visually from the screen but still make it available to assistive technology such as screen readers.
 
-با اینکه `display: none` محتوا را از درخت دسترسی‌پذیری خارج می‌کند، عناصری که پنهان هستند اما از طریق ویژگی‌های `aria-describedby` یا `aria-labelledby` در عناصر قابل مشاهده به آن‌ها ارجاع داده شده باشد، برای فناوری‌های کمکی آشکار می‌مانند.
+While `display: none` hides content from the accessibility tree, elements that are hidden but are referenced from visible elements' `aria-describedby` or `aria-labelledby` attributes are exposed to assistive technologies.
 
 ### display: contents
 
-در پیاده‌سازی‌های فعلی برخی مرورگرها، هر عنصری که `display` آن `contents` باشد از [درخت دسترسی‌پذیری](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis) حذف می‌شود (اما فرزندان باقی می‌مانند). این باعث می‌شود خود عنصر دیگر توسط صفحه‌خوان‌ها اعلام نشود. این رفتار طبق [مشخصات CSS](https://drafts.csswg.org/css-display/#valdef-display-contents) نادرست است.
+Current implementations in some browsers will remove from the [accessibility tree](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis) any element with a `display` value of `contents` (but descendants will remain). This will cause the element itself to no longer be announced by screen reading technology. This is incorrect behavior according to the [CSS specification](https://drafts.csswg.org/css-display/#valdef-display-contents).
 
-- [نشانه‌گذاری دسترس‌پذیرتر با display: contents | Hidde de Vries](https://hidde.blog/more-accessible-markup-with-display-contents/)
-- [display: contents یک ریست CSS نیست | Adrian Roselli](https://adrianroselli.com/2018/05/display-contents-is-not-a-css-reset.html)
+- [More accessible markup with display: contents | Hidde de Vries](https://hidde.blog/more-accessible-markup-with-display-contents/)
+- [Display: Contents Is Not a CSS Reset | Adrian Roselli](https://adrianroselli.com/2018/05/display-contents-is-not-a-css-reset.html)
 
-در برخی مرورگرها، تغییر مقدار `display` عنصر `<table>` به `block`، `grid` یا `flex` نحوهٔ حضور آن در [درخت دسترس‌پذیری](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis) را تغییر می‌دهد. این موضوع باعث می‌شود فناوری‌های صفحه‌خوان دیگر نتوانند جدول را به‌درستی اعلام کنند.
+### Tables
 
-- [محتوای مخفی برای دسترس‌پذیری بهتر | Go Make Things](https://gomakethings.com/articles/hidden-content-for-better-a11y/)
-- [توضیحات راهنمای WCAG (راهنما ۱.۳) در MDN](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.3_%e2%80%94_create_content_that_can_be_presented_in_different_ways)
-- [درک معیار موفقیت ۱.۳.۱ | درک WCAG 2.0 از W3C](https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html)
+In some browsers, changing the `display` value of a {{HTMLElement("table")}} element to `block`, `grid`, or `flex` will alter its representation in the [accessibility tree](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis). This will cause the table to no longer be announced properly by screen reading technology.
+
+- [Hidden content for better a11y | Go Make Things](https://gomakethings.com/articles/hidden-content-for-better-a11y/)
+- [MDN Understanding WCAG, Guideline 1.3 explanations](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.3_%e2%80%94_create_content_that_can_be_presented_in_different_ways)
+- [Understanding Success Criterion 1.3.1 | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html)
 
 ## Formal definition
 
+{{cssinfo}}
+
 ## Formal syntax
+
+{{csssyntax}}
 
 ## Examples
 
-### مقایسه مقدار display
+### display value comparison
 
-در این مثال دو عنصر کانتینری block-level داریم که هر کدام سه فرزند inline دارند. در پایین صفحه یک منوی select قرار دارد که می‌توانید مقادیر مختلف `display` را روی کانتینرها اعمال کنید و تأثیر هر مقدار را روی چیدمان عنصر و فرزندانش مقایسه کنید.
+In this example we have two block-level container elements, each one with three inline children. Below that, we have a select menu that allows you to apply different `display` values to the containers, allowing you to compare and contrast how the different values affect the element's layout, and that of their children.
 
-برای دیدن بهتر تأثیر مقادیر display، از `padding` و `background-color` روی کانتینرها و فرزندان استفاده کرده‌ایم.
+We have included {{cssxref("padding")}} and {{cssxref("background-color")}} on the containers and their children, so that it is easier to see the effect the display values are having.
 
 #### HTML
 
@@ -453,7 +485,9 @@ updateDisplay();
 
 #### Result
 
-توجه کنید که برخی مقادیر چندکلمه‌ای برای نمایش اضافه شده‌اند که معادل‌های زیر را دارند:
+{{EmbedLiveSample('display_value_comparison','100%', 440)}}
+
+Note that some multi-keyword values are added for illustration which have the following equivalents:
 
 - `block` = `block flow`
 - `inline` = `inline flow`
@@ -468,22 +502,22 @@ updateDisplay();
 - `inline-flex` = `inline flex`
 - `inline-grid` = `inline grid`
 
-مثال‌های بیشتری را می‌توانید در صفحه‌های مربوط به هر نوع نمایش مجزا، در بخش [مقادیر گروه‌بندی‌شده](#grouped_values) بیابید.
+You can find more examples in the pages for each separate display type under [Grouped values](#grouped_values).
 
-## مشخصات
+## Specifications
 
 {{Specifications}}
 
-## سازگاری با مرورگر
+## Browser compatibility
 
 {{Compat}}
 
-## همچنین ببینید
+## See also
 
 - {{CSSxRef("visibility")}}, {{CSSxRef("float")}}, {{CSSxRef("position")}}
 - {{CSSxRef("grid")}}, {{CSSxRef("flex")}}
-- ماژول [چیدمان ruby در CSS](/en-US/docs/Web/CSS/Guides/Ruby_layout)
-- خصوصیت SVG {{SVGAttr("display")}}
-- [چیدمان بلاک و اینلاین در جریان عادی](/en-US/docs/Web/CSS/Guides/Display/Block_and_inline_layout)
-- [معرفی contextهای قالب‌بندی](/en-US/docs/Web/CSS/Guides/Display/Formatting_contexts)
-- [چیدمان Masonry](/en-US/docs/Web/CSS/Guides/Grid_layout/Masonry_layout)
+- [CSS ruby layout](/en-US/docs/Web/CSS/Guides/Ruby_layout) module
+- SVG {{SVGAttr("display")}} attribute
+- [Block and inline layout in normal flow](/en-US/docs/Web/CSS/Guides/Display/Block_and_inline_layout)
+- [Introduction to formatting contexts](/en-US/docs/Web/CSS/Guides/Display/Formatting_contexts)
+- [Grid lanes layout](/en-US/docs/Web/CSS/Guides/Grid_layout/Grid_lanes)
