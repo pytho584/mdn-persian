@@ -1,0 +1,34 @@
+---
+title: "SVGAnimationElement: requiredExtensions property"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimationElement/requiredExtensions"
+status: "needs-translation"
+---
+
+---
+title: "SVGAnimationElement: requiredExtensions property"
+short-title: requiredExtensions
+slug: Web/API/SVGAnimationElement/requiredExtensions
+page-type: web-api-instance-property
+browser-compat: api.SVGAnimationElement.requiredExtensions
+---
+
+{{APIRef("SVG")}}
+
+The **`requiredExtensions`** read-only property of the {{domxref("SVGAnimationElement")}} interface reflects the {{SVGAttr("requiredExtensions")}} attribute of the given element.
+
+## Value
+
+An {{domxref("SVGStringList")}} object.
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- SVG {{SVGAttr("requiredExtensions")}} attribute
+- SVG {{SVGAttr("systemLanguage")}} attribute
