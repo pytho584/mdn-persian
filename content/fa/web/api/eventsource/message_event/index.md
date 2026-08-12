@@ -1,0 +1,76 @@
+---
+title: "EventSource: message event"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/EventSource/message_event"
+status: "needs-translation"
+---
+
+---
+title: "EventSource: message event"
+short-title: message
+slug: Web/API/EventSource/message_event
+page-type: web-api-event
+browser-compat: api.EventSource.message_event
+---
+
+{{APIRef("Server Sent Events")}}{{AvailableInWorkers}}
+
+The **`message`** event of the {{domxref("EventSource")}} interface is fired when data is received through an event source.
+
+This event is not cancelable and does not bubble.
+
+## Syntax
+
+Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+
+```js-nolint
+addEventListener("message", (event) => { })
+
+onmessage = (event) => { }
+```
+
+## Event type
+
+A {{domxref("MessageEvent")}}. Inherits from {{domxref("Event")}}.
+
+{{InheritanceDiagram("MessageEvent")}}
+
+## Examples
+
+In this basic example, an `EventSource` is created to receive events from the server; a page with the name `sse.php` is responsible for generating the events.
+
+```js
+const evtSource = new EventSource("sse.php");
+const eventList = document.querySelector("ul");
+
+evtSource.addEventListener("message", (e) => {
+  const newElement = document.createElement("li");
+
+  newElement.textContent = `message: ${e.data}`;
+  eventList.appendChild(newElement);
+});
+```
+
+### onmessage equivalent
+
+```js
+evtSource.onmessage = (e) => {
+  const newElement = document.createElement("li");
+
+  newElement.textContent = `message: ${e.data}`;
+  eventList.appendChild(newElement);
+};
+```
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- [Using server-sent events](/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)
+- [`open`](/en-US/docs/Web/API/EventSource/open_event)
+- [`error`](/en-US/docs/Web/API/EventSource/error_event)
