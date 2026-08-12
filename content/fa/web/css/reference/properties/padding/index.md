@@ -1,43 +1,95 @@
 ---
 title: "padding CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/padding"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-# padding
+---
+title: "`padding` CSS property"
+short-title: padding
+slug: Web/CSS/Reference/Properties/padding
+page-type: css-shorthand-property
+browser-compat: css.properties.padding
+sidebar: cssref
+---
 
-ویژگی **`padding`** در [CSS](/en-US/docs/Web/CSS) یک [ویژگی خلاصه‌نویس (shorthand property)](/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties) است که فضای داخلی ([padding area](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#padding_area)) چهار طرف یک عنصر را به‌طور هم‌زمان تنظیم می‌کند.
+The **`padding`** [CSS](/en-US/docs/Web/CSS) [shorthand property](/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties) sets the [padding area](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#padding_area) on all four sides of an element at once.
 
-ناحیهٔ padding در یک عنصر، فضای بین محتوای آن و مرز (border) آن است.
+{{InteractiveExample("CSS Demo: padding")}}
+
+```css interactive-example-choice
+padding: 1em;
+```
+
+```css interactive-example-choice
+padding: 10% 0;
+```
+
+```css interactive-example-choice
+padding: 10px 50px 20px;
+```
+
+```css interactive-example-choice
+padding: 10px 50px 30px 0;
+```
+
+```css interactive-example-choice
+padding: 0;
+```
+
+```html interactive-example
+<section id="default-example">
+  <div class="transition-all" id="example-element">
+    <div class="box">
+      Far out in the uncharted backwaters of the unfashionable end of the
+      western spiral arm of the Galaxy lies a small unregarded yellow sun.
+    </div>
+  </div>
+</section>
+```
+
+```css interactive-example
+#example-element {
+  border: 10px solid #ffc129;
+  overflow: hidden;
+  text-align: left;
+}
+
+.box {
+  border: dashed 1px;
+}
+```
+
+An element's padding area is the space between its content and its border.
 
 > [!NOTE]
-> `padding` فضای اضافی را **داخل** عنصر ایجاد می‌کند. در مقابل، {{cssxref("margin")}} فضای اضافی را **دور** عنصر به‌وجود می‌آورد.
+> Padding creates extra space within an element. In contrast, {{cssxref("margin")}} creates extra space _around_ an element.
 
-## ویژگی‌های سازنده
+## Constituent properties
 
-این ویژگی خلاصه‌ای از ویژگی‌های CSS زیر است:
+This property is a shorthand for the following CSS properties:
 
 - {{cssxref("padding-top")}}
 - {{cssxref("padding-right")}}
 - {{cssxref("padding-bottom")}}
 - {{cssxref("padding-left")}}
 
-## نحوهٔ نوشتار (Syntax)
+## Syntax
 
 ```css
-/* اعمال به هر چهار طرف */
+/* Apply to all four sides */
 padding: 1em;
 
-/* بالا و پایین | چپ و راست */
+/* top and bottom | left and right */
 padding: 5% 10%;
 
-/* بالا | چپ و راست | پایین */
+/* top | left and right | bottom */
 padding: 1em 2em 2em;
 
-/* بالا | راست | پایین | چپ */
+/* top | right | bottom | left */
 padding: 5px 1em 0 2em;
 
-/* مقادیر سراسری */
+/* Global values */
 padding: inherit;
 padding: initial;
 padding: revert;
@@ -45,29 +97,37 @@ padding: revert-layer;
 padding: unset;
 ```
 
-ویژگی `padding` را می‌توان با یک، دو، سه یا چهار مقدار مشخص کرد. هر مقدار می‌تواند از نوع {{cssxref("&lt;length&gt;")}} یا {{cssxref("&lt;percentage&gt;")}} باشد. مقادیر منفی معتبر نیستند.
+The `padding` property may be specified using one, two, three, or four values. Each value is a {{cssxref("&lt;length&gt;")}} or a {{cssxref("&lt;percentage&gt;")}}. Negative values are invalid.
 
-- اگر **یک** مقدار داده شود، همان مقدار `padding` به **هر چهار طرف** اعمال می‌شود.
-- اگر **دو** مقدار داده شود، مقدار اول برای **بالا و پایین** و مقدار دوم برای **چپ و راست** استفاده می‌شود.
-- اگر **سه** مقدار داده شود، مقدار اول برای **بالا**، مقدار دوم برای **چپ و راست** و مقدار سوم برای **پایین** به‌کار می‌رود.
-- اگر **چهار** مقدار داده شود، ترتیب آن **بالا**، **راست**، **پایین** و **چپ** (جهت عقربه‌های ساعت) خواهد بود.
+- When **one** value is specified, it applies the same padding to **all four sides**.
+- When **two** values are specified, the first padding applies to the **top and bottom**, the second to the **left and right**.
+- When **three** values are specified, the first padding applies to the **top**, the second to the **right and left**, the third to the **bottom**.
+- When **four** values are specified, the paddings apply to the **top**, **right**, **bottom**, and **left** in that order (clockwise).
 
-### مقادیر
+### Values
 
 - {{cssxref("&lt;length&gt;")}}
-  - : اندازهٔ padding به‌صورت یک مقدار ثابت.
+  - : The size of the padding as a fixed value.
 - {{cssxref("&lt;percentage&gt;")}}
-  - : اندازهٔ padding به‌صورت درصدی نسبت به اندازهٔ درون‌خطی (inline size) [بلوک شامل‌شونده](/en-US/docs/Web/CSS/Guides/Display/Containing_block) (در زبان‌های افقی همان `width` است که توسط {{cssxref("writing-mode")}} تعریف می‌شود).
+  - : The size of the padding as a percentage, relative to the inline size (_width_ in a horizontal language, defined by {{cssxref("writing-mode")}}) of the [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block).
 
-## مثال‌ها
+## Formal definition
 
-### تنظیم padding با پیکسل
+{{cssinfo}}
+
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Setting padding with pixels
 
 #### HTML
 
 ```html
-<h4>این عنصر padding متوسطی دارد.</h4>
-<h3>padding در این عنصر بسیار زیاد است!</h3>
+<h4>This element has moderate padding.</h4>
+<h3>The padding is huge in this element!</h3>
 ```
 
 #### CSS
@@ -84,32 +144,42 @@ h3 {
 }
 ```
 
-### تنظیم padding با پیکسل و درصد
+#### Result
+
+{{EmbedLiveSample('Setting_padding_with_pixels', '100%', 300)}}
+
+### Setting padding with pixels and percentages
 
 ```css
-padding: 5%; /* همه طرف: ۵٪ padding */
+padding: 5%; /* All sides: 5% padding */
 
-padding: 10px; /* همه طرف: ۱۰px padding */
+padding: 10px; /* All sides: 10px padding */
 
-padding: 10px 20px; /* بالا و پایین: ۱۰px padding */
-/* چپ و راست: ۲۰px padding   */
+padding: 10px 20px; /* top and bottom: 10px padding */
+/* left and right: 20px padding */
 
-padding: 10px 3% 20px; /* بالا:               ۱۰px padding */
-/* چپ و راست:         ۳٪ padding   */
-/* پایین:             ۲۰px padding */
-```
+padding: 10px 3% 20px; /* top:            10px padding */
+/* left and right: 3% padding   */
+/* bottom:         20px padding */
 
-```
 padding: 1em 3px 30px 5px; /* top:    1em padding  */
 /* right:  3px padding  */
 /* bottom: 30px padding */
 /* left:   5px padding  */
 ```
 
-## همچنین ببینید
+## Specifications
 
-- [`padding-top`](/en-US/docs/Web/CSS/padding-top)، [`padding-right`](/en-US/docs/Web/CSS/padding-right)، [`padding-bottom`](/en-US/docs/Web/CSS/padding-bottom)، و [`padding-left`](/en-US/docs/Web/CSS/padding-left)
-- [`padding-block-start`](/en-US/docs/Web/CSS/padding-block-start)، [`padding-block-end`](/en-US/docs/Web/CSS/padding-block-end)، [`padding-inline-start`](/en-US/docs/Web/CSS/padding-inline-start)، و [`padding-inline-end`](/en-US/docs/Web/CSS/padding-inline-end)
-- خلاصه‌نویسی‌های [`padding-block`](/en-US/docs/Web/CSS/padding-block) و [`padding-inline`](/en-US/docs/Web/CSS/padding-inline)
-- راهنمای [آشنایی با مدل جعبه‌ای CSS](/en-US/docs/Web/CSS/Guides/Box_model/Introduction)
-- ماژول [مدل جعبه‌ای CSS](/en-US/docs/Web/CSS/Guides/Box_model)
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- {{cssxref("padding-top")}}, {{cssxref("padding-right")}}, {{cssxref("padding-bottom")}}, and {{cssxref("padding-left")}}
+- {{cssxref("padding-block-start")}}, {{cssxref("padding-block-end")}}, {{cssxref("padding-inline-start")}}, and {{cssxref("padding-inline-end")}}
+- {{cssxref("padding-block")}} and {{cssxref("padding-inline")}} shorthands
+- [Introduction to the CSS box model](/en-US/docs/Web/CSS/Guides/Box_model/Introduction) guide
+- [CSS box model](/en-US/docs/Web/CSS/Guides/Box_model) module
