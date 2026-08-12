@@ -1,0 +1,41 @@
+---
+title: "CSSSkewY: CSSSkewY() constructor"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSSkewY/CSSSkewY"
+status: "needs-translation"
+---
+
+---
+title: "CSSSkewY: CSSSkewY() constructor"
+short-title: CSSSkewY()
+slug: Web/API/CSSSkewY/CSSSkewY
+page-type: web-api-constructor
+browser-compat: api.CSSSkewY.CSSSkewY
+---
+
+{{APIRef("CSS Typed Object Model API")}}{{AvailableInWorkers}}
+
+The **`CSSSkewY()`** constructor creates a new {{domxref("CSSSkewY")}} object that represents the {{cssxref("transform-function/skewY", "skewY()")}} value of the individual {{CSSXRef('transform')}} property in CSS.
+
+## Syntax
+
+```js-nolint
+new CSSSkewY(ay)
+```
+
+### Parameters
+
+- {{domxref('CSSSkewY.ay','ay')}}
+  - : A value for the `ay` angle of the {{domxref('CSSSkewY')}} object to be constructed.
+    This must be a {{domxref('CSSNumericValue')}}.
+
+## Examples
+
+To do
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
