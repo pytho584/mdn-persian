@@ -1,0 +1,31 @@
+---
+title: "CSSVariableReferenceValue: variable property"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSVariableReferenceValue/variable"
+status: "needs-translation"
+---
+
+---
+title: "CSSVariableReferenceValue: variable property"
+short-title: variable
+slug: Web/API/CSSVariableReferenceValue/variable
+page-type: web-api-instance-property
+browser-compat: api.CSSVariableReferenceValue.variable
+---
+
+{{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
+
+The **`variable`** property of the
+{{domxref("CSSVariableReferenceValue")}} interface returns the [custom property name](/en-US/docs/Web/CSS/Reference/Properties/--*) of the
+{{domxref("CSSVariableReferenceValue")}}.
+
+## Value
+
+A string beginning with `--` (that is, a [custom property name](/en-US/docs/Web/CSS/Reference/Properties/--*)).
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
