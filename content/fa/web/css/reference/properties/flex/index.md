@@ -1,47 +1,103 @@
 ---
 title: "flex CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-# `flex` CSS property
+---
+title: "`flex` CSS property"
+short-title: flex
+slug: Web/CSS/Reference/Properties/flex
+page-type: css-shorthand-property
+browser-compat: css.properties.flex
+sidebar: cssref
+---
 
-ویژگی **`flex`** یک [خصوصیت خلاصه‌شده](/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties) در CSS است که نحوهٔ رشد یا کوچک‌شدن یک flex item را برای پر کردن فضای موجود در flex container تعیین می‌کند.
+The **`flex`** [CSS](/en-US/docs/Web/CSS) [shorthand property](/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties) sets how a {{glossary("flex item")}} will grow or shrink to fit the space available in its flex container.
 
-## ویژگی‌های تشکیل‌دهنده
+{{InteractiveExample("CSS Demo: flex")}}
 
-این ویژگی خلاصه‌ای از خصوصیات زیر است:
+```css interactive-example-choice
+flex: 1;
+```
 
-- [`flex-grow`](/en-US/docs/Web/CSS/flex-grow)
-- [`flex-shrink`](/en-US/docs/Web/CSS/flex-shrink)
-- [`flex-basis`](/en-US/docs/Web/CSS/flex-basis)
+```css interactive-example-choice
+flex: 2;
+```
+
+```css interactive-example-choice
+flex: 1 30px;
+```
+
+```css interactive-example-choice
+flex: 1 1 100px;
+```
+
+```html interactive-example
+<section class="default-example" id="default-example">
+  <div class="transition-all" id="example-element">Change me</div>
+  <div>flex: 1</div>
+  <div>flex: 1</div>
+</section>
+```
+
+```css interactive-example
+.default-example {
+  border: 1px solid #c5c5c5;
+  width: auto;
+  max-height: 300px;
+  display: flex;
+}
+
+.default-example > div {
+  background-color: rgb(0 0 255 / 0.2);
+  border: 3px solid blue;
+  margin: 10px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+
+#example-element {
+  background-color: rgb(255 0 200 / 0.2);
+  border: 3px solid rebeccapurple;
+}
+```
+
+## Constituent properties
+
+This property is a shorthand for the following CSS properties:
+
+- {{cssxref("flex-grow")}}
+- {{cssxref("flex-shrink")}}
+- {{cssxref("flex-basis")}}
 
 ## Syntax
 
 ```css
-/* مقدار کلیدی */
-flex: none; /* معادل 0 0 auto */
+/* Keyword value */
+flex: none; /* 0 0 auto */
 
-/* یک مقدار، عدد بدون واحد: flex-grow
-   در این حالت flex-basis برابر با 0% می‌شود */
+/* One value, unitless number: flex-grow
+flex-basis is then equal to 0%. */
 flex: 2; /* 2 1 0% */
 
-/* یک مقدار، width/height: flex-basis */
+/* One value, width/height: flex-basis */
 flex: auto; /* 1 1 auto */
 flex: 10em; /* 1 1 10em */
 flex: 30%;
 flex: min-content;
 
-/* دو مقدار: flex-grow | flex-basis */
+/* Two values: flex-grow | flex-basis */
 flex: 1 30px; /* 1 1 30px */
 
-/* دو مقدار: flex-grow | flex-shrink */
+/* Two values: flex-grow | flex-shrink */
 flex: 2 2; /* 2 2 0% */
 
-/* سه مقدار: flex-grow | flex-shrink | flex-basis */
+/* Three values: flex-grow | flex-shrink | flex-basis */
 flex: 2 2 10%;
 
-/* مقادیر سراسری */
+/* Global values */
 flex: inherit;
 flex: initial; /* 0 1 auto */
 flex: revert;
@@ -49,45 +105,46 @@ flex: revert-layer;
 flex: unset;
 ```
 
-ویژگی `flex` را می‌توان با یک، دو یا سه مقدار مشخص کرد.
+The `flex` property may be specified using one, two, or three values.
 
-- **نحو تک‌مقداری:** مقدار باید یکی از موارد زیر باشد:
-  - یک مقدار معتبر برای `flex-grow`: در این صورت خلاصه به `flex: <flex-grow> 1 0%` گسترش می‌یابد.
-  - یک مقدار معتبر برای `flex-basis`: در این صورت خلاصه به `flex: 1 1 <flex-basis>` گسترش می‌یابد.
-  - کلیدواژهٔ `none` یا یکی از کلیدواژه‌های سراسری.
+- **One-value syntax:** the value must be one of:
+  - a valid value for {{cssxref("flex-grow")}}: then the shorthand expands to `flex: <flex-grow> 1 0%`.
+  - a valid value for {{cssxref("flex-basis")}}: then the shorthand expands to `flex: 1 1 <flex-basis>`.
+  - the keyword `none` or one of the global keywords.
 
-- **نحو دومقداری:**
-  - مقدار اول باید یک مقدار معتبر برای `flex-grow` باشد.
-  - مقدار دوم باید یکی از موارد زیر باشد:
-    - یک مقدار معتبر برای `flex-shrink`: در این صورت خلاصه به `flex: <flex-grow> <flex-shrink> 0%` گسترش می‌یابد.
-    - یک مقدار معتبر برای `flex-basis`: در این صورت خلاصه به `flex: <flex-grow> 1 <flex-basis>` گسترش می‌یابد.
+- **Two-value syntax:**
+  - The first value must be a valid value for {{cssxref("flex-grow")}}.
 
-- **نحو سه‌مقداری:** مقادیر باید به ترتیب زیر باشند:
-  1. یک مقدار معتبر برای `flex-grow`.
-  2. یک مقدار معتبر برای `flex-shrink`.
-  3. یک مقدار معتبر برای `flex-basis`.
+  - The second value must be one of:
+    - a valid value for {{cssxref("flex-shrink")}}: then the shorthand expands to `flex: <flex-grow> <flex-shrink> 0%`.
+    - a valid value for {{cssxref("flex-basis")}}: then the shorthand expands to `flex: <flex-grow> 1 <flex-basis>`.
 
-### مقادیر
+- **Three-value syntax:** the values must be in the following order:
+  1. a valid value for {{cssxref("flex-grow")}}.
+  2. a valid value for {{cssxref("flex-shrink")}}.
+  3. a valid value for {{cssxref("flex-basis")}}.
+
+### Values
 
 - `<'flex-grow'>`
-  - : مقدار `flex-grow` را برای flex item تعیین می‌کند. مقادیر منفی نامعتبر هستند. در صورت حذف، پیش‌فرض آن `1` می‌شود (مقدار اولیه `0` است).
+  - : Defines the {{cssxref("flex-grow")}} of the flex item. Negative values are considered invalid. Defaults to `1` when omitted. (initial is `0`)
 - `<'flex-shrink'>`
-  - : مقدار `flex-shrink` را برای flex item تعیین می‌کند. مقادیر منفی نامعتبر هستند. در صورت حذف، پیش‌فرض آن `1` می‌شود (مقدار اولیه `1` است).
+  - : Defines the {{cssxref("flex-shrink")}} of the flex item. Negative values are considered invalid. Defaults to `1` when omitted. (initial is `1`)
 - `<'flex-basis'>`
-  - : مقدار `flex-basis` را برای flex item تعیین می‌کند. در صورت حذف، پیش‌فرض آن `0%` می‌شود. مقدار اولیه `auto` است.
+  - : Defines the {{cssxref("flex-basis")}} of the flex item. Defaults to `0%` when omitted. The initial value is `auto`.
 - `none`
-  - : اندازه item بر اساس ویژگی‌های `width` و `height` خودش تعیین می‌شود. این item کاملاً غیرقابل انعطاف است: یعنی نسبت به flex container نه رشد می‌کند و نه کوچک می‌شود. این معادل تنظیم `flex: 0 0 auto` است.
+  - : The item is sized according to its `width` and `height` properties. It is fully inflexible: it neither shrinks nor grows in relation to the flex container. This is equivalent to setting `flex: 0 0 auto`.
 
-برای دستیابی به جلوه‌های رایج flexbox می‌توان از مقادیر زیر برای `flex` استفاده کرد:
+Commonly desired flexbox effects can be achieved using the following `flex` values:
 
-- `initial`: آیتم flex رشد نمی‌کند اما می‌تواند کوچک شود. این مقدار پیش‌فرض به `flex: 0 1 auto` بسط پیدا می‌کند. اندازه آیتم بر اساس ویژگی‌های `width` یا `height` و متناسب با `flex-direction` تعیین می‌شود. اگر فضای منفی در container وجود داشته باشد، آیتم تا حداقل اندازه خود جمع می‌شود تا درون container جا بگیرد، ولی برای جذب فضای مثبت اضافی رشد نخواهد کرد.
-- `auto`: آیتم flex هم می‌تواند رشد کند و هم کوچک شود. این مقدار به `flex: 1 1 auto` بسط پیدا می‌کند. اندازه آیتم طبق ویژگی‌های `width` یا `height` و با توجه به `flex-direction` است، اما فضای مثبت خالی درون container را پر می‌کند و در صورت فضای منفی تا حداقل اندازه خود جمع می‌شود. آیتم flex کاملاً انعطاف‌پذیر است.
-- `none`: آیتم flex نه رشد می‌کند و نه کوچک می‌شود. این مقدار به `flex: 0 0 auto` بسط پیدا می‌کند. اندازه آیتم بر اساس ویژگی‌های `width` یا `height` و جهت container تعیین می‌شود. آیتم flex کاملاً غیرقابل انعطاف است.
-- `flex: <number [1,∞]>`: اندازه اصلی آیتم flex متناسب با عدد تنظیم‌شده خواهد بود. این مقدار به `flex: <number> 1 0%` بسط پیدا می‌کند و `flex-basis` را روی `0%` قرار داده و آیتم را انعطاف‌پذیر می‌کند. آیتم حداقل به اندازه حداقل ابعاد خود بوده و فضای مثبت container به نسبت ضرایب رشد این آیتم و آیتم‌های هم‌خواهر (sibling) توزیع می‌شود. اگر تمام آیتم‌ها از این الگو استفاده کنند، اندازه همگی متناسب با مقادیر عددی آن‌ها خواهد بود.
+- `initial`: Flex item doesn't grow but can shrink. This default value expands to `flex: 0 1 auto`. The item is sized according to its `width` or `height` properties, depending on the `flex-direction`. If there is negative available space, the item will shrink to its minimum size to fit within the container but will not grow to absorb any positive space available in the flex container.
+- `auto`: Flex item can grow and shrink. This value expands to `flex: 1 1 auto`. The item is sized according to its `width` or `height` properties, depending on the `flex-direction`, but grows to absorb available positive space in the flex container or shrink down to its minimum size to fit the container in the case of negative space. The flex item is fully flexible.
+- `none`: The flex item neither grows nor shrinks. This value expands to `flex: 0 0 auto`. The item is sized according to its `width` or `height` properties, depending on the direction of the flex container. The flex item is fully inflexible.
+- `flex: <number [1,∞]>`: The flex item's main size will be proportional to the number set. This value expands to `flex: <number> 1 0%`. This sets the `flex-basis` to `0%` and makes the flex item flexible. The item will be at least as wide or tall as its minimum size, with the container's positive available space being proportionally distributed based on the growth factors of this item and its sibling flex items. If all the flex items use this pattern, all will be sized in proportion to their numeric values.
 
-## توضیحات
+## Description
 
-در بیشتر موارد، باید مقدار `flex` را یکی از مقادیر زیر قرار دهید: `auto`، `initial`، `none` یا یک عدد مثبت بدون واحد. برای مشاهده تأثیر این مقادیر می‌توانید containerهای flex زیر را با تغییر اندازه امتحان کنید:
+For most purposes, authors should set `flex` to one of the following values: `auto`, `initial`, `none`, or a positive unitless number. To see the effect of these values, try resizing the flex containers below:
 
 ```html hidden
 <div class="flex-container">
@@ -170,20 +227,30 @@ flex: unset;
 }
 ```
 
-به‌طور پیش‌فرض آیتم‌های flex کمتر از اندازه `min-content` خود جمع نمی‌شوند. برای تغییر این رفتار، ویژگی `min-width` یا `min-height` را برای آیتم تنظیم کنید.
+{{EmbedLiveSample("Description", 1200, 400)}}
 
-## مثال‌ها
+By default flex items don't shrink below their {{cssxref("min-content")}} size. To change this, set the item's {{cssxref("min-width")}} or {{cssxref("min-height")}}.
 
-### تنظیم flex: auto
+## Formal definition
 
-این مثال نشان می‌دهد که چگونه یک آیتم flex با `flex: auto` رشد می‌کند تا فضای خالی درون container را پر کند.
+{{cssinfo}}
+
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Setting flex: auto
+
+This example shows how a flex item with `flex: auto` grows to absorb any free space in the container.
 
 #### HTML
 
 ```html
 <div id="flex-container">
   <div id="flex-auto">
-    flex: auto (برای افزودن/حذف آیتم `flex: initial` کلیک کنید)
+    flex: auto (click to remove/add the `flex: initial` box)
   </div>
   <div id="default">flex: initial</div>
 </div>
@@ -229,23 +296,29 @@ flexAutoItem.addEventListener("click", () => {
 });
 ```
 
-#### نتیجه
+#### Result
 
-فلاکس کانتینر شامل دو آیتم flex است:
+The flex container contains two flex items:
 
-- آیتم `#flex-auto` دارای مقدار `flex` برابر با `auto` است. مقدار `auto` معادل `1 1 auto` می‌شود؛ یعنی این آیتم اجازهٔ بزرگ‌تر شدن دارد.
-- آیتم `#default` هیچ مقداری برای `flex` ندارد، بنابراین به مقدار `initial` پیش‌فرض می‌کند. مقدار `initial` معادل `0 1 auto` است؛ یعنی این آیتم اجازهٔ بزرگ‌تر شدن ندارد.
+- The `#flex-auto` item has a `flex` value of `auto`. The `auto` value expands to `1 1 auto`, i.e., the item is allowed to expand.
+- The `#default` item has no `flex` value set so it defaults to the `initial` value. The `initial` value expands to `0 1 auto`, i.e., the item is not allowed to expand.
 
-آیتم `#default` فقط به اندازهٔ عرض مورد نیاز خود فضا می‌گیرد و فضای اضافه‌تری را اشغال نمی‌کند. تمام فضای باقی‌مانده توسط آیتم `#flex-auto` گرفته می‌شود.
+The `#default` item takes up as much space as its width requires, but does not expand to take up any more space. All the remaining space is taken up by the `#flex-auto` item.
 
-وقتی روی آیتم `#flex-auto` کلیک می‌کنید، ویژگی `display` آیتم `#default` را به `none` تنظیم می‌کنیم و آن را از صفحه حذف می‌کنیم. سپس آیتم `#flex-auto` کل فضای در دسترس کانتینر را پر می‌کند. با کلیک دوباره روی `#flex-auto`، آیتم `#default` دوباره به صفحه اضافه می‌شود.
+When you click the `#flex-auto` item, we set the `#default` item's {{cssxref("display")}} property to `none`, removing it from the layout. The `#flex-auto` item then expands to occupy all the available space in the container. Clicking the `#flex-auto` item again adds the `#default` item back to the container.
 
-## مشخصات فنی
+{{EmbedLiveSample('Setting_flex_auto','100%','150')}}
 
-## سازگاری با مرورگرها
+## Specifications
 
-## همچنین ببینید
+{{Specifications}}
 
-- [مفاهیم پایه‌ای flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts)
-- [کنترل نسبت‌های آیتم‌های flex در امتداد محور اصلی](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Controlling_flex_item_ratios)
-- [ماژول چیدمان جعبه انعطاف‌پذیر CSS](/en-US/docs/Web/CSS/Guides/Flexible_box_layout)
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- [Basic concepts of flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts)
+- [Controlling ratios of flex items along the main axis](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Controlling_flex_item_ratios)
+- [CSS flexible box layout](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) module
