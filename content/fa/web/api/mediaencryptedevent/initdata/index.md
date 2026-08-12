@@ -1,0 +1,29 @@
+---
+title: "MediaEncryptedEvent: initData property"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaEncryptedEvent/initData"
+status: "needs-translation"
+---
+
+---
+title: "MediaEncryptedEvent: initData property"
+short-title: initData
+slug: Web/API/MediaEncryptedEvent/initData
+page-type: web-api-instance-property
+browser-compat: api.MediaEncryptedEvent.initData
+---
+
+{{APIRef("Encrypted Media Extensions")}}
+
+The read-only **`initData`** property of the {{domxref("MediaKeyMessageEvent")}} returns the initialization data contained in this event, if any.
+
+## Value
+
+An {{jsxref("ArrayBuffer")}} with the initialization data, or `null` if there are none.
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
