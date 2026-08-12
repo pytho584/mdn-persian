@@ -1,0 +1,83 @@
+---
+title: "RTCDtlsTransport: error event"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/RTCDtlsTransport/error_event"
+status: "needs-translation"
+---
+
+---
+title: "RTCDtlsTransport: error event"
+short-title: error
+slug: Web/API/RTCDtlsTransport/error_event
+page-type: web-api-event
+browser-compat: api.RTCDtlsTransport.error_event
+---
+
+{{APIRef("WebRTC")}}
+
+An {{domxref("RTCDtlsTransport")}} receives an `error` event when a transport-level error occurs on the {{domxref("RTCPeerConnection")}}.
+
+This event is not cancelable and does not bubble.
+
+## Syntax
+
+Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+
+```js-nolint
+addEventListener("error", (event) => { })
+
+onerror = (event) => { }
+```
+
+## Event type
+
+An {{domxref("RTCErrorEvent")}}. Inherits from {{domxref("Event")}}.
+
+{{InheritanceDiagram("RTCErrorEvent")}}
+
+## Description
+
+Transport-level errors will have one of the following values for the specified error's {{domxref("RTCError")}} property {{domxref("RTCError.errorDetail", "errorDetail")}}:
+
+- `dtls-failure`
+  - : The negotiation of the {{Glossary("DTLS")}} connection failed, or the connection was terminated with a fatal error. The error's {{domxref("DOMException.message", "message")}} contains details about the nature of the error. If a fatal error is _received_, the error object's {{domxref("RTCError.receivedAlert", "receivedAlert")}} property is set to the value of the DTLSL alert received. If, on the other hand, a fatal error was _sent_, the {{domxref("RTCError.sentAlert", "sentAlert")}} is set to the alert's value.
+- `fingerprint-failure`
+  - : The remote certificate for the {{domxref("RTCDtlsTransport")}} didn't match any of the fingerprints listed in the SDP. If the remote peer can't match the local certificate against the provided fingerprints, this error doesn't occur, though this situation may result instead in a `dtls-failure` error.
+
+## Examples
+
+### Basic usage
+
+Given an {{domxref("RTCPeerConnection")}}, `pc`, the following code handles a DTLS transport error:
+
+```js
+const dtlsTransport = pc.getSenders()[0].transport;
+
+dtlsTransport.addEventListener("error", (ev) => {
+  const err = ev.error;
+  // …
+});
+```
+
+The same code, using the `onerror` event handler property, looks like this:
+
+```js
+dtlsTransport.onerror = (ev) => {
+  const err = ev.error;
+  // …
+};
+```
+
+> [!NOTE]
+> Since `RTCError` is not one of the legacy errors, the value of {{domxref("DOMException.code", "code")}} is always 0.
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- [WebRTC API](/en-US/docs/Web/API/WebRTC_API)
