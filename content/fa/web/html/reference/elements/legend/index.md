@@ -1,14 +1,23 @@
 ---
 title: "<legend> HTML field set legend element"
 source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/legend"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-عنصر **`<legend>`** در [HTML](/en-US/docs/Web/HTML)، عنوانی برای محتوای عنصر والد خود یعنی `<fieldset>` ارائه می‌دهد.
+---
+title: "`<legend>` HTML field set legend element"
+short-title: <legend>
+slug: Web/HTML/Reference/Elements/legend
+page-type: html-element
+browser-compat: html.elements.legend
+sidebar: htmlsidebar
+---
 
-در [عناصر `<select>` قابل شخصی‌سازی](/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select)، عنصر `<legend>` به عنوان فرزند `<optgroup>` مجاز است تا برچسبی فراهم کند که هدف‌گیری و استایل‌دهی به آن آسان باشد. این برچسب جایگزین هر متنی می‌شود که در attribute به نام `label` عنصر `<optgroup>` تنظیم شده باشد و معنای یکسانی دارد.
+The **`<legend>`** [HTML](/en-US/docs/Web/HTML) element represents a caption for the content of its parent {{HTMLElement("fieldset")}}.
 
-## مثال تعاملی
+In [customizable `<select>` elements](/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select), the `<legend>` element is allowed as a child of `<optgroup>`, to provide a label that is easy to target and style. This replaces any text set in the `<optgroup>` element's `label` attribute, and it has the same semantics.
+
+{{InteractiveExample("HTML Demo: &lt;legend&gt;", "tabbed-standard")}}
 
 ```html interactive-example
 <fieldset>
@@ -37,63 +46,75 @@ input {
 }
 ```
 
-## ویژگی‌ها
+## Attributes
 
-این عنصر فقط شامل [ویژگی‌های سراسری](/en-US/docs/Web/HTML/Reference/Global_attributes) است.
+This element only includes the [global attributes](/en-US/docs/Web/HTML/Reference/Global_attributes).
 
-## مثال‌ها
+## Examples
 
-برای مثال‌های مربوط به `<legend>`، به عنصر `<form>` مراجعه کنید.
+See {{HTMLElement("form")}} for examples on `<legend>`.
 
-## خلاصه فنی
+## Technical summary
 
 <table class="properties">
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories">دسته‌بندی محتوا</a>
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories"
+          >Content categories</a
+        >
       </th>
-      <td>هیچ‌کدام</td>
+      <td>None.</td>
     </tr>
     <tr>
-      <th scope="row">محتوای مجاز</th>
+      <th scope="row">Permitted content</th>
       <td>
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content">محتوای عبارتی (Phrasing content)</a>
-        و
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements">عناصر heading</a>
-        (تگ‌های h1 تا h6).
+        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content"
+          >Phrasing content</a
+        >
+        and
+        <a href="/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements">headings</a>
+        (h1–h6 elements).
       </td>
     </tr>
     <tr>
-      <th scope="row">حذف تگ</th>
-      <td>هیچ‌کدام؛ هر دو تگ شروع و پایان الزامی هستند.</td>
+      <th scope="row">Tag omission</th>
+      <td>None, both the starting and ending tag are mandatory.</td>
     </tr>
     <tr>
-      <th scope="row">والدهای مجاز</th>
+      <th scope="row">Permitted parents</th>
       <td>
-        یک <code>&#x3C;fieldset></code> که اولین فرزند آن این
-        <code>&#x3C;legend></code> باشد. در
-        <a href="/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select">عناصر select قابل شخصی‌سازی</a>،
-        عنصر <code>&#x3C;legend></code> به عنوان فرزند <code>&#x3C;optgroup></code> مجاز است.
+        A {{HTMLElement("fieldset")}} whose first child is this
+        <code>&#x3C;legend></code> element. In <a href="/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select">customizable select elements</a>, a <code>&#x3C;legend></code> element is permitted as a child of {{htmlelement("optgroup")}} .
       </td>
     </tr>
     <tr>
-      <th scope="row">نقش ARIA ضمنی</th>
+      <th scope="row">Implicit ARIA role</th>
       <td>
-        <a href="https://w3c.github.io/html-aria/#dfn-no-corresponding-role">نقش متناظری ندارد</a>
+        <a href="https://w3c.github.io/html-aria/#dfn-no-corresponding-role"
+          >No corresponding role</a
+        >
       </td>
     </tr>
     <tr>
-      <th scope="row">نقش‌های ARIA مجاز</th>
-      <td>هیچ <code>role</code> مجاز نیست</td>
+      <th scope="row">Permitted ARIA roles</th>
+      <td>No <code>role</code> permitted</td>
     </tr>
     <tr>
-      <th scope="row">رابط DOM</th>
-      <td><code>HTMLLegendElement</code></td>
+      <th scope="row">DOM interface</th>
+      <td>{{domxref("HTMLLegendElement")}}</td>
     </tr>
   </tbody>
 </table>
 
-## همچنین ببینید
+## Specifications
 
-- [نقش ARIA: فرم](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/form_role)
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- [ARIA: Form role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/form_role)
