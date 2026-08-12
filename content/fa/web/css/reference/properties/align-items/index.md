@@ -1,34 +1,41 @@
 ---
 title: "align-items CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/align-items"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-# ویژگی `align-items` در CSS
+---
+title: "`align-items` CSS property"
+short-title: align-items
+slug: Web/CSS/Reference/Properties/align-items
+page-type: css-property
+browser-compat: css.properties.align-items
+sidebar: cssref
+---
 
-ویژگی **`align-items`** در CSS مقدار `align-self` را برای تمام فرزندان مستقیم به‌صورت گروهی تنظیم می‌کند. در flexbox، این ویژگی تراز آیتم‌ها را در امتداد cross axis کنترل می‌کند. در grid layout، تراز آیتم‌ها را در امتداد block axis داخل grid area مربوطه کنترل می‌کند.
+The [CSS](/en-US/docs/Web/CSS) **`align-items`** property sets the {{cssxref("align-self")}} value on all direct children as a group. In flexbox, it controls the alignment of items on the {{glossary("cross axis")}}. In grid layout, it controls the alignment of items on the block axis within their {{glossary("grid areas")}}.
 
-## نمونه تعاملی
+The interactive example below uses grid layout to demonstrate some of the values of this property.
 
-نمونه تعاملی زیر با استفاده از grid layout برخی از مقدارهای این ویژگی را نشان می‌دهد.
+{{InteractiveExample("CSS Demo: align-items")}}
 
-```css
+```css interactive-example-choice
 align-items: stretch;
 ```
 
-```css
+```css interactive-example-choice
 align-items: center;
 ```
 
-```css
+```css interactive-example-choice
 align-items: start;
 ```
 
-```css
+```css interactive-example-choice
 align-items: end;
 ```
 
-```html
+```html interactive-example
 <section class="default-example" id="default-example">
   <div class="example-container">
     <div class="transition-all" id="example-element">
@@ -40,7 +47,7 @@ align-items: end;
 </section>
 ```
 
-```css
+```css interactive-example
 #example-element {
   border: 1px solid #c5c5c5;
   display: grid;
@@ -56,15 +63,15 @@ align-items: end;
 }
 ```
 
-## نحو (Syntax)
+## Syntax
 
 ```css
-/* کلیدواژه‌های پایه */
+/* Basic keywords */
 align-items: normal;
 align-items: stretch;
 
-/* تراز موقعیتی */
-/* align-items مقادیر left و right را نمی‌پذیرد */
+/* Positional alignment */
+/* align-items does not take left and right values */
 align-items: center;
 align-items: start;
 align-items: end;
@@ -74,16 +81,16 @@ align-items: self-start;
 align-items: self-end;
 align-items: anchor-center;
 
-/* تراز مبتنی بر baseline */
+/* Baseline alignment */
 align-items: baseline;
 align-items: first baseline;
 align-items: last baseline;
 
-/* تراز سرریز (فقط برای تراز موقعیتی) */
+/* Overflow alignment (for positional alignment only) */
 align-items: safe center;
 align-items: unsafe center;
 
-/* مقادیر سراسری */
+/* Global values */
 align-items: inherit;
 align-items: initial;
 align-items: revert;
@@ -91,63 +98,71 @@ align-items: revert-layer;
 align-items: unset;
 ```
 
-## مقادیر
+### Values
 
-این ویژگی یک یا دو کلیدواژه از موارد زیر را می‌پذیرد:
+This property is specified as one or two of the following keyword values:
 
 - `normal`
-  - : تأثیر این کلیدواژه به حالت چیدمانی که در آن هستیم بستگی دارد:
-    - در چیدمان‌های با موقعیت‌دهی مطلق (absolutely-positioned)، این کلیدواژه روی جعبه‌های مطلق replaced مانند `start` عمل می‌کند و روی *تمام جعبه‌های مطلق دیگر* مانند `stretch`.
-    - در موقعیت استاتیک چیدمان‌های با موقعیت‌دهی مطلق، مانند `stretch` عمل می‌کند.
-    - روی flex items، مانند `stretch` عمل می‌کند.
-    - روی grid items، رفتاری شبیه `stretch` دارد، به‌جز جعبه‌هایی که دارای نسبت ابعاد (aspect ratio) یا اندازه ذاتی هستند، که در آن‌ها مانند `start` عمل می‌کند.
-    - این ویژگی روی جعبه‌های سطح block و سلول‌های جدول اعمال نمی‌شود.
+  - : The effect of this keyword is dependent of the layout mode we are in:
+    - In absolutely-positioned layouts, the keyword behaves like `start` on _replaced_ absolutely-positioned boxes, and as `stretch` on _all other_ absolutely-positioned boxes.
+    - In static position of absolutely-positioned layouts, the keyword behaves as `stretch`.
+    - For flex items, the keyword behaves as `stretch`.
+    - For grid items, this keyword leads to a behavior similar to the one of `stretch`, except for boxes with an {{glossary("aspect ratio")}} or an intrinsic size where it behaves like `start`.
+    - The property doesn't apply to block-level boxes, and to table cells.
 
 - `center`
-  - : جعبه‌های margin مربوط به flex items در امتداد cross axis در مرکز خط قرار می‌گیرند. اگر اندازه عرضی یک آیتم از flex container بزرگ‌تر باشد، در هر دو جهت به‌طور مساوی سرریز می‌شود.
+  - : The flex items' margin boxes are centered within the line on the cross-axis. If the cross-size of an item is larger than the flex container, it will overflow equally in both directions.
 
 - `start`
-  - : آیتم‌ها به‌صورت چسبیده به لبه شروع محفظه ترازبندی (alignment container) در محور مناسب بسته‌بندی می‌شوند.
+  - : The items are packed flush to each other toward the start edge of the alignment container in the appropriate axis.
 
 - `end`
-  - : آیتم‌ها به‌صورت چسبیده به لبه پایان محفظه ترازبندی در محور مناسب بسته‌بندی می‌شوند.
+  - : The items are packed flush to each other toward the end edge of the alignment container in the appropriate axis.
 
 - `self-start`
-  - : آیتم‌ها به لبه شروع محفظه ترازبندی – که همان سمت شروع خود آیتم است – در محور مناسب چسبیده می‌شوند.
+  - : The items are packed flush to the edge of the alignment container's start side of the item, in the appropriate axis.
 
 - `self-end`
-  - : آیتم‌ها به لبه پایان محفظه ترازبندی – که همان سمت پایان خود آیتم است – در محور مناسب چسبیده می‌شوند.
+  - : The items are packed flush to the edge of the alignment container's end side of the item, in the appropriate axis.
 
 - `baseline`, `first baseline`, `last baseline`
-  - : همهٔ آیتم‌های flex به‌گونه‌ای تراز می‌شوند که [flex container baselines](https://drafts.csswg.org/css-flexbox-1/#flex-baselines) آن‌ها هم‌راستا شود. آیتمی که بیشترین فاصله را بین لبهٔ margin سمت cross-start و خط پایهٔ خود دارد، به لبهٔ cross-start خط می‌چسبد.
+  - : All flex items are aligned such that their [flex container baselines](https://drafts.csswg.org/css-flexbox-1/#flex-baselines) align. The item with the largest distance between its cross-start margin edge and its baseline is flushed with the cross-start edge of the line.
 
 - `stretch`
-  - : اگر اندازهٔ cross-size آیتم `auto` باشد، اندازهٔ استفاده‌شده به اندازهٔ طولی تنظیم می‌شود که آیتم را تا حد ممکن به پر کردن container نزدیک کند، با درنظرگرفتن محدودیت‌های عرض و ارتفاع آیتم. اگر آیتم اندازه‌ای غیر از auto داشته باشد، این مقدار به `flex-start` بازمی‌گردد و اگر مقدار {{cssxref("align-content")}} کانتینر `first baseline` (یا `baseline`) یا `last baseline` باشد، به `self-start` یا `self-end` تغییر می‌کند.
+  - : If the item's cross-size is `auto`, the used size is set to the length necessary to be as close to filling the container as possible, respecting the item's width and height limits. If the item is not auto-sized, this value falls back to `flex-start`, and to `self-start` or `self-end` if the container's {{cssxref("align-content")}} is `first baseline` (or `baseline`) or `last baseline`.
 
 - `anchor-center`
-  - : در مورد المان‌های [anchor-positioned](/en-US/docs/Web/CSS/Guides/Anchor_positioning)، آیتم‌ها را در جهت block نسبت به مرکز المان anchor مرتبط تراز می‌کند. به [Centering on the anchor using `anchor-center`](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using#centering_on_the_anchor_using_anchor-center) مراجعه کنید.
+  - : In the case of [anchor-positioned](/en-US/docs/Web/CSS/Guides/Anchor_positioning) elements, aligns the items to the center of the associated anchor element in the block direction. See [Centering on the anchor using `anchor-center`](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using#centering_on_the_anchor_using_anchor-center).
 
 - `safe`
-  - : همراه با یک کلمهٔ کلیدی تراز استفاده می‌شود. اگر کلمهٔ کلیدی انتخاب‌شده باعث سرریز آیتم از alignment container شود و منجر به از دست رفتن داده گردد، آیتم به‌جای آن طوری تراز می‌شود که گویی حالت تراز `start` انتخاب شده است.
+  - : Used alongside an alignment keyword. If the chosen keyword means that the item overflows the alignment container causing data loss, the item is instead aligned as if the alignment mode were `start`.
 
 - `unsafe`
-  - : همراه با یک کلمهٔ کلیدی تراز استفاده می‌شود. صرف‌نظر از اندازه‌های نسبی آیتم و alignment container و اینکه سرریز منجر به از دست رفتن داده بشود یا نشود، مقدار تراز داده‌شده اعمال می‌شود.
+  - : Used alongside an alignment keyword. Regardless of the relative sizes of the item and alignment container and whether overflow which causes data loss might happen, the given alignment value is honored.
 
-همچنین دو مقدار دیگر که برای flexbox تعریف شده و مبتنی بر مفاهیم [flex model axes](/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox#the_flex_model) هستند، در چیدمان‌های grid نیز کار می‌کنند:
+There are also two values that were defined for flexbox, as they are base on [flex model axes](/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox#the_flex_model) concepts, that work in grid layouts as well:
 
 - `flex-start`
-  - : فقط در چیدمان flex استفاده می‌شود؛ آیتم‌های flex را به سمت main-start یا cross-start کانتینر flex می‌چسباند. وقتی خارج از یک بستر قالب‌بندی flex استفاده شود، این مقدار مانند `start` رفتار می‌کند.
+  - : Used in flex layout only, aligns the flex items flush against the flex container's main-start or cross-start side. When used outside of a flex formatting context, this value behaves as `start`.
 
 - `flex-end`
-  - : فقط در چیدمان flex استفاده می‌شود؛ آیتم‌های flex را به سمت main-end یا cross-end کانتینر flex می‌چسباند. وقتی خارج از یک بستر قالب‌بندی flex استفاده شود، این مقدار مانند `end` رفتار می‌کند.
+  - : Used in flex layout only, aligns the flex items flush against the flex container's main-end or cross-end side. When used outside of a flex formatting context, this value behaves as `end`.
+
+## Formal definition
+
+{{CSSInfo}}
+
+## Formal syntax
+
+{{csssyntax}}
 
 ## Examples
 
-در این مثال یک container با شش فرزند داریم. یک منوی کشویی {{htmlelement("select")}} امکان تغییر {{cssxref("display")}} کانتینر را بین `grid` و `flex` فراهم می‌کند. یک منوی دوم نیز امکان تغییر مقدار ویژگی `align-items` کانتینر را می‌دهد.
+In this example we have a container with six children. A {{htmlelement("select")}} dropdown menu enables toggling the {{cssxref("display")}} of the container between `grid` and `flex`. A second menu enables changing the value of the container's `align-items` property.
 
 ### CSS
 
-ظاهر container و آیتم‌ها را طوری تعریف کرده‌ایم که مطمئن شویم دو سطر یا ستون آیتم داریم. دو کلاس `flex.` و `grid.` تعریف شده‌اند که با جاوااسکریپت به container اعمال می‌شوند. این کلاس‌ها مقدار {{cssxref("display")}} کانتینر را تنظیم کرده و رنگ پس‌زمینه و حاشیهٔ آن را تغییر می‌دهند تا یک نشانهٔ اضافی برای تغییر چیدمان فراهم شود. هر شش آیتم flex دارای رنگ پس‌زمینهٔ متفاوتی هستند؛ آیتم چهارم دو خطی است و آیتم ششم اندازهٔ فونت بزرگ‌تری دارد.
+We style a the container and items in a manner that ensures we have two lines or rows or items. We defined `.flex` and `.grid` classes, which will be applied to the container with JavaScript. They set the {{cssxref("display")}} value of the container, and change its background and border colors providing an additional indicator that the layout has changed. The six flex items each have a different background color, with the 4th item being two lines long and the 6th item having an enlarged font.
 
 ```css
 .flex,
@@ -213,9 +228,7 @@ select {
 .row {
   margin-top: 10px;
 }
-```
 
-```css
 div > div {
   box-sizing: border-box;
   border: 2px solid white;
@@ -228,7 +241,7 @@ div > div {
 
 ### HTML
 
-ما یک container از نوع {{htmlelement("div")}} با شش فرزند `<div>` تو در تو قرار داده‌ایم. کد HTML مربوط به فرم و JavaScript که کلاس container را تغییر می‌دهد، به‌خاطر خلاصه‌سازی مخفی شده‌اند.
+We include a container {{htmlelement("div")}} with six nested `<div>` children. The HTML for the form and the JavaScript that changes the container's class have been hidden for the sake of brevity.
 
 ```html
 <div id="container" class="flex">
@@ -296,25 +309,27 @@ display.addEventListener("change", (evt) => {
 });
 ```
 
-### نتیجه
+### Result
 
-## مشخصات
+{{EmbedLiveSample("Examples", "260", "290")}}
+
+## Specifications
 
 {{Specifications}}
 
-## سازگاری مرورگرها
+## Browser compatibility
 
 {{Compat}}
 
-## همچنین ببینید
+## See also
 
 - {{cssxref("align-self")}}
 - {{cssxref("align-content")}}
 - {{cssxref("justify-items")}}
-- {{cssxref("place-items")}} (کوتاه‌نویسی)
-- [مفاهیم پایه‌ای flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts)
-- [ترازبندی آیتم‌ها در یک flex container](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Aligning_items)
-- [ترازبندی جعبه‌ها در grid layout](/en-US/docs/Web/CSS/Guides/Box_alignment/In_grid_layout)
-- [ماژول CSS box alignment](/en-US/docs/Web/CSS/Guides/Box_alignment)
-- [ماژول CSS flexible box layout](/en-US/docs/Web/CSS/Guides/Flexible_box_layout)
-- [ماژول CSS grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout)
+- {{cssxref("place-items")}} shorthand
+- [Basic concepts of flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts)
+- [Aligning items in a flex container](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Aligning_items)
+- [Box alignment in grid layout](/en-US/docs/Web/CSS/Guides/Box_alignment/In_grid_layout)
+- [CSS box alignment](/en-US/docs/Web/CSS/Guides/Box_alignment) module
+- [CSS flexible box layout](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) module
+- [CSS grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout) module
