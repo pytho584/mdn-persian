@@ -1,25 +1,27 @@
 ---
-title: "<time> HTML time (date) element"
-source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/time"
-translated_by: "n8n + AI"
+title: <time> HTML time (date) element
+source: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/time
+translated_by: n8n + AI
 ---
 
-المان **`<time>`** یک [HTML](/en-US/docs/Web/HTML) است که یک بازهٔ زمانی مشخص را نمایش می‌دهد. این المان می‌تواند شامل ویژگی `datetime` باشد تا تاریخ را به فرمت قابل‌خواندن توسط ماشین تبدیل کند؛ این کار نتایج بهتر در موتورهای جستجو و امکانات سفارشی مانند یادآورها را ممکن می‌سازد.
+# \<time> HTML time (date) element
+
+المان **`<time>`** یک [HTML](../../../../../../../en-US/docs/Web/HTML/) است که یک بازهٔ زمانی مشخص را نمایش می‌دهد. این المان می‌تواند شامل ویژگی `datetime` باشد تا تاریخ را به فرمت قابل‌خواندن توسط ماشین تبدیل کند؛ این کار نتایج بهتر در موتورهای جستجو و امکانات سفارشی مانند یادآورها را ممکن می‌سازد.
 
 این المان می‌تواند یکی از موارد زیر را نمایش دهد:
 
-- یک زمان در ساعت ۲۴ ساعته.
-- یک تاریخ دقیق در [تقویم میلادی](https://en.wikipedia.org/wiki/Gregorian_calendar) (به‌همراه ساعت و اطلاعات منطقهٔ زمانی به‌صورت اختیاری).
-- یک [مدت‌زمان معتبر](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-duration-string).
+* یک زمان در ساعت ۲۴ ساعته.
+* یک تاریخ دقیق در [تقویم میلادی](https://en.wikipedia.org/wiki/Gregorian_calendar) (به‌همراه ساعت و اطلاعات منطقهٔ زمانی به‌صورت اختیاری).
+* یک [مدت‌زمان معتبر](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-duration-string).
 
-## ویژگی‌ها
+### ویژگی‌ها
 
-همانند همهٔ المان‌های HTML، این المان از [ویژگی‌های سراسری](/en-US/docs/Web/HTML/Reference/Global_attributes) پشتیبانی می‌کند.
+همانند همهٔ المان‌های HTML، این المان از [ویژگی‌های سراسری](../../../../../../../en-US/docs/Web/HTML/Reference/Global_attributes/) پشتیبانی می‌کند.
 
-- `datetime`
-  - : این ویژگی زمان و/یا تاریخ المان را نشان می‌دهد و باید در یکی از قالب‌هایی باشد که در ادامه توضیح داده شده است.
+* `datetime`
+  * : این ویژگی زمان و/یا تاریخ المان را نشان می‌دهد و باید در یکی از قالب‌هایی باشد که در ادامه توضیح داده شده است.
 
-## نکات استفاده
+### نکات استفاده
 
 این المان برای نمایش تاریخ و زمان در قالبی قابل‌خواندن برای ماشین است. به‌عنوان مثال، می‌تواند به عامل کاربر (user agent) کمک کند که افزودن رویداد به تقویم کاربر را پیشنهاد دهد.
 
@@ -27,34 +29,34 @@ translated_by: "n8n + AI"
 
 مقدار **datetime** (مقدار قابل‌خواندن توسط ماشین datetime) همان مقدار ویژگی `datetime` المان است و باید در قالب صحیح باشد (به زیر مراجعه کنید). اگر المان ویژگی `datetime` را نداشته باشد، **نباید هیچ المان فرزندی داشته باشد** و مقدار datetime محتوای متنی فرزند المان است.
 
-### مقادیر datetime معتبر
+#### مقادیر datetime معتبر
 
-| توضیحات | میکروسینتکس | مثال‌ها |
-|---------|------------|----------|
-| رشته ماه معتبر | `*YYYY*-*MM*` | `2011-11`، `2013-05` |
-| رشته تاریخ معتبر | `*YYYY*-*MM*-*DD*` | `1887-12-01` |
-| رشته تاریخ بدون سال معتبر | `*MM*-*DD*` | `11-12` |
-| رشته زمان معتبر | `*HH*:*MM*`<br>`*HH*:*MM*:*SS*`<br>`*HH*:*MM*:*SS*.*mmm*` | `23:59`<br>`12:15:47`<br>`12:15:52.998` |
-| رشته تاریخ و زمان محلی معتبر | `*YYYY*-*MM*-*DD* *HH*:*MM*`<br>`*YYYY*-*MM*-*DD* *HH*:*MM*:*SS*`<br>`*YYYY*-*MM*-*DD* *HH*:*MM*:*SS*.*mmm*`<br>`*YYYY*-*MM*-*DD*T*HH*:*MM*`<br>`*YYYY*-*MM*-*DD*T*HH*:*MM*:*SS*`<br>`*YYYY*-*MM*-*DD*T*HH*:*MM*:*SS*.*mmm*` | `2013-12-25 11:12`<br>`1972-07-25 13:43:07`<br>`1941-03-15 07:06:23.678`<br>`2013-12-25T11:12`<br>`1972-07-25T13:43:07`<br>`1941-03-15T07:06:23.678` |
-| رشته افست منطقه زمانی معتبر | `Z`<br>`+*HHMM*`<br>`+*HH*:*MM*`<br>`-*HHMM*`<br>`-*HH*:*MM*` | `Z`<br>`+0200`<br>`+04:30`<br>`-0300`<br>`-08:00` |
-| رشته تاریخ و زمان جهانی معتبر | هر ترکیبی از یک رشته تاریخ و زمان محلی معتبر به‌همراه یک رشته افست منطقه زمانی معتبر | `2013-12-25 11:12+0200`<br>`1972-07-25 13:43:07+04:30`<br>`1941-03-15 07:06:23.678Z`<br>`2013-12-25T11:12-08:00` |
-| رشته هفته معتبر | `*YYYY*-W*WW*` | `2013-W46` |
-| چهار رقم یا بیشتر ASCII | `*YYYY*` | `2013`، `0001` |
-| رشته مدت زمان معتبر | `P*d*DT*h*H*m*M*s*S`<br>`P*d*DT*h*H*m*M*s*.*X*S`<br>`P*d*DT*h*H*m*M*s*.*XX*S`<br>`P*d*DT*h*H*m*M*s*.*XXX*S`<br>`PT*h*H*m*M*s*S`<br>`PT*h*H*m*M*s*.*X*S`<br>`PT*h*H*m*M*s*.*XX*S`<br>`PT*h*H*m*M*s*.*XXX*S`<br>`*w*w *d*d *h*h *m*m *s*s` | `P12DT7H12M13S`<br>`P12DT7H12M13.3S`<br>`P12DT7H12M13.45S`<br>`P12DT7H12M13.455S`<br>`PT7H12M13S`<br>`PT7H12M13.2S`<br>`PT7H12M13.56S`<br>`PT7H12M13.999S`<br>`7d 5h 24m 13s` |
+| توضیحات                       | میکروسینتکس                                                                                                                                                                                                                                                                                                                                        | مثال‌ها                                                                                                                                                                                                                                                                                 |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| رشته ماه معتبر                | `*YYYY*-*MM*`                                                                                                                                                                                                                                                                                                                                      | `2011-11`، `2013-05`                                                                                                                                                                                                                                                                    |
+| رشته تاریخ معتبر              | `*YYYY*-*MM*-*DD*`                                                                                                                                                                                                                                                                                                                                 | `1887-12-01`                                                                                                                                                                                                                                                                            |
+| رشته تاریخ بدون سال معتبر     | `*MM*-*DD*`                                                                                                                                                                                                                                                                                                                                        | `11-12`                                                                                                                                                                                                                                                                                 |
+| رشته زمان معتبر               | <p><code>*HH*:*MM*</code><br><code>*HH*:*MM*:*SS*</code><br><code>*HH*:*MM*:*SS*.*mmm*</code></p>                                                                                                                                                                                                                                                  | <p><code>23:59</code><br><code>12:15:47</code><br><code>12:15:52.998</code></p>                                                                                                                                                                                                         |
+| رشته تاریخ و زمان محلی معتبر  | <p><code>*YYYY*-*MM*-*DD* *HH*:*MM*</code><br><code>*YYYY*-*MM*-*DD* *HH*:*MM*:*SS*</code><br><code>*YYYY*-*MM*-*DD* *HH*:*MM*:*SS*.*mmm*</code><br><code>*YYYY*-*MM*-*DD*T*HH*:*MM*</code><br><code>*YYYY*-*MM*-*DD*T*HH*:*MM*:*SS*</code><br><code>*YYYY*-*MM*-*DD*T*HH*:*MM*:*SS*.*mmm*</code></p>                                              | <p><code>2013-12-25 11:12</code><br><code>1972-07-25 13:43:07</code><br><code>1941-03-15 07:06:23.678</code><br><code>2013-12-25T11:12</code><br><code>1972-07-25T13:43:07</code><br><code>1941-03-15T07:06:23.678</code></p>                                                           |
+| رشته افست منطقه زمانی معتبر   | <p><code>Z</code><br><code>+*HHMM*</code><br><code>+*HH*:*MM*</code><br><code>-*HHMM*</code><br><code>-*HH*:*MM*</code></p>                                                                                                                                                                                                                        | <p><code>Z</code><br><code>+0200</code><br><code>+04:30</code><br><code>-0300</code><br><code>-08:00</code></p>                                                                                                                                                                         |
+| رشته تاریخ و زمان جهانی معتبر | هر ترکیبی از یک رشته تاریخ و زمان محلی معتبر به‌همراه یک رشته افست منطقه زمانی معتبر                                                                                                                                                                                                                                                               | <p><code>2013-12-25 11:12+0200</code><br><code>1972-07-25 13:43:07+04:30</code><br><code>1941-03-15 07:06:23.678Z</code><br><code>2013-12-25T11:12-08:00</code></p>                                                                                                                     |
+| رشته هفته معتبر               | `*YYYY*-W*WW*`                                                                                                                                                                                                                                                                                                                                     | `2013-W46`                                                                                                                                                                                                                                                                              |
+| چهار رقم یا بیشتر ASCII       | `*YYYY*`                                                                                                                                                                                                                                                                                                                                           | `2013`، `0001`                                                                                                                                                                                                                                                                          |
+| رشته مدت زمان معتبر           | <p><code>P*d*DT*h*H*m*M*s*S</code><br><code>P*d*DT*h*H*m*M*s*.*X*S</code><br><code>P*d*DT*h*H*m*M*s*.*XX*S</code><br><code>P*d*DT*h*H*m*M*s*.*XXX*S</code><br><code>PT*h*H*m*M*s*S</code><br><code>PT*h*H*m*M*s*.*X*S</code><br><code>PT*h*H*m*M*s*.*XX*S</code><br><code>PT*h*H*m*M*s*.*XXX*S</code><br><code>*w*w *d*d *h*h *m*m *s*s</code></p> | <p><code>P12DT7H12M13S</code><br><code>P12DT7H12M13.3S</code><br><code>P12DT7H12M13.45S</code><br><code>P12DT7H12M13.455S</code><br><code>PT7H12M13S</code><br><code>PT7H12M13.2S</code><br><code>PT7H12M13.56S</code><br><code>PT7H12M13.999S</code><br><code>7d 5h 24m 13s</code></p> |
 
-## مثال‌ها
+### مثال‌ها
 
-### مثال پایه
+#### مثال پایه
 
-#### HTML
+**HTML**
 
 ```html
 <p>The concert starts at <time datetime="2018-07-07T20:00:00">20:00</time>.</p>
 ```
 
-### مثال `datetime`
+#### مثال `datetime`
 
-#### HTML
+**HTML**
 
 ```html
 <p>
@@ -62,50 +64,17 @@ translated_by: "n8n + AI"
 </p>
 ```
 
-## خلاصه فنی
+### خلاصه فنی
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories">دسته‌بندی محتوا</a>
-      </th>
-      <td>
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content">Flow content</a>,
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content">phrasing content</a>, palpable content.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">محتوای مجاز</th>
-      <td>
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content">Phrasing content</a>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">حذف تگ</th>
-      <td>هیچ؛ هم تگ شروع و هم تگ پایانی اجباری هستند.</td>
-    </tr>
-    <tr>
-      <th scope="row">والدهای مجاز</th>
-      <td>هر عنصری که <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content">phrasing content</a> را بپذیرد.</td>
-    </tr>
-    <tr>
-      <th scope="row">نقش ARIA ضمنی</th>
-      <td>
-        <code><a href="/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles#structural_roles_with_html_equivalents">time</a></code>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">نقش‌های ARIA مجاز</th>
-      <td>Any</td>
-    </tr>
-    <tr>
-      <th scope="row">رابط DOM</th>
-      <td><code>HTMLTimeElement</code></td>
-    </tr>
-  </tbody>
-</table>
+| [دسته‌بندی محتوا](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/) | [Flow content](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/#flow_content), [phrasing content](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/#phrasing_content), palpable content. |
+| -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| محتوای مجاز                                                                            | [Phrasing content](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/#phrasing_content).                                                                                                                     |
+| حذف تگ                                                                                 | هیچ؛ هم تگ شروع و هم تگ پایانی اجباری هستند.                                                                                                                                                                                  |
+| والدهای مجاز                                                                           | هر عنصری که [phrasing content](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/#phrasing_content) را بپذیرد.                                                                                               |
+| نقش ARIA ضمنی                                                                          | [`time`](../../../../../../../en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles/#structural_roles_with_html_equivalents)                                                                                     |
+| نقش‌های ARIA مجاز                                                                      | Any                                                                                                                                                                                                                           |
+| رابط DOM                                                                               | `HTMLTimeElement`                                                                                                                                                                                                             |
 
-## همچنین ببینید
+### همچنین ببینید
 
-- عنصر `<data>` که برای نمایش سایر نوع مقادیر به کار می‌رود.
+* عنصر `<data>` که برای نمایش سایر نوع مقادیر به کار می‌رود.

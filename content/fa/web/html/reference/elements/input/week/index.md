@@ -1,12 +1,15 @@
 ---
-title: "<input type=\"week\"> HTML attribute value"
-source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/week"
-translated_by: "n8n + AI"
+title: <input type="week"> HTML attribute value
+source: >-
+  https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/week
+translated_by: n8n + AI
 ---
+
+# \<input type="week"> HTML attribute value
 
 **عنصر `<input>` از نوع `week`** فیلدهای ورودی ایجاد می‌کند که ورود سال و شماره هفته (بر اساس استاندارد ISO 8601) را آسان می‌سازد – یعنی هفته ۱ تا ۵۲ یا ۵۳.
 
-```html interactive-example
+```html
 <label for="camp-week">Choose a week in May or June:</label>
 
 <input
@@ -18,7 +21,7 @@ translated_by: "n8n + AI"
   required />
 ```
 
-```css interactive-example
+```css
 label {
   display: block;
   font:
@@ -34,13 +37,11 @@ label {
 
 ظاهر این کنترل در مرورگرهای مختلف متفاوت است. در حال حاضر پشتیبانی بین مرورگرها محدود است و تنها Chrome/Opera و Microsoft Edge از آن پشتیبانی می‌کنند. در مرورگرهای پشتیبان‌نشده، این کنترل به صورت خودکار به `<input type="text">` کاهش می‌یابد.
 
-![تصویری از یک input با متن 'week 01, 2017'. پس‌زمینه 2017 مانند حلقه فوکوس آبی است. سه آیکون در input وجود دارد: x یا پاک کردن، یک spinner با فلش‌های کوچک بالا و پایین، و یک فلش بزرگ رو به پایین. یک تقویم به صورت پاپ‌آپ در زیر input قرار دارد که ماه January 2017 را نشان می‌دهد. ستون اول تقویم هفته است: 52, 1, 2, 3, 4, 5. تقویم کامل ماه سمت راست آن قرار دارد. سطر هفته 1 و روزهای 2 تا 8 January هایلایت شده است. در همان خط ماه، دکمه‌هایی برای حرکت به راست و چپ برای ماه‌های بعدی و قبلی وجود دارد.](week-control-chrome.png)
+### مقدار (value)
 
-## مقدار (value)
+یک رشته که مقدار هفته/سال وارد شده را نمایش می‌دهد. قالب مقدار تاریخ و زمان این نوع input در [رشته‌های هفته](../../../../../../../../en-US/docs/Web/HTML/Guides/Date_and_time_formats/#week_strings) توضیح داده شده است.
 
-یک رشته که مقدار هفته/سال وارد شده را نمایش می‌دهد. قالب مقدار تاریخ و زمان این نوع input در [رشته‌های هفته](/en-US/docs/Web/HTML/Guides/Date_and_time_formats#week_strings) توضیح داده شده است.
-
-می‌توانید یک مقدار پیش‌فرض برای input با قرار دادن مقداری در attribute [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) تعیین کنید، مثلاً:
+می‌توانید یک مقدار پیش‌فرض برای input با قرار دادن مقداری در attribute [`value`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#value) تعیین کنید، مثلاً:
 
 ```html
 <label for="week">What week would you like to start?</label>
@@ -49,54 +50,52 @@ label {
 
 نکته مهم: قالبی که نمایش داده می‌شود ممکن است با `value` واقعی متفاوت باشد. `value` همیشه به صورت `yyyy-Www` قالب‌بندی می‌شود. مثلاً مرورگر ممکن است مقدار بالا را به صورت `Week 01, 2017` نمایش دهد، اما مقدار ارسالی به سرور همیشه `week=2017-W01` خواهد بود.
 
-همچنین می‌توانید مقدار را در JavaScript با استفاده از property {{domxref("HTMLInputElement.value", "value")}} عنصر input بخوانید یا تنظیم کنید:
+همچنین می‌توانید مقدار را در JavaScript با استفاده از property \{{domxref("HTMLInputElement.value", "value")\}} عنصر input بخوانید یا تنظیم کنید:
 
 ```js
 const weekControl = document.querySelector('input[type="week"]');
 weekControl.value = "2017-W45";
 ```
 
-## ویژگی‌های اضافی
+### ویژگی‌های اضافی
 
-علاوه بر ویژگی‌های مشترک عنصر {{HTMLElement("input")}}، ورودی‌های week ویژگی‌های زیر را دارند.
+علاوه بر ویژگی‌های مشترک عنصر \{{HTMLElement("input")\}}، ورودی‌های week ویژگی‌های زیر را دارند.
 
-### max
+#### max
 
-آخرین (از نظر زمانی) سال و شماره هفته، به رشته‌ای که در بخش [مقدار](#value) توضیح داده شد. اگر [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) وارد شده از این مقدار بیشتر باشد، عنصر در [اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation) شکست می‌خورد. اگر مقدار `max` یک رشته هفته معتبر نباشد، عنصر حداکثر مقداری نخواهد داشت.
+آخرین (از نظر زمانی) سال و شماره هفته، به رشته‌ای که در بخش [مقدار](index.md#value) توضیح داده شد. اگر [`value`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#value) وارد شده از این مقدار بیشتر باشد، عنصر در [اعتبارسنجی محدودیت](../../../../../../../../en-US/docs/Web/HTML/Guides/Constraint_validation/) شکست می‌خورد. اگر مقدار `max` یک رشته هفته معتبر نباشد، عنصر حداکثر مقداری نخواهد داشت.
 
 این مقدار باید بزرگ‌تر یا مساوی سال و هفته تعیین‌شده در ویژگی `min` باشد.
 
-### min
+#### min
 
-اولین سال و هفته‌ای که پذیرفته می‌شود. اگر [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) عنصر کمتر از این مقدار باشد، عنصر در [اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation) ناموفق خواهد بود. اگر برای `min` مقداری تعیین شود که رشته‌ی هفته‌ی معتبری نباشد، ورودی هیچ حداقل مقداری نخواهد داشت.
+اولین سال و هفته‌ای که پذیرفته می‌شود. اگر [`value`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#value) عنصر کمتر از این مقدار باشد، عنصر در [اعتبارسنجی محدودیت](../../../../../../../../en-US/docs/Web/HTML/Guides/Constraint_validation/) ناموفق خواهد بود. اگر برای `min` مقداری تعیین شود که رشته‌ی هفته‌ی معتبری نباشد، ورودی هیچ حداقل مقداری نخواهد داشت.
 
 این مقدار باید کمتر یا مساوی مقدار ویژگی `max` باشد.
 
-### readonly
+#### readonly
 
 یک ویژگی Boolean که اگر وجود داشته باشد، به این معنی است که کاربر نمی‌تواند این فیلد را ویرایش کند. با این حال، مقدار `value` آن همچنان می‌تواند توسط کد جاوااسکریپت با تنظیم مستقیم ویژگی `value` در `HTMLInputElement` تغییر کند.
 
-> [!NOTE]
-> از آنجا که یک فیلد read-only نمی‌تواند مقداری داشته باشد، `required` هیچ اثری بر ورودی‌هایی که ویژگی `readonly` نیز دارند ندارد.
+> \[!NOTE] از آنجا که یک فیلد read-only نمی‌تواند مقداری داشته باشد، `required` هیچ اثری بر ورودی‌هایی که ویژگی `readonly` نیز دارند ندارد.
 
-### step
+#### step
 
-ویژگی `step` عددی است که میزان دانه‌بندی (granularity) مقداری که باید رعایت شود را مشخص می‌کند. همچنین می‌تواند مقدار ویژه‌ی `any` باشد که در ادامه توضیح داده شده است. فقط مقادیری معتبر هستند که مضربی صحیح از step نسبت به پایه‌ی step باشند. پایه‌ی step برابر است با [`min`](#min) اگر مشخص شده باشد، در غیر این صورت [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value)، و اگر هیچ‌کدام مشخص نشده باشد، ‎−259,200,000 (آغاز هفته‌ی `1970-W01`).
+ویژگی `step` عددی است که میزان دانه‌بندی (granularity) مقداری که باید رعایت شود را مشخص می‌کند. همچنین می‌تواند مقدار ویژه‌ی `any` باشد که در ادامه توضیح داده شده است. فقط مقادیری معتبر هستند که مضربی صحیح از step نسبت به پایه‌ی step باشند. پایه‌ی step برابر است با [`min`](index.md#min) اگر مشخص شده باشد، در غیر این صورت [`value`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#value)، و اگر هیچ‌کدام مشخص نشده باشد، ‎−259,200,000 (آغاز هفته‌ی `1970-W01`).
 
 برای ورودی‌های `week`، مقدار `step` به هفته داده می‌شود و به عنوان تعداد میلی‌ثانیه برابر با ۶۰۴,۸۰۰,۰۰۰ بار مقدار `step` در نظر گرفته می‌شود (مقدار عددی اصلی بر حسب میلی‌ثانیه است). مقدار پیش‌فرض ۱ است که نشان‌دهنده‌ی یک هفته است.
 
-مقدار رشته‌ای `any` به این معنی است که هیچ گام (step) اجباری نیست و هر مقداری مجاز است (به جز سایر محدودیت‌ها مثل [`min`](#min) و [`max`](#max)). در عمل، برای ورودی‌های `week` همان اثر `1` را دارد، زیرا رابط کاربری انتخابگر فقط انتخاب هفته‌های کامل را اجازه می‌دهد.
+مقدار رشته‌ای `any` به این معنی است که هیچ گام (step) اجباری نیست و هر مقداری مجاز است (به جز سایر محدودیت‌ها مثل [`min`](index.md#min) و [`max`](index.md#max)). در عمل، برای ورودی‌های `week` همان اثر `1` را دارد، زیرا رابط کاربری انتخابگر فقط انتخاب هفته‌های کامل را اجازه می‌دهد.
 
-> [!NOTE]
-> وقتی داده‌ی واردشده توسط کاربر با پیکربندی گام مطابقت نداشته باشد، عامل کاربر (user agent) ممکن است مقدار را به نزدیک‌ترین مقدار معتبر گرد کند و در صورت وجود دو گزینه‌ی به یک اندازه نزدیک، اعداد مثبت را ترجیح دهد.
+> \[!NOTE] وقتی داده‌ی واردشده توسط کاربر با پیکربندی گام مطابقت نداشته باشد، عامل کاربر (user agent) ممکن است مقدار را به نزدیک‌ترین مقدار معتبر گرد کند و در صورت وجود دو گزینه‌ی به یک اندازه نزدیک، اعداد مثبت را ترجیح دهد.
 
-## استفاده از ورودی‌های week
+### استفاده از ورودی‌های week
 
 ورودی‌های week در نگاه اول راحت به نظر می‌رسند، زیرا رابط کاربری ساده‌ای برای انتخاب هفته فراهم می‌کنند و فرمت داده‌ای را که به سرور ارسال می‌شود، بدون توجه به مرورگر یا locale کاربر، نرمال می‌کنند. با این حال، مشکلاتی با `<input type="week">` وجود دارد زیرا پشتیبانی مرورگرها در همه‌ی مرورگرها تضمین‌شده نیست.
 
-ما به کاربردهای پایه و پیچیده‌تر `<input type="week">` خواهیم پرداخت و سپس پیشنهادهایی برای کاهش مشکل پشتیبانی مرورگر ارائه خواهیم داد (به [مدیریت پشتیبانی مرورگر](#handling_browser_support) مراجعه کنید).
+ما به کاربردهای پایه و پیچیده‌تر `<input type="week">` خواهیم پرداخت و سپس پیشنهادهایی برای کاهش مشکل پشتیبانی مرورگر ارائه خواهیم داد (به [مدیریت پشتیبانی مرورگر](index.md#handling_browser_support) مراجعه کنید).
 
-### کاربردهای پایه‌ی week
+#### کاربردهای پایه‌ی week
 
 ساده‌ترین استفاده از `<input type="week">` شامل یک `<input>` ساده به همراه یک عنصر `<label>` است، همان‌طور که در زیر می‌بینید:
 
@@ -107,21 +106,21 @@ weekControl.value = "2017-W45";
 </form>
 ```
 
-### کنترل اندازه‌ی ورودی
+#### کنترل اندازه‌ی ورودی
 
-`<input type="week">` از ویژگی‌های اندازه‌دهی فرم مانند [`size`](/en-US/docs/Web/HTML/Reference/Elements/input#size) پشتیبانی نمی‌کند. برای تنظیم اندازه باید از [CSS](/en-US/docs/Web/CSS) استفاده کنید.
+`<input type="week">` از ویژگی‌های اندازه‌دهی فرم مانند [`size`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#size) پشتیبانی نمی‌کند. برای تنظیم اندازه باید از [CSS](../../../../../../../../en-US/docs/Web/CSS/) استفاده کنید.
 
-### استفاده از ویژگی step
+#### استفاده از ویژگی step
 
-شما باید بتوانید از ویژگی [`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) برای تغییر تعداد هفته‌هایی که هنگام افزایش یا کاهش پرش می‌شود استفاده کنید، با این حال به نظر نمی‌رسد که این ویژگی در مرورگرهای پشتیبانی‌کننده اثری داشته باشد.
+شما باید بتوانید از ویژگی [`step`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#step) برای تغییر تعداد هفته‌هایی که هنگام افزایش یا کاهش پرش می‌شود استفاده کنید، با این حال به نظر نمی‌رسد که این ویژگی در مرورگرهای پشتیبانی‌کننده اثری داشته باشد.
 
-## اعتبارسنجی
+### اعتبارسنجی
 
 به طور پیش‌فرض، `<input type="week">` هیچ اعتبارسنجی روی مقادیر واردشده اعمال نمی‌کند. پیاده‌سازی‌های رابط کاربری معمولاً اجازه نمی‌دهند چیزی غیر از یک هفته/سال معتبر مشخص کنید که مفید است، اما همچنان امکان ارسال فرم با فیلد خالی وجود دارد. همچنین ممکن است بخواهید محدوده‌ی هفته‌های قابل انتخاب را محدود کنید.
 
-### تنظیم حداکثر و حداقل هفته‌ها
+#### تنظیم حداکثر و حداقل هفته‌ها
 
-برای محدود کردن هفته‌های معتبری که کاربر می‌تواند انتخاب کند، می‌توانید از attributeهای [`min`](/en-US/docs/Web/HTML/Reference/Elements/input#min) و [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) استفاده کنید. در مثال زیر، مقدار کمینه `Week 01, 2017` و بیشینه `Week 52, 2017` را تنظیم کرده‌ایم:
+برای محدود کردن هفته‌های معتبری که کاربر می‌تواند انتخاب کند، می‌توانید از attributeهای [`min`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#min) و [`max`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#max) استفاده کنید. در مثال زیر، مقدار کمینه `Week 01, 2017` و بیشینه `Week 52, 2017` را تنظیم کرده‌ایم:
 
 ```html
 <form>
@@ -162,7 +161,7 @@ input:valid + span::after {
 
 نتیجه این است که فقط هفته‌های بین W01 تا W52 در سال 2017 معتبر دیده می‌شوند و در مرورگرهای پشتیبانی‌کننده قابل انتخاب هستند.
 
-### الزامی کردن مقدار هفته
+#### الزامی کردن مقدار هفته
 
 علاوه بر این، می‌توانید از attribute «required» برای الزامی کردن پر کردن هفته استفاده کنید. در نتیجه، مرورگرهای پشتیبانی‌کننده اگر بخواهید یک فیلد هفتهٔ خالی را ارسال کنید، خطا نمایش می‌دهند.
 
@@ -191,31 +190,26 @@ input:valid + span::after {
 
 در اینجا یک اسکرین‌شات برای کسانی است که از مرورگر پشتیبانی‌کننده استفاده نمی‌کنند:
 
-![The week form control has two dashes where the week number should be. A popup with a yellow warning symbol and a 'Please fill out this field' is emanating from the two dashes, which are highlighted in blue, the same blue as the input's focus ring.](week-validation-chrome.png)
+> \[!WARNING] اعتبارسنجی فرم HTML جایگزینی برای اسکریپت‌هایی که تضمین می‌کنند دادهٔ واردشده قالب مناسبی دارد، _نیست_. خیلی راحت می‌شود HTML را تغییر داد تا validation دور زده شود یا کاملاً حذف شود. همچنین ممکن است کسی HTML شما را دور بزند و داده را مستقیماً به سرور شما ارسال کند. اگر کد سمت سرور شما نتواند داده‌ای را که دریافت می‌کند اعتبارسنجی کند، ارسال دادهٔ با قالب نامناسب (یا داده‌ای که خیلی بزرگ است، نوع اشتباهی دارد و غیره) می‌تواند فاجعه به بار آورد.
 
-> [!WARNING]
-> اعتبارسنجی فرم HTML جایگزینی برای اسکریپت‌هایی که تضمین می‌کنند دادهٔ واردشده قالب مناسبی دارد، _نیست_. خیلی راحت می‌شود HTML را تغییر داد تا validation دور زده شود یا کاملاً حذف شود. همچنین ممکن است کسی HTML شما را دور بزند و داده را مستقیماً به سرور شما ارسال کند. اگر کد سمت سرور شما نتواند داده‌ای را که دریافت می‌کند اعتبارسنجی کند، ارسال دادهٔ با قالب نامناسب (یا داده‌ای که خیلی بزرگ است، نوع اشتباهی دارد و غیره) می‌تواند فاجعه به بار آورد.
-
-## مدیریت پشتیبانی مرورگرها
+### مدیریت پشتیبانی مرورگرها
 
 همانطور که در بالا اشاره شد، مشکل اصلی استفاده از inputهای week در حال حاضر پشتیبانی مرورگر است: Safari و Firefox در دسکتاپ از آن پشتیبانی نمی‌کنند و نسخه‌های قدیمی IE هم پشتیبانی نمی‌کنند.
 
 پلتفرم‌های موبایل مثل Android و iOS از چنین inputهایی به خوبی استفاده می‌کنند؛ این پلتفرم‌ها کنترل‌های UI تخصصی ارائه می‌دهند که انتخاب مقدار را در محیط لمسی بسیار آسان می‌کند. برای مثال، انتخاب‌گر هفته (`week` picker) در Chrome برای Android به این شکل است:
 
-![یک پنجرهٔ مودال. عنوان آن «set week» است. دو ستون وجود دارد: سمت چپ عدد ۳۶ در وسط با شفافیت کامل، بالای آن ۳۵ و پایین آن ۳۷ به‌صورت نیمه‌شفاف دیده می‌شود. در سمت راست، ۲۰۱۷ کاملاً واضح است. گزینهٔ دیگری وجود ندارد. سه لینک متنی یا دکمه در پایین دیده می‌شود: «clear» در چپ و «cancel» و «set» در راست.](week-chrome-android.png)
-
 مرورگرهایی که از این نوع ورودی پشتیبانی نمی‌کنند، به‌صورت خودکار به یک ورودی متنی معمولی برمی‌گردند؛ اما این موضوع هم از نظر سازگاری رابط کاربری (کنترل نمایش‌داده‌شده متفاوت خواهد بود) و هم از نظر پردازش داده، مشکلاتی ایجاد می‌کند.
 
 مشکل دوم جدی‌تر است. همان‌طور که قبلاً اشاره شد، با یک ورودی `week` مقدار واقعی همیشه به قالب `yyyy-Www` نرمال‌سازی می‌شود. وقتی مرورگر به یک ورودی متنی ساده برمی‌گردد، هیچ راهنمایی برای قالب‌بندی صحیح ورودی وجود ندارد و قطعاً این قالب به‌طور شهودی قابل حدس نیست. روش‌های مختلفی برای نوشتن مقادیر هفته وجود دارد؛ مثلاً:
 
-- `Week 1 2017`
-- `Jan 2-8 2017`
-- `2017-W01`
-- و غیره.
+* `Week 1 2017`
+* `Jan 2-8 2017`
+* `2017-W01`
+* و غیره.
 
 بهترین راه برای کار با هفته/سال در فرم‌ها، در حال حاضر و با پشتیبانی همهٔ مرورگرها، این است که کاربر هفته و سال را در کنترل‌های جداگانه وارد کند (مثلاً با عنصر `<select>` که رایج است؛ مثال زیر را ببینید)، یا از کتابخانه‌های جاوااسکریپت مانند [jQuery date picker](https://jqueryui.com/datepicker/) استفاده کنید.
 
-## مثال‌ها
+### مثال‌ها
 
 در این مثال، دو مجموعه از عناصر رابط کاربری برای انتخاب هفته ایجاد می‌کنیم: یک انتخابگر بومی با استفاده از `<input type="week">`، و یک مجموعه از دو عنصر `<select>` برای انتخاب هفته/سال در مرورگرهای قدیمی‌تر که از نوع ورودی `week` پشتیبانی نمی‌کنند.
 
@@ -253,7 +247,7 @@ input:valid + span::after {
 
 مقادیر هفته به‌صورت پویا توسط کد جاوااسکریپت زیر تولید می‌شوند.
 
-```css hidden
+```css
 div {
   margin-bottom: 10px;
   position: relative;
@@ -328,60 +322,24 @@ function populateWeeks() {
 }
 ```
 
-> [!NOTE]
-> به یاد داشته باشید که بعضی سال‌ها ۵۳ هفته دارند (به [Weeks per year](https://en.wikipedia.org/wiki/ISO_week_date#Weeks_per_year) مراجعه کنید). در برنامه‌های واقعی حتماً این نکته را در نظر بگیرید.
+> \[!NOTE] به یاد داشته باشید که بعضی سال‌ها ۵۳ هفته دارند (به [Weeks per year](https://en.wikipedia.org/wiki/ISO_week_date#Weeks_per_year) مراجعه کنید). در برنامه‌های واقعی حتماً این نکته را در نظر بگیرید.
 
-## خلاصه فنی
+### خلاصه فنی
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <td><strong>مقدار (Value)</strong></td>
-      <td>
-        یک رشته (string) که یک هفته و سال را مشخص می‌کند، یا خالی
-      </td>
-    </tr>
-    <tr>
-      <td><strong>رویدادها (Events)</strong></td>
-      <td>
-        <code>change</code> و <code>input</code>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>ویژگی‌های عمومی پشتیبانی‌شده</strong></td>
-      <td>
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/input#autocomplete"><code>autocomplete</code></a>،
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/input#list"><code>list</code></a>،
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/input#readonly"><code>readonly</code></a>،
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/input#step"><code>step</code></a>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>ویژگی‌های IDL</strong></td>
-      <td>
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/input#list"><code>list</code></a>،
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/input#value"><code>value</code></a>،
-        <code>valueAsDate</code>،
-        <code>valueAsNumber</code>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>DOM interface</strong></td>
-      <td><p><code>HTMLInputElement</code></p></td>
-    </tr>
-    <tr>
-      <td><strong>نقش ARIA ضمنی</strong></td>
-      <td><a href="https://w3c.github.io/html-aria/#dfn-no-corresponding-role">نقش متناظر ندارد</a></td>
-    </tr>
-  </tbody>
-</table>
+| **مقدار (Value)**                | یک رشته (string) که یک هفته و سال را مشخص می‌کند، یا خالی                                                                                                                                                                                                                                                                                                                      |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **رویدادها (Events)**            | `change` و `input`                                                                                                                                                                                                                                                                                                                                                             |
+| **ویژگی‌های عمومی پشتیبانی‌شده** | [`autocomplete`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#autocomplete)، [`list`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#list)، [`readonly`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#readonly)، [`step`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#step) |
+| **ویژگی‌های IDL**                | [`list`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#list)، [`value`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#value)، `valueAsDate`، `valueAsNumber`                                                                                                                                                                   |
+| **DOM interface**                | `HTMLInputElement`                                                                                                                                                                                                                                                                                                                                                             |
+| **نقش ARIA ضمنی**                | [نقش متناظر ندارد](https://w3c.github.io/html-aria/#dfn-no-corresponding-role)                                                                                                                                                                                                                                                                                                 |
 
-## مشخصات
+### مشخصات
 
-## سازگاری با مرورگرها
+### سازگاری با مرورگرها
 
-## همچنین ببینید
+### همچنین ببینید
 
-- [المان عمومی `<input>`](/en-US/docs/Web/HTML/Reference/Elements/input) و [interface مربوط به آن، `HTMLInputElement`](/en-US/docs/Web/API/HTMLInputElement)
-- [فرمت‌های تاریخ و زمان استفاده شده در HTML](/en-US/docs/Web/HTML/Guides/Date_and_time_formats)
-- [`<input type="datetime-local">`](/en-US/docs/Web/HTML/Reference/Elements/input/datetime-local)، [`<input type="date">`](/en-US/docs/Web/HTML/Reference/Elements/input/date)، [`<input type="time">`](/en-US/docs/Web/HTML/Reference/Elements/input/time) و [`<input type="month">`](/en-US/docs/Web/HTML/Reference/Elements/input/month)
+* [المان عمومی `<input>`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/) و [interface مربوط به آن، `HTMLInputElement`](../../../../../../../../en-US/docs/Web/API/HTMLInputElement/)
+* [فرمت‌های تاریخ و زمان استفاده شده در HTML](../../../../../../../../en-US/docs/Web/HTML/Guides/Date_and_time_formats/)
+* [`<input type="datetime-local">`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/datetime-local/)، [`<input type="date">`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/date/)، [`<input type="time">`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/time/) و [`<input type="month">`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/month/)

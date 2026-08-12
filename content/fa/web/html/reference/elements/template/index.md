@@ -1,53 +1,46 @@
 ---
-title: "<template> HTML content template element"
-source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template"
-translated_by: "n8n + AI"
+title: <template> HTML content template element
+source: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template
+translated_by: n8n + AI
 ---
 
-# `<template>` — عنصر قالب محتوای HTML
+# \<template> — عنصر قالب محتوای HTML
 
-عنصر **`<template>`** در [HTML](/en-US/docs/Web/HTML) به عنوان مکانیزمی برای نگهداری قطعات HTML عمل می‌کند؛ قطعاتی که می‌توانند بعداً با JavaScript استفاده شوند یا بلافاصله در shadow DOM تولید شوند.
+عنصر **`<template>`** در [HTML](../../../../../../../en-US/docs/Web/HTML/) به عنوان مکانیزمی برای نگهداری قطعات HTML عمل می‌کند؛ قطعاتی که می‌توانند بعداً با JavaScript استفاده شوند یا بلافاصله در shadow DOM تولید شوند.
 
 ## Attributes
 
-این عنصر شامل [attribute‌های سراسری](/en-US/docs/Web/HTML/Reference/Global_attributes) می‌شود.
+این عنصر شامل [attribute‌های سراسری](../../../../../../../en-US/docs/Web/HTML/Reference/Global_attributes/) می‌شود.
 
-- `shadowrootmode`
-  - : یک [shadow root](/en-US/docs/Glossary/Shadow_tree) برای عنصر والد می‌سازد. این نسخهٔ اعلانی متد `Element.attachShadow()` است و همان مقادیر enumerated را می‌پذیرد.
-    - `open`
-      - : DOM داخلی shadow root را در اختیار JavaScript قرار می‌دهد (برای بیشتر موارد استفاده توصیه می‌شود).
-    - `closed`
-      - : DOM داخلی shadow root را از JavaScript پنهان می‌کند.
+* `shadowrootmode`
+  *   : یک [shadow root](../../../../../../../en-US/docs/Glossary/Shadow_tree/) برای عنصر والد می‌سازد. این نسخهٔ اعلانی متد `Element.attachShadow()` است و همان مقادیر enumerated را می‌پذیرد.
 
-    > [!NOTE]
-    > HTML parser برای اولین `<template>` در یک node که این attribute روی مقدار مجاز تنظیم شده باشد، یک شیء `ShadowRoot` در DOM می‌سازد. اگر attribute تنظیم نشده باشد، یا روی مقدار مجاز نباشد — یا اگر قبلاً به صورت declarative یک `ShadowRoot` در همان والد ساخته شده باشد — یک `HTMLTemplateElement` ساخته می‌شود. پس از parsing، دیگر نمی‌توان یک `HTMLTemplateElement` را به shadow root تبدیل کرد، مثلاً با تنظیم `HTMLTemplateElement.shadowRootMode`.
+      * `open`
+        * : DOM داخلی shadow root را در اختیار JavaScript قرار می‌دهد (برای بیشتر موارد استفاده توصیه می‌شود).
+      * `closed`
+        * : DOM داخلی shadow root را از JavaScript پنهان می‌کند.
 
-    > [!NOTE]
-    > ممکن است در آموزش‌ها و مثال‌های قدیمی‌تر با attribute غیراستاندارد `shadowroot` مواجه شوید که در Chrome نسخه‌های ۹۰ تا ۱۱۰ پشتیبانی می‌شد. این attribute حذف شده و با attribute استاندارد `shadowrootmode` جایگزین شده است.
+      > \[!NOTE] HTML parser برای اولین `<template>` در یک node که این attribute روی مقدار مجاز تنظیم شده باشد، یک شیء `ShadowRoot` در DOM می‌سازد. اگر attribute تنظیم نشده باشد، یا روی مقدار مجاز نباشد — یا اگر قبلاً به صورت declarative یک `ShadowRoot` در همان والد ساخته شده باشد — یک `HTMLTemplateElement` ساخته می‌شود. پس از parsing، دیگر نمی‌توان یک `HTMLTemplateElement` را به shadow root تبدیل کرد، مثلاً با تنظیم `HTMLTemplateElement.shadowRootMode`.
 
-- `shadowrootclonable`
-  - : مقدار property `clonable` یک `ShadowRoot` ساخته‌شده با این عنصر را روی `true` تنظیم می‌کند. اگر تنظیم شود، یک clone از shadow host (عنصر والد این `<template>`) که با `Node.cloneNode()` یا `Document.importNode()` ساخته شده باشد، شامل shadow root در کپی خواهد بود.
+      > \[!NOTE] ممکن است در آموزش‌ها و مثال‌های قدیمی‌تر با attribute غیراستاندارد `shadowroot` مواجه شوید که در Chrome نسخه‌های ۹۰ تا ۱۱۰ پشتیبانی می‌شد. این attribute حذف شده و با attribute استاندارد `shadowrootmode` جایگزین شده است.
+* `shadowrootclonable`
+  * : مقدار property `clonable` یک `ShadowRoot` ساخته‌شده با این عنصر را روی `true` تنظیم می‌کند. اگر تنظیم شود، یک clone از shadow host (عنصر والد این `<template>`) که با `Node.cloneNode()` یا `Document.importNode()` ساخته شده باشد، شامل shadow root در کپی خواهد بود.
+* `shadowrootcustomelementregistry`
+  * : property `customElementRegistry` یک `ShadowRoot` ساخته‌شده با این عنصر را به جای registry عناصر سفارشی document، روی `null` تنظیم می‌کند. این کار اجازه می‌دهد یک `CustomElementRegistry` scope‌دار بعداً با `CustomElementRegistry.initialize()` متصل شود.
+* `shadowrootdelegatesfocus`
+  * : مقدار property `delegatesFocus` یک `ShadowRoot` ساخته‌شده با این عنصر را روی `true` تنظیم می‌کند. اگر این مقدار تنظیم شود و یک عنصر غیرقابل‌فوکوس در shadow tree انتخاب شود، فوکوس به اولین عنصر قابل‌فوکوس در درخت واگذار می‌شود. مقدار پیش‌فرض `false` است.
+* `shadowrootreferencetarget` (آزمایشی) (غیراستاندارد)
+  * : مقدار property `referenceTarget` یک `ShadowRoot` ساخته‌شده با این عنصر را تنظیم می‌کند. مقدار باید ID یک عنصر داخل shadow DOM باشد. اگر تنظیم شود، ارجاع‌های هدف به عنصر میزبان از خارج shadow DOM باعث می‌شوند عنصر ارجاع‌شده به هدف مؤثر ارجاع به عنصر میزبان تبدیل شود.
+* `shadowrootserializable`
+  * : مقدار property `serializable` یک `ShadowRoot` ساخته‌شده با این عنصر را روی `true` تنظیم می‌کند. اگر تنظیم شود، می‌توان shadow root را با فراخوانی متدهای `Element.getHTML()` یا `ShadowRoot.getHTML()` و با تنظیم پارامتر `options.serializableShadowRoots` روی `true` سریال‌سازی کرد. مقدار پیش‌فرض `false` است.
+* `shadowrootslotassignment`
+  * : ویژگی [`slotAssignment`](../../../../../../../en-US/docs/Web/API/ShadowRoot/slotAssignment/) مربوط به یک [`ShadowRoot`](../../../../../../../en-US/docs/Web/API/ShadowRoot/) را تنظیم می‌کند که با استفاده از این عنصر ساخته شده است. این معادل declarative گزینهٔ [`slotAssignment`](../../../../../../../en-US/docs/Web/API/Element/attachShadow/#slotassignment) در متد `Element.attachShadow()` است.
+    * `named`
+      *   : عنصرها به‌صورت خودکار به عنصرهای `<slot>` داخل این shadow root تخصیص داده می‌شوند. این مقدار پیش‌فرض است.
 
-- `shadowrootcustomelementregistry`
-  - : property `customElementRegistry` یک `ShadowRoot` ساخته‌شده با این عنصر را به جای registry عناصر سفارشی document، روی `null` تنظیم می‌کند. این کار اجازه می‌دهد یک `CustomElementRegistry` scope‌دار بعداً با `CustomElementRegistry.initialize()` متصل شود.
-
-- `shadowrootdelegatesfocus`
-  - : مقدار property `delegatesFocus` یک `ShadowRoot` ساخته‌شده با این عنصر را روی `true` تنظیم می‌کند. اگر این مقدار تنظیم شود و یک عنصر غیرقابل‌فوکوس در shadow tree انتخاب شود، فوکوس به اولین عنصر قابل‌فوکوس در درخت واگذار می‌شود. مقدار پیش‌فرض `false` است.
-
-- `shadowrootreferencetarget` (آزمایشی) (غیراستاندارد)
-  - : مقدار property `referenceTarget` یک `ShadowRoot` ساخته‌شده با این عنصر را تنظیم می‌کند. مقدار باید ID یک عنصر داخل shadow DOM باشد. اگر تنظیم شود، ارجاع‌های هدف به عنصر میزبان از خارج shadow DOM باعث می‌شوند عنصر ارجاع‌شده به هدف مؤثر ارجاع به عنصر میزبان تبدیل شود.
-
-- `shadowrootserializable`
-  - : مقدار property `serializable` یک `ShadowRoot` ساخته‌شده با این عنصر را روی `true` تنظیم می‌کند. اگر تنظیم شود، می‌توان shadow root را با فراخوانی متدهای `Element.getHTML()` یا `ShadowRoot.getHTML()` و با تنظیم پارامتر `options.serializableShadowRoots` روی `true` سریال‌سازی کرد. مقدار پیش‌فرض `false` است.
-
-- `shadowrootslotassignment`
-  - : ویژگی [`slotAssignment`](/en-US/docs/Web/API/ShadowRoot/slotAssignment) مربوط به یک [`ShadowRoot`](/en-US/docs/Web/API/ShadowRoot) را تنظیم می‌کند که با استفاده از این عنصر ساخته شده است. این معادل declarative گزینهٔ [`slotAssignment`](/en-US/docs/Web/API/Element/attachShadow#slotassignment) در متد `Element.attachShadow()` است.
-    - `named`
-      - : عنصرها به‌صورت خودکار به عنصرهای `<slot>` داخل این shadow root تخصیص داده می‌شوند. این مقدار پیش‌فرض است.
-
-        عنصرهایی که [`ویژگی slot`](/en-US/docs/Web/API/Element/slot) دارند، به اولین `<slot>` در template که ویژگی `name` متناظر را دارد تخصیص داده می‌شوند. اگر چند عنصر نام slot یکسانی داشته باشند، همگی به اولین slot در template با آن نام اضافه می‌شوند و به ترتیبی که تعریف شده‌اند رندر می‌شوند. همهٔ عنصرهای بدون نام — یعنی عنصرهایی که ویژگی `slot` ندارند — به ترتیب تعریف به slot پیش‌فرض تخصیص داده می‌شوند. این slot، اولین `<slot>` بدون نام در template است.
-    - `manual`
-      - : عنصرها به‌صورت دستی با استفاده از `HTMLSlotElement.assign()` به عنصرهای slot خاصی تخصیص داده می‌شوند. هیچ تخصیص خودکاری انجام نمی‌شود.
+          عنصرهایی که [`ویژگی slot`](../../../../../../../en-US/docs/Web/API/Element/slot/) دارند، به اولین `<slot>` در template که ویژگی `name` متناظر را دارد تخصیص داده می‌شوند. اگر چند عنصر نام slot یکسانی داشته باشند، همگی به اولین slot در template با آن نام اضافه می‌شوند و به ترتیبی که تعریف شده‌اند رندر می‌شوند. همهٔ عنصرهای بدون نام — یعنی عنصرهایی که ویژگی `slot` ندارند — به ترتیب تعریف به slot پیش‌فرض تخصیص داده می‌شوند. این slot، اولین `<slot>` بدون نام در template است.
+    * `manual`
+      * : عنصرها به‌صورت دستی با استفاده از `HTMLSlotElement.assign()` به عنصرهای slot خاصی تخصیص داده می‌شوند. هیچ تخصیص خودکاری انجام نمی‌شود.
 
 ## Usage notes
 
@@ -63,7 +56,7 @@ translated_by: "n8n + AI"
 
 متدهای `Node.cloneNode()` و `Document.importNode()` هر دو یک رونوشت از گره می‌سازند. تفاوت این است که `importNode()` گره را در بافت (context) سندی که متد روی آن فراخوانی شده کپی می‌کند، در حالی که `cloneNode()` از سندِ متعلق به گره استفاده می‌کند. بافت سند تعیین می‌کند که از کدام `CustomElementRegistry` برای ساخت custom elementها استفاده شود. به همین دلیل، برای رونوشت گرفتن از fragment مربوط به `content` از `document.importNode()` استفاده کنید تا عنصرهای سفارشی فرزند با تعریف‌های سند فعلی ساخته شوند، نه با سند جداگانه‌ای که محتوای template متعلق به آن است. برای جزئیات بیشتر به مثال‌های صفحهٔ `Node.cloneNode()` مراجعه کنید.
 
-توجه داشته باشید که خودِ ظرف `DocumentFragment` نباید داده‌ای به آن متصل شود. برای جزئیات بیشتر، مثال [«داده‌های روی DocumentFragment کپی نمی‌شوند»](#data_on_the_documentfragment_is_not_cloned) را ببینید.
+توجه داشته باشید که خودِ ظرف `DocumentFragment` نباید داده‌ای به آن متصل شود. برای جزئیات بیشتر، مثال [«داده‌های روی DocumentFragment کپی نمی‌شوند»](index.md#data_on_the_documentfragment_is_not_cloned) را ببینید.
 
 ### Declarative Shadow DOM
 
@@ -136,7 +129,7 @@ if ("content" in document.createElement("template")) {
 
 نتیجه، همان جدول HTML اولیه است که دو ردیف جدید با جاوااسکریپت به آن اضافه شده است.
 
-```css hidden
+```css
 table {
   background: black;
 }
@@ -244,19 +237,15 @@ div:focus {
 
 نتایج در زیر نمایش داده شده است. وقتی HTML ابتدا رندر می‌شود، عناصر هیچ استایلی ندارند، همان‌طور که در تصویر اول دیده می‌شود. برای shadow root که `shadowrootdelegatesfocus` روی آن تنظیم نشده، می‌توانید هر جایی به جز `<input>` کلیک کنید و focus تغییر نمی‌کند (اگر `<input>` را انتخاب کنید، تصویر دوم را خواهید دید).
 
-![تصویری از کد بدون focus تنظیم شده](template_with_no_focus.png)
-
 برای shadow root با `shadowrootdelegatesfocus` تنظیم شده، کلیک روی متن (که غیر focusable است) عنصر `<input>` را انتخاب می‌کند، زیرا این اولین عنصر focusable در درخت است. این کار همچنین عنصر والد را نیز focus می‌کند، همان‌طور که در تصویر زیر نشان داده شده است.
-
-![تصویری از کد وقتی عنصر focus دارد](template_with_focus.png)
 
 ### Declarative shadow DOM با تخصیص slot نام‌گذاری شده
 
-این مثال نشان می‌دهد که چگونه عناصر می‌توانند به slot‌هایی در shadow DOM بر اساس attribute [`slot`](/en-US/docs/Web/API/Element/slot) خود (مطابق با `name` slot) تخصیص داده شوند.
+این مثال نشان می‌دهد که چگونه عناصر می‌توانند به slot‌هایی در shadow DOM بر اساس attribute [`slot`](../../../../../../../en-US/docs/Web/API/Element/slot/) خود (مطابق با `name` slot) تخصیص داده شوند.
 
 #### HTML
 
-ابتدا یک عنصر {{HTMLElement("article")}} تعریف می‌کنیم که اطلاعات عنوان، متادیتا و بدنه مقاله را نمایش می‌دهد.
+ابتدا یک عنصر \{{HTMLElement("article")\}} تعریف می‌کنیم که اطلاعات عنوان، متادیتا و بدنه مقاله را نمایش می‌دهد.
 
 مقاله شامل یک عنصر `<template>` است که به دلیل وجود attribute `shadowrootmode` به یک shadow root تبدیل می‌شود. نیازی به تنظیم `shadowrootslotassignment` نیست، زیرا تخصیص slot نام‌گذاری شده پیش‌فرض است.
 
@@ -366,9 +355,7 @@ div:focus {
 
 #### JavaScript
 
-کد جاوااسکریپت برای انتساب دستی slot در زیر نشان داده شده است.
-ابتدا کد slot های داخل shadow root را دریافت می‌کند، سپس متنی را که باید درج شود دریافت می‌کند، و در نهایت متن را به slot اختصاص می‌دهد.
-توجه داشته باشید که می‌توانید هر گره را فقط یک بار به یک slot خاص اختصاص دهید، و اگر با استفاده از `HTMLSlotElement.assign()` چند گره را به یک slot اختصاص دهید، ترتیب مشخص‌شدن آن‌ها، ترتیب اضافه‌شدن را تعیین می‌کند.
+کد جاوااسکریپت برای انتساب دستی slot در زیر نشان داده شده است. ابتدا کد slot های داخل shadow root را دریافت می‌کند، سپس متنی را که باید درج شود دریافت می‌کند، و در نهایت متن را به slot اختصاص می‌دهد. توجه داشته باشید که می‌توانید هر گره را فقط یک بار به یک slot خاص اختصاص دهید، و اگر با استفاده از `HTMLSlotElement.assign()` چند گره را به یک slot اختصاص دهید، ترتیب مشخص‌شدن آن‌ها، ترتیب اضافه‌شدن را تعیین می‌کند.
 
 ```js
 const host = document.querySelector("#host");
@@ -408,9 +395,7 @@ document
 
 مثال زیر باید محتوای slot ها را در بخش‌های مناسب نمایش دهد.
 
-> [!NOTE]
-> اگر attribute به نام `shadowrootslotassignment` پشتیبانی نشود، یک یادداشت هشدار نمایش داده می‌شود و مرورگر از انتساب `named` استفاده می‌کند.
-> با این حال، چون هیچ‌کدام از slot ها یا element های درج‌شونده نام‌گذاری نشده‌اند، همهٔ element ها در slot عنوان درج می‌شوند (چون این اولین slot بدون نام است و بنابراین slot «پیش‌فرض» محسوب می‌شود).
+> \[!NOTE] اگر attribute به نام `shadowrootslotassignment` پشتیبانی نشود، یک یادداشت هشدار نمایش داده می‌شود و مرورگر از انتساب `named` استفاده می‌کند. با این حال، چون هیچ‌کدام از slot ها یا element های درج‌شونده نام‌گذاری نشده‌اند، همهٔ element ها در slot عنوان درج می‌شوند (چون این اولین slot بدون نام است و بنابراین slot «پیش‌فرض» محسوب می‌شود).
 
 ### داده‌های روی DocumentFragment کپی نمی‌شوند
 
@@ -449,53 +434,14 @@ container.appendChild(secondClone);
 
 چون `firstClone` یک `DocumentFragment` است، هنگام فراخوانی `appendChild` فقط فرزندان آن به `container` اضافه می‌شوند؛ event handlerهای `firstClone` کپی نمی‌شوند. در مقابل، چون یک event handler به اولین _گرهٔ فرزند_ از `secondClone` اضافه شده است، هنگام فراخوانی `appendChild` event handler کپی می‌شود و کلیک روی آن همان‌طور که انتظار می‌رود کار می‌کند.
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories">Content categories</a>
-      </th>
-      <td>
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#metadata_content">Metadata content</a>،
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#flow_content">flow content</a>،
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content">phrasing content</a>،
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#script-supporting_elements">script-supporting element</a>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">محتواي مجاز</th>
-      <td>هیچ‌کدام (به <a href="#usage_notes">نکات استفاده</a> مراجعه کنید)</td>
-    </tr>
-    <tr>
-      <th scope="row">حذف تگ</th>
-      <td>هیچکدام؛ تگ آغاز و پایان هر دو اجباری هستند.</td>
-    </tr>
-    <tr>
-      <th scope="row">والدین مجاز</th>
-      <td>
-        هر عنصری که
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#metadata_content">metadata content</a>،
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#phrasing_content">phrasing content</a> یا
-        <a href="/en-US/docs/Web/HTML/Guides/Content_categories#script-supporting_elements">script-supporting elements</a>
-        را بپذیرد. همچنین می‌تواند فرزند یک عنصر <code>&lt;colgroup&gt;</code> باشد که <em>ندارد</em> یک ویژگی <code>span</code>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">نقش ARIA ضمنی</th>
-      <td>
-        <a href="https://w3c.github.io/html-aria/#dfn-no-corresponding-role">نقش متناظری ندارد</a>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">نقش‌های ARIA مجاز</th>
-      <td>هیچ <code>role</code> مجاز نیست</td>
-    </tr>
-    <tr>
-      <th scope="row">رابط DOM</th>
-      <td><code>HTMLTemplateElement</code></td>
-    </tr>
-  </tbody>
-</table>
+| [Content categories](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/) | [Metadata content](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/#metadata_content)، [flow content](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/#flow_content)، [phrasing content](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/#phrasing_content)، [script-supporting element](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/#script-supporting_elements)     |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| محتواي مجاز                                                                               | هیچ‌کدام (به [نکات استفاده](index.md#usage_notes) مراجعه کنید)                                                                                                                                                                                                                                                                                                                                                                                        |
+| حذف تگ                                                                                    | هیچکدام؛ تگ آغاز و پایان هر دو اجباری هستند.                                                                                                                                                                                                                                                                                                                                                                                                          |
+| والدین مجاز                                                                               | هر عنصری که [metadata content](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/#metadata_content)، [phrasing content](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/#phrasing_content) یا [script-supporting elements](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/#script-supporting_elements) را بپذیرد. همچنین می‌تواند فرزند یک عنصر `<colgroup>` باشد که _ندارد_ یک ویژگی `span`. |
+| نقش ARIA ضمنی                                                                             | [نقش متناظری ندارد](https://w3c.github.io/html-aria/#dfn-no-corresponding-role)                                                                                                                                                                                                                                                                                                                                                                       |
+| نقش‌های ARIA مجاز                                                                         | هیچ `role` مجاز نیست                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| رابط DOM                                                                                  | `HTMLTemplateElement`                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 ## مشخصات
 
@@ -503,12 +449,12 @@ container.appendChild(secondClone);
 
 ## همچنین ببینید
 
-- ویژگی‌های HTML [`part`](/en-US/docs/Web/HTML/Reference/Global_attributes/part) و [`exportparts`](/en-US/docs/Web/HTML/Reference/Global_attributes/exportparts)
-- عنصر HTML `<slot>`
-- شبه‌کلاس‌های CSS `:has-slotted`، `:host`، `:host()` و `:host-context()`
-- شبه‌عناصر CSS `::part` و `::slotted`
-- رابط `ShadowRoot`
-- [استفاده از قالب‌ها و slotها](/en-US/docs/Web/API/Web_components/Using_templates_and_slots)
-- ماژول [CSS scoping](/en-US/docs/Web/CSS/Guides/Scoping)
-- [Shadow DOM اعلانی (به همراه HTML)](/en-US/docs/Web/API/Web_components/Using_shadow_DOM#declaratively_with_html) در *استفاده از Shadow DOM*
-- [Shadow DOM اعلانی](https://web.dev/articles/declarative-shadow-dom) در web.dev (2023)
+* ویژگی‌های HTML [`part`](../../../../../../../en-US/docs/Web/HTML/Reference/Global_attributes/part/) و [`exportparts`](../../../../../../../en-US/docs/Web/HTML/Reference/Global_attributes/exportparts/)
+* عنصر HTML `<slot>`
+* شبه‌کلاس‌های CSS `:has-slotted`، `:host`، `:host()` و `:host-context()`
+* شبه‌عناصر CSS `::part` و `::slotted`
+* رابط `ShadowRoot`
+* [استفاده از قالب‌ها و slotها](../../../../../../../en-US/docs/Web/API/Web_components/Using_templates_and_slots/)
+* ماژول [CSS scoping](../../../../../../../en-US/docs/Web/CSS/Guides/Scoping/)
+* [Shadow DOM اعلانی (به همراه HTML)](../../../../../../../en-US/docs/Web/API/Web_components/Using_shadow_DOM/#declaratively_with_html) در _استفاده از Shadow DOM_
+* [Shadow DOM اعلانی](https://web.dev/articles/declarative-shadow-dom) در web.dev (2023)

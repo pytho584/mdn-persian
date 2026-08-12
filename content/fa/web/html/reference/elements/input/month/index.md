@@ -1,19 +1,22 @@
 ---
-title: "<input type=\"month\"> HTML attribute value"
-source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/month"
-translated_by: "n8n + AI"
+title: <input type="month"> HTML attribute value
+source: >-
+  https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/month
+translated_by: n8n + AI
 ---
 
-```markdown
+# \<input type="month"> HTML attribute value
+
+````markdown
 عناصر `<input>` از نوع **`month`** فیلد ورودی می‌سازند که کاربر بتواند ماه و سال را به‌سادگی وارد کند. مقدار این فیلد رشته‌ای با قالب `YYYY-MM` است که `YYYY` سال چهاررقمی و `MM` شمارهٔ ماه است.
 
 ```html interactive-example
 <label for="start">Start month:</label>
 
 <input type="month" id="start" name="start" min="2018-03" value="2018-05" />
-```
+````
 
-```css interactive-example
+```css
 label {
   display: block;
   font:
@@ -29,23 +32,19 @@ label {
 
 رابط کاربری این کنترل به‌طور کلی در مرورگرهای مختلف متفاوت است؛ در حال حاضر پشتیبانی از آن کامل نیست و فقط Chrome/Opera و Edge روی دسکتاپ — و بیشتر مرورگرهای مدرن موبایل — پیاده‌سازی قابل استفاده دارند.
 
-در مرورگرهایی که ورودی `month` را پشتیبانی نمی‌کنند، کنترل به‌صورت خودکار به [`<input type="text">`](/en-US/docs/Web/HTML/Reference/Elements/input/text) تبدیل می‌شود؛ هرچند ممکن است برای اطمینان از قالب‌بندی صحیح متن ورودی، اعتبارسنجی خودکار انجام شود.
+در مرورگرهایی که ورودی `month` را پشتیبانی نمی‌کنند، کنترل به‌صورت خودکار به [`<input type="text">`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/text/) تبدیل می‌شود؛ هرچند ممکن است برای اطمینان از قالب‌بندی صحیح متن ورودی، اعتبارسنجی خودکار انجام شود.
 
 اگر از مرورگری استفاده می‌کنید که `month` را پشتیبانی نمی‌کند، تصویر زیر ظاهر این کنترل را در Chrome و Opera نشان می‌دهد. کلیک روی فلشِ رو به پایین در سمت راست، یک انتخاب‌گر تاریخ باز می‌کند که با آن می‌توانید ماه و سال را انتخاب کنید.
 
-![کنترل ماه در مرورگر Chrome](month-control-chrome.png)
-
 کنترل `month` در مایکروسافت اج به این شکل است:
 
-![کنترل ماه در مرورگر Edge](month-control-edge.png)
+### مقدار
 
-## مقدار
+رشته‌ای که مقدار ماه و سال واردشده را نشان می‌دهد، با قالب `YYYY-MM` (سال چهاررقمی یا بیشتر، سپس خط تیره (`-`) و بعد شمارهٔ ماه دو رقمی). قالب رشتهٔ ماه در این نوع ورودی در [رشته‌های ماه](../../../../../../../../en-US/docs/Web/HTML/Guides/Date_and_time_formats/#month_strings) توضیح داده شده است.
 
-رشته‌ای که مقدار ماه و سال واردشده را نشان می‌دهد، با قالب `YYYY-MM` (سال چهاررقمی یا بیشتر، سپس خط تیره (`-`) و بعد شمارهٔ ماه دو رقمی). قالب رشتهٔ ماه در این نوع ورودی در [رشته‌های ماه](/en-US/docs/Web/HTML/Guides/Date_and_time_formats#month_strings) توضیح داده شده است.
+#### تنظیم مقدار پیش‌فرض
 
-### تنظیم مقدار پیش‌فرض
-
-می‌توانید با قرار دادن ماه و سال در attribute [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) مقدار پیش‌فرضی برای کنترل تنظیم کنید، مانند مثال زیر:
+می‌توانید با قرار دادن ماه و سال در attribute [`value`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#value) مقدار پیش‌فرضی برای کنترل تنظیم کنید، مانند مثال زیر:
 
 ```html
 <label for="bday-month">What month were you born in?</label>
@@ -56,7 +55,7 @@ label {
 
 برای مثال، وقتی مقدار بالا به سرور ارسال شود، به شکل `bday-month=1978-06` خواهد بود.
 
-### تنظیم مقدار با JavaScript
+#### تنظیم مقدار با JavaScript
 
 همچنین می‌توانید مقدار تاریخ را در جاوااسکریپت با استفاده از property به نام `HTMLInputElement.value` بخوانید و تنظیم کنید، برای مثال:
 
@@ -70,12 +69,13 @@ const monthControl = document.querySelector('input[type="month"]');
 monthControl.value = "2001-06";
 ```
 
-## ویژگی‌های اضافی
+### ویژگی‌های اضافی
 
 علاوه بر attributeهای مشترک میان عناصر `<input>`، ورودی‌های `month` این attributeهای زیر را نیز ارائه می‌دهند.
 
-### list
-```
+#### list
+
+````
 
 مقادیر attribute `list`، `id` یک عنصر `<datalist>` است که در همان سند (document) قرار دارد.
 
@@ -134,11 +134,11 @@ attribute `step` یک عدد است که دانه‌بندی (granularity) مق�
   <label for="bday-month">What month were you born in?</label>
   <input id="bday-month" type="month" name="bday-month" />
 </form>
-```
+````
 
-### تنظیم حداکثر و حداقل تاریخ
+#### تنظیم حداکثر و حداقل تاریخ
 
-می‌توانید با استفاده از attributeهای [`min`](/en-US/docs/Web/HTML/Reference/Elements/input#min) و [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) بازهٔ تاریخ‌هایی را که کاربر می‌تواند انتخاب کند محدود کنید. در مثال زیر، حداقل ماه `1900-01` و حداکثر ماه `2013-12` را مشخص کرده‌ایم:
+می‌توانید با استفاده از attributeهای [`min`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#min) و [`max`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#max) بازهٔ تاریخ‌هایی را که کاربر می‌تواند انتخاب کند محدود کنید. در مثال زیر، حداقل ماه `1900-01` و حداکثر ماه `2013-12` را مشخص کرده‌ایم:
 
 ```html
 <form>
@@ -154,18 +154,18 @@ attribute `step` یک عدد است که دانه‌بندی (granularity) مق�
 
 نتیجه به این صورت است:
 
-- فقط ماه‌های ژانویهٔ ۱۹۰۰ تا دسامبر ۲۰۱۳ قابل انتخاب هستند؛ ماه‌های خارج از این بازه در کنترل قابل اسکرول نیستند.
-- بسته به مرورگری که استفاده می‌کنید، ماه‌های خارج از بازهٔ مشخص‌شده ممکن است در انتخابگر ماه قابل انتخاب نباشند (مثلاً در Edge)، یا نامعتبر باشند (به بخش [اعتبارسنجی](#validation) نگاه کنید) اما همچنان در دسترس باشند (مثلاً در Chrome).
+* فقط ماه‌های ژانویهٔ ۱۹۰۰ تا دسامبر ۲۰۱۳ قابل انتخاب هستند؛ ماه‌های خارج از این بازه در کنترل قابل اسکرول نیستند.
+* بسته به مرورگری که استفاده می‌کنید، ماه‌های خارج از بازهٔ مشخص‌شده ممکن است در انتخابگر ماه قابل انتخاب نباشند (مثلاً در Edge)، یا نامعتبر باشند (به بخش [اعتبارسنجی](index.md#validation) نگاه کنید) اما همچنان در دسترس باشند (مثلاً در Chrome).
 
-### کنترل اندازهٔ ورودی
+#### کنترل اندازهٔ ورودی
 
-`<input type="month">` از attributeهای تنظیم اندازهٔ فرم مانند [`size`](/en-US/docs/Web/HTML/Reference/Elements/input#size) پشتیبانی نمی‌کند. برای اندازه‌دهی باید از [CSS](/en-US/docs/Web/CSS) استفاده کنید.
+`<input type="month">` از attributeهای تنظیم اندازهٔ فرم مانند [`size`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#size) پشتیبانی نمی‌کند. برای اندازه‌دهی باید از [CSS](../../../../../../../../en-US/docs/Web/CSS/) استفاده کنید.
 
-## اعتبارسنجی
+### اعتبارسنجی
 
 به‌طور پیش‌فرض، `<input type="month">` هیچ اعتبارسنجی روی مقادیر واردشده اعمال نمی‌کند. پیاده‌سازی‌های UI معمولاً اجازه نمی‌دهند چیزی غیر از تاریخ وارد کنید — که مفید است — اما همچنان می‌توانید فرم را با ورودی `month` خالی ارسال کنید، یا یک تاریخ نامعتبر وارد کنید (مثلاً ۳۲ آوریل).
 
-برای جلوگیری از این مشکل، می‌توانید از attributeهای [`min`](/en-US/docs/Web/HTML/Reference/Elements/input#min) و [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) برای محدود کردن تاریخ‌های موجود استفاده کنید (به بخش [تنظیم حداکثر و حداقل تاریخ](#setting_maximum_and_minimum_dates) مراجعه کنید)، و همچنین از attribute [`required`](/en-US/docs/Web/HTML/Reference/Elements/input#required) استفاده کنید تا پر کردن تاریخ اجباری شود.
+برای جلوگیری از این مشکل، می‌توانید از attributeهای [`min`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#min) و [`max`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#max) برای محدود کردن تاریخ‌های موجود استفاده کنید (به بخش [تنظیم حداکثر و حداقل تاریخ](index.md#setting_maximum_and_minimum_dates) مراجعه کنید)، و همچنین از attribute [`required`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#required) استفاده کنید تا پر کردن تاریخ اجباری شود.
 
 در نتیجه، مرورگرهای پشتیبان، اگر بخواهید تاریخی خارج از بازهٔ تعیین‌شده یا یک فیلد تاریخ خالی را ارسال کنید، خطا نمایش می‌دهند.
 
@@ -196,8 +196,6 @@ attribute `step` یک عدد است که دانه‌بندی (granularity) مق�
 
 برای کسانی که از مرورگر پشتیبان استفاده نمی‌کنند، این یک تصویر از صفحه است:
 
-![اعلان الزامی بودن ماه در مرورگر Chrome](month-required.png)
-
 در اینجا CSS استفاده‌شده در مثال بالا آمده است. ما از شبه‌کلاس‌های `:valid` و `:invalid` برای استایل دادن ورودی بر اساس معتبر بودن یا نبودن مقدار فعلی استفاده می‌کنیم. باید آیکون‌ها را روی یک `<span>` کنار ورودی قرار می‌دادیم، نه روی خود ورودی، زیرا در Chrome محتوای تولیدشده داخل کنترل فرم قرار می‌گیرد و نمی‌توان آن را به‌طور مؤثر استایل داد یا نمایش داد.
 
 ```css
@@ -227,36 +225,24 @@ input:valid + span::after {
 }
 ```
 
-> [!WARNING]
-> اعتبارسنجی فرم HTML جایگزینی برای اسکریپت‌هایی نیست که مطمئن می‌شوند داده‌های واردشده در قالب درست هستند.
-> کسی به‌راحتی می‌تواند HTML را تغییر دهد و اعتبارسنجی را دور بزند یا کاملاً حذف کند.
-> همچنین ممکن است کسی HTML شما را به‌طور کامل نادیده بگیرد و داده‌ها را مستقیم به سرور ارسال کند.
-> اگر کد سمت سرور شما داده‌های دریافتی را اعتبارسنجی نکند، با ارسال داده‌های با قالب اشتباه (یا داده‌هایی که خیلی بزرگ هستند، نوع اشتباهی دارند و غیره) ممکن است فاجعه رخ دهد.
+> \[!WARNING] اعتبارسنجی فرم HTML جایگزینی برای اسکریپت‌هایی نیست که مطمئن می‌شوند داده‌های واردشده در قالب درست هستند. کسی به‌راحتی می‌تواند HTML را تغییر دهد و اعتبارسنجی را دور بزند یا کاملاً حذف کند. همچنین ممکن است کسی HTML شما را به‌طور کامل نادیده بگیرد و داده‌ها را مستقیم به سرور ارسال کند. اگر کد سمت سرور شما داده‌های دریافتی را اعتبارسنجی نکند، با ارسال داده‌های با قالب اشتباه (یا داده‌هایی که خیلی بزرگ هستند، نوع اشتباهی دارند و غیره) ممکن است فاجعه رخ دهد.
 
-## مدیریت پشتیبانی مرورگر
+### مدیریت پشتیبانی مرورگر
 
-همان‌طور که در بالا اشاره شد، مشکل اصلی استفاده از input های تاریخ در زمان نوشتن این مطلب این است که بسیاری از مرورگرهای اصلی هنوز همه آن‌ها را پیاده‌سازی نکرده‌اند؛ فقط Chrome/Opera و Edge روی دسکتاپ و بیشتر مرورگرهای مدرن روی موبایل از آن‌ها پشتیبانی می‌کنند.
-برای مثال، انتخابگر `month` در Chrome برای اندروید به این شکل است:
-
-![Month picker on Chrome for Android](month-android.png)
+همان‌طور که در بالا اشاره شد، مشکل اصلی استفاده از input های تاریخ در زمان نوشتن این مطلب این است که بسیاری از مرورگرهای اصلی هنوز همه آن‌ها را پیاده‌سازی نکرده‌اند؛ فقط Chrome/Opera و Edge روی دسکتاپ و بیشتر مرورگرهای مدرن روی موبایل از آن‌ها پشتیبانی می‌کنند. برای مثال، انتخابگر `month` در Chrome برای اندروید به این شکل است:
 
 مرورگرهای غیرپشتیبان به‌صورت خودکار به یک input متنی برمی‌گردند؛ اما این موضوع هم از نظر یکپارچگی رابط کاربری (کنترل نمایش‌داده‌شده متفاوت خواهد بود) و هم از نظر مدیریت داده، مشکلاتی ایجاد می‌کند.
 
-مشکل دوم از این دو جدی‌تر است.
-همان‌طور که قبلاً هم گفته شد، با یک input از نوع `month` مقدار واقعی همیشه به قالب `yyyy-mm` نرمال می‌شود.
-از طرف دیگر، یک input متنی در پیکربندی پیش‌فرض خود هیچ اطلاعی از قالب مورد انتظار تاریخ ندارد و این به دلیل روش‌های متعددی که مردم برای نوشتن تاریخ استفاده می‌کنند، یک مشکل است.
-برای مثال:
+مشکل دوم از این دو جدی‌تر است. همان‌طور که قبلاً هم گفته شد، با یک input از نوع `month` مقدار واقعی همیشه به قالب `yyyy-mm` نرمال می‌شود. از طرف دیگر، یک input متنی در پیکربندی پیش‌فرض خود هیچ اطلاعی از قالب مورد انتظار تاریخ ندارد و این به دلیل روش‌های متعددی که مردم برای نوشتن تاریخ استفاده می‌کنند، یک مشکل است. برای مثال:
 
-- `mmyyyy` (072022)
-- `mm/yyyy` (07/2022)
-- `mm-yyyy` (07-2022)
-- `yyyy-mm` (2022-07)
-- `Month yyyy` (July 2022)
-- و غیره…
+* `mmyyyy` (072022)
+* `mm/yyyy` (07/2022)
+* `mm-yyyy` (07-2022)
+* `yyyy-mm` (2022-07)
+* `Month yyyy` (July 2022)
+* و غیره…
 
-یکی از راه‌های حل این مشکل، قرار دادن attribute ی [`pattern`](/en-US/docs/Web/HTML/Reference/Elements/input#pattern) روی input از نوع `month` است.
-حتی اگر input از نوع `month` از این attribute استفاده نکند، وقتی مرورگر به رفتار با آن مثل input متنی برمی‌گردد، pattern اعمال خواهد شد.
-برای مثال، دموی زیر را در مرورگری که input از نوع `month` را پشتیبانی نمی‌کند مشاهده کنید:
+یکی از راه‌های حل این مشکل، قرار دادن attribute ی [`pattern`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#pattern) روی input از نوع `month` است. حتی اگر input از نوع `month` از این attribute استفاده نکند، وقتی مرورگر به رفتار با آن مثل input متنی برمی‌گردد، pattern اعمال خواهد شد. برای مثال، دموی زیر را در مرورگری که input از نوع `month` را پشتیبانی نمی‌کند مشاهده کنید:
 
 ```html
 <form>
@@ -280,13 +266,11 @@ input:valid + span::after {
 </form>
 ```
 
-اگر سعی کنید آن را ارسال کنید، می‌بینید که اگر ورودی با pattern «nnnn-nn» مطابقت نداشته باشد (که در آن n عددی از 0 تا 9 است)، مرورگر پیام خطا نمایش می‌دهد و input را نامعتبر علامت‌گذاری می‌کند.
-البته این کار مانع وارد کردن تاریخ‌های نامعتبر (مثل `0000-42`) یا تاریخ‌هایی با قالب نادرست که با pattern مطابقت دارند نمی‌شود.
+اگر سعی کنید آن را ارسال کنید، می‌بینید که اگر ورودی با pattern «nnnn-nn» مطابقت نداشته باشد (که در آن n عددی از 0 تا 9 است)، مرورگر پیام خطا نمایش می‌دهد و input را نامعتبر علامت‌گذاری می‌کند. البته این کار مانع وارد کردن تاریخ‌های نامعتبر (مثل `0000-42`) یا تاریخ‌هایی با قالب نادرست که با pattern مطابقت دارند نمی‌شود.
 
-همچنین این مشکل وجود دارد که کاربر لزوماً نمی‌داند کدام‌یک از قالب‌های تاریخ متعدد مورد انتظار است.
-بنابراین کار بیشتری پیش رو داریم.
+همچنین این مشکل وجود دارد که کاربر لزوماً نمی‌داند کدام‌یک از قالب‌های تاریخ متعدد مورد انتظار است. بنابراین کار بیشتری پیش رو داریم.
 
-```css hidden
+```css
 div {
   margin-bottom: 10px;
   position: relative;
@@ -315,11 +299,11 @@ input:valid + span::after {
 
 بهترین راه برای کار با تاریخ در فرم‌ها به‌صورت سازگار با همه مرورگرها (تا زمانی که همه مرورگرهای اصلی مدتی از پشتیبانی این input ها گذشته باشد) این است که از کاربر بخواهید ماه و سال را در کنترل‌های جداگانه وارد کند — مثلاً با استفاده از عنصر `<select>` که رایج است و پیاده‌سازی آن را در پایین می‌بینید — یا از کتابخانه‌های جاوااسکریپت مثل افزونه [jQuery date picker](https://jqueryui.com/datepicker/) استفاده کنید.
 
-## مثال‌ها
+### مثال‌ها
 
 در این مثال، دو مجموعه از عناصر رابط کاربری می‌سازیم که هر کدام برای انتخاب ماه و سال توسط کاربر طراحی شده‌اند. اولی یک ورودی `month` بومی است و دومی یک جفت عنصر `select` که امکان انتخاب ماه و سال را به‌صورت مستقل فراهم می‌کنند؛ این کار برای سازگاری با مرورگرهایی است که هنوز از `<input type="month">` پشتیبانی نمی‌کنند.
 
-### HTML
+#### HTML
 
 فرمی که ماه و سال را درخواست می‌کند به این شکل است:
 
@@ -363,7 +347,7 @@ input:valid + span::after {
 
 عنصر `<select>` مربوط به انتخاب ماه به‌صورت سخت‌کدشده با نام ماه‌ها پر شده است، چون این نام‌ها تغییر نمی‌کنند (و بحث بومی‌سازی را کنار گذاشته‌ایم). فهرست مقادیر سال به‌صورت پویا بر اساس سال جاری تولید می‌شود (برای توضیحات دقیق درباره نحوه کار این توابع، به کامنت‌های کد زیر مراجعه کنید).
 
-```css hidden
+```css
 div {
   margin-bottom: 10px;
   position: relative;
@@ -390,7 +374,7 @@ input:valid + span::after {
 }
 ```
 
-### JavaScript
+#### JavaScript
 
 کد جاوااسکریپتی که انتخاب روش مناسب را مدیریت می‌کند و فهرست سال‌ها را برای عنصر `<select>` سالِ غیربومی می‌سازد، در ادامه آمده است.
 
@@ -447,69 +431,33 @@ function populateYears() {
 }
 ```
 
-> [!NOTE]
-> به یاد داشته باشید که برخی سال‌ها ۵۳ هفته دارند (نگاه کنید به [Weeks per year](https://en.wikipedia.org/wiki/ISO_week_date#Weeks_per_year)).  
+> \[!NOTE] به یاد داشته باشید که برخی سال‌ها ۵۳ هفته دارند (نگاه کنید به [Weeks per year](https://en.wikipedia.org/wiki/ISO_week_date#Weeks_per_year)).\
 > هنگام توسعه برنامه‌های واقعی باید این نکته را در نظر بگیرید.
 
-## خلاصه فنی
+### خلاصه فنی
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <td><strong><a href="#value">Value (مقدار)</a></strong></td>
-      <td>
-        یک رشته (string) که نشان‌دهنده ماه و سال است، یا
-        خالی.
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Events (رویدادها)</strong></td>
-      <td>
-        {{domxref("HTMLElement/change_event", "change")}} و
-        {{domxref("Element/input_event", "input")}}
-      </td>
-    </tr>
-    <tr>
-      <td><strong>ویژگی‌های عمومی پشتیبانی‌شده</strong></td>
-      <td>
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/input#autocomplete"><code>autocomplete</code></a>،
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/input#list"><code>list</code></a>،
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/input#readonly"><code>readonly</code></a>،
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/input#step"><code>step</code></a>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>ویژگی‌های IDL</strong></td>
-      <td>
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/input#list"><code>list</code></a>،
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/input#value"><code>value</code></a>،
-        <code>valueAsDate</code>،
-        <code>valueAsNumber</code>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>DOM interface (رابط DOM)</strong></td>
-      <td><p>{{domxref("HTMLInputElement")}}</p></td>
-    </tr>
-    <tr>
-      <td><strong>نقش ARIA ضمنی</strong></td>
-      <td><a href="https://w3c.github.io/html-aria/#dfn-no-corresponding-role">بدون نقش متناظر</a></td>
-    </tr>
-  </tbody>
-</table>
+| [**Value (مقدار)**](index.md#value) | یک رشته (string) که نشان‌دهنده ماه و سال است، یا خالی.                                                                                                                                                                                                                                                                                                                         |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Events (رویدادها)**               | \{{domxref("HTMLElement/change\_event", "change")\}} و \{{domxref("Element/input\_event", "input")\}}                                                                                                                                                                                                                                                                          |
+| **ویژگی‌های عمومی پشتیبانی‌شده**    | [`autocomplete`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#autocomplete)، [`list`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#list)، [`readonly`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#readonly)، [`step`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#step) |
+| **ویژگی‌های IDL**                   | [`list`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#list)، [`value`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/#value)، `valueAsDate`، `valueAsNumber`                                                                                                                                                                   |
+| **DOM interface (رابط DOM)**        | \{{domxref("HTMLInputElement")\}}                                                                                                                                                                                                                                                                                                                                              |
+| **نقش ARIA ضمنی**                   | [بدون نقش متناظر](https://w3c.github.io/html-aria/#dfn-no-corresponding-role)                                                                                                                                                                                                                                                                                                  |
 
-## مشخصات
+### مشخصات
 
-{{Specifications}}
+\{{Specifications\}}
 
-## سازگاری با مرورگرها
+### سازگاری با مرورگرها
 
-{{Compat}}
+\{{Compat\}}
 
-## همچنین ببینید
+### همچنین ببینید
 
-- عنصر عمومی {{HTMLElement("input")}} و رابطی که برای کار با آن استفاده می‌شود: {{domxref("HTMLInputElement")}}
-- [فرمت‌های تاریخ و زمان در HTML](/en-US/docs/Web/HTML/Guides/Date_and_time_formats)
-- [آموزش انتخاب‌گر تاریخ و زمان](/en-US/docs/Learn_web_development/Extensions/Forms/HTML5_input_types#date_and_time_pickers)
-- [`<input type="datetime-local">`](/en-US/docs/Web/HTML/Reference/Elements/input/datetime-local)، [`<input type="date">`](/en-US/docs/Web/HTML/Reference/Elements/input/date)، [`<input type="time">`](/en-US/docs/Web/HTML/Reference/Elements/input/time) و [`<input type="week">`](/en-US/docs/Web/HTML/Reference/Elements/input/week)
+* عنصر عمومی \{{HTMLElement("input")\}} و رابطی که برای کار با آن استفاده می‌شود: \{{domxref("HTMLInputElement")\}}
+* [فرمت‌های تاریخ و زمان در HTML](../../../../../../../../en-US/docs/Web/HTML/Guides/Date_and_time_formats/)
+* [آموزش انتخاب‌گر تاریخ و زمان](../../../../../../../../en-US/docs/Learn_web_development/Extensions/Forms/HTML5_input_types/#date_and_time_pickers)
+* [`<input type="datetime-local">`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/datetime-local/)، [`<input type="date">`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/date/)، [`<input type="time">`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/time/) و [`<input type="week">`](../../../../../../../../en-US/docs/Web/HTML/Reference/Elements/input/week/)
+
+```
 ```

@@ -1,21 +1,21 @@
 ---
-title: "<html> HTML document root element"
-source: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/html"
-translated_by: "n8n + AI"
+title: <html> HTML document root element
+source: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/html
+translated_by: n8n + AI
 ---
 
-# `<html>` — عنصر ریشهٔ سند HTML
+# \<html> — عنصر ریشهٔ سند HTML
 
-عنصر **`<html>`** در [HTML](/en-US/docs/Web/HTML) نمایانگر ریشه (عنصر سطح بالا) یک سند HTML است؛ به همین دلیل به آن _عنصر ریشه_ (root element) نیز گفته می‌شود. همهٔ عناصر دیگر باید از نوادگان این عنصر باشند. در هر سند فقط یک `<html>` می‌تواند وجود داشته باشد.
+عنصر **`<html>`** در [HTML](../../../../../../../en-US/docs/Web/HTML/) نمایانگر ریشه (عنصر سطح بالا) یک سند HTML است؛ به همین دلیل به آن _عنصر ریشه_ (root element) نیز گفته می‌شود. همهٔ عناصر دیگر باید از نوادگان این عنصر باشند. در هر سند فقط یک `<html>` می‌تواند وجود داشته باشد.
 
 ## ویژگی‌ها
 
-این عنصر شامل [ویژگی‌های سراسری](/en-US/docs/Web/HTML/Reference/Global_attributes) است.
+این عنصر شامل [ویژگی‌های سراسری](../../../../../../../en-US/docs/Web/HTML/Reference/Global_attributes/) است.
 
-- `version` (منسوخ)
-  - : نسخهٔ HTML تعریف نوع سند (Document Type Definition) حاکم بر سند فعلی را مشخص می‌کند. این ویژگی لازم نیست، زیرا با اطلاعات نسخه در اعلان نوع سند تکراری است.
-- `xmlns` (غیراستاندارد)
-  - : فضای نام (namespace) XML سند را مشخص می‌کند. مقدار پیش‌فرض آن `"http://www.w3.org/1999/xhtml"` است. این ویژگی در اسنادی که با تجزیه‌کننده‌های XML تجزیه می‌شوند الزامی است و در اسناد `text/html` اختیاری است.
+* `version` (منسوخ)
+  * : نسخهٔ HTML تعریف نوع سند (Document Type Definition) حاکم بر سند فعلی را مشخص می‌کند. این ویژگی لازم نیست، زیرا با اطلاعات نسخه در اعلان نوع سند تکراری است.
+* `xmlns` (غیراستاندارد)
+  * : فضای نام (namespace) XML سند را مشخص می‌کند. مقدار پیش‌فرض آن `"http://www.w3.org/1999/xhtml"` است. این ویژگی در اسنادی که با تجزیه‌کننده‌های XML تجزیه می‌شوند الزامی است و در اسناد `text/html` اختیاری است.
 
 ## دسترس‌پذیری
 
@@ -23,8 +23,8 @@ translated_by: "n8n + AI"
 
 درج اعلان `lang` معتبر روی عنصر `<html>` همچنین تضمین می‌کند فراداده‌های مهم موجود در `<head>` صفحه، مانند `<title>`، به‌درستی اعلام شوند.
 
-- [توضیحات MDN برای درک WCAG، راهنمای ۳٫۱](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Understandable#guideline_3.1_%e2%80%94_readable_make_text_content_readable_and_understandable)
-- [درک معیار موفقیت ۳٫۱٫۱ | درک WCAG ۲٫۱ از W3C](https://www.w3.org/WAI/WCAG21/Understanding/language-of-page.html)
+* [توضیحات MDN برای درک WCAG، راهنمای ۳٫۱](../../../../../../../en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Understandable/#guideline_3.1_%E2%80%94_readable_make_text_content_readable_and_understandable)
+* [درک معیار موفقیت ۳٫۱٫۱ | درک WCAG ۲٫۱ از W3C](https://www.w3.org/WAI/WCAG21/Understanding/language-of-page.html)
 
 ## مثال
 
@@ -42,15 +42,15 @@ translated_by: "n8n + AI"
 
 ## خلاصهٔ فنی
 
-| ویژگی | توضیح |
-| --- | --- |
-| [دسته‌بندی محتوا](/en-US/docs/Web/HTML/Guides/Content_categories) | هیچ. |
-| محتوای مجاز | یک عنصر `<head>` و سپس یک عنصر `<body>`. |
-| حذف تگ | اگر اولین چیزی که داخل عنصر `<html>` قرار دارد یک کامنت نباشد، تگ شروع را می‌توان حذف کرد. اگر بلافاصله بعد از عنصر `<html>` یک کامنت نباشد، تگ پایان را می‌توان حذف کرد. |
-| والدین مجاز | هیچ. این عنصر ریشهٔ سند است. |
-| نقش ARIA ضمنی | [document](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/document_role) |
-| نقش‌های ARIA مجاز | هیچ `role` مجاز نیست. |
-| رابط DOM | `HTMLHtmlElement` |
+| ویژگی                                                                                  | توضیح                                                                                                                                                                     |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [دسته‌بندی محتوا](../../../../../../../en-US/docs/Web/HTML/Guides/Content_categories/) | هیچ.                                                                                                                                                                      |
+| محتوای مجاز                                                                            | یک عنصر `<head>` و سپس یک عنصر `<body>`.                                                                                                                                  |
+| حذف تگ                                                                                 | اگر اولین چیزی که داخل عنصر `<html>` قرار دارد یک کامنت نباشد، تگ شروع را می‌توان حذف کرد. اگر بلافاصله بعد از عنصر `<html>` یک کامنت نباشد، تگ پایان را می‌توان حذف کرد. |
+| والدین مجاز                                                                            | هیچ. این عنصر ریشهٔ سند است.                                                                                                                                              |
+| نقش ARIA ضمنی                                                                          | [document](../../../../../../../en-US/docs/Web/Accessibility/ARIA/Reference/Roles/document_role/)                                                                         |
+| نقش‌های ARIA مجاز                                                                      | هیچ `role` مجاز نیست.                                                                                                                                                     |
+| رابط DOM                                                                               | `HTMLHtmlElement`                                                                                                                                                         |
 
-- عنصر سطح بالای MathML: {{MathMLElement("math")}}
-- عنصر سطح بالای SVG: {{SVGElement("svg")}}
+* عنصر سطح بالای MathML: \{{MathMLElement("math")\}}
+* عنصر سطح بالای SVG: \{{SVGElement("svg")\}}
