@@ -1,11 +1,21 @@
 ---
 title: "height CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-```markdown
-خاصیت **`height`** در CSS، ارتفاع یک عنصر را مشخص می‌کند. به‌طور پیش‌فرض، این خاصیت ارتفاع [ناحیه محتوا (content area)](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area) را تعیین می‌کند. اما اگر {{cssxref("box-sizing")}} روی `border-box` تنظیم شده باشد، ارتفاع [ناحیه حاشیه (border area)](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#border_area) را مشخص می‌کند.
+---
+title: "`height` CSS property"
+short-title: height
+slug: Web/CSS/Reference/Properties/height
+page-type: css-property
+browser-compat: css.properties.height
+sidebar: cssref
+---
+
+The **`height`** [CSS](/en-US/docs/Web/CSS) property specifies the height of an element. By default, the property defines the height of the [content area](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area). If {{cssxref("box-sizing")}} is set to `border-box`, however, it instead determines the height of the [border area](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#border_area).
+
+{{InteractiveExample("CSS Demo: height")}}
 
 ```css interactive-example-choice
 height: 150px;
@@ -41,14 +51,15 @@ height: auto;
 }
 ```
 
-خاصیت‌های {{cssxref("min-height")}} و {{cssxref("max-height")}} بر `height` اولویت دارند.
+The {{cssxref("min-height")}} and {{cssxref("max-height")}} properties override `height`.
 
-> **نکته:** به‌عنوان یک خاصیت هندسی، `height` روی عناصر SVG مانند {{SVGElement("svg")}}، {{SVGElement("rect")}}، {{SVGElement("image")}} و {{SVGElement("foreignObject")}} نیز اعمال می‌شود. در این موارد مقدار `auto` به `0` تبدیل می‌شود و مقادیر درصدی نسبت به ارتفاع viewport SVG برای `<rect>` محاسبه می‌شوند. مقدار خاصیت CSS `height` بر هر مقدار از ویژگی SVG {{SVGAttr("height")}} که روی عنصر SVG تنظیم شده باشد، اولویت دارد.
+> [!NOTE]
+> As a geometric property, `height` also applies to the {{SVGElement("svg")}}, {{SVGElement("rect")}}, {{SVGElement("image")}}, and {{SVGElement("foreignObject")}} SVG elements, with `auto` resolving to `0` and percent values being relative to the SVG viewport height for `<rect>`. The CSS `height` property value overrides any SVG {{SVGAttr("height")}} attribute value set on the SVG element.
 
 ## Syntax
 
 ```css
-/* مقادیر <length> */
+/* <length> values */
 height: 120px;
 height: 10em;
 height: 100vh;
@@ -56,10 +67,10 @@ height: anchor-size(height);
 height: anchor-size(--my-anchor self-block, 250px);
 height: clamp(200px, anchor-size(width));
 
-/* مقدار <percentage> */
+/* <percentage> value */
 height: 75%;
 
-/* مقادیر کلیدواژه‌ای */
+/* Keyword values */
 height: max-content;
 height: min-content;
 height: fit-content;
@@ -67,7 +78,7 @@ height: fit-content(20em);
 height: auto;
 height: stretch;
 
-/* مقادیر سراسری */
+/* Global values */
 height: inherit;
 height: initial;
 height: revert;
@@ -75,36 +86,43 @@ height: revert-layer;
 height: unset;
 ```
 
-### مقادیر
+### Values
 
 - {{cssxref("&lt;length&gt;")}}
-  - : ارتفاع را با یک مقدار طولی (مانند px, em) مشخص می‌کند.
+  - : Defines the height as a distance value.
 - {{cssxref("&lt;percentage&gt;")}}
-  - : ارتفاع را به‌صورت درصدی از ارتفاع [بلوک محتوا (containing block)](/en-US/docs/Web/CSS/Guides/Display/Containing_block) تعیین می‌کند.
+  - : Defines the height as a percentage of the [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block)'s height.
 - `auto`
-  - : مرورگر به‌صورت خودکار ارتفاع مناسبی برای عنصر محاسبه و انتخاب می‌کند.
+  - : The browser will calculate and select a height for the specified element.
 - {{cssxref("max-content")}}
-  - : ارتفاع ذاتی ترجیحی (preferred intrinsic height) عنصر.
+  - : The intrinsic preferred height.
 - {{cssxref("min-content")}}
-  - : حداقل ارتفاع ذاتی (minimum intrinsic height) عنصر.
+  - : The intrinsic minimum height.
 - {{cssxref("fit-content")}}
-  - : از فضای موجود استفاده می‌کند، اما بیش از [max-content](/en-US/docs/Web/CSS/Reference/Values/max-content) نیست؛ یعنی `min(max-content, max(min-content, stretch))`.
+  - : Use the available space, but not more than [max-content](/en-US/docs/Web/CSS/Reference/Values/max-content), i.e., `min(max-content, max(min-content, stretch))`.
 - [`fit-content(<length-percentage>)`](/en-US/docs/Web/CSS/Reference/Values/fit-content_function)
-  - : از فرمول `fit-content` استفاده می‌کند با این تفاوت که فضای موجود با آرگومان داده‌شده جایگزین می‌شود: `min(max-content, max(min-content, <length-percentage>))`.
+  - : Uses the fit-content formula with the available space replaced by the specified argument, i.e., `min(max-content, max(min-content, <length-percentage>))`.
 - `stretch`
-  - : ارتفاع [margin box](/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model#parts_of_a_box) عنصر را برابر ارتفاع [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block#identifying_the_containing_block) آن قرار می‌دهد. تلاش می‌کند تا margin box تمام فضای موجود در containing block را پر کند؛ بنابراین رفتاری مشابه `100%` دارد اما اندازه حاصل روی margin box اعمال می‌شود، نه روی جعبه‌ای که توسط [box-sizing](/en-US/docs/Web/CSS/Reference/Properties/box-sizing) تعیین می‌شود.
+  - : Sets the height of the element's [margin box](/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model#parts_of_a_box) to the height of its [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block#identifying_the_containing_block). It attempts to make the margin box fill the available space in the containing block, so in a way behaving similar to `100%` but applying the resulting size to the margin box rather than the box determined by [box-sizing](/en-US/docs/Web/CSS/Reference/Properties/box-sizing).
 
-## دسترسی‌پذیری (Accessibility)
+## Accessibility
 
-اطمینان حاصل کنید که عناصری که با `height` تنظیم شده‌اند، در هنگام بزرگ‌نمایی صفحه برای افزایش اندازه متن، بریده نشوند یا محتوای دیگر را نپوشانند.
-```
+Ensure that elements set with a `height` aren't truncated and/or don't obscure other content when the page is zoomed to increase text size.
 
 - [MDN Understanding WCAG, Guideline 1.4 explanations](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
 - [Understanding Success Criterion 1.4.4 | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html)
 
-## مثال‌ها
+## Formal definition
 
-### تنظیم ارتفاع با پیکسل و درصد
+{{CSSInfo}}
+
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Setting height using pixels and percentages
 
 #### HTML
 
@@ -143,7 +161,11 @@ div {
 }
 ```
 
-### کشیدن ارتفاع برای پر کردن بلوک دربرگیرنده
+#### Result
+
+{{EmbedLiveSample('Setting_height_using_pixels_and_percentages', 'auto', 240)}}
+
+### Stretch height to fill the containing block
 
 #### HTML
 
@@ -188,7 +210,19 @@ div {
 }
 ```
 
-## همچنین ببینید
+#### Result
+
+{{EmbedLiveSample('Stretch height to fill the containing block', 'auto', 380)}}
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
 
 - {{cssxref("width")}}
 - {{cssxref("box-sizing")}}
