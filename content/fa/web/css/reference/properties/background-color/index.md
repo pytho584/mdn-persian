@@ -1,39 +1,88 @@
 ---
 title: "background-color CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background-color"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-ویژگی **`background-color`** در [CSS](/en-US/docs/Web/CSS) رنگ پس‌زمینه یک element را تنظیم می‌کند.
+---
+title: "`background-color` CSS property"
+short-title: background-color
+slug: Web/CSS/Reference/Properties/background-color
+page-type: css-property
+browser-compat: css.properties.background-color
+sidebar: cssref
+---
+
+The **`background-color`** [CSS](/en-US/docs/Web/CSS) property sets the background color of an element.
+
+{{InteractiveExample("CSS Demo: background-color")}}
+
+```css interactive-example-choice
+background-color: brown;
+```
+
+```css interactive-example-choice
+background-color: #74992e;
+```
+
+```css interactive-example-choice
+background-color: rgb(255 255 128);
+```
+
+```css interactive-example-choice
+background-color: rgb(255 255 128 / 0.5);
+```
+
+```css interactive-example-choice
+background-color: hsl(50 33% 25%);
+```
+
+```css interactive-example-choice
+background-color: hsl(50 33% 25% / 0.75);
+```
+
+```html interactive-example
+<section id="default-example">
+  <div class="transition-all" id="example-element"></div>
+</section>
+```
+
+```css interactive-example
+#example-element {
+  min-width: 100%;
+  min-height: 100%;
+  padding: 10%;
+}
+```
 
 ## Syntax
 
 ```css
-/* مقادیر کلیدواژه‌ای */
+/* Keyword values */
 background-color: red;
 background-color: indigo;
 
-/* مقدار هگزادسیمال */
-background-color: #bbff00; /* کاملاً مات */
-background-color: #bf0; /* خلاصه‌شده کاملاً مات */
-background-color: #11ffee00; /* کاملاً شفاف */
-background-color: #1fe0; /* خلاصه‌شده کاملاً شفاف */
-background-color: #11ffeeff; /* کاملاً مات */
-background-color: #1fef; /* خلاصه‌شده کاملاً مات */
+/* Hexadecimal value */
+background-color: #bbff00; /* Fully opaque */
+background-color: #bf0; /* Fully opaque shorthand */
+background-color: #11ffee00; /* Fully transparent */
+background-color: #1fe0; /* Fully transparent shorthand */
+background-color: #11ffeeff; /* Fully opaque */
+background-color: #1fef; /* Fully opaque shorthand */
 
-/* مقدار RGB */
-background-color: rgb(255 255 128); /* کاملاً مات */
-background-color: rgb(117 190 218 / 50%); /* ۵۰٪ شفاف */
+/* RGB value */
+background-color: rgb(255 255 128); /* Fully opaque */
+background-color: rgb(117 190 218 / 50%); /* 50% transparent */
 
-/* مقدار HSL */
-background-color: hsl(50 33% 25%); /* کاملاً مات */
-background-color: hsl(50 33% 25% / 75%); /* ۷۵٪ مات، یعنی ۲۵٪ شفاف */
+/* HSL value */
+background-color: hsl(50 33% 25%); /* Fully opaque */
+background-color: hsl(50 33% 25% / 75%); /* 75% opaque, i.e. 25% transparent */
 
-/* مقادیر کلیدواژه‌ای ویژه */
+/* Special keyword values */
 background-color: currentColor;
 background-color: transparent;
 
-/* مقادیر سراسری */
+/* Global values */
 background-color: inherit;
 background-color: initial;
 background-color: revert;
@@ -43,34 +92,42 @@ background-color: unset;
 
 ### Values
 
-این ویژگی به‌صورت یک مقدار `<color>` مشخص می‌شود:
+This property is specified as one `<color>` value:
 
 - {{cssxref("&lt;color&gt;")}}
-  - : رنگ یکنواخت پس‌زمینه. این رنگ در پشت هر تصویر پس‌زمینه‌ای که با {{cssxref("background-image")}} مشخص شده باشد رسم می‌شود، با این حال اگر تصویر شفافیت داشته باشد، رنگ همچنان از میان آن دیده خواهد شد.
+  - : The uniform color of the background. It is rendered behind any {{cssxref("background-image")}} that is specified, although the color will still be visible through any transparency in the image.
 
 ## Description
 
-ویژگی `background-color` رنگ پس‌زمینه یک باکس element را تنظیم می‌کند. رنگ در پشت هر تصویر پس‌زمینه رسم می‌شود. به‌طور پیش‌فرض، رنگ پس‌زمینه درون [border-box](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#border_area) رسم می‌شود، به این معنی که پشت border رسم می‌شود و تا لبه بیرونی border-box ادامه می‌یابد.
+The `background-color` property sets the background color of an element box. The color is drawn behind any background images. By default, the background color is painted within the [border-box](/en-US/docs/Web/CSS/Guides/Box_model/Introduction#border_area), meaning it's painted behind the border, ending at the outer edge of the border-box.
 
-برش ناحیه رسم `background-color` توسط ویژگی {{cssxref("background-clip")}} کنترل می‌شود. اگر چندین تصویر پس‌زمینه تنظیم شده باشد، برش رنگ پس‌زمینه بر اساس مقدار `background-clip` مربوط به پایین‌ترین تصویر پس‌زمینه تعیین می‌شود.
+Clipping of the `background-color` paint area is controlled via the {{cssxref("background-clip")}} property. If multiple background images are set, the background color's clipping is determined by the value of the `background-clip` associated with the bottom-most background image.
 
 ## Accessibility
 
-اطمینان از اینکه نسبت کنتراست بین رنگ پس‌زمینه و رنگ متنی که روی آن قرار می‌گیرد به اندازه کافی بالا باشد، اهمیت دارد تا افرادی که دچار کم‌بینایی هستند بتوانند محتوای صفحه را بخوانند. نسبت کنتراست بالا همچنین دسترسی‌پذیری محتوا را برای کاربران دستگاه‌های همراه با صفحه‌نمایش براق در محیط‌های روشن مانند نور خورشید بهبود می‌بخشد.
+It is important to ensure that the contrast ratio between the background color and the color of the text placed over it is high enough that people experiencing low vision conditions will be able to read the content of the page. A high contrast ratio also improves content accessibility for glossy-screened mobile device users when in a bright environment, such as sunlight.
 
-نسبت کنتراست رنگ با مقایسه درخشندگی (luminance) مقادیر رنگ متن و پس‌زمینه تعیین می‌شود. برای مطابقت با [رهنمودهای دسترسی‌پذیری محتوای وب (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)، نسبت ۴.۵:۱ برای محتوای متنی و ۳:۱ برای متن‌های بزرگتر مانند عناوین الزامی است. متن بزرگ به متنی با اندازه ۱۸.۶۶ پیکسل و [bold](/en-US/docs/Web/CSS/Reference/Properties/font-weight) یا بزرگتر، یا ۲۴ پیکسل یا بزرگتر تعریف می‌شود.
+Color contrast ratio is determined by comparing the luminance of the text and background color values. In order to meet current [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/), a ratio of 4.5:1 is required for text content and 3:1 for larger text such as headings. Large text is defined as 18.66px and [bold](/en-US/docs/Web/CSS/Reference/Properties/font-weight) or larger, or 24px or larger.
 
-- [درک WCAG: راهنمای 1.4.3 قابل درک](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
-- [درک کنتراست رنگ](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast)
-- [درک کنتراست رنگ](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast)
-- [WebAIM: بررسی‌کننده کنتراست رنگ](https://webaim.org/resources/contrastchecker/)
-- [درک معیار موفقیت 1.4.3 | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
+- [Understanding WCAG: Perceivable Guideline 1.4.3](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
+- [Understanding color contrast](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast)
+- [Understanding color contrast](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast)
+- [WebAIM: Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
+- [Understanding Success Criterion 1.4.3 | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
 
-## مثال‌ها
+## Formal definition
 
-### مثال ساده
+{{cssinfo}}
 
-این مثال نحوه اعمال `background-color` به عنصر HTML `<p>` را با استفاده از مقدارهای مختلف `<color>` در CSS نشان می‌دهد.
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Basic example
+
+This example demonstrates applying `background-color` to HTML {{HTMLelement("p")}} elements using different CSS {{cssxref("color_value", "&lt;color&gt;")}} values.
 
 #### HTML
 
@@ -84,7 +141,7 @@ background-color: unset;
 
 #### CSS
 
-هر پاراگراف یک رنگ پس‌زمینه متفاوت می‌گیرد؛ از جمله تنظیم صریح پیش‌فرض `transparent`، تابع رنگی `rgb()` و یک `hex-color`. همچنین برای اطمینان از کنتراست کافی بین متن و پس‌زمینه، ویژگی `color` را هم مقداردهی کرده‌ایم.
+Each paragraph is set to a different background color, including explicitly setting the default [`transparent`](/en-US/docs/Web/CSS/Reference/Values/named-color#transparent), an {{cssxref("rgb()")}} color function, and a {{cssxref("hex-color")}}. We also set the {{cssxref("color")}} property to ensure enough contrast between the text and its background.
 
 ```css
 .example-one {
@@ -102,13 +159,13 @@ background-color: unset;
 }
 ```
 
-#### نتیجه
+#### Result
 
-با اعمال این کدها، سه پاراگراف با رنگ پس‌زمینه شفاف، ارغوانی روشن با متن نخودی، و طوسی مایل به بنفش با متن سفید نمایش داده می‌شوند.
+{{EmbedLiveSample("Basic example", 200, 150)}}
 
-### جداول رنگی
+### Colorized tables
 
-این مثال نحوه به‌کارگیری `background-color` روی عناصر `<table>`، ردیف‌های `<tr>` و سلول‌های `<td>` را نشان می‌دهد. همچنین مشخص می‌کند که رنگ پس‌زمینه چگونه پشت حاشیه‌ها کشیده می‌شود.
+This example demonstrates the use of `background-color` on HTML {{HTMLelement("table")}} elements, including {{HTMLelement("tr")}} rows and {{HTMLelement("td")}} cells. It also demonstrates how background colors are painted behind any borders.
 
 #### HTML
 
@@ -136,7 +193,7 @@ background-color: unset;
 
 #### CSS
 
-با CSS چندین مقدار `named-color` را تنظیم می‌کنیم. همچنین یک حاشیه خط‌چین ضخیم برای جدول و هر سلول تعریف کرده‌ایم تا نشان دهیم `background-color` تا لبه بیرونی border-box رنگ می‌شود.
+We use CSS to set different {{cssxref("named-color")}} values. We also set a large dashed border on the table and every cell to demonstrate how the `background-color` is painted to the outer edge of the border-box.
 
 ```css
 table {
@@ -162,13 +219,21 @@ td {
 }
 ```
 
-#### نتیجه
+#### Result
 
-خروجی جدولی است که ردیف اول آن آبی روشن شده و سلول میانی آن فیروزه‌ای است؛ ردیف دوم طوسی و ردیف سوم زیتونی دیده می‌شود. رنگ پس‌زمینه تا زیر حاشیه‌های خط‌چین ادامه دارد.
+{{EmbedLiveSample('Colorized tables', "100%", "100%")}}
 
-## همچنین ببینید
+## Specifications
 
-- [`background-clip`](/en-US/docs/Web/CSS/background-clip)
-- [پس‌زمینه‌های چندگانه](/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Using_multiple_backgrounds)
-- نوع داده `<color>`
-- سایر ویژگی‌های مرتبط با رنگ: [`color`](/en-US/docs/Web/CSS/color), [`border-color`](/en-US/docs/Web/CSS/border-color), [`outline-color`](/en-US/docs/Web/CSS/outline-color), [`text-decoration-color`](/en-US/docs/Web/CSS/text-decoration-color), [`text-emphasis-color`](/en-US/docs/Web/CSS/text-emphasis-color), [`text-shadow`](/en-US/docs/Web/CSS/text-shadow), [`caret-color`](/en-US/docs/Web/CSS/caret-color), و [`column-rule-color`](/en-US/docs/Web/CSS/column-rule-color)
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- {{cssxref("background-clip")}}
+- [Multiple backgrounds](/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders/Using_multiple_backgrounds)
+- The {{cssxref("&lt;color&gt;")}} data type
+- Other color-related properties: {{cssxref("color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, {{cssxref("caret-color")}}, and {{cssxref("column-rule-color")}}
