@@ -1,12 +1,113 @@
 ---
 title: "position CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-# `position` CSS property
+---
+title: "`position` CSS property"
+short-title: position
+slug: Web/CSS/Reference/Properties/position
+page-type: css-property
+browser-compat: css.properties.position
+sidebar: cssref
+---
 
-ویژگی **`position`** در [CSS](/en-US/docs/Web/CSS) نحوه موقعیت‌دهی یک عنصر را در سند مشخص می‌کند. برای تعیین محل نهایی عناصر موقعیت‌دهی‌شده می‌توان از ویژگی‌های فیزیکی {{Cssxref("top")}}، {{Cssxref("right")}}، {{Cssxref("bottom")}} و {{Cssxref("left")}} و نیز ویژگی‌های منطقی مبتنی بر جریان مثل {{cssxref("inset-block-start")}}، {{cssxref("inset-block-end")}}، {{cssxref("inset-inline-start")}} و {{cssxref("inset-inline-end")}} استفاده کرد.
+The **`position`** [CSS](/en-US/docs/Web/CSS) property sets how an element is positioned in a document. The {{Cssxref("top")}}, {{Cssxref("right")}}, {{Cssxref("bottom")}}, and {{Cssxref("left")}} physical properties and the {{cssxref("inset-block-start")}}, {{cssxref("inset-block-end")}}, {{cssxref("inset-inline-start")}}, and {{cssxref("inset-inline-end")}} flow-relative logical properties can be used to determine the final location of positioned elements.
+
+{{InteractiveExample("CSS Demo: position")}}
+
+```css interactive-example-choice
+position: static;
+```
+
+```css interactive-example-choice
+position: relative;
+top: 40px;
+left: 40px;
+```
+
+```css interactive-example-choice
+position: absolute;
+inset-inline-start: 40px;
+inset-block-start: 40px;
+```
+
+```css interactive-example-choice
+position: sticky;
+top: 20px;
+```
+
+```html interactive-example
+<section class="default-example" id="default-example">
+  <div id="example-element-container">
+    <p>
+      In this demo you can control the <code>position</code> property for the
+      yellow box.
+    </p>
+    <div class="box"></div>
+    <div class="box" id="example-element"></div>
+    <div class="box"></div>
+    <p class="clear">
+      To see the effect of <code>sticky</code> positioning, select the
+      <code>position: sticky</code> option and scroll this container.
+    </p>
+    <p>
+      The element will scroll along with its container, until it is at the top
+      of the container (or reaches the offset specified in <code>top</code>),
+      and will then stop scrolling, so it stays visible.
+    </p>
+    <p>
+      The rest of this text is only supplied to make sure the container
+      overflows, so as to enable you to scroll it and see the effect.
+    </p>
+    <hr />
+    <p>
+      Far out in the uncharted backwaters of the unfashionable end of the
+      western spiral arm of the Galaxy lies a small unregarded yellow sun.
+      Orbiting this at a distance of roughly ninety-two million miles is an
+      utterly insignificant little blue green planet whose ape-descended life
+      forms are so amazingly primitive that they still think digital watches are
+      a pretty neat idea.
+    </p>
+  </div>
+</section>
+```
+
+```css interactive-example
+section {
+  align-items: flex-start;
+  overflow: auto;
+}
+
+.box {
+  background-color: rgb(0 0 255 / 0.2);
+  border: 3px solid blue;
+  float: left;
+  width: 65px;
+  height: 65px;
+}
+
+.box + .box {
+  margin-left: 10px;
+}
+
+.clear {
+  clear: both;
+  padding-top: 1em;
+}
+
+#example-element-container {
+  position: relative;
+  text-align: left;
+}
+
+#example-element {
+  background-color: yellow;
+  border: 3px solid red;
+  z-index: 1;
+}
+```
 
 ## Syntax
 
@@ -27,65 +128,73 @@ position: unset;
 
 ### Values
 
-این ویژگی با یکی از کلمات کلیدی زیر مقداردهی می‌شود:
+This property is specified as one of the following keyword values:
 
 - `static`
-  - : موقعیت عنصر بر اساس [جریان عادی](/en-US/docs/Learn_web_development/Core/CSS_layout/Introduction#normal_layout_flow) (Normal Flow) سند تعیین می‌شود. ویژگی‌های {{cssxref("top")}}، {{cssxref("right")}}، {{cssxref("bottom")}}، {{cssxref("left")}} و {{cssxref("z-index")}} _هیچ تأثیری_ ندارند. این مقدار پیش‌فرض است.
+  - : The element is positioned according to the [Normal Flow](/en-US/docs/Learn_web_development/Core/CSS_layout/Introduction#normal_layout_flow) of the document. The {{cssxref("top")}}, {{cssxref("right")}}, {{cssxref("bottom")}}, {{cssxref("left")}}, and {{cssxref("z-index")}} properties have _no effect_. This is the default value.
 - `relative`
-  - : موقعیت عنصر ابتدا بر اساس جریان عادی سند مشخص می‌شود و سپس نسبت به خودش با استفاده از مقادیر `top`، `right`، `bottom` و `left` جابجا می‌گردد. این جابجایی بر محل قرارگیری سایر عناصر تأثیری نمی‌گذارد؛ بنابراین فضای اختصاص‌یافته به عنصر در چیدمان صفحه دقیقاً همان فضایی خواهد بود که اگر `position` برابر با `static` می‌بود.
+  - : The element is positioned according to the normal flow of the document, and then offset _relative to itself_ based on the values of `top`, `right`, `bottom`, and `left`. The offset does not affect the position of any other elements; thus, the space given for the element in the page layout is the same as if position were `static`.
 
-این مقدار زمانی که `z-index` برابر با `auto` نباشد، یک [stacking context](/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context) جدید ایجاد می‌کند. تأثیر آن روی المنت‌های `table-*-group`، `table-row`، `table-column`، `table-cell` و `table-caption` تعریف‌نشده است.
+    This value creates a new [stacking context](/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context) when the value of `z-index` is not `auto`. Its effect on `table-*-group`, `table-row`, `table-column`, `table-cell`, and `table-caption` elements is undefined.
 
 - `absolute`
-  - : المنت از جریان عادی سند خارج می‌شود و هیچ فضایی برای آن در چیدمان صفحه در نظر گرفته نمی‌شود. المنت نسبت به نزدیک‌ترین جد position‌دار (در صورت وجود) یا نسبت به [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block#identifying_the_containing_block) اولیه جای‌گذاری می‌شود. موقعیت نهایی آن با مقادیر `top`، `right`، `bottom` و `left` تعیین می‌شود.
+  - : The element is removed from the normal document flow, and no space is created for the element in the page layout. The element is positioned relative to its closest positioned ancestor (if any) or to the initial [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block#identifying_the_containing_block). Its final position is determined by the values of `top`, `right`, `bottom`, and `left`.
 
-    این مقدار زمانی که `z-index` برابر با `auto` نباشد، یک [stacking context](/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context) جدید ایجاد می‌کند. حاشیه‌های (margin) باکس‌های دارای position: absolute با حاشیه‌های دیگر [ادغام نمی‌شوند](/en-US/docs/Web/CSS/Guides/Box_model/Margin_collapsing).
+    This value creates a new [stacking context](/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context) when the value of `z-index` is not `auto`. The margins of absolutely positioned boxes do not [collapse](/en-US/docs/Web/CSS/Guides/Box_model/Margin_collapsing) with other margins.
 
 - `fixed`
-  - : المنت از جریان عادی سند خارج می‌شود و هیچ فضایی برای آن در چیدمان صفحه در نظر گرفته نمی‌شود. المنت نسبت به [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block#identifying_the_containing_block) اولیه‌اش جای‌گذاری می‌شود که در رسانه‌های بصری همان viewport است. موقعیت نهایی آن با مقادیر `top`، `right`، `bottom` و `left` تعیین می‌شود.
+  - : The element is removed from the normal document flow, and no space is created for the element in the page layout. The element is positioned relative to its initial [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block#identifying_the_containing_block), which is the viewport in the case of visual media. Its final position is determined by the values of `top`, `right`, `bottom`, and `left`.
 
-    این مقدار همیشه یک [stacking context](/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context) جدید ایجاد می‌کند. در اسناد چاپی، المنت در _هر صفحه_ در همان موقعیت قرار می‌گیرد.
+    This value always creates a new [stacking context](/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context). In printed documents, the element is placed in the same position on _every page_.
 
 - `sticky`
-  - : المنت ابتدا بر اساس جریان عادی سند جای‌گذاری می‌شود و سپس نسبت به _نزدیک‌ترین جد قابل پیمایش_ و [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block) (نزدیک‌ترین جد در سطح block) بر اساس مقادیر `top`، `right`، `bottom` و `left` جابه‌جا می‌شود. این جابه‌جایی روی موقعیت هیچ المنت دیگری تأثیر نمی‌گذارد.
+  - : The element is positioned according to the normal flow of the document, and then offset relative to its _nearest scrolling ancestor_ and [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block) (nearest block-level ancestor), including table-related elements, based on the values of `top`, `right`, `bottom`, and `left`. The offset does not affect the position of any other elements.
 
-    این مقدار همیشه یک [stacking context](/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context) جدید ایجاد می‌کند. دقت کنید که یک المنت sticky به نزدیک‌ترین جَدی که «مکانیزم پیمایش» داشته باشد (یعنی زمانی که `overflow` برابر با `hidden`، `scroll`، `auto` یا `overlay` باشد) می‌چسبد، حتی اگر آن جد، نزدیک‌ترین جَد واقعاً پیمایش‌شونده نباشد.
+    This value always creates a new [stacking context](/en-US/docs/Web/CSS/Guides/Positioned_layout/Stacking_context). Note that a sticky element "sticks" to its nearest ancestor that has a "scrolling mechanism" (created when `overflow` is `hidden`, `scroll`, `auto`, or `overlay`), even if that ancestor isn't the nearest actually scrolling ancestor.
 
     > [!NOTE]
-    > حداقل یکی از ویژگی‌های [inset](/en-US/docs/Web/CSS/Reference/Properties/inset) (مانند {{cssxref("top")}}, {{cssxref("inset-block-start")}}, {{cssxref("right")}}, {{cssxref("inset-inline-end")}} و غیره) باید برای محوری که المنت قرار است sticky شود، روی مقداری غیر از `auto` تنظیم شود. اگر هر دو ویژگی inset در یک محور روی `auto` باشند، در آن محور مقدار `sticky` همانند `relative` رفتار می‌کند.
+    > At least one [inset](/en-US/docs/Web/CSS/Reference/Properties/inset) property ({{cssxref("top")}}, {{cssxref("inset-block-start")}}, {{cssxref("right")}}, {{cssxref("inset-inline-end")}}, etc.) needs to be set to a non-`auto` value for the axis on which the element needs to be made sticky. If both `inset` properties for an axis are set to `auto`, on that axis the `sticky` value will behave as `relative`.
 
-## توضیحات
+## Description
 
-### انواع position
+### Types of positioning
 
-- یک **عنصر position‌دار (positioned element)** عنصری است که مقدار [محاسبه‌شده (computed)](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#computed_value) ویژگی `position` در آن یکی از مقادیر `relative`، `absolute`، `fixed` یا `sticky` باشد. (به عبارت دیگر، هر چیزی غیر از `static`.)
-- یک **عنصر با position نسبی (relatively positioned element)** عنصری است که مقدار [محاسبه‌شده](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#computed_value) ویژگی `position` در آن `relative` باشد. ویژگی‌های `top` و `bottom` جابه‌جایی عمودی نسبت به موقعیت عادی عنصر را مشخص می‌کنند؛ ویژگی‌های `left` و `right` نیز جابه‌جایی افقی را مشخص می‌کنند.
-- یک **عنصر با position مطلق (absolutely positioned element)** عنصری است که مقدار [محاسبه‌شده](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#computed_value) ویژگی `position` در آن `absolute` یا `fixed` باشد. ویژگی‌های `top`، `right`، `bottom` و `left` فاصله از لبه‌های [بلوک دربرگیرنده](/en-US/docs/Web/CSS/Guides/Display/Containing_block) (containing block) را مشخص می‌کنند. (بلوک دربرگیرنده همان اجدادی است که عنصر نسبت به آن موقعیت‌دهی می‌شود.) اگر عنصر دارای margin باشد، مقدار آن به این فاصله اضافه می‌شود. این عنصر برای محتوای خود یک [بافتار قالب‌بندی بلوکی](/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context) (BFC) جدید ایجاد می‌کند.
-- یک **عنصر با position چسبنده (stickily positioned element)** عنصری است که مقدار [محاسبه‌شده](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#computed_value) ویژگی `position` در آن `sticky` باشد. این عنصر تا زمانی که [بلوک دربرگیرنده](/en-US/docs/Web/CSS/Guides/Display/Containing_block)‌اش از یک آستانهٔ مشخص (مانند تنظیم `top` روی مقداری غیر از `auto`) در ریشهٔ جریان (flow root) (یا محفظه‌ای که در آن اسکرول می‌کند) عبور نکند، مانند یک عنصر با position نسبی رفتار می‌کند. پس از عبور از آن آستانه، تا زمانی که به لبهٔ مقابل بلوک دربرگیرنده‌اش برسد، در جای خود «چسبیده» می‌ماند.
+- A **positioned element** is an element whose [computed](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#computed_value) `position` value is either `relative`, `absolute`, `fixed`, or `sticky`. (In other words, it's anything except `static`.)
+- A **relatively positioned element** is an element whose [computed](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#computed_value) `position` value is `relative`. The {{Cssxref("top")}} and {{Cssxref("bottom")}} properties specify the vertical offset from its normal position; the {{Cssxref("left")}} and {{Cssxref("right")}} properties specify the horizontal offset.
+- An **absolutely positioned element** is an element whose [computed](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#computed_value) `position` value is `absolute` or `fixed`. The {{Cssxref("top")}}, {{Cssxref("right")}}, {{Cssxref("bottom")}}, and {{Cssxref("left")}} properties specify offsets from the edges of the element's [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block). (The containing block is the ancestor relative to which the element is positioned.) If the element has margins, they are added to the offset. The element establishes a new [block formatting context](/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context) (BFC) for its contents.
+- A **stickily positioned element** is an element whose [computed](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#computed_value) `position` value is `sticky`. It's treated as relatively positioned until its [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block) crosses a specified threshold (such as setting {{Cssxref("top")}} to value other than auto) within its flow root (or the container it scrolls within), at which point it is treated as "stuck" until meeting the opposite edge of its [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block).
 
-در بیشتر مواقع، عناصر دارای position مطلق که ویژگی‌های `height` و `width` آنها روی `auto` تنظیم شده باشد، به‌گونه‌ای اندازه‌دهی می‌شوند که با محتوایشان متناسب باشند. با این حال، می‌توان عناصر position مطلقِ [غیر جایگزین](/en-US/docs/Glossary/Replaced_elements) (non-replaced) را با تعیین هم‌زمان `top` و `bottom` و تنظیم `height` روی `auto` (یا مشخص نکردن آن) وادار کرد که فضای عمودی موجود را پر کنند. به همین ترتیب، می‌توان با تعیین هم‌زمان `left` و `right` و رها کردن `width` روی `auto`، آنها را وادار به پر کردن فضای افقی موجود کرد.
+Most of the time, absolutely positioned elements that have {{Cssxref("height")}} and {{Cssxref("width")}} set to `auto` are sized so as to fit their contents. However, non-[replaced](/en-US/docs/Glossary/Replaced_elements), absolutely positioned elements can be made to fill the available vertical space by specifying both {{Cssxref("top")}} and {{Cssxref("bottom")}} and leaving {{Cssxref("height")}} unspecified (that is, `auto`). They can likewise be made to fill the available horizontal space by specifying both {{Cssxref("left")}} and {{Cssxref("right")}} and leaving {{Cssxref("width")}} as `auto`.
 
-به جز موردی که توضیح داده شد (پر کردن فضای موجود توسط عناصر position مطلق):
+Except for the case just described (of absolutely positioned elements filling the available space):
 
-- اگر هر دو ویژگی `top` و `bottom` مشخص شده باشند (از نظر فنی، روی `auto` نباشند)، `top` اولویت دارد.
-- اگر هر دو ویژگی `left` و `right` مشخص شده باشند، وقتی {{Cssxref("direction")}} برابر با `ltr` باشد (مانند انگلیسی، ژاپنی افقی و غیره) `left` اولویت دارد و وقتی `direction` برابر با `rtl` باشد (مانند فارسی، عربی، عبری و غیره) `right` اولویت دارد.
+- If both `top` and `bottom` are specified (technically, not `auto`), `top` wins.
+- If both `left` and `right` are specified, `left` wins when {{Cssxref("direction")}} is `ltr` (English, horizontal Japanese, etc.) and `right` wins when {{Cssxref("direction")}} is `rtl` (Persian, Arabic, Hebrew, etc.).
 
-## دسترسی‌پذیری
+## Accessibility
 
-اطمینان حاصل کنید که عناصری که با مقادیر `absolute` یا `fixed` موقعیت‌دهی شده‌اند، هنگام بزرگ‌نمایی صفحه برای افزایش اندازهٔ متن، محتوای دیگر را نپوشانند.
+Ensure that elements positioned with an `absolute` or `fixed` value do not obscure other content when the page is zoomed to increase text size.
 
-- [توضیحات MDN دربارهٔ درک WCAG، دستورالعمل 1.4](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
+- [MDN Understanding WCAG, Guideline 1.4 explanations](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
 - [Visual Presentation: Understanding SC 1.4.8 | Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html)
 
-### کارایی و دسترسی‌پذیری
+### Performance & Accessibility
 
-پیمایش (scroll) عناصری که محتوای `fixed` یا `sticky` دارند می‌تواند مشکلات عملکردی و دسترس‌پذیری ایجاد کند. هنگام اسکرول کاربر، مرورگر باید محتوای sticky یا fixed را در موقعیت جدیدی دوباره ترسیم (repaint) کند. بسته به میزان محتوایی که نیاز به بازترسیم دارد، عملکرد مرورگر و سرعت پردازش دستگاه، ممکن است مرورگر نتواند این بازترسیم‌ها را با نرخ ۶۰ فریم بر ثانیه انجام دهد. چنین وضعیتی می‌تواند به [jank](/en-US/docs/Glossary/Jank) (لرزش و کندی در اسکرول) و مهم‌تر از آن، مشکلات دسترس‌پذیری برای افراد حساس منجر شود. یکی از راه‌حل‌ها این است که با افزودن `will-change: transform` به عناصر position‌دار، آن‌ها را در لایهٔ اختصاصی خود رندر کنید تا سرعت بازترسیم را بهبود بخشد و در نتیجه عملکرد و دسترس‌پذیری را افزایش دهد.
+Scrolling elements containing `fixed` or `sticky` content can cause performance and accessibility issues. As a user scrolls, the browser must repaint the sticky or fixed content in a new location. Depending on the content needing to be repainted, the browser performance, and the device's processing speed, the browser may not be able to manage repaints at 60 fps. Such a scenario can lead to [jank](/en-US/docs/Glossary/Jank) and, more importantly, accessibility concerns for people with sensitivities. One solution is to add {{cssxref("will-change", "will-change: transform")}} to the positioned elements to render the element in its own layer, improving repaint speed and therefore improving performance and accessibility.
 
-## مثال‌ها
+## Formal definition
 
-### موقعیت‌دهی نسبی (Relative positioning)
+{{cssinfo}}
 
-عناصری که با position: relative تنظیم شده‌اند، به اندازه‌ای مشخص از موقعیت عادی خود در سند جابجا می‌شوند، اما این جابجایی روی چیدمان سایر عناصر تأثیر نمی‌گذارد. در مثال زیر توجه کنید که سایر عناصر طوری قرار گرفته‌اند که انگار عنصر "Two" همچنان فضای موقعیت اصلی خود را اشغال کرده است.
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Relative positioning
+
+Relatively positioned elements are offset a given amount from their normal position within the document, but without the offset affecting other elements. In the example below, note how the other elements are placed as if "Two" were taking up the space of its normal location.
 
 #### HTML
 
@@ -119,9 +228,11 @@ position: unset;
 }
 ```
 
-### موقعیت‌دهی مطلق (Absolute positioning)
+{{EmbedLiveSample('Relative_positioning', '', '200px')}}
 
-عناصر `position: relative` در جریان عادی سند باقی می‌مانند. در مقابل، عنصری که با `position: absolute` تنظیم شده باشد، از جریان عادی خارج می‌شود؛ به این معنی که سایر عناصر طوری چیده می‌شوند که انگار این عنصر اصلاً وجود ندارد. عنصر absolute نسبت به _نزدیک‌ترین عنصر والد دارای position_ (یعنی نزدیک‌ترین والدی که position آن `static` نیست) موقعیت‌دهی می‌شود. اگر چنین والدی وجود نداشته باشد، عنصر نسبت به ICB ([initial containing block](https://drafts.csswg.org/css-display/#initial-containing-block)) – بلوک دربرگیرندهٔ عنصر ریشهٔ سند – قرار می‌گیرد.
+### Absolute positioning
+
+Elements that are relatively positioned remain in the normal flow of the document. In contrast, an element that is absolutely positioned is taken out of the flow; thus, other elements are positioned as if it did not exist. The absolutely positioned element is positioned relative to its _nearest positioned ancestor_ (i.e., the nearest ancestor that is not `static`). If a positioned ancestor doesn't exist, it is positioned relative to the ICB ([initial containing block](https://drafts.csswg.org/css-display/#initial-containing-block)), which is the containing block of the document's root element.
 
 #### HTML
 
@@ -186,7 +297,13 @@ span {
 }
 ```
 
-موقعیت‌دهی `fixed` شبیه به موقعیت‌دهی `absolute` است، با این تفاوت که [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block) عنصر، همان بلوک دربرگیرندهٔ اولیه‌ای است که توسط _viewport_ ایجاد می‌شود، مگر اینکه یکی از اجداد عنصر، ویژگی `transform`، `perspective` یا `filter` را روی مقداری غیر از `none` تنظیم کرده باشد (مشاهدهٔ [fixed positioning containing block](https://drafts.csswg.org/css-position/#fixed-positioning-containing-block)). در این صورت، آن جد جایگزین [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block) عنصر می‌شود. از این قابلیت می‌توان برای ساخت عنصری «شناور» استفاده کرد که بدون توجه به اسکرول، در یک جای ثابت باقی می‌ماند. در مثال زیر، جعبهٔ «One» در فاصلهٔ 80 پیکسل از بالای صفحه و 10 پیکسل از سمت چپ ثابت شده است. حتی پس از اسکرول، همچنان نسبت به viewport در همان مکان باقی می‌ماند. همچنین، زمانی که ویژگی `will-change` روی `transform` تنظیم شود، یک containing block جدید ایجاد می‌شود.
+#### Result
+
+{{EmbedLiveSample('Absolute_positioning', '', '420px')}}
+
+### Fixed positioning
+
+Fixed positioning is similar to absolute positioning, with the exception that the element's [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block) is the initial containing block established by the _viewport_, unless any ancestor has `transform`, `perspective`, or `filter` property set to something other than `none` (see [fixed positioning containing block](https://drafts.csswg.org/css-position/#fixed-positioning-containing-block)), which then causes that ancestor to take the place of the elements [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block). This can be used to create a "floating" element that stays in the same position regardless of scrolling. In the example below, box "One" is fixed at 80 pixels from the top of the page and 10 pixels from the left. Even after scrolling, it remains in the same place relative to the viewport. Also, when the {{cssxref("will-change")}} property is set to `transform`, a new containing block is established.
 
 #### HTML
 
@@ -251,9 +368,13 @@ span {
 }
 ```
 
-### موقعیت‌دهی `sticky`
+#### Result
 
-قانون CSS زیر عنصری با شناسهٔ `one` را به‌صورت نسبی در جای خود نگه می‌دارد تا زمانی که viewport به اندازه‌ای اسکرول شود که فاصلهٔ عنصر از بالای صفحه 10 پیکسل شود. پس از عبور از این آستانه، عنصر در فاصلهٔ 10 پیکسل از بالای viewport ثابت می‌ماند.
+{{EmbedLiveSample('Fixed_positioning', '', '300px')}}
+
+### Sticky positioning
+
+The following CSS rule positions the element with id `one` relatively until the viewport is scrolled such that the element is 10 pixels from the top. Beyond that threshold, the element is fixed to 10 pixels from the top.
 
 ```css
 #one {
@@ -262,13 +383,11 @@ span {
 }
 ```
 
-#### فهرست با سرعنوان‌های `sticky`
+#### List with sticky headings
 
-یکی از کاربردهای رایج موقعیت‌دهی `sticky` برای سرعنوان‌ها در یک فهرست الفبایی است. سرعنوان «B» درست زیر مواردی که با «A» شروع می‌شوند نمایش داده می‌شود تا زمانی که آن موارد از صفحه خارج شوند. به جای اینکه این سرعنوان نیز همراه با سایر محتوا از صفحه خارج شود، در بالای viewport ثابت می‌ماند تا زمانی که تمام موارد «B» از دید خارج شوند؛ در این لحظه سرعنوان «C» جای آن را می‌پوشاند و این روند ادامه پیدا می‌کند.
+A common use for sticky positioning is for the headings in an alphabetized list. The "B" heading will appear just below the items that begin with "A" until they are scrolled offscreen. Rather than sliding offscreen with the rest of the content, the "B" heading will then remain fixed to the top of the viewport until all the "B" items have scrolled offscreen, at which point it will be covered up by the "C" heading, and so on.
 
-برای اینکه sticky positioning مطابق انتظار عمل کند، باید حداقل یکی از مشخصه‌های `top`، `right`، `bottom` یا `left` را به‌عنوان آستانه (threshold) تعیین کنید. در غیر این صورت، تفاوتی با relative positioning نخواهد داشت.
-
-#### لیستی با عناوین چسبنده
+You must specify a threshold with at least one of `top`, `right`, `bottom`, or `left` for sticky positioning to behave as expected. Otherwise, it will be indistinguishable from relative positioning.
 
 ##### HTML
 
@@ -348,11 +467,13 @@ dd + dd {
 }
 ```
 
-##### نتیجه
+##### Result
 
-#### موقعیت‌دهی چسبنده با تعیین تمام مرزهای inset
+{{EmbedLiveSample('List with sticky headings', '', '300px')}}
 
-مثال زیر رفتار یک عنصر را وقتی تمام مرزهای inset تعیین شده‌اند نشان می‌دهد. در اینجا دو ایموجی لامپ (💡) در یک پاراگراف داریم. لامپ‌ها از موقعیت‌دهی چسبنده (sticky) استفاده می‌کنند و مرزهای inset به‌صورت ۵۰px از بالا و پایین و ۱۰۰px از چپ و راست مشخص شده‌اند. یک پس‌زمینه خاکستری روی عنصر والد div ناحیه inset را مشخص می‌کند.
+#### Sticky position with all the inset boundaries set
+
+The following example demonstrates an element's behavior when all inset boundaries are set. Here, we have two light bulb emojis in a paragraph. The light bulbs use sticky positioning, and the inset boundaries are specified as 50px from the top and bottom, and 100px from the left and right. A gray background on the parent div element marks the inset area.
 
 ##### HTML
 
@@ -411,16 +532,23 @@ div {
 }
 ```
 
-##### نتیجه
+##### Result
 
-وقتی هر دو لامپ را در جای مناسب خود قرار دهید، می‌بینید که درون ناحیه inset به‌صورت نسبی (relative) جای‌گذاری می‌شوند. اما به‌محض خروج از ناحیه inset، در همان جهت به مرز inset می‌چسبند (fixed/sticky).
+{{EmbedLiveSample('Sticky position with all the inset boundaries set', '', '300px')}}
 
-## مشخصات
+When you put both bulbs in their proper place, you'll notice that they are relatively positioned inside the inset area. When you move them out of the inset area, they are fixed (sticky) to the inset boundary in that direction.
 
-## سازگاری مرورگرها
+## Specifications
 
-## همچنین ببینید
+{{Specifications}}
 
-- [آموزش CSS: موقعیت‌‌دهی (Positioning)](/en-US/docs/Learn_web_development/Core/CSS_layout/Positioning)
-- [ویژگی‌های inset برای چیدمان موقعیت‌یافته](/en-US/docs/Web/CSS/Guides/Logical_properties_and_values/Floating_and_positioning#example_inset_properties_for_positioned_layout)
-- [چیدمان موقعیت‌یافته CSS](/en-US/docs/Web/CSS/Guides/Positioned_layout) ماژول‌ها
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- {{glossary("Inset properties")}}
+- [Learn CSS: Positioning](/en-US/docs/Learn_web_development/Core/CSS_layout/Positioning)
+- [Inset properties for positioned layout](/en-US/docs/Web/CSS/Guides/Logical_properties_and_values/Floating_and_positioning#example_inset_properties_for_positioned_layout)
+- [CSS positioned layout](/en-US/docs/Web/CSS/Guides/Positioned_layout) modules
