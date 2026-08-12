@@ -1,0 +1,32 @@
+---
+title: "XRFrame: session property"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/XRFrame/session"
+status: "needs-translation"
+---
+
+---
+title: "XRFrame: session property"
+short-title: session
+slug: Web/API/XRFrame/session
+page-type: web-api-instance-property
+status:
+  - experimental
+browser-compat: api.XRFrame.session
+---
+
+{{APIRef("WebXR Device API")}}{{SeeCompatTable}}{{SecureContext_Header}}
+
+An `XRFrame` object's _read-only_ **`session`** property returns the {{domxref("XRSession")}} object that generated the frame.
+
+## Value
+
+A {{domxref("XRSession")}} object representing the WebXR session for which
+this `XRFrame` describes the object positions and orientations.
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
