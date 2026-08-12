@@ -1,21 +1,72 @@
 ---
 title: "flex-wrap CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-wrap"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-ویژگی **`flex-wrap`** در CSS مشخص می‌کند که آیتم‌های یک flex container تنها در یک خط باقی بمانند یا اجازهٔ شکستن به چند خط را داشته باشند. اگر شکستن خط مجاز باشد، جهت چیدمان خطوط نیز تعیین می‌شود.
+---
+title: "`flex-wrap` CSS property"
+short-title: flex-wrap
+slug: Web/CSS/Reference/Properties/flex-wrap
+page-type: css-property
+browser-compat: css.properties.flex-wrap
+sidebar: cssref
+---
 
-می‌توان با shorthand ویژگی {{cssxref("flex-flow")}}، هر دو ویژگی `flex-wrap` و {{CSSXRef("flex-direction")}} را به‌طور هم‌زمان تنظیم کرد. این دو ویژگی به ترتیب محور اصلی و محور متقاطع flex container را تعریف می‌کنند.
+The **`flex-wrap`** [CSS](/en-US/docs/Web/CSS) property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it sets the direction that lines are stacked.
 
-## نحوهٔ نوشتن
+{{InteractiveExample("CSS Demo: flex-wrap")}}
+
+```css interactive-example-choice
+flex-wrap: nowrap;
+```
+
+```css interactive-example-choice
+flex-wrap: wrap;
+```
+
+```css interactive-example-choice
+flex-wrap: wrap-reverse;
+```
+
+```html interactive-example
+<section class="default-example" id="default-example">
+  <div class="transition-all" id="example-element">
+    <div>Item One</div>
+    <div>Item Two</div>
+    <div>Item Three</div>
+    <div>Item Four</div>
+    <div>Item Five</div>
+    <div>Item Six</div>
+  </div>
+</section>
+```
+
+```css interactive-example
+#example-element {
+  border: 1px solid #c5c5c5;
+  width: 80%;
+  display: flex;
+}
+
+#example-element > div {
+  background-color: rgb(0 0 255 / 0.2);
+  border: 3px solid blue;
+  width: 60px;
+  margin: 10px;
+}
+```
+
+The {{cssxref("flex-flow")}} property shorthand can be used to set both the {{CSSXRef("flex-direction")}} and `flex-wrap` properties, which define the flex container's main and cross axes, respectively.
+
+## Syntax
 
 ```css
-flex-wrap: nowrap; /* مقدار پیش‌فرض */
+flex-wrap: nowrap; /* Default value */
 flex-wrap: wrap;
 flex-wrap: wrap-reverse;
 
-/* مقادیر سراسری */
+/* Global values */
 flex-wrap: inherit;
 flex-wrap: initial;
 flex-wrap: revert;
@@ -23,37 +74,45 @@ flex-wrap: revert-layer;
 flex-wrap: unset;
 ```
 
-### مقادیر
+### Values
 
-ویژگی `flex-wrap` یکی از کلمات کلیدی زیر را می‌پذیرد:
+The `flex-wrap` property is specified as a single keyword chosen from the following values below:
 
 - `nowrap`
-  - : آیتم‌های flex در یک خط چیده می‌شوند. این وضعیت ممکن است باعث سرریز شدن flex container شود. نقطهٔ شروع محور متقاطع (cross-start) معادل `inline-start` یا `block-start` است (بسته به مقدار {{cssxref("flex-direction")}}). این مقدار پیش‌فرض است.
+  - : The flex items are laid out in a single line which may cause the flex container to overflow. The cross-start is the equivalent of [inline-start or block-start](/en-US/docs/Glossary/Flow_relative_values), depending on the {{cssxref("flex-direction")}} value. This is the default value.
 - `wrap`
-  - : آیتم‌ها به چند خط می‌شکنند. نقطهٔ شروع محور متقاطع معادل `inline-start` یا `block-start` است که با توجه به [حالت نوشتار](/en-US/docs/Web/CSS/Guides/Writing_modes) جاری و مقدار `flex-direction` تعیین می‌شود.
+  - : The flex items break into multiple lines. The cross-start is the equivalent of [inline-start or block-start](/en-US/docs/Glossary/Flow_relative_values), depending on the current [writing mode](/en-US/docs/Web/CSS/Guides/Writing_modes), and the {{cssxref("flex-direction")}} value.
 - `wrap-reverse`
-  - : رفتاری مشابه `wrap` دارد، اما جهت شروع و پایان محور متقاطع معکوس می‌شود.
+  - : Behaves the same as `wrap`, but cross-start and cross-end are inverted.
 
-## مثال‌ها
+## Formal definition
 
-### تنظیم مقادیر مختلف flex-wrap برای یک flex container
+{{cssinfo}}
+
+## Formal syntax
+
+{{csssyntax}}
+
+## Examples
+
+### Setting flex container wrap values
 
 #### HTML
 
 ```html
-<h4>نمونه‌ای برای flex-wrap:wrap</h4>
+<h4>This is an example for flex-wrap:wrap</h4>
 <div class="content">
   <div class="red">1</div>
   <div class="green">2</div>
   <div class="blue">3</div>
 </div>
-<h4>نمونه‌ای برای flex-wrap:nowrap</h4>
+<h4>This is an example for flex-wrap:nowrap</h4>
 <div class="content1">
   <div class="red">1</div>
   <div class="green">2</div>
   <div class="blue">3</div>
 </div>
-<h4>نمونه‌ای برای flex-wrap:wrap-reverse</h4>
+<h4>This is an example for flex-wrap:wrap-reverse</h4>
 <div class="content2">
   <div class="red">1</div>
   <div class="green">2</div>
@@ -64,7 +123,7 @@ flex-wrap: unset;
 #### CSS
 
 ```css
-/* استایل‌های مشترک */
+/* Common Styles */
 .content,
 .content1,
 .content2 {
@@ -91,7 +150,7 @@ flex-wrap: unset;
   background: steelblue;
 }
 
-/* استایل‌های flexbox */
+/* Flexbox Styles */
 .content {
   display: flex;
   flex-wrap: wrap;
@@ -106,15 +165,22 @@ flex-wrap: unset;
 }
 ```
 
-#### نتیجه
+#### Results
 
-در اولین container با `flex-wrap: wrap`، آیتم‌ها در صورت نبود فضای کافی به خط بعد منتقل می‌شوند. در دومین container با `nowrap` همهٔ آیتم‌ها در یک خط فشرده می‌مانند و ممکن است موجب سرریز شوند. در سومین container با `wrap-reverse` خطوط از پایین به بالا چیده می‌شوند.
+{{ EmbedLiveSample('Setting flex container wrap values', '', '700') }}
 
-## همچنین ببینید
+## Specifications
 
-- [مفاهیم پایه‌ای flexbox](/en-US/docs/Web/CSS/Guides/Basic_concepts_of_flexbox)
-- [تسلط بر wrapping آیتم‌های flex](/en-US/docs/Web/CSS/Guides/Mastering_wrapping_of_flex_items)
+{{Specifications}}
 
-- [مفاهیم پایه‌ای flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts)
-- [تسلط بر wrapping آیتم‌های flex](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Wrapping_items)
-- ماژول [چیدمان جعبه‌ای انعطاف‌پذیر CSS](/en-US/docs/Web/CSS/Guides/Flexible_box_layout)
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- {{CSSXRef("flex-direction")}}
+- {{CSSXRef("flex-flow")}} shorthand
+- [Basic concepts of flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts)
+- [Mastering wrapping of flex items](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Wrapping_items)
+- [CSS flexible box layout](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) module
