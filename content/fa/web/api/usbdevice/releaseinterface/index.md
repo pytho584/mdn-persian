@@ -1,0 +1,44 @@
+---
+title: "USBDevice: releaseInterface() method"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/releaseInterface"
+status: "needs-translation"
+---
+
+---
+title: "USBDevice: releaseInterface() method"
+short-title: releaseInterface()
+slug: Web/API/USBDevice/releaseInterface
+page-type: web-api-instance-method
+status:
+  - experimental
+browser-compat: api.USBDevice.releaseInterface
+---
+
+{{APIRef("WebUSB API")}}{{SeeCompatTable}}{{SecureContext_Header}}{{AvailableInWorkers}}
+
+The **`releaseInterface()`** method of the
+{{domxref("USBDevice")}} interface returns a {{jsxref("Promise")}} that resolves when a
+claimed interface is released from exclusive access.
+
+## Syntax
+
+```js-nolint
+releaseInterface(interfaceNumber)
+```
+
+### Parameters
+
+- `interfaceNumber`
+  - : The device-specific index of the currently-claimed interface.
+
+### Return value
+
+A {{jsxref("Promise")}}.
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
