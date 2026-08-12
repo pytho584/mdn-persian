@@ -1,0 +1,39 @@
+---
+title: ":-moz-handler-blocked CSS pseudo-class"
+source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:-moz-handler-blocked"
+status: "needs-translation"
+---
+
+---
+title: "`:-moz-handler-blocked` CSS pseudo-class"
+short-title: :-moz-handler-blocked
+slug: Web/CSS/Reference/Selectors/:-moz-handler-blocked
+page-type: css-pseudo-class
+status:
+  - non-standard
+sidebar: cssref
+---
+
+{{Non-standard_header}}
+
+The **`:-moz-handler-blocked`** [CSS](/en-US/docs/Web/CSS) [pseudo-class](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes) is a [Mozilla extension](/en-US/docs/Web/CSS/Reference/Mozilla_extensions) that matches elements that can't be displayed because their handlers have been blocked.
+
+> [!NOTE]
+> This selector is mainly intended to be used by theme developers.
+
+## Syntax
+
+```css
+:-moz-handler-blocked {
+  /* ... */
+}
+```
+
+## Specifications
+
+Not part of any standard.
+
+## See also
+
+- {{ cssxref(":-moz-handler-crashed") }}
+- {{ cssxref(":-moz-handler-disabled") }}
