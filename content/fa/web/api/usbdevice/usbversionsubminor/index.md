@@ -1,0 +1,35 @@
+---
+title: "USBDevice: usbVersionSubminor property"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/USBDevice/usbVersionSubminor"
+status: "needs-translation"
+---
+
+---
+title: "USBDevice: usbVersionSubminor property"
+short-title: usbVersionSubminor
+slug: Web/API/USBDevice/usbVersionSubminor
+page-type: web-api-instance-property
+status:
+  - experimental
+browser-compat: api.USBDevice.usbVersionSubminor
+---
+
+{{APIRef("WebUSB API")}}{{SeeCompatTable}}{{SecureContext_Header}}{{AvailableInWorkers}}
+
+The **`usbVersionSubminor`** read only property of the
+{{domxref("USBDevice")}} interface is one of three properties that declare the USB
+protocol version supported by the device. The other two properties
+are USBDevice.usbVersionMajor and USBDevice.usbVersionMinor.
+
+## Value
+
+The first of three properties that declare the USB protocol version supported by the
+device.
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
