@@ -1,8 +1,53 @@
 ---
 title: "font-size CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
+
+---
+title: "`font-size` CSS property"
+short-title: font-size
+slug: Web/CSS/Reference/Properties/font-size
+page-type: css-property
+browser-compat: css.properties.font-size
+sidebar: cssref
+---
+
+The **`font-size`** [CSS](/en-US/docs/Web/CSS) property sets the size of the font. Changing the font size also updates the sizes of the font size-relative {{cssxref("&lt;length&gt;")}} units, such as `em`, `ex`, and so forth.
+
+{{InteractiveExample("CSS Demo: font-size")}}
+
+```css interactive-example-choice
+font-size: 1.2rem;
+```
+
+```css interactive-example-choice
+font-size: x-small;
+```
+
+```css interactive-example-choice
+font-size: smaller;
+```
+
+```css interactive-example-choice
+font-size: 12px;
+```
+
+```css interactive-example-choice
+font-size: 80%;
+```
+
+```html interactive-example
+<section id="default-example">
+  <p id="example-element">
+    London. Michaelmas term lately over, and the Lord Chancellor sitting in
+    Lincoln's Inn Hall. Implacable November weather. As much mud in the streets
+    as if the waters had but newly retired from the face of the earth, and it
+    would not be wonderful to meet a Megalosaurus, forty feet long or so,
+    waddling like an elephantine lizard up Holborn Hill.
+  </p>
+</section>
+```
 
 ## Syntax
 
@@ -41,46 +86,48 @@ font-size: unset;
 
 ### Values
 
+This property is specified as a single value from the following list:
+
 - `xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large`, `xxx-large`
-  - : کلمات کلیدی [absolute-size](/en-US/docs/Web/CSS/Reference/Values/absolute-size) که بر اساس اندازه قلم پیش‌فرض کاربر (که `medium` است) تعیین می‌شوند.
+  - : [Absolute-size](/en-US/docs/Web/CSS/Reference/Values/absolute-size) keywords, based on the user's default font size (which is `medium`).
 
 - `larger`, `smaller`
-  - : کلمات کلیدی [relative-size](/en-US/docs/Web/CSS/Reference/Values/relative-size). قلم نسبت به اندازه قلم عنصر والد بزرگ‌تر یا کوچک‌تر می‌شود، تقریباً با نسبتی که برای تفکیک کلمات کلیدی absolute-size در بالا استفاده شده است.
+  - : [Relative-size](/en-US/docs/Web/CSS/Reference/Values/relative-size) keywords. The font will be larger or smaller relative to the parent element's font size, roughly by the ratio used to separate the absolute-size keywords above.
 
 - {{cssxref("&lt;length&gt;")}}
-  - : یک مقدار {{cssxref("&lt;length&gt;")}} مثبت. برای اکثر واحدهای نسبی قلم (مثل `em` و `ex`)، اندازه قلم نسبت به اندازه قلم عنصر والد تعیین می‌شود.
+  - : A positive {{cssxref("&lt;length&gt;")}} value. For most font-relative units (such as `em` and `ex`), the font size is relative to the parent element's font size.
 
-    برای واحدهای نسبی قلم که مبتنی بر ریشه هستند (مثل `rem`)، اندازه قلم نسبت به اندازه قلم استفاده شده توسط عنصر {{HTMLElement("html")}} (ریشه) محاسبه می‌شود.
+    For font-relative units that are root-based (such as `rem`), the font size is relative to the size of the font used by the {{HTMLElement("html")}} (root) element.
 
 - {{cssxref("&lt;percentage&gt;")}}
-  - : یک مقدار {{cssxref("&lt;percentage&gt;")}} مثبت، نسبت به اندازه قلم عنصر والد.
+  - : A positive {{cssxref("&lt;percentage&gt;")}} value, relative to the parent element's font size.
     > [!NOTE]
-    > برای دسترسی‌پذیری بهتر، معمولاً توصیه می‌شود از مقادیری استفاده کنید که نسبت به اندازه قلم پیش‌فرض کاربر باشند.
+    > To maximize accessibility, it is generally best to use values that are relative to the user's default font size.
 
 - `math`
-  - : هنگام محاسبه مقدار `font-size` برای عناصر math، قوانین [مقیاس‌بندی](https://w3c.github.io/mathml-core/#the-math-script-level-property) اعمال می‌شوند تا اندازه نسبت به `font-size` والد محتواکننده تنظیم گردد.
-    برای اطلاعات بیشتر، ویژگی [math-depth](/en-US/docs/Web/CSS/Reference/Properties/math-depth) را ببینید.
+  - : [Scaling rules](https://w3c.github.io/mathml-core/#the-math-script-level-property) are applied when determining the computed value of the `font-size` property for math elements relative to the `font-size` of the containing parent.
+    See the [math-depth](/en-US/docs/Web/CSS/Reference/Properties/math-depth) property for more information.
 
 ## Description
 
-روش‌های مختلفی برای مشخص کردن اندازه قلم وجود دارد، از جمله کلمات کلیدی یا مقادیر عددی برای پیکسل یا em. بر اساس نیاز صفحه وب مورد نظر، روش مناسب را انتخاب کنید.
+There are several ways to specify the font size, including keywords or numerical values for pixels or ems. Choose the appropriate method based on the needs of the particular web page.
 
 ### Keywords
 
-کلمات کلیدی روش خوبی برای تنظیم اندازه قلم در وب هستند. با تعیین یک اندازه قلم کلیدی روی عنصر {{HTMLElement("body")}}، می‌توانید اندازه‌های نسبی را در سراسر صفحه تنظیم کنید و به راحتی اندازه قلم را در کل صفحه بزرگ یا کوچک کنید.
+Keywords are a good way to set the size of fonts on the web. By setting a keyword font size on the {{HTMLElement("body")}} element, you can set relative font-sizing everywhere else on the page, giving you the ability to easily scale the font up or down on the entire page accordingly.
 
 ### Pixels
 
-تنظیم اندازه فونت با مقادیر پیکسلی (`px`) وقتی به دقت پیکسلی نیاز دارید انتخاب خوبی است. مقدار `px` ایستا است. این روشی مستقل از سیستم‌عامل و مرورگر است که به مرورگرها می‌گوید حروف را دقیقاً با ارتفاع پیکسلی که مشخص کرده‌اید نمایش دهند. نتایج ممکن است بین مرورگرها کمی متفاوت باشد، چون هر کدام ممکن است از الگوریتم‌های متفاوتی برای رسیدن به نتیجه‌ای مشابه استفاده کنند.
+Setting the font size in pixel values (`px`) is a good choice when you need pixel accuracy. A px value is static. This is an OS-independent and cross-browser way of literally telling the browsers to render the letters at exactly the number of pixels in height that you specified. The results may vary slightly across browsers, as they may use different algorithms to achieve a similar effect.
 
-تنظیمات اندازه فونت را می‌توان با هم ترکیب کرد. برای نمونه، اگر یک عنصر والد روی `16px` تنظیم شده باشد و عنصر فرزند آن `larger` باشد، فرزند بزرگ‌تر از والد در صفحه نمایش داده می‌شود.
+Font sizing settings can also be used in combination. For example, if a parent element is set to `16px` and its child element is set to `larger`, the child element displays larger than the parent element on the page.
 
 > [!NOTE]
-> تعریف اندازه فونت با `px` از نظر [دسترسی‌پذیری](https://en.wikipedia.org/wiki/Web_accessibility) مناسب نیست، چون کاربر در برخی مرورگرها نمی‌تواند اندازه فونت را تغییر دهد. برای مثال، کاربرانی با دید محدود ممکن است بخواهند اندازه فونت را بسیار بزرگ‌تر از آنچه طراح وب انتخاب کرده تنظیم کنند. اگر می‌خواهید طراحی‌ای فراگیر داشته باشید، از `px` برای اندازه فونت استفاده نکنید.
+> Defining font sizes in `px` is _[not accessible](https://en.wikipedia.org/wiki/Web_accessibility)_, because the user cannot change the font size in some browsers. For example, users with limited vision may wish to set the font size much larger than the size chosen by a web designer. Avoid using them for font sizes if you wish to create an inclusive design.
 
-### Em
+### Ems
 
-استفاده از مقدار `em` یک اندازه فونت پویا یا محاسبه‌شده ایجاد می‌کند (از نظر تاریخی، واحد `em` از عرض حرف بزرگ "M" در یک قلم خاص گرفته شده بود). مقدار عددی مانند یک ضریب برای ویژگی `font-size` عنصری که روی آن اعمال می‌شود عمل می‌کند. به این مثال دقت کنید:
+Using an `em` value creates a dynamic or computed font size (historically the `em` unit was derived from the width of a capital "M" in a given typeface.). The numeric value acts as a multiplier of the `font-size` property of the element on which it is used. Consider this example:
 
 ```css
 p {
@@ -88,21 +135,21 @@ p {
 }
 ```
 
-در این حالت، اندازه فونت عناصر `<p>` دو برابر `font-size` محاسبه‌شده‌ای خواهد بود که به ارث برده‌اند. به همین ترتیب، `font-size` برابر با `1em` معادل `font-size` محاسبه‌شده همان عنصر است.
+In this case, the font size of `<p>` elements will be double the computed `font-size` inherited by `<p>` elements. By extension, a `font-size` of `1em` equals the computed `font-size` of the element on which it is used.
 
-اگر روی هیچ‌کدام از اجداد `<p>` مقدار `font-size` تنظیم نشده باشد، آن‌گاه `1em` برابر با اندازه فونت پیش‌فرض مرورگر خواهد بود که معمولاً `16px` است. بنابراین، به‌طور پیش‌فرض `1em` معادل `16px` و `2em` معادل `32px` می‌شود. اگر مثلاً روی عنصر `<body>` اندازه فونت را `20px` قرار دهید، آن‌گاه `1em` روی عناصر `<p>` معادل `20px` و `2em` معادل `40px` خواهد بود.
+If a `font-size` has not been set on any of the `<p>`'s ancestors, then `1em` will equal the default browser `font-size`, which is usually `16px`. So, by default `1em` is equivalent to `16px`, and `2em` is equivalent to `32px`. If you were to set a `font-size` of 20px on the `<body>` element say, then `1em` on the `<p>` elements would instead be equivalent to `20px`, and `2em` would be equivalent to `40px`.
 
-برای محاسبه معادل `em` برای هر مقدار پیکسلی می‌توانید از این فرمول استفاده کنید:
+In order to calculate the `em` equivalent for any pixel value required, you can use this formula:
 
 ```plain
-em = مقدار پیکسلی عنصر مورد نظر / اندازه فونت والد به پیکسل
+em = desired element pixel value / parent element font-size in pixels
 ```
 
-برای نمونه، فرض کنید `font-size` صفحه روی `<body>` برابر `16px` باشد. اگر اندازه فونت مورد نظر شما `12px` است، باید `0.75em` مشخص کنید (چون 12/16 = 0.75). به همین ترتیب، اگر اندازه `10px` بخواهید، `0.625em` (10/16 = 0.625) و برای `22px` مقدار `1.375em` (22/16) مناسب است.
+For example, suppose the `font-size` of the `<body>` of the page is set to `16px`. If the font-size you want is `12px`, then you should specify `0.75em` (because 12/16 = 0.75). Similarly, if you want a font size of `10px`, then specify `0.625em` (10/16 = 0.625); for `22px`, specify `1.375em` (22/16).
 
-واحد `em` در CSS بسیار مفید است، چون طول خود را به‌طور خودکار نسبت به فونتی که کاربر انتخاب می‌کند تطبیق می‌دهد.
+The `em` is a very useful unit in CSS since it automatically adapts its length relative to the font that the reader chooses to use.
 
-نکته مهمی که باید به خاطر بسپارید: مقادیر `em` ترکیب می‌شوند. به HTML و CSS زیر توجه کنید:
+One important fact to keep in mind: em values compound. Take the following HTML and CSS:
 
 ```css
 html {
@@ -119,13 +166,17 @@ span {
 </div>
 ```
 
-با فرض اینکه اندازه فونت پیش‌فرض مرورگر `16px` باشد، کلمه "outer" با اندازه `25.6px` و کلمه "inner" با `40.96px` نمایش داده می‌شود. دلیلش این است که `font-size` عنصر `<span>` داخلی `1.6em` است که نسبت به `font-size` والدش محاسبه می‌شود، و آن هم به نوبه خود نسبت به والدش. به این پدیده اغلب **compounding** (ترکیب شدن) گفته می‌شود.
+The result is:
 
-### Rem
+{{EmbedLiveSample("Ems", 400, 100)}}
 
-واحد `rem` برای دور زدن مشکل ترکیب شدن ابداع شد. مقادیر `rem` نسبت به عنصر ریشه `html` سنجیده می‌شوند، نه عنصر والد. به عبارت دیگر، این واحد به شما اجازه می‌دهد اندازه فونت را به شیوه‌ای نسبی مشخص کنید، بدون آنکه اندازه والد روی آن تأثیر بگذارد و به این ترتیب ترکیب شدن از بین می‌رود.
+Assuming that the browser's default `font-size` is 16px, the words "outer" would be rendered at 25.6px, but the word "inner" would be rendered at 40.96px. This is because the inner {{HTMLElement("span")}}'s `font-size` is 1.6em which is relative to its parent's `font-size`, which is in turn relative to its parent's `font-size`. This is often called **compounding**.
 
-CSS زیر تقریباً مشابه مثال قبلی است. تنها تفاوت این است که واحد به `rem` تغییر یافته.
+### Rems
+
+`rem` values were invented in order to sidestep the compounding problem. `rem` values are relative to the root `html` element, not the parent element. In other words, it lets you specify a font size in a relative fashion without being affected by the size of the parent, thereby eliminating compounding.
+
+The CSS below is nearly identical to the previous example. The only exception is that the unit has been changed to `rem`.
 
 ```css
 html {
@@ -136,27 +187,33 @@ span {
 }
 ```
 
-سپس همین CSS را به همان HTML اعمال می‌کنیم که به این صورت خواهد بود:
+Then we apply this CSS to the same HTML, which looks like this:
 
 ```html
 <span>Outer <span>inner</span> outer</span>
 ```
 
-در این مثال، کلمات "outer inner outer" همگی با اندازهٔ 25.6px نمایش داده می‌شوند (با این فرض که `font-size` مرورگر روی مقدار پیش‌فرض 16px باقی مانده باشد).
+{{EmbedLiveSample("Rems", 400, 100)}}
+
+In this example, the words "outer inner outer" are all displayed at 25.6px (assuming that the browser's `font-size` has been left at the default value of 16px).
 
 ### Ex
 
-مشابه واحد `em`، `font-size` یک عنصر که با واحد `ex` تنظیم شود، محاسباتی یا پویا است. رفتار دقیقاً یکسانی دارد، با این تفاوت که هنگام تنظیم ویژگی `font-size` با واحد `ex`، مقدار آن برابر با x-height (ارتفاع x) [اولین فونت در دسترس](https://drafts.csswg.org/css-fonts/#first-available-font) در صفحه می‌شود. مقدار عددی، `font-size` به ارث‌برده‌شدهٔ عنصر را ضرب می‌کند و اندازه‌ها به‌صورت نسبی روی هم انباشته می‌شوند.
+Like the `em` unit, an element's `font-size` set using the `ex` unit is computed or dynamic. It behaves in exactly the same way, except that when setting the `font-size` property using `ex` units, the `font-size` equals the x-height of the [first available font](https://drafts.csswg.org/css-fonts/#first-available-font) used on the page. The number value multiplies the element's inherited `font-size` and the `font-size` compounds relatively.
 
-برای توضیحات دقیق‌تر دربارهٔ [واحدهای طول نسبی فونت](https://drafts.csswg.org/css-values-4/#font-relative-length) مانند `ex`، پیش‌نویس ویرایشگر W3C را ببینید.
+See the W3C Editor's Draft for a more detailed description of [font-relative length units](https://drafts.csswg.org/css-values-4/#font-relative-length) such as `ex`.
 
-## تعریف رسمی
+## Formal definition
 
-## نحو رسمی
+{{cssinfo}}
 
-## مثال‌ها
+## Formal syntax
 
-### تنظیم اندازه‌های فونت
+{{csssyntax}}
+
+## Examples
+
+### Setting font sizes
 
 #### CSS
 
@@ -184,18 +241,24 @@ span {
 <h1 class="percent">200% H1</h1>
 ```
 
-#### نتیجه
+#### Result
 
-## مشخصات
+{{EmbedLiveSample('Setting_font_sizes', 600, 250)}}
 
-## سازگاری با مرورگرها
+## Specifications
 
-## همچنین ببینید
+{{Specifications}}
 
-- `font-size-adjust`
-- `font-style`
-- `font-weight`
-- `math-depth`
-- `math-style`
-- ویژگی `font-size` در SVG
-- [یادگیری: استایل‌دهی مقدماتی متن و فونت](/en-US/docs/Learn_web_development/Core/Text_styling/Fundamentals)
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- {{cssxref("font-size-adjust")}}
+- {{cssxref("font-style")}}
+- {{cssxref("font-weight")}}
+- {{cssxref("math-depth")}}
+- {{cssxref("math-style")}}
+- SVG {{SVGAttr("font-size")}} attribute
+- [Learn: Fundamental text and font styling](/en-US/docs/Learn_web_development/Core/Text_styling/Fundamentals)
