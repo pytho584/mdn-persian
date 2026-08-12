@@ -1,23 +1,73 @@
 ---
 title: "flex-direction CSS property"
 source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-direction"
-translated_by: "n8n + AI"
+status: "needs-translation"
 ---
 
-# ویژگی `flex-direction` در CSS
+---
+title: "`flex-direction` CSS property"
+short-title: flex-direction
+slug: Web/CSS/Reference/Properties/flex-direction
+page-type: css-property
+browser-compat: css.properties.flex-direction
+sidebar: cssref
+---
 
-ویژگی **`flex-direction`** در CSS نحوه چیدمان آیتم‌های flex درون یک flex container را مشخص می‌کند و محور اصلی (main axis) و جهت (عادی یا برعکس) را تعریف می‌کند.
+The **`flex-direction`** [CSS](/en-US/docs/Web/CSS) property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
 
-## نحوه نوشتن
+{{InteractiveExample("CSS Demo: flex-direction")}}
+
+```css interactive-example-choice
+flex-direction: row;
+```
+
+```css interactive-example-choice
+flex-direction: row-reverse;
+```
+
+```css interactive-example-choice
+flex-direction: column;
+```
+
+```css interactive-example-choice
+flex-direction: column-reverse;
+```
+
+```html interactive-example
+<section class="default-example" id="default-example">
+  <div class="transition-all" id="example-element">
+    <div>Item One</div>
+    <div>Item Two</div>
+    <div>Item Three</div>
+  </div>
+</section>
+```
+
+```css interactive-example
+#example-element {
+  border: 1px solid #c5c5c5;
+  width: 80%;
+  display: flex;
+}
+
+#example-element > div {
+  background-color: rgb(0 0 255 / 0.2);
+  border: 3px solid blue;
+  width: 60px;
+  margin: 10px;
+}
+```
+
+## Syntax
 
 ```css
-/* مقدارهای کلیدی */
+/* Keyword values */
 flex-direction: row;
 flex-direction: row-reverse;
 flex-direction: column;
 flex-direction: column-reverse;
 
-/* مقدارهای سراسری */
+/* Global values */
 flex-direction: inherit;
 flex-direction: initial;
 flex-direction: revert;
@@ -25,50 +75,54 @@ flex-direction: revert-layer;
 flex-direction: unset;
 ```
 
-### مقادیر
+### Values
 
-این ویژگی یکی از مقدارهای کلیدی زیر را می‌پذیرد:
+This property is specified as one of the following keyword values:
 
 - `row`
-  - : محور اصلی flex container را هم‌جهت با جهت نوشتار (text direction) قرار می‌دهد. این مقدار پیش‌فرض است.
+  - : Specifies the flex container's main-axis to be the same as the text direction. This is the default value.
 - `row-reverse`
-  - : مانند `row` عمل می‌کند، اما ترتیب آیتم‌ها برعکس می‌شود؛ اولین آیتم در لبه `inline-end` قرار می‌گیرد.
+  - : Behaves the same as `row` but specifies the content direction to be inverted, with the first item placed at the inline-end edge.
 - `column`
-  - : محور اصلی flex container را هم‌جهت با محور block (block-axis) تنظیم می‌کند.
+  - : Specifies the flex container's main-axis to be the same as the block-axis.
 - `column-reverse`
-  - : مانند `column` عمل می‌کند، اما جهت محتوا برعکس می‌شود؛ اولین آیتم در لبه `block-end` قرار می‌گیرد.
+  - : Behaves the same as `column` but specifies the content direction to be inverted, with the first item placed at the block-end edge.
 
-## توضیحات
+## Description
 
-با استفاده از `flex-direction` می‌توانید محور اصلی container و جهت چیدمان آیتم‌های flex را مشخص کنید. این ویژگی فقط روی عناصری تأثیر دارد که ویژگی {{cssxref("display")}} آن‌ها روی `flex` یا `inline-flex` تنظیم شده باشد. بهتر است `flex-direction` را به‌همراه {{CSSXRef("flex-wrap")}} و از طریق ویژگی خلاصه {{CSSXRef("flex-flow")}} مقداردهی کنید.
+The `flex-direction` property enables you to define how flex items are placed in a flex container by setting the container's main axis and the direction of the flex items. This property is relevant only on container elements that have their {{cssxref("display")}} property set to `flex` or `inline-flex`. The `flex-direction` property, along with the {{CSSXRef("flex-wrap")}} property, should be set using the {{CSSXRef("flex-flow")}} shorthand.
 
-وقتی `flex-direction` روی یک flex container تنظیم شود، تعیین می‌کند که آیتم‌های flex در همان جهت متن (هم‌راستا) یا عمود بر آن (در جهت block) چیده شوند و اینکه ترتیب آن‌ها عادی باشد یا برعکس.
+When set on a flex container, the `flex-direction` property defines whether the flex items are laid out in the same direction or perpendicular to the text direction, and whether the items are laid out normally or reversed.
 
-مقدار پیش‌فرض `row` است. با این مقدار (چه صریحاً تنظیم شود یا به‌صورت پیش‌فرض)، محور اصلی flex container همان جهت نوشتار (متن) خواهد بود. اولین آیتم flex بر اساس ترتیب DOM در گوشه `inline-start` و `block-start` قرار می‌گیرد. آیتم‌های بعدی در لبه `inline-end` آیتم قبلی چیده می‌شوند. اگر container با `flex-wrap: wrap` تنظیم شده باشد، ردیف‌های اضافی در لبه `block-end` اضافه می‌شوند. نقاط **main-start** و **main-end** با جهت محتوا یکسان هستند؛ main-start برابر با لبه `inline-start` و main-end برابر با لبه `inline-end` است. نقاط **cross-start** و **cross-end** نیز به‌ترتیب لبه‌های `block-start` و `block-end` هستند.
+The default value is `row`. By default, or when `row` is explicitly set, the flex container's main-axis is defined to be the same as the text direction. The first flex item in the DOM order is placed at the inline-start and block start edges. Additional items are placed at the previous item's inline-end edge. Additional rows, if the container is set to wrap with `flex-wrap: wrap`, are added on the block-end edge. The **main-start** and **main-end** points are the same as the content direction, with main-start being the inline-start edge and the main-end being the inline-end edge, and cross-start and cross-end being the block-start and block-end edges, respectively.
 
-مقدار `row-reverse` جهت inline را معکوس می‌کند و مانند `row` اما برعکس عمل می‌کند. اولین آیتم در لبه `inline-end` و `block-start` قرار می‌گیرد و آیتم‌های بعدی در لبه `inline-start` آیتم قبلی. ردیف‌های اضافی همچنان در لبه `block-end` اضافه می‌شوند. در این حالت main-start و main-end به‌ترتیب لبه‌های `inline-end` و `inline-start` هستند (برعکس حالت عادی) و cross-start و cross-end همان لبه‌های `block-start` و `block-end` باقی می‌مانند.
+The `row-reverse` value is used to change the inline-direction, behaving like `row`, but reversed. The first item is placed at the inline-end and block-start edges, with subsequent flex items being placed at the previous item's inline-start edge, and additional rows added on the block-end edge. The main-start and main-end points are the same as the inline-end and inline-start ends of the writing-mode, respectively, and cross-start and cross-end are the block-start and block-end edges, respectively.
 
-مقدار `column` محور اصلی را در راستای block (عمود بر جهت نوشتار) قرار می‌دهد. در این حالت اولین آیتم در گوشه `inline-start` و `block-start` قرار می‌گیرد و آیتم‌ها در راستای block (پایین صفحه در حالت عادی) چیده می‌شوند. اگر container قابلیت wrap داشته باشد، ستون‌های اضافی در راستای inline (معمولاً سمت راست) ایجاد می‌شوند.
+When `flex-direction` is set to `column`, the main axis is the block axis. As with `row`, the first item is placed at the inline-start and block-start edges, but additional items are placed at the previous item's block-end edge rather than the inline edge. If set to be able to wrap, additional columns are added on the inline-end edge. The **main-start** and **main-end** points are based on the block direction of the writing mode, with main-start being the block-start edge and the main-end being the block-end edge, and cross-start and cross-end being the inline-start and inline-end edges, respectively.
 
-مقدار `column-reverse` همان رفتار `column` را دارد، اما جهت block برعکس می‌شود: اولین آیتم در لبه `block-end` (پایین) قرار می‌گیرد و آیتم‌های بعدی به سمت بالا چیده می‌شوند.
+With `column-reverse`, the main axis is the block axis, but starting at the block-end edge. The first item is placed at the inline-start and block-end edges, with subsequent items placed at the previous item's block-start edge. If set to be able to wrap, additional columns are added on the inline-end edge. The **main-start** and **main-end** points are based on the block direction of the writing mode, with main-start being the block-end edge and the main-end being the block-start edge, and cross-start and cross-end being the inline-start and inline-end edges, respectively.
 
-وقتی `flex-direction` برابر با `column` باشد، محور اصلی (main axis) همان محور بلوکی (block axis) است. مثل حالت `row`، اولین آیتم در لبهٔ `inline-start` و `block-start` قرار می‌گیرد، اما آیتم‌های بعدی به‌جای کنار هم چیده شدن، زیر آیتم قبلی (در لبهٔ `block-end`) جای می‌گیرند. اگر امکان شکستن خط (wrap) وجود داشته باشد، ستون‌های اضافی در سمت `inline-end` افزوده می‌شوند. نقاط **main-start** و **main-end** بر اساس جهت بلوکی مد نوشتاری تعیین می‌شوند: main-start همان لبهٔ `block-start` و main-end همان لبهٔ `block-end` است. همچنین cross-start و cross-end به ترتیب لبه‌های `inline-start` و `inline-end` هستند.
+The values `row` and `row-reverse` are affected by the directionality of the flex container. If its [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir) attribute is `ltr`, `row` represents the horizontal axis oriented from the left to the right, and `row-reverse` from the right to the left; if the `dir` attribute is `rtl`, `row` represents the axis oriented from the right to the left, and `row-reverse` from the left to the right.
 
-با مقدار `column-reverse` محور اصلی همچنان بلوکی است، اما ترتیب از لبهٔ `block-end` شروع می‌شود. اولین آیتم در لبهٔ `inline-start` و `block-end` قرار می‌گیرد و آیتم‌های بعدی بالای آیتم قبلی (لبهٔ `block-start`) چیده می‌شوند. اگر شکستن خط فعال باشد، ستون‌های جدید در سمت `inline-end` اضافه می‌شوند. در این حالت **main-start** همان `block-end` و **main-end** همان `block-start` است؛ cross-start و cross-end نیز به ترتیب `inline-start` و `inline-end` هستند.
+## Accessibility
 
-مقادیر `row` و `row-reverse` تحت تأثیر جهت‌دار بودن flex container قرار می‌گیرند. اگر ویژگی [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir) برابر با `ltr` باشد، `row` محور افقی از چپ به راست و `row-reverse` از راست به چپ را نشان می‌دهد. اگر `dir` برابر با `rtl` باشد، `row` محور افقی از راست به چپ و `row-reverse` از چپ به راست خواهد بود.
+Using the `flex-direction` property with values of `row-reverse` or `column-reverse` will create a disconnect between the visual presentation of content and DOM order. This will adversely affect the experience of users with low vision navigating the page with the aid of assistive technology such as a screen reader. If the visual (CSS) order is important, then screen reader users will not have access to the correct reading order.
 
-## دسترسی‌پذیری
+- [Source Order Matters](https://adrianroselli.com/2015/09/source-order-matters.html) by Adrian Roselli (2015)
+- [Flexbox & the keyboard navigation disconnect](https://tink.uk/flexbox-the-keyboard-navigation-disconnect/) by Léonie Watson (2016)
+- [Understanding SC 1.3.2: Meaningful Sequence](https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence) via WCAG 2.2 (2023)
 
-استفاده از مقادیر `row-reverse` یا `column-reverse` برای ویژگی `flex-direction` باعث ایجاد ناهماهنگی میان چیدمان بصری و ترتیب DOM می‌شود. این موضوع تجربهٔ کاربران کم‌بینا را که با فناوری‌های کمکی مثل screen reader صفحه را مرور می‌کنند، تحت تأثیر منفی قرار می‌دهد. اگر ترتیب بصری (CSS) مهم باشد، کاربران screen reader به ترتیب درست خوانش دسترسی نخواهند داشت.
+## Formal definition
 
-- [Source Order Matters](https://adrianroselli.com/2015/09/source-order-matters.html) نوشتهٔ Adrian Roselli (2015)
-- [Flexbox & the keyboard navigation disconnect](https://tink.uk/flexbox-the-keyboard-navigation-disconnect/) نوشتهٔ Léonie Watson (2016)
-- [Understanding SC 1.3.2: Meaningful Sequence](https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence) از طریق WCAG 2.2 (2023)
+{{cssinfo}}
 
-## مثال‌ها
+## Formal syntax
 
-### معکوس کردن ستون‌ها و ردیف‌های flex container
+{{csssyntax}}
+
+## Examples
+
+### Reversing flex container columns and rows
 
 #### HTML
 
@@ -123,11 +177,23 @@ flex-direction: unset;
 }
 ```
 
-## همچنین ببینید
+#### Result
 
-- کوتاه‌نوشت `flex-flow`
-- `flex-wrap`
-- `gap`
-- [مفاهیم پایه‌ای flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts)
-- [مرتب‌سازی آیتم‌های flex](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Ordering_items)
-- [ماژول چیدمان جعبهٔ انعطاف‌پذیر CSS](/en-US/docs/Web/CSS/Guides/Flexible_box_layout)
+{{EmbedLiveSample('Reversing_flex_container_columns_and_rows', '', '550')}}
+
+## Specifications
+
+{{Specifications}}
+
+## Browser compatibility
+
+{{Compat}}
+
+## See also
+
+- {{CSSXRef("flex-flow")}} shorthand
+- {{CSSXRef("flex-wrap")}}
+- {{CSSXRef("gap")}}
+- [Basic concepts of flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts)
+- [Ordering flex items](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Ordering_items)
+- [CSS flexible box layout](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) module
