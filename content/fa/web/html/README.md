@@ -2,6 +2,7 @@
 title: 'HTML: HyperText Markup Language'
 source: https://developer.mozilla.org/en-US/docs/Web/HTML
 translated_by: n8n + AI
+icon: vscode
 cover: >-
   .gitbook/assets/FromKlickpin.com-54184001763550470-pin-id-54184001763550470-ezgif.com-video-to-gif-converter.gif
 coverY: 0
@@ -10,7 +11,7 @@ layout:
   cover:
     visible: true
     size: hero
-    mask: none
+    mask: radial
   title:
     visible: true
   description:
@@ -29,7 +30,7 @@ layout:
     visible: true
 ---
 
-# HTML  HyperText Markup Language
+# HTML HyperText Markup Language
 
 **HTML** (HyperText Markup Language) پایه‌ای‌ترین بلوک ساختمانی وب است. این زبان معنی و ساختار محتوای وب را مشخص می‌کند. معمولاً از فناوری‌های دیگری مثل [CSS](../../../../en-US/docs/Web/CSS/) برای ظاهر/نمایش صفحه و [JavaScript](../../../../en-US/docs/Web/JavaScript/) برای عملکرد/رفتار آن استفاده می‌شود.
 
