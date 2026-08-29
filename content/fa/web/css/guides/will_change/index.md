@@ -1,53 +1,70 @@
----
-title: "CSS will-change"
-source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Will_change"
-status: "needs-translation"
----
+# CSS will-change
+
+ماژول **will-change در CSS** با ارائهٔ ویژگی {{cssxref("will-change")}}، به مرورگر نشانه‌ای (هشدار) می‌دهد تا بتواند بهینه‌سازی‌هایی انجام دهد که با انجام کارهای بالقوهٔ پرهزینه پیش از نیاز، عملکرد رندرینگ را بهبود بخشد.
 
 ---
-title: CSS will-change
-short-title: Will change
-slug: Web/CSS/Guides/Will_change
-page-type: css-module
-spec-urls: https://drafts.csswg.org/css-will-change/
-sidebar: cssref
+
+## 📋 مرجع
+
+### ویژگی‌ها
+
+| ویژگی | توضیح |
+|-------|-------|
+| {{cssxref("will-change")}} | به مرورگر اعلام می‌کند که کدام ویژگی‌ها قرار است تغییر کنند تا مرورگر بهینه‌سازی‌های لازم را از پیش انجام دهد. |
+
 ---
 
-The **CSS will change** module provides a hint to the browser to enable optimizations that can improve rendering performance by doing potentially expensive work before it is required via the {{cssxref("will-change")}} property.
+## 🔗 مفاهیم مرتبط
 
-## Reference
+### تغییرات CSS (Transforms)
 
-### Properties
+| ویژگی | توضیح |
+|-------|-------|
+| {{cssxref("transform")}} | اعمال تغییرات هندسی مانند انتقال، چرخش، مقیاس و کج‌سازی. |
+| {{cssxref("scale")}} | تغییر مقیاس (بزرگ‌نمایی یا کوچک‌نمایی) عنصر. |
+| {{cssxref("rotate")}} | چرخش عنصر. |
+| {{cssxref("translate")}} | جابجایی عنصر در صفحه. |
 
-- {{cssxref("will-change")}}
+---
 
-## Related concepts
+### جلوه‌های فیلتر CSS
 
-- [CSS transforms](/en-US/docs/Web/CSS/Guides/Transforms)
-  - {{cssxref("transform")}}
-  - {{cssxref("scale")}}
-  - {{cssxref("rotate")}}
-  - {{cssxref("translate")}}
+| ویژگی/مفهوم | توضیح |
+|-------------|-------|
+| {{cssxref("backdrop-filter")}} | اعمال جلوه‌های فیلتر روی پشت‌زمینهٔ عنصر. |
+| {{cssxref("filter")}} | اعمال جلوه‌های فیلتر (مانند تاری، کنتراست، روشنایی و ...) روی عنصر. |
+| [توابع فیلتر CSS](/fa/docs/Web/CSS/Reference/Values/filter-function) | مجموعه‌ای از توابع برای ایجاد جلوه‌های فیلتر. |
 
-- [CSS filter effects](/en-US/docs/Web/CSS/Guides/Filter_effects)
-  - {{cssxref("backdrop-filter")}}
-  - {{cssxref("filter")}}
-  - [The CSS filter functions](/en-US/docs/Web/CSS/Reference/Values/filter-function)
+---
 
-- [CSS animations](/en-US/docs/Web/CSS/Guides/Animations)
-  - {{cssxref("animation")}} shorthand
-  - {{cssxref("@keyframes")}}
+### انیمیشن‌های CSS
 
-- [CSS colors](/en-US/docs/Web/CSS/Guides/Colors)
-  - {{cssxref("opacity")}}
+| ویژگی/مفهوم | توضیح |
+|-------------|-------|
+| {{cssxref("animation")}} (نوشتار فشرده) | ویژگی فشرده برای تعریف انیمیشن. |
+| {{cssxref("@keyframes")}} | تعریف فریم‌های کلیدی انیمیشن. |
 
-## Specifications
+---
 
-{{Specifications}}
+### رنگ‌ها در CSS
 
-## See also
+| ویژگی | توضیح |
+|-------|-------|
+| {{cssxref("opacity")}} | میزان شفافیت عنصر را تعیین می‌کند. |
 
-- [CSS scroll-driven animations](/en-US/docs/Web/CSS/Guides/Scroll-driven_animations) module
-- [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
-- [Animation Interface](/en-US/docs/Web/API/Animation/Animation)
-- [Web performance](/en-US/docs/Web/Performance)
+---
+
+## 📐 مشخصات
+
+مشخصات فنی در لینک زیر قابل مشاهده است:
+
+- [CSS Will Change Level 1](https://drafts.csswg.org/css-will-change/)
+
+---
+
+## 👀 همچنین ببینید
+
+- ماژول [انیمیشن‌های مبتنی بر پیمایش CSS](/fa/docs/Web/CSS/Guides/Scroll-driven_animations)
+- [Web Animations API](/fa/docs/Web/API/Web_Animations_API)
+- [رابطٔ Animation](/fa/docs/Web/API/Animation/Animation)
+- [عملکرد وب](/fa/docs/Web/Performance)
