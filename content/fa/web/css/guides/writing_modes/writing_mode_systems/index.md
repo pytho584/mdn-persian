@@ -1,112 +1,42 @@
----
-title: "Introduction to writing mode systems"
-source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Writing_modes/Writing_mode_systems"
-status: "needs-translation"
----
+# آشنایی با سیستم‌های حالت نوشتاری
+
+CSS از جهت‌مندی‌های مختلف محتوا، یا **حالت‌های نوشتاری**، از جمله راست‌به‌چپ، چپ‌به‌راست و بالا‌به‌پایین پشتیبانی می‌کند. این راهنما مروری کوتاه بر سیستم‌های حالت نوشتاری و جهت‌مندی آن‌ها ارائه می‌دهد.
 
 ---
-title: Introduction to writing mode systems
-short-title: Introduction
-slug: Web/CSS/Guides/Writing_modes/Writing_mode_systems
-page-type: guide
-sidebar: cssref
+
+## بلاک و درون‌خطی
+
+پیش از بررسی جهت‌مندی سیستم‌های نوشتاری مختلف، درک اصطلاحات «بلاک» و «درون‌خطی» اهمیت دارد. اصطلاح **درون‌خطی** به نحوهٔ جریان یافتن کاراکترها و کلمات در یک خط اشاره دارد. اصطلاح **بلاک** به نحوهٔ کنار هم قرار گرفتن خطوط یا بلوک‌های محتوا اشاره دارد. حالت نوشتاری سند، جهت‌های بلاک و درون‌خطی سند را تعیین می‌کند. این جهت‌ها بر اساس جهت‌های فیزیکی مانند چپ، راست، بالا و پایین نیستند.
+
+### ابعاد و جهت‌ها
+
+همه چیز در یک صفحهٔ وب در یکی از دو بعد **درون‌خطی** یا **بلاک** چیده می‌شود. _بعد درون‌خطی_، بعدی است که یک خط متن در حالت نوشتاری فعلی در امتداد آن جریان می‌یابد، در حالی که _بعد بلاک_، بعدی است که بلوک‌ها — مانند پاراگراف‌ها — یکی پس از دیگری در آن نمایش داده می‌شوند. بعد درون‌خطی عمود بر بعد بلاک است.
+
+در یک سند انگلیسی، با متنی که به‌صورت افقی چپ‌به‌راست جریان دارد، یا یک سند عربی با متنی که به‌صورت افقی راست‌به‌چپ جریان دارد، بعد درون‌خطی افقی است، در حالی که _جهت درون‌خطی_ به‌ترتیب چپ‌به‌راست و راست‌به‌چپ است. در هر دو مورد، بعد بلاک عمودی است، با _جهت بلاک_ بالا‌به‌پایین. در یک حالت نوشتاری عمودی مانند ژاپنی، بعد درون‌خطی عمودی است، زیرا خطوط در آن حالت نوشتاری به‌صورت عمودی جریان دارند، در حالی که بعد بلاک افقی است.
+
+### جعبه‌های درون‌خطی و بلاک
+
+_نوع نمایش بیرونی_ جعبه‌ها در یک [چیدمان جریان عادی](/fa/docs/Web/CSS/Guides/Display/Visual_formatting_model#normal_flow) تعیین می‌کند که جعبه در کنار سایر عناصر صفحه چگونه رفتار کند. _جعبه‌های درون‌خطی_ هر خط متن را می‌پیچند و در امتداد بعد درون‌خطی چیده می‌شوند.
+
+_جعبه‌های بلاک_ نمایانگر ظروفی در صفحه هستند که می‌توانند شامل عناصر بلاک و درون‌خطی دیگر باشند. آن‌ها در امتداد بعد بلاک چیده می‌شوند و در بعد درون‌خطی گسترش می‌یابند تا تمام فضای موجود در ظرف خود را پر کنند (مگر اینکه اندازهٔ خاصی در بعد درون‌خطی با استفاده از ویژگی‌ای مانند {{cssxref("inline-size")}} تنظیم شده باشد). جعبه‌های بلاک فقط در صورتی از بالا به پایین صفحه نمایش داده می‌شوند که از حالت نوشتاری استفاده کنید که متن را به‌صورت افقی نمایش می‌دهد، مانند انگلیسی.
+
+ماژول [ویژگی‌ها و مقادیر منطقی CSS](/fa/docs/Web/CSS/Guides/Logical_properties_and_values#properties) نگاشت‌های {{glossary("flow relative values", "نسبی به جریان")}} را برای بسیاری از {{glossary("physical properties", "ویژگی‌های فیزیکی")}} و مقادیر در CSS تعریف می‌کند که به درک [مفاهیم پایهٔ ویژگی‌ها و مقادیر منطقی](/fa/docs/Web/CSS/Guides/Logical_properties_and_values/Basic_concepts) کمک می‌کند.
+
+### جهت پایهٔ درون‌خطی و جهت جریان بلاک
+
+_جهت پایهٔ درون‌خطی_، جهت اصلی است که محتوا در یک خط در آن مرتب می‌شود و «آغاز» و «پایان» یک خط را تعریف می‌کند. ویژگی {{cssxref("direction")}} جهت پایهٔ درون‌خطی یک جعبه را مشخص می‌کند و به همراه ویژگی {{cssxref("unicode-bidi")}} و جهت‌مندی ذاتی هر محتوای متنی، ترتیب محتوای سطح درون‌خطی را در یک خط تعیین می‌کند.
+
+_جهت جریان بلاک_، جهتی است که جعبه‌های سطح بلاک و جعبه‌های خط در یک ظرف بلاک در آن انباشته می‌شوند. ویژگی {{cssxref("writing-mode")}} جهت جریان بلاک را تعیین می‌کند.
+
 ---
 
-CSS supports different content directionalities, or **writing modes**, including right-to-left, left-to-right, and top-to-bottom. The guide provides a brief overview of writing mode systems and their directionalities.
+## حالت‌های سیستم‌های نوشتاری
 
-## Block and inline
+سیستم‌های نوشتاری مختلف دارای حالت‌های نوشتاری متفاوتی هستند. حالت نوشتاری افقی، حالتی است با خطوط افقی متن، یعنی جریان بلاک رو به پایین یا بالا. حالت نوشتاری عمودی، حالتی است با خطوط عمودی متن، یعنی جریان بلاک رو به چپ یا راست.
 
-Before examining the directionality of various writing systems, it's important to understand the terms "block" and "inline". The term **inline** refers to how characters and words flow within a line. The term **block** refers to how lines, or blocks of content, stack up next to one another. The document's writing mode determines a document's block and inline directions. They are not based on physical directions such as left, right, top, and bottom.
-
-### Dimensions and directions
-
-Everything on a web page is laid out in either the **inline** or **block** dimension. The _inline dimension_ is the dimension along which a line of text runs in the current writing mode, whereas the _block dimension_ is the dimension in which blocks — such as paragraphs — display one after the other. The inline dimension is perpendicular to the block dimension.
-
-In an English document, with the text running horizontally left-to-right, or an Arabic document with the text running horizontally right-to-left, the inline dimension is horizontal, while the _inline direction_ is left-to-right and right-to-left, respectively. In both cases, the block dimension is vertical, with the _block direction_ being top-to-bottom. In a vertical writing mode such as Japanese, the inline dimension is vertical, as lines in that writing mode run vertically, while the block dimension is horizontal.
-
-### Inline and block boxes
-
-The _outer display_ type of boxes in a [normal flowing layout](/en-US/docs/Web/CSS/Guides/Display/Visual_formatting_model#normal_flow) determines how the box behaves alongside other elements on the page. _Inline boxes_ wrap each line of text and are laid out along the inline dimension.
-
-_Block boxes_ represent containers on the page that can contain other block and inline elements. They are laid out along the block dimension and will extend in the inline dimension to fill all the space available in their container (provided a specific size is not set in the inline dimension using a property such as {{cssxref("inline-size")}}). Block boxes are only displayed from the top to the bottom of the page if you are using a writing mode that displays text horizontally, such as English.
-
-The [CSS logical properties and values module](/en-US/docs/Web/CSS/Guides/Logical_properties_and_values#properties) defines {{glossary("flow relative values", "flow-relative mappings")}} for many of the {{glossary("physical properties")}} and values in CSS, which is helpful in understanding the [basic concepts of logical properties and values](/en-US/docs/Web/CSS/Guides/Logical_properties_and_values/Basic_concepts).
-
-### Inline base and block flow directions
-
-The _inline base direction_ is the primary direction in which content is ordered on a line and defines the "start" and "end" of a line. The {{cssxref("direction")}} property specifies the inline base direction of a box and, together with the {{cssxref("unicode-bidi")}} property and the inherent directionality of any text content, determines the ordering of inline-level content within a line.
-
-The _block flow direction_ is the direction in which block-level and line boxes stack within a block container. The {{cssxref("writing-mode")}} property determines the block flow direction.
-
-## Writing system modes
-
-Different writing systems have different writing modes. A horizontal writing mode is one with horizontal lines of text, i.e., a downward or upward block flow. A vertical writing mode is one with vertical lines of text, i.e., a leftward or rightward block flow.
-
-Latin- and Slavic-based systems are typically written using a left-to-right inline direction with a top-to-bottom block flow direction. Latin-based languages include English, Spanish, Romanian, and Portuguese. Slavic-based languages include Ukrainian, Polish, and Czech.
+سیستم‌های مبتنی بر لاتین و اسلاوی معمولاً با جهت درون‌خطی چپ‌به‌راست و جهت جریان بلاک بالا‌به‌پایین نوشته می‌شوند. زبان‌های مبتنی بر لاتین شامل انگلیسی، اسپانیایی، رومانیایی و پرتغالی هستند. زبان‌های مبتنی بر اسلاوی شامل اوکراینی، لهستانی و چکی هستند.
 
 ```html
 <p lang="en-US" dir="auto">This is written in English</p>
 <p lang="lt-LT" dir="auto">Tai parašyta lietuviu kalba</p>
 <p lang="el-GR" dir="auto">Αυτό είναι γραμμένο στα ελληνικά</p>
-```
-
-Arabic-based systems are typically written using a right-to-left inline direction with a top-to-bottom block flow direction. There are several horizontal right-to-left languages, including Arabic, Aramaic, Azeri, Divehi, Fula, Hebrew, Kurdish, N'ko, Persian, Rohingya, Syriac, and Urdu.
-
-```html
-<p lang="ur-PK" dir="auto">یہ اردو میں لکھا ہے۔</p>
-<p lang="ku-CRB" dir="auto">ئەمە بە کوردی نووسراوە</p>
-```
-
-Han-based systems are commonly written using a left-to-right inline direction with a top-to-bottom block flow direction, or a top-to-bottom inline direction with a right-to-left block flow direction. Traditionally, Chinese, Vietnamese, Korean, and Japanese are written vertically in columns, going from top to bottom, with a right-to-left block direction, but will often be rendered horizontally online, going from left to right.
-
-```html
-<p lang="ja-JP" dir="auto">これは日本語で書かれています</p>
-```
-
-Mongolian-based systems are typically written vertically, top to bottom, in columns that flow left to right; a top-to-bottom inline direction with a left-to-right block flow direction. This differs from Chinese, Japanese, and Korean, whose vertical text columns are read right to left. It derives from the fact that Mongolian script descended from Old Uyghur, which was written left-to-right.
-
-```html
-<p lang="mn-Mong" dir="auto">ᠡᠭᠦᠨ ᠢ ᠮᠣᠩᠭᠤᠯ ᠬᠡᠯᠡ ᠪᠠᠷ ᠪᠢᠴᠢᠵᠡᠢ</p>
-```
-
-To render the writing modes correctly, we use the global HTML [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir) attribute. Because browsers can turn off CSS styling, it is recommended to use the `dir` attribute and {{htmlelement("bdo")}} element to ensure correct bidirectional layout in the absence of a style sheet, rather than the CSS {{cssxref("direction")}} property.
-
-For vertical languages, we use the {{cssxref("writing-mode")}} and {{cssxref("text-orientation")}} properties:
-
-```css
-:lang(ja) {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-}
-:lang(mn-Mong) {
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
-}
-```
-
-{{EmbedLiveSample("Writing system modes", "100%", "500")}}
-
-```css hidden
-@import "https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&display=swap";
-
-:lang(ja),
-:lang(mn-Mong) {
-  float: left;
-}
-
-:lang(mn-Mong) {
-  font-family: "Noto Sans Mongolian", sans-serif;
-}
-```
-
-## Mixing writing modes
-
-While these different languages have different writing modes, sites that predominantly use one type of writing mode may contain content from a different language or writing mode. For example, articles in an Arabic, right-to-left language news site may include Latin-style numbers, which are written left to right. Many magazines and newspapers mix different writing modes on the same page. This guide, which demonstrates different writing modes, does too.
-
-The typographic mode determines whether to use typographic conventions specific to vertical flow for vertical scripts (vertical typographic mode) or to use the typographic conventions of horizontal writing modes (horizontal typographic mode). This concept distinguishes vertical typesetting from rotated horizontal typesetting.
-
-The `text-orientation` component of the writing mode controls the glyph orientation in vertical typographic modes, dictating whether a particular typographic character unit is typeset upright or typeset sideways.
-
-## See also
-
-- [CSS writing modes](/en-US/docs/Web/CSS/Guides/Writing_modes) module
