@@ -1,154 +1,132 @@
-ماژول حالت‌های نوشتاری CSS پشتیبانی از حالت‌های نوشتاری بین‌المللی مختلف و ترکیب‌های آن‌ها، از جمله ترتیب چپ‌به‌راست و راست‌به‌چپ و همچنین جهت‌های افقی و عمودی را فراهم می‌کند.
+# CSS writing modes
 
-یک حالت نوشتاری در CSS توسط ویژگی‌های {{cssxref("writing-mode")}}، {{cssxref("direction")}} و {{cssxref("text-orientation")}} که در این ماژول تعریف شده‌اند، مشخص می‌شود. این حالت عمدتاً بر اساس جهت پایهٔ درون‌خطی و جهت جریان بلوکی تعریف می‌شود.
+ماژول **حالت‌های نوشتاری CSS** پشتیبانی از حالت‌های نوشتاری بین‌المللی مختلف و ترکیب‌های آن‌ها، از جمله ترتیب چپ‌به‌راست و راست‌به‌چپ و همچنین جهت‌های افقی و عمودی را فراهم می‌کند.
+
+یک _حالت نوشتاری_ در CSS توسط ویژگی‌های `writing-mode`، `direction` و `text-orientation` که در این ماژول تعریف شده‌اند، مشخص می‌شود. این حالت عمدتاً بر اساس جهت پایهٔ درون‌خطی و جهت جریان بلوکی تعریف می‌شود.
 
 برخی از زبان‌های افقی چپ‌به‌راست هستند، از جمله خطوط لاتین و هندی. برخی دیگر از زبان‌های افقی راست‌به‌چپ نوشته می‌شوند، از جمله خطوط عبری و عربی. گاهی متن نیاز به دوطرفه بودن دارد، مثلاً وقتی خطوط چپ‌به‌راست و راست‌به‌چپ با هم ترکیب می‌شوند. برخی از زبان‌ها را می‌توان با جهت عمودی نوشت، برای مثال خطوط چینی، ژاپنی و کرهای (CJK).
 
 ماژول حالت‌های نوشتاری CSS به جهت‌گیری همهٔ حالت‌های نوشتاری می‌پردازد. ماژول‌های دیگر، مانند ماژول چیدمان روبی CSS، مدل‌های رندرینگ و کنترل‌های قالب‌بندی مربوط به نمایش حاشیه‌نویسی متن را ارائه می‌دهند.
 
-مرجع
-ویژگی‌ها
-{{cssxref("direction")}}
+---
 
-{{cssxref("glyph-orientation-vertical")}}
+## 📋 مرجع
 
-{{cssxref("text-combine-upright")}}
+### ویژگی‌ها
 
-{{cssxref("text-orientation")}}
+| ویژگی | توضیح |
+|-------|-------|
+| `direction` | جهت نوشتار را تعیین می‌کند. |
+| `glyph-orientation-vertical` | جهت‌گیری گلیف‌ها در حالت عمودی. |
+| `text-combine-upright` | ترکیب کاراکترها در حالت عمودی. |
+| `text-orientation` | جهت‌گیری متن را مشخص می‌کند. |
+| `unicode-bidi` | مدیریت دوسویگی (bidi) در متن. |
+| `writing-mode` | حالت نوشتاری را تعیین می‌کند (افقی/عمودی). |
 
-{{cssxref("unicode-bidi")}}
+---
 
-{{cssxref("writing-mode")}}
+### واژه‌نامه و اصطلاحات
 
-واژه‌نامه و اصطلاحات
-{{glossary("Baseline/Typography", "خط مبنا")}}
+| اصطلاح | توضیح |
+|--------|-------|
+| Baseline (خط مبنا) | خطی که حروف روی آن قرار می‌گیرند. |
+| Internationalization (بین‌المللی‌سازی) | طراحی نرم‌افزار برای پشتیبانی از زبان‌های مختلف. |
+| Localization (بومی‌سازی) | تطابق نرم‌افزار با یک زبان و فرهنگ خاص. |
+| Leading (فاصلهٔ بین خطوط) | فاصلهٔ عمودی بین خطوط متن. |
 
-{{Glossary("Internationalization", "بین‌المللی‌سازی")}}
+---
 
-{{glossary("Localization", "بومی‌سازی")}}
+## 📚 راهنماها
 
-{{glossary("Leading", "فاصلهٔ بین خطوط")}}
+| عنوان راهنما | توضیح |
+|--------------|-------|
+| [ایجاد کنترل‌های عمودی فرم](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Writing_modes/Vertical_controls) | نحوهٔ استفاده از `writing-mode` و `direction` برای ساخت کنترل‌های عمودی فرم. |
+| [آشنایی با سیستم‌های حالت نوشتاری](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Writing_modes/Writing_mode_systems) | مروری کوتاه بر سیستم‌های حالت نوشتاری و جهت‌مندی آن‌ها. |
 
-راهنماها
-ایجاد کنترل‌های عمودی فرم
+---
 
-: این مقاله نحوهٔ استفاده از ویژگی‌های CSS {{cssxref("writing-mode")}} و {{cssxref("direction")}} را برای ایجاد و پیکربندی کنترل‌های عمودی فرم توضیح می‌دهد.
+## 🔗 مفاهیم مرتبط
 
-آشنایی با سیستم‌های حالت نوشتاری
+### ماژول متن CSS
 
-: مروری کوتاه بر سیستم‌های حالت نوشتاری و جهت‌مندی آن‌ها.
+| ویژگی | توضیح |
+|-------|-------|
+| `hanging-punctuation` | قرارگیری نشانه‌های نگارشی در حاشیه. |
+| `hyphens` | خط فاصله‌گذاری خودکار. |
+| `letter-spacing` | فاصلهٔ بین حروف. |
+| `line-break` | نحوهٔ شکستن خطوط. |
+| `overflow-wrap` | شکستن کلمات در صورت سرریز. |
+| `text-align` | تراز افقی متن. |
+| `text-align-last` | تراز آخرین خط متن. |
+| `text-indent` | تورفتگی خط اول. |
+| `text-justify` | نحوهٔ توجیه متن. |
+| `word-break` | نحوهٔ شکستن کلمات. |
+| `word-spacing` | فاصلهٔ بین کلمات. |
 
-مفاهیم مرتبط
-ماژول متن CSS
+---
 
-{{cssxref("hanging-punctuation")}}
+### ماژول چیدمان درون‌خطی CSS
 
-{{cssxref("hyphens")}}
+| ویژگی | توضیح |
+|-------|-------|
+| `alignment-baseline` | تعیین خط مبنا برای تراز. |
+| `dominant-baseline` | خط مبنای غالب. |
+| `line-height` | ارتفاع خط. |
+| `text-box-edge` | لبهٔ جعبهٔ متن. |
+| `text-box-trim` | برش جعبهٔ متن. |
+| `text-box` (نوشتار فشرده) | ویژگی فشرده برای جعبهٔ متن. |
+| `text-edge` | لبهٔ متن. |
 
-{{cssxref("letter-spacing")}}
+---
 
-{{cssxref("line-break")}}
+### ماژول ویژگی‌ها و مقادیر منطقی CSS
 
-{{cssxref("overflow-wrap")}}
+| اصطلاح | توضیح |
+|--------|-------|
+| مقادیر نسبی به جریان | مقادیری که به جهت جریان متن وابسته هستند. |
+| ویژگی‌های فاصله‌گذاری داخلی | ویژگی‌های مربوط به فاصله‌های داخلی. |
+| ویژگی‌های منطقی | ویژگی‌هایی که مستقل از جهت فیزیکی هستند. |
+| ویژگی‌های فیزیکی | ویژگی‌های وابسته به جهت فیزیکی (چپ/راست/بالا/پایین). |
 
-{{cssxref("text-align")}}
+---
 
-{{cssxref("text-align-last")}}
+### ماژول نمایش CSS
 
-{{cssxref("text-indent")}}
+| ویژگی/مفهوم | توضیح |
+|-------------|-------|
+| `display` | نحوهٔ نمایش عنصر را تعیین می‌کند. |
+| `<display-internal>` | مقادیر داخلی نمایش. |
+| مدل قالب‌بندی بصری | نحوهٔ چیدمان عناصر در صفحه. |
 
-{{cssxref("text-justify")}}
+---
 
-{{cssxref("word-break")}}
+### سایر مفاهیم مرتبط
 
-{{cssxref("word-spacing")}}
+| حوزه | موارد مرتبط |
+|------|-------------|
+| محتویات تولیدشدهٔ CSS | `quotes` |
+| SVG | `glyph-orientation-horizontal` (قدیمی)، `glyph-orientation-vertical` (قدیمی)، `writing-mode` |
+| HTML | `<bdo>`، `<blockquote>`، `<q>`، `<ruby>`، `<sub>`، `<sup>`، ویژگی `dir`، ویژگی `lang` |
+| JavaScript | راهنمای بین‌المللی‌سازی، شیء `Intl` |
 
-ماژول چیدمان درون‌خطی CSS
+---
 
-{{cssxref("alignment-baseline")}}
+## 📐 مشخصات
 
-{{cssxref("dominant-baseline")}}
+مشخصات فنی در لینک‌های زیر قابل مشاهده است:
 
-{{cssxref("line-height")}}
+- [CSS Writing Modes Level 3](https://drafts.csswg.org/css-writing-modes-3/)
+- [CSS Writing Modes Level 4](https://drafts.csswg.org/css-writing-modes/)
 
-{{cssxref("text-box-edge")}}
+---
 
-{{cssxref("text-box-trim")}}
+## 👀 همچنین ببینید
 
-{{cssxref("text-box")}} (نوشتار فشرده)
-
-{{cssxref("text-edge")}}
-
-ماژول ویژگی‌ها و مقادیر منطقی CSS
-
-{{glossary("Flow relative values", "مقادیر نسبی به جریان")}}
-
-{{glossary("Inset properties", "ویژگی‌های فاصله‌گذاری داخلی")}}
-
-{{glossary("Logical properties", "ویژگی‌های منطقی")}}
-
-{{glossary("Physical properties", "ویژگی‌های فیزیکی")}}
-
-ماژول نمایش CSS
-
-{{cssxref("display")}}
-
-{{CSSxRef("<display-internal>")}}
-
-مدل قالب‌بندی بصری
-
-محتویات تولیدشدهٔ CSS
-
-{{CSSxRef("quotes")}}
-
-SVG
-
-{{SVGAttr("glyph-orientation-horizontal")}} {{deprecated_inline}}
-
-{{SVGAttr("glyph-orientation-vertical")}} {{deprecated_inline}}
-
-{{SVGAttr("writing-mode")}}
-
-HTML
-
-{{htmlelement("bdo")}}
-
-{{htmlelement("blockquote")}}
-
-{{htmlelement("q")}}
-
-{{htmlelement("ruby")}}
-
-{{htmlelement("sub")}}
-
-{{htmlelement("sup")}}
-
-ویژگی dir
-
-ویژگی lang
-
-JavaScript
-
-راهنمای بین‌المللی‌سازی
-
-شیء Intl
-
-مشخصات
-{{Specifications}}
-
-همچنین ببینید
-ماژول قلم‌های CSS
-
-ماژول چیدمان روبی CSS
-
-ماژول تزئین متن CSS
-
-ماژول سبک‌های شمارندهٔ CSS
-
-ماژول فهرست‌های CSS
-
-ماژول محدوده‌بندی CSS: {{CSSxRef("contain-intrinsic-block-size")}} و {{CSSxRef("contain-intrinsic-inline-size")}}
-
-ماژول سرریز CSS: {{CSSxRef("overflow-block")}} و {{CSSxRef("overflow-inline")}}
-
-ماژول رفتار سرریز پیمایشی CSS: {{CSSxRef("overscroll-behavior-block")}} و {{CSSxRef("overscroll-behavior-inline")}}
+- ماژول قلم‌های CSS
+- ماژول چیدمان روبی CSS
+- ماژول تزئین متن CSS
+- ماژول سبک‌های شمارندهٔ CSS
+- ماژول فهرست‌های CSS
+- ماژول محدوده‌بندی CSS: `contain-intrinsic-block-size` و `contain-intrinsic-inline-size`
+- ماژول سرریز CSS: `overflow-block` و `overflow-inline`
+- ماژول رفتار سرریز پیمایشی CSS: `overscroll-behavior-block` و `overscroll-behavior-inline`
