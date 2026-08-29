@@ -1,130 +1,154 @@
----
-title: "CSS writing modes"
-source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Writing_modes"
-status: "needs-translation"
----
+ماژول حالت‌های نوشتاری CSS پشتیبانی از حالت‌های نوشتاری بین‌المللی مختلف و ترکیب‌های آن‌ها، از جمله ترتیب چپ‌به‌راست و راست‌به‌چپ و همچنین جهت‌های افقی و عمودی را فراهم می‌کند.
 
----
-title: CSS writing modes
-short-title: Writing modes
-slug: Web/CSS/Guides/Writing_modes
-page-type: css-module
-spec-urls:
-  - https://drafts.csswg.org/css-writing-modes/
-  - https://drafts.csswg.org/css-writing-modes-3/
-sidebar: cssref
----
+یک حالت نوشتاری در CSS توسط ویژگی‌های {{cssxref("writing-mode")}}، {{cssxref("direction")}} و {{cssxref("text-orientation")}} که در این ماژول تعریف شده‌اند، مشخص می‌شود. این حالت عمدتاً بر اساس جهت پایهٔ درون‌خطی و جهت جریان بلوکی تعریف می‌شود.
 
-The **CSS writing modes** module defines support for various international writing modes and their combinations, including left-to-right and right-to-left text ordering as well as horizontal and vertical orientations.
+برخی از زبان‌های افقی چپ‌به‌راست هستند، از جمله خطوط لاتین و هندی. برخی دیگر از زبان‌های افقی راست‌به‌چپ نوشته می‌شوند، از جمله خطوط عبری و عربی. گاهی متن نیاز به دوطرفه بودن دارد، مثلاً وقتی خطوط چپ‌به‌راست و راست‌به‌چپ با هم ترکیب می‌شوند. برخی از زبان‌ها را می‌توان با جهت عمودی نوشت، برای مثال خطوط چینی، ژاپنی و کرهای (CJK).
 
-A _writing mode_ in CSS is determined by the {{cssxref("writing-mode")}}, {{cssxref("direction")}}, and {{cssxref("text-orientation")}} properties defined in this module. It is defined primarily in terms of its inline base direction and block flow direction.
+ماژول حالت‌های نوشتاری CSS به جهت‌گیری همهٔ حالت‌های نوشتاری می‌پردازد. ماژول‌های دیگر، مانند ماژول چیدمان روبی CSS، مدل‌های رندرینگ و کنترل‌های قالب‌بندی مربوط به نمایش حاشیه‌نویسی متن را ارائه می‌دهند.
 
-Some horizontal languages are left-to-right, including Latin and Indic scripts. Other horizontal languages are written right-to-left, including Hebrew and Arabic scripts. Sometimes text needs to be bidirectional, such as when mixing left-to-right and right-to-left scripts. Some languages can be written with a vertical orientation, for example, Chinese, Japanese, and Korean (CJK) scripts.
+مرجع
+ویژگی‌ها
+{{cssxref("direction")}}
 
-The CSS writing modes module addresses the orientations of all writing modes. Other modules, such as the [CSS ruby layout](/en-US/docs/Web/CSS) module, provide rendering models and formatting controls related to the display text annotations.
+{{cssxref("glyph-orientation-vertical")}}
 
-## Reference
+{{cssxref("text-combine-upright")}}
 
-### Properties
+{{cssxref("text-orientation")}}
 
-- {{cssxref("direction")}}
-- {{cssxref("glyph-orientation-vertical")}}
-- {{cssxref("text-combine-upright")}}
-- {{cssxref("text-orientation")}}
-- {{cssxref("unicode-bidi")}}
-- {{cssxref("writing-mode")}}
+{{cssxref("unicode-bidi")}}
 
-### Glossary and terms
+{{cssxref("writing-mode")}}
 
-- {{glossary("Baseline/Typography", "Baseline")}}
-- {{Glossary("Internationalization")}}
-- {{glossary("Localization")}}
-- {{glossary("Leading")}}
+واژه‌نامه و اصطلاحات
+{{glossary("Baseline/Typography", "خط مبنا")}}
 
-## Guides
+{{Glossary("Internationalization", "بین‌المللی‌سازی")}}
 
-- [Creating vertical form controls](/en-US/docs/Web/CSS/Guides/Writing_modes/Vertical_controls)
-  - : The article explains how to use the CSS {{cssxref("writing-mode")}} and {{cssxref("direction")}} properties to create and configure vertical form controls.
-- [Introduction to writing mode systems](/en-US/docs/Web/CSS/Guides/Writing_modes/Writing_mode_systems)
-  - : A brief overview of writing mode systems and their directionalities.
+{{glossary("Localization", "بومی‌سازی")}}
 
-## Related concepts
+{{glossary("Leading", "فاصلهٔ بین خطوط")}}
 
-[CSS text](/en-US/docs/Web/CSS/Guides/Text) module
+راهنماها
+ایجاد کنترل‌های عمودی فرم
 
-- {{cssxref("hanging-punctuation")}}
-- {{cssxref("hyphens")}}
-- {{cssxref("letter-spacing")}}
-- {{cssxref("line-break")}}
-- {{cssxref("overflow-wrap")}}
-- {{cssxref("text-align")}}
-- {{cssxref("text-align-last")}}
-- {{cssxref("text-indent")}}
-- {{cssxref("text-justify")}}
-- {{cssxref("word-break")}}
-- {{cssxref("word-spacing")}}
+: این مقاله نحوهٔ استفاده از ویژگی‌های CSS {{cssxref("writing-mode")}} و {{cssxref("direction")}} را برای ایجاد و پیکربندی کنترل‌های عمودی فرم توضیح می‌دهد.
 
-[CSS inline layout](/en-US/docs/Web/CSS/Guides/Inline_layout) module
+آشنایی با سیستم‌های حالت نوشتاری
 
-- {{cssxref("alignment-baseline")}}
-- {{cssxref("dominant-baseline")}}
-- {{cssxref("line-height")}}
-- {{cssxref("text-box-edge")}}
-- {{cssxref("text-box-trim")}}
-- {{cssxref("text-box")}} shorthand
-- {{cssxref("text-edge")}}
+: مروری کوتاه بر سیستم‌های حالت نوشتاری و جهت‌مندی آن‌ها.
 
-[CSS logical properties and values](/en-US/docs/Web/CSS/Guides/Logical_properties_and_values) module
+مفاهیم مرتبط
+ماژول متن CSS
 
-- {{glossary("Flow relative values")}}
-- {{glossary("Inset properties")}}
-- {{glossary("Logical properties")}}
-- {{glossary("Physical properties")}}
+{{cssxref("hanging-punctuation")}}
 
-[CSS display](/en-US/docs/Web/CSS/Guides/Display) module
+{{cssxref("hyphens")}}
 
-- {{cssxref("display")}}
+{{cssxref("letter-spacing")}}
 
-- {{CSSxRef("&lt;display-internal&gt;")}}
-- [Visual formatting model](/en-US/docs/Web/CSS/Guides/Display/Visual_formatting_model)
+{{cssxref("line-break")}}
 
-[CSS generated content](/en-US/docs/Web/CSS/Guides/Generated_content)
+{{cssxref("overflow-wrap")}}
 
-- {{CSSxRef("quotes")}}
+{{cssxref("text-align")}}
 
-[SVG](/en-US/docs/Web/SVG)
+{{cssxref("text-align-last")}}
 
-- {{SVGAttr("glyph-orientation-horizontal")}} {{deprecated_inline}}
-- {{SVGAttr("glyph-orientation-vertical")}} {{deprecated_inline}}
-- {{SVGAttr("writing-mode")}}
+{{cssxref("text-indent")}}
 
-[HTML](/en-US/docs/Web/HTML)
+{{cssxref("text-justify")}}
 
-- {{htmlelement("bdo")}}
-- {{htmlelement("blockquote")}}
-- {{htmlelement("q")}}
-- {{htmlelement("ruby")}}
-- {{htmlelement("sub")}}
-- {{htmlelement("sup")}}
-- [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir) attribute
-- [`lang`](/en-US/docs/Web/HTML/Reference/Global_attributes/lang) attribute
+{{cssxref("word-break")}}
 
-[JavaScript](/en-US/docs/Web/JavaScript)
+{{cssxref("word-spacing")}}
 
-- [Internationalization guide](/en-US/docs/Web/JavaScript/Guide/Internationalization)
-- [`Intl`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) object
+ماژول چیدمان درون‌خطی CSS
 
-## Specifications
+{{cssxref("alignment-baseline")}}
 
+{{cssxref("dominant-baseline")}}
+
+{{cssxref("line-height")}}
+
+{{cssxref("text-box-edge")}}
+
+{{cssxref("text-box-trim")}}
+
+{{cssxref("text-box")}} (نوشتار فشرده)
+
+{{cssxref("text-edge")}}
+
+ماژول ویژگی‌ها و مقادیر منطقی CSS
+
+{{glossary("Flow relative values", "مقادیر نسبی به جریان")}}
+
+{{glossary("Inset properties", "ویژگی‌های فاصله‌گذاری داخلی")}}
+
+{{glossary("Logical properties", "ویژگی‌های منطقی")}}
+
+{{glossary("Physical properties", "ویژگی‌های فیزیکی")}}
+
+ماژول نمایش CSS
+
+{{cssxref("display")}}
+
+{{CSSxRef("<display-internal>")}}
+
+مدل قالب‌بندی بصری
+
+محتویات تولیدشدهٔ CSS
+
+{{CSSxRef("quotes")}}
+
+SVG
+
+{{SVGAttr("glyph-orientation-horizontal")}} {{deprecated_inline}}
+
+{{SVGAttr("glyph-orientation-vertical")}} {{deprecated_inline}}
+
+{{SVGAttr("writing-mode")}}
+
+HTML
+
+{{htmlelement("bdo")}}
+
+{{htmlelement("blockquote")}}
+
+{{htmlelement("q")}}
+
+{{htmlelement("ruby")}}
+
+{{htmlelement("sub")}}
+
+{{htmlelement("sup")}}
+
+ویژگی dir
+
+ویژگی lang
+
+JavaScript
+
+راهنمای بین‌المللی‌سازی
+
+شیء Intl
+
+مشخصات
 {{Specifications}}
 
-## See also
+همچنین ببینید
+ماژول قلم‌های CSS
 
-- [CSS fonts](/en-US/docs/Web/CSS/Guides/Fonts) module
-- [CSS ruby layout](/en-US/docs/Web/CSS/Guides/Ruby_layout) module
-- [CSS text decoration](/en-US/docs/Web/CSS/Guides/Text_decoration) module
-- [CSS counter styles](/en-US/docs/Web/CSS/Guides/Counter_styles) module
-- [CSS lists](/en-US/docs/Web/CSS/Guides/Lists) module
-- [CSS containment](/en-US/docs/Web/CSS/Guides/Containment) module: {{CSSxRef("contain-intrinsic-block-size")}} and {{CSSxRef("contain-intrinsic-inline-size")}}
-- [CSS overflow](/en-US/docs/Web/CSS/Guides/Overflow) module: {{CSSxRef("overflow-block")}} and {{CSSxRef("overflow-inline")}}
-- [CSS overscroll behavior](/en-US/docs/Web/CSS/Guides/Overscroll_behavior) module: {{CSSxRef("overscroll-behavior-block")}} and {{CSSxRef("overscroll-behavior-inline")}}
+ماژول چیدمان روبی CSS
+
+ماژول تزئین متن CSS
+
+ماژول سبک‌های شمارندهٔ CSS
+
+ماژول فهرست‌های CSS
+
+ماژول محدوده‌بندی CSS: {{CSSxRef("contain-intrinsic-block-size")}} و {{CSSxRef("contain-intrinsic-inline-size")}}
+
+ماژول سرریز CSS: {{CSSxRef("overflow-block")}} و {{CSSxRef("overflow-inline")}}
+
+ماژول رفتار سرریز پیمایشی CSS: {{CSSxRef("overscroll-behavior-block")}} و {{CSSxRef("overscroll-behavior-inline")}}
