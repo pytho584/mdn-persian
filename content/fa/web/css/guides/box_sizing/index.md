@@ -1,153 +1,144 @@
----
-title: "CSS box sizing"
-source: "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_sizing"
-status: "needs-translation"
----
+# CSS box sizing (اندازه‌گیری جعبه در CSS)
+
+ماژول **اندازه‌گیری جعبه در CSS** به شما امکان می‌دهد مشخص کنید که عناصر چگونه در محتوای خود جای می‌گیرند یا چگونه در یک زمینه‌ی چیدمان خاص قرار می‌شوند. این ماژول ویژگی‌های اندازه‌گیری، حداقل اندازه و حداکثر اندازه را تعریف می‌کند و همچنین ویژگی‌های اندازه‌گیری CSS را با کلیدواژه‌هایی توسعه می‌دهد که نشان‌دهنده‌ی {{glossary("intrinsic size", "اندازه‌ی ذاتی")}} (مبتنی بر محتوا) و {{glossary("extrinsic size", "اندازه‌ی بیرونی")}} (مبتنی بر زمینه) هستند.
+
+عناصر می‌توانند به‌صورت بیرونی یا ذاتی اندازه‌گیری شوند. [مدل جعبهٔ CSS](/fa/docs/Web/CSS/Guides/Box_model) ویژگی‌های نسبی به صفحه را برای تنظیم صریح یا «بیرونی» اندازهٔ یک عنصر تعریف می‌کند، از جمله ویژگی‌های `width`، `height`، `padding` و `margin` (به همراه ویژگی‌های `border` که در ماژول [پس‌زمینه‌ها و حاشیه‌های CSS](/fa/docs/Web/CSS/Guides/Backgrounds_and_borders) تعریف شده‌اند). این ماژول اندازه‌گیری جعبه‌ی CSS، ماژول مدل جعبه‌ی CSS را توسعه می‌دهد تا یک عنصر بتواند به‌صورت ذاتی اندازه‌گیری شود — یعنی اندازهٔ عنصر را بر اساس اندازهٔ محتوای آن تنظیم کند.
+
+مقادیر اندازه‌گیری معرفی‌شده در این ماژول به عناصر دارای [محدوده‌بندی اندازه](/fa/docs/Web/CSS/Guides/Containment/Using#size_containment) اجازه می‌دهد که اندازه‌های ذاتی صریح را بگیرند، گویی که عرض و ارتفاع محتوای درون‌جریان آن‌ها با اندازهٔ ذاتی صریح مشخص‌شده مطابقت دارد، نه اینکه به گونه‌ای اندازه‌گیری شوند که گویی خالی هستند.
+
+این ماژول همچنین قابلیت تعریف نسبت ابعاد (aspect ratio) برای جعبهٔ یک عنصر را معرفی کرد، به این معنی که مرورگر می‌تواند به‌طور خودکار ابعاد یک عنصر را تنظیم کند تا نسبت ابعاد مشخصی را حفظ کند، به شرطی که یکی از ابعاد به‌صورت خودکار اندازه‌گیری شود.
+
+ماژول [ویژگی‌ها و مقادیر منطقی CSS](/fa/docs/Web/CSS/Guides/Logical_properties_and_values) ویژگی‌های موجود در ماژول‌های مدل جعبه و اندازه‌گیری جعبه را گسترش داد تا معادل‌های نسبی به حالت نوشتاری ویژگی‌های فیزیکی متناظر مدل جعبه و اندازه‌گیری ذاتی جعبه را شامل شود.
 
 ---
-title: CSS box sizing
-short-title: Box sizing
-slug: Web/CSS/Guides/Box_sizing
-page-type: css-module
-spec-urls:
-  - https://drafts.csswg.org/css-sizing-4/
-  - https://drafts.csswg.org/css-sizing-3/
-sidebar: cssref
+
+## 📋 مرجع
+
+### ویژگی‌ها
+
+| ویژگی | توضیح |
+|-------|-------|
+| {{cssxref("aspect-ratio")}} | نسبت ابعاد جعبه را تعیین می‌کند. |
+| {{cssxref("box-sizing")}} | مشخص می‌کند که اندازه‌گیری‌های `width` و `height` شامل `padding` و `border` شوند یا نه. |
+| {{cssxref("contain-intrinsic-block-size")}} | اندازهٔ ذاتی بلوکی را برای عناصر دارای محدوده‌بندی اندازه مشخص می‌کند. |
+| {{cssxref("contain-intrinsic-height")}} | اندازهٔ ذاتی ارتفاع را برای عناصر دارای محدوده‌بندی اندازه مشخص می‌کند. |
+| {{cssxref("contain-intrinsic-inline-size")}} | اندازهٔ ذاتی درون‌خطی را برای عناصر دارای محدوده‌بندی اندازه مشخص می‌کند. |
+| {{cssxref("contain-intrinsic-size")}} | نوشتار فشرده برای تعیین اندازهٔ ذاتی (عرض و ارتفاع) در عناصر دارای محدوده‌بندی اندازه. |
+| {{cssxref("contain-intrinsic-width")}} | اندازهٔ ذاتی عرض را برای عناصر دارای محدوده‌بندی اندازه مشخص می‌کند. |
+| {{cssxref("frame-sizing")}} | رفتار اندازه‌گیری جعبه را در زمینه‌های خاص کنترل می‌کند. |
+| {{cssxref("height")}} | ارتفاع عنصر را تعیین می‌کند. |
+| {{cssxref("max-height")}} | حداکثر ارتفاع مجاز را تعیین می‌کند. |
+| {{cssxref("max-width")}} | حداکثر عرض مجاز را تعیین می‌کند. |
+| {{cssxref("min-height")}} | حداقل ارتفاع مجاز را تعیین می‌کند. |
+| {{cssxref("min-width")}} | حداقل عرض مجاز را تعیین می‌کند. |
+| {{cssxref("width")}} | عرض عنصر را تعیین می‌کند. |
+
+> [!NOTE]
+> ماژول اندازه‌گیری جعبه‌ی CSS همچنین ویژگی `min-intrinsic-sizing` را معرفی می‌کند. در حال حاضر، هیچ مرورگری از این ویژگی پشتیبانی نمی‌کند.
+
 ---
 
-The **CSS box sizing** module enables you to specify how elements fit their content or fit into a particular layout context. It defines sizing, minimum sizing, and maximum sizing properties, and also extends the CSS sizing properties with keywords that represent content-based {{glossary("intrinsic size")}} and context-based {{glossary("extrinsic size")}}.
+### انواع داده و مقادیر
 
-Elements can either be extrinsically or intrinsically sized. The [CSS box model](/en-US/docs/Web/CSS/Guides/Box_model) defines page-relative properties to explicitly, or "extrinsically" set an element's size, including `width`, `height`, `padding`, and `margin` properties (along with `border` properties defined in the [CSS backgrounds and borders](/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders) module). This CSS box sizing module extends the CSS box model module to enable an element to be sized intrinsically — setting element size based on the size of its content.
+| نوع/مقدار | توضیح |
+|-----------|-------|
+| {{cssxref("ratio")}} | نوع داده برای نسبت ابعاد (مانند `16/9`). |
+| {{cssxref("min-content")}} | اندازه‌ای که محتوا را با کمترین عرض ممکن (بدون سرریز) نمایش می‌دهد. |
+| {{cssxref("max-content")}} | اندازه‌ای که محتوا را در پهنای طبیعی خود (بدون شکستن) نمایش می‌دهد. |
+| {{cssxref("fit-content")}} | اندازه‌ای که بین `min-content` و `max-content` قرار می‌گیرد و با فضای موجود تطابق می‌یابد. |
 
-The sizing values introduced in this module allow elements with [size containment](/en-US/docs/Web/CSS/Guides/Containment/Using#size_containment) to take explicit intrinsic sizes, as if their in-flow content's width and height match the specified explicit intrinsic size, rather than being sized as if they were empty.
+---
 
-This module also introduced the ability to define an aspect ratio for an element's box, meaning the browser can automatically adjust an element's dimensions to maintain a specified aspect ratio as long as one of the dimensions is automatically sized.
+### توابع
 
-The [logical properties and values module](/en-US/docs/Web/CSS/Guides/Logical_properties_and_values) expanded the properties available in the box model and box sizing modules to include writing-mode-relative equivalents of the corresponding physical box model and intrinsic box sizing properties.
+| تابع | توضیح |
+|------|-------|
+| [`fit-content()`](/fa/docs/Web/CSS/Reference/Values/fit-content_function) | تابعی برای تنظیم اندازه بر اساس فضای موجود و محتوای عنصر. |
 
-## Reference
+---
 
-### Properties
+### اصطلاحات واژه‌نامه
 
-- {{cssxref("aspect-ratio")}}
-- {{cssxref("box-sizing")}}
-- {{cssxref("contain-intrinsic-block-size")}}
-- {{cssxref("contain-intrinsic-height")}}
-- {{cssxref("contain-intrinsic-inline-size")}}
-- {{cssxref("contain-intrinsic-size")}}
-- {{cssxref("contain-intrinsic-width")}}
-- {{cssxref("frame-sizing")}}
-- {{cssxref("height")}}
-- {{cssxref("max-height")}}
-- {{cssxref("max-width")}}
-- {{cssxref("min-height")}}
-- {{cssxref("min-width")}}
-- {{cssxref("width")}}
+| اصطلاح | توضیح |
+|--------|-------|
+| {{glossary("Intrinsic size", "اندازهٔ ذاتی")}} | اندازه‌ای که بر اساس خود محتوا تعیین می‌شود (مثلاً عرض یک پاراگراف با توجه به متن آن). |
+| {{glossary("Extrinsic size", "اندازهٔ بیرونی")}} | اندازه‌ای که از بیرون (با ویژگی‌های CSS) به عنصر تحمیل می‌شود. |
 
-The CSS box sizing module also introduces the `min-intrinsic-sizing` property. Currently, no browsers support this feature.
+---
 
-### Data types and values
+## 📚 راهنماها
 
-- {{cssxref("ratio")}} data type
-- {{cssxref("min-content")}} value
-- {{cssxref("max-content")}} value
-- {{cssxref("fit-content")}} value
+| عنوان راهنما | توضیح |
+|--------------|-------|
+| [درک نسبت ابعاد](/fa/docs/Web/CSS/Guides/Box_sizing/Aspect_ratios) | آشنایی با ویژگی `aspect-ratio`، بررسی نسبت ابعاد در عناصر جایگزین‌شده و غیرجایگزین‌شده، و موارد استفادهٔ رایج. |
+| [آشنایی با مدل جعبه‌ی CSS](/fa/docs/Web/CSS/Guides/Box_model/Introduction) | یکی از مفاهیم بنیادی CSS را توضیح می‌دهد: مدل جعبه. این مدل نحوهٔ چیدمان عناصر، شامل محتوا، padding، border و margin را تعریف می‌کند. |
+| [مسلط شدن بر جمع‌شدگی حاشیه (Margin collapsing)](/fa/docs/Web/CSS/Guides/Box_model/Margin_collapsing) | گاهی دو حاشیهٔ مجاور در هم جمع می‌شوند. این مقاله قوانین حاکم بر زمان و دلیل این اتفاق و نحوهٔ کنترل آن را توضیح می‌دهد. |
+| [مدل قالب‌بندی بصری](/fa/docs/Web/CSS/Guides/Display/Visual_formatting_model) | مدل قالب‌بندی بصری را توضیح می‌دهد. |
+| [کنترل نسبت‌های آیتم‌های فلکس در امتداد محور اصلی](/fa/docs/Web/CSS/Guides/Flexible_box_layout/Controlling_flex_item_ratios) | اندازه‌گیری ذاتی را به عنوان پیش‌نیازی برای درک نحوهٔ کنترل اندازه و انعطاف‌پذیری آیتم‌های فلکس در امتداد محور اصلی با استفاده از {{CSSxRef("flex-grow")}}، {{CSSxRef("flex-shrink")}} و {{CSSxRef("flex-basis")}} توضیح می‌دهد. |
 
-### Functions
+---
 
-- [`fit-content()`](/en-US/docs/Web/CSS/Reference/Values/fit-content_function)
+## 🔗 مفاهیم مرتبط
 
-### Glossary terms
+### ماژول ویژگی‌های منطقی CSS
 
-- {{glossary("Intrinsic size")}}
-- {{glossary("Extrinsic size")}}
+| ویژگی | توضیح |
+|-------|-------|
+| {{CSSxRef("min-inline-size")}} | حداقل اندازه در بعد درون‌خطی. |
+| {{CSSxRef("block-size")}} | اندازه در بعد بلوکی (معادل ارتفاع در حالت افقی). |
+| {{CSSxRef("inline-size")}} | اندازه در بعد درون‌خطی (معادل عرض در حالت افقی). |
+| {{CSSxRef("max-block-size")}} | حداکثر اندازه در بعد بلوکی. |
+| {{CSSxRef("max-inline-size")}} | حداکثر اندازه در بعد درون‌خطی. |
+| {{CSSxRef("min-block-size")}} | حداقل اندازه در بعد بلوکی. |
+| {{CSSxRef("min-inline-size")}} | حداقل اندازه در بعد درون‌خطی. |
+| {{CSSxRef("margin-block")}} | حاشیه در بعد بلوکی. |
+| {{CSSxRef("margin-inline")}} | حاشیه در بعد درون‌خطی. |
+| {{CSSxRef("padding-block")}} | padding در بعد بلوکی. |
+| {{CSSxRef("padding-inline")}} | padding در بعد درون‌خطی. |
+| {{CSSxRef("border-block")}} | حاشیه در بعد بلوکی. |
+| {{CSSxRef("border-inline")}} | حاشیه در بعد درون‌خطی. |
 
-## Guides
+---
 
-- [Understanding aspect ratios](/en-US/docs/Web/CSS/Guides/Box_sizing/Aspect_ratios)
-  - : Learn about the `aspect-ratio` property, discuss aspect ratios for replaced and non-replaced elements, and examine some common aspect ratio use cases.
+### ماژول مدل جعبه‌ی CSS
 
-- [Introduction to the CSS box model](/en-US/docs/Web/CSS/Guides/Box_model/Introduction)
-  - : Explains one of the fundamental concepts of CSS: the box model. This model defines how CSS lays out elements, including their content, padding, border, and margin areas.
+| ویژگی | توضیح |
+|-------|-------|
+| {{cssxref("margin")}} | نوشتار فشرده برای حاشیه‌ها. |
+| {{cssxref("padding")}} | نوشتار فشرده برای paddingها. |
 
-- [Mastering margin collapsing](/en-US/docs/Web/CSS/Guides/Box_model/Margin_collapsing)
-  - : Sometimes, two adjacent margins are collapsed into one. This article describes the rules that govern when and why this happens, and how to control it.
+---
 
-- [Visual formatting model](/en-US/docs/Web/CSS/Guides/Display/Visual_formatting_model)
-  - : Explains the visual formatting model.
+### ماژول پس‌زمینه‌ها و حاشیه‌های CSS
 
-- [Controlling ratios of flex items along the main axis](/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Controlling_flex_item_ratios)
-  - : Explains intrinsic sizing as a precursor to understanding how to control the size and flexibility of flex items along the main axis using {{CSSxRef("flex-grow")}}, {{CSSxRef("flex-shrink")}}, and {{CSSxRef("flex-basis")}}.
+| ویژگی | توضیح |
+|-------|-------|
+| {{cssxref("border")}} | نوشتار فشرده برای حاشیه‌ها. |
+| {{cssxref("border-width")}} | نوشتار فشرده برای عرض حاشیه‌ها. |
 
-## Related concepts
+---
 
-- [CSS logical properties](/en-US/docs/Web/CSS/Guides/Logical_properties_and_values) module
-  - {{CSSxRef("min-inline-size")}}
-  - {{CSSxRef("block-size")}}
-  - {{CSSxRef("inline-size")}}
-  - {{CSSxRef("max-block-size")}}
-  - {{CSSxRef("max-inline-size")}}
-  - {{CSSxRef("min-block-size")}}
-  - {{CSSxRef("min-inline-size")}}
-  - {{CSSxRef("margin-block")}}
-  - {{CSSxRef("margin-inline")}}
-  - {{CSSxRef("padding-block")}}
-  - {{CSSxRef("padding-inline")}}
-  - {{CSSxRef("border-block")}}
-  - {{CSSxRef("border-inline")}}
-  - {{CSSxRef("contain-intrinsic-block-size")}}
-  - {{CSSxRef("contain-intrinsic-inline-size")}}
-  - {{CSSxRef("overflow-block")}}
-  - {{CSSxRef("overflow-inline")}}
-  - {{CSSxRef("overscroll-behavior-block")}}
-  - {{CSSxRef("overscroll-behavior-inline")}}
-- [CSS box model](/en-US/docs/Web/CSS/Guides/Box_model) module
-  - {{cssxref("margin")}} shorthand
-  - {{cssxref("margin-bottom")}}
-  - {{cssxref("margin-left")}}
-  - {{cssxref("margin-right")}}
-  - {{cssxref("margin-top")}}
-  - {{cssxref("margin-trim")}}
-  - {{cssxref("padding")}} shorthand
-  - {{cssxref("padding-bottom")}}
-  - {{cssxref("padding-left")}}
-  - {{cssxref("padding-right")}}
-  - {{cssxref("padding-top")}}
-- [CSS backgrounds and borders](/en-US/docs/Web/CSS/Guides/Backgrounds_and_borders) module
-  - {{cssxref("border")}} shorthand
-  - {{cssxref("border-width")}} shorthand
-  - {{cssxref("border-bottom-width")}}
-  - {{cssxref("border-left-width")}}
-  - {{cssxref("border-right-width")}}
-  - {{cssxref("border-top-width")}}
-- [CSS overflow](/en-US/docs/Web/CSS/Guides/Overflow) module
-  - {{CSSxRef("overflow")}} shorthand
-  - {{CSSxRef("overflow-block")}}
-  - {{CSSxRef("overflow-clip-margin")}}
-  - {{CSSxRef("overflow-inline")}}
-  - {{CSSxRef("overflow-x")}}
-  - {{CSSxRef("overflow-y")}}
-  - {{CSSxRef("text-overflow")}}
-- [CSS grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout) module
-  - {{CSSxRef("grid")}}
-  - {{CSSxRef("grid-auto-columns")}}
-  - {{CSSxRef("grid-auto-rows")}}
-  - {{CSSxRef("grid-template-columns")}}
-  - {{CSSxRef("grid-template-rows")}}
-  - {{CSSxRef("repeat")}}
-  - {{CSSxRef("minmax")}} function
-- [CSS flexible box layout](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) module
-  - {{CSSxRef("flex-basis")}}
-  - {{CSSxRef("flex")}}
+### ماژول سرریز CSS
 
-## Specifications
+| ویژگی | توضیح |
+|-------|-------|
+| {{CSSxRef("overflow")}} | نوشتار فشرده برای مدیریت سرریز. |
 
-{{Specifications}}
+---
 
-## See also
+## 📐 مشخصات
 
-- [CSS display](/en-US/docs/Web/CSS/Guides/Display) module
-- [CSS flex layout](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) module
-- [CSS grid layout](/en-US/docs/Web/CSS/Guides/Grid_layout) module
-- [CSS positioned layout](/en-US/docs/Web/CSS/Guides/Positioned_layout) module
-- [CSS fragmentation](/en-US/docs/Web/CSS/Guides/Fragmentation) module
+مشخصات فنی در لینک‌های زیر قابل مشاهده است:
+
+- [CSS Sizing Level 3](https://drafts.csswg.org/css-sizing-3/)
+- [CSS Sizing Level 4](https://drafts.csswg.org/css-sizing-4/)
+
+---
+
+## 👀 همچنین ببینید
+
+- ماژول [نمایش CSS](/fa/docs/Web/CSS/Guides/Display)
+- ماژول [چیدمان فلکس CSS](/fa/docs/Web/CSS/Guides/Flexible_box_layout)
+- ماژول [چیدمان گرید CSS](/fa/docs/Web/CSS/Guides/Grid_layout)
+- ماژول [چیدمان موقعیت‌یابی CSS](/fa/docs/Web/CSS/Guides/Positioned_layout)
+- ماژول [تکه‌تکه‌سازی CSS](/fa/docs/Web/CSS/Guides/Fragmentation)
