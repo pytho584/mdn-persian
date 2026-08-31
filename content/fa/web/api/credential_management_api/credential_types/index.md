@@ -1,10 +1,4 @@
 ---
-title: "Credential types"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Credential_Management_API/Credential_types"
-status: "needs-translation"
----
-
----
 title: Credential types
 slug: Web/API/Credential_Management_API/Credential_types
 page-type: guide
@@ -12,100 +6,100 @@ page-type: guide
 
 {{DefaultAPISidebar("Credential Management API")}}
 
-The Credential Management API enables a website to create, store, and retrieve the {{glossary("credential", "credentials")}} that allow a user to securely log in. It supports four different types of credentials:
+API مدیریت اعتبارنامه (Credential Management API) به وب‌سایت‌ها امکان می‌دهد تا {{glossary("credential", "credentials")}} را که به کاربر اجازه می‌دهند به‌صورت امن وارد سامانه شود، ایجاد، ذخیره و بازیابی کنند. این API از چهار نوع مختلف اعتبارنامه پشتیبانی می‌کند:
 
-| Type                    | Interface                                                                          |
+| نوع | رابط |
 | ----------------------- | ---------------------------------------------------------------------------------- |
-| Password                | {{domxref("PasswordCredential")}}                                                  |
-| Federated identity      | {{domxref("IdentityCredential")}}, {{domxref("FederatedCredential")}} (deprecated) |
-| One-time password (OTP) | {{domxref("OTPCredential")}}                                                       |
-| Web Authentication      | {{domxref("PublicKeyCredential")}}                                                 |
+| رمز عبور | {{domxref("PasswordCredential")}} |
+| هویت فدرال | {{domxref("IdentityCredential")}}، {{domxref("FederatedCredential")}} (منسوخ) |
+| رمز یکبار مصرف (OTP) | {{domxref("OTPCredential")}} |
+| احراز هویت وب (Web Authentication) | {{domxref("PublicKeyCredential")}} |
 
-The credential types are all represented as subclasses of the {{domxref("Credential")}} interface:
+همه انواع اعتبارنامه به‌صورت زیرکلاس‌هایی از رابط {{domxref("Credential")}} نمایش داده می‌شوند:
 
-![Class diagram showing the five different credential subclasses.](credential-types.svg)
+![نمودار کلاس که پنج زیرکلاس مختلف اعتبارنامه را نشان می‌دهد.](credential-types.svg)
 
-In this guide we'll introduce the different credential types and explain at a high level how they are used.
+در این راهنما، انواع مختلف اعتبارنامه را معرفی می‌کنیم و در سطح بالا توضیح می‌دهیم که چگونه استفاده می‌شوند.
 
 > [!NOTE]
-> Although we're describing all the credential types together here, the different credential types are defined in several different specifications, which extend the main Credential Management API specification.
+> اگرچه در اینجا همه انواع اعتبارنامه را با هم توصیف می‌کنیم، انواع مختلف اعتبارنامه در چندین مشخصات جداگانه تعریف شده‌اند که مشخصات اصلی API مدیریت اعتبارنامه را گسترش می‌دهند.
 >
-> - [Credential Management API](https://w3c.github.io/webappsec-credential-management/) defines passwords and legacy federated credentials.
-> - [Federated Credential Management API](https://w3c-fedid.github.io/FedCM/) defines the new federated credentials.
-> - [WebOTP API](https://wicg.github.io/web-otp/) defines OTP credentials.
-> - [Web Authentication API](https://w3c.github.io/webauthn/) defines Web Authentication assertions.
+> - [Credential Management API](https://w3c.github.io/webappsec-credential-management/) رمزهای عبور و اعتبارنامه‌های فدرال قدیمی را تعریف می‌کند.
+> - [Federated Credential Management API](https://w3c-fedid.github.io/FedCM/) اعتبارنامه‌های فدرال جدید را تعریف می‌کند.
+> - [WebOTP API](https://wicg.github.io/web-otp/) اعتبارنامه‌های OTP را تعریف می‌کند.
+> - [Web Authentication API](https://w3c.github.io/webauthn/) تأییدیه‌های Web Authentication را تعریف می‌کند.
 
-## Passwords
-
-> [!NOTE]
-> Most browsers do not support this credential type and it is not widely used on the web. Instead, browsers automatically offer to store passwords in a password manager, and can automatically retrieve stored passwords to autofill [password input elements](/en-US/docs/Web/HTML/Reference/Elements/input/password).
-
-Modern browsers provide users with a password manager, which enables users to store the passwords they enter on websites, and later retrieve them when they need to log in again. Password managers can help with password security by remembering passwords for users and autofilling them, which allows users to choose stronger passwords.
-
-In the Credential Management API, a password is represented by the {{domxref("PasswordCredential")}} interface. When a user successfully registers for or signs into your site, you can call the {{domxref("PasswordCredential.PasswordCredential()", "PasswordCredential()")}} constructor or {{domxref("CredentialsContainer.create", "navigator.credentials.create()")}} to create a `PasswordCredential` object from the credentials the user entered. You can then pass this into {{domxref("CredentialsContainer.store", "navigator.credentials.store()")}}, and the browser will ask the user if they want to store the password in the password manager.
-
-![Sequence diagram showing creation and storage of a password credential.](password-create.svg)
-
-When a user visits your site, you can call {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} to retrieve a stored password for your site, and use it to log the user in. Depending on the situation, you can log the user in silently or use the returned password to auto-fill a form field.
-
-![Sequence diagram showing sign-in with a password credential.](password-get.svg)
-
-## Federated identity credentials
-
-In a {{glossary("federated identity")}} system, a separate entity acts as an intermediary between the user and the website they are trying to sign into. This entity, called an {{glossary("identity provider")}} (IdP), manages the user's credentials, can authenticate users, and is trusted by the website to make assertions about a user's identity.
-
-The user has an account with the IdP: when they need to sign into the website they authenticate with the IdP. The IdP then returns a token to the user's browser, which the browser delivers to the website. The website verifies the token and, if verification succeeds, signs the user in.
-
-Federated identity is often provided as a service by corporations: for example, users who have Google, Microsoft, or Facebook accounts can use them to sign into websites that support them.
-
-The [Federated Credential Management API](/en-US/docs/Web/API/FedCM_API) defines a privacy-preserving mechanism for federated identity on the web. You start by calling {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} to request a federated identity credential, and this triggers a protocol exchange between the browser and the IdP.
-
-If, in the course of this exchange, the user can be authenticated with the IdP, the browser returns an {{domxref("IdentityCredential")}} object in the fulfillment of the `Promise` returned from `get()`. The website front end code can send this to the server for verification.
-
-![Sequence diagram showing sign-in using a federated identity credential.](fed-cm-get.svg)
-
-Note that {{domxref("CredentialsContainer.create", "create()")}} and {{domxref("CredentialsContainer.store", "store()")}} are not used when working with the Federated Credential Management API.
+## رمزهای عبور
 
 > [!NOTE]
-> Support for federated identity in the Credential Management API was originally provided through the {{domxref("FederatedCredential")}} interface. However, this mechanism depends on technologies such as [third-party cookies](/en-US/docs/Web/Privacy/Guides/Third-party_cookies), which are intrinsically privacy-invasive. These technologies were [deprecated in browsers](/en-US/blog/goodbye-third-party-cookies/), therefore a new approach was needed.
+> اکثر مرورگرها از این نوع اعتبارنامه پشتیبانی نمی‌کنند و در وب زیاد استفاده نمی‌شود. در عوض، مرورگرها به‌طور خودکار ذخیره رمزهای عبور را در مدیر رمز عبور پیشنهاد می‌دهند و می‌توانند رمزهای ذخیره‌شده را برای پر کردن خودکار [عناصر ورودی رمز عبور](/en-US/docs/Web/HTML/Reference/Elements/input/password) بازیابی کنند.
 
-## One-time passwords
+مرورگرهای مدرن یک مدیر رمز عبور در اختیار کاربران قرار می‌دهند که به آن‌ها امکان می‌دهد رمزهای عبوری را که در وب‌سایت‌ها وارد می‌کنند ذخیره کنند و بعداً وقتی دوباره نیاز به ورود دارند، آن‌ها را بازیابی کنند. مدیران رمز عبور می‌توانند با به خاطر سپردن رمزهای عبور و پر کردن خودکار آن‌ها به امنیت رمز عبور کمک کنند و این به کاربران اجازه می‌دهد رمزهای عبور قوی‌تری انتخاب کنند.
 
-A one-time password (OTP) is an authentication technique in which the website sends a unique code to the user via a messaging system such as email or SMS. The user must then enter the code on the site to prove their control of the communications endpoint. Websites sometimes use this as a second authentication factor in addition to a password.
+در API مدیریت اعتبارنامه، یک رمز عبور با رابط {{domxref("PasswordCredential")}} نمایش داده می‌شود. وقتی کاربر با موفقیت در سایت شما ثبت‌نام می‌کند یا وارد آن می‌شود، می‌توانید سازنده {{domxref("PasswordCredential.PasswordCredential()", "PasswordCredential()")}} یا {{domxref("CredentialsContainer.create", "navigator.credentials.create()")}} را برای ایجاد یک شیء `PasswordCredential` از اعتبارنامه‌هایی که کاربر وارد کرده است فراخوانی کنید. سپس می‌توانید این شیء را به {{domxref("CredentialsContainer.store", "navigator.credentials.store()")}} منتقل کنید و مرورگر از کاربر می‌پرسد که آیا می‌خواهد رمز عبور را در مدیر رمز عبور ذخیره کند یا خیر.
 
-The [WebOTP API](/en-US/docs/Web/API/WebOTP_API) defines the {{domxref("OTPCredential")}} interface, which solves a specific usability problem in this exchange: when a user receives the code, they have to open a different application, find the message, then copy the code into a form on the website. This is awkward, especially on a mobile device, and especially when the device receiving the message is the same as the device being used to sign into the site.
+![نمودار توالی که ایجاد و ذخیره یک اعتبارنامه رمز عبور را نشان می‌دهد.](password-create.svg)
 
-In browsers that support the `OTPCredential` type, the website's front end can call {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}}, asking for an OTP credential, then ask the backend to generate a code and send the message containing it (only SMS is supported as a transport). The backend must send a specially formatted SMS message, which the browser can read.
+هنگامی که کاربر از سایت شما بازدید می‌کند، می‌توانید {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} را برای بازیابی رمز عبور ذخیره‌شده برای سایت خود فراخوانی کنید و از آن برای ورود کاربر استفاده کنید. بسته به موقعیت، می‌توانید کاربر را به‌صورت بی‌صدا (silent) وارد کنید یا از رمز عبور بازگشتی برای پر کردن خودکار فیلد فرم استفاده کنید.
 
-The browser then returns an `OTPCredential` object in the fulfillment of the `Promise` returned from `get()`, and this object contains the code. The website front end can use the code to autofill an input element on the site, or submit the code to the server automatically.
+![نمودار توالی که ورود با یک اعتبارنامه رمز عبور را نشان می‌دهد.](password-get.svg)
 
-![Sequence diagram showing sign-in using an OTP credential.](otp-get.svg)
+## اعتبارنامه‌های هویت فدرال
 
-Note that {{domxref("CredentialsContainer.create", "create()")}} and {{domxref("CredentialsContainer.store", "store()")}} are not used when working with OTP credentials.
+در یک سیستم {{glossary("federated identity")}}، یک نهاد جداگانه به‌عنوان واسطه بین کاربر و وب‌سایتی که می‌خواهد به آن وارد شود عمل می‌کند. این نهاد، که {{glossary("identity provider")}} (IdP) نامیده می‌شود، اعتبارنامه‌های کاربر را مدیریت می‌کند، می‌تواند کاربران را احراز هویت کند و وب‌سایت به آن اعتماد دارد تا درباره هویت کاربر تأییدیه صادر کند.
 
-## Web Authentication assertions
+کاربر با IdP حساب دارد: وقتی لازم باشد وارد وب‌سایت شود، با IdP احراز هویت می‌کند. سپس IdP یک توکن به مرورگر کاربر بازمی‌گرداند و مرورگر آن را به وب‌سایت تحویل می‌دهد. وب‌سایت توکن را بررسی می‌کند و اگر بررسی موفق باشد، کاربر را وارد می‌کند.
 
-The [Web Authentication API](/en-US/docs/Web/API/Web_Authentication_API) (WebAuthn) enables users to log into websites by asking an _authenticator_ to generate digitally signed assertions about a user's identity.
+هویت فدرال اغلب به‌عنوان سرویسی توسط شرکت‌ها ارائه می‌شود: برای مثال، کاربرانی که حساب Google، Microsoft یا Facebook دارند می‌توانند از آن‌ها برای ورود به وب‌سایت‌هایی که از این سرویس پشتیبانی می‌کنند استفاده کنند.
 
-An authenticator is an entity that is inside or attached to the user's device, and that can perform the cryptographic operations needed to register and authenticate users, and securely store the cryptographic keys used in these operations. An authenticator might be integrated into the device, like the [Touch ID](https://en.wikipedia.org/wiki/Touch_ID) system in Apple devices or the [Windows Hello](https://en.wikipedia.org/wiki/Windows_10#System_security) system, or it might be a removable module like a [YubiKey](https://en.wikipedia.org/wiki/YubiKey).
+[Federated Credential Management API](/en-US/docs/Web/API/FedCM_API) یک سازوکار حفظ حریم خصوصی برای هویت فدرال در وب تعریف می‌کند. شما با فراخوانی {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} شروع می‌کنید تا یک اعتبارنامه هویت فدرال درخواست کنید و این کار تبادل پروتکلی بین مرورگر و IdP را آغاز می‌کند.
 
-Instead of passwords, WebAuthn uses {{glossary("public-key cryptography")}} to authenticate users.
+اگر در جریان این تبادل، کاربر بتواند با IdP احراز هویت شود، مرورگر یک شیء {{domxref("IdentityCredential")}} در برآورده شدن `Promise` که از `get()` بازگردانده شده است برمی‌گرداند. کد فرانت‌اند وب‌سایت می‌تواند این شیء را برای بررسی به سرور بفرستد.
 
-To register a user on a website using WebAuthn, call {{domxref("CredentialsContainer.create", "navigator.credentials.create()")}}, providing all the information needed to create a key pair. The authenticator may first ask the user to authenticate themselves, for example using a biometric reader. It will then generate a key pair and return the public key. This key pair is specific to the user and the website. The authenticator may also generate and return a signed _attestation_: this is a statement that the authenticator itself is (for example) a genuine YubiKey.
+![نمودار توالی که ورود با استفاده از یک اعتبارنامه هویت فدرال را نشان می‌دهد.](fed-cm-get.svg)
 
-The website front end sends the public key and attestation to the server, which verifies the attestation and stores the public key with the rest of the new user's account information.
+توجه داشته باشید که {{domxref("CredentialsContainer.create", "create()")}} و {{domxref("CredentialsContainer.store", "store()")}} هنگام کار با API مدیریت اعتبارنامه فدرال استفاده نمی‌شوند.
 
-![Sequence diagram showing registration using Web Authentication.](webauth-create.svg)
+> [!NOTE]
+> پشتیبانی از هویت فدرال در API مدیریت اعتبارنامه در ابتدا از طریق رابط {{domxref("FederatedCredential")}} فراهم شده بود. با این حال، این سازوکار به فناوری‌هایی مانند [کوکی‌های شخص ثالث](/en-US/docs/Web/Privacy/Guides/Third-party_cookies) وابسته است که ذاتاً به حریم خصوصی آسیب می‌زنند. این فناوری‌ها در [مرورگرها منسوخ شده‌اند](/en-US/blog/goodbye-third-party-cookies/)؛ بنابراین به رویکرد جدیدی نیاز بود.
 
-To sign a user into the website, the front end code first fetches a random number from the server, called a _challenge_. Then it calls {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}}, passing in the challenge and some other options. The authenticator may, again, first ask the user to authenticate themselves, and will then sign the challenge using the private key.
+## رمزهای یکبار مصرف
 
-The browser then returns a `PublicKeyCredential` object in the fulfillment of the `Promise` returned from `get()`, and this object contains the signed challenge, which is called an _assertion_. The website front end then sends the assertion to the server, which checks the signature using the stored public key, and decides whether to log the user in.
+رمز یکبار مصرف (OTP) یک تکنیک احراز هویت است که در آن وب‌سایت یک کد یکتا از طریق یک سیستم پیام‌رسان مانند ایمیل یا SMS به کاربر می‌فرستد. سپس کاربر باید کد را در سایت وارد کند تا ثابت کند به نقطه پایانی ارتباطی (communications endpoint) دسترسی دارد. وب‌سایت‌ها گاهی از این به‌عنوان عامل دوم احراز هویت علاوه بر رمز عبور استفاده می‌کنند.
 
-![Sequence diagram showing sign-in using a Web Authentication assertion.](webauth-get.svg)
+[WebOTP API](/en-US/docs/Web/API/WebOTP_API) رابط {{domxref("OTPCredential")}} را تعریف می‌کند که یک مشکل خاص قابلاستفاده بودن را در این تبادل حل می‌کند: وقتی کاربر کد را دریافت می‌کند، باید برنامه دیگری را باز کند، پیام را پیدا کند و سپس کد را در فرمی در وب‌سایت کپی کند. این کار ناخوشایند است، به‌ویژه در دستگاه‌های همراه، و به‌ویژه وقتی دستگاهی که پیام را دریافت می‌کند همان دستگاهی است که برای ورود به سایت استفاده می‌شود.
 
-Note that {{domxref("CredentialsContainer.store", "store()")}} is not used when working with WebAuthn: the key pair is created in the authenticator and the private key never leaves it.
+در مرورگرهایی که از نوع `OTPCredential` پشتیبانی می‌کنند، فرانت‌اند وب‌سایت می‌تواند {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} را فراخوانی کند و یک اعتبارنامه OTP درخواست نماید، سپس از بک‌اند بخواهد یک کد تولید کند و پیام حاوی آن را ارسال نماید (فقط SMS به‌عنوان انتقال پشتیبانی می‌شود). بک‌اند باید یک پیام SMS با قالب‌بندی خاص بفرستد که مرورگر بتواند آن را بخواند.
 
-## See also
+سپس مرورگر یک شیء `OTPCredential` را در برآورده شدن `Promise` بازگشتی از `get()` برمی‌گرداند و این شیء شامل کد است. فرانت‌اند وب‌سایت می‌تواند از کد برای پر کردن خودکار یک عنصر ورودی در سایت استفاده کند یا کد را به‌طور خودکار به سرور ارسال کند.
+
+![نمودار توالی که ورود با استفاده از یک اعتبارنامه OTP را نشان می‌دهد.](otp-get.svg)
+
+توجه داشته باشید که {{domxref("CredentialsContainer.create", "create()")}} و {{domxref("CredentialsContainer.store", "store()")}} هنگام کار با اعتبارنامه‌های OTP استفاده نمی‌شوند.
+
+## تأییدیه‌های Web Authentication
+
+[Web Authentication API](/en-US/docs/Web/API/Web_Authentication_API) (WebAuthn) به کاربران امکان می‌دهد با درخواست از یک _authenticator_ (احرازکننده) برای تولید تأییدیه‌های امضاشده دیجیتالی درباره هویت کاربر، وارد وب‌سایت‌ها شوند.
+
+یک احرازکننده موجودیتی است که داخل دستگاه کاربر قرار دارد یا به آن متصل است و می‌تواند عملیات رمزنگاری لازم برای ثبت‌نام و احراز هویت کاربران را انجام دهد و کلیدهای رمزنگاری مورد استفاده در این عملیات را به‌صورت امن ذخیره کند. یک احرازکننده ممکن است در دستگاه یکپارچه شده باشد، مانند سیستم [Touch ID](https://en.wikipedia.org/wiki/Touch_ID) در دستگاه‌های اپل یا سیستم [Windows Hello](https://en.wikipedia.org/wiki/Windows_10#System_security)، یا ممکن است یک ماژول جداشدنی مانند [YubiKey](https://en.wikipedia.org/wiki/YubiKey) باشد.
+
+WebAuthn به جای رمزهای عبور از {{glossary("public-key cryptography")}} برای احراز هویت کاربران استفاده می‌کند.
+
+برای ثبت‌نام یک کاربر در وب‌سایت با استفاده از WebAuthn، {{domxref("CredentialsContainer.create", "navigator.credentials.create()")}} را فراخوانی کنید و تمام اطلاعات لازم برای ایجاد یک جفت‌کلید را فراهم نمایید. احرازکننده ممکن است ابتدا از کاربر بخواهد خود را احراز هویت کند، مثلاً با استفاده از یک دستگاه بیومتریک. سپس یک جفت‌کلید تولید می‌کند و کلید عمومی را برمی‌گرداند. این جفت‌کلید مختص کاربر و وب‌سایت است. احرازکننده همچنین ممکن است یک _attestation_ (گواهی) امضاشده تولید و برگرداند: این یک بیانیه است که خود احرازکننده (مثلاً) یک YubiKey واقعی است.
+
+فرانت‌اند وب‌سایت کلید عمومی و گواهی را به سرور می‌فرستد؛ سرور گواهی را بررسی می‌کند و کلید عمومی را همراه با سایر اطلاعات حساب کاربر جدید ذخیره می‌کند.
+
+![نمودار توالی که ثبت‌نام با استفاده از Web Authentication را نشان می‌دهد.](webauth-create.svg)
+
+برای ورود کاربر به وب‌سایت، کد فرانت‌اند ابتدا یک عدد تصادفی از سرور دریافت می‌کند که _challenge_ (چالش) نامیده می‌شود. سپس {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} را فراخوانی می‌کند و چالش و برخی گزینه‌های دیگر را منتقل می‌نماید. احرازکننده ممکن است دوباره ابتدا از کاربر بخواهد خود را احراز هویت کند و سپس چالش را با استفاده از کلید خصوصی امضا می‌کند.
+
+سپس مرورگر یک شیء `PublicKeyCredential` را در برآورده شدن `Promise` بازگشتی از `get()` برمی‌گرداند و این شیء شامل چالش امضاشده است که _assertion_ (تأییدیه) نامیده می‌شود. فرانت‌اند وب‌سایت سپس تأییدیه را به سرور می‌فرستد؛ سرور امضا را با استفاده از کلید عمومی ذخیره‌شده بررسی می‌کند و تصمیم می‌گیرد که آیا کاربر را وارد کند یا خیر.
+
+![نمودار توالی که ورود با استفاده از یک تأییدیه Web Authentication را نشان می‌دهد.](webauth-get.svg)
+
+توجه داشته باشید که {{domxref("CredentialsContainer.store", "store()")}} هنگام کار با WebAuthn استفاده نمی‌شود: جفت‌کلید در احرازکننده ایجاد می‌شود و کلید خصوصی هرگز از آن خارج نمی‌شود.
+
+## همچنین ببینید
 
 - [Web Authentication API](/en-US/docs/Web/API/Web_Authentication_API)
 - [WebOTP API](/en-US/docs/Web/API/WebOTP_API)
