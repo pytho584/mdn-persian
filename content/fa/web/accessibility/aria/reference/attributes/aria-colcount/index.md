@@ -1,9 +1,8 @@
 ---
 title: "ARIA: aria-colcount attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
-
 ---
 title: "ARIA: aria-colcount attribute"
 short-title: aria-colcount
@@ -13,17 +12,17 @@ spec-urls: https://w3c.github.io/aria/#aria-colcount
 sidebar: accessibilitysidebar
 ---
 
-The `aria-colcount` attribute defines the total number of columns in a [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role), [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role), or [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) when not all columns are present in the [DOM](/en-US/docs/Glossary/DOM).
+ویژگی `aria-colcount` تعداد کل ستون‌ها را در یک [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)، [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) یا [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) تعریف می‌کند، زمانی که همه ستون‌ها در [DOM](/en-US/docs/Glossary/DOM) حضور ندارند.
 
-## Description
+## توضیحات
 
-Some tables are very large, and it's not possible to show all the columns to the user. Or, it is possible, but having such a wide table would be a bad user experience. Use the `aria-colcount` attribute to let assistive technologies know how many columns the table would have if all columns were present. The value is an integer representing the number of columns that make up the full table. If you don't know the total number of columns a table will have, but know they will not all be in the DOM, use the value -1, so `aria-colcount="-1"`. This value tells the user agent that the current number of columns present in the DOM may not be the actual number of columns in the table.
+برخی جداول بسیار بزرگ هستند و نمایش تمام ستون‌ها به کاربر امکان‌پذیر نیست. یا ممکن است امکان‌پذیر باشد، اما داشتن جدولی به این پهن‌ی تجربه کاربری بدی ایجاد می‌کند. از ویژگی `aria-colcount` استفاده کنید تا به فناوری‌های کمکی بگویید جدول اگر همه ستون‌ها حضور داشتند چند ستون داشت. مقدار آن یک عدد صحیح است که تعداد ستون‌های تشکیل‌دهنده جدول کامل را نشان می‌دهد. اگر تعداد کل ستون‌های یک جدول را نمی‌دانید، اما می‌دانید که همه آن‌ها در DOM نخواهند بود، از مقدار -1 استفاده کنید، یعنی `aria-colcount="-1"`. این مقدار به عامل کاربر می‌گوید که تعداد فعلی ستون‌های موجود در DOM ممکن است تعداد واقعی ستون‌های جدول نباشد.
 
-If all columns in a table are present in the DOM, the `aria-colcount` attribute isn't needed, as browsers automatically calculate the total number of columns. However, if only a portion of the columns is present in the DOM at a given moment, that is when this attribute is helpful and needed.
+اگر همه ستون‌های یک جدول در DOM حضور داشته باشند، ویژگی `aria-colcount` نیازی نیست، زیرا مرورگرها به‌طور خودکار تعداد کل ستون‌ها را محاسبه می‌کنند. با این حال، اگر فقط بخشی از ستون‌ها در یک لحظه خاص در DOM حضور داشته باشند، آن زمان است که این ویژگی مفید و ضروری است.
 
-When using `aria-colcount` when you have a known number of columns, make sure to also use [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) to label each column, or, if the columns are contiguous－if it's a group of columns in the original order with no breaks－label each row.
+هنگام استفاده از `aria-colcount` زمانی که تعداد ستون‌ها مشخص است، مطمئن شوید که از [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) نیز برای برچسب‌گذاری هر ستون استفاده کنید، یا اگر ستون‌ها متوالی هستند - یعنی گروهی از ستون‌ها به ترتیب اصلی بدون شکاف - هر ردیف را برچسب‌گذاری کنید.
 
-The following example shows a grid with 6 columns, of which columns 1, 2, 5, and 6 are displayed to the user. The total number of columns that make up the table is set as `aria-colcount="6"` on the table itself. As the columns aren't contiguous, every [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role) - in this case [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) and [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role) elements - have the `aria-colindex` attribute set.
+مثال زیر یک شبکه با ۶ ستون را نشان می‌دهد که ستون‌های ۱، ۲، ۵ و ۶ به کاربر نمایش داده می‌شوند. تعداد کل ستون‌های تشکیل‌دهنده جدول به صورت `aria-colcount="6"` روی خود جدول تنظیم شده است. از آنجایی که ستون‌ها متوالی نیستند، هر [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role) - در اینجا عناصر [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) و [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role) - دارای ویژگی `aria-colindex` هستند.
 
 ```html
 <div role="grid" aria-colcount="6">
@@ -47,7 +46,7 @@ The following example shows a grid with 6 columns, of which columns 1, 2, 5, and
 </div>
 ```
 
-The first rule of ARIA use is "if you can use a native feature with the semantics and behavior you require already built in, instead of repurposing an element and **adding** an ARIA role, state or property to make it accessible, then do so." If we employ native HTML semantics with {{HTMLElement('table')}}, {{HTMLElement('th')}}, {{HTMLElement('td')}}, etc., the `aria-colcount` attribute is still necessary, but the mark up is not as verbose. When using semantic table header elements and not all columns are in the DOM, the `aria-colcount` must still be used, but the `aria-colindex` attribute only needs to be defined once per column in the column header {{HTMLElement('th')}}.
+اولین قانون استفاده از ARIA این است: «اگر می‌توانید از یک ویژگی بومی با معناشناسی و رفتاری که نیاز دارید استفاده کنید، به جای تغییر کاربری یک عنصر و **افزودن** نقش، حالت یا ویژگی ARIA برای دسترسی‌پذیر کردن آن، این کار را انجام دهید.» اگر از معناشناسی بومی HTML با {{HTMLElement('table')}}، {{HTMLElement('th')}}، {{HTMLElement('td')}} و غیره استفاده کنیم، ویژگی `aria-colcount` همچنان ضروری است، اما نشانه‌گذاری کم‌حجم‌تر است. هنگام استفاده از عناصر سرستون جدول معنایی و زمانی که همه ستون‌ها در DOM نیستند، باید همچنان از `aria-colcount` استفاده شود، اما ویژگی `aria-colindex` فقط یک بار برای هر ستون در سرستون ستون {{HTMLElement('th')}} باید تعریف شود.
 
 ```html
 <table aria-colcount="6">
@@ -71,26 +70,26 @@ The first rule of ARIA use is "if you can use a native feature with the semantic
 </table>
 ```
 
-## Values
+## مقادیر
 
 - `<integer>`
-  - : The number of columns in the full table
+  - : تعداد ستون‌ها در جدول کامل
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده شده در نقش‌ها:
 
 - [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
 
-Inherits into roles:
+به ارث برده می‌شود به نقش‌ها:
 
 - [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role)
 - [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex)
