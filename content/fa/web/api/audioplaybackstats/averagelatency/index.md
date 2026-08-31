@@ -1,7 +1,7 @@
 ---
 title: "AudioPlaybackStats: averageLatency property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioPlaybackStats/averageLatency"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,15 +16,15 @@ browser-compat: api.AudioPlaybackStats.averageLatency
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`averageLatency`** read-only property of the {{domxref("AudioPlaybackStats")}} interface is a number indicating the average latency since the audio context was initialized or since {{domxref("AudioPlaybackStats.resetLatency()")}} was last called.
+ویژگی فقط‑خواندنی **`averageLatency`** در رابط {{domxref("AudioPlaybackStats")}} یک عدد است که نشان‌دهندهٔ میانگین تأخیر از زمان مقداردهی اولیهٔ زمینهٔ صوتی یا از آخرین باری است که {{domxref("AudioPlaybackStats.resetLatency()")}} فراخوانی شده است.
 
-## Value
+## مقدار
 
-A double-precision floating point number indicating the average latency, in seconds.
+یک عدد اعشاری با دقت دوبرابر که میانگین تأخیر را بر حسب ثانیه نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
 ```js
 const audioCtx = new AudioContext();
@@ -36,16 +36,16 @@ const stats = audioCtx.playbackStats;
 console.log(stats.averageLatency);
 ```
 
-See also the main {{domxref("AudioPlaybackStats")}} reference page for a more in-depth example.
+همچنین به صفحهٔ اصلی مرجع {{domxref("AudioPlaybackStats")}} برای یک مثال کامل‌تر مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
+- [رابط برنامه‌نویسی وب صوتی](/en-US/docs/Web/API/Web_Audio_API)
