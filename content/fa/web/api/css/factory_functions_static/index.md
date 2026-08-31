@@ -1,11 +1,5 @@
 ---
-title: "CSS numeric factory functions"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS/factory_functions_static"
-status: "needs-translation"
----
-
----
-title: CSS numeric factory functions
+title: "توابع عددی CSS"
 slug: Web/API/CSS/factory_functions_static
 page-type: web-api-static-method
 browser-compat: api.CSS
@@ -14,14 +8,9 @@ spec-urls: https://drafts.css-houdini.org/css-typed-om/#numeric-factory
 
 {{APIRef("CSSOM")}}
 
-The **CSS numeric factory
-functions**, such as `CSS.em()` and
-`CSS.turn()` are methods that return [CSSUnitValues](/en-US/docs/Web/API/CSSUnitValue) with the value being
-the numeric argument and the unit being the name of the method used. These
-functions create new numeric values less verbosely than using the
-{{domxref("CSSUnitValue.CSSUnitValue", "CSSUnitValue()")}} constructor.
+**توابع عددی CSS**، مانند `CSS.em()` و `CSS.turn()`، متدهایی هستند که یک {{domxref("CSSUnitValue")}} برمی‌گردانند؛ مقدار آن برابر با آرگومان عددی و واحد آن برابر با نام متد استفاده‌شده است. این توابع مقادیر عددی جدید را با شیوه‌ای خلاصه‌تر نسبت به استفاده از سازندهٔ {{domxref("CSSUnitValue.CSSUnitValue", "CSSUnitValue()")}} ایجاد می‌کنند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 CSS.number(number)
@@ -72,19 +61,18 @@ CSS.dppx(number)
 CSS.fr(number)
 ```
 
-### Parameters
+### پارامترها
 
 - `number`
-  - : A number to be used in the CSS unit value.
+  - : عددی که در مقدار واحد CSS استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("CSSUnitValue")}} object with the specified numeric value and unit.
+یک شیء {{domxref("CSSUnitValue")}} با مقدار عددی و واحد مشخص‌شده.
 
-## Examples
+## مثال‌ها
 
-We use the `CSS.vmax()` numeric factory function to create a
-{{domxref('CSSUnitValue')}}:
+ما از تابع عددی `CSS.vmax()` برای ایجاد یک {{domxref('CSSUnitValue')}} استفاده می‌کنیم:
 
 ```js
 const height = CSS.vmax(50);
@@ -94,8 +82,7 @@ console.log(height.value); // 50
 console.log(height.unit); // vmax
 ```
 
-In this example, we set the margin on our element using the `CSS.px()`
-factory function:
+در این مثال، حاشیهٔ (margin) عنصر خود را با استفاده از تابع `CSS.px()` تنظیم می‌کنیم:
 
 ```js
 myElement.attributeStyleMap.set("margin", CSS.px(40));
@@ -103,14 +90,14 @@ const currentMargin = myElement.attributeStyleMap.get("margin");
 console.log(currentMargin.value, currentMargin.unit); // 40, 'px'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("CSSUnitValue.CSSUnitValue", "CSSUnitValue()")}}
