@@ -1,9 +1,4 @@
----
-title: "ChapterInformation: title property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation/title"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "ChapterInformation: title property"
 short-title: title
@@ -16,25 +11,25 @@ browser-compat: api.ChapterInformation.title
 
 {{APIRef("Media Session API")}}{{SeeCompatTable}}
 
-The **`title`** read-only property of the
-{{domxref("ChapterInformation")}} interface returns a string representing the title of the chapter.
+ویژگی فقط‌خواندنی **`title`** از رابط {{domxref("ChapterInformation")}} یک رشته (string) را برمی‌گرداند که عنوان بخش (فصل) را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("ChapterInformation")}} page for an example.
+برای مشاهده مثال، به صفحه اصلی {{domxref("ChapterInformation")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ChapterInformation")}}
+```
