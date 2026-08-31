@@ -1,7 +1,7 @@
 ---
 title: "AudioEncoder: isConfigSupported() static method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder/isConfigSupported_static"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,7 +14,7 @@ browser-compat: api.AudioEncoder.isConfigSupported_static
 
 {{APIRef("WebCodecs API")}}{{SecureContext_Header}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`isConfigSupported()`** static method of the {{domxref("AudioEncoder")}} interface checks if the given config is supported (that is, if {{domxref("AudioEncoder")}} objects can be successfully configured with the given config).
+متد استاتیک **`isConfigSupported()`** از رابط {{domxref("AudioEncoder")}} بررسی می‌کند که آیا پیکربندی داده‌شده پشتیبانی می‌شود یا خیر (یعنی آیا اشیاء {{domxref("AudioEncoder")}} می‌توانند با پیکربندی داده‌شده با موفقیت پیکربندی شوند).
 
 ## Syntax
 
@@ -25,25 +25,25 @@ AudioEncoder.isConfigSupported(config)
 ### Parameters
 
 - `config`
-  - : The dictionary object accepted by {{domxref("AudioEncoder.configure")}}
+  - : شیء دیکشنری که توسط {{domxref("AudioEncoder.configure")}} پذیرفته می‌شود.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves with an object containing the following members:
+یک {{jsxref("Promise")}} که با یک شیء حاوی اعضای زیر حل می‌شود:
 
 - `supported`
-  - : A boolean value which is `true` if the given config is supported by the encoder.
+  - : یک مقدار بولی که در صورت پشتیبانی پیکربندی داده‌شده توسط رمزگذار، `true` است.
 - `config`
-  - : A copy of the given config with all the fields recognized by the encoder.
+  - : یک کپی از پیکربندی داده‌شده با تمام فیلدهایی که توسط رمزگذار شناسایی شده‌اند.
 
 ### Exceptions
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the provided `config` is invalid; that is, if doesn't have required values (such as an empty `codec` field) or has invalid values (such as a negative `sampleRate`).
+  - : در صورت نامعتبر بودن `config` ارائه‌شده پرتاب می‌شود؛ یعنی اگر مقادیر مورد نیاز را نداشته باشد (مانند فیلد خالی `codec`) یا مقادیر نامعتبر داشته باشد (مانند `sampleRate` منفی).
 
 ## Examples
 
-The following example tests if the browser supports several audio codecs.
+مثال زیر بررسی می‌کند که آیا مرورگر از چندین کدک صوتی پشتیبانی می‌کند یا خیر.
 
 ```js
 const codecs = ["mp4a.40.2", "mp3", "alaw", "ulaw"];
