@@ -1,7 +1,7 @@
 ---
 title: "ARIA: alertdialog role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,43 +13,43 @@ spec-urls: https://w3c.github.io/aria/#alertdialog
 sidebar: accessibilitysidebar
 ---
 
-The **alertdialog** role is to be used on modal alert dialogs that interrupt a user's workflow to communicate an important message and require a response.
+نقش **alertdialog** برای استفاده در گفتگوهای هشداردهنده مدال (Modal) است که جریان کار کاربر را برای انتقال یک پیام مهم قطع کرده و نیاز به پاسخ دارند.
 
-## Description
+## توضیحات
 
-The `alertdialog` role is used to notify users of urgent information that demands the user's immediate attention. Including `role="alertdialog"` on the element containing the dialog helps assistive technology identify the content as being grouped and separated from the rest of the page content. Examples include error messages that require confirmation and other action confirmation prompts.
+نقش `alertdialog` برای اطلاع‌رسانی به کاربران در مورد اطلاعات فوری که نیاز به توجه فوری کاربر دارد، استفاده می‌شود. قرار دادن `role="alertdialog"` روی عنصر حاوی گفتگو به فناوری کمکی کمک می‌کند تا محتوا را به‌عنوان یک گروه و جدا از بقیه محتوای صفحه شناسایی کند. نمونه‌ها شامل پیام‌های خطا هستند که نیاز به تأیید دارند و سایر اعلان‌های تأیید اقدامات.
 
-As the name implies, `alertdialog` is a mashup of the [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role) and [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role) roles. `alertdialog` is a type of `dialog` with similar use cases as `alert`, but for when a user response is required.
+همان‌طور که از نام آن پیداست، `alertdialog` ترکیبی از نقش‌های [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role) و [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role) است. `alertdialog` نوعی `dialog` با موارد استفاده مشابه `alert` است، اما برای زمانی که پاسخ کاربر لازم است.
 
 > [!NOTE]
-> The `alertdialog` role should only be used for alert messages that have associated interactive controls. If an alert dialog only contains static content and has no interactive controls at all, use [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role) instead.
+> نقش `alertdialog` فقط باید برای پیام‌های هشدار استفاده شود که دارای کنترل‌های تعاملی مرتبط هستند. اگر یک گفتگوی هشدار فقط حاوی محتوای ایستا است و اصلاً کنترل تعاملی ندارد، به جای آن از [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role) استفاده کنید.
 
-Being a type of dialog, the [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role) role's states, properties, and keyboard focus requirements are applicable to the `alertdialog` role as well.
+به عنوان نوعی `dialog`، حالات، ویژگی‌ها و الزامات تمرکز صفحه‌کلید نقش [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role) برای نقش `alertdialog` نیز قابل اعمال هستند.
 
-Because of its urgent nature, interrupting the user's workflow, alert dialogs should be [modal](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-modal).
+به دلیل ماهیت فوری آن‌ها، که جریان کار کاربر را قطع می‌کند، گفتگوهای هشدار باید [modal](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-modal) باشند.
 
-The alert dialog must have at least one focusable control — such as Confirm, Close, and Cancel — and focus must be moved to that control when the alert dialog appears. Alert dialogs can have additional interactive controls such as text fields and checkboxes.
+گفتگوی هشدار باید حداقل یک کنترل قابل تمرکز داشته باشد — مانند تأیید (Confirm)، بستن (Close) و لغو (Cancel) — و هنگام ظاهر شدن گفتگوی هشدار، تمرکز باید به آن کنترل منتقل شود. گفتگوهای هشدار می‌توانند کنترل‌های تعاملی اضافی مانند فیلدهای متنی و چک‌باکس داشته باشند.
 
-The `alertdialog` role is not to be used as a replacement for other dialogs, including no-confirmation-required `alert` dialogs ([`Window.alert()`](/en-US/docs/Web/API/Window/alert)) and prompts ([`Window.prompt()`](/en-US/docs/Web/API/Window/prompt)).
+نقش `alertdialog` نباید به عنوان جایگزینی برای سایر گفتگوها استفاده شود، از جمله گفتگوهای `alert` بدون نیاز به تأیید ([`Window.alert()`](/en-US/docs/Web/API/Window/alert)) و اعلان‌ها ([`Window.prompt()`](/en-US/docs/Web/API/Window/prompt)).
 
-Adding `role="alertdialog"` alone is not sufficient to make an alert dialog accessible. The following also need to be done:
+افزودن `role="alertdialog"` به تنهایی برای قابل دسترس کردن یک گفتگوی هشدار کافی نیست. موارد زیر نیز باید انجام شوند:
 
-- The alert dialog must be properly labeled
-- Keyboard focus must be managed correctly
+- گفتگوی هشدار باید به درستی برچسب‌گذاری شود
+- تمرکز صفحه‌کلید باید به درستی مدیریت شود
 
-The `alertdialog` must have an accessible name, defined with [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label). The alert dialog text must have an {{glossary("accessible description")}} using [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby).
+عنصر `alertdialog` باید دارای نام قابل دسترس (accessible name) باشد که با [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) یا [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) تعریف شده باشد. متن گفتگوی هشدار باید با استفاده از [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) دارای {{glossary("accessible description")}} باشد.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالات و ویژگی‌های مرتبط WAI-ARIA
 
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : Use this attribute to label the alertdialog. The `aria-labelledby` attribute is generally the id of the element used to title the alertdialog.
+  - : از این ویژگی برای برچسب‌گذاری alertdialog استفاده کنید. ویژگی `aria-labelledby` معمولاً شناسه (id) عنصری است که برای عنوان alertdialog استفاده می‌شود.
 
 - [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby)
-  - : Use this attribute to encompass the description of the contents of the alert dialog. The value of the `aria-describedby` attribute is generally the ID of the element containing the alert dialog's messaging, usually coming right after the title.
+  - : از این ویژگی برای دربرگرفتن توضیحات محتویات گفتگوی هشدار استفاده کنید. مقدار ویژگی `aria-describedby` معمولاً شناسه (ID) عنصری است که پیام‌های گفتگوی هشدار را شامل می‌شود، معمولاً بلافاصله بعد از عنوان قرار می‌گیرد.
 
-## Examples
+## مثال‌ها
 
-### Example 1: A basic alert dialog
+### مثال ۱: یک گفتگوی هشدار پایه
 
 ```html
 <div
@@ -64,9 +64,9 @@ The `alertdialog` must have an accessible name, defined with [`aria-labelledby`]
 </div>
 ```
 
-The code snippet above shows how to mark up an alert dialog that only provides a message and an OK button.
+قطعه کد بالا نشان می‌دهد که چگونه یک گفتگوی هشدار را علامت‌گذاری کنیم که فقط یک پیام و یک دکمه OK ارائه می‌دهد.
 
-### Example 2: Confirmation dialog with two options
+### مثال ۲: گفتگوی تأیید با دو گزینه
 
 ```html
 <div
@@ -100,15 +100,15 @@ document.getElementById("confirm-btn").addEventListener("click", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement("dialog")}} element
-- [The `dialog` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role)
-- [The `alert` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)
-- [`aria-modal` attribute](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-modal)
+- المان HTML {{HTMLElement("dialog")}}
+- [نقش `dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role)
+- [نقش `alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)
+- [ویژگی `aria-modal`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-modal)
 - [`Window.alert()`](/en-US/docs/Web/API/Window/alert)
 - [`Window.prompt()`](/en-US/docs/Web/API/Window/prompt)
