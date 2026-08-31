@@ -1,11 +1,7 @@
 ---
 title: "BaseAudioContext"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext"
-status: "needs-translation"
----
-
----
-title: BaseAudioContext
+translated_by: "n8n + AI"
 slug: Web/API/BaseAudioContext
 page-type: web-api-interface
 browser-compat: api.BaseAudioContext
@@ -13,76 +9,76 @@ browser-compat: api.BaseAudioContext
 
 {{APIRef("Web Audio API")}}
 
-The `BaseAudioContext` interface of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) acts as a base definition for online and offline audio-processing graphs, as represented by {{domxref("AudioContext")}} and {{domxref("OfflineAudioContext")}} respectively. You wouldn't use `BaseAudioContext` directly — you'd use its features via one of these two inheriting interfaces.
+رابط `BaseAudioContext` از [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) به عنوان یک تعریف پایه برای گراف‌های پردازش صوتی آنلاین و آفلاین عمل می‌کند که به ترتیب توسط {{domxref("AudioContext")}} و {{domxref("OfflineAudioContext")}} نمایش داده می‌شوند. شما مستقیماً از `BaseAudioContext` استفاده نمی‌کنید – بلکه از ویژگی‌های آن از طریق یکی از این دو رابط ارث‌برنده استفاده می‌کنید.
 
-A `BaseAudioContext` can be a target of events, therefore it implements the {{domxref("EventTarget")}} interface.
+یک `BaseAudioContext` می‌تواند هدف رویدادها باشد، بنابراین رابط {{domxref("EventTarget")}} را پیاده‌سازی می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("BaseAudioContext.audioWorklet")}} {{ReadOnlyInline}} {{securecontext_inline}}
-  - : Returns the {{domxref("AudioWorklet")}} object, which can be used to create and manage {{domxref("AudioNode")}}s in which JavaScript code implementing the {{domxref("AudioWorkletProcessor")}} interface are run in the background to process audio data.
+  - : شیء {{domxref("AudioWorklet")}} را برمی‌گرداند که می‌تواند برای ایجاد و مدیریت {{domxref("AudioNode")}}هایی استفاده شود که در آن‌ها کد جاوااسکریپت پیاده‌ساز رابط {{domxref("AudioWorkletProcessor")}} در پس‌زمینه برای پردازش داده‌های صوتی اجرا می‌شود.
 - {{domxref("BaseAudioContext.currentTime")}} {{ReadOnlyInline}}
-  - : Returns a double representing an ever-increasing hardware time in seconds used for scheduling. It starts at `0`.
+  - : یک عدد اعشاری double را برمی‌گرداند که نشان‌دهنده زمان سخت‌افزاری همواره در حال افزایش (برحسب ثانیه) برای زمان‌بندی است. این مقدار از `0` شروع می‌شود.
 - {{domxref("BaseAudioContext.destination")}} {{ReadOnlyInline}}
-  - : Returns an {{domxref("AudioDestinationNode")}} representing the final destination of all audio in the context. It can be thought of as the audio-rendering device.
+  - : یک {{domxref("AudioDestinationNode")}} را برمی‌گرداند که مقصد نهایی تمام صداها در زمینه را نشان می‌دهد. می‌توان آن را به عنوان دستگاه رندر صدا در نظر گرفت.
 - {{domxref("BaseAudioContext.listener")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("AudioListener")}} object, used for 3D spatialization.
+  - : شیء {{domxref("AudioListener")}} را برمی‌گرداند که برای فضایی‌سازی سه‌بعدی استفاده می‌شود.
 - {{domxref("BaseAudioContext.sampleRate")}} {{ReadOnlyInline}}
-  - : Returns a float representing the sample rate (in samples per second) used by all nodes in this context. The sample-rate of an {{domxref("AudioContext")}} cannot be changed.
+  - : یک عدد اعشاری float را برمی‌گرداند که نشان‌دهنده نرخ نمونه‌برداری (برحسب نمونه در ثانیه) است که توسط همه گره‌ها در این زمینه استفاده می‌شود. نرخ نمونه‌برداری یک {{domxref("AudioContext")}} قابل تغییر نیست.
 - {{domxref("BaseAudioContext.state")}} {{ReadOnlyInline}}
-  - : Returns the current state of the `AudioContext`.
+  - : وضعیت فعلی `AudioContext` را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also implements methods from the interface_ {{domxref("EventTarget")}}.
+_همچنین روش‌هایی از رابط_ {{domxref("EventTarget")}} _را پیاده‌سازی می‌کند._
 
 - {{domxref("BaseAudioContext.createAnalyser()")}}
-  - : Creates an {{domxref("AnalyserNode")}}, which can be used to expose audio time and frequency data and for example to create data visualizations.
+  - : یک {{domxref("AnalyserNode")}} ایجاد می‌کند که می‌تواند برای نمایش داده‌های زمانی و فرکانسی صدا و مثلاً برای ایجاد تجسم‌های داده استفاده شود.
 - {{domxref("BaseAudioContext.createBiquadFilter()")}}
-  - : Creates a {{domxref("BiquadFilterNode")}}, which represents a second order filter configurable as several different common filter types: high-pass, low-pass, band-pass, etc
+  - : یک {{domxref("BiquadFilterNode")}} ایجاد می‌کند که یک فیلتر مرتبه دوم را نشان می‌دهد و می‌تواند به عنوان چندین نوع فیلتر رایج مختلف پیکربندی شود: بالاگذر، پایین‌گذر، میان‌گذر و غیره.
 - {{domxref("BaseAudioContext.createBuffer()")}}
-  - : Creates a new, empty {{ domxref("AudioBuffer") }} object, which can then be populated by data and played via an {{ domxref("AudioBufferSourceNode") }}.
+  - : یک شیء جدید و خالی از {{ domxref("AudioBuffer") }} ایجاد می‌کند که سپس می‌تواند با داده پر شود و از طریق یک {{ domxref("AudioBufferSourceNode") }} پخش شود.
 - {{domxref("BaseAudioContext.createBufferSource()")}}
-  - : Creates an {{domxref("AudioBufferSourceNode")}}, which can be used to play and manipulate audio data contained within an {{ domxref("AudioBuffer") }} object. {{ domxref("AudioBuffer") }}s are created using {{domxref("BaseAudioContext/createBuffer", "AudioContext.createBuffer()")}} or returned by {{domxref("BaseAudioContext/decodeAudioData", "AudioContext.decodeAudioData()")}} when it successfully decodes an audio track.
+  - : یک {{domxref("AudioBufferSourceNode")}} ایجاد می‌کند که می‌تواند برای پخش و دستکاری داده‌های صوتی موجود در یک شیء {{ domxref("AudioBuffer") }} استفاده شود. {{ domxref("AudioBuffer") }}ها با استفاده از {{domxref("BaseAudioContext/createBuffer", "AudioContext.createBuffer()")}} ایجاد می‌شوند یا توسط {{domxref("BaseAudioContext/decodeAudioData", "AudioContext.decodeAudioData()")}} هنگامی که یک آهنگ صوتی را با موفقیت رمزگشایی می‌کند، بازگردانده می‌شوند.
 - {{domxref("BaseAudioContext.createConstantSource()")}}
-  - : Creates a {{domxref("ConstantSourceNode")}} object, which is an audio source that continuously outputs a monaural (one-channel) sound signal whose samples all have the same value.
+  - : یک شیء {{domxref("ConstantSourceNode")}} ایجاد می‌کند که یک منبع صوتی است که به طور پیوسته یک سیگنال صوتی مونو (یک کاناله) خروجی می‌دهد که همه نمونه‌های آن مقدار یکسانی دارند.
 - {{domxref("BaseAudioContext.createChannelMerger()")}}
-  - : Creates a {{domxref("ChannelMergerNode")}}, which is used to combine channels from multiple audio streams into a single audio stream.
+  - : یک {{domxref("ChannelMergerNode")}} ایجاد می‌کند که برای ترکیب کانال‌های چند جریان صوتی به یک جریان صوتی واحد استفاده می‌شود.
 - {{domxref("BaseAudioContext.createChannelSplitter()")}}
-  - : Creates a {{domxref("ChannelSplitterNode")}}, which is used to access the individual channels of an audio stream and process them separately.
+  - : یک {{domxref("ChannelSplitterNode")}} ایجاد می‌کند که برای دسترسی به کانال‌های جداگانه یک جریان صوتی و پردازش جداگانه آن‌ها استفاده می‌شود.
 - {{domxref("BaseAudioContext.createConvolver()")}}
-  - : Creates a {{domxref("ConvolverNode")}}, which can be used to apply convolution effects to your audio graph, for example a reverberation effect.
+  - : یک {{domxref("ConvolverNode")}} ایجاد می‌کند که می‌تواند برای اعمال اثرات کانولوشن به گراف صوتی شما، مثلاً یک اثر طنین، استفاده شود.
 - {{domxref("BaseAudioContext.createDelay()")}}
-  - : Creates a {{domxref("DelayNode")}}, which is used to delay the incoming audio signal by a certain amount. This node is also useful to create feedback loops in a Web Audio API graph.
+  - : یک {{domxref("DelayNode")}} ایجاد می‌کند که برای تأخیر سیگنال صوتی ورودی به میزان معینی استفاده می‌شود. این گره همچنین برای ایجاد حلقه‌های بازخورد در یک گراف Web Audio API مفید است.
 - {{domxref("BaseAudioContext.createDynamicsCompressor()")}}
-  - : Creates a {{domxref("DynamicsCompressorNode")}}, which can be used to apply acoustic compression to an audio signal.
+  - : یک {{domxref("DynamicsCompressorNode")}} ایجاد می‌کند که می‌تواند برای اعمال فشرده‌سازی آکوستیک به یک سیگنال صوتی استفاده شود.
 - {{domxref("BaseAudioContext.createGain()")}}
-  - : Creates a {{domxref("GainNode")}}, which can be used to control the overall volume of the audio graph.
+  - : یک {{domxref("GainNode")}} ایجاد می‌کند که می‌تواند برای کنترل حجم کلی گراف صوتی استفاده شود.
 - {{domxref("BaseAudioContext.createIIRFilter()")}}
-  - : Creates an {{domxref("IIRFilterNode")}}, which represents a second order filter configurable as several different common filter types.
+  - : یک {{domxref("IIRFilterNode")}} ایجاد می‌کند که یک فیلتر مرتبه دوم را نشان می‌دهد و می‌تواند به عنوان چندین نوع فیلتر رایج مختلف پیکربندی شود.
 - {{domxref("BaseAudioContext.createOscillator()")}}
-  - : Creates an {{domxref("OscillatorNode")}}, a source representing a periodic waveform. It basically generates a tone.
+  - : یک {{domxref("OscillatorNode")}} ایجاد می‌کند، یک منبع که یک شکل موج دوره‌ای را نشان می‌دهد. اساساً یک تُن تولید می‌کند.
 - {{domxref("BaseAudioContext.createPanner()")}}
-  - : Creates a {{domxref("PannerNode")}}, which is used to spatialize an incoming audio stream in 3D space.
+  - : یک {{domxref("PannerNode")}} ایجاد می‌کند که برای فضایی‌سازی یک جریان صوتی ورودی در فضای سه‌بعدی استفاده می‌شود.
 - {{domxref("BaseAudioContext.createPeriodicWave()")}}
-  - : Creates a {{domxref("PeriodicWave")}}, used to define a periodic waveform that can be used to determine the output of an {{ domxref("OscillatorNode") }}.
+  - : یک {{domxref("PeriodicWave")}} ایجاد می‌کند که برای تعریف یک شکل موج دوره‌ای استفاده می‌شود و می‌تواند برای تعیین خروجی یک {{ domxref("OscillatorNode") }} استفاده شود.
 - {{domxref("BaseAudioContext.createScriptProcessor()")}} {{deprecated_inline}}
-  - : Creates a {{domxref("ScriptProcessorNode")}}, which can be used for direct audio processing via JavaScript.
+  - : یک {{domxref("ScriptProcessorNode")}} ایجاد می‌کند که می‌تواند برای پردازش مستقیم صدا از طریق جاوااسکریپت استفاده شود.
 - {{domxref("BaseAudioContext.createStereoPanner()")}}
-  - : Creates a {{domxref("StereoPannerNode")}}, which can be used to apply stereo panning to an audio source.
+  - : یک {{domxref("StereoPannerNode")}} ایجاد می‌کند که می‌تواند برای اعمال پنینگ استریو به یک منبع صوتی استفاده شود.
 - {{domxref("BaseAudioContext.createWaveShaper()")}}
-  - : Creates a {{domxref("WaveShaperNode")}}, which is used to implement non-linear distortion effects.
+  - : یک {{domxref("WaveShaperNode")}} ایجاد می‌کند که برای پیاده‌سازی اثرات اعوجاج غیرخطی استفاده می‌شود.
 - {{domxref("BaseAudioContext.decodeAudioData()")}}
-  - : Asynchronously decodes audio file data contained in an {{jsxref("ArrayBuffer")}}. In this case, the `ArrayBuffer` is usually loaded from an {{domxref("XMLHttpRequest")}}'s `response` attribute after setting the `responseType` to `arraybuffer`. This method only works on complete files, not fragments of audio files.
+  - : داده‌های فایل صوتی موجود در یک {{jsxref("ArrayBuffer")}} را به صورت ناهمزمان رمزگشایی می‌کند. در این حالت، `ArrayBuffer` معمولاً از ویژگی `response` یک {{domxref("XMLHttpRequest")}} پس از تنظیم `responseType` به `arraybuffer` بارگذاری می‌شود. این روش فقط روی فایل‌های کامل کار می‌کند، نه قطعات فایل‌های صوتی.
 
-## Events
+## رویدادها
 
 - {{domxref("BaseAudioContext.statechange_event", "statechange")}}
-  - : Fired when the `AudioContext`'s state changes due to the calling of one of the state change methods ({{domxref("AudioContext.suspend")}}, {{domxref("AudioContext.resume")}}, or {{domxref("AudioContext.close")}}).
+  - : هنگامی که وضعیت `AudioContext` به دلیل فراخوانی یکی از روش‌های تغییر وضعیت ({{domxref("AudioContext.suspend")}}، {{domxref("AudioContext.resume")}} یا {{domxref("AudioContext.close")}}) تغییر می‌کند، فعال می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioContext = new AudioContext();
@@ -92,16 +88,16 @@ const gainNode = audioContext.createGain();
 const finish = audioContext.destination;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - {{domxref("AudioContext")}}
 - {{domxref("OfflineAudioContext")}}
