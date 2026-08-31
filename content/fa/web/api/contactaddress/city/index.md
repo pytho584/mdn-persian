@@ -1,11 +1,5 @@
 ---
 title: "ContactAddress: city property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContactAddress/city"
-status: "needs-translation"
----
-
----
-title: "ContactAddress: city property"
 short-title: city
 slug: Web/API/ContactAddress/city
 page-type: web-api-instance-property
@@ -16,16 +10,16 @@ browser-compat: api.ContactAddress.city
 
 {{securecontext_header}}{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
-The **`city`** read-only property of the {{domxref("ContactAddress")}} interface returns a string containing the city or town portion of the address.
+ویژگی فقط‌خواندنی **`city`** از رابط {{domxref("ContactAddress")}} یک رشته بازمی‌گرداند که بخش شهر یا ناحیه شهری آدرس را شامل می‌شود.
 
-## Value
+## مقدار
 
-A string indicating the city or town portion of the address described by the {{domxref("ContactAddress")}} object.
+یک رشته که بخش شهر یا ناحیه شهری آدرس توصیف‌شده توسط شیء {{domxref("ContactAddress")}} را نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
