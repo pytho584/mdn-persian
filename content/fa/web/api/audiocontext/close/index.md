@@ -1,7 +1,7 @@
 ---
 title: "AudioContext: close() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/close"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,27 +14,27 @@ browser-compat: api.AudioContext.close
 
 {{ APIRef("Web Audio API") }}
 
-The `close()` method of the {{ domxref("AudioContext") }} Interface closes the audio context, releasing any system audio resources that it uses.
+متد `close()` از رابط {{ domxref("AudioContext") }}، زمینه صوتی را می‌بندد و هر گونه منابع صوتی سیستمی را که از آن‌ها استفاده می‌کند، آزاد می‌کند.
 
-This function does not automatically release all `AudioContext`-created objects, unless other references have been released as well; however, it will forcibly release any system audio resources that might prevent additional `AudioContexts` from being created and used, suspend the progression of audio time in the audio context, and stop processing audio data. The returned {{jsxref("Promise")}} resolves when all `AudioContext`-creation-blocking resources have been released. This method throws an `INVALID_STATE_ERR` exception if called on an {{domxref("OfflineAudioContext")}}.
+این تابع به‌طور خودکار تمام اشیاء ساخته‌شده توسط `AudioContext` را آزاد نمی‌کند، مگر اینکه ارجاع‌های دیگری نیز آزاد شده باشند؛ با این حال، تمام منابع صوتی سیستمی را که ممکن است از ایجاد و استفاده از `AudioContext`های اضافی جلوگیری کنند، به‌اجبار آزاد می‌کند، پیشروی زمان صوتی در زمینه صوتی را معلق می‌کند و پردازش داده‌های صوتی را متوقف می‌کند. {{jsxref("Promise")}} بازگردانده‌شده زمانی حل می‌شود که تمام منابع مسدودکننده ایجاد `AudioContext` آزاد شده باشند. اگر این متد روی یک {{domxref("OfflineAudioContext")}} فراخوانی شود، یک استثنای `INVALID_STATE_ERR` پرتاب می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with {{jsxref('undefined')}}.
+یک {{jsxref("Promise")}} که با {{jsxref('undefined')}} حل می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following snippet is taken from our [AudioContext states demo](https://github.com/mdn/webaudio-examples/blob/main/audiocontext-states/index.html) ([see it running live](https://mdn.github.io/webaudio-examples/audiocontext-states/).) When the stop button is clicked, `close()` is called. When the promise resolves, the example is reset to its beginning state.
+قطعه کد زیر از [دموی وضعیت‌های AudioContext](https://github.com/mdn/webaudio-examples/blob/main/audiocontext-states/index.html) گرفته شده است ([اجرای زنده آن را ببینید](https://mdn.github.io/webaudio-examples/audiocontext-states/).) وقتی دکمه توقف کلیک شود، `close()` فراخوانی می‌شود. وقتی Promise حل شود، مثال به حالت آغازین خود بازنشانی می‌شود.
 
 ```js
 stopBtn.onclick = () => {
@@ -46,15 +46,15 @@ stopBtn.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
