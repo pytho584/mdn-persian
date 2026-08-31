@@ -1,7 +1,7 @@
 ---
 title: "BrowserCaptureMediaStreamTrack: restrictTo() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BrowserCaptureMediaStreamTrack/restrictTo"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,37 +16,37 @@ browser-compat: api.BrowserCaptureMediaStreamTrack.restrictTo
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`restrictTo()`** method of the {{domxref("BrowserCaptureMediaStreamTrack")}} interface restricts a self-capture stream to a specific DOM element (and its descendants).
+متد **`restrictTo()`** در رابط {{domxref("BrowserCaptureMediaStreamTrack")}} جریان خودگیری را به یک عنصر DOM خاص (و فرزندان آن) محدود میکند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 restrictTo(restrictionTarget)
 ```
 
-### Parameters
+### پارامترها
 
 - `restrictionTarget`
-  - : A {{domxref("RestrictionTarget")}} instance representing the element the stream should be restricted to, or `null`/`undefined`, in which case any previously-set restriction is removed from the track.
+  - : یک نمونه {{domxref("RestrictionTarget")}} که عنصری را نشان میدهد که جریان باید به آن محدود شود، یا `null`/`undefined`، که در این صورت هر محدودیت قبلی از روی ترک برداشته میشود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که به {{jsxref("undefined")}} تبدیل میشود.
 
-The promise will reject if:
+Promise رد میشود اگر:
 
-- The track [`kind`](/en-US/docs/Web/API/MediaStreamTrack/kind) is not `"video"`, or its [`readyState`](/en-US/docs/Web/API/MediaStreamTrack/readyState) is not `"live"`.
-- The restriction target element no longer exists.
-- The track being restricted is not a track captured from the user's screen.
-- `restrictionTarget` is not a {{domxref("RestrictionTarget")}} instance, `null`, or `undefined`.
-- `restrictionTarget` was created in a tab other than the one being captured.
+- [`kind`](/en-US/docs/Web/API/MediaStreamTrack/kind) ترک `"video"` نباشد، یا [`readyState`](/en-US/docs/Web/API/MediaStreamTrack/readyState) آن `"live"` نباشد.
+- عنصر هدف محدودسازی دیگر وجود نداشته باشد.
+- ترکی که محدود میشود، ترکی نباشد که از صفحه کاربر ضبط شده است.
+- `restrictionTarget` نمونهای از {{domxref("RestrictionTarget")}}، `null` یا `undefined` نباشد.
+- `restrictionTarget` در تب دیگری غیر از تبی که در حال ضبط است ساخته شده باشد.
 
 > [!NOTE]
-> In Chromium, if a track has clones, `restrictTo()` will reject (see [Chrome issue 41482026](https://crbug.com/41482026)).
+> در کرومیوم، اگر یک ترک کلون داشته باشد، `restrictTo()` رد میشود (به [Chrome issue 41482026](https://crbug.com/41482026) مراجعه کنید).
 
-## Examples
+## مثالها
 
-### Basic restriction example
+### مثال پایه محدودسازی
 
 ```js
 // Options for getDisplayMedia()
@@ -70,26 +70,26 @@ await track.restrictTo(restrictionTarget);
 videoElem.srcObject = stream;
 ```
 
-See [Using the Element Capture and Region Capture APIs](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture) for in-context example code.
+برای مثال کد در متن، به [Using the Element Capture and Region Capture APIs](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture) مراجعه کنید.
 
-### Stopping the restriction
+### توقف محدودسازی
 
-You can stop the restriction by making a call to `restrictTo()` on the same track, passing an argument of `null` to it:
+میتوانید با فراخوانی `restrictTo()` روی همان ترک و ارسال آرگومان `null` به آن، محدودسازی را متوقف کنید:
 
 ```js
 // Stop restricting
 await track.restrictTo(null);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - [Using the Element Capture and Region Capture APIs](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture)
