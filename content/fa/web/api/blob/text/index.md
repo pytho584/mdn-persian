@@ -1,7 +1,7 @@
 ---
 title: "Blob: text() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Blob/text"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,45 +14,38 @@ browser-compat: api.Blob.text
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`text()`** method of the
-{{domxref("Blob")}} interface returns a {{jsxref("Promise")}} that resolves with a
-string containing the contents of the blob, interpreted as UTF-8.
+متد **`text()`** از رابط {{domxref("Blob")}} یک {{jsxref("Promise")}} برمی‌گرداند که با رشته‌ای حاوی محتویات blob، که به‌صورت UTF-8 تفسیر شده است، resolve می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 text()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A promise that resolves with a string which contains the blob's data
-as a text string. The data is _always_ presumed to be in UTF-8 format.
+یک Promise که با رشته‌ای حاوی داده‌های blob به‌صورت متن resolve می‌شود. داده‌ها _همیشه_ به‌صورت UTF-8 فرض می‌شوند.
 
-## Usage notes
+## نکات استفاده
 
-The {{domxref("FileReader")}} method {{domxref("FileReader.readAsText", "readAsText()")}} is an older method that performs a similar function.
-It works on both `Blob` and {{domxref("File")}} objects. There are two key differences:
+متد {{domxref("FileReader")}} به نام {{domxref("FileReader.readAsText", "readAsText()")}} یک متد قدیمی‌تر است که عملکرد مشابهی دارد. این متد هم روی `Blob` و هم روی اشیاء {{domxref("File")}} کار می‌کند. دو تفاوت کلیدی وجود دارد:
 
-- `Blob.text()` returns a promise, whereas
-  `FileReader.readAsText()` is an event based API.
-- `Blob.text()` always uses UTF-8 as encoding, while
-  `FileReader.readAsText()` can use a different encoding depending on the
-  blob's type and a specified encoding name.
+- `Blob.text()` یک Promise برمی‌گرداند، در حالی که `FileReader.readAsText()` یک API مبتنی بر رویداد است.
+- `Blob.text()` همیشه از UTF-8 به‌عنوان رمزگذاری استفاده می‌کند، در حالی که `FileReader.readAsText()` بسته به نوع blob و نام رمزگذاری مشخص‌شده می‌تواند از رمزگذاری دیگری استفاده کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Response.text()")}}
 - [Streams API](/en-US/docs/Web/API/Streams_API)
