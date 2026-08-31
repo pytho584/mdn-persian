@@ -1,7 +1,5 @@
 ---
 title: "CSS: escape() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape_static"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +12,26 @@ browser-compat: api.CSS.escape_static
 
 {{APIRef("CSSOM")}}
 
-The **`CSS.escape()`** static method returns a
-string containing the escaped string passed as parameter, mostly for
-use as part of a CSS selector.
+متد ایستای **`CSS.escape()`** رشته‌ای را برمی‌گرداند که شامل رشتهٔ escape شدهٔ ارسال‌شده به‌عنوان پارامتر است؛ این متد بیشتر برای استفاده به‌عنوان بخشی از یک انتخابگر CSS به کار می‌رود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 CSS.escape(str)
 ```
 
-### Parameters
+### پارامترها
 
 - `str`
-  - : The string to be escaped.
+  - : رشته‌ای که باید escape شود.
 
-### Return value
+### مقدار بازگشتی
 
-The escaped string.
+رشتهٔ escape شده.
 
-## Examples
+## مثال‌ها
 
-### Basic results
+### نتایج پایه
 
 <!-- Note: the {} need to be triple-escaped, once for Yari -->
 
@@ -47,31 +43,29 @@ CSS.escape(0); // "\\30 ", the Unicode code point of '0' is 30
 CSS.escape('\0'); // "\ufffd", the Unicode REPLACEMENT CHARACTER
 ```
 
-### In context uses
+### استفاده‌ها در زمینه
 
-To escape a string for use as part of a selector, the `escape()` method can
-be used:
+برای escape کردن یک رشته برای استفاده به‌عنوان بخشی از یک انتخابگر، می‌توان از متد `escape()` استفاده کرد:
 
 ```js
 const element = document.querySelector(`#${CSS.escape(id)} > img`);
 ```
 
-The `escape()` method can also be used for escaping strings, although it
-escapes characters that don't strictly need to be escaped:
+متد `escape()` همچنین می‌تواند برای escape کردن رشته‌ها استفاده شود، هرچند کاراکترهایی را escape می‌کند که لزوماً نیازی به escape شدن ندارند:
 
 ```js
 const element = document.querySelector(`a[href="#${CSS.escape(fragment)}"]`);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{DOMxRef("CSS")}} interface where this static method resides.
+- رابط {{DOMxRef("CSS")}} که این متد ایستا در آن قرار دارد.
 - [A polyfill for the CSS.escape](https://github.com/mathiasbynens/CSS.escape/blob/master/css.escape.js)
