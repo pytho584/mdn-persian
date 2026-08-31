@@ -1,11 +1,5 @@
 ---
 title: "ConstantSourceNode: offset property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ConstantSourceNode/offset"
-status: "needs-translation"
----
-
----
-title: "ConstantSourceNode: offset property"
 short-title: offset
 slug: Web/API/ConstantSourceNode/offset
 page-type: web-api-instance-property
@@ -14,33 +8,27 @@ browser-compat: api.ConstantSourceNode.offset
 
 {{ APIRef("Web Audio API") }}
 
-The read-only `offset` property of the {{ domxref("ConstantSourceNode") }}
-interface returns an {{domxref("AudioParam")}} object indicating the numeric [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) value which is always returned
-by the source when asked for the next sample.
+ویژگیِ فقط‌خواندنیِ `offset` در رابط {{ domxref("ConstantSourceNode") }} یک شیء {{domxref("AudioParam}} را برمی‌گرداند که مقدار عددیِ [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) را نشان می‌دهد که منبع صدا هنگام درخواست نمونهٔ بعدی، همیشه آن را برمی‌گرداند.
 
 > [!NOTE]
-> While the `AudioParam` named `offset` is read-only, the
-> `value` property within is not. So you can change the value of
-> `offset` by setting the value of
-> `ConstantSourceNode.offset.value`:
+> اگرچه `AudioParam` با نام `offset` فقط‌خواندنی است، اما
+> ویژگیِ `value` درونِ آن این‌گونه نیست. بنابراین می‌توانید مقدارِ
+> `offset` را با تنظیم کردنِ مقدارِ
+> `ConstantSourceNode.offset.value` تغییر دهید:
 >
 > ```js
 > myConstantSourceNode.offset.value = newValue;
 > ```
 
-## Value
+## مقدار
 
-An {{ domxref("AudioParam") }} object indicating the [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) value returned for every
-sample by this node. The default value is 1.0.
+یک شیء {{ domxref("AudioParam") }} که مقدارِ [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) بازگردانده‌شده برای هر نمونه توسط این گره را نشان می‌دهد. مقدار پیش‌فرض 1.0 است.
 
-To access the `offset` parameter's current value, access the parameter's
-`value` property, as shown in the syntax box above.
+برای دسترسی به مقدارِ فعلی پارامترِ `offset`، به ویژگیِ `value` آن پارامتر دسترسی پیدا کنید، همان‌طور که در کادرِ نحو در بالا نشان داده شده است.
 
-## Examples
+## مثال‌ها
 
-This example shows how to set up a `ConstantSourceNode` so its
-`offset` is used as the input to a pair of {{domxref("GainNode")}}s; this
-snippet is derived from the complete example you can find in [Controlling multiple parameters with ConstantSourceNode](/en-US/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode).
+این مثال نشان می‌دهد که چگونه یک `ConstantSourceNode` را طوری تنظیم کنیم که `offset` آن به عنوان ورودیِ یک جفت {{domxref("GainNode")}} استفاده شود؛ این قطعه‌کد از مثالِ کاملی که در [کنترل چند پارامتر با ConstantSourceNode](/en-US/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode) می‌یابید، گرفته شده است.
 
 ```js
 gainNode2 = context.createGain();
@@ -54,15 +42,9 @@ constantSource.connect(gainNode2.gain);
 constantSource.connect(gainNode3.gain);
 ```
 
-First, the gain nodes are created and configured, and a slider control's value is set
-to match the gain on the two nodes. Then we create a new
-{{domxref("ConstantSourceNode")}} and make it the source for the two gain nodes'
-{{domxref("GainNode.gain")}} values. Each of those values is also an
-{{domxref("AudioParam")}}.
+ابتدا، گره‌های بهره (gain) ساخته و پیکربندی می‌شوند و مقدار یک کنترلِ لغزنده به‌گونه‌ای تنظیم می‌شود که با بهرهٔ دو گره مطابقت داشته باشد. سپس یک {{domxref("ConstantSourceNode")}} جدید می‌سازیم و آن را به‌عنوان منبع برای مقادیرِ {{domxref("GainNode.gain")}} دو گرهٔ بهره قرار می‌دهیم. هر یک از آن مقادیر نیز یک {{domxref("AudioParam")}} هستند.
 
-Let's say we have an event handler (for {{domxref("Element/click_event", "click")}} events, in this case) which
-needs to respond by altering the value of the two gain nodes. With the linkage above in
-place, that can be done using this simple event handler:
+فرض کنید یک کنترل‌کنندهٔ رویداد داریم (در این مورد، برای رویدادهای {{domxref("Element/click_event", "click")}}) که باید با تغییر دادنِ مقدارِ دو گرهٔ بهره پاسخ دهد. با اتصالی که در بالا برقرار شد، این کار را می‌توان با این کنترل‌کنندهٔ رویدادِ ساده انجام داد:
 
 ```js
 function handleClickEvent(event) {
@@ -70,23 +52,19 @@ function handleClickEvent(event) {
 }
 ```
 
-All this function has to do is fetch the current value of the slider control we're
-using to control the paired nodes' gains, then store that value into the
-`ConstantSourceNode`'s `offset` parameter. That's done by changing
-the contents of its {{domxref("AudioParam.value")}} property. The two gain nodes quickly
-adopt the new volume level.
+تنها کاری که این تابع باید انجام دهد این است که مقدارِ فعلیِ کنترلِ لغزنده‌ای را که برای کنترلِ بهرهٔ گره‌های جفت‌شده استفاده می‌کنیم، دریافت کند و سپس آن مقدار را در پارامترِ `offset` گرهٔ `ConstantSourceNode` ذخیره کند. این کار با تغییر دادنِ محتویاتِ ویژگیِ {{domxref("AudioParam.value")}} آن انجام می‌شود. دو گرهٔ بهره به‌سرعت سطح صدای جدید را اعمال می‌کنند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - {{domxref("ConstantSourceNode")}}
 - {{domxref("AudioNode")}}
 - {{domxref("AudioParam")}}
