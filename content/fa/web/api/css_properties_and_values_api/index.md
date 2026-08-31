@@ -1,10 +1,4 @@
 ---
-title: "CSS Properties and Values API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Properties_and_Values_API"
-status: "needs-translation"
----
-
----
 title: CSS Properties and Values API
 slug: Web/API/CSS_Properties_and_Values_API
 page-type: web-api-overview
@@ -15,18 +9,18 @@ browser-compat:
 
 {{DefaultAPISidebar("CSS Properties and Values API")}}
 
-The **CSS Properties and Values API** — part of the [CSS Houdini](/en-US/docs/Web/API/Houdini_APIs) umbrella of APIs — allows developers to explicitly define their [CSS custom properties](/en-US/docs/Web/CSS/Reference/Properties/--*), allowing for property type checking, default values, and properties that do or do not inherit their value.
+**CSS Properties and Values API** — بخشی از مجموعه‌ی [CSS Houdini](/en-US/docs/Web/API/Houdini_APIs) — به توسعه‌دهندگان امکان می‌دهد تا [ویژگی‌های سفارشی CSS](/en-US/docs/Web/CSS/Reference/Properties/--*) خود را به‌صراحت تعریف کنند؛ این امر بررسی نوع ویژگی، مقادیر پیش‌فرض، و ویژگی‌هایی که مقدار خود را به ارث می‌برند یا نمی‌برند را ممکن می‌سازد.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref('CSS/registerProperty_static', 'CSS.registerProperty')}}
-  - : Defines how a browser should parse [CSS custom properties](/en-US/docs/Web/CSS/Reference/Properties/--*). Access this interface through {{domxref('CSS/registerProperty_static', 'CSS.registerProperty')}} in [JavaScript](/en-US/docs/Web/JavaScript).
+  - : نحوه‌ی تفسیر [ویژگی‌های سفارشی CSS](/en-US/docs/Web/CSS/Reference/Properties/--*) توسط مرورگر را تعریف می‌کند. از طریق {{domxref('CSS/registerProperty_static', 'CSS.registerProperty')}} در [جاوااسکریپت](/en-US/docs/Web/JavaScript) به این رابط دسترسی پیدا کنید.
 - {{cssxref('@property')}}
-  - : Defines how a browser should parse [CSS custom properties](/en-US/docs/Web/CSS/Reference/Properties/--*). Access this interface through {{cssxref('@property')}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) in [CSS](/en-US/docs/Web/CSS).
+  - : نحوه‌ی تفسیر [ویژگی‌های سفارشی CSS](/en-US/docs/Web/CSS/Reference/Properties/--*) توسط مرورگر را تعریف می‌کند. از طریق [قاعده‌ی at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) به نام {{cssxref('@property')}} در [CSS](/en-US/docs/Web/CSS) به این رابط دسترسی پیدا کنید.
 
-## Examples
+## مثال‌ها
 
-The following will register a [custom property](/en-US/docs/Web/CSS/Reference/Properties/--*) named `--my-color` using {{domxref('CSS/registerProperty_static', 'CSS.registerProperty')}} in [JavaScript](/en-US/docs/Web/JavaScript). `--my-color` will use the CSS color syntax, it will have a default value of `#c0ffee`, and it will not inherit its value:
+در مثال زیر، یک [ویژگی سفارشی](/en-US/docs/Web/CSS/Reference/Properties/--*) به نام `--my-color` با استفاده از {{domxref('CSS/registerProperty_static', 'CSS.registerProperty')}} در [جاوااسکریپت](/en-US/docs/Web/JavaScript) ثبت می‌شود. `--my-color` از نحو رنگ CSS استفاده می‌کند، مقدار پیش‌فرض آن `#c0ffee` خواهد بود و مقدار خود را به ارث نمی‌برد:
 
 ```js
 window.CSS.registerProperty({
@@ -37,7 +31,7 @@ window.CSS.registerProperty({
 });
 ```
 
-The same registration can take place in [CSS](/en-US/docs/Web/CSS) using the {{cssxref('@property')}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules):
+همین ثبت را می‌توان در [CSS](/en-US/docs/Web/CSS) با استفاده از [قاعده‌ی at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) به نام {{cssxref('@property')}} انجام داد:
 
 ```css
 @property --my-color {
@@ -47,17 +41,17 @@ The same registration can take place in [CSS](/en-US/docs/Web/CSS) using the {{c
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the CSS properties and values API](/en-US/docs/Web/API/CSS_Properties_and_Values_API/guide)
+- [استفاده از API ویژگی‌ها و مقادیر CSS](/en-US/docs/Web/API/CSS_Properties_and_Values_API/guide)
 - [CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API)
 - [CSS Typed Object Model](/en-US/docs/Web/API/CSS_Typed_OM_API)
 - [Houdini APIs](/en-US/docs/Web/API/Houdini_APIs)
