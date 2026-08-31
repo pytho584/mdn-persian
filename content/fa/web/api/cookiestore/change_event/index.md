@@ -1,11 +1,5 @@
 ---
 title: "CookieStore: change event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/change_event"
-status: "needs-translation"
----
-
----
-title: "CookieStore: change event"
 short-title: change
 slug: Web/API/CookieStore/change_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.CookieStore.change_event
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}
 
-A `change` event is fired at a {{domxref("CookieStore")}} object when a change is made to any cookie.
+هنگامی که در هر کوکی تغییری ایجاد شود، یک رویداد `change` روی شیء {{domxref("CookieStore")}} به راه میافتد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم ویژگی کنترل‌کننده رویداد، از این الگو استفاده کنید:
 
 ```js-nolint
 addEventListener("change", (event) => { })
@@ -26,15 +20,15 @@ addEventListener("change", (event) => { })
 onchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("CookieChangeEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("CookieChangeEvent")}} که از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("CookieChangeEvent")}}
 
-## Examples
+## مثال‌ها
 
-To be informed when a cookie has changed, you can add a handler to the `cookieStore` instance using {{domxref("EventTarget.addEventListener", "addEventListener()")}}, like this:
+برای اینکه هنگام تغییر یک کوکی مطلع شوید، می‌توانید یک کنترل‌کننده به نمونه `cookieStore` با استفاده از {{domxref("EventTarget.addEventListener", "addEventListener()")}} اضافه کنید، مانند این:
 
 ```js
 cookieStore.addEventListener("change", (event) => {
@@ -42,7 +36,7 @@ cookieStore.addEventListener("change", (event) => {
 });
 ```
 
-Alternatively, you can use the `onchange` event handler property to establish a handler for the `change` event:
+همچنین می‌توانید از ویژگی کنترل‌کننده رویداد `onchange` برای برقراری یک کنترل‌کننده برای رویداد `change` استفاده کنید:
 
 ```js
 cookieStore.onchange = (event) => {
@@ -50,10 +44,10 @@ cookieStore.onchange = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
