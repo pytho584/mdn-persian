@@ -1,11 +1,5 @@
 ---
 title: "CSPViolationReport: statusCode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSPViolationReport/statusCode"
-status: "needs-translation"
----
-
----
-title: "CSPViolationReport: statusCode property"
 short-title: statusCode
 slug: Web/API/CSPViolationReport/statusCode
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}
 
-The **`statusCode`** property of the {{domxref("CSPViolationReport")}} dictionary is a number representing the [HTTP status code](/en-US/docs/Web/HTTP/Reference/Status) of the response to the request that triggered a [Content Security Policy (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) violation (when loading a window or worker).
+ویژگی **`statusCode`** از دیکشنری {{domxref("CSPViolationReport")}} عددی است که [کد وضعیت HTTP](/en-US/docs/Web/HTTP/Reference/Status) پاسخ به درخواستی را نشان می‌دهد که باعث نقض [خط‌مشی امنیت محتوا (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) شده است (هنگام بارگذاری یک پنجره یا worker).
 
-## Value
+## مقدار
 
-A number representing the HTTP status code of the response to the request that triggered the CSP violation.
+عددی که کد وضعیت HTTP پاسخ به درخواست منجر به نقض CSP را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-In this example we create a new {{domxref("ReportingObserver")}} to observe content violation reports of type `"csp-violation"`.
-Each time the callback function is invoked, we log the status code for the first entry of the reports array.
+در این مثال یک {{domxref("ReportingObserver")}} جدید می‌سازیم تا گزارش‌های نقض محتوا از نوع `"csp-violation"` را مشاهده کنیم.
+هر بار که تابع callback فراخوانده می‌شود، کد وضعیت اولین ورودی آرایه reports را در کنسول ثبت می‌کنیم.
 
 ```js
 const observer = new ReportingObserver(
@@ -40,16 +34,16 @@ const observer = new ReportingObserver(
 observer.observe();
 ```
 
-Note that while there might be multiple reports in the returned array, for brevity we only log the status code of the first report.
+توجه داشته باشید که اگرچه ممکن است چندین گزارش در آرایه بازگشتی وجود داشته باشد، برای اختصار فقط کد وضعیت اولین گزارش را ثبت می‌کنیم.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SecurityPolicyViolationEvent.statusCode")}}
