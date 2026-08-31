@@ -1,7 +1,7 @@
 ---
 title: "BeforeInstallPromptEvent: platforms property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent/platforms"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -17,17 +17,17 @@ browser-compat: api.BeforeInstallPromptEvent.platforms
 
 {{APIRef}}{{SeeCompatTable}}{{Non-standard_header}}
 
-The **`platforms`** property of the {{domxref("BeforeInstallPromptEvent")}} interface lists the platforms on which the event was dispatched. This is provided for user agents that want to present a choice of versions to the user such as, for example, "web" or "play" which would allow the user to choose between a web version or an Android version.
+**`platforms`** 属性是 {{domxref("BeforeInstallPromptEvent")}} 接口的一个属性，用于列出事件被派发的平台。该属性提供给那些希望向用户展示版本选择的用户代理（user agent），例如“web”或“play”，从而允许用户在网页版本或 Android 版本之间进行选择。
 
-## Value
+## 值
 
-An array of strings, in which each string identifies a target platform for the installation.
+一个字符串数组，其中每个字符串标识一个安装目标平台。
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Making PWAs installable](/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable)
-- [How to provide your own in-app install experience](https://web.dev/articles/customize-install) on web.dev (2021)
+- [使 PWA 可安装](/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable)
+- [如何提供你自己的应用内安装体验](https://web.dev/articles/customize-install)（位于 web.dev，2021 年）
