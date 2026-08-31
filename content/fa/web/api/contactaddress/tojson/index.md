@@ -1,11 +1,5 @@
 ---
 title: "ContactAddress: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContactAddress/toJSON"
-status: "needs-translation"
----
-
----
-title: "ContactAddress: toJSON() method"
 short-title: toJSON()
 slug: Web/API/ContactAddress/toJSON
 page-type: web-api-instance-method
@@ -16,26 +10,26 @@ browser-compat: api.ContactAddress.toJSON
 
 {{securecontext_header}}{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
-The **`toJSON()`** method of the {{domxref("ContactAddress")}} interface is a standard serializer that returns a JSON representation of the `ContactAddress` object's properties.
+**`toJSON()`** 方法属于 {{domxref("ContactAddress")}} 接口，是一个标准的序列化方法，返回 `ContactAddress` 对象属性的 JSON 表示。
 
-## Syntax
+## 语法
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A JSON object.
+一个 JSON 对象。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
