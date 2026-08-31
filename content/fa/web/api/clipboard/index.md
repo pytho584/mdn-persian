@@ -1,11 +1,5 @@
 ---
 title: "Clipboard"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Clipboard"
-status: "needs-translation"
----
-
----
-title: Clipboard
 slug: Web/API/Clipboard
 page-type: web-api-interface
 browser-compat: api.Clipboard
@@ -13,45 +7,42 @@ browser-compat: api.Clipboard
 
 {{APIRef("Clipboard API")}}{{SecureContext_Header}}
 
-The **`Clipboard`** interface of the [Clipboard API](/en-US/docs/Web/API/Clipboard_API) provides read and write access to the contents of the system clipboard.
-This allows a web application to implement cut, copy, and paste features.
+رابطهٔ **`Clipboard`** در [Clipboard API](/en-US/docs/Web/API/Clipboard_API) دسترسی خواندن و نوشتن به محتویات کلیپبورد سیستمی را فراهم میکند. این امکان را به برنامههای وب میدهد تا ویژگیهای بریدن، کپی کردن و چسباندن را پیادهسازی کنند.
 
 {{InheritanceDiagram}}
 
-The system clipboard is exposed through the global {{domxref("Navigator.clipboard")}} property.
+کلیپبورد سیستمی از طریق ویژگی سراسری {{domxref("Navigator.clipboard")}} در دسترس قرار میگیرد.
 
-All of the Clipboard API methods operate asynchronously; they return a {{jsxref("Promise")}} which is resolved once the clipboard access has been completed.
-The promise is rejected if clipboard access is denied.
+همهٔ متدهای Clipboard API بهصورت غیرهمزمان عمل میکنند؛ آنها یک {{jsxref("Promise")}} برمیگردانند که پس از تکمیل دسترسی به کلیپبورد resolve میشود. اگر دسترسی به کلیپبورد رد شود، این promise رد میشود.
 
-All the methods require a [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
-Additional requirements for using the API are discussed in the [Security consideration](/en-US/docs/Web/API/Clipboard_API#security_considerations) section of the API overview topic.
+همهٔ متدها به یک [زمینهٔ امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts) نیاز دارند. الزامات اضافی برای استفاده از این API در بخش [ملاحظات امنیتی](/en-US/docs/Web/API/Clipboard_API#security_considerations) در نمای کلی این API بحث شده است.
 
-## Instance methods
+## روشهای نمونه
 
-_`Clipboard` is based on the {{domxref("EventTarget")}} interface, and includes its methods._
+_`Clipboard` بر اساس رابط {{domxref("EventTarget")}} ساخته شده و شامل روشهای آن است._
 
 - {{domxref("Clipboard.read()","read()")}}
-  - : Requests arbitrary data (such as images) from the clipboard, returning a {{jsxref("Promise")}} that resolves with an array of {{domxref("ClipboardItem")}} objects containing the clipboard's contents.
+  - : دادههای دلخواه (مانند تصاویر) را از کلیپبورد درخواست میکند و یک {{jsxref("Promise")}} برمیگرداند که با آرایهای از اشیاء {{domxref("ClipboardItem")}} حاوی محتویات کلیپبورد resolve میشود.
 - {{domxref("Clipboard.readText()","readText()")}}
-  - : Requests text from the system clipboard, returning a {{jsxref("Promise")}} that is fulfilled with a string containing the clipboard's text once it's available.
+  - : متن را از کلیپبورد سیستمی درخواست میکند و یک {{jsxref("Promise")}} برمیگرداند که پس از آماده شدن، با یک رشته حاوی متن کلیپبورد fulfilled میشود.
 - {{domxref("Clipboard.write()","write()")}}
-  - : Writes arbitrary data to the system clipboard, returning a {{jsxref("Promise")}} that resolves when the operation completes.
+  - : دادههای دلخواه را در کلیپبورد سیستمی مینویسد و یک {{jsxref("Promise")}} برمیگرداند که پس از تکمیل عملیات resolve میشود.
 - {{domxref("Clipboard.writeText()","writeText()")}}
-  - : Writes text to the system clipboard, returning a {{jsxref("Promise")}} that is resolved once the text is fully copied into the clipboard.
+  - : متن را در کلیپبورد سیستمی مینویسد و یک {{jsxref("Promise")}} برمیگرداند که وقتی متن بهطور کامل در کلیپبورد کپی شد resolve میشود.
 
-## Events
+## رویدادها
 
 - {{domxref("Clipboard.clipboardchange_event","clipboardchange")}} {{experimental_inline}}
-  - : Fired when the system clipboard contents are changed in any way, for example via a system copy command, or via an API method such as {{domxref("Clipboard.writeText()")}}.
+  - : زمانی رخ میدهد که محتویات کلیپبورد سیستمی به هر شکلی تغییر کند، مثلاً از طریق یک دستور کپی سیستمی یا از طریق یک متد API مانند {{domxref("Clipboard.writeText()")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.execCommand()")}}
