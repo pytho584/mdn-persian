@@ -1,7 +1,7 @@
 ---
 title: "AudioDecoder: AudioDecoder() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioDecoder/AudioDecoder"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,26 +14,26 @@ browser-compat: api.AudioDecoder.AudioDecoder
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`AudioDecoder()`** constructor creates a new {{domxref("AudioDecoder")}} object with the provided `init.output` callback assigned as the output callback, the provided `init.error` callback as the error callback, and the {{domxref("AudioDecoder.state")}} set to `"unconfigured"`.
+سازنده **`AudioDecoder()`** یک شیء جدید {{domxref("AudioDecoder")}} ایجاد می‌کند که در آن callback `init.output` به عنوان callback خروجی، callback `init.error` به عنوان callback خطا، و {{domxref("AudioDecoder.state")}} به `"unconfigured"` تنظیم شده است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new AudioDecoder(init)
 ```
 
-### Parameters
+### پارامترها
 
 - `init`
-  - : A dictionary object containing two required callbacks.
+  - : یک شیء دیکشنری که شامل دو callback الزامی است.
     - `output`
-      - : A callback which is passed a single argument of an {{domxref("AudioData")}} object.
+      - : یک callback که یک آرگومان از نوع {{domxref("AudioData")}} به آن ارسال می‌شود.
     - `error`
-      - : A callback which is passed a single argument of the error that has been thrown.
+      - : یک callback که یک آرگومان از خطای پرتاب شده به آن ارسال می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example an `AudioDecoder` is created with the two required callback functions, one to deal with the decoded chunk and the other to handle errors.
+در مثال زیر، یک `AudioDecoder` با دو تابع callback الزامی ایجاد می‌شود، یکی برای پردازش قطعه رمزگشایی شده و دیگری برای مدیریت خطاها.
 
 ```js
 const audioDecoder = new AudioDecoder({
@@ -42,10 +42,10 @@ const audioDecoder = new AudioDecoder({
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
