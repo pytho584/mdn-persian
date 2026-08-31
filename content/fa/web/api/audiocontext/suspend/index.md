@@ -1,7 +1,7 @@
 ---
 title: "AudioContext: suspend() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/suspend"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,27 +14,27 @@ browser-compat: api.AudioContext.suspend
 
 {{ APIRef("Web Audio API") }}
 
-The `suspend()` method of the {{ domxref("AudioContext") }} Interface suspends the progression of time in the audio context, temporarily halting audio hardware access and reducing CPU/battery usage in the process — this is useful if you want an application to power down the audio hardware when it will not be using an audio context for a while.
+متد `suspend()` از رابط {{ domxref("AudioContext") }} پیشروی زمان در زمینه صوتی را معلق می‌کند و به‌طور موقت دسترسی به سخت‌افزار صوتی را متوقف و مصرف CPU/باتری را در این فرآیند کاهش می‌دهد — این زمانی مفید است که بخواهید برنامه‌ای سخت‌افزار صوتی را خاموش کند وقتی برای مدتی از زمینه صوتی استفاده نخواهد کرد.
 
-This method will cause an `INVALID_STATE_ERR` exception to be thrown if called on an {{domxref("OfflineAudioContext")}}.
+اگر روی یک {{domxref("OfflineAudioContext")}} فراخوانی شود، این متد باعث پرتاب شدن استثنای `INVALID_STATE_ERR` می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 suspend()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with {{jsxref('undefined')}}. The promise is rejected if the context has already been closed.
+یک {{jsxref("Promise")}} که با {{jsxref('undefined')}} resolve می‌شود. اگر زمینه قبلاً بسته شده باشد، این Promise رد می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following snippet is taken from our [AudioContext states demo](https://github.com/mdn/webaudio-examples/blob/main/audiocontext-states/index.html) ([see it running live](https://mdn.github.io/webaudio-examples/audiocontext-states/).) When the suspend/resume button is clicked, the {{domxref("BaseAudioContext/state", "AudioContext.state")}} is queried — if it is `running`, `suspend()` is called; if it is `suspended`, {{domxref("AudioContext/resume", "resume()")}} is called. In each case, the text label of the button is updated as appropriate once the promise resolves.
+قطعه کد زیر از [AudioContext states demo](https://github.com/mdn/webaudio-examples/blob/main/audiocontext-states/index.html) ([نسخه زنده را ببینید](https://mdn.github.io/webaudio-examples/audiocontext-states/).) گرفته شده است. وقتی دکمه suspend/resume کلیک می‌شود، {{domxref("BaseAudioContext/state", "AudioContext.state")}} بررسی می‌شود — اگر `running` باشد، `suspend()` فراخوانی می‌شود؛ اگر `suspended` باشد، {{domxref("AudioContext/resume", "resume()")}} فراخوانی می‌شود. در هر حالت، برچسب متنی دکمه پس از resolve شدن Promise به‌طور مناسب به‌روزرسانی می‌شود.
 
 ```js
 susResBtn.onclick = () => {
@@ -50,15 +50,15 @@ susResBtn.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
