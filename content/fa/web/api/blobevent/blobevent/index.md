@@ -1,7 +1,7 @@
 ---
 title: "BlobEvent: BlobEvent() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent/BlobEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,39 +14,37 @@ browser-compat: api.BlobEvent.BlobEvent
 
 {{APIRef("MediaStream Recording")}}
 
-The **`BlobEvent()`** constructor returns a newly created
-{{domxref("BlobEvent")}} object with an associated {{domxref("Blob")}}.
+سازندهٔ **`BlobEvent()`** یک شیء تازه‌ساخته {{domxref("BlobEvent")}} را با یک {{domxref("Blob")}} مرتبط برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new BlobEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `dataavailable`.
+  - : یک رشته که نام رویداد است. این مقدار به حروف بزرگ و کوچک حساس است و مرورگرها همیشه آن را روی `dataavailable` قرار می‌دهند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `data`
-      - : The {{domxref("Blob")}} associated with the event.
+      - : {{domxref("Blob")}} مرتبط با رویداد.
     - `timecode` {{optional_inline}}
-      - : A {{domxref("DOMHighResTimeStamp")}} to be used in initializing the blob event.
+      - : یک {{domxref("DOMHighResTimeStamp")}} برای استفاده در مقداردهی اولیه رویداد blob.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("BlobEvent")}} object.
+یک شیء جدید {{domxref("BlobEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("BlobEvent")}} interface it belongs to.
+- رابط {{domxref("BlobEvent")}} که این رویداد به آن تعلق دارد.
