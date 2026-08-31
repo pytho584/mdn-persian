@@ -1,7 +1,7 @@
 ---
 title: "BluetoothCharacteristicProperties: read property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothCharacteristicProperties/read"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,19 +16,16 @@ browser-compat: api.BluetoothCharacteristicProperties.read
 
 {{securecontext_header}}{{APIRef("Bluetooth API")}}{{SeeCompatTable}}
 
-The **`read`** read-only property of the
-{{domxref("BluetoothCharacteristicProperties")}} interface returns a
-`boolean` that is `true` if the reading of the characteristic
-value is permitted.
+**`read`** 只读属性属于 {{domxref("BluetoothCharacteristicProperties")}} 接口，返回一个 `boolean` 值，如果允许读取特征值，则为 `true`。
 
-## Value
+## 值
 
-A boolean value.
+一个布尔值。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
