@@ -1,12 +1,5 @@
 ---
 title: "CloseWatcher: cancel event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher/cancel_event"
-status: "needs-translation"
----
-
----
-title: "CloseWatcher: cancel event"
-short-title: cancel
 slug: Web/API/CloseWatcher/cancel_event
 page-type: web-api-event
 browser-compat: api.CloseWatcher.cancel_event
@@ -14,11 +7,11 @@ browser-compat: api.CloseWatcher.cancel_event
 
 {{APIRef("HTML DOM")}}
 
-A `cancel` event is fired at a {{domxref("CloseWatcher")}} object before the `close` event, so that `close` can be prevented from firing, if necessary. It is triggered by all close signals (e.g., the <kbd>Esc</kbd> key) as well as {{domxref("CloseWatcher.requestClose()")}}.
+رویداد `cancel` قبل از رویداد `close` روی یک شیء {{domxref("CloseWatcher")}} پرتاب می‌شود، تا در صورت لزوم بتوان از پرتاب شدن `close` جلوگیری کرد. این رویداد توسط تمام سیگنال‌های بستن (مثلاً کلید <kbd>Esc</kbd>) و همچنین {{domxref("CloseWatcher.requestClose()")}} ایجاد می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("cancel", (event) => { })
@@ -26,15 +19,15 @@ addEventListener("cancel", (event) => { })
 oncancel = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("Event")}}.
+یک {{domxref("Event")}}.
 
-## Examples
+## مثال‌ها
 
-### Using the `cancel` event
+### استفاده از رویداد `cancel`
 
-In this example, we ask the user to confirm that they really want to close the component, and if they don't, we cancel the event using {{domxref("Event.preventDefault()")}}, which prevents the `close` event from being fired.
+در این مثال، از کاربر می‌خواهیم تأیید کند که واقعاً می‌خواهد مؤلفه را ببندد، و اگر نخواست، رویداد را با استفاده از {{domxref("Event.preventDefault()")}} لغو می‌کنیم، که از پرتاب شدن رویداد `close` جلوگیری می‌کند.
 
 ```js
 watcher.addEventListener("cancel", (e) => {
@@ -50,10 +43,10 @@ watcher.addEventListener("cancel", (e) => {
 watcher.requestClose();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
