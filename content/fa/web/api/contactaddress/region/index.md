@@ -1,11 +1,5 @@
 ---
 title: "ContactAddress: region property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContactAddress/region"
-status: "needs-translation"
----
-
----
-title: "ContactAddress: region property"
 short-title: region
 slug: Web/API/ContactAddress/region
 page-type: web-api-instance-property
@@ -16,20 +10,20 @@ browser-compat: api.ContactAddress.region
 
 {{securecontext_header}}{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
-The read-only **`region`** property of the {{domxref("ContactAddress")}} interface returns a string containing the top-level administrative subdivision of the country in which the address is located. This may be a state, province, oblast, or prefecture.
+ویژگی فقط‌خواندنی **`region`** در رابط {{domxref("ContactAddress")}} رشته‌ای برمی‌گرداند که شامل بالاترین سطح تقسیمات کشوریِ کشورِ محل آدرس است. این مقدار ممکن است یک ایالت (state)، استان (province)، اوبلاست (oblast) یا بخش (prefecture) باشد.
 
-## Value
+## مقدار
 
-A string specifying the top-level administrative subdivision within the country in which the address is located. This region has different names in different countries, such as: state, province, oblast, prefecture, or county.
+رشته‌ای که بالاترین سطح تقسیمات کشوری در کشورِ محل آدرس را مشخص می‌کند. این منطقه در کشورهای مختلف نام‌های متفاوتی دارد؛ مانند: state (ایالت)، province (استان)، oblast (اوبلاست)، prefecture (ناحیه) یا county (شهرستان).
 
-## Usage notes
+## نکات استفاده
 
-In some countries, like Belgium, it's uncommon for people to provide a region as part of their postal address. In such cases, the browser returns an empty string as the value of `region`. However, the address should still be acceptable to use for its intended purpose (e.g., to ship a product). However, always verify addresses to make sure what the user provides is usable.
+در برخی کشورها، مانند بلژیک، معمول نیست که کاربران منطقه را به‌عنوان بخشی از آدرس پستی خود بنویسند. در چنین مواردی، مرورگر مقدار `region` را به‌صورت رشته‌ای خالی برمی‌گرداند. با این حال، آدرس همچنان باید برای هدف مورد نظر (مثلاً ارسال کالا) قابل استفاده باشد. با این وجود، همیشه آدرس‌ها را بررسی کنید تا مطمئن شوید آنچه کاربر ارائه می‌دهد قابل استفاده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
