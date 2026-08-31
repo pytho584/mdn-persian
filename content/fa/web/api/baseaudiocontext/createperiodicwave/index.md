@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createPeriodicWave() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createPeriodicWave"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,40 +14,39 @@ browser-compat: api.BaseAudioContext.createPeriodicWave
 
 {{ APIRef("Web Audio API") }}
 
-The `createPeriodicWave()` method of the {{ domxref("BaseAudioContext") }} interface is used to create a {{domxref("PeriodicWave")}}. This wave is used to define a periodic waveform that can be used to shape the output of an {{ domxref("OscillatorNode") }}.
+متد `createPeriodicWave()` از رابط {{ domxref("BaseAudioContext") }} برای ایجاد یک {{domxref("PeriodicWave")}} استفاده می‌شود. این موج برای تعریف یک شکل‌موج متناوب استفاده می‌شود که می‌تواند برای شکل‌دهی به خروجی یک {{ domxref("OscillatorNode") }} به کار رود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createPeriodicWave(real, imag)
 createPeriodicWave(real, imag, constraints)
 ```
 
-### Parameters
+### پارامترها
 
 - `real`
-  - : An array of cosine terms (traditionally the A terms).
+  - آرایه‌ای از عبارت‌های کسینوسی (به طور سنتی عبارت‌های A).
 - `imag`
-  - : An array of sine terms (traditionally the B terms).
+  - آرایه‌ای از عبارت‌های سینوسی (به طور سنتی عبارت‌های B).
 
-The `real` and `imag` arrays must have the same length, otherwise an error is thrown.
+آرایه‌های `real` و `imag` باید طول یکسانی داشته باشند، در غیر این صورت یک خطا پرتاب می‌شود.
 
 - `constraints` {{optional_inline}}
-  - : A dictionary object that specifies whether normalization should be disabled. If not specified, normalization is enabled by default. It takes one property:
+  - یک شیء دیکشنری که مشخص می‌کند آیا نرمال‌سازی باید غیرفعال شود یا خیر. اگر مشخص نشود، نرمال‌سازی به طور پیش‌فرض فعال است. این شیء یک ویژگی دارد:
     - `disableNormalization`
-      - : If set to `true`, normalization is disabled for the periodic wave. The default is `false`.
+      - اگر روی `true` تنظیم شود، نرمال‌سازی برای موج متناوب غیرفعال می‌شود. مقدار پیش‌فرض `false` است.
 
 > [!NOTE]
-> If normalized, the resulting wave will have a maximum absolute peak value of 1.
+> اگر نرمال‌سازی انجام شود، موج حاصل حداکثر مقدار قله مطلق ۱ را خواهد داشت.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("PeriodicWave")}}.
+یک {{domxref("PeriodicWave")}}.
 
-## Examples
+## مثال‌ها
 
-The following example illustrates simple usage of `createPeriodicWave()`, to
-create a {{domxref("PeriodicWave")}} object containing a simple sine wave.
+مثال زیر کاربرد ساده `createPeriodicWave()` را برای ایجاد یک شیء {{domxref("PeriodicWave")}} حاوی یک موج سینوسی ساده نشان می‌دهد.
 
 ```js
 const real = new Float32Array(2);
@@ -70,20 +69,20 @@ osc.start();
 osc.stop(2);
 ```
 
-This works because a sound that contains only a fundamental tone is by definition a sine wave.
+این کار می‌کند زیرا صدایی که فقط یک تُن بنیادی دارد، بنا به تعریف یک موج سینوسی است.
 
-Here, we create a `PeriodicWave` with two values. The first value is the DC offset, which is the value at which the oscillator starts. A value of `0` is good here because it starts the curve at the middle of the `[-1.0; 1.0]` range. The second and subsequent values are sine and cosine components, similar to the result of a Fourier transform, which converts time domain values to frequency domain values. Here, with `createPeriodicWave()`, you specify the frequencies, and the browser performs an inverse Fourier transform to get a time domain buffer for the frequency of the oscillator. In this example, we set only one component at full volume (`1.0`) on the fundamental tone, so we get a sine wave. Bear in mind that the fundamental tone corresponds to the oscillator's frequency (which, by default, is `440 Hz`). Therefore, altering the oscillator's frequency effectively shifts the frequency of this periodic wave along with it.
+در اینجا، یک `PeriodicWave` با دو مقدار ایجاد می‌کنیم. مقدار اول، آفست DC است، یعنی مقداری که نوسانگر از آن شروع می‌شود. مقدار `0` در اینجا مناسب است، زیرا منحنی را از وسط بازه `[-1.0; 1.0]` شروع می‌کند. مقدار دوم و مقادیر بعدی، مؤلفه‌های سینوسی و کسینوسی هستند، مشابه نتیجه تبدیل فوریه که مقادیر حوزه زمان را به مقادیر حوزه فرکانس تبدیل می‌کند. در اینجا، با `createPeriodicWave()`، فرکانس‌ها را مشخص می‌کنید و مرورگر یک تبدیل فوریه معکوس انجام می‌دهد تا یک بافر حوزه زمان برای فرکانس نوسانگر به دست آورد. در این مثال، فقط یک مؤلفه را با حجم کامل (`1.0`) روی تُن بنیادی تنظیم می‌کنیم، بنابراین یک موج سینوسی به دست می‌آوریم. به خاطر داشته باشید که تُن بنیادی با فرکانس نوسانگر (که به طور پیش‌فرض `440 Hz` است) مطابقت دارد. بنابراین، تغییر فرکانس نوسانگر به طور مؤثر فرکانس این موج متناوب را نیز همراه با آن تغییر می‌دهد.
 
-The coefficients of the Fourier transform should be given in _ascending_ order (i.e., <math><semantics><mrow><mrow><mo>(</mo><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mi>i</mi></mrow><mo>)</mo></mrow><msup><mi>e</mi><mi>i</mi></msup><mo>,</mo><mrow><mo>(</mo><mrow><mi>c</mi><mo>+</mo><mi>d</mi><mi>i</mi></mrow><mo>)</mo></mrow><msup><mi>e</mi><mrow><mn>2</mn><mi>i</mi></mrow></msup><mo>,</mo><mrow><mo>(</mo><mrow><mi>f</mi><mo>+</mo><mi>g</mi><mi>i</mi></mrow><mo>)</mo></mrow><msup><mi>e</mi><mrow><mn>3</mn><mi>i</mi></mrow></msup></mrow><annotation encoding="TeX">\left(a+bi\right)e^{i} , \left(c+di\right)e^{2i} ,\left(f+gi\right)e^{3i} </annotation></semantics></math> etc.) and can be positive or negative. A simple way of manually obtaining such coefficients (though not the best) is to use a graphing calculator.
+ضرایب تبدیل فوریه باید به ترتیب _صعودی_ داده شوند (یعنی، <math><semantics><mrow><mrow><mo>(</mo><mrow><mi>a</mi><mo>+</mo><mi>b</mi><mi>i</mi></mrow><mo>)</mo></mrow><msup><mi>e</mi><mi>i</mi></msup><mo>,</mo><mrow><mo>(</mo><mrow><mi>c</mi><mo>+</mo><mi>d</mi><mi>i</mi></mrow><mo>)</mo></mrow><msup><mi>e</mi><mrow><mn>2</mn><mi>i</mi></mrow></msup><mo>,</mo><mrow><mo>(</mo><mrow><mi>f</mi><mo>+</mo><mi>g</mi><mi>i</mi></mrow><mo>)</mo></mrow><msup><mi>e</mi><mrow><mn>3</mn><mi>i</mi></mrow></msup></mrow><annotation encoding="TeX">\left(a+bi\right)e^{i} , \left(c+di\right)e^{2i} ,\left(f+gi\right)e^{3i} </annotation></semantics></math> و غیره) و می‌توانند مثبت یا منفی باشند. یک راه ساده برای به دست آوردن دستی این ضرایب (اگرچه بهترین راه نیست) استفاده از ماشین‌حساب نموداری است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
