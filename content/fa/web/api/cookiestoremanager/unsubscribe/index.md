@@ -1,11 +1,5 @@
 ---
 title: "CookieStoreManager: unsubscribe() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CookieStoreManager/unsubscribe"
-status: "needs-translation"
----
-
----
-title: "CookieStoreManager: unsubscribe() method"
 short-title: unsubscribe()
 slug: Web/API/CookieStoreManager/unsubscribe
 page-type: web-api-instance-method
@@ -14,45 +8,45 @@ browser-compat: api.CookieStoreManager.unsubscribe
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}{{AvailableInWorkers("window_and_service")}}
 
-The **`unsubscribe()`** method of the {{domxref("CookieStoreManager")}} interface stops the {{domxref("ServiceWorkerRegistration")}} from receiving previously subscribed events.
+متد **`unsubscribe()`** از رابط {{domxref("CookieStoreManager")}}، ثبت‌نام {{domxref("ServiceWorkerRegistration")}} را از دریافت رویدادهای پیش‌تر مشترک‌شده متوقف می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 unsubscribe(subscriptions)
 ```
 
-### Parameters
+### پارامترها
 
 - `subscriptions`
-  - : An object list, each object containing:
+  - : یک لیست از اشیاء که هر کدام شامل موارد زیر است:
     - `name`
-      - : A string with the name of a cookie.
+      - : یک رشته شامل نام یک کوکی.
     - `url`
-      - : A string with the url of the scope used to subscribe to this cookie.
+      - : یک رشته شامل URL محدوده (scope) که برای اشتراک در این کوکی استفاده شده است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with {{jsxref("undefined")}} when the service worker has been unsubscribed.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} حل می‌شود زمانی که سرویس‌ورکر لغو اشتراک شده است.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the URL passed in `subscriptions` does not match the service worker registration's {{domxref("ServiceWorkerRegistration.scope","scope")}}.
+  - : اگر URL ارسال‌شده در `subscriptions` با {{domxref("ServiceWorkerRegistration.scope","scope")}} ثبت‌نام سرویس‌ورکر مطابقت نداشته باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this example, the {{domxref("ServiceWorkerRegistration")}} represented by `registration` is unsubscribing from change events on the cookie named `"cookie1"` with a scope of `"/path1"`.
+در این مثال، {{domxref("ServiceWorkerRegistration")}} که با `registration` نشان داده شده است، از تغییرات روی کوکی با نام `"cookie1"` و محدوده `"/path1"` لغو اشتراک می‌کند.
 
 ```js
 const subscriptions = [{ name: "cookie1", url: `/path1` }];
 await registration.cookies.unsubscribe(subscriptions);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
