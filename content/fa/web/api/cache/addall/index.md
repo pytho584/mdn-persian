@@ -1,7 +1,7 @@
 ---
 title: "Cache: addAll() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Cache/addAll"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,43 +14,38 @@ browser-compat: api.Cache.addAll
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`addAll()`** method of the {{domxref("Cache")}} interface takes an array of URLs, retrieves them, and adds the resulting response objects to the given cache. The request objects created during retrieval become keys to the stored response operations.
+متد **`addAll()`** در رابط {{domxref("Cache")}} یک آرایه از URL‌ها را دریافت می‌کند، آن‌ها را بازیابی می‌کند و اشیای پاسخ حاصل را به حافظه‌نهان (cache) داده شده اضافه می‌کند. اشیای درخواست ایجاد شده در طول بازیابی به عنوان کلیدهای عملیات پاسخ ذخیره شده عمل می‌کنند.
 
 > [!NOTE]
-> `addAll()` will overwrite any key/value pairs
-> previously stored in the cache that match the request, but will fail if a
-> resulting `put()` operation would overwrite a previous cache entry stored by the same `addAll()` method.
+> `addAll()` هر جفت کلید/مقداری را که قبلاً در حافظه‌نهان ذخیره شده و با درخواست مطابقت دارد، بازنویسی می‌کند، اما اگر یک عملیات `put()` حاصل بخواهد یک ورودی حافظه‌نهان قبلی که توسط همان متد `addAll()` ذخیره شده است را بازنویسی کند، شکست می‌خورد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 addAll(requests)
 ```
 
-### Parameters
+### پارامترها
 
 - `requests`
-  - : An array of requests for the resources you want to add to the cache. These can be {{domxref("Request")}} objects or URLs.
+  - : آرایه‌ای از درخواست‌ها برای منابعی که می‌خواهید به حافظه‌نهان اضافه کنید. این‌ها می‌توانند اشیای {{domxref("Request")}} یا URL باشند.
 
-    These requests are used as parameters to the {{domxref("Request.Request()", "Request()")}} constructor, so URLs follow the same rules as for that constructor. In particular, URLs may be relative to the base URL, which is the document's {{domxref("Node.baseURI", "baseURI")}} in a window context, or {{domxref("WorkerGlobalScope.location")}} in a worker context.
+    این درخواست‌ها به عنوان پارامترهای سازنده {{domxref("Request.Request()", "Request()")}} استفاده می‌شوند، بنابراین URL‌ها از همان قوانین آن سازنده پیروی می‌کنند. به طور خاص، URL‌ها ممکن است نسبت به URL پایه (base URL) نسبی باشند که در بافت پنجره (window) {{domxref("Node.baseURI", "baseURI")}} سند و در بافت کارگر (worker) {{domxref("WorkerGlobalScope.location")}} است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with `undefined`.
+یک {{jsxref("Promise")}} که با `undefined` حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : The URL scheme is not `http` or `https`.
+  - : طرح URL (scheme) `http` یا `https` نیست.
 
-    The Response status is not in the 200 range (i.e., not a successful response.) This occurs if the request does not return successfully, but also if the request is a _cross-origin no-cors_ request (in which case the reported status is always 0.)
+    وضعیت پاسخ در محدوده ۲۰۰ نیست (یعنی پاسخ موفقیت‌آمیز نیست). این اتفاق زمانی می‌افتد که درخواست با موفقیت بازگردانده نشود، همچنین اگر درخواست به صورت _cross-origin no-cors_ باشد (در این صورت وضعیت گزارش شده همیشه ۰ است).
 
-## Examples
+## مثال‌ها
 
-This code block waits for an {{domxref("InstallEvent")}} to fire, then runs
-{{domxref("ExtendableEvent.waitUntil","waitUntil()")}} to handle the install process for
-the app. This consists of calling {{domxref("CacheStorage.open")}} to create a new
-cache, then using `addAll()` to add a series of assets to it.
+این بلوک کد منتظر می‌ماند تا یک {{domxref("InstallEvent")} رخ دهد، سپس {{domxref("ExtendableEvent.waitUntil","waitUntil()")}} را برای مدیریت فرآیند نصب برنامه اجرا می‌کند. این شامل فراخوانی {{domxref("CacheStorage.open")}} برای ایجاد یک حافظه‌نهان جدید و سپس استفاده از `addAll()` برای افزودن مجموعه‌ای از دارایی‌ها به آن است.
 
 ```js
 this.addEventListener("install", (event) => {
@@ -75,15 +70,15 @@ this.addEventListener("install", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 - {{domxref("Cache")}}
