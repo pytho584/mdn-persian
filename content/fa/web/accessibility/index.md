@@ -1,7 +1,7 @@
 ---
 title: "Accessibility"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -11,72 +11,66 @@ page-type: landing-page
 sidebar: accessibilitysidebar
 ---
 
-**Accessibility** (often abbreviated to **A11y** — as in, "a", then 11 characters, and then "y") in web development means enabling as many people as possible to use websites, even when those people's abilities are limited in some way.
+**دسترسی‌پذیری** (اغلب به صورت **A11y** خلاصه می‌شود — به این معنی که "a" سپس ۱۱ حرف و سپس "y") در توسعه وب به معنای فراهم کردن امکان استفاده از وب‌سایت‌ها برای هرچه بیشتر افراد است، حتی زمانی که توانایی‌های آن افراد به نحوی محدود باشد.
 
-For many people, technology makes things easier. For people with disabilities, technology makes things possible. Accessibility means developing content to be as accessible as possible, no matter an individual's physical and cognitive abilities and how they access the web.
+برای بسیاری از مردم، فناوری کارها را آسان‌تر می‌کند. برای افراد دارای معلولیت، فناوری کارها را ممکن می‌سازد. دسترسی‌پذیری به معنای توسعه محتوایی است که تا حد امکان قابل دسترس باشد، صرف‌نظر از توانایی‌های فیزیکی و شناختی فرد و نحوه دسترسی او به وب.
 
-> **The Web is fundamentally designed to work for all people**, whatever their hardware, software, language, location, or ability.
-> When the Web meets this goal, it is accessible to people with a diverse range of hearing, movement, sight, and cognitive ability. \
+> **وب اساساً به گونه‌ای طراحی شده است که برای همه افراد کار کند**، صرف‌نظر از سخت‌افزار، نرم‌افزار، زبان، مکان یا توانایی آن‌ها.
+> وقتی وب به این هدف دست یابد، برای افرادی با طیف متنوعی از توانایی‌های شنوایی، حرکتی، بینایی و شناختی قابل دسترس خواهد بود. \
 > – ([W3C - Accessibility](https://www.w3.org/standards/webdesign/accessibility))
 
-## Beginner's tutorials
+## آموزش‌های مبتدیان
 
-Our learn web development [Accessibility module](/en-US/docs/Learn_web_development/Core/Accessibility) contains modern, up-to-date tutorials covering accessibility fundamentals.
+ماژول [دسترسی‌پذیری](/en-US/docs/Learn_web_development/Core/Accessibility) در آموزش توسعه وب ما شامل آموزش‌های مدرن و به‌روز در مورد اصول دسترسی‌پذیری است.
 
-- [What is accessibility?](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility)
-  - : This article starts off the module with a good look at what accessibility is — this includes what groups of people we need to consider and why, what tools different people use to interact with the web, and how we can make accessibility part of our web development workflow.
-- [Accessibility tooling and assistive technology](/en-US/docs/Learn_web_development/Core/Accessibility/Tooling)
-  - : Next we turn our attention to accessibility tooling, providing information on the kinds of tools you can use to help solve accessibility issues, and the assistive technologies used by people with disabilities as they browse the web. You'll be using these tools throughout subsequent articles.
-- [HTML: A good basis for accessibility](/en-US/docs/Learn_web_development/Core/Accessibility/HTML)
-  - : A great deal of web content can be made accessible just by making sure the correct HTML elements are always used for the correct purpose. This article looks in detail at how HTML can be used to ensure maximum accessibility.
-- [CSS and JavaScript accessibility best practices](/en-US/docs/Learn_web_development/Core/Accessibility/CSS_and_JavaScript)
-  - : CSS and JavaScript, when used properly, also have the potential to allow for accessible web experiences, but if misused they can significantly harm accessibility. This article outlines some CSS and JavaScript best practices that should be considered to ensure that even complex content is as accessible as possible.
-- [WAI-ARIA basics](/en-US/docs/Learn_web_development/Core/Accessibility/WAI-ARIA_basics)
-  - : Following on from the previous article, sometimes making complex UI controls that involve unsemantic HTML and dynamic JavaScript-updated content can be difficult. WAI-ARIA is a technology that can help with such problems by adding in further semantics that browsers and assistive technologies can recognize and use to let users know what is going on. Here we'll show how to use it at a basic level to improve accessibility.
-- [Accessible multimedia](/en-US/docs/Learn_web_development/Core/Accessibility/Multimedia)
-  - : Another category of content that can create accessibility problems is multimedia — video, audio, and image content need to be given proper textual alternatives, so they can be understood by assistive technologies and their users. This article shows how.
-- [Mobile accessibility](/en-US/docs/Learn_web_development/Core/Accessibility/Mobile)
-  - : With web access on mobile devices being so popular, and popular platforms such as iOS and Android having fully-fledged accessibility tools, it is important to consider the accessibility of your web content on these platforms. This article looks at mobile-specific accessibility considerations.
+- [دسترسی‌پذیری چیست؟](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility)
+  - : این مقاله ماژول را با نگاهی خوب به اینکه دسترسی‌پذیری چیست آغاز می‌کند — این شامل این موارد است: چه گروه‌هایی از افراد را باید در نظر بگیریم و چرا، چه ابزارهایی افراد مختلف برای تعامل با وب استفاده می‌کنند، و چگونه می‌توانیم دسترسی‌پذیری را بخشی از فرآیند توسعه وب خود کنیم.
+- [ابزارهای دسترسی‌پذیری و فناوری کمکی](/en-US/docs/Learn_web_development/Core/Accessibility/Tooling)
+  - : سپس توجه خود را به ابزارهای دسترسی‌پذیری معطوف می‌کنیم و اطلاعاتی در مورد انواع ابزارهایی که می‌توانید برای حل مشکلات دسترسی‌پذیری استفاده کنید و فناوری‌های کمکی که افراد دارای معلولیت هنگام مرور وب استفاده می‌کنند، ارائه می‌دهیم. شما از این ابزارها در مقالات بعدی استفاده خواهید کرد.
+- [HTML: پایه‌ای خوب برای دسترسی‌پذیری](/en-US/docs/Learn_web_development/Core/Accessibility/HTML)
+  - : مقدار زیادی از محتوای وب فقط با اطمینان از اینکه همیشه از عناصر HTML صحیح برای هدف صحیح استفاده می‌شود، می‌تواند قابل دسترس شود. این مقاله به طور مفصل به چگونگی استفاده از HTML برای تضمین حداکثر دسترسی‌پذیری می‌پردازد.
+- [بهترین شیوه‌های دسترسی‌پذیری CSS و JavaScript](/en-US/docs/Learn_web_development/Core/Accessibility/CSS_and_JavaScript)
+  - : CSS و JavaScript، در صورت استفاده صحیح، پتانسیل ایجاد تجارب وب قابل دسترس را دارند، اما اگر به اشتباه استفاده شوند، می‌توانند به طور قابل توجهی به دسترسی‌پذیری آسیب بزنند. این مقاله برخی از بهترین شیوه‌های CSS و JavaScript را که باید برای اطمینان از اینکه حتی محتوای پیچیده تا حد امکان قابل دسترس است، در نظر گرفته شوند، شرح می‌دهد.
+- [مبانی WAI-ARIA](/en-US/docs/Learn_web_development/Core/Accessibility/WAI-ARIA_basics)
+  - : در ادامه مقاله قبلی، گاهی اوقات ساخت کنتر‌ل‌های پیچیده UI که شامل HTML غیرمعنایی و محتوای به‌روزرسانی شده با JavaScript پویا هستند، می‌تواند دشوار باشد. WAI-ARIA فناوری است که می‌تواند با افزودن معنایی بیشتر که مرورگرها و فناوری‌های کمکی می‌توانند تشخیص دهند و برای اطلاع کاربران از آنچه در حال رخ دادن است استفاده کنند، به چنین مشکلاتی کمک کند. در اینجا نشان می‌دهیم که چگونه از آن در سطح پایه برای بهبود دسترسی‌پذیری استفاده کنیم.
+- [چندرسانه‌ای قابل دسترس](/en-US/docs/Learn_web_development/Core/Accessibility/Multimedia)
+  - : دسته دیگری از محتوا که می‌تواند مشکلات دسترسی‌پذیری ایجاد کند، چندرسانه‌ای است — محتوای ویدئویی، صوتی و تصویری باید جایگزین‌های متنی مناسبی داشته باشند تا توسط فناوری‌های کمکی و کاربران آن‌ها قابل درک باشند. این مقاله نحوه انجام این کار را نشان می‌دهد.
+- [دسترسی‌پذیری موبایل](/en-US/docs/Learn_web_development/Core/Accessibility/Mobile)
+  - : با توجه به محبوبیت دسترسی به وب در دستگاه‌های موبایل و وجود ابزارهای دسترسی‌پذیری کامل در پلتفرم‌های محبوبی مانند iOS و Android، مهم است که دسترسی‌پذیری محتوای وب خود را در این پلتفرم‌ها در نظر بگیرید. این مقاله به ملاحظات دسترسی‌پذیری خاص موبایل می‌پردازد.
 
-## Accessibility guides
+## راهنماهای دسترسی‌پذیری
 
-The [Accessibility guides](/en-US/docs/Web/Accessibility/Guides) cover authoring principles, WCAG compliance, accessible widgets and navigation, mobile accessibility, and other key topics that will help you understand why accessibility is crucial for the web and how to improve it in your projects.
+راهنماهای [دسترسی‌پذیری](/en-US/docs/Web/Accessibility/Guides) اصول تألیف، انطباق با WCAG، ویجت‌ها و ناوبری قابل دسترس، دسترسی‌پذیری موبایل و سایر موضوعات کلیدی را پوشش می‌دهند که به شما کمک می‌کنند درک کنید چرا دسترسی‌پذیری برای وب حیاتی است و چگونه آن را در پروژه‌های خود بهبود بخشید.
 
-- [Accessibility information for web authors](/en-US/docs/Web/Accessibility/Guides/Information_for_Web_authors)
-  - : This document lists guidelines and regulations, how-to's, and tools for checking and repairing accessibility problems with websites.
-- [Personalization to help browse safely](/en-US/docs/Web/Accessibility/Guides/Browsing_safely)
-  - : This article discusses making web content accessible for those with vestibular disorders, and those who support them, by taking advantage of personalization and accessibility settings built into the operating systems.
-- [Accessible web applications and widgets](/en-US/docs/Web/Accessibility/Guides/Accessible_web_applications_and_widgets)
-  - : Most JavaScript libraries offer a library of client-side widgets that mimic the behavior of familiar desktop interfaces.
-    While this results in a widget that looks like its desktop counterpart, there usually isn't enough semantic information in the markup to be usable by an assistive technology.
-    This document describes techniques to improve accessibility of such widgets.
-- [Keyboard-navigable JavaScript widgets](/en-US/docs/Web/Accessibility/Guides/Keyboard-navigable_JavaScript_widgets)
-  - : Until now, web developers who wanted to make their styled `<div>` and `<span>` based widgets accessible have lacked proper techniques.
-    **Keyboard accessibility** is part of the minimum accessibility requirements, which a developer should be aware of.
-    This document describes techniques to make JavaScript widgets accessible with the keyboard.
-- [Mobile accessibility checklist](/en-US/docs/Web/Accessibility/Guides/Mobile_accessibility_checklist)
-  - : This document provides a concise checklist of accessibility requirements for mobile app developers.
-- [Understanding the Web Content Accessibility Guidelines (WCAG)](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG)
-  - : A set of articles that provide quick explanations to help you understand the steps that need to be taken to conform to the recommendations outlined in the Web Content Accessibility Guidelines (WCAG).
-- [Cognitive accessibility](/en-US/docs/Web/Accessibility/Guides/Cognitive_accessibility)
-  - : Cognitive accessibility covers accessibility considerations for people with cognition and learning disabilities.
-    This document introduces cognitive accessibility and improving accessibility of the web for people with cognitive and learning differences.
-- [Accessibility and spatial patterns](/en-US/docs/Web/Accessibility/Guides/Accessibility_and_Spatial_Patterns)
-  - : This document describes visual patterns that can induce physical symptoms in people who have photosensitive epilepsy, vestibular disorders, or other perceptual issues.
-- [Web Accessibility: Understanding Colors and Luminance](/en-US/docs/Web/Accessibility/Guides/Colors_and_Luminance)
-  - : While understanding color, luminance, and saturation is important for design and readability for all sighted users, they are essential for those with reduced vision and color-deficient vision and those with specific neurological, cognitive, and other impairments.
-- [Web accessibility for seizures and physical reactions](/en-US/docs/Web/Accessibility/Guides/Seizure_disorders)
-  - : Some types of visual web content can induce seizures in people with certain brain disorders.
-    This article helps you understand the types of content that can be problematic and find tools and strategies to help you avoid them.
+- [اطلاعات دسترسی‌پذیری برای نویسندگان وب](/en-US/docs/Web/Accessibility/Guides/Information_for_Web_authors)
+  - : این سند دستورالعمل‌ها و مقررات، راهنماها و ابزارهای بررسی و رفع مشکلات دسترسی‌پذیری وب‌سایت‌ها را فهرست می‌کند.
+- [شخصی‌سازی برای کمک به مرور ایمن](/en-US/docs/Web/Accessibility/Guides/Browsing_safely)
+  - : این مقاله در مورد قابل دسترس کردن محتوای وب برای افراد مبتلا به اختلالات دهلیزی و کسانی که از آن‌ها حمایت می‌کنند، با بهره‌گیری از تنظیمات شخصی‌سازی و دسترسی‌پذیری تعبیه شده در سیستم‌عامل‌ها بحث می‌کند.
+- [برنامه‌ها و ویجت‌های وب قابل دسترس](/en-US/docs/Web/Accessibility/Guides/Accessible_web_applications_and_widgets)
+  - : اکثر کتابخانه‌های JavaScript مجموعه‌ای از ویجت‌های سمت کلاینت ارائه می‌دهند که رفتار رابط‌های دسکتاپ آشنا را تقلید می‌کنند. اگرچه این منجر به ویجتی می‌شود که شبیه همتای دسکتاپ خود به نظر می‌رسد، معمولاً اطلاعات معنایی کافی در نشانه‌گذاری وجود ندارد که توسط فناوری کمکی قابل استفاده باشد. این سند تکنیک‌هایی برای بهبود دسترسی‌پذیری چنین ویجت‌هایی را شرح می‌دهد.
+- [ویجت‌های JavaScript قابل پیمایش با صفحه کلید](/en-US/docs/Web/Accessibility/Guides/Keyboard-navigable_JavaScript_widgets)
+  - : تا به حال، توسعه‌دهندگان وب که می‌خواستند ویجت‌های مبتنی بر `<div>` و `<span>` سبک‌دهی شده خود را قابل دسترس کنند، از تکنیک‌های مناسب بی‌بهره بودند. **دسترسی‌پذیری صفحه کلید** بخشی از حداقل الزامات دسترسی‌پذیری است که یک توسعه‌دهنده باید از آن آگاه باشد. این سند تکنیک‌هایی برای قابل دسترس کردن ویجت‌های JavaScript با صفحه کلید را شرح می‌دهد.
+- [چک‌لیست دسترسی‌پذیری موبایل](/en-US/docs/Web/Accessibility/Guides/Mobile_accessibility_checklist)
+  - : این سند یک چک‌لیست مختصر از الزامات دسترسی‌پذیری برای توسعه‌دهندگان برنامه‌های موبایل ارائه می‌دهد.
+- [درک دستورالعمل‌های دسترسی‌پذیری محتوای وب (WCAG)](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG)
+  - : مجموعه‌ای از مقالات که توضیحات سریعی ارائه می‌دهند تا به شما کمک کنند مراحلی را که برای انطباق با توصیه‌های ذکر شده در دستورالعمل‌های دسترسی‌پذیری محتوای وب (WCAG) باید انجام شود، درک کنید.
+- [دسترسی‌پذیری شناختی](/en-US/docs/Web/Accessibility/Guides/Cognitive_accessibility)
+  - : دسترسی‌پذیری شناختی ملاحظات دسترسی‌پذیری برای افراد دارای ناتوانی‌های شناختی و یادگیری را پوشش می‌دهد. این سند دسترسی‌پذیری شناختی و بهبود دسترسی‌پذیری وب برای افراد با تفاوت‌های شناختی و یادگیری را معرفی می‌کند.
+- [دسترسی‌پذیری و الگوهای فضایی](/en-US/docs/Web/Accessibility/Guides/Accessibility_and_Spatial_Patterns)
+  - : این سند الگوهای بصری را توصیف می‌کند که می‌توانند در افراد مبتلا به صرع حساس به نور، اختلالات دهلیزی یا سایر مشکلات ادراکی، علائم فیزیکی ایجاد کنند.
+- [دسترسی‌پذیری وب: درک رنگ‌ها و روشنایی](/en-US/docs/Web/Accessibility/Guides/Colors_and_Luminance)
+  - : در حالی که درک رنگ، روشنایی و اشباع برای طراحی و خوانایی برای همه کاربران بینا مهم است، برای افراد با بینایی کاهش یافته و کمبود رنگ و همچنین افراد با اختلالات عصبی، شناختی و سایر اختلالات خاص ضروری است.
+- [دسترسی‌پذیری وب برای تشنج و واکنش‌های فیزیکی](/en-US/docs/Web/Accessibility/Guides/Seizure_disorders)
+  - : برخی از انواع محتوای بصری وب می‌توانند در افراد مبتلا به برخی اختلالات مغزی تشنج ایجاد کنند. این مقاله به شما کمک می‌کند انواع محتوای مشکل‌زا را درک کنید و ابزارها و استراتژی‌هایی برای اجتناب از آن‌ها بیابید.
 - [ARIA](/en-US/docs/Web/Accessibility/ARIA)
-  - : This is a collection of articles to learn how to use Accessible Rich Internet Applications (ARIA) to make your HTML documents more accessible.
+  - : این مجموعه‌ای از مقالات برای یادگیری نحوه استفاده از برنامه‌های غنی اینترنتی قابل دسترس (ARIA) برای قابل دسترس‌تر کردن اسناد HTML شما است.
 
-## References
+## منابع
 
-- [ARIA reference](/en-US/docs/Web/Accessibility/ARIA/Reference)
-  - : Reference documentation for Accessible Rich Internet Applications (ARIA) attributes and roles.
+- [مرجع ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference)
+  - : مستندات مرجع برای ویژگی‌ها و نقش‌های برنامه‌های غنی اینترنتی قابل دسترس (ARIA).
 
-## See also
+## همچنین ببینید
 
-- [Developer guides](/en-US/docs/MDN/Guides)
-- [WAI Interest Group](https://www.w3.org/WAI/about/groups/waiig/)
+- [راهنماهای توسعه‌دهندگان](/en-US/docs/MDN/Guides)
+- [گروه علاقه‌مندان WAI](https://www.w3.org/WAI/about/groups/waiig/)
