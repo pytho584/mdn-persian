@@ -1,11 +1,7 @@
 ---
 title: "AudioNode: numberOfInputs property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/numberOfInputs"
-status: "needs-translation"
----
-
----
-title: "AudioNode: numberOfInputs property"
+translated_by: "n8n + AI"
 short-title: numberOfInputs
 slug: Web/API/AudioNode/numberOfInputs
 page-type: web-api-instance-property
@@ -14,16 +10,13 @@ browser-compat: api.AudioNode.numberOfInputs
 
 {{APIRef("Web Audio API")}}
 
-The `numberOfInputs` property of
-the {{domxref("AudioNode")}} interface returns the number of inputs feeding the
-node. Source nodes are defined as nodes having a `numberOfInputs`
-property with a value of 0.
+ویژگی `numberOfInputs` از رابط {{domxref("AudioNode")}} تعداد ورودی‌هایی که به گره تغذیه می‌شوند را برمی‌گرداند. گره‌های منبع به عنوان گره‌هایی تعریف می‌شوند که ویژگی `numberOfInputs` آن‌ها مقدار 0 دارد.
 
-## Value
+## مقدار
 
-An integer ≥ 0.
+یک عدد صحیح ≥ 0.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new AudioContext();
@@ -38,14 +31,14 @@ console.log(gainNode.numberOfInputs); // 1
 console.log(audioCtx.destination.numberOfInputs); // 1
 ```
 
-## Specifications
+## مشخصات فنی
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
