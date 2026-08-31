@@ -1,7 +1,7 @@
 ---
 title: "BarcodeDetector: getSupportedFormats() static method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BarcodeDetector/getSupportedFormats_static"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,45 +16,44 @@ browser-compat: api.BarcodeDetector.getSupportedFormats_static
 
 {{securecontext_header}}{{APIRef("Barcode Detector API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`getSupportedFormats()`** static method
-of the {{domxref("BarcodeDetector")}} interface returns a {{jsxref('Promise')}} which
-fulfills with an {{jsxref('Array')}} of supported barcode format types.
+**`getSupportedFormats()`** 静态方法
+属于 {{domxref("BarcodeDetector")}} 接口，返回一个 {{jsxref('Promise')}}，
+该 Promise 兑现为一个包含受支持的条码格式类型的 {{jsxref('Array')}}。
 
-## Syntax
+## 语法
 
 ```js-nolint
 BarcodeDetector.getSupportedFormats()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A {{jsxref('Promise')}} which fulfills with an {{jsxref('Array')}} of
-[supported barcode format types](/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats).
+一个 {{jsxref('Promise')}}，兑现为一个包含
+[受支持的条码格式类型](/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats) 的 {{jsxref('Array')}}。
 
-### Exceptions
+### 异常
 
-No exceptions are thrown.
+不会抛出异常。
 
-## Examples
+## 示例
 
-The following example calls the `getSupportedFormats()` static method and logs
-the results to the console.
+以下示例调用了 `getSupportedFormats()` 静态方法，并将结果记录到控制台。
 
 ```js
-// check supported types
+// 检查受支持的类型
 BarcodeDetector.getSupportedFormats().then((supportedFormats) => {
   supportedFormats.forEach((format) => console.log(format));
 });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
