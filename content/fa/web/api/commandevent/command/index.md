@@ -1,7 +1,5 @@
 ---
 title: "CommandEvent: command property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CommandEvent/command"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.CommandEvent.command
 
 {{APIRef("Invoker Commands API")}}
 
-The **`command`** read-only property of the {{domxref("CommandEvent")}} interface returns a string containing the value of the {{domxref("HTMLButtonElement.command", "command")}} property at the time the event was dispatched.
+خاصیت فقط خواندنی **`command`** از رابط {{domxref("CommandEvent")}} یک رشته حاوی مقدار خاصیت {{domxref("HTMLButtonElement.command", "command")}} در زمان ارسال رویداد را برمی‌گرداند.
 
 ## Value
 
-A string.
+یک رشته.
 
 ## Examples
 
-In the following simple example we've set up an event listener to listen for the "show-modal" command:
+در مثال ساده زیر، یک شنونده رویداد برای گوش دادن به دستور "show-modal" تنظیم کرده‌ایم:
 
 ```js
 document.body.addEventListener(
