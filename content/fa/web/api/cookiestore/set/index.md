@@ -1,11 +1,5 @@
 ---
 title: "CookieStore: set() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/set"
-status: "needs-translation"
----
-
----
-title: "CookieStore: set() method"
 short-title: set()
 slug: Web/API/CookieStore/set
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.CookieStore.set
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}{{AvailableInWorkers("window_and_service")}}
 
-The **`set()`** method of the {{domxref("CookieStore")}} interface sets a cookie with the given `name` and `value` or `options` object.
+متد **`set()`** از رابط {{domxref("CookieStore")}} یک کوکی را با `name` و `value` یا شیء `options` داده شده تنظیم می‌کند.
 
 ## Syntax
 
@@ -23,63 +17,62 @@ set(name, value)
 set(options)
 ```
 
-### Parameters
+### پارامترها
 
-This method requires one of the following:
+این متد به یکی از موارد زیر نیاز دارد:
 
 - `name` {{optional_inline}}
-  - : A string with the name of the cookie.
+  - : یک رشته که نام کوکی است.
 - `value` {{optional_inline}}
-  - : A string with the value of the cookie.
+  - : یک رشته که مقدار کوکی است.
 
-Or
+یا
 
 - `options` {{optional_inline}}
-  - : An object containing:
+  - : یک شیء شامل:
     - `domain` {{Optional_Inline}}
-      - : A string containing the domain of the cookie. Defaults to `null`.
+      - : یک رشته شامل دامنه کوکی. پیش‌فرض `null` است.
     - `expires` {{Optional_Inline}}
-      - : A timestamp, given as {{glossary("Unix time")}} in milliseconds, containing the expiration date of the cookie. Defaults to `null`.
+      - : یک برچسب زمانی بر حسب {{glossary("Unix time")}} (زمان یونیکس) به میلی‌ثانیه که تاریخ انقضای کوکی را مشخص می‌کند. پیش‌فرض `null` است.
     - `maxAge` {{Optional_Inline}}
-      - : A number representing the number of seconds until the cookie expires. A zero or negative number will expire the cookie immediately. If both `expires` and `maxAge` are set, the `set()` call fails with a `TypeError`. Defaults to `null`.
+      - : یک عدد که تعداد ثانیه‌های باقی‌مانده تا انقضای کوکی را نشان می‌دهد. عدد صفر یا منفی بلافاصله کوکی را منقضی می‌کند. اگر هر دو `expires` و `maxAge` تنظیم شده باشند، فراخوانی `set()` با یک `TypeError` شکست می‌خورد. پیش‌فرض `null` است.
     - `name`
-      - : A string with the name of a cookie.
+      - : یک رشته با نام یک کوکی.
     - `partitioned` {{Optional_Inline}}
-      - : A boolean value that defaults to `false`. If set to `true`, the set cookie will be a partitioned cookie. See [Cookies Having Independent Partitioned State (CHIPS)](/en-US/docs/Web/Privacy/Guides/Third-party_cookies/Partitioned_cookies) for more information.
+      - : یک مقدار بولین که پیش‌فرض `false` است. اگر `true` تنظیم شود، کوکی تنظیم‌شده یک کوکی پارتیشن‌بندی‌شده خواهد بود. برای اطلاعات بیشتر به [کوکی‌های دارای حالت مستقل پارتیشن‌بندی‌شده (CHIPS)](/en-US/docs/Web/Privacy/Guides/Third-party_cookies/Partitioned_cookies) مراجعه کنید.
     - `path` {{Optional_Inline}}
-      - : A string containing the path of the cookie. Defaults to `/`.
+      - : یک رشته شامل مسیر کوکی. پیش‌فرض `/` است.
     - `sameSite` {{Optional_Inline}}
-      - : One of the following [`SameSite`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#samesitesamesite-value) values: [`"strict"`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#strict), [`"lax"`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#lax), or [`"none"`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#none).
+      - : یکی از مقادیر [`SameSite`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#samesitesamesite-value) زیر: [`"strict"`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#strict)، [`"lax"`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#lax)، یا [`"none"`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#none).
     - `value`
-      - : A string with the value of the cookie.
+      - : یک رشته با مقدار کوکی.
 
 > [!NOTE]
-> While the values can be set here and will be used internally, some browsers will only return `name` and `value` options from {{domxref("CookieStore.get()")}} and {{domxref("CookieStore.getAll()")}}.
+> اگرچه مقادیر را می‌توان در اینجا تنظیم کرد و داخلیاً استفاده خواهد شد، برخی مرورگرها فقط گزینه‌های `name` و `value` را از {{domxref("CookieStore.get()")}} و {{domxref("CookieStore.getAll()")}} بازمی‌گردانند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with {{jsxref("undefined")}} when setting the cookie completes.
+یک {{jsxref("Promise")}} که پس از تکمیل تنظیم کوکی با {{jsxref("undefined")}} حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the origin can not be {{glossary("Serialization", "serialized")}} to a URL.
+  - : اگر مبدأ (origin) قابل {{glossary("Serialization", "سریال‌سازی")}} به یک URL نباشد، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if:
-    - Both the `expires` and `maxAge` properties are set.
-    - Setting the cookie with the given `name` and `value` or `options` fails in any other way.
+  - : در موارد زیر پرتاب می‌شود:
+    - هر دو ویژگی `expires` و `maxAge` تنظیم شده باشند.
+    - تنظیم کوکی با `name` و `value` یا `options` داده شده به هر شکل دیگری شکست بخورد.
 
-## Examples
+## مثال‌ها
 
-<!-- The examples don't work as live examples in MDN environment (due to unknown errors) -->
+<!-- مثال‌ها در محیط MDN به دلیل خطاهای ناشناخته به صورت زنده کار نمی‌کنند -->
 
-### Setting a cookie with name and value
+### تنظیم کوکی با نام و مقدار
 
-This example sets a cookie by passing a `name` and `value` of "cookie1" and "cookie1-value", respectively.
-The other properties of the cookie are set with default values, as defined in the [`options`](#options) parameter.
+این مثال یک کوکی را با ارسال `name` و `value` به ترتیب "cookie1" و "cookie1-value" تنظیم می‌کند.
+سایر ویژگی‌های کوکی با مقادیر پیش‌فرض، همان‌طور که در پارامتر [`options`](#options) تعریف شده است، تنظیم می‌شوند.
 
-The code first waits for the cookie to be set: as this operation can fail, the operation is performed in a `try...catch` block and any errors are logged to the console.
-It then gets and logs the cookie that was just set.
+کد ابتدا منتظر می‌ماند تا کوکی تنظیم شود: از آنجا که این عملیات ممکن است با شکست مواجه شود، عملیات در یک بلوک `try...catch` انجام می‌شود و هر خطایی در کنسول ثبت می‌شود. سپس کوکی را که به تازگی تنظیم شده است دریافت و ثبت می‌کند.
 
 ```js
 async function cookieTest() {
@@ -96,12 +89,11 @@ async function cookieTest() {
 }
 ```
 
-### Setting a cookie with options
+### تنظیم کوکی با گزینه‌ها
 
-This example sets a cookie by passing an `options` object with `name`, `value`, `expires`, and `partitioned`.
+این مثال یک کوکی را با ارسال یک شیء `options` شامل `name`، `value`، `expires` و `partitioned` تنظیم می‌کند.
 
-The code first waits for the cookie to be set: as this operation can fail, the operation is performed in a `try...catch` block and any errors are logged to the console.
-It then gets and logs the cookie that was just set.
+کد ابتدا منتظر می‌ماند تا کوکی تنظیم شود: از آنجا که این عملیات ممکن است با شکست مواجه شود، عملیات در یک بلوک `try...catch` انجام می‌شود و هر خطایی در کنسول ثبت می‌شود. سپس کوکی را که به تازگی تنظیم شده است دریافت و ثبت می‌کند.
 
 ```js
 async function cookieTest() {
