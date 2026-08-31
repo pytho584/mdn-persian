@@ -1,7 +1,7 @@
 ---
 title: "AudioData: allocationSize() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioData/allocationSize"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,41 +14,41 @@ browser-compat: api.AudioData.allocationSize
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`allocationSize()`** method of the {{domxref("AudioData")}} interface returns the size in bytes required to hold the current sample as filtered by options passed into the method.
+متد **`allocationSize()`** از رابط {{domxref("AudioData")}} اندازه بر حسب بایت مورد نیاز برای نگه‌داری نمونه فعلی را بر اساس گزینه‌های ارسال‌شده به متد برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 allocationSize(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options`
-  - : An object containing the following:
+  - : یک شیء شامل موارد زیر:
     - `planeIndex`
-      - : The index of the plane to return the size of.
+      - : شاخص صفحه‌ای که اندازه آن را می‌خواهید برگردانید.
     - `frameOffset` {{optional_inline}}
-      - : An integer giving an offset into the plane data indicating which plane to begin from. Defaults to `0`.
+      - : یک عدد صحیح که یک افست در داده‌های صفحه را مشخص می‌کند و نشان می‌دهد از کدام صفحه شروع شود. پیش‌فرض `0` است.
     - `frameCount` {{optional_inline}}
-      - : An integer giving the number of frames to return the size of. If omitted then all frames in the plane will be used, beginning with the frame specified in `frameOffset`.
+      - : یک عدد صحیح که تعداد فریم‌هایی را که اندازه آن‌ها را می‌خواهید برگردانید مشخص می‌کند. اگر حذف شود، تمام فریم‌های صفحه استفاده می‌شوند، از فریم مشخص‌شده در `frameOffset` شروع می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-An integer containing the number of bytes needed to hold the samples described by `options`.
+یک عدد صحیح شامل تعداد بایت‌های مورد نیاز برای نگه‌داری نمونه‌های توصیف‌شده توسط `options`.
 
-## Examples
+## مثال‌ها
 
-The following example gets the size of the plane at index `1`.
+مثال زیر اندازه صفحه در شاخص `1` را دریافت می‌کند.
 
 ```js
 let size = AudioData.allocationSize({ planeIndex: 1 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
