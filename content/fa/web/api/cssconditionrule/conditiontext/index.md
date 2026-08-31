@@ -1,11 +1,5 @@
 ---
 title: "CSSConditionRule: conditionText property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSConditionRule/conditionText"
-status: "needs-translation"
----
-
----
-title: "CSSConditionRule: conditionText property"
 short-title: conditionText
 slug: Web/API/CSSConditionRule/conditionText
 page-type: web-api-instance-property
@@ -14,19 +8,15 @@ browser-compat: api.CSSConditionRule.conditionText
 
 {{ APIRef("CSSOM") }}
 
-The read-only **`conditionText`** property of
-the {{domxref("CSSConditionRule")}} interface returns or sets the text of the CSS
-rule.
+ویژگی فقط‌خواندنی **`conditionText`** در رابط {{domxref("CSSConditionRule")}}، متن قانون CSS را برمی‌گرداند یا تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates reading the value of
-`conditionText` on a {{domxref("CSSMediaRule")}} which implements the
-{{domxref("CSSConditionRule")}} interface.
+مثال زیر نحوه خواندن مقدار `conditionText` را روی یک {{domxref("CSSMediaRule")}} که رابط {{domxref("CSSConditionRule")}} را پیاده‌سازی می‌کند، نشان می‌دهد.
 
 ```css
 @media (width >= 500px) {
@@ -41,14 +31,14 @@ const targetRule = document.styleSheets[0].cssRules[0];
 console.log(targetRule.conditionText); // "(width >= 500px)"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
+- [استفاده از اطلاعات استایل‌دهی پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
