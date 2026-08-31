@@ -1,7 +1,7 @@
 ---
 title: "Animation: persist() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/persist"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,33 +14,32 @@ browser-compat: api.Animation.persist
 
 {{APIRef("Web Animations")}}
 
-The `persist()` method of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)'s {{domxref("Animation")}} interface explicitly persists an animation, preventing it from being [automatically removed](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#automatically_removing_filling_animations) when it is replaced by another animation.
+متد `persist()` از رابط {{domxref("Animation")}} در [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) به‌طور صریح یک انیمیشن را ماندگار می‌کند و از [حذف خودکار](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#automatically_removing_filling_animations) آن هنگام جایگزینی با انیمیشن دیگر جلوگیری می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 persist()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Using `persist()`
+### استفاده از `persist()`
 
-In this example, we have three buttons:
+در این مثال، سه دکمه داریم:
 
-- "Add persistent animation" and "Add transient animation" each add a new transform animation to the red square. The animations alternate direction: so the first is left to right, the second is right to left, and so on. "Add persistent animation" calls `persist()` on the animation it creates.
+- دکمه «افزودن انیمیشن ماندگار» و «افزودن انیمیشن گذرا» هر کدام یک انیمیشن تبدیل جدید به مربع قرمز اضافه می‌کنند. انیمیشن‌ها جهت متناوب دارند: به طوری که اولی از چپ به راست، دومی از راست به چپ و به همین ترتیب است. «افزودن انیمیشن ماندگار» روی انیمیشنی که می‌سازد، `persist()` را فراخوانی می‌کند.
+- دکمه سوم، «لغو یک انیمیشن»، آخرین انیمیشن اضافه‌شده را لغو می‌کند.
 
-- The third button, "Cancel an animation", cancels the most recently added animation.
-
-The example displays a list of all animations that have not been canceled, in the order they were added, along with each animation's `replaceState`.
+این مثال فهرستی از همه انیمیشن‌هایی که لغو نشده‌اند را به ترتیب اضافه‌شدن، همراه با `replaceState` هر انیمیشن نمایش می‌دهد.
 
 #### HTML
 
@@ -130,25 +129,25 @@ function show(animation, offset) {
 }
 ```
 
-#### Result
+#### نتیجه
 
-Note that adding a new transient animation will replace any previously added transient animation. Those animations will be automatically removed, and their `replaceState` will be `"removed"`. However, persistent animations will not be removed.
+توجه داشته باشید که افزودن یک انیمیشن گذرا جدید، هر انیمیشن گذرای قبلی را جایگزین می‌کند. آن انیمیشن‌ها به‌طور خودکار حذف می‌شوند و `replaceState` آن‌ها `"removed"` خواهد بود. با این حال، انیمیشن‌های ماندگار حذف نخواهند شد.
 
-Also note that removed animations don't affect the display; the position of the {{htmlelement("div")}} is determined by the most recent active or persisted animation.
+همچنین توجه کنید که انیمیشن‌های حذف‌شده روی نمایش تأثیری ندارند؛ موقعیت {{htmlelement("div")}} توسط آخرین انیمیشن فعال یا ماندگار تعیین می‌شود.
 
 {{EmbedLiveSample("using_persist","",300)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
-- {{domxref("Animation")}} for other methods and properties you can use to control web page animation.
+- {{domxref("Animation")}} برای سایر متدها و ویژگی‌هایی که می‌توانید برای کنترل انیمیشن صفحه وب استفاده کنید.
 - {{domxref("Animation.replaceState")}}
-- {{domxref("Animation.remove_event","remove")}} event
+- رویداد {{domxref("Animation.remove_event","remove")}}
