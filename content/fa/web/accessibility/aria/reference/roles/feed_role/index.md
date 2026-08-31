@@ -1,11 +1,7 @@
 ---
 title: "ARIA: feed role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/feed_role"
-status: "needs-translation"
----
-
----
-title: "ARIA: feed role"
+translated_by: "n8n + AI"
 short-title: feed
 slug: Web/Accessibility/ARIA/Reference/Roles/feed_role
 page-type: aria-role
@@ -13,7 +9,7 @@ spec-urls: https://w3c.github.io/aria/#feed
 sidebar: accessibilitysidebar
 ---
 
-A `feed` is a dynamic scrollable `list` of `articles` in which articles are added to or removed from either end of the list as the user scrolls. A `feed` enables screen readers to use the browse mode reading cursor to both read and scroll through a stream of rich content that may continue scrolling infinitely by loading more content as the user reads.
+یک `feed` (خوراک) یک `list` (فهرست) پویا و قابل پیمایش از `article` (مقاله)‌ها است که در آن مقالات هنگام پیمایش کاربر به انتهای یا ابتدای فهرست اضافه یا حذف می‌شوند. یک `feed` به صفحه‌خوان‌ها امکان می‌دهد تا با استفاده از مکان‌نمای خواندن در حالت مرور (browse mode)، جریانی از محتوای غنی را که ممکن است با بارگذاری محتوای بیشتر در حین خواندن کاربر، به‌طور نامحدود ادامه یابد، هم بخوانند و هم پیمایش کنند.
 
 ```html
 <section role="feed" aria-busy="false">
@@ -25,69 +21,69 @@ A `feed` is a dynamic scrollable `list` of `articles` in which articles are adde
 </section>
 ```
 
-## Description
+## توضیحات
 
-A `feed` is a type of [`list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role), the containing role for scrollable [`articles`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role) where scrolling may cause articles to be added to the top or end of the list. The role enables assistive technology to use the browse mode reading cursor to both read and scroll through a stream of rich content that may continue scrolling infinitely by loading more content as the user reads. Examples include an RSS feed, news feeds, social media feeds like Facebook, Instagram or Mastodon, or even a list of related products on an e-commerce page. These streams can be limited or infinite, loading more content as the user scrolls. Implementing the `feed` pattern allows a screen reader to reliably read and trigger the loading of feed content while in reading mode.
+یک `feed` نوعی از [`list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role) است، نقش حاوی برای [`article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role)‌های قابل پیمایش که در آن پیمایش ممکن است باعث شود مقالات به بالای یا انتهای فهرست اضافه شوند. این نقش به فناوری کمکی امکان می‌دهد تا با استفاده از مکان‌نمای خواندن در حالت مرور، جریانی از محتوای غنی را که ممکن است با بارگذاری محتوای بیشتر در حین خواندن کاربر به‌طور نامحدود ادامه یابد، هم بخواند و هم پیمایش کند. نمونه‌ها شامل یک خوراک RSS، خوراک خبری، خوراک رسانه‌های اجتماعی مانند فیسبوک، اینستاگرام یا ماستودون، یا حتی فهرستی از محصولات مرتبط در یک صفحه تجارت الکترونیک است. این جریان‌ها می‌توانند محدود یا نامحدود باشند و با پیمایش کاربر محتوای بیشتری بارگذاری کنند. پیاده‌سازی الگوی `feed` به صفحه‌خوان اجازه می‌دهد تا به‌طور قابل اعتمادی محتوای خوراک را در حالت خواندن بخواند و بارگذاری آن را تحریک کند.
 
-Unlike the document structure elements that represent static HTML elements, the `feed` role requires specific interactions and implementation of keyboard navigation. The `feed` is a container element whose children are {{HTMLElement('article')}}s or have role `article`. Each article within a feed should be focusable, with tabindex of 0 or -1. An article should be scrolled into view when it, or a descendant element, receives focus. If the addition of articles occupies the main browser thread, make sure to set `aria-busy="true"` on the feed itself, and make sure to set it back to `false` when processing ends, or the user may not see the updates.
+برخلاف عناصر ساختار سند که عناصر HTML ایستا را نمایش می‌دهند، نقش `feed` نیازمند تعاملات خاص و پیاده‌سازی ناوبری صفحه‌کلید است. `feed` یک عنصر ظرف است که فرزندان آن {{HTMLElement('article')}} یا دارای نقش `article` هستند. هر مقاله درون یک خوراک باید قابل فوکوس باشد، با `tabindex` 0 یا 1-. یک مقاله باید زمانی که خود یا عنصر فرزندی از آن فوکوس دریافت می‌کند، به نمای درون دید (scroll into view) بیاید. اگر افزودن مقالات رشته اصلی مرورگر را اشغال کند، حتماً `aria-busy="true"` را روی خود خوراک تنظیم کنید و پس از پایان پردازش آن را به `false` برگردانید، در غیر این صورت ممکن است کاربر به‌روزرسانی‌ها را مشاهده نکند.
 
-If the number of articles is known, set [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) on the articles themselves. However, if the total number is extremely large, indefinite, or changes often, set `aria-setsize="-1"` to indicate that the size of the feed is not known.
+اگر تعداد مقالات مشخص است، [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) را روی خود مقالات تنظیم کنید. با این حال، اگر تعداد کل بسیار زیاد، نامعین یا اغلب تغییر می‌کند، `aria-setsize="-1"` را تنظیم کنید تا نشان دهد اندازه خوراک مشخص نیست.
 
-Another feature of the feed pattern is skim reading: Articles within a feed can contain both an accessible name with the [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) and a description with an `aria-describedby`, suggesting to screen readers which elements to speak after the label when navigating by article. By identifying the elements inside an article that provide the title and the primary content, assistive technologies can provide functions that enable users to jump from article to article and efficiently discern which articles they want to read.
+یکی دیگر از ویژگی‌های الگوی خوراک، خواندن اجمالی (skim reading) است: مقالات درون یک خوراک می‌توانند هم شامل یک نام قابل دسترس با [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) و هم یک توضیح با `aria-describedby` باشند، که به صفحه‌خوان‌ها پیشنهاد می‌دهد پس از برچسب، هنگام پیمایش بر اساس مقاله، کدام عناصر را بخوانند. با شناسایی عناصر درون یک مقاله که عنوان و محتوای اصلی را ارائه می‌دهند، فناوری‌های کمکی می‌توانند کارکردهایی فراهم کنند که کاربران را قادر می‌سازد از مقاله‌ای به مقاله دیگر بپرند و به‌طور کارآمد تشخیص دهند کدام مقالات را می‌خواهند بخوانند.
 
-The feed pattern enables reliable assistive technology reading mode interaction by establishing the following interoperability agreement between the web page and assistive technologies:
+الگوی خوراک با برقراری توافقنامه هم‌عملیاتی زیر بین صفحه وب و فناوری‌های کمکی، تعامل قابل اعتماد حالت خواندن فناوری کمکی را ممکن می‌سازد:
 
-In the context of a feed, the web page code is responsible for:
+در زمینه یک خوراک، کد صفحه وب مسئول موارد زیر است:
 
-- Appropriate visual scrolling of the content based on which article contains DOM focus.
-- Loading or removing feed articles based on which article contains DOM focus.
+- پیمایش بصری مناسب محتوا بر اساس اینکه کدام مقاله حاوی فوکوس DOM است.
+- بارگذاری یا حذف مقالات خوراک بر اساس اینکه کدام مقاله حاوی فوکوس DOM است.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-Supporting the following, or a similar, interface is recommended when focus is inside the feed:
+پشتیبانی از رابط زیر یا مشابه آن وقتی فوکوس درون خوراک است توصیه می‌شود:
 
-- <kbd>Page Down</kbd>: Move focus to next article.
-- <kbd>Page Up</kbd>: Move focus to previous article.
-- <kbd>Control + End</kbd>: Move focus to the first focusable element after the feed.
-- <kbd>Control + Home</kbd>: Move focus to the first focusable element before the feed.
+- <kbd>Page Down</kbd>: انتقال فوکوس به مقاله بعدی.
+- <kbd>Page Up</kbd>: انتقال فوکوس به مقاله قبلی.
+- <kbd>Control + End</kbd>: انتقال فوکوس به اولین عنصر قابل فوکوس پس از خوراک.
+- <kbd>Control + Home</kbd>: انتقال فوکوس به اولین عنصر قابل فوکوس قبل از خوراک.
 
-If a feed is nested within a feed, such as a comments feed within a feed of blog posts, the convention is to tab into the nested feed with the <kbd>Tab</kbd> key and to provide another key, such as <kbd>Alt + Page Down</kbd>, to navigate from an 'outer' article to the first item in that article's nested feed. Navigate between the nested feed and main feed with <kbd>Control + End</kbd>, moving focus from the inner feed to the next article in the outer feed.
+اگر یک خوراک درون خوراک دیگری تودرتو باشد، مانند یک خوراک نظرات درون یک خوراک از پست‌های وبلاگ، قرارداد این است که با کلید <kbd>Tab</kbd> به خوراک تودرتو وارد شوید و کلید دیگری مانند <kbd>Alt + Page Down</kbd> را برای پیمایش از یک مقاله «خارجی» به اولین آیتم در خوراک تودرتوی آن مقاله فراهم کنید. با <kbd>Control + End</kbd> بین خوراک تودرتو و خوراک اصلی پیمایش کنید و فوکوس را از خوراک داخلی به مقاله بعدی در خوراک خارجی منتقل کنید.
 
-### <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> roles, states, and properties
+### نقش‌ها، وضعیت‌ها و ویژگی‌های <abbr title="اینترنت غنی قابل دسترس">WAI-ARIA</abbr>
 
 - [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
-  - : If the feed has no visible title, the `feed` element has a label specified with `aria-label`. If it does, see `aria-labelledby`.
+  - : اگر خوراک عنوان قابل مشاهده‌ای ندارد، عنصر `feed` یک برچسب مشخص شده با `aria-label` دارد. اگر دارد، به `aria-labelledby` مراجعه کنید.
 
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : If the feed has a visible title, the `feed` element has `aria-labelledby` referring to the element containing the title. If not, add an `aria-label`.
+  - : اگر خوراک عنوان قابل مشاهده‌ای دارد، عنصر `feed` دارای `aria-labelledby` است که به عنصر حاوی عنوان اشاره می‌کند. اگر نه، یک `aria-label` اضافه کنید.
 
 - [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy)
-  - : When busy, such as when articles are being added or removed from the `feed`, set `aria-busy="true"` during the update operation. Make sure it's reset to `false` when the operation is complete or the changes may not become visible.
+  - : هنگامی که مشغول است، مانند زمانی که مقالات به `feed` اضافه یا حذف می‌شوند، در طول عملیات به‌روزرسانی `aria-busy="true"` را تنظیم کنید. مطمئن شوید وقتی عملیات کامل شد به `false` بازنشانی شود، در غیر این صورت ممکن است تغییرات قابل مشاهده نشوند.
 
 - article
-  - : Each section of content in a feed should be contained in an `<article>` or element with role [`article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role). Each `article` should have an `aria-labelledby` referring to the article title or other child that can serve as a distinguishing label. Each article should preferably have `aria-describedby` referring to one or more elements inside the article that serve as the primary content of the article. Each `article` element has [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) set to a value that represents its position in the feed and an [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) set to a value that represents either the total number of articles that have been loaded or the total number in the feed, depending on which value is more helpful to users. If the total number in the feed is not known, set `aria-setsize="-1"`.
+  - : هر بخش از محتوا در یک خوراک باید درون یک `<article>` یا عنصری با نقش [`article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role) قرار گیرد. هر `article` باید یک `aria-labelledby` داشته باشد که به عنوان مقاله یا فرزند دیگری که می‌تواند به عنوان برچسب تمایزدهنده عمل کند، اشاره کند. هر مقاله ترجیحاً باید `aria-describedby` داشته باشد که به یک یا چند عنصر درون مقاله که به عنوان محتوای اصلی مقاله عمل می‌کنند، اشاره کند. هر عنصر `article` دارای [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) است که به مقداری تنظیم شده که موقعیت آن را در خوراک نشان می‌دهد و [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) که به مقداری تنظیم شده که یا تعداد کل مقالات بارگذاری شده یا تعداد کل در خوراک را نشان می‌دهد، بسته به اینکه کدام مقدار برای کاربران مفیدتر است. اگر تعداد کل در خوراک مشخص نیست، `aria-setsize="-1"` را تنظیم کنید.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-None, except as required by any attributes. For example, setting [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) to `true` during the update operation if needed, and then to `false` upon completion.
+هیچ‌کدام، مگر به‌عنوان مورد نیاز هر ویژگی. به عنوان مثال، در صورت نیاز در طول عملیات به‌روزرسانی [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) را روی `true` تنظیم کنید و سپس پس از اتمام به `false` برگردانید.
 
-Note: It is the author's responsibility to apply the "above" keyboard behavior.
+توجه: مسئولیت نویسنده است که رفتار صفحه‌کلید «بالا» را اعمال کند.
 
-## Examples
+## مثال‌ها
 
-[Example Implementation of Feed Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/feed/examples/feed/)
+[مثال پیاده‌سازی الگوی خوراک](https://www.w3.org/WAI/ARIA/apg/patterns/feed/examples/feed/)
 
-## Best practices
+## بهترین روش‌ها
 
-To ensure good user experience, avoid inserting or removing articles in the middle of a `feed`, load new articles before the user has reached the end of the feed, and provide keyboard commands for moving focus among articles so that keyboard users can navigate through your feed. See [Keyboard interactions](#keyboard_interactions).
+برای اطمینان از تجربه کاربری خوب، از درج یا حذف مقالات در وسط یک `feed` خودداری کنید، مقالات جدید را قبل از اینکه کاربر به انتهای خوراک برسد بارگذاری کنید، و دستورات صفحه‌کلید برای انتقال فوکوس بین مقالات فراهم کنید تا کاربران صفحه‌کلید بتوانند در خوراک شما پیمایش کنند. به [تعاملات صفحه‌کلید](#keyboard_interactions) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- The HTML {{HTMLElement('article')}} element
-- The {{HTMLElement('ul')}} unordered list element
-- [ARIA: `article` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role)
-- [ARIA: `list` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role)
+- عنصر HTML {{HTMLElement('article')}}
+- عنصر فهرست نامرتب {{HTMLElement('ul')}}
+- [ARIA: نقش `article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role)
+- [ARIA: نقش `list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role)
