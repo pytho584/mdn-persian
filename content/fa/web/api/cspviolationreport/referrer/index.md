@@ -1,11 +1,5 @@
 ---
 title: "CSPViolationReport: referrer property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSPViolationReport/referrer"
-status: "needs-translation"
----
-
----
-title: "CSPViolationReport: referrer property"
 short-title: referrer
 slug: Web/API/CSPViolationReport/referrer
 page-type: web-api-instance-property
@@ -14,28 +8,25 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}
 
-The **`referrer`** property of the {{domxref("CSPViolationReport")}} dictionary is a string that represents the URL of the referring page of the resource who's [Content Security Policy (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) was violated.
+ویژگی **`referrer`** از دیکشنری {{domxref("CSPViolationReport")}} یک رشته است که URL صفحه ارجاعدهنده را برای منبعی که [Content Security Policy (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) آن نقض شده است، نمایش می‌دهد.
 
-The referrer is the page that caused the page with the CSP violation to be loaded. For example, if we followed a link to a page with a CSP violation, the `referrer` is the page that we navigated from.
+ارجاع‌دهنده، صفحه‌ای است که باعث بارگذاری صفحه‌ای با نقض CSP شده است. به‌عنوان مثال، اگر از طریق یک پیوند به صفحه‌ای با نقض CSP برویم، `referrer` همان صفحه‌ای است که از آن به این صفحه آمده‌ایم.
 
-## Value
+## مقدار
 
-A string representing the URL for the referrer of the page with the CSP violation, or null.
+یک رشته که URL ارجاع‌دهنده صفحه دارای نقض CSP را نشان می‌دهد، یا `null`.
 
-Note that if the referrer is an HTTP(S) URL then any username, password or fragment is removed.
-If the URL scheme is not `http:` or `https:` then just the scheme is returned.
+توجه داشته باشید که اگر ارجاع‌دهنده یک URL با پروتکل HTTP(S) باشد، هرگونه نام کاربری، گذرواژه یا fragment حذف می‌شود. اگر طرح نشانی (URL scheme) از نوع `http:` یا `https:` نباشد، فقط همین طرح بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### CSP inline script violation showing referrer
+### مثال نقض CSP با اسکریپت درون‌خطی که referrer را نشان می‌دهد
 
-This example triggers a CSP violation using an inline script, and reports the violation using a {{domxref("ReportingObserver")}}.
-We navigate to the page from another page and log the `referrer`, `documentURL`, and `blockedURL`.
+این مثال با استفاده از یک اسکریپت درون‌خطی، نقض CSP را ایجاد می‌کند و گزارش آن را با استفاده از {{domxref("ReportingObserver")}} ثبت می‌کند. ما از صفحه دیگری به این صفحه می‌آییم و `referrer`، `documentURL` و `blockedURL` را در کنسول ثبت می‌کنیم.
 
 #### HTML
 
-First we define our referrer page `/bounce/index.html`.
-This page just contains a link to another page `../report_sample/index.html`.
+ابتدا صفحه ارجاع‌دهنده خود را با مسیر `/bounce/index.html` تعریف می‌کنیم. این صفحه فقط حاوی یک پیوند به صفحه دیگر یعنی `../report_sample/index.html` است.
 
 ```html
 <!doctype html>
@@ -52,9 +43,7 @@ This page just contains a link to another page `../report_sample/index.html`.
 </html>
 ```
 
-The `../report_sample/index.html` HTML file is defined below.
-This uses the [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) element to set the {{httpheader('Content-Security-Policy')}} `script-src-elem` to `self`, which allows scripts to be loaded from the same domain, but does not allow inline scripts to be executed.
-The document also includes an inline script, which will trigger a CSP violation.
+فایل HTML مربوط به `../report_sample/index.html` در پایین تعریف شده است. این فایل از عنصر [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) برای تنظیم {{httpheader('Content-Security-Policy')}} با مقدار `script-src-elem` به `self` استفاده می‌کند؛ این کار اجازه می‌دهد اسکریپت‌ها از همان دامنه بارگذاری شوند، اما اجرای اسکریپت‌های درون‌خطی را مجاز نمی‌داند. این سند همچنین شامل یک اسکریپت درون‌خطی است که باعث ایجاد نقض CSP می‌شود.
 
 ```html
 <!doctype html>
@@ -76,11 +65,9 @@ The document also includes an inline script, which will trigger a CSP violation.
 
 #### JavaScript (main.js)
 
-The report sample above also loads the external script `main.js`, which is shown below.
-Because this is loaded from the same domain as the HTML, it is not blocked by the CSP.
+نمونه گزارش بالا همچنین اسکریپت خارجی `main.js` را بارگذاری می‌کند که در پایین نشان داده شده است. از آنجا که این اسکریپت از همان دامنه HTML بارگذاری می‌شود، توسط CSP مسدود نمی‌شود.
 
-The script creates a new {{domxref("ReportingObserver")}} to observe content violation reports of type `"csp-violation"`.
-Each time the callback function is invoked, we get the body of the first entry of the reports array, and use it to log the violation `documentURL`, `referrer`, and `blockedURL` to the console.
+این اسکریپت یک {{domxref("ReportingObserver")}} جدید می‌سازد تا گزارش‌های نقض محتوا از نوع `"csp-violation"` را مشاهده کند. هر بار که تابع callback فراخوانده می‌شود، بدنه اولین ورودی آرایه گزارش‌ها را می‌گیریم و از آن برای ثبت `documentURL`، `referrer` و `blockedURL` در کنسول استفاده می‌کنیم.
 
 ```js
 // main.js
@@ -99,11 +86,11 @@ const observer = new ReportingObserver(
 observer.observe();
 ```
 
-Note that while there might be multiple reports in the returned array, for brevity we only log the values of the first element.
+توجه داشته باشید که اگرچه ممکن است چندین گزارش در آرایه بازگشتی وجود داشته باشد، برای اختصار فقط مقادیر عنصر اول را ثبت می‌کنیم.
 
-#### Results
+#### نتایج
 
-The console output for the above code would look a bit like that below (the site will depend on how the pages are served):
+خروجی کنسول برای کد بالا تقریباً به شکل زیر خواهد بود (سایت به نحوه سرو شدن صفحات بستگی دارد):
 
 ```plain
 documentURL: http://127.0.0.1:9999/report_sample/
@@ -111,17 +98,17 @@ referrer: http://127.0.0.1:9999/bounce/
 blockedURL: inline
 ```
 
-Note that `referrer` is the page we navigated from, `documentURL` is the page with the CSP violation, and `blockedURL` is not a URL at all in this case, but an indication that the violation was caused by an unsafe inline script.
+توجه کنید که `referrer` صفحه‌ای است که از آن به این صفحه آمده‌ایم، `documentURL` صفحه‌ای است که نقض CSP در آن رخ داده است، و `blockedURL` در این مورد اصلاً یک URL نیست، بلکه نشانه‌ای است که نقض توسط یک اسکریپت درون‌خطی ناایمن ایجاد شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SecurityPolicyViolationEvent.referrer")}}
 - {{httpheader("Referer")}}
