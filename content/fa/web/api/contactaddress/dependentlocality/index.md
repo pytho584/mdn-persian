@@ -1,7 +1,5 @@
 ---
 title: "ContactAddress: dependentLocality property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContactAddress/dependentLocality"
-status: "needs-translation"
 ---
 
 ---
@@ -16,18 +14,18 @@ browser-compat: api.ContactAddress.dependentLocality
 
 {{securecontext_header}}{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
-The read-only **`dependentLocality`** property of the {{domxref("ContactAddress")}} interface is a string containing a locality or sublocality designation within a city, such as a neighborhood, borough, district, or, in the United Kingdom, a dependent locality. Also known as a _post town_.
+{{domxref("ContactAddress")}} 接口的只读属性 **`dependentLocality`** 是一个字符串，包含城市内的地区或子地区标识，例如街区、自治市、区，或英国所称的依赖地区（dependent locality）。也被称为 _邮镇_（post town）。
 
-## Value
+## 值
 
-A string indicating the sublocality portion of the address. This may be an empty string if no sublocality is available or required. It's used to provide disambiguation when a city may include areas that duplicate street names.
+一个字符串，表示地址的子地区部分。如果没有或不要求子地区，则此值可能为空字符串。当城市中可能出现街道重名的区域时，该属性用于提供消歧。
 
-A sublocality is an area within a city, such as a neighborhood, borough, or district. In the United Kingdom, this is used to indicate the **post town** in the United Kingdom (known officially by the Royal Mail as the **dependent locality**). This is a disambiguating feature of addresses in places where a city may have areas that duplicate street names.
+子地区是城市内的一个区域，例如街区、自治市或区。在英国，该属性用于表示英国的 **邮镇**（post town）（皇家邮政官方称之为 **依赖地区**）。在城市可能存在街道重名区域的情况下，这是地址的一个消歧特性。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
