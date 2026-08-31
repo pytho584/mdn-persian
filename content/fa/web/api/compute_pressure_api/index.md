@@ -1,11 +1,5 @@
 ---
 title: "Compute Pressure API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Compute_Pressure_API"
-status: "needs-translation"
----
-
----
-title: Compute Pressure API
 slug: Web/API/Compute_Pressure_API
 page-type: web-api-overview
 status:
@@ -15,75 +9,75 @@ browser-compat: api.PressureObserver
 
 {{DefaultAPISidebar("Compute Pressure API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_service")}}{{securecontext_header}}
 
-The **Compute Pressure API** is a JavaScript API that enables you to observe the pressure of system resources such as the CPU.
+**Compute Pressure API** یک رابط برنامه‌نویسی جاوااسکریپت است که به شما امکان می‌دهد فشار منابع سیستم مانند CPU را مشاهده کنید.
 
-## Use cases
+## موارد استفاده
 
-In real-time applications, such as video conferencing web apps, the Compute Pressure API lets you detect which pressure the system is currently facing. The system will handle any stress as well as it can, but a collaboration between system and app is useful to handle the pressure best. This API notifies you of high-level pressure state changes, so you can adjust your workloads and still offer a pleasant user experience. The signal is proactively delivered when the system pressure trend is either rising or easing to allow timely adaptation.
+در برنامه‌های بلادرنگ، مانند وب‌اپ‌های ویدئو کنفرانس، Compute Pressure API به شما امکان می‌دهد تشخیص دهید که سیستم در حال حاضر با چه فشاری مواجه است. سیستم هر فشاری را به بهترین شکل ممکن مدیریت می‌کند، اما همکاری بین سیستم و برنامه برای مدیریت بهینه فشار مفید است. این API شما را از تغییرات سطح بالای وضعیت فشار مطلع می‌کند، بنابراین می‌توانید حجم کاری خود را تنظیم کرده و همچنان تجربه کاربری pleasant ارائه دهید. این سیگنال به‌صورت پیش‌دستانه وقتی ارسال می‌شود که روند فشار سیستم در حال افزایش یا کاهش است تا امکان سازگاری به‌موقع فراهم شود.
 
-You can use these pressure change signals, for example, to reduce or increase the video quality or the number of video feeds shown simultaneously to avoid dropping video frames, audio cuts, or delaying other critical parts of the application. The quality of service of your web app can vary, also due to pressure from external factors and apps at unexpected times, but ideally that does not lead to a total system failure, input delay, or unresponsiveness. Instead, the set of enabled features and their quality level is balanced against the resource pressure of the end-user device. It is similar to network pressure in which case a streaming app adapts to the available bandwidth.
+برای مثال می‌توانید از این سیگنال‌های تغییر فشار برای کاهش یا افزایش کیفیت ویدئو یا تعداد فیدهای ویدئویی که به‌طور همزمان نمایش داده می‌شوند استفاده کنید تا از افت فریم ویدئو، قطع صدا یا تأخیر در سایر بخش‌های حیاتی برنامه جلوگیری شود. کیفیت سرویس وب‌اپ شما ممکن است به دلیل فشار عوامل خارجی و برنامه‌های دیگر در زمان‌های غیرمنتظره تغییر کند، اما در حالت ایده‌آل این امر نباید منجر به خرابی کامل سیستم، تأخیر در ورودی یا عدم پاسخگویی شود. در عوض، مجموعه امکانات فعال و سطح کیفیت آن‌ها باید با فشار منابع دستگاه کاربر متعادل شود. این مشابه فشار شبکه است که در آن یک برنامه استریمینگ خود را با پهنای باند موجود سازگار می‌کند.
 
-More use cases are:
+موارد استفاده بیشتر عبارتند از:
 
-- Web games, for which you could balance the quality and amount of 3D assets, change the framerate, resolution, depth of field etc., to ensure low latency and stable frame rate.
-- User interfaces, for which you could render placeholders instead of real data while the system is under pressure, and render the real content once the pressure has eased.
+- بازی‌های وب، که می‌توانید کیفیت و تعداد دارایی‌های سه‌بعدی را متعادل کنید، نرخ فریم، وضوح، عمق میدان و ... را تغییر دهید تا تأخیر کم و نرخ فریم پایدار حفظ شود.
+- رابط‌های کاربری، که می‌توانید در زمان فشار سیستم، به‌جای داده واقعی، placeholderها (جای‌نماها) نمایش دهید و پس از کاهش فشار، محتوای واقعی را بارگذاری کنید.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-Fast and delightful web applications should balance workloads when the system's computing resources are used at (near) full capacity. The Compute Pressure API's goal is to prevent, rather than mitigate, bad user experience in the web app itself and also for the user's device to not become too hot, too loud, or to drain the battery at an unacceptable rate. Therefore, it is advised to prefer this API over feedback mechanisms or singular performance adjustments (for example, by lowering the frequency of {{domxref("window.requestAnimationFrame")}}) where bad user experience might be mitigated, but not proactively avoided. For measuring and segmenting the performance of user sessions after the fact, the {{domxref("PerformanceLongTaskTiming")}} API is better suited to analyze tasks that occupy the UI thread for 50 milliseconds or more (see also [Performance API](/en-US/docs/Web/API/Performance_API) for additional performance measurement APIs).
+وب‌اپلیکیشن‌های سریع و دلپذیر باید حجم کار را زمانی که منابع محاسباتی سیستم با ظرفیت (نزدیک به) کامل استفاده می‌شوند، متعادل کنند. هدف Compute Pressure API جلوگیری از تجربه کاربری بد در خود وب‌اپ است، نه فقط کاهش آن؛ همچنین هدف آن است که دستگاه کاربر بیش از حد داغ، پر سر و صدا نشود و باتری با نرخ غیرقابل قبولی تخلیه نشود. بنابراین توصیه می‌شود این API را به مکانیزم‌های بازخورد یا تنظیمات عملکرد تک‌بعدی (مثلاً کاهش فرکانس {{domxref("window.requestAnimationFrame")}}) ترجیح دهید، زیرا آن روش‌ها ممکن است تجربه کاربری بد را کاهش دهند اما به‌صورت پیش‌دستانه از آن جلوگیری نمی‌کنند. برای اندازه‌گیری و تقسیم‌بندی عملکرد جلسات کاربر پس از وقوع، API {{domxref("PerformanceLongTaskTiming")}} برای تحلیل وظایفی که thread رابط کاربری را به مدت ۵۰ میلی‌ثانیه یا بیشتر اشغال می‌کنند مناسب‌تر است (برای APIهای اندازه‌گیری عملکرد بیشتر، به [Performance API](/en-US/docs/Web/API/Performance_API) نیز مراجعه کنید).
 
-### Pressure source types
+### انواع منبع فشار
 
-In your web app or website, different tasks are fighting for the processing time of different processing units (CPU, GPU, and other specialized processing units). The current version of the Compute Pressure API specification defines two main source types that can be queried to gather pressure information:
+در وب‌اپ یا وب‌سایت شما، وظایف مختلف برای زمان پردازش واحدهای پردازشی مختلف (CPU، GPU و سایر واحدهای پردازشی تخصصی) رقابت می‌کنند. نسخه فعلی مشخصات Compute Pressure API دو نوع منبع اصلی را تعریف می‌کند که می‌توان برای جمع‌آوری اطلاعات فشار از آن‌ها پرس‌وجو کرد:
 
-- `"thermals"` represents the global thermal state of the entire system.
-- `"cpu"` represents the average pressure of the central processing unit (CPU) across all its cores. This state can be affected by other apps and sites than the observing site.
+- `"thermals"` وضعیت حرارتی کلی کل سیستم را نشان می‌دهد.
+- `"cpu"` فشار متوسط واحد پردازش مرکزی (CPU) را در تمام هسته‌های آن نشان می‌دهد. این وضعیت می‌تواند تحت تأثیر برنامه‌ها و سایت‌های دیگری غیر از سایت مشاهده‌کننده قرار گیرد.
 
-The list of supported sources varies per browser, operating system, and hardware, and is evolving. Use the static {{domxref("PressureObserver.knownSources_static", "PressureObserver.knownSources")}} hint to see which source types are available to your browser. Note that availability can also vary by your operating system and your hardware. Call {{domxref("PressureObserver.observe()", "observe()")}} and check for a `NotSupportedError` to see if pressure observation is possible.
+فهرست منابع پشتیبانی‌شده بسته به مرورگر، سیستم عامل و سخت‌افزار متفاوت است و در حال تکامل است. از ویژگی static {{domxref("PressureObserver.knownSources_static", "PressureObserver.knownSources")}} برای مشاهده انواع منابع موجود در مرورگر خود استفاده کنید. توجه داشته باشید که در دسترس بودن ممکن است بسته به سیستم عامل و سخت‌افزار شما نیز متفاوت باشد. متد {{domxref("PressureObserver.observe()", "observe()")}} را فراخوانی کنید و برای بررسی امکان مشاهده فشار، به دنبال خطای `NotSupportedError` باشید.
 
-The Compute Pressure API is available in the following contexts:
+Compute Pressure API در زمینه‌های زیر در دسترس است:
 
-- {{domxref("Window")}} (main thread)
+- {{domxref("Window")}} (thread اصلی)
 - {{domxref("Worker")}}
 - {{domxref("SharedWorker")}}
-- {{HTMLElement("iframe")}} (if a suitable [Permissions-Policy](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/compute-pressure) is provided)
+- {{HTMLElement("iframe")}} (در صورت وجود [Permissions-Policy](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/compute-pressure) مناسب)
 
-### Pressure states
+### حالت‌های فشار
 
-The Compute Pressure API exposes high-level pressure states which abstract away complexities of system bottlenecks that cannot be adequately explained with low-level metrics such as processor clock speed and utilization. In fact, metrics for CPU utilization are often [misleading](https://www.brendangregg.com/blog/2017-05-09/cpu-utilization-is-wrong.html). Therefore, the Compute Pressure API uses human-readable pressure states with the following semantics (see also the [specification](https://w3c.github.io/compute-pressure/#pressure-states)):
+Compute Pressure API حالت‌های فشار سطح بالا را ارائه می‌دهد که پیچیدگی‌های گلوگاه‌های سیستم را که نمی‌توان با معیارهای سطح پایین مانند سرعت کلاک پردازنده و استفاده از آن به‌طور کافی توضیح داد، انتزاع می‌کند. در واقع، معیارهای استفاده از CPU اغلب [گمراه‌کننده](https://www.brendangregg.com/blog/2017-05-09/cpu-utilization-is-wrong.html) هستند. بنابراین، Compute Pressure API از حالت‌های فشار قابلِ‌خواندن برای انسان با معانی زیر استفاده می‌کند (همچنین به [مشخصات فنی](https://w3c.github.io/compute-pressure/#pressure-states) مراجعه کنید):
 
-- ⚪ `"nominal"`: The conditions of the target device are at an acceptable level with no noticeable adverse effects on the user.
-- 🟢 `"fair"`: Target device pressure, temperature and/or energy usage are slightly elevated, potentially resulting in reduced battery-life, as well as fans (or systems with fans) becoming active and audible. Apart from that the target device is running flawlessly and can take on additional work.
-- 🟡 `"serious"`: Target device pressure, temperature and/or energy usage is consistently highly elevated. The system may be throttling as a countermeasure to reduce thermals.
-- 🔴 `"critical"`: The temperature of the target device or system is significantly elevated and it requires cooling down to avoid any potential issues.
+- ⚪ `"nominal"`: شرایط دستگاه هدف در سطح قابل قبولی است و هیچ اثر نامطلوب قابل توجهی بر کاربر ندارد.
+- 🟢 `"fair"`: فشار، دما و/یا مصرف انرژی دستگاه هدف کمی افزایش یافته است که به طور بالقوه می‌تواند منجر به کاهش عمر باتری و همچنین فعال و قابل شنیدن شدن فن‌ها (یا سیستم‌های دارای فن) شود. جدا از این، دستگاه هدف بدون نقص کار می‌کند و می‌تواند کارهای بیشتری را بپذیرد.
+- 🟡 `"serious"`: فشار، دما و/یا مصرف انرژی دستگاه هدف به طور مداوم به شدت بالا است. سیستم ممکن است برای کاهش گرما، throttling (کاهش سرعت) را به عنوان اقدام مقابله‌ای اعمال کند.
+- 🔴 `"critical"`: دمای دستگاه هدف یا سیستم به طور قابل توجهی بالا است و برای جلوگیری از مشکلات احتمالی نیاز به خنک‌سازی دارد.
 
-The contributing factors (that is, the underlying system metrics) for the pressure states above are not defined by the specification and can vary depending on the underlying hardware and platform behavior. However, the specification requires that the change in contributing factors must be substantial to avoid flip-flopping between states. This means you can expect the API to not report different states overly often as they aren't responding to just one fluctuating system metric.
+عوامل مؤثر (یعنی معیارهای زیربنایی سیستم) برای حالت‌های فشار فوق توسط مشخصات تعریف نشده‌اند و ممکن است بسته به سخت‌افزار و رفتار پلتفرم متفاوت باشند. با این حال، مشخصات الزام می‌کند که تغییر در عوامل مؤثر باید قابل توجه باشد تا از تغییرات مکرر و نوسانی بین حالت‌ها جلوگیری شود. این بدان معناست که می‌توانید انتظار داشته باشید API حالت‌های مختلف را بیش از حد مکرر گزارش نکند، زیرا آن‌ها تنها به یک معیار سیستم نوسانی واکنش نشان نمی‌دهند.
 
-### Security and privacy considerations
+### ملاحظات امنیتی و حریم خصوصی
 
-The Compute Pressure API is [policy-controlled](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) by the `"compute-pressure"` directive. Its default allowlist is `'self'` which allows usage in same-origin nested frames but prevents third-party content from using the feature.
+Compute Pressure API توسط [policy-controlled](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) با دایرکتیو `"compute-pressure"` است. فهرست مجاز پیش‌فرض آن `'self'` است که استفاده در فریم‌های تو در توی هم‌ریشه را مجاز می‌کند اما از استفاده محتوای شخص ثالث جلوگیری می‌کند.
 
-## Reference
+## مرجع
 
-### Interfaces
+### رابط‌ها
 
-The following interfaces are present in the Compute Pressure API and the API surface is similar to other observers, such as {{domxref("IntersectionObserver")}}, {{domxref("MutationObserver")}}, or {{domxref("PerformanceObserver")}}.
+رابط‌های زیر در Compute Pressure API وجود دارند و سطح API مشابه سایر observers مانند {{domxref("IntersectionObserver")}}، {{domxref("MutationObserver")}} یا {{domxref("PerformanceObserver")}} است.
 
 - {{domxref("PressureObserver")}} {{experimental_inline}}
-  - : Notifies when the system's pressure changes for a specified number of sources (e.g., the CPU) at a predefined sample interval.
+  - : زمانی که فشار سیستم برای تعداد مشخصی از منابع (مثلاً CPU) با فاصله نمونه‌برداری از پیش تعریف‌شده تغییر می‌کند، اطلاع می‌دهد.
 - {{domxref("PressureRecord")}}
-  - : Describes the pressure trend at a specific moment of transition.
+  - : روند فشار را در یک لحظه خاص از انتقال توصیف می‌کند.
 
-### Permissions-Policy directive
+### دایرکتیو Permissions-Policy
 
-- {{httpheader("Permissions-Policy")}}; the {{httpheader('Permissions-Policy/compute-pressure','compute-pressure')}} directive
-  - : Controls access to the Compute Pressure API.
+- {{httpheader("Permissions-Policy")}}؛ دایرکتیو {{httpheader('Permissions-Policy/compute-pressure','compute-pressure')}}
+  - : دسترسی به Compute Pressure API را کنترل می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Log current pressure
+### ثبت فشار فعلی
 
-This example creates a {{domxref("PressureObserver")}} and takes action whenever there is a pressure change. The sample interval is set to 1000ms, meaning that there will be updates at most every second.
+این مثال یک {{domxref("PressureObserver")}} ایجاد می‌کند و هر زمان که تغییری در فشار رخ دهد، اقدامی انجام می‌دهد. فاصله نمونه‌برداری ۱۰۰۰ میلی‌ثانیه تنظیم شده است، به این معنی که حداکثر هر ثانیه یک به‌روزرسانی انجام می‌شود.
 
 ```js
 function callback(records) {
@@ -108,14 +102,14 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Compute Pressure demo](https://w3c.github.io/compute-pressure/demo/), which uses Mandelbrot sets and workers to create artificial pressure for test purposes.
+- [دموی Compute Pressure](https://w3c.github.io/compute-pressure/demo/) که از مجموعه‌های Mandelbrot و workerها برای ایجاد فشار مصنوعی برای اهداف آزمایشی استفاده می‌کند.
