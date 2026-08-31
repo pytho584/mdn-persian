@@ -1,7 +1,7 @@
 ---
 title: "ARIA: complementary role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/complementary_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,7 +15,7 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `complementary` [landmark role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) is used to designate a supporting section that relates to the main content, yet can stand alone when separated. These sections are frequently presented as sidebars or call-out boxes. If possible, use the [HTML \<aside> element](/en-US/docs/Web/HTML/Reference/Elements/aside) instead.
+نقش `complementary` (نقش نشانه‌ای [landmark](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles)) برای تعیین بخش پشتیبان‌ای استفاده می‌شود که به محتوای اصلی مرتبط است، اما در صورت جدا شدن نیز می‌تواند به تنهایی معنا داشته باشد. این بخش‌ها اغلب به صورت نوارهای کناری یا جعبه‌های برجسته (call-out boxes) نمایش داده می‌شوند. در صورت امکان، از [عنصر HTML \<aside>](/en-US/docs/Web/HTML/Reference/Elements/aside) استفاده کنید.
 
 ```html
 <div role="complementary">
@@ -24,16 +24,16 @@ The `complementary` [landmark role](/en-US/docs/Web/Accessibility/ARIA/Reference
 </div>
 ```
 
-This is a sidebar containing links to project sponsors.
+این یک نوار کناری حاوی پیوندهایی به حامیان پروژه است.
 
-## Description
+## توضیحات
 
-The `complementary` role is [a landmark](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques#landmark_roles) role. Landmarks can be used by assistive technology to quickly identify and navigate to large sections of the document. Content listed within a container with the `complementary` landmark role should make sense if separated from the main content of the document.
+نقش `complementary` یک نقش [نشانه‌ای (landmark)](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques#landmark_roles) است. نشانه‌ها (landmarks) توسط فناوری‌های کمکی برای شناسایی سریع و پیمایش به بخش‌های بزرگ سند استفاده می‌شوند. محتوایی که درون یک ظرف با نقش نشانه‌ای `complementary` قرار می‌گیرد، باید در صورت جدا شدن از محتوای اصلی سند، همچنان معنا داشته باشد.
 
 > [!NOTE]
-> Using the {{HTMLElement('aside')}} element will automatically communicate a section has a role of `complementary`. Developers should always prefer using the correct semantic HTML element over using ARIA.
+> استفاده از عنصر {{HTMLElement('aside')}} به طور خودکار اعلام می‌کند که یک بخش دارای نقش `complementary` است. توسعه‌دهندگان همواره باید استفاده از عنصر HTML معنایی صحیح را به استفاده از ARIA ترجیح دهند.
 
-## Examples
+## مثال‌ها
 
 ```html
 <div role="complementary">
@@ -52,21 +52,21 @@ The `complementary` role is [a landmark](/en-US/docs/Web/Accessibility/ARIA/Guid
 </div>
 ```
 
-## Accessibility concerns
+## نگرانی‌های دسترسی‌پذیری
 
-[Landmark roles](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques#landmark_roles) are intended to be used sparingly, to identify larger overall sections of the document. Using too many landmark roles can create "noise" in screen readers, making it difficult to understand the overall layout of the page.
+[نقش‌های نشانه‌ای (Landmark roles)](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques#landmark_roles) برای استفاده محدود طراحی شده‌اند تا بخش‌های بزرگتر و کلی سند را شناسایی کنند. استفاده از تعداد زیاد نقش‌های نشانه‌ای می‌تواند در صفحه‌خوان‌ها «نویز» ایجاد کرده و درک چیدمان کلی صفحه را دشوار کند.
 
-## Best practices
+## بهترین روش‌ها
 
-### Prefer HTML
+### ترجیح HTML
 
-Using the {{HTMLElement('aside')}} element will automatically communicate that the element has a role of `complementary`. If possible, prefer using the semantic `<aside>` element instead of the `complementary` role.
+استفاده از عنصر {{HTMLElement('aside')}} به طور خودکار اعلام می‌کند که عنصر دارای نقش `complementary` است. در صورت امکان، استفاده از عنصر معنایی `<aside>` را به نقش `complementary` ترجیح دهید.
 
-### Labeling landmarks
+### برچسب‌گذاری نشانه‌ها
 
-#### Multiple landmarks
+#### چندین نشانه
 
-If there is more than one `complementary` landmark role or {{HTMLElement('aside')}} element in a document, provide a label for each landmark using the [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) attribute, or, if the aside has an appropriately descriptive title, point to it with the [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attribute. This label will allow an assistive technology user to be able to quickly understand the purpose of each landmark.
+اگر بیش از یک نقش نشانه‌ای `complementary` یا عنصر {{HTMLElement('aside')}} در یک سند وجود دارد، برای هر نشانه با استفاده از ویژگی [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یک برچسب ارائه دهید، یا اگر عنصر `aside` دارای عنوان توصیفی مناسبی است، با استفاده از ویژگی [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) به آن اشاره کنید. این برچسب به کاربر فناوری کمکی امکان می‌دهد تا به سرعت هدف هر نشانه را درک کند.
 
 ```html
 <aside aria-label="Note about usage">
@@ -80,24 +80,24 @@ If there is more than one `complementary` landmark role or {{HTMLElement('aside'
 </aside>
 ```
 
-#### Redundant descriptions
+#### توضیحات تکراری
 
-Screen readers will announce the type of role the landmark is. Because of this, you do not need to describe what the landmark is in its label. For example, a declaration of `role="complementary"` with an of `aria-label="Sidebar"` may be announced redundantly as, "complementary sidebar".
+صفحه‌خوان‌ها نوع نقش نشانه را اعلام می‌کنند. به همین دلیل، نیازی نیست که در برچسب توضیح دهید که نشانه چیست. برای مثال، اعلام `role="complementary"` با `aria-label="Sidebar"` ممکن است به صورت تکراری به عنوان «نوار کناری تکمیلی» اعلام شود.
 
-### Added benefits
+### مزایای اضافه
 
-Certain technologies such as browser extensions can generate lists of all landmark roles present on a page, allowing non-screen reader users to also quickly identify and navigate to large sections of the document.
+فناوری‌هایی مانند افزونه‌های مرورگر می‌توانند لیستی از تمام نقش‌های نشانه‌ای موجود در یک صفحه ایجاد کنند و به کاربران غیر صفحه‌خوان نیز اجازه دهند تا به سرعت بخش‌های بزرگ سند را شناسایی و پیمایش کنند.
 
-- [Landmarks browser extension](https://matatk.agrip.org.uk/landmarks/)
+- [افزونه مرورگر Landmarks](https://matatk.agrip.org.uk/landmarks/)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [\<aside>: The Aside element](/en-US/docs/Web/HTML/Reference/Elements/aside)
-- [Using HTML sections and outlines](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)
-- [Landmark roles: Using ARIA: Roles, States, and Properties](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques#landmark_roles)
-- [Accessible Landmarks | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
-- [Aside Revisited | HTML5 Doctor](https://html5doctor.com/aside-revisited/)
+- [\<aside>: عنصر کناری](/en-US/docs/Web/HTML/Reference/Elements/aside)
+- [استفاده از بخش‌ها و طرح‌بندی HTML](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)
+- [نقش‌های نشانه‌ای: استفاده از ARIA: نقش‌ها، حالت‌ها و ویژگی‌ها](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques#landmark_roles)
+- [نشانه‌های دسترس‌پذیر | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
+- [بازبینی Aside | HTML5 Doctor](https://html5doctor.com/aside-revisited/)
