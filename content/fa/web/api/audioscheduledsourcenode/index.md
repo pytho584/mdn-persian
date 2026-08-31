@@ -1,7 +1,7 @@
 ---
 title: "AudioScheduledSourceNode"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioScheduledSourceNode"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,44 +13,44 @@ browser-compat: api.AudioScheduledSourceNode
 
 {{APIRef("Web Audio API")}}
 
-The `AudioScheduledSourceNode` interface—part of the Web Audio API—is a parent interface for several types of audio source node interfaces which share the ability to be started and stopped, optionally at specified times. Specifically, this interface defines the {{domxref("AudioScheduledSourceNode.start", "start()")}} and {{domxref("AudioScheduledSourceNode.stop", "stop()")}} methods, as well as the {{domxref("AudioScheduledSourceNode.ended_event", "ended")}} event.
+رابط `AudioScheduledSourceNode` — بخشی از Web Audio API — یک رابط والد برای چندین نوع رابط گره منبع صوتی است که توانایی شروع و توقف را، به‌طور اختیاری در زمان‌های مشخص، به اشتراک می‌گذارند. به‌طور خاص، این رابط متدهای {{domxref("AudioScheduledSourceNode.start", "start()")}} و {{domxref("AudioScheduledSourceNode.stop", "stop()")}} و همچنین رویداد {{domxref("AudioScheduledSourceNode.ended_event", "ended")}} را تعریف می‌کند.
 
 > [!NOTE]
-> You can't create an `AudioScheduledSourceNode` object directly. Instead, use an interface which extends it, such as {{domxref("AudioBufferSourceNode")}}, {{domxref("OscillatorNode")}} or {{domxref("ConstantSourceNode")}}.
+> شما نمی‌توانید یک شیء `AudioScheduledSourceNode` را مستقیماً ایجاد کنید. در عوض، از رابطی استفاده کنید که آن را گسترش می‌دهد، مانند {{domxref("AudioBufferSourceNode")}}، {{domxref("OscillatorNode")}} یا {{domxref("ConstantSourceNode")}}.
 
-Unless stated otherwise, nodes based upon `AudioScheduledSourceNode` output silence when not playing (that is, before `start()` is called and after `stop()` is called). Silence is represented, as always, by a stream of samples with the value zero (0).
+مگر در غیر این صورت ذکر شده باشد، گره‌های مبتنی بر `AudioScheduledSourceNode` هنگام عدم پخش (یعنی قبل از فراخوانی `start()` و بعد از فراخوانی `stop()`) خروجی سکوت تولید می‌کنند. سکوت، همان‌طور که همیشه مرسوم است، با جریانی از نمونه‌ها با مقدار صفر (0) نشان داده می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent interface, {{domxref("AudioNode")}}._
+_ویژگی‌ها را از رابط والد خود، {{domxref("AudioNode")}}، به ارث می‌برد._
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent interface, {{domxref("AudioNode")}}, and adds the following methods:_
+_متدها را از رابط والد خود، {{domxref("AudioNode")}}، به ارث می‌برد و متدهای زیر را اضافه می‌کند:_
 
 - {{domxref("AudioScheduledSourceNode.start", "start()")}}
-  - : Schedules the node to begin playing the constant sound at the specified time. If no time is specified, the node begins playing immediately.
+  - : شروع پخش صدای ثابت را در زمان مشخص‌شده زمان‌بندی می‌کند. اگر زمانی مشخص نشود، گره بلافاصله پخش را آغاز می‌کند.
 - {{domxref("AudioScheduledSourceNode.stop", "stop()")}}
-  - : Schedules the node to stop playing at the specified time. If no time is specified, the node stops playing at once.
+  - : توقف پخش گره را در زمان مشخص‌شده زمان‌بندی می‌کند. اگر زمانی مشخص نشود، گره بلافاصله پخش را متوقف می‌کند.
 
-## Events
+## رویدادها
 
-Listen to these events using [`addEventListener()`](/en-US/docs/Web/API/EventTarget/addEventListener) or by assigning an event listener to the `oneventname` property of this interface:
+به این رویدادها با استفاده از [`addEventListener()`](/en-US/docs/Web/API/EventTarget/addEventListener) گوش دهید، یا با انتساب یک شنونده رویداد به ویژگی `oneventname` این رابط.
 
 - [`ended`](/en-US/docs/Web/API/AudioScheduledSourceNode/ended_event)
-  - : Fired when the source node has stopped playing, either because it's reached a predetermined stop time, the full duration of the audio has been performed, or because the entire buffer has been played.
+  - : زمانی رخ می‌دهد که گره منبع پخش را متوقف کرده باشد؛ چه به دلیل رسیدن به زمان توقف از پیش تعیین‌شده، چه به دلیل اجرای کامل مدت‌زمان صدا، یا به دلیل پخش کل بافر.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - {{domxref("AudioNode")}}
