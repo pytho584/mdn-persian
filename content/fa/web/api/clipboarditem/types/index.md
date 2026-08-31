@@ -1,11 +1,5 @@
 ---
 title: "ClipboardItem: types property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem/types"
-status: "needs-translation"
----
-
----
-title: "ClipboardItem: types property"
 short-title: types
 slug: Web/API/ClipboardItem/types
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.ClipboardItem.types
 
 {{APIRef("Clipboard API")}} {{securecontext_header}}
 
-The read-only **`types`** property of the {{domxref("ClipboardItem")}} interface returns an {{jsxref("Array")}} of {{Glossary("MIME type", 'MIME types')}} available within the {{domxref("ClipboardItem")}}.
+ویژگی فقط‑خواندنی **`types`** از رابط {{domxref("ClipboardItem")}} یک {{jsxref("Array")}} از {{Glossary("MIME type", 'انواع MIME')}} موجود در {{domxref("ClipboardItem")}} را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{jsxref("Array")}} of available {{Glossary("MIME type", 'MIME types')}}.
+یک {{jsxref("Array")}} از {{Glossary("MIME type", 'انواع MIME')}} موجود.
 
-## Examples
+## مثال‌ها
 
-In the below example, we're returning all items on the clipboard via the {{domxref("Clipboard.read()")}} method, then checking the `types` property for available types before utilizing the {{domxref("ClipboardItem.getType()")}} method to return each data item as a {{domxref("Blob")}}. If no clipboard contents is found for the specified type, an error is returned.
+در مثال زیر، تمام آیتم‌های موجود در کلیپ‌بورد را با استفاده از متد {{domxref("Clipboard.read()")}} دریافت می‌کنیم، سپس ویژگی `types` را برای یافتن انواع موجود بررسی می‌کنیم و پیش از استفاده از متد {{domxref("ClipboardItem.getType()")}} برای بازگرداندن هر آیتم داده به صورت یک {{domxref("Blob")}}، این کار را انجام می‌دهیم. اگر محتوای کلیپ‌بوردی برای نوع مشخص‌شده یافت نشود، یک خطا بازگردانده می‌شود.
 
 ```js
 async function getClipboardContents() {
@@ -41,15 +35,15 @@ async function getClipboardContents() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Clipboard API](/en-US/docs/Web/API/Clipboard_API)
 - [Image support for Async Clipboard article](https://web.dev/articles/async-clipboard)
