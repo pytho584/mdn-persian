@@ -1,7 +1,7 @@
 ---
 title: "BatteryManager: charging property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/charging"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,15 +14,15 @@ browser-compat: api.BatteryManager.charging
 
 {{ApiRef("Battery API")}}{{securecontext_header}}
 
-The **`charging`** read-only property of the {{domxref("BatteryManager")}} interface is a Boolean value indicating whether or not the device's battery is currently being charged. When its value changes, the {{domxref("BatteryManager/chargingchange_event", "chargingchange")}} event is fired.
+ویژگی فقط‌خواندنی **`charging`** در رابط {{domxref("BatteryManager")}} یک مقدار بولی است که نشان می‌دهد آیا باتری دستگاه در حال شارژ است یا خیر. وقتی مقدار آن تغییر کند، رویداد {{domxref("BatteryManager/chargingchange_event", "chargingchange")}} رخ می‌دهد.
 
-If the battery is charging or the user agent is unable to report the battery status information, this value is `true`. Otherwise, it is `false`.
+اگر باتری در حال شارژ باشد یا عامل کاربر نتواند اطلاعات وضعیت باتری را گزارش کند، این مقدار `true` است. در غیر این صورت، `false` است.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -42,15 +42,15 @@ navigator.getBattery().then((battery) => {
 
 {{ EmbedLiveSample('Examples', '100%', 30) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("BatteryManager")}}
 - {{domxref("Navigator.getBattery()")}}
