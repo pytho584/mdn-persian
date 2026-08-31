@@ -1,7 +1,7 @@
 ---
 title: "Bluetooth: getAvailability() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/getAvailability"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,13 +16,13 @@ browser-compat: api.Bluetooth.getAvailability
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`getAvailability()`** method of the {{DOMxRef("Bluetooth")}} interface _nominally_ returns `true` if the user agent can support Bluetooth (because the device has a Bluetooth adapter), and `false` otherwise.
+روش **`getAvailability()`** از رابط {{DOMxRef("Bluetooth")}} به‌صورت _اسمی_ مقدار `true` را برمی‌گرداند اگر عامل کاربر بتواند بلوتوث را پشتیبانی کند (زیرا دستگاه دارای آداپتور بلوتوث است) و در غیر این صورت `false` را برمی‌گرداند.
 
-The word "nominally" is used because if permission to use the Web Bluetooth API is disallowed by the [`Permissions-Policy: bluetooth`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/bluetooth) permission, the method will always return `false`.
-In addition, a user can configure their browser to return `false` from a `getAvailability()` call even if the browser does have an operational Bluetooth adapter, and vice versa. This setting value ignored if access is blocked by the permission.
+کلمه «اسمی» به این دلیل استفاده می‌شود که اگر اجازه استفاده از Web Bluetooth API توسط مجوز [`Permissions-Policy: bluetooth`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/bluetooth) رد شود، این روش همیشه `false` برمی‌گرداند.
+علاوه بر این، کاربر می‌تواند مرورگر خود را طوری پیکربندی کند که حتی اگر مرورگر دارای آداپتور بلوتوث عملیاتی باشد، فراخوانی `getAvailability()` مقدار `false` برگرداند و بالعکس. این مقدار تنظیمات در صورت مسدود شدن دسترسی توسط مجوز نادیده گرفته می‌شود.
 
-Even if `getAvailability()` returns `true` and the device actually has a Bluetooth adaptor, this does not necessarily mean that calling {{DOMxRef("Bluetooth.requestDevice","navigator.bluetooth.requestDevice()")}} will resolve with a {{DOMxRef("BluetoothDevice")}}.
-The Bluetooth adapter may not be powered, and a user might deny permission to use the API when prompted.
+حتی اگر `getAvailability()` مقدار `true` برگرداند و دستگاه واقعاً دارای آداپتور بلوتوث باشد، لزوماً به این معنی نیست که فراخوانی {{DOMxRef("Bluetooth.requestDevice","navigator.bluetooth.requestDevice()")}} با یک {{DOMxRef("BluetoothDevice")}} حل خواهد شد.
+ممکن است آداپتور بلوتوث روشن نباشد و ممکن است کاربر هنگام درخواست، اجازه استفاده از API را رد کند.
 
 ## Syntax
 
@@ -32,22 +32,22 @@ getAvailability()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-A {{JSxRef("Promise")}} that resolves with a {{JSxRef("Boolean")}}.
+یک {{JSxRef("Promise")}} که با یک {{JSxRef("Boolean")}} حل می‌شود.
 
-The {{JSxRef("Promise")}} will resolve with a value of `false` if access is disallowed by [`Permissions-Policy: bluetooth`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/bluetooth), if the user has configured the browser to always resolve with `false`, or if the device does not have a Bluetooth adapter.
-Otherwise it will resolve with `true`.
+{{JSxRef("Promise")}} با مقدار `false` حل می‌شود اگر دسترسی توسط [`Permissions-Policy: bluetooth`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/bluetooth) رد شده باشد، اگر کاربر مرورگر را به‌گونه‌ای پیکربندی کرده باشد که همیشه `false` برگرداند، یا اگر دستگاه دارای آداپتور بلوتوث نباشد.
+در غیر این صورت با `true` حل می‌شود.
 
 ### Exceptions
 
-None.
+هیچ.
 
 ## Examples
 
-The following snippet prints out a message in the console specifying whether or not Bluetooth is supported by the device:
+قطعه کد زیر پیامی را در کنسول چاپ می‌کند که مشخص می‌کند آیا بلوتوث توسط دستگاه پشتیبانی می‌شود یا نه:
 
 ```js
 navigator.bluetooth.getAvailability().then((available) => {
