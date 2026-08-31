@@ -1,7 +1,7 @@
 ---
 title: "AnimationPlaybackEvent: timelineTime property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationPlaybackEvent/timelineTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,22 +14,22 @@ browser-compat: api.AnimationPlaybackEvent.timelineTime
 
 {{ APIRef("Web Animations") }}
 
-The **`timelineTime`** read-only property of the {{domxref("AnimationPlaybackEvent")}} interface represents the time value of the animation's {{domxref("AnimationTimeline", "timeline")}} at the moment the event is queued. This will be unresolved if the animation was not associated with a timeline at the time the event was generated or if the associated timeline was inactive.
+ویژگی فقط‌خواندنی **`timelineTime`** از رابط {{domxref("AnimationPlaybackEvent")}} مقدار زمانی {{domxref("AnimationTimeline", "timeline")}} انیمیشن را در لحظه‌ای که رویداد در صف قرار می‌گیرد نشان می‌دهد. اگر انیمیشن در زمان تولید رویداد با یک خط زمانی مرتبط نبوده یا خط زمانی مرتبط غیرفعال بوده باشد، این مقدار نامشخص خواهد بود.
 
-## Value
+## مقدار
 
-A number representing the current time in milliseconds, or `null`.
+عددی که زمان فعلی را بر حسب میلی‌ثانیه نشان می‌دهد، یا `null`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
+- [API انیمیشن‌های وب](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("AnimationPlayBackEvent")}}
 - {{domxref("AnimationTimeline")}}
