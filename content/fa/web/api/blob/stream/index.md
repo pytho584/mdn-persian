@@ -1,62 +1,49 @@
 ---
 title: "Blob: stream() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream"
-status: "needs-translation"
----
-
----
-title: "Blob: stream() method"
 short-title: stream()
 slug: Web/API/Blob/stream
 page-type: web-api-instance-method
 browser-compat: api.Blob.stream
+translated_by: "n8n + AI"
 ---
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`stream()`** method of the {{domxref("Blob")}} interface returns a {{domxref("ReadableStream")}} which upon reading returns the data contained within the `Blob`.
+متد **`stream()`** از رابط {{domxref("Blob")}} یک {{domxref("ReadableStream")}} برمی‌گرداند که با خواندن آن، داده‌های موجود در `Blob` بازگردانده می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 stream()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("ReadableStream")}} which, upon reading, returns the contents of the
-`Blob`.
+یک {{domxref("ReadableStream")}} که با خواندن آن، محتویات `Blob` بازگردانده می‌شود.
 
-## Usage notes
+## نکات استفاده
 
-With `stream()` and the returned {{domxref("ReadableStream")}}, you gain
-several interesting capabilities:
+با `stream()` و {{domxref("ReadableStream")}} برگشتی، می‌توانید قابلیت‌های جالبی داشته باشید:
 
-- Call {{domxref("ReadableStream.getReader", "getReader()")}} on the returned stream
-  to get an object to use to read the data from the blob using methods such as the
-  {{domxref("ReadableStreamDefaultReader")}} interface's
-  {{domxref("ReadableStreamDefaultReader.read", "read()")}} method.
-- Call the returned stream's {{domxref("ReadableStream.pipeTo", "pipeTo()")}} method
-  to pipe the blob's data to a writable stream.
-- Call the returned stream's {{domxref("ReadableStream.tee", "tee()")}} method to
-  **tee** the readable stream. This returns an array containing two new
-  `ReadableStream` objects, each of which returns the contents of the
-  `Blob`.
-- Call the returned stream's {{domxref("ReadableStream.pipeThrough", "pipeThrough()")}} method to pipe the stream through a {{domxref("TransformStream")}} or any other readable and writable pair.
+- با فراخوانی {{domxref("ReadableStream.getReader", "getReader()")}} روی استریم برگشتی، یک شیء برای خواندن داده‌های blob با استفاده از روش‌هایی مانند متد {{domxref("ReadableStreamDefaultReader.read", "read()")}} از رابط {{domxref("ReadableStreamDefaultReader")}} دریافت کنید.
+- با فراخوانی متد {{domxref("ReadableStream.pipeTo", "pipeTo()")}} روی استریم برگشتی، داده‌های blob را به یک استریم قابل نوشتن (writable stream) هدایت کنید.
+- با فراخوانی متد {{domxref("ReadableStream.tee", "tee()")}} روی استریم برگشتی، استریم خواندنی را **شاخه‌شاخه (tee)** کنید. این کار یک آرایه شامل دو شیء جدید `ReadableStream` برمی‌گرداند که هرکدام محتویات `Blob` را بازمی‌گردانند.
+- با فراخوانی متد {{domxref("ReadableStream.pipeThrough", "pipeThrough()")}} روی استریم برگشتی، استریم را از طریق یک {{domxref("TransformStream")}} یا هر جفت خواندنی و نوشتنی دیگری هدایت کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Response.body")}}
-- [Streams API](/en-US/docs/Web/API/Streams_API)
+- [API استریم‌ها](/en-US/docs/Web/API/Streams_API)
