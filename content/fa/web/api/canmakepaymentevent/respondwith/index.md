@@ -1,7 +1,7 @@
 ---
 title: "CanMakePaymentEvent: respondWith() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CanMakePaymentEvent/respondWith"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,7 +16,7 @@ browser-compat: api.CanMakePaymentEvent.respondWith
 
 {{APIRef("Web-Based Payment Handler API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`respondWith()`** method of the {{domxref("CanMakePaymentEvent")}} interface enables the service worker to respond appropriately to signal whether it is ready to handle payments.
+متد **`respondWith()`** از رابط {{domxref("CanMakePaymentEvent")}} به سرویس‌ورکر اجازه می‌دهد تا به‌طور مناسب پاسخ دهد و سیگنال دهد که آیا آماده رسیدگی به پرداخت‌ها است یا نه.
 
 ## Syntax
 
@@ -27,11 +27,11 @@ respondWith(response)
 ### Parameters
 
 - `response`
-  - : A {{jsxref("Promise")}} that resolves with a boolean value to signal that it is ready to handle a payment request: (`true`), or not (`false`).
+  - : یک {{jsxref("Promise")}} که با یک مقدار بولین resolve می‌شود تا سیگنال دهد که آیا برای رسیدگی به درخواست پرداخت آماده است: (`true`) یا آماده نیست (`false`).
 
 ### Return value
 
-None (`undefined`).
+هیچ‌کدام (`undefined`).
 
 ## Examples
 
