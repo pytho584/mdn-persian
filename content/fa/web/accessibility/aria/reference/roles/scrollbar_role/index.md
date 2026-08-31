@@ -1,7 +1,7 @@
 ---
 title: "ARIA: scrollbar role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,166 +13,101 @@ spec-urls: https://w3c.github.io/aria/#scrollbar
 sidebar: accessibilitysidebar
 ---
 
-A `scrollbar` is a graphical object that controls the scrolling of content within a viewing area.
+یک `scrollbar` یک شیء گرافیکی است که پیمایش محتوا را در یک ناحیه نمایش کنترل می‌کند.
 
-## Description
+## توضیحات
 
-A `scrollbar` is a range that controls what part of a viewport's content is currently visible in the viewport's frame; whether the viewport is a full browser size, an iframe, or any element's [block formatting context](/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context).
+یک `scrollbar` یک محدوده است که کنترل می‌کند چه بخشی از محتوای یک نما (viewport) در حال حاضر در قاب نما قابل مشاهده است؛ چه نما به اندازه کامل مرورگر باشد، یک iframe، یا [بافت قالب‌بندی بلوکی](/en-US/docs/Web/CSS/Guides/Display/Block_formatting_context) هر عنصر.
 
-### What is scroll bar
+### نوار پیمایش چیست
 
-Many applications provide native scroll bars when the content area is larger than the application window. Scrollbars generally appear on the right or bottom of the viewing area. Native scroll bars appear as thin rectangular track areas the length of the viewport it controls with a piece of UI called a thumb or scroller that can be dragged along a track to move the associated content within the viewport. Some scrollbars have arrows at each end of the track that allow scrolling the viewport a short set distance when activated.
+بسیاری از برنامه‌ها زمانی که ناحیه محتوا بزرگ‌تر از پنجره برنامه است، نوارهای پیمایش بومی ارائه می‌دهند. نوارهای پیمایش معمولاً در سمت راست یا پایین ناحیه نمایش ظاهر می‌شوند. نوارهای پیمایش بومی به صورت نواحی مسیر مستطیلی باریکی به طول نمایی که کنترل می‌کنند ظاهر می‌شوند و دارای قطعه‌ای از رابط کاربری به نام دستگیره (thumb) یا اسکرولر (scroller) هستند که می‌توان آن را در امتداد یک مسیر کشید تا محتوای مرتبط درون نما حرکت کند. برخی نوارهای پیمایش در هر انتهای مسیر پیکان‌هایی دارند که با فعال شدن، امکان پیمایش نما را به یک فاصله کوتاه مشخص فراهم می‌کنند.
 
-Take this document as an example: if the viewport is the full browser window and the content is taller than the viewport, in most browsers the scroll bar on the right edge of the window represents the overall length of the page and the scroll thumb represents the portion of the page content that is currently in the viewport.
+این سند را به عنوان مثال در نظر بگیرید: اگر نما همان پنجره کامل مرورگر باشد و محتوا بلندتر از نما باشد، در بیشتر مرورگرها نوار پیمایش در لبه راست پنجره، طول کلی صفحه را نشان می‌دهد و دستگیره پیمایش، بخشی از محتوای صفحه را نشان می‌دهد که در حال حاضر در نما قرار دارد.
 
-Scroll bars may also appear on viewports that are sub-sections of the full browser window. Continuing with this content as our example, if this content is embedded in an {{HTMLElement('iframe')}} or {{HTMLElement('object')}}, the native vertical scroll bar will be the height of the frame. A scroll bar generally is the length of the viewport, but isn't required to be.
+نوارهای پیمایش همچنین ممکن است روی نماهایی ظاهر شوند که زیربخش‌هایی از پنجره کامل مرورگر هستند. با ادامه استفاده از این محتوا به عنوان مثال، اگر این محتوا در یک {{HTMLElement('iframe')}} یا {{HTMLElement('object')}} جاسازی شده باشد، نوار پیمایش عمودی بومی به ارتفاع قاب خواهد بود. یک نوار پیمایش معمولاً به اندازه طول نما است، اما لازم نیست چنین باشد.
 
-If you aren't currently seeing a scroll bar, it may be because your browser only displays the scroll bar when scrolling or only when an element's content is too big to fit in its block formatting context. Depending on the browser and operating system, scroll bars can be made to be visible even when the content fits in the viewport when no scrolling is necessary or even possible.
+اگر در حال حاضر نوار پیمایش را نمی‌بینید، ممکن است به این دلیل باشد که مرورگر شما فقط هنگام پیمایش نوار پیمایش را نشان می‌دهد یا فقط زمانی که محتوای یک عنصر بزرگ‌تر از آن است که در بافت قالب‌بندی بلوکی‌اش جا شود. بسته به مرورگر و سیستم‌عامل، ممکن است نوارهای پیمایش حتی زمانی که محتوا در نما جا می‌شود و پیمایش لازم یا حتی ممکن نیست، قابل مشاهده شوند.
 
 ### ARIA `scrollbar`
 
-It is always best to use native scroll bars. You can use the CSS {{CSSXref('overflow')}} property to ensure the appearance of native scroll bars. A [CSS scrollbar specification](https://drafts.csswg.org/css-scrollbars/) is being developed. Some browsers allow [styling scroll bars via prefixed pseudo-elements](/en-US/docs/Web/CSS/Reference/Selectors/::-webkit-scrollbar).
+همیشه بهتر است از نوارهای پیمایش بومی استفاده کنید. می‌توانید از ویژگی CSS {{CSSXref('overflow')}} برای اطمینان از ظاهر شدن نوارهای پیمایش بومی استفاده کنید. یک [مشخصات CSS برای نوار پیمایش](https://drafts.csswg.org/css-scrollbars/) در حال توسعه است. برخی مرورگرها اجازه [استایل‌دهی به نوارهای پیمایش از طریق شبه‌عناصر دارای پیشوند](/en-US/docs/Web/CSS/Reference/Selectors/::-webkit-scrollbar) را می‌دهند.
 
-Because native scroll bar styling has historically been limited, you may come across a scrollbar implemented in JavaScript that you need to support and make fully accessible. For this, you can use the `scrollbar` role to inform assistive technologies that a UI control is an interactive scrollbar.
+چون استایل‌دهی به نوار پیمایش بومی از نظر تاریخی محدود بوده است، ممکن است به یک نوار پیمایش پیاده‌سازی‌شده در جاوااسکریپت برخورد کنید که باید از آن پشتیبانی کنید و آن را کاملاً قابل دسترس کنید. برای این کار می‌توانید از نقش `scrollbar` استفاده کنید تا به فناوری‌های کمکی اطلاع دهید که یک کنترل رابط کاربری، یک نوار پیمایش تعاملی است.
 
-An element with the `scrollbar` role is a graphical object that controls the scrolling of content within a viewing area; it is the ARIA role which indicates an element is a scroll bar. The HTML element that is most similar is the `range` {{HTMLElement('input')}} type, [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range).
+عنصری با نقش `scrollbar` یک شیء گرافیکی است که پیمایش محتوا را در یک ناحیه نمایش کنترل می‌کند؛ این نقش ARIA نشان می‌دهد که یک عنصر نوار پیمایش است. عنصر HTML که بیشترین شباهت را دارد، نوع `range` از {{HTMLElement('input')}}، یعنی [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range) است.
 
-The `scrollbar` element has two required attributes: [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) and [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow). The `aria-controls` attribute references the [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) of the scrollable area it controls. The `aria-valuenow` property defines the current value of the scrollbar.
+عنصر `scrollbar` دو ویژگی الزامی دارد: [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) و [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow). ویژگی `aria-controls` به [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) ناحیه قابل پیمایشی که کنترل می‌کند ارجاع می‌دهد. ویژگی `aria-valuenow` مقدار فعلی نوار پیمایش را تعریف می‌کند.
 
-While the `aria-valuenow` is always required, the [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) and [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) properties only need to be set for the scrollbar role when the `scrollbar`'s minimum value is not 0 or the maximum value is not 100. The value of `aria-valuenow` must always be between the minimum and maximum inclusive values, or between `0` and `100` inclusive if the minimum and maximum values default to `0` and `100` respectively. `aria-valuenow` communicates how close the viewport is to the bottom of the document. Think of it like a progress bar, where the start of the document is the minimum value and the end of the document is the maximum value.
+در حالی که `aria-valuenow` همیشه الزامی است، ویژگی‌های [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) و [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) فقط زمانی برای نقش `scrollbar` باید تنظیم شوند که مقدار حداقل `scrollbar` برابر `0` نباشد یا مقدار حداکثر برابر `100` نباشد. مقدار `aria-valuenow` باید همیشه بین مقادیر حداقل و حداکثر (شامل آن‌ها) باشد، یا بین `0` و `100` (شامل آن‌ها) اگر مقادیر حداقل و حداکثر به ترتیب به طور پیش‌فرض `0` و `100` باشند. `aria-valuenow` نشان می‌دهد که نما چقدر به پایین سند نزدیک است. آن را مانند یک نوار پیشرفت در نظر بگیرید، جایی که شروع سند مقدار حداقل و پایان سند مقدار حداکثر است.
 
-A `scrollbar` represents the current value and range of possible values via the size of the scrollbar and position of the thumb with respect to the visible range of the orientation (horizontal or vertical) it controls. In other words, the `scrollbar` length (height or width) represents all the content within a viewport. The `aria-valuemin` value represents the beginning of the content and the scrollbar, the `aria-valuemax` value represents the end of the content and the end of the scrollbar. The `aria-valuenow` represents the content that is currently visible in the viewport and the current position, or value, of the movable thumb. The `aria-valuenow` value will generally be exposed as a percentage between `aria-valuemin` and `aria-valuemax` calculated by assistive technologies.
-
-> [!NOTE]
-> Assistive technologies generally render the value of `aria-valuenow` as a percent of a range between the value of `aria-valuemin` and `aria-valuemax`, unless [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext) is set. It is recommended to set the values for `aria-valuemin`, `aria-valuemax`, and `aria-valuenow` in a manner that is appropriate for this calculation.
-
-Like a native scroll bar, users interact with `scrollbar` elements directly or indirectly using mouse, touchpad, keyboard, and voice input. `scrollbar` role implementations must also accommodate all these interaction methods.
-
-When using a mouse, the user must be able to activate the `scrollbar` by clicking the scroll arrows at either end of the scroll bar, if present, clicking an empty portion of the scroll track, as well as clicking and dragging the scroll thumb.
-
-Keyboard scrolling must also be supported. When focus is within the viewport controlled by a `scrollbar`, the <kbd>Up Arrow</kbd> and <kbd>Down Arrow</kbd> (or <kbd>Left Arrow</kbd> and <kbd>Right Arrow</kbd> for a horizontal scroll bar) should move the scroll bar thumb proportionally. Additionally, the <kbd>Page Up</kbd>, <kbd>Page Down</kbd>, <kbd>Space</kbd>, and <kbd>Shift + Space</kbd> keys must move the content and the scroll thumb the height (or width) of the viewport for each key press until the bottom or top (or left or right) of the content is in view.
-
-JavaScript must be used to translate the `scrollbar` action into scrolling commands, providing the user with feedback by:
-
-1. Visually updating the `scrollbar` element,
-2. Scrolling the viewport's content, and
-3. Updating the [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) property value.
-
-The default orientation of the `scrollbar` role is vertical. Including [`aria-orientation="vertical"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation), in this case, is optional. The orientation represents the orientation of the scrollbar and the scrolling effect on the viewing area controlled by the scrollbar. If the scrolling is left to right or right to left and not top to bottom, include `aria-orientation="horizontal"` on the element with the `scrollbar` role.
+یک `scrollbar` مقدار فعلی و محدوده مقادیر ممکن را از طریق اندازه نوار پیمایش و موقعیت دستگیره نسبت به محدوده قابل مشاهده جهتی که کنترل می‌کند (افقی یا عمودی) نشان می‌دهد. به عبارت دیگر، طول `scrollbar` (ارتفاع یا عرض) تمام محتوای درون نما را نشان می‌دهد. مقدار `aria-valuemin` شروع محتوا و نوار پیمایش را نشان می‌دهد، مقدار `aria-valuemax` پایان محتوا و پایان نوار پیمایش را نشان می‌دهد. مقدار `aria-valuenow` محتوایی را که در حال حاضر در نما قابل مشاهده است و موقعیت یا مقدار فعلی دستگیره متحرک را نشان می‌دهد. مقدار `aria-valuenow` معمولاً به عنوان درصدی بین `aria-valuemin` و `aria-valuemax` توسط فناوری‌های کمکی محاسبه و ارائه می‌شود.
 
 > [!NOTE]
-> An accessible name is **required**. If the `scrollbar` role is applied to an HTML {{HTMLElement('input')}} element (or `<meter>` or `<progress>` element), the accessible name can come from the associated {{HTMLElement('label')}}. Otherwise use [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) if a visible label is present or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) if a visible label is not present.
+> فناوری‌های کمکی معمولاً مقدار `aria-valuenow` را به صورت درصدی از محدوده بین مقدار `aria-valuemin` و `aria-valuemax` ارائه می‌دهند، مگر اینکه [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext) تنظیم شده باشد. توصیه می‌شود مقادیر `aria-valuemin`، `aria-valuemax` و `aria-valuenow` را به گونه‌ای تنظیم کنید که برای این محاسبه مناسب باشد.
 
-### All descendants are presentational
+مانند یک نوار پیمایش بومی، کاربران با عناصر `scrollbar` به طور مستقیم یا غیرمستقیم با استفاده از ماوس، تاچ‌پد، صفحه‌کلید و ورودی صوتی تعامل می‌کنند. پیاده‌سازی‌های نقش `scrollbar` نیز باید همه این روش‌های تعامل را پشتیبانی کنند.
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in a `scrollbar`. To deal with this limitation, browsers, automatically apply role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) to all descendant elements of any `scrollbar` element as it is a role that does not support semantic children.
+هنگام استفاده از ماوس، کاربر باید بتواند `scrollbar` را با کلیک بر روی پیکان‌های پیمایش در هر انتهای نوار پیمایش، در صورت وجود، کلیک بر روی بخش خالی مسیر پیمایش، و همچنین کلیک و کشیدن دستگیره پیمایش فعال کند.
 
-For example, consider the following `scrollbar` element, which contains a heading.
+پیمایش با صفحه‌کلید نیز باید پشتیبانی شود. وقتی فوکوس در نمای کنترل‌شده توسط یک `scrollbar` قرار دارد، کلیدهای <kbd>Up Arrow</kbd> و <kbd>Down Arrow</kbd> (یا <kbd>Left Arrow</kbd> و <kbd>Right Arrow</kbd> برای نوار پیمایش افقی) باید دستگیره نوار پیمایش را به طور متناسب حرکت دهند. علاوه بر این، کلیدهای <kbd>Page Up</kbd>، <kbd>Page Down</kbd>، <kbd>Space</kbd> و <kbd>Shift + Space</kbd> باید با هر بار فشار دادن، محتوا و دستگیره پیمایش را به اندازه ارتفاع (یا عرض) نما حرکت دهند تا پایین یا بالای محتوا (یا چپ یا راست آن) در نما دیده شود.
+
+جاوااسکریپت باید برای تبدیل کنش `scrollbar` به دستورات پیمایش استفاده شود و با موارد زیر به کاربر بازخورد دهد:
+
+1. به‌روزرسانی بصری عنصر `scrollbar`،
+2. پیمایش محتوای نما، و
+3. به‌روزرسانی مقدار ویژگی [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow).
+
+جهت پیش‌فرض نقش `scrollbar` عمودی است. در این حالت، گنجاندن [`aria-orientation="vertical"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) اختیاری است. جهت، جهت‌گیری نوار پیمایش و اثر پیمایش بر روی ناحیه نمایش کنترل‌شده توسط نوار پیمایش را نشان می‌دهد. اگر پیمایش از چپ به راست یا راست به چپ باشد و نه از بالا به پایین، `aria-orientation="horizontal"` را روی عنصر دارای نقش `scrollbar` قرار دهید.
+
+> [!NOTE]
+> یک نام قابل دسترس **الزامی** است. اگر نقش `scrollbar` روی یک عنصر HTML {{HTMLElement('input')}} (یا عنصر `<meter>` یا `<progress>`) اعمال شود، نام قابل دسترس می‌تواند از {{HTMLElement('label')}} مرتبط بیاید. در غیر این صورت، اگر برچسب قابل مشاهده موجود است از [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) استفاده کنید، یا اگر برچسب قابل مشاهده وجود ندارد از [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) استفاده کنید.
+
+### همه عناصر فرزند نمایشی هستند
+
+برخی از انواع اجزای رابط کاربری وجود دارند که وقتی در یک API دسترس‌پذیری پلتفرم نمایش داده می‌شوند، فقط می‌توانند متن داشته باشند. APIهای دسترس‌پذیری راهی برای نمایش عناصر معنایی موجود درون یک `scrollbar` ندارند. برای مقابله با این محدودیت، مرورگرها به طور خودکار نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را به همه عناصر فرزند هر عنصر `scrollbar` اعمال می‌کنند، زیرا این نقشی است که از فرزندان معنایی پشتیبانی نمی‌کند.
+
+به عنوان مثال، عنصر `scrollbar` زیر را در نظر بگیرید که شامل یک عنوان است.
 
 ```html
 <div role="scrollbar"><h3>Title of my scrollbar</h3></div>
 ```
 
-Because descendants of `scrollbar` are presentational, the following code is equivalent:
+چون فرزندان `scrollbar` نمایشی هستند، کد زیر معادل است:
 
 ```html
 <div role="scrollbar"><h3 role="presentation">Title of my scrollbar</h3></div>
 ```
 
-From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree):
+از دیدگاه کاربر فناوری کمکی، عنوان وجود ندارد، زیرا قطعه‌کدهای قبلی با موارد زیر در [درخت دسترس‌پذیری](/en-US/docs/Glossary/Accessibility_tree) معادل هستند:
 
 ```html
 <div role="scrollbar">Title of my scrollbar</div>
 ```
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
-- [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) (Required)
-  - : Identifies the viewport, via the `id`, whose contents controlled by the scrollbar.
-- [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) (Required)
-  - : Set to a decimal value between `0`, or `aria-valuemin` if present, and `aria-valuemax` indicating the current value of the scrollbar.
+- [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) (الزامی)
+  - : نمای (viewport) را از طریق `id` شناسایی می‌کند که محتوای آن توسط نوار پیمایش کنترل می‌شود.
+- [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) (الزامی)
+  - : روی یک مقدار اعشاری بین `0`، یا `aria-valuemin` در صورت وجود، و `aria-valuemax` تنظیم شده و مقدار فعلی نوار پیمایش را نشان می‌دهد.
 - [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext)
-  - : Assistive technologies often present the value of `aria-valuenow` as a percentage. If this would not be helpful, use this property to make the scrollbar value more understandable to users.
+  - : فناوری‌های کمکی اغلب مقدار `aria-valuenow` را به صورت درصد ارائه می‌دهند. اگر این مفید نباشد، از این ویژگی استفاده کنید تا مقدار نوار پیمایش برای کاربران قابل‌فهم‌تر شود.
 - [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin)
-  - : Set to a decimal value representing the minimum value, and less than `aria-valuemax`. If not present, the default value is `0`.
+  - : روی یک مقدار اعشاری تنظیم می‌شود که نشان‌دهنده مقدار حداقل است و کمتر از `aria-valuemax` است. اگر وجود نداشته باشد، مقدار پیش‌فرض `0` است.
 - [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax)
-  - : Set to a decimal value representing the maximum value, and greater than `aria-valuemin`. If not present, the default value is `100`.
+  - : روی یک مقدار اعشاری تنظیم می‌شود که نشان‌دهنده مقدار حداکثر است و بیشتر از `aria-valuemin` است. اگر وجود نداشته باشد، مقدار پیش‌فرض `100` است.
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : When not using a native form control and therefore not able to associate the scrollbar with a {{HTMLElement('label')}}, if visible text is available that can provide the required accessible name, set to the [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) of an element containing text serving as a label. Otherwise, use `aria-label`.
+  - : وقتی از کنترل فرم بومی استفاده نمی‌کنید و بنابراین نمی‌توانید نوار پیمایش را با یک {{HTMLElement('label')}} مرتبط کنید، اگر متن قابل مشاهده موجود باشد که بتواند نام قابل دسترس مورد نیاز را فراهم کند، آن را روی [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) عنصری تنظیم کنید که حاوی متنی است که به عنوان برچسب عمل می‌کند. در غیر این صورت از `aria-label` استفاده کنید.
 - [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
-  - : If no {{htmlelement('label')}} can be used, and no visible text is present that can be referenced by `aria-labelledby`, provides the string value that labels the `scrollbar` element providing the required accessible name.
+  - : اگر هیچ {{htmlelement('label')}} قابل استفاده نباشد و هیچ متن قابل مشاهده‌ای وجود نداشته باشد که بتوان توسط `aria-labelledby` به آن ارجاع داد، مقدار رشته‌ای را فراهم می‌کند که عنصر `scrollbar` را برچسب‌گذاری می‌کند و نام قابل دسترس مورد نیاز را ارائه می‌دهد.
 - [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation)
-  - : By default, the orientation is `vertical`. The property can be included and set to `horizontal`, `undefined` (the default for all roles unless otherwise specified), or `vertical`.
+  - : به طور پیش‌فرض، جهت `vertical` است. ویژگی را می‌توان شامل کرد و روی `horizontal`، `undefined` (پیش‌فرض برای همه نقش‌ها مگر اینکه طور دیگری مشخص شود) یا `vertical` تنظیم کرد.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
 - <kbd>Up Arrow</kbd>
-  - : The content in the viewport moves up one line with the thumb moving up the scroll bar slider proportionally, until the top of the content and scrollbar are reached.
+  - : محتوای نما به اندازه یک خط به بالا حرکت می‌کند و دستگیره به طور متناسب در امتداد لغزنده نوار پیمایش به بالا حرکت می‌کند، تا زمانی که به بالای محتوا و نوار پیمایش برسد.
 - <kbd>Down Arrow</kbd>
-  - : The content in the viewport moves down one line with the thumb moving down the scroll bar slider proportionally, until the bottom of the content and scrollbar are reached.
-- <kbd>Left Arrow</kbd>
-  - : With horizontal scrolling, the content in the viewport moves left the width of one character with the thumb moving left across the scroll bar slider proportionally, until the left edge of the content abuts the left end of the viewport and the thumb is aligned on the left end of the scrollbar.
-- <kbd>Right Arrow</kbd>
-  - : With horizontal scrolling, the content in the viewport moves right the width of one character with the thumb moving right across the scroll bar slider proportionally, until the right edge of the content abuts the right end of the viewport and the thumb is aligned on the right end of the scrollbar.
-- <kbd>Page Up</kbd> and <kbd>Shift + Space</kbd>
-  - : The content in the viewport moves up the height of one viewport with the thumb moving up the scroll bar slider proportionally, until the top of the content and scrollbar are reached.
-- <kbd>Page Down</kbd> and <kbd>Space</kbd>
-  - : The content in the viewport moves down the height of one viewport with the thumb moving down the scroll bar slider proportionally, until the bottom of the content and scrollbar are reached.the bottom or top of the content is in view.
-
-## Examples
-
-The following is an example of a word likely being too long for a parent container.
-
-```html
-<div id="pi-label">Pi</div>
-<div id="pi">
-  3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679
-</div>
-<div
-  role="scrollbar"
-  aria-labelledby="pi-label"
-  aria-controls="pi"
-  aria-orientation="horizontal"
-  aria-valuenow="0"
-  aria-valuemin="0"
-  aria-valuemax="100">
-  <div id="thumb"></div>
-</div>
-```
-
-When using the ARIA roles instead of native UI features, CSS must be used to style the scrollbar and thumb and JavaScript must be used to handle all keyboard and pointer events.
-
-CSS could have been used to ensure the overflowing value of PI had a native scrollbar:
-
-```html
-<h3 id="PI">Pi</h3>
-<p class="pi" tabindex="0" aria-labelledby="PI">
-  3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679
-</p>
-```
-
-```css
-.pi {
-  overflow: auto;
-  max-width: 100%;
-}
-```
-
-The above CSS means a native scroll bar will appear when the user interacts with the paragraph's viewport if the length of the longest word in the paragraph is wider than the paragraphs containing box. The `tabindex` attribute was added to allow people using a keyboard to navigate to, and scroll around the overflowed content.
-
-## Specifications
-
-{{Specifications}}
-
-## See also
-
-- [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range),
-- HTML {{HTMLElement('progress')}} element
-- HTML {{HTMLElement('meter')}} element
-- Other range widgets include:
-  - [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)
-  - [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
-  - [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) (if focusable)
-  - [`progressbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role)
-  - [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
-- [Document `scroll` event](/en-US/docs/Web/API/Document/scroll_event)
+  - : محتوای نما به اندازه یک خط به پایین حرکت می‌کند و دستگیره به طور متناسب در امتداد لغزنده نوار پیمایش به پایین حرکت می‌کند، تا زمانی که به پایین محتوا و نوار پیمایش برسد.
+- <kbd>Left
