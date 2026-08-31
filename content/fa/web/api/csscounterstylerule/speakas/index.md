@@ -1,11 +1,5 @@
 ---
 title: "CSSCounterStyleRule: speakAs property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSCounterStyleRule/speakAs"
-status: "needs-translation"
----
-
----
-title: "CSSCounterStyleRule: speakAs property"
 short-title: speakAs
 slug: Web/API/CSSCounterStyleRule/speakAs
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CSSCounterStyleRule.speakAs
 
 {{APIRef("CSSOM")}}
 
-The **`speakAs`** property of the {{domxref("CSSCounterStyleRule")}} interface gets and sets the value of the {{cssxref("@counter-style/speak-as","speak-as")}} descriptor. If the descriptor does not have a value set, this attribute returns an empty string.
+ویژگی **`speakAs`** از رابط {{domxref("CSSCounterStyleRule")}}، مقدار توصیفگر {{cssxref("@counter-style/speak-as","speak-as")}} را دریافت و تنظیم می‌کند. اگر برای این توصیفگر مقداری تنظیم نشده باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-The following example shows a {{cssxref("@counter-style")}} rule. In JavaScript, `myRules[0]` is this `@counter-style` rule, returning `speakAs` gives us the value "bullets".
+مثال زیر یک قانون {{cssxref("@counter-style")}} را نشان می‌دهد. در جاوااسکریپت، `myRules[0]` همین قانون `@counter-style` است و `speakAs` مقدار «bullets» را به ما می‌دهد.
 
 ```css
 @counter-style box-corner {
@@ -38,10 +32,10 @@ let myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].speakAs); // "bullets"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
