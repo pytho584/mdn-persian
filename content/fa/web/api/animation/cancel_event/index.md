@@ -1,7 +1,7 @@
 ---
 title: "Animation: cancel event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/cancel_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,14 +14,14 @@ browser-compat: api.Animation.cancel_event
 
 {{ APIRef("Web Animations") }}
 
-The **`cancel`** event of the {{domxref("Animation")}} interface is fired when the {{domxref("Animation.cancel()")}} method is called or when the animation enters the `"idle"` play state from another state, such as when the animation is removed from an element before it finishes playing.
+رویداد **`cancel`** از رابط {{domxref("Animation")}} زمانی شلیک می‌شود که متد {{domxref("Animation.cancel()")}} فراخوانی شود یا زمانی که انیمیشن از حالت دیگری وارد وضعیت پخش `"idle"` شود، مانند زمانی که انیمیشن قبل از پایان پخش از یک عنصر حذف می‌شود.
 
 > [!NOTE]
-> Creating a new animation that is initially idle does not trigger a `cancel` event on the new animation.
+> ساخت یک انیمیشن جدید که در ابتدا در حالت بیکار قرار دارد، رویداد `cancel` را روی انیمیشن جدید فعال نمی‌کند.
 
-## Syntax
+## دستور زبان
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کنندهٔ رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("cancel", (event) => { })
@@ -29,15 +29,15 @@ addEventListener("cancel", (event) => { })
 oncancel = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("AnimationPlaybackEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("AnimationPlaybackEvent")}}. از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("AnimationPlaybackEvent")}}
 
-## Examples
+## مثال‌ها
 
-If this animation is canceled, remove its element.
+اگر این انیمیشن لغو شود، عنصر آن را حذف کنید.
 
 ```js
 animation.oncancel = (event) => {
@@ -45,15 +45,15 @@ animation.oncancel = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("Animation")}}
