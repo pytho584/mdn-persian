@@ -1,7 +1,7 @@
 ---
 title: "Animation: Animation() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/Animation"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,9 +14,9 @@ browser-compat: api.Animation.Animation
 
 {{ APIRef("Web Animations") }}
 
-The **`Animation()`** constructor of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) returns a new `Animation` object instance.
+سازنده **`Animation()`** از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) یک نمونه شیء `Animation` جدید برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new Animation()
@@ -24,16 +24,16 @@ new Animation(effect)
 new Animation(effect, timeline)
 ```
 
-### Parameters
+### پارامترها
 
 - `effect` {{optional_inline}}
-  - : The target effect, as an object based on the {{domxref("AnimationEffect")}} interface, to assign to the animation. Although in the future other effects such as `SequenceEffect`s or `GroupEffect`s might be possible, the only kind of effect currently available is {{domxref("KeyframeEffect")}}. This can be `null` (which is the default) to indicate that there should be no effect applied.
+  - : افکت هدف، به‌عنوان یک شیء مبتنی بر رابط {{domxref("AnimationEffect")}}، که به انیمیشن اختصاص داده می‌شود. اگرچه در آینده ممکن است افکت‌های دیگری مانند `SequenceEffect`s یا `GroupEffect`s ممکن باشند، تنها نوع افکت در حال حاضر {{domxref("KeyframeEffect")}} است. این می‌تواند `null` باشد (که مقدار پیش‌فرض است) تا نشان دهد که هیچ افکتی اعمال نشود.
 - `timeline` {{optional_inline}}
-  - : Specifies the `timeline` with which to associate the animation, as an object of a type based on the {{domxref("AnimationTimeline")}} interface. The default value is {{domxref("Document.timeline")}}, but this can be set to `null` as well.
+  - : مشخص‌کننده `timeline` ای که انیمیشن با آن مرتبط می‌شود، به‌عنوان یک شیء از نوع مبتنی بر رابط {{domxref("AnimationTimeline")}}. مقدار پیش‌فرض {{domxref("Document.timeline")}} است، اما می‌تواند روی `null` نیز تنظیم شود.
 
-## Examples
+## مثال‌ها
 
-In the [Follow the White Rabbit example](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#pausing_and_playing_animations), we can use the `Animation()` constructor to create an `Animation` for the `rabbitDownKeyframes` using the document's `timeline`:
+در [مثال Follow the White Rabbit](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#pausing_and_playing_animations)، می‌توانیم از سازنده `Animation()` برای ایجاد یک `Animation` برای `rabbitDownKeyframes` با استفاده از `timeline` سند استفاده کنیم:
 
 ```js
 const whiteRabbit = document.getElementById("rabbit");
@@ -47,15 +47,15 @@ const rabbitDownKeyframes = new KeyframeEffect(
 const rabbitDownAnimation = new Animation(rabbitDownKeyframes);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("Animation")}}
