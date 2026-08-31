@@ -1,11 +1,5 @@
 ---
 title: "CSS: supports() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS/supports_static"
-status: "needs-translation"
----
-
----
-title: "CSS: supports() static method"
 short-title: supports()
 slug: Web/API/CSS/supports_static
 page-type: web-api-static-method
@@ -14,39 +8,36 @@ browser-compat: api.CSS.supports_static
 
 {{APIRef("CSSOM")}}
 
-The **`CSS.supports()`** static method returns a boolean value
-indicating if the browser supports a given CSS feature, or not.
+متد ایستای **`CSS.supports()`** یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا مرورگر از یک ویژگی CSS مشخص پشتیبانی می‌کند یا نه.
 
-## Syntax
+## نحو
 
 ```js-nolint
 CSS.supports(propertyName, value)
 CSS.supports(supportCondition)
 ```
 
-### Parameters
+### پارامترها
 
-There are two distinct sets of parameters. The first one allows to test the support of
-a pair _property-value_:
+دو مجموعه پارامتر مجزا وجود دارد. مجموعه اول امکان آزمایش پشتیبانی از یک جفت _ویژگی-مقدار_ را فراهم می‌کند:
 
 - `propertyName`
-  - : A string containing the name of the CSS property to check.
+  - : رشته‌ای شامل نام ویژگی CSS که باید بررسی شود.
 - `value`
-  - : A string containing the value of the CSS property to check.
+  - : رشته‌ای شامل مقدار ویژگی CSS که باید بررسی شود.
 
-The second syntax takes one parameter matching the condition of
-{{cssxref("@supports")}}:
+سینتکس دوم یک پارامتر می‌گیرد که با شرط {{cssxref("@supports")}} مطابقت دارد:
 
 - `supportCondition`
-  - : A string containing the condition to check.
+  - : رشته‌ای شامل شرطی که باید بررسی شود.
 
-### Return value
+### مقدار بازگشتی
 
-`true` if the browser supports the rule, otherwise `false`.
+اگر مرورگر از قانون پشتیبانی کند، `true`؛ در غیر این صورت `false`.
 
-## Examples
+## مثال‌ها
 
-In the following examples, `result` is a boolean value indicating if the browser supports the given CSS feature.
+در مثال‌های زیر، `result` یک مقدار بولین است که نشان می‌دهد آیا مرورگر از ویژگی CSS داده‌شده پشتیبانی می‌کند یا نه.
 
 ```js
 result = CSS.supports("text-decoration-style", "blink");
@@ -58,19 +49,17 @@ result = CSS.supports(
 );
 ```
 
-For more examples and syntax features, see the {{cssxref("@supports")}} at-rule.
+برای نمونه‌های بیشتر و امکانات نحوی، به at-rule {{cssxref("@supports")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{cssxref("@supports")}} at-rule that allows for the same functionality but in a
-  declarative way.
-- The {{domxref("CSSSupportsRule")}} CSSOM class allowing to manipulate
-  {{cssxref("@supports")}} at-rules.
+- at-rule {{cssxref("@supports")}} که همان قابلیت را به شکلی اعلانی (declarative) فراهم می‌کند.
+- کلاس CSSOM {{domxref("CSSSupportsRule")}} که امکان دستکاری at-rule های {{cssxref("@supports")}} را می‌دهد.
