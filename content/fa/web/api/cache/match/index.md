@@ -1,7 +1,7 @@
 ---
 title: "Cache: match() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Cache/match"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,68 +14,42 @@ browser-compat: api.Cache.match
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`match()`** method of the {{domxref("Cache")}} interface returns a {{jsxref("Promise")}} that resolves to the {{domxref("Response")}} associated with the first matching request in the {{domxref("Cache")}} object.
-If no match is found, the {{jsxref("Promise")}} resolves to {{jsxref("undefined")}}.
+متد **`match()`** از رابط {{domxref("Cache")}} یک {{jsxref("Promise")}} برمی‌گرداند که به {{domxref("Response")}} مرتبط با اولین درخواست منطبق در شیء {{domxref("Cache")}} تحقق می‌یابد.
+اگر هیچ تطابقی یافت نشود، {{jsxref("Promise")}} به {{jsxref("undefined")}} تحقق می‌یابد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 match(request)
 match(request, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `request`
-  - : The {{domxref("Request")}} for which you are attempting to find responses in the
-    {{domxref("Cache")}}. This can be a {{domxref("Request")}} object or a URL string.
+  - : {{domxref("Request")}} که برای آن تلاش می‌کنید پاسخ‌ها را در {{domxref("Cache")}} بیابید. این می‌تواند یک شیء {{domxref("Request")}} یا یک رشته URL باشد.
 - `options` {{optional_inline}}
-  - : An object that sets options for the `match` operation.
-    The available options are:
+  - : شیءای که گزینه‌هایی را برای عملیات `match` تنظیم می‌کند.
+    گزینه‌های موجود عبارتند از:
     - `ignoreSearch`
-      - : A boolean value that specifies whether to
-        ignore the query string in the URL. For example, if set to
-        `true` the `?value=bar` part of
-        `https://example.com/?value=bar` would be ignored when performing a match.
-        It defaults to `false`.
+      - : یک مقدار بولین که مشخص می‌کند آیا رشته جستجو (query string) در URL نادیده گرفته شود یا نه. برای مثال، اگر روی `true` تنظیم شود، بخش `?value=bar` از `https://example.com/?value=bar` هنگام انجام تطبیق نادیده گرفته می‌شود. پیش‌فرض آن `false` است.
     - `ignoreMethod`
-      - : A boolean value that, when set to
-        `true`, prevents matching operations from validating the
-        {{domxref("Request")}} `http` method (normally only `GET`
-        and `HEAD` are allowed.) It defaults to `false`.
+      - : یک مقدار بولین که وقتی روی `true` تنظیم شود، از اعتبارسنجی متد `http` در {{domxref("Request")}} توسط عملیات تطبیق جلوگیری می‌کند (معمولاً فقط `GET` و `HEAD` مجاز هستند). پیش‌فرض آن `false` است.
     - `ignoreVary`
-      - : A boolean value that when set to
-        `true` tells the matching operation not to perform `VARY`
-        header matching — i.e., if the URL matches you will get a match regardless of
-        whether the {{domxref("Response")}} object has a `VARY` header. It
-        defaults to `false`.
+      - : یک مقدار بولین که وقتی روی `true` تنظیم شود، به عملیات تطبیق می‌گوید که تطبیق هدر `VARY` را انجام ندهد — یعنی اگر URL مطابقت داشته باشد، بدون توجه به اینکه شیء {{domxref("Response")}} هدر `VARY` دارد یا نه، تطبیق انجام می‌شود. پیش‌فرض آن `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to the first {{domxref("Response")}} that matches
-the request or to {{jsxref("undefined")}} if no match is found.
+یک {{jsxref("Promise")}} که به اولین {{domxref("Response")}} منطبق با درخواست، یا در صورت عدم یافتن تطبیق، به {{jsxref("undefined")}} تحقق می‌یابد.
 
 > [!NOTE]
-> `Cache.match()` is basically identical to
-> {{domxref("Cache.matchAll()")}}, except that rather than resolving with an array of
-> all matching responses, it resolves with the first matching response only (that is,
-> `response[0]`).
+> `Cache.match()` اساساً با {{domxref("Cache.matchAll()")}} یکسان است، با این تفاوت که به جای تحقق با آرایه‌ای از همه پاسخ‌های منطبق، فقط با اولین پاسخ منطبق تحقق می‌یابد (یعنی `response[0]`).
 
-## Examples
+## مثال‌ها
 
-This example is taken from the [custom offline page](https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/custom-offline-page/service-worker.js) example ([live demo](https://googlechrome.github.io/samples/service-worker/custom-offline-page/index.html)). It uses a cache to supply selected data when a request fails. A
-`catch()` clause is triggered when the call to `fetch()` throws an
-exception. Inside the `catch()` clause, `match()` is used to
-return the correct response.
+این مثال از نمونه [صفحه آفلاین سفارشی](https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/custom-offline-page/service-worker.js) گرفته شده است ([دموی زنده](https://googlechrome.github.io/samples/service-worker/custom-offline-page/index.html)). این مثال از یک کش برای تأمین داده‌های انتخاب‌شده وقتی درخواست شکست می‌خورد استفاده می‌کند. یک بند `catch()` زمانی فعال می‌شود که فراخوانی `fetch()` یک استثنا پرتاب کند. در داخل بند `catch()`، از `match()` برای بازگرداندن پاسخ صحیح استفاده می‌شود.
 
-In this example, only HTML documents retrieved with the GET HTTP verb will be
-cached. If our `if ()` condition is false, then this fetch handler won't
-intercept the request. If there are any other fetch handlers registered, they will get a
-chance to call `event.respondWith()`. If no fetch handlers call
-`event.respondWith()`, the request will be handled by the browser as if there
-were no service worker involvement. If `fetch()` returns a valid HTTP
-response with a response code in the 4xx or 5xx range, the `catch()` will
-NOT be called.
+در این مثال، فقط اسناد HTML که با فعل HTTP GET دریافت می‌شوند کش می‌شوند. اگر شرط `if ()` ما نادرست باشد، این هندلر fetch درخواست را رهگیری نمی‌کند. اگر هر هندلر fetch دیگری ثبت شده باشد، آن‌ها فرصت خواهند داشت تا `event.respondWith()` را فراخوانی کنند. اگر هیچ هندلر fetch ای `event.respondWith()` را فراخوانی نکند، درخواست توسط مرورگر طوری مدیریت می‌شود که گویی هیچ سرویس‌ورکاری درگیر نیست. اگر `fetch()` یک پاسخ HTTP معتبر با کد پاسخ در محدوده 4xx یا 5xx برگرداند، `catch()` فراخوانی **نخواهد** شد.
 
 ```js
 self.addEventListener("fetch", (event) => {
@@ -97,16 +71,16 @@ self.addEventListener("fetch", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 - {{domxref("Cache")}}
-- {{domxref("Window.caches")}} and {{domxref("WorkerGlobalScope.caches")}}
+- {{domxref("Window.caches")}} و {{domxref("WorkerGlobalScope.caches")}}
