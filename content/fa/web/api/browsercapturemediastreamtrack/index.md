@@ -1,7 +1,7 @@
 ---
 title: "BrowserCaptureMediaStreamTrack"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BrowserCaptureMediaStreamTrack"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,32 +15,32 @@ browser-compat: api.BrowserCaptureMediaStreamTrack
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}
 
-The **`BrowserCaptureMediaStreamTrack`** interface of the {{domxref("Screen Capture API", "Screen Capture API", "", "nocode")}} represents a single video track. It extends the {{domxref("MediaStreamTrack")}} class with methods to limit the part of a self-capture stream (for example, a user's screen or window) that is captured.
+رابط **`BrowserCaptureMediaStreamTrack`** از {{domxref("Screen Capture API", "Screen Capture API", "", "nocode")}} یک ترک ویدیویی واحد را نمایش می‌دهد. این رابط کلاس {{domxref("MediaStreamTrack")}} را با متدهایی برای محدود کردن بخشی از جریان خود-ضبط (مثلاً صفحه یا پنجره کاربر) که ضبط می‌شود، گسترش می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("BrowserCaptureMediaStreamTrack.clone", "clone()")}} {{Experimental_Inline}}
-  - : Returns an uncropped, unrestricted clone of the original `BrowserCaptureMediaStreamTrack`.
+  - : یک کلون بدون برش و بدون محدودیت از `BrowserCaptureMediaStreamTrack` اصلی بازمی‌گرداند.
 - {{domxref("BrowserCaptureMediaStreamTrack.cropTo", "cropTo()")}} {{Experimental_Inline}}
-  - : Crops a self-capture stream to the area in which a specified DOM element is rendered.
+  - : یک جریان خود-ضبط را به ناحیه‌ای که یک عنصر DOM مشخص در آن رندر شده است، برش می‌دهد.
 - {{domxref("BrowserCaptureMediaStreamTrack.restrictTo", "restrictTo()")}} {{Experimental_Inline}}
-  - : Restricts a self-capture stream to a specific DOM element.
+  - : یک جریان خود-ضبط را به یک عنصر DOM خاص محدود می‌کند.
 
-## Examples
+## مثال‌ها
 
-See [Using the Element Capture and Region Capture APIs](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture) for in-context example code.
+برای مشاهده کد نمونه در بافتار، [استفاده از APIهای Element Capture و Region Capture](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
-- [Using the Element Capture and Region Capture APIs](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture)
+- [استفاده از APIهای Element Capture و Region Capture](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture)
