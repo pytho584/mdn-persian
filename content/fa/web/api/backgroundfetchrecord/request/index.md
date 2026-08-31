@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRecord: request property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRecord/request"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,15 +16,15 @@ browser-compat: api.BackgroundFetchRecord.request
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`request`** read-only property of the {{domxref("BackgroundFetchRecord")}} interface returns the details of the resource to be fetched.
+ویژگی فقط‌خواندنی **`request`** در رابط {{domxref("BackgroundFetchRecord")}} جزئیات منبع مورد نظر برای دریافت را برمی‌گرداند.
 
 ## Value
 
-A {{domxref("Request")}}.
+یک {{domxref("Request")}}.
 
 ## Examples
 
-In this example an individual `BackgroundFetchRecord` is returned using {{domxref("BackgroundFetchManager.fetch()","BackgroundFetchManager.fetch()")}}. The `request` is returned and logged to the console.
+در این مثال، یک `BackgroundFetchRecord` با استفاده از {{domxref("BackgroundFetchManager.fetch()","BackgroundFetchManager.fetch()")}} برگردانده می‌شود. سپس `request` بازگردانده و در کنسول ثبت می‌شود.
 
 ```js
 bgFetch.match("/ep-5.mp3").then(async (record) => {
