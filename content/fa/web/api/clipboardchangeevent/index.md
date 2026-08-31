@@ -1,11 +1,5 @@
 ---
 title: "ClipboardChangeEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ClipboardChangeEvent"
-status: "needs-translation"
----
-
----
-title: ClipboardChangeEvent
 slug: Web/API/ClipboardChangeEvent
 page-type: web-api-interface
 status:
@@ -15,31 +9,31 @@ browser-compat: api.ClipboardChangeEvent
 
 {{APIRef("Clipboard API")}}{{SeeCompatTable}}
 
-The **`ClipboardChangeEvent`** interface of the {{domxref("Clipboard API", "", "", "nocode")}} represents events fired whenever the contents of the system clipboard are changed.
+رابط **`ClipboardChangeEvent`** از {{domxref("Clipboard API", "", "", "nocode")}} نشان‌دهنده رویدادهایی است که هرگاه محتویات کلیپ‌برد سیستم تغییر می‌کنند، فعال می‌شوند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("ClipboardChangeEvent.ClipboardChangeEvent", "ClipboardChangeEvent()")}} {{experimental_inline}}
-  - : Creates a new `ClipboardChangeEvent` event with the given parameters.
+  - : یک رویداد `ClipboardChangeEvent` جدید با پارامترهای داده شده ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent {{domxref("Event")}}_.
+_همچنین ویژگی‌هایی را از والد خود {{domxref("Event")}} به ارث می‌برد._
 
 - {{domxref("ClipboardChangeEvent.types")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : An array of strings representing the mandatory data types available on the system clipboard when the event was fired.
+  - : آرایه‌ای از رشته‌ها که نشان‌دهنده انواع داده‌های اجباری موجود در کلیپ‌برد سیستم در زمان فعال شدن رویداد است.
 - {{domxref("ClipboardChangeEvent.changeId")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A 128-bit integer representing a unique identifier for this specific clipboard change operation.
+  - : یک عدد صحیح ۱۲۸ بیتی که نشان‌دهنده یک شناسه یکتا برای این عملیات تغییر کلیپ‌برد خاص است.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific methods; inherits methods from its parent {{domxref("Event")}}_.
+_روش خاصی ندارد؛ روش‌ها را از والد خود {{domxref("Event")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-In this example, when the clipboard's contents are changed, the event listener logs the data types, change id, and the entire event object to the console. This is a `ClipboardChangeEvent` object of type `clipboardchange`.
+در این مثال، وقتی محتویات کلیپ‌برد تغییر می‌کنند، شنونده رویداد انواع داده‌ها، شناسه تغییر و کل شیء رویداد را در کنسول ثبت می‌کند. این یک شیء `ClipboardChangeEvent` از نوع `clipboardchange` است.
 
 ```js
 navigator.clipboard.addEventListener("clipboardchange", (event) => {
@@ -49,16 +43,16 @@ navigator.clipboard.addEventListener("clipboardchange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Copy-related events: {{domxref("Element/copy_event", "copy")}}, {{domxref("Element/cut_event", "cut")}}, {{domxref("Element/paste_event", "paste")}}
+- رویدادهای مرتبط با کپی: {{domxref("Element/copy_event", "copy")}}، {{domxref("Element/cut_event", "cut")}}، {{domxref("Element/paste_event", "paste")}}
 - {{domxref("ClipboardEvent")}}
 - [Clipboard API](/en-US/docs/Web/API/Clipboard_API)
