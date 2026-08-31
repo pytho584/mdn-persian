@@ -1,7 +1,7 @@
 ---
 title: "ARIA: comment role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/comment_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,16 +12,16 @@ page-type: aria-role
 sidebar: accessibilitysidebar
 ---
 
-The `comment` role semantically denotes a comment/reaction to some content on the page, or to a previous comment.
+نقش `comment` به‌طور معنایی یک دیدگاه/واکنش به برخی محتوا در صفحه، یا به یک دیدگاه قبلی را نشان می‌دهد.
 
 > [!NOTE]
-> The comment role is proposed in WAI-ARIA 1.3 ([Most recent ARIA draft](https://w3c.github.io/aria/)), which is still being drafted.
+> نقش comment در WAI-ARIA 1.3 ([آخرین پیش‌نویس ARIA](https://w3c.github.io/aria/)) پیشنهاد شده است که همچنان در حال تدوین است.
 
-## Examples
+## مثال‌ها
 
-In the following example we have a document section that has been commented. The commented section is marked up using `<span role="mark">`.
+در مثال زیر، یک بخش از سند داریم که بر روی آن دیدگاه ثبت شده است. بخش دارای دیدگاه با استفاده از `<span role="mark">` نشانه‌گذاری شده است.
 
-The related comment is marked up using an HTML structure wrapped with a `<div>` containing `role="comment"`.
+دیدگاه مربوطه با استفاده از یک ساختار HTML که در یک `<div>` با `role="comment"` قرار گرفته، نشانه‌گذاری شده است.
 
 ```html
 <p>
@@ -37,11 +37,11 @@ The related comment is marked up using an HTML structure wrapped with a `<div>` 
 </div>
 ```
 
-To associate the comment with the text being commented, we need to wrap the commented text with an element containing the [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) attribute, the value of which should be the ID of the comment.
+برای关联 کردن دیدگاه با متنی که بر روی آن دیدگاه ثبت شده، باید متن دارای دیدگاه را با عنصری که ویژگی [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) را دارد بپیچیم؛ مقدار این ویژگی باید شناسه (ID) دیدگاه باشد.
 
-### Multiple comments
+### چند دیدگاه
 
-Since `aria-details` can now accept multiple IDs, we can associate multiple comments with the same annotation, like so:
+از آنجا که `aria-details` اکنون می‌تواند چندین شناسه را بپذیرد، می‌توانیم چند دیدگاه را با همان حاشیه‌نویسی مرتبط کنیم، مانند زیر:
 
 ```html
 <p>
@@ -66,9 +66,9 @@ Since `aria-details` can now accept multiple IDs, we can associate multiple comm
 </div>
 ```
 
-### Nested comments
+### دیدگاه‌های تودرتو
 
-It's possible to nest comments inside one another, like so:
+امکان تودرتو کردن دیدگاه‌ها در یکدیگر وجود دارد، مانند زیر:
 
 ```html
 <div role="comment" id="thread-1" data-author="chris">
@@ -86,10 +86,10 @@ It's possible to nest comments inside one another, like so:
 </div>
 ```
 
-## Accessibility concerns
+## نگرانی‌های دسترس‌پذیری
 
-None.
+هیچ‌کدام.
 
-## Specifications
+## مشخصات
 
-Will be part of WAI-ARIA 1.3, which is still being drafted.
+بخشی از WAI-ARIA 1.3 خواهد بود که همچنان در حال تدوین است.
