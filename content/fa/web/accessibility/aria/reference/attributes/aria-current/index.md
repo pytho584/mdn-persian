@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-current attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,26 +13,26 @@ spec-urls: https://w3c.github.io/aria/#aria-current
 sidebar: accessibilitysidebar
 ---
 
-A non-null `aria-current` state on an element indicates that this element represents the current item within a container or set of related elements.
+حالت `aria-current` غیر-تهی روی یک عنصر نشان می‌دهد که این عنصر نشان‌دهنده مورد جاری در یک ظرف یا مجموعه‌ای از عناصر مرتبط است.
 
-## Description
+## توضیحات
 
-When you have a group of related elements, such as several links in a breadcrumb or steps in a multi-step flow, with one element in the group styled differently from the others to indicate to the sighted user that this is the current element within its group, the `aria-current` should be used to inform the assistive technology user what has been indicated via styling.
+وقتی گروهی از عناصر مرتبط دارید، مانند چندین پیوند در مسیر ناوبری (breadcrumb) یا مراحل یک فرآیند چندمرحله‌ای، و یک عنصر در گروه به‌گونه‌ای متفاوت از بقیه استایل‌دهی شده است تا به کاربر بینا نشان دهد که این عنصر جاری در گروه است، باید از `aria-current` استفاده کنید تا به کاربر فناوری کمکی اطلاع داده شود که چه چیزی از طریق استایل‌دهی نشان داده شده است.
 
-In a breadcrumb list, when a link within a set of pagination links is styled to indicate the user is currently on that page, `aria-current="page"` should be set on that link. In a multi step based process with a step indicator such as a multi-page survey or a multi step checkout or registration process, when the current step icon is visually different to represent that it is the current step, that icon's container should have `aria-current="step"` for assistive technology users who may not be able to "see" the visual difference.
+در یک لیست breadcrumb، وقتی پیوندی در مجموعه‌ای از پیوندهای صفحه‌بندی به‌گونه‌ای استایل می‌شود که نشان دهد کاربر در حال حاضر در آن صفحه است، باید `aria-current="page"` روی آن پیوند تنظیم شود. در یک فرآیند مبتنی بر مراحل چندگانه با نشانگر مرحله، مانند نظرسنجی چندصفحه‌ای یا فرآیند پرداخت یا ثبت‌نام چندمرحله‌ای، وقتی نماد مرحله جاری از نظر بصری متفاوت است تا نشان دهد مرحله جاری است، ظرف حاوی آن نماد باید برای کاربران فناوری کمکی که ممکن است نتوانند تفاوت بصری را «ببینند»، `aria-current="step"` داشته باشد.
 
-The `aria-current` attribute indicates the element on which it is set, to a value other than `false`, represents the current item within a container or set of related elements. Only mark one element in a set of elements as current with `aria-current`.
+ویژگی `aria-current` نشان می‌دهد که عنصری که روی آن تنظیم شده است، با مقداری غیر از `false`، نشان‌دهنده مورد جاری در یک ظرف یا مجموعه‌ای از عناصر مرتبط است. فقط یک عنصر را در مجموعه‌ای از عناصر با `aria-current` به‌عنوان جاری علامت‌گذاری کنید.
 
-The `aria-current` attribute accepts a limited list of [values](#values) including `page`, `step`, `location`, `date`, `time`, `true`, and `false`. Any non-null string value not included in this list of enumerated values is treated as if `aria-current="true"` were set, not the default `false` value. If the attribute is not present, is an empty string, is present with no value, or is set to `aria-current="false"` it is not exposed to the user.
+ویژگی `aria-current` فهرست محدودی از [مقادیر](#values) را می‌پذیرد، از جمله `page`، `step`، `location`، `date`، `time`، `true` و `false`. هر مقدار رشته‌ای غیر-تهی که در این فهرست از مقادیر شمارش‌شده نباشد، به‌گونه‌ای رفتار می‌شود که گویی `aria-current="true"` تنظیم شده است، نه مقدار پیش‌فرض `false`. اگر ویژگی وجود نداشته باشد، رشته خالی باشد، بدون مقدار باشد، یا روی `aria-current="false"` تنظیم شود، به کاربر نمایش داده نمی‌شود.
 
-When something is selected rather than current, such as a [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) in a [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role), use [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) to indicate the currently-displayed tabpanel.
+وقتی چیزی به‌جای «جاری بودن» «انتخاب شده» است، مانند یک [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) در یک [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role)، از [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) برای نشان دادن tabpanel نمایش‌داده‌شده فعلی استفاده کنید.
 
 > [!NOTE]
-> Don't use `aria-current` as a substitute for [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) in [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role), [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role), [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) or [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role).
+> از `aria-current` به‌عنوان جایگزینی برای [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) در [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)، [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role)، [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) یا [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) استفاده نکنید.
 
-## Example
+## مثال
 
-The breadcrumb for the "current page" should have `aria-current="page"` set on it.
+breadcrumb برای «صفحه جاری» باید `aria-current="page"` روی آن تنظیم شود.
 
 ```html
 <nav aria-label="Breadcrumb" class="breadcrumb">
@@ -56,42 +56,42 @@ The breadcrumb for the "current page" should have `aria-current="page"` set on i
 </nav>
 ```
 
-If the element representing the current page in the breadcrumb was not a link, the `aria-current` is optional.
+اگر عنصر نشان‌دهنده صفحه جاری در breadcrumb یک پیوند نبود، تنظیم `aria-current` اختیاری است.
 
-## Values
+## مقادیر
 
 - `page`
-  - : Represents the current page within a set of pages such as the link to the current document in a breadcrumb.
+  - : نشان‌دهنده صفحه جاری در مجموعه‌ای از صفحات، مانند پیوند به سند جاری در یک breadcrumb.
 - `step`
-  - : Represents the current step within a process such as the current step in an enumerated multi step checkout flow.
+  - : نشان‌دهنده مرحله جاری در یک فرآیند، مانند مرحله فعلی در یک فرآیند پرداخت چندمرحله‌ای شمارش‌شده.
 - `location`
-  - : Represents the current location within an environment or context such as the image that is visually highlighted as the current component of a flow chart.
+  - : نشان‌دهنده مکان جاری در یک محیط یا زمینه، مانند تصویری که به‌عنوان مؤلفه فعلی یک نمودار جریان به‌صورت بصری برجسته شده است.
 - `date`
-  - : Represents the current date within a collection of dates such as the current date within a calendar.
+  - : نشان‌دهنده تاریخ جاری در مجموعه‌ای از تاریخ‌ها، مانند تاریخ فعلی در یک تقویم.
 - `time`
-  - : Represents the current time within a set of times such as the current time within a timetable.
+  - : نشان‌دهنده زمان جاری در مجموعه‌ای از زمان‌ها، مانند زمان فعلی در یک جدول زمان‌بندی.
 - `true`
-  - : Represents the current item within a set.
-- `false` (default)
-  - : Does not represent the current item within a set.
+  - : نشان‌دهنده مورد جاری در یک مجموعه.
+- `false` (پیش‌فرض)
+  - : مورد جاری در یک مجموعه را نشان نمی‌دهد.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaCurrent")}}
-  - : The [`ariaCurrent`](/en-US/docs/Web/API/Element/ariaCurrent) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-current` attribute.
+  - : ویژگی [`ariaCurrent`](/en-US/docs/Web/API/Element/ariaCurrent)، بخشی از رابط {{domxref("Element")}}، مقدار ویژگی `aria-current` را بازتاب می‌دهد.
 - {{domxref("ElementInternals.ariaCurrent")}}
-  - : The [`ariaCurrent`](/en-US/docs/Web/API/ElementInternals/ariaCurrent) property of the {{domxref("ElementInternals")}} interface reflects the value of the `aria-current` attribute.
+  - : ویژگی [`ariaCurrent`](/en-US/docs/Web/API/ElementInternals/ariaCurrent) از رابط {{domxref("ElementInternals")}} مقدار ویژگی `aria-current` را بازتاب می‌دهد.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Usable in all roles; except for elements with the role of [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role), [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role), [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) and [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) where [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) should be used
+قابل استفاده در همه نقش‌ها؛ به‌جز عناصر با نقش [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)، [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role)، [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) و [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) که در آن‌ها باید از [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) استفاده شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected)
 - {{cssxref(':local-link')}}
-- [Breadcrumb navigation with `aria-current`](/en-US/docs/Web/CSS/How_to/Layout_cookbook/Breadcrumb_navigation)
+- [پیمایش Breadcrumb با `aria-current`](/en-US/docs/Web/CSS/How_to/Layout_cookbook/Breadcrumb_navigation)
