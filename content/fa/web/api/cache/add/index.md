@@ -1,7 +1,7 @@
 ---
 title: "Cache: add() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Cache/add"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,9 +14,9 @@ browser-compat: api.Cache.add
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`add()`** method of the {{domxref("Cache")}} interface takes a URL, retrieves it, and adds the resulting response object to the given cache.
+روش **`add()`** از رابط {{domxref("Cache")}} یک URL می‌گیرد، آن را بازیابی می‌کند، و شیء پاسخ حاصل را به کش داده‌شده اضافه می‌کند.
 
-The `add()` method is functionally equivalent to the following:
+روش `add()` از نظر عملکردی معادل کد زیر است:
 
 ```js
 fetch(url).then((response) => {
@@ -27,38 +27,38 @@ fetch(url).then((response) => {
 });
 ```
 
-For more complex operations, you'll need to use {{domxref("Cache.put","Cache.put()")}} directly.
+برای عملیات پیچیده‌تر، باید مستقیماً از {{domxref("Cache.put","Cache.put()")}} استفاده کنید.
 
 > [!NOTE]
-> `add()` will overwrite any key/value pair previously stored in the cache that matches the request.
+> `add()` هر جفت کلید/مقداری را که قبلاً در کش ذخیره شده و با درخواست مطابقت دارد، بازنویسی می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 add(request)
 ```
 
-### Parameters
+### پارامترها
 
 - `request`
-  - : A request for the resource you want to add to the cache. This can be a {{domxref("Request")}} object or a URL.
+  - : درخواستی برای منبعی که می‌خواهید به کش اضافه کنید. این می‌تواند یک شیء {{domxref("Request")}} یا یک URL باشد.
 
-    This parameter is used as a parameter to the {{domxref("Request.Request()", "Request()")}} constructor, so URLs follow the same rules as for that constructor. In particular, URLs may be relative to the base URL, which is the document's {{domxref("Node.baseURI", "baseURI")}} in a window context, or {{domxref("WorkerGlobalScope.location")}} in a worker context.
+    این پارامتر به عنوان پارامتری برای سازنده {{domxref("Request.Request()", "Request()")}} استفاده می‌شود، بنابراین URLها از همان قوانین آن سازنده پیروی می‌کنند. به‌طور خاص، URLها می‌توانند نسبت به URL پایه نسبی باشند، که {{domxref("Node.baseURI", "baseURI")}} سند در زمینه پنجره، یا {{domxref("WorkerGlobalScope.location")}} در زمینه کارگر است.
 
-### Return value
+### مقدار برگشتی
 
-A {{jsxref("Promise")}} that resolves with `undefined`.
+یک {{jsxref("Promise")}} که با `undefined` حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : The URL scheme is not `http` or `https`.
+  - : طرح URL `http` یا `https` نیست.
 
-    The Response status is not in the 200 range (i.e., not a successful response.) This occurs if the request does not return successfully, but also if the request is a _cross-origin no-cors_ request (in which case the reported status is always 0.)
+    وضعیت Response در محدوده ۲۰۰ نیست (یعنی پاسخ موفق نیست). این اتفاق می‌افتد اگر درخواست با موفقیت برنگردد، همچنین اگر درخواست یک درخواست _cross-origin no-cors_ باشد (در این صورت وضعیت گزارش‌شده همیشه ۰ است).
 
-## Examples
+## مثال‌ها
 
-This code block waits for an {{domxref("InstallEvent")}} to fire, then calls {{domxref("ExtendableEvent.waitUntil","waitUntil()")}} to handle the install process for the app. This consists of calling {{domxref("CacheStorage.open")}} to create a new cache, then using `Cache.add` to add an asset to it.
+این بلوک کد منتظر می‌ماند تا یک {{domxref("InstallEvent")}} فعال شود، سپس {{domxref("ExtendableEvent.waitUntil","waitUntil()")}} را برای مدیریت فرآیند نصب برنامه فراخوانی می‌کند. این شامل فراخوانی {{domxref("CacheStorage.open")}} برای ایجاد یک کش جدید، سپس استفاده از `Cache.add` برای افزودن یک دارایی به آن است.
 
 ```js
 this.addEventListener("install", (event) => {
@@ -66,16 +66,16 @@ this.addEventListener("install", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 - {{domxref("Cache")}}
-- {{domxref("Window.caches")}} and {{domxref("WorkerGlobalScope.caches")}}
+- {{domxref("Window.caches")}} و {{domxref("WorkerGlobalScope.caches")}}
