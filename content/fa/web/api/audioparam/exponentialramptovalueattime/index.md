@@ -1,7 +1,7 @@
 ---
 title: "AudioParam: exponentialRampToValueAtTime() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/exponentialRampToValueAtTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,14 +14,10 @@ browser-compat: api.AudioParam.exponentialRampToValueAtTime
 
 {{ APIRef("Web Audio API") }}
 
-The **`exponentialRampToValueAtTime()`** method of the {{domxref("AudioParam")}} Interface schedules a gradual exponential change in the value of the {{domxref("AudioParam")}}.
-The change starts at the time specified for the _previous_ event, follows an exponential ramp to the new value given in the `value` parameter, and reaches the new value at the time given in the
-`endTime` parameter.
+متد **`exponentialRampToValueAtTime()`** از رابط {{domxref("AudioParam")}} یک تغییر تدریجی نمایی در مقدار {{domxref("AudioParam")}} را برنامه‌ریزی می‌کند. تغییر از زمان مشخص‌شده برای رویداد _قبلی_ شروع می‌شود، از یک شیب نمایی به مقدار جدید داده شده در پارامتر `value` پیروی می‌کند و در زمان داده شده در پارامتر `endTime` به مقدار جدید می‌رسد.
 
 > [!NOTE]
-> Exponential ramps are considered more useful when changing
-> frequencies or playback rates than linear ramps because of the way the human ear
-> works.
+> شیب‌های نمایی در تغییر فرکانس‌ها یا نرخ‌های پخش نسبت به شیب‌های خطی مفیدتر در نظر گرفته می‌شوند، زیرا نحوه عملکرد گوش انسان به این صورت است.
 
 ## Syntax
 
@@ -32,22 +28,17 @@ exponentialRampToValueAtTime(value, endTime)
 ### Parameters
 
 - `value`
-  - : A floating point number representing the value the `AudioParam` will ramp
-    to by the given time.
+  - : یک عدد اعشاری که نشان‌دهنده مقداری است که `AudioParam` تا زمان داده شده به آن شیب می‌کند.
 - `endTime`
-  - : A double representing the exact time (in seconds) after the ramping starts that the
-    changing of the value will stop.
+  - : یک عدد اعشاری (دابل) که نشان‌دهنده زمان دقیق (بر حسب ثانیه) پس از شروع شیب است که تغییر مقدار متوقف می‌شود.
 
 ### Return value
 
-A reference to this `AudioParam` object. In some browsers older
-implementations of this interface return {{jsxref('undefined')}}.
+یک ارجاع به این شیء `AudioParam`. در برخی مرورگرها، پیاده‌سازی‌های قدیمی‌تر این رابط {{jsxref('undefined')}} را برمی‌گردانند.
 
 ## Examples
 
-In this example, we have a media source with two control buttons (see the [audio-param repo](https://github.com/mdn/webaudio-examples/tree/main/audio-param) for the source code, or [view the example live](https://mdn.github.io/webaudio-examples/audio-param/).) When these buttons are pressed, `exponentialRampToValueAtTime()`
-is used to fade the gain value up to 1.0, and down to 0, respectively. This is pretty
-useful for fade in/fade out effects:
+در این مثال، ما یک منبع رسانه با دو دکمه کنترل داریم (برای کد منبع به [مخزن audio-param](https://github.com/mdn/webaudio-examples/tree/main/audio-param) مراجعه کنید، یا [مثال را به صورت زنده](https://mdn.github.io/webaudio-examples/audio-param/) مشاهده کنید.) هنگامی که این دکمه‌ها فشرده می‌شوند، `exponentialRampToValueAtTime()` برای افزایش مقدار بهره به 1.0 و کاهش آن به 0 به ترتیب استفاده می‌شود. این برای افکت‌های محو شدن (fade in/fade out) بسیار مفید است:
 
 ```js
 // create audio context
@@ -83,9 +74,7 @@ expRampMinus.onclick = () => {
 ```
 
 > [!NOTE]
-> A value of 0.01 was used for the value to ramp down to in the
-> last function rather than 0, as an _invalid or illegal string_ error is thrown
-> if 0 is used — the value needs to be positive.
+> یک مقدار 0.01 برای مقداری که در آخرین تابع به آن شیب می‌کند به جای 0 استفاده شده است، زیرا اگر 0 استفاده شود خطای _رشته نامعتبر یا غیرقانونی_ پرتاب می‌شود — مقدار باید مثبت باشد.
 
 ## Specifications
 
@@ -97,4 +86,4 @@ expRampMinus.onclick = () => {
 
 ## See also
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
