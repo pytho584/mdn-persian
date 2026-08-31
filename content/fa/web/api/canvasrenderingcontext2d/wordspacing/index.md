@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: wordSpacing property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/wordSpacing"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: wordSpacing property"
 short-title: wordSpacing
 slug: Web/API/CanvasRenderingContext2D/wordSpacing
 page-type: web-api-instance-property
@@ -14,22 +8,19 @@ browser-compat: api.CanvasRenderingContext2D.wordSpacing
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.wordSpacing`** property of the [Canvas API](/en-US/docs/Web/API/Canvas_API) specifies the spacing between words when drawing text.
+ویژگی **`CanvasRenderingContext2D.wordSpacing`** از [Canvas API](/en-US/docs/Web/API/Canvas_API) فاصله بین کلمات را هنگام ترسیم متن مشخص می‌کند.
 
-This corresponds to the CSS {{cssxref("word-spacing")}} property.
+این ویژگی معادل ویژگی CSS {{cssxref("word-spacing")}} است.
 
-## Value
+## مقدار
 
-The word spacing as a string in the CSS {{cssxref("length")}} data format.
-The default is `0px`.
+فاصله کلمات به صورت یک رشته در قالب داده {{cssxref("length")}} CSS. پیش‌فرض `0px` است.
 
-The property can be used to get or set the spacing.
-The property value will remain unchanged if set to an invalid/unparsable value.
+از این ویژگی می‌توان برای دریافت یا تنظیم فاصله استفاده کرد. اگر مقدار نامعتبر/غیرقابل‌پردازش تنظیم شود، مقدار ویژگی بدون تغییر باقی می‌ماند.
 
-## Examples
+## مثال‌ها
 
-In this example we display the text "Hello World" three times, using the `wordSpacing` property to modify the spacing in each case.
-The spacing is also displayed for each case, using the value of the property.
+در این مثال، متن "Hello World" را سه بار نمایش می‌دهیم و از ویژگی `wordSpacing` برای تغییر فاصله در هر مورد استفاده می‌کنیم. فاصله نیز برای هر مورد با استفاده از مقدار ویژگی نمایش داده می‌شود.
 
 ### HTML
 
@@ -57,18 +48,18 @@ ctx.wordSpacing = "30px";
 ctx.fillText(`Hello world (${ctx.wordSpacing})`, 10, 140);
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CanvasRenderingContext2D.letterSpacing")}}
