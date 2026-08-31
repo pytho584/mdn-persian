@@ -1,11 +1,7 @@
 ---
 title: "AuthenticatorAttestationResponse: getTransports() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/getTransports"
-status: "needs-translation"
----
-
----
-title: "AuthenticatorAttestationResponse: getTransports() method"
+translated_by: "n8n + AI"
 short-title: getTransports()
 slug: Web/API/AuthenticatorAttestationResponse/getTransports
 page-type: web-api-instance-method
@@ -14,9 +10,9 @@ browser-compat: api.AuthenticatorAttestationResponse.getTransports
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`getTransports()`** method of the {{domxref("AuthenticatorAttestationResponse")}} interface returns an array of strings describing the different transports which may be used by the authenticator.
+متد **`getTransports()`** از رابط {{domxref("AuthenticatorAttestationResponse")}} یک آرایه از رشته‌ها را برمی‌گرداند که حمل‌ونقل‌های مختلفی را که ممکن است توسط احرازکننده استفاده شوند، توصیف می‌کند.
 
-Such transports may be USB, NFC, BLE, internal (applicable when the authenticator is not removable from the device), or a hybrid approach. Sites should not interpret this array but instead store it along with the rest of the credential information. In a subsequent {{domxref("CredentialsContainer.get()", "navigator.credentials.get()")}} call, the `transports` value(s) specified inside `publicKey.allowCredentials` should be set to the stored array value. This provides a hint to the browser as to which types of authenticators to try when making an assertion for this credential.
+این حمل‌ونقل‌ها ممکن است USB، NFC، BLE، داخلی (زمانی که احرازکننده از دستگاه قابل حذف نیست) یا یک رویکرد ترکیبی باشند. سایت‌ها نباید این آرایه را تفسیر کنند، بلکه باید آن را همراه با بقیه اطلاعات اعتبارنامه ذخیره کنند. در یک فراخوانی بعدی {{domxref("CredentialsContainer.get()", "navigator.credentials.get()")}}، مقدار(های) `transports` مشخص شده در داخل `publicKey.allowCredentials` باید به مقدار آرایه ذخیره شده تنظیم شوند. این یک نکته به مرورگر می‌دهد که هنگام تأیید این اعتبارنامه، چه نوع احرازکننده‌هایی را امتحان کند.
 
 ## Syntax
 
@@ -24,34 +20,33 @@ Such transports may be USB, NFC, BLE, internal (applicable when the authenticato
 getTransports()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-An {{jsxref("Array")}} of strings representing the different transports supported by the authenticator, in lexicographical order.
-Values may include:
+یک {{jsxref("Array")}} از رشته‌ها که نشان‌دهنده حمل‌ونقل‌های مختلف پشتیبانی شده توسط احرازکننده است، به ترتیب لغت‌نامه. مقادیر ممکن است شامل موارد زیر باشند:
 
 - `"ble"`
-  - : The authenticator may be used over [BLE (Bluetooth Low Energy)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy).
+  - : احرازکننده ممکن است از طریق [BLE (Bluetooth Low Energy)](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) استفاده شود.
 - `"hybrid"`
-  - : The authenticator can be used over a combination of (often separate) data transport and proximity mechanisms. This supports, for example, authentication on a desktop computer using a smartphone.
+  - : احرازکننده می‌تواند از طریق ترکیبی از مکانیسم‌های حمل‌ونقل داده و مجاورت (اغلب مجزا) استفاده شود. این به عنوان مثال، احراز هویت در رایانه رومیزی با استفاده از تلفن هوشمند را پشتیبانی می‌کند.
 - `"internal"`
-  - : The authenticator is specifically bound to the client device (cannot be removed).
+  - : احرازکننده به طور خاص به دستگاه سرویس‌گیرنده متصل است (قابل حذف نیست).
 - `"nfc"`
-  - : The authenticator may be used over [NFC (Near Field Communication)](https://en.wikipedia.org/wiki/Near-field_communication).
+  - : احرازکننده ممکن است از طریق [NFC (Near Field Communication)](https://en.wikipedia.org/wiki/Near-field_communication) استفاده شود.
 - `"usb"`
-  - : The authenticator can be contacted over USB.
+  - : احرازکننده می‌تواند از طریق USB مورد ارتباط قرار گیرد.
 
-## Examples
+## مثال‌ها
 
-See [Creating a public key credential](/en-US/docs/Web/API/CredentialsContainer/create#creating_a_public_key_credential) for a detailed example.
+برای یک مثال دقیق به [ایجاد یک اعتبارنامه کلید عمومی](/en-US/docs/Web/API/CredentialsContainer/create#creating_a_public_key_credential) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
