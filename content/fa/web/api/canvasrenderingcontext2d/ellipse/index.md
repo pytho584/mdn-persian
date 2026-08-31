@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: ellipse() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/ellipse"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: ellipse() method"
 short-title: ellipse()
 slug: Web/API/CanvasRenderingContext2D/ellipse
 page-type: web-api-instance-method
@@ -14,56 +8,45 @@ browser-compat: api.CanvasRenderingContext2D.ellipse
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.ellipse()`**
-method of the Canvas 2D API adds an elliptical arc to the current sub-path.
+متود **`CanvasRenderingContext2D.ellipse()`** در Canvas 2D API یک کمان بیضوی به زیرمسیر فعلی اضافه می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle)
 ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle, counterclockwise)
 ```
 
-The `ellipse()` method creates an elliptical arc centered at
-`(x, y)` with the radii `radiusX` and `radiusY`. The
-path starts at `startAngle` and ends at `endAngle`, and travels in
-the direction given by `counterclockwise` (defaulting to clockwise).
+متود `ellipse()` یک کمان بیضوی با مرکز `(x, y)` و شعاع‌های `radiusX` و `radiusY` ایجاد می‌کند. مسیر از `startAngle` شروع شده و تا `endAngle` ادامه می‌یابد و در جهتی که توسط `counterclockwise` تعیین می‌شود حرکت می‌کند (پیش‌فرض در جهت عقربه‌های ساعت است).
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : The x-axis (horizontal) coordinate of the ellipse's center.
+  - : مختصات محور x (افقی) مرکز بیضی.
 - `y`
-  - : The y-axis (vertical) coordinate of the ellipse's center.
+  - : مختصات محور y (عمودی) مرکز بیضی.
 - `radiusX`
-  - : The ellipse's major-axis radius. Must be non-negative.
+  - : شعاع محور اصلی بیضی. باید غیرمنفی باشد.
 - `radiusY`
-  - : The ellipse's minor-axis radius. Must be non-negative.
+  - : شعاع محور فرعی بیضی. باید غیرمنفی باشد.
 - `rotation`
-  - : The rotation of the ellipse, expressed in radians.
+  - : چرخش بیضی، بر حسب رادیان.
 - `startAngle`
-  - : The [eccentric angle](https://en.wikipedia.org/wiki/Angular_eccentricity) at which the ellipse starts, measured clockwise from the positive x-axis
-    and expressed in radians.
+  - : [زاویه خروج از مرکز](https://en.wikipedia.org/wiki/Angular_eccentricity) که بیضی از آن شروع می‌شود، در جهت عقربه‌های ساعت از محور x مثبت اندازه‌گیری شده و بر حسب رادیان بیان می‌شود.
 - `endAngle`
-  - : The [eccentric angle](https://en.wikipedia.org/wiki/Angular_eccentricity) at which the ellipse ends, measured clockwise from the positive x-axis and
-    expressed in radians.
+  - : [زاویه خروج از مرکز](https://en.wikipedia.org/wiki/Angular_eccentricity) که بیضی در آن به پایان می‌رسد، در جهت عقربه‌های ساعت از محور x مثبت اندازه‌گیری شده و بر حسب رادیان بیان می‌شود.
 - `counterclockwise` {{optional_inline}}
-  - : An optional boolean value which, if `true`, draws the ellipse
-    counterclockwise (anticlockwise). The default value is `false`
-    (clockwise).
+  - : یک مقدار بولی اختیاری که اگر `true` باشد، بیضی در خلاف جهت عقربه‌های ساعت رسم می‌شود. مقدار پیش‌فرض `false` (در جهت عقربه‌های ساعت) است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Drawing a full ellipse
+### رسم یک بیضی کامل
 
-This example draws an ellipse at an angle of π/4 radians (45°). To
-make a full ellipse, the arc begins at an angle of 0 radians (0°), and
-ends at an angle of 2π radians (360°).
+این مثال یک بیضی را با زاویه π/4 رادیان (۴۵ درجه) رسم می‌کند. برای رسم یک بیضی کامل، کمان از زاویه ۰ رادیان (۰ درجه) شروع شده و به زاویه ۲π رادیان (۳۶۰ درجه) ختم می‌شود.
 
 #### HTML
 
@@ -90,13 +73,13 @@ ctx.lineTo(200, 0);
 ctx.stroke();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Drawing_a_full_ellipse', 700, 250) }}
 
-### Various elliptical arcs
+### کمان‌های بیضوی گوناگون
 
-This example creates three elliptical paths with varying properties.
+این مثال سه مسیر بیضوی با ویژگی‌های متفاوت ایجاد می‌کند.
 
 #### HTML
 
@@ -126,19 +109,19 @@ ctx.ellipse(240, 75, 50, 30, Math.PI * 0.25, 0, Math.PI, true);
 ctx.fill();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Various_elliptical_arcs', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
-- Use {{domxref("CanvasRenderingContext2D.arc()")}} to draw a circular arc
+- رابط تعریف‌کننده این متود: {{domxref("CanvasRenderingContext2D")}}
+- از {{domxref("CanvasRenderingContext2D.arc()")}} برای رسم کمان دایره‌ای استفاده کنید.
