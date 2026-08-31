@@ -1,9 +1,8 @@
 ---
 title: "Multipart labels: Using ARIA for labels with embedded fields inside them"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Multipart_labels"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
-
 ---
 title: "Multipart labels: Using ARIA for labels with embedded fields inside them"
 short-title: Using ARIA for labels with embedded fields
@@ -12,17 +11,17 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-## Problem
+## مشکل
 
-You have a form where you ask your user a question, but the answer is mentioned in the question itself. A classic example we all know from our browser settings is the setting "Delete history after x days". "Delete history after" is to the left of the textbox, x is the number, for example 21, and the word "days" follows the textbox, forming a sentence that is easy to understand.
+فرمی دارید که در آن از کاربر سوالی می‌پرسید، اما پاسخ در خود سوال ذکر شده است. یک مثال کلاسیک که همه از تنظیمات مرورگر خود می‌شناسیم، تنظیم «حذف تاریخچه بعد از x روز» است. «حذف تاریخچه بعد از» در سمت چپ کادر متن قرار دارد، x عددی است مانند ۲۱، و کلمه «روز» بعد از کادر متن می‌آید و جمله‌ای را تشکیل می‌دهد که به راحتی قابل درک است.
 
-If you're using a screen reader, have you noticed that, when you go to this setting in Firefox, it tells you "Delete history after 21 days"?, followed by the announcement that you're in a textbox, and that it contains the number 21. Isn't that cool? You do not need to navigate around to find out the unit. "Days" could easily be "months" or "years", and in many ordinary dialogs, there is no way to find this out other than navigating around with screen reviewing commands.
+اگر از صفحه‌خوان استفاده می‌کنید، آیا توجه کرده‌اید که وقتی به این تنظیم در فایرفاکس می‌روید، به شما می‌گوید «حذف تاریخچه بعد از ۲۱ روز»؟ و سپس اعلام می‌کند که در یک کادر متن هستید و عدد ۲۱ در آن وجود دارد. جالب نیست؟ نیازی نیست برای پیدا کردن واحد، پیمایش کنید. «روز» به راحتی می‌توانست «ماه» یا «سال» باشد، و در بسیاری از دیالوگ‌های معمولی، راهی برای فهمیدن این موضوع جز با پیمایش با دستورات مرور صفحه وجود ندارد.
 
-The solution is in an ARIA attribute called `aria-labelledby`. Its parameter is a string that consists of the IDs of the HTML elements you want to concatenate into a single accessible name.
+راه‌حل در یک ویژگی ARIA به نام `aria-labelledby` است. پارامتر آن رشته‌ای است که شامل شناسه‌های عناصر HTML است که می‌خواهید در یک نام قابل دسترس واحد ترکیب کنید.
 
-Both `aria-labelledby` and `aria-describedby` are specified on the form element that is to be labelled, for example an `<input>` In both cases, the label for/label control bindings that may also exist are overridden by `aria-labelledby`. If on an HTML page you provide `aria-labelledby`, you should also provide a label for construct to also support older browsers that do not have ARIA support yet. With Firefox 3, your visually impaired users will automatically get better accessibility from the new attribute, but the users of older browsers are not left in the dark this way.
+هم `aria-labelledby` و هم `aria-describedby` روی عنصر فرمی که باید برچسب‌گذاری شود، مشخص می‌شوند، به عنوان مثال یک `<input>`. در هر دو مورد، اتصالات برچسب/کنترل که ممکن است وجود داشته باشند، توسط `aria-labelledby` نادیده گرفته می‌شوند. اگر در یک صفحه HTML `aria-labelledby` ارائه می‌دهید، باید یک ساختار برچسب نیز برای پشتیبانی از مرورگرهای قدیمی‌تر که هنوز از ARIA پشتیبانی نمی‌کنند، ارائه دهید. با فایرفاکس ۳، کاربران کم‌بینا به طور خودکار قابلیت دسترسی بهتری از ویژگی جدید دریافت می‌کنند، اما کاربران مرورگرهای قدیمی‌تر نیز به این ترتیب در تاریکی رها نمی‌شوند.
 
-### Example
+### مثال
 
 {{ EmbedLiveSample("Example") }}
 
@@ -48,13 +47,13 @@ body {
 <span id="shutdownUnit"> minutes</span>
 ```
 
-## A Note for JAWS 8 users
+## نکته‌ای برای کاربران JAWS 8
 
-JAWS 8.0 has its own logic to find labels, causing it to always override the accessibleName the textbox of an HTML document gets. With JAWS 8, I have not found a way to make it to accept the label from the example above. But NVDA and Window-Eyes do it just fine, and Orca on Linux also has no problems.
+JAWS 8.0 منطق خاص خود را برای یافتن برچسب‌ها دارد، که باعث می‌شود همیشه accessibleName کادر متن یک سند HTML را نادیده بگیرد. با JAWS 8، راهی برای مجبور کردن آن به پذیرش برچسب از مثال بالا پیدا نکرده‌ام. اما NVDA و Window-Eyes به خوبی این کار را انجام می‌دهند و Orca در لینوکس نیز مشکلی ندارد.
 
 > [!NOTE]
 > TBD: add more compatibility info
 
-## Can this be done without ARIA?
+## آیا این کار بدون ARIA امکان‌پذیر است؟
 
-Community member Ben Millard has pointed out in a blog post that [controls can be embedded in labels as shown in the above example using HTML 4](https://projectcerbera.com/blog/2008/03/#day24), by embedding the input into the label. Thanks for that info, Ben! It is very useful and shows that some techniques that have been available for years escape even the gurus sometimes. This technique works in Firefox; however, it doesn't currently work in many other browsers, including IE. For labels with embedded form controls, using `aria-labelledby` is still the best approach.
+یکی از اعضای انجمن، بن میلارد، در یک پست وبلاگی اشاره کرده است که [کنترل‌ها را می‌توان در برچسب‌ها جاسازی کرد، همانطور که در مثال بالا با HTML 4 نشان داده شده است](https://projectcerbera.com/blog/2008/03/#day24)، با جاسازی `<input>` درون `<label>`. با تشکر از این اطلاعات، بن! این بسیار مفید است و نشان می‌دهد که برخی از تکنیک‌هایی که سال‌ها در دسترس بوده‌اند، حتی از نظر کارشناسان نیز دور می‌مانند. این تکنیک در فایرفاکس کار می‌کند، اما در بسیاری از مرورگرهای دیگر، از جمله IE، در حال حاضر کار نمی‌کند. برای برچسب‌هایی با کنترل‌های فرم جاسازی شده، استفاده از `aria-labelledby` همچنان بهترین روش است.
