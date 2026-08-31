@@ -1,7 +1,7 @@
 ---
 title: "BluetoothCharacteristicProperties: writeWithoutResponse property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothCharacteristicProperties/writeWithoutResponse"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,19 +16,16 @@ browser-compat: api.BluetoothCharacteristicProperties.writeWithoutResponse
 
 {{securecontext_header}}{{APIRef("Bluetooth API")}}{{SeeCompatTable}}
 
-The **`writeWithoutResponse`** read-only
-property of the {{domxref("BluetoothCharacteristicProperties")}} interface returns a
-`boolean` that is `true` if the writing to the characteristic
-without response is permitted.
+ویژگی فقط خواندنی **`writeWithoutResponse`** از رابط {{domxref("BluetoothCharacteristicProperties")}} یک `boolean` برمی‌گرداند که اگر نوشتن روی مشخصه بدون پاسخ مجاز باشد، `true` است.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار `boolean`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
