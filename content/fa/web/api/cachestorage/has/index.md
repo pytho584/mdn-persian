@@ -1,7 +1,7 @@
 ---
 title: "CacheStorage: has() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/has"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,32 +14,28 @@ browser-compat: api.CacheStorage.has
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`has()`** method of the {{domxref("CacheStorage")}}
-interface returns a {{jsxref("Promise")}} that resolves to `true` if a
-{{domxref("Cache")}} object matches the `cacheName`.
+متد **`has()`** از رابط {{domxref("CacheStorage")}} یک {{jsxref("Promise")}} را برمی‌گرداند که اگر یک شیء {{domxref("Cache")}} با `cacheName` مطابقت داشته باشد، به `true` resolve می‌شود.
 
-You can access `CacheStorage` through the {{domxref("Window.caches")}} property in windows or through the {{domxref("WorkerGlobalScope.caches")}} property in workers.
+شما می‌توانید از طریق ویژگی {{domxref("Window.caches")}} در پنجره‌ها یا از طریق ویژگی {{domxref("WorkerGlobalScope.caches")}} در کارگرها به `CacheStorage` دسترسی داشته باشید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 has(cacheName)
 ```
 
-### Parameters
+### پارامترها
 
 - `cacheName`
-  - : A string representing the name of the {{domxref("Cache")}} object you are looking for in the {{domxref("CacheStorage")}}.
+  - : رشته‌ای است که نام شیء {{domxref("Cache")}} مورد جستجو را در {{domxref("CacheStorage")}} نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to `true` if the cache exists or
-`false` if not.
+یک {{jsxref("Promise")}} که اگر حافظه پنهان وجود داشته باشد به `true` و اگر وجود نداشته باشد به `false` resolve می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example first checks whether a cache called 'v1' exists. If so, we add a
-list of assets to it. If not then we run some kind of cache set-up function.
+مثال زیر ابتدا بررسی می‌کند که آیا حافظه پنهانی به نام `'v1'` وجود دارد. اگر وجود داشته باشد، فهرستی از دارایی‌ها را به آن اضافه می‌کنیم. اگر وجود نداشته باشد، یک تابع راه‌اندازی حافظه پنهان را اجرا می‌کنیم.
 
 ```js
 caches
@@ -56,16 +52,16 @@ caches
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 - {{domxref("Cache")}}
-- {{domxref("Window.caches")}} and {{domxref("WorkerGlobalScope.caches")}}
+- {{domxref("Window.caches")}} و {{domxref("WorkerGlobalScope.caches")}}
