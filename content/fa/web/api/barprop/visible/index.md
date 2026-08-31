@@ -1,42 +1,32 @@
 ---
 title: "BarProp: visible property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BarProp/visible"
-status: "needs-translation"
----
-
----
-title: "BarProp: visible property"
-short-title: visible
-slug: Web/API/BarProp/visible
-page-type: web-api-instance-property
-browser-compat: api.BarProp.visible
+translated_by: "n8n + AI"
 ---
 
 {{APIRef("DOM")}}
 
-The **`visible`** read-only property of the {{domxref("BarProp")}} interface returns `true` if the user interface element it represents is visible.
+ویژگی فقط خواندنی **`visible`** از رابط {{domxref("BarProp")}} در صورتی که عنصر رابط کاربری که نمایش می‌دهد قابل مشاهده باشد، `true` برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{jsxref("Boolean")}}, which is true if the top-level window is opened by {{domxref("window.open")}} with the [`popup`](/en-US/docs/Web/API/Window/open#popup) feature enabled.
+یک {{jsxref("Boolean")}} که اگر پنجره سطح بالا توسط {{domxref("window.open")}} با ویژگی [`popup`](/en-US/docs/Web/API/Window/open#popup) فعال باز شده باشد، `true` است.
 
 > [!NOTE]
-> Historically this represented whether the interface element used is visible
-> or not. But for privacy reasons, this no longer represents the actual visibility of each
-> interface element.
+> از نظر تاریخی این نشان‌دهنده قابل مشاهده بودن عنصر رابط کاربری استفاده شده بود. اما به دلایل حریم خصوصی، این دیگر نشان‌دهنده دید واقعی هر عنصر رابط کاربری نیست.
 
-## Examples
+## مثال‌ها
 
-The following example prints `true` to the console if the window is not a popup.
+مثال زیر اگر پنجره یک پاپ‌آپ نباشد، `true` را در کنسول چاپ می‌کند.
 
 ```js
 console.log(window.locationbar.visible);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
