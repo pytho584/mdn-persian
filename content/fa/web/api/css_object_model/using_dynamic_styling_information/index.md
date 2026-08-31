@@ -1,10 +1,4 @@
 ---
-title: "Using dynamic styling information"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information"
-status: "needs-translation"
----
-
----
 title: Using dynamic styling information
 slug: Web/API/CSS_Object_Model/Using_dynamic_styling_information
 page-type: guide
@@ -12,17 +6,17 @@ page-type: guide
 
 {{DefaultAPISidebar("CSSOM")}}
 
-The CSS Object Model (CSSOM), part of the DOM, exposes specific interfaces allowing manipulation of a wide amount of information regarding CSS. Initially defined in the _DOM Level 2 Style_ recommendation, these interfaces forms now a specification, _CSS Object Model (CSSOM)_ which aims at superseding it.
+مدل شیءِ CSS (CSSOM) که بخشی از DOM است، رابط‌های مشخصی را در معرض دید قرار می‌دهد که امکان دستکاری حجم گسترده‌ای از اطلاعات مربوط به CSS را فراهم می‌کنند. این رابط‌ها ابتدا در توصیه‌نامهٔ _DOM Level 2 Style_ تعریف شده بودند و اکنون یک مشخصات به نام _CSS Object Model (CSSOM)_ تشکیل می‌دهند که هدف آن جایگزین کردن آن توصیه‌نامه است.
 
-In many cases, and where possible, it is best practice to dynamically manipulate classes via the {{ domxref("element.className", "className") }} property since the ultimate appearance of all of the styling hooks can be controlled in a single stylesheet. One's JavaScript code also becomes cleaner since instead of being dedicated to styling details, it can focus on the overall semantics of each section it is creating or manipulating, leaving the precise style details to the stylesheet. However, there are cases where actually obtaining or manipulating the rules can be useful (whether for whole stylesheets or individual elements), and that is described in further detail below. Note also that, as with individual element's DOM styles, when speaking of manipulating the stylesheets, this is not actually manipulating the physical document(s), but merely the internal representation of the document.
+در بسیاری از موارد، و تا جایی که ممکن باشد، بهترین روش آن است که کلاس‌ها را به‌صورت پویا از طریق ویژگی {{ domxref("element.className", "className") }} تغییر دهید؛ زیرا می‌توان ظاهر نهایی همهٔ قلاب‌های استایل را در یک شیوه‌نامه (stylesheet) واحد کنترل کرد. به این ترتیب کد جاوااسکریپت شما نیز تمیزتر می‌شود؛ به‌جای آن‌که درگیر جزئیات استایل‌بندی شود، می‌تواند بر معنای کلی هر بخشی که می‌سازد یا تغییر می‌دهد تمرکز کند و جزئیات دقیق ظاهری را به شیوه‌نامه بسپارد. با این حال، مواردی وجود دارد که به‌دست آوردن یا دستکاری خودِ قواعد می‌تواند مفید باشد (چه برای کل شیوه‌نامه‌ها و چه برای عناصر تکی)؛ این موارد در ادامه با جزئیات بیشتری شرح داده شده‌اند. همچنین توجه داشته باشید که همان‌طور که در مورد استایل‌های DOM مربوط به یک عنصر وجود دارد، وقتی از دستکاری شیوه‌نامه‌ها صحبت می‌کنیم، مقصود دستکاریِ سند فیزیکی نیست، بلکه صرفاً تغییر نمایش داخلی سند است.
 
-The basic `style` object exposes the {{domxref("Stylesheet")}} and the {{domxref("CSSStylesheet")}} interfaces. Those interfaces contain members like `insertRule`, `selectorText`, and `parentStyleSheet` for accessing and manipulating the individual style rules that make up a CSS stylesheet.
+شیء پایهٔ `style` رابط‌های {{domxref("Stylesheet")}} و {{domxref("CSSStylesheet")}} را در معرض دید قرار می‌دهد. این رابط‌ها اعضایی مانند `insertRule`، `selectorText` و `parentStyleSheet` دارند که برای دسترسی به قواعد استایل تکیِ تشکیل‌دهندهٔ یک شیوه‌نامهٔ CSS و دستکاری آن‌ها به کار می‌روند.
 
-To get to the `style` objects from the `document`, you can use the {{domxref("Document.styleSheets")}} property and access the individual objects by index (e.g., `document.styleSheets[0]` is the first stylesheet defined for the document, etc.). You can also access the {{domxref("HTMLStyleElement.sheet", "sheet")}} property on a specific `<style>` element to get its associated stylesheet object.
+برای دسترسی به اشیاء `style` از روی `document`، می‌توانید از ویژگی {{domxref("Document.styleSheets")}} استفاده کنید و اشیاء تکی را با فهرست (index) مورد دسترسی قرار دهید (مثلاً `document.styleSheets[0]` اولین شیوه‌نامهٔ تعریف‌شده برای سند است، و به همین ترتیب). همچنین می‌توانید ویژگی {{domxref("HTMLStyleElement.sheet", "sheet")}} را روی یک عنصر `<style>` خاص صدا بزنید تا شیء شیوه‌نامهٔ مرتبط با آن را دریافت کنید.
 
-## Modify a stylesheet rule with CSSOM
+## تغییر یک قاعدهٔ شیوه‌نامه با CSSOM
 
-In this example the background of the page is set to `red` using CSS. The JavaScript then accesses the property using the CSSOM and changes the background to `cornflowerblue`.
+در این مثال، پس‌زمینهٔ صفحه با استفاده از CSS به رنگ `red` تنظیم شده است. سپس جاوااسکریپت با استفاده از CSSOM به این ویژگی دسترسی پیدا می‌کند و رنگ پس‌زمینه را به `cornflowerblue` تغییر می‌دهد.
 
 ```html live-sample___modify-rule
 <p>The stylesheet declaration for the body is modified via JavaScript.</p>
@@ -44,17 +38,17 @@ stylesheet.cssRules[0].style.backgroundColor = "cornflowerblue";
 
 {{EmbedLiveSample("modify-rule")}}
 
-The list of properties available in the DOM from the `style` property is given on the [DOM CSS Properties List](/en-US/docs/Web/CSS/Reference) page.
+فهرست ویژگی‌های موجود در DOM از طریق ویژگی `style` در صفحهٔ [فهرست ویژگی‌های CSS در DOM](/en-US/docs/Web/CSS/Reference) آمده است.
 
-To modify styles to a document using CSS syntax, one can insert rules or insert {{HTMLElement("style")}} tags whose `innerHTML` property is set to the desired CSS.
+برای تغییر استایل‌های یک سند با استفاده از نحو CSS، می‌توانید قاعده‌هایی را درج کنید یا تگ‌های {{HTMLElement("style")}} را اضافه کنید که ویژگی `innerHTML` آن‌ها روی CSS موردنظر تنظیم شده است.
 
-## Modify an element's style
+## تغییر استایل یک عنصر
 
-The element {{domxref("HTMLElement.style", "style")}} property (see also the section "DOM Style Object" below) can also be used to get and set the styles on an element. However, this property only returns style attributes that have been set _in-line_ (e.g., accessing `element.style.color` on an element defined as `<td style="background-color: lightblue">` returns the string `""`, even though the element may have a `color` declared via a stylesheet).
+ویژگی `style` عنصر (همچنین به بخش «شیء استایل DOM» در زیر مراجعه کنید) می‌تواند برای دریافت و تنظیم استایل‌های یک عنصر به کار رود. با این حال، این ویژگی فقط آن دسته از ویژگی‌های استایلی را برمی‌گرداند که به‌صورت _درونخطی_ تنظیم شده باشند (مثلاً دسترسی به `element.style.color` روی عنصری که به‌صورت `<td style="background-color: lightblue">` تعریف شده است، رشتهٔ `""` را برمی‌گرداند، حتی اگر ممکن است آن عنصر دارای `color` تعریف‌شده از طریق یک شیوه‌نامه باشد).
 
-Also, when you set this property on an element, you override any styles that have been set elsewhere for that element's particular property you are setting. Setting the `border` property, for example, will override settings made elsewhere for that element's `border` property in the head section, or external style sheets. However, this will not affect any other property declarations for that element's styles, such as padding or margin or font, for example.
+علاوه بر این، وقتی این ویژگی را روی یک عنصر تنظیم می‌کنید، هر استایلی را که برای همان ویژگی خاص این عنصر جای دیگری تعیین شده باشد، بازنویسی (override) می‌کنید. برای مثال، تنظیم ویژگی `border`، تنظیماتی را که برای ویژگی `border` این عنصر در بخش head یا در شیوه‌نامه‌های خارجی انجام شده است بازنویسی می‌کند. با این حال، این کار هیچ تأثیری بر سایر اعلان‌های ویژگیِ مربوط به استایل این عنصر ندارد؛ برای مثال بر `padding`، `margin` یا `font`.
 
-To change a particular element's style, you can adapt the following example for the element(s) you want to style.
+برای تغییر استایل یک عنصر خاص، می‌توانید مثال زیر را برای عنصر(هایی) که می‌خواهید استایل‌بندی کنید، تطبیق دهید.
 
 ```html
 <p id="p1">Click here to change background color.</p>
@@ -81,15 +75,15 @@ button.addEventListener("click", () => {
 
 {{ EmbedLiveSample('Modify_an_elements_style') }}
 
-The {{domxref("window.getComputedStyle", "getComputedStyle()")}} method on the `document.defaultView` object returns all styles that have actually been computed for an element.
+متد {{domxref("window.getComputedStyle", "getComputedStyle()")}} روی شیء `document.defaultView` همهٔ استایل‌هایی را برمی‌گرداند که واقعاً برای یک عنصر محاسبه شده‌اند.
 
-### Using the setAttribute method
+## استفاده از متد setAttribute
 
-Note that you can also change style of an element by getting a reference to it and then use its [`setAttribute`](/en-US/docs/Web/API/Element/setAttribute) method to specify the CSS property and its value.
+توجه داشته باشید که می‌توانید استایل یک عنصر را نیز با گرفتن ارجاعی به آن و سپس استفاده از متد [`setAttribute`](/en-US/docs/Web/API/Element/setAttribute) برای تعیین ویژگی CSS و مقدار آن تغییر دهید.
 
 ```js
 const el = document.getElementById("some-element");
 el.setAttribute("style", "background-color:darkblue;");
 ```
 
-Be aware, however, that `setAttribute` removes all other `style` properties that may already have been defined in the element's `style` object. If the `some-element` element above had an in–line `style` attribute of say `style="font-size: 18px"`, that value would be removed by the use of `setAttribute`.
+با این حال، توجه داشته باشید که `setAttribute` همهٔ ویژگی‌های `style` دیگری را که قبلاً در شیء `style` عنصر تعریف شده باشند حذف می‌کند. اگر عنصر `some-element` در بالا یک ویژگی `style` درونخطی مانند `style="font-size: 18px"` داشت، آن مقدار با استفاده از `setAttribute` حذف می‌شود.
