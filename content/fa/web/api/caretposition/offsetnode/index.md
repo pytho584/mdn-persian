@@ -1,11 +1,5 @@
 ---
 title: "CaretPosition: offsetNode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CaretPosition/offsetNode"
-status: "needs-translation"
----
-
----
-title: "CaretPosition: offsetNode property"
 short-title: offsetNode
 slug: Web/API/CaretPosition/offsetNode
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CaretPosition.offsetNode
 
 {{APIRef("CSSOM view API")}}
 
-The **`offsetNode`** property of the {{domxref("CaretPosition")}} interface returns a {{domxref("Node")}} containing the found node at the caret's position.
+خاصیت **`offsetNode`** از رابط {{domxref("CaretPosition")}} یک {{domxref("Node")}} را برمی‌گرداند که شامل گره پیدا شده در موقعیت مکان‌نما (caret) است.
 
-## Value
+## مقدار
 
-A {{domxref("Node")}}.
+یک {{domxref("Node")}}.
 
-## Examples
+## مثال‌ها
 
-This example logs the `offsetNode` and `offset` of the caret position when clicking inside the input field.
+این مثال، `offsetNode` و `offset` موقعیت مکان‌نما را هنگام کلیک کردن درون فیلد ورودی، در لاگ ثبت می‌کند.
 
 ```html
 <input aria-label="text field" value="Click inside this input field" />
@@ -77,15 +71,15 @@ function log(text) {
 
 {{EmbedLiveSample("Examples", "", 300)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node")}}
 - {{domxref("Document.caretPositionFromPoint()")}}
