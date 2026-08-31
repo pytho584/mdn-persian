@@ -1,7 +1,5 @@
 ---
 title: "CSSFunctionRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionRule"
-status: "needs-translation"
 ---
 
 ---
@@ -15,35 +13,35 @@ browser-compat: api.CSSFunctionRule
 
 {{ APIRef("CSSOM") }}{{SeeCompatTable}}
 
-The **`CSSFunctionRule`** interface of the [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model) represents CSS {{cssxref("@function")}} (custom function) [at-rules](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+رابط **`CSSFunctionRule`** در [مدل شیءِ CSS](/en-US/docs/Web/API/CSS_Object_Model) نمایانگر [قواعد at](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) مربوط به تابع سفارشی ({{cssxref("@function")}}) در CSS است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from {{domxref("CSSGroupingRule")}}._
+_این رابط همچنین ویژگی‌هایی را از {{domxref("CSSGroupingRule")}} به ارث می‌برد._
 
 - {{domxref("CSSFunctionRule.name")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : Returns a string representing the custom function's name.
+  - : رشته‌ای را برمی‌گرداند که نام تابع سفارشی را نشان می‌دهد.
 - {{domxref("CSSFunctionRule.returnType")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : Returns a string representing the custom function's return type.
+  - : رشته‌ای را برمی‌گرداند که نوع بازگشتی تابع سفارشی را نشان می‌دهد.
 
-## Instance methods
+## متدهای نمونه
 
-_This interface also inherits methods from {{domxref("CSSGroupingRule")}}._
+_این رابط همچنین متدهایی را از {{domxref("CSSGroupingRule")}} به ارث می‌برد._
 
 - {{domxref("CSSFunctionRule.getParameters()")}} {{experimental_inline}}
-  - : Returns an array of objects representing the custom function's parameters.
+  - : آرایه‌ای از اشیاء را برمی‌گرداند که پارامترهای تابع سفارشی را نشان می‌دهند.
 
-## Examples
+## مثال‌ها
 
-### Basic `CSSFunctionRule` usage
+### استفادهٔ پایه از `CSSFunctionRule`
 
-In this example, we define a CSS custom function and then access it using the CSSOM.
+در این مثال، یک تابع سفارشی CSS تعریف می‌کنیم و سپس با استفاده از CSSOM به آن دسترسی پیدا می‌کنیم.
 
 #### CSS
 
-Our CSS defines a custom function using the {{cssxref("@function")}} at-rule. The function is called `--lighter()`, and outputs a lightened version of an input color. `--lighter()` accepts two parameters, a {{cssxref("&lt;color&gt;")}} and a {{cssxref("&lt;number&gt;")}}. It returns an {{cssxref("color_value/oklch", "oklch()")}} color created using [relative color syntax](/en-US/docs/Web/CSS/Guides/Colors/Using_relative_colors); the input color is transformed into an `oklch()` color and its lightness channel is increased by the input number.
+CSS ما با استفاده از قاعدهٔ at مربوط به {{cssxref("@function")}} یک تابع سفارشی تعریف می‌کند. نام این تابع `--lighter()` است و نسخهٔ روشن‌تری از یک رنگ ورودی را خروجی می‌دهد. `--lighter()` دو پارامتر می‌پذیرد: یک {{cssxref("&lt;color&gt;")}} و یک {{cssxref("&lt;number&gt;")}}. این تابع یک رنگ {{cssxref("color_value/oklch", "oklch()")}} را که با استفاده از [نحو رنگ نسبی](/en-US/docs/Web/CSS/Guides/Colors/Using_relative_colors) ساخته شده است برمی‌گرداند؛ رنگ ورودی به یک رنگ `oklch()` تبدیل می‌شود و کانال روشنایی آن به اندازهٔ عدد ورودی افزایش می‌یابد.
 
 ```css live-sample___cssfunctionrule-basics
 @function --lighter(--color <color>, --lightness-adjust <number>: 0.2) returns
@@ -52,9 +50,9 @@ Our CSS defines a custom function using the {{cssxref("@function")}} at-rule. Th
 }
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-Our script starts by getting a reference to the stylesheet attached to our document using {{domxref("HTMLStyleElement.sheet")}}, then getting a reference to the only rule in the stylesheet, the `CSSFunctionRule` — via {{domxref("CSSStylesheet.cssRules")}}. We then log each of the `CSSFunctionRule` members to the console.
+اسکریپت ما ابتدا با استفاده از {{domxref("HTMLStyleElement.sheet")}} ارجاعی به شیوه‌نامهٔ متصل به سند می‌گیرد و سپس از طریق {{domxref("CSSStylesheet.cssRules")}} ارجاعی به تنها قاعدهٔ موجود در شیوه‌نامه، یعنی `CSSFunctionRule`، می‌گیرد. سپس هر یک از اعضای `CSSFunctionRule` را در کنسول ثبت می‌کنیم.
 
 ```js live-sample___cssfunctionrule-basics
 // Get a CSSFunctionRule
@@ -66,9 +64,9 @@ console.log(cssFunc.returnType);
 console.log(cssFunc.getParameters());
 ```
 
-- The `name` property is equal to `--lighter`.
-- The `returnType` property is equal to `<color>`.
-- The `getParameters()` method returns an array that looks like so:
+- ویژگی `name` برابر با `--lighter` است.
+- ویژگی `returnType` برابر با `<color>` است.
+- متد `getParameters()` آرایه‌ای برمی‌گرداند که به این شکل است:
   ```js
   [
     { name: "--color", type: "<color>" },
@@ -76,15 +74,15 @@ console.log(cssFunc.getParameters());
   ];
   ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{cssxref("@function")}}
 - {{domxref("CSSFunctionDescriptors")}}
