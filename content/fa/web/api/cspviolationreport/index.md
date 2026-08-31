@@ -1,10 +1,4 @@
 ---
-title: "CSPViolationReport"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSPViolationReport"
-status: "needs-translation"
----
-
----
 title: CSPViolationReport
 slug: Web/API/CSPViolationReport
 page-type: web-api-interface
@@ -13,58 +7,58 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}
 
-The `CSPViolationReport` dictionary of the [Reporting API](/en-US/docs/Web/API/Reporting_API) represents a report that is generated when a document violates its [Content Security Policy (CSP)](/en-US/docs/Web/HTTP/Guides/CSP).
+دیکشنری `CSPViolationReport` از [Reporting API](/en-US/docs/Web/API/Reporting_API) گزارشی را نشان می‌دهد که وقتی یک سند [سیاست امنیت محتوا (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) خود را نقض می‌کند، تولید می‌شود.
 
-Reports of this type can be observed from within a page using a {{domxref("ReportingObserver")}}, and a serialized version can be sent to [reporting server endpoints](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints).
+گزارش‌های این نوع را می‌توان از داخل یک صفحه با استفاده از {{domxref("ReportingObserver")}} مشاهده کرد و یک نسخه سریالی شده را می‌توان به [نقاط پایانی سرور گزارش‌دهی](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) ارسال کرد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `body`
-  - : The body of the report.
-    This is an object with the following properties:
+  - : بدنه گزارش.
+    این یک شیء با ویژگی‌های زیر است:
     - {{domxref("CSPViolationReport.blockedURL","blockedURL")}}
-      - : A string representing either the type or the URL of the resource that was blocked because it violates the CSP.
+      - : رشته‌ای که نشان‌دهنده نوع یا URL منبعی است که به دلیل نقض CSP مسدود شده است.
     - {{domxref("CSPViolationReport.columnNumber", "columnNumber")}}
-      - : The character position in the line of the script at which the violation occurred.
+      - : موقعیت کاراکتر در خط اسکریپت که نقض در آن رخ داده است.
     - {{domxref("CSPViolationReport.disposition","disposition")}}
-      - : A string indicating whether the violation was enforced or only reported.
-        This can have the value `"enforce"` for violations of policies set with {{httpheader("Content-Security-Policy")}}, or `"reporting"` for policies set with {{httpheader("Content-Security-Policy-Report-Only")}}.
+      - : رشته‌ای که نشان می‌دهد نقض اعمال شده یا فقط گزارش شده است.
+        این مقدار می‌تواند `"enforce"` برای نقض سیاست‌های تنظیم شده با {{httpheader("Content-Security-Policy")}}، یا `"reporting"` برای سیاست‌های تنظیم شده با {{httpheader("Content-Security-Policy-Report-Only")}} باشد.
     - {{domxref("CSPViolationReport.documentURL","documentURL")}}
-      - : A string representing the URL of the document or worker in which the violation was found.
+      - : رشته‌ای که نشان‌دهنده URL سند یا workerای است که نقض در آن یافت شده است.
     - {{domxref("CSPViolationReport.effectiveDirective","effectiveDirective")}}
-      - : A string representing the directive whose enforcement uncovered the violation.
+      - : رشته‌ای که نشان‌دهنده دستورالعملی است که اعمال آن نقض را آشکار کرده است.
     - {{domxref("CSPViolationReport.lineNumber", "lineNumber")}}
-      - : The line number in the script at which the violation occurred.
+      - : شماره خط در اسکریپت که نقض در آن رخ داده است.
     - {{domxref("CSPViolationReport.originalPolicy","originalPolicy")}}
-      - : A string containing the policy whose enforcement uncovered the violation.
+      - : رشته‌ای حاوی سیاستی که اعمال آن نقض را آشکار کرده است.
     - {{domxref("CSPViolationReport.referrer","referrer")}}
-      - : A string representing the URL for the referrer of the resources whose policy was violated, or `null`.
+      - : رشته‌ای که نشان‌دهنده URL ارجاع‌دهنده (referrer) منابعی است که سیاست آن نقض شده است، یا `null`.
     - {{domxref("CSPViolationReport.sample","sample")}}
-      - : A string representing a sample of the resource that caused the violation, usually the first 40 characters.
-        This will only be populated if the resource is an inline script, event handler, or style — external resources causing a violation will not generate a sample.
+      - : رشته‌ای که نمونه‌ای از منبعی که باعث نقض شده است را نشان می‌دهد، معمولاً ۴۰ کاراکتر اول.
+        این مقدار فقط زمانی پر می‌شود که منبع یک اسکریپت درون‌خطی (inline)، event handler یا style باشد — منابع خارجی که باعث نقض می‌شوند نمونه تولید نمی‌کنند.
     - {{domxref("CSPViolationReport.sourceFile","sourceFile")}}
-      - : If the violation occurred as a result of a script, this will be the URL of the script; otherwise, it will be `null`.
-        Both `columnNumber` and `lineNumber` should have non-null values if this property is not `null`.
+      - : اگر نقض در نتیجه یک اسکریپت رخ داده باشد، این URL آن اسکریپت خواهد بود؛ در غیر این صورت `null` خواهد بود.
+        اگر این ویژگی `null` نباشد، `columnNumber` و `lineNumber` باید مقادیر غیر null داشته باشند.
     - {{domxref("CSPViolationReport.statusCode","statusCode")}}
-      - : A number representing the HTTP status code of the document or worker in which the violation occurred.
+      - : عددی که نشان‌دهنده کد وضعیت HTTP سند یا workerای است که نقض در آن رخ داده است.
 
 - `type`
-  - : The string `"csp-violation"`, indicating that this is a CSP violation report.
+  - : رشته `"csp-violation"` که نشان می‌دهد این یک گزارش نقض CSP است.
 - `url`
-  - : A string representing the URL of the document that generated the report.
+  - : رشته‌ای که نشان‌دهنده URL سند تولیدکننده گزارش است.
 
-## Description
+## توضیحات
 
-CSP violation reports may be created when a webpage attempts to load a resource that violates a [CSP](/en-US/docs/Web/HTTP/Guides/CSP) set using the {{HTTPHeader("Content-Security-Policy")}} or {{HTTPHeader("Content-Security-Policy-Report-Only")}} HTTP headers.
+گزارش‌های نقض CSP ممکن است زمانی ایجاد شوند که یک صفحه وب تلاش می‌کند منبعی را بارگذاری کند که [CSP](/en-US/docs/Web/HTTP/Guides/CSP) تنظیم شده با استفاده از هدرهای HTTP {{HTTPHeader("Content-Security-Policy")}} یا {{HTTPHeader("Content-Security-Policy-Report-Only")}} را نقض می‌کند.
 
-You can monitor for CSP violation reports within the page that sets the policy using the [Reporting API](/en-US/docs/Web/API/Reporting_API).
-To do this you create a {{domxref("ReportingObserver")}} object to listen for reports, passing a callback method and an (optional) `options` property specifying the types of reports that you want to report on.
-The callback method is then called with reports of the requested types, passing a report object.
-For CSP violations, the object will be a `CSPViolationReport` instance (which has the [`type`](#type) property set to `"csp-violation"`).
+می‌توانید گزارش‌های نقض CSP را در داخل صفحه‌ای که سیاست را تنظیم می‌کند با استفاده از [Reporting API](/en-US/docs/Web/API/Reporting_API) رصد کنید.
+برای این کار یک شیء {{domxref("ReportingObserver")}} ایجاد می‌کنید تا به گزارش‌ها گوش دهد، یک متد callback و یک ویژگی (اختیاری) `options` که انواع گزارش‌هایی را که می‌خواهید گزارش کنید مشخص می‌کند، ارسال می‌کنید.
+سپس متد callback با گزارش‌های انواع درخواست‌شده فراخوانی می‌شود و یک شیء گزارش را ارسال می‌کند.
+برای نقض‌های CSP، شیء یک نمونه از `CSPViolationReport` خواهد بود (که ویژگی [`type`](#type) آن روی `"csp-violation"` تنظیم شده است).
 
-The structure of a typical report is shown below.
-Note that we can see the URL of both the page that had its policy violated (`url`), the document that attempted to load the resource (`body.documentURL`) and the resource that was blocked from loading (`body.blockedURL`).
-We can also see that the violation was caused by the page attempting to load a script element with a source from another origin, which violated the `body.originalPolicy`, and that the violation was enforced (and not just reported).
+ساختار یک گزارش معمولی در زیر نشان داده شده است.
+توجه کنید که می‌توانیم URL هر دو صفحه‌ای که سیاست آن نقض شده است (`url`)، سندی که تلاش کرده منبع را بارگذاری کند (`body.documentURL`) و منبعی که از بارگذاری مسدود شده است (`body.blockedURL`) را ببینیم.
+همچنین می‌توانیم ببینیم که نقض ناشی از تلاش صفحه برای بارگذاری یک عنصر اسکریپت با منبعی از یک مبدأ دیگر بوده است که `body.originalPolicy` را نقض کرده است، و اینکه نقض اعمال شده است (و فقط گزارش نشده است).
 
 ```json
 {
@@ -86,15 +80,15 @@ We can also see that the violation was caused by the page attempting to load a s
 }
 ```
 
-Violation reports may also sent as a JSON object in a {{httpmethod("POST")}} request to one or more configured [reporting server endpoints](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints).
-Reporting server endpoint names are specified in the [`report-to`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/report-to) policy directive of the {{HTTPHeader("Content-Security-Policy")}} or {{HTTPHeader("Content-Security-Policy-Report-Only")}} header.
-Valid endpoint names and their mapping to a particular URL are defined using the {{httpheader("Reporting-Endpoints")}} header.
+گزارش‌های نقض همچنین ممکن است به عنوان یک شیء JSON در یک درخواست {{httpmethod("POST")}} به یک یا چند [نقطه پایانی سرور گزارش‌دهی](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) پیکربندی شده ارسال شوند.
+نام نقاط پایانی سرور گزارش‌دهی در دستورالعمل سیاست [`report-to`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/report-to) هدر {{HTTPHeader("Content-Security-Policy")}} یا {{HTTPHeader("Content-Security-Policy-Report-Only")}} مشخص می‌شوند.
+نام نقاط پایانی معتبر و نگاشت آن‌ها به یک URL خاص با استفاده از هدر {{httpheader("Reporting-Endpoints")}} تعریف می‌شوند.
 
 > [!NOTE]
-> CSP violation reports sent by the Reporting API, when an endpoint is specified using the CSP [`report-to`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/report-to) directive, are similar (but not identical) to the "CSP report" [JSON objects](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/report-uri#violation_report_syntax) sent when endpoints are specified using the [`report-uri`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/report-uri) directive.
-> The Reporting API and `report-to` directive are intended to replace the older report format and the `report-uri` directive.
+> گزارش‌های نقض CSP که توسط Reporting API ارسال می‌شوند، زمانی که یک نقطه پایانی با استفاده از دستورالعمل CSP [`report-to`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/report-to) مشخص شده باشد، مشابه (اما نه یکسان) با "گزارش CSP" [اشیاء JSON](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/report-uri#violation_report_syntax) هستند که زمانی ارسال می‌شوند که نقاط پایانی با استفاده از دستورالعمل [`report-uri`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/report-uri) مشخص شده باشند.
+> هدف Reporting API و دستورالعمل `report-to` جایگزینی فرمت گزارش قدیمی و دستورالعمل `report-uri` است.
 
-The structure of the server report is almost exactly the same as `CSPViolationReport`, except that it additionally includes `age` and `user_agent` fields.
+ساختار گزارش سرور تقریباً دقیقاً مشابه `CSPViolationReport` است، با این تفاوت که شامل فیلدهای `age` و `user_agent` نیز می‌شود.
 
 ```json
 {
@@ -118,33 +112,33 @@ The structure of the server report is almost exactly the same as `CSPViolationRe
 }
 ```
 
-## Examples
+## مثال‌ها
 
-### Using the `ReportingObserver` interface
+### استفاده از رابط `ReportingObserver`
 
-You can obtain a `CSPViolationReport` object by configuring your page so that a CSP violation will occur.
-In this example, we will set our CSP to only allow content from the site's own origin, and then attempt to load a script from `apis.google.com`, which is an external origin.
+می‌توانید یک شیء `CSPViolationReport` را با پیکربندی صفحه خود به گونه‌ای که یک نقض CSP رخ دهد، به دست آورید.
+در این مثال، CSP خود را طوری تنظیم می‌کنیم که فقط محتوای مبدأ خود سایت مجاز باشد، و سپس سعی می‌کنیم یک اسکریپت از `apis.google.com` که یک مبدأ خارجی است، بارگذاری کنیم.
 
-First, we will set our {{HTTPHeader("Content-Security-Policy")}} header in the HTTP response:
+ابتدا، هدر {{HTTPHeader("Content-Security-Policy")}} خود را در پاسخ HTTP تنظیم می‌کنیم:
 
 ```http
 Content-Security-Policy: default-src 'self';
 ```
 
-or in the HTML [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) element:
+یا در عنصر HTML [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta):
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
 ```
 
-Then, we will attempt to load an external script:
+سپس، سعی می‌کنیم یک اسکریپت خارجی بارگذاری کنیم:
 
 ```html
-<!-- This should generate a CSP violation -->
+<!-- این باید یک نقض CSP ایجاد کند -->
 <script src="https://apis.google.com/js/platform.js"></script>
 ```
 
-Finally, we will create a new {{domxref("ReportingObserver")}} object to listen for CSP violations (this will need to be loaded from the same location, before the script that causes the violation).
+در نهایت، یک شیء جدید {{domxref("ReportingObserver")}} برای گوش دادن به نقض‌های CSP ایجاد می‌کنیم (این باید از همان مکان، قبل از اسکریپتی که باعث نقض می‌شود، بارگذاری شود).
 
 ```js
 const observer = new ReportingObserver(
@@ -163,8 +157,8 @@ const observer = new ReportingObserver(
 observer.observe();
 ```
 
-Above we log each violation report object and a JSON-string version of the object, which might look similar to the object below.
-Note that the report is an instance of the `CSPViolationReport` and the `type` is `"csp-violation"`.
+در بالا هر شیء گزارش نقض و یک نسخه JSON-string از شیء را لاگ می‌کنیم، که ممکن است شبیه به شیء زیر باشد.
+توجه کنید که گزارش یک نمونه از `CSPViolationReport` است و `type` برابر با `"csp-violation"` است.
 
 ```json
 {
@@ -186,29 +180,29 @@ Note that the report is an instance of the `CSPViolationReport` and the `type` i
 }
 ```
 
-### Sending a CSP violation report
+### ارسال گزارش نقض CSP
 
-Configuring a web page to send a CSP violation report is similar to the previous example.
-As before, you need to configure your page so that there is a violation.
+پیکربندی یک صفحه وب برای ارسال گزارش نقض CSP مشابه مثال قبلی است.
+مانند قبل، باید صفحه خود را به گونه‌ای پیکربندی کنید که یک نقض رخ دهد.
 
-In addition, you also need to specify the endpoint(s) where the report will be sent.
-A server specifies endpoints using the {{httpheader("Reporting-Endpoints")}} response header: these must be secure URLs (HTTPS).
-The CSP {{CSP("report-to")}} directive is then used to specify that a particular endpoint is used for reporting CSP violations:
+علاوه بر این، باید نقطه(های) پایانی که گزارش به آن ارسال می‌شود را نیز مشخص کنید.
+یک سرور نقاط پایانی را با استفاده از هدر پاسخ {{httpheader("Reporting-Endpoints")}} مشخص می‌کند: اینها باید URLهای امن (HTTPS) باشند.
+سپس از دستورالعمل CSP {{CSP("report-to")}} برای مشخص کردن اینکه یک نقطه پایانی خاص برای گزارش نقض‌های CSP استفاده می‌شود، استفاده می‌شود:
 
 ```http
 Reporting-Endpoints: csp-endpoint="https://example.com/csp-report-to"
 Content-Security-Policy: default-src 'self'; report-to csp-endpoint
 ```
 
-As before, we can trigger a violation by loading an external script from a location that is not allowed by our CSP header:
+مانند قبل، می‌توانیم با بارگذاری یک اسکریپت خارجی از مکانی که توسط هدر CSP ما مجاز نیست، یک نقض ایجاد کنیم:
 
 ```html
-<!-- This should generate a CSP violation -->
+<!-- این باید یک نقض CSP ایجاد کند -->
 <script src="https://apis.google.com/js/platform.js"></script>
 ```
 
-The violation report will then be sent to the indicated endpoint as a JSON file.
-As you can see from the example below, the `type` is `"csp-violation"` and the `body` property is a serialization of the `CSPViolationReport` object:
+سپس گزارش نقض به عنوان یک فایل JSON به نقطه پایانی مشخص شده ارسال می‌شود.
+همانطور که از مثال زیر می‌بینید، `type` برابر با `"csp-violation"` است و ویژگی `body` یک سریال‌سازی از شیء `CSPViolationReport` است:
 
 ```json
 [
@@ -234,15 +228,15 @@ As you can see from the example below, the `type` is `"csp-violation"` and the `
 ]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ReportingObserver")}}
 - {{HTTPHeader("Content-Security-Policy")}}
