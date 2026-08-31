@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-disabled attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,32 +13,32 @@ spec-urls: https://w3c.github.io/aria/#aria-disabled
 sidebar: accessibilitysidebar
 ---
 
-The `aria-disabled` state indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
+وضعیت `aria-disabled` نشان‌دهنده این است که عنصر قابل درک است اما غیرفعال است، بنابراین قابل ویرایش یا به‌طور دیگری قابل استفاده نیست.
 
-## Description
+## توضیحات
 
-The `aria-disabled` attribute, when set to `true`, indicates that the element upon which it is set and all of its focusable descendants are meant to be in the disabled state. This declaration will inform people using assistive technologies, such as screen readers, that such elements are not meant to be editable or otherwise operable.
+ویژگی `aria-disabled` وقتی روی `true` تنظیم شود، نشان می‌دهد که عنصری که روی آن تنظیم شده و تمام فرزندان قابل فوکوس آن باید در وضعیت غیرفعال باشند. این اعلام به افرادی که از فناوری‌های کمکی مانند صفحه‌خوان‌ها استفاده می‌کنند، اطلاع می‌دهد که چنین عناصری قرار نیست قابل ویرایش یا به‌طور دیگری قابل استفاده باشند.
 
-Unlike HTML's [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/input#disabled) Boolean attribute, which will communicate a form control as semantically being disabled, change its styling to reflect its state and suppress all functionality along with disallowing the element's value from participating in form submission, the `aria-disabled="true"` <strong>only</strong> semantically exposes these elements as being disabled. Web developers must manually ensure such elements have their functionality suppressed when exposed to the disabled state.
+برخلاف ویژگی بولی [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/input#disabled) در HTML که یک کنترل فرم را به‌صورت معنایی غیرفعال نشان می‌دهد، استایل آن را برای بازتاب وضعیت تغییر می‌دهد و تمام عملکردها را سرکوب می‌کند و همچنین اجازه نمی‌دهد مقدار عنصر در ارسال فرم شرکت کند، `aria-disabled="true"` <strong>فقط</strong> این عناصر را به‌صورت معنایی به‌عنوان غیرفعال معرفی می‌کند. توسعه‌دهندگان وب باید به‌صورت دستی اطمینان حاصل کنند که چنین عناصری هنگام قرار گرفتن در وضعیت غیرفعال، عملکردشان سرکوب شود.
 
-When needing to disable native HTML form controls, developers will need to specify the `disabled` attribute, as it provides all of the generally expected features of disabling a control by default. However, there can be instances where elements need to be exposed as disabled, but are still available for users to find when navigating via the <kbd>Tab</kbd> key. Doing so can improve their discoverability as they will not be removed from the focus order of the web page, as `aria-disabled` does not change the focusability of such elements, nor will the elements be dimmed by default browser styling, making them easier to read. Some examples of where this may be useful include:
+هنگامی که نیاز به غیرفعال کردن کنترل‌های فرم بومی HTML دارید، توسعه‌دهندگان باید ویژگی `disabled` را مشخص کنند، زیرا این ویژگی به‌طور پیش‌فرض تمام ویژگی‌های مورد انتظار برای غیرفعال کردن یک کنترل را فراهم می‌کند. با این حال، مواردی وجود دارد که عناصر باید به‌عنوان غیرفعال معرفی شوند، اما همچنان برای کاربران در دسترس باشند تا هنگام پیمایش با کلید <kbd>Tab</kbd> پیدا شوند. این کار می‌تواند قابلیت کشف‌پذیری آن‌ها را بهبود بخشد، زیرا آن‌ها از ترتیب فوکوس صفحه وب حذف نمی‌شوند؛ `aria-disabled` قابلیت فوکوس‌شدن چنین عناصری را تغییر نمی‌دهد و عناصر با استایل پیش‌فرض مرورگر کمرنگ نمی‌شوند و خواندن آن‌ها آسان‌تر است. چند نمونه از مواردی که این ممکن است مفید باشد عبارت‌اند از:
 
-- The header button element associated with non-collapsible accordion panel,
-- A button which is important to keep in the page's focus order, but its action is presently unavailable - such as submitting a form,
-- Temporarily inactive items in a menu widget that would otherwise be skipped over via standard keyboard navigation.
+- عنصر دکمه سربرگ مرتبط با پنل آکاردئونی غیرقابل جمع‌شدن،
+- دکمه‌ای که حفظ آن در ترتیب فوکوس صفحه مهم است، اما عملکردش در حال حاضر در دسترس نیست - مانند ارسال فرم،
+- آیتم‌های موقتاً غیرفعال در یک ویجت منو که در غیر این صورت از طریق پیمایش استاندارد صفحه‌کلید رد می‌شدند.
 
-In each of these cases, one may want users to find these elements through standard keyboard navigation, though the functionality of that control is removed or "disabled". Developers will still need to use JavaScript to fully disable the functionality of the element while also changing the appearance of the element so sighted users know it is disabled.
+در هر یک از این موارد، ممکن است بخواهید کاربران این عناصر را از طریق پیمایش استاندارد صفحه‌کلید پیدا کنند، اگرچه عملکرد آن کنترل حذف یا «غیرفعال» شده است. توسعه‌دهندگان همچنان باید از JavaScript برای غیرفعال کردن کامل عملکرد عنصر استفاده کنند و همچنین ظاهر عنصر را تغییر دهند تا کاربران بینا بدانند که غیرفعال است.
 
 > [!NOTE]
-> The state of being disabled applies to the element with `aria-disabled="true"` and all of its focusable descendants. Take care when using this attribute on container elements. Particularly in the case where a container may have both form controls and links - where the intent may be to expose the form controls as being in the disabled state, but <strong>not</strong> to communicate the links as being "disabled".
+> حالت غیرفعال بودن برای عنصری با `aria-disabled="true"` و تمام فرزندان قابل فوکوس آن اعمال می‌شود. هنگام استفاده از این ویژگی روی عناصر حاوی احتیاط کنید. به‌ویژه در موردی که یک عنصر حاوی ممکن است هم کنترل‌های فرم و هم پیوندها را داشته باشد - جایی که هدف ممکن است نمایش کنترل‌های فرم در وضعیت غیرفعال باشد، اما <strong>نه</strong> اینکه پیوندها به‌عنوان «غیرفعال» معرفی شوند.
 
-Another reason to use the `aria-disabled` attribute over the HTML `disabled` attribute is if you have created custom controls which need to be marked as disabled, but are not using an element that allows for the `disabled` attribute. For instance, in the following snippet a `<div>` was used to create a custom button which needs to be marked as disabled. However, the `<div>` element does not expect, nor respect the `disabled` attribute - even if it were to be given a `role="button"` to change its exposed ARIA role. The `aria-disabled` attribute is required to disable such custom controls.
+دلیل دیگر برای استفاده از ویژگی `aria-disabled` به‌جای ویژگی `disabled` در HTML این است که شما کنترل‌های سفارشی‌ای ایجاد کرده‌اید که باید به‌عنوان غیرفعال علامت‌گذاری شوند، اما از عنصری استفاده نمی‌کنید که ویژگی `disabled` را بپذیرد. برای مثال، در قطعه کد زیر از یک `<div>` برای ایجاد یک دکمه سفارشی استفاده شده است که باید به‌عنوان غیرفعال علامت‌گذاری شود. با این حال، عنصر `<div>` انتظار ویژگی `disabled` را ندارد و به آن احترام نمی‌گذارد - حتی اگر به آن `role="button"` داده شود تا نقش ARIA نمایشی آن تغییر کند. ویژگی `aria-disabled` برای غیرفعال کردن چنین کنترل‌های سفارشی لازم است.
 
 ```html
 <div role="button" aria-disabled="true" tabindex="-1">Edit</div>
 ```
 
-Similarly to needing to use JavaScript to ensure an element with `aria-disabled="true"` is not functional, the element will also need styling adjustments. In contrast to the HTML `disabled` attribute, where specifying it provides `:disabled` user-agent styles to be applied, adding `aria-disabled="true"` doesn't. The element can be styled with the [attribute selector](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) `[aria-disabled="true"]`.
+همان‌طور که برای اطمینان از عدم عملکرد عنصری با `aria-disabled="true"` نیاز به استفاده از JavaScript است، این عنصر به تنظیمات استایل نیز نیاز دارد. برخلاف ویژگی `disabled` در HTML که تعیین آن باعث اعمال استایل‌های `:disabled` از طرف عامل کاربر می‌شود، افزودن `aria-disabled="true"` چنین استایلی را اعمال نمی‌کند. می‌توان عنصر را با [انتخابگر ویژگی](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) `[aria-disabled="true"]` استایل‌دهی کرد.
 
 ```css
 [aria-disabled="true"] {
@@ -46,7 +46,7 @@ Similarly to needing to use JavaScript to ensure an element with `aria-disabled=
 }
 ```
 
-If you are purposefully using the `aria-disabled` attribute to allow for a form control to remain in the page's keyboard focus order, particularly if the element represents important content that all users should be able to perceive, then you may need to use styling that still passes color contrast requirements. For instance, a disabled button/heading that introduces a non-collapsible accordion panel is content that still needs to be legible.
+اگر عمداً از ویژگی `aria-disabled` استفاده می‌کنید تا یک کنترل فرم در ترتیب فوکوس صفحه‌کلید صفحه باقی بماند، به‌ویژه اگر عنصر محتوای مهمی را نشان می‌دهد که همه کاربران باید بتوانند آن را درک کنند، ممکن است لازم باشد از استایلی استفاده کنید که همچنان الزامات کنتراست رنگ را برآورده کند. برای مثال، یک دکمه/عنوان غیرفعال که یک پنل آکاردئونی غیرقابل جمع‌شدن را معرفی می‌کند، محتوایی است که همچنان باید خوانا باشد.
 
 ```css
 @media (forced-colors: active) {
@@ -57,12 +57,12 @@ If you are purposefully using the `aria-disabled` attribute to allow for a form 
 }
 ```
 
-The [`forced-colors` media query](/en-US/docs/Web/CSS/Reference/At-rules/@media/forced-colors) detects if the [user agent](/en-US/docs/Glossary/User_agent) has enabled a forced colors mode; if so, the text and border colors are both set to the [system color `greyText`](/en-US/docs/Web/CSS/Reference/Values/system-color#syntax).
+پرس‌وجوی رسانه‌ای [`forced-colors`](/en-US/docs/Web/CSS/Reference/At-rules/@media/forced-colors) تشخیص می‌دهد که آیا [عامل کاربر](/en-US/docs/Glossary/User_agent) حالت رنگ‌های اجباری را فعال کرده است یا خیر؛ اگر چنین باشد، رنگ متن و حاشیه هر دو به [رنگ سیستم `greyText`](/en-US/docs/Web/CSS/Reference/Values/system-color#syntax) تنظیم می‌شوند.
 
-Another thing to keep in mind, when using `aria-disabled` over the native HTML attribute, is that the ARIA attribute will require the manual styling necessary to visually communicate the element as disabled in Windows High Contrast Mode.
+نکته دیگری که باید در نظر داشته باشید این است که هنگام استفاده از `aria-disabled` به‌جای ویژگی بومی HTML، ویژگی ARIA به استایل‌دهی دستی لازم برای نمایش بصری عنصر به‌عنوان غیرفعال در حالت کنتراست بالای ویندوز نیاز دارد.
 
 > [!NOTE]
-> If you are using CSS's [`pointer-events: none;`](/en-US/docs/Web/CSS/Reference/Properties/pointer-events) to make an element non-clickable, make sure you disable interactivity with JavaScript as well. `pointer-events: none;` prevents mouse clicks, but does not prevent the element from being activated via the keyboard.
+> اگر از [`pointer-events: none;`](/en-US/docs/Web/CSS/Reference/Properties/pointer-events) در CSS برای غیرقابل کلیک کردن یک عنصر استفاده می‌کنید، مطمئن شوید که تعامل‌پذیری را نیز با JavaScript غیرفعال می‌کنید. `pointer-events: none;` از کلیک‌های ماوس جلوگیری می‌کند، اما مانع فعال شدن عنصر از طریق صفحه‌کلید نمی‌شود.
 
 ```js
 function onClick(event) {
@@ -84,32 +84,32 @@ function toggleDisabled(element, status, update) {
 }
 ```
 
-When toggling from `aria-disabled="true"` to `"false"`, use JavaScript to:
+هنگام جابه‌جایی از `aria-disabled="true"` به `"false"`، از JavaScript برای موارد زیر استفاده کنید:
 
-1. Toggle the value to `false` (or remove the attribute entirely),
-2. Enable the element, and
-3. Let the user know the control is now enabled.
+1. تغییر مقدار به `false` (یا حذف کامل ویژگی)،
+2. فعال کردن عنصر، و
+3. به کاربر اطلاع دهید که کنترل اکنون فعال است.
 
-If you used just CSS to style the disabled state using an attribute selector, the selector will no longer match and the disabled styling will no longer be in effect.
+اگر فقط از CSS برای استایل‌دهی وضعیت غیرفعال با استفاده از یک انتخابگر ویژگی استفاده کرده‌اید، انتخابگر دیگر منطبق نخواهد شد و استایل غیرفعال دیگر اعمال نخواهد شد.
 
-## Values
+## مقادیر
 
 - `true`
-  - : The element is disabled
+  - : عنصر غیرفعال است
 
 - `false`
-  - : The element is not disabled
+  - : عنصر غیرفعال نیست
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaDisabled")}}
-  - : The [`ariaDisabled`](/en-US/docs/Web/API/Element/ariaDisabled) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-disabled` attribute, which indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
+  - : ویژگی [`ariaDisabled`](/en-US/docs/Web/API/Element/ariaDisabled) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-disabled` را منعکس می‌کند؛ این ویژگی نشان می‌دهد که عنصر قابل درک است اما غیرفعال است، بنابراین قابل ویرایش یا به‌طور دیگری قابل استفاده نیست.
 - {{domxref("ElementInternals.ariaDisabled")}}
-  - : The [`ariaDisabled`](/en-US/docs/Web/API/ElementInternals/ariaDisabled) property of the {{domxref("ElementInternals")}} interface reflects the value of the `aria-disabled` attribute.
+  - : ویژگی [`ariaDisabled`](/en-US/docs/Web/API/ElementInternals/ariaDisabled) از رابط {{domxref("ElementInternals")}} مقدار ویژگی `aria-disabled` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده‌شده در نقش‌ها:
 
 - [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role)
 - [`button`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role)
@@ -123,7 +123,7 @@ Used in roles:
 - [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role)
 - [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role)
 
-Inherits into roles:
+به نقش‌های زیر به ارث می‌رسد:
 
 - [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
 - [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
@@ -151,14 +151,14 @@ Inherits into roles:
 - [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
 - [`treeitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treeitem_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [Making disabled buttons more inclusive](https://css-tricks.com/making-disabled-buttons-more-inclusive/) by Sandrina Pereira
-- [Styling for Windows high contrast with new standards for forced colors](https://blogs.windows.com/msedgedev/2020/09/17/styling-for-windows-high-contrast-with-new-standards-for-forced-colors/)
+- [ایجاد دکمه‌های غیرفعال فراگیرتر](https://css-tricks.com/making-disabled-buttons-more-inclusive/) نوشته ساندرینا پریرا
+- [استایل‌دهی برای کنتراست بالای ویندوز با استانداردهای جدید رنگ‌های اجباری](https://blogs.windows.com/msedgedev/2020/09/17/styling-for-windows-high-contrast-with-new-standards-for-forced-colors/)
 - [disabled](/en-US/docs/Web/HTML/Reference/Attributes/disabled)
 - {{domxref("Element.ariaDisabled")}}
 - {{domxref("ElementInternals.ariaDisabled")}}
