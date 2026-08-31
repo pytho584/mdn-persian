@@ -1,7 +1,5 @@
 ---
 title: "CredentialsContainer: get() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get"
-status: "needs-translation"
 ---
 
 ---
@@ -10,83 +8,82 @@ short-title: get()
 slug: Web/API/CredentialsContainer/get
 page-type: web-api-instance-method
 browser-compat: api.CredentialsContainer.get
----
 
 {{APIRef("Credential Management API")}}{{SecureContext_Header}}
 
-The **`get()`** method of the {{domxref("CredentialsContainer")}} interface returns a {{jsxref("Promise")}} that fulfills with a single {{glossary("credential")}}, which can then be used to authenticate a user to a website.
+متد **`get()`** از رابط {{domxref("CredentialsContainer")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک {{glossary("credential")}} واحد (اعتبارنامه) حل می‌شود؛ سپس می‌توان از این اعتبارنامه برای احراز هویت کاربر در یک وب‌سایت استفاده کرد.
 
-The method accepts a single optional `options` argument, which may include:
+این متد یک آرگومان اختیاری `options` می‌پذیرد که می‌تواند شامل موارد زیر باشد:
 
-- A `mediation` property indicating how and whether the user should be asked to participate in the operation.
-  This controls, for example, whether the site can silently sign a user in using a stored credential.
-- A `signal` property enabling the operation to be cancelled using an {{domxref("AbortController")}}.
-- One or more properties — `password`, `federated`, `identity`, `otp`, `publicKey` — which indicate the [types of credential](/en-US/docs/Web/API/Credential_Management_API/Credential_types) being requested. If set, the values of these properties include any parameters that the browser needs in order to find an appropriate credential of the requested type.
+- ویژگی `mediation` که نشان می‌دهد کاربر چگونه و آیا باید در عملیات مشارکت کند. این ویژگی برای مثال مشخص می‌کند که آیا سایت می‌تواند با استفاده از یک اعتبارنامه ذخیره‌شده، کاربر را به‌صورت بی‌صدا (بدون دخالت کاربر) وارد سیستم کند یا خیر.
+- ویژگی `signal` که امکان لغو عملیات را با استفاده از {{domxref("AbortController")}} فراهم می‌کند.
+- یک یا چند ویژگی — `password`، `federated`، `identity`، `otp`، `publicKey` — که [انواع اعتبارنامه](/en-US/docs/Web/API/Credential_Management_API/Credential_types) درخواستی را مشخص می‌کنند. در صورت تنظیم، مقادیر این ویژگی‌ها شامل پارامترهایی است که مرورگر برای یافتن اعتبارنامه مناسب از نوع درخواستی به آن‌ها نیاز دارد.
 
-The API always fulfills with a single credential or `null`. If multiple credentials are available and user mediation is allowed, then the browser will ask the user to select a single credential.
+این API همیشه با یک اعتبارنامه واحد یا `null` حل می‌شود. اگر چندین اعتبارنامه در دسترس باشد و دخالت کاربر مجاز باشد، مرورگر از کاربر می‌خواهد یک اعتبارنامه را انتخاب کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 get()
 get(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object that contains options for the request. It can contain the following properties:
+  - : شیئی که شامل گزینه‌های درخواست است. می‌تواند ویژگی‌های زیر را داشته باشد:
     - `mediation` {{optional_inline}}
-      - : A string indicating how the user is involved in retrieving the credential. The value can be one of the following:
+      - : رشته‌ای که نشان می‌دهد کاربر چگونه در بازیابی اعتبارنامه مشارکت دارد. مقدار می‌تواند یکی از موارد زیر باشد:
         - `"conditional"`
-          - : Discovered credentials are presented to the user in a non-modal dialog box along with an indication of the origin requesting credentials. In practice, this means autofilling available credentials; see [Autofill UI](/en-US/docs/Web/API/Web_Authentication_API#autofill_ui) for more details of how this is used.
+          - : اعتبارنامه‌های کشف‌شده در یک کادر محاوره‌ای غیرحالتمند (non-modal) به‌همراه نشانه‌ای از مبدأ درخواست‌دهنده اعتبارنامه به کاربر نمایش داده می‌شوند. در عمل، این به معنای تکمیل خودکار اعتبارنامه‌های موجود است؛ برای جزئیات بیشتر درباره نحوه استفاده از آن، [رابط کاربری تکمیل خودکار (Autofill UI)](/en-US/docs/Web/API/Web_Authentication_API#autofill_ui) را ببینید.
 
         - `"optional"`
-          - : If credentials can be handed over for a given operation without user mediation, they will be, enabling automatic reauthentication without user mediation. If user mediation is required, then the user agent will ask the user to authenticate. This value is intended for situations where you have reasonable confidence that a user won't be surprised or confused at seeing a login dialog box — for example on a site that doesn't automatically log users in, when a user has just clicked a "Login/Signup" button.
+          - : اگر بتوان برای یک عملیات مشخص بدون دخالت کاربر اعتبارنامه را تحویل داد، این کار انجام می‌شود و ورود مجدد خودکار بدون دخالت کاربر ممکن می‌شود. اگر دخالت کاربر لازم باشد، عامل کاربر از کاربر می‌خواهد احراز هویت کند. این مقدار برای موقعیت‌هایی در نظر گرفته شده است که اطمینان معقولی دارید کاربر با دیدن کادر محاوره‌ای ورود، شگفت‌زده یا سردرگم نمی‌شود — مثلاً در سایتی که کاربران را به‌طور خودکار وارد سیستم نمی‌کند، وقتی کاربر به‌تازگی دکمه «ورود / ثبت‌نام» را کلیک کرده است.
 
         - `"required"`
-          - : The user will always be asked to authenticate. This value is intended for situations where you want to force user authentication — for example if you want a user to reauthenticate when a sensitive operation is being performed (like confirming a credit card payment), or when switching users.
+          - : همیشه از کاربر خواسته می‌شود احراز هویت کند. این مقدار برای موقعیت‌هایی در نظر گرفته شده است که می‌خواهید احراز هویت کاربر را اجباری کنید — مثلاً وقتی می‌خواهید کاربر هنگام انجام یک عملیات حساس (مانند تأیید پرداخت با کارت اعتباری) دوباره احراز هویت کند، یا هنگام تغییر کاربر.
 
         - `"silent"`
-          - : The user will not be asked to authenticate. The user agent will automatically reauthenticate the user and log them in if possible. If consent is required, the promise will fulfill with `null`. This value is intended for situations where you would want to automatically sign a user in upon visiting a web app if possible, but if not, you don't want to present them with a confusing login dialog box. Instead, you'd want to wait for them to explicitly click a "Login/Signup" button.
+          - : از کاربر خواسته نمی‌شود احراز هویت کند. عامل کاربر به‌طور خودکار کاربر را دوباره احراز هویت کرده و در صورت امکان وارد سیستم می‌کند. اگر رضایت لازم باشد، پرامیس با `null` حل می‌شود. این مقدار برای موقعیت‌هایی در نظر گرفته شده است که می‌خواهید هنگام بازدید کاربر از یک برنامه وب، در صورت امکان به‌طور خودکار او را وارد کنید؛ اما اگر این امکان وجود نداشت، نمی‌خواهید یک کادر محاوره‌ای ورود گیج‌کننده به او نمایش دهید. در عوض، باید منتظر بمانید تا کاربر صریحاً دکمه «ورود / ثبت‌نام» را کلیک کند.
 
-        The default value is `"optional"`.
+        مقدار پیش‌فرض `"optional"` است.
 
         > [!NOTE]
-        > In the case of a [federated authentication (FedCM API)](/en-US/docs/Web/API/FedCM_API) request, a `mediation` value of `optional` or `silent` may result in attempted [auto-reauthentication](/en-US/docs/Web/API/FedCM_API/RP_sign-in#auto-reauthentication). Whether this occurred is communicated to the identity provider (IdP) via the [`is_auto_selected`](/en-US/docs/Web/API/FedCM_API/IDP_integration#is_auto_selected) parameter sent to the IdP's `id_assertion_endpoint` during validation and the relying party (RP) via the {{domxref("IdentityCredential.isAutoSelected")}} property. This is useful for performance evaluation, security requirements (the IdP may wish to reject automatic reauthentication requests and always require user mediation), and general UX (an IdP or RP may wish to present different UX for auto and non-auto login experiences).
+        > در مورد یک درخواست [احراز هویت فدرال (FedCM API)](/en-US/docs/Web/API/FedCM_API)، مقدار `mediation` برابر با `optional` یا `silent` ممکن است منجر به تلاش برای [بازاحراز هویت خودکار](/en-US/docs/Web/API/FedCM_API/RP_sign-in#auto-reauthentication) شود. این که چنین اتفاقی افتاده است یا نه، از طریق پارامتر [`is_auto_selected`](/en-US/docs/Web/API/FedCM_API/IDP_integration#is_auto_selected) که هنگام اعتبارسنجی به `id_assertion_endpoint` ارائه‌دهنده هویت (IdP) ارسال می‌شود، به IdP اطلاع داده می‌شود و از طریق ویژگی {{domxref("IdentityCredential.isAutoSelected")}} به طرف معتمد (RP) منتقل می‌شود. این موضوع برای ارزیابی عملکرد، الزامات امنیتی (IdP ممکن است بخواهد درخواست‌های بازاحراز هویت خودکار را رد کند و همیشه به دخالت کاربر نیاز داشته باشد) و تجربه کاربری عمومی (یک IdP یا RP ممکن است بخواهد تجربه کاربری متفاوتی برای ورود خودکار و غیرخودکار ارائه دهد) مفید است.
 
     - `signal` {{optional_inline}}
-      - : An {{domxref("AbortSignal")}} object instance that allows an ongoing `get()` operation to be aborted. An aborted operation may complete normally (generally if the abort was received after the operation finished) or reject with the signal's reason (which is an `AbortError` {{domxref("DOMException")}} by default, or a custom value if one was provided when calling {{domxref("AbortController.abort", "abort()")}}).
+      - : یک نمونه از شیء {{domxref("AbortSignal")}} که امکان لغو یک عملیات در حال انجام `get()` را فراهم می‌کند. یک عملیات لغوشده ممکن است به‌طور عادی کامل شود (معمولاً اگر لغو پس از پایان عملیات دریافت شده باشد) یا با دلیل سیگنال رد شود (که به‌طور پیش‌فرض یک {{domxref("DOMException")}} از نوع `AbortError` است، یا اگر هنگام فراخوانی {{domxref("AbortController.abort", "abort()")}} مقدار سفارشی ارائه شده باشد، همان مقدار سفارشی است).
 
     - `password` {{optional_inline}}
-      - : This option asks the browser to retrieve a stored [password](/en-US/docs/Web/API/Credential_Management_API/Credential_types#passwords) as a {{domxref("PasswordCredential")}} object. It is a boolean value.
-    - `identity` {{optional_inline}}
-      - : This option asks the browser to retrieve a [federated identity credential](/en-US/docs/Web/API/Credential_Management_API/Credential_types#federated_identity_credentials) as an {{domxref("IdentityCredential")}} object, using the [Federated Credential Management API](/en-US/docs/Web/API/FedCM_API).
+      - : این گزینه از مرورگر می‌خواهد یک [رمز عبور](/en-US/docs/Web/API/Credential_Management_API/Credential_types#passwords) ذخیره‌شده را به‌عنوان یک شیء {{domxref("PasswordCredential")}} بازیابی کند. مقدار آن یک مقدار بولی است.
 
-        This option's value is an {{domxref("IdentityCredentialRequestOptions")}} object containing details of the specific identity providers that the website wants to use.
+    - `identity` {{optional_inline}}
+      - : این گزینه از مرورگر می‌خواهد با استفاده از [Federated Credential Management API](/en-US/docs/Web/API/FedCM_API)، یک [اعتبارنامه هویت فدرال](/en-US/docs/Web/API/Credential_Management_API/Credential_types#federated_identity_credentials) را به‌عنوان یک شیء {{domxref("IdentityCredential")}} بازیابی کند.
+
+        مقدار این گزینه یک شیء {{domxref("IdentityCredentialRequestOptions")}} است که شامل جزئیات ارائه‌دهندگان هویت خاصی است که وب‌سایت می‌خواهد از آن‌ها استفاده کند.
 
     - `federated` {{optional_inline}}
-      - : This option asks the browser to retrieve a [federated identity credential](/en-US/docs/Web/API/Credential_Management_API/Credential_types#federated_identity_credentials) as a {{domxref("FederatedCredential")}} object. This interface is now superseded, and developers should prefer to use the `identity` option, if it is available.
+      - : این گزینه از مرورگر می‌خواهد یک [اعتبارنامه هویت فدرال](/en-US/docs/Web/API/Credential_Management_API/Credential_types#federated_identity_credentials) را به‌عنوان یک شیء {{domxref("FederatedCredential")}} بازیابی کند. این رابط اکنون منسوخ شده است و توسعه‌دهندگان باید در صورت وجود، ترجیح دهند از گزینه `identity` استفاده کنند.
 
-        This option's value is an object with the following properties:
+        مقدار این گزینه یک شیء با ویژگی‌های زیر است:
         - `protocols`
-          - : An array of strings representing the protocols of the requested credentials' federated identity providers (for example, `"openidconnect"`).
+          - : آرایه‌ای از رشته‌ها که پروتکل‌های ارائه‌دهندگان هویت فدرال اعتبارنامه‌های درخواستی را نشان می‌دهد (مثلاً `"openidconnect"`).
         - `providers`
-          - : An array of strings representing the credentials' federated identity providers (for example `"https://www.facebook.com"` or `"https://accounts.google.com"`).
+          - : آرایه‌ای از رشته‌ها که ارائه‌دهندگان هویت فدرال اعتبارنامه‌ها را نشان می‌دهد (مثلاً `"https://www.facebook.com"` یا `"https://accounts.google.com"`).
 
     - `otp` {{optional_inline}}
-      - : This option asks the browser to retrieve a [one-time password (OTP)](/en-US/docs/Web/API/Credential_Management_API/Credential_types#one-time_passwords) as an {{domxref("OTPCredential")}} object.
+      - : این گزینه از مرورگر می‌خواهد یک [رمز یکبارمصرف (OTP)](/en-US/docs/Web/API/Credential_Management_API/Credential_types#one-time_passwords) را به‌عنوان یک شیء {{domxref("OTPCredential")}} بازیابی کند.
 
-        This option's value is an array of strings which may only contain the string value `"sms"`.
+        مقدار این گزینه آرایه‌ای از رشته‌ها است که فقط می‌تواند حاوی مقدار رشته‌ای `"sms"` باشد.
 
     - `publicKey` {{optional_inline}}
-      - : This option asks the browser to retrieve an [assertion signed using the Web Authentication API](/en-US/docs/Web/API/Credential_Management_API/Credential_types#web_authentication_assertions) as a {{domxref("PublicKeyCredential")}}.
+      - : این گزینه از مرورگر می‌خواهد یک [تأییده‌ای که با Web Authentication API امضا شده است](/en-US/docs/Web/API/Credential_Management_API/Credential_types#web_authentication_assertions) را به‌عنوان یک {{domxref("PublicKeyCredential")}} بازیابی کند.
 
-        This option's value is a {{domxref("PublicKeyCredentialRequestOptions")}} object.
+        مقدار این گزینه یک شیء {{domxref("PublicKeyCredentialRequestOptions")}} است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with one of the following subclasses of {{domxref("Credential")}}:
+یک {{jsxref("Promise")}} که با یکی از زیرکلاس‌های زیر از {{domxref("Credential")}} حل می‌شود:
 
 - {{domxref("PasswordCredential")}}
 - {{domxref("IdentityCredential")}}
@@ -94,47 +91,46 @@ A {{jsxref("Promise")}} that resolves with one of the following subclasses of {{
 - {{domxref("OTPCredential")}}
 - {{domxref("PublicKeyCredential")}}
 
-If [conditional mediation](#mediation) was specified in the `get()` call, the browser UI dialog is shown and the promise remains pending until the user picks an account to sign-in with from available autofill suggestions:
+اگر [mediation شرطی](#mediation) در فراخوانی `get()` مشخص شده باشد، رابط کاربری مرورگر نمایش داده می‌شود و پرامیس تا زمانی که کاربر یک حساب کاربری را از میان پیشنهادهای تکمیل خودکار موجود برای ورود انتخاب کند، در حالت معلق (pending) باقی می‌ماند:
 
-- If the user then makes a gesture outside of the browser UI dialog, it closes without resolving or rejecting the promise and without causing a user-visible error condition.
-- If the user selects a credential, the relevant {{domxref("PublicKeyCredential")}} is returned to the caller.
+- اگر کاربر سپس ژستی خارج از کادر محاوره‌ای رابط کاربری مرورگر انجام دهد، آن کادر بدون اینکه پرامیس حل یا رد شود و بدون ایجاد شرایط خطای قابل مشاهده برای کاربر بسته می‌شود.
+- اگر کاربر یک اعتبارنامه را انتخاب کند، {{domxref("PublicKeyCredential")}} مربوطه به فراخواننده بازگردانده می‌شود.
 
-If a single credential cannot be unambiguously obtained, the promise resolves with `null`.
+اگر نتوان یک اعتبارنامه واحد را به‌طور بدون ابهام به دست آورد، پرامیس با `null` حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `AbortError` {{domxref("DOMException")}}
-  - : The request was aborted by a call to the {{domxref("AbortController.abort", "abort()")}} method of the {{domxref("AbortController")}} associated with this method's [`signal`](#signal) option.
-    Note that if the caller of `abort()` provided a `reason` argument, then `get()` will be rejected with the value of `reason`, instead of an `AbortController` exception.
+  - : درخواست با فراخوانی متد {{domxref("AbortController.abort", "abort()")}} از {{domxref("AbortController")}} مرتبط با گزینه [`signal`](#signal) این متد لغو شد. توجه داشته باشید که اگر فراخواننده `abort()` یک آرگومان `reason` ارائه کرده باشد، `get()` به‌جای یک استثنای `AbortController`، با مقدار `reason` رد می‌شود.
 
 - `TimeoutError` {{domxref("DOMException")}}
-  - : The request was automatically aborted due to a timeout set using {{domxref("AbortSignal.timeout_static", "AbortSignal.timeout()")}}.
+  - : درخواست به دلیل یک وقفه زمانی تعیین‌شده با {{domxref("AbortSignal.timeout_static", "AbortSignal.timeout()")}} به‌طور خودکار لغو شد.
 
 - {{domxref("IdentityCredentialError")}}
-  - : When requesting an {{domxref("IdentityCredential")}}, the request to the [ID assertion endpoint](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_id_assertion_endpoint) is unable to validate the authentication, and rejects with an error response containing information about the reason.
+  - : هنگام درخواست یک {{domxref("IdentityCredential")}}، درخواست به [endpoint تأیید هویت](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_id_assertion_endpoint) نمی‌تواند احراز هویت را اعتبارسنجی کند و با یک پاسخ خطا حاوی اطلاعاتی درباره دلیل آن رد می‌شود.
 
 - `NetworkError` {{domxref("DOMException")}}
-  - : When requesting an {{domxref("IdentityCredential")}}, the {{glossary("identity provider")}} (IdP) did not respond within 60 seconds, the provided credentials were not valid/found, or the browser's login status for the IdP is set to `"logged-out"` (see [Update login status using the Login Status API](/en-US/docs/Web/API/FedCM_API/IDP_integration#update_login_status_using_the_login_status_api) for more information about FedCM login status). In the latter case, there may be some delay in the rejection to avoid leaking the IdP login status to the RP.
+  - : هنگام درخواست یک {{domxref("IdentityCredential")}}، {{glossary("identity provider")}} (IdP) ظرف ۶۰ ثانیه پاسخ نداد، اعتبارنامه‌های ارائه‌شده معتبر / یافت نشدند، یا وضعیت ورود مرورگر برای IdP روی `"logged-out"` تنظیم شده است (برای اطلاعات بیشتر درباره وضعیت ورود FedCM، به [به‌روزرسانی وضعیت ورود با استفاده از Login Status API](/en-US/docs/Web/API/FedCM_API/IDP_integration#update_login_status_using_the_login_status_api) مراجعه کنید). در حالت اخیر، ممکن است در رد کردن درخواست تأخیری وجود داشته باشد تا از افشای وضعیت ورود IdP به RP جلوگیری شود.
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown in one of the following situations:
-    - The user canceled the request.
+  - : در یکی از شرایط زیر صادر می‌شود:
+    - کاربر درخواست را لغو کرد.
 
-    - Use of this API was blocked by one of the following [permissions policies](/en-US/docs/Web/HTTP/Guides/Permissions_Policy):
+    - استفاده از این API توسط یکی از [خط‌مشی‌های مجوز (Permissions Policy)](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) زیر مسدود شده است:
       - {{HTTPHeader("Permissions-Policy/identity-credentials-get","identity-credentials-get")}}
       - {{HTTPHeader("Permissions-Policy/publickey-credentials-get","publickey-credentials-get")}}
       - {{HTTPHeader("Permissions-Policy/otp-credentials","otp-credentials")}}
 
-    - The calling origin is an [opaque origin](/en-US/docs/Web/HTTP/Reference/Headers/Origin#null).
+    - مبدأ فراخواننده یک [مبدأ ناشفاف (opaque origin)](/en-US/docs/Web/HTTP/Reference/Headers/Origin#null) است.
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The calling domain is not a valid domain.
+  - : دامنه فراخواننده یک دامنه معتبر نیست.
 
-## Examples
+## مثال‌ها
 
-### Retrieving a federated identity credential
+### بازیابی یک اعتبارنامه هویت فدرال
 
-Relying parties can call `get()` with the `identity` option to make a request for users to sign in to the relying party via an identity provider (IdP), using identity federation. A typical request would look like this:
+طرف‌های معتمد (Relying parties) می‌توانند `get()` را با گزینه `identity` فراخوانی کنند تا از کاربران بخواهند با استفاده از فدراسیون هویت، از طریق یک ارائه‌دهنده هویت (IdP) وارد طرف معتمد شوند. یک درخواست معمولی به این شکل است:
 
 ```js
 async function signIn() {
@@ -152,9 +148,9 @@ async function signIn() {
 }
 ```
 
-Check out [Federated Credential Management (FedCM) API](/en-US/docs/Web/API/FedCM_API) for more details on how this works. This call will start off the sign-in flow described in [FedCM sign-in flow](/en-US/docs/Web/API/FedCM_API/RP_sign-in#fedcm_sign-in_flow).
+برای جزئیات بیشتر درباره نحوه عملکرد این کار، به [Federated Credential Management (FedCM) API](/en-US/docs/Web/API/FedCM_API) مراجعه کنید. این فراخوانی جریان ورود به سیستم را که در [جریان ورود FedCM](/en-US/docs/Web/API/FedCM_API/RP_sign-in#fedcm_sign-in_flow) توضیح داده شده است آغاز می‌کند.
 
-A similar call including the `context` and `loginHint` extensions would look like so:
+یک فراخوانی مشابه که شامل افزونه‌های `context` و `loginHint` است به این شکل خواهد بود:
 
 ```js
 async function signIn() {
@@ -174,7 +170,7 @@ async function signIn() {
 }
 ```
 
-If the IdP is unable to validate a request to the [ID assertion endpoint](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_id_assertion_endpoint) it will reject the promise returned from `CredentialsContainer.get()`:
+اگر IdP نتواند درخواست ارسال‌شده به [endpoint تأیید هویت](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_id_assertion_endpoint) را اعتبارسنجی کند، پرامیس بازگشتی از `CredentialsContainer.get()` را رد می‌کند:
 
 ```js
 async function signIn() {
@@ -193,114 +189,3 @@ async function signIn() {
   } catch (e) {
     // Handle the error in some way, for example provide information
     // to help the user succeed in a future sign-in attempt
-    console.error(e);
-  }
-}
-```
-
-### Retrieving a public key credential
-
-The following snippet shows a typical `get()` call with the WebAuthn `publicKey` option:
-
-```js
-const publicKey = {
-  challenge: new Uint8Array([139, 66, 181, 87, 7, 203 /* ,… */]),
-  rpId: "acme.com",
-  allowCredentials: [
-    {
-      type: "public-key",
-      id: new Uint8Array([64, 66, 25, 78, 168, 226, 174 /* ,… */]),
-    },
-  ],
-  userVerification: "required",
-};
-
-navigator.credentials.get({ publicKey });
-```
-
-A successful `get()` call returns a promise that resolves with a {{domxref("PublicKeyCredential")}} object instance, representing a public key credential previously created via a WebAuthn {{domxref("CredentialsContainer.create()", "create()")}} that has now been used to authenticate a user. Its {{domxref("PublicKeyCredential.response")}} property contains an {{domxref("AuthenticatorAssertionResponse")}} object providing access to several useful pieces of information including the authenticator data, signature, and user handle.
-
-```js
-navigator.credentials.get({ publicKey }).then((publicKeyCredential) => {
-  const response = publicKeyCredential.response;
-
-  // Access authenticator data ArrayBuffer
-  const authenticatorData = response.authenticatorData;
-
-  // Access client JSON
-  const clientJSON = response.clientDataJSON;
-
-  // Access signature ArrayBuffer
-  const signature = response.signature;
-
-  // Access userHandle ArrayBuffer
-  const userHandle = response.userHandle;
-});
-```
-
-Some of this data will need to be stored on the server — for example the `signature` to provide proof that authenticator possesses the genuine private key used to create the credential, and the `userHandle` to link the user with the credential, sign in attempt, and other data.
-
-See [Authenticating a user](/en-US/docs/Web/API/Web_Authentication_API#authenticating_a_user) for more information about how the overall flow works.
-
-### Retrieving a one-time password
-
-The code below triggers the browser's permission flow when an SMS message arrives. If permission is granted, then the promise resolves with an `OTPCredential` object. The contained `code` value is then set as the value of an {{htmlelement("input")}} form element, which is then submitted.
-
-```js
-navigator.credentials
-  .get({
-    otp: { transport: ["sms"] },
-    signal: ac.signal,
-  })
-  .then((otp) => {
-    input.value = otp.code;
-    if (form) form.submit();
-  })
-  .catch((err) => {
-    console.error(err);
-  });
-```
-
-### Implementing a timeout
-
-In this example, we use {{domxref("AbortSignal.timeout_static", "AbortSignal.timeout()")}} to automatically abort the request if it takes longer than 10 seconds.
-
-```js
-async function authenticateUser() {
-  const publicKey = {
-    challenge: new Uint8Array([139, 66, 181, 87, 7, 203 /* ,… */]),
-    rpId: "acme.com",
-    allowCredentials: [
-      {
-        type: "public-key",
-        id: new Uint8Array([64, 66, 25, 78, 168, 226, 174 /* ,… */]),
-      },
-    ],
-    userVerification: "required",
-  };
-
-  try {
-    const credential = await navigator.credentials.get({
-      publicKey,
-      signal: AbortSignal.timeout(10000), // Abort after 10 seconds
-    });
-    console.log("Authentication successful:", credential);
-  } catch (err) {
-    if (err.name === "TimeoutError") {
-      console.error("The authentication request timed out.");
-    } else if (err.name === "AbortError") {
-      console.log("The request was cancelled by the user.");
-    } else {
-      console.error("An unexpected error occurred:", err);
-    }
-  }
-}
-```
-
-## Specifications
-
-{{Specifications}}
-
-## Browser compatibility
-
-{{Compat}}
