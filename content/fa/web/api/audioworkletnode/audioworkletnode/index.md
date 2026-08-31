@@ -1,7 +1,7 @@
 ---
 title: "AudioWorkletNode: AudioWorkletNode() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/AudioWorkletNode"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,83 +14,73 @@ browser-compat: api.AudioWorkletNode.AudioWorkletNode
 
 {{APIRef("Web Audio API")}}{{SecureContext_Header}}
 
-The **`AudioWorkletNode()`**
-constructor creates a new {{domxref("AudioWorkletNode")}} object, which represents an
-{{domxref("AudioNode")}} that uses a JavaScript function to perform custom audio
-processing.
+سازندهٔ **`AudioWorkletNode()`** یک شیء جدید {{domxref("AudioWorkletNode")}} می‌سازد که نمایانگر یک {{domxref("AudioNode")}} است که از یک تابع جاوااسکریپت برای پردازش صوتی سفارشی استفاده می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new AudioWorkletNode(context, name)
 new AudioWorkletNode(context, name, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `context`
-  - : The {{domxref("BaseAudioContext")}} instance this node will be associated with.
+  - : نمونهٔ {{domxref("BaseAudioContext")}} که این گره با آن مرتبط خواهد شد.
 - `name`
-  - : A string, which represents the name of the {{domxref("AudioWorkletProcessor")}} this
-    node will be based on. A processor with the provided name must first be registered
-    using the {{domxref("AudioWorkletGlobalScope.registerProcessor()")}} method.
+  - : یک رشته که نام {{domxref("AudioWorkletProcessor")}} را نشان می‌دهد که این گره بر اساس آن ساخته می‌شود. پردازنده‌ای با نام داده‌شده باید ابتدا با استفاده از متد {{domxref("AudioWorkletGlobalScope.registerProcessor()")}} ثبت شده باشد.
 - `options` {{optional_inline}}
-  - : An object containing zero or more of the following optional properties to configure the new node:
+  - : یک شیء حاوی صفر یا چند ویژگی اختیاری زیر برای پیکربندی گرهٔ جدید:
 
     <!-- The specification refers to this object as: AudioWorkletNodeOptions -->
 
     > [!NOTE]
-    > The result of [the structured clone algorithm](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm)
-    > applied to the object is also internally passed into the associated {{domxref("AudioWorkletProcessor.AudioWorkletProcessor", "AudioWorkletProcessor()")}} constructor
-    > — this allows custom initialization of an underlying user-defined {{domxref("AudioWorkletProcessor")}}.
+    > نتیجهٔ [الگوریتم شبیه‌سازی ساخت‌یافته](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) اعمال‌شده روی این شیء نیز به‌صورت داخلی به سازندهٔ {{domxref("AudioWorkletProcessor.AudioWorkletProcessor", "AudioWorkletProcessor()")}} مرتبط ارسال می‌شود — این امکان را می‌دهد که مقداردهی اولیهٔ سفارشی برای یک {{domxref("AudioWorkletProcessor")}} تعریف‌شده توسط کاربر انجام شود.
     - `numberOfInputs` {{optional_inline}}
-      - : The value to initialize the {{domxref("AudioNode.numberOfInputs", "numberOfInputs")}} property to. Defaults to 1.
+      - : مقداردهی اولیهٔ ویژگی {{domxref("AudioNode.numberOfInputs", "numberOfInputs")}}. پیش‌فرض 1 است.
     - `numberOfOutputs` {{optional_inline}}
-      - : The value to initialize the {{domxref("AudioNode.numberOfOutputs", "numberOfOutputs")}} property to. Defaults to 1.
+      - : مقداردهی اولیهٔ ویژگی {{domxref("AudioNode.numberOfOutputs", "numberOfOutputs")}}. پیش‌فرض 1 است.
     - `outputChannelCount` {{optional_inline}}
-      - : An **array** defining the number of channels for each output. For example, _outputChannelCount: \[n, m]_ specifies the number of channels in the first output to be _n_ and the second output to be _m_. The array length must match `numberOfOutputs`.
+      - : یک **آرایه** که تعداد کانال‌ها را برای هر خروجی تعریف می‌کند. برای مثال، _outputChannelCount: \[n, m]_ تعداد کانال‌ها را در خروجی اول برابر _n_ و در خروجی دوم برابر _m_ مشخص می‌کند. طول آرایه باید با `numberOfOutputs` مطابقت داشته باشد.
     - `parameterData` {{optional_inline}}
-      - : An object containing the initial values of custom {{domxref("AudioParam")}} objects on this node (in its {{domxref("AudioWorkletNode.parameters", "parameters")}} property), with `key` being the name of a custom parameter and `value` being its initial value.
+      - : یک شیء حاوی مقادیر اولیهٔ اشیاء {{domxref("AudioParam")}} سفارشی روی این گره (در ویژگی {{domxref("AudioWorkletNode.parameters", "parameters")}} آن)، که `key` نام یک پارامتر سفارشی و `value` مقدار اولیهٔ آن است.
     - `processorOptions` {{optional_inline}}
-      - : Any additional data that can be used for custom initialization of the underlying {{domxref("AudioWorkletProcessor")}}.
+      - : هر دادهٔ اضافی که می‌تواند برای مقداردهی اولیهٔ سفارشی {{domxref("AudioWorkletProcessor")}} پایه استفاده شود.
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : The specified `options.outputChannelCount` is `0` or larger
-    than the current implementation supports.
+  - : مقدار `options.outputChannelCount` مشخص‌شده برابر 0 یا بزرگ‌تر از مقداری است که پیاده‌سازی فعلی پشتیبانی می‌کند.
 
-    Both `options.numberOfInputs` and `options.numberOfOutputs` are 0.
+    هر دو `options.numberOfInputs` و `options.numberOfOutputs` برابر 0 هستند.
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : The length of `options.outputChannelCount` array does not match
-    `options.numberOfOutputs`.
+  - : طول آرایهٔ `options.outputChannelCount` با `options.numberOfOutputs` مطابقت ندارد.
 
-## Usage notes
+## نکات استفاده
 
-Different `options` parameter values can have the following effects.
+مقادیر مختلف پارامتر `options` می‌توانند اثرات زیر را داشته باشند.
 
-If the number of inputs and number of outputs are both set to 0, a `NotSupportedError` will be thrown and the node construction process aborted. If the length of the `outputChannelCount` array doesn't match `numberOfOutputs`, an `IndexSizeError` {{domxref("DOMException")}} will be thrown.
+اگر تعداد ورودی‌ها و تعداد خروجی‌ها هر دو روی 0 تنظیم شوند، یک `NotSupportedError` پرتاب می‌شود و فرایند ساخت گره متوقف می‌شود. اگر طول آرایهٔ `outputChannelCount` با `numberOfOutputs` مطابقت نداشته باشد، یک `IndexSizeError` {{domxref("DOMException")}} پرتاب می‌شود.
 
-If `outputChannelCount` isn't specified, and `numberOfInputs` and `numberOfOutputs` are both 1, the `AudioWorkletNode`'s initial channel count is set to 1. This has the effect of changing the output channel count to dynamically change to the computed number of channels, based on the input's channel count and the current setting of the {{domxref("AudioNode")}} property {{domxref("AudioNode.channelCountMode", "channelCountMode")}}.
+اگر `outputChannelCount` مشخص نشده باشد و `numberOfInputs` و `numberOfOutputs` هر دو 1 باشند، تعداد کانال اولیهٔ `AudioWorkletNode` روی 1 تنظیم می‌شود. این اثر باعث می‌شود تعداد کانال‌های خروجی به‌صورت پویا به تعداد کانال‌های محاسبه‌شده تغییر کند، بر اساس تعداد کانال ورودی و تنظیمات فعلی ویژگی {{domxref("AudioNode")}} به نام {{domxref("AudioNode.channelCountMode", "channelCountMode")}}.
 
-Otherwise, if `outputChannelCount` is provided _and_ if the values of `numberOfInputs` and `numberOfOutputs` are both 1, the audio worklet node's channel count is set to the value of `outputChannelCount`. Otherwise, the channel count of each channel in the set of output channels is set to match the corresponding value in the `outputChannelCount` array.
+در غیر این صورت، اگر `outputChannelCount` ارائه شده باشد _و_ مقادیر `numberOfInputs` و `numberOfOutputs` هر دو 1 باشند، تعداد کانال‌های گرهٔ کار صوتی به مقدار `outputChannelCount` تنظیم می‌شود. در غیر این صورت، تعداد کانال‌های هر کانال در مجموعهٔ کانال‌های خروجی به‌گونه‌ای تنظیم می‌شود که با مقدار متناظر در آرایهٔ `outputChannelCount` مطابقت داشته باشد.
 
-## Examples
+## مثال‌ها
 
-_For a complete example demonstrating user-defined audio processing, see the
-{{domxref("AudioWorkletNode")}} page._
+_برای یک مثال کامل که پردازش صوتی تعریف‌شده توسط کاربر را نشان می‌دهد، صفحهٔ {{domxref("AudioWorkletNode")}} را ببینید._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-- [Background audio processing using AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
-- {{domxref("AudioWorkletNode", "AudioWorkletNode")}} interface
+- [پردازش صوتی پس‌زمینه با استفاده از AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
+- رابط {{domxref("AudioWorkletNode", "AudioWorkletNode")}}
