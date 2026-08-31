@@ -1,7 +1,7 @@
 ---
 title: "AudioContext: baseLatency property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/baseLatency"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,22 +14,16 @@ browser-compat: api.AudioContext.baseLatency
 
 {{APIRef("Web Audio API")}}
 
-The **`baseLatency`** read-only property of the
-{{domxref("AudioContext")}} interface returns a double that represents the number of
-seconds of processing latency incurred by the `AudioContext` passing an audio
-buffer from the {{domxref("AudioDestinationNode")}} — i.e., the end of the audio graph —
-into the host system's audio subsystem ready for playing.
+ویژگی فقط‌خواندنی **`baseLatency`** از رابط {{domxref("AudioContext")}} یک عدد اعشاری برمی‌گرداند که نشان‌دهندهٔ تعداد ثانیه‌های تأخیر پردازشی است که توسط `AudioContext` هنگام عبور یک بافر صوتی از {{domxref("AudioDestinationNode")}} — یعنی انتهای گراف صوتی — به زیرسیستم صوتی سیستم میزبان برای پخش آماده می‌شود.
 
 > [!NOTE]
-> You can request a certain latency during
-> {{domxref("AudioContext.AudioContext()", "construction time", "", "true")}} with the
-> `latencyHint` option, but the browser may ignore the option.
+> شما می‌توانید مقدار مشخصی از تأخیر را در حین {{domxref("AudioContext.AudioContext()", "زمان ساخت", "", "true")}} با استفاده از گزینهٔ `latencyHint` درخواست کنید، اما مرورگر ممکن است این گزینه را نادیده بگیرد.
 
-## Value
+## مقدار
 
-A double representing the base latency in seconds.
+یک عدد اعشاری که تأخیر پایه را بر حسب ثانیه نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // default latency ("interactive")
@@ -41,15 +35,15 @@ const audioCtx2 = new AudioContext({ latencyHint: "playback" });
 console.log(audioCtx2.baseLatency); // 0.15
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
