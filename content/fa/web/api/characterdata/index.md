@@ -1,10 +1,4 @@
 ---
-title: "CharacterData"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterData"
-status: "needs-translation"
----
-
----
 title: CharacterData
 slug: Web/API/CharacterData
 page-type: web-api-interface
@@ -13,57 +7,55 @@ browser-compat: api.CharacterData
 
 {{APIRef("DOM")}}
 
-The **`CharacterData`** abstract interface represents a {{domxref("Node")}} object that contains characters. This is an abstract interface, meaning there aren't any objects of type `CharacterData`: it is implemented by other interfaces like {{domxref("Text")}}, {{domxref("Comment")}}, {{domxref("CDATASection")}}, or {{domxref("ProcessingInstruction")}}, which aren't abstract.
+اینترفیس انتزاعی **`CharacterData`** یک شیء {{domxref("Node")}} را نشان می‌دهد که حاوی نویسه‌ها (کاراکترها) است. این یک اینترفیس انتزاعی است؛ به این معنی که هیچ شیئی از نوع `CharacterData` وجود ندارد: این اینترفیس توسط اینترفیس‌های دیگری مانند {{domxref("Text")}}، {{domxref("Comment")}}، {{domxref("CDATASection")}} یا {{domxref("ProcessingInstruction")}} پیاده‌سازی می‌شود که انتزاعی نیستند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from its parents, {{domxref("Node")}} and {{domxref("EventTarget")}}._
+_این اینترفیس همچنین ویژگی‌های والدهای خود، {{domxref("Node")}} و {{domxref("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("CharacterData.data")}}
-  - : A string representing the textual data contained in this object.
+  - : یک رشته که دادهٔ متنی موجود در این شیء را نشان می‌دهد.
 - {{domxref("CharacterData.length")}} {{ReadOnlyInline}}
-  - : Returns a number representing the size of the string contained in the object.
+  - : یک عدد برمی‌گرداند که اندازهٔ رشتهٔ موجود در شیء را نشان می‌دهد.
 - {{domxref("CharacterData.nextElementSibling")}} {{ReadOnlyInline}}
-  - : Returns the first {{domxref("Element")}} that _follows_ this node, and is a sibling.
+  - : اولین {{domxref("Element")}} را برمی‌گرداند که _بعد از_ این گره قرار دارد و هم‌خواهر (sibling) آن است.
 - {{domxref("CharacterData.previousElementSibling")}} {{ReadOnlyInline}}
-  - : Returns the first {{domxref("Element")}} that _precedes_ this node, and is a sibling.
+  - : اولین {{domxref("Element")}} را برمی‌گرداند که _قبل از_ این گره قرار دارد و هم‌خواهر (sibling) آن است.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface also inherits methods from its parents, {{domxref("Node")}} and {{domxref("EventTarget")}}._
+_این اینترفیس همچنین متدهای والدهای خود، {{domxref("Node")}} و {{domxref("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("CharacterData.after()")}}
-  - : Inserts a set of {{domxref("Node")}} objects or strings in the children list of the
-    `CharacterData`'s parent, just after the `CharacterData` object.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را در فهرست فرزندان والدِ `CharacterData`، درست بعد از خودِ شیء `CharacterData` درج می‌کند.
 - {{domxref("CharacterData.appendData()")}}
-  - : Appends the given string to the `CharacterData.data` string; when this method returns, `data` contains the concatenated string.
+  - : رشتهٔ داده‌شده را به رشتهٔ `CharacterData.data` اضافه می‌کند؛ وقتی این متد برمی‌گردد، `data` شامل رشتهٔ الحاق‌شده است.
 - {{domxref("CharacterData.before()")}}
-  - : Inserts a set of {{domxref("Node")}} objects or strings in the children list of the
-    `CharacterData`'s parent, just before the `CharacterData` object.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را در فهرست فرزندان والدِ `CharacterData`، درست قبل از خودِ شیء `CharacterData` درج می‌کند.
 - {{domxref("CharacterData.deleteData()")}}
-  - : Removes the specified amount of characters, starting at the specified offset, from the `CharacterData.data` string; when this method returns, `data` contains the shortened string.
+  - : تعداد مشخصی از نویسه‌ها را از رشتهٔ `CharacterData.data`، با شروع از آفست مشخص‌شده، حذف می‌کند؛ وقتی این متد برمی‌گردد، `data` شامل رشتهٔ کوتاه‌شده است.
 - {{domxref("CharacterData.insertData()")}}
-  - : Inserts the specified characters, at the specified offset, in the `CharacterData.data` string; when this method returns, `data` contains the modified string.
+  - : نویسه‌های مشخص‌شده را در آفست مشخص، در رشتهٔ `CharacterData.data` درج می‌کند؛ وقتی این متد برمی‌گردد، `data` شامل رشتهٔ تغییر‌یافته است.
 - {{domxref("CharacterData.remove()")}}
-  - : Removes the object from its parent children list.
+  - : شیء را از فهرست فرزندان والدش حذف می‌کند.
 - {{domxref("CharacterData.replaceData()")}}
-  - : Replaces the specified amount of characters, starting at the specified offset, with the specified string; when this method returns, `data` contains the modified string.
+  - : تعداد مشخصی از نویسه‌ها را، با شروع از آفست مشخص، با رشتهٔ مشخص‌شده جایگزین می‌کند؛ وقتی این متد برمی‌گردد، `data` شامل رشتهٔ تغییر‌یافته است.
 - {{DOMxRef("CharacterData.replaceWith()")}}
-  - : Replaces the characters in the children list of its parent with a set of {{domxref("Node")}} objects or strings.
+  - : نویسه‌های موجود در فهرست فرزندان والدش را با مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها جایگزین می‌کند.
 - {{domxref("CharacterData.substringData()")}}
-  - : Returns a string containing the part of `CharacterData.data` of the specified length and starting at the specified offset.
+  - : رشته‌ای شامل بخشی از `CharacterData.data` را با طول مشخص‌شده و شروع از آفست مشخص برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [The DOM overview page](/en-US/docs/Web/API/Document_Object_Model).
-- The concrete interfaces implemented it: {{domxref("Text")}}, {{domxref("CDATASection")}}, {{domxref("ProcessingInstruction")}}, and {{domxref("Comment")}}.
+- [صفحهٔ نمای کلی DOM](/en-US/docs/Web/API/Document_Object_Model).
+- اینترفیس‌های انضمامی که آن را پیاده‌سازی می‌کنند: {{domxref("Text")}}، {{domxref("CDATASection")}}، {{domxref("ProcessingInstruction")}} و {{domxref("Comment")}}.
