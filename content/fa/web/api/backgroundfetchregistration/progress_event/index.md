@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRegistration: progress event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/progress_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,18 +16,18 @@ browser-compat: api.BackgroundFetchRegistration.progress_event
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`progress`** event of the {{domxref("BackgroundFetchRegistration")}} interface thrown when the associated background fetch progresses.
+رویداد **`progress`** از رابط {{domxref("BackgroundFetchRegistration")}} هنگامی که واکشی پس‌زمینه‌ی مرتبط پیشرفت می‌کند، صادر می‌شود.
 
-Practically, this event is fired when any of the following properties will return a new value:
+در عمل، این رویداد زمانی صادر می‌شود که هر یک از ویژگی‌های زیر مقدار جدیدی بازگردانند:
 
 - {{domxref("BackgroundFetchRegistration.uploaded", "uploaded")}},
 - {{domxref("BackgroundFetchRegistration.downloaded", "downloaded")}},
-- {{domxref("BackgroundFetchRegistration.result", "result")}}, or
+- {{domxref("BackgroundFetchRegistration.result", "result")}}, یا
 - {{domxref("BackgroundFetchRegistration.failureReason", "failureReason")}}.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("progress", (event) => { })
@@ -35,13 +35,13 @@ addEventListener("progress", (event) => { })
 onprogress = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}} with no added properties.
+یک {{domxref("Event")}} عمومی بدون ویژگی‌های اضافه‌شده.
 
-## Example
+## مثال
 
-The following example demonstrates how to log the progress of a download. The code first checks that a `downloadTotal` was provided when the background fetch was registered. This is then used to calculate the percentage, based on the `downloaded` property.
+مثال زیر نشان می‌دهد که چگونه پیشرفت یک دانلود را ثبت کنید. کد ابتدا بررسی می‌کند که هنگام ثبت واکشی پس‌زمینه، `downloadTotal` ارائه شده باشد. سپس از آن برای محاسبه درصد بر اساس ویژگی `downloaded` استفاده می‌شود.
 
 ```js
 bgFetch.addEventListener("progress", () => {
@@ -53,10 +53,10 @@ bgFetch.addEventListener("progress", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
