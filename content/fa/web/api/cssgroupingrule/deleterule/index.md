@@ -1,7 +1,5 @@
 ---
 title: "CSSGroupingRule: deleteRule() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSGroupingRule/deleteRule"
-status: "needs-translation"
 ---
 
 ---
@@ -14,44 +12,41 @@ browser-compat: api.CSSGroupingRule.deleteRule
 
 {{ APIRef("CSSOM") }}
 
-The **`deleteRule()`** method of the
-{{domxref("CSSGroupingRule")}} interface removes a CSS rule from a list of child CSS
-rules.
+متد **`deleteRule()`** از رابط {{domxref("CSSGroupingRule")}} یک قانون CSS را از فهرست قوانین CSS فرزند حذف می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 deleteRule(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : The index of the rule to delete.
+  - : شاخص قاعده‌ای که باید حذف شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if _index_ is greater than or equal to the number of child CSS
-    rules.
+  - : اگر _index_ بزرگ‌تر یا مساوی تعداد قوانین CSS فرزند باشد، این استثنا پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the rule being removed is an `@namespace` at-rule, and the list of child CSS rules contains anything other than `@import` at-rules and `@namespace` at-rules.
+  - : اگر قاعده‌ای که حذف می‌شود یک at-rule از نوع `@namespace` باشد و فهرست قوانین CSS فرزند شامل چیزی غیر از at-rule‌های `@import` و at-rule‌های `@namespace` باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 let myRules = document.styleSheets[0].cssRules;
 myRules[0].deleteRule(2); /* deletes the rule at index 2 */
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
