@@ -1,22 +1,12 @@
 ---
 title: "Blob: Blob() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Blob/Blob"
-status: "needs-translation"
----
-
----
-title: "Blob: Blob() constructor"
-short-title: Blob()
-slug: Web/API/Blob/Blob
-page-type: web-api-constructor
-browser-compat: api.Blob.Blob
+translated_by: "n8n + AI"
 ---
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`Blob()`** constructor returns a
-new {{domxref("Blob")}} object. The content of the blob consists of the concatenation
-of the values given in the parameter `blobParts`.
+سازنده **`Blob()`** یک شیء {{domxref("Blob")}} جدید بازمی‌گرداند. محتوای blob شامل الحاق مقادیر داده شده در پارامتر `blobParts` است.
 
 ## Syntax
 
@@ -28,27 +18,18 @@ new Blob(blobParts, options)
 ### Parameters
 
 - `blobParts` {{optional_inline}}
-  - : An [iterable](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol)
-    object such as an {{jsxref("Array")}}, having {{jsxref("ArrayBuffer")}}s,
-    {{jsxref("TypedArray")}}s, {{jsxref("DataView")}}s, {{domxref("Blob")}}s, strings,
-    or a mix of any of such elements, that will be put inside the {{domxref("Blob")}}.
-    Strings should be well-formed Unicode, and lone surrogates are sanitized using the same algorithm as {{jsxref("String.prototype.toWellFormed()")}}.
-    The resulting string is encoded as UTF-8.
+  - : یک شیء [iterable](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol) مانند {{jsxref("Array")}}، حاوی {{jsxref("ArrayBuffer")}}ها، {{jsxref("TypedArray")}}ها، {{jsxref("DataView")}}ها، {{domxref("Blob")}}ها، رشته‌ها، یا ترکیبی از هر یک از این عناصر، که درون {{domxref("Blob")}} قرار می‌گیرند. رشته‌ها باید Unicode خوب‌فرم باشند، و surrogateهای تنها با استفاده از همان الگوریتم {{jsxref("String.prototype.toWellFormed()")}} پالایش می‌شوند. رشته حاصل به صورت UTF-8 رمزگذاری می‌شود.
 
 - `options` {{optional_inline}}
-  - : An object which may specify any of the following properties:
+  - : یک شیء که ممکن است هر یک از ویژگی‌های زیر را مشخص کند:
     - `type` {{optional_inline}}
-      - : The {{Glossary("MIME type")}} of the data that will be stored into the blob. The
-        default value is the empty string, (`""`).
+      - : نوع {{Glossary("MIME type")}} داده‌ای که در blob ذخیره خواهد شد. مقدار پیش‌فرض رشته خالی (`""`) است.
     - `endings` {{optional_inline}}
-      - : How to interpret newline characters (`\n`) within the contents, if
-        the data is text. The default value, `transparent`, copies newline
-        characters into the blob without changing them. To convert newlines to the host
-        system's native convention, specify the value `native`.
+      - : نحوه تفسیر کاراکترهای خط جدید (`\n`) درون محتوا، اگر داده متن باشد. مقدار پیش‌فرض `transparent`، کاراکترهای خط جدید را بدون تغییر در blob کپی می‌کند. برای تبدیل خطوط جدید به قرارداد بومی سیستم میزبان، مقدار `native` را مشخص کنید.
 
 ### Return value
 
-A new {{domxref("Blob")}} object containing the specified data.
+یک شیء {{domxref("Blob")}} جدید حاوی داده‌های مشخص شده.
 
 ## Examples
 
