@@ -1,7 +1,7 @@
 ---
 title: "AudioWorkletNode: processorerror event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/processorerror_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,13 +14,13 @@ browser-compat: api.AudioWorkletNode.processorerror_event
 
 {{ APIRef("Web Audio API") }}{{SecureContext_Header}}
 
-The `processorerror` event fires when the underlying {{domxref("AudioWorkletProcessor")}} behind the node throws an exception in its constructor, the {{domxref("AudioWorkletProcessor.process", "process")}} method, or any user-defined class method.
+رویداد `processorerror` زمانی آتش می‌شود که {{domxref("AudioWorkletProcessor")}} پشت گره در سازنده‌اش، متد {{domxref("AudioWorkletProcessor.process", "process")}}، یا هر متد کلاس تعریف‌شده توسط کاربر استثنا پرتاب کند.
 
-Once an exception is thrown, the processor (and thus the node) will output silence throughout its lifetime.
+پس از پرتاب یک استثنا، پردازنده (و در نتیجه گره) در طول عمر خود خروجی سکوت خواهد داشت.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("processorerror", (event) => { })
@@ -28,13 +28,13 @@ addEventListener("processorerror", (event) => { })
 onprocessorerror = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-To be informed when the processor throws an exception, you can add a handler to your {{domxref("AudioWorkletNode")}} instance using {{domxref("EventTarget.addEventListener", "addEventListener()")}}, like this:
+برای اطلاع از زمانی که پردازنده استثنا پرتاب می‌کند، می‌توانید یک کنترل‌کننده به نمونه {{domxref("AudioWorkletNode")}} خود با استفاده از {{domxref("EventTarget.addEventListener", "addEventListener()")}} اضافه کنید، مانند این:
 
 ```js
 whiteNoiseNode.addEventListener("processorerror", (event) => {
@@ -42,7 +42,7 @@ whiteNoiseNode.addEventListener("processorerror", (event) => {
 });
 ```
 
-Alternatively, you can use the `onprocessorerror` event handler property to establish a handler for the `processorerror` event:
+متناوباً، می‌توانید از ویژگی کنترل‌کننده رویداد `onprocessorerror` برای برقراری یک کنترل‌کننده برای رویداد `processorerror` استفاده کنید:
 
 ```js
 whiteNoiseNode.onprocessorerror = (event) => {
@@ -50,14 +50,14 @@ whiteNoiseNode.onprocessorerror = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
