@@ -1,11 +1,5 @@
 ---
 title: "CharacterData: deleteData() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/deleteData"
-status: "needs-translation"
----
-
----
-title: "CharacterData: deleteData() method"
 short-title: deleteData()
 slug: Web/API/CharacterData/deleteData
 page-type: web-api-instance-method
@@ -14,33 +8,31 @@ browser-compat: api.CharacterData.deleteData
 
 {{APIRef("DOM")}}
 
-The **`deleteData()`** method of the {{domxref("CharacterData")}} interface
-removes all or part of the data from this `CharacterData` node.
+متد **`deleteData()`** از رابط {{domxref("CharacterData")}} تمام یا بخشی از داده‌ها را از این گره `CharacterData` حذف می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 deleteData(offset, count)
 ```
 
-### Parameters
+### پارامترها
 
 - `offset`
-  - : The number of bytes from the start of the data to remove from.
-    `0` is the first character of the string.
+  - : تعداد بایت‌هایی از ابتدای داده‌ها است که حذف از آنجا شروع می‌شود. `0` اولین کاراکتر رشته است.
 - `count`
-  - : The number of bytes to remove.
+  - : تعداد بایت‌هایی که باید حذف شوند.
 
-### Return value
+### مقدار بازگشتی
 
-None.
+هیچ.
 
-### Exceptions
+### استثناها
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if `offset` is greater than the length of the contained data.
+  - : اگر `offset` بزرگ‌تر از طول داده‌های موجود باشد، پرتاب می‌شود.
 
-## Example
+## مثال
 
 ```html
 <span>Result: </span>A long string.
@@ -55,15 +47,15 @@ textNode.deleteData(1, 5);
 
 {{EmbedLiveSample("Example", "100%", 50)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CharacterData.appendData()")}}, {{domxref("CharacterData.insertData()")}}, {{domxref("CharacterData.replaceData()")}}
 - {{domxref("CharacterData.data")}}
