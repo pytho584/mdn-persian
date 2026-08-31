@@ -1,7 +1,7 @@
 ---
 title: "AudioBuffer: length property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/length"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,15 +14,13 @@ browser-compat: api.AudioBuffer.length
 
 {{ APIRef("Web Audio API") }}
 
-The **`length`** property of the {{ domxref("AudioBuffer") }}
-interface returns an integer representing the length, in sample-frames, of the PCM data
-stored in the buffer.
+ویژگی **`length`** از رابط {{ domxref("AudioBuffer") }} یک عدد صحیح را برمی‌گرداند که طول داده‌های PCM ذخیره شده در بافر را بر حسب نمونه-فریم (sample-frames) نشان می‌دهد.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## نمونه‌ها
 
 ```js
 // Stereo
@@ -50,14 +48,14 @@ button.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
