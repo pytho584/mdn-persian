@@ -1,7 +1,7 @@
 ---
 title: "AnimationEvent: pseudoElement property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/pseudoElement"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,29 +14,22 @@ browser-compat: api.AnimationEvent.pseudoElement
 
 {{APIRef("Web Animations")}}
 
-The **`AnimationEvent.pseudoElement`** read-only property is a
-string, starting with `'::'`, containing the name of the [pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) the animation runs on.
-If the animation doesn't run on a pseudo-element but on the element, an empty string: `''`.
+ویژگی **`AnimationEvent.pseudoElement`** فقطخواندنی است و یک رشته است که با `'::'` شروع می‌شود و نام [شبه‌عنصر](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) را که انیمیشن روی آن اجرا می‌شود، دربرمی‌گیرد. اگر انیمیشن روی شبه‌عنصر اجرا نشود بلکه روی خود عنصر اجرا شود، مقدار آن یک رشته خالی است: `''`.
 
-## Value
+## مقدار
 
-A string, starting with `'::'`, containing the name of the [pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) the animation runs on.
+یک رشته، که با `'::'` شروع می‌شود و شامل نام [شبه‌عنصر](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) است که انیمیشن روی آن اجرا می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using CSS animations](/en-US/docs/Web/CSS/Guides/Animations/Using)
-- Animation-related CSS properties and at-rules: {{cssxref("animation")}},
-  {{cssxref("animation-delay")}}, {{cssxref("animation-direction")}},
-  {{cssxref("animation-duration")}}, {{cssxref("animation-fill-mode")}},
-  {{cssxref("animation-iteration-count")}}, {{cssxref("animation-name")}},
-  {{cssxref("animation-play-state")}}, {{cssxref("animation-timing-function")}},
-  {{cssxref("@keyframes")}}.
-- The {{domxref("AnimationEvent")}} interface it belongs to.
+- [استفاده از انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations/Using)
+- ویژگی‌های CSS مرتبط با انیمیشن و at-rules: {{cssxref("animation")}}, {{cssxref("animation-delay")}}, {{cssxref("animation-direction")}}, {{cssxref("animation-duration")}}, {{cssxref("animation-fill-mode")}}, {{cssxref("animation-iteration-count")}}, {{cssxref("animation-name")}}, {{cssxref("animation-play-state")}}, {{cssxref("animation-timing-function")}}, {{cssxref("@keyframes")}}.
+- رابط {{domxref("AnimationEvent")}} که این ویژگی به آن تعلق دارد.
