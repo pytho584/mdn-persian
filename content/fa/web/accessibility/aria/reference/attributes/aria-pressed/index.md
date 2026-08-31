@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-pressed attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,57 +13,55 @@ spec-urls: https://w3c.github.io/aria/#aria-pressed
 sidebar: accessibilitysidebar
 ---
 
-The `aria-pressed` attribute indicates the current "pressed" state of a toggle button.
+ویژگی `aria-pressed` وضعیت فعلی «فشرده‌شده» یک دکمهٔ تغییر وضعیت را نشان می‌دهد.
 
-## Description
+## توضیحات
 
-Adding `aria-pressed` to an element with a role of [`button`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role) turns the button into a toggle button. The `aria-pressed` attribute is only relevant for toggle buttons. It represents the button's current "pressed" state.
+افزودن `aria-pressed` به عنصری با نقش [`button`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role) آن را به یک دکمهٔ تغییر وضعیت تبدیل می‌کند. ویژگی `aria-pressed` فقط برای دکمه‌های تغییر وضعیت مرتبط است. این ویژگی وضعیت «فشرده‌شده» فعلی دکمه را نشان می‌دهد.
 
-The value is "tri-state", meaning the value can be set to `true`, `false`, `mixed`, or `undefined` values. In the case of `aria-pressed`, like most tri-state value types, the default value is `undefined`.
+این ویژگی «سه‌حالته» است، به این معنی که مقدار آن می‌تواند `true`، `false`، `mixed` یا `undefined` باشد. در مورد `aria-pressed`، مانند بسیاری از انواع مقدار سه‌حالته، مقدار پیش‌فرض `undefined` است.
 
-Toggle buttons require a full press-and-release cycle to change their value. Pressing and releasing it once changes the value to `true`. If it's pressed and released again, the value changes back to `false`.
+دکمه‌های تغییر وضعیت برای تغییر مقدار خود به یک چرخهٔ کامل فشار دادن و رها کردن نیاز دارند. یک بار فشار دادن و رها کردن آن، مقدار را به `true` تغییر می‌دهد. اگر دوباره فشار داده و رها شود، مقدار به `false` بازمی‌گردد.
 
-A value of `mixed` means that the values of more than one item controlled by the button do not all share the same value.
+مقدار `mixed` یعنی مقادیرِ بیش از یک آیتم که توسط دکمه کنترل می‌شوند، همگی یکسان نیستند.
 
-Do not change the contents of the label on a toggle when the state changes. If a button label says "pause", do not change it to "play" when pressed. In this example, when the pressed state is true, the label remains "Pause" so a screen reader would say something like "Pause toggle button pressed".
+هنگام تغییر وضعیت، محتوای برچسب روی یک دکمهٔ تغییر وضعیت را تغییر ندهید. اگر برچسب یک دکمه «Pause» است، هنگام فشار دادن آن را به «Play» تغییر ندهید. در این مثال، وقتی وضعیت فشرده‌شده true است، برچسب همچنان «Pause» می‌ماند، بنابراین صفحه‌خوان چیزی مانند «Pause toggle button pressed» را اعلام می‌کند.
 
 ```html
 <button aria-pressed="false">Pause</button>
 ```
 
-If you want the label to toggle between "Paused" and "Play", don't use `aria-pressed`.
+اگر می‌خواهید برچسب بین «Paused» و «Play» تغییر کند، از `aria-pressed` استفاده نکنید.
 
-The first rule of ARIA use is "if you can use a native feature with the semantics and behavior you require already built in, instead of repurposing an element and adding an ARIA role, state or property to make it accessible, then do so." If we employ native HTML semantics with {{HTMLElement('button')}}, we can toggle the label instead of toggling the pressed state, removing the need for the `aria-pressed` attribute.
+اولین قانون استفاده از ARIA این است: «اگر می‌توانید از یک ویژگی بومی با معنا و رفتاری که از قبل در آن تعبیه شده استفاده کنید، به جای تغییر کاربری یک عنصر و افزودن نقش، حالت یا ویژگی ARIA برای قابل دسترس کردن آن، این کار را انجام دهید.» اگر از معنای بومی HTML با {{HTMLElement('button')}} استفاده کنیم، می‌توانیم برچسب را تغییر دهیم به جای تغییر حالت فشرده، و نیازی به ویژگی `aria-pressed` نخواهیم داشت.
 
-## Values
+## مقادیر
 
 - `false`
-  - : The button supports being pressed but is not currently pressed.
+  - : دکمه از فشرده‌شدن پشتیبانی می‌کند اما در حال حاضر فشرده نشده است.
 - `mixed`
-  - : Indicates a mixed mode value for a tri-state toggle button.
+  - : مقدار حالت مختلط را برای یک دکمهٔ تغییر وضعیت سه‌حالته نشان می‌دهد.
 - `true`
-  - : The button is pressed.
-- `undefined` (default)
-  - : The element does not support being pressed.
+  - : دکمه فشرده شده است.
+- `undefined` (پیش‌فرض)
+  - : عنصر از فشرده‌شدن پشتیبانی نمی‌کند.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaPressed")}}
-  - : The [`ariaPressed`](/en-US/docs/Web/API/Element/ariaPressed) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-pressed` attribute.
+  - : ویژگی [`ariaPressed`](/en-US/docs/Web/API/Element/ariaPressed) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-pressed` را بازتاب می‌دهد.
 - {{domxref("ElementInternals.ariaPressed")}}
-  - : The [`ariaPressed`](/en-US/docs/Web/API/ElementInternals/ariaPressed) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-pressed` attribute.
+  - : ویژگی [`ariaPressed`](/en-US/docs/Web/API/ElementInternals/ariaPressed) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-pressed` را بازتاب می‌دهد.
 
-## Associated roles
-
-Used in roles:
+## نقش‌های مرتبط
 
 - [`button`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## جستارهای وابسته
 
 - [`<input type="button">`](/en-US/docs/Web/HTML/Reference/Elements/input/button)
 - [`<input type="submit">`](/en-US/docs/Web/HTML/Reference/Elements/input/submit)
