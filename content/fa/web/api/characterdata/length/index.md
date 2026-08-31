@@ -1,11 +1,5 @@
 ---
 title: "CharacterData: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/length"
-status: "needs-translation"
----
-
----
-title: "CharacterData: length property"
 short-title: length
 slug: Web/API/CharacterData/length
 page-type: web-api-instance-property
@@ -14,18 +8,17 @@ browser-compat: api.CharacterData.length
 
 {{APIRef("DOM")}}
 
-The read-only **`CharacterData.length`** property
-returns the number of characters in the contained data, as a positive integer.
+ویژگی فقط خواندنی **`CharacterData.length`** تعداد کاراکترهای موجود در داده‌های درون‌یافته را به صورت یک عدد صحیح مثبت برمی‌گرداند.
 
-## Value
+## مقدار
 
-A positive integer with the length of the {{domxref("CharacterData.data")}} string.
+یک عدد صحیح مثبت که طول رشته {{domxref("CharacterData.data")}} را نشان می‌دهد.
 
-## Example
+## مثال
 
 > [!NOTE]
-> {{domxref("CharacterData")}} is an abstract interface.
-> The examples below use {{domxref("Text")}}, a concrete interface implementing it.
+> {{domxref("CharacterData")}} یک رابط انتزاعی است.
+> مثال‌های زیر از {{domxref("Text")}} استفاده می‌کنند که یک رابط مشخص است که آن را پیاده‌سازی می‌کند.
 
 ```html
 Length of the string in the <code>Text</code> node: <output></output>
@@ -40,10 +33,10 @@ output.value = textNode.length;
 
 {{EmbedLiveSample("Example", "100%", 50)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
