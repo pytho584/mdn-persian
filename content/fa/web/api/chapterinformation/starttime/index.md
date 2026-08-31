@@ -1,11 +1,5 @@
 ---
 title: "ChapterInformation: startTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation/startTime"
-status: "needs-translation"
----
-
----
-title: "ChapterInformation: startTime property"
 short-title: startTime
 slug: Web/API/ChapterInformation/startTime
 page-type: web-api-instance-property
@@ -16,25 +10,24 @@ browser-compat: api.ChapterInformation.startTime
 
 {{APIRef("Media Session API")}}{{SeeCompatTable}}
 
-The **`startTime`** read-only property of the
-{{domxref("ChapterInformation")}} interface returns a number representing the start time of the chapter in seconds.
+ویژگی فقط‌خواندنی **`startTime`** از رابط {{domxref("ChapterInformation")}} یک عدد را برمی‌گرداند که زمان شروع فصل را بر حسب ثانیه نشان می‌دهد.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("ChapterInformation")}} page for an example.
+برای مثال، صفحهٔ اصلی {{domxref("ChapterInformation")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ChapterInformation")}}
