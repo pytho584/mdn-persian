@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: measureText() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/measureText"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: measureText() method"
 short-title: measureText()
 slug: Web/API/CanvasRenderingContext2D/measureText
 page-type: web-api-instance-method
@@ -14,35 +8,32 @@ browser-compat: api.CanvasRenderingContext2D.measureText
 
 {{APIRef("Canvas API")}}
 
-The
-`CanvasRenderingContext2D.measureText()`
-method returns a {{domxref("TextMetrics")}} object that contains information about the
-measured text (such as its width, for example).
+متد `CanvasRenderingContext2D.measureText()` یک شیء {{domxref("TextMetrics")}} برمی‌گرداند که شامل اطلاعاتی دربارهٔ متنِ اندازه‌گیری‌شده است (برای مثال، عرض آن).
 
-## Syntax
+## نحو
 
 ```js-nolint
 measureText(text)
 ```
 
-### Parameters
+### پارامترها
 
 - `text`
-  - : The text string to measure.
+  - : رشته متنی که باید اندازه‌گیری شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("TextMetrics")}} object.
+یک شیء {{domxref("TextMetrics")}}.
 
-## Examples
+## مثال‌ها
 
-Given this {{HTMLElement("canvas")}} element:
+با توجه به این عنصر {{HTMLElement("canvas")}}:
 
 ```html
 <canvas id="canvas"></canvas>
 ```
 
-… you can get a {{domxref("TextMetrics")}} object using the following code:
+… می‌توانید با استفاده از کد زیر، یک شیء {{domxref("TextMetrics")}} به‌دست آورید:
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -52,15 +43,15 @@ let text = ctx.measureText("Hello world");
 console.log(text.width); // 56;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کنندهٔ این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("TextMetrics")}}
