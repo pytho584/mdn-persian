@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: fill() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fill"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: fill() method"
 short-title: fill()
 slug: Web/API/CanvasRenderingContext2D/fill
 page-type: web-api-instance-method
@@ -14,12 +8,13 @@ browser-compat: api.CanvasRenderingContext2D.fill
 
 {{APIRef("Canvas API")}}
 
-The
+متد
 **`CanvasRenderingContext2D.fill()`**
-method of the Canvas 2D API fills the current or given path with the current
-{{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}}.
+از Canvas 2D API، مسیر جاری یا داده شده را با
+{{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}}
+جاری پر می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 fill()
@@ -28,30 +23,29 @@ fill(fillRule)
 fill(path, fillRule)
 ```
 
-### Parameters
+### پارامترها
 
 - `fillRule`
-  - : The algorithm by which to determine if a point is inside or outside the filling
-    region.
-    Possible values:
+  - : الگوریتمی که تعیین می‌کند یک نقطه داخل یا خارج ناحیه پر شدن است.
+    مقادیر ممکن:
     - `nonzero`
-      - : The [non-zero winding rule](https://en.wikipedia.org/wiki/Nonzero-rule).
-        Default rule.
+      - : قاعده [non-zero winding rule](https://en.wikipedia.org/wiki/Nonzero-rule).
+        قاعده پیش‌فرض.
     - `evenodd`
-      - : The [even-odd winding rule](https://en.wikipedia.org/wiki/Even%E2%80%93odd_rule).
+      - : قاعده [even-odd winding rule](https://en.wikipedia.org/wiki/Even%E2%80%93odd_rule).
 
 - `path`
-  - : A {{domxref("Path2D")}} path to fill.
+  - : یک مسیر {{domxref("Path2D")}} برای پر کردن.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Filling a rectangle
+### پر کردن یک مستطیل
 
-This example fills a rectangle with the `fill()` method.
+این مثال یک مستطیل را با استفاده از متد `fill()` پر می‌کند.
 
 #### HTML
 
@@ -68,16 +62,13 @@ ctx.rect(10, 10, 150, 100);
 ctx.fill();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Filling_a_rectangle', 700, 180) }}
 
-### Specifying a path and a fillRule
+### تعیین یک مسیر و یک fillRule
 
-This example saves some intersecting lines to a Path2D object. The `fill()`
-method is then used to render the object to the canvas. A hole is left unfilled in the
-object's center by using the `"evenodd"` rule; by default (with the
-`"nonzero"` rule), the hole would also be filled.
+این مثال چند خط متقاطع را در یک شیء Path2D ذخیره می‌کند. سپس متد `fill()` برای رندر کردن شیء روی بوم به کار می‌رود. با استفاده از قانون `"evenodd"` یک حفره در مرکز شیء پرنشده باقی می‌ماند؛ به طور پیش‌فرض (با قانون `"nonzero"`) آن حفره نیز پر می‌شد.
 
 #### HTML
 
@@ -106,19 +97,19 @@ ctx.fillStyle = "green";
 ctx.fill(region, "evenodd");
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Specifying_a_path_and_a_fillRule', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.fillStyle")}}
