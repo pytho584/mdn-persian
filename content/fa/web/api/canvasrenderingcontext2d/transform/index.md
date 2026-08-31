@@ -1,7 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: transform() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/transform"
-status: "needs-translation"
 ---
 
 ---
@@ -14,57 +12,49 @@ browser-compat: api.CanvasRenderingContext2D.transform
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.transform()`**
-method of the Canvas 2D API multiplies the current transformation with the matrix
-described by the arguments of this method. This lets you scale, rotate, translate
-(move), and skew the context.
+متد **`CanvasRenderingContext2D.transform()`** در Canvas 2D API، تبدیل فعلی را در ماتریس توصیف‌شده توسط آرگومان‌های این متد ضرب می‌کند. با این کار می‌توانید بافت (context) را مقیاس‌بندی کنید، بچرخانید، انتقال دهید (جابه‌جا کنید) و اریب کنید.
 
 > [!NOTE]
-> See also the
-> {{domxref("CanvasRenderingContext2D.setTransform()", "setTransform()")}} method, which
-> resets the current transform to the identity matrix and then invokes
-> `transform()`.
+> همچنین به متد {{domxref("CanvasRenderingContext2D.setTransform()", "setTransform()")}} مراجعه کنید که تبدیل فعلی را به ماتریس همانی بازنشانی می‌کند و سپس `transform()` را فراخوانی می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 transform(a, b, c, d, e, f)
 ```
 
-The transformation matrix is described by: <math><semantics><mrow><mo>[</mo><mtable columnalign="center center center" rowspacing="0.5ex"><mtr><mtd><mi>a</mi></mtd><mtd><mi>c</mi></mtd><mtd><mi>e</mi></mtd></mtr><mtr><mtd><mi>b</mi></mtd><mtd><mi>d</mi></mtd><mtd><mi>f</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>]</mo></mrow><annotation encoding="TeX">\left[ \begin{array}{ccc} a & c & e \\ b & d & f \\ 0 & 0 & 1 \end{array} \right]</annotation></semantics></math>.
+ماتریس تبدیل به صورت زیر توصیف می‌شود: <math><semantics><mrow><mo>[</mo><mtable columnalign="center center center" rowspacing="0.5ex"><mtr><mtd><mi>a</mi></mtd><mtd><mi>c</mi></mtd><mtd><mi>e</mi></mtd></mtr><mtr><mtd><mi>b</mi></mtd><mtd><mi>d</mi></mtd><mtd><mi>f</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>]</mo></mrow><annotation encoding="TeX">\left[ \begin{array}{ccc} a & c & e \\ b & d & f \\ 0 & 0 & 1 \end{array} \right]</annotation></semantics></math>.
 
-### Parameters
+### پارامترها
 
 - `a` (`m11`)
-  - : The cell in the first row and first column of the matrix.
+  - : درایهٔ سطر اول و ستون اول ماتریس.
 - `b` (`m12`)
-  - : The cell in the second row and first column of the matrix.
+  - : درایهٔ سطر دوم و ستون اول ماتریس.
 - `c` (`m21`)
-  - : The cell in the first row and second column of the matrix.
+  - : درایهٔ سطر اول و ستون دوم ماتریس.
 - `d` (`m22`)
-  - : The cell in the second row and second column of the matrix.
+  - : درایهٔ سطر دوم و ستون دوم ماتریس.
 - `e` (`m41`)
-  - : The cell in the first row and third column of the matrix.
+  - : درایهٔ سطر اول و ستون سوم ماتریس.
 - `f` (`m42`)
-  - : The cell in the second row and third column of the matrix.
+  - : درایهٔ سطر دوم و ستون سوم ماتریس.
 
-If a point originally had coordinates <math><semantics><mrow><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="TeX">(x, y)</annotation></semantics></math>, then after the transformation it will have coordinates <math><semantics><mrow><mo>(</mo><mi>a</mi><mi>x</mi><mo>+</mo><mi>c</mi><mi>y</mi><mo>+</mo><mi>e</mi><mo>,</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>d</mi><mi>y</mi><mo>+</mo><mi>f</mi><mo>)</mo></mrow><annotation encoding="TeX">(ax + cy + e, bx + dy + f)</annotation></semantics></math>. This means:
+اگر نقطه‌ای در ابتدا مختصات <math><semantics><mrow><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="TeX">(x, y)</annotation></semantics></math> را داشته باشد، پس از تبدیل مختصات آن به صورت <math><semantics><mrow><mo>(</mo><mi>a</mi><mi>x</mi><mo>+</mo><mi>c</mi><mi>y</mi><mo>+</mo><mi>e</mi><mo>,</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>d</mi><mi>y</mi><mo>+</mo><mi>f</mi><mo>)</mo></mrow><annotation encoding="TeX">(ax + cy + e, bx + dy + f)</annotation></semantics></math> خواهد بود. یعنی:
 
-- `e` and `f` control the horizontal and vertical translation of the context.
-- When `b` and `c` are `0`, `a` and `d` control the horizontal and vertical scaling of the context.
-- When `a` and `d` are `1`, `b` and `c` control the horizontal and vertical skewing of the context.
+- `e` و `f` انتقال افقی و عمودی بافت را کنترل می‌کنند.
+- وقتی `b` و `c` برابر `0` باشند، `a` و `d` مقیاس‌بندی افقی و عمودی بافت را کنترل می‌کنند.
+- وقتی `a` و `d` برابر `1` باشند، `b` و `c` اریب‌سازی افقی و عمودی بافت را کنترل می‌کنند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Skewing a shape
+### اریب کردن یک شکل
 
-This example skews a rectangle both vertically (`.2`) and horizontally
-(`.8`). Scaling and translation remain unchanged.
+این مثال یک مستطیل را هم به‌صورت عمودی (`.2`) و هم به‌صورت افقی (`.8`) اریب می‌کند. مقیاس‌بندی و انتقال بدون تغییر باقی می‌مانند.
 
 #### HTML
 
@@ -82,19 +72,19 @@ ctx.transform(1, 0.2, 0.8, 1, 0, 0);
 ctx.fillRect(0, 0, 100, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Skewing_a_shape', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابطی که این متد را تعریف می‌کند: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.setTransform()")}}
