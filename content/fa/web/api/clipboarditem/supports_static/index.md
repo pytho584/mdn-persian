@@ -1,11 +1,5 @@
 ---
 title: "ClipboardItem: supports() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem/supports_static"
-status: "needs-translation"
----
-
----
-title: "ClipboardItem: supports() static method"
 short-title: supports()
 slug: Web/API/ClipboardItem/supports_static
 page-type: web-api-static-method
@@ -14,44 +8,42 @@ browser-compat: api.ClipboardItem.supports_static
 
 {{APIRef("Clipboard API")}} {{securecontext_header}}
 
-The **`supports()`** static method of the {{domxref("ClipboardItem")}} interface returns `true` if the given {{Glossary("MIME type")}} is supported by the clipboard, and `false` otherwise.
+متد ایستای **`supports()`** از رابط {{domxref("ClipboardItem")}} مقدار `true` را برمی‌گرداند اگر {{Glossary("MIME type")}} داده شده توسط کلیپ‌بورد پشتیبانی شود، و در غیر این صورت `false`.
 
-Note that the [Clipboard API](/en-US/docs/Web/API/Clipboard_API) mandates support for plain text, HTML and PNG files.
-The `supports()` method will always return `true` for these MIME types, so testing them is unnecessary.
+توجه داشته باشید که [Clipboard API](/en-US/docs/Web/API/Clipboard_API) پشتیبانی از متن ساده، HTML و فایل‌های PNG را الزامی می‌کند. متد `supports()` همیشه برای این نوع MIME ها مقدار `true` برمی‌گرداند، بنابراین آزمایش آن‌ها ضروری نیست.
 
-## Syntax
+## نحو
 
 ```js-nolint
 supports(type)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string indicating the {{Glossary("MIME type")}} to test.
+  - : یک رشته (string) که {{Glossary("MIME type")}} مورد آزمایش را مشخص می‌کند.
 
-    These MIME types are always supported:
+    این نوع MIME ها همیشه پشتیبانی می‌شوند:
     - `text/plain`
     - `text/html`
     - `image/png`
 
-    These MIME types may be supported:
+    این نوع MIME ها ممکن است پشتیبانی شوند:
     - `image/svg+xml`
-    - Custom MIME-type formats starting with `"web "`.
-      The custom type (without the `"web "` prefix), must have the correct formatting for a MIME type.
+    - فرمت‌های نوع MIME سفارشی که با `"web "` شروع می‌شوند.
+      نوع سفارشی (بدون پیشوند `"web "`) باید قالب‌بندی صحیح برای یک نوع MIME داشته باشد.
 
-### Return value
+### مقدار بازگشتی
 
-`true` if the given {{Glossary("MIME type")}} is supported by the clipboard, `false` otherwise.
+`true` اگر {{Glossary("MIME type")}} داده شده توسط کلیپ‌بورد پشتیبانی شود، در غیر این صورت `false`.
 
-## Examples
+## مثال‌ها
 
-### Writing an image to the clipboard
+### نوشتن یک تصویر در کلیپ‌بورد
 
-The following example fetches an SVG image, represents it as a {{domxref("Blob")}}, and then writes it to the clipboard.
+مثال زیر یک تصویر SVG را دریافت می‌کند، آن را به صورت یک {{domxref("Blob")}} نمایش می‌دهد و سپس آن را در کلیپ‌بورد می‌نویسد.
 
-We use `supports()` to check whether the `"image/svg+xml"` MIME type is supported by the clipboard before fetching the image and writing it using {{domxref("clipboard.write()")}}.
-We also wrap the whole function body in a [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) statement to catch any other errors, such as `ClipboardItem` itself not being supported.
+ما از `supports()` استفاده می‌کنیم تا قبل از دریافت تصویر و نوشتن آن با استفاده از {{domxref("clipboard.write()")}} بررسی کنیم که آیا نوع MIME `"image/svg+xml"` توسط کلیپ‌بورد پشتیبانی می‌شود یا خیر. همچنین کل بدنه تابع را در یک عبارت [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) قرار می‌دهیم تا هر خطای دیگری، مانند عدم پشتیبانی از خود `ClipboardItem`، را بگیریم.
 
 ```js
 async function writeClipImg() {
@@ -75,15 +67,15 @@ async function writeClipImg() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Clipboard API](/en-US/docs/Web/API/Clipboard_API)
-- [Image support for Async Clipboard article](https://web.dev/articles/async-clipboard)
+- [مقاله پشتیبانی از تصویر برای کلیپ‌بورد ناهمگام](https://web.dev/articles/async-clipboard)
