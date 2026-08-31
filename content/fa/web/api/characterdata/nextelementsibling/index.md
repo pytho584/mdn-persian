@@ -1,11 +1,5 @@
 ---
 title: "CharacterData: nextElementSibling property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/nextElementSibling"
-status: "needs-translation"
----
-
----
-title: "CharacterData: nextElementSibling property"
 short-title: nextElementSibling
 slug: Web/API/CharacterData/nextElementSibling
 page-type: web-api-instance-property
@@ -14,13 +8,11 @@ browser-compat: api.CharacterData.nextElementSibling
 
 {{APIRef("DOM")}}
 
-The read-only **`nextElementSibling`** property of the {{domxref("CharacterData")}} interface
-returns the first {{domxref("Element")}} node following the specified one in its parent's
-children list, or `null` if the specified element is the last one in the list.
+ویژگی فقط‌خواندنی **`nextElementSibling`** در رابط {{domxref("CharacterData")}}، نخستین گرهٔ {{domxref("Element")}} را پس از گرهٔ مشخص‌شده در فهرست فرزندان والد همان گره برمی‌گرداند. اگر عنصر مشخص‌شده آخرین عنصر در آن فهرست باشد، مقدار `null` برگردانده می‌شود.
 
 ## Value
 
-An {{domxref("Element")}} object, or `null` if no sibling has been found.
+یک شیء {{domxref("Element")}}، یا اگر همشاخه‌ای (sibling) یافت نشود، `null`.
 
 ## Example
 
