@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-rowindex attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,28 +13,28 @@ spec-urls: https://w3c.github.io/aria/#aria-rowindex
 sidebar: accessibilitysidebar
 ---
 
-The `aria-rowindex` attribute defines an element's position with respect to the total number of rows within a table, grid, or treegrid.
+ویژگی `aria-rowindex` موقعیت یک عنصر را نسبت به تعداد کل ردیف‌ها در یک جدول، گرید یا درخت‌گرید تعریف می‌کند.
 
-## Description
+## توضیحات
 
-Some tables have many, many rows. Loading only a subsection of rows may be done as a design requirement, to improve performance, or to improve user experience.
+برخی جدول‌ها ردیف‌های بسیار زیادی دارند. بارگذاری تنها زیرمجموعه‌ای از ردیف‌ها ممکن است به‌عنوان یک الزام طراحی، برای بهبود کارایی یا بهبود تجربه کاربری انجام شود.
 
-When only a subset of rows are loaded, you do need to let all users know which subsets of rows are being displayed. The `aria-rowindex` attribute is used to define the cell or row's row index or position with respect to the total number of rows within a table, grid, or treegrid.
+هنگامی که تنها زیرمجموعه‌ای از ردیف‌ها بارگذاری می‌شود، باید به همه کاربران اطلاع دهید که کدام زیرمجموعه از ردیف‌ها در حال نمایش است. از ویژگی `aria-rowindex` برای تعریف اندیس ردیف یا موقعیتِ سلول یا ردیف نسبت به تعداد کل ردیف‌های یک جدول، گرید یا درخت‌گرید استفاده می‌شود.
 
-Included on the {{HTMLElement('tr')}} element or on an element with a role of [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role), or directly on the {{HTMLElement('td')}}, {{HTMLElement('th')}}, or element with role of [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role) or [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role), the value is the row's position with respect to the full table.
+این ویژگی بر روی عنصر {{HTMLElement('tr')}} یا عنصری با نقش [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)، یا مستقیماً بر روی {{HTMLElement('td')}}، {{HTMLElement('th')}} یا عنصر دارای نقش [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role) یا [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role) قرار می‌گیرد؛ مقدار آن موقعیت ردیف نسبت به جدول کامل است.
 
-The value for `aria-rowindex` is an integer greater than or equal to `1`, greater than the `aria-rowindex` value of any previous rows, and less than or equal to the number of rows in the full table.
+مقدار `aria-rowindex` یک عدد صحیح بزرگ‌تر یا مساوی `1`، بزرگ‌تر از مقدار `aria-rowindex` هر یک از ردیف‌های قبلی و کوچک‌تر یا مساوی تعداد ردیف‌های جدول کامل است.
 
-If all of the rows are loaded and in the DOM, you don't need to include `aria-rowindex` as browsers automatically calculate the index of each row. However, when only a subset of the rows are present in the DOM, `aria-rowindex` is needed to indicate each row's position with respect to the full table. If only a subset of rows are loaded, you also need to include [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) on the table ancestor, even if you don't know the total rowcount.
+اگر همه ردیف‌ها بارگذاری شده و در DOM باشند، نیازی به گنجاندن `aria-rowindex` نیست، زیرا مرورگرها به‌طور خودکار اندیس هر ردیف را محاسبه می‌کنند. با این حال، وقتی تنها زیرمجموعه‌ای از ردیف‌ها در DOM وجود دارد، برای نشان دادن موقعیت هر ردیف نسبت به جدول کامل، `aria-rowindex` لازم است. اگر فقط زیرمجموعه‌ای از ردیف‌ها بارگذاری شده باشد، باید [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) را نیز بر روی عنصر جدول بالادستی قرار دهید، حتی اگر تعداد کل ردیف‌ها را نمی‌دانید.
 
-If the table with only a subset of rows has a cell that spans more than one row, both the row and cell need to have the `aria-rowindex` set. If a cell spans more than one row－when a cell role includes the `aria-rowspan` attribute or HTML cell has a `rowspan` attribute set to a value greater than 1－include the row's `aria-rowindex` value on the spanning cell in addition to the appropriate row spanning attribute. The value should be the row index of the row where the span starts.
+اگر جدولی که تنها زیرمجموعه‌ای از ردیف‌ها را دارد، سلولی داشته باشد که بیش از یک ردیف را پوشش می‌دهد، هم ردیف و هم سلول باید دارای `aria-rowindex` تنظیم‌شده باشند. اگر سلولی بیش از یک ردیف را پوشش دهد — وقتی نقش سلول شامل ویژگی `aria-rowspan` است یا سلول HTML ویژگی `rowspan` را با مقدار بزرگ‌تر از ۱ تنظیم کرده باشد — مقدار `aria-rowindex` آن ردیف را علاوه بر ویژگی مناسب پوشش ردیف، بر روی سلول پوشش‌دهنده قرار دهید. این مقدار باید اندیس ردیفی باشد که پوشش از آنجا شروع می‌شود.
 
 > [!NOTE]
-> The `aria-rowindex` must be added to each row, but is optional on the cells, except for cells that span rows: the `aria-rowindex` attribute is required on all spanning cells.
+> `aria-rowindex` باید به هر ردیف اضافه شود، اما بر روی سلول‌ها اختیاری است، به‌جز سلول‌هایی که ردیف‌ها را پوشش می‌دهند: ویژگی `aria-rowindex` برای همه سلول‌های پوشش‌دهنده الزامی است.
 
-## Examples
+## مثال‌ها
 
-The following example shows a grid with 24 rows, of which the first row and rows 7 through 10 are displayed to the user. The last "position" cell spans column 9 and 10.
+مثال زیر گریدی با ۲۴ ردیف را نشان می‌دهد که از میان آن‌ها ردیف اول و ردیف‌های ۷ تا ۱۰ به کاربر نمایش داده می‌شوند. آخرین سلول «position» ردیف‌های ۹ و ۱۰ را پوشش می‌دهد.
 
 ```html
 <div role="grid" aria-rowcount="24">
@@ -69,41 +69,41 @@ The following example shows a grid with 24 rows, of which the first row and rows
 </div>
 ```
 
-Note both `aria-rowspan` and `aria-rowindex` are present on the Goalkeeper cell, which spans two rows.
+توجه کنید که هر دو `aria-rowspan` و `aria-rowindex` روی سلول Goalkeeper که دو ردیف را پوشش می‌دهد، قرار دارند.
 
-## Values
+## مقادیر
 
 - `<integer>`
-  - : An integer greater than or equal to 1, greater than the `aria-rowindex` of the previous row, if any, and less than or equal to the value of [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount).
+  - : یک عدد صحیح بزرگ‌تر یا مساوی ۱، بزرگ‌تر از `aria-rowindex` ردیف قبلی (در صورت وجود) و کوچک‌تر یا مساوی مقدار [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount).
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaRowIndex")}}
-  - : The [`ariaRowIndex`](/en-US/docs/Web/API/Element/ariaRowIndex) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-rowindex` attribute.
+  - : ویژگی [`ariaRowIndex`](/en-US/docs/Web/API/Element/ariaRowIndex)، بخشی از رابط {{domxref("Element")}}، مقدار ویژگی `aria-rowindex` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaRowIndex")}}
-  - : The [`ariaRowIndex`](/en-US/docs/Web/API/ElementInternals/ariaRowIndex) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-rowindex` attribute.
+  - : ویژگی [`ariaRowIndex`](/en-US/docs/Web/API/ElementInternals/ariaRowIndex)، بخشی از رابط {{domxref("ElementInternals")}}، مقدار ویژگی `aria-rowindex` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده‌شده در نقش‌ها:
 
 - [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role)
 - [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
 
-Inherited into roles:
+به نقش‌های زیر به ارث می‌رسد:
 
 - [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
 - [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)
 - [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-rowindextext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindextext)
 - [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount)
 - [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan)
 - [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex)
-- The [`rowspan`](/en-US/docs/Web/HTML/Reference/Elements/td#rowspan) attribute on {{HTMLElement('td')}}
+- ویژگی [`rowspan`](/en-US/docs/Web/HTML/Reference/Elements/td#rowspan) بر روی {{HTMLElement('td')}}
