@@ -1,7 +1,7 @@
 ---
 title: "ARIA: definition role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/definition_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,11 +13,11 @@ spec-urls: https://w3c.github.io/aria/#definition
 sidebar: accessibilitysidebar
 ---
 
-The `definition` ARIA role indicates the element is a definition of a term or concept.
+نقش ARIA `definition` نشان می‌دهد که عنصر، تعریف یک اصطلاح یا مفهوم است.
 
-## Description
+## توضیحات
 
-The `definition` ARIA role can be included on an element that is a definition of a term or concept, similar to the native {{HTMLElement('dfn')}} element. To associate the definition with the `term` being defined, and to provide an accessible name, reference the term being defined with `role="term"`, using [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby).
+نقش ARIA `definition` می‌تواند بر روی عنصری که تعریف یک اصطلاح یا مفهوم است قرار گیرد، مشابه عنصر بومی {{HTMLElement('dfn')}}. برای مرتبط کردن تعریف با `term` (اصطلاح) در حال تعریف، و برای ارائه یک نام قابل دسترسی، به اصطلاح در حال تعریف با `role="term"` با استفاده از [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) ارجاع دهید.
 
 ```html-nolint
 <p>
@@ -31,7 +31,7 @@ The `definition` ARIA role can be included on an element that is a definition of
 ```
 
 > [!NOTE]
-> Instead of a `<span>` with the [`term`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/term_role) and `definition` roles, use the {{HTMLElement('dfn')}} element. **Always use native element if available.**
+> به جای یک `<span>` با نقش‌های [`term`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/term_role) و `definition`، از عنصر {{HTMLElement('dfn')}} استفاده کنید. **همیشه در صورت وجود از عنصر بومی استفاده کنید.**
 
 ```html
 <p>
@@ -41,14 +41,14 @@ The `definition` ARIA role can be included on an element that is a definition of
 </p>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [The `term` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/term_role)
-- The {{HTMLElement('dfn')}} element
-- The {{HTMLElement('dd')}} element
-- The {{HTMLElement('dl')}} element
-- The {{HTMLElement('dt')}} element
+- [نقش `term`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/term_role)
+- عنصر {{HTMLElement('dfn')}}
+- عنصر {{HTMLElement('dd')}}
+- عنصر {{HTMLElement('dl')}}
+- عنصر {{HTMLElement('dt')}}
