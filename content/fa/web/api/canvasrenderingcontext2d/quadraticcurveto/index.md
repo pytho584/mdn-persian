@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: quadraticCurveTo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: quadraticCurveTo() method"
 short-title: quadraticCurveTo()
 slug: Web/API/CanvasRenderingContext2D/quadraticCurveTo
 page-type: web-api-instance-method
@@ -14,13 +8,10 @@ browser-compat: api.CanvasRenderingContext2D.quadraticCurveTo
 
 {{APIRef("Canvas API")}}
 
-The
+متد
 **`CanvasRenderingContext2D.quadraticCurveTo()`**
-method of the Canvas 2D API adds a quadratic [Bézier curve](/en-US/docs/Glossary/Bezier_curve) to the current
-sub-path. It requires two points: the first one is a control point and the second one is
-the end point. The starting point is the latest point in the current path, which can be
-changed using {{domxref("CanvasRenderingContext2D.moveTo", "moveTo()")}} before creating
-the quadratic Bézier curve.
+از API Canvas 2D، یک [منحنی بزیه](/en-US/docs/Glossary/Bezier_curve) درجه دوم به زیرمسیر فعلی اضافه می‌کند.
+این متد به دو نقطه نیاز دارد: نقطه اول نقطهٔ کنترل و نقطه دوم نقطهٔ پایان است. نقطهٔ شروع، آخرین نقطه در مسیر فعلی است که می‌توان آن را قبل از ایجاد منحنی بزیه درجه دوم با استفاده از {{domxref("CanvasRenderingContext2D.moveTo", "moveTo()")}} تغییر داد.
 
 ## Syntax
 
@@ -28,26 +19,26 @@ the quadratic Bézier curve.
 quadraticCurveTo(cpx, cpy, x, y)
 ```
 
-### Parameters
+### پارامترها
 
 - `cpx`
-  - : The x-axis coordinate of the control point.
+  - : مختصات محور x نقطهٔ کنترل.
 - `cpy`
-  - : The y-axis coordinate of the control point.
+  - : مختصات محور y نقطهٔ کنترل.
 - `x`
-  - : The x-axis coordinate of the end point.
+  - : مختصات محور x نقطهٔ پایان.
 - `y`
-  - : The y-axis coordinate of the end point.
+  - : مختصات محور y نقطهٔ پایان.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### How quadraticCurveTo works
+### نحوه کارکرد quadraticCurveTo
 
-This example shows how a quadratic Bézier curve is drawn.
+این مثال نشان می‌دهد که چگونه یک منحنی بزیه درجه دوم رسم می‌شود.
 
 #### HTML
 
@@ -81,17 +72,16 @@ ctx.arc(230, 30, 5, 0, 2 * Math.PI);
 ctx.fill();
 ```
 
-#### Result
+#### نتیجه
 
-In this example, the control point is red and the
-start and end points are blue.
+در این مثال، نقطهٔ کنترل قرمز و نقاط شروع و پایان آبی هستند.
 
 {{ EmbedLiveSample('How_quadraticCurveTo_works', 315, 165) }}
 
-### A simple quadratic curve
+### یک منحنی درجه دوم ساده
 
-This example draws a simple quadratic Bézier curve using
-`quadraticCurveTo()`.
+این مثال یک منحنی بزیه درجه دوم ساده را با استفاده از
+`quadraticCurveTo()` رسم می‌کند.
 
 #### HTML
 
@@ -101,8 +91,7 @@ This example draws a simple quadratic Bézier curve using
 
 #### JavaScript
 
-The curve begins at the point specified by `moveTo()`: (20, 110). The
-control point is placed at (230, 150). The curve ends at (250, 20).
+منحنی از نقطه‌ای که توسط `moveTo()` مشخص شده شروع می‌شود: (20, 110). نقطهٔ کنترل در (230, 150) قرار می‌گیرد. منحنی در (250, 20) پایان می‌یابد.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -114,19 +103,19 @@ ctx.quadraticCurveTo(230, 150, 250, 20);
 ctx.stroke();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('A_simple_quadratic_curve', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
-- [Bézier curve](/en-US/docs/Glossary/Bezier_curve)
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
+- [منحنی بزیه](/en-US/docs/Glossary/Bezier_curve)
