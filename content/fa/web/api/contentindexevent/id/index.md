@@ -1,11 +1,5 @@
 ---
 title: "ContentIndexEvent: id property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContentIndexEvent/id"
-status: "needs-translation"
----
-
----
-title: "ContentIndexEvent: id property"
 short-title: id
 slug: Web/API/ContentIndexEvent/id
 page-type: web-api-instance-property
@@ -16,22 +10,17 @@ browser-compat: api.ContentIndexEvent.id
 
 {{APIRef("Content Index API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`id`** read-only property of the
-{{domxref("ContentIndexEvent")}} interface is a {{jsxref('String')}} which identifies
-the deleted content index via its `id`.
+خاصیت فقط-خواندنی **`id`** از رابط {{domxref("ContentIndexEvent")}} یک {{jsxref('String')}} است که شاخص محتوای حذف‌شده را از طریق `id` آن شناسایی می‌کند.
 
-## Value
+## مقدار
 
-A {{jsxref("String")}} representation of the deleted content index id.
+یک {{jsxref("String")}} که نمایانگر شناسه شاخص محتوای حذف‌شده است.
 
-## Examples
+## مثال‌ها
 
-This example listens for the {{domxref('ContentIndexEvent', 'contentdelete')}} event
-and logs the removed content index id.
+این مثال به رویداد {{domxref('ContentIndexEvent', 'contentdelete')}} گوش می‌دهد و شناسه شاخص محتوای حذف‌شده را ثبت می‌کند.
 
-The {{domxref('ContentIndexEvent')}} is only available to the
-[global scope](/en-US/docs/Web/API/ServiceWorkerGlobalScope) of a
-{{domxref('ServiceWorker')}}.
+{{domxref('ContentIndexEvent')}} فقط در [حوزه سراسری](/en-US/docs/Web/API/ServiceWorkerGlobalScope) یک {{domxref('ServiceWorker')}} در دسترس است.
 
 ```js
 self.addEventListener("contentdelete", (event) => {
@@ -41,15 +30,15 @@ self.addEventListener("contentdelete", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [An introductory article on the Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
-- [Service Worker API, along with information about Cache and CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
+- [یک مقاله مقدماتی درباره Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
+- [Service Worker API، به همراه اطلاعاتی درباره Cache و CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
