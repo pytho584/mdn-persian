@@ -1,11 +1,5 @@
 ---
 title: "CrashReportContext: initialize() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CrashReportContext/initialize"
-status: "needs-translation"
----
-
----
-title: "CrashReportContext: initialize() method"
 short-title: initialize()
 slug: Web/API/CrashReportContext/initialize
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.CrashReportContext.initialize
 
 {{APIRef("Reporting API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`initialize()`** method of the {{domxref("CrashReportContext")}} interface initializes a portion of memory to be used for storing crash report data specified by {{domxref("CrashReportContext.set", "set()")}}. This must be called before any other method is invoked on the object.
+متد **`initialize()`** در رابط {{domxref("CrashReportContext")}} بخشی از حافظه را برای ذخیره‌سازی داده‌های گزارش خرابی که توسط {{domxref("CrashReportContext.set", "set()")}} مشخص می‌شود، مقداردهی اولیه می‌کند. این متد باید قبل از هر متد دیگری روی شیء فراخوانی شود.
 
 ## Syntax
 
@@ -27,24 +21,24 @@ initialize(length)
 ### Parameters
 
 - `length`
-  - : A number indicating the maximum number of bytes that can be stored in the key-value store by each individual `set()` call. The maximum allowable value is `65536` (64KB), which is also the maximum amount of crash report memory allowed for one origin.
+  - : عددی که حداکثر تعداد بایت‌هایی را مشخص می‌کند که توسط هر فراخوانی `set()` جداگانه می‌توان در فروشگاه کلید-مقدار ذخیره کرد. حداکثر مقدار مجاز `65536` (۶۴ کیلوبایت) است که همچنین حداکثر حافظه گزارش خرابی مجاز برای یک مبدأ (origin) نیز می‌باشد.
 
 ### Return value
 
-A {{jsxref("Promise")}} that fulfills with {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} تکمیل می‌شود.
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The calling document is not fully active.
-    - A crash report key-value store was already initialized by a previous `initialize()` call.
+  - : در موارد زیر پرتاب می‌شود:
+    - سند فراخوانی‌کننده کاملاً فعال (fully active) نباشد.
+    - فروشگاه کلید-مقدار گزارش خرابی قبلاً توسط یک فراخوانی `initialize()` مقداردهی اولیه شده باشد.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : `length` is more than `65536`.
+  - : اگر `length` بیشتر از `65536` باشد.
 
 ## Examples
 
-### Basic usage
+### استفاده پایه
 
 ```js
 window.crashReport.initialize(1024).then(() => {
@@ -63,3 +57,4 @@ window.crashReport.initialize(1024).then(() => {
 ## See also
 
 - [Reporting API](/en-US/docs/Web/API/Reporting_API)
+```
