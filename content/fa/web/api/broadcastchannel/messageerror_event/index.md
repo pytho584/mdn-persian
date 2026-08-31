@@ -1,7 +1,7 @@
 ---
 title: "BroadcastChannel: messageerror event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/messageerror_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,11 +14,11 @@ browser-compat: api.BroadcastChannel.messageerror_event
 
 {{APIRef("BroadCastChannel API")}}{{AvailableInWorkers}}
 
-The **`messageerror`** event of the {{domxref("BroadcastChannel")}} interface fires when a message that can't be deserialized arrives on the channel.
+رویداد **`messageerror`** از رابط {{domxref("BroadcastChannel")}} زمانی رخ می‌دهد که پیامی که امکان تبدیل آن به داده وجود ندارد (deserialize) روی کانال دریافت شود.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("messageerror", (event) => { })
@@ -26,17 +26,17 @@ addEventListener("messageerror", (event) => { })
 onmessageerror = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MessageEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("MessageEvent")}}. از {{domxref("Event")}} ارث می‌برد.
 
 {{InheritanceDiagram("MessageEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Listening for messageerror events
+### گوش دادن به رویدادهای messageerror
 
-This code uses {{domxref("EventTarget.addEventListener", "addEventListener()")}} to listen for messages and errors:
+این کد از {{domxref("EventTarget.addEventListener", "addEventListener()")}} برای گوش دادن به پیام‌ها و خطاها استفاده می‌کند:
 
 ```js
 const channel = new BroadcastChannel("example-channel");
@@ -50,7 +50,7 @@ channel.addEventListener("messageerror", (event) => {
 });
 ```
 
-The same, but using the `onmessage` and `onmessageerror` event handler properties:
+مشابه همین، اما با استفاده از ویژگی‌های کنترل‌کننده رویداد `onmessage` و `onmessageerror`:
 
 ```js
 const channel = new BroadcastChannel("example-channel");
@@ -64,18 +64,18 @@ channel.onmessageerror = (event) => {
 };
 ```
 
-### Attempting to share memory
+### تلاش برای به اشتراک‌گذاری حافظه
 
-A common cause of `messageerror` events is attempting to send a {{jsxref("SharedArrayBuffer")}} object, or a buffer view backed by one, across [agent clusters](/en-US/docs/Web/JavaScript/Reference/Execution_model#agent_clusters_and_memory_sharing). The following code demonstrates this.
+یک علت رایج رویدادهای `messageerror` تلاش برای ارسال یک {{jsxref("SharedArrayBuffer")}} یا نمایش بافری مبتنی بر آن، در میان [خوشه‌های عامل](/en-US/docs/Web/JavaScript/Reference/Execution_model#agent_clusters_and_memory_sharing) است. کد زیر این موضوع را نشان می‌دهد.
 
-Page A runs the following code:
+صفحه A کد زیر را اجرا می‌کند:
 
 ```js
 const channel = new BroadcastChannel("hello");
 channel.postMessage({ data: new SharedArrayBuffer(1024) });
 ```
 
-Page B runs the following code:
+صفحه B کد زیر را اجرا می‌کند:
 
 ```js
 const channel = new BroadcastChannel("hello");
@@ -84,16 +84,16 @@ channel.addEventListener("messageerror", (event) => {
 });
 ```
 
-Then page B will receive a `messageerror` event when it tries to deserialize the message sent from page A.
+سپس صفحه B یک رویداد `messageerror` دریافت می‌کند وقتی سعی می‌کند پیام ارسال‌شده از صفحه A را به داده تبدیل کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: {{domxref("BroadcastChannel/message_event", "message")}}.
+- رویدادهای مرتبط: {{domxref("BroadcastChannel/message_event", "message")}}.
