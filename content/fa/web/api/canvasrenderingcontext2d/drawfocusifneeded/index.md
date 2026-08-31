@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: drawFocusIfNeeded() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawFocusIfNeeded"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: drawFocusIfNeeded() method"
 short-title: drawFocusIfNeeded()
 slug: Web/API/CanvasRenderingContext2D/drawFocusIfNeeded
 page-type: web-api-instance-method
@@ -14,10 +8,8 @@ browser-compat: api.CanvasRenderingContext2D.drawFocusIfNeeded
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.drawFocusIfNeeded()`**
-method of the Canvas 2D API draws a focus ring around the current or given path, if the
-specified element is focused.
+متد **`CanvasRenderingContext2D.drawFocusIfNeeded()`**
+از API Canvas 2D، در صورتی که عنصر مشخص‌شده فوکوس داشته باشد، یک حلقهٔ فوکوس (focus ring) دور مسیر فعلی یا مسیر داده‌شده رسم می‌کند.
 
 ## Syntax
 
@@ -26,23 +18,23 @@ drawFocusIfNeeded(element)
 drawFocusIfNeeded(path, element)
 ```
 
-### Parameters
+### پارامترها
 
 - `element`
-  - : The element to check whether it is focused or not.
+  - : عنصری که بررسی می‌شود فوکوس دارد یا نه.
 - `path`
-  - : A {{domxref("Path2D")}} path to use.
+  - : یک مسیر {{domxref("Path2D")}} برای استفاده.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Managing button focus
+### مدیریت فوکوس دکمه
 
-This example draws two buttons on a canvas. The `drawFocusIfNeeded()` method
-is used to draw a focus ring when appropriate.
+این مثال دو دکمه روی یک بوم (canvas) رسم می‌کند. از متد `drawFocusIfNeeded()`
+برای رسم حلقهٔ فوکوس در زمان مناسب استفاده می‌شود.
 
 #### HTML
 
@@ -115,18 +107,18 @@ function drawButton(el, x, y) {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('Managing_button_focus', 700, 180)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کنندهٔ این متد: {{domxref("CanvasRenderingContext2D")}}
