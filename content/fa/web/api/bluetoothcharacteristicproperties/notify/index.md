@@ -1,9 +1,8 @@
 ---
 title: "BluetoothCharacteristicProperties: notify property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothCharacteristicProperties/notify"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
-
 ---
 title: "BluetoothCharacteristicProperties: notify property"
 short-title: notify
@@ -16,19 +15,16 @@ browser-compat: api.BluetoothCharacteristicProperties.notify
 
 {{securecontext_header}}{{APIRef("Bluetooth API")}}{{SeeCompatTable}}
 
-The **`notify`** read-only property of the
-{{domxref("BluetoothCharacteristicProperties")}} interface returns a
-`boolean` that is `true` if notifications of the characteristic
-value without acknowledgement is permitted.
+ویژگی فقط خواندنی **`notify`** از رابط {{domxref("BluetoothCharacteristicProperties")}} یک `boolean` برمی‌گرداند که اگر اعلان‌های مقدار ویژگی بدون تأیید مجاز باشد، `true` است.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار `boolean`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
