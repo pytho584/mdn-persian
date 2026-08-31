@@ -1,7 +1,7 @@
 ---
 title: "CanvasPattern"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasPattern"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,30 +13,30 @@ browser-compat: api.CanvasPattern
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`CanvasPattern`** interface represents an [opaque object](https://en.wikipedia.org/wiki/Opaque_data_type) describing a pattern, based on an image, a canvas, or a video, created by the {{domxref("CanvasRenderingContext2D.createPattern()")}} method.
+رابط **`CanvasPattern`** یک [شیء مات](https://en.wikipedia.org/wiki/Opaque_data_type) را نشان می‌دهد که یک الگو را بر اساس یک تصویر، بوم نقاشی یا ویدیو توصیف می‌کند و توسط روش {{domxref("CanvasRenderingContext2D.createPattern()")}} ایجاد شده است.
 
-It can be used as a {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} or {{domxref("CanvasRenderingContext2D.strokeStyle", "strokeStyle")}}.
+این رابط می‌تواند به عنوان {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} یا {{domxref("CanvasRenderingContext2D.strokeStyle", "strokeStyle")}} استفاده شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_As an opaque object, this has no exposed property._
+_به عنوان یک شیء مات، این رابط هیچ ویژگی قابل دسترسی ندارد._
 
-## Instance methods
+## روش‌های نمونه
 
-_There are no inherited method._
+_هیچ روش به ارث رسیده‌ای وجود ندارد._
 
 - {{domxref("CanvasPattern.setTransform()")}}
-  - : Applies a {{domxref("DOMMatrix")}} representing a linear transform to the pattern.
+  - : یک {{domxref("DOMMatrix")}} که نشان‌دهنده یک تبدیل خطی است را به الگو اعمال می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CanvasRenderingContext2D.createPattern()")}}
-- The {{HTMLElement("canvas")}} element and its associated interface, {{domxref("HTMLCanvasElement")}}
+- عنصر {{HTMLElement("canvas")}} و رابط مرتبط با آن، {{domxref("HTMLCanvasElement")}}
