@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: clip() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clip"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: clip() method"
 short-title: clip()
 slug: Web/API/CanvasRenderingContext2D/clip
 page-type: web-api-instance-method
@@ -14,29 +8,21 @@ browser-compat: api.CanvasRenderingContext2D.clip
 
 {{APIRef("Canvas API")}}
 
-The
+متد
 **`CanvasRenderingContext2D.clip()`**
-method of the Canvas 2D API turns the current or given path into the current clipping
-region. The previous clipping region, if any, is intersected with the current or given
-path to create the new clipping region.
+در Canvas 2D API، مسیر فعلی یا مسیر داده‌شده را به ناحیه برش (clipping region) فعلی تبدیل می‌کند. ناحیه برش قبلی، در صورت وجود، با مسیر فعلی یا داده‌شده اشتراک داده می‌شود تا ناحیه برش جدید ایجاد شود.
 
-In the image below, the red outline represents a clipping region shaped like a star.
-Only those parts of the checkerboard pattern that are within the clipping region get
-drawn.
+در تصویر زیر، خط قرمز نشان‌دهنده یک ناحیه برش ستاره‌ای شکل است. فقط بخش‌هایی از الگوی شطرنجی که درون ناحیه برش قرار دارند، رسم می‌شوند.
 
-![Star-shaped clipping region](canvas_clipping_path.png)
+![ناحیه برش ستاره‌ای شکل](canvas_clipping_path.png)
 
 > [!NOTE]
-> Be aware that the clipping region is only constructed from
-> shapes added to the path. It doesn't work with shape primitives drawn directly to the
-> canvas, such as {{domxref("CanvasRenderingContext2D.fillRect()","fillRect()")}}.
-> Instead, you'd have to use {{domxref("CanvasRenderingContext2D.rect()","rect()")}} to
-> add a rectangular shape to the path before calling `clip()`.
+> توجه داشته باشید که ناحیه برش فقط از اشکالی که به مسیر اضافه شده‌اند ساخته می‌شود. این ناحیه با اشکال اولیه‌ای که مستقیماً روی بوم رسم می‌شوند، مانند {{domxref("CanvasRenderingContext2D.fillRect()","fillRect()")}}، کار نمی‌کند. در عوض، باید از {{domxref("CanvasRenderingContext2D.rect()","rect()")}} برای افزودن یک شکل مستطیلی به مسیر قبل از فراخوانی `clip()` استفاده کنید.
 
 > [!NOTE]
-> Clip paths cannot be reverted directly. You must save your canvas state using {{domxref("CanvasRenderingContext2D/save", "save()")}} before calling `clip()`, and restore it once you have finished drawing in the clipped area using {{domxref("CanvasRenderingContext2D/restore", "restore()")}}.
+> مسیرهای برش را نمی‌توان مستقیماً بازگردانی کرد. قبل از فراخوانی `clip()` باید وضعیت بوم را با استفاده از {{domxref("CanvasRenderingContext2D/save", "save()")}} ذخیره کنید و پس از اتمام رسم در ناحیه برش‌خورده، آن را با استفاده از {{domxref("CanvasRenderingContext2D/restore", "restore()")}} بازیابی کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 clip()
@@ -45,31 +31,28 @@ clip(fillRule)
 clip(path, fillRule)
 ```
 
-### Parameters
+### پارامترها
 
 - `fillRule`
-  - : The algorithm by which to determine if a point is inside or outside the clipping
-    region. Possible values:
+  - : الگوریتمی که تعیین می‌کند یک نقطه داخل یا خارج ناحیه برش قرار دارد. مقادیر ممکن:
     - `nonzero`
-      - : The [non-zero winding rule](https://en.wikipedia.org/wiki/Nonzero-rule).
-        Default rule.
+      - : [قانون پیچش غیرصفر](https://en.wikipedia.org/wiki/Nonzero-rule).
+        قانون پیش‌فرض.
     - `evenodd`
-      - : The [even-odd winding rule](https://en.wikipedia.org/wiki/Even%E2%80%93odd_rule).
+      - : [قانون پیچش زوج-فرد](https://en.wikipedia.org/wiki/Even%E2%80%93odd_rule).
 
 - `path`
-  - : A {{domxref("Path2D")}} path to use as the clipping region.
+  - : یک مسیر {{domxref("Path2D")}} که به عنوان ناحیه برش استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### A simple clipping region
+### یک ناحیه برش ساده
 
-This example uses the `clip()` method to create a clipping region according
-to the shape of a circular arc. Two rectangles are then drawn; only those parts within
-the clipping region are rendered.
+این مثال از متد `clip()` برای ایجاد یک ناحیه برش بر اساس شکل یک کمان دایره‌ای استفاده می‌کند. سپس دو مستطیل رسم می‌شوند؛ فقط بخش‌هایی که درون ناحیه برش قرار دارند، رندر می‌شوند.
 
 #### HTML
 
@@ -79,34 +62,31 @@ the clipping region are rendered.
 
 #### JavaScript
 
-The clipping region is a full circle, with its center at (100, 75), and a radius of 50.
+ناحیه برش یک دایره کامل است که مرکز آن در (100, 75) و شعاع آن 50 است.
 
 ```js
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// Create circular clipping region
+// ایجاد ناحیه برش دایره‌ای
 ctx.beginPath();
 ctx.arc(100, 75, 50, 0, Math.PI * 2);
 ctx.clip();
 
-// Draw stuff that gets clipped
+// رسم چیزهایی که برش می‌خورند
 ctx.fillStyle = "blue";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 ctx.fillStyle = "orange";
 ctx.fillRect(0, 0, 100, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('A_simple_clipping_region', 700, 180) }}
 
-### Specifying a path and a fillRule
+### مشخص کردن یک مسیر و fillRule
 
-This example saves two rectangles to a Path2D object, which is then made the current
-clipping region using the `clip()` method. The `"evenodd"` rule
-creates a hole where the clipping rectangles intersect; by default (with the
-`"nonzero"` rule), there would be no hole.
+این مثال دو مستطیل را در یک شیء Path2D ذخیره می‌کند که سپس با استفاده از متد `clip()` به عنوان ناحیه برش فعلی تنظیم می‌شود. قانون `"evenodd"` سوراخی در محل اشتراک مستطیل‌های برش ایجاد می‌کند؛ به طور پیش‌فرض (با قانون `"nonzero"`)، هیچ سوراخی وجود نخواهد داشت.
 
 #### HTML
 
@@ -120,28 +100,24 @@ creates a hole where the clipping rectangles intersect; by default (with the
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// Create clipping path
+// ایجاد مسیر برش
 let region = new Path2D();
 region.rect(80, 10, 20, 130);
 region.rect(40, 50, 100, 50);
 ctx.clip(region, "evenodd");
 
-// Draw stuff that gets clipped
+// رسم چیزهایی که برش می‌خورند
 ctx.fillStyle = "blue";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Specifying_a_path_and_a_fillRule', 700, 180) }}
 
-### Creating a complex clipping region
+### ایجاد یک ناحیه برش پیچیده
 
-This example uses two paths, a circle and a square to create a complex clipping
-region. The `clip()` method is called twice, first to set the current
-clipping region to the circle using a `Path2D` object, then again to
-intersect the circle clipping region with a square. The final clipping region is a shape
-representing the intersection of the circle and the square.
+این مثال از دو مسیر، یک دایره و یک مربع، برای ایجاد یک ناحیه برش پیچیده استفاده می‌کند. متد `clip()` دو بار فراخوانی می‌شود؛ ابتدا برای تنظیم ناحیه برش فعلی به دایره با استفاده از یک شیء `Path2D`، و سپس برای اشتراک ناحیه برش دایره‌ای با یک مربع. ناحیه برش نهایی شکلی است که نشان‌دهنده اشتراک دایره و مربع است.
 
 #### HTML
 
@@ -155,34 +131,34 @@ representing the intersection of the circle and the square.
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// Create two clipping paths
+// ایجاد دو مسیر برش
 let circlePath = new Path2D();
 circlePath.arc(150, 75, 75, 0, 2 * Math.PI);
 let squarePath = new Path2D();
 squarePath.rect(85, 10, 130, 130);
 
-// Set the clip to the circle
+// تنظیم برش به دایره
 ctx.clip(circlePath);
-// Set the clip to be the intersection of the circle and the square
+// تنظیم برش به اشتراک دایره و مربع
 ctx.clip(squarePath);
 
-// Draw stuff that gets clipped
+// رسم چیزهایی که برش می‌خورند
 ctx.fillStyle = "blue";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Creating_a_complex_clipping_region', 300, 150) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
