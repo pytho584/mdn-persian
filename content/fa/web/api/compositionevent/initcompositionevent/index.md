@@ -1,11 +1,5 @@
 ---
 title: "CompositionEvent: initCompositionEvent() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent/initCompositionEvent"
-status: "needs-translation"
----
-
----
-title: "CompositionEvent: initCompositionEvent() method"
 short-title: initCompositionEvent()
 slug: Web/API/CompositionEvent/initCompositionEvent
 page-type: web-api-instance-method
@@ -16,13 +10,9 @@ browser-compat: api.CompositionEvent.initCompositionEvent
 
 {{deprecated_header}}{{APIRef("UI Events")}}
 
-The **`initCompositionEvent()`**
-method of the {{domxref("CompositionEvent")}} interface initializes the attributes of a
-`CompositionEvent` object instance.
+متد **`initCompositionEvent()`** از رابط {{domxref("CompositionEvent")}} ویژگی‌های یک نمونه از شیء `CompositionEvent` را مقداردهی اولیه می‌کند.
 
-> [!NOTE]
-> The correct way of creating a {{domxref("CompositionEvent")}} is to use
-> the constructor {{domxref("CompositionEvent.CompositionEvent", "CompositionEvent()")}}.
+> [!NOTE] روش صحیح ایجاد یک {{domxref("CompositionEvent")}} استفاده از سازنده {{domxref("CompositionEvent.CompositionEvent", "CompositionEvent()")}} است.
 
 ## Syntax
 
@@ -30,37 +20,33 @@ method of the {{domxref("CompositionEvent")}} interface initializes the attribut
 initCompositionEvent(type, canBubble, cancelable, view, data, locale)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the type of composition event; this will be
-    one of `compositionstart`, `compositionupdate`, or
-    `compositionend`.
+  - : یک رشته (string) که نوع رویداد ترکیب (composition event) را مشخص می‌کند؛ این مقدار یکی از `compositionstart`، `compositionupdate` یا `compositionend` خواهد بود.
 - `canBubble`
-  - : A boolean value specifying whether or not the event can bubble.
+  - : یک مقدار بولی (boolean) که مشخص می‌کند آیا رویداد می‌تواند بالا برود (bubble) یا خیر.
 - `cancelable`
-  - : A boolean value indicating whether or not the event can be canceled.
+  - : یک مقدار بولی که نشان می‌دهد آیا رویداد قابل لغو شدن است یا خیر.
 - `view`
-  - : The {{domxref("Window")}} object from which the event was generated.
+  - : شیء {{domxref("Window")}}ای که رویداد از آن تولید شده است.
 - `data`
-  - : A string representing the value of the `data`
-    attribute.
+  - : یک رشته که مقدار ویژگی `data` را نشان می‌دهد.
 - `locale`
-  - : A string representing the value of the `locale`
-    attribute.
+  - : یک رشته که مقدار ویژگی `locale` را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CompositionEvent")}}
