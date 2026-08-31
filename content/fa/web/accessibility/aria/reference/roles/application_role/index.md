@@ -1,7 +1,7 @@
 ---
 title: "ARIA: application role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,94 +13,94 @@ spec-urls: https://w3c.github.io/aria/#application
 sidebar: accessibilitysidebar
 ---
 
-The `application` role indicates to assistive technologies that an element _and all of its children_ should be treated similar to a desktop application, and no traditional HTML interpretation techniques should be used. This role should only be used to define very dynamic and desktop-like web applications. Most mobile and desktop web apps _are not_ considered applications for this purpose.
+نقش `application` به فناوری‌های کمکی اعلام می‌کند که یک عنصر _و تمام فرزندان آن_ باید مانند یک برنامه دسکتاپی رفتار شود و هیچ تکنیک تفسیر سنتی HTML نباید به کار گرفته شود. این نقش فقط باید برای تعریف برنامه‌های وب بسیار پویا و شبیه به دسکتاپ استفاده شود. بیشتر برنامه‌های وب موبایل و دسکتاپ برای این منظور «برنامه» محسوب نمی‌شوند.
 
 ```html
 <div role="application" aria-label="…">…</div>
 ```
 
-By specifying the `application` role, it indicates this `div` element and all of its descendants are to be treated like they are part of a desktop application.
+با تعیین نقش `application`، مشخص می‌شود که این عنصر `div` و همهٔ نوادگان آن باید مانند بخشی از یک برنامه دسکتاپی در نظر گرفته شوند.
 
-## Description
+## توضیحات
 
-The `application` [document structure role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#1._document_structure_roles), indicates to assistive technologies that this part of the web content contains elements that do not conform to any other known HTML element or WAI-ARIA widget. Any sort of special interpretation of HTML structures and widgets should be suspended, and control should be completely handed over to the browser and web application to handle mouse, keyboard, or touch interaction.
+نقش `application` یک [نقش ساختار سند](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#1._document_structure_roles) است که به فناوری‌های کمکی اعلام می‌کند این بخش از محتوای وب شامل عناصری است که با هیچ عنصر شناخته‌شده HTML یا ابزارک WAI-ARIA دیگری مطابقت ندارند. هرگونه تفسیر ویژه از ساختارها و ابزارک‌های HTML باید متوقف شود و کنترل کامل تعامل با ماوس، صفحه‌کلید یا لمس به مرورگر و برنامه وب واگذار شود.
 
-In this mode, the web author is completely responsible for handling any and all keyboard input, focus management, and other interactions and cannot assume assistive technologies would do any processing on their end.
+در این حالت، نویسنده وب کاملاً مسئول مدیریت هرگونه ورودی صفحه‌کلید، مدیریت فوکوس و سایر تعاملات است و نباید فرض کند فناوری‌های کمکی پردازشی انجام می‌دهند.
 
-If the web application encompassed by the application role contains parts that _should_ be treated like normal web content, a role of [`document`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/document_role) or [`article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role) should be used to contain such content.
+اگر برنامه وب شامل نقش `application` بخش‌هایی دارد که _باید_ مانند محتوای وب عادی رفتار شوند، باید از نقش [`document`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/document_role) یا [`article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role) برای محصور کردن چنین محتوایی استفاده کرد.
 
-### Background
+### پیش‌زمینه
 
-For historic reasons, especially on Windows, screen readers and some other assistive technologies (AT) have traditionally grabbed the whole web content from the browser at once after it had finished loading. The ATs build their own representation of it that makes the most sense for a visually impaired user to consume the content. This is often referred to as _virtual document_, _browse mode_, or similar terms. The document is streamlined to a single-column view. A keyboard interaction model is generated that is very similar to a word processor where users can read line by line, sentence by sentence, or paragraph by paragraph. The AT will read any semantics like links, headings, form controls, tables, lists, or images.
+به دلایل تاریخی، به‌ویژه در ویندوز، صفحه‌خوان‌ها و برخی دیگر از فناوری‌های کمکی (AT) به‌طور سنتی کل محتوای وب را پس از اتمام بارگذاری، یک‌باره از مرورگر دریافت می‌کردند. این فناوری‌ها نمایش خود را از محتوا می‌سازند که برای کاربر کم‌بینا برای مصرف محتوا بهترین است. این حالت اغلب به نام _سند مجازی_، _حالت مرور_ یا اصطلاحات مشابه خوانده می‌شود. سند به یک نمای تک‌ستونه ساده می‌شود. یک مدل تعامل با صفحه‌کلید تولید می‌شود که بسیار شبیه به واژه‌پرداز است؛ کاربر می‌تواند خط‌به‌خط، جمله‌به‌جمله یا پاراگراف‌به‌پاراگراف بخواند. فناوری کمکی هرگونه معناشناسی مانند پیوندها، عنوان‌ها، کنترل‌های فرم، جدول‌ها، فهرست‌ها یا تصاویر را می‌خواند.
 
-In addition, a set of so-called _quick navigation keys_ has been established over the years that allows visually impaired users to skim through a page via a certain element type. Such elements usually include headings, form fields, lists, tables, links, graphics, or landmark regions.
+علاوه بر این، مجموعه‌ای از به‌اصطلاح _کلیدهای پیمایش سریع_ در طول سال‌ها ایجاد شده است که به کاربران کم‌بینا اجازه می‌دهد صفحه را بر اساس نوع خاصی از عنصر مرور کنند. چنین عناصری معمولاً شامل عنوان‌ها، فیلدهای فرم، فهرست‌ها، جدول‌ها، پیوندها، گرافیک‌ها یا مناطق نشانه‌گذاری می‌شوند.
 
-For all of this to work, ATs intercept almost all keyboard input and consume it themselves, letting nothing through to the browser or other user agent. To be able to interact with a web page, a standard set of widgets is recognized that, when pressing a certain key (usually the <kbd>Enter</kbd> key) this mode is switched off. The screen reader mode, often called _forms mode_ or _focus mode_, lets all keyboard input go through to the browser again. <kbd>Escape</kbd> is the most common way of switching back to _browse_ mode, but when within a specific `application` section, some screen readers may require other keys to purposefully exit this mode. For instance <kbd>NUMPAD PLUS</kbd> with JAWS.
+برای اینکه همه این‌ها کار کند، فناوری‌های کمکی تقریباً تمام ورودی صفحه‌کلید را رهگیری و خودشان مصرف می‌کنند و چیزی به مرورگر یا عامل کاربر دیگر نمی‌رسانند. برای تعامل با یک صفحه وب، مجموعه‌ای استاندارد از ابزارک‌ها شناسایی می‌شود که با فشردن کلید خاصی (معمولاً کلید <kbd>Enter</kbd>) این حالت خاموش می‌شود. حالت صفحه‌خوان که اغلب _حالت فرم_ یا _حالت فوکوس_ نامیده می‌شود، اجازه می‌دهد تمام ورودی صفحه‌کلید دوباره به مرورگر برسد. <kbd>Escape</kbd> رایج‌ترین راه برای بازگشت به حالت _مرور_ است، اما در برخی بخش‌های خاص `application`، برخی صفحه‌خوان‌ها ممکن است به کلیدهای دیگری برای خروج عمدی از این حالت نیاز داشته باشند. برای مثال <kbd>NUMPAD PLUS</kbd> با نرم‌افزار JAWS.
 
-The `application` role is designed to provide a means for widgets that are not part of the standard set to be accessible for direct interaction in ATs that use both _browse_ and _focus_ modes for interacting with web content. Most common widgets have expected keyboard interaction behaviors. Because of this, a custom keyboard experience created by a web author would create a confusing experience.
+نقش `application` برای فراهم کردن وسیله‌ای برای ابزارک‌هایی طراحی شده است که بخشی از مجموعه استاندارد نیستند تا بتوانند در فناوری‌های کمکی که از هر دو حالت _مرور_ و _فوکوس_ برای تعامل با محتوای وب استفاده می‌کنند، مستقیماً قابل تعامل باشند. بیشتر ابزارک‌های رایج رفتارهای تعاملی صفحه‌کلید مورد انتظار دارند. به همین دلیل، تجربه صفحه‌کلید سفارشی‌ای که توسط نویسنده وب ایجاد شده باشد، تجربه‌ای گیج‌کننده ایجاد می‌کند.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
-- [`document`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/document_role), [`article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role)
-  - : Used to indicate parts of the application that should be treated as normal web content
+- [`document`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/document_role)، [`article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role)
+  - : برای نشان دادن بخش‌هایی از برنامه که باید به عنوان محتوای وب عادی رفتار شوند استفاده می‌شود.
 - [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant)
-  - : Used to manage focus inside the application.
+  - : برای مدیریت فوکوس داخل برنامه استفاده می‌شود.
 - [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
-  - : Used to provide the name of the application or purpose of the widget that is being exposed.
+  - : برای ارائه نام برنامه یا هدف ابزارکی که در معرض دید قرار می‌گیرد استفاده می‌شود.
 - [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby)
-  - : Used to reference the ID of an element that contains additional instructions for navigating or operating this element.
+  - : برای ارجاع به شناسه عنصری استفاده می‌شود که حاوی دستورالعمل‌های اضافی برای پیمایش یا کار با این عنصر است.
 - [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription)
-  - : Used to give the application a more descriptive role text for screen readers to speak. This should be localized.
+  - : برای ارائه متن نقش توصیفی‌تر برای برنامه استفاده می‌شود تا صفحه‌خوان آن را بخواند. این متن باید بومی‌سازی شود.
 - [`aria-disabled`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled)
-  - : Indicates that an element is visible but disabled
+  - : نشان می‌دهد عنصر قابل مشاهده است اما غیرفعال است.
 - [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage)
-  - : A reference to the element that provides the error message for the element on which it is set
+  - : ارجاع به عنصری که پیام خطا را برای عنصری که روی آن تنظیم شده فراهم می‌کند.
 - [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded)
-  - : If set to `true`, the grouping element owned or controlled by this element is expanded, or `false` if collapsed.
+  - : اگر روی `true` تنظیم شود، عنصر گروه‌بندی که متعلق به این عنصر است یا توسط آن کنترل می‌شود باز شده است، یا اگر `false` باشد جمع شده است.
 - [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup)
-  - : Indicates there is a popup, such as menu or dialog, that can be triggered by the element.
+  - : نشان می‌دهد یک پنجره بازشو، مانند منو یا گفتگو، وجود دارد که می‌تواند توسط عنصر فعال شود.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-Keyboard interaction is completely under the web author's control and can be anything associated with the particular widget being implemented. In a slides application, for example, a widget could be created that uses the arrow keys to position elements on the slide, and uses audio feedback via an ARIA live region to communicate the position and overlap status with other objects. Focus is being managed via _aria-activedescendant_.
+تعامل با صفحه‌کلید کاملاً تحت کنترل نویسنده وب است و می‌تواند هر چیزی مرتبط با ابزارک خاص مورد پیاده‌سازی باشد. به عنوان مثال، در یک برنامه اسلاید، می‌توانید ابزارکی ایجاد کنید که از کلیدهای جهتی برای جای‌گذاری عناصر روی اسلاید استفاده کند و از بازخورد صوتی از طریق ناحیه زنده ARIA برای انتقال موقعیت و وضعیت همپوشانی با سایر اشیاء استفاده کند. فوکوس از طریق _aria-activedescendant_ مدیریت می‌شود.
 
-The <kbd>Tab</kbd>, <kbd>Space</kbd> and <kbd>Enter</kbd> keys, as well as <kbd>Escape</kbd>, must be handled by the application. The one exception is if focus is set to a standard widget inside the application that supports keyboard navigation from the browser, for example an [input](/en-US/docs/Web/HTML/Reference/Elements/input) element.
+کلیدهای <kbd>Tab</kbd>، <kbd>Space</kbd> و <kbd>Enter</kbd>، همچنین <kbd>Escape</kbd>، باید توسط برنامه مدیریت شوند. تنها استثنا زمانی است که فوکوس روی یک ابزارک استاندارد داخل برنامه باشد که از پیمایش صفحه‌کلید مرورگر پشتیبانی می‌کند، مثلاً عنصر [input](/en-US/docs/Web/HTML/Reference/Elements/input).
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
 - keyPress
-  - : Used to handle keyboard input and control the focus
+  - : برای مدیریت ورودی صفحه‌کلید و کنترل فوکوس استفاده می‌شود.
 - Click, Touch
-  - : Handle as appropriate for your widget as well
-- Changing attribute values
-  - : [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) is used to manage the focus inside the application container. Set in response to keyboard or other application events that change focus or point of interaction.
+  - : متناسب با ابزارک خود آنها را نیز مدیریت کنید.
+- تغییر مقادیر ویژگی‌ها
+  - : [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) برای مدیریت فوکوس درون ظرف برنامه استفاده می‌شود. در پاسخ به رویدادهای صفحه‌کلید یا سایر رویدادهای برنامه که فوکوس یا نقطه تعامل را تغییر می‌دهند، تنظیم می‌شود.
 
 > [!NOTE]
-> The `application` role does not have a related HTML widget and thus is completely free form. The author of the application must take full responsibility for not letting users get stuck in a focus trap inside something the user cannot exit from. All aspects of interaction, including returning to the regular web content on other parts of the page, must be handled. Use wisely, and cautiously, and remember to test!
+> نقش `application` ابزارک HTML مرتبطی ندارد و بنابراین کاملاً آزاد است. نویسنده برنامه باید مسئولیت کامل را بپذیرد که کاربران در یک تله فوکوس در داخل چیزی که نمی‌توانند از آن خارج شوند گیر نکنند. تمام جنبه‌های تعامل، از جمله بازگشت به محتوای وب معمولی در بخش‌های دیگر صفحه، باید مدیریت شود. عاقلانه و محتاطانه استفاده کنید و به یاد داشته باشید که آزمایش کنید!
 
-## Examples
+## مثال‌ها
 
-Some prominent web applications that use or have used the application role properly are:
+برخی از برنامه‌های وب برجسته که از نقش application به درستی استفاده می‌کنند یا استفاده کرده‌اند:
 
 - Google Docs, Sheets and Slides
-- CKEditor and TinyMCE WYSIWYG web editors, like the one used on the Mozilla Developer Network
-- Some parts of Gmail
+- ویرایشگرهای وب WYSIWYG مانند CKEditor و TinyMCE، مانند آنچه در شبکه توسعه‌دهندگان موزیلا استفاده می‌شود
+- برخی از بخش‌های جیمیل
 
-## Accessibility concerns
+## نگرانی‌های دسترس‌پذیری
 
-Improperly using the `application` role can unintentionally take away access from information on a web page, so be very mindful of using it. Think hard on if you actually need it and cannot just use a set of other known widgets to accomplish the same task.
+استفاده نادرست از نقش `application` می‌تواند به‌طور ناخواسته دسترسی به اطلاعات یک صفحه وب را از بین ببرد، بنابراین در استفاده از آن بسیار هوشیار باشید. به سختی فکر کنید که آیا واقعاً به آن نیاز دارید و نمی‌توانید فقط از مجموعه‌ای از ابزارک‌های شناخته‌شده دیگر برای انجام همان کار استفاده کنید.
 
-If used, the application role should be added to the lowest common container possible, not on the `<body>` element, for example. Also be sure to test what you have written with assistive technology, to verify it works as intended.
+در صورت استفاده، نقش application باید به کمترین ظرف مشترک ممکن اضافه شود، نه مثلاً روی عنصر `<body>`. همچنین حتماً آنچه نوشته‌اید را با فناوری کمکی آزمایش کنید تا مطمئن شوید همانطور که انتظار می‌رود کار می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Precedence order
+## ترتیب اولویت
 
-Applying the `application` role will cause this and all of the descendant elements of this element to be treated like application content, not web content. Any reading mechanisms assistive technologies may have for web content will not apply.
+اعمال نقش `application` باعث می‌شود این عنصر و تمام عناصر نوادگان آن به عنوان محتوای برنامه رفتار شوند، نه محتوای وب. هر مکانیزم خواندنی که فناوری‌های کمکی برای محتوای وب دارند اعمال نخواهد شد.
 
-## See also
+## همچنین ببینید
 
-- [If you use the WAI-ARIA role `application`, please do so wisely](https://www.marcozehe.de/if-you-use-the-wai-aria-role-application-please-do-so-wisely/) - blog post by Marco Zehe
-- [Using the ARIA `application` role](https://tink.uk/using-the-aria-application-role/) - by Léonie Watson
+- [اگر از نقش WAI-ARIA با نام `application` استفاده می‌کنید، لطفاً عاقلانه استفاده کنید](https://www.marcozehe.de/if-you-use-the-wai-aria-role-application-please-do-so-wisely/) - پست وبلاگ توسط Marco Zehe
+- [استفاده از نقش ARIA با نام `application`](https://tink.uk/using-the-aria-application-role/) - توسط Léonie Watson
