@@ -1,11 +1,5 @@
 ---
 title: "CSSContainerRule: containerName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSContainerRule/containerName"
-status: "needs-translation"
----
-
----
-title: "CSSContainerRule: containerName property"
 short-title: containerName
 slug: Web/API/CSSContainerRule/containerName
 page-type: web-api-instance-property
@@ -14,20 +8,19 @@ browser-compat: api.CSSContainerRule.containerName
 
 {{ APIRef("CSSOM") }}
 
-The read-only **`containerName`** property of the {{domxref("CSSContainerRule")}} interface represents the name of the container condition for a container rule that only defines one container condition.
-If there are multiple container conditions, the value is set to the empty string.
+ویژگی فقط‌خواندنی **`containerName`** در رابط {{domxref("CSSContainerRule")}} نام شرط کانتینر را برای یک قانون کانتینر نشان می‌دهد که فقط یک شرط کانتینر تعریف کرده است. اگر چندین شرط کانتینر وجود داشته باشد، مقدار آن رشتهٔ خالی خواهد بود.
 
-## Value
+## مقدار
 
-A string that contains the name of the container condition defined in a container rule, but only if it has just one container condition defined.
+رشته‌ای شامل نام شرط کانتینر تعریف‌شده در یک قانون کانتینر، اما فقط در صورتی که آن قانون فقط یک شرط کانتینر داشته باشد.
 
-If no name is defined, or if the rule defines multiple container conditions, this is the empty string (`""`).
+اگر نامی تعریف نشده باشد، یا اگر قانون چندین شرط کانتینر تعریف کند، مقدار آن رشتهٔ خالی (`""`) است.
 
-## Description
+## توضیحات
 
-This property reflects the value of the name part of the container condition in a corresponding {{cssxref("@container")}} at-rule that has just one container condition.
+این ویژگی بخش نامِ شرط کانتینر را در یک at-rule مربوط به {{cssxref("@container")}} که فقط یک شرط کانتینر دارد منعکس می‌کند.
 
-For example, the value of `containerName` for the {{cssxref("@container")}} below is `sidebar`:
+برای مثال، مقدار `containerName` برای {{cssxref("@container")}} زیر برابر با `sidebar` است:
 
 ```css
 @container sidebar (width >= 700px) {
@@ -36,15 +29,13 @@ For example, the value of `containerName` for the {{cssxref("@container")}} belo
 ```
 
 > [!NOTE]
-> The `containerName` value has been superseded by {{domxref("CSSContainerRule.conditions")}}, which should be used in supporting browsers.
-> Browsers that do not support `conditions` cannot parse `@container` definitions with multiple container conditions.
+> مقدار `containerName` توسط {{domxref("CSSContainerRule.conditions")}} جایگزین شده است و باید در مرورگرهای پشتیبان استفاده شود. مرورگرهایی که از `conditions` پشتیبانی نمی‌کنند نمی‌توانند تعریف‌های `@container` با چندین شرط کانتینر را تجزیه کنند.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-The example below defines a {{cssxref("@container")}} rule with a single container condition, and displays the properties of the associated {{domxref("CSSContainerRule")}}.
-The CSS is very similar to that in the `@container` example [Creating named container contexts](/en-US/docs/Web/CSS/Reference/At-rules/@container#creating_named_container_contexts).
+مثال زیر یک قانون {{cssxref("@container")}} با یک شرط کانتینر واحد تعریف می‌کند و ویژگی‌های {{domxref("CSSContainerRule")}} مرتبط را نمایش می‌دهد. CSS این مثال بسیار شبیه به مثال [ایجاد زمینه‌های کانتینر نام‌دار](/en-US/docs/Web/CSS/Reference/At-rules/@container#creating_named_container_contexts) در مستندات `@container` است.
 
 ```html hidden
 <pre id="log"></pre>
@@ -69,8 +60,7 @@ function log(text) {
 
 #### HTML
 
-First, we define the HTML for a `card` contained within a `post`.
-These are represented by two nested {{htmlelement("div")}} elements.
+ابتدا HTML مربوط به یک `card` را تعریف می‌کنیم که در یک `post` قرار دارد. این‌ها با دو عنصر تودرتوی {{htmlelement("div")}} نمایش داده می‌شوند.
 
 ```html
 <div class="post">
@@ -83,8 +73,7 @@ These are represented by two nested {{htmlelement("div")}} elements.
 
 #### CSS
 
-The CSS for the container element specifies the type of the container along with a name.
-The card has a default font size, which is overridden for the `@container` named `sidebar` if its `width` is greater than or equal to `700px`.
+در CSS عنصر کانتینر، نوع کانتینر به همراه یک نام مشخص شده است. کارت یک اندازه قلم پیش‌فرض دارد که اگر `width` آن بزرگ‌تر یا مساوی `700px` باشد، برای `@container` با نام `sidebar` بازنویسی می‌شود.
 
 ```html
 <style id="example-styles">
@@ -108,9 +97,7 @@ The card has a default font size, which is overridden for the `@container` named
 
 #### JavaScript
 
-The code below gets the {{domxref("HTMLStyleElement")}} associated with the example using its `id`, and then uses its `sheet` property to get the {{domxref("StyleSheet")}}.
-From the `StyleSheet` we get the set of `cssRules` added to the sheet.
-Since we added the `@container` as the third rule above, we can access the associated `CSSContainerRule` using the third entry (index "2") in the `cssRules`.
+کد زیر عنصر {{domxref("HTMLStyleElement")}} مرتبط با مثال را با استفاده از `id` آن دریافت می‌کند و سپس با ویژگی `sheet` آن، {{domxref("StyleSheet")}} را به دست می‌آورد. از روی `StyleSheet` مجموعه‌ی `cssRules` اضافه‌شده به برگه را دریافت می‌کنیم. از آنجا که `@container` را به عنوان سومین قانون بالا اضافه کرده‌ایم، می‌توانیم با استفاده از سومین ورودی (ایندکس "2") در `cssRules` به `CSSContainerRule` مرتبط دسترسی پیدا کنیم.
 
 ```js
 const exampleStylesheet = document.getElementById("example-styles").sheet;
@@ -118,8 +105,7 @@ const exampleRules = exampleStylesheet.cssRules;
 const containerRule = exampleRules[2]; // a CSSContainerRule representing the container rule.
 ```
 
-We then use `containerRule` to log the name of the first container condition.
-If the browser supports `CSSContainerRule.conditions`, we show the name and query from that as well.
+سپس از `containerRule` برای ثبت نام اولین شرط کانتینر استفاده می‌کنیم. اگر مرورگر از `CSSContainerRule.conditions` پشتیبانی کند، نام و کوئری را نیز از آن نمایش می‌دهیم.
 
 ```js
 log(`CSSContainerRule.containerName: "${containerRule.containerName}"`);
@@ -133,21 +119,19 @@ if ("conditions" in CSSContainerRule.prototype) {
 }
 ```
 
-#### Results
+#### نتیجه
 
-The example output is shown below.
-The log section lists the name of the only container condition using `containerName`.
-It also shows the name and query using the `conditions` property, if supported.
+خروجی مثال در زیر نشان داده شده است. بخش ثبت‌شده نام تنها شرط کانتینر را با استفاده از `containerName` فهرست می‌کند. همچنین نام و کوئری را با استفاده از ویژگی `conditions` در صورت پشتیبانی نمایش می‌دهد.
 
 {{EmbedLiveSample("Basic usage","100%","300px")}}
 
-Note that the text in the card `<div>` should double in size as the container `width` reaches `700px`, and will halve again as the `width` goes back down below `700px`.
+توجه کنید که متن داخل `<div>` کارت با رسیدن `width` کانتینر به `700px` دو برابر می‌شود و با کاهش `width` به زیر `700px` دوباره نصف می‌شود.
 
-### Multiple container conditions
+### چندین شرط کانتینر
 
-The example below is almost exactly the same as the previous example except that the CSS specifies multiple container conditions.
+مثال زیر تقریباً دقیقاً مشابه مثال قبلی است، با این تفاوت که CSS چندین شرط کانتینر را مشخص می‌کند.
 
-Note that we've hidden the HTML because it is the same as in the previous example.
+توجه داشته باشید که HTML را پنهان کرده‌ایم چون همانند مثال قبلی است.
 
 ```html hidden
 <pre id="log"></pre>
@@ -181,8 +165,7 @@ function log(text) {
 
 #### CSS
 
-The card has a default font size, which is overridden for the `@container` named `sidebar` if its `width` is greater than `700px` or if the container has the name `other-name`.
-Note that this condition is contrived to demonstrate the effect of multiple conditions (it does not affect the behavior of the example).
+کارت یک اندازه قلم پیش‌فرض دارد که اگر `width` مربوط به `@container` با نام `sidebar` بزرگ‌تر از `700px` باشد، یا اگر کانتینر نام `other-name` را داشته باشد، بازنویسی می‌شود. توجه کنید که این شرط صرفاً برای نشان دادن اثر چند شرط کانتینر ساخته شده است (و رفتار مثال را تغییر نمی‌دهد).
 
 ```html
 <style id="example-styles">
@@ -206,9 +189,7 @@ Note that this condition is contrived to demonstrate the effect of multiple cond
 
 #### JavaScript
 
-The code below gets the {{domxref("HTMLStyleElement")}} associated with the example using its `id`, and then uses its `sheet` property to get the {{domxref("StyleSheet")}}.
-From the `StyleSheet` we get the set of `cssRules` added to the sheet.
-Since we added the `@container` as the third rule above, we can access the associated `CSSContainerRule` using the third entry (index "2") in the `cssRules`.
+کد زیر عنصر {{domxref("HTMLStyleElement")}} مرتبط با مثال را با استفاده از `id` آن دریافت می‌کند و سپس با ویژگی `sheet` آن، {{domxref("StyleSheet")}} را به دست می‌آورد. از روی `StyleSheet` مجموعه‌ی `cssRules` اضافه‌شده به برگه را دریافت می‌کنیم. از آنجا که `@container` را به عنوان سومین قانون بالا اضافه کرده‌ایم، می‌توانیم با استفاده از سومین ورودی (ایندکس "2") در `cssRules` به `CSSContainerRule` مرتبط دسترسی پیدا کنیم.
 
 ```js
 const exampleStylesheet = document.getElementById("example-styles").sheet;
@@ -216,8 +197,7 @@ const exampleRules = exampleStylesheet.cssRules;
 const containerRule = exampleRules[2]; // a CSSContainerRule representing the container rule.
 ```
 
-The code is slightly different from the previous case because if multiple container conditions are not supported by the browser, the `containerRule` will be `undefined`.
-We therefore only log the value of `containerName` if the browser supports multiple container conditions — it will be the empty string.
+کد کمی با حالت قبلی متفاوت است، زیرا اگر مرورگر از چند شرط کانتینر پشتیبانی نکند، `containerRule` برابر با `undefined` خواهد بود. بنابراین مقدار `containerName` را فقط در صورتی ثبت می‌کنیم که مرورگر از چند شرط کانتینر پشتیبانی کند — این مقدار رشتهٔ خالی خواهد بود.
 
 ```js
 if (!containerRule) {
@@ -238,27 +218,25 @@ if ("conditions" in CSSContainerRule.prototype) {
 }
 ```
 
-See [Feature testing](/en-US/docs/Web/API/CSSContainerRule#feature_testing) in `CSSContainerRule` for more information/examples.
+برای اطلاعات و مثال‌های بیشتر به [آزمون ویژگی](/en-US/docs/Web/API/CSSContainerRule#feature_testing) در مستندات `CSSContainerRule` مراجعه کنید.
 
-#### Results
+#### نتیجه
 
-The example output is shown below.
-Note that the rule doesn't exist at all if the browser doesn't support multiple container conditions.
-If it does, then the value of `containerName` is the empty string.
+خروجی مثال در زیر نشان داده شده است. توجه کنید که اگر مرورگر از چند شرط کانتینر پشتیبانی نکند، قانون اصلاً وجود ندارد. اگر پشتیبانی کند، مقدار `containerName` رشتهٔ خالی است.
 
 {{EmbedLiveSample("Multiple container conditions","100%","250px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- CSS {{cssxref("container")}} shorthand property
-- [CSS containment module](/en-US/docs/Web/CSS/Guides/Containment)
+- ویژگی کوتاه‌نویس CSS {{cssxref("container")}}
+- [ماژول محصورسازی CSS](/en-US/docs/Web/CSS/Guides/Containment)
 - [Container queries](/en-US/docs/Web/CSS/Guides/Containment/Container_queries)
-- [Using container size and style queries](/en-US/docs/Web/CSS/Guides/Containment/Container_size_and_style_queries)
+- [استفاده از کوئری‌های اندازه و سبک کانتینر](/en-US/docs/Web/CSS/Guides/Containment/Container_size_and_style_queries)
