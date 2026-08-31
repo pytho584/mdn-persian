@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-autocomplete attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,61 +15,61 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `aria-autocomplete` attribute indicates whether inputting text could trigger display of one or more predictions of the user's intended value for a [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role), [`searchbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/searchbox_role), or [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role) and specifies how predictions will be presented if they are made.
+ویژگی `aria-autocomplete` نشان می‌دهد که آیا وارد کردن متن می‌تواند نمایش یک یا چند پیش‌بینی از مقدار موردنظر کاربر را برای یک [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)، [`searchbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/searchbox_role) یا [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role) فعال کند و مشخص می‌کند که در صورت ارائه پیش‌بینی‌ها، آن‌ها چگونه نمایش داده شوند.
 
-## Description
+## توضیحات
 
-Autocompletion is user interface feature wherein inline suggestions are made as a user types in an input. Suggested text for completing the value of the field dynamically appears in the field after the input cursor, and the suggested value becomes the value if the user performs an action, such as tabbing, that causes focus to leave the field.
+تکمیل خودکار یک ویژگی رابط کاربری است که در آن پیشنهادهای درون‌خطی هنگام تایپ کاربر در یک ورودی ارائه می‌شوند. متن پیشنهادی برای تکمیل مقدار فیلد به‌صورت پویا در فیلد، بعد از مکان‌نمای ورودی ظاهر می‌شود و اگر کاربر عملی مانند رفتن به بخش بعدی (Tab) انجام دهد که باعث خروج فوکوس از فیلد شود، مقدار پیشنهادی به مقدار نهایی تبدیل می‌شود.
 
-The `aria-autocomplete` property describes the type of autocompletion interaction model a textbox, searchbox, or combobox will use when dynamically helping users complete text input. It distinguishes between two models: the **inline** model (`aria-autocomplete="inline"`), which presents a single predicted value and the **list** model (`aria-autocomplete="list"`), which presents a collection of possible values in a separate element that pops up next to or below the text input, similar to a {{HTMLElement('datalist')}}. A third value, `aria-autocomplete="both"` is for when the interface will present a list while also including a predicted value. The default is `none`, meaning the textbox, searchbox, or combobox will not provide an auto complete value.
+ویژگی `aria-autocomplete` نوع مدل تعامل تکمیل خودکار را توصیف می‌کند که یک textbox، searchbox یا combobox هنگام کمک پویا به کاربران برای تکمیل متن ورودی استفاده خواهد کرد. این ویژگی بین دو مدل تمایز قائل می‌شود: مدل **درون‌خطی** (`aria-autocomplete="inline"`) که یک مقدار پیش‌بینی‌شده واحد ارائه می‌دهد و مدل **فهرست** (`aria-autocomplete="list"`) که مجموعه‌ای از مقادیر ممکن را در یک عنصر جداگانه که در کنار یا زیر ورودی متن ظاهر می‌شود، ارائه می‌دهد؛ مشابه {{HTMLElement('datalist')}}. مقدار سوم، `aria-autocomplete="both"` برای زمانی است که رابط کاربری یک فهرست را نمایش می‌دهد و همچنین یک مقدار پیش‌بینی‌شده را شامل می‌شود. مقدار پیش‌فرض `none` است، به این معنی که textbox، searchbox یا combobox هیچ مقدار تکمیل خودکاری ارائه نمی‌دهد.
 
-The `aria-autocomplete` property only describes the type of predictive behavior for an input element for assistive technologies; it doesn't provide the functionality. The actual autocompletion should be provided using HTML attributes or JavaScript.
+ویژگی `aria-autocomplete` فقط نوع رفتار پیش‌بینی‌کننده برای یک عنصر ورودی را برای فناوری‌های کمکی توصیف می‌کند؛ این ویژگی کارکرد واقعی را فراهم نمی‌کند. تکمیل خودکار واقعی باید با استفاده از ویژگی‌های HTML یا جاوااسکریپت ارائه شود.
 
-If the suggested autocomplete value provides suggested values that aren't dependent on the input provided by the user, consider omitting autocomplete for everyone. For example, a searchbox input displaying unfiltered recent search terms may be helpful to a marketing team on an e-commerce site, but likely isn't helpful for the screen reader user. When it is best to not specify a value for `aria-autocomplete` or to set the value to the `none` default, likely your non-assistive technology users also don't need the experience.
+اگر مقدار تکمیل خودکار پیشنهادی، مقادیری ارائه دهد که به ورودی کاربر وابسته نیستند، در نظر بگیرید که تکمیل خودکار را برای همه حذف کنید. به عنوان مثال، یک ورودی جستجو که عبارات جستجوی اخیر فیلترنشده را نمایش می‌دهد ممکن است برای تیم بازاریابی در یک سایت تجارت الکترونیک مفید باشد، اما احتمالاً برای کاربر صفحه‌خوان مفید نیست. زمانی که بهتر است مقدار `aria-autocomplete` مشخص نشود یا روی پیش‌فرض `none` تنظیم شود، احتمالاً کاربران غیر از فناوری کمکی شما نیز به این تجربه نیاز ندارند.
 
-When implementing autocomplete functionality, ensure the suggested portion of the value is presented as selected text to enable distinguishing between a user's input and the suggestion. Make sure that when the suggested value is not the desired value, users can easily delete the suggestion or replace it by continuing to type.
+هنگام پیاده‌سازی قابلیت تکمیل خودکار، اطمینان حاصل کنید که بخش پیشنهادی مقدار به‌عنوان متن انتخاب‌شده نمایش داده می‌شود تا تشخیص بین ورودی کاربر و پیشنهاد ممکن شود. مطمئن شوید که وقتی مقدار پیشنهادی مقدار موردنظر نیست، کاربران بتوانند به راحتی پیشنهاد را حذف کنند یا با ادامه تایپ آن را جایگزین کنند.
 
-When implementing a list of values, DOM focus should remain on the text input while the suggestion list is displayed.
+هنگام پیاده‌سازی یک فهرست از مقادیر، در حالی که فهرست پیشنهادها نمایش داده می‌شود، فوکوس DOM باید روی ورودی متن باقی بماند.
 
-- include [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) with the value of the id of the suggested list of values.
-- include [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) matching the role of the element that contains the collection of suggested values.
-- manage focus, if required, including using [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) if the collection container supports.
-- use the [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) state on the element with role [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role) to communicate that the list is displayed.
+- [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) را با مقدار id فهرست مقادیر پیشنهادی قرار دهید.
+- [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) را مطابق با نقش عنصری که مجموعه مقادیر پیشنهادی را شامل می‌شود، قرار دهید.
+- در صورت نیاز، فوکوس را مدیریت کنید، از جمله استفاده از [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) اگر ظرف مجموعه پشتیبانی می‌کند.
+- از حالت [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) روی عنصر با نقش [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role) برای اطلاع‌رسانی نمایش فهرست استفاده کنید.
 
-If an autocomplete list value is automatically accepted when the field loses focus, the list must be contained in a role that supports `aria-activedescendant`, with the value of `aria-activedescendant` on the input field dynamically adjusted to refer to the element containing the selected suggestion.
+اگر مقدار فهرست تکمیل خودکار به‌طور خودکار هنگام از دست دادن فوکوس فیلد پذیرفته شود، فهرست باید در نقشی قرار گیرد که از `aria-activedescendant` پشتیبانی می‌کند و مقدار `aria-activedescendant` روی فیلد ورودی به‌صورت پویا تنظیم شود تا به عنصر حاوی پیشنهاد انتخاب‌شده اشاره کند.
 
-## Values
+## مقادیر
 
-- `none` (default)
-  - : When a user is providing input, no automatic suggestion is displayed.
+- `none` (پیش‌فرض)
+  - : وقتی کاربر در حال ارائه ورودی است، هیچ پیشنهاد خودکاری نمایش داده نمی‌شود.
 - `inline`
-  - : `aria-autocomplete="inline"` text suggesting one way to complete the provided input may be dynamically inserted after the caret.
+  - : `aria-autocomplete="inline"` متنی که یک راه برای تکمیل ورودی ارائه‌شده را پیشنهاد می‌کند ممکن است به‌صورت پویا بعد از مکان‌نما درج شود.
 - `list`
-  - : `aria-autocomplete="list"` When a user is providing input, an element containing a collection of values that could complete the provided input may be displayed.
+  - : `aria-autocomplete="list"` وقتی کاربر در حال ارائه ورودی است، عنصری حاوی مجموعه‌ای از مقادیر که می‌توانند ورودی ارائه‌شده را تکمیل کنند ممکن است نمایش داده شود.
 - `both`
-  - : `aria-autocomplete="both"` an input to offer both models at the same time. When a user is providing input, an element containing a collection of values that could complete the provided input may be displayed. If displayed, one value in the collection is automatically selected, and the text needed to complete the automatically selected value appears after the caret in the input.
+  - : `aria-autocomplete="both"` ورودی‌ای که هر دو مدل را هم‌زمان ارائه می‌دهد. وقتی کاربر در حال ارائه ورودی است، عنصری حاوی مجموعه‌ای از مقادیر که می‌توانند ورودی ارائه‌شده را تکمیل کنند ممکن است نمایش داده شود. اگر نمایش داده شود، یک مقدار از مجموعه به‌طور خودکار انتخاب می‌شود و متن لازم برای تکمیل مقدار انتخاب‌شده به‌طور خودکار بعد از مکان‌نما در ورودی ظاهر می‌شود.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+مورد استفاده در نقش‌ها:
 
-- [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role) role
-- [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role) role
-- inherits from [`searchbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/searchbox_role) role
+- نقش [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)
+- نقش [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
+- از نقش [`searchbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/searchbox_role) به ارث می‌برد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role) role
-- [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role) role
-- [`searchbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/searchbox_role) role
-- {{HTMLElement('datalist')}} element and the [`<input> list` attribute](/en-US/docs/Web/HTML/Reference/Elements/input#list)
-- [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) attribute
-- [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) attribute
-- [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) attribute
-- [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) attribute
-- [Editable Combobox With Both List and Inline Autocomplete Example](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-autocomplete-both/)
+- نقش [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)
+- نقش [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
+- نقش [`searchbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/searchbox_role)
+- عنصر {{HTMLElement('datalist')}} و [ویژگی `<input> list`](/en-US/docs/Web/HTML/Reference/Elements/input#list)
+- ویژگی [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls)
+- ویژگی [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup)
+- ویژگی [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant)
+- ویژگی [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded)
+- [مثال ترکیبی قابل ویرایش با فهرست و تکمیل خودکار درون‌خطی](https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-autocomplete-both/)
 - [Event.ariaAutoComplete](/en-US/docs/Web/API/Element/ariaAutoComplete)
