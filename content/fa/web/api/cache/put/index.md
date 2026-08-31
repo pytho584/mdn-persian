@@ -1,7 +1,7 @@
 ---
 title: "Cache: put() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Cache/put"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,15 +14,9 @@ browser-compat: api.Cache.put
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`put()`** method of the
-{{domxref("Cache")}} interface allows key/value pairs to be added to the current
-{{domxref("Cache")}} object.
+متد **`put()`** از رابط {{domxref("Cache")}} اجازه می‌دهد جفت‌های کلید/مقدار به شیء فعلی {{domxref("Cache")}} اضافه شوند.
 
-Often, you will just want to {{domxref("Window/fetch", "fetch()")}}
-one or more requests, then add the result straight to your cache. In such cases you are
-better off using
-{{domxref("Cache.add","Cache.add()")}}/{{domxref("Cache.addAll","Cache.addAll()")}}, as
-they are shorthand functions for one or more of these operations.
+اغلب، شما فقط می‌خواهید یک یا چند درخواست را با {{domxref("Window/fetch", "fetch()")}} واکشی کنید و سپس نتیجه را مستقیماً به کش خود اضافه کنید. در چنین مواردی بهتر است از {{domxref("Cache.add","Cache.add()")}}/{{domxref("Cache.addAll","Cache.addAll()")}} استفاده کنید، زیرا آن‌ها توابع خلاصه‌نویسی برای یک یا چند مورد از این عملیات هستند.
 
 ```js
 fetch(url).then((response) => {
@@ -34,51 +28,41 @@ fetch(url).then((response) => {
 ```
 
 > [!NOTE]
-> `put()` will overwrite any key/value pair
-> previously stored in the cache that matches the request.
+> `put()` هر جفت کلید/مقداری را که قبلاً در کش ذخیره شده و با درخواست مطابقت دارد، بازنویسی خواهد کرد.
 
 > [!NOTE]
-> {{domxref("Cache.add")}}/{{domxref("Cache.addAll")}} do not
-> cache responses with `Response.status` values that are not in the 200
-> range, whereas `Cache.put` lets you store any request/response pair. As a
-> result, {{domxref("Cache.add")}}/{{domxref("Cache.addAll")}} can't be used to store
-> opaque responses, whereas `Cache.put` can.
+> {{domxref("Cache.add")}}/{{domxref("Cache.addAll")}} پاسخ‌هایی را که `Response.status` آن‌ها در محدوده 200 نیست، کش نمی‌کنند، در حالی که `Cache.put` به شما اجازه می‌دهد هر جفت درخواست/پاسخی را ذخیره کنید. در نتیجه، {{domxref("Cache.add")}}/{{domxref("Cache.addAll")}} نمی‌توانند برای ذخیره پاسخ‌های غیرشفاف استفاده شوند، اما `Cache.put` می‌تواند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 put(request, response)
 ```
 
-### Parameters
+### پارامترها
 
 - `request`
-  - : The {{domxref("Request")}} object or URL that you want to add to the cache.
+  - : شیء {{domxref("Request")}} یا آدرس URL که می‌خواهید به کش اضافه کنید.
 - `response`
-  - : The {{domxref("Response")}} you want to match up to the request.
+  - : شیء {{domxref("Response")}} که می‌خواهید با درخواست مطابقت دهید.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with `undefined`.
+یک {{jsxref("Promise")}} که با `undefined` حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Returned if the URL scheme is not `http` or `https`.
+  - : اگر طرح URL (scheme) به غیر از `http` یا `https` باشد، برگردانده می‌شود.
 
-## Examples
+## نمونه‌ها
 
-This example is from the MDN [simple-service-worker example](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker) (see [simple-service-worker running live](https://bncb2v.csb.app/)).
-Here we wait for a {{domxref("FetchEvent")}} to fire. We construct a custom response
-like so:
+این مثال از [نمونه simple-service-worker](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker) متعلق به MDN است (همچنین ببینید [simple-service-worker اجرای زنده](https://bncb2v.csb.app/)).
+در اینجا منتظر رخ دادن یک {{domxref("FetchEvent")}} می‌مانیم. یک پاسخ سفارشی به صورت زیر می‌سازیم:
 
-1. Check whether a match for the request is found in the {{domxref("CacheStorage")}}
-   using {{domxref("CacheStorage.match","CacheStorage.match()")}}. If so, serve that.
-2. If not, open the `v1` cache using `open()`, put the default
-   network request in the cache using `Cache.put()` and return a
-   clone of the default network request using `return response.clone()`. Clone
-   is needed because `put()` consumes the response body.
-3. If this fails (e.g., because the network is down), return a fallback response.
+1. بررسی می‌کنیم که آیا مطابقتی برای درخواست در {{domxref("CacheStorage")}} با استفاده از {{domxref("CacheStorage.match","CacheStorage.match()")}} یافت می‌شود یا نه. اگر یافت شد، آن را سرو می‌کنیم.
+2. اگر یافت نشد، کش `v1` را با استفاده از `open()` باز می‌کنیم، درخواست شبکه پیش‌فرض را با استفاده از `Cache.put()` در کش قرار می‌دهیم و یک کپی از درخواست شبکه پیش‌فرض را با `return response.clone()` بازمی‌گردانیم. کپی موردنیاز است زیرا `put()` بدنه پاسخ را مصرف می‌کند.
+3. اگر این کار ناموفق بود (مثلاً به دلیل قطع بودن شبکه)، یک پاسخ جایگزین بازمی‌گردانیم.
 
 ```js
 let response;
@@ -93,16 +77,16 @@ const cachedResponse = caches
   .catch(() => caches.match("/gallery/myLittleVader.jpg"));
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 - {{domxref("Cache")}}
-- {{domxref("Window.caches")}} and {{domxref("WorkerGlobalScope.caches")}}
+- {{domxref("Window.caches")}} و {{domxref("WorkerGlobalScope.caches")}}
