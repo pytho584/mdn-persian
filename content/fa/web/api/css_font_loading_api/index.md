@@ -1,10 +1,4 @@
 ---
-title: "CSS Font Loading API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API"
-status: "needs-translation"
----
-
----
 title: CSS Font Loading API
 slug: Web/API/CSS_Font_Loading_API
 page-type: web-api-overview
@@ -13,36 +7,23 @@ browser-compat: api.FontFace
 
 {{DefaultAPISidebar("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **CSS Font Loading API** provides events and interfaces for dynamically loading font resources.
+**CSS Font Loading API** رویدادها و رابط‌هایی برای بارگذاری پویای منابع فونت فراهم می‌کند.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-CSS stylesheets allow authors to use custom fonts; specifying fonts to download using the {{cssxref("@font-face")}} rule, and applying them to elements with the {{cssxref("font-family")}} property.
-The point at which a font is downloaded is controlled by the user agent.
-Most agents only fetch and load fonts when they are first needed, which can result in a perceptible delay.
+شیوه‌نامه‌های CSS به نویسندگان امکان استفاده از فونت‌های سفارشی را می‌دهند؛ با تعیین فونت‌هایی که باید با استفاده از قاعده {{cssxref("@font-face")}} بارگیری شوند، و اعمال آن‌ها به عناصر با ویژگی {{cssxref("font-family")}}. نقطه‌ای که در آن فونت بارگیری می‌شود توسط عامل کاربر (user agent) کنترل می‌شود. بیشتر عامل‌ها فقط زمانی که فونت برای اولین بار نیاز شود، آن را واکشی و بارگذاری می‌کنند که می‌تواند باعث تأخیر قابل توجهی شود.
 
-The CSS Font Loading API overcomes this problem by letting authors control and track when a font face is fetched and loaded, and when it is added to the font face set owned by the document or worker.
-Adding a font face to the document or worker font face set allows the user agent to fetch and load the associated font resource automatically if needed.
-A font face can be loaded either before or after it is added to a font face set, but it _must_ be added to the set before it can be used for drawing.
+CSS Font Loading API این مشکل را با این امکان که نویسندگان بتوانند زمان واکشی و بارگذاری یک چهره فونت (font face) و همچنین زمان اضافه شدن آن به مجموعه چهره‌های فونت متعلق به سند یا worker را کنترل و ردیابی کنند، برطرف می‌کند. افزودن یک چهره فونت به مجموعه چهره‌های فونت سند یا worker باعث می‌شود که عامل کاربر در صورت نیاز به‌طور خودکار منبع فونت مرتبط را واکشی و بارگذاری کند. یک چهره فونت یا قبل از اضافه شدن به مجموعه چهره‌های فونت یا بعد از آن می‌تواند بارگذاری شود، اما _باید_ قبل از استفاده برای ترسیم به مجموعه اضافه شود.
 
-Font faces are defined in {{domxref('FontFace')}} objects, which specify a binary or URL font source and other properties of font in much the same way as the CSS {{cssxref("@font-face")}} rule.
-`FontFace` objects are added to the document or worker {{domxref('FontFaceSet')}} using {{domxref("Document.fonts")}} and {{domxref("WorkerGlobalScope.fonts")}}, respectively.
-Authors can trigger download of fonts using either `FontFace` or `FontFaceSet`, and monitor loading completion.
-`FontFaceSet` can additionally be used to determine when all fonts required by a page have loaded and the document layout is complete.
+چهره‌های فونت در اشیای {{domxref('FontFace')}} تعریف می‌شوند که یک منبع فونت باینری یا URL و سایر ویژگی‌های فونت را تقریباً به همان روشی که قاعده CSS {{cssxref("@font-face")}} مشخص می‌کند. اشیای `FontFace` با استفاده از {{domxref("Document.fonts")}} و {{domxref("WorkerGlobalScope.fonts")}} به ترتیب به مجموعه {{domxref('FontFaceSet')}} سند یا worker اضافه می‌شوند. نویسندگان می‌توانند بارگیری فونت‌ها را با استفاده از `FontFace` یا `FontFaceSet` آغاز کنند و تکمیل بارگذاری را زیر نظر داشته باشند. `FontFaceSet` همچنین می‌تواند برای تعیین زمان بارگذاری تمام فونت‌های مورد نیاز یک صفحه و تکمیل طرح‌بندی سند استفاده شود.
 
-The {{domxref('FontFace.status')}} property indicates the font face loading status: `unloaded`, `loading`, `loaded` or `failed`.
-This status is initially `unloaded`.
-It is set to `loading` when the file is being downloaded or the font data is being processed, and to `failed` if the font definition is invalid or the font data cannot be loaded.
-The status is set to `loaded` when the font face data has been successfully fetched (if needed) and loaded.
+ویژگی {{domxref('FontFace.status')}} وضعیت بارگذاری چهره فونت را نشان می‌دهد: `unloaded` (بارگیری نشده)، `loading` (در حال بارگیری)، `loaded` (بارگیری شده) یا `failed` (ناموفق). این وضعیت در ابتدا `unloaded` است. هنگامی که فایل در حال بارگیری است یا داده‌های فونت در حال پردازش هستند، روی `loading` تنظیم می‌شود و اگر تعریف فونت نامعتبر باشد یا داده‌های فونت قابل بارگیری نباشند، روی `failed` تنظیم می‌شود. وقتی داده‌های چهره فونت با موفقیت (در صورت نیاز) واکشی و بارگیری شدند، وضعیت روی `loaded` تنظیم می‌شود.
 
-### Defining a font face
+### تعریف یک چهره فونت
 
-Font faces are created using the [`FontFace` constructor](/en-US/docs/Web/API/FontFace/FontFace), which takes as parameters: the font family, the font source, and optional descriptors.
-The format and grammar of these arguments is the same as the equivalent {{cssxref("@font-face")}} definition.
+چهره‌های فونت با استفاده از [سازنده `FontFace`](/en-US/docs/Web/API/FontFace/FontFace) ایجاد می‌شوند که پارامترهای زیر را می‌گیرد: خانواده فونت، منبع فونت و توصیف‌گرهای اختیاری. قالب و دستور زبان این آرگومان‌ها با تعریف معادل {{cssxref("@font-face")}} یکسان است.
 
-The font source can either be binary data in an [`ArrayBuffer`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) or a font resource at a URL.
-A typical font face definition using a URL source might be as shown below.
-Note that the `url()` function is required for URL font sources.
+منبع فونت می‌تواند یا داده‌های باینری در یک [`ArrayBuffer`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) باشد یا یک منبع فونت در یک URL. یک تعریف معمولی از چهره فونت با استفاده از منبع URL ممکن است مانند زیر باشد. توجه داشته باشید که تابع `url()` برای منابع فونت URL ضروری است.
 
 ```js
 const font = new FontFace("my-font", 'url("my-font.woff")', {
@@ -53,75 +34,72 @@ const font = new FontFace("my-font", 'url("my-font.woff")', {
 ```
 
 > [!NOTE]
-> As with `@font-face`, some descriptors represent the expected data in the font data and are used for font matching, while others actually set/define properties of the generated font face.
-> For example, setting the `style` to "italic" indicates that the file contains italic fonts; it is up to the author to specify a file for which this is true.
+> مانند `@font-face`، برخی از توصیف‌گرها نشان‌دهنده داده‌های مورد انتظار در داده‌های فونت هستند و برای تطبیق فونت استفاده می‌شوند، در حالی که برخی دیگر در واقع ویژگی‌های چهره فونت تولید شده را تنظیم/تعریف می‌کنند.
+> برای مثال، تنظیم `style` به "italic" نشان می‌دهد که فایل حاوی فونت‌های ایتالیک است؛ این به عهده نویسنده است که فایلی را مشخص کند که این موضوع برای آن صادق باشد.
 
-Font faces with a _binary source_ are automatically loaded if the font definition is valid and the font data can be loaded — {{domxref('FontFace.status')}} is set to `loaded` on success and `failed` otherwise.
-Font faces with a URL source are validated but not automatically loaded — {{domxref('FontFace.status')}} is set `unloaded` if the font face definition is valid and `failed` otherwise.
+چهره‌های فونت با _منبع باینری_ به‌طور خودکار بارگیری می‌شوند اگر تعریف فونت معتبر باشد و داده‌های فونت قابل بارگیری باشند — {{domxref('FontFace.status')}} در صورت موفقیت روی `loaded` و در غیر این صورت روی `failed` تنظیم می‌شود.
+چهره‌های فونت با منبع URL اعتبارسنجی می‌شوند اما به‌طور خودکار بارگیری نمی‌شوند — اگر تعریف چهره فونت معتبر باشد {{domxref('FontFace.status')}} روی `unloaded` و در غیر این صورت روی `failed` تنظیم می‌شود.
 
-### Adding a font to a document or worker
+### افزودن فونت به یک سند یا worker
 
-Font faces are usually added to the document or worker {{domxref('FontFaceSet')}} to allow the user agent to automatically load the font when needed, and _must_ be added in order for the font to be used for rendering text.
+چهره‌های فونت معمولاً به {{domxref('FontFaceSet')}} سند یا worker اضافه می‌شوند تا به عامل کاربر اجازه دهند در صورت نیاز به‌طور خودکار فونت را بارگیری کند، و _باید_ اضافه شوند تا فونت برای رندر کردن متن استفاده شود.
 
-The code below shows a font face being added to the document.
+کد زیر نشان می‌دهد که یک چهره فونت به سند اضافه می‌شود.
 
 ```js
-// Define a FontFace
+// تعریف یک FontFace
 const font = new FontFace("my-font", 'url("my-font.woff")', {
   style: "italic",
   weight: "400",
   stretch: "condensed",
 });
 
-// Add to the document.fonts (FontFaceSet)
+// اضافه کردن به document.fonts (FontFaceSet)
 document.fonts.add(font);
 ```
 
-### Loading a font
+### بارگذاری یک فونت
 
-A font face can be loaded manually by calling {{domxref('FontFace.load()')}}, or by calling {{domxref('FontFaceSet.load()')}} if the font face has been added to the `FontFaceSet`.
-Note that attempting to load an already-loaded font has no effect.
+یک چهره فونت را می‌توان به صورت دستی با فراخوانی {{domxref('FontFace.load()')}} یا با فراخوانی {{domxref('FontFaceSet.load()')}} در صورتی که چهره فونت به `FontFaceSet` اضافه شده باشد، بارگیری کرد. توجه داشته باشید که تلاش برای بارگیری یک فونت از قبل بارگیری شده تأثیری ندارد.
 
-The code below shows how to define a font face, add it to the document fonts, and then initiate a font load.
+کد زیر نحوه تعریف یک چهره فونت، اضافه کردن آن به فونت‌های سند و سپس شروع بارگیری فونت را نشان می‌دهد.
 
 ```js
-// Define a FontFace
+// تعریف یک FontFace
 const font = new FontFace("my-font", 'url("my-font.woff")');
 
-// Add to the document.fonts (FontFaceSet)
+// اضافه کردن به document.fonts (FontFaceSet)
 document.fonts.add(font);
 
-// Load the font
+// بارگیری فونت
 font.load();
 
-// Wait until the fonts are all loaded
+// منتظر ماندن تا همه فونت‌ها بارگیری شوند
 document.fonts.ready.then(() => {
-  // Use the font to render text (for example, in a canvas)
+  // استفاده از فونت برای رندر متن (مثلاً در یک canvas)
 });
 ```
 
-Note that the `font.load()` returns a promise, so we could have handled the completion of font loading by chaining `then` afterwards.
-Using [`document.fonts.ready`](/en-US/docs/Web/API/FontFaceSet/ready) can be better in some circumstances, as it is only called when all fonts in the document have been resolved and layout is complete.
+توجه داشته باشید که `font.load()` یک promise برمی‌گرداند، بنابراین می‌توانستیم با زنجیره کردن `then` بعد از آن، تکمیل بارگیری فونت را مدیریت کنیم. استفاده از [`document.fonts.ready`](/en-US/docs/Web/API/FontFaceSet/ready) در برخی موارد می‌تواند بهتر باشد، زیرا فقط زمانی فراخوانی می‌شود که تمام فونت‌های موجود در سند تعیین تکلیف شده و طرح‌بندی کامل شده است.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref('FontFace')}}
-  - : Represents a single usable font face.
+  - : نشان‌دهنده یک چهره فونت قابل استفاده واحد است.
 - {{domxref('FontFaceSet')}}
-  - : An interface loading font faces and checking their download statuses.
+  - : یک رابط برای بارگیری چهره‌های فونت و بررسی وضعیت بارگیری آن‌ها.
 - {{domxref('FontFaceSetLoadEvent')}}
-  - : Fired whenever a {{domxref("FontFaceSet")}} loads.
+  - : هر زمان که یک {{domxref("FontFaceSet")}} بارگیری می‌کند، شلیک می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic font loading
+### بارگذاری اولیه فونت
 
-This is a very simple example that shows a font being loaded from Google Fonts and used to draw text to a canvas.
-The example also logs the `status` immediately after creation and after loading.
+این یک مثال بسیار ساده است که نشان می‌دهد یک فونت از Google Fonts بارگیری شده و برای کشیدن متن روی یک canvas استفاده می‌شود. مثال همچنین `status` را بلافاصله پس از ایجاد و پس از بارگیری ثبت می‌کند.
 
 #### HTML
 
-This code defines a canvas for drawing to and a textarea for logging.
+این کد یک canvas برای کشیدن و یک textarea برای ثبت (log) تعریف می‌کند.
 
 ```html
 <canvas id="js-canvas"></canvas>
@@ -130,7 +108,7 @@ This code defines a canvas for drawing to and a textarea for logging.
 
 #### JavaScript
 
-First we get the element to which we will log, and the canvas that will be used to render text in the downloaded font.
+ابتدا عنصری که قرار است در آن ثبت کنیم و canvas که برای رندر متن با فونت بارگیری شده استفاده می‌شود را دریافت می‌کنیم.
 
 ```js
 const log = document.getElementById("log");
@@ -140,8 +118,7 @@ canvas.width = 650;
 canvas.height = 75;
 ```
 
-Next we define a `FontFace` that has a URL source that is a Google Font and add it to `document.fonts`.
-We then log the font status, which should be `unloaded`.
+سپس یک `FontFace` تعریف می‌کنیم که منبع URL آن یک فونت Google است و آن را به `document.fonts` اضافه می‌کنیم. سپس وضعیت فونت را ثبت می‌کنیم که باید `unloaded` باشد.
 
 ```js
 const bitterFontFace = new FontFace(
@@ -152,8 +129,7 @@ document.fonts.add(bitterFontFace);
 log.textContent += `Bitter font: ${bitterFontFace.status}\n`; // > Bitter font: unloaded
 ```
 
-Then we call the {{domxref('FontFace.load()')}} method to load the font face, and wait on the returned promise.
-Once the promise resolves we log the loaded status (which should be `loaded`) and draw text in the loaded font to the canvas.
+سپس متد {{domxref('FontFace.load()')}} را برای بارگیری چهره فونت فراخوانی می‌کنیم و منتظر promise برگشتی می‌مانیم. وقتی promise حل شد، وضعیت بارگیری شده (که باید `loaded` باشد) را ثبت می‌کنیم و متن را با فونت بارگیری شده روی canvas می‌کشیم.
 
 ```js
 bitterFontFace.load().then(
@@ -170,19 +146,17 @@ bitterFontFace.load().then(
 );
 ```
 
-Note that we could also have waited on the promise returned by the {{domxref('FontFace.loaded')}} property, or on {{domxref('FontFaceSet.ready')}}.
+توجه داشته باشید که می‌توانستیم روی promise برگشتی توسط ویژگی {{domxref('FontFace.loaded')}} یا روی {{domxref('FontFaceSet.ready')}} نیز منتظر بمانیم.
 
-#### Result
+#### نتیجه
 
-The result is shown below.
-It should show the name of the font drawn on the canvas in the downloaded font, and a log showing the load status before and after loading.
+نتیجه در زیر نشان داده شده است. باید نام فونت کشیده شده روی canvas را با فونت بارگیری شده و یک log نشان‌دهنده وضعیت بارگیری قبل و بعد از بارگیری نشان دهد.
 
 {{ EmbedLiveSample('Basic font loading', 700, 180) }}
 
-### Font loading with events
+### بارگذاری فونت با رویدادها
 
-This example is similar to the previous one, except that it uses {{domxref('FontFaceSet.load()')}} to load the font.
-It also demonstrates how to listen for font loading events.
+این مثال مشابه مثال قبلی است، با این تفاوت که از {{domxref('FontFaceSet.load()')}} برای بارگیری فونت استفاده می‌کند. همچنین نحوه گوش دادن به رویدادهای بارگیری فونت را نشان می‌دهد.
 
 #### HTML
 
@@ -193,7 +167,7 @@ It also demonstrates how to listen for font loading events.
 
 #### JavaScript
 
-The code below defines a canvas context for drawing text, defines a font face, and adds it to the document font face set.
+کد زیر یک بافت canvas برای کشیدن متن تعریف می‌کند، یک چهره فونت تعریف می‌کند و آن را به مجموعه چهره‌های فونت سند اضافه می‌کند.
 
 ```js
 const log = document.getElementById("log");
@@ -211,10 +185,7 @@ document.fonts.add(oxygenFontFace);
 log.textContent += `Oxygen status: ${oxygenFontFace.status}\n`;
 ```
 
-Next we use `load()` on the font face set to load the font, specifying which of the fonts to load.
-The method returns a {{jsxref("Promise")}}.
-If the promise is resolved we use the font to draw some text.
-If it is rejected the error is logged.
+سپس از `load()` روی مجموعه چهره‌های فونت برای بارگیری فونت استفاده می‌کنیم و مشخص می‌کنیم کدام یک از فونت‌ها بارگیری شود. این متد یک {{jsxref("Promise")}} برمی‌گرداند. اگر promise حل شود، از فونت برای کشیدن متن استفاده می‌کنیم. اگر رد شود، خطا ثبت می‌شود.
 
 ```js
 document.fonts.load("36px FontFamily Oxygen").then(
@@ -230,9 +201,7 @@ document.fonts.load("36px FontFamily Oxygen").then(
 );
 ```
 
-Instead of waiting on a promise we might instead use events to track the font loading operation.
-The code below listens for the `loading` and `loadingerror` events and logs the number of font faces for each case.
-In the `loadingdone` event listener we additionally iterate through the font faces and log the family names.
+به جای انتظار برای یک promise، می‌توانیم از رویدادها برای ردیابی عملیات بارگیری فونت استفاده کنیم. کد زیر به رویدادهای `loading` و `loadingerror` گوش می‌دهد و تعداد چهره‌های فونت را برای هر مورد ثبت می‌کند. در شنونده رویداد `loadingdone`، علاوه بر این، از میان چهره‌های فونت عبور کرده و نام خانواده‌ها را ثبت می‌کنیم.
 
 ```js
 document.fonts.addEventListener("loading", (event) => {
@@ -249,10 +218,9 @@ document.fonts.addEventListener("loadingdone", (event) => {
 });
 ```
 
-The last bit of code demonstrates how you can monitor the completion of font loading using the promise returned by {{domxref('FontFaceSet.ready')}}.
-Unlike the other mechanisms this returns when all fonts defined in the document have been downloaded and layout is complete.
+آخرین بخش کد نحوه نظارت بر تکمیل بارگیری فونت را با استفاده از promise برگشتی توسط {{domxref('FontFaceSet.ready')}} نشان می‌دهد. برخلاف مکانیزم‌های دیگر، این زمانی برمی‌گردد که تمام فونت‌های تعریف شده در سند بارگیری شده و طرح‌بندی کامل شده است.
 
-When the promise resolves we iterate the values in the document's font faces.
+وقتی promise حل شد، از میان مقادیر موجود در چهره‌های فونت سند عبور می‌کنیم.
 
 ```js
 document.fonts.ready.then(() => {
@@ -267,17 +235,16 @@ document.fonts.ready.then(() => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-The output below shows the text drawn in "Oxygen" font.
-This also shows logging from the events and when the promise returned by `document.fonts.ready` resolves.
+خروجی زیر متن کشیده شده با فونت «Oxygen» را نشان می‌دهد. همچنین ثبت از رویدادها و زمانی که promise برگشتی توسط `document.fonts.ready` حل می‌شود را نشان می‌دهد.
 
 {{ EmbedLiveSample('Font loading with events', 700, 520) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
