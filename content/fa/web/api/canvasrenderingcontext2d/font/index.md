@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: font property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/font"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: font property"
 short-title: font
 slug: Web/API/CanvasRenderingContext2D/font
 page-type: web-api-instance-property
@@ -14,18 +8,17 @@ browser-compat: api.CanvasRenderingContext2D.font
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.font`** property of the Canvas 2D API specifies the current text style to use when drawing text.
-This string uses the same syntax as the [CSS font](/en-US/docs/Web/CSS/Reference/Properties/font) specifier.
+خاصیت **`CanvasRenderingContext2D.font`** از Canvas 2D API سبک متن فعلی را برای رسم متن مشخص می‌کند. این رشته از همان نحو (syntax) مشخص‌کننده [CSS font](/en-US/docs/Web/CSS/Reference/Properties/font) استفاده می‌کند.
 
-## Value
+## مقدار
 
-A string parsed as CSS {{cssxref("font")}} value. The default font is 10px sans-serif.
+یک رشته که به عنوان مقدار CSS {{cssxref("font")}} تجزیه می‌شود. فونت پیش‌فرض `10px sans-serif` است.
 
-## Examples
+## مثال‌ها
 
-### Using a custom font
+### استفاده از یک فونت سفارشی
 
-In this example we use the `font` property to specify a custom font weight, size, and family.
+در این مثال از خاصیت `font` برای تعیین وزن، اندازه و خانواده فونت سفارشی استفاده می‌کنیم.
 
 #### HTML
 
@@ -43,30 +36,30 @@ ctx.font = "bold 48px serif";
 ctx.strokeText("Hello world", 50, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Using_a_custom_font', 700, 180) }}
 
-### Loading fonts with the CSS Font Loading API
+### بارگذاری فونت‌ها با استفاده از CSS Font Loading API
 
-With the help of the {{domxref("FontFace")}} API, you can explicitly load fonts before using them in a canvas.
+با کمک API {{domxref("FontFace")}} می‌توانید فونت‌ها را قبل از استفاده در canvas به صراحت بارگذاری کنید.
 
 ```js
 let f = new FontFace("test", "url(x)");
 
 f.load().then(() => {
-  // Ready to use the font in a canvas context
+  // آماده استفاده از فونت در زمینه canvas
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این خاصیت: {{domxref("CanvasRenderingContext2D")}}
