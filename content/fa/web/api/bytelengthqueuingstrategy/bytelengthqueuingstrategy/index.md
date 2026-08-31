@@ -1,22 +1,12 @@
 ---
 title: "ByteLengthQueuingStrategy: ByteLengthQueuingStrategy() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy/ByteLengthQueuingStrategy"
-status: "needs-translation"
----
-
----
-title: "ByteLengthQueuingStrategy: ByteLengthQueuingStrategy() constructor"
-short-title: ByteLengthQueuingStrategy()
-slug: Web/API/ByteLengthQueuingStrategy/ByteLengthQueuingStrategy
-page-type: web-api-constructor
-browser-compat: api.ByteLengthQueuingStrategy.ByteLengthQueuingStrategy
+translated_by: "n8n + AI"
 ---
 
 {{APIRef("Streams")}}{{AvailableInWorkers}}
 
-The **`ByteLengthQueuingStrategy()`**
-constructor creates and returns a `ByteLengthQueuingStrategy` object
-instance.
+سازنده **`ByteLengthQueuingStrategy()`** یک نمونه از شیء `ByteLengthQueuingStrategy` ایجاد و بازمی‌گرداند.
 
 ## Syntax
 
@@ -27,19 +17,19 @@ new ByteLengthQueuingStrategy(options)
 ### Parameters
 
 - `options`
-  - : An object with the following property:
+  - : یک شیء با ویژگی زیر:
     - `highWaterMark`
-      - : The total number of bytes that can be contained in the internal queue before backpressure is applied.
+      - : تعداد کل بایت‌هایی که می‌توانند در صف داخلی قبل از اعمال فشار برگشتی (backpressure) قرار گیرند.
 
-        Unlike [`CountQueuingStrategy()`](/en-US/docs/Web/API/CountQueuingStrategy/CountQueuingStrategy) where `highWaterMark` specifies a simple count of the number of chunks, with `ByteLengthQueuingStrategy()`, `highWaterMark` specifies a number of _bytes_ — specifically, given a stream of chunks, how many bytes worth of those chunks (rather than a count of how many of those chunks) can be contained in the internal queue before backpressure is applied.
+        بر خلاف [`CountQueuingStrategy()`](/en-US/docs/Web/API/CountQueuingStrategy/CountQueuingStrategy) که در آن `highWaterMark` یک شمارش ساده از تعداد تکه‌ها (chunks) را مشخص می‌کند، در `ByteLengthQueuingStrategy()`، `highWaterMark` یک تعداد _بایت_ را مشخص می‌کند – به طور خاص، با توجه به یک جریان از تکه‌ها، چند بایت از آن تکه‌ها (به جای شمارش تعداد تکه‌ها) می‌توانند قبل از اعمال فشار برگشتی در صف داخلی قرار گیرند.
 
 ### Return value
 
-An instance of the {{domxref("ByteLengthQueuingStrategy")}} object.
+یک نمونه از شیء {{domxref("ByteLengthQueuingStrategy")}}.
 
 ### Exceptions
 
-None.
+هیچ‌کدام.
 
 ## Examples
 
@@ -76,4 +66,4 @@ const size = queuingStrategy.size(chunk);
 
 ## See also
 
-- {{domxref("ByteLengthQueuingStrategy")}} interface
+- {{domxref("ByteLengthQueuingStrategy")}} رابط
