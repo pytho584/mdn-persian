@@ -1,7 +1,7 @@
 ---
 title: "AudioDecoder: decodeQueueSize property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioDecoder/decodeQueueSize"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,24 +14,24 @@ browser-compat: api.AudioDecoder.decodeQueueSize
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`decodeQueueSize`** read-only property of the {{domxref("AudioDecoder")}} interface returns the number of pending decode requests in the queue.
+ویژگی فقط‌خواندنی **`decodeQueueSize`** در رابط {{domxref("AudioDecoder")}} تعداد درخواست‌های رمزگشایی در انتظار در صف را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer containing the number of requests.
+یک عدد صحیح شامل تعداد درخواست‌ها.
 
-## Examples
+## مثال‌ها
 
-The following example prints the size of the queue to the console.
+مثال زیر اندازه صف را در کنسول چاپ می‌کند.
 
 ```js
 console.log(AudioDecoder.decodeQueueSize);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
