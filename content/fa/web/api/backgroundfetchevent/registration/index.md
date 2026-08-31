@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchEvent: registration property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchEvent/registration"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,15 +16,15 @@ browser-compat: api.BackgroundFetchEvent.registration
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`registration`** read-only property of the {{domxref("BackgroundFetchEvent")}} interface returns a {{domxref("BackgroundFetchRegistration")}} object.
+ویژگی فقط‌خواندنی **`registration`** از رابط {{domxref("BackgroundFetchEvent")}} یک شیء {{domxref("BackgroundFetchRegistration")}} را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("BackgroundFetchRegistration")}}.
+یک {{domxref("BackgroundFetchRegistration")}}.
 
-## Examples
+## مثال‌ها
 
-In this example, if the user clicks on the user interface displaying the download progress, this fires the {{domxref("ServiceWorkerGlobalScope/backgroundfetchclick_event", "backgroundfetchclick")}} event. The current {{domxref("BackgroundFetchRegistration")}} is returned by calling `event.registration`.
+در این مثال، اگر کاربر بر روی رابط کاربری نمایش‌دهنده پیشرفت دانلود کلیک کند، رویداد {{domxref("ServiceWorkerGlobalScope/backgroundfetchclick_event", "backgroundfetchclick")}} فعال می‌شود. {{domxref("BackgroundFetchRegistration")}} فعلی با فراخوانی `event.registration` برگردانده می‌شود.
 
 ```js
 addEventListener("backgroundfetchclick", (event) => {
@@ -32,10 +32,10 @@ addEventListener("backgroundfetchclick", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
