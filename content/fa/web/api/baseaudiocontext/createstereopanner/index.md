@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createStereoPanner() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createStereoPanner"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,41 +14,30 @@ browser-compat: api.BaseAudioContext.createStereoPanner
 
 {{ APIRef("Web Audio API") }}
 
-The `createStereoPanner()` method of the {{ domxref("BaseAudioContext") }} interface creates a {{ domxref("StereoPannerNode") }}, which can be used to apply
-stereo panning to an audio source.
-It positions an incoming audio stream in a stereo image using a [low-cost panning algorithm](https://webaudio.github.io/web-audio-api/#stereopanner-algorithm).
+متد `createStereoPanner()` از رابط {{ domxref("BaseAudioContext") }} یک {{ domxref("StereoPannerNode") }} ایجاد می‌کند که می‌تواند برای اعمال پانینگ استریو به یک منبع صوتی استفاده شود. این متد یک جریان صوتی ورودی را با استفاده از [یک الگوریتم پانینگ کم‌هزینه](https://webaudio.github.io/web-audio-api/#stereopanner-algorithm) در یک تصویر استریو قرار می‌دهد.
 
 > [!NOTE]
-> The {{domxref("StereoPannerNode.StereoPannerNode", "StereoPannerNode()")}}
-> constructor is the recommended way to create a {{domxref("StereoPannerNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> سازنده {{domxref("StereoPannerNode.StereoPannerNode", "StereoPannerNode()")}} روش توصیه‌شده برای ایجاد یک {{domxref("StereoPannerNode")}} است؛ همچنین به [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createStereoPanner()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("StereoPannerNode")}}.
+یک {{domxref("StereoPannerNode")}}.
 
-## Examples
+## مثال‌ها
 
-In our [StereoPannerNode example](https://mdn.github.io/webaudio-examples/stereo-panner-node/) ([see source code](https://github.com/mdn/webaudio-examples/tree/main/stereo-panner-node)) HTML we have a simple {{htmlelement("audio")}} element along with a
-slider {{HTMLElement("input")}} to increase and decrease pan value. In the JavaScript we
-create a {{domxref("MediaElementAudioSourceNode")}} and a
-{{domxref("StereoPannerNode")}}, and connect the two together using the
-`connect()` method. We then use an `oninput` event handler to
-change the value of the {{domxref("StereoPannerNode.pan")}} parameter and update the pan
-value display when the slider is moved.
+در مثال [StereoPannerNode](https://mdn.github.io/webaudio-examples/stereo-panner-node/) ما ([کد منبع را ببینید](https://github.com/mdn/webaudio-examples/tree/main/stereo-panner-node))، در HTML یک عنصر ساده {{htmlelement("audio")}} به همراه یک لغزنده {{HTMLElement("input")}} برای افزایش و کاهش مقدار پان داریم. در جاوااسکریپت، یک {{domxref("MediaElementAudioSourceNode")}} و یک {{domxref("StereoPannerNode")}} ایجاد می‌کنیم و آن دو را با استفاده از متد `connect()` به یکدیگر متصل می‌کنیم. سپس از یک رویداد `oninput` برای تغییر مقدار پارامتر {{domxref("StereoPannerNode.pan")}} و به‌روزرسانی نمایش مقدار پان هنگام حرکت لغزنده استفاده می‌کنیم.
 
-Moving the slider left and right while the music is playing pans the music across to
-the left and right speakers of the output, respectively.
+حرکت لغزنده به چپ و راست در حین پخش موسیقی، صدا را به ترتیب به بلندگوهای چپ و راست خروجی پان می‌کند.
 
 ```js
 const audioCtx = new AudioContext();
@@ -79,14 +68,14 @@ source.connect(panNode);
 panNode.connect(audioCtx.destination);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
