@@ -1,11 +1,7 @@
 ---
 title: "ARIA: aria-owns attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns"
-status: "needs-translation"
----
-
----
-title: "ARIA: aria-owns attribute"
+translated_by: "n8n + AI"
 short-title: aria-owns
 slug: Web/Accessibility/ARIA/Reference/Attributes/aria-owns
 page-type: aria-attribute
@@ -13,71 +9,69 @@ spec-urls: https://w3c.github.io/aria/#aria-owns
 sidebar: accessibilitysidebar
 ---
 
-The `aria-owns` attribute identifies an element (or elements) in order to define a visual, functional, or contextual relationship between a parent and its child elements when the DOM hierarchy cannot be used to represent the relationship.
+ویژگی `aria-owns` یک عنصر (یا عناصر) را به منظور تعریف یک رابطه بصری، عملکردی یا بافتی بین یک والد و عناصر فرزندش، زمانی که سلسله‌مراتب DOM نمی‌تواند برای نمایش رابطه استفاده شود، شناسایی می‌کند.
 
-## Description
+## توضیحات
 
-Every element is the parent, sibling, or child of another element. The document object, made up of HTML elements and text nodes, is the basis of the DOM tree. The Accessibility Object Model (<abbr>AOM</abbr>) relies on a well-built DOM to enable assistive technologies to relay meaningful information about a document's contents to users.
+هر عنصر، والد، خواهر/برادر یا فرزند عنصر دیگری است. شیء سند که از عناصر HTML و گره‌های متنی تشکیل شده است، اساس درخت DOM است. مدل شیء دسترسی‌پذیری (<abbr>AOM</abbr>) به یک DOM خوش‌ساخت متکی است تا فناوری‌های کمکی بتوانند اطلاعات معناداری درباره محتویات یک سند به کاربران منتقل کنند.
 
-There are circumstances where the layout that appears on screen may differ from the underlying DOM structure due to the ability of JavaScript to alter content and CSS to alter layout. When this is the case, the `aria-owns` attribute can be used to recreate a meaningful relationship for assistive technology that consumes the DOM.
+شرایطی وجود دارد که چیدمان نمایش داده شده روی صفحه ممکن است با ساختار DOM زیرین به دلیل توانایی JavaScript در تغییر محتوا و CSS در تغییر چیدمان متفاوت باشد. در این موارد، می‌توان از ویژگی `aria-owns` برای بازآفرینی یک رابطه معنادار برای فناوری کمکی که DOM را مصرف می‌کند، استفاده کرد.
 
-When elements appear to be related visually but are not associated in the DOM, the `aria-owns` attribute enables creating the relationship that appears on screen in the accessibility layer for use by assistive technology. The **only** reason to include `aria-owns` is to expose a parent/child contextual relationship to assistive technology when the DOM's construction can't provide that relationship.
+هنگامی که عناصر به صورت بصری مرتبط به نظر می‌رسند اما در DOM مرتبط نیستند، ویژگی `aria-owns` امکان ایجاد رابطه‌ای را که روی صفحه در لایه دسترسی‌پذیری نمایش داده می‌شود، برای استفاده توسط فناوری کمکی فراهم می‌کند. **تنها** دلیل برای گنجاندن `aria-owns`، نمایش یک رابطه والد/فرزند بافتی به فناوری کمکی زمانی است که ساختار DOM نمی‌تواند آن رابطه را ارائه دهد.
 
-An "owning element" is any DOM ancestor of an element. If an element visually, functionally, or contextually appears to "own" (be an ancestor of) an element, but isn't actually an ancestor of the element in the DOM, include the `aria-owns` to create that relationship. Add the attribute to the owning element with reference to the non-child owned element (or elements) to tell assistive technology that an element should be treated as a child.
+یک "عنصر مالک" هر جد DOM یک عنصر است. اگر یک عنصر به صورت بصری، عملکردی یا بافتی به نظر می‌رسد که یک عنصر را "مالکیت" دارد (جد آن است)، اما در واقع در DOM جد آن عنصر نیست، از `aria-owns` برای ایجاد این رابطه استفاده کنید. این ویژگی را به عنصر مالک با ارجاع به عنصر (یا عناصر) متعلق غیرفرزند اضافه کنید تا به فناوری کمکی بگوید که یک عنصر باید به عنوان فرزند در نظر گرفته شود.
 
-Referencing the ID of one or more elements allows any element to "own" any other element with an `aria-owns` declaration. The value of the `aria-owns` attribute is a space-separated ID reference list that references the IDs of one or more elements in the document.
-
-> [!NOTE]
-> An "owned" element is any DOM descendant of the element, any element specified as a child via `aria-owns`, or any DOM descendant of the owned child. The `aria-owns`-owned element should be an element that belongs to a separate parent tree in the DOM but should be treated as a child of the current element.
-
-Do not use `aria-owns` as a replacement for the DOM hierarchy. If the relationship is represented in the DOM, do not use `aria-owns`.
-
-A child element is owned by its DOM parent by default: in this case, `aria-owns` should not be used. Avoid using the `aria-owns` attribute to rearrange existing child elements into a different order.
-
-When using `aria-owns`, make sure you [manage focus order](https://css-tricks.com/focus-management-and-inert/). Ensure the visual focus order matches this assistive technology reading order.
-
-An example of when to use `aria-owns` includes pop-up sub-menus that visually appear positioned near a parent menu, but cannot be nested in the DOM within the parent menu because it would affect the visual presentation. In this case, use `aria-owns` to present the sub-menu as a child of the parent menu to a screen reader.
+ارجاع به شناسه یک یا چند عنصر به هر عنصری اجازه می‌دهد تا هر عنصر دیگری را با یک اعلان `aria-owns` "مالکیت" کند. مقدار ویژگی `aria-owns` یک لیست مرجع شناسه‌های جدا شده با فاصله است که به شناسه‌های یک یا چند عنصر در سند ارجاع می‌دهد.
 
 > [!NOTE]
-> The `aria-owns` attribute should only be used when the parent/child relationship cannot be determined from the DOM.
+> یک عنصر "متعلق" هر عنصر نواده DOM از عنصر، هر عنصری است که از طریق `aria-owns` به عنوان فرزند مشخص شده است، یا هر عنصر نواده DOM از فرزند متعلق. عنصر متعلق به `aria-owns` باید عنصری باشد که در DOM متعلق به یک درخت والد جداگانه است اما باید به عنوان فرزند عنصر فعلی در نظر گرفته شود.
 
-If an element has both `aria-owns` and DOM children, the order of the child elements:
+از `aria-owns` به عنوان جایگزینی برای سلسله‌مراتب DOM استفاده نکنید. اگر رابطه در DOM نمایش داده شده است، از `aria-owns` استفاده نکنید.
 
-1. The actual DOM children first,
-2. Then the elements referenced in `aria-owns`.
+یک عنصر فرزند به طور پیش‌فرض توسط والد DOM خود مالکیت می‌شود: در این حالت، `aria-owns` نباید استفاده شود. از استفاده از ویژگی `aria-owns` برای بازآرایی عناصر فرزند موجود به ترتیب متفاوت خودداری کنید.
 
-This order can be changed by including the ID references to the actual DOM children in the `aria-owns` value.
+هنگام استفاده از `aria-owns`، مطمئن شوید که [ترتیب تمرکز را مدیریت می‌کنید](https://css-tricks.com/focus-management-and-inert/). اطمینان حاصل کنید که ترتیب تمرکز بصری با ترتیب خواندن این فناوری کمکی مطابقت دارد.
 
-The {{CSSXRef('order')}} property, part of flex or grid layouts, can be used to change the order of flex and grid items making them appear in a different order from their order in the source document, creating a divergence of the logical order of elements. While it may be tempting to order the accessibility layer to match order changes created with the CSS {{CSSXref('order')}} property, avoiding both the `order` property and the `aria-owns` attribute is the best option.
+یک مثال از زمان استفاده از `aria-owns` شامل زیرمنوهای پاپ‌آپی است که به صورت بصری در نزدیکی یک منوی والد ظاهر می‌شوند، اما نمی‌توانند در DOM درون منوی والد تودرتو شوند زیرا بر نمایش بصری تأثیر می‌گذارد. در این حالت، از `aria-owns` برای ارائه زیرمنو به عنوان فرزند منوی والد به صفحه‌خوان استفاده کنید.
 
-Make sure your owned elements have only one owner. Do not specify the `id` of an element in more than one other element's `aria-owns` attribute. An element can have only one owner.
+> [!NOTE]
+> ویژگی `aria-owns` فقط باید زمانی استفاده شود که رابطه والد/فرزند از DOM قابل تعیین نباشد.
+
+اگر یک عنصر هم `aria-owns` و هم فرزندان DOM داشته باشد، ترتیب عناصر فرزند:
+
+1. ابتدا فرزندان واقعی DOM،
+2. سپس عناصر ارجاع داده شده در `aria-owns`.
+
+این ترتیب می‌تواند با گنجاندن ارجاعات شناسه به فرزندان واقعی DOM در مقدار `aria-owns` تغییر کند.
+
+ویژگی {{CSSXRef('order')}} که بخشی از چیدمان‌های فلکس یا گرید است، می‌تواند برای تغییر ترتیب آیتم‌های فلکس و گرید استفاده شود و آنها را به ترتیبی متفاوت از ترتیبشان در سند منبع نمایش دهد و باعث ایجاد واگرایی در ترتیب منطقی عناصر شود. اگرچه ممکن است وسوسه‌انگیز باشد که لایه دسترسی‌پذیری را با تغییرات ترتیب ایجاد شده توسط ویژگی CSS {{CSSXref('order')}} مطابقت دهید، اما بهترین گزینه اجتناب از هر دو ویژگی `order` و `aria-owns` است.
+
+مطمئن شوید که عناصر متعلق شما فقط یک مالک دارند. `id` یک عنصر را در ویژگی `aria-owns` بیش از یک عنصر دیگر مشخص نکنید. یک عنصر فقط می‌تواند یک مالک داشته باشد.
 
 > [!WARNING]
-> While [`aria-owns` is now supported](https://a11ysupport.io/tech/aria/aria-owns_attribute) in all modern browsers, `aria-owns` may not be exposed to users of macOS and iOS using VoiceOver prior to iOS 17.3 and macOS 14.3.
+> اگرچه [`aria-owns` اکنون در تمام مرورگرهای مدرن پشتیبانی می‌شود](https://a11ysupport.io/tech/aria/aria-owns_attribute)، ممکن است `aria-owns` برای کاربران macOS و iOS که از VoiceOver استفاده می‌کنند، قبل از iOS 17.3 و macOS 14.3 نمایش داده نشود.
 
-## Values
+## مقادیر
 
 - `id` list
-  - : Space separated list of one or more ID values referencing the elements being owned by the current element
+  - : لیست جدا شده با فاصله از یک یا چند مقدار شناسه که به عناصر متعلق به عنصر فعلی ارجاع می‌دهند.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaOwnsElements")}}
-  - : The `ariaOwnsElements` property is part of each element's interface.
-    Its value is an array of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-owns` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaOwnsElements` بخشی از رابط هر عنصر است. مقدار آن یک آرایه از زیرکلاس‌های {{domxref("Element")}} است که ارجاعات `id` در ویژگی `aria-owns` را منعکس می‌کند ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 - {{domxref("ElementInternals.ariaOwnsElements")}}
-  - : The `ariaOwnsElements` property is part of each custom element's interface.
-    Its value is an array of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-owns` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaOwnsElements` بخشی از رابط هر عنصر سفارشی است. مقدار آن یک آرایه از زیرکلاس‌های {{domxref("Element")}} است که ارجاعات `id` در ویژگی `aria-owns` را منعکس می‌کند ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** roles.
+در **همه** نقش‌ها استفاده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls)
-- [`aria-owns` browser support](https://a11ysupport.io/tech/aria/aria-owns_attribute)
+- [`aria-owns` پشتیبانی مرورگر](https://a11ysupport.io/tech/aria/aria-owns_attribute)
