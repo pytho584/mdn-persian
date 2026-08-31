@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-describedby attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,24 +13,24 @@ spec-urls: https://w3c.github.io/aria/#aria-describedby
 sidebar: accessibilitysidebar
 ---
 
-The global `aria-describedby` attribute identifies the element (or elements) that describes the element on which the attribute is set.
+ویژگی سراسری `aria-describedby` عنصر (یا عناصری) را مشخص می‌کند که عنصر دارای این ویژگی را توصیف می‌کنند.
 
-## Description
+## توضیحات
 
-The `aria-describedby` attribute lists the [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id)s of the elements that describe the object. It is used to establish a relationship between widgets or groups and the text that describes them.
+ویژگی `aria-describedby` فهرستی از [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) عناصری را فهرست می‌کند که آن شیء را توصیف می‌کنند. از آن برای برقراری ارتباط بین ویجت‌ها یا گروه‌ها و متنی که آن‌ها را توصیف می‌کند استفاده می‌شود.
 
-The `aria-describedby` attribute is not limited to form controls. It can also be used to associate static text with widgets, groups of elements, regions that have a heading, definitions, and more. The `aria-describedby` attribute can be used with semantic HTML elements and with elements that have an ARIA [`role`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles).
+ویژگی `aria-describedby` محدود به کنترل‌های فرم نیست. می‌توان از آن برای مرتبط کردن متن ایستا با ویجت‌ها، گروه‌های عناصر، ناحیه‌های دارای عنوان، تعریف‌ها و موارد دیگر نیز استفاده کرد. ویژگی `aria-describedby` می‌تواند با عناصر HTML معنایی و با عناصری که دارای [`role`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) ARIA هستند استفاده شود.
 
-The `aria-describedby` attribute is very similar to the [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attribute. While `aria-labelledby` lists the `id`s of the labels or elements that describe the essence of an object, `aria-describedby` lists the `id`s of the descriptions or elements providing more information that the user might need. Both `aria-labelledby` and `aria-describedby` reference other elements to calculate a text alternative, but a label should be concise, while a description is intended to provide more verbose information; a label describes the essence of an object, while a description provides more information that the user might need.
+ویژگی `aria-describedby` بسیار شبیه به ویژگی [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) است. در حالی که `aria-labelledby` فهرستی از `id` برچسب‌ها یا عناصری است که ماهیت یک شیء را توصیف می‌کنند، `aria-describedby` فهرستی از `id` توصیف‌ها یا عناصری است که اطلاعات بیشتری را که کاربر ممکن است به آن نیاز داشته باشد فراهم می‌کنند. هر دو `aria-labelledby` و `aria-describedby` به عناصر دیگر ارجاع می‌دهند تا یک متن جایگزین محاسبه شود، اما یک برچسب باید مختصر باشد، در حالی که یک توصیف برای ارائه اطلاعات مفصل‌تر در نظر گرفته شده است؛ یک برچسب ماهیت یک شیء را توصیف می‌کند، در حالی که یک توصیف اطلاعات بیشتری را که کاربر ممکن است به آن نیاز داشته باشد فراهم می‌کند.
 
-The elements linked via `aria-describedby` don't need to be visible. It is possible to reference an element even if that element is hidden. For example, a form control can have a description that is hidden by default and revealed on request using a disclosure widget like a "more information" icon. The sighted users click on the icon to view the description, while assistive technology users can immediately access it as the description is referenced from that form control with `aria-describedby`.
+عناصری که از طریق `aria-describedby` به هم مرتبط می‌شوند نیازی به قابل مشاهده بودن ندارند. امکان ارجاع به یک عنصر حتی اگر پنهان باشد وجود دارد. برای مثال، یک کنترل فرم می‌تواند دارای توصیفی باشد که به‌طور پیش‌فرض پنهان است و در صورت درخواست با استفاده از یک ویجت افشاگر مانند آیکون «اطلاعات بیشتر» نمایش داده می‌شود. کاربران بینا برای مشاهدهٔ توصیف روی آیکون کلیک می‌کنند، در حالی که کاربران فناوری کمکی می‌توانند بلافاصله به آن دسترسی داشته باشند، زیرا توصیف از آن کنترل فرم با `aria-describedby` ارجاع شده است.
 
-The `aria-describedby` property is appropriate when the associated content contains plain text. If the content is extensive, contains useful semantics, or has a complex structure requiring user navigation, use [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) instead. `aria-details` allows assistive technology users to visit the associated structured content and provides additional navigation commands, making it easier to understand the structure, or to experience the information in smaller pieces.
+ویژگی `aria-describedby` زمانی مناسب است که محتوای مرتبط شامل متن ساده باشد. اگر محتوا گسترده باشد، معناشناسی مفیدی داشته باشد، یا ساختار پیچیده‌ای داشته باشد که نیاز به پیمایش کاربر داشته باشد، به جای آن از [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) استفاده کنید. `aria-details` به کاربران فناوری کمکی اجازه می‌دهد تا از محتوای ساختاریافته مرتبط بازدید کنند و دستورات پیمایش اضافی را فراهم می‌کند و درک ساختار یا دریافت اطلاعات در بخش‌های کوچک‌تر را آسان‌تر می‌کند.
 
 > [!NOTE]
-> The `aria-describedby` content should only be a text string. If there are important underlying semantics in the content, consider using [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details).
+> محتوای `aria-describedby` باید فقط یک رشته متنی باشد. اگر معناشناسی مهم زمینه‌ای در محتوا وجود دارد، استفاده از [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) را در نظر بگیرید.
 
-## Example
+## مثال
 
 ```html
 <button aria-describedby="trash-desc">Move to trash</button>
@@ -41,33 +41,33 @@ The `aria-describedby` property is appropriate when the associated content conta
 ```
 
 > [!NOTE]
-> The `aria-describedby` attribute is not designed to reference descriptions from external resources. As its value is one or more `id`s (space-separated if multiple), it must reference elements in the same DOM document.
+> ویژگی `aria-describedby` برای ارجاع به توصیف‌ها از منابع خارجی طراحی نشده است. از آنجا که مقدار آن یک یا چند `id` است (در صورت چندتایی با فاصله جدا می‌شوند)، باید به عناصری در همان سند DOM ارجاع دهد.
 
-## Values
+## مقادیر
 
-- ID reference list
-  - : The `id` or space-separated list of element `id`s that describe the current element.
+- فهرست ارجاع `ID`
+  - : `id` یا فهرست جدا شده با فاصله از `id` عناصری که عنصر فعلی را توصیف می‌کنند.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaDescribedByElements")}}
-  - : The `ariaDescribedByElements` property is part of each element's interface.
-    Its value is an array of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-describedby` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaDescribedByElements` بخشی از رابط هر عنصر است.
+    مقدار آن آرایه‌ای از زیرکلاس‌های {{domxref("Element")}} است که ارجاع‌های `id` موجود در ویژگی `aria-describedby` را بازتاب می‌دهد ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 - {{domxref("ElementInternals.ariaDescribedByElements")}}
-  - : The `ariaDescribedByElements` property is part of each custom element's interface.
-    Its value is an array of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-describedby` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaDescribedByElements` بخشی از رابط هر عنصر سفارشی است.
+    مقدار آن آرایه‌ای از زیرکلاس‌های {{domxref("Element")}} است که ارجاع‌های `id` موجود در ویژگی `aria-describedby` را بازتاب می‌دهد ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **all** roles. Usable in all HTML elements as well.
+در **همه** نقش‌ها استفاده می‌شود. همچنین در تمام عناصر HTML قابل استفاده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## جستارهای وابسته
 
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
 - [`aria-description`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-description)
 - [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details)
-- [Browser and AT support for `aria-describedby`](https://a11ysupport.io/tech/aria/aria-describedby_attribute)
+- [پشتیبانی مرورگر و فناوری کمکی از `aria-describedby`](https://a11ysupport.io/tech/aria/aria-describedby_attribute)
