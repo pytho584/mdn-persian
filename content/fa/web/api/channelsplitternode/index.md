@@ -1,10 +1,4 @@
 ---
-title: "ChannelSplitterNode"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ChannelSplitterNode"
-status: "needs-translation"
----
-
----
 title: ChannelSplitterNode
 slug: Web/API/ChannelSplitterNode
 page-type: web-api-interface
@@ -13,71 +7,71 @@ browser-compat: api.ChannelSplitterNode
 
 {{APIRef("Web Audio API")}}
 
-The `ChannelSplitterNode` interface, often used in conjunction with its opposite, {{domxref("ChannelMergerNode")}}, separates the different channels of an audio source into a set of mono outputs. This is useful for accessing each channel separately, e.g., for performing channel mixing where gain must be separately controlled on each channel.
+رابط `ChannelSplitterNode` که اغلب در کنار نقطه‌ی مقابل آن، یعنی {{domxref("ChannelMergerNode")}} استفاده می‌شود، کانال‌های مختلف یک منبع صوتی را به مجموعه‌ای از خروجی‌های تک‌کاناله (mono) جدا می‌کند. این کار برای دسترسی جداگانه به هر کانال مفید است؛ مثلاً برای انجام میکس کانال زمانی که باید بهره (gain) هر کانال به‌صورت جداگانه کنترل شود.
 
-![Default channel splitter node with a single input splitting to form 6 mono outputs.](webaudiosplitter.png)
+![گره تقسیم‌کننده کانال پیش‌فرض با یک ورودی که به ۶ خروجی تک‌کاناله تقسیم می‌شود.](webaudiosplitter.png)
 
-If your `ChannelSplitterNode` always has one single input, the amount of outputs is defined by a parameter on its constructor and the call to {{domxref("BaseAudioContext/createChannelSplitter", "AudioContext.createChannelSplitter()")}}. In the case that no value is given, it will default to `6`. If there are fewer channels in the input than there are outputs, supernumerary outputs are silent.
+اگر `ChannelSplitterNode` شما همیشه فقط یک ورودی داشته باشد، تعداد خروجی‌ها توسط یک پارامتر در سازنده‌ی آن و در فراخوانی {{domxref("BaseAudioContext/createChannelSplitter", "AudioContext.createChannelSplitter()")}} تعیین می‌شود. اگر مقداری داده نشود، پیش‌فرض آن `6` خواهد بود. اگر تعداد کانال‌های ورودی کمتر از تعداد خروجی‌ها باشد، خروجی‌های اضافی بی‌صدا خواهند بود.
 
 {{InheritanceDiagram}}
 
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">Number of inputs</th>
+      <th scope="row">تعداد ورودی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Number of outputs</th>
-      <td>variable; defaults to <code>6</code>.</td>
+      <th scope="row">تعداد خروجی‌ها</th>
+      <td>متغیر؛ پیش‌فرض <code>6</code>.</td>
     </tr>
     <tr>
-      <th scope="row">Channel count mode</th>
+      <th scope="row">حالت تعداد کانال</th>
       <td>
-        <code>"explicit"</code>. Older implementations, as per earlier versions
-        of the spec use <code>"max"</code>.
+        <code>"explicit"</code>. پیاده‌سازی‌های قدیمی‌تر، طبق نسخه‌های قبلی
+        مشخصات، از <code>"max"</code> استفاده می‌کنند.
       </td>
     </tr>
     <tr>
-      <th scope="row">Channel count</th>
+      <th scope="row">تعداد کانال</th>
       <td>
-        Fixed to the number of outputs. Older implementations, as per earlier
-        versions of the spec use <code>2</code> (not used in the default count
-        mode).
+        ثابت و برابر با تعداد خروجی‌ها. پیاده‌سازی‌های قدیمی‌تر، طبق نسخه‌های
+        قبلی مشخصات، از <code>2</code> استفاده می‌کنند (در حالت تعداد پیش‌فرض
+        استفاده نمی‌شود).
       </td>
     </tr>
     <tr>
-      <th scope="row">Channel interpretation</th>
+      <th scope="row">تفسیر کانال</th>
       <td><code>"discrete"</code></td>
     </tr>
   </tbody>
 </table>
 
-## Constructor
+## سازنده
 
 - {{domxref("ChannelSplitterNode.ChannelSplitterNode()","ChannelSplitterNode()")}}
-  - : Creates a new `ChannelSplitterNode` object instance.
+  - : یک نمونه‌ی جدید از شیء `ChannelSplitterNode` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_No specific property; inherits properties from its parent, {{domxref("AudioNode")}}_.
+_ویژگی خاصی ندارد؛ ویژگی‌ها را از والد خود، {{domxref("AudioNode")}} به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("AudioNode")}}_.
+_روش خاصی ندارد؛ روش‌ها را از والد خود، {{domxref("AudioNode")}} به ارث می‌برد._
 
-## Example
+## مثال
 
-See [`BaseAudioContext.createChannelSplitter()`](/en-US/docs/Web/API/BaseAudioContext/createChannelSplitter#examples) for example code.
+برای کد مثال، [`BaseAudioContext.createChannelSplitter()`](/en-US/docs/Web/API/BaseAudioContext/createChannelSplitter#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
