@@ -1,7 +1,5 @@
 ---
 title: "CSSConditionRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSConditionRule"
-status: "needs-translation"
 ---
 
 ---
@@ -13,31 +11,31 @@ browser-compat: api.CSSConditionRule
 
 {{ APIRef("CSSOM") }}
 
-An object implementing the **`CSSConditionRule`** interface represents a single condition CSS [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules), which consists of a condition and a statement block.
+یک شیء که رابط **`CSSConditionRule`** را پیادهسازی میکند، یک [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) شرطیِ CSS را نشان میدهد که از یک شرط و یک بلوک بیانیه (statement block) تشکیل شده است.
 
-Three objects derive from `CSSConditionRule`: {{domxref("CSSMediaRule")}}, {{domxref("CSSContainerRule")}} and {{domxref("CSSSupportsRule")}}.
+سه شیء از `CSSConditionRule` مشتق میشوند: {{domxref("CSSMediaRule")}}، {{domxref("CSSContainerRule")}} و {{domxref("CSSSupportsRule")}}.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestors {{domxref("CSSGroupingRule")}} and {{domxref("CSSRule")}}._
+_ویژگی‌ها را از اجداد خود {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} به ارث می‌برد._
 
 - {{domxref("CSSConditionRule.conditionText")}} {{ReadOnlyInline}}
-  - : Represents the text of the condition of the rule.
+  - : متن شرط این قانون را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its ancestors {{domxref("CSSGroupingRule")}} and {{domxref("CSSRule")}}._
+_روش‌ها را از اجداد خود {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
