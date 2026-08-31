@@ -1,46 +1,42 @@
 ---
 title: "AnimationEffect: updateTiming() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/updateTiming"
-status: "needs-translation"
----
-
----
-title: "AnimationEffect: updateTiming() method"
 short-title: updateTiming()
 slug: Web/API/AnimationEffect/updateTiming
 page-type: web-api-instance-method
 browser-compat: api.AnimationEffect.updateTiming
+source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/updateTiming"
+translated_by: "n8n + AI"
 ---
 
 {{ APIRef("Web Animations") }}
 
-The `updateTiming()` method of the {{domxref("AnimationEffect")}} interface updates the specified timing properties for an animation effect.
+متد `updateTiming()` از رابط {{domxref("AnimationEffect")}} ویژگی‌های زمان‌بندی مشخص شده برای یک افکت انیمیشن را به‌روزرسانی می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 updateTiming(timing)
 ```
 
-### Parameters
+### پارامترها
 
 - `timing` {{optional_inline}}
-  - : An object containing zero or more of the properties from the return value of {{domxref("AnimationEffect.getTiming()")}}, representing the timing properties to update.
+  - : یک شی شامل صفر یا تعداد بیشتری از ویژگی‌های مقدار بازگشتی {{domxref("AnimationEffect.getTiming()")}} که نشان‌دهنده ویژگی‌های زمان‌بندی برای به‌روزرسانی است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if invalid values are provided for any of the timing properties.
+  - : اگر مقادیر نامعتبر برای هر یک از ویژگی‌های زمان‌بندی ارائه شود، پرتاب می‌شود.
 
-### Examples
+### مثال‌ها
 
-#### Side effects
+#### اثرات جانبی
 
-`updateTiming()` may cause any associated {{domxref("Animation")}} to start or stop playing, if for example the effect of a running animation is shortened such that its end time is before {{domxref("Animation.currentTime")}} or the effect of a finished animation is lengthened such that its end time is after {{domxref("Animation.currentTime")}}.
+`updateTiming()` ممکن است باعث شود هر {{domxref("Animation")}} مرتبط شروع به پخش کند یا متوقف شود، به عنوان مثال اگر افکت یک انیمیشن در حال اجرا به گونه‌ای کوتاه شود که زمان پایان آن قبل از {{domxref("Animation.currentTime")}} باشد یا افکت یک انیمیشن تمام شده به گونه‌ای طولانی شود که زمان پایان آن بعد از {{domxref("Animation.currentTime")}} باشد.
 
 ```js
 const animation = document.body.animate([], { duration: 1000 });
@@ -50,15 +46,15 @@ animation.effect.updateTiming({ duration: 2000 });
 console.log(animation.playState); // running
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("AnimationEffect")}}
