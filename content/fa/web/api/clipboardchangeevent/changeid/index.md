@@ -1,7 +1,5 @@
 ---
 title: "ClipboardChangeEvent: changeId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ClipboardChangeEvent/changeId"
-status: "needs-translation"
 ---
 
 ---
@@ -16,17 +14,17 @@ browser-compat: api.ClipboardChangeEvent.changeId
 
 {{securecontext_header}}{{APIRef("Clipboard API")}}{{SeeCompatTable}}
 
-The **`changeId`** read-only property of the {{domxref("ClipboardChangeEvent")}} interface returns an integer representing a unique identifier for this specific clipboard change operation.
+ویژگی فقط‌خواندنی **`changeId`** از رابط {{domxref("ClipboardChangeEvent")}} یک عدد صحیح برمی‌گرداند که شناسه‌ی یکتا برای این عملیات خاص تغییر کلیپ‌بورد است.
 
-The identifier is consistent across all windows and tabs with the same storage key for the same clipboard change, enabling applications to deduplicate events when multiple windows receive the same clipboard change notification.
+این شناسه برای همان تغییر کلیپ‌بورد، در تمام پنجره‌ها و برگه‌هایی که کلید ذخیره‌سازی یکسانی دارند، یکسان است. این امر به برنامه‌ها امکان می‌دهد تا در مواقعی که چند پنجره اعلان یکسان تغییر کلیپ‌بورد را دریافت می‌کنند، رویدادهای تکراری را حذف کنند.
 
-## Value
+## مقدار
 
-An integer. A cryptographically derived 128-bit integer that, after something is written to the clipboard, is guaranteed to yield a different value than it did before the write operation.
+یک عدد صحیح. یک عدد صحیح ۱۲۸-بیتی که به‌صورت رمزنگاری‌شده مشتق می‌شود و پس از نوشتن چیزی در کلیپ‌بورد، تضمین می‌شود مقدار متفاوتی نسبت به مقدار پیش از عملیات نوشتن تولید کند.
 
-## Examples
+## مثال‌ها
 
-In this example, when the contents of the clipboard change, the event listener uses the `ClipboardChangeEvent.changeId` property to log to the console the unique ID representing the clipboard change operation that fired the event.
+در این مثال، وقتی محتویات کلیپ‌بورد تغییر می‌کند، شنونده رویداد از ویژگی `ClipboardChangeEvent.changeId` استفاده می‌کند تا شناسه‌ی یکتای عملیات تغییر کلیپ‌بوردی که رویداد را فعال کرده است در کنسول ثبت کند.
 
 ```js
 navigator.clipboard.addEventListener("clipboardchange", (event) => {
@@ -34,15 +32,15 @@ navigator.clipboard.addEventListener("clipboardchange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ClipboardChangeEvent.types")}}
 - {{domxref("ClipboardChangeEvent")}}
