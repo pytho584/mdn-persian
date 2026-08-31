@@ -1,11 +1,5 @@
 ---
 title: "CharacterData: before() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/before"
-status: "needs-translation"
----
-
----
-title: "CharacterData: before() method"
 short-title: before()
 slug: Web/API/CharacterData/before
 page-type: web-api-instance-method
@@ -14,40 +8,37 @@ browser-compat: api.CharacterData.before
 
 {{APIRef("DOM")}}
 
-The **`before()`** method of the {{domxref("CharacterData")}} interface
-inserts a set of {{domxref("Node")}} objects and strings
-in the children list of the `CharacterData`'s parent, just before the `CharacterData` node.
+متد **`before()`** در رابط {{domxref("CharacterData")}}، مجموعه‌ای از اشیاء {{domxref("Node")}} و رشته‌ها را در فهرست فرزندانِ والدِ `CharacterData`، دقیقاً قبل از گره `CharacterData` درج می‌کند.
 
-Strings are inserted as {{domxref("Text")}} nodes; the string is being passed as argument to the {{domxref("Text/Text", "Text()")}} constructor.
+رشته‌ها به‌صورت گره‌های {{domxref("Text")}} درج می‌شوند؛ رشته به‌عنوان آرگومان به سازندهٔ {{domxref("Text/Text", "Text()")}} ارسال می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 before(...nodes)
 ```
 
-### Parameters
+### پارامترها
 
 - `nodes`
-  - : A set of {{domxref("Node")}} objects or strings to insert.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها برای درج.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the new nodes cannot be inserted at the specified point in the hierarchy, that is if one of the following conditions is met:
-    - If the insertion of one of the added node would lead to a cycle, that is if one of them is an ancestor of this {{domxref("CharacterData")}} node.
-    - If one of the added node is not a {{domxref("DocumentFragment")}}, a {{domxref("DocumentType")}}, an {{domxref("Element")}}, or a {{domxref("CharacterData")}}.
-    - If this {{domxref("CharacterData")}} node is actually a {{domxref("Text")}} node, and its parent is a {{domxref("Document")}}.
-    - If the parent of this {{domxref("CharacterData")}} node is a {{domxref("Document")}} and one of the nodes to insert is a {{domxref("DocumentFragment")}} with more than one {{domxref("Element")}} child, or that has a {{domxref("Text")}} child.
+  - : زمانی پرتاب می‌شود که گره‌های جدید نتوانند در نقطه‌ٔ مشخص‌شده در سلسله‌مراتب درج شوند، یعنی اگر یکی از شرایط زیر برقرار باشد:
+    - اگر درج یکی از گره‌های اضافه‌شده منجر به چرخه (cycle) شود، یعنی اگر یکی از آن‌ها جد (ancestor) این گرهٔ {{domxref("CharacterData")}} باشد.
+    - اگر یکی از گره‌های اضافه‌شده یک {{domxref("DocumentFragment")}}، {{domxref("DocumentType")}}، {{domxref("Element")}} یا {{domxref("CharacterData")}} نباشد.
+    - اگر این گرهٔ {{domxref("CharacterData")}} در واقع یک گرهٔ {{domxref("Text")}} باشد و والد آن یک {{domxref("Document")}} باشد.
+    - اگر والد این گرهٔ {{domxref("CharacterData")}} یک {{domxref("Document")}} باشد و یکی از گره‌هایی که قرار است درج شود، یک {{domxref("DocumentFragment")}} با بیش از یک فرزند {{domxref("Element")}} باشد، یا یک فرزند {{domxref("Text")}} داشته باشد.
 
-## Examples
+## مثال‌ها
 
-The `before()` method allows you to insert new nodes before a
-`CharacterData` node leaving the current node's data unchanged.
+متد `before()` به شما امکان می‌دهد گره‌های جدیدی را قبل از یک گرهٔ `CharacterData` درج کنید، بدون اینکه داده‌های گرهٔ فعلی تغییر کند.
 
 ```js
 const h1TextNode = document.querySelector("h1").firstChild;
@@ -60,15 +51,15 @@ h1TextNode.data;
 // "CharacterData.before()"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("CharacterData.appendData()")}}
 - {{domxref("CharacterData.after()")}}
