@@ -1,11 +1,5 @@
 ---
 title: "CharacterData: appendData() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/appendData"
-status: "needs-translation"
----
-
----
-title: "CharacterData: appendData() method"
 short-title: appendData()
 slug: Web/API/CharacterData/appendData
 page-type: web-api-instance-method
@@ -14,25 +8,24 @@ browser-compat: api.CharacterData.appendData
 
 {{APIRef("DOM")}}
 
-The **`appendData()`** method of the {{domxref("CharacterData")}} interface
-adds the provided data to the end of the node's current data.
+متد **`appendData()`** از رابط {{domxref("CharacterData")}} داده‌های ارائه‌شده را به انتهای داده‌های فعلی گره اضافه می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 appendData(data)
 ```
 
-### Parameters
+### پارامترها
 
 - `data`
-  - : The data to append to the current node.
+  - : داده‌ای که باید به گره فعلی اضافه شود.
 
-### Return value
+### مقدار بازگشتی
 
-None.
+هیچ.
 
-## Example
+## مثال
 
 ```html
 <span>Result: </span>A text
@@ -47,15 +40,15 @@ textNode.appendData(" - appended text.");
 
 {{EmbedLiveSample("Example", "100%", 50)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CharacterData.deleteData()")}}, {{domxref("CharacterData.insertData()")}}, {{domxref("CharacterData.replaceData()")}}
 - {{domxref("CharacterData.data")}}
