@@ -1,7 +1,5 @@
 ---
 title: "ContentIndexEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContentIndexEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -15,33 +13,33 @@ browser-compat: api.ContentIndexEvent
 
 {{APIRef("Content Index API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`ContentIndexEvent`** interface of the [content index](/en-US/docs/Web/API/Content_Index_API) defines the object used to represent the {{domxref("ServiceWorkerGlobalScope.contentdelete_event", 'contentdelete')}} event.
+اینترفیس **`ContentIndexEvent`** متعلق به [Content Index API](/en-US/docs/Web/API/Content_Index_API) است و شیءای را تعریف می‌کند که برای نمایش رویداد {{domxref("ServiceWorkerGlobalScope.contentdelete_event", 'contentdelete')}} استفاده می‌شود.
 
-This event is sent to the [global scope](/en-US/docs/Web/API/ServiceWorkerGlobalScope) of a {{domxref('ServiceWorker')}}. It contains the id of the indexed content to be removed.
+این رویداد به [حوزه سراسری](/en-US/docs/Web/API/ServiceWorkerGlobalScope) یک {{domxref('ServiceWorker')}} ارسال می‌شود و شامل شناسه (`id`) محتوای فهرست‌شده‌ای است که باید حذف شود.
 
-The {{domxref("ServiceWorkerGlobalScope.contentdelete_event", 'contentdelete')}} event is only fired when the deletion happens due to interaction with the browser's built-in user interface. It is not fired when the {{domxref('ContentIndex.delete')}} method is called.
+رویداد {{domxref("ServiceWorkerGlobalScope.contentdelete_event", 'contentdelete')}} تنها زمانی فعال می‌شود که حذف در نتیجه تعامل با رابط کاربری داخلی مرورگر رخ دهد. این رویداد هنگام فراخوانی متد {{domxref('ContentIndex.delete')}} فعال نمی‌شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("ContentIndexEvent.ContentIndexEvent", "ContentIndexEvent()")}} {{Experimental_Inline}}
-  - : Creates and returns a new `ContentIndexEvent` object whose type and other options are configured as specified.
+  - : یک شیء `ContentIndexEvent` جدید می‌سازد و برمی‌گرداند که نوع و سایر گزینه‌های آن مطابق مشخصات تنظیم شده‌اند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_In addition to the properties listed below, this interface inherits the properties of its parent interface, {{domxref("ExtendableEvent")}}._
+_علاوه بر ویژگی‌های فهرست‌شده در زیر، این اینترفیس ویژگی‌های اینترفیس والد خود، {{domxref("ExtendableEvent")}} را به ارث می‌برد._
 
 - {{domxref("ContentIndexEvent.id", "id")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{jsxref('String')}} which identifies the deleted content index via it's `id`.
+  - : یک {{jsxref('String')}} که محتوای فهرست‌شده حذف‌شده را از طریق `id` آن شناسایی می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_While `ContentIndexEvent` offers no methods of its own, it inherits any specified by its parent interface, {{domxref("ExtendableEvent")}}._
+_در حالی که `ContentIndexEvent` هیچ روشی از خود ارائه نمی‌کند، تمام روش‌های مشخص‌شده توسط اینترفیس والد خود، {{domxref("ExtendableEvent")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-This example shows the [service worker](/en-US/docs/Web/API/ServiceWorker) script listening for the {{domxref("ServiceWorkerGlobalScope.contentdelete_event", 'contentdelete')}} event and logs the removed content index id.
+این مثال اسکریپت [service worker](/en-US/docs/Web/API/ServiceWorker) را نشان می‌دهد که به رویداد {{domxref("ServiceWorkerGlobalScope.contentdelete_event", 'contentdelete')}} گوش می‌دهد و شناسه محتوای فهرست‌شده حذف‌شده را در کنسول ثبت می‌کند.
 
 ```js
 self.addEventListener("contentdelete", (event) => {
@@ -51,15 +49,15 @@ self.addEventListener("contentdelete", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [An introductory article on the Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
-- [Service Worker API, along with information about Cache and CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
+- [مقاله مقدماتی درباره Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
+- [Service Worker API، همراه با اطلاعاتی درباره Cache و CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
