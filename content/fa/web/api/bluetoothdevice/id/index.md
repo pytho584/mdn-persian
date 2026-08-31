@@ -1,7 +1,7 @@
 ---
 title: "BluetoothDevice: id property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/id"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,17 +16,16 @@ browser-compat: api.BluetoothDevice.id
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothDevice.id`** read-only property returns a
-string that uniquely identifies a device.
+ویژگی فقط‌خواندنی **`BluetoothDevice.id`** یک رشته برمی‌گرداند که یک دستگاه را به‌طور یکتا شناسایی می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
