@@ -1,7 +1,7 @@
 ---
 title: "Canvas API"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,13 +13,13 @@ browser-compat: html.elements.canvas
 
 {{DefaultAPISidebar("Canvas API")}}
 
-The **Canvas API** provides a means for drawing graphics via [JavaScript](/en-US/docs/Web/JavaScript) and the [HTML](/en-US/docs/Web/HTML) {{HtmlElement("canvas")}} element. Among other things, it can be used for animation, game graphics, data visualization, photo manipulation, and real-time video processing.
+**Canvas API** روشی برای ترسیم گرافیک از طریق [جاوااسکریپت](/en-US/docs/Web/JavaScript) و عنصر {{HtmlElement("canvas")}} در [HTML](/en-US/docs/Web/HTML) فراهم میکند. از جمله کاربردهای آن میتوان به انیمیشن، گرافیک بازی، تجسم دادهها، دستکاری تصاویر و پردازش ویدیوی بلادرنگ اشاره کرد.
 
-The Canvas API largely focuses on 2D graphics. The [WebGL API](/en-US/docs/Web/API/WebGL_API), which also uses the `<canvas>` element, draws hardware-accelerated 2D and 3D graphics.
+Canvas API عمدتاً بر گرافیک دوبعدی تمرکز دارد. [WebGL API](/en-US/docs/Web/API/WebGL_API) که از عنصر `<canvas>` نیز استفاده میکند، گرافیکهای دوبعدی و سهبعدی شتابدهیشده با سختافزار را ترسیم میکند.
 
-## Basic example
+## مثال ساده
 
-This simple example draws a green rectangle onto a canvas.
+این مثال ساده یک مستطیل سبز بر روی بوم ترسیم میکند.
 
 ### HTML
 
@@ -27,11 +27,11 @@ This simple example draws a green rectangle onto a canvas.
 <canvas id="canvas"></canvas>
 ```
 
-### JavaScript
+### جاوااسکریپت
 
-The {{domxref("Document.getElementById()")}} method gets a reference to the HTML `<canvas>` element. Next, the {{domxref("HTMLCanvasElement.getContext()")}} method gets that element's context—the thing onto which the drawing will be rendered.
+متد {{domxref("Document.getElementById()")}} ارجاعی به عنصر `<canvas>` در HTML دریافت میکند. سپس، متد {{domxref("HTMLCanvasElement.getContext()")}} بافت یا زمینه آن عنصر را دریافت میکند—همان چیزی که ترسیم روی آن انجام میشود.
 
-The actual drawing is done using the {{domxref("CanvasRenderingContext2D")}} interface. The {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} property makes the rectangle green. The {{domxref("CanvasRenderingContext2D.fillRect()", "fillRect()")}} method places its top-left corner at (10, 10), and gives it a size of 150 units wide by 100 tall.
+ترسیم واقعی با استفاده از رابط {{domxref("CanvasRenderingContext2D")}} انجام میشود. ویژگی {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} مستطیل را سبز میکند. متد {{domxref("CanvasRenderingContext2D.fillRect()", "fillRect()")}} گوشهی بالا-چپ آن را در (۱۰، ۱۰) قرار میدهد و عرض آن را ۱۵۰ واحد و ارتفاع آن را ۱۰۰ واحد تعیین میکند.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -41,11 +41,11 @@ ctx.fillStyle = "green";
 ctx.fillRect(10, 10, 150, 100);
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Basic_example', 700, 180) }}
 
-## Reference
+## مرجع
 
 - {{domxref("HTMLCanvasElement")}}
 - {{domxref("CanvasRenderingContext2D")}}
@@ -59,52 +59,52 @@ ctx.fillRect(10, 10, 150, 100);
 - {{domxref("ImageBitmapRenderingContext")}} {{experimental_inline}}
 
 > [!NOTE]
-> The interfaces related to the `WebGLRenderingContext` are referenced under [WebGL](/en-US/docs/Web/API/WebGL_API).
+> رابطهای مرتبط با `WebGLRenderingContext` در بخش [WebGL](/en-US/docs/Web/API/WebGL_API) مرجع داده شدهاند.
 
 > [!NOTE]
-> {{domxref("OffscreenCanvas")}} is also available in web workers.
+> {{domxref("OffscreenCanvas")}} همچنین در وب ورکرها در دسترس است.
 
-{{domxref("CanvasCaptureMediaStreamTrack")}} is a related interface.
+{{domxref("CanvasCaptureMediaStreamTrack")}} یک رابط مرتبط است.
 
-## Guides and tutorials
+## راهنماها و آموزشها
 
-- [Canvas tutorial](/en-US/docs/Web/API/Canvas_API/Tutorial)
-  - : A comprehensive tutorial covering both the basic usage of the Canvas API and its advanced features.
+- [آموزش Canvas](/en-US/docs/Web/API/Canvas_API/Tutorial)
+  - : یک آموزش جامع که هم کاربرد پایه Canvas API و هم ویژگی‌های پیشرفته آن را پوشش می‌دهد.
 - [HTML5 Canvas Deep Dive](https://joshondesign.com/p/books/canvasdeepdive/title.html)
-  - : A hands-on, book-length introduction to the Canvas API and WebGL.
-- [Canvas Handbook](https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html)
-  - : A handy reference for the Canvas API.
-- [Manipulating video using canvas](/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas)
-  - : Combining {{HTMLElement("video")}} and {{HTMLElement("canvas")}} to manipulate video data in real time.
+  - : یک معرفی عملی و کتاب‌گونه به Canvas API و WebGL.
+- [راهنمای Canvas](https://bucephalus.org/text/CanvasHandbook/CanvasHandbook.html)
+  - : یک مرجع کاربردی برای Canvas API.
+- [دستکاری ویدیو با استفاده از canvas](/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas)
+  - : ترکیب {{HTMLElement("video")}} و {{HTMLElement("canvas")}} برای دستکاری داده‌های ویدیویی در زمان واقعی.
 
-## Libraries
+## کتابخانه‌ها
 
-The Canvas API is extremely powerful, but not always simple to use. The libraries listed below can make the creation of canvas-based projects faster and easier.
+Canvas API بسیار قدرتمند است، اما همیشه ساده برای استفاده نیست. کتابخانه‌های فهرست‌شده در زیر می‌توانند ایجاد پروژه‌های مبتنی بر canvas را سریع‌تر و آسان‌تر کنند.
 
-- [EaselJS](https://createjs.com/easeljs) is an open-source canvas library that makes creating games, generative art, and other highly graphical experiences easy.
-- [Fabric.js](https://fabricjs.com/) is an open-source canvas library with SVG parsing capabilities.
-- [heatmap.js](https://www.patrick-wied.at/static/heatmapjs/) is an open-source library for creating canvas-based data heat maps.
-- [JavaScript InfoVis Toolkit](https://philogb.github.io/jit/) creates interactive data visualizations.
-- [Konva.js](https://konvajs.org/) is a 2D canvas library for desktop and mobile applications.
-- [p5.js](https://p5js.org/) has a full set of canvas drawing functionality for artists, designers, educators, and beginners.
-- [Phaser](https://phaser.io/) is a fast, free and fun open source framework for Canvas and WebGL powered browser games.
-- [Pts.js](https://ptsjs.org/) is a library for creative coding and visualization in canvas and SVG.
-- [Rekapi](https://github.com/jeremyckahn/rekapi) is an animation key-framing API for Canvas.
-- [Scrawl-canvas](https://scrawl.rikweb.org.uk/) is an open-source JavaScript library for creating and manipulating 2D canvas elements.
-- The [ZIM](https://zimjs.com/) framework provides conveniences, components, and controls for coding creativity on the canvas — includes accessibility and hundreds of colorful tutorials.
-- [Sprig](https://github.com/hackclub/sprig) is a beginner-friendly, open-source, tile-based game development library that uses Canvas.
+- [EaselJS](https://createjs.com/easeljs) یک کتابخانه متن‌باز canvas است که ایجاد بازی‌ها، هنر تولیدی (generative art) و سایر تجربه‌های بسیار گرافیکی را آسان می‌کند.
+- [Fabric.js](https://fabricjs.com/) یک کتابخانه متن‌باز canvas با قابلیت‌های تجزیه SVG است.
+- [heatmap.js](https://www.patrick-wied.at/static/heatmapjs/) یک کتابخانه متن‌باز برای ایجاد نقشه‌های حرارتی داده مبتنی بر canvas است.
+- [JavaScript InfoVis Toolkit](https://philogb.github.io/jit/) تجسم‌های تعاملی داده ایجاد می‌کند.
+- [Konva.js](https://konvajs.org/) یک کتابخانه canvas دوبعدی برای برنامه‌های دسکتاپ و موبایل است.
+- [p5.js](https://p5js.org/) مجموعه کاملی از قابلیت‌های ترسیم مخصوص هنرمندان، طراحان، مربیان و مبتدیان دارد.
+- [Phaser](https://phaser.io/) یک چارچوب متن‌باز سریع، رایگان و سرگرم‌کننده برای بازی‌های مرورگری مبتنی بر Canvas و WebGL است.
+- [Pts.js](https://ptsjs.org/) یک کتابخانه برای کدنویسی خلاقانه و تجسم در canvas و SVG است.
+- [Rekapi](https://github.com/jeremyckahn/rekapi) یک API کلیدگذاری (key-framing) انیمیشن برای Canvas است.
+- [Scrawl-canvas](https://scrawl.rikweb.org.uk/) یک کتابخانه متن‌باز جاوااسکریپت برای ایجاد و دستکاری عناصر canvas دوبعدی است.
+- چارچوب [ZIM](https://zimjs.com/) امکانات رفاهی، اجزا و کنترل‌ها برای کدنویسی خلاقانه روی canvas فراهم می‌کند — شامل دسترس‌پذیری و صدها آموزش رنگارنگ است.
+- [Sprig](https://github.com/hackclub/sprig) یک کتابخانه توسعه بازی مبتنی بر کاشی، متن‌باز و مناسب مبتدیان است که از Canvas استفاده می‌کند.
 
 > [!NOTE]
-> See the [WebGL API](/en-US/docs/Web/API/WebGL_API) for 2D and 3D libraries that use WebGL.
+> برای کتابخانه‌های 2D و 3D که از WebGL استفاده می‌کنند، به [WebGL API](/en-US/docs/Web/API/WebGL_API) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebGL](/en-US/docs/Web/API/WebGL_API)
