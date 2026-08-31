@@ -1,26 +1,19 @@
 ---
 title: "ContentVisibilityAutoStateChangeEvent: skipped property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContentVisibilityAutoStateChangeEvent/skipped"
-status: "needs-translation"
----
-
----
-title: "ContentVisibilityAutoStateChangeEvent: skipped property"
 short-title: skipped
 slug: Web/API/ContentVisibilityAutoStateChangeEvent/skipped
 page-type: web-api-instance-property
 browser-compat: api.ContentVisibilityAutoStateChangeEvent.skipped
 ---
-
 {{APIRef("CSS Containment")}}
 
-The `skipped` read-only property of the {{ domxref("ContentVisibilityAutoStateChangeEvent") }} interface returns `true` if the user agent [skips the element's contents](/en-US/docs/Web/CSS/Guides/Containment/Using#skips_its_contents), or `false` otherwise.
+ویژگی فقط‌خواندنی `skipped` از رابط {{ domxref("ContentVisibilityAutoStateChangeEvent") }} مقدار `true` را برمی‌گرداند اگر عامل کاربر [از محتوای عنصر صرف‌نظر کند](/en-US/docs/Web/CSS/Guides/Containment/Using#skips_its_contents)، در غیر این صورت `false` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A boolean. Returns `true` if the user agent skips the element's contents, or `false` otherwise.
+یک مقدار بولی. اگر عامل کاربر از محتوای عنصر صرف‌نظر کند `true` و در غیر این صورت `false` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const canvasElem = document.querySelector("canvas");
@@ -47,17 +40,17 @@ function stopCanvasUpdates(canvas) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("element/contentvisibilityautostatechange_event", "contentvisibilityautostatechange")}} event
+- رویداد {{domxref("element/contentvisibilityautostatechange_event", "contentvisibilityautostatechange")}}
 - [CSS Containment](/en-US/docs/Web/CSS/Guides/Containment)
-- The {{cssxref("content-visibility")}} property
-- The {{cssxref("contain")}} property
+- ویژگی {{cssxref("content-visibility")}}
+- ویژگی {{cssxref("contain")}}
