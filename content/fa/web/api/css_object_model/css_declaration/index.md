@@ -1,11 +1,5 @@
 ---
 title: "CSS Declaration"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/CSS_Declaration"
-status: "needs-translation"
----
-
----
-title: CSS Declaration
 slug: Web/API/CSS_Object_Model/CSS_Declaration
 page-type: guide
 spec-urls: https://drafts.csswg.org/cssom/#css-declarations
@@ -13,22 +7,22 @@ spec-urls: https://drafts.csswg.org/cssom/#css-declarations
 
 {{DefaultAPISidebar("CSSOM")}}
 
-A **CSS declaration** is an abstract concept not exposed as an object in the DOM. It represents a CSS property and value pairing.
+**اعلان CSS** (CSS declaration) یک مفهوم انتزاعی است که به‌عنوان یک شیء در DOM در دسترس نیست. این مفهوم بیانگر جفت‌شدن یک ویژگی و مقدار CSS است.
 
-A CSS declaration has the following associated properties:
+یک اعلان CSS ویژگی‌های مرتبط زیر را دارد:
 
-- property name
-  - : The property name of the declaration, for example {{cssxref("background-color")}}.
-- value
-  - : The value of the declaration as a list of component values.
-- important flag
-  - : Either set or unset.
-- case-sensitive flag
-  - : Set if the property name is defined to be case-sensitive according to the specification, otherwise unset.
+- نام ویژگی
+  - : نام ویژگیِ اعلان، مانند {{cssxref("background-color")}}.
+- مقدار
+  - : مقدار اعلان به‌صورت فهرستی از مقادیر مؤلفه‌ای.
+- پرچم مهم (important flag)
+  - : یا تنظیم شده است یا تنظیم نشده.
+- پرچم حساس به بزرگی/کوچکی حروف (case-sensitive flag)
+  - : اگر نام ویژگی طبق مشخصات به‌عنوان حساس به بزرگی/کوچکی حروف تعریف شده باشد، تنظیم می‌شود؛ در غیر این صورت تنظیم نمی‌شود.
 
-## Basic example
+## مثال پایه
 
-The following example shows a CSS rule with a [CSS declaration block](/en-US/docs/Web/API/CSS_Object_Model/CSS_Declaration_Block) for the {{htmlelement("Heading_Elements","&lt;h1&gt;")}} element. The CSS declaration block is the lines between the curly braces, it contains two CSS declarations. One for {{cssxref("font-style")}} and another for {{cssxref("color")}}.
+مثال زیر یک قانون CSS را با [بلوک اعلان‌های CSS](/en-US/docs/Web/API/CSS_Object_Model/CSS_Declaration_Block) برای عنصر {{htmlelement("Heading_Elements","&lt;h1&gt;")}} نشان می‌دهد. بلوک اعلان‌های CSS خطوط بین آکولادهاست که شامل دو اعلان CSS است: یکی برای {{cssxref("font-style")}} و دیگری برای {{cssxref("color")}}.
 
 ```css
 h1 {
@@ -37,6 +31,6 @@ h1 {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
