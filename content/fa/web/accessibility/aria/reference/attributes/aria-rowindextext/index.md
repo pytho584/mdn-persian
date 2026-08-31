@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-rowindextext attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindextext"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,46 +13,44 @@ spec-urls: https://w3c.github.io/aria/#aria-rowindextext
 sidebar: accessibilitysidebar
 ---
 
-The `aria-rowindextext` attribute defines a human-readable text alternative of `aria-rowindex`.
+ویژگی `aria-rowindextext` یک جایگزین متنی قابل خواندن برای انسان از `aria-rowindex` تعریف می‌کند.
 
-## Description
+هنگامی که یک جدول بسیار طولانی دارید یا عمداً می‌خواهید فقط بخشی از یک جدول را نمایش دهید، ممکن است همه ردیف‌ها در DOM وجود نداشته باشند. در این حالت، از [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) با یک مقدار صحیح استفاده می‌کنیم تا مشخص کنیم جدول (یا شبکه) اگر همه ردیف‌ها حضور داشتند، تعداد ردیف‌های آن چقدر می‌بود و ویژگی [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) را به هر ردیف و سلول‌های ترکیبی اضافه می‌کنیم تا اطلاعاتی درباره شاخص ردیف در آن جدول بزرگ‌تر فراهم شود. وقتی مقدار `aria-rowindex` معنادار نیست یا شاخص نمایش‌داده‌شده را منعکس نمی‌کند، می‌توانیم `aria-rowindextext` را نیز اضافه کنیم تا یک جایگزین متنی قابل خواندن برای انسان برای مقدار صحیح `aria-rowindex` فراهم کنیم.
 
-When you have a very long table or when you purposefully want to display just a section of a table, not all rows may be present in the DOM. When this happens, we use the [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) with an integer value to define how many rows the table (or grid) would have if all the rows were present and add the [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) property on each row and spanning cell to provide information on the row index within that larger table. When the value of `aria-rowindex` is not meaningful or does not reflect the displayed index, we can also add the `aria-rowindextext` to provide a human-readable text alternative to the `aria-rowindex` integer value.
+`aria-rowindextext` باید فقط **علاوه بر** `aria-rowindex` گنجانده شود، نه به عنوان جایگزین آن. برخی فناوری‌های کمکی از شاخص عددی ردیف برای پیگیری موقعیت کاربر یا ارائه ناوبری جایگزین در جدول استفاده می‌کنند. `aria-rowindextext` زمانی مفید است که آن مقدار صحیح معنادار نباشد یا شاخص نمایش‌داده‌شده را منعکس نکند، مانند بازی شطرنج یا بازی کشتی جنگی.
 
-The `aria-rowindextext` should only be included **in addition to**, not as a replacement of, the `aria-rowindex`. Some assistive technologies use the numeric row index for the purpose of keeping track of the user's position or providing alternative table navigation. The `aria-rowindextext` is useful if that integer value isn't meaningful or does not reflect the displayed index, such as a game of Chess or Battleship.
+`aria-rowindextext` به هر {{HTMLElement('tr')}} یا به عناصری با نقش `row` اضافه می‌شود. همچنین می‌توان آن را به سلول‌ها یا عناصر وابسته به هر ردیف اضافه کرد.
 
-The `aria-rowindextext` is added to each {{HTMLElement('tr')}} or to elements with the `row` role. It can also be addition to cells or owned elements of each row.
-
-## Values
+## مقادیر
 
 - `<string>`
-  - The human-readable text alternative of the numeric [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex)
+  - جایگزین متنی قابل خواندن برای انسان از شاخص عددی [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex)
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaRowIndexText")}}
-  - : The [`ariaRowIndexText`](/en-US/docs/Web/API/Element/ariaRowIndexText) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-rowindextext` attribute.
+  - : ویژگی [`ariaRowIndexText`](/en-US/docs/Web/API/Element/ariaRowIndexText)، بخشی از رابط {{domxref("Element")}}، منعکس‌کننده مقدار ویژگی `aria-rowindextext` است.
 - {{domxref("ElementInternals.ariaRowIndexText")}}
-  - : The [`ariaRowIndexText`](/en-US/docs/Web/API/ElementInternals/ariaRowIndexText) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-rowindextext` attribute.
+  - : ویژگی [`ariaRowIndexText`](/en-US/docs/Web/API/ElementInternals/ariaRowIndexText)، بخشی از رابط {{domxref("ElementInternals")}}، منعکس‌کننده مقدار ویژگی `aria-rowindextext` است.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+مورد استفاده در نقش‌ها:
 
 - [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role)
 - [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
 
-Inherited into roles:
+به ارث رسیده به نقش‌ها:
 
 - [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
 - [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)
 - [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex)
 - [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount)
