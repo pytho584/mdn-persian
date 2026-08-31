@@ -1,7 +1,7 @@
 ---
 title: "Attr: specified property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Attr/specified"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,16 +16,16 @@ browser-compat: api.Attr.specified
 
 {{APIRef("DOM")}}{{Deprecated_header}}
 
-The read-only **`specified`** property of the {{domxref("Attr")}} interface always returns `true`.
+ویژگی فقط‌خواندنی **`specified`** از رابط {{domxref("Attr")}} همیشه `true` برمی‌گرداند.
 
-## Value
+## مقدار
 
-Always returns `true`.
+همیشه `true` برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
