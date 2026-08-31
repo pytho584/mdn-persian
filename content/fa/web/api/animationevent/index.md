@@ -1,7 +1,7 @@
 ---
 title: "AnimationEvent"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,41 +13,41 @@ browser-compat: api.AnimationEvent
 
 {{APIRef("Web Animations")}}
 
-The **`AnimationEvent`** interface represents events providing information related to [animations](/en-US/docs/Web/CSS/Guides/Animations/Using).
+رابط **`AnimationEvent`** رویدادهایی را نمایش می‌دهد که اطلاعات مرتبط با [animations](/en-US/docs/Web/CSS/Guides/Animations/Using) را فراهم می‌کنند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("AnimationEvent.AnimationEvent", "AnimationEvent()")}}
-  - : Creates an `AnimationEvent` event with the given parameters.
+  - : یک رویداد `AnimationEvent` را با پارامترهای داده‌شده ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent {{domxref("Event")}}_.
+_همچنین ویژگی‌هایی را از والد خود {{domxref("Event")}} به ارث می‌برد._
 
 - {{domxref("AnimationEvent.animation")}} {{ReadOnlyInline}}
-  - : A {{domxref("CSSAnimation")}} read-only property representing the animation associated with the event.
+  - : یک ویژگی فقط‌خواندنی {{domxref("CSSAnimation")}} که انیمیشن مرتبط با رویداد را نشان می‌دهد.
 - {{domxref("AnimationEvent.animationName")}} {{ReadOnlyInline}}
-  - : A string containing the value of the {{cssxref("animation-name")}} that generated the animation.
+  - : رشته‌ای حاوی مقدار {{cssxref("animation-name")}} که انیمیشن را ایجاد کرده است.
 - {{domxref("AnimationEvent.elapsedTime")}} {{ReadOnlyInline}}
-  - : A `float` giving the amount of time the animation has been running, in seconds, when this event fired, excluding any time the animation was paused. For an `animationstart` event, `elapsedTime` is `0.0` unless there was a negative value for {{cssxref("animation-delay")}}, in which case the event will be fired with `elapsedTime` containing `(-1 * delay)`.
+  - : یک `float` که مقدار زمان اجرای انیمیشن را بر حسب ثانیه هنگام فعال‌شدن این رویداد می‌دهد، به استثنای هر زمانی که انیمیشن مکث شده است. برای رویداد `animationstart`، `elapsedTime` برابر با `0.0` است مگر اینکه مقدار منفی برای {{cssxref("animation-delay")}} وجود داشته باشد؛ در این صورت رویداد با `elapsedTime` شامل `(-1 * delay)` فعال می‌شود.
 - {{domxref("AnimationEvent.pseudoElement")}} {{ReadOnlyInline}}
-  - : A string, starting with `'::'`, containing the name of the [pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) the animation runs on. If the animation doesn't run on a pseudo-element but on the element, an empty string: `''`.
+  - : رشته‌ای که با `'::'` شروع می‌شود و شامل نام [pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) است که انیمیشن روی آن اجرا می‌شود. اگر انیمیشن روی یک pseudo-element اجرا نشود بلکه روی خود عنصر اجرا شود، یک رشته خالی: `''`.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("Event")}}_.
+_روش‌هایی را از والد خود، {{domxref("Event")}}، به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using CSS animations](/en-US/docs/Web/CSS/Guides/Animations/Using)
-- Animation-related CSS properties and at-rules: {{cssxref("animation")}}, {{cssxref("animation-composition")}}, {{cssxref("animation-delay")}}, {{cssxref("animation-direction")}}, {{cssxref("animation-duration")}}, {{cssxref("animation-fill-mode")}}, {{cssxref("animation-iteration-count")}}, {{cssxref("animation-name")}}, {{cssxref("animation-play-state")}}, {{cssxref("animation-timing-function")}}, {{cssxref("@keyframes")}}.
+- ویژگی‌ها و قواعد at مرتبط با انیمیشن CSS: {{cssxref("animation")}}, {{cssxref("animation-composition")}}, {{cssxref("animation-delay")}}, {{cssxref("animation-direction")}}, {{cssxref("animation-duration")}}, {{cssxref("animation-fill-mode")}}, {{cssxref("animation-iteration-count")}}, {{cssxref("animation-name")}}, {{cssxref("animation-play-state")}}, {{cssxref("animation-timing-function")}}, {{cssxref("@keyframes")}}.
