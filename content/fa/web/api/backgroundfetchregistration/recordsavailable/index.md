@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRegistration: recordsAvailable property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/recordsAvailable"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,24 +16,24 @@ browser-compat: api.BackgroundFetchRegistration.recordsAvailable
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`recordsAvailable`** read-only property of the {{domxref("BackgroundFetchRegistration")}} interface returns `true` if there are requests and responses to be accessed. If this returns `false`, then {{domxref("BackgroundFetchRegistration.match()","match()")}} and {{domxref("BackgroundFetchRegistration.matchAll()","matchAll()")}} can't be used.
+ویژگی فقطخواندنی **`recordsAvailable`** از رابط {{domxref("BackgroundFetchRegistration")}} در صورتی مقدار `true` را برمی‌گرداند که درخواست‌ها و پاسخ‌هایی برای دسترسی وجود داشته باشد. اگر این مقدار `false` برگردد، {{domxref("BackgroundFetchRegistration.match()","match()")}} و {{domxref("BackgroundFetchRegistration.matchAll()","matchAll()")}} قابل استفاده نیستند.
 
-## Value
+## مقدار
 
-A {{jsxref("Boolean")}}.
+یک {{jsxref("Boolean")}}.
 
-## Examples
+## مثال‌ها
 
-Logging this property to the console returns `true` or `false` to indicate if there are records.
+ثبت این ویژگی در کنسول، مقدار `true` یا `false` را برمی‌گرداند که نشان می‌دهد آیا رکوردهایی وجود دارد.
 
 ```js
 console.log(bgFetch.recordsAvailable);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
