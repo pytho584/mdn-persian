@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: lineWidth property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineWidth"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: lineWidth property"
 short-title: lineWidth
 slug: Web/API/CanvasRenderingContext2D/lineWidth
 page-type: web-api-instance-property
@@ -14,25 +8,20 @@ browser-compat: api.CanvasRenderingContext2D.lineWidth
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.lineWidth`**
-property of the Canvas 2D API sets the thickness of lines.
+خاصیت **`CanvasRenderingContext2D.lineWidth`** از Canvas 2D API ضخامت خطوط را تنظیم می‌کند.
 
 > [!NOTE]
-> Lines can be drawn with the
-> {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}},
-> {{domxref("CanvasRenderingContext2D.strokeRect()", "strokeRect()")}},
-> and {{domxref("CanvasRenderingContext2D.strokeText()", "strokeText()")}} methods.
+> خطوط را می‌توان با استفاده از متدهای {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}}، {{domxref("CanvasRenderingContext2D.strokeRect()", "strokeRect()")}} و {{domxref("CanvasRenderingContext2D.strokeText()", "strokeText()")}} رسم کرد.
 
-## Value
+## مقدار
 
-A number specifying the line width, in coordinate space units. Zero, negative, {{jsxref("Infinity")}}, and {{jsxref("NaN")}} values are ignored. This value is `1.0` by default.
+یک عدد که ضخامت خط را بر حسب واحدهای فضای مختصات مشخص می‌کند. مقادیر صفر، منفی، {{jsxref("Infinity")}} و {{jsxref("NaN")}} نادیده گرفته می‌شوند. این مقدار به‌طور پیش‌فرض `1.0` است.
 
-## Examples
+## مثال‌ها
 
-### Changing line width
+### تغییر ضخامت خط
 
-This example draws a line and a rectangle, using a line width of 15 units.
+این مثال یک خط و یک مستطیل را با استفاده از ضخامت خط ۱۵ واحد رسم می‌کند.
 
 #### HTML
 
@@ -55,25 +44,25 @@ ctx.rect(40, 40, 70, 70);
 ctx.stroke();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Changing_line_width', 700, 180) }}
 
-### More examples
+### مثال‌های بیشتر
 
-For more examples and explanation about this property, see [Applying styles and color](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) in the [Canvas Tutorial](/en-US/docs/Web/API/Canvas_API/Tutorial).
+برای مثال‌ها و توضیحات بیشتر درباره این خاصیت، به [اعمال سبک‌ها و رنگ‌ها](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) در [آموزش Canvas](/en-US/docs/Web/API/Canvas_API/Tutorial) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابطی که این خاصیت را تعریف می‌کند: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.lineCap")}}
 - {{domxref("CanvasRenderingContext2D.lineJoin")}}
-- [Applying styles and color](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors)
+- [اعمال سبک‌ها و رنگ‌ها](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors)
