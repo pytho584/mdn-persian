@@ -1,7 +1,7 @@
 ---
 title: "CanMakePaymentEvent"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CanMakePaymentEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,21 +15,21 @@ browser-compat: api.CanMakePaymentEvent
 
 {{APIRef("Web-Based Payment Handler API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`CanMakePaymentEvent`** interface of the {{domxref("Web-based Payment Handler API", "", "", "nocode")}} is the event object for the {{domxref("ServiceWorkerGlobalScope.canmakepayment_event", "canmakepayment")}} event, fired on a payment app's service worker to check whether it is ready to handle a payment. Specifically, it is fired when the merchant website calls the {{domxref("PaymentRequest.PaymentRequest", "PaymentRequest()")}} constructor.
+رابط **`CanMakePaymentEvent`** از {{domxref("Web-based Payment Handler API", "", "", "nocode")}}، شیء رویداد برای رویداد {{domxref("ServiceWorkerGlobalScope.canmakepayment_event", "canmakepayment")}} است که در سرویس‌ورکر یک برنامه پرداخت برای بررسی آمادگی آن برای مدیریت یک پرداخت، فعال می‌شود. به طور خاص، زمانی که وب‌سایت فروشنده سازنده {{domxref("PaymentRequest.PaymentRequest", "PaymentRequest()")}} را فراخوانی می‌کند، این رویداد فعال می‌شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CanMakePaymentEvent.CanMakePaymentEvent", "CanMakePaymentEvent()")}} {{Experimental_Inline}}
-  - : Creates a new `CanMakePaymentEvent` object instance.
+  - یک نمونه جدید از شیء `CanMakePaymentEvent` ایجاد می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("CanMakePaymentEvent.respondWith", "respondWith()")}} {{Experimental_Inline}}
-  - : Enables the service worker to respond appropriately to signal whether it is ready to handle payments.
+  - سرویس‌ورکر را قادر می‌سازد تا به طور مناسب پاسخ دهد تا نشان دهد آیا آماده پردازش پرداخت‌ها است یا خیر.
 
-## Examples
+## مثال‌ها
 
 ```js
 self.addEventListener("canmakepayment", (e) => {
@@ -47,15 +47,15 @@ self.addEventListener("canmakepayment", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Web-based Payment Handler API", "", "", "nocode")}}
 - [Web-based payment apps overview](https://web.dev/articles/web-based-payment-apps-overview)
