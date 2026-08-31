@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-orientation attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,55 +13,55 @@ spec-urls: https://w3c.github.io/aria/#aria-orientation
 sidebar: accessibilitysidebar
 ---
 
-The `aria-orientation` attribute indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.
+ویژگی `aria-orientation` نشان می‌دهد که جهت‌گیری عنصر افقی، عمودی، یا ناشناخته/مبهم است.
 
-## Description
+## توضیحات
 
-It may be important for the user to know the orientation to know how to navigate certain widgets, as orientation impacts the expected behaviors of the left, right, up and down arrows. The `aria-orientation` attribute is used to indicate to assistive technology users whether an element's orientation is `horizontal` or `vertical`, or `undefined`.
+ممکن است برای کاربر مهم باشد که جهت‌گیری را بداند تا بتواند در ویجت‌های خاصی پیمایش کند، زیرا جهت‌گیری بر رفتارهای مورد انتظار فلش‌های چپ، راست، بالا و پایین تأثیر می‌گذارد. ویژگی `aria-orientation` برای نشان دادن افقی (`horizontal`)، عمودی (`vertical`) یا تعریف‌نشده (`undefined`) بودن جهت‌گیری یک عنصر به کاربران فناوری کمکی استفاده می‌شود.
 
-Several widgets have default orientations:
+چندین ویجت جهت‌گیری پیش‌فرض دارند:
 
-Horizontal by default:
+افقی به‌طور پیش‌فرض:
 
 - [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
 - [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role)
 - [`toolbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/toolbar_role)
 - [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role)
 
-Vertical by default:
+عمودی به‌طور پیش‌فرض:
 
 - [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role)
 - [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role)
 - [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role)
 - [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role)
 
-Each [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) should have `aria-orientation` consistent with the separator's orientation.
+هر [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) باید `aria-orientation` سازگار با جهت‌گیری جداکننده داشته باشد.
 
-When nodes in a tree are arranged horizontally instead of its default vertical orientation, or when a tab list is vertical instead of its default horizontal, the down arrow performs as a right arrow normally would, and the up arrow performs as a left arrow normally would. In these instances, assistive technology users need to know the widget's orientation so as to navigate correctly.
+هنگامی که گره‌های یک درخت به جای جهت‌گیری عمودی پیش‌فرض، به صورت افقی چیده شده‌اند، یا هنگامی که یک فهرست تب به جای افقی پیش‌فرض، عمودی است، فلش پایین مانند فلش راست عمل می‌کند و فلش بالا مانند فلش چپ عمل می‌کند. در این موارد، کاربران فناوری کمکی باید جهت‌گیری ویجت را بدانند تا بتوانند به درستی پیمایش کنند.
 
-Up and down arrows are generally available for normal browser scrolling, even when focus is inside a tree or tab list. Include `aria-orientation` to enable alerting users when a widget doesn't have the default, expected orientation and associated navigation.
+فلش‌های بالا و پایین معمولاً برای اسکرول معمولی مرورگر در دسترس هستند، حتی زمانی که فوکوس داخل یک درخت یا فهرست تب باشد. `aria-orientation` را برای فعال کردن هشدار به کاربران در زمانی که یک ویجت جهت‌گیری پیش‌فرض و مورد انتظار و پیمایش مرتبط را ندارد، اضافه کنید.
 
-Always remember that ARIA only modifies how assistive technology presents content to your users; altering the behavior of arrow keys requires JavaScript.
+همیشه به خاطر داشته باشید که ARIA فقط نحوه ارائه محتوا به کاربران توسط فناوری کمکی را تغییر می‌دهد؛ تغییر رفتار کلیدهای فلش نیاز به جاوااسکریپت دارد.
 
-## Values
+## مقادیر
 
 - `horizontal`
-  - : The element is oriented horizontally.
-- `undefined` (default)
-  - : The element's orientation is unknown/ambiguous.
+  - : عنصر به صورت افقی جهت‌گیری شده است.
+- `undefined` (پیش‌فرض)
+  - : جهت‌گیری عنصر ناشناخته/مبهم است.
 - `vertical`
-  - : The element is oriented vertically.
+  - : عنصر به صورت عمودی جهت‌گیری شده است.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaOrientation")}}
-  - : The [`ariaOrientation`](/en-US/docs/Web/API/Element/ariaOrientation) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-orientation` attribute.
+  - : ویژگی [`ariaOrientation`](/en-US/docs/Web/API/Element/ariaOrientation)، بخشی از رابط {{domxref("Element")}}، مقدار ویژگی `aria-orientation` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaOrientation")}}
-  - : The [`ariaOrientation`](/en-US/docs/Web/API/ElementInternals/ariaOrientation) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-orientation` attribute.
+  - : ویژگی [`ariaOrientation`](/en-US/docs/Web/API/ElementInternals/ariaOrientation)، بخشی از رابط {{domxref("ElementInternals")}}، مقدار ویژگی `aria-orientation` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده‌شده در نقش‌ها:
 
 - [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role)
 - [`select`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/select_role)
@@ -70,7 +70,7 @@ Used in roles:
 - [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role)
 - [`toolbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/toolbar_role)
 
-Inherited into roles:
+به ارث رسیده به نقش‌ها:
 
 - [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role)
 - [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role)
@@ -79,10 +79,10 @@ Inherited into roles:
 - [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role)
 - [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [Understanding WCAG: Keyboard](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Keyboard)
+- [درک WCAG: صفحه‌کلید](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Keyboard)
