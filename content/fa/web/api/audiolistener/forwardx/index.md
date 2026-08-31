@@ -1,7 +1,7 @@
 ---
 title: "AudioListener: forwardX property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/forwardX"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,27 +14,27 @@ browser-compat: api.AudioListener.forwardX
 
 {{ APIRef("Web Audio API") }}
 
-The `forwardX` read-only property of the {{ domxref("AudioListener") }} interface is an {{domxref("AudioParam")}} representing the x value of the direction vector defining the forward direction the listener is pointing in.
+`forwardX` 只读属性是 {{ domxref("AudioListener") }} 接口的一个 {{domxref("AudioParam")}}，表示定义监听器所指向的前进方向的向量的 x 值。
 
 > [!NOTE]
-> The parameter is _a-rate_ when used with a {{domxref("PannerNode")}} whose {{domxref("PannerNode.panningModel", "panningModel")}} is set to equalpower, or _k-rate_ otherwise.
+> 当与 {{domxref("PannerNode")}} 一起使用且其 {{domxref("PannerNode.panningModel", "panningModel")}} 设置为 equalpower 时，该参数为 _a-rate_，否则为 _k-rate_。
 
-## Value
+## 值
 
-An {{domxref("AudioParam")}}. Its default value is 0, and it can range between positive and negative infinity.
+一个 {{domxref("AudioParam")}}。其默认值为 0，范围可以是正无穷到负无穷。
 
-## Examples
+## 示例
 
-See [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) for example code.
+示例代码参见 [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples)。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [使用 Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
