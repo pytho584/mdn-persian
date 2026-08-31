@@ -1,7 +1,7 @@
 ---
 title: "BiquadFilterNode: BiquadFilterNode() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/BiquadFilterNode"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,111 +14,85 @@ browser-compat: api.BiquadFilterNode.BiquadFilterNode
 
 {{APIRef("Web Audio API")}}
 
-The **`BiquadFilterNode()`**
-constructor of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-creates a new {{domxref("BiquadFilterNode")}} object, which represents a simple
-low-order filter.
+سازنده **`BiquadFilterNode()`** از [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) یک شیء جدید {{domxref("BiquadFilterNode")}} ایجاد می‌کند که یک فیلتر ساده با مرتبه پایین را نشان می‌دهد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new BiquadFilterNode(context, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `context`
-  - : A reference to an {{domxref("AudioContext")}}.
+  - : یک ارجاع به {{domxref("AudioContext")}}.
 - `options` {{optional_inline}}
-  - : An object with the following properties:
+  - : یک شیء با ویژگی‌های زیر:
     - `type`
-      - : One of the following strings. The meaning
-        of the other options depends on the value of `type`.
+      - : یکی از رشته‌های زیر. معنای سایر گزینه‌ها به مقدار `type` بستگی دارد.
         - `lowpass`
-          - : The default. Allows frequencies below a cutoff frequency to pass through, and attenuates frequencies above the cutoff. This is a standard second-order resonant lowpass filter with 12dB/octave rolloff. With this type of filter, the meaning of the other options are as follows:
-            - `Q`: controls how peaked the response will be at the cutoff frequency. A large value makes the response more peaked. Please note that for this filter type, this value is not a traditional Q, but is a resonance value in decibels.
-            - `frequency`: the cutoff frequency.
-            - `gain`: not used.
-
+          - : پیش‌فرض. فرکانس‌های زیر یک فرکانس قطع را عبور می‌دهد و فرکانس‌های بالای قطع را تضعیف می‌کند. این یک فیلتر پایین‌گذر تشدیدی استاندارد مرتبه دوم با شیب 12dB/octave است. با این نوع فیلتر، معنای سایر گزینه‌ها به شرح زیر است:
+            - `Q`: میزان اوج بودن پاسخ در فرکانس قطع را کنترل می‌کند. مقدار بزرگ باعث اوج‌تر شدن پاسخ می‌شود. لطفاً توجه داشته باشید که برای این نوع فیلتر، این مقدار یک Q سنتی نیست، بلکه یک مقدار تشدید بر حسب دسی‌بل است.
+            - `frequency`: فرکانس قطع.
+            - `gain`: استفاده نمی‌شود.
         - `highpass`
-          - : A highpass filter is the opposite of a lowpass filter.
-            Frequencies above the cutoff frequency are passed through, but frequencies below the cutoff are attenuated. It implements a standard second-order resonant highpass filter with 12dB/octave rolloff. With this type of filter, the meaning of the other options are as follows:
-            - `Q`: controls how peaked the response will be at the cutoff frequency. A large value makes the response more peaked. Please note that for this filter type, this value is not a traditional Q, but is a resonance value in decibels.
-            - `frequency`: the cutoff frequency.
-            - `gain`: not used.
-
+          - : فیلتر بالاگذر برعکس فیلتر پایین‌گذر است. فرکانس‌های بالای فرکانس قطع عبور می‌کنند، اما فرکانس‌های زیر قطع تضعیف می‌شوند. این یک فیلتر بالاگذر تشدیدی استاندارد مرتبه دوم با شیب 12dB/octave را پیاده‌سازی می‌کند. با این نوع فیلتر، معنای سایر گزینه‌ها به شرح زیر است:
+            - `Q`: میزان اوج بودن پاسخ در فرکانس قطع را کنترل می‌کند. مقدار بزرگ باعث اوج‌تر شدن پاسخ می‌شود. لطفاً توجه داشته باشید که برای این نوع فیلتر، این مقدار یک Q سنتی نیست، بلکه یک مقدار تشدید بر حسب دسی‌بل است.
+            - `frequency`: فرکانس قطع.
+            - `gain`: استفاده نمی‌شود.
         - `bandpass`
-          - : A bandpass filter allows a range of frequencies to pass
-            through and attenuates the frequencies below and above this frequency range. It implements a second-order bandpass filter. With this type of filter, the meaning of the other options are as follows:
-            - `Q`: controls the width of the band. The width becomes narrower as the Q value increases.
-            - `frequency`: the center of the frequency band.
-            - `gain`: not used.
-
+          - : فیلتر میان‌گذر به یک محدوده از فرکانس‌ها اجازه عبور می‌دهد و فرکانس‌های پایین و بالای این محدوده را تضعیف می‌کند. این یک فیلتر میان‌گذر مرتبه دوم را پیاده‌سازی می‌کند. با این نوع فیلتر، معنای سایر گزینه‌ها به شرح زیر است:
+            - `Q`: عرض باند را کنترل می‌کند. با افزایش مقدار Q، عرض باند باریک‌تر می‌شود.
+            - `frequency`: مرکز باند فرکانس.
+            - `gain`: استفاده نمی‌شود.
         - `lowshelf`
-          - : The lowshelf filter allows all frequencies through, but adds
-            a boost (or attenuation) to the lower frequencies. It implements a second-order lowshelf filter. With this type of filter, the meaning of the other options are as follows:
-            - `Q`: not used.
-            - `frequency`: the upper limit of the frequencies where the boost, or attenuation, is applied.
-            - `gain`: the boost, in dB, to be applied. If the value is negative, the frequencies are attenuated.
-
+          - : فیلتر قفسه پایین به همه فرکانس‌ها اجازه عبور می‌دهد، اما به فرکانس‌های پایین‌تر تقویت (یا تضعیف) اضافه می‌کند. این یک فیلتر قفسه پایین مرتبه دوم را پیاده‌سازی می‌کند. با این نوع فیلتر، معنای سایر گزینه‌ها به شرح زیر است:
+            - `Q`: استفاده نمی‌شود.
+            - `frequency`: حد بالای فرکانس‌هایی که تقویت یا تضعیف اعمال می‌شود.
+            - `gain`: میزان تقویت بر حسب دسی‌بل که اعمال می‌شود. اگر مقدار منفی باشد، فرکانس‌ها تضعیف می‌شوند.
         - `highshelf`
-          - : The highshelf filter is the opposite of the lowshelf filter
-            and allows all frequencies through, but adds a boost to the higher frequencies. It implements a second-order highshelf filter. With this type of filter, the meaning of the other options are as follows:
-            - `Q`: not used.
-            - `frequency`: the lower limit of the frequencies where the boost, or attenuation, is applied.
-            - `gain`: the boost, in dB, to be applied. If the value is negative, the frequencies are attenuated.
-
+          - : فیلتر قفسه بالا برعکس فیلتر قفسه پایین است و به همه فرکانس‌ها اجازه عبور می‌دهد، اما به فرکانس‌های بالاتر تقویت اضافه می‌کند. این یک فیلتر قفسه بالا مرتبه دوم را پیاده‌سازی می‌کند. با این نوع فیلتر، معنای سایر گزینه‌ها به شرح زیر است:
+            - `Q`: استفاده نمی‌شود.
+            - `frequency`: حد پایین فرکانس‌هایی که تقویت یا تضعیف اعمال می‌شود.
+            - `gain`: میزان تقویت بر حسب دسی‌بل که اعمال می‌شود. اگر مقدار منفی باشد، فرکانس‌ها تضعیف می‌شوند.
         - `peaking`
-          - : The peaking filter allows all frequencies through, adding a
-            boost, or attenuation, to a range of frequencies. With this type of filter, the meaning of the other options are as follows:
-            - `Q`: the width of the band of frequencies that are boosted. A large value implies a narrow width.
-            - `frequency`: the center frequency of the boost range.
-            - `gain`: the boost, in dB, to be applied. If the value is negative, the frequencies are attenuated.
-
+          - : فیلتر اوج‌گیر به همه فرکانس‌ها اجازه عبور می‌دهد و به یک محدوده از فرکانس‌ها تقویت یا تضعیف اضافه می‌کند. با این نوع فیلتر، معنای سایر گزینه‌ها به شرح زیر است:
+            - `Q`: عرض باند فرکانس‌هایی که تقویت می‌شوند. مقدار بزرگ به معنای عرض باریک است.
+            - `frequency`: فرکانس مرکزی محدوده تقویت.
+            - `gain`: میزان تقویت بر حسب دسی‌بل که اعمال می‌شود. اگر مقدار منفی باشد، فرکانس‌ها تضعیف می‌شوند.
         - `notch`
-          - : The notch filter (also known as a band-stop, or band-rejection filter) is the opposite of a bandpass filter. It allows all frequencies through, except for a set of frequencies. With this type of filter, the meaning of the other options are as follows:
-            - `Q`: the width of the band of frequencies that are attenuated. A large value implies a narrow width.
-            - `frequency`: the center frequency of the attenuation range.
-            - `gain`: not used.
-
+          - : فیلتر ناچ (همچنین به عنوان فیلتر باند-ایست یا باند-رد شناخته می‌شود) برعکس فیلتر میان‌گذر است. به همه فرکانس‌ها به جز یک مجموعه از فرکانس‌ها اجازه عبور می‌دهد. با این نوع فیلتر، معنای سایر گزینه‌ها به شرح زیر است:
+            - `Q`: عرض باند فرکانس‌هایی که تضعیف می‌شوند. مقدار بزرگ به معنای عرض باریک است.
+            - `frequency`: فرکانس مرکزی محدوده تضعیف.
+            - `gain`: استفاده نمی‌شود.
         - `allpass`
-          - : An allpass filter allows all frequencies through, but changes
-            the phase relationship between the various frequencies. It implements a second-order allpass filter. With this type of filter, the meaning of the other options are as follows:
-            - `Q`: the sharpness of the phase transition at the center frequency. A larger value implies a sharper transition and a larger group delay.
-            - `frequency`: the frequency where the center of the phase transition occurs. Viewed another way, this is the frequency with maximal group delay.
-            - `gain`: not used.
-
+          - : فیلتر تمام‌گذر به همه فرکانس‌ها اجازه عبور می‌دهد، اما رابطه فاز بین فرکانس‌های مختلف را تغییر می‌دهد. این یک فیلتر تمام‌گذر مرتبه دوم را پیاده‌سازی می‌کند. با این نوع فیلتر، معنای سایر گزینه‌ها به شرح زیر است:
+            - `Q`: تیزی گذار فاز در فرکانس مرکزی. مقدار بزرگ به معنای گذار تیزتر و تأخیر گروهی بزرگتر است.
+            - `frequency`: فرکانسی که مرکز گذار فاز در آن رخ می‌دهد. به عبارت دیگر، این فرکانس با حداکثر تأخیر گروهی است.
+            - `gain`: استفاده نمی‌شود.
     - `Q`
-      - : Defaults to 1. The meaning of this option depends on the value of `type`.
+      - : پیش‌فرض 1. معنای این گزینه به مقدار `type` بستگی دارد.
     - `detune`
-      - : Defaults to 0.
+      - : پیش‌فرض 0.
     - `frequency`
-      - : Defaults to 350.
+      - : پیش‌فرض 350.
     - `gain`
-      - : Defaults to 0. The meaning of this option depends on the value of `type`.
+      - : پیش‌فرض 0. معنای این گزینه به مقدار `type` بستگی دارد.
     - `channelCount`
-      - : Represents an integer used to determine how many channels are used when [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) connections to any inputs to the node. (See
-        {{domxref("AudioNode.channelCount")}} for more information.) Its usage and precise
-        definition depend on the value of `channelCountMode`.
+      - : یک عدد صحیح که برای تعیین تعداد کانال‌های استفاده شده هنگام [بالا-آمیختن و پایین-آمیختن](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) اتصالات به هر ورودی گره استفاده می‌شود. (برای اطلاعات بیشتر به {{domxref("AudioNode.channelCount")}} مراجعه کنید.) استفاده و تعریف دقیق آن به مقدار `channelCountMode` بستگی دارد.
     - `channelCountMode`
-      - : Represents an [enumerated](/en-US/docs/Glossary/Enumerated) value describing the way channels must be matched between
-        the node's inputs and outputs. (See {{domxref("AudioNode.channelCountMode")}} for more
-        information including default values.)
+      - : یک مقدار [شمارشی](/en-US/docs/Glossary/Enumerated) که نحوه تطبیق کانال‌ها بین ورودی‌ها و خروجی‌های گره را توصیف می‌کند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
     - `channelInterpretation`
-      - : Represents an enumerated value describing the meaning of the channels. This
-        interpretation will define how audio [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) will happen.
-        The possible values are `"speakers"` or `"discrete"`. (See
-        {{domxref("AudioNode.channelCountMode")}} for more information including default
-        values.)
+      - : یک مقدار شمارشی که معنای کانال‌ها را توصیف می‌کند. این تفسیر تعریف می‌کند که چگونه [بالا-آمیختن و پایین-آمیختن](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) صدا انجام می‌شود. مقادیر ممکن عبارتند از `"speakers"` یا `"discrete"`. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("BiquadFilterNode")}} object instance.
+یک نمونه شیء جدید {{domxref("BiquadFilterNode")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
