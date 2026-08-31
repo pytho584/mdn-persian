@@ -1,7 +1,7 @@
 ---
 title: "Blob: bytes() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Blob/bytes"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,30 +14,30 @@ browser-compat: api.Blob.bytes
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`bytes()`** method of the {{domxref("Blob")}} interface returns a {{jsxref("Promise")}} that resolves with a {{jsxref("Uint8Array")}} containing the contents of the blob as an array of bytes.
+متد **`bytes()`** از رابط {{domxref("Blob")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک {{jsxref("Uint8Array")}} حاوی محتویات blob به عنوان آرایه‌ای از بایت‌ها resolve می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 bytes()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with a {{jsxref("Uint8Array")}} object containing the blob data.
+یک {{jsxref("Promise")}} که با یک شی {{jsxref("Uint8Array")}} حاوی داده‌های blob fulfilled می‌شود.
 
-### Exceptions
+### استثناها
 
-The method will reject the returned {{jsxref("Promise")}} if, for example, the reader used to fetch the blob's data throws an exception.
+این متد {{jsxref("Promise")}} بازگشتی را reject می‌کند اگر مثلاً خواننده‌ای که برای واکشی داده‌های blob استفاده می‌شود یک استثنا پرتاب کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
