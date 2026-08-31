@@ -1,7 +1,7 @@
 ---
 title: "AudioParam: maxValue property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/maxValue"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,19 +14,15 @@ browser-compat: api.AudioParam.maxValue
 
 {{APIRef("Web Audio API")}}
 
-The **`maxValue`**
-read-only property of the {{domxref("AudioParam")}} interface represents the maximum
-possible value for the parameter's nominal (effective) range.
+ویژگی فقط‌خواندنی **`maxValue`** در رابط {{domxref("AudioParam")}}، حداکثر مقدار ممکن برای محدودهٔ اسمی (موثر) پارامتر را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A floating-point {{jsxref("Number")}} indicating the maximum value permitted for the
-parameter's nominal range.
+یک {{jsxref("Number")}} ممیز شناور که حداکثر مقدار مجاز برای محدودهٔ اسمی پارامتر را نشان می‌دهد.
 
-The default value of `maxValue` is the maximum positive single-precision
-floating-point value (+340,282,346,638,528,859,811,704,183,484,516,925,440).
+مقدار پیش‌فرض `maxValue`، حداکثر مقدار مثبت ممیز شناور تک‌دقتی است (+340,282,346,638,528,859,811,704,183,484,516,925,440).
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new AudioContext();
@@ -34,14 +30,14 @@ const gainNode = audioCtx.createGain();
 console.log(gainNode.gain.maxValue); // 3.4028234663852886e38
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("AudioParam.minValue")}}
