@@ -1,7 +1,7 @@
 ---
 title: "AudioPlaybackStats: maximumLatency property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioPlaybackStats/maximumLatency"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,15 +16,15 @@ browser-compat: api.AudioPlaybackStats.maximumLatency
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`maximumLatency`** read-only property of the {{domxref("AudioPlaybackStats")}} interface is a number indicating the maximum latency since the audio context was initialized or since {{domxref("AudioPlaybackStats.resetLatency()")}} was last called.
+**`maximumLatency`** 是 {{domxref("AudioPlaybackStats")}} 接口的只读属性，是一个数字，表示自音频上下文初始化以来或自上次调用 {{domxref("AudioPlaybackStats.resetLatency()")}} 以来的最大延迟。
 
-## Value
+## 值
 
-A double-precision floating point number indicating the maximum latency, in seconds. Initialized to `0`.
+一个双精度浮点数，表示最大延迟，单位为秒。初始值为 `0`。
 
-## Examples
+## 示例
 
-### Basic usage
+### 基本用法
 
 ```js
 const audioCtx = new AudioContext();
@@ -36,16 +36,16 @@ const stats = audioCtx.playbackStats;
 console.log(stats.maximumLatency);
 ```
 
-See also the main {{domxref("AudioPlaybackStats")}} reference page for a more in-depth example.
+另请参阅主 {{domxref("AudioPlaybackStats")}} 参考页面，以获取更深入的示例。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
