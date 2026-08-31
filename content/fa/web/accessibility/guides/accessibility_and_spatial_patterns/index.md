@@ -1,7 +1,7 @@
 ---
 title: "Accessibility and spatial patterns"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Accessibility_and_Spatial_Patterns"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,74 +12,74 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-This document describes visual patterns that can induce physical symptoms in people who have photosensitive epilepsy, vestibular disorders, or other perceptual issues.
+این سند الگوهای بصری را توصیف می‌کند که می‌توانند علائم فیزیکی را در افرادی که صرع حساس به نور، اختلالات دهلیزی یا سایر مشکلات ادراکی دارند، ایجاد کنند.
 
-## Spatial Localization
+## مکان‌یابی فضایی
 
-NASA conducted research on the perception of color, and found that luminance contrast mattered greatly as to how colors are perceived. The two images below are from NASA research, specifically, from the article, "[Designing With Blue](https://web.archive.org/web/20250216024807/https://colorusage.arc.nasa.gov/blue_2.php)"
+ناسا تحقیقاتی در مورد درک رنگ انجام داد و دریافت که کنتراست روشنایی به‌طور قابل توجهی در نحوه درک رنگ‌ها مؤثر است. دو تصویر زیر از تحقیقات ناسا و به‌طور خاص از مقالهٔ «[طراحی با آبی](https://web.archive.org/web/20250216024807/https://colorusage.arc.nasa.gov/blue_2.php)» هستند.
 
 ![Comparison of the stability of the spatial localization of yellow vs. red. Both are roughly isoluminant with their backgrounds. The misalignment and gap between the chromatic bars and black bars is physically the same for the yellow and red but much less visually obvious for the yellow.](yellow_edge_3.gif) ![Comparison of the stability of the spatial localization of yellow vs. red. Both are roughly isoluminant with their backgrounds. The misalignment and gap between the chromatic bars and black bars is physically the same for the yellow and red but much less visually obvious for the yellow.](yellow_edge_4.gif)
 
-> **Spatial Localization.** Symbols which have the same luminance as their background are perceptually less securely located in space and time than are symbols with higher luminance contrast. They tend to "float" visually or be "captured" by adjacent symbols with high luminance-contrast. The phenomenon seems to be especially problematic for symbol/background combinations that differ only in the blue channel.
+> **مکان‌یابی فضایی.** نمادهایی که همان روشنایی پس‌زمینه خود را دارند، از نظر ادراکی در مکان و زمان کمتر امنیت دارند نسبت به نمادهایی با کنتراست روشنایی بالاتر. آن‌ها تمایل دارند از نظر بصری «شناور» شوند یا توسط نمادهای مجاور با کنتراست روشنایی بالا «گرفته شوند». این پدیده به‌ویژه برای ترکیب‌های نماد/پس‌زمینه‌ای که فقط در کانال آبی تفاوت دارند، مشکل‌ساز است.
 
-## Distance between stripes
+## فاصله بین نوارها
 
-Photosensitive seizures may be caused by static images as well as animation. The mechanism for this is poorly understood, but is believed to be linked to "gamma oscillations" set up in the brain. These oscillations in the brain are a different kind of response than other kinds of neurological responses believed to cause photosensitive seizures.
+تشنج‌های حساس به نور ممکن است توسط تصاویر ثابت و همچنین انیمیشن ایجاد شوند. مکانیسم این امر به‌خوبی درک نشده است، اما اعتقاد بر این است که با «نوسانات گاما» که در مغز ایجاد می‌شوند مرتبط است. این نوسانات در مغز نوع متفاوتی از پاسخ نسبت به سایر پاسخ‌های عصبی هستند که تصور می‌شود باعث تشنج‌های حساس به نور می‌شوند.
 
-Stripes and patterns are typical of the kinds of images that create problems, and stripes have been studied most closely. There's the potential for causing harm if there are more than five light-dark pairs of stripes in any orientation. They can be parallel, radial, curved or straight, and may be formed by rows of repeating elements.
+نوارها و الگوها نمونه‌های معمولی از تصاویری هستند که مشکل ایجاد می‌کنند و نوارها بیشتر مورد مطالعه قرار گرفته‌اند. اگر بیش از پنج جفت نوار روشن-تیره در هر جهتی وجود داشته باشد، پتانسیل ایجاد آسیب وجود دارد. آن‌ها می‌توانند موازی، شعاعی، منحنی یا مستقیم باشند و ممکن است توسط ردیف‌هایی از عناصر تکراری تشکیل شوند.
 
-In 2005, Arnold Wilkins, John Emmett, and Graham Harding evaluated the guidelines for characterizing patterned images that could precipitate seizures. They revised the guidelines to their fundamental core, and came up with a surprisingly simple, but powerful [test](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1528-1167.2005.01405.x), which they published in the paper, **[Characterizing the Patterned Images That Precipitate Seizures and Optimizing Guidelines To Prevent Them](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1528-1167.2005.01405.x)**
+در سال ۲۰۰۵، آرنولد ویلکینز، جان امت و گراهام هاردینگ دستورالعمل‌هایی را برای توصیف تصاویر الگو که می‌توانند تشنج را تسریع کنند، ارزیابی کردند. آن‌ها دستورالعمل‌ها را به هسته اصلی خود بازبینی کردند و به آزمونی شگفت‌آور ساده اما قدرتمند دست یافتند که در مقالهٔ خود منتشر کردند: **[توصیف تصاویر الگو که تشنج را تسریع می‌کنند و بهینه‌سازی دستورالعمل‌ها برای جلوگیری از آن‌ها](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1528-1167.2005.01405.x)**
 
 > [!NOTE]
-> The steps necessary to evaluate material reduce to the following:
+> مراحل لازم برای ارزیابی مطالب به موارد زیر خلاصه می‌شود:
 >
-> Look at the screen:
+> به صفحه نمایش نگاه کنید:
 >
-> - Are there more than five stripes?
-> - If so, do they last longer than 0.5 s?
-> - If so, does the brightness exceed the stated limit?
-> - If so, categorize the motion of the pattern.
-> - Are the guidelines contravened?
+> - آیا بیش از پنج نوار وجود دارد؟
+> - اگر چنین است، آیا آن‌ها بیش از ۰.۵ ثانیه دوام می‌آورند؟
+> - اگر چنین است، آیا روشنایی از حد تعیین‌شده فراتر می‌رود؟
+> - اگر چنین است، حرکت الگو را طبقه‌بندی کنید.
+> - آیا دستورالعمل‌ها نقض می‌شوند؟
 >
-> If so, reduce brightness.
+> اگر چنین است، روشنایی را کاهش دهید.
 
-## Text and padding
+## متن و فاصله‌گذاری
 
-WCAG standards for contrast perception do not take into account the effect of padding. For example, blue text on a gray background is easier to perceive if it is surrounded "locally" by black than by white. There is such a thing as "local" adaptation to colors. The bottom line: padding matters.
+استانداردهای WCAG برای درک کنتراست تأثیر فاصله‌گذاری (padding) را در نظر نمی‌گیرند. برای مثال، متن آبی روی زمینه خاکستری اگر به‌صورت «محلی» با سیاه احاطه شود، آسان‌تر درک می‌شود تا با سفید. چیزی به نام سازگاری «محلی» با رنگ‌ها وجود دارد. نتیجه اصلی: فاصله‌گذاری اهمیت دارد.
 
-## Math
+## ریاضیات
 
-Spatial reasoning affects Math learning; consequently, spatial relationships in how math is presented affects cognition. The web developer can do something about this in the manner in which they display math. Animation figures strongly in this arena. For example, "how" an object looks when it is rotated, from different angles, how they look sliced, and how they relate to each other in space all make a difference in an ability to understand Math in spatial terms.
+استدلال فضایی بر یادگیری ریاضیات تأثیر می‌گذارد؛ در نتیجه، روابط فضایی در نحوه ارائه ریاضیات بر شناخت تأثیر می‌گذارد. توسعه‌دهنده وب می‌تواند در روش نمایش ریاضیات کاری در این زمینه انجام دهد. انیمیشن در این زمینه نقش پررنگی دارد. برای مثال، «چگونگی» ظاهر یک شیء هنگام چرخش، از زوایای مختلف، نحوه برش خوردن آن‌ها و ارتباط آن‌ها با یکدیگر در فضا، همگی در توانایی درک ریاضیات به‌صورت فضایی تفاوت ایجاد می‌کنند.
 
-## Braille
+## بریل
 
-Modern technology enables non-experts to print Braille. Adobe Illustrator, for example, allows one to Typeset ADA Braille for printing out.
+فناوری مدرن به افراد غیرمتخصص امکان چاپ بریل را می‌دهد. برای مثال، Adobe Illustrator به شما امکان می‌دهد بریل ADA را برای چاپ حروف‌چینی کنید.
 
-The ability to represent spatial patterns accurate to those who are blind is critical for accessibility. For example, knowing Braille is not enough. The Braille dots have to be spatially apart from one another so as to be readable in a "human" way. The human touch does distinguish with ease braille dots that are too close or too far apart from one another.
+توانایی نمایش الگوهای فضایی دقیق برای افراد نابینا برای دسترس‌پذیری حیاتی است. برای مثال، دانستن بریل کافی نیست. نقاط بریل باید از نظر فضایی از یکدیگر جدا باشند تا به‌صورت «انسانی» قابل خواندن باشند. لمس انسان به‌راحتی می‌تواند نقاط بریلی را که بیش از حد نزدیک یا بیش از حد دور از یکدیگر هستند تشخیص دهد.
 
-Space has to surround the braille character. A user of braille does not lay a finger on "top" of a braille character, the user has to move her finger over the character, in the way that a sighted person must move her eyes across text written on a page.
+فضا باید اطراف نویسه بریل را احاطه کند. کاربر بریل انگشت خود را روی «بالای» نویسه بریل قرار نمی‌دهد، بلکه باید انگشت خود را روی نویسه حرکت دهد، همان‌طور که یک فرد بینا باید چشمان خود را روی متن نوشته‌شده در صفحه حرکت دهد.
 
-The nature of space can change depending upon what MIME type is being used, and its version. For example, borders on SVG can extend both inward and outward from its dimensions, or for newer versions of SVG, entirely outward from it, thus reducing the space around the SVG to enable perception.
+ماهیت فضا می‌تواند بسته به نوع MIME مورد استفاده و نسخه آن تغییر کند. برای مثال، حاشیه‌ها در SVG می‌توانند هم به سمت داخل و هم به سمت بیرون از ابعاد آن گسترش یابند، یا برای نسخه‌های جدیدتر SVG، کاملاً به سمت بیرون گسترش یابند، بنابراین فضای اطراف SVG را برای درک کاهش می‌دهند.
 
-## See also
+## همچنین ببینید
 
 ### MDN
 
-- [Accessibility: What users can do to browse more safely](/en-US/docs/Web/Accessibility/Guides/Browsing_safely)
-- [Web accessibility for seizures and physical reactions](/en-US/docs/Web/Accessibility/Guides/Seizure_disorders)
-- [Web Accessibility: Understanding Colors and Luminance](/en-US/docs/Web/Accessibility/Guides/Colors_and_Luminance)
+- [دسترس‌پذیری: کاربران برای مرور ایمن‌تر چه کاری می‌توانند انجام دهند](/en-US/docs/Web/Accessibility/Guides/Browsing_safely)
+- [دسترس‌پذیری وب برای تشنج و واکنش‌های فیزیکی](/en-US/docs/Web/Accessibility/Guides/Seizure_disorders)
+- [دسترس‌پذیری وب: درک رنگ‌ها و روشنایی](/en-US/docs/Web/Accessibility/Guides/Colors_and_Luminance)
 
-### Braille
+### بریل
 
-- [Part 3: A Step-by-Step Guide to Typesetting ADA Braille Correctly in Adobe Illustrator](https://www.tinkeringmonkey.com/guides/ada-signage/a-step-by-step-guide-to-typesetting-ada-braille-correctly-in-adobe-illustrator/)
-- [Spatial Math in BrailleBlaster (4 of 5)](https://www.youtube.com/watch?v=yz9vefDsj1g)
+- [بخش ۳: راهنمای گام‌به‌گام برای حروف‌چینی صحیح بریل ADA در Adobe Illustrator](https://www.tinkeringmonkey.com/guides/ada-signage/a-step-by-step-guide-to-typesetting-ada-braille-correctly-in-adobe-illustrator/)
+- [ریاضیات فضایی در BrailleBlaster (بخش ۴ از ۵)](https://www.youtube.com/watch?v=yz9vefDsj1g)
 
-### Math
+### ریاضیات
 
-- [Spatial Reasoning: Why Math Talk is About More Than Numbers](https://dreme.stanford.edu/news/spatial-reasoning-why-math-talk-is-about-more-than-numbers/)
+- [استدلال فضایی: چرا گفتگو درباره ریاضی فقط درباره اعداد نیست](https://dreme.stanford.edu/news/spatial-reasoning-why-math-talk-is-about-more-than-numbers/)
 
-### Scientific Literature
+### ادبیات علمی
 
-- [Color constancy in context: Roles for local adaptation and levels of reference](https://jov.arvojournals.org/article.aspx?articleid=2192799)
-- [Gamma oscillations and photosensitive epilepsy](https://www.sciencedirect.com/science/article/pii/S0960982217304062?via%3Dihub)
-- [Characterizing the Patterned Images That Precipitate Seizures and Optimizing Guidelines To Prevent Them](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1528-1167.2005.01405.x) Arnold Wilkins, John Emmett, and Graham Harding
+- [ثبات رنگ در زمینه: نقش‌های سازگاری محلی و سطوح مرجع](https://jov.arvojournals.org/article.aspx?articleid=2192799)
+- [نوسانات گاما و صرع حساس به نور](https://www.sciencedirect.com/science/article/pii/S0960982217304062?via%3Dihub)
+- [توصیف تصاویر الگو که تشنج را تسریع می‌کنند و بهینه‌سازی دستورالعمل‌ها برای جلوگیری از آن‌ها](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1528-1167.2005.01405.x) آرنولد ویلکینز، جان امت و گراهام هاردینگ
