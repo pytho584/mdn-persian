@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesMap: size property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap/size"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesMap: size property"
 short-title: size
 slug: Web/API/CSSFontFeatureValuesMap/size
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.CSSFontFeatureValuesMap.size
 
 {{APIRef("CSSOM")}}{{SeeCompatTable}}
 
-The **`size`** read-only property of the {{domxref("CSSFontFeatureValuesMap")}} interface returns a positive integer containing the size of the `CSSFontFeatureValuesMap` object.
+خصوصیت فقط خواندنی **`size`** در رابط {{domxref("CSSFontFeatureValuesMap")}} یک عدد صحیح مثبت شامل اندازه شیء `CSSFontFeatureValuesMap` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A positive integer.
+یک عدد صحیح مثبت.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following example outputs an integer of the number of the declarations within the [`@swash`](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#swash) feature block. This example is using `@swash` but also works with other [feature value blocks](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks).
+مثال زیر یک عدد صحیح از تعداد اعلان‌های داخل بلوک ویژگی [`@swash`](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#swash) را خروجی می‌دهد. این مثال از `@swash` استفاده می‌کند اما با سایر [بلوک‌های مقادیر ویژگی‌ها](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks) نیز کار می‌کند.
 
 #### CSS
 
@@ -39,7 +33,7 @@ The following example outputs an integer of the number of the declarations withi
 }
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 // get the rules
@@ -47,10 +41,10 @@ const myRule = document.styleSheets[0].cssRules[0];
 console.log(myRule.swash.size); // logs 2
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
