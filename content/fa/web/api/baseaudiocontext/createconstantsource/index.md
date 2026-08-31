@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createConstantSource() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createConstantSource"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,16 +14,10 @@ browser-compat: api.BaseAudioContext.createConstantSource
 
 {{APIRef("Web Audio API")}}
 
-The **`createConstantSource()`**
-property of the {{domxref("BaseAudioContext")}} interface creates a
-{{domxref("ConstantSourceNode")}} object, which is an audio source that continuously
-outputs a monaural (one-channel) sound signal whose samples all have the same
-value.
+ویژگی **`createConstantSource()`** از رابط {{domxref("BaseAudioContext")}} یک شیء {{domxref("ConstantSourceNode")}} ایجاد می‌کند، که یک منبع صوتی است که به‌طور پیوسته یک سیگنال صدای مونو (تک‌کاناله) خروجی می‌دهد که تمام نمونه‌های آن مقدار یکسانی دارند.
 
 > [!NOTE]
-> The {{domxref("ConstantSourceNode.ConstantSourceNode", "ConstantSourceNode()")}}
-> constructor is the recommended way to create a {{domxref("ConstantSourceNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> سازندهٔ {{domxref("ConstantSourceNode.ConstantSourceNode", "ConstantSourceNode()")}} روش پیشنهادی برای ایجاد یک {{domxref("ConstantSourceNode")}} است؛ به [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
 ## Syntax
 
@@ -33,11 +27,11 @@ createConstantSource()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-A {{domxref('ConstantSourceNode')}} instance.
+یک نمونه از {{domxref('ConstantSourceNode')}}.
 
 ## Specifications
 
