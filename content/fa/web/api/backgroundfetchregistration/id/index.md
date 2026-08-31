@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRegistration: id property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/id"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,24 +16,24 @@ browser-compat: api.BackgroundFetchRegistration.id
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`id`** read-only property of the {{domxref("BackgroundFetchRegistration")}} interface returns a copy of the background fetch's `ID`.
+ویژگی فقط‌خواندنی **`id`** در رابط {{domxref("BackgroundFetchRegistration")}} یک کپی از `ID` دریافت پس‌زمینه را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-Logging the this part to the console returns the identifier set when registering the fetch. In this case, `"my-fetch"`.
+ثبت این ویژگی در کنسول، شناسه‌ای را که هنگام ثبت دریافت تنظیم شده بود برمی‌گرداند. در این مورد، `"my-fetch"`.
 
 ```js
 console.log(bgFetch.id); // "my-fetch"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
