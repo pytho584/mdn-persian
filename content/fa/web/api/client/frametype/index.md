@@ -1,7 +1,5 @@
 ---
 title: "Client: frameType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Client/frameType"
-status: "needs-translation"
 ---
 
 ---
@@ -14,16 +12,16 @@ browser-compat: api.Client.frameType
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`frameType`** read-only property of the {{domxref("Client")}} interface indicates the type of browsing context of the current {{domxref("Client")}}. This value can be one of `"auxiliary"`, `"top-level"`, `"nested"`, or `"none"`.
+ویژگی فقط‌خواندنی **`frameType`** از رابط {{domxref("Client")}} نوع بافتار مرورِ (browsing context) مربوط به {{domxref("Client")}} جاری را مشخص می‌کند. این مقدار می‌تواند یکی از `"auxiliary"`، `"top-level"`، `"nested"` یا `"none"` باشد.
 
-## Value
+## مقدار
 
-One of these four strings: `"auxiliary"`, `"top-level"`, `"nested"`, or `"none"`.
+یکی از این چهار رشته: `"auxiliary"`، `"top-level"`، `"nested"` یا `"none"`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
