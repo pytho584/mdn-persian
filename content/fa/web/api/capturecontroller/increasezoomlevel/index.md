@@ -1,11 +1,5 @@
 ---
 title: "CaptureController: increaseZoomLevel() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/increaseZoomLevel"
-status: "needs-translation"
----
-
----
-title: "CaptureController: increaseZoomLevel() method"
 short-title: increaseZoomLevel()
 slug: Web/API/CaptureController/increaseZoomLevel
 page-type: web-api-instance-method
@@ -16,40 +10,40 @@ browser-compat: api.CaptureController.increaseZoomLevel
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The {{domxref("CaptureController")}} interface's **`increaseZoomLevel()`** method increases the captured display surface's zoom level by one increment.
+در رابط {{domxref("CaptureController")}}، متد **`increaseZoomLevel()`** سطح بزرگ‌نمایی سطح نمایشِ در حال ضبط را به اندازه یک پله افزایش می‌دهد.
 
-The `increaseZoomLevel()` method must be invoked via [transient activation](/en-US/docs/Glossary/Transient_activation). In addition, the user is asked for permission to share tabs when screen capture is first attempted; if the user denies permission the zoom level cannot be changed even with transient activation.
+متد `increaseZoomLevel()` باید از طریق [فعال‌سازی گذرا](/en-US/docs/Glossary/Transient_activation) فراخوانی شود. علاوه بر این، هنگام اولین تلاش برای ضبط صفحه، از کاربر برای اشتراک‌گذاری برگه‌ها اجازه گرفته می‌شود؛ اگر کاربر اجازه ندهد، حتی با فعال‌سازی گذرا نیز نمی‌توان سطح بزرگ‌نمایی را تغییر داد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 increaseZoomLevel()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} تمام می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown when:
-    - The captured display surface is already at its maximum supported zoom level.
-    - An attempt is made to invoke `increaseZoomLevel()` without transient activation.
+  - : در موارد زیر پرتاب می‌شود:
+    - سطح نمایشِ در حال ضبط از قبل در حداکثر سطح بزرگ‌نمایی پشتیبانی‌شده قرار دارد.
+    - تلاش برای فراخوانی `increaseZoomLevel()` بدون فعال‌سازی گذرا انجام شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown when:
-    - The page's {{HTTPHeader("Permissions-Policy/captured-surface-control", "captured-surface-control")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) does not permit the page to use the Captured Surface Control API.
-    - Permission to capture the display surface is explicitly denied by the user.
+  - : در موارد زیر پرتاب می‌شود:
+    - [خط مشی مجوزها](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) صفحه با هدر {{HTTPHeader("Permissions-Policy/captured-surface-control", "captured-surface-control")}} به صفحه اجازه استفاده از API کنترل سطح ضبط‌شده (Captured Surface Control API) را ندهد.
+    - اجازه ضبط سطح نمایش به‌صراحت توسط کاربر رد شده باشد.
 
-## Examples
+## مثال‌ها
 
-### Basic `increaseZoomLevel()` usage
+### استفاده پایه از `increaseZoomLevel()`
 
-The following snippet adds an event listener to a button so that when it is clicked, the `increaseZoom()` function is called. This in turn calls the `increaseZoomLevel()` method, zooming the captured surface in.
+قطعه کد زیر یک شنونده رویداد به یک دکمه اضافه می‌کند که با کلیک روی آن، تابع `increaseZoom` فراخوانی می‌شود. این تابع به نوبه خود متد `increaseZoomLevel()` را فراخوانی کرده و سطح بزرگ‌نمایی سطحِ در حال ضبط را افزایش می‌دهد.
 
 ```js
 // Create controller and start capture
@@ -71,20 +65,20 @@ async function increaseZoom() {
 }
 ```
 
-It is generally a best practice to call `increaseZoomLevel()` from within a [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) block because the zoom level could be changed asynchronously by an entity other than the application, which might lead to an error being thrown. For example, the user might directly interact with the captured surface to zoom in or out.
+به‌طور کلی بهتر است `increaseZoomLevel()` را درون یک بلوک [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) فراخوانی کنید، زیرا ممکن است سطح بزرگ‌نمایی به‌صورت ناهمگام توسط موجودیتی غیر از برنامه تغییر کند و این امر منجر به پرتاب خطا شود. برای مثال، کاربر ممکن است مستقیماً با سطحِ در حال ضبط تعامل کند تا بزرگ‌نمایی را افزایش یا کاهش دهد.
 
-See [Using the Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control) for a full working example.
+برای مشاهده یک مثال کامل و کاربردی، به [استفاده از API کنترل سطح ضبط‌شده](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - {{domxref("MediaDevices.getDisplayMedia()")}}
-- [Using the Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control)
+- [استفاده از API کنترل سطح ضبط‌شده](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control)
