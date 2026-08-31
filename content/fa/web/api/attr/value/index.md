@@ -1,7 +1,7 @@
 ---
 title: "Attr: value property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Attr/value"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,15 +14,15 @@ browser-compat: api.Attr.value
 
 {{APIRef("DOM")}}
 
-The **`value`** property of the {{domxref("Attr")}} interface contains the value of the attribute.
+ویژگی **`value`** از رابط {{domxref("Attr")}} حاوی مقدار ویژگی است.
 
-## Value
+## مقدار
 
-A string representing the attribute value.
+یک رشته که مقدار ویژگی را نشان می‌دهد.
 
-## Example
+## مثال
 
-The following example displays the current value of the attribute `test`. Clicking on the button will change it to a different value, and read it again to update the displayed value.
+مثال زیر مقدار فعلی ویژگی `test` را نمایش می‌دهد. با کلیک روی دکمه، این مقدار به مقدار دیگری تغییر می‌کند و دوباره خوانده می‌شود تا مقدار نمایش‌داده‌شده به‌روزرسانی شود.
 
 ### HTML
 
@@ -55,10 +55,10 @@ button.addEventListener("click", () => {
 
 {{ EmbedLiveSample('Example','100%',100) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
