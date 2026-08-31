@@ -1,10 +1,4 @@
 ---
-title: "CookieChangeEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CookieChangeEvent"
-status: "needs-translation"
----
-
----
 title: CookieChangeEvent
 slug: Web/API/CookieChangeEvent
 page-type: web-api-interface
@@ -13,34 +7,34 @@ browser-compat: api.CookieChangeEvent
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}
 
-The **`CookieChangeEvent`** interface of the {{domxref("Cookie Store API", "", "", "nocode")}} is the event type of the {{domxref("CookieStore/change_event", "change")}} event fired at a {{domxref("CookieStore")}} when any cookies are created or deleted.
+رابط **`CookieChangeEvent`** از {{domxref("Cookie Store API", "", "", "nocode")}} نوع رویداد {{domxref("CookieStore/change_event", "change")}} است که در یک {{domxref("CookieStore")}} هنگامی که هر کوکی ایجاد یا حذف می‌شود، فعال می‌گردد.
 
 > [!NOTE]
-> A cookie that is replaced due to the insertion of another cookie with the same name, domain, and path, is ignored and does not trigger a change event.
+> کوکی‌ای که به دلیل درج کوکی دیگری با نام، دامنه و مسیر یکسان جایگزین می‌شود، نادیده گرفته شده و رویداد change را فعال نمی‌کند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CookieChangeEvent.CookieChangeEvent", "CookieChangeEvent()")}}
-  - : Creates a new `CookieChangeEvent`.
+  - : یک `CookieChangeEvent` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from {{domxref("Event")}}._
+_این رابط همچنین ویژگی‌هایی را از {{domxref("Event")}} به ارث می‌برد._
 
 - {{domxref("CookieChangeEvent.changed")}} {{ReadOnlyInline}}
-  - : An array listing all newly-created cookies. Note that this will exclude cookies which were created with an expiry date in the past, as these cookies are immediately deleted.
+  - : یک آرایه شامل تمام کوکی‌های تازه ایجاد شده. توجه داشته باشید که این شامل کوکی‌هایی که با تاریخ انقضا در گذشته ایجاد شده‌اند نمی‌شود، زیرا این کوکی‌ها بلافاصله حذف می‌شوند.
 - {{domxref("CookieChangeEvent.deleted")}} {{ReadOnlyInline}}
-  - : An array listing all cookies which were removed, either because they expired or because they were explicitly deleted. Note that this will include cookies which were created with an expiry date in the past.
+  - : یک آرایه شامل تمام کوکی‌هایی که حذف شده‌اند، چه به دلیل منقضی شدن و چه به دلیل حذف صریح. توجه داشته باشید که این شامل کوکی‌هایی که با تاریخ انقضا در گذشته ایجاد شده‌اند نیز می‌شود.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface also inherits methods from {{domxref("Event")}}._
+_این رابط همچنین روش‌هایی را از {{domxref("Event")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-In this example when the cookie is set, the event listener logs the event to the console. This is a `CookieChangeEvent` object with the {{domxref("CookieChangeEvent.changed","changed")}} property containing an object representing the cookie that has just been set.
+در این مثال، هنگامی که کوکی تنظیم می‌شود، شنونده رویداد، رویداد را در کنسول ثبت می‌کند. این یک شیء `CookieChangeEvent` است که ویژگی {{domxref("CookieChangeEvent.changed","changed")}} آن شامل یک شیء نمایش‌دهنده کوکی است که به تازگی تنظیم شده است.
 
 ```js
 cookieStore.addEventListener("change", (event) => {
@@ -56,10 +50,10 @@ cookieStore.set({
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
