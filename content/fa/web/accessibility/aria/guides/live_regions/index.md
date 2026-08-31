@@ -1,7 +1,7 @@
 ---
 title: "ARIA live regions"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -11,28 +11,28 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-Using JavaScript, it is possible to dynamically change parts of a page without requiring the entire page to reload — for instance, to update a list of search results on the fly, or to display a discreet alert or notification which does not require user interaction. While these changes are usually visually apparent to users who can see the page, they may not be obvious to users of assistive technologies. ARIA live regions fill this gap and provide a way to programmatically expose dynamic content changes in a way that can be announced by assistive technologies.
+با استفاده از JavaScript، می‌توان بخش‌هایی از صفحه را به‌صورت پویا بدون نیاز به بارگذاری مجدد کل صفحه تغییر داد — برای مثال، به‌روزرسانی آنی فهرست نتایج جستجو، یا نمایش یک اعلان یا هشدار محتاطانه که نیازی به تعامل کاربر ندارد. در حالی که این تغییرات معمولاً برای کاربرانی که صفحه را می‌بینند از نظر بصری آشکار است، ممکن است برای کاربران فناوری‌های کمکی واضح نباشد. مناطق زنده ARIA این شکاف را پر می‌کنند و راهی برای نمایش برنامه‌نویسی‌شده تغییرات محتوای پویا فراهم می‌کنند که توسط فناوری‌های کمکی قابل اعلام باشد.
 
 > [!NOTE]
-> Assistive technologies will generally only announce _dynamic_ changes in the content of a live region.
-> Including an `aria-live` attribute or a specialized live region `role` (such as [`role="status"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role)) on the element you want to announce changes to works as long as you add the attribute before the changes occur — either in the original markup, or dynamically using JavaScript. Start with an empty live region, then – in a separate step – change the content inside the region.
-> While not explicitly documented in the specification, browsers/assistive technologies do include special handling for [`role="alert"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role): in most cases, the content inside `role="alert"` regions is announced, even when the region (which already contains the notification/message) is present in the initial markup of the page, or injected dynamically into the page. However, note that `role="alert"` regions are – depending on the specific browser/assistive technology combination – automatically prefixed with "Alert" when they are announced.
+> فناوری‌های کمکی به‌طور کلی فقط تغییرات _پویا_ در محتوای یک منطقه زنده را اعلام می‌کنند.
+> افزودن ویژگی `aria-live` یا یک `role` تخصصی منطقه زنده (مانند [`role="status"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role)) به عنصری که می‌خواهید تغییرات آن اعلام شود، تا زمانی که ویژگی را قبل از رخ دادن تغییرات اضافه کنید کار می‌کند — چه در نشانه‌گذاری اصلی، چه به‌صورت پویا با JavaScript. با یک منطقه زنده خالی شروع کنید و سپس، در یک مرحله جداگانه، محتوای داخل منطقه را تغییر دهید.
+> اگرچه به‌صراحت در مشخصات مستند نشده است، مرورگرها/فناوری‌های کمکی شامل پردازش ویژه‌ای برای [`role="alert"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role) هستند: در بیشتر موارد، محتوای داخل مناطق `role="alert"` اعلام می‌شود، حتی اگر منطقه (که از قبل حاوی اعلان/پیام است) در نشانه‌گذاری اولیه صفحه وجود داشته باشد یا به‌صورت پویا به صفحه تزریق شود. با این حال، توجه داشته باشید که مناطق `role="alert"` بسته به ترکیب خاص مرورگر/فناوری کمکی، به‌طور خودکار با پیشوند «هشدار» هنگام اعلام دریافت می‌شوند.
 
-## Live regions
+## مناطق زنده
 
-Dynamic content which updates without a page reload is generally either a region or a widget. Simple content changes which are not interactive should be marked as live regions. A live region is explicitly denoted using the `aria-live` attribute.
+محتوای پویایی که بدون بارگذاری مجدد صفحه به‌روزرسانی می‌شود، معمولاً یا یک منطقه است یا یک ویجت. تغییرات ساده محتوایی که تعاملی نیستند باید به‌عنوان مناطق زنده علامت‌گذاری شوند. یک منطقه زنده به‌صراحت با استفاده از ویژگی `aria-live` مشخص می‌شود.
 
-**`aria-live`**: The `aria-live=POLITENESS_SETTING` is used to set the priority with which screen reader should treat updates to live regions - the possible settings are: `off`, `polite` or `assertive`. This attribute is by far the most important.
+**`aria-live`**: از `aria-live=POLITENESS_SETTING` برای تنظیم اولویتی استفاده می‌شود که صفحه‌خوان با آن به‌روزرسانی‌های مناطق زنده را پردازش می‌کند - تنظیمات ممکن عبارتند از: `off`، `polite` یا `assertive`. این ویژگی به‌مراتب مهم‌ترین است.
 
-Normally, only `aria-live="polite"` is used. Any region which receives updates that are important for the user to receive, but not so rapid as to be annoying, should receive this attribute. The screen reader will speak changes whenever the user is idle.
+به‌طور معمول، فقط از `aria-live="polite"` استفاده می‌شود. هر منطقه‌ای که به‌روزرسانی‌هایی دریافت می‌کند که برای کاربر مهم است، اما نه آن‌قدر سریع که آزاردهنده باشد، باید این ویژگی را دریافت کند. صفحه‌خوان تغییرات را هر زمان که کاربر بیکار است اعلام می‌کند.
 
-`aria-live="assertive"` should only be used for time-sensitive/critical notifications that absolutely require the user's immediate attention. Generally, a change to an assertive live region will interrupt any announcement a screen reader is currently making. As such, it can be extremely annoying and disruptive and should only be used sparingly.
+`aria-live="assertive"` فقط باید برای اعلان‌های حساس به زمان/بحرانی استفاده شود که کاملاً به توجه فوری کاربر نیاز دارند. به‌طور کلی، تغییر در یک منطقه زنده قاطع (assertive) هر اعلامی را که صفحه‌خوان در حال پخش آن است قطع می‌کند. بنابراین، می‌تواند بسیار آزاردهنده و مخرب باشد و فقط باید به‌ندرت استفاده شود.
 
-Unintuitively, `aria-live="off"` does not indicate that changes should not be announced. When an element has `aria-live="off"` (or has a `role` with this implicit value, such as `role="marquee"` or `role="timer"`), changes to the element's content are only supposed to be announced when focus is on, or inside, the element.
+به‌طور غیرمنتظره‌ای، `aria-live="off"` نشان نمی‌دهد که تغییرات نباید اعلام شوند. وقتی یک عنصر دارای `aria-live="off"` است (یا دارای `role` با این مقدار ضمنی است، مانند `role="marquee"` یا `role="timer"`)، تغییرات در محتوای عنصر فقط زمانی قرار است اعلام شوند که فوکوس روی عنصر یا داخل آن باشد.
 
-### Basic example: Dropdown box updates useful onscreen information
+### مثال پایه: به‌روزرسانی اطلاعات مفید روی صفحه توسط کادر کشویی
 
-A website specializing in providing information about planets provides a dropdown box. When a planet is selected from the dropdown, a region on the page is updated with information about the selected planet.
+یک وب‌سایت تخصصی در ارائه اطلاعات درباره سیاره‌ها، یک کادر کشویی ارائه می‌دهد. وقتی سیاره‌ای از کادر کشویی انتخاب می‌شود، منطقه‌ای در صفحه با اطلاعات مربوط به سیاره انتخاب‌شده به‌روزرسانی می‌شود.
 
 ```html
 <fieldset>
@@ -116,70 +116,70 @@ renderPlanetInfoButton.addEventListener("click", (event) => {
 
 {{EmbedLiveSample('Basic_example_Dropdown_box_updates_useful_onscreen_information', '', 350)}}
 
-As the user selects a new planet, the information in the live region will be announced. Because the live region has `aria-live="polite"`, the screen reader will wait until the user pauses before announcing the update. Thus, moving down in the list and selecting another planet will not announce updates in the live region. Updates in the live region will only be announced for the planet finally chosen.
+همان‌طور که کاربر یک سیاره جدید را انتخاب می‌کند، اطلاعات موجود در منطقه زنده اعلام می‌شود. از آنجا که منطقه زنده دارای `aria-live="polite"` است، صفحه‌خوان منتظر می‌ماند تا کاربر مکث کند و سپس به‌روزرسانی را اعلام می‌کند. بنابراین، حرکت به پایین در فهرست و انتخاب سیاره‌ای دیگر، به‌روزرسانی‌های منطقه زنده را اعلام نمی‌کند. به‌روزرسانی‌های منطقه زنده فقط برای سیاره‌ای که در نهایت انتخاب شده است اعلام می‌شود.
 
-Here is a screenshot of VoiceOver on Mac announcing the update (via subtitles) to the live region:
+در اینجا یک اسکرین‌شات از VoiceOver در مک وجود دارد که به‌روزرسانی منطقه زنده را (از طریق زیرنویس) اعلام می‌کند:
 
-![A screenshot of VoiceOver on Mac announcing the update to a live region. Subtitles are shown in the picture.](web_accessibility_aria_aria_live_regions.png)
+![یک اسکرین‌شات از VoiceOver در مک که به‌روزرسانی یک منطقه زنده را اعلام می‌کند. زیرنویس‌ها در تصویر نشان داده شده‌اند.](web_accessibility_aria_aria_live_regions.png)
 
-## Roles with implicit live region attributes
+## نقش‌های با ویژگی‌های ضمنی منطقه زنده
 
-Elements with the following [`role="…"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) values act as live regions by default:
+عناصر با مقادیر `role="…"` زیر به‌طور پیش‌فرض به‌عنوان مناطق زنده عمل می‌کنند:
 
 <table style="width: 100%;">
  <thead>
   <tr>
-   <th scope="col">Role</th>
-   <th scope="col">Description</th>
-   <th scope="col">Compatibility Notes</th>
+   <th scope="col">نقش</th>
+   <th scope="col">توضیحات</th>
+   <th scope="col">یادداشت‌های سازگاری</th>
   </tr>
  </thead>
  <tbody>
   <tr>
    <td>log</td>
-   <td>Chat, error, game or other type of log</td>
-   <td>To maximize compatibility, add a redundant <code>aria-live="polite"</code> when using this role.</td>
+   <td>گفتگو، خطا، بازی یا نوع دیگری از گزارش</td>
+   <td>برای حداکثر سازگاری، هنگام استفاده از این نقش، یک <code>aria-live="polite"</code> اضافی نیز اضافه کنید.</td>
   </tr>
   <tr>
    <td>status</td>
-   <td>A status bar or area of the screen that provides an updated status of some kind. Screen reader users have a special command to read the current status.</td>
-   <td>To maximize compatibility, add a redundant <code>aria-live="polite"</code> when using this role.</td>
+   <td>یک نوار وضعیت یا ناحیه‌ای از صفحه که وضعیت به‌روزشده‌ای از نوعی را فراهم می‌کند. کاربران صفحه‌خوان یک فرمان ویژه برای خواندن وضعیت فعلی دارند.</td>
+   <td>برای حداکثر سازگاری، هنگام استفاده از این نقش، یک <code>aria-live="polite"</code> اضافی نیز اضافه کنید.</td>
   </tr>
   <tr>
    <td>alert</td>
-   <td>Error or warning message that flashes on the screen. Alerts are particularly important for client side validation notices to users. <a href="https://www.w3.org/WAI/ARIA/apg/example-index/alert/alert.html" class="external" rel="noopener">Alert Example.</a></td>
-   <td>To maximize compatibility, some people recommend adding a redundant <code>aria-live="assertive"</code> when using this role. However, adding both <code>aria-live</code> and <code>role="alert"</code> causes double speaking issues in VoiceOver on iOS.</td>
+   <td>پیام خطا یا هشدار که روی صفحه چشمک می‌زند. هشدارها به‌ویژه برای اعلان‌های اعتبارسنجی سمت کلاینت به کاربران مهم هستند. <a href="https://www.w3.org/WAI/ARIA/apg/example-index/alert/alert.html" class="external" rel="noopener">مثال هشدار.</a></td>
+   <td>برای حداکثر سازگاری، برخی افراد توصیه می‌کنند هنگام استفاده از این نقش، یک <code>aria-live="assertive"</code> اضافی نیز اضافه کنید. با این حال، اضافه کردن هر دو <code>aria-live</code> و <code>role="alert"</code> باعث مشکلات صحبت دوباره در VoiceOver در iOS می‌شود.</td>
   </tr>
   <tr>
    <td>progressbar</td>
-   <td>A hybrid between a widget and a live region. Use this with <code>aria-valuemin</code>, <code>aria-valuenow</code> and <code>aria-valuemax</code>. (TBD: add more info here).</td>
+   <td>ترکیبی بین یک ویجت و یک منطقه زنده. از این مورد با <code>aria-valuemin</code>، <code>aria-valuenow</code> و <code>aria-valuemax</code> استفاده کنید. (TBD: اطلاعات بیشتری اینجا اضافه شود).</td>
    <td></td>
   </tr>
   <tr>
    <td>marquee</td>
-   <td>Text which scrolls, such as a stock ticker.</td>
+   <td>متنی که حرکت می‌کند، مانند یک تیکر سهام.</td>
    <td></td>
   </tr>
   <tr>
    <td>timer</td>
-   <td>Any kind of timer or clock, such as a countdown timer or stopwatch readout.</td>
+   <td>هر نوع تایمر یا ساعت، مانند تایمر شمارش معکوس یا نمایش کرونومتر.</td>
    <td></td>
   </tr>
  </tbody>
 </table>
 
-## Additional live region attributes
+## ویژگی‌های اضافی منطقه زنده
 
-Live Regions are well supported. Vispero, in 2014, posted [information about the state of the support of Live Regions](https://vispero.com/resources/screen-reader-support-aria-live-regions/). Paul J. Adam has researched [the support of `aria-atomic` and `aria-relevant`](https://pauljadam.com/demos/aria-atomic-relevant.html) in particular.
+مناطق زنده به خوبی پشتیبانی می‌شوند. Vispero در سال 2014 [اطلاعاتی درباره وضعیت پشتیبانی از مناطق زنده](https://vispero.com/resources/screen-reader-support-aria-live-regions/) منتشر کرد. Paul J. Adam به‌طور خاص [پشتیبانی از `aria-atomic` و `aria-relevant`](https://pauljadam.com/demos/aria-atomic-relevant.html) را تحقیق کرده است.
 
-1. **`aria-atomic`**: The `aria-atomic=BOOLEAN` is used to set whether or not the screen reader should always present the live region as a whole, even if only part of the region changes. The possible settings are: `false` or `true`. The default setting is `false`.
+1. **`aria-atomic`**: از `aria-atomic=BOOLEAN` برای تنظیم اینکه آیا صفحه‌خوان همیشه باید کل منطقه زنده را به‌عنوان یک کل ارائه دهد، حتی اگر فقط بخشی از منطقه تغییر کند، استفاده می‌شود. تنظیمات ممکن عبارتند از: `false` یا `true`. مقدار پیش‌فرض `false` است.
 2. [**`aria-relevant`**](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant)
 
-   : The `aria-relevant=[LIST_OF_CHANGES]` is used to set what types of changes are relevant to a live region. The possible settings are one or more of: `additions`, `removals`, `text`, `all`. The default setting is: `additions text`.
+   : از `aria-relevant=[LIST_OF_CHANGES]` برای تنظیم اینکه چه نوع تغییراتی برای یک منطقه زنده مرتبط هستند استفاده می‌شود. تنظیمات ممکن یک یا چند مورد از اینها هستند: `additions`، `removals`، `text`، `all`. تنظیم پیش‌فرض: `additions text` است.
 
-### Basic examples: `aria-atomic`
+### مثال‌های پایه: `aria-atomic`
 
-As an illustration of `aria-atomic`, consider a site with a basic clock, showing hours and minutes. The clock is updated each minute, with the new remaining time overwriting the current content.
+به‌عنوان تصویری از `aria-atomic`، وب‌سایتی را در نظر بگیرید که یک ساعت پایه دارد و ساعت‌ها و دقیقه‌ها را نشان می‌دهد. ساعت هر دقیقه به‌روزرسانی می‌شود و زمان باقی‌مانده جدید جایگزین محتوای فعلی می‌شود.
 
 ```html
 <div id="clock" role="timer" aria-live="polite">
@@ -204,17 +204,17 @@ updateClock();
 setInterval(updateClock, 60000);
 ```
 
-The first time the function executes, the entirety of the string that is added will be announced. On subsequent calls, only the parts of the content that changed compared to the previous content will be announced. For instance, when the clock changes from "17:33" to "17:34", assistive technologies will only announce "34", which won't be very useful to users.
+اولین بار که تابع اجرا می‌شود، کل رشته‌ای که اضافه شده است اعلام می‌شود. در فراخوانی‌های بعدی، فقط بخش‌هایی از محتوا که نسبت به محتوای قبلی تغییر کرده‌اند اعلام می‌شوند. برای مثال، وقتی ساعت از «17:33» به «17:34» تغییر می‌کند، فناوری‌های کمکی فقط «34» را اعلام می‌کنند که برای کاربران چندان مفید نیست.
 
-One way around this would be to first clear all the contents of the live region (in this case, set the `innerHTML` of both `<span id="clock-hours">` and `<span id="clock-mins">` to be empty), and then inject the new content. However, this can sometimes be unreliable, as it's dependent on the exact timing of these two updates.
+یک راه برای دور زدن این مشکل این است که ابتدا تمام محتویات منطقه زنده را پاک کنید (در این مورد، `innerHTML` هر دو `<span id="clock-hours">` و `<span id="clock-mins">` را خالی کنید) و سپس محتوای جدید را تزریق کنید. با این حال، این روش گاهی اوقات می‌تواند غیرقابل اعتماد باشد، زیرا به زمان‌بندی دقیق این دو به‌روزرسانی وابسته است.
 
-`aria-atomic="true"` ensures that each time the live region is updated, the entirety of the content is announced in full (e.g., "17:34").
+`aria-atomic="true"` تضمین می‌کند که هر بار منطقه زنده به‌روزرسانی می‌شود، کل محتوا به‌طور کامل اعلام شود (مثلاً «17:34»).
 
 ```html
 <div id="clock" role="timer" aria-live="polite" aria-atomic="true">…</div>
 ```
 
-Another example of `aria-atomic` - an update/notification made as a result of a user action.
+مثال دیگری از `aria-atomic` - یک به‌روزرسانی/اعلان که در نتیجه اقدام کاربر انجام می‌شود.
 
 ```html
 <div id="date-input">
@@ -242,27 +242,10 @@ function change(event) {
 document.getElementById("year").addEventListener("blur", change);
 ```
 
-Without `aria-atomic="true"` the screen reader announces only the changed value of year. With `aria-atomic="true"`, the screen reader announces "The set year is: _changed value_"
+بدون `aria-atomic="true"`، صفحه‌خوان فقط مقدار تغییر یافته سال را اعلام می‌کند. با `aria-atomic="true"`، صفحه‌خوان اعلام می‌کند «سال تنظیم شده است: _مقدار تغییر یافته_»
 
-### Basic example: `aria-relevant`
+### مثال پایه: `aria-relevant`
 
-With `aria-relevant` you can specify which types of changes/updates to a live region should be announced.
+با `aria-relevant` می‌توانید مشخص کنید که کدام نوع تغییرات/به‌روزرسانی‌ها در یک منطقه زنده باید اعلام شوند.
 
-As an example, consider a chat site that wants to display a list of users currently logged in. Rather than just announcing the users that are currently logged in, we also want to trigger an announcement specifically when a user is _removed_ from the list. We can achieve this by specifying `aria-relevant="additions removals"`.
-
-```html
-<ul id="roster" aria-live="polite" aria-relevant="additions removals">
-  <!-- use JavaScript to add and remove users here -->
-</ul>
-```
-
-Breakdown of ARIA live properties:
-
-- `aria-live="polite"` indicates that the screen reader should wait until the user is idle before presenting updates to the user. This is the most commonly used value, as interrupting the user with "assertive" might interrupt their flow.
-- `aria-atomic` is not set (`false` by default) so that only the added or removed users should be spoken and not the entire roster each time.
-- `aria-relevant="additions removals"` ensures that both users added or removed to the roster will be spoken.
-
-## See also
-
-- [ARIA roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles)
-- {{domxref("Document.ariaNotify()")}}, {{domxref("Element.ariaNotify()")}}
+به‌عنوان مثال، یک وب‌س
