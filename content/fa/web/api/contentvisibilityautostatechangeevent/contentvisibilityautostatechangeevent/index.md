@@ -1,7 +1,5 @@
 ---
 title: "ContentVisibilityAutoStateChangeEvent: ContentVisibilityAutoStateChangeEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContentVisibilityAutoStateChangeEvent/ContentVisibilityAutoStateChangeEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +12,26 @@ browser-compat: api.ContentVisibilityAutoStateChangeEvent.ContentVisibilityAutoS
 
 {{APIRef("CSS Containment")}}
 
-The **`ContentVisibilityAutoStateChangeEvent()`** constructor creates a new {{domxref("ContentVisibilityAutoStateChangeEvent")}} object instance.
+سازندهی **`ContentVisibilityAutoStateChangeEvent()`** یک نمونهی جدید از شیء {{domxref("ContentVisibilityAutoStateChangeEvent")}} می‌سازد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new ContentVisibilityAutoStateChangeEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the type of event. In the case of `ContentVisibilityAutoStateChangeEvent` this is always `event`.
+  - : رشته‌ای است که نوع رویداد را نشان می‌دهد. در مورد `ContentVisibilityAutoStateChangeEvent`، این مقدار همیشه `event` است.
 - `options` {{optional_inline}}
-  - : An object that contains the following properties:
+  - : شیئی است که دارای ویژگی‌های زیر است:
     - `skipped`
-      - : A boolean, which is set to `true` if the user agent [skips the element's contents](/en-US/docs/Web/CSS/Guides/Containment/Using#skips_its_contents), or `false` otherwise.
+      - : یک مقدار بولی است که اگر عامل کاربر [از محتویات عنصر صرف‌نظر کند](/en-US/docs/Web/CSS/Guides/Containment/Using#skips_its_contents)، مقدار آن `true` و در غیر این صورت `false` است.
 
-## Examples
+## مثال‌ها
 
-A developer would not use this constructor manually. A new `ContentVisibilityAutoStateChangeEvent` object is constructed when a handler is invoked as a result of the {{domxref("element/contentvisibilityautostatechange_event", "contentvisibilityautostatechange")}} event firing.
+یک توسعه‌دهنده به‌صورت دستی از این سازنده استفاده نمی‌کند. بلکه، یک شیء جدید `ContentVisibilityAutoStateChangeEvent` زمانی ساخته می‌شود که یک کنترل‌کننده در نتیجه‌ی فعال شدن رویداد {{domxref("element/contentvisibilityautostatechange_event", "contentvisibilityautostatechange")}} فراخوانده شود.
 
 ```js
 canvasElem.addEventListener("contentvisibilityautostatechange", (event) => {
@@ -41,17 +39,17 @@ canvasElem.addEventListener("contentvisibilityautostatechange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("element/contentvisibilityautostatechange_event", "contentvisibilityautostatechange")}} event
-- [CSS Containment](/en-US/docs/Web/CSS/Guides/Containment)
-- The {{cssxref("content-visibility")}} property
-- The {{cssxref("contain")}} property
+- رویداد {{domxref("element/contentvisibilityautostatechange_event", "contentvisibilityautostatechange")}}
+- [محدودسازی CSS](/en-US/docs/Web/CSS/Guides/Containment)
+- ویژگی {{cssxref("content-visibility")}}
+- ویژگی {{cssxref("contain")}}
