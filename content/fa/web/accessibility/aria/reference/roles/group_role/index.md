@@ -1,7 +1,7 @@
 ---
 title: "ARIA: group role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,27 +13,27 @@ spec-urls: https://w3c.github.io/aria/#group
 sidebar: accessibilitysidebar
 ---
 
-The `group` role identifies a set of user interface objects that is not intended to be included in a page summary or table of contents by assistive technologies.
+نقش `group` مجموعه‌ای از اشیاء رابط کاربری را شناسایی می‌کند که در نظر گرفته نشده‌اند توسط فناوری‌های کمکی در خلاصه صفحه یا فهرست مطالب گنجانده شوند.
 
-## Description
+## توضیحات
 
-Most closely related to HTML's {{HTMLElement('fieldset')}} element, the `group` document structure role is used to identify a set of user interface objects which, as compared to [`region`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/region_role), is not intended to be included in the page's summary or table of contents.
+نقش ساختار سند `group`، که بیشترین نزدیکی را به عنصر {{HTMLElement('fieldset')}} در HTML دارد، برای شناسایی مجموعه‌ای از اشیاء رابط کاربری استفاده می‌شود که در مقایسه با [`region`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/region_role)، برای گنجانده شدن در خلاصه یا فهرست مطالب صفحه در نظر گرفته نشده است.
 
-The `group` role should be used to form a logical collection of items with related functionality, such as children in a [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role) widget forming a collection of siblings in a hierarchy, or a collection of items having the same container in a [`directory`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/directory_role).
+نقش `group` باید برای تشکیل مجموعه‌ای منطقی از موارد با عملکرد مرتبط استفاده شود، مانند فرزندان در ویجت [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role) که مجموعه‌ای از خواهر و برادرها را در یک سلسله‌مراتب تشکیل می‌دهند، یا مجموعه‌ای از مواردی که در [`directory`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/directory_role) دارای ظرف یکسانی هستند.
 
-When a `group` is used in the context of [`list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role), limit the children of the `group` to [`listitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listitem_role) elements. In this case, it is recommended to use multiple ordered or unordered lists, {{HTMLElement('ol')}} or {{HTMLElement('ul')}}, with nested {{HTMLElement('li')}} children.
+هنگامی که `group` در زمینه [`list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role) استفاده می‌شود، فرزندان `group` را به عناصر [`listitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listitem_role) محدود کنید. در این مورد، توصیه می‌شود از چند فهرست مرتب یا نامرتب، {{HTMLElement('ol')}} یا {{HTMLElement('ul')}}، با فرزندان تو در توی {{HTMLElement('li')}} استفاده کنید.
 
-When used in the context of a [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role), the only children allowed are {{HTMLElement('option')}} elements. In this case, it is recommended to use {{HTMLElement('select')}}, {{HTMLElement('option')}} and {{HTMLElement('optgroup')}} instead.
+هنگامی که در زمینه [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role) استفاده می‌شود، تنها فرزندان مجاز عناصر {{HTMLElement('option')}} هستند. در این مورد، توصیه می‌شود به جای آن از {{HTMLElement('select')}}، {{HTMLElement('option')}} و {{HTMLElement('optgroup')}} استفاده کنید.
 
-`Group` elements may be nested.
+عناصر `گروه` ممکن است تودرتو باشند.
 
-The `group` role should not be used for major perceivable sections of a page. If a section is significant enough that it should be included in the page's table of contents, use the `region` role or a standard [landmark role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles).
+نقش `group` نباید برای بخش‌های اصلی و قابل درک صفحه استفاده شود. اگر بخشی به اندازه‌ای قابل توجه است که باید در فهرست مطالب صفحه گنجانده شود، از نقش `region` یا یک [نقش نشانه (landmark)](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) استاندارد استفاده کنید.
 
-When the role is added to an element, the browser will send out an accessible group event to assistive technology products, which can then notify the user about it.
+هنگامی که نقش به یک عنصر اضافه می‌شود، مرورگر یک رویداد گروه قابل دسترس به محصولات فناوری کمکی ارسال می‌کند که می‌توانند سپس کاربر را در مورد آن مطلع کنند.
 
-## Examples
+## مثال‌ها
 
-The HTML code example below uses the `group` role with a `tree` view:
+مثال کد HTML زیر از نقش `group` با نمای `tree` استفاده می‌کند:
 
 ```html
 <div id="tree1" role="tree" tabindex="-1">
@@ -79,7 +79,7 @@ The HTML code example below uses the `group` role with a `tree` view:
 </div>
 ```
 
-The following example uses the `group` role with a drop-down [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role) containing [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role)s:
+مثال زیر از نقش `group` با یک [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role) کشویی حاوی [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role)ها استفاده می‌کند:
 
 ```html
 <div role="menu">
@@ -99,15 +99,15 @@ The following example uses the `group` role with a drop-down [`menu`](/en-US/doc
 </div>
 ```
 
-This menu could be constructed using {{HTMLElement('select')}} and {{HTMLElement('option')}} elements. In this case, the `group` role would be most similar to the {{HTMLElement('optgroup')}} element.
+این منو را می‌توان با استفاده از عناصر {{HTMLElement('select')}} و {{HTMLElement('option')}} ساخت. در این حالت، نقش `group` بیشترین شباهت را به عنصر {{HTMLElement('optgroup')}} خواهد داشت.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement('fieldset')}} Element
+- عنصر {{HTMLElement('fieldset')}}
 - [ARIA: `section` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/section_role)
 - [ARIA: `row` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
 - [ARIA: `select` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/select_role)
