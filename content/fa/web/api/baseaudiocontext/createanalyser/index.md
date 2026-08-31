@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createAnalyser() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createAnalyser"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,18 +14,13 @@ browser-compat: api.BaseAudioContext.createAnalyser
 
 {{APIRef("Web Audio API")}}
 
-The `createAnalyser()` method of the
-{{domxref("BaseAudioContext")}} interface creates an {{domxref("AnalyserNode")}}, which
-can be used to expose audio time and frequency data and create data visualizations.
+متد `createAnalyser()` از رابط {{domxref("BaseAudioContext")}} یک {{domxref("AnalyserNode")}} ایجاد می‌کند که می‌توان از آن برای نمایش داده‌های زمانی و فرکانسی صدا و ایجاد تجسم‌های داده استفاده کرد.
 
 > [!NOTE]
-> The {{domxref("AnalyserNode.AnalyserNode", "AnalyserNode()")}} constructor is the
-> recommended way to create an {{domxref("AnalyserNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> سازنده {{domxref("AnalyserNode.AnalyserNode", "AnalyserNode()")}} روش توصیه‌شده برای ایجاد یک {{domxref("AnalyserNode")}} است؛ به [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
 > [!NOTE]
-> For more on using this node, see the
-> {{domxref("AnalyserNode")}} page.
+> برای اطلاعات بیشتر در مورد استفاده از این گره، به صفحه {{domxref("AnalyserNode")}} مراجعه کنید.
 
 ## Syntax
 
@@ -33,21 +28,17 @@ can be used to expose audio time and frequency data and create data visualizatio
 createAnalyser()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("AnalyserNode")}}.
+یک {{domxref("AnalyserNode")}}.
 
-## Examples
+## مثال‌ها
 
-The following example shows basic usage of an AudioContext to create an Analyser node,
-then use requestAnimationFrame() to collect time domain data repeatedly and draw an
-"oscilloscope style" output of the current audio input. For more complete applied
-examples/information, check out our [Voice-change-O-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) demo (see
-[app.js lines 108-193](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js#L108-L193) for relevant code).
+مثال زیر کاربرد پایه‌ای یک AudioContext برای ایجاد یک گره Analyser و سپس استفاده از `requestAnimationFrame()` برای جمع‌آوری مکرر داده‌های حوزه زمانی و رسم خروجی "نوسان‌نما" از ورودی صوتی فعلی را نشان می‌دهد. برای مثال‌ها/اطلاعات کاربردی کامل‌تر، به دموی [Voice-change-O-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) ما مراجعه کنید (کدهای مربوطه را در [app.js خطوط 108-193](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js#L108-L193) ببینید).
 
 ```js
 const audioCtx = new AudioContext();
@@ -60,7 +51,7 @@ const bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
 analyser.getByteTimeDomainData(dataArray);
 
-// draw an oscilloscope of the current audio source
+// رسم یک نوسان‌نما از منبع صوتی فعلی
 
 function draw() {
   drawVisual = requestAnimationFrame(draw);
@@ -98,14 +89,14 @@ function draw() {
 draw();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
