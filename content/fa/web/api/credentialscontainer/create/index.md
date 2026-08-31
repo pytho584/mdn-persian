@@ -1,11 +1,5 @@
 ---
 title: "CredentialsContainer: create() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/create"
-status: "needs-translation"
----
-
----
-title: "CredentialsContainer: create() method"
 short-title: create()
 slug: Web/API/CredentialsContainer/create
 page-type: web-api-instance-method
@@ -14,15 +8,15 @@ browser-compat: api.CredentialsContainer.create
 
 {{APIRef("Credential Management API")}}{{SecureContext_Header}}
 
-The **`create()`** method of the {{domxref("CredentialsContainer")}} interface creates a new {{glossary("credential")}}, which can then be stored and later retrieved using the {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} method. The retrieved credential can then be used by a website to authenticate a user.
+متد **`create()`** از رابط {{domxref("CredentialsContainer")}} یک {{glossary("credential", "اعتبارنامه")}} جدید ایجاد می‌کند که می‌تواند ذخیره شود و بعداً با استفاده از متد {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} بازیابی شود. سپس اعتبارنامه بازیابی‌شده می‌تواند توسط یک وب‌سایت برای احراز هویت کاربر استفاده شود.
 
-This method supports three different types of credential:
+این متد از سه نوع اعتبارنامه مختلف پشتیبانی می‌کند:
 
-- A password credential, which enables a user to sign in using a password.
-- A federated credential, which enables a user to sign in using a federated identity provider.
-- A public key credential, which enables a user to sign in with an authenticator such as a biometric reader built into the platform or a removable hardware token.
+- یک اعتبارنامه رمز عبور، که به کاربر امکان می‌دهد با استفاده از رمز عبور وارد شود.
+- یک اعتبارنامه فدرال، که به کاربر امکان می‌دهد با استفاده از یک ارائه‌دهنده هویت فدرال وارد شود.
+- یک اعتبارنامه کلید عمومی، که به کاربر امکان می‌دهد با یک احرازکننده مانند یک دستگاه خواننده بیومتریک تعبیه‌شده در سکو یا یک توکن سخت‌افزاری قابل جابه‌جایی وارد شود.
 
-Note that the [Federated Credential Management API (FedCM)](/en-US/docs/Web/API/FedCM_API) supersedes the federated credential type.
+توجه داشته باشید که [Federated Credential Management API (FedCM)](/en-US/docs/Web/API/FedCM_API) جایگزین نوع اعتبارنامه فدرال شده است.
 
 ## Syntax
 
@@ -34,49 +28,49 @@ create(options)
 ### Parameters
 
 - `options` {{optional_inline}}
-  - : An object that contains options for the requested new `Credentials` object. It can contain the following properties:
+  - : یک شیء که شامل گزینه‌هایی برای شیء `Credentials` درخواستی جدید است. می‌تواند شامل ویژگی‌های زیر باشد:
     - `signal` {{optional_inline}}
-      - : An {{domxref("AbortSignal")}} object instance that allows an ongoing `create()` operation to be aborted. An aborted operation may complete normally (generally if the abort was received after the operation finished) or reject with an `AbortError` {{domxref("DOMException")}}.
+      - : یک نمونه از شیء {{domxref("AbortSignal")}} که امکان لغو یک عملیات `create()` در حال انجام را فراهم می‌کند. یک عملیات لغو شده ممکن است به طور عادی کامل شود (به طور کلی اگر لغو پس از اتمام عملیات دریافت شده باشد) یا با یک `AbortError` {{domxref("DOMException")}} رد شود.
 
-    Each of the following properties represents a _credential type_ being created. One and only one of them must be specified:
+    هر یک از ویژگی‌های زیر نشان‌دهنده یک _نوع اعتبارنامه_ در حال ایجاد است. فقط یکی از آنها باید مشخص شود:
     - `federated` {{optional_inline}}
-      - : A {{domxref("FederatedCredentialInit")}} object containing requirements for creating a federated identify provider credential.
+      - : یک شیء {{domxref("FederatedCredentialInit")}} که شامل الزامات ایجاد یک اعتبارنامه ارائه‌دهنده هویت فدرال است.
     - `password` {{optional_inline}}
-      - : A {{domxref("PasswordCredentialInit")}} object containing requirements for creating a password credential.
+      - : یک شیء {{domxref("PasswordCredentialInit")}} که شامل الزامات ایجاد یک اعتبارنامه رمز عبور است.
     - `publicKey` {{optional_inline}}
-      - : A {{domxref("PublicKeyCredentialCreationOptions")}} object containing requirements for creating a public key credential. Causes the `create()` call to request that the user agent creates new credentials via an authenticator — either for registering a new account or for associating a new asymmetric key pair with an existing account.
+      - : یک شیء {{domxref("PublicKeyCredentialCreationOptions")}} که شامل الزامات ایجاد یک اعتبارنامه کلید عمومی است. باعث می‌شود فراخوانی `create()` از عامل کاربر بخواهد که اعتبارنامه جدیدی را از طریق یک احرازکننده ایجاد کند - یا برای ثبت یک حساب جدید یا برای مرتبط کردن یک جفت کلید نامتقارن جدید با یک حساب موجود.
 
         > [!NOTE]
-        > Usage of `create()` with the `publicKey` parameter may be blocked by a {{HTTPHeader("Permissions-Policy/publickey-credentials-create","publickey-credentials-create")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) set on your server.
+        > استفاده از `create()` با پارامتر `publicKey` ممکن است توسط یک {{HTTPHeader("Permissions-Policy/publickey-credentials-create","publickey-credentials-create")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) تنظیم شده در سرور شما مسدود شود.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves with one of the following:
+یک {{jsxref("Promise")}} که با یکی از موارد زیر حل می‌شود:
 
-- A {{domxref("FederatedCredential")}}, if the credential type was `federated`.
-- A {{domxref("PasswordCredential")}}, if the credential type was `password`.
-- A {{domxref("PublicKeyCredential")}}, if the credential type was `publicKey`.
+- یک {{domxref("FederatedCredential")}}، اگر نوع اعتبارنامه `federated` بود.
+- یک {{domxref("PasswordCredential")}}، اگر نوع اعتبارنامه `password` بود.
+- یک {{domxref("PublicKeyCredential")}}، اگر نوع اعتبارنامه `publicKey` بود.
 
-If no credential object can be created, the promise resolves with `null`.
+اگر هیچ شیء اعتبارنامه‌ای نتواند ایجاد شود، پرامیس با `null` حل می‌شود.
 
 ### Exceptions
 
 - {{jsxref("TypeError")}}
-  - : In the case of a {{domxref("PasswordCredential")}} creation request, `id`, `origin`, or `password` were not provided (empty).
+  - : در مورد درخواست ایجاد {{domxref("PasswordCredential")}}، `id`، `origin` یا `password` ارائه نشده‌اند (خالی هستند).
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Possible causes include:
-    - Usage was blocked by a {{HTTPHeader("Permissions-Policy/publickey-credentials-create","publickey-credentials-create")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
-    - The function is called cross-origin but the iframe's [`allow`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allow) attribute does not set an appropriate {{HTTPHeader("Permissions-Policy/publickey-credentials-create","publickey-credentials-create")}} policy.
-    - The function is called cross-origin and the `<iframe>` does not have {{glossary("transient activation")}}.
-    - The function tried to create a [discoverable credential](/en-US/docs/Web/API/Web_Authentication_API#discoverable_and_non-discoverable_credentials) ([`residentKey`](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#residentkey) is set to `required` in the `create()` call's {{domxref("PublicKeyCredentialCreationOptions")}} option), but the user does not have an authenticator that supports discoverable credentials.
+  - : دلایل احتمالی عبارتند از:
+    - استفاده توسط یک {{HTTPHeader("Permissions-Policy/publickey-credentials-create","publickey-credentials-create")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مسدود شده است.
+    - تابع در یک مبدأ متقابل فراخوانی می‌شود اما ویژگی [`allow`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allow) iframe خط مشی {{HTTPHeader("Permissions-Policy/publickey-credentials-create","publickey-credentials-create")}} مناسب را تنظیم نکرده است.
+    - تابع در یک مبدأ متقابل فراخوانی می‌شود و `<iframe>` فاقد {{glossary("transient activation", "فعالیت گذرا")}} است.
+    - تابع سعی در ایجاد یک [اعتبارنامه قابل کشف](/en-US/docs/Web/API/Web_Authentication_API#discoverable_and_non-discoverable_credentials) دارد ([`residentKey`](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#residentkey) در گزینه {{domxref("PublicKeyCredentialCreationOptions")}} فراخوانی `create()` روی `required` تنظیم شده است)، اما کاربر یک احرازکننده ندارد که از اعتبارنامه‌های قابل کشف پشتیبانی کند.
 - `AbortError` {{domxref("DOMException")}}
-  - : The operation was aborted.
+  - : عملیات لغو شد.
 
 ## Examples
 
 ### Creating a password credential
 
-This example creates a password credential from a {{domxref("PasswordCredentialInit")}} object.
+این مثال یک اعتبارنامه رمز عبور از یک شیء {{domxref("PasswordCredentialInit")}} ایجاد می‌کند.
 
 ```js
 const credInit = {
@@ -103,7 +97,7 @@ makeCredential.addEventListener("click", async () => {
 
 ### Creating a federated credential
 
-This example creates a federated credential from a {{domxref("FederatedCredentialInit")}} object.
+این مثال یک اعتبارنامه فدرال از یک شیء {{domxref("FederatedCredentialInit")}} ایجاد می‌کند.
 
 ```js
 const credInit = {
@@ -127,7 +121,7 @@ makeCredential.addEventListener("click", async () => {
 
 ### Creating a public key credential
 
-This example creates a public key credential from a {{domxref("PublicKeyCredentialCreationOptions")}} object.
+این مثال یک اعتبارنامه کلید عمومی از یک شیء {{domxref("PublicKeyCredentialCreationOptions")}} ایجاد می‌کند.
 
 ```js
 const publicKey = {
@@ -144,7 +138,7 @@ const publicKey = {
 const publicKeyCredential = await navigator.credentials.create({ publicKey });
 ```
 
-The `create()` call, if successful, returns a promise that resolves with a {{domxref("PublicKeyCredential")}} object instance, representing a public key credential that can later be used to authenticate a user via a WebAuthn {{domxref("CredentialsContainer.get()", "get()")}} call. Its {{domxref("PublicKeyCredential.response")}} property contains an {{domxref("AuthenticatorAttestationResponse")}} object providing access to several useful pieces of information including the authenticator data, public key, transport mechanisms, and more.
+فراخوانی `create()`، در صورت موفقیت، یک پرامیس برمی‌گرداند که با یک نمونه از شیء {{domxref("PublicKeyCredential")}} حل می‌شود که نمایانگر یک اعتبارنامه کلید عمومی است که می‌تواند بعداً برای احراز هویت کاربر از طریق یک فراخوانی WebAuthn {{domxref("CredentialsContainer.get()", "get()")}} استفاده شود. ویژگی {{domxref("PublicKeyCredential.response")}} آن شامل یک شیء {{domxref("AuthenticatorAttestationResponse")}} است که دسترسی به چندین قطعه اطلاعات مفید از جمله داده‌های احرازکننده، کلید عمومی، مکانیسم‌های انتقال و موارد دیگر را فراهم می‌کند.
 
 ```js
 navigator.credentials.create({ publicKey }).then((publicKeyCredential) => {
@@ -170,10 +164,10 @@ navigator.credentials.create({ publicKey }).then((publicKeyCredential) => {
 });
 ```
 
-Some of this data will need to be stored on the server for future authentication operations against this credential — for example the public key, the algorithm used, and the permissible transports.
+برخی از این داده‌ها باید برای عملیات‌های احراز هویت آینده علیه این اعتبارنامه در سرور ذخیره شوند - به عنوان مثال کلید عمومی، الگوریتم استفاده شده و مجوزهای حمل و نقل.
 
 > [!NOTE]
-> See [Creating a key pair and registering a user](/en-US/docs/Web/API/Web_Authentication_API#creating_a_key_pair_and_registering_a_user) for more information about how the overall flow works.
+> برای اطلاعات بیشتر در مورد نحوه عملکرد جریان کلی، به [Creating a key pair and registering a user](/en-US/docs/Web/API/Web_Authentication_API#creating_a_key_pair_and_registering_a_user) مراجعه کنید.
 
 ## Specifications
 
