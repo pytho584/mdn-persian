@@ -1,17 +1,9 @@
 ---
 title: "ARIA: none role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/none_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
----
-title: "ARIA: none role"
-short-title: none
-slug: Web/Accessibility/ARIA/Reference/Roles/none_role
-page-type: aria-role
-sidebar: accessibilitysidebar
----
+نقش `none` مترادف با نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) است؛ هر دو معنای ضمنی ARIA یک عنصر را از قرار گرفتن در درخت دسترسی حذف می‌کنند.
 
-The `none` role is a synonym for the [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) role; they both remove an element's implicit ARIA semantics from being exposed to the accessibility tree.
-
-See the [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) role for more information.
+برای اطلاعات بیشتر، نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را ببینید.
