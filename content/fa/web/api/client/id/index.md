@@ -1,7 +1,5 @@
 ---
 title: "Client: id property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Client/id"
-status: "needs-translation"
 ---
 
 ---
@@ -14,16 +12,16 @@ browser-compat: api.Client.id
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`id`** read-only property of the {{domxref("Client")}} interface returns the universally unique identifier of the {{domxref("Client")}} object.
+ویژگی فقط‌خواندنی **`id`** در رابط {{domxref("Client")}}، شناسهٔ یکتای سراسری (UUID) شیء {{domxref("Client")}} را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string uniquely identifying the object.
+رشته‌ای که به‌صورت یکتا شیء را شناسایی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
