@@ -1,7 +1,7 @@
 ---
 title: "AudioEncoder"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,53 +13,53 @@ browser-compat: api.AudioEncoder
 
 {{APIRef("WebCodecs API")}}{{SecureContext_Header}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`AudioEncoder`** interface of the [WebCodecs API](/en-US/docs/Web/API/WebCodecs_API) encodes {{domxref("AudioData")}} objects.
+[WebCodecs API](/en-US/docs/Web/API/WebCodecs_API) 的 **`AudioEncoder`** 接口对 {{domxref("AudioData")}} 对象进行编码。
 
 {{InheritanceDiagram}}
 
-## Constructor
+## 构造函数
 
 - {{domxref("AudioEncoder.AudioEncoder", "AudioEncoder()")}}
-  - : Creates a new `AudioEncoder` object.
+  - : 创建一个新的 `AudioEncoder` 对象。
 
-## Instance properties
+## 实例属性
 
-_Inherits properties from its parent, {{DOMxRef("EventTarget")}}._
+_从父接口 {{DOMxRef("EventTarget")}} 继承属性。_
 
 - {{domxref("AudioEncoder.encodeQueueSize")}} {{ReadOnlyInline}}
-  - : An integer representing the number of encode queue requests.
+  - : 一个整数，表示编码队列请求的数量。
 - {{domxref("AudioEncoder.state")}} {{ReadOnlyInline}}
-  - : Represents the state of the underlying codec and whether it is configured for encoding.
+  - : 表示底层编解码器的状态，以及是否已配置为进行编码。
 
-### Events
+### 事件
 
 - {{domxref("AudioEncoder.dequeue_event", "dequeue")}}
-  - : Fires to signal a decrease in {{domxref("AudioEncoder.encodeQueueSize")}}.
+  - : 触发以表示 {{domxref("AudioEncoder.encodeQueueSize")}} 的减少。
 
-## Static methods
+## 静态方法
 
 - {{domxref("AudioEncoder.isConfigSupported_static", "AudioEncoder.isConfigSupported()")}}
-  - : Returns a promise indicating whether the provided `AudioEncoderConfig` is supported.
+  - : 返回一个 Promise，指示所提供的 `AudioEncoderConfig` 是否受支持。
 
-## Instance methods
+## 实例方法
 
-_Inherits methods from its parent, {{DOMxRef("EventTarget")}}._
+_从父接口 {{DOMxRef("EventTarget")}} 继承方法。_
 
 - {{domxref("AudioEncoder.configure()")}}
-  - : Enqueues a control message to configure the audio encoder for encoding chunks.
+  - : 将控制消息加入队列，以配置音频编码器用于编码块。
 - {{domxref("AudioEncoder.encode()")}}
-  - : Enqueues a control message to encode a given {{domxref("AudioData")}} objects.
+  - : 将控制消息加入队列，以对给定的 {{domxref("AudioData")}} 对象进行编码。
 - {{domxref("AudioEncoder.flush()")}}
-  - : Returns a promise that resolves once all pending messages in the queue have been completed.
+  - : 返回一个 Promise，一旦队列中的所有待处理消息完成，该 Promise 就会解决。
 - {{domxref("AudioEncoder.reset()")}}
-  - : Resets all states including configuration, control messages in the control message queue, and all pending callbacks.
+  - : 重置所有状态，包括配置、控制消息队列中的控制消息以及所有待处理的回调。
 - {{domxref("AudioEncoder.close()")}}
-  - : Ends all pending work and releases system resources.
+  - : 结束所有待处理的工作并释放系统资源。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
