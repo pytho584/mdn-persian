@@ -1,7 +1,7 @@
 ---
 title: "Finale"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Finale"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,33 +12,29 @@ page-type: guide
 
 {{DefaultAPISidebar("Canvas API")}} {{PreviousNext("Web/API/Canvas_API/Tutorial/Optimizing_canvas")}}
 
-Congratulations! You finished the [Canvas tutorial](/en-US/docs/Web/API/Canvas_API/Tutorial)! This knowledge will help you to make great 2D graphics on the web.
+تبریک! شما [آموزش Canvas](/en-US/docs/Web/API/Canvas_API_Tutorial) را به پایان رساندید! این دانش به شما کمک می‌کند تا گرافیک‌های دوبعدی عالی روی وب بسازید.
 
-## More examples and tutorials
+## مثال‌ها و آموزش‌های بیشتر
 
-There are a variety of demos and further explanations about canvas on these sites:
+- [نمونه‌های Canvas در Codepen](https://codepen.io/search/pens?q=canvas)
+  - : محیط تمرین و ویرایشگر کد توسعه‌دهنده فرانت‌اند در مرورگر.
+- [توسعه بازی](/en-US/docs/Games)
+  - : بازی‌سازی یکی از محبوب‌ترین فعالیت‌های رایانه‌ای است. فناوری‌های جدید دائماً در حال ظهور هستند تا امکان توسعه بازی‌های بهتر و قدرتمندتری را فراهم کنند که در هر مرورگر وب استاندارد اجرا شوند.
 
-- [Canvas Codepens](https://codepen.io/search/pens?q=canvas)
-  - : Front End Developer Playground & Code Editor in the Browser.
-- [Game development](/en-US/docs/Games)
-  - : Gaming is one of the most popular computer activities. New technologies are constantly arriving to make it possible to develop better and more powerful games that can be run in any standards-compliant web browser.
-
-## Other Web APIs
-
-These APIs might be useful when working further with canvas and graphics:
+## سایر APIهای وب
 
 - [WebGL](/en-US/docs/Web/API/WebGL_API)
-  - : Advanced API for rendering complex graphics, including 3D.
+  - : API پیشرفته برای رندر گرافیک‌های پیچیده، از جمله سه‌بعدی.
 - [SVG](/en-US/docs/Web/SVG)
-  - : Scalable Vector Graphics let you describe images as sets of vectors (lines) and shapes in order to allow them to scale smoothly regardless of the size at which they're drawn.
+  - : گرافیک برداری مقیاس‌پذیر به شما امکان می‌دهد تصاویر را به صورت مجموعه‌ای از بردارها (خطوط) و اشکال توصیف کنید تا بدون در نظر گرفتن اندازه‌ای که در آن رسم می‌شوند، به آرامی مقیاس‌پذیر شوند.
 - [Web Audio](/en-US/docs/Web/API/Web_Audio_API)
-  - : The Web Audio API provides a powerful and versatile system for controlling audio on the Web, allowing developers to choose audio sources, add effects to audio, create audio visualizations, apply spatial effects (such as panning) and much more.
+  - : API Web Audio یک سیستم قدرتمند و همه‌کاره برای کنترل صدا در وب فراهم می‌کند که به توسعه‌دهندگان امکان می‌دهد منابع صوتی را انتخاب کنند، افکت‌ها به صدا اضافه کنند، تجسم‌های صوتی ایجاد کنند، افکت‌های فضایی (مانند پنینگ) اعمال کنند و موارد بسیار دیگر.
 
-## Questions
+## سوالات
 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/canvas)
-  - : Questions tagged with "canvas".
-- [Comments about this tutorial – the MDN documentation community](/en-US/docs/MDN)
-  - : If you have any comments about this tutorial or want to thank us, feel free to reach out to us!
+  - : سوالات با برچسب «canvas».
+- [نظرات درباره این آموزش – انجمن مستندات MDN](/en-US/docs/MDN)
+  - : اگر نظری در مورد این آموزش دارید یا می‌خواهید از ما تشکر کنید، با ما تماس بگیرید!
 
 {{PreviousNext("Web/API/Canvas_API/Tutorial/Optimizing_canvas")}}
