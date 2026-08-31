@@ -1,7 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: getTransform() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getTransform"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,23 @@ browser-compat: api.CanvasRenderingContext2D.getTransform
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.getTransform()`** method of the Canvas 2D API retrieves the current transformation matrix being applied to the context.
+متد **`CanvasRenderingContext2D.getTransform()`** از Canvas 2D API، ماتریس تبدیل فعلیِ اعمال‌شده بر بافت (context) را بازیابی می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getTransform()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("DOMMatrix")}} object.
+یک شیء {{domxref("DOMMatrix")}}.
 
-The transformation matrix is described by:
+ماتریس تبدیل با عبارت زیر توصیف می‌شود:
 
 <!-- prettier-ignore-start -->
 <math display="block">
@@ -39,20 +37,13 @@ The transformation matrix is described by:
 <!-- prettier-ignore-end -->
 
 > [!NOTE]
-> The returned object is not live, so updating it will not
-> affect the current transformation matrix, and updating the current transformation
-> matrix will not affect an already returned `DOMMatrix`.
+> شیء بازگردانده‌شده زنده (live) نیست؛ بنابراین به‌روزرسانی آن تأثیری بر ماتریس تبدیل فعلی نخواهد داشت و به‌روزرسانی ماتریس تبدیل فعلی نیز تأثیری بر `DOMMatrix` که قبلاً بازگردانده شده، نخواهد داشت.
 
-## Examples
+## مثال‌ها
 
-In the following example, we have two {{htmlelement("canvas")}} elements. We apply a
-transform to the first one's context using
-{{domxref("CanvasRenderingContext2D.setTransform()")}} and draw a square on it, then
-retrieve the matrix from it using `getTransform()`.
+در مثال زیر، دو عنصر {{htmlelement("canvas")}} داریم. با استفاده از {{domxref("CanvasRenderingContext2D.setTransform()")}} یک تبدیل روی بافت عنصر اول اعمال و یک مربع روی آن رسم می‌کنیم؛ سپس ماتریس را با `getTransform()` از آن بازیابی می‌کنیم.
 
-We then apply the retrieved matrix directly to the second canvas context by passing the
-`DOMMatrix` object directly to `setTransform()`, and draw a circle
-on it.
+سپس ماتریس بازیابی‌شده را با ارسال مستقیم شیء `DOMMatrix` به `setTransform()` روی بافت بوم دوم اعمال و یک دایره روی آن رسم می‌کنیم.
 
 ### HTML
 
@@ -87,19 +78,19 @@ ctx2.arc(50, 50, 50, 0, 2 * Math.PI);
 ctx2.fill();
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', "100%", 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کنندهٔ این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.transform()")}}
