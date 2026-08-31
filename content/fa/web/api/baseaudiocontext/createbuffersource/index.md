@@ -1,28 +1,16 @@
 ---
 title: "BaseAudioContext: createBufferSource() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createBufferSource"
-status: "needs-translation"
----
-
----
-title: "BaseAudioContext: createBufferSource() method"
-short-title: createBufferSource()
-slug: Web/API/BaseAudioContext/createBufferSource
-page-type: web-api-instance-method
-browser-compat: api.BaseAudioContext.createBufferSource
+translated_by: "n8n + AI"
 ---
 
 {{ APIRef("Web Audio API") }}
 
-The `createBufferSource()` method of the {{ domxref("BaseAudioContext") }}
-Interface is used to create a new {{ domxref("AudioBufferSourceNode") }}, which can be
-used to play audio data contained within an {{ domxref("AudioBuffer") }} object.
-{{domxref("AudioBuffer")}}s are created using {{domxref("BaseAudioContext.createBuffer")}} or returned by {{domxref("BaseAudioContext.decodeAudioData")}} when it successfully decodes an audio track.
+متد `createBufferSource()` از رابط {{ domxref("BaseAudioContext") }} برای ایجاد یک {{ domxref("AudioBufferSourceNode") }} جدید استفاده می‌شود که می‌تواند برای پخش داده‌های صوتی موجود در یک شیء {{ domxref("AudioBuffer") }} به کار رود. اشیاء {{domxref("AudioBuffer")}} با استفاده از {{domxref("BaseAudioContext.createBuffer")}} ایجاد می‌شوند یا توسط {{domxref("BaseAudioContext.decodeAudioData")}} زمانی که یک آهنگ صوتی را با موفقیت رمزگشایی کند، بازگردانده می‌شوند.
 
 > [!NOTE]
-> The {{domxref("AudioBufferSourceNode.AudioBufferSourceNode", "AudioBufferSourceNode()")}}
-> constructor is the recommended way to create an {{domxref("AudioBufferSourceNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> سازنده {{domxref("AudioBufferSourceNode.AudioBufferSourceNode", "AudioBufferSourceNode()")}} روش توصیه‌شده برای ایجاد یک {{domxref("AudioBufferSourceNode")}} است؛ برای اطلاعات بیشتر به
+> [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
 ## Syntax
 
@@ -30,23 +18,21 @@ used to play audio data contained within an {{ domxref("AudioBuffer") }} object.
 createBufferSource()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("AudioBufferSourceNode")}}.
+یک {{domxref("AudioBufferSourceNode")}}.
 
-## Examples
+## مثال‌ها
 
-In this example, we create a two second buffer, fill it with white noise, and then play
-it via an {{ domxref("AudioBufferSourceNode") }}. The comments should clearly explain
-what is going on.
+در این مثال، یک بافر دو ثانیه‌ای ایجاد می‌کنیم، آن را با نویز سفید پر می‌کنیم و سپس آن را از طریق یک {{ domxref("AudioBufferSourceNode") }} پخش می‌کنیم. توضیحات درون کد به روشنی روند کار را نشان می‌دهند.
 
 > [!NOTE]
-> You can also [run the code live](https://mdn.github.io/webaudio-examples/audio-buffer/),
-> or [view the source](https://github.com/mdn/webaudio-examples/blob/main/audio-buffer/index.html).
+> همچنین می‌توانید [کد را به صورت زنده اجرا کنید](https://mdn.github.io/webaudio-examples/audio-buffer/)،
+> یا [متن منبع را مشاهده کنید](https://github.com/mdn/webaudio-examples/blob/main/audio-buffer/index.html).
 
 ```js
 const audioCtx = new AudioContext();
@@ -94,14 +80,14 @@ button.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
