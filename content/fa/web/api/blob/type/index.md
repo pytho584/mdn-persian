@@ -1,7 +1,7 @@
 ---
 title: "Blob: type property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Blob/type"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,23 +14,21 @@ browser-compat: api.Blob.type
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`type`** read-only property of the {{domxref("Blob")}} interface returns the {{Glossary("MIME type")}} of the file.
+ویژگی فقط‌خواندنی **`type`** از رابط {{domxref("Blob")}}، نوع {{Glossary("MIME type")}} فایل را برمی‌گرداند.
 
 > [!NOTE]
-> Based on the current implementation, browsers won't actually read the bytestream of a file to determine its media type.
-> It is assumed based on the file extension; a PNG image file renamed to .txt would give "_text/plain_" and not "_image/png_". Moreover, `blob.type` is generally reliable only for common file types like images, HTML documents, audio and video.
-> Uncommon file extensions would return an empty string.
-> Client configuration (for instance, the Windows Registry) may result in unexpected values even for common types. **Developers are advised not to rely on this property as a sole validation scheme.**
+> بر اساس پیاده‌سازی فعلی، مرورگرها در واقع جریان بایت فایل را برای تعیین نوع رسانه آن نمی‌خوانند.
+> این مقدار بر اساس پسوند فایل فرض می‌شود؛ یک فایل تصویری PNG که به `.txt` تغییر نام داده شود، مقدار `"_text/plain_"` را برمی‌گرداند، نه `"_image/png_"`. علاوه بر این، `blob.type` معمولاً فقط برای انواع فایل‌های رایج مانند تصاویر، اسناد HTML، صدا و ویدئو قابل اعتماد است.
+> پسوندهای فایل غیرمعمول یک رشته خالی برمی‌گردانند.
+> پیکربندی کلاینت (برای مثال، رجیستری ویندوز) ممکن است حتی برای انواع رایج مقادیر غیرمنتظره‌ای ایجاد کند. **به توسعه‌دهندگان توصیه می‌شود که به این ویژگی به عنوان تنها طرح اعتبارسنجی تکیه نکنند.**
 
-## Value
+## مقدار
 
-A string containing the file's MIME type, or an empty string if the
-type could not be determined.
+یک رشته شامل نوع MIME فایل، یا رشته‌ای خالی اگر نوع قابل تعیین نباشد.
 
-## Examples
+## مثال‌ها
 
-This example asks the user to select a number of files, then checks each file to make
-sure it's one of a given set of image file types.
+این مثال از کاربر می‌خواهد تعدادی فایل را انتخاب کند، سپس هر فایل را بررسی می‌کند تا مطمئن شود که یکی از مجموعه داده‌شده از انواع فایل‌های تصویری است.
 
 ### HTML
 
@@ -72,19 +70,19 @@ input.addEventListener("change", (event) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Blob")}}
 - [Using files from web applications](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
