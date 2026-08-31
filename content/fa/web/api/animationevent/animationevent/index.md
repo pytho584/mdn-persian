@@ -1,7 +1,7 @@
 ---
 title: "AnimationEvent: AnimationEvent() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/AnimationEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,49 +14,49 @@ browser-compat: api.AnimationEvent.AnimationEvent
 
 {{APIRef("Web Animations")}}
 
-The **`AnimationEvent()`** constructor returns a new {{domxref("AnimationEvent")}} object, representing an event in relation with an animation.
+سازندهی **`AnimationEvent()`** یک شیء جدید {{domxref("AnimationEvent")}} برمیگرداند که نمایانگر یک رویداد در ارتباط با یک انیمیشن است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new AnimationEvent(type)
 new AnimationEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the type of the `AnimationEvent`.
-    It is case-sensitive and browsers set it to `animationstart`, `animationend`, or `animationiteration`.
+  - : یک رشته حاوی نام نوع `AnimationEvent`.
+    این مقدار به حروف بزرگ و کوچک حساس است و مرورگرها آن را به `animationstart`، `animationend` یا `animationiteration` تنظیم میکنند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, has the following properties:
+  - : یک شیء که _علاوه بر ویژگیهای تعریفشده در {{domxref("Event/Event", "Event()")}}_، ویژگیهای زیر را دارد:
     - `animation` {{optional_inline}}
-      - : A {{domxref("CSSAnimation")}} containing the animation associated with the event.
-        It defaults to `null`.
+      - : یک {{domxref("CSSAnimation")}} شامل انیمیشن مرتبط با رویداد.
+        بهطور پیشفرض `null` است.
     - `animationName` {{optional_inline}}
-      - : A string containing the value of the {{cssxref("animation-name")}} CSS property associated with the transition. It defaults to `""`.
+      - : یک رشته حاوی مقدار ویژگی CSS {{cssxref("animation-name")}} مرتبط با انتقال. بهطور پیشفرض `""` است.
     - `elapsedTime` {{optional_inline}}
-      - : A `float` giving the amount of time the animation has been running, in seconds, when this event fired, excluding any time the animation was paused.
-        For an `animationstart` event, `elapsedTime` is `0.0` unless there was a negative value for {{cssxref("animation-delay")}},
-        in which case the event will be fired with `elapsedTime` containing `(-1 * delay)`. It defaults to `0.0`.
+      - : یک `float` که مقدار زمان انیمیشن را بر حسب ثانیه هنگام رخ دادن این رویداد میدهد، بهجز مدتی که انیمیشن مکث شده است.
+        برای رویداد `animationstart`، مقدار `elapsedTime` برابر با `0.0` است مگر اینکه مقدار منفی برای {{cssxref("animation-delay")}} وجود داشته باشد،
+        در این صورت رویداد با `elapsedTime` حاوی `(-1 * delay)` فعال میشود. بهطور پیشفرض `0.0` است.
     - `pseudoElement` {{optional_inline}}
-      - : A string, starting with `"::"`, containing the name of the [pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) the animation runs on. If the animation doesn't run on a pseudo-element but on the element itself, specify an empty string: `""`. It defaults to `""`.
+      - : یک رشته که با `"::"` شروع میشود و حاوی نام [pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) مورد نظر برای اجرای انیمیشن است. اگر انیمیشن روی یک شبهعنصر اجرا نمیشود بلکه روی خود عنصر اجرا میشود، یک رشته خالی: `""` مشخص کنید. بهطور پیشفرض `""` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using CSS animations](/en-US/docs/Web/CSS/Guides/Animations/Using)
-- Animation-related CSS properties and at-rules: {{cssxref("animation")}},
+- ویژگیها و قواعد CSS مرتبط با انیمیشن: {{cssxref("animation")}},
   {{cssxref("animation-delay")}}, {{cssxref("animation-direction")}},
   {{cssxref("animation-duration")}}, {{cssxref("animation-fill-mode")}},
   {{cssxref("animation-iteration-count")}}, {{cssxref("animation-name")}},
   {{cssxref("animation-play-state")}}, {{cssxref("animation-timing-function")}},
   {{cssxref("@keyframes")}}
-- The {{domxref("AnimationEvent")}} interface it belongs to.
+- رابط {{domxref("AnimationEvent")}} که به آن تعلق دارد.
