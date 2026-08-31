@@ -1,7 +1,7 @@
 ---
 title: "BroadcastChannel: close() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/close"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,27 +14,23 @@ browser-compat: api.BroadcastChannel.close
 
 {{APIRef("BroadCastChannel API")}} {{AvailableInWorkers}}
 
-The **`close()`** method of the {{domxref("BroadcastChannel")}} interface terminates the connection to
-the underlying channel, allowing the object to be garbage collected.
-This is a necessary step to perform
-as there is no other way for a browser to know
-that this channel is not needed anymore.
+متد **`close()`** از رابط {{domxref("BroadcastChannel")}} اتصال به کانال زیرین را قطع می‌کند و به شیء اجازه می‌دهد که جمع‌آوری زباله شود. این یک گام ضروری است، زیرا راه دیگری برای مرورگر وجود ندارد که بداند این کانال دیگر مورد نیاز نیست.
 
-## Syntax
+## نحو
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 // Connect to a channel
@@ -46,14 +42,14 @@ const bc = new BroadcastChannel("test_channel");
 bc.close();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("BroadcastChannel")}}, the interface it belongs to.
+- {{domxref("BroadcastChannel")}}، رابطی که این متد به آن تعلق دارد.
