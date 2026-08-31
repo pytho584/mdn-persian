@@ -1,7 +1,5 @@
 ---
 title: "CaptureController: zoomlevelchange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/zoomlevelchange_event"
-status: "needs-translation"
 ---
 
 ---
@@ -16,17 +14,17 @@ browser-compat: api.CaptureController.zoomlevelchange_event
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}
 
-The **`zoomlevelchange`** event of the {{domxref("CaptureController")}} interface is fired when the captured display surface's zoom level changes.
+هنگامی که سطح بزرگنمایی سطح نمایش ضبط‌شده تغییر کند، رویداد **`zoomlevelchange`** از رابط {{domxref("CaptureController")}} فعال می‌شود.
 
-Specifically, this occurs when:
+این رویداد به‌طور خاص در موارد زیر رخ می‌دهد:
 
-- The {{domxref("CaptureController.increaseZoomLevel", "increaseZoomLevel()")}}, {{domxref("CaptureController.decreaseZoomLevel", "decreaseZoomLevel()")}}, or {{domxref("CaptureController.resetZoomLevel", "resetZoomLevel()")}} methods are called on a controller that is actively controlling a captured display surface.
-- The user changes the zoom level in the captured surface.
-- The user changes the captured display surface to another one that has a different zoom level.
+- متدهای {{domxref("CaptureController.increaseZoomLevel", "increaseZoomLevel()")}}، {{domxref("CaptureController.decreaseZoomLevel", "decreaseZoomLevel()")}}، یا {{domxref("CaptureController.resetZoomLevel", "resetZoomLevel()")}} روی کنترل‌کننده‌ای که به‌طور فعال در حال کنترل سطح نمایش ضبط‌شده است، فراخوانی شوند.
+- کاربر سطح بزرگنمایی را در سطح ضبط‌شده تغییر دهد.
+- کاربر سطح نمایش ضبط‌شده را به سطح دیگری با سطح بزرگنمایی متفاوت تغییر دهد.
 
-## Syntax
+## دستور زبان
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("zoomlevelchange", (event) => { })
@@ -34,15 +32,15 @@ addEventListener("zoomlevelchange", (event) => { })
 onzoomlevelchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Basic `zoomlevelchange` usage
+### استفاده پایه از `zoomlevelchange`
 
-When a captured display surface's zoom level changes, a `zoomlevelchange` event fires on the controller, which can be used to run an event handler such as the following. This writes the updated zoom level to an output element of some kind.
+هنگامی که سطح بزرگنمایی سطح نمایش ضبط‌شده تغییر می‌کند، یک رویداد `zoomlevelchange` روی کنترل‌کننده فعال می‌شود که می‌توان از آن برای اجرای یک کنترل‌کننده رویداد مانند نمونه زیر استفاده کرد. این کار، سطح بزرگنمایی به‌روز شده را در یک عنصر خروجی می‌نویسد.
 
 ```js
 // Create controller and start capture
@@ -59,17 +57,17 @@ controller.addEventListener(
 );
 ```
 
-See [Using the Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control) for a full working example.
+برای یک مثال کامل و قابل اجرا، به [Using the Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - {{domxref("MediaDevices.getDisplayMedia()")}}
