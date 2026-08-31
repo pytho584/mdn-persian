@@ -1,7 +1,7 @@
 ---
 title: "AuthenticatorAttestationResponse: getPublicKeyAlgorithm() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/getPublicKeyAlgorithm"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,32 +14,32 @@ browser-compat: api.AuthenticatorAttestationResponse.getPublicKeyAlgorithm
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`getPublicKeyAlgorithm()`** method of the {{domxref("AuthenticatorAttestationResponse")}} interface returns a number that is equal to a [COSE Algorithm Identifier](https://www.iana.org/assignments/cose/cose.xhtml#algorithms), representing the cryptographic algorithm used for the new credential.
+متد **`getPublicKeyAlgorithm()`** از رابط {{domxref("AuthenticatorAttestationResponse")}} عددی را برمی‌گرداند که برابر با [شناسه الگوریتم COSE](https://www.iana.org/assignments/cose/cose.xhtml#algorithms) است و الگوریتم رمزنگاری استفاده‌شده برای اعتبارنامه جدید را نشان می‌دهد.
 
-This is a convenience function created to allow easy access to the algorithm type. This information will need to be stored in order to verify future authentication operations (i.e., using {{domxref("CredentialsContainer.get()","navigator.credentials.get()")}}).
+این یک تابع کمکی است که برای دسترسی آسان به نوع الگوریتم ایجاد شده است. این اطلاعات باید ذخیره شود تا عملیات احراز هویت آینده (به عنوان مثال، با استفاده از {{domxref("CredentialsContainer.get()","navigator.credentials.get()")}}) تأیید شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getPublicKeyAlgorithm()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A number that is equal to a [COSE Algorithm Identifier](https://www.iana.org/assignments/cose/cose.xhtml#algorithms), representing the cryptographic algorithm used for the new credential.
+عددی که برابر با [شناسه الگوریتم COSE](https://www.iana.org/assignments/cose/cose.xhtml#algorithms) است و الگوریتم رمزنگاری استفاده‌شده برای اعتبارنامه جدید را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-See [Creating a public key credential](/en-US/docs/Web/API/CredentialsContainer/create#creating_a_public_key_credential) for a detailed example.
+برای یک مثال دقیق، [ایجاد یک اعتبارنامه کلید عمومی](/en-US/docs/Web/API/CredentialsContainer/create#creating_a_public_key_credential) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
