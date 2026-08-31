@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTServer: connected property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/connected"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,19 +16,16 @@ browser-compat: api.BluetoothRemoteGATTServer.connected
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTServer.connected`** read-only
-property returns a boolean value that returns true while this script execution
-environment is connected to `this.device`. It can be false while the user
-agent is physically connected.
+خاصیت فقط خواندنی **`BluetoothRemoteGATTServer.connected`** یک مقدار بولی برمی‌گرداند که تا زمانی که این محیط اجرای اسکریپت به `this.device` متصل است، `true` برمی‌گرداند. ممکن است در حالی که عامل کاربر (user agent) به صورت فیزیکی متصل است، `false` باشد.
 
-## Value
+## مقدار
 
-A `boolean`.
+یک `boolean`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
