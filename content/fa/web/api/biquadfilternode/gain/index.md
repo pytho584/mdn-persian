@@ -1,7 +1,7 @@
 ---
 title: "BiquadFilterNode: gain property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/gain"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,23 +14,23 @@ browser-compat: api.BiquadFilterNode.gain
 
 {{ APIRef("Web Audio API") }}
 
-The `gain` property of the {{ domxref("BiquadFilterNode") }} interface is an [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}} — a double representing the [gain](https://en.wikipedia.org/wiki/Gain) used in the current filtering algorithm.
+ویژگی `gain` در رابط {{ domxref("BiquadFilterNode") }} یک {{domxref("AudioParam")}} با [نرخ a](/en-US/docs/Web/API/AudioParam#a-rate) است — یک عدد double که نشان‌دهنده [بهره](https://en.wikipedia.org/wiki/Gain) (gain) استفاده‌شده در الگوریتم فیلتر فعلی است.
 
-When its value is positive, it represents a real gain; when negative, it represents an attenuation.
+وقتی مقدار آن مثبت باشد، بهره واقعی را نشان می‌دهد؛ وقتی منفی باشد، نشان‌دهنده تضعیف (attenuation) است.
 
-It is expressed in dB, has a default value of `0`, and can take a value in a nominal range of `-40` to `40`.
+این مقدار بر حسب dB بیان می‌شود، مقدار پیش‌فرض آن `0` است و می‌تواند مقداری در محدوده اسمی `40-` تا `40` بگیرد.
 
-## Value
+## مقدار
 
-An {{domxref("AudioParam")}}.
+یک {{domxref("AudioParam")}}.
 
 > [!NOTE]
-> Though the `AudioParam` returned is read-only, the value it represents is not.
+> اگرچه `AudioParam` بازگشتی فقط‌خواندنی است، مقداری که نشان می‌دهد فقط‌خواندنی نیست.
 
-## Examples
+## مثال‌ها
 
-The following example shows basic usage of an AudioContext to create a Biquad filter node.
-For more complete applied examples/information, check out our [Voice-change-O-matic](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) demo (see [app.js lines 108–193](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js#L108-L193) for relevant code).
+مثال زیر کاربرد پایه‌ای یک AudioContext برای ایجاد یک گره فیلتر Biquad را نشان می‌دهد.
+برای مثال‌ها/اطلاعات کاربردی کامل‌تر، دموی [Voice-change-O-matic](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) ما را ببینید (برای کد مرتبط، [خطوط ۱۰۸ تا ۱۹۳ فایل app.js](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js#L108-L193) را ببینید).
 
 ```js
 const audioCtx = new AudioContext();
@@ -59,14 +59,14 @@ biquadFilter.frequency.value = 1000;
 biquadFilter.gain.value = 25;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
