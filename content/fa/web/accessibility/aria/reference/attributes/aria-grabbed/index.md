@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-grabbed attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-grabbed"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,44 +15,44 @@ spec-urls: https://w3c.github.io/aria/#aria-grabbed
 sidebar: accessibilitysidebar
 ---
 
-The `aria-grabbed` state indicates an element's "grabbed" state in a drag-and-drop operation. {{deprecated_inline}}
+وضعیت `aria-grabbed` حالت «گرفته شده» یک عنصر را در عملیات کشیدن و رها کردن نشان می‌دهد. {{deprecated_inline}}
 
-## Description
+## توضیحات
 
-Text selections, images, and links can be dragged by default. Setting the global [`draggable="true"`](/en-US/docs/Web/HTML/Reference/Global_attributes/draggable) attribute, part of HTML5's [Drag and Drop API](/en-US/docs/Web/API/HTML_Drag_and_Drop_API), with a [`dragstart` event handler](/en-US/docs/Web/API/HTMLElement/dragstart_event), means any DOM node can be made draggable as well.
+انتخاب‌های متنی، تصاویر و پیوندها به‌طور پیش‌فرض قابل کشیدن هستند. تنظیم ویژگی سراسری [`draggable="true"`](/en-US/docs/Web/HTML/Reference/Global_attributes/draggable) که بخشی از [Drag and Drop API](/en-US/docs/Web/API/HTML_Drag_and_Drop_API) در HTML5 است، همراه با [مدیر رویداد `dragstart`](/en-US/docs/Web/API/HTMLElement/dragstart_event)، به این معنی است که هر گره DOM نیز می‌تواند قابل کشیدن شود.
 
-The `aria-grabbed` attribute was used to indicate if an element is in a "grabbed" state in a drag-and-drop operation with `aria-grabbed="true"` or if that the element is grabbable, but not currently grabbed with `aria-grabbed="false"`.
+ویژگی `aria-grabbed` برای نشان دادن اینکه آیا یک عنصر در عملیات کشیدن و رها کردن در حالت «گرفته شده» قرار دارد، با `aria-grabbed="true"`، یا اینکه آیا عنصر قابل گرفتن است اما در حال حاضر گرفته نشده است، با `aria-grabbed="false"` استفاده می‌شد.
 
-Setting `aria-grabbed="true"` indicated the element had been selected for dragging. Setting `aria-grabbed="false"` indicated that the element could be grabbed for a drag-and-drop operation, but is not currently grabbed.
+تنظیم `aria-grabbed="true"` نشان می‌داد که عنصر برای کشیدن انتخاب شده است. تنظیم `aria-grabbed="false"` نشان می‌داد که عنصر می‌تواند برای عملیات کشیدن و رها کردن گرفته شود، اما در حال حاضر گرفته نشده است.
 
-When `aria-grabbed` is set to `true`, the [`aria-dropeffect`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-dropeffect) attribute of all potential drop targets should be updated with the type of function, or effect, will occur to the grabbed element when it is dropped. When no element is in a grabbed state, revert the `aria-dropeffect` attributes of all your drop targets.
+وقتی `aria-grabbed` روی `true` تنظیم شود، ویژگی [`aria-dropeffect`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-dropeffect) همه اهداف رهاسازی بالقوه باید با نوع عملکرد یا اثری که هنگام رها شدن بر عنصر گرفته شده اعمال می‌شود، به‌روزرسانی شود. وقتی هیچ عنصری در حالت گرفته شده نباشد، ویژگی‌های `aria-dropeffect` همه اهداف رهاسازی خود را به حالت اولیه برگردانید.
 
-The `aria-grabbed` property is expected to be replaced by a new feature in a future version of WAI-ARIA and is considered deprecated.
+ویژگی `aria-grabbed` انتظار می‌رود در نسخه آینده WAI-ARIA با یک ویژگی جدید جایگزین شود و منسوخ شده در نظر گرفته می‌شود.
 
 > [!NOTE]
-> ARIA does not enable accessible functionality. ARIA only conveys the intended behavior of your functionality.
+> ARIA قابلیت دسترسی را فعال نمی‌کند. ARIA فقط رفتار مورد نظر عملکرد شما را منتقل می‌کند.
 
-## Values
+## مقادیر
 
 - `true`
-  - : The element has been selected for dragging.
+  - : عنصر برای کشیدن انتخاب شده است.
 - `false`
-  - : The element is not currently selected for dragging, but can be made available for dragging by setting the property to `true`.
-- `undefined` (default)
-  - : The element does not support being dragged
+  - : عنصر در حال حاضر برای کشیدن انتخاب نشده است، اما می‌توان با تنظیم ویژگی به `true` آن را برای کشیدن در دسترس قرار داد.
+- `undefined` (پیش‌فرض)
+  - : عنصر از کشیده شدن پشتیبانی نمی‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** [roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles)
+استفاده شده در **همه** [نقش‌ها](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-dropeffect`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-dropeffect)
-- [HTML global `draggable` attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/draggable)
+- [ویژگی سراسری `draggable` در HTML](/en-US/docs/Web/HTML/Reference/Global_attributes/draggable)
 - HTML [Drag and Drop API](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
 - {{domxref('dataTransfer')}}
 - {{domxref('DataTransfer.dropEffect')}}
