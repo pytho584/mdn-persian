@@ -1,11 +1,5 @@
 ---
 title: "CredentialsContainer: store() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/store"
-status: "needs-translation"
----
-
----
-title: "CredentialsContainer: store() method"
 short-title: store()
 slug: Web/API/CredentialsContainer/store
 page-type: web-api-instance-method
@@ -14,13 +8,11 @@ browser-compat: api.CredentialsContainer.store
 
 {{APIRef("Credential Management API")}}{{SecureContext_Header}}
 
-The **`store()`** method of the
-{{domxref("CredentialsContainer")}} stores a set of credentials for the user inside a
-{{domxref("Credential")}} instance, returning this in a {{jsxref("Promise")}}.
+متد **`store()`** از رابط {{domxref("CredentialsContainer")}} مجموعه‌ای از اعتبارنامه‌ها را برای کاربر درون یک نمونه {{domxref("Credential")}} ذخیره می‌کند و آن را در قالب یک {{jsxref("Promise")}} برمی‌گرداند.
 
 > [!NOTE]
-> This method is restricted to top-level contexts. Calls to it within an
-> `<iframe>` element will resolve without effect.
+> این متد به زمینه‌های سطح بالا (top-level contexts) محدود است. فراخوانی آن درون یک عنصر
+> `<iframe>` بدون اثر انجام می‌شود.
 
 ## Syntax
 
@@ -31,23 +23,22 @@ store(credentials)
 ### Parameters
 
 - `credentials`
-  - : A valid {{domxref("Credential")}} instance.
+  - : یک نمونه معتبر از {{domxref("Credential")}}.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves to `undefined`.
+یک {{jsxref("Promise")}} که به `undefined` resolve می‌شود.
 
 ### Exceptions
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if there is also a credential of the same type as the current one under operation.
+  - : زمانی پرتاب می‌شود که اعتبارنامه‌ای از همان نوع اعتبارنامه فعلی در حال عملیات وجود داشته باشد.
 
 ## Examples
 
-### Storing a password credential at successful authentication
+### ذخیره اعتبارنامه رمز عبور در احراز هویت موفق
 
-This code would be executed after a user signs up or logs in and the server confirms
-the credential is correct.
+این کد پس از ثبت‌نام یا ورود کاربر و تأیید صحت اعتبارنامه توسط سرور اجرا می‌شود.
 
 ```js
 // Check if the browser supports password credentials (and the Credential Management API)
