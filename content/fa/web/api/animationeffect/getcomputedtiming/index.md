@@ -1,7 +1,7 @@
 ---
 title: "AnimationEffect: getComputedTiming() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/getComputedTiming"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,61 +14,61 @@ browser-compat: api.AnimationEffect.getComputedTiming
 
 {{ APIRef("Web Animations") }}
 
-The `getComputedTiming()` method of the {{domxref("AnimationEffect")}} interface returns the calculated timing properties for this animation effect.
+متد `getComputedTiming()` در رابط {{domxref("AnimationEffect")}} ویژگی‌های زمان‌بندی محاسبه‌شده را برای این اثر انیمیشن برمی‌گرداند.
 
 > [!NOTE]
-> These values are comparable to the computed styles of an Element returned using `window.getComputedStyle(elem)`.
+> این مقادیر با استایل‌های محاسبه‌شدهٔ یک عنصر که با استفاده از `window.getComputedStyle(elem)` برگردانده می‌شوند، قابل مقایسه هستند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getComputedTiming()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An object which contains:
+یک شیء که شامل موارد زیر است:
 
-- all of the properties of the object returned by {{domxref("AnimationEffect.getTiming()")}}, except that any `"auto"` values are replaced by computed values that may depend on the type of {{domxref("AnimationEffect")}}.
-- the following additional properties:
+- تمام ویژگی‌های شیء برگشتی از {{domxref("AnimationEffect.getTiming()")}}، با این تفاوت که هر مقدار `"auto"` با مقدار محاسبه‌شده‌ای جایگزین می‌شود که ممکن است به نوع {{domxref("AnimationEffect")}} بستگی داشته باشد.
+- ویژگی‌های اضافی زیر:
   - `endTime`
-    - : A `number` indicating the end time of the effect in milliseconds from the effect's start. This is equal to `activeDuration` plus `delay` and `endDelay`.
+    - : یک `number` که زمان پایان اثر را بر حسب میلی‌ثانیه از شروع اثر نشان می‌دهد. این مقدار برابر است با `activeDuration` به‌علاوهٔ `delay` و `endDelay`.
   - `activeDuration`
-    - : A `number` indicating the total duration in milliseconds of all iterations of the effect. This is equal to `duration` multiplied by `iterations` (or zero if that product would be {{jsxref("NaN")}}).
+    - : یک `number` که مجموع مدت‌زمان را بر حسب میلی‌ثانیه برای همهٔ تکرارهای اثر نشان می‌دهد. این مقدار برابر است با `duration` ضربدر `iterations` (یا صفر اگر آن حاصل‌ضرب {{jsxref("NaN")}} باشد).
   - `localTime`
-    - : A `number` or `null`.
+    - : یک `number` یا `null`.
 
-      Indicates the length of time in milliseconds that the effect has run. This is equal to the {{domxref("Animation.currentTime","currentTime")}} of the associated animation, or `null` if the effect is not associated with an animation.
+      مدت زمانی را بر حسب میلی‌ثانیه نشان می‌دهد که اثر اجرا شده است. این مقدار برابر با {{domxref("Animation.currentTime","currentTime")}} انیمیشن مرتبط است، یا اگر اثر با انیمیشنی مرتبط نباشد، `null` است.
 
   - `progress`
-    - : `null` or a `number`.
+    - : `null` یا یک `number`.
 
-      Indicates the effect's progress through its current iteration. At the start of the `activeDuration`, this equals the fractional part of `iterationStart`.
+      پیشرفت اثر را در تکرار فعلی‌اش نشان می‌دهد. در آغاز `activeDuration`، این مقدار برابر با بخش کسری `iterationStart` است.
 
-      The value is typically between `0` and `1`, but may fall outside this range depending on the effect's {{cssxref("easing-function")}}'s output. For example, an easing function of `cubic-bezier(0.3, 2, 0.6, 2)` would transform the time progress of `0.5` to approximately `1.65`.
+      مقدار معمولاً بین `0` و `1` است، اما بسته به خروجی {{cssxref("easing-function")}} اثر ممکن است خارج از این بازه قرار گیرد. برای مثال، یک تابع نرم‌کننده مانند `cubic-bezier(0.3, 2, 0.6, 2)` پیشرفت زمانی `0.5` را به تقریباً `1.65` تبدیل می‌کند.
 
-      Returns `null` if the effect isn't mid-iteration, for example because the effect is in the `delay` or `endDelay` periods, the effect is finished, or `localTime` is `null`.
+      اگر اثر در میانهٔ تکرار نباشد، `null` برمی‌گرداند؛ برای مثال اگر اثر در دوره‌های `delay` یا `endDelay` باشد، اثر تمام شده باشد، یا `localTime` برابر `null` باشد.
 
   - `currentIteration`
-    - : `null` or an integer `number`.
+    - : `null` یا یک `number` صحیح.
 
-      Indicates the index of the current iteration. At the start of the `activeDuration`, this equals the integer part of `iterationStart`.
+      شاخص تکرار فعلی را نشان می‌دهد. در آغاز `activeDuration`، این مقدار برابر با بخش صحیح `iterationStart` است.
 
-      Returns `null` whenever `progress` is `null`.
+      هرگاه `progress` برابر `null` باشد، `null` برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("AnimationEffect")}}
