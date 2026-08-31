@@ -1,7 +1,7 @@
 ---
 title: "ARIA: timer role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/timer_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,37 +13,37 @@ spec-urls: https://w3c.github.io/aria/#timer
 sidebar: accessibilitysidebar
 ---
 
-The **`timer`** role indicates to assistive technologies that an element is a numerical counter listing the amount of elapsed time from a starting point or the remaining time until an end point. Assistive technologies will not announce updates to a timer as it has an implicit [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) value of `off`.
+نقش **`timer`** به فناوری‌های کمکی اعلام می‌کند که یک عنصر شمارشگر عددی است که مقدار زمان سپری‌شده از یک نقطه شروع یا زمان باقی‌مانده تا یک نقطه پایان را فهرست می‌کند. فناوری‌های کمکی به‌روزرسانی‌های تایمر را اعلام نمی‌کنند، زیرا مقدار ضمنی [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) آن `off` است.
 
 ```html
 <div role="timer" id="eggtimer">0</div>
 ```
 
-This defines this `div` element as a timer with no remaining time.
+این عنصر `div` را به‌عنوان یک تایمر بدون زمان باقی‌مانده تعریف می‌کند.
 
-## Description
+## توضیحات
 
-The `timer` role indicates to assistive technologies that this part of the web content is a live region containing a timer listing the time remaining or elapsed time. A timer's inner text should be an updating current time measurement. While the value does not necessarily need to be machine parsable, it should continuously update at regular intervals unless the timer is paused or reaches its end-point.
+نقش `timer` به فناوری‌های کمکی اعلام می‌کند که این بخش از محتوای وب یک ناحیه زنده (live region) است که شامل یک تایمر فهرست‌کننده زمان باقی‌مانده یا زمان سپری‌شده است. متن داخلی تایمر باید یک اندازه‌گیری زمانی فعلی باشد که به‌روزرسانی می‌شود. هرچند مقدار لزوماً نباید قابل تجزیه ماشینی باشد، اما باید به‌طور مداوم در فواصل منظم به‌روزرسانی شود، مگر اینکه تایمر متوقف شده یا به نقطه پایان خود رسیده باشد.
 
-Along with [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role), [`log`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role), [`marquee`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/marquee_role), and [`status`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role) the `timer` role is a live region and can be modified by [live region](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) attributes.
+نقش `timer` همراه با نقش‌های [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)، [`log`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role)، [`marquee`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/marquee_role) و [`status`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role) یک ناحیه زنده است و می‌تواند توسط ویژگی‌های [ناحیه زنده](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) تغییر کند.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های WAI-ARIA مرتبط
 
-- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : Some screen readers announce the name of a timer element before announcing its contents. If a name is visible, reference it using `aria-labelledby`. Including an `aria-label` provides a method for prefacing the visible content of a timer element with text that is not displayed when a screen reader reads the content. Naming a timer is not required so if nothing is appropriate both these attributes can be omitted.
+- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
+  - : برخی از صفحه‌خوان‌ها نام یک عنصر تایمر را قبل از اعلام محتویات آن اعلام می‌کنند. اگر نامی قابل مشاهده است، با استفاده از `aria-labelledby` به آن ارجاع دهید. گنجاندن `aria-label` روشی برای پیشوند کردن محتوای قابل مشاهده یک عنصر تایمر با متنی فراهم می‌کند که هنگام خواندن محتوا توسط صفحه‌خوان نمایش داده نمی‌شود. نام‌گذاری تایمر الزامی نیست، بنابراین اگر چیز مناسبی وجود ندارد، هر دو ویژگی را می‌توان حذف کرد.
 
 - [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live)
-  - : Elements with the role `timer` have an implicit `aria-live` value of `off`.
+  - : عناصر با نقش `timer` دارای مقدار ضمنی `aria-live` برابر با `off` هستند.
 
-## Accessibility concerns
+## نگرانی‌های دسترس‌پذیری
 
-If a time limit needs to be in place, for example, for security reasons, the user should have the option to turn it off or extend it. This restriction does not apply if the time limit is due to a live event, such as an auction or a game, or if the time to complete the form is essential for a valid submission.
+اگر نیاز به یک محدودیت زمانی وجود داشته باشد، مثلاً به دلایل امنیتی، کاربر باید گزینه خاموش کردن یا تمدید آن را داشته باشد. این محدودیت در مواردی که محدودیت زمانی به دلیل یک رویداد زنده مانند مزایده یا بازی باشد، یا زمانی که زمان تکمیل فرم برای یک ارسال معتبر ضروری است، اعمال نمی‌شود.
 
-## Examples
+## مثال‌ها
 
-### A basic timer
+### یک تایمر پایه
 
-This example has a timer that counts down from 30 seconds to 0 seconds. The whole time display region has `role="timer"`, and also [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic) to indicate that the region should be announced as a whole, not just the changed regions. Due to the implicit `aria-live="off"`, changes are not announced by default; we manually change the role to `"alert"` when the timer reaches 10 seconds remaining so it gets announced once.
+این مثال دارای یک تایمر است که از ۳۰ ثانیه به ۰ ثانیه شمارش معکوس می‌کند. کل ناحیه نمایش زمان دارای `role="timer"` و همچنین [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic) است تا نشان دهد ناحیه باید به‌طور کامل اعلام شود، نه فقط بخش‌های تغییر یافته. به دلیل `aria-live="off"` ضمنی، تغییرات به‌طور پیش‌فرض اعلام نمی‌شوند؛ ما به‌صورت دستی نقش را وقتی تایمر به ۱۰ ثانیه باقی‌مانده می‌رسد به `"alert"` تغییر می‌دهیم تا یک بار اعلام شود.
 
 ```html
 <div id="countdown" role="timer" aria-atomic="true">
@@ -95,14 +95,14 @@ window.setInterval(() => {
 }, 500);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: `alert` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)
-- [ARIA: `log` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role)
-- [ARIA: `marquee` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/marquee_role)
-- [ARIA: `status` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role)
-- [ARIA live regions](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
+- [نقش ARIA: `alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)
+- [نقش ARIA: `log`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role)
+- [نقش ARIA: `marquee`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/marquee_role)
+- [نقش ARIA: `status`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role)
+- [نواحی زنده ARIA](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
