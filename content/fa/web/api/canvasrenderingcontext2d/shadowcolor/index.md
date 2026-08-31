@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: shadowColor property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowColor"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: shadowColor property"
 short-title: shadowColor
 slug: Web/API/CanvasRenderingContext2D/shadowColor
 page-type: web-api-instance-property
@@ -14,35 +8,22 @@ browser-compat: api.CanvasRenderingContext2D.shadowColor
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.shadowColor`**
-property of the Canvas 2D API specifies the color of shadows.
+ویژگی **`CanvasRenderingContext2D.shadowColor`** از Canvas 2D API، رنگ سایه‌ها را مشخص می‌کند.
 
-Be aware that the shadow's rendered opacity will be affected by the opacity of the
-{{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} color when filling, and
-of the {{domxref("CanvasRenderingContext2D.strokeStyle", "strokeStyle")}} color when
-stroking.
+توجه داشته باشید که شفافیتِ رندرِ سایه، هنگام fill کردن تحت تأثیر شفافیت رنگ {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} و هنگام stroke کردن تحت تأثیر شفافیت رنگ {{domxref("CanvasRenderingContext2D.strokeStyle", "strokeStyle")}} قرار می‌گیرد.
 
 > [!NOTE]
-> Shadows are only drawn if the `shadowColor`
-> property is set to a non-transparent value. One of the
-> {{domxref("CanvasRenderingContext2D.shadowBlur", "shadowBlur")}},
-> {{domxref("CanvasRenderingContext2D.shadowOffsetX", "shadowOffsetX")}}, or
-> {{domxref("CanvasRenderingContext2D.shadowOffsetY", "shadowOffsetY")}} properties must
-> be non-zero, as well.
+> سایه‌ها فقط زمانی رسم می‌شوند که ویژگی `shadowColor` روی یک مقدار غیر شفاف تنظیم شده باشد. علاوه بر آن، یکی از ویژگی‌های {{domxref("CanvasRenderingContext2D.shadowBlur", "shadowBlur")}}، {{domxref("CanvasRenderingContext2D.shadowOffsetX", "shadowOffsetX")}} یا {{domxref("CanvasRenderingContext2D.shadowOffsetY", "shadowOffsetY")}} باید غیر صفر باشد.
 
-## Value
+## مقدار
 
-A string parsed as a [CSS](/en-US/docs/Web/CSS) {{cssxref("&lt;color&gt;")}} value. The default value is fully-transparent black.
+یک رشته که به‌عنوان یک مقدار [CSS](/en-US/docs/Web/CSS) {{cssxref("&lt;color&gt;")}} تجزیه می‌شود. مقدار پیش‌فرض، سیاهِ کاملاً شفاف است.
 
-## Examples
+## مثال‌ها
 
-### Adding a shadow to shapes
+### افزودن سایه به شکل‌ها
 
-This example adds a shadow to two squares; the first one is filled, and the second one
-is stroked. The `shadowColor` property sets the shadows' color, while
-`shadowOffsetX` and `shadowOffsetY` set their position relative to
-the shapes.
+این مثال به دو مربع سایه اضافه می‌کند؛ مربع اول با fill رسم می‌شود و مربع دوم با stroke. ویژگی `shadowColor` رنگ سایه‌ها را تنظیم می‌کند، در حالی که `shadowOffsetX` و `shadowOffsetY` موقعیت آن‌ها را نسبت به شکل‌ها تعیین می‌کنند.
 
 #### HTML
 
@@ -69,15 +50,13 @@ ctx.lineWidth = 6;
 ctx.strokeRect(170, 20, 100, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Adding_a_shadow_to_shapes', 700, 180) }}
 
-### Shadows on translucent shapes
+### سایه‌ها روی شکل‌های نیمه‌شفاف
 
-A shadow's opacity is affected by the transparency level of its parent object (even
-when `shadowColor` specifies a completely opaque value). This example strokes
-and fills a rectangle with translucent colors.
+شفافیت یک سایه تحت تأثیر میزان شفافیت شیءِ والد آن قرار می‌گیرد (حتی وقتی `shadowColor` یک مقدار کاملاً مات را مشخص کند). این مثال یک مستطیل را با رنگ‌های نیمه‌شفاف stroke و fill می‌کند.
 
 #### HTML
 
@@ -87,9 +66,7 @@ and fills a rectangle with translucent colors.
 
 #### JavaScript
 
-The resulting alpha value of the fill shadow is `.8 * .2`, or
-`.16`. The alpha of the stroke shadow is `.8 * .6`, or
-`.48`.
+مقدار آلفای حاصل برای سایهٔ fill برابر با `.8 * .2`، یعنی `.16` است. آلفای سایهٔ stroke برابر با `.8 * .6`، یعنی `.48` است.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -111,22 +88,21 @@ ctx.strokeStyle = "rgb(0 0 255 / 60%)";
 ctx.strokeRect(10, 10, 150, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Shadows_on_translucent_shapes', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-### WebKit/Blink-specific notes
+### یادداشت‌های ویژهٔ WebKit/Blink
 
-In WebKit- and Blink-based browsers, the non-standard and deprecated method
-`ctx.setShadow()` is implemented besides this property.
+در مرورگرهای مبتنی بر WebKit و Blink، متد غیراستاندارد و منسوخ `ctx.setShadow()` علاوه بر این ویژگی پیاده‌سازی شده است.
 
 ```js
 setShadow(width, height, blur, color, alpha);
@@ -135,6 +111,6 @@ setShadow(width, height, blur, r, g, b, a);
 setShadow(width, height, blur, c, m, y, k, a);
 ```
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابطی که این ویژگی را تعریف می‌کند: {{domxref("CanvasRenderingContext2D")}}
