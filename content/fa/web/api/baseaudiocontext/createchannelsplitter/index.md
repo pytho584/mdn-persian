@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createChannelSplitter() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createChannelSplitter"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,13 +14,10 @@ browser-compat: api.BaseAudioContext.createChannelSplitter
 
 {{ APIRef("Web Audio API") }}
 
-The `createChannelSplitter()` method of the {{domxref("BaseAudioContext")}} Interface is used to create a {{domxref("ChannelSplitterNode")}},
-which is used to access the individual channels of an audio stream and process them separately.
+متد `createChannelSplitter()` از رابط {{domxref("BaseAudioContext")}} برای ایجاد یک {{domxref("ChannelSplitterNode")}} استفاده می‌شود که به شما امکان می‌دهد کانال‌های جداگانه یک جریان صوتی را دسترسی و پردازش کنید.
 
 > [!NOTE]
-> The {{domxref("ChannelSplitterNode.ChannelSplitterNode", "ChannelSplitterNode()")}}
-> constructor is the recommended way to create a {{domxref("ChannelSplitterNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> سازنده {{domxref("ChannelSplitterNode.ChannelSplitterNode", "ChannelSplitterNode()")}} روش توصیه‌شده برای ایجاد یک {{domxref("ChannelSplitterNode")}} است؛ برای اطلاعات بیشتر به [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
 ## Syntax
 
@@ -31,20 +28,15 @@ createChannelSplitter(numberOfOutputs)
 ### Parameters
 
 - `numberOfOutputs`
-  - : The number of channels in the input audio stream that you want to output separately;
-    the default is 6 if this parameter is not specified.
+  - : تعداد کانال‌های جریان صوتی ورودی که می‌خواهید به‌صورت جداگانه خروجی بگیرید؛ اگر این پارامتر مشخص نشود، مقدار پیش‌فرض ۶ است.
 
 ### Return value
 
-A {{domxref("ChannelSplitterNode")}}.
+یک {{domxref("ChannelSplitterNode")}}.
 
 ## Examples
 
-The following simple example shows how you could separate a stereo track (say, a piece
-of music), and process the left and right channel differently. To use them, you need to
-use the second and third parameters of the {{domxref("AudioNode/connect", "AudioNode.connect(AudioNode)")}}
-method, which allow you to specify the index of the channel to connect from and the
-index of the channel to connect to.
+مثال ساده زیر نشان می‌دهد که چگونه می‌توانید یک استریو (مثلاً یک قطعه موسیقی) را جدا کنید و کانال چپ و راست را به‌طور متفاوت پردازش کنید. برای استفاده از آنها، باید از پارامتر دوم و سوم متد {{domxref("AudioNode/connect", "AudioNode.connect(AudioNode)")}} استفاده کنید که به شما امکان می‌دهد اندیس کانال مبدأ و اندیس کانال مقصد را مشخص کنید.
 
 ```js
 const ac = new AudioContext();
@@ -84,4 +76,4 @@ ac.decodeAudioData(someStereoBuffer, (data) => {
 
 ## See also
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
