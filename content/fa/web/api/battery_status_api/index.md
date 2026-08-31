@@ -1,7 +1,7 @@
 ---
 title: "Battery Status API"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,24 +16,24 @@ spec-urls: https://w3c.github.io/battery/
 
 {{DefaultAPISidebar("Battery API")}}{{securecontext_header}}
 
-The **Battery Status API**, more often referred to as the **Battery API**, provides information about the system's battery charge level and lets you be notified by events that are sent when the battery level or charging status change. This can be used to adjust your app's resource usage to reduce battery drain when the battery is low, or to save changes before the battery runs out in order to prevent data loss.
+**Battery Status API** که بیشتر با نام **Battery API** شناخته می‌شود، اطلاعاتی دربارهٔ سطح شارژ باتری سیستم فراهم می‌کند و به شما امکان می‌دهد تا با رویدادهایی که هنگام تغییر سطح باتری یا وضعیت شارژ ارسال می‌شوند، مطلع شوید. این قابلیت می‌تواند برای تنظیم مصرف منابع برنامهٔ شما برای کاهش مصرف باتری زمانی که باتری کم است، یا برای ذخیرهٔ تغییرات پیش از اتمام باتری به‌منظور جلوگیری از از دست رفتن داده‌ها استفاده شود.
 
 > [!NOTE]
-> This API is _not available_ in [Web Workers](/en-US/docs/Web/API/Web_Workers_API) (not exposed via {{domxref("WorkerNavigator")}}).
+> این API در [Web Workers](/en-US/docs/Web/API/Web_Workers_API) _در دسترس نیست_ (از طریق {{domxref("WorkerNavigator")}} در معرض قرار نگرفته است).
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("BatteryManager")}}
-  - : Provides information about the system's battery charge level.
+  - : اطلاعاتی دربارهٔ سطح شارژ باتری سیستم فراهم می‌کند.
 
-### Extensions to other interfaces
+### توسعه‌هایی برای سایر رابط‌ها
 
 - {{domxref("Navigator.getBattery()")}}
-  - : Returns a {{JSxRef("Promise")}} that resolves with a {{DOMxRef("BatteryManager")}} object.
+  - : یک {{JSxRef("Promise")}} برمی‌گرداند که با یک {{DOMxRef("BatteryManager")}} resolve می‌شود.
 
-## Example
+## مثال
 
-In this example, we watch for changes both to the charging status (whether or not we're plugged in and charging) and for changes to the battery level and timing. This is done by listening for the {{domxref("BatteryManager.chargingchange_event", "chargingchange")}}, {{domxref("BatteryManager.levelchange_event", "levelchange")}}, {{domxref("BatteryManager.chargingtimechange_event", "chargingtimechange")}}, {{domxref("BatteryManager.dischargingtimechange_event", "dischargingtimechange")}} events.
+در این مثال، تغییرات وضعیت شارژ (چه به برق وصل باشیم و در حال شارژ باشیم یا نه) و همچنین تغییرات سطح باتری و زمان‌بندی را دنبال می‌کنیم. این کار با گوش دادن به رویدادهای {{domxref("BatteryManager.chargingchange_event", "chargingchange")}}، {{domxref("BatteryManager.levelchange_event", "levelchange")}}، {{domxref("BatteryManager.chargingtimechange_event", "chargingtimechange")}} و {{domxref("BatteryManager.dischargingtimechange_event", "dischargingtimechange")}} انجام می‌شود.
 
 ```js
 navigator.getBattery().then((battery) => {
@@ -75,16 +75,16 @@ navigator.getBattery().then((battery) => {
 });
 ```
 
-See also [the example in the specification](https://w3c.github.io/battery/#examples).
+همچنین ببینید [the example in the specification](https://w3c.github.io/battery/#examples).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Hacks blog post - Using the Battery API](https://hacks.mozilla.org/2012/02/using-the-battery-api-part-of-webapi/)
