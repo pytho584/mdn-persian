@@ -1,7 +1,5 @@
 ---
 title: "ClipboardChangeEvent: ClipboardChangeEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ClipboardChangeEvent/ClipboardChangeEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -16,37 +14,37 @@ browser-compat: api.ClipboardChangeEvent.ClipboardChangeEvent
 
 {{securecontext_header}}{{APIRef("Clipboard API")}}{{SeeCompatTable}}
 
-The **`ClipboardChangeEvent()`** constructor creates a new {{domxref("ClipboardChangeEvent")}} object instance when a `clipboardchange` event occurs. The `clipboardchange` event fires whenever the system clipboard contents are changed either by a web app or any other system application.
+سازندهٔ **`ClipboardChangeEvent()`** یک نمونهٔ جدید از {{domxref("ClipboardChangeEvent")}} می‌سازد که هنگام رخ دادن رویداد `clipboardchange` استفاده می‌شود. رویداد `clipboardchange` هر زمان که محتوای کلیپ‌بورد سیستم توسط یک برنامهٔ وب یا هر برنامهٔ سیستم دیگری تغییر کند، به وقوع می‌پیوندد.
 
 > [!NOTE]
-> This event constructor is generally not needed for production websites. Its primary use is for tests that require an instance of this event.
+> این سازندهٔ رویداد عموماً برای وب‌سایت‌های تولیدی لازم نیست. کاربرد اصلی آن در تست‌هایی است که نیاز به یک نمونه از این رویداد دارند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new ClipboardChangeEvent(type)
 new ClipboardChangeEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event. It should always be set to `clipboardchange`.
+  - : رشته‌ای است که نام رویداد را مشخص می‌کند. باید همیشه روی `clipboardchange` تنظیم شود.
 - `options` {{Optional_Inline}}
-  - : An object that, _in addition to the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که، _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `types`
-      - : An array of strings representing the data types available on the system clipboard.
+      - : آرایه‌ای از رشته‌ها که انواع داده‌های موجود در کلیپ‌بورد سیستم را نشان می‌دهد.
     - `changeId`
-      - : An integer representing a unique identifier for the clipboard change operation.
+      - : یک عدد صحیح که شناسهٔ یکتایی برای عملیات تغییر کلیپ‌بورد است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("ClipboardChangeEvent")}} object.
+یک شیء جدید {{domxref("ClipboardChangeEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
