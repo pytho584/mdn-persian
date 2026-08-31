@@ -1,7 +1,7 @@
 ---
 title: "AudioBuffer: sampleRate property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/sampleRate"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,14 +14,13 @@ browser-compat: api.AudioBuffer.sampleRate
 
 {{ APIRef("Web Audio API") }}
 
-The **`sampleRate`** property of the {{domxref("AudioBuffer")}} interface returns a float representing the sample rate, in samples per second, of the PCM data stored in the buffer.
+{{domxref("AudioBuffer")}} 接口的 **`sampleRate`** 属性返回一个浮点数，表示缓冲区中存储的 PCM 数据的采样率，单位为每秒样本数。
 
-## Value
+## 值
 
-A floating-point value indicating the current sample rate of the buffers data, in
-samples per second.
+一个浮点值，表示缓冲区数据的当前采样率，单位为每秒样本数。
 
-## Examples
+## 示例
 
 ```js
 // Stereo
@@ -49,14 +48,14 @@ button.onclick = () => {
 };
 ```
 
-## Specifications
+## 规格说明
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
