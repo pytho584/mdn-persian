@@ -1,7 +1,7 @@
 ---
 title: "Using ARIA: Roles, states, and properties"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -11,11 +11,11 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-ARIA defines semantics that can be applied to elements, with these divided into **roles** (defining a type of user interface element) and **states** and **properties** that are supported by a role. Authors must assign an ARIA role and the appropriate states and properties to an element during its life-cycle, unless the element already has appropriate ARIA semantics (via use of an appropriate HTML element). Addition of ARIA semantics only exposes extra information to a browser's accessibility API, and does not affect a page's DOM.
+ARIA معناشناسی‌هایی را تعریف می‌کند که می‌توانند روی عناصر اعمال شوند؛ این معناشناسی‌ها به **نقش‌ها** (که نوعی عنصر واسط کاربری را تعریف می‌کنند) و **حالت‌ها** و **ویژگی‌هایی** که توسط یک نقش پشتیبانی می‌شوند، تقسیم می‌شوند. نویسندگان باید در طول چرخهٔ عمر یک عنصر، یک نقش ARIA و حالت‌ها و ویژگی‌های مناسب را به آن اختصاص دهند، مگر اینکه عنصر از قبل دارای معناشناسی ARIA مناسب باشد (با استفاده از یک عنصر HTML مناسب). افزودن معناشناسی ARIA فقط اطلاعات بیشتری را در اختیار API دسترس‌پذیری مرورگر قرار می‌دهد و بر DOM صفحه تأثیری نمی‌گذارد.
 
-## Roles
+## نقش‌ها
 
-### Widget roles
+### نقش‌های ویجت
 
 - [`button`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role)
 - [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
@@ -29,7 +29,7 @@ ARIA defines semantics that can be applied to elements, with these divided into 
 - [`radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role)
 - [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role)
 - [`searchbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/searchbox_role)
-- [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) (when focusable)
+- [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) (زمانی که قابل فوکوس است)
 - [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
 - [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
 - [`switch`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/switch_role)
@@ -38,21 +38,21 @@ ARIA defines semantics that can be applied to elements, with these divided into 
 - [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
 - [`treeitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treeitem_role)
 
-### Composite roles
+### نقش‌های ترکیبی
 
-The techniques below describe each composite role as well as their required and optional child roles.
+تکنیک‌های زیر هر نقش ترکیبی و همچنین نقش‌های فرزند الزامی و اختیاری آن‌ها را توصیف می‌کنند.
 
 - [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)
-- [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) (including [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role), [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role), [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role), [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) roles)
-- [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role) (including [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role) role)
+- [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) (شامل نقش‌های [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role), [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role), [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role), [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role))
+- [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role) (شامل نقش [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role))
 - [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role)
 - [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role)
-- [`radiogroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radiogroup_role) (see [`radio` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role))
-- [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role) (including [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) and [`tabpanel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role) roles)
+- [`radiogroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radiogroup_role) (مشاهده [نقش `radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role))
+- [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role) (شامل نقش‌های [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) و [`tabpanel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role))
 - [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role)
 - [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
 
-### Document structure roles
+### نقش‌های ساختار سند
 
 - [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role)
 - [`article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role)
@@ -81,7 +81,7 @@ The techniques below describe each composite role as well as their required and 
 - [`toolbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/toolbar_role)
 - [`tooltip`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tooltip_role)
 
-### Landmark roles
+### نقش‌های لندمارک
 
 - [`banner`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/banner_role)
 - [`complementary`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/complementary_role)
@@ -92,7 +92,7 @@ The techniques below describe each composite role as well as their required and 
 - [`region`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/region_role)
 - [`search`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/search_role)
 
-### Live Region Roles
+### نقش‌های ناحیه زنده
 
 - [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)
 - [`log`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role)
@@ -100,14 +100,14 @@ The techniques below describe each composite role as well as their required and 
 - [`status`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role)
 - [`timer`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/timer_role)
 
-### Window Roles
+### نقش‌های پنجره
 
 - [`alertdialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role)
 - [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role)
 
-## States and properties
+## حالت‌ها و ویژگی‌ها
 
-### Widget attributes
+### ویژگی‌های ویجت
 
 - [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete)
 - [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked)
@@ -135,19 +135,19 @@ The techniques below describe each composite role as well as their required and 
 - [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow)
 - [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext)
 
-### Live region attributes
+### ویژگی‌های ناحیه زنده
 
 - [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live)
 - [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant)
 - [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic)
 - [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy)
 
-### Drag &amp; drop attributes
+### ویژگی‌های کشیدن و رها کردن
 
 - [`aria-dropeffect`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-dropeffect) {{deprecated_inline}}
 - [`aria-grabbed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-grabbed) {{deprecated_inline}}
 
-### Relationship attributes
+### ویژگی‌های رابطه
 
 - [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant)
 - [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount)
@@ -166,6 +166,6 @@ The techniques below describe each composite role as well as their required and 
 - [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan)
 - [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize)
 
-### MicrosoftEdge-specific properties
+### ویژگی‌های خاص MicrosoftEdge
 
 - `x-ms-aria-flowfrom` {{Non-standard_Inline}}
