@@ -1,7 +1,7 @@
 ---
 title: "Cognitive accessibility"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Cognitive_accessibility"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -11,277 +11,277 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-Cognitive accessibility covers accessibility considerations for people with cognition and learning disabilities. This document introduces cognitive accessibility and improving accessibility of the web for people with cognitive and learning differences.
+دسترسی‌پذیری شناختی ملاحظات دسترسی‌پذیری برای افراد دارای ناتوانی‌های شناختی و یادگیری را پوشش می‌دهد. این سند دسترسی‌پذیری شناختی و بهبود دسترسی‌پذیری وب را برای افراد دارای تفاوت‌های شناختی و یادگیری معرفی می‌کند.
 
-Cognitive impairment refers to a broad range of disabilities, from people with intellectual disabilities who may have the most-limited capabilities, to age-related issues with thinking and remembering. The range includes people with mental illnesses, such as depression and schizophrenia. It also includes people with learning disabilities, such as dyslexia and attention deficit hyperactivity disorder (ADHD).
+ناتوانی شناختی به طیف گسترده‌ای از ناتوانی‌ها اشاره دارد، از افرادی با ناتوانی‌های ذهنی که ممکن است محدودترین توانایی‌ها را داشته باشند تا مسائل مربوط به افزایش سن در تفکر و به‌خاطر سپردن. این طیف شامل افراد مبتلا به بیماری‌های روانی مانند افسردگی و اسکیزوفرنی می‌شود. همچنین شامل افراد دارای ناتوانی‌های یادگیری مانند نارساخوانی (dyslexia) و اختلال نقص توجه و بیش‌فعالی (ADHD) می‌شود.
 
-Though there is a lot of diversity within clinical definitions of cognitive impairments, people with them experience a common set of functional problems. These problems include difficulty with understanding content, remembering how to complete tasks, and confusion caused by inconsistent or non-traditional web page layouts. In this document, we focus on steps developers should take to improve the cognitive accessibility of their websites and applications.
+اگرچه تنوع زیادی در تعاریف بالینی ناتوانی‌های شناختی وجود دارد، افراد مبتلا به آن‌ها مجموعه‌ای مشترک از مشکلات عملکردی را تجربه می‌کنند. این مشکلات شامل دشواری در درک محتوا، به‌خاطر سپردن نحوه تکمیل وظایف، و سردرگمی ناشی از چیدمان صفحات وب ناسازگار یا غیرسنتی است. در این سند، ما بر روی گام‌هایی که توسعه‌دهندگان باید برای بهبود دسترسی‌پذیری شناختی وب‌سایت‌ها و برنامه‌های خود بردارند، تمرکز می‌کنیم.
 
-## Overview
+## مرور کلی
 
-Cognitive and intellectual disabilities cover a large spectrum, and may be momentary, temporary, or permanent conditions. For example, dementia and Alzheimer's are permanent cognitive impairments that get progressively worse. Other permanent cognitive impairments include aphasia, speech and language, autism, ADD/ADHD, dyslexia, and dyscalculia.
+ناتوانی‌های شناختی و ذهنی طیف وسیعی را پوشش می‌دهند و ممکن است شرایط لحظه‌ای، موقت یا دائمی باشند. برای مثال، زوال عقل (dementia) و آلزایمر ناتوانی‌های شناختی دائمی هستند که به تدریج بدتر می‌شوند. سایر ناتوانی‌های شناختی دائمی شامل آفازی (aphasia)، گفتار و زبان، اوتیسم، ADD/ADHD، نارساخوانی و دیسکلکولیا (dyscalculia) می‌شوند.
 
-An example of a temporary cognitive impairment could be people affected by substances such as alcohol or drugs. Another form it can take is depression, such as when mourning the loss of a loved one, or being momentarily saddened by a tweet or video they just saw online. A third example could be sleep deprivation.
+نمونه‌ای از ناتوانی شناختی موقت می‌تواند افراد متأثر از موادی مانند الکل یا مواد مخدر باشد. شکل دیگری که می‌تواند به خود بگیرد افسردگی است، مانند زمانی که فرد در سوگ از دست دادن عزیزی است، یا به طور لحظه‌ای توسط یک توییت یا ویدئویی که به صورت آنلاین دیده ناراحت می‌شود. مثال سوم می‌تواند محرومیت از خواب باشد.
 
-It may seem like an overwhelming challenge to address the wide range of cognitive differences, especially when solutions for two different people may be conflicting. One way to handle this is to focus on cognitive skills. Cognitive skills include:
+ممکن است به نظر برسد که رسیدگی به طیف گسترده تفاوت‌های شناختی یک چالش طاقت‌فرسا است، به ویژه زمانی که راه‌حل‌های دو فرد مختلف ممکن است متناقض باشد. یکی از راه‌های مقابله با این موضوع، تمرکز بر مهارت‌های شناختی است. مهارت‌های شناختی عبارتند از:
 
-- attention
-- memory
-- processing speed
-- time management
-- letters and language
-- numbers symbols and math
-- understanding and making choices
+- توجه
+- حافظه
+- سرعت پردازش
+- مدیریت زمان
+- حروف و زبان
+- اعداد، نمادها و ریاضیات
+- درک و انتخاب کردن
 
-A solid approach to providing accessible solutions for people with cognitive impairments includes:
+یک رویکرد محکم برای ارائه راه‌حل‌های دسترس‌پذیر برای افراد دارای ناتوانی‌های شناختی شامل موارد زیر است:
 
-- delivering content in more than one way, such as by text-to-speech or by video;
-- providing easily-understood content, such as text written using plain-language standards;
-- focusing attention on important content;
-- minimizing distractions, such as unnecessary content or advertisements;
-- providing consistent web page layout and navigation;
-- incorporating familiar elements, such as underlined links that are blue when not visited and purple when visited;
-- dividing processes into logical, essential steps with progress indicators;
-- making website authentication as easy as possible without compromising security; and
-- making forms easy to complete, such as with clear error messages and error recovery.
+- ارائه محتوا به بیش از یک روش، مانند تبدیل متن به گفتار یا ویدئو؛
+- ارائه محتوای به راحتی قابل درک، مانند متنی که با استانداردهای زبان ساده نوشته شده است؛
+- متمرکز کردن توجه بر محتوای مهم؛
+- به حداقل رساندن حواس‌پرتی‌ها، مانند محتوای غیرضروری یا تبلیغات؛
+- ارائه چیدمان و ناوبری ثابت صفحه وب؛
+- گنجاندن عناصر آشنا، مانند پیوندهای زیرخط‌دار که به رنگ آبی (بازدید نشده) و بنفش (بازدید شده) هستند؛
+- تقسیم فرآیندها به مراحل منطقی و ضروری با نشانگرهای پیشرفت؛
+- آسان‌تر کردن احراز هویت وب‌سایت بدون به خطر انداختن امنیت؛ و
+- آسان‌سازی تکمیل فرم‌ها، مانند پیام‌های خطای واضح و بازیابی خطا.
 
-## WCAG Guidelines
+## دستورالعمل‌های WCAG
 
-WCAG, Web Content Accessibility Guidelines, includes several guidelines to improve cognitive accessibility. These guidelines are published by the Web Accessibility Initiative (WAI) of the World Wide Web Consortium (W3C), the main international standards organization for the Internet. This group is also responsible for the [Accessible Rich Internet Application (ARIA)](/en-US/docs/Web/Accessibility/ARIA/Guides) guidelines.
+WCAG، یا *دستورالعمل‌های دسترسی‌پذیری محتوای وب*، شامل چندین دستورالعمل برای بهبود دسترسی‌پذیری شناختی است. این دستورالعمل‌ها توسط *ابتکار دسترسی‌پذیری وب* (WAI) از *کنسرسیوم جهانی وب* (W3C)، سازمان اصلی استانداردهای بین‌المللی برای اینترنت، منتشر شده‌اند. این گروه همچنین مسئول دستورالعمل‌های [*برنامه اینترنتی غنی قابل دسترس* (ARIA)](/en-US/docs/Web/Accessibility/ARIA/Guides) است.
 
-WCAG are guided by four principles: websites must be Perceivable, Operable, Understandable, and Robust. To this end, they define 17 specific guidelines, of which six are especially relevant for cognitive accessibility.
+WCAG توسط چهار اصل هدایت می‌شود: وب‌سایت‌ها باید **قابل درک** (Perceivable)، **قابل اجرا** (Operable)، **قابل فهم** (Understandable) و **مقاوم** (Robust) باشند. به این منظور، آن‌ها 17 دستورالعمل خاص را تعریف می‌کنند که شش تای آن‌ها به ویژه برای دسترسی‌پذیری شناختی مرتبط هستند.
 
-All of the following guidelines help more than just people with cognitive disabilities. For example, being able to extend the expiration time on an application requiring an authentication code sent to a mobile device via text message helps with the following scenarios:
+همه دستورالعمل‌های زیر به بیش از افراد دارای ناتوانی‌های شناختی کمک می‌کنند. برای مثال، توانایی تمدید زمان انقضا در یک برنامه که نیازمند کد احراز هویت ارسال شده به یک دستگاه تلفن همراه از طریق پیام متنی است، به سناریوهای زیر کمک می‌کند:
 
-- People with attention or anxiety disorders.
-- People who have a poor short-term memory, or who are multitasking.
-- People who are less technologically literate.
-- People who have poor wireless reception.
-- People who have motor control issues.
+- افراد مبتلا به اختلالات توجه یا اضطراب.
+- افرادی که حافظه کوتاه مدت ضعیفی دارند یا چندوظیفه‌ای (multitasking) انجام می‌دهند.
+- افرادی که از نظر فناوری کمتر باسواد هستند.
+- افرادی که دریافت بی‌سیم ضعیفی دارند.
+- افرادی که مشکلات کنترل حرکتی دارند.
 
-## Adaptability
+## سازگاری (Adaptability)
 
-[Guideline 1.3](https://www.w3.org/WAI/WCAG21/Understanding/adaptable) states "content should be **adaptable**". Create content that can be presented in different ways without losing information or structure. For example, provide {{glossary('responsive web design', 'responsive')}} layouts, with a single column mobile design.
+[دستورالعمل 1.3](https://www.w3.org/WAI/WCAG21/Understanding/adaptable) بیان می‌کند "محتوا باید **سازگار** باشد". محتوایی ایجاد کنید که بتوان آن را به روش‌های مختلف بدون از دست دادن اطلاعات یا ساختار ارائه کرد. برای مثال، چیدمان‌های {{glossary('responsive web design', 'واکنش‌گرا')}} با طراحی تک‌ستونی موبایل ارائه دهید.
 
-All information, including structure and relationships conveyed through the presentation, should be available in a form that can be perceived by all users to achieve this goal. For example, the information could be spoken aloud via a narration tool. Making your content capable of being understood by the software is a good way to help ensure it can be used by alternate presentational modes.
+تمام اطلاعات، از جمله ساختار و روابط منتقل شده از طریق ارائه، باید به شکلی در دسترس باشند که برای همه کاربران قابل درک باشد تا این هدف محقق شود. برای مثال، اطلاعات می‌توانند از طریق یک ابزار روایت با صدای بلند خوانده شوند. قابل فهم کردن محتوای خود برای نرم‌افزار، راه خوبی برای کمک به اطمینان از قابل استفاده بودن آن در حالت‌های ارائه جایگزین است.
 
-## Time
+## زمان
 
-It is important to allow users the time they require to complete tasks. [Guideline 2.2](https://www.w3.org/WAI/WCAG21/Understanding/enough-time) states "provide users enough **time** to read and use content".
+اهمیت دارد که به کاربران زمان مورد نیاز برای تکمیل وظایف را بدهیم. [دستورالعمل 2.2](https://www.w3.org/WAI/WCAG21/Understanding/enough-time) بیان می‌کند "به کاربران **زمان** کافی برای خواندن و استفاده از محتوا بدهید".
 
-A **time limit** is any process that happens without user initiation after a set time or on a periodic basis, such as being logged out after 30 minutes or having 15 minutes to make a purchase. People with cognitive disabilities may require more time to read content, or to perform functions such as filling out forms. Solutions include providing users enough additional time to complete tasks or eliminate time constraints altogether.
+**محدودیت زمانی** هر فرآیندی است که بدون شروع کاربر پس از یک زمان مشخص یا به صورت دوره‌ای اتفاق می‌افتد، مانند خروج از سیستم پس از 30 دقیقه یا داشتن 15 دقیقه برای خرید. افراد دارای ناتوانی‌های شناختی ممکن است به زمان بیشتری برای خواندن محتوا یا انجام عملکردهایی مانند پر کردن فرم‌ها نیاز داشته باشند. راه‌حل‌ها شامل ارائه زمان اضافی کافی به کاربران برای تکمیل وظایف یا حذف کامل محدودیت‌های زمانی است.
 
-### Timers
+### تایمرها (Timers)
 
-Options for adjusting time requirements include:
+گزینه‌های تنظیم نیازهای زمانی عبارتند از:
 
-- Allowing the user to turn off or adjust the time to at least 10 times the original limit before encountering it.
-- Alerting the user and providing a buffer of at least 20 seconds to extend the timeout duration by a factor of 10 with an action, such as hitting the space bar.
+- اجازه دادن به کاربر برای خاموش کردن یا تنظیم زمان به حداقل 10 برابر محدودیت اصلی قبل از مواجهه با آن.
+- هشدار به کاربر و ارائه یک بافر حداقل 20 ثانیه‌ای برای تمدید مدت زمان تایم‌اوت به میزان 10 برابر با یک اقدام، مانند فشار دادن کلید فاصله (space bar).
 
-Provide a toggle on content that allows users to enable a longer session time limit, or no session time limit at all. Examples of timed content include forms, timed reading exercises, and training materials. If the time limit is longer than 20 hours, accommodations are not required.
+یک کلید تغییر وضعیت (toggle) روی محتوا ارائه دهید که به کاربران اجازه می‌دهد محدودیت زمان جلسه طولانی‌تری یا بدون محدودیت زمان جلسه را فعال کنند. نمونه‌هایی از محتوای زمان‌بندی شده شامل فرم‌ها، تمرین‌های خواندن زمان‌بندی شده و مواد آموزشی است. اگر محدودیت زمان بیش از 20 ساعت باشد، نیازی به امکانات ویژه نیست.
 
-### Moving, blinking, scrolling
+### حرکت، چشمک زدن، اسکرول کردن
 
-It is important not to distract users, especially ones with cognitive disabilities.
+مهم است که حواس کاربران، به ویژه آن‌هایی که ناتوانی‌های شناختی دارند، پرت نشود.
 
-If moving, blinking, scrolling, or auto-updating information starts automatically, lasts more than five seconds, and is presented in parallel with other content, the user must able to pause, stop, hide or control it, unless it's an essential functionality. "Essential" means that removing the moving, blinking, scrolling, or auto-updating information would fundamentally change the meaning of the content and/or functionality, **and** information and functionality cannot be achieved in another way that would conform. This includes animated GIFs, if the gif animates for more than 5 seconds.
+اگر اطلاعات متحرک، چشمک‌زن، اسکرول‌شونده یا به‌روزرسانی خودکار به طور خودکار شروع شود، بیش از پنج ثانیه طول بکشد و هم‌زمان با سایر محتوا ارائه شود، کاربر باید بتواند آن را متوقف، مکث، مخفی یا کنترل کند، مگر اینکه عملکردی ضروری باشد. "ضروری" به این معنی است که حذف اطلاعات متحرک، چشمک‌زن، اسکرول‌شونده یا به‌روزرسانی خودکار، اساساً معنای محتوا و/یا عملکرد را تغییر می‌دهد، **و** اطلاعات و عملکرد نمی‌توانند به روش دیگری که مطابق با استاندارد باشد، به دست آیند. این شامل GIFهای متحرک نیز می‌شود، اگر GIF بیش از 5 ثانیه حرکت کند.
 
-Additional timing criteria to consider are:
+معیارهای زمان‌بندی دیگری که باید در نظر گرفته شوند عبارتند از:
 
-- People who have cognitive or language limitations may need more time to read and to understand. For improved usability remove any time limit. Timed content should also be avoided, with exceptions for non-interactive synchronized media and real-time events.
-- People with attention deficit disorders should be able to focus on content without distractions. The user should be able to postpone or suppress interruptions, except situations involving alerting a person to an emergency. This provides access to people with cognitive disabilities by enabling them to focus on the main purpose of the content. Enable the user to postpone content updates by providing a way to request content updates rather than updating automatically. Also, enable a way to make nonessential alerts optional.
-- Ensure that people can continue an activity without loss of data after re-authenticating an expired session, for example, saving the state of a questionnaire. Make sure to save data in such a way that it can be modified after a user re-authenticates. Before re-authenticating, encode the data as hidden or encrypted.
-- Providing warnings about inactivity that could result in data loss. When a timeout is used, tell people exactly how much time will cause the session to time out and result in lost data. The exception to this is preserving data for more than 20 hours when no actions are taken.
+- افرادی که محدودیت‌های شناختی یا زبانی دارند ممکن است به زمان بیشتری برای خواندن و درک نیاز داشته باشند. برای بهبود قابلیت استفاده، هرگونه محدودیت زمانی را حذف کنید. همچنین باید از محتوای زمان‌بندی شده اجتناب شود، به استثنای رسانه‌های همگام غیرتعاملی و رویدادهای بلادرنگ.
+- افراد مبتلا به اختلالات نقص توجه باید بتوانند بدون حواس‌پرتی بر محتوا تمرکز کنند. کاربر باید بتواند وقفه‌ها را به تعویق بیندازد یا سرکوب کند، به جز موقعیت‌هایی که شامل هشدار به فرد در مورد یک وضعیت اضطراری است. این امر با امکان تمرکز بر هدف اصلی محتوا، دسترسی را برای افراد دارای ناتوانی‌های شناختی فراهم می‌کند. کاربر را قادر سازید به‌روزرسانی‌های محتوا را با ارائه راهی برای درخواست به‌روزرسانی محتوا به جای به‌روزرسانی خودکار، به تعویق بیندازد. همچنین، راهی برای اختیاری کردن هشدارهای غیرضروری فراهم کنید.
+- اطمینان حاصل کنید که افراد می‌توانند یک فعالیت را بدون از دست دادن داده‌ها پس از احراز هویت مجدد یک جلسه منقضی شده ادامه دهند، برای مثال، ذخیره وضعیت یک پرسشنامه. اطمینان حاصل کنید که داده‌ها به گونه‌ای ذخیره می‌شوند که پس از احراز هویت مجدد کاربر قابل تغییر باشند. قبل از احراز هویت مجدد، داده‌ها را به صورت پنهان یا رمزگذاری شده رمزگذاری کنید.
+- ارائه هشدار در مورد عدم فعالیت که می‌تواند منجر به از دست دادن داده شود. هنگامی که از تایم‌اوت استفاده می‌شود، دقیقاً به افراد بگویید چه مدت زمان باعث می‌شود جلسه منقضی شود و داده‌ها از دست بروند. استثنا در این مورد، حفظ داده‌ها برای بیش از 20 ساعت در صورت عدم انجام اقدام است.
 
-## Navigation
+## ناوبری
 
-[Guideline 2.4](https://www.w3.org/WAI/WCAG21/Understanding/navigable) states "provide ways to help users navigate, find content, and determine where they are," and provides 10 guidelines to ensure the site is navigable and content is findable:
+[دستورالعمل 2.4](https://www.w3.org/WAI/WCAG21/Understanding/navigable) بیان می‌کند "راه‌هایی برای کمک به کاربران در پیمایش، یافتن محتوا و تعیین موقعیت آن‌ها فراهم کنید" و 10 دستورالعمل برای اطمینان از قابل پیمایش بودن سایت و قابل یافتن بودن محتوا ارائه می‌دهد:
 
-### Include a `<title>`
+### شامل یک `<title>` باشید
 
-Make sure to include a {{HTMLElement('title')}} for the document, as titles provide a quick and easy to reference description of the screen's main point. People with cognitive disabilities, limited short-term memory, and reading disabilities all benefit from being able to identify the purpose of content this way.
+مطمئن شوید که یک {{HTMLElement('title')}} برای سند درج کرده‌اید، زیرا عنوان‌ها توصیفی سریع و آسان برای مراجعه از نقطه اصلی صفحه ارائه می‌دهند. افراد دارای ناتوانی‌های شناختی، حافظه کوتاه مدت محدود و ناتوانی‌های خواندن همگی از توانایی شناسایی هدف محتوا به این روش بهره‌مند می‌شوند.
 
-### Heading and labels
+### عنوان‌ها و برچسب‌ها (Headings and labels)
 
-Include clear and descriptive headings so users can easily find information and understand relationships between different content sections. Descriptive labels help users identify specific components within the content. People who read slowly and people with limited short-term memory benefit when section titles make it possible to predict what each section contains.
+عنوان‌های واضح و توصیفی را درج کنید تا کاربران بتوانند به راحتی اطلاعات را پیدا کنند و روابط بین بخش‌های مختلف محتوا را درک کنند. برچسب‌های توصیفی به کاربران کمک می‌کنند تا اجزای خاصی را درون محتوا شناسایی کنند. افرادی که به آرامی مطالعه می‌کنند و افرادی با حافظه کوتاه مدت محدود زمانی سود می‌برند که عنوان‌های بخش، پیش‌بینی محتوای هر بخش را ممکن سازند.
 
-### Section headings
+### عنوان‌های بخش (Section headings)
 
-Headings help define overall organization of page content. They help facilitate navigation through page content sections, and provide a mechanism to aid comprehension. Examples of headings include chapters, sections and subsections of content, and so on.
+عنوان‌ها به تعریف سازمان کلی محتوای صفحه کمک می‌کنند. آن‌ها پیمایش در بخش‌های محتوای صفحه را تسهیل می‌کنند و مکانیزمی برای کمک به درک مطلب فراهم می‌آورند. نمونه‌هایی از عنوان‌ها شامل فصل‌ها، بخش‌ها و زیربخش‌های محتوا و غیره است.
 
-Headings are more obvious navigational aids compared to other methods to identify page content sections (borders, whitespace, horizontal rules, etc.).
+عنوان‌ها در مقایسه با سایر روش‌های شناسایی بخش‌های محتوای صفحه (مرزها، فضای سفید، خطوط افقی و غیره) کمک‌های ناوبری واضح‌تری هستند.
 
-### Multiple ways to find content
+### چندین روش برای یافتن محتوا
 
-Different users prefer different methods of finding information, so it is important to provide multiple ways for users to locate content on your site.
+کاربران مختلف روش‌های متفاوتی برای یافتن اطلاعات ترجیح می‌دهند، بنابراین مهم است که روش‌های متعددی برای یافتن محتوا در سایت خود در اختیار کاربران قرار دهید.
 
-Providing more than one way to navigate your site can help people find information faster. Some users may prefer a table of contents, site map, or search functionality rather than reading and traversing through several pages to find what they need. Others may prefer to explore the site in a sequential manner, moving from page to page in order to best understand the site's layout, content, and concepts.
+ارائه بیش از یک روش برای پیمایش در سایت شما می‌تواند به افراد کمک کند تا اطلاعات را سریع‌تر پیدا کنند. برخی از کاربران ممکن است فهرست مطالب، نقشه سایت یا قابلیت جستجو را به جای خواندن و عبور از چندین صفحه برای یافتن آنچه نیاز دارند، ترجیح دهند. دیگران ممکن است ترجیح دهند سایت را به صورت ترتیبی کاوش کنند و از صفحه‌ای به صفحه دیگر حرکت کنند تا بهترین درک را از چیدمان، محتوا و مفاهیم سایت به دست آورند.
 
-### Ability to bypass blocks of content
+### توانایی عبور از بلوک‌های محتوا
 
-Providing a mechanism, such as a [skip link](/en-US/docs/Web/HTML/Reference/Elements/a#skip_links), to bypass blocks of content that are repeated on multiple web pages.
+ارائه مکانیزمی، مانند [پیوند پرش (skip link)](/en-US/docs/Web/HTML/Reference/Elements/a#skip_links)، برای عبور از بلوک‌های محتوایی که در چندین صفحه وب تکرار می‌شوند.
 
-### Focus order makes sense
+### ترتیب تمرکز (Focus order) منطقی باشد
 
-The order of focus for interactive elements should make sense. To achieve this, the DOM order should match the visual order, which in turn should match the tabbing order. If the tab order jumps around, especially in a way that does not match the visual order when navigating with a keyboard, users can become disoriented.
+ترتیب تمرکز برای عناصر تعاملی باید منطقی باشد. برای دستیابی به این هدف، ترتیب DOM باید با ترتیب بصری مطابقت داشته باشد، که به نوبه خود باید با ترتیب تب (tab order) مطابقت داشته باشد. اگر ترتیب تب به صورت نامنظم تغییر کند، به ویژه به گونه‌ای که با ترتیب بصری هنگام پیمایش با صفحه‌کلید مطابقت نداشته باشد، کاربران ممکن است دچار سردرگمی شوند.
 
-### Focused elements should be visibly focused
+### عناصر متمرکز شده باید به صورت بصری قابل مشاهده باشند
 
-When a user navigates using a keyboard, the UI should make it obvious which element currently has focus. Don't alter or remove the browser's default {{cssxref(":focus")}} styling, unless you're making focus even more obvious.
+هنگامی که کاربر با استفاده از صفحه‌کلید پیمایش می‌کند، رابط کاربری باید واضح نشان دهد که کدام عنصر در حال حاضر تمرکز دارد. استایل پیش‌فرض {{cssxref(":focus")}} مرورگر را تغییر ندهید یا حذف نکنید، مگر اینکه تمرکز را حتی واضح‌تر کنید.
 
-### Link text conveys meaning
+### متن پیوند مفهوم را منتقل می‌کند
 
-The link's text should clearly and concisely communicate what the user should expect to be navigated to next if they choose to activate it. Poorly phrased link text may confuse users as to its purpose or destination.
+متن پیوند باید به طور واضح و مختصر آنچه را که کاربر در صورت فعال کردن آن انتظار دارد به آن هدایت شود، منتقل کند. متن پیوند ضعیف ممکن است کاربران را در مورد هدف یا مقصد آن سردرگم کند.
 
-Some forms of assistive technology allow users to navigate by lists of all the links present on the page. Links will be removed from the context of their surrounding non-link content, making the need for understandable link text even more important. An example of a poor experience is a page full of links whose text reads, "Click here". Without indicating where "here" will take you, the link's purpose is unclear.
+برخی از اشکال فناوری کمکی به کاربران اجازه می‌دهند تا با فهرست‌های تمام پیوندهای موجود در صفحه پیمایش کنند. پیوندها از بافت محتوای غیرپیوندی اطراف خود جدا می‌شوند، که نیاز به متن پیوند قابل فهم را حتی مهم‌تر می‌کند. نمونه‌ای از یک تجربه ضعیف، صفحه‌ای پر از پیوندهایی است که متن آن‌ها "اینجا کلیک کنید" است. بدون اینکه مشخص کند "اینجا" شما را به کجا می‌برد، هدف پیوند نامشخص است.
 
-For screen readers, it is vital that linked text describes the purpose of each link. If you have added content to links for screen readers, and that content is verbose and potentially confusing to sighted readers, consider clipping the added text to visually hide it from those not using assistive technologies.
+برای صفحه‌خوان‌ها، حیاتی است که متن پیوند، هدف هر پیوند را توصیف کند. اگر محتوایی به پیوندها برای صفحه‌خوان‌ها اضافه کرده‌اید و آن محتوا طولانی و به طور بالقوه برای خوانندگان بینا گیج‌کننده است، در نظر بگیرید که متن اضافه شده را با برش دادن به صورت بصری از افرادی که از فناوری‌های کمکی استفاده نمی‌کنند، پنهان کنید.
 
-### Current location is available
+### موقعیت فعلی در دسترس است
 
-Users should be able to orient themselves within a site or application. This is especially important and helpful for people with short attention spans who may become confused when following a long series of navigation steps.
+کاربران باید بتوانند خود را در یک سایت یا برنامه جهت‌یابی کنند. این امر به ویژه برای افرادی با دامنه توجه کوتاه که ممکن است هنگام دنبال کردن یک سری طولانی از مراحل ناوبری دچار سردرگمی شوند، مهم و مفید است.
 
-All users benefit from information about where they are in a site's hierarchy, especially for sites or applications with large amounts of content or many subsections. [Breadcrumbs](/en-US/docs/Glossary/Breadcrumb), [site maps](/en-US/docs/Glossary/Site_map), and identifying the current page in the navigation as "current" are all techniques that help communicate the current location.
+همه کاربران از اطلاعات مربوط به موقعیت خود در سلسله‌مراتب یک سایت بهره‌مند می‌شوند، به ویژه برای سایت‌ها یا برنامه‌هایی با حجم زیاد محتوا یا زیربخش‌های متعدد. [خرده‌نان (Breadcrumbs)](/en-US/docs/Glossary/Breadcrumb)، [نقشه سایت (Site_map)](/en-US/docs/Glossary/Site_map) و شناسایی صفحه فعلی در ناوبری به عنوان "جاری" همه تکنیک‌هایی هستند که به انتقال موقعیت فعلی کمک می‌کنند.
 
-## Readability
+## خوانایی (Readability)
 
-[Guideline 3.1](https://www.w3.org/WAI/WCAG21/Understanding/readable) states "make text content readable and understandable". For some users, it is difficult to infer the meaning of a word or phrase from context, especially when the word or phrase is used in an unusual way, or has been given a specialized meaning.
+[دستورالعمل 3.1](https://www.w3.org/WAI/WCAG21/Understanding/readable) بیان می‌کند "متن محتوا را قابل خواندن و قابل فهم کنید". برای برخی کاربران، استنباط معنای یک کلمه یا عبارت از بافت دشوار است، به ویژه زمانی که کلمه یا عبارت به روشی غیرعادی استفاده شده یا معنای تخصصی داده شده است.
 
-For these users, the ability to read and understand may depend on the availability of specific definitions or the expanded forms of acronyms or abbreviations. Some users may experience great difficulty in recognizing written words yet they understand extremely complex and sophisticated documents when the text is read aloud, or when key processes and ideas are illustrated visually.
+برای این کاربران، توانایی خواندن و درک ممکن است به در دسترس بودن تعاریف خاص یا شکل‌های گسترده اختصارات یا کوتاه‌نویسی‌ها بستگی داشته باشد. برخی کاربران ممکن است در تشخیص کلمات نوشته شده با دشواری زیادی مواجه شوند، اما هنگامی که متن با صدای بلند خوانده می‌شود، یا فرآیندها و ایده‌های کلیدی به صورت بصری نشان داده می‌شوند، اسناد بسیار پیچیده و پیچیده را درک می‌کنند.
 
-### Declare the language of the page and any content not in that main language
+### زبان صفحه و هر محتوایی که به آن زبان اصلی نیست را اعلام کنید
 
-The language of every page must be declared by using the [`lang`](/en-US/docs/Web/HTML/Reference/Global_attributes/lang) attribute on the {{HTMLElement('html')}} element. Include the `lang` attribute again on text that is in a language other than the main language of the document.
+زبان هر صفحه باید با استفاده از ویژگی [`lang`](/en-US/docs/Web/HTML/Reference/Global_attributes/lang) روی عنصر {{HTMLElement('html')}} اعلام شود. ویژگی `lang` را دوباره روی متنی که به زبانی غیر از زبان اصلی سند است، درج کنید.
 
-Proper use of `lang` allows some screen readers to announce the text properly when converting it into synthetic speech. It also helps people who use text-to-speech software.
+استفاده صحیح از `lang` به برخی صفحه‌خوان‌ها اجازه می‌دهد تا متن را هنگام تبدیل به گفتار مصنوعی به درستی اعلام کنند. همچنین به افرادی که از نرم‌افزار تبدیل متن به گفتار استفاده می‌کنند کمک می‌کند.
 
-### Define unusual words and word usage
+### کلمات و کاربردهای غیرعادی کلمات را تعریف کنید
 
-Some disabilities make it difficult to understand nonliteral word usage, such as idioms, colloquialisms, and specialized jargon. Non-native language speakers may also struggle with these terms. If a word or phrase has a unique meaning, in the document provide a definition inline or linked, within a glossary, or to an online dictionary. If a word or phrase is used to mean more than one thing, define each use.
+برخی ناتوانی‌ها درک کاربرد غیر تحت‌اللفظی کلمات، مانند اصطلاحات (idioms)، زبان عامیانه (colloquialisms) و اصطلاحات تخصصی (jargon) را دشوار می‌کنند. سخنرانان غیر بومی نیز ممکن است با این اصطلاحات مشکل داشته باشند. اگر یک کلمه یا عبارت معنای منحصر به فردی در سند دارد، تعریفی درون خطی یا مرتبط، درون یک واژه‌نامه (glossary) یا به یک فرهنگ لغت آنلاین ارائه دهید. اگر یک کلمه یا عبارت برای بیان بیش از یک معنا استفاده می‌شود، هر کاربرد را تعریف کنید.
 
-### Define abbreviations
+### اختصارات را تعریف کنید
 
-Abbreviations can be confusing for people who:
+اختصارات می‌توانند برای افرادی که موارد زیر را دارند گیج‌کننده باشند:
 
-- Have difficulty decoding words.
-- Have limited memory.
-- Have difficulty using context to aid understanding.
-- Rely on screen magnifiers (which often reduce contextual cues).
+- مشکل در رمزگشایی کلمات.
+- حافظه محدود.
+- مشکل در استفاده از بافت برای کمک به درک.
+- به بزرگ‌نمای صفحه (screen magnifiers) وابسته هستند (که اغلب نشانه‌های بافتی را کاهش می‌دهند).
 
-Provide an expanded form of the abbreviation the first time it is used, followed by the abbreviation placed within an {{HTMLElement('abbr')}} element. If an abbreviation has no expanded form, or is an abbreviation for a word that is not in the document's main language (such as Latin), explain its meaning. Also, consider using [ruby text](/en-US/docs/Web/HTML/Reference/Elements/ruby) for initialism (pronunciation of acronyms).
+شکل گسترده اختصار را اولین بار که استفاده می‌شود ارائه دهید، سپس اختصار را درون یک عنصر {{HTMLElement('abbr')}} قرار دهید. اگر یک اختصار شکل گسترده‌ای ندارد، یا اختصاری برای کلمه‌ای است که به زبان اصلی سند نیست (مانند لاتین)، معنای آن را توضیح دهید. همچنین، استفاده از [متن روبی (ruby text)](/en-US/docs/Web/HTML/Reference/Elements/ruby) را برای حروف اولیه (تلفظ مخفف‌ها) در نظر بگیرید.
 
-### Reading level
+### سطح خواندن (Reading level)
 
-Content should be written as clearly as possible. A good rule to go by is to make content simple enough that it can be understood the first time. Methods to achieve this include:
+محتوا باید تا حد امکان واضح نوشته شود. یک قانون خوب این است که محتوا را به اندازه کافی ساده کنید تا بار اول قابل درک باشد. روش‌های دستیابی به این هدف عبارتند از:
 
-- Using short, simple words.
-- Writing short sentences.
-- Using active voice in the present tense.
-- Using correct grammar and spelling.
+- استفاده از کلمات کوتاه و ساده.
+- نوشتن جملات کوتاه.
+- استفاده از صدای فعال در زمان حال.
+- استفاده از دستور زبان و املای صحیح.
 
-It helps users with cognitive disabilities to provide a text summary (sometimes referred to as a TL;DR, or "too long; didn't read") at a low reading level. Another technique you can use is providing accompanying visuals to help explain ideas, events, and processes.
+ارائه یک خلاصه متنی (گاهی اوقات TL;DR یا "خیلی طولانی؛ نخواندم" نامیده می‌شود) در سطح خواندن پایین به کاربران دارای ناتوانی‌های شناختی کمک می‌کند. تکنیک دیگری که می‌توانید استفاده کنید، ارائه تصاویر همراه برای کمک به توضیح ایده‌ها، رویدادها و فرآیندها است.
 
-There are tools that can rate the level of your content. For example, this document has an average grade level of about 11. This means it should be easily understood by a native English speaker aged 16 to 17. Some tools can even provide suggestions to help simplify it.
+ابزارهایی وجود دارند که می‌توانند سطح محتوای شما را ارزیابی کنند. برای مثال، این سند دارای سطح متوسط کلاس حدود 11 است. این بدان معناست که باید به راحتی توسط یک انگلیسی زبان مادری 16 تا 17 ساله قابل درک باشد. برخی ابزارها حتی می‌توانند پیشنهاداتی برای ساده‌سازی آن ارائه دهند.
 
-### Pronunciation
+### تلفظ (Pronunciation)
 
-There are multiple techniques that can help teach people how to pronounce words:
+چندین تکنیک وجود دارد که می‌تواند به آموزش نحوه تلفظ کلمات به افراد کمک کند:
 
-- Provide the pronunciation immediately following the word.
-- Link to a list of pronunciations.
-- Provide a glossary with pronunciation.
-- Use the {{HTMLElement('ruby')}} element to illustrate how a word is pronounced.
+- ارائه تلفظ بلافاصله پس از کلمه.
+- پیوند به فهرستی از تلفظ‌ها.
+- ارائه یک واژه‌نامه با تلفظ.
+- استفاده از عنصر {{HTMLElement('ruby')}} برای نشان دادن نحوه تلفظ یک کلمه.
 
-Providing guidance on how to pronounce words helps many different kinds of people, including those who prefer to read aloud, non-native language speakers, and people who are unfamiliar with the meaning of a term in context.
+ارائه راهنمایی در مورد نحوه تلفظ کلمات به انواع مختلفی از افراد کمک می‌کند، از جمله کسانی که ترجیح می‌دهند با صدای بلند بخوانند، سخنرانان غیر بومی و افرادی که با معنای یک اصطلاح در بافت آشنا نیستند.
 
-Another solution is to use glyphs or diacritical marks to illustrate pronunciation. However, if this technique is used, there must be a mechanism to turn it off. Further, it is helpful to link to a guide to the marks being used, as their meaning may not be obvious.
+راه‌حل دیگر استفاده از حروف نگاره (glyphs) یا نشانه‌های اعراب (diacritical marks) برای نشان دادن تلفظ است. با این حال، اگر از این تکنیک استفاده می‌شود، باید مکانیزمی برای خاموش کردن آن وجود داشته باشد. همچنین، پیوند به راهنمای نشانه‌های استفاده شده مفید است، زیرا ممکن است معنای آن‌ها واضح نباشد.
 
-## Predictability
+## پیش‌بینی‌پذیری (Predictability)
 
-WCAG [Guideline 3.2](https://www.w3.org/WAI/WCAG21/Understanding/predictable) states "make web pages appear and operate in predictable ways". This is a tenet of good user experience design. Consistency is especially important for people with cognitive difficulties. This includes consistency in page layout and predictable interactive components.
+WCAG [دستورالعمل 3.2](https://www.w3.org/WAI/WCAG21/Understanding/predictable) بیان می‌کند "صفحات وب را به گونه‌ای کنید که به طور قابل پیش‌بینی ظاهر و عمل کنند". این یک اصل از طراحی خوب تجربه کاربری است. ثبات به ویژه برای افراد دارای مشکلات شناختی مهم است. این شامل ثبات در چیدمان صفحه و اجزای تعاملی قابل پیش‌بینی است.
 
-### Use activation, not focus to change context
+### برای تغییر زمینه (context) از فعال‌سازی (activation) استفاده کنید، نه تمرکز (focus)
 
-Creating a change in context should be intentional. Because of this, when a UI feature receives [focus](/en-US/docs/Web/API/HTMLElement/focus), it should not trigger further user-facing actions. Rather, users should need to "activate" a feature to trigger the change.
+ایجاد تغییر در زمینه باید عمدی باشد. به همین دلیل، هنگامی که یک ویژگی UI [تمرکز](/en-US/docs/Web/API/HTMLElement/focus) دریافت می‌کند، نباید اقدامات بیشتری را که کاربر با آن مواجه می‌شود، ایجاد کند. بلکه کاربران باید برای ایجاد تغییر، ویژگی را "فعال" کنند.
 
-### Change setting based on an active request
+### تنظیمات را بر اساس یک درخواست فعال تغییر دهید
 
-Form control operation and data entry should result in predictable behavior. Changes in context can confuse users with cognitive disabilities, and should therefore only occur when it is clear that such a change will happen in response to the user's action.
+عملکرد کنترل فرم و ورود داده باید منجر به رفتار قابل پیش‌بینی شود. تغییرات در زمینه می‌تواند کاربران دارای ناتوانی‌های شناختی را سردرگم کند، بنابراین فقط زمانی باید رخ دهد که مشخص باشد که چنین تغییری در پاسخ به اقدام کاربر رخ خواهد داد.
 
-Changing state should require intentional user action. Examples of this are checking a checkbox, entering data or changing a select option. Also be sure to provide a submit button to initiate the change of context, and describe what will happen before the change is made.
+تغییر وضعیت باید نیازمند اقدام عمدی کاربر باشد. نمونه‌هایی از این موارد عبارتند از علامت زدن یک چک‌باکس، وارد کردن داده یا تغییر یک گزینه انتخابی. همچنین اطمینان حاصل کنید که یک دکمه ارسال (submit button) برای شروع تغییر زمینه ارائه دهید و قبل از ایجاد تغییر، آنچه را که اتفاق خواهد افتاد توصیف کنید.
 
-### Keep navigation consistent throughout the site
+### ناوبری را در سراسر سایت ثابت نگه دارید
 
-Keep the navigation order consistent between pages. For example, if you have a navigation bar on multiple pages, make that navigation uniform across the site with the same links in the same location. This doesn't just apply to navigation: present all repeated components in the same relative order each time they appear.
+ترتیب ناوبری را بین صفحات ثابت نگه دارید. برای مثال، اگر یک نوار ناوبری در چندین صفحه دارید، آن ناوبری را با همان پیوندها در همان مکان در سراسر سایت یکنواخت کنید. این فقط به ناوبری محدود نمی‌شود: همه اجزای تکراری را هر بار که ظاهر می‌شوند به همان ترتیب نسبی ارائه دهید.
 
-### Provide consistent labeling
+### برچسب‌گذاری ثابت ارائه دهید
 
-Identical functions should have similar labels every time they are utilized. Consistent button labels, alternative text for icons, and iconography for similar interactions and so on, even on different sections of your site, help all your users.
+عملکردهای یکسان باید هر بار که استفاده می‌شوند، برچسب‌های مشابهی داشته باشند. برچسب‌های ثابت دکمه، متن جایگزین برای آیکون‌ها و نمادنگاری (iconography) برای تعاملات مشابه و غیره، حتی در بخش‌های مختلف سایت شما، به همه کاربران شما کمک می‌کند.
 
-### Be consistent and predictable, and use norms
+### ثابت و قابل پیش‌بینی باشید و از هنجارها استفاده کنید
 
-While unlabeled iconography is not the most effective method of conveying information, keeping the use of the icons (and if labeled, their label text) consistent helps people to understand what the icon represents. Similarly, don't change defaults like the browser's back button. If you need to redirect a user, let the user know about it beforehand.
+در حالی که نمادنگاری بدون برچسب مؤثرترین روش برای انتقال اطلاعات نیست، ثابت نگه داشتن استفاده از آیکون‌ها (و در صورت برچسب‌گذاری، متن برچسب آن‌ها) به افراد کمک می‌کند تا بفهمند آیکون چه چیزی را نشان می‌دهد. به طور مشابه، پیش‌فرض‌هایی مانند دکمه بازگشت مرورگر را تغییر ندهید. اگر نیاز به هدایت (redirect) کاربر دارید، قبل از آن به کاربر اطلاع دهید.
 
-## Input Assistance
+## کمک به ورودی (Input Assistance)
 
-[Guideline 3.3](https://www.w3.org/WAI/WCAG21/Understanding/input-assistance) helps to ensure accurate data entry, stating "help users avoid and correct mistakes". While we all make mistakes, some people are more likely to make mistakes, less likely to notice a mistake, or have a harder time correcting a mistake once they make one.
+[دستورالعمل 3.3](https://www.w3.org/WAI/WCAG21/Understanding/input-assistance) به کمک به ورود دقیق داده کمک می‌کند و بیان می‌کند "به کاربران کمک کنید از اشتباهات جلوگیری کرده و آن‌ها را اصلاح کنند". در حالی که همه ما اشتباه می‌کنیم، برخی افراد بیشتر مستعد اشتباه کردن هستند، کمتر متوجه اشتباه می‌شوند یا پس از انجام اشتباه، اصلاح آن برایشان دشوارتر است.
 
-Input Assistance guidelines aim to reduce the likelihood that users, especially those with disabilities, make a mistake, and, if they do make a mistake, increase the likelihood that they see and comprehend the error message and can successfully fix any errors.
+دستورالعمل‌های کمک به ورودی با هدف کاهش احتمال اشتباه کاربران، به ویژه آن‌هایی که دارای ناتوانی هستند، و در صورت اشتباه، افزایش احتمال دیدن و درک پیام خطا و اصلاح موفقیت‌آمیز هرگونه خطا است.
 
-### Convey automated error detection
+### انتقال تشخیص خودکار خطا
 
-Users need to be alerted to the error and informed of what is wrong. If there is client side error detection, observe the following guidelines to make the error as effective as possible when conveyed to the user:
+کاربران باید از خطا آگاه شده و در مورد آنچه اشتباه است مطلع شوند. اگر تشخیص خطا در سمت کلاینت وجود دارد، دستورالعمل‌های زیر را رعایت کنید تا خطا هنگام انتقال به کاربر تا حد امکان مؤثر باشد:
 
-- The error must be described in the text.
-- Ensure that the error message is as specific as possible.
-- Provide text to identify incomplete required fields and text descriptions if a value entered is invalid.
-- If the error prevented a form submission, focus on the error. If multiple errors are present, provide a summary, with each error linking to the related input.
-- Include text along with use of icons, images, color and so on. Some people have difficulty understanding the meaning of icons and other visual cues.
-- Other people may have difficulty understanding the text version of your error message. For these people, also provide things like icons and colors.
-- Also, provide feedback on when there is a successful form submission.
+- خطا باید در متن توضیح داده شود.
+- اطمینان حاصل کنید که پیام خطا تا حد امکان خاص است.
+- متنی برای شناسایی فیلدهای اجباری ناقص و توضیحات متنی ارائه دهید اگر مقدار وارد شده نامعتبر است.
+- اگر خطا مانع از ارسال فرم شد، روی خطا تمرکز کنید. اگر چندین خطا وجود دارد، یک خلاصه ارائه دهید، که هر خطا به ورودی مربوطه پیوند داده شود.
+- متن را همراه با استفاده از آیکون‌ها، تصاویر، رنگ و غیره درج کنید. برخی افراد در درک معنای آیکون‌ها و سایر نشانه‌های بصری دشواری دارند.
+- افراد دیگر ممکن است در درک نسخه متنی پیام خطای شما مشکل داشته باشند. برای این افراد، مواردی مانند آیکون‌ها و رنگ‌ها را نیز ارائه دهید.
+- همچنین، در مورد ارسال موفق فرم، بازخورد ارائه دهید.
 
-### Provide instructions for user input
+### ارائه دستورالعمل برای ورودی کاربر
 
-Start the form with text instructions on how to operate it. Include labels or instructions when users need to input information, using the {{HTMLElement('label')}}, {{HTMLElement('fieldset')}}, and {{HTMLElement('legend')}} elements to do so.
+فرم را با دستورالعمل‌های متنی در مورد نحوه کار با آن شروع کنید. هنگام نیاز کاربران به وارد کردن اطلاعات، برچسب‌ها یا دستورالعمل‌ها را با استفاده از عناصر {{HTMLElement('label')}}، {{HTMLElement('fieldset')}} و {{HTMLElement('legend')}} درج کنید.
 
-Labels should be descriptive and positioned close to the input they relate to. When requiring a specific format for input, provide an example formatted in the proper way. Additionally, consider performing server-side validation to help format input data, to aid in the ease of user input.
+برچسب‌ها باید توصیفی بوده و نزدیک به ورودی مربوطه قرار گیرند. هنگامی که نیاز به قالب خاصی برای ورودی است، یک مثال با قالب صحیح ارائه دهید. همچنین، انجام اعتبارسنجی سمت سرور برای کمک به قالب‌بندی داده‌های ورودی را در نظر بگیرید تا سهولت ورود کاربر را افزایش دهید.
 
-If a form control is required, indicate it both visually and [via code](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-required). If a form control changes context, describe what will happen in a way that the user will understand it before they cause the context change to happen.
+اگر یک کنترل فرم الزامی است، آن را هم به صورت بصری و هم [از طریق کد](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-required) نشان دهید. اگر یک کنترل فرم زمینه را تغییر می‌دهد، آنچه را که اتفاق خواهد افتاد به گونه‌ای توصیف کنید که کاربر قبل از ایجاد تغییر زمینه آن را درک کند.
 
-### Error Suggestion
+### پیشنهاد خطا (Error Suggestion)
 
-Provide suggested input to the user if an input error is automatically detected and suggestions for correction are known (unless doing so would jeopardize the security or purpose of the content).
+اگر یک خطای ورودی به طور خودکار تشخیص داده شود و پیشنهاداتی برای تصحیح شناخته شده باشد، ورودی پیشنهادی را به کاربر ارائه دهید (مگر اینکه این کار امنیت یا هدف محتوا را به خطر بیندازد).
 
-### Prevent catastrophes
+### جلوگیری از فاجعه (Prevent catastrophes)
 
-For submissions that cause, or can lead to, legal, financial, or other significant consequences, ensure that the submissions can be reviewed, confirmed, and/or are reversible.
+برای ارسال‌هایی که باعث یا می‌توانند منجر به عواقب قانونی، مالی یا سایر عواقب قابل توجه شوند، اطمینان حاصل کنید که ارسال‌ها قابل بررسی، تأیید و/یا قابل بازگشت هستند.
 
-Data entered by the user should be checked for errors before submission, and the user should be given the opportunity to correct them. The user should be able to review, confirm, and correct information before final submission. Also, be sure to include a confirmation checkbox in addition to a submit button.
+داده‌های وارد شده توسط کاربر باید قبل از ارسال از نظر خطا بررسی شوند و به کاربر فرصت داده شود تا آن‌ها را اصلاح کند. کاربر باید بتواند اطلاعات را قبل از ارسال نهایی بررسی، تأیید و اصلاح کند. همچنین، حتماً یک چک‌باکس تأیید علاوه بر دکمه ارسال درج کنید.
 
-If a submission causes a legal or financial transaction to occur, provide a stated time within which the request can be amended or canceled by the user.
+اگر یک ارسال منجر به یک تراکنش قانونی یا مالی شود، یک زمان مشخص برای اصلاح یا لغو درخواست توسط کاربر ارائه دهید.
 
-### Provide help
+### ارائه کمک (Provide help)
 
-Context-sensitive help should be made available. If a form requires text input, provide form instructions describing the purpose and the necessary input. Include spell checking and suggestions for long-form text input, as well as links to help and support material. If a specific data format is expected for input, provide an example.
+راهنمایی متناسب با زمینه (Context-sensitive help) باید در دسترس باشد. اگر یک فرم نیاز به ورود متن دارد، دستورالعمل‌های فرم را ارائه دهید که هدف و ورودی لازم را توضیح می‌دهد. برای ورود متن طولانی، تصحیح املا و پیشنهادات را نیز شامل شود، همچنین پیوندهایی به مواد راهنما و پشتیبانی. اگر فرمت داده خاصی برای ورودی مورد انتظار است، یک مثال ارائه دهید.
 
-## Notes
+## یادداشت‌ها
 
-The above are good design practices. They will benefit everyone.
+موارد بالا شیوه‌های طراحی خوب هستند. این موارد به نفع همه خواهد بود.
 
-- Many people with cognitive impairments also have physical disabilities. Websites must conform with the W3C's [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/).
-- The W3C's [Cognitive and Learning Disabilities Accessibility Task Force](https://www.w3.org/WAI/GL/task-forces/coga/) produces web accessibility guidelines for people with cognitive impairments.
-- WebAIM has a [Cognitive page](https://webaim.org/articles/cognitive/) of relevant information and resources.
-- The United States Centers for Disease Control estimate that, as of 2018, 1 in 4 U.S. citizens have a disability and, of them, [cognitive impairment is the most common for young people](https://archive.cdc.gov/www_cdc_gov/media/releases/2018/p0816-disability.html).
-- In the U.S., "intellectual disabilities" used to be called "mental retardation". In the U.K., "intellectual disabilities" is commonly called "learning disabilities" or "learning difficulties".
+- بسیاری از افراد دارای ناتوانی‌های شناختی همچنین ناتوانی‌های جسمی دارند. وب‌سایت‌ها باید با [دستورالعمل‌های دسترسی‌پذیری محتوای وب](https://www.w3.org/WAI/standards-guidelines/wcag/) W3C مطابقت داشته باشند.
+- [گروه ویژه دسترسی‌پذیری برای ناتوانی‌های شناختی و یادگیری](https://www.w3.org/WAI/GL/task-forces/coga/) W3C دستورالعمل‌های دسترسی‌پذیری وب را برای افراد دارای ناتوانی‌های شناختی تولید می‌کند.
+- WebAIM یک [صفحه شناختی (Cognitive page)](https://webaim.org/articles/cognitive/) از اطلاعات و منابع مرتبط دارد.
+- مراکز کنترل و پیشگیری از بیماری ایالات متحده تخمین می‌زنند که تا سال 2018، از هر 4 شهروند آمریکایی 1 نفر دارای ناتوانی است و از میان آن‌ها، [ناتوانی شناختی برای جوانان رایج‌ترین است](https://archive.cdc.gov/www_cdc_gov/media/releases/2018/p0816-disability.html).
+- در ایالات متحده، "ناتوانی‌های ذهنی" (intellectual disabilities) قبلاً "عقب‌ماندگی ذهنی" (mental retardation) نامیده می‌شد. در بریتانیا، "ناتوانی‌های ذهنی" معمولاً "ناتوانی‌های یادگیری" (learning disabilities) یا "مشکلات یادگیری" (learning difficulties) نامیده می‌شود.
 
-## See also
+## همچنین ببینید
 
-- [Accessibility Guidelines](https://extensionworkshop.com/documentation/develop/build-an-accessible-extension/)
-- [What is accessibility](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility)
-- [Accessibility for seizure disorders](/en-US/docs/Web/Accessibility/Guides/Seizure_disorders)
-- [Understanding WCAG Guidelines](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG)
-- [Accessibility overview](/en-US/docs/Learn_web_development/Core/Accessibility)
-- [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/), including [cognitive accessibility guidelines](#wcag_guidelines)
-- [The W3C's Cognitive and Learning Disabilities Accessibility Task Force](https://www.w3.org/WAI/GL/task-forces/coga/)
-- [WebAIM Cognitive information](https://webaim.org/articles/cognitive/)
-- [CDC information on disabilities](https://www.cdc.gov/disability-and-health/)
+- [دستورالعمل‌های دسترسی‌پذیری](https://extensionworkshop.com/documentation/develop/build-an-accessible-extension/)
+- [دسترسی‌پذیری چیست؟](/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility)
+- [دسترسی‌پذیری برای اختلالات تشنج](/en-US/docs/Web/Accessibility/Guides/Seizure_disorders)
+- [درک دستورالعمل‌های WCAG](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG)
+- [مرور کلی دسترسی‌پذیری](/en-US/docs/Learn_web_development/Core/Accessibility)
+- [دستورالعمل‌های دسترسی‌پذیری محتوای وب](https://www.w3.org/WAI/standards-guidelines/wcag/)، از جمله [دستورالعمل‌های دسترسی‌پذیری شناختی](#wcag_guidelines)
+- [گروه ویژه دسترسی‌پذیری برای ناتوانی‌های شناختی و یادگیری W3C](https://www.w3.org/WAI/GL/task-forces/coga/)
+- [اطلاعات شناختی WebAIM](https://webaim.org/articles/cognitive/)
+- [اطلاعات CDC در مورد ناتوانی‌ها](https://www.cdc.gov/disability-and-health/)
