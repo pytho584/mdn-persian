@@ -1,7 +1,7 @@
 ---
 title: "ARIA: tab role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,89 +15,89 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The ARIA `tab` role indicates an interactive element inside a `tablist` that, when activated, displays its associated `tabpanel`.
+نقش `tab` در ARIA، یک عنصر تعاملی درون یک `tablist` را نشان می‌دهد که با فعال‌سازی، `tabpanel` مرتبط با خود را نمایش می‌دهد.
 
 ```html
 <button role="tab" aria-selected="true" aria-controls="tabpanel-id" id="tab-id">
-  Tab label
+  برچسب زبانه
 </button>
 ```
 
-## Description
+## توضیحات
 
-An element with the `tab` role controls the visibility of an associated element with the [`tabpanel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role) role. The common user experience pattern is a group of visual tabs above, or to the side of, a content area, and selecting a different tab changes the content and makes the selected tab more prominent than the other tabs.
+یک عنصر با نقش `tab`، دیدِ یک عنصر مرتبط با نقش [`tabpanel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role) را کنترل می‌کند. الگوی رایج تجربه کاربری، گروهی از زبانه‌های بصری در بالا یا کنار یک ناحیه محتوا است و انتخاب یک زبانه متفاوت، محتوا را تغییر داده و زبانه انتخاب‌شده را برجسته‌تر از سایر زبانه‌ها می‌کند.
 
-Elements with the role `tab` _must_ either be a child of an element with the `tablist` role, or have their `id` as part of the [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) property of a `tablist`. This combination identifies to assistive technology that the element is part of a group of related elements. Some assistive technology will provide a count of the number of `tab` role elements inside a `tablist`, and inform users of which `tab` they currently have targeted. Further, an element with the `tab` role _should_ contain the [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) property identifying a corresponding `tabpanel` (that has a `tabpanel` role) by that element's `id`. When an element with the `tabpanel` role has focus, or a child of it has focus, that indicates that the connected element with the `tab` role is the active tab in a `tablist`.
+عناصر دارای نقش `tab` _باید_ یا فرزند عنصری با نقش `tablist` باشند، یا `id` آن‌ها بخشی از ویژگی [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) یک `tablist` باشد. این ترکیب به فناوری کمکی اعلام می‌کند که عنصر بخشی از یک گروه از عناصر مرتبط است. برخی فناوری‌های کمکی تعداد عناصر دارای نقش `tab` درون یک `tablist` را ارائه می‌دهند و به کاربران اطلاع می‌دهند که در حال حاضر کدام `tab` را هدف گرفته‌اند. علاوه بر این، یک عنصر با نقش `tab` _باید_ شامل ویژگی [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) باشد که `tabpanel` مربوطه (دارای نقش `tabpanel`) را با `id` آن عنصر مشخص می‌کند. هنگامی که یک عنصر با نقش `tabpanel` یا فرزندی از آن فوکوس داشته باشد، نشان می‌دهد که عنصر متصل با نقش `tab`، زبانه فعال در یک `tablist` است.
 
-When elements with the `tab` role are selected or active they should have their [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) attribute set to `true`. Otherwise, their `aria-selected` attribute should be set to `false`. When a single-selectable `tablist` is selected or active, the `hidden` attribute of the other tabpanels should be set to true until the user selects the tab associated with that tabpanel. When a multi-selectable `tablist` is selected or active, its corresponding controlled `tabpanel` should have its [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) attribute set to `true` and its `hidden` attribute set to `false`, otherwise the reverse.
+هنگامی که عناصر دارای نقش `tab` انتخاب یا فعال هستند، باید ویژگی [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) آن‌ها روی `true` تنظیم شود. در غیر این صورت، ویژگی `aria-selected` آن‌ها باید روی `false` تنظیم شود. هنگامی که یک `tablist` تک‌گزین انتخاب یا فعال می‌شود، ویژگی `hidden` سایر tabpanel‌ها باید تا زمانی که کاربر زبانه مرتبط با آن tabpanel را انتخاب کند، روی `true` تنظیم شود. هنگامی که یک `tablist` چندگزین انتخاب یا فعال می‌شود، `tabpanel` کنترل‌شده مربوطه باید ویژگی [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) خود را روی `true` و ویژگی `hidden` خود را روی `false` تنظیم کند، در غیر این صورت برعکس.
 
-### All descendants are presentational
+### همه نوادگان نمایشی هستند
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in a `tab`. To deal with this limitation, browsers, automatically apply role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) to all descendant elements of any `tab` element as it is a role that does not support semantic children.
+برخی از انواع اجزای رابط کاربری، هنگامی که در یک API دسترسی‌پذیری پلتفرم نمایش داده می‌شوند، فقط می‌توانند شامل متن باشند. APIهای دسترسی‌پذیری راهی برای نمایش عناصر معنایی موجود در یک `tab` ندارند. برای مقابله با این محدودیت، مرورگرها به طور خودکار نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را به تمام عناصر فرزند هر عنصر `tab` اعمال می‌کنند، زیرا این نقشی است که از فرزندان معنایی پشتیبانی نمی‌کند.
 
-For example, consider the following `tab` element, which contains a heading.
-
-```html
-<div role="tab"><h3>Title of my tab</h3></div>
-```
-
-Because descendants of `tab` are presentational, the following code is equivalent:
+به عنوان مثال، عنصر `tab` زیر را در نظر بگیرید که شامل یک عنوان است.
 
 ```html
-<div role="tab"><h3 role="presentation">Title of my tab</h3></div>
+<div role="tab"><h3>عنوان زبانه من</h3></div>
 ```
 
-From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree):
+از آنجایی که نوادگان `tab` نمایشی هستند، کد زیر معادل است:
 
 ```html
-<div role="tab">Title of my tab</div>
+<div role="tab"><h3 role="presentation">عنوان زبانه من</h3></div>
 ```
 
-### Associated roles and attributes
+از دید کاربر فناوری کمکی، عنوان وجود ندارد، زیرا قطعه کدهای قبلی با موارد زیر در [درخت دسترسی‌پذیری](/en-US/docs/Glossary/Accessibility_tree) معادل هستند:
+
+```html
+<div role="tab">عنوان زبانه من</div>
+```
+
+### نقش‌ها و ویژگی‌های مرتبط
 
 - [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected)
   - : boolean
 - [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls)
-  - : `id` of element with `tabpanel` role
+  - : `id` عنصر با نقش `tabpanel`
 - [id](/en-US/docs/Web/HTML/Reference/Global_attributes/id)
-  - : content
+  - : محتوا
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-| Key                               | Action                                                                                                                                                                                                           |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <kbd>Tab</kbd>                    | When focus is outside of the `tablist` moves focus to the active tab. If focus is on the active tab moves focus to the next element in the keyboard focus order, ideally the active tab's associated `tabpanel`. |
-| <kbd>→</kbd>                      | Focuses and optionally activates the next tab in the tab list. If the current tab is the last tab in the tab list it activates the first tab.                                                                    |
-| <kbd>←</kbd>                      | Focuses and optionally activates the previous tab in the tab list. If the current tab is the first tab in the tab list it activates the last tab.                                                                |
-| <kbd>Enter</kbd>/<kbd>Space</kbd> | When a tab has focus, activates the tab, causing its associated panel to be displayed.                                                                                                                           |
-| <kbd>Home</kbd>                   | Focuses and optionally activates the first tab in the tab list.                                                                                                                                                  |
-| <kbd>End</kbd>                    | Focuses and optionally activates the last tab in the tab list.                                                                                                                                                   |
-| <kbd>Delete</kbd>                 | When allowed removes the currently selected tab from the tab list.                                                                                                                                               |
+| کلید                              | عملکرد                                                                                                                                                                                                                            |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <kbd>Tab</kbd>                    | هنگامی که فوکوس خارج از `tablist` است، فوکوس را به زبانه فعال منتقل می‌کند. اگر فوکوس روی زبانه فعال باشد، فوکوس را به عنصر بعدی در ترتیب فوکوس صفحه‌کلید، ترجیحاً `tabpanel` مرتبط با زبانه فعال، منتقل می‌کند.                     |
+| <kbd>→</kbd>                      | فوکوس را به زبانه بعدی در لیست زبانه‌ها منتقل کرده و به صورت اختیاری آن را فعال می‌کند. اگر زبانه فعلی آخرین زبانه در لیست زبانه‌ها باشد، اولین زبانه را فعال می‌کند.                                                              |
+| <kbd>←</kbd>                      | فوکوس را به زبانه قبلی در لیست زبانه‌ها منتقل کرده و به صورت اختیاری آن را فعال می‌کند. اگر زبانه فعلی اولین زبانه در لیست زبانه‌ها باشد، آخرین زبانه را فعال می‌کند.                                                              |
+| <kbd>Enter</kbd>/<kbd>Space</kbd> | هنگامی که یک زبانه فوکوس دارد، زبانه را فعال کرده و باعث می‌شود پنل مرتبط با آن نمایش داده شود.                                                                                                                                    |
+| <kbd>Home</kbd>                   | فوکوس را به اولین زبانه در لیست زبانه‌ها منتقل کرده و به صورت اختیاری آن را فعال می‌کند.                                                                                                                                          |
+| <kbd>End</kbd>                    | فوکوس را به آخرین زبانه در لیست زبانه‌ها منتقل کرده و به صورت اختیاری آن را فعال می‌کند.                                                                                                                                          |
+| <kbd>Delete</kbd>                 | در صورت مجاز بودن، زبانه انتخاب‌شده فعلی را از لیست زبانه‌ها حذف می‌کند.                                                                                                                                                          |
 
-### Required JavaScript features
-
-> [!NOTE]
-> While there are ways to build tab-like functionality without JavaScript, there is no substitute combination using only HTML and CSS that will provide the same set of functionality that's required above for accessible tabs with content.
-
-## Example
-
-This example combines the role `tab` with `tablist` and elements with `tabpanel` to create an interactive group of tabbed content. Here we are enclosing our group of content in a `div`, with our `tablist` having an `aria-label` which labels it for assistive technology. Each `tab` is a `button` with the attributes previously mentioned. The first `tab` has both `tabindex="0"` and `aria-selected="true"` applied. These two attributes must always be coordinated as such—so when another tab is selected, it will then have `tabindex="0"` and `aria-selected="true"` applied. All unselected tabs must have `aria-selected="false"` and `tabindex="-1"`.
-
-All of the `tabpanel` elements have `tabindex="0"` to make them tabbable, and all but the currently active one have the `hidden` attribute. The `hidden` attribute will be removed when a `tabpanel` becomes visible with JavaScript.
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
 > [!NOTE]
-> Setting `tabindex` on the tab panel is unnecessary if the first element in the tab panel is focusable (such as a link), because tabbing to the link will also start reading the panel's content. However, if there are any panels in the set whose first content element is not focusable, then all tabpanel elements in a tab set should be focusable, so that screen reader users can navigate to the panel content consistently.
+> اگرچه راه‌هایی برای ساخت عملکردهای مشابه زبانه بدون جاوااسکریپت وجود دارد، اما هیچ ترکیب جایگزینی با استفاده از HTML و CSS به تنهایی وجود ندارد که مجموعه عملکردهای مشابه مورد نیاز برای زبانه‌های دسترسی‌پذیر با محتوا را فراهم کند.
+
+## مثال
+
+این مثال نقش `tab` را با `tablist` و عناصر دارای `tabpanel` ترکیب می‌کند تا یک گروه تعاملی از محتوای زبانه‌ای ایجاد کند. در اینجا گروه محتوای خود را در یک `div` محصور می‌کنیم، که `tablist` ما دارای یک `aria-label` است که آن را برای فناوری کمکی برچسب‌گذاری می‌کند. هر `tab` یک `button` با ویژگی‌های ذکر شده قبلی است. اولین `tab` دارای `tabindex="0"` و `aria-selected="true"` اعمال شده است. این دو ویژگی باید همیشه به این صورت هماهنگ باشند - به طوری که وقتی زبانه دیگری انتخاب می‌شود، آنگاه `tabindex="0"` و `aria-selected="true"` روی آن اعمال می‌شود. تمام زبانه‌های انتخاب‌نشده باید دارای `aria-selected="false"` و `tabindex="-1"` باشند.
+
+همه عناصر `tabpanel` دارای `tabindex="0"` هستند تا قابل فوکوس با Tab باشند و همه به جز یک عنصر فعال فعلی، دارای ویژگی `hidden` هستند. ویژگی `hidden` هنگامی که یک `tabpanel` با جاوااسکریپت قابل مشاهده می‌شود، حذف خواهد شد.
+
+> [!NOTE]
+> تنظیم `tabindex` روی پنل زبانه در صورتی که اولین عنصر در پنل زبانه قابل فوکوس (مانند یک پیوند) باشد، ضروری نیست، زیرا فوکوس با Tab روی پیوند همچنین باعث شروع خواندن محتوای پنل می‌شود. با این حال، اگر هر پنلی در مجموعه وجود داشته باشد که اولین عنصر محتوای آن قابل فوکوس نباشد، آنگاه تمام عناصر `tabpanel` در یک مجموعه زبانه باید قابل فوکوس باشند تا کاربران صفحه‌خوان بتوانند به طور ثابت به محتوای پنل پیمایش کنند.
 
 ```html
 <div class="tabs">
-  <div role="tablist" aria-label="Select your operating system">
+  <div role="tablist" aria-label="سیستم عامل خود را انتخاب کنید">
     <button
       role="tab"
       aria-selected="true"
       aria-controls="panel-1"
       id="tab-1"
       tabindex="0">
-      Windows
+      ویندوز
     </button>
     <button
       role="tab"
@@ -113,12 +113,12 @@ All of the `tabpanel` elements have `tabindex="0"` to make them tabbable, and al
       aria-controls="panel-3"
       id="tab-3"
       tabindex="-1">
-      Linux
+      لینوکس
     </button>
   </div>
   <div class="tab-panels">
     <div id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
-      <p>How to run this application on Windows</p>
+      <p>نحوه اجرای این برنامه در ویندوز</p>
     </div>
     <div
       id="panel-2"
@@ -126,7 +126,7 @@ All of the `tabpanel` elements have `tabindex="0"` to make them tabbable, and al
       tabindex="0"
       aria-labelledby="tab-2"
       hidden>
-      <p>How to run this application on macOS</p>
+      <p>نحوه اجرای این برنامه در macOS</p>
     </div>
     <div
       id="panel-3"
@@ -134,13 +134,13 @@ All of the `tabpanel` elements have `tabindex="0"` to make them tabbable, and al
       tabindex="0"
       aria-labelledby="tab-3"
       hidden>
-      <p>How to run this application on Linux</p>
+      <p>نحوه اجرای این برنامه در لینوکس</p>
     </div>
   </div>
 </div>
 ```
 
-There is some basic styling applied that restyles the buttons and changes the {{cssxref("z-index")}} of `tab` elements to give the illusion of it connecting to the `tabpanel` for active elements, and the illusion that inactive elements are behind the active `tabpanel`. You need to clearly distinguish the active tab from the inactive tabs, such as thicker borders or larger size.
+برخی استایل‌های پایه اعمال شده است که دکمه‌ها را تغییر شکل می‌دهد و {{cssxref("z-index")}} عناصر `tab` را تغییر می‌دهد تا توهم اتصال آن به `tabpanel` برای عناصر فعال و توهم غیرفعال بودن عناصر غیرفعال در پشت `tabpanel` فعال ایجاد شود. شما باید زبانه فعال را به وضوح از زبانه‌های غیرفعال متمایز کنید، مانند حاشیه‌های ضخیم‌تر یا اندازه بزرگ‌تر.
 
 ```css hidden
 .tabs {
@@ -181,7 +181,7 @@ There is some basic styling applied that restyles the buttons and changes the {{
 }
 ```
 
-The user interaction is handled with JavaScript. We first get references to our `tablist`, all the `tab` elements inside it, the container of our `tabpanel` elements, and all the `tabpanel` elements inside that container. This is based on some assumptions about the structure of our HTML, so if you change the structure, you will need to change this code. If you have multiple tabbed interfaces on a page, you can wrap this code in a function and pass `tabsContainer` as an argument.
+تعامل کاربر با جاوااسکریپت مدیریت می‌شود. ابتدا ارجاعاتی به `tablist`، تمام عناصر `tab` درون آن، ظرف عناصر `tabpanel` و تمام عناصر `tabpanel` درون آن ظرف دریافت می‌کنیم. این بر اساس برخی فرضیات در مورد ساختار HTML ما است، بنابراین اگر ساختار را تغییر دهید، باید این کد را تغییر دهید. اگر چندین رابط زبانه‌ای در یک صفحه دارید، می‌توانید این کد را در یک تابع بپیچید و `tabsContainer` را به عنوان آرگومان پاس دهید.
 
 ```js
 const tabsContainer = document.querySelector(".tabs");
@@ -193,13 +193,13 @@ const tabPanels = Array.from(
 );
 ```
 
-For keyboard interactions, we listen for the [`keydown`](/en-US/docs/Web/API/Element/keydown_event) event on the `tablist`. In this demo, we chose to not activate the `tab` when the user navigates with the arrow keys, but instead only move focus. If you want to display the `tab` when it receives focus, you can call the `showTab()` function (defined later) instead of just calling `focus()` on the new tab.
+برای تعاملات صفحه‌کلید، به رویداد [`keydown`](/en-US/docs/Web/API/Element/keydown_event) روی `tablist` گوش می‌دهیم. در این نسخه نمایشی، تصمیم گرفتیم هنگام پیمایش کاربر با کلیدهای جهت‌نما، `tab` را فعال نکنیم، بلکه فقط فوکوس را جابجا کنیم. اگر می‌خواهید هنگام دریافت فوکوس، `tab` را نمایش دهید، می‌توانید تابع `showTab()` (که بعداً تعریف شده) را فراخوانی کنید به جای اینکه فقط `focus()` را روی زبانه جدید فراخوانی کنید.
 
 ```js
 tabList.addEventListener("keydown", (e) => {
   const currentTab = e.target;
   const currentIndex = tabs.indexOf(currentTab);
-  if (currentIndex === -1) return; // Exit if the focused element is not a tab
+  if (currentIndex === -1) return; // اگر عنصر فوکوس‌شده یک زبانه نیست، خارج شوید
   let newIndex = 0;
 
   switch (e.key) {
@@ -216,7 +216,7 @@ tabList.addEventListener("keydown", (e) => {
       newIndex = tabs.length - 1;
       break;
     default:
-      return; // Exit if the key is not recognized
+      return; // اگر کلید شناسایی نشد، خارج شوید
   }
 
   e.preventDefault();
@@ -225,11 +225,11 @@ tabList.addEventListener("keydown", (e) => {
 });
 ```
 
-The tab panel is only activated either by pressing <kbd>Enter</kbd> or <kbd>Space</kbd> while a `tab` has focus, or by clicking on a `tab`. We first define a function `showTab()` that takes in the `tab` element to be shown.
+پنل زبانه فقط با فشار دادن <kbd>Enter</kbd> یا <kbd>Space</kbd> در حالی که یک `tab` فوکوس دارد، یا با کلیک روی یک `tab` فعال می‌شود. ابتدا یک تابع `showTab()` تعریف می‌کنیم که عنصر `tab` مورد نظر برای نمایش را دریافت می‌کند.
 
 ```js
 function showTab(targetTab) {
-  // Unselect other tabs and set this tab as selected
+  // سایر زبانه‌ها را لغو انتخاب کرده و این زبانه را به عنوان انتخاب‌شده تنظیم کنید
   for (const tab of tabs) {
     if (tab === targetTab) continue;
     tab.setAttribute("aria-selected", false);
@@ -238,7 +238,7 @@ function showTab(targetTab) {
   targetTab.setAttribute("aria-selected", true);
   targetTab.tabIndex = 0;
 
-  // Hide other tab panels and show the selected panel
+  // سایر پنل‌های زبانه را مخفی کرده و پنل انتخاب‌شده را نمایش دهید
   const targetTabPanel = document.getElementById(
     targetTab.getAttribute("aria-controls"),
   );
@@ -250,7 +250,7 @@ function showTab(targetTab) {
 }
 ```
 
-Now we can call this function either on a `click` event or on a `keydown` event.
+اکنون می‌توانیم این تابع را یا در رویداد `click` یا در رویداد `keydown` فراخوانی کنیم.
 
 ```js
 tabs.forEach((tab) => {
@@ -269,20 +269,20 @@ tabs.forEach((tab) => {
 
 {{EmbedLiveSample("Example", 600, 130)}}
 
-## Best practices
+## بهترین روش‌ها
 
-It is recommended to use a {{HTMLElement('button')}} element with the role `tab` for their built-in functional and accessible features instead, as opposed to needing to add them yourself. For controlling tab key functionality for elements with the role `tab`, it is recommended to set all non-active elements to `tabindex="-1"`, and to set the active element to `tabindex="0"`.
+توصیه می‌شود از یک عنصر {{HTMLElement('button')}} با نقش `tab` برای ویژگی‌های عملکردی و دسترسی‌پذیری داخلی آن استفاده کنید، به جای اینکه نیاز به اضافه کردن آن‌ها خودتان داشته باشید. برای کنترل عملکرد کلید Tab برای عناصر دارای نقش `tab`، توصیه می‌شود تمام عناصر غیرفعال را روی `tabindex="-1"` و عنصر فعال را روی `tabindex="0"` تنظیم کنید.
 
-## Precedence order
+## ترتیب اولویت
 
-What are the related properties, and in what order will this attribute or property be read, which property will take precedence over this one, and which property will be overwritten.
+ویژگی‌های مرتبط کدامند و این ویژگی یا ویژگی به چه ترتیبی خوانده می‌شود، کدام ویژگی بر این یکی اولویت خواهد داشت، و کدام ویژگی بازنویسی می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement('button')}} element
+- عنصر HTML {{HTMLElement('button')}}
 - [KeyboardEvent.key](/en-US/docs/Web/API/KeyboardEvent/key)
-- [ARIA `tabpanel` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role)
+- [نقش `tabpanel` در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role)
