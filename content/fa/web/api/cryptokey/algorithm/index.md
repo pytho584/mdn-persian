@@ -1,11 +1,5 @@
 ---
 title: "CryptoKey: algorithm property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CryptoKey/algorithm"
-status: "needs-translation"
----
-
----
-title: "CryptoKey: algorithm property"
 short-title: algorithm
 slug: Web/API/CryptoKey/algorithm
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.CryptoKey.algorithm
 
 {{APIRef("Web Crypto API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The read-only **`algorithm`** property of the {{DOMxRef("CryptoKey")}} interface returns an object describing the algorithm for which this key can be used, and any associated extra parameters.
+ویژگی فقط-خواندنی **`algorithm`** از رابط {{DOMxRef("CryptoKey")}} یک شیء را برمی‌گرداند که الگوریتم قابل استفاده برای این کلید و هر پارامتر اضافی مرتبط را توصیف می‌کند.
 
-The object returned depends of the algorithm used to generate the key.
+شیء بازگشتی به الگوریتم مورد استفاده برای تولید کلید بستگی دارد.
 
-## Value
+## مقدار
 
-An object matching:
+یک شیء منطبق با:
 
-- [`AesKeyGenParams`](/en-US/docs/Web/API/AesKeyGenParams) if the algorithm is any of the AES variants.
-- [`RsaHashedKeyGenParams`](/en-US/docs/Web/API/RsaHashedKeyGenParams) if the algorithm is any of the RSA variants.
-- [`EcKeyGenParams`](/en-US/docs/Web/API/EcKeyGenParams) if the algorithm is any of the EC variants.
-- [`HmacKeyGenParams`](/en-US/docs/Web/API/HmacKeyGenParams) if the algorithm is HMAC.
+- [`AesKeyGenParams`](/en-US/docs/Web/API/AesKeyGenParams) اگر الگوریتم یکی از انواع AES باشد.
+- [`RsaHashedKeyGenParams`](/en-US/docs/Web/API/RsaHashedKeyGenParams) اگر الگوریتم یکی از انواع RSA باشد.
+- [`EcKeyGenParams`](/en-US/docs/Web/API/EcKeyGenParams) اگر الگوریتم یکی از انواع EC باشد.
+- [`HmacKeyGenParams`](/en-US/docs/Web/API/HmacKeyGenParams) اگر الگوریتم HMAC باشد.
 
-For `RsaHashedKeyGenParams` and `HmacKeyGenParams`, the `hash` property is always in the object form (with a property called `name`), not the string form.
+برای `RsaHashedKeyGenParams` و `HmacKeyGenParams`، ویژگی `hash` همیشه به صورت شیء (با یک ویژگی به نام `name`) است، نه به صورت رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const rawKey = window.crypto.getRandomValues(new Uint8Array(16));
@@ -51,10 +45,10 @@ importSecretKey(rawKey).then((key) =>
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
