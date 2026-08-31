@@ -1,7 +1,7 @@
 ---
 title: "Animation: playbackRate property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/playbackRate"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,20 +14,20 @@ browser-compat: api.Animation.playbackRate
 
 {{APIRef("Web Animations")}}
 
-The **`Animation.playbackRate`** property of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) returns or sets the playback rate of the animation.
+**`Animation.playbackRate`** 属性属于 [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)，用于返回或设置动画的播放速率。
 
-Animations have a **playback rate** that provides a scaling factor from the rate of change of the animation's {{domxref("DocumentTimeline", "timeline")}} time values to the animation's current time. The playback rate is initially `1`.
+动画具有一个**播放速率**，它提供了一个缩放因子，用于将动画的 {{domxref("DocumentTimeline", "timeline")}} 时间值的变化速率映射到动画的当前时间。播放速率初始为 `1`。
 
-## Value
+## مقدار
 
-Takes a number that can be 0, negative, or positive. Negative values reverse the animation. The value is a scaling factor, so for example a value of 2 would double the playback rate.
+接受一个数字，可以是 0、负数或正数。负值会使动画反向播放。该值是一个缩放因子，例如值为 2 会使播放速率加倍。
 
 > [!NOTE]
-> Setting an animation's `playbackRate` to `0` effectively pauses the animation (however, its {{domxref("Animation.playState", "playState")}} does not necessarily become `paused`).
+> 将动画的 `playbackRate` 设置为 `0` 实际上会暂停动画（但是，其 {{domxref("Animation.playState", "playState")}} 不一定会变为 `paused`）。
 
-## Examples
+## مثال‌ها
 
-In the [Growing/Shrinking Alice Game](https://codepen.io/rachelnabors/pen/PNYGZQ?editors=0010) example, clicking or tapping the bottle causes Alice's growing animation (`aliceChange`) to reverse, causing her to shrink:
+در مثال [Growing/Shrinking Alice Game](https://codepen.io/rachelnabors/pen/PNYGZQ?editors=0010)، کلیک یا لمس بطری باعث می‌شود انیمیشن رشد آلیس (`aliceChange`) معکوس شود و او کوچک شود:
 
 ```js
 const shrinkAlice = () => {
@@ -35,12 +35,12 @@ const shrinkAlice = () => {
   aliceChange.play();
 };
 
-// On tap or click, Alice will shrink.
+// با لمس یا کلیک، آلیس کوچک می‌شود.
 bottle.addEventListener("mousedown", shrinkAlice);
 bottle.addEventListener("touchstart", shrinkAlice);
 ```
 
-Contrariwise, clicking on the cake causes her to "grow," playing `aliceChange` forwards again:
+برعکس، کلیک روی کیک باعث می‌شود او «بزرگ شود» و دوباره `aliceChange` را به جلو اجرا کند:
 
 ```js
 const growAlice = () => {
@@ -48,23 +48,23 @@ const growAlice = () => {
   aliceChange.play();
 };
 
-// On tap or click, Alice will grow.
+// با لمس یا کلیک، آلیس بزرگ می‌شود.
 cake.addEventListener("mousedown", growAlice);
 cake.addEventListener("touchstart", growAlice);
 ```
 
-In another example, the [Red Queen's Race Game](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#other_useful_methods), Alice and the Red Queen are constantly slowing down:
+در مثال دیگر، [Red Queen's Race Game](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#other_useful_methods)، آلیس و ملکه سرخ مدام کند می‌شوند:
 
 ```js
 setInterval(() => {
-  // Make sure the playback rate never falls below .4
+  // مطمئن شوید که نرخ پخش هرگز کمتر از 0.4 نمی‌شود
   if (redQueenAlice.playbackRate > 0.4) {
     redQueenAlice.updatePlaybackRate(redQueenAlice.playbackRate * 0.9);
   }
 }, 3000);
 ```
 
-But clicking or tapping on them causes them to speed up by multiplying their `playbackRate`:
+اما کلیک یا لمس روی آن‌ها باعث می‌شود با ضرب کردن `playbackRate` خود سرعت بگیرند:
 
 ```js
 const goFaster = () => {
@@ -75,15 +75,15 @@ document.addEventListener("click", goFaster);
 document.addEventListener("touchstart", goFaster);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("Animation")}}
