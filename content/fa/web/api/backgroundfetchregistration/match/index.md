@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRegistration: match() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/match"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,55 +16,44 @@ browser-compat: api.BackgroundFetchRegistration.match
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`match()`** method of the {{domxref("BackgroundFetchRegistration")}} interface returns the first matching {{domxref("BackgroundFetchRecord")}}.
+متد **`match()`** از رابط {{domxref("BackgroundFetchRegistration")}} اولین {{domxref("BackgroundFetchRecord")}} منطبق را بازمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 match(request)
 match(request, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `request`
-  - : The {{domxref("Request")}} for which you are attempting to find records.
-    This can be a {{domxref("Request")}} object or a URL.
+  - : {{domxref("Request")}} که برای آن تلاش می‌کنید رکوردهایی را بیابید.
+    این می‌تواند یک شیء {{domxref("Request")}} یا یک URL باشد.
 - `options` {{optional_inline}}
-  - : An object that sets options for the `match` operation. The available
-    options are:
+  - : یک شیء که گزینه‌هایی را برای عملیات `match` تنظیم می‌کند. گزینه‌های موجود عبارتند از:
     - `ignoreSearch` {{optional_inline}}
-      - : A boolean value that specifies whether to
-        ignore the query string in the URL. For example, if set to
-        `true` the `?value=bar` part of
-        `https://example.com/?value=bar` would be ignored when performing a match.
-        It defaults to `false`.
+      - : یک مقدار بولی که مشخص می‌کند آیا رشته جستجو در URL نادیده گرفته شود یا خیر. به عنوان مثال، اگر روی `true` تنظیم شود، قسمت `?value=bar` از `https://example.com/?value=bar` هنگام انجام تطبیق نادیده گرفته می‌شود. مقدار پیش‌فرض `false` است.
     - `ignoreMethod` {{optional_inline}}
-      - : A boolean value. When `true`,
-        prevents matching operations from validating the {{domxref("Request")}} `http` method.
-        If `false` (the default) only `GET` and `HEAD` are allowed.
+      - : یک مقدار بولی. وقتی `true` باشد، از اعتبارسنجی متد HTTP {{domxref("Request")}} توسط عملیات تطبیق جلوگیری می‌کند. اگر `false` (پیش‌فرض) باشد، فقط `GET` و `HEAD` مجاز هستند.
     - `ignoreVary` {{optional_inline}}
-      - : A boolean value. When `true` indicates that the {{HTTPHeader("Vary")}} header should be ignored.
-        It defaults to `false`.
+      - : یک مقدار بولی. وقتی `true` باشد، نشان می‌دهد که هدر {{HTTPHeader("Vary")}} باید نادیده گرفته شود. مقدار پیش‌فرض `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with the first {{domxref("BackgroundFetchRecord")}} that matches
-the request or {{jsxref("undefined")}} if no match is found.
+یک {{jsxref("Promise")}} که با اولین {{domxref("BackgroundFetchRecord")}} که با درخواست مطابقت دارد، حل می‌شود، یا اگر هیچ تطبیقی یافت نشود، {{jsxref("undefined")}}.
 
 > [!NOTE]
-> `BackgroundFetchRegistration.match()` is basically identical to
-> {{domxref("BackgroundFetchRegistration.matchAll()")}}, except that rather than resolving with an array of
-> all matching records, it resolves with the first matching record only.
+> `BackgroundFetchRegistration.match()` اساساً مشابه {{domxref("BackgroundFetchRegistration.matchAll()")}} است، با این تفاوت که به جای حل شدن با یک آرایه از تمام رکوردهای منطبق، تنها با اولین رکورد منطبق حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Returned if you call `match()` when there are no fetches in progress. This state will be reflected by {{domxref("BackgroundFetchRegistration.recordsAvailable")}} being set to `false`.
+  - : اگر `match()` را زمانی که هیچ واکشی در حال انجام نیست فراخوانی کنید، بازگردانده می‌شود. این حالت با تنظیم شدن {{domxref("BackgroundFetchRegistration.recordsAvailable")}} روی `false` منعکس می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this example we look for a record with the URL "/ep-5.mp3". If a {{domxref("BackgroundFetchRecord")}} is found then we can return some information about it.
+در این مثال، ما به دنبال رکوردی با URL "/ep-5.mp3" می‌گردیم. اگر یک {{domxref("BackgroundFetchRecord")}} پیدا شود، می‌توانیم برخی اطلاعات در مورد آن را بازگردانیم.
 
 ```js
 bgFetch.match("/ep-5.mp3").then(async (record) => {
@@ -79,10 +68,10 @@ bgFetch.match("/ep-5.mp3").then(async (record) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
