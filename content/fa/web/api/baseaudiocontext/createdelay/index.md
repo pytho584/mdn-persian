@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createDelay() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createDelay"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,14 +14,11 @@ browser-compat: api.BaseAudioContext.createDelay
 
 {{APIRef("Web Audio API")}}
 
-The `createDelay()` method of the
-{{domxref("BaseAudioContext")}} Interface is used to create a {{domxref("DelayNode")}},
-which is used to delay the incoming audio signal by a certain amount of time.
+متد `createDelay()` از رابط {{domxref("BaseAudioContext")}} برای ایجاد یک {{domxref("DelayNode")}} استفاده می‌شود که برای تأخیر انداختن سیگنال صوتی ورودی به میزان مشخصی از زمان به کار می‌رود.
 
 > [!NOTE]
-> The {{domxref("DelayNode.DelayNode", "DelayNode()")}}
-> constructor is the recommended way to create a {{domxref("DelayNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> سازنده {{domxref("DelayNode.DelayNode", "DelayNode()")}} روش توصیه‌شده برای ایجاد یک {{domxref("DelayNode")}} است؛ برای اطلاعات بیشتر به
+> [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
 ## Syntax
 
@@ -32,22 +29,17 @@ createDelay(maxDelayTime)
 ### Parameters
 
 - `maxDelayTime` {{optional_inline}}
-  - : The maximum amount of time, in seconds, that the audio signal can be delayed by.
-    Must be less than 180 seconds, and defaults to 1 second if not specified.
+  - : حداکثر مقدار زمان (بر حسب ثانیه) که سیگنال صوتی می‌تواند تأخیر داشته باشد. این مقدار باید کمتر از ۱۸۰ ثانیه باشد و در صورت عدم تعیین، مقدار پیش‌فرض ۱ ثانیه است.
 
 ### Return value
 
-A {{domxref("DelayNode")}}. The default {{domxref("DelayNode.delayTime")}} is 0
-seconds.
+یک {{domxref("DelayNode")}}. مقدار پیش‌فرض {{domxref("DelayNode.delayTime")}} صفر ثانیه است.
 
 ## Examples
 
-We have created an example that allows you to play three different samples on a
-constant loop — see [create-delay](https://chrisdavidmills.github.io/create-delay/) (you can also
-[view the source code](https://github.com/chrisdavidmills/create-delay)). If
-you just press the play buttons, the loops will start immediately; if you slide the
-sliders up to the right, then press the play buttons, a delay will be introduced, so the
-looping sounds don't start playing for a short amount of time.
+ما یک مثال ساخته‌ایم که به شما امکان می‌دهد سه نمونه مختلف را در یک حلقه ثابت پخش کنید — به [create-delay](https://chrisdavidmills.github.io/create-delay/) مراجعه کنید (همچنین می‌توانید
+[کد منبع](https://github.com/chrisdavidmills/create-delay) را مشاهده کنید). اگر
+فقط دکمه‌های پخش را فشار دهید، حلقه‌ها بلافاصله شروع می‌شوند؛ اگر نوار لغزنده را به سمت راست بکشید و سپس دکمه‌های پخش را فشار دهید، یک تأخیر اعمال می‌شود، به طوری که صداهای حلقه‌شونده برای مدت کوتاهی شروع به پخش نمی‌کنند.
 
 ```js
 const audioCtx = new AudioContext();
@@ -94,4 +86,4 @@ rangeSynth.oninput = () => {
 
 ## See also
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
