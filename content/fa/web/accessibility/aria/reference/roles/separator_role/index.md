@@ -1,11 +1,5 @@
 ---
 title: "ARIA: separator role"
-source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role"
-status: "needs-translation"
----
-
----
-title: "ARIA: separator role"
 short-title: separator
 slug: Web/Accessibility/ARIA/Reference/Roles/separator_role
 page-type: aria-role
@@ -13,39 +7,40 @@ spec-urls:
   - https://w3c.github.io/aria/#separator
   - https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-editor/
 sidebar: accessibilitysidebar
+translated_by: "n8n + AI"
 ---
 
-The `separator` role indicates the element is a divider that separates and distinguishes sections of content or groups of menuitems. The implicit ARIA role of the native thematic break {{HTMLElement('hr')}} element is `separator`.
+نقش `separator` نشان‌دهنده عنصری است که به عنوان جداکننده بین بخش‌های محتوا یا گروه‌های آیتم‌های منو عمل می‌کند. نقش ضمنی ARIA برای عنصر جداساز موضوعی (thematic break) بومی {{HTMLElement('hr')}} برابر `separator` است.
 
-## Description
+## توضیحات
 
-A separator is a divider that separates and distinguishes sections of content or groups of menuitems. There are two types of separators: a static structure that provides a visible boundary, identical to the HTML {{HTMLElement('hr')}} element, and a focusable, moveable widget.
+یک جداکننده (separator) عنصری است که بخش‌های محتوا یا گروه‌های آیتم‌های منو را از هم جدا کرده و مشخص می‌کند. دو نوع جداکننده وجود دارد: یک ساختار ایستا که مرز قابل مشاهده‌ای ایجاد می‌کند، مشابه عنصر HTML {{HTMLElement('hr')}}، و یک ویجت قابل تمرکز و قابل جابجایی.
 
-Elements with the role `separator` have an implicit [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) value of `horizontal`.
+عناصر دارای نقش `separator` به طور ضمنی دارای مقدار [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) برابر `horizontal` هستند.
 
-### Non-focusable separator
+### جداکننده غیرقابل تمرکز
 
-A non-focusable separator is a static structural element that can be used to help visually divide two groups of menu items in a menu or to provide a horizontal rule between two sections of a page. Thematic breaks that aren't focusable can still be perceivable by a screen reader user when using a reading cursor that does not depend on focus.
+یک جداکننده غیرقابل تمرکز یک عنصر ساختاری ایستا است که می‌تواند برای کمک به جدا کردن بصری دو گروه از آیتم‌های منو در یک منو یا ایجاد یک خط افقی بین دو بخش از یک صفحه استفاده شود. جداسازهای موضوعی که قابل تمرکز نیستند همچنان می‌توانند توسط کاربران صفحه‌خوان با استفاده از مکان‌نمای خواندن که به تمرکز وابسته نیست، درک شوند.
 
 ```html
-<h2>My first blog post</h2>
+<h2>اولین پست وبلاگ من</h2>
 …
 <img src="blueline.gif" role="separator" alt="" />
-<h2>Two years later, my second post</h2>
+<h2>دو سال بعد، دومین پست من</h2>
 …
 ```
 
-In the example, an image creates a visual separator between two blog posts. The author could have used a semantic thematic break {{HTMLElement('hr')}} element and styled it with CSS to make it blue (and not have to change the image when they change the blog's theme), or the author could have encompassed each post in the semantic {{HTMLElement('article')}} element, or both.
+در این مثال، یک تصویر یک جداکننده بصری بین دو پست وبلاگ ایجاد می‌کند. نویسنده می‌توانست از یک عنصر جداساز موضوعی معنایی {{HTMLElement('hr')}} استفاده کرده و با CSS آن را به رنگ آبی درآورد (و مجبور نباشد هنگام تغییر تم وبلاگ، تصویر را تغییر دهد)، یا می‌توانست هر پست را در عنصر معنایی {{HTMLElement('article')}} محصور کند، یا هر دو.
 
 ```html
 <section role="feed">
   <article>
-    <h2>My first blog post</h2>
+    <h2>اولین پست وبلاگ من</h2>
     …
   </article>
   <hr />
   <article>
-    <h2>Two years later, my second post</h2>
+    <h2>دو سال بعد، دومین پست من</h2>
     …
   </article>
 </section>
@@ -58,73 +53,73 @@ In the example, an image creates a visual separator between two blog posts. The 
 }
 ```
 
-An accessible name is not needed.
+نیازی به نام دسترسی‌پذیر نیست.
 
-### Focusable separator
+### جداکننده قابل تمرکز
 
-The separator role can be used to identify the element as a visual separator between groups of items within a menu, such as groups of `menuitemradio` or `menuitemcheckbox` elements.
+نقش جداکننده می‌تواند برای شناسایی عنصر به عنوان یک جداکننده بصری بین گروه‌های آیتم‌ها در یک منو، مانند گروه‌های عناصر `menuitemradio` یا `menuitemcheckbox` استفاده شود.
 
-If the separator is focusable, providing a visible boundary between two sections of content and enabling the user to change the relative size of the sections it separates by changing its position, the value of [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) must be set to a number reflecting the current position of the separator and the value must be updated when it changes. The [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) and [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) should also be included if they aren't set to the default values of 0 and 100, respectively.
+اگر جداکننده قابل تمرکز باشد، یک مرز قابل مشاهده بین دو بخش از محتوا ایجاد کند و به کاربر امکان تغییر اندازه نسبی بخش‌های جدا شده با تغییر موقعیت آن را بدهد، باید مقدار [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) به عددی تنظیم شود که موقعیت فعلی جداکننده را منعکس کند و این مقدار هنگام تغییر به‌روزرسانی شود. اگر مقادیر پیش‌فرض 0 و 100 نباشند، باید [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) و [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) نیز اضافه شوند.
 
-An accessible name, with [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) should be included if there is more than one focusable separator.
+اگر بیش از یک جداکننده قابل تمرکز وجود داشته باشد، باید یک نام دسترسی‌پذیر با [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) اضافه شود.
 
-### All descendants are presentational
+### تمام فرزندان ارائه‌ای هستند
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in a `separator`. To deal with this limitation, browsers, automatically apply role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) to all descendant elements of any `separator` element as it is a role that does not support semantic children.
+برخی از انواع اجزای رابط کاربری، هنگامی که در یک API دسترسی‌پذیری پلتفرم نمایش داده می‌شوند، فقط می‌توانند شامل متن باشند. APIهای دسترسی‌پذیری راهی برای نمایش عناصر معنایی موجود در یک `separator` ندارند. برای مقابله با این محدودیت، مرورگرها به طور خودکار نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را به تمام عناصر فرزند هر عنصر `separator` اعمال می‌کنند، زیرا این نقشی است که از فرزندان معنایی پشتیبانی نمی‌کند.
 
-For example, consider the following `separator` element, which contains a heading.
-
-```html
-<div role="separator"><h3>Title of my separator</h3></div>
-```
-
-Because descendants of `separator` are presentational, the following code is equivalent:
+به عنوان مثال، عنصر `separator` زیر را در نظر بگیرید که شامل یک عنوان است.
 
 ```html
-<div role="separator"><h3 role="presentation">Title of my separator</h3></div>
+<div role="separator"><h3>عنوان جداکننده من</h3></div>
 ```
 
-From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree):
+از آنجایی که فرزندان `separator` ارائه‌ای هستند، کد زیر معادل است:
 
 ```html
-<div role="separator">Title of my separator</div>
+<div role="separator"><h3 role="presentation">عنوان جداکننده من</h3></div>
 ```
 
-### Associated WAI-ARIA roles, states, and properties
+از دید کاربر فناوری کمکی، عنوان وجود ندارد، زیرا قطعه کدهای قبلی در [درخت دسترسی‌پذیری](/en-US/docs/Glossary/Accessibility_tree) معادل موارد زیر هستند:
 
-- [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) (default is horizontal for separator)
-  - : By default, the divider for `separator` roles is assumed to be horizontal. The value can be included and set to horizontal, undefined (the default for other roles unless otherwise specified), or vertical.
+```html
+<div role="separator">عنوان جداکننده من</div>
+```
+
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
+
+- [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) (پیش‌فرض برای جداکننده افقی است)
+  - : به طور پیش‌فرض، جداکننده برای نقش‌های `separator` افقی در نظر گرفته می‌شود. مقدار می‌تواند شامل شود و روی `horizontal`، `undefined` (پیش‌فرض برای سایر نقش‌ها مگر اینکه طور دیگری مشخص شود) یا `vertical` تنظیم شود.
 
 - [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow)
-  - : If the separator is focusable and has a known value, the `aria-valuenow` defines the current value. If not focusable or the value is unknown, do not include this attribute.
+  - : اگر جداکننده قابل تمرکز باشد و مقدار مشخصی داشته باشد، `aria-valuenow` مقدار فعلی را تعریف می‌کند. اگر قابل تمرکز نیست یا مقدار نامشخص است، این ویژگی را اضافه نکنید.
 
-- [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) (default is 0)
-  - : If the separator is focusable, and the minimum value is not 0, include the minimum value with `aria-valuemin`. If the
+- [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) (پیش‌فرض 0)
+  - : اگر جداکننده قابل تمرکز باشد و حداقل مقدار 0 نباشد، مقدار حداقل را با `aria-valuemin` اضافه کنید.
 
-- [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) (default is 100)
-  - : If the separator is focusable, and the maximum value is not 100, include `aria-valuemax` with a value equal to or larger than `aria-valuemin`.
+- [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) (پیش‌فرض 100)
+  - : اگر جداکننده قابل تمرکز باشد و حداکثر مقدار 100 نباشد، `aria-valuemax` را با مقداری برابر یا بزرگتر از `aria-valuemin` اضافه کنید.
 
 - [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext)
-  - : If the separator is focusable, and the `aria-valuenow` is not optimal in providing the user with usable information, included `aria-valuetext` content will be read instead of the `aria-valuenow` value.
+  - : اگر جداکننده قابل تمرکز باشد و `aria-valuenow` برای ارائه اطلاعات قابل استفاده به کاربر بهینه نباشد، محتوای `aria-valuetext` به جای مقدار `aria-valuenow` خوانده می‌شود.
 
 <!--
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-## Examples
+## مثال‌ها
 
-## Accessibility concerns
+## نگرانی‌های دسترسی‌پذیری
 
-## Best Practices
+## بهترین روش‌ها
 
-### Prefer HTML -->
+### ترجیح HTML -->
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- Thematic break HTML {{HTMLElement('hr')}} element
-- [Example separator in a menubar](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-editor/)
+- عنصر جداساز موضوعی HTML {{HTMLElement('hr')}}
+- [مثال جداکننده در نوار منو](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-editor/)
