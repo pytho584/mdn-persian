@@ -1,59 +1,54 @@
 ---
 title: "ARIA: aria-flowto attribute"
-source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto"
-status: "needs-translation"
----
-
----
-title: "ARIA: aria-flowto attribute"
 short-title: aria-flowto
 slug: Web/Accessibility/ARIA/Reference/Attributes/aria-flowto
 page-type: aria-attribute
 spec-urls: https://w3c.github.io/aria/#aria-flowto
 sidebar: accessibilitysidebar
+translated_by: "n8n + AI"
 ---
 
-The global `aria-flowto` attribute identifies the next element (or elements) in an alternate reading order of content. This allows assistive technology to override the general default of reading in document source order at the user's discretion.
+ویژگی سراسری `aria-flowto` عنصر (یا عناصر) بعدی را در ترتیب خواندن جایگزین محتوا مشخص می‌کند. این امکان را به فناوری کمکی می‌دهد تا با صلاحدید کاربر، حالت پیش‌فرض عمومی خواندن به ترتیب منبع سند را نادیده بگیرد.
 
-## Description
+## توضیحات
 
-Web pages should be sequentially navigable. For this reason, developers are dissuaded from using the global [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) attribute which can change tab order and the CSS {{CSSXRef('order')}} property, which can change visual order from the DOM order. However, in rare circumstances a reading path different from the source order is required. For such cases, the `aria-flowto` attribute can make the content more accessible for users of assistive technologies.
+صفحات وب باید به صورت ترتیبی قابل پیمایش باشند. به همین دلیل، توسعه‌دهندگان از استفاده از ویژگی سراسری [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) که می‌تواند ترتیب تب را تغییر دهد و ویژگی CSS {{CSSXRef('order')}} که می‌تواند ترتیب بصری را از ترتیب DOM تغییر دهد، منع می‌شوند. با این حال، در شرایط نادر، یک مسیر خواندن متفاوت از ترتیب منبع مورد نیاز است. برای چنین مواردی، ویژگی `aria-flowto` می‌تواند محتوا را برای کاربران فناوری‌های کمکی در دسترس‌تر کند.
 
-The global `aria-flowto` attribute lets the author indicate to assistive technology users which element or elements might want to be focused on next, providing an alternate reading order to the source order. This allows assistive technology to read a document in an order other than the default document source reading order.
+ویژگی سراسری `aria-flowto` به نویسنده اجازه می‌دهد تا به کاربران فناوری کمکی نشان دهد که کدام عنصر یا عناصر ممکن است بعداً مورد تمرکز قرار گیرند، و یک ترتیب خواندن جایگزین برای ترتیب منبع فراهم می‌کند. این به فناوری کمکی اجازه می‌دهد تا یک سند را به ترتیبی غیر از ترتیب پیش‌فرض خواندن منبع سند بخواند.
 
-When `aria-flowto` has a single [id](/en-US/docs/Web/HTML/Reference/Global_attributes/id) reference, it allows assistive technologies to, at the user's request, go to the element targeted via that `id` instead of reading the document in the order of the DOM. When the `aria-flowto` value uses a space separated list of multiple `id` references, assistive technology can provide the user with a list of path choices, with each `id` referenced being a choice. The path choice names are determined by the accessible name of each target element of the `aria-flowto` attribute.
+وقتی `aria-flowto` یک ارجاع [id](/en-US/docs/Web/HTML/Reference/Global_attributes/id) واحد دارد، به فناوری‌های کمکی اجازه می‌دهد تا به درخواست کاربر، به عنصر هدف‌گذاری شده توسط آن `id` بروند به جای اینکه سند را به ترتیب DOM بخوانند. وقتی مقدار `aria-flowto` از یک لیست جدا شده با فاصله از چندین ارجاع `id` استفاده می‌کند، فناوری کمکی می‌تواند لیستی از انتخاب‌های مسیر را در اختیار کاربر قرار دهد، که هر `id` ارجاع داده شده یک انتخاب است. نام‌های انتخاب مسیر با نام دسترس‌پذیر هر عنصر هدف از ویژگی `aria-flowto` تعیین می‌شود.
 
 > [!NOTE]
-> Setting `aria-flowto` does not impact the content's tab order. It only provides users the option to follow a content path that doesn't match the DOM order when using tech that supports this attribute.
+> تنظیم `aria-flowto` بر ترتیب تب محتوا تأثیر نمی‌گذارد. فقط به کاربران این گزینه را می‌دهد که مسیر محتوایی را دنبال کنند که با ترتیب DOM مطابقت ندارد، هنگام استفاده از فناوری‌ای که از این ویژگی پشتیبانی می‌کند.
 
-## Values
+## مقادیر
 
 - `id`
-  - : The `id` of the next element in the alternate reading order.
-- `id` list
-  - : Space separated list of values referencing the `id` values of elements the user may want to go to next in the alternate reading order of content.
+  - : `id` عنصر بعدی در ترتیب خواندن جایگزین.
+- لیست `id`
+  - : لیست جدا شده با فاصله از مقادیری که به مقادیر `id` عناصری که کاربر ممکن است بخواهد بعداً در ترتیب خواندن جایگزین محتوا به آن‌ها برود، ارجاع می‌دهد.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaFlowToElements")}}
-  - : The `ariaFlowToElements` property is part of each element's interface.
-    Its value is an array of instances of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-flowto` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaFlowToElements` بخشی از رابط هر عنصر است.
+    مقدار آن آرایه‌ای از نمونه‌های زیرکلاس‌های {{domxref("Element")}} است که ارجاعات `id` را در ویژگی `aria-flowto` منعکس می‌کند ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 - {{domxref("ElementInternals.ariaFlowToElements")}}
-  - : The `ariaFlowToElements` property is part of each custom element's interface.
-    Its value is an array of instances of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-flowto` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaFlowToElements` بخشی از رابط هر عنصر سفارشی است.
+    مقدار آن آرایه‌ای از نمونه‌های زیرکلاس‌های {{domxref("Element")}} است که ارجاعات `id` را در ویژگی `aria-flowto` منعکس می‌کند ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** roles.
+در **همه** نقش‌ها استفاده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- HTML [id](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute
-- HTML [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) attribute
-- CSS {{CSSXRef('order')}} property
-- [WCAG: source order](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Operable#guideline_2.4_—_navigable_provide_ways_to_help_users_navigate_find_content_and_determine_where_they_are)
-- [Using aria-flowto](https://www.w3.org/WAI/GL/wiki/Using_aria-flowto) - W3 Wiki
+- ویژگی HTML [id](/en-US/docs/Web/HTML/Reference/Global_attributes/id)
+- ویژگی HTML [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex)
+- ویژگی CSS {{CSSXRef('order')}}
+- [WCAG: ترتیب منبع](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Operable#guideline_2.4_—_navigable_provide_ways_to_help_users_navigate_find_content_and_determine_where_they_are)
+- [استفاده از aria-flowto](https://www.w3.org/WAI/GL/wiki/Using_aria-flowto) - ویکی W3
