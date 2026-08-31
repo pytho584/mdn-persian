@@ -1,7 +1,7 @@
 ---
 title: "AudioWorkletGlobalScope: port"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/port"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,28 +16,28 @@ browser-compat: api.AudioWorkletGlobalScope.port
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`port`** read-only property of the {{domxref("AudioWorkletGlobalScope")}} interface returns a {{domxref("MessagePort")}} object that can be used to send and receive messages between the main thread and the associated {{domxref("AudioWorklet")}}.
+ویژگی فقط خواندنی **`port`** در رابط {{domxref("AudioWorkletGlobalScope")}} یک شی {{domxref("MessagePort")}} برمی‌گرداند که می‌توان از آن برای ارسال و دریافت پیام‌ها بین رشته اصلی و {{domxref("AudioWorklet")}} مرتبط استفاده کرد.
 
-This allows for custom, asynchronous communication between code in the main thread and the global scope of an audio worklet, such as sending control data or global settings.
+این امکان ارتباط ناهمگام سفارشی بین کد موجود در رشته اصلی و محدوده سراسری یک worklet صوتی را فراهم می‌کند، مانند ارسال داده‌های کنترلی یا تنظیمات سراسری.
 
-## Value
+## مقدار
 
-The {{domxref("MessagePort")}} object that is connecting the `AudioWorklet` and its associated `AudioWorkletGlobalScope`.
+شی {{domxref("MessagePort")}} که `AudioWorklet` و `AudioWorkletGlobalScope` مرتبط با آن را به هم متصل می‌کند.
 
-## Examples
+## مثال‌ها
 
-See [`AudioWorkletNode.port`](/en-US/docs/Web/API/AudioWorkletNode/port#examples) for examples.
+برای مثال‌ها به [`AudioWorkletNode.port`](/en-US/docs/Web/API/AudioWorkletNode/port#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
-- [Using AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
