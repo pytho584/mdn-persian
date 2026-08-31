@@ -1,11 +1,5 @@
 ---
 title: "CloseWatcher: requestClose() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher/requestClose"
-status: "needs-translation"
----
-
----
-title: "CloseWatcher: requestClose() method"
 short-title: requestClose()
 slug: Web/API/CloseWatcher/requestClose
 page-type: web-api-instance-method
@@ -14,29 +8,29 @@ browser-compat: api.CloseWatcher.requestClose
 
 {{APIRef("HTML DOM")}}
 
-The **`requestClose()`** method of the {{domxref("CloseWatcher")}} interface fires a `cancel` event and if that event is not canceled with {{domxref("Event.preventDefault()")}}, proceeds to fire a `close` event, and then finally deactivates the close watcher as if `destroy()` was called.
+متد **`requestClose()`** از رابط {{domxref("CloseWatcher")}} یک رویداد `cancel` را فعال می‌کند و اگر آن رویداد با {{domxref("Event.preventDefault()")}} لغو نشود، به فعال‌سازی رویداد `close` ادامه می‌دهد و سپس ناظر بستن (close watcher) را به همان شکلی که اگر `destroy()` فراخوانی شده بود، غیرفعال می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 requestClose()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Using the `requestClose()` method
+### استفاده از متد `requestClose()`
 
-In this example, you have your own UI component (a picker), and you want to support both the platform's default close method (e.g., the <kbd>Esc</kbd> key) and your custom close method (a close button).
+در این مثال، شما یک کامپوننت رابط کاربری مخصوص خود (یک انتخاب‌گر یا picker) دارید و می‌خواهید هم از روش بستن پیش‌فرض پلتفرم (مثلاً کلید <kbd>Esc</kbd>) و هم از روش بستن سفارشی خود (دکمه بستن) پشتیبانی کنید.
 
-The `onclick` handler of your UI component can call `requestClose` to request a close and to route your close request through the same `onclose` handler the platform close method uses.
+مدیر رویداد `onclick` کامپوننت رابط کاربری شما می‌تواند `requestClose` را برای درخواست بستن فراخوانی کند و درخواست بستن شما را از طریق همان مدیر رویداد `onclose` که روش بستن پلتفرم استفاده می‌کند، هدایت کند.
 
 ```js
 const watcher = new CloseWatcher();
@@ -53,10 +47,10 @@ picker.querySelector(".close-button").onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
