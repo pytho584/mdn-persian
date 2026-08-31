@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-braillelabel attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-braillelabel"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,27 +13,27 @@ spec-urls: https://w3c.github.io/aria/#aria-braillelabel
 sidebar: accessibilitysidebar
 ---
 
-The global `aria-braillelabel` property defines a string value that labels the current element, which is intended to be converted into Braille.
+ویژگی سراسری `aria-braillelabel` یک مقدار رشتهای تعریف میکند که عنصر فعلی را برچسبگذاری میکند و قرار است به بریل تبدیل شود.
 
-## Description
+## توضیحات
 
-The global `aria-braillelabel` attribute is similar to the global [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) in that it defines a string value that labels the current element. While `aria-label` is read by the screen reader, the contents of the `aria-braillelabel` attribute are converted into Braille; providing the user with a recognizable name of the object in braille.
+ویژگی سراسری `aria-braillelabel` مشابه ویژگی سراسری [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) است، از این جهت که یک مقدار رشتهای تعریف میکند که عنصر فعلی را برچسبگذاری میکند. در حالی که `aria-label` توسط صفحهخوان خوانده میشود، محتویات ویژگی `aria-braillelabel` به بریل تبدیل میشوند و نام قابل تشخیصی از شیء را در بریل در اختیار کاربر قرار میدهند.
 
-The purpose of the `aria-braillelabel` property is to override how assistive technologies localize and express the accessible name of an element in Braille. It should only be used when, without this attribute, the accessible name would not be the desired user experience when converted to braille.
+هدف ویژگی `aria-braillelabel` بازنویسی روش بومیسازی و بیان نام دسترسپذیر یک عنصر در بریل توسط فناوریهای کمکی است. فقط زمانی باید استفاده شود که بدون این ویژگی، نام دسترسپذیر هنگام تبدیل به بریل، تجربه کاربری مطلوبی ایجاد نکند.
 
-When using `aria-braillelabel`, ensure that:
+هنگام استفاده از `aria-braillelabel` اطمینان حاصل کنید که:
 
-- The element to which `aria-braillelabel` is applied has a valid accessible name.
-- The value of `aria-braillelabel` has actual content and is not empty or only whitespace in unicode or unicode braille.
-- The value is NOT the same as the accessible name.
-- The `aria-braillelabel` values are localized to align with the document language.
-- Communicate to the user that this attribute is available, especially if the content contains unicode braille patterns, so the user knows to set the settings to apply user specific braille translations
+- عنصری که `aria-braillelabel` روی آن اعمال شده است، نام دسترسپذیر معتبری دارد.
+- مقدار `aria-braillelabel` دارای محتوای واقعی است و خالی یا فقط شامل فاصله (whitespace) در یونیکد یا بریل یونیکد نیست.
+- مقدار با نام دسترسپذیر یکسان نیست.
+- مقادیر `aria-braillelabel` بومیسازی شده‌اند تا با زبان سند هماهنگ باشند.
+- به کاربر اطلاع دهید که این ویژگی در دسترس است، به‌ویژه اگر محتوا شامل الگوهای بریل یونیکد است، تا کاربر بداند تنظیمات را برای اعمال ترجمه‌های بریل ویژه کاربر تنظیم کند.
 
 > [!NOTE]
-> Assistive technologies with braille support can convert the accessible names to braille.
-> Therefore, only use `aria-braillelabel` when the accessible name is not the user experience you want.
+> فناوری‌های کمکی که از بریل پشتیبانی می‌کنند می‌توانند نام‌های دسترس‌پذیر را به بریل تبدیل کنند.
+> بنابراین، فقط زمانی از `aria-braillelabel` استفاده کنید که نام دسترس‌پذیر تجربه کاربری مورد نظر شما نباشد.
 
-Using only the accessible name, e.g., from content or via `aria-label` is almost always the better user experience, so don't use aria-braillelabel to replicate aria-label. Only use `aria-braillelabel` if the accessible name cannot provide an adequate braille representation.
+استفاده تنها از نام دسترس‌پذیر، مثلاً از محتوا یا از طریق `aria-label`، تقریباً همیشه تجربه کاربری بهتری است؛ بنابراین برای تکرار `aria-label` از `aria-braillelabel` استفاده نکنید. فقط زمانی از `aria-braillelabel` استفاده کنید که نام دسترس‌پذیر نتواند نمایش بریل مناسبی فراهم کند.
 
 ```html
 <button aria-braillelabel="***">
@@ -41,22 +41,22 @@ Using only the accessible name, e.g., from content or via `aria-label` is almost
 </button>
 ```
 
-A braille display may display "btn \*\*\*" in Braille rather than the more verbose "btn gra 3 out of 5 stars".
+یک نمایشگر بریل ممکن است "btn \*\*\*" را در بریل نمایش دهد، نه عبارت طولانی‌تر "btn gra 3 out of 5 stars" را.
 
-## Values
+## مقادیر
 
 - `<string>`
-  - : The value is a string, an unconstrained value type, that is intended to be converted into braille.
+  - : مقدار یک رشته است، یک نوع مقدار بدون محدودیت، که قرار است به بریل تبدیل شود.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** roles.
+در **همه** نقش‌ها استفاده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.ariaBrailleLabel")}}
 - [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
