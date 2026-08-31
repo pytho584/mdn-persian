@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: imageSmoothingQuality property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: imageSmoothingQuality property"
 short-title: imageSmoothingQuality
 slug: Web/API/CanvasRenderingContext2D/imageSmoothingQuality
 page-type: web-api-instance-property
@@ -14,33 +8,29 @@ browser-compat: api.CanvasRenderingContext2D.imageSmoothingQuality
 
 {{APIRef("Canvas API")}}
 
-The **`imageSmoothingQuality`** property of the
-{{domxref("CanvasRenderingContext2D")}} interface, part of the [Canvas API](/en-US/docs/Web/API/Canvas_API), lets you set the quality of
-image smoothing.
+خاصیت **`imageSmoothingQuality`** در رابط {{domxref("CanvasRenderingContext2D")}}، که بخشی از [Canvas API](/en-US/docs/Web/API/Canvas_API) است، به شما امکان می‌دهد کیفیت نرم‌سازی تصویر را تنظیم کنید.
 
 > [!NOTE]
-> For this property to have an effect,
-> {{domxref("CanvasRenderingContext2D.imageSmoothingEnabled", "imageSmoothingEnabled")}}
-> must be `true`.
+> برای اینکه این خاصیت اثر داشته باشد، باید {{domxref("CanvasRenderingContext2D.imageSmoothingEnabled", "imageSmoothingEnabled")}} برابر با `true` باشد.
 
-## Value
+## مقدار
 
-One of the following:
+یکی از مقادیر زیر:
 
 - `"low"`
-  - : Low quality.
+  - : کیفیت پایین.
 - `"medium"`
-  - : Medium quality.
+  - : کیفیت متوسط.
 - `"high"`
-  - : High quality.
+  - : کیفیت بالا.
 
-The default value is `"low"`.
+مقدار پیش‌فرض `"low"` است.
 
-## Examples
+## مثال‌ها
 
-### Setting image smoothing quality
+### تنظیم کیفیت نرم‌سازی تصویر
 
-This example uses the `imageSmoothingQuality` property with a scaled image.
+این مثال از خاصیت `imageSmoothingQuality` همراه با یک تصویر تغییر اندازه‌داده‌شده استفاده می‌کند.
 
 #### HTML
 
@@ -62,20 +52,20 @@ img.onload = () => {
 };
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Setting_image_smoothing_quality', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این خاصیت: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.imageSmoothingEnabled")}}
 - {{cssxref("image-rendering")}}
