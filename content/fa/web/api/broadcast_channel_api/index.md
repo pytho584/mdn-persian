@@ -1,7 +1,7 @@
 ---
 title: "Broadcast Channel API"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,42 +13,42 @@ browser-compat: api.BroadcastChannel
 
 {{DefaultAPISidebar("Broadcast Channel API")}} {{AvailableInWorkers}}
 
-The **Broadcast Channel API** allows basic communication between {{glossary("browsing context", "browsing contexts")}} (that is, _windows_, _tabs_, _frames_, or _iframes_) and workers on the same {{glossary("origin")}}.
+**API Broadcast Channel** امکان ارتباط ساده بین {{glossary("browsing context", "زمینه‌های مرور")}} (یعنی _پنجره‌ها_, _زبانه‌ها_, _فریم‌ها_, یا _ایفریم‌ها_) و کارگران در یک {{glossary("origin", "مبدأ")}} را فراهم می‌کند.
 
 > [!NOTE]
-> To be exact, communication is allowed between browsing contexts using the same [storage partition](/en-US/docs/Web/Privacy/Guides/State_Partitioning). Storage is first partitioned according to top-level sites—so for example, if you have one opened page at `a.com` that embeds an iframe from `b.com`, and another page opened to `b.com`, then the iframe cannot communicate with the second page despite them being technically same-origin. However, if the first page is also on `b.com`, then the iframe can communicate with the second page.
+> در واقع، ارتباط بین زمینه‌های مرور که از [ذخیره‌سازی یکسان](/en-US/docs/Web/Privacy/Guides/State_Partitioning) استفاده می‌کنند مجاز است. ذخیره‌سازی ابتدا بر اساس سایت‌های سطح بالا تقسیم‌بندی می‌شود—به عنوان مثال، اگر یک صفحه در `a.com` باز داشته باشید که یک iframe از `b.com` را جاسازی کرده است، و صفحه دیگری به `b.com` باز شده باشد، آنگاه iframe نمی‌تواند با صفحه دوم ارتباط برقرار کند، با وجود اینکه از نظر فنی همان مبدأ هستند. با این حال، اگر صفحه اول نیز در `b.com` باشد، آنگاه iframe می‌تواند با صفحه دوم ارتباط برقرار کند.
 
-By creating a {{domxref("BroadcastChannel")}} object, you can receive any messages that are posted to it. You don't have to maintain a reference to the frames or workers you wish to communicate with: they can "subscribe" to a particular channel by constructing their own {{domxref("BroadcastChannel")}} with the same name, and have bi-directional communication between all of them.
+با ایجاد یک شیء {{domxref("BroadcastChannel")}}، می‌توانید هر پیامی که به آن ارسال می‌شود را دریافت کنید. نیازی به نگه داشتن ارجاع به فریم‌ها یا کارگرانی که می‌خواهید با آنها ارتباط برقرار کنید ندارید: آنها می‌توانند با ساختن {{domxref("BroadcastChannel")}} خود با همان نام، در یک کانال خاص «مشترک» شوند و ارتباط دوطرفه بین همه آنها برقرار کنند.
 
 ![The principle of the Broadcast Channel API](broadcastchannel.png)
 
-## Broadcast Channel interface
+## رابط Broadcast Channel
 
-### Creating or joining a channel
+### ایجاد یا پیوستن به یک کانال
 
-A client joins a broadcast channel by creating a {{domxref("BroadcastChannel")}} object. Its [constructor](/en-US/docs/Web/API/BroadcastChannel/BroadcastChannel) takes one single parameter: the _name_ of the channel. If it is the first to connect to that broadcast channel name, the underlying channel is created.
+یک مشتری با ایجاد یک شیء {{domxref("BroadcastChannel")}} به یک کانال پخش می‌پیوندد. [سازنده](/en-US/docs/Web/API/BroadcastChannel/BroadcastChannel) آن یک پارامتر واحد دریافت می‌کند: _نام_ کانال. اگر اولین بار باشد که به آن نام کانال پخش متصل می‌شود، کانال زمینه‌ای ایجاد می‌شود.
 
 ```js
 // Connection to a broadcast channel
 const bc = new BroadcastChannel("test_channel");
 ```
 
-### Sending a message
+### ارسال پیام
 
-It is enough to call the {{domxref("BroadcastChannel.postMessage", "postMessage()")}} method on the created `BroadcastChannel` object, which takes any object as an argument. An example string message:
+کافی است متد {{domxref("BroadcastChannel.postMessage", "postMessage()")}} را روی شیء `BroadcastChannel` ایجاد شده فراخوانی کنید، که هر شیئی را به عنوان آرگومان می‌پذیرد. یک نمونه پیام رشته‌ای:
 
 ```js
 // Example of sending of a very simple message
 bc.postMessage("This is a test message.");
 ```
 
-Data sent to the channel is serialized using the [structured clone algorithm](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm). That means you can send a broad variety of data objects safely without having to serialize them yourself.
+داده‌های ارسال شده به کانال با استفاده از [الگوریتم شبیه‌سازی ساختاریافته](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) سریال‌سازی می‌شوند. این بدان معناست که می‌توانید انواع مختلفی از اشیاء داده را بدون نیاز به سریال‌سازی خودتان به صورت ایمن ارسال کنید.
 
-The API doesn't associate any semantics to messages, so it is up to the code to know what kind of messages to expect and what to do with them.
+API هیچ معنایی به پیام‌ها نسبت نمی‌دهد، بنابراین این به عهده کد است که بداند چه نوع پیام‌هایی را انتظار داشته باشد و با آنها چه کند.
 
-### Receiving a message
+### دریافت پیام
 
-When a message is posted, a [`message`](/en-US/docs/Web/API/BroadcastChannel/message_event) event is dispatched to each {{domxref("BroadcastChannel")}} object connected to this channel. A function can be run for this event using the {{domxref("BroadcastChannel/message_event", "onmessage")}} event handler:
+وقتی پیامی ارسال می‌شود، یک رویداد [`message`](/en-US/docs/Web/API/BroadcastChannel/message_event) به هر شیء {{domxref("BroadcastChannel")}} متصل به این کانال ارسال می‌شود. یک تابع می‌تواند برای این رویداد با استفاده از کنترل‌کننده رویداد {{domxref("BroadcastChannel/message_event", "onmessage")}} اجرا شود:
 
 ```js
 // A handler that only logs the event to the console:
@@ -57,25 +57,25 @@ bc.onmessage = (event) => {
 };
 ```
 
-### Disconnecting a channel
+### قطع اتصال از یک کانال
 
-To leave a channel, call the {{domxref("BroadcastChannel.close", "close()")}} method on the object. This disconnects the object from the underlying channel, allowing garbage collection.
+برای ترک یک کانال، متد {{domxref("BroadcastChannel.close", "close()")}} را روی شیء فراخوانی کنید. این کار شیء را از کانال زمینه‌ای جدا می‌کند و امکان جمع‌آوری زباله را فراهم می‌کند.
 
 ```js
 // Disconnect the channel
 bc.close();
 ```
 
-## Conclusion
+## نتیجه‌گیری
 
-The Broadcast Channel API's self-contained interface allows cross-context communication. It can be used to detect user actions in other tabs within a same origin, like when the user logs in or out.
+رابط خودکفای API Broadcast Channel امکان ارتباط بین زمینه‌ای را فراهم می‌کند. می‌توان از آن برای تشخیص اقدامات کاربر در زبانه‌های دیگر در یک مبدأ استفاده کرد، مانند زمانی که کاربر وارد یا خارج می‌شود.
 
-The messaging protocol is not defined and the different browsing contexts need to implement it themselves; there is no negotiation nor requirement from the specification.
+پروتکل پیام‌رسانی تعریف نشده است و زمینه‌های مرور مختلف باید خودشان آن را پیاده‌سازی کنند؛ هیچ مذاکره یا الزامی از سوی مشخصات وجود ندارد.
 
 ## Interfaces
 
 - {{domxref("BroadcastChannel")}}
-  - : Represents a named channel that any {{glossary("browsing context")}} of a given {{glossary("origin")}} can subscribe to.
+  - : نشان‌دهنده یک کانال نام‌گذاری شده است که هر {{glossary("browsing context", "زمینه مرور")}} از یک {{glossary("origin", "مبدأ")}} مشخص می‌تواند در آن مشترک شود.
 
 ## Specifications
 
@@ -87,4 +87,4 @@ The messaging protocol is not defined and the different browsing contexts need t
 
 ## See also
 
-- {{domxref("BroadcastChannel")}}, the interface implementing it.
+- {{domxref("BroadcastChannel")}}، رابطی که آن را پیاده‌سازی می‌کند.
