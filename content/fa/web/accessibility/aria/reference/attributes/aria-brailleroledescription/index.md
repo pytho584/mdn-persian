@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-brailleroledescription attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-brailleroledescription"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,15 +13,15 @@ spec-urls: https://w3c.github.io/aria/#aria-brailleroledescription
 sidebar: accessibilitysidebar
 ---
 
-The global `aria-brailleroledescription` attribute defines a human-readable, author-localized abbreviated description for the role of an element intended to be converted into Braille.
+ویژگی سراسری `aria-brailleroledescription` توصیفی کوتاه و قابل‌خواندن برای انسان و بومی‌شده توسط نویسنده، از نقش یک عنصر تعریف می‌کند که قرار است به بریل تبدیل شود.
 
-## Description
+## توضیحات
 
-Braille is not a one-to-one transliteration of letters and numbers, but rather it includes various abbreviations, contractions, and characters that represent words (known as logograms).
+بریل ترانویسی یک‌به‌یک از حروف و اعداد نیست؛ بلکه شامل اختصارها، ترکیب‌های کوتاه و کاراکترهایی است که واژه‌ها را نشان می‌دهند (که لوگوگرام نامیده می‌شوند).
 
-Instead of converting long role descriptions to Braille, the `aria-brailleroledescription` attribute allows for providing an abbreviated version of the [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) value, which is a human-readable, author-localized description for the role of an element, for improved user experience with braille interfaces.
+به‌جای تبدیل توصیف‌های طولانی نقش به بریل، ویژگی `aria-brailleroledescription` امکان ارائه یک نسخه کوتاه‌شده از مقدار [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) را فراهم می‌کند؛ که توصیفی قابل‌خواندن برای انسان، بومی‌شده توسط نویسنده، برای نقش یک عنصر است، تا تجربه کاربری با رابط‌های بریل بهبود یابد.
 
-Basically, the value of `aria-brailleroledescription` is an abbreviated version of the `aria-roledescription` attribute to be converted into Braille.
+در واقع، مقدار `aria-brailleroledescription` نسخه کوتاه‌شده از ویژگی `aria-roledescription` است که قرار است به بریل تبدیل شود.
 
 ```html
 <article
@@ -33,50 +33,50 @@ Basically, the value of `aria-brailleroledescription` is an abbreviated version 
 </article>
 ```
 
-Most assistive technologies, like screen readers, will read the above as "slide, welcome to my talk. Image, Me." Braille assistive technologies will present "sld welcome to my talk gra me" in braille. The semantic {{HTMLElement('article')}} is given the role of "slide" by the `aria-roledescription` attribute; "slide" being a role not defined in the specification, but is a common role for slides in a presentation. In Braille, the role is presented as "sld". The "gra" is short for "graphic", which is how the "image" role is shortened in braille.
+بیشتر فناوری‌های کمکی، مانند صفحه‌خوان‌ها، متن بالا را به‌صورت «slide, welcome to my talk. Image, Me.» می‌خوانند. فناوری‌های کمکی بریل، آن را به‌صورت «sld welcome to my talk gra me» در بریل ارائه خواهند داد. به عنصر معنایی {{HTMLElement('article')}} با ویژگی `aria-roledescription` نقش «slide» داده شده است؛ «slide» نقشی است که در مشخصات تعریف نشده، اما نقش رایجی برای اسلایدها در یک ارائه است. در بریل، این نقش به‌صورت «sld» ارائه می‌شود. «gra» مخفف «graphic» است و به این صورت نقش «image» در بریل کوتاه شده است.
 
-The `aria-brailleroledescription` attribute should only be used to clarify the purpose of non-interactive container roles like "group" or "region", or to provide a more specific description of a widget in a braille context.
+ویژگی `aria-brailleroledescription` فقط باید برای روشن کردن هدف نقش‌های ظرف غیرتعاملی مانند «group» یا «region» استفاده شود، یا برای ارائه توصیف دقیق‌تری از یک ویجت در بافت بریل به کار رود.
 
-As the `aria-brailleroledescription` attribute overrides how assistive technologies localize and express the name of a role in braille, inappropriate values will prevent users from understanding and interacting with an element on braille interfaces.
+از آنجا که ویژگی `aria-brailleroledescription` نحوه بومی‌سازی و بیان نام یک نقش را توسط فناوری‌های کمکی در بریل بازنویسی می‌کند، مقادیر نامناسب مانع درک و تعامل کاربران با یک عنصر در رابط‌های بریل خواهد شد.
 
-Only use `aria-brailleroledescription` if [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) is present. However, if the `aria-roledescription` value works in braille, the braille version of the attribute is not needed. In general, `aria-brailleroledescription` should only be used in the rare case when an `aria-roledescription` is too verbose for braille.
+فقط زمانی از `aria-brailleroledescription` استفاده کنید که [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) وجود داشته باشد. با این حال، اگر مقدار `aria-roledescription` در بریل کارآمد است، نسخه بریل این ویژگی ضروری نیست. به‌طور کلی، `aria-brailleroledescription` فقط باید در موارد نادری استفاده شود که `aria-roledescription` برای بریل بیش از حد طولانی است.
 
-A few rules to remember:
+چند قانون که باید به خاطر بسپارید:
 
-- Only apply `aria-brailleroledescription` to elements with a valid ARIA role or elements with implicit role semantics.
-- The `aria-brailleroledescription`, if present, must have a non-empty, none null value that is different from the `aria-roledescription` value, which, in turn, is different from the ARIA explicit or role or implicit semantic role.
-- Avoid using Unicode Braille Patterns. If they must be used, ensure the `aria-brailleroledescription` value contains content other than unicode braille patterns, whitespace, and braille pattern dots-0.
-- Ensure the value is always localized to the document's language.
+- فقط `aria-brailleroledescription` را روی عناصری اعمال کنید که نقش ARIA معتبر دارند یا عناصری با معناشناسی نقش ضمنی.
+- ویژگی `aria-brailleroledescription`، در صورت وجود، باید مقداری غیر خالی و غیر null داشته باشد که با مقدار `aria-roledescription` متفاوت باشد؛ و آن نیز باید با نقش صریح یا نقش معنایی ضمنی ARIA متفاوت باشد.
+- از استفاده از الگوهای بریل یونیکد خودداری کنید. اگر استفاده از آنها ضروری است، اطمینان حاصل کنید که مقدار `aria-brailleroledescription` حاوی محتوایی به‌جز الگوهای بریل یونیکد، فاصله‌های خالی و الگوی بریل dots-0 باشد.
+- اطمینان حاصل کنید که مقدار همیشه به زبان سند بومی‌شده است.
 
 > [!WARNING]
-> If the content is only in unicode braille patterns, the value will not be translated according to the user's preferred translation table.
+> اگر محتوا فقط شامل الگوهای بریل یونیکد باشد، مقدار بر اساس جدول ترجمه موردعلاقه کاربر ترجمه نخواهد شد.
 
 > [!NOTE]
-> Do NOT use `aria-brailleroledescription` to replicate `aria-roledescription`. Only include this attribute when `aria-roledescription` does not provide an adequate braille representation.
+> از `aria-brailleroledescription` برای تکرار `aria-roledescription` استفاده نکنید. این ویژگی را فقط زمانی اضافه کنید که `aria-roledescription` بازنمایی بریل مناسبی ارائه نمی‌دهد.
 
-The `aria-brailleroledescription` value will not be exposed to the braille user if:
+مقدار `aria-brailleroledescription` در موارد زیر در اختیار کاربر بریل قرار نخواهد گرفت:
 
-- The value is empty or contains only whitespace characters or the empty braille pattern: dots-0 (U+2800).
-- The element to which the attribute is applied has an explicit or implicit WAI-ARIA role where `aria-brailleroledescription` is prohibited, including the `generic` role.
-- The element to which the attribute is applied does not have a valid `aria-roledescription`.
+- مقدار خالی باشد، یا فقط شامل کاراکترهای فاصله یا الگوی بریل خالی: dots-0 (U+2800) باشد.
+- عنصری که ویژگی به آن اعمال شده دارای نقش صریح یا ضمنی WAI-ARIA باشد که `aria-brailleroledescription` در آن ممنوع است، از جمله نقش `generic`.
+- عنصری که ویژگی به آن اعمال شده، `aria-roledescription` معتبر نداشته باشد.
 
 > [!NOTE]
-> Test your sites and applications with daily users of assistive technologies, including braille readers, to ensure your content makes sense in braille.
+> سایت‌ها و برنامه‌های خود را با کاربران روزمره فناوری‌های کمکی، از جمله خوانندگان بریل، آزمایش کنید تا مطمئن شوید محتوایتان در بریل معنادار است.
 
-## Values
+## مقادیر
 
 - `<string>`
-  - : The value is a string, an unconstrained value type, that is intended to be converted into braille
+  - : مقدار یک رشته است، یک نوع مقدار بدون قید، که قرار است به بریل تبدیل شود.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** roles (except [`generic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/generic_role)).
+در **همه** نقش‌ها (به‌جز [`generic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/generic_role)) استفاده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.ariaBrailleRoleDescription")}}
 - [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription).
