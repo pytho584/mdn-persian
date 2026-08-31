@@ -1,7 +1,7 @@
 ---
 title: "BeforeInstallPromptEvent: BeforeInstallPromptEvent() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent/BeforeInstallPromptEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -17,7 +17,7 @@ browser-compat: api.BeforeInstallPromptEvent.BeforeInstallPromptEvent
 
 {{APIRef}}{{SeeCompatTable}}{{Non-standard_header}}
 
-The **`BeforeInstallPromptEvent()`** constructor creates a new {{domxref("BeforeInstallPromptEvent")}} object.
+سازنده **`BeforeInstallPromptEvent()`** یک شیء جدید {{domxref("BeforeInstallPromptEvent")}} ایجاد می‌کند.
 
 ## Syntax
 
@@ -26,22 +26,22 @@ new BeforeInstallPromptEvent(type)
 new BeforeInstallPromptEvent(type, eventInitDict)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event, set to `beforeinstallprompt`.
+  - : یک رشته با نام رویداد، که روی `beforeinstallprompt` تنظیم شده است.
 - `eventInitDict` {{optional_inline}}
-  - : An object with a single optional property `platforms`, which is an array of strings, listing the platforms on which the event will be dispatched.
+  - : یک شیء با یک ویژگی اختیاری به نام `platforms` که آرایه‌ای از رشته‌ها است و پلتفرم‌هایی را که رویداد روی آن‌ها ارسال می‌شود، فهرست می‌کند.
 
 ## Specifications
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Making PWAs installable](/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable)
-- [How to provide your own in-app install experience](https://web.dev/articles/customize-install) on web.dev (2021)
+- [قابل نصب کردن PWAs](/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable)
+- [چگونه تجربه نصب درون برنامه‌ای خود را ارائه دهید](https://web.dev/articles/customize-install) در web.dev (2021)
