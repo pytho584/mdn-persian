@@ -1,11 +1,5 @@
 ---
 title: "ContactAddress: country property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContactAddress/country"
-status: "needs-translation"
----
-
----
-title: "ContactAddress: country property"
 short-title: country
 slug: Web/API/ContactAddress/country
 page-type: web-api-instance-property
@@ -16,18 +10,18 @@ browser-compat: api.ContactAddress.country
 
 {{securecontext_header}}{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
-The **`country`** read-only property of the {{domxref("ContactAddress")}} interface is a string identifying the address's country using the [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) standard. The string is always in its canonical upper-case form.
+**`country`** یک ویژگی فقط‌خواندنی در رابط {{domxref("ContactAddress")}} است که رشته‌ای شامل کشور آدرس را بر اساس استاندارد [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) برمی‌گرداند. این رشته همیشه به شکل متعارف خود و با حروف بزرگ نوشته می‌شود.
 
-Some examples of valid `country` values: `"US"`, `"GB"`, `"CN"`, or `"JP"`.
+چند نمونه از مقادیر معتبر `country`: `"US"`, `"GB"`, `"CN"` یا `"JP"`.
 
-## Value
+## مقدار
 
-A string which contains the ISO3166-1 alpha-2 code identifying the country in which the address is located, or an empty string if no country is available, which frequently can be assumed to mean "same country as the site owner."
+رشته‌ای که حاوی کد ISO3166-1 alpha-2 مربوط به کشوری است که آدرس در آن قرار دارد؛ یا اگر کشوری در دسترس نباشد، یک رشته خالی که معمولاً می‌توان آن را به معنای «همان کشورِ مالک سایت» در نظر گرفت.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
