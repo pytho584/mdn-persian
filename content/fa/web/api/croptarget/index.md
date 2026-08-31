@@ -1,10 +1,4 @@
 ---
-title: "CropTarget"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CropTarget"
-status: "needs-translation"
----
-
----
 title: CropTarget
 slug: Web/API/CropTarget
 page-type: web-api-interface
@@ -15,50 +9,50 @@ browser-compat: api.CropTarget
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}
 
-The **`CropTarget`** interface of the {{domxref("Screen Capture API", "Screen Capture API", "", "nocode")}} provides a static method, {{domxref("CropTarget.fromElement_static", "fromElement()")}}, which returns a `CropTarget` instance that can be used to crop a captured video track to the area in which a specified element is rendered.
+**`CropTarget`** از رابط‌های {{domxref("Screen Capture API", "Screen Capture API", "", "nocode")}} یک متد ایستا به نام {{domxref("CropTarget.fromElement_static", "fromElement()")}} ارائه می‌دهد که یک نمونه از `CropTarget` برمی‌گرداند. از این نمونه می‌توان برای برش دادن یک ویدئوی ضبط‌شده به ناحیه‌ای که یک عنصر مشخص در آن رندر می‌شود استفاده کرد.
 
 {{InheritanceDiagram}}
 
-## Static methods
+## متدهای ایستا
 
 - {{domxref("CropTarget.fromElement_static", "fromElement()")}} {{Experimental_Inline}}
-  - : Returns a `CropTarget` instance that can be used to crop a captured video track to the area in which a specified element is rendered.
+  - : یک نمونه `CropTarget` برمی‌گرداند که می‌توان از آن برای برش دادن یک ویدئوی ضبط‌شده به ناحیه‌ای که یک عنصر مشخص در آن رندر می‌شود استفاده کرد.
 
-## Examples
+## مثال‌ها
 
 ```js
-// Options for getDisplayMedia()
+// گزینه‌های مربوط به getDisplayMedia()
 const displayMediaOptions = {
   preferCurrentTab: true,
 };
 
-// Create crop target from DOM element
+// ایجاد target برش از روی عنصر DOM
 const demoElem = document.querySelector("#demo");
 const cropTarget = await CropTarget.fromElement(demoElem);
 
-// Capture video stream from user's webcam and isolate video track
+// دریافت جریان ویدئو از وب‌کم کاربر و جدا کردن track ویدئو
 const stream =
   await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
 const [track] = stream.getVideoTracks();
 
-// Crop video track
+// برش دادن track ویدئو
 await track.cropTo(cropTarget);
 
-// Broadcast cropped stream in <video> element
+// پخش جریان برش‌خورده در عنصر <video>
 videoElem.srcObject = stream;
 ```
 
-See [Using the Element Capture and Region Capture APIs](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture) for in-context example code.
+برای مشاهده کد مثال در بافت واقعی، به [استفاده از APIهای Element Capture و Region Capture](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
-- [Using the Element Capture and Region Capture APIs](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture)
+- [استفاده از APIهای Element Capture و Region Capture](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture)
