@@ -1,7 +1,7 @@
 ---
 title: "Cache"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Cache"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,49 +13,49 @@ browser-compat: api.Cache
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`Cache`** interface provides a persistent storage mechanism for {{domxref("Request")}} / {{domxref("Response")}} object pairs that are cached in long lived memory. How long a `Cache` object lives is browser dependent, but a single origin's scripts can typically rely on the presence of a previously populated `Cache` object. Note that the `Cache` interface is exposed to windowed scopes as well as workers. You don't have to use it in conjunction with service workers, even though it is defined in the service worker spec.
+رابط **`Cache`** یک مکانیسم ذخیره‌سازی پایدار برای جفت‌های {{domxref("Request")}} / {{domxref("Response")}} فراهم می‌کند که در حافظه‌ای با عمر طولانی کش می‌شوند. مدت زمان زنده ماندن یک شیء `Cache` به مرورگر بستگی دارد، اما معمولاً اسکریپت‌های یک مبدأ واحد می‌توانند به وجود یک شیء `Cache` که قبلاً پر شده است اعتماد کنند. توجه داشته باشید که رابط `Cache` هم در scopeهای پنجره‌ای و هم در workerها در معرض دید قرار دارد. شما مجبور نیستید از آن در کنار service workerها استفاده کنید، اگرچه در مشخصات service worker تعریف شده است.
 
-An origin can have multiple, named `Cache` objects. You are responsible for implementing how your script (e.g., in a {{domxref("ServiceWorker")}}) handles `Cache` updates. Items in a `Cache` do not get updated unless explicitly requested; they don't expire unless deleted. Use {{domxref("CacheStorage.open", "CacheStorage.open()")}} to open a specific named `Cache` object and then call any of the `Cache` methods to maintain the `Cache`.
+یک مبدأ می‌تواند چندین شیء `Cache` نام‌گذاری شده داشته باشد. شما مسئول پیاده‌سازی نحوه مدیریت به‌روزرسانی‌های `Cache` توسط اسکریپت خود (مثلاً در یک {{domxref("ServiceWorker")}}) هستید. موارد موجود در یک `Cache` به‌روزرسانی نمی‌شوند مگر اینکه صریحاً درخواست شوند؛ و منقضی نمی‌شوند مگر اینکه حذف شوند. از {{domxref("CacheStorage.open", "CacheStorage.open()")}} برای باز کردن یک شیء `Cache` نام‌گذاری شده خاص استفاده کنید و سپس هر یک از متدهای `Cache` را برای نگهداری `Cache` فراخوانی کنید.
 
-You are also responsible for periodically purging cache entries. Each browser has a hard limit on the amount of cache storage that a given origin can use. `Cache` quota usage estimates are available via the {{domxref("StorageManager.estimate()")}} method. The browser does its best to manage disk space, but it may delete the `Cache` storage for an origin. The browser will generally delete all of the data for an origin or none of the data for an origin. Make sure to version caches by name and use the caches only from the version of the script that they can safely operate on. See [Deleting old caches](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers#deleting_old_caches) for more information.
-
-> [!NOTE]
-> The key matching algorithm depends on the [VARY header](https://www.fastly.com/blog/best-practices-using-vary-header) in the value. So matching a new key requires looking at both key and value for entries in the `Cache` object.
+همچنین شما مسئول پاکسازی دوره‌ای ورودی‌های کش هستید. هر مرورگر محدودیت سختی برای میزان فضای ذخیره‌سازی کش دارد که یک مبدأ معین می‌تواند استفاده کند. تخمین‌های استفاده از سهمیه `Cache` از طریق متد {{domxref("StorageManager.estimate()")}} در دسترس است. مرورگر بهترین تلاش خود را برای مدیریت فضای دیسک انجام می‌دهد، اما ممکن است ذخیره‌سازی `Cache` را برای یک مبدأ حذف کند. مرورگر معمولاً تمام داده‌های یک مبدأ را حذف می‌کند یا هیچ‌کدام را. حتماً کش‌ها را با نام نسخه‌بندی کنید و فقط از نسخه‌ای از اسکریپت که می‌تواند با خیال راحت روی آنها کار کند از کش‌ها استفاده کنید. برای اطلاعات بیشتر به [حذف کش‌های قدیمی](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers#deleting_old_caches) مراجعه کنید.
 
 > [!NOTE]
-> The caching API doesn't honor HTTP caching headers.
+> الگوریتم تطبیق کلید به [header VARY](https://www.fastly.com/blog/best-practices-using-vary-header) در مقدار بستگی دارد. بنابراین تطبیق یک کلید جدید نیازمند نگاه کردن به هر دو کلید و مقدار برای ورودی‌های موجود در شیء `Cache` است.
 
-## Instance methods
+> [!NOTE]
+> API کش از headerهای کش HTTP پیروی نمی‌کند.
+
+## متدهای نمونه
 
 - {{domxref("Cache.match()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves to the response associated with the first matching request in the `Cache` object.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که به پاسخ مرتبط با اولین درخواست مطابقت داده شده در شیء `Cache` حل می‌شود.
 - {{domxref("Cache.matchAll()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves to an array of all matching responses in the `Cache` object.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که به آرایه‌ای از تمام پاسخ‌های مطابقت داده شده در شیء `Cache` حل می‌شود.
 - {{domxref("Cache.add()")}}
-  - : Takes a URL, retrieves it and adds the resulting response object to the given cache. This is functionally equivalent to calling `fetch()`, then using `put()` to add the results to the cache.
+  - : یک URL را می‌گیرد، آن را بازیابی می‌کند و شیء پاسخ حاصل را به کش داده شده اضافه می‌کند. این از نظر عملکردی معادل فراخوانی `fetch()` و سپس استفاده از `put()` برای افزودن نتایج به کش است.
 - {{domxref("Cache.addAll()")}}
-  - : Takes an array of URLs, retrieves them, and adds the resulting response objects to the given cache.
+  - : آرایه‌ای از URLها را می‌گیرد، آنها را بازیابی می‌کند و شیءهای پاسخ حاصل را به کش داده شده اضافه می‌کند.
 - {{domxref("Cache.put()")}}
-  - : Takes both a request and its response and adds it to the given cache.
+  - : هم یک درخواست و هم پاسخ آن را می‌گیرد و به کش داده شده اضافه می‌کند.
 - {{domxref("Cache.delete()")}}
-  - : Finds the `Cache` entry whose key is the request, returning a {{jsxref("Promise")}} that resolves to `true` if a matching `Cache` entry is found and deleted. If no `Cache` entry is found, the promise resolves to `false`.
+  - : ورودی `Cache` را که کلید آن درخواست است پیدا می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند که اگر یک ورودی `Cache` مطابقت داده شده پیدا و حذف شود، به `true` حل می‌شود. اگر هیچ ورودی `Cache` یافت نشود، promise به `false` حل می‌شود.
 - {{domxref("Cache.keys()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves to an array of `Cache` keys.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که به آرایه‌ای از کلیدهای `Cache` حل می‌شود.
 
-## Examples
+## مثال‌ها
 
-This code snippet is from the [service worker selective caching sample](https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/selective-caching/service-worker.js). (see [selective caching live](https://googlechrome.github.io/samples/service-worker/selective-caching/)) The code uses {{domxref("CacheStorage.open()")}} to open any `Cache` objects with a `Content-Type` header that starts with `font/`.
+این قطعه کد از [نمونه کش انتخابی service worker](https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/selective-caching/service-worker.js) گرفته شده است. (به [کش انتخابی زنده](https://googlechrome.github.io/samples/service-worker/selective-caching/) مراجعه کنید.) کد از {{domxref("CacheStorage.open()")}} برای باز کردن هر شیء `Cache` با header `Content-Type` که با `font/` شروع می‌شود استفاده می‌کند.
 
-The code then uses {{domxref("Cache.match()")}} to see if there's already a matching font in the cache, and if so, returns it. If there isn't a matching font, the code fetches the font from the network and uses {{domxref("Cache.put()")}} to cache the fetched resource.
+سپس کد از {{domxref("Cache.match()")}} استفاده می‌کند تا ببیند آیا از قبل یک فونت مطابقت داده شده در کش وجود دارد یا خیر، و اگر وجود دارد، آن را برمی‌گرداند. اگر فونت مطابقت داده شده‌ای وجود نداشته باشد، کد فونت را از شبکه واکشی می‌کند و از {{domxref("Cache.put()")}} برای کش کردن منبع واکشی شده استفاده می‌کند.
 
-The code handles exceptions thrown from the {{domxref("Window/fetch", "fetch()")}} operation. Note that an HTTP error response (e.g., 404) will not trigger an exception. It will return a normal response object that has the appropriate error code.
+کد استثناهای پرتاب شده از عملیات {{domxref("Window/fetch", "fetch()")}} را مدیریت می‌کند. توجه داشته باشید که یک پاسخ خطای HTTP (مثلاً 404) باعث ایجاد استثنا نخواهد شد. این یک شیء پاسخ عادی با کد خطای مناسب برمی‌گرداند.
 
-The code snippet also shows a best practice for versioning caches used by the service worker. Though there's only one cache in this example, the same approach can be used for multiple caches. It maps a shorthand identifier for a cache to a specific, versioned cache name. The code also deletes all caches that aren't named in `CURRENT_CACHES`.
+قطعه کد همچنین یک بهترین روش برای نسخه‌بندی کش‌های استفاده شده توسط service worker را نشان می‌دهد. اگرچه در این مثال فقط یک کش وجود دارد، اما می‌توان از همین رویکرد برای چندین کش استفاده کرد. یک شناسه کوتاه برای یک کش به یک نام کش نسخه‌بندی شده خاص نگاشت می‌شود. کد همچنین تمام کش‌هایی که در `CURRENT_CACHES` نامگذاری نشده‌اند را حذف می‌کند.
 
-In the code example, `caches` is a property of the {{domxref("ServiceWorkerGlobalScope")}}. It holds the `CacheStorage` object, by which it can access the {{domxref("CacheStorage")}} interface.
+در مثال کد، `caches` یک ویژگی از {{domxref("ServiceWorkerGlobalScope")}} است. این شامل شیء `CacheStorage` است که با آن می‌توان به رابط {{domxref("CacheStorage")}} دسترسی داشت.
 
 > [!NOTE]
-> In Chrome, visit `chrome://inspect/#service-workers` and click on the "inspect" link below the registered service worker to view logging statements for the various actions the [`service-worker.js`](https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/selective-caching/service-worker.js) script is performing.
+> در Chrome، برای مشاهده عبارات ورود به سیستم برای اقدامات مختلفی که اسکریپت [`service-worker.js`](https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/selective-caching/service-worker.js) انجام می‌دهد، به `chrome://inspect/#service-workers` بروید و روی پیوند "inspect" زیر service worker ثبت‌شده کلیک کنید.
 
 ```js
 const CACHE_VERSION = 1;
@@ -172,20 +172,20 @@ self.addEventListener("fetch", (event) => {
 });
 ```
 
-### Cookies and Cache objects
+### کوکی‌ها و اشیاء Cache
 
-The [Fetch API](/en-US/docs/Web/API/Fetch_API) requires {{httpheader("Set-Cookie")}} headers to be stripped before returning a {{domxref("Response")}} object from {{domxref("Window/fetch", "fetch()")}}. So a `Response` stored in a `Cache` won't contain `Set-Cookie` headers, and therefore won't cause any cookies to be stored.
+[API Fetch](/en-US/docs/Web/API/Fetch_API) نیاز دارد که headerهای {{httpheader("Set-Cookie")}} قبل از بازگرداندن یک شیء {{domxref("Response")}} از {{domxref("Window/fetch", "fetch()")}} حذف شوند. بنابراین یک `Response` ذخیره شده در یک `Cache` حاوی headerهای `Set-Cookie` نخواهد بود و در نتیجه باعث ذخیره هیچ کوکی‌ای نخواهد شد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-- [Service workers basic code example](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
-- [Using web workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+- [استفاده از Service Workerها](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [مثال کد پایه Service workerها](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
+- [استفاده از web workerها](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
