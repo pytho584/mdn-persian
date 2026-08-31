@@ -1,10 +1,4 @@
 ---
-title: "CSS Painting API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API"
-status: "needs-translation"
----
-
----
 title: CSS Painting API
 slug: Web/API/CSS_Painting_API
 page-type: web-api-overview
@@ -15,13 +9,13 @@ browser-compat: api.PaintWorkletGlobalScope
 
 {{DefaultAPISidebar("CSS Painting API")}}{{SeeCompatTable}}
 
-The CSS Painting API — part of the [CSS Houdini](/en-US/docs/Web/API/Houdini_APIs) umbrella of APIs — allows developers to write JavaScript functions that can draw directly into an element's background, border, or content.
+**CSS Painting API** — بخشی از چتر APIهای [CSS Houdini](/en-US/docs/Web/API/Houdini_APIs) — به توسعه‌دهندگان اجازه می‌دهد توابع جاوااسکریپتی بنویسند که مستقیماً در پس‌زمینه، حاشیه یا محتوای یک عنصر رسم کنند.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-Essentially, the CSS Painting API contains functionality allowing developers to create custom values for {{cssxref('image/paint', 'paint()')}}, a CSS {{cssxref('&lt;image&gt;')}} function. You can then apply these values to properties like {{cssxref('background-image')}} to set complex custom backgrounds on an element.
+به طور خلاصه، CSS Painting API شامل قابلیت‌هایی است که به توسعه‌دهندگان امکان می‌دهد مقادیر سفارشی برای {{cssxref('image/paint', 'paint()')}}، یک تابع {{cssxref('&lt;image&gt;')}} در CSS، ایجاد کنند. سپس می‌توانید این مقادیر را روی ویژگی‌هایی مانند {{cssxref('background-image')}} اعمال کنید تا پس‌زمینه‌های سفارشی پیچیده‌ای برای یک عنصر تنظیم کنید.
 
-For example:
+به عنوان مثال:
 
 ```css
 aside {
@@ -29,30 +23,30 @@ aside {
 }
 ```
 
-The API defines a {{domxref('worklet')}} that can be used to programmatically generate an image that responds to computed style changes. To find out more about how this is used, consult [Using the CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API/Guide).
+این API یک {{domxref('worklet')}} تعریف می‌کند که می‌تواند برای تولید برنامه‌ریزی شده یک تصویر که به تغییرات استایل محاسبه‌شده پاسخ می‌دهد، استفاده شود. برای اطلاعات بیشتر در مورد نحوه استفاده از آن، به [استفاده از CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API/Guide) مراجعه کنید.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref('PaintWorkletGlobalScope')}}
-  - : The global execution context of the paint worklet.
+  - : زمینه اجرای جهانی worklet نقاشی.
 - {{domxref('PaintRenderingContext2D')}}
-  - : The rendering context for the CSS Painting API's rendering context for drawing to the bitmap.
+  - : زمینه رندرینگ برای زمینه رندرینگ CSS Painting API جهت رسم روی بیت‌مپ.
 - {{domxref('PaintSize')}}
-  - : Represents the size of the output bitmap that the author should draw.
+  - : اندازه بیت‌مپ خروجی که نویسنده باید روی آن رسم کند را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The following example creates a list of items with a background image that rotates between three different colors and three widths.
-In [a supporting browser](#browser_compatibility) you will see something like the image below.
+مثال زیر یک لیست از موارد دارای تصویر پس‌زمینه ایجاد می‌کند که بین سه رنگ و سه عرض مختلف چرخش می‌کند.
+در [مرورگر پشتیبانی‌کننده](#browser_compatibility) تصویری مشابه تصویر زیر خواهید دید.
 
-![The width and color of the background image changes based on the custom properties](Guide/boxbg.png)
+![عرض و رنگ تصویر پس‌زمینه بر اساس ویژگی‌های سفارشی تغییر می‌کند](Guide/boxbg.png)
 
-To achieve this we'll define two custom CSS properties, `--box-color` and `--width-subtractor`.
+برای رسیدن به این هدف، دو ویژگی سفارشی CSS، `--box-color` و `--width-subtractor` را تعریف می‌کنیم.
 
-### The paint worklet
+### worklet نقاشی
 
-The worklet is an external JavaScript file (in this case we've called it `boxbg.js`) which defines a paint {{domxref('worklet')}}.
-Using the worklet, we can access CSS properties (and custom properties) of elements:
+worklet یک فایل جاوااسکریپت خارجی است (در این مورد آن را `boxbg.js` نامیده‌ایم) که یک {{domxref('worklet')}} نقاشی تعریف می‌کند.
+با استفاده از worklet، می‌توانیم به ویژگی‌های CSS (و ویژگی‌های سفارشی) عناصر دسترسی پیدا کنیم:
 
 ```js
 registerPaint(
@@ -62,9 +56,9 @@ registerPaint(
       return { alpha: true };
     }
     /*
-      Retrieve any custom properties (or regular properties,
-      such as 'height') defined for the element, and return
-      them as an array.
+      هر ویژگی سفارشی (یا ویژگی معمولی،
+      مانند 'height') که برای عنصر تعریف شده است را بازیابی کرده
+      و به عنوان یک آرایه بازمی‌گرداند.
     */
     static get inputProperties() {
       return ["--box-color", "--width-subtractor"];
@@ -72,9 +66,9 @@ registerPaint(
 
     paint(ctx, size, props) {
       /*
-        ctx -> drawing context
-        size -> paintSize: width and height
-        props -> properties: get() method
+        ctx -> زمینه رسم
+        size -> paintSize: عرض و ارتفاع
+        props -> ویژگی‌ها: متد get()
       */
       ctx.fillStyle = props.get("--box-color");
       ctx.fillRect(
@@ -88,31 +82,31 @@ registerPaint(
 );
 ```
 
-We used the `inputProperties()` method in the `registerPaint()` class to get the values of two custom properties set on an element that has `boxbg` applied to it and then used those within our `paint()` function. The `inputProperties()` method can return all properties affecting the element, not just custom properties.
+ما از متد `inputProperties()` در کلاس `registerPaint()` برای دریافت مقادیر دو ویژگی سفارشی تنظیم شده روی عنصری که `boxbg` به آن اعمال شده است استفاده کردیم و سپس آن‌ها را در تابع `paint()` خود به کار بردیم. متد `inputProperties()` می‌تواند تمام ویژگی‌های تأثیرگذار بر عنصر را بازگرداند، نه فقط ویژگی‌های سفارشی را.
 
-### Using the paint worklet
+### استفاده از worklet نقاشی
 
 #### HTML
 
 ```html live-sample___example-boxbg
 <ul>
-  <li>item 1</li>
-  <li>item 2</li>
-  <li>item 3</li>
-  <li>item 4</li>
-  <li>item 5</li>
-  <li>item 6</li>
-  <li>item 7</li>
-  <li>item 8</li>
-  <li>item 9</li>
-  <li>item 10</li>
-  <li>item N</li>
+  <li>مورد ۱</li>
+  <li>مورد ۲</li>
+  <li>مورد ۳</li>
+  <li>مورد ۴</li>
+  <li>مورد ۵</li>
+  <li>مورد ۶</li>
+  <li>مورد ۷</li>
+  <li>مورد ۸</li>
+  <li>مورد ۹</li>
+  <li>مورد ۱۰</li>
+  <li>مورد N</li>
 </ul>
 ```
 
 #### CSS
 
-In our CSS, we define the `--box-color` and `--width-subtractor` custom properties.
+در CSS خود، ویژگی‌های سفارشی `--box-color` و `--width-subtractor` را تعریف می‌کنیم.
 
 ```css live-sample___example-boxbg
 body {
@@ -136,8 +130,8 @@ li:nth-of-type(3n + 1) {
 
 #### JavaScript
 
-The setup and logic of the paint worklet is in the external script.
-To register the worklet, we need to call {{domxref('Worklet.addModule', 'addModule()')}} from our main script:
+راه‌اندازی و منطق worklet نقاشی در اسکریپت خارجی قرار دارد.
+برای ثبت worklet، باید {{domxref('Worklet.addModule', 'addModule()')}} را از اسکریپت اصلی خود فراخوانی کنیم:
 
 ```js live-sample___example-boxbg
 CSS.paintWorklet.addModule(
@@ -145,28 +139,28 @@ CSS.paintWorklet.addModule(
 );
 ```
 
-In this example, the worklet is hosted at `https://mdn.github.io/`, but your worklet may be a relative resource like so:
+در این مثال، worklet در `https://mdn.github.io/` میزبانی می‌شود، اما worklet شما می‌تواند یک منبع نسبی مانند زیر باشد:
 
 ```js
 CSS.paintWorklet.addModule("boxbg.js");
 ```
 
-#### Result
+#### نتیجه
 
-While you can't play with the worklet's script, you can alter the custom property values in DevTools to change the colors and width of the background image.
+اگرچه نمی‌توانید با اسکریپت worklet بازی کنید، می‌توانید مقادیر ویژگی‌های سفارشی را در DevTools تغییر دهید تا رنگ‌ها و عرض تصویر پس‌زمینه را تغییر دهید.
 
 {{EmbedLiveSample("example-boxbg", "", "300px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API/Guide)
+- [استفاده از CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API/Guide)
 - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
 - [Houdini APIs](/en-US/docs/Web/API/Houdini_APIs)
