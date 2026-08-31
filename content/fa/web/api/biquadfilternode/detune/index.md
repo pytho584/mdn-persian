@@ -1,7 +1,7 @@
 ---
 title: "BiquadFilterNode: detune property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/detune"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,19 +14,17 @@ browser-compat: api.BiquadFilterNode.detune
 
 {{ APIRef("Web Audio API") }}
 
-The `detune` property of the {{ domxref("BiquadFilterNode") }} interface is an [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}} representing detuning of the frequency in [cents](https://en.wikipedia.org/wiki/Cent_%28music%29).
+ویژگی `detune` از رابط {{ domxref("BiquadFilterNode") }} یک {{domxref("AudioParam")}} با [نرخ a](/en-US/docs/Web/API/AudioParam#a-rate) است که نشان‌دهندهٔ تنظیم‌زدایی (detuning) فرکانس بر حسب [سنت](https://en.wikipedia.org/wiki/Cent_%28music%29) می‌باشد.
 
-## Value
+## مقدار
 
-An [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}}.
+یک {{domxref("AudioParam")}} با [نرخ a](/en-US/docs/Web/API/AudioParam#a-rate).
 
-> [!NOTE]
-> Though the `AudioParam` returned is read-only, the value it represents is not.
+> [!NOTE] هرچند `AudioParam` بازگردانده شده فقط‌خواندنی است، اما مقداری که آن نشان می‌دهد فقط‌خواندنی نیست.
 
-## Examples
+## مثال‌ها
 
-The following example shows basic usage of an AudioContext to create a Biquad filter node.
-For more complete applied examples/information, check out our [Voice-change-O-matic](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) demo (see [app.js lines 108–193](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js#L108-L193) for relevant code).
+مثال زیر کاربرد پایه‌ای یک `AudioContext` برای ایجاد یک گره فیلتر Biquad را نشان می‌دهد. برای مثال‌ها/اطلاعات کاربردی کامل‌تر، نسخهٔ نمایشی [Voice-change-O-matic](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) ما را ببینید (برای کد مرتبط به [خطوط ۱۰۸ تا ۱۹۳ app.js](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js#L108-L193) مراجعه کنید).
 
 ```js
 const audioCtx = new AudioContext();
@@ -56,14 +54,14 @@ biquadFilter.gain.value = 25;
 biquadFilter.detune.value = 100;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
