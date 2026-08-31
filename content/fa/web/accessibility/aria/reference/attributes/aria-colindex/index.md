@@ -1,37 +1,33 @@
 ---
 title: "ARIA: aria-colindex attribute"
-source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex"
-status: "needs-translation"
----
-
----
-title: "ARIA: aria-colindex attribute"
 short-title: aria-colindex
 slug: Web/Accessibility/ARIA/Reference/Attributes/aria-colindex
 page-type: aria-attribute
 spec-urls: https://w3c.github.io/aria/#aria-colindex
 sidebar: accessibilitysidebar
+source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex"
+translated_by: "n8n + AI"
 ---
 
-The `aria-colindex` attribute defines an element's column index or position with respect to the total number of columns within a `table`, `grid`, or `treegrid`.
+ویژگی `aria-colindex` موقعیت یا ایندکس ستون یک عنصر را نسبت به تعداد کل ستون‌ها در یک `table`، `grid` یا `treegrid` تعریف می‌کند.
 
-## Description
+## توضیحات
 
-Some tables are very large, and as a result have only a portion of its content is initially displayed. While loading only a subsection of the columns may improve user experience, you need to let all users know what portions of the content are being displayed, and that all the table's content is not present.
+برخی جداول بسیار بزرگ هستند و در نتیجه فقط بخشی از محتوای آنها در ابتدا نمایش داده می‌شود. در حالی که بارگذاری تنها زیرمجموعه‌ای از ستون‌ها ممکن است تجربه کاربری را بهبود بخشد، باید به همه کاربران اطلاع دهید که چه بخش‌هایی از محتوا نمایش داده می‌شود و اینکه تمام محتوای جدول موجود نیست.
 
-ARIA provides several attributes to provide information about `table`, `grid`, and `treegrid` structures. The `aria-colindex` attribute defines the substructure, an element's column index or position with respect to the total number of columns, within such structures.
+ARIA چندین ویژگی برای ارائه اطلاعات در مورد ساختارهای `table`، `grid` و `treegrid` فراهم می‌کند. ویژگی `aria-colindex` زیرساختار، یعنی ایندکس یا موقعیت ستون یک عنصر را نسبت به تعداد کل ستون‌ها در این ساختارها تعریف می‌کند.
 
-Used in conjunction with the [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount) attribute, which informs assistive technologies how many columns the table would have if all columns were present, the `aria-colindex` is used an element's column index or position with respect to that total number of columns.
+این ویژگی همراه با ویژگی [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount) استفاده می‌شود که به فناوری‌های کمکی اطلاع می‌دهد جدول در صورت وجود تمام ستون‌ها چند ستون خواهد داشت. `aria-colindex` برای تعیین ایندکس یا موقعیت ستون یک عنصر نسبت به آن تعداد کل ستون‌ها استفاده می‌شود.
 
-If all of the columns are present in the DOM, including `aria-colindex` is not necessary as user agents can calculate the column index of each cell or gridcell. However, if any of the columns are left out of the DOM at any time, use `aria-colindex` to indicate the column of each cell or gridcell with respect to the full table.
+اگر تمام ستون‌ها در DOM وجود داشته باشند، نیازی به گنجاندن `aria-colindex` نیست زیرا عامل‌های کاربر می‌توانند ایندکس ستون هر سلول یا gridcell را محاسبه کنند. با این حال، اگر هر یک از ستون‌ها در هر زمان از DOM حذف شوند، از `aria-colindex` برای نشان دادن ستون هر سلول یا gridcell نسبت به جدول کامل استفاده کنید.
 
-The value for `aria-colindex` is an integer greater than or equal to 1. Each value should be greater than the previous column's `aria-colindex` and less than or equal to the number of columns in the full table.
+مقدار `aria-colindex` یک عدد صحیح بزرگتر یا مساوی ۱ است. هر مقدار باید بزرگتر از `aria-colindex` ستون قبلی و کوچکتر یا مساوی تعداد ستون‌های جدول کامل باشد.
 
-If a cell or gridcell spans multiple columns, set [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan) to the number of columns it spans if not using {{htmlelement('td')}} and {{htmlelement('th')}} HTML elements, and set `aria-colindex` to the value of the start of the span; the value it would have had if it was only one column wide spanning only the first of its columns.
+اگر یک سلول یا gridcell چندین ستون را پوشش می‌دهد، [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan) را به تعداد ستون‌هایی که پوشش می‌دهد تنظیم کنید (اگر از عناصر HTML {{htmlelement('td')}} و {{htmlelement('th')}} استفاده نمی‌کنید)، و `aria-colindex` را به مقدار شروع پوشش تنظیم کنید؛ مقداری که اگر فقط یک ستون عرض داشت و فقط اولین ستون خود را پوشش می‌داد، داشت.
 
-If the set of columns which is present in the DOM is contiguous, and if there are no cells which span more than one row or column in that set, you only have to put the `aria-colindex` once on each row on the first column of the set. If the columns are not contiguous, include the `aria-colindex` value on all of the children or owned elements of each row.
+اگر مجموعه ستون‌هایی که در DOM وجود دارند پیوسته باشند، و اگر هیچ سلولی در آن مجموعه بیش از یک سطر یا ستون را پوشش ندهد، فقط باید `aria-colindex` را یک بار در هر ردیف روی اولین ستون مجموعه قرار دهید. اگر ستون‌ها پیوسته نیستند، مقدار `aria-colindex` را روی تمام فرزندان یا عناصر متعلق به هر ردیف قرار دهید.
 
-The following example shows a grid with 6 columns, of which columns 1, 2, 5, and 6 are displayed to the user. The total number of columns that make up the table is set as `aria-colcount="6"` on the table itself. As the columns aren't contiguous, every [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role) - in this case [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) and [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role) elements - have the `aria-colindex` attribute set.
+مثال زیر یک گرید با ۶ ستون را نشان می‌دهد که ستون‌های ۱، ۲، ۵ و ۶ به کاربر نمایش داده می‌شوند. تعداد کل ستون‌های تشکیل‌دهنده جدول به صورت `aria-colcount="6"` روی خود جدول تنظیم شده است. از آنجایی که ستون‌ها پیوسته نیستند، هر [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role) - در این مورد عناصر [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) و [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role) - دارای ویژگی `aria-colindex` هستند.
 
 ```html
 <div role="grid" aria-colcount="6">
@@ -55,9 +51,9 @@ The following example shows a grid with 6 columns, of which columns 1, 2, 5, and
 </div>
 ```
 
-The first rule of ARIA use is "if you can use a native feature with the semantics and behavior you require already built in, instead of repurposing an element and **adding** an ARIA role, state or property to make it accessible, then do so." If we employ native HTML semantics with {{HTMLElement('table')}}, {{HTMLElement('th')}}, {{HTMLElement('td')}}, etc., and only display a subsection of columns, the `aria-colcount` and `aria-colindex` attribute are still necessary, but the mark up is not as verbose.
+اولین قانون استفاده از ARIA این است: "اگر می‌توانید از یک ویژگی بومی با معنا و رفتاری که از قبل نیاز دارید استفاده کنید، به جای تغییر کاربری یک عنصر و **افزودن** نقش، حالت یا ویژگی ARIA برای دسترسی‌پذیر کردن آن، این کار را انجام دهید." اگر از معناشناسی بومی HTML با {{HTMLElement('table')}}، {{HTMLElement('th')}}، {{HTMLElement('td')}} و غیره استفاده کنیم و فقط زیرمجموعه‌ای از ستون‌ها را نمایش دهیم، ویژگی‌های `aria-colcount` و `aria-colindex` همچنان ضروری هستند، اما نشانه‌گذاری کمتر طولانی است.
 
-When using semantic table header elements and not all columns are in the DOM, the `aria-colindex` attribute only needs to be defined once per column in the column header {{HTMLElement('th')}}.
+هنگام استفاده از عناصر سربرگ جدول معنایی و زمانی که همه ستون‌ها در DOM نیستند، ویژگی `aria-colindex` فقط باید یک بار در هر ستون در سربرگ ستون {{HTMLElement('th')}} تعریف شود.
 
 ```html
 <table aria-colcount="6">
@@ -81,42 +77,42 @@ When using semantic table header elements and not all columns are in the DOM, th
 </table>
 ```
 
-If all the columns are in the DOM, neither `aria-colcount` nor `aria-colindex` are necessary.
+اگر تمام ستون‌ها در DOM باشند، نه `aria-colcount` و نه `aria-colindex` ضروری نیستند.
 
-## Values
+## مقادیر
 
 - `<integer>`
-  - : Integer greater than or equal to 1 and less than or equal to the total number of columns if all were present.
+  - : یک عدد صحیح بزرگتر یا مساوی ۱ و کوچکتر یا مساوی تعداد کل ستون‌ها اگر همه وجود داشتند.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaColIndex")}}
-  - : The [`ariaColIndex`](/en-US/docs/Web/API/Element/ariaColIndex) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-colindex` attribute.
+  - : ویژگی [`ariaColIndex`](/en-US/docs/Web/API/Element/ariaColIndex)، بخشی از رابط {{domxref("Element")}}، مقدار ویژگی `aria-colindex` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaColIndex")}}
-  - : The [`ariaColIndex`](/en-US/docs/Web/API/ElementInternals/ariaColIndex) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-colindex` attribute.
+  - : ویژگی [`ariaColIndex`](/en-US/docs/Web/API/ElementInternals/ariaColIndex)، بخشی از رابط {{domxref("ElementInternals")}}، مقدار ویژگی `aria-colindex` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+مورد استفاده در نقش‌ها:
 
 - [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role)
 - [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
 
-Inherits into roles:
+به ارث برده شده در نقش‌ها:
 
 - [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
 - [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)
 - [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [`aria-colindextext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindextext) attribute
-- [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount) attribute
-- [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan) attribute
-- HTML {{HTMLElement('table')}} element
-- HTML {{HTMLElement('th')}} element
-- HTML {{HTMLElement('td')}} element
+- [`aria-colindextext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindextext) ویژگی
+- [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount) ویژگی
+- [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan) ویژگی
+- HTML {{HTMLElement('table')}} عنصر
+- HTML {{HTMLElement('th')}} عنصر
+- HTML {{HTMLElement('td')}} عنصر
