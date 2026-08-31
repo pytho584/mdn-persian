@@ -1,11 +1,5 @@
 ---
 title: "CaretPosition: offset property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CaretPosition/offset"
-status: "needs-translation"
----
-
----
-title: "CaretPosition: offset property"
 short-title: offset
 slug: Web/API/CaretPosition/offset
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.CaretPosition.offset
 
 {{APIRef("CSSOM view API")}}
 
-The **`offset`** property of the {{domxref("CaretPosition")}} interface returns an integer representing the offset of the selection in the caret position node.
+ویژگی **`offset`** از رابط {{domxref("CaretPosition")}} یک عدد صحیح برمی‌گرداند که افست انتخاب در گره موقعیت مکان‌نما را نشان می‌دهد.
 
-This will be the character offset in a text node or the selected child node's index in an element node.
+این مقدار، افست نویسه در یک گره متنی یا ایندکس گره فرزند انتخاب‌شده در یک گره عنصر است.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال
 
-This example logs the `offsetNode` and `offset` of the caret position when clicking inside the input field.
+این مثال، `offsetNode` و `offset` موقعیت مکان‌نما را هنگام کلیک درون فیلد ورودی ثبت می‌کند.
 
 ```html
 <input aria-label="text field" value="Click inside this input field" />
@@ -79,15 +73,15 @@ function log(text) {
 
 {{EmbedLiveSample("Examples", "", 300)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node")}}
 - {{domxref("Document.caretPositionFromPoint()")}}
