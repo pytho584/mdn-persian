@@ -1,7 +1,7 @@
 ---
 title: "AudioTrackList: change event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList/change_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,13 +14,13 @@ browser-compat: api.AudioTrackList.change_event
 
 {{APIRef("HTML DOM")}}
 
-The `change` event is fired when an audio track is enabled or disabled, for example by changing the track's [`enabled`](/en-US/docs/Web/API/AudioTrack/enabled) property.
+رویداد `change` زمانی فعال میشود که یک ترک صوتی فعال یا غیرفعال شود، برای مثال با تغییر دادن ویژگی [`enabled`](/en-US/docs/Web/API/AudioTrack/enabled) ترک.
 
-This event is not cancelable and does not bubble.
+این رویداد غیرقابل لغو است و حباب نمیزند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روشهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("change", (event) => { })
@@ -28,13 +28,13 @@ addEventListener("change", (event) => { })
 onchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثالها
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const videoElement = document.querySelector("video");
@@ -50,7 +50,7 @@ toggleTrackButton.addEventListener("click", () => {
 });
 ```
 
-Using the `onchange` event handler property:
+استفاده از ویژگی مدیریت رویداد `onchange`:
 
 ```js
 const videoElement = document.querySelector("video");
@@ -66,17 +66,17 @@ toggleTrackButton.addEventListener("click", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: [`addtrack`](/en-US/docs/Web/API/AudioTrackList/addtrack_event), [`removetrack`](/en-US/docs/Web/API/AudioTrackList/removetrack_event)
-- This event on [`VideoTrackList`](/en-US/docs/Web/API/VideoTrackList) targets: [`change`](/en-US/docs/Web/API/VideoTrackList/change_event)
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [WebRTC API](/en-US/docs/Web/API/WebRTC_API)
+- رویدادهای مرتبط: [`addtrack`](/en-US/docs/Web/API/AudioTrackList/addtrack_event)، [`removetrack`](/en-US/docs/Web/API/AudioTrackList/removetrack_event)
+- این رویداد روی [`VideoTrackList`](/en-US/docs/Web/API/VideoTrackList) هدف قرار میگیرد: [`change`](/en-US/docs/Web/API/VideoTrackList/change_event)
+- [API ضبط و جریان رسانه](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- [API WebRTC](/en-US/docs/Web/API/WebRTC_API)
