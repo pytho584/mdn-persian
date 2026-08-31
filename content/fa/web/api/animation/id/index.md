@@ -1,7 +1,7 @@
 ---
 title: "Animation: id property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/id"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,29 +14,29 @@ browser-compat: api.Animation.id
 
 {{ APIRef("Web Animations") }}
 
-The **`Animation.id`** property of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) returns or sets a string used to identify the animation.
+خاصیت **`Animation.id`** از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) یک رشته را برمی‌گرداند یا تنظیم می‌کند که برای شناسایی انیمیشن استفاده می‌شود.
 
-## Value
+## مقدار
 
-A string which can be used to identify the animation, or `null` if the animation has no `id`.
+رشته‌ای که می‌توان از آن برای شناسایی انیمیشن استفاده کرد، یا اگر انیمیشن `id` نداشته باشد، `null`.
 
-## Examples
+## مثال‌ها
 
-In the [Red Queen's Race Game example](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#other_useful_methods), you can assign the `redQueenAlice` an `id` like so:
+در مثال [Red Queen's Race Game](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#other_useful_methods)، می‌توانید یک `id` به `redQueenAlice` اختصاص دهید:
 
 ```js
 redQueenAlice.id = "redQueenAlice";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("KeyframeEffect")}}
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
