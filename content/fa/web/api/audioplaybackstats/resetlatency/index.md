@@ -1,7 +1,7 @@
 ---
 title: "AudioPlaybackStats: resetLatency() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioPlaybackStats/resetLatency"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,25 +16,25 @@ browser-compat: api.AudioPlaybackStats.resetLatency
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`resetLatency()`** method of the {{domxref("AudioPlaybackStats")}} interface resets the start of the interval during which latency statistics are measured to the {{domxref("BaseAudioContext.currentTime")}}.
+**`resetLatency()`** 是 {{domxref("AudioPlaybackStats")}} 接口的方法，用于将延迟统计测量区间的起点重置为 {{domxref("BaseAudioContext.currentTime")}}。
 
-## Syntax
+## 语法
 
 ```js-nolint
 resetLatency()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-## Examples
+## 示例
 
-### Basic usage
+### 基本用法
 
 ```js
 const audioCtx = new AudioContext();
@@ -46,16 +46,16 @@ const stats = audioCtx.playbackStats;
 stats.resetLatency();
 ```
 
-See also the main {{domxref("AudioPlaybackStats")}} reference page for a more in-depth example.
+另请参阅主 {{domxref("AudioPlaybackStats")}} 参考页面以获取更深入的示例。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
