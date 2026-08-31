@@ -1,7 +1,7 @@
 ---
 title: "BrowserCaptureMediaStreamTrack: cropTo() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BrowserCaptureMediaStreamTrack/cropTo"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,37 +16,37 @@ browser-compat: api.BrowserCaptureMediaStreamTrack.cropTo
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`cropTo()`** method of the {{domxref("BrowserCaptureMediaStreamTrack")}} interface crops a self-capture stream to the area in which a specified DOM element is rendered.
+{{domxref("BrowserCaptureMediaStreamTrack")}} 接口的 **`cropTo()`** 方法会将自捕获流裁剪到指定 DOM 元素渲染的区域。
 
-## Syntax
+## 语法
 
 ```js-nolint
 cropTo(cropTarget)
 ```
 
-### Parameters
+### 参数
 
 - `cropTarget`
-  - : A {{domxref("CropTarget")}} instance representing the element rendering area the stream should be cropped to, or `null`/`undefined`, in which case any previously-set cropping is removed from the track.
+  - : 一个 {{domxref("CropTarget")}} 实例，表示流应裁剪到的元素渲染区域，或 `null`/`undefined`，在这种情况下，之前设置的任何裁剪都会从轨道中移除。
 
-### Return value
+### 返回值
 
-A {{jsxref("Promise")}} that resolves to {{jsxref("undefined")}}.
+一个解析为 {{jsxref("undefined")}} 的 {{jsxref("Promise")}}。
 
-The promise will reject if:
+该 promise 将在以下情况下拒绝：
 
-- The track [`kind`](/en-US/docs/Web/API/MediaStreamTrack/kind) is not `"video"`, or its [`readyState`](/en-US/docs/Web/API/MediaStreamTrack/readyState) is not `"live"`.
-- The crop target element no longer exists.
-- The track being cropped is not a track captured from the user's screen.
-- `cropTarget` is not a {{domxref("CropTarget")}} instance, `null`, or `undefined`.
-- `cropTarget` was created in a tab other than the one being captured.
+- 轨道的 [`kind`](/en-US/docs/Web/API/MediaStreamTrack/kind) 不是 `"video"`，或其 [`readyState`](/en-US/docs/Web/API/MediaStreamTrack/readyState) 不是 `"live"`。
+- 裁剪目标元素不再存在。
+- 被裁剪的轨道不是从用户屏幕捕获的轨道。
+- `cropTarget` 不是 {{domxref("CropTarget")}} 实例、`null` 或 `undefined`。
+- `cropTarget` 是在被捕获标签页之外的标签页中创建的。
 
 > [!NOTE]
-> In Chromium, if a track has clones, `cropTo()` will reject (see [Chrome issue 41482026](https://crbug.com/41482026)).
+> 在 Chromium 中，如果轨道有克隆，`cropTo()` 将拒绝（请参见 [Chrome issue 41482026](https://crbug.com/41482026)）。
 
-## Examples
+## 示例
 
-### Basic cropping example
+### 基本裁剪示例
 
 ```js
 // Options for getDisplayMedia()
@@ -70,26 +70,26 @@ await track.cropTo(cropTarget);
 videoElem.srcObject = stream;
 ```
 
-See [Using the Element Capture and Region Capture APIs](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture) for in-context example code.
+有关上下文示例代码，请参阅 [使用 Element Capture 和 Region Capture API](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture)。
 
-### Stopping the cropping
+### 停止裁剪
 
-You can stop the cropping by making a call to `cropTo()` on a previously-cropped track, passing an argument of `null` to it:
+你可以通过对先前已裁剪的轨道调用 `cropTo()` 并向其传递 `null` 参数来停止裁剪：
 
 ```js
 // Stop cropping
 await track.cropTo(null);
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
-- [Using the Element Capture and Region Capture APIs](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture)
+- [使用 Element Capture 和 Region Capture API](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture)
