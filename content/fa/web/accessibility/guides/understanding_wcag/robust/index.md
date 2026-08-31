@@ -1,7 +1,7 @@
 ---
 title: "Robust"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Robust"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -11,87 +11,78 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-This article provides practical advice on how to write your web content so that it conforms to the success criteria outlined in the **Robust** principle of the Web Content Accessibility Guidelines (WCAG) 2.0 and 2.1. Robust states that content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies. This can generally be achieved by following web standards and [testing rigorously](/en-US/docs/Learn_web_development/Extensions/Testing).
+این مقاله توصیه‌های عملی در مورد نحوه نوشتن محتوای وب خود به گونه‌ای ارائه می‌دهد که با معیارهای موفقیت ذکر شده در اصل **Robust** از دستورالعمل‌های دسترسی به محتوای وب (WCAG) 2.0 و 2.1 مطابقت داشته باشد. اصل Robust بیان می‌کند که محتوا باید به اندازه کافی محکم باشد تا بتواند توسط طیف گسترده‌ای از عامل‌های کاربری، از جمله فناوری‌های کمکی، به طور قابل اعتماد تفسیر شود. این امر معمولاً با پیروی از استانداردهای وب و [آزمایش دقیق](/en-US/docs/Learn_web_development/Extensions/Testing) قابل دستیابی است.
 
 > [!NOTE]
-> To read the W3C definitions for Robust and its guidelines and success criteria, see [Principle 4: Robust — Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.](https://w3c.github.io/wcag/guidelines/22/#robust)
+> برای خواندن تعاریف W3C برای اصل Robust و رهنمودها و معیارهای موفقیت آن، به [اصل 4: Robust — محتوا باید به اندازه کافی محکم باشد تا بتواند توسط طیف گسترده‌ای از عامل‌های کاربری، از جمله فناوری‌های کمکی، به طور قابل اعتماد تفسیر شود.](https://w3c.github.io/wcag/guidelines/22/#robust) مراجعه کنید.
 
-## Guideline 4.1 — Compatible: Maximize compatibility with current and future user agents, including assistive technologies
+## رهنمود 4.1 — سازگار: سازگاری را با عامل‌های کاربری فعلی و آینده، از جمله فناوری‌های کمکی، به حداکثر برسانید
 
-This guideline focuses on making content as compatible as possible, not only with current user agents (e.g., browsers), but also with future ones too.
+این رهنمود بر سازگار کردن هرچه بیشتر محتوا، نه تنها با عامل‌های کاربری فعلی (مانند مرورگرها)، بلکه با عامل‌های کاربری آینده نیز تمرکز دارد.
 
 <table class="standard-table">
   <thead>
     <tr>
-      <th scope="col">Success criteria</th>
-      <th scope="col">How to conform to the criteria</th>
-      <th scope="col">Practical resource</th>
+      <th scope="col">معیار موفقیت</th>
+      <th scope="col">نحوه مطابقت با معیار</th>
+      <th scope="col">منبع عملی</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>4.1.1 Parsing (A)</td>
+      <td>4.1.1 تجزیه (A)</td>
       <td>
         <p>
-          Content should be well-formed so it can be parsed successfully by
-          browsers and other user agents such as screen readers.
+          محتوا باید به خوبی ساختارمند باشد تا بتواند با موفقیت توسط مرورگرها و سایر عامل‌های کاربری مانند صفحه‌خوان‌ها تجزیه شود.
         </p>
         <p>
-          To pass this criterion, make sure that your HTML is as valid as
-          possible. Use the
-          <a href="https://validator.w3.org/">W3C validator</a> to validate your
-          markup.
+          برای گذراندن این معیار، اطمینان حاصل کنید که HTML شما تا حد امکان معتبر است. از
+          <a href="https://validator.w3.org/">اعتبارسنج W3C</a> برای اعتبارسنجی نشانه‌گذاری خود استفاده کنید.
         </p>
       </td>
       <td>
-        See
+        برای راهنمای عملی به
         <a href="/en-US/docs/Learn_web_development/Core/Structuring_content/Debugging_HTML"
-          >Debugging HTML</a
+          >اشکال‌زدایی HTML</a
         >
-        for a practical guide.
+        مراجعه کنید.
       </td>
     </tr>
     <tr>
-      <td>4.1.2 Name, Role, Value (A)</td>
+      <td>4.1.2 نام، نقش، مقدار (A)</td>
       <td>
         <p>
-          The name and role of user interface components (e.g., form inputs,
-          buttons, links, etc.) should be programmatically determinable.
+          نام و نقش اجزای رابط کاربری (مانند ورودی‌های فرم، دکمه‌ها، پیوندها و غیره) باید به صورت برنامه‌ای قابل تعیین باشد.
         </p>
         <p>
-          When using semantic elements correctly for their intended purpose,
-          this criterion should be passed automatically. When scripting custom
-          components, you will need to use WAI-ARIA roles and other features to
-          make sure your controls will be interpreted and are able to be used as
-          intended, e.g., not only by sighted mouse users, but also by
-          screen reader users, keyboard-only users, etc.
+          هنگام استفاده از عناصر معنایی به درستی برای هدف مورد نظرشان، این معیار باید به طور خودکار پاس شود. هنگام اسکریپت‌نویسی اجزای سفارشی، باید از نقش‌های WAI-ARIA و سایر ویژگی‌ها استفاده کنید تا مطمئن شوید کنترل‌های شما به درستی تفسیر شده و قابل استفاده هستند، به عنوان مثال، نه تنها توسط کاربران بینا با موس، بلکه توسط کاربران صفحه‌خوان، کاربران فقط با صفحه‌کلید و غیره.
         </p>
       </td>
       <td>
-        See
+        به
         <a href="/en-US/docs/Learn_web_development/Core/Accessibility/HTML"
-          >HTML: A good basis for accessibility</a
+          >HTML: پایه خوبی برای دسترسی</a
         >
-        and
+        و
         <a href="/en-US/docs/Learn_web_development/Core/Accessibility/WAI-ARIA_basics"
-          >WAI-ARIA basics</a
-        >.
+          >مقدمات WAI-ARIA</a
+        >
+        مراجعه کنید.
       </td>
     </tr>
     <tr>
       <td>
-        4.1.3 Status Messages (AA)
+        4.1.3 پیام‌های وضعیت (AA)
       </td>
       <td>
         <p>
-          Assistive technology users are made aware of new status messages added
-          to the page.
+          کاربران فناوری‌های کمکی از پیام‌های وضعیت جدید اضافه شده به صفحه مطلع می‌شوند.
         </p>
       </td>
       <td>
         <a
           href="https://www.w3.org/WAI/WCAG21/Understanding/status-messages.html"
-          >Understanding Status Messages</a
+          >درک پیام‌های وضعیت</a
         >
       </td>
     </tr>
@@ -99,12 +90,12 @@ This guideline focuses on making content as compatible as possible, not only wit
 </table>
 
 > [!NOTE]
-> Also see the WCAG description for [Guideline 4.1: Compatible: Maximize compatibility with current and future user agents, including assistive technologies.](https://w3c.github.io/wcag/guidelines/22/#compatible)
+> همچنین توضیحات WCAG را برای [رهنمود 4.1: سازگار: سازگاری را با عامل‌های کاربری فعلی و آینده، از جمله فناوری‌های کمکی، به حداکثر برسانید.](https://w3c.github.io/wcag/guidelines/22/#compatible) ببینید.
 
-## See also
+## همچنین ببینید
 
 - [WCAG](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG)
-  1. [Perceivable](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable)
-  2. [Operable](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Operable)
-  3. [Understandable](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Understandable)
+  1. [قابل درک](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable)
+  2. [قابل اجرا](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Operable)
+  3. [قابل فهم](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Understandable)
   4. Robust
