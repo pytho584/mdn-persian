@@ -1,7 +1,7 @@
 ---
 title: "ARIA reference"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -11,6 +11,6 @@ page-type: listing-page
 sidebar: accessibilitysidebar
 ---
 
-This page lists reference documentation for Accessible Rich Internet Applications (ARIA).
+این صفحه مستندات مرجع مربوط به برنامه‌های اینترنتی غنی و قابل دسترس (ARIA) را فهرست می‌کند.
 
 {{SubPagesWithSummaries}}
