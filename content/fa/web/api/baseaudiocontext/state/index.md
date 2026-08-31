@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: state property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/state"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,56 +14,53 @@ browser-compat: api.BaseAudioContext.state
 
 {{ APIRef("Web Audio API") }}
 
-The `state` read-only property of the {{ domxref("BaseAudioContext") }}
-interface returns the current state of the `AudioContext`.
+خاصیت فقط خواندنی `state` از رابط {{ domxref("BaseAudioContext") }}
+وضعیت فعلی `AudioContext` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string. Possible values are:
+یک رشته. مقادیر ممکن عبارتند از:
 
 - `closed`
-  - : The audio context has been closed (with the
-    {{domxref("AudioContext.close()")}} method.)
+  - : زمینه صوتی بسته شده است (با متد {{domxref("AudioContext.close()")}}).
 - `interrupted`
-  - : The audio context has been interrupted by an occurrence outside the control of the web app.
+  - : زمینه صوتی توسط رویدادی خارج از کنترل وب‌اپ قطع شده است.
 - `running`
-  - : The audio context is running normally.
+  - : زمینه صوتی به طور عادی در حال اجرا است.
 - `suspended`
-  - : The audio context has been suspended (with the
-    {{domxref("AudioContext.suspend()")}} method.)
+  - : زمینه صوتی معلق شده است (با متد {{domxref("AudioContext.suspend()")}}).
 
-## Description
+## توضیحات
 
-The `state` property of an audio context is used to expose its current operational state. This is normally done by querying the `state` inside a {{domxref("BaseAudioContext.statechange_event", "statechange")}} event handler so that changes in state can be responded to appropriately.
+خاصیت `state` یک زمینه صوتی برای نمایش وضعیت عملیاتی فعلی آن استفاده می‌شود. این کار معمولاً با پرس‌وجوی `state` در داخل یک مدیر رویداد {{domxref("BaseAudioContext.statechange_event", "statechange")}} انجام می‌شود تا بتوان به تغییرات وضعیت به طور مناسب پاسخ داد.
 
-The `running` and `closed` values are self-explanatory — they indicate that the audio context is either running normally, or closed (via the {{domxref("AudioContext.close()")}} method).
+مقادیر `running` و `closed` بدیهی هستند – آنها نشان می‌دهند که زمینه صوتی یا به طور عادی در حال اجرا است، یا بسته شده است (از طریق متد {{domxref("AudioContext.close()")}}).
 
-The `interrupted` and `suspended` states both represent a "paused" state that can later be resumed, but they differ in terms of what they signify:
+حالت‌های `interrupted` و `suspended` هر دو یک وضعیت "مکث" را نشان می‌دهند که بعداً می‌توان از سر گرفته شود، اما از نظر معنایی متفاوت هستند:
 
-- The `suspended` state indicates that the audio context was paused in response to a user action inside the web app, by running the {{domxref("AudioContext.suspend()")}} method inside a `click` (or similar) event handler. In this case, the context would be unpaused by running the {{domxref("AudioContext.resume()")}} method.
-- The `interrupted` state indicates that the audio context was paused in response to an interruption outside the control of the web app. In this case, the browser decides when to pause and unpause the app. The web app can then handle the `interrupted` state appropriately, for example by pausing an audio stream to avoid wasting resources while an app is not being used.
+- وضعیت `suspended` نشان می‌دهد که زمینه صوتی در پاسخ به یک اقدام کاربر درون وب‌اپ، با اجرای متد {{domxref("AudioContext.suspend()")}} در داخل یک مدیر رویداد `click` (یا مشابه)، مکث شده است. در این حالت، زمینه با اجرای متد {{domxref("AudioContext.resume()")}} از حالت مکث خارج می‌شود.
+- وضعیت `interrupted` نشان می‌دهد که زمینه صوتی در پاسخ به یک وقفه خارج از کنترل وب‌اپ مکث شده است. در این حالت، مرورگر تصمیم می‌گیرد که چه زمانی برنامه را مکث و از سر بگیرد. وب‌اپ می‌تواند وضعیت `interrupted` را به طور مناسب مدیریت کند، مثلاً با مکث یک جریان صوتی برای جلوگیری از هدر رفتن منابع در حالی که برنامه استفاده نمی‌شود.
 
-Interruptions that may trigger the `interrupted` state can include:
+وقفه‌هایی که ممکن است وضعیت `interrupted` را فعال کنند شامل موارد زیر هستند:
 
-- A conferencing or phone app on the same system requiring exclusive access to the device's audio hardware.
-- The user closing their laptop.
-- API features designed to initiate or respond to audio interruptions.
+- یک برنامه کنفرانس یا تلفن در همان سیستم که نیاز به دسترسی انحصاری به سخت‌افزار صوتی دستگاه دارد.
+- کاربر لپ‌تاپ خود را می‌بندد.
+- ویژگی‌های API که برای شروع یا پاسخ به وقفه‌های صوتی طراحی شده‌اند.
 
 > [!NOTE]
-> How the `interrupted` state is triggered may vary between browsers.
+> نحوه فعال شدن وضعیت `interrupted` ممکن است بین مرورگرها متفاوت باشد.
 
-Note also the potential for transitions between the `interrupted` and `suspended` states:
+همچنین به امکان انتقال بین حالت‌های `interrupted` و `suspended` توجه کنید:
 
-- If `suspend()` is called on an audio context during an interruption (`state` is `interrupted`), the state will transition to `suspended` immediately.
-- If `resume()` is called on a `suspended` audio context during an interruption, the state will transition to `interrupted` immediately.
-- If an interruption happens while the audio context is `suspended`, the context will not transition to `interrupted`. This transition won't happen unless `resume()` is called on the context (as outlined by the previous point). This choice was made to avoid exposing too much device information to web pages - for example, logging every time the laptop is closed could be a privacy issue.
+- اگر `suspend()` روی یک زمینه صوتی در طول یک وقفه فراخوانی شود (`state` برابر `interrupted` است)، وضعیت بلافاصله به `suspended` تغییر می‌کند.
+- اگر `resume()` روی یک زمینه صوتی `suspended` در طول یک وقفه فراخوانی شود، وضعیت بلافاصله به `interrupted` تغییر می‌کند.
+- اگر یک وقفه در حالی که زمینه صوتی `suspended` است رخ دهد، زمینه به `interrupted` تغییر نخواهد کرد. این تغییر اتفاق نخواهد افتاد مگر اینکه `resume()` روی زمینه فراخوانی شود (همانطور که در نکته قبلی اشاره شد). این انتخاب برای جلوگیری از افشای اطلاعات بیش از حد دستگاه به صفحات وب انجام شد – برای مثال، ثبت هر بار بسته شدن لپ‌تاپ می‌تواند یک مسئله حریم خصوصی باشد.
 
-## Examples
+## مثال‌ها
 
-### Handling state changes
+### مدیریت تغییرات وضعیت
 
-The following snippet is taken from our [AudioContext states demo](https://github.com/mdn/webaudio-examples) ([see it running live](https://mdn.github.io/webaudio-examples/audiocontext-states/).) The {{domxref("BaseAudioContext.statechange_event", "onstatechange")}} handler is used to log the
-current state to the console every time it changes.
+برش کد زیر از [نمونه وضعیت‌های AudioContext](https://github.com/mdn/webaudio-examples) گرفته شده است ([مشاهده اجرای زنده](https://mdn.github.io/webaudio-examples/audiocontext-states/)). مدیر {{domxref("BaseAudioContext.statechange_event", "onstatechange")}} برای ثبت وضعیت فعلی در کنسول هر بار که تغییر می‌کند استفاده می‌شود.
 
 ```js
 audioCtx.onstatechange = () => {
@@ -71,11 +68,9 @@ audioCtx.onstatechange = () => {
 };
 ```
 
-### Resuming interrupted play states in iOS Safari
+### از سرگیری وضعیت‌های پخش قطع شده در iOS Safari
 
-In iOS Safari, when a user leaves the page (e.g., switches tabs, minimizes the browser, or
-turns off the screen)
-the audio context's state changes to "interrupted" and needs to be resumed. For example:
+در iOS Safari، هنگامی که کاربر صفحه را ترک می‌کند (مثلاً برگه‌ها را تغییر می‌دهد، مرورگر را کوچک می‌کند یا صفحه را خاموش می‌کند)، وضعیت زمینه صوتی به "interrupted" تغییر می‌کند و نیاز به از سرگیری دارد. برای مثال:
 
 ```js
 function play() {
@@ -87,14 +82,14 @@ function play() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
