@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesMap: values() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap/values"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesMap: values() method"
 short-title: values()
 slug: Web/API/CSSFontFeatureValuesMap/values
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.CSSFontFeatureValuesMap.values
 
 {{APIRef("CSSOM")}}{{SeeCompatTable}}
 
-The **`values()`** method of {{domxref("CSSFontFeatureValuesMap")}} instances returns a new [map iterator](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) object that contains the `[key, value]` pairs for each declaration in this `CSSFontFeatureValuesMap` in insertion order.
+متد **`values()`** از نمونه‌های {{domxref("CSSFontFeatureValuesMap")}} یک [تکرارگر نقشه](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) جدید برمی‌گرداند که شامل جفت‌های `[key, value]` برای هر اعلان در این `CSSFontFeatureValuesMap` به ترتیب درج است.
 
 ## Syntax
 
@@ -24,19 +18,19 @@ The **`values()`** method of {{domxref("CSSFontFeatureValuesMap")}} instances re
 values()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new iterable [iterator object](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator).
+یک [شیء تکرارگر](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) جدید و قابل تکرار.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following example assigns the values to the `swashValues` variable and then logs the first two values. This example is using `@swash` but also works with other [feature value blocks](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks).
+مثال زیر مقادیر را به متغیر `swashValues` اختصاص می‌دهد و سپس دو مقدار اول را ثبت می‌کند. این مثال از `@swash` استفاده می‌کند اما با سایر [بلوک‌های مقدار ویژگی](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks) نیز کار می‌کند.
 
 #### CSS
 
@@ -52,22 +46,22 @@ The following example assigns the values to the `swashValues` variable and then 
 #### JavaScript
 
 ```js
-// get the rules
+// دریافت قوانین
 const myRule = document.styleSheets[0].cssRules[0];
-// get the values of swash
+// دریافت مقادیر swash
 const swashValues = myRule.swash.values();
-console.log(swashValues.next().value); // logs [1]
-console.log(swashValues.next().value); // logs [2]
+console.log(swashValues.next().value); // [1] را ثبت می‌کند
+console.log(swashValues.next().value); // [2] را ثبت می‌کند
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Map.prototype.values()](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values)
