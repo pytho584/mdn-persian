@@ -1,11 +1,5 @@
 ---
 title: "CSSCounterStyleRule: fallback property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSCounterStyleRule/fallback"
-status: "needs-translation"
----
-
----
-title: "CSSCounterStyleRule: fallback property"
 short-title: fallback
 slug: Web/API/CSSCounterStyleRule/fallback
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CSSCounterStyleRule.fallback
 
 {{APIRef("CSSOM")}}
 
-The **`fallback`** property of the {{domxref("CSSCounterStyleRule")}} interface gets and sets the value of the {{cssxref("@counter-style/fallback","fallback")}} descriptor. If the descriptor does not have a value set, this attribute returns an empty string.
+ویژگی **`fallback`** از رابط {{domxref("CSSCounterStyleRule")}} مقدار توصیفگر {{cssxref("@counter-style/fallback","fallback")}} را دریافت و تنظیم میکند. اگر برای این توصیفگر مقدار تعیین نشده باشد، این ویژگی یک رشتهی خالی برمیگرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثالها
 
-The following example shows a {{cssxref("@counter-style")}} rule. In JavaScript, `myRules[0]` is this `@counter-style` rule, returning `fallback` gives us the value "disc".
+مثال زیر یک قانون {{cssxref("@counter-style")}} را نشان میدهد. در جاوااسکریپت، `myRules[0]` همین قانون `@counter-style` است و بازگرداندن `fallback` مقدار «disc» را به ما میدهد.
 
 ```css
 @counter-style box-corner {
@@ -38,10 +32,10 @@ let myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].fallback); // "disc"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
