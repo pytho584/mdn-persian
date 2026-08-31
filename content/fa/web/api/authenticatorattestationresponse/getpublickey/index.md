@@ -1,7 +1,7 @@
 ---
 title: "AuthenticatorAttestationResponse: getPublicKey() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/getPublicKey"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,32 +14,32 @@ browser-compat: api.AuthenticatorAttestationResponse.getPublicKey
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`getPublicKey()`** method of the {{domxref("AuthenticatorAttestationResponse")}} interface returns an {{jsxref("ArrayBuffer")}} containing the DER `SubjectPublicKeyInfo` of the new credential (see [Subject Public Key Info](https://www.rfc-editor.org/info/rfc5280/#section-4.1.2.7)), or `null` if this is not available.
+متد **`getPublicKey()`** از رابط {{domxref("AuthenticatorAttestationResponse")}} یک {{jsxref("ArrayBuffer")}} حاوی `SubjectPublicKeyInfo` DER اعتبارنامه جدید (مشاهده کنید [Subject Public Key Info](https://www.rfc-editor.org/info/rfc5280/#section-4.1.2.7)) را برمی‌گرداند، یا اگر در دسترس نباشد `null` را برمی‌گرداند.
 
-This is a convenience function, created to allow easy access to the public key. This key will need to be stored in order to verify future authentication operations (i.e., using {{domxref("CredentialsContainer.get()","navigator.credentials.get()")}}).
+این یک تابع کمکی است که برای دسترسی آسان به کلید عمومی ایجاد شده است. این کلید باید برای تأیید عملیات احراز هویت آینده ذخیره شود (یعنی با استفاده از {{domxref("CredentialsContainer.get()","navigator.credentials.get()")}}).
 
-## Syntax
+## نحو
 
 ```js-nolint
 getPublicKey()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-An {{jsxref("ArrayBuffer")}} containing the DER `SubjectPublicKeyInfo` of the new credential (see [Subject Public Key Info](https://www.rfc-editor.org/info/rfc5280/#section-4.1.2.7)), or `null` if this is not available.
+یک {{jsxref("ArrayBuffer")}} حاوی `SubjectPublicKeyInfo` DER اعتبارنامه جدید (مشاهده کنید [Subject Public Key Info](https://www.rfc-editor.org/info/rfc5280/#section-4.1.2.7))، یا اگر در دسترس نباشد `null`.
 
-## Examples
+## مثال‌ها
 
-See [Creating a public key credential](/en-US/docs/Web/API/CredentialsContainer/create#creating_a_public_key_credential) for a detailed example.
+برای یک مثال دقیق، [ایجاد یک اعتبارنامه کلید عمومی](/en-US/docs/Web/API/CredentialsContainer/create#creating_a_public_key_credential) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
