@@ -1,10 +1,4 @@
 ---
-title: "Crypto"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Crypto"
-status: "needs-translation"
----
-
----
 title: Crypto
 slug: Web/API/Crypto
 page-type: web-api-interface
@@ -13,35 +7,34 @@ browser-compat: api.Crypto
 
 {{APIRef("Web Crypto API")}}{{AvailableInWorkers}}
 
-The **`Crypto`** interface represents basic cryptography features available in the current context.
-It allows access to a cryptographically strong random number generator and to cryptographic primitives.
+رابط `Crypto` نمایانگر ویژگی‌های پایه‌ی رمزنگاری موجود در بافتار فعلی است. این رابط امکان دسترسی به یک مولد اعداد تصادفی امن از نظر رمزنگاری و ابزارهای رمزنگاری پایه را فراهم می‌کند.
 
-The `Crypto` is available in windows using the {{domxref("Window.crypto")}} property and in workers using the {{domxref("WorkerGlobalScope.crypto")}} property.
+`Crypto` در پنجره‌ها از طریق ویژگی {{domxref("Window.crypto")}} و در workerها از طریق ویژگی {{domxref("WorkerGlobalScope.crypto")}} در دسترس است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("Crypto.subtle")}} {{ReadOnlyInline}} {{SecureContext_inline}}
-  - : Returns a {{domxref("SubtleCrypto")}} object providing access to common cryptographic primitives, like hashing, signing, encryption, or decryption.
+  - : یک شیء {{domxref("SubtleCrypto")}} برمی‌گرداند که دسترسی به ابزارهای رمزنگاری پایه‌ی رایج مانند هش، امضا، رمزگذاری یا رمزگشایی را فراهم می‌کند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("Crypto.getRandomValues()")}}
-  - : Fills the passed {{ jsxref("TypedArray") }} with cryptographically sound random values.
+  - : آرایه‌ی {{ jsxref("TypedArray") }} داده‌شده را با مقادیر تصادفی امن از نظر رمزنگاری پر می‌کند.
 - {{domxref("Crypto.randomUUID()")}} {{SecureContext_inline}}
-  - : Returns a randomly generated, 36 character long v4 UUID.
+  - : یک UUID نسخه‌ی 4 به طول 36 کاراکتر که به‌صورت تصادفی تولید شده است برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Web security](/en-US/docs/Web/Security)
-- [Secure contexts](/en-US/docs/Web/Security/Defenses/Secure_Contexts)
-- [Features restricted to secure contexts](/en-US/docs/Web/Security/Defenses/Secure_Contexts/features_restricted_to_secure_contexts)
-- [Transport Layer Security](/en-US/docs/Web/Security/Defenses/Transport_Layer_Security)
+- [امنیت وب](/en-US/docs/Web/Security)
+- [بافتارهای امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts)
+- [ویژگی‌های محدودشده به بافتارهای امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts/features_restricted_to_secure_contexts)
+- [امنیت لایه انتقال](/en-US/docs/Web/Security/Defenses/Transport_Layer_Security)
 - [Strict-Transport-Security](/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security)
