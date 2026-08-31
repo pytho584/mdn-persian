@@ -1,19 +1,15 @@
 ---
 title: "ARIA: gridcell role"
-source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role"
-status: "needs-translation"
----
-
----
-title: "ARIA: gridcell role"
 short-title: gridcell
 slug: Web/Accessibility/ARIA/Reference/Roles/gridcell_role
 page-type: aria-role
 spec-urls: https://w3c.github.io/aria/#gridcell
 sidebar: accessibilitysidebar
+translated_by: "n8n + AI"
+
 ---
 
-The `gridcell` role is used to make a cell in a [grid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) or [treegrid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role). It is intended to mimic the functionality of the HTML {{HTMLElement('td')}} element for table-style grouping of information.
+نقش `gridcell` برای ایجاد یک سلول در [grid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) یا [treegrid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) استفاده می‌شود. این نقش برای شبیه‌سازی عملکرد عنصر HTML {{HTMLElement('td')}} برای گروه‌بندی اطلاعات به صورت جدولی طراحی شده است.
 
 ```html
 <div role="gridcell">Potato</div>
@@ -21,7 +17,7 @@ The `gridcell` role is used to make a cell in a [grid](/en-US/docs/Web/Accessibi
 <div role="gridcell">Onion</div>
 ```
 
-Elements that have `role="gridcell"` applied to them must be the child of an element with a role of [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role).
+عناصری که `role="gridcell"` به آن‌ها اعمال شده است، باید فرزند عنصری با نقش [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) باشند.
 
 ```html
 <div role="row">
@@ -32,7 +28,7 @@ Elements that have `role="gridcell"` applied to them must be the child of an ele
 </div>
 ```
 
-The first rule of ARIA is if a native HTML element or attribute has the semantics and behavior you require, use it instead of re-purposing an element and adding ARIA. Instead use the HTML {{HTMLElement('td')}} element:
+اولین قانون ARIA این است: اگر یک عنصر یا ویژگی HTML بومی دارای معناشناسی و رفتاری است که نیاز دارید، از آن استفاده کنید به جای اینکه عنصری را تغییر کاربری داده و ARIA اضافه کنید. به جای آن از عنصر HTML {{HTMLElement('td')}} استفاده کنید:
 
 ```html
 <td>Potato</td>
@@ -40,15 +36,15 @@ The first rule of ARIA is if a native HTML element or attribute has the semantic
 <td>Onion</td>
 ```
 
-## Description
+## توضیحات
 
-### gridcells with dynamically added, hidden, or removed rows and columns
+### gridcell‌های دارای ردیف‌ها و ستون‌هایی که به صورت پویا اضافه، پنهان یا حذف می‌شوند
 
-Any element with a `role="gridcell"` applied to it should use ARIA to describe its order in the table-style grouping, provided the table, grid, or treegrid has the ability to have rows and/or columns dynamically added, hidden, or removed.
+هر عنصری که `role="gridcell"` به آن اعمال شده است، باید از ARIA برای توصیف ترتیب خود در گروه‌بندی جدولی استفاده کند، به شرطی که جدول، grid یا treegrid توانایی افزودن، پنهان کردن یا حذف پویای ردیف‌ها و/یا ستون‌ها را داشته باشد.
 
-Use [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) to describe a `gridcell`'s order in the list of columns, and [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) to describe a gridcell's order in the list of rows. Use [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount) and [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) on the parent element with [`role="grid"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) applied to it to set the total number of columns or rows.
+از [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) برای توصیف ترتیب یک `gridcell` در لیست ستون‌ها و از [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) برای توصیف ترتیب یک gridcell در لیست ردیف‌ها استفاده کنید. از [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount) و [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) روی عنصر والد با [`role="grid"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) برای تعیین تعداد کل ستون‌ها یا ردیف‌ها استفاده کنید.
 
-This sample code demonstrates a table-style grouping of information where the third and fourth columns have been removed. [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) is being used to describe the rows' position and allows a person using assistive technology to infer that certain rows have been removed:
+این کد نمونه یک گروه‌بندی جدولی از اطلاعات را نشان می‌دهد که در آن ستون‌های سوم و چهارم حذف شده‌اند. از [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) برای توصیف موقعیت ردیف‌ها استفاده شده است و به کاربر فناوری کمکی امکان می‌دهد تشخیص دهد که برخی ردیف‌ها حذف شده‌اند:
 
 ```html
 <div role="grid" aria-colcount="6">
@@ -72,17 +68,17 @@ This sample code demonstrates a table-style grouping of information where the th
 </div>
 ```
 
-### Describing the position of gridcells when the overall structure is unknown
+### توصیف موقعیت gridcell‌ها زمانی که ساختار کلی ناشناخته است
 
-In situations where the table-style grouping of content does not provide information about the columns and rows, gridcells must have their positions programmatically described by using [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby). The [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id)s provided for `aria-describedby` should correspond to parent elements intended to be the rows and columns.
+در شرایطی که گروه‌بندی جدولی محتوا اطلاعاتی در مورد ستون‌ها و ردیف‌ها ارائه نمی‌دهد، موقعیت gridcell‌ها باید با استفاده از [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) به صورت برنامه‌نویسی توصیف شود. [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id)های ارائه شده برای `aria-describedby` باید با عناصر والد که به عنوان ردیف‌ها و ستون‌ها در نظر گرفته شده‌اند، مطابقت داشته باشند.
 
-By referencing the parent elements with roles of [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role) or [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) applied to them via `aria-describedby`, it allows assistive technology to understand the position and relationship of the `gridcell` element to the rest of the table-style grouping of content.
+با ارجاع به عناصر والد با نقش‌های [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role) یا [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) که از طریق `aria-describedby` به آن‌ها اعمال شده است، فناوری کمکی می‌تواند موقعیت و رابطه عنصر `gridcell` را با بقیه گروه‌بندی جدولی محتوا درک کند.
 
-### Interactive grids and treegrids
+### Gridها و Treegridهای تعاملی
 
-#### Editable cells
+#### سلول‌های قابل ویرایش
 
-Both `<td>` elements and elements with a role of `gridcell` applied to them can be made editable, mimicking functionality similar to editing a spreadsheet. This is done by applying the HTML [`contenteditable` attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable).
+هم عناصر `<td>` و هم عناصر با نقش `gridcell` می‌توانند قابل ویرایش شوند و عملکردی مشابه ویرایش یک صفحه گسترده را شبیه‌سازی کنند. این کار با اعمال ویژگی HTML [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) انجام می‌شود.
 
 ```html
 <td contenteditable="true">Notes</td>
@@ -90,30 +86,30 @@ Both `<td>` elements and elements with a role of `gridcell` applied to them can 
 <div role="gridcell" contenteditable="true">Item cost</div>
 ```
 
-`contenteditable` will make the element it is applied to focusable via the <kbd>Tab</kbd> key. If a gridcell is conditionally toggled into a state where editing is prohibited, toggle [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly) on the gridcell element.
+`contenteditable` باعث می‌شود عنصری که به آن اعمال شده است با کلید <kbd>Tab</kbd> قابل فوکوس باشد. اگر یک gridcell به صورت شرطی به حالتی تغییر کند که ویرایش ممنوع است، [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly) را روی عنصر gridcell تغییر دهید.
 
-#### Expandable cells
+#### سلول‌های قابل گسترش
 
-In a [treegrid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role), gridcells may be made expandable by toggling the [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) attribute. Note that if this attribute is provided, it applies only to the individual gridcell.
+در یک [treegrid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)، gridcell‌ها را می‌توان با تغییر ویژگی [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) قابل گسترش کرد. توجه داشته باشید که اگر این ویژگی ارائه شود، فقط برای همان gridcell خاص اعمال می‌شود.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های WAI-ARIA مرتبط
 
 - `grid`
-  - : Communicates that a parent element is a table or tree style grouping of information.
+  - : نشان می‌دهد که یک عنصر والد یک گروه‌بندی جدولی یا درختی از اطلاعات است.
 - `row`
-  - : Required to communicate the `gridcell` is part of a row of a table-style grouping of information.
+  - : برای نشان دادن اینکه `gridcell` بخشی از یک ردیف از گروه‌بندی جدولی اطلاعات است، الزامی است.
 - `columnheader`
-  - : Specifies which element is the associated column header.
+  - : مشخص می‌کند کدام عنصر سرستون مرتبط است.
 - [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex)
-  - : Identifies the position of an element in relation to the rest of the table-style grouping of information's columns.
+  - : موقعیت یک عنصر را نسبت به بقیه ستون‌های گروه‌بندی جدولی اطلاعات شناسایی می‌کند.
 - `rowheader`
-  - : Specifies which element is the associated row header.
+  - : مشخص می‌کند کدام عنصر سرردیف مرتبط است.
 - [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex)
-  - : Identifies the position of an element in relation to the rest of the table-style grouping of information's rows.
+  - : موقعیت یک عنصر را نسبت به بقیه ردیف‌های گروه‌بندی جدولی اطلاعات شناسایی می‌کند.
 
-### Examples
+### مثال‌ها
 
-The following example creates a table-style grouping of information:
+مثال زیر یک گروه‌بندی جدولی از اطلاعات ایجاد می‌کند:
 
 ```html
 <h3 id="table-title">Jovian gas giant planets</h3>
@@ -148,24 +144,24 @@ The following example creates a table-style grouping of information:
 </div>
 ```
 
-## Accessibility concerns
+## ملاحظات دسترسی‌پذیری
 
-Support for `gridcell` and certain `gridcell` related ARIA roles and properties have poor support with assistive technologies. If at all possible, use [HTML table markup](/en-US/docs/Web/HTML/Reference/Elements/table) in their place.
+پشتیبانی از `gridcell` و برخی نقش‌ها و ویژگی‌های ARIA مرتبط با `gridcell` در فناوری‌های کمکی ضعیف است. در صورت امکان، از [نشانه‌گذاری جدول HTML](/en-US/docs/Web/HTML/Reference/Elements/table) به جای آن استفاده کنید.
 
-## Best practices
+## بهترین روش‌ها
 
-The first rule of ARIA is: if a native HTML element or attribute has the semantics and behavior you require, use it instead of re-purposing an element and adding an ARIA role, state or property to make it accessible. As such, it is recommended to use [native HTML table markup](/en-US/docs/Web/HTML/Reference/Elements/table) instead of recreating a table's form and functionality with ARIA and JavaScript.
+اولین قانون ARIA این است: اگر یک عنصر یا ویژگی HTML بومی دارای معناشناسی و رفتاری است که نیاز دارید، از آن استفاده کنید به جای اینکه عنصری را تغییر کاربری داده و یک نقش، حالت یا ویژگی ARIA به آن اضافه کنید تا قابل دسترسی شود. بنابراین توصیه می‌شود به جای بازسازی فرم و عملکرد یک جدول با ARIA و جاوااسکریپت، از [نشانه‌گذاری جدول HTML بومی](/en-US/docs/Web/HTML/Reference/Elements/table) استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [The Table element](/en-US/docs/Web/HTML/Reference/Elements/table)
-- [ARIA: Grid role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role)
-- [The Table row element](/en-US/docs/Web/HTML/Reference/Elements/tr)
-- [ARIA: row role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
-- [ARIA: rowgroup role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role)
-- [The Table header element](/en-US/docs/Web/HTML/Reference/Elements/th)
-- [The Table Data Cell element](/en-US/docs/Web/HTML/Reference/Elements/td)
+- [عنصر Table](/en-US/docs/Web/HTML/Reference/Elements/table)
+- [ARIA: نقش Grid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role)
+- [عنصر ردیف جدول](/en-US/docs/Web/HTML/Reference/Elements/tr)
+- [ARIA: نقش row](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
+- [ARIA: نقش rowgroup](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role)
+- [عنصر سرستون جدول](/en-US/docs/Web/HTML/Reference/Elements/th)
+- [عنصر سلول داده جدول](/en-US/docs/Web/HTML/Reference/Elements/td)
