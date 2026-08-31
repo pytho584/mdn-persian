@@ -1,11 +1,5 @@
 ---
 title: "CSPViolationReport: disposition property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSPViolationReport/disposition"
-status: "needs-translation"
----
-
----
-title: "CSPViolationReport: disposition property"
 short-title: disposition
 slug: Web/API/CSPViolationReport/disposition
 page-type: web-api-instance-property
@@ -14,30 +8,28 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}
 
-The **`disposition`** property of the {{domxref("CSPViolationReport")}} dictionary indicates whether the user agent is configured to enforce [Content Security Policy (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) violations or only report them.
+ویژگی **`disposition`** در دیکشنری {{domxref("CSPViolationReport")}} مشخص می‌کند که آیا عامل کاربر (user agent) برای اعمالِ نقض‌های [Content Security Policy (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) پیکربندی شده است یا فقط آن‌ها را گزارش می‌دهد.
 
-## Value
+## مقدار
 
-Possible values are:
+مقدارهای ممکن عبارت‌اند از:
 
 - `"enforce"`
-  - : The policy is enforced and the resource request is blocked.
-    This is used for violations of policies set with {{httpheader("Content-Security-Policy")}}.
+  - : سیاست اعمال می‌شود و درخواست منبع مسدود می‌شود.
+    این مقدار برای نقضِ سیاست‌های تنظیم‌شده با {{httpheader("Content-Security-Policy")}} استفاده می‌شود.
 - `"report"`
-  - : The violation is reported but the resource request is not blocked.
-    This is used for violations of policies set with {{httpheader("Content-Security-Policy-Report-Only")}}.
+  - : نقض گزارش می‌شود اما درخواست منبع مسدود نمی‌شود.
+    این مقدار برای نقضِ سیاست‌های تنظیم‌شده با {{httpheader("Content-Security-Policy-Report-Only")}} استفاده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### CSP inline script violation showing the disposition
+### نمایش disposition در نقض اسکریپت درون‌خطی CSP
 
-This example triggers a CSP violation using an inline script, and reports the violation using a {{domxref("ReportingObserver")}}.
-The `disposition` is logged.
+این مثال یک نقض CSP را با استفاده از یک اسکریپت درون‌خطی فعال می‌کند و آن را با کمک یک {{domxref("ReportingObserver")}} گزارش می‌دهد. سپس مقدار `disposition` در لاگ ثبت می‌شود.
 
 #### HTML
 
-The HTML file below uses the [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) element to set the {{httpheader('Content-Security-Policy')}} `default-src` to `self`, which allows scripts and other resources to be loaded from the same domain, but does not allow inline scripts to be executed.
-The document also includes an inline script, which should therefore trigger a CSP violation.
+پرونده HTML زیر از عنصر [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) استفاده می‌کند تا {{httpheader('Content-Security-Policy')}} را با `default-src` برابر با `self` تنظیم کند. این تنظیم اجازه می‌دهد اسکریپت‌ها و سایر منابع از همان دامنه بارگیری شوند، اما اجازه نمی‌دهد اسکریپت‌های درون‌خطی اجرا شوند. سند همچنین شامل یک اسکریپت درون‌خطی است، بنابراین باید یک نقض CSP را فعال کند.
 
 ```html
 <!doctype html>
@@ -63,11 +55,9 @@ The document also includes an inline script, which should therefore trigger a CS
 
 #### JavaScript (main.js)
 
-The document above also loads the external script `main.js`, which is shown below.
-Because this is loaded from the same domain as the HTML, it is not blocked by the CSP.
+سند بالا همچنین اسکریپت خارجی `main.js` را که در زیر نشان داده شده است بارگیری می‌کند. از آنجا که این اسکریپت از همان دامنه HTML بارگیری می‌شود، توسط CSP مسدود نمی‌شود.
 
-The script creates a new {{domxref("ReportingObserver")}} to observe content violation reports of type `"csp-violation"`.
-Each time the callback function is invoked, we get the body of the first entry of the reports array, and use it to log the file, line, and column of the violation to the console.
+اسکریپت یک {{domxref("ReportingObserver")}} جدید می‌سازد تا گزارش‌های نقض محتوا از نوع `"csp-violation"` را مشاهده کند. هر بار که تابع callback فراخوانده می‌شود، body اولین ورودی آرایه `reports` را می‌گیریم و از آن برای ثبت نام فایل، شماره خط و شماره ستون نقض در کنسول استفاده می‌کنیم.
 
 ```js
 // main.js
@@ -86,28 +76,28 @@ const observer = new ReportingObserver(
 observer.observe();
 ```
 
-Note that while there might be multiple reports in the returned array, for brevity we only log the values of the first element.
+توجه داشته باشید که اگرچه ممکن است چندین گزارش در آرایه بازگشتی وجود داشته باشد، برای اختصار فقط مقادیر اولین عنصر را در لاگ ثبت می‌کنیم.
 
-#### Results
+#### نتایج
 
-If serving the above code, the log output would be:
+اگر کد بالا را سرو کنید، خروجی لاگ به شکل زیر خواهد بود:
 
 ```plain
 disposition: enforce
 ```
 
 > [!NOTE]
-> If `Content-Security-Policy-Reporting-Only` was enabled the disposition would be `report`.
-> Note however, that `Content-Security-Policy-Reporting-Only` must be served: it can't be set in the `<meta>` element as we have done above.
+> اگر `Content-Security-Policy-Reporting-Only` فعال باشد، `disposition` برابر با `report` خواهد بود.
+> با این حال توجه داشته باشید که `Content-Security-Policy-Reporting-Only` باید سرو شود: نمی‌توان آن را در عنصر `<meta>` تنظیم کرد، همان‌طور که در بالا برای `Content-Security-Policy` انجام دادیم.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SecurityPolicyViolationEvent.disposition")}}
