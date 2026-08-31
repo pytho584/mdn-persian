@@ -1,7 +1,7 @@
 ---
 title: "Animation: finish event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/finish_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,20 +14,14 @@ browser-compat: api.Animation.finish_event
 
 {{ APIRef("Web Animations") }}
 
-The **`finish`** event of the {{domxref("Animation")}} interface is fired when the animation finishes playing, either when the animation completes naturally, or
-when the {{domxref("Animation.finish()")}} method is called to immediately cause the
-animation to finish up.
+رویداد **`finish`** از رابط {{domxref("Animation")}} زمانی پرتاب می‌شود که انیمیشن پخش را به پایان می‌رساند؛ چه زمانی که انیمیشن به‌طور طبیعی کامل شود و چه زمانی که متد {{domxref("Animation.finish()")}} برای پایان دادنِ فوری به انیمیشن فراخوانده شود.
 
 > [!NOTE]
-> The `"paused"` play state supersedes the `"finished"` play
-> state; if the animation is both paused and finished, the `"paused"` state
-> is the one that will be reported. You can force the animation into the
-> `"finished"` state by setting its {{domxref("Animation.startTime", "startTime")}} to
-> `document.timeline.currentTime - (Animation.currentTime * Animation.playbackRate)`.
+> وضعیت پخش `"paused"` بر وضعیت پخش `"finished"` برتری دارد؛ اگر انیمیشن هم مکث‌شده و هم تمام‌شده باشد، وضعیت `"paused"` گزارش داده می‌شود. می‌توانید با تنظیم {{domxref("Animation.startTime", "startTime")}} به `document.timeline.currentTime - (Animation.currentTime * Animation.playbackRate)` انیمیشن را به حالت `"finished"` وادار کنید.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("finish", (event) => { })
@@ -35,18 +29,15 @@ addEventListener("finish", (event) => { })
 onfinish = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("AnimationPlaybackEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("AnimationPlaybackEvent")}}. به ارث‌رفته از {{domxref("Event")}}.
 
 {{InheritanceDiagram("AnimationPlaybackEvent")}}
 
-## Examples
+## مثال‌ها
 
-`Animation.onfinish` is used several times in the Alice in Web Animations API Land
-[Growing/Shrinking Alice Game](https://codepen.io/rachelnabors/pen/PNYGZQ?editors=0010).
-Here is one instance where we add pointer events back to an element after
-its opacity animation has faded it in:
+`Animation.onfinish` چندین بار در [Growing/Shrinking Alice Game](https://codepen.io/rachelnabors/pen/PNYGZQ?editors=0010) در سرزمین Web Animations API استفاده شده است. در اینجا یک نمونه آورده شده است که در آن رویدادهای اشاره‌گر را پس از اینکه انیمیشن شفافیت، عنصر را به‌تدریج نمایان کرده است، دوباره به عنصر اضافه می‌کنیم:
 
 ```js
 // Add an animation to the game's ending credits
@@ -66,15 +57,15 @@ bringUI.onfinish = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("Animation")}}
