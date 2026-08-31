@@ -1,11 +1,5 @@
 ---
 title: "CSSFunctionRule: returnType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionRule/returnType"
-status: "needs-translation"
----
-
----
-title: "CSSFunctionRule: returnType property"
 short-title: returnType
 slug: Web/API/CSSFunctionRule/returnType
 page-type: web-api-instance-property
@@ -16,26 +10,26 @@ browser-compat: api.CSSFunctionRule.returnType
 
 {{ APIRef("CSSOM") }}{{SeeCompatTable}}
 
-The **`returnType`** property of the {{domxref("CSSFunctionRule")}} interface returns a string representing the custom function's return type.
+خاصیت **`returnType`** از رابط {{domxref("CSSFunctionRule")}} یک رشته را برمی‌گرداند که نوع بازگشتی تابع سفارشی را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-If no return type is specified in the associated {{cssxref("@function")}} at-rule, `returnType` returns `*`.
+اگر نوع بازگشتی در قانون at-rule {{cssxref("@function")}} مرتبط مشخص نشده باشد، `returnType` مقدار `*` را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("CSSFunctionRule")}} reference page for an example.
+برای مثال به صفحه مرجع اصلی {{domxref("CSSFunctionRule")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@function")}}
