@@ -1,7 +1,7 @@
 ---
 title: "Attr: namespaceURI property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Attr/namespaceURI"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,29 +14,29 @@ browser-compat: api.Attr.namespaceURI
 
 {{APIRef("DOM")}}
 
-The read-only **`namespaceURI`** property of the {{domxref("Attr")}} interface returns the namespace URI of the attribute,
-or `null` if the element is not in a namespace.
+خصوصیت فقط خواندنی **`namespaceURI`** از رابط {{domxref("Attr")}}، URI فضای نام ویژگی را برمی‌گرداند،
+یا اگر عنصر در یک فضای نام نباشد، `null` را برمی‌گرداند.
 
-The namespace URI is set at the {{domxref("Attr")}} creation and cannot be changed.
-An attribute with a namespace can be created using {{domxref("Element.setAttributeNS()")}}.
+URI فضای نام در زمان ایجاد {{domxref("Attr")}} تنظیم می‌شود و قابل تغییر نیست.
+یک ویژگی با فضای نام را می‌توان با استفاده از {{domxref("Element.setAttributeNS()")}} ایجاد کرد.
 
 > [!NOTE]
-> An attribute does not inherit its namespace from the element it is attached to.
-> If an attribute is not explicitly given a namespace, it has no namespace.
+> یک ویژگی فضای نام خود را از عنصری که به آن متصل است به ارث نمی‌برد.
+> اگر به یک ویژگی به صراحت فضای نامی داده نشود، فضای نامی ندارد.
 
-The browser does not handle or enforce namespace validation per se. It is up to the JavaScript
-application to do any necessary validation. Note, too, that the namespace prefix, once it
-is associated with a particular attribute node, cannot be changed.
+مرورگر به خودی خود اعتبارسنجی فضای نام را مدیریت یا اعمال نمی‌کند. این وظیفه برنامه جاوااسکریپت است
+که هرگونه اعتبارسنجی لازم را انجام دهد. همچنین توجه داشته باشید که پیشوند فضای نام، پس از آنکه
+با یک گره ویژگی خاصی مرتبط شد، قابل تغییر نیست.
 
-## Value
+## مقدار
 
-A string containing the URI of the namespace, or `null` if the attribute is not in a namespace.
+یک رشته حاوی URI فضای نام، یا اگر ویژگی در یک فضای نام نباشد، `null`.
 
-## Example
+## مثال
 
-The following example shows the result for a prefixed attribute on an HTML element and on an SVG element.
-As HTML doesn't handle namespaces, it will always return `null` in that case.
-In the case of the SVG element, it will return the URI of the XML namespace, `http://www.w3.org/XML/1998/namespace`.
+مثال زیر نتیجه را برای یک ویژگی با پیشوند روی یک عنصر HTML و یک عنصر SVG نشان می‌دهد.
+از آنجایی که HTML با فضای نام کار نمی‌کند، در آن حالت همیشه `null` برمی‌گرداند.
+در مورد عنصر SVG، URI فضای نام XML یعنی `http://www.w3.org/XML/1998/namespace` را برمی‌گرداند.
 
 ### HTML
 
@@ -75,16 +75,16 @@ for (const button of buttons) {
 
 {{ EmbedLiveSample('Example','100%',100) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The properties {{domxref("Attr.name")}}, returning the qualified name of the attribute, {{domxref("Attr.localName")}}, the local part of the name, and {{domxref("Attr.prefix")}}, the namespace prefix.
-- The {{domxref("Element.namespaceURI")}} property, equivalent to this one but for an {{domxref("Element")}}.
-- The {{domxref("Element.setAttributeNS()")}} method, creating an attribute with a given namespace.
+- خصوصیات {{domxref("Attr.name")}}، که نام واجد شرایط ویژگی را برمی‌گرداند، {{domxref("Attr.localName")}}، بخش محلی نام، و {{domxref("Attr.prefix")}}، پیشوند فضای نام.
+- خصوصیت {{domxref("Element.namespaceURI")}}، معادل این خصوصیت اما برای یک {{domxref("Element")}}.
+- متد {{domxref("Element.setAttributeNS()")}}، که یک ویژگی با فضای نام مشخص ایجاد می‌کند.
