@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesMap: forEach() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap/forEach"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesMap: forEach() method"
 short-title: forEach()
 slug: Web/API/CSSFontFeatureValuesMap/forEach
 page-type: web-api-instance-method
@@ -16,37 +10,37 @@ browser-compat: api.CSSFontFeatureValuesMap.forEach
 
 {{APIRef("CSSOM")}}{{SeeCompatTable}}
 
-The **`forEach()`** method of {{domxref("CSSFontFeatureValuesMap")}} instances executes a provided function once per each key/value pair in this map, in insertion order.
+متد **`forEach()`** در نمونه‌های {{domxref("CSSFontFeatureValuesMap")}} یک تابع ارائه‌شده را برای هر جفت کلید/مقدار در این نقشه، به ترتیب درج، اجرا می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 forEach(callbackFn)
 forEach(callbackFn, thisArg)
 ```
 
-### Parameters
+### پارامترها
 
 - `callbackFn`
-  - : A function to execute for each entry in the map. The function is called with the following arguments:
+  - : تابعی که برای هر ورودی در نقشه اجرا می‌شود. این تابع با آرگومان‌های زیر فراخوانی می‌شود:
     - `value`
-      - : Value of each iteration.
+      - : مقدار هر تکرار.
     - `key`
-      - : Key of each iteration.
+      - : کلید هر تکرار.
     - `map`
-      - : The map being iterated.
+      - : نقشه‌ای که در حال پیمایش است.
 - `thisArg` {{optional_inline}}
-  - : A value to use as `this` when executing `callbackFn`.
+  - : مقداری که به عنوان `this` هنگام اجرای `callbackFn` استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following example logs the `key` and `value` for each entry in the `@swash` rule. This example is using `@swash` but also works with other [feature value blocks](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks).
+مثال زیر `key` و `value` را برای هر ورودی در قانون `@swash` ثبت می‌کند. این مثال از `@swash` استفاده می‌کند، اما با سایر [بلوک‌های مقادیر ویژگی‌ها](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks) نیز کار می‌کند.
 
 #### CSS
 
@@ -62,26 +56,26 @@ The following example logs the `key` and `value` for each entry in the `@swash` 
 #### JavaScript
 
 ```js
-// function to be used as callback
+// تابعی که به عنوان callback استفاده می‌شود
 function logSwashes(value, key, map) {
   console.log(`('${key}') = ${value}`);
 }
-// get the rules
+// دریافت قوانین
 const myRule = document.styleSheets[0].cssRules[0];
 myRule.swash.forEach(logSwashes);
-// logs:
+// خروجی:
 // "('swishy') = 1"
 // "('swashy') = 2"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Map.prototype.forEach()](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach)
