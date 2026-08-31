@@ -1,11 +1,5 @@
 ---
 title: "ChannelMergerNode: ChannelMergerNode() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ChannelMergerNode/ChannelMergerNode"
-status: "needs-translation"
----
-
----
-title: "ChannelMergerNode: ChannelMergerNode() constructor"
 short-title: ChannelMergerNode()
 slug: Web/API/ChannelMergerNode/ChannelMergerNode
 page-type: web-api-constructor
@@ -14,48 +8,40 @@ browser-compat: api.ChannelMergerNode.ChannelMergerNode
 
 {{APIRef("Web Audio API")}}
 
-The **`ChannelMergerNode()`** constructor creates a new {{domxref("ChannelMergerNode")}} object instance.
+سازندهٔ **`ChannelMergerNode()`** یک نمونهٔ جدید از شیء {{domxref("ChannelMergerNode")}} می‌سازد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new ChannelMergerNode(context)
 new ChannelMergerNode(context, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `context`
-  - : A {{domxref("BaseAudioContext")}} representing the audio context you want the node to be associated with.
+  - : یک {{domxref("BaseAudioContext")}} که زمینهٔ صوتی مورد نظر برای مرتبط‌سازی گره با آن را نشان می‌دهد.
 - `options` {{optional_inline}}
-  - : An object defining the properties you want the `ChannelMergerNode` to have:
+  - : یک شیء که ویژگی‌های مورد نظر شما برای `ChannelMergerNode` را تعریف می‌کند:
     - `numberOfInputs` {{optional_inline}}
-      - : A number defining the number of inputs the {{domxref("ChannelMergerNode")}} should have. If not specified, the default value used is 6.
+      - : عددی که تعداد ورودی‌های {{domxref("ChannelMergerNode")}} را تعیین می‌کند. اگر مشخص نشود، مقدار پیش‌فرض ۶ استفاده می‌شود.
     - `channelCount` {{optional_inline}}
-      - : An integer used to determine how many channels are used when [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) connections to any inputs to the node.
-        (See {{domxref("AudioNode.channelCount")}} for more information.)
-        Its usage and precise definition depend on the value of `channelCountMode`.
+      - : یک عدد صحیح که تعیین می‌کند هنگام [بالاکشی و پایین‌کشی](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) اتصالات به هر ورودی گره، چند کانال استفاده شود. (برای اطلاعات بیشتر به {{domxref("AudioNode.channelCount")}} مراجعه کنید.) کاربرد و تعریف دقیق آن به مقدار `channelCountMode` بستگی دارد.
     - `channelCountMode` {{optional_inline}}
-      - : A string describing the way channels must be matched between
-        the node's inputs and outputs. (See {{domxref("AudioNode.channelCountMode")}} for more
-        information including default values.)
+      - : رشته‌ای که نحوهٔ تطبیق کانال‌ها بین ورودی‌ها و خروجی‌های گره را توصیف می‌کند. (برای اطلاعات بیشتر، از جمله مقادیر پیش‌فرض، به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
     - `channelInterpretation` {{optional_inline}}
-      - : A string describing the meaning of the channels.
-        This interpretation will define how audio
-        [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) will happen.
-        The possible values are `"speakers"` or `"discrete"`.
-        (See {{domxref("AudioNode.channelCountMode")}} for more information including default values.)
+      - : رشته‌ای که معنای کانال‌ها را توصیف می‌کند. این تفسیر مشخص می‌کند که [بالاکشی و پایین‌کشی](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) صدا چگونه انجام شود. مقادیر ممکن `"speakers"` یا `"discrete"` هستند. (برای اطلاعات بیشتر، از جمله مقادیر پیش‌فرض، به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("ChannelMergerNode")}} object instance.
+یک نمونهٔ جدید از شیء {{domxref("ChannelMergerNode")}}.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if an option such as `channelCount` or `channelCountMode` has been given an invalid value.
+  - : در صورتی پرتاب می‌شود که گزینه‌ای مانند `channelCount` یا `channelCountMode` مقدار نامعتبری داده شده باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const ac = new AudioContext();
@@ -67,10 +53,10 @@ const options = {
 const myMerger = new ChannelMergerNode(ac, options);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
