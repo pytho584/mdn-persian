@@ -1,9 +1,8 @@
 ---
 title: "BluetoothRemoteGATTCharacteristic: service property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/service"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
-
 ---
 title: "BluetoothRemoteGATTCharacteristic: service property"
 short-title: service
@@ -16,17 +15,16 @@ browser-compat: api.BluetoothRemoteGATTCharacteristic.service
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTCharacteristic.service`** read-only
-property returns the {{domxref("BluetoothRemoteGATTService")}} this characteristic belongs to.
+ویژگی فقط خواندنی **`BluetoothRemoteGATTCharacteristic.service`** شیء {{domxref("BluetoothRemoteGATTService")}}ای را که این مشخصه به آن تعلق دارد برمی‌گرداند.
 
-## Value
+## مقدار
 
-An instance {{domxref("BluetoothRemoteGATTService")}}.
+یک نمونه از {{domxref("BluetoothRemoteGATTService")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
