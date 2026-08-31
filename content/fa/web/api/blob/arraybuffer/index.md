@@ -1,7 +1,7 @@
 ---
 title: "Blob: arrayBuffer() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Blob/arrayBuffer"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,46 +14,39 @@ browser-compat: api.Blob.arrayBuffer
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`arrayBuffer()`** method of the {{domxref("Blob")}}
-interface returns a {{jsxref("Promise")}} that resolves with the contents of the blob as
-binary data contained in an {{jsxref("ArrayBuffer")}}.
+متد **`arrayBuffer()`** از رابط {{domxref("Blob")}} یک {{jsxref("Promise")}} برمی‌گرداند که با محتویات blob به‌صورت دادهٔ باینری موجود در یک {{jsxref("ArrayBuffer")}} حل می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 arrayBuffer()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A promise that resolves with an {{jsxref("ArrayBuffer")}} that contains the blob's
-data in binary form.
+پرامیزی که با یک {{jsxref("ArrayBuffer")}} حاوی داده‌های blob به شکل باینری حل می‌شود.
 
-### Exceptions
+### استثناها
 
-While this method doesn't throw exceptions, it may reject the promise. This can happen,
-for example, if the reader used to fetch the blob's data throws an exception. Any
-exceptions thrown while getting the data will be converted into rejections.
+اگرچه این متد استثنا پرتاب نمی‌کند، ممکن است پرامیس را رد کند. این ممکن است برای مثال زمانی رخ دهد که خواننده‌ای که برای دریافت داده‌های blob استفاده می‌شود، استثنا پرتاب کند. هر استثنایی که هنگام دریافت داده‌ها پرتاب شود، به رد شدن (rejection) تبدیل می‌شود.
 
-## Usage notes
+## یادداشت‌های استفاده
 
-While similar to the {{domxref("FileReader.readAsArrayBuffer()")}} method,
-`arrayBuffer()` returns a promise rather than being an event-based API, as is
-the case with the `FileReader` interface's method.
+اگرچه این متد شبیه متد {{domxref("FileReader.readAsArrayBuffer()")}} است، اما `arrayBuffer()` به‌جای اینکه یک API مبتنی بر رویداد باشد (مانند متد رابط `FileReader`)، یک promise برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Response.arrayBuffer()")}}
 - [Streams API](/en-US/docs/Web/API/Streams_API)
