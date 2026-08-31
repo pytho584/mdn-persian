@@ -1,7 +1,7 @@
 ---
 title: "Animation: reverse() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/reverse"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,7 +14,7 @@ browser-compat: api.Animation.reverse
 
 {{APIRef("Web Animations")}}
 
-The **`Animation.reverse()`** method of the {{ domxref("Animation") }} Interface reverses the playback direction, meaning the animation ends at its beginning. If called on an unplayed animation, the whole animation is played backwards. If called on a paused animation, the animation will continue in reverse.
+متد **`Animation.reverse()`** از رابط {{ domxref("Animation") }} جهت پخش را معکوس می‌کند، به این معنی که انیمیشن در نقطه شروع خود به پایان می‌رسد. اگر بر روی یک انیمیشن اجرا نشده فراخوانی شود، کل انیمیشن به سمت عقب پخش می‌شود. اگر بر روی یک انیمیشن متوقف شده فراخوانی شود، انیمیشن به صورت معکوس ادامه می‌یابد.
 
 ## Syntax
 
@@ -22,17 +22,17 @@ The **`Animation.reverse()`** method of the {{ domxref("Animation") }} Interface
 reverse()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-In the [Growing/Shrinking Alice Game](https://codepen.io/rachelnabors/pen/PNYGZQ?editors=0010) example, clicking or tapping the bottle causes Alice's growing animation (`aliceChange`) to play backwards, causing her to get smaller. It is done by setting `aliceChange`'s {{ domxref("Animation.playbackRate") }} to `-1` like so:
+در مثال [بازی آلیس در حال رشد/کوچک شدن](https://codepen.io/rachelnabors/pen/PNYGZQ?editors=0010)، کلیک یا ضربه زدن بر روی بطری باعث می‌شود انیمیشن رشد آلیس (`aliceChange`) به سمت عقب پخش شده و او کوچک‌تر شود. این کار با تنظیم {{ domxref("Animation.playbackRate") }} متعلق به `aliceChange` به `-1` انجام می‌شود، به این صورت:
 
 ```js
 const shrinkAlice = () => {
@@ -45,7 +45,7 @@ const shrinkAlice = () => {
 };
 ```
 
-But it could also have been done by calling `reverse()` on `aliceChange` like so:
+اما می‌توانست با فراخوانی `reverse()` بر روی `aliceChange` نیز انجام شود، به این صورت:
 
 ```js
 const shrinkAlice = () => {
@@ -57,17 +57,17 @@ const shrinkAlice = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
-- {{domxref("Animation")}} for other methods and properties you can use to control web page animation.
-- {{domxref("Animation.pause()")}} to pause an animation.
-- {{domxref("Animation.play()")}} to move an animation forward.
+- {{domxref("Animation")}} برای سایر روش‌ها و ویژگی‌هایی که می‌توانید برای کنترل انیمیشن صفحه وب استفاده کنید.
+- {{domxref("Animation.pause()")}} برای توقف یک انیمیشن.
+- {{domxref("Animation.play()")}} برای حرکت رو به جلوی یک انیمیشن.
