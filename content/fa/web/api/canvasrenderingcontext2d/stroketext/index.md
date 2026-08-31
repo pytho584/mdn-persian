@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: strokeText() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeText"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: strokeText() method"
 short-title: strokeText()
 slug: Web/API/CanvasRenderingContext2D/strokeText
 page-type: web-api-instance-method
@@ -14,21 +8,12 @@ browser-compat: api.CanvasRenderingContext2D.strokeText
 
 {{APIRef("Canvas API")}}
 
-The {{domxref("CanvasRenderingContext2D")}} method
-**`strokeText()`**, part of the Canvas 2D API, strokes — that
-is, draws the outlines of — the characters of a text string at the specified
-coordinates. An optional parameter allows specifying a maximum width for the rendered
-text, which the {{Glossary("user agent")}} will achieve by condensing the text or by
-using a lower font size.
+متد **`strokeText()`** در {{domxref("CanvasRenderingContext2D")}}، بخشی از Canvas 2D API، متن داده‌شده را با رسم خط دور حروف، یعنی فقط طرح کلی کاراکترها، در مختصات مشخص‌شده رسم می‌کند. یک پارامتر اختیاری به شما امکان می‌دهد حداکثر عرض متن را تعیین کنید؛ {{Glossary("user agent")}} این عرض را با فشرده‌سازی متن یا استفاده از اندازه قلم کوچک‌تر محقق می‌کند.
 
-This method draws directly to the canvas without modifying the current path, so any
-subsequent {{domxref("CanvasRenderingContext2D.fill()", "fill()")}} or
-{{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}} calls will have no effect
-on it.
+این متد مستقیماً روی بوم (canvas) رسم می‌کند و مسیر فعلی را تغییر نمی‌دهد، بنابراین فراخوانی‌های بعدی {{domxref("CanvasRenderingContext2D.fill()", "fill()")}} یا {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}} هیچ تأثیری روی آن نخواهند داشت.
 
 > [!NOTE]
-> Use the {{domxref('CanvasRenderingContext2D.fillText()', 'fillText()')}} method to
-> fill the text characters rather than having just their outlines drawn.
+> از متد {{domxref('CanvasRenderingContext2D.fillText()', 'fillText()')}} استفاده کنید تا حروف متن پر شوند و فقط طرح دور آن‌ها رسم نشود.
 
 ## Syntax
 
@@ -40,37 +25,27 @@ strokeText(text, x, y, maxWidth)
 ### Parameters
 
 - `text`
-  - : A string specifying the text string to render into the context.
-    The text is rendered using the settings specified by
-    {{domxref("CanvasRenderingContext2D.font","font")}},
-    {{domxref("CanvasRenderingContext2D.textAlign","textAlign")}},
-    {{domxref("CanvasRenderingContext2D.textBaseline","textBaseline")}}, and
-    {{domxref("CanvasRenderingContext2D.direction","direction")}}.
+  - : رشته‌ای که متن موردنظر برای رسم در context را مشخص می‌کند. متن با استفاده از تنظیمات تعیین‌شده توسط {{domxref("CanvasRenderingContext2D.font","font")}}، {{domxref("CanvasRenderingContext2D.textAlign","textAlign")}}، {{domxref("CanvasRenderingContext2D.textBaseline","textBaseline")}} و {{domxref("CanvasRenderingContext2D.direction","direction")}} رندر می‌شود.
 - `x`
-  - : The x-axis coordinate of the point at which to begin drawing the text.
+  - : مختصات محور x نقطه‌ای که رسم متن از آنجا آغاز می‌شود.
 - `y`
-  - : The y-axis coordinate of the point at which to begin drawing the text.
+  - : مختصات محور y نقطه‌ای که رسم متن از آنجا آغاز می‌شود.
 - `maxWidth` {{optional_inline}}
-  - : The maximum width the text may be once rendered. If not specified, there is no limit
-    to the width of the text. However, if this value is provided, the user agent will
-    adjust the kerning, select a more horizontally condensed font (if one is available or
-    can be generated without loss of quality), or scale down to a smaller font size in
-    order to fit the text in the specified width.
+  - : حداکثر عرضی که متن پس از رندر می‌تواند داشته باشد. اگر مشخص نشود، هیچ محدودیتی برای عرض متن وجود ندارد. با این حال، اگر این مقدار ارائه شود، عامل کاربر (user agent) کرنینگ را تنظیم می‌کند، فونت فشرده‌تری را در جهت افقی انتخاب می‌کند (در صورت موجود بودن یا امکان تولید بدون افت کیفیت)، یا اندازه قلم را کوچک‌تر می‌کند تا متن در عرض مشخص‌شده جای بگیرد.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Examples
 
-### Drawing text outlines
+### رسم طرح کلی متن
 
-This example writes the words "Hello world" using the `strokeText()` method.
+این مثال عبارت «Hello world» را با استفاده از متد `strokeText()` می‌نویسد.
 
 #### HTML
 
-First, we need a canvas to draw into. This code creates a context 400 pixels wide and
-150 pixels high.
+ابتدا به یک بوم (canvas) برای رسم نیاز داریم. این کد یک context به عرض ۴۰۰ پیکسل و ارتفاع ۱۵۰ پیکسل ایجاد می‌کند.
 
 ```html
 <canvas id="canvas" width="400" height="150"></canvas>
@@ -78,7 +53,7 @@ First, we need a canvas to draw into. This code creates a context 400 pixels wid
 
 #### JavaScript
 
-The JavaScript code for this example follows.
+کد جاوااسکریپت این مثال در ادامه آمده است.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -88,21 +63,17 @@ ctx.font = "50px serif";
 ctx.strokeText("Hello world", 50, 90);
 ```
 
-This code obtains a reference to the {{HTMLElement("canvas")}}, then gets a reference
-to its 2D graphics context.
+این کد ارجاعی به {{HTMLElement("canvas")}} می‌گیرد و سپس ارجاع به context گرافیکی دوبعدی آن را دریافت می‌کند.
 
-With that in hand, we set the {{domxref("CanvasRenderingContext2D.font", "font")}} to
-50-pixel-tall "serif" (the user's default [serif](https://en.wikipedia.org/wiki/Serif) font),
-then call `strokeText()` to draw the text "Hello world," starting at the
-coordinates (50, 90).
+با این کار، {{domxref("CanvasRenderingContext2D.font", "font")}} را روی «serif» با ارتفاع ۵۰ پیکسل (فونت [serif](https://en.wikipedia.org/wiki/Serif) پیش‌فرض کاربر) تنظیم می‌کنیم و سپس `strokeText()` را برای رسم متن «Hello world» با شروع از مختصات (50, 90) فراخوانی می‌کنیم.
 
 #### Result
 
 {{ EmbedLiveSample('Drawing_text_outlines', 700, 180) }}
 
-### Restricting the text size
+### محدود کردن اندازه متن
 
-This example writes the words "Hello world," restricting its width to 140 pixels.
+این مثال عبارت «Hello world» را با محدود کردن عرض آن به ۱۴۰ پیکسل می‌نویسد.
 
 #### HTML
 
