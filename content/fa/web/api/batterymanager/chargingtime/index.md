@@ -1,7 +1,7 @@
 ---
 title: "BatteryManager: chargingTime property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/chargingTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,20 +14,20 @@ browser-compat: api.BatteryManager.chargingTime
 
 {{ApiRef("Battery API")}}{{securecontext_header}}
 
-The **`chargingTime`** read-only property of the {{domxref("BatteryManager")}} interface indicates the amount of time, in seconds, that remain until the battery is fully charged, or `0` if the battery is already fully charged or the user agent is unable to report the battery status information.
-If the battery is currently discharging, its value is {{jsxref("Infinity")}}.
-When its value changes, the {{domxref("BatteryManager/chargingtimechange_event", "chargingtimechange")}} event is fired.
+خاصیت فقط‌خواندنی **`chargingTime`** از رابط {{domxref("BatteryManager")}} مدت زمانی را بر حسب ثانیه نشان می‌دهد که تا شارژ کامل باتری باقی مانده است، یا اگر باتری قبلاً کاملاً شارژ شده باشد یا عامل کاربر نتواند اطلاعات وضعیت باتری را گزارش دهد، مقدار `0` برمی‌گرداند.
+اگر باتری در حال تخلیه باشد، مقدار آن {{jsxref("Infinity")}} است.
+وقتی مقدار آن تغییر کند، رویداد {{domxref("BatteryManager/chargingtimechange_event", "chargingtimechange")}} فعال می‌شود.
 
 > [!NOTE]
-> Even if the time returned is precise to the second,
-> browsers round them to a higher interval
-> (typically to the closest 15 minutes) for privacy reasons.
+> حتی اگر زمان برگردانده‌شده تا ثانیه دقیق باشد،
+> مرورگرها آن را به بازه‌های بزرگ‌تر گرد می‌کنند
+> (معمولاً به نزدیک‌ترین ۱۵ دقیقه) به دلایل حفظ حریم خصوصی.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -48,15 +48,15 @@ navigator.getBattery().then((battery) => {
 
 {{ EmbedLiveSample('Examples', '100%', 30) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("BatteryManager")}}
 - {{domxref("Navigator.getBattery()")}}
