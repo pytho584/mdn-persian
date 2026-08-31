@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesMap: set() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap/set"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesMap: set() method"
 short-title: set()
 slug: Web/API/CSSFontFeatureValuesMap/set
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.CSSFontFeatureValuesMap.set
 
 {{APIRef("CSSOM")}}{{SeeCompatTable}}
 
-The **`set()`** method of {{domxref("CSSFontFeatureValuesMap")}} instances adds a new entry with a specified key and value to this `CSSFontFeatureValuesMap`, or updates an existing entry if the key already exists.
+متد **`set()`** از نمونه‌های {{domxref("CSSFontFeatureValuesMap")}} یک ورودی جدید با کلید و مقدار مشخص به این `CSSFontFeatureValuesMap` اضافه می‌کند، یا اگر کلید از قبل وجود داشته باشد، ورودی موجود را به‌روزرسانی می‌کند.
 
 ## Syntax
 
@@ -27,19 +21,19 @@ set(key, value)
 ### Parameters
 
 - `key`
-  - : The key of the entry to add to or modify within the `CSSFontFeatureValuesMap` object. Can be any value.
+  - : کلید ورودی که باید به شیء `CSSFontFeatureValuesMap` اضافه یا در آن تغییر داده شود. می‌تواند هر مقداری باشد.
 - `value`
-  - : The value of the entry to add to or modify within the `CSSFontFeatureValuesMap` object. Must be an integer that matches the `index` of the alternative font feature.
+  - : مقدار ورودی که باید به شیء `CSSFontFeatureValuesMap` اضافه یا در آن تغییر داده شود. باید یک عدد صحیح باشد که با `index` ویژگی جایگزین فونت مطابقت داشته باشد.
 
 ### Return value
 
-The `CSSFontFeatureValuesMap` object.
+شیء `CSSFontFeatureValuesMap`.
 
 ## Examples
 
 ### Basic usage
 
-The following example updates the value for `swashy` and adds a third declaration. This example is using `@swash` but also works with other [feature value blocks](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks).
+مثال زیر مقدار `swashy` را به‌روزرسانی می‌کند و یک اعلان سوم اضافه می‌کند. این مثال از `@swash` استفاده می‌کند اما با سایر [بلوک‌های مقدار ویژگی](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks) نیز کار می‌کند.
 
 #### CSS
 
@@ -82,4 +76,4 @@ myRule.swash.forEach(logSwashes); // logs "('swishy') = 1", "('swooshy') = 2", "
 
 ## See also
 
-- [Map.prototype.keys()](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set)
+- [Map.prototype.set()](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set)
