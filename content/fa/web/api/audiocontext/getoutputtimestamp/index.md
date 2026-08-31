@@ -1,7 +1,7 @@
 ---
 title: "AudioContext: getOutputTimestamp() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/getOutputTimestamp"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,22 +14,12 @@ browser-compat: api.AudioContext.getOutputTimestamp
 
 {{APIRef("Web Audio API")}}
 
-The
-**`getOutputTimestamp()`** method of the
-{{domxref("AudioContext")}} interface returns a new `AudioTimestamp` object
-containing two audio timestamp values relating to the current audio context.
+{{domxref("AudioContext")}} 接口的 **`getOutputTimestamp()`** 方法返回一个新的 `AudioTimestamp` 对象，其中包含与当前音频上下文相关的两个音频时间戳值。
 
-The two values are as follows:
+这两个值如下：
 
-- `AudioTimestamp.contextTime`: The time of the sample frame currently
-  being rendered by the audio output device (i.e., output audio stream position), in the
-  same units and origin as the context's {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}}.
-  Basically, this is the time after the audio context was first created.
-- `AudioTimestamp.performanceTime`: An estimation of the moment when the
-  sample frame corresponding to the stored `contextTime` value was rendered
-  by the audio output device, in the same units and origin as
-  {{domxref("performance.now()")}}. This is the time after the document containing the
-  audio context was first rendered.
+- `AudioTimestamp.contextTime`：音频输出设备当前正在渲染的采样帧的时间（即输出音频流位置），其单位和原点与上下文的 {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}} 相同。基本上，这是音频上下文首次创建之后的时间。
+- `AudioTimestamp.performanceTime`：音频输出设备渲染与存储的 `contextTime` 值对应的采样帧的时刻的估计值，其单位和原点与 {{domxref("performance.now()")}} 相同。这是包含音频上下文的文档首次渲染之后的时间。
 
 ## Syntax
 
@@ -39,26 +29,20 @@ getOutputTimestamp()
 
 ### Parameters
 
-None.
+无。
 
 ### Return value
 
-An `AudioTimestamp` object, which has the following properties.
+一个 `AudioTimestamp` 对象，具有以下属性。
 
-- `contextTime`: A point in the time coordinate system of the
-  {{domxref("BaseAudioContext/currentTime","currentTime")}} for the
-  `BaseAudioContext`; the time after the audio context was first created.
-- `performanceTime`: A point in the time coordinate system of a
-  `Performance` interface; the time after the document containing the audio
-  context was first rendered
+- `contextTime`：`BaseAudioContext` 的 {{domxref("BaseAudioContext/currentTime","currentTime")}} 时间坐标系中的一个点；即音频上下文首次创建后的时间。
+- `performanceTime`：`Performance` 接口的时间坐标系中的一个点；即包含音频上下文的文档首次渲染后的时间。
 
 ## Examples
 
-In the following code we start to play an audio file after a play button is clicked,
-and start off a `requestAnimationFrame` loop running, which constantly
-outputs the `contextTime` and `performanceTime`.
+在以下代码中，我们在点击播放按钮后开始播放音频文件，并启动一个 `requestAnimationFrame` 循环，持续输出 `contextTime` 和 `performanceTime`。
 
-You can see full code of this [example at output-timestamp](https://github.com/mdn/webaudio-examples/blob/main/output-timestamp/index.html) ([see it live also](https://mdn.github.io/webaudio-examples/output-timestamp/)).
+你可以查看此 [output-timestamp 示例](https://github.com/mdn/webaudio-examples/blob/main/output-timestamp/index.html) 的完整代码（[也可以在线查看](https://mdn.github.io/webaudio-examples/output-timestamp/)）。
 
 ```js
 // Press the play button
