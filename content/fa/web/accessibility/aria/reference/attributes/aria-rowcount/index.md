@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-rowcount attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,19 +13,19 @@ spec-urls: https://w3c.github.io/aria/#aria-rowcount
 sidebar: accessibilitysidebar
 ---
 
-The `aria-rowcount` attribute defines the total number of rows in a table, grid, or treegrid.
+ویژگی `aria-rowcount` تعداد کل ردیف‌ها را در یک جدول، شبکه یا درخت‌شبکه تعریف می‌کند.
 
-## Description
+## توضیحات
 
-Some tables have hundreds, even millions, of rows. Even for tables with fewer rows, loading only a subsection of rows may be a design requirement, improve performance, or improve user experience. When only a subset of rows are loaded, you do need to let all users know that only a subset of the data is being displayed. The `aria-rowcount` attribute is used to define the total number of rows in a table, grid, or treegrid.
+برخی جدول‌ها صدها یا حتی میلیون‌ها ردیف دارند. حتی برای جدول‌هایی با ردیف‌های کمتر، بارگذاری تنها زیرمجموعه‌ای از ردیف‌ها می‌تواند یک الزام طراحی باشد، عملکرد را بهبود بخشد یا تجربه کاربری را بهتر کند. وقتی فقط زیرمجموعه‌ای از ردیف‌ها بارگذاری می‌شود، باید به همه کاربران اطلاع دهید که فقط بخشی از داده‌ها نمایش داده می‌شود. ویژگی `aria-rowcount` برای تعریف تعداد کل ردیف‌های یک جدول، شبکه یا درخت‌شبکه استفاده می‌شود.
 
-Included on the {{HTMLElement('table')}} element or on an element with a role of [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role), the value is the number of rows in the full table, as an integer. If the total number of rows is not known, include `aria-rowcount="-1"`, which tells the browser to not count the total number of rows.
+این ویژگی روی عنصر {{HTMLElement('table')}} یا روی عنصری با نقش [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role) قرار می‌گیرد؛ مقدار آن، به‌صورت یک عدد صحیح، تعداد ردیف‌های جدول کامل است. اگر تعداد کل ردیف‌ها مشخص نباشد، مقدار `aria-rowcount="-1"` را قرار دهید تا به مرورگر بگوید تعداد کل ردیف‌ها را شمارش نکند.
 
-If all of the rows are loaded and in the DOM, you don't need to include `aria-rowcount` as browsers automatically count the total number of rows. However, if the rows aren't all present in the DOM at any time, this attribute is needed to provide the number of rows when the full table size is known and to tell the browser to not automatically count the rows when the total number of rows is not known.
+اگر همه ردیف‌ها بارگذاری شده‌اند و در DOM هستند، نیازی به گنجاندن `aria-rowcount` ندارید، زیرا مرورگرها به‌طور خودکار تعداد کل ردیف‌ها را شمارش می‌کنند. با این حال، اگر در هر زمان همه ردیف‌ها در DOM حضور نداشته باشند، این ویژگی برای ارائه تعداد ردیف‌ها وقتی اندازه کامل جدول مشخص است و همچنین برای گفتن به مرورگر که در صورت نامشخص بودن تعداد کل ردیف‌ها، به‌طور خودکار ردیف‌ها را شمارش نکند، لازم است.
 
-## Example
+## مثال
 
-The following example shows a grid with 24 rows, of which the first row and rows 7 through 9 are displayed to the user.
+مثال زیر یک شبکه با ۲۴ ردیف را نشان می‌دهد که از میان آن‌ها، ردیف اول و ردیف‌های ۷ تا ۹ به کاربر نمایش داده می‌شوند.
 
 ```html
 <div role="grid" aria-rowcount="24">
@@ -56,34 +56,34 @@ The following example shows a grid with 24 rows, of which the first row and rows
 </div>
 ```
 
-## Values
+## مقادیر
 
 - `<integer>`
-  - : The number of rows in the full table or `-1` is the table size is not known.
+  - : تعداد ردیف‌های جدول کامل، یا `-1` اگر اندازه جدول مشخص نباشد.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaRowCount")}}
-  - : The [`ariaRowCount`](/en-US/docs/Web/API/Element/ariaRowCount) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-rowcount` attribute.
+  - : ویژگی [`ariaRowCount`](/en-US/docs/Web/API/Element/ariaRowCount)، بخشی از رابط {{domxref("Element")}}، مقدار ویژگی `aria-rowcount` را بازتاب می‌دهد.
 - {{domxref("ElementInternals.ariaRowCount")}}
-  - : The [`ariaRowCount`](/en-US/docs/Web/API/ElementInternals/ariaRowCount) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-rowcount` attribute.
+  - : ویژگی [`ariaRowCount`](/en-US/docs/Web/API/ElementInternals/ariaRowCount)، بخشی از رابط {{domxref("ElementInternals")}}، مقدار ویژگی `aria-rowcount` را بازتاب می‌دهد.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده‌شده در نقش‌ها:
 
 - [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role)
 
-Inherited into roles:
+به‌ارث‌رسیده در نقش‌ها:
 
 - [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
 - [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex)
 - [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount)
