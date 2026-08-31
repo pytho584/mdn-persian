@@ -1,7 +1,7 @@
 ---
 title: "BiquadFilterNode"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,67 +13,66 @@ browser-compat: api.BiquadFilterNode
 
 {{APIRef("Web Audio API")}}
 
-The `BiquadFilterNode` interface represents a simple low-order filter, and is created using the {{ domxref("BaseAudioContext/createBiquadFilter") }} method. It is an {{domxref("AudioNode")}} that can represent different kinds of filters, tone control devices, and graphic equalizers. A `BiquadFilterNode` always has exactly one input and one output.
+رابطه `BiquadFilterNode` یک فیلتر ساده با مرتبه پایین را نشان می‌دهد و با استفاده از متد {{ domxref("BaseAudioContext/createBiquadFilter") }} ساخته می‌شود. این یک {{domxref("AudioNode")}} است که می‌تواند انواع مختلف فیلترها، دستگاه‌های کنترل تن و اکولایزرهای گرافیکی را نشان دهد. یک `BiquadFilterNode` همیشه دقیقاً یک ورودی و یک خروجی دارد.
 
 {{InheritanceDiagram}}
 
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">Number of inputs</th>
+      <th scope="row">تعداد ورودی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Number of outputs</th>
+      <th scope="row">تعداد خروجی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count mode</th>
+      <th scope="row">حالت تعداد کانال</th>
       <td><code>"max"</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count</th>
-      <td><code>2</code> (not used in the default count mode)</td>
+      <th scope="row">تعداد کانال</th>
+      <td><code>2</code> (در حالت پیش‌فرض تعداد استفاده نمی‌شود)</td>
     </tr>
     <tr>
-      <th scope="row">Channel interpretation</th>
+      <th scope="row">تفسیر کانال</th>
       <td><code>"speakers"</code></td>
     </tr>
   </tbody>
 </table>
 
-## Constructor
+## سازنده
 
 - {{domxref("BiquadFilterNode.BiquadFilterNode", "BiquadFilterNode()")}}
-  - : Creates a new instance of a `BiquadFilterNode` object.
+  - : یک نمونه جدید از شیء `BiquadFilterNode` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("AudioNode")}}_.
+_ویژگی‌های زیر را از والد خود، {{domxref("AudioNode")}} به ارث می‌برد._
 
 > [!NOTE]
-> Though the `AudioParam` objects returned are read-only, the values they represent are not.
+> اگرچه اشیاء `AudioParam` برگشتی فقط‌خواندنی هستند، مقادیری که نشان می‌دهند فقط‌خواندنی نیستند.
 
 - {{domxref("BiquadFilterNode.frequency")}} {{ReadOnlyInline}}
-  - : An [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}}, a double representing a frequency in the current filtering algorithm measured in hertz (Hz).
+  - : یک {{domxref("AudioParam")}} با [a-rate](/en-US/docs/Web/API/AudioParam#a-rate)، یک عدد اعشاری (double) که فرکانس را در الگوریتم فیلتر فعلی بر حسب هرتز (Hz) نشان می‌دهد.
 - {{domxref("BiquadFilterNode.detune")}} {{ReadOnlyInline}}
-  - : An [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}} representing detuning of the frequency in [cents](https://en.wikipedia.org/wiki/Cent_%28music%29).
+  - : یک {{domxref("AudioParam")}} با [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) که انحراف فرکانس را بر حسب [سنت](https://en.wikipedia.org/wiki/Cent_%28music%29) نشان می‌دهد.
 - {{domxref("BiquadFilterNode.Q")}} {{ReadOnlyInline}}
-  - : An [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}}, a double representing a [Q factor](https://en.wikipedia.org/wiki/Q_factor), or _quality factor_.
+  - : یک {{domxref("AudioParam")}} با [a-rate](/en-US/docs/Web/API/AudioParam#a-rate)، یک عدد اعشاری که نمایانگر [ضریب Q](https://en.wikipedia.org/wiki/Q_factor) یا _عامل کیفیت_ است.
 - {{domxref("BiquadFilterNode.gain")}} {{ReadOnlyInline}}
-  - : An [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}}, a double representing the [gain](https://en.wikipedia.org/wiki/Gain) used in the current filtering algorithm.
+  - : یک {{domxref("AudioParam")}} با [a-rate](/en-US/docs/Web/API/AudioParam#a-rate)، یک عدد اعشاری که نمایانگر [بهره (gain)](https://en.wikipedia.org/wiki/Gain) استفاده‌شده در الگوریتم فیلتر فعلی است.
 - {{domxref("BiquadFilterNode.type")}}
-  - : A string value defining the kind of filtering algorithm the node is implementing.
+  - : یک مقدار رشته‌ای که نوع الگوریتم فیلتری را که گره پیاده‌سازی می‌کند تعریف می‌کند.
 
     <table class="standard-table">
       <caption>
-        The meaning of the different parameters depending on the type of the filter
-        (detune has the same meaning regardless, so isn't listed below)
+        معنای پارامترهای مختلف بسته به نوع فیلتر (detune صرف‌نظر از نوع، معنی یکسانی دارد، بنابراین در زیر فهرست نشده است)
       </caption>
       <thead>
         <tr>
           <th scope="row"><code>type</code></th>
-          <th scope="col">Description</th>
+          <th scope="col">توضیحات</th>
           <th scope="col"><code>frequency</code></th>
           <th scope="col"><code>Q</code></th>
           <th scope="col"><code>gain</code></th>
@@ -83,155 +82,125 @@ _Inherits properties from its parent, {{domxref("AudioNode")}}_.
         <tr>
           <th scope="row"><code>lowpass</code></th>
           <td>
-            Standard second-order resonant lowpass filter with 12dB/octave rolloff.
-            Frequencies below the cutoff pass through; frequencies above it are
-            attenuated.
+            فیلتر پایین‌گذر رزونانسی استاندارد مرتبه دوم با شیب 12dB/اکتاو.
+            فرکانس‌های پایین‌تر از cutoff عبور می‌کنند؛ فرکانس‌های بالاتر از آن تضعیف می‌شوند.
           </td>
-          <td>The cutoff frequency.</td>
+          <td>فرکانس cutoff.</td>
           <td>
-            Indicates how peaked the frequency is around the cutoff. The greater the
-            value is, the greater is the peak.
+            نشان می‌دهد که فرکانس در اطراف cutoff چقدر قله‌دار است. هرچه مقدار بیشتر باشد، قله بزرگ‌تر است.
           </td>
-          <td><em>Not used</em></td>
+          <td><em>استفاده نشده</em></td>
         </tr>
         <tr>
           <th scope="row"><code>highpass</code></th>
           <td>
-            Standard second-order resonant highpass filter with 12dB/octave rolloff.
-            Frequencies below the cutoff are attenuated; frequencies above it pass
-            through.
+            فیلتر بالاگذر رزونانسی استاندارد مرتبه دوم با شیب 12dB/اکتاو.
+            فرکانس‌های پایین‌تر از cutoff تضعیف می‌شوند؛ فرکانس‌های بالاتر از آن عبور می‌کنند.
           </td>
-          <td>The cutoff frequency.</td>
+          <td>فرکانس cutoff.</td>
           <td>
-            Indicates how peaked the frequency is around the cutoff. The greater the
-            value, the greater the peak.
+            نشان می‌دهد که فرکانس در اطراف cutoff چقدر قله‌دار است. هرچه مقدار بیشتر باشد، قله بزرگ‌تر است.
           </td>
-          <td><em>Not used</em></td>
+          <td><em>استفاده نشده</em></td>
         </tr>
         <tr>
           <th scope="row"><code>bandpass</code></th>
           <td>
-            Standard second-order bandpass filter. Frequencies outside the given
-            range of frequencies are attenuated; the frequencies inside it pass
-            through.
+            فیلتر میان‌گذر استاندارد مرتبه دوم. فرکانس‌های خارج از محدوده داده‌شده تضعیف می‌شوند؛ فرکانس‌های داخل آن عبور می‌کنند.
           </td>
-          <td>The center of the range of frequencies.</td>
+          <td>مرکز محدوده فرکانس‌ها.</td>
           <td>
-            Controls the width of the frequency band. The greater the
-            <code>Q</code> value, the smaller the frequency band.
+            عرض باند فرکانس را کنترل می‌کند. هرچه مقدار <code>Q</code> بزرگ‌تر باشد، باند فرکانس کوچک‌تر است.
           </td>
-          <td><em>Not used</em></td>
+          <td><em>استفاده نشده</em></td>
         </tr>
         <tr>
           <th scope="row"><code>lowshelf</code></th>
           <td>
-            Standard second-order lowshelf filter. Frequencies lower than the
-            frequency get a boost, or an attenuation; frequencies over it are
-            unchanged.
+            فیلتر قفسه پایین استاندارد مرتبه دوم. فرکانس‌های پایین‌تر از فرکانس تقویت یا تضعیف می‌شوند؛ فرکانس‌های بالاتر از آن بدون تغییر باقی می‌مانند.
           </td>
           <td>
-            The upper limit of the frequencies getting a boost or an attenuation.
+            حد بالایی فرکانس‌هایی که تقویت یا تضعیف می‌شوند.
           </td>
-          <td><em>Not used</em></td>
+          <td><em>استفاده نشده</em></td>
           <td>
-            The boost, in dB, to be applied; if negative, it will be an attenuation.
+            تقویت بر حسب دسیبل که اعمال می‌شود؛ اگر منفی باشد، تضعیف خواهد بود.
           </td>
         </tr>
         <tr>
           <th scope="row"><code>highshelf</code></th>
           <td>
-            Standard second-order highshelf filter. Frequencies higher than the
-            frequency get a boost or an attenuation; frequencies lower than it are
-            unchanged.
+            فیلتر قفسه بالا استاندارد مرتبه دوم. فرکانس‌های بالاتر از فرکانس تقویت یا تضعیف می‌شوند؛ فرکانس‌های پایین‌تر از آن بدون تغییر باقی می‌مانند.
           </td>
           <td>
-            The lower limit of the frequencies getting a boost or an attenuation.
+            حد پایینی فرکانس‌هایی که تقویت یا تضعیف می‌شوند.
           </td>
-          <td><em>Not used</em></td>
+          <td><em>استفاده نشده</em></td>
           <td>
-            The boost, in dB, to be applied; if negative, it will be an attenuation.
+            تقویت بر حسب دسیبل که اعمال می‌شود؛ اگر منفی باشد، تضعیف خواهد بود.
           </td>
         </tr>
         <tr>
           <th scope="row"><code>peaking</code></th>
           <td>
-            Frequencies inside the range get a boost or an attenuation; frequencies
-            outside it are unchanged.
+            فرکانس‌های داخل محدوده تقویت یا تضعیف می‌شوند؛ فرکانس‌های خارج از آن بدون تغییر باقی می‌مانند.
           </td>
           <td>
-            The middle of the frequency range getting a boost or an attenuation.
+            وسط محدوده فرکانسی که تقویت یا تضعیف می‌شود.
           </td>
           <td>
-            Controls the width of the frequency band. The greater the
-            <code>Q</code> value, the smaller the frequency band.
+            عرض باند فرکانس را کنترل می‌کند. هرچه مقدار <code>Q</code> بزرگ‌تر باشد، باند فرکانس کوچک‌تر است.
           </td>
           <td>
-            The boost, in dB, to be applied; if negative, it will be an attenuation.
+            تقویت بر حسب دسیبل که اعمال می‌شود؛ اگر منفی باشد، تضعیف خواهد بود.
           </td>
         </tr>
         <tr>
           <th scope="row"><code>notch</code></th>
           <td>
-            Standard
-            <a href="https://en.wikipedia.org/wiki/Band-stop_filter">notch</a>
-            filter, also called a <em>band-stop</em> or
-            <em>band-rejection</em> filter. It is the opposite of a bandpass filter:
-            frequencies outside the give range of frequencies pass through;
-            frequencies inside it are attenuated.
+            فیلتر استاندارد [نچ (notch)](https://en.wikipedia.org/wiki/Band-stop_filter)، همچنین به‌عنوان فیلتر _باند-ایست_ یا _باند-رد_ نامیده می‌شود. این برعکس فیلتر میان‌گذر است: فرکانس‌های خارج از محدوده داده‌شده عبور می‌کنند؛ فرکانس‌های داخل آن تضعیف می‌شوند.
           </td>
-          <td>The center of the range of frequencies.</td>
+          <td>مرکز محدوده فرکانس‌ها.</td>
           <td>
-            Controls the width of the frequency band. The greater the
-            <code>Q</code> value, the smaller the frequency band.
+            عرض باند فرکانس را کنترل می‌کند. هرچه مقدار <code>Q</code> بزرگ‌تر باشد، باند فرکانس کوچک‌تر است.
           </td>
-          <td><em>Not used</em></td>
+          <td><em>استفاده نشده</em></td>
         </tr>
         <tr>
           <th scope="row"><code>allpass</code></th>
           <td>
-            Standard second-order
-            <a
-              href="https://en.wikipedia.org/wiki/All-pass_filter#Digital_Implementation"
-              >allpass</a
-            >
-            filter. It lets all frequencies through, but changes the
-            phase-relationship between the various frequencies.
+            فیلتر استاندارد [تمام‌گذر (allpass)](https://en.wikipedia.org/wiki/All-pass_filter#Digital_Implementation) مرتبه دوم. این فیلتر اجازه عبور همه فرکانس‌ها را می‌دهد، اما رابطه فاز بین فرکانس‌های مختلف را تغییر می‌دهد.
           </td>
           <td>
-            The frequency with the maximal
-            <a href="https://en.wikipedia.org/wiki/Group_delay_and_phase_delay"
-              >group delay</a
-            >, that is, the frequency where the center of the phase transition
-            occurs.
+            فرکانسی با حداکثر [تأخیر گروهی](https://en.wikipedia.org/wiki/Group_delay_and_phase_delay)، یعنی فرکانسی که مرکز انتقال فاز در آن رخ می‌دهد.
           </td>
           <td>
-            Controls how sharp the transition is at the medium frequency. The larger
-            this parameter is, the sharper and larger the transition will be.
+            کنترل می‌کند که انتقال در فرکانس میانی چقدر تیز باشد. هرچه این پارامتر بزرگ‌تر باشد، انتقال تیزتر و بزرگ‌تر خواهد بود.
           </td>
-          <td><em>Not used</em></td>
+          <td><em>استفاده نشده</em></td>
         </tr>
       </tbody>
     </table>
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("AudioNode")}}_.
+_روش‌های زیر را از والد خود، {{domxref("AudioNode")}} به ارث می‌برد._
 
 - {{domxref("BiquadFilterNode.getFrequencyResponse()")}}
-  - : From the current filter parameter settings this method calculates the frequency response for frequencies specified in the provided array of frequencies.
+  - : از تنظیمات فعلی پارامترهای فیلتر، این روش پاسخ فرکانسی را برای فرکانس‌های مشخص‌شده در آرایه فرکانس‌های داده‌شده محاسبه می‌کند.
 
-## Example
+## مثال
 
-See [`AudioContext.createBiquadFilter`](/en-US/docs/Web/API/BaseAudioContext/createBiquadFilter#examples) for example code that shows how to use an `AudioContext` to create a Biquad filter node.
+برای مثال کدی که نحوه استفاده از `AudioContext` برای ایجاد گره فیلتر Biquad را نشان می‌دهد، به [`AudioContext.createBiquadFilter`](/en-US/docs/Web/API/BaseAudioContext/createBiquadFilter#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
