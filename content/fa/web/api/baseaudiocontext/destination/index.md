@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: destination property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/destination"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,19 +14,16 @@ browser-compat: api.BaseAudioContext.destination
 
 {{ APIRef("Web Audio API") }}
 
-The `destination` property of the {{ domxref("BaseAudioContext") }}
-interface returns an {{ domxref("AudioDestinationNode") }} representing the final
-destination of all audio in the context. It often represents an actual audio-rendering
-device such as your device's speakers.
+ویژگی `destination` از رابط {{ domxref("BaseAudioContext") }} یک {{ domxref("AudioDestinationNode") }} برمی‌گرداند که مقصد نهایی تمام صداها در این زمینه را نشان می‌دهد. این اغلب نمایانگر یک دستگاه واقعی رندر صدا، مانند بلندگوهای دستگاه شما است.
 
-## Value
+## مقدار
 
-An {{ domxref("AudioDestinationNode") }}.
+یک {{ domxref("AudioDestinationNode") }}.
 
-## Examples
+## مثال‌ها
 
 > [!NOTE]
-> For more complete applied examples/information, check out our [Voice-change-O-matic](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) demo (see [app.js lines 108–193](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js#L108-L193) for relevant code).
+> برای مثال‌ها/اطلاعات کاربردی کامل‌تر، دموی [Voice-change-O-matic](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) ما را ببینید (برای کد مرتبط، [app.js lines 108–193](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js#L108-L193) را ببینید).
 
 ```js
 const audioCtx = new AudioContext();
@@ -39,14 +36,14 @@ oscillatorNode.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
