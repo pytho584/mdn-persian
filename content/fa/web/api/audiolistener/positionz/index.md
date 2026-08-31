@@ -1,11 +1,7 @@
 ---
 title: "AudioListener: positionZ property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/positionZ"
-status: "needs-translation"
----
-
----
-title: "AudioListener: positionZ property"
+translated_by: "n8n + AI"
 short-title: positionZ
 slug: Web/API/AudioListener/positionZ
 page-type: web-api-instance-property
@@ -14,27 +10,27 @@ browser-compat: api.AudioListener.positionZ
 
 {{ APIRef("Web Audio API") }}
 
-The `positionZ` read-only property of the {{ domxref("AudioListener") }} interface is an {{domxref("AudioParam")}} representing the z position of the listener in 3D cartesian space.
+ویژگی فقط خواندنی `positionZ` از رابط {{ domxref("AudioListener") }} یک {{domxref("AudioParam")}} است که موقعیت z شنونده را در فضای دکارتی سه‌بعدی نشان می‌دهد.
 
 > [!NOTE]
-> The parameter is [_a-rate_](/en-US/docs/Web/API/AudioParam#a-rate) when used with a {{domxref("PannerNode")}} whose {{domxref("PannerNode.panningModel", "PannerNode")}} is set to equalpower, or [_k-rate_](/en-US/docs/Web/API/AudioParam#k-rate) otherwise.
+> این پارامتر زمانی که با یک {{domxref("PannerNode")}} که {{domxref("PannerNode.panningModel", "PannerNode")}} آن روی equalpower تنظیم شده است استفاده شود، [_a-rate_](/en-US/docs/Web/API/AudioParam#a-rate) است، در غیر این صورت [_k-rate_](/en-US/docs/Web/API/AudioParam#k-rate) است.
 
-## Value
+## مقدار
 
-An {{domxref("AudioParam")}}. Its default value is 0, and it can range between positive and negative infinity.
+یک {{domxref("AudioParam")}}. مقدار پیش‌فرض آن 0 است و می‌تواند بین مثبت و منفی بی‌نهایت باشد.
 
-## Examples
+## مثال‌ها
 
-See [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) for example code.
+برای کد مثال، [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
