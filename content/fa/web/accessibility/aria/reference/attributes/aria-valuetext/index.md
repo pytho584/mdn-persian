@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-valuetext attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,41 +13,41 @@ spec-urls: https://w3c.github.io/aria/#aria-valuetext
 sidebar: accessibilitysidebar
 ---
 
-The `aria-valuetext` attribute defines the human-readable text alternative of `aria-valuenow` for a range widget.
+ویژگی `aria-valuetext` جایگزین متنی قابل‌فهم برای انسان از `aria-valuenow` را در یک ابزارک بازه تعریف می‌کند.
 
-## Description
+## توضیحات
 
-Numbers — even percentages — aren't always user-friendly. Assistive technologies present [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) as numeric values. If a progress bar is at 8%, what does that mean? `aria-valuetext` provides a way of presenting the current value in a more user-friendly, human-understandable way. For example, a battery meter value might be conveyed as `aria-valuetext="8% (34 minutes) remaining"`.
+اعداد — حتی درصدها — همیشه کاربرپسند نیستند. فناوری‌های کمکی [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) را به‌عنوان مقادیر عددی ارائه می‌دهند. اگر نوار پیشرفت روی ۸٪ باشد، این یعنی چه؟ `aria-valuetext` روشی برای ارائه مقدار فعلی به‌صورت کاربرپسندتر و قابل‌فهم‌تر برای انسان فراهم می‌کند. برای مثال، مقدار یک نشانگر باتری می‌تواند به‌صورت `aria-valuetext="8% (34 minutes) remaining"` بیان شود.
 
-The `aria-valuetext` attribute is used with the `aria-valuenow` attribute, not instead of it, unless that value is not known.
+ویژگی `aria-valuetext` همراه با ویژگی `aria-valuenow` استفاده می‌شود، نه به‌جای آن، مگر اینکه مقدار نامعلوم باشد.
 
-`aria-valuetext` is only needed when the numeric value of `aria-valuenow` is not meaningful. For example, a range's values are numeric but may be used for non-numeric values, such as college class level. The values of `aria-valuenow` for a 4-year college could range from 1 through 4, which indicate the position of each value in the value space. In this case, the `aria-valuetext` could be one of the strings: "first year", "sophomore", "junior", and "senior".
+`aria-valuetext` تنها زمانی لازم است که مقدار عددی `aria-valuenow` معنادار نباشد. برای مثال، مقادیر یک محدوده عددی هستند اما ممکن است برای مقادیر غیرعددی مانند سطح کلاس دانشگاه استفاده شوند. مقادیر `aria-valuenow` برای یک دانشگاه چهارساله می‌تواند از ۱ تا ۴ باشد که موقعیت هر مقدار را در فضای مقدار نشان می‌دهد. در این حالت، `aria-valuetext` می‌تواند یکی از رشته‌ها باشد: «سال اول»، «سال دوم»، «سال سوم» و «سال چهارم».
 
-If the numeric value is meaningful, such as a spinner with `aria-valuenow="3"` for how many pizza slices you want to order, `aria-valuetext` is not needed.
+اگر مقدار عددی معنادار باشد، مانند یک spinner با `aria-valuenow="3"` برای تعداد تکه‌های پیتزایی که می‌خواهید سفارش دهید، `aria-valuetext` مورد نیاز نیست.
 
-When both the `aria-valuetext` and `aria-valuenow` are included, the `aria-valuetext` is announced. When there is no `aria-valuetext` attribute, assistive technologies will announce the `aria-valuenow` attribute for the current value.
+وقتی هر دو `aria-valuetext` و `aria-valuenow` وجود داشته باشند، `aria-valuetext` اعلام می‌شود. وقتی ویژگی `aria-valuetext` وجود نداشته باشد، فناوری‌های کمکی ویژگی `aria-valuenow` را برای مقدار فعلی اعلام می‌کنند.
 
-## Values
+## مقادیر
 
 - `<string>`
-  - : A human-readable text alternative of the `aria-valuenow` value.
+  - : یک جایگزین متنی قابل‌فهم برای انسان از مقدار `aria-valuenow`.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaValueText")}}
-  - : The [`ariaValueText`](/en-US/docs/Web/API/Element/ariaValueText) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-valuetext` attribute.
+  - : ویژگی [`ariaValueText`](/en-US/docs/Web/API/Element/ariaValueText) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-valuetext` را بازتاب می‌دهد.
 - {{domxref("ElementInternals.ariaValueText")}}
-  - : The [`ariaValueText`](/en-US/docs/Web/API/ElementInternals/ariaValueText) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-valuetext` attribute.
+  - : ویژگی [`ariaValueText`](/en-US/docs/Web/API/ElementInternals/ariaValueText) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-valuetext` را بازتاب می‌دهد.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده در نقش‌ها:
 
 - [`range`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role)
 - [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role)
 - [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
 
-Inherited into roles:
+به‌ارث‌رفته در نقش‌ها:
 
 - [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)
 - [`progressbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role)
@@ -55,10 +55,10 @@ Inherited into roles:
 - [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
 - [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## جستارهای وابسته
 
 - [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow)
