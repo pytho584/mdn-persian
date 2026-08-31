@@ -1,7 +1,7 @@
 ---
 title: "Registering attribution triggers"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Attribution_Reporting_API/Registering_triggers"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,25 +14,25 @@ status:
 
 {{DefaultAPISidebar("Attribution Reporting API")}}{{deprecated_header}}
 
-This article explains how to register attribution triggers.
+این مقاله نحوه ثبت «محرک‌های انتساب» (attribution triggers) را توضیح می‌دهد.
 
-## Basic methodology
+## روش اولیه
 
-Once you have [registered attribution sources](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources), you need to register attribution triggers. These are interactions on a site where a conversion is to be measured (for example, clicking a "purchase" button on an advertiser's site can indicate that a conversion may have occurred). The browser will then attempt to match the attribution trigger to an attribution source entry stored in a private local storage partition, and [generate a report](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports) if a match is found.
+پس از اینکه [منابع انتساب را ثبت کردید](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources)، باید محرک‌های انتساب را ثبت کنید. این محرک‌ها تعاملاتی در یک سایت هستند که قرار است تبدیل (conversion) در آن‌ها اندازه‌گیری شود (مثلاً کلیک بر دکمه «خرید» در سایت یک تبلیغ‌کننده می‌تواند نشان دهد که یک تبدیل رخ داده است). سپس مرورگر تلاش می‌کند محرک انتساب را با ورودی منبع انتساب ذخیره‌شده در یک پارتیشن محلی خصوصی مطابقت دهد و در صورت یافتن تطابق، [گزارشی تولید کند](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports).
 
-The different attribution trigger types are registered in different ways, which are detailed in the sections below — see [HTML-based attribution triggers](#html-based_attribution_triggers) and [JavaScript-based attribution triggers](#javascript-based_attribution_triggers).
+انواع مختلف محرک انتساب به روش‌های مختلفی ثبت می‌شوند که در بخش‌های زیر به تفصیل آمده است — به [محرک‌های انتساب مبتنی بر HTML](#html-based_attribution_triggers) و [محرک‌های انتساب مبتنی بر جاوااسکریپت](#javascript-based_attribution_triggers) مراجعه کنید.
 
-However, what happens behind the scenes to register triggers, look for matches, etc., is the same in all cases.
+با این حال، آنچه در پشت صحنه برای ثبت محرک‌ها، جستجوی تطابق و غیره اتفاق می‌افتد، در همه موارد یکسان است.
 
-1. All of the trigger types send an {{httpheader("Attribution-Reporting-Eligible")}} header on a request, which indicates that the response is eligible to register a trigger. For example:
+1. همه انواع محرک، یک هدر {{httpheader("Attribution-Reporting-Eligible")}} در یک درخواست ارسال می‌کنند که نشان می‌دهد پاسخ واجد شرایط ثبت یک محرک است. به عنوان مثال:
 
    ```http
    Attribution-Reporting-Eligible: trigger
    ```
 
-2. When the server receives a request that includes an `Attribution-Reporting-Eligible` header, it can include an {{httpheader("Attribution-Reporting-Register-Trigger")}} along with the response. Its value is a JSON string containing data that can be included in generated reports, such as the ID of the trigger, and priority and deduplication values.
+2. وقتی سرور درخواستی حاوی هدر `Attribution-Reporting-Eligible` دریافت می‌کند، می‌تواند یک {{httpheader("Attribution-Reporting-Register-Trigger")}} را به همراه پاسخ ارسال کند. مقدار آن یک رشته JSON حاوی داده‌هایی است که می‌توانند در گزارش‌های تولیدشده گنجانده شوند، مانند شناسه محرک، و مقادیر اولویت و حذف تکراری (deduplication).
 
-   The following example is intended to match with an [event-level report](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#event-level_reports) attribution source:
+   مثال زیر برای تطابق با یک منبع انتساب [گزارش سطح رویداد](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#event-level_reports) در نظر گرفته شده است:
 
    ```js
    res.set(
@@ -50,18 +50,19 @@ However, what happens behind the scenes to register triggers, look for matches, 
    );
    ```
 
-   The fields specified here are as follows:
-   - `"event_trigger_data"`: An object representing data about the trigger. This includes:
-     - `"trigger_data"`: The data associated with the trigger, which is typically used to indicate events such as "user added item to shopping cart" or "user signed up to mailing list". This value will be included in the generated report, if any, although it will be subject to modification based on the attributed source's [`"trigger_data_matching"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#trigger_data_matching) field.
+   فیلدهای مشخص‌شده در اینجا به شرح زیر هستند:
+
+   - `"event_trigger_data"`: شیئی است که داده‌های مربوط به محرک را نشان می‌دهد. این شامل:
+     - `"trigger_data"`: داده‌ای مرتبط با محرک که معمولاً برای نشان دادن رویدادهایی مانند «کاربر آیتمی را به سبد خرید اضافه کرد» یا «کاربر در خبرنامه ثبت‌نام کرد» استفاده می‌شود. این مقدار در صورت وجود در گزارش تولیدشده گنجانده خواهد شد، البته بسته به فیلد [`"trigger_data_matching"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#trigger_data_matching) منبع منتسب ممکن است تغییر کند.
        > [!NOTE]
-       > The values used to represent each event, and the number of elements in the array, are completely arbitrary and defined by you as the developer. The array may contain values that are not used, but values must be present in the array to be attributed to the source by the browser when a trigger is registered.
-     - `"priority"`: A string representing a priority value for the attribution trigger. See [Report priorities and limits](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#report_priorities_and_limits) for more information.
-     - `"deduplication_key"`: A string representing a unique key that can be used to prevent attributions from being duplicated — for example if a user were to add the same item to a shopping cart multiple times. See [Prevent duplication in reports](https://privacysandbox.google.com/private-advertising/attribution-reporting/prevent-duplication) for more information.
-   - `"debug_key"`: A number representing a debug key. Set this if you want to generate a [debug report](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#debug_reports) alongside the associated attribution report.
+       > مقادیری که برای نشان دادن هر رویداد استفاده می‌شوند و تعداد عناصر آرایه، کاملاً دلخواه هستند و توسط شما به عنوان توسعه‌دهنده تعریف می‌شوند. آرایه ممکن است حاوی مقادیری باشد که استفاده نشده‌اند، اما مقادیر باید در آرایه حضور داشته باشند تا مرورگر در زمان ثبت محرک، آن‌ها را به منبع نسبت دهد.
+     - `"priority"`: رشته‌ای که مقدار اولویت را برای محرک انتساب نشان می‌دهد. برای اطلاعات بیشتر به [Report priorities and limits](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#report_priorities_and_limits) مراجعه کنید.
+     - `"deduplication_key"`: رشته‌ای که یک کلید یکتا را نشان می‌دهد و می‌تواند برای جلوگیری از تکرار انتساب‌ها استفاده شود — مثلاً اگر کاربر همان آیتم را چند بار به سبد خرید اضافه کند. برای اطلاعات بیشتر به [Prevent duplication in reports](https://privacysandbox.google.com/private-advertising/attribution-reporting/prevent-duplication) مراجعه کنید.
+   - `"debug_key"`: عددی که یک کلید اشکال‌زدایی را نشان می‌دهد. اگر می‌خواهید یک [گزارش اشکال‌زدایی](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#debug_reports) را همراه با گزارش انتساب مربوطه تولید کنید، این مقدار را تنظیم کنید.
 
-   See {{httpheader("Attribution-Reporting-Register-Trigger")}} for a detailed description of all the available fields.
+   برای توضیح دقیق همه فیلدهای موجود، به {{httpheader("Attribution-Reporting-Register-Trigger")}} مراجعه کنید.
 
-   A trigger intended to match with a [summary report](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#summary_reports) attribution source requires the fields shown below:
+   یک محرک که برای تطابق با منبع انتساب [گزارش خلاصه](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#summary_reports) در نظر گرفته شده است، به فیلدهای زیر نیاز دارد:
 
    ```js
    res.set(
@@ -86,39 +87,42 @@ However, what happens behind the scenes to register triggers, look for matches, 
    );
    ```
 
-   The fields in this example are:
-   - `"aggregatable_trigger_data"`: An array of objects, each one defining an aggregation key to apply to different source keys.
-   - `"aggregatable_values"`: An object containing properties representing a value for each data point defined in `"aggregatable_trigger_data"`.
+   فیلدهای این مثال عبارت‌اند از:
 
-   Again, see {{httpheader("Attribution-Reporting-Register-Trigger")}} for a detailed description of all the available fields.
+   - `"aggregatable_trigger_data"`: آرایه‌ای از اشیاء که هر کدام یک کلید تجمیع را برای اعمال به کلیدهای مختلف منبع تعریف می‌کنند.
+   - `"aggregatable_values"`: شیئی حاوی ویژگی‌هایی که مقدار هر نقطه داده تعریف‌شده در `"aggregatable_trigger_data"` را نشان می‌دهند.
 
-3. When the user interacts with the attribution trigger, the browser attempts to match the trigger against any attribution source entries stored in the browser's private local cache. For a successful match, the `Attribution-Reporting-Register-Trigger`'s [`"trigger_data"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Trigger#trigger_data) must match one of the values provided in the {{httpheader("Attribution-Reporting-Register-Source")}}'s [`"trigger_data"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#trigger_data), and the site (scheme + {{glossary("registrable domain")}}) of the top-level page on which the trigger is being registered must:
-   - match the site of at least one of the `destination`s specified in the source's associated data.
-   - be same-origin with the request that specified the source registration.
+   باز هم، برای توضیح دقیق همه فیلدهای موجود به {{httpheader("Attribution-Reporting-Register-Trigger")}} مراجعه کنید.
+
+3. هنگامی که کاربر با محرک انتساب تعامل می‌کند، مرورگر تلاش می‌کند محرک را با هر یک از ورودی‌های منبع انتساب ذخیره‌شده در حافظه پنهان محلی خصوصی مرورگر مطابقت دهد. برای یک تطابق موفق، [`"trigger_data"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Trigger#trigger_data) موجود در `Attribution-Reporting-Register-Trigger` باید با یکی از مقادیر ارائه‌شده در [`"trigger_data"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#trigger_data) موجود در {{httpheader("Attribution-Reporting-Register-Source")}} مطابقت داشته باشد، و سایت (scheme + {{glossary("registrable domain")}}) صفحه سطح بالایی که محرک در آن ثبت می‌شود باید:
+
+   - با سایت حداقل یکی از `destination`های مشخص‌شده در داده‌های مرتبط با منبع مطابقت داشته باشد.
+   - با منشأ همان درخواستی که ثبت منبع را مشخص کرده است، هم‌منشأ (same-origin) باشد.
 
    > [!NOTE]
-   > These requirements provide privacy protection, but also flexibility — the source _and_ trigger can potentially be embedded in an {{htmlelement("iframe")}} or situated in the top-level site.
+   > این الزامات محافظت از حریم خصوصی را فراهم می‌کنند، اما همچنین انعطاف‌پذیری نیز دارند — منبع _و_ محرک می‌توانند به طور بالقوه در یک {{htmlelement("iframe")}} جاسازی شوند یا در سایت سطح بالا قرار گیرند.
 
-   There are many other factors that will prevent a successful match outcome; for example:
-   - The trigger's filters do not match the source's filter data (See [Filters](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#filters) for more details).
-   - The source's [`"trigger_data_matching"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#trigger_data_matching) setting results in no match occurring.
-   - The source's [`"max_event_level_reports"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#max_event_level_reports) limit has been reached.
-   - A successful match is not reported due to the browser's randomized response algorithm. See [Adding noise to reports](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#adding_noise_to_reports) for more details.
+   عوامل بسیاری دیگری نیز وجود دارند که مانع از نتیجه تطابق موفق می‌شوند؛ برای مثال:
 
-4. If a successful match is found, the browser [generates a report](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports) based on the source and trigger data, and sends it to a reporting endpoint.
+   - فیلترهای محرک با داده‌های فیلتر منبع مطابقت ندارند (برای جزئیات بیشتر به [Filters](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#filters) مراجعه کنید).
+   - تنظیم [`"trigger_data_matching"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#trigger_data_matching) منبع باعث می‌شود هیچ تطابقی رخ ندهد.
+   - حداکثر [`"max_event_level_reports"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#max_event_level_reports) منبع به دست آمده است.
+   - یک تطابق موفق به دلیل الگوریتم پاسخ تصادفی مرورگر گزارش نمی‌شود. برای جزئیات بیشتر به [Adding noise to reports](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#adding_noise_to_reports) مراجعه کنید.
+
+4. اگر تطابق موفق پیدا شود، مرورگر بر اساس داده‌های منبع و محرک [گزارشی تولید می‌کند](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports) و آن را به یک endpoint گزارش ارسال می‌کند.
 
 > [!NOTE]
-> Attribution triggers cannot be registered on {{htmlelement("a")}} elements or {{domxref("Window.open()")}} calls like attribution sources can.
+> محرک‌های انتساب را نمی‌توان بر روی عناصر {{htmlelement("a")}} یا فراخوانی‌های {{domxref("Window.open()")}} مانند منابع انتساب ثبت کرد.
 
-## HTML-based attribution triggers
+## محرک‌های انتساب مبتنی بر HTML
 
-HTML-based attribution triggers can be used for detecting conversions on a page when it first loads — or more precisely when an `<img>` or `<script>` loads. For example, if a user has clicked an attribution source link on a publisher's page and navigated to the advertiser's page, you can to register the attribution trigger and get the browser to attempt a match with stored source entries as soon as the advertiser's page loads.
+محرک‌های انتساب مبتنی بر HTML را می‌توان برای تشخیص تبدیل‌ها در یک صفحه هنگام بارگذاری اولیه آن استفاده کرد — یا به طور دقیق‌تر، زمانی که یک `<img>` یا `<script>` بارگذاری می‌شود. برای مثال، اگر کاربر روی یک پیوند منبع انتساب در صفحه ناشر کلیک کرده باشد و به صفحه تبلیغ‌کننده هدایت شده باشد، می‌توانید محرک انتساب را ثبت کنید و مرورگر را وادار کنید به محض بارگذاری صفحه تبلیغ‌کننده، مطابقت را با ورودی‌های منبع ذخیره‌شده امتحان کند.
 
-You can register an attribution trigger by adding the `attributionsrc` attribute to an appropriate element. This can be done on {{htmlelement("img")}} and {{htmlelement("script")}} elements.
+شما می‌توانید یک محرک انتساب را با افزودن ویژگی `attributionsrc` به یک عنصر مناسب ثبت کنید. این کار را می‌توان بر روی عناصر {{htmlelement("img")}} و {{htmlelement("script")}} انجام داد.
 
-If you leave the attribute value blank, the registration request will be sent to the server the requested resource is hosted on. It is also possible to specify an additional URL inside the value to send the registration request to; see [Specifying a URL inside attributionsrc](#specifying_a_url_inside_attributionsrc) for more details.
+اگر مقدار ویژگی را خالی بگذارید، درخواست ثبت به سروری که منبع درخواستی روی آن میزبانی می‌شود ارسال خواهد شد. همچنین امکان تعیین یک URL اضافی در داخل مقدار وجود دارد تا درخواست ثبت به آن ارسال شود؛ برای جزئیات بیشتر به [تعیین URL در داخل attributionsrc](#specifying_a_url_inside_attributionsrc) مراجعه کنید.
 
-Here's an `<img>` element example:
+در اینجا یک مثال از عنصر `<img>` آورده شده است:
 
 ```html
 <img
@@ -129,16 +133,16 @@ Here's an `<img>` element example:
   attributionsrc />
 ```
 
-You could also achieve this via the {{domxref("HTMLImageElement.attributionSrc")}} property:
+همچنین می‌توانید از طریق ویژگی {{domxref("HTMLImageElement.attributionSrc")}} به این نتیجه برسید:
 
 ```js
 const imgElem = document.querySelector("img");
 imgElem.attributionSrc = "";
 ```
 
-In this case, the browser will attempt to match the trigger with a stored attribution source when the browser receives the response containing the image file (when the `load` event fires). Bear in mind that users might not necessarily be able to perceive the image at all — it might be a 1x1 transparent tracking pixel that is only being used for attribution reporting.
+در این حالت، مرورگر وقتی پاسخ حاوی فایل تصویر را دریافت کند (زمانی که رویداد `load` رخ می‌دهد) تلاش می‌کند محرک را با یک منبع انتساب ذخیره‌شده مطابقت دهد. به خاطر داشته باشید که کاربران ممکن است لزوماً نتوانند تصویر را درک کنند — ممکن است یک پیکسل ردیابی شفاف 1x1 باشد که فقط برای گزارش انتساب استفاده می‌شود.
 
-A {{htmlelement("script")}} example might look like so:
+یک مثال با {{htmlelement("script")}} می‌تواند به شکل زیر باشد:
 
 ```html
 <script src="advertising-script.js" attributionsrc></script>
@@ -149,15 +153,15 @@ const scriptElem = document.querySelector("script");
 scriptElem.attributionSrc = "";
 ```
 
-In this case, the browser will attempt to match the trigger with a stored attribution source when the browser receives the response containing the script.
+در این حالت، مرورگر وقتی پاسخ حاوی اسکریپت را دریافت کند، تلاش می‌کند محرک را با یک منبع انتساب ذخیره‌شده مطابقت دهد.
 
-## JavaScript-based attribution triggers
+## محرک‌های انتساب مبتنی بر جاوااسکریپت
 
-JavaScript-based attribution triggers are more versatile than HTML-based attribution triggers. You can trigger the browser to attempt a match with a stored source based on a custom interaction, for example, clicking a custom element or submitting a form.
+محرک‌های انتساب مبتنی بر جاوااسکریپت نسبت به محرک‌های مبتنی بر HTML انعطاف‌پذیرتر هستند. شما می‌توانید بر اساس یک تعامل سفارشی، مانند کلیک بر روی یک عنصر سفارشی یا ارسال یک فرم، مرورگر را وادار به تلاش برای تطابق با یک منبع ذخیره‌شده کنید.
 
-To register a script-based attribution trigger, you can either:
+برای ثبت یک محرک انتساب مبتنی بر اسکریپت، می‌توانید یکی از این دو کار را انجام دهید:
 
-- Send a {{domxref("Window/fetch", "fetch()")}} request containing the `attributionReporting` option:
+- ارسال یک درخواست {{domxref("Window/fetch", "fetch()")}} که شامل گزینه `attributionReporting` است:
 
   ```js
   const attributionReporting = {
@@ -178,7 +182,7 @@ To register a script-based attribution trigger, you can either:
   elem.addEventListener("click", triggerMatching);
   ```
 
-- Send an {{domxref("XMLHttpRequest")}} with {{domxref("XMLHttpRequest.setAttributionReporting", "setAttributionReporting()")}} invoked on the request object:
+- ارسال یک {{domxref("XMLHttpRequest")}} با فراخوانی {{domxref("XMLHttpRequest.setAttributionReporting", "setAttributionReporting()")}} بر روی شیء درخواست:
 
   ```js
   const attributionReporting = {
@@ -204,35 +208,15 @@ To register a script-based attribution trigger, you can either:
   elem.addEventListener("click", triggerMatching);
   ```
 
-In this case, the browser will attempt to match the trigger with a stored attribution source when the browser receives the response from the fetch request.
+در این حالت، مرورگر وقتی پاسخ درخواست fetch را دریافت کند، تلاش می‌کند محرک را با یک منبع انتساب ذخیره‌شده مطابقت دهد.
 
 > [!NOTE]
-> The request can be for any resource. It doesn't need to have anything directly to do with the Attribution Reporting API, and can be a request for JSON, plain text, an image blob, or whatever else makes sense for your app.
+> درخواست می‌تواند برای هر منبعی باشد. لازم نیست مستقیماً به Attribution Reporting API مرتبط باشد و می‌تواند درخواستی برای JSON، متن ساده، یک بلاب تصویر یا هر چیز دیگری باشد که برای برنامه شما منطقی است.
 
-## Specifying a URL inside attributionsrc
+## تعیین URL در داخل attributionsrc
 
-In the above examples, the `attributionsrc` attribute is left blank, taking the value of an empty string. This is fine if the server that holds the requested resource is the same server that you also want to handle the registration, i.e., receive the {{httpheader("Attribution-Reporting-Eligible")}} header and respond with the {{httpheader("Attribution-Reporting-Register-Trigger")}} header.
+در مثال‌های بالا، ویژگی `attributionsrc` خالی گذاشته شده است و مقدار آن یک رشته خالی است. این کار در صورتی مناسب است که سروری که منبع درخواستی را نگه می‌دارد، همان سروری باشد که می‌خواهید ثبت را نیز مدیریت کند، یعنی هدر {{httpheader("Attribution-Reporting-Eligible")}} را دریافت کند و با هدر {{httpheader("Attribution-Reporting-Register-Trigger")}} پاسخ دهد.
 
-However, it might be the case that the requested resource is not on a server you control, or you just want to handle registering the attribution trigger on a different server. In such cases, you can specify one or more URLs as the value of `attributionsrc`. When the resource request occurs, the {{httpheader("Attribution-Reporting-Eligible")}} header will be sent to the URLs specified in `attributionsrc` in addition to the resource origin; the URLs can then respond with the {{httpheader("Attribution-Reporting-Register-Trigger")}} to complete registration.
+با این حال، ممکن است منبع درخواستی روی سروری که شما کنترل می‌کنید نباشد، یا فقط بخواهید ثبت محرک انتساب را روی سرور دیگری مدیریت کنید. در چنین مواردی، می‌توانید یک یا چند URL را به عنوان مقدار `attributionsrc` مشخص کنید. وقتی درخواست منبع رخ می‌دهد، هدر {{httpheader("Attribution-Reporting-Eligible")}} علاوه بر منشأ منبع، به URLهای مشخص‌شده در `attributionsrc` نیز ارسال می‌شود؛ سپس آن URLها می‌توانند با {{httpheader("Attribution-Reporting-Register-Trigger")}} پاسخ دهند تا ثبت کامل شود.
 
-For example, in the case of an `<img>` element you could declare the URL in the `attributionsrc` attribute:
-
-```html
-<img
-  src="https://shop.example/conversion/4rghshdh5"
-  alt=""
-  attributionsrc="https://my-separate-tracking-site.example.com"
-  width="1"
-  height="1" />
-```
-
-Or in JavaScript via the `attributionSrc` property:
-
-```js
-const imgElem = document.querySelector("img");
-imgElem.attributionSrc = "https://my-separate-tracking-site.example.com";
-```
-
-## See also
-
-- [Attribution Reporting Header Validation tool](https://wicg.github.io/attribution-reporting-api/validate-headers)
+برای مثال، در مورد یک عنصر `<
