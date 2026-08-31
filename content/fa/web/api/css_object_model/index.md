@@ -1,11 +1,5 @@
 ---
 title: "CSS Object Model (CSSOM)"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model"
-status: "needs-translation"
----
-
----
-title: CSS Object Model (CSSOM)
 slug: Web/API/CSS_Object_Model
 page-type: web-api-overview
 spec-urls:
@@ -16,11 +10,11 @@ spec-urls:
 
 {{DefaultAPISidebar("CSSOM")}}
 
-The **CSS Object Model** is a set of APIs allowing the manipulation of CSS from JavaScript. It is much like the DOM, but for the CSS rather than the HTML. It allows users to read and modify CSS style dynamically.
+**CSS Object Model** (مدل شیءِ CSS) مجموعه‌ای از APIها است که دستکاری CSS را از طریق جاوااسکریپت ممکن می‌سازد. این مدل شباهت زیادی به DOM دارد، با این تفاوت که به‌جای HTML، به CSS مربوط می‌شود. کاربران می‌توانند به‌کمک آن، استایل‌های CSS را به‌صورت پویا بخوانند و اصلاح کنند.
 
-The values of CSS are represented untyped, that is using {{JSxRef("String")}} objects.
+مقادیر CSS بدون نوع (untyped) نمایش داده می‌شوند؛ به این معنی که با استفاده از اشیاء {{JSxRef("String")}} نشان داده می‌شوند.
 
-## Reference
+## مرجع
 
 - {{DOMxRef("AnimationEvent")}}
 - {{DOMxRef("CaretPosition")}}
@@ -64,7 +58,7 @@ The values of CSS are represented untyped, that is using {{JSxRef("String")}} ob
 - {{DOMxRef("TransitionEvent")}}
 - {{DOMxRef("VisualViewport")}}
 
-Several other interfaces are also extended by the CSSOM-related specifications: {{DOMxRef("Document")}}, {{DOMxRef("Window")}}, {{DOMxRef("Element")}}, {{DOMxRef("HTMLElement")}}, {{DOMxRef("HTMLImageElement")}}, {{DOMxRef("Range")}}, {{DOMxRef("MouseEvent")}}, and {{DOMxRef("SVGElement")}}.
+چندین رابط دیگر نیز به‌وسیلهٔ مشخصات مرتبط با CSSOM گسترش یافته‌اند: {{DOMxRef("Document")}}، {{DOMxRef("Window")}}، {{DOMxRef("Element")}}، {{DOMxRef("HTMLElement")}}، {{DOMxRef("HTMLImageElement")}}، {{DOMxRef("Range")}}، {{DOMxRef("MouseEvent")}} و {{DOMxRef("SVGElement")}}.
 
 ### CSS Typed Object Model
 
@@ -98,7 +92,7 @@ Several other interfaces are also extended by the CSSOM-related specifications: 
 - {{DOMxRef("StylePropertyMap")}}
 - {{DOMxRef("StylePropertyMapReadOnly")}}
 
-### Obsolete CSSOM interfaces {{deprecated_inline}}
+### رابط‌های منسوخ CSSOM {{deprecated_inline}}
 
 {{deprecated_header}}
 
@@ -106,20 +100,20 @@ Several other interfaces are also extended by the CSSOM-related specifications: 
 - {{DOMxRef("CSSValue")}} {{deprecated_inline}}
 - {{DOMxRef("CSSValueList")}} {{deprecated_inline}}
 
-## Tutorials
+## آموزش‌ها
 
-- [Determining the dimensions of elements](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
-- [Managing screen orientation](/en-US/docs/Web/API/CSS_Object_Model/Managing_screen_orientation)
+- [تعیین ابعاد عناصر](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
+- [مدیریت جهت‌گیری صفحه‌نمایش](/en-US/docs/Web/API/CSS_Object_Model/Managing_screen_orientation)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
-All these features have been added little by little over the years to the different browsers: it was a quite complex process that can't be summarized in a simple table. Please refer to the specific interfaces for its availability.
+تمامی این ویژگی‌ها در طول سال‌ها و به‌تدریج به مرورگرهای مختلف اضافه شده‌اند؛ این فرایند نسبتاً پیچیده‌ای است که نمی‌توان آن را در یک جدول ساده خلاصه کرد. لطفاً برای اطلاع از میزان در دسترس بودن هر یک، به صفحهٔ همان رابط مراجعه کنید.
 
-## See also
+## همچنین ببینید
 
 - [Document Object Model (DOM)](/en-US/docs/Web/API/Document_Object_Model)
 - [Houdini APIs](/en-US/docs/Web/API/Houdini_APIs)
