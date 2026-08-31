@@ -1,46 +1,33 @@
 ---
 title: "CanvasPattern: setTransform() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasPattern/setTransform"
-status: "needs-translation"
----
-
----
-title: "CanvasPattern: setTransform() method"
-short-title: setTransform()
-slug: Web/API/CanvasPattern/setTransform
-page-type: web-api-instance-method
-browser-compat: api.CanvasPattern.setTransform
+translated_by: "n8n + AI"
 ---
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`CanvasPattern.setTransform()`** method uses a {{domxref("DOMMatrix")}} object as the pattern's transformation matrix and invokes it on the pattern.
+متد **`CanvasPattern.setTransform()`** از یک شی {{domxref("DOMMatrix")}} به عنوان ماتریس تبدیل الگو استفاده می‌کند و آن را روی الگو اعمال می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setTransform(matrix)
 ```
 
-### Parameters
+### پارامترها
 
 - `matrix`
-  - : A {{domxref("DOMMatrix")}} to use as the pattern's transformation matrix.
+  - یک {{domxref("DOMMatrix")}} که به عنوان ماتریس تبدیل الگو استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Using the `setTransform` method
+### استفاده از متد `setTransform`
 
-This is a code snippet which uses the `setTransform` method to
-create a {{domxref("CanvasPattern")}} with the specified pattern transformation from a
-{{domxref("DOMMatrix")}}. The pattern gets applied if you set it as the current
-{{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} and gets drawn onto the
-canvas when using the {{domxref("CanvasRenderingContext2D.fillRect", "fillRect()")}}
-method, for example.
+این یک قطعه کد است که از متد `setTransform` برای ایجاد یک {{domxref("CanvasPattern")}} با تبدیل الگوی مشخص شده از یک {{domxref("DOMMatrix")}} استفاده می‌کند. الگو در صورت تنظیم به عنوان {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} جاری اعمال می‌شود و هنگام استفاده از متد {{domxref("CanvasRenderingContext2D.fillRect", "fillRect()")}} روی بوم کشیده می‌شود، به عنوان مثال.
 
 ```html live-sample___canvas
 <canvas id="canvas"></canvas>
@@ -65,15 +52,15 @@ img.onload = () => {
 
 {{EmbedLiveSample('canvas', , 250)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasPattern")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasPattern")}}
 - {{domxref("DOMMatrix")}}
