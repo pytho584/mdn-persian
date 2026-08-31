@@ -1,11 +1,5 @@
 ---
 title: "console"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console"
-status: "needs-translation"
----
-
----
-title: console
 slug: Web/API/console
 page-type: web-api-interface
 browser-compat: api.console
@@ -13,96 +7,96 @@ browser-compat: api.console
 
 {{APIRef("Console API")}} {{AvailableInWorkers}}
 
-The **`console`** object provides access to the debugging console (e.g., the [Web console](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html) in Firefox).
+شیء **`console`** دسترسی به کنسول اشکال‌زدایی (مثل [کنسول وب](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html) در فایرفاکس) را فراهم می‌کند.
 
-Implementations of the console API may differ between runtimes. In particular, some console methods may work differently or not work at all in some online editors and IDEs. To see the behavior described in this documentation, try the methods in your browser's developer tools, although even here, there are some differences between browsers.
+پیاده‌سازی‌های API کنسول ممکن است در محیط‌های اجرایی مختلف متفاوت باشند. به‌ویژه، برخی از متدهای console ممکن است در بعضی ویرایشگرهای آنلاین و IDE ها به‌شکل متفاوتی کار کنند یا اصلاً کار نکنند. برای مشاهدهٔ رفتار توصیف‌شده در این مستندات، متدها را در ابزارهای توسعه‌دهندهٔ مرورگر خود امتحان کنید، هرچند در آنجا نیز بین مرورگرها تفاوت‌هایی وجود دارد.
 
-The `console` object is available in any global scope. For example:
+شیء `console` در هر حوزهٔ سراسری (global scope) در دسترس است. برای مثال:
 
 ```js
 console.log("Failed to open the specified link");
 ```
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("console/assert_static", "console.assert()")}}
-  - : Log an error message to console if the first argument is `false`.
+  - : اگر اولین آرگومان `false` باشد، یک پیام خطا در کنسول ثبت می‌کند.
 - {{domxref("console/clear_static", "console.clear()")}}
-  - : Clear the console.
+  - : کنسول را پاک می‌کند.
 - {{domxref("console/count_static", "console.count()")}}
-  - : Log the number of times this line has been called with the given label.
+  - : تعداد دفعاتی که این خط با برچسب داده‌شده فراخوانی شده است را ثبت می‌کند.
 - {{domxref("console/countReset_static", "console.countReset()")}}
-  - : Resets the value of the counter with the given label.
+  - : مقدار شمارنده با برچسب داده‌شده را بازنشانی می‌کند.
 - {{domxref("console/debug_static", "console.debug()")}}
-  - : Outputs a message to the console with the debug log level.
+  - : پیامی را با سطح ثبت اشکال‌زدایی در کنسول خروجی می‌دهد.
 - {{domxref("console/dir_static", "console.dir()")}}
-  - : Displays an interactive listing of the properties of a specified JavaScript object. This listing lets you use disclosure triangles to examine the contents of child objects.
+  - : فهرست تعاملی از ویژگی‌های یک شیء جاوااسکریپتی مشخص را نمایش می‌دهد. این فهرست به شما امکان می‌دهد با مثلث‌های بازشو محتوای اشیاء فرزند را بررسی کنید.
 - {{domxref("console/dirxml_static", "console.dirxml()")}}
-  - : Displays an XML/HTML Element representation of the specified object if possible or the JavaScript Object view if it is not possible.
+  - : در صورت امکان، نمایشی از عنصر XML/HTML شیء مشخص‌شده، و در غیر این صورت نمایش شیء جاوااسکریپت را نشان می‌دهد.
 - {{domxref("console/error_static", "console.error()")}}
-  - : Outputs a message to the console with the error log level.
+  - : پیامی را با سطح ثبت خطا در کنسول خروجی می‌دهد.
 - `console.exception()` {{Non-standard_inline}} {{deprecated_inline}}
-  - : An alias for `console.error()`.
+  - : نام مستعار `console.error()` است.
 - {{domxref("console/group_static", "console.group()")}}
-  - : Creates a new inline [group](#using_groups_in_the_console), indenting all following output by another level. To move back out a level, call `console.groupEnd()`.
+  - : یک [گروه](#using_groups_in_the_console) جدید ایجاد می‌کند و تمام خروجی‌های بعدی را یک سطح تو رفتگی می‌دهد. برای بازگشت به سطح قبلی، `console.groupEnd()` را فراخوانی کنید.
 - {{domxref("console/groupCollapsed_static", "console.groupCollapsed()")}}
-  - : Creates a new inline [group](#using_groups_in_the_console), indenting all following output by another level. However, unlike `console.group()` this starts with the inline group collapsed requiring the use of a disclosure button to expand it. To move back out a level, call `console.groupEnd()`.
+  - : یک [گروه](#using_groups_in_the_console) جدید ایجاد می‌کند و تمام خروجی‌های بعدی را یک سطح تو رفتگی می‌دهد. با این حال، برخلاف `console.group()`، این گروه به‌صورت جمع‌شده شروع می‌شود و برای باز کردن آن باید از دکمهٔ بازشو استفاده کنید. برای بازگشت به سطح قبلی، `console.groupEnd()` را فراخوانی کنید.
 - {{domxref("console/groupEnd_static", "console.groupEnd()")}}
-  - : Exits the current inline [group](#using_groups_in_the_console).
+  - : از [گروه](#using_groups_in_the_console) فعلی خارج می‌شود.
 - {{domxref("console/info_static", "console.info()")}}
-  - : Outputs a message to the console with the info log level.
+  - : پیامی را با سطح ثبت اطلاعات در کنسول خروجی می‌دهد.
 - {{domxref("console/log_static", "console.log()")}}
-  - : Outputs a message to the console.
+  - : یک پیام را در کنسول خروجی می‌دهد.
 - {{domxref("console/profile_static", "console.profile()")}} {{Non-standard_inline}}
-  - : Starts the browser's built-in profiler (for example, the [Firefox performance tool](https://firefox-source-docs.mozilla.org/devtools-user/performance/index.html)). You can specify an optional name for the profile.
+  - : پروفایلر داخلی مرورگر را شروع می‌کند (مثلاً [ابزار عملکرد فایرفاکس](https://firefox-source-docs.mozilla.org/devtools-user/performance/index.html)). می‌توانید یک نام اختیاری برای پروفایل تعیین کنید.
 - {{domxref("console/profileEnd_static", "console.profileEnd()")}} {{Non-standard_inline}}
-  - : Stops the profiler. You can see the resulting profile in the browser's performance tool (for example, the [Firefox performance tool](https://firefox-source-docs.mozilla.org/devtools-user/performance/index.html)).
+  - : پروفایلر را متوقف می‌کند. می‌توانید پروفایل حاصل را در ابزار عملکرد مرورگر مشاهده کنید (مثلاً [ابزار عملکرد فایرفاکس](https://firefox-source-docs.mozilla.org/devtools-user/performance/index.html)).
 - {{domxref("console/table_static", "console.table()")}}
-  - : Displays tabular data as a table.
+  - : داده‌های جدولی را به‌صورت یک جدول نمایش می‌دهد.
 - {{domxref("console/time_static", "console.time()")}}
-  - : Starts a [timer](#timers) with a name specified as an input parameter. Up to 10,000 simultaneous timers can run on a given page.
+  - : یک [تایمر](#timers) با نام مشخص‌شده به‌عنوان پارامتر ورودی شروع می‌کند. در یک صفحه می‌توان تا ۱۰٬۰۰۰ تایمر هم‌زمان اجرا کرد.
 - {{domxref("console/timeEnd_static", "console.timeEnd()")}}
-  - : Stops the specified [timer](#timers) and logs the elapsed time in milliseconds since it started.
+  - : [تایمر](#timers) مشخص‌شده را متوقف کرده و زمان سپری‌شده بر حسب میلی‌ثانیه از زمان شروع را ثبت می‌کند.
 - {{domxref("console/timeLog_static", "console.timeLog()")}}
-  - : Logs the value of the specified [timer](#timers) to the console.
+  - : مقدار [تایمر](#timers) مشخص‌شده را در کنسول ثبت می‌کند.
 - {{domxref("console/timeStamp_static", "console.timeStamp()")}} {{Non-standard_inline}}
-  - : Adds a marker to the browser performance tool's timeline ([Chrome](https://developer.chrome.com/docs/devtools/performance/reference) or [Firefox](https://profiler.firefox.com/docs/#/./guide-ui-tour-timeline)).
+  - : یک نشانگر به خط زمانی ابزار عملکرد مرورگر اضافه می‌کند ([Chrome](https://developer.chrome.com/docs/devtools/performance/reference) یا [Firefox](https://profiler.firefox.com/docs/#/./guide-ui-tour-timeline)).
 - {{domxref("console/trace_static", "console.trace()")}}
-  - : Outputs a [stack trace](#stack_traces).
+  - : یک [ردیابی پشته](#stack_traces) را خروجی می‌دهد.
 - {{domxref("console/warn_static", "console.warn()")}}
-  - : Outputs a message to the console with the warning log level.
+  - : پیامی را با سطح ثبت هشدار در کنسول خروجی می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Outputting text to the console
+### خروجی متن به کنسول
 
-The console's most frequently used feature is logging text and other data. There are several categories of output you can generate using the {{domxref("console/log_static", "console.log()")}}, {{domxref("console/info_static", "console.info()")}}, {{domxref("console/warn_static", "console.warn()")}}, {{domxref("console/error_static", "console.error()")}}, or {{domxref("console/debug_static", "console.debug()")}} methods. Each of these results in output styled differently in the log, and you can use the filtering controls provided by your browser to view only the kinds of output that interest you.
+متداول‌ترین قابلیت کنسول، ثبت متن و سایر داده‌ها است. با استفاده از متدهای {{domxref("console/log_static", "console.log()")}}، {{domxref("console/info_static", "console.info()")}}، {{domxref("console/warn_static", "console.warn()")}}، {{domxref("console/error_static", "console.error()")}} یا {{domxref("console/debug_static", "console.debug()")}} می‌توانید دسته‌های مختلفی از خروجی تولید کنید. هر یک از این‌ها خروجی با استایل متفاوتی در لاگ ایجاد می‌کنند و می‌توانید از کنترل‌های فیلتر مرورگر خود برای مشاهدهٔ تنها انواع خروجی موردنظر استفاده کنید.
 
-There are two ways to use each of the output methods:
+دو روش برای استفاده از هر یک از متدهای خروجی وجود دارد:
 
-- Pass in a variable number of arguments whose string representations get concatenated into one string, then output to the console.
-- Pass in a string containing zero or more substitution strings followed by a variable number of arguments to replace them.
+- تعداد متغیری آرگومان ارسال کنید که نمایش رشته‌ای آن‌ها در یک رشته ترکیب می‌شود و سپس در کنسول خروجی داده می‌شود.
+- رشته‌ای حاوی صفر یا چند رشتهٔ جایگزین (substitution string) ارسال کنید و سپس تعداد متغیری آرگومان برای جایگزینی آن‌ها.
 
-#### Outputting a single object
+#### خروجی یک شیء
 
-The simplest way to use the logging methods is to output a single object:
+ساده‌ترین روش استفاده از متدهای ثبت، خروجی گرفتن از یک شیء واحد است:
 
 ```js
 const someObject = { str: "Some text", id: 5 };
 console.log(someObject);
 ```
 
-The output looks something like this:
+خروجی چیزی شبیه به این است:
 
 ```plain
 {str:"Some text", id:5}
 ```
 
-The browser will display as much information about the object as it can and wishes to. For example, private state of the object may be displayed too. Certain types of objects, such as DOM elements or functions, may also be displayed in a special way.
+مرورگر تا حد ممکن و به دلخواه خود اطلاعاتی دربارهٔ شیء نمایش می‌دهد. برای مثال، ممکن است حالت خصوصی (private state) شیء نیز نمایش داده شود. برخی انواع اشیاء، مانند عناصر DOM یا توابع، ممکن است به شکل خاصی نمایش داده شوند.
 
-#### Snapshotting objects
+#### عکس فوری از اشیاء (Snapshotting)
 
-Information about an object is lazily retrieved. This means that the log message shows the content of an object at the time when it's first viewed, not when it was logged. For example:
+اطلاعات مربوط به یک شیء به‌صورت تنبل (lazily) بازیابی می‌شود. یعنی پیام لاگ، محتوای شیء را در زمانی که برای اولین بار مشاهده می‌شود نشان می‌دهد، نه زمانی که ثبت شده است. برای مثال:
 
 ```js
 const obj = {};
@@ -110,19 +104,19 @@ console.log(obj);
 obj.prop = 123;
 ```
 
-This will output `{}`. However, if you expand the object's details, you will see `prop: 123`.
+این کد خروجی `{}` را می‌دهد. با این حال، اگر جزئیات شیء را باز کنید، `prop: 123` را مشاهده خواهید کرد.
 
-If you are going to mutate your object and you want to prevent the logged information from being updated, you can [deep-clone](/en-US/docs/Glossary/Deep_copy) the object before logging it. A common way is to {{jsxref("JSON.stringify()")}} and then {{jsxref("JSON.parse()")}} it:
+اگر قصد تغییر شیء خود را دارید و می‌خواهید از به‌روزرسانی اطلاعات ثبت‌شده جلوگیری کنید، می‌توانید قبل از ثبت، شیء را [شبیه‌سازی عمیق](/en-US/docs/Glossary/Deep_copy) کنید. یک روش رایج این است که آن را با {{jsxref("JSON.stringify()")}} و سپس {{jsxref("JSON.parse()")}} کنید:
 
 ```js
 console.log(JSON.parse(JSON.stringify(obj)));
 ```
 
-There are other alternatives that work in browsers, such as {{DOMxRef("Window.structuredClone", "structuredClone()")}}, which are more effective at cloning different types of objects.
+جایگزین‌های دیگری نیز وجود دارند که در مرورگرها کار می‌کنند، مانند {{DOMxRef("Window.structuredClone", "structuredClone()")}}، که در شبیه‌سازی انواع مختلف اشیاء مؤثرتر هستند.
 
-#### Outputting multiple objects
+#### خروجی چند شیء
 
-You can also output multiple objects by listing them when calling the logging method, like this:
+همچنین می‌توانید با فهرست کردن چند شیء هنگام فراخوانی متد ثبت، آن‌ها را خروجی بگیرید، مانند این:
 
 ```js
 const car = "Dodge Charger";
@@ -130,32 +124,32 @@ const someObject = { str: "Some text", id: 5 };
 console.info("My first car was a", car, ". The object is:", someObject);
 ```
 
-The output will look like this:
+خروجی به این شکل خواهد بود:
 
 ```plain
 My first car was a Dodge Charger . The object is: {str:"Some text", id:5}
 ```
 
-#### Using string substitutions
+#### استفاده از جایگزینی رشته‌ها
 
-The first parameter to the logging methods can be a string containing zero or more substitution strings. Each substitution string is replaced by the corresponding argument value.
+اولین پارامتر متدهای ثبت می‌تواند رشته‌ای حاوی صفر یا چند رشتهٔ جایگزین باشد. هر رشتهٔ جایگزین با مقدار آرگومان متناظر جایگزین می‌شود.
 
 - `%o`
-  - : Outputs a JavaScript object in the "optimally useful formatting" style, for example DOM elements may be displayed the same way as they would appear in the element inspector.
+  - : یک شیء جاوااسکریپت را با سبک «قالب‌بندی بهینهٔ مفید» خروجی می‌دهد؛ برای مثال عناصر DOM ممکن است به همان شکلی که در عنصرنگار (element inspector) دیده می‌شوند نمایش داده شوند.
 - `%O`
-  - : Outputs a JavaScript object in the "generic JavaScript object formatting" style, usually in the form of an expandable tree. This is similar to {{domxref("console/dir_static", "console.dir()")}}.
-- `%d` or `%i`
-  - : Outputs an integer.
+  - : یک شیء جاوااسکریپت را با سبک «قالب‌بندی عمومی اشیاء جاوااسکریپت» خروجی می‌دهد، معمولاً به‌صورت یک درخت بازشو. این مشابه {{domxref("console/dir_static", "console.dir()")}} است.
+- `%d` یا `%i`
+  - : یک عدد صحیح را خروجی می‌دهد.
 - `%s`
-  - : Outputs a string.
+  - : یک رشته را خروجی می‌دهد.
 - `%f`
-  - : Outputs a floating-point value.
+  - : یک مقدار اعشاری را خروجی می‌دهد.
 - `%c`
-  - : Applies CSS style rules to all following text. See [Styling console output](#styling_console_output).
+  - : قوانین استایل CSS را بر تمام متن‌های بعدی اعمال می‌کند. به [استایل‌دهی خروجی کنسول](#styling_console_output) مراجعه کنید.
 
-Some browsers may implement additional format specifiers. For example, Safari and Firefox support the C-style precision formatting `%.<precision>f`. For example `console.log("Foo %.2f", 1.1)` will output the number to 2 decimal places: `Foo 1.10`, while `console.log("Foo %.2d", 1.1)` will output the number as two significant figures with a leading 0: `Foo 01`.
+برخی مرورگرها ممکن است مشخص‌کننده‌های قالب اضافی نیز پیاده‌سازی کنند. برای مثال، Safari و Firefox از قالب‌بندی دقت به سبک C یعنی `%.<precision>f` پشتیبانی می‌کنند. برای مثال `console.log("Foo %.2f", 1.1)` عدد را با ۲ رقم اعشار خروجی می‌دهد: `Foo 1.10`، در حالی که `console.log("Foo %.2d", 1.1)` عدد را با دو رقم با اهمیت و صفر آغازین خروجی می‌دهد: `Foo 01`.
 
-Each of these pulls the next argument after the format string off the parameter list. For example:
+هر یک از این‌ها آرگومان بعد از رشتهٔ قالب را از فهرست پارامتر برمی‌دارد. برای مثال:
 
 ```js
 for (let i = 0; i < 5; i++) {
@@ -163,7 +157,7 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-The output looks like this:
+خروجی به این شکل است:
 
 ```plain
 Hello, Bob. You've called me 1 times.
@@ -173,9 +167,9 @@ Hello, Bob. You've called me 4 times.
 Hello, Bob. You've called me 5 times.
 ```
 
-#### Styling console output
+#### استایل‌دهی خروجی کنسول
 
-You can use the `%c` directive to apply a CSS style to console output:
+می‌توانید از دستور `%c` برای اعمال استایل CSS بر خروجی کنسول استفاده کنید:
 
 ```js
 console.log(
@@ -184,11 +178,11 @@ console.log(
 );
 ```
 
-The text before the directive will not be affected, but the text after the directive will be styled using the CSS declarations in the parameter.
+متنی که قبل از دستور است تحت تأثیر قرار نمی‌گیرد، اما متن بعد از دستور با استفاده از اعلان‌های CSS موجود در پارامتر استایل می‌گیرد.
 
 ![Styled Text in Firefox console](css-styling.png)
 
-You may use `%c` multiple times:
+می‌توانید `%c` را چند بار استفاده کنید:
 
 <!-- cSpell:ignore corange cred -->
 
@@ -201,38 +195,38 @@ console.log(
 );
 ```
 
-The properties usable along with the `%c` syntax are as follows (at least, in Firefox — they may differ in other browsers):
+ویژگی‌های قابل استفاده همراه با نحو `%c` به شرح زیر هستند (حداقل در Firefox — ممکن است در مرورگرهای دیگر متفاوت باشند):
 
-- {{cssxref("background")}} and its longhand equivalents
-- {{cssxref("border")}} and its longhand equivalents
+- {{cssxref("background")}} و معادل‌های longhand آن
+- {{cssxref("border")}} و معادل‌های longhand آن
 - {{cssxref("border-radius")}}
 - {{cssxref("box-decoration-break")}}
 - {{cssxref("box-shadow")}}
-- {{cssxref("clear")}} and {{cssxref("float")}}
+- {{cssxref("clear")}} و {{cssxref("float")}}
 - {{cssxref("color")}}
 - {{cssxref("cursor")}}
 - {{cssxref("display")}}
-- {{cssxref("font")}} and its longhand equivalents
+- {{cssxref("font")}} و معادل‌های longhand آن
 - {{cssxref("line-height")}}
 - {{cssxref("margin")}}
-- {{cssxref("outline")}} and its longhand equivalents
+- {{cssxref("outline")}} و معادل‌های longhand آن
 - {{cssxref("padding")}}
-- `text-*` properties such as {{cssxref("text-transform")}}
+- ویژگی‌های `text-*` مانند {{cssxref("text-transform")}}
 - {{cssxref("white-space")}}
-- {{cssxref("word-spacing")}} and {{cssxref("word-break")}}
+- {{cssxref("word-spacing")}} و {{cssxref("word-break")}}
 - {{cssxref("writing-mode")}}
 
 > [!NOTE]
-> Each console message behaves like an inline element by default. If you want properties such as `padding`, `margin`, and so on to have any effect, you can set the `display` property to `display: inline-block`.
+> هر پیام کنسول به‌صورت پیش‌فرض مانند یک عنصر inline رفتار می‌کند. اگر می‌خواهید ویژگی‌هایی مانند `padding`، `margin` و غیره اثری داشته باشند، می‌توانید ویژگی `display` را روی `display: inline-block` تنظیم کنید.
 
 > [!NOTE]
-> In order to support both light and dark color schemes, {{cssxref("color_value/light-dark")}} can be used when specifying colors; for example: `color: light-dark(#D00000, #FF4040);`
+> برای پشتیبانی از هر دو طرح رنگ روشن و تیره، می‌توان هنگام مشخص‌کردن رنگ‌ها از {{cssxref("color_value/light-dark")}} استفاده کرد؛ برای مثال: `color: light-dark(#D00000, #FF4040);`
 
-### Using groups in the console
+### استفاده از گروه‌ها در کنسول
 
-You can use nested groups to help organize your output by visually combining related material. To create a new nested block, call `console.group()`. The `console.groupCollapsed()` method is similar but creates the new block collapsed, requiring the use of a disclosure button to open it for reading.
+می‌توانید از گروه‌های تودرتو برای سازمان‌دهی خروجی خود با ترکیب بصری مطالب مرتبط استفاده کنید. برای ایجاد یک بلوک تودرتوی جدید، `console.group()` را فراخوانی کنید. متد `console.groupCollapsed()` مشابه است، اما بلوک جدید را جمع‌شده ایجاد می‌کند و برای باز کردن آن برای خواندن، باید از دکمهٔ بازشو استفاده کنید.
 
-To exit the current group, call `console.groupEnd()`. For example, given this code:
+برای خروج از گروه فعلی، `console.groupEnd()` را فراخوانی کنید. برای مثال، با این کد:
 
 ```js
 console.log("This is the outer level");
@@ -247,62 +241,6 @@ console.groupEnd();
 console.debug("Back to the outer level");
 ```
 
-The output looks like this:
+خروجی به این شکل است:
 
-![Demo of nested groups in Firefox console](console_groups_demo.png)
-
-### Timers
-
-You can start a timer to calculate the duration of a specific operation. To start one, call the `console.time()` method, giving it a name as the only parameter. To stop the timer, and to get the elapsed time in milliseconds, just call the `console.timeEnd()` method, again passing the timer's name as the parameter. Up to 10,000 timers can run simultaneously on a given page.
-
-For example, given this code:
-
-```js
-console.time("answer time");
-alert("Click to continue");
-console.timeLog("answer time");
-alert("Do a bunch of other stuff…");
-console.timeEnd("answer time");
-```
-
-Will log the time needed by the user to dismiss the alert box, log the time to the console, wait for the user to dismiss the second alert, and then log the ending time to the console:
-
-![Time log in Firefox console](console-timelog.png)
-
-Notice that the timer's name is displayed both when the timer is started and when it's stopped.
-
-### Stack traces
-
-The console object also supports outputting a stack trace; this will show you the call path taken to reach the point at which you call {{domxref("console/trace_static", "console.trace()")}}. Given code like this:
-
-```js
-function foo() {
-  function bar() {
-    console.trace();
-  }
-  bar();
-}
-
-foo();
-```
-
-The output in the console looks something like this:
-
-![Stack trace in Firefox console](api-trace2.png)
-
-## Specifications
-
-{{Specifications}}
-
-## Browser compatibility
-
-{{Compat}}
-
-## See also
-
-- [Firefox Developer Tools](https://firefox-source-docs.mozilla.org/devtools-user/index.html)
-- [Web console](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html) — how the Web console in Firefox handles console API calls
-- [about:debugging](https://firefox-source-docs.mozilla.org/devtools-user/about_colon_debugging/index.html) — how to see console output when the debugging target is a mobile device
-- [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/console/api/)
-- [Microsoft Edge DevTools](https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/)
-- [Safari Web Inspector](https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Console/Console.html)
+![Demo of nested groups in Firefox console](console_g
