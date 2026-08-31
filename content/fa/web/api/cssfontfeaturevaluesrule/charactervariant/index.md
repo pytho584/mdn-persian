@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesRule: characterVariant property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesRule/characterVariant"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesRule: characterVariant property"
 short-title: characterVariant
 slug: Web/API/CSSFontFeatureValuesRule/characterVariant
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.CSSFontFeatureValuesRule.characterVariant
 
 {{ APIRef("CSSOM") }}{{SeeCompatTable}}
 
-The read-only **characterVariant** property of the {{domXRef("CSSFontFeatureValuesRule")}} interface contains a {{domXRef("CSSFontFeatureValuesMap")}} object representing the [user-defined-ident](/en-US/docs/Web/CSS/Reference/Values/custom-ident) and [feature index](/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings#optional_value) for a variable font which supports {{CSSXRef("font-variant-alternates", "character-variant()", "#character-variant")}}.
+ویژگی فقط‌خواندنی **characterVariant** در رابط {{domXRef("CSSFontFeatureValuesRule")}} یک شیء {{domXRef("CSSFontFeatureValuesMap")}} را نگه می‌دارد که [شناسه تعریف‌شده توسط کاربر](/en-US/docs/Web/CSS/Reference/Values/custom-ident) و [اندیس ویژگی](/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings#optional_value) را برای فونت متغیری که از {{CSSXRef("font-variant-alternates", "character-variant()", "#character-variant")}} پشتیبانی می‌کند، نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("CSSFontFeatureValuesMap")}} object.
+یک شیء {{domxref("CSSFontFeatureValuesMap")}}.
 
-Although the `characterVariant` property itself is read-only in the sense that you can't replace the `CSSFontFeatureValuesMap` object, you can still assign to the `characterVariant` property directly. You can also modify the values of the `characterVariant` using the [`CSSFontFeatureValuesMap` instance methods](/en-US/docs/Web/API/CSSFontFeatureValuesMap#instance_methods).
+اگرچه خود ویژگی `characterVariant` به این معنا فقط‌خواندنی است که نمی‌توانید شیء `CSSFontFeatureValuesMap` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به ویژگی `characterVariant` مقداردهی کنید. همچنین می‌توانید با استفاده از [متدهای نمونه `CSSFontFeatureValuesMap`](/en-US/docs/Web/API/CSSFontFeatureValuesMap#instance_methods) مقادیر `characterVariant` را تغییر دهید.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 #### CSS
 
@@ -38,7 +32,7 @@ Although the `characterVariant` property itself is read-only in the sense that y
 }
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 // look for the first stylesheet and the first cssRule in that sheet
@@ -52,16 +46,16 @@ if (
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxRef("@font-feature-values","@character-variant","#character-variant")}}
-- {{cssxRef("font-variant-alternates","character-variant()","#character-variant")}} functional notation
+- نشانه‌گذاری تابعی {{cssxRef("font-variant-alternates","character-variant()","#character-variant")}}
 - {{domxref("CSSFontFeatureValuesMap")}}
