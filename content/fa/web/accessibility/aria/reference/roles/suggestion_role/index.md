@@ -1,7 +1,7 @@
 ---
 title: "ARIA: suggestion role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/suggestion_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,11 +12,11 @@ page-type: aria-role
 sidebar: accessibilitysidebar
 ---
 
-The `suggestion` role semantically denotes a single proposed change to an editable document. This should be used on an element that wraps an element with an `insertion` role, and one with a `deletion` role.
+نقش `suggestion` از نظر معنایی یک تغییر پیشنهادی واحد در یک سند قابل ویرایش را نشان می‌دهد. این نقش باید روی عنصری استفاده شود که یک عنصر با نقش `insertion` و یک عنصر با نقش `deletion` را در بر می‌گیرد.
 
-## Examples
+## مثال‌ها
 
-When you've got a content change that involves an insertion _and_ a deletion, there is no way for a screen reader user to work out if the two are related or not. This is the job of `role="suggestion"`, which should be set on an element wrapping both of them like so:
+وقتی تغییری در محتوا دارید که شامل یک درج _و_ یک حذف است، کاربر صفحه‌خوان هیچ راهی برای تشخیص اینکه این دو به هم مرتبط هستند یا نه ندارد. این وظیفهٔ `role="suggestion"` است که باید روی عنصری قرار گیرد که هر دو را در بر می‌گیرد، مانند زیر:
 
 ```html
 <p>
@@ -28,7 +28,7 @@ When you've got a content change that involves an insertion _and_ a deletion, th
 </p>
 ```
 
-We could even provide an information box saying who made the suggestion and when, and associate it with the suggestion via [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details):
+ما حتی می‌توانیم یک جعبهٔ اطلاعاتی فراهم کنیم که بگوید چه کسی پیشنهاد را داده و چه زمانی، و آن را از طریق [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) با پیشنهاد مرتبط کنیم:
 
 ```html
 <p>
@@ -45,14 +45,14 @@ We could even provide an information box saying who made the suggestion and when
 </div>
 ```
 
-Browsers tend to provide a default black strikethrough for deletions, and a black underline for insertions when using the HTML elements that implicitly expose these roles. But when using explicit ARIA roles to modify HTML elements, such as divs, you'll need to use CSS to customize the visual styling for such deletions and insertions.
+مرورگرها معمولاً هنگام استفاده از عناصر HTML که به‌طور ضمنی این نقش‌ها را نشان می‌دهند، یک خط خوردگی مشکی پیش‌فرض برای حذف‌ها و یک خط زیر مشکی برای درج‌ها ارائه می‌دهند. اما هنگام استفاده از نقش‌های صریح ARIA برای اصلاح عناصر HTML، مانند divها، باید از CSS برای سفارشی‌سازی ظاهر بصری این حذف‌ها و درج‌ها استفاده کنید.
 
-## Best practices
+## بهترین روش‌ها
 
-### Prefer HTML
+### استفاده از HTML را ترجیح دهید
 
-Using the [`<ins>`](/en-US/docs/Web/HTML/Reference/Elements/ins) and [`<del>`](/en-US/docs/Web/HTML/Reference/Elements/del) element will automatically communicate a section has a role of `insertion` or `deletion`. If at all possible, prefer using the HTML elements.
+استفاده از عنصرهای [`<ins>`](/en-US/docs/Web/HTML/Reference/Elements/ins) و [`<del>`](/en-US/docs/Web/HTML/Reference/Elements/del) به‌طور خودکار اعلام می‌کند که یک بخش نقش `insertion` یا `deletion` دارد. در صورت امکان، استفاده از عناصر HTML را ترجیح دهید.
 
-## Specifications
+## مشخصات
 
-Will be part of WAI-ARIA 1.3, which is still being drafted.
+بخشی از WAI-ARIA 1.3 خواهد بود که هنوز در حال پیش‌نویس است.
