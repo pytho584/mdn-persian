@@ -1,7 +1,7 @@
 ---
 title: "AudioData: sampleRate property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioData/sampleRate"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,24 +14,24 @@ browser-compat: api.AudioData.sampleRate
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`sampleRate`** read-only property of the {{domxref("AudioData")}} interface returns the sample rate in Hz.
+ویژگی فقط‌خواندنی **`sampleRate`** از رابط {{domxref("AudioData")}} نرخ نمونه‌برداری را بر حسب هرتز برمی‌گرداند.
 
-## Value
+## مقدار
 
-A decimal value.
+یک مقدار اعشاری.
 
-## Examples
+## مثال‌ها
 
-The below example prints the value of `sampleRate` to the console.
+مثال زیر مقدار `sampleRate` را در کنسول چاپ می‌کند.
 
 ```js
 console.log(audioData.sampleRate);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
