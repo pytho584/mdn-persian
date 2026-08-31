@@ -1,34 +1,27 @@
 ---
 title: "BluetoothCharacteristicProperties: authenticatedSignedWrites property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothCharacteristicProperties/authenticatedSignedWrites"
-status: "needs-translation"
----
-
----
-title: "BluetoothCharacteristicProperties: authenticatedSignedWrites property"
 short-title: authenticatedSignedWrites
 slug: Web/API/BluetoothCharacteristicProperties/authenticatedSignedWrites
 page-type: web-api-instance-property
 status:
   - experimental
 browser-compat: api.BluetoothCharacteristicProperties.authenticatedSignedWrites
+translated_by: "n8n + AI"
 ---
 
 {{securecontext_header}}{{APIRef("Bluetooth API")}}{{SeeCompatTable}}
 
-The **`authenticatedSignedWrites`** read-only
-property of the {{domxref("BluetoothCharacteristicProperties")}} interface returns a
-`boolean` that is `true` if signed writing to the characteristic
-value is permitted.
+خاصیت فقط‌خواندنی **`authenticatedSignedWrites`** از رابط {{domxref("BluetoothCharacteristicProperties")}} یک `boolean` برمی‌گرداند که اگر نوشتن امضا شده به مقدار مشخصه مجاز باشد `true` است.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار boolean.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
