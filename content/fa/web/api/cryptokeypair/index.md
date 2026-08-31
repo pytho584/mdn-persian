@@ -1,7 +1,5 @@
 ---
 title: "CryptoKeyPair"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CryptoKeyPair"
-status: "needs-translation"
 ---
 
 ---
@@ -13,22 +11,22 @@ spec-urls: https://w3c.github.io/webcrypto/#keypair
 
 {{APIRef("Web Crypto API")}}
 
-The **`CryptoKeyPair`** dictionary of the [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) represents a key pair for an asymmetric cryptography algorithm, also known as a public-key algorithm.
+دیکشنری **`CryptoKeyPair`** از [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) یک جفت کلید برای الگوریتم رمزنگاری نامتقارن (که به آن الگوریتم کلید عمومی نیز گفته می‌شود) را نشان می‌دهد.
 
-A `CryptoKeyPair` object can be obtained using {{domxref("SubtleCrypto.generateKey()")}}, when the selected algorithm is one of the asymmetric algorithms: RSASSA-PKCS1-v1_5, RSA-PSS, RSA-OAEP, ECDSA, or ECDH.
+یک شیء `CryptoKeyPair` را می‌توان با استفاده از {{domxref("SubtleCrypto.generateKey()")}} به دست آورد، زمانی که الگوریتم انتخاب‌شده یکی از الگوریتم‌های نامتقارن باشد: RSASSA-PKCS1-v1_5، RSA-PSS، RSA-OAEP، ECDSA یا ECDH.
 
-It contains two properties, which are both [`CryptoKey`](/en-US/docs/Web/API/CryptoKey) objects: a `privateKey` property containing the private key and a `publicKey` property containing the public key.
+این شیء شامل دو ویژگی است که هر دو از نوع [`CryptoKey`](/en-US/docs/Web/API/CryptoKey) هستند: یک ویژگی `privateKey` که شامل کلید خصوصی است و یک ویژگی `publicKey` که شامل کلید عمومی است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `CryptoKeyPair.privateKey`
-  - : A [`CryptoKey`](/en-US/docs/Web/API/CryptoKey) object representing the private key. For encryption and decryption algorithms, this key is used to decrypt. For signing and verification algorithms it is used to sign.
+  - : یک شیء [`CryptoKey`](/en-US/docs/Web/API/CryptoKey) که نشان‌دهنده کلید خصوصی است. برای الگوریتم‌های رمزنگاری و رمزگشایی، از این کلید برای رمزگشایی استفاده می‌شود. برای الگوریتم‌های امضا و تأیید، از آن برای امضا کردن استفاده می‌شود.
 - `CryptoKeyPair.publicKey`
-  - : A [`CryptoKey`](/en-US/docs/Web/API/CryptoKey) object representing the public key. For encryption and decryption algorithms, this key is used to encrypt. For signing and verification algorithms it is used to verify signatures.
+  - : یک شیء [`CryptoKey`](/en-US/docs/Web/API/CryptoKey) که نشان‌دهنده کلید عمومی است. برای الگوریتم‌های رمزنگاری و رمزگشایی، از این کلید برای رمزنگاری استفاده می‌شود. برای الگوریتم‌های امضا و تأیید، از آن برای تأیید امضاها استفاده می‌شود.
 
-## Examples
+## نمونه‌ها
 
-The examples for `SubtleCrypto` methods often use `CryptoKeyPair` objects. For example:
+نمونه‌های مربوط به متدهای `SubtleCrypto` معمولاً از اشیاء `CryptoKeyPair` استفاده می‌کنند. برای مثال:
 
 - [`SubtleCrypto.generateKey()`](/en-US/docs/Web/API/SubtleCrypto/generateKey)
 - [`SubtleCrypto.deriveKey()`](/en-US/docs/Web/API/SubtleCrypto/deriveKey)
@@ -41,12 +39,12 @@ The examples for `SubtleCrypto` methods often use `CryptoKeyPair` objects. For e
 - [`SubtleCrypto.sign()`](/en-US/docs/Web/API/SubtleCrypto/sign)
 - [`SubtleCrypto.verify()`](/en-US/docs/Web/API/SubtleCrypto/verify)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SubtleCrypto.generateKey")}}.
-- {{domxref("SubtleCrypto.sign")}} and {{domxref("SubtleCrypto.verify")}}.
-- {{domxref("SubtleCrypto.encrypt")}} and {{domxref("SubtleCrypto.decrypt")}}.
+- {{domxref("SubtleCrypto.sign")}} و {{domxref("SubtleCrypto.verify")}}.
+- {{domxref("SubtleCrypto.encrypt")}} و {{domxref("SubtleCrypto.decrypt")}}.
