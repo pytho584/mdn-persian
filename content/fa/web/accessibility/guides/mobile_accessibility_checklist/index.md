@@ -1,9 +1,8 @@
 ---
 title: "Mobile accessibility checklist"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Mobile_accessibility_checklist"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
-
 ---
 title: Mobile accessibility checklist
 slug: Web/Accessibility/Guides/Mobile_accessibility_checklist
@@ -11,70 +10,70 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-This document provides a concise checklist of accessibility requirements for mobile app developers. It is intended to continuously evolve as more patterns arise.
+این سند یک چک‌لیست مختصر از الزامات دسترسی‌پذیری برای توسعه‌دهندگان برنامه‌های موبایل ارائه می‌دهد. هدف آن است که با ظهور الگوهای بیشتر به‌طور مداوم تکامل یابد.
 
-## Color
+## رنگ
 
-- Color contrast must comply with [WCAG 2.2 AA level requirements](https://w3c.github.io/wcag/guidelines/22/#contrast-minimum):
-  - Contrast ratio of 4.5:1 for normal text (less than 18 point or 14 point bold.)
-  - Contrast ratio of 3:1 for large text (at least 18 point or 14 point bold.)
+- تضاد رنگی باید مطابق با [الزامات سطح AA WCAG 2.2](https://w3c.github.io/wcag/guidelines/22/#contrast-minimum) باشد:
+  - نسبت تضاد ۴.۵:۱ برای متن معمولی (کوچکتر از ۱۸ نقطه یا ۱۴ نقطه ضخیم)
+  - نسبت تضاد ۳:۱ برای متن بزرگ (حداقل ۱۸ نقطه یا ۱۴ نقطه ضخیم)
 
-- Information conveyed via color must be also available by other means too (underlined text for links, etc.)
+- اطلاعاتی که از طریق رنگ منتقل می‌شوند باید از طریق روش‌های دیگر نیز در دسترس باشند (متن زیرخط‌دار برای پیوندها و غیره).
 
-## Visibility
+## دیدپذیری
 
-- Content hiding techniques such as zero opacity, z-index order and off-screen placement must not be used exclusively to handle visibility.
-- Everything other than the currently visible screen must be _truly_ invisible (especially relevant for single page apps with multiple _cards_):
-  - Use the `hidden` attribute or `visibility` or `display` style properties.
-  - Unless absolutely unavoidable, `aria-hidden` attribute should not be used.
+- تکنیک‌های پنهان‌سازی محتوا مانند شفافیت صفر، ترتیب z-index و قرارگیری خارج از صفحه نباید به‌طور انحصاری برای مدیریت دیدپذیری استفاده شوند.
+- هر چیزی غیر از صفحه‌ای که در حال حاضر قابل مشاهده است باید واقعاً _نامرئی_ باشد (به‌ویژه برای برنامه‌های تک‌صفحه‌ای با چند _کارت_):
+  - از ویژگی `hidden` یا ویژگی‌های سبک `visibility` یا `display` استفاده کنید.
+  - مگر در موارد کاملاً ضروری، از ویژگی `aria-hidden` نباید استفاده شود.
 
-## Focus
+## فوکوس
 
-- All activatable elements must be focusable:
-  - Standard controls such as links, buttons, and form fields are focusable by default.
-  - Non-standard controls must have an appropriate [ARIA Role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) assigned to them, such as `button`, `link`, or `checkbox`.
+- تمام عناصر قابل فعال‌سازی باید قابل فوکوس باشند:
+  - کنترل‌های استاندارد مانند پیوندها، دکمه‌ها و فیلدهای فرم به‌طور پیش‌فرض قابل فوکوس هستند.
+  - کنترل‌های غیراستاندارد باید یک [نقش ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) مناسب به آنها اختصاص داده شود، مانند `button`، `link` یا `checkbox`.
 
-- Focus should be handled in a logical order and consistent manner.
+- فوکوس باید به ترتیب منطقی و به‌طور ثابت مدیریت شود.
 
-## Text equivalents
+## معادل‌های متنی
 
-- Text equivalent must be provided for every non-strictly presentational non-text element within the app.
-  - Use _alt_ and _title_ where appropriate (read Steve Faulkner's post about [Using the HTML title attribute](https://vispero.com/resources/using-the-html-title-attribute-updated/) for a good guide.)
-  - If the above attributes are not applicable, use appropriate [ARIA States and Properties](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes) such as `aria-label`, `aria-labelledby`, or `aria-describedby`.
+- برای هر عنصر غیرمتنی که صرفاً تزئینی نیست، باید معادل متنی در برنامه ارائه شود.
+  - در صورت لزوم از _alt_ و _title_ استفاده کنید (پست استیو فاکنر درباره [استفاده از ویژگی title در HTML](https://vispero.com/resources/using-the-html-title-attribute-updated/) را برای راهنمای خوب مطالعه کنید).
+  - اگر ویژگی‌های فوق قابل استفاده نیستند، از [حالت‌ها و ویژگی‌های ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes) مناسب مانند `aria-label`، `aria-labelledby` یا `aria-describedby` استفاده کنید.
 
-- Images of text must be avoided.
-- All user interface components with visible text (or image of text) as labels must have the same text available in the programmatic [name](https://w3c.github.io/wcag/guidelines/22/#dfn-name) of the component. [WCAG 2.1: Label in name.](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html)
-- All form controls must have labels ({{ htmlelement("label") }} elements) for the benefit of screen reader users.
+- از تصاویر متن باید خودداری شود.
+- تمام اجزای رابط کاربری که دارای متن قابل مشاهده (یا تصویر متن) به عنوان برچسب هستند، باید همان متن را در [نام](https://w3c.github.io/wcag/guidelines/22/#dfn-name) برنامه‌نویسی شده مؤلفه در دسترس داشته باشند. [WCAG 2.1: برچسب در نام.](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html)
+- تمام کنترل‌های فرم باید دارای برچسب‌های (عناصر {{ htmlelement("label") }}) برای بهره‌مندی کاربران صفحه‌خوان باشند.
 
-## Handling state
+## مدیریت حالت
 
-- Standard controls such as radio buttons and checkboxes are handled by the operating system. However, for other custom controls state changes must be provided via [ARIA States](https://w3c.github.io/aria/#state_prop_def) such as `aria-checked`, `aria-disabled`, `aria-selected`, `aria-expanded`, and `aria-pressed`.
+- کنترل‌های استاندارد مانند دکمه‌های رادیویی و چک‌باکس‌ها توسط سیستم عامل مدیریت می‌شوند. با این حال، برای سایر کنترل‌های سفارشی، تغییرات حالت باید از طریق [حالت‌های ARIA](https://w3c.github.io/aria/#state_prop_def) مانند `aria-checked`، `aria-disabled`، `aria-selected`، `aria-expanded` و `aria-pressed` ارائه شوند.
 
-## Orientation
+## جهت‌گیری
 
-- Content should not be restricted to a single orientation, such as portrait or landscape, unless essential. [WCAG 2.1: Orientation](https://www.w3.org/WAI/WCAG21/Understanding/orientation.html)
-  - Examples of when an orientation is essential is a piano application or a bank check.
+- محتوا نباید به یک جهت‌گیری واحد مانند پرتره یا منظره محدود شود، مگر در موارد ضروری. [WCAG 2.1: جهت‌گیری](https://www.w3.org/WAI/WCAG21/Understanding/orientation.html)
+  - نمونه‌هایی از زمانی که جهت‌گیری ضروری است، برنامه پیانو یا چک بانکی است.
 
-## General guidelines
+## دستورالعمل‌های کلی
 
-- An app title must be provided.
-- Headings must not break hierarchical structure
+- عنوان برنامه باید ارائه شود.
+- عنوان‌ها نباید ساختار سلسله‌مراتبی را بشکنند
 
   ```html
-  <h1>Top level heading</h1>
-  <h2>Secondary heading</h2>
-  <h2>Another secondary heading</h2>
-  <h3>Low level heading</h3>
+  <h1>عنوان سطح بالا</h1>
+  <h2>عنوان ثانویه</h2>
+  <h2>عنوان ثانویه دیگر</h2>
+  <h3>عنوان سطح پایین</h3>
   ```
 
-- [ARIA Landmark Roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) should be used to describe an app or document structure, such as `banner`, `complementary`, `contentinfo`, `main`, `navigation`, `search`.
-- For touch events, ensure the following ([WCAG 2.1: Pointer Cancellation](https://www.w3.org/WAI/WCAG21/Understanding/pointer-cancellation.html)):
-  - The down-event should not be used to execute any part of the function;
-  - Failing the above, _completion_ of the function should be on the up-event, and a mechanism is available to abort the action before its completion or to undo the action after its completion;
-  - Failing the above, the up-event should be able to undo any action that was triggered on a down event;
-  - All the above may be violated if it is essential to trigger the action on the down event, usually to simulate real-world experiences or to provide real-time feedback. For example, game controls, piano keyboards, or virtual keyboards.
+- [نقش‌های نشانه‌گذاری ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) باید برای توصیف ساختار برنامه یا سند استفاده شوند، مانند `banner`، `complementary`، `contentinfo`، `main`، `navigation`، `search`.
+- برای رویدادهای لمسی، موارد زیر را تضمین کنید ([WCAG 2.1: لغو اشاره‌گر](https://www.w3.org/WAI/WCAG21/Understanding/pointer-cancellation.html)):
+  - رویداد پایین نباید برای اجرای هیچ بخشی از عملکرد استفاده شود؛
+  - در صورت عدم رعایت موارد فوق، _تکمیل_ عملکرد باید در رویداد بالا انجام شود، و مکانیزمی برای لغو عمل قبل از تکمیل آن یا لغو عمل پس از تکمیل آن در دسترس باشد؛
+  - در صورت عدم رعایت موارد فوق، رویداد بالا باید بتواند هر عملی که در رویداد پایین فعال شده را لغو کند؛
+  - تمام موارد فوق ممکن است در صورت ضروری بودن فعال‌سازی عمل در رویداد پایین نقض شوند، معمولاً برای شبیه‌سازی تجربیات دنیای واقعی یا ارائه بازخورد بلادرنگ. به عنوان مثال، کنترل‌های بازی، صفحه‌کلید پیانو یا صفحه‌کلید مجازی.
 
-- Touch targets must be large enough for the user to interact with (see the [BBC Mobile Accessibility Guidelines](https://www.bbc.co.uk/accessibility/forproducts/guides/mobile/target-touch-size) for useful touch target size guidelines).
+- اهداف لمسی باید به اندازه کافی بزرگ باشند تا کاربر بتواند با آنها تعامل داشته باشد (برای راهنمای مفید اندازه اهداف لمسی به [راهنمای دسترسی‌پذیری موبایل BBC](https://www.bbc.co.uk/accessibility/forproducts/guides/mobile/target-touch-size) مراجعه کنید).
 
 > [!NOTE]
-> The [original version of this document](https://yzen.github.io/firefoxos/2014/04/30/mobile-accessibility-checklist.html) was written by [Yura Zenevich](https://yzen.github.io/).
+> [نسخه اصلی این سند](https://yzen.github.io/firefoxos/2014/04/30/mobile-accessibility-checklist.html) توسط [Yura Zenevich](https://yzen.github.io/) نوشته شده است.
