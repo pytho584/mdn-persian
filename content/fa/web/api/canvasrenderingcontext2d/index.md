@@ -1,10 +1,4 @@
 ---
-title: "CanvasRenderingContext2D"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D"
-status: "needs-translation"
----
-
----
 title: CanvasRenderingContext2D
 slug: Web/API/CanvasRenderingContext2D
 page-type: web-api-interface
@@ -13,43 +7,40 @@ browser-compat: api.CanvasRenderingContext2D
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D`** interface, part of the [Canvas API](/en-US/docs/Web/API/Canvas_API), provides the 2D rendering context for the drawing surface of a {{HTMLElement("canvas")}} element.
-It is used for drawing shapes, text, images, and other objects.
+رابط **`CanvasRenderingContext2D`** که بخشی از [Canvas API](/en-US/docs/Web/API/Canvas_API) است، زمینهٔ رندر دوبعدی را برای سطح ترسیم یک عنصر {{HTMLElement("canvas")}} فراهم می‌کند. از این رابط برای ترسیم شکل‌ها، متن، تصاویر و سایر اشیا استفاده می‌شود.
 
-The interface's properties and methods are described in the reference section of this page.
-The [Canvas tutorial](/en-US/docs/Web/API/Canvas_API/Tutorial) has more explanation, examples, and resources, as well.
+ویژگی‌ها و متدهای این رابط در بخش مرجع این صفحه شرح داده شده‌اند. [آموزش Canvas](/en-US/docs/Web/API/Canvas_API/Tutorial) نیز توضیحات، مثال‌ها و منابع بیشتری را ارائه می‌دهد.
 
-For [`OffscreenCanvas`](/en-US/docs/Web/API/OffscreenCanvas), there is an equivalent interface that provides the rendering context.
-The offscreen rendering context inherits most of the same properties and methods as the `CanvasRenderingContext2D` and is described in more detail in the {{domxref("OffscreenCanvasRenderingContext2D")}} reference page.
+برای [`OffscreenCanvas`](/en-US/docs/Web/API/OffscreenCanvas) یک رابط معادل وجود دارد که زمینهٔ رندر را فراهم می‌کند. این زمینهٔ رندر خارج از صفحه، بیشتر ویژگی‌ها و متدهای مشابه `CanvasRenderingContext2D` را به ارث می‌برد و در صفحهٔ مرجع {{domxref("OffscreenCanvasRenderingContext2D")}} با جزئیات بیشتری توضیح داده شده است.
 
-## Basic example
+## مثال پایه
 
-To get a `CanvasRenderingContext2D` instance, you must first have an HTML `<canvas>` element to work with:
+برای به دست آوردن یک نمونه از `CanvasRenderingContext2D`، ابتدا باید یک عنصر HTML `<canvas>` برای کار داشته باشید:
 
 ```html
 <canvas id="my-house" width="300" height="300"></canvas>
 ```
 
-To get the canvas' 2D rendering context, call {{domxref("HTMLCanvasElement.getContext()", "getContext()")}} on the `<canvas>` element, supplying `'2d'` as the argument:
+برای به دست آوردن زمینهٔ رندر دوبعدی canvas، متد {{domxref("HTMLCanvasElement.getContext()", "getContext()")}} را روی عنصر `<canvas>` فراخوانی کنید و آرگومان `'2d'` را به آن بدهید:
 
 ```js
 const canvas = document.getElementById("my-house");
 const ctx = canvas.getContext("2d");
 ```
 
-With the context in hand, you can draw anything you like. This code draws a house:
+حالا که زمینه را دارید، می‌توانید هر چیزی که دوست دارید بکشید. این کد یک خانه ترسیم می‌کند:
 
 ```js
-// Set line width
+// تنظیم عرض خط
 ctx.lineWidth = 10;
 
-// Wall
+// دیوار
 ctx.strokeRect(75, 140, 150, 110);
 
-// Door
+// در
 ctx.fillRect(130, 190, 40, 60);
 
-// Roof
+// سقف
 ctx.beginPath();
 ctx.moveTo(50, 140);
 ctx.lineTo(150, 60);
@@ -58,240 +49,240 @@ ctx.closePath();
 ctx.stroke();
 ```
 
-The resulting drawing looks like this:
+نتیجهٔ ترسیم به این شکل است:
 
 {{EmbedLiveSample("Basic_example", 700, 330)}}
 
-## Reference
+## مرجع
 
-### Context
+### زمینه (Context)
 
 - {{domxref("CanvasRenderingContext2D.getContextAttributes()")}}
-  - : Returns an object containing the context attributes used by the browser. Context attributes can be requested when using {{domxref("HTMLCanvasElement.getContext()")}} to create the 2D context.
+  - : یک شیء شامل ویژگی‌های زمینه‌ای که مرورگر استفاده می‌کند را برمی‌گرداند. این ویژگی‌ها را می‌توان هنگام استفاده از {{domxref("HTMLCanvasElement.getContext()")}} برای ایجاد زمینهٔ دوبعدی درخواست کرد.
 - {{domxref("CanvasRenderingContext2D.isContextLost()")}}
-  - : Returns `true` if the rendering context was lost.
+  - : اگر زمینهٔ رندر از دست رفته باشد، مقدار `true` را برمی‌گرداند.
 
-### Drawing rectangles
+### ترسیم مستطیل‌ها
 
-There are three methods that immediately draw rectangles to the canvas.
+سه متد وجود دارند که بلافاصله مستطیل‌ها را روی canvas ترسیم می‌کنند.
 
 - {{domxref("CanvasRenderingContext2D.clearRect()")}}
-  - : Sets all pixels in the rectangle defined by starting point _(x, y)_ and size _(width, height)_ to transparent black, erasing any previously drawn content.
+  - : تمام پیکسل‌های مستطیل تعریف‌شده با نقطهٔ شروع _(x, y)_ و اندازه _(width, height)_ را به رنگ سیاه شفاف تنظیم می‌کند و محتوای قبلاً ترسیم‌شده را پاک می‌کند.
 - {{domxref("CanvasRenderingContext2D.fillRect()")}}
-  - : Draws a filled rectangle at _(x, y)_ position whose size is determined by _width_ and _height_.
+  - : یک مستطیل پر شده در موقعیت _(x, y)_ با اندازه‌ای که توسط _width_ و _height_ تعیین می‌شود ترسیم می‌کند.
 - {{domxref("CanvasRenderingContext2D.strokeRect()")}}
-  - : Paints a rectangle which has a starting point at _(x, y)_ and has a _w_ width and an _h_ height onto the canvas, using the current stroke style.
+  - : یک مستطیل با نقطهٔ شروع در _(x, y)_ و عرض _w_ و ارتفاع _h_ را با استفاده از استایل stroke فعلی روی canvas می‌کشد.
 
-### Drawing text
+### ترسیم متن
 
-The following methods draw text. See also the {{domxref("TextMetrics")}} object for text properties.
+متدهای زیر متن را ترسیم می‌کنند. همچنین به شیء {{domxref("TextMetrics")}} برای ویژگی‌های متن مراجعه کنید.
 
 - {{domxref("CanvasRenderingContext2D.fillText()")}}
-  - : Draws (fills) a given text at the given (x, y) position.
+  - : یک متن داده شده را در موقعیت (x, y) داده شده (پر می‌کند) ترسیم می‌کند.
 - {{domxref("CanvasRenderingContext2D.strokeText()")}}
-  - : Draws (strokes) a given text at the given (x, y) position.
+  - : یک متن داده شده را در موقعیت (x, y) داده شده (با stroke) ترسیم می‌کند.
 - {{domxref("CanvasRenderingContext2D.measureText()")}}
-  - : Returns a {{domxref("TextMetrics")}} object.
+  - : یک شیء {{domxref("TextMetrics")}} برمی‌گرداند.
 
-### Line styles
+### استایل‌های خط
 
-The following methods and properties control how lines are drawn.
+متدها و ویژگی‌های زیر نحوهٔ ترسیم خطوط را کنترل می‌کنند.
 
 - {{domxref("CanvasRenderingContext2D.lineWidth")}}
-  - : Width of lines. Default `1.0`.
+  - : عرض خطوط. پیش‌فرض `1.0`.
 - {{domxref("CanvasRenderingContext2D.lineCap")}}
-  - : Type of endings on the end of lines. Possible values: `butt` (default), `round`, `square`.
+  - : نوع انتهای خطوط. مقادیر ممکن: `butt` (پیش‌فرض)، `round`، `square`.
 - {{domxref("CanvasRenderingContext2D.lineJoin")}}
-  - : Defines the type of corners where two lines meet. Possible values: `round`, `bevel`, `miter` (default).
+  - : نوع گوشه‌ها را در محل برخورد دو خط تعریف می‌کند. مقادیر ممکن: `round`، `bevel`، `miter` (پیش‌فرض).
 - {{domxref("CanvasRenderingContext2D.miterLimit")}}
-  - : Miter limit ratio. Default `10`.
+  - : نسبت حد miter. پیش‌فرض `10`.
 - {{domxref("CanvasRenderingContext2D.getLineDash()")}}
-  - : Returns the current line dash pattern array containing an even number of non-negative numbers.
+  - : الگوی خط چین فعلی را به صورت آرایه‌ای شامل تعداد زوجی از اعداد غیرمنفی برمی‌گرداند.
 - {{domxref("CanvasRenderingContext2D.setLineDash()")}}
-  - : Sets the current line dash pattern.
+  - : الگوی خط چین فعلی را تنظیم می‌کند.
 - {{domxref("CanvasRenderingContext2D.lineDashOffset")}}
-  - : Specifies where to start a dash array on a line.
+  - : مشخص می‌کند که یک آرایهٔ خط چین از کجا روی خط شروع شود.
 
-### Text styles
+### استایل‌های متن
 
-The following properties control how text is laid out.
+ویژگی‌های زیر نحوهٔ چیدمان متن را کنترل می‌کنند.
 
 - {{domxref("CanvasRenderingContext2D.font")}}
-  - : Font setting. Default value `"10px sans-serif"`.
+  - : تنظیمات فونت. مقدار پیش‌فرض `"10px sans-serif"`.
 - {{domxref("CanvasRenderingContext2D.textAlign")}}
-  - : Text alignment setting. Possible values: `start` (default), `end`, `left`, `right`, `center`.
+  - : تنظیم تراز متن. مقادیر ممکن: `start` (پیش‌فرض)، `end`، `left`، `right`، `center`.
 - {{domxref("CanvasRenderingContext2D.textBaseline")}}
-  - : Baseline alignment setting. Possible values: `top`, `hanging`, `middle`, `alphabetic` (default), `ideographic`, `bottom`.
+  - : تنظیم خط پایه. مقادیر ممکن: `top`، `hanging`، `middle`، `alphabetic` (پیش‌فرض)، `ideographic`، `bottom`.
 - {{domxref("CanvasRenderingContext2D.direction")}}
-  - : Directionality. Possible values: `ltr`, `rtl`, `inherit` (default).
+  - : جهت‌گیری. مقادیر ممکن: `ltr`، `rtl`، `inherit` (پیش‌فرض).
 - {{domxref("CanvasRenderingContext2D.letterSpacing")}}
-  - : Letter spacing. Default: `0px`.
+  - : فاصلهٔ حروف. پیش‌فرض: `0px`.
 - {{domxref("CanvasRenderingContext2D.fontKerning")}}
-  - : Font kerning. Possible values: `auto` (default), `normal`, `none`.
+  - : کرنینگ فونت. مقادیر ممکن: `auto` (پیش‌فرض)، `normal`، `none`.
 - {{domxref("CanvasRenderingContext2D.fontStretch")}}
-  - : Font stretch. Possible values: `ultra-condensed`, `extra-condensed`, `condensed`, `semi-condensed`, `normal` (default), `semi-expanded`, `expanded`, `extra-expanded`, `ultra-expanded`.
+  - : کشیدگی فونت. مقادیر ممکن: `ultra-condensed`، `extra-condensed`، `condensed`، `semi-condensed`، `normal` (پیش‌فرض)، `semi-expanded`، `expanded`، `extra-expanded`، `ultra-expanded`.
 - {{domxref("CanvasRenderingContext2D.fontVariantCaps")}}
-  - : Font variant caps. Possible values: `normal` (default), `small-caps`, `all-small-caps`, `petite-caps`, `all-petite-caps`, `unicase`, `titling-caps`.
+  - : نوع حروف بزرگ فونت. مقادیر ممکن: `normal` (پیش‌فرض)، `small-caps`، `all-small-caps`، `petite-caps`، `all-petite-caps`، `unicase`، `titling-caps`.
 - {{domxref("CanvasRenderingContext2D.textRendering")}}
-  - : Text rendering. Possible values: `auto` (default), `optimizeSpeed`, `optimizeLegibility`, `geometricPrecision`.
+  - : رندر متن. مقادیر ممکن: `auto` (پیش‌فرض)، `optimizeSpeed`، `optimizeLegibility`، `geometricPrecision`.
 - {{domxref("CanvasRenderingContext2D.wordSpacing")}}
-  - : Word spacing. Default value: `0px`
+  - : فاصلهٔ کلمات. مقدار پیش‌فرض: `0px`
 - {{domxref("CanvasRenderingContext2D.lang")}}
-  - : Gets or sets the language of the canvas drawing context.
+  - : زبان زمینهٔ ترسیم canvas را دریافت یا تنظیم می‌کند.
 
-### Fill and stroke styles
+### استایل‌های پر کردن (Fill) و stroke
 
-Fill styling is used for colors and styles inside shapes and stroke styling is used for the lines around shapes.
+استایل پر کردن برای رنگ‌ها و استایل‌های داخل اشکال و استایل stroke برای خطوط دور اشکال استفاده می‌شود.
 
 - {{domxref("CanvasRenderingContext2D.fillStyle")}}
-  - : Color or style to use inside shapes. Default is `black`.
+  - : رنگ یا استایل برای استفاده درون اشکال. پیش‌فرض `black` است.
 - {{domxref("CanvasRenderingContext2D.strokeStyle")}}
-  - : Color or style to use for the lines around shapes. Default is `black`.
+  - : رنگ یا استایل برای خطوط دور اشکال. پیش‌فرض `black` است.
 
-### Gradients and patterns
+### گرادیان‌ها و الگوها
 
 - {{domxref("CanvasRenderingContext2D.createConicGradient()")}}
-  - : Creates a conic gradient around a point given by coordinates represented by the parameters.
+  - : یک گرادیان مخروطی حول یک نقطه که توسط مختصات داده شده با پارامترها مشخص می‌شود، ایجاد می‌کند.
 - {{domxref("CanvasRenderingContext2D.createLinearGradient()")}}
-  - : Creates a linear gradient along the line given by the coordinates represented by the parameters.
+  - : یک گرادیان خطی در امتداد خطی که توسط مختصات داده شده با پارامترها مشخص می‌شود، ایجاد می‌کند.
 - {{domxref("CanvasRenderingContext2D.createRadialGradient()")}}
-  - : Creates a radial gradient given by the coordinates of the two circles represented by the parameters.
+  - : یک گرادیان شعاعی با توجه به مختصات دو دایره که توسط پارامترها مشخص می‌شوند، ایجاد می‌کند.
 - {{domxref("CanvasRenderingContext2D.createPattern()")}}
-  - : Creates a pattern using the specified image. It repeats the source in the directions specified by the repetition argument. This method returns a {{domxref("CanvasPattern")}}.
+  - : یک الگو با استفاده از تصویر مشخص شده ایجاد می‌کند. این الگو منبع را در جهت‌های مشخص شده توسط آرگومان تکرار تکرار می‌کند. این متد یک {{domxref("CanvasPattern")}} برمی‌گرداند.
 
-### Shadows
+### سایه‌ها
 
 - {{domxref("CanvasRenderingContext2D.shadowBlur")}}
-  - : Specifies the blurring effect. Default: `0`.
+  - : میزان محو شدگی را مشخص می‌کند. پیش‌فرض: `0`.
 - {{domxref("CanvasRenderingContext2D.shadowColor")}}
-  - : Color of the shadow. Default: fully-transparent black.
+  - : رنگ سایه. پیش‌فرض: سیاه کاملاً شفاف.
 - {{domxref("CanvasRenderingContext2D.shadowOffsetX")}}
-  - : Horizontal distance the shadow will be offset. Default: `0`.
+  - : فاصلهٔ افقی جابجایی سایه. پیش‌فرض: `0`.
 - {{domxref("CanvasRenderingContext2D.shadowOffsetY")}}
-  - : Vertical distance the shadow will be offset. Default: `0`.
+  - : فاصلهٔ عمودی جابجایی سایه. پیش‌فرض: `0`.
 
-### Paths
+### مسیرها (Paths)
 
-The following methods can be used to manipulate paths of objects.
+متدهای زیر را می‌توان برای دستکاری مسیرهای اشیا استفاده کرد.
 
 - {{domxref("CanvasRenderingContext2D.beginPath()")}}
-  - : Starts a new path by emptying the list of sub-paths. Call this method when you want to create a new path.
+  - : با خالی کردن لیست زیرمسیرها یک مسیر جدید شروع می‌کند. این متد را زمانی که می‌خواهید یک مسیر جدید ایجاد کنید، فراخوانی کنید.
 - {{domxref("CanvasRenderingContext2D.closePath()")}}
-  - : Causes the point of the pen to move back to the start of the current sub-path. It tries to draw a straight line from the current point to the start. If the shape has already been closed or has only one point, this function does nothing.
+  - : باعث می‌شود نقطهٔ قلم به ابتدای زیرمسیر فعلی برگردد. سعی می‌کند یک خط مستقیم از نقطهٔ فعلی به نقطهٔ شروع بکشد. اگر شکل قبلاً بسته شده باشد یا فقط یک نقطه داشته باشد، این تابع کاری انجام نمی‌دهد.
 - {{domxref("CanvasRenderingContext2D.moveTo()")}}
-  - : Moves the starting point of a new sub-path to the (x, y) coordinates.
+  - : نقطهٔ شروع یک زیرمسیر جدید را به مختصات (x, y) منتقل می‌کند.
 - {{domxref("CanvasRenderingContext2D.lineTo()")}}
-  - : Connects the last point in the current sub-path to the specified (x, y) coordinates with a straight line.
+  - : آخرین نقطه در زیرمسیر فعلی را با یک خط مستقیم به مختصات (x, y) مشخص شده متصل می‌کند.
 - {{domxref("CanvasRenderingContext2D.bezierCurveTo()")}}
-  - : Adds a cubic Bézier curve to the current path.
+  - : یک منحنی Bézier مکعبی به مسیر فعلی اضافه می‌کند.
 - {{domxref("CanvasRenderingContext2D.quadraticCurveTo()")}}
-  - : Adds a quadratic Bézier curve to the current path.
+  - : یک منحنی Bézier درجه دوم به مسیر فعلی اضافه می‌کند.
 - {{domxref("CanvasRenderingContext2D.arc()")}}
-  - : Adds a circular arc to the current path.
+  - : یک کمان دایره‌ای به مسیر فعلی اضافه می‌کند.
 - {{domxref("CanvasRenderingContext2D.arcTo()")}}
-  - : Adds an arc to the current path with the given control points and radius, connected to the previous point by a straight line.
+  - : یک کمان با نقاط کنترل و شعاع داده شده به مسیر فعلی اضافه می‌کند که با یک خط مستقیم به نقطهٔ قبلی متصل می‌شود.
 - {{domxref("CanvasRenderingContext2D.ellipse()")}}
-  - : Adds an elliptical arc to the current path.
+  - : یک کمان بیضوی به مسیر فعلی اضافه می‌کند.
 - {{domxref("CanvasRenderingContext2D.rect()")}}
-  - : Creates a path for a rectangle at position (x, y) with a size that is determined by _width_ and _height_.
+  - : یک مسیر برای یک مستطیل در موقعیت (x, y) با اندازه‌ای که توسط _width_ و _height_ تعیین می‌شود ایجاد می‌کند.
 - {{domxref("CanvasRenderingContext2D.roundRect()")}}
-  - : Creates a path for a rounded rectangle with a specified position, width, height, and corner radii.
+  - : یک مسیر برای یک مستطیل گرد با موقعیت، عرض، ارتفاع و شعاع گوشه‌های مشخص شده ایجاد می‌کند.
 
-### Drawing paths
+### ترسیم مسیرها
 
 - {{domxref("CanvasRenderingContext2D.fill()")}}
-  - : Fills the current sub-paths with the current fill style.
+  - : زیرمسیرهای فعلی را با استایل fill فعلی پر می‌کند.
 - {{domxref("CanvasRenderingContext2D.stroke()")}}
-  - : Strokes the current sub-paths with the current stroke style.
+  - : زیرمسیرهای فعلی را با استایل stroke فعلی ترسیم می‌کند.
 - {{domxref("CanvasRenderingContext2D.drawFocusIfNeeded()")}}
-  - : If a given element is focused, this method draws a focus ring around the current path.
+  - : اگر یک عنصر داده شده دارای فوکوس باشد، این متد یک حلقهٔ فوکوس دور مسیر فعلی می‌کشد.
 - {{domxref("CanvasRenderingContext2D.clip()")}}
-  - : Creates a clipping path from the current sub-paths. Everything drawn after `clip()` is called appears inside the clipping path only. For an example, see [Clipping paths](/en-US/docs/Web/API/Canvas_API/Tutorial/Compositing) in the Canvas tutorial.
+  - : یک مسیر برش از زیرمسیرهای فعلی ایجاد می‌کند. هر چیزی که بعد از فراخوانی `clip()` ترسیم شود، فقط درون مسیر برش ظاهر می‌شود. برای مثال، به [مسیرهای برش](/en-US/docs/Web/API/Canvas_API/Tutorial/Compositing) در آموزش Canvas مراجعه کنید.
 - {{domxref("CanvasRenderingContext2D.isPointInPath()")}}
-  - : Reports whether or not the specified point is contained in the current path.
+  - : گزارش می‌دهد که آیا نقطهٔ مشخص شده درون مسیر فعلی قرار دارد یا خیر.
 - {{domxref("CanvasRenderingContext2D.isPointInStroke()")}}
-  - : Reports whether or not the specified point is inside the area contained by the stroking of a path.
+  - : گزارش می‌دهد که آیا نقطهٔ مشخص شده درون ناحیهٔ تحت پوشش stroke یک مسیر قرار دارد یا خیر.
 
-### Transformations
+### تبدیل‌ها (Transformations)
 
-Objects in the `CanvasRenderingContext2D` rendering context have a current transformation matrix and methods to manipulate it. The transformation matrix is applied when creating the current default path, painting text, shapes and {{domxref("Path2D")}} objects. The methods listed below remain for historical and compatibility reasons as {{domxref("DOMMatrix")}} objects are used in most parts of the API nowadays and will be used in the future instead.
+اشیاء در زمینهٔ رندر `CanvasRenderingContext2D` یک ماتریس تبدیل فعلی و متدهایی برای دستکاری آن دارند. این ماتریس تبدیل هنگام ایجاد مسیر پیش‌فرض فعلی، ترسیم متن، اشکال و اشیاء {{domxref("Path2D")}} اعمال می‌شود. متدهای ذکر شده در زیر به دلایل تاریخی و سازگاری باقی مانده‌اند، زیرا اشیاء {{domxref("DOMMatrix")}} در حال حاضر در بیشتر بخش‌های API استفاده می‌شوند و در آینده به جای آنها استفاده خواهند شد.
 
 - {{domxref("CanvasRenderingContext2D.getTransform()")}}
-  - : Retrieves the current transformation matrix being applied to the context.
+  - : ماتریس تبدیل فعلی اعمال شده به context را بازیابی می‌کند.
 - {{domxref("CanvasRenderingContext2D.rotate()")}}
-  - : Adds a rotation to the transformation matrix. The angle argument represents a clockwise rotation angle and is expressed in radians.
+  - : یک چرخش به ماتریس تبدیل اضافه می‌کند. آرگومان زاویه، یک زاویه چرخش در جهت عقربه‌های ساعت است که بر حسب رادیان بیان می‌شود.
 - {{domxref("CanvasRenderingContext2D.scale()")}}
-  - : Adds a scaling transformation to the canvas units by x horizontally and by y vertically.
+  - : یک تبدیل مقیاس به واحدهای canvas به صورت افقی به اندازه x و عمودی به اندازه y اضافه می‌کند.
 - {{domxref("CanvasRenderingContext2D.translate()")}}
-  - : Adds a translation transformation by moving the canvas and its origin x horizontally and y vertically on the grid.
+  - : یک تبدیل انتقالی با جابجایی canvas و مبدأ آن به صورت افقی x و عمودی y روی شبکه اضافه می‌کند.
 - {{domxref("CanvasRenderingContext2D.transform()")}}
-  - : Multiplies the current transformation matrix with the matrix described by its arguments.
+  - : ماتریس تبدیل فعلی را در ماتریس توصیف شده توسط آرگومان‌هایش ضرب می‌کند.
 - {{domxref("CanvasRenderingContext2D.setTransform()")}}
-  - : Resets the current transform to the identity matrix, and then invokes the `transform()` method with the same arguments.
+  - : تبدیل فعلی را به ماتریس همانی بازنشانی می‌کند و سپس متد `transform()` را با همان آرگومان‌ها فراخوانی می‌کند.
 - {{domxref("CanvasRenderingContext2D.resetTransform()")}}
-  - : Resets the current transform by the identity matrix.
+  - : تبدیل فعلی را با ماتریس همانی بازنشانی می‌کند.
 
-### Compositing
+### ترکیب (Compositing)
 
 - {{domxref("CanvasRenderingContext2D.globalAlpha")}}
-  - : Alpha value that is applied to shapes and images before they are composited onto the canvas. Default `1.0` (opaque).
+  - : مقدار آلفایی که قبل از ترکیب شدن بر روی canvas به اشکال و تصاویر اعمال می‌شود. پیش‌فرض `1.0` (کدر).
 - {{domxref("CanvasRenderingContext2D.globalCompositeOperation")}}
-  - : With `globalAlpha` applied this sets how shapes and images are drawn onto the existing bitmap.
+  - : با اعمال `globalAlpha`، نحوهٔ ترسیم اشکال و تصاویر روی بیت‌مپ موجود را تنظیم می‌کند.
 
-### Drawing images
+### ترسیم تصاویر
 
 - {{domxref("CanvasRenderingContext2D.drawImage()")}}
-  - : Draws the specified image. This method is available in multiple formats, providing a great deal of flexibility in its use.
+  - : تصویر مشخص شده را ترسیم می‌کند. این متد در چندین قالب موجود است و انعطاف‌پذیری زیادی در استفاده از آن فراهم می‌کند.
 
-### Pixel manipulation
+### دستکاری پیکسل
 
-See also the {{domxref("ImageData")}} object.
+همچنین به شیء {{domxref("ImageData")}} مراجعه کنید.
 
 - {{domxref("CanvasRenderingContext2D.createImageData()")}}
-  - : Creates a new, blank {{domxref("ImageData")}} object with the specified dimensions. All of the pixels in the new object are transparent black.
+  - : یک شیء {{domxref("ImageData")}} جدید و خالی با ابعاد مشخص شده ایجاد می‌کند. تمام پیکسل‌های شیء جدید سیاه شفاف هستند.
 - {{domxref("CanvasRenderingContext2D.getImageData()")}}
-  - : Returns an {{domxref("ImageData")}} object representing the underlying pixel data for the area of the canvas denoted by the rectangle which starts at _(sx, sy)_ and has an _sw_ width and _sh_ height.
+  - : یک شیء {{domxref("ImageData")}} شامل داده‌های پیکسل زیرین برای ناحیه‌ای از canvas را که با مستطیلی که از _(sx, sy)_ شروع می‌شود و عرض _sw_ و ارتفاع _sh_ دارد، برمی‌گرداند.
 - {{domxref("CanvasRenderingContext2D.putImageData()")}}
-  - : Paints data from the given {{domxref("ImageData")}} object onto the bitmap. If a dirty rectangle is provided, only the pixels from that rectangle are painted.
+  - : داده‌های حاصل از شیء {{domxref("ImageData")}} داده شده را روی بیت‌مپ اعمال می‌کند. اگر یک مستطیل کثیف (dirty rectangle) ارائه شود، فقط پیکسل‌های آن مستطیل اعمال می‌شوند.
 
-### Image smoothing
+### هموارسازی تصویر
 
 - {{domxref("CanvasRenderingContext2D.imageSmoothingEnabled")}}
-  - : Image smoothing mode; if disabled, images will not be smoothed if scaled.
+  - : حالت هموارسازی تصویر؛ اگر غیرفعال شود، تصاویر در صورت تغییر اندازه هموار نمی‌شوند.
 - {{domxref("CanvasRenderingContext2D.imageSmoothingQuality")}}
-  - : Allows you to set the quality of image smoothing.
+  - : به شما امکان می‌دهد کیفیت هموارسازی تصویر را تنظیم کنید.
 
-### The canvas state
+### وضعیت canvas
 
-The `CanvasRenderingContext2D` rendering context contains a variety of drawing style states (attributes for line styles, fill styles, shadow styles, text styles). The following methods help you to work with that state:
+زمینهٔ رندر `CanvasRenderingContext2D` شامل حالات مختلف استایل ترسیم (ویژگی‌های استایل خط، استایل پر کردن، استایل سایه، استایل متن) است. متدهای زیر به شما در کار با این وضعیت کمک می‌کنند:
 
 - {{domxref("CanvasRenderingContext2D.save()")}}
-  - : Saves the current drawing style state using a stack so you can revert any change you make to it using `restore()`.
+  - : وضعیت فعلی استایل ترسیم را با استفاده از یک پشته ذخیره می‌کند تا بتوانید هر تغییری که در آن ایجاد کرده‌اید را با استفاده از `restore()` برگردانید.
 - {{domxref("CanvasRenderingContext2D.restore()")}}
-  - : Restores the drawing style state to the last element on the 'state stack' saved by `save()`.
+  - : وضعیت استایل ترسیم را به آخرین عنصر در 'پشته وضعیت' که توسط `save()` ذخیره شده است، بازمی‌گرداند.
 - {{domxref("CanvasRenderingContext2D.canvas")}}
-  - : A read-only back-reference to the {{domxref("HTMLCanvasElement")}}. Might be [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) if it is not associated with a {{HTMLElement("canvas")}} element.
+  - : یک ارجاع برگشتی فقط خواندنی به {{domxref("HTMLCanvasElement")}}. اگر با یک عنصر {{HTMLElement("canvas")}} مرتبط نباشد، ممکن است [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) باشد.
 - {{domxref("CanvasRenderingContext2D.getContextAttributes()")}}
-  - : Returns an object containing the context attributes used by the browser. Context attributes can be requested when using {{domxref("HTMLCanvasElement.getContext()")}} to create the 2D context.
+  - : یک شیء شامل ویژگی‌های زمینه‌ای که مرورگر استفاده می‌کند را برمی‌گرداند. این ویژگی‌ها را می‌توان هنگام استفاده از {{domxref("HTMLCanvasElement.getContext()")}} برای ایجاد زمینهٔ دوبعدی درخواست کرد.
 - {{domxref("CanvasRenderingContext2D.reset()")}}
-  - : Resets the rendering context, including the backing buffer, the drawing state stack, path, and styles.
+  - : زمینهٔ رندر، از جمله بافر پشتیبان، پشته وضعیت ترسیم، مسیر و استایل‌ها را بازنشانی می‌کند.
 - {{domxref("CanvasRenderingContext2D.isContextLost()")}} {{Experimental_Inline}}
-  - : Returns `true` if the rendering context was lost.
+  - : اگر زمینهٔ رندر از دست رفته باشد، مقدار `true` را برمی‌گرداند.
 
-### Filters
+### فیلترها
 
 - {{domxref("CanvasRenderingContext2D.filter")}}
-  - : Applies a CSS or SVG filter to the canvas, e.g., to change its brightness or blurriness.
+  - : یک فیلتر CSS یا SVG را به canvas اعمال می‌کند، مثلاً برای تغییر روشنایی یا تاری آن.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLCanvasElement")}}
 - {{HTMLElement("canvas")}}
