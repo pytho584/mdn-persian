@@ -1,9 +1,8 @@
 ---
 title: "AudioTrack: sourceBuffer property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack/sourceBuffer"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
-
 ---
 title: "AudioTrack: sourceBuffer property"
 short-title: sourceBuffer
@@ -14,21 +13,16 @@ browser-compat: api.AudioTrack.sourceBuffer
 
 {{APIRef("Media Source Extensions")}}
 
-The read-only **{{domxref("AudioTrack")}}**
-property **`sourceBuffer`** returns the
-{{domxref("SourceBuffer")}} that created the track, or null if the track was not
-created by a {{domxref("SourceBuffer")}} or the {{domxref("SourceBuffer")}} has been
-removed from the {{domxref("MediaSource.sourceBuffers")}} attribute of its parent
-media source.
+ویژگی فقط‑خواندنی **`sourceBuffer`** از {{domxref("AudioTrack")}}، شیء {{domxref("SourceBuffer")}}ای را که این تِرَک را ایجاد کرده است برمی‌گرداند، یا اگر تِرَک توسط یک {{domxref("SourceBuffer")}} ایجاد نشده باشد یا {{domxref("SourceBuffer")}} از ویژگی {{domxref("MediaSource.sourceBuffers")}} منبع رسانهٔ والد خود حذف شده باشد، `null` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("SourceBuffer")}} or null.
+یک {{domxref("SourceBuffer")}} یا `null`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
