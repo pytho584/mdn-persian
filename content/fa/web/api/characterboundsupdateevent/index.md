@@ -1,10 +1,4 @@
 ---
-title: "CharacterBoundsUpdateEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterBoundsUpdateEvent"
-status: "needs-translation"
----
-
----
 title: CharacterBoundsUpdateEvent
 slug: Web/API/CharacterBoundsUpdateEvent
 page-type: web-api-interface
@@ -15,29 +9,29 @@ browser-compat: api.CharacterBoundsUpdateEvent
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`CharacterBoundsUpdateEvent`** interface is a [DOM event](/en-US/docs/Web/API/Event) that represents a request from the operating system to know the bounds of certain characters within an editable region that's attached to an {{domxref("EditContext")}} instance.
+**`CharacterBoundsUpdateEvent`** 是一个 [DOM 事件](/en-US/docs/Web/API/Event)，表示操作系统发出的请求，目的是获取已附加到 {{domxref("EditContext")}} 实例的可编辑区域中某些字符的边界。
 
-This interface inherits properties from {{domxref("Event")}}.
+此接口继承自 {{domxref("Event")}} 的属性。
 
 {{InheritanceDiagram}}
 
-## Constructor
+## 构造函数
 
 - {{domxref("CharacterBoundsUpdateEvent.CharacterBoundsUpdateEvent", "CharacterBoundsUpdateEvent()")}} {{experimental_inline}}
-  - : Creates a new `CharacterBoundsUpdateEvent` object.
+  - : 创建一个新的 `CharacterBoundsUpdateEvent` 对象。
 
-## Instance properties
+## 实例属性
 
 - {{domxref('CharacterBoundsUpdateEvent.rangeStart')}} {{readonlyinline}} {{experimental_inline}}
-  - : The offset of the first character within the editable region text for which the operating system needs the bounds.
+  - : 操作系统需要其边界的可编辑区域文本中第一个字符的偏移量。
 - {{domxref('CharacterBoundsUpdateEvent.rangeEnd')}} {{readonlyinline}} {{experimental_inline}}
-  - : The offset of the last character within the editable region text for which the operating system needs the bounds.
+  - : 操作系统需要其边界的可编辑区域文本中最后一个字符的偏移量。
 
-## Examples
+## 示例
 
-### Updating the character bounds when needed
+### 在需要时更新字符边界
 
-This example shows how to use the `characterboundsupdate` event and the `updateCharacterBounds` method to inform the operating system of the character bounds it requires. Note that the event listener callback is only called when using an IME window, or other platform-specific editing UI surfaces, to compose text.
+此示例展示了如何使用 `characterboundsupdate` 事件和 `updateCharacterBounds` 方法，将操作系统所需的字符边界告知操作系统。注意，事件监听器的回调仅在通过 IME 窗口或其他平台特定的编辑界面来组合文本时才会被调用。
 
 ```html
 <canvas id="editor-canvas"></canvas>
@@ -96,10 +90,10 @@ editContext.addEventListener("characterboundsupdate", (e) => {
 });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
