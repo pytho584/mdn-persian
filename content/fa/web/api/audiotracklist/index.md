@@ -1,7 +1,7 @@
 ---
 title: "AudioTrackList"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,52 +13,52 @@ browser-compat: api.AudioTrackList
 
 {{APIRef("HTML DOM")}}
 
-The **`AudioTrackList`** interface is used to represent a list of the audio tracks contained within a given HTML media element, with each track represented by a separate {{domxref("AudioTrack")}} object in the list.
+رابط **`AudioTrackList`** برای نمایش فهرستی از آهنگ‌های صوتی موجود در یک عنصر رسانه HTML مشخص استفاده می‌شود، که هر آهنگ توسط یک شیء جداگانه {{domxref("AudioTrack")}} در فهرست نمایش داده می‌شود.
 
-Retrieve an instance of this object with {{domxref('HTMLMediaElement.audioTracks')}}. The individual tracks can be accessed using array syntax.
+یک نمونه از این شیء را با {{domxref('HTMLMediaElement.audioTracks')}} دریافت کنید. آهنگ‌های جداگانه را می‌توان با استفاده از نحو آرایه‌ای (array syntax) به دست آورد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from its parent interface, {{domxref("EventTarget")}}._
+_این رابط همچنین ویژگی‌هایی را از رابط والد خود، {{domxref("EventTarget")}}، به ارث می‌برد._
 
 - {{domxref("AudioTrackList.length", "length")}} {{ReadOnlyInline}}
-  - : The number of tracks in the list.
+  - : تعداد آهنگ‌های موجود در فهرست.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface also inherits methods from its parent interface, {{domxref("EventTarget")}}._
+_این رابط همچنین روش‌هایی را از رابط والد خود، {{domxref("EventTarget")}}، به ارث می‌برد._
 
 - {{domxref("AudioTrackList.getTrackById", "getTrackById()")}}
-  - : Returns the {{domxref("AudioTrack")}} found within the `AudioTrackList` whose {{domxref("AudioTrack.id", "id")}} matches the specified string. If no match is found, `null` is returned.
+  - : {{domxref("AudioTrack")}} موجود در `AudioTrackList` را که {{domxref("AudioTrack.id", "id")}} آن با رشته مشخص شده مطابقت دارد، برمی‌گرداند. اگر هیچ موردی یافت نشود، `null` برگردانده می‌شود.
 
-## Events
+## رویدادها
 
 - [`addtrack`](/en-US/docs/Web/API/AudioTrackList/addtrack_event)
-  - : Fired when a new audio track has been added to the media element.
+  - : زمانی که یک آهنگ صوتی جدید به عنصر رسانه اضافه می‌شود، فعال می‌گردد.
 - [`change`](/en-US/docs/Web/API/AudioTrackList/change_event)
-  - : Fired when a track has been enabled or disabled.
+  - : زمانی که یک آهنگ فعال یا غیرفعال می‌شود، فعال می‌گردد.
 - [`removetrack`](/en-US/docs/Web/API/AudioTrackList/removetrack_event)
-  - : Fired when a new audio track has been removed from the media element.
+  - : زمانی که یک آهنگ صوتی جدید از عنصر رسانه حذف می‌شود، فعال می‌گردد.
 
-## Usage notes
+## نکات استفاده
 
-In addition to being able to obtain direct access to the audio tracks present on a media element, `AudioTrackList` lets you set event handlers on the {{domxref("AudioTrackList/addtrack_event", "addtrack")}} and {{domxref("AudioTrackList/removetrack_event", "removetrack")}} events, so that you can detect when tracks are added to or removed from the media element's stream. See the {{domxref("AudioTrackList/addtrack_event", "addtrack")}} and {{domxref("AudioTrackList/removetrack_event", "removetrack")}} events for details and examples.
+علاوه بر امکان دسترسی مستقیم به آهنگ‌های صوتی موجود در یک عنصر رسانه، `AudioTrackList` به شما اجازه می‌دهد تا مدیریت‌کننده‌های رویداد را بر روی رویدادهای {{domxref("AudioTrackList/addtrack_event", "addtrack")}} و {{domxref("AudioTrackList/removetrack_event", "removetrack")}} تنظیم کنید، تا بتوانید زمانی که آهنگ‌هایی به جریان عنصر رسانه اضافه یا از آن حذف می‌شوند، تشخیص دهید. برای جزئیات و مثال‌ها به رویدادهای {{domxref("AudioTrackList/addtrack_event", "addtrack")}} و {{domxref("AudioTrackList/removetrack_event", "removetrack")}} مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-### Getting a media element's audio track list
+### دریافت فهرست آهنگ‌های صوتی یک عنصر رسانه
 
-To get a media element's `AudioTrackList`, use its {{domxref("HTMLMediaElement.audioTracks", "audioTracks")}} property.
+برای دریافت `AudioTrackList` یک عنصر رسانه، از ویژگی {{domxref("HTMLMediaElement.audioTracks", "audioTracks")}} آن استفاده کنید.
 
 ```js
 const audioTracks = document.querySelector("video").audioTracks;
 ```
 
-### Monitoring track count changes
+### نظارت بر تغییرات تعداد آهنگ‌ها
 
-In this example, we have an app that displays information about the number of channels available. To keep it up to date, handlers for the {{domxref("AudioTrackList/addtrack_event", "addtrack")}} and {{domxref("AudioTrackList/removetrack_event", "removetrack")}} events are set up.
+در این مثال، ما یک برنامه داریم که اطلاعاتی در مورد تعداد کانال‌های موجود نمایش می‌دهد. برای به‌روز نگه داشتن آن، مدیریت‌کننده‌هایی برای رویدادهای {{domxref("AudioTrackList/addtrack_event", "addtrack")}} و {{domxref("AudioTrackList/removetrack_event", "removetrack")}} تنظیم شده‌است.
 
 ```js
 audioTracks.onaddtrack = updateTrackCount;
@@ -70,10 +70,10 @@ function updateTrackCount(event) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
