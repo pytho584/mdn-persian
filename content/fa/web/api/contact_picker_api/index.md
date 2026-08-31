@@ -1,10 +1,4 @@
 ---
-title: "Contact Picker API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Contact_Picker_API"
-status: "needs-translation"
----
-
----
 title: Contact Picker API
 slug: Web/API/Contact_Picker_API
 page-type: web-api-overview
@@ -15,43 +9,43 @@ browser-compat: api.ContactsManager
 
 {{securecontext_header}}{{DefaultAPISidebar("Contact Picker API")}}{{SeeCompatTable}}
 
-The Contact Picker API allows users to select entries from their contact list and share limited details of the selected entries with a website or application.
+Contact Picker API به کاربران اجازه می‌دهد ورودی‌هایی را از فهرست مخاطبان خود انتخاب کنند و جزئیات محدودی از ورودی‌های انتخاب‌شده را با یک وب‌سایت یا برنامه به اشتراک بگذارند.
 
 > [!NOTE]
-> This API is _not available_ in [Web Workers](/en-US/docs/Web/API/Web_Workers_API) (not exposed via {{domxref("WorkerNavigator")}}).
+> این API در [Web Workers](/en-US/docs/Web/API/Web_Workers_API) در دسترس _نیست_ (از طریق {{domxref("WorkerNavigator")}} در معرض دید قرار نمی‌گیرد).
 
-## Contact Picker API Concepts and Usage
+## مفاهیم و کاربرد Contact Picker API
 
-Access to contacts has long been a feature available within native applications. The Contacts Picker API brings that functionality to web applications.
+دسترسی به مخاطبان مدت طولانی است که یکی از امکانات موجود در برنامه‌های بومی (native) به شمار می‌رود. Contact Picker API این قابلیت را به برنامه‌های وب می‌آورد.
 
-Use cases include selecting contacts to message via an email or chat application, selecting a contacts phone number for use with voice over IP (VOIP), or for discovering contacts who have already joined a social platform. User agents can also offer a consistent experience with other applications on a users device.
+موارد استفاده شامل انتخاب مخاطب برای ارسال پیام از طریق یک برنامه ایمیل یا چت، انتخاب شماره تلفن مخاطب برای استفاده در تماس صوتی از طریق پروتکل اینترنت (VOIP)، یا یافتن مخاطبانی است که قبلاً به یک پلتفرم اجتماعی پیوسته‌اند. عامل‌های کاربر (user agents) همچنین می‌توانند تجربه‌ای سازگار با سایر برنامه‌های موجود روی دستگاه کاربر ارائه دهند.
 
-When calling the {{domxref('ContactsManager.select', 'select')}} method of the {{domxref('ContactsManager')}} interface, the user is presented with a contact picker, whereby they can then select contact information to share with the web application. User interaction is required before permission to display the contact picker is granted and access to contacts is not persistent; the user must grant access every time a request is made by the application.
+هنگام فراخوانی متد {{domxref('ContactsManager.select', 'select')}} از رابط {{domxref('ContactsManager')}}، یک انتخاب‌گر مخاطب (contact picker) به کاربر نمایش داده می‌شود که از طریق آن می‌تواند اطلاعات تماس مورد نظر برای به اشتراک‌گذاری با برنامه وب را انتخاب کند. پیش از اعطای اجازه نمایش انتخاب‌گر مخاطب، تعامل کاربر ضروری است و دسترسی به مخاطبان دائمی نیست؛ کاربر باید هر بار که برنامه درخواستی ارسال می‌کند، اجازه دسترسی را صادر کند.
 
-This API is only available from a secure top-level browsing context and very carefully considers the sensitivity and privacy of contact data. The onus is on the user for choosing data to share and only allows specific data for selected contacts, with no access to any data for other contacts.
+این API فقط از یک زمینه مرور سطح بالا و امن (secure top-level browsing context) در دسترس است و با دقت زیادی حساسیت و حریم خصوصی داده‌های مخاطبان را در نظر می‌گیرد. مسئولیت انتخاب داده‌های قابل اشتراک‌گذاری بر عهده کاربر است؛ این API فقط به داده‌های مشخصی از مخاطبان انتخاب‌شده اجازه می‌دهد و هیچ دسترسی به داده‌های سایر مخاطبان وجود ندارد.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("ContactAddress")}}
-  - : Represents a physical address.
+  - : یک آدرس فیزیکی را نمایش می‌دهد.
 - {{domxref("ContactsManager")}}
-  - : Provides a way for users to select and share limited details of contacts with a web application.
+  - : راهی برای انتخاب و به اشتراک‌گذاری جزئیات محدود مخاطبان با یک برنامه وب در اختیار کاربران قرار می‌دهد.
 - {{domxref("Navigator.contacts")}}
-  - : Returns a {{domxref("ContactsManager")}} object instance, from which all other functionality can be accessed.
+  - : یک نمونه از شیء {{domxref("ContactsManager")}} برمی‌گرداند که از طریق آن می‌توان به تمام عملکردهای دیگر دسترسی داشت.
 
-## Examples
+## نمونه‌ها
 
-### Feature Detection
+### تشخیص ویژگی
 
-The following code checks whether the Contact Picker API is supported.
+کد زیر بررسی می‌کند که آیا Contact Picker API پشتیبانی می‌شود یا خیر.
 
 ```js
 const supported = "contacts" in navigator;
 ```
 
-### Checking for Supported Properties
+### بررسی ویژگی‌های پشتیبانی‌شده
 
-The following asynchronous function uses the `getProperties()` method to check for supported properties.
+تابع ناهمگام زیر از متد `getProperties()` برای بررسی ویژگی‌های پشتیبانی‌شده استفاده می‌کند.
 
 ```js
 async function checkProperties() {
@@ -74,11 +68,11 @@ async function checkProperties() {
 }
 ```
 
-### Selecting Contacts
+### انتخاب مخاطبان
 
-The following example sets an array of properties to be retrieved for each contact, as well as setting an options object to allow for multiple contacts to be selected.
+مثال زیر آرایه‌ای از ویژگی‌های مورد نیاز برای بازیابی هر مخاطب و همچنین یک شیء options تنظیم می‌کند تا امکان انتخاب چند مخاطب فراهم شود.
 
-An asynchronous function is then defined which uses the `select()` method to present the user with a contact picker interface and handle the chosen results.
+سپس یک تابع ناهمگام تعریف می‌شود که از متد `select()` برای نمایش رابط انتخاب‌گر مخاطب به کاربر و مدیریت نتایج انتخاب‌شده استفاده می‌کند.
 
 ```js
 const props = ["name", "email", "tel", "address", "icon"];
@@ -94,17 +88,17 @@ async function getContacts() {
 }
 ```
 
-`handleResults()` is a developer defined function.
+`handleResults()` یک تابع تعریف‌شده توسط توسعه‌دهنده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [A Contact Picker for the Web](https://developer.chrome.com/docs/capabilities/web-apis/contact-picker)
 - [Contact Picker API live demo](https://mdn.github.io/dom-examples/contact-picker/)
