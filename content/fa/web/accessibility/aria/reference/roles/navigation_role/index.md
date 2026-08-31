@@ -1,7 +1,7 @@
 ---
 title: "ARIA: navigation role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/navigation_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,7 +15,7 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `navigation` role is used to identify major groups of links used for navigating through a website or page content.
+نقش `navigation` برای شناسایی گروه‌های اصلی از پیوندها که برای پیمایش در یک وب‌سایت یا محتوای صفحه استفاده می‌شود، به کار می‌رود.
 
 ```html
 <div role="navigation" aria-label="Main">
@@ -23,31 +23,31 @@ The `navigation` role is used to identify major groups of links used for navigat
 </div>
 ```
 
-This is a website's main navigation.
+این ناوبری اصلی یک وب‌سایت است.
 
-## Description
+## توضیحات
 
-The `navigation` role is [a landmark](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) role. Landmark roles provide a way to identify the organization and structure of a web page. By classifying and labeling sections of a page, structural information conveyed visually through layout is represented programmatically. Screen readers use landmark roles to provide keyboard navigation to important sections of a page. Like the HTML {{HTMLElement('nav')}} element, navigation landmarks provide a way to identify groups (e.g., lists) of links that are intended to be used for website or page content navigation. If a page includes more than one navigation landmark, each should have a unique label. If two or more navigational landmark on a page have the same set of links, use the same label for each.
+نقش `navigation` یک [نقش نشانه‌گذاری](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) است. نقش‌های نشانه‌گذاری راهی برای شناسایی سازمان و ساختار یک صفحه وب فراهم می‌کنند. با طبقه‌بندی و برچسب‌گذاری بخش‌های یک صفحه، اطلاعات ساختاری که به صورت بصری از طریق چیدمان منتقل می‌شود، به صورت برنامه‌نویسی‌شده نمایش داده می‌شود. صفحه‌خوان‌ها از نقش‌های نشانه‌گذاری برای ارائه ناوبری صفحه‌کلید به بخش‌های مهم یک صفحه استفاده می‌کنند. مانند عنصر {{HTMLElement('nav')}} در HTML، نشانه‌های ناوبری راهی برای شناسایی گروه‌ها (مانند فهرست‌ها) از پیوندها که برای پیمایش وب‌سایت یا محتوای صفحه در نظر گرفته شده‌اند، فراهم می‌کنند. اگر یک صفحه بیش از یک نشانه ناوبری داشته باشد، هر یک باید دارای یک برچسب منحصربه‌فرد باشد. اگر دو یا چند نشانه ناوبری در یک صفحه مجموعه پیوندهای یکسانی داشته باشند، از برچسب یکسانی برای هر کدام استفاده کنید.
 
-It is preferable to use the HTML5 [`<nav>` element](/en-US/docs/Web/HTML/Reference/Elements/nav) to define a navigation landmark. If the HTML5 nav element technique is not being used, use a `role="navigation"` attribute to define a navigation landmark.
+ترجیحاً از عنصر [`<nav>`](/en-US/docs/Web/HTML/Reference/Elements/nav) HTML5 برای تعریف یک نشانه ناوبری استفاده شود. اگر از تکنیک عنصر nav HTML5 استفاده نمی‌شود، از یک ویژگی `role="navigation"` برای تعریف یک نشانه ناوبری استفاده کنید.
 
 > [!NOTE]
-> Using the {{HTMLElement('nav')}} element will automatically communicate a section has a role of `navigation`. Developers should always prefer using the correct semantic HTML element over using ARIA
+> استفاده از عنصر {{HTMLElement('nav')}} به طور خودکار اعلام می‌کند که یک بخش دارای نقش `navigation` است. توسعه‌دهندگان همیشه باید ترجیح دهند از عنصر معنایی صحیح HTML به جای استفاده از ARIA استفاده کنند.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
 - [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
-  - : A brief description of the purpose of the navigation, omitting the term "navigation", as the screen reader will read both the role and the contents of the label.
+  - : توضیح مختصری از هدف ناوبری، با حذف عبارت "navigation"، زیرا صفحه‌خوان هم نقش و هم محتوای برچسب را می‌خواند.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-None.
+هیچ‌کدام.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-None.
+هیچ‌کدام.
 
-## Examples
+## مثال‌ها
 
 ```html
 <div role="navigation" aria-label="Customer service">
@@ -62,21 +62,21 @@ None.
 </div>
 ```
 
-## Accessibility concerns
+## نگرانی‌های دسترسی
 
-[Landmark roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) are intended to be used sparingly, to identify larger overall sections of the document. Using too many landmark roles can create "noise" in screen readers, making it difficult to understand the overall layout of the page.
+[نقش‌های نشانه‌گذاری](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) به منظور استفاده محدود، برای شناسایی بخش‌های بزرگ‌تر کلی سند در نظر گرفته شده‌اند. استفاده از تعداد زیاد نقش‌های نشانه‌گذاری می‌تواند در صفحه‌خوان‌ها "نویز" ایجاد کند و درک چیدمان کلی صفحه را دشوار سازد.
 
-## Best practices
+## بهترین روش‌ها
 
-### Prefer HTML
+### ترجیح HTML
 
-Using the {{HTMLElement('nav')}} element will automatically communicate that the element has a role of `navigation`. If possible, prefer using the semantic `<nav>` element instead of the `navigation` role.
+استفاده از عنصر {{HTMLElement('nav')}} به طور خودکار اعلام می‌کند که عنصر دارای نقش `navigation` است. در صورت امکان، ترجیح دهید از عنصر معنایی `<nav>` به جای نقش `navigation` استفاده کنید.
 
-### Labeling landmarks
+### برچسب‌گذاری نشانه‌ها
 
-#### Multiple landmarks
+#### چندین نشانه
 
-If there is more than one `navigation` landmark role or {{HTMLElement('nav')}} element in a document, provide a label for each landmark. This label will allow an assistive technology user to be able to quickly understand the purpose of each landmark.
+اگر بیش از یک نقش نشانه `navigation` یا عنصر {{HTMLElement('nav')}} در یک سند وجود داشته باشد، برای هر نشانه یک برچسب ارائه دهید. این برچسب به کاربر فناوری کمکی امکان می‌دهد تا به سرعت هدف هر نشانه را درک کند.
 
 ```html
 <div id="main-nav" role="navigation" aria-label="Main">
@@ -90,9 +90,9 @@ If there is more than one `navigation` landmark role or {{HTMLElement('nav')}} e
 </nav>
 ```
 
-#### Repeated landmarks
+#### نشانه‌های تکراری
 
-If a `navigation` landmark role or {{HTMLElement('nav')}} element in a document is repeated in a document, and both landmarks have identical content, use the same label for each landmark. An example of this would be repeating the main navigation at the top and bottom of the page.
+اگر یک نقش نشانه `navigation` یا عنصر {{HTMLElement('nav')}} در یک سند تکرار شود و هر دو نشانه محتوای یکسانی داشته باشند، از برچسب یکسانی برای هر نشانه استفاده کنید. نمونه‌ای از این می‌تواند تکرار ناوبری اصلی در بالا و پایین صفحه باشد.
 
 ```html
 <header>
@@ -110,17 +110,17 @@ If a `navigation` landmark role or {{HTMLElement('nav')}} element in a document 
 </footer>
 ```
 
-#### Redundant descriptions
+#### توضیحات تکراری
 
-Screen readers will announce the type of role the landmark is. Because of this, you do not need to describe what the landmark is in its label. For example, a declaration of `role="navigation"` with an of `aria-label="Primary navigation"` may be announced redundantly as, "primary navigation navigation".
+صفحه‌خوان‌ها نوع نقش نشانه را اعلام می‌کنند. به همین دلیل، نیازی نیست که در برچسب خود توضیح دهید که نشانه چیست. برای مثال، اعلام `role="navigation"` با `aria-label="Primary navigation"` ممکن است به صورت تکراری به عنوان "primary navigation navigation" اعلام شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement('nav')}} element
-- [Using HTML sections and outlines](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)
-- [Accessible Landmarks | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
-- [Semantic navigation with the nav element | HTML5 Doctor](https://html5doctor.com/nav-element/)
+- عنصر {{HTMLElement('nav')}}
+- [استفاده از بخش‌ها و طرح‌بندی HTML](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)
+- [نشانه‌های قابل دسترس | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
+- [ناوبری معنایی با عنصر nav | HTML5 Doctor](https://html5doctor.com/nav-element/)
