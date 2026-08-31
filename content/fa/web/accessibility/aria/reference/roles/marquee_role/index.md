@@ -1,7 +1,7 @@
 ---
 title: "ARIA: marquee role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/marquee_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,32 +13,32 @@ spec-urls: https://w3c.github.io/aria/#marquee
 sidebar: accessibilitysidebar
 ---
 
-A `marquee` is a type of [live region](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) containing non-essential information which changes frequently.
+یک `marquee` نوعی [منطقه زنده](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) است که حاوی اطلاعات غیرضروری بوده و به‌طور مکرر تغییر می‌کند.
 
-## Description
+## توضیحات
 
-The `marquee` role defines an area as a type of live region that presents non-essential information that changes frequently. Examples of marquees include stock tickers and ad banners; information that is not necessarily sought out by the user that may be presented in any order. The main difference between a `marquee` and a [`log`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role) is that log information is presented in a meaningful order such as a by date.
+نقش `marquee` یک منطقه را به‌عنوان نوعی ناحیه زنده تعریف می‌کند که اطلاعات غیرضروری را که به‌طور مکرر تغییر می‌کنند ارائه می‌دهد. نمونه‌هایی از marquee شامل تیکرهای سهام و بنرهای تبلیغاتی است؛ اطلاعاتی که لزوماً توسط کاربر جستجو نمی‌شوند و ممکن است به هر ترتیبی ارائه شوند. تفاوت اصلی بین `marquee` و [`log`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role) این است که اطلاعات log به ترتیب معناداری مانند بر اساس تاریخ ارائه می‌شوند.
 
-Elements with the role marquee have an implicit [aria-live](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) value of `off`.
+عناصر دارای نقش marquee مقدار ضمنی [aria-live](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) برابر با `off` دارند.
 
-The marquee is required to have an accessible name. Use [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) if a visible label is present, otherwise use [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label).
+marquee باید یک نام قابل دسترس داشته باشد. اگر برچسب قابل مشاهده وجود دارد از [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) استفاده کنید، در غیر این صورت از [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) استفاده کنید.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های WAI-ARIA مرتبط
 
 - [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live)
-  - : Defines when assistive technology should inform the user of updates to content. Elements with the role `marquee` have an implicit `aria-live` value of `off`, meaning screen readers will not announce changes inside the marquee, even when the user is idle.
+  - : تعیین می‌کند که فناوری کمکی چه زمانی باید کاربر را از به‌روزرسانی‌های محتوا مطلع کند. عناصر دارای نقش `marquee` مقدار ضمنی `aria-live` برابر با `off` دارند، به این معنی که صفحه‌خوان‌ها تغییرات داخل marquee را حتی زمانی که کاربر بیکار است اعلام نمی‌کنند.
 
-- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : The `marquee` is required to have an accessible name. Use `aria-labelledby` if a visible label is present, otherwise use `aria-label`.
+- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
+  - : `marquee` باید یک نام قابل دسترس داشته باشد. اگر برچسب قابل مشاهده وجود دارد از `aria-labelledby` استفاده کنید، در غیر این صورت از `aria-label` استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: `alert` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)
-- [ARIA: `log` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role)
-- [ARIA: `status` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role)
-- [ARIA: `timer` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/timer_role)
-- [ARIA live regions](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
+- [نقش `alert` در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)
+- [نقش `log` در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role)
+- [نقش `status` در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role)
+- [نقش `timer` در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/timer_role)
+- [مناطق زنده ARIA](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
