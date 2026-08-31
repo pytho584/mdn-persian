@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRegistration: uploadTotal property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/uploadTotal"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,24 +16,24 @@ browser-compat: api.BackgroundFetchRegistration.uploadTotal
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`uploadTotal`** read-only property of the {{domxref("BackgroundFetchRegistration")}} interface returns the total number of bytes to be sent to the server.
+ویژگی فقط‌خواندنی **`uploadTotal`** از رابط {{domxref("BackgroundFetchRegistration")}}، تعداد کل بایت‌هایی را که باید به سرور ارسال شوند بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{jsxref("Number")}}.
+یک {{jsxref("Number")}}.
 
-## Examples
+## مثال‌ها
 
-Logging this property to the console returns the total number of this upload.
+ثبت‌کردن این ویژگی در کنسول، تعداد کل این بارگذاری را بازمی‌گرداند.
 
 ```js
 console.log(bgFetch.uploadTotal);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
