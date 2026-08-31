@@ -1,7 +1,7 @@
 ---
 title: "Background Fetch API"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Background_Fetch_API"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -19,47 +19,47 @@ spec-urls: https://wicg.github.io/background-fetch/
 
 {{DefaultAPISidebar("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **Background Fetch API** provides a method for managing downloads that may take a significant amount of time such as movies, audio files, and software.
+**Background Fetch API** روشی برای مدیریت دانلودهایی فراهم میکند که ممکن است زمان قابل توجهی طول بکشند، مانند فیلمها، فایلهای صوتی و نرمافزارها.
 
-## Concepts and Usage
+## مفهوم و کاربرد
 
-When a web application requires the user to download large files, this often presents a problem in that the user needs to stay connected to the page for the download to complete. If they lose connectivity, close the tab or navigate away from the page the download stops.
+هنگامی که یک برنامهٔ وب نیاز به دانلود فایل‌های بزرگ توسط کاربر دارد، این اغلب مشکلی ایجاد می‌کند: کاربر باید برای تکمیل دانلود، به صفحه متصل بماند. اگر اتصال را از دست بدهد، برگه را ببندد یا از صفحه خارج شود، دانلود متوقف می‌شود.
 
-The {{domxref("Background Synchronization API", "", "", "nocode")}} provides a way for service workers to defer processing until a user is connected; however it can't be used for long running tasks such as downloading a large file. Background Sync requires that the service worker stays alive until the fetch is completed, and to conserve battery life and to prevent unwanted tasks happening in the background the browser will at some point terminate the task.
+{{domxref("Background Synchronization API", "", "", "nocode")}} روشی برای سرویس‌ورکرها فراهم می‌کند تا پردازش را تا زمانی که کاربر متصل است به تأخیر بیندازند؛ با این حال نمی‌توان از آن برای کارهای طولانی‌مدت مانند دانلود یک فایل بزرگ استفاده کرد. Background Sync مستلزم آن است که سرویس‌ورکر تا تکمیل واکشی زنده بماند و برای صرفه‌جویی در عمر باتری و جلوگیری از کارهای ناخواسته در پس‌زمینه، مرورگر در نقطه‌ای کار را خاتمه خواهد داد.
 
-The Background Fetch API solves this problem. It creates a way for a web developer to tell the browser to perform some fetches in the background, for example when the user clicks a button to download a video file. The browser then performs the fetches in a user-visible way, displaying progress to the user and giving them a method to cancel the download. Once the download is complete the browser then opens the service worker, at which point your application can do something with the response if required.
+Background Fetch API این مشکل را حل می‌کند. این API روشی ایجاد می‌کند که توسعه‌دهندهٔ وب بتواند به مرورگر بگوید برخی واکشی‌ها را در پس‌زمینه انجام دهد، مثلاً وقتی کاربر دکمه‌ای برای دانلود یک فایل ویدیویی کلیک می‌کند. مرورگر سپس واکشی‌ها را به شکلی قابل مشاهده برای کاربر انجام می‌دهد، پیشرفت را به کاربر نمایش می‌دهد و روشی برای لغو دانلود در اختیار او قرار می‌دهد. پس از تکمیل دانلود، مرورگر سرویس‌ورکر را باز می‌کند و در آن نقطه، برنامهٔ شما در صورت نیاز می‌تواند با پاسخ کاری انجام دهد.
 
-The Background Fetch API will enable the fetch to happen if the user starts the process while offline. Once they are connected it will begin. If the user goes off line, the process pauses until the user is on again.
+Background Fetch API امکان انجام واکشی را فراهم می‌کند حتی اگر کاربر فرآیند را در حالت آفلاین شروع کند. به محض اتصال، عملیات آغاز می‌شود. اگر کاربر آفلاین شود، فرآیند تا زمانی که کاربر دوباره آنلاین شود متوقف می‌ماند.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("BackgroundFetchManager")}} {{Experimental_Inline}}
-  - : A map where the keys are background fetch IDs and the values are {{domxref("BackgroundFetchRegistration")}} objects.
+  - : یک نگاشت که در آن کلیدها شناسه‌های واکشی پس‌زمینه و مقادیر اشیاء {{domxref("BackgroundFetchRegistration")}} هستند.
 - {{domxref("BackgroundFetchRegistration")}} {{Experimental_Inline}}
-  - : Represents a Background Fetch.
+  - : یک واکشی پس‌زمینه را نشان می‌دهد.
 - {{domxref("BackgroundFetchRecord")}} {{Experimental_Inline}}
-  - : Represents an individual fetch request and response.
+  - : یک درخواست و پاسخ واکشی تکی را نشان می‌دهد.
 - {{domxref("BackgroundFetchEvent")}} {{Experimental_Inline}}
-  - : The event type for the {{domxref("ServiceWorkerGlobalScope.backgroundfetchabort_event", "backgroundfetchabort")}} and {{domxref("ServiceWorkerGlobalScope.backgroundfetchclick_event", "backgroundfetchclick")}} event
+  - : نوع رویداد برای رویدادهای {{domxref("ServiceWorkerGlobalScope.backgroundfetchabort_event", "backgroundfetchabort")}} و {{domxref("ServiceWorkerGlobalScope.backgroundfetchclick_event", "backgroundfetchclick")}}
 - {{domxref("BackgroundFetchUpdateUIEvent")}} {{Experimental_Inline}}
-  - : The event type for the {{domxref("ServiceWorkerGlobalScope.backgroundfetchsuccess_event", "backgroundfetchsuccess")}} and {{domxref("ServiceWorkerGlobalScope.backgroundfetchfail_event", "backgroundfetchfail")}} event
+  - : نوع رویداد برای رویدادهای {{domxref("ServiceWorkerGlobalScope.backgroundfetchsuccess_event", "backgroundfetchsuccess")}} و {{domxref("ServiceWorkerGlobalScope.backgroundfetchfail_event", "backgroundfetchfail")}}
 
-### Extensions to other interfaces
+### افزونه‌های سایر رابط‌ها
 
 - {{domxref("ServiceWorkerRegistration.backgroundFetch")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a reference to a {{domxref("BackgroundFetchManager")}} object, which manages background fetch operations.
-- {{domxref("ServiceWorkerGlobalScope/backgroundfetchabort_event", "backgroundfetchabort")}} event {{Experimental_Inline}}
-  - : Fired when a background fetch operation has been canceled by the user or the app.
-- {{domxref("ServiceWorkerGlobalScope/backgroundfetchclick_event", "backgroundfetchclick")}} event {{Experimental_Inline}}
-  - : Fired when the user has clicked on the UI for a background fetch operation.
-- {{domxref("ServiceWorkerGlobalScope/backgroundfetchfail_event", "backgroundfetchfail")}} event {{Experimental_Inline}}
-  - : Fired when at least one of the requests in a background fetch operation has failed.
-- {{domxref("ServiceWorkerGlobalScope/backgroundfetchsuccess_event", "backgroundfetchsuccess")}} event {{Experimental_Inline}}
-  - : Fired when all of the requests in a background fetch operation have succeeded.
+  - : یک ارجاع به شیء {{domxref("BackgroundFetchManager")}} برمی‌گرداند که عملیات واکشی پس‌زمینه را مدیریت می‌کند.
+- رویداد {{domxref("ServiceWorkerGlobalScope/backgroundfetchabort_event", "backgroundfetchabort")}} {{Experimental_Inline}}
+  - : هنگامی که یک عملیات واکشی پس‌زمینه توسط کاربر یا برنامه لغو شود، فعال می‌شود.
+- رویداد {{domxref("ServiceWorkerGlobalScope/backgroundfetchclick_event", "backgroundfetchclick")}} {{Experimental_Inline}}
+  - : هنگامی که کاربر روی رابط کاربری برای یک عملیات واکشی پس‌زمینه کلیک کرده باشد، فعال می‌شود.
+- رویداد {{domxref("ServiceWorkerGlobalScope/backgroundfetchfail_event", "backgroundfetchfail")}} {{Experimental_Inline}}
+  - : هنگامی که حداقل یکی از درخواست‌ها در یک عملیات واکشی پس‌زمینه ناموفق باشد، فعال می‌شود.
+- رویداد {{domxref("ServiceWorkerGlobalScope/backgroundfetchsuccess_event", "backgroundfetchsuccess")}} {{Experimental_Inline}}
+  - : هنگامی که همهٔ درخواست‌ها در یک عملیات واکشی پس‌زمینه موفق باشند، فعال می‌شود.
 
-## Examples
+## نمونه‌ها
 
-Before using Background Fetch, check for browser support.
+قبل از استفاده از Background Fetch، پشتیبانی مرورگر را بررسی کنید.
 
 ```js
 if (!("BackgroundFetchManager" in self)) {
@@ -67,10 +67,9 @@ if (!("BackgroundFetchManager" in self)) {
 }
 ```
 
-Using Background Fetch requires a registered service worker. Then call `backgroundFetch.fetch()` to perform a fetch. This
-returns a promise that resolves with a {{domxref("BackgroundFetchRegistration")}}.
+استفاده از Background Fetch نیاز به یک سرویس‌ورکر ثبت‌شده دارد. سپس برای انجام واکشی، `backgroundFetch.fetch()` را فراخوانی کنید. این یک promise برمی‌گرداند که با یک {{domxref("BackgroundFetchRegistration")}} حل می‌شود.
 
-A background fetch may fetch a number of files. In our example the fetch requests an MP3 and a JPEG. This enables a package of files that the user sees as one item (for example a podcast and artwork) to be downloaded at once.
+یک واکشی پس‌زمینه ممکن است چند فایل را واکشی کند. در مثال ما، واکشی یک MP3 و یک JPEG را درخواست می‌کند. این امکان را فراهم می‌کند که یک بسته از فایل‌ها که کاربر آن را به عنوان یک مورد می‌بیند (مثلاً یک پادکست و جلد آن) یکجا دانلود شود.
 
 ```js
 navigator.serviceWorker.ready.then(async (swReg) => {
@@ -92,17 +91,17 @@ navigator.serviceWorker.ready.then(async (swReg) => {
 });
 ```
 
-You can find further code examples and a demo in [Introducing Background Fetch](https://developer.chrome.com/blog/background-fetch/).
+می‌توانید نمونه‌های کد بیشتر و یک نسخهٔ نمایشی را در [معرفی Background Fetch](https://developer.chrome.com/blog/background-fetch/) بیابید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Introducing Background Fetch](https://developer.chrome.com/blog/background-fetch/)
+- [معرفی Background Fetch](https://developer.chrome.com/blog/background-fetch/)
 - [Background Fetch - HTTP 203](https://www.youtube.com/watch?v=cElAoxhQz6w)
