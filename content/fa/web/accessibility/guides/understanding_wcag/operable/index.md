@@ -1,7 +1,7 @@
 ---
 title: "Operable"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Operable"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -11,96 +11,83 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-This article provides practical advice on how to write your web content so that it conforms to the success criteria outlined in the **Operable** principle of the Web Content Accessibility Guidelines (WCAG) 2.0 and 2.1. Operable states that user interface components and navigation must be operable.
+این مقاله راهنمایی عملی در مورد نحوه نوشتن محتوای وب ارائه می‌دهد به گونه‌ای که با معیارهای موفقیت مشخص‌شده در اصل **عملیاتی (Operable)** از دستورالعمل‌های دسترس‌پذیری محتوای وب (WCAG) 2.0 و 2.1 مطابقت داشته باشد. اصل Operable بیان می‌کند که اجزای رابط کاربری و ناوبری باید قابل استفاده باشند.
 
 > [!NOTE]
-> To read the W3C definitions for Operable and its guidelines and success criteria, see [Principle 2: Operable — User interface components and navigation must be operable.](https://w3c.github.io/wcag/guidelines/22/#operable)
+> برای مطالعه تعاریف W3C برای اصل Operable و دستورالعمل‌ها و معیارهای موفقیت آن، به [اصل 2: عملیاتی — اجزای رابط کاربری و ناوبری باید قابل استفاده باشند.](https://w3c.github.io/wcag/guidelines/22/#operable) مراجعه کنید.
 
-## Guideline 2.1 — Keyboard Accessible: Make all functionality available from a keyboard
+## دستورالعمل 2.1 — دسترس‌پذیری از طریق صفحه‌کلید: همه عملکردها را از طریق صفحه‌کلید در دسترس قرار دهید
 
-This guideline covers the necessity of making core website functionality available via a keyboard in addition to other means (e.g., mouse), so that users that rely on keyboard controls can access them.
+این دستورالعمل به ضرورت در دسترس قرار دادن عملکردهای اصلی وب‌سایت از طریق صفحه‌کلید علاوه بر روش‌های دیگر (مانند ماوس) می‌پردازد، تا کاربرانی که به کنترل‌های صفحه‌کلید وابسته هستند بتوانند به آن‌ها دسترسی داشته باشند.
 
 <table class="standard-table">
   <thead>
     <tr>
-      <th scope="col">Success criteria</th>
-      <th scope="col">How to conform to the criteria</th>
-      <th scope="col">Practical resource</th>
+      <th scope="col">معیار موفقیت</th>
+      <th scope="col">نحوه مطابقت با معیار</th>
+      <th scope="col">منبع عملی</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>2.1.1 Keyboard (A)</td>
+      <td>2.1.1 صفحه‌کلید (A)</td>
       <td>
-        All functionality should be accessible using keyboard controls, unless
-        it cannot be done using the keyboard (e.g., freehand drawing). Built-in
-        controls should be used where possible (e.g., tabbing through form
-        controls), and you should only build in custom functionality where
-        needed.
+        همه عملکردها باید با استفاده از کنترل‌های صفحه‌کلید قابل دسترسی باشند، مگر اینکه انجام آن با صفحه‌کلید امکان‌پذیر نباشد (مثلاً نقاشی با دست آزاد). در صورت امکان باید از کنترل‌های داخلی استفاده شود (مثلاً پیمایش با Tab در میان کنترل‌های فرم)، و فقط در صورت نیاز باید عملکرد سفارشی ایجاد کنید.
       </td>
       <td>
-        See
+        به
         <a href="/en-US/docs/Learn_web_development/Core/Accessibility/HTML#use_semantic_ui_controls_where_possible"
-          >Use semantic UI controls where possible</a
+          >در صورت امکان از کنترل‌های معنایی رابط کاربری استفاده کنید</a
         >
-        and
+        و
         <a
           href="/en-US/docs/Learn_web_development/Core/Accessibility/HTML#building_keyboard_accessibility_back_in"
-          >Building keyboard accessibility back in</a
+          >بازگرداندن دسترس‌پذیری صفحه‌کلید</a
         >
+        مراجعه کنید.
       </td>
     </tr>
     <tr>
-      <td>2.1.2 No keyboard trap (A)</td>
+      <td>2.1.2 عدم به دام افتادن در صفحه‌کلید (A)</td>
       <td>
         <p>
-          When entering a section of functionality using the keyboard, you
-          should be able to get out of that section again using <em>only</em> the
-          keyboard. For example, if you press <kbd>Enter</kbd>/<kbd>Return</kbd>
-          on a focused button to open an options window, you should be able to
-          close that window again and return to the main content using the
-          keyboard.
+          هنگام ورود به بخشی از عملکرد با استفاده از صفحه‌کلید، باید بتوانید با <em>فقط</em> صفحه‌کلید از آن بخش خارج شوید. به عنوان مثال، اگر <kbd>Enter</kbd>/<kbd>Return</kbd> را روی یک دکمه فوکوس‌شده فشار دهید تا یک پنجره گزینه‌ها باز شود، باید بتوانید دوباره آن پنجره را ببندید و با صفحه‌کلید به محتوای اصلی بازگردید.
         </p>
         <p>
-          This is very important so that keyboard users do not get trapped on
-          specific sections of your apps.
+          این بسیار مهم است تا کاربران صفحه‌کلید در بخش‌های خاصی از برنامه‌های شما گیر نیفتند.
         </p>
       </td>
       <td></td>
     </tr>
     <tr>
-      <td>2.1.3 Keyboard — all functionality (AAA)</td>
+      <td>2.1.3 صفحه‌کلید — همه عملکردها (AAA)</td>
       <td>
-        This is a further step beyond criterion 2.1.1. To achieve AAA
-        conformance, all functionality should be accessible using keyboard
-        controls — with no exceptions.
+        این گامی فراتر از معیار 2.1.1 است. برای دستیابی به انطباق سطح AAA، همه عملکردها باید با استفاده از کنترل‌های صفحه‌کلید قابل دسترسی باشند — بدون هیچ استثنایی.
       </td>
       <td>
-        See
+        به
         <a href="/en-US/docs/Learn_web_development/Core/Accessibility/HTML#use_semantic_ui_controls_where_possible"
-          >Use semantic UI controls where possible</a
+          >در صورت امکان از کنترل‌های معنایی رابط کاربری استفاده کنید</a
         >
-        and
+        و
         <a
           href="/en-US/docs/Learn_web_development/Core/Accessibility/HTML#building_keyboard_accessibility_back_in"
-          >Building keyboard accessibility back in</a
+          >بازگرداندن دسترس‌پذیری صفحه‌کلید</a
         >
+        مراجعه کنید.
       </td>
     </tr>
     <tr>
       <td>
-        2.1.4 Character Key Shortcuts (A)
+        2.1.4 میانبرهای کلید کاراکتری (A)
       </td>
       <td>
-        If a single character key shortcut exists, then at least one of the
-        following is true: single character key shortcuts can be turned off,
-        remapped or are only active when the relevant user interface component
-        is in focus.
+        اگر میانبری با یک کلید کاراکتری وجود دارد، حداقل یکی از موارد زیر درست است: میانبرهای کلید کاراکتری را می‌توان خاموش کرد، دوباره نگاشت کرد یا فقط زمانی فعال هستند که جزء رابط کاربری مربوطه در حالت فوکوس باشد.
       </td>
       <td>
         <a
           href="https://www.w3.org/WAI/WCAG21/Understanding/character-key-shortcuts.html"
-          >Understanding Character Key Shortcuts</a
+          >درک میانبرهای کلید کاراکتری</a
         >
       </td>
     </tr>
@@ -108,97 +95,78 @@ This guideline covers the necessity of making core website functionality availab
 </table>
 
 > [!NOTE]
-> Also see the WCAG description for [Guideline 2.1 Keyboard Accessible: Make all functionality available from a keyboard](https://w3c.github.io/wcag/guidelines/22/#keyboard-accessible).
+> همچنین توضیحات WCAG را برای [دستورالعمل 2.1 دسترس‌پذیری از طریق صفحه‌کلید: همه عملکردها را از طریق صفحه‌کلید در دسترس قرار دهید](https://w3c.github.io/wcag/guidelines/22/#keyboard-accessible) ببینید.
 
-## Guideline 2.2 — Enough Time: Provide users enough time to read and use content
+## دستورالعمل 2.2 — زمان کافی: به کاربران زمان کافی برای خواندن و استفاده از محتوا بدهید
 
-This guideline covers situations in which functionality may have a time limit. For example, purchases sometimes need to be completed within a time limit for security reasons.
+این دستورالعمل شرایطی را پوشش می‌دهد که در آن عملکرد ممکن است محدودیت زمانی داشته باشد. به عنوان مثال، خریدها گاهی اوقات به دلایل امنیتی باید در یک محدودیت زمانی تکمیل شوند.
 
 <table class="standard-table">
   <thead>
     <tr>
-      <th scope="col">Success criteria</th>
-      <th scope="col">How to conform to the criteria</th>
-      <th scope="col">Practical resource</th>
+      <th scope="col">معیار موفقیت</th>
+      <th scope="col">نحوه مطابقت با معیار</th>
+      <th scope="col">منبع عملی</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>2.2.1 Timing is adjustable (A)</td>
+      <td>2.2.1 تنظیم زمان (A)</td>
       <td>
         <p>
-          For functionality with time limits (e.g., completing a hotel or flight
-          booking often has a time limit), the user should be given controls to
-          allow them to adjust, extend or turn off the time limit.
+          برای عملکردهایی با محدودیت زمانی (مثلاً تکمیل رزرو هتل یا پرواز اغلب محدودیت زمانی دارد)، کاربر باید کنترل‌هایی در اختیار داشته باشد که به او امکان تنظیم، تمدید یا خاموش کردن محدودیت زمانی را بدهد.
         </p>
         <p>
-          Exceptions to this are activities with time limits longer than 20
-          hours, real time events (e.g., live multiplayer games), and any other
-          activity that requires a time limit and would be invalidated if it
-          were turned off.
+          استثناهایی برای این مورد وجود دارد: فعالیت‌هایی با محدودیت زمانی بیشتر از ۲۰ ساعت، رویدادهای زمان واقعی (مانند بازی‌های چندنفره زنده)، و هر فعالیت دیگری که به محدودیت زمانی نیاز دارد و در صورت خاموش شدن، بی‌اعتبار می‌شود.
         </p>
       </td>
       <td></td>
     </tr>
     <tr>
-      <td>2.2.2 Pausing, stopping, hiding (A)</td>
+      <td>2.2.2 توقف،暂停، مخفی‌کردن (A)</td>
       <td>
         <p>
-          For moving/blinking content that starts automatically, lasts longer
-          than 5 seconds, and is shown alongside other content, controls should
-          be provided to pause, stop, or hide it. This does not apply to
-          moving/blinking content that is essential to the experience. Examples
-          include scrolling text and videos.
+          برای محتوای متحرک/چشمک‌زن که به طور خودکار شروع می‌شود، بیش از ۵ ثانیه طول می‌کشد و در کنار محتوای دیگر نمایش داده می‌شود، باید کنترل‌هایی برای توقف،暂停 یا مخفی‌کردن آن ارائه شود. این مورد در مورد محتوای متحرک/چشمک‌زنی که برای تجربه ضروری است اعمال نمی‌شود. مثال‌ها شامل متن اسکرول‌شونده و ویدئوها هستند.
         </p>
         <p>
-          For auto-updating information that starts automatically and is shown
-          alongside other content, controls should be provided to pause, stop,
-          or hide it, or to control the frequency of updates. This does not
-          apply to auto-updating content that is essential to the experience.
-          Examples include carousels or rotating announcements.
+          برای اطلاعات به‌روزرسانی‌شونده خودکار که به طور خودکار شروع می‌شود و در کنار محتوای دیگر نمایش داده می‌شود، باید کنترل‌هایی برای توقف،暂停 یا مخفی‌کردن آن، یا کنترل فرکانس به‌روزرسانی‌ها ارائه شود. این مورد در مورد محتوای به‌روزرسانی‌شونده خودکاری که برای تجربه ضروری است اعمال نمی‌شود. مثال‌ها شامل چرخ‌دنده‌ها یا اعلان‌های چرخشی هستند.
         </p>
       </td>
       <td></td>
     </tr>
     <tr>
-      <td>2.2.3 No time limits (AAA)</td>
+      <td>2.2.3 بدون محدودیت زمانی (AAA)</td>
       <td>
-        This builds on criteria 2.2.1, stating that content that wants to pass
-        AAA conformance should have no time limits.
+        این مورد بر اساس معیار 2.2.1 بنا شده و بیان می‌کند که محتوایی که می‌خواهد انطباق سطح AAA را پاس کند باید هیچ محدودیت زمانی نداشته باشد.
       </td>
       <td></td>
     </tr>
     <tr>
-      <td>2.2.4 Suppress interruptions (AAA)</td>
+      <td>2.2.4 سرکوب وقفه‌ها (AAA)</td>
       <td>
-        Any interruptions such as alerts or interstitial adverts should have
-        functionality available to suppress or postpone them, unless it is an
-        emergency alert.
+        هرگونه وقفه مانند هشدارها یا تبلیغات میانی باید قابلیت سرکوب یا به تعویق انداختن داشته باشد، مگر اینکه هشدار اضطراری باشد.
       </td>
       <td></td>
     </tr>
     <tr>
-      <td>2.2.5 Re-authenticating (AAA)</td>
+      <td>2.2.5 احراز هویت مجدد (AAA)</td>
       <td>
-        If an authentication session expires during usage of a web app, the user
-        can re-authenticate and continue their usage without losing any data.
+        اگر جلسه احراز هویت در طول استفاده از یک برنامه وب منقضی شود، کاربر می‌تواند دوباره احراز هویت کند و بدون از دست دادن هیچ داده‌ای به استفاده خود ادامه دهد.
       </td>
       <td></td>
     </tr>
     <tr>
       <td>
-        2.2.6 Timeouts (AAA)
+        2.2.6 وقفه زمانی (AAA)
       </td>
       <td>
         <p>
-          If there is a timeout (caused by user inactivity) warn users at the
-          start of a process so they will not be surprised that a timeout exists
-          (or only allow the timeout to occur after 20 hours of inactivity).
+          اگر وقفه زمانی (ناشی از عدم فعالیت کاربر) وجود دارد، در ابتدای فرآیند به کاربران هشدار دهید تا از وجود وقفه زمانی شگفت‌زده نشوند (یا فقط اجازه دهید وقفه زمانی پس از ۲۰ ساعت عدم فعالیت رخ دهد).
         </p>
       </td>
       <td>
         <a href="https://www.w3.org/WAI/WCAG21/Understanding/timeouts.html"
-          >Understanding Timeouts</a
+          >درک وقفه‌های زمانی</a
         >
       </td>
     </tr>
@@ -206,368 +174,89 @@ This guideline covers situations in which functionality may have a time limit. F
 </table>
 
 > [!NOTE]
-> Also see the WCAG description for [Guideline 2.2 Enough Time: Provide users enough time to read and use content](https://w3c.github.io/wcag/guidelines/22/#enough-time).
+> همچنین توضیحات WCAG را برای [دستورالعمل 2.2 زمان کافی: به کاربران زمان کافی برای خواندن و استفاده از محتوا بدهید](https://w3c.github.io/wcag/guidelines/22/#enough-time) ببینید.
 
-## Guideline 2.3 — Seizures and Physical Reactions: Do not design content in a way that is known to cause seizures or physical reactions
+## دستورالعمل 2.3 — تشنج و واکنش‌های فیزیکی: محتوا را به گونه‌ای طراحی نکنید که مشخص باشد باعث تشنج یا واکنش‌های فیزیکی می‌شود
 
-This refers to content that, if not changed, could cause seizures in users with conditions such as epilepsy OR could cause physical reactions (like dizziness) for users with conditions such as vestibular disorders.
+این به محتوایی اشاره دارد که در صورت عدم تغییر، می‌تواند در کاربرانی با شرایطی مانند صرع باعث تشنج شود یا می‌تواند برای کاربرانی با شرایطی مانند اختلالات دهلیزی باعث واکنش‌های فیزیکی (مانند سرگیجه) شود.
 
 <table>
   <thead>
     <tr>
-    <th scope="col">Success criteria</th>
-    <th scope="col">How to conform to the criteria</th>
-    <th scope="col">Practical resource</th>
+    <th scope="col">معیار موفقیت</th>
+    <th scope="col">نحوه مطابقت با معیار</th>
+    <th scope="col">منبع عملی</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>2.3.1 Three flashes, or below threshold (A)</td>
-      <td>Content doesn't contain any aspect that Flashes more than three times per second, or flashing content is below acceptable <a href="https://w3c.github.io/wcag/guidelines/22/#dfn-general-flash-and-red-flash-thresholds">flash and red flash thresholds</a>.</td>
+      <td>2.3.1 سه بار چشمک یا کمتر از آستانه (A)</td>
+      <td>محتوا هیچ جنبه‌ای ندارد که بیش از سه بار در ثانیه چشمک بزند، یا محتوای چشمک‌زن کمتر از <a href="https://w3c.github.io/wcag/guidelines/22/#dfn-general-flash-and-red-flash-thresholds">آستانه چشمک و چشمک قرمز مجاز</a> باشد.</td>
       <td></td>
     </tr>
     <tr>
-      <td>2.3.2 Three flashes (AAA)</td>
-      <td>Content doesn't contain any aspect that Flashes more than three times per second.</td>
+      <td>2.3.2 سه بار چشمک (AAA)</td>
+      <td>محتوا هیچ جنبه‌ای ندارد که بیش از سه بار در ثانیه چشمک بزند.</td>
       <td></td>
     </tr>
     <tr>
-      <td>2.3.3 Animations from Interactions (AAA)</em></td>
-      <td>Allow users to disable animations from interactions (unless the animation is essential).</td>
-      <td><a href="https://w3c.github.io/wcag/guidelines/22/#animation-from-interactions">Understanding Animations from Interactions</a></td>
+      <td>2.3.3 انیمیشن‌های ناشی از تعاملات (AAA)</em></td>
+      <td>به کاربران اجازه دهید انیمیشن‌های ناشی از تعاملات را غیرفعال کنند (مگر اینکه انیمیشن ضروری باشد).</td>
+      <td><a href="https://w3c.github.io/wcag/guidelines/22/#animation-from-interactions">درک انیمیشن‌های ناشی از تعاملات</a></td>
     </tr>
   </tbody>
 </table>
 
 > [!NOTE]
-> Also see the WCAG description for [Guideline 2.3 Seizures and Physical Reactions: Do not design content in a way that is known to cause seizures or physical reactions.](https://w3c.github.io/wcag/guidelines/22/#seizures-and-physical-reactions)
+> همچنین توضیحات WCAG را برای [دستورالعمل 2.3 تشنج و واکنش‌های فیزیکی: محتوا را به گونه‌ای طراحی نکنید که مشخص باشد باعث تشنج یا واکنش‌های فیزیکی می‌شود.](https://w3c.github.io/wcag/guidelines/22/#seizures-and-physical-reactions) ببینید.
 
-## Guideline 2.4 — Navigable: Provide ways to help users navigate, find content, and determine where they are
+## دستورالعمل 2.4 — قابل پیمایش: راه‌هایی برای کمک به کاربران در پیمایش، یافتن محتوا و تعیین موقعیت آن‌ها فراهم کنید
 
-The conformance criteria under this guideline relate to ways in which users can be expected to orientate themselves, and find the content and functionality they are looking for on the current page or other pages of the site.
+معیارهای انطباق در این دستورالعمل به روش‌هایی مربوط می‌شود که کاربران بتوانند خود را جهت‌یابی کنند و محتوا و عملکرد مورد نظر خود را در صفحه فعلی یا سایر صفحات سایت پیدا کنند.
 
 <table class="standard-table">
   <thead>
     <tr>
-      <th scope="col">Success criteria</th>
-      <th scope="col">How to conform to the criteria</th>
-      <th scope="col">Practical resource</th>
+      <th scope="col">معیار موفقیت</th>
+      <th scope="col">نحوه مطابقت با معیار</th>
+      <th scope="col">منبع عملی</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>2.4.1 Bypass blocks (A)</td>
+      <td>2.4.1 دور زدن بلوک‌ها (A)</td>
       <td>
         <p>
-          A mechanism should be provided that allows the user to skip straight
-          to the main content or functionality available on the page, past the
-          repeated features (such as the company logo or navigation). This is
-          often achieved using "skip links" — links put at the top of the page
-          source that link to the main content and are hidden by CSS.
+          مکانیزمی باید ارائه شود که به کاربر اجازه دهد مستقیماً به محتوای اصلی یا عملکرد موجود در صفحه برود و از ویژگی‌های تکراری (مانند لوگوی شرکت یا ناوبری) عبور کند. این اغلب با استفاده از «لینک‌های پرش» انجام می‌شود — لینک‌هایی که در بالای منبع صفحه قرار می‌گیرند و به محتوای اصلی پیوند می‌خورند و با CSS مخفی می‌شوند.
         </p>
         <p>
-          If a proper structure of headings and semantic containers is provided
-          to navigate with (for example {{htmlelement("section")}},
-          {{htmlelement("aside")}}, etc.), then an added "skip link" is
-          not needed.
+          اگر ساختار مناسبی از سرتیترها و ظروف معنایی برای پیمایش فراهم شده باشد (مثلاً {{htmlelement("section")}}، {{htmlelement("aside")}} و غیره)، «لینک پرش» اضافی لازم نیست.
         </p>
       </td>
-      <td><em>Need to add a section on "skip links".</em></td>
+      <td><em>نیاز به افزودن بخشی در مورد «لینک‌های پرش» است.</em></td>
     </tr>
     <tr>
-      <td>2.4.2 Include page title (A)</td>
+      <td>2.4.2 درج عنوان صفحه (A)</td>
       <td>
-        Each web page should include an informative
-        {{htmlelement("title")}}, the content of which describes the
-        page's content/purpose.
+        هر صفحه وب باید شامل یک {{htmlelement("title")}} informative باشد که محتوای آن صفحه/هدف صفحه را توصیف کند.
       </td>
       <td>
-        See
+        به
         <a
           href="/en-US/docs/Learn_web_development/Core/Structuring_content/Webpage_metadata#adding_a_title"
-          >Adding a title</a
-        >.
+          >افزودن عنوان</a
+        >
+        مراجعه کنید.
       </td>
     </tr>
     <tr>
-      <td>2.4.3 Logical focus order (A)</td>
+      <td>2.4.3 ترتیب تمرکز منطقی (A)</td>
       <td>
-        The "tabbing order" of focusable page features (e.g., links, buttons,
-        form inputs) makes logical sense, meaning that the page is still usable
-        by non-sighted/keyboard users.
+        «ترتیب Tab» ویژگی‌های قابل تمرکز صفحه (مثلاً لینک‌ها، دکمه‌ها، ورودی‌های فرم) باید از نظر منطقی درست باشد، به این معنی که صفحه همچنان برای کاربران غیربینا/صفحه‌کلید قابل استفاده باشد.
       </td>
       <td>
-        See
+        برای مشاوره کلی در مورد پیمایش با Tab در کنترل‌ها، به
         <a href="/en-US/docs/Learn_web_development/Core/Accessibility/HTML#use_semantic_ui_controls_where_possible"
-          >Use semantic UI controls where possible</a
+          >در صورت امکان از کنترل‌های معنایی رابط کاربری استفاده کنید</a
         >
-        for general advice on tabbing to controls. If you need to place elements
-        in an unusual layout, it is better to make sure the source order is
-        sensible, then use CSS features like
-        <a href="/en-US/docs/Learn_web_development/Core/CSS_layout/Positioning">positioning</a>
-        to handle the layout.
-      </td>
-    </tr>
-    <tr>
-      <td>2.4.4 Link purpose (in context) (A)</td>
-      <td>
-        The purpose/destination of a link can be determined from the link text,
-        or from its surroundings (e.g., the surrounding text). Exceptions are
-        where the link purpose is ambiguous to <em>all</em> users (see
-        <a href="https://w3c.github.io/wcag/guidelines/22/#dfn-ambiguous-to-users-in-general"
-          >ambiguous to users in general</a
-        >
-        for a useful explanation of this).
-      </td>
-      <td>
-        See
-        <a href="/en-US/docs/Learn_web_development/Core/Accessibility/HTML#use_meaningful_text_labels"
-          >Use meaningful text labels</a
-        >. Also note that you should minimize instances where multiple copies of
-        the same text are linked to different places. This can cause problems
-        for screen reader users, who will often bring up a list of the links out
-        of context — several links all labelled "click here", "click here",
-        "click here" would be confusing.
-      </td>
-    </tr>
-    <tr>
-      <td>2.4.5 Multiple navigation mechanisms (AA)</td>
-      <td>
-        <p>
-          You should provide at least two general navigation mechanisms to find
-          pages on your website, for example navigation menu, breadcrumb trail,
-          site search, site map, list of related links, etc.
-        </p>
-        <p>
-          The only exception to this is where a page is one step in a process,
-          so should only logically have links to the previous and next steps.
-        </p>
-      </td>
-      <td>
-        Most of these mechanisms can be created using fully supported HTML features, for
-        example see
-        <a
-          href="/en-US/docs/Learn_web_development/Extensions/Forms/HTML5_input_types#search_field"
-          >Search field</a
-        >,
-        <a
-          href="/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links#creating_a_navigation_menu"
-          >Creating a navigation menu</a
-        >,
-        <a
-          href="/en-US/docs/Learn_web_development/Core/Text_styling/Styling_links#styling_links_as_buttons"
-          >Styling links as buttons</a
-        >.
-      </td>
-    </tr>
-    <tr>
-      <td>2.4.6 Headings and labels (AA)</td>
-      <td>
-        Heading (e.g., {{htmlelement("Heading_Elements", "&lt;h2&gt;")}}) and
-        {{htmlelement("label")}} elements clearly describe the purpose
-        of the content and form elements they are supposed to be describing.
-      </td>
-      <td>
-        <p>
-          See
-          <a href="/en-US/docs/Learn_web_development/Core/Accessibility/HTML#use_semantic_ui_controls_where_possible"
-            >Use semantic UI controls where possible</a
-          >,
-          <a href="/en-US/docs/Learn_web_development/Core/Accessibility/HTML#use_meaningful_text_labels"
-            >Use meaningful text labels</a
-          >,
-          <a
-            href="/en-US/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragraphs"
-            >The basics of headings and paragraphs</a
-          >,
-          <a
-            href="/en-US/docs/Learn_web_development/Extensions/Forms/How_to_structure_a_web_form#the_label_element"
-            >The &#x3C;label> element</a
-          >.
-        </p>
-        <p>
-          Note that you should avoid duplicating headings or labels (e.g.
-          multiple instances of "Further information"), unless the structure
-          allows you to differentiate between them easily.
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>2.4.7 Visible focus for focusable elements (AA)</td>
-      <td>
-        When tabbing through focusable elements such as links or form inputs,
-        there should be a visual indicator to show you which element currently
-        has focus. This is usually a dotted or blue outline by default
-        (depending on browser, platform, etc.), but this can be overridden by
-        CSS.
-      </td>
-      <td>
-        See
-        <a
-          href="/en-US/docs/Learn_web_development/Core/Accessibility/HTML#use_semantic_ui_controls_where_possible"
-          >Use semantic UI controls where possible</a
-        >.
-      </td>
-    </tr>
-    <tr>
-      <td>2.4.8 Location within site (AAA)</td>
-      <td>
-        When on a page inside a complex site or set of steps, the user should be
-        given an indicator of where they are in the site, for example a
-        breadcrumb trail, sitemap or text such as "Form page 2 of 10".
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>2.4.9 Link purpose (link only) (AAA)</td>
-      <td>
-        This criterion builds on 2.4.4, stating that to conform to AAA, the
-        purpose/destination of a link should be determinable from the link text
-        alone, even if out of context.
-      </td>
-      <td>
-        See
-        <a href="/en-US/docs/Learn_web_development/Core/Accessibility/HTML#use_meaningful_text_labels"
-          >Use meaningful text labels</a
-        >. Also note that you should minimize instances where multiple copies of
-        the same text are linked to different places. This can cause problems
-        for screen reader users, who will often bring up a list of the links out
-        of context — several links all labelled "click here", "click here",
-        "click here" would be confusing.
-      </td>
-    </tr>
-    <tr>
-      <td>2.4.10 Section headings (AAA)</td>
-      <td>
-        <p>
-          As well as creating a useful document structure, headings should also
-          accurately describe and break up content areas into logical sections.
-        </p>
-        <p>
-          Note that this criterion refers to headings and titles in general web
-          content (e.g., headings within text content). Headings and titles for
-          user interfaces are a special case covered in criterion 4.1.2.
-        </p>
-      </td>
-      <td>
-        <p>
-          See
-          <a
-            href="/en-US/docs/Learn_web_development/Core/Structuring_content/Headings_and_paragraphs"
-            >The basics of headings and paragraphs</a
-          >.
-        </p>
-      </td>
-    </tr>
-    <tr>
-    <td> 2.4.11 Focus not obscured (Minimum) (AA)</td>
-    <td>
-    <p> When a user interface component receives keyboard focus, the component is not entirely hidden due to containing author-created content.</p>
-    <p> <strong>Note:</strong> If the interface's content can be repositioned by the user, then only the initial position of the user-movable content is considered for testing to conform to this standard. Also, content opened by the user may obscure the component receiving focus. Furthermore, if the user can reveal the focused component without changing keyboard focus, the component with focus is not considered hidden for conformance and testing purposes.</p>
-    </td>
-    <td>
-    <p> Check out <a href="https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum">Understanding focus not obscured (Minimum)</a> to learn more about this standard.</p>
-    </td>
-    </tr>
-    <tr>
-    <td> 2.4.12 Focus not obscured (Enhanced) (AAA) </td>
-    <td>
-    <p> Follows the rules as 2.4.11 except when a user interface component receives focus, no part of the component can be hidden by author-created content. If the interface is configurable, only the initial positions of user-movable content are considered for testing and meeting of this standard.</p>
-    </td>
-    <td>
-    <p> Check out <a href="https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-enhanced">Understanding focus not obscured (Enhanced) (Level AAA)</a> to learn more about this standard.</p> </td>
-    </td>
-    </tr>
-<tr>
-  <td> 2.4.13 Focus appearance (AAA)</td>
-  <td>
-    <p>When the keyboard focus indicator is visible, the area of the focus indicator meets all the following:</p>
-    <ul>
-      <li>Must be at least as large as the area of a <code>2px</code> thick perimeter of the unfocused component or sub-component, which includes component's content, border, and background, excluding outer shadows or glow effects.</li>
-      <li>Needs to have a contrast ratio of at least 3:1 between the same pixels in the focused and unfocused states</li>
-    </ul>
-    <p> The exceptions to this are:</p>
-    <ul>
-      <li>The focus indicator is determined by the user and cannot be adjusted by the author.</li>
-      <li>The focus indicator and the indicator's background color are not modified by the author.</li>
-    </ul>
-  </td>
-  <td>
-    <p> Check out <a href="https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html">Understanding focus appearance (Level AAA)</a> to learn more about this standard.</p>
-  </td>
-</tr>
-  </tbody>
-</table>
-
-> [!NOTE]
-> Also see the WCAG description for [Guideline 2.4 Navigable: Provide ways to help users navigate, find content, and determine where they are.](https://w3c.github.io/wcag/guidelines/22/#navigable)
-
-## Guideline 2.5 Input Modalities: Make it easier for users to operate functionality through various inputs beyond keyboard
-
-The conformance criteria under this guideline ensures that users are able to interact with digital technology using different input methods beyond a keyboard or mouse (including touchscreen, voice, device motion, or alternative input devices).
-
-<table>
- <thead>
-  <tr>
-   <th scope="col">Success criteria</th>
-   <th scope="col">How to conform to the criteria</th>
-   <th scope="col">Practical resource</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>2.5.1 Pointer Gestures (A)</em></td>
-   <td>All functionality that can be operated with a pointer can be operated with single-point actions. Path-based or multi-point gestures are not required to operate any functionality. Exceptions exist.</td>
-   <td><a href="https://www.w3.org/WAI/WCAG21/Understanding/pointer-gestures.html">Understanding Pointer Gestures</a></td>
-  </tr>
-  <tr>
-   <td>2.5.2 Pointer Cancellation (A)</em></td>
-   <td>For functionality that can be operated using a single-pointer at least one of the following is true: no down-event, abort/undo, up reversal or essential.</td>
-   <td><a href="https://www.w3.org/WAI/WCAG21/Understanding/pointer-cancellation.html">Understanding Pointer Cancellation</a></td>
-  </tr>
-  <tr>
-   <td>2.5.3 Label in Name (A)</em></td>
-   <td>For each user interface component that includes a visible text label, make sure the accessible name matches (or includes) the visible text in the label.</td>
-   <td><a href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">Understanding Label in Name</a></td>
-  </tr>
-  <tr>
-   <td>2.5.4 Motion Actuation (A)</em></td>
-   <td>Ensure that for functionality that can be triggered by a) device motion (like shaking, tilting) or b) user gestures detected by device sensors (including a camera) that both of the following are true: 1) motion actuation can be disabled, and 2) the functionality can be operated without using device motion or user gestures. Exceptions exist.</td>
-   <td><a href="https://www.w3.org/WAI/WCAG21/Understanding/motion-actuation.html">Understanding Motion Actuation</a></td>
-  </tr>
-  <tr>
-   <td>2.5.5 Target Size (AAA)</td>
-   <td>The size of an actionable item's touch target must be at least 44 CSS pixels in both width and height. Exceptions exist.</td>
-   <td><a href="https://www.w3.org/WAI/WCAG21/Understanding/target-size.html">Understanding Target Size</a></td>
-  </tr>
-  <tr>
-   <td>2.5.6 Concurrent Input Mechanisms (AAA)</td>
-   <td>Make sure people can use and switch between different modes of input when interacting with digital content including touchscreen, keyboard, mouse, voice commands, or alternative input devices. An essential exception exists. </td>
-   <td><a href="https://www.w3.org/WAI/WCAG21/Understanding/concurrent-input-mechanisms.html">Understanding Concurrent Input Mechanism</a></td>
- </tr>
- <tr>
- <td> 2.5.8 Target size minimum (AA)</td>
- <td> Target size for pointer inputs should be at least <code>24px</code> wide by <code>24px</code> tall except for the following areas:
- <ul>
-  <li> <strong>Spacing:</strong>Targets that are less than <code>24px x 24px</code> are positioned so that if a <code>24px</code> diameter circle is centered on each target's bounding box, the circles do not intersect with any other target or the circle for another undersized target.</li>
-  <li> <strong>Equivalent:</strong> A separate control that achieves the same function that meets this standard is available on the same page.</li>
-  <li> <strong>Inline:</strong> The target is located within a line of text with its size constrained by the line height or surrounding non-target text.</li>
-  <li> <strong>User agent control:</strong> The target's size is determined by the user agent and has not been modified by the author.</li>
-  <li> <strong>Essential:</strong> A particular presentation of the target is essential or legally required for the information being conveyed.</li>
- </ul>
- <td> Check out <a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html">Understanding target size minimum</a> </td>
-</tr>
-  </tr>
- </tbody>
-</table>
-
-> [!NOTE]
-> Also see the WCAG description for [Guideline 2.5: Input Modalities: Make it easier for users to operate functionality through various inputs beyond keyboard.](https://w3c.github.io/wcag/guidelines/22/#input-modalities)
-
-## See also
-
-- [WCAG](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG)
-  1. [Perceivable](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable)
-  2. Operable
-  3. [Understandable](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Understandable)
-  4. [Robust](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Robust)
+        مراجعه کنید. اگر نیاز به قرار دادن عناصر در یک چیدمان غیرمعمول دارید، بهتر است مطمئن شوید ترتیب منبع منطقی
