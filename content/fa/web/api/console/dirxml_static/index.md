@@ -1,11 +1,5 @@
 ---
 title: "console: dirxml() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/dirxml_static"
-status: "needs-translation"
----
-
----
-title: "console: dirxml() static method"
 short-title: dirxml()
 slug: Web/API/console/dirxml_static
 page-type: web-api-static-method
@@ -14,33 +8,33 @@ browser-compat: api.console.dirxml_static
 
 {{APIRef("Console API")}}
 
-The **`console.dirxml()`** static method displays an interactive tree of the descendant elements of the specified XML/HTML element. If it is not possible to display as an element the JavaScript Object view is shown instead. The output is presented as a hierarchical listing of expandable nodes that let you see the contents of child nodes.
+متد استاتیک **`console.dirxml()`** یک درخت تعاملی از عناصر فرزند عنصر XML/HTML مشخص‌شده را نمایش می‌دهد. اگر نمایش به‌صورت عنصر امکان‌پذیر نباشد، نمای شیء جاوااسکریپت به‌جای آن نشان داده می‌شود. خروجی به‌صورت فهرستی سلسله‌مراتبی از گره‌های قابل‌باز شدن ارائه می‌شود که به شما امکان می‌دهد محتویات گره‌های فرزند را مشاهده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 console.dirxml(object)
 ```
 
-### Parameters
+### پارامترها
 
 - `object`
-  - : A JavaScript object whose properties should be output.
+  - : یک شیء جاوااسکریپت که ویژگی‌های آن باید خروجی گرفته شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Microsoft Edge's documentation for `console.dirxml()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#dirxml)
-- [Node.js documentation for `console.dirxml()`](https://nodejs.org/docs/latest/api/console.html#consoledirxmldata)
-- [Google Chrome's documentation for `console.dirxml()`](https://developer.chrome.com/docs/devtools/console/api/#dirxml)
+- [مستندات Microsoft Edge برای `console.dirxml()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#dirxml)
+- [مستندات Node.js برای `console.dirxml()`](https://nodejs.org/docs/latest/api/console.html#consoledirxmldata)
+- [مستندات Google Chrome برای `console.dirxml()`](https://developer.chrome.com/docs/devtools/console/api/#dirxml)
