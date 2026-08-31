@@ -1,9 +1,4 @@
----
-title: "CSSFontFeatureValuesRule: annotation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesRule/annotation"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "CSSFontFeatureValuesRule: annotation property"
 short-title: annotation
@@ -16,17 +11,17 @@ browser-compat: api.CSSFontFeatureValuesRule.annotation
 
 {{ APIRef("CSSOM") }}{{SeeCompatTable}}
 
-The read-only **annotation** property of the {{domXRef("CSSFontFeatureValuesRule")}} interface contains a {{domXRef("CSSFontFeatureValuesMap")}} object representing the [user-defined-ident](/en-US/docs/Web/CSS/Reference/Values/custom-ident) and [feature index](/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings#optional_value) for a variable font which supports {{CSSXRef("font-variant-alternates", "annotation()", "#annotation")}}.
+ویژگی فقط‌خواندنی **annotation** از رابط {{domXRef("CSSFontFeatureValuesRule")}} یک شیء {{domXRef("CSSFontFeatureValuesMap")}} را شامل می‌شود که نمایانگر یک [شناسه سفارشی تعریف‌شده توسط کاربر](/en-US/docs/Web/CSS/Reference/Values/custom-ident) و [شاخص ویژگی](/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings#optional_value) برای یک فونت متغیر است که از {{CSSXRef("font-variant-alternates", "annotation()", "#annotation")}} پشتیبانی می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref("CSSFontFeatureValuesMap")}} object.
+یک شیء {{domxref("CSSFontFeatureValuesMap")}}.
 
-Although the `annotation` property itself is read-only in the sense that you can't replace the `CSSFontFeatureValuesMap` object, you can still assign to the `annotation` property directly. You can also modify the values of the `annotation` using the [`CSSFontFeatureValuesMap` instance methods](/en-US/docs/Web/API/CSSFontFeatureValuesMap#instance_methods).
+اگرچه خود ویژگی `annotation` به این معنا فقط‌خواندنی است که نمی‌توانید شیء `CSSFontFeatureValuesMap` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به ویژگی `annotation` مقداردهی کنید. همچنین می‌توانید مقادیر `annotation` را با استفاده از [متدهای نمونه `CSSFontFeatureValuesMap`](/en-US/docs/Web/API/CSSFontFeatureValuesMap#instance_methods) تغییر دهید.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 #### CSS
 
@@ -41,24 +36,25 @@ Although the `annotation` property itself is read-only in the sense that you can
 #### JavaScript
 
 ```js
-// look for the first stylesheet and the first cssRule in that sheet
+// اولین شیوه‌نامه و اولین قانون css در آن را پیدا کنید
 const myRule = document.styleSheets[0].cssRules[0];
-// check
+// بررسی کنید
 if (myRule instanceof CSSFontFeatureValuesRule && myRule.annotation.size) {
-  // do something with the annotation
+  // کاری با annotation انجام دهید
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxRef("@font-feature-values","@annotation","#annotation")}}
-- {{cssxRef("font-variant-alternates","annotation()","#annotation")}} functional notation
+- نشانه‌گذاری تابعی {{cssxRef("font-variant-alternates","annotation()","#annotation")}}
 - {{domxref("CSSFontFeatureValuesMap")}}
+```
