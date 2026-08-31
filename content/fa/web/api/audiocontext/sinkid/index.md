@@ -1,7 +1,7 @@
 ---
 title: "AudioContext: sinkId property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/sinkId"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,29 +16,28 @@ browser-compat: api.AudioContext.sinkId
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`sinkId`** read-only property of the
-{{domxref("AudioContext")}} interface returns the sink ID of the current output audio device.
+ویژگی فقط خواندنی **`sinkId`** در رابط {{domxref("AudioContext")}} شناسه خروجی دستگاه صوتی فعلی را برمی‌گرداند.
 
-## Value
+## مقدار
 
-This property returns one of the following values, depending on how the sink ID was set:
+این ویژگی بسته به نحوه تنظیم شناسه خروجی صدا، یکی از مقادیر زیر را برمی‌گرداند:
 
-- An empty string
-  - : If a sink ID has not explicitly been set, the default system audio output device will be used, and `sinkId` will return an empty string.
-- A string
-  - : If the sink ID is set as a string value (using {{domxref("AudioContext.setSinkId", "setSinkId()")}}, or the `sinkId` {{domxref("AudioContext.AudioContext", "AudioContext()")}} constructor option), `sinkId` will return that same string value.
-- An {{domxref("AudioSinkInfo")}} object
-  - : If the sink ID is set as an options object (using {{domxref("AudioContext.setSinkId", "setSinkId()")}}, or the `sinkId` {{domxref("AudioContext.AudioContext", "AudioContext()")}} constructor option), `sinkId` will return an {{domxref("AudioSinkInfo")}} object reflecting the same values set in the initial options object.
+- یک رشته خالی
+  - : اگر شناسه خروجی صدا به طور صریح تنظیم نشده باشد، از دستگاه خروجی صوتی پیش‌فرض سیستم استفاده می‌شود و `sinkId` یک رشته خالی برمی‌گرداند.
+- یک رشته
+  - : اگر شناسه خروجی صدا به عنوان یک مقدار رشته (با استفاده از {{domxref("AudioContext.setSinkId", "setSinkId()")}} یا گزینه سازنده `sinkId` در {{domxref("AudioContext.AudioContext", "AudioContext()")}}) تنظیم شده باشد، `sinkId` همان مقدار رشته را برمی‌گرداند.
+- یک شیء {{domxref("AudioSinkInfo")}}
+  - : اگر شناسه خروجی صدا به عنوان یک شیء گزینه (با استفاده از {{domxref("AudioContext.setSinkId", "setSinkId()")}} یا گزینه سازنده `sinkId` در {{domxref("AudioContext.AudioContext", "AudioContext()")}}) تنظیم شده باشد، `sinkId` یک شیء {{domxref("AudioSinkInfo")}} برمی‌گرداند که مقادیر تنظیم شده در شیء گزینه اولیه را منعکس می‌کند.
 
-## Examples
+## مثال‌ها
 
-In our [SetSinkId test example](https://mdn.github.io/dom-examples/audiocontext-setsinkid/) (check out the [source code](https://github.com/mdn/dom-examples/tree/main/audiocontext-setsinkid)), we create an audio graph that generates a three-second burst of white noise via an {{domxref("AudioBufferSourceNode")}}, which we also run through a {{domxref("GainNode")}} to quiet things down a bit. We also provide the user with a dropdown menu to allow them to change the audio output device.
+در [مثال آزمایشی SetSinkId](https://mdn.github.io/dom-examples/audiocontext-setsinkid/) ما (کد منبع را [اینجا](https://github.com/mdn/dom-examples/tree/main/audiocontext-setsinkid) ببینید)، یک گراف صوتی ایجاد می‌کنیم که یک انفجار سه ثانیه‌ای نویز سفید را از طریق {{domxref("AudioBufferSourceNode")}} تولید می‌کند. ما همچنین این نویز را از طریق {{domxref("GainNode")}} عبور می‌دهیم تا صدا کمی کاهش یابد. علاوه بر این، یک منوی کشویی برای کاربر فراهم می‌کنیم تا بتواند دستگاه خروجی صوتی را تغییر دهد.
 
-When the Play button is clicked, we assemble the audio graph and start it playing, and we also log information about the current device to the console based on the value of `sinkId`:
+هنگامی که دکمه پخش کلیک می‌شود، گراف صوتی را تشکیل می‌دهیم و شروع به پخش می‌کنیم. همچنین اطلاعات مربوط به دستگاه فعلی را بر اساس مقدار `sinkId` در کنسول ثبت می‌کنیم:
 
-- An empty string means the default device is still being used.
-- If the value is an object, the audio will not be playing on any device because we set an options object containing `type: 'none'`.
-- Otherwise the value will be a sink ID string, so we log that.
+- یک رشته خالی به این معنی است که هنوز از دستگاه پیش‌فرض استفاده می‌شود.
+- اگر مقدار یک شیء باشد، صدا روی هیچ دستگاهی پخش نمی‌شود زیرا ما یک شیء گزینه حاوی `type: 'none'` تنظیم کرده‌ایم.
+- در غیر این صورت مقدار یک رشته شناسه خروجی صدا خواهد بود، بنابراین آن را ثبت می‌کنیم.
 
 ```js
 playBtn.addEventListener("click", () => {
@@ -61,16 +60,16 @@ playBtn.addEventListener("click", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Change the destination output device in Web Audio](https://developer.chrome.com/blog/audiocontext-setsinkid/)
+- [تغییر دستگاه خروجی مقصد در Web Audio](https://developer.chrome.com/blog/audiocontext-setsinkid/)
 - {{domxref("AudioContext.setSinkId()")}}
 - {{domxref("AudioContext/sinkchange_event", "sinkchange")}}
