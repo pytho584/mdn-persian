@@ -1,11 +1,5 @@
 ---
 title: "CSSCounterStyleRule: system property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSCounterStyleRule/system"
-status: "needs-translation"
----
-
----
-title: "CSSCounterStyleRule: system property"
 short-title: system
 slug: Web/API/CSSCounterStyleRule/system
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CSSCounterStyleRule.system
 
 {{APIRef("CSSOM")}}
 
-The **`system`** property of the {{domxref("CSSCounterStyleRule")}} interface gets and sets the value of the {{cssxref("@counter-style/system", "system")}} descriptor. If the descriptor does not have a value set, this attribute returns an empty string.
+**`system`** 属性属于 {{domxref("CSSCounterStyleRule")}} 接口，用于获取和设置 {{cssxref("@counter-style/system", "system")}} 描述符的值。如果描述符未设置值，该属性将返回空字符串。
 
-## Value
+## 值
 
-A string.
+一个字符串。
 
-## Examples
+## 示例
 
-The following example shows a {{cssxref("@counter-style")}} rule. In JavaScript, `myRules[0]` is this `@counter-style` rule, returning `system` gives us the value "fixed".
+以下示例展示了一个 {{cssxref("@counter-style")}} 规则。在 JavaScript 中，`myRules[0]` 指代这条 `@counter-style` 规则，访问 `system` 将返回 "fixed"。
 
 ```css
 @counter-style box-corner {
@@ -37,10 +31,10 @@ let myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].system); // "fixed"
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
