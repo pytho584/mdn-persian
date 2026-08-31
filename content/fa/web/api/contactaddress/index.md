@@ -1,10 +1,4 @@
 ---
-title: "ContactAddress"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContactAddress"
-status: "needs-translation"
----
-
----
 title: ContactAddress
 slug: Web/API/ContactAddress
 page-type: web-api-interface
@@ -15,41 +9,41 @@ browser-compat: api.ContactAddress
 
 {{securecontext_header}}{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
-The **`ContactAddress`** interface of the [Contact Picker API](/en-US/docs/Web/API/Contact_Picker_API) represents a physical address. Instances of this interface are retrieved from the `address` property of the objects returned by {{domxref("ContactsManager.getProperties()")}}.
+رابطهٔ **`ContactAddress`** در [API انتخاب مخاطب](/en-US/docs/Web/API/Contact_Picker_API) یک آدرس فیزیکی را نشان می‌دهد. نمونه‌های این رابط از ویژگی `address` اشیایی که توسط {{domxref("ContactsManager.getProperties()")}} بازگردانده می‌شوند، بازیابی می‌شوند.
 
-It may be useful to refer to the Universal Postal Union website's [Addressing S42 standard](https://www.upu.int/en/Postal-Solutions/Programmes-Services/Addressing-Solutions#addressing-s42-standard) materials, which provide information about international standards for postal addresses.
+ممکن است مراجعه به مطالب [استاندارد S42 آدرس‌دهی](https://www.upu.int/en/Postal-Solutions/Programmes-Services/Addressing-Solutions#addressing-s42-standard) وب‌سایت اتحادیهٔ جهانی پست مفید باشد؛ این مطالب اطلاعاتی دربارهٔ استانداردهای بین‌المللی آدرس‌های پستی ارائه می‌دهند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('ContactAddress.addressLine')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : An array of strings providing each line of the address not included among the other properties. The exact size and content varies by country or location and can include, for example, a street name, house number, apartment number, rural delivery route, descriptive instructions, or post office box number.
+  - : یک آرایه از رشته‌ها که هر خط از آدرس را که در سایر ویژگی‌ها ذکر نشده است، ارائه می‌دهد. اندازه و محتوای دقیق آن بسته به کشور یا مکان متفاوت است و می‌تواند شامل مواردی مانند نام خیابان، شمارهٔ خانه، شمارهٔ واحد، مسیر تحویل روستایی، دستورالعمل‌های توصیفی یا شمارهٔ صندوق پستی باشد.
 - {{domxref('ContactAddress.country')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A string specifying the country in which the address is located, using the [ISO-3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) standard. The string is always given in its canonical upper-case form. Some examples of valid `country` values: `"US"`, `"GB"`, `"CN"`, or `"JP"`.
+  - : رشته‌ای که کشور محل آدرس را با استفاده از استاندارد [ISO-3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) مشخص می‌کند. این رشته همیشه به شکل حروف بزرگ استاندارد ارائه می‌شود. چند مثال از مقادیر معتبر `country`: `"US"`، `"GB"`، `"CN"` یا `"JP"`.
 - {{domxref('ContactAddress.city')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A string which contains the city or town portion of the address.
+  - : رشته‌ای که بخش شهر یا شهرک آدرس را شامل می‌شود.
 - {{domxref('ContactAddress.dependentLocality')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A string giving the dependent locality or sublocality within a city, for example, a neighborhood, borough, district, or UK dependent locality.
+  - : رشته‌ای که محل وابسته یا زیرمحل را در داخل یک شهر مشخص می‌کند؛ برای مثال، یک محله، ناحیه، منطقه یا محل وابسته در بریتانیا.
 - {{domxref('ContactAddress.organization')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A string specifying the name of the organization, firm, company, or institution at the address.
+  - : رشته‌ای که نام سازمان، شرکت، مؤسسه یا نهاد را در آن آدرس مشخص می‌کند.
 - {{domxref('ContactAddress.phone')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A string specifying the telephone number of the recipient or contact person.
+  - : رشته‌ای که شماره تلفن گیرنده یا شخص تماس را مشخص می‌کند.
 - {{domxref('ContactAddress.postalCode')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A string specifying a code used by a jurisdiction for mail routing, for example, the ZIP code in the United States or the PIN code in India.
+  - : رشته‌ای که کد پستی مورد استفاده یک حوزهٔ قضایی برای مسیریابی نامه را مشخص می‌کند؛ برای مثال، کد ZIP در ایالات متحده یا کد PIN در هند.
 - {{domxref('ContactAddress.recipient')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A string giving the name of the recipient, purchaser, or contact person at the address.
+  - : رشته‌ای که نام گیرنده، خریدار یا شخص تماس در آن آدرس را ارائه می‌دهد.
 - {{domxref('ContactAddress.region')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A string containing the top level administrative subdivision of the country, for example a state, province, oblast, or prefecture.
+  - : رشته‌ای که بالاترین سطح تقسیمات اداری کشور را شامل می‌شود؛ برای مثال، یک ایالت، استان، اوبلاست یا استان (در برخی کشورها).
 - {{domxref('ContactAddress.sortingCode')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A string providing a postal sorting code such as is used in France.
+  - : رشته‌ای که یک کد مرتب‌سازی پستی مانند کد مورد استفاده در فرانسه را ارائه می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref('ContactAddress.toJSON()')}} {{experimental_inline}}
-  - : A standard serializer that returns a JSON representation of the `ContactAddress` object's properties.
+  - : یک سریال‌ساز استاندارد که نمایش JSON از ویژگی‌های شیء `ContactAddress` را بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The following example prompts the user to select contacts, then prints the first returned address to the console.
+مثال زیر از کاربر می‌خواهد مخاطبانی را انتخاب کند و سپس اولین آدرس بازگردانده‌شده را در کنسول چاپ می‌کند.
 
 ```js
 const props = ["address"];
@@ -66,10 +60,10 @@ async function getContacts() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
