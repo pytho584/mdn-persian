@@ -1,7 +1,5 @@
 ---
 title: "CookieStore"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CookieStore"
-status: "needs-translation"
 ---
 
 ---
@@ -13,55 +11,55 @@ browser-compat: api.CookieStore
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}{{AvailableInWorkers("window_and_service")}}
 
-The **`CookieStore`** interface of the {{domxref("Cookie Store API", "", "", "nocode")}} provides methods for getting and setting cookies asynchronously from either a page or a service worker.
+رابطهٔ **`CookieStore`** در {{domxref("Cookie Store API", "", "", "nocode")}} روش‌هایی برای دریافت و تنظیم کوکی‌ها به‌صورت ناهمگام از یک صفحه یا یک service worker فراهم می‌کند.
 
-The `CookieStore` is accessed via attributes in the global scope in a {{domxref("Window")}} or {{domxref("ServiceWorkerGlobalScope")}} context. Therefore there is no constructor.
+`CookieStore` از طریق ویژگی‌های موجود در حوزهٔ سراسری (global scope) در بافت {{domxref("Window")}} یا {{domxref("ServiceWorkerGlobalScope")}} قابل دسترسی است. بنابراین سازنده‌ای برای آن وجود ندارد.
 
 {{InheritanceDiagram}}
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("CookieStore.delete()")}}
-  - : The `delete()` method deletes a cookie with the given `name` or `options` object.
-    It returns a {{jsxref("Promise")}} that resolves when the deletion completes or if no cookies are matched.
+  - : روش `delete()` کوکی‌ای با `name` یا شیء `options` داده‌شده را حذف می‌کند.
+    یک {{jsxref("Promise")}} برمی‌گرداند که وقتی حذف کامل شود یا اگر هیچ کوکی‌ای مطابقت نداشته باشد، resolve می‌شود.
 - {{domxref("CookieStore.get()")}}
-  - : The `get()` method gets a single cookie with the given `name` or `options` object.
-    It returns a {{jsxref("Promise")}} that resolves with details of a single cookie.
+  - : روش `get()` یک کوکی واحد با `name` یا شیء `options` داده‌شده را دریافت می‌کند.
+    یک {{jsxref("Promise")}} برمی‌گرداند که با جزئیات یک کوکی واحد resolve می‌شود.
 - {{domxref("CookieStore.getAll()")}}
-  - : The `getAll()` method gets all matching cookies.
-    It returns a {{jsxref("Promise")}} that resolves with a list of cookies.
+  - : روش `getAll()` همهٔ کوکی‌های مطابقت‌دار را دریافت می‌کند.
+    یک {{jsxref("Promise")}} برمی‌گرداند که با فهرستی از کوکی‌ها resolve می‌شود.
 - {{domxref("CookieStore.set()")}}
-  - : The `set()` method sets a cookie with the given `name` and `value` or `options` object.
-    It returns a {{jsxref("Promise")}} that resolves when the cookie is set.
+  - : روش `set()` کوکی‌ای با `name` و `value` یا شیء `options` داده‌شده تنظیم می‌کند.
+    یک {{jsxref("Promise")}} برمی‌گرداند که وقتی کوکی تنظیم شود، resolve می‌شود.
 
-## Events
+## رویدادها
 
 - {{domxref("CookieStore.change_event", "change")}}
-  - : The `change` event fires when a change is made to any cookie.
+  - : رویداد `change` زمانی رخ می‌دهد که در هر کوکی تغییری ایجاد شود.
 
-## Examples
+## مثال‌ها
 
-The examples below can be tested by copying the code into a test harness and running it with a [local server](/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server), or deploying it to a website site such as GitHub pages.
+مثال‌های زیر را می‌توان با کپی کردن کد در یک محیط آزمایشی و اجرای آن با یک [سرور محلی](/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server) یا استقرار آن در وب‌سایتی مانند GitHub Pages آزمایش کرد.
 
-<!-- The examples don't work as live examples in MDN environment (due to unknown errors) -->
+<!-- مثال‌ها در محیط MDN به‌صورت نمونهٔ زنده کار نمی‌کنند (به دلیل خطاهای ناشناخته) -->
 
-### Setting cookies
+### تنظیم کوکی‌ها
 
-This example shows how to set cookies by passing a `name` and `value`, and by setting an `options` value.
+این مثال نشان می‌دهد که چگونه می‌توان کوکی‌ها را با عبور دادن `name` و `value` و همچنین با تنظیم یک مقدار `options` تنظیم کرد.
 
-The `cookieTest()` method sets one cookie with `name` and `value` properties and another with `name`, `value`, and `expires` properties.
-We then use the {{domxref("CookieStore.get()")}} method to get each of the cookies, which are then logged.
+روش `cookieTest()` یک کوکی با ویژگی‌های `name` و `value` و کوکی دیگری با ویژگی‌های `name`، `value` و `expires` تنظیم می‌کند.
+سپس از روش {{domxref("CookieStore.get()")}} برای دریافت هر یک از کوکی‌ها استفاده می‌کنیم که پس از آن ثبت (log) می‌شوند.
 
 ```js
 async function cookieTest() {
-  // Set cookie: passing name and value
+  // تنظیم کوکی: عبور دادن name و value
   try {
     await cookieStore.set("cookie1", "cookie1-value");
   } catch (error) {
     console.log(`Error setting cookie1: ${error}`);
   }
 
-  // Set cookie: passing options
+  // تنظیم کوکی: عبور دادن options
   const day = 24 * 60 * 60 * 1000;
 
   try {
@@ -75,7 +73,7 @@ async function cookieTest() {
     log(`Error setting cookie2: ${error}`);
   }
 
-  // Get named cookies and log their properties
+  // دریافت کوکی‌های نام‌دار و ثبت ویژگی‌های آن‌ها
   const cookie1 = await cookieStore.get("cookie1");
   console.log(cookie1);
 
@@ -87,28 +85,28 @@ cookieTest();
 ```
 
 > [!NOTE]
-> In [supporting browsers](/en-US/docs/Web/API/CookieStore/set#browser_compatibility), you can set the cookie's expiry using `maxAge` instead of `expires`.
+> در [مرورگرهای پشتیبانی‌کننده](/en-US/docs/Web/API/CookieStore/set#browser_compatibility)، می‌توانید زمان انقضای کوکی را به‌جای `expires` با استفاده از `maxAge` تنظیم کنید.
 
-### Getting cookies
+### دریافت کوکی‌ها
 
-This example shows how you can get a particular cookie using {{domxref("CookieStore.get()")}} or all cookies using {{domxref("CookieStore.getAll()")}}.
+این مثال نشان می‌دهد که چگونه می‌توانید یک کوکی خاص را با {{domxref("CookieStore.get()")}} یا همهٔ کوکی‌ها را با {{domxref("CookieStore.getAll()")}} دریافت کنید.
 
-The example code first sets three cookies that we'll use for demonstrating the get methods.
-First it creates `cookie1` and `cookie2` using the {{domxref("CookieStore.set()")}} method.
-Then it creates a third cookie using the older synchronous {{domxref("Document.cookie")}} property (just so we can show that these are also fetched using the `get()` and `getAll()` methods).
+کد مثال ابتدا سه کوکی تنظیم می‌کند که برای نمایش روش‌های دریافت از آن‌ها استفاده خواهیم کرد.
+ابتدا `cookie1` و `cookie2` را با روش {{domxref("CookieStore.set()")}} ایجاد می‌کند.
+سپس کوکی سومی را با استفاده از ویژگی قدیمی همزمان {{domxref("Document.cookie")}} ایجاد می‌کند (فقط برای نشان دادن اینکه این کوکی‌ها نیز با روش‌های `get()` و `getAll()` دریافت می‌شوند).
 
-The code then uses {{domxref("CookieStore.get()")}} to fetch "cookie1" and log its properties, and {{domxref("CookieStore.getAll()")}} (without arguments) to fetch all cookies in the current context.
+سپس کد از {{domxref("CookieStore.get()")}} برای دریافت «cookie1» و ثبت ویژگی‌های آن استفاده می‌کند، و از {{domxref("CookieStore.getAll()")}} (بدون آرگومان) برای دریافت همهٔ کوکی‌ها در بافت فعلی استفاده می‌کند.
 
 ```js
 async function cookieTest() {
-  // Set a cookie passing name and value
+  // تنظیم یک کوکی با عبور دادن name و value
   try {
     await cookieStore.set("cookie1", "cookie1-value");
   } catch (error) {
     console.log(`Error setting cookie1: ${error}`);
   }
 
-  // Set a cookie passing an options object
+  // تنظیم یک کوکی با عبور دادن یک شیء options
   const day = 24 * 60 * 60 * 1000;
   try {
     await cookieStore.set({
@@ -121,15 +119,15 @@ async function cookieTest() {
     console.log(`Error setting cookie2: ${error}`);
   }
 
-  // Set cookie using document.cookie
-  // (to demonstrate these are fetched too)
+  // تنظیم کوکی با استفاده از document.cookie
+  // (برای نشان دادن اینکه این‌ها نیز دریافت می‌شوند)
   document.cookie = "favorite_food=tripe; SameSite=None; Secure";
 
-  // Get named cookie and log properties
+  // دریافت کوکی نام‌دار و ثبت ویژگی‌های آن
   const cookie1 = await cookieStore.get("cookie1");
   console.log(cookie1);
 
-  // Get all cookies and log each
+  // دریافت همهٔ کوکی‌ها و ثبت هر یک
   const cookies = await cookieStore.getAll();
   if (cookies.length > 0) {
     console.log(`getAll(): ${cookies.length}:`);
@@ -142,20 +140,20 @@ async function cookieTest() {
 cookieTest();
 ```
 
-The example should log "cookie1" and all three cookies separately.
-One thing to note is that the cookie created using {{domxref("Document.cookie")}} may have a different path than those created using {{domxref("CookieStore.set()","set()")}} (which defaults to `/`).
+مثال باید «cookie1» و هر سه کوکی را جداگانه ثبت کند.
+نکته‌ای که باید به آن توجه کنید این است که کوکی ایجاد شده با {{domxref("Document.cookie")}} ممکن است مسیر (path) متفاوتی نسبت به کوکی‌هایی داشته باشد که با {{domxref("CookieStore.set()","set()")}} ایجاد شده‌اند (که به‌طور پیش‌فرض `/` است).
 
-### Delete a named cookie
+### حذف یک کوکی نام‌دار
 
-This example shows how to delete a named cookie using the {{domxref("CookieStore.delete()","delete()")}} method.
+این مثال نشان می‌دهد که چگونه می‌توان یک کوکی نام‌دار را با استفاده از روش {{domxref("CookieStore.delete()","delete()")}} حذف کرد.
 
-The code first sets two cookies and logs them to the console.
-We then delete one of the cookies, and then list all cookies again.
-The deleted cookie ("cookie1") is present in the first log array, and not in the second.
+کد ابتدا دو کوکی تنظیم می‌کند و آن‌ها را در کنسول ثبت می‌کند.
+سپس یکی از کوکی‌ها را حذف می‌کنیم و دوباره همهٔ کوکی‌ها را فهرست می‌کنیم.
+کوکی حذف‌شده («cookie1») در آرایهٔ اولین ثبت (log) وجود دارد و در دومین وجود ندارد.
 
 ```js
 async function cookieTest() {
-  // Set two cookies
+  // تنظیم دو کوکی
   try {
     await cookieStore.set("cookie1", "cookie1-value");
   } catch (error) {
@@ -168,16 +166,16 @@ async function cookieTest() {
     console.log(`Error setting cookie2: ${error}`);
   }
 
-  // Log cookie names
+  // ثبت نام کوکی‌ها
   let cookieNames = (await cookieStore.getAll())
     .map((cookie) => cookie.name)
     .join(" ");
   console.log(`Initial cookies: ${cookieNames}`);
 
-  // Delete cookie1
+  // حذف cookie1
   await cookieStore.delete("cookie1");
 
-  // Log cookies again (to show cookie1 deleted)
+  // ثبت دوبارهٔ کوکی‌ها (برای نشان دادن حذف cookie1)
   cookieNames = (await cookieStore.getAll())
     .map((cookie) => cookie.name)
     .join(" ");
@@ -189,10 +187,10 @@ async function cookieTest() {
 cookieTest();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
