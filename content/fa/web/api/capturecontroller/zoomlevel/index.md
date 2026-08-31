@@ -1,11 +1,5 @@
 ---
 title: "CaptureController: zoomLevel property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/zoomLevel"
-status: "needs-translation"
----
-
----
-title: "CaptureController: zoomLevel property"
 short-title: zoomLevel
 slug: Web/API/CaptureController/zoomLevel
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.CaptureController.zoomLevel
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}
 
-The **`zoomLevel`** read-only property of the {{domxref("CaptureController")}} interface returns the captured display surface's current zoom level.
+{{domxref("CaptureController")}} 接口的只读属性 **`zoomLevel`** 返回所捕获显示表面的当前缩放级别。
 
-## Value
+## 值
 
-A number representing the current zoom level of the captured display surface.
+一个数字，表示捕获显示表面的当前缩放级别。
 
-## Examples
+## 示例
 
-### Basic `zoomLevel` usage
+### 基本 `zoomLevel` 用法
 
-In our live demo, shown in [Using the Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control), we use the `zoomLevel` property inside an event handler function for the controller's {{domxref("CaptureController.zoomlevelchange_event", "zoomlevelchange")}} event. When the event fires, the updated `zoomLevel` is written to an `<output>` element.
+在我们的实时演示中，如[使用捕获表面控制 API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control)所示，我们在控制器的 {{domxref("CaptureController.zoomlevelchange_event", "zoomlevelchange")}} 事件的事件处理函数中使用了 `zoomLevel` 属性。当事件触发时，更新后的 `zoomLevel` 会写入一个 `<output>` 元素。
 
 ```js
 // Create controller and start capture
@@ -43,18 +37,18 @@ controller.addEventListener(
 );
 ```
 
-See [Using the Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control) for a full working example.
+有关完整的工作示例，请参阅[使用捕获表面控制 API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control)。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - {{domxref("MediaDevices.getDisplayMedia()")}}
-- [Using the Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control)
+- [使用捕获表面控制 API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control)
