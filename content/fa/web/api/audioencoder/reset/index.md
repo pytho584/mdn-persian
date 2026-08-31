@@ -1,7 +1,7 @@
 ---
 title: "AudioEncoder: reset() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder/reset"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,34 +14,34 @@ browser-compat: api.AudioEncoder.reset
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`reset()`** method of the {{domxref("AudioEncoder")}} interface resets all states including configuration, control messages in the control message queue, and all pending callbacks.
+متد **`reset()`** در رابط {{domxref("AudioEncoder")}} تمام حالت‌ها از جمله پیکربندی، پیام‌های کنترلی در صف پیام‌های کنترلی، و همه فراخوانی‌های معلق را بازنشانی می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 reset()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-The following example resets the `AudioEncoder`.
+مثال زیر `AudioEncoder` را بازنشانی می‌کند.
 
 ```js
 AudioEncoder.reset();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
