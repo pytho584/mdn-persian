@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTDescriptor: readValue() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/readValue"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,30 +16,26 @@ browser-compat: api.BluetoothRemoteGATTDescriptor.readValue
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The
-**`BluetoothRemoteGATTDescriptor.readValue()`**
-method returns a {{jsxref("Promise")}} that resolves to
-a {{jsxref("DataView")}} holding a duplicate of the `value` property if
-it is available and supported. Otherwise it throws an error.
+متد **`BluetoothRemoteGATTDescriptor.readValue()`** یک {{jsxref("Promise")}} برمی‌گرداند که اگر خاصیت `value` موجود و پشتیبانی شود، به یک {{jsxref("DataView")}} شامل یک کپی از آن حل می‌شود؛ در غیر این صورت خطا پرتاب می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 readValue()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to a {{jsxref("DataView")}}.
+یک {{jsxref("Promise")}} که به یک {{jsxref("DataView")}} حل می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
