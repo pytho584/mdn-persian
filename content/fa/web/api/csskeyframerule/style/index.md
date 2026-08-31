@@ -1,31 +1,24 @@
 ---
 title: "CSSKeyframeRule: style property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframeRule/style"
-status: "needs-translation"
----
-
----
-title: "CSSKeyframeRule: style property"
 short-title: style
 slug: Web/API/CSSKeyframeRule/style
 page-type: web-api-instance-property
-browser-compat: api.CSSKeyframeRule.style
+browser-compat: api.CSSKeyframeRule/style
 ---
 
 {{ APIRef("CSSOM") }}
 
-The read-only **`style`** property of the {{domxref("CSSKeyframeRule")}} interface contains a {{domxref("CSSStyleDeclaration")}} object representing the descriptors available in the {{cssxref("@keyframes")}} rule's body.
+ویژگی **`style`** فقط‌خواندنی رابط {{domxref("CSSKeyframeRule")}} شامل یک شیء {{domxref("CSSStyleDeclaration")}} است که توصیفگرهای موجود در بدنهٔ قانون {{cssxref("@keyframes")}} را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("CSSStyleDeclaration")}} object.
+یک شیء {{domxref("CSSStyleDeclaration")}}.
 
-Although the `style` property itself is read-only in the sense that you can't replace the `CSSStyleDeclaration` object, you can still assign to the `style` property directly, which is equivalent to assigning to its {{domxref("CSSStyleDeclaration/cssText", "cssText")}} property. You can also modify the `CSSStyleDeclaration` object using the {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} and {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} methods.
+اگرچه خود ویژگی **`style`** از این نظر فقط‌خواندنی است که نمی‌توانید شیء `CSSStyleDeclaration` را جایگزین کنید، همچنان می‌توانید مستقیماً به ویژگی `style` مقدار اختصاص دهید که معادل مقداردهی به ویژگی {{domxref("CSSStyleDeclaration/cssText", "cssText")}} آن است. همچنین می‌توانید شیء `CSSStyleDeclaration` را با استفاده از متدهای {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} و {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
-The CSS includes a {{cssxref("@keyframes")}} at-rule. This will be the first {{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`.
-`myRules[0]` returns a {{domxref("CSSKeyframesRule")}} object, which will contain individual {{domxref("CSSKeyFrameRule")}} objects for each keyframe.
+CSS شامل یک at-rule به نام {{cssxref("@keyframes")}} است. این اولین {{domxref("CSSRule")}} خواهد بود که توسط `document.styleSheets[0].cssRules` بازگردانده می‌شود. `myRules[0]` یک شیء {{domxref("CSSKeyframesRule")}} برمی‌گرداند که شامل شیءهای جداگانه‌ای از نوع {{domxref("CSSKeyFrameRule")}} برای هر keyframe خواهد بود.
 
 ```css
 @keyframes slide-in {
@@ -45,10 +38,10 @@ let keyframes = myRules[0]; // a CSSKeyframesRule
 console.log(keyframes[0].style); // a CSSStyleDeclaration
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
