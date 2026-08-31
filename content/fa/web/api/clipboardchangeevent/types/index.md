@@ -1,11 +1,5 @@
 ---
 title: "ClipboardChangeEvent: types property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ClipboardChangeEvent/types"
-status: "needs-translation"
----
-
----
-title: "ClipboardChangeEvent: types property"
 short-title: types
 slug: Web/API/ClipboardChangeEvent/types
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.ClipboardChangeEvent.types
 
 {{securecontext_header}}{{APIRef("Clipboard API")}}{{SeeCompatTable}}
 
-The **`types`** read-only property of the {{domxref("ClipboardChangeEvent")}} interface returns an array of strings representing the mandatory {{glossary("MIME type","MIME types")}} available on the system clipboard when the `ClipboardChangeEvent` event was fired. Optional types and custom formats are not included to limit {{glossary("fingerprinting")}}.
+ویژگی فقط‑خواندنی **`types`** از رابط {{domxref("ClipboardChangeEvent")}}، آرایه‌ای از رشته‌ها را برمی‌گرداند که نشان‌دهندهٔ {{glossary("MIME type","انواع MIME")}} اجباری موجود در حافظهٔ موقت (clipboard) سیستم در زمان رخداد `ClipboardChangeEvent` هستند. انواع اختیاری و قالب‌های سفارشی برای محدود کردن {{glossary("fingerprinting","اثر انگشت‌گذاری")}} در این آرایه گنجانده نشده‌اند.
 
-## Value
+## مقدار
 
-An array of strings.
+آرایه‌ای از رشته‌ها.
 
-## Examples
+## مثال‌ها
 
-In this example, when the contents of the clipboard change, the event listener logs to the console every string representing a [mime type](/en-US/docs/Web/HTTP/Guides/MIME_types) that is available in the array returned by the `ClipboardChangeEvent.types` property.
+در این مثال، هنگامی که محتوای حافظهٔ موقت تغییر می‌کند، شنوندهٔ رویداد هر رشته‌ای را که نشان‌دهندهٔ یک [نوع MIME](/en-US/docs/Web/HTTP/Guides/MIME_types) است و در آرایهٔ بازگشتی از ویژگی `ClipboardChangeEvent.types` موجود است، در کنسول ثبت می‌کند.
 
 ```js
 navigator.clipboard.addEventListener("clipboardchange", (event) => {
@@ -34,17 +28,17 @@ navigator.clipboard.addEventListener("clipboardchange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ClipboardChangeEvent.changeId")}}
 - {{domxref("ClipboardChangeEvent")}}
 - {{domxref("ClipboardEvent")}}
-- [Clipboard API](/en-US/docs/Web/API/Clipboard_API)
+- [API حافظهٔ موقت](/en-US/docs/Web/API/Clipboard_API)
