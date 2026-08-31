@@ -1,7 +1,7 @@
 ---
 title: "AudioNode: channelCountMode property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/channelCountMode"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,32 +14,32 @@ browser-compat: api.AudioNode.channelCountMode
 
 {{ APIRef("Web Audio API") }}
 
-The `channelCountMode` property of the {{ domxref("AudioNode") }} interface represents an enumerated value describing the way channels must be matched between the node's inputs and outputs.
+`AudioNode` 接口的 `channelCountMode` 属性是一个枚举值，用于描述节点输入与输出之间声道必须如何匹配。
 
-## Value
+## 值
 
-The possible values of the `channelCountMode` enumerated value, and their meanings are:
+`channelCountMode` 枚举值可能的值及其含义如下：
 
 - `max`
-  - : The number of channels is equal to the maximum number of channels of all connections.
-    In this case, `channelCount` is ignored and only up-mixing happens.
+  - : 声道数等于所有连接中的最大声道数。
+    在这种情况下，`channelCount` 被忽略，只进行上混音。
 
-    The following AudioNode children default to this value: {{domxref("GainNode")}}, {{domxref("DelayNode")}}, {{domxref("ScriptProcessorNode")}}, {{domxref("BiquadFilterNode")}}, {{domxref("WaveShaperNode")}}.
+    以下 `AudioNode` 子节点默认使用此值：{{domxref("GainNode")}}、{{domxref("DelayNode")}}、{{domxref("ScriptProcessorNode")}}、{{domxref("BiquadFilterNode")}}、{{domxref("WaveShaperNode")}}。
 
 - `clamped-max`
-  - : The number of channels is equal to the maximum number of channels of all connections, clamped to the value of `channelCount`.
+  - : 声道数等于所有连接中的最大声道数，但会被限制为 `channelCount` 的值。
 
-    The following AudioNode children default to this value: {{domxref("PannerNode")}}, {{domxref("ConvolverNode")}}, {{domxref("DynamicsCompressorNode")}}
+    以下 `AudioNode` 子节点默认使用此值：{{domxref("PannerNode")}}、{{domxref("ConvolverNode")}}、{{domxref("DynamicsCompressorNode")}}。
 
 - `explicit`
-  - : The number of channels is defined by the value of `channelCount`.
+  - : 声道数由 `channelCount` 的值定义。
 
-    The following AudioNode children default to this value: {{domxref("AudioDestinationNode")}}, {{domxref("AnalyserNode")}}, {{domxref("ChannelSplitterNode")}}, {{domxref("ChannelMergerNode")}}
+    以下 `AudioNode` 子节点默认使用此值：{{domxref("AudioDestinationNode")}}、{{domxref("AnalyserNode")}}、{{domxref("ChannelSplitterNode")}}、{{domxref("ChannelMergerNode")}}。
 
 > [!NOTE]
-> In older versions of the spec, the default for a {{domxref("ChannelSplitterNode")}} was `max`.
+> 在旧版规范中，{{domxref("ChannelSplitterNode")}} 的默认值为 `max`。
 
-## Examples
+## 示例
 
 ```js
 const audioCtx = new AudioContext();
@@ -53,14 +53,14 @@ gainNode.connect(audioCtx.destination);
 oscillator.channelCountMode = "explicit";
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [使用 Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
