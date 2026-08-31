@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: fillStyle property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: fillStyle property"
 short-title: fillStyle
 slug: Web/API/CanvasRenderingContext2D/fillStyle
 page-type: web-api-instance-property
@@ -14,27 +8,24 @@ browser-compat: api.CanvasRenderingContext2D.fillStyle
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.fillStyle`**
-property of the [Canvas 2D API](/en-US/docs/Web/API/Canvas_API) specifies the
-color, gradient, or pattern to use inside shapes. The default style is `black`.
+ویژگی **`CanvasRenderingContext2D.fillStyle`** در [Canvas 2D API](/en-US/docs/Web/API/Canvas_API) رنگ، گرادیان یا الگوی مورد استفاده برای پر کردن داخل اشکال را مشخص می‌کند. مقدار پیش‌فرض آن `black` است.
 
 > [!NOTE]
-> For more examples of fill and stroke styles, see [Applying styles and color](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) in the [Canvas tutorial](/en-US/docs/Web/API/Canvas_API/Tutorial).
+> برای مثال‌های بیشتر درباره سبک‌های پر و Stroke، به بخش [اعمال سبک‌ها و رنگ‌ها](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) در [آموزش Canvas](/en-US/docs/Web/API/Canvas_API/Tutorial) مراجعه کنید.
 
-## Value
+## مقدار
 
-One of the following:
+یکی از موارد زیر:
 
-- A string parsed as CSS {{cssxref("&lt;color&gt;")}} value.
-- A {{domxref("CanvasGradient")}} object (a linear or radial gradient).
-- A {{domxref("CanvasPattern")}} object (a repeating image).
+- یک رشته که به عنوان مقدار CSS {{cssxref("&lt;color&gt;")}} تفسیر می‌شود.
+- یک شیء {{domxref("CanvasGradient")}} (گرادیان خطی یا شعاعی).
+- یک شیء {{domxref("CanvasPattern")}} (تصویر تکراری).
 
-## Examples
+## مثال‌ها
 
-### Changing the fill color of a shape
+### تغییر رنگ پر یک شکل
 
-This example applies a blue fill color to a rectangle.
+این مثال یک رنگ پر آبی را به یک مستطیل اعمال می‌کند.
 
 #### HTML
 
@@ -52,17 +43,13 @@ ctx.fillStyle = "blue";
 ctx.fillRect(10, 10, 100, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Changing_the_fill_color_of_a_shape', 700, 160) }}
 
-### Creating multiple fill colors using loops
+### ایجاد چندین رنگ پر با استفاده از حلقه‌ها
 
-In this example, we use two `for` loops to draw a grid of rectangles, each
-having a different fill color. To achieve this, we use the two variables `i`
-and `j` to generate a unique RGB color for each square, and only modify the
-red and green values. (The blue channel has a fixed value.) By modifying the channels,
-you can generate all kinds of palettes.
+در این مثال، از دو حلقه `for` برای رسم یک شبکه از مستطیل‌ها استفاده می‌کنیم که هر کدام رنگ پر متفاوتی دارند. برای این کار، از دو متغیر `i` و `j` برای تولید یک رنگ RGB منحصربه‌فرد برای هر مربع استفاده می‌کنیم و فقط مقادیر قرمز و سبز را تغییر می‌دهیم (کانال آبی مقدار ثابتی دارد). با تغییر کانال‌ها می‌توانید انواع پالت‌ها را ایجاد کنید.
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -83,35 +70,34 @@ for (let i = 0; i < 6; i++) {
 }
 ```
 
-The result looks like this:
+نتیجه به شکل زیر است:
 
 {{EmbedLiveSample("Creating_multiple_fill_colors_using_loops", "", "160")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-### WebKit/Blink-specific note
+### نکته مخصوص WebKit/Blink
 
-In WebKit- and Blink-based browsers, the non-standard and deprecated method
-`ctx.setFillColor()` is implemented in addition to this property.
+در مرورگرهای مبتنی بر WebKit و Blink، علاوه بر این ویژگی، متد غیراستاندارد و منسوخ `ctx.setFillColor()` نیز پیاده‌سازی شده است.
 
 ```js
-setFillColor(color, /* (optional) */ alpha);
-setFillColor(grayLevel, /* (optional) */ alpha);
+setFillColor(color, /* (اختیاری) */ alpha);
+setFillColor(grayLevel, /* (اختیاری) */ alpha);
 setFillColor(r, g, b, a);
 setFillColor(c, m, y, k, a);
 ```
 
-## See also
+## همچنین ببینید
 
 - [Canvas API](/en-US/docs/Web/API/Canvas_API)
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
-- Values used by this property:
-  - {{cssxref("&lt;color&gt;")}} CSS data type
-  - {{domxref("CanvasGradient")}} object
-  - {{domxref("CanvasPattern")}} object
+- رابط تعریف‌کننده این ویژگی: {{domxref("CanvasRenderingContext2D")}}
+- مقادیر استفاده شده توسط این ویژگی:
+  - نوع داده CSS {{cssxref("&lt;color&gt;")}}
+  - شیء {{domxref("CanvasGradient")}}
+  - شیء {{domxref("CanvasPattern")}}
