@@ -1,7 +1,7 @@
 ---
 title: "AudioContext: createMediaElementSource() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaElementSource"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,31 +14,31 @@ browser-compat: api.AudioContext.createMediaElementSource
 
 {{ APIRef("Web Audio API") }}
 
-The `createMediaElementSource()` method of the {{ domxref("AudioContext") }} Interface is used to create a new {{ domxref("MediaElementAudioSourceNode") }} object, given an existing HTML {{htmlelement("audio")}} or {{htmlelement("video")}} element, the audio from which can then be played and manipulated.
+متد `createMediaElementSource()` از رابط {{ domxref("AudioContext") }} برای ایجاد یک شیء {{ domxref("MediaElementAudioSourceNode") }} جدید استفاده می‌شود، با توجه به یک عنصر HTML {{htmlelement("audio")}} یا {{htmlelement("video")}} موجود، که صدای آن می‌تواند پخش و دستکاری شود.
 
-For more details about media element audio source nodes, check out the {{ domxref("MediaElementAudioSourceNode") }} reference page.
+برای جزئیات بیشتر درباره گره‌های منبع صوتی عنصر رسانه، به صفحه مرجع {{ domxref("MediaElementAudioSourceNode") }} مراجعه کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createMediaElementSource(myMediaElement)
 ```
 
-### Parameters
+### پارامترها
 
 - `myMediaElement`
-  - : An {{domxref("HTMLMediaElement")}} object that you want to feed into an audio processing graph to manipulate.
+  - : یک شیء {{domxref("HTMLMediaElement")}} که می‌خواهید برای دستکاری به یک گراف پردازش صوتی وارد کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("MediaElementAudioSourceNode")}}.
+یک {{domxref("MediaElementAudioSourceNode")}}.
 
-## Examples
+## مثال‌ها
 
-This simple example creates a source from an {{htmlelement("audio") }} element using `createMediaElementSource()`, then passes the audio through a {{ domxref("GainNode") }} before feeding it into the {{ domxref("AudioDestinationNode") }} for playback. When the mouse pointer is moved, the `updatePage()` function is invoked, which calculates the current gain as a ratio of mouse Y position divided by overall window height. You can therefore increase and decrease the volume of the playing music by moving the mouse pointer up and down.
+این مثال ساده با استفاده از `createMediaElementSource()` یک منبع از عنصر {{htmlelement("audio") }} می‌سازد، سپس صدا را قبل از ارسال به {{ domxref("AudioDestinationNode") }} برای پخش، از یک {{ domxref("GainNode") }} عبور می‌دهد. هنگامی که نشانگر ماوس حرکت می‌کند، تابع `updatePage()` فراخوانی می‌شود که بهره فعلی را به صورت نسبت موقعیت Y ماوس تقسیم بر ارتفاع کل پنجره محاسبه می‌کند. بنابراین می‌توانید با حرکت دادن نشانگر ماوس به بالا و پایین، حجم موسیقی در حال پخش را افزایش و کاهش دهید.
 
 > [!NOTE]
-> You can also [view this example running live](https://mdn.github.io/webaudio-examples/media-source-buffer/), or [view the source](https://github.com/mdn/webaudio-examples/tree/main/media-source-buffer).
+> شما همچنین می‌توانید [این مثال را به صورت زنده مشاهده کنید](https://mdn.github.io/webaudio-examples/media-source-buffer/)، یا [کد منبع را مشاهده کنید](https://github.com/mdn/webaudio-examples/tree/main/media-source-buffer).
 
 ```js
 const audioCtx = new AudioContext();
@@ -73,16 +73,16 @@ gainNode.connect(audioCtx.destination);
 ```
 
 > [!NOTE]
-> As a consequence of calling `createMediaElementSource()`, audio playback from the {{domxref("HTMLMediaElement")}} will be re-routed into the processing graph of the AudioContext. So playing/pausing the media can still be done through the media element API and the player controls.
+> در نتیجه فراخوانی `createMediaElementSource()`، پخش صدا از {{domxref("HTMLMediaElement")}} به گراف پردازش AudioContext مسیریابی مجدد می‌شود. بنابراین پخش/توقف رسانه همچنان می‌تواند از طریق API عنصر رسانه و کنترل‌های پخش انجام شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
