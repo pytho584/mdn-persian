@@ -1,7 +1,7 @@
 ---
 title: "BufferedChangeEvent"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BufferedChangeEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,29 +15,27 @@ browser-compat: api.BufferedChangeEvent
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}{{SeeCompatTable}}
 
-The **`BufferedChangeEvent`** interface of the {{domxref("Media Source Extensions API", "Media Source Extensions API", "", "nocode")}} represents the event object for the {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} event fired on a {{domxref("ManagedSourceBuffer")}}. This event is fired whenever the buffered ranges of the `ManagedSourceBuffer` change, for example as a result of {{domxref("SourceBuffer.appendBuffer", "appendBuffer()")}}, {{domxref("SourceBuffer.remove", "remove()")}}, or {{domxref("MediaSource.endOfStream", "endOfStream()")}} calls, or when the user agent runs the memory cleanup algorithm.
+رابط **`BufferedChangeEvent`** از {{domxref("Media Source Extensions API", "Media Source Extensions API", "", "nocode")}}، شیء رویداد مربوط به رویداد {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} را نشان می‌دهد که روی یک {{domxref("ManagedSourceBuffer")}} شلیک می‌شود. این رویداد هر زمان که محدوده‌های بافرشده‌ی `ManagedSourceBuffer` تغییر کنند، برای مثال در نتیجه‌ی فراخوانی‌های {{domxref("SourceBuffer.appendBuffer", "appendBuffer()")}}، {{domxref("SourceBuffer.remove", "remove()")}} یا {{domxref("MediaSource.endOfStream", "endOfStream()")}}، یا زمانی که عامل کاربر (user agent) الگوریتم پاک‌سازی حافظه را اجرا می‌کند، شلیک می‌شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("BufferedChangeEvent.BufferedChangeEvent", "BufferedChangeEvent()")}} {{experimental_inline}}
-  - : Creates and returns a new `BufferedChangeEvent` object.
+  - : یک شیء `BufferedChangeEvent` جدید ایجاد کرده و آن را برمی‌گرداند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{domxref("Event")}}._
+_همچنین ویژگی‌های رابط والد خود، {{domxref("Event")}} را به ارث می‌برد._
 
 - {{domxref("BufferedChangeEvent.addedRanges")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A {{domxref("TimeRanges")}} object representing the time ranges that were added to the {{domxref("ManagedSourceBuffer")}}'s buffer.
+  - : یک شیء {{domxref("TimeRanges")}} که بازه‌های زمانی اضافه‌شده به بافر {{domxref("ManagedSourceBuffer")}} را نشان می‌دهد.
 - {{domxref("BufferedChangeEvent.removedRanges")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A {{domxref("TimeRanges")}} object representing the time ranges that were removed from the {{domxref("ManagedSourceBuffer")}}'s buffer.
+  - : یک شیء {{domxref("TimeRanges")}} که بازه‌های زمانی حذف‌شده از بافر {{domxref("ManagedSourceBuffer")}} را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Handling buffered range changes
-
-This example creates a {{domxref("ManagedMediaSource")}}, attaches it to a {{htmlelement("video")}} element, fetches a fragmented MP4 file, and listens for the `bufferedchange` event. When the event fires, it logs the added time ranges.
+این مثال یک {{domxref("ManagedMediaSource")}} می‌سازد، آن را به یک عنصر {{htmlelement("video")}} متصل می‌کند، یک فایل MP4 تکه‌تکه‌شده را دریافت می‌کند، و به رویداد `bufferedchange` گوش می‌دهد. وقتی رویداد شلیک می‌شود، بازه‌های زمانی اضافه‌شده را در کنسول ثبت می‌کند.
 
 ```js
 const videoUrl =
@@ -71,15 +69,15 @@ if (ManagedMediaSource.isTypeSupported(mediaType)) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ManagedMediaSource")}}
 - {{domxref("ManagedSourceBuffer")}}
