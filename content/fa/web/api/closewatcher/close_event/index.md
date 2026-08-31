@@ -1,11 +1,5 @@
 ---
 title: "CloseWatcher: close event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher/close_event"
-status: "needs-translation"
----
-
----
-title: "CloseWatcher: close event"
 short-title: close
 slug: Web/API/CloseWatcher/close_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.CloseWatcher.close_event
 
 {{APIRef("HTML DOM")}}
 
-A `close` event is fired at a {{domxref("CloseWatcher")}} object when a close request was received and only fired if the {{domxref("CloseWatcher.cancel_event", "cancel")}} event that preceded the `close` one was not canceled.
+یک رویداد `close` روی یک شیء {{domxref("CloseWatcher")}} هنگامی که یک درخواست بستن دریافت شود، شلیک می‌شود و تنها در صورتی شلیک می‌شود که رویداد {{domxref("CloseWatcher.cancel_event", "cancel")}} که قبل از `close` رخ داده است، لغو نشده باشد.
 
-The `close` event handler is where the code to close the UI component should be called: this ensures that the component will be closed properly either from the platform-specific close signal or from a call to {{domxref("CloseWatcher.requestClose()")}}.
+کنترل‌کننده رویداد `close` جایی است که کد مربوط به بستن مؤلفه رابط کاربری باید فراخوانی شود: این کار تضمین می‌کند که مؤلفه چه از طریق سیگنال بستن مختص پلتفرم و چه از طریق فراخوانی {{domxref("CloseWatcher.requestClose()")}} به درستی بسته خواهد شد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("close", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("close", (event) => { })
 onclose = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("Event")}}.
+یک {{domxref("Event")}}.
 
-## Examples
+## مثال‌ها
 
-### Using the `close` event
+### استفاده از رویداد `close`
 
-Use the `close` to listen for close requests.
+از `close` برای گوش دادن به درخواست‌های بستن استفاده کنید.
 
 ```js
 watcher.addEventListener("close", () => {
@@ -45,10 +39,10 @@ watcher.addEventListener("close", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
