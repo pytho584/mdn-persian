@@ -1,7 +1,8 @@
+```markdown
 ---
 title: "AnimationTimeline: currentTime property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationTimeline/currentTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,17 +15,17 @@ browser-compat: api.AnimationTimeline.currentTime
 
 {{ APIRef("Web Animations") }}
 
-The **`currentTime`** read-only property of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)'s {{domxref("AnimationTimeline")}} interface returns the timeline's current time in milliseconds, or `null` if the timeline is inactive.
+ویژگی فقط‌خواندنی **`currentTime`** در رابط {{domxref("AnimationTimeline")}} از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)، زمان فعلی خط زمانی را بر حسب میلی‌ثانیه برمی‌گرداند، یا اگر خط زمانی غیرفعال باشد، مقدار `null` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A number representing the timeline's current time in milliseconds, or `null` if the timeline is inactive.
+عددی که زمان فعلی خط زمانی را بر حسب میلی‌ثانیه نشان می‌دهد، یا اگر خط زمانی غیرفعال باشد، مقدار `null`.
 
-## Reduced time precision
+## دقت کاهش‌یافته زمان
 
-To offer protection against timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting), the precision of `animationTimeline.currentTime` might get rounded depending on browser settings. In Firefox, the `privacy.reduceTimerPrecision` preference is enabled by default and defaults to 2ms. You can also enable `privacy.resistFingerprinting`, in which case the precision will be 100ms or the value of `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`, whichever is larger.
+برای محافظت در برابر حملات زمان‌بندی و [اثر انگشت دیجیتال](/en-US/docs/Glossary/Fingerprinting)، دقت `animationTimeline.currentTime` ممکن است بسته به تنظیمات مرورگر گرد شود. در فایرفاکس، اولویت `privacy.reduceTimerPrecision` به‌طور پیش‌فرض فعال است و مقدار پیش‌فرض آن ۲ میلی‌ثانیه است. همچنین می‌توانید `privacy.resistFingerprinting` را فعال کنید، که در این صورت دقت ۱۰۰ میلی‌ثانیه یا مقدار `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`، هر کدام بزرگ‌تر است، خواهد بود.
 
-For example, with reduced time precision, the result of `animationTimeline.currentTime` will always be a multiple of 0.002, or a multiple of 0.1 (or `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) with `privacy.resistFingerprinting` enabled.
+برای مثال، با دقت کاهش‌یافته زمان، نتیجه `animationTimeline.currentTime` همیشه مضربی از ۰٫۰۰۲ خواهد بود، یا با فعال بودن `privacy.resistFingerprinting`، مضربی از ۰٫۱ (یا `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) خواهد بود.
 
 ```js
 // reduced time precision (2ms) in Firefox 60
@@ -44,17 +45,18 @@ animationTimeline.currentTime;
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("AnimationTimeline")}}
-- {{domxref("DocumentTimeline")}} inherits this property
-- {{domxref("Document.timeline")}} returns a timeline object which inherits this property
+- {{domxref("DocumentTimeline")}} این ویژگی را به ارث می‌برد
+- {{domxref("Document.timeline")}} یک شیء خط زمانی برمی‌گرداند که این ویژگی را به ارث می‌برد
+```
