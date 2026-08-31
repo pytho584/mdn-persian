@@ -1,11 +1,5 @@
 ---
 title: "CloseWatcher: destroy() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher/destroy"
-status: "needs-translation"
----
-
----
-title: "CloseWatcher: destroy() method"
 short-title: destroy()
 slug: Web/API/CloseWatcher/destroy
 page-type: web-api-instance-method
@@ -14,38 +8,38 @@ browser-compat: api.CloseWatcher.destroy
 
 {{APIRef("HTML DOM")}}
 
-The **`destroy()`** method of the {{domxref("CloseWatcher")}} interface deactivates the close watcher. This is intended to be called if the relevant UI element is torn down in some other way than being closed.
+**`destroy()`** 方法属于 {{domxref("CloseWatcher")}} 接口，用于停用关闭监视器（close watcher）。当相关 UI 元素以除“关闭”之外的其他方式被拆除时，应调用此方法。
 
-After being deactivated, this `CloseWatcher` will no longer receive `cancel` or `close` events, and it will be possible to create new independent `CloseWatcher` instances.
+停用之后，这个 `CloseWatcher` 将不再接收 `cancel` 或 `close` 事件，并且可以创建新的独立 `CloseWatcher` 实例。
 
-## Syntax
+## 语法
 
 ```js-nolint
 destroy()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-## Examples
+## 示例
 
-### Using the `destroy()` method
+### 使用 `destroy()` 方法
 
-Use the `destroy()` method to dispose of the watcher instance for cleanup.
+使用 `destroy()` 方法釋放监视器实例以进行清理。
 
 ```js
 watcher.destroy();
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
