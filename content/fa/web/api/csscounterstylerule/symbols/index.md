@@ -1,11 +1,5 @@
 ---
 title: "CSSCounterStyleRule: symbols property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSCounterStyleRule/symbols"
-status: "needs-translation"
----
-
----
-title: "CSSCounterStyleRule: symbols property"
 short-title: symbols
 slug: Web/API/CSSCounterStyleRule/symbols
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CSSCounterStyleRule.symbols
 
 {{APIRef("CSSOM")}}
 
-The **`symbols`** property of the {{domxref("CSSCounterStyleRule")}} interface gets and sets the value of the {{cssxref("@counter-style/symbols","symbols")}} descriptor. If the descriptor does not have a value set, this attribute returns an empty string.
+ویژگی **`symbols`** از رابط {{domxref("CSSCounterStyleRule")}} مقدار توصیفگر {{cssxref("@counter-style/symbols","symbols")}} را دریافت و تنظیم می‌کند. اگر توصیفگر مقدار تنظیم‌شده‌ای نداشته باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-The following example shows a {{cssxref("@counter-style")}} rule. In JavaScript, `myRules[0]` is this `@counter-style` rule, returning `symbols` gives us the value "◰ ◳ ◲ ◱".
+مثال زیر یک قانون {{cssxref("@counter-style")}} را نشان می‌دهد. در جاوااسکریپت، `myRules[0]` همین قانون `@counter-style` است و `symbols` مقدار «◰ ◳ ◲ ◱» را برمی‌گرداند.
 
 ```css
 @counter-style box-corner {
@@ -38,10 +32,10 @@ let myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].symbols); // "◰ ◳ ◲ ◱"
 ```
 
-## Specifications
+## توصیه‌ها
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
