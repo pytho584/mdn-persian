@@ -1,11 +1,5 @@
 ---
 title: "CDATASection"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CDATASection"
-status: "needs-translation"
----
-
----
-title: CDATASection
 slug: Web/API/CDATASection
 page-type: web-api-interface
 browser-compat: api.CDATASection
@@ -13,18 +7,15 @@ browser-compat: api.CDATASection
 
 {{APIRef("DOM")}}
 
-The **`CDATASection`** interface represents a CDATA section
-that can be used within XML to include extended portions of unescaped text.
-When inside a CDATA section, the symbols `<` and `&` don't need escaping
-as they normally do.
+رابط **`CDATASection`** یک بخش CDATA را نشان می‌دهد که می‌تواند درون XML برای گنجاندن بخش‌های گسترده‌ای از متن بدون escape استفاده شود. درون یک بخش CDATA، نمادهای `<` و `&` نیازی به escape کردن ندارند، برخلاف حالت عادی.
 
-In XML, a CDATA section looks like:
+در XML، یک بخش CDATA به این شکل است:
 
 ```xml
 <![CDATA[ … ]]>
 ```
 
-For example:
+برای مثال:
 
 ```xml
 <foo>
@@ -32,32 +23,29 @@ For example:
 </foo>
 ```
 
-The only sequence which is not allowed within a CDATA section is the closing sequence
-of a CDATA section itself, `]]>`.
+تنها دنباله‌ای که درون یک بخش CDATA مجاز نیست، دنباله پایانی خود بخش CDATA یعنی `]]>` است.
 
 > [!NOTE]
-> CDATA sections should not be used within HTML. They are considered comments and are not displayed.
+> بخش‌های CDATA نباید درون HTML استفاده شوند. آنها به عنوان توضیح (comment) در نظر گرفته شده و نمایش داده نمی‌شوند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface has no specific properties and implements those of its parent
-{{DOMxRef("Text")}}._
+_این رابط ویژگی خاصی ندارد و ویژگی‌های والد خود {{DOMxRef("Text")}} را پیاده‌سازی می‌کند._
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface has no specific methods and implements those of its parent
-{{DOMxRef("Text")}}._
+_این رابط روش خاصی ندارد و روش‌های والد خود {{DOMxRef("Text")}} را پیاده‌سازی می‌کند._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.createCDATASection()")}}
