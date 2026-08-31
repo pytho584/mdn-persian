@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-controls attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,23 +13,23 @@ spec-urls: https://w3c.github.io/aria/#aria-controls
 sidebar: accessibilitysidebar
 ---
 
-The global `aria-controls` property identifies the element (or elements) whose contents or presence are controlled by the element on which this attribute is set.
+ویژگی سراسری `aria-controls` عنصر (یا عناصری) را مشخص می‌کند که محتوا یا وجود آن‌ها توسط عنصری که این ویژگی روی آن تنظیم شده است، کنترل می‌شود.
 
-## Description
+## توضیحات
 
-When an interactive widget or element, be it a combobox, tab, button, etc., is used to adjust or modify another element or component in a document or application, the `aria-controls` attribute can be used to programmatically associate the corresponding element or elements with the controlling element. The `aria-controls` attribute identifies the element (or elements) whose contents or presence are controlled by the element on which the attribute is set, regardless of what type of interaction initiates the impacted behavior.
+هنگامی که یک ابزارک یا عنصر تعاملی، خواه یک جعبه ترکیبی، برگه، دکمه و غیره، برای تنظیم یا تغییر عنصر یا مؤلفه دیگری در یک سند یا برنامه استفاده می‌شود، می‌توان از ویژگی `aria-controls` برای ارتباط برنامه‌نویسی عنصر یا عناصر متناظر با عنصر کنترل‌کننده استفاده کرد. ویژگی `aria-controls` عنصر (یا عناصری) را مشخص می‌کند که محتوا یا وجود آن‌ها توسط عنصری که ویژگی روی آن تنظیم شده است، کنترل می‌شود، صرف‌نظر از نوع تعاملی که رفتار تأثیرپذیر را آغاز می‌کند.
 
-A [combobox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role) element has `aria-controls` set to a value that refers to the element that serves as the popup. The `aria-controls` only needs to be set when the popup is visible, but it is valid and easier to program to reference an element that is not visible.
+یک عنصر [جعبه ترکیبی](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role) دارای `aria-controls` است که به مقداری اشاره می‌کند که به عنصر عمل‌کننده به عنوان پاپ‌آپ اشاره دارد. `aria-controls` فقط زمانی نیاز به تنظیم دارد که پاپ‌آپ قابل مشاهده باشد، اما معتبر و آسان‌تر برای برنامه‌نویسی است که به عنصری که قابل مشاهده نیست اشاره کند.
 
-Other examples of controls include:
+نمونه‌های دیگر از کنترل‌ها عبارتند از:
 
-- The button parts of an accordion widget that toggle the visibility of their associated panel content. Each button may have an `aria-controls` specified, referencing the ID of the element containing the content associated with the invoking control.
-- An element with a role of [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role): the scrollbar requires an `aria-controls` attribute referencing the ID of the element it controls.
-- A group of tabs that each display a different tab panel: each element with [`role="tab"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) has an `aria-controls` attribute referencing its associated [`tabpanel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role).
+- بخش‌های دکمه‌ای یک ابزارک آکاردئونی که قابلیت مشاهده محتوای پنل مرتبط خود را تغییر می‌دهند. هر دکمه ممکن است دارای `aria-controls` باشد که به شناسه عنصر حاوی محتوای مرتبط با کنترل فراخوانی‌کننده اشاره می‌کند.
+- یک عنصر با نقش [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role): نوار پیمایش نیاز به یک ویژگی `aria-controls` دارد که به شناسه عنصری که کنترل می‌کند اشاره کند.
+- یک گروه از برگه‌ها که هر کدام یک پنل برگه متفاوت را نمایش می‌دهند: هر عنصر با [`role="tab"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) دارای یک ویژگی `aria-controls` است که به [`tabpanel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role) مرتبط خود اشاره می‌کند.
 
-## Example
+## مثال
 
-In this tabs example, each tab controls one tabpanel:
+در این مثال از برگه‌ها، هر برگه یک پنل برگه را کنترل می‌کند:
 
 ```html
 <div class="tab-interface">
@@ -82,30 +82,28 @@ In this tabs example, each tab controls one tabpanel:
 ```
 
 > [!NOTE]
-> ARIA only modifies the accessibility tree for an element, identifying how assistive technology can present the content to users. ARIA doesn't change any implicit functionality or styling.
+> ARIA فقط درخت دسترسی‌پذیری یک عنصر را اصلاح می‌کند و مشخص می‌کند که فناوری کمکی چگونه می‌تواند محتوا را به کاربران ارائه دهد. ARIA هیچ عملکرد یا سبک ضمنی را تغییر نمی‌دهد.
 
-## Values
+## مقادیر
 
 - `id` list
-  - : A space-separated list of one or more ID values referencing the elements being controlled by the current element
+  - : یک فهرست جدا شده با فاصله از یک یا چند مقدار شناسه که به عناصر کنترل‌شده توسط عنصر جاری اشاره می‌کند.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaControlsElements")}}
-  - : The `ariaControlsElements` property is part of each element's interface.
-    Its value is an array of instances of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-controls` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaControlsElements` بخشی از رابط هر عنصر است. مقدار آن آرایه‌ای از نمونه‌های زیرکلاس‌های {{domxref("Element")}} است که ارجاعات `id` در ویژگی `aria-controls` را منعکس می‌کند ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 - {{domxref("ElementInternals.ariaControlsElements")}}
-  - : The `ariaControlsElements` property is part of each custom element's interface.
-    Its value is an array of instances of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-controls` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaControlsElements` بخشی از رابط هر عنصر سفارشی است. مقدار آن آرایه‌ای از نمونه‌های زیرکلاس‌های {{domxref("Element")}} است که ارجاعات `id` در ویژگی `aria-controls` را منعکس می‌کند ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** roles.
+در **همه** نقش‌ها استفاده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns)
