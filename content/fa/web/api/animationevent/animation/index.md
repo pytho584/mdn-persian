@@ -1,7 +1,7 @@
 ---
 title: "AnimationEvent: animation property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/animation"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,27 +14,27 @@ browser-compat: api.AnimationEvent.animation
 
 {{APIRef("Web Animations")}}
 
-The **`animation`** read-only property of the {{domxref("AnimationEvent")}} interface represents the animation associated with the event.
+ویژگی **`animation`** فقطخواندنی از رابط {{domxref("AnimationEvent")}} نمایانگر انیمیشن مرتبط با رویداد است.
 
-## Value
+## مقدار
 
-A {{domxref("CSSAnimation")}}, or `null`.
+یک {{domxref("CSSAnimation")}}، یا `null`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using CSS animations](/en-US/docs/Web/CSS/Guides/Animations/Using)
-- Animation-related CSS properties and at-rules: {{cssxref("animation")}},
+- [استفاده از انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations/Using)
+- ویژگی‌ها و قواعد at مربوط به انیمیشن CSS: {{cssxref("animation")}},
   {{cssxref("animation-delay")}}, {{cssxref("animation-direction")}},
   {{cssxref("animation-duration")}}, {{cssxref("animation-fill-mode")}},
   {{cssxref("animation-iteration-count")}}, {{cssxref("animation-name")}},
   {{cssxref("animation-play-state")}}, {{cssxref("animation-timing-function")}},
   {{cssxref("@keyframes")}}.
-- The {{domxref("AnimationEvent")}} interface it belongs to.
+- رابط {{domxref("AnimationEvent")}} که این ویژگی به آن تعلق دارد.
