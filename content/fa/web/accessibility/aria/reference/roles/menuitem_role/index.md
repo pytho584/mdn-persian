@@ -1,7 +1,8 @@
+```
 ---
 title: "ARIA: menuitem role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,67 +16,67 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `menuitem` role indicates the element is an option in a set of choices contained by a `menu` or `menubar`.
+نقش `menuitem` نشان می‌دهد که عنصر یک گزینه در مجموعه‌ای از انتخاب‌ها است که توسط یک `menu` یا `menubar` نگهداری می‌شود.
 
-## Description
+## توضیحات
 
-A `menuitem` is one of the three types of options in a set of choices contained by a [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role) or [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role); the other two being [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role) and [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role). The `menuitem` is only found as a descendant of, or owned by, elements with role `menu` or `menubar`, optionally nested within an element with role [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) that is contained in, or owned by, a menu.
+یک `menuitem` یکی از سه نوع گزینه در مجموعه‌ای از انتخاب‌ها است که توسط یک [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role) یا [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role) نگهداری می‌شود؛ دو نوع دیگر [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role) و [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role) هستند. `menuitem` فقط به‌عنوان فرزند یا متعلق به عناصری با نقش `menu` یا `menubar` یافت می‌شود، و به‌صورت اختیاری در داخل یک عنصر با نقش [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) قرار می‌گیرد که در یک منو نگهداری می‌شود یا متعلق به آن است.
 
-If the `menuitem` is not a descendant of a menu in the DOM, include the [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) attribute on menu to indicate the relationship. If `aria-owns` is set on the menu container to include elements that are not DOM children of the container, those elements will appear in the reading order in the sequence they are referenced and after any items that are DOM children in supporting technologies. Ensure the visual focus order matches the assistive technology reading order.
+اگر `menuitem` در DOM فرزند یک منو نباشد، ویژگی [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) را روی منو قرار دهید تا رابطه را نشان دهید. اگر `aria-owns` روی ظرف منو تنظیم شود تا عناصری که فرزندان DOM آن ظرف نیستند را شامل شود، آن عناصر در ترتیب خواندن به ترتیب ارجاع و پس از هر آیتمی که فرزند DOM هستند در فناوری‌های کمکی ظاهر می‌شوند. اطمینان حاصل کنید که ترتیب فوکوس دیداری با ترتیب خواندن فناوری کمکی مطابقت دارد.
 
-Every `menuitem` in a menu is focusable, whether or not it is disabled. Indicate a `menuitem` is disabled by setting [`aria-disabled="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) on the element with the role.
+هر `menuitem` در یک منو قابل فوکوس است، چه غیرفعال باشد چه نباشد. برای نشان دادن غیرفعال بودن یک `menuitem`، ویژگی [`aria-disabled="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) را روی عنصر دارای این نقش تنظیم کنید.
 
-If a `menuitem` has a submenu, program it to display a new sub-level menu when the menu item is activated and include [`aria-haspopup="menu"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) or with the `true` value to indicate to assistive technologies that the menu item is used to open a submenu.
+اگر یک `menuitem` زیرمنو دارد، آن را طوری برنامه‌ریزی کنید که هنگام فعال شدن آیتم منو، یک زیرمنوی جدید نمایش دهد و [`aria-haspopup="menu"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) یا مقدار `true` را شامل شود تا به فناوری‌های کمکی نشان دهد که آیتم منو برای باز کردن زیرمنو استفاده می‌شود.
 
-A common convention for indicating that a `menuitem` launches a dialog box is to append "…" (ellipsis) to the menu item label, e.g., "Save as …".
+یک قرارداد رایج برای نشان دادن اینکه یک `menuitem` یک کادر گفتگو را باز می‌کند، افزودن «…» (بیضی) به برچسب آیتم منو است، به عنوان مثال «Save as …».
 
-Every `menuitem` must have an accessible name. This name comes from the element's contents by default. If the contents don't provide for a useful accessible name, [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) can be used to reference visible label. If no visible content is available to provide the accessible name, an accessible name can be provided with [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label).
+هر `menuitem` باید یک نام قابل دسترس داشته باشد. این نام به‌طور پیش‌فرض از محتویات عنصر می‌آید. اگر محتویات نام قابل دسترس مفیدی ارائه ندهند، می‌توان از [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) برای ارجاع به برچسب قابل مشاهده استفاده کرد. اگر محتوای قابل مشاهده‌ای برای ارائه نام قابل دسترس موجود نباشد، می‌توان نام قابل دسترس را با [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) ارائه کرد.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
-- [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role) role
-  - : A widget providing a list of choices. Required context role (or `menubar`)
-- [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role) role
-  - : A presentation of a `menu` that usually remains visible and is usually presented horizontally. Required context role (or `menu`)
-- [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) role
-  - : Can be used to identify a set of related `menuitem`s within or otherwise owned by a `menu` or `menubar`
+- [نقش \`menu\`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role)
+  - : ویجتی که فهرستی از انتخاب‌ها را ارائه می‌دهد. نقش زمینه‌ای الزامی (یا `menubar`)
+- [نقش \`menubar\`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role)
+  - : نمایشی از یک `menu` که معمولاً قابل مشاهده باقی می‌ماند و معمولاً به‌صورت افقی ارائه می‌شود. نقش زمینه‌ای الزامی (یا `menu`)
+- [نقش \`group\`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role)
+  - : می‌تواند برای شناسایی مجموعه‌ای از `menuitem`های مرتبط در داخل یا متعلق به یک `menu` یا `menubar` استفاده شود.
 - [`aria-disabled`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled)
-  - : Indicates the element is perceivable but disabled, so it is not operable
+  - : نشان می‌دهد که عنصر قابل درک است اما غیرفعال است، بنابراین قابل اجرا نیست.
 - [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup)
-  - : Indicates the availability and type of interactive popup that can be triggered by the `menuitem`
+  - : نشان‌دهنده دسترس‌پذیری و نوع پنجره بازشوی تعاملی است که می‌تواند توسط `menuitem` فعال شود.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-- <kbd>Enter</kbd> and <kbd>Space</kbd>
-  - : If the `menuitem` has a submenu, opens the submenu and places focus on its first item. Otherwise, activates the item and closes the menu.
+- <kbd>Enter</kbd> و <kbd>Space</kbd>
+  - : اگر `menuitem` زیرمنو داشته باشد، زیرمنو را باز کرده و فوکوس را روی اولین آیتم آن قرار می‌دهد. در غیر این صورت، آیتم را فعال کرده و منو را می‌بندد.
 - <kbd>Down Arrow</kbd>
-  - : On a `menuitem` that has a submenu in a `menubar`, opens the submenu and places focus on the first item in the submenu. Otherwise, moves focus to the next item, optionally wrapping from the last to the first.
+  - : روی یک `menuitem` که در یک `menubar` زیرمنو دارد، زیرمنو را باز کرده و فوکوس را روی اولین آیتم زیرمنو قرار می‌دهد. در غیر این صورت، فوکوس را به آیتم بعدی می‌برد، و به‌صورت اختیاری از آخر به اول چرخش می‌کند.
 - <kbd>Up Arrow</kbd>
-  - : Moves focus to the previous item, optionally wrapping from the first to the last. Optionally, if the `menuitem` is in a menubar and has a submenu, opens the submenu and places focus on the last item in the submenu.
+  - : فوکوس را به آیتم قبلی می‌برد، و به‌صورت اختیاری از اول به آخر چرخش می‌کند. به‌صورت اختیاری، اگر `menuitem` در یک menubar باشد و زیرمنو داشته باشد، زیرمنو را باز کرده و فوکوس را روی آخرین آیتم زیرمنو قرار می‌دهد.
 - <kbd>Right Arrow</kbd>
-  - : If in a `menu` opened with a menubutton and not in a `menubar`, if the menuitem does not have a submenu, does nothing. When focus is in a `menubar`, moves focus to the next item, optionally wrapping from the last to the first. When focus is in a `menu` and on a `menuitem` that has a submenu, opens the submenu and places focus on its first item. When focus is in a `menu` and on an item that does not have a submenu, closes the submenu and any parent menus, moves focus to the next item in the `menubar`, and, if focus is now on a `menuitem` with a submenu, either opens the submenu of that `menuitem` without moving focus into the submenu, or opens the submenu of that `menuitem` and places focus on the first item in the submenu.
+  - : اگر در یک `menu` که با یک دکمه منو باز شده و در یک `menubar` نباشد، اگر menuitem زیرمنو نداشته باشد، هیچ کاری نمی‌کند. وقتی فوکوس در یک `menubar` است، فوکوس را به آیتم بعدی می‌برد، و به‌صورت اختیاری از آخر به اول چرخش می‌کند. وقتی فوکوس در یک `menu` و روی یک `menuitem` است که زیرمنو دارد، زیرمنو را باز کرده و فوکوس را روی اولین آیتم آن قرار می‌دهد. وقتی فوکوس در یک `menu` و روی آیتمی است که زیرمنو ندارد، زیرمنو و هر منوی والد را می‌بندد، فوکوس را به آیتم بعدی در `menubar` می‌برد، و اگر فوکوس حالا روی یک `menuitem` با زیرمنو است، یا زیرمنوی آن `menuitem` را بدون حرکت فوکوس به داخل زیرمنو باز می‌کند، یا زیرمنوی آن `menuitem` را باز کرده و فوکوس را روی اولین آیتم زیرمنو قرار می‌دهد.
 - <kbd>Left Arrow</kbd>
-  - : When focus is in a `menubar`, moves focus to the previous item, optionally wrapping from the first to the last. When focus is in a submenu of an item in a menu, closes the submenu and returns focus to the parent `menuitem`. When focus is in a submenu of an item in a `menubar`, closes the submenu, moves focus to the previous item in the `menubar`, and, if focus is now on a `menuitem` with a submenu, either opens the submenu of that `menuitem` without moving focus into the submenu, or opens the submenu of that `menuitem` and places focus on the first item in the submenu.
+  - : وقتی فوکوس در یک `menubar` است، فوکوس را به آیتم قبلی می‌برد، و به‌صورت اختیاری از اول به آخر چرخش می‌کند. وقتی فوکوس در زیرمنوی یک آیتم در یک منو است، زیرمنو را می‌بندد و فوکوس را به `menuitem` والد بازمی‌گرداند. وقتی فوکوس در زیرمنوی یک آیتم در یک `menubar` است، زیرمنو را می‌بندد، فوکوس را به آیتم قبلی در `menubar` می‌برد، و اگر فوکوس حالا روی یک `menuitem` با زیرمنو است، یا زیرمنوی آن `menuitem` را بدون حرکت فوکوس به داخل زیرمنو باز می‌کند، یا زیرمنوی آن `menuitem` را باز کرده و فوکوس را روی اولین آیتم زیرمنو قرار می‌دهد.
 - <kbd>Home</kbd>
-  - : If arrow key wrapping is not supported, moves focus to the first item in the current `menu` or `menubar`.
+  - : اگر چرخش با کلیدهای جهت‌نما پشتیبانی نمی‌شود، فوکوس را به اولین آیتم در `menu` یا `menubar` فعلی می‌برد.
 - <kbd>End</kbd>
-  - : If arrow key wrapping is not supported, moves focus to the last item in the current `menu` or `menubar`.
-- Any key that corresponds to a printable character (Optional)
-  - : Move focus to the next item in the current menu whose label begins with that printable character.
+  - : اگر چرخش با کلیدهای جهت‌نما پشتیبانی نمی‌شود، فوکوس را به آخرین آیتم در `menu` یا `menubar` فعلی می‌برد.
+- هر کلیدی که با یک کاراکتر قابل چاپ مطابقت دارد (اختیاری)
+  - : فوکوس را به آیتم بعدی در منوی فعلی می‌برد که برچسب آن با آن کاراکتر قابل چاپ شروع می‌شود.
 - <kbd>Escape</kbd>
-  - : Close the menu that contains focus and return focus to the element or context, e.g., menu button or parent `menuitem`, from which the menu was opened.
+  - : منوی حاوی فوکوس را ببندید و فوکوس را به عنصر یا زمینه‌ای، مانند دکمه منو یا `menuitem` والد، که منو از آن باز شده است، بازگردانید.
 - <kbd>Tab</kbd>
-  - : Moves focus to the next element in the tab sequence, and if the item that had focus is not in a menubar, closes its menu and all open parent menu containers.
+  - : فوکوس را به عنصر بعدی در توالی تب می‌برد، و اگر آیتمی که فوکوس داشت در یک menubar نباشد، منوی آن و تمام ظروف منوی والد باز را می‌بندد.
 - <kbd>Shift + Tab</kbd>
-  - : Moves focus to the previous element in the tab sequence, and if the item that had focus is not in a menubar, closes its menu and all open parent menu containers.
+  - : فوکوس را به عنصر قبلی در توالی تب می‌برد، و اگر آیتمی که فوکوس داشت در یک menubar نباشد، منوی آن و تمام ظروف منوی والد باز را می‌بندد.
 
-If a menu is opened or a menu bar receives focus as a result of a context action, <kbd>Escape</kbd> or <kbd>Enter</kbd> may return focus to the invoking context.
+اگر یک منو باز شود یا یک نوار منو در نتیجه یک عمل زمینه‌ای فوکوس دریافت کند، <kbd>Escape</kbd> یا <kbd>Enter</kbd> ممکن است فوکوس را به زمینه فراخوان بازگرداند.
 
-Some implementations of navigation menubars may have menuitem elements that both perform a function and open a submenu. In such implementations, <kbd>Enter</kbd> and <kbd>Space</kbd> perform a navigation function while <kbd>Down Arrow</kbd>, in a horizontal menubar, opens the submenu associated with that same menuitem.
+برخی پیاده‌سازی‌های نوار منوی پیمایش ممکن است عناصر menuitem داشته باشند که هم یک عملکرد را انجام می‌دهند و هم زیرمنویی را باز می‌کنند. در چنین پیاده‌سازی‌هایی، <kbd>Enter</kbd> و <kbd>Space</kbd> یک عملکرد پیمایش را انجام می‌دهند در حالی که <kbd>Down Arrow</kbd>، در یک نوار منوی افقی، زیرمنوی مرتبط با همان menuitem را باز می‌کند.
 
-When items in a `menubar` are arranged vertically and items in menu containers are arranged horizontally the <kbd>Down Arrow</kbd> performs as <kbd>Right Arrow</kbd> is described above, the <kbd>Up Arrow</kbd> performs as <kbd>Left Arrow</kbd> is described above, and vice versa.
+وقتی آیتم‌های یک `menubar` به‌صورت عمودی و آیتم‌های ظروف منو به‌صورت افقی چیده شده‌اند، <kbd>Down Arrow</kbd> همان عملکردی را دارد که برای <kbd>Right Arrow</kbd> در بالا توضیح داده شد، <kbd>Up Arrow</kbd> همان عملکردی را دارد که برای <kbd>Left Arrow</kbd> در بالا توضیح داده شد، و برعکس.
 
-## Examples
+## نمونه‌ها
 
 ```html
 <div>
@@ -111,13 +112,14 @@ When items in a `menubar` are arranged vertically and items in menu containers a
 </div>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [`menuitemcheckbox` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role)
-- [`menuitemradio` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role)
-- [`listitem` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listitem_role)
-- [`option` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role)
+- [نقش \`menuitemcheckbox\`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role)
+- [نقش \`menuitemradio\`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role)
+- [نقش \`listitem\`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listitem_role)
+- [نقش \`option\`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role)
+```
