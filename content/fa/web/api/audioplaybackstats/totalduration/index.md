@@ -1,7 +1,7 @@
 ---
 title: "AudioPlaybackStats: totalDuration property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioPlaybackStats/totalDuration"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,15 +16,15 @@ browser-compat: api.AudioPlaybackStats.totalDuration
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`totalDuration`** read-only property of the {{domxref("AudioPlaybackStats")}} interface is a number indicating the total duration of all audio frames since the audio context was initialized.
+ویژگی فقط‌خواندنی **`totalDuration`** در رابط {{domxref("AudioPlaybackStats")}} یک عدد است که مدت‌زمان کل همه فریم‌های صوتی را از زمانی که زمینه صوتی مقداردهی شده است، نشان می‌دهد.
 
-## Value
+## مقدار
 
-A double-precision floating point number indicating the total duration of all audio frames, in seconds. Initialized to `0`.
+یک عدد ممیز شناور با دقت دوگانه که مدت‌زمان کل همه فریم‌های صوتی را بر حسب ثانیه نشان می‌دهد. مقدار اولیه `0` است.
 
-## Examples
+## نمونه‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 const audioCtx = new AudioContext();
@@ -36,16 +36,16 @@ const stats = audioCtx.playbackStats;
 console.log(stats.totalDuration);
 ```
 
-See also the main {{domxref("AudioPlaybackStats")}} reference page for a more in-depth example.
+برای یک مثال دقیق‌تر، به صفحه مرجع اصلی {{domxref("AudioPlaybackStats")}} نیز مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
