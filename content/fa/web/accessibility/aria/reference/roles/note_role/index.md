@@ -1,30 +1,25 @@
 ---
 title: "ARIA: note role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/note_role"
-status: "needs-translation"
----
-
----
-title: "ARIA: note role"
+translated_by: "n8n + AI"
 short-title: note
 slug: Web/Accessibility/ARIA/Reference/Roles/note_role
 page-type: aria-role
 spec-urls: https://w3c.github.io/aria/#note
 sidebar: accessibilitysidebar
----
 
-A `note` role suggests a section whose content is parenthetic or ancillary to the main content.
+یک نقش `note` پیشنهاد می‌دهد که یک بخش، محتوای حاشیه‌ای یا فرعی نسبت به محتوای اصلی دارد.
 
-## Description
+## توضیحات
 
-The `note` role can be added to parenthetic or ancillary content if no other native element or other role fits the purpose.
+نقش `note` را می‌توان به محتوای حاشیه‌ای یا فرعی اضافه کرد، اگر هیچ عنصر بومی یا نقش دیگری مناسب نباشد.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
-- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) (optional)
-  - : Naming a note is optional, but can help screen reader users understand its context and purpose. The name can be provided using `aria-labelledby` if a visible label is present, otherwise with `aria-label`.
+- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) (اختیاری)
+  - : نام‌گذاری یک یادداشت اختیاری است، اما می‌تواند به کاربران صفحه‌خوان کمک کند تا زمینه و هدف آن را درک کنند. نام را می‌توان با استفاده از `aria-labelledby` در صورت وجود برچسب قابل مشاهده، یا در غیر این صورت با `aria-label` ارائه داد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <h1>Madam C. J. Walker</h1>
@@ -44,12 +39,12 @@ The `note` role can be added to parenthetic or ancillary content if no other nat
 …
 ```
 
-In the above Wikipedia style entry for Madam C.J. Walker, the `highlight-box` with role `note` could have been a {{HTMLElement('blockquote')}} if it contained a quote or {{HTMLElement('figcaption')}} in a {{HTMLElement('figure')}} if there was an associated image. In this case, as neither of those made sense, the `note` role was added to add semantics to the parenthetic content.
+در مدخل بالا به سبک ویکی‌پدیا برای Madam C.J. Walker، `highlight-box` با نقش `note` می‌توانست یک {{HTMLElement('blockquote')}} باشد اگر نقل قول داشت، یا {{HTMLElement('figcaption')}} در یک {{HTMLElement('figure')}} اگر تصویر مرتبطی وجود داشت. در اینجا، چون هیچ‌کدام منطقی نبود، نقش `note` برای افزودن معناشناسی به محتوای حاشیه‌ای اضافه شد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## جستارهای وابسته
 
-- [Document structure roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#1._document_structure_roles)
+- [نقش‌های ساختار سند](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#1._document_structure_roles)
