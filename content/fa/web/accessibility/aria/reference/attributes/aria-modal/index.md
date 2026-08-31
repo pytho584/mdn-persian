@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-modal attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-modal"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,34 +13,34 @@ spec-urls: https://w3c.github.io/aria/#aria-modal
 sidebar: accessibilitysidebar
 ---
 
-The `aria-modal` attribute indicates whether an element is modal when displayed.
+ویژگی `aria-modal` نشان می‌دهد که آیا یک عنصر هنگام نمایش، modal است یا خیر.
 
-## Description
+## توضیحات
 
-A section of content is "modal" means navigation is limited to the area itself and the background (the ancestors and siblings of the modal) is hidden. Setting `aria-modal="true"` on [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role) and [`alertdialog` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role) containers indicates the presence of a "modal" element to users of assistive technology, but does not actually make the element modal. The features that make the element actually modal must be implemented by the developer.
+بخشی از محتوا به معنای "modal" بودن این است که ناوبری به خود آن بخش محدود می‌شود و پس‌زمینه (اجداد و خواهر و برادرهای modal) پنهان می‌شود. تنظیم `aria-modal="true"` روی ظرف‌های [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role) و [نقش `alertdialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role) به کاربران فناوری کمکی وجود یک عنصر "modal" را اطلاع می‌دهد، اما عملاً عنصر را modal نمی‌کند. ویژگی‌هایی که عنصر را واقعاً modal می‌کنند باید توسط توسعه‌دهنده پیاده‌سازی شوند.
 
 > [!NOTE]
-> ARIA only modifies the accessibility tree, modifying how assistive technology presents the content to your users. ARIA doesn't change anything about an element's function or behavior. To create a modal effect you must use JavaScript to manage behavior, focus, and ARIA states.
+> ARIA فقط درخت دسترس‌پذیری را تغییر می‌دهد و نحوه ارائه محتوا به کاربران توسط فناوری کمکی را تغییر می‌دهد. ARIA هیچ چیزی را در عملکرد یا رفتار یک عنصر تغییر نمی‌دهد. برای ایجاد جلوه modal باید از JavaScript برای مدیریت رفتار، تمرکز و حالت‌های ARIA استفاده کنید.
 
-Relevant only on `dialog` and `alertdialog` containers, setting `aria-modal="true"` tells assistive technologies to let the user know the ability to interact with, or access other content on the page requires the modal dialog to be closed or otherwise lose focus.
+تنها در ظرف‌های `dialog` و `alertdialog` مرتبط است؛ تنظیم `aria-modal="true"` به فناوری‌های کمکی می‌گوید که به کاربر اطلاع دهند توانایی تعامل با یا دسترسی به محتوای دیگر صفحه مستلزم بسته شدن یا از دست دادن تمرکز گفتگوی modal است.
 
-Modal dialogs are when content is displayed and the user's interaction is limited to only that section until it is dismissed.
+دیالوگ‌های modal زمانی هستند که محتوا نمایش داده می‌شود و تعامل کاربر فقط به آن بخش محدود می‌شود تا زمانی که dismissed (بسته) شود.
 
-When creating modal dialogs, `aria-modal="true"` tells assistive technologies that the windows underneath the current dialog are not part of the modal content.
+هنگام ایجاد دیالوگ‌های modal، `aria-modal="true"` به فناوری‌های کمکی می‌گوید که پنجره‌های زیر دیالوگ فعلی بخشی از محتوای modal نیستند.
 
-When a modal element is displayed, focus should be placed in the modal. Focus needs to be "trapped" inside the modal when it is visible, until it is dismissed. Assistive technology (<abbr>AT</abbr>) can then navigate the modal's content and understand the scope of the modal's content. The `aria-modal` attribute helps AT communicate the bounds of the modal and distinguishes it from the rest of the page's content. When dismissed, focus should return to the element that triggered the modal.
+هنگامی که یک عنصر modal نمایش داده می‌شود، تمرکز باید در modal قرار گیرد. تمرکز باید تا زمانی که modal قابل مشاهده است و تا زمان بسته شدن، داخل آن "به دام بیفتد". فناوری کمکی (<abbr>AT</abbr>) سپس می‌تواند محتوای modal را مرور کند و دامنه محتوای modal را درک کند. ویژگی `aria-modal` به فناوری کمکی کمک می‌کند مرزهای modal را ارتباط دهد و آن را از بقیه محتوای صفحه متمایز کند. هنگام dismissed شدن، تمرکز باید به عنصری که modal را فعال کرده بازگردد.
 
-Ensure the modal is controllable using only its descendant elements. If a modal dialog has a close button, the button should be a descendant contained with the modal container in the DOM.
+اطمینان حاصل کنید که modal فقط با استفاده از عناصر فرزند آن قابل کنترل است. اگر یک دیالوگ modal دکمه بستن داشته باشد، این دکمه باید یک فرزند باشد که در DOM درون ظرف modal قرار دارد.
 
-When a modal element is displayed, authors **should** mark all other contents as inert (such as "inert subtrees" in HTML). Disabled content is not inert content. Inert content cannot be interacted with using both normal and specialized browsing modes such as caret browsing, which allow an assistive technology user to explore a page in detail. This includes disabled content, whose content may provide meaning.
+هنگامی که یک عنصر modal نمایش داده می‌شود، نویسندگان **باید** تمام محتوای دیگر را به عنوان inert (مانند "زیردرختان inert" در HTML) علامت‌گذاری کنند. محتوای disabled محتوای inert نیست. محتوای inert را نمی‌توان با حالت‌های مرور عادی و تخصصی مانند مرور caret که به کاربر فناوری کمکی اجازه می‌دهد صفحه را با جزئیات کاوش کند، تعامل کرد. این شامل محتوای disabled نیز می‌شود که ممکن است محتوای معنی‌داری فراهم کند.
 
-The [`inert`](/en-US/docs/Web/HTML/Reference/Global_attributes/inert) attribute is a boolean attribute that indicates, by its presence, that the element and all its shadow-including descendants are to be made inert.
+ویژگی [`inert`](/en-US/docs/Web/HTML/Reference/Global_attributes/inert) یک ویژگی بولی است که با حضور خود نشان می‌دهد که آن عنصر و تمام فرزندان شامل سایه آن باید inert شوند.
 
-Including `aria-modal="true"` on a [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role) or [`alertdialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role), removes the requirement of putting [`aria-hidden`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden) on background content, as the `aria-modal` informs assistive technologies that content outside a dialog is inert. Note that while support for the {{HTMLElement("dialog")}} element is good, thoroughly testing your implementation is vitally important.
+افزودن `aria-modal="true"` به یک [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role) یا [`alertdialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role) نیاز به قرار دادن [`aria-hidden`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden) را روی محتوای پس‌زمینه حذف می‌کند، زیرا `aria-modal` به فناوری‌های کمکی اطلاع می‌دهد که محتوای خارج از دیالوگ inert است. توجه داشته باشید که اگرچه پشتیبانی از عنصر {{HTMLElement("dialog")}} خوب است، آزمایش کامل پیاده‌سازی شما بسیار حیاتی است.
 
-If a dialog is not modal — there is no inert background and focus isn't confined to the dialog — either include `aria-modal="false"` or omit the attribute altogether.
+اگر یک دیالوگ modal نیست — پس‌زمینه inert وجود ندارد و تمرکز به دیالوگ محدود نیست — یا `aria-modal="false"` را شامل کنید یا ویژگی را به طور کلی حذف کنید.
 
-## Example
+## مثال
 
 ```html
 <div id="backdrop" class="no-scroll">
@@ -69,47 +69,47 @@ document.getElementById("confirm-btn").addEventListener("click", (event) => {
 });
 ```
 
-This partial example includes an `alertdialog` nested in a full-screen, non-scrollable backdrop.
+این مثال جزئی شامل یک `alertdialog` است که در یک پس‌زمینه تمام‌صفحه و غیرقابل پیمایش قرار گرفته است.
 
-The [`role="alertdialog"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role) identifies the element that serves as the alert dialog container. The [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) provides the alert dialog an accessible name by referring to the element that provides the alert dialog title. The [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) attribute gives the alert dialog an {{glossary("accessible description")}} by referring to the alert dialog content that describes the primary message or purpose of the alert dialog.
+[نقش `alertdialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role) عنصری را که به عنوان ظرف دیالوگ هشدار عمل می‌کند شناسایی می‌کند. [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) با اشاره به عنصری که عنوان دیالوگ هشدار را فراهم می‌کند، یک نام قابل دسترس به دیالوگ هشدار می‌دهد. ویژگی [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) به دیالوگ هشدار یک {{glossary("accessible description")}} می‌دهد با اشاره به محتوای دیالوگ هشدار که پیام اصلی یا هدف دیالوگ هشدار را توصیف می‌کند.
 
-The `aria-modal="true"` informs the assistive technology user that the content underneath the dialog is not interactive so long as the element with a declaration of `role="alertdialog"` has focus.
+`aria-modal="true"` به کاربر فناوری کمکی اطلاع می‌دهد که محتوای زیر دیالوگ تا زمانی که عنصر با اعلام `role="alertdialog"` دارای تمرکز باشد، تعاملی نیست.
 
-The `aria-modal` attribute exposes the existence of the modal to assistive technologies so the disabling of the content behind the modal can be communicated to AT users. Like all ARIA attributes, `aria-modal` itself has no effect on the page's functionality; focus management and disabling, interactivity on background elements, and the ability to remove focus from the alertdialog must all be managed with JavaScript.
+ویژگی `aria-modal` وجود modal را به فناوری‌های کمکی افشا می‌کند تا غیرفعال کردن محتوای پشت modal به کاربران AT منتقل شود. مانند همه ویژگی‌های ARIA، `aria-modal` به خودی خود تأثیری بر عملکرد صفحه ندارد؛ مدیریت تمرکز و غیرفعال‌سازی، تعامل‌پذیری روی عناصر پس‌زمینه، و قابلیت حذف تمرکز از alertdialog همه باید با JavaScript مدیریت شوند.
 
-## Values
+## مقادیر
 
-- `false` (default)
-  - : Element is not modal.
+- `false` (پیش‌فرض)
+  - : عنصر modal نیست.
 - `true`
-  - : Element is modal.
+  - : عنصر modal است.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaModal")}}
-  - : The [`ariaModal`](/en-US/docs/Web/API/Element/ariaModal) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-modal` attribute.
+  - : ویژگی [`ariaModal`](/en-US/docs/Web/API/Element/ariaModal) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-modal` را بازتاب می‌دهد.
 - {{domxref("ElementInternals.ariaModal")}}
-  - : The [`ariaModal`](/en-US/docs/Web/API/ElementInternals/ariaModal) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-modal` attribute.
+  - : ویژگی [`ariaModal`](/en-US/docs/Web/API/ElementInternals/ariaModal) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-modal` را بازتاب می‌دهد.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده شده در نقش‌ها:
 
 - [`window`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/window_role)
 
-Inherits into roles:
+به ارث رفته در نقش‌ها:
 
 - [`alertdialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role)
 - [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement("dialog")}} element
-- [`alertdialog` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role)
-- [`dialog` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role)
-- HTML [`inert` global attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/inert)
-- HTMLElement API [`inert`](/en-US/docs/Web/API/HTMLElement/inert) property
+- عنصر HTML {{HTMLElement("dialog")}}
+- [نقش `alertdialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role)
+- [نقش `dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role)
+- HTML [ویژگی سراسری `inert`](/en-US/docs/Web/HTML/Reference/Global_attributes/inert)
+- ویژگی [`inert`](/en-US/docs/Web/API/HTMLElement/inert) در API عنصر HTML
