@@ -1,9 +1,4 @@
----
-title: "CropTarget: fromElement() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CropTarget/fromElement_static"
-status: "needs-translation"
----
-
+```
 ---
 title: "CropTarget: fromElement() static method"
 short-title: fromElement()
@@ -16,32 +11,32 @@ browser-compat: api.CropTarget.fromElement_static
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`fromElement()`** static method of the {{domxref("CropTarget")}} interface returns a `CropTarget` instance that can be used to crop a captured video track to the area in which a specified element is rendered.
+متد ایستای **`fromElement()`** از رابط {{domxref("CropTarget")}} یک نمونه‌ی `CropTarget` برمی‌گرداند که می‌توان از آن برای برش یک مسیر ویدیویی ضبط‌شده به ناحیه‌ای که یک عنصر مشخص در آن رندر می‌شود استفاده کرد.
 
-Because the Region Capture API crops to an area of the current browser tab rather than capturing a specific element, any content drawn on top of the cropped area will be shown in the capture.
+از آنجا که Region Capture API یک ناحیه را از تب فعلی مرورگر برش می‌دهد و نه یک عنصر خاص را، هر محتوایی که روی ناحیه‌ی برش‌خورده قرار داشته باشد در ضبط دیده می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 CropTarget.fromElement(element)
 ```
 
-### Parameters
+### پارامترها
 
 - `element`
-  - : A reference to an {{domxref("Element")}} that you want to use as a crop target. For an element to be used as a crop target, it must be:
-    - On-screen
-    - Visible, that is, not hidden via `display: none` for example.
+  - ارجاعی به یک {{domxref("Element")}} که می‌خواهید به‌عنوان هدف برش از آن استفاده کنید. برای اینکه یک عنصر بتواند به‌عنوان هدف برش استفاده شود، باید:
+    - روی صفحه باشد.
+    - قابل مشاهده باشد؛ یعنی مثلاً با `display: none` پنهان نشده باشد.
 
-    In addition, the element will not be captured if the track being restricted has clones (that is, created by {{domxref("BrowserCaptureMediaStreamTrack.clone()")}}) or is captured from a different tab to the current user's tab (passed via {{domxref("Window.postMessage()")}}, for example).
+    علاوه بر این، اگر مسیری که قرار است محدود شود دارای کلون باشد (یعنی با {{domxref("BrowserCaptureMediaStreamTrack.clone()")}} ساخته شده باشد) یا ویدیو از تب دیگری غیر از تب فعلی کاربر گرفته شده باشد (مثلاً از طریق {{domxref("Window.postMessage()")}} ارسال شده باشد)، آن عنصر در ضبط قرار نخواهد گرفت.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to a {{domxref("CropTarget")}} object instance, which can then be passed to {{domxref("BrowserCaptureMediaStreamTrack.CropTo()")}} to crop the video captured in the track to just the area the specified DOM element is rendered in.
+یک {{jsxref("Promise")}} که به یک نمونه‌ی شیء {{domxref("CropTarget")}} resolve می‌شود؛ سپس می‌توان این نمونه را به {{domxref("BrowserCaptureMediaStreamTrack.CropTo()")}} ارسال کرد تا ویدیوی ضبط‌شده در مسیر، فقط به ناحیه‌ای که عنصر DOM مشخص‌شده در آن رندر می‌شود برش بخورد.
 
-`CropTarget` objects are serializable. They can be passed to another document using mechanisms such as {{domxref("Window.postMessage()")}}.
+اشیاء `CropTarget` سریال‌پذیر هستند و می‌توان آن‌ها را با سازوکارهایی مانند {{domxref("Window.postMessage()")}} به سند دیگری ارسال کرد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Options for getDisplayMedia()
@@ -65,17 +60,18 @@ await track.cropTo(cropTarget);
 videoElem.srcObject = stream;
 ```
 
-See [Using the Element Capture and Region Capture APIs](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture) for in-context example code.
+برای مشاهده‌ی مثال‌های کامل در بافت واقعی، به [استفاده از API های Element Capture و Region Capture](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - [Using the Element Capture and Region Capture APIs](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture)
+```
