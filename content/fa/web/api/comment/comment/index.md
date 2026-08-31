@@ -1,11 +1,5 @@
 ---
 title: "Comment: Comment() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Comment/Comment"
-status: "needs-translation"
----
-
----
-title: "Comment: Comment() constructor"
 short-title: Comment()
 slug: Web/API/Comment/Comment
 page-type: web-api-constructor
@@ -14,9 +8,7 @@ browser-compat: api.Comment.Comment
 
 {{ApiRef("DOM")}}
 
-The **`Comment()`** constructor returns a newly created
-{{domxref("Comment")}} object with the optional string given in
-parameter as its textual content.
+سازنده **`Comment()`** یک شیء {{domxref("Comment")}} تازه ایجاد شده را با رشته اختیاری که به عنوان پارامتر به آن داده می‌شود، به عنوان محتوای متنی آن برمی‌گرداند.
 
 ## Syntax
 
@@ -25,16 +17,16 @@ new Comment()
 new Comment(content)
 ```
 
-### Parameters
+### پارامترها
 
 - `content` {{optional_inline}}
-  - : A string representing the textual content of the comment.
+  - : رشته‌ای که محتوای متنی دیدگاه را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("Comment")}} containing `content`, or the empty string if no parameter was given.
+یک {{domxref("Comment")}} جدید حاوی `content`، یا رشته خالی اگر پارامتری داده نشده باشد.
 
-## Example
+## مثال
 
 ```js
 const comment = new Comment("Test");
@@ -44,11 +36,11 @@ const comment = new Comment("Test");
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [The DOM interfaces index](/en-US/docs/Web/API/Document_Object_Model)
-- {{domxref("Document.createComment()")}} is an outdated alternative to this constructor.
+- [شاخص رابط‌های DOM](/en-US/docs/Web/API/Document_Object_Model)
+- {{domxref("Document.createComment()")}} یک جایگزین قدیمی برای این سازنده است.
