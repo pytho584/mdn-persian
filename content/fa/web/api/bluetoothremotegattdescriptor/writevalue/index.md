@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTDescriptor: writeValue() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/writeValue"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,29 +16,27 @@ browser-compat: api.BluetoothRemoteGATTDescriptor.writeValue
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTDescriptor.writeValue()`**
-method sets the value property to the bytes contained in
-an {{jsxref("ArrayBuffer")}}, {{jsxref("TypedArray")}}, or {{jsxref("DataView")}} and returns a {{jsxref("Promise")}}.
+متد **`BluetoothRemoteGATTDescriptor.writeValue()`** ویژگی مقدار (value) را به بایت‌های موجود در یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}} تنظیم می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 writeValue(buffer)
 ```
 
-### Parameters
+### پارامترها
 
 - `buffer`
-  - : Sets the value with the bytes contained in the buffer.
+  - : مقدار را با بایت‌های موجود در بافر تنظیم می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}}.
+یک {{jsxref("Promise")}}.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
