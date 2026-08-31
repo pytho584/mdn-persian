@@ -1,7 +1,7 @@
 ---
 title: "BeforeInstallPromptEvent"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,44 +16,44 @@ browser-compat: api.BeforeInstallPromptEvent
 
 {{APIRef}}{{SeeCompatTable}}{{Non-standard_header}}
 
-The **`BeforeInstallPromptEvent`** is the interface of the {{domxref("Window.beforeinstallprompt_event", "beforeinstallprompt")}} event fired at the {{domxref("Window")}} object before a user is prompted to "install" a website to a home screen on mobile.
+**`BeforeInstallPromptEvent`** رابط رویداد {{domxref("Window.beforeinstallprompt_event", "beforeinstallprompt")}} است که روی شیء {{domxref("Window")}} پرتاب میشود، پیش از اینکه از کاربر خواسته شود یک وبسایت را به صفحه اصلی در موبایل «نصب» کند.
 
-This interface inherits from the {{domxref("Event")}} interface.
+این رابط از رابط {{domxref("Event")}} ارث میبرد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("BeforeInstallPromptEvent.BeforeInstallPromptEvent","BeforeInstallPromptEvent()")}}{{Non-standard_Inline}} {{Experimental_Inline}}
-  - : Creates a new `BeforeInstallPromptEvent` object.
+  - : یک شیء جدید `BeforeInstallPromptEvent` میسازد.
 
-## Instance properties
+## ویژگیهای نمونه
 
-_Inherits properties from its parent, {{domxref("Event")}}._
+_ویژگیها را از والد خود، {{domxref("Event")}}، به ارث میبرد._
 
 - {{domxref("BeforeInstallPromptEvent.platforms")}} {{ReadOnlyInline}}{{Non-standard_Inline}} {{Experimental_Inline}}
-  - : Returns an array of string items containing the platforms on which the event was dispatched. This is provided for user agents that want to present a choice of versions to the user such as, for example, "web" or "play" which would allow the user to choose between a web version or an Android version.
+  - : آرایهای از رشتهها را برمیگرداند که شامل پلتفرمهایی است که رویداد روی آنها ارسال شده است. این برای عاملهای کاربری فراهم شده است که میخواهند انتخابی از نسخهها را به کاربر ارائه دهند، مانند «web» یا «play» که به کاربر امکان انتخاب بین نسخه وب یا نسخه اندروید را میدهد.
 - {{domxref("BeforeInstallPromptEvent.userChoice")}} {{ReadOnlyInline}}{{Non-standard_Inline}} {{Experimental_Inline}}
-  - : Returns a {{jsxref("Promise")}} that resolves to an object describing the user's choice when they were prompted to install the app.
+  - : یک {{jsxref("Promise")}} برمیگرداند که به شیئی که انتخاب کاربر را هنگام اعلان نصب برنامه توصیف میکند، حل میشود.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("BeforeInstallPromptEvent.prompt()")}}{{Non-standard_Inline}} {{Experimental_Inline}}
-  - : Show a prompt asking the user if they want to install the app. This method returns a {{jsxref("Promise")}} that resolves to an object describing the user's choice when they were prompted to install the app.
+  - : یک اعلان را نشان میدهد که از کاربر میپرسد آیا میخواهد برنامه را نصب کند. این متد یک {{jsxref("Promise")}} برمیگرداند که به شیئی که انتخاب کاربر را هنگام اعلان نصب برنامه توصیف میکند، حل میشود.
 
-## Examples
+## مثالها
 
-In the following example an app provides its own install button, which has an `id` of `"install"`. Initially the button is hidden.
+در مثال زیر، یک برنامه دکمه نصب خود را دارد که `id` آن `"install"` است. در ابتدا دکمه پنهان است.
 
 ```html
 <button id="install" hidden>Install</button>
 ```
 
-The `beforeinstallprompt` handler:
+هندلر `beforeinstallprompt`:
 
-- Cancels the event, which prevents the browser displaying its own install UI on some platforms
-- Assigns the `BeforeInstallPromptEvent` object to a variable, so it can be used later
-- Reveals the app's install button.
+- رویداد را لغو میکند، که از نمایش رابط کاربری نصب خود مرورگر در برخی پلتفرمها جلوگیری میکند.
+- شیء `BeforeInstallPromptEvent` را به یک متغیر اختصاص میدهد تا بعداً مورد استفاده قرار گیرد.
+- دکمه نصب برنامه را نمایان میکند.
 
 ```js
 let installPrompt = null;
@@ -66,10 +66,10 @@ window.addEventListener("beforeinstallprompt", (event) => {
 });
 ```
 
-When clicked, the app's install button:
+هنگامی که دکمه نصب برنامه کلیک میشود:
 
-- Calls the {{domxref("BeforeInstallPromptEvent.prompt()", "prompt()")}} method of the stored event object, to trigger the installation prompt.
-- Resets its state by clearing the `installPrompt` variable and hiding itself again.
+- متد {{domxref("BeforeInstallPromptEvent.prompt()", "prompt()")}} شیء رویداد ذخیرهشده را برای راهاندازی اعلان نصب فراخوانی میکند.
+- با پاک کردن متغیر `installPrompt` و پنهان کردن دوباره خودش، حالت خود را بازنشانی میکند.
 
 ```js
 installButton.addEventListener("click", async () => {
@@ -83,11 +83,11 @@ installButton.addEventListener("click", async () => {
 });
 ```
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Making PWAs installable](/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable)
-- [How to provide your own in-app install experience](https://web.dev/articles/customize-install) on web.dev (2021)
+- [How to provide your own in-app install experience](https://web.dev/articles/customize-install) در web.dev (2021)
