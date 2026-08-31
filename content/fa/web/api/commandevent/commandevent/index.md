@@ -1,7 +1,5 @@
 ---
 title: "CommandEvent: CommandEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CommandEvent/CommandEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -14,40 +12,40 @@ browser-compat: api.CommandEvent.CommandEvent
 
 {{APIRef("Invoker Commands API")}}
 
-The **`CommandEvent()`** constructor creates a new {{domxref("CommandEvent")}} object.
+سازندهٔ **`CommandEvent()`** یک شیء {{domxref("CommandEvent")}} جدید ایجاد می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new CommandEvent(type)
 new CommandEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `command`.
+  - : یک رشته با نام رویداد.
+    به بزرگی یا کوچکی حروف حساس است و مرورگرها آن را روی `command` تنظیم می‌کنند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `source` {{optional_inline}}
-      - : An {{domxref("HTMLButtonElement")}} representing the button that was interacted with to cause this event. This can be any element but we recommend only using button as a source to avoid surprises.
+      - : یک {{domxref("HTMLButtonElement")}} که نشان‌دهندهٔ دکمه‌ای است که برای ایجاد این رویداد با آن تعامل شده است. این می‌تواند هر عنصری باشد، اما برای جلوگیری از نتایج غیرمنتظره، توصیه می‌کنیم فقط از دکمه به‌عنوان منبع استفاده کنید.
     - `command` {{optional_inline}}
-      - : A string containing the command for the controlled element to take. While manually instantiating a `CommandEvent` it is possible to use any string value, but it is recommended to use one of the built-in names or prefix with two dashes (`--`) to ensure forward compatibility.
+      - : یک رشته حاوی دستوری که عنصر کنترل‌شده باید آن را اجرا کند. هنگام نمونه‌سازی دستی یک `CommandEvent` می‌توان از هر مقدار رشته‌ای استفاده کرد، اما توصیه می‌شود برای تضمین سازگاری با آینده، از یکی از نام‌های داخلی استفاده کنید یا آن را با دو خط تیره (`--`) پیشوند کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("CommandEvent")}} object.
+یک شیء {{domxref("CommandEvent")}} جدید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Invoker Commands API", "Invoker Commands API", "", "nocode")}}
 - {{domxref("HTMLButtonElement.command")}}
