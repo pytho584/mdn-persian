@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTServer"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,35 +15,30 @@ browser-compat: api.BluetoothRemoteGATTServer
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTServer`** interface of the [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) represents a GATT
-Server on a remote device.
+رابط **`BluetoothRemoteGATTServer`** از [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) یک سرور GATT را روی یک دستگاه از راه دور نمایش می‌دهد.
 
-## Instance properties
+## خاصیت‌های نمونه
 
 - {{DOMxRef("BluetoothRemoteGATTServer.connected")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A boolean value that returns true while this script execution environment is
-    connected to `this.device`. It can be false while the user agent is
-    physically connected.
+  - : یک مقدار بولی که تا زمانی که این محیط اجرای اسکریپت به `this.device` متصل است، `true` برمی‌گرداند. ممکن است در حالی که عامل کاربر به صورت فیزیکی متصل است، `false` باشد.
 - {{DOMxRef("BluetoothRemoteGATTServer.device")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A reference to the {{DOMxRef("BluetoothDevice")}} running the server.
+  - : یک ارجاع به {{DOMxRef("BluetoothDevice")}} که سرور را اجرا می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{DOMxRef("BluetoothRemoteGATTServer.connect()")}} {{Experimental_Inline}}
-  - : Causes the script execution environment to connect to `this.device`.
+  - : باعث می‌شود محیط اجرای اسکریپت به `this.device` متصل شود.
 - {{DOMxRef("BluetoothRemoteGATTServer.disconnect()")}} {{Experimental_Inline}}
-  - : Causes the script execution environment to disconnect from `this.device`.
+  - : باعث می‌شود محیط اجرای اسکریپت از `this.device` قطع اتصال کند.
 - {{DOMxRef("BluetoothRemoteGATTServer.getPrimaryService()")}} {{Experimental_Inline}}
-  - : Returns a promise to the primary {{DOMxRef("BluetoothRemoteGATTService")}} offered by the
-    Bluetooth device for a specified `BluetoothServiceUUID`.
+  - : یک پرامیس به {{DOMxRef("BluetoothRemoteGATTService")}} اولیه ارائه‌شده توسط دستگاه بلوتوث برای یک `BluetoothServiceUUID` مشخص برمی‌گرداند.
 - {{DOMxRef("BluetoothRemoteGATTServer.getPrimaryServices()")}} {{Experimental_Inline}}
-  - : Returns a promise to a list of primary {{DOMxRef("BluetoothRemoteGATTService")}} objects
-    offered by the Bluetooth device for a specified `BluetoothServiceUUID`.
+  - : یک پرامیس به فهرستی از اشیاء {{DOMxRef("BluetoothRemoteGATTService")}} اولیه ارائه‌شده توسط دستگاه بلوتوث برای یک `BluetoothServiceUUID` مشخص برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
