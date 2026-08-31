@@ -1,7 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: rect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect"
-status: "needs-translation"
 ---
 
 ---
@@ -14,51 +12,41 @@ browser-compat: api.CanvasRenderingContext2D.rect
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.rect()`**
-method of the Canvas 2D API adds a rectangle to the current path.
+متد **`CanvasRenderingContext2D.rect()`** در Canvas 2D API، یک مستطیل به مسیر جاری اضافه می‌کند.
 
-Like other methods that modify the current path, this method does not directly render
-anything. To draw the rectangle onto a canvas, you can use the
-{{domxref("CanvasRenderingContext2D.fill", "fill()")}} or
-{{domxref("CanvasRenderingContext2D.stroke", "stroke()")}} methods.
+این متد مانند سایر روش‌هایی که مسیر جاری را تغییر می‌دهند، مستقیماً چیزی را رندر نمی‌کند. برای رسم مستطیل روی بوم، می‌توانید از متدهای {{domxref("CanvasRenderingContext2D.fill", "fill()")}} یا {{domxref("CanvasRenderingContext2D.stroke", "stroke()")}} استفاده کنید.
 
 > [!NOTE]
-> To both create and render a rectangle in one step, use the
-> {{domxref("CanvasRenderingContext2D.fillRect", "fillRect()")}} or
-> {{domxref("CanvasRenderingContext2D.strokeRect", "strokeRect()")}} methods.
+> برای ایجاد و رندر یک مستطیل در یک مرحله، از متدهای {{domxref("CanvasRenderingContext2D.fillRect", "fillRect()")}} یا {{domxref("CanvasRenderingContext2D.strokeRect", "strokeRect()")}} استفاده کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 rect(x, y, width, height)
 ```
 
-The `rect()` method creates a rectangular path whose starting point is at
-`(x, y)` and whose size is specified by `width` and
-`height`.
+متد `rect()` یک مسیر مستطیلی ایجاد می‌کند که نقطه شروع آن در `(x, y)` است و اندازه آن توسط `width` و `height` مشخص می‌شود.
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : The x-axis coordinate of the rectangle's starting point.
+  - : مختصات محور x نقطه شروع مستطیل.
 - `y`
-  - : The y-axis coordinate of the rectangle's starting point.
+  - : مختصات محور y نقطه شروع مستطیل.
 - `width`
-  - : The rectangle's width. Positive values are to the right, and negative to the left.
+  - : عرض مستطیل. مقادیر مثبت به سمت راست و مقادیر منفی به سمت چپ هستند.
 - `height`
-  - : The rectangle's height. Positive values are down, and negative are up.
+  - : ارتفاع مستطیل. مقادیر مثبت به سمت پایین و مقادیر منفی به سمت بالا هستند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Drawing a rectangle
+### رسم یک مستطیل
 
-This example creates a rectangular path using the `rect()` method. The path
-is then rendered using the `fill()` method.
+این مثال یک مسیر مستطیلی را با استفاده از متد `rect()` ایجاد می‌کند. سپس مسیر با استفاده از متد `fill()` رندر می‌شود.
 
 #### HTML
 
@@ -66,10 +54,9 @@ is then rendered using the `fill()` method.
 <canvas id="canvas"></canvas>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-The rectangle's corner is located at (10, 20). It has a width of 150 and a height of
-100\.
+گوشه مستطیل در مختصات (10, 20) قرار دارد. عرض آن 150 و ارتفاع آن 100 است.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -79,21 +66,21 @@ ctx.rect(10, 20, 150, 100); // Add a rectangle to the current path
 ctx.fill(); // Render the path
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Drawing_a_rectangle', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.fillRect")}}
 - {{domxref("CanvasRenderingContext2D.strokeRect()")}}
 - {{domxref("CanvasRenderingContext2D.fill()")}}
