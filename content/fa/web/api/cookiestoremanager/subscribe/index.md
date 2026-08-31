@@ -1,11 +1,5 @@
 ---
 title: "CookieStoreManager: subscribe() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CookieStoreManager/subscribe"
-status: "needs-translation"
----
-
----
-title: "CookieStoreManager: subscribe() method"
 short-title: subscribe()
 slug: Web/API/CookieStoreManager/subscribe
 page-type: web-api-instance-method
@@ -14,39 +8,37 @@ browser-compat: api.CookieStoreManager.subscribe
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}{{AvailableInWorkers("window_and_service")}}
 
-The **`subscribe()`** method of the {{domxref("CookieStoreManager")}} interface subscribes a {{domxref("ServiceWorkerRegistration")}} to cookie change events.
+متد **`subscribe()`** از رابط {{domxref("CookieStoreManager")}} یک {{domxref("ServiceWorkerRegistration")}} را برای دریافت رویدادهای تغییر کوکی ثبت‌نام می‌کند. اشتراک‌های تکراری نادیده گرفته می‌شوند: یعنی اگر یک سرویس‌ورکر بیش از یک بار برای همان کوکی ثبت‌نام کند، فقط یک بار اعلان تغییر را دریافت خواهد کرد.
 
-Duplicate subscriptions are ignored: that is, if a service worker subscribes more than once to the same cookie, it will only receive each change notification once.
-
-## Syntax
+## سینتکس
 
 ```js-nolint
 subscribe(subscriptions)
 ```
 
-### Parameters
+### پارامترها
 
 - `subscriptions`
-  - : An array of objects, each of which has the following properties:
+  - : آرایه‌ای از اشیاء که هر کدام دارای ویژگی‌های زیر است:
     - `name` {{optional_inline}}
-      - : A string equal to the name of a cookie. If `name` is omitted, the service worker is subscribed to change events for all cookies that are in scope.
+      - : یک رشته برابر با نام یک کوکی. اگر `name` حذف شود، سرویس‌ورکر برای رویدادهای تغییر تمام کوکی‌هایی که در محدوده (scope) هستند، ثبت‌نام می‌شود.
     - `url` {{optional_inline}}
-      - : A string equal to the URL of a cookie scope. This may be narrower than the scope of the service worker registration. If `url` is omitted, it defaults to the scope of the service worker registration.
+      - : یک رشته برابر با URL محدوده (scope) یک کوکی. این می‌تواند محدودتر از محدوده ثبت‌نام سرویس‌ورکر باشد. اگر `url` حذف شود، به طور پیش‌فرض برابر با محدوده ثبت‌نام سرویس‌ورکر خواهد بود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with {{jsxref("undefined")}} when the subscription completes.
+یک {{jsxref("Promise")}} که پس از تکمیل اشتراک با {{jsxref("undefined")}} حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the `url` is not a valid URL, or doesn't start with the service worker registration's {{domxref("ServiceWorkerRegistration.scope","scope")}}.
+  - : اگر `url` یک URL معتبر نباشد یا با {{domxref("ServiceWorkerRegistration.scope","scope")}} ثبت‌نام سرویس‌ورکر شروع نشود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Setting name and URL
+### تنظیم نام و URL
 
-In this example, the {{domxref("ServiceWorkerRegistration")}} represented by `registration` is subscribing to change events on the cookie named `"cookie1"` with a scope of `"/path1"`.
+در این مثال، {{domxref("ServiceWorkerRegistration")}} که با `registration` نشان داده می‌شود، برای رویدادهای تغییر کوکی به نام `"cookie1"` با محدوده `"/path1"` ثبت‌نام می‌کند.
 
 ```js
 // Subscribe to a specific cookie and URL
@@ -54,36 +46,36 @@ const subscriptions = [{ name: "cookie1", url: `/path1` }];
 await registration.cookies.subscribe(subscriptions);
 ```
 
-### Setting name only
+### تنظیم فقط نام
 
-In this example, we set only `name` and omit `url`: the subscription applies to all cookies named `cookie1` within the service worker's scope.
+در این مثال، فقط `name` را تنظیم کرده و `url` را حذف می‌کنیم: اشتراک برای همه کوکی‌های به نام `cookie1` در محدوده سرویس‌ورکر اعمال می‌شود.
 
 ```js
 // Subscribe to all cookies named "cookie1" in the registration scope
 await registration.cookies.subscribe([{ name: "cookie1" }]);
 ```
 
-### Setting URL only
+### تنظیم فقط URL
 
-In this example we set only `url`, and omit `name`: the subscription applies to all cookies within the specified URL scope.
+در این مثال، فقط `url` را تنظیم کرده و `name` را حذف می‌کنیم: اشتراک برای همه کوکی‌های درون محدوده URL مشخص شده اعمال می‌شود.
 
 ```js
 // Subscribe to all cookie changes within a specific path
 await registration.cookies.subscribe([{ url: "/path/one/" }]);
 ```
 
-### Subscribing to all cookies
+### اشتراک برای همه کوکی‌ها
 
-In this example, both `name` and `url` are omitted. The subscription applies to all cookies within the service worker's scope.
+در این مثال، هر دو `name` و `url` حذف شده‌اند. اشتراک برای همه کوکی‌های درون محدوده سرویس‌ورکر اعمال می‌شود.
 
 ```js
 // Subscribe to all cookie changes within the entire registration scope
 await registration.cookies.subscribe([{}]);
 ```
 
-### Setting a URL outside the service worker's scope
+### تنظیم URL خارج از محدوده سرویس‌ورکر
 
-If the URL is outside the service worker's scope, `subscribe()` will throw a `TypeError`.
+اگر URL خارج از محدوده سرویس‌ورکر باشد، `subscribe()` یک `TypeError` پرتاب می‌کند.
 
 ```js example-bad
 await registration.cookies.subscribe([
@@ -91,10 +83,10 @@ await registration.cookies.subscribe([
 ]);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
