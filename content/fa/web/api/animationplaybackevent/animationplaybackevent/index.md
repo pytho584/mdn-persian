@@ -1,7 +1,7 @@
 ---
 title: "AnimationPlaybackEvent: AnimationPlaybackEvent() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationPlaybackEvent/AnimationPlaybackEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,38 +14,37 @@ browser-compat: api.AnimationPlaybackEvent.AnimationPlaybackEvent
 
 {{ APIRef("Web Animations") }}
 
-The **`AnimationPlaybackEvent()`** constructor of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) returns a new {{domxref("AnimationPlaybackEvent")}} object instance.
+**`AnimationPlaybackEvent()`** 构造函数，属于 [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)，返回一个新的 {{domxref("AnimationPlaybackEvent")}} 对象实例。
 
-## Syntax
+## 语法
 
 ```js-nolint
 new AnimationPlaybackEvent(type)
 new AnimationPlaybackEvent(type, options)
 ```
 
-### Parameters
+### 参数
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `cancel`, `finish`, or `remove`.
+  - : 一个字符串，表示事件的名称。它是区分大小写的，浏览器将其设置为 `cancel`、`finish` 或 `remove`。
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, has the following properties:
+  - : 一个对象，_除了 {{domxref("Event/Event", "Event()")}} 定义的属性之外_，还具有以下属性：
     - `detail` {{optional_inline}}
-      - : An event-dependent value associated with the event. Defaults to `null`.
+      - : 一个与事件关联的、依赖于事件的值。默认为 `null`。
 
-### Return value
+### 返回值
 
-A new {{domxref("AnimationPlaybackEvent")}} object.
+一个新的 {{domxref("AnimationPlaybackEvent")}} 对象。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("AnimationPlayBackEvent")}}
