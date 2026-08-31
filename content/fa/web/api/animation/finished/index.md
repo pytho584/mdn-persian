@@ -1,7 +1,7 @@
 ---
 title: "Animation: finished property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/finished"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,18 +14,18 @@ browser-compat: api.Animation.finished
 
 {{ APIRef("Web Animations") }}
 
-The **`Animation.finished`** read-only property of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) returns a {{jsxref("Promise")}} which resolves once the animation has finished playing.
+خاصیت فقط‌خواندنی **`Animation.finished`** در [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) یک {{jsxref("Promise")}} برمی‌گرداند که پس از پایان یافتن پخش انیمیشن resolve می‌شود.
 
 > [!NOTE]
-> Every time the animation leaves the `finished` play state (that is, when it starts playing again), a new `Promise` is created for this property. The new `Promise` will resolve once the new animation sequence has completed.
+> هر بار که انیمیشن از حالت پخش `finished` خارج می‌شود (یعنی دوباره شروع به پخش کند)، یک `Promise` جدید برای این خاصیت ایجاد می‌شود. `Promise` جدید پس از تکمیل توالی جدید انیمیشن resolve خواهد شد.
 
-## Value
+## مقدار
 
-A {{jsxref("Promise")}} object which will resolve once the animation has finished running.
+یک شی {{jsxref("Promise")}} که پس از پایان یافتن پخش انیمیشن resolve می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following code waits until all animations running on the element `elem` have finished, then deletes the element from the DOM tree:
+کد زیر منتظر می‌ماند تا همه انیمیشن‌های در حال اجرا روی عنصر `elem` تمام شوند، سپس عنصر را از درخت DOM حذف می‌کند:
 
 ```js
 Promise.all(elem.getAnimations().map((animation) => animation.finished)).then(
@@ -33,15 +33,15 @@ Promise.all(elem.getAnimations().map((animation) => animation.finished)).then(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("KeyframeEffect")}}
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
