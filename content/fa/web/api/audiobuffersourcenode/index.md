@@ -1,7 +1,7 @@
 ---
 title: "AudioBufferSourceNode"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,119 +13,119 @@ browser-compat: api.AudioBufferSourceNode
 
 {{APIRef("Web Audio API")}}
 
-The **`AudioBufferSourceNode`** interface is an {{domxref("AudioScheduledSourceNode")}} which represents an audio source consisting of in-memory audio data, stored in an {{domxref("AudioBuffer")}}.
+رابط **`AudioBufferSourceNode`** یک {{domxref("AudioScheduledSourceNode")}} است که یک منبع صوتی متشکل از داده‌های صوتی درون حافظه، ذخیره شده در یک {{domxref("AudioBuffer")}}، را نشان می‌دهد.
 
-This interface is especially useful for playing back audio which has particularly stringent timing accuracy requirements, such as for sounds that must match a specific rhythm and can be kept in memory rather than being played from disk or the network. To play sounds which require accurate timing but must be streamed from the network or played from disk, use an {{domxref("AudioWorkletNode")}} to implement its playback.
+این رابط به ویژه برای پخش صدایی که نیاز به دقت زمانی بسیار بالایی دارد، مانند صداهایی که باید با یک ریتم خاص مطابقت داشته باشند و می‌توانند در حافظه نگه داشته شوند به جای اینکه از دیسک یا شبکه پخش شوند، مفید است. برای پخش صداهایی که نیاز به زمان‌بندی دقیق دارند اما باید از شبکه پخش شوند یا از دیسک خوانده شوند، از یک {{domxref("AudioWorkletNode")}} برای پیاده‌سازی پخش آن‌ها استفاده کنید.
 
 {{InheritanceDiagram}}
 
-An `AudioBufferSourceNode` has no inputs and exactly one output, which has the same number of channels as the `AudioBuffer` indicated by its {{domxref("AudioBufferSourceNode.buffer", "buffer")}} property. If there's no buffer set—that is, if `buffer` is `null`—the output contains a single channel of silence (every sample is 0).
+یک `AudioBufferSourceNode` هیچ ورودی ندارد و دقیقاً یک خروجی دارد که تعداد کانال‌های آن برابر با `AudioBuffer` مشخص شده توسط خاصیت {{domxref("AudioBufferSourceNode.buffer", "buffer")}} آن است. اگر بافری تنظیم نشده باشد – یعنی اگر `buffer` برابر با `null` باشد – خروجی شامل یک کانال سکوت است (هر نمونه 0 است).
 
-An `AudioBufferSourceNode` can only be played once; after each call to {{domxref("AudioBufferSourceNode.start", "start()")}}, you have to create a new node if you want to play the same sound again. Fortunately, these nodes are very inexpensive to create, and the actual `AudioBuffer`s can be reused for multiple plays of the sound. Indeed, you can use these nodes in a "fire and forget" manner: create the node, call `start()` to begin playing the sound, and don't even bother to hold a reference to it. It will automatically be garbage-collected at an appropriate time, which won't be until sometime after the sound has finished playing.
+یک `AudioBufferSourceNode` فقط یک بار می‌تواند پخش شود؛ پس از هر بار فراخوانی {{domxref("AudioBufferSourceNode.start", "start()")}}، اگر بخواهید همان صدا را دوباره پخش کنید، باید یک گره جدید ایجاد کنید. خوشبختانه، ایجاد این گره‌ها بسیار ارزان است و خود `AudioBuffer`ها را می‌توان برای چندین بار پخش صدا استفاده مجدد کرد. در واقع، می‌توانید از این گره‌ها به صورت "شلیک و فراموش کن" استفاده کنید: گره را ایجاد کنید، `start()` را فراخوانی کنید تا صدا شروع به پخش کند، و حتی به خود زحمت نگه داشتن یک مرجع به آن را ندهید. این گره به طور خودکار در زمان مناسب، که تا پس از اتمام پخش صدا نخواهد بود، جمع‌آوری زباله می‌شود.
 
-Multiple calls to {{domxref("AudioScheduledSourceNode/stop", "stop()")}} are allowed. The most recent call replaces the previous one, if the `AudioBufferSourceNode` has not already reached the end of the buffer.
+فراخوانی‌های متعدد به {{domxref("AudioScheduledSourceNode/stop", "stop()")}} مجاز است. آخرین فراخوانی، فراخوانی قبلی را جایگزین می‌کند، اگر `AudioBufferSourceNode` قبلاً به انتهای بافر نرسیده باشد.
 
-![The AudioBufferSourceNode takes the content of an AudioBuffer and m](webaudioaudiobuffersourcenode.png)
+![AudioBufferSourceNode محتوای یک AudioBuffer را برمی‌دارد و](webaudioaudiobuffersourcenode.png)
 
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">Number of inputs</th>
+      <th scope="row">تعداد ورودی‌ها</th>
       <td><code>0</code></td>
     </tr>
     <tr>
-      <th scope="row">Number of outputs</th>
+      <th scope="row">تعداد خروجی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count</th>
-      <td>defined by the associated {{domxref("AudioBuffer")}}</td>
+      <th scope="row">تعداد کانال‌ها</th>
+      <td>تعریف شده توسط {{domxref("AudioBuffer")}} مرتبط</td>
     </tr>
   </tbody>
 </table>
 
-## Constructor
+## سازنده
 
 - {{domxref("AudioBufferSourceNode.AudioBufferSourceNode", "AudioBufferSourceNode()")}}
-  - : Creates and returns a new `AudioBufferSourceNode` object. As an alternative, you can use the {{domxref("BaseAudioContext.createBufferSource()")}} factory method; see [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+  - : یک شیء `AudioBufferSourceNode` جدید ایجاد و برمی‌گرداند. به عنوان یک جایگزین، می‌توانید از روش کارخانه‌ای {{domxref("BaseAudioContext.createBufferSource()")}} استفاده کنید؛ به [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("AudioScheduledSourceNode")}}_.
+_ویژگی‌ها را از والد خود، {{domxref("AudioScheduledSourceNode")}}، به ارث می‌برد._
 
 - {{domxref("AudioBufferSourceNode.buffer")}}
-  - : An {{domxref("AudioBuffer")}} that defines the audio asset to be played, or when set to the value `null`, defines a single channel of silence (in which every sample is 0.0).
+  - : یک {{domxref("AudioBuffer")}} که دارایی صوتی مورد نظر برای پخش را تعریف می‌کند، یا وقتی روی مقدار `null` تنظیم شود، یک کانال سکوت را تعریف می‌کند (که در آن هر نمونه 0.0 است).
 - {{domxref("AudioBufferSourceNode.detune")}}
-  - : A [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}} representing detuning of playback in [cents](https://en.wikipedia.org/wiki/Cent_%28music%29). This value is compounded with `playbackRate` to determine the speed at which the sound is played. Its default value is `0` (meaning no detuning), and its nominal range is -∞ to ∞.
+  - : یک {{domxref("AudioParam")}} با [نرخ k](/en-US/docs/Web/API/AudioParam#k-rate) که انحراف (detuning) پخش را بر حسب [سنت](https://en.wikipedia.org/wiki/Cent_%28music%29) نشان می‌دهد. این مقدار با `playbackRate` ترکیب می‌شود تا سرعت پخش صدا تعیین شود. مقدار پیش‌فرض آن `0` است (به معنی عدم انحراف)، و محدوده اسمی آن از -∞ تا ∞ است.
 - {{domxref("AudioBufferSourceNode.loop")}}
-  - : A Boolean attribute indicating if the audio asset must be replayed when the end of the {{domxref("AudioBuffer")}} is reached. Its default value is `false`.
+  - : یک ویژگی بولی که نشان می‌دهد آیا دارایی صوتی باید وقتی به انتهای {{domxref("AudioBuffer")}} رسید، دوباره پخش شود یا خیر. مقدار پیش‌فرض آن `false` است.
 - {{domxref("AudioBufferSourceNode.loopStart")}} {{optional_inline}}
-  - : A floating-point value indicating the time, in seconds, at which playback of the {{domxref("AudioBuffer")}} must begin when `loop` is `true`. Its default value is `0` (meaning that at the beginning of each loop, playback begins at the start of the audio buffer).
+  - : یک مقدار اعشاری که زمان، بر حسب ثانیه، را نشان می‌دهد که پخش {{domxref("AudioBuffer")}} باید از آنجا شروع شود وقتی `loop` برابر با `true` است. مقدار پیش‌فرض آن `0` است (به این معنی که در ابتدای هر حلقه، پخش از ابتدای بافر صوتی شروع می‌شود).
 - {{domxref("AudioBufferSourceNode.loopEnd")}} {{optional_inline}}
-  - : A floating-point number indicating the time, in seconds, at which playback of the {{domxref("AudioBuffer")}} stops and loops back to the time indicated by `loopStart`, if `loop` is `true`. The default value is `0`.
+  - : یک عدد اعشاری که زمان، بر حسب ثانیه، را نشان می‌دهد که پخش {{domxref("AudioBuffer")}} در آن متوقف شده و به زمان مشخص شده توسط `loopStart` بازمی‌گردد، اگر `loop` برابر با `true` باشد. مقدار پیش‌فرض `0` است.
 - {{domxref("AudioBufferSourceNode.playbackRate")}}
-  - : A [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}} that defines the speed factor at which the audio asset will be played, where a value of 1.0 is the sound's natural sampling rate. Since no pitch correction is applied on the output, this can be used to change the pitch of the sample. This value is compounded with `detune` to determine the final playback rate.
+  - : یک {{domxref("AudioParam")}} با [نرخ k](/en-US/docs/Web/API/AudioParam#k-rate) که ضریب سرعت پخش دارایی صوتی را تعریف می‌کند، به طوری که مقدار 1.0 نرخ نمونه‌برداری طبیعی صدا است. از آنجایی که هیچ تصحیح زیروبمی (pitch correction) روی خروجی اعمال نمی‌شود، می‌توان از این برای تغییر زیروبمی نمونه استفاده کرد. این مقدار با `detune` ترکیب می‌شود تا نرخ پخش نهایی تعیین شود.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("AudioScheduledSourceNode")}}, and overrides the following method:_.
+_روش‌ها را از والد خود، {{domxref("AudioScheduledSourceNode")}}، به ارث می‌برد و روش زیر را بازنویسی می‌کند:_
 
 - {{domxref("AudioBufferSourceNode.start", "start()")}}
-  - : Schedules playback of the audio data contained in the buffer, or begins playback immediately. Additionally allows the start offset and play duration to be set.
+  - : پخش داده‌های صوتی موجود در بافر را زمان‌بندی می‌کند، یا بلافاصله پخش را آغاز می‌کند. همچنین امکان تنظیم offset شروع و مدت زمان پخش را فراهم می‌کند.
 
-## Examples
+## مثال‌ها
 
-In this example, we create a two-second buffer, fill it with white noise, and then play it using an `AudioBufferSourceNode`. The comments should clearly explain what is going on.
+در این مثال، یک بافر دو ثانیه‌ای ایجاد می‌کنیم، آن را با نویز سفید پر می‌کنیم و سپس با استفاده از یک `AudioBufferSourceNode` آن را پخش می‌کنیم. توضیحات باید به وضوح آنچه را که در حال رخ دادن است، روشن کند.
 
 > [!NOTE]
-> You can also [run the code live](https://mdn.github.io/webaudio-examples/audio-buffer/), or [view the source](https://github.com/mdn/webaudio-examples/blob/main/audio-buffer/index.html).
+> همچنین می‌توانید [کد را به صورت زنده اجرا کنید](https://mdn.github.io/webaudio-examples/audio-buffer/) یا [کد منبع را مشاهده کنید](https://github.com/mdn/webaudio-examples/blob/main/audio-buffer/index.html).
 
 ```js
 const audioCtx = new AudioContext();
 
-// Create an empty three-second stereo buffer at the sample rate of the AudioContext
+// ایجاد یک بافر استریوی سه ثانیه‌ای خالی با نرخ نمونه‌برداری AudioContext
 const myArrayBuffer = audioCtx.createBuffer(
   2,
   audioCtx.sampleRate * 3,
   audioCtx.sampleRate,
 );
 
-// Fill the buffer with white noise;
-// just random values between -1.0 and 1.0
+// پر کردن بافر با نویز سفید؛
+// فقط مقادیر تصادفی بین 1.0- و 1.0
 for (let channel = 0; channel < myArrayBuffer.numberOfChannels; channel++) {
-  // This gives us the actual ArrayBuffer that contains the data
+  // این به ما ArrayBuffer واقعی حاوی داده‌ها را می‌دهد
   const nowBuffering = myArrayBuffer.getChannelData(channel);
   for (let i = 0; i < myArrayBuffer.length; i++) {
-    // Math.random() is in [0; 1.0]
-    // audio needs to be in [-1.0; 1.0]
+    // Math.random() در بازه [0; 1.0] است
+    // صدا باید در بازه [-1.0; 1.0] باشد
     nowBuffering[i] = Math.random() * 2 - 1;
   }
 }
 
-// Get an AudioBufferSourceNode.
-// This is the AudioNode to use when we want to play an AudioBuffer
+// دریافت یک AudioBufferSourceNode.
+// این AudioNode است که وقتی می‌خواهیم یک AudioBuffer را پخش کنیم از آن استفاده می‌کنیم
 const source = audioCtx.createBufferSource();
-// set the buffer in the AudioBufferSourceNode
+// تنظیم بافر در AudioBufferSourceNode
 source.buffer = myArrayBuffer;
-// connect the AudioBufferSourceNode to the
-// destination so we can hear the sound
+// اتصال AudioBufferSourceNode به
+// خروجی نهایی تا بتوانیم صدا را بشنویم
 source.connect(audioCtx.destination);
-// start the source playing
+// شروع پخش منبع
 source.start();
 ```
 
 > [!NOTE]
-> For a `decodeAudioData()` example, see the {{domxref("BaseAudioContext/decodeAudioData", "AudioContext.decodeAudioData()")}} page.
+> برای یک مثال `decodeAudioData()`، به صفحه {{domxref("BaseAudioContext/decodeAudioData", "AudioContext.decodeAudioData()")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
