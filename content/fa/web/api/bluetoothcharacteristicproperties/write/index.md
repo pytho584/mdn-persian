@@ -1,7 +1,7 @@
 ---
 title: "BluetoothCharacteristicProperties: write property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothCharacteristicProperties/write"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,19 +16,16 @@ browser-compat: api.BluetoothCharacteristicProperties.write
 
 {{securecontext_header}}{{APIRef("Bluetooth API")}}{{SeeCompatTable}}
 
-The **`write`** read-only property of the
-{{domxref("BluetoothCharacteristicProperties")}} interface returns a
-`boolean` that is `true` if the writing to the characteristic with
-response is permitted.
+**`write`** 只读属性属于 {{domxref("BluetoothCharacteristicProperties")}} 接口，返回一个 `boolean` 值，如果允许对该特性进行带响应的写入操作，则为 `true`。
 
-## Value
+## 值
 
-A boolean value.
+一个布尔值。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
