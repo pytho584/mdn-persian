@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTServer: disconnect() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/disconnect"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,27 +16,26 @@ browser-compat: api.BluetoothRemoteGATTServer.disconnect
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTServer.disconnect()`** method causes
-the script execution environment to disconnect from `this.device`.
+متد **`BluetoothRemoteGATTServer.disconnect()`** باعث می‌شود محیط اجرای اسکریپت از `this.device` قطع شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 disconnect()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
