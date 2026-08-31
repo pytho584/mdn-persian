@@ -1,7 +1,7 @@
 ---
 title: "BluetoothDevice"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,39 +15,37 @@ browser-compat: api.BluetoothDevice
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The BluetoothDevice interface of the [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) represents a Bluetooth device inside a particular script execution
-environment.
+رابط `BluetoothDevice` از [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) یک دستگاه بلوتوث را در یک محیط اجرای اسکریپت مشخص نمایش می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{DOMxRef("BluetoothDevice.id")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : A string that uniquely identifies a device.
+  - : یک رشته که به طور یکتا یک دستگاه را شناسایی می‌کند.
 - {{DOMxRef("BluetoothDevice.name")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : A string that provides a human-readable name for the device.
+  - : یک رشته که یک نام قابل خواندن برای انسان برای دستگاه ارائه می‌دهد.
 - {{DOMxRef("BluetoothDevice.gatt")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : A reference to the device's {{DOMxRef("BluetoothRemoteGATTServer")}}.
+  - : یک ارجاع به {{DOMxRef("BluetoothRemoteGATTServer")}} دستگاه.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{DOMxRef("BluetoothDevice.watchAdvertisements()")}} {{Experimental_Inline}}
-  - : A {{jsxref("Promise")}} that resolves to `undefined` or is rejected with
-    an error if advertisements can't be shown for any reason.
+  - : یک {{jsxref("Promise")}} که به `undefined` حل می‌شود یا در صورت عدم امکان نمایش تبلیغات به هر دلیلی با یک خطا رد می‌شود.
 - {{DOMxRef("BluetoothDevice.forget()")}} {{Experimental_Inline}}
-  - : Provides a way for the page to revoke access to a device the user has granted access to.
+  - : راهی برای صفحه فراهم می‌کند تا دسترسی به دستگاهی که کاربر اجازه دسترسی به آن را داده است لغو کند.
 
-## Events
+## رویدادها
 
-Listen to these events using {{domxref("EventTarget.addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface.
+به این رویدادها با استفاده از {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا با اختصاص یک شنونده رویداد به ویژگی `oneventname` این رابط گوش دهید.
 
 - {{DOMxRef("BluetoothDevice/gattserverdisconnected_event", "gattserverdisconnected")}} {{experimental_inline}}
-  - : Fired on a device when an active GATT connection is lost.
+  - : زمانی که یک اتصال GATT فعال از دست می‌رود، روی یک دستگاه فعال می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
