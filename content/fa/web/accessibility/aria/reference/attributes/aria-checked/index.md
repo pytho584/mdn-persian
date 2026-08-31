@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-checked attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,16 +15,16 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `aria-checked` attribute indicates the current "checked" state of checkboxes, radio buttons, and other widgets.
+ویژگی `aria-checked` وضعیت «انتخاب‌شده» فعلی چک‌باکس‌ها، دکمه‌های رادیویی و سایر ویجت‌ها را نشان می‌دهد.
 
 > [!NOTE]
-> Where possible use an HTML {{htmlelement("input")}} element with `type="checkbox"` and `type="radio"` as these have built in semantics and do not require ARIA attributes.
+> در صورت امکان از عنصر HTML {{htmlelement("input")}} با `type="checkbox"` و `type="radio"` استفاده کنید؛ زیرا این عناصر معنای داخلی دارند و به ویژگی‌های ARIA نیازی ندارند.
 
-## Description
+## توضیحات
 
-The `aria-checked` attribute indicates whether the element is checked (`true`), unchecked (`false)`, or if the checked status is indeterminate (`mixed`), meaning it is neither checked nor unchecked. The `mixed` value is supported by the tri-state input roles of [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role) and [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role).
+ویژگی `aria-checked` نشان می‌دهد که آیا عنصر انتخاب شده است (`true`)، انتخاب نشده است (`false)`، یا وضعیت انتخابی آن نامشخص است (`mixed`)؛ یعنی نه انتخاب شده و نه انتخاب نشده. مقدار `mixed` توسط نقش‌های ورودی سه‌حالته [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role) و [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role) پشتیبانی می‌شود.
 
-The `mixed` value is not supported on [`radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role), [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role), or [`switch`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/switch_role) and elements that inherits from these. The value will be false if `mixed` is set when not supported.
+مقدار `mixed` در [`radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role)، [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role)، یا [`switch`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/switch_role) و عناصری که از این‌ها ارث می‌برند پشتیبانی نمی‌شود. اگر `mixed` در شرایطی که پشتیبانی نمی‌شود تنظیم شود، مقدار آن false خواهد بود.
 
 ```html
 <span
@@ -36,31 +36,29 @@ The `mixed` value is not supported on [`radio`](/en-US/docs/Web/Accessibility/AR
 <label id="chk15-label">Subscribe to the newsletter</label>
 ```
 
-The `tabindex` attribute is required to enable focus. JavaScript is required to toggle the `aria-checked` state. And, if this checkbox is part of a submittable form, more JavaScript is required to set a name and a value.
+ویژگی `tabindex` برای فعال‌کردن فوکوس الزامی است. برای جابه‌جایی وضعیت `aria-checked` به جاوااسکریپت نیاز است. و اگر این چک‌باکس بخشی از یک فرم قابل ارسال باشد، جاوااسکریپت بیشتری برای تنظیم نام و مقدار مورد نیاز است.
 
-The above could have been written as:
+نمونه بالا می‌توانست به صورت زیر نوشته شود:
 
 ```html
 <input type="checkbox" id="chk15-label" name="Subscribe" />
 <label for="chk15-label">Subscribe to the newsletter</label>
 ```
 
-By using the {{htmlelement("input")}} element with `type="checkbox"` instead of ARIA, there is no need for any JavaScript.
+با استفاده از عنصر {{htmlelement("input")}} با `type="checkbox"` به جای ARIA، هیچ نیازی به جاوااسکریپت نیست.
 
-## Values
+## مقادیر
 
 - false
-  - : The element supports being checked but is not currently checked.
+  - : عنصر از انتخاب‌شدن پشتیبانی می‌کند اما در حال حاضر انتخاب نشده است.
 - true
-  - : The element is checked.
+  - : عنصر انتخاب شده است.
 - mixed
-  - : for [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role) and [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role) only, equivalent to `indeterminate`, indicating a mixed mode value of neither checked nor unchecked.
+  - : فقط برای [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role) و [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role)، معادل `indeterminate`، نشان‌دهنده یک مقدار ترکیبی است که نه انتخاب شده و نه انتخاب نشده.
 - undefined (default)
-  - : The element does not support being checked.
+  - : عنصر از انتخاب‌شدن پشتیبانی نمی‌کند.
 
-## Associated roles
-
-Used in roles:
+## نقش‌های مرتبط
 
 - [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
 - [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role)
@@ -69,26 +67,26 @@ Used in roles:
 - [`radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role)
 - [`switch`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/switch_role)
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaChecked")}}
-  - : The [`ariaChecked`](/en-US/docs/Web/API/Element/ariaChecked) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-checked` attribute.
+  - : ویژگی [`ariaChecked`](/en-US/docs/Web/API/Element/ariaChecked) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-checked` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaChecked")}}
-  - : The [`ariaChecked`](/en-US/docs/Web/API/ElementInternals/ariaChecked) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-checked` attribute.
+  - : ویژگی [`ariaChecked`](/en-US/docs/Web/API/ElementInternals/ariaChecked) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-checked` را منعکس می‌کند.
 
 ```js
 myHTMLElement.ariaChecked = true;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox)
 - [`<input type="radio">`](/en-US/docs/Web/HTML/Reference/Elements/input/radio)
 - [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed)
 - [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected)
-- [Two state checkbox example](https://www.w3.org/WAI/ARIA/apg/example-index/checkbox/checkbox.html) - w3.org
-- [Mix-state checkbox example](https://www.w3.org/WAI/ARIA/apg/example-index/checkbox/checkbox-mixed.html) - w3.org
+- [نمونه چک‌باکس دو حالته](https://www.w3.org/WAI/ARIA/apg/example-index/checkbox/checkbox.html) - w3.org
+- [نمونه چک‌باکس با حالت مختلط](https://www.w3.org/WAI/ARIA/apg/example-index/checkbox/checkbox-mixed.html) - w3.org
