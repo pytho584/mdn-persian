@@ -1,7 +1,7 @@
 ---
 title: "AudioNode: channelCount property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/channelCount"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,19 +14,19 @@ browser-compat: api.AudioNode.channelCount
 
 {{ APIRef("Web Audio API") }}
 
-The **`channelCount`** property of the {{ domxref("AudioNode") }} interface represents an integer used to determine how many channels are used when [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) connections to any inputs to the node.
+ویژگی **`channelCount`** در رابط {{ domxref("AudioNode") }} یک عدد صحیح است که برای تعیین تعداد کانال‌هایی که هنگام [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) اتصال‌ها به هر ورودی گره استفاده می‌شود، به کار می‌رود.
 
-`channelCount`'s usage and precise definition depend on the value of {{domxref("AudioNode.channelCountMode")}}:
+استفاده و تعریف دقیق `channelCount` به مقدار {{domxref("AudioNode.channelCountMode")}} بستگی دارد:
 
-- It is ignored if the `channelCountMode` value is `max`.
-- It is used as a maximum value if the `channelCountMode` value is `clamped-max`.
-- It is used as the exact value if the `channelCountMode` value is `explicit`.
+- اگر مقدار `channelCountMode` برابر با `max` باشد، نادیده گرفته می‌شود.
+- اگر مقدار `channelCountMode` برابر با `clamped-max` باشد، به عنوان یک مقدار حداکثر استفاده می‌شود.
+- اگر مقدار `channelCountMode` برابر با `explicit` باشد، به عنوان مقدار دقیق استفاده می‌شود.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال
 
 ```js
 const audioCtx = new AudioContext();
@@ -40,14 +40,14 @@ gainNode.connect(audioCtx.destination);
 oscillator.channelCount;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
