@@ -1,11 +1,5 @@
 ---
 title: "ClipboardEvent: clipboardData property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent/clipboardData"
-status: "needs-translation"
----
-
----
-title: "ClipboardEvent: clipboardData property"
 short-title: clipboardData
 slug: Web/API/ClipboardEvent/clipboardData
 page-type: web-api-instance-property
@@ -14,29 +8,29 @@ browser-compat: api.ClipboardEvent.clipboardData
 
 {{APIRef("Clipboard API")}}
 
-The **`clipboardData`** property of the {{domxref("ClipboardEvent")}} interface holds a {{domxref("DataTransfer")}} object, which can be used to:
+ویژگی **`clipboardData`** از رابط {{domxref("ClipboardEvent")}} یک شیء {{domxref("DataTransfer")}} را نگه می‌دارد که می‌توان از آن برای موارد زیر استفاده کرد:
 
-- specify what data should be put into the clipboard from the {{domxref("Element/cut_event", "cut")}} and {{domxref("Element/copy_event", "copy")}} event handlers, typically with a {{domxref("DataTransfer.setData", "setData(format, data)")}} call;
-- obtain the data to be pasted from the {{domxref("Element/paste_event", "paste")}} event handler, typically with a {{domxref("DataTransfer.getData", "getData(format)")}} call.
+- مشخص کردن داده‌هایی که باید در رویدادهای {{domxref("Element/cut_event", "cut")}} (برش) و {{domxref("Element/copy_event", "copy")}} (کپی) در کلیپ‌بورد قرار گیرند، معمولاً با فراخوانی {{domxref("DataTransfer.setData", "setData(format, data)")}};
+- به دست آوردن داده‌هایی که باید در رویداد {{domxref("Element/paste_event", "paste")}} (چسباندن) جای‌گذاری شوند، معمولاً با فراخوانی {{domxref("DataTransfer.getData", "getData(format)")}}.
 
-See the {{domxref("Element/cut_event", "cut")}}, {{domxref("Element/copy_event", "copy")}}, and {{domxref("Element/paste_event", "paste")}} events documentation for more information.
+برای اطلاعات بیشتر، مستندات رویدادهای {{domxref("Element/cut_event", "cut")}}، {{domxref("Element/copy_event", "copy")}} و {{domxref("Element/paste_event", "paste")}} را ببینید.
 
-## Value
+## مقدار
 
-A {{domxref("DataTransfer")}} object.
+یک شیء {{domxref("DataTransfer")}}.
 
-The property can be `null` when the event is created using the constructor. It is never `null` when dispatched by the browser.
+این ویژگی وقتی رویداد با استفاده از سازنده (constructor) ایجاد شود می‌تواند `null` باشد. اما وقتی رویداد توسط مرورگر ارسال شود، هرگز `null` نیست.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- Copy-related events: {{domxref("Element/copy_event", "copy")}}, {{domxref("Element/cut_event", "cut")}}, {{domxref("Element/paste_event", "paste")}}
-- The {{domxref("ClipboardEvent")}} interface it belongs to.
+- رویدادهای مرتبط با کپی: {{domxref("Element/copy_event", "copy")}}، {{domxref("Element/cut_event", "cut")}}، {{domxref("Element/paste_event", "paste")}}
+- رابط {{domxref("ClipboardEvent")}} که این ویژگی به آن تعلق دارد.
 - [Clipboard API](/en-US/docs/Web/API/Clipboard_API)
