@@ -1,11 +1,5 @@
 ---
 title: "console: timeLog() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/timeLog_static"
-status: "needs-translation"
----
-
----
-title: "console: timeLog() static method"
 short-title: timeLog()
 slug: Web/API/console/timeLog_static
 page-type: web-api-static-method
@@ -14,9 +8,9 @@ browser-compat: api.console.timeLog_static
 
 {{APIRef("Console API")}}{{AvailableInWorkers}}
 
-The **`console.timeLog()`** static method logs the current value of a timer that was previously started by calling {{domxref("console/time_static", "console.time()")}}.
+متد ایستای **`console.timeLog()`** مقدار فعلی زمان‌سنجی را که قبلاً با فراخوانی {{domxref("console/time_static", "console.time()")}} شروع شده است، در کنسول ثبت می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 console.timeLog()
@@ -25,22 +19,22 @@ console.timeLog(label, val1)
 console.timeLog(label, val1, /* …, */ valN)
 ```
 
-### Parameters
+### پارامترها
 
 - `label` {{optional_inline}}
-  - : The name of the timer to log to the console. If this is omitted the label "default" is used.
+  - : نام زمان‌سنجی که باید در کنسول ثبت شود. اگر حذف شود، برچسب «default» استفاده می‌شود.
 - `valN` {{optional_inline}}
-  - : Additional values to be logged to the console after the timer output.
+  - : مقادیر اضافی که پس از خروجی زمان‌سنج در کنسول ثبت می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Description
+## توضیحات
 
-The `console.timeLog()` method logs the current value of a timer.
+متد `console.timeLog()` مقدار فعلی یک زمان‌سنج را ثبت می‌کند.
 
-The method can be passed the name of a timer. This will attempt to log the value of a timer created with that name in a previous call to {{domxref("console/time_static", "console.time()")}}:
+می‌توان نام یک زمان‌سنج را به این متد ارسال کرد. این کار سعی می‌کند مقدار زمان‌سنجی را که با آن نام در فراخوانی قبلی {{domxref("console/time_static", "console.time()")}} ایجاد شده است، ثبت کند:
 
 ```js
 console.time("reticulating splines");
@@ -49,7 +43,7 @@ console.timeLog("reticulating splines");
 // reticulating splines: 650ms
 ```
 
-If the timer name is omitted, then the timer is named `"default"`:
+اگر نام زمان‌سنج حذف شود، زمان‌سنج با نام «default» در نظر گرفته می‌شود:
 
 ```js
 console.time();
@@ -65,13 +59,13 @@ console.timeLog();
 // default: 780ms
 ```
 
-If there is no corresponding timer, `console.timeLog()` logs a warning like:
+اگر زمان‌سنج متناظری وجود نداشته باشد، `console.timeLog()` هشداری مانند زیر را ثبت می‌کند:
 
 ```plain
 Timer "timer name" doesn't exist.
 ```
 
-You can log additional values to the console after the timer output:
+می‌توانید مقادیر اضافی را نیز پس از خروجی زمان‌سنج در کنسول ثبت کنید:
 
 ```js
 console.time();
@@ -80,9 +74,9 @@ console.timeLog("default", "Hello", "world");
 // default: 780ms Hello world
 ```
 
-See [Timers](/en-US/docs/Web/API/console#timers) in the documentation for more details and examples.
+برای جزئیات و مثال‌های بیشتر، بخش [Timers](/en-US/docs/Web/API/console#timers) را در مستندات ببینید.
 
-## Examples
+## مثال‌ها
 
 ```js
 console.time("answer time");
@@ -92,25 +86,25 @@ alert("Do a bunch of other stuff…");
 console.timeEnd("answer time");
 ```
 
-The output from the example above shows the time taken by the user to dismiss the first alert box, followed by the cumulative time it took for the user to dismiss both alerts:
+خروجی مثال بالا، زمان صرف‌شده توسط کاربر برای بستن اولین جعبه هشدار و سپس زمان تجمعی صرف‌شده برای بستن هر دو هشدار را نشان می‌دهد:
 
 ```plain
 answer time: 2542ms debugger eval code:3:9
 answer time: 4161ms - timer ended
 ```
 
-Notice that the timer's name is displayed when the timer value is logged using `console.timeLog()` and again when it's stopped. In addition, the call to `console.timeEnd()` has the additional information, "timer ended" to make it obvious that the timer is no longer tracking time.
+توجه کنید که نام زمان‌سنج هم هنگام ثبت مقدار آن با `console.timeLog()` و هم هنگام توقف آن نمایش داده می‌شود. علاوه بر این، فراخوانی `console.timeEnd()` اطلاعات اضافی «timer ended» را دارد تا مشخص شود که زمان‌سنج دیگر زمان را اندازه‌گیری نمی‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("console/time_static", "console.time()")}}
-- See {{domxref("console/timeEnd_static", "console.timeEnd()")}} for additional examples
-- [Node.js documentation for `console.timeLog()`](https://nodejs.org/docs/latest/api/console.html#consoletimeloglabel-data)
+- برای مثال‌های بیشتر، {{domxref("console/timeEnd_static", "console.timeEnd()")}} را ببینید.
+- [مستندات Node.js برای `console.timeLog()`](https://nodejs.org/docs/latest/api/console.html#consoletimeloglabel-data)
