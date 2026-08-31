@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: canvas property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/canvas"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: canvas property"
 short-title: canvas
 slug: Web/API/CanvasRenderingContext2D/canvas
 page-type: web-api-instance-property
@@ -14,24 +8,21 @@ browser-compat: api.CanvasRenderingContext2D.canvas
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.canvas`** property, part of the
-[Canvas API](/en-US/docs/Web/API/Canvas_API), is a read-only reference to the
-{{domxref("HTMLCanvasElement")}} object that is associated with a given context.
+خاصیت **`CanvasRenderingContext2D.canvas`**، بخشی از [Canvas API](/en-US/docs/Web/API/Canvas_API)، یک ارجاع فقط‌خواندنی به شیء {{domxref("HTMLCanvasElement")}} است که با یک بافتار (context) مشخص مرتبط است.
 
-## Value
+## مقدار
 
-A {{domxref("HTMLCanvasElement")}} object.
+یک شیء {{domxref("HTMLCanvasElement")}}.
 
-## Examples
+## مثال‌ها
 
-Given this {{HTMLElement("canvas")}} element:
+با توجه به این عنصر {{HTMLElement("canvas")}}:
 
 ```html
 <canvas id="canvas"></canvas>
 ```
 
-… you can get a reference to the canvas element within the
-`CanvasRenderingContext2D` by using the `canvas` property:
+… می‌توانید با استفاده از خاصیت `canvas`، یک ارجاع به عنصر `canvas` درون `CanvasRenderingContext2D` دریافت کنید:
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -39,15 +30,15 @@ const ctx = canvas.getContext("2d");
 ctx.canvas; // HTMLCanvasElement
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("CanvasRenderingContext2D")}} interface
+- رابط {{domxref("CanvasRenderingContext2D")}}
 - [Canvas API](/en-US/docs/Web/API/Canvas_API)
