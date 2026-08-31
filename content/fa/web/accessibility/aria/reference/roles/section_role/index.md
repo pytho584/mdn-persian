@@ -1,7 +1,7 @@
 ---
 title: "ARIA: section role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/section_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,21 +13,21 @@ spec-urls: https://w3c.github.io/aria/#section
 sidebar: accessibilitysidebar
 ---
 
-The **`section` role**, an abstract role, is a superclass role for renderable structural containment components.
+نقش **`section`**، به‌عنوان یک نقش انتزاعی، نقش ابرکلاس برای اجزای ساختاری قابل‌رندر است.
 
 > [!WARNING]
-> The `section` role is an [abstract role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles). It is included here for completeness of documentation. It should not be used by web authors.
+> نقش `section` یک [abstract role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles) است. این نقش برای تکمیل مستندات در اینجا آورده شده است. نباید توسط نویسندگان وب استفاده شود.
 
-## Description
+## توضیحات
 
-The structural `section` role is an abstract role for categorizing all the section subclass roles. The role must not be used. Some subclasses, like [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role),
-[`note`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/note_role), and [`tooltip`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tooltip_role) are useful, and can be used to add semantics when no semantic HTML elements quite fit the purpose of a component. Others, like [`code`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles), [`figure`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/figure_role), and [`subscript`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles), aren't necessary, as there are HTML element equivalents. In this case, {{HTMLElement('code')}} {{HTMLElement('figure')}} and {{HTMLElement('sub')}}, respectively.
+نقش ساختاری `section` یک نقش انتزاعی برای دسته‌بندی همه زیرکلاس‌های نقش بخش است. این نقش نباید استفاده شود. برخی زیرکلاس‌ها، مانند [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)،
+[`note`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/note_role) و [`tooltip`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tooltip_role) مفید هستند و می‌توانند برای افزودن معناشناسی زمانی که هیچ عنصر HTML معنایی کاملاً با هدف یک مؤلفه مطابقت ندارد، استفاده شوند. برخی دیگر، مانند [`code`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles)، [`figure`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/figure_role) و [`subscript`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles)، ضروری نیستند، زیرا معادل‌های عنصر HTML وجود دارند. در این مورد، به ترتیب {{HTMLElement('code')}}، {{HTMLElement('figure')}} و {{HTMLElement('sub')}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [ARIA: `structure` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structure_role)
 - [ARIA: `alert` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)
