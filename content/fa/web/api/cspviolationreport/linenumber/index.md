@@ -1,12 +1,7 @@
----
-title: "CSPViolationReport: lineNumber property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSPViolationReport/lineNumber"
-status: "needs-translation"
----
+好的，这是根据您的要求将 MDN 文档翻译成的波斯语版本：
 
 ---
 title: "CSPViolationReport: lineNumber property"
-short-title: lineNumber
 slug: Web/API/CSPViolationReport/lineNumber
 page-type: web-api-instance-property
 browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_property.csp-violation
@@ -14,28 +9,28 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}
 
-The **`lineNumber`** property of the {{domxref("CSPViolationReport")}} dictionary indicates the line number in the source file where the [Content Security Policy (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) violation was triggered.
+ویژگی **`lineNumber`** در دیکشنری {{domxref("CSPViolationReport")}} نشان‌دهنده شماره خط در فایل منبع است که در آن، نقض [خط مشی امنیت محتوا (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) رخ داده است.
 
-This property is used with the {{domxref("CSPViolationReport.sourceFile")}} and {{domxref("CSPViolationReport.columnNumber")}} properties, which together provide the exact location in the source that caused the violation.
+این ویژگی همراه با ویژگی‌های {{domxref("CSPViolationReport.sourceFile")}} و {{domxref("CSPViolationReport.columnNumber")}} استفاده می‌شود که در مجموع موقعیت دقیق در منبع را فراهم می‌کنند که باعث نقض شده است.
 
-Note that the browser extracts the value from _the global object_ of the file that triggered the violation.
-If the resource that triggers the CSP violation is not loaded, the value will be `null`.
-See {{domxref("CSPViolationReport.sourceFile")}} for more information.
+توجه داشته باشید که مرورگر مقدار را از _شیء سراسری_ فایلی که باعث نقض شده است استخراج می‌کند.
+اگر منبعی که باعث نقض CSP می‌شود بارگذاری نشده باشد، مقدار `null` خواهد بود.
+برای اطلاعات بیشتر به {{domxref("CSPViolationReport.sourceFile")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-An integer containing the line number that triggered the violation, or `null`.
+یک عدد صحیح شامل شماره خطی که باعث نقض شده است، یا `null`.
 
-## Examples
+## مثال‌ها
 
-### CSP inline script violation
+### نقض اسکریپت درون‌خطی CSP
 
-This example triggers a CSP violation using an inline script, and reports the violation using a {{domxref("ReportingObserver")}}.
+این مثال با استفاده از یک اسکریپت درون‌خطی، یک نقض CSP را ایجاد می‌کند و نقض را با استفاده از یک {{domxref("ReportingObserver")}} گزارش می‌دهد.
 
 #### HTML
 
-The HTML file below uses the [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) element to set the {{httpheader('Content-Security-Policy')}} `default-src` to `self`, which allows scripts and other resources to be loaded from the same origin, but does not allow inline scripts to be executed.
-The document also includes an inline script, which should therefore trigger a CSP violation.
+فایل HTML زیر از عنصر [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) برای تنظیم `default-src` به `self` برای {{httpheader('Content-Security-Policy')}} استفاده می‌کند، که اجازه می‌دهد اسکریپت‌ها و سایر منابع از همان مبدأ بارگذاری شوند، اما اجرای اسکریپت‌های درون‌خطی را مجاز نمی‌کند.
+سند همچنین شامل یک اسکریپت درون‌خطی است که باید باعث نقض CSP شود.
 
 ```html
 <!doctype html>
@@ -59,13 +54,13 @@ The document also includes an inline script, which should therefore trigger a CS
 </html>
 ```
 
-#### JavaScript (main.js)
+#### جاوااسکریپت (main.js)
 
-The document above also loads the external script `main.js`, which is shown below.
-Because this is loaded from the same domain as the HTML, it is not blocked by the CSP.
+سند بالا همچنین اسکریپت خارجی `main.js` را بارگذاری می‌کند که در زیر نشان داده شده است.
+از آنجایی که این اسکریپت از همان دامنه HTML بارگذاری می‌شود، توسط CSP مسدود نمی‌شود.
 
-The script creates a new {{domxref("ReportingObserver")}} to observe content violation reports of type `"csp-violation"`.
-Each time the callback function is invoked, we get the body of the first entry of the reports array, and use it to log the file, line, and column of the violation to the console.
+اسکریپت یک {{domxref("ReportingObserver")}} جدید برای مشاهده گزارش‌های نقض محتوای نوع `"csp-violation"` ایجاد می‌کند.
+هر بار که تابع callback فراخوانی می‌شود، بدنه اولین ورودی آرایه گزارش‌ها را دریافت می‌کنیم و از آن برای ثبت فایل، خط و ستون نقض در کنسول استفاده می‌کنیم.
 
 ```js
 // main.js
@@ -85,15 +80,15 @@ const observer = new ReportingObserver(
 observer.observe();
 ```
 
-Note that while there might be multiple reports in the returned array, for brevity we only log the values of the first element.
+توجه داشته باشید که اگرچه ممکن است چندین گزارش در آرایه بازگشتی وجود داشته باشد، برای اختصار ما فقط مقادیر عنصر اول را ثبت می‌کنیم.
 
-#### Results
+#### نتایج
 
-You can try this out using a [local server](/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server).
-Copy the above code into `test/index.html` and `test/main.js` and run the server in the root directory.
-Assuming the address of the local server is `http://127.0.0.1:9999`, you can then load the HTML file from `http://127.0.0.1:9999/test/` (or `http://127.0.0.1:9999/test/index.html`).
+می‌توانید این مورد را با استفاده از یک [سرور محلی](/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server) امتحان کنید.
+کد بالا را در `test/index.html` و `test/main.js` کپی کنید و سرور را در دایرکتوری ریشه اجرا کنید.
+با فرض اینکه آدرس سرور محلی `http://127.0.0.1:9999` باشد، می‌توانید فایل HTML را از `http://127.0.0.1:9999/test/` (یا `http://127.0.0.1:9999/test/index.html`) بارگذاری کنید.
 
-With the above setup, the output of the log on Chrome is:
+با تنظیمات فوق، خروجی لاگ در Chrome به صورت زیر است:
 
 ```plain
 sourceFile: http://127.0.0.1:9999/test/
@@ -101,7 +96,7 @@ lineNumber: 15
 columnNumber: 0
 ```
 
-The result is similar for Firefox:
+نتیجه برای Firefox مشابه است:
 
 ```plain
 sourceFile: http://127.0.0.1:9999/test/
@@ -109,18 +104,18 @@ lineNumber: 15
 columnNumber: 13
 ```
 
-Note that the column number is different for the two browsers.
-Chrome always appears to report `0`.
-The value on Firefox represents the position of the first character after the end of the opening `<script>` element.
+توجه داشته باشید که شماره ستون برای دو مرورگر متفاوت است.
+به نظر می‌رسد Chrome همیشه `0` را گزارش می‌دهد.
+مقدار در Firefox موقعیت اولین کاراکتر پس از پایان عنصر `<script>` آغازین را نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SecurityPolicyViolationEvent.lineNumber")}}
