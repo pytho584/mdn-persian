@@ -1,11 +1,5 @@
 ---
 title: "CSS: paintWorklet static property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS/paintWorklet_static"
-status: "needs-translation"
----
-
----
-title: "CSS: paintWorklet static property"
 short-title: paintWorklet
 slug: Web/API/CSS/paintWorklet_static
 page-type: web-api-static-property
@@ -16,18 +10,15 @@ browser-compat: api.CSS.paintWorklet_static
 
 {{APIRef("CSSOM")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The static, read-only **`paintWorklet`** property of the {{DOMxRef("CSS")}} interface provides access to the
-paint [worklet](/en-US/docs/Web/API/Worklet), which programmatically generates an image where a CSS
-property expects a file.
+ویژگی ایستا و فقط‌خواندنی **`paintWorklet`** در رابط {{DOMxRef("CSS")}}، دسترسی به paint [worklet](/en-US/docs/Web/API/Worklet) را فراهم می‌کند که به‌صورت برنامه‌نویسی‌شده، تصویری را در جایی تولید می‌کند که یک ویژگی CSS انتظار یک فایل را دارد.
 
-## Value
+## مقدار
 
-The associated {{DOMxRef('Worklet')}} object.
+شیء مرتبط با {{DOMxRef('Worklet')}}.
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates loading a paint [worklet](/en-US/docs/Web/API/Worklet) from its js
-file and does so by feature detection.
+مثال زیر، بارگذاری یک paint [worklet](/en-US/docs/Web/API/Worklet) از فایل js آن را نشان می‌دهد و این کار را با تشخیص ویژگی (feature detection) انجام می‌دهد.
 
 ```js
 if ("paintWorklet" in CSS) {
@@ -35,15 +26,15 @@ if ("paintWorklet" in CSS) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API)
 - [Houdini APIs](/en-US/docs/Web/API/Houdini_APIs)
