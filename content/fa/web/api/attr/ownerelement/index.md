@@ -1,7 +1,7 @@
 ---
 title: "Attr: ownerElement property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Attr/ownerElement"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,15 +14,15 @@ browser-compat: api.Attr.ownerElement
 
 {{APIRef("DOM")}}
 
-The read-only **`ownerElement`** property of the {{domxref("Attr")}} interface returns the {{domxref("Element")}} the attribute belongs to.
+ویژگی فقط‑خواندنی **`ownerElement`** از رابط {{domxref("Attr")}}، {{domxref("Element")}}ای را که ویژگی به آن تعلق دارد، برمی‌گرداند.
 
-## Value
+## مقدار
 
-The {{domxref("Element")}} the attribute belongs to, or `null` if the attribute is not linked to an element.
+{{domxref("Element")}}ای که ویژگی به آن تعلق دارد، یا اگر ویژگی به هیچ عنصری متصل نباشد، `null`.
 
-## Example
+## مثال
 
-The following example displays the qualified name of the element of the two first elements, when we click on the appropriate button.
+مثال زیر، نام واجد شرایط عنصر دو عنصر اول را هنگامی که روی دکمه مناسب کلیک می‌کنیم، نمایش می‌دهد.
 
 ### HTML
 
@@ -61,10 +61,10 @@ for (const button of buttons) {
 
 {{ EmbedLiveSample('Example','100%',100) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
