@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createWaveShaper() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createWaveShaper"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,38 +14,36 @@ browser-compat: api.BaseAudioContext.createWaveShaper
 
 {{ APIRef("Web Audio API") }}
 
-The `createWaveShaper()` method of the {{ domxref("BaseAudioContext") }}
-interface creates a {{ domxref("WaveShaperNode") }}, which represents a non-linear
-distortion. It is used to apply distortion effects to your audio.
+متد `createWaveShaper()` از رابط {{ domxref("BaseAudioContext") }} یک {{ domxref("WaveShaperNode") }} ایجاد می‌کند که یک اعوجاج غیرخطی را نشان می‌دهد. از آن برای اعمال افکت‌های اعوجاج به صدای خود استفاده می‌شود.
 
 > [!NOTE]
-> The {{domxref("WaveShaperNode.WaveShaperNode", "WaveShaperNode()")}}
-> constructor is the recommended way to create a {{domxref("WaveShaperNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> سازنده {{domxref("WaveShaperNode.WaveShaperNode", "WaveShaperNode()")}}
+> روش توصیه‌شده برای ایجاد یک {{domxref("WaveShaperNode")}} است؛ برای اطلاعات بیشتر به
+> [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 createWaveShaper()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("WaveShaperNode")}}.
+یک {{domxref("WaveShaperNode")}}.
 
-## Examples
+## مثال‌ها
 
-The following example shows basic usage of an AudioContext to create a wave shaper node.
-For more complete applied examples/information, check out our [Voice-change-O-matic](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) demo (see [app.js](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js) for relevant code).
+مثال زیر کاربرد پایه‌ای یک AudioContext را برای ایجاد یک گره شکل‌دهنده موج نشان می‌دهد.
+برای مثال‌های کاربردی‌تر و اطلاعات کامل‌تر، دموی [Voice-change-O-matic](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) ما را ببینید (برای کد مرتبط به [app.js](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js) مراجعه کنید).
 
 > [!NOTE]
-> Sigmoid functions are commonly used for distortion curves
-> because of their natural properties. Their S-shape, for instance, helps create a
-> smoother sounding result. We found the below distortion curve code on [Stack Overflow](https://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion).
+> توابع سیگموئید معمولاً برای منحنی‌های اعوجاج استفاده می‌شوند
+> به دلیل ویژگی‌های طبیعی‌شان. به عنوان مثال، شکل S آن‌ها به ایجاد نتیجه‌ای
+> نرم‌تر کمک می‌کند. کد منحنی اعوجاج زیر را در [Stack Overflow](https://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion) پیدا کردیم.
 
 ```js
 const audioCtx = new AudioContext();
@@ -72,14 +70,14 @@ distortion.curve = makeDistortionCurve(400);
 distortion.oversample = "4x";
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
