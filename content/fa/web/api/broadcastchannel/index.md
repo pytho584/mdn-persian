@@ -1,7 +1,7 @@
 ---
 title: "BroadcastChannel"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,51 +13,49 @@ browser-compat: api.BroadcastChannel
 
 {{APIRef("Broadcast Channel API")}} {{AvailableInWorkers}}
 
-The **`BroadcastChannel`** interface represents a named channel that any {{glossary("browsing context")}} of a given {{glossary("origin")}} can subscribe to. It allows communication between different documents (in different windows, tabs, frames or iframes) of the same origin. Messages are broadcasted via a {{domxref("BroadcastChannel/message_event", "message")}} event fired at all `BroadcastChannel` objects listening to the channel, except the object that sent the message.
+رابط **`BroadcastChannel`** یک کانال نامگذاری‌شده را نمایش می‌دهد که هر {{glossary("browsing context")}} از یک {{glossary("origin")}} معین می‌تواند در آن مشترک شود. این امکان ارتباط بین اسناد مختلف (در پنجره‌ها، تب‌ها، فریم‌ها یا iframe های مختلف) از همان origin را فراهم می‌کند. پیام‌ها از طریق یک رویداد {{domxref("BroadcastChannel/message_event", "message")}} که بر روی تمام اشیاء `BroadcastChannel` در حال گوش دادن به کانال، به‌جز شیءای که پیام را ارسال کرده است، پخش می‌شوند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("BroadcastChannel.BroadcastChannel", "BroadcastChannel()")}}
-  - : Creates an object linking to the named channel.
+  - : یک شیء مرتبط با کانال نامگذاری‌شده ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from its parent, {{domxref("EventTarget")}}._
+_این رابط همچنین ویژگی‌ها را از والد خود، {{domxref("EventTarget")}}، به ارث می‌برد._
 
 - {{domxref("BroadcastChannel.name")}} {{ReadOnlyInline}}
-  - : Returns a string, the name of the channel.
+  - : یک رشته، نام کانال را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface also inherits methods from its parent, {{domxref("EventTarget")}}._
+_این رابط همچنین روش‌ها را از والد خود، {{domxref("EventTarget")}}، به ارث می‌برد._
 
 - {{domxref("BroadcastChannel.postMessage()")}}
-  - : Sends the message, of any type of object, to each `BroadcastChannel` object listening to the same channel.
+  - : پیام را، از هر نوع شیء، به هر شیء `BroadcastChannel` که به همان کانال گوش می‌دهد، ارسال می‌کند.
 - {{domxref("BroadcastChannel.close()")}}
-  - : Closes the channel object, indicating it won't get any new messages, and allowing it to be, eventually, garbage collected.
+  - : شیء کانال را می‌بندد، نشان می‌دهد که پیام جدیدی دریافت نخواهد کرد و به آن اجازه می‌دهد تا در نهایت، بازیافت حافظه (Garbage Collection) شود.
 
-## Events
+## رویدادها
 
-_This interface also inherits events from its parent, {{domxref("EventTarget")}}._
+_این رابط همچنین رویدادها را از والد خود، {{domxref("EventTarget")}}، به ارث می‌برد._
 
 - {{domxref("BroadcastChannel/message_event", "message")}}
-  - : Fired when a message arrives on the channel.
-    Also available via the `onmessage` property.
+  - : زمانی که یک پیام به کانال می‌رسد، فعال می‌شود. همچنین از طریق ویژگی `onmessage` در دسترس است.
 - {{domxref("BroadcastChannel/messageerror_event", "messageerror")}}
-  - : Fired when a message arrives that can't be deserialized.
-    Also available via the `onmessageerror` property.
+  - : زمانی که پیامی می‌رسد که نمی‌تواند از حالت سریال خارج شود (deserialize)، فعال می‌شود. همچنین از طریق ویژگی `onmessageerror` در دسترس است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Another, more heavyweight, way of communicating between browser contexts: {{domxref("ServiceWorker")}}.
-- [Broadcast Channel API overview](/en-US/docs/Web/API/Broadcast_Channel_API)
+- راه دیگری (سنگین‌تر) برای ارتباط بین زمینه‌های مرورگر: {{domxref("ServiceWorker")}}.
+- [نمای کلی Broadcast Channel API](/en-US/docs/Web/API/Broadcast_Channel_API)
