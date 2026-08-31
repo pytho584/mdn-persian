@@ -1,7 +1,7 @@
 ---
 title: "AudioData: clone() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioData/clone"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,39 +14,39 @@ browser-compat: api.AudioData.clone
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`clone()`** method of the {{domxref("AudioData")}} interface creates a new `AudioData` object with reference to the same media resource as the original.
+متد **`clone()`** در رابط {{domxref("AudioData")}} یک شیء `AudioData` جدید ایجاد می‌کند که به همان منبع رسانه‌ای شیء اصلی ارجاع می‌دهد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 clone()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-The cloned {{domxref("AudioData")}} object.
+شیء {{domxref("AudioData")}} کلون‌شده.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the `AudioData` object has been [transferred](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects).
+  - : اگر شیء `AudioData` [انتقال](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) داده شده باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example clones a copy of `AudioData` as `audioData2`.
+مثال زیر یک کپی از `AudioData` را به‌عنوان `audioData2` کلون می‌کند.
 
 ```js
 let audioData2 = AudioData.clone();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
