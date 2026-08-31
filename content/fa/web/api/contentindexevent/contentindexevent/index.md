@@ -1,11 +1,5 @@
 ---
 title: "ContentIndexEvent: ContentIndexEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContentIndexEvent/ContentIndexEvent"
-status: "needs-translation"
----
-
----
-title: "ContentIndexEvent: ContentIndexEvent() constructor"
 short-title: ContentIndexEvent()
 slug: Web/API/ContentIndexEvent/ContentIndexEvent
 page-type: web-api-constructor
@@ -16,32 +10,30 @@ browser-compat: api.ContentIndexEvent.ContentIndexEvent
 
 {{APIRef("Content Index API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`ContentIndexEvent()`** constructor creates a new {{domxref("ContentIndexEvent")}} object
-whose type and other options are configured as specified.
+سازندهٔ **`ContentIndexEvent()`** یک شیء جدید از نوع {{domxref("ContentIndexEvent")}} ایجاد می‌کند که نوع و سایر گزینه‌های آن مطابق پارامترهای داده‌شده تنظیم می‌شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new ContentIndexEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `contentdelete`.
+  - : رشته‌ای شامل نام رویداد. این مقدار به حروف بزرگ و کوچک حساس است (case-sensitive) و مرورگرها همیشه آن را روی `contentdelete` تنظیم می‌کنند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_, has the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_، ویژگی‌های زیر را دارد:
     - `id`
-      - : The id of the indexed content you want the {{domxref("ContentIndex")}} object to remove.
+      - : شناسه (`id`) محتوای فهرست‌شده‌ای که می‌خواهید شیء {{domxref("ContentIndex")}} آن را حذف کند.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("ContentIndexEvent")}} object configured using the given options.
+یک شیء جدید از {{domxref("ContentIndexEvent")}} که با استفاده از گزینه‌های داده‌شده پیکربندی شده است.
 
-## Examples
+## مثال‌ها
 
-This examples constructs a new {{domxref('ContentIndexEvent')}} with the relevant id.
+این مثال یک {{domxref('ContentIndexEvent')}} جدید با شناسهٔ مربوطه می‌سازد.
 
 ```js
 const removeData = {
@@ -53,15 +45,15 @@ const ciEvent = new ContentIndexEvent("contentdelete", removeData);
 ciEvent.id; // should return 'unique-content-id'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [An introductory article on the Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
-- [Service Worker API, along with information about Cache and CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
+- [مقالهٔ مقدماتی دربارهٔ Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
+- [Service Worker API، به‌همراه اطلاعاتی دربارهٔ Cache و CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
