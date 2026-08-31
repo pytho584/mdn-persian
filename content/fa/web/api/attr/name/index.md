@@ -1,7 +1,7 @@
 ---
 title: "Attr: name property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Attr/name"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,17 +14,17 @@ browser-compat: api.Attr.name
 
 {{APIRef("DOM")}}
 
-The read-only **`name`** property of the {{domxref("Attr")}} interface returns the _qualified name_ of an attribute, that is the name of the attribute, with the namespace prefix, if any, in front of it. For example, if the local name is `lang` and the namespace prefix is `xml`, the returned qualified name is `xml:lang`.
+ویژگی فقطخواندنی **`name`** از رابط {{domxref("Attr")}}، _نام واجد شرایط_ یک ویژگی را برمی‌گرداند؛ یعنی نام ویژگی، با پیشوند فضای نام (در صورت وجود) در ابتدای آن. برای مثال، اگر نام محلی `lang` و پیشوند فضای نام `xml` باشد، نام واجد شرایط بازگردانده‌شده `xml:lang` خواهد بود.
 
-The qualified name is always in lower case, whatever case at the attribute creation.
+نام واجد شرایط همیشه با حروف کوچک (lowercase) است، صرف‌نظر از اینکه در زمان ایجاد ویژگی با چه حروفی نوشته شده باشد.
 
-## Value
+## مقدار
 
-A string representing the attribute's qualified name.
+رشته‌ای (string) که نام واجد شرایط ویژگی را نشان می‌دهد.
 
-## Example
+## مثال
 
-The following example displays the qualified name of the first attribute of the two first elements, when we click on the appropriate button.
+مثال زیر نام واجد شرایط نخستین ویژگی از دو عنصر اول را، هنگام کلیک روی دکمهٔ مربوطه، نمایش می‌دهد.
 
 ### HTML
 
@@ -63,15 +63,15 @@ for (const button of buttons) {
 
 {{ EmbedLiveSample('Example','100%',100) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The properties {{domxref("Attr.localName")}}, returning the local part of the qualified name of the attribute, and {{domxref("Attr.prefix")}}, the namespace prefix.
-- The {{domxref("Element.tagName()")}} property, returning the qualified name of an {{domxref("Element")}}.
+- ویژگی‌های {{domxref("Attr.localName")}} که بخش محلی نام واجد شرایط ویژگی را برمی‌گرداند، و {{domxref("Attr.prefix")}} که پیشوند فضای نام را برمی‌گرداند.
+- ویژگی {{domxref("Element.tagName()")}} که نام واجد شرایط یک {{domxref("Element")}} را برمی‌گرداند.
