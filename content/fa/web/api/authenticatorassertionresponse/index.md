@@ -1,7 +1,7 @@
 ---
 title: "AuthenticatorAssertionResponse"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,47 +13,47 @@ browser-compat: api.AuthenticatorAssertionResponse
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`AuthenticatorAssertionResponse`** interface of the [Web Authentication API](/en-US/docs/Web/API/Web_Authentication_API) contains a [digital signature](/en-US/docs/Glossary/Signature/Security) from the private key of a particular WebAuthn credential. The relying party's server can verify this signature to authenticate a user, for example when they sign in.
+[Web Authentication API](/en-US/docs/Web/API/Web_Authentication_API) 的 **`AuthenticatorAssertionResponse`** 接口包含来自特定 WebAuthn 凭据私钥的[数字签名](/en-US/docs/Glossary/Signature/Security)。依赖方的服务器可以验证此签名以认证用户，例如在用户登录时。
 
-An `AuthenticatorAssertionResponse` object instance is available in the {{domxref("PublicKeyCredential.response", "response")}} property of a {{domxref("PublicKeyCredential")}} object returned by a successful {{domxref("CredentialsContainer.get()", "navigator.credentials.get()")}} call.
+当一次成功的 {{domxref("CredentialsContainer.get()", "navigator.credentials.get()")}} 调用返回一个 {{domxref("PublicKeyCredential")}} 对象时，其 {{domxref("PublicKeyCredential.response", "response")}} 属性中即可获得一个 `AuthenticatorAssertionResponse` 对象实例。
 
-This interface inherits from {{domxref("AuthenticatorResponse")}}.
+此接口继承自 {{domxref("AuthenticatorResponse")}}。
 
 {{InheritanceDiagram}}
 
 > [!NOTE]
-> This interface is restricted to top-level contexts. Use from within an {{HTMLElement("iframe")}} element will not have any effect.
+> 此接口仅限于顶级上下文。从 {{HTMLElement("iframe")}} 元素内部使用将不会产生任何效果。
 
-## Instance properties
+## 实例属性
 
-_Also inherits properties from its parent, {{domxref("AuthenticatorResponse")}}._
+_另继承其父接口 {{domxref("AuthenticatorResponse")}} 的属性。_
 
 - {{domxref("AuthenticatorAssertionResponse.authenticatorData")}} {{ReadOnlyInline}}
-  - : An {{jsxref("ArrayBuffer")}} containing information from the authenticator such as the Relying Party ID Hash (rpIdHash), a signature counter, test of user presence and user verification flags, and any extensions processed by the authenticator.
+  - : 一个 {{jsxref("ArrayBuffer")}}，包含来自认证器的信息，例如依赖方 ID 哈希（rpIdHash）、签名计数器、用户存在性测试和用户验证标志，以及认证器处理的任何扩展。
 - {{domxref("AuthenticatorResponse.clientDataJSON")}} {{ReadOnlyInline}}
-  - : Contains the JSON-compatible serialization of the data passed from the browser to the authenticator in order to authenticate with this credential — i.e., when {{domxref("CredentialsContainer.get()")}} is called with a `publicKey` option. This data contains some information from the options passed into the `get()` call, and some information controlled by the browser.
+  - : 包含从浏览器传递给认证器以使用此凭据进行认证的数据的 JSON 兼容序列化——即当使用 `publicKey` 选项调用 {{domxref("CredentialsContainer.get()")}} 时。此数据包含传入 `get()` 调用的选项中的一些信息，以及一些由浏览器控制的信息。
 - {{domxref("AuthenticatorAssertionResponse.signature")}} {{ReadOnlyInline}}
-  - : An assertion signature over {{domxref("AuthenticatorAssertionResponse.authenticatorData")}} and {{domxref("AuthenticatorResponse.clientDataJSON")}}. The assertion signature is created with the private key of the key pair that was created during the originating {{domxref("CredentialsContainer.create()","navigator.credentials.create()")}} call and verified using the public key of that same key pair.
+  - : 对 {{domxref("AuthenticatorAssertionResponse.authenticatorData")}} 和 {{domxref("AuthenticatorResponse.clientDataJSON")}} 的断言签名。该断言签名使用最初在 {{domxref("CredentialsContainer.create()","navigator.credentials.create()")}} 调用期间创建的密钥对中的私钥创建，并使用同一密钥对中的公钥进行验证。
 - {{domxref("AuthenticatorAssertionResponse.userHandle")}} {{ReadOnlyInline}}
-  - : An {{jsxref("ArrayBuffer")}} containing an opaque user identifier, specified as `user.id` in the options passed to the originating {{domxref("CredentialsContainer.create()","navigator.credentials.create()")}} call.
+  - : 一个 {{jsxref("ArrayBuffer")}}，包含一个不透明的用户标识符，该标识符在传递给原始 {{domxref("CredentialsContainer.create()","navigator.credentials.create()")}} 调用的选项中指定为 `user.id`。
 
-## Instance methods
+## 实例方法
 
-None.
+无。
 
-## Examples
+## 示例
 
-See [Retrieving a public key credential](/en-US/docs/Web/API/CredentialsContainer/get#retrieving_a_public_key_credential) for a detailed example.
+请参阅[获取公钥凭据](/en-US/docs/Web/API/CredentialsContainer/get#retrieving_a_public_key_credential)获取详细示例。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- {{domxref("AuthenticatorAttestationResponse")}}: the interface for the type of response given when creating a new credential
-- {{domxref("AuthenticatorResponse")}}: the parent interface
+- {{domxref("AuthenticatorAttestationResponse")}}：创建新凭据时所给响应类型的接口。
+- {{domxref("AuthenticatorResponse")}}：父接口。
