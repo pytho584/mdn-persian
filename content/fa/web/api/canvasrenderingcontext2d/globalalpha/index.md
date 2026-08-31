@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: globalAlpha property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalAlpha"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: globalAlpha property"
 short-title: globalAlpha
 slug: Web/API/CanvasRenderingContext2D/globalAlpha
 page-type: web-api-instance-property
@@ -14,24 +8,20 @@ browser-compat: api.CanvasRenderingContext2D.globalAlpha
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.globalAlpha`**
-property of the Canvas 2D API specifies the alpha (transparency) value that is applied
-to shapes and images before they are drawn onto the canvas.
+ویژگی **`CanvasRenderingContext2D.globalAlpha`** در Canvas 2D API مقدار آلفا (شفافیت) را مشخص می‌کند که قبل از رسم اشکال و تصاویر روی بوم، به آن‌ها اعمال می‌شود.
 
 > [!NOTE]
-> See also the chapter [Applying styles and color](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) in the [Canvas Tutorial](/en-US/docs/Web/API/Canvas_API/Tutorial).
+> همچنین به فصل [استفاده از استایل‌ها و رنگ‌ها](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) در [آموزش Canvas](/en-US/docs/Web/API/Canvas_API/Tutorial) مراجعه کنید.
 
-## Value
+## مقدار
 
-A number between `0.0` (fully transparent) and `1.0` (fully opaque), inclusive. The default value is `1.0`. Values outside that range, including {{jsxref("Infinity")}} and {{jsxref("NaN")}}, will not be set, and `globalAlpha` will retain its previous value.
+عددی بین `0.0` (کاملاً شفاف) و `1.0` (کاملاً مات)، شامل این دو مقدار. مقدار پیش‌فرض `1.0` است. مقادیر خارج از این محدوده، از جمله {{jsxref("Infinity")}} و {{jsxref("NaN")}}، تنظیم نخواهند شد و `globalAlpha` مقدار قبلی خود را حفظ خواهد کرد.
 
-## Examples
+## مثال‌ها
 
-### Drawing translucent shapes
+### رسم اشکال نیمه‌شفاف
 
-This example uses the `globalAlpha` property to draw two semi-transparent
-rectangles.
+در این مثال از ویژگی `globalAlpha` برای رسم دو مستطیل نیمه‌شفاف استفاده شده است.
 
 #### HTML
 
@@ -54,21 +44,15 @@ ctx.fillStyle = "red";
 ctx.fillRect(50, 50, 100, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Drawing_translucent_shapes', 700, 180) }}
 
-### Overlaying transparent shapes
+### روی هم قرار دادن اشکال شفاف
 
-This example illustrates the effect of overlaying multiple transparent shapes on top of
-each other. We begin by drawing a solid background composed of four differently colored
-squares. Next, we set the `globalAlpha` property to `0.2` (20%
-opaque); this alpha level will apply to all of our transparent shapes. After that, we
-use a `for` loop to draw a series of circles with increasing radii.
+این مثال تأثیر روی هم قرار دادن چندین شکل شفاف را نشان می‌دهد. ابتدا یک پس‌زمینهٔ توپر متشکل از چهار مربع با رنگ‌های متفاوت رسم می‌کنیم. سپس ویژگی `globalAlpha` را روی `0.2` (20% کدورت) تنظیم می‌کنیم؛ این سطح آلفا روی تمام اشکال شفاف ما اعمال خواهد شد. بعد از آن، با یک حلقهٔ `for` مجموعه‌ای از دایره‌ها با شعاع‌های رو به افزایش رسم می‌کنیم.
 
-With each new circle, the opacity of the previous circles underneath is effectively
-increased. If we were to increase the step count (and thus draw more circles), the
-background would eventually disappear completely from the center of the image.
+با هر دایرهٔ جدید، کدورت دایره‌های قبلی که زیر آن قرار دارند، عملاً افزایش می‌یابد. اگر تعداد گام‌ها را زیاد کنیم (و بنابراین دایره‌های بیشتری رسم کنیم)، در نهایت پس‌زمینه کاملاً از مرکز تصویر ناپدید می‌شود.
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -102,26 +86,23 @@ for (let i = 0; i < 7; i++) {
 
 {{EmbedLiveSample("Overlaying_transparent_shapes", "", "180")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-### Gecko-specific notes
+### یادداشت‌های مخصوص Gecko
 
-- Starting with Gecko 5.0, specifying invalid values for `globalAlpha` no
-  longer throws a `SYNTAX_ERR` exception; these are now correctly silently
-  ignored.
+- از Gecko 5.0 به بعد، مشخص کردن مقادیر نامعتبر برای `globalAlpha` دیگر استثنای `SYNTAX_ERR` را پرتاب نمی‌کند؛ این مقادیر اکنون به‌درستی و در سکوت نادیده گرفته می‌شوند.
 
-### WebKit/Blink-specific notes
+### یادداشت‌های مخصوص WebKit/Blink
 
-- In WebKit- and Blink-based browsers, a non-standard and deprecated method
-  `ctx.setAlpha()` is implemented in addition to this property.
+- در مرورگرهای مبتنی بر WebKit و Blink، علاوه بر این ویژگی، متد غیراستاندارد و منسوخ `ctx.setAlpha()` نیز پیاده‌سازی شده است.
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کنندهٔ این ویژگی: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.globalCompositeOperation")}}
