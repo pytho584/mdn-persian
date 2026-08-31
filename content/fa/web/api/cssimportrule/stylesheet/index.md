@@ -1,7 +1,5 @@
 ---
 title: "CSSImportRule: styleSheet property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/styleSheet"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,17 @@ browser-compat: api.CSSImportRule.styleSheet
 
 {{APIRef("CSSOM")}}
 
-The read-only **`styleSheet`** property of the
-{{domxref("CSSImportRule")}} interface returns the CSS Stylesheet specified by the
-{{cssxref("@import")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules). This will be
-in the form of a {{domxref("CSSStyleSheet")}} object.
+ویژگی فقط‌خواندنی **`styleSheet`** از رابط {{domxref("CSSImportRule")}}، شیوه‌نامهٔ CSS تعیین‌شده توسط {{cssxref("@import")}} [قاعدهٔ at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) را برمی‌گرداند. این مقدار در قالب یک شیء {{domxref("CSSStyleSheet")}} خواهد بود.
 
-An {{cssxref("@import")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) always has
-an associated stylesheet.
+یک [قاعدهٔ at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) با {{cssxref("@import")}} همیشه یک شیوه‌نامهٔ مرتبط دارد.
 
-## Value
+## مقدار
 
-A {{domxref("CSSStyleSheet")}}.
+یک {{domxref("CSSStyleSheet")}}.
 
-## Examples
+## مثال‌ها
 
-The following stylesheet includes a single {{cssxref("@import")}} rule. Therefore the
-first item in the list of CSS rules will be a `CSSImportRule`. The
-`styleSheet` property returns the imported stylesheet.
+شیوه‌نامهٔ زیر شامل یک قاعدهٔ {{cssxref("@import")}} است. بنابراین نخستین مورد در فهرست قواعد CSS یک `CSSImportRule` خواهد بود. ویژگی `styleSheet` شیوه‌نامهٔ واردشده را برمی‌گرداند.
 
 ```css
 @import "style.css" screen;
@@ -41,10 +33,10 @@ const myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].styleSheet); // A CSSStyleSheet
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
