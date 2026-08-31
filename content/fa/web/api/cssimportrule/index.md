@@ -1,10 +1,4 @@
 ---
-title: "CSSImportRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule"
-status: "needs-translation"
----
-
----
 title: CSSImportRule
 slug: Web/API/CSSImportRule
 page-type: web-api-interface
@@ -13,32 +7,32 @@ browser-compat: api.CSSImportRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSImportRule`** interface represents an {{cssxref("@import")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+**`CSSImportRule`** 接口表示一个 {{cssxref("@import")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules)。
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## 实例属性
 
-_Inherits properties from its ancestor {{domxref("CSSRule")}}._
+_继承其祖先 {{domxref("CSSRule")}} 的属性。_
 
 - {{domxref("CSSImportRule.href")}} {{ReadOnlyInline}}
-  - : Returns the URL specified by the {{cssxref("@import")}} rule.
+  - : 返回 {{cssxref("@import")}} 规则指定的 URL。
 - {{domxref("CSSImportRule.layerName")}} {{ReadOnlyInline}}
-  - : Returns the name of the [cascade layer](/en-US/docs/Web/CSS/Reference/At-rules/@layer) declared in the {{cssxref("@import")}} rule, the empty string if the layer is anonymous, the or `null` if the rule doesn't declare any.
+  - : 返回 {{cssxref("@import")}} 规则中声明的[级联层](/en-US/docs/Web/CSS/Reference/At-rules/@layer)的名称；如果级联层是匿名的，则返回空字符串；如果规则未声明任何级联层，则返回 `null`。
 - {{domxref("CSSImportRule.media")}}
-  - : Returns the value of the `media` attribute of the associated stylesheet.
+  - : 返回关联样式表的 `media` 属性的值。
 - {{domxref("CSSImportRule.styleSheet")}} {{ReadOnlyInline}}
-  - : Returns the associated stylesheet.
+  - : 返回关联的样式表。
 - {{domxref("CSSImportRule.supportsText")}} {{ReadOnlyInline}}
-  - : Returns the supports condition specified by the {{cssxref("@import")}} rule.
+  - : 返回 {{cssxref("@import")}} 规则指定的 supports 条件。
 
-## Instance methods
+## 实例方法
 
-_Inherits methods from its ancestor {{domxref("CSSRule")}}._
+_继承其祖先 {{domxref("CSSRule")}} 的方法。_
 
-## Examples
+## 示例
 
-The document includes a single stylesheet which contains a single {{cssxref("@import")}} rule. Therefore the first item in the list of CSS rules will be a `CSSImportRule`.
+该文档包含一个样式表，其中包含一条 {{cssxref("@import")}} 规则。因此，CSS 规则列表中的第一项将是一个 `CSSImportRule`。
 
 ```css
 @import "style.css" screen;
@@ -46,13 +40,13 @@ The document includes a single stylesheet which contains a single {{cssxref("@im
 
 ```js
 const myRules = document.styleSheets[0].cssRules;
-console.log(myRules[0]); // A CSSImportRule instance object
+console.log(myRules[0]); // 一个 CSSImportRule 实例对象
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
