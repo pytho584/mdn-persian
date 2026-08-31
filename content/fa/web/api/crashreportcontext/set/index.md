@@ -1,7 +1,5 @@
 ---
 title: "CrashReportContext: set() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CrashReportContext/set"
-status: "needs-translation"
 ---
 
 ---
@@ -16,57 +14,57 @@ browser-compat: api.CrashReportContext.set
 
 {{APIRef("Reporting API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`set()`** method of the {{domxref("CrashReportContext")}} interface stores a key-value pair in the memory initialized by {{domxref("CrashReportContext.initialize", "initialize()")}}.
+متد **`set()`** از رابط {{domxref("CrashReportContext")}} یک جفت کلید-مقدار را در حافظه‌ای که توسط {{domxref("CrashReportContext.initialize", "initialize()")}} مقداردهی اولیه شده است، ذخیره می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 set(key, value)
 ```
 
-### Parameters
+### پارامترها
 
 - `key`
-  - : A string representing the key of the key-value pair to be stored.
+  - : یک رشته (string) که کلید جفت کلید-مقدار مورد نظر برای ذخیره‌سازی را نشان می‌دهد.
 - `value`
-  - : A string representing the value of the key-value pair to be stored.
+  - : یک رشته که مقدار جفت کلید-مقدار مورد نظر برای ذخیره‌سازی را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The calling document is not fully active.
-    - The crash report key-value store is not yet initialized via an {{domxref("CrashReportContext.initialize", "initialize()")}} call.
+  - : در شرایط زیر پرتاب می‌شود:
+    - سند فراخوانی‌کننده به طور کامل فعال (fully active) نیست.
+    - ذخیره‌گاه جفت‌کلید-مقدار گزارش خرابی هنوز از طریق فراخوانی {{domxref("CrashReportContext.initialize", "initialize()")}} مقداردهی اولیه نشده است.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : The size of the serialized key-value pair is greater than the [`length`](/en-US/docs/Web/API/CrashReportContext/initialize#length) value set when the store was first initialized.
+  - : اندازه جفت کلید-مقدار سریال‌شده بزرگ‌تر از مقدار [`length`](/en-US/docs/Web/API/CrashReportContext/initialize#length) تعیین‌شده هنگام مقداردهی اولیه ذخیره‌گاه است.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 window.crashReport.initialize(1024).then(() => {
-  // Set a possible crash-causing value, and try
-  // running an operation that may cause a crash
+  // یک مقدار بالقوهٔ crash‌آور تنظیم می‌کند و
+  // عملیاتی را که ممکن است باعث crash شود اجرا می‌کند
   window.crashReport.set("crash-arg", "00031");
   operationThatMightCrash("00031");
-  // Delete the key-value pair if it doesn't cause a crash
+  // اگر crash رخ نداد، جفت کلید-مقدار را حذف می‌کند
   window.crashReport.delete("crash-arg");
 });
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Reporting API](/en-US/docs/Web/API/Reporting_API)
