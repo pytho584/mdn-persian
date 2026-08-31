@@ -1,7 +1,7 @@
 ---
 title: "Attr"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Attr"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,54 +13,54 @@ browser-compat: api.Attr
 
 {{APIRef("DOM")}}
 
-The **`Attr`** interface represents one of an element's attributes as an object. In most situations, you will directly retrieve the attribute value as a string (e.g., {{domxref("Element.getAttribute()")}}), but some cases may require interacting with `Attr` instances (e.g., {{domxref("Element.getAttributeNode()")}}).
+رابطِ **`Attr`** یکی از ویژگی‌های یک عنصر را به‌صورت یک شیء نمایش می‌دهد. در بیشتر مواقع، مقدار ویژگی را مستقیماً به‌صورت رشته دریافت می‌کنید (مثلاً {{domxref("Element.getAttribute()")}})، اما برخی موارد ممکن است نیاز به تعامل با نمونه‌های `Attr` داشته باشند (مثلاً {{domxref("Element.getAttributeNode()")}}).
 
 {{InheritanceDiagram}}
 
-The core idea of an object of type `Attr` is the association between a _name_ and a _value_. An attribute may also be part of a _namespace_ and, in this case, it also has a URI identifying the namespace, and a prefix that is an abbreviation for the namespace.
+ایده اصلی یک شیء از نوع `Attr` ارتباط بین یک _نام_ و یک _مقدار_ است. یک ویژگی همچنین ممکن است بخشی از یک _فضای نام_ باشد و در این صورت، یک URI برای شناسایی فضای نام و یک پیشوند که مخفف فضای نام است نیز دارد.
 
-The name is deemed _local_ when it ignores the eventual namespace prefix and deemed _qualified_ when it includes the prefix of the namespace, if any, separated from the local name by a colon (`:`). We have three cases: an attribute outside of a namespace, an attribute inside a namespace without a prefix defined, an attribute inside a namespace with a prefix:
+نام زمانی _محلی_ در نظر گرفته می‌شود که پیشوند فضای نام احتمالی را نادیده بگیرد و زمانی _واجد شرایط_ در نظر گرفته می‌شود که پیشوند فضای نام را، در صورت وجود، شامل شود و با دو نقطه (`:`) از نام محلی جدا شود. سه حالت داریم: ویژگی خارج از فضای نام، ویژگی داخل فضای نام بدون پیشوند تعریف‌شده، ویژگی داخل فضای نام با پیشوند:
 
-| Attribute | Namespace name | Namespace prefix | Attribute local name | Attribute qualified name |
+| ویژگی | نام فضای نام | پیشوند فضای نام | نام محلی ویژگی | نام واجد شرایط ویژگی |
 | --------- | -------------- | ---------------- | -------------------- | ------------------------ |
-| `myAttr`  | _none_         | _none_           | `myAttr`             | `myAttr`                 |
-| `myAttr`  | `mynamespace`  | _none_           | `myAttr`             | `myAttr`                 |
+| `myAttr`  | _هیچ_         | _هیچ_           | `myAttr`             | `myAttr`                 |
+| `myAttr`  | `mynamespace`  | _هیچ_           | `myAttr`             | `myAttr`                 |
 | `myAttr`  | `mynamespace`  | `myns`           | `myAttr`             | `myns:myAttr`            |
 
 > [!NOTE]
-> This interface represents only attributes present in the tree representation of an SVG, HTML, or MathML {{domxref("Element")}}. It doesn't represent the properties of the interface associated with that element, such as the properties of {{domxref("HTMLTableElement")}} for a {{HTMLElement("table")}} element. (See {{Glossary("Attribute", "this article")}} for more information about attributes and how they are _reflected_ into properties.)
+> این رابط فقط ویژگی‌های موجود در نمایش درختی یک {{domxref("Element")}} از نوع SVG، HTML یا MathML را نشان می‌دهد. این رابط خصوصیات رابط مرتبط با آن عنصر را نشان نمی‌دهد، مانند خصوصیات {{domxref("HTMLTableElement")}} برای عنصر {{HTMLElement("table")}}. (برای اطلاعات بیشتر درباره ویژگی‌ها و چگونگی _بازتاب_ آن‌ها به خصوصیات، به {{Glossary("Attribute", "این مقاله")}} مراجعه کنید.)
 
-## Instance properties
+## خصوصیات نمونه
 
-_This interface also inherits the properties of its parent interfaces, {{domxref("Node")}} and {{domxref("EventTarget")}}._
+_این رابط همچنین خصوصیات رابط‌های والد خود، {{domxref("Node")}} و {{domxref("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("Attr.localName", "localName")}} {{ReadOnlyInline}}
-  - : A string representing the local part of the qualified name of the attribute.
+  - : رشته‌ای که بخش محلی نام واجد شرایط ویژگی را نشان می‌دهد.
 - {{domxref("Attr.name", "name")}} {{ReadOnlyInline}}
-  - : The attribute's _qualified name_. If the attribute is not in a namespace, it will be the same as {{domxref("attr.localName", "localName")}} property.
+  - : _نام واجد شرایط_ ویژگی. اگر ویژگی در یک فضای نام نباشد، با خاصیت {{domxref("attr.localName", "localName")}} یکسان خواهد بود.
 - {{domxref("Attr.namespaceURI", "namespaceURI")}} {{ReadOnlyInline}}
-  - : A string representing the URI of the namespace of the attribute, or `null` if there is no namespace.
+  - : رشته‌ای که URI فضای نام ویژگی را نشان می‌دهد، یا اگر فضای نامی وجود نداشته باشد `null`.
 - {{domxref("Attr.ownerElement", "ownerElement")}} {{ReadOnlyInline}}
-  - : The {{domxref("Element")}} the attribute belongs to.
+  - : {{domxref("Element")}} ای که ویژگی به آن تعلق دارد.
 - {{domxref("Attr.prefix", "prefix")}} {{ReadOnlyInline}}
-  - : A string representing the namespace prefix of the attribute, or `null` if a namespace without prefix or no namespace are specified.
+  - : رشته‌ای که پیشوند فضای نام ویژگی را نشان می‌دهد، یا اگر فضای نام بدون پیشوند یا بدون فضای نام مشخص شده باشد، `null`.
 - {{domxref("Attr.specified", "specified")}} {{ReadOnlyInline}} {{deprecated_inline}}
-  - : This property always returns `true`.
+  - : این خاصیت همیشه `true` برمی‌گرداند.
 - {{domxref("Attr.value", "value")}}
-  - : The attribute's value, a string that can be set and get using this property.
+  - : مقدار ویژگی، یک رشته که می‌توان با استفاده از این خاصیت آن را تنظیم و دریافت کرد.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface has no specific methods, but inherits the methods of its parent interfaces, {{domxref("Node")}} and {{domxref("EventTarget")}}._
+_این رابط هیچ روش خاصی ندارد، اما روش‌های رابط‌های والد خود، {{domxref("Node")}} و {{domxref("EventTarget")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Other nodes are {{domxref("CDATASection")}}, {{domxref("CharacterData")}}, {{domxref("Comment")}}, {{domxref("Document")}}, {{domxref("Element")}}, {{domxref("ProcessingInstruction")}}, and {{domxref("Text")}}.
+- گره‌های دیگر عبارت‌اند از {{domxref("CDATASection")}}، {{domxref("CharacterData")}}، {{domxref("Comment")}}، {{domxref("Document")}}، {{domxref("Element")}}، {{domxref("ProcessingInstruction")}} و {{domxref("Text")}}.
