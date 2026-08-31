@@ -1,7 +1,7 @@
 ---
 title: "BarProp"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BarProp"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,40 +13,40 @@ browser-compat: api.BarProp
 
 {{APIRef("DOM")}}
 
-The **`BarProp`** interface of the [Document Object Model](/en-US/docs/Web/API/Document_Object_Model) represents the web browser user interface elements that are exposed to scripts in web pages. Each of the following interface elements are represented by a `BarProp` object.
+رابط **`BarProp`** از [Document Object Model](/en-US/docs/Web/API/Document_Object_Model) عناصر رابط کاربری مرورگر وب را که در معرض اسکریپت‌ها در صفحات وب قرار دارند، نمایش می‌دهد. هر یک از عناصر رابط زیر توسط یک شیء `BarProp` نمایش داده می‌شوند.
 
 - {{domxref("Window.locationbar")}}
-  - : The browser location bar.
+  - : نوار آدرس مرورگر.
 - {{domxref("Window.menubar")}}
-  - : The browser menu bar.
+  - : نوار منوی مرورگر.
 - {{domxref("Window.personalbar")}}
-  - : The browser personal bar.
+  - : نوار شخصی مرورگر.
 - {{domxref("Window.scrollbars")}}
-  - : The browser scrollbars.
+  - : نوارهای پیمایش مرورگر.
 - {{domxref("Window.statusbar")}}
-  - : The browser status bar.
+  - : نوار وضعیت مرورگر.
 - {{domxref("Window.toolbar")}}
-  - : The browser toolbar.
+  - : نوار ابزار مرورگر.
 
-The `BarProp` interface is not accessed directly, but via one of these elements.
+رابط `BarProp` به‌طور مستقیم در دسترس نیست، بلکه از طریق یکی از این عناصر در دسترس قرار می‌گیرد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("BarProp.visible")}} {{ReadOnlyInline}}
-  - : A {{jsxref("Boolean")}}, which is true if the bar represented by the used interface element is visible.
+  - : یک {{jsxref("Boolean")}} که اگر نوار نمایش‌داده‌شده توسط عنصر رابط مورد استفاده قابل مشاهده باشد، مقدار آن `true` است.
 
-## Examples
+## مثال‌ها
 
-The following example prints a `BarProp` object to the console that represents the location bar.
+مثال زیر یک شیء `BarProp` را که نشان‌دهنده نوار آدرس است، در کنسول چاپ می‌کند.
 
 ```js
 console.log(window.locationbar);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
