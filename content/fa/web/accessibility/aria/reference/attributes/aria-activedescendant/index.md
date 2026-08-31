@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-activedescendant attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,47 +13,47 @@ spec-urls: https://w3c.github.io/aria/#aria-activedescendant
 sidebar: accessibilitysidebar
 ---
 
-The `aria-activedescendant` attribute identifies the currently active element when focus is on a [`composite`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/composite_role) widget, [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role), [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role), [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role), or [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role).
+ویژگی `aria-activedescendant` عنصر فعال کنونی را مشخص می‌کند، زمانی که فوکوس روی یک ویجت [`composite`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/composite_role)، [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)، [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)، [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role)، یا [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role) قرار دارد.
 
-## Description
+## توضیحات
 
-The `aria-activedescendant` property provides a method of managing focus for assistive technologies on interactive elements when they contain multiple focusable descendants, such as menus, grids, and toolbars. Instead of the screen reader moving focus between owned elements, `aria-activedescendant` can be used on container elements to refer to the currently active element, informing assistive technology users of the currently active element when focused.
+ویژگی `aria-activedescendant` روشی برای مدیریت فوکوس برای فناوری‌های کمکی روی عناصر تعاملی فراهم می‌کند، زمانی که این عناصر شامل چندین فرزند قابل فوکوس مانند منوها، شبکه‌ها و نوار ابزار هستند. به‌جای اینکه صفحه‌خوان فوکوس را بین عناصر تحت مالکیت جابه‌جا کند، می‌توان از `aria-activedescendant` روی عناصر ظرف استفاده کرد تا به عنصر فعال کنونی اشاره کند و کاربران فناوری کمکی را هنگام فوکوس از عنصر فعال کنونی آگاه سازد.
 
-With `aria-activedescendant`, the browser keeps the DOM focus on the container element or on an input element that controls the container element. However, the user agent communicates desktop focus events and states to the assistive technology as if the element referenced by `aria-activedescendant` has focus.
+با `aria-activedescendant`، مرورگر فوکوس DOM را روی عنصر ظرف یا روی یک عنصر ورودی که عنصر ظرف را کنترل می‌کند، نگه می‌دارد. با این حال، عامل کاربر (user agent) رویدادها و حالت‌های فوکوس دسکتاپ را طوری به فناوری کمکی منتقل می‌کند که گویی عنصر ارجاع‌شده توسط `aria-activedescendant` فوکوس دارد.
 
-This attribute is only relevant on elements with role of [`composite`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/composite_role) widget, [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role), [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role), [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role), or [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role) whose `id` is referenced as the attribute value.
+این ویژگی فقط روی عناصری مرتبط است که دارای نقش ویجت [`composite`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/composite_role)، [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)، [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)، [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) یا [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role) هستند و `id` آن‌ها به‌عنوان مقدار ویژگی ارجاع داده شده است.
 
-The attribute manages providing assistive technologies with information as to which element has focus, but doesn't actually create focus. Changing focus and managing the attributes value is done with JavaScript. In addition to managing that attribute value, make sure the currently active descendant is visible and in view (or scrolls into view) when focused.
+این ویژگی مدیریت ارائه اطلاعات به فناوری‌های کمکی درباره اینکه کدام عنصر فوکوس دارد را بر عهده دارد، اما در واقع فوکوس ایجاد نمی‌کند. تغییر فوکوس و مدیریت مقدار ویژگی با جاوااسکریپت انجام می‌شود. علاوه بر مدیریت آن مقدار ویژگی، مطمئن شوید که فرزند فعال کنونی هنگام فوکوس قابل مشاهده و در دیدرس باشد (یا به درون دید اسکرول شود).
 
-In setting the value of `aria-activedescendant` on an element with DOM focus, ensure the value refers to an owned element—either a descendant of the element with DOM focus OR a logical descendant as indicated by the [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) attribute.
+هنگام تنظیم مقدار `aria-activedescendant` روی عنصری که فوکوس DOM دارد، مطمئن شوید که مقدار به یک عنصر تحت مالکیت اشاره می‌کند — یا به یک فرزند از عنصر دارای فوکوس DOM، یا به یک فرزند منطقی که توسط ویژگی [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) مشخص شده است.
 
-When the element with DOM focus is a combobox, textbox, or searchbox, include [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) to refer to the element that supports `aria-activedescendant`.
+هنگامی که عنصر دارای فوکوس DOM یک combobox، textbox یا searchbox است، [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) را لحاظ کنید تا به عنصری که از `aria-activedescendant` پشتیبانی می‌کند ارجاع دهد.
 
-The value of `aria-activedescendant` refers to an owned element of the controlled element. For example, in a combobox, focus may remain on the combobox while the value of `aria-activedescendant` on the combobox element refers to a descendant of a popup listbox that is controlled by the combobox.
-
-> [!NOTE]
-> The attribute is supported only on a few roles. For example, `dialog`s do not support `aria-activedescendant`. When a combobox opens a dialog, DOM focus moves into the dialog from the combobox as it is not referenceable with this attribute.
+مقدار `aria-activedescendant` به یک عنصر تحت مالکیت از عنصر کنترل‌شده اشاره می‌کند. برای مثال، در یک combobox، فوکوس ممکن است روی combobox باقی بماند، در حالی که مقدار `aria-activedescendant` روی عنصر combobox به یک فرزند از listbox بازشو اشاره می‌کند که توسط combobox کنترل می‌شود.
 
 > [!NOTE]
-> When a descendant of a `listbox`, `grid`, or `tree` popup is focused, DOM focus remains on the combobox and the combobox has `aria-activedescendant` set to a value that refers to the focused element within the popup.
+> این ویژگی فقط روی تعداد کمی از نقش‌ها پشتیبانی می‌شود. برای مثال، `dialog`ها از `aria-activedescendant` پشتیبانی نمی‌کنند. وقتی یک combobox یک dialog را باز می‌کند، فوکوس DOM از combobox به داخل dialog حرکت می‌کند، زیرا این عنصر با این ویژگی قابل ارجاع نیست.
 
-## Values
+> [!NOTE]
+> وقتی فرزندی از یک `listbox`، `grid` یا `tree` بازشو فوکوس می‌شود، فوکوس DOM روی combobox باقی می‌ماند و `aria-activedescendant` در combobox روی مقداری تنظیم شده است که به عنصر فوکوس‌شده درون بازشو اشاره می‌کند.
 
-- ID reference
-  - : takes as its value the `id` of the currently focused element.
+## مقادیر
 
-## Associated interfaces
+- ارجاع شناسه (ID reference)
+  - : به‌عنوان مقدار خود، `id` عنصر دارای فوکوس کنونی را می‌گیرد.
+
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaActiveDescendantElement")}}
-  - : The `ariaActiveDescendantElement` property is part of each element's interface.
-    Its value is an instance of a subclass of {{domxref("Element")}} that reflects the `id` reference in the `aria-activedescendant` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaActiveDescendantElement` بخشی از رابط هر عنصر است.
+    مقدار آن نمونه‌ای از یک زیرکلاس از {{domxref("Element")}} است که ارجاع `id` را در ویژگی `aria-activedescendant` بازتاب می‌دهد ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 - {{domxref("ElementInternals.ariaActiveDescendantElement")}}
-  - : The `ariaActiveDescendantElement` property is part of each custom element's interface.
-    Its value is an instance of a subclass of {{domxref("Element")}} that reflects the `id` reference in the `aria-activedescendant` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaActiveDescendantElement` بخشی از رابط هر عنصر سفارشی است.
+    مقدار آن نمونه‌ای از یک زیرکلاس از {{domxref("Element")}} است که ارجاع `id` را در ویژگی `aria-activedescendant` بازتاب می‌دهد ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 
-## Associated roles
+## نقش‌های مرتبط
 
-Relevant only as an attribute on elements with the following roles:
+فقط به‌عنوان ویژگی روی عناصر دارای نقش‌های زیر مرتبط است:
 
 - [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role)
 - [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)
@@ -61,6 +61,6 @@ Relevant only as an attribute on elements with the following roles:
 - [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role)
 - [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
