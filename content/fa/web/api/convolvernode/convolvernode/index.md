@@ -1,11 +1,5 @@
 ---
 title: "ConvolverNode: ConvolverNode() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/ConvolverNode"
-status: "needs-translation"
----
-
----
-title: "ConvolverNode: ConvolverNode() constructor"
 short-title: ConvolverNode()
 slug: Web/API/ConvolverNode/ConvolverNode
 page-type: web-api-constructor
@@ -14,8 +8,7 @@ browser-compat: api.ConvolverNode.ConvolverNode
 
 {{APIRef("Web Audio API")}}
 
-The **`ConvolverNode()`** constructor of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) creates a new
-{{domxref("ConvolverNode")}} object instance.
+**`ConvolverNode()`** سازنده‌ی [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) یک نمونه‌ی جدید از شیء {{domxref("ConvolverNode")}} ایجاد می‌کند.
 
 ## Syntax
 
@@ -26,42 +19,28 @@ new ConvolverNode(context, options)
 ### Parameters
 
 - `context`
-  - : A reference to an {{domxref("AudioContext")}}.
+  - : ارجاعی به یک {{domxref("AudioContext")}}.
 - `options` {{optional_inline}}
-  - : Options are as follows:
+  - : گزینه‌ها به شرح زیر هستند:
     - `buffer`
-      - : A mono, stereo, or
-        4-channel {{domxref("AudioBuffer")}} containing the
-        (possibly multichannel) impulse response used by the `ConvolverNode`
-        to create the reverb effect.
+      - : یک {{domxref("AudioBuffer")}} مونو، استریو یا ۴ کاناله که حاوی پاسخ ضربه‌ای (impulse response) (احتمالاً چندکاناله) است که `ConvolverNode` برای ایجاد افکت ریورب از آن استفاده می‌کند.
     - `disableNormalization`
-      - : A boolean value controlling
-        whether the impulse response from the buffer will be scaled by an equal-power
-        normalization, or not. The default is `false`.
+      - : یک مقدار بولی که کنترل می‌کند آیا پاسخ ضربه‌ای از بافر با نرمال‌سازی توان برابر مقیاس می‌شود یا خیر. مقدار پیش‌فرض `false` است.
     - `channelCount`
-      - : Represents an integer used to determine how many channels are used
-        when [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) connections to any inputs to the node.
-        (See {{domxref("AudioNode.channelCount")}} for more information.)
-        Its usage and precise definition depend on the value of `channelCountMode`.
+      - : یک عدد صحیح که تعیین می‌کند هنگام [افزایش و کاهش کانال‌ها](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) برای اتصال به هر ورودی گره، چند کانال استفاده شود. (برای اطلاعات بیشتر به {{domxref("AudioNode.channelCount")}} مراجعه کنید.) کاربرد و تعریف دقیق آن به مقدار `channelCountMode` بستگی دارد.
     - `channelCountMode`
-      - : Represents an enumerated value describing the way channels must be matched between the node's inputs and outputs.
-        (See {{domxref("AudioNode.channelCountMode")}} for more information including default values.)
+      - : یک مقدار شمارشی که نحوه تطبیق کانال‌ها بین ورودی‌ها و خروجی‌های گره را توصیف می‌کند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
     - `channelInterpretation`
-      - : Represents an enumerated value describing the meaning of the channels.
-        This interpretation will define how audio [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) will happen.
-        The possible values are `"speakers"` or `"discrete"`.
-        (See {{domxref("AudioNode.channelCountMode")}} for more information including default values.)
+      - : یک مقدار شمارشی که معنای کانال‌ها را توصیف می‌کند. این تفسیر مشخص می‌کند که [افزایش و کاهش کانال‌ها](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) صدا چگونه انجام شود. مقادیر ممکن `"speakers"` یا `"discrete"` هستند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
 
 ### Return value
 
-A new {{domxref("ConvolverNode")}} object instance.
+یک نمونه‌ی جدید از شیء {{domxref("ConvolverNode")}}.
 
 ### Exceptions
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the referenced {{domxref("AudioBuffer")}} does not have the
-    correct number of channels, or it has a different sample rate to the
-    associated {{domxref("AudioContext")}}.
+  - : اگر {{domxref("AudioBuffer")}} ارجاع‌داده‌شده تعداد کانال‌های صحیح را نداشته باشد، یا نرخ نمونه‌برداری آن با {{domxref("AudioContext")}} مرتبط متفاوت باشد، پرتاب می‌شود.
 
 ## Specifications
 
