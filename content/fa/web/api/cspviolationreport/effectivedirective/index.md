@@ -1,7 +1,5 @@
 ---
 title: "CSPViolationReport: effectiveDirective property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSPViolationReport/effectiveDirective"
-status: "needs-translation"
 ---
 
 ---
@@ -14,25 +12,23 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}
 
-The **`effectiveDirective`** property of the {{domxref("CSPViolationReport")}} dictionary is a string that represents the effective [Content Security Policy (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) directive that was violated.
+**`effectiveDirective`** 属性是 {{domxref("CSPViolationReport")}} 字典的一个字符串，表示被违反的有效的[内容安全策略 (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) 指令。
 
-Note that this contains the specific directive that was effectively violated, such as [`script-src-elem`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/script-src-elem) for violations related to script elements, and not the policy that was specified, which may have been the (more general) [`default-src`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/default-src).
+注意，该属性包含的是实际被违反的具体指令，例如与脚本元素相关的违规所对应的 [`script-src-elem`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/script-src-elem)，而不是策略中指定的指令，后者可能是（更一般的）[`default-src`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/default-src)。
 
-## Value
+## 值
 
-A string representing the effective [`Content-Security-Policy` directive](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#directives) that was violated.
+一个字符串，表示被违反的有效 [`Content-Security-Policy` 指令](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#directives)。
 
-## Examples
+## 示例
 
-### CSP inline script violation
+### CSP 内联脚本违规
 
-This example triggers a CSP violation using an inline script, and reports the violation using a {{domxref("ReportingObserver")}}.
-In particular, it logs the `effectiveDirective` and the `originalPolicy`, making the difference clear.
+此示例使用内联脚本触发 CSP 违规，并通过 {{domxref("ReportingObserver")}} 报告该违规。具体来说，它会记录 `effectiveDirective` 和 `originalPolicy`，让两者的区别一目了然。
 
 #### HTML
 
-The HTML file below uses the [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) element to set the {{httpheader('Content-Security-Policy')}} `default-src` to `self`, which allows scripts and other resources to be loaded from the same domain, but does not allow inline scripts to be executed.
-The document also includes an inline script, which should trigger a CSP violation.
+下面的 HTML 文件使用 [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) 元素将 {{httpheader('Content-Security-Policy')}} 的 `default-src` 设置为 `self`，这允许从同一域名加载脚本和其他资源，但不允许执行内联脚本。该文档还包含一个内联脚本，应会触发 CSP 违规。
 
 ```html
 <!doctype html>
@@ -58,11 +54,9 @@ The document also includes an inline script, which should trigger a CSP violatio
 
 #### JavaScript (main.js)
 
-The document above also loads the external script `main.js`, which is shown below.
-Because this is loaded from the same domain as the HTML, it is not blocked by the CSP.
+上面的文档还加载了外部脚本 `main.js`，如下所示。由于该脚本与 HTML 来自同一域名，因此不会被 CSP 阻止。
 
-The script creates a new {{domxref("ReportingObserver")}} to observe content violation reports of type `"csp-violation"`.
-Each time the callback function is invoked, we get the body of the first entry of the reports array, and use it to log the effectiveDirective and `originalPolicy` of the violation to the console.
+该脚本创建了一个新的 {{domxref("ReportingObserver")}} 来观察类型为 `"csp-violation"` 的内容违规报告。每次调用回调函数时，我们都会获取 reports 数组第一个条目的 `body`，并使用它将违规的 `effectiveDirective` 和 `originalPolicy` 记录到控制台。
 
 ```js
 // main.js
@@ -82,30 +76,29 @@ const observer = new ReportingObserver(
 observer.observe();
 ```
 
-Note that while there might be multiple reports in the returned array, for brevity we only log the values of the first element.
+注意，虽然返回的数组中可能包含多个报告，但为简洁起见，我们仅记录第一个元素的值。
 
-#### Results
+#### 结果
 
-The console output for the above code is:
+上述代码的控制台输出为：
 
 ```plain
 effectiveDirective: script-src-elem
 originalPolicy: default-src 'self'; report-to csp-endpoint
 ```
 
-Note that the `originalPolicy` matches the `<meta>` content of the `Content-Security-Policy` directive in the HTML, and specifies that the policy is `self` by default (`default-src 'self'`).
+注意 `originalPolicy` 与 HTML 中 `Content-Security-Policy` 指令的 `<meta>` 内容一致，并指明策略默认为 `self`（`default-src 'self'`）。
 
-The `effectiveDirective` is `script-src-elem`, which specifies valid sources for JavaScript {{htmlelement("script")}} elements.
-This is the specific directive that has effectively been violated, even though `default-src` was set in the policy.
+`effectiveDirective` 是 `script-src-elem`，它指定了 JavaScript {{htmlelement("script")}} 元素的有效来源。这是实际被违反的具体指令，尽管策略中设置的是 `default-src`。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 另见
 
 - {{domxref("SecurityPolicyViolationEvent.effectiveDirective")}}
