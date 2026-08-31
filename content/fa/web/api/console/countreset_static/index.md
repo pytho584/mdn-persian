@@ -1,11 +1,5 @@
 ---
 title: "console: countReset() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/countReset_static"
-status: "needs-translation"
----
-
----
-title: "console: countReset() static method"
 short-title: countReset()
 slug: Web/API/console/countReset_static
 page-type: web-api-static-method
@@ -14,27 +8,27 @@ browser-compat: api.console.countReset_static
 
 {{APIRef("Console API")}} {{AvailableInWorkers}}
 
-The **`console.countReset()`** static method resets counter used with {{domxref("console/count_static", "console.count()")}}.
+متد ایستای **`console.countReset()`** شمارنده‌ای را که با {{domxref("console/count_static", "console.count()")}} استفاده می‌شود، بازنشانی می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 console.countReset()
 console.countReset(label)
 ```
 
-### Parameters
+### پارامترها
 
 - `label` {{optional_inline}}
-  - : A string. If supplied, `countReset()` resets the count for that label to 0. If omitted, `countReset()` resets the default counter to 0.
+  - : یک رشته. اگر ارائه شود، `countReset()` شمارش را برای آن برچسب به ۰ بازنشانی می‌کند. اگر حذف شود، `countReset()` شمارنده پیش‌فرض را به ۰ بازنشانی می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-For example, given code like this:
+برای مثال، با کدی مانند این:
 
 ```js
 function greet(user) {
@@ -49,7 +43,7 @@ console.count();
 console.countReset();
 ```
 
-Console output will look something like this:
+خروجی کنسول چیزی شبیه به این خواهد بود:
 
 ```plain
 "default: 1"
@@ -59,9 +53,9 @@ Console output will look something like this:
 "default: 0"
 ```
 
-Note that the call to `console.counterReset()` resets the value of the default counter to zero.
+توجه داشته باشید که فراخوانی `console.counterReset()` مقدار شمارنده پیش‌فرض را به صفر بازنشانی می‌کند.
 
-If we pass the `user` variable as the `label` argument with the string "bob" to the first invocation of `console.count()`, and the string "alice" to the second:
+اگر متغیر `user` را به‌عنوان آرگومان `label` با رشته «bob» به اولین فراخوانی `console.count()` و با رشته «alice» به دومین فراخوانی پاس بدهیم:
 
 ```js
 function greet(user) {
@@ -76,7 +70,7 @@ console.countReset("bob");
 console.count("alice");
 ```
 
-We will see output like this:
+خروجی به شکل زیر خواهد بود:
 
 ```plain
 "bob: 1"
@@ -86,18 +80,18 @@ We will see output like this:
 "alice: 3"
 ```
 
-Resetting the value of the counter "bob" only changes the value of that counter. The value of "alice" is unchanged.
+بازنشانی مقدار شمارنده «bob» فقط مقدار همان شمارنده را تغییر می‌دهد. مقدار «alice» بدون تغییر می‌ماند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Microsoft Edge's documentation for `console.countReset()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#countreset)
-- [Node.js documentation for `console.countReset()`](https://nodejs.org/docs/latest/api/console.html#consolecountresetlabel)
-- [Google Chrome's documentation for `console.countReset()`](https://developer.chrome.com/docs/devtools/console/api/#countreset)
+- [مستندات Microsoft Edge برای `console.countReset()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#countreset)
+- [مستندات Node.js برای `console.countReset()`](https://nodejs.org/docs/latest/api/console.html#consolecountresetlabel)
+- [مستندات Google Chrome برای `console.countReset()`](https://developer.chrome.com/docs/devtools/console/api/#countreset)
