@@ -1,11 +1,5 @@
 ---
 title: "CSSImportRule: href property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/href"
-status: "needs-translation"
----
-
----
-title: "CSSImportRule: href property"
 short-title: href
 slug: Web/API/CSSImportRule/href
 page-type: web-api-instance-property
@@ -14,22 +8,17 @@ browser-compat: api.CSSImportRule.href
 
 {{APIRef("CSSOM")}}
 
-The read-only **`href`** property of the
-{{domxref("CSSImportRule")}} interface returns the URL specified by the
-{{cssxref("@import")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+خاصیت فقط‑خواندنی **`href`** از رابط {{domxref("CSSImportRule")}}، نشانی اینترنتی (URL) مشخص‌شده توسط {{cssxref("@import")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) را برمی‌گرداند.
 
-The resolved URL will be the [`href`](/en-US/docs/Web/HTML/Reference/Elements/link#href) attribute of the
-associated stylesheet.
+نشانی اینترنتی تفکیک‌شده (resolved URL) همان ویژگی [`href`](/en-US/docs/Web/HTML/Reference/Elements/link#href) sheet سبک مرتبط خواهد بود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## نمونه‌ها
 
-The following stylesheet includes a single {{cssxref("@import")}} rule. Therefore the
-first item in the list of CSS rules will be a `CSSImportRule`. The
-`href` property returns the URL of the imported stylesheet.
+sheet سبک زیر شامل یک قانون {{cssxref("@import")}} است. بنابراین اولین آیتم در فهرست قوانین CSS یک `CSSImportRule` خواهد بود. خاصیت `href` نشانی اینترنتی sheet سبک واردشده را برمی‌گرداند.
 
 ```css
 @import "style.css" screen;
@@ -40,10 +29,10 @@ const myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].href); // 'style.css'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
