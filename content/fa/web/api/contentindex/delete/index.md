@@ -1,11 +1,5 @@
 ---
 title: "ContentIndex: delete() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContentIndex/delete"
-status: "needs-translation"
----
-
----
-title: "ContentIndex: delete() method"
 short-title: delete()
 slug: Web/API/ContentIndex/delete
 page-type: web-api-instance-method
@@ -16,13 +10,10 @@ browser-compat: api.ContentIndex.delete
 
 {{APIRef("Content Index API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`delete()`** method of the
-{{domxref("ContentIndex")}} interface unregisters an item from the currently indexed
-content.
+متد **`delete()`** در رابط {{domxref("ContentIndex")}} یک مورد را از فهرست محتوای فعلی خارج می‌کند (unregister).
 
 > [!NOTE]
-> Calling `delete()` only affects the index. It does not delete anything
-> from the {{domxref('Cache')}}.
+> فراخوانی `delete()` فقط بر فهرست تأثیر می‌گذارد. چیزی را از {{domxref('Cache')}} حذف نمی‌کند.
 
 ## Syntax
 
@@ -33,22 +24,19 @@ delete(id)
 ### Parameters
 
 - `id`
-  - : The unique identifier of the indexed content you want the {{domxref("ContentIndex")}} object to remove.
+  - : شناسه‌ی یکتای محتوای فهرست‌شده‌ای که می‌خواهید شیء {{domxref("ContentIndex")}} آن را حذف کند.
 
 ### Return value
 
-Returns a {{jsxref("Promise")}} that resolves with `undefined`.
+یک {{jsxref("Promise")}} برمی‌گرداند که با `undefined` resolve می‌شود.
 
 ### Exceptions
 
-No exceptions are thrown.
+هیچ استثنایی پرتاب نمی‌شود.
 
 ## Examples
 
-Below is an asynchronous function, that removes an item from the [content index](/en-US/docs/Web/API/Content_Index_API). We receive a reference to the current
-{{domxref('ServiceWorkerRegistration')}}, which allows us to access the
-{{domxref('ServiceWorkerRegistration.index','index')}} property and thus access the
-`delete` method.
+در زیر یک تابع ناهمگام (asynchronous) آمده است که یک مورد را از [فهرست محتوا](/en-US/docs/Web/API/Content_Index_API) حذف می‌کند. ما یک مرجع به {{domxref('ServiceWorkerRegistration')}} جاری دریافت می‌کنیم که به ما امکان دسترسی به ویژگی {{domxref('ServiceWorkerRegistration.index','index')}} و در نتیجه دسترسی به متد `delete` را می‌دهد.
 
 ```js
 async function unregisterContent(article) {
@@ -63,8 +51,7 @@ async function unregisterContent(article) {
 }
 ```
 
-The `delete` method can also be used within the
-[service worker](/en-US/docs/Web/API/ServiceWorker) scope.
+متد `delete` همچنین می‌تواند در محدوده‌ی [service worker](/en-US/docs/Web/API/ServiceWorker) استفاده شود.
 
 ```js
 self.registration.index.delete("my-id");
@@ -80,5 +67,5 @@ self.registration.index.delete("my-id");
 
 ## See also
 
-- [An introductory article on the Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
-- [Service Worker API, along with information about Cache and CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
+- [مقاله‌ی مقدماتی درباره‌ی Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
+- [Service Worker API، همراه با اطلاعاتی درباره‌ی Cache و CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
