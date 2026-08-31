@@ -1,120 +1,109 @@
 ---
 title: "ARIA: button role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
----
-title: "ARIA: button role"
-short-title: button
-slug: Web/Accessibility/ARIA/Reference/Roles/button_role
-page-type: aria-role
-spec-urls:
-  - https://w3c.github.io/aria/#button
-  - https://www.w3.org/WAI/ARIA/apg/patterns/button/examples/button/
-sidebar: accessibilitysidebar
----
+نقش `button` برای عناصر قابل کلیک است که با فعال‌سازی توسط کاربر پاسخی را ایجاد می‌کنند. افزودن `role="button"` به صفحه‌خوان می‌گوید که عنصر یک دکمه است، اما قابلیت‌های معمول دیگر دکمه مانند رویدادهای کلیک و مدیریت صفحه‌کلید را فراهم نمی‌کند. شما می‌توانید این موارد را خود اضافه کنید، اما به طور کلی بهتر است از {{HTMLElement("button")}} یا {{HTMLElement("input")}} با `type="button"` استفاده کنید.
 
-The `button` role is for clickable elements that trigger a response when activated by the user. Adding `role="button"` tells the screen reader the element is a button, but does not provide other typical button functionality such as click events and keyboard handling. You can add these yourself, but you should generally use {{HTMLElement("button")}} or {{HTMLElement("input")}} with `type="button"` instead.
+## توضیحات
 
-## Description
+نقش دکمه یک عنصر را به عنوان دکمه به فناوری‌های کمکی مانند صفحه‌خوان‌ها معرفی می‌کند. دکمه یک ویجت است که برای انجام کارهایی مانند ارسال فرم، باز کردن یک دیالوگ، لغو یک عمل، یا اجرای یک فرمان مانند درج رکورد جدید یا نمایش اطلاعات استفاده می‌شود. افزودن `role="button"` به فناوری کمکی می‌گوید که عنصر یک دکمه است، اما قابلیت‌های معمول دیگر دکمه مانند رویدادهای کلیک و مدیریت صفحه‌کلید را فراهم نمی‌کند. شما می‌توانید این موارد را خود اضافه کنید، اما به طور کلی بهتر است از {{HTMLElement("button")}} یا {{HTMLElement("input")}} با `type="button"` استفاده کنید.
 
-The button role identifies an element as a button to assistive technology such as screen readers. A button is a widget used to perform actions such as submitting a form, opening a dialog, canceling an action, or performing a command such as inserting a new record or displaying information. Adding `role="button"` tells assistive technology that the element is a button, but does not provide other typical button functionality such as click events and keyboard handling. You can add these yourself, but you should generally use {{HTMLElement("button")}} or {{HTMLElement("input")}} with `type="button"` instead.
-
-This `button` role can be used in combination with the [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) attribute to [create toggle buttons](#toggle_buttons).
+این نقش `button` می‌تواند در ترکیب با ویژگی [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) برای [ایجاد دکمه‌های تغییر وضعیت](#toggle_buttons) استفاده شود.
 
 ```html
 <div id="saveChanges" tabindex="0" role="button" aria-pressed="false">Save</div>
 ```
 
-The above example creates a focusable button, but requires JavaScript and CSS to include button appearance and functionality. These are features provided by default when using the {{HTMLElement("button")}} and {{HTMLElement("input")}} with `type="button"` elements:
+مثال بالا یک دکمه قابل تمرکز ایجاد می‌کند، اما برای ظاهر و عملکرد دکمه نیاز به JavaScript و CSS دارد. این ویژگی‌ها به طور پیش‌فرض هنگام استفاده از عناصر {{HTMLElement("button")}} و {{HTMLElement("input")}} با `type="button"` فراهم می‌شوند:
 
 ```html
 <button type="button" id="saveChanges">Save</button>
 ```
 
 > [!NOTE]
-> If using `role="button"` instead of the semantic `<button>` or `<input type="button">` elements, you will need to make the element focusable and define event handlers for {{domxref("Element/click_event", "click")}} and {{domxref("Element/keydown_event", "keydown")}} events. This includes handling the <kbd>Enter</kbd> and <kbd>Space</kbd> key presses in order to process all forms of user input. See [the official WAI-ARIA example code](https://www.w3.org/WAI/ARIA/apg/patterns/button/examples/button/).
+> اگر به جای عناصر معنایی `<button>` یا `<input type="button">` از `role="button"` استفاده می‌کنید، باید عنصر را قابل تمرکز کنید و کنترل‌کننده‌های رویداد برای {{domxref("Element/click_event", "click")}} و {{domxref("Element/keydown_event", "keydown")}} تعریف کنید. این شامل مدیریت فشار کلیدهای <kbd>Enter</kbd> و <kbd>Space</kbd> برای پردازش همه اشکال ورودی کاربر است. به [کد مثال رسمی WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/button/examples/button/) مراجعه کنید.
 
-In addition to the ordinary button widget, `role="button"` should be included when creating a toggle button or menu button using a non-button element.
+علاوه بر ویجت دکمه معمولی، `role="button"` باید هنگام ایجاد یک دکمه تغییر وضعیت یا دکمه منو با استفاده از یک عنصر غیر دکمه گنجانده شود.
 
-A toggle button is a two-state button that can be either off (not pressed) or on (pressed). The [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) attribute values of `true` or `false` identify a button as a toggle button.
+یک دکمه تغییر وضعیت یک دکمه دو حالته است که می‌تواند خاموش (فشار داده نشده) یا روشن (فشار داده شده) باشد. مقادیر ویژگی [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) برابر با `true` یا `false` یک دکمه را به عنوان دکمه تغییر وضعیت شناسایی می‌کنند.
 
-A menu button is a button that controls a menu and has an [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) property attribute set to either `menu` or `true`.
+دکمه منو یک دکمه است که یک منو را کنترل می‌کند و ویژگی [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) آن روی `menu` یا `true` تنظیم شده است.
 
-### All descendants are presentational
+### همه فرزندان نمایشی هستند
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in a `button`. To deal with this limitation, browsers, automatically apply role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) to all descendant elements of any `button` element as it is a role that does not support semantic children.
+برخی انواع اجزای رابط کاربری وجود دارند که وقتی در API دسترس‌پذیری پلتفرم نمایش داده می‌شوند، فقط می‌توانند حاوی متن باشند. APIهای دسترس‌پذیری راهی برای نمایش عناصر معنایی موجود در یک `button` ندارند. برای مقابله با این محدودیت، مرورگرها به طور خودکار نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را به همه عناصر فرزند هر عنصر `button` اعمال می‌کنند، زیرا این نقشی است که از فرزندان معنایی پشتیبانی نمی‌کند.
 
-For example, consider the following `button` element, which contains a heading.
+به عنوان مثال، عنصر `button` زیر را در نظر بگیرید که شامل یک عنوان است.
 
 ```html
 <div role="button"><h3>Title of my button</h3></div>
 ```
 
-Because descendants of `button` are presentational, the following code is equivalent:
+از آنجایی که فرزندان `button` نمایشی هستند، کد زیر معادل است:
 
 ```html
 <div role="button"><h3 role="presentation">Title of my button</h3></div>
 ```
 
-From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree):
+از دیدگاه کاربر فناوری کمکی، عنوان وجود ندارد زیرا قطعه کدهای قبلی با موارد زیر در [درخت دسترس‌پذیری](/en-US/docs/Glossary/Accessibility_tree) معادل هستند:
 
 ```html
 <div role="button">Title of my button</div>
 ```
 
-### Associated ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های ARIA مرتبط
 
 - [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed)
-  - : The `aria-pressed` attribute defines the button as a toggle button. The value describes the state of the button. The values include `aria-pressed="false"` when a button is not currently pressed, `aria-pressed="true"` to indicate a button is currently pressed, and `aria-pressed="mixed"` if the button is considered to be partially pressed. If the attribute is omitted or set to its default value of `aria-pressed="undefined"`, the element does not support being pressed.
+  - : ویژگی `aria-pressed` دکمه را به عنوان یک دکمه تغییر وضعیت تعریف می‌کند. مقدار حالت دکمه را توصیف می‌کند. مقادیر شامل `aria-pressed="false"` زمانی که دکمه در حال حاضر فشار داده نشده است، `aria-pressed="true"` برای نشان دادن فشار داده شدن دکمه، و `aria-pressed="mixed"` اگر دکمه به صورت جزئی فشار داده شده در نظر گرفته شود. اگر ویژگی حذف شود یا به مقدار پیش‌فرض `aria-pressed="undefined"` تنظیم شود، عنصر از فشار دادن پشتیبانی نمی‌کند.
 - [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded)
-  - : If the button controls a grouping of other elements, the `aria-expanded` state indicates whether the controlled grouping is currently expanded or collapsed. If the button has `aria-expanded="false"` set, the grouping is not currently expanded. If the button has `aria-expanded="true"` set, it is currently expanded; if the button has `aria-expanded="undefined"` set or the attribute is omitted, it is not expandable.
+  - : اگر دکمه گروهی از عناصر دیگر را کنترل کند، حالت `aria-expanded` نشان می‌دهد که آیا گروه کنترل‌شده در حال حاضر باز است یا بسته. اگر دکمه دارای `aria-expanded="false"` باشد، گروه در حال حاضر باز نیست. اگر دکمه دارای `aria-expanded="true"` باشد، در حال حاضر باز است؛ اگر دکمه دارای `aria-expanded="undefined"` باشد یا ویژگی حذف شود، قابل باز شدن نیست.
 
-### Basic buttons
+### دکمه‌های پایه
 
-Buttons should always have an accessible name. For most buttons, this name will be the same as the text inside the button, between the opening and closing tags. In some cases, for example buttons represented by icons, the accessible name may be provided from the [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attributes.
+دکمه‌ها همیشه باید یک نام قابل دسترس داشته باشند. برای اکثر دکمه‌ها، این نام همان متن داخل دکمه، بین تگ‌های باز و بسته است. در برخی موارد، مثلاً دکمه‌هایی که با آیکون نمایش داده می‌شوند، نام قابل دسترس ممکن است از ویژگی‌های [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) تأمین شود.
 
-### Toggle buttons
+### دکمه‌های تغییر وضعیت
 
-A toggle button typically has two states: pressed and not pressed. A third mixed state is available for toggle buttons that control other elements, such as other toggle buttons or checkboxes, which do not all share the same value. Whether an element is a toggle button or not can be indicated with the [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) attribute in addition to the `button` role (if the element is not already a native button element):
+یک دکمه تغییر وضعیت معمولاً دو حالت دارد: فشار داده شده و فشار داده نشده. یک حالت مختلط سوم نیز برای دکمه‌های تغییر وضعیتی که عناصر دیگر مانند دکمه‌های تغییر وضعیت دیگر یا چک‌باکس‌ها را کنترل می‌کنند و همه آنها مقدار یکسانی ندارند، در دسترس است. اینکه یک عنصر دکمه تغییر وضعیت است یا نه می‌تواند با ویژگی [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) علاوه بر نقش `button` (اگر عنصر از قبل یک عنصر دکمه بومی نباشد) نشان داده شود:
 
-- If `aria-pressed` is not used, or is set to the "undefined" state, the button is not a toggle button.
-- If `aria-pressed="false"` is used the button is a toggle button that is currently not pressed.
-- If `aria-pressed="true"` is used the button is a toggle button that is currently pressed.
-- if `aria-pressed="mixed"` is used, the button is considered to be partially pressed.
+- اگر `aria-pressed` استفاده نشود یا روی حالت "undefined" تنظیم شود، دکمه یک دکمه تغییر وضعیت نیست.
+- اگر `aria-pressed="false"` استفاده شود، دکمه یک دکمه تغییر وضعیت است که در حال حاضر فشار داده نشده است.
+- اگر `aria-pressed="true"` استفاده شود، دکمه یک دکمه تغییر وضعیت است که در حال حاضر فشار داده شده است.
+- اگر `aria-pressed="mixed"` استفاده شود، دکمه به صورت جزئی فشار داده شده در نظر گرفته می‌شود.
 
-As an example, the mute button on an audio player labeled "mute" could indicate that sound is muted by setting the `aria-pressed` state true. The label of a toggle button should not change when its state changes. In our example the label remains "Mute" with a screen reader reading "Mute toggle button pressed" or "Mute toggle button not pressed" depending on the value of `aria-pressed`. If the design were to call for the button label to change from "Mute" to "Unmute," a toggle button would not be appropriate, so the `aria-pressed` attribute would be omitted.
+به عنوان مثال، دکمه بی‌صدا در یک پخش‌کننده صدا با برچسب "Mute" می‌تواند با تنظیم حالت `aria-pressed` روی true نشان دهد که صدا قطع شده است. برچسب یک دکمه تغییر وضعیت نباید با تغییر حالت آن تغییر کند. در مثال ما برچسب "Mute" باقی می‌ماند و صفحه‌خوان بسته به مقدار `aria-pressed` عبارت "Mute toggle button pressed" یا "Mute toggle button not pressed" را می‌خواند. اگر طراحی ایجاب می‌کرد که برچسب دکمه از "Mute" به "Unmute" تغییر کند، دکمه تغییر وضعیت مناسب نبود، بنابراین ویژگی `aria-pressed` حذف می‌شد.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-| Key              | Function              |
+| کلید              | عملکرد              |
 | ---------------- | --------------------- |
-| <kbd>Enter</kbd> | Activates the button. |
-| <kbd>Space</kbd> | Activates the button  |
+| <kbd>Enter</kbd> | دکمه را فعال می‌کند. |
+| <kbd>Space</kbd> | دکمه را فعال می‌کند  |
 
-Following button activation, focus is set depending on the type of action the button performs. For example, if clicking the button opens a dialog, the focus should move to the dialog. If the button closes a dialog, focus should return to the button that opened the dialog unless the function performed in the dialog context logically leads to a different element. If the button alters the current context, such as muting and unmuting an audio file, then focus typically remains on the button.
+پس از فعال‌سازی دکمه، فوکوس بسته به نوع عملی که دکمه انجام می‌دهد تنظیم می‌شود. برای مثال، اگر کلیک روی دکمه یک دیالوگ باز کند، فوکوس باید به دیالوگ منتقل شود. اگر دکمه یک دیالوگ را ببندد، فوکوس باید به دکمه‌ای که دیالوگ را باز کرده بازگردد، مگر اینکه عملکرد انجام‌شده در زمینه دیالوگ به طور منطقی به عنصر دیگری منجر شود. اگر دکمه زمینه فعلی را تغییر دهد، مانند قطع و وصل صدا در یک فایل صوتی، فوکوس معمولاً روی دکمه باقی می‌ماند.
 
-### Required JavaScript Features
+### ویژگی‌های ضروری جاوااسکریپت
 
-#### Required event handlers
+#### کنترل‌کننده‌های رویداد ضروری
 
-Buttons can be operated by mouse, touch, and keyboard users. For native HTML `<button>` elements, the button's `onclick` event fires for mouse clicks and when the user presses <kbd>Space</kbd> or <kbd>Enter</kbd> while the button has focus. But if another tag is used to create a button, the `onclick` event only fires when clicked by the mouse cursor, even if `role="button"` is used. Because of this, separate key event handlers must be added to the element so that the button is be triggered when the <kbd>Space</kbd> or <kbd>Enter</kbd> key is pressed.
+دکمه‌ها می‌توانند توسط کاربران ماوس، لمسی و صفحه‌کلید کار کنند. برای عناصر بومی HTML `<button>`، رویداد `onclick` دکمه برای کلیک‌های ماوس و زمانی که کاربر در حالی که دکمه فوکوس دارد کلیدهای <kbd>Space</kbd> یا <kbd>Enter</kbd> را فشار می‌دهد، فعال می‌شود. اما اگر از تگ دیگری برای ایجاد دکمه استفاده شود، رویداد `onclick` فقط زمانی فعال می‌شود که با نشانگر ماوس کلیک شود، حتی اگر از `role="button"` استفاده شده باشد. به همین دلیل، باید کنترل‌کننده‌های رویداد جداگانه‌ای برای کلید به عنصر اضافه شود تا دکمه هنگام فشار دادن کلید <kbd>Space</kbd> یا <kbd>Enter</kbd> فعال شود.
 
 - `onclick`
-  - : Handles the event raised when the button is activated using a mouse click or touch event.
+  - : رویداد ناشی از فعال‌سازی دکمه با کلیک ماوس یا رویداد لمسی را مدیریت می‌کند.
 - `onKeyDown`
-  - : Handles the event raised when the button is activated using the Enter or Space key on the keyboard. (Note not the [deprecated onKeyPress](/en-US/docs/Web/API/Element/keypress_event))
+  - : رویداد ناشی از فعال‌سازی دکمه با کلید Enter یا Space روی صفحه‌کلید را مدیریت می‌کند. (توجه: [onKeyPress منسوخ شده](/en-US/docs/Web/API/Element/keypress_event) را نه)
 
-## Examples
+## مثال‌ها
 
-### Basic button example
+### مثال دکمه پایه
 
-In this example, a span element has been given the `button` role. Because a `<span>` element is used, the `tabindex` attribute is required to make the button focusable and part of the page's tab order. The included CSS style is provided to make the `<span>` element look like a button, and to provide visual cues when the button has focus.
+در این مثال، یک عنصر span نقش `button` را دریافت کرده است. از آنجایی که از عنصر `<span>` استفاده شده است، ویژگی `tabindex` برای قابل تمرکز کردن دکمه و بخشی از ترتیب تب صفحه لازم است. استایل CSS ارائه شده برای شبیه‌سازی ظاهر دکمه به عنصر `<span>` و ارائه نشانه‌های بصری هنگام فوکوس دکمه استفاده شده است.
 
-The `handleBtnClick` and `handleBtnKeyDown` event handlers perform the button's action when activated using a mouse click or the <kbd>Space</kbd> or <kbd>Enter</kbd> key. In this case, the action is to add a new name to the list of names.
+کنترل‌کننده‌های رویداد `handleBtnClick` و `handleBtnKeyDown` عمل دکمه را هنگام فعال‌سازی با کلیک ماوس یا کلید <kbd>Space</kbd> یا <kbd>Enter</kbd> انجام می‌دهند. در این مورد، عمل اضافه کردن یک نام جدید به لیست نام‌ها است.
 
-Try the example by adding a name to the text box. The button will cause the name to be added to a list.
+مثال را با افزودن یک نام به جعبه متن امتحان کنید. دکمه باعث می‌شود نام به لیست اضافه شود.
 
 #### HTML
 
@@ -186,9 +175,9 @@ btn.addEventListener("keydown", handleCommand);
 
 {{EmbedLiveSample("Basic_button_example")}}
 
-### Toggle button example
+### مثال دکمه تغییر وضعیت
 
-In this snippet a {{HTMLElement("span")}} element is converted to a toggle button using the `button` role and the `aria-pressed` attribute. When the button is activated, the `aria-pressed` value switches states; changing from `true` to `false` and back again.
+در این قطعه کد، یک عنصر {{HTMLElement("span")}} با استفاده از نقش `button` و ویژگی `aria-pressed` به یک دکمه تغییر وضعیت تبدیل می‌شود. هنگامی که دکمه فعال می‌شود، مقدار `aria-pressed` حالت خود را تغییر می‌دهد؛ از `true` به `false` و دوباره برمی‌گردد.
 
 #### HTML
 
@@ -266,33 +255,33 @@ spanButton.addEventListener("keydown", handleBtnKeyDown);
 
 {{EmbedLiveSample('Toggle_button_example')}}
 
-## Accessibility concerns
+## ملاحظات دسترس‌پذیری
 
-Buttons are interactive controls and thus focusable. If the `button` role is added to an element that is not focusable by itself (such as `<span>`, `<div>` or `<p>`) then, the `tabindex` attribute has to be used to make the button focusable.
+دکمه‌ها کنترل‌های تعاملی هستند و بنابراین قابل تمرکزند. اگر نقش `button` به عنصری اضافه شود که به خودی خود قابل تمرکز نیست (مانند `<span>`، `<div>` یا `<p>`) آنگاه باید از ویژگی `tabindex` برای قابل تمرکز کردن دکمه استفاده شود.
 
 > [!WARNING]
-> Be careful when marking up links with the button role. Buttons are expected to be triggered using the <kbd>Space</kbd> or <kbd>Enter</kbd> key, while links are expected to be triggered using the <kbd>Enter</kbd> key. In other words, when links are used to behave like buttons, adding `role="button"` alone is not sufficient. It will also be necessary to add a key event handler that listens for the <kbd>Space</kbd> key in order to be consistent with native buttons.
+> هنگام علامت‌گذاری پیوندها با نقش دکمه مراقب باشید. انتظار می‌رود دکمه‌ها با استفاده از کلید <kbd>Space</kbd> یا <kbd>Enter</kbd> فعال شوند، در حالی که پیوندها با استفاده از کلید <kbd>Enter</kbd> فعال می‌شوند. به عبارت دیگر، وقتی پیوندها مانند دکمه رفتار می‌کنند، افزودن `role="button"` به تنهایی کافی نیست. همچنین باید یک کنترل‌کننده رویداد کلید اضافه شود که به کلید <kbd>Space</kbd> گوش دهد تا با دکمه‌های بومی سازگار باشد.
 
-When the `button` role is used, screen readers announce the element as a button, generally saying "click" followed by the button's accessible name. The accessible name is either the content of the element or the value of an `aria-label` or element referenced by an `aria-labelledby` attribute, or description, if included.
+هنگامی که نقش `button` استفاده می‌شود، صفحه‌خوان‌ها عنصر را به عنوان یک دکمه اعلام می‌کنند، معمولاً می‌گویند "click" و سپس نام قابل دسترس دکمه. نام قابل دسترس یا محتوای عنصر است یا مقدار یک `aria-label` یا عنصری که توسط ویژگی `aria-labelledby` ارجاع داده شده است، یا توضیحات، در صورت وجود.
 
-## Best practices
+## بهترین روش‌ها
 
-If a link performs the action of a button, giving the element `role="button"` helps assistive technology users understand the function of the element. However, a better solution is to adjust the visual design so it matches the function and ARIA role. Where possible, it is recommended to use native HTML buttons (`<button>`, `<input type="button">`, `<input type="submit">`, `<input type="reset">` and `<input type="image">`) rather than the `button` role, as native HTML buttons are supported by all user agents and assistive technology and provide keyboard and focus requirements by default, without need for additional customization.
+اگر یک پیوند عمل یک دکمه را انجام دهد، دادن نقش `button` به عنصر به کاربران فناوری کمکی کمک می‌کند تا عملکرد عنصر را درک کنند. با این حال، راه حل بهتر این است که طراحی بصری را طوری تنظیم کنید که با عملکرد و نقش ARIA مطابقت داشته باشد. در صورت امکان، توصیه می‌شود به جای نقش `button` از دکمه‌های بومی HTML (`<button>`، `<input type="button">`، `<input type="submit">`، `<input type="reset">` و `<input type="image">`) استفاده کنید، زیرا دکمه‌های بومی HTML توسط همه عامل‌های کاربر و فناوری کمکی پشتیبانی می‌شوند و به طور پیش‌فرض نیازمندی‌های صفحه‌کلید و فوکوس را بدون نیاز به سفارشی‌سازی اضافی فراهم می‌کنند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement('button')}} element
-- The {{HTMLElement("input")}} element
+- عنصر {{HTMLElement('button')}}
+- عنصر {{HTMLElement("input")}}
 - [`<input type="button">`](/en-US/docs/Web/HTML/Reference/Elements/input/button)
 - [`<input type="submit">`](/en-US/docs/Web/HTML/Reference/Elements/input/submit)
 - [`<input type="reset">`](/en-US/docs/Web/HTML/Reference/Elements/input/reset)
 - [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed)
 - [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded)
 - [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup)
-- [Strong native semantics in HTML5](https://html.spec.whatwg.org/multipage/dom.html#aria-usage-note)
-- [Notes on Using ARIA in HTML](https://w3c.github.io/using-aria/)
-- [Official WAI-ARIA example code](https://www.w3.org/WAI/ARIA/apg/patterns/button/examples/button/)
+- [معناشناسی بومی قوی در HTML5](https://html.spec.whatwg.org/multipage/dom.html#aria-usage-note)
+- [یادداشت‌هایی در مورد استفاده از ARIA در HTML](https://w3c.github.io/using-aria/)
+- [کد مثال رسمی WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/button/examples/button/)
