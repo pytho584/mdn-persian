@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesMap: keys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap/keys"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesMap: keys() method"
 short-title: keys()
 slug: Web/API/CSSFontFeatureValuesMap/keys
 page-type: web-api-instance-method
@@ -18,25 +12,37 @@ browser-compat: api.CSSFontFeatureValuesMap.keys
 
 The **`keys()`** method of {{domxref("CSSFontFeatureValuesMap")}} instances returns a new [map iterator](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) object that contains the `[key, value]` pairs for each declaration in this `CSSFontFeatureValuesMap` in insertion order.
 
+متد **`keys()`** در نمونه‌های {{domxref("CSSFontFeatureValuesMap")}} یک [تکرارگر map](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) جدید برمی‌گرداند که شامل جفت‌های `[key, value]` برای هر اعلان در این `CSSFontFeatureValuesMap` به ترتیب درج است.
+
 ## Syntax
 
 ```js-nolint
 keys()
 ```
 
-### Parameters
+## پارامترها
 
-None.
+هیچ‌کدام.
 
 ### Return value
 
 A new iterable [iterator object](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator).
+
+### مقدار برگشتی
+
+یک [شیء تکرارگر](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) قابل پیمایش جدید.
 
 ## Examples
 
 ### Basic usage
 
 The following example assigns the keys to the `swashKeys` variable and then logs the first two values. This example is using `@swash` but also works with other [feature value blocks](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks).
+
+## مثال‌ها
+
+### استفاده پایه
+
+مثال زیر کلیدها را به متغیر `swashKeys` اختصاص می‌دهد و سپس دو مقدار اول را در کنسول ثبت می‌کند. این مثال از `@swash` استفاده می‌کند، اما با سایر [بلوک‌های مقادیر ویژگی](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks) نیز کار می‌کند.
 
 #### CSS
 
@@ -69,5 +75,7 @@ console.log(swashKeys.next().value); // logs "swashy"
 {{Compat}}
 
 ## See also
+
+## جستارهای وابسته
 
 - [Map.prototype.keys()](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/keys)
