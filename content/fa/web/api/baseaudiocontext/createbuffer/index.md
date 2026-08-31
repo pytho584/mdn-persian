@@ -1,37 +1,22 @@
 ---
 title: "BaseAudioContext: createBuffer() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createBuffer"
-status: "needs-translation"
----
-
----
-title: "BaseAudioContext: createBuffer() method"
 short-title: createBuffer()
 slug: Web/API/BaseAudioContext/createBuffer
 page-type: web-api-instance-method
 browser-compat: api.BaseAudioContext.createBuffer
+translated_by: "n8n + AI"
 ---
 
 {{ APIRef("Web Audio API") }}
 
-The `createBuffer()` method of the {{ domxref("BaseAudioContext") }}
-Interface is used to create a new, empty {{ domxref("AudioBuffer") }} object, which
-can then be populated by data, and played via an {{ domxref("AudioBufferSourceNode")}}.
+متد `createBuffer()` از رابط {{ domxref("BaseAudioContext") }} برای ایجاد یک شیء جدید و خالی {{ domxref("AudioBuffer") }} استفاده می‌شود که سپس می‌تواند با داده پر شود و از طریق یک {{ domxref("AudioBufferSourceNode")}} پخش شود.
 
-For more details about audio buffers, check out the {{ domxref("AudioBuffer") }}
-reference page.
+برای جزئیات بیشتر درباره بافرهای صوتی، به صفحه مرجع {{ domxref("AudioBuffer") }} مراجعه کنید.
 
 > [!NOTE]
-> `createBuffer()` used to be able to take compressed
-> data and give back decoded samples, but this ability was removed from the specification,
-> because all the decoding was done on the main thread, so
-> `createBuffer()` was blocking other code execution. The asynchronous method
-> `decodeAudioData()` does the same thing — takes compressed audio, such as an
-> MP3 file, and directly gives you back an {{ domxref("AudioBuffer") }} that you can
-> then play via an {{ domxref("AudioBufferSourceNode") }}. For simple use cases
-> like playing an MP3, `decodeAudioData()` is what you should be using.
+> `createBuffer()` قبلاً می‌توانست داده‌های فشرده را بگیرد و نمونه‌های رمزگشایی شده را برگرداند، اما این قابلیت از مشخصات حذف شد، زیرا تمام رمزگشایی در رشته اصلی انجام می‌شد، بنابراین `createBuffer()` اجرای کدهای دیگر را مسدود می‌کرد. متد ناهمزمان `decodeAudioData()` کار مشابهی انجام می‌دهد — صدای فشرده مانند یک فایل MP3 را می‌گیرد و مستقیماً یک {{ domxref("AudioBuffer") }} به شما برمی‌گرداند که سپس می‌توانید از طریق یک {{ domxref("AudioBufferSourceNode") }} پخش کنید. برای موارد استفاده ساده مانند پخش MP3، باید از `decodeAudioData()` استفاده کنید.
 
-For an in-depth explanation of how audio buffers work, including what the parameters do, read [Audio buffers: frames, samples and channels](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#audio_buffers_frames_samples_and_channels) from our Basic concepts guide.
+برای توضیح عمیق درباره نحوه کار بافرهای صوتی، از جمله نحوه عملکرد پارامترها، [بافرهای صوتی: فریم‌ها، نمونه‌ها و کانال‌ها](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#audio_buffers_frames_samples_and_channels) را از راهنمای مفاهیم پایه ما بخوانید.
 
 ## Syntax
 
@@ -42,65 +27,45 @@ createBuffer(numOfChannels, length, sampleRate)
 ### Parameters
 
 - `numOfChannels`
-  - : An integer representing the number of channels this buffer should have. The default
-    value is 1, and all user agents must support at least 32 channels.
+  - : یک عدد صحیح که تعداد کانال‌هایی که این بافر باید داشته باشد را نشان می‌دهد. مقدار پیش‌فرض 1 است و همه عامل‌های کاربر باید حداقل 32 کانال را پشتیبانی کنند.
 - `length`
-  - : An integer representing the size of the buffer in sample-frames (where each
-    sample-frame is the size of a sample in bytes multiplied by
-    `numOfChannels`). To determine the `length` to use for a
-    specific number of seconds of audio, use `numSeconds * sampleRate`.
+  - : یک عدد صحیح که اندازه بافر را بر حسب نمونه-فریم نشان می‌دهد (که در آن هر نمونه-فریم اندازه یک نمونه بر حسب بایت ضرب در `numOfChannels` است). برای تعیین `length` برای تعداد ثانیه مشخصی از صدا، از `numSeconds * sampleRate` استفاده کنید.
 - `sampleRate`
-  - : The sample rate of the linear audio data in sample-frames per second. All browsers
-    must support sample rates in at least the range 8,000 Hz to 96,000 Hz.
+  - : نرخ نمونه‌برداری داده‌های صوتی خطی بر حسب نمونه-فریم در ثانیه. همه مرورگرها باید حداقل از نرخ‌های نمونه‌برداری در محدوده 8000 هرتز تا 96000 هرتز پشتیبانی کنند.
 
 ### Return value
 
-An {{domxref("AudioBuffer")}} configured based on the specified options.
+یک {{domxref("AudioBuffer")}} که بر اساس گزینه‌های مشخص شده پیکربندی شده است.
 
 ### Exceptions
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if one or more of the options are negative or otherwise has an invalid value (such as
-    `numberOfChannels` being higher than supported, or a
-    `sampleRate` outside the nominal range).
+  - : اگر یک یا چند گزینه منفی باشند یا مقدار نامعتبر داشته باشند (مانند `numberOfChannels` بیشتر از حد پشتیبانی شده، یا `sampleRate` خارج از محدوده اسمی) پرتاب می‌شود.
 - {{jsxref("RangeError")}}
-  - : Thrown if there isn't enough memory available to allocate the buffer.
+  - : اگر حافظه کافی برای تخصیص بافر در دسترس نباشد پرتاب می‌شود.
 
 ## Examples
 
-First, a couple of simple trivial examples, to help explain how the parameters are
-used:
+ابتدا چند مثال ساده و پیش‌پا افتاده برای کمک به توضیح نحوه استفاده از پارامترها:
 
 ```js
 const audioCtx = new AudioContext();
 const buffer = audioCtx.createBuffer(2, 22050, 44100);
 ```
 
-If you use this call, you will get a stereo buffer (two channels), that, when played
-back on an AudioContext running at 44100Hz (very common, most normal sound cards run at
-this rate), will last for 0.5 seconds: 22050 frames / 44100Hz = 0.5 seconds.
+اگر از این فراخوانی استفاده کنید، یک بافر استریو (دو کانال) دریافت می‌کنید که وقتی روی یک AudioContext با نرخ 44100Hz (بسیار رایج، اکثر کارت‌های صوتی معمولی با این نرخ کار می‌کنند) پخش شود، برای 0.5 ثانیه طول می‌کشد: 22050 فریم / 44100Hz = 0.5 ثانیه.
 
 ```js
 const audioCtx = new AudioContext();
 const buffer = audioCtx.createBuffer(1, 22050, 22050);
 ```
 
-If you use this call, you will get a mono buffer (one channel), that, when played back
-on an `AudioContext` running at 44100Hz, will be automatically _resampled_ to
-44100Hz (and therefore yield 44100 frames), and last for 1.0 second: 44100 frames /
-44100Hz = 1 second.
+اگر از این فراخوانی استفاده کنید، یک بافر مونو (یک کانال) دریافت می‌کنید که وقتی روی یک `AudioContext` با نرخ 44100Hz پخش شود، به طور خودکار به 44100Hz _نمونه‌برداری مجدد_ می‌شود (و بنابراین 44100 فریم تولید می‌کند) و برای 1.0 ثانیه طول می‌کشد: 44100 فریم / 44100Hz = 1 ثانیه.
 
 > [!NOTE]
-> Audio resampling is very similar to image resizing: say you've
-> got a 16 x 16 image, but you want it to fill a 32x32 area: you resize (resample) it.
-> the result has less quality (it can be blurry or edgy, depending on the resizing
-> algorithm), but it works, and the resized image takes up less space. Resampled audio
-> is exactly the same — you save space, but in practice you will be unable to properly
-> reproduce high frequency content (treble sound).
+> نمونه‌برداری مجدد صدا بسیار شبیه به تغییر اندازه تصویر است: فرض کنید یک تصویر 16x16 دارید، اما می‌خواهید یک ناحیه 32x32 را پر کند: آن را تغییر اندازه (نمونه‌برداری مجدد) می‌دهید. نتیجه کیفیت کمتری دارد (بسته به الگوریتم تغییر اندازه می‌تواند تار یا دندانه‌دار باشد)، اما کار می‌کند و تصویر تغییر اندازه داده شده فضای کمتری اشغال می‌کند. صدای نمونه‌برداری مجدد دقیقاً همین است — شما فضا ذخیره می‌کنید، اما در عمل نمی‌توانید محتوای فرکانس بالا (صدای زیر) را به درستی بازتولید کنید.
 
-Now let's look at a more complex `createBuffer()` example, in which we
-create a three-second buffer, fill it with white noise, and then play it via an {{domxref("AudioBufferSourceNode")}}. The comment should clearly explain what is going on.
-You can also [run the code live](https://mdn.github.io/webaudio-examples/audio-buffer/), or [view the source](https://github.com/mdn/webaudio-examples/blob/main/audio-buffer/index.html).
+حالا بیایید به یک مثال پیچیده‌تر از `createBuffer()` نگاه کنیم، که در آن یک بافر سه ثانیه‌ای ایجاد می‌کنیم، آن را با نویز سفید پر می‌کنیم و سپس از طریق یک {{domxref("AudioBufferSourceNode")}} پخش می‌کنیم. کامنت‌ها باید به وضوح توضیح دهند که چه اتفاقی می‌افتد. همچنین می‌توانید [کد را به صورت زنده اجرا کنید](https://mdn.github.io/webaudio-examples/audio-buffer/) یا [کد منبع را مشاهده کنید](https://github.com/mdn/webaudio-examples/blob/main/audio-buffer/index.html).
 
 ```js
 const audioCtx = new AudioContext();
