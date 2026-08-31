@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-selected attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,45 +13,45 @@ spec-urls: https://w3c.github.io/aria/#aria-selected
 sidebar: accessibilitysidebar
 ---
 
-The `aria-selected` attribute indicates the current "selected" state of various widgets.
+ویژگی `aria-selected` وضعیت «انتخاب‌شده» فعلی ویجت‌های مختلف را نشان می‌دهد.
 
-## Description
+## توضیحات
 
-The `aria-selected` attribute indicates the current "selected" state for [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role), [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role), [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) and [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) roles.
+ویژگی `aria-selected` وضعیت «انتخاب‌شده» فعلی را برای نقش‌های [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)، [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role)، [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) و [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) نشان می‌دهد.
 
-This attribute is used to indicate which elements within single-selection and multiple-selection composite widgets are selected. If more than one element is selectable at a time, include `aria-multiselectable="true"` on the grid, listbox, tablist, or other owning role, while including `aria-selected` only on the selectable cells, options, and tabs.
+این ویژگی برای نشان‌دادن اینکه کدام عناصر درون ویجت‌های ترکیبی تک‌انتخابی و چندانتخابی انتخاب شده‌اند، استفاده می‌شود. اگر بیش از یک عنصر به‌طور هم‌زمان قابل انتخاب باشد، `aria-multiselectable="true"` را روی grid، listbox، tablist یا سایر نقش‌های والد قرار دهید، در حالی که `aria-selected` را فقط روی سلول‌ها، گزینه‌ها و تب‌های قابل انتخاب قرار می‌دهید.
 
-For other roles, the currently selected state is set with [`aria-current`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current), or possibly [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) or [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed), depending on the role.
+برای سایر نقش‌ها، وضعیت انتخاب‌شده فعلی با [`aria-current`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current)، یا احتمالاً [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) یا [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) بسته به نقش تنظیم می‌شود.
 
-Widgets that support both `aria-selected` and `aria-current` at the same time have different meanings for each. For example, `aria-current="page"` can be used in a navigation tree to indicate which page is currently displayed, while `aria-selected="true"` indicates which page will be displayed if the user activates the `treeitem`.
+ویجت‌هایی که هم‌زمان از `aria-selected` و `aria-current` پشتیبانی می‌کنند، برای هر یک معانی متفاوتی دارند. برای مثال، `aria-current="page"` می‌تواند در یک درخت پیمایش استفاده شود تا نشان دهد کدام صفحه در حال حاضر نمایش داده می‌شود، در حالی که `aria-selected="true"` نشان می‌دهد در صورت فعال کردن `treeitem` توسط کاربر، کدام صفحه نمایش داده خواهد شد.
 
-### Grid
+### گرید
 
-Setting `aria-selected="false"` on a focusable gridcell indicates the cell is selectable. If the grid allows more than one gridcell to be selected at a time, set `aria-multiselectable="true"` on the element with role [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role). Setting `aria-selected` on a column or row header gridcell does not propagate the state to other cells in the column or row.
+تنظیم `aria-selected="false"` روی یک gridcell قابل تمرکز نشان می‌دهد که سلول قابل انتخاب است. اگر گرید اجازه می‌دهد بیش از یک gridcell هم‌زمان انتخاب شود، `aria-multiselectable="true"` را روی عنصر با نقش [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) تنظیم کنید. تنظیم `aria-selected` روی gridcell سرستون یا سرردیف، وضعیت را به سلول‌های دیگر در ستون یا ردیف منتقل نمی‌کند.
 
-### Option
+### گزینه
 
-Both `aria-selected` and `aria-checked` are valid for [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role). Some user interfaces indicate selection with `aria-selected` in single-select list boxes and with `aria-checked` in multi-select list boxes.
+هم `aria-selected` و هم `aria-checked` برای [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role) معتبر هستند. برخی رابط‌های کاربری، انتخاب را در فهرست‌های تک‌انتخابی با `aria-selected` و در فهرست‌های چندانتخابی با `aria-checked` نشان می‌دهند.
 
-Don't specify both `aria-selected` and `aria-checked` on `option` elements contained by the same `listbox` unless the meaning and purpose of `aria-selected` is different from the meaning and purpose of aria-checked in the user interface, the meaning and purpose of each state apparent, and the UI provides separate methods for controlling each state.
+هم `aria-selected` و هم `aria-checked` را روی عناصر `option` موجود در یک `listbox` مشخص نکنید، مگر اینکه معنا و هدف `aria-selected` با معنا و هدف aria-checked در رابط کاربری متفاوت باشد، معنا و هدف هر وضعیت آشکار باشد، و رابط کاربری روش‌های جداگانه‌ای برای کنترل هر وضعیت فراهم کند.
 
-### Row
+### ردیف
 
-The `aria-selected` attribute is supported on `row` but not `column`. If a grid supports selection, when a cell or row is selected, the selected element has `aria-selected="true"` set.
+ویژگی `aria-selected` روی `row` پشتیبانی می‌شود، اما روی `column` پشتیبانی نمی‌شود. اگر یک گرید از انتخاب پشتیبانی کند، وقتی یک سلول یا ردیف انتخاب می‌شود، عنصر انتخاب‌شده دارای `aria-selected="true"` است.
 
-If the grid supports column selection and a column is selected, all cells in the column have `aria-selected` set to `true`.
+اگر گرید از انتخاب ستون پشتیبانی کند و یک ستون انتخاب شود، همه سلول‌های ستون دارای `aria-selected` با مقدار `true` خواهند بود.
 
-### Tab
+### تب
 
-In a tablist, `aria-selected` is used on a tab to indicate the currently-displayed [`tabpanel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role).
+در یک tablist، `aria-selected` روی یک تب استفاده می‌شود تا [`tabpanel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role) نمایش‌داده‌شده در حال حاضر را نشان دهد.
 
-The selected [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) in a [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role) should have the attribute `aria-selected="true"` set. All inactive tabs in the tablist should have `aria-selected="false"` set. Setting the state only impacts the accessibility tree: make sure to style the active tab in a way that visual indicates it's selected state. The default value for `aria-selected` on a `tab` role is `false`.
+تب انتخاب‌شده در یک [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role) باید دارای ویژگی `aria-selected="true"` باشد. همه تب‌های غیرفعال در tablist باید دارای `aria-selected="false"` باشند. تنظیم این وضعیت فقط بر درخت دسترس‌پذیری تأثیر می‌گذارد: مطمئن شوید تب فعال را به‌گونه‌ای استایل می‌دهید که وضعیت انتخاب‌شدن آن به‌صورت بصری نشان داده شود. مقدار پیش‌فرض `aria-selected` برای نقش `tab` برابر با `false` است.
 
-If more than one tab is selectable at a time, include `aria-multiselectable` on the `tablist`.
+اگر بیش از یک تب به‌طور هم‌زمان قابل انتخاب باشد، `aria-multiselectable` را روی `tablist` قرار دهید.
 
-## Examples
+## مثال‌ها
 
-In this `tablist` example, the first `tab` is selected:
+در این مثال `tablist`، اولین `tab` انتخاب شده است:
 
 ```html
 <div class="tab-interface">
@@ -94,44 +94,44 @@ In this `tablist` example, the first `tab` is selected:
 ```
 
 > [!NOTE]
-> ARIA only modifies the accessibility tree for an element and how assistive technology presents the content to users. ARIA doesn't change anything about an element's function or behavior.
+> ARIA فقط درخت دسترس‌پذیری یک عنصر و نحوه ارائه محتوا به کاربران توسط فناوری‌های کمکی را تغییر می‌دهد. ARIA هیچ چیزی را در عملکرد یا رفتار یک عنصر تغییر نمی‌دهد.
 
-## Values
+## مقادیر
 
 - `true`
-  - : The selectable element is selected.
+  - : عنصر قابل انتخاب، انتخاب شده است.
 - `false`
-  - : The selectable element is not selected. Implicit default for [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role).
-- `undefined` (default)
-  - : The element is not selectable.
+  - : عنصر قابل انتخاب، انتخاب نشده است. مقدار پیش‌فرض ضمنی برای [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role).
+- `undefined` (پیش‌فرض)
+  - : عنصر قابل انتخاب نیست.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaSelected")}}
-  - : The [`ariaSelected`](/en-US/docs/Web/API/Element/ariaSelected) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-selected` attribute.
+  - : ویژگی [`ariaSelected`](/en-US/docs/Web/API/Element/ariaSelected) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-selected` را بازتاب می‌دهد.
 - {{domxref("ElementInternals.ariaSelected")}}
-  - : The [`ariaSelected`](/en-US/docs/Web/API/ElementInternals/ariaSelected) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-selected` attribute.
+  - : ویژگی [`ariaSelected`](/en-US/docs/Web/API/ElementInternals/ariaSelected) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-selected` را بازتاب می‌دهد.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده‌شده در نقش‌ها:
 
 - [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)
 - [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role)
 - [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
 - [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role)
 
-Inherited into roles:
+به ارث برده‌شده در نقش‌ها:
 
 - [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
 - [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role)
 - [`treeitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treeitem_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed)
 - [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked)
