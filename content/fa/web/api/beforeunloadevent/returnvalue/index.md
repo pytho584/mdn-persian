@@ -1,9 +1,8 @@
 ---
 title: "BeforeUnloadEvent: returnValue property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BeforeUnloadEvent/returnValue"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
-
 ---
 title: "BeforeUnloadEvent: returnValue property"
 short-title: returnValue
@@ -16,29 +15,28 @@ browser-compat: api.BeforeUnloadEvent.returnValue
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The **`returnValue`** property of the
-{{domxref("BeforeUnloadEvent")}} interface, when set to a truthy value, triggers a browser-generated confirmation dialog asking users to confirm if they _really_ want to leave the page when they try to close or reload it, or navigate somewhere else. This is intended to help prevent loss of unsaved data.
+ویژگی **`returnValue`** از رابط {{domxref("BeforeUnloadEvent")}}، زمانی که به یک مقدار truthy تنظیم شود، یک گفتگوی تأیید تولیدشده توسط مرورگر را راه‌اندازی می‌کند که از کاربران می‌پرسد آیا واقعاً می‌خواهند هنگام تلاش برای بستن یا بارگذاری مجدد صفحه، یا پیمایش به جای دیگر، صفحه را ترک کنند. این کار برای کمک به جلوگیری از از دست رفتن داده‌های ذخیره‌نشده انجام می‌شود.
 
 > [!NOTE]
-> `returnValue` is a legacy feature, and best practice is to trigger the dialog by invoking {{domxref("Event.preventDefault()")}} on the `BeforeUnloadEvent` object, while also setting `returnValue` to support legacy cases. See the {{domxref("Window/beforeunload_event", "beforeunload")}} event reference for detailed up-to-date guidance.
+> `returnValue` یک ویژگی قدیمی است، و بهترین روش این است که گفتگو را با فراخوانی {{domxref("Event.preventDefault()")}} روی شیء `BeforeUnloadEvent` راه‌اندازی کنید، در حالی که `returnValue` را نیز برای پشتیبانی از موارد قدیمی تنظیم می‌کنید. برای راهنمایی دقیق و به‌روز، به مرجع رویداد {{domxref("Window/beforeunload_event", "beforeunload")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-`returnValue` is initialized to an empty string (`""`) value.
+مقدار `returnValue` به یک رشته خالی (`""`) مقداردهی اولیه می‌شود.
 
-Setting it to just about any [truthy](/en-US/docs/Glossary/Truthy) value will cause the dialog to be triggered on page close/reload, however note that it also requires [sticky activation](/en-US/docs/Glossary/Sticky_activation). In other words, the browser will only show the dialog if the frame or any embedded frame receives a user gesture or user interaction. If the user has never interacted with the page, then there is no user data to save, so no legitimate use case for the dialog.
+تنظیم آن بر روی تقریباً هر مقدار [truthy](/en-US/docs/Glossary/Truthy) باعث می‌شود گفتگو هنگام بستن/بارگذاری مجدد صفحه راه‌اندازی شود، اما توجه داشته باشید که همچنین به [فعال‌سازی چسبنده](/en-US/docs/Glossary/Sticky_activation) نیاز دارد. به عبارت دیگر، مرورگر فقط در صورتی گفتگو را نشان می‌دهد که فریم یا هر فریم تودرتویی یک ژست کاربری یا تعامل کاربر دریافت کرده باشد. اگر کاربر هرگز با صفحه تعامل نداشته باشد، داده کاربری برای ذخیره شدن وجود ندارد، بنابراین هیچ مورد استفاده مشروعی برای گفتگو وجود ندارد.
 
 > [!NOTE]
-> A generic browser-specified string is displayed in the dialog. This cannot be controlled by the webpage code.
+> یک رشته عمومی مشخص‌شده توسط مرورگر در گفتگو نمایش داده می‌شود. این رشته توسط کد صفحه وب قابل کنترل نیست.
 
-## Examples
+## نمونه‌ها
 
-See the {{domxref("Window/beforeunload_event", "beforeunload")}} event reference page for a best practice example.
+برای یک نمونه بهترین روش، به صفحه مرجع رویداد {{domxref("Window/beforeunload_event", "beforeunload")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
