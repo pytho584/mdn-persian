@@ -1,7 +1,7 @@
 ---
 title: "Basic animations"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,48 +12,48 @@ page-type: guide
 
 {{DefaultAPISidebar("Canvas API")}} {{PreviousNext("Web/API/Canvas_API/Tutorial/Compositing", "Web/API/Canvas_API/Tutorial/Advanced_animations")}}
 
-Since we're using JavaScript to control {{HTMLElement("canvas")}} elements, it's also very easy to make (interactive) animations. In this chapter we will take a look at how to do some basic animations.
+از آنجایی که از جاوااسکریپت برای کنترل عناصر {{HTMLElement("canvas")}} استفاده می‌کنیم، ساخت انیمیشن‌های (تعاملی) نیز بسیار آسان است. در این فصل نگاهی خواهیم داشت به نحوه انجام برخی انیمیشن‌های پایه.
 
-Probably the biggest limitation is, that once a shape gets drawn, it stays that way. If we need to move it we have to redraw it and everything that was drawn before it. It takes a lot of time to redraw complex frames and the performance depends highly on the speed of the computer it's running on.
+احتمالاً بزرگترین محدودیت این است که وقتی یک شکل کشیده می‌شود، به همان شکل باقی می‌ماند. اگر نیاز به جابجایی آن داشته باشیم، باید آن و همه چیزهایی که قبلاً رسم شده‌اند را دوباره رسم کنیم. رسم مجدد فریم‌های پیچیده زمان زیادی می‌برد و عملکرد به شدت به سرعت کامپیوتری که روی آن اجرا می‌شود وابسته است.
 
-## Basic animation steps
+## مراحل انیمیشن پایه
 
-These are the steps you need to take to draw a frame:
+این مراحلی است که برای رسم یک فریم باید انجام دهید:
 
-1. **Clear the canvas**
-   Unless the shapes you'll be drawing fill the complete canvas (for instance a backdrop image), you need to clear any shapes that have been drawn previously. The easiest way to do this is using the {{domxref("CanvasRenderingContext2D.clearRect", "clearRect()")}} method.
-2. **Save the canvas state**
-   If you're changing any setting (such as styles, transformations, etc.) which affect the canvas state and you want to make sure the original state is used each time a frame is drawn, you need to save that original state.
-3. **Draw animated shapes**
-   The step where you do the actual frame rendering.
-4. **Restore the canvas state**
-   If you've saved the state, restore it before drawing a new frame.
+1. **پاک کردن بوم**
+   مگر اینکه اشکالی که می‌کشید کل بوم را پر کنند (مثلاً یک تصویر پس‌زمینه)، باید هر شکلی که قبلاً رسم شده است را پاک کنید. ساده‌ترین راه برای این کار استفاده از متد {{domxref("CanvasRenderingContext2D.clearRect", "clearRect()")}} است.
+2. **ذخیره وضعیت بوم**
+   اگر در حال تغییر هر تنظیماتی (مانند سبک‌ها، تبدیل‌ها و غیره) هستید که بر وضعیت بوم تأثیر می‌گذارد و می‌خواهید مطمئن شوید که وضعیت اصلی هر بار که یک فریم رسم می‌شود استفاده می‌شود، باید آن وضعیت اصلی را ذخیره کنید.
+3. **رسم اشکال متحرک**
+   مرحله‌ای که در آن رندر واقعی فریم را انجام می‌دهید.
+4. **بازیابی وضعیت بوم**
+   اگر وضعیت را ذخیره کرده‌اید، قبل از رسم یک فریم جدید آن را بازیابی کنید.
 
-## Controlling an animation
+## کنترل یک انیمیشن
 
-Shapes are drawn to the canvas by using the canvas methods directly or by calling custom functions. In normal circumstances, we only see these results appear on the canvas when the script finishes executing. For instance, it isn't possible to do an animation from within a `for` loop.
+اشکال با استفاده از متدهای بوم به طور مستقیم یا با فراخوانی توابع سفارشی روی بوم رسم می‌شوند. در شرایط عادی، ما فقط زمانی این نتایج را روی بوم می‌بینیم که اجرای اسکریپت به پایان برسد. به عنوان مثال، امکان انجام انیمیشن از داخل یک حلقه `for` وجود ندارد.
 
-That means we need a way to execute our drawing functions over a period of time. There are two ways to control an animation like this.
+این بدان معناست که ما به راهی برای اجرای توابع رسم خود در یک بازه زمانی نیاز داریم. دو روش برای کنترل یک انیمیشن به این شکل وجود دارد.
 
-### Scheduled updates
+### به‌روزرسانی‌های زمان‌بندی شده
 
-First there's the {{domxref("Window.setInterval", "setInterval()")}}, {{domxref("Window.setTimeout", "setTimeout()")}}, and {{domxref("Window.requestAnimationFrame", "requestAnimationFrame()")}} functions, which can be used to call a specific function over a set period of time.
+ابتدا توابع {{domxref("Window.setInterval", "setInterval()")}}، {{domxref("Window.setTimeout", "setTimeout()")}} و {{domxref("Window.requestAnimationFrame", "requestAnimationFrame()")}} وجود دارند که می‌توان از آنها برای فراخوانی یک تابع خاص در یک بازه زمانی مشخص استفاده کرد.
 
 - {{domxref("Window.setInterval", "setInterval()")}}
-  - : Starts repeatedly executing the function specified by `function` every `delay` milliseconds.
+  - : شروع به اجرای مکرر تابع مشخص شده توسط `function` هر `delay` میلی‌ثانیه می‌کند.
 - {{domxref("Window.setTimeout", "setTimeout()")}}
-  - : Executes the function specified by `function` in `delay` milliseconds.
+  - : تابع مشخص شده توسط `function` را پس از `delay` میلی‌ثانیه اجرا می‌کند.
 - {{domxref("Window.requestAnimationFrame", "requestAnimationFrame()")}}
-  - : Tells the browser that you wish to perform an animation and requests that the browser call a specified function to update an animation before the next repaint.
+  - : به مرورگر اطلاع می‌دهد که می‌خواهید یک انیمیشن انجام دهید و از مرورگر می‌خواهد که یک تابع مشخص را برای به‌روزرسانی یک انیمیشن قبل از رنگ‌آمیزی مجدد بعدی فراخوانی کند.
 
-If you don't want any user interaction you can use the `setInterval()` function, which repeatedly executes the supplied code. If we wanted to make a game, we could use keyboard or mouse events to control the animation and use `setTimeout()`. By setting listeners using {{domxref("EventTarget.addEventListener", "addEventListener()")}}, we catch any user interaction and execute our animation functions.
+اگر تعامل کاربری نمی‌خواهید می‌توانید از تابع `setInterval()` استفاده کنید که کد ارائه شده را به طور مکرر اجرا می‌کند. اگر می‌خواستیم یک بازی بسازیم، می‌توانستیم از رویدادهای صفحه کلید یا ماوس برای کنترل انیمیشن استفاده کنیم و از `setTimeout()` استفاده کنیم. با تنظیم شنوندگان با استفاده از {{domxref("EventTarget.addEventListener", "addEventListener()")}}، هر تعامل کاربری را ضبط کرده و توابع انیمیشن خود را اجرا می‌کنیم.
 
 > [!NOTE]
-> In the examples below, we'll use the {{domxref("Window.requestAnimationFrame()")}} method to control the animation. The `requestAnimationFrame` method provides a smoother and more efficient way for animating by calling the animation frame when the system is ready to paint the frame. The number of callbacks is usually 60 times per second and may be reduced to a lower rate when running in background tabs. For more information about the animation loop, especially for games, see the article [Anatomy of a video game](/en-US/docs/Games/Anatomy) in our [Game development zone](/en-US/docs/Games).
+> در مثال‌های زیر، از متد {{domxref("Window.requestAnimationFrame()")}} برای کنترل انیمیشن استفاده می‌کنیم. متد `requestAnimationFrame` روشی روان‌تر و کارآمدتر برای انیمیشن‌سازی با فراخوانی فریم انیمیشن زمانی که سیستم آماده نقاشی فریم است، فراهم می‌کند. تعداد فراخوانی‌ها معمولاً 60 بار در ثانیه است و ممکن است هنگام اجرا در برگه‌های پس‌زمینه به نرخ کمتری کاهش یابد. برای اطلاعات بیشتر در مورد حلقه انیمیشن، به خصوص برای بازی‌ها، مقاله [آناتومی یک بازی ویدیویی](/en-US/docs/Games/Anatomy) در [منطقه توسعه بازی](/en-US/docs/Games) ما را ببینید.
 
-## An animated solar system
+## یک منظومه شمسی متحرک
 
-This example animates a small model of our solar system.
+این مثال یک مدل کوچک از منظومه شمسی ما را متحرک می‌کند.
 
 ### HTML
 
@@ -119,13 +119,13 @@ function draw() {
 init();
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("An_animated_solar_system", "310", "340")}}
 
-## An animated clock
+## یک ساعت متحرک
 
-This example draws an animated clock, showing your current time.
+این مثال یک ساعت متحرک را رسم می‌کند که زمان فعلی شما را نشان می‌دهد.
 
 ### HTML
 
@@ -243,21 +243,20 @@ function clock() {
 window.requestAnimationFrame(clock);
 ```
 
-### Result
+### نتیجه
 
 > [!NOTE]
-> Although the clock updates only once every second, the animated image is updated at 60 frames per second (or at the display refresh rate of your web browser).
-> To display the clock with a sweeping second hand, replace the definition of `const sec` above with the version that has been commented out.
+> اگرچه ساعت فقط یک بار در هر ثانیه به‌روز می‌شود، تصویر متحرک با 60 فریم در ثانیه (یا با نرخ تازه‌سازی نمایشگر مرورگر وب شما) به‌روز می‌شود. برای نمایش ساعت با عقربه ثانیه‌ای پیوسته، تعریف `const sec` بالا را با نسخه‌ای که در کامنت قرار داده شده است جایگزین کنید.
 
 {{EmbedLiveSample("An_animated_clock", "180", "200")}}
 
-## A looping panorama
+## یک پانورامای حلقه‌ای
 
-In this example, a panorama is scrolled left-to-right. We're using [an image of Yosemite National Park](https://commons.wikimedia.org/wiki/File:Capitan_Meadows,_Yosemite_National_Park.jpg) we took from Wikipedia, but you could use any image that's larger than the canvas.
+در این مثال، یک پانوراما از چپ به راست اسکرول می‌شود. ما از [تصویری از پارک ملی یوسیمیتی](https://commons.wikimedia.org/wiki/File:Capitan_Meadows,_Yosemite_National_Park.jpg) که از ویکی‌پدیا برداشتیم استفاده می‌کنیم، اما شما می‌توانید از هر تصویری که بزرگ‌تر از بوم است استفاده کنید.
 
 ### HTML
 
-The HTML includes the {{HTMLElement("canvas")}} in which the image is scrolled. Note that the width and height specified here must match the values of the `canvasXSize` and `canvasYSize` variables in the JavaScript code.
+HTML شامل {{HTMLElement("canvas")}} است که تصویر در آن اسکرول می‌شود. توجه داشته باشید که عرض و ارتفاع مشخص شده در اینجا باید با مقادیر متغیرهای `canvasXSize` و `canvasYSize` در کد جاوااسکریپت مطابقت داشته باشد.
 
 ```html
 <canvas id="canvas" width="800" height="200"
@@ -348,11 +347,11 @@ function draw() {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("A_looping_panorama", "830", "250")}}
 
-## Mouse following animation
+## انیمیشن دنبال کردن ماوس
 
 ### HTML
 
@@ -475,13 +474,13 @@ function anim() {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Mouse_following_animation", "500", "500")}}
 
-## Other examples
+## سایر مثال‌ها
 
-- [Advanced animations](/en-US/docs/Web/API/Canvas_API/Tutorial/Advanced_animations)
-  - : We will have a look at some advanced animation techniques and physics in the next chapter.
+- [انیمیشن‌های پیشرفته](/en-US/docs/Web/API/Canvas_API/Tutorial/Advanced_animations)
+  - : در فصل بعدی به برخی تکنیک‌های پیشرفته انیمیشن و فیزیک خواهیم پرداخت.
 
 {{PreviousNext("Web/API/Canvas_API/Tutorial/Compositing", "Web/API/Canvas_API/Tutorial/Advanced_animations")}}
