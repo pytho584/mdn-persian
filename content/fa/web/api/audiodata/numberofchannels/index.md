@@ -1,7 +1,7 @@
 ---
 title: "AudioData: numberOfChannels property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioData/numberOfChannels"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,24 +14,24 @@ browser-compat: api.AudioData.numberOfChannels
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`numberOfChannels`** read-only property of the {{domxref("AudioData")}} interface returns the number of channels in the `AudioData` object.
+ویژگی فقط‌خواندنی **`numberOfChannels`** از رابط {{domxref("AudioData")}} تعداد کانال‌ها را در شیء `AudioData` برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-The below example prints the value of `numberOfChannels` to the console.
+مثال زیر مقدار `numberOfChannels` را در کنسول چاپ می‌کند.
 
 ```js
 console.log(AudioData.numberOfChannels);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
