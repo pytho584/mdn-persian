@@ -1,7 +1,7 @@
 ---
 title: "Animation: replaceState property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/replaceState"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,30 +14,30 @@ browser-compat: api.Animation.replaceState
 
 {{ APIRef("Web Animations") }}
 
-The read-only **`Animation.replaceState`** property of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) indicates whether the animation has been [removed by the browser automatically](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#automatically_removing_filling_animations) after being replaced by another animation.
+ویژگی فقط‌خواندنی **`Animation.replaceState`** از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) نشان می‌دهد که آیا انیمیشن پس از جایگزین‌شدن با انیمیشن دیگر، [به‌طور خودکار توسط مرورگر حذف شده است](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#automatically_removing_filling_animations) یا خیر.
 
-## Value
+## مقدار
 
-A string that represents the replace state of the animation. The value can be one of:
+یک رشته که وضعیت جایگزینی انیمیشن را نشان می‌دهد. مقدار می‌تواند یکی از موارد زیر باشد:
 
 - `active`
-  - : The initial value of the animation's replace state when the animation is created.
+  - : مقدار اولیه وضعیت جایگزینی انیمیشن هنگام ایجاد آن.
 - `persisted`
-  - : The animation has been explicitly persisted by invoking {{domxref("Animation.persist()")}} on it.
+  - : انیمیشن به‌طور صریح با فراخوانی {{domxref("Animation.persist()")}} بر روی آن ماندگار شده است.
 - `removed`
-  - : The animation has been removed by the browser automatically.
+  - : انیمیشن به‌طور خودکار توسط مرورگر حذف شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("Animation")}}
-- {{domxref("Animation.remove_event","remove")}} event
+- رویداد {{domxref("Animation.remove_event","remove")}}
 - {{domxref("Animation.persist()")}}
