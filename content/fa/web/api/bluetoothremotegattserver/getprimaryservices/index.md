@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTServer: getPrimaryServices() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/getPrimaryServices"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,30 +16,27 @@ browser-compat: api.BluetoothRemoteGATTServer.getPrimaryServices
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **BluetoothRemoteGATTServer.getPrimaryServices()** method returns a
-promise to a list of primary {{domxref("BluetoothRemoteGATTService")}} objects offered by the
-Bluetooth device for a specified `BluetoothServiceUUID`.
+متد **BluetoothRemoteGATTServer.getPrimaryServices()** یک وعده (Promise) به فهرستی از اشیاء اصلی {{domxref("BluetoothRemoteGATTService")}} که توسط دستگاه بلوتوث برای یک `BluetoothServiceUUID` مشخص ارائه می‌شوند، برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getPrimaryServices(bluetoothServiceUUID)
 ```
 
-### Parameters
+### پارامترها
 
 - `bluetoothServiceUUID`
-  - : A Bluetooth service universally unique identifier for a specified device.
+  - : یک شناسه یکتای جهانی سرویس بلوتوث برای دستگاه مشخص.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to a list of {{domxref("BluetoothRemoteGATTService")}}
-objects.
+یک {{jsxref("Promise")}} که به فهرستی از اشیاء {{domxref("BluetoothRemoteGATTService")}} تبدیل می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
