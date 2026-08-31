@@ -1,11 +1,5 @@
 ---
 title: "CSSAnimation"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSAnimation"
-status: "needs-translation"
----
-
----
-title: CSSAnimation
 slug: Web/API/CSSAnimation
 page-type: web-api-interface
 browser-compat: api.CSSAnimation
@@ -13,26 +7,26 @@ browser-compat: api.CSSAnimation
 
 {{APIRef("Web Animations")}}
 
-The **`CSSAnimation`** interface of the {{domxref('Web Animations API','','',' ')}} represents an {{domxref("Animation")}} object.
+رابط **`CSSAnimation`** از {{domxref('Web Animations API','','',' ')}} نشان‌دهنده یک شیء {{domxref("Animation")}} است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface inherits properties from its parent, {{domxref("Animation")}}._
+_این رابط ویژگی‌های خود را از والد خود، {{domxref("Animation")}} به ارث می‌برد._
 
 - {{domxref("CSSAnimation.animationName")}} {{ReadOnlyInline}}
-  - : Returns the animation name as a string.
+  - : نام انیمیشن را به صورت یک رشته برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface inherits methods from its parent, {{domxref("Animation")}}._
+_این رابط متدهای خود را از والد خود، {{domxref("Animation")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Inspecting the returned CSSAnimation
+### بررسی CSSAnimation برگشتی
 
-The animation in the following example is defined in CSS with the name `slide-in`. Calling {{domxref("Element.getAnimations()")}} returns an array of all {{domxref("Animation")}} objects. In our case this returns a `CSSAnimation` object, representing the animation created in CSS.
+انیمیشن در مثال زیر در CSS با نام `slide-in` تعریف شده است. فراخوانی {{domxref("Element.getAnimations()")}} یک آرایه از تمام اشیاء {{domxref("Animation")}} برمی‌گرداند. در مورد ما، این یک شیء `CSSAnimation` را برمی‌گرداند که نشان‌دهنده انیمیشن ایجاد شده در CSS است.
 
 ```css
 .animate {
@@ -54,10 +48,10 @@ let animations = document.querySelector(".animate").getAnimations();
 console.log(animations[0]);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
