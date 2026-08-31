@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: createPattern() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createPattern"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: createPattern() method"
 short-title: createPattern()
 slug: Web/API/CanvasRenderingContext2D/createPattern
 page-type: web-api-instance-method
@@ -14,11 +8,11 @@ browser-compat: api.CanvasRenderingContext2D.createPattern
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.createPattern()`** method of the Canvas 2D API creates a pattern using the specified image and repetition.
-This method returns a {{domxref("CanvasPattern")}}.
+متد **`CanvasRenderingContext2D.createPattern()`** از Canvas 2D API یک الگو (pattern) با استفاده از تصویر و تکرار مشخص شده ایجاد می‌کند.
+این متد یک {{domxref("CanvasPattern")}} برمی‌گرداند.
 
-This method doesn't draw anything to the canvas directly.
-The pattern it creates must be assigned to the {{domxref("CanvasRenderingContext2D.fillStyle")}} or {{domxref("CanvasRenderingContext2D.strokeStyle")}} properties, after which it is applied to any subsequent drawing.
+این متد مستقیماً چیزی روی بوم (canvas) رسم نمی‌کند.
+الگوی ایجاد شده باید به ویژگی‌های {{domxref("CanvasRenderingContext2D.fillStyle")}} یا {{domxref("CanvasRenderingContext2D.strokeStyle")}} اختصاص داده شود، پس از آن برای هر ترسیم بعدی اعمال می‌شود.
 
 ## Syntax
 
@@ -26,45 +20,45 @@ The pattern it creates must be assigned to the {{domxref("CanvasRenderingContext
 createPattern(image, repetition)
 ```
 
-### Parameters
+### پارامترها
 
 - `image`
-  - : An image to be used as the pattern's image.
-    It can be any of the following:
+  - : تصویری که به عنوان تصویر الگو استفاده می‌شود.
+    می‌تواند هر یک از موارد زیر باشد:
     - {{domxref("HTMLImageElement")}} ({{HTMLElement("img")}})
     - {{domxref("SVGImageElement")}} ({{SVGElement("image")}})
-    - {{domxref("HTMLVideoElement")}} ({{HTMLElement("video")}}, by using the capture of the video)
+    - {{domxref("HTMLVideoElement")}} ({{HTMLElement("video")}}، با استفاده از ضبط ویدیو)
     - {{domxref("HTMLCanvasElement")}} ({{HTMLElement("canvas")}})
     - {{domxref("ImageBitmap")}}
     - {{domxref("OffscreenCanvas")}}
     - {{domxref("VideoFrame")}}
 
 - `repetition`
-  - : A string indicating how to repeat the pattern's image.
-    Possible values are:
-    - `"repeat"` (both directions)
-    - `"repeat-x"` (horizontal only)
-    - `"repeat-y"` (vertical only)
-    - `"no-repeat"` (neither direction)
+  - : رشته‌ای که نحوه تکرار تصویر الگو را مشخص می‌کند.
+    مقادیر ممکن عبارتند از:
+    - `"repeat"` (هر دو جهت)
+    - `"repeat-x"` (فقط افقی)
+    - `"repeat-y"` (فقط عمودی)
+    - `"no-repeat"` (هیچ جهتی)
 
-    A [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) value is treated the same as the empty string (`""`): both are synonyms of `"repeat"`.
+    مقدار [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) همانند رشته خالی (`""`) در نظر گرفته می‌شود: هر دو مترادف `"repeat"` هستند.
 
-### Return value
+### مقدار بازگشتی
 
-An opaque {{domxref("CanvasPattern")}} describing a pattern.
+یک {{domxref("CanvasPattern")}} مبهم (opaque) که یک الگو را توصیف می‌کند.
 
-If the `image` is not fully loaded ({{domxref("HTMLImageElement.complete")}} is `false`), then [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) is returned.
+اگر `image` به طور کامل بارگذاری نشده باشد ({{domxref("HTMLImageElement.complete")}} برابر `false` باشد)، مقدار [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) برگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Creating a pattern from an image
+### ایجاد الگو از یک تصویر
 
-This example uses the `createPattern()` method to create a {{domxref("CanvasPattern")}} with a repeating source image.
-Once created, the pattern is assigned to the canvas context's fill style and applied to a rectangle.
+این مثال از متد `createPattern()` برای ایجاد یک {{domxref("CanvasPattern")}} با یک تصویر منبع تکراری استفاده می‌کند.
+پس از ایجاد، الگو به سبک پر کردن بوم (canvas context) اختصاص داده می‌شود و روی یک مستطیل اعمال می‌شود.
 
-The original image looks like this:
+تصویر اصلی به این شکل است:
 
-![A flowery pattern](canvas_create_pattern.png)
+![یک الگوی گلدار](canvas_create_pattern.png)
 
 #### HTML
 
@@ -80,7 +74,7 @@ const ctx = canvas.getContext("2d");
 
 const img = new Image();
 img.src = "canvas_create_pattern.png";
-// Only use the image after it's loaded
+// فقط پس از بارگذاری تصویر از آن استفاده کنید
 img.onload = () => {
   const pattern = ctx.createPattern(img, "repeat");
   ctx.fillStyle = pattern;
@@ -90,52 +84,52 @@ img.onload = () => {
 
 {{ EmbedLiveSample('Creating_a_pattern_from_an_image', 700, 310) }}
 
-### Creating a pattern from a canvas
+### ایجاد الگو از یک بوم
 
-In this example we create a pattern from the contents of an offscreen canvas.
-We then apply it to the fill style of our primary canvas, and fill that canvas with the pattern.
+در این مثال ما یک الگو از محتویات یک بوم خارج از صفحه (offscreen canvas) ایجاد می‌کنیم.
+سپس آن را به سبک پر کردن بوم اصلی خود اعمال می‌کنیم و آن بوم را با الگو پر می‌کنیم.
 
 #### JavaScript
 
 ```js
-// Create a pattern, offscreen
+// ایجاد یک الگو، خارج از صفحه
 const patternCanvas = document.createElement("canvas");
 const patternContext = patternCanvas.getContext("2d");
 
-// Give the pattern a width and height of 50
+// عرض و ارتفاع 50 به الگو بدهید
 patternCanvas.width = 50;
 patternCanvas.height = 50;
 
-// Give the pattern a background color and draw an arc
+// به الگو یک رنگ پس‌زمینه بدهید و یک کمان رسم کنید
 patternContext.fillStyle = "#ffeecc";
 patternContext.fillRect(0, 0, patternCanvas.width, patternCanvas.height);
 patternContext.arc(0, 0, 50, 0, 0.5 * Math.PI);
 patternContext.stroke();
 
-// Create our primary canvas and fill it with the pattern
+// بوم اصلی خود را ایجاد کنید و آن را با الگو پر کنید
 const canvas = document.createElement("canvas");
 const ctx = canvas.getContext("2d");
 const pattern = ctx.createPattern(patternCanvas, "repeat");
 ctx.fillStyle = pattern;
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-// Add our primary canvas to the webpage
+// بوم اصلی خود را به صفحه وب اضافه کنید
 document.body.appendChild(canvas);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Creating_a_pattern_from_a_canvas', 700, 160) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasPattern")}}
