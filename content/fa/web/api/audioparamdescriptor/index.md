@@ -1,7 +1,7 @@
 ---
 title: "AudioParamDescriptor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParamDescriptor"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,26 +13,26 @@ spec-urls: https://webaudio.github.io/web-audio-api/#AudioParamDescriptor
 
 {{APIRef("Web Audio API")}}
 
-The **`AudioParamDescriptor`** dictionary of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) specifies properties for {{domxref("AudioParam")}} objects.
+دیکشنری **`AudioParamDescriptor`** از [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) ویژگی‌های اشیاء {{domxref("AudioParam")}} را مشخص می‌کند.
 
-It is used to create custom `AudioParam`s on an {{domxref("AudioWorkletNode")}}. If the underlying {{domxref("AudioWorkletProcessor")}} has a {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} static getter, then the returned array of objects based on this dictionary is used internally by `AudioWorkletNode` constructor to populate its {{domxref("AudioWorkletNode.parameters", "parameters")}} property accordingly.
+از آن برای ایجاد `AudioParam` های سفارشی روی یک {{domxref("AudioWorkletNode")}} استفاده می‌شود. اگر {{domxref("AudioWorkletProcessor")}} زیرین دارای یک getter استاتیک {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} باشد، آرایه‌ی اشیاء برگشتی بر اساس این دیکشنری به صورت داخلی توسط سازنده‌ی `AudioWorkletNode` برای پر کردن ویژگی {{domxref("AudioWorkletNode.parameters", "parameters")}} آن استفاده می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `name`
-  - : The string which represents the name of the `AudioParam`. Under this name the `AudioParam` will be available in the {{domxref("AudioWorkletNode.parameters", "parameters")}} property of the node, and under this name the {{domxref("AudioWorkletProcessor.process")}} method will acquire the calculated values of this `AudioParam`.
+  - : رشته‌ای که نام `AudioParam` را نشان می‌دهد. با این نام، `AudioParam` در ویژگی {{domxref("AudioWorkletNode.parameters", "parameters")}} گره در دسترس خواهد بود و با این نام، متد {{domxref("AudioWorkletProcessor.process")}} مقادیر محاسبه‌شده‌ی این `AudioParam` را دریافت می‌کند.
 - `automationRate` {{optional_inline}}
-  - : Either [`"a-rate"`](/en-US/docs/Web/API/AudioParam#a-rate), or [`"k-rate"`](/en-US/docs/Web/API/AudioParam#k-rate) string which represents an automation rate of this `AudioParam`. Defaults to `"a-rate"`.
+  - : رشته‌ای که یا [`"a-rate"`](/en-US/docs/Web/API/AudioParam#a-rate) است یا [`"k-rate"`](/en-US/docs/Web/API/AudioParam#k-rate) که نرخ اتوماسیون این `AudioParam` را نشان می‌دهد. پیش‌فرض `"a-rate"` است.
 - `minValue` {{optional_inline}}
-  - : A `float` which represents minimum value of the `AudioParam`. Defaults to `-3.4028235e38`.
+  - : یک `float` که حداقل مقدار `AudioParam` را نشان می‌دهد. پیش‌فرض `-3.4028235e38` است.
 - `maxValue` {{optional_inline}}
-  - : A `float` which represents maximum value of the `AudioParam`. Defaults to `3.4028235e38`.
+  - : یک `float` که حداکثر مقدار `AudioParam` را نشان می‌دهد. پیش‌فرض `3.4028235e38` است.
 - `defaultValue` {{optional_inline}}
-  - : A `float` which represents initial value of the `AudioParam`. Defaults to `0`.
+  - : یک `float` که مقدار اولیه‌ی `AudioParam` را نشان می‌دهد. پیش‌فرض `0` است.
 
-## Examples
+## مثال‌ها
 
-The code fragment below shows a descriptor of this type being returned by a static {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} method defined in a custom `AudioWorkletProcessor` (this is part of the more complete example in [AudioWorkletNode.parameters](/en-US/docs/Web/API/AudioWorkletNode/parameters#examples)).
+قطعه کد زیر توصیفگری از این نوع را نشان می‌دهد که توسط یک متد استاتیک {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} تعریف‌شده در یک `AudioWorkletProcessor` سفارشی بازگردانده می‌شود (این بخشی از مثال کامل‌تر در [AudioWorkletNode.parameters](/en-US/docs/Web/API/AudioWorkletNode/parameters#examples) است).
 
 ```js
 // white-noise-processor.js
@@ -53,11 +53,11 @@ class WhiteNoiseProcessor extends AudioWorkletProcessor {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
