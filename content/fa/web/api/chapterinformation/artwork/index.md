@@ -1,7 +1,5 @@
 ---
 title: "ChapterInformation: artwork property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation/artwork"
-status: "needs-translation"
 ---
 
 ---
@@ -16,32 +14,31 @@ browser-compat: api.ChapterInformation.artwork
 
 {{APIRef("Media Session API")}}{{SeeCompatTable}}
 
-The **`artwork`** read-only property of the
-{{domxref("ChapterInformation")}} interface returns an {{jsxref("Array")}} of objects representing images associated with the chapter.
+ویژگی فقط‌خواندنی **`artwork`** در واسط {{domxref("ChapterInformation")}} یک {{jsxref("Array")}} از اشیاء را بازمی‌گرداند که تصاویر مرتبط با این فصل را نشان می‌دهند.
 
-## Value
+## مقدار
 
-An {{jsxref("Array")}} of objects. Each object contains the following properties:
+یک {{jsxref("Array")}} از اشیاء. هر شیء شامل ویژگی‌های زیر است:
 
 - `src`
-  - : A string representing the URL from which the user agent fetches the image's data.
+  - : یک رشته (string) که نشانی اینترنتی (URL) را نشان می‌دهد که عامل کاربر (user agent) داده‌های تصویر را از آن دریافت می‌کند.
 - `sizes`
-  - : A string representing one or more sizes for the resource. Its value can be the keyword `any` (representing a scalable vector format such as SVG), or a space-separated list of tokens in the format `<width in pixels>x<height in pixels>` or `<width in pixels>X<height in pixels>`. If multiple sizes are provided, the user agent can load the size most appropriate for the current context, provided those sizes are available in the linked resource.
+  - : یک رشته که یک یا چند اندازه برای منبع را نشان می‌دهد. مقدار آن می‌تواند کلیدواژه `any` (نشان‌دهنده یک فرمت برداری مقیاس‌پذیر مانند SVG) باشد، یا فهرستی از توکن‌ها با جداکننده فاصله با قالب `<width in pixels>x<height in pixels>` یا `<width in pixels>X<height in pixels>`. اگر چند اندازه ارائه شود، عامل کاربر می‌تواند مناسب‌ترین اندازه را برای زمینه فعلی بارگذاری کند، به شرطی که آن اندازه‌ها در منبع پیوندی موجود باشند.
 - `type`
-  - : A string representing a {{Glossary("MIME type")}} hint that allows the user agent to ignore image types that it doesn't support. However, the user agent may still use MIME-type sniffing after downloading the image to determine its type.
+  - : یک رشته که یک راهنمای {{Glossary("MIME type")}} را نشان می‌دهد که به عامل کاربر اجازه می‌دهد انواع تصویری را که پشتیبانی نمی‌کند نادیده بگیرد. با این حال، عامل کاربر ممکن است پس از دانلود تصویر، برای تعیین نوع آن از تشخیص نوع MIME (MIME-type sniffing) استفاده کند.
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("ChapterInformation")}} page for an example.
+برای مثال به صفحه اصلی {{domxref("ChapterInformation")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ChapterInformation")}}
