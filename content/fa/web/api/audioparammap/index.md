@@ -1,50 +1,48 @@
 ---
 title: "AudioParamMap"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParamMap"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
----
 title: AudioParamMap
 slug: Web/API/AudioParamMap
 page-type: web-api-interface
 browser-compat: api.AudioParamMap
----
 
 {{APIRef("Web Audio API")}}
 
-The **`AudioParamMap`** interface of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) represents an iterable and read-only set of multiple audio parameters.
+رابط **`AudioParamMap`** از [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) یک مجموعه قابل پیمایش و فقط‌خواندنی از چندین پارامتر صوتی را نشان می‌دهد.
 
-An `AudioParamMap` instance is a read-only [`Map`-like object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis), in which each key is the name string for a parameter, and the corresponding value is an {{domxref("AudioParam")}} containing the value of that parameter.
+یک نمونه `AudioParamMap` یک [شیء شبیه `Map`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis) فقط‌خواندنی است که در آن هر کلید یک رشته نام برای یک پارامتر است و مقدار متناظر یک {{domxref("AudioParam")}} حاوی مقدار آن پارامتر است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-The following methods are available to all read-only [`Map`-like objects](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis) (the below links are to the {{jsxref("Map")}} global object reference page).
+روش‌های زیر برای همه [اشیاء شبیه `Map` فقط‌خواندنی](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis) در دسترس هستند (لینک‌های زیر به صفحه مرجع شیء سراسری {{jsxref("Map")}} اشاره دارند).
 
 - {{jsxref("Map/size", "size")}}
-  - : Returns the number of entries in the map.
+  - : تعداد ورودی‌های موجود در نقشه را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-The following methods are available to all read-only [`Map`-like objects](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis) (the below links are to the {{jsxref("Map")}} global object reference page).
+روش‌های زیر برای همه [اشیاء شبیه `Map` فقط‌خواندنی](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis) در دسترس هستند (لینک‌های زیر به صفحه مرجع شیء سراسری {{jsxref("Map")}} اشاره دارند).
 
 - {{jsxref("Map/entries", "entries()")}}
-  - : Returns a new [iterator object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) that yields entries in `[key, value]` pairs in the map in insertion order.
+  - : یک [شیء پیمایشگر](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) جدید برمی‌گرداند که ورودی‌ها را به صورت جفت‌های `[key, value]` در نقشه به ترتیب درج بازمی‌گرداند.
 - {{jsxref("Map/forEach", "forEach()")}}
-  - : Calls a provided {{glossary("callback function")}} once for each value and key present in the map, in insertion order.
+  - : یک {{glossary("callback function")}} ارائه‌شده را یک بار برای هر مقدار و کلید موجود در نقشه، به ترتیب درج، فراخوانی می‌کند.
 - {{jsxref("Map/get", "get()")}}
-  - : Returns the {{domxref("AudioParam")}} value associated with the string key, or `undefined` if there is none.
+  - : مقدار {{domxref("AudioParam")}} مرتبط با کلید رشته را برمی‌گرداند، یا اگر وجود نداشته باشد `undefined` را برمی‌گرداند.
 - {{jsxref("Map/has", "has()")}}
-  - : Returns a [boolean](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) indicating whether a key is present in the map or not.
+  - : یک [بولی](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) را برمی‌گرداند که نشان می‌دهد آیا یک کلید در نقشه وجود دارد یا خیر.
 - {{jsxref("Map/keys", "keys()")}}
-  - : Returns a new iterator object that yields the string keys in the map in insertion order.
+  - : یک شیء پیمایشگر جدید برمی‌گرداند که کلیدهای رشته را در نقشه به ترتیب درج بازمی‌گرداند.
 - {{jsxref("Map/values", "values()")}}
-  - : Returns a new iterator object that yields the {{domxref("AudioParam")}} values in the map in insertion order.
+  - : یک شیء پیمایشگر جدید برمی‌گرداند که مقادیر {{domxref("AudioParam")}} را در نقشه به ترتیب درج بازمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
