@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-roledescription attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,36 +13,36 @@ spec-urls: https://w3c.github.io/aria/#aria-roledescription
 sidebar: accessibilitysidebar
 ---
 
-The `aria-roledescription` attribute defines a human-readable, author-localized description for the role of an element.
+ویژگی `aria-roledescription` یک نام خوانا و بومی‌سازی‌شده توسط نویسنده برای نقش (role) یک عنصر تعریف می‌کند.
 
-## Description
+## توضیحات
 
-Some assistive technologies (<abbr>AT</abbr>), such as screen readers, present the role of an element as part of the user experience. The `aria-roledescription` attribute provides a way to define a different human-readable name to be presented by AT as the role of an element.
+برخی از فناوری‌های کمکی (AT)، مانند صفحه‌خوان‌ها، نقش عنصر را به‌عنوان بخشی از تجربه کاربری ارائه می‌کنند. ویژگی `aria-roledescription` راهی برای تعریف یک نام خوانای متفاوت فراهم می‌کند که توسط AT به‌عنوان نقش عنصر ارائه شود.
 
 > [!NOTE]
-> Only use aria-roledescription to clarify the purpose of non-interactive container roles and to provide a more specific description to a widget.
+> فقط برای شفاف‌سازی هدف نقش‌های کانتینری غیرتعاملی و ارائه توضیح دقیق‌تر برای یک ابک (widget) از `aria-roledescription` استفاده کنید.
 
-Users depend on the presentation of known role name to understand the purpose of the element and, if it is a widget, how to interact with it. So, only use `aria-roledescription` to clarify the purpose of non-interactive container roles like `group` or `region` and to provide a more specific description to a widget.
+کاربران برای درک هدف عنصر و اگر ابک باشد، نحوه تعامل با آن، به ارائه نام نقش شناخته‌شده وابسته هستند. بنابراین، فقط برای شفاف‌سازی هدف نقش‌های کانتینری غیرتعاملی مانند `group` یا `region` و ارائه توضیح دقیق‌تر به یک ابک از `aria-roledescription` استفاده کنید.
 
-The `aria-roledescription` property overrides how ATs localize and express the name of a role. When you override a role name the user understands, you can potentially negatively impact a users' ability to understand and interact with an element.
+ویژگی `aria-roledescription` نحوه بومی‌سازی و بیان نام نقش توسط ATها را بازنویسی می‌کند. هنگامی که نام نقشی را که کاربر می‌فهمد بازنویسی می‌کنید، احتمالاً توانایی کاربر در درک و تعامل با عنصر را تحت تأثیر منفی قرار می‌دهید.
 
-Avoid using the `aria-roledescription` attribute. When a use case appears special worthy of a unique roledescription, the interactions can often times be broken down into smaller pieces that have relevant roles.
+از استفاده از ویژگی `aria-roledescription` خودداری کنید. وقتی یک مورد استفاده به‌اندازه کافی خاص به نظر می‌رسد که شایسته یک توضیح نقش منحصربه‌فرد باشد، اغلب می‌توان تعاملات را به بخش‌های کوچک‌تری تقسیم کرد که نقش‌های مرتبط دارند.
 
-When there are no semantic or ARIA widget roles that correspond to the interaction model of your widget, use `role="application"`, provide an `aria-roledescription` with a human-readable, author-localized customized role name, and use `aria-describedby` to provide user instructions.
+وقتی هیچ نقش معنایی یا نقش ابک ARIA متناظر با مدل تعامل ابک شما وجود ندارد، از `role="application"` استفاده کنید، یک `aria-roledescription` با نام نقش سفارشی خوانا و بومی‌سازی‌شده توسط نویسنده ارائه دهید و از `aria-describedby` برای ارائه دستورالعمل‌های کاربر استفاده کنید.
 
-ATs may customize and localize the names of ARIA roles. If you are using `aria-roledescription` to change how the role name is presented to the user, remember to handle localization. The value should be translated when a page is localized.
+ATها ممکن است نام نقش‌های ARIA را سفارشی و بومی‌سازی کنند. اگر از `aria-roledescription` برای تغییر نحوه ارائه نام نقش به کاربر استفاده می‌کنید، به‌خاطر داشته باشید که بومی‌سازی را مدیریت کنید. مقدار باید هنگام بومی‌سازی صفحه ترجمه شود.
 
-Changing how the role is presented to the user has no impact on the functionality of the element. For example, if an element has a role of [`region`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/region_role) or [`button`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role) when AT provides functions for navigating to the next region or button, if you set the `aria-roledescription` to `continent` and `escape` respectively, the AT will still allow those functions to navigate to regions and buttons.
+تغییر نحوه ارائه نقش به کاربر هیچ تأثیری بر عملکرد عنصر ندارد. به عنوان مثال، اگر یک عنصر دارای نقش [`region`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/region_role) یا [`button`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role) باشد، وقتی AT عملکردهایی برای پیمایش به منطقه یا دکمه بعدی فراهم می‌کند، اگر `aria-roledescription` را به ترتیب روی `continent` و `escape` تنظیم کنید، AT همچنان به این عملکردها اجازه می‌دهد تا به مناطق و دکمه‌ها پیمایش کنند.
 
-Again, avoid using `aria-roledescription`. In this example, `escape` has no relevant meaning to the user, but `button` with "escape" as a label does.
+باز هم، از استفاده از `aria-roledescription` خودداری کنید. در این مثال، `escape` معنای مرتبطی برای کاربر ندارد، اما `button` با برچسب «escape» معنادار است.
 
-When using `aria-roledescription`, also ensure that the element to which it is applied has a valid ARIA [`role`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) or has implicit role semantics and that the value itself is not empty and contains more than just whitespace characters.
+هنگام استفاده از `aria-roledescription`، همچنین اطمینان حاصل کنید که عنصری که روی آن اعمال می‌شود دارای یک [`role`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) معتبر ARIA است یا دارای معنای نقش ضمنی است و خود مقدار خالی نیست و چیزی بیش از فاصله‌های خالی (whitespace) دارد.
 
-The `aria-roledescription` is required when using `aria-brailleroledescription`. Note that, in general, `aria-brailleroledescription` should only be used in rare cases when an `aria-roledescription` is excessively verbose when rendered in Braille.
+هنگام استفاده از `aria-brailleroledescription`، ویژگی `aria-roledescription` الزامی است. توجه داشته باشید که به طور کلی، `aria-brailleroledescription` فقط در موارد نادری باید استفاده شود که `aria-roledescription` هنگام نمایش در بریل بیش از حد طولانی باشد.
 
-## Examples
+## مثال‌ها
 
-The following example shows the use of `aria-roledescription` to indicate that a non-interactive container is a "slide" in a web-based presentation application.
+مثال زیر استفاده از `aria-roledescription` را نشان می‌دهد تا مشخص کند که یک کانتینر غیرتعاملی یک «اسلاید» در یک برنامه ارائه مبتنی بر وب است.
 
 ```html
 <div
@@ -55,28 +55,28 @@ The following example shows the use of `aria-roledescription` to indicate that a
 </div>
 ```
 
-In the previous examples, a screen reader user may hear "Quarterly Report, slide" rather than the less precise "Quarterly Report, article".
+در مثال‌های قبلی، کاربر صفحه‌خوان ممکن است «گزارش فصلی، اسلاید» را بشنود، به جای عبارت کمتر دقیق «گزارش فصلی، مقاله».
 
-## Values
+## مقادیر
 
 - `<string>`
-  - : A non-empty string, an unconstrained value type, containing more than just white space.
+  - : یک رشته غیر خالی، یک نوع مقدار بدون محدودیت، که شامل چیزی بیش از فاصله‌های خالی باشد.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaRoleDescription")}}
-  - : The [`ariaRoleDescription`](/en-US/docs/Web/API/Element/ariaRoleDescription) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-roledescription` attribute.
+  - : ویژگی [`ariaRoleDescription`](/en-US/docs/Web/API/Element/ariaRoleDescription)، بخشی از رابط {{domxref("Element")}}، مقدار ویژگی `aria-roledescription` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaRoleDescription")}}
-  - : The [`ariaRoleDescription`](/en-US/docs/Web/API/ElementInternals/ariaRoleDescription) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-roledescription` attribute.
+  - : ویژگی [`ariaRoleDescription`](/en-US/docs/Web/API/ElementInternals/ariaRoleDescription)، بخشی از رابط {{domxref("ElementInternals")}}، مقدار ویژگی `aria-roledescription` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Supported by all roles and by all base markup elements except for `role="generic"`.
+توسط همه نقش‌ها و همه عناصر نشانه‌گذاری پایه به جز `role="generic"` پشتیبانی می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles)
+- [نقش‌های ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles)
