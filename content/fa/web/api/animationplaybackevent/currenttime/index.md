@@ -1,7 +1,7 @@
 ---
 title: "AnimationPlaybackEvent: currentTime property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationPlaybackEvent/currentTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,17 +14,17 @@ browser-compat: api.AnimationPlaybackEvent.currentTime
 
 {{ APIRef("Web Animations") }}
 
-The **`currentTime`** read-only property of the {{domxref("AnimationPlaybackEvent")}} interface represents the current time of the animation that generated the event at the moment the event is queued. This will be unresolved if the animation was `idle` at the time the event was generated.
+ویژگی فقط‌خواندنی **`currentTime`** از رابط {{domxref("AnimationPlaybackEvent")}} زمان جاری انیمیشنی را نشان می‌دهد که رویداد را در لحظه‌ی قرار گرفتن رویداد در صف تولید کرده است. اگر انیمیشن در زمان تولید رویداد `idle` بوده باشد، این مقدار نامشخص خواهد بود.
 
-## Value
+## مقدار
 
-A number representing the current time in milliseconds, or `null`.
+عددی که زمان جاری را بر حسب میلی‌ثانیه نشان می‌دهد، یا `null`.
 
-## Reduced time precision
+## کاهش دقت زمان
 
-To offer protection against timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting), the precision of `playbackEvent.currentTime` might get rounded depending on browser settings. In Firefox, the `privacy.reduceTimerPrecision` preference is enabled by default and defaults to 2ms. You can also enable `privacy.resistFingerprinting`, in which case the precision will be 100ms or the value of `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`, whichever is larger.
+برای ارائه محافظت در برابر حملات زمان‌بندی و [اثر انگشت](/en-US/docs/Glossary/Fingerprinting)، ممکن است دقت `playbackEvent.currentTime` بسته به تنظیمات مرورگر گرد شود. در فایرفاکس، تنظیم `privacy.reduceTimerPrecision` به‌طور پیش‌فرض فعال است و پیش‌فرض آن ۲ میلی‌ثانیه است. همچنین می‌توانید `privacy.resistFingerprinting` را فعال کنید، که در این صورت دقت برابر با ۱۰۰ میلی‌ثانیه یا مقدار `privacy.resistFingerprinting.reduceTimerPrecision.microseconds` خواهد بود، هرکدام بزرگ‌تر باشد.
 
-For example, with reduced time precision, the result of `playbackEvent.currentTime` will always be a multiple of 0.002, or a multiple of 0.1 (or `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) with `privacy.resistFingerprinting` enabled.
+برای مثال، با کاهش دقت زمان، نتیجه‌ی `playbackEvent.currentTime` همیشه مضربی از 0.002 خواهد بود، یا با فعال بودن `privacy.resistFingerprinting`، مضربی از 0.1 (یا `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) خواهد بود.
 
 ```js
 // reduced time precision (2ms) in Firefox 60
@@ -44,15 +44,15 @@ playbackEvent.currentTime;
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("AnimationPlayBackEvent")}}
