@@ -1,7 +1,7 @@
 ---
 title: "ARIA: progressbar role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,32 +13,32 @@ spec-urls: https://w3c.github.io/aria/#progressbar
 sidebar: accessibilitysidebar
 ---
 
-The `progressbar` role defines an element that displays the progress status for tasks that take a long time.
+نقش `progressbar` عنصری را تعریف می‌کند که وضعیت پیشرفت را برای کارهایی که زمان زیادی می‌برند، نمایش می‌دهد.
 
-## Description
+## توضیحات
 
-The `progressbar` range widget indicates that a request has been received and the application is making progress toward completing the requested action.
+ویجت محدوده `progressbar` نشان می‌دهد که یک درخواست دریافت شده است و برنامه در حال پیشرفت برای تکمیل اقدام درخواستی است.
 
-Authors **may** set aria-valuemin and aria-valuemax to indicate the minimum and maximum progress indicator values. Otherwise, their implicit values follow the same rules as HTML's [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range):
+نویسندگان **می‌توانند** `aria-valuemin` و `aria-valuemax` را برای نشان دادن حداقل و حداکثر مقادیر نشانگر پیشرفت تنظیم کنند. در غیر این صورت، مقادیر ضمنی آن‌ها از قوانین مشابه با HTML [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range) پیروی می‌کند:
 
-- If [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) is missing or not a number, it defaults to `0` (zero).
-- If [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) is missing or not a number, it defaults to `100`.
-- The `aria-valuemin` and `aria-valuemax` properties only need to be set for the `progressbar` role when the progress bar's minimum is not `0` or the maximum value is not `100`.
-- The read-only [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) should be provided and updated unless the value is `indeterminate`, in which case don't include the attribute. If set, make sure the `aria-valuenow` value is between the minimum and maximum values.
+- اگر [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) وجود نداشته باشد یا یک عدد نباشد، به طور پیش‌فرض `0` (صفر) است.
+- اگر [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) وجود نداشته باشد یا یک عدد نباشد، به طور پیش‌فرض `100` است.
+- ویژگی‌های `aria-valuemin` و `aria-valuemax` فقط زمانی برای نقش `progressbar` نیاز به تنظیم دارند که حداقل نوار پیشرفت `0` نباشد یا حداکثر مقدار `100` نباشد.
+- [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) فقط خواندنی باید ارائه و به‌روزرسانی شود، مگر اینکه مقدار `indeterminate` (نامشخص) باشد، که در این صورت ویژگی را شامل نشوید. اگر تنظیم شده است، مطمئن شوید که مقدار `aria-valuenow` بین حداقل و حداکثر مقادیر است.
 
-If the `progressbar` role is applied to an HTML {{HTMLElement('progress')}} element, the accessible name can come from the associated {{HTMLElement('label')}}. Otherwise use [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) if a visible label is present or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) if a visible label is not present.
+اگر نقش `progressbar` به یک عنصر HTML {{HTMLElement('progress')}} اعمال شود، نام قابل دسترس می‌تواند از {{HTMLElement('label')}} مرتبط بیاید. در غیر این صورت، اگر یک برچسب قابل مشاهده وجود دارد از [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) استفاده کنید، یا اگر برچسب قابل مشاهده‌ای وجود ندارد از [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) استفاده کنید.
 
-### All descendants are presentational
+### همه فرزندان نمایشی هستند
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in a `progressbar`. To deal with this limitation, browsers, automatically apply role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) to all descendant elements of any `progressbar` element as it is a role that does not support semantic children.
+برخی از انواع اجزای رابط کاربری وجود دارند که وقتی در یک API دسترس‌پذیری پلتفرم نمایش داده می‌شوند، فقط می‌توانند حاوی متن باشند. APIهای دسترس‌پذیری راهی برای نمایش عناصر معنایی موجود در یک `progressbar` ندارند. برای مقابله با این محدودیت، مرورگرها به طور خودکار نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را به تمام عناصر فرزند هر عنصر `progressbar` اعمال می‌کنند، زیرا این نقشی است که از فرزندان معنایی پشتیبانی نمی‌کند.
 
-For example, consider the following `progressbar` element, which contains a heading.
+به عنوان مثال، عنصر `progressbar` زیر را در نظر بگیرید که شامل یک عنوان است.
 
 ```html
 <div role="progressbar"><h3>Title of my progressbar</h3></div>
 ```
 
-Because descendants of `progressbar` are presentational, the following code is equivalent:
+از آنجا که فرزندان `progressbar` نمایشی هستند، کد زیر معادل است:
 
 ```html
 <div role="progressbar">
@@ -46,34 +46,34 @@ Because descendants of `progressbar` are presentational, the following code is e
 </div>
 ```
 
-From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree):
+از دیدگاه کاربر فناوری کمکی، عنوان وجود ندارد، زیرا قطعه کدهای قبلی با موارد زیر در [درخت دسترس‌پذیری](/en-US/docs/Glossary/Accessibility_tree) معادل هستند:
 
 ```html
 <div role="progressbar">Title of my progressbar</div>
 ```
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
 - [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow)
-  - : Only present and required if the value is not indeterminate. Set to a decimal value between `0`, or `aria-valuemin` if present, and `aria-valuemax` indicating the current value of the progress bar.
+  - : فقط در صورت وجود و زمانی که مقدار نامشخص (indeterminate) نباشد ضروری است. به یک مقدار اعشاری بین `0` یا `aria-valuemin` (در صورت وجود) و `aria-valuemax` تنظیم می‌شود که مقدار فعلی نوار پیشرفت را نشان می‌دهد.
 - [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext)
-  - : Assistive technologies often present the value of `aria-valuenow` as a percentage. If this would not be accurate use this property to make the progress bar value understandable.
+  - : فناوری‌های کمکی اغلب مقدار `aria-valuenow` را به صورت درصد نمایش می‌دهند. اگر این کار دقیق نباشد، از این ویژگی برای قابل فهم کردن مقدار نوار پیشرفت استفاده کنید.
 - [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin)
-  - : Set to a decimal value representing the minimum value, and less than `aria-valuemax`. If not present, the default value is `0`.
+  - : به یک مقدار اعشاری که نشان‌دهنده حداقل مقدار است و کمتر از `aria-valuemax` است، تنظیم می‌شود. اگر وجود نداشته باشد، مقدار پیش‌فرض `0` است.
 - [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax)
-  - : Set to a decimal value representing the maximum value, and greater than `aria-valuemin`. If not present, the default value is `100`.
-- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : Defines the string value or identifies the element (or elements) that label the progressbar element providing an accessible name. An accessible name is required.
+  - : به یک مقدار اعشاری که نشان‌دهنده حداکثر مقدار است و بیشتر از `aria-valuemin` است، تنظیم می‌شود. اگر وجود نداشته باشد، مقدار پیش‌فرض `100` است.
+- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
+  - : مقدار رشته‌ای را تعریف می‌کند یا عنصر (یا عناصری) را که عنصر progressbar را برچسب‌گذاری می‌کنند و یک نام قابل دسترس ارائه می‌دهند، مشخص می‌کند. یک نام قابل دسترس ضروری است.
 
-It is recommended to use a native {{HTMLElement("progress")}} or [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range) elements rather than the `progressbar` role. User agents provide a stylize widget for the {{HTMLElement("progress")}} element based on the current `value` as it relates to the `0`, the minimum value, and the `max` value. When using non-semantic elements, all features of the native semantic element need to be recreated with ARIA attributes, JavaScript and CSS.
+توصیه می‌شود به جای نقش `progressbar` از عناصر بومی {{HTMLElement("progress")}} یا [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range) استفاده کنید. عامل‌های کاربر یک ویجت سبک‌دهی شده برای عنصر {{HTMLElement("progress")}} بر اساس مقدار فعلی `value` در رابطه با `0` (حداقل مقدار) و مقدار `max` ارائه می‌دهند. هنگام استفاده از عناصر غیر معنایی، تمام ویژگی‌های عنصر معنایی بومی باید با ویژگی‌های ARIA، جاوااسکریپت و CSS بازسازی شوند.
 
-## Examples
+## مثال‌ها
 
-In the example below, the progress bar uses the default values of 0 and 100 for `aria-valuemin` and `aria-valuemax`:
+در مثال زیر، نوار پیشرفت از مقادیر پیش‌فرض 0 و 100 برای `aria-valuemin` و `aria-valuemax` استفاده می‌کند:
 
 ```html
 <div>
-  <span id="loadinglabel">Loading:</span>
+  <span id="loadinglabel">در حال بارگذاری:</span>
   <span role="progressbar" aria-labelledby="loadinglabel" aria-valuenow="23">
     <svg width="100" height="10">
       <rect height="10" width="100" stroke="black" fill="black" />
@@ -83,31 +83,31 @@ In the example below, the progress bar uses the default values of 0 and 100 for 
 </div>
 ```
 
-Using semantic HTML, this could be written as:
+با استفاده از HTML معنایی، این می‌تواند به صورت زیر نوشته شود:
 
 ```html
-<label for="loadinglabel">Loading:</label>
+<label for="loadinglabel">در حال بارگذاری:</label>
 <progress id="loadinglabel" max="100" value="23"></progress>
 ```
 
-## Best practices
+## بهترین روش‌ها
 
-If the progress bar is describing the loading progress of a particular region of a page, include the [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) attribute to reference the progress bar's status, and set the [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) attribute to `true` on the region until it is finished loading.
+اگر نوار پیشرفت وضعیت بارگذاری یک ناحیه خاص از صفحه را توصیف می‌کند، ویژگی [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) را برای ارجاع به وضعیت نوار پیشرفت وارد کنید و ویژگی [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) را روی `true` در آن ناحیه تنظیم کنید تا زمانی که بارگذاری به پایان برسد.
 
-### Prefer HTML
+### ترجیح HTML
 
-It is recommended to use a native {{HTMLElement("progress")}} or [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range) elements rather than the `progressbar` role.
+توصیه می‌شود به جای نقش `progressbar` از عناصر بومی {{HTMLElement("progress")}} یا [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range) استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement('progress')}} element
-- Other range widgets include:
+- عنصر HTML {{HTMLElement('progress')}}
+- سایر ویجت‌های محدوده شامل:
   - [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)
   - [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role)
-  - [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) (if focusable)
+  - [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) (در صورت قابل تمرکز بودن)
   - [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
   - [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
