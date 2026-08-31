@@ -1,11 +1,5 @@
 ---
 title: "CharacterData: insertData() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/insertData"
-status: "needs-translation"
----
-
----
-title: "CharacterData: insertData() method"
 short-title: insertData()
 slug: Web/API/CharacterData/insertData
 page-type: web-api-instance-method
@@ -14,35 +8,31 @@ browser-compat: api.CharacterData.insertData
 
 {{APIRef("DOM")}}
 
-The **`insertData()`** method of the {{domxref("CharacterData")}} interface
-inserts the provided data into this `CharacterData` node's current data,
-at the provided offset from the start of the existing data.
-The provided data is spliced into the existing data.
+متد **`insertData()`** از رابط {{domxref("CharacterData")}} داده‌های ارائه‌شده را درون داده‌های فعلی گره `CharacterData`، در offset (فاصله) مشخص‌شده از ابتدای داده‌های موجود، درج می‌کند. داده‌های ارائه‌شده درون داده‌های موجود جاسازی می‌شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 insertData(offset, data)
 ```
 
-### Parameters
+### پارامترها
 
 - `offset`
-  - : The offset number of characters to insert the provided data at.
-    `0` is the first character of the string.
+  - : offset عددی است که نشان‌دهنده تعداد کاراکترها از ابتدای داده‌ها برای درج داده‌های جدید است. مقدار `0` به معنای اولین کاراکتر رشته است.
 - `data`
-  - : The data to insert.
+  - : داده‌ای که باید درج شود.
 
-### Return value
+### مقدار بازگشتی
 
-None.
+هیچ‌کدام.
 
-### Exceptions
+### استثناها
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if offset is negative or greater than the length of the contained data.
+  - : اگر `offset` منفی یا بزرگتر از طول داده‌های موجود باشد، پرتاب می‌شود.
 
-## Example
+## مثال
 
 ```html
 <span>Result: </span>A string.
@@ -57,15 +47,15 @@ textNode.insertData(2, "long ");
 
 {{EmbedLiveSample("Example", "100%", 50)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("CharacterData.appendData()")}}, {{domxref("CharacterData.deleteData()")}}, {{domxref("CharacterData.replaceData()")}}
+- {{domxref("CharacterData.appendData()")}}، {{domxref("CharacterData.deleteData()")}}، {{domxref("CharacterData.replaceData()")}}
 - {{domxref("CharacterData.data")}}
