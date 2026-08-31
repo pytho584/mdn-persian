@@ -1,7 +1,7 @@
 ---
 title: "BlobEvent: data property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent/data"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,20 +14,20 @@ browser-compat: api.BlobEvent.data
 
 {{APIRef("MediaStream Recording")}}
 
-The **`data`** read-only property of the {{domxref("BlobEvent")}} interface represents a {{domxref("Blob")}} associated with the event.
+خاصیت فقطخواندنی **`data`** در رابط {{domxref("BlobEvent")}}، یک {{domxref("Blob")}} مرتبط با رویداد را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("Blob")}} object.
+یک شیء {{domxref("Blob")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("BlobEvent")}} interface it belongs to.
+رابط {{domxref("BlobEvent")}} که این خاصیت به آن تعلق دارد.
