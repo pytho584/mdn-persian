@@ -1,33 +1,21 @@
 ---
 title: "BaseAudioContext: decodeAudioData() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/decodeAudioData"
-status: "needs-translation"
----
-
----
-title: "BaseAudioContext: decodeAudioData() method"
 short-title: decodeAudioData()
 slug: Web/API/BaseAudioContext/decodeAudioData
 page-type: web-api-instance-method
 browser-compat: api.BaseAudioContext.decodeAudioData
+translated_by: "n8n + AI"
 ---
 
 {{ APIRef("Web Audio API") }}
 
-The `decodeAudioData()` method of the {{ domxref("BaseAudioContext") }}
-Interface is used to asynchronously decode audio file data contained in an
-{{jsxref("ArrayBuffer")}} that is loaded from {{domxref("Window/fetch", "fetch()")}},
-{{domxref("XMLHttpRequest")}}, or {{domxref("FileReader")}}. The decoded
-{{domxref("AudioBuffer")}} is resampled to the {{domxref("AudioContext")}}'s sampling
-rate, then passed to a callback or promise.
+روش `decodeAudioData()` از رابط {{ domxref("BaseAudioContext") }} برای رمزگشایی غیرهمزمان داده‌های فایل صوتی موجود در یک {{jsxref("ArrayBuffer")}} استفاده می‌شود که از {{domxref("Window/fetch", "fetch()")}}، {{domxref("XMLHttpRequest")}} یا {{domxref("FileReader")}} بارگذاری شده است. {{domxref("AudioBuffer")}} رمزگشایی‌شده به نرخ نمونه‌برداری {{domxref("AudioContext")}} بازنمونه‌برداری می‌شود، سپس به یک callback یا promise منتقل می‌شود.
 
-This is the preferred method of creating an audio source for Web Audio API from an
-audio track. This method only works on complete file data, not fragments of audio file
-data.
+این روش ترجیحی برای ایجاد یک منبع صوتی برای Web Audio API از یک قطعه صوتی است. این روش فقط روی داده‌های کامل فایل کار می‌کند، نه تکه‌های داده‌های فایل صوتی.
 
-This function implements two alternative ways to asynchronously return the audio data or error messages: it returns a {{jsxref("Promise")}} that fulfills with the audio data, and also accepts callback arguments to handle success or failure. The primary method of interfacing with this function is via its Promise return value, and the callback parameters are provided for legacy reasons.
+این تابع دو روش جایگزین برای بازگرداندن غیرهمزمان داده‌های صوتی یا پیام‌های خطا پیاده‌سازی می‌کند: یک {{jsxref("Promise")}} برمی‌گرداند که با داده‌های صوتی تکمیل می‌شود، و همچنین برای مدیریت موفقیت یا شکست، آرگومان‌های callback را می‌پذیرد. روش اصلی تعامل با این تابع از طریق مقدار بازگشتی Promise است و پارامترهای callback به دلایل سازگاری با نسخه‌های قدیمی ارائه شده‌اند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 // Promise-based syntax returns a Promise:
@@ -38,36 +26,29 @@ decodeAudioData(arrayBuffer, successCallback)
 decodeAudioData(arrayBuffer, successCallback, errorCallback)
 ```
 
-### Parameters
+### پارامترها
 
 - `arrayBuffer`
-  - : An ArrayBuffer containing the audio data to be decoded, usually grabbed from
-    {{domxref("Window/fetch", "fetch()")}}, {{domxref("XMLHttpRequest")}} or {{domxref("FileReader")}}.
+  - : یک ArrayBuffer حاوی داده‌های صوتی که باید رمزگشایی شود، معمولاً از {{domxref("Window/fetch", "fetch()")}}، {{domxref("XMLHttpRequest")}} یا {{domxref("FileReader")}} گرفته می‌شود.
 - `successCallback` {{optional_inline}}
-  - : A callback function to be invoked when the decoding successfully finishes. The
-    single argument to this callback is an {{domxref("AudioBuffer")}} representing the
-    _decodedData_ (the decoded PCM audio data). Usually you'll want to put the
-    decoded data into an {{domxref("AudioBufferSourceNode")}}, from which it can be played
-    and manipulated how you want.
+  - : یک تابع callback که هنگام پایان موفقیت‌آمیز رمزگشایی فراخوانی می‌شود. تنها آرگومان این callback یک {{domxref("AudioBuffer")}} است که _decodedData_ (داده‌های صوتی PCM رمزگشایی‌شده) را نشان می‌دهد. معمولاً می‌خواهید داده‌های رمزگشایی‌شده را در یک {{domxref("AudioBufferSourceNode")}} قرار دهید، جایی که می‌توانید آن را پخش و هر طور که می‌خواهید دستکاری کنید.
 - `errorCallback` {{optional_inline}}
-  - : An optional error callback, to be invoked if an error occurs when the audio data is
-    being decoded.
+  - : یک callback خطای اختیاری که در صورت بروز خطا در هنگام رمزگشایی داده‌های صوتی فراخوانی می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise") }} object that fulfills with the _decodedData_. If you are using the
-XHR syntax you will ignore this return value and use a callback function instead.
+یک شیء {{jsxref("Promise") }} که با _decodedData_ تکمیل می‌شود. اگر از سینتکس XHR استفاده می‌کنید، این مقدار بازگشتی را نادیده گرفته و به جای آن از تابع callback استفاده می‌کنید.
 
-## Examples
+## مثال‌ها
 
-In this section we will first cover the promise-based syntax and then the callback syntax.
+در این بخش ابتدا نحو مبتنی بر promise و سپس نحو callback را پوشش می‌دهیم.
 
-### Promise-based syntax
+### نحو مبتنی بر Promise
 
-In this example `loadAudio()` uses {{domxref("Window/fetch", "fetch()")}} to retrieve an audio file and decodes it into an {{domxref("AudioBuffer")}}. It then caches the `audioBuffer` in the global `buffer` variable for later playback.
+در این مثال، `loadAudio()` از {{domxref("Window/fetch", "fetch()")}} برای دریافت یک فایل صوتی استفاده می‌کند و آن را به یک {{domxref("AudioBuffer")}} رمزگشایی می‌کند. سپس `audioBuffer` را در متغیر سراسری `buffer` برای پخش بعدی ذخیره می‌کند.
 
 > [!NOTE]
-> You can [run the full example live](https://mdn.github.io/webaudio-examples/decode-audio-data/promise/), or [view the source](https://github.com/mdn/webaudio-examples/tree/main/decode-audio-data/promise).
+> می‌توانید [مثال کامل را به‌صورت زنده اجرا کنید](https://mdn.github.io/webaudio-examples/decode-audio-data/promise/)، یا [کد منبع را مشاهده کنید](https://github.com/mdn/webaudio-examples/tree/main/decode-audio-data/promise).
 
 ```js
 let audioCtx;
@@ -86,13 +67,12 @@ async function loadAudio() {
 }
 ```
 
-### Callback syntax
+### نحو Callback
 
-In this example `loadAudio()` uses {{domxref("Window/fetch", "fetch()")}} to retrieve an audio
-file and decodes it into an {{domxref("AudioBuffer")}} using the callback-based version of `decodeAudioData()`. In the callback, it plays the decoded buffer.
+در این مثال، `loadAudio()` از {{domxref("Window/fetch", "fetch()")}} برای دریافت یک فایل صوتی استفاده می‌کند و آن را با استفاده از نسخه مبتنی بر callback از `decodeAudioData()` به یک {{domxref("AudioBuffer")}} رمزگشایی می‌کند. در callback، بافر رمزگشایی‌شده را پخش می‌کند.
 
 > [!NOTE]
-> You can [run the full example live](https://mdn.github.io/webaudio-examples/decode-audio-data/callback/), or [view the source](https://github.com/mdn/webaudio-examples/tree/main/decode-audio-data/callback).
+> می‌توانید [مثال کامل را به‌صورت زنده اجرا کنید](https://mdn.github.io/webaudio-examples/decode-audio-data/callback/)، یا [کد منبع را مشاهده کنید](https://github.com/mdn/webaudio-examples/tree/main/decode-audio-data/callback).
 
 ```js
 let audioCtx;
@@ -118,14 +98,14 @@ async function loadAudio() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
