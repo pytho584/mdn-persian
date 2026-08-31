@@ -1,7 +1,5 @@
 ---
 title: "Clipboard: readText() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/readText"
-status: "needs-translation"
 ---
 
 ---
@@ -14,44 +12,44 @@ browser-compat: api.Clipboard.readText
 
 {{APIRef("Clipboard API")}} {{securecontext_header}}
 
-The **`readText()`** method of the {{domxref("Clipboard")}} interface returns a {{jsxref("Promise")}} which fulfills with a copy of the textual contents of the system clipboard.
+متد **`readText()`** از رابط {{domxref("Clipboard")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک کپی از محتوای متنی کلیپ‌برد سیستم تکمیل می‌شود.
 
 > [!NOTE]
-> To read non-text contents from the clipboard, use the {{domxref("Clipboard.read", "read()")}} method instead.
-> You can write text to the clipboard using {{domxref("Clipboard.writeText", "writeText()")}}.
+> برای خواندن محتوای غیرمتنی از کلیپ‌برد، به جای آن از متد {{domxref("Clipboard.read", "read()")}} استفاده کنید.
+> می‌توانید متن را با استفاده از {{domxref("Clipboard.writeText", "writeText()")}} در کلیپ‌برد بنویسید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 readText()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a string containing the textual contents of the clipboard.
+یک {{jsxref("Promise")}} که با یک رشته شامل محتوای متنی کلیپ‌برد resolve می‌شود.
 
-Returns an empty string if the clipboard is empty, does not contain text, or does not include a textual representation among the objects representing the clipboard's contents.
+اگر کلیپ‌برد خالی باشد، حاوی متن نباشد، یا در میان اشیاء نشان‌دهنده محتویات کلیپ‌برد، یک نمایش متنی نداشته باشد، یک رشته خالی برمی‌گرداند.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the access to read the clipboard is not allowed.
+  - : اگر دسترسی برای خواندن کلیپ‌برد مجاز نباشد، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the clipboard indicates that it contains data that can be represented as a text but is unable to provide a textual representation.
+  - : اگر کلیپ‌برد نشان دهد که حاوی داده‌هایی است که می‌توانند به صورت متن نمایش داده شوند، اما قادر به ارائه یک نمایش متنی نباشد، پرتاب می‌شود.
 
-## Security considerations
+## ملاحظات امنیتی
 
-Reading from the clipboard can only be done in a [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
+خواندن از کلیپ‌برد فقط در یک [زمینه امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts) قابل انجام است.
 
-Additional security requirements are covered in the [Security consideration](/en-US/docs/Web/API/Clipboard_API#security_considerations) section of the API overview topic.
+نیازمندی‌های امنیتی اضافی در بخش [ملاحظات امنیتی](/en-US/docs/Web/API/Clipboard_API#security_considerations) از نمای کلی API پوشش داده شده‌اند.
 
-## Examples
+## مثال‌ها
 
-This example retrieves the textual contents of the clipboard and inserts the returned text into a selected element's contents.
+این مثال محتویات متنی کلیپ‌برد را بازیابی کرده و متن برگشتی را در محتویات یک عنصر انتخاب شده درج می‌کند.
 
 ```js
 const destination = document.getElementById("outbox");
@@ -62,18 +60,18 @@ destinationImage.addEventListener("click", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Clipboard API](/en-US/docs/Web/API/Clipboard_API)
-- [Image support for Async Clipboard article](https://web.dev/articles/async-clipboard)
+- [پشتیبانی از تصویر برای مقاله کلیپ‌برد ناهمگام](https://web.dev/articles/async-clipboard)
 - {{domxref("Clipboard.read()")}}
 - {{domxref("Clipboard.writeText()")}}
 - {{domxref("Clipboard.write()")}}
