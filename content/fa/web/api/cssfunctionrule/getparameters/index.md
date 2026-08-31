@@ -1,11 +1,5 @@
 ---
 title: "CSSFunctionRule: getParameters() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionRule/getParameters"
-status: "needs-translation"
----
-
----
-title: "CSSFunctionRule: getParameters() method"
 short-title: getParameters()
 slug: Web/API/CSSFunctionRule/getParameters
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.CSSFunctionRule.getParameters
 
 {{ APIRef("CSSOM") }}{{SeeCompatTable}}
 
-The **`getParameters()`** method of the {{domxref("CSSFunctionRule")}} interface returns an array of objects representing the custom function's parameters.
+متد **`getParameters()`** در رابط {{domxref("CSSFunctionRule")}} آرایه‌ای از اشیا را برمی‌گرداند که پارامترهای تابع سفارشی را نمایش می‌دهند.
 
 ## Syntax
 
@@ -24,35 +18,35 @@ The **`getParameters()`** method of the {{domxref("CSSFunctionRule")}} interface
 getParameters()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An array of objects containing the following properties:
+آرایه‌ای از اشیا شامل ویژگی‌های زیر:
 
 - `name`
-  - : A string representing the name of the function parameter.
+  - : یک رشته که نام پارامتر تابع را نشان می‌دهد.
 - `type`
-  - : A string representing the data type of the parameter, or `*` if no data type was specified.
+  - : یک رشته که نوع داده پارامتر را نشان می‌دهد، یا اگر نوع داده‌ای مشخص نشده باشد `*` را برمی‌گرداند.
 - `defaultValue`
-  - : A string representing the default value of the parameter, or `null` if no default value was specified.
+  - : یک رشته که مقدار پیش‌فرض پارامتر را نشان می‌دهد، یا اگر مقدار پیش‌فرضی مشخص نشده باشد `null` را برمی‌گرداند.
 
-If no parameters were specified in the associated {{cssxref("@function")}} at-rule, an empty array is returned.
+اگر پارامتری در {{cssxref("@function")}} at-rule مرتبط مشخص نشده باشد، یک آرایه خالی برگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("CSSFunctionRule")}} reference page for an example.
+برای مشاهده مثال، به صفحه مرجع اصلی {{domxref("CSSFunctionRule")}} مراجعه کنید.
 
 ## Specifications
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@function")}}
