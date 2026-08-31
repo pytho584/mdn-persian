@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: isPointInStroke() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/isPointInStroke"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: isPointInStroke() method"
 short-title: isPointInStroke()
 slug: Web/API/CanvasRenderingContext2D/isPointInStroke
 page-type: web-api-instance-method
@@ -14,44 +8,41 @@ browser-compat: api.CanvasRenderingContext2D.isPointInStroke
 
 {{APIRef("Canvas API")}}
 
-The
+متد
 **`CanvasRenderingContext2D.isPointInStroke()`**
-method of the Canvas 2D API reports whether or not the specified point is inside the
-area contained by the stroking of a path.
+از API بوم ۲ بعدی (Canvas 2D) گزارش می‌دهد که آیا نقطهٔ مشخص‌شده درون ناحیهٔ حاصل از ترسیم ضخامت (stroke) یک مسیر قرار دارد یا خیر.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 isPointInStroke(x, y)
 isPointInStroke(path, x, y)
 ```
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : The x-axis coordinate of the point to check.
+  - : مختصات محور x نقطه‌ای که باید بررسی شود.
 - `y`
-  - : The y-axis coordinate of the point to check.
+  - : مختصات محور y نقطه‌ای که باید بررسی شود.
 - `path`
-  - : A {{domxref("Path2D")}} path to check against. If unspecified, the current path is
-    used.
+  - : یک مسیر {{domxref("Path2D")}} که باید در برابر آن بررسی شود. اگر مشخص نشود، از مسیر جاری استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value, which is `true` if the point is inside the area contained by the stroking of a path, otherwise `false`.
+یک مقدار بولی که اگر نقطه درون ناحیهٔ حاصل از ترسیم ضخامت مسیر باشد، `true` و در غیر این صورت `false` است.
 
-## Examples
+## مثال‌ها
 
-### Checking a point in the current path
+### بررسی یک نقطه در مسیر جاری
 
-This example uses the `isPointInStroke()` method to check if a point is
-within the area of the current path's stroke.
+این مثال از متد `isPointInStroke()` برای بررسی اینکه آیا نقطه‌ای درون ناحیهٔ ضخامتِ مسیر جاری قرار دارد استفاده می‌کند.
 
 #### HTML
 
 ```html
 <canvas id="canvas"></canvas>
-<p>In stroke: <code id="result">false</code></p>
+<p>در ضخامت (stroke): <code id="result">false</code></p>
 ```
 
 #### JavaScript
@@ -66,15 +57,13 @@ ctx.stroke();
 result.innerText = ctx.isPointInStroke(50, 10);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Checking_a_point_in_the_current_path', 700, 220) }}
 
-### Checking a point in the specified path
+### بررسی یک نقطه در مسیر مشخص
 
-Whenever you move the mouse, this example checks whether the cursor is in the stroke of
-an elliptical `Path2D` path. If yes, the ellipse's stroke becomes green,
-otherwise it is red.
+هر بار که ماوس را حرکت می‌دهید، این مثال بررسی می‌کند که آیا مکان‌نما در ضخامتِ یک مسیر `Path2D` بیضوی قرار دارد یا خیر. اگر بله، رنگ ضخامت بیضی سبز می‌شود، در غیر این صورت قرمز است.
 
 #### HTML
 
@@ -88,7 +77,7 @@ otherwise it is red.
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// Create ellipse
+// ساخت بیضی
 const ellipse = new Path2D();
 ellipse.ellipse(150, 75, 40, 60, Math.PI * 0.25, 0, 2 * Math.PI);
 ctx.lineWidth = 25;
@@ -96,9 +85,9 @@ ctx.strokeStyle = "red";
 ctx.fill(ellipse);
 ctx.stroke(ellipse);
 
-// Listen for mouse moves
+// گوش دادن به حرکت ماوس
 canvas.addEventListener("mousemove", (event) => {
-  // Check whether point is inside ellipse's stroke
+  // بررسی اینکه آیا نقطه درون ضخامت بیضی است
   const isPointInStroke = ctx.isPointInStroke(
     ellipse,
     event.offsetX,
@@ -106,25 +95,25 @@ canvas.addEventListener("mousemove", (event) => {
   );
   ctx.strokeStyle = isPointInStroke ? "green" : "red";
 
-  // Draw ellipse
+  // رسم بیضی
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fill(ellipse);
   ctx.stroke(ellipse);
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Checking_a_point_in_the_specified_path', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کنندهٔ این متد: {{domxref("CanvasRenderingContext2D")}}
