@@ -1,9 +1,4 @@
----
-title: "CSS: registerProperty() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS/registerProperty_static"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "CSS: registerProperty() static method"
 short-title: registerProperty()
@@ -14,58 +9,46 @@ browser-compat: api.CSS.registerProperty_static
 
 {{APIRef("CSSOM")}}
 
-The **`CSS.registerProperty()`** static method registers
-[custom properties](/en-US/docs/Web/CSS/Reference/Properties/--*), allowing for property type checking, default
-values, and properties that do or do not inherit their value.
+متد استاتیک **`CSS.registerProperty()`**،
+[ویژگی‌های سفارشی](/en-US/docs/Web/CSS/Reference/Properties/--*) را ثبت می‌کند و امکان بررسی نوع ویژگی، مقدار پیش‌فرض، و ویژگی‌هایی که مقدار خود را به ارث می‌برند یا نمی‌برند را فراهم می‌سازد.
 
-Registering a custom property allows you to tell the browser how the custom property
-should behave; what types are allowed, whether the custom property inherits its value,
-and what the default value of the custom property is.
+ثبت یک ویژگی سفارشی به مرورگر می‌گوید که آن ویژگی چگونه باید رفتار کند: چه نوع‌هایی مجاز هستند، آیا ویژگی سفارشی مقدار خود را به ارث می‌برد، و مقدار پیش‌فرض آن چیست.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 CSS.registerProperty(propertyDefinition)
 ```
 
-### Parameters
+### پارامترها
 
 - `propertyDefinition`
-  - : An object containing the following properties:
+  - : یک شیء شامل ویژگی‌های زیر:
     - `name`
-      - : A string representing the
-        {{cssxref("dashed-ident")}} name of the property being defined.
+      - : یک رشته (string) که نام {{cssxref("dashed-ident")}} ویژگی تعریف‌شده را نشان می‌دهد.
     - `syntax` {{optional_inline}}
-      - : A string representing
-        the expected syntax of the defined property. Defaults to `"*"`.
-        See the {{cssxref("@property/syntax", "syntax")}}.
+      - : یک رشته که نحو (syntax) مورد انتظار برای ویژگی تعریف‌شده را مشخص می‌کند. مقدار پیش‌فرض `"*"` است. به {{cssxref("@property/syntax", "syntax")}} مراجعه کنید.
     - `inherits`
-      - : A boolean value defining whether the defined property should be inherited
-        (`true`), or not (`false`). Defaults to `false`.
+      - : یک مقدار بولی (boolean) که تعیین می‌کند آیا ویژگی تعریف‌شده باید به ارث برده شود (`true`) یا خیر (`false`). مقدار پیش‌فرض `false` است.
     - `initialValue` {{optional_inline}}
-      - : A string representing
-        the initial value of the defined property.
+      - : یک رشته که مقدار اولیه ویژگی تعریف‌شده را مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
 `undefined`.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidModificationError` {{domxref("DOMException")}}
-  - : The given `name` has already been registered.
+  - : `name` داده‌شده قبلاً ثبت شده است.
 - `SyntaxError` {{domxref("DOMException")}}
-  - : The given `name` isn't a valid custom property name (starts with two
-    dashes, e.g., `--foo`).
+  - : `name` داده‌شده یک نام ویژگی سفارشی معتبر نیست (با دو خط تیره شروع نمی‌شود، مثلاً `--foo`).
 - {{jsxref("TypeError")}}
-  - : The required `name` and/or `inherits` dictionary members were
-    not provided.
+  - : اعضای ضروری `name` و/یا `inherits` ارائه نشده‌اند.
 
-## Examples
+## مثال‌ها
 
-The following will register a [custom property](/en-US/docs/Web/CSS/Reference/Properties/--*),
-`--my-color`, using `registerProperty()`, as a color, give it a
-default value, and have it not inherit its value:
+در مثال زیر، یک [ویژگی سفارشی](/en-US/docs/Web/CSS/Reference/Properties/--*) به نام `--my-color` با استفاده از `registerProperty()` به عنوان یک رنگ (color) ثبت می‌شود، یک مقدار پیش‌فرض به آن داده می‌شود، و خاصیت ارث‌بری آن روی false تنظیم می‌شود:
 
 ```js
 window.CSS.registerProperty({
@@ -76,10 +59,7 @@ window.CSS.registerProperty({
 });
 ```
 
-In this example, the custom property `--my-color` has been registered using
-the syntax `<color>`. We can now use that property to transition a
-gradient on hover or focus. Notice that with the registered property, the transition
-works, but it doesn't work with the unregistered property!
+در این مثال، ویژگی سفارشی `--my-color` با نحو `<color>` ثبت شده است. اکنون می‌توانیم از این ویژگی برای انتقال (transition) یک گرادیان در هنگام hover یا focus استفاده کنیم. توجه کنید که با ویژگی ثبت‌شده، انتقال کار می‌کند، اما با ویژگی ثبت‌نشده کار نمی‌کند!
 
 ```css
 .registered {
@@ -108,7 +88,7 @@ button {
 }
 ```
 
-We can add these styles to some buttons:
+می‌توانیم این استایل‌ها را به چند دکمه اضافه کنیم:
 
 ```html
 <button class="registered">Background Registered</button>
@@ -117,19 +97,20 @@ We can add these styles to some buttons:
 
 {{EmbedLiveSample("Examples", 320, 320)}}
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the CSS properties and values API](/en-US/docs/Web/API/CSS_Properties_and_Values_API/guide)
+- [استفاده از API ویژگی‌ها و مقادیر CSS](/en-US/docs/Web/API/CSS_Properties_and_Values_API/guide)
 - {{DOMxRef("CSS")}}
 - {{DOMxRef("CSS/supports_static", "CSS.supports()")}}
 - {{DOMxRef("CSS/escape_static", "CSS.escape()")}}
-- [CSS factory functions](/en-US/docs/Web/API/CSS/factory_functions_static)
+- [توابع کارخانه‌ای CSS](/en-US/docs/Web/API/CSS/factory_functions_static)
 - CSS {{cssxref("@property")}}
+```
