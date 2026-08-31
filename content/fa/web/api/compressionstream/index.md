@@ -1,7 +1,5 @@
 ---
 title: "CompressionStream"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CompressionStream"
-status: "needs-translation"
 ---
 
 ---
@@ -13,23 +11,23 @@ browser-compat: api.CompressionStream
 
 {{APIRef("Compression Streams API")}}{{AvailableInWorkers}}
 
-The **`CompressionStream`** interface of the {{domxref('Compression Streams API','','',' ')}} compresses a stream of data. It implements the same shape as a {{domxref("TransformStream")}}, allowing it to be used in {{domxref("ReadableStream.pipeThrough()")}} and similar methods.
+رابط **`CompressionStream`** از {{domxref('Compression Streams API','','',' ')}} یک جریان از داده‌ها را فشرده می‌کند. این رابط همان ساختار {{domxref("TransformStream")}} را پیاده‌سازی می‌کند و به آن اجازه می‌دهد در {{domxref("ReadableStream.pipeThrough()")}} و روش‌های مشابه استفاده شود.
 
-## Constructor
+## سازنده
 
 - {{domxref("CompressionStream.CompressionStream", "CompressionStream()")}}
-  - : Creates a new `CompressionStream`.
+  - : یک `CompressionStream` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("CompressionStream.readable")}}
-  - : Returns the {{domxref("ReadableStream")}} instance controlled by this object.
+  - : نمونه {{domxref("ReadableStream")}} کنترل‌شده توسط این شیء را برمی‌گرداند.
 - {{domxref("CompressionStream.writable")}}
-  - : Returns the {{domxref("WritableStream")}} instance controlled by this object.
+  - : نمونه {{domxref("WritableStream")}} کنترل‌شده توسط این شیء را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-In this example a stream is compressed using gzip compression.
+در این مثال، یک جریان با استفاده از فشرده‌سازی gzip فشرده می‌شود.
 
 ```js
 const compressedReadableStream = inputReadableStream.pipeThrough(
@@ -37,15 +35,15 @@ const compressedReadableStream = inputReadableStream.pipeThrough(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DecompressionStream")}}
 - {{domxref("TransformStream")}}
