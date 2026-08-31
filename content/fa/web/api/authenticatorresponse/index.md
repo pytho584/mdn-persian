@@ -1,7 +1,7 @@
 ---
 title: "AuthenticatorResponse"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorResponse"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,27 +13,27 @@ browser-compat: api.AuthenticatorResponse
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`AuthenticatorResponse`** interface of the [Web Authentication API](/en-US/docs/Web/API/Web_Authentication_API) is the base interface for interfaces that provide a cryptographic root of trust for a key pair. The child interfaces include information from the browser such as the challenge origin and either may be returned from {{domxref("PublicKeyCredential.response")}}.
+**`AuthenticatorResponse`** 接口属于 [Web Authentication API](/en-US/docs/Web/API/Web_Authentication_API)，是为密钥对提供加密信任根的各接口的基础接口。其子接口包含来自浏览器的信息（如挑战来源），并且这些子接口均可从 {{domxref("PublicKeyCredential.response")}} 返回。
 
-## Interfaces based on AuthenticatorResponse
+## 基于 AuthenticatorResponse 的接口
 
-Below is a list of interfaces based on the AuthenticatorResponse interface.
+以下是基于 AuthenticatorResponse 接口的接口列表。
 
 - {{domxref("AuthenticatorAssertionResponse")}}
 - {{domxref("AuthenticatorAttestationResponse")}}
 
-## Instance properties
+## 实例属性
 
 - {{domxref("AuthenticatorResponse.clientDataJSON")}}
-  - : A [JSON](/en-US/docs/Learn_web_development/Core/Scripting/JSON) string in an {{jsxref("ArrayBuffer")}}, representing the client data that was passed to {{domxref("CredentialsContainer.create()")}} or {{domxref("CredentialsContainer.get()")}}.
+  - : 一个位于 {{jsxref("ArrayBuffer")}} 中的 [JSON](/en-US/docs/Learn_web_development/Core/Scripting/JSON) 字符串，表示传递给 {{domxref("CredentialsContainer.create()")}} 或 {{domxref("CredentialsContainer.get()")}} 的客户端数据。
 
-## Instance methods
+## 实例方法
 
-None.
+无。
 
-## Examples
+## 示例
 
-### Getting an AuthenticatorAssertionResponse
+### 获取 AuthenticatorAssertionResponse
 
 ```js
 const options = {
@@ -50,7 +50,7 @@ navigator.credentials
   .catch((err) => console.error(err));
 ```
 
-### Getting an AuthenticatorAttestationResponse
+### 获取 AuthenticatorAttestationResponse
 
 ```js
 const publicKey = {
@@ -82,15 +82,15 @@ navigator.credentials
   .catch((err) => console.error(err));
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{domxref("AuthenticatorAttestationResponse")}}
 - {{domxref("AuthenticatorAssertionResponse")}}
