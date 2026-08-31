@@ -1,7 +1,5 @@
 ---
 title: "CSPViolationReport: documentURL property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSPViolationReport/documentURL"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,21 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}
 
-The **`documentURL`** property of the {{domxref("CSPViolationReport")}} dictionary is a string that represents the URL of the document or worker that violated the [Content Security Policy (CSP)](/en-US/docs/Web/HTTP/Guides/CSP).
+خصوصیت **`documentURL`** در دیکشنری {{domxref("CSPViolationReport")}} یک رشته (string) است که نشانی (URL) سند یا worker ای را نشان می‌دهد که [خط مشی امنیت محتوا (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) را نقض کرده است.
 
-## Value
+## مقدار
 
-A string containing the URL of the document or worker that violated the CSP.
+رشته‌ای که نشانی (URL) سند یا worker نقض‌کنندهٔ CSP را شامل می‌شود.
 
-## Examples
+## مثال‌ها
 
-### CSP inline script violation showing referrer
+### نقض CSP توسط اسکریپت درون‌خطی همراه با نمایش referrer
 
-This example triggers a CSP violation using an inline script, and reports the violation using a {{domxref("ReportingObserver")}}.
-We navigate to the page from another page and log the `referrer`, `documentURL`, and `blockedURL`.
+این مثال با استفاده از یک اسکریپت درون‌خطی (inline script) یک نقض CSP را فعال می‌کند و این نقض را با استفاده از یک {{domxref("ReportingObserver")}} گزارش می‌دهد. ما از صفحه‌ای دیگر به این صفحه می‌رویم و مقادیر `referrer`، `documentURL` و `blockedURL` را در کنسول ثبت می‌کنیم.
 
 #### HTML
 
-First we define our referrer page `/bounce/index.html`.
-This page just contains a link to another page `../report_sample/index.html`.
+ابتدا صفحهٔ ارجاع‌دهنده (referrer) خود یعنی `/bounce/index.html` را تعریف می‌کنیم. این صفحه فقط شامل یک پیوند به صفحهٔ دیگر یعنی `../report_sample/index.html` است.
 
 ```html
 <!doctype html>
@@ -47,9 +43,7 @@ This page just contains a link to another page `../report_sample/index.html`.
 </html>
 ```
 
-The `../report_sample/index.html` HTML file is defined below.
-This uses the [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) element to set the {{httpheader('Content-Security-Policy')}} `script-src-elem` to `self`, which allows scripts to be loaded from the same domain, but does not allow inline scripts to be executed.
-The document also includes an inline script, which will trigger a CSP violation.
+فایل HTML مربوط به `../report_sample/index.html` در ادامه تعریف شده است. این فایل با استفاده از عنصر [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) مقدار {{httpheader('Content-Security-Policy')}} را طوری تنظیم می‌کند که `script-src-elem` برابر با `self` باشد؛ این کار اجازه می‌دهد اسکریپت‌ها از همان دامنه بارگذاری شوند، اما اجرای اسکریپت‌های درون‌خطی را مجاز نمی‌داند. سند همچنین شامل یک اسکریپت درون‌خطی است که باعث فعال‌شدن یک نقض CSP می‌شود.
 
 ```html
 <!doctype html>
@@ -71,11 +65,9 @@ The document also includes an inline script, which will trigger a CSP violation.
 
 #### JavaScript (main.js)
 
-The report sample above also loads the external script `main.js`, which is shown below.
-Because this is loaded from the same domain as the HTML, it is not blocked by the CSP.
+نمونهٔ گزارش بالا همچنین اسکریپت خارجی `main.js` را بارگذاری می‌کند که در ادامه نشان داده شده است. از آنجا که این اسکریپت از همان دامنه‌ای که HTML از آن ارائه می‌شود بارگذاری شده است، توسط CSP مسدود نمی‌شود.
 
-The script creates a new {{domxref("ReportingObserver")}} to observe content violation reports of type `"csp-violation"`.
-Each time the callback function is invoked, we get the body of the first entry of the reports array, and use it to log the violation `documentURL`, `referrer`, and `blockedURL` to the console.
+اسکریپت یک {{domxref("ReportingObserver")}} جدید می‌سازد تا گزارش‌های نقض محتوا از نوع `"csp-violation"` را مشاهده کند. هر بار که تابع callback فراخوانی می‌شود، بدنهٔ (body) اولین ورودی آرایهٔ reports را می‌گیریم و از آن برای ثبت مقادیر `documentURL`، `referrer` و `blockedURL` مربوط به نقض در کنسول استفاده می‌کنیم.
 
 ```js
 // main.js
@@ -94,11 +86,11 @@ const observer = new ReportingObserver(
 observer.observe();
 ```
 
-Note that while there might be multiple reports in the returned array, for brevity we only log the values of the first element.
+توجه داشته باشید که اگرچه ممکن است چندین گزارش در آرایهٔ بازگشتی وجود داشته باشد، برای اختصار فقط مقادیر عنصر اول را ثبت می‌کنیم.
 
-#### Results
+#### نتایج
 
-The console output for the above code would look a bit like that below (the site will depend on how the pages are served):
+خروجی کنسول برای کد بالا تقریباً به شکل زیر خواهد بود (مقدار سایت به نحوهٔ ارائهٔ صفحات بستگی دارد):
 
 ```plain
 documentURL: http://127.0.0.1:9999/report_sample/
@@ -106,16 +98,16 @@ referrer: http://127.0.0.1:9999/bounce/
 blockedURL: inline
 ```
 
-Note that `referrer` is the page we navigated from, `documentURL` is the page with the CSP violation, and `blockedURL` is not a URL at all in this case, but an indication that the violation was caused by an inline script.
+توجه کنید که `referrer` صفحه‌ای است که از آن به این صفحه آمده‌ایم، `documentURL` صفحه‌ای است که نقض CSP در آن رخ داده است، و `blockedURL` در این مورد اصلاً یک URL نیست، بلکه نشانه‌ای است مبنی بر اینکه نقض توسط یک اسکریپت درون‌خطی ایجاد شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("SecurityPolicyViolationEvent.documentURI")}}
