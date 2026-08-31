@@ -1,11 +1,5 @@
 ---
 title: "CompositionEvent: locale property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CompositionEvent/locale"
-status: "needs-translation"
----
-
----
-title: "CompositionEvent: locale property"
 short-title: locale
 slug: Web/API/CompositionEvent/locale
 page-type: web-api-instance-property
@@ -17,28 +11,24 @@ browser-compat: api.CompositionEvent.locale
 
 {{deprecated_header}}{{APIRef("UI Events")}}{{Non-standard_header}}
 
-The **`locale`** read-only property of the
-{{domxref("CompositionEvent")}} interface returns the locale of current input method
-(for example, the keyboard layout locale if the composition is associated with an {{glossary("Input method editor")}}).
+ویژگی فقط‌خواندنی **`locale`** در رابط {{domxref("CompositionEvent")}}، locale (منطقه/زبان) روش ورودی فعلی را برمی‌گرداند (مثلاً locale چیدمان صفحه‌کلید، اگر ترکیب با یک {{glossary("Input method editor")}} مرتبط باشد).
 
 > [!WARNING]
-> Even for browsers supporting it, don't trust the value contained in this property.
-> Even if technically it is accessible, the way to set it up when creating a {{domxref("CompositionEvent")}}
-> is not guaranteed to be coherent.
+> حتی در مرورگرهایی که از این ویژگی پشتیبانی می‌کنند، به مقدار موجود در آن اعتماد نکنید.
+> حتی اگر از نظر فنی در دسترس باشد، روش مقداردهی آن هنگام ایجاد یک {{domxref("CompositionEvent")}} تضمین‌شده و سازگار نیست.
 
-## Value
+## مقدار
 
-A string representing the locale of current input method.
+یک رشته (string) که locale روش ورودی فعلی را نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
-This property was in early versions of different specifications. It is now only kept for compatibility purposes, and the way
-to set its value when creating a {{domxref("CompositionEvent")}} is [not well defined](https://github.com/w3c/uievents/issues/48).
+این ویژگی در نسخه‌های اولیه مشخصات مختلف وجود داشت. اکنون فقط به دلایل سازگاری نگهداری می‌شود و روش مقداردهی آن هنگام ایجاد یک {{domxref("CompositionEvent")}} [به‌خوبی تعریف نشده است](https://github.com/w3c/uievents/issues/48).
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CompositionEvent")}}
