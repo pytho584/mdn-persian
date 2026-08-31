@@ -1,7 +1,7 @@
 ---
 title: "AudioParam: setTargetAtTime() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/setTargetAtTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,86 +14,61 @@ browser-compat: api.AudioParam.setTargetAtTime
 
 {{ APIRef("Web Audio API") }}
 
-The `setTargetAtTime()` method of the
-{{domxref("AudioParam")}} interface schedules the start of a gradual change to the
-`AudioParam` value. This is useful for decay or release portions of ADSR
-envelopes.
+متد `setTargetAtTime()` از رابط {{domxref("AudioParam")}} شروع تغییر تدریجی به سمت مقدار `AudioParam` را زمان‌بندی می‌کند. این متد برای بخش‌های decay یا release در پوشه‌های ADSR مفید است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setTargetAtTime(target, startTime, timeConstant)
 ```
 
-### Parameters
+### پارامترها
 
 - `target`
-  - : The value the parameter will start to transition towards at the given start time.
+  - : مقداری که پارامتر در زمان شروع داده‌شده، انتقال به سمت آن را آغاز می‌کند.
 - `startTime`
-  - : The time that the exponential transition will begin, in the same time coordinate
-    system as {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}}. If it is less than or equal to
-    `AudioContext.currentTime`, the parameter will start changing immediately.
+  - : زمانی که انتقال نمایی آغاز می‌شود، در همان سیستم مختصات زمانی {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}}. اگر این مقدار کمتر یا مساوی `AudioContext.currentTime` باشد، پارامتر بلافاصله تغییر می‌کند.
 - `timeConstant`
-  - : The time-constant value, given in seconds, of an exponential approach to the target
-    value. The larger this value is, the slower the transition will be.
+  - : مقدار ثابت زمانی، بر حسب ثانیه، برای نزدیک‌شدن نمایی به مقدار هدف. هرچه این مقدار بزرگ‌تر باشد، انتقال کندتر خواهد بود.
 
-### Return value
+### مقدار بازگشتی
 
-A reference to this `AudioParam` object. Some older browser implementations
-of this interface return {{jsxref('undefined')}}.
+ارجاعی به این شیء `AudioParam`. برخی پیاده‌سازی‌های قدیمی‌تر مرورگر از این رابط، {{jsxref('undefined')}} را برمی‌گردانند.
 
-## Description
+## توضیحات
 
-The change starts at the time specified in `startTime` and exponentially
-moves towards the value given by the `target` parameter. The decay rate as
-defined by the `timeConstant` parameter is exponential; therefore the value
-will never reach `target` completely, but after each timestep of length
-`timeConstant`, the value will have approached `target` by
-another <math><semantics><mrow><mn>1</mn><mo>-</mo><msup><mi>e</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>≈</mo><mn>63.2</mn><mtext>%</mtext></mrow><annotation encoding="TeX">1 - e^{-1} \approx 63.2%</annotation></semantics></math>. For the complete formula (which uses a first-order linear continuous
-time-invariant system), check the [Web Audio specification](https://webaudio.github.io/web-audio-api/#dom-audioparam-settargetattime).
+تغییر در زمان مشخص‌شده در `startTime` آغاز می‌شود و به صورت نمایی به سمت مقدار داده‌شده توسط پارامتر `target` حرکت می‌کند. نرخ کاهش طبق پارامتر `timeConstant` نمایی است؛ بنابراین مقدار هرگز به طور کامل به `target` نمی‌رسد، اما پس از هر گام زمانی به طول `timeConstant`، مقدار به اندازه <math><semantics><mrow><mn>۱</mn><mo>-</mo><msup><mi>e</mi><mrow><mo>-</mo><mn>۱</mn></mrow></msup><mo>≈</mo><mn>۶۳٫۲</mn><mtext>٪</mtext></mrow><annotation encoding="TeX">1 - e^{-1} \approx 63.2%</annotation></semantics></math> به `target` نزدیک‌تر می‌شود. برای فرمول کامل (که از یک سیستم خطی مرتبه اول پیوسته در زمان استفاده می‌کند)، به [مشخصات Web Audio](https://webaudio.github.io/web-audio-api/#dom-audioparam-settargetattime) مراجعه کنید.
 
-If you absolutely need to reach the target value by a specific time, you can use
-{{domxref("AudioParam.exponentialRampToValueAtTime()")}}. However, for mathematical
-reasons, that method does not work if the current value or the target value is
-`0`.
+اگر قطعاً نیاز دارید که مقدار هدف را تا یک زمان مشخص برسید، می‌توانید از {{domxref("AudioParam.exponentialRampToValueAtTime()")}} استفاده کنید. با این حال، به دلایل ریاضی، آن متد زمانی کار نمی‌کند که مقدار فعلی یا مقدار هدف `0` باشد.
 
-### Choosing a good `timeConstant`
+### انتخاب یک `timeConstant` خوب
 
-As mentioned above, the value changes exponentially, with each
-`timeConstant` bringing you another 63.2% toward the target value. You don't
-have to worry about reaching the target value; once you are close enough, any further
-changes will be imperceptible to a human listener.
+همانطور که در بالا ذکر شد، مقدار به صورت نمایی تغییر می‌کند و هر `timeConstant` شما را ۶۳٫۲٪ دیگر به مقدار هدف نزدیک می‌کند. نیازی به نگرانی درباره رسیدن به مقدار هدف نیست؛ وقتی به اندازه کافی نزدیک شدید، تغییرات بعدی برای شنونده انسانی نامحسوس خواهد بود.
 
-Depending on your use case, getting 95% toward the target value may already be enough;
-in that case, you could set `timeConstant` to one third of the desired
-duration.
+بسته به مورد استفاده شما، رسیدن به ۹۵٪ از مقدار هدف ممکن است کافی باشد؛ در آن صورت، می‌توانید `timeConstant` را یک سوم مدت زمان مورد نظر قرار دهید.
 
-For more details, check the following table on how the value changes from 0% to 100% as
-the time progresses.
+برای جزئیات بیشتر، جدول زیر را بررسی کنید که چگونه مقدار با گذشت زمان از ۰٪ به ۱۰۰٪ تغییر می‌کند.
 
-| Time since `startTime` | Value                                                       |
+| زمان پس از `startTime` | مقدار                                                       |
 | ---------------------- | ----------------------------------------------------------- |
-| `0 * timeConstant`     | 0%                                                          |
-| `0.5 * timeConstant`   | 39.3%                                                       |
-| `1 * timeConstant`     | 63.2%                                                       |
-| `2 * timeConstant`     | 86.5%                                                       |
-| `3 * timeConstant`     | 95.0%                                                       |
-| `4 * timeConstant`     | 98.2%                                                       |
-| `5 * timeConstant`     | 99.3%                                                       |
-| `n * timeConstant`     | <math><semantics><mrow><mn>1</mn></mrow></semantics></math> |
+| `0 * timeConstant`     | ۰٪                                                          |
+| `0.5 * timeConstant`   | ۳۹٫۳٪                                                       |
+| `1 * timeConstant`     | ۶۳٫۲٪                                                       |
+| `2 * timeConstant`     | ۸۶٫۵٪                                                       |
+| `3 * timeConstant`     | ۹۵٫۰٪                                                       |
+| `4 * timeConstant`     | ۹۸٫۲٪                                                       |
+| `5 * timeConstant`     | ۹۹٫۳٪                                                       |
+| `n * timeConstant`     | <math><semantics><mrow><mn>۱</mn></mrow></semantics></math> |
 
 <!-- prettier-ignore-start -->
 <math display="block">
-  <semantics><mrow><mn>1</mn><mo>-</mo><msup><mi>e</mi><mrow><mo>-</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="TeX">1 - e^{-n}</annotation></semantics>
+  <semantics><mrow><mn>۱</mn><mo>-</mo><msup><mi>e</mi><mrow><mo>-</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="TeX">1 - e^{-n}</annotation></semantics>
 </math>
 <!-- prettier-ignore-end -->
 
-## Examples
+## مثال‌ها
 
-In this example, we have a media source with two control buttons (see the [webaudio-examples repo](https://github.com/mdn/webaudio-examples/blob/main/audio-param/index.html) for the source code, or [view the example live](https://mdn.github.io/webaudio-examples/audio-param/).) When these buttons are pressed, `setTargetAtTime()` is used to
-fade the gain value up to 1.0, and down to 0, respectively, with the effect starting
-after 1 second, and the length of time the effect lasts being controlled by the
-timeConstant.
+در این مثال، یک منبع رسانه‌ای با دو دکمه کنترلی داریم (برای کد منبع به [مخزن webaudio-examples](https://github.com/mdn/webaudio-examples/blob/main/audio-param/index.html) مراجعه کنید، یا [مثال زنده را ببینید](https://mdn.github.io/webaudio-examples/audio-param/)). وقتی این دکمه‌ها فشرده می‌شوند، `setTargetAtTime()` برای افزایش مقدار بهره به ۱٫۰ و کاهش آن به ۰ استفاده می‌شود، به طوری که اثر پس از ۱ ثانیه شروع می‌شود و مدت زمان اثر توسط timeConstant کنترل می‌شود.
 
 ```js
 // create audio context
@@ -131,14 +106,14 @@ atTimeMinus.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
