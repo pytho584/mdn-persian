@@ -1,10 +1,4 @@
 ---
-title: "CrashReportContext"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CrashReportContext"
-status: "needs-translation"
----
-
----
 title: CrashReportContext
 slug: Web/API/CrashReportContext
 page-type: web-api-interface
@@ -15,38 +9,37 @@ browser-compat: api.CrashReportContext
 
 {{APIRef("Reporting API")}}{{SeeCompatTable}}
 
-The `CrashReportContext` interface of the [Reporting API](/en-US/docs/Web/API/Reporting_API) provides methods enabling arbitrary data to be recorded for the current top-level browsing context, which is then added to a {{domxref("CrashReport")}} and sent to a reporting endpoint when a browser crash occurs.
+رابطِ `CrashReportContext` در [Reporting API](/en-US/docs/Web/API/Reporting_API) روش‌هایی را فراهم می‌کند که امکان ثبت داده‌های دلخواه برای «زمینهٔ مرور سطح بالا» فعلی را می‌دهند. این داده‌ها سپس به یک {{domxref("CrashReport")}} اضافه شده و در صورت بروز خرابی در مرورگر، به یک مقصد گزارش‌گیری ارسال می‌شوند.
 
-The `CrashReportContext` object for a particular browsing context is accessed via the {{domxref("Window.crashReport")}} property.
+برای دسترسی به شیء `CrashReportContext` مربوط به یک زمینهٔ مرور خاص، از ویژگی {{domxref("Window.crashReport")}} استفاده می‌شود.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("CrashReportContext.delete()")}} {{experimental_inline}}
-  - : Deletes a previously-stored key-value pair.
+  - : یک جفت کلید-مقدار را که قبلاً ذخیره شده است حذف می‌کند.
 - {{domxref("CrashReportContext.initialize()")}} {{experimental_inline}}
-  - : Initializes a portion of memory to be used for storing crash report data specified by {{domxref("CrashReportContext.set", "set()")}}. This must be called before any other method is invoked on the object.
+  - : بخشی از حافظه را برای ذخیره‌سازی داده‌های گزارش خرابی که توسط {{domxref("CrashReportContext.set", "set()")}} مشخص می‌شوند، مقداردهی اولیه می‌کند. این روش باید پیش از فراخوانی هر روش دیگری روی شیء فراخوانی شود.
 - {{domxref("CrashReportContext.set()")}} {{experimental_inline}}
-  - : Stores a key-value pair in the memory initialized by {{domxref("CrashReportContext.initialize", "initialize()")}}.
+  - : یک جفت کلید-مقدار را در حافظه‌ای که توسط {{domxref("CrashReportContext.initialize", "initialize()")}} مقداردهی شده است ذخیره می‌کند.
 
-## Description
+## توضیحات
 
-Crash reports containing arbitrary information can be sent to a server endpoint using the [Reporting API](/en-US/docs/Web/API/Reporting_API).
-This is useful because we can store detailed diagnostic information throughout the lifetime of an application and use the reports to debug crashes more effectively.
+گزارش‌های خرابی حاوی اطلاعات دلخواه را می‌توان با استفاده از [Reporting API](/en-US/docs/Web/API/Reporting_API) به یک سرور مقصد ارسال کرد. این قابلیت مفید است، زیرا می‌توانیم اطلاعات تشخیصی دقیق را در طول عمر یک برنامه ذخیره کنیم و برای اشکال‌زدایی مؤثرتر خرابی‌ها از این گزارش‌ها استفاده کنیم.
 
-The information is stored in a special key-value store, which is similar to [Web Storage](/en-US/docs/Web/API/Web_Storage_API) except that its scope is restricted to the current top-level origin, and it doesn't have a getter method available. It allows document-specific state information to be recorded and deleted. The top-level document will record diagnostic information relating to it and any embedded documents, and send any related crash reports.
+اطلاعات در یک ذخیره‌گاه کلید-مقدار ویژه ذخیره می‌شود که مشابه [Web Storage](/en-US/docs/Web/API/Web_Storage_API) است، با این تفاوت که دامنهٔ آن به مبدأ سطح بالای فعلی محدود است و متد دریافت‌کننده نیز در دسترس ندارد. این امکان را می‌دهد که اطلاعات وضعیت مخصوص سند ثبت و حذف شوند. سند سطح بالا اطلاعات تشخیصی مربوط به خود و هر سند جاسازی‌شده را ثبت می‌کند و گزارش‌های خرابی مربوطه را ارسال می‌کند.
 
-To use this API, a document first needs to call {{domxref("CrashReportContext.initialize", "window.crashReport.initialize()")}}, which takes as an argument a number specifying the maximum number of bytes that can be recorded in the key-value store by each individual {{domxref("CrashReportContext.set", "window.crashReport.set()")}} call. Values are then recorded using `set()`, and deleted using {{domxref("CrashReportContext.delete", "window.crashReport.delete()")}}.
+برای استفاده از این API، سند ابتدا باید {{domxref("CrashReportContext.initialize", "window.crashReport.initialize()")}} را فراخوانی کند. آرگومان این متد عددی است که حداکثر تعداد بایت‌هایی را مشخص می‌کند که هر فراخوانی جداگانهٔ {{domxref("CrashReportContext.set", "window.crashReport.set()")}} می‌تواند در ذخیره‌گاه کلید-مقدار ثبت کند. سپس مقادیر با استفاده از `set()` ثبت می‌شوند و با استفاده از {{domxref("CrashReportContext.delete", "window.crashReport.delete()")}} حذف می‌شوند.
 
-When the browser crashes, the information stored in the key-value store is added to a {{domxref("CrashReport")}} and sent to the [default reporting server endpoint](/en-US/docs/Web/HTTP/Reference/Headers/Reporting-Endpoints#default_reporting_endpoint).
+هنگامی که مرورگر خراب می‌شود (crash)، اطلاعات ذخیره‌شده در ذخیره‌گاه کلید-مقدار به یک {{domxref("CrashReport")}} اضافه شده و به [مقصد پیش‌فرض سرور گزارش‌گیری](/en-US/docs/Web/HTTP/Reference/Headers/Reporting-Endpoints#default_reporting_endpoint) ارسال می‌شود.
 
 > [!NOTE]
-> It is not possible to retrieve {{domxref("CrashReport")}}s using a {{domxref("ReportingObserver")}}.
+> امکان بازیابی {{domxref("CrashReport")}} با استفاده از {{domxref("ReportingObserver")}} وجود ندارد.
 
-## Examples
+## نمونه‌ها
 
-### Recording data in a crash report
+### ثبت داده در گزارش خرابی
 
-To start using crash reporting, A web application has to call {{domxref("CrashReportContext.initialize", "window.crashReport.initialize()")}}, specifying a maximum number of bytes that can be stored in the key-value store per `set()` call. Here we initialize the store with one kilobyte of storage space:
+برای شروع استفاده از گزارش‌گیری خرابی، یک برنامهٔ وب باید {{domxref("CrashReportContext.initialize", "window.crashReport.initialize()")}} را فراخوانی کند و حداکثر تعداد بایت‌هایی را تعیین کند که هر فراخوانی `set()` می‌تواند در ذخیره‌گاه کلید-مقدار ذخیره کند. در اینجا ذخیره‌گاه را با یک کیلوبایت فضای ذخیره‌سازی مقداردهی اولیه می‌کنیم:
 
 ```js
 window.crashReport.initialize(1024).then(() => {
@@ -54,7 +47,7 @@ window.crashReport.initialize(1024).then(() => {
 });
 ```
 
-Once the promise resolves, there are a couple of common strategies that can be adopted in subsequent code. For example, we could set a key-value pair that stores input data for a complex operation that might cause it to crash, then try running the operation with those inputs. If the browser crashes, the resulting {{domxref("CrashReport")}} will contain that data. If it doesn't crash, we can delete that key-value pair as it isn't relevant at this current time.
+پس از اینکه پرامیس (Promise) به حالت resolved درآمد، چند راهبرد رایج وجود دارد که می‌توان در کدهای بعدی به کار گرفت. برای مثال، می‌توانیم یک جفت کلید-مقدار تنظیم کنیم که داده‌های ورودی یک عملیات پیچیده را که ممکن است باعث خرابی شود ذخیره کند و سپس آن عملیات را با این ورودی‌ها اجرا کنیم. اگر مرورگر خراب شود، {{domxref("CrashReport")}} حاصل آن داده‌ها را در بر خواهد داشت. اگر خراب نشد، می‌توانیم آن جفت کلید-مقدار را حذف کنیم، زیرا در آن لحظه به آن نیازی نداریم.
 
 ```js
 const arg1 = "a";
@@ -64,9 +57,9 @@ complexOperationThatMightCrash(arg1, arg2);
 window.crashReport.delete("complex-operation-input");
 ```
 
-Because crash storage data is accessible among all same-origin documents under a traversable navigable, you might wish to prefix keys for certain common operations that multiple documents may perform at the same time. For example, imagine a common {{domxref("fetch()")}} operation is invoked in several different documents at different times, and certain conditions result in the operation causing a crash.
+از آنجا که داده‌های ذخیره‌سازی خرابی در همهٔ اسناد هم‌مبدأ زیر یک مسیر پیمایشی (traversable navigable) قابل دسترسی هستند، ممکن است بخواهید برای برخی عملیات رایج که چند سند ممکن است هم‌زمان انجام دهند، پیشوندی به کلیدها اضافه کنید. برای مثال، فرض کنید یک عملیات معمول {{domxref("fetch()")}} در چندین سند مختلف در زمان‌های مختلف فراخوانی می‌شود و شرایط خاصی منجر به خرابی در این عملیات می‌شود.
 
-To help identify where the `fetch()` was called at the time of a crash, we can adopt a prefixing strategy:
+برای کمک به شناسایی اینکه در زمان خرابی، `fetch()` از کجا فراخوانی شده است، می‌توانیم از راهبرد پیشوندگذاری استفاده کنیم:
 
 ```js
 async function fetchURL(url) {
@@ -77,16 +70,16 @@ async function fetchURL(url) {
 }
 ```
 
-This also prevents key-value pairs that identify the same issue occurring at different times or places from overwriting one another. In this case, we differentiate crash report data set in the top-level document versus data set in embedded documents.
+این کار همچنین از بازنویسی جفت‌های کلید-مقداری که یک مشکل یکسان را در زمان‌ها یا مکان‌های مختلف شناسایی می‌کنند، جلوگیری می‌کند. در این مورد، داده‌های گزارش خرابی ثبت‌شده در سند سطح بالا را از داده‌های ثبت‌شده در اسناد جاسازی‌شده متمایز می‌کنیم.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Reporting API](/en-US/docs/Web/API/Reporting_API)
