@@ -1,7 +1,7 @@
 ---
 title: "AudioParam: setValueCurveAtTime() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/setValueCurveAtTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,93 +14,73 @@ browser-compat: api.AudioParam.setValueCurveAtTime
 
 {{APIRef("Web Audio API")}}
 
-The
-**`setValueCurveAtTime()`** method of the
-{{domxref("AudioParam")}} interface schedules the parameter's value to change
-following a curve defined by a list of values.
+متد **`setValueCurveAtTime()`** از رابط {{domxref("AudioParam")}}، تغییر مقدار پارامتر را طبق یک منحنی تعریف‌شده توسط یک لیست از مقادیر زمان‌بندی می‌کند.
 
-The curve is a linear
-interpolation between the sequence of values defined in an array of floating-point
-values, which are scaled to fit into the given interval starting at
-`startTime` and a specific duration.
+این منحنی یک درون‌یابی خطی بین دنباله‌ای از مقادیر تعریف‌شده در یک آرایه از اعداد اعشاری است که به‌گونه‌ای مقیاس‌بندی می‌شوند تا در بازه زمانی مشخص‌شده از `startTime` و یک مدت زمان خاص قرار گیرند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setValueCurveAtTime(values, startTime, duration)
 ```
 
-### Parameters
+### پارامترها
 
 - `values`
-  - : An array of floating-point numbers representing the value curve the
-    {{domxref("AudioParam")}} will change through along the specified
-    `duration`. Every value in the array must be a finite number; if any value
-    is `NaN`, `Infinity`, or `-Infinity`, a {{jsxref("TypeError")}} exception is thrown.
+  - : آرایه‌ای از اعداد اعشاری که منحنی مقداری را نشان می‌دهد که {{domxref("AudioParam")}} در طول `duration` مشخص از آن عبور می‌کند. هر مقدار در آرایه باید یک عدد متناهی باشد؛ اگر هر مقداری `NaN`، `Infinity` یا `-Infinity` باشد، یک استثنای {{jsxref("TypeError")}} پرتاب می‌شود.
 - `startTime`
-  - : A double representing the time (in seconds) after the {{ domxref("AudioContext") }}
-    was first created that the change in value will happen. If this value is lower than
-    {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}}, it is clamped to `currentTime`.
+  - : یک عدد اعشاری که زمان (بر حسب ثانیه) پس از ایجاد اولین {{domxref("AudioContext")}} را نشان می‌دهد که تغییر در مقدار رخ خواهد داد. اگر این مقدار کمتر از {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}} باشد، به `currentTime` محدود می‌شود.
 - `duration`
-  - : A double representing the total time (in seconds) over which the parameter's
-    `value` will change following the specified curve. The specified values are
-    spaced equally along this duration.
+  - : یک عدد اعشاری که کل زمان (بر حسب ثانیه) را نشان می‌دهد که در طی آن `value` پارامتر طبق منحنی مشخص شده تغییر می‌کند. مقادیر مشخص‌شده به طور مساوی در طول این مدت زمان توزیع می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-A reference to this `AudioParam` object. Some older browser implementations
-of this interface return `undefined`.
+یک ارجاع به این شیء `AudioParam`. برخی پیاده‌سازی‌های قدیمی‌تر مرورگر از این رابط `undefined` را برمی‌گردانند.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the specified array of `values` has fewer than 2 items in it.
+  - : اگر آرایه `values` مشخص‌شده کمتر از ۲ آیتم داشته باشد، پرتاب می‌شود.
 - {{jsxref("RangeError")}}
-  - : Thrown if the specified `startTime` is either negative or a non-finite value, or
-    `duration` is not a finite, strictly positive number.
+  - : اگر `startTime` مشخص‌شده منفی یا غیرمتناهی باشد، یا `duration` یک عدد متناهی و مثبت دقیق نباشد، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if one or more of the values in the `values` array is non-finite. Non-finite
-    values are `NaN`, `Infinity`, and `-Infinity`.
+  - : اگر یک یا چند مقدار در آرایه `values` غیرمتناهی باشد، پرتاب می‌شود. مقادیر غیرمتناهی عبارتند از `NaN`، `Infinity` و `-Infinity`.
 
-## Usage notes
+## نکات استفاده
 
-When the parameter's value finishes following the curve, its value is guaranteed to
-match the last value in the set of values specified in the `values`
-parameter.
+هنگامی که مقدار پارامتر از دنباله منحنی پیروی می‌کند، مقدار آن تضمین می‌شود که با آخرین مقدار در مجموعه مقادیر مشخص‌شده در پارامتر `values` مطابقت داشته باشد.
 
 > [!NOTE]
-> Some early implementations of the Web Audio API did not ensure
-> this to be the case, causing unexpected results.
+> برخی پیاده‌سازی‌های اولیه Web Audio API این مورد را تضمین نمی‌کردند که منجر به نتایج غیرمنتظره می‌شد.
 
-## Examples
+## مثال‌ها
 
-In this example, we have a media source with a single button (see the [webaudio-examples repo](https://github.com/mdn/webaudio-examples/blob/main/audio-param/index.html) for the source code, or [view the example live](https://mdn.github.io/webaudio-examples/audio-param/).) When this button is pressed, `setValueCurveAtTime()` is used to
-change the gain value between the values contained in the waveArray array:
+در این مثال، ما یک منبع رسانه‌ای با یک دکمه داریم (برای کد منبع به [مخزن webaudio-examples](https://github.com/mdn/webaudio-examples/blob/main/audio-param/index.html) مراجعه کنید، یا [مثال زنده](https://mdn.github.io/webaudio-examples/audio-param/) را مشاهده کنید). هنگامی که این دکمه فشار داده می‌شود، از `setValueCurveAtTime()` برای تغییر مقدار بهره بین مقادیر موجود در آرایه `waveArray` استفاده می‌شود:
 
 ```js
-// create audio context
+// ایجاد زمینه صوتی
 const audioCtx = new AudioContext();
 
-// set basic variables for example
+// تنظیم متغیرهای پایه برای مثال
 const myAudio = document.querySelector("audio");
 
 const valueCurve = document.querySelector(".value-curve");
 
-// Create a MediaElementAudioSourceNode
-// Feed the HTMLMediaElement into it
+// ایجاد یک MediaElementAudioSourceNode
+// تغذیه HTMLMediaElement به آن
 const source = audioCtx.createMediaElementSource(myAudio);
 
-// Create a gain node and set its gain value to 0.5
+// ایجاد یک گره بهره و تنظیم مقدار بهره آن به 0.5
 const gainNode = audioCtx.createGain();
 gainNode.gain.value = 0.5;
 const currGain = gainNode.gain.value;
 
-// connect the AudioBufferSourceNode to the gainNode
-// and the gainNode to the destination
+// اتصال AudioBufferSourceNode به gainNode
+// و gainNode به مقصد
 source.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 
-// set button to do something onclick
+// تنظیم دکمه برای انجام کار در کلیک
 
 const waveArray = new Float32Array(9);
 waveArray[0] = 0.5;
@@ -118,16 +98,16 @@ valueCurve.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-Versions before Chrome 46 use nearest neighbor instead of linear interpolation.
+نسخه‌های قبل از Chrome 46 به جای درون‌یابی خطی از نزدیک‌ترین همسایه استفاده می‌کنند.
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
