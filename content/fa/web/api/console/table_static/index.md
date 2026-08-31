@@ -1,11 +1,5 @@
 ---
 title: "console: table() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/table_static"
-status: "needs-translation"
----
-
----
-title: "console: table() static method"
 short-title: table()
 slug: Web/API/console/table_static
 page-type: web-api-static-method
@@ -14,39 +8,39 @@ browser-compat: api.console.table_static
 
 {{APIRef("Console API")}} {{AvailableInWorkers}}
 
-The **`console.table()`** static method displays tabular data as a table.
+متد ایستای **`console.table()`** داده‌های جدولی را به صورت جدول نمایش می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 console.table(data)
 console.table(data, columns)
 ```
 
-### Parameters
+### پارامترها
 
 - `data`
-  - : The data to display. This must be either an array or an object. Each item in the array, or property in the object, is represented by a row in the table. The first column in the table is labeled `(index)` and its values are the array indices or the property names.
+  - : داده‌ای که باید نمایش داده شود. این داده باید یا یک آرایه باشد یا یک شیء. هر آیتم در آرایه، یا هر ویژگی در شیء، به‌عنوان یک ردیف در جدول نمایش داده می‌شود. ستون اول جدول با برچسب `(index)` مشخص می‌شود و مقادیر آن شامل اندیس‌های آرایه یا نام ویژگی‌ها است.
 
-    If the elements in the array, or properties in the object, are themselves arrays or objects, then their items or properties are enumerated in the row, one per column.
+    اگر عناصر آرایه یا ویژگی‌های شیء، خودشان آرایه یا شیء باشند، آنگاه آیتم‌ها یا ویژگی‌های آن‌ها در ردیف مربوطه، هر کدام در یک ستون جداگانه فهرست می‌شوند.
 
-    Note that in Firefox, `console.table()` is limited to displaying 1000 rows, including the heading row.
+    توجه داشته باشید که در فایرفاکس، `console.table()` محدود به نمایش ۱۰۰۰ ردیف (شامل ردیف عنوان) است.
 
 - `columns` {{optional_inline}}
-  - : An array which can be used to restrict the columns shown in the table. It contains indices, if each entry of `data` is an array, or property names, if each entry of `data` is an object. The resulting table then includes only columns for items which match the given indices or names.
+  - : آرایه‌ای که می‌تواند برای محدود کردن ستون‌های نمایش داده‌شده در جدول استفاده شود. این آرایه شامل اندیس‌ها است، اگر هر ورودی `data` یک آرایه باشد، یا شامل نام ویژگی‌ها است، اگر هر ورودی `data` یک شیء باشد. جدول حاصل فقط شامل ستون‌هایی می‌شود که با اندیس‌ها یا نام‌های داده‌شده مطابقت دارند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Collections of primitive types
+### مجموعه‌هایی از انواع اولیه
 
-The `data` argument may be an array or an object.
+آرگومان `data` می‌تواند یک آرایه یا یک شیء باشد.
 
 ```js
-// an array of strings
+// یک آرایه از رشته‌ها
 
 console.table(["apples", "oranges", "bananas"]);
 ```
@@ -58,7 +52,7 @@ console.table(["apples", "oranges", "bananas"]);
 | 2       | 'bananas' |
 
 ```js
-// an object whose properties are strings
+// یک شیء که ویژگی‌های آن رشته هستند
 
 function Person(firstName, lastName) {
   this.firstName = firstName;
@@ -75,12 +69,12 @@ console.table(me);
 | firstName | 'Tyrone' |
 | lastName  | 'Jones'  |
 
-### Collections of compound types
+### مجموعه‌هایی از انواع ترکیبی
 
-If the elements in the array, or properties in the object, are themselves arrays or objects, then their elements or properties are enumerated in the row, one per column:
+اگر عناصر آرایه یا ویژگی‌های شیء، خودشان آرایه یا شیء باشند، آنگاه عناصر یا ویژگی‌های آن‌ها در ردیف مربوطه، هر کدام در یک ستون جداگانه فهرست می‌شوند:
 
 ```js
-// an array of arrays
+// یک آرایه از آرایه‌ها
 
 const people = [
   ["Tyrone", "Jones"],
@@ -97,7 +91,7 @@ console.table(people);
 | 2       | 'Maria'  | 'Cruz'  |
 
 ```js
-// an array of objects
+// یک آرایه از اشیاء
 
 function Person(firstName, lastName) {
   this.firstName = firstName;
@@ -111,7 +105,7 @@ const maria = new Person("Maria", "Cruz");
 console.table([tyrone, janet, maria]);
 ```
 
-If the array contains objects, then the columns are labeled with the property name.
+اگر آرایه حاوی اشیاء باشد، ستون‌ها با نام ویژگی برچسب‌گذاری می‌شوند.
 
 | (index) | firstName | lastName |
 | ------- | --------- | -------- |
@@ -120,7 +114,7 @@ If the array contains objects, then the columns are labeled with the property na
 | 2       | 'Maria'   | 'Cruz'   |
 
 ```js
-// an object whose properties are objects
+// یک شیء که ویژگی‌های آن اشیاء هستند
 
 const family = {};
 
@@ -137,12 +131,12 @@ console.table(family);
 | father   | 'Tyrone'  | 'Jones'  |
 | mother   | 'Janet'   | 'Jones'  |
 
-### Restricting the columns displayed
+### محدود کردن ستون‌های نمایش داده‌شده
 
-By default, `console.table()` lists all elements in each row. You can use the optional `columns` parameter to select a subset of columns to display:
+به‌طور پیش‌فرض، `console.table()` همه عناصر را در هر ردیف فهرست می‌کند. می‌توانید از پارامتر اختیاری `columns` برای انتخاب زیرمجموعه‌ای از ستون‌ها جهت نمایش استفاده کنید:
 
 ```js
-// an array of objects, logging only firstName
+// یک آرایه از اشیاء، فقط logging firstName
 
 function Person(firstName, lastName) {
   this.firstName = firstName;
@@ -162,16 +156,16 @@ console.table([tyrone, janet, maria], ["firstName"]);
 | 1       | 'Janet'   |
 | 2       | 'Maria'   |
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Microsoft Edge's documentation for `console.table()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#table)
-- [Node.js documentation for `console.table()`](https://nodejs.org/docs/latest/api/console.html#consoletabletabulardata-properties)
-- [Google Chrome's documentation for `console.table()`](https://developer.chrome.com/docs/devtools/console/api/#table)
+- [مستندات مایکروسافت اج برای `console.table()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#table)
+- [مستندات Node.js برای `console.table()`](https://nodejs.org/docs/latest/api/console.html#consoletabletabulardata-properties)
+- [مستندات گوگل کروم برای `console.table()`](https://developer.chrome.com/docs/devtools/console/api/#table)
