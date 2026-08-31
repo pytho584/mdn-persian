@@ -1,11 +1,5 @@
 ---
 title: "console: debug() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/debug_static"
-status: "needs-translation"
----
-
----
-title: "console: debug() static method"
 short-title: debug()
 slug: Web/API/console/debug_static
 page-type: web-api-static-method
@@ -14,9 +8,9 @@ browser-compat: api.console.debug_static
 
 {{APIRef("Console API")}} {{AvailableInWorkers}}
 
-The **`console.debug()`** static method outputs a message to the console at the "debug" log level. The message is only displayed to the user if the console is configured to display debug output. In most cases, the log level is configured within the console UI. This log level might correspond to the `Debug` or `Verbose` log level.
+متد استاتیک **`console.debug()`** یک پیام را در سطح ثبت «debug» به کنسول خروجی می‌دهد. این پیام تنها زمانی به کاربر نمایش داده می‌شود که کنسول برای نمایش خروجی debug پیکربندی شده باشد. در بیشتر موارد، سطح ثبت از طریق رابط کاربری کنسول پیکربندی می‌شود. این سطح ثبت ممکن است با سطح ثبت `Debug` یا `Verbose` مطابقت داشته باشد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 console.debug(val1)
@@ -25,31 +19,31 @@ console.debug(msg)
 console.debug(msg, subst1, /* …, */ substN)
 ```
 
-### Parameters
+### پارامترها
 
 - `val1` … `valN`
-  - : A list of JavaScript values to output. A representation of each of these values is output to the console in the order given with some type of separation between each of them. There is a special case if `val1` is a string, which is described subsequently.
+  - : فهرستی از مقادیر جاوااسکریپت برای خروجی. نمایشی از هر یک از این مقادیر به ترتیب داده شده با نوعی جداسازی بین هر یک از آنها به کنسول خروجی داده می‌شود. یک حالت خاص وجود دارد اگر `val1` یک رشته باشد، که در ادامه توضیح داده شده است.
 - `msg`
-  - : A JavaScript string containing zero or more substitution strings, which are replaced with `subst1` through `substN` in consecutive order up to the number of substitution strings. See [Using string substitutions](/en-US/docs/Web/API/console#using_string_substitutions) for a description of how substitutions work.
+  - : یک رشته جاوااسکریپت حاوی صفر یا چند رشته جایگزین که به ترتیب متوالی با `subst1` تا `substN` تا تعداد رشته‌های جایگزین جایگزین می‌شوند. برای توضیح نحوه کار جایگزینی‌ها به [استفاده از جایگزینی رشته‌ها](/en-US/docs/Web/API/console#using_string_substitutions) مراجعه کنید.
 - `subst1` … `substN`
-  - : JavaScript values with which to replace substitution strings within `msg`. If there are more substitution values than there are substitution strings, the extra values are themselves written to the console after the detailed assertion message in the same manner as when there's no format string.
+  - : مقادیر جاوااسکریپت که برای جایگزینی رشته‌های جایگزین درون `msg` استفاده می‌شوند. اگر تعداد مقادیر جایگزین بیشتر از تعداد رشته‌های جایگزین باشد، مقادیر اضافی خودشان پس از پیام اظهار دقیق به همان روشی که وقتی رشته قالب وجود ندارد، به کنسول نوشته می‌شوند.
 
-See [Outputting text to the console](/en-US/docs/Web/API/console#outputting_text_to_the_console) in the documentation of {{domxref("console")}} for further details.
+برای جزئیات بیشتر، [خروجی متن به کنسول](/en-US/docs/Web/API/console#outputting_text_to_the_console) را در مستندات {{domxref("console")}} ببینید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Microsoft Edge's documentation for `console.debug()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#debug)
-- [Node.js documentation for `console.debug()`](https://nodejs.org/docs/latest/api/console.html#consoledebugdata-args)
-- [Google Chrome's documentation for `console.debug()`](https://developer.chrome.com/docs/devtools/console/api/#debug)
+- [مستندات Microsoft Edge برای `console.debug()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#debug)
+- [مستندات Node.js برای `console.debug()`](https://nodejs.org/docs/latest/api/console.html#consoledebugdata-args)
+- [مستندات Google Chrome برای `console.debug()`](https://developer.chrome.com/docs/devtools/console/api/#debug)
