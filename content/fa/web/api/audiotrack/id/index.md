@@ -1,11 +1,7 @@
 ---
 title: "AudioTrack: id property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack/id"
-status: "needs-translation"
----
-
----
-title: "AudioTrack: id property"
+translated_by: "n8n + AI"
 short-title: id
 slug: Web/API/AudioTrack/id
 page-type: web-api-instance-property
@@ -14,26 +10,18 @@ browser-compat: api.AudioTrack.id
 
 {{APIRef("HTML DOM")}}
 
-The **`id`** property contains a
-string which uniquely identifies the track represented by the
-**{{domxref("AudioTrack")}}**.
+ویژگی **`id`** شامل یک رشته است که به طور منحصربه‌فرد ردیف نمایش داده شده توسط **{{domxref("AudioTrack")}}** را شناسایی می‌کند.
 
-This ID can be used with the
-{{domxref("AudioTrackList.getTrackById()")}} method to locate a specific track within
-the media associated with a media element. The track ID can also be used as the fragment of a URL that loads the specific track
-(if the media supports media fragments).
+این ID می‌تواند با متد {{domxref("AudioTrackList.getTrackById()")}} برای یافتن یک ردیف خاص در رسانه مرتبط با یک عنصر رسانه استفاده شود. همچنین می‌توان از ID ردیف به عنوان بخشی از یک URL که ردیف خاص را بارگذاری می‌کند استفاده کرد (اگر رسانه از قطعات رسانه پشتیبانی کند).
 
-## Value
+## مقدار
 
-A string which identifies the track, suitable for use when calling
-{{domxref("AudioTrackList.getTrackById", "getTrackById()")}} on an
-{{domxref("AudioTrackList")}} such as the one specified by a media element's
-{{domxref("HTMLMediaElement.audioTracks", "audioTracks")}} property.
+یک رشته که ردیف را شناسایی می‌کند، مناسب برای استفاده هنگام فراخوانی {{domxref("AudioTrackList.getTrackById", "getTrackById()")}} در یک {{domxref("AudioTrackList")}} مانند آنچه توسط ویژگی {{domxref("HTMLMediaElement.audioTracks", "audioTracks")}} یک عنصر رسانه مشخص شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
