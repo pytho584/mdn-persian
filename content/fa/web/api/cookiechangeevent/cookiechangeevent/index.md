@@ -1,11 +1,5 @@
 ---
 title: "CookieChangeEvent: CookieChangeEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CookieChangeEvent/CookieChangeEvent"
-status: "needs-translation"
----
-
----
-title: "CookieChangeEvent: CookieChangeEvent() constructor"
 short-title: CookieChangeEvent()
 slug: Web/API/CookieChangeEvent/CookieChangeEvent
 page-type: web-api-constructor
@@ -14,39 +8,39 @@ browser-compat: api.CookieChangeEvent.CookieChangeEvent
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}
 
-The **`CookieChangeEvent()`** constructor creates a new {{domxref("CookieChangeEvent")}} object
-which is the event type of the {{domxref("CookieStore/change_event", "change")}} event fired at a {{domxref("CookieStore")}} when any cookie changes occur.
-This constructor is called by the browser when a change event occurs.
+سازندهٔ **`CookieChangeEvent()`** یک شیء جدید از نوع {{domxref("CookieChangeEvent")}} می‌سازد.
+این شیء نوع رویداد {{domxref("CookieStore/change_event", "change")}} است که هنگام هر تغییری در کوکی‌ها، روی یک {{domxref("CookieStore")}} فراخوانی می‌شود.
+این سازنده توسط مرورگر هنگام وقوع یک رویداد تغییر فراخوانی می‌شود.
 
 > [!NOTE]
-> This event constructor is generally not needed for production websites. It's primary use is for tests that require an instance of this event.
+> این سازندهٔ رویداد معمولاً برای وب‌سایت‌های تولیدی لازم نیست. کاربرد اصلی آن در تست‌هایی است که به نمونه‌ای از این رویداد نیاز دارند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new CookieChangeEvent(type)
 new CookieChangeEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event. It is case-sensitive and browsers always set it to `change`.
+  - : یک رشته که نام رویداد را مشخص می‌کند. این مقدار به حروف بزرگ و کوچک حساس است و مرورگرها همیشه آن را روی `change` قرار می‌دهند.
 - `options` {{Optional_Inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `changed` {{Optional_Inline}}
-      - : An array containing the changed cookies.
+      - : آرایه‌ای شامل کوکی‌های تغییر یافته.
     - `deleted` {{Optional_Inline}}
-      - : An array containing the deleted cookies.
+      - : آرایه‌ای شامل کوکی‌های حذف‌شده.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("CookieChangeEvent")}} object.
+یک شیء جدید از نوع {{domxref("CookieChangeEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
