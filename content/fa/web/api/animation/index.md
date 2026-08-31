@@ -1,7 +1,7 @@
 ---
 title: "Animation"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,75 +13,75 @@ browser-compat: api.Animation
 
 {{ APIRef("Web Animations") }}
 
-The **`Animation`** interface of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) represents a single animation player and provides playback controls and a timeline for an animation node or source.
+رابط **`Animation`** در [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) نمایانگر یک پخش‌کننده انیمیشن واحد است و کنترل‌های پخش و یک خط زمانی برای یک گره یا منبع انیمیشن فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("Animation.Animation()", "Animation()")}}
-  - : Creates a new `Animation` object instance.
+  - : یک نمونه جدید از شیء `Animation` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("Animation.currentTime")}}
-  - : The current time value of the animation in milliseconds, whether running or paused. If the animation lacks a {{domxref("AnimationTimeline", "timeline")}}, is inactive or hasn't been played yet, its value is `null`.
+  - : مقدار زمان فعلی انیمیشن بر حسب میلی‌ثانیه، چه در حال اجرا باشد چه مکث شده باشد. اگر انیمیشن فاقد {{domxref("AnimationTimeline", "timeline")}} باشد، غیرفعال باشد یا هنوز پخش نشده باشد، مقدار آن `null` است.
 - {{domxref("Animation.effect")}}
-  - : Gets and sets the {{domxref("AnimationEffect")}} associated with this animation. This will usually be a {{domxref("KeyframeEffect")}} object.
+  - : {{domxref("AnimationEffect")}} مرتبط با این انیمیشن را دریافت و تنظیم می‌کند. این معمولاً یک شیء {{domxref("KeyframeEffect")}} است.
 - {{domxref("Animation.finished")}} {{ReadOnlyInline}}
-  - : Returns the current finished Promise for this animation.
+  - : Promise تمام‌شده فعلی این انیمیشن را برمی‌گرداند.
 - {{domxref("Animation.id")}}
-  - : Gets and sets the `String` used to identify the animation.
+  - : `String` مورد استفاده برای شناسایی انیمیشن را دریافت و تنظیم می‌کند.
 - {{domxref("Animation.overallProgress")}} {{ReadOnlyInline}}
-  - : Returns a number between `0` and `1` indicating the animation's overall progress towards its finished state.
+  - : عددی بین `0` و `1` برمی‌گرداند که پیشرفت کلی انیمیشن را به سمت حالت تمام‌شده آن نشان می‌دهد.
 - {{domxref("Animation.pending")}} {{ReadOnlyInline}}
-  - : Indicates whether the animation is currently waiting for an asynchronous operation such as initiating playback or pausing a running animation.
+  - : نشان می‌دهد که آیا انیمیشن در حال حاضر منتظر یک عملیات ناهمگام مانند شروع پخش یا مکث کردن یک انیمیشن در حال اجرا است.
 - {{domxref("Animation.playState")}} {{ReadOnlyInline}}
-  - : Returns an enumerated value describing the playback state of an animation.
+  - : یک مقدار شمارشی (enumerated) را برمی‌گرداند که وضعیت پخش یک انیمیشن را توصیف می‌کند.
 - {{domxref("Animation.playbackRate")}}
-  - : Gets or sets the playback rate of the animation.
+  - : نرخ پخش انیمیشن را دریافت یا تنظیم می‌کند.
 - {{domxref("Animation.ready")}} {{ReadOnlyInline}}
-  - : Returns the current ready Promise for this animation.
+  - : Promise آماده فعلی این انیمیشن را برمی‌گرداند.
 - {{domxref("Animation.replaceState")}} {{ReadOnlyInline}}
-  - : Indicates whether the animation is active, has been automatically removed after being replaced by another animation, or has been explicitly persisted by a call to {{domxref("Animation.persist()")}}.
+  - : نشان می‌دهد که آیا انیمیشن فعال است، پس از جایگزین شدن با انیمیشن دیگر به‌طور خودکار حذف شده است، یا با فراخوانی {{domxref("Animation.persist()")}} به‌طور صریح حفظ شده است.
 - {{domxref("Animation.startTime")}}
-  - : Gets or sets the scheduled time when an animation's playback should begin.
+  - : زمان برنامه‌ریزی‌شده برای شروع پخش یک انیمیشن را دریافت یا تنظیم می‌کند.
 - {{domxref("Animation.timeline")}}
-  - : Gets or sets the {{domxref("AnimationTimeline", "timeline")}} associated with this animation.
+  - : {{domxref("AnimationTimeline", "timeline")}} مرتبط با این انیمیشن را دریافت یا تنظیم می‌کند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("Animation.cancel()")}}
-  - : Clears all {{domxref("KeyframeEffect", "keyframeEffects")}} caused by this animation and aborts its playback.
+  - : همه {{domxref("KeyframeEffect", "keyframeEffects")}} ایجادشده توسط این انیمیشن را پاک می‌کند و پخش آن را متوقف می‌کند.
 - {{domxref("Animation.commitStyles()")}}
-  - : Commits the current styling state of an animation to the element being animated, even after that animation has been removed. It will cause the current styling state to be written to the element being animated, in the form of properties inside a `style` attribute.
+  - : وضعیت استایل فعلی یک انیمیشن را به عنصر در حال انیمیشن اعمال می‌کند، حتی پس از حذف آن انیمیشن. این کار باعث می‌شود وضعیت استایل فعلی به شکل ویژگی‌هایی در یک ویژگی `style` به عنصر در حال انیمیشن نوشته شود.
 - {{domxref("Animation.finish()")}}
-  - : Seeks either end of an animation, depending on whether the animation is playing or reversing.
+  - : بسته به اینکه انیمیشن در حال پخش است یا در حال معکوس شدن، به یکی از انتهای انیمیشن می‌رود.
 - {{domxref("Animation.pause()")}}
-  - : Suspends playing of an animation.
+  - : پخش یک انیمیشن را به حالت تعلیق درمی‌آورد.
 - {{domxref("Animation.persist()")}}
-  - : Explicitly persists an animation, preventing it from being [automatically removed](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#automatically_removing_filling_animations) when another animation replaces it.
+  - : به‌طور صریح یک انیمیشن را حفظ می‌کند و از [حذف خودکار](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#automatically_removing_filling_animations) آن زمانی که انیمیشن دیگری جایگزینش می‌شود، جلوگیری می‌کند.
 - {{domxref("Animation.play()")}}
-  - : Starts or resumes playing of an animation, or begins the animation again if it previously finished.
+  - : پخش یک انیمیشن را شروع یا از سر می‌گیرد، یا اگر انیمیشن قبلاً تمام شده باشد، دوباره آن را آغاز می‌کند.
 - {{domxref("Animation.reverse()")}}
-  - : Reverses playback direction, stopping at the start of the animation. If the animation is finished or unplayed, it will play from end to beginning.
+  - : جهت پخش را معکوس می‌کند و در شروع انیمیشن متوقف می‌شود. اگر انیمیشن تمام شده باشد یا پخش نشده باشد، از انتها به ابتدا پخش می‌شود.
 - {{domxref("Animation.updatePlaybackRate()")}}
-  - : Sets the speed of an animation after first synchronizing its playback position.
+  - : سرعت یک انیمیشن را پس از همگام‌سازی اولیه موقعیت پخش آن تنظیم می‌کند.
 
-## Events
+## رویدادها
 
 - {{domxref("Animation.cancel_event", "cancel")}}
-  - : Fires when the {{domxref("Animation.cancel()")}} method is called or when the animation enters the `"idle"` play state from another state.
+  - : زمانی رخ می‌دهد که متد {{domxref("Animation.cancel()")}} فراخوانی شود یا زمانی که انیمیشن از حالتی دیگر وارد حالت پخش `"idle"` شود.
 - {{domxref("Animation.finish_event", "finish")}}
-  - : Fires when the animation finishes playing.
+  - : زمانی رخ می‌دهد که پخش انیمیشن به پایان برسد.
 - {{domxref("animation.remove_event", "remove")}}
-  - : Fires when the animation is [automatically removed](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#automatically_removing_filling_animations) by the browser.
+  - : زمانی رخ می‌دهد که انیمیشن توسط مرورگر [به‌طور خودکار حذف](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#automatically_removing_filling_animations) شود.
 
-## Accessibility concerns
+## نگرانی‌های دسترس‌پذیری
 
-Blinking and flashing animation can be problematic for people with cognitive concerns such as Attention Deficit Hyperactivity Disorder (ADHD). Additionally, certain kinds of motion can be a trigger for Vestibular disorders, epilepsy, and migraine, and Scotopic sensitivity.
+انیمیشن‌های چشمک‌زن و فلاش‌زننده می‌توانند برای افراد دارای نگرانی‌های شناختی مانند اختلال کم‌توجهی-بیش‌فعالی (ADHD) مشکل‌ساز باشند. علاوه بر این، انواع خاصی از حرکت می‌توانند محرکی برای اختلالات دهلیزی، صرع، میگرن و حساسیت اسکوتوپیک باشند.
 
-Consider providing a mechanism for pausing or disabling animation, as well as using the [Reduced Motion Media Query](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) (or equivalent [user agent client hint](/en-US/docs/Web/HTTP/Guides/Client_hints#user_agent_client_hints) {{HTTPHeader("Sec-CH-Prefers-Reduced-Motion")}}) to create a complimentary experience for users who have expressed a preference for no animated experiences.
+ارائه سازوکاری برای مکث یا غیرفعال کردن انیمیشن را در نظر بگیرید، همچنین از [Reduced Motion Media Query](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) (یا معادل [user agent client hint](/en-US/docs/Web/HTTP/Guides/Client_hints#user_agent_client_hints) {{HTTPHeader("Sec-CH-Prefers-Reduced-Motion")}}) برای ایجاد تجربه‌ای مکمل برای کاربرانی که ترجیح خود را برای عدم وجود تجربه‌های انیمیشنی ابراز کرده‌اند، استفاده کنید.
 
 - [Designing Safer Web Animation For Motion Sensitivity · An A List Apart Article](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/)
 - [An Introduction to the Reduced Motion Media Query | CSS-Tricks](https://css-tricks.com/introduction-reduced-motion-media-query/)
@@ -89,14 +89,14 @@ Consider providing a mechanism for pausing or disabling animation, as well as us
 - [MDN Understanding WCAG, Guideline 2.2 explanations](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Operable#guideline_2.2_%e2%80%94_enough_time_provide_users_enough_time_to_read_and_use_content)
 - [Understanding Success Criterion 2.2.2 | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-pause.html)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
