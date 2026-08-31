@@ -1,7 +1,7 @@
 ---
 title: "BatteryManager: levelchange event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/levelchange_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,11 +14,11 @@ browser-compat: api.BatteryManager.levelchange_event
 
 {{ApiRef("Battery API")}}{{securecontext_header}}
 
-The **`levelchange`** event of the {{domxref("BatteryManager")}} interface is fired when the battery {{domxref("BatteryManager.level", "level")}} property is updated.
+رویداد **`levelchange`** از رابط {{domxref("BatteryManager")}} زمانی که ویژگی {{domxref("BatteryManager.level", "level")}} باتری به‌روزرسانی می‌شود، فعال می‌گردد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد تنظیم نمایید.
 
 ```js-nolint
 addEventListener("levelchange", (event) => { })
@@ -26,11 +26,11 @@ addEventListener("levelchange", (event) => { })
 onlevelchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-_A generic {{domxref("Event")}}._
+یک {{domxref("Event")}} عمومی.
 
-## Example
+## مثال
 
 ### HTML
 
@@ -60,15 +60,15 @@ navigator.getBattery().then((battery) => {
 
 {{ EmbedLiveSample('Example', '100%', 40) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("BatteryManager")}}
 - {{domxref("Navigator.getBattery()")}}
