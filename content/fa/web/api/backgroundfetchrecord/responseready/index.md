@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRecord: responseReady property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRecord/responseReady"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,15 +16,15 @@ browser-compat: api.BackgroundFetchRecord.responseReady
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`responseReady`** read-only property of the {{domxref("BackgroundFetchRecord")}} interface returns a {{jsxref("Promise")}} that resolves with a {{domxref("Response")}}.
+ویژگی فقطخواندنی **`responseReady`** در رابط {{domxref("BackgroundFetchRecord")}} یک {{jsxref("Promise")}} را برمی‌گرداند که با یک {{domxref("Response")}} حل می‌شود.
 
-## Value
+## مقدار
 
-A {{jsxref("Promise")}} that resolves with a {{domxref("Response")}}.
+یک {{jsxref("Promise")}} که با یک {{domxref("Response")}} حل می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this example an individual `BackgroundFetchRecord` is returned using {{domxref("BackgroundFetchManager.fetch()","BackgroundFetchManager.fetch()")}}. The value of `responseReady` is returned and logged to the console.
+در این مثال، یک `BackgroundFetchRecord` به‌صورت تکی با استفاده از {{domxref("BackgroundFetchManager.fetch()","BackgroundFetchManager.fetch()")}} برگردانده می‌شود. مقدار `responseReady` برگردانده شده و در کنسول ثبت می‌شود.
 
 ```js
 bgFetch.match("/ep-5.mp3").then(async (record) => {
@@ -38,10 +38,10 @@ bgFetch.match("/ep-5.mp3").then(async (record) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
