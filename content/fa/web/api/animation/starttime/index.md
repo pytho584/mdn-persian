@@ -1,7 +1,8 @@
+```
 ---
 title: "Animation: startTime property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/startTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,19 +15,19 @@ browser-compat: api.Animation.startTime
 
 {{ APIRef("Web Animations") }}
 
-The **`Animation.startTime`** property of the {{domxref("Animation")}} interface is a double-precision floating-point value which indicates the scheduled time when an animation's playback should begin.
+ویژگی **`Animation.startTime`** در رابط {{domxref("Animation")}} یک مقدار اعشاری با دقت دوبرابر است که زمان برنامه‌ریزی‌شده‌ی آغاز پخش یک انیمیشن را نشان می‌دهد.
 
-An animation's **start time** is the time value of its {{domxref("DocumentTimeline","timeline")}} when its target {{domxref("KeyframeEffect")}} is scheduled to begin playback. An animation's **start time** is initially unresolved (meaning that it's `null` because it has no value).
+**زمان شروع** یک انیمیشن، مقدار زمانی {{domxref("DocumentTimeline","timeline")}} آن است که {{domxref("KeyframeEffect")}} هدف آن قرار است پخش را آغاز کند. **زمان شروع** یک انیمیشن در ابتدا تعیین‌نشده است (یعنی `null` است چون مقداری ندارد).
 
-## Value
+## مقدار
 
-A floating-point number representing the current time in milliseconds, or `null` if no time is set. You can read this value to determine what the start time is currently set at, and you can change this value to make the animation start at a different time.
+یک عدد اعشاری که زمان فعلی را بر حسب میلی‌ثانیه نشان می‌دهد، یا اگر زمانی تنظیم نشده باشد، `null` است. می‌توانید این مقدار را بخوانید تا بفهمید زمان شروع در حال حاضر روی چه مقداری تنظیم شده است، و می‌توانید این مقدار را تغییر دهید تا انیمیشن در زمان دیگری شروع شود.
 
-## Examples
+## مثال‌ها
 
-### Syncing different animations
+### همگام‌سازی انیمیشن‌های مختلف
 
-In the following example, we can sync all new animated cats by giving them all the same `startTime` as the original running cat. Note that this is only possible with the Web Animation API: it is impossible to sync two separate animations with CSS animations.
+در مثال زیر، می‌توانیم همه‌ی گربه‌های متحرک جدید را با دادن `startTime` یکسان با گربه‌ی در حال اجرای اصلی، همگام‌سازی کنیم. توجه داشته باشید که این کار فقط با Web Animation API امکان‌پذیر است: همگام‌سازی دو انیمیشن جداگانه با انیمیشن‌های CSS غیرممکن است.
 
 ```html hidden
 <div id="css-cats">
@@ -132,11 +133,11 @@ insertWAAPICat.addEventListener("click", () => {
 
 {{EmbedLiveSample("Syncing different animations", "", 600)}}
 
-## Reduced time precision
+## کاهش دقت زمان
 
-To offer protection against timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting), the precision of `animation.startTime` might get rounded depending on browser settings. In Firefox, the `privacy.reduceTimerPrecision` preference is enabled by default and defaults to 2ms. You can also enable `privacy.resistFingerprinting`, in which case the precision will be 100ms or the value of `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`, whichever is larger.
+برای محافظت در برابر حملات زمان‌بندی و [اثر انگشت](/en-US/docs/Glossary/Fingerprinting)، دقت `animation.startTime` ممکن است بسته به تنظیمات مرورگر گرد شود. در فایرفاکس، تنظیم `privacy.reduceTimerPrecision` به‌طور پیش‌فرض فعال است و به‌طور پیش‌فرض 2 میلی‌ثانیه است. همچنین می‌توانید `privacy.resistFingerprinting` را فعال کنید، که در این صورت دقت برابر با 100 میلی‌ثانیه یا مقدار `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`، هر کدام بزرگ‌تر باشد، خواهد بود.
 
-For example, with reduced time precision, the result of `animation.startTime` will always be a multiple of 0.002, or a multiple of 0.1 (or `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) with `privacy.resistFingerprinting` enabled.
+برای مثال، با کاهش دقت زمان، نتیجه‌ی `animation.startTime` همیشه مضربی از 0.002 خواهد بود، یا با فعال بودن `privacy.resistFingerprinting` مضربی از 0.1 (یا `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`).
 
 ```js
 // reduced time precision (2ms) in Firefox 60
@@ -156,16 +157,17 @@ animation.startTime;
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("Animation")}}
-- {{domxref("Animation.currentTime")}} for the current time of the animation.
+- {{domxref("Animation.currentTime")}} برای زمان جاری انیمیشن.
+```
