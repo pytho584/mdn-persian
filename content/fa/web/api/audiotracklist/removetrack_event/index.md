@@ -1,7 +1,7 @@
 ---
 title: "AudioTrackList: removetrack event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList/removetrack_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,11 +14,11 @@ browser-compat: api.AudioTrackList.removetrack_event
 
 {{APIRef("HTML DOM")}}
 
-The `removetrack` event is fired when a track is removed from an [`AudioTrackList`](/en-US/docs/Web/API/AudioTrackList).
+رویداد `removetrack` زمانی رخ می‌دهد که یک تراک از یک [`AudioTrackList`](/en-US/docs/Web/API/AudioTrackList) حذف شود.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک خاصیت مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("removetrack", (event) => { })
@@ -26,28 +26,27 @@ addEventListener("removetrack", (event) => { })
 onremovetrack = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("TrackEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("TrackEvent")}}. از {{domxref("Event")}} ارث می‌برد.
 
 {{InheritanceDiagram("TrackEvent")}}
 
-## Description
+## توضیحات
 
-### Trigger
+### محرک
 
-The `removetrack` event is called whenever a track is removed from the media
-element whose audio tracks are represented by the `AudioTrackList` object.
+رویداد `removetrack` هر زمان که یک تراک از عنصر رسانه‌ای که تراک‌های صوتی آن توسط شیء `AudioTrackList` نمایش داده می‌شوند حذف شود، فراخوانی می‌شود.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و حباب نمی‌زند.
 
-### Use cases
+### موارد استفاده
 
-You can use this event to react to a new audio track becoming unavailable. You may want to update your UI elements to disallow for user selection of the removed audio track, for example.
+می‌توانید از این رویداد برای واکنش به در دسترس نبودن یک تراک صوتی جدید استفاده کنید. به عنوان مثال، ممکن است بخواهید عناصر رابط کاربری خود را به‌روزرسانی کنید تا انتخاب تراک صوتی حذف‌شده توسط کاربر غیرمجاز شود.
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+با استفاده از `addEventListener()`:
 
 ```js
 const videoElement = document.querySelector("video");
@@ -57,7 +56,7 @@ videoElement.audioTracks.addEventListener("removetrack", (event) => {
 });
 ```
 
-Using the `onremovetrack` event handler property:
+با استفاده از خاصیت مدیریت رویداد `onremovetrack`:
 
 ```js
 const videoElement = document.querySelector("video");
@@ -67,18 +66,18 @@ videoElement.audioTracks.onremovetrack = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- Related events: [`addtrack`](/en-US/docs/Web/API/AudioTrackList/addtrack_event), [`change`](/en-US/docs/Web/API/AudioTrackList/change_event)
-- This event on [`VideoTrackList`](/en-US/docs/Web/API/VideoTrackList) targets: [`removetrack`](/en-US/docs/Web/API/VideoTrackList/removetrack_event)
-- This event on [`MediaStream`](/en-US/docs/Web/API/MediaStream) targets: [`removetrack`](/en-US/docs/Web/API/MediaStream/removetrack_event)
+- رویدادهای مرتبط: [`addtrack`](/en-US/docs/Web/API/AudioTrackList/addtrack_event)، [`change`](/en-US/docs/Web/API/AudioTrackList/change_event)
+- رویداد معادل در [`VideoTrackList`](/en-US/docs/Web/API/VideoTrackList): [`removetrack`](/en-US/docs/Web/API/VideoTrackList/removetrack_event)
+- رویداد معادل در [`MediaStream`](/en-US/docs/Web/API/MediaStream): [`removetrack`](/en-US/docs/Web/API/MediaStream/removetrack_event)
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [WebRTC](/en-US/docs/Web/API/WebRTC_API)
