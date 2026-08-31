@@ -1,7 +1,7 @@
 ---
 title: "Blob: size property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Blob/size"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,19 +14,15 @@ browser-compat: api.Blob.size
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`size`** read-only property of the {{domxref("Blob")}} interface returns
-the size of the {{domxref("Blob")}} or {{domxref("File")}} in bytes.
+ویژگی فقط‌خواندنی **`size`** از رابط {{domxref("Blob")}} اندازه {{domxref("Blob")}} یا {{domxref("File")}} را بر حسب بایت برمی‌گرداند.
 
-## Value
+## مقدار
 
-The number of bytes of data contained within the `Blob` (or
-`Blob`-based object, such as a {{domxref("File")}}).
+تعداد بایت‌های داده موجود درون `Blob` (یا شیء مبتنی بر `Blob`، مانند {{domxref("File")}}).
 
-## Examples
+## مثال‌ها
 
-This example uses an {{HTMLElement("input")}} element of type `file` to ask
-the user for a group of files, then iterates over those files outputting their names and
-lengths in bytes.
+این مثال از یک عنصر {{HTMLElement("input")}} از نوع `file` استفاده می‌کند تا از کاربر یک گروه از فایل‌ها را درخواست کند، سپس روی آن فایل‌ها تکرار کرده و نام و اندازه آن‌ها را بر حسب بایت نمایش می‌دهد.
 
 ### HTML
 
@@ -57,19 +53,19 @@ input.addEventListener("change", (event) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Blob")}}
-- [Using files from web applications](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
+- [استفاده از فایل‌ها در برنامه‌های وب](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
