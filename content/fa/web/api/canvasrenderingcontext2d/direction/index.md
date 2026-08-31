@@ -1,9 +1,4 @@
----
-title: "CanvasRenderingContext2D: direction property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/direction"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "CanvasRenderingContext2D: direction property"
 short-title: direction
@@ -14,30 +9,28 @@ browser-compat: api.CanvasRenderingContext2D.direction
 
 {{APIRef("Canvas API")}}
 
-The
+ویژگی
 **`CanvasRenderingContext2D.direction`**
-property of the Canvas 2D API specifies the current text direction used to draw text.
+از Canvas 2D API جهت فعلی متن را برای رسم متن مشخص می‌کند.
 
-## Value
+## مقدار
 
-Possible values:
+مقادیر ممکن:
 
 - `"ltr"`
-  - : The text direction is left-to-right.
+  - : جهت متن از چپ به راست است.
 - `"rtl"`
-  - : The text direction is right-to-left.
+  - : جهت متن از راست به چپ است.
 - `"inherit"`
-  - : The text direction is inherited from the {{HTMLElement("canvas")}} element or the
-    {{domxref("Document")}} as appropriate. Default value.
+  - : جهت متن از عنصر {{HTMLElement("canvas")}} یا {{domxref("Document")}} به‌طور مناسب به ارث برده می‌شود. مقدار پیش‌فرض.
 
-The default value is `"inherit"`.
+مقدار پیش‌فرض `"inherit"` است.
 
-## Examples
+## مثال‌ها
 
-### Changing text direction
+### تغییر جهت متن
 
-This example draws two pieces of text. The first one is left-to-right, and the second
-is right-to-left. Note that "Hi!" in `ltr` becomes "!Hi" in `rtl`.
+این مثال دو قطعه متن رسم می‌کند. اولی از چپ به راست و دومی از راست به چپ است. توجه داشته باشید که «سلام!» در حالت `ltr` در حالت `rtl` به «!سلام» تبدیل می‌شود.
 
 #### HTML
 
@@ -57,18 +50,19 @@ ctx.direction = "rtl";
 ctx.fillText("Hi!", 150, 130);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Changing_text_direction', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این ویژگی: {{domxref("CanvasRenderingContext2D")}}
+```
