@@ -1,7 +1,7 @@
 ---
 title: "AudioBuffer: AudioBuffer() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/AudioBuffer"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,46 +14,36 @@ browser-compat: api.AudioBuffer.AudioBuffer
 
 {{APIRef("Web Audio API")}}
 
-The **`AudioBuffer`** constructor of
-the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) creates a new
-{{domxref("AudioBuffer")}} object.
+سازنده **`AudioBuffer`** از [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) یک شیء جدید {{domxref("AudioBuffer")}} ایجاد می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new AudioBuffer(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options`
-  - : Options are as follows:
+  - : گزینه‌ها به شرح زیر هستند:
     - `length`
-      - : The size of the audio buffer in sample-frames. To determine
-        the `length` to use for a specific number of seconds of audio, use
-        `numSeconds * sampleRate`.
+      - : اندازه بافر صوتی در فریم‌های نمونه. برای تعیین `length` مورد استفاده برای تعداد مشخصی ثانیه صدا، از `numSeconds * sampleRate` استفاده کنید.
     - `numberOfChannels`
-      - : The number of channels for the buffer. The
-        default is 1, and all user agents are required to support at least 32 channels.
+      - : تعداد کانال‌های بافر. پیش‌فرض ۱ است و همه عوامل کاربر موظف‌اند حداقل ۳۲ کانال را پشتیبانی کنند.
     - `sampleRate`
-      - : The sample rate in Hz for the buffer. The default is
-        the sample rate of the `context` used in constructing this object. User
-        agents are required to support sample rates from 8,000 Hz to 96,000 Hz (but are
-        allowed to go farther outside this range).
+      - : نرخ نمونه‌برداری بر حسب هرتز برای بافر. پیش‌فرض، نرخ نمونه‌برداری `context` مورد استفاده در ساخت این شیء است. عوامل کاربر موظف‌اند نرخ‌های نمونه‌برداری از ۸۰۰۰ هرتز تا ۹۶۰۰۰ هرتز را پشتیبانی کنند (اما مجازند فراتر از این محدوده نیز بروند).
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if one or more of the options are negative or otherwise has an invalid value
-    (such as `numberOfChannels` being higher than supported,
-    or a `sampleRate` outside the nominal range).
+  - : در صورتی پرتاب می‌شود که یک یا چند گزینه منفی باشند یا به شکل دیگری مقدار نامعتبر داشته باشند (مانند `numberOfChannels` بالاتر از حد پشتیبانی‌شده، یا `sampleRate` خارج از محدوده اسمی).
 - {{jsxref("RangeError")}}
-  - : Thrown if there isn't enough memory available to allocate the buffer.
+  - : در صورتی پرتاب می‌شود که حافظه کافی برای تخصیص بافر موجود نباشد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
