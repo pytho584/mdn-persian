@@ -1,7 +1,7 @@
 ---
 title: "ARIA: switch role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/switch_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,9 +15,9 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The ARIA **`switch`** role is functionally identical to the [checkbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role) role, except that instead of representing "checked" and "unchecked" states, which are fairly generic in meaning, the `switch` role represents the states "on" and "off."
+نقش ARIA **`switch`** از نظر عملکردی با نقش [checkbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role) یکسان است، با این تفاوت که به‌جای نمایش حالت‌های «تیک‌خورده» و «تیک‌نخورده» که از نظر معنایی نسبتاً عمومی هستند، نقش `switch` حالت‌های «روشن» و «خاموش» را نمایش می‌دهد.
 
-This example creates a widget and assigns the ARIA `switch` role to it.
+این مثال یک ویجت می‌سازد و نقش ARIA `switch` را به آن اختصاص می‌دهد.
 
 ```html
 <button
@@ -32,76 +32,76 @@ This example creates a widget and assigns the ARIA `switch` role to it.
 <label for="speakerPower" class="switch">Speaker power</label>
 ```
 
-## Description
+## توضیحات
 
-The ARIA **`switch`** role is identical to the [checkbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role) role, except instead of being "checked" or "unchecked", it is either "on" or "off". Like the [checkbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role) role, the [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) attribute is required. The two possible values are `true` and `false`. Unlike an `<input type="checkbox">` or `role="checkbox"`, there is no `indeterminate` or `mixed` state. The `switch` role does not support the value `mixed` for the `aria-checked` attribute; assigning a value of `mixed` to a `switch` instead sets the value to `false`.
+نقش ARIA **`switch`** با نقش [checkbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role) یکسان است، با این تفاوت که به‌جای «تیک‌خورده» یا «تیک‌نخورده» بودن، «روشن» یا «خاموش» است. مانند نقش [checkbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)، ویژگی [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) الزامی است. دو مقدار ممکن `true` و `false` هستند. برخلاف `<input type="checkbox">` یا `role="checkbox"`، حالت `indeterminate` یا `mixed` وجود ندارد. نقش `switch` از مقدار `mixed` برای ویژگی `aria-checked` پشتیبانی نمی‌کند؛ در صورت اختصاص مقدار `mixed` به یک `switch`، مقدار به‌جای آن روی `false` تنظیم می‌شود.
 
-Assistive technologies may choose to represent `switch` widgets with a specialized presentation to reflect the notion of an on/off switch.
+فناوری‌های کمکی ممکن است انتخاب کنند که ویجت‌های `switch` را با ارائه‌ای تخصصی نمایش دهند تا مفهوم کلید روشن/خاموش را بازتاب کنند.
 
-Since a switch is an interactive control, it must be focusable and keyboard accessible. If the role is applied to a non-focusable element, use the `tabindex` attribute to change this. The expected keyboard shortcut for toggling the value of a switch is the <kbd>Space</kbd> key. The developer is required to change the value of the `aria-checked` attribute dynamically when the switch is toggled.
+از آنجا که یک سوئیچ یک کنترل تعاملی است، باید قابل فوکوس و قابل دسترسی با صفحه‌کلید باشد. اگر نقش روی عنصری اعمال شود که قابل فوکوس نیست، از ویژگی `tabindex` برای تغییر این وضعیت استفاده کنید. میانبر صفحه‌کلید مورد انتظار برای تغییر مقدار یک سوئیچ، کلید <kbd>Space</kbd> است. توسعه‌دهنده موظف است هنگام تغییر وضعیت سوئیچ، مقدار ویژگی `aria-checked` را به‌صورت پویا تغییر دهد.
 
-### All descendants are presentational
+### همه فرزندان، نمایشی (presentational) هستند
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in a `switch`. To deal with this limitation, browsers, automatically apply role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) to all descendant elements of any `switch` element as it is a role that does not support semantic children.
+برخی از انواع اجزای رابط کاربری، وقتی در API دسترس‌پذیری یک پلتفرم نمایش داده می‌شوند، فقط می‌توانند متن داشته باشند. APIهای دسترس‌پذیری راهی برای نمایش عناصر معنایی داخل یک `switch` ندارند. برای مقابله با این محدودیت، مرورگرها به‌طور خودکار نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را به همه عناصر فرزند هر عنصر `switch` اعمال می‌کنند، زیرا این نقشی است که از فرزندان معنایی پشتیبانی نمی‌کند.
 
-For example, consider the following `switch` element, which contains a heading.
+برای مثال، عنصر `switch` زیر را در نظر بگیرید که شامل یک عنوان است.
 
 ```html
 <div role="switch"><h3>Title of my switch</h3></div>
 ```
 
-Because descendants of `switch` are presentational, the following code is equivalent:
+چون فرزندان `switch` نمایشی هستند، کد زیر معادل است:
 
 ```html
 <div role="switch"><h3 role="presentation">Title of my switch</h3></div>
 ```
 
-From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree):
+از دید کاربر فناوری کمکی، عنوان وجود ندارد، زیرا قطعه‌کدهای قبلی با کد زیر در [درخت دسترس‌پذیری](/en-US/docs/Glossary/Accessibility_tree) معادل هستند:
 
 ```html
 <div role="switch">Title of my switch</div>
 ```
 
-### Associated ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های ARIA مرتبط
 
-- [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) attribute
-  - : The `aria-checked` attribute is **required** when using the `switch` role, as it represents the current state of the widget that the `switch` role is applied to. A value of `true` represents the "on" state; `false` represents the "off" state; a value of `mixed` is not supported by the switch role, and is treated as `false`.
-- [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly) attribute
-  - : The `aria-readonly` attribute is supported by the `switch` role. It indicates whether the widget's state is editable by the user. A value of `false` means that the user _can_ change the widget's state; a value of `true` means that the user _cannot_ change the widget's state. The default value is `false`.
+- ویژگی [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked)
+  - : ویژگی `aria-checked` هنگام استفاده از نقش `switch` **الزامی** است، زیرا حالت فعلی ویجتی را نشان می‌دهد که نقش `switch` روی آن اعمال شده است. مقدار `true` حالت «روشن» و مقدار `false` حالت «خاموش» را نشان می‌دهد؛ مقدار `mixed` توسط نقش `switch` پشتیبانی نمی‌شود و به‌عنوان `false` در نظر گرفته می‌شود.
+- ویژگی [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly)
+  - : ویژگی `aria-readonly` توسط نقش `switch` پشتیبانی می‌شود. مشخص می‌کند که آیا حالت ویجت توسط کاربر قابل ویرایش است یا خیر. مقدار `false` یعنی کاربر _می‌تواند_ حالت ویجت را تغییر دهد؛ مقدار `true` یعنی کاربر _نمی‌تواند_ حالت ویجت را تغییر دهد. مقدار پیش‌فرض `false` است.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-- Handler for click events
-  - : When the user clicks on the switch widget, a [click event](/en-US/docs/Web/API/Element/click_event) is fired, which must be handled in order to change the state of the widget.
-- Changing the `aria-checked` attribute
-  - : When a click event is fired on the switch widget, the handler must change the value of the `aria-checked` attribute from `true` to `false`, or vice versa.
+- کنترل‌کننده رویداد کلیک
+  - : وقتی کاربر روی ویجت سوئیچ کلیک می‌کند، یک [رویداد کلیک](/en-US/docs/Web/API/Element/click_event) رخ می‌دهد که برای تغییر حالت ویجت باید مدیریت شود.
+- تغییر ویژگی `aria-checked`
+  - : وقتی رویداد کلیک روی ویجت سوئیچ رخ می‌دهد، کنترل‌کننده باید مقدار ویژگی `aria-checked` را از `true` به `false` یا برعکس تغییر دهد.
 
-## Possible effects on user agents and assistive technology
+### اثرات احتمالی بر عامل‌های کاربر و فناوری‌های کمکی
 
-When the `switch` role is added to an element, the {{Glossary("user agent")}} handles it like this:
+هنگامی که نقش `switch` به یک عنصر اضافه می‌شود، {{Glossary("user agent")}} آن را به این صورت مدیریت می‌کند:
 
-- The element is exposed to the system's accessibility infrastructure as having the `switch` role.
-- When the `aria-checked` attribute's value changes, an accessible event is fired using the system's accessibility API if one is available and it supports the `switch` role.
-- All elements that are descendants of an element with the `switch` role applied to it are automatically assigned role `presentation`. This prevents elements that are used to construct the switch from being interacted with individually by assistive technologies. Text in these elements remains visible to the user agent and may be read or otherwise delivered to the user, unless it's expressly hidden using {{cssxref("display", "display: none")}} or `aria-hidden="true"`.
+- عنصر به زیرساخت دسترس‌پذیری سیستم به‌عنوان عنصری با نقش `switch` معرفی می‌شود.
+- وقتی مقدار ویژگی `aria-checked` تغییر کند، در صورت وجود API دسترس‌پذیری سیستم و پشتیبانی آن از نقش `switch`، یک رویداد دسترس‌پذیر از طریق API ارسال می‌شود.
+- همه عناصری که فرزند عنصری با نقش `switch` هستند به‌طور خودکار نقش `presentation` می‌گیرند. این کار از تعامل جداگانه فناوری‌های کمکی با عناصری که برای ساخت سوئیچ استفاده شده‌اند جلوگیری می‌کند. متن موجود در این عناصر برای عامل کاربر قابل مشاهده می‌ماند و ممکن است برای کاربر خوانده شود یا به شکل دیگری ارائه شود، مگر اینکه صریحاً با {{cssxref("display", "display: none")}} یا `aria-hidden="true"` پنهان شده باشد.
 
-The assistive technology, if it supports the `switch` role, responds by doing the following:
+فناوری کمکی، در صورت پشتیبانی از نقش `switch`، به این صورت واکنش نشان می‌دهد:
 
-- Screen readers should announce the element as a switch, optionally providing instructions as to how to activate the switch.
+- صفحه‌خوان‌ها باید عنصر را به‌عنوان یک سوئیچ اعلام کنند و به‌صورت اختیاری دستورالعمل‌هایی برای فعال کردن سوئیچ ارائه دهند.
 
 > [!NOTE]
-> There are varying opinions on how assistive technologies should handle this role; the above is a suggested practice and may differ from other sources.
+> دیدگاه‌های متفاوتی درباره نحوه مدیریت این نقش توسط فناوری‌های کمکی وجود دارد؛ مطالب بالا یک رویه پیشنهادی است و ممکن است با منابع دیگر متفاوت باشد.
 
-## Examples
+## مثال‌ها
 
-The following examples should help you understand how to apply and use the `switch` role.
+مثال‌های زیر به شما کمک می‌کنند تا نحوه اعمال و استفاده از نقش `switch` را درک کنید.
 
-### Adding the switch role in ARIA
+### افزودن نقش switch در ARIA
 
-This example creates a widget and assigns the ARIA `switch` role to it. The button is styled with an appearance reminiscent of an on/off power switch.
+این مثال یک ویجت می‌سازد و نقش ARIA `switch` را به آن اختصاص می‌دهد. دکمه با ظاهری شبیه به کلید روشن/خاموش برق استایل‌دهی شده است.
 
 #### HTML
 
-A switch is implemented as a {{HTMLElement("button")}} element, which is initially checked courtesy of its `aria-checked` attribute being set to `"true"`. The switch has two child elements containing the "off" and "on" labels and is followed by a {{HTMLElement("label")}} identifying the switch.
+یک سوئیچ به‌صورت عنصر {{HTMLElement("button")}} پیاده‌سازی می‌شود که ابتدا به لطف قرار گرفتن ویژگی `aria-checked` روی `"true"`، در حالت تیک‌خورده قرار دارد. سوئیچ دو عنصر فرزند دارد که برچسب‌های «خاموش» و «روشن» را شامل می‌شوند و به دنبال آن یک {{HTMLElement("label")}} قرار دارد که سوئیچ را شناسایی می‌کند.
 
 ```html
 <button role="switch" aria-checked="true" id="speakerPower" class="switch">
@@ -113,7 +113,7 @@ A switch is implemented as a {{HTMLElement("button")}} element, which is initial
 
 #### JavaScript
 
-This JavaScript code defines and applies a function to handle click events on switch widgets. The function changes the `aria-checked` attribute from `true` to `false`, or vice versa.
+این کد جاوااسکریپت تابعی را تعریف و اعمال می‌کند که رویدادهای کلیک روی ویجت‌های سوئیچ را مدیریت می‌کند. این تابع مقدار ویژگی `aria-checked` را از `true` به `false` یا برعکس تغییر می‌دهد.
 
 ```js
 document.querySelectorAll(".switch").forEach((theSwitch) => {
@@ -133,7 +133,7 @@ function handleClickEvent(evt) {
 
 #### CSS
 
-The purpose of the CSS is to establish a look and feel for the switch that's reminiscent of the power switch paradigm.
+هدف CSS ایجاد ظاهر و حسی برای سوئیچ است که یادآور الگوی کلید برق باشد.
 
 ```css
 button.switch {
@@ -179,19 +179,19 @@ label.switch {
 }
 ```
 
-The most interesting part is probably the use of attribute selectors and the {{cssxref(":first-child")}} and {{cssxref(":last-child")}} pseudo-classes to do all the heavy lifting of changing the appearance of the switch based on whether it's on or off.
+جالب‌ترین بخش احتمالاً استفاده از انتخابگرهای ویژگی و شبه‌کلاس‌های {{cssxref(":first-child")}} و {{cssxref(":last-child")}} است که کار اصلی تغییر ظاهر سوئیچ را بر اساس روشن یا خاموش بودن آن انجام می‌دهند.
 
-#### Result
+#### نتیجه
 
-The result looks like this:
+نتیجه به این شکل است:
 
 {{EmbedLiveSample("Adding_the_switch_role_in_ARIA", 600, 40)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [ARIA: checkbox role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
 - [`<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox)
