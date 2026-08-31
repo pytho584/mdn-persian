@@ -1,11 +1,5 @@
 ---
 title: "Crypto: randomUUID() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID"
-status: "needs-translation"
----
-
----
-title: "Crypto: randomUUID() method"
 short-title: randomUUID()
 slug: Web/API/Crypto/randomUUID
 page-type: web-api-instance-method
@@ -14,23 +8,23 @@ browser-compat: api.Crypto.randomUUID
 
 {{APIRef("Web Crypto API")}}{{SecureContext_header}}{{AvailableInWorkers}}
 
-The **`randomUUID()`** method of the {{domxref("Crypto")}} interface is used to generate a v4 {{Glossary("UUID")}} using a cryptographically secure random number generator.
+متد **`randomUUID()`** در رابط (interface) {{domxref("Crypto")}} برای تولید یک {{Glossary("UUID")}} نسخه ۴ با استفاده از یک مولد اعداد تصادفی امن از نظر رمزنگاری (cryptographically secure random number generator) به کار می‌رود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 randomUUID()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A string containing a randomly generated, 36 character long v4 UUID.
+یک رشته (string) شامل یک UUID نسخه ۴ به طول ۳۶ کاراکتر که به‌صورت تصادفی تولید شده است.
 
-## Examples
+## مثال‌ها
 
 ```js
 /* Assuming that self.crypto.randomUUID() is available */
@@ -39,15 +33,15 @@ let uuid = self.crypto.randomUUID();
 console.log(uuid); // for example "36b8f84d-df4e-4d49-b662-bcde71a8764f"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API)
-- {{ domxref("Crypto.getRandomValues") }}, a source for arbitrary amounts of secure random bytes.
+- {{ domxref("Crypto.getRandomValues") }}، یک منبع برای مقادیر دلخواه بایت‌های تصادفی امن.
