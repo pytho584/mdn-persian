@@ -1,7 +1,7 @@
 ---
 title: "AudioListener: setOrientation() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/setOrientation"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,52 +16,52 @@ browser-compat: api.AudioListener.setOrientation
 
 {{ APIRef("Web Audio API") }}{{deprecated_header}}
 
-The `setOrientation()` method of the {{ domxref("AudioListener") }} interface defines the orientation of the listener.
+متد `setOrientation()` از رابط {{ domxref("AudioListener") }} جهت‌گیری شنونده را تعریف می‌کند.
 
-It consists of two direction vectors:
+این شامل دو بردار جهت است:
 
-- The _front vector_, defined by the three unitless parameters `x`, `y` and `z`, describes the direction of the face of the listener, that is the direction the nose of the person is pointing towards. The front vector's default value is `(0, 0, -1)`.
-- The _up vector_, defined by three unitless parameters `xUp`, `yUp` and `zUp`, describes the direction of the top of the listener's head. The up vector's default value is `(0, 1, 0)`.
+- _بردار جلو_، که توسط سه پارامتر بدون واحد `x`، `y` و `z` تعریف می‌شود، جهت چهره‌ی شنونده را توصیف می‌کند، یعنی جهتی که بینی فرد به سمت آن اشاره می‌کند. مقدار پیش‌فرض بردار جلو `(0, 0, -1)` است.
+- _بردار بالا_، که توسط سه پارامتر بدون واحد `xUp`، `yUp` و `zUp` تعریف می‌شود، جهت بالای سر شنونده را توصیف می‌کند. مقدار پیش‌فرض بردار بالا `(0, 1, 0)` است.
 
-The two vectors must be separated by an angle of 90° — in linear analysis terms, they must be perpendicular to each other.
+این دو بردار باید با زاویه ۹۰ درجه از هم جدا شوند — به عبارت تحلیل خطی، آن‌ها باید بر یکدیگر عمود باشند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setOrientation(x, y, z, xUp, yUp, zUp)
 ```
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : The x value of the front vector of the listener.
+  - : مقدار x بردار جلو شنونده.
 - `y`
-  - : The y value of the front vector of the listener.
+  - : مقدار y بردار جلو شنونده.
 - `z`
-  - : The z value of the front vector of the listener.
+  - : مقدار z بردار جلو شنونده.
 - `xUp`
-  - : The x value of the up vector of the listener.
+  - : مقدار x بردار بالای شنونده.
 - `yUp`
-  - : The y value of the up vector of the listener.
+  - : مقدار y بردار بالای شنونده.
 - `zUp`
-  - : The z value of the up vector of the listener.
+  - : مقدار z بردار بالای شنونده.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-See [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) for example code.
+برای دیدن کد مثال، [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
