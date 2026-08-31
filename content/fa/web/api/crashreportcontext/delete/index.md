@@ -1,11 +1,5 @@
 ---
 title: "CrashReportContext: delete() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CrashReportContext/delete"
-status: "needs-translation"
----
-
----
-title: "CrashReportContext: delete() method"
 short-title: delete()
 slug: Web/API/CrashReportContext/delete
 page-type: web-api-instance-method
@@ -16,53 +10,53 @@ browser-compat: api.CrashReportContext.delete
 
 {{APIRef("Reporting API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`delete()`** method of the {{domxref("CrashReportContext")}} interface deletes a previously-stored key-value pair.
+متد **`delete()`** از رابط {{domxref("CrashReportContext")}}، یک جفت کلید-مقدار که قبلاً ذخیره شده را حذف می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 delete(key)
 ```
 
-### Parameters
+### پارامترها
 
 - `key`
-  - : A string representing the key of the key-value pair to be deleted.
+  - : رشته‌ای که کلید جفت کلید-مقدار مورد نظر برای حذف را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The calling document is not fully active.
-    - The crash report key-value store is not yet initialized via an {{domxref("CrashReportContext.initialize", "initialize()")}} call.
+  - : در شرایط زیر پرتاب می‌شود:
+    - سند فراخوانی‌شده کاملاً فعال (fully active) نباشد.
+    - فروشگاه جفت کلید-مقدار گزارش خرابی هنوز از طریق فراخوانی {{domxref("CrashReportContext.initialize", "initialize()")}} مقداردهی اولیه نشده باشد.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 window.crashReport.initialize(1024).then(() => {
-  // Set a possible crash-causing value, and try
-  // running an operation that may cause a crash
+  // مقدار احتمالی که می‌تواند باعث خرابی شود را تنظیم کنید، و سعی کنید
+  // عملیاتی را اجرا کنید که ممکن است باعث خرابی شود
   window.crashReport.set("crash-arg", "00031");
   operationThatMightCrash("00031");
-  // Delete the key-value pair if it doesn't cause a crash
+  // اگر خرابی رخ نداد، جفت کلید-مقدار را حذف کنید
   window.crashReport.delete("crash-arg");
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Reporting API](/en-US/docs/Web/API/Reporting_API)
