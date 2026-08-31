@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesMap: clear() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap/clear"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesMap: clear() method"
 short-title: clear()
 slug: Web/API/CSSFontFeatureValuesMap/clear
 page-type: web-api-instance-method
@@ -16,27 +10,27 @@ browser-compat: api.CSSFontFeatureValuesMap.clear
 
 {{APIRef("CSSOM")}}{{SeeCompatTable}}
 
-The **`clear()`** method of the {{domxref("CSSFontFeatureValuesMap")}} interface removes all declarations in the `CSSFontFeatureValuesMap`.
+متد **`clear()`** از واسط {{domxref("CSSFontFeatureValuesMap")}} تمام اعلان‌های موجود در `CSSFontFeatureValuesMap` را حذف می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 clear()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچکدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following example removes all the declarations within the [`@swash`](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#swash) feature block. This example is using `@swash` but also works with other [feature value blocks](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks).
+مثال زیر تمام اعلان‌های موجود در بلوک ویژگی [`@swash`](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#swash) را حذف می‌کند. این مثال از `@swash` استفاده می‌کند اما با سایر [بلوک‌های مقادیر ویژگی](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks) نیز کار می‌کند.
 
 #### CSS
 
@@ -52,21 +46,21 @@ The following example removes all the declarations within the [`@swash`](/en-US/
 #### JavaScript
 
 ```js
-// get the rules
+// دریافت قوانین
 const myRule = document.styleSheets[0].cssRules[0];
-console.log(myRule.swash.size); // logs 2
+console.log(myRule.swash.size); // چاپ می‌کند 2
 myRule.swash.clear();
-console.log(myRule.swash.size); // logs 0
+console.log(myRule.swash.size); // چاپ می‌کند 0
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Map.prototype.clear()](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/clear)
