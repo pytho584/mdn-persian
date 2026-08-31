@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesMap: [Symbol.iterator]() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesMap: [Symbol.iterator]() method"
 short-title: "[Symbol.iterator]()"
 slug: Web/API/CSSFontFeatureValuesMap/Symbol.iterator
 page-type: web-api-instance-method
@@ -16,27 +10,27 @@ browser-compat: api.CSSFontFeatureValuesMap.@@iterator
 
 {{APIRef("CSSOM")}}{{SeeCompatTable}}
 
-The **`[Symbol.iterator]()`** method of {{domxref("CSSFontFeatureValuesMap")}} interface implements the [iterable protocol](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) and allows built-in iterators to be consumed by most syntaxes expecting iterables, such as the [spread syntax](/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) and {{jsxref("Statements/for...of", "for...of")}} loops. It returns the value of [`this`](/en-US/docs/Web/JavaScript/Reference/Operators/this), which is the iterator object itself.
+متد **`[Symbol.iterator]()`** از رابط {{domxref("CSSFontFeatureValuesMap")}} پروتکل [iterable protocol](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) را پیاده‌سازی می‌کند و به iteratorهای داخلی اجازه می‌دهد که توسط بیشتر نحوهایی که منتظر iterable هستند، مانند [spread syntax](/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) و حلقه‌های {{jsxref("Statements/for...of", "for...of")}} مصرف شوند. این متد مقدار [`this`](/en-US/docs/Web/JavaScript/Reference/Operators/this) را برمی‌گرداند که خود شیء iterator است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 iterator[Symbol.iterator]()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار برگشتی
 
-The value of [`this`](/en-US/docs/Web/JavaScript/Reference/Operators/this), which is the iterator object itself.
+مقدار [`this`](/en-US/docs/Web/JavaScript/Reference/Operators/this) که خود شیء iterator است.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following example uses the built-in iterator of `CSSFontFeatureValuesMap` to log the values using a `for...of` loop. This example is using `@swash` but also works with other [feature value blocks](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks).
+مثال زیر از iterator داخلی `CSSFontFeatureValuesMap` برای ثبت مقادیر با استفاده از حلقه `for...of` استفاده می‌کند. این مثال از `@swash` استفاده می‌کند اما با سایر [feature value blocks](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks) نیز کار می‌کند.
 
 #### CSS
 
@@ -60,15 +54,15 @@ for (const value of myRule.swash.keys()) {
 // Logs: "swishy", "swashy"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [`Iterator.prototype[Symbol.iterator]()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/Symbol.iterator)
 - {{jsxref("Iterator")}}
