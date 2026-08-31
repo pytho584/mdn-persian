@@ -1,7 +1,7 @@
 ---
 title: "AudioWorkletProcessor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,57 +13,56 @@ browser-compat: api.AudioWorkletProcessor
 
 {{APIRef("Web Audio API")}}
 
-The **`AudioWorkletProcessor`** interface of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) represents an audio processing code behind a custom {{domxref("AudioWorkletNode")}}. It lives in the {{domxref("AudioWorkletGlobalScope")}} and runs on the Web Audio rendering thread. In turn, an {{domxref("AudioWorkletNode")}} based on it runs on the main thread.
+**`AudioWorkletProcessor`** 接口（属于 [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)）表示自定义 {{domxref("AudioWorkletNode")}} 背后的音频处理代码。它位于 {{domxref("AudioWorkletGlobalScope")}} 中，并在 Web Audio 渲染线程上运行。相应地，基于它的 {{domxref("AudioWorkletNode")}} 在主线程上运行。
 
-## Constructor
+## 构造函数
 
 > [!NOTE]
-> The `AudioWorkletProcessor` and classes that derive from it cannot be instantiated directly from a user-supplied code. Instead, they are created only internally by the creation of an associated {{domxref("AudioWorkletNode")}}s. The constructor of the deriving class is getting called with an options object, so you can perform a custom initialization procedures — see constructor page for details.
+> `AudioWorkletProcessor` 及其派生类无法通过用户提供的代码直接实例化。相反，它们仅在创建关联的 {{domxref("AudioWorkletNode")}} 时由内部创建。派生类的构造函数会接收一个选项对象，因此你可以执行自定义的初始化过程 — 有关详细信息，请参阅构造函数页面。
 
 - {{domxref("AudioWorkletProcessor.AudioWorkletProcessor", "AudioWorkletProcessor()")}}
-  - : Creates a new instance of an `AudioWorkletProcessor` object.
+  - : 创建一个新的 `AudioWorkletProcessor` 对象实例。
 
-## Instance properties
+## 实例属性
 
 - {{domxref("AudioWorkletProcessor.port", "port")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("MessagePort")}} used for bidirectional communication between the processor and the {{domxref("AudioWorkletNode")}} which it belongs to. The other end is available under the {{domxref("AudioWorkletNode.port", "port")}} property of the node.
+  - : 返回一个 {{domxref("MessagePort")}}，用于处理器与其所属的 {{domxref("AudioWorkletNode")}} 之间的双向通信。另一端可通过该节点的 {{domxref("AudioWorkletNode.port", "port")}} 属性获得。
 
-## Instance methods
+## 实例方法
 
-_The `AudioWorkletProcessor` interface does not define any methods of its own. However, you must provide a {{domxref("AudioWorkletProcessor.process", "process()")}} method, which is called in order to process the audio stream._
+_`AudioWorkletProcessor` 接口未定义自身的任何方法。但是，你必须提供一个 {{domxref("AudioWorkletProcessor.process", "process()")}} 方法，该方法会被调用来处理音频流。_
 
-## Events
+## 事件
 
-_The `AudioWorkletProcessor` interface doesn't respond to any events._
+_`AudioWorkletProcessor` 接口不响应任何事件。_
 
-## Usage notes
+## 使用说明
 
-### Deriving classes
+### 派生类
 
-To define custom audio processing code you have to derive a class from the `AudioWorkletProcessor` interface. Although not defined on the interface, the deriving class must have the {{domxref("AudioWorkletProcessor.process", "process")}} method. This method gets called for each block of 128 sample-frames and takes input and output arrays and calculated values of custom {{domxref("AudioParam")}}s (if they are defined) as parameters. You can use inputs and audio parameter values to fill the outputs array, which by default holds silence.
+要定义自定义音频处理代码，你必须从 `AudioWorkletProcessor` 接口派生一个类。虽然接口未定义该方法，但派生类必须具有 {{domxref("AudioWorkletProcessor.process", "process")}} 方法。该方法针对每个 128 采样帧的块调用，并将输入和输出数组以及自定义 {{domxref("AudioParam")}} 的计算值（如果已定义）作为参数。你可以使用输入和音频参数值来填充输出数组，输出数组默认包含静音。
 
-Optionally, if you want custom {{domxref("AudioParam")}}s on your node, you can supply a {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} property as a _static getter_ on the processor. The array of {{domxref("AudioParamDescriptor")}}-based objects returned is used internally to create the {{domxref("AudioParam")}}s during the instantiation of the `AudioWorkletNode`.
+可选地，如果你希望节点上具有自定义的 {{domxref("AudioParam")}}，你可以在处理器上提供一个 {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} 属性作为 _静态 getter_。返回的基于 {{domxref("AudioParamDescriptor")}} 的对象数组在 `AudioWorkletNode` 实例化期间被内部用于创建 {{domxref("AudioParam")}}。
 
-The resulting `AudioParam`s reside in the {{domxref("AudioWorkletNode.parameters", "parameters")}} property of the node and can be automated using standard methods such as [`linearRampToValueAtTime`](/en-US/docs/Web/API/AudioParam/linearRampToValueAtTime). Their calculated values will be passed into the {{domxref("AudioWorkletProcessor.process", "process()")}} method of the processor for you to shape the node output accordingly.
+生成的 `AudioParam` 位于节点的 {{domxref("AudioWorkletNode.parameters", "parameters")}} 属性中，并且可以使用标准方法（如 [`linearRampToValueAtTime`](/en-US/docs/Web/API/AudioParam/linearRampToValueAtTime)）进行自动化。它们的计算值将传递到处理器的 {{domxref("AudioWorkletProcessor.process", "process()")}} 方法中，以便你相应地塑造节点的输出。
 
-### Processing audio
+### 处理音频
 
-An example algorithm of creating a custom audio processing mechanism is:
+一个创建自定义音频处理机制的示例算法如下：
 
-1. Create a separate file;
-2. In the file:
-   1. Extend the `AudioWorkletProcessor` class (see ["Deriving classes" section](#deriving_classes)) and supply your own {{domxref("AudioWorkletProcessor.process", "process()")}} method in it;
-   2. Register the processor using {{domxref("AudioWorkletGlobalScope.registerProcessor()")}} method;
+1. 创建一个单独的文件；
+2. 在该文件中：
+   1. 扩展 `AudioWorkletProcessor` 类（参见 ["派生类" 部分](#deriving_classes)）并在其中提供你自己的 {{domxref("AudioWorkletProcessor.process", "process()")}} 方法；
+   2. 使用 {{domxref("AudioWorkletGlobalScope.registerProcessor()")}} 方法注册处理器；
+3. 使用音频上下文的 {{domxref("BaseAudioContext.audioWorklet", "audioWorklet")}} 属性上的 {{domxref("Worklet.addModule", "addModule()")}} 方法加载该文件；
+4. 基于该处理器创建一个 {{domxref("AudioWorkletNode")}}。处理器将由 `AudioWorkletNode` 构造函数在内部实例化。
+5. 将该节点连接到其他节点。
 
-3. Load the file using {{domxref("Worklet.addModule", "addModule()")}} method on your audio context's {{domxref("BaseAudioContext.audioWorklet", "audioWorklet")}} property;
-4. Create an {{domxref("AudioWorkletNode")}} based on the processor. The processor will be instantiated internally by the `AudioWorkletNode` constructor.
-5. Connect the node to the other nodes.
+## 示例
 
-## Examples
+在下面的示例中，我们创建一个输出白噪声的自定义 {{domxref("AudioWorkletNode")}}。
 
-In the example below we create a custom {{domxref("AudioWorkletNode")}} that outputs white noise.
-
-First, we need to define a custom `AudioWorkletProcessor`, which will output white noise, and register it. Note that this should be done in a separate file.
+首先，我们需要定义一个输出白噪声的自定义 `AudioWorkletProcessor`，并注册它。请注意，这应该在单独的文件中完成。
 
 ```js
 // white-noise-processor.js
@@ -82,7 +81,7 @@ class WhiteNoiseProcessor extends AudioWorkletProcessor {
 registerProcessor("white-noise-processor", WhiteNoiseProcessor);
 ```
 
-Next, in our main script file we'll load the processor, create an instance of {{domxref("AudioWorkletNode")}}, passing it the name of the processor, then connect the node to an audio graph.
+接下来，在我们的主脚本文件中，我们将加载处理器，创建 {{domxref("AudioWorkletNode")}} 的实例，并将处理器的名称传递给它，然后将节点连接到音频图。
 
 ```js
 const audioContext = new AudioContext();
@@ -94,16 +93,16 @@ const whiteNoiseNode = new AudioWorkletNode(
 whiteNoiseNode.connect(audioContext.destination);
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
-- [Using AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
+- [使用 Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [使用 AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
