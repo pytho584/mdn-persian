@@ -1,7 +1,5 @@
 ---
 title: "ContentIndex"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContentIndex"
-status: "needs-translation"
 ---
 
 ---
@@ -15,26 +13,26 @@ browser-compat: api.ContentIndex
 
 {{APIRef("Content Index API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`ContentIndex`** interface of the [Content Index API](/en-US/docs/Web/API/Content_Index_API) allows developers to register their offline enabled content with the browser.
+رابط **`ContentIndex`** در [Content Index API](/en-US/docs/Web/API/Content_Index_API) به توسعه‌دهندگان امکان می‌دهد محتوای فعال‌شده برای حالت آفلاین خود را در مرورگر ثبت کنند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-There are no properties of this interface.
+این رابط هیچ ویژگی‌ای ندارد.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref('ContentIndex.add()')}} {{Experimental_Inline}}
-  - : Registers an item with the [content index](/en-US/docs/Web/API/Content_Index_API).
+  - : یک مورد را در [فهرست محتوا](/en-US/docs/Web/API/Content_Index_API) ثبت می‌کند.
 - {{domxref('ContentIndex.delete()')}} {{Experimental_Inline}}
-  - : Unregisters an item from the currently indexed content.
+  - : یک مورد را از محتوای فهرست‌شدهٔ فعلی لغو ثبت می‌کند.
 - {{domxref('ContentIndex.getAll()')}} {{Experimental_Inline}}
-  - : Returns a {{jsxref('Promise')}} that resolves with an iterable list of content index entries.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که با یک فهرست قابل پیمایش (iterable) از ورودی‌های فهرست محتوا resolve می‌شود.
 
-## Examples
+## نمونه‌ها
 
-### Feature detection and interface access
+### تشخیص ویژگی (Feature detection) و دسترسی به رابط
 
-Here we get a reference to the {{domxref('ServiceWorkerRegistration')}}, then check for the `index` property, which gives us access to the content index interface.
+در اینجا یک ارجاع به {{domxref('ServiceWorkerRegistration')}} می‌گیریم و سپس ویژگی `index` را بررسی می‌کنیم که به ما دسترسی به رابط فهرست محتوا را می‌دهد.
 
 ```js
 // reference registration
@@ -47,9 +45,9 @@ if ("index" in registration) {
 }
 ```
 
-### Adding to the content index
+### افزودن به فهرست محتوا
 
-Here we're declaring an item in the correct format and creating an asynchronous function which uses the {{domxref('ContentIndex.add','add()')}} method to register it with the [content index](/en-US/docs/Web/API/Content_Index_API).
+در اینجا یک مورد (item) را با فرمت صحیح تعریف می‌کنیم و یک تابع ناهمگام (asynchronous) می‌سازیم که از متد {{domxref('ContentIndex.add','add()')}} برای ثبت آن در [فهرست محتوا](/en-US/docs/Web/API/Content_Index_API) استفاده می‌کند.
 
 ```js
 // our content
@@ -87,9 +85,9 @@ async function registerContent(data) {
 }
 ```
 
-### Retrieving items within the current index
+### دریافت موارد موجود در فهرست فعلی
 
-The below example shows an asynchronous function that retrieves items within the [content index](/en-US/docs/Web/API/Content_Index_API) and iterates over each entry, building a list for the interface.
+مثال زیر یک تابع ناهمگام را نشان می‌دهد که موارد موجود در [فهرست محتوا](/en-US/docs/Web/API/Content_Index_API) را دریافت می‌کند، روی هر ورودی پیمایش می‌کند و فهرستی برای رابط کاربری می‌سازد.
 
 ```js
 async function createReadingList() {
@@ -129,9 +127,9 @@ async function createReadingList() {
 }
 ```
 
-### Unregistering indexed content
+### لغو ثبت محتوای فهرست‌شده
 
-Below is an asynchronous function, that removes an item from the [content index](/en-US/docs/Web/API/Content_Index_API).
+در زیر یک تابع ناهمگام آمده است که یک مورد را از [فهرست محتوا](/en-US/docs/Web/API/Content_Index_API) حذف می‌کند.
 
 ```js
 async function unregisterContent(article) {
@@ -146,7 +144,7 @@ async function unregisterContent(article) {
 }
 ```
 
-All the above methods are available within the scope of the [service worker](/en-US/docs/Web/API/ServiceWorker). They are accessible from the {{domxref('WorkerGlobalScope.self')}} property:
+همهٔ متدهای فوق در محدودهٔ [service worker](/en-US/docs/Web/API/ServiceWorker) در دسترس هستند. این متدها از طریق ویژگی {{domxref('WorkerGlobalScope.self')}} قابل دسترسی هستند:
 
 ```js
 // service worker script
@@ -158,15 +156,15 @@ self.registration.index.delete(item.id);
 const contentIndexItems = self.registration.index.getAll();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [An introductory article on the Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
-- [Service Worker API, along with information about Cache and CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
+- [یک مقالهٔ مقدماتی دربارهٔ Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
+- [Service Worker API، به همراه اطلاعاتی دربارهٔ Cache و CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
