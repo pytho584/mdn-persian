@@ -1,10 +1,4 @@
 ---
-title: "CSS Typed Object Model API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API"
-status: "needs-translation"
----
-
----
 title: CSS Typed Object Model API
 slug: Web/API/CSS_Typed_OM_API
 page-type: web-api-overview
@@ -17,108 +11,108 @@ browser-compat:
 
 {{DefaultAPISidebar("CSS Typed Object Model API")}}
 
-The CSS Typed Object Model API simplifies CSS property manipulation by exposing CSS values as typed JavaScript objects rather than strings. This not only simplifies CSS manipulation, but also lessens the negative impact on performance as compared to {{domxref('HTMLElement.style')}}.
+API مدل شیء تایپ‌شدهٔ CSS (CSS Typed Object Model) دستکاری ویژگی‌های CSS را با در معرض قرار دادن مقادیر CSS به‌عنوان اشیاء جاوااسکریپت تایپ‌شده به‌جای رشته‌ها ساده‌تر می‌کند. این کار نه‌تنها دستکاری CSS را ساده‌تر می‌کند، بلکه تأثیر منفی بر عملکرد را نسبت به {{domxref('HTMLElement.style')}} کاهش می‌دهد.
 
-Generally, CSS values can be read and written in JavaScript as strings, which can be slow and cumbersome. CSS Typed Object Model API provides interfaces to interact with underlying values, by representing them with specialized JS objects that can be manipulated and understood more easily and more reliably than string parsing and concatenation. This is easier for authors (for example, numeric values are reflected with actual JS numbers, and have unit-aware mathematical operations defined for them). It is also generally faster, as values can be directly manipulated and then cheaply translated back into underlying values without having to both build and parse strings of CSS.
+به‌طور کلی، مقادیر CSS را می‌توان در جاوااسکریپت به‌صورت رشته خواند و نوشت، که می‌تواند کند و دست‌وپاگیر باشد. API مدل شیء تایپ‌شدهٔ CSS رابط‌هایی برای تعامل با مقادیر زیربنایی فراهم می‌کند و آن‌ها را با اشیاء جاوااسکریپت تخصصی نمایش می‌دهد که نسبت به تجزیه و الحاق رشته‌ها آسان‌تر و قابل‌اعتمادتر قابل دستکاری و درک هستند. این کار برای توسعه‌دهندگان ساده‌تر است (مثلاً مقادیر عددی با اعداد واقعی جاوااسکریپت بازتاب می‌شوند و عملیات ریاضی آگاه به واحد برای آن‌ها تعریف شده است). همچنین معمولاً سریع‌تر است، زیرا مقادیر را می‌توان مستقیماً دستکاری کرد و سپس بدون نیاز به ساخت و تجزیه رشته‌های CSS، با هزینه کم به مقادیر زیربنایی بازگرداند.
 
-CSS Typed OM both allows for the performant manipulation of values assigned to CSS properties while enabling maintainable code that is both more understandable and easier to write.
+CSS Typed OM هم امکان دستکاری کارآمد مقادیر اختصاص‌یافته به ویژگی‌های CSS را فراهم می‌کند و هم کدی قابل نگهداری ایجاد می‌کند که هم قابل‌فهم‌تر و هم نوشتن آن آسان‌تر است.
 
-## Interfaces
+## رابط‌ها
 
 ### `CSSStyleValue`
 
-The {{domxref('CSSStyleValue')}} interface of the CSS Typed Object Model API is the base class of all CSS values accessible through the Typed OM API. An instance of this class may be used anywhere a string is expected.
+رابط {{domxref('CSSStyleValue')}} در API مدل شیء تایپ‌شدهٔ CSS، کلاس پایه برای همهٔ مقادیر CSS قابل دسترسی از طریق API Typed OM است. نمونه‌ای از این کلاس را می‌توان در هر جایی که انتظار یک رشته می‌رود استفاده کرد.
 
 - {{domxref('CSSStyleValue/parse_static', 'CSSStyleValue.parse()')}}
-  - : Method that allows `CSSNumericValue` to be constructed from a CSS string. It sets a specific CSS property to the specified values and returns the first value as a `CSSStyleValue` object.
+  - : روشی که امکان ساخت `CSSNumericValue` از یک رشته CSS را فراهم می‌کند. این روش یک ویژگی خاص CSS را به مقادیر مشخص‌شده تنظیم می‌کند و اولین مقدار را به‌عنوان یک شیء `CSSStyleValue` برمی‌گرداند.
 - {{domxref('CSSStyleValue.parseAll_static', 'CSSStyleValue.parseAll()')}}
-  - : Method that sets all occurrences of a specific CSS property to the specified value and returns an array of `CSSStyleValue` objects, each containing one of the supplied values.
+  - : روشی که همهٔ رخدادهای یک ویژگی خاص CSS را به مقدار مشخص‌شده تنظیم می‌کند و آرایه‌ای از اشیاء `CSSStyleValue` برمی‌گرداند که هر کدام یکی از مقادیر ارائه‌شده را شامل می‌شود.
 
 ### `StylePropertyMap`
 
-The {{domxref('StylePropertyMap')}} interface of the CSS Typed Object Model API provides a representation of a CSS declaration block that is an alternative to `CSSStyleDeclaration`.
+رابط {{domxref('StylePropertyMap')}} در API مدل شیء تایپ‌شدهٔ CSS، نمایشی از یک بلوک اعلان CSS ارائه می‌دهد که جایگزینی برای `CSSStyleDeclaration` است.
 
 - {{domxref('StylePropertyMap.set()')}}
-  - : Method that changes the CSS declaration with the given property to the value given.
+  - : روشی که اعلان CSS مربوط به ویژگی داده‌شده را به مقدار داده‌شده تغییر می‌دهد.
 - {{domxref('StylePropertyMap.append()')}}
-  - : Method that adds a new CSS declaration to the `StylePropertyMap` with the given property and value.
+  - : روشی که یک اعلان CSS جدید با ویژگی و مقدار داده‌شده به `StylePropertyMap` اضافه می‌کند.
 - {{domxref('StylePropertyMap.delete()')}}
-  - : Method that removes the CSS declaration with the given property from the `StylePropertyMap`.
+  - : روشی که اعلان CSS مربوط به ویژگی داده‌شده را از `StylePropertyMap` حذف می‌کند.
 - {{domxref('StylePropertyMap.clear()')}}
-  - : Method that removes all declarations in the `StylePropertyMap`.
+  - : روشی که همهٔ اعلان‌ها را در `StylePropertyMap` حذف می‌کند.
 
 ### `CSSUnparsedValue`
 
-The {{domxref('CSSUnparsedValue')}} interface of the CSS Typed Object Model API represents property values that reference custom properties. It consists of a list of string fragments and variable references.
+رابط {{domxref('CSSUnparsedValue')}} در API مدل شیء تایپ‌شدهٔ CSS، مقادیر ویژگی‌ای را نشان می‌دهد که به ویژگی‌های سفارشی ارجاع می‌دهند. این رابط شامل فهرستی از تکه‌های رشته و ارجاع به متغیرها است.
 
-- {{domxref("CSSUnparsedValue.CSSUnparsedValue", "CSSUnparsedValue()")}} constructor
-  - : Creates a new `CSSUnparsedValue` object which represents property values that reference custom properties.
+- {{domxref("CSSUnparsedValue.CSSUnparsedValue", "CSSUnparsedValue()")}} سازنده
+  - : یک شیء `CSSUnparsedValue` جدید می‌سازد که مقادیر ویژگی‌های ارجاع‌دهنده به ویژگی‌های سفارشی را نشان می‌دهد.
 - {{domxref('CSSUnparsedValue.entries()')}}
-  - : Method returning an array of a given object's own enumerable property `[key, value]` pairs in the same order as that provided by a `for...in` loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).
+  - : روشی که آرایه‌ای از جفت‌های `[key, value]` ویژگی‌های قابل شمارش خود شیء را به همان ترتیبی که توسط حلقه `for...in` ارائه می‌شود برمی‌گرداند (تفاوت این است که حلقه for-in ویژگی‌های زنجیره پروتوتایپ را نیز شمارش می‌کند).
 - {{domxref('CSSUnparsedValue.forEach()')}}
-  - : Method executing a provided function once for each element of the `CSSUnparsedValue`.
+  - : روشی که یک تابع ارائه‌شده را یک بار برای هر عنصر از `CSSUnparsedValue` اجرا می‌کند.
 - {{domxref('CSSUnparsedValue.keys()')}}
-  - : Method returning a new _array iterator_ object that contains the keys for each index in the array.
+  - : روشی که یک شیء _تکرارگر آرایه_ جدید برمی‌گرداند که کلیدهای هر اندیس در آرایه را شامل می‌شود.
 
-### `CSSKeywordValue` Serialization
+### سریال‌سازی `CSSKeywordValue`
 
-The {{domxref('CSSKeywordValue')}} interface of the CSS Typed Object Model API creates an object to represent CSS keywords and other identifiers.
+رابط {{domxref('CSSKeywordValue')}} در API مدل شیء تایپ‌شدهٔ CSS، یک شیء برای نمایش کلیدواژه‌های CSS و دیگر شناسه‌ها ایجاد می‌کند.
 
-- {{domxref("CSSKeywordValue.CSSKeywordValue", "CSSKeywordValue()")}} constructor
-  - : Constructor creates a new {{domxref("CSSKeywordValue.CSSKeywordValue", "CSSKeywordValue()")}} object which represents CSS keywords and other identifiers.
+- {{domxref("CSSKeywordValue.CSSKeywordValue", "CSSKeywordValue()")}} سازنده
+  - : سازنده، یک شیء {{domxref("CSSKeywordValue.CSSKeywordValue", "CSSKeywordValue()")}} جدید ایجاد می‌کند که کلیدواژه‌های CSS و دیگر شناسه‌ها را نشان می‌دهد.
 - {{domxref('CSSKeywordValue.value()')}}
-  - : Property of the `CSSKeywordValue` interface returning or setting the value of the `CSSKeywordValue`.
+  - : ویژگی از رابط `CSSKeywordValue` که مقدار `CSSKeywordValue` را برمی‌گرداند یا تنظیم می‌کند.
 
-## CSSStyleValue Interfaces
+## رابط‌های CSSStyleValue
 
-{{domxref('CSSStyleValue')}} is the base class through which all CSS values are expressed. Subclasses include:
+{{domxref('CSSStyleValue')}} کلاس پایه‌ای است که همهٔ مقادیر CSS از طریق آن بیان می‌شوند. زیرکلاس‌ها عبارت‌اند از:
 
 - {{domxref('CSSImageValue')}}
-  - : An interface representing values for properties that take an image, for example {{cssxref("background-image")}}, {{cssxref("list-style-image")}}, or {{cssxref("border-image-source")}}.
+  - : رابطی که مقادیر ویژگی‌های تصویرپذیر مانند {{cssxref("background-image")}}، {{cssxref("list-style-image")}} یا {{cssxref("border-image-source")}} را نشان می‌دهد.
 - {{domxref('CSSKeywordValue')}}
-  - : An interface which creates an object to represent CSS keywords and other identifiers. When used where a string is expected, it will return the value of `CSSKeyword.value`.
+  - : رابطی که یک شیء برای نمایش کلیدواژه‌های CSS و دیگر شناسه‌ها ایجاد می‌کند. وقتی در جایی که انتظار یک رشته می‌رود استفاده شود، مقدار `CSSKeyword.value` را برمی‌گرداند.
 - {{domxref('CSSMathValue')}}
-  - : A tree of subclasses representing numeric values that are more complicated than a single value and unit, including:
-    - {{domxref('CSSMathMax')}} - represents the CSS {{cssxref("max","max()")}} function.
-    - {{domxref('CSSMathMin')}} - represents the CSS {{cssxref("min","min()")}} function.
-    - {{domxref('CSSMathClamp')}} - represents the CSS {{cssxref("clamp","clamp()")}} function.
-    - {{domxref('CSSMathNegate')}} - negates the value passed into it.
-    - {{domxref('CSSMathInvert')}} - represents a CSS {{cssxref("calc","calc()")}} value used as `calc(1 / <value>)`. This type is used internally by {{domxref('CSSNumericValue.div','div()')}}, to create an appropriate {{domxref('CSSMathProduct')}}.
-    - {{domxref('CSSMathProduct')}} - represents the result obtained by calling {{domxref('CSSNumericValue.mul','mul()')}} or {{domxref('CSSNumericValue.div','div()')}} on {{domxref('CSSNumericValue')}}.
-    - {{domxref('CSSMathSum')}} - represents the result obtained by calling {{domxref('CSSNumericValue.add','add()')}}, {{domxref('CSSNumericValue.sub','sub()')}}, or {{domxref('CSSNumericValue.toSum','toSum()')}} on {{domxref('CSSNumericValue')}}.
+  - : درختی از زیرکلاس‌ها که مقادیر عددی پیچیده‌تر از یک مقدار و واحد را نشان می‌دهند، از جمله:
+    - {{domxref('CSSMathMax')}} - تابع {{cssxref("max","max()")}} را نشان می‌دهد.
+    - {{domxref('CSSMathMin')}} - تابع {{cssxref("min","min()")}} را نشان می‌دهد.
+    - {{domxref('CSSMathClamp')}} - تابع {{cssxref("clamp","clamp()")}} را نشان می‌دهد.
+    - {{domxref('CSSMathNegate')}} - مقدار ورودی را منفی می‌کند.
+    - {{domxref('CSSMathInvert')}} - مقدار {{cssxref("calc","calc()")}} را که به‌صورت `calc(1 / <value>)` استفاده می‌شود نشان می‌دهد. این نوع به‌صورت داخلی توسط {{domxref('CSSNumericValue.div','div()')}} برای ایجاد یک {{domxref('CSSMathProduct')}} مناسب استفاده می‌شود.
+    - {{domxref('CSSMathProduct')}} - نتیجهٔ حاصل از فراخوانی {{domxref('CSSNumericValue.mul','mul()')}} یا {{domxref('CSSNumericValue.div','div()')}} روی {{domxref('CSSNumericValue')}} را نشان می‌دهد.
+    - {{domxref('CSSMathSum')}} - نتیجهٔ حاصل از فراخوانی {{domxref('CSSNumericValue.add','add()')}}، {{domxref('CSSNumericValue.sub','sub()')}} یا {{domxref('CSSNumericValue.toSum','toSum()')}} روی {{domxref('CSSNumericValue')}} را نشان می‌دهد.
 
 - {{domxref('CSSNumericValue')}}
-  - : An interface representing operations that all numeric values can perform, including:
-    - {{domxref('CSSNumericValue.add')}} - Adds supplied numbers to the `CSSNumericValue`.
-    - {{domxref('CSSNumericValue.sub')}} - Subtracts supplied numbers to the `CSSNumericValue`.
-    - {{domxref('CSSNumericValue.mul')}} - Multiplies supplied numbers to the `CSSNumericValue`.
-    - {{domxref('CSSNumericValue.div')}} - Divides the `CSSNumericValue` by the supplied value, throwing an error if `0`.
-    - {{domxref('CSSNumericValue.min')}} - Returns the minimum value passed
-    - {{domxref('CSSNumericValue.max')}} - Returns the maximum value passed
-    - {{domxref('CSSNumericValue.equals')}} - Returns true if all the values are the exact same type and value, in the same order. Otherwise, false
-    - {{domxref('CSSNumericValue.to')}} - Converts `value` into another one with the specified _unit._
+  - : رابطی که عملیات قابل انجام توسط همهٔ مقادیر عددی را نشان می‌دهد، از جمله:
+    - {{domxref('CSSNumericValue.add')}} - اعداد داده‌شده را به `CSSNumericValue` اضافه می‌کند.
+    - {{domxref('CSSNumericValue.sub')}} - اعداد داده‌شده را از `CSSNumericValue` کم می‌کند.
+    - {{domxref('CSSNumericValue.mul')}} - اعداد داده‌شده را در `CSSNumericValue` ضرب می‌کند.
+    - {{domxref('CSSNumericValue.div')}} - `CSSNumericValue` را بر مقدار داده‌شده تقسیم می‌کند و اگر `0` باشد خطا می‌دهد.
+    - {{domxref('CSSNumericValue.min')}} - کمترین مقدار داده‌شده را برمی‌گرداند
+    - {{domxref('CSSNumericValue.max')}} - بیشترین مقدار داده‌شده را برمی‌گرداند
+    - {{domxref('CSSNumericValue.equals')}} - اگر همهٔ مقادیر دقیقاً از نوع و مقدار یکسان و به همان ترتیب باشند `true` و در غیر این صورت `false` برمی‌گرداند
+    - {{domxref('CSSNumericValue.to')}} - `value` را به مقدار دیگری با _واحد_ مشخص‌شده تبدیل می‌کند.
     - {{domxref('CSSNumericValue.toSum')}}
     - {{domxref('CSSNumericValue.type')}}
-    - {{domxref('CSSNumericValue/parse_static', 'CSSNumericValue.parse')}} - Returns a number parsed from a CSS string
+    - {{domxref('CSSNumericValue/parse_static', 'CSSNumericValue.parse')}} - عددی را که از یک رشته CSS تجزیه شده برمی‌گرداند
 
 - {{domxref('CSSPositionValue')}}
-  - : Represents values for properties that take a position, for example object-position.
+  - : مقادیر ویژگی‌هایی را نشان می‌دهد که یک موقعیت می‌گیرند، مانند object-position.
 - {{domxref('CSSTransformValue')}}
-  - : An interface representing a list of {{cssxref("transform")}} list values. They "contain" one or more {{domxref('CSSTransformComponent')}}s, which represent individual `transform` function values.
+  - : رابطی که فهرستی از مقادیر {{cssxref("transform")}} را نشان می‌دهد. آن‌ها یک یا چند {{domxref('CSSTransformComponent')}} را «شامل» می‌شوند که مقادیر تابع `transform` جداگانه را نشان می‌دهند.
 - {{domxref('CSSUnitValue')}}
-  - : An interface representing numeric values that can be represented as a single unit, or a named number and percentage.
+  - : رابطی که مقادیر عددی قابل نمایش به‌صورت یک واحد، یا یک عدد نام‌گذاری‌شده و درصد را نشان می‌دهد.
 - {{domxref('CSSUnparsedValue')}}
-  - : Represents property values that reference [custom properties](/en-US/docs/Web/CSS/Reference/Properties/--*). It consists of a list of string fragments and variable references.
+  - : مقادیر ویژگی‌هایی را نشان می‌دهد که به [ویژگی‌های سفارشی](/en-US/docs/Web/CSS/Reference/Properties/--*) ارجاع می‌دهند. این مقادیر شامل فهرستی از تکه‌های رشته و ارجاع به متغیرها هستند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API)
 - [Using the CSS Typed Object Model](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
