@@ -1,7 +1,7 @@
 ---
 title: "Canvas tutorial"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,33 +12,33 @@ page-type: guide
 
 {{DefaultAPISidebar("Canvas API")}}
 
-This tutorial describes how to use the [**`<canvas>`**](/en-US/docs/Web/HTML/Reference/Elements/canvas) element to draw 2D graphics, starting with the basics. The examples provided should give you some clear ideas about what you can do with canvas, and will provide code snippets that may get you started in building your own content.
+این آموزش نحوه استفاده از عنصر `<canvas>` برای ترسیم گرافیک‌های دو بعدی را از اصول پایه توضیح می‌دهد. مثال‌های ارائه شده به شما ایده‌های واضحی از کارهایی که می‌توانید با canvas انجام دهید می‌دهد و قطعه کدهایی را فراهم می‌کند که ممکن است شما را در ساخت محتوای خودتان راهنمایی کند.
 
-`<canvas>` is an [HTML](/en-US/docs/Web/HTML) element which can be used to draw graphics via scripting (usually [JavaScript](/en-US/docs/Glossary/JavaScript)). This can, for instance, be used to draw graphs, combine photos, or create simple animations.
+`<canvas>` یک عنصر HTML است که می‌تواند برای ترسیم گرافیک‌ها از طریق اسکریپت‌نویسی (معمولاً JavaScript) استفاده شود. این می‌تواند برای مثال برای ترسیم نمودارها، ترکیب عکس‌ها یا ساخت انیمیشن‌های ساده استفاده شود.
 
-First introduced in WebKit by Apple for the macOS Dashboard, `<canvas>` has since been implemented in browsers. Today, all major browsers support it.
+`<canvas>` اولین بار در WebKit توسط اپل برای Dashboard سیستم‌عامل مک معرفی شد و از آن زمان در مرورگرها پیاده‌سازی شده است. امروزه همه مرورگرهای اصلی از آن پشتیبانی می‌کنند.
 
-## Before you start
+## قبل از شروع
 
-Using the `<canvas>` element is not very difficult, but you do need a basic understanding of [HTML](/en-US/docs/Web/HTML) and [JavaScript](/en-US/docs/Web/JavaScript). The `<canvas>` element is not supported in some older browsers, but is supported in recent versions of all major browsers. The default size of the canvas is 300 pixels × 150 pixels (width × height). But custom sizes can be defined using the HTML `height` and `width` property. In order to draw graphics on the canvas we use a JavaScript context object, which creates graphics on the fly.
+استفاده از عنصر `<canvas>` خیلی دشوار نیست، اما شما نیاز به درک پایه‌ای از [HTML](/en-US/docs/Web/HTML) و [JavaScript](/en-US/docs/Web/JavaScript) دارید. عنصر `<canvas>` در برخی مرورگرهای قدیمی پشتیبانی نمی‌شود، اما در نسخه‌های اخیر تمام مرورگرهای اصلی پشتیبانی می‌شود. اندازه پیش‌فرض canvas ۳۰۰ پیکسل × ۱۵۰ پیکسل (عرض × ارتفاع) است. اما اندازه‌های سفارشی را می‌توان با استفاده از ویژگی‌های HTML `height` و `width` تعریف کرد. برای ترسیم گرافیک روی canvas از یک شیء زمینه JavaScript استفاده می‌کنیم که گرافیک‌ها را در لحظه ایجاد می‌کند.
 
-## In this tutorial
+## در این آموزش
 
-1. [Basic usage](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage)
-2. [Drawing shapes](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes)
-3. [Applying styles and colors](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors)
-4. [Drawing text](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_text)
-5. [Using images](/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images)
-6. [Transformations](/en-US/docs/Web/API/Canvas_API/Tutorial/Transformations)
-7. [Compositing and clipping](/en-US/docs/Web/API/Canvas_API/Tutorial/Compositing)
-8. [Basic animations](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations)
-9. [Advanced animations](/en-US/docs/Web/API/Canvas_API/Tutorial/Advanced_animations)
-10. [Pixel manipulation](/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas)
-11. [Optimizing the canvas](/en-US/docs/Web/API/Canvas_API/Tutorial/Optimizing_canvas)
-12. [Finale](/en-US/docs/Web/API/Canvas_API/Tutorial/Finale)
+1. [استفاده پایه](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage)
+2. [ترسیم اشکال](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes)
+3. [اعمال سبک‌ها و رنگ‌ها](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors)
+4. [ترسیم متن](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_text)
+5. [استفاده از تصاویر](/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images)
+6. [تبدیلات](/en-US/docs/Web/API/Canvas_API/Tutorial/Transformations)
+7. [ترکیب و برش](/en-US/docs/Web/API/Canvas_API/Tutorial/Compositing)
+8. [انیمیشن‌های پایه](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations)
+9. [انیمیشن‌های پیشرفته](/en-US/docs/Web/API/Canvas_API/Tutorial/Advanced_animations)
+10. [دستکاری پیکسل](/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas)
+11. [بهینه‌سازی canvas](/en-US/docs/Web/API/Canvas_API/Tutorial/Optimizing_canvas)
+12. [پایانی](/en-US/docs/Web/API/Canvas_API/Tutorial/Finale)
 
-## See also
+## همچنین ببینید
 
-- [Canvas topic page](/en-US/docs/Web/API/Canvas_API)
+- [صفحه موضوع Canvas](/en-US/docs/Web/API/Canvas_API)
 
 {{ Next("Web/API/Canvas_API/Tutorial/Basic_usage") }}
