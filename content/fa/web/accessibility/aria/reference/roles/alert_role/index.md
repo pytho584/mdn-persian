@@ -1,7 +1,7 @@
 ---
 title: "ARIA: alert role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,40 +13,40 @@ spec-urls: https://w3c.github.io/aria/#alert
 sidebar: accessibilitysidebar
 ---
 
-The `alert` role is for important, and usually time-sensitive, information. The `alert` is a type of [`status`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role) processed as an atomic live region.
+نقش `alert` برای اطلاعات مهم و معمولاً حساس به زمان است. `alert` نوعی از [`status`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role) است که به‌عنوان یک ناحیه زنده (live region) اتمیک پردازش می‌شود.
 
-## Description
+## توضیحات
 
-The `alert` role is used to communicate an important and usually time-sensitive message to the user. When this role is added to an element, the browser will send out an accessible alert event to assistive technology products which can then notify the user.
+نقش `alert` برای انتقال یک پیام مهم و معمولاً حساس به زمان به کاربر استفاده می‌شود. وقتی این نقش به یک عنصر اضافه می‌شود، مرورگر یک رویداد هشدار دسترس‌پذیر (accessible alert event) به محصولات فناوری کمکی ارسال می‌کند که سپس می‌توانند کاربر را مطلع کنند.
 
-The alert role should only be used for information that requires the user's immediate attention, for example:
+نقش alert فقط باید برای اطلاعاتی استفاده شود که نیاز به توجه فوری کاربر دارند، مثلاً:
 
-- An invalid value was entered into a form field
-- The user's login session is about to expire
-- The connection to the server was lost so local changes will not be saved
+- مقدار نامعتبر در یک فیلد فرم وارد شده است
+- نشست ورود کاربر در حال انقضا است
+- اتصال به سرور قطع شده است و تغییرات محلی ذخیره نخواهند شد
 
-The `alert` role should only be used for text content, not interactive elements such as links or buttons. The element with the `alert` role does not have to be able to receive focus, as screen readers (speech or braille) will automatically announce the updated content regardless of where keyboard focus when the role is added.
+نقش `alert` فقط باید برای محتوای متنی استفاده شود، نه عناصر تعاملی مانند لینک‌ها یا دکمه‌ها. عنصر دارای نقش `alert` نیازی به دریافت فوکوس ندارد، زیرا صفحه‌خوان‌ها (گفتاری یا بریل) به‌طور خودکار محتوای به‌روزشده را اعلام می‌کنند، صرف‌نظر از اینکه فوکوس صفحه‌کلید هنگام افزودن نقش کجاست.
 
-The `alert` role is added to the node containing an alert message, **not** the element causing the alert to be triggered. Alerts are [assertive live regions](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions). Setting `role="alert"` is equivalent to setting [`aria-live="assertive"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) and [`aria-atomic="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic). As they don't receive focus, focus does not need to be managed and no user interaction should be required.
+نقش `alert` به گره‌ای که حاوی پیام هشدار است اضافه می‌شود، **نه** عنصری که باعث ایجاد هشدار می‌شود. هشدارها [مناطق زنده قطعی (assertive live regions)](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) هستند. تنظیم `role="alert"` معادل تنظیم [`aria-live="assertive"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) و [`aria-atomic="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic) است. از آنجایی که این عناصر فوکوس نمی‌گیرند، نیازی به مدیریت فوکوس نیست و هیچ تعامل کاربری نباید مورد نیاز باشد.
 
 > [!WARNING]
-> Because of its intrusive nature, the `alert` role must be used sparingly and only in situations where the user's immediate attention is required.
+> به دلیل ماهیت مزاحم آن، نقش `alert` باید به‌ندرت و فقط در شرایطی که توجه فوری کاربر لازم است استفاده شود.
 
-The [`alert`](https://w3c.github.io/aria/#alert) role is of the five [live region](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) roles. Dynamic changes that are less urgent should use a less aggressive method, such as including `aria-live="polite"` or using an other live region role like [`status`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role). If the user is expected to close the alert, then the [`alertdialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role) role should be used instead.
+نقش [`alert`](https://w3c.github.io/aria/#alert) یکی از پنج نقش [منطقه زنده](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) است. تغییرات پویا که کمتر فوری هستند باید از روش‌های ملایم‌تری استفاده کنند، مانند شامل کردن `aria-live="polite"` یا استفاده از نقش منطقه زنده دیگر مانند [`status`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role). اگر انتظار می‌رود کاربر هشدار را ببندد، باید از نقش [`alertdialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role) استفاده شود.
 
-The most important thing to know about the `alert` role is that it's for content that is dynamically displayed, not for content that appears on page load. It is perfect for situations such as when a user fills out a form and JavaScript is used to add an error message - the alert would immediately read out the message. It should not be used on HTML that the user hasn't interacted with. For example, if a page loads with multiple visible alerts scattered throughout, the alert role should not be used, as the messages were not dynamically triggered.
+مهم‌ترین نکته درباره نقش `alert` این است که برای محتوایی است که به‌صورت پویا نمایش داده می‌شود، نه محتوایی که هنگام بارگذاری صفحه ظاهر می‌شود. این نقش برای موقعیت‌هایی عالی است که کاربر فرمی را پر می‌کند و جاوااسکریپت برای افزودن پیام خطا استفاده می‌شود — هشدار بلافاصله پیام را می‌خواند. نباید روی HTML که کاربر با آن تعامل نداشته است استفاده شود. مثلاً اگر صفحه‌ای با چندین هشدار قابل‌مشاهده که در سراسر آن پراکنده‌اند بارگذاری شود، نباید از نقش alert استفاده کرد، زیرا پیام‌ها به‌صورت پویا ایجاد نشده‌اند.
 
-As with all other [live regions](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions), alerts will only be announced when the content of the element with `role="alert"` is _updated_. Make sure that the element with the role is present in the page's markup first - this will "prime" the browser and screen reader to keep watching the element for changes. After this, any changes to the content will be announced. Do not try to dynamically add/generate an element with `role="alert"` that is already populated with the alert message you want announced - this generally does _not_ lead to an announcement, as it is not a content change.
+مانند سایر [مناطق زنده](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)، هشدارها فقط زمانی اعلام می‌شوند که محتوای عنصر دارای `role="alert"` _به‌روزرسانی_ شود. اطمینان حاصل کنید که عنصر دارای نقش ابتدا در نشانه‌گذاری صفحه وجود دارد — این کار مرورگر و صفحه‌خوان را برای نظارت بر تغییرات عنصر «آماده» می‌کند. پس از آن، هر تغییری در محتوا اعلام خواهد شد. سعی نکنید به‌صورت پویا عنصری با `role="alert"` اضافه/ایجاد کنید که از قبل با پیام هشدار موردنظر شما پر شده است — این کار معمولاً منجر به اعلام _نمی‌شود_، زیرا تغییر محتوا رخ نداده است.
 
-As the `alert` role reads out any content that has changed, it should be used with caution. Alerts, by definition, are disruptive. Several alerts at once, and unnecessary alerts, create bad user experiences.
+از آنجا که نقش `alert` هر محتوای تغییر یافته را می‌خواند، باید با احتیاط استفاده شود. هشدارها، بنا به تعریف، مختل‌کننده هستند. چند هشدار همزمان و هشدارهای غیرضروری تجربه کاربری بدی ایجاد می‌کنند.
 
-## Examples
+## مثال‌ها
 
-The following are common examples of alerts and how to implement them:
+در ادامه نمونه‌های رایج هشدارها و نحوه پیاده‌سازی آن‌ها آورده شده است:
 
-### Example 1: Making ready-made content inside an element with an alert role visible
+### مثال ۱: قابل مشاهده کردن محتوای از پیش آماده‌شده در عنصری با نقش alert
 
-If the content _inside_ the element with `role="alert"` is initially hidden using CSS, making it visible will cause the alert to fire. This means that an existing alert container element can be "reused" multiple times.
+اگر محتوای _داخل_ عنصر دارای `role="alert"` ابتدا با CSS پنهان شده باشد، قابل مشاهده کردن آن باعث فعال شدن هشدار می‌شود. این بدان معناست که یک عنصر ظرف هشدار موجود را می‌توان چندین بار «استفاده مجدد» کرد.
 
 ```css
 .hidden {
@@ -56,38 +56,38 @@ If the content _inside_ the element with `role="alert"` is initially hidden usin
 
 ```html
 <div id="expirationWarning" role="alert">
-  <span class="hidden">Your log in session will expire in 2 minutes</span>
+  <span class="hidden">نشست ورود شما در ۲ دقیقه دیگر منقضی می‌شود</span>
 </div>
 ```
 
 ```js
-// removing the 'hidden' class makes the content inside the element visible, which will make the screen reader announce the alert:
+// حذف کلاس 'hidden' محتوای داخل عنصر را قابل مشاهده می‌کند، که باعث می‌شود صفحه‌خوان هشدار را اعلام کند:
 document
   .getElementById("expirationWarning")
   .firstChild.classList.remove("hidden");
 ```
 
-### Example 2: Dynamically changing the content inside an element with an alert role
+### مثال ۲: تغییر پویای محتوای داخل عنصری با نقش alert
 
-Using JavaScript, you can dynamically change the content _inside_ the element with `role="alert"`. Note that if you need to fire the same alert multiple times (i.e., the content you're dynamically inserting is the same as before), this generally won't be seen as a change and will _not_ lead to an announcement. For this reason, it's usually best to briefly "clear" the contents of the alert container before then injecting the alert message.
+با استفاده از جاوااسکریپت، می‌توانید محتوای _داخل_ عنصر دارای `role="alert"` را به‌صورت پویا تغییر دهید. توجه داشته باشید که اگر نیاز به فعال کردن همان هشدار چندین بار داشته باشید (یعنی محتوایی که به‌صورت پویا درج می‌کنید همان قبلی باشد)، این معمولاً به‌عنوان تغییر تلقی نمی‌شود و منجر به اعلام _نمی‌شود_. به همین دلیل، معمولاً بهتر است ابتدا محتوای ظرف هشدار را به‌طور خلاصه «پاک» کنید و سپس پیام هشدار را تزریق کنید.
 
 ```html
 <div id="alertContainer" role="alert"></div>
 ```
 
 ```js
-// clear the contents of the container
+// پاک کردن محتوای ظرف
 document.getElementById("alertContainer").textContent = "";
-// inject the new alert message
+// تزریق پیام هشدار جدید
 document.getElementById("alertContainer").textContent =
-  `Your session will expire in ${expiration} minutes`;
+  `نشست شما در ${expiration} دقیقه دیگر منقضی می‌شود`;
 ```
 
-### Example 3: Visually hidden alert container for screen reader notifications
+### مثال ۳: ظرف هشدار پنهان بصری برای اعلان‌های صفحه‌خوان
 
-It's possible to visually hide the alert container itself, and use it to provide updates/notifications explicitly for screen readers. This can be useful in situations where important content on the page has been updated, but where the change would not be immediately obvious to a screen-reader user.
+امکان پنهان کردن بصری خود ظرف هشدار و استفاده از آن برای ارائه به‌روزرسانی‌ها/اعلان‌ها به‌طور خاص برای صفحه‌خوان‌ها وجود دارد. این می‌تواند در موقعیت‌هایی مفید باشد که محتوای مهم صفحه به‌روزرسانی شده است، اما تغییر بلافاصله برای کاربر صفحه‌خوان قابل توجه نباشد.
 
-However, make sure that the container is not hidden using `display:none`, as this will hide it even from assistive technologies, meaning that they won't be notified of any changes. Instead, use something like the [`.visually-hidden` styles](https://www.a11yproject.com/posts/how-to-hide-content/).
+با این حال، مطمئن شوید که ظرف با `display:none` پنهان نشده است، زیرا این کار آن را حتی از فناوری‌های کمکی نیز پنهان می‌کند و در نتیجه از تغییرات مطلع نخواهند شد. به جای آن، از چیزی مانند [استایل‌های `.visually-hidden`](https://www.a11yproject.com/posts/how-to-hide-content/) استفاده کنید.
 
 ```html
 <div id="hiddenAlertContainer" role="alert" class="visually-hidden"></div>
@@ -106,26 +106,26 @@ However, make sure that the container is not hidden using `display:none`, as thi
 ```
 
 ```js
-// clear the contents of the container
+// پاک کردن محتوای ظرف
 document.getElementById("hiddenAlertContainer").textContent = "";
-// inject the new alert message
+// تزریق پیام هشدار جدید
 document.getElementById("hiddenAlertContainer").textContent =
-  "All items were removed from your inventory.";
+  "همه موارد از موجودی شما حذف شدند.";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live)
 - [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic)
-- [ARIA: `log` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role)
-- [ARIA: `marquee` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/marquee_role)
-- [ARIA: `status` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role)
-- [ARIA: `timer` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/timer_role)
-- [ARIA: `alertdialog` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role)
-- [ARIA: live regions](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
-- [ARIA alert support - Vispero](https://vispero.com/resources/aria-alert-support/)
-- [ARIA Practices alert example](https://www.w3.org/WAI/ARIA/apg/patterns/alert/examples/alert/)
+- [نقش ARIA: `log`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role)
+- [نقش ARIA: `marquee`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/marquee_role)
+- [نقش ARIA: `status`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role)
+- [نقش ARIA: `timer`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/timer_role)
+- [نقش ARIA: `alertdialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role)
+- [ARIA: مناطق زنده](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
+- [پشتیبانی از هشدار ARIA - Vispero](https://vispero.com/resources/aria-alert-support/)
+- [مثال هشدار در شیوه‌های ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/alert/examples/alert/)
