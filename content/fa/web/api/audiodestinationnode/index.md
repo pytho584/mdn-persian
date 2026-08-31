@@ -1,7 +1,7 @@
 ---
 title: "AudioDestinationNode"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioDestinationNode"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,11 +13,11 @@ browser-compat: api.AudioDestinationNode
 
 {{APIRef("Web Audio API")}}
 
-The `AudioDestinationNode` interface represents the end destination of an audio graph in a given context — usually the speakers of your device. It can also be the node that will "record" the audio data when used with an `OfflineAudioContext`.
+رابط `AudioDestinationNode` نمایانگر مقصد نهایی یک گراف صوتی در یک زمینه (context) معین است — معمولاً بلندگوهای دستگاه شما. همچنین می‌تواند گره‌ای باشد که هنگام استفاده با `OfflineAudioContext` داده‌های صوتی را «ضبط» می‌کند.
 
-`AudioDestinationNode` has no output (as it _is_ the output, no more `AudioNode` can be linked after it in the audio graph) and one input. The number of channels in the input must be between `0` and the `maxChannelCount` value or an exception is raised.
+`AudioDestinationNode` خروجی ندارد (زیرا خودش خروجی است و هیچ `AudioNode` دیگری نمی‌تواند بعد از آن در گراف صوتی متصل شود) و یک ورودی دارد. تعداد کانال‌های ورودی باید بین `0` و مقدار `maxChannelCount` باشد، در غیر این صورت استثنا ایجاد می‌شود.
 
-The `AudioDestinationNode` of a given `AudioContext` can be retrieved using the {{domxref("BaseAudioContext/destination", "AudioContext.destination")}} property.
+برای دریافت `AudioDestinationNode` یک `AudioContext` معین، می‌توانید از ویژگی {{domxref("BaseAudioContext/destination", "AudioContext.destination")}} استفاده کنید.
 
 {{InheritanceDiagram}}
 
@@ -46,20 +46,20 @@ The `AudioDestinationNode` of a given `AudioContext` can be retrieved using the 
   </tbody>
 </table>
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("AudioNode")}}_.
+ویژگی‌های والد خود، {{domxref("AudioNode")}} را به ارث می‌برد.
 
 - {{domxref("AudioDestinationNode.maxChannelCount")}}
-  - : An `unsigned long` defining the maximum number of channels that the physical device can handle.
+  - : یک `unsigned long` که حداکثر تعداد کانال‌هایی را که دستگاه فیزیکی می‌تواند مدیریت کند، تعریف می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("AudioNode")}}_.
+روش خاصی ندارد؛ روش‌های والد خود، {{domxref("AudioNode")}} را به ارث می‌برد.
 
-## Example
+## مثال
 
-There is no complex set up for using an `AudioDestinationNode` — by default, this represents the output of the user's system (e.g., their speakers), so you can get it hooked up inside an audio graph using only a few lines of code:
+برای استفاده از `AudioDestinationNode` هیچ راه‌اندازی پیچیده‌ای لازم نیست — به‌طور پیش‌فرض، این گره خروجی سیستم کاربر (مثلاً بلندگوهایش) را نمایندگی می‌کند، بنابراین می‌توانید تنها با چند خط کد آن را در داخل گراف صوتی وصل کنید:
 
 ```js
 const audioCtx = new AudioContext();
@@ -68,16 +68,16 @@ source.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 ```
 
-To see a more complete implementation, check out one of our MDN Web Audio examples, such as [Voice-change-o-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) or [Violent Theremin](https://github.com/mdn/webaudio-examples/tree/main/violent-theremin).
+برای مشاهده پیاده‌سازی کامل‌تر، یکی از مثال‌های Web Audio مازندرانی MDN را بررسی کنید، مانند [Voice-change-o-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) یا [Violent Theremin](https://github.com/mdn/webaudio-examples/tree/main/violent-theremin).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
