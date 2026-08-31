@@ -1,7 +1,7 @@
 ---
 title: "Drawing text"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_text"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,20 +12,20 @@ page-type: guide
 
 {{DefaultAPISidebar("Canvas API")}} {{PreviousNext("Web/API/Canvas_API/Tutorial/Applying_styles_and_colors", "Web/API/Canvas_API/Tutorial/Using_images")}}
 
-After having seen how to [apply styles and colors](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) in the previous chapter, we will now have a look at how to draw text onto the canvas.
+پس از اینکه در فصل قبل دیدیم چگونه [استایل‌ها و رنگ‌ها را اعمال کنیم](/fa/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors)، اکنون به نحوه رسم متن روی بوم (canvas) می‌پردازیم.
 
-## Drawing text
+## رسم متن
 
-The canvas rendering context provides two methods to render text:
+زمینه رندر بوم دو روش برای نمایش متن ارائه می‌دهد:
 
 - {{domxref("CanvasRenderingContext2D.fillText", "fillText(text, x, y [, maxWidth])")}}
-  - : Fills a given text at the given (x,y) position. Optionally with a maximum width to draw.
+  - : یک متن داده شده را در موقعیت (x,y) داده شده پر می‌کند. به صورت اختیاری با حداکثر عرض برای رسم.
 - {{domxref("CanvasRenderingContext2D.strokeText", "strokeText(text, x, y [, maxWidth])")}}
-  - : Strokes a given text at the given (x,y) position. Optionally with a maximum width to draw.
+  - : یک متن داده شده را در موقعیت (x,y) داده شده رسم می‌کند (فقط خط دور). به صورت اختیاری با حداکثر عرض برای رسم.
 
-### A `fillText` example
+### یک مثال از `fillText`
 
-The text is filled using the current `fillStyle`.
+متن با استفاده از `fillStyle` جاری پر می‌شود.
 
 ```js
 function draw() {
@@ -45,9 +45,9 @@ draw();
 
 {{EmbedLiveSample("A_fillText_example", 310, 110)}}
 
-### A `strokeText` example
+### یک مثال از `strokeText`
 
-The text is filled using the current `strokeStyle`.
+متن با استفاده از `strokeStyle` جاری رسم می‌شود (خط دور).
 
 ```js
 function draw() {
@@ -67,29 +67,28 @@ draw();
 
 {{EmbedLiveSample("A_strokeText_example", 310, 110)}}
 
-## Styling text
+## استایل‌دهی به متن
 
-In the examples above we are already making use of the `font` property to make the text a bit larger than the default size. There are some more properties which let you adjust the way the text gets displayed on the canvas:
+در مثال‌های بالا قبلاً از ویژگی `font` برای بزرگ‌تر کردن متن نسبت به اندازه پیش‌فرض استفاده کرده‌ایم. چند ویژگی دیگر وجود دارد که به شما امکان می‌دهد نحوه نمایش متن روی بوم را تنظیم کنید:
 
 - {{domxref("CanvasRenderingContext2D.font", "font = value")}}
-  - : The current text style being used when drawing text. This string uses the same syntax as the [CSS](/en-US/docs/Web/CSS) {{cssxref("font")}} property. The default font is 10px sans-serif.
+  - : سبک متن فعلی هنگام رسم متن. این رشته از همان syntax ویژگی [CSS](/fa/docs/Web/CSS) {{cssxref("font")}} استفاده می‌کند. فونت پیش‌فرض 10px sans-serif است.
 - {{domxref("CanvasRenderingContext2D.textAlign", "textAlign = value")}}
-  - : Text alignment setting. Possible values: `start`, `end`, `left`, `right` or `center`. The default value is `start`.
+  - : تنظیم تراز متن. مقادیر ممکن: `start`, `end`, `left`, `right` یا `center`. مقدار پیش‌فرض `start` است.
 - {{domxref("CanvasRenderingContext2D.textBaseline", "textBaseline = value")}}
-  - : Baseline alignment setting. Possible values: `top`, `hanging`, `middle`, `alphabetic`, `ideographic`, `bottom`. The default value is `alphabetic`.
+  - : تنظیم تراز خط پایه. مقادیر ممکن: `top`, `hanging`, `middle`, `alphabetic`, `ideographic`, `bottom`. مقدار پیش‌فرض `alphabetic` است.
 - {{domxref("CanvasRenderingContext2D.direction", "direction = value")}}
-  - : Directionality. Possible values: `ltr`, `rtl`, `inherit`. The default value is `inherit`.
+  - : جهت‌گیری. مقادیر ممکن: `ltr`, `rtl`, `inherit`. مقدار پیش‌فرض `inherit` است.
 
-These properties might be familiar to you, if you have worked with CSS before.
+اگر قبلاً با CSS کار کرده باشید، این ویژگی‌ها ممکن است برای شما آشنا باشند.
 
-The following diagram from the [HTML spec](https://html.spec.whatwg.org/multipage/canvas.html#text-styles) demonstrates the various baselines supported by the `textBaseline` property.
+نمودار زیر از [مشخصات HTML](https://html.spec.whatwg.org/multipage/canvas.html#text-styles) خطوط پایه مختلف پشتیبانی‌شده توسط ویژگی `textBaseline` را نشان می‌دهد.
 
-![The em-over baseline is roughly at the top of the glyphs in a font, the hanging baseline is where some glyphs like आ are anchored, the middle is half-way between the em-over and em-under baselines, the alphabetic baseline is where characters like Á, ÿ, f, and Ω are anchored, the ideographic-under baseline is where glyphs like 私 and 達 are anchored, and the em-under baseline is roughly at the bottom of the glyphs in a font. The top and bottom of the bounding box can be far from these baselines, due to glyphs extending far outside em-over and em-under baselines.](baselines.png)
+![خط پایه em-over تقریباً در بالای حروف یک فونت قرار دارد، خط پایه hanging جایی است که برخی حروف مانند आ لنگر می‌خورند، خط پایه middle نصف راه بین خطوط پایه em-over و em-under است، خط پایه alphabetic جایی است که کاراکترهایی مانند Á, ÿ, f, و Ω لنگر می‌خورند، خط پایه ideographic-under جایی است که حروفی مانند 私 و 達 لنگر می‌خورند، و خط پایه em-under تقریباً در پایین حروف یک فونت قرار دارد. بالا و پایین جعبه مرزی می‌توانند از این خطوط پایه دور باشند، به دلیل حروفی که بسیار فراتر از خطوط پایه em-over و em-under گسترش می‌یابند.](baselines.png)
 
-### A `textBaseline` example
+### یک مثال از `textBaseline`
 
-This example demonstrates the various `textBaseline` property values.
-See the [`CanvasRenderingContext2D.textBaseline`](/en-US/docs/Web/API/CanvasRenderingContext2D/textBaseline) page for more information and detailed examples.
+این مثال مقادیر مختلف ویژگی `textBaseline` را نشان می‌دهد. برای اطلاعات بیشتر و مثال‌های دقیق به صفحه [`CanvasRenderingContext2D.textBaseline`](/fa/docs/Web/API/CanvasRenderingContext2D/textBaseline) مراجعه کنید.
 
 ```html hidden live-sample___textBaseline
 <canvas id="canvas" width="400" height="100"></canvas>
@@ -119,14 +118,14 @@ draw();
 
 {{EmbedLiveSample('textBaseline', 310, 110)}}
 
-## Advanced text measurements
+## اندازه‌گیری پیشرفته متن
 
-In the case you need to obtain more details about the text, the following method allows you to measure it.
+در صورت نیاز به اطلاعات دقیق‌تر درباره متن، روش زیر به شما امکان اندازه‌گیری آن را می‌دهد.
 
 - {{domxref("CanvasRenderingContext2D.measureText", "measureText()")}}
-  - : Returns a {{domxref("TextMetrics")}} object containing the width, in pixels, that the specified text will be when drawn in the current text style.
+  - : یک شی {{domxref("TextMetrics")}} شامل عرض (به پیکسل) که متن مشخص شده در سبک متن فعلی رسم خواهد شد، برمی‌گرداند.
 
-The following code snippet shows how you can measure a text and get its width.
+قطعه کد زیر نحوه اندازه‌گیری یک متن و دریافت عرض آن را نشان می‌دهد.
 
 ```js
 function draw() {
@@ -136,10 +135,10 @@ function draw() {
 }
 ```
 
-## Accessibility concerns
+## ملاحظات دسترسی‌پذیری
 
-The `<canvas>` element is just a bitmap and does not provide information about any drawn objects. Text written on canvas can cause legibility issues with users relying on screen magnification. The pixels within a canvas element do not scale and can become blurry with magnification. This is because they are not a vector but letter-shaped collection of pixels. When zooming in on it, the pixels become bigger.
+عنصر `<canvas>` فقط یک نقشه بیت (bitmap) است و اطلاعاتی درباره اشیاء رسم شده ارائه نمی‌دهد. متنی که روی بوم نوشته می‌شود می‌تواند باعث مشکلات خوانایی برای کاربرانی شود که از بزرگنمایی صفحه استفاده می‌کنند. پیکسل‌های داخل یک عنصر canvas مقیاس‌پذیر نیستند و با بزرگنمایی تار می‌شوند. این به دلیل این است که آنها یک بردار نیستند، بلکه مجموعه‌ای از پیکسل‌ها به شکل حروف هستند. هنگام بزرگنمایی روی آن، پیکسل‌ها بزرگتر می‌شوند.
 
-Canvas content is not exposed to accessibility tools like semantic HTML is. In general, you should avoid using canvas in an accessible website or app. An alternative is to use HTML elements or SVG instead of canvas.
+محتوای Canvas مانند HTML معنایی در معرض ابزارهای دسترسی‌پذیری قرار نمی‌گیرد. به طور کلی، باید از استفاده از canvas در یک وب‌سایت یا برنامه قابل دسترس خودداری کنید. یک جایگزین استفاده از عناصر HTML یا SVG به جای canvas است.
 
 {{PreviousNext("Web/API/Canvas_API/Tutorial/Applying_styles_and_colors", "Web/API/Canvas_API/Tutorial/Using_images")}}
