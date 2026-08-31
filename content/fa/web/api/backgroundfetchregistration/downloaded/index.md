@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRegistration: downloaded property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/downloaded"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,26 +16,26 @@ browser-compat: api.BackgroundFetchRegistration.downloaded
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`downloaded`** read-only property of the {{domxref("BackgroundFetchRegistration")}} interface returns the size in bytes that has been downloaded, initially `0`.
+ویژگی فقط‌خواندنی **`downloaded`** از رابط {{domxref("BackgroundFetchRegistration")}} اندازهٔ دانلودشده را به بایت برمی‌گرداند که در ابتدا `0` است.
 
-If the value of this property changes, the [progress](/en-US/docs/Web/API/BackgroundFetchRegistration/progress_event) event is fired at the associated {{domxref("BackgroundFetchRegistration")}} object.
+اگر مقدار این ویژگی تغییر کند، رویداد [progress](/en-US/docs/Web/API/BackgroundFetchRegistration/progress_event) در شیء {{domxref("BackgroundFetchRegistration")}} مرتبط فعال می‌شود.
 
-## Value
+## مقدار
 
-A {{jsxref("Number")}}.
+یک {{jsxref("Number")}}.
 
-## Examples
+## مثال‌ها
 
-Logging this property to the console returns the number of bytes downloaded.
+ثبت این ویژگی در کنسول، تعداد بایت‌های دانلودشده را برمی‌گرداند.
 
 ```js
 console.log(bgFetch.downloaded);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
