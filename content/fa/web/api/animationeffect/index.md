@@ -1,11 +1,7 @@
 ---
 title: "AnimationEffect"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect"
-status: "needs-translation"
----
-
----
-title: AnimationEffect
+translated_by: "n8n + AI"
 slug: Web/API/AnimationEffect
 page-type: web-api-interface
 browser-compat: api.AnimationEffect
@@ -13,28 +9,28 @@ browser-compat: api.AnimationEffect
 
 {{ APIRef("Web Animations") }}
 
-The `AnimationEffect` interface of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) is an interface representing animation effects.
+رابط `AnimationEffect` از [API انیمیشن‌های وب](/en-US/docs/Web/API/Web_Animations_API) یک رابط است که جلوه‌های انیمیشن را نشان می‌دهد.
 
-`AnimationEffect` is an abstract interface and so isn't directly instantiable. However, concrete interfaces such as {{domxref("KeyframeEffect")}} inherit from it, and instances of these interfaces can be passed to {{domxref("Animation")}} objects for playing, and may also be used by [CSS Animations](/en-US/docs/Web/CSS/Guides/Animations) and [Transitions](/en-US/docs/Web/CSS/Guides/Transitions).
+`AnimationEffect` یک رابط انتزاعی است و بنابراین مستقیماً قابل نمونه‌سازی نیست. با این حال، رابط‌های عینی مانند {{domxref("KeyframeEffect")}} از آن ارث‌بری می‌کنند، و نمونه‌هایی از این رابط‌ها می‌توانند به اشیاء {{domxref("Animation")}} برای پخش منتقل شوند، و همچنین ممکن است توسط [انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations) و [انتقال‌ها](/en-US/docs/Web/CSS/Guides/Transitions) استفاده شوند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("AnimationEffect.getTiming()")}}
-  - : Returns the object associated with the animation containing all the animation's timing values.
+  - : بازگرداندن شیء مرتبط با انیمیشن که شامل تمام مقادیر زمان‌بندی انیمیشن است.
 - {{domxref("AnimationEffect.getComputedTiming()")}}
-  - : Returns the calculated timing properties for this `AnimationEffect`.
+  - : بازگرداندن ویژگی‌های زمان‌بندی محاسبه‌شده برای این `AnimationEffect`.
 - {{domxref("AnimationEffect.updateTiming()")}}
-  - : Updates the specified timing properties of this `AnimationEffect`.
+  - : به‌روزرسانی ویژگی‌های زمان‌بندی مشخص شده این `AnimationEffect`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("Animation.effect")}}
