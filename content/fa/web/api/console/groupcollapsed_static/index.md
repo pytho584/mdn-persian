@@ -1,11 +1,5 @@
 ---
 title: "console: groupCollapsed() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/groupCollapsed_static"
-status: "needs-translation"
----
-
----
-title: "console: groupCollapsed() static method"
 short-title: groupCollapsed()
 slug: Web/API/console/groupCollapsed_static
 page-type: web-api-static-method
@@ -14,11 +8,11 @@ browser-compat: api.console.groupCollapsed_static
 
 {{APIRef("Console API")}} {{AvailableInWorkers}}
 
-The **`console.groupCollapsed()`** static method creates a new inline group in the console. Unlike {{domxref("console/group_static", "console.group()")}}, however, the new group is created collapsed. The user will need to use the disclosure button next to it to expand it, revealing the entries created in the group.
+متد ایستای **`console.groupCollapsed()`** یک گروه درون‌خطی جدید در کنسول ایجاد می‌کند. با این حال، برخلاف {{domxref("console/group_static", "console.group()")}}، گروه جدید به صورت جمع‌شده ایجاد می‌شود. کاربر برای باز کردن آن و مشاهدهٔ ورودی‌های ایجاد شده در گروه، باید از دکمهٔ باز شدن (disclosure button) کنار آن استفاده کند.
 
-Call {{domxref("console/groupEnd_static", "console.groupEnd()")}} to back out to the parent group.
+برای بازگشت به گروه والد، از {{domxref("console/groupEnd_static", "console.groupEnd()")}} استفاده کنید.
 
-See [Using groups in the console](/en-US/docs/Web/API/console#using_groups_in_the_console) in the {{domxref("console")}} documentation for details and examples.
+برای جزئیات و مثال‌ها، بخش [استفاده از گروه‌ها در کنسول](/en-US/docs/Web/API/console#using_groups_in_the_console) را در مستندات {{domxref("console")}} ببینید.
 
 ## Syntax
 
@@ -30,11 +24,11 @@ console.groupCollapsed(label)
 ### Parameters
 
 - `label` {{Optional_Inline}}
-  - : Label for the group.
+  - : برچسبی برای گروه.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Specifications
 
@@ -48,6 +42,6 @@ None ({{jsxref("undefined")}}).
 
 - {{domxref("console/group_static", "console.group()")}}
 - {{domxref("console/groupEnd_static", "console.groupEnd()")}}
-- [Microsoft Edge's documentation for `console.groupCollapsed()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#groupcollapsed)
-- [Node.js documentation for `console.groupCollapsed()`](https://nodejs.org/docs/latest/api/console.html#consolegroupcollapsed)
-- [Google Chrome's documentation for `console.groupCollapsed()`](https://developer.chrome.com/docs/devtools/console/api/#groupcollapsed)
+- [مستندات Microsoft Edge برای `console.groupCollapsed()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#groupcollapsed)
+- [مستندات Node.js برای `console.groupCollapsed()`](https://nodejs.org/docs/latest/api/console.html#consolegroupcollapsed)
+- [مستندات Google Chrome برای `console.groupCollapsed()`](https://developer.chrome.com/docs/devtools/console/api/#groupcollapsed)
