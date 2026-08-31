@@ -1,10 +1,4 @@
 ---
-title: "CSSFontPaletteValuesRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule"
-status: "needs-translation"
----
-
----
 title: CSSFontPaletteValuesRule
 slug: Web/API/CSSFontPaletteValuesRule
 page-type: web-api-interface
@@ -13,37 +7,37 @@ browser-compat: api.CSSFontPaletteValuesRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSFontPaletteValuesRule`** interface represents an {{cssxref("@font-palette-values")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+رابطهٔ **`CSSFontPaletteValuesRule`** نمایانگر یک [ات-قانون](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) از نوع {{cssxref("@font-palette-values")}} است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestor {{domxref("CSSRule")}}._
+_ویژگی‌ها را از والد خود، {{domxref("CSSRule")}}، به ارث می‌برد._
 
 - {{domxref("CSSFontPaletteValuesRule.name")}} {{ReadOnlyInline}}
-  - : A string with the name of the font palette.
+  - : رشته‌ای شامل نام پالت فونت.
 - {{domxref("CSSFontPaletteValuesRule.fontFamily")}} {{ReadOnlyInline}}
-  - : A string indicating the font families on which the rule has to be applied.
+  - : رشته‌ای که خانواده‌های فونتی را که قانون باید روی آن‌ها اعمال شود، مشخص می‌کند.
 - {{domxref("CSSFontPaletteValuesRule.basePalette")}} {{ReadOnlyInline}}
-  - : A string indicating the base palette associated with the rule.
+  - : رشته‌ای که پالت پایهٔ مرتبط با قانون را نشان می‌دهد.
 - {{domxref("CSSFontPaletteValuesRule.overrideColors")}} {{ReadOnlyInline}}
-  - : A string indicating the colors of the base palette that are overwritten and the new colors.
+  - : رشته‌ای که رنگ‌های بازنویسی‌شدهٔ پالت پایه و رنگ‌های جدید را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its ancestor {{domxref("CSSRule")}}._
+_روش‌ها را از والد خود، {{domxref("CSSRule")}}، به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Read associated font family using CSSOM
+### خواندن خانوادهٔ فونت مرتبط با استفاده از CSSOM
 
-This example first defines an {{cssxref("@import")}} and an {{cssxref("@font-palette-values")}} at-rule. Then it reads the {{cssxref("@font-palette-values")}} rule and displays its name. The MDN [live sample](/en-US/docs/MDN/Writing_guidelines/Page_structures/Live_samples) infrastructure combines all the CSS blocks in the example into a single inline style with the id `css-output`, so we first use {{domxref("document.getElementById()")}} to find that sheet. The palette will be the second {{domxref("CSSRule")}} in that stylesheet. So, `rules[1]` returns a `CSSFontPaletteValuesRule` object, from which we can access `fontFamily`.
+در این مثال، ابتدا یک ات-قانون {{cssxref("@import")}} و یک ات-قانون {{cssxref("@font-palette-values")}} تعریف می‌شود. سپس قانون {{cssxref("@font-palette-values")}} خوانده شده و نام آن نمایش داده می‌شود. زیرساخت [نمونهٔ زندهٔ MDN](/en-US/docs/MDN/Writing_guidelines/Page_structures/Live_samples) همهٔ بلوک‌های CSS موجود در مثال را در یک استایل درون‌خطی واحد با شناسهٔ `css-output` ترکیب می‌کند، بنابراین ابتدا از {{domxref("document.getElementById()")}} برای یافتن آن stylesheet استفاده می‌کنیم. پالت، دومین {{domxref("CSSRule")}} در آن stylesheet خواهد بود. بنابراین، `rules[1]` یک شیء `CSSFontPaletteValuesRule` برمی‌گرداند که می‌توانیم از آن به `fontFamily` دسترسی داشته باشیم.
 
 #### HTML
 
 ```html
-<pre id="log">The @font-palette-values at-rule font families:</pre>
+<pre id="log">خانواده‌های فونت در ات-قانون @font-palette-values:</pre>
 ```
 
 #### CSS
@@ -69,22 +63,22 @@ This example first defines an {{cssxref("@import")}} and an {{cssxref("@font-pal
 const log = document.getElementById("log");
 
 const rules = document.getElementById("css-output").sheet.cssRules;
-const fontPaletteValuesRule = rules[1]; // aA CSSFontPaletteValuesRule interface
+const fontPaletteValuesRule = rules[1]; // یک رابط CSSFontPaletteValuesRule
 log.textContent += ` ${fontPaletteValuesRule.fontFamily}`;
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Read associated font family using CSSOM", "100", "40")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{cssxref("@font-palette-values")}}
