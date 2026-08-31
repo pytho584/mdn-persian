@@ -1,7 +1,7 @@
 ---
 title: "AudioParam"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,55 +13,55 @@ browser-compat: api.AudioParam
 
 {{APIRef("Web Audio API")}}
 
-The Web Audio API's `AudioParam` interface represents an audio-related parameter, usually a parameter of an {{domxref("AudioNode")}} (such as {{ domxref("GainNode.gain") }}).
+رابط `AudioParam` در Web Audio API پارامتری مرتبط با صوت را نشان می‌دهد، معمولاً پارامتری از {{domxref("AudioNode")}} (مانند {{ domxref("GainNode.gain") }}).
 
-An `AudioParam` can be set to a specific value or a change in value, and can be scheduled to happen at a specific time and following a specific pattern.
+یک `AudioParam` می‌تواند روی یک مقدار خاص یا تغییر مقدار تنظیم شود و می‌توان زمان‌بندی کرد که در زمانی خاص و طبق الگوی خاصی رخ دهد.
 
-Each `AudioParam` has a list of events, initially empty, that define when and how values change. When this list is not empty, changes using the `AudioParam.value` attributes are ignored. This list of events allows us to schedule changes that have to happen at very precise times, using arbitrary timeline-based automation curves. The time used is the one defined in {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}}.
+هر `AudioParam` فهرستی از رویدادها دارد که در ابتدا خالی است و مشخص می‌کند چه زمانی و چگونه مقادیر تغییر می‌کنند. وقتی این فهرست خالی نیست، تغییرات با استفاده از ویژگی‌های `AudioParam.value` نادیده گرفته می‌شوند. این فهرست رویدادها به ما امکان می‌دهد تغییراتی را که باید در زمان‌های بسیار دقیق رخ دهند، با استفاده از منحنی‌های اتوماسیون مبتنی بر زمان‌بندی دلخواه زمان‌بندی کنیم. زمان استفاده‌شده همان است که در {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}} تعریف شده است.
 
-## AudioParam types
+## انواع AudioParam
 
-There are two `AudioParam` kinds: _a-rate_ and _k-rate_ parameters. Each {{domxref("AudioNode")}} defines which of its parameters are _a-rate_ or _k-rate_ in the spec.
+دو نوع `AudioParam` وجود دارد: پارامترهای _a-rate_ و _k-rate_. هر {{domxref("AudioNode")}} در مشخصات تعریف می‌کند که کدام یک از پارامترهای آن _a-rate_ یا _k-rate_ هستند.
 
 ### a-rate
 
-An _a-rate_ `AudioParam` takes the current audio parameter value for each [sample frame](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#audio_buffers_frames_samples_and_channels) of the audio signal.
+یک `AudioParam` از نوع _a-rate_ مقدار پارامتر صوتی فعلی را برای هر [sample frame](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#audio_buffers_frames_samples_and_channels) از سیگنال صوتی می‌گیرد.
 
 ### k-rate
 
-A _k-rate_ `AudioParam` uses the same initial audio parameter value for the whole block processed; that is, 128 sample frames. In other words, the same value applies to every frame in the audio as it's processed by the node.
+یک `AudioParam` از نوع _k-rate_ از همان مقدار پارامتر صوتی اولیه برای کل بلوک پردازش‌شده استفاده می‌کند؛ یعنی ۱۲۸ فریم نمونه. به عبارت دیگر، همان مقدار برای هر فریم در صوتی که توسط گره پردازش می‌شود اعمال می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("AudioParam.defaultValue")}} {{ReadOnlyInline}}
-  - : Represents the initial value of the attribute as defined by the specific {{domxref("AudioNode")}} creating the `AudioParam`.
+  - مقدار اولیه ویژگی را که توسط {{domxref("AudioNode")}} خاص ایجادکننده `AudioParam` تعریف شده است، نشان می‌دهد.
 - {{domxref("AudioParam.maxValue")}} {{ReadOnlyInline}}
-  - : Represents the maximum possible value for the parameter's nominal (effective) range.
+  - حداکثر مقدار ممکن برای محدوده اسمی (موثر) پارامتر را نشان می‌دهد.
 - {{domxref("AudioParam.minValue")}} {{ReadOnlyInline}}
-  - : Represents the minimum possible value for the parameter's nominal (effective) range.
+  - حداقل مقدار ممکن برای محدوده اسمی (موثر) پارامتر را نشان می‌دهد.
 - {{domxref("AudioParam.value")}}
-  - : Represents the parameter's current value as of the current time; initially set to the value of {{domxref("AudioParam.defaultValue", "defaultValue")}}.
+  - مقدار فعلی پارامتر را در زمان جاری نشان می‌دهد؛ در ابتدا روی مقدار {{domxref("AudioParam.defaultValue", "defaultValue")}} تنظیم شده است.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("AudioParam.setValueAtTime()")}}
-  - : Schedules an instant change to the value of the `AudioParam` at a precise time, as measured against {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}}. The new value is given by the `value` parameter.
+  - یک تغییر آنی در مقدار `AudioParam` را در زمان دقیقی، که نسبت به {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}} سنجیده می‌شود، زمان‌بندی می‌کند. مقدار جدید توسط پارامتر `value` داده می‌شود.
 - {{domxref("AudioParam.linearRampToValueAtTime()")}}
-  - : Schedules a gradual linear change in the value of the `AudioParam`. The change starts at the time specified for the _previous_ event, follows a linear ramp to the new value given in the `value` parameter, and reaches the new value at the time given in the `endTime` parameter.
+  - یک تغییر خطی تدریجی در مقدار `AudioParam` را زمان‌بندی می‌کند. تغییر از زمان مشخص‌شده برای رویداد _قبلی_ شروع می‌شود، از یک شیب خطی به مقدار جدید داده‌شده در پارامتر `value` پیروی می‌کند و در زمان داده‌شده در پارامتر `endTime` به مقدار جدید می‌رسد.
 - {{domxref("AudioParam.exponentialRampToValueAtTime()")}}
-  - : Schedules a gradual exponential change in the value of the `AudioParam`. The change starts at the time specified for the _previous_ event, follows an exponential ramp to the new value given in the `value` parameter, and reaches the new value at the time given in the `endTime` parameter.
+  - یک تغییر نمایی تدریجی در مقدار `AudioParam` را زمان‌بندی می‌کند. تغییر از زمان مشخص‌شده برای رویداد _قبلی_ شروع می‌شود، از یک شیب نمایی به مقدار جدید داده‌شده در پارامتر `value` پیروی می‌کند و در زمان داده‌شده در پارامتر `endTime` به مقدار جدید می‌رسد.
 - {{domxref("AudioParam.setTargetAtTime()")}}
-  - : Schedules the start of a change to the value of the `AudioParam`. The change starts at the time specified in `startTime` and exponentially moves towards the value given by the `target` parameter. The exponential decay rate is defined by the `timeConstant` parameter, which is a time measured in seconds.
+  - آغاز تغییری در مقدار `AudioParam` را زمان‌بندی می‌کند. تغییر از زمان مشخص‌شده در `startTime` شروع می‌شود و به‌صورت نمایی به سمت مقدار داده‌شده توسط پارامتر `target` حرکت می‌کند. نرخ کاهش نمایی توسط پارامتر `timeConstant` تعریف می‌شود که زمانی بر حسب ثانیه است.
 - {{domxref("AudioParam.setValueCurveAtTime()")}}
-  - : Schedules the values of the `AudioParam` to follow a set of values, defined by an array of floating-point numbers scaled to fit into the given interval, starting at a given start time and spanning a given duration of time.
+  - مقادیر `AudioParam` را زمان‌بندی می‌کند تا از مجموعه مقادیری پیروی کنند که توسط آرایه‌ای از اعداد اعشاری مقیاس‌بندی‌شده برای تطبیق با بازه داده‌شده تعریف شده‌اند، از زمان شروع معین شروع شده و مدت‌زمان معینی را پوشش می‌دهند.
 - {{domxref("AudioParam.cancelScheduledValues()")}}
-  - : Cancels all scheduled future changes to the `AudioParam`.
+  - همه تغییرات آینده زمان‌بندی‌شده برای `AudioParam` را لغو می‌کند.
 - {{domxref("AudioParam.cancelAndHoldAtTime()")}}
-  - : Cancels all scheduled future changes to the `AudioParam` but holds its value at a given time until further changes are made using other methods.
+  - همه تغییرات آینده زمان‌بندی‌شده برای `AudioParam` را لغو می‌کند، اما مقدار آن را در یک زمان معین نگه می‌دارد تا زمانی که تغییرات بیشتری با استفاده از روش‌های دیگر انجام شود.
 
-## Examples
+## مثال‌ها
 
-First, a basic example showing a {{domxref("GainNode")}} having its `gain` value set. `gain` is an example of an _a-rate_ `AudioParam`, as the value can potentially be set differently for each sample frame of the audio.
+ابتدا، یک مثال ساده که یک {{domxref("GainNode")}} را با مقدار `gain` تنظیم‌شده نشان می‌دهد. `gain` نمونه‌ای از _a-rate_ `AudioParam` است، زیرا مقدار می‌تواند به‌طور بالقوه برای هر فریم نمونه از صوت متفاوت تنظیم شود.
 
 ```js
 const audioCtx = new AudioContext();
@@ -70,7 +70,7 @@ const gainNode = audioCtx.createGain();
 gainNode.gain.value = 0;
 ```
 
-Next, an example showing a {{ domxref("DynamicsCompressorNode") }} having some param values manipulated. These are examples of _k-rate_ `AudioParam` types, as the values are set for the entire audio block at once.
+در ادامه، مثالی که یک {{ domxref("DynamicsCompressorNode") }} را با تغییر برخی مقادیر پارامتر نشان می‌دهد. این‌ها نمونه‌هایی از انواع _k-rate_ `AudioParam` هستند، زیرا مقادیر برای کل بلوک صوتی به‌طور یکجا تنظیم می‌شوند.
 
 ```js
 const compressor = audioCtx.createDynamicsCompressor();
@@ -81,14 +81,14 @@ compressor.attack.setValueAtTime(0, audioCtx.currentTime);
 compressor.release.setValueAtTime(0.25, audioCtx.currentTime);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
