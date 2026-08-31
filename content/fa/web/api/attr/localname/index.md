@@ -1,7 +1,7 @@
 ---
 title: "Attr: localName property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Attr/localName"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,22 +14,22 @@ browser-compat: api.Attr.localName
 
 {{APIRef("DOM")}}
 
-The read-only **`localName`** property of the {{domxref("Attr")}} interface returns the _local part_ of the _qualified name_ of an attribute, that is the name of the attribute, stripped from any namespace in front of it. For example, if the qualified name is `xml:lang`, the returned local name is `lang`, if the element supports that namespace.
+ویژگی فقط‌خواندنی **`localName`** از رابط {{domxref("Attr")}} بخش _محلی_ از _نام کامل_ یک ویژگی را برمی‌گرداند، یعنی نام ویژگی بدون هر فضای نامی که قبل از آن قرار دارد. برای مثال، اگر نام کامل `xml:lang` باشد، نام محلی بازگشتی `lang` است، اگر عنصر آن فضای نام را پشتیبانی کند.
 
-The local name is always in lower case, whatever case at the attribute creation.
+نام محلی همیشه با حروف کوچک است، صرف‌نظر از حروفی که هنگام ایجاد ویژگی استفاده شده است.
 
 > [!NOTE]
-> HTML only supports a fixed set of namespaces on SVG and MathML elements. These are `xml` (for the `xml:lang` attribute), `xlink` (for the `xlink:href`, `xlink:show`, `xlink:target` and `xlink:title` attributes) and `xpath`.
+> HTML فقط از مجموعه ثابتی از فضای نام‌ها در عناصر SVG و MathML پشتیبانی می‌کند. این‌ها عبارتند از `xml` (برای ویژگی `xml:lang`)، `xlink` (برای ویژگی‌های `xlink:href`، `xlink:show`، `xlink:target` و `xlink:title`) و `xpath`.
 >
-> That means that the local name of an attribute of an HTML element is always be equal to its qualified name: Colons are treated as regular characters. In XML, like in SVG or MathML, the colon denotes the end of the prefix and what is before is the namespace; the local name may be different from the qualified name.
+> این بدان معناست که نام محلی یک ویژگی در یک عنصر HTML همیشه با نام کامل آن برابر است: دونقطه به عنوان کاراکترهای عادی در نظر گرفته می‌شود. در XML، مانند SVG یا MathML، دونقطه پایان پیشوند را نشان می‌دهد و چیزی که قبل از آن است فضای نام است؛ نام محلی ممکن است با نام کامل متفاوت باشد.
 
-## Value
+## مقدار
 
-A string representing the local part of the attribute's qualified name.
+یک رشته که بخش محلی از نام کامل ویژگی را نشان می‌دهد.
 
-## Example
+## مثال
 
-The following example displays the local name of the first attribute of the two first elements, when we click on the appropriate button. The {{SVGElement("svg")}} element is XML and supports namespaces leading to the local name (`lang`) to be different from the qualified name `xml:lang`. The {{HTMLElement("label")}} element is HTML, that doesn't support namespaces, leading to a local name and the qualified name to be both `xml:lang`.
+مثال زیر نام محلی اولین ویژگی از دو عنصر اول را نمایش می‌دهد، وقتی که روی دکمه مناسب کلیک می‌کنیم. عنصر {{SVGElement("svg")}} یک عنصر XML است و از فضای نام‌ها پشتیبانی می‌کند که منجر به متفاوت بودن نام محلی (`lang`) از نام کامل `xml:lang` می‌شود. عنصر {{HTMLElement("label")}} یک عنصر HTML است که از فضای نام‌ها پشتیبانی نمی‌کند و در نتیجه نام محلی و نام کامل هر دو `xml:lang` هستند.
 
 ### HTML
 
@@ -68,15 +68,15 @@ for (const button of buttons) {
 
 {{ EmbedLiveSample('Example','100%',100) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The properties {{domxref("Attr.name")}}, returning the qualified name of the attribute, and {{domxref("Attr.prefix")}}, the namespace prefix.
-- The {{domxref("Element.localName()")}} property, returning the local name of an {{domxref("Element")}}.
+- ویژگی‌های {{domxref("Attr.name")}}، که نام کامل ویژگی را برمی‌گرداند، و {{domxref("Attr.prefix")}}، پیشوند فضای نام را.
+- ویژگی {{domxref("Element.localName()")}}، که نام محلی یک {{domxref("Element")}} را برمی‌گرداند.
