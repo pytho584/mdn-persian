@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTCharacteristic: stopNotifications() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/stopNotifications"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,28 +16,26 @@ browser-compat: api.BluetoothRemoteGATTCharacteristic.stopNotifications
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTCharacteristic.stopNotifications()`** method
-returns a {{jsxref("Promise")}} to the BluetoothRemoteGATTCharacteristic instance when
-there is no longer an active notification on it.
+متد **`BluetoothRemoteGATTCharacteristic.stopNotifications()`** یک {{jsxref("Promise")}} را به نمونه BluetoothRemoteGATTCharacteristic برمی‌گرداند وقتی که دیگر هیچ اعلان فعالی روی آن وجود ندارد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 stopNotifications()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}}.
+یک {{jsxref("Promise")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
