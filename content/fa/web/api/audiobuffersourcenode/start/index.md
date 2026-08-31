@@ -1,7 +1,7 @@
 ---
 title: "AudioBufferSourceNode: start() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/start"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,11 +14,9 @@ browser-compat: api.AudioBufferSourceNode.start
 
 {{ APIRef("Web Audio API") }}
 
-The `start()` method of the {{ domxref("AudioBufferSourceNode") }}
-Interface is used to schedule playback of the audio data contained in the buffer, or
-to begin playback immediately.
+متد `start()` از رابط {{ domxref("AudioBufferSourceNode") }} برای زمان‌بندی پخش داده‌های صوتی موجود در بافر، یا شروع فوری پخش استفاده می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 start(when)
@@ -26,73 +24,51 @@ start(when, offset)
 start(when, offset, duration)
 ```
 
-### Parameters
+### پارامترها
 
 - `when` {{optional_inline}}
-  - : The time, in seconds, at which the sound should begin to play, in the same time
-    coordinate system used by the {{domxref("AudioContext")}}. If `when` is
-    less than ({{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}}, or if it's 0, the sound begins to
-    play at once. **The default value is 0.**
+  - : زمانی بر حسب ثانیه که صدا باید شروع به پخش کند، در همان سیستم مختصات زمانی که توسط {{domxref("AudioContext")}} استفاده می‌شود. اگر `when` کمتر از {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}} باشد یا برابر ۰ باشد، صدا بلافاصله شروع به پخش می‌کند. **مقدار پیش‌فرض ۰ است.**
 - `offset` {{optional_inline}}
-  - : An offset, specified as the number of seconds in the same time coordinate system as
-    the `AudioContext`, to the time within the audio buffer that playback
-    should begin. For example, to start playback halfway through a 10-second audio clip,
-    `offset` should be 5. The default value, 0, will begin playback at the
-    beginning of the audio buffer, and offsets past the end of the audio which will be
-    played (based on the audio buffer's {{domxref("AudioBuffer.duration", "duration")}}
-    and/or the {{domxref("AudioBufferSourceNode.loopEnd", "loopEnd")}} property) are
-    silently clamped to the maximum value allowed. The computation of the offset into the
-    sound is performed using the sound buffer's natural sample rate, rather than the
-    current playback rate, so even if the sound is playing at twice its normal speed, the
-    midway point through a 10-second audio buffer is still 5.
+  - : یک آفست، که به صورت تعداد ثانیه در همان سیستم مختصات زمانی `AudioContext` مشخص می‌شود، برای زمانی در بافر صوتی که پخش باید از آنجا شروع شود. برای مثال، برای شروع پخش از وسط یک کلیپ صوتی ۱۰ ثانیه‌ای، `offset` باید ۵ باشد. مقدار پیش‌فرض، ۰، پخش را از ابتدای بافر صوتی شروع می‌کند، و آفست‌هایی که از انتهای صوتی که قرار است پخش شود (بر اساس {{domxref("AudioBuffer.duration", "duration")}} بافر صوتی و/یا ویژگی {{domxref("AudioBufferSourceNode.loopEnd", "loopEnd")}}) عبور کنند، به‌صورت بی‌صدا به حداکثر مقدار مجاز محدود می‌شوند. محاسبه آفست در صدا با استفاده از نرخ نمونه طبیعی بافر صدا انجام می‌شود، نه نرخ پخش فعلی، بنابراین حتی اگر صدا با دو برابر سرعت عادی خود در حال پخش باشد، نقطه میانی یک بافر صوتی ۱۰ ثانیه‌ای همچنان ۵ است.
 - `duration` {{optional_inline}}
-  - : The duration of the audio data to be played, specified as seconds of total buffer content.
-    If this parameter isn't specified, the sound plays until it reaches its natural conclusion or
-    is stopped using the {{domxref("AudioScheduledSourceNode.stop", "stop()")}} method. The
-    value is independent of the {{domxref("AudioBufferSourceNode.playbackRate")}}, so e.g., a
-    `duration` of 2 seconds with a `playbackRate` of `2` will play 2 seconds of the source,
-    producing a 1 second audio output.
+  - : مدت زمان داده صوتی که باید پخش شود، که به صورت ثانیه‌ای از کل محتوای بافر مشخص می‌شود. اگر این پارامتر مشخص نشود، صدا تا رسیدن به پایان طبیعی خود پخش می‌شود یا با استفاده از متد {{domxref("AudioScheduledSourceNode.stop", "stop()")}} متوقف می‌شود. این مقدار مستقل از {{domxref("AudioBufferSourceNode.playbackRate")}} است، بنابراین برای مثال، یک `duration` برابر ۲ ثانیه با `playbackRate` برابر ۲، ۲ ثانیه از منبع را پخش می‌کند و خروجی صوتی ۱ ثانیه‌ای تولید می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if a negative value was specified for one or more of the three time parameters. Please
-    don't attempt to tamper with the laws of temporal physics.
+  - : زمانی پرتاب می‌شود که مقدار منفی برای یک یا چند مورد از سه پارامتر زمانی مشخص شده باشد. لطفاً سعی نکنید در قوانین فیزیک زمانی دستکاری کنید.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if `start()` has already been called. You can only call this function once
-    during the lifetime of an `AudioBufferSourceNode`.
+  - : زمانی پرتاب می‌شود که `start()` قبلاً فراخوانی شده باشد. شما فقط می‌توانید این تابع را یک بار در طول عمر یک `AudioBufferSourceNode` فراخوانی کنید.
 
-## Examples
+## مثال‌ها
 
-The most simple example just starts the audio buffer playing from the beginning — you
-don't need to specify any parameters in this case:
+ساده‌ترین مثال فقط پخش بافر صوتی را از ابتدا شروع می‌کند — در این حالت نیازی به مشخص کردن هیچ پارامتری نیست:
 
 ```js
 source.start();
 ```
 
-The following more complex example will, 1 second from now, start playing 10 seconds
-worth of sound starting 3 seconds into the audio buffer.
+مثال پیچیده‌تر زیر، ۱ ثانیه بعد از الآن، پخش ۱۰ ثانیه صدا را از ۳ ثانیه‌ای بافر صوتی شروع می‌کند.
 
 ```js
 source.start(audioCtx.currentTime + 1, 3, 10);
 ```
 
 > [!NOTE]
-> For a more complete example showing `start()` in use, check out our {{domxref("BaseAudioContext/decodeAudioData", "AudioContext.decodeAudioData()")}} example. You can also [try the example live](https://mdn.github.io/webaudio-examples/decode-audio-data/promise/), and have a look at [the example source](https://github.com/mdn/webaudio-examples/tree/main/decode-audio-data).
+> برای یک مثال کامل‌تر که کاربرد `start()` را نشان می‌دهد، به مثال {{domxref("BaseAudioContext/decodeAudioData", "AudioContext.decodeAudioData()")}} مراجعه کنید. همچنین می‌توانید [مثال را به صورت زنده مشاهده کنید](https://mdn.github.io/webaudio-examples/decode-audio-data/promise/) و [سورس مثال را](https://github.com/mdn/webaudio-examples/tree/main/decode-audio-data) ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
