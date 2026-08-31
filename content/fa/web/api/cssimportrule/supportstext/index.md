@@ -1,11 +1,5 @@
 ---
 title: "CSSImportRule: supportsText property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/supportsText"
-status: "needs-translation"
----
-
----
-title: "CSSImportRule: supportsText property"
 short-title: supportsText
 slug: Web/API/CSSImportRule/supportsText
 page-type: web-api-instance-property
@@ -14,17 +8,15 @@ browser-compat: api.CSSImportRule.supportsText
 
 {{APIRef("CSSOM")}}
 
-The read-only **`supportsText`** property of the {{domxref("CSSImportRule")}} interface returns the supports condition specified by the {{cssxref("@import")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+ویژگی فقط‑خواندنی **`supportsText`** از رابط {{domxref("CSSImportRule")}} شرط پشتیبانی‌ای را که توسط [قاعده at](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) {{cssxref("@import")}} مشخص شده است، بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A string, or `null`.
+یک رشته، یا `null`.
 
-## Examples
+## مثال‌ها
 
-The document's single stylesheet contains three {{cssxref("@import")}} rules. The first declaration imports a stylesheet if `display: flex` is supported. The second declaration imports a stylesheet if the `:has` selector is supported. The third declaration imports a stylesheet without a supports condition.
-
-The `supportsText` property returns the import conditions associated with the at-rule.
+شیوه‌نامهٔ واحد سند شامل سه قاعدهٔ {{cssxref("@import")}} است. اولین اعلان یک شیوه‌نامه را در صورت پشتیبانی از `display: flex` وارد می‌کند. دومین اعلان یک شیوه‌نامه را در صورت پشتیبانی از انتخابگر `:has` وارد می‌کند. سومین اعلان یک شیوه‌نامه را بدون شرط پشتیبانی وارد می‌کند. ویژگی `supportsText` شرایط واردات مرتبط با قاعده at را بازمی‌گرداند.
 
 ```css
 @import "style1.css" supports(display: flex);
@@ -39,15 +31,15 @@ console.log(myRules[1].supportsText); // returns `"selector(p:has(a))"`
 console.log(myRules[2].supportsText); // returns `null`
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using feature queries](/en-US/docs/Web/CSS/Guides/Conditional_rules/Using_feature_queries)
-- {{cssxref("@import")}} and {{cssxref("@supports")}}
+- [استفاده از پرس‌وجوهای ویژگی](/en-US/docs/Web/CSS/Guides/Conditional_rules/Using_feature_queries)
+- {{cssxref("@import")}} و {{cssxref("@supports")}}
