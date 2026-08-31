@@ -1,7 +1,7 @@
 ---
 title: "ARIA: form role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/form_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,7 +15,7 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `form` role can be used to identify a group of elements on a page that provide equivalent functionality to an HTML form. The form is not exposed as a landmark region unless it has an [accessible name](/en-US/docs/Glossary/Accessible_name).
+نقش `form` می‌تواند برای شناسایی گروهی از عناصر در یک صفحه استفاده شود که عملکردی معادل یک فرم HTML ارائه می‌دهند. فرم به عنوان یک منطقه نشانه‌گذاری در دسترس قرار نمی‌گیرد مگر اینکه [نام قابل دسترس](/en-US/docs/Glossary/Accessible_name) داشته باشد.
 
 ```html
 <div role="form" id="contact-info" aria-label="Contact information">
@@ -23,37 +23,37 @@ The `form` role can be used to identify a group of elements on a page that provi
 </div>
 ```
 
-This is a form that collects and saves a user's contact information.
+این یک فرم است که اطلاعات تماس کاربر را جمع‌آوری و ذخیره می‌کند.
 
 > [!WARNING]
-> Use an HTML {{htmlelement("form")}} element to contain your form controls, rather than the ARIA `form` role, unless you have a very good reason.
-> The HTML `<form>` element is sufficient to tell assistive technologies that there is a form.
+> برای نگهداری کنترل‌های فرم خود از عنصر HTML {{htmlelement("form")}} استفاده کنید، نه نقش ARIA `form`، مگر اینکه دلیل بسیار خوبی داشته باشید.
+> عنصر HTML `<form>` برای اطلاع‌رسانی به فناوری‌های کمکی مبنی بر وجود یک فرم کافی است.
 
-## Description
+## توضیحات
 
-A `form` [landmark](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) identifies a region of content that contains a collection of items and objects that, as a whole, combine to create a form when no other named landmark is appropriate (e.g., [`main`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/main_role) or [`search`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/search_role)).
+یک [نشانه‌گذاری] `form` (/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) منطقه‌ای از محتوا را شناسایی می‌کند که شامل مجموعه‌ای از موارد و اشیاء است که در مجموع یک فرم را ایجاد می‌کنند، زمانی که هیچ نشانه‌گذاری نام‌دار دیگری مناسب نباشد (مانند [`main`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/main_role) یا [`search`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/search_role)).
 
 > [!NOTE]
-> Using the {{HTMLElement('form')}} element will automatically communicate a section of content as a `form` landmark, if it is provided an accessible name. Developers should always prefer using the correct semantic HTML element over using ARIA.
+> استفاده از عنصر {{HTMLElement('form')}} به طور خودکار یک بخش از محتوا را به عنوان نشانه‌گذاری `form` معرفی می‌کند، در صورتی که نام قابل دسترسی داشته باشد. توسعه‌دهندگان باید همیشه استفاده از عنصر معنایی صحیح HTML را به استفاده از ARIA ترجیح دهند.
 
-Use the HTML {{HTMLElement('form')}} element if possible. The `<form>` element defines a `form` landmark when it has an accessible name (e.g., [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby), [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or [`title`](/en-US/docs/Web/HTML/Reference/Global_attributes/title)). Make sure to have a unique label on each form in a document to help users understand the purpose of the form. This label should be visible to all users, not just assistive technology users. Use the `search` landmark instead of the `form` landmark when the form is used for search functionality.
+در صورت امکان از عنصر HTML {{HTMLElement('form')}} استفاده کنید. عنصر `<form>` یک نشانه‌گذاری `form` را تعریف می‌کند زمانی که نام قابل دسترسی داشته باشد (مانند [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)، [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا [`title`](/en-US/docs/Web/HTML/Reference/Global_attributes/title)). اطمینان حاصل کنید که هر فرم در یک سند برچسب منحصربه‌فرد دارد تا به کاربران در درک هدف فرم کمک کند. این برچسب باید برای همه کاربران قابل مشاهده باشد، نه فقط کاربران فناوری‌های کمکی. هنگامی که فرم برای عملکرد جستجو استفاده می‌شود، به جای نشانه‌گذاری `form` از نشانه‌گذاری `search` استفاده کنید.
 
-Use the `role="form"` to identify a region of the page; do not use it to identify every form field. Even if you are using the form landmark instead of `<form>`, you are encouraged to use native HTML form controls like {{HTMLElement('button')}}, {{HTMLElement('input')}}, {{HTMLElement('select')}}, and {{HTMLElement('textarea')}}.
+از `role="form"` برای شناسایی یک ناحیه از صفحه استفاده کنید؛ از آن برای شناسایی هر فیلد فرم استفاده نکنید. حتی اگر از نشانه‌گذاری form به جای `<form>` استفاده می‌کنید، توصیه می‌شود از کنترل‌های بومی فرم HTML مانند {{HTMLElement('button')}}، {{HTMLElement('input')}}، {{HTMLElement('select')}} و {{HTMLElement('textarea')}} استفاده کنید.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
-No role specific states or properties.
+هیچ حالت یا ویژگی خاصی برای این نقش وجود ندارد.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-No role specific keyboard interactions
+هیچ تعامل صفحه‌کلید خاصی برای این نقش وجود ندارد.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
 - `onsubmit`
-  - : The onSubmit event handler handles the event raised when the form is submitted. Anything that is not a `<form>` cannot be submitted, therefore you would have to use JavaScript to build an alternative data submission mechanism, for example with {{domxref("Window/fetch", "fetch()")}}.
+  - : کنترل‌کننده رویداد onSubmit رویدادی را که هنگام ارسال فرم ایجاد می‌شود مدیریت می‌کند. هر چیزی که `<form>` نباشد قابل ارسال نیست، بنابراین باید از جاوااسکریپت برای ساخت یک مکانیزم جایگزین ارسال داده استفاده کنید، به عنوان مثال با {{domxref("Window/fetch", "fetch()")}}.
 
-## Examples
+## مثال‌ها
 
 ```html
 <div role="form" id="send-comment" aria-label="Add a comment">
@@ -82,33 +82,33 @@ No role specific keyboard interactions
 </div>
 ```
 
-It is recommended to use `<form>` instead.
+توصیه می‌شود به جای آن از `<form>` استفاده کنید.
 
 ```html
 <form id="send-comment" aria-label="Add a comment">…</form>
 ```
 
-## Accessibility concerns
+## ملاحظات دسترس‌پذیری
 
-### Use sparingly
+### استفاده محدود
 
-[Landmark roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) are intended to identify larger overall sections of the document. Using too many landmark roles can create "noise" in screen readers, making it difficult to understand the overall layout of the page.
+[نقش‌های نشانه‌گذاری](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) برای شناسایی بخش‌های بزرگ‌تر و کلی سند طراحی شده‌اند. استفاده از تعداد زیاد نقش‌های نشانه‌گذاری می‌تواند در صفحه‌خوان‌ها «نویز» ایجاد کند و درک چیدمان کلی صفحه را دشوار کند.
 
-### Inputs are not forms
+### ورودی‌ها فرم نیستند
 
-You do not need to declare `role="form"` on every [form element](/en-US/docs/Web/HTML/Reference/Elements#forms) (inputs, text areas, selects, etc.). It should be declared on the HTML element that wraps the form elements. Ideally, use the {{HTMLElement('form')}} element as the wrapping element and do not declare `role="form"`.
+نیازی به اعلام `role="form"` روی هر [عنصر فرم](/en-US/docs/Web/HTML/Reference/Elements#forms) (ورودی‌ها، ناحیه‌های متنی، انتخاب‌ها و غیره) ندارید. این نقش باید روی عنصر HTML که عناصر فرم را در بر می‌گیرد اعلام شود. در حالت ایده‌آل، از عنصر {{HTMLElement('form')}} به عنوان عنصر پوشاننده استفاده کنید و `role="form"` را اعلام نکنید.
 
-### Search
+### جستجو
 
-If a form is used to search, you should use the more specialized [`role="search"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/search_role) value.
+اگر فرمی برای جستجو استفاده می‌شود، باید از مقدار تخصصی‌تر [`role="search"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/search_role) استفاده کنید.
 
-### Labeling landmarks
+### برچسب‌گذاری نشانه‌ها
 
-Each {{HTMLElement('form')}} element and form `role` that needs to be exposed as a landmark must be given an accessible name. This name will allow an assistive technology user to be able to quickly understand the purpose of the form landmark.
+به هر عنصر {{HTMLElement('form')}} و نقش `form` که نیاز است به عنوان نشانه‌گذاری در دسترس قرار گیرد، باید یک نام قابل دسترسی داده شود. این نام به کاربر فناوری کمکی امکان می‌دهد تا به سرعت هدف نشانه‌گذاری فرم را درک کند.
 
-Use an `aria-labelledby`, `aria-label` or `title` on the same element that was given the `role="form"` to provide it an accessible name.
+از `aria-labelledby`، `aria-label` یا `title` روی همان عنصری که `role="form"` به آن داده شده است استفاده کنید تا نام قابل دسترسی برای آن فراهم شود.
 
-#### Using `role="form"`
+#### استفاده از `role="form"`
 
 ```html
 <div role="form" id="gift-cards" aria-label="Purchase a gift card">
@@ -116,21 +116,21 @@ Use an `aria-labelledby`, `aria-label` or `title` on the same element that was g
 </div>
 ```
 
-#### Redundant descriptions
+#### توصیف‌های تکراری
 
-Screen readers will announce the type of role the landmark is. Because of this, you do not need to describe what the landmark is in its label. For example, a declaration of `role="form"` with an of `aria-label="Contact form"` may be announced redundantly as, "contact form form".
+صفحه‌خوان‌ها نوع نقشی را که نشانه‌گذاری دارد اعلام می‌کنند. به همین دلیل، نیازی به توصیف چیستی نشانه‌گذاری در برچسب آن نیست. به عنوان مثال، اعلام `role="form"` با `aria-label="Contact form"` ممکن است به صورت تکراری به عنوان «فرم تماس فرم» اعلام شود.
 
-## Best practices
+## بهترین روش‌ها
 
-### Prefer HTML
+### اولویت با HTML
 
-Using the {{HTMLElement('form')}} element will automatically communicate that the element has a role of `form`. If possible, prefer using the semantic `<form>` element instead of the `form` role.
+استفاده از عنصر {{HTMLElement('form')}} به طور خودکار ارتباط می‌دهد که عنصر دارای نقش `form` است. در صورت امکان، استفاده از عنصر معنایی `<form>` را به نقش `form` ترجیح دهید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement('form')}} element
-- The {{HTMLElement('legend')}} element
+- عنصر {{HTMLElement('form')}}
+- عنصر {{HTMLElement('legend')}}
