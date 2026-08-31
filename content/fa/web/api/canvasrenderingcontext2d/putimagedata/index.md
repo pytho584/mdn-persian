@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: putImageData() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: putImageData() method"
 short-title: putImageData()
 slug: Web/API/CanvasRenderingContext2D/putImageData
 page-type: web-api-instance-method
@@ -14,63 +8,52 @@ browser-compat: api.CanvasRenderingContext2D.putImageData
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.putImageData()`**
-method of the Canvas 2D API paints data from the given {{domxref("ImageData")}} object
-onto the canvas. If a dirty rectangle is provided, only the pixels from that rectangle
-are painted. This method is not affected by the canvas transformation matrix.
+متد **`CanvasRenderingContext2D.putImageData()`** از Canvas 2D API داده‌های موجود در شیء {{domxref("ImageData")}} را روی بوم (canvas) نقاشی می‌کند. اگر یک مستطیل کثیف (dirty rectangle) مشخص شده باشد، فقط پیکسل‌های آن مستطیل نقاشی می‌شوند. این متد تحت تأثیر ماتریس تبدیل بوم قرار نمی‌گیرد.
 
-> [!NOTE]
-> Image data can be retrieved from a canvas using the
-> {{domxref("CanvasRenderingContext2D.getImageData()", "getImageData()")}} method.
+> **نکته:** داده‌های تصویر را می‌توان با استفاده از متد {{domxref("CanvasRenderingContext2D.getImageData()", "getImageData()")}} از بوم دریافت کرد.
 
-You can find more information about `putImageData()` and general
-manipulation of canvas contents in the article [Pixel manipulation with canvas](/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas).
+اطلاعات بیشتر درباره `putImageData()` و دستکاری کلی محتوای بوم را در مقاله [Pixel manipulation with canvas](/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas) بیابید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 putImageData(imageData, dx, dy)
 putImageData(imageData, dx, dy, dirtyX, dirtyY, dirtyWidth, dirtyHeight)
 ```
 
-### Parameters
+### پارامترها
 
 - `imageData`
-  - : An {{domxref("ImageData")}} object containing the array of pixel values.
+  - : یک شیء {{domxref("ImageData")}} که شامل آرایه‌ای از مقادیر پیکسل‌ها است.
 - `dx`
-  - : Horizontal position (x coordinate) at which to place the image data in the
-    destination canvas.
+  - : موقعیت افقی (مختصات x) برای قرار دادن داده‌های تصویر در بوم مقصد.
 - `dy`
-  - : Vertical position (y coordinate) at which to place the image data in the destination
-    canvas.
+  - : موقعیت عمودی (مختصات y) برای قرار دادن داده‌های تصویر در بوم مقصد.
 - `dirtyX` {{optional_inline}}
-  - : Horizontal position (x coordinate) of the top-left corner from which the image data
-    will be extracted. Defaults to `0`.
+  - : موقعیت افقی (مختصات x) گوشه بالا-چپ که داده‌های تصویر از آن استخراج می‌شوند. پیش‌فرض `0` است.
 - `dirtyY` {{optional_inline}}
-  - : Vertical position (y coordinate) of the top-left corner from which the image data
-    will be extracted. Defaults to `0`.
+  - : موقعیت عمودی (مختصات y) گوشه بالا-چپ که داده‌های تصویر از آن استخراج می‌شوند. پیش‌فرض `0` است.
 - `dirtyWidth` {{optional_inline}}
-  - : Width of the rectangle to be painted. Defaults to the width of the image data.
+  - : عرض مستطیلی که باید نقاشی شود. پیش‌فرض برابر عرض داده‌های تصویر است.
 - `dirtyHeight` {{optional_inline}}
-  - : Height of the rectangle to be painted. Defaults to the height of the image data.
+  - : ارتفاع مستطیلی که باید نقاشی شود. پیش‌فرض برابر ارتفاع داده‌های تصویر است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if any of the arguments is infinite.
+  - : اگر هر یک از آرگومان‌ها بینهایت باشد، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the `ImageData` object's data has been detached.
+  - : اگر داده‌های شیء `ImageData` جدا شده باشند، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Understanding putImageData
+### درک putImageData
 
-To understand what this algorithm does under the hood, here is an implementation on top
-of {{domxref("CanvasRenderingContext2D.fillRect()")}}.
+برای درک اینکه این الگوریتم در پشت صحنه چگونه کار می‌کند، در زیر یک پیاده‌سازی بر اساس {{domxref("CanvasRenderingContext2D.fillRect()")}} ارائه شده است.
 
 #### HTML
 
@@ -117,16 +100,13 @@ const imagedata = ctx.getImageData(0, 0, 100, 100);
 putImageData(ctx, imagedata, 150, 0, 50, 50, 25, 25);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Understanding_putImageData', 700, 180) }}
 
-### Data loss due to browser optimization
+### از دست دادن داده به دلیل بهینه‌سازی مرورگر
 
-> [!WARNING]
-> Due to the lossy nature of converting to and from premultiplied alpha color values,
-> pixels that have just been set using `putImageData()` might be returned to
-> an equivalent `getImageData()` as different values.
+> **هشدار:** به دلیل ماهیت اتلافی تبدیل به و از مقادیر رنگ آلفای پیش‌ضرب‌شده (premultiplied alpha)، ممکن است پیکسل‌هایی که به تازگی با استفاده از `putImageData()` تنظیم شده‌اند، در یک فراخوانی معادل `getImageData()` به عنوان مقادیر متفاوت بازگردانده شوند.
 
 #### JavaScript
 
@@ -148,24 +128,24 @@ const pixels2 = imgData2.data;
 console.log("after:", pixels2);
 ```
 
-The output might look like:
+خروجی ممکن است به صورت زیر باشد:
 
 ```plain
 before: Uint8ClampedArray(4) [ 1, 127, 255, 1 ]
 after: Uint8ClampedArray(4) [ 255, 255, 255, 1 ]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
-- {{domxref("ImageData")}} object
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
+- شیء {{domxref("ImageData")}}
 - {{domxref("CanvasRenderingContext2D.getImageData()")}}
 - [Pixel manipulation with canvas](/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas)
