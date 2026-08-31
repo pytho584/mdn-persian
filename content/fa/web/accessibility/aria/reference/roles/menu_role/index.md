@@ -1,7 +1,7 @@
 ---
 title: "ARIA: menu role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,76 +15,75 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `menu` role is a type of composite widget that offers a list of choices to the user.
+نقش `menu` نوعی ویجت ترکیبی است که فهرستی از گزینه‌ها را به کاربر ارائه می‌دهد.
 
-## Description
+## توضیحات
 
-A `menu` generally represents a grouping of common actions or functions that the user can invoke. The `menu` role is appropriate when a list of menu items is presented in a manner similar to a menu on a desktop application. Submenus, also known as pop-up menus, also have the role `menu`.
+یک `menu` معمولاً نشان‌دهنده گروه‌بندی از اقدامات یا عملکردهای رایج است که کاربر می‌تواند آن‌ها را فراخوانی کند. نقش `menu` زمانی مناسب است که فهرستی از آیتم‌های منو به‌گونه‌ای مشابه منوی یک برنامه دسکتاپ ارائه شود. زیرمنوها که به منوهای پاپ‌آپ نیز معروف هستند، نقش `menu` را دارند.
 
-While the term "menu" is a generically used term to describe site navigation, the `menu` role is for a list of actions or functions that require complex functionality, such as composite widget focus management and first-character navigation
+در حالی که اصطلاح "menu" به‌طور کلی برای توصیف پیمایش سایت استفاده می‌شود، نقش `menu` برای فهرستی از اقدامات یا عملکردهایی است که نیاز به قابلیت پیچیده دارند، مانند مدیریت فوکوس ویجت ترکیبی و پیمایش با حرف اول.
 
-A menu can be a permanently visible list of controls or a widget that can be made to open and close. A closed `menu` widget is usually opened, or made visible, by activating a menu button, choosing an item in a menu that opens a submenu, or by invoking a command, such as <kbd>Shift + F10</kbd> in Windows which opens a context specific menu.
+یک منو می‌تواند فهرستی دائماً قابل مشاهده از کنترل‌ها یا یک ویجت باشد که می‌توان آن را باز و بسته کرد. یک ویجت `menu` بسته معمولاً با فعال کردن دکمه منو، انتخاب یک آیتم در منویی که یک زیرمنو را باز می‌کند، یا با فراخوانی یک دستور مانند <kbd>Shift + F10</kbd> در ویندوز که یک منوی متنی را باز می‌کند، باز یا قابل مشاهده می‌شود.
 
-When a user activates a choice in a menu that has been opened, the menu usually closes. If the menu choice action invokes a submenu, the menu will remain open and the submenu is displayed.
+هنگامی که کاربر گزینه‌ای را در یک منوی باز شده فعال می‌کند، منو معمولاً بسته می‌شود. اگر عمل انتخاب منو یک زیرمنو را فراخوانی کند، منو باز می‌ماند و زیرمنو نمایش داده می‌شود.
 
-When a menu opens, keyboard focus is placed on the first menu item. To be keyboard accessible, you need to [manage focus](https://primer.style/accessibility/design-guidance/focus-management/) for all descendants: all menu items within the `menu` are focusable. The menu button which opens the menu and the menu items, rather than the menu itself, are the focusable elements.
+هنگامی که یک منو باز می‌شود، فوکوس صفحه‌کلید روی اولین آیتم منو قرار می‌گیرد. برای دسترسی‌پذیری با صفحه‌کلید، باید [فوکوس را مدیریت کنید](https://primer.style/accessibility/design-guidance/focus-management/) برای همه فرزندان: همه آیتم‌های منو درون `menu` قابل فوکوس هستند. دکمه منو که منو را باز می‌کند و آیتم‌های منو، به جای خود منو، عناصر قابل فوکوس هستند.
 
-Menu items include [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role), [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role), and [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role). [Disabled](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) menu items are focusable but cannot be activated.
+آیتم‌های منو شامل [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role)، [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role) و [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role) هستند. آیتم‌های منوی [غیرفعال](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) قابل فوکوس هستند اما نمی‌توان آن‌ها را فعال کرد.
 
-Menu items can be grouped in elements with the [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) role, and separated by elements with role [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role). Neither `group` nor `separator` receive focus or are interactive.
+آیتم‌های منو می‌توانند در عناصری با نقش [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) گروه‌بندی شوند و با عناصری با نقش [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) از هم جدا شوند. نه `group` و نه `separator` فوکوس دریافت نمی‌کنند و تعاملی نیستند.
 
-If a `menu` is opened as a result of a context action, <kbd>Escape</kbd> or <kbd>Enter</kbd> may return focus to the invoking context. If focus was on the menu button, <kbd>Enter</kbd> opens the menu, giving focus to the first menu item. If focus is on the menu itself, <kbd>Escape</kbd> closes the menu and returns focus to the menu button or parent menubar item (or the context action that opened the menu).
+اگر یک `menu` در نتیجه یک عمل زمینه‌ای باز شود، <kbd>Escape</kbd> یا <kbd>Enter</kbd> ممکن است فوکوس را به زمینه فراخواننده بازگردانند. اگر فوکوس روی دکمه منو بود، <kbd>Enter</kbd> منو را باز کرده و فوکوس را به اولین آیتم منو می‌دهد. اگر فوکوس روی خود منو باشد، <kbd>Escape</kbd> منو را بسته و فوکوس را به دکمه منو یا آیتم منوی والد (یا عمل زمینه‌ای که منو را باز کرد) برمی‌گرداند.
 
-Elements with the role `menu` have an implicit [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) value of `vertical`. For horizontally oriented menu, use [`aria-orientation="horizontal"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation).
+عناصر با نقش `menu` به‌طور ضمنی دارای مقدار [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) برابر `vertical` هستند. برای منوی افقی، از [`aria-orientation="horizontal"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) استفاده کنید.
 
-If the menu is visually persistent, consider the [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role) role instead.
+اگر منو از نظر بصری پایدار است، به جای آن نقش [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role) را در نظر بگیرید.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
-- [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role), [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role), and [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role) roles
-  - : Roles of items contained in a containing `menu` or `menubar`, known collectively as "menu items". These must be able to receive focus.
-- [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) role
-  - : Menu items can be nested in a [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role)
-- [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) role
-  - : A divider that separates and distinguishes sections of content or groups of menu items within the menu
-
-- [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) attribute
-  - : The `menu` container has `tabindex` set to `-1` or `0` and each item in the menu has `tabindex` set to `-1`.
+- نقش‌های [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role)، [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role) و [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role)
+  - : نقش‌هایی از آیتم‌های موجود در یک `menu` یا `menubar` که به طور جمعی «آیتم‌های منو» نامیده می‌شوند. این آیتم‌ها باید قادر به دریافت فوکوس باشند.
+- نقش [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role)
+  - : آیتم‌های منو می‌توانند در یک [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) تودرتو شوند.
+- نقش [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role)
+  - : یک جداکننده که بخش‌های محتوا یا گروه‌های آیتم‌های منو را درون منو از هم جدا و متمایز می‌کند.
+- ویژگی [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex)
+  - : ظرف `menu` دارای `tabindex` برابر `-1` یا `0` است و هر آیتم در منو دارای `tabindex` برابر `-1` است.
 - [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant)
-  - : Set to the ID of the focused item, if there is one.
+  - : به شناسه آیتم متمرکز شده تنظیم می‌شود، در صورت وجود.
 - [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation)
-  - : indicates whether the menu orientation is horizontal or vertical; defaults to `vertical` if omitted.
-- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : The `menu` is required to have an accessible name. Use `aria-labelledby` if a visible label is present, otherwise use `aria-label`. Either include the `aria-labelledby` set to a the `id` to the `menuitem` or `button` that controls its display or use `aria-label` to define the label.
+  - : نشان می‌دهد که جهت‌گیری منو افقی است یا عمودی؛ در صورت عدم ذکر، پیش‌فرض `vertical` است.
+- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
+  - : `menu` باید دارای یک نام دسترس‌پذیر باشد. اگر یک برچسب قابل مشاهده وجود دارد از `aria-labelledby` استفاده کنید، در غیر این صورت از `aria-label` استفاده کنید. یا `aria-labelledby` را روی `id` `menuitem` یا `button` که نمایش آن را کنترل می‌کند تنظیم کنید، یا از `aria-label` برای تعریف برچسب استفاده کنید.
 - [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns)
-  - : Only set on the menu container to include elements that are not DOM children of the container. If set, those elements will appear in the reading order in the sequence they are referenced and after any items that are DOM children. When managing focus, ensure the visual focus order matches this assistive technology reading order.
+  - : فقط روی ظرف منو تنظیم می‌شود تا عناصری را که فرزندان DOM ظرف نیستند شامل شود. در صورت تنظیم، آن عناصر به ترتیب ارجاع و پس از هر آیتمی که فرزند DOM است در ترتیب خواندن ظاهر می‌شوند. هنگام مدیریت فوکوس، اطمینان حاصل کنید که ترتیب فوکوس بصری با این ترتیب خواندن فناوری کمکی مطابقت دارد.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
 - <kbd>Space</kbd> / <kbd>Enter</kbd>
-  - : If the item is a parent menu item, it opens the submenu and moves focus to the first item in the submenu. Otherwise, activates the menu item, which loads new content and places focus on the heading that titles the content.
+  - : اگر آیتم یک آیتم منوی والد باشد، زیرمنو را باز کرده و فوکوس را به اولین آیتم در زیرمنو منتقل می‌کند. در غیر این صورت، آیتم منو را فعال می‌کند که محتوای جدید را بارگذاری کرده و فوکوس را روی عنوانی که محتوا را عنوان‌گذاری می‌کند قرار می‌دهد.
 - <kbd>Escape</kbd>
-  - : When in a submenu, it closes the submenu and moves focus to the parent menu or menubar item.
+  - : هنگامی که در یک زیرمنو هستید، زیرمنو را بسته و فوکوس را به منوی والد یا آیتم menubar منتقل می‌کند.
 - <kbd>Right Arrow</kbd>
-  - : In a menubar, moves focus to the next item in the menubar. If focus is on the last item, it moves focus to the first item. If in a submenu, if focus is on an item that does not have a submenu, it closes the submenu and moves focus to the next item in the menubar. Otherwise, it opens the submenu of the newly focused menubar item, keeping focus on that parent menubar item. If not in a menubar or submenu and not on a `menuitem` with a submenu, if focus is not the last focusable element in the menu, it optionally moves focus to the next focusable element.
+  - : در یک menubar، فوکوس را به آیتم بعدی در menubar منتقل می‌کند. اگر فوکوس روی آخرین آیتم باشد، فوکوس را به اولین آیتم منتقل می‌کند. اگر در یک زیرمنو باشد و فوکوس روی آیتمی باشد که زیرمنو ندارد، زیرمنو را بسته و فوکوس را به آیتم بعدی در menubar منتقل می‌کند. در غیر این صورت، زیرمنوی آیتم menubar تازه متمرکز شده را باز کرده و فوکوس را روی آن آیتم menubar والد نگه می‌دارد. اگر در menubar یا زیرمنو نباشد و روی یک `menuitem` با زیرمنو نباشد، اگر فوکوس آخرین عنصر قابل فوکوس در منو نباشد، به صورت اختیاری فوکوس را به عنصر قابل فوکوس بعدی منتقل می‌کند.
 - <kbd>Left Arrow </kbd>
-  - : Moves focus to the previous item in the menubar. If focus is on the first item, it moves focus to the last item. If in a submenu, it closes the submenu and moves focus to the parent menu item. If not in a menubar or submenu, if focus is not the first focusable element in the menu, it optionally moves focus to the last focusable element.
+  - : فوکوس را به آیتم قبلی در menubar منتقل می‌کند. اگر فوکوس روی اولین آیتم باشد، فوکوس را به آخرین آیتم منتقل می‌کند. اگر در یک زیرمنو باشد، زیرمنو را بسته و فوکوس را به آیتم منوی والد منتقل می‌کند. اگر در menubar یا زیرمنو نباشد، اگر فوکوس اولین عنصر قابل فوکوس در منو نباشد، به صورت اختیاری فوکوس را به آخرین عنصر قابل فوکوس منتقل می‌کند.
 - <kbd>Down Arrow</kbd>
-  - : Opens submenu and moves focus to the first item in the submenu.
+  - : زیرمنو را باز کرده و فوکوس را به اولین آیتم در زیرمنو منتقل می‌کند.
 - <kbd>Up Arrow</kbd>
-  - : Opens submenu and moves focus to the last item in the submenu.
+  - : زیرمنو را باز کرده و فوکوس را به آخرین آیتم در زیرمنو منتقل می‌کند.
 - <kbd>Home</kbd>
-  - : Moves focus to the first item in the menubar.
+  - : فوکوس را به اولین آیتم در menubar منتقل می‌کند.
 - <kbd>End</kbd>
-  - : Moves focus to the last item in the menubar.
-- Any character key
-  - : Moves focus to the next item in the menubar having a name that starts with the typed character. If none of the items have a name starting with the typed character, focus does not move.
+  - : فوکوس را به آخرین آیتم در menubar منتقل می‌کند.
+- هر کلید کاراکتری
+  - : فوکوس را به آیتم بعدی در menubar که نام آن با کاراکتر تایپ شده شروع می‌شود منتقل می‌کند. اگر هیچ کدام از آیتم‌ها نامی با کاراکتر تایپ شده نداشته باشند، فوکوس حرکت نمی‌کند.
 
-## Examples
+## مثال‌ها
 
-Below are two example menu implementations.
+در زیر دو پیاده‌سازی مثال از منو آورده شده است.
 
-### Example 1: navigation menu
+### مثال ۱: منوی پیمایش
 
 ```html
 <div>
@@ -120,13 +119,13 @@ Below are two example menu implementations.
 </div>
 ```
 
-To progressively enhance this navigation widget that is by default accessible, the class to hide the `menu` and the inclusion of `tabindex="-1"` on the interactive menuitem content should be added with JavaScript on load.
+برای بهبود تدریجی این ویجت پیمایش که به‌طور پیش‌فرض دسترس‌پذیر است، کلاس مخفی‌سازی `menu` و افزودن `tabindex="-1"` روی محتوای تعاملی menuitem باید با جاوااسکریپت هنگام بارگذاری اضافه شود.
 
-When including a "menu" for site navigation, do not use the `menu` role. Rather, for the main site navigation use the native HTML {{HTMLElement('nav')}} element or simply a list of links. The `menu` role should be reserved for composite widgets requiring focus management. See [ARIA practices for disclosure navigation](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/) for an explanation and additional examples.
+هنگام گنجاندن یک «menu» برای پیمایش سایت، از نقش `menu` استفاده نکنید. بلکه برای پیمایش اصلی سایت از عنصر بومی HTML {{HTMLElement('nav')}} یا صرفاً یک فهرست از پیوندها استفاده کنید. نقش `menu` باید برای ویجت‌های ترکیبی که نیاز به مدیریت فوکوس دارند محفوظ بماند. برای توضیح و مثال‌های بیشتر به [روش‌های ARIA برای پیمایش افشا](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/) مراجعه کنید.
 
-### Example 2: menubar submenu option picker
+### مثال ۲: انتخاب‌گر گزینه زیرمنوی menubar
 
-The following snippet of code is a popup menu nested in a menubar. It is displayed when the menu button is activated. It is a menu to select the text color from a list of color options:
+قطعه کد زیر یک منوی پاپ‌آپ است که در یک menubar تودرتو شده است. وقتی دکمه منو فعال شود نمایش داده می‌شود. این منویی برای انتخاب رنگ متن از فهرستی از گزینه‌های رنگی است:
 
 ```html
 <div>
@@ -164,17 +163,17 @@ The following snippet of code is a popup menu nested in a menubar. It is display
 </div>
 ```
 
-The button that opens the menu has [`aria-haspopup="menu"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) set, explicitly indicating that the popup it controls is a `menu`.
+دکمه‌ای که منو را باز می‌کند دارای [`aria-haspopup="menu"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) است که به صراحت نشان می‌دهد پاپ‌آپی که کنترل می‌کند یک `menu` است.
 
-For a menu to open, the user generally interacts with a menu button as the opener. The menu button must be focusable and respond to both click and keyboard events. When focused, selecting <kbd>Enter</kbd>, <kbd>Space</kbd>, <kbd>Down Arrow</kbd>, or the <kbd>Up Arrow</kbd> should open the menu and place focus on a menu item.
+برای باز شدن یک منو، کاربر معمولاً با یک دکمه منو به عنوان بازکننده تعامل می‌کند. دکمه منو باید قابل فوکوس باشد و به رویدادهای کلیک و صفحه‌کلید پاسخ دهد. هنگامی که متمرکز است، انتخاب <kbd>Enter</kbd>، <kbd>Space</kbd>، <kbd>Down Arrow</kbd> یا <kbd>Up Arrow</kbd> باید منو را باز کرده و فوکوس را روی یک آیتم منو قرار دهد.
 
-The opening and closing of the menu toggles the [`aria-expanded="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) attribute on the button. It is added when the menu is open. Removed or set to `false` when the menu is closed. The `true` value indicates that the menu is displayed and that activating the menu button closes the menu.
+باز و بسته شدن منو باعث تغییر ویژگی [`aria-expanded="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) روی دکمه می‌شود. این ویژگی زمانی که منو باز است اضافه می‌شود. هنگامی که منو بسته است حذف می‌شود یا به `false` تنظیم می‌شود. مقدار `true` نشان می‌دهد که منو نمایش داده شده است و فعال کردن دکمه منو آن را می‌بندد.
 
-When the menu is open, the button itself generally does not receive focus as users arrow through the menu items. Rather, <kbd>Escape</kbd> and optionally <kbd>Shift + Tab</kbd> closes the menu and returns focus to the menu button.
+هنگامی که منو باز است، خود دکمه معمولاً فوکوس دریافت نمی‌کند زیرا کاربران با کلیدهای جهت‌نما در میان آیتم‌های منو حرکت می‌کنند. بلکه <kbd>Escape</kbd> و به صورت اختیاری <kbd>Shift + Tab</kbd> منو را بسته و فوکوس را به دکمه منو برمی‌گرداند.
 
-The `menu` role was set on the {{HTMLElement('ul')}}, identifying the `<ul>` element as a menu.
+نقش `menu` روی {{HTMLElement('ul')}} تنظیم شد که عنصر `<ul>` را به عنوان یک منو شناسایی می‌کند.
 
-The showing and hiding of the menu can be done with CSS. For example, in these code examples we can use the attribute and next-sibling selectors to toggle the visibility of the menu:
+نمایش و مخفی‌سازی منو می‌تواند با CSS انجام شود. به عنوان مثال، در این مثال‌های کد می‌توانیم از انتخاب‌گرهای ویژگی و خواهر و برادر بعدی برای تغییر وضعیت دید منو استفاده کنیم:
 
 ```css
 [role="menu"] {
@@ -185,13 +184,13 @@ The showing and hiding of the menu can be done with CSS. For example, in these c
 }
 ```
 
-The navigation example has a static button. The submenu example has a button that gets updated when the user selects a new value. In this case, the `aria-label="Text Color: purple"` is set on the `menu` element. It defines the accessible name for the menu as "Text color: purple"; identifying the purpose of the menu (selecting a text color) and the current value (purple). When a new color is selected, the value of the `aria-label` property should be updated as well.
+مثال پیمایش دارای یک دکمه ایستا است. مثال زیرمنو دارای یک دکمه است که با انتخاب مقدار جدید توسط کاربر به‌روزرسانی می‌شود. در این مورد، `aria-label="Text Color: purple"` روی عنصر `menu` تنظیم شده است. این نام دسترس‌پذیر برای منو را به عنوان "رنگ متن: بنفش" تعریف می‌کند؛ هدف منو (انتخاب رنگ متن) و مقدار فعلی (بنفش) را شناسایی می‌کند. هنگامی که یک رنگ جدید انتخاب می‌شود، مقدار ویژگی `aria-label` نیز باید به‌روزرسانی شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role)
 - [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role)
