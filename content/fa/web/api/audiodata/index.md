@@ -1,7 +1,7 @@
 ---
 title: "AudioData"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioData"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,62 +13,62 @@ browser-compat: api.AudioData
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`AudioData`** interface of the [WebCodecs API](/en-US/docs/Web/API/WebCodecs_API) represents an audio sample.
+**`AudioData`** 接口属于 [WebCodecs API](/en-US/docs/Web/API/WebCodecs_API)，表示一个音频样本。
 
-`AudioData` is a [transferable object](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects).
+`AudioData` 是一个[可转移对象](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects)。
 
-## Description
+## 描述
 
-An audio track consists of a stream of audio samples, each sample representing a captured moment of sound. An `AudioData` object is a representation of such a sample. Working alongside the interfaces of the [Insertable Streams API](/en-US/docs/Web/API/Insertable_Streams_for_MediaStreamTrack_API), you can break a stream into individual `AudioData` objects with {{domxref("MediaStreamTrackProcessor")}}, or construct an audio track from a stream of frames with {{domxref("MediaStreamTrackGenerator")}}.
+音轨由一系列音频样本组成，每个样本表示一个捕获到的声音时刻。`AudioData` 对象就是这样一个样本的表示。与 [Insertable Streams API](/en-US/docs/Web/API/Insertable_Streams_for_MediaStreamTrack_API) 的接口一起使用时，你可以通过 {{domxref("MediaStreamTrackProcessor")}} 将流拆分为独立的 `AudioData` 对象，或者使用 {{domxref("MediaStreamTrackGenerator")}} 从帧流构建音轨。
 
 > [!NOTE]
-> Find out more about audio on the web in [Digital audio concepts](/en-US/docs/Web/Media/Guides/Formats/Audio_concepts).
+> 在 [数字音频概念](/en-US/docs/Web/Media/Guides/Formats/Audio_concepts) 中了解更多关于 Web 音频的信息。
 
-### The media resource
+### 媒体资源
 
-An `AudioData` object contains a reference to an attached **media resource**. This media resource contains the actual audio sample data described by the object. A media resource is maintained by the user agent until it is no longer referenced by an `AudioData` object, for example when {{domxref("AudioData.close()")}} is called.
+`AudioData` 对象包含对附加的**媒体资源**的引用。该媒体资源包含对象所描述的实际音频样本数据。媒体资源由用户代理维护，直到不再被 `AudioData` 对象引用时才会被释放，例如调用 {{domxref("AudioData.close()")}} 时。
 
-### Planes and audio format
+### 平面和音频格式
 
-To return the sample format of an `AudioData` use the {{domxref("AudioData.format")}} property. The format may be described as **interleaved** or **planar**. In interleaved formats, the audio samples from the different channels are laid out in a single buffer, described as a **plane**. This plane contains a number of elements equal to {{domxref("AudioData.numberOfFrames")}} \* {{domxref("AudioData.numberOfChannels")}}.
+要获取 `AudioData` 的样本格式，请使用 {{domxref("AudioData.format")}} 属性。格式可以描述为**交错**或**平面**。在交错格式中，不同通道的音频样本被排列在一个单独的缓冲区中，该缓冲区称为**平面**。该平面的元素数量等于 {{domxref("AudioData.numberOfFrames")}} \* {{domxref("AudioData.numberOfChannels")}}。
 
-In planar format, the number of planes is equal to {{domxref("AudioData.numberOfChannels")}}, and each plane is a buffer containing a number of elements equal to {{domxref("AudioData.numberOfFrames")}}.
+在平面格式中，平面的数量等于 {{domxref("AudioData.numberOfChannels")}}，每个平面是一个缓冲区，其元素数量等于 {{domxref("AudioData.numberOfFrames")}}。
 
-## Constructor
+## 构造函数
 
 - {{domxref("AudioData.AudioData", "AudioData()")}}
-  - : Creates a new `AudioData` object.
+  - : 创建一个新的 `AudioData` 对象。
 
-## Instance properties
+## 实例属性
 
 - {{domxref("AudioData.format")}} {{ReadOnlyInline}}
-  - : Returns the sample format of the audio.
+  - : 返回音频的样本格式。
 - {{domxref("AudioData.sampleRate")}} {{ReadOnlyInline}}
-  - : Returns the sample rate of the audio in Hz.
+  - : 返回音频的采样率，单位 Hz。
 - {{domxref("AudioData.numberOfFrames")}} {{ReadOnlyInline}}
-  - : Returns the number of frames.
+  - : 返回帧数。
 - {{domxref("AudioData.numberOfChannels")}} {{ReadOnlyInline}}
-  - : Returns the number of audio channels.
+  - : 返回音频通道数。
 - {{domxref("AudioData.duration")}} {{ReadOnlyInline}}
-  - : Returns the duration of the audio in microseconds.
+  - : 返回音频的时长，单位微秒。
 - {{domxref("AudioData.timestamp")}} {{ReadOnlyInline}}
-  - : Returns the timestamp of the audio in microseconds.
+  - : 返回音频的时间戳，单位微秒。
 
-## Instance methods
+## 实例方法
 
 - {{domxref("AudioData.allocationSize()")}}
-  - : Returns the number of bytes required to hold the sample as filtered by options passed into the method.
+  - : 返回根据传递给方法的选项过滤后，存储样本所需的字节数。
 - {{domxref("AudioData.copyTo()")}}
-  - : Copies the samples from the specified plane of the `AudioData` object to the destination.
+  - : 将 `AudioData` 对象指定平面中的样本复制到目标位置。
 - {{domxref("AudioData.clone()")}}
-  - : Creates a new `AudioData` object with reference to the same media resource as the original.
+  - : 创建一个新的 `AudioData` 对象，其引用的媒体资源与原始对象相同。
 - {{domxref("AudioData.close()")}}
-  - : Clears all states and releases the reference to the media resource.
+  - : 清除所有状态并释放对媒体资源的引用。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
