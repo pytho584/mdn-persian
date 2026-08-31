@@ -1,7 +1,7 @@
 ---
 title: "BiquadFilterNode: getFrequencyResponse() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/getFrequencyResponse"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,55 +14,52 @@ browser-compat: api.BiquadFilterNode.getFrequencyResponse
 
 {{ APIRef("Web Audio API") }}
 
-The `getFrequencyResponse()` method of the {{ domxref("BiquadFilterNode")}} interface takes the current filtering algorithm's settings and calculates the frequency response for frequencies specified in a specified array of frequencies.
+متد `getFrequencyResponse()` از رابط {{ domxref("BiquadFilterNode")}} تنظیمات الگوریتم فیلتر فعلی را می‌گیرد و پاسخ فرکانسی را برای فرکانس‌های مشخص‌شده در یک آرایه معین از فرکانس‌ها محاسبه می‌کند.
 
-The two output arrays, `magResponseOutput` and
-`phaseResponseOutput`, must be created before calling this method; they
-must be the same size as the array of input frequency values
-(`frequencyArray`).
+دو آرایه خروجی، `magResponseOutput` و
+`phaseResponseOutput`، باید قبل از فراخوانی این متد ایجاد شده باشند؛ آن‌ها
+باید هم‌اندازه با آرایه مقادیر فرکانس ورودی
+(`frequencyArray`) باشند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getFrequencyResponse(frequencyArray, magResponseOutput, phaseResponseOutput)
 ```
 
-### Parameters
+### پارامترها
 
 - `frequencyArray`
-  - : A {{jsxref("Float32Array")}} containing an array of frequencies, specified in Hertz,
-    which you want to filter.
+  - : یک {{jsxref("Float32Array")}} شامل آرایه‌ای از فرکانس‌ها، بر حسب هرتز،
+    که می‌خواهید فیلتر کنید.
 - `magResponseOutput`
-  - : A {{jsxref("Float32Array")}} to receive the computed magnitudes of the frequency
-    response for each frequency value in the `frequencyArray`. For any
-    frequency in `frequencyArray` whose value is outside the range 0.0 to
-    `sampleRate`/2 (where {{domxref("BaseAudioContext/sampleRate", "sampleRate")}}
-    is the sample rate of the {{domxref("AudioContext")}}), the corresponding value in
-    this array is {{jsxref("NaN")}}. These are unitless values.
+  - : یک {{jsxref("Float32Array")}} برای دریافت اندازه‌های محاسبه‌شده پاسخ فرکانسی
+    برای هر مقدار فرکانس در `frequencyArray`. برای هر
+    فرکانس در `frequencyArray` که مقدار آن خارج از محدوده 0.0 تا
+    `sampleRate`/2 باشد (که در آن {{domxref("BaseAudioContext/sampleRate", "sampleRate")}}
+    نرخ نمونه‌برداری {{domxref("AudioContext")}} است)، مقدار متناظر در
+    این آرایه {{jsxref("NaN")}} است. این مقادیر بدون واحد هستند.
 - `phaseResponseOutput`
-  - : A {{jsxref("Float32Array")}} to receive the computed phase response values in
-    radians for each frequency value in the input `frequencyArray`. For any
-    frequency in `frequencyArray` whose value is outside the range 0.0 to
-    `sampleRate`/2 (where {{domxref("BaseAudioContext/sampleRate", "sampleRate")}}
-    is the sample rate of the {{domxref("AudioContext")}}), the corresponding value in
-    this array is {{jsxref("NaN")}}.
+  - : یک {{jsxref("Float32Array")}} برای دریافت مقادیر پاسخ فاز محاسبه‌شده بر حسب
+    رادیان برای هر مقدار فرکانس در `frequencyArray` ورودی. برای هر
+    فرکانس در `frequencyArray` که مقدار آن خارج از محدوده 0.0 تا
+    `sampleRate`/2 باشد (که در آن {{domxref("BaseAudioContext/sampleRate", "sampleRate")}}
+    نرخ نمونه‌برداری {{domxref("AudioContext")}} است)، مقدار متناظر در
+    این آرایه {{jsxref("NaN")}} است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidAccessError`
-  - : The three arrays provided are not all of the same length.
+  - : سه آرایه ارائه‌شده همگی طول یکسانی ندارند.
 
-## Examples
+## مثال‌ها
 
-In the following example we are using a biquad filter on a media stream (for the full
-demo, see our [stream-source-buffer demo](https://mdn.github.io/webaudio-examples/stream-source-buffer/) live, or [read the source](https://github.com/mdn/webaudio-examples/blob/main/stream-source-buffer/index.html).) As part of this demo, we get the frequency responses for this biquad
-filter, for five sample frequencies. We first create the {{jsxref("Float32Array")}}s we
-need, one containing the input frequencies, and two to receive the output magnitude and
-phase values:
+در مثال زیر ما از یک فیلتر بایکواد روی یک جریان رسانه‌ای استفاده می‌کنیم (برای نسخه کامل،
+دموی [stream-source-buffer](https://mdn.github.io/webaudio-examples/stream-source-buffer/) ما را ببینید، یا [متن منبع را بخوانید](https://github.com/mdn/webaudio-examples/blob/main/stream-source-buffer/index.html).) به عنوان بخشی از این دمو، پاسخ فرکانسی این فیلتر بایکواد را برای پنج فرکانس نمونه می‌گیریم. ابتدا {{jsxref("Float32Array")}}های مورد نیاز را ایجاد می‌کنیم، یکی شامل فرکانس‌های ورودی، و دو تا برای دریافت مقادیر خروجی اندازه و فاز:
 
 ```js
 const myFrequencyArray = new Float32Array(5);
@@ -76,11 +73,11 @@ const magResponseOutput = new Float32Array(5);
 const phaseResponseOutput = new Float32Array(5);
 ```
 
-Next we create a {{ htmlelement("ul") }} element in our HTML to contain our results,
-and grab a reference to it in our JavaScript:
+سپس یک عنصر {{ htmlelement("ul") }} در HTML خود ایجاد می‌کنیم تا نتایج را در خود جای دهد،
+و یک ارجاع به آن را در جاوااسکریپت خود می‌گیریم:
 
 ```html
-<p>Biquad filter frequency response for:</p>
+<p>پاسخ فرکانسی فیلتر بایکواد برای:</p>
 <ul class="freq-response-output"></ul>
 ```
 
@@ -88,9 +85,9 @@ and grab a reference to it in our JavaScript:
 const freqResponseOutput = document.querySelector(".freq-response-output");
 ```
 
-Finally, after creating our biquad filter, we use `getFrequencyResponse()`
-to generate the response data and put it in our arrays, then loop through each data set
-and output them in a human-readable list at the bottom of the page:
+در نهایت، پس از ایجاد فیلتر بایکواد، از `getFrequencyResponse()`
+برای تولید داده‌های پاسخ استفاده کرده و آن‌ها را در آرایه‌های خود قرار می‌دهیم، سپس هر مجموعه داده را پیمایش کرده
+و آن‌ها را به صورت یک لیست قابل خواندن در پایین صفحه خروجی می‌دهیم:
 
 ```js
 const biquadFilter = audioCtx.createBiquadFilter();
@@ -109,7 +106,7 @@ function calcFrequencyResponse() {
 
   for (let i = 0; i <= myFrequencyArray.length - 1; i++) {
     const listItem = document.createElement("li");
-    listItem.textContent = `: Magnitude ${magResponseOutput[i]}, Phase ${phaseResponseOutput[i]} radians.`;
+    listItem.textContent = `: اندازه ${magResponseOutput[i]}، فاز ${phaseResponseOutput[i]} رادیان.`;
     listItem.insertBefore(
       document.createElement("strong"),
       listItem.firstChild,
@@ -121,14 +118,14 @@ function calcFrequencyResponse() {
 calcFrequencyResponse();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
