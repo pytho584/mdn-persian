@@ -1,7 +1,7 @@
 ---
 title: "AudioData: AudioData() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioData/AudioData"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,20 +14,20 @@ browser-compat: api.AudioData.AudioData
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`AudioData()`** constructor creates a new {{domxref("AudioData")}} object which represents an individual audio sample.
+سازنده‌ی **`AudioData()`** یک شیء جدید {{domxref("AudioData")}} می‌سازد که یک نمونه صوتی جداگانه را نشان می‌دهد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new AudioData(init)
 ```
 
-### Parameters
+## پارامترها
 
 - `init`
-  - : An object containing the following:
+  - : یک شیء شامل موارد زیر:
     - `format`
-      - : One of:
+      - : یکی از:
         - "u8"
         - "s16"
         - "s32"
@@ -37,27 +37,27 @@ new AudioData(init)
         - "s32-planar"
         - "f32-planar"
     - `sampleRate`
-      - : A decimal containing the sample rate in Hz.
+      - : یک عدد اعشاری شامل نرخ نمونه‌برداری بر حسب هرتز.
     - `numberOfFrames`
-      - : An integer containing the number of frames in this sample.
+      - : یک عدد صحیح شامل تعداد فریم‌ها در این نمونه.
     - `numberOfChannels`
-      - : An integer containing the number of channels in this sample.
+      - : یک عدد صحیح شامل تعداد کانال‌ها در این نمونه.
     - `timestamp`
-      - : An integer indicating the data's time in microseconds.
+      - : یک عدد صحیح که زمان داده را بر حسب میکروثانیه نشان می‌دهد.
     - `data`
-      - : A typed array of the audio data for this sample.
+      - : یک آرایه تایپ‌شده از داده‌های صوتی برای این نمونه.
     - `transfer`
-      - : An array of {{jsxref("ArrayBuffer")}}s that `AudioData` will detach and take ownership of. If the array contains the {{jsxref("ArrayBuffer")}} backing `data`, `AudioData` will use that buffer directly instead of copying from it.
+      - : آرایه‌ای از {{jsxref("ArrayBuffer")}}ها که `AudioData` آن‌ها را جدا کرده و مالکیتشان را بر عهده می‌گیرد. اگر آرایه شامل {{jsxref("ArrayBuffer")}} پشتیبان `data` باشد، `AudioData` مستقیماً از آن بافر استفاده می‌کند به جای کپی کردن از آن.
 
-### Exceptions
+## استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if `init` is in an incorrect format.
+  - : در صورتی که `init` در قالبی نادرست باشد پرتاب می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
