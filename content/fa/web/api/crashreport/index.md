@@ -1,10 +1,4 @@
 ---
-title: "CrashReport"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CrashReport"
-status: "needs-translation"
----
-
----
 title: CrashReport
 slug: Web/API/CrashReport
 page-type: web-api-interface
@@ -13,70 +7,70 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}
 
-The `CrashReport` dictionary of the [Reporting API](/en-US/docs/Web/API/Reporting_API) represents a crash report.
+دیکشنری `CrashReport` در [Reporting API](/en-US/docs/Web/API/Reporting_API) نشان‌دهندهٔ یک گزارش خرابی (crash report) است.
 
 > [!NOTE]
-> It is not possible to retrieve crash reports using a {{domxref("ReportingObserver")}} — the reports are only generated when the browser crashes, at which point the observer code isn't available to run.
+> دریافت گزارش‌های خرابی با استفاده از {{domxref("ReportingObserver")}} امکان‌پذیر نیست — این گزارش‌ها تنها زمانی تولید می‌شوند که مرورگر دچار خرابی شود، و در آن لحظه کد observer برای اجرا در دسترس نیست.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `age`
-  - : The age of the report in milliseconds.
+  - : سن گزارش بر حسب میلی‌ثانیه.
 - `type`
-  - : The string `"crash"` indicating that this is a crash report.
+  - : رشتهٔ `"crash"` که نشان می‌دهد این یک گزارش خرابی است.
 - `url`
-  - : A string representing the URL of the document that generated the report.
+  - : رشته‌ای که URL سندی که گزارش را تولید کرده است نشان می‌دهد.
 - `user_agent`
-  - : The user agent string of the browser that generated the report.
+  - : رشتهٔ user agent مرورگری که گزارش را تولید کرده است.
 - `body`
-  - : The body of the report.
-    This is an object with the following properties:
+  - : بدنهٔ گزارش.
+    این یک شیء با ویژگی‌های زیر است:
     - `crash_report_api` {{experimental_inline}} {{optional_inline}}
-      - : An object containing the key-value pairs set via the {{domxref("CrashReportContext.set()")}} method, if any.
+      - : شیءای شامل جفت‌های کلید-مقدار که از طریق متد {{domxref("CrashReportContext.set()")}} تنظیم شده‌اند، در صورت وجود.
     - `is_top_level` {{experimental_inline}}
-      - : A boolean indicating whether the crashed document was a top-level document (`true`) or an embedded document (`false`).
+      - : مقدار بولی که نشان می‌دهد آیا سند خراب‌شده یک سند سطح بالا (`true`) بود یا یک سند جاسازی‌شده (`false`).
     - `reason` {{experimental_inline}} {{optional_inline}}
-      - : A string indicating the specific reason why the crash occurred, if known. Possible values are:
+      - : رشته‌ای که دلیل خاص وقوع خرابی را در صورت مشخص بودن نشان می‌دهد. مقادیر ممکن عبارت‌اند از:
         - `oom`
-          - : The page ran out of memory.
+          - : حافظهٔ صفحه تمام شده است.
         - `unresponsive`
-          - : The page was killed due to being unresponsive.
+          - : صفحه به دلیل عدم پاسخ‌گویی از بین رفته است.
     - `stack` {{experimental_inline}} {{optional_inline}}
-      - : A string representing the JavaScript call stack at the time of the crash. This is included if the `reason` is `unresponsive`, if the `Document-Policy` value for `include-js-call-stacks-in-crash-reports` in the document that crashed is `true`, and if the call stack was able to be recovered from the crashed document.
+      - : رشته‌ای که پشتهٔ فراخوانی جاوااسکریپت را در زمان خرابی نشان می‌دهد. این مورد در صورتی گنجانده می‌شود که `reason` برابر با `unresponsive` باشد، مقدار `Document-Policy` برای `include-js-call-stacks-in-crash-reports` در سند خراب‌شده `true` باشد، و پشتهٔ فراخوانی از سند خراب‌شده قابل بازیابی باشد.
     - `visibility_state` {{experimental_inline}}
-      - : An enumerated value indicating whether the document is visible. This mirrors the value of the {{domxref("Document.visibilityState")}} property. Possible values are:
+      - : مقدار شمارشی که نشان می‌دهد آیا سند قابل مشاهده است. این مقدار با ویژگی {{domxref("Document.visibilityState")}} مطابقت دارد. مقادیر ممکن عبارت‌اند از:
         - `visible`
-          - : The document content is at least partially visible.
+          - : محتوای سند حداقل تا حدی قابل مشاهده است.
         - `hidden`
-          - : The document content is completely hidden.
+          - : محتوای سند کاملاً پنهان است.
 
-## Description
+## توضیحات
 
-Crash reports containing arbitrary information can be sent to a server endpoint using the [Reporting API](/en-US/docs/Web/API/Reporting_API) .
-This is useful because we can store detailed diagnostic information throughout the lifetime of an application and use the reports to debug crashes more effectively.
+گزارش‌های خرابی حاوی اطلاعات دلخواه را می‌توان با استفاده از [Reporting API](/en-US/docs/Web/API/Reporting_API) به یک سرور گزارش‌دهنده ارسال کرد.
+این ویژگی مفید است زیرا می‌توانیم اطلاعات تشخیصی دقیق را در طول عمر یک برنامه ذخیره کنیم و از گزارش‌ها برای اشکال‌زدایی مؤثرتر خرابی‌ها استفاده کنیم.
 
-The diagnostic information is stored in a special key-value store that can be manipulated using the document's {{domxref("CrashReportContext")}} object.
-This is accessed via the {{domxref("Window.crashReport")}} property.
+اطلاعات تشخیصی در یک فروشگاه کلید-مقدار ویژه ذخیره می‌شود که می‌توان آن را از طریق شیء {{domxref("CrashReportContext")}} سند دستکاری کرد.
+این شیء از طریق ویژگی {{domxref("Window.crashReport")}} قابل دسترسی است.
 
-When the browser crashes, the information stored in the key-value store is added to a `CrashReport` and sent to a reporting server. The reporting server endpoint and its mapping to a particular URL are set using the {{httpheader("Reporting-Endpoints")}} header.
+هنگامی که مرورگر خراب می‌شود، اطلاعات ذخیره‌شده در فروشگاه کلید-مقدار به یک `CrashReport` اضافه شده و به یک سرور گزارش‌دهنده ارسال می‌شود. نقطهٔ پایانی سرور گزارش‌دهنده و نگاشت آن به یک URL خاص با استفاده از هدر {{httpheader("Reporting-Endpoints")}} تنظیم می‌شود.
 
-- If a `crash-reporting` server endpoint is defined, crash reports are delivered there. For example:
+- اگر نقطهٔ پایانی سرور `crash-reporting` تعریف شده باشد، گزارش‌های خرابی به آنجا ارسال می‌شوند. برای مثال:
   ```http
   Reporting-Endpoints: crash-reporting="https://example.com/reports"
   ```
-- If a `crash-reporting` endpoint is not defined, but a [`default` reporting server endpoint](/en-US/docs/Web/HTTP/Reference/Headers/Reporting-Endpoints#default_reporting_endpoint) is defined, crash reports are delivered there. For example:
+- اگر نقطهٔ پایانی `crash-reporting` تعریف نشده باشد، اما یک [نقطهٔ پایانی سرور گزارش‌دهندهٔ `default`](/en-US/docs/Web/HTTP/Reference/Headers/Reporting-Endpoints#default_reporting_endpoint) تعریف شده باشد، گزارش‌های خرابی به آنجا ارسال می‌شوند. برای مثال:
   ```http
   Reporting-Endpoints: default="https://example.com/reports"
   ```
-- If neither endpoint is defined, crash reports are not delivered.
+- اگر هیچ نقطهٔ پایانی تعریف نشده باشد، گزارش‌های خرابی ارسال نمی‌شوند.
 
-## Examples
+## مثال‌ها
 
-### Sending a report to a reporting endpoint
+### ارسال گزارش به یک نقطهٔ پایانی گزارش‌دهنده
 
-Configuring a web page to send a crash report requires that you define a reporting server endpoint using the {{httpheader("Reporting-Endpoints")}} header, for example `https://example.com/reports`, as described earlier.
+برای پیکربندی یک صفحهٔ وب جهت ارسال گزارش خرابی، باید یک نقطهٔ پایانی سرور گزارش‌دهنده با استفاده از هدر {{httpheader("Reporting-Endpoints")}} تعریف کنید، مثلاً `https://example.com/reports`، همان‌طور که قبلاً توضیح داده شد.
 
-A typical report structure is as follows:
+یک ساختار گزارش معمولی به صورت زیر است:
 
 ```json
 {
@@ -98,17 +92,17 @@ A typical report structure is as follows:
 }
 ```
 
-The report will be sent as a JSON object in a {{httpmethod("POST")}} request to the endpoint whenever the browser crashes.
+گزارش به صورت یک شیء JSON در یک درخواست {{httpmethod("POST")}} به نقطهٔ پایانی ارسال می‌شود، هر زمان که مرورگر خراب شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CrashReportContext")}}
 - {{HTTPHeader("Reporting-Endpoints")}}
