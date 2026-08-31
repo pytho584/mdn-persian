@@ -1,7 +1,7 @@
 ---
 title: "Basic usage of canvas"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,83 +12,83 @@ page-type: guide
 
 {{DefaultAPISidebar("Canvas API")}} {{PreviousNext("Web/API/Canvas_API/Tutorial", "Web/API/Canvas_API/Tutorial/Drawing_shapes")}}
 
-Let's start this tutorial by looking at the {{HTMLElement("canvas")}} {{Glossary("HTML")}} element itself. At the end of this page, you will know how to set up a canvas 2D context and have drawn a first example in your browser.
+بیایید این آموزش را با نگاه کردن به عنصر {{HTMLElement("canvas")}} {{Glossary("HTML")}} شروع کنیم. در پایان این صفحه، خواهید دانست که چگونه یک بافت 2D برای canvas راه‌اندازی کنید و اولین مثال را در مرورگر خود رسم کنید.
 
-## The `<canvas>` element
+## عنصر `<canvas>`
 
 ```html
 <canvas id="canvas" width="150" height="150"></canvas>
 ```
 
-At first sight a {{HTMLElement("canvas")}} looks like the {{HTMLElement("img")}} element, with the only clear difference being that it doesn't have the `src` and `alt` attributes. Indeed, the `<canvas>` element has only two attributes, [`width`](/en-US/docs/Web/HTML/Reference/Elements/canvas#width) and [`height`](/en-US/docs/Web/HTML/Reference/Elements/canvas#height). These are both optional and can also be set using {{Glossary("DOM")}} [properties](/en-US/docs/Web/API/HTMLCanvasElement). When no `width` and `height` attributes are specified, the canvas will initially be **300 pixels** wide and **150 pixels** high. The element can be sized arbitrarily by {{Glossary("CSS")}}, but during rendering the image is scaled to fit its layout size: if the CSS sizing doesn't respect the ratio of the initial canvas, it will appear distorted.
+در نگاه اول، {{HTMLElement("canvas")}} شبیه عنصر {{HTMLElement("img")}} به نظر می‌رسد، با تنها تفاوت آشکار این که ویژگی‌های `src` و `alt` را ندارد. در واقع، عنصر `<canvas>` فقط دو ویژگی دارد: [`width`](/en-US/docs/Web/HTML/Reference/Elements/canvas#width) و [`height`](/en-US/docs/Web/HTML/Reference/Elements/canvas#height). هر دوی این ویژگی‌ها اختیاری هستند و می‌توانند با استفاده از [ویژگی‌های](/en-US/docs/Web/API/HTMLCanvasElement) {{Glossary("DOM")}} تنظیم شوند. وقتی هیچ ویژگی `width` و `height` مشخص نشود، canvas در ابتدا **۳۰۰ پیکسل** عرض و **۱۵۰ پیکسل** ارتفاع خواهد داشت. اندازه عنصر را می‌توان با {{Glossary("CSS")}} به دلخواه تغییر داد، اما در هنگام رندر، تصویر به‌گونه‌ای مقیاس می‌شود که با اندازه چیدمان مطابقت یابد: اگر اندازه‌دهی CSS نسبت تصویر اولیه canvas را رعایت نکند، تصویر تحریف‌شده به نظر خواهد رسید.
 
 > [!NOTE]
-> If your renderings seem distorted, try specifying your `width` and `height` attributes explicitly in the `<canvas>` attributes, and not using CSS.
+> اگر رندرهای شما تحریف‌شده به نظر می‌رسند، سعی کنید ویژگی‌های `width` و `height` را به‌صراحت در ویژگی‌های `<canvas>` مشخص کنید و از CSS استفاده نکنید.
 
-The [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute isn't specific to the `<canvas>` element but is one of the [global HTML attributes](/en-US/docs/Web/HTML/Reference/Global_attributes) which can be applied to any HTML element (like [`class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) for instance). It is always a good idea to supply an `id` because this makes it much easier to identify it in a script.
+ویژگی [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) مختص عنصر `<canvas>` نیست، بلکه یکی از [ویژگی‌های سراسری HTML](/en-US/docs/Web/HTML/Reference/Global_attributes) است که می‌تواند روی هر عنصر HTML اعمال شود (مانند [`class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) برای مثال). همیشه ایده خوبی است که یک `id` ارائه دهید، زیرا این کار شناسایی آن را در اسکریپت بسیار آسان‌تر می‌کند.
 
-The `<canvas>` element can be styled just like any normal image ({{cssxref("margin")}}, {{cssxref("border")}}, {{cssxref("background")}}…). These rules, however, don't affect the actual drawing on the canvas. We'll see how this is done in a [dedicated chapter](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) of this tutorial. When no styling rules are applied to the canvas it will initially be fully transparent.
+عنصر `<canvas>` را می‌توان دقیقاً مانند هر تصویر معمولی استایل داد ({{cssxref("margin")}}، {{cssxref("border")}}، {{cssxref("background")}} و ...). با این حال، این قوانین روی رسم واقعی در canvas تأثیر نمی‌گذارند. نحوه انجام این کار را در یک [فصل اختصاصی](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) از این آموزش خواهیم دید. وقتی هیچ قانون استایلی روی canvas اعمال نشود، در ابتدا کاملاً شفاف خواهد بود.
 
-### Accessible content
+### محتوای قابل دسترس
 
-The `<canvas>` element, like the {{HTMLElement("img")}}, {{HTMLElement("video")}}, {{HTMLElement("audio")}}, and {{HTMLElement("picture")}} elements, must be made accessible by providing fallback text to be displayed when the media doesn't load or the user is unable to experience it as intended. You should always provide fallback content, captions, and alternative text, as appropriate for the media type.
+عنصر `<canvas>`، مانند عناصر {{HTMLElement("img")}}، {{HTMLElement("video")}}، {{HTMLElement("audio")}} و {{HTMLElement("picture")}}، باید با ارائه متن جایگزین که وقتی رسانه بارگذاری نمی‌شود یا کاربر قادر به تجربه آن‌طور که انتظار می‌رود نیست، نمایش داده شود، قابل دسترس شود. همیشه باید محتوای جایگزین، زیرنویس و متن جایگزین متناسب با نوع رسانه ارائه دهید.
 
-Providing fallback content is very straightforward: just insert the alternate content inside the `<canvas>` element to be accessed by screen readers, spiders, and other automated bots. Browsers, by default, will ignore the content inside the container, rendering the canvas normally unless `<canvas>` isn't supported.
+ارائه محتوای جایگزین بسیار ساده است: فقط محتوای جایگزین را داخل عنصر `<canvas>` قرار دهید تا توسط صفحه‌خوان‌ها، خزنده‌ها و سایر ربات‌های خودکار قابل دسترسی باشد. مرورگرها به‌طور پیش‌فرض محتوای داخل ظرف را نادیده می‌گیرند و canvas را به‌طور عادی رندر می‌کنند، مگر اینکه `<canvas>` پشتیبانی نشود.
 
-For example, we could provide a text description of the canvas content or provide a static image of the dynamically rendered content. This can look something like this:
+برای مثال، می‌توانیم یک توصیف متنی از محتوای canvas ارائه دهیم یا یک تصویر ثابت از محتوای رندر شده پویا ارائه دهیم. این می‌تواند چیزی شبیه این باشد:
 
 ```html
 <canvas id="stockGraph" width="150" height="150">
-  current stock price: $3.15 + 0.15
+  قیمت فعلی سهام: 3.15 دلار + 0.15 دلار
 </canvas>
 
 <canvas id="clock" width="150" height="150">
-  <img src="images/clock.png" width="150" height="150" alt="A clock" />
+  <img src="images/clock.png" width="150" height="150" alt="یک ساعت" />
 </canvas>
 ```
 
-Telling the user to use a different browser that supports canvas does not help users who can't read the canvas at all. Providing useful fallback text or sub DOM adds accessibility to an otherwise non-accessible element.
+گفتن به کاربر که از مرورگر دیگری که از canvas پشتیبانی می‌کند استفاده کند، به کاربرانی که به هیچ وجه نمی‌توانند canvas را بخوانند کمکی نمی‌کند. ارائه متن جایگزین مفید یا زیر DOM به دسترس‌پذیری عنصری که در غیر این صورت غیرقابل دسترس است، می‌افزاید.
 
-### Required `</canvas>` tag
+### تگ پایانی `</canvas>` ضروری
 
-As a consequence of the way fallback is provided, unlike the {{HTMLElement("img")}} element, the {{HTMLElement("canvas")}} element **requires** the closing tag (`</canvas>`). If this tag is not present, the rest of the document would be considered the fallback content and wouldn't be displayed.
+در نتیجه نحوه ارائه جایگزین، برخلاف عنصر {{HTMLElement("img")}}، عنصر {{HTMLElement("canvas")}} **نیازمند** تگ پایانی (`</canvas>`) است. اگر این تگ وجود نداشته باشد، بقیه سند به‌عنوان محتوای جایگزین در نظر گرفته می‌شود و نمایش داده نمی‌شود.
 
-If fallback content is not needed, a simple `<canvas id="foo" role="presentation" …></canvas>` is fully compatible with all browsers that support canvas at all. This should only be used if the canvas is purely presentational.
+اگر محتوای جایگزین لازم نیست، یک `<canvas id="foo" role="presentation" …></canvas>` ساده با همه مرورگرهایی که از canvas پشتیبانی می‌کنند کاملاً سازگار است. این کار فقط زمانی باید انجام شود که canvas صرفاً جنبه نمایشی داشته باشد.
 
-## The rendering context
+## بافت رندر
 
-The {{HTMLElement("canvas")}} element creates a fixed-size drawing surface that exposes one or more **rendering contexts**, which are used to create and manipulate the content shown. In this tutorial, we focus on the 2D rendering context. Other contexts may provide different types of rendering; for example, [WebGL](/en-US/docs/Web/API/WebGL_API) uses a 3D context based on [OpenGL ES](https://www.khronos.org/opengles/).
+عنصر {{HTMLElement("canvas")}} یک سطح رسم با اندازه ثابت ایجاد می‌کند که یک یا چند **بافت رندر** را در معرض دید قرار می‌دهد؛ این بافت‌ها برای ایجاد و دستکاری محتوای نمایش داده شده استفاده می‌شوند. در این آموزش، ما روی بافت رندر 2D تمرکز می‌کنیم. سایر بافت‌ها ممکن است انواع مختلفی از رندر را ارائه دهند؛ برای مثال، [WebGL](/en-US/docs/Web/API/WebGL_API) از یک بافت 3D مبتنی بر [OpenGL ES](https://www.khronos.org/opengles/) استفاده می‌کند.
 
-The canvas is initially blank. To display something, a script first needs to access the rendering context and draw on it. The {{HTMLElement("canvas")}} element has a method called {{domxref("HTMLCanvasElement.getContext", "getContext()")}}, used to obtain the rendering context and its drawing functions. `getContext()` takes one parameter, the type of context. For 2D graphics, such as those covered by this tutorial, you specify `"2d"` to get a {{domxref("CanvasRenderingContext2D")}}.
+canvas در ابتدا خالی است. برای نمایش چیزی، یک اسکریپت ابتدا باید به بافت رندر دسترسی پیدا کند و روی آن رسم کند. عنصر {{HTMLElement("canvas")}} دارای متدی به نام {{domxref("HTMLCanvasElement.getContext", "getContext()")}} است که برای دریافت بافت رندر و توابع رسم آن استفاده می‌شود. `getContext()` یک پارامتر دریافت می‌کند: نوع بافت. برای گرافیک 2D، مانند مواردی که در این آموزش پوشش داده می‌شود، شما `"2d"` را مشخص می‌کنید تا یک {{domxref("CanvasRenderingContext2D")}} دریافت کنید.
 
 ```js
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 ```
 
-The first line in the script retrieves the node in the DOM representing the {{HTMLElement("canvas")}} element by calling the {{domxref("document.getElementById()")}} method. Once you have the element node, you can access the drawing context using its `getContext()` method.
+خط اول در اسکریپت، گره DOM را که عنصر {{HTMLElement("canvas")}} را نشان می‌دهد، با فراخوانی متد {{domxref("document.getElementById()")}} بازیابی می‌کند. هنگامی که گره عنصر را دارید، می‌توانید با استفاده از متد `getContext()` آن به بافت رسم دسترسی پیدا کنید.
 
-## Checking for support
+## بررسی پشتیبانی
 
-The fallback content is displayed in browsers which do not support {{HTMLElement("canvas")}}. Scripts can also check for support programmatically by testing for the presence of the `getContext()` method. Our code snippet from above becomes something like this:
+محتوای جایگزین در مرورگرهایی نمایش داده می‌شود که از {{HTMLElement("canvas")}} پشتیبانی نمی‌کنند. اسکریپت‌ها همچنین می‌توانند به‌صورت برنامه‌نویسی با آزمایش وجود متد `getContext()` پشتیبانی را بررسی کنند. قطعه کد ما از بالا به چیزی شبیه این تبدیل می‌شود:
 
 ```js
 const canvas = document.getElementById("canvas");
 
 if (canvas.getContext) {
   const ctx = canvas.getContext("2d");
-  // drawing code here
+  // کد رسم در اینجا
 } else {
-  // canvas-unsupported code here
+  // کد عدم پشتیبانی از canvas در اینجا
 }
 ```
 
-## A skeleton template
+## یک قالب اسکلتی
 
-Here is a minimalistic template, which we'll be using as a starting point for later examples.
+در اینجا یک قالب مینیمالیستی وجود دارد که از آن به‌عنوان نقطه شروع برای مثال‌های بعدی استفاده خواهیم کرد.
 
 > [!NOTE]
-> It is not good practice to embed a script inside HTML. We do it here to keep the example concise.
+> جاسازی اسکریپت در HTML کار خوبی نیست. ما این کار را در اینجا انجام می‌دهیم تا مثال مختصر بماند.
 
 ```html
 <!doctype html>
@@ -115,13 +115,13 @@ Here is a minimalistic template, which we'll be using as a starting point for la
 </html>
 ```
 
-The script includes a function called `draw()`, which is executed once the page finishes loading; this is done by putting the script after the main body content. This function, or one like it, could also be called using {{domxref("Window.setTimeout", "setTimeout()")}}, {{domxref("Window.setInterval", "setInterval()")}}, or the {{domxref("Window/load_event", "load")}} event handler, as long as the page has been loaded first.
+اسکریپت شامل یک تابع به نام `draw()` است که پس از بارگذاری کامل صفحه اجرا می‌شود؛ این کار با قرار دادن اسکریپت پس از محتوای اصلی بدنه انجام می‌شود. این تابع، یا تابعی مشابه آن، می‌تواند با استفاده از {{domxref("Window.setTimeout", "setTimeout()")}}، {{domxref("Window.setInterval", "setInterval()")}} یا کنترل‌کننده رویداد {{domxref("Window/load_event", "load")}} نیز فراخوانی شود، به شرطی که صفحه ابتدا بارگذاری شده باشد.
 
-At this point, this document should be rendered blank.
+در این مرحله، این سند باید خالی رندر شود.
 
-## A simple example
+## یک مثال ساده
 
-To begin, let's take a look at an example that draws two intersecting rectangles, one of which has alpha transparency. We'll explore how this works in more detail in later examples. Update your `script` element content to this:
+برای شروع، بیایید به مثالی نگاه کنیم که دو مستطیل متقاطع را رسم می‌کند که یکی از آن‌ها شفافیت آلفا دارد. نحوه عملکرد این موضوع را در مثال‌های بعدی با جزئیات بیشتری بررسی خواهیم کرد. محتوای عنصر `script` خود را به این صورت به‌روزرسانی کنید:
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -147,7 +147,7 @@ function draw() {
 draw();
 ```
 
-This example looks like this:
+این مثال به این شکل است:
 
 {{EmbedLiveSample("A_simple_example", "", "160")}}
 
