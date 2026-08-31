@@ -1,7 +1,7 @@
 ---
 title: "ARIA: listbox role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,121 +15,121 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `listbox` role is used for lists from which a user may select one or more items which are static and, unlike HTML {{HTMLElement('select')}} elements, may contain images.
+نقش `listbox` برای فهرست‌هایی استفاده می‌شود که کاربر می‌تواند یک یا چند آیتم ثابت را از آن‌ها انتخاب کند و بر خلاف عناصر HTML {{HTMLElement('select')}}، ممکن است شامل تصاویر باشند.
 
-## Description
+## توضیحات
 
-The `listbox` role is used to identify an element that creates a list from which a user may select one or more static items, similar to the HTML {{HTMLElement('select')}} element. Unlike {{HTMLElement('select')}}, a listbox can contain images. Listboxes contain children whose role is [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role) or elements whose role is [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) which in turn contain children whose role is `option`.
+نقش `listbox` برای شناسایی عنصری استفاده می‌شود که یک فهرست ایجاد می‌کند که کاربر می‌تواند یک یا چند آیتم ثابت را از آن انتخاب کند، مشابه عنصر HTML {{HTMLElement('select')}}. برخلاف {{HTMLElement('select')}}، یک listbox می‌تواند شامل تصاویر باشد. Listboxها شامل فرزندانی با نقش [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role) یا عناصری با نقش [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) هستند که به نوبه خود شامل فرزندانی با نقش `option` می‌باشند.
 
-It is highly recommended using the HTML select element, or a group of radio buttons if only one item can be selected, or a group of checkboxes if multiple items can be selected, because there is a lot of keyboard interactivity to manage focus for all the descendants, and native HTML elements provide this functionality for you for free.
+به شدت توصیه می‌شود از عنصر select HTML، یا یک گروه دکمه رادیویی در صورت امکان انتخاب تنها یک آیتم، یا یک گروه چک‌باکس در صورت امکان انتخاب چند آیتم استفاده کنید، زیرا تعاملات صفحه‌کلید زیادی برای مدیریت فوکوس همه فرزندان وجود دارد و عناصر بومی HTML این قابلیت را به صورت رایگان در اختیار شما قرار می‌دهند.
 
-Elements with the role `listbox` have an implicit [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) value of `vertical`.
+عناصر با نقش `listbox` دارای مقدار ضمنی [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) برابر با `vertical` هستند.
 
-When a list is tabbed to, the first item in the list will be selected if nothing else already is. Up/down arrows navigate the list, and pressing Shift + Up/Down arrows will move and extend the selection. Typing one or more letters will navigate the list items (same letter goes to each item starting with that, different letters go to the first item starting with that entire string). If the current item has an associated context menu, Shift+F10 will launch that menu. If list items are checkable, Space can be used to toggle [checkboxes](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role). For selectable list items, Space toggles their selection, Shift+Space can be used to select contiguous items, Ctrl+Arrow moves without selecting, and Ctrl+Space can be used to select non-contiguous items. It is recommended that a checkbox, link or other method be used to select all items, and Ctrl+A could be used as a shortcut key for this.
+هنگامی که یک فهرست با Tab فوکوس می‌شود، اولین آیتم در فهرست در صورت عدم انتخاب قبلی، انتخاب خواهد شد. کلیدهای بالا/پایین در فهرست حرکت می‌کنند و فشار دادن Shift + بالا/پایین باعث حرکت و گسترش انتخاب می‌شود. تایپ یک یا چند حرف در آیتم‌های فهرست حرکت می‌کند (همان حرف به هر آیتمی که با آن شروع می‌شود می‌رود، حروف مختلف به اولین آیتمی که با آن رشته کامل شروع می‌شود می‌روند). اگر آیتم فعلی دارای یک منوی زمینه مرتبط باشد، Shift+F10 آن منو را راه‌اندازی می‌کند. اگر آیتم‌های فهرست قابل علامت‌گذاری باشند، می‌توان از Space برای تغییر وضعیت [چک‌باکس‌ها](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role) استفاده کرد. برای آیتم‌های فهرست قابل انتخاب، Space انتخاب آن‌ها را تغییر می‌دهد، Shift+Space برای انتخاب آیتم‌های متوالی استفاده می‌شود، Ctrl+Arrow بدون انتخاب حرکت می‌کند و Ctrl+Space برای انتخاب آیتم‌های غیرمتوالی استفاده می‌شود. توصیه می‌شود از یک چک‌باکس، پیوند یا روش دیگر برای انتخاب همه آیتم‌ها استفاده شود و Ctrl+A می‌تواند به عنوان کلید میانبر این کار استفاده شود.
 
-When the listbox role is added to an element, or such an element becomes visible, screen readers announce the label and role of the listbox when it gets focus. If an option or item is focused within the list, it gets announced next, followed by an indication of the item's position with the list if the screen reader supports this. As focus moves within the list, the screen reader announces the relevant items.
+هنگامی که نقش listbox به یک عنصر اضافه می‌شود یا چنین عنصری قابل مشاهده می‌شود، صفحه‌خوان‌ها برچسب و نقش listbox را هنگامی که فوکوس می‌گیرد اعلام می‌کنند. اگر یک گزینه یا آیتم در داخل فهرست فوکوس شود، پس از آن اعلام می‌شود و به دنبال آن موقعیت آیتم در فهرست (در صورت پشتیبانی صفحه‌خوان) اعلام می‌شود. با حرکت فوکوس در داخل فهرست، صفحه‌خوان آیتم‌های مربوطه را اعلام می‌کند.
 
-### Associated ARIA roles, states, and properties
+### نقش‌ها، حالات و ویژگی‌های ARIA مرتبط
 
-#### Associated Roles
+#### نقش‌های مرتبط
 
-- [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role) role
-  - : One or more nested options are required. All selected options have [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) set to `true`. All options that are not selected have [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) set to `false`. If an option is not selectable, omit the [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected).
-- [`list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role) role
-  - : A section containing `listitem` elements
+- نقش [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role)
+  - : یک یا چند گزینه تو در تو الزامی است. تمام گزینه‌های انتخاب شده دارای [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) برابر با `true` هستند. تمام گزینه‌هایی که انتخاب نشده‌اند دارای [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) برابر با `false` هستند. اگر یک گزینه قابل انتخاب نباشد، [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) را حذف کنید.
+- نقش [`list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role)
+  - : بخشی که شامل عناصر `listitem` است.
 
-#### States and Properties
+#### حالات و ویژگی‌ها
 
 - [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant)
-  - : Holds the `id` string of the currently active element within the listbox. If that's an option element, then that would be the `id` of the most recently interacted with option, regardless of whether that option has an [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) value of `true` or not. Takes the value of only one `id`, even in a multiselectable listbox. If the `id` does not refer to a DOM descendant of the listbox, then that `id` must be included among the IDs in the [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) attribute.
+  - : رشته `id` عنصر فعال فعلی در داخل listbox را نگه می‌دارد. اگر آن یک عنصر گزینه باشد، آنگاه این `id` گزینه‌ای است که آخرین بار با آن تعامل شده است، صرف نظر از اینکه آن گزینه دارای مقدار [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) برابر با `true` باشد یا نه. فقط مقدار یک `id` را می‌گیرد، حتی در یک listbox چند انتخابی. اگر `id` به یک فرزند DOM از listbox اشاره نکند، آنگاه آن `id` باید در میان شناسه‌های موجود در ویژگی [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) گنجانده شود.
 - [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns)
-  - : This is a space-separated list of element IDs which are not DOM child elements of the listbox. IDs listed here cannot also be listed in [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) attributes of any other elements.
+  - : این یک فهرست جدا شده با فاصله از شناسه‌های عناصری است که فرزندان DOM listbox نیستند. شناسه‌های ذکر شده در اینجا نمی‌توانند در ویژگی‌های [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) هیچ عنصر دیگری نیز ذکر شوند.
 
 - [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable)
-  - : Include and set to `true` if the user can select more than one option. If set to `true`, _every_ selectable option should have an [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) attribute included and set to `true` or `false`. Options which are _not_ selectable _should not_ have the [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) attribute. If `false` or omitted, only the currently selected option, if any option is selected, needs the [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) attribute, and it must be set to `true`.
+  - : اگر کاربر می‌تواند بیش از یک گزینه را انتخاب کند، آن را به `true` تنظیم کنید. اگر `true` تنظیم شود، _هر_ گزینه قابل انتخاب باید دارای ویژگی [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) باشد که به `true` یا `false` تنظیم شده است. گزینه‌هایی که _قابل انتخاب نیستند_ _نباید_ ویژگی [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) را داشته باشند. اگر `false` باشد یا حذف شود، فقط گزینه‌ای که در حال حاضر انتخاب شده است (در صورت انتخاب شدن) نیاز به ویژگی [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) دارد و باید `true` تنظیم شود.
 
 - [`aria-required`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-required)
-  - : A Boolean attribute which indicates that an option with a non-empty string value must be selected.
+  - : یک ویژگی بولی که نشان می‌دهد یک گزینه با مقدار رشته غیر خالی باید انتخاب شود.
 
 - [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly)
-  - : The user cannot change which options are selected or unselected, but the listbox is otherwise operable.
+  - : کاربر نمی‌تواند تغییر دهد که کدام گزینه‌ها انتخاب یا لغو انتخاب شده‌اند، اما listbox در غیر این صورت قابل استفاده است.
 
 - [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
-  - : A human-readable string value which identifies the listbox. If there's a visible label, then [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) should be used instead to refer to that label.
+  - : یک مقدار رشته‌ای قابل خواندن توسط انسان که listbox را شناسایی می‌کند. اگر یک برچسب قابل مشاهده وجود دارد، باید به جای آن از [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) برای اشاره به آن برچسب استفاده شود.
 
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : Identifies the visible element or elements in a space-separated list of element IDs which identify the listbox. If there's no visible label, then [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) should be used instead to include a label. (Note: "labelled", with two L's, is the correct spelling based on the accessibility API conventions.)
+  - : عنصر یا عناصر قابل مشاهده را در یک فهرست جدا شده با فاصله از شناسه‌های عناصری که listbox را شناسایی می‌کنند، مشخص می‌کند. اگر برچسب قابل مشاهده‌ای وجود ندارد، باید به جای آن از [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) برای گنجاندن یک برچسب استفاده شود. (توجه: "labelled" با دو "L" املای صحیح بر اساس قراردادهای API دسترسی‌پذیری است.)
 
 - [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription)
-  - : A human-readable string value which more clearly identifies the role of the listbox. Screen readers will often read this value to the user after reading the label (if there is one), in place of saying "listbox".
+  - : یک مقدار رشته‌ای قابل خواندن توسط انسان که نقش listbox را واضح‌تر شناسایی می‌کند. صفحه‌خوان‌ها اغلب این مقدار را پس از خواندن برچسب (در صورت وجود) به جای گفتن "listbox" برای کاربر می‌خوانند.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-- When a single-select listbox receives focus:
-  - If none of the options are selected before the listbox receives focus, the first option receives focus. Optionally, the first option may be automatically selected.
-  - If an option is selected before the listbox receives focus, focus is set on the selected option.
+- هنگامی که یک listbox تک انتخابی فوکوس دریافت می‌کند:
+  - اگر هیچ یک از گزینه‌ها قبل از دریافت فوکوس listbox انتخاب نشده باشند، اولین گزینه فوکوس دریافت می‌کند. به صورت اختیاری، ممکن است اولین گزینه به طور خودکار انتخاب شود.
+  - اگر یک گزینه قبل از دریافت فوکوس listbox انتخاب شده باشد، فوکوس روی گزینه انتخاب شده تنظیم می‌شود.
 
-- When a multi-select listbox receives focus:
-  - If none of the options are selected before the listbox receives focus, focus is set on the first option and there is no automatic change in the selection state.
-  - If one or more options are selected before the listbox receives focus, focus is set on the first option in the list that is selected.
+- هنگامی که یک listbox چند انتخابی فوکوس دریافت می‌کند:
+  - اگر هیچ یک از گزینه‌ها قبل از دریافت فوکوس listbox انتخاب نشده باشند، فوکوس روی اولین گزینه تنظیم می‌شود و هیچ تغییر خودکاری در حالت انتخاب وجود ندارد.
+  - اگر یک یا چند گزینه قبل از دریافت فوکوس listbox انتخاب شده باشند، فوکوس روی اولین گزینه در فهرست که انتخاب شده است تنظیم می‌شود.
 
-- <kbd>Down Arrow</kbd>
+- <kbd>پیکان پایین</kbd>
 
-  : Moves focus to the next option. Optionally, in a single-select listbox, selection may also move with focus.
+  : فوکوس را به گزینه بعدی منتقل می‌کند. به صورت اختیاری، در یک listbox تک انتخابی، انتخاب ممکن است همراه با فوکوس حرکت کند.
 
-- <kbd>Up Arrow</kbd>
+- <kbd>پیکان بالا</kbd>
 
-  : Moves focus to the previous option. Optionally, in a single-select listbox, selection may also move with focus.
+  : فوکوس را به گزینه قبلی منتقل می‌کند. به صورت اختیاری، در یک listbox تک انتخابی، انتخاب ممکن است همراه با فوکوس حرکت کند.
 
 - <kbd>Home</kbd>
 
-  (Optional): Moves focus to first option. Optionally, in a single-select listbox, selection may also move with focus. Supporting this key is strongly recommended for lists with more than five options.
+  (اختیاری): فوکوس را به اولین گزینه منتقل می‌کند. به صورت اختیاری، در یک listbox تک انتخابی، انتخاب ممکن است همراه با فوکوس حرکت کند. پشتیبانی از این کلید برای فهرست‌هایی با بیش از پنج گزینه به شدت توصیه می‌شود.
 
 - <kbd>End</kbd>
 
-  (Optional): Moves focus to last option. Optionally, in a single-select listbox, selection may also move with focus. Supporting this key is strongly recommended for lists with more than five options.
+  (اختیاری): فوکوس را به آخرین گزینه منتقل می‌کند. به صورت اختیاری، در یک listbox تک انتخابی، انتخاب ممکن است همراه با فوکوس حرکت کند. پشتیبانی از این کلید برای فهرست‌هایی با بیش از پنج گزینه به شدت توصیه می‌شود.
 
-- Type-ahead is recommended for all listboxes, especially those with more than seven options:
-  - Type a character: focus moves to the next item with a name that starts with the typed character.
-  - Type multiple characters in rapid succession: focus moves to the next item with a name that starts with the string of characters typed.
+- تایپ پیش‌رو برای همه listboxها به ویژه آن‌هایی که بیش از هفت گزینه دارند توصیه می‌شود:
+  - یک کاراکتر تایپ کنید: فوکوس به آیتم بعدی با نامی که با آن کاراکتر شروع می‌شود منتقل می‌شود.
+  - چند کاراکتر را به سرعت تایپ کنید: فوکوس به آیتم بعدی با نامی که با رشته کاراکترهای تایپ شده شروع می‌شود منتقل می‌شود.
 
-- **Multiple Selection**: Authors may implement either of two interaction models to support multiple selection: a recommended model that does not require the user to hold a modifier key, such as <kbd>Shift</kbd> or <kbd>Control</kbd>, while navigating the list or an alternative model that does require modifier keys to be held while navigating in order to avoid losing selection states.
-  - Recommended selection model — holding modifier keys is not necessary:
-    - <kbd>Space</kbd>: changes the selection state of the focused option.
-    - <kbd>Shift + Down Arrow</kbd> (Optional): Moves focus to and toggles the selected state of the next option.
-    - <kbd>Shift + Up Arrow</kbd> (Optional): Moves focus to and toggles the selected state of the previous option.
-    - <kbd>Shift + Space</kbd> (Optional): Selects contiguous items from the most recently selected item to the focused item.
-    - <kbd>Control + Shift + Home</kbd> (Optional): Selects the focused option and all options up to the first option. Optionally, moves focus to the first option.
-    - <kbd>Control + Shift + End</kbd> (Optional): Selects the focused option and all options down to the last option. Optionally, moves focus to the last option.
-    - <kbd>Control + A</kbd> (Optional): Selects all options in the list. Optionally, if all options are selected, it may also unselect all options.
+- **انتخاب چندگانه**: نویسندگان می‌توانند یکی از دو مدل تعامل را برای پشتیبانی از انتخاب چندگانه پیاده‌سازی کنند: یک مدل توصیه شده که نیازی به نگه داشتن کلید اصلاح‌کننده مانند <kbd>Shift</kbd> یا <kbd>Control</kbd> در حین پیمایش فهرست ندارد، یا یک مدل جایگزین که نیاز به نگه داشتن کلیدهای اصلاح‌کننده در حین پیمایش برای جلوگیری از از دست رفتن حالت‌های انتخاب دارد.
+  - مدل انتخاب توصیه شده — نگه داشتن کلیدهای اصلاح‌کننده ضروری نیست:
+    - <kbd>Space</kbd>: حالت انتخاب گزینه فوکوس شده را تغییر می‌دهد.
+    - <kbd>Shift + پیکان پایین</kbd> (اختیاری): فوکوس را به گزینه بعدی منتقل می‌کند و حالت انتخاب آن را تغییر می‌دهد.
+    - <kbd>Shift + پیکان بالا</kbd> (اختیاری): فوکوس را به گزینه قبلی منتقل می‌کند و حالت انتخاب آن را تغییر می‌دهد.
+    - <kbd>Shift + Space</kbd> (اختیاری): آیتم‌های متوالی از آخرین آیتم انتخاب شده تا آیتم فوکوس شده را انتخاب می‌کند.
+    - <kbd>Control + Shift + Home</kbd> (اختیاری): گزینه فوکوس شده و تمام گزینه‌های تا اولین گزینه را انتخاب می‌کند. به صورت اختیاری، فوکوس را به اولین گزینه منتقل می‌کند.
+    - <kbd>Control + Shift + End</kbd> (اختیاری): گزینه فوکوس شده و تمام گزینه‌های تا آخرین گزینه را انتخاب می‌کند. به صورت اختیاری، فوکوس را به آخرین گزینه منتقل می‌کند.
+    - <kbd>Control + A</kbd> (اختیاری): تمام گزینه‌های موجود در فهرست را انتخاب می‌کند. به صورت اختیاری، اگر همه گزینه‌ها انتخاب شده باشند، ممکن است همه گزینه‌ها را نیز لغو انتخاب کند.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-#### selecting an option in a single select listbox
+#### انتخاب یک گزینه در یک listbox تک انتخابی
 
-When the user selects an option, the following must occur:
+هنگامی که کاربر یک گزینه را انتخاب می‌کند، موارد زیر باید رخ دهد:
 
-1. Deselect the previously selected option, setting the [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) to `false`, or removing the attribute altogether, changing the appearance of the newly unselected option to appear not selected.
-2. Select the newly selected option, setting `aria-selected="true"` on the option and changing the appearance of the newly selected option to appear selected.
-3. Update the [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) value on the listbox to the id of the newly selected option
-4. Visually handle the blur, focus, and selected states of the option
+1. گزینه قبلی انتخاب شده را لغو انتخاب کنید، [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) را به `false` تنظیم کنید یا ویژگی را به طور کلی حذف کنید، و ظاهر گزینه جدیداً لغو انتخاب شده را به حالت انتخاب نشده تغییر دهید.
+2. گزینه جدیداً انتخاب شده را انتخاب کنید، `aria-selected="true"` را روی گزینه تنظیم کنید و ظاهر گزینه جدیداً انتخاب شده را به حالت انتخاب شده تغییر دهید.
+3. مقدار [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) را در listbox به شناسه گزینه جدیداً انتخاب شده به‌روزرسانی کنید.
+4. به صورت بصری حالت‌های محو شدن، فوکوس و انتخاب گزینه را مدیریت کنید.
 
-#### Toggling the state of an option in a multi select listbox
+#### تغییر وضعیت یک گزینه در یک listbox چند انتخابی
 
-When the user clicks on an option, hits <kbd>Space</kbd> when focused on an option, or otherwise toggles the state of an option, the following must occur:
+هنگامی که کاربر روی یک گزینه کلیک می‌کند، هنگامی که روی یک گزینه فوکوس شده است <kbd>Space</kbd> را فشار می‌دهد، یا به روش دیگری وضعیت یک گزینه را تغییر می‌دهد، موارد زیر باید رخ دهد:
 
-1. Toggle the [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) state of the currently focused option, changing the state of the `aria-selected` to true if it was false or false if it was true.
-2. Change the appearance of the option to reflect its selected state
-3. Update the [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) value on the listbox to the ID of the option the user just interacted with, even if they toggled the option to be unselected.
+1. حالت [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) گزینه فعلی فوکوس شده را تغییر دهید، حالت `aria-selected` را اگر `false` بود به `true` یا اگر `true` بود به `false` تغییر دهید.
+2. ظاهر گزینه را برای منعکس کردن حالت انتخاب آن تغییر دهید.
+3. مقدار [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) را در listbox به شناسه گزینه‌ای که کاربر با آن تعامل داشته است به‌روزرسانی کنید، حتی اگر گزینه را به حالت لغو انتخاب تغییر داده باشد.
 
 > [!NOTE]
-> The first rule of ARIA use is you can use a native feature with the semantics and behavior you require already built in, instead of re-purposing an element and **adding** an ARIA role, state or property to make it accessible, then do so. The {{HTMLElement('select')}} element with descendant {{HTMLElement('option')}} elements handles all the needed interactions natively.
+> اولین قانون استفاده از ARIA این است که اگر می‌توانید از یک ویژگی بومی با معناشناسی و رفتاری که از قبل نیاز دارید استفاده کنید، به جای تغییر کاربری یک عنصر و **افزودن** نقش، حالت یا ویژگی ARIA برای دسترسی‌پذیر کردن آن، این کار را انجام دهید. عنصر {{HTMLElement('select')}} با عناصر فرزند {{HTMLElement('option')}} تمام تعاملات مورد نیاز را به صورت بومی مدیریت می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Example 1: A single select listbox that uses `aria-activedescendant`
+### مثال ۱: یک listbox تک انتخابی که از `aria-activedescendant` استفاده می‌کند
 
-The snippet below, using [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant), shows how the listbox role is added directly into the HTML source code.
+قطعه کد زیر، با استفاده از [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant)، نشان می‌دهد که چگونه نقش listbox مستقیماً به کد منبع HTML اضافه می‌شود.
 
 ```html
 <p id="listbox1label" role="label">Select a color:</p>
@@ -157,7 +157,7 @@ listbox.addEventListener("keydown", listItemKeyEvent);
 listbox.addEventListener("keypress", listItemKeyEvent);
 ```
 
-This could have more easily been handled with the native HTML {{HTMLElement('select')}} and {{HTMLElement('label')}} elements.
+این می‌توانست به راحتی با عناصر بومی HTML {{HTMLElement('select')}} و {{HTMLElement('label')}} مدیریت شود.
 
 ```html
 <label for="listbox1">Select a color:</label>
@@ -171,31 +171,31 @@ This could have more easily been handled with the native HTML {{HTMLElement('sel
 </select>
 ```
 
-### More examples
+### مثال‌های بیشتر
 
-- [Scrollable Listbox Example](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/examples/listbox-scrollable/): Single-select listbox that scrolls to reveal more options, similar to HTML {{HTMLElement('select')}} with `size` attribute greater than one.
-- [Listbox Example with Grouped Options](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/examples/listbox-grouped/): Single-select listbox with grouped options, similar to HTML {{HTMLElement('select')}} with the attribute `size` set to greater than `"1"` and options grouped with `optgroup` elements.
-- [Example Listboxes with Rearrangeable Options](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/examples/listbox-rearrangeable/): Examples of both single-select and multi-select listboxes with accompanying toolbars where options can be added, moved, and removed.
+- [مثال Listbox قابل پیمایش](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/examples/listbox-scrollable/): listbox تک انتخابی که برای نمایش گزینه‌های بیشتر پیمایش می‌کند، مشابه HTML {{HTMLElement('select')}} با ویژگی `size` بزرگتر از یک.
+- [مثال Listbox با گزینه‌های گروه‌بندی شده](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/examples/listbox-grouped/): listbox تک انتخابی با گزینه‌های گروه‌بندی شده، مشابه HTML {{HTMLElement('select')}} با ویژگی `size` تنظیم شده به بزرگتر از `"1"` و گزینه‌های گروه‌بندی شده با عناصر `optgroup`.
+- [مثال‌های Listbox با گزینه‌های قابل چیدمان مجدد](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/examples/listbox-rearrangeable/): مثال‌هایی از listboxهای تک انتخابی و چند انتخابی با نوار ابزار همراه که در آن گزینه‌ها می‌توانند اضافه، جابه‌جا و حذف شوند.
 
-## Best practices
+## بهترین روش‌ها
 
-- To be keyboard-accessible, authors should [manage focus](https://w3c.github.io/aria/#managingfocus) of all descendants of this role.
-- It is recommended that authors use different styling for the selection when the list is not focused, e.g., a non-active selection is often shown with a lighter background color.
-- If the listbox is not part of another widget, it should have the [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) property set.
-- If one or more entries are not DOM children of listbox, additional `aria-*` properties will need to be set (see [ARIA Best Practices](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/)).
-- If there is a valid reason to [expand](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) the listbox, the [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role) role may be more appropriate.
+- برای دسترسی‌پذیری صفحه‌کلید، نویسندگان باید [فوکوس](https://w3c.github.io/aria/#managingfocus) همه فرزندان این نقش را مدیریت کنند.
+- توصیه می‌شود نویسندگان از سبک‌بندی متفاوت برای انتخاب زمانی که فهرست فوکوس ندارد استفاده کنند، به عنوان مثال، یک انتخاب غیرفعال اغلب با رنگ پس‌زمینه روشن‌تر نشان داده می‌شود.
+- اگر listbox بخشی از یک ویجت دیگر نیست، باید ویژگی [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) را تنظیم کند.
+- اگر یک یا چند ورودی فرزندان DOM listbox نیستند، ویژگی‌های اضافی `aria-*` باید تنظیم شوند (به [بهترین روش‌های ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/) مراجعه کنید).
+- اگر دلیل معتبری برای [باز کردن](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) listbox وجود دارد، نقش [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role) ممکن است مناسب‌تر باشد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement('select')}} element
-- HTML {{HTMLElement('label')}} element
-- HTML {{HTMLElement('option')}} element
-- [ARIA: `combobox` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)
-- [ARIA: `option` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role)
-- [ARIA: `list` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role)
-- [ARIA: `listitem` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listitem_role)
-- [ARIA Best Practices – Listbox](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/)
+- عنصر HTML {{HTMLElement('select')}}
+- عنصر HTML {{HTMLElement('label')}}
+- عنصر HTML {{HTMLElement('option')}}
+- [ARIA: نقش `combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)
+- [ARIA: نقش `option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role)
+- [ARIA: نقش `list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role)
+- [ARIA: نقش `listitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listitem_role)
+- [بهترین روش‌های ARIA – Listbox](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/)
