@@ -1,11 +1,7 @@
 ---
 title: "ByteLengthQueuingStrategy: size() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy/size"
-status: "needs-translation"
----
-
----
-title: "ByteLengthQueuingStrategy: size() method"
+translated_by: "n8n + AI"
 short-title: size()
 slug: Web/API/ByteLengthQueuingStrategy/size
 page-type: web-api-instance-method
@@ -14,26 +10,24 @@ browser-compat: api.ByteLengthQueuingStrategy.size
 
 {{APIRef("Streams")}}{{AvailableInWorkers}}
 
-The **`size()`** method of the
-{{domxref("ByteLengthQueuingStrategy")}} interface returns the given chunk's
-`byteLength` property.
+متد **`size()`** از رابط {{domxref("ByteLengthQueuingStrategy")}}، ویژگی `byteLength` قطعه داده شده را بازمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 size(chunk)
 ```
 
-### Parameters
+### پارامترها
 
 - `chunk`
-  - : A chunk of data being passed through the stream.
+  - : یک قطعه از داده که در حال عبور از جریان است.
 
-### Return value
+### مقدار بازگشتی
 
-An integer representing the byte length of the given chunk.
+یک عدد صحیح که طول بایت قطعه داده شده را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const queuingStrategy = new ByteLengthQueuingStrategy({ highWaterMark: 1 });
@@ -56,14 +50,14 @@ const readableStream = new ReadableStream(
 const size = queuingStrategy.size(chunk);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ByteLengthQueuingStrategy.ByteLengthQueuingStrategy", "ByteLengthQueuingStrategy()")}} constructor
