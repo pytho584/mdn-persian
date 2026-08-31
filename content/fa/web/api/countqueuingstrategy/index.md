@@ -1,10 +1,4 @@
 ---
-title: "CountQueuingStrategy"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy"
-status: "needs-translation"
----
-
----
 title: CountQueuingStrategy
 slug: Web/API/CountQueuingStrategy
 page-type: web-api-interface
@@ -13,24 +7,24 @@ browser-compat: api.CountQueuingStrategy
 
 {{APIRef("Streams")}}{{AvailableInWorkers}}
 
-The **`CountQueuingStrategy`** interface of the [Streams API](/en-US/docs/Web/API/Streams_API) provides a built-in chunk counting queuing strategy that can be used when constructing streams.
+رابط **`CountQueuingStrategy`** در [API Streams](/en-US/docs/Web/API/Streams_API) یک استراتژی صف‌بندی داخلی بر اساس شمارش تکه‌ها (chunk counting) ارائه می‌دهد که می‌توان هنگام ساخت استریم‌ها از آن استفاده کرد.
 
-## Constructor
+## سازنده
 
 - {{domxref("CountQueuingStrategy.CountQueuingStrategy", "CountQueuingStrategy()")}}
-  - : Creates a new `CountQueuingStrategy` object instance.
+  - : یک نمونه جدید از شیء `CountQueuingStrategy` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("CountQueuingStrategy.highWaterMark")}} {{ReadOnlyInline}}
-  - : The total number of chunks that can be contained in the internal queue before [backpressure](/en-US/docs/Web/API/Streams_API/Concepts#backpressure) is applied.
+  - : تعداد کل تکه‌هایی که می‌توانند قبل از اعمال [backpressure](/en-US/docs/Web/API/Streams_API/Concepts#backpressure) در صف داخلی قرار گیرند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("CountQueuingStrategy.size()")}}
-  - : Always returns `1`.
+  - : همیشه `1` را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const queueingStrategy = new CountQueuingStrategy({ highWaterMark: 1 });
@@ -54,16 +48,16 @@ const writableStream = new WritableStream(
 const size = queueingStrategy.size();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Streams API", "Streams API", "", "nocode")}}
-- {{domxref("CountQueuingStrategy.CountQueuingStrategy", "CountQueuingStrategy()")}} constructor
-- [Internal queues and queuing strategies](/en-US/docs/Web/API/Streams_API/Concepts#internal_queues_and_queuing_strategies)
+- سازنده {{domxref("CountQueuingStrategy.CountQueuingStrategy", "CountQueuingStrategy()")}}
+- [صف‌های داخلی و استراتژی‌های صف‌بندی](/en-US/docs/Web/API/Streams_API/Concepts#internal_queues_and_queuing_strategies)
