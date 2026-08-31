@@ -1,11 +1,5 @@
 ---
 title: "CSSGroupingRule: cssRules property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSGroupingRule/cssRules"
-status: "needs-translation"
----
-
----
-title: "CSSGroupingRule: cssRules property"
 short-title: cssRules
 slug: Web/API/CSSGroupingRule/cssRules
 page-type: web-api-instance-property
@@ -14,25 +8,23 @@ browser-compat: api.CSSGroupingRule.cssRules
 
 {{ APIRef("CSSOM") }}
 
-The **`cssRules`** property of the
-{{domxref("CSSGroupingRule")}} interface returns a {{domxref("CSSRuleList")}} containing
-a collection of {{domxref("CSSRule")}} objects.
+خاصیت **`cssRules`** از رابط {{domxref("CSSGroupingRule")}} یک {{domxref("CSSRuleList")}} شامل مجموعه‌ای از اشیاء {{domxref("CSSRule")}} برمی‌گرداند.
 
-## Value
+## مقدار
 
-a {{domxref("CSSRuleList")}}.
+یک {{domxref("CSSRuleList")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 let myRules = document.styleSheets[0].cssRules;
 console.log(myRules);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
