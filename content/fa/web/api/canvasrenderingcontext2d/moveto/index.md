@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: moveTo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/moveTo"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: moveTo() method"
 short-title: moveTo()
 slug: Web/API/CanvasRenderingContext2D/moveTo
 page-type: web-api-instance-method
@@ -14,10 +8,10 @@ browser-compat: api.CanvasRenderingContext2D.moveTo
 
 {{APIRef("Canvas API")}}
 
-The
+متد
 **`CanvasRenderingContext2D.moveTo()`**
-method of the Canvas 2D API begins a new sub-path at the point specified by the given
-`(x, y)` coordinates.
+در Canvas 2D API یک زیرمسیر جدید را در نقطه‌ای که با مختصات
+`(x, y)` مشخص شده آغاز می‌کند.
 
 ## Syntax
 
@@ -28,20 +22,20 @@ moveTo(x, y)
 ### Parameters
 
 - `x`
-  - : The x-axis (horizontal) coordinate of the point.
+  - : مختصات نقطه در محور x (افقی).
 - `y`
-  - : The y-axis (vertical) coordinate of the point.
+  - : مختصات نقطه در محور y (عمودی).
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
-### Creating multiple sub-paths
+### ایجاد چند زیرمسیر
 
-This example uses `moveTo()` to create two sub-paths within a single path.
-Both sub-paths are then rendered with a single `stroke()` call.
+این مثال از `moveTo()` برای ایجاد دو زیرمسیر در یک مسیر واحد استفاده می‌کند.
+هر دو زیرمسیر سپس با یک فراخوانی `stroke()` ترسیم می‌شوند.
 
 #### HTML
 
@@ -51,8 +45,8 @@ Both sub-paths are then rendered with a single `stroke()` call.
 
 #### JavaScript
 
-The first line begins at (50, 50) and ends at (200, 50). The second line begins at (50,
-90\) and ends at (280, 120).
+خط اول از (50, 50) شروع شده و به (200, 50) ختم می‌شود. خط دوم از (50,
+90\) شروع شده و به (280, 120) ختم می‌شود.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -80,6 +74,6 @@ ctx.stroke();
 
 ## See also
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.lineTo()")}}
 - {{domxref("CanvasRenderingContext2D.stroke()")}}
