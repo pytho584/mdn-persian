@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTCharacteristic: value property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/value"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,18 +16,16 @@ browser-compat: api.BluetoothRemoteGATTCharacteristic.value
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTCharacteristic.value`** read-only
-property returns currently cached characteristic value. This value gets updated when the
-value of the characteristic is read or updated via a notification or indication.
+خاصیت فقط خواندنی **`BluetoothRemoteGATTCharacteristic.value`** مقدار مشخصه‌ای را که در حال حاضر در حافظه پنهان ذخیره شده است، برمی‌گرداند. این مقدار زمانی به‌روزرسانی می‌شود که مقدار مشخصه از طریق یک اعلان یا نشانه‌گذاری خوانده یا به‌روزرسانی شود.
 
-## Value
+## مقدار
 
-The currently cached characteristic value.
+مقدار مشخصه‌ای که در حال حاضر در حافظه پنهان ذخیره شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
