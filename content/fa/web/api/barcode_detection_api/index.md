@@ -1,7 +1,7 @@
 ---
 title: "Barcode Detection API"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,43 +15,41 @@ browser-compat: api.BarcodeDetector
 
 {{securecontext_header}}{{DefaultAPISidebar("Barcode Detection API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The Barcode Detection API detects linear and two-dimensional barcodes in images.
+API شناسایی بارکد، بارکدهای خطی و دوبعدی را در تصاویر شناسایی می‌کند.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-Support for barcode recognition within web apps unlocks a variety of use cases through supported barcode formats. QR codes can be used for online payments, web navigation or establishing social media connections, Aztec codes can be used to scan boarding passes and shopping apps can use EAN or UPC barcodes to compare prices of physical items.
+پشتیبانی از تشخیص بارکد در برنامه‌های وب، از طریق قالب‌های بارکد پشتیبانی‌شده، طیف وسیعی از موارد استفاده را فراهم می‌کند. کدهای QR می‌توانند برای پرداخت‌های آنلاین، پیمایش وب یا برقراری ارتباط در شبکه‌های اجتماعی استفاده شوند، کدهای آزتک می‌توانند برای اسکن کارت‌های پرواز استفاده شوند و برنامه‌های خرید می‌توانند از بارکدهای EAN یا UPC برای مقایسه قیمت کالاهای فیزیکی استفاده کنند.
 
-Detection is achieved through the {{domxref('BarcodeDetector.detect()','detect()')}} method, which takes an image object; it can be one of these objects:
-a {{domxref("HTMLImageElement")}},
-a {{domxref("SVGImageElement")}},
-a {{domxref("HTMLVideoElement")}},
-a {{domxref("HTMLCanvasElement")}},
-an {{domxref("ImageBitmap")}},
-an {{domxref("OffscreenCanvas")}},
-a {{domxref("VideoFrame")}},
-a {{domxref('Blob')}},
-or an {{domxref('ImageData')}}.
-Optional parameters can be passed to the {{domxref('BarcodeDetector')}} constructor to provide hints on which barcode formats to detect.
+تشخیص از طریق متد {{domxref('BarcodeDetector.detect()','detect()')}} انجام می‌شود که یک شیء تصویر دریافت می‌کند؛ این شیء می‌تواند یکی از این اشیاء باشد:
+یک {{domxref("HTMLImageElement")}}،
+یک {{domxref("SVGImageElement")}}،
+یک {{domxref("HTMLVideoElement")}}،
+یک {{domxref("HTMLCanvasElement")}}،
+یک {{domxref("ImageBitmap")}}،
+یک {{domxref("OffscreenCanvas")}}،
+یک {{domxref("VideoFrame")}}،
+یک {{domxref('Blob')}}،
+یا یک {{domxref('ImageData')}}.
+پارامترهای اختیاری می‌توانند به سازندهٔ {{domxref('BarcodeDetector')}} ارسال شوند تا راهنمایی‌هایی دربارهٔ اینکه کدام قالب‌های بارکد شناسایی شوند ارائه دهند.
 
-### Supported barcode formats
+### قالب‌های بارکد پشتیبانی‌شده
 
-The Barcode Detection API supports the following barcode formats:
+API شناسایی بارکد از قالب‌های بارکد زیر پشتیبانی می‌کند:
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th>Format</th>
-      <th>Description</th>
-      <th>Image</th>
+      <th>قالب</th>
+      <th>توضیحات</th>
+      <th>تصویر</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>aztec</td>
       <td>
-        A square two-dimensional matrix following iso24778 and with a square
-        bullseye pattern at their center, thus resembling an Aztec pyramid. Does
-        not require a surrounding blank zone.
+        یک ماتریس دوبعدی مربعی که از iso24778 پیروی می‌کند و در مرکز آن یک الگوی هدف مربعی وجود دارد، بنابراین شبیه یک هرم آزتک است. به ناحیه خالی اطراف نیازی ندارد.
       </td>
       <td>
         <img
@@ -63,9 +61,7 @@ The Barcode Detection API supports the following barcode formats:
     <tr>
       <td>code_128</td>
       <td>
-        A linear (one-dimensional), bidirectionally-decodable, self-checking
-        barcode following iso15417 and able to encode all 128 characters of
-        {{Glossary("ASCII")}} (hence the naming).
+        یک بارکد خطی (تک‌بعدی)، قابل رمزگشایی دوسویه و خودبررسی که از iso15417 پیروی می‌کند و قادر است هر ۱۲۸ نویسه {{Glossary("ASCII")}} را رمزگذاری کند (از این رو نامگذاری شده است).
       </td>
       <td>
         <img
@@ -77,8 +73,7 @@ The Barcode Detection API supports the following barcode formats:
     <tr>
       <td>code_39</td>
       <td>
-        A linear (one-dimensional), self-checking barcode following iso16388. It
-        is a discrete and variable-length barcode type.
+        یک بارکد خطی (تک‌بعدی)، خودبررسی که از iso16388 پیروی می‌کند. این یک نوع بارکد گسسته با طول متغیر است.
       </td>
       <td>
         <img
@@ -90,10 +85,7 @@ The Barcode Detection API supports the following barcode formats:
     <tr>
       <td>code_93</td>
       <td>
-        A linear, continuous symbology with a variable length following bc5. It
-        offers a larger information density than Code 128 and the visually
-        similar Code 39. Code 93 is used primarily by Canada Post to encode
-        supplementary delivery information.
+        یک نماد خطی پیوسته با طول متغیر که از bc5 پیروی می‌کند. تراکم اطلاعات بیشتری نسبت به Code 128 و Code 39 که از نظر ظاهری مشابه است ارائه می‌دهد. Code 93 عمدتاً توسط پست کانادا برای رمزگذاری اطلاعات تکمیلی تحویل استفاده می‌شود.
       </td>
       <td>
         <img
@@ -105,7 +97,7 @@ The Barcode Detection API supports the following barcode formats:
     <tr>
       <td>codabar</td>
       <td>
-        A linear barcode representing characters 0-9, A-D and symbols - . $ / +
+        یک بارکد خطی که نویسه‌های 0-9، A-D و نمادهای - . $ / + را نمایش می‌دهد.
       </td>
       <td>
         <img
@@ -117,9 +109,7 @@ The Barcode Detection API supports the following barcode formats:
     <tr>
       <td>data_matrix</td>
       <td>
-        An orientation-independent two-dimensional barcode composed of black and
-        white modules arranged in either a square or rectangular pattern
-        following iso16022.
+        یک بارکد دوبعدی مستقل از جهت که از ماژول‌های سیاه و سفید تشکیل شده و در الگوی مربعی یا مستطیلی مطابق با iso16022 چیده شده است.
       </td>
       <td>
         <img
@@ -131,7 +121,7 @@ The Barcode Detection API supports the following barcode formats:
     <tr>
       <td>ean_13</td>
       <td>
-        A linear barcode based on the UPC-A standard and defined in iso15420.
+        یک بارکد خطی مبتنی بر استاندارد UPC-A که در iso15420 تعریف شده است.
       </td>
       <td>
         <img
@@ -142,7 +132,7 @@ The Barcode Detection API supports the following barcode formats:
     </tr>
     <tr>
       <td>ean_8</td>
-      <td>A linear barcode defined in iso15420 and derived from EAN-13.</td>
+      <td>یک بارکد خطی تعریف‌شده در iso15420 که از EAN-13 مشتق شده است.</td>
       <td>
         <img
           alt="An image of an EAN-8 format barcode. A horizontal distribution of vertical black and white lines"
@@ -153,8 +143,7 @@ The Barcode Detection API supports the following barcode formats:
     <tr>
       <td>itf</td>
       <td>
-        A continuous, self-checking, bidirectionally decodable barcode. It will
-        always encode 14 digits.
+        یک بارکد پیوسته، خودبررسی و قابل رمزگشایی دوسویه. همیشه ۱۴ رقم را رمزگذاری می‌کند.
       </td>
       <td>
         <img
@@ -166,9 +155,7 @@ The Barcode Detection API supports the following barcode formats:
     <tr>
       <td>pdf417</td>
       <td>
-        A continuous two-dimensional barcode symbology format with multiple rows
-        and columns. It's bi-directionally decodable and uses the iso15438
-        standard.
+        یک قالب نماد بارکد دوبعدی پیوسته با چندین ردیف و ستون. به صورت دوسویه قابل رمزگشایی است و از استاندارد iso15438 استفاده می‌کند.
       </td>
       <td>
         <img
@@ -180,8 +167,7 @@ The Barcode Detection API supports the following barcode formats:
     <tr>
       <td>qr_code</td>
       <td>
-        A two-dimensional barcode that uses the iso18004 standard. The
-        information encoded can be text, URL or other data.
+        یک بارکد دوبعدی که از استاندارد iso18004 استفاده می‌کند. اطلاعات رمزگذاری‌شده می‌تواند متن، URL یا داده‌های دیگر باشد.
       </td>
       <td>
         <img
@@ -193,13 +179,7 @@ The Barcode Detection API supports the following barcode formats:
     <tr>
       <td>upc_a</td>
       <td>
-        One of the most common linear barcode types and is widely applied to
-        retail in the United States. Defined in iso15420, it represents digits
-        by strips of bars and spaces, each digit being associated to a unique
-        pattern of 2 bars and 2 spaces, both of variable width. UPC-A can encode
-        12 digits that are uniquely assigned to each trade item, and it's
-        technically a subset of EAN-13 (UPC-A codes are represented in EAN-13
-        with the first character set to 0).
+        یکی از رایج‌ترین انواع بارکد خطی است و به طور گسترده در خرده‌فروشی در ایالات متحده استفاده می‌شود. در iso15420 تعریف شده است و ارقام را با نوارهایی از میله‌ها و فاصله‌ها نمایش می‌دهد، به طوری که هر رقم با الگوی منحصربه‌فردی از ۲ میله و ۲ فاصله با عرض متغیر مرتبط است. UPC-A می‌تواند ۱۲ رقم را رمزگذاری کند که به صورت یکتا به هر قلم تجاری اختصاص می‌یابد و از نظر فنی زیرمجموعه‌ای از EAN-13 است (کدهای UPC-A در EAN-13 با اولین نویسه که روی ۰ تنظیم شده است نمایش داده می‌شوند).
       </td>
       <td>
         <img
@@ -211,8 +191,7 @@ The Barcode Detection API supports the following barcode formats:
     <tr>
       <td>upc_e</td>
       <td>
-        A variation of UPC-A defined in iso15420, compressing out unnecessary
-        zeros for a more compact barcode.
+        تغییری از UPC-A که در iso15420 تعریف شده است و صفرهای غیرضروری را برای بارکد فشرده‌تر حذف می‌کند.
       </td>
       <td>
         <img
@@ -224,26 +203,25 @@ The Barcode Detection API supports the following barcode formats:
     <tr>
       <td>unknown</td>
       <td>
-        This value is used by the platform to signify that it does not know or
-        specify which barcode format is being detected or supported.
+        این مقدار توسط پلتفرم استفاده می‌شود تا نشان دهد که نمی‌داند یا مشخص نمی‌کند کدام قالب بارکد در حال شناسایی یا پشتیبانی است.
       </td>
       <td></td>
     </tr>
   </tbody>
 </table>
 
-You can check for formats supported by the user agent via the {{domxref('BarcodeDetector/getSupportedFormats_static','getSupportedFormats()')}} method.
+می‌توانید قالب‌های پشتیبانی‌شده توسط عامل کاربر را از طریق متد {{domxref('BarcodeDetector/getSupportedFormats_static','getSupportedFormats()')}} بررسی کنید.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("BarcodeDetector")}} {{Experimental_Inline}}
-  - : The `BarcodeDetector` interface of the Barcode Detection API allows detection of linear and two dimensional barcodes in images.
+  - : رابط `BarcodeDetector` در API شناسایی بارکد، امکان شناسایی بارکدهای خطی و دوبعدی را در تصاویر فراهم می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Creating A Detector
+### ایجاد یک شناساگر
 
-This example tests for browser compatibility and creates a new barcode detector object, with specified supported formats.
+این مثال سازگاری مرورگر را بررسی می‌کند و یک شیء شناساگر بارکد جدید با قالب‌های پشتیبانی‌شدهٔ مشخص ایجاد می‌کند.
 
 ```js
 // check compatibility
@@ -259,9 +237,9 @@ if (!("BarcodeDetector" in globalThis)) {
 }
 ```
 
-### Getting Supported Formats
+### دریافت قالب‌های پشتیبانی‌شده
 
-The following example calls the `getSupportedFormats()` method and logs the results to the console.
+مثال زیر متد `getSupportedFormats()` را فراخوانی می‌کند و نتایج را در کنسول ثبت می‌کند.
 
 ```js
 // check supported types
@@ -270,9 +248,9 @@ BarcodeDetector.getSupportedFormats().then((supportedFormats) => {
 });
 ```
 
-### Detect Barcodes
+### شناسایی بارکدها
 
-This example uses the `detect()` method to detect the barcodes within the given image. These are iterated over and the barcode data is logged to the console.
+این مثال از متد `detect()` برای شناسایی بارکدهای موجود در تصویر داده‌شده استفاده می‌کند. روی این بارکدها پیمایش می‌شود و داده‌های بارکد در کنسول ثبت می‌شوند.
 
 ```js
 barcodeDetector
@@ -285,15 +263,15 @@ barcodeDetector
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [barcodefaq.com: A website with information about different barcodes and examples of the different types.](https://www.barcodefaq.com/)
-- [The Shape Detection API: a picture is worth a thousand words, faces, and barcodes](https://developer.chrome.com/docs/capabilities/shape-detection#barcodedetector)
+- [barcodefaq.com: وب‌سایتی با اطلاعات درباره بارکدهای مختلف و نمونه‌هایی از انواع مختلف.](https://www.barcodefaq.com/)
+- [Shape Detection API: یک تصویر ارزش هزار کلمه، چهره‌ها و بارکدها را دارد](https://developer.chrome.com/docs/capabilities/shape-detection#barcodedetector)
