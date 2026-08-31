@@ -1,11 +1,5 @@
 ---
 title: "Clipboard: clipboardchange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/clipboardchange_event"
-status: "needs-translation"
----
-
----
-title: "Clipboard: clipboardchange event"
 slug: Web/API/Clipboard/clipboardchange_event
 page-type: web-api-event
 status:
@@ -15,13 +9,13 @@ browser-compat: api.Clipboard.clipboardchange_event
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}
 
-The **`clipboardchange`** event of the {{domxref("Clipboard")}} interface is fired when the system clipboard contents are changed in any way, for example via a system copy command, or via an API method such as {{domxref("Clipboard.writeText()")}}.
+رویداد **`clipboardchange`** از رابط {{domxref("Clipboard")}} زمانی رخ می‌دهد که محتویات کلیپ‌بورد سیستم به هر شکلی تغییر کند؛ برای مثال از طریق دستور کپی سیستمی یا از طریق یک متد API مانند {{domxref("Clipboard.writeText()")}}.
 
-The `clipboardchange` event is only fired with [sticky activation](/en-US/docs/Glossary/Sticky_activation) or after the `clipboard-read` permission is granted.
+رویداد `clipboardchange` تنها با [فعال‌سازی چسبنده](/en-US/docs/Glossary/Sticky_activation) یا پس از اعطای مجوز `clipboard-read` رخ می‌دهد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+نام رویداد را در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("clipboardchange", (event) => { })
@@ -29,21 +23,21 @@ addEventListener("clipboardchange", (event) => { })
 onclipboardchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("ClipboardChangeEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("ClipboardChangeEvent")}} که از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("ClipboardChangeEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Listening for system copy commands
+### گوش دادن به دستورهای کپی سیستمی
 
-This example shows how to listen for system copy commands and display the content that was copied to the clipboard.
+این مثال نشان می‌دهد که چگونه به دستورهای کپی سیستمی گوش دهید و محتوای کپی‌شده به کلیپ‌بورد را نمایش دهید.
 
 #### HTML
 
-The HTML consists of three {{htmlelement("p")}} elements — one to display the clipboard contents and two containing sample text to copy.
+بخش HTML شامل سه عنصر {{htmlelement("p")}} است — یکی برای نمایش محتویات کلیپ‌بورد و دو مورد حاوی متن نمونه برای کپی.
 
 ```html live-sample___basic-usage
 <p id="output">Copied text:</p>
@@ -86,7 +80,7 @@ body {
 
 #### JavaScript
 
-In our script, we first grab a reference to the output `<p>` element. We then define a `clipboardchange` event handler on the browser's {{domxref("Clipboard")}} object. When the event fires, we invoke the {{domxref("Clipboard.readText()")}} method to read the text that was just copied to the clipboard. When the result is returned, we set it as the value of the output paragraph's `textContent`.
+در اسکریپت خود، ابتدا ارجاعی به عنصر `<p>` خروجی می‌گیریم. سپس یک کنترل‌کننده رویداد `clipboardchange` روی شیء `Clipboard` مرورگر تعریف می‌کنیم. وقتی رویداد رخ داد، متد {{domxref("Clipboard.readText()")}} را برای خواندن متنی که به تازگی در کلیپ‌بورد کپی شده است فراخوانی می‌کنیم. وقتی نتیجه برگردانده شد، آن را به عنوان مقدار `textContent` پاراگراف خروجی تنظیم می‌کنیم.
 
 ```js live-sample___basic-usage
 const outputPara = document.querySelector("#output");
@@ -98,23 +92,23 @@ navigator.clipboard.addEventListener("clipboardchange", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-The rendered example is as follows:
+نمونه رندر شده به صورت زیر است:
 
 {{EmbedLiveSample("basic-usage", '100%', "350px", "", "", "", "clipboard-read")}}
 
-Try selecting some text from the example and then copying it to the clipboard using <kbd>Ctrl</kbd> + <kbd>C</kbd> (or <kbd>Cmd</kbd> + <kbd>C</kbd> if you are using a Mac). On your first attempt, you will see a permission prompt asking you to allow permission to read the clipboard contents. After that (or immediately, on subsequent attempts), you should see the text that you copied printed to the output paragraph at the top of the UI.
+مقداری از متن مثال را انتخاب کنید و سپس با استفاده از <kbd>Ctrl</kbd> + <kbd>C</kbd> (یا <kbd>Cmd</kbd> + <kbd>C</kbd> اگر از مک استفاده می‌کنید) آن را در کلیپ‌بورد کپی کنید. در اولین تلاش، یک اعلان مجوز مشاهده خواهید کرد که از شما اجازه خواندن محتویات کلیپ‌بورد را می‌خواهد. پس از آن (یا بلافاصله در تلاش‌های بعدی)، باید متنی که کپی کرده‌اید را در پاراگراف خروجی بالای رابط کاربری ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ClipboardChangeEvent")}}
 - [Clipboard API](/en-US/docs/Web/API/Clipboard_API)
