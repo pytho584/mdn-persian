@@ -1,11 +1,5 @@
 ---
 title: "CommandEvent: source property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CommandEvent/source"
-status: "needs-translation"
----
-
----
-title: "CommandEvent: source property"
 short-title: source
 slug: Web/API/CommandEvent/source
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CommandEvent.source
 
 {{APIRef("Invoker Commands API")}}
 
-The **`source`** read-only property of the {{domxref("CommandEvent")}} interface returns an {{domxref("EventTarget")}} representing the control that invoked the given command.
+ویژگی فقط‌خواندنی **`source`** در رابط {{domxref("CommandEvent")}} یک {{domxref("EventTarget")}} برمی‌گرداند که نمایانگر کنترلی است که فرمان داده‌شده را فراخوانی کرده است.
 
-## Value
+## مقدار
 
-An {{domxref("EventTarget")}} object. Usually an {{domxref("HTMLButtonElement")}}.
+یک شیء {{domxref("EventTarget")}}. معمولاً یک {{domxref("HTMLButtonElement")}}.
 
-## Examples
+## مثال‌ها
 
-In the following simple example we've set up an event listener to add a temporary class to the button element upon a CommandEvent:
+در مثال ساده زیر، یک شنونده رویداد تنظیم کرده‌ایم که هنگام یک CommandEvent یک کلاس موقت به عنصر دکمه اضافه می‌کند:
 
 ```js
 document.body.addEventListener(
@@ -40,15 +34,15 @@ document.body.addEventListener(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Invoker Commands API", "Invoker Commands API", "", "nocode")}}
 - {{domxref("HTMLButtonElement.command")}}
