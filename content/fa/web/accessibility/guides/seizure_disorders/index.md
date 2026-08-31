@@ -1,7 +1,7 @@
 ---
 title: "Web accessibility for seizures and physical reactions"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Seizure_disorders"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,184 +12,182 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-This article introduces concepts behind making web content accessible for those with vestibular disorders, and how to measure and prevent content leading to seizures and/or other physical reactions.
+این مقاله مفاهیم پشت making محتوای وب قابل دسترس برای افراد مبتلا به اختلالات دهلیزی را معرفی می‌کند و نحوه اندازه‌گیری و جلوگیری از محتوایی که منجر به تشنج و/یا سایر واکنش‌های فیزیکی می‌شود را توضیح می‌دهد.
 
-## Overview
+## مرور کلی
 
-### Seizures
+### تشنج
 
-Seizures caused by light are known as photosensitive epilepsy. Content that flickers, flashes, or blinks can trigger photosensitive epilepsy. Web technologies that use video, animated GIFs, animated PNGs, animated SVGs, {{Glossary("Canvas")}}, and CSS or JavaScript animations can all produce content that may induce seizures or other incapacitating physical reactions. Certain visual patterns, especially stripes, can also cause physical reactions even though they are not animated. Photosensitive epilepsy is actually a kind of "reflex epilepsy"—seizures occurring in response to a trigger. In the case of photosensitive epilepsy, seizures are triggered specifically by flashing lights, but other types of reflex epilepsies may be triggered by the act of reading or by noises. Patterns and images can also trigger epilepsy.
+تشنج‌های ناشی از نور به عنوان صرع حساس به نور شناخته می‌شوند. محتوایی که سوسو می‌زند، چشمک می‌زند یا پلک می‌زند می‌تواند صرع حساس به نور را تحریک کند. فناوری‌های وب که از ویدئو، GIFهای متحرک، PNGهای متحرک، SVGهای متحرک، {{Glossary("Canvas")}} و انیمیشن‌های CSS یا جاوااسکریپت استفاده می‌کنند، همگی می‌توانند محتوایی تولید کنند که ممکن است باعث تشنج یا سایر واکنش‌های فیزیکی ناتوان‌کننده شود. برخی الگوهای بصری، به ویژه خطوط راه‌راه، حتی اگر متحرک نباشند نیز می‌توانند باعث واکنش‌های فیزیکی شوند. صرع حساس به نور در واقع نوعی "صرع رفلکسی" است - تشنج‌هایی که در پاسخ به یک محرک رخ می‌دهند. در مورد صرع حساس به نور، تشنج‌ها به طور خاص توسط نورهای چشمک‌زن تحریک می‌شوند، اما انواع دیگر صرع‌های رفلکسی ممکن است با عمل خواندن یا صداها تحریک شوند. الگوها و تصاویر نیز می‌توانند باعث تشنج شوند.
 
-The fact that static images may cause seizures and other disorders is documented in articles such as ["Gamma Oscillations and photosensitive epilepsy"](https://linkinghub.elsevier.com/retrieve/pii/S0960982217304062), where it is noted "_Certain visual images, even in the absence of motion or flicker, can trigger seizures in patients with photosensitive epilepsy_". The Epilepsy Foundation, in its article, ["Shedding Light on Photosensitivity, One of Epilepsy's Most Complex Conditions"](https://www.epilepsy.com/stories/shedding-light-photosensitivity-one-epilepsys-most-complex-conditions) talks about static images and patterns: "_Static or moving patterns of discernible light and dark stripes have the same effect as flashing lights because of the alternation of dark and bright areas."_ The Epilepsy Foundation of America Working Group is able to "quantify" the problem a little: _"A pattern with the potential for provoking seizures contains clearly discernible stripes, numbering more than five light-dark pairs of stripes in any orientation_". In addition to stripes, checkered patterns have also been known to cause photosensitive seizures, according to [Cedars-Sinai](https://www.cedars-sinai.org/health-library/diseases-and-conditions/p/photosensitive-seizures.html).
+این واقعیت که تصاویر ثابت ممکن است باعث تشنج و سایر اختلالات شوند در مقالاتی مانند ["نوسانات گاما و صرع حساس به نور"](https://linkinghub.elsevier.com/retrieve/pii/S0960982217304062) مستند شده است، جایی که اشاره شده است: _"برخی تصاویر بصری، حتی در غیاب حرکت یا سوسو زدن، می‌توانند در بیماران مبتلا به صرع حساس به نور تشنج ایجاد کنند"_. بنیاد صرع در مقاله خود، ["روشن کردن حساسیت به نور، یکی از پیچیده‌ترین شرایط صرع"](https://www.epilepsy.com/stories/shedding-light-photosensitivity-one-epilepsys-most-complex-conditions) در مورد تصاویر و الگوهای ثابت صحبت می‌کند: _"الگوهای ثابت یا متحرک از نوارهای روشن و تاریک قابل تشخیص، همان اثر نورهای چشمک‌زن را دارند به دلیل تناوب مناطق تاریک و روشن."_ گروه کاری بنیاد صرع آمریکا می‌تواند مشکل را کمی "کمی‌سازی" کند: _"الگویی با پتانسیل ایجاد تشنج شامل نوارهای قابل تشخیص، بیش از پنج جفت نوار روشن-تاریک در هر جهت است."_ علاوه بر نوارها، الگوهای شطرنجی نیز طبق گزارش [Cedars-Sinai](https://www.cedars-sinai.org/health-library/diseases-and-conditions/p/photosensitive-seizures.html) می‌توانند باعث تشنج حساس به نور شوند.
 
-Although static images are possible as triggers, they are less consistent. The trigger that is well established and strong is flashing/strobe lights. Dr. Selim Benbadis of USF's Comprehensive Epilepsy Program notes, _"The only thing that is really documented is flashing lights, which can trigger seizures in patients with photosensitive epilepsy. Only a few types of epilepsies are photosensitive though, and the vast majority of epilepsies are not."_ In addition to seizures brought about by photosensitivity, listening to certain pieces of music can also trigger what are called musicogenic seizures, although these types of seizures seem to be much more rare. For a great introduction on the topic of musicogenic seizures, visit Epilepsy Ontario's web page on [Musicogenic Seizures](https://epilepsyontario.org/musicogenic-seizures/).
+اگرچه تصاویر ثابت به عنوان محرک امکان‌پذیر هستند، اما کمتر ثابت‌قدم هستند. محرکی که به خوبی تثبیت شده و قوی است، نورهای چشمک‌زن/استروب است. دکتر سلیم بنبدیس از برنامه جامع صرع USF اشاره می‌کند: _"تنها چیزی که واقعاً مستند شده است نورهای چشمک‌زن است که می‌تواند در بیماران مبتلا به صرع حساس به نور تشنج ایجاد کند. فقط تعداد کمی از انواع صرع حساس به نور هستند و اکثریت قریب به اتفاق صرع‌ها حساس به نور نیستند."_ علاوه بر تشنج‌های ناشی از حساسیت به نور، گوش دادن به برخی قطعات موسیقی نیز می‌تواند باعث تشنج‌های به اصطلاح موسیقی‌زا شود، اگرچه این نوع تشنج‌ها بسیار نادرتر به نظر می‌رسند. برای آشنایی عالی در مورد موضوع تشنج‌های موسیقی‌زا، به صفحه وب Epilepsy Ontario در مورد [تشنج‌های موسیقی‌زا](https://epilepsyontario.org/musicogenic-seizures/) مراجعه کنید.
 
-Seizures and epilepsy are not the same. In its article ["A Revised Definition of Epilepsy"](https://www.epilepsy.com/stories/revised-definition-epilepsy), the Epilepsy Foundation notes that "_a seizure is an event and epilepsy is the disease involving recurrent unprovoked seizures_." According to the Epilepsy Foundation's page ["How Serious Are Seizures?"](https://www.epilepsy.com/what-is-epilepsy/understanding-seizures/how-serious-are-seizures), _"Sudden unexpected death in epilepsy (SUDEP) is likely the most common disease-related cause of death in people with epilepsy. It is not frequent but it is a very real problem and people need to be aware of its risk"_.
+تشنج و صرع یکسان نیستند. در مقاله خود ["تعریف بازبینی شده صرع"](https://www.epilepsy.com/stories/revised-definition-epilepsy)، بنیاد صرع اشاره می‌کند که _"تشنج یک رویداد است و صرع بیماری شامل تشنج‌های مکرر بدون تحریک است."_ طبق صفحه بنیاد صرع ["تشنج چقدر جدی است؟"](https://www.epilepsy.com/what-is-epilepsy/understanding-seizures/how-serious-are-seizures)، _"مرگ ناگهانی غیرمنتظره در صرع (SUDEP) احتمالاً شایع‌ترین علت مرگ مرتبط با بیماری در افراد مبتلا به صرع است. مکرر نیست اما یک مشکل بسیار واقعی است و مردم باید از خطر آن آگاه باشند."_
 
-The point is, seizures most definitely can be and are fatal, and developers and designers are incredibly important for making the web a safer place for those with sensitivities to photosensitive or musicogenic triggers.
+نکته این است که تشنج‌ها قطعاً می‌توانند کشنده باشند و هستند، و توسعه‌دهندگان و طراحان برای ایمن‌تر کردن وب برای افرادی که به محرک‌های حساس به نور یا موسیقی‌زا حساسیت دارند، بسیار مهم هستند.
 
-Seizures can be fatal, but even the ones that are "only" debilitating can be of such severity that they render the user incapacitated. Other disorders, such as disorientation, nausea, vomiting, and more can also be so severe that the user is unable to function. The Epilepsy Foundation's article, ["Photosensitivity and Seizures"](https://www.epilepsy.com/what-is-epilepsy/seizure-triggers/photosensitivity), provides a list of triggers that may cause seizures in photosensitive people; here's an excerpt from that list:
+تشنج‌ها می‌توانند کشنده باشند، اما حتی تشنج‌هایی که فقط "ناتوان‌کننده" هستند می‌توانند به حدی شدید باشند که کاربر را از کار بیندازند. سایر اختلالات، مانند سرگیجه، تهوع، استفراغ و غیره نیز می‌توانند به حدی شدید باشند که کاربر نتواند عملکرد داشته باشد. مقاله بنیاد صرع ["حساسیت به نور و تشنج"](https://www.epilepsy.com/what-is-epilepsy/seizure-triggers/photosensitivity) فهرستی از محرک‌هایی را ارائه می‌دهد که ممکن است در افراد حساس به نور باعث تشنج شوند؛ در اینجا گزیده‌ای از آن فهرست آمده است:
 
-- Television screens or computer monitors due to the flicker or rolling images.
-- Certain video games or TV broadcasts containing rapid flashes or alternating patterns of different colors.
-- Intense strobe lights like visual fire alarms.
-- Natural light, such as sunlight, especially when shimmering off water, flickering through trees or through the slats of Venetian blinds.
-- Certain visual patterns, especially stripes of contrasting colors.
+- صفحه‌های تلویزیون یا مانیتورهای کامپیوتر به دلیل سوسو زدن یا تصاویر در حال حرکت.
+- برخی بازی‌های ویدئویی یا پخش‌های تلویزیونی حاوی چشمک‌های سریع یا الگوهای متناوب از رنگ‌های مختلف.
+- نورهای استروب شدید مانند آلارم‌های آتش نشانی بصری.
+- نور طبیعی، مانند نور خورشید، به ویژه زمانی که روی آب می‌درخشد، از میان درختان یا از میان نوارهای کرکره ونتی سوسو می‌زند.
+- برخی الگوهای بصری، به ویژه نوارهای رنگ‌های متضاد.
 
-That same article continues that many factors must combine to trigger the photosensitive reaction. Of note is that it includes the wavelength of light as a possible factor; wavelengths in the red part of the spectrum seem to be especially problematic. In the article, ["Understanding WCAG 2.0 Three Flashes or Below Threshold"](https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure-does-not-violate.html) notes generally that: _"Individuals who have photosensitive seizure disorders can have a seizure triggered by content that flashes at certain frequencies for more than a few flashes"_ and goes on to note, very specifically that: "_People are even more sensitive to red flashing than to other colors, so a special test is provided for saturated red flashing_".
+همان مقاله ادامه می‌دهد که عوامل متعددی باید با هم ترکیب شوند تا واکنش حساس به نور را تحریک کنند. قابل توجه است که شامل طول موج نور به عنوان یک عامل احتمالی است؛ طول موج‌های در بخش قرمز طیف به نظر می‌رسد به ویژه مشکل‌ساز هستند. در مقاله ["درک WCAG 2.0 سه چشمک یا زیر آستانه"](https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure-does-not-violate.html) به طور کلی اشاره شده است: _"افرادی که اختلالات تشنج حساس به نور دارند می‌توانند با محتوایی که در فرکانس‌های خاص برای بیش از چند چشمک چشمک می‌زند، تشنج را تجربه کنند"_ و در ادامه به طور خاص اشاره می‌کند: _"افراد نسبت به چشمک‌های قرمز حساس‌تر از سایر رنگ‌ها هستند، بنابراین یک آزمایش ویژه برای چشمک‌های قرمز اشباع ارائه شده است."_
 
-You don't even need an image or video to cause harm. A {{HTMLElement('div')}} element set to change color and luminosity at high frequency, easily done via JavaScript, can cause real harm. And, flickering can occur everywhere. For example, "spinners" commonly used to display while pages load can easily "flicker" while spinning.
+شما حتی برای ایجاد آسیب به یک تصویر یا ویدئو نیاز ندارید. یک عنصر {{HTMLElement('div')}} که برای تغییر رنگ و روشنایی در فرکانس بالا تنظیم شده است، به راحتی از طریق جاوااسکریپت قابل انجام است، می‌تواند آسیب واقعی ایجاد کند. و سوسو زدن می‌تواند در همه جا رخ دهد. به عنوان مثال، "چرخنده‌هایی" که معمولاً در هنگام بارگذاری صفحات نمایش داده می‌شوند، به راحتی می‌توانند در حین چرخش "سوسو بزنند".
 
-Additional concerns exist for individuals with motor-skill problems. For example, the page for Trace Research & Development Center's [Photosensitive Epilepsy Analysis Tool](https://trace.umd.edu/peat/) notes that _"Photosensitive seizures can be provoked by certain types of flashing in web or computer content, including mouse-overs that cause large areas of the screen to rapidly flash on and off repeatedly"_.
+نگرانی‌های اضافی برای افراد دارای مشکلات حرکتی وجود دارد. به عنوان مثال، صفحه مرکز تحقیقات و توسعه Trace برای [ابزار تحلیل صرع حساس به نور](https://trace.umd.edu/peat/) اشاره می‌کند که _"تشنج‌های حساس به نور می‌توانند توسط انواع خاصی از سوسو زدن در محتوای وب یا کامپیوتر تحریک شوند، از جمله موس‌اورهایی که باعث می‌شوند مناطق بزرگی از صفحه به سرعت و به طور مکرر روشن و خاموش شوند."_
 
-### Other physical reactions
+### سایر واکنش‌های فیزیکی
 
-Nausea, vertigo (or dizziness), and disorientation are very nonspecific symptoms associated with all kinds of diseases and not particularly suggestive of seizures (except maybe disorientation, which is seen in seizures). However, seizures are not the only adverse physical response possible from flashing, flickering, blinking, and other such stimuli. In 1997, a Japanese cartoon featured an animated "virus bomb". Some of the children watching the cartoon reacted by having seizures, others by suffering nausea, shaking, and vomiting blood. The reactions from the children were so severe, they had to be rushed to the emergency room. The physical disorders listed below are all possible consequences: each of these physical reactions may be so severe as to be incapacitating.
+تهوع، سرگیجه (یا گیجی) و سردرگمی علائم بسیار غیراختصاصی هستند که با انواع بیماری‌ها مرتبط هستند و به ویژه نشان‌دهنده تشنج نیستند (به جز شاید سردرگمی که در تشنج دیده می‌شود). با این حال، تشنج تنها واکنش فیزیکی نامطلوب احتمالی از محرک‌هایی مانند سوسو زدن، چشمک زدن، پلک زدن و غیره نیست. در سال 1997، یک کارتون ژاپنی یک "بمب ویروس" متحرک را نشان داد. برخی از کودکانی که کارتون را تماشا می‌کردند با تشنج واکنش نشان دادند، برخی دیگر دچار تهوع، لرز و استفراغ خون شدند. واکنش‌های کودکان به حدی شدید بود که مجبور شدند به اورژانس منتقل شوند. اختلالات فیزیکی ذکر شده در زیر همه پیامدهای احتمالی هستند: هر یک از این واکنش‌های فیزیکی ممکن است به حدی شدید باشند که ناتوان‌کننده باشند.
 
-- Seizures
-- Vestibular Disorders
-- Migraines
-- Nausea
-- Vomiting
+- تشنج
+- اختلالات دهلیزی
+- میگرن
+- تهوع
+- استفراغ
 
-## Flashing, blinking, & flickering
+## چشمک زدن، پلک زدن و سوسو زدن
 
-Although "flashing" and "blinking" are sometimes used interchangeably, they are not the same. According to the W3C, blinking is a distraction problem, whereas flashing refers to content that occurs more than 3 times per second, and which is sufficiently large and bright. [Section 508](https://www.section508.gov/content/guide-accessible-web-design-development/#flashing) prohibits flickering effects with a frequency greater than 3 Hz (flickers per second) and lower than 55 Hz. The Epilepsy Foundation's article ["Shedding Light on Photosensitivity, One of Epilepsy's Most Complex Conditions"](https://www.epilepsy.com/stories/shedding-light-photosensitivity-one-epilepsys-most-complex-conditions) notes that _"Generally, flashing lights between the frequencies of five to 30 flashes per second (Hertz) are most likely to trigger seizures. In order to be safe, the consensus recommends that photosensitive individuals should not be exposed to flashes greater than three per second."_ For some people, however, flashing/blinking can cause symptoms at less than 3 Hz.
+اگرچه "چشمک زدن" و "پلک زدن" گاهی به جای یکدیگر استفاده می‌شوند، اما یکسان نیستند. طبق W3C، پلک زدن یک مشکل حواس‌پرتی است، در حالی که چشمک زدن به محتوایی اشاره دارد که بیش از 3 بار در ثانیه رخ می‌دهد و به اندازه کافی بزرگ و روشن است. [بخش 508](https://www.section508.gov/content/guide-accessible-web-design-development/#flashing) اثرات سوسو زدن با فرکانس بیشتر از 3 هرتز (سوسو در ثانیه) و کمتر از 55 هرتز را ممنوع می‌کند. مقاله بنیاد صرع ["روشن کردن حساسیت به نور، یکی از پیچیده‌ترین شرایط صرع"](https://www.epilepsy.com/stories/shedding-light-photosensitivity-one-epilepsys-most-complex-conditions) اشاره می‌کند که _"به طور کلی، نورهای چشمک‌زن بین فرکانس‌های پنج تا 30 چشمک در ثانیه (هرتز) بیشترین احتمال را برای ایجاد تشنج دارند. برای ایمن بودن، اجماع توصیه می‌کند که افراد حساس به نور نباید در معرض چشمک‌های بیش از سه بار در ثانیه قرار گیرند."_ با این حال، برای برخی افراد، چشمک زدن/پلک زدن می‌تواند در کمتر از 3 هرتز نیز علائم ایجاد کند.
 
-It's important to note that not all flashing and blinking is bad. NASA, in its document titled, ["Blinking, Flashing, and Temporal Response"](https://web.archive.org/web/20250215094718/https://colorusage.arc.nasa.gov/flashing.php) notes that blinking and flashing can be powerful tools for drawing attention—as is necessary for warning buttons (this assumes that users can still see the screen while elements are flashing, which is not always true). For some users, blinking buttons also caution that they must be used sparingly, and with care. As it applies to web design, systems that alert company employees to danger by "hijacking" the screen to provide a flashing warning of emergency need to take into consideration the rate, size, and luminosity changes on the screen as these warnings are flashed.
+توجه به این نکته مهم است که همه چشمک زدن‌ها و پلک زدن‌ها بد نیستند. ناسا در سند خود با عنوان ["پلک زدن، چشمک زدن و پاسخ زمانی"](https://web.archive.org/web/20250215094718/https://colorusage.arc.nasa.gov/flashing.php) اشاره می‌کند که پلک زدن و چشمک زدن می‌توانند ابزارهای قدرتمندی برای جلب توجه باشند - همانطور که برای دکمه‌های هشدار ضروری است (این فرض می‌کند که کاربران در حالی که عناصر چشمک می‌زنند هنوز می‌توانند صفحه را ببینند، که همیشه درست نیست). برای برخی کاربران، دکمه‌های چشمک‌زن همچنین هشدار می‌دهند که باید با احتیاط و به ندرت استفاده شوند. همانطور که در طراحی وب کاربرد دارد، سیستم‌هایی که با "ربودن" صفحه برای ارائه یک هشدار چشمک‌زن اضطراری به کارکنان شرکت در مورد خطر هشدار می‌دهند، باید نرخ، اندازه و تغییرات روشنایی صفحه را هنگام چشمک زدن این هشدارها در نظر بگیرند.
 
-### Flashing and flickering—how is danger quantified?
+### چشمک زدن و سوسو زدن - خطر چگونه کمی‌سازی می‌شود؟
 
-According to the article ["Photic- and pattern-induced seizures: expert consensus of the Epilepsy Foundation of America Working Group",](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1528-1167.2005.31405.x) _"A flash is a potential hazard if it has luminance ≥20 cd/m<sup>2</sup>, occurs at a frequency of ≥3 Hz, and occupies a solid visual angle of ≥0.006 steradians (approximately 10% of the central visual field or 25% of screen area at typical viewing distances)."_
+طبق مقاله ["تشنج‌های ناشی از نور و الگو: اجماع متخصصان گروه کاری بنیاد صرع آمریکا"](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1528-1167.2005.31405.x)، _"یک چشمک یک خطر بالقوه است اگر روشنایی ≥20 cd/m<sup>2</sup> داشته باشد، در فرکانس ≥3 هرتز رخ دهد و یک زاویه بصری جامد ≥0.006 استرادیان (تقریباً 10% از میدان بینایی مرکزی یا 25% از مساحت صفحه در فواصل مشاهده معمولی) را اشغال کند."_
 
-How far is a typical viewing distance? The recommendation considered for a typical viewing distance at the time of writing was "_the area can be taken as applying to an area >25% of the area of a television screen, assuming standard viewing distances of ≥2 m (∼9 feet)"_. Much has changed since that time, and we are now much closer to our screen.
+فاصله مشاهده معمولی چقدر است؟ توصیه‌ای که در زمان نوشتن برای فاصله مشاهده معمولی در نظر گرفته شد این بود: _"این مساحت را می‌توان به عنوان اعمال به مساحتی >25% از مساحت صفحه تلویزیون، با فرض فواصل مشاهده استاندارد ≥2 متر (∼9 فوت) در نظر گرفت."_ از آن زمان تاکنون تغییرات زیادی رخ داده است و اکنون ما به صفحه نمایش خود بسیار نزدیک‌تر هستیم.
 
-Certain colors, and/or combinations of colors, also matter. ["Certain Colors More Likely To Cause Epileptic Fits, Researchers Find"](https://www.sciencedaily.com/releases/2009/09/090925092858.htm) notes that _"…complexities underlying brain dynamics could be modulated by certain color combinations more than the others, for example, red-blue flickering stimulus causes larger cortical excitation than red-green or blue-green stimulus."_
+رنگ‌های خاص و/یا ترکیب رنگ‌ها نیز مهم هستند. ["برخی رنگ‌ها بیشتر باعث تشنج صرع می‌شوند، محققان می‌گویند"](https://www.sciencedaily.com/releases/2009/09/090925092858.htm) اشاره می‌کند که _"… پیچیدگی‌های زیربنایی دینامیک مغز می‌تواند توسط برخی ترکیب‌های رنگی بیشتر از دیگران تعدیل شود، به عنوان مثال، محرک چشمک‌زن قرمز-آبی باعث تحریک کورتیکال بزرگ‌تری نسبت به محرک قرمز-سبز یا آبی-سبز می‌شود."_
 
-### Flashing & flashing red
+### چشمک زدن و چشمک قرمز
 
-[WCAG 2.3.1 general flash and red flash thresholds](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html) are defined as follows:
+[آستانه‌های چشمک عمومی و چشمک قرمز WCAG 2.3.1](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html) به شرح زیر تعریف می‌شوند:
 
-- A **general flash** is defined as a pair of opposing changes in [relative luminance](https://w3c.github.io/wcag/guidelines/22/#dfn-relative-luminance) of 10% or more of the maximum relative luminance where the relative luminance of the darker image is below 0.80, and where "a pair of opposing changes" is an increase followed by a decrease, or a decrease followed by an increase;
-- A **red flash** is defined as any pair of opposing transitions involving a saturated red.
+- **چشمک عمومی** به عنوان یک جفت تغییرات متضاد در [روشنایی نسبی](https://w3c.github.io/wcag/guidelines/22/#dfn-relative-luminance) 10% یا بیشتر از حداکثر روشنایی نسبی تعریف می‌شود که در آن روشنایی نسبی تصویر تاریک‌تر زیر 0.80 است، و در آن "یک جفت تغییرات متضاد" یک افزایش به دنبال کاهش، یا یک کاهش به دنبال افزایش است.
+- **چشمک قرمز** به عنوان هر جفت انتقال متضاد شامل یک قرمز اشباع تعریف می‌شود.
 
-These standards are based on earlier research. In 2004, The Epilepsy Foundation of America convened a workshop developed a [consensus](https://pubmed.ncbi.nlm.nih.gov/16146438/) on photosensitive seizures, stating _"A flash is a potential hazard if it has luminance at least 20 cd/m<sup>2</sup>, occurs at a frequency of least 3 Hz, and occupies a solid visual angle of at least 0.006 steradians (about 10% of the central visual field or 25% of screen area at typical viewing distances)."_ The transition to or from a saturated red is important and constitutes a risk on its own: "_Irrespective of luminance, a transition to or from a saturated red is also considered a risk._"
+این استانداردها بر اساس تحقیقات قبلی هستند. در سال 2004، بنیاد صرع آمریکا یک کارگاه آموزشی تشکیل داد و یک [اجماع](https://pubmed.ncbi.nlm.nih.gov/16146438/) در مورد تشنج‌های حساس به نور ایجاد کرد و بیان کرد: _"یک چشمک یک خطر بالقوه است اگر روشنایی حداقل 20 cd/m<sup>2</sup> داشته باشد، در فرکانس حداقل 3 هرتز رخ دهد و یک زاویه بصری جامد حداقل 0.006 استرادیان (حدود 10% از میدان بینایی مرکزی یا 25% از مساحت صفحه در فواصل مشاهده معمولی) را اشغال کند."_ انتقال به یا از یک قرمز اشباع نیز مهم است و به خودی خود یک خطر محسوب می‌شود: _"صرف نظر از روشنایی، انتقال به یا از یک قرمز اشباع نیز یک خطر محسوب می‌شود."_
 
-### Size and distance
+### اندازه و فاصله
 
-#### How big? It depends
+#### چقدر بزرگ؟ بستگی دارد
 
-"Relative" size and distance both matter. According to [PEAT](https://trace.umd.edu/peat/), _"The combined area of flashes occurring concurrently occupies no more than a total of one quarter of any 341 x 256 pixel rectangle anywhere on the displayed screen area when the content is viewed at 1024 by 768 pixels."_
+اندازه و فاصله "نسبی" هر دو مهم هستند. طبق [PEAT](https://trace.umd.edu/peat/)، _"مساحت ترکیبی چشمک‌هایی که به طور همزمان رخ می‌دهند بیش از یک چهارم از هر مستطیل 341 x 256 پیکسلی در هر نقطه از صفحه نمایش داده شده، زمانی که محتوا در 1024 در 768 پیکسل مشاهده می‌شود، اشغال نمی‌کند."_
 
-The point that the field of vision is an important consideration arises in the article addressing WCAG 2.3.1 continues: "_The 1024 x 768 screen is used as the reference screen resolution for the evaluation. The 341 x 256 pixel block represents a 10 degree viewport at a typical viewing distance. (The 10 degree field is taken from the original specifications and represents the central vision portion of the eye, where people are most susceptible to photo stimuli.)_"
+نکته‌ای که میدان دید یک ملاحظه مهم است در مقاله‌ای که به WCAG 2.3.1 می‌پردازد مطرح می‌شود: _"صفحه 1024 در 768 به عنوان وضوح صفحه مرجع برای ارزیابی استفاده می‌شود. بلوک 341 x 256 پیکسل یک نمای 10 درجه را در فاصله مشاهده معمولی نشان می‌دهد. (میدان 10 درجه از مشخصات اصلی گرفته شده است و بخش بینایی مرکزی چشم را نشان می‌دهد، جایی که افراد بیشتر به محرک‌های نوری حساس هستند.)"_
 
-This pixel area ratio calculates for relative size, but distance also matters.
+این نسبت مساحت پیکسل برای اندازه نسبی محاسبه می‌شود، اما فاصله نیز مهم است.
 
-Distance matters because it affects the total field of vision. When viewers wear ocular masks for gaming, the field of vision is likely enveloped in its entirety by the screen. [WebXR](/en-US/docs/Web/API/WebXR_Device_API) is an open specification that makes it possible to experience VR in your browser, which can be experienced on phone, computer or headset. The concern about flashing images in an ocular mask is a growing one, since the mask is so close to the eyes.
+فاصله مهم است زیرا بر کل میدان دید تأثیر می‌گذارد. هنگامی که بینندگان از ماسک‌های چشمی برای بازی استفاده می‌کنند، احتمالاً میدان دید به طور کامل توسط صفحه پوشانده می‌شود. [WebXR](/en-US/docs/Web/API/WebXR_Device_API) یک مشخصات باز است که تجربه VR را در مرورگر شما امکان‌پذیر می‌سازد که می‌تواند در تلفن، کامپیوتر یا هدست تجربه شود. نگرانی در مورد تصاویر چشمک‌زن در ماسک چشمی در حال افزایش است، زیرا ماسک بسیار به چشم‌ها نزدیک است.
 
-Research generally indicates that VR usage may actually be safer than normal screen consumption, due to higher refresh rates. As [Fisher et al. 2022](https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17175) summarizes, _"The limited data so far available raise no special seizure concerns in terms of VR technology, although this view may change with more experience. Certain types of VR content, including bright flashes, provocative patterns, or color changes would be expected to provoke seizures, just as they do in the real world."_
+تحقیقات به طور کلی نشان می‌دهد که استفاده از VR ممکن است در واقع ایمن‌تر از مصرف معمولی صفحه باشد، به دلیل نرخ تازه‌سازی بالاتر. همانطور که [Fisher et al. 2022](https://onlinelibrary.wiley.com/doi/full/10.1111/epi.17175) خلاصه می‌کند، _"داده‌های محدود تا کنون موجود نگرانی خاصی در مورد تشنج از نظر فناوری VR ایجاد نمی‌کند، اگرچه این دیدگاه ممکن است با تجربه بیشتر تغییر کند. انواع خاصی از محتوای VR، از جمله چشمک‌های روشن، الگوهای تحریک‌کننده یا تغییرات رنگ، انتظار می‌رود که تشنج را تحریک کنند، همانطور که در دنیای واقعی انجام می‌دهند."_
 
-(Note that some users will not be able to see with blinking cursors, and may get migraines, motion sickness, and disorientation, although blinking cursors occupy a much smaller area of the screen.)
+(توجه داشته باشید که برخی کاربران نمی‌توانند با مکان‌نماهای پلک‌زن ببینند و ممکن است دچار میگرن، بیماری حرکت و سردرگمی شوند، اگرچه مکان‌نماهای پلک‌زن مساحت بسیار کوچک‌تری از صفحه را اشغال می‌کنند.)
 
-### Patterns, and parallax
+### الگوها و پارالاکس
 
-Contrasting dark and light geometric patterns are a known culprit; stripes and checks are the best known examples. The Epilepsy Foundation of America Working Group lists how many light-dark pairs of stripes are likely to provoke seizures, and, in what conditions. If a pattern is unchanging and straight, eight lines is the maximum allowable, but if it undulates, no more than five lines.
+الگوهای هندسی متضاد تاریک و روشن یک عامل شناخته شده هستند؛ نوارها و شطرنجی‌ها شناخته‌شده‌ترین نمونه‌ها هستند. گروه کاری بنیاد صرع آمریکا فهرست می‌کند که چند جفت نوار روشن-تاریک احتمالاً باعث تشنج می‌شوند و در چه شرایطی. اگر یک الگو ثابت و مستقیم باشد، هشت خط حداکثر مجاز است، اما اگر موج‌دار باشد، بیش از پنج خط مجاز نیست.
 
-Parallax effects can cause disorientation. Use parallax effects with caution; if you must use them, ensure the user has a control to turn them off.
+اثرات پارالاکس می‌تواند باعث سردرگمی شود. از اثرات پارالاکس با احتیاط استفاده کنید؛ اگر مجبور به استفاده از آنها هستید، اطمینان حاصل کنید که کاربر کنترلی برای خاموش کردن آنها دارد.
 
-"A pattern with the potential for provoking seizures contains clearly discernible stripes, numbering more than five light-dark pairs of stripes in any orientation. When the light-dark stripes of any pattern collectively subtend at the eye from the minimal-expected viewing distance a solid angle of >0.006 steradians, the luminance of the lightest stripe is >50 cd/m<sup>2</sup>, and the pattern is presented for ≥0.5 s, then the pattern should display no more than five light-dark pairs of stripes, if the stripes change direction, oscillate, flash, or reverse in contrast; if the pattern is unchanging or smoothly drifting in one direction, no more than eight stripes."
+"الگویی با پتانسیل ایجاد تشنج شامل نوارهای قابل تشخیص، بیش از پنج جفت نوار روشن-تاریک در هر جهت است. هنگامی که نوارهای روشن-تاریک هر الگو به طور جمعی در چشم از حداقل فاصله مشاهده مورد انتظار یک زاویه جامد >0.006 استرادیان را تشکیل دهند، روشنایی روشن‌ترین نوار >50 cd/m<sup>2</sup> است و الگو برای ≥0.5 ثانیه ارائه شود، آنگاه الگو نباید بیش از پنج جفت نوار روشن-تاریک را نمایش دهد، اگر نوارها تغییر جهت دهند، نوسان کنند، چشمک بزنند یا در کنتراست معکوس شوند؛ اگر الگو بدون تغییر یا به آرامی در یک جهت حرکت کند، بیش از هشت نوار مجاز نیست."
 
-Not all is known, and even with the metrics listed above, additional factors come into play. For example, going from a smaller area to a larger one increases the likelihood that the brain responds, as well as increasing contrast, and increasing spatial frequency from a low to middle. It's also known, although the reasoning is not understood behind it, that going from basic orientations (for example, stripes) to a multiple one (for example, the checkered pattern that emerges when laying one set of stripes on top of, but perpendicular to, the original set) affects the brain.
+همه چیز شناخته شده نیست، و حتی با معیارهای ذکر شده در بالا، عوامل دیگری نیز وارد عمل می‌شوند. به عنوان مثال، رفتن از یک منطقه کوچک‌تر به یک منطقه بزرگ‌تر احتمال پاسخ مغز را افزایش می‌دهد، همچنین افزایش کنتراست و افزایش فرکانس فضایی از پایین به متوسط. همچنین شناخته شده است، اگرچه دلیل آن درک نشده است، که رفتن از جهت‌گیری‌های پایه (به عنوان مثال، نوارها) به یک جهت‌گیری چندگانه (به عنوان مثال، الگوی شطرنجی که از قرار دادن یک مجموعه نوار بر روی مجموعه اصلی اما عمود بر آن ایجاد می‌شود) بر مغز تأثیر می‌گذارد.
 
-### Colors
+### رنگ‌ها
 
-Understanding color is important for accessibility. See [understanding colors and luminance](/en-US/docs/Web/Accessibility/Guides/Colors_and_Luminance) as it relates to web accessibility and accessibility in general.
+درک رنگ برای دسترسی مهم است. [درک رنگ‌ها و روشنایی](/en-US/docs/Web/Accessibility/Guides/Colors_and_Luminance) را در رابطه با دسترسی وب و دسترسی به طور کلی ببینید.
 
-How the color relates to its background—usually framed in terms of contrast—and how drastically the color changes frame to frame in animation is important. For more on this, see [Three Flashes or Below Threshold Understanding SC 2.3.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure-does-not-violate.html).
+نحوه ارتباط رنگ با پس‌زمینه آن - معمولاً بر حسب کنتراست چارچوب‌بندی می‌شود - و اینکه رنگ چقدر در فریم به فریم در انیمیشن تغییر می‌کند مهم است. برای اطلاعات بیشتر در این مورد، [سه چشمک یا زیر آستانه درک SC 2.3.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure-does-not-violate.html) را ببینید.
 
-#### The Special Case of Red
+#### مورد خاص قرمز
 
-It has been demonstrated that [some colors are more likely to cause epileptic fits than others](https://www.sciencedaily.com/releases/2009/09/090925092858.htm). Human physiology and psychology are affected by the color red in general. Its power to influence behavior has even been noted in animals.
+نشان داده شده است که [برخی رنگ‌ها بیشتر از دیگران باعث تشنج صرع می‌شوند](https://www.sciencedaily.com/releases/2009/09/090925092858.htm). فیزیولوژی و روانشناسی انسان به طور کلی تحت تأثیر رنگ قرمز قرار می‌گیرد. قدرت آن در تأثیرگذاری بر رفتار حتی در حیوانات نیز مشاهده شده است.
 
-- **Red Desaturation tests:** The human eye is so sensitively tuned to red that ophthalmologists set up a test using it. The Red desaturation test assesses the integrity of the optic nerve. For more information as to how an ophthalmologist uses this test, see [Red Desaturation](https://www.smartoptometry.app/red-desaturation/).
-- **Red Environment:** Studies have shown that for those who suffer Traumatic Brain Injury, [cognitive function is reduced in a red environment](https://pubmed.ncbi.nlm.nih.gov/20649469/).
+- **تست‌های Desaturation قرمز:** چشم انسان به قدری به قرمز حساس است که چشم‌پزشکان آزمایشی با استفاده از آن راه‌اندازی می‌کنند. تست Desaturation قرمز یکپارچگی عصب بینایی را ارزیابی می‌کند. برای اطلاعات بیشتر در مورد نحوه استفاده چشم‌پزشک از این تست، [Desaturation قرمز](https://www.smartoptometry.app/red-desaturation/) را ببینید.
+- **محیط قرمز:** مطالعات نشان داده است که برای کسانی که از آسیب مغزی تروماتیک رنج می‌برند، [عملکرد شناختی در یک محیط قرمز کاهش می‌یابد](https://pubmed.ncbi.nlm.nih.gov/20649469/).
 
-[Saturated Red](/en-US/docs/Web/Accessibility/Guides/Colors_and_Luminance) is a special, dangerous case, and there are special tests for it. In addition to a red environment affecting the cognitive function of those with Traumatic Brain Injury, color in the red spectrum wavelength seems to require special concern and special tests. Dr. Gregg Vanderheiden, when testing the Photosensitive Epilepsy Analysis Tool, noted that the seizure rates were much higher than expected. They found that we are much more sensitive to saturated red flashing. (See the video, [The Photosensitive Epilepsy Analysis Tool](https://www.pbs.org/video/university-place-the-photosensitive-epilepsy-analysis-tool-ep-429/).)
+[قرمز اشباع](/en-US/docs/Web/Accessibility/Guides/Colors_and_Luminance) یک مورد خاص و خطرناک است و آزمایش‌های ویژه‌ای برای آن وجود دارد. علاوه بر تأثیر محیط قرمز بر عملکرد شناختی افراد مبتلا به آسیب مغزی تروماتیک، رنگ در طیف طول موج قرمز نیاز به نگرانی و آزمایش‌های ویژه دارد. دکتر گرگ وندرهیدن، هنگام آزمایش ابزار تحلیل صرع حساس به نور، اشاره کرد که میزان تشنج بسیار بیشتر از حد انتظار بود. آنها دریافتند که ما به چشمک‌های قرمز اشباع بسیار حساس‌تر هستیم. (ویدئوی [ابزار تحلیل صرع حساس به نور](https://www.pbs.org/video/university-place-the-photosensitive-epilepsy-analysis-tool-ep-429/) را ببینید.)
 
-#### Websafe does not mean seizure-safe
+#### ایمن وب به معنای ایمن در برابر تشنج نیست
 
-Note that the color **#990000** is considered "**websafe**". That does _not_ mean it is "safe for not causing seizures", it only means that the color may be "safely" reproduced accurately by the technology used to generate color on screens.
+توجه داشته باشید که رنگ **#990000** "ایمن وب" در نظر گرفته می‌شود. این به معنای "ایمن برای عدم ایجاد تشنج" نیست، فقط به این معنی است که رنگ ممکن است توسط فناوری مورد استفاده برای تولید رنگ روی صفحه‌ها به طور دقیق بازتولید شود.
 
-## Measuring to prevent harm
+## اندازه‌گیری برای جلوگیری از آسیب
 
-Measuring the potential for harm is a good starting point. Factors considered within tests include color, luminosity, size, contrast, and in cases of animation, frequency. WCAG 2.1 provides guidance for evaluating content.
+اندازه‌گیری پتانسیل آسیب یک نقطه شروع خوب است. عواملی که در آزمایش‌ها در نظر گرفته می‌شوند عبارتند از رنگ، روشنایی، اندازه، کنتراست و در موارد انیمیشن، فرکانس. WCAG 2.1 راهنمایی برای ارزیابی محتوا ارائه می‌دهد.
 
-In August, 2004, the Epilepsy Foundation of America convened a workshop to begin to develop an expert consensus on photosensitive seizures. The following, expert, and authoritative information is from: [Photic- and pattern-induced seizures: expert consensus of the Epilepsy Foundation of America Working Group.](https://pubmed.ncbi.nlm.nih.gov/16146438/)
+در اوت 2004، بنیاد صرع آمریکا یک کارگاه آموزشی برای شروع توسعه یک اجماع متخصص در مورد تشنج‌های حساس به نور تشکیل داد. اطلاعات زیر، متخصص و معتبر، از [تشنج‌های ناشی از نور و الگو: اجماع متخصصان گروه کاری بنیاد صرع آمریکا](https://pubmed.ncbi.nlm.nih.gov/16146438/) است:
 
-> A flash is a potential hazard if it has luminance ≥20 cd/m<sup>2</sup>, occurs at a frequency of ≥3 Hz, and occupies a solid visual angle of ≥0.006 steradians (approximately 10% of the central visual field or 25% of screen area at typical viewing distances). A transition to or from saturated red also is considered a risk. A pattern with the potential for provoking seizures contains clearly discernible stripes, numbering more than five light-dark pairs of stripes in any orientation. When the light-dark stripes of any pattern collectively subtend at the eye from the minimal-expected viewing distance a solid angle of >0.006 steradians, the luminance of the lightest stripe is >50 cd/m2, and the pattern is presented for ≥0.5 s, then the pattern should display no more than five light-dark pairs of stripes, if the stripes change direction, oscillate, flash, or reverse in contrast; if the pattern is unchanging or smoothly drifting in one direction, no more than eight stripes. These principles are easier to apply in the case of fixed media, for example, a prerecorded TV show, which can be analyzed frame-by-frame, as compared with interactive media.
+> یک چشمک یک خطر بالقوه است اگر روشنایی ≥20 cd/m<sup>2</sup> داشته باشد، در فرکانس ≥3 هرتز رخ دهد و یک زاویه بصری جامد ≥0.006 استرادیان (تقریباً 10% از میدان بینایی مرکزی یا 25% از مساحت صفحه در فواصل مشاهده معمولی) را اشغال کند. انتقال به یا از قرمز اشباع نیز یک خطر محسوب می‌شود. الگویی با پتانسیل ایجاد تشنج شامل نوارهای قابل تشخیص، بیش از پنج جفت نوار روشن-تاریک در هر جهت است. هنگامی که نوارهای روشن-تاریک هر الگو به طور جمعی در چشم از حداقل فاصله مشاهده مورد انتظار یک زاویه جامد >0.006 استرادیان را تشکیل دهند، روشنایی روشن‌ترین نوار >50 cd/m2 است و الگو برای ≥0.5 ثانیه ارائه شود، آنگاه الگو نباید بیش از پنج جفت نوار روشن-تاریک را نمایش دهد، اگر نوارها تغییر جهت دهند، نوسان کنند، چشمک بزنند یا در کنتراست معکوس شوند؛ اگر الگو بدون تغییر یا به آرامی در یک جهت حرکت کند، بیش از هشت نوار مجاز نیست. این اصول در مورد رسانه‌های ثابت، به عنوان مثال، یک برنامه تلویزیونی از پیش ضبط شده، که می‌تواند فریم به فریم تحلیل شود، در مقایسه با رسانه‌های تعاملی، آسان‌تر قابل اعمال هستند.
 
-The "cd/m<sup>2</sup>" refers to candela per square meter. So for the web developer, how does this relate to measurements for color, luminance, and saturation?
+"cd/m<sup>2</sup>" به کاندلا بر متر مربع اشاره دارد. بنابراین برای توسعه‌دهنده وب، این چگونه با اندازه‌گیری‌های رنگ، روشنایی و اشباع ارتباط دارد؟
 
-The candela is a SI unit (International System of units) of luminous intensity. It's a photometric term, and photometry deals with the measurement of visible light as perceived by human eyes. Wikipedia's article on ["Candela per square metre"](https://en.wikipedia.org/wiki/Candela_per_square_metre) puts it in terms of what we are familiar with as developers: on a display device, and in the RGB space. This is helpful, because there's a specific standard assumed to be used on monitors, printers, and the Internet, and it is the **sRGB** (standard Red Green Blue).
+کاندلا یک واحد SI (سیستم بین‌المللی واحدها) از شدت نور است. این یک اصطلاح فوتومتریک است و فوتومتری با اندازه‌گیری نور مرئی آنگونه که توسط چشم انسان درک می‌شود سروکار دارد. مقاله ویکی‌پدیا در مورد ["کاندلا بر متر مربع"](https://en.wikipedia.org/wiki/Candela_per_square_metre) آن را بر حسب آنچه که به عنوان توسعه‌دهندگان با آن آشنا هستیم توضیح می‌دهد: روی یک دستگاه نمایشگر و در فضای RGB. این مفید است، زیرا یک استاندارد خاص وجود دارد که تصور می‌شود در مانیتورها، چاپگرها و اینترنت استفاده می‌شود و آن **sRGB** (قرمز سبز آبی استاندارد) است.
 
-> As a measure of light emitted per unit area, this unit is frequently used to specify the brightness of a display device. The [sRGB](https://en.wikipedia.org/wiki/SRGB) spec for monitors targets 80 cd/m<sup>2</sup>. Typically, calibrated monitors should have a brightness of 120 cd/m<sup>2</sup>. Most consumer desktop [liquid crystal displays](https://en.wikipedia.org/wiki/Liquid_crystal_display) have luminances of 200 to 300 cd/m<sup>2</sup>. [High-definition televisions](https://en.wikipedia.org/wiki/High-definition_television) range from 450 to about 1500 cd/m<sup>2</sup>.
+> به عنوان اندازه‌گیری نور ساطع شده در واحد سطح، این واحد اغلب برای مشخص کردن روشنایی یک دستگاه نمایشگر استفاده می‌شود. مشخصات [sRGB](https://en.wikipedia.org/wiki/SRGB) برای مانیتورها 80 cd/m<sup>2</sup> را هدف قرار می‌دهد. به طور معمول، مانیتورهای کالیبره شده باید روشنایی 120 cd/m<sup>2</sup> داشته باشند. اکثر [صفحه‌های نمایش کریستال مایع](https://en.wikipedia.org/wiki/Liquid_crystal_display) رومیزی مصرف‌کننده روشنایی 200 تا 300 cd/m<sup>2</sup> دارند. [تلویزیون‌های با وضوح بالا](https://en.wikipedia.org/wiki/High-definition_television) از 450 تا حدود 1500 cd/m<sup>2</sup> متغیر هستند.
 
-The takeaway is that the **sRGB** color space is a common touch point between research, assessment tools, and developers, since it is easily converted from the commonly used Hex code.
+نتیجه این است که فضای رنگی **sRGB** یک نقطه تماس مشترک بین تحقیقات، ابزارهای ارزیابی و توسعه‌دهندگان است، زیرا به راحتی از کد Hex رایج قابل تبدیل است.
 
-### Human physiology and psychology as a consideration
+### فیزیولوژی و روانشناسی انسان به عنوان یک ملاحظه
 
-Many experts work to quantify and measure to the greatest extent possible the kinds of web content that can serve as triggers for seizures. That said, it can't be forgotten that color is as much about human perception in the brain as it is the measurement of light coming from a computer screen.
+بسیاری از متخصصان برای کمیت‌سازی و اندازه‌گیری تا حد امکان انواع محتوای وب که می‌توانند به عنوان محرک تشنج عمل کنند، کار می‌کنند. با این حال، نمی‌توان فراموش کرد که رنگ به اندازه اندازه‌گیری نور خارج شده از صفحه کامپیوتر، به درک انسان در مغز نیز مربوط می‌شود.
 
-In addition to the psychological variances, there are also physiological differences among us. There will be variances and nuances as to how a real human being perceives, and responds to, color and light. For example, Tom Jewett, Lecturer Emeritus of Computer Sciences at Cal State University Long Beach, notes the following concerning [lightness in the HSL color scale](https://colortutorial.design/hsb.html) _"…The distinction between levels of lightness is not actually linear as the HSL scale would imply; we are much more sensitive to changes in lighter values than to darker ones."_
+علاوه بر تفاوت‌های روانشناختی، تفاوت‌های فیزیولوژیکی نیز بین ما وجود دارد. نحوه درک و پاسخ یک انسان واقعی به رنگ و نور دارای تغییرات و تفاوت‌های ظریف خواهد بود. به عنوان مثال، تام جویت، استاد بازنشسته علوم کامپیوتر در دانشگاه ایالتی کالیفرنیا لانگ بیچ، در مورد [روشنایی در مقیاس رنگ HSL](https://colortutorial.design/hsb.html) موارد زیر را یادداشت می‌کند: _"…تمایز بین سطوح روشنایی در واقع خطی نیست همانطور که مقیاس HSL نشان می‌دهد؛ ما نسبت به تغییرات در مقادیر روشن‌تر بسیار حساس‌تر از مقادیر تیره‌تر هستیم."_
 
-It's important to understand that light and its measurements are linear, but human vision and human perception are not. Investigation and discussion is ongoing as to how to relate the machine measurement of light as it passes from a computer screen, through the distance to the human eye, filtered by human vision, and then manipulated through the human brain.
+درک این نکته مهم است که نور و اندازه‌گیری‌های آن خطی هستند، اما دید و درک انسان خطی نیست. تحقیق و بحث در مورد چگونگی ارتباط اندازه‌گیری ماشینی نور در حین عبور از صفحه کامپیوتر، از طریق فاصله تا چشم انسان، فیلتر شده توسط دید انسان و سپس دستکاری شده توسط مغز انسان، ادامه دارد.
 
-Even age and sex can play a role. According to the Epilepsy Foundation's article, ["Shedding Light on Photosensitivity, One of Epilepsy's Most Complex Conditions"](https://www.epilepsy.com/stories/shedding-light-photosensitivity-one-epilepsys-most-complex-conditions), _"Children and adolescents are more prone than adults to have an abnormal response to light stimulation, and the first light-induced seizure almost always occurs before age 20"._ The article follows with this statistic: _"Girls (60 percent) are more often affected than boys (40 percent), although seizures are more frequent in boys because they are more likely to be playing video games. Video games often contain potentially provocative light stimulation"_.
+حتی سن و جنس نیز می‌توانند نقش داشته باشند. طبق مقاله بنیاد صرع، ["روشن کردن حساسیت به نور، یکی از پیچیده‌ترین شرایط صرع"](https://www.epilepsy.com/stories/shedding-light-photosensitivity-one-epilepsys-most-complex-conditions)، _"کودکان و نوجوانان بیشتر از بزرگسالان مستعد پاسخ غیرعادی به تحریک نور هستند و اولین تشنج ناشی از نور تقریباً همیشه قبل از سن 20 سالگی رخ می‌دهد."_ این مقاله با این آمار ادامه می‌دهد: _"دختران (60 درصد) بیشتر از پسران (40 درصد) تحت تأثیر قرار می‌گیرند، اگرچه تشنج در پسران بیشتر است زیرا احتمال بیشتری دارد که بازی‌های ویدئویی انجام دهند. بازی‌های ویدئویی اغلب شامل تحریک نور بالقوه تحریک‌کننده هستند."_
 
-**User testing is very problematic**. Naturally, no one wants to subject a seizure-prone individual to user testing. It's dangerous. To that point, one of the most ethical thing that developers and designers can do is use tools that have been developed by experts in the field who have worked hand-in-hand with physicians to develop the tool. As of this writing, there are two commonly available tools that have been ethically and professionally developed by researchers and physicians for film/videos: **PEAT**, and the **Harding Test**.
+**تست کاربری بسیار مشکل‌ساز است.** طبیعتاً هیچ‌کس نمی‌خواهد فردی مستعد تشنج را در معرض تست کاربری قرار دهد. خطرناک است. از این نظر، یکی از اخلاقی‌ترین کارهایی که توسعه‌دهندگان و طراحان می‌توانند انجام دهند استفاده از ابزارهایی است که توسط متخصصان این حوزه که با پزشکان همکاری کرده‌اند تا ابزار را توسعه دهند، ساخته شده است. در زمان نگارش این مقاله، دو ابزار رایج وجود دارد که به طور اخلاقی و حرفه‌ای توسط محققان و پزشکان برای فیلم/ویدئو توسعه یافته‌اند: **PEAT** و **آزمایش هاردینگ**.
 
-### Photosensitive Epilepsy Analysis Tool (PEAT)
+### ابزار تحلیل صرع حساس به نور (PEAT)
 
-The [Trace Research and Development Center](https://trace.umd.edu/) has set a gold standard for a [Photosensitive Epilepsy Analysis Tool](https://trace.umd.edu/peat/), and they've made a point to make it **_free_** to download. PEAT can help authors determine whether animations or video in their content are likely to cause seizures. Please note the restriction on its use: **_Use of PEAT to assess material commercially produced for television broadcast, film, home entertainment, or gaming industries is prohibited. Use the Harding Test or other tools for commercial purposes._**
+[مرکز تحقیقات و توسعه Trace](https://trace.umd.edu/) یک استاندارد طلایی برای [ابزار تحلیل صرع حساس به نور](https://trace.umd.edu/peat/) تعیین کرده است و آنها سعی کرده‌اند آن را **_رایگان_** برای دانلود قرار دهند. PEAT می‌تواند به نویسندگان کمک کند تا تعیین کنند که آیا انیمیشن‌ها یا ویدئوهای موجود در محتوای آنها احتمالاً باعث تشنج می‌شوند یا خیر. لطفاً به محدودیت استفاده از آن توجه کنید: **_استفاده از PEAT برای ارزیابی مواد تولید شده تجاری برای پخش تلویزیونی، فیلم، سرگرمی خانگی یا صنایع بازی ممنوع است. برای اهداف تجاری از آزمایش هاردینگ یا سایر ابزارها استفاده کنید._**
 
-To get a free copy of the University of Maryland's Photosensitive Epilepsy Analysis Tool, visit the [Trace Research & Development Center](https://trace.umd.edu/).
+برای دریافت یک نسخه رایگان از ابزار تحلیل صرع حساس به نور دانشگاه مریلند، به [مرکز تحقیقات و توسعه Trace](https://trace.umd.edu/) مراجعه کنید.
 
-![University of Maryland College of Information Studies Photosensitive Epilepsy Analysis Tool.](peatversion1pt6.png)
+![ابزار تحلیل صرع حساس به نور کالج اطلاعات دانشگاه مریلند.](peatversion1pt6.png)
 
-### The Harding Test
+### آزمایش هاردینگ
 
-As use of the PEAT tool is prohibited for commercial use, television programmers can use the Harding Test at [HardingTest.com](https://hardingtest.com/). The Harding Test is another gold standard. Television programmers in various countries must pass this test before being able to broadcast, so the group at [HardingTest.com](https://hardingtest.com/) provides both analysis and certification of video content.
+از آنجایی که استفاده از ابزار PEAT برای استفاده تجاری ممنوع است، برنامه‌نویسان تلویزیون می‌توانند از آزمایش هاردینگ در [HardingTest.com](https://hardingtest.com/) استفاده کنند. آزمایش هاردینگ یکی دیگر از استانداردهای طلایی است. برنامه‌نویسان تلویزیون در کشورهای مختلف باید قبل از پخش این آزمایش را پشت سر بگذارند، بنابراین گروه در [HardingTest.com](https://hardingtest.com/) هم تحلیل و هم گواهی محتوای ویدئویی را ارائه می‌دهد.
 
-![Harding Flash and Pattern Analyzer.](screen_shot_2019-06-20_at_11.16.17_am.png)
+![تحلیلگر چشمک و الگوی هاردینگ.](screen_shot_2019-06-20_at_11.16.17_am.png)
 
-## Accessibility Solutions for Developers
+## راه‌حل‌های دسترسی برای توسعه‌دهندگان
 
-All animations are potentially dangerous. As designers and developers our responsibility is to ensure we do no harm either intentionally or unintentionally. If we must include something that has the potential to cause harm, it is vital to prevent users from accidentally encountering the harmful content, and to provide ways for users to prevent and control animations mitigating potential harm.
+همه انیمیشن‌ها به طور بالقوه خطرناک هستند. به عنوان طراحان و توسعه‌دهندگان، مسئولیت ما این است که اطمینان حاصل کنیم چه به صورت عمدی و چه غیرعمدی آسیبی وارد نمی‌کنیم. اگر مجبوریم چیزی را شامل شویم که پتانسیل آسیب دارد، حیاتی است که از مواجهه تصادفی کاربران با محتوای مضر جلوگیری کنیم و راه‌هایی برای جلوگیری و کنترل انیمیشن‌ها برای کاهش آسیب احتمالی فراهم کنیم.
 
-### What the web developer can do
+### توسعه‌دهنده وب چه کاری می‌تواند انجام دهد
 
-#### Do no harm
+#### آسیب نرسانید
 
-[WCAG Guideline 2.3 Seizures and Physical Reactions](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-21/) provides an overview: _"Do not design content in a way that is known to cause seizures or physical reactions"_. Don't include animation that a user cannot control. Don't design with patterns known to cause problems. If you must include a gif or png with flashing in it, record it in a video format instead so that controls are available to the user. Give the user the ability to avoid it, turn it off, or render it less harmful.
+[راهنمای WCAG 2.3 تشنج و واکنش‌های فیزیکی](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-21/) یک مرور کلی ارائه می‌دهد: _"محتوایی را به گونه‌ای طراحی نکنید که شناخته شده است باعث تشنج یا واکنش‌های فیزیکی شود."_ انیمیشنی را که کاربر نمی‌تواند کنترل کند، قرار ندهید. با الگوهایی که شناخته شده است باعث ایجاد مشکل می‌شوند طراحی نکنید. اگر مجبورید یک gif یا png با چشمک زدن در آن قرار دهید، آن را به جای آن در قالب ویدئو ضبط کنید تا کنترل‌ها در دسترس کاربر باشند. به کاربر توانایی اجتناب از آن، خاموش کردن آن یا کمتر مضر کردن آن را بدهید.
 
-#### Understand malice
+#### بدخواهی را درک کنید
 
-As a developer or designer, ask yourself if strobing content really needs to be on your webpage. Even if handled properly, there are those who may download offending content from your site and weaponize it. It is believed the first documented attempt at using computers to effect physical harm via animation began Saturday, March 22, 2008: The Epilepsy Foundation's website was hacked via posts with flashing images and links falsely claiming to be helpful. Users with vestibular disorders who were seeking help from the site were affected.
+به عنوان یک توسعه‌دهنده یا طراح، از خود بپرسید که آیا محتوای استروب واقعاً باید در صفحه وب شما باشد. حتی اگر به درستی مدیریت شود، ممکن است افرادی باشند که محتوای توهین‌آمیز را از سایت شما دانلود کرده و آن را به سلاح تبدیل کنند. اعتقاد بر این است که اولین تلاش مستند برای استفاده از کامپیوترها برای تأثیر فیزیکی از طریق انیمیشن در شنبه، 22 مارس 2008 آغاز شد: وب‌سایت بنیاد صرع از طریق پست‌هایی با تصاویر چشمک‌زن و پیوندهایی که به دروغ ادعا می‌کردند مفید هستند، هک شد. کاربران مبتلا به اختلالات دهلیزی که از سایت کمک می‌خواستند تحت تأثیر قرار گرفتند.
 
-A series of legal considerations are underway after journalist Kurt Eichenwald, a known epileptic, suffered a seizure after being sent an animated gif in December 2016: the flashing gif carried the message, _"You deserve a seizure for your posts"_.
+یک سری ملاحظات قانونی پس از آن که کورت آیشنوالد، روزنامه‌نگار و مبتلا به صرع شناخته شده، پس از دریافت یک gif متحرک در دسامبر 2016 دچار تشنج شد، در جریان است: gif چشمک‌زن حامل پیام _"شما برای پست‌هایتان سزاوار تشنج هستید"_ بود.
 
-#### Control exposure, control access
+#### کنترل مواجهه، کنترل دسترسی
 
-Controlling exposure to the page is key to ensuring that someone susceptible to seizures is not exposed to it accidentally. WCAG notes that a single object can make the entire page unusable.
+کنترل مواجهه با صفحه کلید برای اطمینان از اینکه فرد مستعد تشنج به طور تصادفی در معرض آن قرار نگیرد، ضروری است. WCAG اشاره می‌کند که یک شیء واحد می‌تواند کل صفحه را غیرقابل استفاده کند.
 
-If you believe you may have an image or animation that may cause seizures, control access to it by first displaying a warning about the content, and then putting it in a location where the user must opt in to it, such as clicking a button, or ensuring that the link to the page has a distinct and obvious warning.
+اگر فکر می‌کنید ممکن است تصویری یا انیمیشنی داشته باشید که باعث تشنج شود، دسترسی به آن را با ابتدا نمایش یک هشدار در مورد محتوا و سپس قرار دادن آن در مکانی که کاربر باید به صورت اختیاری وارد شود، مانند کلیک کردن روی یک دکمه، یا اطمینان از اینکه پیوند به صفحه دارای یک هشدار مشخص و واضح است، کنترل کنید.
 
-Consider setting crawl directives for search engines to hint that they shouldn't include potentially harmful resources in their search indexes.
-You can do this using metadata in a [`<meta name="robots">`](/en-US/docs/Web/HTML/Reference/Elements/meta/name/robots) element with restrictive rules like `noindex, nofollow`.
-By not indexing the page (`noindex`) and not following links on the page (`nofollow`), the likelihood that users will stumble upon it via search will be reduced:
+تنظیم دستورالعمل‌های خزیدن برای موتورهای جستجو را در نظر بگیرید تا نشان دهید که آنها نباید منابع بالقوه مضر را در فهرست‌های جستجوی خود قرار دهند. می‌توانید این کار را با استفاده از ابرداده در یک عنصر [`<meta name="robots">`](/en-US/docs/Web/HTML/Reference/Elements/meta/name/robots) با قوانین محدودکننده مانند `noindex, nofollow` انجام دهید. با عدم نمایه‌سازی صفحه (`noindex`) و عدم دنبال کردن پیوندهای موجود در صفحه (`nofollow`)، احتمال اینکه کاربران به طور تصادفی از طریق جستجو با آن مواجه شوند کاهش می‌یابد:
 
 ```html
-<html lang="en">
+<html lang="fa">
   <head>
     <title>…</title>
     <meta name="robots" content="noindex, nofollow" />
@@ -200,28 +198,28 @@ By not indexing the page (`noindex`) and not following links on the page (`nofol
 </html>
 ```
 
-For non-HTML resources, you can set crawl directives in a {{httpheader("X-Robots-Tag")}} HTTP response header:
+برای منابع غیر HTML، می‌توانید دستورالعمل‌های خزیدن را در یک هدر پاسخ HTTP {{httpheader("X-Robots-Tag")}} تنظیم کنید:
 
 ```http
 X-Robots-Tag: noindex
 ```
 
-### Animated GIFs
+### GIFهای متحرک
 
-All image types are potentially dangerous, however, animated GIFs deserve special mention because of their ubiquity, and the fact that the animation speed is actually controlled within the GIF file itself.
+همه انواع تصاویر به طور بالقوه خطرناک هستند، با این حال، GIFهای متحرک به دلیل فراگیر بودن و این واقعیت که سرعت انیمیشن در واقع در خود فایل GIF کنترل می‌شود، شایسته ذکر ویژه هستند.
 
-#### Detect if a GIF is animated
+#### تشخیص متحرک بودن یک GIF
 
-- The [animated-gif-detector](https://www.npmjs.com/package/animated-gif-detector) npm package allows for the ability to determine animate _as early as possible_ in a given HTTP request.
-- Zakirt provides a gist for [animated-gif-detect.js](https://gist.github.com/zakirt/faa4a58cec5a7505b10e3686a226f285)
+- بسته npm [animated-gif-detector](https://www.npmjs.com/package/animated-gif-detector) امکان تشخیص متحرک بودن را _در اسرع وقت_ در یک درخواست HTTP معین فراهم می‌کند.
+- Zakirt یک gist برای [animated-gif-detect.js](https://gist.github.com/zakirt/faa4a58cec5a7505b10e3686a226f285) ارائه می‌دهد.
 
-With animated GIFs, ensure animation is inactive until the user chooses to activate it. For example, the user must push a button or check a box in order to start the animation.
+با GIFهای متحرک، اطمینان حاصل کنید که انیمیشن تا زمانی که کاربر انتخاب کند آن را فعال کند، غیرفعال است. به عنوان مثال، کاربر باید یک دکمه را فشار دهد یا یک کادر را علامت بزند تا انیمیشن شروع شود.
 
-### Videos
+### ویدئوها
 
-As in the case of animated GIFs, the user must push a button or check a box in order to start the animation. There are many ways to do this, such as NOT adding the [`autoplay`](/en-US/docs/Web/API/HTMLMediaElement/autoplay) attribute to `<video controls>`, or setting {{CSSxRef('animation-play-state')}} to `paused` as an initial state. To see a powerful example of how this can actually work see the article by Kirupa, ["Toggling Animations On and Off"](https://www.kirupa.com/html5/toggling_animations_on_off.htm). Kirupa uses the `animation-play-state` in concert with {{CSSxRef('transition')}}, {{CSSxRef('transform')}}, and [`prefers-reduced-motion`](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) to create a very accessible experience under the user's control.
+همانطور که در مورد GIFهای متحرک، کاربر باید یک دکمه را فشار دهد یا یک کادر را علامت بزند تا انیمیشن شروع شود. راه‌های زیادی برای انجام این کار وجود دارد، مانند افزودن نکردن ویژگی [`autoplay`](/en-US/docs/Web/API/HTMLMediaElement/autoplay) به `<video controls>`، یا تنظیم {{CSSxRef('animation-play-state')}} به `paused` به عنوان حالت اولیه. برای دیدن یک مثال قدرتمند از نحوه کارکرد این کار، مقاله کیروپا را ببینید: ["روشن و خاموش کردن انیمیشن‌ها"](https://www.kirupa.com/html5/toggling_animations_on_off.htm). کیروپا از `animation-play-state` به همراه {{CSSxRef('transition')}}، {{CSSxRef('transform')}} و [`prefers-reduced-motion`](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) برای ایجاد یک تجربه بسیار قابل دسترس تحت کنترل کاربر استفاده می‌کند.
 
-{{cssxref("animation-play-state")}} is a CSS property that sets whether an animation is running or paused.
+{{cssxref("animation-play-state")}} یک ویژگی CSS است که مشخص می‌کند آیا یک انیمیشن در حال اجرا است یا متوقف شده است.
 
 ```css
 div {
@@ -229,7 +227,7 @@ div {
 }
 ```
 
-[CSS transitions](/en-US/docs/Web/CSS/Guides/Transitions) can be used to set the duration to zero for the initial stage of animation.
+[انتقال‌های CSS](/en-US/docs/Web/CSS/Guides/Transitions) می‌توانند برای تنظیم مدت زمان صفر برای مرحله اولیه انیمیشن استفاده شوند.
 
 ```css
 div {
@@ -237,9 +235,9 @@ div {
 }
 ```
 
-### Ensure the user can also stop animations as well as start them
+### اطمینان حاصل کنید که کاربر می‌تواند انیمیشن‌ها را متوقف کند و همچنین شروع کند
 
-A {{HTMLElement('video')}} element with no attributes will not play automatically, and will also have no controls. Ensure that you add the `controls` attribute to the video element so that the user can stop the video as well as start it.
+یک عنصر {{HTMLElement('video')}} بدون ویژگی به طور خودکار پخش نمی‌شود و همچنین هیچ کنترلی نخواهد داشت. اطمینان حاصل کنید که ویژگی `controls` را به عنصر ویدئو اضافه می‌کنید تا کاربر بتواند ویدئو را متوقف کند و همچنین شروع کند.
 
 ```html
 <video controls>
@@ -249,13 +247,13 @@ A {{HTMLElement('video')}} element with no attributes will not play automaticall
 </video>
 ```
 
-#### Programmatically ensure controls are available
+#### به صورت برنامه‌نویسی اطمینان از در دسترس بودن کنترل‌ها
 
-The `HTMLMediaElement.controls` property reflects the `controls` HTML attribute, which controls whether user interface controls for playing the media item will be displayed.
+ویژگی `HTMLMediaElement.controls` ویژگی HTML `controls` را منعکس می‌کند که کنترل می‌کند آیا کنترل‌های رابط کاربری برای پخش آیتم رسانه نمایش داده می‌شوند یا خیر.
 
-##### Video
+##### ویدئو
 
-To ensure that a video has controls that a user can access, ensure that you add the word "controls" to HTML video and audio elements.
+برای اطمینان از اینکه یک ویدئو دارای کنترل‌هایی است که کاربر می‌تواند به آنها دسترسی داشته باشد، اطمینان حاصل کنید که کلمه "controls" را به عناصر ویدئو و صوتی HTML اضافه می‌کنید.
 
 `<video controls>`
 
@@ -270,9 +268,9 @@ To ensure that a video has controls that a user can access, ensure that you add 
 </video>
 ```
 
-##### Audio
+##### صدا
 
-Taking that same example and applying it to audio:
+با استفاده از همان مثال و اعمال آن به صدا:
 
 `<audio controls>`
 
@@ -287,51 +285,51 @@ Taking that same example and applying it to audio:
 </audio>
 ```
 
-##### Audio as part of Video
+##### صدا به عنوان بخشی از ویدئو
 
-Note that the audio in videos can be controlled by the `muted` content attribute, even though the content is within the {{HTMLElement('video')}} element rather than the {{HTMLElement('audio')}} element. This example is from the section on [muted media attribute](https://html.spec.whatwg.org/multipage/media.html#concept-media-muted) description from the HTML Living Standard. It explains that the video will autoplay quietly in the background until the user takes action to unmute the audio.
+توجه داشته باشید که صدا در ویدئوها می‌تواند توسط ویژگی محتوای `muted` کنترل شود، حتی اگر محتوا در عنصر {{HTMLElement('video')}} باشد نه عنصر {{HTMLElement('audio')}}. این مثال از بخش [ویژگی رسانه بی‌صدا](https://html.spec.whatwg.org/multipage/media.html#concept-media-muted) از استاندارد HTML Living است. توضیح می‌دهد که ویدئو به طور خودکار در پس‌زمینه بی‌صدا پخش می‌شود تا زمانی که کاربر برای لغو بی‌صدایی صدا اقدام کند.
 
 ```html
 <video src="adverts.cgi?kind=video" controls autoplay loop muted></video>
 ```
 
-### Control speed
+### کنترل سرعت
 
-This seems obvious, but because there are so many MIME types, the mechanisms for handling them varies greatly, and for that reason there's not a one-size-fits-all solution to the problem. This is further complicated by the fact that even how files are classified complicates how they should be handled. For example, the .gif file format is usually understood to be an image, but is also considered a video file format in some circles because of its ability to be animated. For a comprehensive listing of media types, please visit [IANA.org's page for Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml).
+این واضح به نظر می‌رسد، اما به دلیل تنوع زیاد انواع MIME، مکانیسم‌های رسیدگی به آنها بسیار متفاوت است و به همین دلیل، یک راه‌حل یک اندازه برای همه برای این مشکل وجود ندارد. این موضوع با این واقعیت پیچیده‌تر می‌شود که حتی نحوه طبقه‌بندی فایل‌ها نحوه برخورد با آنها را پیچیده می‌کند. به عنوان مثال، فرمت فایل .gif معمولاً به عنوان یک تصویر درک می‌شود، اما در برخی محافل به دلیل قابلیت متحرک بودن، یک فرمت فایل ویدئویی نیز در نظر گرفته می‌شود. برای فهرست جامع انواع رسانه، لطفاً به [صفحه IANA.org برای انواع رسانه](https://www.iana.org/assignments/media-types/media-types.xhtml) مراجعه کنید.
 
-The methods for sniffing them out is not a casual exercise. You may be interested in following the [MIME Sniffing](https://mimesniff.spec.whatwg.org/) standard at whatwg.org. Just about every kind of image can be animated; how they are animated varies, and therefore, the control of the animation varies.
+روش‌های تشخیص آنها یک تمرین معمولی نیست. ممکن است به دنبال کردن استاندارد [تشخیص MIME](https://mimesniff.spec.whatwg.org/) در whatwg.org علاقه‌مند باشید. تقریباً هر نوع تصویری می‌تواند متحرک باشد؛ نحوه متحرک شدن آنها متفاوت است و بنابراین، کنترل انیمیشن متفاوت است.
 
-#### Commonly animated file types
+#### انواع فایل‌های رایج متحرک
 
-- **Bitmap**: Animation
-- **Canvas**: MDN's tutorial on Canvas has a great section on [basic animations](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations). `setInterval()` is a mainstay in Canvas animation, but it is also interesting to see how it interacts with screen refresh. See the article, ["Controlling fps with requestAnimationFrame?"](https://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe) in which they discuss the nuts and bolts of implementing `requestAnimationFrame` against the backdrop of screen refresh.
-- **GIFs (Raster)**: Tough to crack because control for their animation resides within the gif files themselves. For information about controlling the speed of GIFs see W3C's ["G152: Setting animated gif images to stop blinking after n cycles (within 5 seconds)"](https://www.w3.org/TR/WCAG20-TECHS/G152.html). A great Stack Overflow article on the subject is, ["Can you control GIF animation with JavaScript?"](https://stackoverflow.com/questions/2385203/can-you-control-gif-animation-with-javascript)
-- **GIFV (Raster)**: Considered a variant, video version of GIF. The format is not standardized, and must reference a "real" video file (e.g., a .webm file) which must exist elsewhere.
+- **Bitmap**: انیمیشن
+- **Canvas**: آموزش MDN در مورد Canvas دارای بخش عالی در مورد [انیمیشن‌های پایه](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations) است. `setInterval()` یک پایه اصلی در انیمیشن Canvas است، اما همچنین جالب است که ببینیم چگونه با تازه‌سازی صفحه تعامل دارد. مقاله ["کنترل fps با requestAnimationFrame؟"](https://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe) را ببینید که در آن جزئیات پیاده‌سازی `requestAnimationFrame` در مقابل تازه‌سازی صفحه بحث شده است.
+- **GIFها (Raster)**: شکستن آنها سخت است زیرا کنترل انیمیشن آنها در داخل خود فایل‌های gif قرار دارد. برای اطلاعات در مورد کنترل سرعت GIFها، W3C را ببینید: ["G152: تنظیم تصاویر gif متحرک برای توقف پلک زدن پس از n چرخه (در عرض 5 ثانیه)"](https://www.w3.org/TR/WCAG20-TECHS/G152.html). یک مقاله عالی Stack Overflow در این زمینه است: ["آیا می‌توانید انیمیشن GIF را با جاوااسکریپت کنترل کنید؟"](https://stackoverflow.com/questions/2385203/can-you-control-gif-animation-with-javascript)
+- **GIFV (Raster)**: یک نوع، نسخه ویدئویی GIF در نظر گرفته می‌شود. این فرمت استاندارد نیست و باید به یک فایل ویدئویی "واقعی" (به عنوان مثال، یک فایل .webm) که باید در جای دیگری وجود داشته باشد، ارجاع دهد.
 - **JPG (Raster)**
-- **MNG (Raster)**: Multiple-image Network Graphics is a graphics file format for animated images. Also considered by some to be a video format.
-- **PNG, APNG (Raster)**: Portable Network Graphics and Animated Portable Network Graphics may both be animated.
-- **SVGs (Vector)**: The MDN document, ["SVG: Scalable Vector Graphics"](/en-US/docs/Web/SVG), notes that _"SVG is a text-based open Web standard. It is explicitly designed to work with other web standards such as [CSS](/en-US/docs/Web/CSS), [DOM](/en-US/docs/Web/API/Document_Object_Model), and [SMIL](/en-US/docs/Web/SVG/Guides/SVG_animation_with_SMIL)."_ SVGs can be used as an image like in this example: `<img src="example.svg" alt="This is an image using a svg as a source">`. This means that SVG appearance and animation can be controlled through CSS keyframes and animations. For interaction with JavaScript, see the MDN documents on [SVG Interfaces](/en-US/docs/Web/API/Document_Object_Model#svg_dom) and [Applying SVG effects to HTML content](/en-US/docs/Web/SVG/Guides/Applying_SVG_effects_to_HTML_content).
-- **Voxel (Raster)**: Three-dimensional [voxel](https://en.wikipedia.org/wiki/Voxel) raster graphics are employed in video games, as well as in medical imaging.
+- **MNG (Raster)**: گرافیک شبکه چند تصویری یک فرمت فایل گرافیکی برای تصاویر متحرک است. همچنین توسط برخی به عنوان یک فرمت ویدئویی در نظر گرفته می‌شود.
+- **PNG، APNG (Raster)**: گرافیک شبکه قابل حمل و گرافیک شبکه قابل حمل متحرک هر دو ممکن است متحرک باشند.
+- **SVGها (Vector)**: سند MDN، ["SVG: گرافیک برداری مقیاس‌پذیر"](/en-US/docs/Web/SVG)، اشاره می‌کند که _"SVG یک استاندارد وب باز مبتنی بر متن است. این به طور صریح برای کار با سایر استانداردهای وب مانند [CSS](/en-US/docs/Web/CSS)، [DOM](/en-US/docs/Web/API/Document_Object_Model) و [SMIL](/en-US/docs/Web/SVG/Guides/SVG_animation_with_SMIL) طراحی شده است."_ SVGها می‌توانند به عنوان یک تصویر مانند این مثال استفاده شوند: `<img src="example.svg" alt="This is an image using a svg as a source">`. این بدان معنی است که ظاهر و انیمیشن SVG را می‌توان از طریق keyframes و انیمیشن‌های CSS کنترل کرد. برای تعامل با جاوااسکریپت، اسناد MDN را در مورد [رابط‌های SVG](/en-US/docs/Web/API/Document_Object_Model#svg_dom) و [اعمال اثرات SVG به محتوای HTML](/en-US/docs/Web/SVG/Guides/Applying_SVG_effects_to_HTML_content) ببینید.
+- **Voxel (Raster)**: گرافیک شطرنجی [voxel](https://en.wikipedia.org/wiki/Voxel) سه بعدی در بازی‌های ویدئویی و همچنین در تصویربرداری پزشکی استفاده می‌شود.
 
-#### Text can also be animated
+#### متن نیز می‌تواند متحرک باشد
 
-Translations and transformations can animate text in a div, and do harm. Moving text can induce seizures for the same reasons that moving images do, so avoid animating your text. It's a good idea to avoid using moving text anyhow, as many screen readers cannot read moving text and it's bad user experience even for those with no vision or vestibular issues.
+ترجمه‌ها و تبدیل‌ها می‌توانند متن را در یک div متحرک کنند و آسیب ایجاد کنند. متن متحرک می‌تواند به همان دلایلی که تصاویر متحرک باعث تشنج می‌شوند، تشنج ایجاد کند، بنابراین از متحرک کردن متن خودداری کنید. به هر حال، استفاده از متن متحرک ایده خوبی نیست، زیرا بسیاری از صفحه‌خوان‌ها نمی‌توانند متن متحرک را بخوانند و حتی برای کسانی که مشکل بینایی یا دهلیزی ندارند، تجربه کاربری بدی است.
 
-### CSS for animation
+### CSS برای انیمیشن
 
-In the style sheet or within the {{HTMLElement('style')}} element, many options can combine together to create a powerful experience for the user. We've already mentioned the `animation` property earlier in this document. It's actually shorthand for all animation properties, including:
+در برگه سبک یا در عنصر {{HTMLElement('style')}}، گزینه‌های زیادی می‌توانند با هم ترکیب شوند تا یک تجربه قدرتمند برای کاربر ایجاد کنند. قبلاً ویژگی `animation` را در این سند ذکر کرده‌ایم. در واقع مخفف تمام ویژگی‌های انیمیشن است، از جمله:
 
 - `animation-play-state`
-- `animation-duration` has a value of `<time>`; this is the duration an animation takes to complete one cycle. This may be specified in either seconds `(s)` or milliseconds `(ms)`. A default value of `0s` indicates no animation should occur.
+- `animation-duration` دارای مقدار `<time>` است؛ این مدت زمانی است که یک انیمیشن برای تکمیل یک چرخه طول می‌کشد. این می‌تواند در ثانیه `(s)` یا میلی‌ثانیه `(ms)` مشخص شود. مقدار پیش‌فرض `0s` نشان می‌دهد که هیچ انیمیشنی نباید رخ دهد.
 - `animation-timing-function`
 
-The animation property is already powerful on its own, but combined with other properties and queries such as `prefers-reduced-motion`, a powerful set of options can be set up for the user. Setting `animation-duration` and `transition-duration` properties to a short duration rather than setting them to `animation: none` and `transition: none`, enables a safeguard to prevent issues in any case there is a dependency on the animation to run.
+ویژگی انیمیشن به تنهایی قدرتمند است، اما در ترکیب با سایر ویژگی‌ها و پرس‌وجوهایی مانند `prefers-reduced-motion`، مجموعه قدرتمندی از گزینه‌ها را می‌توان برای کاربر تنظیم کرد. تنظیم ویژگی‌های `animation-duration` و `transition-duration` به یک مدت زمان کوتاه به جای تنظیم آنها به `animation: none` و `transition: none`، یک محافظ برای جلوگیری از مشکلات در هر صورت وابستگی به اجرای انیمیشن فراهم می‌کند.
 
-### JavaScript animation
+### انیمیشن جاوااسکریپت
 
-JavaScript is often used to control {{HTMLElement('canvas')}} elements and SVGs. Most JavaScript code that applies to HTML video also applies to audio. `HTMLMediaElement.playbackRate` is used to implement user controls for the playback rate for both video and audio. A value of 1.0 is default and considered normal speed; a value of 0.5 is half the speed, a value of 2.0 is twice the speed. A negative number plays the video or audio backwards. Set the playback rate property: `HTMLMediaElement.playbackRate = playbackSpeed`.
+جاوااسکریپت اغلب برای کنترل عناصر {{HTMLElement('canvas')}} و SVGها استفاده می‌شود. بیشتر کد جاوااسکریپت که برای ویدئوی HTML اعمال می‌شود، برای صدا نیز اعمال می‌شود. `HTMLMediaElement.playbackRate` برای پیاده‌سازی کنترل‌های کاربر برای نرخ پخش هم برای ویدئو و هم برای صدا استفاده می‌شود. مقدار 1.0 پیش‌فرض است و سرعت معمولی در نظر گرفته می‌شود؛ مقدار 0.5 نصف سرعت است، مقدار 2.0 دو برابر سرعت است. یک عدد منفی ویدئو یا صدا را به عقب پخش می‌کند. ویژگی نرخ پخش را تنظیم کنید: `HTMLMediaElement.playbackRate = playbackSpeed`.
 
-[document.getAnimations()](/en-US/docs/Web/API/Document/getAnimations) is an experimental technology, and includes [CSS Animations](/en-US/docs/Web/CSS/Guides/Animations), [CSS Transitions](/en-US/docs/Web/CSS/Guides/Transitions), and [Web Animations](/en-US/docs/Web/API/Web_Animations_API). The MDN page on [Document.getAnimations()](/en-US/docs/Web/API/Document/getAnimations) provides the following code sample of how to slow down all animations on a page to half speed:
+[document.getAnimations()](/en-US/docs/Web/API/Document/getAnimations) یک فناوری آزمایشی است و شامل [انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations)، [انتقال‌های CSS](/en-US/docs/Web/CSS/Guides/Transitions) و [انیمیشن‌های وب](/en-US/docs/Web/API/Web_Animations_API) می‌شود. صفحه MDN در مورد [Document.getAnimations()](/en-US/docs/Web/API/Document/getAnimations) نمونه کد زیر را از نحوه کاهش سرعت همه انیمیشن‌های یک صفحه به نصف ارائه می‌دهد:
 
 ```js
 document.getAnimations().forEach((animation) => {
@@ -339,42 +337,42 @@ document.getAnimations().forEach((animation) => {
 });
 ```
 
-#### Image sources for animation
+#### منابع تصویری برای انیمیشن
 
-One of the easiest ways is to start with an image that is already in existence, using it as an image source, and then animating it. Remember, you can use GIFs, JPGs, PNGs, SVGs and other file types here as an image source, as long as they are allowed file types—and sizes—in your environment. SVGs are often not allowed, due to security concerns. The MDN document, [Basic animations](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations), provides outstanding examples of this, using multiple image sources for the sun, earth, and moon, and using several canvas methods to control the speed and animation of the earth as it orbits around the sun, and the moon as it orbits around the earth. Use the codepen available with this tutorial to adjust `ctx.rotate` in the code to see how the animation is affected when changes are made.
+یکی از ساده‌ترین راه‌ها شروع با یک تصویر موجود، استفاده از آن به عنوان منبع تصویر و سپس متحرک کردن آن است. به یاد داشته باشید، می‌توانید از GIFها، JPGها، PNGها، SVGها و سایر انواع فایل‌ها در اینجا به عنوان منبع تصویر استفاده کنید، تا زمانی که انواع فایل‌های مجاز - و اندازه‌ها - در محیط شما باشند. SVGها اغلب به دلیل نگرانی‌های امنیتی مجاز نیستند. سند MDN، [انیمیشن‌های پایه](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations)، نمونه‌های برجسته‌ای از این کار را با استفاده از چندین منبع تصویر برای خورشید، زمین و ماه و استفاده از چندین روش Canvas برای کنترل سرعت و انیمیشن زمین در حین چرخش به دور خورشید و ماه در حین چرخش به دور زمین ارائه می‌دهد. از codepen موجود با این آموزش برای تنظیم `ctx.rotate` در کد استفاده کنید تا ببینید انیمیشن در هنگام ایجاد تغییرات چگونه تحت تأثیر قرار می‌گیرد.
 
-#### If you absolutely, positively must use a flashing animation…
+#### اگر مطلقاً، مثبتاً باید از یک انیمیشن چشمک‌زن استفاده کنید…
 
-Make sure it has a control on it. Make sure it is turned off when the viewer first encounters it, and that a user must opt-in to see the animation.
+اطمینان حاصل کنید که روی آن یک کنترل وجود دارد. اطمینان حاصل کنید که وقتی بیننده برای اولین بار با آن مواجه می‌شود خاموش است و کاربر باید به صورت اختیاری برای دیدن انیمیشن وارد شود.
 
-An example of a format that has no controls available to the user is a gif file. Animation speed is controlled within the gif image itself. Converting an animated gif to video enables controls to be put on the animation, and gives the user agency. There are many free online converters available for use, such as [EZGif](https://ezgif.com/) and [GIF to MP4](https://gif-2-mp4.com/).
+نمونه‌ای از فرمتی که هیچ کنترلی در دسترس کاربر ندارد، فایل gif است. سرعت انیمیشن در داخل خود تصویر gif کنترل می‌شود. تبدیل یک gif متحرک به ویدئو امکان قرار دادن کنترل‌ها روی انیمیشن را فراهم می‌کند و به کاربر اختیار می‌دهد. مبدل‌های رایگان آنلاین زیادی برای استفاده وجود دارد، مانند [EZGif](https://ezgif.com/) و [GIF به MP4](https://gif-2-mp4.com/).
 
-#### Set user expectations
+#### انتظارات کاربر را تنظیم کنید
 
-Give users a heads-up as to what will happen before they click on that link. Describe the animation that is to follow. See [WCAG 2.2 Success Criterion 3.2.5 Change on Request](https://w3c.github.io/wcag/guidelines/22/#change-on-request).
+قبل از اینکه کاربر روی آن پیوند کلیک کند، به او اطلاع دهید که چه اتفاقی خواهد افتاد. انیمیشنی که در پی خواهد آمد را توصیف کنید. [معیار موفقیت WCAG 2.2 3.2.5 تغییر در صورت درخواست](https://w3c.github.io/wcag/guidelines/22/#change-on-request) را ببینید.
 
-#### Keep it small
+#### آن را کوچک نگه دارید
 
-If you absolutely positively must have flashing, keep it small. Generally speaking, limit the size of the flash to an area approximately 341 by 256 pixels or less. This pixel size assumes that a viewer is at a typical distance from the screen. As mentioned earlier, this size may be too big if the image is to be viewed at close range, such as in a VR headset. WebVR is an open specification that makes it possible to experience VR in your browser. WebVR can be experienced on phone, computer or headset.
+اگر مطلقاً مثبتاً باید چشمک زننده باشد، آن را کوچک نگه دارید. به طور کلی، اندازه چشمک را به مساحتی تقریباً 341 در 256 پیکسل یا کمتر محدود کنید. این اندازه پیکسل فرض می‌کند که بیننده در فاصله معمولی از صفحه قرار دارد. همانطور که قبلاً ذکر شد، این اندازه ممکن است خیلی بزرگ باشد اگر تصویر از نزدیک مشاهده شود، مانند هدست VR. WebVR یک مشخصات باز است که تجربه VR را در مرورگر شما امکان‌پذیر می‌سازد. WebVR را می‌توان در تلفن، کامپیوتر یا هدست تجربه کرد.
 
-If you are designing for a game or VR that uses an ocular mask, **or CAN be used by an ocular mask**, such as in Firefox Reality (a browser for virtual reality), ensure that the size of the rectangle is much smaller than 341 by 256 pixels, because the image is much closer to a user's eyes.
+اگر برای یک بازی یا VR طراحی می‌کنید که از ماسک چشمی استفاده می‌کند، **یا می‌تواند توسط یک ماسک چشمی استفاده شود**، مانند Firefox Reality (یک مرورگر برای واقعیت مجازی)، اطمینان حاصل کنید که اندازه مستطیل بسیار کوچک‌تر از 341 در 256 پیکسل است، زیرا تصویر به چشم‌های کاربر بسیار نزدیک‌تر است.
 
-#### Reduce contrast
+#### کنتراست را کاهش دهید
 
-Normally, higher contrast is a good thing when it comes to accessibility. The greater the contrast of a text color to its background (technically called _luminosity contrast ratio,_ according to W3.org's page on [Colors with Good Contrast](https://www.w3.org/WAI/perspective-videos/contrast/), the easier such content is to read. Users with low vision are especially appreciative of efforts to ensure high contrast of text against its background. When the content is animated, however, **_reducing_** contrast is actually a way to reduce the likelihood that the animated content will cause seizures. Drop the contrast ratio if three flashes within one second are detected.
+به طور معمول، کنتراست بالاتر از نظر دسترسی چیز خوبی است. هرچه کنتراست رنگ متن نسبت به پس‌زمینه آن بیشتر باشد (که از نظر فنی _نسبت کنتراست روشنایی_ نامیده می‌شود، طبق صفحه W3.org در مورد [رنگ‌های با کنتراست خوب](https://www.w3.org/WAI/perspective-videos/contrast/))، خواندن چنین محتوایی آسان‌تر است. کاربران با دید ضعیف به ویژه از تلاش‌ها برای اطمینان از کنتراست بالای متن در برابر پس‌زمینه آن قدردانی می‌کنند. با این حال، هنگامی که محتوا متحرک است، **_کاهش_** کنتراست در واقع راهی برای کاهش احتمال ایجاد تشنج توسط محتوای متحرک است. اگر سه چشمک در عرض یک ثانیه تشخیص داده شد، نسبت کنتراست را کاهش دهید.
 
-The contrast ratio is defined in [WCAG 2.2](https://w3c.github.io/wcag/guidelines/22/) as follows:
+نسبت کنتراست در [WCAG 2.2](https://w3c.github.io/wcag/guidelines/22/) به شرح زیر تعریف شده است:
 
-- _contrast ratio_
-  - : (L1 + 0.05) / (L2 + 0.05), where
-    - L1 is the [relative luminance](https://w3c.github.io/wcag/guidelines/22/#dfn-relative-luminance) of the lighter of the colors, and
-    - L2 is the [relative luminance](https://w3c.github.io/wcag/guidelines/22/#dfn-relative-luminance) of the darker of the colors.
+- _نسبت کنتراست_
+  - : (L1 + 0.05) / (L2 + 0.05)، که در آن
+    - L1 [روشنایی نسبی](https://w3c.github.io/wcag/guidelines/22/#dfn-relative-luminance) رنگ روشن‌تر است، و
+    - L2 [روشنایی نسبی](https://w3c.github.io/wcag/guidelines/22/#dfn-relative-luminance) رنگ تیره‌تر است.
 
-It's best if you can adjust the contrast before it is uploaded or published to the web. For videos and animated GIFs, the Adobe Suite of products is a phenomenal resource for traditional images. Also for images, an online tool available is pinetools.com's [Brightness and contrast online](https://pinetools.com/brightness-contrast-image). If you intend to make animated GIFs, for example, start with one that has a lower contrast ratio.
+بهتر است اگر بتوانید کنتراست را قبل از آپلود یا انتشار در وب تنظیم کنید. برای ویدئوها و GIFهای متحرک، مجموعه محصولات Adobe یک منبع فوق‌العاده برای تصاویر سنتی است. همچنین برای تصاویر، یک ابزار آنلاین موجود pinetools.com است: [روشنایی و کنتراست آنلاین](https://pinetools.com/brightness-contrast-image). اگر قصد دارید GIFهای متحرک بسازید، به عنوان مثال، با یکی شروع کنید که نسبت کنتراست کمتری دارد.
 
-JavaScript is also an option for reducing contrast dynamically. Here's a code example from the section titled, ["Example: Setting the background color of a paragraph"](/en-US/docs/Web/API/Document_Object_Model/Building_and_updating_the_DOM_tree#setting_the_background_color_of_a_paragraph). Notice that the color in the example is described in the **RGB** color space.
+جاوااسکریپت نیز گزینه‌ای برای کاهش پویای کنتراست است. در اینجا یک نمونه کد از بخش با عنوان ["مثال: تنظیم رنگ پس‌زمینه یک پاراگراف"](/en-US/docs/Web/API/Document_Object_Model/Building_and_updating_the_DOM_tree#setting_the_background_color_of_a_paragraph) آورده شده است. توجه داشته باشید که رنگ در مثال در فضای رنگی **RGB** توصیف شده است.
 
-**HTML Content [(link to source page)](/en-US/docs/Web/API/Document_Object_Model/Building_and_updating_the_DOM_tree#html_2)**
+**محتوای HTML [(پیوند به صفحه منبع)](/en-US/docs/Web/API/Document_Object_Model/Building_and_updating_the_DOM_tree#html_2)**
 
 ```html
 <body>
@@ -384,7 +382,7 @@ JavaScript is also an option for reducing contrast dynamically. Here's a code ex
 </body>
 ```
 
-**JavaScript Content [(link to source page)](/en-US/docs/Web/API/Document_Object_Model/Building_and_updating_the_DOM_tree#javascript_2)**
+**محتوای جاوااسکریپت [(پیوند به صفحه منبع)](/en-US/docs/Web/API/Document_Object_Model/Building_and_updating_the_DOM_tree#javascript_2)**
 
 ```js
 function setBackground() {
@@ -401,25 +399,25 @@ function setBackground() {
 document.querySelector("input").addEventListener("click", setBackground);
 ```
 
-#### Avoid fully saturated reds for flashing content
+#### از قرمزهای کاملاً اشباع برای محتوای چشمک‌زن خودداری کنید
 
-As mentioned earlier in this document, the Epilepsy Foundation of America convened a workshop in August 2004 to begin to develop an expert consensus on photosensitive seizures. Among their results was the understanding that _"A flash is a potential hazard if it has luminance at least 20 cd/m2, occurs at a frequency of least 3 Hz, and occupies a solid visual angle of at least 0.006 steradians (about 10% of the central visual field or 25% of screen area at typical viewing distances). A transition to or from saturated red also is considered a risk."_ They also note in that same consensus: _"Irrespective of luminance, a transition to or from a saturated red is also considered a risk."_
+همانطور که قبلاً در این سند ذکر شد، بنیاد صرع آمریکا در اوت 2004 یک کارگاه آموزشی برای شروع توسعه یک اجماع متخصص در مورد تشنج‌های حساس به نور تشکیل داد. از جمله نتایج آنها این درک بود که _"یک چشمک یک خطر بالقوه است اگر روشنایی حداقل 20 cd/m2 داشته باشد، در فرکانس حداقل 3 هرتز رخ دهد و یک زاویه بصری جامد حداقل 0.006 استرادیان (حدود 10% از میدان بینایی مرکزی یا 25% از مساحت صفحه در فواصل مشاهده معمولی) را اشغال کند. انتقال به یا از قرمز اشباع نیز یک خطر محسوب می‌شود."_ آنها همچنین در همان اجماع اشاره می‌کنند: _"صرف نظر از روشنایی، انتقال به یا از یک قرمز اشباع نیز یک خطر محسوب می‌شود."_
 
-### Provide alternative CSS styles
+### ارائه سبک‌های CSS جایگزین
 
-With the understanding that much of animation and flashing can be controlled via CSS methods, it's important to explore ways to make alternative options available to users, and to make the control of these options convenient and visible.
+با درک این نکته که بسیاری از انیمیشن‌ها و چشمک زدن‌ها را می‌توان از طریق روش‌های CSS کنترل کرد، بررسی راه‌هایی برای در دسترس قرار دادن گزینه‌های جایگزین برای کاربران و راحت و قابل مشاهده کردن کنترل این گزینه‌ها مهم است.
 
-#### Alternative Style Sheets
+#### برگه‌های سبک جایگزین
 
-Modern browsers will display the alternate CSS available in alternate style sheets if the users know where to look for them. In some cases, the alternate styles are revealed when the users go through the View menu, in other cases they are manifested in the settings, sometimes both. Not all users know to look for these options via the browser or settings, so it's worth considering doing things the old-fashioned way, with obvious buttons or links to change the style so that users can see them. Doing so won't conflict with, or override, the browser's ability to read the alternate style sheets, or the ability of the user to set preferences in the settings.
+مرورگرهای مدرن CSS جایگزین موجود در برگه‌های سبک جایگزین را نمایش می‌دهند اگر کاربران بدانند کجا به دنبال آنها بگردند. در برخی موارد، سبک‌های جایگزین زمانی که کاربران از طریق منوی View می‌روند آشکار می‌شوند، در موارد دیگر آنها در تنظیمات ظاهر می‌شوند، گاهی اوقات هر دو. همه کاربران نمی‌دانند که از طریق مرورگر یا تنظیمات به دنبال این گزینه‌ها بگردند، بنابراین ارزش دارد که کار را به روش قدیمی، با دکمه‌ها یا پیوندهای واضح برای تغییر سبک انجام دهیم تا کاربران بتوانند آنها را ببینند. انجام این کار با توانایی مرورگر در خواندن برگه‌های سبک جایگزین یا توانایی کاربر در تنظیم تنظیمات در تنظیمات تداخل یا نادیده گرفتن نخواهد داشت.
 
-It's important to know that certain users, such as those who rely on speech-recognition systems, often depend on legacy buttons and links because their disability prevents them from using a mouse, or to be able to take advantage of touch events on mobile tablets.
+دانستن این نکته مهم است که برخی کاربران، مانند کسانی که به سیستم‌های تشخیص گفتار متکی هستند، اغلب به دکمه‌ها و پیوندهای قدیمی وابسته هستند زیرا ناتوانی آنها را از استفاده از ماوس یا بهره‌گیری از رویدادهای لمسی در تبلت‌های موبایل باز می‌دارد.
 
-Common ways to include the alternative stylesheets into your HTML documents are to use the {{HTMLElement('link')}} element, and {{CSSxref('@import')}}.
+راه‌های رایج برای گنجاندن برگه‌های سبک جایگزین در اسناد HTML شما استفاده از عنصر {{HTMLElement('link')}} و {{CSSxref('@import')}} است.
 
-#### The {{HTMLElement('link')}} element
+#### عنصر {{HTMLElement('link')}}
 
-Use the {{HTMLElement('link')}} element, alongside with and together with the attributes of `rel="alternate stylesheet"` and for title, `title="…"` in the {{HTMLElement('head')}} section of the webpage.
+از عنصر {{HTMLElement('link')}} به همراه ویژگی‌های `rel="alternate stylesheet"` و برای عنوان، `title="…"` در بخش {{HTMLElement('head')}} صفحه وب استفاده کنید.
 
 ```html
 <head>
@@ -436,22 +434,22 @@ Use the {{HTMLElement('link')}} element, alongside with and together with the at
 </head>
 ```
 
-**{{CSSxref('@import')}}** is also a way to incorporate style sheets, but it is not quite as well supported as the {{HTMLElement('link')}} element.
+**{{CSSxref('@import')}}** نیز راهی برای ترکیب برگه‌های سبک است، اما به اندازه عنصر {{HTMLElement('link')}} پشتیبانی نمی‌شود.
 
 ```css
 @import "alternate1.css";
 @import "alternate2.css";
 ```
 
-By using alternate style sheets (remember to add the titles) you are setting it up for users to be able to use their browsers to choose alternate styles.
+با استفاده از برگه‌های سبک جایگزین (به یاد داشته باشید که عنوان‌ها را اضافه کنید)، آن را برای کاربران تنظیم می‌کنید تا بتوانند از مرورگرهای خود برای انتخاب سبک‌های جایگزین استفاده کنند.
 
-### Dynamic Style Switching
+### تغییر پویای سبک
 
-One problem with relying on the browser to reveal alternative styles is that not all users are technically savvy enough to discover the alternate styles. Or, because of their disability, are not able to. Buttons or links make it obvious that options are available to many grateful users. There's a multitude of ways to add toggle buttons to allow the user to switch to the different style sheets. That said, the use of alternative style sheets are not the only option. Another option is to manipulate the style of the page itself. According to the MDN document, [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information), _"where possible, it really is best practice to dynamically manipulate classes via the [`className`](/en-US/docs/Web/API/Element/className) property since the ultimate appearance of all of the styling hooks can be controlled in a single stylesheet"._ One of the best examples around as to how to do this is from the W3C's page, ["C29: Using a style switcher to provide a conforming alternate version"](https://www.w3.org/TR/WCAG20-TECHS/C29.html).
+یک مشکل در تکیه بر مرورگر برای آشکار کردن سبک‌های جایگزین این است که همه کاربران از نظر فنی به اندازه کافی ماهر نیستند که سبک‌های جایگزین را کشف کنند. یا به دلیل ناتوانی خود، قادر به انجام این کار نیستند. دکمه‌ها یا پیوندها این را واضح می‌کنند که گزینه‌هایی برای بسیاری از کاربران سپاسگزار در دسترس است. راه‌های زیادی برای افزودن دکمه‌های تغییر برای اجازه دادن به کاربر برای تغییر به برگه‌های سبک مختلف وجود دارد. با این حال، استفاده از برگه‌های سبک جایگزین تنها گزینه نیست. گزینه دیگر دستکاری سبک خود صفحه است. طبق سند MDN، [استفاده از اطلاعات سبک پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)، _"در صورت امکان، واقعاً بهترین روش این است که کلاس‌ها را به صورت پویا از طریق ویژگی [`className`](/en-US/docs/Web/API/Element/className) دستکاری کنیم زیرا ظاهر نهایی همه قلاب‌های سبک‌دهی را می‌توان در یک برگه سبک واحد کنترل کرد."_ یکی از بهترین نمونه‌های موجود در مورد نحوه انجام این کار از صفحه W3C است، ["C29: استفاده از یک تغییردهنده سبک برای ارائه یک نسخه جایگزین منطبق"](https://www.w3.org/TR/WCAG20-TECHS/C29.html).
 
-### Extreme Cases: Text-Only Alternatives
+### موارد شدید: جایگزین‌های فقط متن
 
-A separate, alternative stylesheet that prevents images from being displayed is easy to make. It's a draconian solution; but it is one that is sometimes necessary for school teachers and other public servants who must serve those with extreme sensitivities. These public servants can ask their developers to develop a special alternative style sheet using `display: none`. Here's how to do it via CSS:
+یک برگه سبک جایگزین جداگانه که از نمایش تصاویر جلوگیری می‌کند، به راحتی ساخته می‌شود. این یک راه‌حل خشن است؛ اما راه‌حلی است که گاهی برای معلمان مدارس و سایر کارمندان دولتی که باید به کسانی که حساسیت‌های شدید دارند خدمت کنند، ضروری است. این کارمندان دولتی می‌توانند از توسعه‌دهندگان خود بخواهند که یک برگه سبک جایگزین ویژه با استفاده از `display: none` توسعه دهند. در اینجا نحوه انجام آن از طریق CSS آمده است:
 
 ```css
 img {
@@ -459,13 +457,13 @@ img {
 }
 ```
 
-#### Take advantage of media queries with {{HTMLElement('style')}}
+#### استفاده از پرس‌وجوهای رسانه با {{HTMLElement('style')}}
 
-In setting up media queries, you are enabling controls by the user; these controls are made available in the browser or in the OS. See the MDN document, [Accessibility: What users can do to browse more safely](/en-US/docs/Web/Accessibility/Guides/Browsing_safely) to see more details of how a user accesses the controls.
+در تنظیم پرس‌وجوهای رسانه، شما در حال فعال‌سازی کنترل‌هایی توسط کاربر هستید؛ این کنترل‌ها در مرورگر یا در سیستم عامل در دسترس قرار می‌گیرند. سند MDN، [دسترسی: آنچه کاربران می‌توانند برای مرور ایمن‌تر انجام دهند](/en-US/docs/Web/Accessibility/Guides/Browsing_safely) را ببینید تا جزئیات بیشتری از نحوه دسترسی کاربر به کنترل‌ها را مشاهده کنید.
 
 #### `prefers-reduced-motion`
 
-Support for `prefers-reduced-motion` in modern browsers is growing.
+پشتیبانی از `prefers-reduced-motion` در مرورگرهای مدرن در حال افزایش است.
 
 ```css
 @media screen and (prefers-reduced-motion: reduce) {
@@ -474,7 +472,7 @@ Support for `prefers-reduced-motion` in modern browsers is growing.
 }
 ```
 
-To see a great example of how to use the code `prefers-reduced-motion`, visit the MDN document, [`prefers-reduced-motion`](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion), or see the example below from the section on ["New in Chrome 74"](https://developer.chrome.com/blog/new-in-chrome-74/).
+برای دیدن یک مثال عالی از نحوه استفاده از کد `prefers-reduced-motion`، به سند MDN، [`prefers-reduced-motion`](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) مراجعه کنید، یا مثال زیر را از بخش ["جدید در Chrome 74"](https://developer.chrome.com/blog/new-in-chrome-74/) ببینید.
 
 ```css
 button {
@@ -490,7 +488,7 @@ button {
 
 #### `prefers-color-scheme`
 
-This can be useful if the ambient light API is not available. Support is emerging.
+این می‌تواند مفید باشد اگر API نور محیطی در دسترس نباشد. پشتیبانی در حال ظهور است.
 
 ```css
 @media (prefers-color-scheme: dark) {
@@ -500,18 +498,18 @@ This can be useful if the ambient light API is not available. Support is emergin
 
 #### Window.matchMedia()
 
-There is a powerful tool available to developers via Window.matchMedia(). A great resource is MDN's document on [`Window.matchMedia()`](/en-US/docs/Web/API/Window/matchMedia).
+یک ابزار قدرتمند در دسترس توسعه‌دهندگان از طریق Window.matchMedia() است. یک منبع عالی سند MDN در مورد [`Window.matchMedia()`](/en-US/docs/Web/API/Window/matchMedia) است.
 
-#### Media update feature
+#### ویژگی به‌روزرسانی رسانه
 
-The more often the screen is refreshed, the more stable it appears to the human eye, and the less it "flickers". The vast majority of modern technology refreshes at a rate that does not cause problems with photosensitivity. However, not everybody is wealthy enough to be able to afford the most recent technology: older or underpowered computers can have low refresh rates. [AbilityNet's Factsheet (November 2015) Computers and Epilepsy](https://www.abilitynet.org.uk/sites/abilitynet.org.uk/files/Epilepsy%20and%20Computing%20Nov%202015.pdf) describes more of the details on refresh rates.
+هرچه صفحه بیشتر تازه‌سازی شود، برای چشم انسان پایدارتر به نظر می‌رسد و کمتر "سوسو می‌زند". اکثریت قریب به اتفاق فناوری مدرن با نرخی تازه‌سازی می‌شود که مشکلی با حساسیت به نور ایجاد نمی‌کند. با این حال، همه به اندازه کافی ثروتمند نیستند که بتوانند جدیدترین فناوری را بخرند: کامپیوترهای قدیمی یا کم‌قدرت می‌توانند نرخ تازه‌سازی پایینی داشته باشند. [برگه اطلاعات AbilityNet (نوامبر 2015) کامپیوترها و صرع](https://www.abilitynet.org.uk/sites/abilitynet.org.uk/files/Epilepsy%20and%20Computing%20Nov%202015.pdf) جزئیات بیشتری در مورد نرخ تازه‌سازی توضیح می‌دهد.
 
-A very old article, Tech Republic's ["Epilepsy and CRT/LCD screen flicker"](https://www.techrepublic.com/forums/discussions/epilepsy-and-crt-lcd-screen-flicker/), had an interesting response concerning the refresh rates in Hz:
+یک مقاله بسیار قدیمی، Tech Republic's ["صرع و سوسو زدن صفحه CRT/LCD"](https://www.techrepublic.com/forums/discussions/epilepsy-and-crt-lcd-screen-flicker/)، یک پاسخ جالب در مورد نرخ تازه‌سازی بر حسب هرتز داشت:
 
-- _"This effect is noticeable, and documented, up to 70 Hz."_
-- _"These studies would seem to indicate that you should stay away from refresh rates under 70 Hz, and use a rate not divisible by 10."_
+- _"این اثر تا 70 هرتز قابل توجه و مستند است."_
+- _"این مطالعات به نظر می‌رسد که باید از نرخ تازه‌سازی زیر 70 هرتز دوری کنید و از نرخی استفاده کنید که بر 10 بخش‌پذیر نباشد."_
 
-Eric Bailey, of CSS-Tricks, found an innovative use the update feature which, used in combination with animation-duration or transition-duration, to conclude at a rate that is imperceptible to the human eye. In other words, Eric's techniques address the refresh-rate problem. The CSS below is from the CSS-Tricks article, [" Revisiting prefers-reduced-motion, the reduced motion media query"](https://css-tricks.com/revisiting-prefers-reduced-motion/).
+اریک بیلی، از CSS-Tricks، یک استفاده نوآورانه از ویژگی به‌روزرسانی پیدا کرد که در ترکیب با animation-duration یا transition-duration استفاده می‌شود تا به نرخی ختم شود که برای چشم انسان غیرقابل درک است. به عبارت دیگر، تکنیک‌های اریک به مشکل نرخ تازه‌سازی می‌پردازد. CSS زیر از مقاله CSS-Tricks است، [" بازبینی prefers-reduced-motion، پرس‌وجوی رسانه حرکت کاهش یافته"](https://css-tricks.com/revisiting-prefers-reduced-motion/).
 
 ```css
 @media screen and (prefers-reduced-motion: reduce), (update: slow) {
@@ -523,98 +521,98 @@ Eric Bailey, of CSS-Tricks, found an innovative use the update feature which, us
 }
 ```
 
-The [`update`](/en-US/docs/Web/CSS/Reference/At-rules/@media/update) media feature is used to query the ability of the output device to modify the appearance of content once it has been rendered. It has the values of "none", "slow", and "fast".
+ویژگی رسانه [`update`](/en-US/docs/Web/CSS/Reference/At-rules/@media/update) برای پرسش از توانایی دستگاه خروجی برای تغییر ظاهر محتوا پس از رندر شدن استفاده می‌شود. مقادیر "none"، "slow" و "fast" را دارد.
 
-## Developmental & Experimental Features
+## ویژگی‌های توسعه‌ای و آزمایشی
 
-### Media Queries Level 5
+### پرس‌وجوهای رسانه سطح 5
 
-EnvironmentMQ (Planned in Media Queries Level 5)
+EnvironmentMQ (برنامه‌ریزی شده در پرس‌وجوهای رسانه سطح 5)
 
 - `light-level`
-  - : [`light-level`](https://drafts.csswg.org/mediaqueries-5/#light-level) has three valid values: dim, normal, and washed. Interestingly, the specification refrains from actually defining the three levels in terms of a measurement of lux, because devices with a light sensor usually adjust the brightness of the screen automatically. The specifications also note the difference in technology, such as e-ink, which remains readable in bright daylight, versus liquid crystals, which do not.
+  - : [`light-level`](https://drafts.csswg.org/mediaqueries-5/#light-level) دارای سه مقدار معتبر است: dim، normal و washed. جالب اینجاست که مشخصات از تعریف سه سطح بر حسب اندازه‌گیری لوکس خودداری می‌کند، زیرا دستگاه‌های دارای حسگر نور معمولاً روشنایی صفحه را به طور خودکار تنظیم می‌کنند. مشخصات همچنین به تفاوت در فناوری، مانند e-ink که در نور روز روشن قابل خواندن است، در مقابل کریستال مایع که اینطور نیست، اشاره می‌کند.
 - `environment-blending`
-  - : From W3C's Draft document, Media Queries Level 5: _"The [`environment-blending`](https://drafts.csswg.org/mediaqueries-5/#descdef-media-environment-blending) media feature is used to query the characteristics of the user's display so the author can adjust the style of the document. An author might choose to adjust the visuals and/or layout of the page depending on the display technology to increase the appeal or improve legibility."_
+  - : از سند پیش‌نویس W3C، پرس‌وجوهای رسانه سطح 5: _"ویژگی رسانه [`environment-blending`](https://drafts.csswg.org/mediaqueries-5/#descdef-media-environment-blending) برای پرسش از ویژگی‌های نمایشگر کاربر استفاده می‌شود تا نویسنده بتواند سبک سند را تنظیم کند. یک نویسنده ممکن است انتخاب کند که تصاویر و/یا طرح‌بندی صفحه را بسته به فناوری نمایشگر تنظیم کند تا جذابیت را افزایش دهد یا خوانایی را بهبود بخشد."_
 
-#### User Preference Media Features (Planned in Media Queries Level 5)
+#### ویژگی‌های رسانه ترجیح کاربر (برنامه‌ریزی شده در پرس‌وجوهای رسانه سطح 5)
 
-[User Preference Media Features](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences) in [W3C Editor's Draft Media Queries Level 5](https://drafts.csswg.org/mediaqueries-5/) are especially promising in providing user control over media. Here are some highlights:
+[ویژگی‌های رسانه ترجیح کاربر](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences) در [پیش‌نویس ویرایشگر W3C پرس‌وجوهای رسانه سطح 5](https://drafts.csswg.org/mediaqueries-5/) به ویژه در ارائه کنترل کاربر بر رسانه امیدوارکننده هستند. در اینجا برخی از نکات برجسته آورده شده است:
 
 - `inverted-colors`
-  - : According to the section, [User Preference Media Features](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences), "The [`inverted-colors`](https://drafts.csswg.org/mediaqueries-5/#descdef-media-inverted-colors) media feature indicates whether the content is displayed normally, or whether colors have been inverted."
+  - : طبق بخش [ویژگی‌های رسانه ترجیح کاربر](https://drafts.csswg.org/mediaqueries-5/#mf-user-preferences)، _"ویژگی رسانه [`inverted-colors`](https://drafts.csswg.org/mediaqueries-5/#descdef-media-inverted-colors) نشان می‌دهد که آیا محتوا به طور معمول نمایش داده می‌شود یا اینکه رنگ‌ها معکوس شده‌اند."_
 - [`forced-colors`](/en-US/docs/Web/CSS/Reference/At-rules/@media/forced-colors)
-  - : In [`forced-colors-mode`](https://drafts.csswg.org/css-color-adjust-1/#forced-colors-mode), the user agent enforces the user's preferred color palette on the page, overriding the author's chosen colors. From W3C's Draft document, Media Queries Level 5 section on forced-colors: _"The forced-colors media feature is used to detect if the user agent has enabled a [forced colors mode](https://drafts.csswg.org/css-color-adjust-1/#forced-colors-mode) where it enforces a user-chosen limited color palette on the page"._ The user will need to be made aware of this ability, and it will need to play nice with the appropriate value for the prefers-color-scheme media query.
+  - : در [`حالت رنگ‌های اجباری`](https://drafts.csswg.org/css-color-adjust-1/#forced-colors-mode)، عامل کاربر پالت رنگ ترجیحی کاربر را در صفحه اعمال می‌کند و رنگ‌های انتخاب شده توسط نویسنده را نادیده می‌گیرد. از سند پیش‌نویس W3C، بخش پرس‌وجوهای رسانه سطح 5 در مورد forced-colors: _"ویژگی رسانه forced-colors برای تشخیص اینکه آیا عامل کاربر یک [حالت رنگ‌های اجباری](https://drafts.csswg.org/css-color-adjust-1/#forced-colors-mode) را فعال کرده است که در آن یک پالت رنگ محدود انتخاب شده توسط کاربر را در صفحه اعمال می‌کند، استفاده می‌شود."_ کاربر باید از این قابلیت آگاه شود و باید با مقدار مناسب برای پرس‌وجوی رسانه prefers-color-scheme به خوبی کار کند.
 - `light-level`
-  - : From W3C's Draft document, Media Queries Level 5 section on light-level: _"The [`light-level`](https://drafts.csswg.org/mediaqueries-5/#descdef-media-light-level) media feature is used to query about the ambient light-level in which the device is used, to allow the author to adjust style of the document in response."_ This will be a godsend to those who have motor-skills problems, or for some with cognitive difficulties, who cannot find the right "button" to change their screen settings.
+  - : از سند پیش‌نویس W3C، بخش پرس‌وجوهای رسانه سطح 5 در مورد light-level: _"ویژگی رسانه [`light-level`](https://drafts.csswg.org/mediaqueries-5/#descdef-media-light-level) برای پرسش در مورد سطح نور محیطی که دستگاه در آن استفاده می‌شود، استفاده می‌شود تا به نویسنده اجازه دهد سبک سند را در پاسخ تنظیم کند."_ این برای کسانی که مشکلات مهارت‌های حرکتی دارند یا برخی با مشکلات شناختی که نمی‌توانند "دکمه" مناسب برای تغییر تنظیمات صفحه خود را پیدا کنند، یک نعمت خواهد بود.
 - prefers-contrast
-  - : From W3C's Draft document, Media Queries Level 5 section on [`prefers-contrast`](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-contrast): _"The `prefers-contrast` media feature is used to detect if the user has requested the system increase or decrease the amount of contrast between adjacent colors. For example, many users have difficulty reading text that has a small difference in contrast to the text background and would prefer a larger contrast."_ Sometimes there can be such a thing as too much contrast; a halo effect around text can occur in such situations and actually reduce legibility. Putting the amount of contrast in the user's control is a definite gift for accessibility.
+  - : از سند پیش‌نویس W3C، بخش پرس‌وجوهای رسانه سطح 5 در مورد [`prefers-contrast`](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-contrast): _"ویژگی رسانه `prefers-contrast` برای تشخیص اینکه آیا کاربر از سیستم خواسته است میزان کنتراست بین رنگ‌های مجاور را افزایش یا کاهش دهد، استفاده می‌شود. به عنوان مثال، بسیاری از کاربران در خواندن متنی که تفاوت کمی در کنتراست با پس‌زمینه متن دارد، مشکل دارند و کنتراست بزرگ‌تری را ترجیح می‌دهند."_ گاهی اوقات ممکن است کنتراست بیش از حد وجود داشته باشد؛ یک اثر هاله در اطراف متن می‌تواند در چنین شرایطی رخ دهد و در واقع خوانایی را کاهش دهد. قرار دادن میزان کنتراست در کنترل کاربر یک هدیه قطعی برای دسترسی است.
 
-#### `MediaQueryList` Interface
+#### رابط `MediaQueryList`
 
-Section 4.2 from the CSSWG.org drafts integrates with the [event loop](https://html.spec.whatwg.org/multipage/webappapis.html#event-loop) defined in HTML. [HTML](https://drafts.csswg.org/cssom-view/#biblio-html) for the [`MediaQueryList`](https://drafts.csswg.org/cssom-view/#mediaquerylist) object. See the MDN document, [MediaQueryList](/en-US/docs/Web/API/MediaQueryList) for more information.
+بخش 4.2 از پیش‌نویس‌های CSSWG.org با [حلقه رویداد](https://html.spec.whatwg.org/multipage/webappapis.html#event-loop) تعریف شده در HTML ادغام می‌شود. [HTML](https://drafts.csswg.org/cssom-view/#biblio-html) برای شیء [`MediaQueryList`](https://drafts.csswg.org/cssom-view/#mediaquerylist). برای اطلاعات بیشتر، سند MDN، [MediaQueryList](/en-US/docs/Web/API/MediaQueryList) را ببینید.
 
-#### Personalization Help and Support
+#### شخصی‌سازی کمک و پشتیبانی
 
-The requirement for the `literal` property is taken from [WAI-Adapt: Help and Support](https://w3c.github.io/adapt/help/#literal-explanation).
+الزام برای ویژگی `literal` از [WAI-Adapt: Help and Support](https://w3c.github.io/adapt/help/#literal-explanation) گرفته شده است.
 
-**Requirement:** Some users cannot understand non-literal text and icons such as metaphors, idioms etc. The `literal` property is intended to identify text or images as non-literal and allows the author to explain non-literal text and images to users.
+**الزام:** برخی کاربران نمی‌توانند متن و نمادهای غیر تحت‌اللفظی مانند استعاره‌ها، اصطلاحات و غیره را درک کنند. ویژگی `literal` برای شناسایی متن یا تصاویر به عنوان غیر تحت‌اللفظی در نظر گرفته شده است و به نویسنده اجازه می‌دهد متن و تصاویر غیر تحت‌اللفظی را برای کاربران توضیح دهد.
 
-## See also
+## همچنین ببینید
 
 ### MDN
 
-- [Accessibility: What users can do to browse more safely](/en-US/docs/Web/Accessibility/Guides/Browsing_safely)
-- [Accessibility: Understanding color and luminance](/en-US/docs/Web/Accessibility/Guides/Colors_and_Luminance)
-- [Applying SVG effects to HTML Content](/en-US/docs/Web/SVG/Guides/Applying_SVG_effects_to_HTML_content)
-- [Basic Animations](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations) (Canvas Tutorial)
-- [Canvas API](/en-US/docs/Web/API/Canvas_API)
+- [دسترسی: آنچه کاربران می‌توانند برای مرور ایمن‌تر انجام دهند](/en-US/docs/Web/Accessibility/Guides/Browsing_safely)
+- [دسترسی: درک رنگ و روشنایی](/en-US/docs/Web/Accessibility/Guides/Colors_and_Luminance)
+- [اعمال اثرات SVG به محتوای HTML](/en-US/docs/Web/SVG/Guides/Applying_SVG_effects_to_HTML_content)
+- [انیمیشن‌های پایه](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations) (آموزش Canvas)
+- [API Canvas](/en-US/docs/Web/API/Canvas_API)
 - [CanvasRenderingContext2D.drawImage()](/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage)
 - {{cssxref("&lt;color&gt;")}}
-- [Document Object Model](/en-US/docs/Web/API/Document_Object_Model)
+- [مدل شیء سند](/en-US/docs/Web/API/Document_Object_Model)
 - [MediaQueryList](/en-US/docs/Web/API/MediaQueryList)
-- [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
-- [WebGL: 2D and 3D graphics for the web](/en-US/docs/Web/API/WebGL_API)
-- [WebVR API](/en-US/docs/Web/API/WebVR_API)
+- [استفاده از اطلاعات سبک پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
+- [WebGL: گرافیک دو بعدی و سه بعدی برای وب](/en-US/docs/Web/API/WebGL_API)
+- [API WebVR](/en-US/docs/Web/API/WebVR_API)
 
-### Color
+### رنگ
 
-- [Color Tutorial: describing color](https://colortutorial.design/) Tom Jewett
-- [Formula to Determine Brightness of RGB color](https://stackoverflow.com/questions/596216/formula-to-determine-perceived-brightness-of-rgb-color) Stack Exchange Discussion Thread
-- [How the Color Red Influences Our Behavior](https://www.scientificamerican.com/article/how-the-color-red-influences-our-behavior/) Scientific American By Susana Martinez-Conde, Stephen L. Macknik on November 1, 2014
+- [آموزش رنگ: توصیف رنگ](https://colortutorial.design/) تام جویت
+- [فرمول تعیین روشنایی درک شده رنگ RGB](https://stackoverflow.com/questions/596216/formula-to-determine-perceived-brightness-of-rgb-color) موضوع بحث Stack Exchange
+- [چگونه رنگ قرمز بر رفتار ما تأثیر می‌گذارد](https://www.scientificamerican.com/article/how-the-color-red-influences-our-behavior/) Scientific American توسط سوزانا مارتینز-کونده، استفان ال. مک‌نیک در 1 نوامبر 2014
 
-### Discussions
+### بحث‌ها
 
-- [Problems with WCAG 2.0 Flash Definition #553](https://github.com/w3c/wcag/issues/553)
-- [WCAG 2.1 Understanding 2.3.1 - missing/vague dimension definitions #585](https://github.com/w3c/wcag/issues/585)
+- [مشکلات با تعریف چشمک WCAG 2.0 #553](https://github.com/w3c/wcag/issues/553)
+- [WCAG 2.1 درک 2.3.1 - تعاریف ابعاد گمشده/مبهم #585](https://github.com/w3c/wcag/issues/585)
 
-### Epilepsy and Seizures
+### صرع و تشنج
 
-- [Shedding Light on Photosensitivity, One of Epilepsy's Most Complex Conditions](https://www.epilepsy.com/stories/shedding-light-photosensitivity-one-epilepsys-most-complex-conditions) Epilepsy Foundation: _"Certain individuals are born with special sensitivity to flashing lights or contrasting visual patterns, such as stripes, grids and checkerboards. Because of this condition, their brain will produce seizure-like discharges when exposed to this type of visual stimulation."_
-- [Gamma oscillations and photosensitive epilepsy](https://www.sciencedirect.com/science/article/pii/S0960982217304062?via%3Dihub) Current Biology [Volume 27, Issue 9](https://www.sciencedirect.com/journal/current-biology/vol/27/issue/9), 8 May 2017, Pages R336-R338: _"Certain [visual images](https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/retina-image), even in the absence of motion or flicker, can trigger seizures in patients with photosensitive epilepsy."_
-- [Photosensitive Seizures. Cedars-Sinai](https://www.cedars-sinai.org/health-library/diseases-and-conditions/p/photosensitive-seizures.html) "_Photosensitive seizures are triggered by flashing or flickering lights. These seizures can also be triggered by certain patterns such as stripes._"
-- [Photic-and pattern-induced seizures: expert consensus of the Epilepsy Foundation of America Working Group](https://pubmed.ncbi.nlm.nih.gov/16146438/) Eplepsia 2005 Sept, 46(9):1423-5 PubMed.gov NCBI [Harding G](https://pubmed.ncbi.nlm.nih.gov/?term=Harding%20G%5BAuthor%5D&cauthor=true&cauthor_uid=16146438), [Wilkins AJ](https://pubmed.ncbi.nlm.nih.gov/?term=Wilkins%20AJ%5BAuthor%5D&cauthor=true&cauthor_uid=16146438), [Erba G](https://pubmed.ncbi.nlm.nih.gov/?term=Erba%20G%5BAuthor%5D&cauthor=true&cauthor_uid=16146438), [Barkley GL](https://pubmed.ncbi.nlm.nih.gov/?term=Barkley%20GL%5BAuthor%5D&cauthor=true&cauthor_uid=16146438), [Fisher RS](https://pubmed.ncbi.nlm.nih.gov/?term=Fisher%20RS%5BAuthor%5D&cauthor=true&cauthor_uid=16146438); [Epilepsy Foundation of America Working Group](https://pubmed.ncbi.nlm.nih.gov/?term=Epilepsy%20Foundation%20of%20America%20Working%20Group%5BCorporate%20Author%5D).
+- [روشن کردن حساسیت به نور، یکی از پیچیده‌ترین شرایط صرع](https://www.epilepsy.com/stories/shedding-light-photosensitivity-one-epilepsys-most-complex-conditions) بنیاد صرع: _"برخی افراد با حساسیت ویژه به نورهای چشمک‌زن یا الگوهای بصری متضاد، مانند نوارها، شبکه‌ها و شطرنجی‌ها متولد می‌شوند. به دلیل این وضعیت، مغز آنها در هنگام قرار گرفتن در معرض این نوع تحریک بصری، تخلیه‌های تشنج‌مانند تولید می‌کند."_
+- [نوسانات گاما و صرع حساس به نور](https://www.sciencedirect.com/science/article/pii/S0960982217304062?via%3Dihub) Current Biology [جلد 27، شماره 9](https://www.sciencedirect.com/journal/current-biology/vol/27/issue/9)، 8 مه 2017، صفحات R336-R338: _"برخی [تصاویر بصری](https://www.sciencedirect.com/topics/biochemistry-genetics-and-molecular-biology/retina-image)، حتی در غیاب حرکت یا سوسو زدن، می‌توانند در بیماران مبتلا به صرع حساس به نور تشنج ایجاد کنند."_
+- [تشنج‌های حساس به نور. Cedars-Sinai](https://www.cedars-sinai.org/health-library/diseases-and-conditions/p/photosensitive-seizures.html) _"تشنج‌های حساس به نور توسط نورهای چشمک‌زن یا سوسو زن تحریک می‌شوند. این تشنج‌ها همچنین می‌توانند توسط الگوهای خاصی مانند نوارها تحریک شوند."_
+- [تشنج‌های ناشی از نور و الگو: اجماع متخصصان گروه کاری بنیاد صرع آمریکا](https://pubmed.ncbi.nlm.nih.gov/16146438/) Eplepsia 2005 سپتامبر، 46(9):1423-5 PubMed.gov NCBI [Harding G](https://pubmed.ncbi.nlm.nih.gov/?term=Harding%20G%5BAuthor%5D&cauthor=true&cauthor_uid=16146438), [Wilkins AJ](https://pubmed.ncbi.nlm.nih.gov/?term=Wilkins%20AJ%5BAuthor%5D&cauthor=true&cauthor_uid=16146438), [Erba G](https://pubmed.ncbi.nlm.nih.gov/?term=Erba%20G%5BAuthor%5D&cauthor=true&cauthor_uid=16146438), [Barkley GL](https://pubmed.ncbi.nlm.nih.gov/?term=Barkley%20GL%5BAuthor%5D&cauthor=true&cauthor_uid=16146438), [Fisher RS](https://pubmed.ncbi.nlm.nih.gov/?term=Fisher%20RS%5BAuthor%5D&cauthor=true&cauthor_uid=16146438); [گروه کاری بنیاد صرع آمریکا](https://pubmed.ncbi.nlm.nih.gov/?term=Epilepsy%20Foundation%20of%20America%20Working%20Group%5BCorporate%20Author%5D).
 
 ### GPII
 
-- [Accessibility Master List](https://ds.gpii.net/learn/accessibility-masterlist) Gregg Vanderheiden Ph.D. Editor
+- [فهرست اصلی دسترسی](https://ds.gpii.net/learn/accessibility-masterlist) Gregg Vanderheiden Ph.D. ویراستار
 
 ### ISO
 
-- [IEC 61966-2-2:2003(en)](https://www.iso.org/obp/ui/#iso:std:iec:61966:-2-2:ed-1:v1:en) Multimedia systems and equipment — Colour measurement and management — Part 2-2: Colour management — Extended RGB color space — scRGB
+- [IEC 61966-2-2:2003(en)](https://www.iso.org/obp/ui/#iso:std:iec:61966:-2-2:ed-1:v1:en) سیستم‌ها و تجهیزات چندرسانه‌ای — اندازه‌گیری و مدیریت رنگ — بخش 2-2: مدیریت رنگ — فضای رنگی RGB توسعه یافته — scRGB
 
-### Photosensitive Epilepsy Analysis Tool
+### ابزار تحلیل صرع حساس به نور
 
-Along with the Harding tool, is generally recognized to be one of the two "gold standards" for analyzing flashes.
+همراه با ابزار هاردینگ، به طور کلی به عنوان یکی از دو "استاندارد طلایی" برای تحلیل چشمک‌ها شناخته می‌شود.
 
-- [Trace Research and Development Center](https://trace.umd.edu/peat/)
-- [Using PEAT To Create Seizureless Web Animations](https://www.useragentman.com/blog/2017/04/02/using-peat-to-create-seizureless-web-animations/)
+- [مرکز تحقیقات و توسعه Trace](https://trace.umd.edu/peat/)
+- [استفاده از PEAT برای ایجاد انیمیشن‌های وب بدون تشنج](https://www.useragentman.com/blog/2017/04/02/using-peat-to-create-seizureless-web-animations/)
 
 ### W3C
 
 - [WAI-Adapt Explainer](https://w3c.github.io/adapt/)
-- [WAI-Adapt: Tools Module](https://www.w3.org/TR/adapt-tools/) Working Draft
-- [Three Flashes or Below Threshold Understanding SC 2.3.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure-does-not-violate.html) Understanding WCAG 2.0 (Older, but contains some explanations of references made in the WCAG 2.1 criteria)
-- [Three Flashes or Below Threshold Understanding Success Criterion 2.3.1](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html) Understanding WCAG 2.1
-- [Understanding Success Criteria 1.4.3: Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
-- [Web Accessibility Initiative (WAI)](https://www.w3.org/WAI/)
-- [Web Content Accessibility Guidelines (WCAG) 2.2](https://w3c.github.io/wcag/guidelines/22/#dfn-relative-luminance) definition of relative luminance
+- [WAI-Adapt: ماژول ابزارها](https://www.w3.org/TR/adapt-tools/) پیش‌نویس کاری
+- [سه چشمک یا زیر آستانه درک SC 2.3.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure-does-not-violate.html) درک WCAG 2.0 (قدیمی‌تر، اما حاوی برخی توضیحات از ارجاعات ذکر شده در معیارهای WCAG 2.1 است)
+- [سه چشمک یا زیر آستانه درک معیار موفقیت 2.3.1](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html) درک WCAG 2.1
+- [درک معیارهای موفقیت 1.4.3: کنتراست (حداقل)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
+- [طرح ابتکار دسترسی وب (WAI)](https://www.w3.org/WAI/)
+- [دستورالعمل‌های دسترسی به محتوای وب (WCAG) 2.2](https://w3c.github.io/wcag/guidelines/22/#dfn-relative-luminance) تعریف روشنایی نسبی
