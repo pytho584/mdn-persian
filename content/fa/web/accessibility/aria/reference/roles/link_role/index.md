@@ -1,11 +1,7 @@
 ---
 title: "ARIA: link role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/link_role"
-status: "needs-translation"
----
-
----
-title: "ARIA: link role"
+translated_by: "n8n + AI"
 short-title: link
 slug: Web/Accessibility/ARIA/Reference/Roles/link_role
 page-type: aria-role
@@ -13,25 +9,25 @@ spec-urls: https://w3c.github.io/aria/#link
 sidebar: accessibilitysidebar
 ---
 
-A `link` widget provides an interactive reference to a resource. The target resource can be either external or local; i.e., either outside or within the current page or application.
+یک ویجت `link` یک مرجع تعاملی به یک منبع فراهم می‌کند. منبع هدف می‌تواند خارجی یا محلی باشد؛ یعنی خارج از صفحه یا برنامه فعلی یا داخل آن.
 
 > [!NOTE]
-> Where possible, it is recommended that you use a native {{HTMLElement("a")}} element rather than the `link` role, as native elements are more widely supported by user agents and assistive technology. Native {{HTMLElement("a")}} elements also support keyboard and focus requirements by default, without need for additional customization.
+> در صورت امکان، توصیه می‌شود از عنصر بومی {{HTMLElement("a")}} به جای نقش `link` استفاده کنید، زیرا عناصر بومی توسط عامل‌های کاربر و فناوری کمکی پشتیبانی گسترده‌تری دارند. عناصر بومی {{HTMLElement("a")}} همچنین به طور پیش‌فرض نیازهای صفحه‌کلید و فوکوس را پشتیبانی می‌کنند، بدون نیاز به سفارشی‌سازی اضافی.
 
-## Description
+## توضیحات
 
-The `link` role is used to identify an element that creates a hyperlink to a resource that is in the application or external.
+نقش `link` برای شناسایی عنصری استفاده می‌شود که یک پیوند به یک منبع درون برنامه یا خارجی ایجاد می‌کند.
 
-When not using semantic HTML for its intended purpose, interactive features must be re-implemented. For example, when `role="link"` is added to an element, the <kbd>tab</kbd> key should enable giving focus to the link and the <kbd>enter</kbd> key should execute the link when focused.
+هنگامی که از HTML معنایی برای هدف مورد نظر استفاده نمی‌شود، ویژگی‌های تعاملی باید دوباره پیاده‌سازی شوند. به عنوان مثال، وقتی `role="link"` به یک عنصر اضافه می‌شود، کلید <kbd>tab</kbd> باید امکان دادن فوکوس به پیوند را فراهم کند و کلید <kbd>enter</kbd> باید پیوند را در هنگام فوکوس اجرا کند.
 
-Use the [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) attribute with a value of `0` to ensure the link is in the correct tab focus order.
+از ویژگی [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) با مقدار `0` استفاده کنید تا اطمینان حاصل شود که پیوند در ترتیب فوکوس تب صحیح قرار دارد.
 
 > [!WARNING]
-> Applying the `link` role to an element will not cause browsers to enhance the element with standard link appearance or behaviors, such as underlining, focus rings, navigation to the link target, or context menu actions. That's the developer's responsibility.
+> اعمال نقش `link` به یک عنصر باعث نمی‌شود که مرورگرها آن عنصر را با ظاهر یا رفتارهای استاندارد پیوند مانند زیرخط، حلقه‌های فوکوس، پیمایش به مقصد پیوند، یا اقدامات منوی زمینه بهبود بخشند. این مسئولیت توسعه‌دهنده است.
 
-## Examples
+## مثال‌ها
 
-To recreate an accessible link using the `link` role on an element that is not an {{HTMLElement('a')}}, you need to ensure the link receives focus in the correct tab order, that the element looks like a link, and that the "link" behaves like a link.
+برای بازسازی یک پیوند قابل دسترس با استفاده از نقش `link` روی عنصری که {{HTMLElement('a')}} نیست، باید اطمینان حاصل کنید که پیوند در ترتیب تب صحیح فوکوس دریافت می‌کند، عنصر شبیه یک پیوند به نظر می‌رسد، و «پیوند» مانند یک پیوند رفتار می‌کند.
 
 ```html
 <span data-href="https://mozilla.org" tabindex="0" role="link">
@@ -80,30 +76,30 @@ function navigateLink(e) {
 }
 ```
 
-If the element with `role="link"` receives an <kbd>Enter</kbd> key event, this executes the link, going to the linked page or moving focus to the in page target.
+اگر عنصر با `role="link"` یک رویداد کلید <kbd>Enter</kbd> دریافت کند، این پیوند را اجرا می‌کند، به صفحه پیوند داده شده می‌رود یا فوکوس را به هدف درون صفحه منتقل می‌کند.
 
-Optionally, <kbd>Shift</kbd> + <kbd>F10</kbd> opens a context menu for the link.
+به صورت اختیاری، <kbd>Shift</kbd> + <kbd>F10</kbd> یک منوی زمینه برای پیوند باز می‌کند.
 
-## Best practices
+## بهترین روش‌ها
 
-The various widget roles are used to define common interactive patterns. Similar to the document-structure roles, some of these roles, including the `link` role, duplicate the semantics of native HTML elements that are well supported, and should not be used.
+نقش‌های ویجت مختلف برای تعریف الگوهای تعاملی رایج استفاده می‌شوند. مشابه نقش‌های ساختار سند، برخی از این نقش‌ها، از جمله نقش `link`، معنای عناصر بومی HTML را که به خوبی پشتیبانی می‌شوند، تکرار می‌کنند و نباید استفاده شوند.
 
-Avoid using `link`, which we've included for completeness. The {{HTMLElement('a')}} semantic equivalent with accessible interactivity is available and supported.
+از استفاده از `link` خودداری کنید، که ما برای کامل بودن آن را گنجانده‌ایم. معادل معنایی {{HTMLElement('a')}} با قابلیت تعاملی قابل دسترس موجود و پشتیبانی شده است.
 
-### Prefer HTML
+### ترجیح HTML
 
-Using the {{HTMLElement('a')}} instead.
+به جای آن از {{HTMLElement('a')}} استفاده کنید.
 
 > [!NOTE]
-> There is no need to include `role="link"` on an HTML link as the `<a>`, by default, has that role already.
+> نیازی به گنجاندن `role="link"` روی یک پیوند HTML نیست زیرا `<a>` به طور پیش‌فرض آن نقش را دارد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement('a')}} element
-- The {{HTMLElement('button')}} element
+- عنصر {{HTMLElement('a')}}
+- عنصر {{HTMLElement('button')}}
 - [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
 - [ARIA practices `link` role examples](https://www.w3.org/WAI/ARIA/apg/patterns/link/examples/link/)
