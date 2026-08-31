@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: shadowOffsetX property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: shadowOffsetX property"
 short-title: shadowOffsetX
 slug: Web/API/CanvasRenderingContext2D/shadowOffsetX
 page-type: web-api-instance-property
@@ -14,31 +8,24 @@ browser-compat: api.CanvasRenderingContext2D.shadowOffsetX
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.shadowOffsetX`**
-property of the Canvas 2D API specifies the distance that shadows will be offset
-horizontally.
+ویژگی **`CanvasRenderingContext2D.shadowOffsetX`** در Canvas 2D API فاصله‌ای را مشخص می‌کند که سایه‌ها به صورت افقی جابه‌جا می‌شوند.
 
 > [!NOTE]
-> Shadows are only drawn if the
-> {{domxref("CanvasRenderingContext2D.shadowColor", "shadowColor")}} property is set to
-> a non-transparent value. One of the {{domxref("CanvasRenderingContext2D.shadowBlur", "shadowBlur")}}, `shadowOffsetX`, or
-> {{domxref("CanvasRenderingContext2D.shadowOffsetY", "shadowOffsetY")}} properties must
-> be non-zero, as well.
+> سایه‌ها فقط زمانی رسم می‌شوند که ویژگی
+> {{domxref("CanvasRenderingContext2D.shadowColor", "shadowColor")}} روی یک مقدار غیرشفاف تنظیم شده باشد. همچنین یکی از ویژگی‌های {{domxref("CanvasRenderingContext2D.shadowBlur", "shadowBlur")}}، `shadowOffsetX` یا
+> {{domxref("CanvasRenderingContext2D.shadowOffsetY", "shadowOffsetY")}} باید غیرصفر باشد.
 
-## Value
+## مقدار
 
-A float specifying the distance that shadows will be offset horizontally. Positive values are to the right, and negative to the left. The default value is `0` (no horizontal offset). {{jsxref("Infinity")}} and {{jsxref("NaN")}} values are ignored.
+یک عدد اعشاری (float) که فاصله‌ی جابه‌جایی افقی سایه‌ها را مشخص می‌کند. مقادیر مثبت به سمت راست و مقادیر منفی به سمت چپ هستند. مقدار پیش‌فرض `0` است (بدون جابه‌جایی افقی). مقادیر {{jsxref("Infinity")}} و {{jsxref("NaN")}} نادیده گرفته می‌شوند.
 
-## Examples
+## مثال‌ها
 
-### Moving a shadow horizontally
+### جابه‌جایی افقی سایه
 
-This example adds a blurred shadow to a rectangle. The
-{{domxref("CanvasRenderingContext2D.shadowColor", "shadowColor")}} property sets its
-color, `shadowOffsetX` sets its offset 25 units to the right, and
-{{domxref("CanvasRenderingContext2D.shadowBlur", "shadowBlur")}} gives it a blur level
-of 10.
+این مثال یک سایه‌ی محو به یک مستطیل اضافه می‌کند. ویژگی
+{{domxref("CanvasRenderingContext2D.shadowColor", "shadowColor")}} رنگ آن را تنظیم می‌کند، `shadowOffsetX` جابه‌جایی آن را ۲۵ واحد به سمت راست مقداردهی می‌کند و
+{{domxref("CanvasRenderingContext2D.shadowBlur", "shadowBlur")}} سطح محو شدگی ۱۰ را به آن می‌دهد.
 
 #### HTML
 
@@ -62,21 +49,21 @@ ctx.fillStyle = "blue";
 ctx.fillRect(20, 20, 150, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Moving_a_shadow_horizontally', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- واسط تعریف‌کننده‌ی این ویژگی: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.shadowOffsetY")}}
 - {{domxref("CanvasRenderingContext2D.shadowColor")}}
 - {{domxref("CanvasRenderingContext2D.shadowBlur")}}
