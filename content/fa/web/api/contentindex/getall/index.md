@@ -1,11 +1,5 @@
 ---
 title: "ContentIndex: getAll() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContentIndex/getAll"
-status: "needs-translation"
----
-
----
-title: "ContentIndex: getAll() method"
 short-title: getAll()
 slug: Web/API/ContentIndex/getAll
 page-type: web-api-instance-method
@@ -16,68 +10,58 @@ browser-compat: api.ContentIndex.getAll
 
 {{APIRef("Content Index API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`getAll()`** method of the
-{{domxref("ContentIndex")}} interface returns a {{jsxref('Promise')}} that resolves with
-an iterable list of content index entries.
+متد **`getAll()`** در رابط {{domxref("ContentIndex")}} یک {{jsxref('Promise')}} برمی‌گرداند که با فهرست قابل پیمایشی از ورودی‌های فهرست محتوا حل می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getAll()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a {{jsxref("Promise")}} that resolves with an {{jsxref('Array')}} of
-`contentDescription` items.
+یک {{jsxref("Promise")}} برمی‌گرداند که با یک {{jsxref('Array')}} از موارد `contentDescription` حل می‌شود.
 
 - `contentDescription`
-  - : Each item returned is an {{jsxref('Object')}} containing the following data:
+  - : هر مورد بازگشتی یک {{jsxref('Object')}} است که داده‌های زیر را شامل می‌شود:
     - `id`
-      - : A unique {{jsxref('String')}} identifier.
+      - : یک شناسه یکتای {{jsxref('String')}}.
     - `title`
-      - : A {{jsxref('String')}} title of the item.
-        Used in user-visible lists of content.
+      - : عنوان {{jsxref('String')}} آیتم. در فهرست‌های قابل مشاهده برای کاربر از محتوا استفاده می‌شود.
     - `description`
-      - : A {{jsxref('String')}} description of the item.
-        Used in user-visible lists of content.
+      - : توضیح {{jsxref('String')}} آیتم. در فهرست‌های قابل مشاهده برای کاربر از محتوا استفاده می‌شود.
     - `url`
-      - : A {{jsxref('String')}} containing the URL of the corresponding HTML document.
-        Needs to be under the scope of the current [service worker](/en-US/docs/Web/API/ServiceWorker).
+      - : یک {{jsxref('String')}} شامل URL سند HTML متناظر. باید در محدوده [service worker](/en-US/docs/Web/API/ServiceWorker) فعلی باشد.
     - `category` {{Optional_Inline}}
-      - : A {{jsxref('String')}} defining the category of content.
-        Can be:
-        - `''` An empty {{jsxref('String')}}, this is the default.
+      - : یک {{jsxref('String')}} که دسته محتوا را تعریف می‌کند. می‌تواند یکی از موارد زیر باشد:
+        - `''` یک {{jsxref('String')}} خالی، که مقدار پیش‌فرض است.
         - `homepage`
         - `article`
         - `video`
         - `audio`
 
     - `icons` {{Optional_Inline}}
-      - : An {{jsxref('Array')}} of image resources, defined as an {{jsxref('Object')}} with the following data:
+      - : یک {{jsxref('Array')}} از منابع تصویری، که به صورت {{jsxref('Object')}} با داده‌های زیر تعریف شده‌اند:
         - `src`
-          - : A URL {{jsxref('String')}} of the source image.
+          - : یک {{jsxref('String')}} URL از تصویر منبع.
         - `sizes` {{Optional_Inline}}
-          - : A {{jsxref('String')}} representation of the image size.
+          - : یک {{jsxref('String')}} نمایش‌دهنده اندازه تصویر.
         - `type` {{Optional_Inline}}
-          - : The {{Glossary("MIME type")}} of the image.
+          - : {{Glossary("MIME type")}} تصویر.
         - `label` {{Optional_Inline}}
-          - : A string representing the accessible name of the icon.
+          - : رشته‌ای که نام قابل دسترس آیکون را نشان می‌دهد.
 
-### Exceptions
+### استثناها
 
-No exceptions are thrown. If there are no items in the Content Index, an empty
-{{jsxref('Array')}} is returned.
+هیچ استثنایی پرتاب نمی‌شود. اگر هیچ موردی در فهرست محتوا وجود نداشته باشد، یک {{jsxref('Array')}} خالی برگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-The below example shows an asynchronous function that retrieves items within the
-[content index](/en-US/docs/Web/API/Content_Index_API) and iterates over each entry, building
-a list for the interface.
+مثال زیر یک تابع ناهمگام را نشان می‌دهد که موارد موجود در [فهرست محتوا](/en-US/docs/Web/API/Content_Index_API) را بازیابی می‌کند و روی هر ورودی پیمایش می‌کند و یک فهرست برای رابط کاربری می‌سازد.
 
 ```js
 async function createReadingList() {
@@ -117,15 +101,15 @@ async function createReadingList() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [An introductory article on the Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
-- [Service Worker API, along with information about Cache and CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
+- [مقاله مقدماتی درباره Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
+- [Service Worker API، همراه با اطلاعاتی درباره Cache و CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
