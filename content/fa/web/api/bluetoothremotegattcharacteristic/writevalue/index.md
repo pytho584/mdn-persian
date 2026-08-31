@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTCharacteristic: writeValue() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValue"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,9 +16,9 @@ browser-compat: api.BluetoothRemoteGATTCharacteristic.writeValue
 
 {{APIRef("Bluetooth API")}}{{Deprecated_header}}{{SecureContext_Header}}
 
-Use {{DOMxRef("BluetoothRemoteGATTCharacteristic.writeValueWithResponse()")}} and {{DOMxRef("BluetoothRemoteGATTCharacteristic.writeValueWithoutResponse()")}} instead.
+به جای این متد، از {{DOMxRef("BluetoothRemoteGATTCharacteristic.writeValueWithResponse()")}} و {{DOMxRef("BluetoothRemoteGATTCharacteristic.writeValueWithoutResponse()")}} استفاده کنید.
 
-The **`BluetoothRemoteGATTCharacteristic.writeValue()`** method sets a {{domxref("BluetoothRemoteGATTCharacteristic")}} object's `value` property to the bytes contained in a given {{jsxref("ArrayBuffer")}}, {{jsxref("TypedArray")}}, or {{jsxref("DataView")}}, [writes the characteristic value with optional response](https://webbluetoothcg.github.io/web-bluetooth/#writecharacteristicvalue), and returns the resulting {{JSxRef("Promise")}}.
+متد **`BluetoothRemoteGATTCharacteristic.writeValue()`**، ویژگی `value` یک شیء {{domxref("BluetoothRemoteGATTCharacteristic")}} را به بایت‌های موجود در یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}} داده شده تنظیم می‌کند، [مقدار مشخصه را با پاسخ اختیاری می‌نویسد](https://webbluetoothcg.github.io/web-bluetooth/#writecharacteristicvalue)، و {{JSxRef("Promise")}} حاصل را بازمی‌گرداند.
 
 ## Syntax
 
@@ -26,19 +26,19 @@ The **`BluetoothRemoteGATTCharacteristic.writeValue()`** method sets a {{domxref
 writeValue(buffer)
 ```
 
-### Parameters
+### پارامترها
 
 - `value`
-  - : An {{jsxref("ArrayBuffer")}}, {{jsxref("TypedArray")}}, or {{jsxref("DataView")}}.
+  - : یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}}.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}}.
+یک {{jsxref("Promise")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
