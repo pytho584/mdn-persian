@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: textBaseline property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textBaseline"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: textBaseline property"
 short-title: textBaseline
 slug: Web/API/CanvasRenderingContext2D/textBaseline
 page-type: web-api-instance-property
@@ -14,39 +8,32 @@ browser-compat: api.CanvasRenderingContext2D.textBaseline
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.textBaseline`**
-property of the Canvas 2D API specifies the current text baseline used when drawing
-text.
+خصوصیت **`CanvasRenderingContext2D.textBaseline`** در Canvas 2D API، baseline متن فعلی را هنگام رسم متن مشخص می‌کند.
 
-## Value
+## مقدار
 
-Possible values:
+مقادیر ممکن:
 
 - `"top"`
-  - : The text baseline is the top of the em square.
+  - : خط پایه (baseline) متن در بالای مربع em قرار دارد.
 - `"hanging"`
-  - : The text baseline is the hanging baseline. (Used by Tibetan and other Indic
-    scripts.)
+  - : خط پایه متن، baseline آویزان (hanging) است. (مورد استفاده در خط تبتی و دیگر خطوط هندی.)
 - `"middle"`
-  - : The text baseline is the middle of the em square.
+  - : خط پایه متن در وسط مربع em قرار دارد.
 - `"alphabetic"`
-  - : The text baseline is the normal {{glossary("Baseline/Typography", "alphabetic baseline")}}. Default value.
+  - : خط پایه متن، {{glossary("Baseline/Typography", "alphabetic baseline")}} عادی است. مقدار پیش‌فرض.
 - `"ideographic"`
-  - : The text baseline is the ideographic baseline; this is the bottom of the body of the
-    characters, if the main body of characters protrudes beneath the alphabetic baseline.
-    (Used by Chinese, Japanese, and Korean scripts.)
+  - : خط پایه متن، baseline ایدئوگرافیک (ideographic) است؛ این پایین بدنه کاراکترها است، اگر بدنه اصلی کاراکترها زیر baseline الفبایی بیرون زده باشد. (مورد استفاده در خطوط چینی، ژاپنی و کرهای.)
 - `"bottom"`
-  - : The text baseline is the bottom of the bounding box. This differs from the
-    ideographic baseline in that the ideographic baseline doesn't consider descenders.
+  - : خط پایه متن، پایین جعبه محدودکننده (bounding box) است. این با baseline ایدئوگرافیک تفاوت دارد زیرا baseline ایدئوگرافیک descenderها (قسمت‌های پایین‌رونده حروف) را در نظر نمی‌گیرد.
 
-The default value is `"alphabetic"`.
+مقدار پیش‌فرض `"alphabetic"` است.
 
-## Examples
+## مثال‌ها
 
-### Comparison of property values
+### مقایسه مقادیر خصوصیت
 
-This example demonstrates the various `textBaseline` property values.
+این مثال مقادیر مختلف `textBaseline` را نشان می‌دهد.
 
 #### HTML
 
@@ -82,13 +69,13 @@ baselines.forEach((baseline, index) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Comparison_of_property_values', 700, 550) }}
 
-### Comparison of property values on the same line
+### مقایسه مقادیر خصوصیت روی یک خط
 
-As with the previous example, this example demonstrates the various `textBaseline` property values, but in this case with all of them lined up horizontally along the same line — to make it easier to see how they differ from each other.
+مانند مثال قبلی، این مثال مقادیر مختلف `textBaseline` را نشان می‌دهد، اما این بار همه آنها به صورت افقی روی یک خط قرار گرفته‌اند تا تفاوت‌ها راحت‌تر دیده شود.
 
 #### HTML
 
@@ -129,18 +116,18 @@ baselines.forEach((baseline, index) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Comparison of property values on the same line', 900, 200) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این خصوصیت: {{domxref("CanvasRenderingContext2D")}}
