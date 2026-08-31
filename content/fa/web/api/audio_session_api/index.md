@@ -1,7 +1,7 @@
 ---
 title: "Audio Session API"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Audio_Session_API"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -17,48 +17,48 @@ browser-compat:
 
 {{DefaultAPISidebar("Audio Session API")}}{{SeeCompatTable}}
 
-The **Audio Session API** provides a mechanism for web applications to control how their audio interacts with other audio playing on a device.
+**Audio Session API** مکانیزمی را برای برنامه‌های وب فراهم می‌کند تا نحوه تعامل صدای خود با سایر صداهای در حال پخش روی دستگاه را کنترل کنند.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-People increasingly consume media through the web: it is now a primary channel for accessing audio and video content. However, media on the web often lacks seamless integration with underlying platforms. The Audio Session API addresses this gap by allowing developers to specify how the audio produced by their web applications interacts with audio from other applications on the device — for example, playing along with other audio, ducking it (reducing its volume), or pausing it so their audio can play on its own.
+افراد به‌طور فزاینده‌ای رسانه را از طریق وب مصرف می‌کنند: این رسانه اکنون کانال اصلی برای دسترسی به محتوای صوتی و تصویری است. با این حال، رسانه در وب اغلب فاقد یکپارچگی بی‌درز با پلتفرم‌های زیرین است. Audio Session API این شکاف را با اجازه دادن به توسعه‌دهندگان برای مشخص کردن نحوه تعامل صدای تولید‌شده توسط برنامه‌های وب‌شان با صدای سایر برنامه‌ها روی دستگاه برطرف می‌کند — به عنوان مثال، پخش هم‌زمان با سایر صداها، کاهش بلندی آن (کاهش حجم آن)، یا توقف آن به‌طوری که صدای خودشان به تنهایی پخش شود.
 
-A web page can perform audio processing in various ways using APIs such as {{domxref("HTMLMediaElement")}} and the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API). An **audio session** represents the aggregated audio produced by a web page, enabling it to express the general nature of its audio output.
+یک صفحه وب می‌تواند پردازش صوتی را به روش‌های مختلف با استفاده از APIهایی مانند {{domxref("HTMLMediaElement")}} و [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) انجام دهد. یک **جلسه صوتی** نمایانگر صدای تجمیع‌شده تولید‌شده توسط یک صفحه وب است و آن را قادر می‌سازد تا ماهیت کلی خروجی صوتی خود را بیان کند.
 
-### Audio session types
+### انواع جلسه صوتی
 
-The API supports several audio session types, which specify the type of audio an application is producing:
+این API از چند نوع جلسه صوتی پشتیبانی می‌کند که نوع صدای تولید‌شده توسط یک برنامه را مشخص می‌کنند:
 
-- `"auto"` — The default. The user agent automatically chooses the best type based on the audio APIs being used.
-- `"playback"` — For media playback such as music or video. This type should not mix with other audio playback.
-- `"transient"` — For short sounds like notifications. This type usually plays on top of other audio.
-- `"transient-solo"` — For audio that should play exclusively, pausing all other audio (such as voice prompts).
-- `"ambient"` — For audio that can mix with other audio sources.
-- `"play-and-record"` — For applications that both play and record audio, such as video conferencing.
+- `"auto"` — پیش‌فرض. عامل کاربر به‌طور خودکار بهترین نوع را بر اساس APIهای صوتی مورد استفاده انتخاب می‌کند.
+- `"playback"` — برای پخش رسانه مانند موسیقی یا ویدیو. این نوع نباید با پخش صوتی دیگر ترکیب شود.
+- `"transient"` — برای صداهای کوتاه مانند اعلان‌ها. این نوع معمولاً روی سایر صداها پخش می‌شود.
+- `"transient-solo"` — برای صدایی که باید به‌صورت انحصاری پخش شود و سایر صداها را متوقف کند (مانند پیام‌های صوتی).
+- `"ambient"` — برای صدایی که می‌تواند با سایر منابع صوتی ترکیب شود.
+- `"play-and-record"` — برای برنامه‌هایی که هم صدا پخش می‌کنند و هم ضبط می‌کنند، مانند کنفرانس ویدیویی.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("AudioSession")}} {{Experimental_Inline}}
-  - : The main interface for controlling audio session behavior, including setting the audio session type.
+  - : رابط اصلی برای کنترل رفتار جلسه صوتی، از جمله تنظیم نوع جلسه صوتی.
 
-### Extensions to other interfaces
+### افزونه‌های رابط‌های دیگر
 
 - {{domxref("Navigator.audioSession")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the {{domxref("AudioSession")}} object for the current document.
+  - : شیء {{domxref("AudioSession")}} را برای سند فعلی برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Setting up a video conferencing audio session
+### راه‌اندازی یک جلسه صوتی کنفرانس ویدیویی
 
-In a video conferencing application, both playback and recording are required simultaneously; this is something the Audio Session API can help with.
+در یک برنامه کنفرانس ویدیویی، هم پخش و هم ضبط به‌طور هم‌زمان مورد نیاز است؛ این چیزی است که Audio Session API می‌تواند در آن کمک کند.
 
-First, we set the audio session type to `"play-and-record"` to inform the platform that this page requires microphone access alongside audio output. On supporting platforms, this may adjust system volume routing (for example, using the earpiece instead of the speaker on mobile devices) and prevent audio from other applications from interrupting the call.
+ابتدا، نوع جلسه صوتی را به `"play-and-record"` تنظیم می‌کنیم تا به پلتفرم اطلاع دهیم که این صفحه به دسترسی میکروفون در کنار خروجی صوتی نیاز دارد. در پلتفرم‌های پشتیبان، این ممکن است مسیریابی صدای سیستم را تنظیم کند (مثلاً استفاده از گوشی به جای بلندگو در دستگاه‌های تلفن همراه) و از قطع شدن تماس توسط صدای سایر برنامه‌ها جلوگیری کند.
 
 ```js
 navigator.audioSession.type = "play-and-record";
 ```
 
-Next, we set up the media streams for the video call as usual. The platform will now handle the audio produced by these streams according to the `"play-and-record"` session type.
+سپس، جریان‌های رسانه‌ای را برای تماس ویدیویی طبق معمول تنظیم می‌کنیم. پلتفرم اکنون صدای تولید‌شده توسط این جریان‌ها را مطابق نوع جلسه `"play-and-record"` مدیریت خواهد کرد.
 
 ```js
 // Start playing remote media
@@ -73,15 +73,15 @@ navigator.mediaDevices
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("AudioSession")}}
 - {{domxref("Navigator.audioSession")}}
