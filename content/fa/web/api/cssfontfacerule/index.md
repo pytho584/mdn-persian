@@ -1,10 +1,4 @@
 ---
-title: "CSSFontFaceRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFaceRule"
-status: "needs-translation"
----
-
----
 title: CSSFontFaceRule
 slug: Web/API/CSSFontFaceRule
 page-type: web-api-interface
@@ -13,27 +7,26 @@ browser-compat: api.CSSFontFaceRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSFontFaceRule`** interface represents an {{cssxref("@font-face")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+رابطهٔ **`CSSFontFaceRule`** یک [قانون at](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) از نوع {{cssxref("@font-face")}} را نمایش می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestor {{domxref("CSSRule")}}._
+_ویژگی‌ها را از والد خود {{domxref("CSSRule")}} به ارث می‌برد._
 
 - {{domxref("CSSFontFaceRule.style")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("CSSFontFaceDescriptors")}} object that allows reading and setting the descriptors of the associated {{cssxref("@font-face")}} at-rule.
+  - : یک شیء {{domxref("CSSFontFaceDescriptors")}} برمی‌گرداند که امکان خواندن و تنظیم توصیف‌گرهای قانون at مربوط به {{cssxref("@font-face")}} را فراهم می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its ancestor {{domxref("CSSRule")}}._
+_روش‌ها را از والد خود {{domxref("CSSRule")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Accessing @font-face properties
+### دسترسی به ویژگی‌های @font-face
 
-This example defines a {{cssxref("@font-face")}} rule and then iterates over the rules on the page until the associated `CSSFontFaceRule` is found.
-It then logs some of the properties.
+در این مثال، یک قانون {{cssxref("@font-face")}} تعریف می‌شود و سپس قوانین موجود در صفحه پیمایش می‌شوند تا `CSSFontFaceRule` مربوطه پیدا شود. در ادامه، برخی از ویژگی‌ها در خروجی ثبت می‌شوند.
 
 #### CSS
 
@@ -84,14 +77,14 @@ for (const rule of myRules) {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Accessing @font-face properties", "100%", "250px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
