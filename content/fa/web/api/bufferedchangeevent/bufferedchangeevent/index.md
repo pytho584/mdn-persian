@@ -1,7 +1,7 @@
 ---
 title: "BufferedChangeEvent: BufferedChangeEvent() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BufferedChangeEvent/BufferedChangeEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,39 +16,39 @@ browser-compat: api.BufferedChangeEvent.BufferedChangeEvent
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}{{SeeCompatTable}}
 
-The **`BufferedChangeEvent()`** constructor of the {{domxref("BufferedChangeEvent")}} interface creates a new `BufferedChangeEvent` object instance.
+سازندهٔ **`BufferedChangeEvent()`** از رابط {{domxref("BufferedChangeEvent")}} یک نمونهٔ شیء `BufferedChangeEvent` جدید ایجاد می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new BufferedChangeEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the type of event. In the case of `BufferedChangeEvent` this is always `bufferedchange`.
+  - : یک رشته که نوع رویداد را مشخص می‌کند. در مورد `BufferedChangeEvent` این مقدار همیشه `bufferedchange` است.
 - `options` {{optional_inline}}
-  - : An object that, _in addition to the properties defined in {{domxref("Event/Event", "Event()")}}_, has the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، ویژگی‌های زیر را دارد:
 
     > [!NOTE]
-    > Although the spec marks `options` as optional, Safari (currently the only implementation) throws a `TypeError` if the argument is omitted entirely. Passing an empty object (`{}`) works correctly.
+    > اگرچه مشخصات، `options` را اختیاری تعیین کرده، اما سافاری (در حال حاضر تنها پیاده‌سازی) اگر آرگومان کاملاً حذف شود، یک `TypeError` پرتاب می‌کند. ارسال یک شیء خالی (`{}`) به‌درستی کار می‌کند.
     - `addedRanges` {{optional_inline}}
-      - : A {{domxref("TimeRanges")}} object representing the time ranges added to the buffer.
+      - : یک شیء {{domxref("TimeRanges")}} که بازه‌های زمانی اضافه‌شده به بافر را نشان می‌دهد.
     - `removedRanges` {{optional_inline}}
-      - : A {{domxref("TimeRanges")}} object representing the time ranges removed from the buffer.
+      - : یک شیء {{domxref("TimeRanges")}} که بازه‌های زمانی حذف‌شده از بافر را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("BufferedChangeEvent")}} object instance.
+یک نمونهٔ شیء جدید از {{domxref("BufferedChangeEvent")}}.
 
-## Examples
+## مثال‌ها
 
-### Inspecting a bufferedchange event
+### بررسی یک رویداد bufferedchange
 
-The `BufferedChangeEvent()` constructor isn't generally called manually. When a {{domxref("ManagedSourceBuffer")}}'s `bufferedchange` event fires (meaning its buffered ranges change), the browser will construct a `BufferedChangeEvent` object to use as the event object.
+سازندهٔ `BufferedChangeEvent()` معمولاً به‌صورت دستی فراخوانی نمی‌شود. وقتی رویداد `bufferedchange` یک {{domxref("ManagedSourceBuffer")}} رخ می‌دهد (به این معنی که بازه‌های بافرشده آن تغییر می‌کنند)، مرورگر یک شیء `BufferedChangeEvent` به‌عنوان شیء رویداد می‌سازد.
 
-The event's properties describe what changed:
+ویژگی‌های رویداد توصیف می‌کنند چه چیزی تغییر کرده است:
 
 ```js
 sourceBuffer.addEventListener("bufferedchange", (event) => {
@@ -59,15 +59,15 @@ sourceBuffer.addEventListener("bufferedchange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ManagedSourceBuffer")}}
-- {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} event
+- رویداد {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}}
