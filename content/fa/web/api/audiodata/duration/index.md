@@ -1,7 +1,7 @@
 ---
 title: "AudioData: duration property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioData/duration"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,24 +14,24 @@ browser-compat: api.AudioData.duration
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`duration`** read-only property of the {{domxref("AudioData")}} interface returns the duration in microseconds of this `AudioData` object.
+ویژگی فقط خواندنی **`duration`** از رابط {{domxref("AudioData")}} مدت زمان را بر حسب میکروثانیه برای این شیء `AudioData` برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-The below example prints the value of `duration` to the console.
+مثال زیر مقدار `duration` را در کنسول چاپ می‌کند.
 
 ```js
 console.log(AudioData.duration);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
