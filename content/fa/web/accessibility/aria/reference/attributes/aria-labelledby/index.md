@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-labelledby attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,26 +13,26 @@ spec-urls: https://w3c.github.io/aria/#aria-labelledby
 sidebar: accessibilitysidebar
 ---
 
-The `aria-labelledby` attribute identifies the element (or elements) that labels the element it is applied to.
+ویژگی `aria-labelledby` عنصر (یا عناصری) را که برچسب عنصر مورد نظر را تعیین می‌کند، مشخص می‌کند.
 
-## Description
+## توضیحات
 
-The `aria-labelledby` property enables authors to reference other elements on the page to define an accessible name. This is useful when using elements that don't have native support for associating elements to provide an accessible name.
+ویژگی `aria-labelledby` به نویسندگان اجازه می‌دهد تا به عناصر دیگر در صفحه برای تعریف یک نام دسترسی‌پذیر (accessible name) ارجاع دهند. این ویژگی زمانی مفید است که از عناصری استفاده می‌کنید که پشتیبانی بومی برای مرتبط‌سازی عناصر برای ارائه یک نام دسترسی‌پذیر ندارند.
 
-Some elements get their [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) from their inner content. For example, the accessible name for a {{HTMLElement('button')}}, {{HTMLElement('a')}}, or {{HTMLElement('td')}} comes from the text between the opening and closing tags. Other elements, such as form {{HTMLElement('textarea')}}, {{HTMLElement('fieldset')}}, and {{HTMLElement('table')}} get their accessible name from the content of associated elements; for these elements, the accessible name comes from the {{HTMLElement('label')}} with a `for` attribute, {{HTMLElement('legend')}}, and {{HTMLElement('caption')}} respectively.
+برخی از عناصر [نام دسترسی‌پذیر](https://w3c.github.io/accname/#dfn-accessible-name) خود را از محتوای داخلی خود دریافت می‌کنند. به عنوان مثال، نام دسترسی‌پذیر برای یک {{HTMLElement('button')}}، {{HTMLElement('a')}} یا {{HTMLElement('td')}} از متن بین تگ‌های باز و بسته می‌آید. عناصر دیگر، مانند {{HTMLElement('textarea')}}، {{HTMLElement('fieldset')}} و {{HTMLElement('table')}} فرم، نام دسترسی‌پذیر خود را از محتوای عناصر مرتبط دریافت می‌کنند؛ برای این عناصر، نام دسترسی‌پذیر از {{HTMLElement('label')}} با ویژگی `for`، {{HTMLElement('legend')}} و {{HTMLElement('caption')}} به ترتیب می‌آید.
 
-All interactive elements must have an accessible name. `aria-labelledby` can be used to reference another element to define its accessible name, when an element's accessible name needs to use content from elsewhere in the DOM.
+همه عناصر تعاملی باید یک نام دسترسی‌پذیر داشته باشند. `aria-labelledby` می‌تواند برای ارجاع به عنصر دیگری برای تعریف نام دسترسی‌پذیر آن استفاده شود، زمانی که نام دسترسی‌پذیر یک عنصر نیاز به استفاده از محتوای جای دیگری از DOM دارد.
 
-If there is no content that can be referenced to create an accessible name, the [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) attribute should be used instead.
+اگر هیچ محتوایی برای ارجاع برای ایجاد یک نام دسترسی‌پذیر وجود نداشته باشد، باید از ویژگی [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) استفاده شود.
 
-The purpose of `aria-labelledby` is the same as that of `aria-label`. It provides the user with a recognizable, accessible name for an interactive element. If an element has both attributes set, `aria-labelledby` will be used. `aria-labelledby` also takes precedence over most other methods of providing an accessible name, such as {{HTMLElement('label')}}, and the element's inner text. Note that {{domxref("Element.ariaLabelledByElements")}} has the highest precedence for setting the ARIA label.
+هدف `aria-labelledby` همان هدف `aria-label` است. این ویژگی یک نام دسترسی‌پذیر قابل تشخیص برای یک عنصر تعاملی در اختیار کاربر قرار می‌دهد. اگر یک عنصر هر دو ویژگی را داشته باشد، `aria-labelledby` استفاده خواهد شد. `aria-labelledby` همچنین بر اکثر روش‌های دیگر ارائه یک نام دسترسی‌پذیر، مانند {{HTMLElement('label')}} و متن داخلی عنصر، اولویت دارد. توجه داشته باشید که {{domxref("Element.ariaLabelledByElements")}} بالاترین اولویت را برای تنظیم برچسب ARIA دارد.
 
-The `aria-labelledby` and [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) attributes both reference other elements to calculate text alternatives. `aria-labelledby` should reference brief text that provides the element with an accessible name. `aria-describedby` is used to reference longer content that provides a description. If there is no element in the DOM that provides a brief label appropriate for an accessible name for an interactive element, use `aria-label` to define the accessible name for an interactive element.
+ویژگی‌های `aria-labelledby` و [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) هر دو به عناصر دیگر برای محاسبه جایگزین‌های متنی ارجاع می‌دهند. `aria-labelledby` باید به متنی کوتاه ارجاع دهد که یک نام دسترسی‌پذیر برای عنصر فراهم کند. `aria-describedby` برای ارجاع به محتوای طولانی‌تر که یک توضیح ارائه می‌دهد، استفاده می‌شود. اگر هیچ عنصری در DOM وجود نداشته باشد که یک برچسب کوتاه مناسب برای یک نام دسترسی‌پذیر برای یک عنصر تعاملی ارائه دهد، از `aria-label` برای تعریف نام دسترسی‌پذیر برای یک عنصر تعاملی استفاده کنید.
 
 > [!NOTE]
-> While in American English, "labeled" is spelled with one "l", the "labelledby" spelling has been established and is the spelling used in accessibility APIs.
+> در حالی که در انگلیسی آمریکایی، "labeled" با یک "l" نوشته می‌شود، املای "labelledby" تثبیت شده و املای مورد استفاده در API‌های دسترسی‌پذیری است.
 
-The following example uses `aria-labelledby` to provide an accessible name for a checkbox input by using the text content of a sibling element:
+مثال زیر از `aria-labelledby` برای ارائه یک نام دسترسی‌پذیر برای یک ورودی چک‌باکس با استفاده از محتوای متنی یک عنصر هم‌سطح استفاده می‌کند:
 
 ```html
 <span
@@ -44,12 +44,12 @@ The following example uses `aria-labelledby` to provide an accessible name for a
 ```
 
 > [!NOTE]
-> {{htmlelement("span")}} elements have the [`generic` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/generic_role) by default, and can't use `aria-labelledby` unless they also specify a role that can provide an accessible name.
-> Here we do that with `role="checkbox"`.
+> عناصر {{htmlelement("span")}} به طور پیش‌فرض نقش [`generic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/generic_role) را دارند و نمی‌توانند از `aria-labelledby` استفاده کنند مگر اینکه نقشی را مشخص کنند که بتواند یک نام دسترسی‌پذیر فراهم کند.
+> در اینجا این کار را با `role="checkbox"` انجام می‌دهیم.
 
-While using `aria-labelledby` is similar in this situation to using an HTML {{HTMLElement('label')}} element with the `for` attribute, there are some very important differences. The `aria-labelledby` attribute only defines the accessible name. It doesn't provide any of `<label>`'s other functionality, such as making clicking on the labeling element activate the input it is associated with. That has to be added back in with JavaScript.
+در حالی که استفاده از `aria-labelledby` در این شرایط مشابه استفاده از عنصر HTML {{HTMLElement('label')}} با ویژگی `for` است، تفاوت‌های بسیار مهمی وجود دارد. ویژگی `aria-labelledby` فقط نام دسترسی‌پذیر را تعریف می‌کند. هیچ‌یک از قابلیت‌های دیگر `<label>` را فراهم نمی‌کند، مانند اینکه کلیک روی عنصر برچسب‌گذار، ورودی مرتبط با آن را فعال کند. این قابلیت باید با JavaScript اضافه شود.
 
-Fortunately, the HTML {{HTMLElement('input')}} with `type="checkbox"` works with native `<label>`. When feasible, use the following:
+خوشبختانه، {{HTMLElement('input')}} HTML با `type="checkbox"` با `<label>` بومی کار می‌کند. در صورت امکان، از موارد زیر استفاده کنید:
 
 ```html
 <label for="tac">
@@ -59,18 +59,18 @@ Fortunately, the HTML {{HTMLElement('input')}} with `type="checkbox"` works with
 <p><a href="tac.html">Read our Terms and Conditions</a>.</p>
 ```
 
-### Benefits (and drawbacks)
+### مزایا (و معایب)
 
-1. The `aria-labelledby` property has the highest precedence when browsers calculate accessible names. Be aware that it overrides other methods of naming the element, including `aria-label`, other naming attributes, and even the element's contents.
+1. ویژگی `aria-labelledby` بالاترین اولویت را در هنگام محاسبه نام‌های دسترسی‌پذیر توسط مرورگرها دارد. توجه داشته باشید که این ویژگی بر سایر روش‌های نام‌گذاری عنصر، از جمله `aria-label`، سایر ویژگی‌های نام‌گذاری و حتی محتوای خود عنصر غلبه می‌کند.
 
    ```html
    <button aria-label="Blue" aria-labelledby="color">Red</button>
    <span id="color">Yellow</span>
    ```
 
-   In this example, that accessible name is "Yellow".
+   در این مثال، نام دسترسی‌پذیر "Yellow" است.
 
-2. The `aria-labelledby` property takes as value a space-separated id reference list, which means you can combine more than one element into a single accessible name. You can include the [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) of the element itself to reference its own content.
+2. ویژگی `aria-labelledby` یک لیست مرجع id با فاصله جدا شده را به عنوان مقدار می‌پذیرد، به این معنی که می‌توانید بیش از یک عنصر را در یک نام دسترسی‌پذیر واحد ترکیب کنید. می‌توانید [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) خود عنصر را برای ارجاع به محتوای خودش درج کنید.
 
    ```html
    <h2 id="attr" class="article-title">13 ARIA attributes you need to know</h2>
@@ -80,40 +80,40 @@ Fortunately, the HTML {{HTMLElement('input')}} with `type="checkbox"` works with
    </p>
    ```
 
-   In this example, the accessible name is "read more 13 ARIA attributes you need to know".
+   در این مثال، نام دسترسی‌پذیر "read more 13 ARIA attributes you need to know" است.
 
-3. The `aria-labelledby` property value order matters. When more than one element is referenced by `aria-labelledby`, the content from each referenced element is combined in the order that they are referenced in the `aria-labelledby` value. Had we written `aria-labelledby="attr rm13">`, the accessible name would have been "13 ARIA attributes you need to know read more".
+3. ترتیب مقدار ویژگی `aria-labelledby` مهم است. هنگامی که بیش از یک عنصر توسط `aria-labelledby` ارجاع داده می‌شود، محتوای هر عنصر ارجاع داده شده به ترتیبی که در مقدار `aria-labelledby` ارجاع داده شده‌اند، ترکیب می‌شود. اگر `aria-labelledby="attr rm13">` می‌نوشتیم، نام دسترسی‌پذیر "13 ARIA attributes you need to know read more" می‌شد.
 
-4. The `aria-labelledby` property ignores repeated `id`s in its value. If an element is referenced more than one time, only the first reference is processed. `aria-labelledby="attr attr rm13 rm13">` is treated as `aria-labelledby="attr rm13">`
+4. ویژگی `aria-labelledby` از `id`های تکراری در مقدار خود چشم‌پوشی می‌کند. اگر یک عنصر بیش از یک بار ارجاع داده شود، فقط اولین ارجاع پردازش می‌شود. `aria-labelledby="attr attr rm13 rm13">` به عنوان `aria-labelledby="attr rm13">` در نظر گرفته می‌شود.
 
-5. The `aria-labelledby` property value can include content from elements that aren't even visible. While you should provide assistive technology users with the same content as all other users, you can include content from elements with the HTML [`hidden`](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) attribute, CSS [`display: none`](/en-US/docs/Web/CSS/Reference/Properties/display), and CSS [`visibility: hidden`](/en-US/docs/Web/CSS/Reference/Properties/visibility) in the calculated name string.
+5. مقدار ویژگی `aria-labelledby` می‌تواند شامل محتوایی از عناصری باشد که حتی قابل مشاهده نیستند. در حالی که باید به کاربران فناوری کمکی همان محتوایی را ارائه دهید که به سایر کاربران می‌دهید، می‌توانید محتوایی از عناصر با ویژگی HTML [`hidden`](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden)، CSS [`display: none`](/en-US/docs/Web/CSS/Reference/Properties/display) و CSS [`visibility: hidden`](/en-US/docs/Web/CSS/Reference/Properties/visibility) را در رشته نام محاسبه شده بگنجانید.
 
-6. The `aria-labelledby` property incorporates the value of input elements. If the value references an `<input>`, the current value of the form control is included in the calculated name string, changing if the value is updated.
+6. ویژگی `aria-labelledby` مقدار عناصر ورودی را در خود جای می‌دهد. اگر مقدار به یک `<input>` ارجاع دهد، مقدار فعلی کنترل فرم در رشته نام محاسبه شده گنجانده می‌شود و در صورت به‌روزرسانی مقدار تغییر می‌کند.
 
-7. The `aria-labelledby` property cannot be chained. If an element with `aria-labelledby` references another element that also has `aria-labelledby`, the `aria-labelledby` attribute on the referenced element is ignored.
+7. ویژگی `aria-labelledby` قابل زنجیره‌سازی نیست. اگر یک عنصر با `aria-labelledby` به عنصر دیگری که `aria-labelledby` نیز دارد ارجاع دهد، ویژگی `aria-labelledby` روی عنصر ارجاع داده شده نادیده گرفته می‌شود.
 
 > [!WARNING]
-> Because calculating the name of an element with `aria-labelledby` can be complex and reference hidden content, testing with assistive technologies to ensure the expected name is presented to users is very important.
+> از آنجایی که محاسبه نام یک عنصر با `aria-labelledby` می‌تواند پیچیده باشد و به محتوای پنهان ارجاع دهد، آزمایش با فناوری‌های کمکی برای اطمینان از اینکه نام مورد انتظار به کاربران ارائه می‌شود، بسیار مهم است.
 
-## Values
+## مقادیر
 
-- ID reference list
-  - : Space separated list of one or more ID values referencing the elements that label the current element.
+- لیست مرجع ID
+  - : لیست جدا شده با فاصله از یک یا چند مقدار ID که به عناصری که عنصر فعلی را برچسب‌گذاری می‌کنند، ارجاع می‌دهد.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaLabelledByElements")}}
-  - : The `ariaLabelledByElements` property is part of each element's interface.
-    Its value is an array of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-labelledby` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaLabelledByElements` بخشی از رابط هر عنصر است.
+    مقدار آن آرایه‌ای از زیرکلاس‌های {{domxref("Element")}} است که ارجاع‌های `id` در ویژگی `aria-labelledby` را منعکس می‌کند ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 - {{domxref("ElementInternals.ariaLabelledByElements")}}
-  - : The `ariaLabelledByElements` property is part of each custom element's interface.
-    Its value is an array of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-labelledby` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaLabelledByElements` بخشی از رابط هر عنصر سفارشی است.
+    مقدار آن آرایه‌ای از زیرکلاس‌های {{domxref("Element")}} است که ارجاع‌های `id` در ویژگی `aria-labelledby` را منعکس می‌کند ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in almost all roles **except** roles that can not be provided an accessible name by the author.
+در تقریباً همه نقش‌ها استفاده می‌شود **به جز** نقش‌هایی که نمی‌توانند توسط نویسنده یک نام دسترسی‌پذیر دریافت کنند.
 
-The `aria-labelledby` attribute is **NOT** supported in:
+ویژگی `aria-labelledby` در موارد زیر **پشتیبانی نمی‌شود**:
 
 - [`caption`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles)
 - [`code`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles)
@@ -131,14 +131,14 @@ The `aria-labelledby` attribute is **NOT** supported in:
 - [`term`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/term_role)
 - [`time`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement('label')}} element
-- HTML {{HTMLElement('legend')}} element
-- HTML {{HTMLElement('caption')}} element
+- عنصر HTML {{HTMLElement('label')}}
+- عنصر HTML {{HTMLElement('legend')}}
+- عنصر HTML {{HTMLElement('caption')}}
 - [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
 - [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby)
