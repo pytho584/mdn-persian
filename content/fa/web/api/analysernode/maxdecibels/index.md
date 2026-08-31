@@ -1,7 +1,7 @@
 ---
 title: "AnalyserNode: maxDecibels property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/maxDecibels"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,23 +14,23 @@ browser-compat: api.AnalyserNode.maxDecibels
 
 {{APIRef("Web Audio API")}}
 
-The **`maxDecibels`** property of the {{domxref("AnalyserNode")}} interface is a double value representing the maximum power value in the scaling range for the FFT analysis data, for conversion to unsigned byte values — basically, this specifies the maximum value for the range of results when using `getByteFrequencyData()`.
+ویژگی **`maxDecibels`** از رابط {{domxref("AnalyserNode")}} یک مقدار double است که حداکثر مقدار توان را در محدوده مقیاس‌بندی داده‌های تحلیل FFT، برای تبدیل به مقادیر بایت بدون علامت، نشان می‌دهد — به عبارت ساده، این حداکثر مقدار برای محدوده نتایج هنگام استفاده از `getByteFrequencyData()` را مشخص می‌کند.
 
-## Value
+## مقدار
 
-A double, representing the maximum [decibel](https://en.wikipedia.org/wiki/Decibel) value for scaling the FFT analysis data, where `0` dB is the loudest possible sound, `-10` dB is a 10th of that, etc. The default value is `-30` dB.
+یک double، که حداکثر مقدار [دسیبل](https://en.wikipedia.org/wiki/Decibel) را برای مقیاس‌بندی داده‌های تحلیل FFT نشان می‌دهد، جایی که `0` dB بلندترین صدای ممکن است، `10-` dB یک‌دهم آن است و غیره. مقدار پیش‌فرض `30-` dB است.
 
-When getting data from `getByteFrequencyData()`, any frequencies with an amplitude of `maxDecibels` or higher will be returned as `255`.
+هنگام دریافت داده‌ها از `getByteFrequencyData()`، هر فرکانسی با دامنه `maxDecibels` یا بالاتر به صورت `255` برگردانده می‌شود.
 
-### Exceptions
+### استثناها
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if a value less than or equal to `AnalyserNode.minDecibels` is set.
+  - : اگر مقداری کمتر یا مساوی با `AnalyserNode.minDecibels` تنظیم شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example shows basic usage of an {{domxref("AudioContext")}} to create an `AnalyserNode`, then {{domxref("window.requestAnimationFrame()","requestAnimationFrame")}} and {{htmlelement("canvas")}} to collect frequency data repeatedly and draw a "winamp bar graph style" output of the current audio input.
-For more complete applied examples/information, check out our [Voice-change-O-matic](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) demo (see [app.js lines 108–193](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js#L108-L193) for relevant code).
+مثال زیر کاربرد پایه‌ای از یک {{domxref("AudioContext")}} برای ایجاد یک `AnalyserNode`، سپس {{domxref("window.requestAnimationFrame()","requestAnimationFrame")}} و {{htmlelement("canvas")}} برای جمع‌آوری مکرر داده‌های فرکانس و رسم خروجی «سبک نمودار میله‌ای winamp» از ورودی صوتی فعلی را نشان می‌دهد.
+برای مثال‌ها/اطلاعات کاربردی کامل‌تر، دموی [Voice-change-O-matic](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) ما را ببینید (برای کدهای مرتبط، [خطوط ۱۰۸–۱۹۳ app.js](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js#L108-L193) را مشاهده کنید).
 
 ```js
 const audioCtx = new AudioContext();
@@ -72,14 +72,14 @@ function draw() {
 draw();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
