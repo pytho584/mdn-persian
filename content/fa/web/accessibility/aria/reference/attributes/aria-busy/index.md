@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-busy attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,43 +13,43 @@ spec-urls: https://w3c.github.io/aria/#aria-busy
 sidebar: accessibilitysidebar
 ---
 
-The `aria-busy` attribute is a global ARIA state that indicates whether an element is currently being modified.
-It helps assistive technologies understand that changes to the content are not yet complete, and that they may want to wait before informing users of the update.
-While `aria-busy` is commonly used in [ARIA live regions](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) to delay announcements until updates are complete, it can also be used outside of live regions—for example, in widgets or feeds—to signal ongoing changes or loading.
+ویژگی `aria-busy` یک وضعیت ARIA سراسری است که نشان می‌دهد آیا یک عنصر در حال تغییر است یا خیر.
+این ویژگی به فناوری‌های کمکی کمک می‌کند تا بفهمند تغییرات محتوا هنوز کامل نشده‌اند و ممکن است بخواهند قبل از اطلاع‌رسانی به کاربران درباره به‌روزرسانی صبر کنند.
+در حالی که `aria-busy` معمولاً در [مناطق زنده ARIA](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) استفاده می‌شود تا اعلان‌ها را تا تکمیل به‌روزرسانی‌ها به تأخیر بیندازد، می‌توان از آن در خارج از مناطق زنده نیز استفاده کرد - به عنوان مثال، در ویجت‌ها یا فیدها - برای نشان دادن تغییرات در حال انجام یا بارگذاری.
 
-When multiple parts of a live region need to be loaded before changes are announced to the user, set `aria-busy="true"` until loading is complete. Then set to `aria-busy="false"`. This prevents assistive technologies from announcing changes before updates are done.
+هنگامی که چندین بخش از یک منطقه زنده باید قبل از اعلام تغییرات به کاربر بارگذاری شوند، `aria-busy="true"` را تا پایان بارگذاری تنظیم کنید. سپس `aria-busy="false"` را تنظیم کنید. این کار از اعلام تغییرات توسط فناوری‌های کمکی قبل از تکمیل به‌روزرسانی‌ها جلوگیری می‌کند.
 
-## Description
+## توضیحات
 
-There is a section of content that updates. The updates are important and you want to let the user know when it has been modified, so you have converted it into an [ARIA live region](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) with the [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) attribute. You may want to update several components of that section at the same time, but you can't be sure that everything will update simultaneously. Even if it is a very important live region with `aria-live="assertive"`, you don't want to interrupt the user multiple times as different parts of the content load. This is where `aria-busy` can help.
+بخشی از محتوا وجود دارد که به‌روزرسانی می‌شود. به‌روزرسانی‌ها مهم هستند و می‌خواهید کاربر را از تغییر آن مطلع کنید، بنابراین آن را با ویژگی [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) به یک [منطقه زنده ARIA](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) تبدیل کرده‌اید. ممکن است بخواهید چندین مؤلفه از آن بخش را همزمان به‌روزرسانی کنید، اما نمی‌توانید مطمئن باشید که همه چیز به طور همزمان به‌روزرسانی می‌شود. حتی اگر یک منطقه زنده بسیار مهم با `aria-live="assertive"` باشد، نمی‌خواهید با بارگذاری بخش‌های مختلف محتوا، چندین بار کاربر را قطع کنید. اینجا جایی است که `aria-busy` می‌تواند کمک کند.
 
-The `aria-busy` property is an optional property of live regions that can have the value `true` or `false`. The `aria-busy` attribute with a value of `true` can be added to an element currently being updated or modified, to inform the assistive technology that it should wait until the modifications or changes are complete before exposing the content to the user. Use the [`ariaBusy`](/en-US/docs/Web/API/Element/ariaBusy) property of the object to change the value to `false` when downloading is complete.
+ویژگی `aria-busy` یک ویژگی اختیاری مناطق زنده است که می‌تواند مقدار `true` یا `false` داشته باشد. ویژگی `aria-busy` با مقدار `true` می‌تواند به عنصری که در حال به‌روزرسانی یا تغییر است اضافه شود تا به فناوری کمکی اطلاع دهد که باید صبر کند تا تغییرات یا اصلاحات کامل شوند، سپس محتوا را به کاربر نمایش دهد. از ویژگی [`ariaBusy`](/en-US/docs/Web/API/Element/ariaBusy) شیء برای تغییر مقدار به `false` هنگامی که دانلود کامل شد استفاده کنید.
 
 ```js
 ariaLiveElement.ariaBusy = "false";
 ```
 
-[`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live)'s value dictates whether the changes are announced immediately upon changing the value to `false`, or the assistive technology waits until the current task is complete before interrupting the user.
+مقدار [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) تعیین می‌کند که آیا تغییرات بلافاصله پس از تغییر مقدار به `false` اعلام می‌شوند یا فناوری کمکی تا تکمیل وظیفه فعلی صبر می‌کند و سپس کاربر را قطع می‌کند.
 
-### Within a `feed`
+### درون یک `feed`
 
-If an element with [`feed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/feed_role) role has `aria-busy` set to `true`, the rendering changes that occur inside the feed will not be announced with the exception of user-initiated changes.
+اگر یک عنصر با نقش [`feed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/feed_role) دارای `aria-busy` تنظیم شده به `true` باشد، تغییرات رندر که در داخل فید رخ می‌دهد، به جز تغییرات آغاز شده توسط کاربر، اعلام نخواهد شد.
 
-### Within a `widget`
+### درون یک `widget`
 
-If changes to a rendered widget would create a state where the widget is missing required owned elements during script execution, set `aria-busy` to `true` on the widget during the update process. For example, if a rendered tree grid updates multiple branches not necessarily rendered simultaneously, an alternative to replacing the whole tree in a single update would be to mark the tree busy while each of the branches is modified.
+اگر تغییرات در یک ویجت رندر شده حالتی ایجاد کند که ویجت در طول اجرای اسکریپت فاقد عناصر وابسته مورد نیاز باشد، در طول فرآیند به‌روزرسانی، `aria-busy` را روی ویجت به `true` تنظیم کنید. به عنوان مثال، اگر یک درخت شبکه رندر شده چندین شاخه را به‌روزرسانی کند که لزوماً به طور همزمان رندر نمی‌شوند، جایگزینی برای جایگزینی کل درخت در یک به‌روزرسانی واحد، علامت‌گذاری درخت به عنوان مشغول در حالی که هر یک از شاخه‌ها اصلاح می‌شود، است.
 
-## Values
+## مقادیر
 
-- false (default):
-  - : There are no expected updates for the element.
+- false (پیش‌فرض):
+  - هیچ به‌روزرسانی مورد انتظاری برای عنصر وجود ندارد.
 - true
-  - : The element is being updated.
+  - عنصر در حال به‌روزرسانی است.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaBusy")}}
-  - : The [`ariaBusy`](/en-US/docs/Web/API/Element/ariaBusy) property, part of each element's interface, reflects the value of the `aria-busy` attribute, which indicates whether an element is being modified.
+  - ویژگی [`ariaBusy`](/en-US/docs/Web/API/Element/ariaBusy)، بخشی از رابط هر عنصر، مقدار ویژگی `aria-busy` را منعکس می‌کند که نشان می‌دهد آیا یک عنصر در حال تغییر است.
 
 ```html
 <div
@@ -67,17 +67,17 @@ el.ariaBusy = "true";
 console.log(el.ariaBusy); // true
 ```
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** roles
+استفاده شده در **همه** نقش‌ها
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA live regions](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
+- [مناطق زنده ARIA](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
 - [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live)
 - [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant)
 - [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic)
