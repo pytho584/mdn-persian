@@ -1,7 +1,7 @@
 ---
 title: "Registering attribution sources"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,25 +14,26 @@ status:
 
 {{DefaultAPISidebar("Attribution Reporting API")}}{{deprecated_header}}
 
-This article explains how to register attribution sources when using the [Attribution Reporting API](/en-US/docs/Web/API/Attribution_Reporting_API).
+این مقاله نحوه ثبت منبع‌های انتساب را هنگام استفاده از [Attribution Reporting API](/en-US/docs/Web/API/Attribution_Reporting_API) توضیح می‌دهد.
 
-## Basic methodology
+## روش‌شناسی پایه
 
-Attribution sources take the form of links, images, or scripts contained within content that you want to measure interactions with (for example, they might be ads that you want to measure conversions on). These cause the browser to store source data in a private local cache (accessible only by the browser) when specific user interactions occur. The different attribution source types are registered and signal interactions in different ways — they are differentiated as:
+منبع‌های انتساب به شکل پیوندها، تصاویر یا اسکریپت‌هایی هستند که در محتوایی قرار دارند که می‌خواهید تعاملات با آن‌ها را اندازه‌گیری کنید (مثلاً ممکن است تبلیغاتی باشند که می‌خواهید تبدیل‌های آن‌ها را اندازه‌گیری کنید). این‌ها باعث می‌شوند مرورگر داده‌های منبع را در حافظهٔ پنهان محلی خصوصی (که فقط مرورگر به آن دسترسی دارد) زمانی که تعاملات خاص کاربر رخ می‌دهد ذخیره کند. انواع مختلف منبع انتساب به روش‌های مختلفی ثبت می‌شوند و تعاملات را نشان می‌دهند — به این صورت تفکیک می‌شوند:
 
-- Navigation sources, which cause the browser to store source data in response to navigation — for example when the user clicks on a link or activates it with the keyboard, or when a navigation occurs as a result of a {{domxref("Window.open()")}} call. See [Navigation-based attribution sources](#navigation-based_attribution_sources) for examples.
-- Event sources, which cause the browser to store source data in response to events firing. See [Event-based attribution sources](#event-based_attribution_sources) for examples.
+- **منابع ناوبری**، که باعث می‌شوند مرورگر داده‌های منبع را در پاسخ به ناوبری ذخیره کند — برای مثال وقتی کاربر روی یک پیوند کلیک می‌کند یا آن را با صفحه‌کلید فعال می‌کند، یا زمانی که در نتیجه یک فراخوانی {{domxref("Window.open()")}} ناوبری رخ می‌دهد. برای مثال‌ها به [منابع انتساب مبتنی بر ناوبری](#navigation-based_attribution_sources) مراجعه کنید.
+- **منابع رویدادی**، که باعث می‌شوند مرورگر داده‌های منبع را در پاسخ به رخ دادن رویدادها ذخیره کند. برای مثال‌ها به [منابع انتساب مبتنی بر رویداد](#event-based_attribution_sources) مراجعه کنید.
 
-What happens behind the scenes to register sources and retrieve and store the source data is the same in both cases:
+آنچه در پشت صحنه برای ثبت منبع‌ها و بازیابی و ذخیره داده‌های منبع اتفاق می‌افتد، در هر دو مورد یکسان است:
 
-1. When the user interacts with an attribution source, it sends an {{httpheader("Attribution-Reporting-Eligible")}} header on a request to the server measuring the interactions (typically the advertiser's server), which indicates that the response is eligible to register a source. For example:
+1. وقتی کاربر با یک منبع انتساب تعامل می‌کند، یک هدر {{httpheader("Attribution-Reporting-Eligible")}} در یک درخواست به سروری که تعاملات را اندازه‌گیری می‌کند (معمولاً سرور تبلیغ‌کننده) ارسال می‌شود که نشان می‌دهد پاسخ واجد شرایط ثبت یک منبع است. برای مثال:
 
    ```http
    Attribution-Reporting-Eligible: navigation-source
    ```
 
-2. When the server receives a request that includes an `Attribution-Reporting-Eligible` header, it can include an {{httpheader("Attribution-Reporting-Register-Source")}} header along with the response to complete source registration. Its value is a JSON string that provides the information the browser should store about the attribution source that was interacted with. The information included in this header also determines which types of report the browser will generate:
-   - The following example will cause an [event-level report](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#event-level_reports) to be generated when a [trigger](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_triggers) is matched to a source:
+2. وقتی سرور درخواستی دریافت می‌کند که شامل هدر `Attribution-Reporting-Eligible` است، می‌تواند یک هدر {{httpheader("Attribution-Reporting-Register-Source")}} را همراه با پاسخ برای تکمیل ثبت منبع اضافه کند. مقدار آن یک رشته JSON است که اطلاعاتی را که مرورگر باید درباره منبع انتسابی که با آن تعامل شده است ذخیره کند، فراهم می‌کند. اطلاعات موجود در این هدر همچنین تعیین می‌کند که مرورگر چه نوع گزارش‌هایی تولید خواهد کرد:
+
+   - مثال زیر باعث می‌شود وقتی یک [ماشه](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_triggers) به یک منبع تطبیق داده می‌شود، یک [گزارش سطح رویداد](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#event-level_reports) تولید شود:
 
      ```js
      res.set(
@@ -50,20 +51,23 @@ What happens behind the scenes to register sources and retrieve and store the so
      );
      ```
 
-     The only required field in this context is `destination`, which specifies 1–3 sites on which a trigger is expected to occur. These are used to match the attribution trigger to the source when a trigger is interacted with. The other fields specified above do the following:
-     - `"source_event_id"`: A string representing an ID for the attribution source, which can be used to map it to other information when the attribution source is interacted with, or aggregate information at the reporting endpoint (see [Generating reports > Basic process](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#basic_process) for endpoint information).
-     - `"trigger_data"`: An array of 32-bit unsigned integers representing data that describes the different trigger events that could match this source. For example, "user added item to shopping cart" or "user signed up to mailing list" could be actions happening at the trigger site that could match this source and indicate a conversion of some kind that the advertiser is trying to measure. These must be matched against `"trigger_data"` specified in [triggers](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Trigger#trigger_data) for event-level attribution to take place.
+     در این زمینه، تنها فیلد الزامی `destination` است که ۱ تا ۳ سایتی را مشخص می‌کند که انتظار می‌رود یک ماشه در آن‌ها رخ دهد. این‌ها برای تطبیق ماشه انتساب با منبع در زمانی که با یک ماشه تعامل می‌شود استفاده می‌شوند. سایر فیلدهای ذکرشده در بالا کارهای زیر را انجام می‌دهند:
+
+     - `"source_event_id"`: رشته‌ای که یک شناسه برای منبع انتساب را نشان می‌دهد؛ می‌توان از آن برای نگاشت به اطلاعات دیگر هنگام تعامل با منبع انتساب استفاده کرد، یا برای تجمیع اطلاعات در نقطه پایانی گزارش (برای اطلاعات نقطه پایانی به [تولید گزارش‌ها > فرایند پایه](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#basic_process) مراجعه کنید).
+     - `"trigger_data"`: آرایه‌ای از اعداد صحیح بدون علامت ۳۲ بیتی که داده‌هایی را نشان می‌دهد که رویدادهای مختلف ماشه را توصیف می‌کند که می‌توانند با این منبع تطبیق یابند. برای مثال، «کاربر موردی را به سبد خرید اضافه کرد» یا «کاربر در فهرست پستی ثبت‌نام کرد» می‌توانند اقداماتی باشند که در سایت ماشه رخ می‌دهند، با این منبع تطبیق می‌یابند و نوعی تبدیل را نشان می‌دهند که تبلیغ‌کننده در تلاش است آن را اندازه‌گیری کند. برای انجام انتساب سطح رویداد، این موارد باید با `"trigger_data"` مشخص‌شده در [ماشه‌ها](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Trigger#trigger_data) تطبیق داده شوند.
+
        > [!NOTE]
-       > The values used to represent each event, and the number of elements in the array, are completely arbitrary and defined by you as the developer. The array may contain values that are not used, but values must be present in the array to be attributed to the source by the browser when a trigger is registered.
-     - `"trigger_data_matching"`: A string that specifies how the `"trigger_data"` from the trigger is matched against the source's `"trigger_data"`. `"exact"` is the value you'll nearly always use, which matches exact values.
-     - `"expiry"`: A string representing an expiry time in seconds for the attribution source, after which it will no longer be active (i.e., subsequent triggers won't be attributable to this source).
-     - `"priority"`: A string representing a priority value for the attribution source. See [Report priorities and limits](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#report_priorities_and_limits) for more information.
-     - `"debug_key"`: A base-10-formatted 64-bit unsigned integer representing a debug key. Set this if you want to generate a [debug report](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#debug_reports) alongside the associated attribution report.
-     - `"event_report_window"`: A string representing a time in seconds, after which subsequent triggers won't be attributable to this source for the purpose of producing event-level reports.
+       > مقادیری که برای نمایش هر رویداد استفاده می‌شوند و تعداد عناصر آرایه، کاملاً اختیاری هستند و توسط شما به‌عنوان توسعه‌دهنده تعریف می‌شوند. آرایه ممکن است حاوی مقادیری باشد که استفاده نمی‌شوند، اما برای اینکه مرورگر هنگام ثبت یک ماشه، مقادیر را به منبع نسبت دهد، مقادیر باید در آرایه وجود داشته باشند.
 
-     See {{httpheader("Attribution-Reporting-Register-Source")}} for a detailed description of all the fields available on this header.
+     - `"trigger_data_matching"`: رشته‌ای که مشخص می‌کند چگونه `"trigger_data"` از ماشه با `"trigger_data"` منبع تطبیق داده می‌شود. `"exact"` مقداری است که تقریباً همیشه از آن استفاده خواهید کرد، که مقادیر دقیق را تطبیق می‌دهد.
+     - `"expiry"`: رشته‌ای که زمان انقضا را بر حسب ثانیه برای منبع انتساب نشان می‌دهد؛ پس از آن منبع دیگر فعال نخواهد بود (یعنی ماشه‌های بعدی به این منبع قابل انتساب نخواهند بود).
+     - `"priority"`: رشته‌ای که مقدار اولویت را برای منبع انتساب نشان می‌دهد. برای اطلاعات بیشتر به [اولویت‌ها و محدودیت‌های گزارش](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#report_priorities_and_limits) مراجعه کنید.
+     - `"debug_key"`: یک عدد صحیح بدون علامت ۶۴ بیتی با قالب پایه ۱۰ که یک کلید اشکال‌زدایی را نشان می‌دهد. اگر می‌خواهید یک [گزارش اشکال‌زدایی](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#debug_reports) همراه با گزارش انتساب مربوطه تولید کنید، این مقدار را تنظیم کنید.
+     - `"event_report_window"`: رشته‌ای که زمانی را بر حسب ثانیه نشان می‌دهد؛ پس از آن، ماشه‌های بعدی برای هدف تولید گزارش‌های سطح رویداد به این منبع قابل انتساب نخواهند بود.
 
-   - To make the browser generate a [summary report](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#summary_reports) when a trigger is matched to a source, you need to include some extra fields, _in addition_ to those required for generating an event-level report.
+     برای توضیح دقیق همه فیلدهای موجود در این هدر، به {{httpheader("Attribution-Reporting-Register-Source")}} مراجعه کنید.
+
+   - برای اینکه مرورگر وقتی یک ماشه به یک منبع تطبیق داده می‌شود یک [گزارش خلاصه](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports#summary_reports) تولید کند، باید برخی فیلدهای اضافی را _علاوه بر_ فیلدهای لازم برای تولید گزارش سطح رویداد شامل کنید.
 
      ```js
      res.set(
@@ -87,27 +91,28 @@ What happens behind the scenes to register sources and retrieve and store the so
      );
      ```
 
-     The additional fields in this example are:
-     - `"aggregation_keys"`: An object containing user-provided keys representing different data points to aggregate report values under.
-     - `"aggregatable_report_window"`: A string representing a time in seconds after which trigger data will no longer be included in generated aggregatable reports.
+     فیلدهای اضافی در این مثال عبارت‌اند از:
 
-     Again, see {{httpheader("Attribution-Reporting-Register-Source")}} for a detailed description of all the fields available on this header.
+     - `"aggregation_keys"`: یک شیء حاوی کلیدهای ارائه‌شده توسط کاربر که نقاط داده‌ای مختلف را برای تجمیع مقادیر گزارش زیر آن‌ها نشان می‌دهند.
+     - `"aggregatable_report_window"`: رشته‌ای که زمانی را بر حسب ثانیه نشان می‌دهد؛ پس از آن داده‌های ماشه دیگر در گزارش‌های قابل تجمیع تولیدشده گنجانده نخواهند شد.
 
-3. After a successful source registration occurs, the browser stores the provided source data in its private local cache.
+     باز هم، برای توضیح دقیق همه فیلدهای موجود در این هدر به {{httpheader("Attribution-Reporting-Register-Source")}} مراجعه کنید.
 
-## Navigation-based attribution sources
+3. پس از انجام موفقیت‌آمیز ثبت منبع، مرورگر داده‌های منبع ارائه‌شده را در حافظه پنهان محلی خصوصی خود ذخیره می‌کند.
 
-Navigation sources are useful for measuring interactions with links — for example, a user may see an ad on a publisher's page, and click it to navigate to the advertiser's page where a conversion will hopefully occur.
+## منابع انتساب مبتنی بر ناوبری
 
-There are a couple of different types of navigation-based attribution sources (for example, clicking on an ad) that can be registered — those based on HTML (which use the `attributionsrc` attribute) and those based on {{domxref("Window.open()")}} calls (which use an `attributionsrc` window feature).
+منابع ناوبری برای اندازه‌گیری تعامل با پیوندها مفید هستند — برای مثال، ممکن است کاربر تبلیغی را در صفحه یک ناشر ببیند و روی آن کلیک کند تا به صفحه تبلیغ‌کننده برود جایی که امید است تبدیلی رخ دهد.
 
-### HTML-based navigation sources
+چند نوع مختلف از منابع انتساب مبتنی بر ناوبری (مثلاً کلیک روی یک تبلیغ) وجود دارد که می‌توانند ثبت شوند — آن‌هایی که مبتنی بر HTML هستند (که از ویژگی `attributionsrc` استفاده می‌کنند) و آن‌هایی که مبتنی بر فراخوانی‌های {{domxref("Window.open()")}} هستند (که از ویژگی پنجره `attributionsrc` استفاده می‌کنند).
 
-To register a navigation-based attribution source you can add the `attributionsrc` attribute to an appropriate {{htmlelement("a")}} element, which specifies where the registration request will be sent.
+### منابع ناوبری مبتنی بر HTML
 
-If you leave the attribute value blank, the registration request will be sent to the location being linked to. It is also possible to specify one or more additional URLs inside the value to send the registration request to; see the [Specifying URLs inside attributionsrc](#specifying_urls_inside_attributionsrc) for more details.
+برای ثبت یک منبع انتساب مبتنی بر ناوبری، می‌توانید ویژگی `attributionsrc` را به یک عنصر مناسب {{htmlelement("a")}} اضافه کنید، که مشخص می‌کند درخواست ثبت به کجا ارسال خواهد شد.
 
-`attributionsrc` can be added declaratively:
+اگر مقدار ویژگی را خالی بگذارید، درخواست ثبت به مقصدی که به آن پیوند داده شده ارسال می‌شود. همچنین امکان تعیین یک یا چند URL اضافی در داخل مقدار وجود دارد تا درخواست ثبت به آن‌ها ارسال شود؛ برای جزئیات بیشتر به [تعیین URLها در داخل attributionsrc](#specifying_urls_inside_attributionsrc) مراجعه کنید.
+
+`attributionsrc` را می‌توان به‌صورت اعلانی اضافه کرد:
 
 ```html
 <a href="https://shop.example" attributionsrc target="_blank">
@@ -115,18 +120,18 @@ If you leave the attribute value blank, the registration request will be sent to
 </a>
 ```
 
-Or via the {{domxref("HTMLAnchorElement.attributionSrc")}} property:
+یا از طریق ویژگی {{domxref("HTMLAnchorElement.attributionSrc")}}:
 
 ```js
 const aElem = document.querySelector("a");
 aElem.attributionSrc = "";
 ```
 
-In this case, the interaction occurs, causing the browser to store the source data associated with the navigation-based attribution source (as provided in the {{httpheader("Attribution-Reporting-Register-Source")}} response header) when the user clicks the link and the browser receives the response.
+در این حالت، تعامل رخ می‌دهد و باعث می‌شود مرورگر داده‌های منبع مرتبط با منبع انتساب مبتنی بر ناوبری (طبق آنچه در هدر پاسخ {{httpheader("Attribution-Reporting-Register-Source")}} ارائه شده) را زمانی ذخیره کند که کاربر روی پیوند کلیک کند و مرورگر پاسخ را دریافت کند.
 
-### Window.open()-based navigation sources
+### منابع ناوبری مبتنی بر Window.open()
 
-You can also add the `attributionsrc` feature keyword to the features property of a {{domxref("Window.open()")}} call. In this example we run it in response to a `click` event being fired:
+همچنین می‌توانید کلمه کلیدی ویژگی `attributionsrc` را به ویژگی features یک فراخوانی {{domxref("Window.open()")}} اضافه کنید. در این مثال، ما آن را در پاسخ به رخداد یک رویداد `click` اجرا می‌کنیم:
 
 ```js
 elem.addEventListener("click", () => {
@@ -134,61 +139,61 @@ elem.addEventListener("click", () => {
 });
 ```
 
-In this case, the interaction occurs and the browser stores the source data when `Window.open()` is invoked, and the browser receives the response.
+در این حالت، تعامل رخ می‌دهد و مرورگر داده‌های منبع را زمانی ذخیره می‌کند که `Window.open()` فراخوانی شود و مرورگر پاسخ را دریافت کند.
 
 > [!NOTE]
-> When setting up a [`click`](/en-US/docs/Web/API/Element/click_event) event like in the above example, it is advisable to set it on a control where a click is expected, such as a {{htmlelement("button")}} or {{htmlelement("a")}} element. This makes more sense semantically, and is more accessible to both screen reader and keyboard users.
+> هنگام راه‌اندازی یک رویداد [`click`](/en-US/docs/Web/API/Element/click_event) مانند مثال بالا، بهتر است آن را روی کنترلی تنظیم کنید که در آن کلیک مورد انتظار است، مانند یک عنصر {{htmlelement("button")}} یا {{htmlelement("a")}}. این کار از نظر معنایی منطقی‌تر است و برای کاربران صفحه‌خوان و صفحه‌کلید در دسترس‌تر است.
 
 > [!NOTE]
-> To register an attribution source via `open()`, it must be called with [transient activation](/en-US/docs/Glossary/Transient_activation) (i.e., inside a user interaction event handler such as `click`) within five seconds of user interaction.
+> برای ثبت یک منبع انتساب از طریق `open()`، باید آن را با [فعال‌سازی گذرا](/en-US/docs/Glossary/Transient_activation) (یعنی در داخل یک کنترل‌کننده رویداد تعامل کاربر مانند `click`) در عرض پنج ثانیه از تعامل کاربر فراخوانی کرد.
 
-## Event-based attribution sources
+## منابع انتساب مبتنی بر رویداد
 
-Event-based attribution sources cause the browser to store source data in response to some kind of event firing, such as the `load` event in the case of an `<img>` or `<script>` element (which use the `attributionsrc` attribute like we saw above with the `<a>` element), or a custom event of your choice set in your JavaScript.
+منابع انتساب مبتنی بر رویداد باعث می‌شوند مرورگر داده‌های منبع را در پاسخ به رخ دادن نوعی رویداد ذخیره کند، مانند رویداد `load` در مورد یک عنصر `<img>` یا `<script>` (که از ویژگی `attributionsrc` مانند آنچه در بالا با عنصر `<a>` دیدیم استفاده می‌کنند)، یا یک رویداد سفارشی به انتخاب شما که در جاوااسکریپت خود تنظیم کرده‌اید.
 
-### HTML-based event sources
+### منابع رویدادی مبتنی بر HTML
 
-HTML-based event sources can be used for measuring interactions with a publisher's page when it first loads — or more precisely when an `<img>` or `<script>` loads. To register an event-based attribution source via HTML, you can add the `attributionsrc` attribute to an appropriate element — {{htmlelement("img")}} or {{htmlelement("script")}}.
+منابع رویدادی مبتنی بر HTML می‌توانند برای اندازه‌گیری تعامل با صفحه یک ناشر در زمان بارگذاری اولیه آن استفاده شوند — یا به‌طور دقیق‌تر وقتی یک `<img>` یا `<script>` بارگذاری می‌شود. برای ثبت یک منبع انتساب مبتنی بر رویداد از طریق HTML، می‌توانید ویژگی `attributionsrc` را به یک عنصر مناسب — {{htmlelement("img")}} یا {{htmlelement("script")}} اضافه کنید.
 
-If you leave the attribute value blank, the registration request will be sent to the server the requested resource is hosted on. It is also possible to specify one or more additional URLs inside the value to send the registration request to; see [Specifying URLs inside attributionsrc](#specifying_urls_inside_attributionsrc) for more details.
+اگر مقدار ویژگی را خالی بگذارید، درخواست ثبت به سروری که منبع درخواست‌شده روی آن میزبانی می‌شود ارسال خواهد شد. همچنین امکان تعیین یک یا چند URL اضافی در داخل مقدار وجود دارد تا درخواست ثبت به آن‌ها ارسال شود؛ برای جزئیات بیشتر به [تعیین URLها در داخل attributionsrc](#specifying_urls_inside_attributionsrc) مراجعه کنید.
 
-Let's look at an `<img>` element example:
+بیایید به یک مثال عنصر `<img>` نگاه کنیم:
 
 ```html
 <img src="advertising-image.png" alt="" attributionsrc />
 ```
 
-You could also achieve this via the {{domxref("HTMLImageElement.attributionSrc")}} property:
+همچنین می‌توانید این کار را از طریق ویژگی {{domxref("HTMLImageElement.attributionSrc")}} انجام دهید:
 
 ```js
 const imgElem = document.querySelector("img");
 imgElem.attributionSrc = "";
 ```
 
-The browser stores the attribution source data when the browser receives the response containing the image file (i.e., when the `load` event occurs). Bear in mind that users might not necessarily be able to perceive the image at all — it might be a 1x1 transparent tracking pixel that is only being used for attribution reporting.
+مرورگر داده‌های منبع انتساب را زمانی ذخیره می‌کند که پاسخ حاوی فایل تصویر را دریافت کند (یعنی وقتی رویداد `load` رخ می‌دهد). به خاطر داشته باشید که کاربران ممکن است لزوماً نتوانند تصویر را درک کنند — ممکن است یک پیکسل ردیابی شفاف ۱×۱ باشد که فقط برای گزارش انتساب استفاده می‌شود.
 
-A {{htmlelement("script")}} example might look like so:
+یک مثال {{htmlelement("script")}} ممکن است به این شکل باشد:
 
 ```html
 <script src="advertising-script.js" attributionsrc></script>
 ```
 
-Or via the {{domxref("HTMLScriptElement.attributionSrc")}} property:
+یا از طریق ویژگی {{domxref("HTMLScriptElement.attributionSrc")}}:
 
 ```js
 const scriptElem = document.querySelector("script");
 scriptElem.attributionSrc = "";
 ```
 
-In this case, the interaction occurs and the browser stores the source data when the browser receives the response containing the script.
+در این حالت، تعامل رخ می‌دهد و مرورگر داده‌های منبع را زمانی ذخیره می‌کند که پاسخ حاوی اسکریپت را دریافت کند.
 
-### JavaScript-based event sources
+### منابع رویدادی مبتنی بر JavaScript
 
-Script-based attribution sources are more versatile than HTML-based attribution sources. You can set up a script to initiate a request that is eligible to register an attribution source based on whatever request suits your app. This is a flexible approach, useful when you want to store source data in response to custom interactions, for example, clicking a custom element or submitting a form.
+منابع انتساب مبتنی بر اسکریپت نسبت به منابع انتساب مبتنی بر HTML انعطاف‌پذیرتر هستند. می‌توانید یک اسکریپت راه‌اندازی کنید تا درخواستی را آغاز کند که واجد شرایط ثبت یک منبع انتساب بر اساس هر درخواستی که با برنامه شما سازگار است باشد. این یک رویکرد منعطف است و زمانی مفید است که بخواهید داده‌های منبع را در پاسخ به تعاملات سفارشی ذخیره کنید، برای مثال، کلیک روی یک عنصر سفارشی یا ارسال یک فرم.
 
-To set up a script-based attribution source, you can either:
+برای راه‌اندازی یک منبع انتساب مبتنی بر اسکریپت، می‌توانید یکی از این کارها را انجام دهید:
 
-- Send a {{domxref("Window/fetch", "fetch()")}} request containing the `attributionReporting` option:
+- یک درخواست {{domxref("Window/fetch", "fetch()")}} حاوی گزینه `attributionReporting` ارسال کنید:
 
   ```js
   const attributionReporting = {
@@ -210,7 +215,7 @@ To set up a script-based attribution source, you can either:
   elem.addEventListener("click", triggerSourceInteraction);
   ```
 
-- Send an {{domxref("XMLHttpRequest")}} with {{domxref("XMLHttpRequest.setAttributionReporting", "setAttributionReporting()")}} invoked on the request object:
+- یک {{domxref("XMLHttpRequest")}} ارسال کنید و {{domxref("XMLHttpRequest.setAttributionReporting", "setAttributionReporting()")}} را روی شیء درخواست فراخوانی کنید:
 
   ```js
   const attributionReporting = {
@@ -237,18 +242,18 @@ To set up a script-based attribution source, you can either:
   elem.addEventListener("click", triggerSourceInteraction);
   ```
 
-In this case, the interaction occurs and the browser stores the source data when the browser receives the response from the fetch request.
+در این حالت، تعامل رخ می‌دهد و مرورگر داده‌های منبع را زمانی ذخیره می‌کند که پاسخ درخواست fetch را دریافت کند.
 
 > [!NOTE]
-> The request can be for any resource. It doesn't need to have anything directly to do with the Attribution Reporting API, and can be a request for JSON, plain text, an image blob, or whatever else makes sense for your app.
+> درخواست می‌تواند برای هر منبعی باشد. لازم نیست مستقیماً به Attribution Reporting API مرتبط باشد و می‌تواند درخواستی برای JSON، متن ساده، یک Blob تصویر یا هر چیز دیگری باشد که برای برنامه شما منطقی است.
 
-## Specifying URLs inside attributionsrc
+## تعیین URLها در داخل attributionsrc
 
-So far, in all the examples we have seen, the `attributionsrc` attribute/feature or `attributionSrc` property has been left blank, taking the value of an empty string. This is fine if the server that holds the requested resource is the same server that you also want to handle the registration, i.e., receive the {{httpheader("Attribution-Reporting-Eligible")}} header and respond with the {{httpheader("Attribution-Reporting-Register-Source")}} header.
+تا اینجا، در همه مثال‌هایی که دیده‌ایم، ویژگی/ویژگی پنجره `attributionsrc` یا ویژگی `attributionSrc` خالی گذاشته شده و مقدار رشته خالی را گرفته است. این کار در صورتی خوب است که سروری که منبع درخواست‌شده را نگه می‌دارد همان سروری باشد که می‌خواهید ثبت را مدیریت کند، یعنی هدر {{httpheader("Attribution-Reporting-Eligible")}} را دریافت کند و با هدر {{httpheader("Attribution-Reporting-Register-Source")}} پاسخ دهد.
 
-However, it might be that the requested resource is not on a server you control, or you just want to handle registering the attribution source on a different server. In such cases, you can specify one or more URLs as the value of `attributionsrc`. When the resource request occurs, the {{httpheader("Attribution-Reporting-Eligible")}} header will be sent to the URL(s) specified in `attributionsrc` in addition to the resource origin; these URLs can then respond with the {{httpheader("Attribution-Reporting-Register-Source")}} to register the source.
+با این حال، ممکن است منبع درخواست‌شده روی سروری که کنترل می‌کنید نباشد، یا فقط بخواهید ثبت منبع انتساب را روی سرور دیگری مدیریت کنید. در چنین مواردی، می‌توانید یک یا چند URL را به‌عنوان مقدار `attributionsrc` مشخص کنید. وقتی درخواست منبع رخ می‌دهد، هدر {{httpheader("Attribution-Reporting-Eligible")}} علاوه بر مبدأ منبع، به URL(های) مشخص‌شده در `attributionsrc` ارسال خواهد شد؛ سپس این URLها می‌توانند با {{httpheader("Attribution-Reporting-Register-Source")}} پاسخ دهند تا منبع را ثبت کنند.
 
-For example, in the case of an `<a>` element you could declare the URL(s) in the `attributionsrc` attribute:
+برای مثال، در مورد یک عنصر `<a>` می‌توانید URL(ها) را در ویژگی `attributionsrc` اعلام کنید:
 
 ```html
 <a
@@ -258,7 +263,7 @@ For example, in the case of an `<a>` element you could declare the URL(s) in the
 </a>
 ```
 
-Or in JavaScript via the `attributionSrc` property:
+یا در جاوااسکریپت از طریق ویژگی `attributionSrc`:
 
 ```js
 // encode the URLs in case they contain special characters
@@ -270,7 +275,7 @@ const aElem = document.querySelector("a");
 aElem.attributionSrc = `${encodedUrlA} ${encodedUrlB}`;
 ```
 
-In the case of a {{domxref("Window.open()")}} call, the different URLs would have to be listed as multiple separate `attributionsrc` features in the [`windowFeatures`](/en-US/docs/Web/API/Window/open#windowfeatures) parameter, separated by commas or whitespace:
+در مورد یک فراخوانی {{domxref("Window.open()")}}، URLهای مختلف باید به‌عنوان چند ویژگی جداگانه `attributionsrc` در پارامتر [`windowFeatures`](/en-US/docs/Web/API/Window/open#windowfeatures) فهرست شوند که با کاما یا فاصله از هم جدا شده‌اند:
 
 ```js
 // encode the URLs in case they contain special characters
@@ -288,8 +293,8 @@ elem.addEventListener("click", () => {
 ```
 
 > [!NOTE]
-> Specifying multiple URLs means that multiple attribution sources can be registered on the same feature. You might for example have different campaigns that you are trying to measure the success of, which involve generating different reports on different data.
+> تعیین چندین URL به این معناست که چندین منبع انتساب می‌توانند روی همان ویژگی ثبت شوند. برای مثال، ممکن است کمپین‌های مختلفی داشته باشید که می‌خواهید موفقیت آن‌ها را اندازه‌گیری کنید، که شامل تولید گزارش‌های مختلف روی داده‌های مختلف است.
 
-## See also
+## همچنین ببینید
 
 - [Attribution Reporting Header Validation tool](https://wicg.github.io/attribution-reporting-api/validate-headers)
