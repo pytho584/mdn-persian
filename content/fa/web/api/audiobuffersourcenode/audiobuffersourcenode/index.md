@@ -1,7 +1,7 @@
 ---
 title: "AudioBufferSourceNode: AudioBufferSourceNode() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/AudioBufferSourceNode"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,78 +14,47 @@ browser-compat: api.AudioBufferSourceNode.AudioBufferSourceNode
 
 {{APIRef("Web Audio API")}}
 
-The **`AudioBufferSourceNode()`**
-constructor creates a new {{domxref("AudioBufferSourceNode")}} object instance.
+سازنده **`AudioBufferSourceNode()`** یک نمونه شیء جدید {{domxref("AudioBufferSourceNode")}} ایجاد می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new AudioBufferSourceNode(context, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `context`
-  - : A reference to an {{domxref("AudioContext")}}.
+  - : ارجاعی به یک {{domxref("AudioContext")}}.
 - `options` {{optional_inline}}
-  - : Options are as follows:
+  - : گزینه‌ها به شرح زیر هستند:
     - `buffer`
-      - : An instance of {{domxref("AudioBuffer")}} to be played.
+      - : نمونه‌ای از {{domxref("AudioBuffer")}} که قرار است پخش شود.
     - `detune`
-      - : A value in cents to modulate the speed of audio stream rendering. Its nominal range is (-∞ to +∞). The default is `0`.
+      - : مقداری بر حسب سنت برای تغییر سرعت رندر جریان صوتی. محدوده اسمی آن (∞- تا ∞+) است. مقدار پیش‌فرض `0` می‌باشد.
     - `loop`
-      - : A boolean indicating whether the audio should play in a loop.
-        The default is `false`. If the loop is dynamically modified during
-        playback, the new value will take effect on the next processing block of audio.
+      - : یک مقدار بولی که نشان می‌دهد آیا صدا به صورت حلقه پخش شود یا خیر. مقدار پیش‌فرض `false` است. اگر حلقه به صورت پویا در حین پخش تغییر کند، مقدار جدید در بلوک پردازش بعدی صدا اعمال می‌شود.
     - `loopEnd`
-      - : An optional value, in seconds, where looping should end if
-        the loop attribute is `true`. The default is `0`. Its value
-        is exclusive to the content of the loop. The sample frames, comprising the loop,
-        run from the values `loopStart` to
-        `loopEnd`-(1/`sampleRate`). It's sensible to set this to a
-        value between 0 and the duration of the buffer. If `loopEnd` is less
-        than 0, looping will end at 0. If `loopEnd` is greater than the
-        duration of the buffer, looping will end at the end of the buffer. This attribute
-        is converted to an exact sample frame offset within the buffer, by multiplying by
-        the buffer's sample rate and rounding to the nearest integer value. Thus, its
-        behavior is independent of the value of the `playbackRate` parameter.
+      - : یک مقدار اختیاری بر حسب ثانیه که مشخص می‌کند حلقه کجا باید پایان یابد اگر ویژگی `loop` برابر `true` باشد. مقدار پیش‌فرض `0` است. مقدار آن از محتوای حلقه مستثنی است. فریم‌های نمونه‌ای که حلقه را تشکیل می‌دهند، از مقادیر `loopStart` تا `loopEnd`-(1/`sampleRate`) اجرا می‌شوند. منطقی است که این مقدار را بین 0 و مدت زمان بافر تنظیم کنید. اگر `loopEnd` کمتر از 0 باشد، حلقه در 0 پایان می‌یابد. اگر `loopEnd` بیشتر از مدت زمان بافر باشد، حلقه در انتهای بافر پایان می‌یابد. این ویژگی با ضرب در نرخ نمونه بافر و گرد کردن به نزدیک‌ترین مقدار صحیح، به یک افست فریم نمونه دقیق در داخل بافر تبدیل می‌شود. بنابراین رفتار آن مستقل از مقدار پارامتر `playbackRate` است.
     - `loopStart`
-      - : An optional value in seconds, where looping should begin
-        if the loop attribute is `true`. The default is `0`. It's
-        sensible to set this to a value between 0 and the duration of the buffer. If
-        `loopStart` is less than 0, looping will begin at 0. If
-        `loopStart` is greater than the duration of the buffer, looping will
-        begin at the end of the buffer. This attribute is converted to an exact sample
-        frame offset within the buffer, by multiplying by the buffer's sample rate and
-        rounding to the nearest integer value. Thus, its behavior is independent of the
-        value of the `playbackRate` parameter.
+      - : یک مقدار اختیاری بر حسب ثانیه که مشخص می‌کند حلقه کجا باید شروع شود اگر ویژگی `loop` برابر `true` باشد. مقدار پیش‌فرض `0` است. منطقی است که این مقدار را بین 0 و مدت زمان بافر تنظیم کنید. اگر `loopStart` کمتر از 0 باشد، حلقه از 0 شروع می‌شود. اگر `loopStart` بیشتر از مدت زمان بافر باشد، حلقه از انتهای بافر شروع می‌شود. این ویژگی با ضرب در نرخ نمونه بافر و گرد کردن به نزدیک‌ترین مقدار صحیح، به یک افست فریم نمونه دقیق در داخل بافر تبدیل می‌شود. بنابراین رفتار آن مستقل از مقدار پارامتر `playbackRate` است.
     - `playbackRate`
-      - : The speed at which to render the audio stream. Its
-        default value is `1`. This parameter is k-rate. This is a compound
-        parameter with detune. Its nominal range is (-∞ to +∞).
+      - : سرعت رندر جریان صوتی. مقدار پیش‌فرض آن `1` است. این پارامتر از نوع k-rate است. این یک پارامتر ترکیبی با `detune` است. محدوده اسمی آن (∞- تا ∞+) می‌باشد.
     - `channelCount`
-      - : Represents an integer used to determine how many channels are used when [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) connections to any inputs to the node. (See
-        {{domxref("AudioNode.channelCount")}} for more information.) Its usage and precise
-        definition depend on the value of `channelCountMode`.
+      - : یک عدد صحیح است که برای تعیین تعداد کانال‌ها هنگام [بالا-آمیختن و پایین-آمیختن](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) اتصالات به هر ورودی گره استفاده می‌شود. (برای اطلاعات بیشتر به {{domxref("AudioNode.channelCount")}} مراجعه کنید.) کاربرد و تعریف دقیق آن به مقدار `channelCountMode` بستگی دارد.
     - `channelCountMode`
-      - : Represents an enumerated value describing the way channels must be matched between
-        the node's inputs and outputs. (See {{domxref("AudioNode.channelCountMode")}} for more
-        information including default values.)
+      - : یک مقدار شمارشی است که نحوه تطبیق کانال‌ها بین ورودی‌ها و خروجی‌های گره را توصیف می‌کند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
     - `channelInterpretation`
-      - : Represents an enumerated value describing the meaning of the channels. This
-        interpretation will define how audio [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) will happen.
-        The possible values are `"speakers"` or `"discrete"`. (See
-        {{domxref("AudioNode.channelCountMode")}} for more information including default
-        values.)
+      - : یک مقدار شمارشی است که معنای کانال‌ها را توصیف می‌کند. این تفسیر نحوه انجام [بالا-آمیختن و پایین-آمیختن](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) صدا را تعیین می‌کند. مقادیر ممکن `"speakers"` یا `"discrete"` هستند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("AudioBufferSourceNode")}} object instance.
+یک نمونه شیء جدید از {{domxref("AudioBufferSourceNode")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
