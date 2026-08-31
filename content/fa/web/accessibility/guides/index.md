@@ -1,7 +1,7 @@
 ---
 title: "Accessibility guides"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,7 +12,6 @@ page-type: listing-page
 sidebar: accessibilitysidebar
 ---
 
-This page lists guides for web accessibility.
-They're intended to help you understand what kinds of things are possible to improve the accessibility of your projects on the web.
+این صفحه فهرست راهنماهای دسترس‌پذیری وب را ارائه می‌دهد. این راهنماها برای کمک به شما طراحی شده‌اند تا درک کنید چه نوع کارهایی برای بهبود دسترس‌پذیری پروژه‌های خود در وب امکان‌پذیر است.
 
 {{SubPagesWithSummaries}}
