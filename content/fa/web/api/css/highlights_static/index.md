@@ -1,11 +1,5 @@
 ---
 title: "CSS: highlights static property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS/highlights_static"
-status: "needs-translation"
----
-
----
-title: "CSS: highlights static property"
 short-title: highlights
 slug: Web/API/CSS/highlights_static
 page-type: web-api-static-property
@@ -14,15 +8,15 @@ browser-compat: api.CSS.highlights_static
 
 {{APIRef("CSSOM")}}
 
-The static, read-only **`highlights`** property of the {{domxref("CSS")}} interface provides access to the `HighlightRegistry` used to style arbitrary text ranges using the {{domxref("css_custom_highlight_api", "CSS Custom Highlight API", "", "nocode")}}.
+ویژگی استاتیک و فقط‑خواندنی **`highlights`** از واسط {{domxref("CSS")}} دسترسی به `HighlightRegistry` را فراهم می‌کند که برای سبک‌دهی به بازه‌های متنی دلخواه با استفاده از {{domxref("css_custom_highlight_api", "CSS Custom Highlight API", "", "nocode")}} به کار می‌رود.
 
-## Value
+## مقدار
 
-The {{DOMxRef("HighlightRegistry")}} object.
+شی {{DOMxRef("HighlightRegistry")}}.
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates creating multiple text ranges, then creating a `Highlight` object for them, registering this highlight in the `HighlightRegistry`, and finally styling the text ranges using the {{cssxref("::highlight", "::highlight()")}} pseudo-element.
+مثال زیر نحوه ایجاد چندین بازه متنی، ساختن یک شی `Highlight` برای آن‌ها، ثبت این برجسته‌سازی در `HighlightRegistry` و در نهایت سبک‌دهی به بازه‌های متنی با استفاده از شبه‑عنصر {{cssxref("::highlight", "::highlight()")}} را نشان می‌دهد.
 
 ```js
 const parentNode = document.getElementById("foo");
@@ -47,16 +41,16 @@ CSS.highlights.set("my-custom-highlight", myCustomHighlight);
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
-- [CSS custom highlight API](/en-US/docs/Web/CSS/Guides/Custom_highlight_API) module
+- {{domxref("css_custom_highlight_api", "CSS Custom Highlight API", "", "nocode")}}
+- ماژول [CSS custom highlight API](/en-US/docs/Web/CSS/Guides/Custom_highlight_API)
 - [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
