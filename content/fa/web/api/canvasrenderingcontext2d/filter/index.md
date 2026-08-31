@@ -1,9 +1,4 @@
----
-title: "CanvasRenderingContext2D: filter property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/filter"
-status: "needs-translation"
----
-
+```
 ---
 title: "CanvasRenderingContext2D: filter property"
 short-title: filter
@@ -14,85 +9,53 @@ browser-compat: api.CanvasRenderingContext2D.filter
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.filter`**
-property of the Canvas 2D API provides filter effects such as blurring and grayscaling.
-It is similar to the CSS {{cssxref("filter")}} property and accepts the same values.
+ویژگی **`CanvasRenderingContext2D.filter`** در رابط Canvas 2D افکت‌های فیلتری مانند تارکردن (blur) و خاکستری‌کردن (grayscale) را فراهم می‌کند. این ویژگی مشابه ویژگی CSS {{cssxref("filter")}} است و همان مقادیر را می‌پذیرد.
 
-## Value
+## مقدار
 
-The `filter` property accepts a value of `"none"` or one or more
-of the following filter functions in a string.
+ویژگی `filter` مقدار `"none"` یا یک یا چند تابع فیلتر زیر را به‌صورت یک رشته می‌پذیرد.
 
 - {{cssxref("url_function", "url()")}}
-  - : A CSS {{cssxref("url_function", "url()")}}. Takes any URL that resolves to SVG filter element.
-    This can be the ID of an element, a path to external XML file, or even a data encoded SVG value.
+  - : یک {{cssxref("url_function", "url()")}} در CSS. هر URL که به یک عنصر فیلتر SVG اشاره کند را می‌پذیرد. این مقدار می‌تواند شناسه یک عنصر، مسیری به یک فایل XML خارجی، یا حتی یک مقدار SVG کدگذاری‌شده به‌صورت data باشد.
 - {{cssxref("filter-function/blur", "blur()")}}
-  - : A CSS {{cssxref("&lt;length&gt;")}}. Applies a Gaussian blur to the drawing. It
-    defines the value of the standard deviation to the Gaussian function, i.e., how many
-    pixels on the screen blend into each other; thus, a larger value will create more
-    blur. A value of `0` leaves the input unchanged.
+  - : یک {{cssxref("&lt;length&gt;")}} در CSS. یک محو شدگی گاوسی (Gaussian blur) روی ترسیم اعمال می‌کند. این مقدار انحراف معیار تابع گاوسی را مشخص می‌کند؛ یعنی اینکه چند پیکسل روی صفحه با یکدیگر ترکیب شوند؛ بنابراین مقدار بزرگ‌تر محو شدگی بیشتری ایجاد می‌کند. مقدار `0` ورودی را بدون تغییر باقی می‌گذارد.
 - {{cssxref("filter-function/brightness", "brightness()")}}
-  - : A CSS {{cssxref("&lt;percentage&gt;")}}. Applies a linear multiplier to the drawing,
-    making it appear brighter or darker. A value under `100%` darkens the
-    image, while a value over `100%` brightens it. A value of `0%`
-    will create an image that is completely black, while a value of `100%`
-    leaves the input unchanged.
+  - : یک {{cssxref("&lt;percentage&gt;")}} در CSS. یک ضریب خطی روی ترسیم اعمال می‌کند و آن را روشن‌تر یا تیره‌تر نشان می‌دهد. مقدار زیر `100%` تصویر را تیره‌تر می‌کند و مقدار بالای `100%` آن را روشن‌تر می‌کند. مقدار `0%` تصویری کاملاً سیاه ایجاد می‌کند و مقدار `100%` ورودی را بدون تغییر باقی می‌گذارد.
 - {{cssxref("filter-function/contrast", "contrast()")}}
-  - : A CSS {{cssxref("&lt;percentage&gt;")}}. Adjusts the contrast of the drawing. A
-    value of `0%` will create a drawing that is completely black. A value of
-    `100%` leaves the drawing unchanged.
+  - : یک {{cssxref("&lt;percentage&gt;")}} در CSS. کنتراست ترسیم را تنظیم می‌کند. مقدار `0%` ترسیمی کاملاً سیاه ایجاد می‌کند و مقدار `100%` ترسیم را بدون تغییر باقی می‌گذارد.
 - {{cssxref("filter-function/drop-shadow", "drop-shadow()")}}
-  - : Applies a drop shadow effect to the drawing. A drop shadow is effectively a blurred,
-    offset version of the drawing's alpha mask drawn in a particular color, composited
-    below the drawing. This function takes up to five arguments:
+  - : یک افکت سایه پایه (drop shadow) روی ترسیم اعمال می‌کند. سایه پایه عملاً نسخه‌ای محوشده و آفست‌شده از ماسک آلفای ترسیم است که به رنگ خاصی کشیده می‌شود و در زیر ترسیم ترکیب می‌شود. این تابع تا پنج آرگومان می‌پذیرد:
     - `<offset-x>`
-      - : See {{cssxref("&lt;length&gt;")}} for possible
-        units. Specifies the horizontal distance of the shadow.
+      - : برای واحدهای ممکن به {{cssxref("&lt;length&gt;")}} مراجعه کنید. فاصله افقی سایه را مشخص می‌کند.
     - `<offset-y>`
-      - : See {{cssxref("&lt;length&gt;")}} for possible
-        units. Specifies the vertical distance of the shadow.
+      - : برای واحدهای ممکن به {{cssxref("&lt;length&gt;")}} مراجعه کنید. فاصله عمودی سایه را مشخص می‌کند.
     - `<blur-radius>`
-      - : The larger this value, the bigger the blur, so
-        the shadow becomes bigger and lighter. Negative values are not allowed.
+      - : هرچه این مقدار بزرگ‌تر باشد، محو شدگی بیشتر است و سایه بزرگ‌تر و روشن‌تر می‌شود. مقادیر منفی مجاز نیستند.
     - `<color>`
-      - : See {{cssxref("&lt;color&gt;")}} values for possible
-        keywords and notations.
+      - : برای کلیدواژه‌ها و نمادهای ممکن به مقادیر {{cssxref("&lt;color&gt;")}} مراجعه کنید.
 
 - {{cssxref("filter-function/grayscale", "grayscale()")}}
-  - : A CSS {{cssxref("&lt;percentage&gt;")}}. Converts the drawing to grayscale. A value
-    of `100%` is completely grayscale. A value of `0%` leaves the
-    drawing unchanged.
+  - : یک {{cssxref("&lt;percentage&gt;")}} در CSS. ترسیم را به حالت خاکستری تبدیل می‌کند. مقدار `100%` کاملاً خاکستری است. مقدار `0%` ترسیم را بدون تغییر باقی می‌گذارد.
 - {{cssxref("filter-function/hue-rotate", "hue-rotate()")}}
-  - : A CSS {{cssxref("&lt;angle&gt;")}}. Applies a hue rotation on the drawing. A value
-    of `0deg` leaves the input unchanged.
+  - : یک {{cssxref("&lt;angle&gt;")}} در CSS. یک چرخش فام (hue rotation) روی ترسیم اعمال می‌کند. مقدار `0deg` ورودی را بدون تغییر باقی می‌گذارد.
 - {{cssxref("filter-function/invert", "invert()")}}
-  - : A CSS {{cssxref("&lt;percentage&gt;")}}. Inverts the drawing. A value of
-    `100%` means complete inversion. A value of `0%` leaves the
-    drawing unchanged.
+  - : یک {{cssxref("&lt;percentage&gt;")}} در CSS. ترسیم را وارونه می‌کند. مقدار `100%` به معنای وارونگی کامل است. مقدار `0%` ترسیم را بدون تغییر باقی می‌گذارد.
 - {{cssxref("filter-function/opacity", "opacity()")}}
-  - : A CSS {{cssxref("&lt;percentage&gt;")}}. Applies transparency to the drawing. A
-    value of `0%` means completely transparent. A value of `100%`
-    leaves the drawing unchanged.
+  - : یک {{cssxref("&lt;percentage&gt;")}} در CSS. شفافیت را روی ترسیم اعمال می‌کند. مقدار `0%` به معنای کاملاً شفاف است. مقدار `100%` ترسیم را بدون تغییر باقی می‌گذارد.
 - {{cssxref("filter-function/saturate", "saturate()")}}
-  - : A CSS {{cssxref("&lt;percentage&gt;")}}. Saturates the drawing. A value of
-    `0%` means completely un-saturated. A value of `100%` leaves the
-    drawing unchanged.
+  - : یک {{cssxref("&lt;percentage&gt;")}} در CSS. اشباع رنگ ترسیم را تنظیم می‌کند. مقدار `0%` به معنای کاملاً بی‌اشباع است. مقدار `100%` ترسیم را بدون تغییر باقی می‌گذارد.
 - {{cssxref("filter-function/sepia", "sepia()")}}
-  - : A CSS {{cssxref("&lt;percentage&gt;")}}. Converts the drawing to sepia. A value of
-    `100%` means completely sepia. A value of `0%` leaves the
-    drawing unchanged.
+  - : یک {{cssxref("&lt;percentage&gt;")}} در CSS. ترسیم را به حالت قهوه‌ای (سپیا) تبدیل می‌کند. مقدار `100%` به معنای کاملاً سپیا است. مقدار `0%` ترسیم را بدون تغییر باقی می‌گذارد.
 - `none`
-  - : No filter is applied. Initial value.
+  - : هیچ فیلتری اعمال نمی‌شود. مقدار اولیه.
 
-## Examples
+## مثال‌ها
 
-To view these examples, make sure to use a browser that supports this feature; see the
-compatibility table below.
+برای مشاهده این مثال‌ها، حتماً از مرورگری استفاده کنید که از این ویژگی پشتیبانی می‌کند؛ جدول سازگاری پایین را ببینید.
 
-### Applying a blur
+### اعمال تارکردن
 
-This example blurs a piece of text using the `filter` property.
+این مثال با استفاده از ویژگی `filter` یک متن را تار می‌کند.
 
 #### HTML
 
@@ -111,15 +74,13 @@ ctx.font = "48px serif";
 ctx.fillText("Hello world", 50, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Applying_a_blur', 700, 180) }}
 
-### Applying multiple filters
+### اعمال چند فیلتر به‌طور هم‌زمان
 
-You can combine as many filters as you like. This example applies the
-`contrast`, `sepia`, and `drop-shadow` filters to a
-photo of a rhino.
+می‌توانید هر تعداد فیلتر که بخواهید را ترکیب کنید. این مثال فیلترهای `contrast`، `sepia` و `drop-shadow` را روی عکس یک کرگدن اعمال می‌کند.
 
 #### HTML
 
@@ -155,20 +116,21 @@ image.addEventListener("load", (e) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Applying_multiple_filters', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
-- CSS {{cssxref("filter")}}
-- CSS {{cssxref("&lt;filter-function&gt;")}}
+- رابط تعریف‌کننده این ویژگی: {{domxref("CanvasRenderingContext2D")}}
+- ویژگی CSS {{cssxref("filter")}}
+- {{cssxref("&lt;filter-function&gt;")}} در CSS
+```
