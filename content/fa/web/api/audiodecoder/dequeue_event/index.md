@@ -1,7 +1,7 @@
 ---
 title: "AudioDecoder: dequeue event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioDecoder/dequeue_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,13 +14,13 @@ browser-compat: api.AudioDecoder.dequeue_event
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`dequeue`** event of the {{domxref("AudioDecoder")}} interface fires to signal a decrease in {{domxref("AudioDecoder.decodeQueueSize")}}.
+رویداد **`dequeue`** از رابط {{domxref("AudioDecoder")}} برای نشان دادن کاهش در {{domxref("AudioDecoder.decodeQueueSize")}} فعال می‌شود.
 
-This eliminates the need for developers to use a {{domxref("Window.setTimeout", "setTimeout()")}} poll to determine when the queue has decreased, and more work should be queued up.
+این کار نیاز توسعه‌دهندگان به استفاده از نظرسنجی {{domxref("Window.setTimeout", "setTimeout()")}} برای تعیین زمان کاهش صف و زمان صف‌بندی کارهای بیشتر را از بین می‌برد.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("dequeue", (event) => { })
