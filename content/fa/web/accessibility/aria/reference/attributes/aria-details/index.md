@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-details attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,30 +13,30 @@ spec-urls: https://w3c.github.io/aria/#aria-details
 sidebar: accessibilitysidebar
 ---
 
-The global `aria-details` attribute identifies the element (or elements) that provide additional information related to the object.
+ویژگی سراسری `aria-details` عنصر (یا عناصری) را شناسایی می‌کند که اطلاعات اضافی مرتبط با شیء را فراهم می‌کنند.
 
-## Description
+## توضیحات
 
-The `aria-details` attribute can be used to provide additional information or complex descriptions to an object. It is used to inform assistive technology users about the content by providing more in-depth information, whether that content is within the current document or a link to additional assets.
+ویژگی `aria-details` می‌تواند برای ارائه اطلاعات تکمیلی یا توضیحات پیچیده به یک شیء استفاده شود. این ویژگی برای آگاه‌سازی کاربران فناوری‌های کمکی درباره محتوا با فراهم کردن اطلاعات عمیق‌تر استفاده می‌شود، خواه آن محتوا در سند فعلی باشد یا پیوندی به منابع اضافی.
 
-There are other HTML and WAI-ARIA properties that have similar purposes. The HTML {{HTMLElement('label')}} element and the [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) and [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) properties are used to provide short labels for an object. The HTML `title` attribute and the [`aria-description`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-description) and [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) properties provide for longer plain text descriptions of an object. However, when additional information, complex descriptions, or navigable content related to the object is necessary and available, the `aria-details` attribute should be used.
+خواص HTML و WAI-ARIA دیگری نیز وجود دارند که اهداف مشابهی دارند. عنصر HTML {{HTMLElement('label')}} و خواص [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) و [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) برای ارائه برچسب‌های کوتاه برای یک شیء استفاده می‌شوند. ویژگی `title` در HTML و خواص [`aria-description`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-description) و [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) توضیحات متنی طولانی‌تری برای یک شیء فراهم می‌کنند. با این حال، هنگامی که اطلاعات اضافی، توضیحات پیچیده، یا محتوای قابل پیمایش مرتبط با شیء ضروری و در دسترس است، باید از ویژگی `aria-details` استفاده شود.
 
-The `aria-details` attribute serves a similar purpose as HTML's never fully-supported `longdesc` attribute － a URL of a long description to a replaced element's content － which was deprecated due to lack of support and misuse.
+ویژگی `aria-details` هدفی مشابه با ویژگی `longdesc` در HTML دارد — که هرگز به طور کامل پشتیبانی نشد — یعنی URL یک توضیح طولانی برای محتوای یک عنصر جایگزین‌شده — که به دلیل عدم پشتیبانی و استفاده نادرست منسوخ شد.
 
-The `aria-details` attribute takes the [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id), or space separated list of `id`s of the elements to get more detailed information as its values. When `aria-details` is included on an element, assistive technologies inform users of the availability of extended information, enabling the user to navigate to the referenced content.
+ویژگی `aria-details` مقدار [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) یا فهرستی از `id`ها که با فاصله جدا شده‌اند را به عنوان مقدار خود می‌پذیرد تا اطلاعات دقیق‌تری از عناصر به دست آورد. هنگامی که `aria-details` روی یک عنصر قرار می‌گیرد، فناوری‌های کمکی کاربران را از وجود اطلاعات توسعه‌یافته آگاه می‌کنند و به کاربر امکان می‌دهند به محتوای ارجاع‌داده‌شده برود.
 
-Elements referenced by `aria-details` are intended to contain more information than would normally be provided via [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby).
+عناصری که توسط `aria-details` ارجاع داده می‌شوند، برای حاوی اطلاعات بیشتری نسبت به آنچه معمولاً از طریق [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) ارائه می‌شود، در نظر گرفته شده‌اند.
 
-The elements referenced by `aria-details` should be visible to all users. `aria-details` informs users that otherwise might not be able to scan a screen and discern quickly that the explanatory content is available.
+عناصر ارجاع‌داده‌شده توسط `aria-details` باید برای همه کاربران قابل مشاهده باشند. `aria-details` به کاربرانی اطلاع می‌دهد که ممکن است نتوانند صفحه را اسکن کنند و به سرعت تشخیص دهند که محتوای توضیحی در دسترس است.
 
 > [!NOTE]
-> `aria-details` has no impact on the accessible description.
+> `aria-details` تأثیری بر توصیف قابل دسترس ندارد.
 
-Unlike `aria-describedby`, elements referenced by `aria-details` are not used in accessible descriptions and are not turned into a plain string when presented to assistive technology users. If the associated content is not too long and flattening the contents of the referenced element to a simple string of text wouldn't cause loss of information, consider using `aria-describedby` instead. That said, it is valid for an element to have both `aria-details` and a description specified with either `aria-describedby` or `aria-description`.
+برخلاف `aria-describedby`، عناصری که توسط `aria-details` ارجاع داده می‌شوند در توصیف‌های قابل دسترس استفاده نمی‌شوند و هنگام ارائه به کاربران فناوری کمکی به یک رشته ساده تبدیل نمی‌شوند. اگر محتوای مرتبط خیلی طولانی نیست و تبدیل محتویات عنصر ارجاع‌داده‌شده به یک رشته ساده متنی باعث از دست رفتن اطلاعات نمی‌شود، به جای آن از `aria-describedby` استفاده کنید. با این وجود، معتبر است که یک عنصر هم `aria-details` و هم یک توصیف مشخص‌شده با `aria-describedby` یا `aria-description` داشته باشد.
 
-## Example
+## مثال
 
-When it comes to definition and term roles, the `aria-details` would be included on the [`term`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/term_role) element with the `id` of the element with a [`definition`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/definition_role) role.
+در مورد نقش‌های «تعریف» و «اصطلاح»، `aria-details` روی عنصر [`term`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/term_role) با `id` عنصری که نقش [`definition`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/definition_role) را دارد، قرار می‌گیرد.
 
 ```html
 <p>
@@ -63,33 +63,33 @@ When it comes to definition and term roles, the `aria-details` would be included
 </a>
 ```
 
-## Values
+## مقادیر
 
-- ID reference list
-  - : An `id` or space separated list of ids of elements that provide or link to additional related information.
+- فهرست مرجع شناسه (ID reference list)
+  - : یک `id` یا فهرستی از `id`ها که با فاصله جدا شده‌اند از عناصری که اطلاعات اضافی مرتبط را فراهم می‌کنند یا به آن‌ها پیوند می‌دهند.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaDetailsElements")}}
-  - : The `ariaDetailsElements` property is part of each element's interface.
-    Its value is an array of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-details` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaDetailsElements` بخشی از رابط هر عنصر است.
+    مقدار آن آرایه‌ای از زیرکلاس‌های {{domxref("Element")}} است که ارجاع‌های `id` در ویژگی `aria-details` را منعکس می‌کنند ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 - {{domxref("ElementInternals.ariaDetailsElements")}}
-  - : The `ariaDetailsElements` property is part of each custom element's interface.
-    Its value is an array of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-details` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaDetailsElements` بخشی از رابط هر عنصر سفارشی است.
+    مقدار آن آرایه‌ای از زیرکلاس‌های {{domxref("Element")}} است که ارجاع‌های `id` در ویژگی `aria-details` را منعکس می‌کنند ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** roles.
+در **همه** نقش‌ها استفاده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- HTML [id](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute
+- ویژگی HTML [id](/en-US/docs/Web/HTML/Reference/Global_attributes/id)
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
 - [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby)
 - [`aria-description`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-description)
-- [The image `alt` attribute](/en-US/docs/Web/API/HTMLImageElement/alt)
-- HTML [title](/en-US/docs/Web/HTML/Reference/Global_attributes/title) attribute
+- [ویژگی `alt` تصویر](/en-US/docs/Web/API/HTMLImageElement/alt)
+- ویژگی HTML [title](/en-US/docs/Web/HTML/Reference/Global_attributes/title)
