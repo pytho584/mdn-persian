@@ -1,10 +1,4 @@
 ---
-title: "Using the CSS Painting API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API/Guide"
-status: "needs-translation"
----
-
----
 title: Using the CSS Painting API
 slug: Web/API/CSS_Painting_API/Guide
 page-type: guide
@@ -12,24 +6,24 @@ page-type: guide
 
 {{DefaultAPISidebar("CSS Painting API")}}
 
-The [CSS Paint API](/en-US/docs/Web/API/CSS_Painting_API) is designed to enable developers to programmatically define images which can then be used anywhere a CSS image can be invoked, such as CSS {{cssxref("background-image")}}, {{cssxref("border-image")}}, {{cssxref("mask-image")}}, etc.
+[CSS Paint API](/en-US/docs/Web/API/CSS_Painting_API) برای این طراحی شده است که به توسعه‌دهندگان امکان دهد تصاویر را به‌صورت برنامه‌نویسی تعریف کنند و سپس از آن‌ها در هر جایی که یک تصویر CSS قابل استفاده است، مانند {{cssxref("background-image")}}، {{cssxref("border-image")}}، {{cssxref("mask-image")}} و غیره، استفاده کنند.
 
-To programmatically create an image used by a CSS stylesheet we need to work through a few steps:
+برای ایجاد برنامه‌نویسی یک تصویر که توسط استایل‌شیت CSS استفاده می‌شود، باید چند مرحله را طی کنیم:
 
-1. Define a paint worklet using the {{domxref('PaintWorkletGlobalScope.registerPaint', 'registerPaint()')}} function
-2. Register the worklet
-3. Include the {{cssxref('image/paint', 'paint()')}} CSS function
+1. تعریف یک paint worklet با استفاده از تابع {{domxref('PaintWorkletGlobalScope.registerPaint', 'registerPaint()')}}
+2. ثبت کردن worklet
+3. استفاده از تابع CSS {{cssxref('image/paint', 'paint()')}}
 
-To elaborate over these steps, we're going to start by creating a half-highlight background, like on this header:
+برای شرح بیشتر این مراحل، با ایجاد یک پس‌زمینه نیمه‌رنگ‌شده شروع می‌کنیم، مانند این سربرگ:
 
-![Text reading 'My Cool Header' with a solid yellow background image block on the bottom left two thirds of the header](mycoolheader.png)
+![متنی با عنوان 'My Cool Header' با یک بلوک تصویر پس‌زمینه زرد یکدست در دو سوم پایین سمت چپ سربرگ](mycoolheader.png)
 
 > [!NOTE]
-> See [CSS Painting API Example](https://mdn.github.io/dom-examples/css-painting/) for a full working demo along with the [source code](https://github.com/mdn/dom-examples/tree/main/css-painting).
+> برای یک نمونه کار کامل به [CSS Painting API Example](https://mdn.github.io/dom-examples/css-painting/) مراجعه کنید و همچنین [کد منبع](https://github.com/mdn/dom-examples/tree/main/css-painting).
 
-## CSS paint worklet
+## پینت ورک‌لت CSS
 
-In an external script file, we employ the {{domxref('PaintWorkletGlobalScope.registerPaint', 'registerPaint()')}} function to name our [CSS Paint worklet](/en-US/docs/Web/API/Worklet). It takes two parameters. The first is the name we give the worklet — this is the name we will use in our CSS as the parameter of the `paint()` function when we want to apply this styling to an element. The second parameter is the class that does all the magic, defining the context options and what to paint to the two-dimensional canvas that will be our image.
+در یک فایل اسکریپت خارجی، از تابع {{domxref('PaintWorkletGlobalScope.registerPaint', 'registerPaint()')}} برای نام‌گذاری [CSS Paint worklet](/en-US/docs/Web/API/Worklet) خود استفاده می‌کنیم. این تابع دو پارامتر می‌گیرد. پارامتر اول نامی است که به worklet می‌دهیم — این همان نامی است که در CSS خود به عنوان پارامتر تابع `paint()` استفاده خواهیم کرد، زمانی که بخواهیم این استایل را روی یک عنصر اعمال کنیم. پارامتر دوم کلاسی است که همه کارها را انجام می‌دهد؛ این کلاس گزینه‌های زمینه را تعریف می‌کند و مشخص می‌کند چه چیزی روی بوم دوبعدی ترسیم شود که تصویر ما خواهد بود.
 
 ```js
 registerPaint(
@@ -56,41 +50,41 @@ registerPaint(
 );
 ```
 
-In this class example we have defined a single context option with the `contextOptions()` function: we returned an object stating alpha transparency is allowed.
+در این مثال کلاسی، ما یک گزینه زمینه را با تابع `contextOptions()` تعریف کرده‌ایم: یک شیء برمی‌گردانیم که بیان می‌کند شفافیت آلفا مجاز است.
 
-We have then used the `paint()` function to paint to our canvas.
+سپس از تابع `paint()` برای نقاشی روی بوم استفاده کرده‌ایم.
 
-A `paint()` function can take three arguments. Here we have provided one argument: the rendering context (we'll look at more in due course), often referred to by the variable name `ctx`. The 2D Rendering Context is a subset of the [HTML Canvas API](/en-US/docs/Web/API/Canvas_API); the version available to Houdini (called the `PaintRenderingContext2D`) is a further subset containing most of the features available in the full Canvas API with the [exception](https://drafts.css-houdini.org/css-paint-api-1/#2d-rendering-context) of the `CanvasImageData`, `CanvasUserInterface`, `CanvasText`, and `CanvasTextDrawingStyles` APIs.
+تابع `paint()` می‌تواند سه آرگومان بگیرد. در اینجا یک آرگومان ارائه داده‌ایم: زمینه رندر (که بعداً بیشتر به آن می‌پردازیم)، که معمولاً با نام متغیر `ctx` به آن اشاره می‌شود. زمینه رندر دوبعدی زیرمجموعه‌ای از [HTML Canvas API](/en-US/docs/Web/API/Canvas_API) است؛ نسخه‌ای که در اختیار Houdini قرار می‌گیرد (به نام `PaintRenderingContext2D`) زیرمجموعه دیگری است که شامل بیشتر ویژگی‌های موجود در Canvas API کامل است، به‌جز [APIهای](https://drafts.css-houdini.org/css-paint-api-1/#2d-rendering-context) `CanvasImageData`، `CanvasUserInterface`، `CanvasText` و `CanvasTextDrawingStyles`.
 
-We define the {{domxref('CanvasRenderingContext2D.fillStyle', 'fillStyle')}} as being `hsl(55 90% 60% / 100%)`, which is a shade of yellow, and then call `fillRect()` to create a rectangle of that color. The {{domxref('CanvasRenderingContext2D.fillRect', 'fillRect()')}} parameters are, in order, x-axis origin, y-axis origin, width, and height. `fillRect(0, 15, 200, 20)` results in the creation of a rectangle that is 200 units wide by 20 units tall, positioned 0 units from the left and 15 units from the top of the content box.
+ما {{domxref('CanvasRenderingContext2D.fillStyle', 'fillStyle')}} را برابر با `hsl(55 90% 60% / 100%)` تعریف می‌کنیم که سایه‌ای از زرد است و سپس `fillRect()` را برای ایجاد یک مستطیل با آن رنگ فراخوانی می‌کنیم. پارامترهای {{domxref('CanvasRenderingContext2D.fillRect', 'fillRect()')}} به ترتیب عبارتند از: مبدأ محور x، مبدأ محور y، عرض و ارتفاع. `fillRect(0, 15, 200, 20)` منجر به ایجاد یک مستطیل به عرض ۲۰۰ واحد و ارتفاع ۲۰ واحد می‌شود که ۰ واحد از چپ و ۱۵ واحد از بالای جعبه محتوا قرار گرفته است.
 
-We can use the CSS {{cssxref("background-size")}} and {{cssxref("background-position")}} properties to re-size or relocate this background image, but this is the default size and placement of the yellow box we created in our paint worklet.
+ما می‌توانیم از ویژگی‌های CSS {{cssxref("background-size")}} و {{cssxref("background-position")}} برای تغییر اندازه یا جابه‌جایی این تصویر پس‌زمینه استفاده کنیم، اما این اندازه و مکان پیش‌فرض جعبه زردی است که در paint worklet خود ایجاد کرده‌ایم.
 
-We tried to keep the example simple. For more options, look at the {{HTMLElement("canvas")}} documentation. We also add a little bit of complexity later in this tutorial.
+ما سعی کردیم مثال را ساده نگه داریم. برای گزینه‌های بیشتر، به مستندات {{HTMLElement("canvas")}} مراجعه کنید. همچنین کمی پیچیدگی را در ادامه این آموزش اضافه می‌کنیم.
 
-## Registering the worklet
+## ثبت کردن ورک‌لت
 
-To use the paint worklet, we need to register it using {{domxref('Worklet.addModule', 'addModule()')}} and include it in our CSS, ensuring the CSS selector matches a DOM node in our HTML
+برای استفاده از paint worklet، باید آن را با استفاده از {{domxref('Worklet.addModule', 'addModule()')}} ثبت کنیم و در CSS خود شامل کنیم و مطمئن شویم که انتخابگر CSS با یک گره DOM در HTML ما مطابقت دارد.
 
-The setup and design of our paint worklet took place in the external script shown above. We need to register that {{domxref('worklet')}} from our main script.
+راه‌اندازی و طراحی paint worklet ما در اسکریپت خارجی نشان داده‌شده در بالا انجام شد. باید آن {{domxref('worklet')}} را از اسکریپت اصلی خود ثبت کنیم.
 
 ```js
 CSS.paintWorklet.addModule("nameOfPaintWorkletFile.js");
 ```
 
-This can be done using the paint worklet's `addModule()` method in a `<script>` within the main HTML or in an external JavaScript file linked from the document.
+این کار را می‌توان با استفاده از متد `addModule()` پینت ورک‌لت در یک `<script>` در HTML اصلی یا در یک فایل جاوااسکریپت خارجی که به سند لینک شده است، انجام داد.
 
-## Using the paint worklet
+## استفاده از پینت ورک‌لت
 
-In our example, the paintworklet is stored alongside the main script file. To use it, we first register it:
+در مثال ما، پینت ورک‌لت در کنار فایل اسکریپت اصلی ذخیره شده است. برای استفاده از آن، ابتدا آن را ثبت می‌کنیم:
 
 ```js
 CSS.paintWorklet.addModule("header-highlight.js");
 ```
 
-### Reference the paint worklet in CSS
+### ارجاع به پینت ورک‌لت در CSS
 
-Once we have a registered paint worklet, we can use it in CSS. Employ the CSS `paint()` function like we would any other `<image>` type, using the same string identifier we used in the paintworklet's `registerPaint()` function.
+هنگامی که یک پینت ورک‌لت ثبت‌شده داشته باشیم، می‌توانیم از آن در CSS استفاده کنیم. تابع CSS `paint()` را مانند هر نوع `<image>` دیگری به کار ببرید، با استفاده از همان شناسه متنی که در تابع `registerPaint()` پینت ورک‌لت استفاده کرده‌ایم.
 
 ```css
 .fancy {
@@ -98,31 +92,31 @@ Once we have a registered paint worklet, we can use it in CSS. Employ the CSS `p
 }
 ```
 
-### Putting it together
+### کنار هم قرار دادن
 
-We can then add the fancy class to any element on the page to add a yellow box as a background:
+سپس می‌توانیم کلاس `fancy` را به هر عنصری در صفحه اضافه کنیم تا یک جعبه زرد به عنوان پس‌زمینه داشته باشیم:
 
 ```html
 <h1 class="fancy">My Cool Header</h1>
 ```
 
-The following example will look like the image above in [browsers supporting the CSS Painting API](/en-US/docs/Web/API/CSS/paintWorklet_static#browser_compatibility).
+مثال زیر در [مرورگرهایی که از CSS Painting API پشتیبانی می‌کنند](/en-US/docs/Web/API/CSS/paintWorklet_static#browser_compatibility) مانند تصویر بالا به نظر می‌رسد.
 
 {{EmbedGHLiveSample("dom-examples/css-painting/half-highlight-fixed-size/", 120, 120)}}
 
-While you can't play with the worklet's script, you can alter the `background-size` and `background-position` to change the size and location of the background image.
+اگرچه نمی‌توانید با اسکریپت ورک‌لت بازی کنید، می‌توانید `background-size` و `background-position` را تغییر دهید تا اندازه و مکان تصویر پس‌زمینه تغییر کند.
 
 ## PaintSize
 
-In the example above, we created a 20x200 unit box, painted 15 units from the top of the element it is the same regardless of the size of the element. If the text is small, the yellow box looks like a huge underline. If the text is huge, the box might look like a bar above the first three letters. It would be better if the background image was relative to the size of the element — we can use the element's `paintSize` property to ensure the background image is proportional to the size of the element's box model size.
+در مثال بالا، یک جعبه ۲۰×۲۰۰ واحد ایجاد کردیم که ۱۵ واحد از بالای عنصر رنگ شده است؛ این مقدار صرف‌نظر از اندازه عنصر ثابت است. اگر متن کوچک باشد، جعبه زرد مانند یک زیرخط بزرگ به نظر می‌رسد. اگر متن بزرگ باشد، ممکن است جعبه مانند یک نوار بالای سه حرف اول به نظر برسد. بهتر بود اگر تصویر پس‌زمینه نسبت به اندازه عنصر باشد — می‌توانیم از ویژگی `paintSize` عنصر استفاده کنیم تا مطمئن شویم تصویر پس‌زمینه متناسب با اندازه جعبه مدل عنصر است.
 
-![The background is 50% of the height and 60% of the width of the element](mycoolheadersized.png)
+![پس‌زمینه ۵۰٪ ارتفاع و ۶۰٪ عرض عنصر است](mycoolheadersized.png)
 
-In the above image, the background is proportional to the size of the element. The 3rd example has `width: 50%`; set on the block level element, making the element narrower and therefore the background image narrower.
+در تصویر بالا، پس‌زمینه متناسب با اندازه عنصر است. مثال سوم دارای `width: 50%` بر روی عنصر سطح بلوک است که عنصر را باریک‌تر و در نتیجه تصویر پس‌زمینه را باریک‌تر می‌کند.
 
-### The paint worklet
+### پینت ورک‌لت
 
-The code to do this looks like so:
+کدی که این کار را انجام می‌دهد به این صورت است:
 
 ```js
 registerPaint(
@@ -144,16 +138,16 @@ registerPaint(
 );
 ```
 
-This code example has two differences from our first example:
+این مثال کد دو تفاوت با مثال اول ما دارد:
 
-1. We've included a second argument, which is the paint size.
-2. We've changed the dimensions and positioning of our rectangle to be relative to the size of the element box rather than absolute values.
+1. ما یک آرگومان دوم اضافه کرده‌ایم که اندازه نقاشی است.
+2. ابعاد و موقعیت مستطیل خود را به‌جای مقادیر مطلق، نسبت به اندازه جعبه عنصر تغییر داده‌ایم.
 
-We can pass the second parameter into the `paint()` function to give us access to the width and the height of the element, via `.width` and `.height` properties.
+می‌توانیم پارامتر دوم را به تابع `paint()` منتقل کنیم تا از طریق ویژگی‌های `.width` و `.height` به عرض و ارتفاع عنصر دسترسی داشته باشیم.
 
-Our header now has a highlight that changes according to its size.
+اکنون سربرگ ما یک برجسته‌سازی دارد که با توجه به اندازه آن تغییر می‌کند.
 
-### Using the paint worklet
+### استفاده از پینت ورک‌لت
 
 #### HTML
 
@@ -165,7 +159,7 @@ Our header now has a highlight that changes according to its size.
 
 #### CSS
 
-While you can't play with the worklet's script, you can alter the element's `font-size` and `width` to change the size of the background image.
+اگرچه نمی‌توانید با اسکریپت ورک‌لت بازی کنید، می‌توانید `font-size` و `width` عنصر را تغییر دهید تا اندازه تصویر پس‌زمینه تغییر کند.
 
 ```css
 .fancy {
@@ -182,15 +176,15 @@ While you can't play with the worklet's script, you can alter the element's `fon
 CSS.paintWorklet.addModule("header-highlight.js");
 ```
 
-#### Result
+#### نتیجه
 
-In [browsers that support the CSS Paint API](/en-US/docs/Web/API/CSS/paintWorklet_static#browser_compatibility), the elements in the example below should get yellow backgrounds proportional to their font size.
+در [مرورگرهایی که از CSS Paint API پشتیبانی می‌کنند](/en-US/docs/Web/API/CSS/paintWorklet_static#browser_compatibility)، عناصر موجود در مثال زیر باید پس‌زمینه‌های زرد متناسب با اندازه فونت خود دریافت کنند.
 
 {{EmbedGHLiveSample("dom-examples/css-painting/half-highlight-paintsize", 200, 200)}}
 
-## Custom properties
+## ویژگی‌های سفارشی
 
-In addition to accessing the size of the element, the worklet can also have access to CSS custom properties and regular CSS properties.
+علاوه بر دسترسی به اندازه عنصر، ورک‌لت می‌تواند به ویژگی‌های سفارشی CSS و ویژگی‌های معمول CSS نیز دسترسی داشته باشد.
 
 ```js
 registerPaint(
@@ -213,17 +207,17 @@ registerPaint(
 );
 ```
 
-The three parameters of the `paint()` function include the drawing context, paint size and properties. To be able to access properties, we include the static `inputProperties()` method, which provides live access to CSS properties, including regular properties and [custom properties](/en-US/docs/Web/CSS/Guides/Cascading_variables), and returns an {{jsxref("Array", "array", "", 1)}} of property names. We'll take a look at [`inputArguments`](#passing_parameters) in the last section.
+سه پارامتر تابع `paint()` شامل زمینه ترسیم، اندازه نقاشی و ویژگی‌ها است. برای دسترسی به ویژگی‌ها، متد استاتیک `inputProperties()` را وارد می‌کنیم که دسترسی زنده به ویژگی‌های CSS، از جمله ویژگی‌های معمول و [ویژگی‌های سفارشی](/en-US/docs/Web/CSS/Guides/Cascading_variables) را فراهم می‌کند و یک {{jsxref("Array", "آرایه", "", 1)}} از نام ویژگی‌ها برمی‌گرداند. در بخش آخر به [`inputArguments`](#passing_parameters) نگاهی خواهیم انداخت.
 
-Let's create a list of items with a background image that rotates between three different colors and three widths.
+بیایید یک لیست از موارد با تصویر پس‌زمینه ایجاد کنیم که بین سه رنگ و سه عرض مختلف چرخش می‌کند.
 
-![The width and color of the background image changes based on the custom properties](boxbg.png)
+![عرض و رنگ تصویر پس‌زمینه بر اساس ویژگی‌های سفارشی تغییر می‌کند](boxbg.png)
 
-To achieve this we'll define two custom CSS properties, `--box-color` and `--width-subtractor`.
+برای این کار، دو ویژگی سفارشی CSS تعریف می‌کنیم: `--box-color` و `--width-subtractor`.
 
-### The paint worklet
+### پینت ورک‌لت
 
-In our worklet, we can reference these custom properties.
+در ورک‌لت خود، می‌توانیم به این ویژگی‌های سفارشی ارجاع دهیم.
 
 ```js
 registerPaint(
@@ -259,9 +253,9 @@ registerPaint(
 );
 ```
 
-We used the `inputProperties()` method in the `registerPaint()` class to get the values of two custom properties set on an element that has `boxbg` applied to it and then used those within our `paint()` function. The `inputProperties()` method can return all properties affecting the element, not just custom properties.
+ما از متد `inputProperties()` در کلاس `registerPaint()` استفاده کردیم تا مقادیر دو ویژگی سفارشی تعیین‌شده روی عنصری که `boxbg` به آن اعمال شده است را بگیریم و سپس از آن‌ها در تابع `paint()` استفاده کنیم. متد `inputProperties()` می‌تواند همه ویژگی‌های تأثیرگذار بر عنصر را برگرداند، نه فقط ویژگی‌های سفارشی را.
 
-### Using the paint worklet
+### استفاده از پینت ورک‌لت
 
 #### HTML
 
@@ -290,7 +284,7 @@ We used the `inputProperties()` method in the `registerPaint()` class to get the
 
 #### CSS
 
-In our CSS, we define the `--box-color` and `--width-subtractor` custom properties.
+در CSS خود، ویژگی‌های سفارشی `--box-color` و `--width-subtractor` را تعریف می‌کنیم.
 
 ```css
 li {
@@ -311,349 +305,18 @@ li:nth-of-type(3n + 1) {
 
 #### JavaScript
 
-In our `<script>` we register the worklet:
+در `<script>` خود ورک‌لت را ثبت می‌کنیم:
 
 ```js
 CSS.paintWorklet.addModule("boxbg.js");
 ```
 
-#### Result
+#### نتیجه
 
-While you can't play with the worklet's script, you can alter the custom property values in DevTools to change the colors and width of the background image.
+اگرچه نمی‌توانید با اسکریپت ورک‌لت بازی کنید، می‌توانید مقادیر ویژگی سفارشی را در DevTools تغییر دهید تا رنگ‌ها و عرض تصویر پس‌زمینه تغییر کند.
 
 {{EmbedGHLiveSample("dom-examples/css-painting/custom-properties/", '100%', 400)}}
 
-## Adding complexity
+## افزودن پیچیدگی
 
-The above examples might not seem very exciting, as you could recreate them in a few different ways with existing CSS properties, e.g., by positioning some decorative [generated content](/en-US/docs/Learn_web_development/Howto/Solve_CSS_problems/Generated_content) with `::before`, or including `background: linear-gradient(yellow, yellow) 0 15px / 200px 20px no-repeat;` What makes the CSS Painting API so interesting and powerful is that you can create complex images, passing variables, that automatically resize.
-
-Let's take a look at a more complex paint example.
-
-### The paint worklet
-
-```js
-registerPaint(
-  "header-highlight",
-  class {
-    static get inputProperties() {
-      return ["--high-color"];
-    }
-    static get contextOptions() {
-      return { alpha: true };
-    }
-
-    paint(ctx, size, props) {
-      /* set where to start the highlight & dimensions */
-      const x = 0;
-      const y = size.height * 0.3;
-      const blockWidth = size.width * 0.33;
-      const highlightHeight = size.height * 0.85;
-      const color = props.get("--high-color");
-
-      ctx.fillStyle = color;
-
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      ctx.lineTo(blockWidth, y);
-      ctx.lineTo(blockWidth + highlightHeight, highlightHeight);
-      ctx.lineTo(x, highlightHeight);
-      ctx.lineTo(x, y);
-      ctx.closePath();
-      ctx.fill();
-
-      /* create the dashes */
-      for (let start = 0; start < 8; start += 2) {
-        ctx.beginPath();
-        ctx.moveTo(blockWidth + start * 10 + 10, y);
-        ctx.lineTo(blockWidth + start * 10 + 20, y);
-        ctx.lineTo(
-          blockWidth + start * 10 + 20 + highlightHeight,
-          highlightHeight,
-        );
-        ctx.lineTo(
-          blockWidth + start * 10 + 10 + highlightHeight,
-          highlightHeight,
-        );
-        ctx.lineTo(blockWidth + start * 10 + 10, y);
-        ctx.closePath();
-        ctx.fill();
-      }
-    } // paint
-  },
-);
-```
-
-### Using the paint worklet
-
-We can then create a little HTML that will accept this image as backgrounds:
-
-```html
-<h1 class="fancy">Largest Header</h1>
-<h3 class="fancy">Medium size header</h3>
-<h6 class="fancy">Smallest Header</h6>
-```
-
-We give each header a different value for the `--high-color` [custom property](/en-US/docs/Web/CSS/Guides/Cascading_variables)
-
-```css
-.fancy {
-  background-image: paint(header-highlight);
-}
-h1 {
-  --high-color: hsl(155 90% 60% / 70%);
-}
-h3 {
-  --high-color: hsl(255 90% 60% / 50%);
-}
-h6 {
-  --high-color: hsl(355 90% 60% / 30%);
-}
-```
-
-And we register our worklet
-
-```js
-CSS.paintWorklet.addModule("header-highlight.js");
-```
-
-The result looks like this:
-
-{{EmbedGHLiveSample("dom-examples/css-painting/fancy-header-highlight/", 200, 200)}}
-
-While you can't edit the worklet itself, you can play around with the CSS and HTML. Maybe try {{cssxref("scale")}} and {{cssxref("rotate")}} on the headers?
-
-You could try making the background images above without the CSS Paint API. It is doable, but you would have to declare a different, fairly complex linear gradient for each different color you wanted to create. With the CSS Paint API, one worklet can be reused, with different colors passed in this case.
-
-## Passing parameters
-
-> [!NOTE]
-> The following example requires the Experimental Web Platform features flag to be enabled in Chrome or Edge by visiting `about://flags`.
-
-With the CSS Paint API, we not only have access to custom properties and regular properties, but we can pass custom arguments to the `paint()` function as well.
-
-We can add these extra arguments when we call the function in the CSS. Let's say we want to sometimes stroke our background instead of fill it — let's pass in an extra argument for this occasion.
-
-```css
-li {
-  background-image: paint(hollow-highlights, stroke);
-}
-```
-
-Now we can use the `inputArguments()` method in the `registerPaint()` class to access the custom argument we have added to our `paint()` function.
-
-```js
-class Worklet {
-  static get inputArguments() {
-    return ["*"];
-  }
-  // …
-}
-```
-
-We then have access to that argument.
-
-```js
-class Worklet {
-  // …
-  paint(ctx, size, props, args) {
-    // use our custom arguments
-    const hasStroke = args[0].toString();
-
-    // if stroke arg is 'stroke', don't fill
-    if (hasStroke === "stroke") {
-      ctx.fillStyle = "transparent";
-      ctx.strokeStyle = color;
-    }
-    // …
-  }
-  // …
-}
-```
-
-We can also specify that we want a particular type of argument.
-
-Let's say we add a second argument with how many pixels wide we want the stroke to be:
-
-```css
-li {
-  background-image: paint(hollow-highlights, stroke, 10px);
-}
-```
-
-When we `get` our list of argument values, we can ask specifically for a `<length>` unit.
-
-```js
-class Worklet {
-  // …
-  static get inputArguments() {
-    return ["*", "<length>"];
-  }
-  // …
-}
-```
-
-In this case, we specifically requested the `<length>` attribute. The first element in the returned array will be a {{domxref('CSSUnparsedValue')}}. The second will be a {{domxref('CSSStyleValue')}}.
-
-If the custom argument is a CSS value, for instance a unit, we can invoke Typed OM CSSStyleValue class (and sub classes) by using the value type keyword when we retrieve it in the `registerPaint()` function.
-
-Now we can access the type and value properties, meaning we can get the number of pixels and a number type right out of the box. (Admittedly, `ctx.lineWidth` takes a float as a value rather than a value with length units, but for example's sake…)
-
-```js
-class Worklet {
-  // …
-  paint(ctx, size, props, args) {
-    const strokeWidth = args[1];
-
-    if (strokeWidth.unit === "px") {
-      ctx.lineWidth = strokeWidth.value;
-    } else {
-      ctx.lineWidth = 1.0;
-    }
-
-    // …
-  }
-  // …
-}
-```
-
-It's worth noting the difference between using custom properties to control different parts of this worklet and the arguments set out here. Custom properties (and in fact any properties on the style map) are global — they can be used elsewhere within our CSS (and JS).
-
-You may for example have a `--main-color`, which will be useful for setting the color within a `paint()` function, but can also be used to set colors elsewhere in your CSS. If you wanted to change it specifically for paint, it could prove difficult. This is where the custom argument feature comes in handy. Another way to think about it is that arguments are set to control what you are actually drawing, whereas properties are set to control styling.
-
-![The list items have a background image that is either pink, purple or green, with different stroke widths, and the green one being filled.](hollowfilled.png)
-
-Now we can really start to see the benefits of this API, if we can control a myriad of drawing parameters from our CSS through both custom properties and extra `paint()` function arguments, then we can really start to build reusable and highly controllable styling functions.
-
-### The paint worklet
-
-```js
-registerPaint(
-  "hollow-highlights",
-  class {
-    static get inputProperties() {
-      return ["--box-color"];
-    }
-    // Input arguments that can be passed to the `paint` function
-    static get inputArguments() {
-      return ["*", "<length>"];
-    }
-
-    static get contextOptions() {
-      return { alpha: true };
-    }
-
-    paint(ctx, size, props, args) {
-      // ctx   -> drawing context
-      // size  -> size of the box being painted
-      // props -> list of custom properties available to the element
-      // args  -> list of arguments set when calling the paint() function in the CSS
-
-      // where to start the highlight & dimensions
-      const x = 0;
-      const y = size.height * 0.3;
-      const blockWidth = size.width * 0.33;
-      const blockHeight = size.height * 0.85;
-
-      // the values passed in the paint() function in the CSS
-      const color = props.get("--box-color");
-      const strokeType = args[0].toString();
-      const strokeWidth = parseInt(args[1], 10);
-
-      // set the stroke width
-      ctx.lineWidth = strokeWidth ?? 1.0;
-      // set the fill type
-      if (strokeType === "stroke") {
-        ctx.fillStyle = "transparent";
-        ctx.strokeStyle = color;
-      } else if (strokeType === "filled") {
-        ctx.fillStyle = color;
-        ctx.strokeStyle = color;
-      } else {
-        ctx.fillStyle = "none";
-        ctx.strokeStyle = "none";
-      }
-
-      // block
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      ctx.lineTo(blockWidth, y);
-      ctx.lineTo(blockWidth + blockHeight, blockHeight);
-      ctx.lineTo(x, blockHeight);
-      ctx.lineTo(x, y);
-      ctx.closePath();
-      ctx.fill();
-      ctx.stroke();
-      // dashes
-      for (let i = 0; i < 4; i++) {
-        let start = i * 2;
-        ctx.beginPath();
-        ctx.moveTo(blockWidth + start * 10 + 10, y);
-        ctx.lineTo(blockWidth + start * 10 + 20, y);
-        ctx.lineTo(blockWidth + start * 10 + 20 + blockHeight, blockHeight);
-        ctx.lineTo(blockWidth + start * 10 + 10 + blockHeight, blockHeight);
-        ctx.lineTo(blockWidth + start * 10 + 10, y);
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-      }
-    } // paint
-  },
-);
-```
-
-### Using the paint worklet
-
-We can set different colors, stroke widths, and pick whether the background image should be filled or hollow:
-
-```css
-li {
-  --box-color: hsl(155 90% 60% / 50%);
-  background-image: paint(hollow-highlights, stroke, 5px);
-}
-
-li:nth-of-type(3n) {
-  --box-color: hsl(255 90% 60% / 50%);
-  background-image: paint(hollow-highlights, filled, 3px);
-}
-
-li:nth-of-type(3n + 1) {
-  --box-color: hsl(355 90% 60% / 50%);
-  background-image: paint(hollow-highlights, stroke, 1px);
-}
-```
-
-```html hidden
-<ul>
-  <li>item 1</li>
-  <li>item 2</li>
-  <li>item 3</li>
-  <li>item 4</li>
-  <li>item 5</li>
-  <li>item 6</li>
-  <li>item 7</li>
-  <li>item 8</li>
-  <li>item 9</li>
-  <li>item 10</li>
-  <li>item 11</li>
-  <li>item 12</li>
-  <li>item 13</li>
-  <li>item 14</li>
-  <li>item 15</li>
-  <li>item 16</li>
-  <li>item 17</li>
-  <li>item</li>
-</ul>
-```
-
-In our `<script>` we register the worklet:
-
-```js
-CSS.paintWorklet.addModule("hollow.js");
-```
-
-{{EmbedGHLiveSample("dom-examples/css-painting/hollow-highlight", 400, 400)}}
-
-## See also
-
-- [CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API)
-- [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
+مثال‌های بالا شاید چندان هیجان‌انگیز به نظر نرسند، زیرا می‌توانید آن‌ها را به چند روش مختلف با ویژگی‌های CSS موجود بازآفرینی
