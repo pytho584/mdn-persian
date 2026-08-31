@@ -1,68 +1,63 @@
 ---
 title: "ARIA: aria-invalid attribute"
-source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid"
-status: "needs-translation"
----
-
----
-title: "ARIA: aria-invalid attribute"
 short-title: aria-invalid
 slug: Web/Accessibility/ARIA/Reference/Attributes/aria-invalid
 page-type: aria-attribute
 spec-urls: https://w3c.github.io/aria/#aria-invalid
 sidebar: accessibilitysidebar
+translated_by: "n8n + AI"
 ---
 
-The `aria-invalid` state indicates the entered value does not conform to the format expected by the application.
+حالت `aria-invalid` نشان می‌دهد که مقدار وارد شده با قالب مورد انتظار برنامه مطابقت ندارد.
 
-## Description
+## توضیحات
 
-The `aria-invalid` attribute is used to indicate that the value entered into an input field is not in a format or a value the application will accept. This may include formats such as email addresses or telephone numbers. `aria-invalid` can also be used to indicate that a required field is empty.
+ویژگی `aria-invalid` برای نشان دادن این استفاده می‌شود که مقدار وارد شده در یک فیلد ورودی در قالبی نیست یا مقداری نیست که برنامه بپذیرد. این می‌تواند شامل قالب‌هایی مانند آدرس‌های ایمیل یا شماره تلفن باشد. همچنین می‌توان از `aria-invalid` برای نشان دادن خالی بودن یک فیلد اجباری استفاده کرد.
 
-The `aria-invalid` attribute can be used with any typical HTML form element, and is not limited to elements that have an ARIA role assigned.
+ویژگی `aria-invalid` می‌تواند با هر عنصر فرم HTML معمولی استفاده شود و محدود به عناصری نیست که نقش ARIA به آنها اختصاص داده شده است.
 
-The attribute should be set with JavaScript as a result of a validation process. If a value is determined to be invalid or out-of-range, set `aria-invalid="true"` **and** tell the user there is an error. For better user experience, provide suggestions for how the error can be corrected. Do not set `aria-invalid="true"` on empty required elements until after the user attempts to submit the form. They may still be working on filling it out.
+این ویژگی باید با استفاده از جاوااسکریپت در نتیجه یک فرآیند اعتبارسنجی تنظیم شود. اگر مقداری نامعتبر یا خارج از محدوده تشخیص داده شد، `aria-invalid="true"` تنظیم کنید **و** به کاربر اطلاع دهید که خطایی وجود دارد. برای تجربه کاربری بهتر، پیشنهاداتی برای نحوه اصلاح خطا ارائه دهید. `aria-invalid="true"` را روی عناصر اجباری خالی تنظیم نکنید مگر اینکه کاربر تلاش کرده باشد فرم را ارسال کند. ممکن است هنوز در حال تکمیل آن باشند.
 
 > [!NOTE]
-> When `aria-invalid` is used in conjunction with the `aria-required` attribute, `aria-invalid` should not be set to true before the form is submitted - only in response to validation.
+> هنگامی که از `aria-invalid` همراه با ویژگی `aria-required` استفاده می‌شود، `aria-invalid` نباید قبل از ارسال فرم روی true تنظیم شود - فقط در پاسخ به اعتبارسنجی.
 
-There are currently four values: in addition to `true` and `false` we have `grammar` which can be used when a grammatical error is detected and `spelling` for spelling errors. If the attribute is not present, or its value is false, or its value is an empty string, the default value of false applies. Any other value is treated as if `true` were set.
+در حال حاضر چهار مقدار وجود دارد: علاوه بر `true` و `false`، `grammar` داریم که می‌تواند زمانی که خطای دستوری تشخیص داده شود استفاده شود و `spelling` برای خطاهای املایی. اگر ویژگی وجود نداشته باشد، یا مقدار آن false باشد، یا مقدار آن یک رشته خالی باشد، مقدار پیش‌فرض false اعمال می‌شود. هر مقدار دیگری به عنوان `true` در نظر گرفته می‌شود.
 
-### Native HTML validation
+### اعتبارسنجی بومی HTML
 
-HTML has native form validation. When a user submits a form with a control containing errors, the first form control with an invalid value displays an error message, natively.
+HTML دارای اعتبارسنجی فرم بومی است. هنگامی که کاربر فرمی را با یک کنترل حاوی خطا ارسال می‌کند، اولین کنترل فرم با مقدار نامعتبر یک پیام خطا را به صورت بومی نمایش می‌دهد.
 
-If there is a [`required`](/en-US/docs/Web/HTML/Reference/Attributes/required) attribute on a form control that isn't filled out, the form will not submit, and an error message appears reading "Please fill out this field" or something similar. The messaging for native validation varies depending on the browser, and cannot be styled.
+اگر یک ویژگی [`required`](/en-US/docs/Web/HTML/Reference/Attributes/required) روی یک کنترل فرم وجود داشته باشد که پر نشده باشد، فرم ارسال نمی‌شود و یک پیام خطا با عنوان "لطفاً این فیلد را پر کنید" یا مشابه آن ظاهر می‌شود. پیام‌دهی برای اعتبارسنجی بومی بسته به مرورگر متفاوت است و قابل استایل‌دهی نیست.
 
 ```html
 <input type="number" step="2" min="0" max="100" required />
 ```
 
-If the user had entered a value in the preceding input example above the maximum, below the minimum, or that doesn't match the step value, an error message would appear. If the user had entered "3", the native error message would be similar to "Please enter a valid value."
+اگر کاربر مقداری در مثال ورودی بالا وارد کرده باشد که بیشتر از حداکثر، کمتر از حداقل، یا مطابق با مقدار step نباشد، یک پیام خطا ظاهر می‌شود. اگر کاربر "3" را وارد کرده باشد، پیام خطای بومی مشابه "لطفاً یک مقدار معتبر وارد کنید" خواهد بود.
 
-If you are creating your own form validation scripts, make sure to include `aria-invalid` on invalid form controls, along with styling (use the `[aria-invalid="true"]` attribute selector) and messaging (with [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage)) to help users understand where the mistake is and how they can fix it.
+اگر در حال ایجاد اسکریپت‌های اعتبارسنجی فرم خود هستید، حتماً `aria-invalid` را روی کنترل‌های فرم نامعتبر قرار دهید، همراه با استایل‌دهی (با استفاده از انتخابگر ویژگی `[aria-invalid="true"]`) و پیام‌دهی (با [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage)) برای کمک به کاربران در درک محل اشتباه و نحوه رفع آن.
 
-## Values
+## مقادیر
 
 - `grammar`
-  - : A grammatical error was detected.
-- `false` (default)
-  - : There are no detected errors in the value.
+  - : یک خطای دستوری تشخیص داده شد.
+- `false` (پیش‌فرض)
+  - : هیچ خطای تشخیص داده شده‌ای در مقدار وجود ندارد.
 - `spelling`
-  - : A spelling error was detected.
+  - : یک خطای املایی تشخیص داده شد.
 - `true`
-  - : The value entered by the user has failed validation.
+  - : مقدار وارد شده توسط کاربر از اعتبارسنجی عبور نکرده است.
 
-Any value not in this list will be treated as `true`.
+هر مقداری که در این لیست نباشد به عنوان `true` در نظر گرفته می‌شود.
 
-## Example
+## مثال
 
-The following snippet shows a simplified version of two form fields with a validation function attached to the blur event. Note that since the default value for `aria-invalid` is `false`, it is not strictly necessary to add the attribute to input.
+قطعه کد زیر یک نسخه ساده‌شده از دو فیلد فرم را با یک تابع اعتبارسنجی متصل به رویداد blur نشان می‌دهد. توجه داشته باشید که از آنجایی که مقدار پیش‌فرض برای `aria-invalid` برابر با `false` است، افزودن ویژگی به input ضروری نیست.
 
 ```html
 <ul>
   <li>
-    <label for="name">Full Name</label>
+    <label for="name">نام کامل</label>
     <input
       type="text"
       name="name"
@@ -71,7 +66,7 @@ The following snippet shows a simplified version of two form fields with a valid
       aria-invalid="false" />
   </li>
   <li>
-    <label for="email">Email Address</label>
+    <label for="email">آدرس ایمیل</label>
     <input
       type="email"
       name="email"
@@ -87,18 +82,18 @@ document.getElementById("name").addEventListener("blur", () => {
   checkValidity(
     "name",
     " ",
-    "Invalid name entered (requires both first and last name)",
+    "نام نامعتبر وارد شده است (نیاز به نام و نام خانوادگی دارد)",
   );
 });
 
 document.getElementById("email").addEventListener("blur", () => {
-  checkValidity("email", "@", "Invalid email address");
+  checkValidity("email", "@", "آدرس ایمیل نامعتبر");
 });
 ```
 
-Note that it is not necessary to validate the fields immediately on blur; the application could wait until the form is submitted (though this is not necessarily recommended).
+توجه داشته باشید که نیازی به اعتبارسنجی فوری فیلدها در رویداد blur نیست؛ برنامه می‌تواند تا زمان ارسال فرم صبر کند (البته این کار لزوماً توصیه نمی‌شود).
 
-The snippet below shows a validation function, which only checks for the presence of a particular character (in the real world, validation will likely be more sophisticated):
+قطعه کد زیر یک تابع اعتبارسنجی را نشان می‌دهد که فقط وجود یک کاراکتر خاص را بررسی می‌کند (در دنیای واقعی، اعتبارسنجی احتمالاً پیچیده‌تر خواهد بود):
 
 ```js
 function checkValidity(id, searchTerm, msg) {
@@ -113,7 +108,7 @@ function checkValidity(id, searchTerm, msg) {
 }
 ```
 
-The snippet below shows the alert functions, which add (or remove) the error message:
+قطعه کد زیر توابع هشدار را نشان می‌دهد که پیام خطا را اضافه (یا حذف) می‌کنند:
 
 ```js
 function updateAlert(msg) {
@@ -133,18 +128,18 @@ function updateAlert(msg) {
 }
 ```
 
-Note that the alert has the ARIA role attribute set to [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role).
+توجه داشته باشید که هشدار دارای ویژگی نقش ARIA تنظیم شده بر روی [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role) است.
 
-## Associated interfaces
+## واسط‌های مرتبط
 
 - {{domxref("Element.ariaInvalid")}}
-  - : The [`ariaInvalid`](/en-US/docs/Web/API/Element/ariaInvalid) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-invalid` attribute, which indicates whether the element is exposed to an accessibility API.
+  - : ویژگی [`ariaInvalid`](/en-US/docs/Web/API/Element/ariaInvalid)، بخشی از واسط {{domxref("Element")}}، مقدار ویژگی `aria-invalid` را منعکس می‌کند که نشان می‌دهد آیا عنصر در معرض یک API دسترس‌پذیری قرار دارد یا خیر.
 - {{domxref("ElementInternals.ariaInvalid")}}
-  - : The [`ariaInvalid`](/en-US/docs/Web/API/ElementInternals/ariaInvalid) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-invalid` attribute.
+  - : ویژگی [`ariaInvalid`](/en-US/docs/Web/API/ElementInternals/ariaInvalid)، بخشی از واسط {{domxref("ElementInternals")}}، مقدار ویژگی `aria-invalid` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+مورد استفاده در نقش‌ها:
 
 - [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role)
 - [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
@@ -157,7 +152,7 @@ Used in roles:
 - [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
 - [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role)
 
-Inherited into role:
+به ارث رسیده به نقش:
 
 - [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
 - [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role)
@@ -165,13 +160,14 @@ Inherited into role:
 - [`switch`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/switch_role)
 - [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage)
-- CSS {{CSSXRef(':valid')}} pseudoclass
-- CSS {{CSSXRef(':invalid')}} pseudoclass
-- [Form Validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation) tutorial
+- شبه‌کلاس CSS {{CSSXRef(':valid')}}
+- شبه‌کلاس CSS {{CSSXRef(':invalid')}}
+- آموزش [اعتبارسنجی فرم](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+```
