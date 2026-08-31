@@ -1,11 +1,7 @@
 ---
 title: "AudioData: format property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioData/format"
-status: "needs-translation"
----
-
----
-title: "AudioData: format property"
+translated_by: "n8n + AI"
 short-title: format
 slug: Web/API/AudioData/format
 page-type: web-api-instance-property
@@ -14,41 +10,41 @@ browser-compat: api.AudioData.format
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`format`** read-only property of the {{domxref("AudioData")}} interface returns the sample format of the `AudioData` object.
+ویژگی فقط خواندنی **`format`** از رابط {{domxref("AudioData")}} قالب نمونه‌های شیء `AudioData` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string. One of:
+یک رشته. یکی از موارد زیر:
 
 - `"u8"`
-  - : 8-bit unsigned integer samples, in an interleaved format.
+  - : نمونه‌های عدد صحیح بدون علامت 8 بیتی، در قالب درهم‌آمیخته.
 - `"s16"`
-  - : 16-bit signed integer samples, in an interleaved format.
+  - : نمونه‌های عدد صحیح علامت‌دار 16 بیتی، در قالب درهم‌آمیخته.
 - `"s32"`
-  - : 32-bit signed integer samples, in an interleaved format.
+  - : نمونه‌های عدد صحیح علامت‌دار 32 بیتی، در قالب درهم‌آمیخته.
 - `"f32"`
-  - : 32-bit float samples, in an interleaved format.
+  - : نمونه‌های ممیز شناور 32 بیتی، در قالب درهم‌آمیخته.
 - `"u8-planar"`
-  - : 8-bit unsigned integer samples, in a planar format.
+  - : نمونه‌های عدد صحیح بدون علامت 8 بیتی، در قالب صفحه‌ای.
 - `"s16-planar"`
-  - : 16-bit signed integer samples, in a planar format.
+  - : نمونه‌های عدد صحیح علامت‌دار 16 بیتی، در قالب صفحه‌ای.
 - `"s32-planar"`
-  - : 32-bit signed integer samples, in a planar format.
+  - : نمونه‌های عدد صحیح علامت‌دار 32 بیتی، در قالب صفحه‌ای.
 - `"f32-planar"`
-  - : 32-bit float samples, in a planar format.
+  - : نمونه‌های ممیز شناور 32 بیتی، در قالب صفحه‌ای.
 
-## Examples
+## مثال‌ها
 
-The below example prints the value of `format` to the console.
+مثال زیر مقدار `format` را در کنسول چاپ می‌کند.
 
 ```js
 console.log(AudioData.format);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
