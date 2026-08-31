@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchUpdateUIEvent"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchUpdateUIEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,29 +15,29 @@ browser-compat: api.BackgroundFetchUpdateUIEvent
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`BackgroundFetchUpdateUIEvent`** interface of the {{domxref('Background Fetch API','','',' ')}} is an event type for the {{domxref("ServiceWorkerGlobalScope.backgroundfetchsuccess_event", "backgroundfetchsuccess")}} and {{domxref("ServiceWorkerGlobalScope.backgroundfetchfail_event", "backgroundfetchfail")}} events, and provides a method for updating the title and icon of the app to inform a user of the success or failure of a background fetch.
+رابطهٔ **`BackgroundFetchUpdateUIEvent`** از {{domxref('Background Fetch API','','',' ')}} نوعی رویداد برای رویدادهای {{domxref("ServiceWorkerGlobalScope.backgroundfetchsuccess_event", "backgroundfetchsuccess")}} و {{domxref("ServiceWorkerGlobalScope.backgroundfetchfail_event", "backgroundfetchfail")}} است و روشی برای به‌روزرسانی عنوان و نماد برنامه فراهم می‌کند تا کاربر از موفقیت یا شکست یک دریافت پس‌زمینه مطلع شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("BackgroundFetchUpdateUIEvent.BackgroundFetchUpdateUIEvent()", "BackgroundFetchUpdateUIEvent()")}} {{Experimental_Inline}}
-  - : Creates a new `BackgroundFetchUIEvent` object. This constructor is not typically used, as the browser creates these objects itself for the {{domxref("ServiceWorkerGlobalScope.backgroundfetchsuccess_event", "backgroundfetchsuccess")}} and {{domxref("ServiceWorkerGlobalScope.backgroundfetchfail_event", "backgroundfetchfail")}} events.
+  - : یک شیء `BackgroundFetchUIEvent` جدید ایجاد می‌کند. این سازنده معمولاً استفاده نمی‌شود، زیرا مرورگر خودش این اشیاء را برای رویدادهای {{domxref("ServiceWorkerGlobalScope.backgroundfetchsuccess_event", "backgroundfetchsuccess")}} و {{domxref("ServiceWorkerGlobalScope.backgroundfetchfail_event", "backgroundfetchfail")}} می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent, {{domxref("BackgroundFetchEvent")}}._
+_همچنین ویژگی‌های والد خود، {{domxref("BackgroundFetchEvent")}} را به ارث می‌برد._
 
-## Instance methods
+## متدهای نمونه
 
-_Also inherits methods from its parent, {{domxref("BackgroundFetchEvent")}}._
+_همچنین متدهای والد خود، {{domxref("BackgroundFetchEvent")}} را به ارث می‌برد._
 
 - {{domxref("BackgroundFetchUpdateUIEvent.updateUI()")}} {{Experimental_Inline}}
-  - : Updates the title and icon in the user interface to show the status of a background fetch. Resolves with a {{jsxref("Promise")}}.
+  - : عنوان و نماد را در رابط کاربری به‌روزرسانی می‌کند تا وضعیت یک دریافت پس‌زمینه را نشان دهد. با یک {{jsxref("Promise")}} حل می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this example, the `backgroundfetchsuccess` event is listened for, indicating that a fetch has completed successfully. The {{domxref("BackgroundFetchUpdateUIEvent.updateUI()", "updateUI()")}} method is then called, with a message to let the user know the episode they downloaded is ready.
+در این مثال، رویداد `backgroundfetchsuccess` شنیده می‌شود که نشان می‌دهد یک دریافت با موفقیت کامل شده است. سپس متد {{domxref("BackgroundFetchUpdateUIEvent.updateUI()", "updateUI()")}} با یک پیام فراخوانی می‌شود تا به کاربر اطلاع دهد قسمتی که دانلود کرده آماده است.
 
 ```js
 addEventListener("backgroundfetchsuccess", (event) => {
@@ -65,10 +65,10 @@ addEventListener("backgroundfetchsuccess", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
