@@ -1,7 +1,7 @@
 ---
 title: "ARIA: structure role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structure_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,24 +13,24 @@ spec-urls: https://w3c.github.io/aria/#structure
 sidebar: accessibilitysidebar
 ---
 
-The `structure` role is for document structural elements.
+نقش `structure` برای عناصر ساختاری سند است.
 
 > [!WARNING]
-> The `structure` role is an [abstract role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles). It is included here for completeness of documentation. It should not be used by web authors. Use HTML and subclass structure roles.
+> نقش `structure` یک [abstract role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles) است. برای کامل بودن مستندات در اینجا آورده شده است. نباید توسط نویسندگان وب استفاده شود. از HTML و نقش‌های ساختاری زیرکلاس استفاده کنید.
 
-## Description
+## توضیحات
 
-`Structure` is a superclass [abstract role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles) for document structures, like as [`document`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/document_role),
-[`rowgroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role), and [`sectionhead`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/sectionhead_role), that support the accessibility of dynamic web content by helping assistive technologies determine active content versus static document content. Some subclass roles, like
-[`section` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/section_role), are in turn superclasses of other roles.
+`Structure` یک [abstract role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles) ابرکلاس برای ساختارهای سند است، مانند [`document`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/document_role)،
+[`rowgroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role) و [`sectionhead`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/sectionhead_role)، که با کمک به فناوری‌های کمکی برای تعیین محتوای فعال در برابر محتوای ایستای سند، از دسترس‌پذیری محتوای وب پویا پشتیبانی می‌کنند. برخی از نقش‌های زیرکلاس، مانند
+[`section` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/section_role)، به نوبه خود ابرکلاس نقش‌های دیگر هستند.
 
-The `structure` role is the superclass for all document structure roles, which are used to provide a structural description for a section of content. Most structure roles should no longer be used as browsers now support semantic HTML element with the same meaning. The structure roles without HTML equivalents, such as the [`presentation` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) which means content is presentational only, provide information on the document structure to assistive technologies such as screen readers as equivalent native HTML tags are not available.
+نقش `structure` ابرکلاس همه نقش‌های ساختار سند است که برای ارائه توصیف ساختاری برای بخشی از محتوا استفاده می‌شوند. بیشتر نقش‌های ساختاری دیگر نباید استفاده شوند، زیرا مرورگرها اکنون از عنصر HTML معنایی با همان معنی پشتیبانی می‌کنند. نقش‌های ساختاری بدون معادل HTML، مانند [`presentation` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) که به این معنی است که محتوا صرفاً نمایشی است، اطلاعاتی درباره ساختار سند به فناوری‌های کمکی مانند صفحه‌خوان‌ها ارائه می‌دهند، زیرا برچسب‌های HTML بومی معادل در دسترس نیستند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [ARIA: `roletype` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/roletype_role)
 - [ARIA: `generic` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/generic_role)
