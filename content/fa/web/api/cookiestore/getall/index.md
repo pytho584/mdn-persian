@@ -1,11 +1,5 @@
 ---
 title: "CookieStore: getAll() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/getAll"
-status: "needs-translation"
----
-
----
-title: "CookieStore: getAll() method"
 short-title: getAll()
 slug: Web/API/CookieStore/getAll
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.CookieStore.getAll
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}{{AvailableInWorkers("window_and_service")}}
 
-The **`getAll()`** method of the {{domxref("CookieStore")}} interface returns a {{jsxref("Promise")}} that resolves as an array of cookies that match the `name` or `options` passed to it.
-Passing no parameters will return all cookies for the current context.
+متد **`getAll()`** در رابط {{domxref("CookieStore")}} یک {{jsxref("Promise")}} برمی‌گرداند که با آرایه‌ای از کوکی‌های منطبق با `name` یا `options` ارسال‌شده به آن resolve می‌شود. فراخوانی بدون پارامتر، تمام کوکی‌های مربوط به بافتار (context) فعلی را برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getAll()
@@ -25,72 +18,72 @@ getAll(name)
 getAll(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `name` {{optional_inline}}
-  - : A string with the name of a cookie.
+  - : رشته‌ای شامل نام یک کوکی.
 
-Or
+یا
 
 - `options` {{optional_inline}}
-  - : An object containing:
+  - : شیئی شامل:
     - `name`
-      - : A string with the name of a cookie.
+      - : رشته‌ای شامل نام یک کوکی.
     - `url`
-      - : A string with the URL of a cookie.
+      - : رشته‌ای شامل URL یک کوکی.
 
 > [!NOTE]
-> The `url` option enables the modification of a cookie scoped under a particular URL. Service workers can obtain cookies that would be sent to any URL under their scope. From a document you may only obtain the cookies at the current URL, so the only valid URL in a document context is the document's URL.
+> گزینه `url` امکان تغییر کوکی‌ای را می‌دهد که در محدوده یک URL خاص تعریف شده است. کارگرهای خدماتی (service workers) می‌توانند کوکی‌هایی را دریافت کنند که به هر URL در محدوده خودشان ارسال می‌شوند. از یک سند (document) فقط می‌توانید کوکی‌های مربوط به URL فعلی را دریافت کنید، بنابراین تنها URL معتبر در بافتار یک سند، URL خود آن سند است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with an array of objects representing cookies that match the given `name` or `options`.
+یک {{jsxref("Promise")}} که با آرایه‌ای از اشیاء نمایش‌دهنده کوکی‌های منطبق با `name` یا `options` داده‌شده resolve می‌شود.
 
-Each object contains the following properties:
+هر شیء شامل ویژگی‌های زیر است:
 
 - `domain`
-  - : A string containing the domain of the cookie.
+  - : رشته‌ای شامل دامنه کوکی.
 
 - `expires`
-  - : A timestamp, given as [Unix time](/en-US/docs/Glossary/Unix_time) in milliseconds, containing the expiration date of the cookie.
+  - : یک برچسب زمانی، بر حسب [زمان یونیکس](/en-US/docs/Glossary/Unix_time) در میلی‌ثانیه، که تاریخ انقضای کوکی را نشان می‌دهد.
 
 - `name`
-  - : A string containing the name of the cookie.
+  - : رشته‌ای شامل نام کوکی.
 
 - `partitioned`
-  - : A boolean indicating whether the cookie is a partitioned cookie (`true`) or not (`false`). See [Cookies Having Independent Partitioned State (CHIPS)](/en-US/docs/Web/Privacy/Guides/Third-party_cookies/Partitioned_cookies) for more information.
+  - : یک مقدار بولی که نشان می‌دهد آیا کوکی یک کوکی پارتیشن‌بندی‌شده است (`true`) یا نه (`false`). برای اطلاعات بیشتر به [کوکی‌های با حالت مستقل پارتیشن‌بندی‌شده (CHIPS)](/en-US/docs/Web/Privacy/Guides/Third-party_cookies/Partitioned_cookies) مراجعه کنید.
 
 - `path`
-  - : A string containing the path of the cookie.
+  - : رشته‌ای شامل مسیر کوکی.
 
 - `sameSite`
-  - : One of the following [`SameSite`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#samesitesamesite-value) values: [`"strict"`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#strict), [`"lax"`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#lax), or [`"none"`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#none).
+  - : یکی از مقادیر [`SameSite`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#samesitesamesite-value) زیر: [`"strict"`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#strict)، [`"lax"`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#lax) یا [`"none"`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#none).
 
 - `secure`
-  - : A boolean value indicating whether the cookie is to be used in secure contexts only (`true`) or not (`false`).
+  - : یک مقدار بولی که نشان می‌دهد آیا کوکی فقط باید در بافتارهای امن استفاده شود (`true`) یا نه (`false`).
 
 - `value`
-  - : A string containing the value of the cookie.
+  - : رشته‌ای شامل مقدار کوکی.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the origin does not {{glossary("Serialization", "serialize")}} to a URL.
+  - : اگر مبدأ (origin) به یک URL {{glossary("Serialization", "سریال‌سازی")}} نشود، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if:
-    - The method is called in the main thread, and the `url` option is specified but does not match the URL of the current window.
-    - The method is called in a worker and the `url` option is specified, but does not match the origin of the worker.
-    - Querying cookies represented by the given `name` or `options` fails.
+  - : در موارد زیر پرتاب می‌شود:
+    - متد در ترد اصلی فراخوانی شود و گزینه `url` مشخص شده باشد اما با URL پنجره فعلی مطابقت نداشته باشد.
+    - متد در یک کارگر (worker) فراخوانی شود و گزینه `url` مشخص شده باشد اما با مبدأ کارگر مطابقت نداشته باشد.
+    - پرس‌وجوی کوکی‌های نمایش‌داده‌شده توسط `name` یا `options` داده‌شده ناموفق باشد.
 
-## Examples
+## مثال‌ها
 
-<!-- The examples don't work as live examples in MDN environment (due to unknown errors) -->
+<!-- مثال‌ها در محیط MDN به‌عنوان مثال زنده کار نمی‌کنند (به دلیل خطاهای ناشناخته) -->
 
-### Get all cookies for this context
+### دریافت همه کوکی‌های این بافتار
 
-This example shows how to get all cookies in the current context.
+این مثال نحوه دریافت همه کوکی‌ها در بافتار فعلی را نشان می‌دهد.
 
-First we define `setTestCookies()` which creates the test cookies "cookie1" and "cookie2", logging any errors.
+ابتدا تابع `setTestCookies()` را تعریف می‌کنیم که کوکی‌های آزمایشی «cookie1» و «cookie2» را می‌سازد و هر خطایی را ثبت می‌کند.
 
 ```js
 async function setTestCookies() {
@@ -109,9 +102,7 @@ async function setTestCookies() {
 }
 ```
 
-The `cookieTest()` method calls `setTestCookies()` and then waits on `getAll()`.
-This returns a {{jsxref("Promise")}} that resolves with all of the cookies for this context as an array of objects, or an empty array if there are no cookies.
-If the returned promise resolves with array containing cookie information we iterate the array and log each cookie ("cookie1" and "cookie2").
+متد `cookieTest()` ابتدا `setTestCookies()` را فراخوانی کرده و سپس منتظر `getAll()` می‌ماند. این متد یک {{jsxref("Promise")}} برمی‌گرداند که با آرایه‌ای از اشیاء شامل تمام کوکی‌های این بافتار resolve می‌شود، یا اگر کوکی‌ای وجود نداشته باشد، با آرایه‌ای خالی. اگر پرامیسی که برگردانده شده با آرایه‌ای حاوی اطلاعات کوکی resolve شود، آرایه را پیمایش کرده و هر کوکی («cookie1» و «cookie2») را ثبت می‌کنیم.
 
 ```js
 async function cookieTest() {
@@ -131,10 +122,10 @@ async function cookieTest() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
