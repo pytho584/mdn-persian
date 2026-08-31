@@ -1,7 +1,7 @@
 ---
 title: "AudioTrackList: addtrack event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList/addtrack_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,11 +14,11 @@ browser-compat: api.AudioTrackList.addtrack_event
 
 {{APIRef("HTML DOM")}}
 
-The `addtrack` event is fired when a track is added to an [`AudioTrackList`](/en-US/docs/Web/API/AudioTrackList).
+رویداد `addtrack` زمانی فعال می‌شود که یک ترک به [`AudioTrackList`](/en-US/docs/Web/API/AudioTrackList) اضافه شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("addtrack", (event) => { })
@@ -26,31 +26,27 @@ addEventListener("addtrack", (event) => { })
 onaddtrack = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("TrackEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("TrackEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("TrackEvent")}}
 
-## Description
+## توضیحات
 
-### Trigger
+### محرک
 
-The `addtrack` event is called whenever a new track is added to the media
-element whose audio tracks are represented by the `AudioTrackList` object.
-This happens when tracks are added to the element when the media is first attached to
-the element; one `addtrack` event will occur for each audio track in the
-media resource.
+رویداد `addtrack` هرگاه یک ترک جدید به عنصر رسانه‌ای که ترک‌های صوتی آن توسط شیء `AudioTrackList` نمایش داده می‌شوند، اضافه شود، فراخوانی می‌شود. این اتفاق زمانی می‌افتد که ترک‌ها هنگام اولین اتصال رسانه به عنصر اضافه می‌شوند؛ برای هر ترک صوتی در منبع رسانه یک رویداد `addtrack` رخ می‌دهد.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و منتشر نمی‌شود.
 
-### Use cases
+### موارد استفاده
 
-You can use this event to react to a new audio track becoming available. You may want to update your UI elements to allow for user selection of the new audio track, for example.
+می‌توانید از این رویداد برای واکنش به در دسترس شدن یک ترک صوتی جدید استفاده کنید. برای مثال، ممکن است بخواهید عناصر رابط کاربری خود را به‌روزرسانی کنید تا انتخاب کاربر از ترک صوتی جدید امکان‌پذیر شود.
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const videoElement = document.querySelector("video");
@@ -60,7 +56,7 @@ videoElement.audioTracks.addEventListener("addtrack", (event) => {
 });
 ```
 
-Using the `onaddtrack` event handler property:
+استفاده از ویژگی مدیریت رویداد `onaddtrack`:
 
 ```js
 const videoElement = document.querySelector("video");
@@ -70,18 +66,18 @@ videoElement.audioTracks.onaddtrack = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: [`removetrack`](/en-US/docs/Web/API/AudioTrackList/removetrack_event), [`change`](/en-US/docs/Web/API/AudioTrackList/change_event)
-- This event on [`VideoTrackList`](/en-US/docs/Web/API/VideoTrackList) targets: [`addtrack`](/en-US/docs/Web/API/VideoTrackList/addtrack_event)
-- This event on [`MediaStream`](/en-US/docs/Web/API/MediaStream) targets: [`addtrack`](/en-US/docs/Web/API/MediaStream/addtrack_event)
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- رویدادهای مرتبط: [`removetrack`](/en-US/docs/Web/API/AudioTrackList/removetrack_event)، [`change`](/en-US/docs/Web/API/AudioTrackList/change_event)
+- این رویداد بر روی [`VideoTrackList`](/en-US/docs/Web/API/VideoTrackList) هدف: [`addtrack`](/en-US/docs/Web/API/VideoTrackList/addtrack_event)
+- این رویداد بر روی [`MediaStream`](/en-US/docs/Web/API/MediaStream) هدف: [`addtrack`](/en-US/docs/Web/API/MediaStream/addtrack_event)
+- [API ضبط و جریان‌های رسانه](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [WebRTC](/en-US/docs/Web/API/WebRTC_API)
