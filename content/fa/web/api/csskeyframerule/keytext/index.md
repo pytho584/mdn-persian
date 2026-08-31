@@ -1,11 +1,5 @@
 ---
 title: "CSSKeyframeRule: keyText property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframeRule/keyText"
-status: "needs-translation"
----
-
----
-title: "CSSKeyframeRule: keyText property"
 short-title: keyText
 slug: Web/API/CSSKeyframeRule/keyText
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.CSSKeyframeRule.keyText
 
 {{APIRef("CSSOM") }}
 
-The **`keyText`** property of the {{domxref("CSSKeyframeRule")}} interface represents the [keyframe selector](/en-US/docs/Web/CSS/Reference/Selectors/Keyframe_selectors) as a comma-separated list of percentage values. The from and to keywords map to 0% and 100%, respectively.
+ویژگی **`keyText`** در رابط {{domxref("CSSKeyframeRule")}} نشان‌دهندهٔ [انتخابگر keyframe](/en-US/docs/Web/CSS/Reference/Selectors/Keyframe_selectors) به صورت فهرستی از مقادیر درصدی است که با ویرگول از هم جدا شده‌اند. کلمات کلیدی `from` و `to` به ترتیب به `0%` و `100%` نگاشت می‌شوند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("SyntaxError")}}
-  - : Thrown if `keyText` is updated with an invalid keyframe selector, in which case `keyText` remains untouched.
+  - : اگر `keyText` با یک انتخابگر keyframe نامعتبر به‌روزرسانی شود، این خطا پرتاب می‌شود؛ در این صورت `keyText` بدون تغییر باقی می‌ماند.
 
-## Examples
+## مثال‌ها
 
-The CSS includes a keyframes at-rule. This will be the first {{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`.
-`myRules[0]` returns a {{domxref("CSSKeyframesRule")}} object, which will contain individual {{domxref("CSSKeyFrameRule")}} objects for each keyframe.
+CSS شامل یک at-rule کلیدفریم است. این اولین {{domxref("CSSRule")}} خواهد بود که توسط `document.styleSheets[0].cssRules` بازگردانده می‌شود.
+`myRules[0]` یک شیء {{domxref("CSSKeyframesRule")}} برمی‌گرداند که شامل اشیاء جداگانهٔ {{domxref("CSSKeyFrameRule")}} برای هر کلیدفریم است.
 
 ```css
 @keyframes slide-in {
@@ -48,10 +42,10 @@ let keyframes = myRules[0]; // a CSSKeyframesRule
 console.log(keyframes[0].keyText); // a string containing 0%
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
