@@ -1,10 +1,4 @@
 ---
-title: "CredentialsContainer"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer"
-status: "needs-translation"
----
-
----
 title: CredentialsContainer
 slug: Web/API/CredentialsContainer
 page-type: web-api-interface
@@ -13,27 +7,27 @@ browser-compat: api.CredentialsContainer
 
 {{APIRef("Credential Management API")}}{{securecontext_header}}
 
-The **`CredentialsContainer`** interface of the [Credential Management API](/en-US/docs/Web/API/Credential_Management_API) exposes methods to request credentials and notify the user agent when events such as successful sign in or sign out happen. This interface is accessible from {{domxref('Navigator.credentials')}}.
+رابط **`CredentialsContainer`** از [Credential Management API](/en-US/docs/Web/API/Credential_Management_API) روش‌هایی را برای درخواست اعتبارنامه‌ها و اطلاع‌رسانی به عامل کاربر هنگام رویدادهایی مانند ورود موفق یا خروج از سیستم ارائه می‌دهد. این رابط از طریق {{domxref('Navigator.credentials')}} در دسترس است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-None.
+هیچکدام.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("CredentialsContainer.create()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves with a new {{domxref("Credential")}} instance based on the provided options, or `null` if no `Credential` object can be created. In exceptional circumstances, the {{jsxref("Promise")}} may reject.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که با یک نمونه جدید {{domxref("Credential")}} بر اساس گزینه‌های ارائه‌شده، یا در صورت عدم امکان ایجاد شیء `Credential` با `null` حل می‌شود. در شرایط استثنایی، ممکن است {{jsxref("Promise")}} رد شود.
 - {{domxref("CredentialsContainer.get()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves with the {{domxref("Credential")}} instance that matches the provided parameters.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که با نمونه {{domxref("Credential")}} مطابق با پارامترهای ارائه‌شده حل می‌شود.
 - {{domxref("CredentialsContainer.preventSilentAccess()")}}
-  - : Sets a flag that specifies whether automatic log in is allowed for future visits to the current origin, then returns an empty {{jsxref("Promise")}}. For example, you might call this, after a user signs out of a website to ensure that they aren't automatically signed in on the next site visit. Earlier versions of the spec called this method `requireUserMediation()`. See [Browser compatibility](#browser_compatibility) for support details.
+  - : یک پرچم تنظیم می‌کند که مشخص می‌کند آیا ورود خودکار برای بازدیدهای آینده از مبدأ (origin) فعلی مجاز است یا خیر، سپس یک {{jsxref("Promise")}} خالی برمی‌گرداند. به‌عنوان مثال، ممکن است این روش را پس از خروج کاربر از یک وب‌سایت فراخوانی کنید تا مطمئن شوید که در بازدید بعدی از سایت به‌طور خودکار وارد نمی‌شود. نسخه‌های قدیمی‌تر مشخصات این روش را `requireUserMediation()` می‌نامیدند. برای جزئیات پشتیبانی به [سازگاری مرورگر](#browser_compatibility) مراجعه کنید.
 - {{domxref("CredentialsContainer.store()")}}
-  - : Stores a set of credentials for a user, inside a provided {{domxref("Credential")}} instance and returns that instance in a {{jsxref("Promise")}}.
+  - : مجموعه‌ای از اعتبارنامه‌ها را برای یک کاربر، درون یک نمونه {{domxref("Credential")}} ارائه‌شده ذخیره می‌کند و آن نمونه را در یک {{jsxref("Promise")}} برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
