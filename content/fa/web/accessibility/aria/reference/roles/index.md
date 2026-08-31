@@ -1,7 +1,7 @@
 ---
 title: "WAI-ARIA Roles"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,23 +12,23 @@ page-type: landing-page
 sidebar: accessibilitysidebar
 ---
 
-ARIA roles provide semantic meaning to content, allowing screen readers and other tools to present and support interaction with an object in a way that is consistent with user expectations of that type of object. <abbr>ARIA</abbr> roles can be used to describe elements that don't natively exist in HTML or exist but don't yet have full browser support.
+نقش‌های ARIA معنای معنایی به محتوا می‌بخشند و به صفحه‌خوان‌ها و سایر ابزارها اجازه می‌دهند تا تعامل با یک شیء را به‌گونه‌ای ارائه و پشتیبانی کنند که با انتظارات کاربر از آن نوع شیء هماهنگ باشد. از نقش‌های <abbr>ARIA</abbr> می‌توان برای توصیف عناصری استفاده کرد که به‌طور بومی در HTML وجود ندارند یا وجود دارند اما هنوز از پشتیبانی کامل مرورگر برخوردار نیستند.
 
-By default, many semantic elements in HTML have a role; for example, `<input type="radio">` has the "radio" role. Non-semantic elements in HTML do not have a role; `<div>` and `<span>` without added semantics return `null`. The `role` attribute can provide semantics.
+به‌طور پیش‌فرض، بسیاری از عناصر معنایی HTML دارای نقش هستند؛ برای مثال، `<input type="radio">` دارای نقش «radio» است. عناصر غیرمعنایی در HTML نقشی ندارند؛ `<div>` و `<span>` بدون معناشناسی افزوده، مقدار `null` برمی‌گردانند. ویژگی `role` می‌تواند معناشناسی را فراهم کند.
 
-ARIA roles are added to HTML elements using `role="role type"`, where _role type_ is the name of a role in the ARIA specification. Some roles require the inclusion of associated ARIA states or properties; others are only valid in association with other roles.
+نقش‌های ARIA با استفاده از `role="role type"` به عناصر HTML اضافه می‌شوند، که در آن _نوع نقش_ نام یک نقش در مشخصات ARIA است. برخی نقش‌ها مستلزم گنجاندن حالت‌ها یا ویژگی‌های مرتبط ARIA هستند؛ برخی دیگر فقط در ارتباط با نقش‌های دیگر معتبرند.
 
-For example, `<ul role="tabpanel">` will be announced as a 'tab panel' by screen readers. However, if the tab panel doesn't have nested tabs, the element with the tabpanel role is not in fact a tab panel and accessibility has actually been negatively impacted.
+برای مثال، `<ul role="tabpanel">` به‌وسیله صفحه‌خوان‌ها به‌عنوان «پنل تب» اعلام می‌شود. با این حال، اگر پنل تب دارای تب‌های تودرتو نباشد، عنصر دارای نقش tabpanel در واقع پنل تب نیست و دسترس‌پذیری عملاً تحت تأثیر منفی قرار گرفته است.
 
-The [ARIA states and properties](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes) associated with each role are included in the role's pages, with each attribute also having a dedicated page.
+[حالت‌ها و ویژگی‌های ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes) مرتبط با هر نقش در صفحه‌های همان نقش گنجانده شده‌اند و هر ویژگی نیز صفحه اختصاصی خود را دارد.
 
-## ARIA role types
+## انواع نقش‌های ARIA
 
-There are 6 categories of ARIA roles:
+۶ دسته از نقش‌های ARIA وجود دارد:
 
-### 1. Document structure roles
+### ۱. نقش‌های ساختار سند
 
-Document Structure roles are used to provide a structural description for a section of content. Most of these roles should no longer be used as browsers now support semantic HTML elements with the same meaning. The roles without HTML equivalents, such as presentation, toolbar and tooltip roles, provide information on the document structure to assistive technologies such as screen readers as equivalent native HTML tags are not available.
+نقش‌های ساختار سند برای ارائه توصیف ساختاری از یک بخش محتوا استفاده می‌شوند. بیشتر این نقش‌ها دیگر نباید استفاده شوند، زیرا مرورگرها اکنون از عناصر HTML معنایی با همان معنا پشتیبانی می‌کنند. نقش‌هایی که معادل HTML ندارند، مانند نقش‌های presentation، toolbar و tooltip، اطلاعات ساختار سند را در اختیار فناوری‌های کمکی مانند صفحه‌خوان‌ها قرار می‌دهند، زیرا برچسب‌های بومی HTML معادل در دسترس نیستند.
 
 - [`toolbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/toolbar_role)
 - [`tooltip`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tooltip_role)
@@ -37,30 +37,30 @@ Document Structure roles are used to provide a structural description for a sect
 - [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) / [`none`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/none_role)
 - [`note`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/note_role)
 
-For most document structure roles, semantic HTML equivalent elements are available and supported. Avoid using:
+برای بیشتر نقش‌های ساختار سند، عناصر معادل HTML معنایی در دسترس و پشتیبانی‌شده هستند. از استفاده از موارد زیر خودداری کنید:
 
 - [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role)
-- [`article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role) (use {{HTMLElement('article')}})
-- [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role) (use {{HTMLElement('td')}})
-- [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) (use `{{HTMLElement('th', '&lt;th scope="col">')}}`)
-- [`definition`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/definition_role) (use {{HTMLElement('dfn')}})
+- [`article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role) (از {{HTMLElement('article')}} استفاده کنید)
+- [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role) (از {{HTMLElement('td')}} استفاده کنید)
+- [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) (از `{{HTMLElement('th', '&lt;th scope="col">')}}` استفاده کنید)
+- [`definition`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/definition_role) (از {{HTMLElement('dfn')}} استفاده کنید)
 - [`directory`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/directory_role)
 - [`document`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/document_role)
-- [`figure`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/figure_role) (use {{HTMLElement('figure')}} instead)
+- [`figure`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/figure_role) (در عوض از {{HTMLElement('figure')}} استفاده کنید)
 - [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role)
-- [`heading`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role) (use {{HTMLElement("Heading_Elements", "h1")}} through {{HTMLElement("Heading_Elements", "h6")}})
-- [`img`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/img_role) (use {{HTMLElement('img')}} or {{HTMLElement('picture')}} instead)
-- [`list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role) (use either {{HTMLElement('ul')}} or {{HTMLElement('ol')}} instead)
-- [`listitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listitem_role) (use {{HTMLElement('li')}} instead)
-- [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role) (use {{HTMLElement('meter')}} instead)
-- [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) (use the {{HTMLElement('tr')}} with {{HTMLElement('table')}})
-- [`rowgroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role) (use {{HTMLElement('thead')}}, {{HTMLElement('tfoot')}} and {{HTMLElement('tbody')}})
-- [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role) (use `{{HTMLElement('th','&lt;th scope="row">')}}`)
-- [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) (use {{HTMLElement('hr')}} if it doesn't have focus)
-- [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role) (use {{HTMLElement('table')}})
-- [`term`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/term_role) (use {{HTMLElement('dfn')}})
+- [`heading`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role) (از {{HTMLElement("Heading_Elements", "h1")}} تا {{HTMLElement("Heading_Elements", "h6")}} استفاده کنید)
+- [`img`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/img_role) (در عوض از {{HTMLElement('img')}} یا {{HTMLElement('picture')}} استفاده کنید)
+- [`list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role) (در عوض از {{HTMLElement('ul')}} یا {{HTMLElement('ol')}} استفاده کنید)
+- [`listitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listitem_role) (در عوض از {{HTMLElement('li')}} استفاده کنید)
+- [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role) (در عوض از {{HTMLElement('meter')}} استفاده کنید)
+- [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) (از {{HTMLElement('tr')}} همراه با {{HTMLElement('table')}} استفاده کنید)
+- [`rowgroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role) (از {{HTMLElement('thead')}}، {{HTMLElement('tfoot')}} و {{HTMLElement('tbody')}} استفاده کنید)
+- [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role) (از `{{HTMLElement('th','&lt;th scope="row">')}}` استفاده کنید)
+- [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) (اگر فوکوس ندارد از {{HTMLElement('hr')}} استفاده کنید)
+- [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role) (از {{HTMLElement('table')}} استفاده کنید)
+- [`term`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/term_role) (از {{HTMLElement('dfn')}} استفاده کنید)
 
-These are included for completeness, but in most cases are rarely, if ever, useful:
+این موارد برای کامل‌بودن فهرست شده‌اند، اما در بیشتر موارد به‌ندرت (در صورت وجود) مفید هستند:
 
 - [`associationlist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles)
 - [`associationlistitemkey`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles)
@@ -77,13 +77,13 @@ These are included for completeness, but in most cases are rarely, if ever, usef
 - [`superscript`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles)
 - [`time`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles)
 
-### 2. Widget roles
+### ۲. نقش‌های ویجت
 
-Widget roles are used to define common interactive patterns. Like document structure roles, some widget roles have the same semantics as well-supported native HTML elements, and therefore should be avoided. The key difference is that widget roles typically require JavaScript for interaction, while document structure roles often do not.
+نقش‌های ویجت برای تعریف الگوهای تعاملی رایج استفاده می‌شوند. مانند نقش‌های ساختار سند، برخی از نقش‌های ویجت دارای معناشناسی مشابه با عناصر بومی HTML با پشتیبانی خوب هستند و بنابراین باید از آن‌ها اجتناب شود. تفاوت کلیدی این است که نقش‌های ویجت معمولاً برای تعامل به جاوااسکریپت نیاز دارند، در حالی که نقش‌های ساختار سند اغلب چنین نیازی ندارند.
 
 - [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role)
 - [`searchbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/searchbox_role)
-- [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) (when focusable)
+- [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) (هنگامی که قابل فوکوس است)
 - [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
 - [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
 - [`switch`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/switch_role)
@@ -91,9 +91,9 @@ Widget roles are used to define common interactive patterns. Like document struc
 - [`tabpanel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role)
 - [`treeitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treeitem_role)
 
-Avoid using [`button`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role), [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role), [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role), [`link`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/link_role), [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role), [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role), [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role), [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role), [`progressbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role), [`radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role), and [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role), which we've included for completeness. For most, semantic equivalents with accessible interactivity are available and supported. See the individual role documentation for more information.
+از [`button`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role)، [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)، [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)، [`link`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/link_role)، [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role)، [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role)، [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role)، [`option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role)، [`progressbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role)، [`radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role) و [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role) استفاده نکنید؛ این موارد را برای کامل‌بودن فهرست آورده‌ایم. برای بیشتر آن‌ها، معادل‌های معنایی با تعامل‌پذیری دسترس‌پذیر موجود و پشتیبانی‌شده هستند. برای اطلاعات بیشتر به مستندات هر نقش مراجعه کنید.
 
-#### Composite widget roles
+#### نقش‌های ویجت ترکیبی
 
 - [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)
 - [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role)
@@ -102,26 +102,26 @@ Avoid using [`button`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button
 - [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role)
 - [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
 
-Avoid using [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role), [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role), and [`radiogroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role), which we've included for completeness. See the individual role documentation for more information.
+از [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role)، [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role) و [`radiogroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role) استفاده نکنید؛ این موارد را برای کامل‌بودن فهرست آورده‌ایم. برای اطلاعات بیشتر به مستندات هر نقش مراجعه کنید.
 
-Note that there is also a widget role (`role="widget"`), which is an abstract role and not in the widget role category.
+توجه داشته باشید که یک نقش ویجت (`role="widget"`) نیز وجود دارد که یک نقش انتزاعی است و در دسته نقش‌های ویجت قرار نمی‌گیرد.
 
-### 3. Landmark roles
+### ۳. نقش‌های لندمارک
 
-Landmark roles provide a way to identify the organization and structure of a web page. By classifying and labeling sections of a page, structural information conveyed visually through layout is represented programmatically. Screen readers use landmark roles to provide keyboard navigation to important sections of a page. Use these sparingly. Too many landmark roles create "noise" in screen readers, making it difficult to understand the overall layout of the page.
+نقش‌های لندمارک راهی برای شناسایی سازمان‌دهی و ساختار یک صفحه وب فراهم می‌کنند. با طبقه‌بندی و برچسب‌گذاری بخش‌های یک صفحه، اطلاعات ساختاری که به‌صورت بصری از طریق چیدمان منتقل می‌شود، به‌صورت برنامه‌نویسی‌شده بازنمایی می‌شود. صفحه‌خوان‌ها از نقش‌های لندمارک برای ارائه ناوبری صفحه‌کلید به بخش‌های مهم یک صفحه استفاده می‌کنند. از این نقش‌ها به‌میزان محدود استفاده کنید. تعداد بیش از حد نقش‌های لندمارک در صفحه‌خوان‌ها «نویز» ایجاد می‌کند و درک چیدمان کلی صفحه را دشوار می‌سازد.
 
-- [`banner`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/banner_role) (document {{HTMLElement('header')}})
+- [`banner`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/banner_role) (سربرگ سند {{HTMLElement('header')}})
 - [`complementary`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/complementary_role) ({{HTMLElement('aside')}})
-- [`contentinfo`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/contentinfo_role) (document {{HTMLElement('footer')}})
+- [`contentinfo`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/contentinfo_role) (پابرگ سند {{HTMLElement('footer')}})
 - [`form`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/form_role) ({{HTMLElement('form')}})
 - [`main`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/main_role) ({{HTMLElement('main')}})
 - [`navigation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/navigation_role) ({{HTMLElement('nav')}})
 - [`region`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/region_role) ({{HTMLElement('section')}})
 - [`search`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/search_role) ({{HTMLElement('search')}})
 
-### 4. Live region roles
+### ۴. نقش‌های ناحیه زنده
 
-Live Region roles are used to define elements with content that will be dynamically changed. Sighted users can see dynamic changes when they are visually noticeable. These roles help low vision and blind users know if content has been updated. Assistive technologies, like screen readers, can be made to announce dynamic content changes:
+نقش‌های ناحیه زنده برای تعریف عناصری با محتوایی که به‌صورت پویا تغییر خواهد کرد استفاده می‌شوند. کاربران بینا می‌توانند تغییرات پویا را زمانی که از نظر بصری قابل توجه هستند ببینند. این نقش‌ها به کاربران کم‌بینا و نابینا کمک می‌کنند تا از به‌روزرسانی محتوا مطلع شوند. فناوری‌های کمکی، مانند صفحه‌خوان‌ها، می‌توانند اعلام تغییرات محتوای پویا را انجام دهند:
 
 - [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)
 - [`log`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role)
@@ -129,32 +129,32 @@ Live Region roles are used to define elements with content that will be dynamica
 - [`status`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role)
 - [`timer`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/timer_role)
 
-### 5. Window roles
+### ۵. نقش‌های پنجره
 
-Window roles define sub-windows to the main document window, within the same window, such as pop up modal dialogs:
+نقش‌های پنجره، زیرپنجره‌هایی را در همان پنجره و نسبت به پنجره اصلی سند تعریف می‌کنند، مانند دیالوگ‌های مودال بازشو:
 
 - [`alertdialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role)
 - [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role)
 
-### 6. Abstract roles
+### ۶. نقش‌های انتزاعی
 
-Abstract roles are only intended for use by browsers to help organize and streamline a document. They should not be used by developers writing HTML markup. Doing so will not result in any meaningful information being conveyed to assistive technologies or to users.
+نقش‌های انتزاعی فقط برای استفاده توسط مرورگرها در نظر گرفته شده‌اند تا به سازمان‌دهی و روان‌سازی یک سند کمک کنند. توسعه‌دهندگانی که نشانه‌گذاری HTML می‌نویسند نباید از آن‌ها استفاده کنند. انجام این کار به انتقال اطلاعات معنی‌دار به فناوری‌های کمکی یا کاربران منجر نخواهد شد.
 
-Avoid using [`command`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/command_role), [`composite`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/composite_role), [`input`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/input_role), [`landmark`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/landmark_role), [`range`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role), [`roletype`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/roletype_role), [`section`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/section_role), [`sectionhead`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/sectionhead_role), [`select`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/select_role), [`structure`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structure_role), [`widget`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/widget_role), and [`window`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/window_role).
+از [`command`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/command_role)، [`composite`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/composite_role)، [`input`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/input_role)، [`landmark`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/landmark_role)، [`range`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role)، [`roletype`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/roletype_role)، [`section`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/section_role)، [`sectionhead`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/sectionhead_role)، [`select`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/select_role)، [`structure`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structure_role)، [`widget`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/widget_role) و [`window`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/window_role) استفاده نکنید.
 
 > [!NOTE]
-> Don't use abstract roles in your sites and applications. They are for use by browsers. They are included for reference only.
+> از نقش‌های انتزاعی در سایت‌ها و برنامه‌های خود استفاده نکنید. این نقش‌ها برای استفاده مرورگرها هستند و فقط برای مرجع فهرست شده‌اند.
 
 > [!WARNING]
-> "Abstract roles are used for the ontology. Authors **MUST NOT** use abstract roles in content." - The <abbr>WAI-ARIA</abbr> specification
+> «نقش‌های انتزاعی برای هستان‌شناسی استفاده می‌شوند. نویسندگان **نباید** از نقش‌های انتزاعی در محتوا استفاده کنند.» - مشخصات <abbr>WAI-ARIA</abbr>
 
-## Roles defined on MDN
+## نقش‌های تعریف‌شده در MDN
 
-The following are the reference pages covering the WAI-ARIA roles discussed on <abbr>MDN</abbr>.
+صفحات مرجع زیر نقش‌های WAI-ARIA را که در <abbr>MDN</abbr> بحث شده‌اند پوشش می‌دهند.
 
 {{SubpagesWithSummaries}}
 
-## See also
+## همچنین ببینید
 
-- [Using ARIA: Roles, States, and Properties](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques)
-- [ARIA states and properties](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes)
+- [استفاده از ARIA: نقش‌ها، حالت‌ها و ویژگی‌ها](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques)
+- [حالت‌ها و ویژگی‌های ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes)
