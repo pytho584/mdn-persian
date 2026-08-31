@@ -1,7 +1,7 @@
 ---
 title: "BluetoothCharacteristicProperties: writableAuxiliaries property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothCharacteristicProperties/writableAuxiliaries"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,19 +16,16 @@ browser-compat: api.BluetoothCharacteristicProperties.writableAuxiliaries
 
 {{securecontext_header}}{{APIRef("Bluetooth API")}}{{SeeCompatTable}}
 
-The **`writableAuxiliaries`** read-only
-property of the {{domxref("BluetoothCharacteristicProperties")}} interface returns a
-`boolean` that is `true` if reliable writes to the characteristic
-descriptor is permitted.
+ویژگی فقط‌خواندنی **`writableAuxiliaries`** از رابط {{domxref("BluetoothCharacteristicProperties")}} یک مقدار `boolean` برمی‌گرداند که اگر نوشتن قابل‌اعتماد (reliable) در توصیف‌گر (descriptor) مشخصه مجاز باشد، `true` است.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار boolean.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
