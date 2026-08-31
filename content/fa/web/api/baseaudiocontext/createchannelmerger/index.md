@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createChannelMerger() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createChannelMerger"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,37 +14,32 @@ browser-compat: api.BaseAudioContext.createChannelMerger
 
 {{ APIRef("Web Audio API") }}
 
-The `createChannelMerger()` method of the {{domxref("BaseAudioContext")}} interface creates a {{domxref("ChannelMergerNode")}},
-which combines channels from multiple audio streams into a single audio stream.
+متد `createChannelMerger()` از رابط {{domxref("BaseAudioContext")}} یک {{domxref("ChannelMergerNode")}} ایجاد می‌کند که کانال‌های جریان‌های صوتی متعدد را در یک جریان صوتی واحد ترکیب می‌کند.
 
 > [!NOTE]
-> The {{domxref("ChannelMergerNode.ChannelMergerNode", "ChannelMergerNode()")}} constructor is the
-> recommended way to create a {{domxref("ChannelMergerNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> سازندهٔ {{domxref("ChannelMergerNode.ChannelMergerNode", "ChannelMergerNode()")}} روش توصیه‌شده برای ایجاد یک
+> {{domxref("ChannelMergerNode")}} است؛ به
+> [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 createChannelMerger(numberOfInputs)
 ```
 
-### Parameters
+### پارامترها
 
 - `numberOfInputs`
-  - : The number of channels in the input audio streams, which the output stream will
-    contain; the default is 6 if this parameter is not specified.
+  - : تعداد کانال‌های جریان‌های صوتی ورودی که جریان خروجی شامل آن‌ها خواهد بود؛
+    اگر این پارامتر مشخص نشود، پیش‌فرض ۶ است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("ChannelMergerNode")}}.
+یک {{domxref("ChannelMergerNode")}}.
 
-## Examples
+## مثال‌ها
 
-The following example shows how you could separate a stereo track (say, a piece of
-music), and process the left and right channel differently. To use them, you need to use
-the second and third parameters of the {{domxref("AudioNode/connect", "AudioNode.connect(AudioNode)")}}
-method, which allow you to specify both the index of the channel to connect from and the
-index of the channel to connect to.
+مثال زیر نشان می‌دهد که چگونه می‌توانید یک تراک استریو (مثلاً یک قطعه موسیقی) را جدا کنید و کانال چپ و راست را به‌طور متفاوت پردازش کنید. برای استفاده از آن‌ها، باید از پارامترهای دوم و سوم متد {{domxref("AudioNode/connect", "AudioNode.connect(AudioNode)")}} استفاده کنید، که به شما امکان می‌دهند هم ایندکس کانال مبدأ و هم ایندکس کانال مقصد را مشخص کنید.
 
 ```js
 const ac = new AudioContext();
@@ -74,14 +69,14 @@ ac.decodeAudioData(someStereoBuffer, (data) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
