@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: beginPath() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/beginPath"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: beginPath() method"
 short-title: beginPath()
 slug: Web/API/CanvasRenderingContext2D/beginPath
 page-type: web-api-instance-method
@@ -14,34 +8,32 @@ browser-compat: api.CanvasRenderingContext2D.beginPath
 
 {{APIRef("Canvas API")}}
 
-The
+متد
 **`CanvasRenderingContext2D.beginPath()`**
-method of the Canvas 2D API starts a new path by emptying the list of sub-paths. Call
-this method when you want to create a new path.
+در API Canvas 2D با خالی کردن فهرست زیرمسیرها (sub-paths)، یک مسیر جدید را شروع می‌کند. زمانی که می‌خواهید یک مسیر جدید ایجاد کنید، این متد را فراخوانی کنید.
 
 > [!NOTE]
-> To create a new sub-path, i.e., one matching the current
-> canvas state, you can use {{domxref("CanvasRenderingContext2D.moveTo()")}}.
+> برای ایجاد یک زیرمسیر جدید، یعنی زیرمسیری که با وضعیت فعلی بوم (canvas) مطابقت دارد، می‌توانید از {{domxref("CanvasRenderingContext2D.moveTo()")}} استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 beginPath()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Creating distinct paths
+### ایجاد مسیرهای مجزا
 
-This example creates two paths, each of which contains a single line.
+این مثال دو مسیر ایجاد می‌کند که هر کدام شامل یک خط هستند.
 
 #### HTML
 
@@ -51,21 +43,20 @@ This example creates two paths, each of which contains a single line.
 
 #### JavaScript
 
-The `beginPath()` method is called before beginning each line, so that they
-may be drawn with different colors.
+متد `beginPath()` قبل از شروع هر خط فراخوانی می‌شود تا بتوان خطوط را با رنگ‌های مختلف رسم کرد.
 
 ```js
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// First path
+// مسیر اول
 ctx.beginPath();
 ctx.strokeStyle = "blue";
 ctx.moveTo(20, 20);
 ctx.lineTo(200, 20);
 ctx.stroke();
 
-// Second path
+// مسیر دوم
 ctx.beginPath();
 ctx.strokeStyle = "green";
 ctx.moveTo(20, 20);
@@ -73,19 +64,19 @@ ctx.lineTo(120, 120);
 ctx.stroke();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Creating_distinct_paths', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- interfrace تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.closePath()")}}
