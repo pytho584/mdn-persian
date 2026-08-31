@@ -1,7 +1,7 @@
 ---
 title: "AudioWorkletProcessor: parameterDescriptors static property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor/parameterDescriptors_static"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,41 +14,36 @@ spec-urls: https://webaudio.github.io/web-audio-api/#audioworkletprocess-callbac
 
 {{APIRef("Web Audio API")}}
 
-The read-only **`parameterDescriptors`** property of an {{domxref("AudioWorkletProcessor")}}-derived class is a _static getter_,
-which returns an iterable of {{domxref("AudioParamDescriptor")}}-based objects.
+ویژگی فقط‌خواندنی **`parameterDescriptors`** از کلاس مشتق‌شده از {{domxref("AudioWorkletProcessor")}} یک _getter ایستا_ است که یک تکرارپذیر از اشیاء مبتنی بر {{domxref("AudioParamDescriptor")}} برمی‌گرداند.
 
-The property is not a part of the {{domxref("AudioWorkletProcessor")}}
-interface, but, if defined, it is called internally by the
-{{domxref("AudioWorkletProcessor")}} constructor to create a list of custom
-{{domxref("AudioParam")}} objects in the {{domxref("AudioWorkletNode.parameters", "parameters")}} property of the associated {{domxref("AudioWorkletNode")}}.
+این ویژگی بخشی از رابط {{domxref("AudioWorkletProcessor")}} نیست، اما اگر تعریف شده باشد، به‌صورت داخلی توسط سازندهٔ {{domxref("AudioWorkletProcessor")}} فراخوانی می‌شود تا فهرستی از اشیاء سفارشی {{domxref("AudioParam")}} را در ویژگی {{domxref("AudioWorkletNode.parameters", "parameters")}} از {{domxref("AudioWorkletNode")}} مرتبط ایجاد کند.
 
-Defining the getter is optional.
+تعریف این getter اختیاری است.
 
-## Value
+## مقدار
 
-An iterable of {{domxref("AudioParamDescriptor")}}-based objects. The properties of
-these objects are as follows:
+یک تکرارپذیر از اشیاء مبتنی بر {{domxref("AudioParamDescriptor")}}. ویژگی‌های این اشیاء به شرح زیر هستند:
 
 - `name`
-  - : The string which represents the name of the `AudioParam`. Under this name the `AudioParam` will be available in the {{domxref("AudioWorkletNode.parameters", "parameters")}} property of the node, and under this name the {{domxref("AudioWorkletProcessor.process")}} method will acquire the calculated values of this `AudioParam`.
+  - رشته‌ای که نام `AudioParam` را نشان می‌دهد. با این نام، `AudioParam` در ویژگی {{domxref("AudioWorkletNode.parameters", "parameters")}} گره در دسترس خواهد بود و با این نام، متد {{domxref("AudioWorkletProcessor.process")}} مقادیر محاسبه‌شدهٔ این `AudioParam` را دریافت خواهد کرد.
 - `automationRate` {{optional_inline}}
-  - : Either [`"a-rate"`](/en-US/docs/Web/API/AudioParam#a-rate), or [`"k-rate"`](/en-US/docs/Web/API/AudioParam#k-rate) string which represents an automation rate of this `AudioParam`. Defaults to `"a-rate"`.
+  - یک رشته از [`"a-rate"`](/en-US/docs/Web/API/AudioParam#a-rate) یا [`"k-rate"`](/en-US/docs/Web/API/AudioParam#k-rate) که نرخ خودکارسازی (automation rate) این `AudioParam` را نشان می‌دهد. پیش‌فرض `"a-rate"` است.
 - `minValue` {{optional_inline}}
-  - : A `float` which represents minimum value of the `AudioParam`. Defaults to `-3.4028235e38`.
+  - یک `float` که حداقل مقدار `AudioParam` را نشان می‌دهد. پیش‌فرض `-3.4028235e38` است.
 - `maxValue` {{optional_inline}}
-  - : A `float` which represents maximum value of the `AudioParam`. Defaults to `3.4028235e38`.
+  - یک `float` که حداکثر مقدار `AudioParam` را نشان می‌دهد. پیش‌فرض `3.4028235e38` است.
 - `defaultValue` {{optional_inline}}
-  - : A `float` which represents initial value of the `AudioParam`. Defaults to `0`.
+  - یک `float` که مقدار اولیهٔ `AudioParam` را نشان می‌دهد. پیش‌فرض `0` است.
 
-## Examples
+## مثال‌ها
 
-See [`AudioWorkletNode.parameters`](/en-US/docs/Web/API/AudioWorkletNode/parameters#examples) for example code showing how to add static `parameterDescriptors` getter to a custom `AudioWorkletProcessor`.
+برای نمونه‌کد نحوه افزودن getter ایستای `parameterDescriptors` به یک `AudioWorkletProcessor` سفارشی، به [`AudioWorkletNode.parameters`](/en-US/docs/Web/API/AudioWorkletNode/parameters#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
