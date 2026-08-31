@@ -1,7 +1,8 @@
+```
 ---
 title: "BeforeUnloadEvent"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BeforeUnloadEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,31 +14,32 @@ browser-compat: api.BeforeUnloadEvent
 
 {{APIRef("HTML DOM")}}
 
-The **`BeforeUnloadEvent`** interface represents the event object for the {{domxref("Window/beforeunload_event", "beforeunload")}} event, which is fired when the current window, contained document, and associated resources are about to be unloaded.
+رابط **`BeforeUnloadEvent`** نشان‌دهندهٔ شیء رویدادِ {{domxref("Window/beforeunload_event", "beforeunload")}} است؛ این رویداد هنگامی فعال می‌شود که پنجرهٔ فعلی، سندِ دربرگیرنده و منابع مرتبط در آستانهٔ تخلیه‌شدن (unload) قرار بگیرند.
 
-See the {{domxref("Window/beforeunload_event", "beforeunload")}} event reference for detailed guidance on using this event.
+برای راهنمایی دقیق درباره استفاده از این رویداد، به صفحهٔ مرجع رویداد {{domxref("Window/beforeunload_event", "beforeunload")}} مراجعه کنید.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("Event")}}._
+_ویژگی‌ها را از والد خود، {{DOMxRef("Event")}} به ارث می‌برد._
 
 - {{domxref("BeforeUnloadEvent.returnValue", "returnValue")}} {{Deprecated_Inline}}
-  - : When set to a [truthy](/en-US/docs/Glossary/Truthy) value, triggers a browser-controlled confirmation dialog asking users to confirm if they want to leave the page when they try to close or reload it. This is a legacy feature, and best practice is to trigger the dialog by invoking `event.preventDefault()`, while also setting `returnValue` to support legacy cases.
+  - : وقتی روی یک مقدار [truthy](/en-US/docs/Glossary/Truthy) تنظیم شود، یک گفتگوی تأیید تحت کنترل مرورگر را فعال می‌کند که هنگام تلاش کاربر برای بستن یا بارگذاری مجدد صفحه، از او می‌پرسد آیا می‌خواهد صفحه را ترک کند. این یک قابلیت قدیمی (legacy) است و بهترین روش این است که با فراخوانی `event.preventDefault()` گفتگو را فعال کنید و در عین حال `returnValue` را نیز برای پشتیبانی از موارد قدیمی تنظیم کنید.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{DOMxRef("Event")}}._
+_روش‌ها را از والد خود، {{DOMxRef("Event")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Window/beforeunload_event", "beforeunload")}} event
+- رویداد {{domxref("Window/beforeunload_event", "beforeunload")}}
+```
