@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-description attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-description"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,14 +13,14 @@ spec-urls: https://w3c.github.io/aria/#aria-description
 sidebar: accessibilitysidebar
 ---
 
-The global `aria-description` attribute defines a string value that describes or annotates the current element.
+ویژگی سراسری `aria-description` یک مقدار رشته‌ای را تعریف می‌کند که عنصر فعلی را توصیف یا حاشیه‌نویسی می‌کند.
 
 > [!NOTE]
-> `aria-description` is still in W3C Editor's Draft for ARIA 1.3. For the time being, continue to use [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby), which has been supported since ARIA 1.1.
+> `aria-description` همچنان در پیش‌نویس ویراستار W3C برای ARIA 1.3 قرار دارد. در حال حاضر، همچنان از [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) استفاده کنید که از ARIA 1.1 پشتیبانی می‌شود.
 
-## Description
+## توضیحات
 
-The global `aria-description` attribute provides a mechanism for the developer to describe or annotate the current element providing greater context for assistive technology users.
+ویژگی سراسری `aria-description` مکانیزمی را برای توسعه‌دهنده فراهم می‌کند تا عنصر فعلی را توصیف یا حاشیه‌نویسی کند و زمینه بهتری را برای کاربران فناوری کمکی فراهم آورد.
 
 ```html
 <div
@@ -32,34 +32,34 @@ The global `aria-description` attribute provides a mechanism for the developer t
 </div>
 ```
 
-The `aria-description` attribute is similar to [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) in that both provide a text string to associate with the element, but a label should be short and concise, while the description can be longer as it is intended to provide more context and information.
+ویژگی `aria-description` مشابه [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) است، زیرا هر دو یک رشته متنی را برای مرتبط‌سازی با عنصر فراهم می‌کنند، اما برچسب باید کوتاه و مختصر باشد، در حالی که توضیحات می‌تواند طولانی‌تر باشد، زیرا برای ارائه زمینه و اطلاعات بیشتر در نظر گرفته شده است.
 
-The `aria-description` and `aria-describedby` properties have the same purpose; both provide the user with additional descriptive text for the object on which it is set. If descriptive text is available in the DOM, use [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) instead.
+ویژگی‌های `aria-description` و `aria-describedby` هدف یکسانی دارند؛ هر دو متن توصیفی اضافی را برای شیئی که روی آن تنظیم شده‌اند در اختیار کاربر قرار می‌دهند. اگر متن توصیفی در DOM موجود است، به جای آن از [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) استفاده کنید.
 
-The `aria-description` property should only be used when providing a visible description is not the desired user experience. The `aria-describedby` attribute takes as its value a list of `id`s of the elements that contain descriptive text about the object. The `aria-description` is used when there is no appropriate descriptive text that can be associated with the object by `id` reference. If both attributes are present, `aria-describedby` takes precedence in defining the {{glossary("accessible description")}} property.
+ویژگی `aria-description` فقط باید زمانی استفاده شود که ارائه یک توضیح قابل مشاهده تجربه کاربری مطلوبی نباشد. ویژگی `aria-describedby` به عنوان مقدار خود فهرستی از `id`های عناصری را می‌گیرد که حاوی متن توصیفی درباره شیء هستند. از `aria-description` زمانی استفاده می‌شود که متن توصیفی مناسبی وجود نداشته باشد که بتوان از طریق ارجاع `id` با شیء مرتبط کرد. اگر هر دو ویژگی وجود داشته باشند، `aria-describedby` در تعریف ویژگی {{glossary("accessible description")}} اولویت دارد.
 
-The content of the description, whether set by `aria-description` or `aria-describedby`, should be flat text. If the content is very long, has semantic meaning requirements, or has a navigational structure, use [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) instead.
+محتوای توضیحات، چه توسط `aria-description` یا `aria-describedby` تنظیم شده باشد، باید متن ساده باشد. اگر محتوا بسیار طولانی است، نیازهای معنایی دارد، یا ساختار پیمایشی دارد، به جای آن از [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) استفاده کنید.
 
-## Values
+## مقادیر
 
 - `<string>`
-  - : The value is a string, an unconstrained value type, that is intended to be conveyed to the assistive technology user.
+  - : مقدار یک رشته است، یک نوع مقدار بدون محدودیت، که قرار است به کاربر فناوری کمکی منتقل شود.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaDescription")}}
-  - : The [`ariaDescription`](/en-US/docs/Web/API/Element/ariaDescription) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-description` attribute, which defines a string value that describes or annotates the current element.
+  - : ویژگی [`ariaDescription`](/en-US/docs/Web/API/Element/ariaDescription)، بخشی از رابط {{domxref("Element")}}، مقدار ویژگی `aria-description` را منعکس می‌کند که یک مقدار رشته‌ای را تعریف می‌کند که عنصر فعلی را توصیف یا حاشیه‌نویسی می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** roles.
+در **همه** نقش‌ها استفاده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [HTML `title` attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/title)
+- [ویژگی `title` در HTML](/en-US/docs/Web/HTML/Reference/Global_attributes/title)
 - [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby)
 - [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details)
