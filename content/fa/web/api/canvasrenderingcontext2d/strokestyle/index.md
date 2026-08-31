@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: strokeStyle property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: strokeStyle property"
 short-title: strokeStyle
 slug: Web/API/CanvasRenderingContext2D/strokeStyle
 page-type: web-api-instance-property
@@ -14,30 +8,27 @@ browser-compat: api.CanvasRenderingContext2D.strokeStyle
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.strokeStyle`** property of the
-Canvas 2D API specifies the color, gradient, or pattern to use for the strokes
-(outlines) around shapes. The default is `black`.
+ویژگی **`CanvasRenderingContext2D.strokeStyle`** در Canvas 2D API تعیین می‌کند که برای خط‌های دور شکل‌ها (طرح کلی) از چه رنگ، گرادیان یا الگویی استفاده شود. مقدار پیش‌فرض `black` است.
 
 > [!NOTE]
-> For more examples of stroke and fill styles, see [Applying styles and color](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) in the [Canvas tutorial](/en-US/docs/Web/API/Canvas_API/Tutorial).
+> برای مثال‌های بیشتر دربارهٔ استایل‌های خط و پر، به [اعمال استایل‌ها و رنگ‌ها](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) در [آموزش Canvas](/en-US/docs/Web/API/Canvas_API/Tutorial) مراجعه کنید.
 
-## Value
+## مقدار
 
-One of the following:
+یکی از موارد زیر:
 
 - `color`
-  - : A string parsed as [CSS](/en-US/docs/Web/CSS)
-    {{cssxref("&lt;color&gt;")}} value.
+  - : رشته‌ای که به‌عنوان مقدار {{cssxref("&lt;color&gt;")}} در [CSS](/en-US/docs/Web/CSS) تفسیر می‌شود.
 - `gradient`
-  - : A {{domxref("CanvasGradient")}} object (a linear or radial gradient).
+  - : یک شیء {{domxref("CanvasGradient")}} (گرادیان خطی یا شعاعی).
 - `pattern`
-  - : A {{domxref("CanvasPattern")}} object (a repeating image).
+  - : یک شیء {{domxref("CanvasPattern")}} (تصویر تکرارشونده).
 
-## Examples
+## مثال‌ها
 
-### Changing the stroke color of a shape
+### تغییر رنگ خط یک شکل
 
-This example applies a blue stroke color to a rectangle.
+این مثال یک رنگ خط آبی را به یک مستطیل اعمال می‌کند.
 
 #### HTML
 
@@ -55,17 +46,13 @@ ctx.strokeStyle = "blue";
 ctx.strokeRect(10, 10, 100, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Changing_the_stroke_color_of_a_shape', 700, 160) }}
 
-### Creating multiple stroke colors using loops
+### ایجاد چندین رنگ خط با استفاده از حلقه‌ها
 
-In this example, we use two `for` loops and the
-{{domxref("CanvasRenderingContext2D.arc", "arc()")}} method to draw a grid of circles,
-each having a different stroke color. To achieve this, we use the two variables
-`i` and `j` to generate a unique RGB color for each circle, and
-only modify the green and blue values. (The red channel has a fixed value.)
+در این مثال، دو حلقهٔ `for` و متد {{domxref("CanvasRenderingContext2D.arc", "arc()")}} به کار رفته‌اند تا شبکه‌ای از دایره‌ها رسم شود که هرکدام رنگ خط متفاوتی دارند. برای این کار، از دو متغیر `i` و `j` استفاده می‌کنیم تا برای هر دایره یک رنگ RGB یکتا تولید کنیم و فقط مقادیر سبز و آبی را تغییر دهیم. (کانال قرمز مقدار ثابتی دارد.)
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -87,22 +74,21 @@ for (let i = 0; i < 6; i++) {
 }
 ```
 
-The result looks like this:
+نتیجه به این شکل است:
 
 {{EmbedLiveSample("Creating_multiple_stroke_colors_using_loops", "", "180")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-### WebKit/Blink-specific note
+### نکتهٔ مخصوص WebKit/Blink
 
-In WebKit- and Blink-based browsers, the non-standard and deprecated method
-`ctx.setStrokeColor()` is implemented in addition to this property.
+در مرورگرهای مبتنی بر WebKit و Blink، متد غیراستاندارد و منسوخ‌شدهٔ `ctx.setStrokeColor()` علاوه بر این ویژگی پیاده‌سازی شده است.
 
 ```js
 setStrokeColor(color);
@@ -113,8 +99,8 @@ setStrokeColor(r, g, b, a);
 setStrokeColor(c, m, y, k, a);
 ```
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابطِ تعریف‌کنندهٔ این ویژگی: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasGradient")}}
 - {{domxref("CanvasPattern")}}
