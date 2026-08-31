@@ -1,7 +1,7 @@
 ---
 title: "AudioBufferSourceNode: loop property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loop"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,35 +14,28 @@ browser-compat: api.AudioBufferSourceNode.loop
 
 {{ APIRef("Web Audio API") }}
 
-The `loop` property of the {{ domxref("AudioBufferSourceNode") }}
-interface is a Boolean indicating if the audio asset must be replayed when the end of
-the {{domxref("AudioBuffer")}} is reached.
+ویژگی `loop` در رابط {{ domxref("AudioBufferSourceNode") }} یک مقدار بولی است که نشان می‌دهد آیا باید منبع صوتی هنگام رسیدن به انتهای {{domxref("AudioBuffer")}} دوباره پخش شود یا خیر.
 
-The `loop` property's default value is `false`.
+مقدار پیش‌فرض ویژگی `loop` برابر با `false` است.
 
-## Value
+## مقدار
 
-A Boolean which is `true` if looping is enabled; otherwise, the value is
-`false`.
+یک مقدار بولی که اگر حلقه فعال باشد `true` است؛ در غیر این صورت، مقدار آن `false` است.
 
-When looping is enabled, the sound begins playing at the time specified as the start
-point when {{domxref("AudioBufferSourceNode.start", "start()")}} is called. When the
-time specified by the {{domxref("AudioBufferSourceNode.loopEnd", "loopEnd")}} property
-is reached, playback continues at the time specified by
-{{domxref("AudioBufferSourceNode.loopStart", "loopStart")}}
+وقتی حلقه فعال باشد، صدا از زمان مشخص‌شده به عنوان نقطه شروع هنگام فراخوانی {{domxref("AudioBufferSourceNode.start", "start()")}} پخش می‌شود. وقتی به زمان مشخص‌شده توسط ویژگی {{domxref("AudioBufferSourceNode.loopEnd", "loopEnd")}} برسیم، پخش از زمان مشخص‌شده توسط {{domxref("AudioBufferSourceNode.loopStart", "loopStart")}} ادامه می‌یابد.
 
-## Examples
+## مثال‌ها
 
-### Setting `loop`
+### تنظیم `loop`
 
-In this example, when the user presses "Play", we load an audio track, decode it, and put it into an {{domxref("AudioBufferSourceNode")}}.
+در این مثال، وقتی کاربر دکمه «پخش» را فشار می‌دهد، یک فایل صوتی بارگیری می‌شود، رمزگشایی می‌شود و در یک {{domxref("AudioBufferSourceNode")}} قرار می‌گیرد.
 
-The example then sets the `loop` property to `true`, so the track loops, and plays the track.
+سپس مثال ویژگی `loop` را روی `true` تنظیم می‌کند تا حلقه فعال شود و فایل پخش شود.
 
-The user can set the `loopStart` and `loopEnd` properties using [range controls](/en-US/docs/Web/HTML/Reference/Elements/input/range).
+کاربر می‌تواند ویژگی‌های `loopStart` و `loopEnd` را با استفاده از [کنترل‌های بازه](/en-US/docs/Web/HTML/Reference/Elements/input/range) تنظیم کند.
 
 > [!NOTE]
-> You can [run the full example live](https://mdn.github.io/webaudio-examples/audio-buffer-source-node/loop/) (or [view the source](https://github.com/mdn/webaudio-examples/tree/main/audio-buffer-source-node/loop).)
+> می‌توانید [مثال کامل را به‌صورت زنده اجرا کنید](https://mdn.github.io/webaudio-examples/audio-buffer-source-node/loop/) (یا [کد منبع را مشاهده کنید](https://github.com/mdn/webaudio-examples/tree/main/audio-buffer-source-node/loop).)
 
 ```js
 let audioCtx;
@@ -109,16 +102,16 @@ loopendControl.addEventListener("input", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - {{domxref("AudioBufferSourceNode")}}
