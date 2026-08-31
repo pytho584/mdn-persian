@@ -1,7 +1,7 @@
 ---
 title: "ARIA: document role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/document_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,11 +13,11 @@ spec-urls: https://w3c.github.io/aria/#document
 sidebar: accessibilitysidebar
 ---
 
-The `document` role is for focusable content within complex composite [widgets](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/widget_role) or [applications](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role) for which assistive technologies can switch reading context back to a reading mode.
+نقش `document` برای محتوای قابل‌تمرکز درون [ویجت‌های](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/widget_role) مرکب پیچیده یا [برنامه‌های](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role) است که فناوری‌های کمکی می‌توانند زمینه خواندن را به حالت خواندن بازگردانند.
 
-## Description
+## توضیحات
 
-The `document` role is for the top container containing content that assistive technology users may want to browse in a reading mode. Only useful on focusable sections within complex composite [widgets](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/widget_role) or [applications](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role), the `document` role informs assistive technologies to the reading context back to a reading mode: The `document` role tells assistive technologies with reading or browse modes to use the document mode to read the content contained within this element.
+نقش `document` برای ظرف بالایی است که محتوایی را در بر می‌گیرد که کاربران فناوری کمکی ممکن است بخواهند در حالت خواندن مرور کنند. این نقش فقط برای بخش‌های قابل‌تمرکز درون [ویجت‌های](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/widget_role) یا [برنامه‌های](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role) مرکب پیچیده مفید است و به فناوری‌های کمکی اطلاع می‌دهد که زمینه خواندن را به حالت خواندن بازگردانند: نقش `document` به فناوری‌های کمکی دارای حالت خواندن یا مرور می‌گوید که از حالت سند برای خواندن محتوای موجود در این عنصر استفاده کنند.
 
 ```html
 <div role="dialog">
@@ -30,51 +30,51 @@ The `document` role is for the top container containing content that assistive t
 </div>
 ```
 
-This example shows a [dialog](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role), a complex composite widget role, with some controls and a section with some informational text that the assistive technology user can go into reading mode when tabbed to.
+این مثال یک [گفت‌وگو](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role) را نشان می‌دهد، نقشی از ویجت مرکب پیچیده، با چند کنترل و بخشی با متنی اطلاعاتی که کاربر فناوری کمکی می‌تواند با تب به آن برود و وارد حالت خواندن شود.
 
-By default, web pages are treated as documents; assistive technologies (AT) enter browse or read mode when entering a new web page. This mode can be altered through various roles, including the widget and application roles. The `document` role brings the AT back into browse or read mode.
+به‌طور پیش‌فرض، صفحات وب به‌عنوان سند در نظر گرفته می‌شوند؛ فناوری‌های کمکی (AT) هنگام ورود به یک صفحه وب جدید، حالت مرور یا خواندن را فعال می‌کنند. این حالت می‌تواند از طریق نقش‌های مختلف، از جمله نقش‌های ویجت و برنامه، تغییر کند. نقش `document` فناوری کمکی را به حالت مرور یا خواندن بازمی‌گرداند.
 
-Generally placed within an application role or other interactive widget role, the `document` role is used to indicate a section of a complex composite widget that an assistive technology user should read using its browse or virtual reading mode, if available.
+نقش `document` معمولاً درون یک نقش برنامه یا دیگر نقش‌های ویجت تعاملی قرار می‌گیرد و برای نشان دادن بخشی از یک ویجت مرکب پیچیده استفاده می‌شود که کاربر فناوری کمکی باید در صورت وجود با حالت مرور یا خواندن مجازی آن را بخواند.
 
-Because ATs with reading mode default to that mode for all elements except for those with a widget or application role set, document role is only useful for focusable elements within a widget or application that should be read as static rich text. Adding `role="document"` and `tabindex="0"` to the element containing the text within a widget enables the screen reader user to press the Tab key to place focus on the document element and read the text with the screen reader's reading cursor.
+از آنجا که فناوری‌های کمکی دارای حالت خواندن، به‌طور پیش‌فرض از آن حالت برای همه عناصر استفاده می‌کنند، به‌جز آن‌هایی که نقش ویجت یا برنامه دارند، نقش سند فقط برای عناصر قابل‌تمرکز درون یک ویجت یا برنامه مفید است که باید به‌صورت متن غنی ثابت خوانده شوند. افزودن `role="document"` و `tabindex="0"` به عنصر حاوی متن درون یک ویجت به کاربر صفحه‌خوان اجازه می‌دهد کلید Tab را فشار دهد تا تمرکز روی عنصر سند قرار گیرد و متن را با مکان‌نمای خواندن صفحه‌خوان بخواند.
 
-Assistive technologies should switch context back to document mode, possibly intercepting from controls rewired for the parent's dynamic context, re-enabling the standard input events, such as Up or Down arrow keyboard events, to control the reading cursor.
+فناوری‌های کمکی باید زمینه را به حالت سند بازگردانند، احتمالاً با رهگیری از کنترل‌هایی که برای زمینه پویای والد بازپیکربندی شده‌اند، و رویدادهای ورودی استاندارد مانند رویدادهای کلیدهای جهت‌نمای بالا یا پایین را برای کنترل مکان‌نمای خواندن دوباره فعال کنند.
 
-In contrast to the [`article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role) role, the `document` role does not have any relation to other elements with a document role, it merely has a relationship to the containing composite widget. An article can have associated articles.
+در تضاد با نقش [`article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role)، نقش `document` هیچ ارتباطی با سایر عناصر دارای نقش سند ندارد؛ فقط با ویجت مرکب شامل خود رابطه دارد. یک مقاله می‌تواند مقالات مرتبط داشته باشد.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
 - [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded)
-  - : Include with a value of `true` or `false` if the document element is collapsible, to indicate if the document is currently expanded or collapsed. Other values include the default `undefined` which means the document is not collapsible.
+  - : اگر عنصر سند تاشو باشد، با مقدار `true` یا `false` بیاورید تا نشان دهد سند در حال حاضر باز یا بسته است. مقادیر دیگر شامل حالت پیش‌فرض `undefined` است که یعنی سند تاشو نیست.
 
 - tabindex="0"
-  - : Used to make it focusable so the assistive technology user can tab to it and start reading right away.
+  - : برای قابل‌تمرکز کردن آن استفاده می‌شود تا کاربر فناوری کمکی بتواند با تب به آن برسد و بلافاصله شروع به خواندن کند.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-The element should be made focusable by setting the `tabindex="0"` attribute / value pair on it. This way, the user can tab to it, reading mode is invoked automatically, and the content can be read right away.
+عنصر باید با تنظیم جفت ویژگی/مقدار `tabindex="0"` قابل‌تمرکز شود. به این ترتیب، کاربر می‌تواند با تب به آن برسد، حالت خواندن به‌طور خودکار فعال می‌شود و محتوا بلافاصله قابل‌خواندن است.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت الزامی
 
-None, except as required by any attributes. For example, if the `document` is collapsible, then the state and the value of `aria-expanded` must be maintained.
+هیچ‌کدام، به‌جز آنچه توسط ویژگی‌ها لازم است. برای مثال، اگر `document` تاشو باشد، وضعیت و مقدار `aria-expanded` باید حفظ شود.
 
-## Examples
+## مثال‌ها
 
-An example is Gmail and the single conversation view. GMail is a web application. When in GMail, most user agent interactions are usurped by the application. However, when the Keyboard focus is set on the starting heading on a single conversation that contains the subject of the conversation, the screen reader user can use the reading mode commands to read through the messages, expand or collapse them, and manipulate them. Once focus returns to the message list either by activating the Back button or pressing an associated keystroke, direct application interaction mode is invoked again, and the user can move to a different conversation in the list with the <kbd>arrow</kbd> keys.
+یک مثال، جیمیل و نمای گفت‌گوی تکی است. جیمیل یک برنامه وب است. وقتی در جیمیل هستید، بیشتر تعاملات عامل کاربر توسط برنامه تسخیر می‌شود. با این حال، وقتی تمرکز صفحه‌کلید روی عنوان شروع یک گفت‌گوی تکی که شامل موضوع گفتگو است قرار می‌گیرد، کاربر صفحه‌خوان می‌تواند از دستورهای حالت خواندن برای خواندن پیام‌ها، باز و بسته کردن آن‌ها و دستکاری آن‌ها استفاده کند. به محض بازگشت تمرکز به فهرست پیام‌ها با فعال کردن دکمه بازگشت یا فشار دادن یک کلید مرتبط، حالت تعامل مستقیم با برنامه دوباره فراخوانده می‌شود و کاربر می‌تواند با کلیدهای <kbd>arrow</kbd> به گفتگوی دیگری در لیست برود.
 
-## Best practices
+## بهترین روش‌ها
 
-Always make sure an item with the document role is focusable, by setting the `tabindex` attribute with a value of 0. That will also include it in the tab order.
+همیشه اطمینان حاصل کنید که یک آیتم با نقش سند قابل‌تمرکز است، با تنظیم ویژگی `tabindex` با مقدار 0. این کار آن را نیز در ترتیب تب قرار می‌دهد.
 
-### Added benefits
+### مزایای اضافه
 
-The document role is an easy way to indirectly control assistive technology behavior by unambiguously stating that this is content the user should read with standard screen reader commands.
+نقش سند یک راه آسان برای کنترل غیرمستقیم رفتار فناوری کمکی است، با بیان صریح اینکه این محتوایی است که کاربر باید با دستورات استاندارد صفحه‌خوان بخواند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [ARIA: `widget` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/widget_role)
 - [ARIA: `application` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role)
