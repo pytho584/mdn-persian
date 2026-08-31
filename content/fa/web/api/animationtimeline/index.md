@@ -1,7 +1,7 @@
 ---
 title: "AnimationTimeline"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationTimeline"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,30 +13,30 @@ browser-compat: api.AnimationTimeline
 
 {{ APIRef("Web Animations") }}
 
-The `AnimationTimeline` interface of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) represents the timeline of an animation. This interface exists to define timeline features, inherited by other timeline types:
+رابطهٔ `AnimationTimeline` از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) خط زمانی یک انیمیشن را نشان می‌دهد. این رابط برای تعریف ویژگی‌های خط زمانی وجود دارد که توسط سایر انواع خط‌های زمانی به ارث برده می‌شود:
 
 - {{domxref("DocumentTimeline")}}
 - {{domxref("ScrollTimeline")}}
 - {{domxref("ViewTimeline")}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("AnimationTimeline.currentTime", "currentTime")}} {{ReadOnlyInline}}
-  - : Returns the time value in milliseconds for this timeline or `null` if this timeline is inactive.
+  - : مقدار زمانی را بر حسب میلی‌ثانیه برای این خط زمانی برمی‌گرداند، یا اگر این خط زمانی غیرفعال باشد `null` را برمی‌گرداند.
 - {{domxref("AnimationTimeline.duration", "duration")}} {{ReadOnlyInline}}
-  - : Returns the maximum value for this timeline or `null`.
+  - : حداکثر مقدار را برای این خط زمانی برمی‌گرداند، یا `null`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DocumentTimeline")}}, {{domxref("ScrollTimeline")}}, {{domxref("ViewTimeline")}}
 - {{domxref("Document.timeline")}}
-- [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
-- [CSS scroll-driven animations](/en-US/docs/Web/CSS/Guides/Scroll-driven_animations)
+- [API انیمیشن‌های وب](/en-US/docs/Web/API/Web_Animations_API)
+- [انیمیشن‌های مبتنی بر اسکرول CSS](/en-US/docs/Web/CSS/Guides/Scroll-driven_animations)
