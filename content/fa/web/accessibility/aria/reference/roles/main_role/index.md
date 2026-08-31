@@ -1,7 +1,7 @@
 ---
 title: "ARIA: main role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/main_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,7 +15,7 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `main` landmark role is used to indicate the primary content of a document. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the main function of an application.
+نقش نشانه (`main`) برای نشان دادن محتوای اصلی یک سند استفاده می‌شود. ناحیه محتوای اصلی شامل محتوایی است که مستقیماً با موضوع مرکزی یک سند مرتبط است یا آن را گسترش می‌دهد، یا عملکرد اصلی یک برنامه را فراهم می‌کند.
 
 ```html
 <div id="main" role="main">
@@ -24,27 +24,27 @@ The `main` landmark role is used to indicate the primary content of a document. 
 </div>
 ```
 
-This is the main section of a document that discusses avocados. Subsections of this document could discuss their history, the different types, regions where they grow, etc.
+این بخش اصلی از سندی است که درباره آووکادو بحث می‌کند. زیربخش‌های این سند می‌توانند تاریخچه، انواع مختلف، مناطقی که در آن رشد می‌کنند، و غیره را بررسی کنند.
 
-## Description
+## توضیحات
 
-The `main` role is a navigational [landmark](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) role identifying the main content of a document. Landmarks can be used by assistive technology such as screen readers to quickly identify and navigate to large sections of the document.
+نقش `main` یک نقش [نشانه](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) پیمایشی است که محتوای اصلی یک سند را شناسایی می‌کند. نشانه‌ها می‌توانند توسط فناوری‌های کمکی مانند صفحه‌خوان‌ها برای شناسایی سریع و پیمایش به بخش‌های بزرگ سند استفاده شوند.
 
-By classifying and labeling sections of a page, structural information conveyed visually through layout can be represented programmatically. Screen readers use landmark roles to provide keyboard navigation to important sections of a page. For those navigating via landmark roles, the main role is an alternative for "skip to main content" links.
+با طبقه‌بندی و برچسب‌گذاری بخش‌های یک صفحه، اطلاعات ساختاری که به‌طور بصری از طریق طرح‌بندی منتقل می‌شوند، می‌توانند به‌صورت برنامه‌نویسی ارائه شوند. صفحه‌خوان‌ها از نقش‌های نشانه برای ارائه پیمایش صفحه‌کلید به بخش‌های مهم یک صفحه استفاده می‌کنند. برای کسانی که از طریق نقش‌های نشانه پیمایش می‌کنند، نقش main جایگزینی برای پیوندهای «پرش به محتوای اصلی» است.
 
-There should only be one `main` landmark role per document.
+در هر سند فقط یک نقش نشانه `main` باید وجود داشته باشد.
 
-The {{HTMLElement('main')}} element has a role of `main`. Developers should use semantic HTML — in this case {{HTMLElement('main')}} — over using ARIA.
+عنصر {{HTMLElement('main')}} دارای نقش `main` است. توسعه‌دهندگان باید به‌جای استفاده از ARIA از HTML معنایی — در این مورد {{HTMLElement('main')}} — استفاده کنند.
 
-### Associated ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های ARIA مرتبط
 
 - [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns)
-  - : The `aria-owns` attribute establishes relationships in the accessibility layer that aren't present in the DOM. Documents and applications can be nested in the DOM, which may lead to having more than one main element as DOM descendants. If this is the case, include `aria-owns` to identify the relationship of the main to its document or application ancestor.
+  - : ویژگی `aria-owns` روابطی را در لایه دسترس‌پذیری ایجاد می‌کند که در DOM وجود ندارند. اسناد و برنامه‌ها می‌توانند در DOM تودرتو باشند، که ممکن است منجر به داشتن بیش از یک عنصر main به‌عنوان نوادگان DOM شود. در این صورت، `aria-owns` را برای شناسایی رابطه main با سند یا برنامه ancestor خود وارد کنید.
 
-- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or `aria-labelledby`
-  - : Identify the accessible name with [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) if a visible header is present. Otherwise, including an [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) can be helpful for orienting assistive technology users, especially in single-page applications where main content changes happen without generating a page load event.
+- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا `aria-labelledby`
+  - : اگر یک عنوان قابل مشاهده وجود دارد، نام قابل دسترس را با [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) شناسایی کنید. در غیر این صورت، گنجاندن یک [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) می‌تواند برای جهت‌دهی به کاربران فناوری کمکی مفید باشد، به‌ویژه در برنامه‌های تک‌صفحه‌ای که تغییرات محتوای اصلی بدون ایجاد رویداد بارگذاری صفحه اتفاق می‌افتد.
 
-## Example
+## مثال
 
 ```html
 <body>
@@ -59,13 +59,13 @@ The {{HTMLElement('main')}} element has a role of `main`. Developers should use 
 </body>
 ```
 
-## Accessibility concerns
+## نگرانی‌های دسترس‌پذیری
 
-### Use only one `main` role per document
+### فقط یک نقش `main` در هر سند استفاده کنید
 
-The `main` [landmark role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) should only be used once per document.
+نقش [نشانه](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) `main` باید فقط یک بار در هر سند استفاده شود.
 
-If a document contains two `main` roles, say updating page content when triggered by JavaScript, the inactive `main` role's presence should be removed from assistive technology via techniques such as toggling the [`hidden` attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden).
+اگر یک سند شامل دو نقش `main` باشد، مثلاً هنگام به‌روزرسانی محتوای صفحه با جاوااسکریپت، وجود نقش `main` غیرفعال باید از فناوری کمکی حذف شود، از طریق تکنیک‌هایی مانند تغییر [`ویژگی hidden`](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden).
 
 ```html
 <main>
@@ -79,19 +79,19 @@ If a document contains two `main` roles, say updating page content when triggere
 </main>
 ```
 
-It is also helpful to include an accessible name to help orient assistive technology users, especially in single-page applications where main content changes happen without generating a page load event. This can be added with `aria-labelledby` if there is an appropriate name in the content, or `aria-label` if not.
+همچنین مفید است که یک نام قابل دسترس برای کمک به جهت‌دهی کاربران فناوری کمکی لحاظ شود، به‌ویژه در برنامه‌های تک‌صفحه‌ای که تغییرات محتوای اصلی بدون ایجاد رویداد بارگذاری صفحه اتفاق می‌افتد. این مورد می‌تواند با `aria-labelledby` اضافه شود اگر نام مناسبی در محتوا وجود داشته باشد، یا با `aria-label` اگر وجود نداشته باشد.
 
-## Best practices
+## بهترین روش‌ها
 
-### Prefer HTML
+### HTML را ترجیح دهید
 
-Using the {{HTMLElement('main')}} element will automatically communicate that the element has a role of `main`. If possible, prefer using the semantic `<main>` element instead of the `main` role.
+استفاده از عنصر {{HTMLElement('main')}} به‌طور خودکار منتقل می‌کند که عنصر دارای نقش `main` است. در صورت امکان، ترجیح دهید از عنصر معنایی `<main>` به‌جای نقش `main` استفاده کنید.
 
-### Skip navigation
+### پرش از ناوبری
 
-Skip navigation, also known as "skipnav", is a technique that allows an assistive technology user to quickly bypass large sections of repeated content (main navigation, info banners, etc.). This allows the user to access the main content of the page faster.
+پرش از ناوبری، همچنین به‌عنوان "skipnav" شناخته می‌شود، تکنیکی است که به کاربر فناوری کمکی اجازه می‌دهد به‌سرعت از بخش‌های بزرگ محتوای تکراری (ناوبری اصلی، بنرهای اطلاعاتی و غیره) عبور کند. این کار به کاربر اجازه می‌دهد سریع‌تر به محتوای اصلی صفحه دسترسی یابد.
 
-Adding an [`id` attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/id) to the element with a declaration of `role="main"` allows it to be a target of a skip navigation link users.
+افزودن یک [`ویژگی id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) به عنصری با اعلان `role="main"` به آن اجازه می‌دهد تا هدف پیوند پرش از ناوبری برای کاربران باشد.
 
 ```html
 <body>
@@ -105,7 +105,7 @@ Adding an [`id` attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/id) 
 </body>
 ```
 
-Which is the equivalent of:
+که معادل است با:
 
 ```html
 <body>
@@ -119,15 +119,15 @@ Which is the equivalent of:
 </body>
 ```
 
-- [WebAIM: "Skip Navigation" Links](https://webaim.org/techniques/skipnav/)
+- [پیوندهای «پرش از ناوبری» WebAIM](https://webaim.org/techniques/skipnav/)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement('main')}} element
-- [Using HTML sections and outlines](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)
-- [Accessible Landmarks | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
-- [The main element | HTML5 Doctor](https://html5doctor.com/the-main-element/)
+- عنصر {{HTMLElement('main')}}
+- [استفاده از بخش‌ها و طرح‌های HTML](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)
+- [نشانه‌های قابل دسترس | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
+- [عنصر main | HTML5 Doctor](https://html5doctor.com/the-main-element/)
