@@ -1,11 +1,5 @@
 ---
 title: "Clients: openWindow() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Clients/openWindow"
-status: "needs-translation"
----
-
----
-title: "Clients: openWindow() method"
 short-title: openWindow()
 slug: Web/API/Clients/openWindow
 page-type: web-api-instance-method
@@ -14,55 +8,46 @@ browser-compat: api.Clients.openWindow
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`openWindow()`** method of the {{domxref("Clients")}}
-interface creates a new top level browsing context and loads a given URL. If the calling
-script doesn't have permission to show popups, `openWindow()` will throw an
-`InvalidAccessError`.
+متد **`openWindow()`** از رابط {{domxref("Clients")}} یک زمینهٔ مرور سطح بالا (top-level browsing context) جدید ایجاد می‌کند و یک URL مشخص را بارگذاری می‌کند. اگر اسکریپت فراخواننده اجازهٔ نمایش پنجرهٔ بازشو (popup) را نداشته باشد، `openWindow()` یک خطای `InvalidAccessError` پرتاب می‌کند.
 
-In Firefox, the method is allowed to show popups only when called as the result of a
-notification click event.
+در فایرفاکس، این متد تنها زمانی مجاز است که پنجرهٔ بازشو را نشان دهد که در نتیجهٔ یک رویداد کلیک روی اعلان (notification) فراخوانی شده باشد.
 
-In Chrome for Android, the method may instead open the URL in an existing browsing
-context provided by a [standalone web app](/en-US/docs/Web/Progressive_web_apps) previously added to the user's home screen. As of recently, this also works on
-Chrome for Windows.
+در Chrome برای اندروید، این متد ممکن است به‌جای آن URL را در یک زمینهٔ مرور موجود که توسط یک [وب‌اپلیکیشن مستقل](/en-US/docs/Web/Progressive_web_apps) که قبلاً به صفحهٔ اصلی کاربر اضافه شده فراهم شده، باز کند. اخیراً این قابلیت در Chrome برای ویندوز نیز کار می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 openWindow(url)
 ```
 
-### Parameters
+### پارامترها
 
 - `url`
-  - : A string representing the URL of the client you want to open in
-    the window. Generally this value must be a URL from the same origin as the calling
-    script.
+  - : یک رشته که URL کلاینت مورد نظر برای باز کردن در پنجره را نشان می‌دهد. به‌طور کلی این مقدار باید یک URL از همان مبدأ (same origin) اسکریپت فراخواننده باشد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to a {{domxref("WindowClient")}} object if the
-URL is from the same origin as the service worker or a {{Glossary("null", "null value")}} otherwise.
+یک {{jsxref("Promise")}} که به یک شیء {{domxref("WindowClient")}} حل می‌شود اگر URL از همان مبدأ سرویس‌ورکر باشد، در غیر این صورت به یک {{Glossary("null", "مقدار null")}} حل می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidAccessError` {{domxref("DOMException")}}
-  - : The promise is rejected with this exception if none of the windows in the app's origin have [transient activation](/en-US/docs/Web/Security/Defenses/User_activation).
+  - : پرامیس با این استثنا رد می‌شود اگر هیچ‌یک از پنجره‌های مبدأ برنامه [فعال‌سازی گذرا (transient activation)](/en-US/docs/Web/Security/Defenses/User_activation) نداشته باشند.
 
-## Security requirements
+## الزامات امنیتی
 
-- At least one window in the app's origin must have [transient activation](/en-US/docs/Web/Security/Defenses/User_activation).
+- حداقل یک پنجره در مبدأ برنامه باید [فعال‌سازی گذرا](/en-US/docs/Web/Security/Defenses/User_activation) داشته باشد.
 
-## Examples
+## مثال‌ها
 
-### Opening a window on a notification click
+### باز کردن یک پنجره هنگام کلیک روی اعلان
 
-In this example a service worker creates and then shows a notification that contains an associated URL, which is under the service worker's scope. When the user clicks the notification:
+در این مثال، یک سرویس‌ورکر یک اعلان ایجاد و نمایش می‌دهد که حاوی یک URL مرتبط است که در محدوده (scope) سرویس‌ورکر قرار دارد. وقتی کاربر روی اعلان کلیک می‌کند:
 
-- If the page at the notification's URL is already open, the service worker focuses it.
-- Otherwise, the service worker opens the page in a new window.
+- اگر صفحه در URL اعلان از قبل باز باشد، سرویس‌ورکر آن را فوکوس می‌کند.
+- در غیر این صورت، سرویس‌ورکر صفحه را در یک پنجرهٔ جدید باز می‌کند.
 
-Note that the {{domxref("Client.url")}} property is not updated unless a new page is actually loaded. This means that it will not be updated if the user navigates within the same page using a URL fragment, or if a {{glossary("SPA", "single-page app (SPA)")}} intercepts a navigation event (for example, using the [Navigation API](/en-US/docs/Web/API/Navigation_API)) and updates the page content using client-side code. Consequently, this technique is not suitable for SPAs.
+توجه داشته باشید که ویژگی {{domxref("Client.url")}} به‌روزرسانی نمی‌شود مگر اینکه یک صفحهٔ جدید واقعاً بارگذاری شود. این بدان معناست که اگر کاربر با استفاده از یک قطعهٔ URL (fragment) در همان صفحه پیمایش کند، یا اگر یک [برنامهٔ تک‌صفحه‌ای (SPA)](/en-US/docs/Glossary/SPA) یک رویداد پیمایش را رهگیری کند (مثلاً با استفاده از [Navigation API](/en-US/docs/Web/API/Navigation_API)) و محتوای صفحه را با کد سمت کلاینت به‌روزرسانی کند، این ویژگی به‌روزرسانی نخواهد شد. بنابراین، این تکنیک برای برنامه‌های تک‌صفحه‌ای مناسب نیست.
 
 ```js
 // Create and show notification
@@ -101,10 +86,10 @@ self.addEventListener("notificationclick", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
