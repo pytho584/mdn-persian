@@ -1,7 +1,7 @@
 ---
 title: "AudioBuffer"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,38 +13,38 @@ browser-compat: api.AudioBuffer
 
 {{APIRef("Web Audio API")}}
 
-The **`AudioBuffer`** interface represents a short audio asset residing in memory, created from an audio file using the {{ domxref("BaseAudioContext/decodeAudioData", "AudioContext.decodeAudioData()") }} method, or from raw data using {{ domxref("BaseAudioContext/createBuffer", "AudioContext.createBuffer()") }}. Once put into an AudioBuffer, the audio can then be played by being passed into an {{ domxref("AudioBufferSourceNode") }}.
+رابط **`AudioBuffer`** یک قطعه صوتی کوتاه را که در حافظه نگهداری میشود، نشان میدهد و از یک فایل صوتی با استفاده از متد {{ domxref("BaseAudioContext/decodeAudioData", "AudioContext.decodeAudioData()") }} یا از داده خام با استفاده از {{ domxref("BaseAudioContext/createBuffer", "AudioContext.createBuffer()") }} ایجاد میشود. پس از قرار گرفتن در یک AudioBuffer، صدا میتواند با ارسال به یک {{ domxref("AudioBufferSourceNode") }} پخش شود.
 
-Objects of these types are designed to hold small audio snippets, typically less than 45 s. For longer sounds, objects implementing the {{domxref("MediaElementAudioSourceNode")}} are more suitable. The buffer contains the audio signal waveform encoded as a series of amplitudes in the following format: non-interleaved IEEE754 32-bit linear PCM with a nominal range between `-1` and `+1`, that is, a 32-bit floating point buffer, with each sample between -1.0 and 1.0. If the `AudioBuffer` has multiple channels, they are stored in separate buffers.
+اشیاء از این نوع برای نگهداری قطعات صوتی کوچک طراحی شدهاند، معمولاً کمتر از ۴۵ ثانیه. برای صداهای طولانیتر، اشیائی که {{domxref("MediaElementAudioSourceNode")}} را پیادهسازی میکنند مناسبتر هستند. بافر شامل شکل موج سیگنال صوتی است که به صورت یک سری دامنهها در قالب زیر کدگذاری شده است: PCM خطی ۳۲ بیتی IEEE754 غیر درهمآمیخته (non-interleaved) با محدوده اسمی بین `1-` و `1+`، یعنی یک بافر ممیز شناور ۳۲ بیتی، با هر نمونه بین ۱٫۰- و ۱٫۰. اگر `AudioBuffer` دارای چند کانال باشد، آنها در بافرهای جداگانه ذخیره میشوند.
 
-## Constructor
+## سازنده
 
 - {{domxref("AudioBuffer.AudioBuffer", "AudioBuffer()")}}
-  - : Creates and returns a new `AudioBuffer` object instance.
+  - : یک نمونه شیء جدید `AudioBuffer` ایجاد و برمیگرداند.
 
-## Instance properties
+## ویژگیهای نمونه
 
 - {{domxref("AudioBuffer.sampleRate")}} {{ReadOnlyInline}}
-  - : Returns a float representing the sample rate, in samples per second, of the PCM data stored in the buffer.
+  - : یک عدد اعشاری برمیگرداند که نرخ نمونهبرداری، بر حسب نمونه در ثانیه، از داده PCM ذخیرهشده در بافر را نشان میدهد.
 - {{domxref("AudioBuffer.length")}} {{ReadOnlyInline}}
-  - : Returns an integer representing the length, in sample-frames, of the PCM data stored in the buffer.
+  - : یک عدد صحیح برمیگرداند که طول، بر حسب فریم نمونه، از داده PCM ذخیرهشده در بافر را نشان میدهد.
 - {{domxref("AudioBuffer.duration")}} {{ReadOnlyInline}}
-  - : Returns a double representing the duration, in seconds, of the PCM data stored in the buffer.
+  - : یک عدد double برمیگرداند که مدت زمان، بر حسب ثانیه، از داده PCM ذخیرهشده در بافر را نشان میدهد.
 - {{domxref("AudioBuffer.numberOfChannels")}} {{ReadOnlyInline}}
-  - : Returns an integer representing the number of discrete audio channels described by the PCM data stored in the buffer.
+  - : یک عدد صحیح برمیگرداند که تعداد کانالهای صوتی مجزا توصیفشده توسط داده PCM ذخیرهشده در بافر را نشان میدهد.
 
-## Instance methods
+## روشهای نمونه
 
 - {{domxref("AudioBuffer.getChannelData()")}}
-  - : Returns a {{jsxref("Float32Array")}} containing the PCM data associated with the channel, defined by the `channel` parameter (with `0` representing the first channel).
+  - : یک {{jsxref("Float32Array")}} شامل داده PCM مرتبط با کانال را برمیگرداند که توسط پارامتر `channel` تعریف شده است (با `0` که نشاندهنده اولین کانال است).
 - {{domxref("AudioBuffer.copyFromChannel()")}}
-  - : Copies the samples from the specified channel of the `AudioBuffer` to the `destination` array.
+  - : نمونهها را از کانال مشخصشده `AudioBuffer` به آرایه `destination` کپی میکند.
 - {{domxref("AudioBuffer.copyToChannel()")}}
-  - : Copies the samples to the specified channel of the `AudioBuffer`, from the `source` array.
+  - : نمونهها را از آرایه `source` به کانال مشخصشده `AudioBuffer` کپی میکند.
 
-## Example
+## مثال
 
-The following simple example shows how to create an `AudioBuffer` and fill it with random white noise. You can find the full source code at our [webaudio-examples](https://github.com/mdn/webaudio-examples) repository; a [running live](https://mdn.github.io/webaudio-examples/audio-buffer/) version is also available.
+مثال ساده زیر نشان میدهد که چگونه یک `AudioBuffer` بسازید و آن را با نویز سفید تصادفی پر کنید. میتوانید کد منبع کامل را در مخزن [webaudio-examples](https://github.com/mdn/webaudio-examples) ما پیدا کنید؛ یک نسخه [اجرای زنده](https://mdn.github.io/webaudio-examples/audio-buffer/) نیز موجود است.
 
 ```js
 const audioCtx = new AudioContext();
@@ -83,14 +83,14 @@ source.connect(audioCtx.destination);
 source.start();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
