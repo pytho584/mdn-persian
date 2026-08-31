@@ -1,11 +1,5 @@
 ---
 title: "CharacterBoundsUpdateEvent: rangeEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterBoundsUpdateEvent/rangeEnd"
-status: "needs-translation"
----
-
----
-title: "CharacterBoundsUpdateEvent: rangeEnd property"
 short-title: rangeEnd
 slug: Web/API/CharacterBoundsUpdateEvent/rangeEnd
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.CharacterBoundsUpdateEvent.rangeEnd
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`CharacterBoundsUpdateEvent.rangeEnd`** read-only property represents the offset of the last character within the editable text region for which the operating system needs the bounds.
+خاصیتِ فقط-خواندنی **`CharacterBoundsUpdateEvent.rangeEnd`**، آفستِ آخرین نویسه در ناحیه متنی قابل ویرایش را نشان می‌دهد که سیستم عامل برای آن به مرزها نیاز دارد.
 
-## Value
+## مقدار
 
-A {{jsxref("Number")}}.
+یک {{jsxref("Number")}}.
 
-## Examples
+## مثال‌ها
 
-### Reading the `rangeEnd` value
+### خواندن مقدار `rangeEnd`
 
-This example shows how to use the `characterboundsupdate` event and read the value of the `rangeStart` and `rangeEnd` properties.
+این مثال نحوه استفاده از رویداد `characterboundsupdate` و خواندن مقدار ویژگی‌های `rangeStart` و `rangeEnd` را نشان می‌دهد.
 
 ```js
 const editContext = new EditContext();
@@ -39,10 +33,10 @@ editContext.addEventListener("characterboundsupdate", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
