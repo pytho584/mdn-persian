@@ -1,11 +1,5 @@
 ---
 title: "console: profile() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/profile_static"
-status: "needs-translation"
----
-
----
-title: "console: profile() static method"
 short-title: profile()
 slug: Web/API/console/profile_static
 page-type: web-api-static-method
@@ -16,11 +10,11 @@ browser-compat: api.console.profile_static
 
 {{APIRef("Console API")}}{{Non-standard_header}} {{AvailableInWorkers}}
 
-The **`console.profile()`** static method starts recording a performance profile (for example, the [Firefox performance tool](https://firefox-source-docs.mozilla.org/devtools-user/performance/index.html)).
+متد استاتیک **`console.profile()`** شروع به ضبط یک پروفایل عملکرد می‌کند (برای مثال، [ابزار عملکرد فایرفاکس](https://firefox-source-docs.mozilla.org/devtools-user/performance/index.html)).
 
-You can optionally supply an argument to name the profile and this then enables you to stop only that profile if multiple profiles being recorded. See {{domxref("console/profileEnd_static", "console.profileEnd()")}} to see how this argument is interpreted.
+شما می‌توانید به صورت اختیاری یک آرگومان برای نام‌گذاری پروفایل ارائه دهید و این کار به شما امکان می‌دهد در صورت ضبط چندین پروفایل، فقط آن پروفایل را متوقف کنید. برای مشاهده نحوه تفسیر این آرگومان به {{domxref("console/profileEnd_static", "console.profileEnd()")}} مراجعه کنید.
 
-To stop recording call {{domxref("console/profileEnd_static", "console.profileEnd()")}}.
+برای توقف ضبط، {{domxref("console/profileEnd_static", "console.profileEnd()")}} را فراخوانی کنید.
 
 ## Syntax
 
@@ -28,19 +22,19 @@ To stop recording call {{domxref("console/profileEnd_static", "console.profileEn
 console.profile(profileName)
 ```
 
-### Parameters
+### پارامترها
 
 - `profileName` {{Optional_Inline}}
-  - : The name to give the profile.
+  - : نامی که به پروفایل داده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("console/profileEnd_static", "console.profileEnd()")}}
