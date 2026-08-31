@@ -1,7 +1,5 @@
 ---
 title: "Credential: isConditionalMediationAvailable() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Credential/isConditionalMediationAvailable_static"
-status: "needs-translation"
 ---
 
 ---
@@ -14,34 +12,34 @@ browser-compat: api.Credential.isConditionalMediationAvailable_static
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`isConditionalMediationAvailable()`** static method of the {{domxref("Credential")}} interface returns a {{jsxref("Promise")}} which resolves to `false`.
+متد ایستای **`isConditionalMediationAvailable()`** از رابط {{domxref("Credential")}} یک {{jsxref("Promise")}} برمی‌گرداند که به `false` resolve می‌شود.
 
-Subclasses of {{domxref("Credential")}} override this method if they support conditional mediation. See {{domxref("PublicKeyCredential.isConditionalMediationAvailable_static", "PublicKeyCredential.isConditionalMediationAvailable()")}}, for example.
+زیرکلاس‌های {{domxref("Credential")}} در صورت پشتیبانی از میانجی‌گری شرطی (conditional mediation)، این متد را بازنویسی می‌کنند. برای مثال، به {{domxref("PublicKeyCredential.isConditionalMediationAvailable_static", "PublicKeyCredential.isConditionalMediationAvailable()")}} مراجعه کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 Credential.isConditionalMediationAvailable()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} which resolves to `false`.
+یک {{jsxref("Promise")}} که به `false` resolve می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 await Credential.isConditionalMediationAvailable(); // false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
