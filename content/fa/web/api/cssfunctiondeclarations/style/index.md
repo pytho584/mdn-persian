@@ -1,11 +1,5 @@
 ---
 title: "CSSFunctionDeclarations: style property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionDeclarations/style"
-status: "needs-translation"
----
-
----
-title: "CSSFunctionDeclarations: style property"
 short-title: style
 slug: Web/API/CSSFunctionDeclarations/style
 page-type: web-api-instance-property
@@ -16,26 +10,26 @@ browser-compat: api.CSSFunctionDeclarations.style
 
 {{ APIRef("CSSOM") }}{{SeeCompatTable}}
 
-The read-only **`style`** property of the {{domxref("CSSFunctionDeclarations")}} interface contains a {{domxref("CSSFunctionDescriptors")}} object representing the descriptors available in the {{cssxref("@function")}} rule's body.
+ویژگی فقط‑خواندنی **`style`** از رابط {{domxref("CSSFunctionDeclarations")}} شامل یک شیء {{domxref("CSSFunctionDescriptors")}} است که توصیف‌گرهای موجود در بدنهٔ قانون {{cssxref("@function")}} را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("CSSFunctionDescriptors")}} object.
+یک شیء {{domxref("CSSFunctionDescriptors")}}.
 
-Although the `style` property itself is read-only in the sense that you can't replace the `CSSFunctionDescriptors` object, you can still assign to the `style` property directly, which is equivalent to assigning to its {{domxref("CSSStyleDeclaration/cssText", "cssText")}} property. You can also modify the `CSSFunctionDescriptors` object using the {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} and {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} methods.
+اگرچه ویژگی `style` خود به این معنا فقط‑خواندنی است که نمی‌توانید شیء `CSSFunctionDescriptors` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به ویژگی `style` مقداردهی کنید که معادل با مقداردهی به ویژگی {{domxref("CSSStyleDeclaration/cssText", "cssText")}} آن است. همچنین می‌توانید شیء `CSSFunctionDescriptors` را با استفاده از روش‌های {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} و {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("CSSFunctionDeclarations")}} reference page for examples.
+برای مثال‌ها به صفحهٔ مرجع اصلی {{domxref("CSSFunctionDeclarations")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@function")}}
