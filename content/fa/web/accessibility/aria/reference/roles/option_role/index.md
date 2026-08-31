@@ -1,11 +1,5 @@
 ---
 title: "ARIA: option role"
-source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role"
-status: "needs-translation"
----
-
----
-title: "ARIA: option role"
 short-title: option
 slug: Web/Accessibility/ARIA/Reference/Roles/option_role
 page-type: aria-role
@@ -13,92 +7,93 @@ spec-urls:
   - https://w3c.github.io/aria/#option
   - https://www.w3.org/WAI/ARIA/apg/patterns/listbox/examples/listbox-scrollable/
 sidebar: accessibilitysidebar
+translated_by: "n8n + AI"
 ---
 
-The `option` role is used for selectable items in a `listbox`.
+نقش `option` برای آیتم‌های قابل انتخاب در یک `listbox` استفاده می‌شود.
 
-## Description
+## توضیحات
 
-The `option` role is used to identify selections a user can make in a [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role). These options are similar to the {{HTMLElement('option')}} elements in a {{HTMLElement('select')}} element, but they can contain images.
+نقش `option` برای شناسایی انتخاب‌هایی استفاده می‌شود که کاربر می‌تواند در یک [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role) انجام دهد. این گزینه‌ها مشابه عناصر {{HTMLElement('option')}} در یک عنصر {{HTMLElement('select')}} هستند، اما می‌توانند تصاویر را نیز شامل شوند.
 
-All selectable options should have [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) match their state, `true` when selected and `false` when not. If an option is not selectable, `aria-selected` can be omitted. A disabled option can have [`aria-disabled="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) and `aria-selected="false"` to communicate to the user that the option is present, albeit disabled.
+همه گزینه‌های قابل انتخاب باید [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) را مطابق با وضعیت‌شان داشته باشند، `true` در حالت انتخاب‌شده و `false` در حالت غیرانتخابی. اگر یک گزینه قابل انتخاب نباشد، `aria-selected` را می‌توان حذف کرد. یک گزینه غیرفعال می‌تواند [`aria-disabled="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) و `aria-selected="false"` داشته باشد تا به کاربر اطلاع دهد که گزینه وجود دارد، هرچند غیرفعال است.
 
-The `option` role is for identifying selectable choices of a `listbox`. Options must be provided an accessible name. Generally, the accessible name for an option should come from the element's descendant content.
+نقش `option` برای شناسایی انتخاب‌های قابل انتخاب یک `listbox` است. گزینه‌ها باید یک نام دسترس‌پذیر داشته باشند. به طور کلی، نام دسترس‌پذیر برای یک گزینه باید از محتوای عناصر فرزند آن بیاید.
 
-Authors can also explicitly provide an accessible name by specifying [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) to the element with the `option` role. If using `aria-label` or `aria-labelledby`, and the option also displays a visible text label, authors must ensure they adhere to <a href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">WCAG Success Criterion 2.5.3 Label in Name</a>.
+نویسندگان همچنین می‌توانند با تعیین [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) بر روی عنصر دارای نقش `option`، یک نام دسترس‌پذیر به طور صریح ارائه دهند. اگر از `aria-label` یا `aria-labelledby` استفاده می‌کنید و گزینه همچنین یک برچسب متنی قابل مشاهده را نمایش می‌دهد، نویسندگان باید اطمینان حاصل کنند که با <a href="https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html">معیار موفقیت WCAG 2.5.3 برچسب در نام</a> مطابقت دارند.
 
-It is highly recommended to use a {{HTMLElement('select')}} element or an {{HTMLElement('input')}} element with the `checkbox` or `radio` type instead, when possible. These native HTML elements provide keyboard interactivity to manage focus for all the descendants for you automatically.
+به شدت توصیه می‌شود در صورت امکان از یک عنصر {{HTMLElement('select')}} یا یک عنصر {{HTMLElement('input')}} با نوع `checkbox` یا `radio` استفاده کنید. این عناصر بومی HTML تعامل کیبورد را برای مدیریت فوکوس همه فرزندان به طور خودکار برای شما فراهم می‌کنند.
 
-### All descendants are presentational
+### همه فرزندان نمایشی هستند
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in an `option`. To deal with this limitation, browsers, automatically apply role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) to all descendant elements of any `option` element as it is a role that does not support semantic children.
+برخی از انواع اجزای رابط کاربری، وقتی در یک API دسترس‌پذیری پلتفرم نمایش داده می‌شوند، فقط می‌توانند متن داشته باشند. APIهای دسترس‌پذیری راهی برای نمایش عناصر معنایی موجود در یک `option` ندارند. برای مقابله با این محدودیت، مرورگرها به طور خودکار نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را به همه عناصر فرزند هر عنصر `option` اعمال می‌کنند، زیرا این نقشی است که فرزندان معنایی را پشتیبانی نمی‌کند.
 
-For example, consider the following `option` element, which contains a heading.
+برای مثال، عنصر `option` زیر را در نظر بگیرید که شامل یک عنوان است.
 
 ```html
 <div role="option"><h3>Title of my option</h3></div>
 ```
 
-Because descendants of `option` are presentational, the following code is equivalent:
+از آنجا که فرزندان `option` نمایشی هستند، کد زیر معادل است:
 
 ```html
 <div role="option"><h3 role="presentation">Title of my option</h3></div>
 ```
 
-From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree):
+از دیدگاه کاربر فناوری کمکی، عنوان وجود ندارد، زیرا قطعه کدهای قبلی با موارد زیر در [درخت دسترس‌پذیری](/en-US/docs/Glossary/Accessibility_tree) معادل هستند:
 
 ```html
 <div role="option">Title of my option</div>
 ```
 
-### Associated ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های ARIA مرتبط
 
-#### Associated Roles
+#### نقش‌های مرتبط
 
 - [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role)
-  - : An `option` _must_ be contained in or owned by a `listbox`.
+  - : یک `option` باید در یک `listbox` قرار داشته باشد یا متعلق به آن باشد.
 
-#### States and Properties
+#### حالت‌ها و ویژگی‌ها
 
 - [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected)
-  - : Used to describe the selection state of the option.
+  - : برای توصیف وضعیت انتخاب یک گزینه استفاده می‌شود.
 
 - [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked)
-  - : Used to describe the checked state when options are used in a multiple selection fashion. Supports `true`, `false` and `mixed`. Optional.
+  - : برای توصیف وضعیت علامت‌خورده وقتی گزینه‌ها به صورت انتخاب چندگانه استفاده می‌شوند، به کار می‌رود. مقادیر `true`، `false` و `mixed` را پشتیبانی می‌کند. اختیاری.
 
 - [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset)
-  - : Used to describe the position in the set of options when it does not match the DOM, such as virtual scrolling where only some options are present at a time. Optional.
+  - : برای توصیف موقعیت گزینه در مجموعه گزینه‌ها زمانی که با DOM مطابقت ندارد، مانند اسکرول مجازی که در آن فقط برخی گزینه‌ها در یک زمان حضور دارند، استفاده می‌شود. اختیاری.
 
 - [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize)
-  - : Used in conjunction with `aria-posinset` to declare the total number of options. Optional.
+  - : همراه با `aria-posinset` برای اعلام تعداد کل گزینه‌ها استفاده می‌شود. اختیاری.
 
 - [`aria-disabled`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled)
-  - : Used to indicate that the option is present but not editable. Optional.
+  - : برای نشان دادن اینکه گزینه وجود دارد اما قابل ویرایش نیست، استفاده می‌شود. اختیاری.
 
 - [`aria-hidden`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden)
-  - : Used to hide the option from accessibility tools. It should only be used to hide non-visible content or visible content if it improves the experience of assistive technology, such as redundant content. Optional.
+  - : برای پنهان کردن گزینه از ابزارهای دسترس‌پذیری استفاده می‌شود. فقط باید برای پنهان کردن محتوای غیرقابل مشاهده یا محتوای قابل مشاهده‌ای که تجربه فناوری کمکی را بهبود می‌بخشد، مانند محتوای تکراری، استفاده شود. اختیاری.
 
 - [`aria-invalid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid)
-  - : Used to indicate that the value of the option is considered invalid by the application. Optional.
+  - : برای نشان دادن اینکه مقدار گزینه توسط برنامه نامعتبر تلقی می‌شود، استفاده می‌شود. اختیاری.
 
 - [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy)
-  - : Used to indicate that an element is being modified, such as while it is loading. Optional.
+  - : برای نشان دادن اینکه یک عنصر در حال تغییر است، مثلاً در حال بارگذاری، استفاده می‌شود. اختیاری.
 
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : Used to indicate which element labels the option. The content of the option should be used instead where appropriate. Optional.
+  - : برای نشان دادن اینکه کدام عنصر برچسب گزینه را فراهم می‌کند استفاده می‌شود. در صورت مناسب بودن، باید از محتوای خود گزینه استفاده شود. اختیاری.
 
 - [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
-  - : Used to label the option. If the label is present in the DOM, `aria-labelledby` should be used instead. Optional.
+  - : برای برچسب‌گذاری گزینه استفاده می‌شود. اگر برچسب در DOM وجود دارد، باید به جای آن از `aria-labelledby` استفاده شود. اختیاری.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement('select')}} element
-- HTML {{HTMLElement('label')}} element
-- HTML {{HTMLElement('option')}} element
-- [ARIA: `combobox` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)
-- [ARIA: `list` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role)
-- [ARIA: `listbox` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role)
+- عنصر HTML {{HTMLElement('select')}}
+- عنصر HTML {{HTMLElement('label')}}
+- عنصر HTML {{HTMLElement('option')}}
+- [ARIA: نقش `combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)
+- [ARIA: نقش `list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role)
+- [ARIA: نقش `listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role)
