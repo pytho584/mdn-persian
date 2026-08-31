@@ -1,7 +1,5 @@
 ---
 title: "Compression Streams API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Compression_Streams_API"
-status: "needs-translation"
 ---
 
 ---
@@ -13,11 +11,11 @@ browser-compat: api.CompressionStream
 
 {{DefaultAPISidebar("Compression Streams API")}}{{AvailableInWorkers}}
 
-The **Compression Streams API** provides a JavaScript API for compressing and decompressing streams of data using the gzip or deflate formats.
+**Compression Streams API** یک رابط برنامه‌نویسی جاوااسکریپت برای فشرده‌سازی و از فشرده‌سازی خارج کردن جریان‌های داده با استفاده از قالب‌های gzip یا deflate فراهم می‌کند.
 
-Built in compression means that JavaScript applications will not need to include a compression library, which makes the download size of the application smaller.
+فشرده‌سازی داخلی به این معنی است که برنامه‌های جاوااسکریپت دیگر نیازی به گنجاندن یک کتابخانه فشرده‌سازی نخواهند داشت، که اندازه بارگیری برنامه را کوچک‌تر می‌کند.
 
-The Fetch API's {{domxref("Response")}} can be used to convert streams to:
+از {{domxref("Response")}} در Fetch API می‌توان برای تبدیل جریان‌ها به موارد زیر استفاده کرد:
 
 - {{jsxref("ArrayBuffer")}}
 - {{domxref("Blob")}}
@@ -25,16 +23,16 @@ The Fetch API's {{domxref("Response")}} can be used to convert streams to:
 - {{jsxref("String")}}
 - JSON
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("CompressionStream")}}
-  - : Compresses a stream of data.
+  - : جریانی از داده را فشرده می‌کند.
 - {{domxref("DecompressionStream")}}
-  - : Decompresses a stream of data.
+  - : جریانی از داده را از حالت فشرده خارج می‌کند.
 
-## Examples
+## مثال‌ها
 
-In this example a stream is compressed using gzip compression.
+در این مثال، یک جریان با استفاده از فشرده‌سازی gzip فشرده می‌شود.
 
 ```js
 const compressedReadableStream = inputReadableStream.pipeThrough(
@@ -42,7 +40,7 @@ const compressedReadableStream = inputReadableStream.pipeThrough(
 );
 ```
 
-In the following example a function decompresses a blob using gzip.
+در مثال زیر، یک تابع یک blob را با استفاده از gzip از حالت فشرده خارج می‌کند.
 
 ```js
 async function DecompressBlob(blob) {
@@ -52,10 +50,10 @@ async function DecompressBlob(blob) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
