@@ -1,11 +1,5 @@
 ---
 title: "Using the CSS properties and values API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Properties_and_Values_API/guide"
-status: "needs-translation"
----
-
----
-title: Using the CSS properties and values API
 slug: Web/API/CSS_Properties_and_Values_API/guide
 page-type: guide
 browser-compat: api.CSS.registerProperty_static
@@ -13,15 +7,15 @@ browser-compat: api.CSS.registerProperty_static
 
 {{DefaultAPISidebar("CSS Properties and Values API")}}
 
-The **CSS Properties and Values API** — part of the [CSS Houdini](/en-US/docs/Web/API/Houdini_APIs) umbrella of APIs — allows the registration of [CSS custom properties](/en-US/docs/Web/CSS/Reference/Properties/--*), allowing for property type checking, default values, and properties that do or do not inherit their value.
+**CSS Properties and Values API** — بخشی از مجموعه‌APIهای [CSS Houdini](/en-US/docs/Web/API/Houdini_APIs) — امکان ثبت [خصوصیات سفارشی CSS](/en-US/docs/Web/CSS/Reference/Properties/--*) را فراهم می‌کند، که بررسی نوع خصوصیت، مقادیر پیش‌فرض، و خصوصیاتی که مقدار خود را به ارث می‌برند یا نمی‌برند، امکان‌پذیر می‌سازد.
 
-## Registering a custom property
+## ثبت یک خصوصیت سفارشی
 
-Registering a custom property allows you to tell the browser how the custom property should behave; what types are allowed, whether the custom property inherits its value, and what the default value of the custom property is. There are two ways to register a property, in [JavaScript](/en-US/docs/Web/JavaScript) or in [CSS](/en-US/docs/Web/CSS).
+ثبت یک خصوصیت سفارشی به شما امکان می‌دهد به مرورگر بگویید که خصوصیت سفارشی چگونه باید رفتار کند: چه نوع‌هایی مجاز هستند، آیا خصوصیت سفارشی مقدار خود را به ارث می‌برد، و مقدار پیش‌فرض خصوصیت سفارشی چیست. دو روش برای ثبت یک خصوصیت وجود دارد: در [جاوااسکریپت](/en-US/docs/Web/JavaScript) یا در [CSS](/en-US/docs/Web/CSS).
 
 ### CSS.registerProperty
 
-The following will register a [custom property](/en-US/docs/Web/CSS/Reference/Properties/--*) named `--my-prop` using {{domxref('CSS/registerProperty_static', 'CSS.registerProperty')}}. `--my-prop` will use the CSS color syntax, it will have a default value of `#c0ffee`, and it will not inherit its value:
+کد زیر یک [خصوصیت سفارشی](/en-US/docs/Web/CSS/Reference/Properties/--*) به نام `--my-prop` را با استفاده از {{domxref('CSS/registerProperty_static', 'CSS.registerProperty')}} ثبت می‌کند. `--my-prop` از نحو رنگ CSS استفاده می‌کند، مقدار پیش‌فرض آن `#c0ffee` خواهد بود، و مقدار خود را به ارث نمی‌برد:
 
 ```js
 window.CSS.registerProperty({
@@ -34,7 +28,7 @@ window.CSS.registerProperty({
 
 ### @property
 
-The same registration can take place in CSS. The following will register a [custom property](/en-US/docs/Web/CSS/Reference/Properties/--*) named `--my-prop` using the {{cssxref('@property')}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules). `--my-prop` will use the CSS color syntax, it will have a default value of `#c0ffee`, and it will not inherit its value:
+همین ثبت می‌تواند در CSS نیز انجام شود. کد زیر یک [خصوصیت سفارشی](/en-US/docs/Web/CSS/Reference/Properties/--*) به نام `--my-prop` را با استفاده از [قاعده at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) {{cssxref('@property')}} ثبت می‌کند. `--my-prop` از نحو رنگ CSS استفاده می‌کند، مقدار پیش‌فرض آن `#c0ffee` خواهد بود، و مقدار خود را به ارث نمی‌برد:
 
 ```css
 @property --my-prop {
@@ -44,17 +38,17 @@ The same registration can take place in CSS. The following will register a [cust
 }
 ```
 
-## Using registered custom properties
+## استفاده از خصوصیات سفارشی ثبت‌شده
 
-One of the advantages of registering a property is that the browser now knows how to handle your custom property through things like transitions! When a property isn't registered, the browser doesn't know how to treat it, so it assumes that any value can be used and therefore can't animate it. When a property has a registered syntax, though, the browser can optimize around that syntax, including being able to animate it!
+یکی از مزایای ثبت یک خصوصیت این است که مرورگر اکنون می‌داند چگونه خصوصیت سفارشی شما را در مواردی مانند transitions مدیریت کند! وقتی یک خصوصیت ثبت نشده باشد، مرورگر نمی‌داند چگونه با آن رفتار کند، بنابراین فرض می‌کند هر مقداری قابل استفاده است و بنابراین نمی‌تواند آن را انیمیت کند. اما وقتی یک خصوصیت دارای نحو ثبت‌شده است، مرورگر می‌تواند بر اساس آن نحو بهینه‌سازی کند، از جمله توانایی انیمیت آن!
 
-In this example, the custom property `--registered` has been registered using the syntax `<color>` and then used in a linear gradient. That property is then transitioned on hover or focus to a different color. Notice that the transition works with the registered property but not the unregistered one!
+در این مثال، خصوصیت سفارشی `--registered` با استفاده از نحو `<color>` ثبت شده است و سپس در یک گرادیان خطی استفاده شده است. آن خصوصیت در هنگام hover یا focus به یک رنگ دیگر transition می‌کند. توجه کنید که transition با خصوصیت ثبت‌شده کار می‌کند اما با خصوصیت ثبت‌نشده کار نمی‌کند!
 
 ### HTML
 
 ```html
-<button class="registered">Background Registered</button>
-<button class="unregistered">Background Not Registered</button>
+<button class="registered">پس‌زمینه ثبت‌شده</button>
+<button class="unregistered">پس‌زمینه ثبت‌نشده</button>
 ```
 
 ### CSS
@@ -101,22 +95,22 @@ window.CSS.registerProperty({
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Using_registered_custom_properties", 320, 320)}}
 
-While not functionally accurate, a good way to think about the difference between the unregistered property in the above example and the registered property is the difference between a {{cssxref('custom-ident')}} and a number when trying to animate {{cssxref('height')}}. You cannot transition or animate from `auto` to a number because the browser doesn't know the value of `auto` until it's calculated. With an unregistered property, the browser likewise doesn't know what the value _may be_ until it's calculated, and because of that, it can't set up a transition from one value to another. When registered, though, you've told the browser what type of value it should expect, and because it knows that, it can then set up the transitions properly.
+اگرچه از نظر عملیاتی دقیق نیست، یک راه خوب برای فکر کردن به تفاوت بین خصوصیت ثبت‌نشده در مثال بالا و خصوصیت ثبت‌شده، تفاوت بین یک {{cssxref('custom-ident')}} و یک عدد هنگام تلاش برای انیمیت {{cssxref('height')}} است. شما نمی‌توانید از `auto` به یک عدد transition یا انیمیت کنید زیرا مرورگر مقدار `auto` را تا زمانی که محاسبه نشود نمی‌داند. با یک خصوصیت ثبت‌نشده، مرورگر نیز نمی‌داند مقدار _ممکن است_ چه باشد تا زمانی که محاسبه شود، و به همین دلیل نمی‌تواند یک transition از یک مقدار به مقدار دیگر تنظیم کند. اما وقتی ثبت شده باشد، شما به مرورگر گفته‌اید که چه نوع مقداری را انتظار داشته باشد، و چون این را می‌داند، می‌تواند transitions را به درستی تنظیم کند.
 
-## Gotchas
+## نکات مهم
 
-There are two gotchas when registering a property. The first is that, once a property is registered, there's no way to update it, and trying to re-register it with [JavaScript](/en-US/docs/Web/JavaScript) will throw an error indicating it's already been defined.
+دو نکته مهم در هنگام ثبت یک خصوصیت وجود دارد. اول اینکه، وقتی یک خصوصیت ثبت شد، راهی برای به‌روزرسانی آن وجود ندارد، و تلاش برای ثبت مجدد آن با [جاوااسکریپت](/en-US/docs/Web/JavaScript) یک خطا ایجاد می‌کند که نشان می‌دهد قبلاً تعریف شده است.
 
-Second, unlike standard properties, registered properties aren't validated when they're parsed. Rather, they're validated when they're computed. That means both that invalid values won't appear as invalid when inspecting the element's properties, and that including an invalid property after a valid one won't fall back to the valid property. An invalid property will, however, fall back to its registered default.
+دوم اینکه، برخلاف خصوصیات استاندارد، خصوصیات ثبت‌شده هنگام تجزیه (parsing) اعتبارسنجی نمی‌شوند. بلکه هنگام محاسبه (computed) اعتبارسنجی می‌شوند. این بدان معناست که هم مقادیر نامعتبر هنگام بررسی خصوصیات عنصر به عنوان نامعتبر ظاهر نخواهند شد، و هم اینکه شامل یک خصوصیت نامعتبر بعد از یک خصوصیت معتبر باعث بازگشت به خصوصیت معتبر نمی‌شود. با این حال، یک خصوصیت نامعتبر به مقدار پیش‌فرض ثبت‌شده خود بازمی‌گردد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Registering custom properties with CSS](/en-US/docs/Web/CSS/Guides/Properties_and_values_API/Registering_properties)
+- [ثبت خصوصیات سفارشی با CSS](/en-US/docs/Web/CSS/Guides/Properties_and_values_API/Registering_properties)
