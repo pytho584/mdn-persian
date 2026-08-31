@@ -1,7 +1,7 @@
 ---
 title: "AudioWorkletProcessor: port property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor/port"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,32 +14,28 @@ browser-compat: api.AudioWorkletProcessor.port
 
 {{APIRef("Web Audio API")}}
 
-The read-only **`port`** property of the
-{{domxref("AudioWorkletProcessor")}} interface returns the associated
-{{domxref("MessagePort")}}. It can be used to communicate between the processor and the
-{{domxref("AudioWorkletNode")}} to which it belongs.
+ویژگی **`port`** فقط‌خواندنی رابط {{domxref("AudioWorkletProcessor")}}، {{domxref("MessagePort")}} مرتبط را برمی‌گرداند. از آن می‌توان برای برقراری ارتباط بین پردازنده و {{domxref("AudioWorkletNode")}} متعلق به آن استفاده کرد.
 
 > [!NOTE]
-> The port at the other end of the channel is
-> available under the {{domxref("AudioWorkletNode.port", "port")}} property of the node.
+> پورت در انتهای دیگر کانال تحت ویژگی {{domxref("AudioWorkletNode.port", "port")}} گره در دسترس است.
 
-## Value
+## مقدار
 
-The {{domxref("MessagePort")}} object that is connecting the `AudioWorkletProcessor` and the associated `AudioWorkletNode`.
+شیء {{domxref("MessagePort")}} که `AudioWorkletProcessor` و `AudioWorkletNode` مرتبط را به هم متصل می‌کند.
 
-## Examples
+## مثال‌ها
 
-See [`AudioWorkletNode.port`](/en-US/docs/Web/API/AudioWorkletNode/port#examples) for example code.
+برای کد نمونه، [`AudioWorkletNode.port`](/en-US/docs/Web/API/AudioWorkletNode/port#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
