@@ -1,7 +1,7 @@
 ---
 title: "ARIA: term role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/term_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,32 +13,32 @@ spec-urls: https://w3c.github.io/aria/#term
 sidebar: accessibilitysidebar
 ---
 
-The `term` role can be used for a word or phrase with an optional corresponding [`definition`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/definition_role).
+نقش `term` می‌تواند برای یک واژه یا عبارت با یک [`definition`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/definition_role) اختیاری متناظر استفاده شود.
 
-## Description
+## توضیحات
 
-The `term` role can be used for a word or phrase with an optional corresponding [`definition`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/definition_role). It is equivalent in semantics to the HTML {{HTMLElement('dfn')}} element and the definition term ({{HTMLElement('dt')}}) element within a definition list ({{HTMLElement('dl')}} ).
+نقش `term` می‌تواند برای یک واژه یا عبارت با یک [`definition`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/definition_role) اختیاری متناظر استفاده شود. از نظر معنایی معادل عنصر HTML {{HTMLElement('dfn')}} و عنصر اصطلاح تعریف ({{HTMLElement('dt')}}) در فهرست تعریف ({{HTMLElement('dl')}} ) است.
 
-The `term` role is used to explicitly identify a word or phrase for which a definition has been provided by the author or is expected to be provided by the user. If there is an existing definition, or a form or form control to enter a definition, authors SHOULD set [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) to point to the related element.
+نقش `term` برای شناسایی صریح یک واژه یا عبارت استفاده می‌شود که تعریفی برای آن توسط نویسنده ارائه شده است یا انتظار می‌رود توسط کاربر ارائه شود. اگر تعریفی وجود داشته باشد، یا یک فرم یا کنترل فرم برای وارد کردن تعریف وجود داشته باشد، نویسندگان باید [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) را برای اشاره به عنصر مرتبط تنظیم کنند.
 
-Don't use the `role="term"` on interactive elements like links because it can interfere with assistive technology users ability to interact with the element. Also, the term itself is the accessible name, so do not use [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby).
+از `role="term"` در عناصر تعاملی مانند پیوندها استفاده نکنید، زیرا می‌تواند با توانایی کاربران فناوری کمکی برای تعامل با عنصر تداخل کند. همچنین، خود واژه، نام دسترس‌پذیر است، بنابراین از [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) استفاده نکنید.
 
 > [!WARNING]
-> The accessible name should be the term itself, so DO NOT use `aria-label` or `aria-labelledby`.
+> نام دسترس‌پذیر باید خود واژه باشد، بنابراین از `aria-label` یا `aria-labelledby` استفاده نکنید.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
-None.
+هیچ‌کدام.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-None.
+هیچ‌کدام.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-None.
+هیچ‌کدام.
 
-## Examples
+## مثال‌ها
 
 ```html
 <p>
@@ -51,7 +51,7 @@ None.
 </p>
 ```
 
-Including better semantics, the above could also be written:
+با معناشناسی بهتر، می‌توان مثال بالا را به صورت زیر نیز نوشت:
 
 ```html
 <p>
@@ -64,7 +64,7 @@ Including better semantics, the above could also be written:
 </p>
 ```
 
-or without any ARIA (but possibly not how you want it presented)
+یا بدون هیچ‌گونه ARIA (اما احتمالاً نه به شکلی که بخواهید آن را ارائه دهید).
 
 ```html
 <dl>
@@ -77,19 +77,19 @@ or without any ARIA (but possibly not how you want it presented)
 </dl>
 ```
 
-## Accessibility concerns
+## نگرانی‌های دسترس‌پذیری
 
-Don't use the `role="term"` on interactive elements such as links as it can interfere with the assistive technology user's ability to interact with the element.
+از `role="term"` در عناصر تعاملی مانند پیوندها استفاده نکنید، زیرا ممکن است با توانایی کاربر فناوری کمکی برای تعامل با عنصر تداخل کند.
 
-## Best practices
+## بهترین شیوه‌ها
 
-Allow the term itself to define the accessible name. Do not use `aria-label` or `aria-labelledby`.
+اجازه دهید خود واژه نام دسترس‌پذیر را تعریف کند. از `aria-label` یا `aria-labelledby` استفاده نکنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: `definition` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/definition_role).
-- The HTML {{HTMLElement('dfn')}} element
+- [نقش ARIA: `definition`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/definition_role).
+- عنصر HTML {{HTMLElement('dfn')}}
