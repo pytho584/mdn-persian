@@ -1,7 +1,7 @@
 ---
 title: "BluetoothCharacteristicProperties"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothCharacteristicProperties"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,34 +15,34 @@ browser-compat: api.BluetoothCharacteristicProperties
 
 {{APIRef("Bluetooth API")}}{{securecontext_header}}{{SeeCompatTable}}
 
-The **`BluetoothCharacteristicProperties`** interface of the [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) provides the operations that are valid on the given {{domxref('BluetoothRemoteGATTCharacteristic')}}.
+**`BluetoothCharacteristicProperties`** 接口属于 [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API)，提供给定 {{domxref('BluetoothRemoteGATTCharacteristic')}} 上有效的操作。
 
-This interface is returned by calling {{DOMxRef("BluetoothRemoteGATTCharacteristic.properties")}}.
+该接口通过调用 {{DOMxRef("BluetoothRemoteGATTCharacteristic.properties")}} 返回。
 
-## Instance properties
+## 实例属性
 
 - {{DOMxRef("BluetoothCharacteristicProperties.authenticatedSignedWrites","authenticatedSignedWrites")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a `boolean` that is `true` if signed writing to the characteristic value is permitted.
+  - : 返回一个 `boolean`，如果允许对特征值进行签名写入，则为 `true`。
 - {{DOMxRef("BluetoothCharacteristicProperties.broadcast", "broadcast")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a `boolean` that is `true` if the broadcast of the characteristic value is permitted using the Server Characteristic Configuration Descriptor.
+  - : 返回一个 `boolean`，如果允许使用服务器特征配置描述符广播特征值，则为 `true`。
 - {{DOMxRef("BluetoothCharacteristicProperties.indicate","indicate")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a `boolean` that is `true` if indications of the characteristic value with acknowledgement is permitted.
+  - : 返回一个 `boolean`，如果允许带确认的特征值指示，则为 `true`。
 - {{DOMxRef("BluetoothCharacteristicProperties.notify","notify")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a `boolean` that is `true` if notifications of the characteristic value without acknowledgement is permitted.
+  - : 返回一个 `boolean`，如果允许不带确认的特征值通知，则为 `true`。
 - {{DOMxRef("BluetoothCharacteristicProperties.read", "read")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a `boolean` that is `true` if the reading of the characteristic value is permitted.
+  - : 返回一个 `boolean`，如果允许读取特征值，则为 `true`。
 - {{DOMxRef("BluetoothCharacteristicProperties.reliableWrite","reliableWrite")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a `boolean` that is `true` if reliable writes to the characteristic is permitted.
+  - : 返回一个 `boolean`，如果允许对特征进行可靠写入，则为 `true`。
 - {{DOMxRef("BluetoothCharacteristicProperties.writableAuxiliaries","writableAuxiliaries")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a `boolean` that is `true` if reliable writes to the characteristic descriptor is permitted.
+  - : 返回一个 `boolean`，如果允许对特征描述符进行可靠写入，则为 `true`。
 - {{DOMxRef("BluetoothCharacteristicProperties.write","write")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a `boolean` that is `true` if the writing to the characteristic with response is permitted.
+  - : 返回一个 `boolean`，如果允许带响应的特征写入，则为 `true`。
 - {{DOMxRef("BluetoothCharacteristicProperties.writeWithoutResponse","writeWithoutResponse")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a `boolean` that is `true` if the writing to the characteristic without response is permitted.
+  - : 返回一个 `boolean`，如果允许不带响应的特征写入，则为 `true`。
 
-## Examples
+## 示例
 
-The following example shows how tell if a GATT characteristic supports value change notifications.
+以下示例展示如何判断 GATT 特征是否支持值更改通知。
 
 ```js
 let device = await navigator.bluetooth.requestDevice({
