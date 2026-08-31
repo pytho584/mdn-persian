@@ -1,11 +1,5 @@
 ---
 title: "CookieStoreManager: getSubscriptions() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CookieStoreManager/getSubscriptions"
-status: "needs-translation"
----
-
----
-title: "CookieStoreManager: getSubscriptions() method"
 short-title: getSubscriptions()
 slug: Web/API/CookieStoreManager/getSubscriptions
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.CookieStoreManager.getSubscriptions
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}{{AvailableInWorkers("window_and_service")}}
 
-The **`getSubscriptions()`** method of the {{domxref("CookieStoreManager")}} interface returns a list of all the cookie change subscriptions for this {{domxref("ServiceWorkerRegistration")}}.
+متد **`getSubscriptions()`** در رابط {{domxref("CookieStoreManager")}} فهرستی از همهٔ اشتراک‌های تغییر کوکی مربوط به این {{domxref("ServiceWorkerRegistration")}} را برمی‌گرداند.
 
 ## Syntax
 
@@ -22,31 +16,31 @@ The **`getSubscriptions()`** method of the {{domxref("CookieStoreManager")}} int
 getSubscriptions()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a list of objects, each containing:
+یک {{jsxref("Promise")}} که با فهرستی از اشیاء resolve می‌شود؛ هر شیء شامل:
 
 - `name`
-  - : A string with the name of a cookie.
+  - : یک رشته شامل نام یک کوکی.
 - `url`
-  - : A string with the url of the scope used to subscribe to the cookie(s).
+  - : یک رشته شامل URL محدوده‌ای (scope) که برای اشتراک‌گذاری در آن کوکی(ها) استفاده شده است.
 
-## Examples
+## مثال‌ها
 
-If the {{domxref("ServiceWorkerRegistration")}} represented by `registration` has subscribed to any cookie change events, `subscriptions` will resolve to a list of objects containing the name and URL of those cookies.
+اگر {{domxref("ServiceWorkerRegistration")}} که با `registration` نمایش داده می‌شود، در هر رویداد تغییر کوکی مشترک شده باشد، `subscriptions` به فهرستی از اشیاء حاوی نام و URL آن کوکی‌ها resolve می‌شود.
 
 ```js
 const subscriptions = await self.registration.cookies.getSubscriptions();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
