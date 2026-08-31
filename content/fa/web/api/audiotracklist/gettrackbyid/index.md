@@ -1,7 +1,7 @@
 ---
 title: "AudioTrackList: getTrackById() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList/getTrackById"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,8 +14,8 @@ browser-compat: api.AudioTrackList.getTrackById
 
 {{APIRef("HTML DOM")}}
 
-The **{{domxref("AudioTrackList")}}** method **`getTrackById()`** returns the first {{domxref("AudioTrack")}} object from the track list whose {{domxref("AudioTrack.id", "id")}} matches the specified string.
-This lets you find a specified track if you know its ID string.
+متود **`getTrackById()`** متعلق به {{domxref("AudioTrackList")}} اولین شیء {{domxref("AudioTrack")}} را از فهرست trackهایی برمیگرداند که {{domxref("AudioTrack.id", "id")}} آنها با رشته مشخصشده مطابقت دارد.
+این امکان را به شما میدهد تا اگر رشته شناسه (ID) یک track مشخص را میدانید، آن را پیدا کنید.
 
 ## Syntax
 
@@ -26,28 +26,17 @@ getTrackById(id)
 ### Parameters
 
 - `id`
-  - : A string indicating the ID of the track to locate within the track
-    list.
+  - : یک رشته که شناسه track مورد نظر برای یافتن در فهرست trackها را نشان میدهد.
 
 ### Return value
 
-An {{domxref("AudioTrack")}} object indicating the first track found within the
-`AudioTrackList` whose `id` matches the specified string. If no
-match is found, this method returns `null`.
+یک شیء {{domxref("AudioTrack")}} که اولین track یافتشده در `AudioTrackList` را نشان میدهد که `id` آن با رشته مشخصشده مطابقت دارد. اگر هیچ موردی مطابقت نداشته باشد، این متود مقدار `null` را برمیگرداند.
 
-The tracks are searched in their natural order; that is, in the order defined by the
-media resource itself, or, if the resource doesn't define an order, the relative order
-in which the tracks are declared by the media resource.
+trackها به ترتیب طبیعی خود جستجو میشوند؛ یعنی به ترتیبی که توسط خود منبع رسانهای تعریف شده است، یا اگر منبع ترتیبی را تعریف نکرده باشد، به ترتیب نسبی که trackها توسط منبع رسانهای اعلام شدهاند.
 
 ## Examples
 
-This example suggests a hypothetical game in which movies are used as cut-scenes or
-other key set pieces within the game. Each movie has one audio track for each character,
-as well as one for the music, sound effects, and so forth. This function allows the game
-to disable a specific character's audio in order to adjust the movie's performance based
-on occurrences within the game; if the character's dialog isn't relevant, it gets left
-out. Obviously, that would require some clever graphic design to make work, but it's a
-hypothetical game.
+این مثال یک بازی فرضی را پیشنهاد میدهد که در آن از فیلمها به عنوان صحنههای سینمایی یا قطعات کلیدی دیگر در بازی استفاده میشود. هر فیلم یک track صوتی برای هر شخصیت دارد، همچنین یکی برای موسیقی، جلوههای صوتی و غیره. این تابع به بازی اجازه میدهد تا صدای یک شخصیت خاص را غیرفعال کند تا عملکرد فیلم بر اساس رویدادهای درون بازی تنظیم شود؛ اگر دیالوگ شخصیت مرتبط نباشد، حذف میشود. بدیهی است که برای کارکردن این کار به طراحی گرافیکی هوشمندانهای نیاز است، اما این یک بازی فرضی است.
 
 ```js
 function disableCharacter(videoElem, characterName) {
@@ -55,10 +44,7 @@ function disableCharacter(videoElem, characterName) {
 }
 ```
 
-This short function gets the {{domxref("AudioTrackList")}} containing the video's audio
-tracks using {{domxref("HTMLMediaElement.audioTracks")}}, then calls
-`getTrackById()` on it, specifying the character's name. The resulting
-track's audio is then disabled by setting its {{domxref("AudioTrack.enabled", "enabled")}} flag to `false`.
+این تابع کوتاه {{domxref("AudioTrackList")}} حاوی trackهای صوتی ویدیو را با استفاده از {{domxref("HTMLMediaElement.audioTracks")}} دریافت میکند، سپس `getTrackById()` را روی آن با مشخص کردن نام شخصیت فراخوانی میکند. سپس صدای track حاصل با تنظیم علامت {{domxref("AudioTrack.enabled", "enabled")}} آن روی `false` غیرفعال میشود.
 
 ## Specifications
 
