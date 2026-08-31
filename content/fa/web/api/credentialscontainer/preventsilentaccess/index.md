@@ -1,11 +1,5 @@
 ---
 title: "CredentialsContainer: preventSilentAccess() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/preventSilentAccess"
-status: "needs-translation"
----
-
----
-title: "CredentialsContainer: preventSilentAccess() method"
 short-title: preventSilentAccess()
 slug: Web/API/CredentialsContainer/preventSilentAccess
 page-type: web-api-instance-method
@@ -14,33 +8,30 @@ browser-compat: api.CredentialsContainer.preventSilentAccess
 
 {{APIRef("Credential Management API")}}{{SecureContext_Header}}
 
-The **`preventSilentAccess()`** method of the {{domxref("CredentialsContainer")}} interface sets a flag that specifies whether automatic log in is allowed for future visits to the current origin, then returns a {{jsxref("Promise")}} that resolves to `undefined`.
-For example, you might call this, after a user signs out of a website to ensure that they aren't automatically signed in on the next site visit.
-Mediation varies by origin, and is an added check point of browser stored credentials, informing a user of an account login status. This method is typically called after a user signs out of a website, ensuring this user's login information is not automatically passed on the next site visit.
+متد **`preventSilentAccess()`** از رابط {{domxref("CredentialsContainer")}} یک پرچم تنظیم می‌کند که مشخص می‌کند آیا ورود خودکار برای بازدیدهای آینده از مبدأ فعلی مجاز است یا خیر، سپس یک {{jsxref("Promise")}} برمی‌گرداند که به `undefined` تبدیل می‌شود. برای مثال، ممکن است پس از خروج کاربر از یک وب‌سایت، این متد را فراخوانی کنید تا مطمئن شوید که در بازدید بعدی از سایت به‌طور خودکار وارد نشود. میانجی‌گری (mediation) بسته به مبدأ متفاوت است و یک نقطه بررسی اضافی برای اعتبارنامه‌های ذخیره‌شده در مرورگر است که وضعیت ورود حساب کاربر را به کاربر اطلاع می‌دهد. این متد معمولاً پس از خروج کاربر از یک وب‌سایت فراخوانی می‌شود تا اطمینان حاصل شود که اطلاعات ورود کاربر در بازدید بعدی از سایت به‌طور خودکار منتقل نمی‌شود.
 
-When using a {{domxref("PublicKeyCredential")}}, this method generally has no effect; such authenticators typically require user interaction. However, it _is possible_ that certain authenticators may be excluded, which could otherwise have operated silently.
+هنگام استفاده از {{domxref("PublicKeyCredential")}}، این متد معمولاً تأثیری ندارد؛ چنین تأییدکننده‌هایی معمولاً نیاز به تعامل کاربر دارند. با این حال، _ممکن است_ برخی تأییدکننده‌های خاص که در غیر این صورت می‌توانستند به‌صورت بی‌صدا عمل کنند، از کار بیفتند.
 
-Earlier versions of the spec called this method `requireUserMediation()`.
-The [Browser compatibility](/en-US/docs/Web/API/CredentialsContainer#browser_compatibility) section has support details.
+نسخه‌های قبلی مشخصات، این متد را `requireUserMediation()` می‌نامیدند. بخش [سازگاری با مرورگرها](/fa/docs/Web/API/CredentialsContainer#browser_compatibility) جزئیات پشتیبانی را دارد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 preventSilentAccess()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to `undefined`.
+یک {{jsxref("Promise")}} که به `undefined` تبدیل می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
