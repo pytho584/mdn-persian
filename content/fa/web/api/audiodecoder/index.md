@@ -1,7 +1,7 @@
 ---
 title: "AudioDecoder"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioDecoder"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,53 +13,53 @@ browser-compat: api.AudioDecoder
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`AudioDecoder`** interface of the {{domxref('WebCodecs API','','',' ')}} decodes chunks of audio.
+رابط **`AudioDecoder`** از {{domxref('WebCodecs API','','',' ')}} تکه‌های صوتی را رمزگشایی می‌کند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("AudioDecoder.AudioDecoder", "AudioDecoder()")}}
-  - : Creates a new `AudioDecoder` object.
+  - : یک شیء `AudioDecoder` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("EventTarget")}}._
+_ویژگی‌ها را از والد خود، {{DOMxRef("EventTarget")}}، به ارث می‌برد._
 
 - {{domxref("AudioDecoder.decodeQueueSize")}} {{ReadOnlyInline}}
-  - : An integer representing the number of decode queue requests.
+  - : یک عدد صحیح که تعداد درخواست‌های صف رمزگشایی را نشان می‌دهد.
 - {{domxref("AudioDecoder.state")}} {{ReadOnlyInline}}
-  - : Represents the state of the underlying codec and whether it is configured for decoding.
+  - : وضعیت کدک پایه و اینکه آیا برای رمزگشایی پیکربندی شده است را نشان می‌دهد.
 
-### Events
+### رویدادها
 
 - {{domxref("AudioDecoder.dequeue_event", "dequeue")}}
-  - : Fires to signal a decrease in {{domxref("AudioDecoder.decodeQueueSize")}}.
+  - : برای نشان دادن کاهش در {{domxref("AudioDecoder.decodeQueueSize")}} رخ می‌دهد.
 
-## Static methods
+## متدهای ایستا
 
 - {{domxref("AudioDecoder/isConfigSupported_static", "AudioDecoder.isConfigSupported()")}}
-  - : Returns a promise indicating whether the provided `AudioDecoderConfig` is supported.
+  - : یک وعده (Promise) برمی‌گرداند که نشان می‌دهد آیا `AudioDecoderConfig` ارائه‌شده پشتیبانی می‌شود یا خیر.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{DOMxRef("EventTarget")}}._
+_متدها را از والد خود، {{DOMxRef("EventTarget")}}، به ارث می‌برد._
 
 - {{domxref("AudioDecoder.configure()")}}
-  - : Enqueues a control message to configure the audio decoder for decoding chunks.
+  - : یک پیام کنترلی را در صف قرار می‌دهد تا رمزگشای صوتی برای رمزگشایی تکه‌ها پیکربندی شود.
 - {{domxref("AudioDecoder.decode()")}}
-  - : Enqueues a control message to decode a given chunk of audio.
+  - : یک پیام کنترلی را در صف قرار می‌دهد تا یک تکه صوتی معین را رمزگشایی کند.
 - {{domxref("AudioDecoder.flush()")}}
-  - : Returns a promise that resolves once all pending messages in the queue have been completed.
+  - : یک وعده (Promise) برمی‌گرداند که پس از اتمام تمام پیام‌های در انتظار در صف حل می‌شود.
 - {{domxref("AudioDecoder.reset()")}}
-  - : Resets all states including configuration, control messages in the control message queue, and all pending callbacks.
+  - : همه وضعیت‌ها از جمله پیکربندی، پیام‌های کنترلی در صف پیام‌های کنترلی، و همه فراخوان‌های در انتظار را بازنشانی می‌کند.
 - {{domxref("AudioDecoder.close()")}}
-  - : Ends all pending work and releases system resources.
+  - : تمام کارهای در انتظار را پایان داده و منابع سیستم را آزاد می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
