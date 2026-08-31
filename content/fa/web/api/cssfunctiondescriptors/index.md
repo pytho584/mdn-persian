@@ -1,7 +1,5 @@
 ---
 title: "CSSFunctionDescriptors"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionDescriptors"
-status: "needs-translation"
 ---
 
 ---
@@ -15,28 +13,28 @@ browser-compat: api.CSSFunctionDescriptors
 
 {{ APIRef("CSSOM") }}{{SeeCompatTable}}
 
-The **`CSSFunctionDescriptors`** interface of the [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model) represents the descriptors contained within a set of CSS declarations represented by a {{domxref("CSSFunctionDeclarations")}} object.
+رابطهٔ **`CSSFunctionDescriptors`** در [مدل شیءِ CSS](/en-US/docs/Web/API/CSS_Object_Model) توصیف‌گرهای موجود در مجموعه‌ای از اعلان‌های CSS را نشان می‌دهد که توسط شیء {{domxref("CSSFunctionDeclarations")}} بازنمایی می‌شوند.
 
-A `CSSFunctionDescriptors` object is accessed via the {{domxref("CSSFunctionDeclarations.style")}} property.
+یک شیء `CSSFunctionDescriptors` از طریق ویژگی {{domxref("CSSFunctionDeclarations.style")}} قابل دسترسی است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from {{domxref("CSSStyleDeclaration")}}._
+_این رابط همچنین ویژگی‌های {{domxref("CSSStyleDeclaration")}} را به ارث می‌برد._
 
 - {{domxref("CSSFunctionDescriptors.result")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : Returns a string representing a `result` descriptor, if one exists in the associated set of declarations.
+  - : رشته‌ای را برمی‌گرداند که توصیف‌گر `result` را نشان می‌دهد، در صورتی که در مجموعه‌اعلان‌های مرتبط وجود داشته باشد.
 
-## Examples
+## مثال‌ها
 
-### Basic `CSSFunctionDescriptors` usage
+### استفادهٔ پایه از `CSSFunctionDescriptors`
 
-In this example, we define a CSS custom function and then access its declarations using the CSSOM.
+در این مثال، یک تابع سفارشی CSS تعریف می‌کنیم و سپس با استفاده از CSSOM به اعلان‌های آن دسترسی پیدا می‌کنیم.
 
 #### CSS
 
-Our CSS defines a custom function using the {{cssxref("@function")}} at-rule. The function is called `--lighter()`, and outputs a lightened version of an input color. `--lighter()` accepts two parameters, a {{cssxref("&lt;color&gt;")}} and a {{cssxref("&lt;number&gt;")}}. It returns an {{cssxref("color_value/oklch", "oklch()")}} color created using [relative color syntax](/en-US/docs/Web/CSS/Guides/Colors/Using_relative_colors); the input color is transformed into an `oklch()` color and its lightness channel is increased by the input number.
+CSS ما یک تابع سفارشی را با استفاده از قاعدهٔ at-rule {{cssxref("@function")}} تعریف می‌کند. نام تابع `--lighter()` است و نسخهٔ روشن‌تر یک رنگ ورودی را خروجی می‌دهد. `--lighter()` دو پارامتر می‌پذیرد: یک {{cssxref("&lt;color&gt;")}} و یک {{cssxref("&lt;number&gt;")}}. این تابع یک رنگ {{cssxref("color_value/oklch", "oklch()")}} را برمی‌گرداند که با استفاده از [نحو رنگ نسبی](/en-US/docs/Web/CSS/Guides/Colors/Using_relative_colors) ساخته شده است؛ رنگ ورودی به یک رنگ `oklch()` تبدیل می‌شود و کانال روشنایی آن به اندازهٔ عدد ورودی افزایش می‌یابد.
 
 ```css live-sample___cssfunctiondescriptors-basics
 @function --lighter(--color <color>, --lightness-adjust <number>: 0.2) returns
@@ -47,31 +45,31 @@ Our CSS defines a custom function using the {{cssxref("@function")}} at-rule. Th
 
 #### JavaScript
 
-Our script starts by getting a reference to the stylesheet attached to our document using {{domxref("HTMLStyleElement.sheet")}}, then getting a reference to the only rule in the stylesheet, the `CSSFunctionRule` — via {{domxref("CSSStylesheet.cssRules")}}.
+اسکریپت ما با به‌دست آوردن ارجاعی به شیوه‌نامهٔ متصل به سند با استفاده از {{domxref("HTMLStyleElement.sheet")}} شروع می‌شود و سپس ارجاعی به تنها قاعدهٔ موجود در شیوه‌نامه، یعنی `CSSFunctionRule`، از طریق {{domxref("CSSStylesheet.cssRules")}} به دست می‌آورد.
 
-We then access the `CSSFunctionDeclarations` object representing the only continuous run of declarations inside the function using {{domxref("CSSGroupingRule.cssRules", "cssRules[0]")}}, access its descriptor's information using {{domxref("CSSFunctionDeclarations.style")}}, and then access the descriptor style information. All of this information is logged to the console.
+سپس با استفاده از {{domxref("CSSGroupingRule.cssRules", "cssRules[0]")}} به شیء `CSSFunctionDeclarations` که تنها مجموعهٔ پیوستهٔ اعلان‌های داخل تابع را نشان می‌دهد دسترسی پیدا می‌کنیم، اطلاعات توصیف‌گر آن را با استفاده از {{domxref("CSSFunctionDeclarations.style")}} می‌خوانیم و سپس به اطلاعات سبک توصیف‌گر دسترسی می‌یابیم. تمام این اطلاعات در کنسول ثبت می‌شوند.
 
 ```js live-sample___cssfunctiondescriptors-basics
-// Get a CSSFunctionRule
+// دریافت یک CSSFunctionRule
 const cssFunc = document.getElementById("css-output").sheet.cssRules[0];
 
-// Accessing CSSFunctionDeclarations and CSSFunctionDescriptors
+// دسترسی به CSSFunctionDeclarations و CSSFunctionDescriptors
 console.log(cssFunc.cssRules[0]); // CSSFunctionDeclarations
 console.log(cssFunc.cssRules[0].style); // CSSFunctionDescriptors
 console.log(cssFunc.cssRules[0].style.result);
 ```
 
-Most notably, the `result` property is equal to the `@function` body's `result` descriptor, which is `oklch(from var(--color) calc(l + var(--lightness-adjust)) c h)`.
+قابل توجه‌ترین نکته این است که ویژگی `result` برابر با توصیف‌گر `result` در بدنهٔ `@function` است که عبارت است از `oklch(from var(--color) calc(l + var(--lightness-adjust)) c h)`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{cssxref("@function")}}
 - {{domxref("CSSFunctionRule")}}
