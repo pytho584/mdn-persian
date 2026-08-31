@@ -1,10 +1,4 @@
 ---
-title: "CaretPosition"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CaretPosition"
-status: "needs-translation"
----
-
----
 title: CaretPosition
 slug: Web/API/CaretPosition
 page-type: web-api-interface
@@ -13,33 +7,31 @@ browser-compat: api.CaretPosition
 
 {{APIRef("CSSOM view API")}}
 
-The `CaretPosition` interface represents the caret position, an indicator for the text insertion point.
-You can get a `CaretPosition` using the {{domxref("Document.caretPositionFromPoint()")}} method.
+رابط `CaretPosition` موقعیت مکان‌نما را نشان می‌دهد؛ مکان‌نما نشانگری برای نقطه‌ٔ درج متن است. می‌توانید با استفاده از متد {{domxref("Document.caretPositionFromPoint()")}} یک `CaretPosition` دریافت کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface doesn't inherit any properties._
+_این رابط هیچ ویژگی‌ای را به ارث نمی‌برد._
 
 - {{domxref("CaretPosition.offsetNode")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("Node")}} containing the found node at the caret's position.
+  - : یک {{domxref("Node")}} را برمی‌گرداند که شامل گره‌ٔ یافت‌شده در موقعیت مکان‌نما است.
 - {{domxref("CaretPosition.offset")}} {{ReadOnlyInline}}
-  - : Returns a `long` representing the offset of the selection in the caret position node.
-    This will be the character offset in a text node or the selected child node's index in an element node.
+  - : یک `long` را برمی‌گرداند که افست (offset) انتخاب را در گره‌ٔ موقعیت مکان‌نما نشان می‌دهد. این مقدار، افست کاراکتر در یک گره‌ٔ متنی یا اندیس گره‌ٔ فرزندِ انتخاب‌شده در یک گره‌ٔ عنصری خواهد بود.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("CaretPosition.getClientRect")}}
-  - : Returns the client rectangle for the caret range.
+  - : مستطیل کلاینت (client rectangle) را برای بازه‌ٔ مکان‌نما برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.caretPositionFromPoint()")}}
 - {{domxref("Range")}}
