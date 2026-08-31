@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: strokeRect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeRect"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: strokeRect() method"
 short-title: strokeRect()
 slug: Web/API/CanvasRenderingContext2D/strokeRect
 page-type: web-api-instance-method
@@ -14,48 +8,45 @@ browser-compat: api.CanvasRenderingContext2D.strokeRect
 
 {{APIRef("Canvas API")}}
 
-The
+متد
 **`CanvasRenderingContext2D.strokeRect()`**
-method of the Canvas 2D API draws a rectangle that is stroked (outlined) according to
-the current {{domxref("CanvasRenderingContext2D.strokeStyle", "strokeStyle")}} and other
-context settings.
+از API بوم‌نقاشی (Canvas 2D) مستطیلی را رسم می‌کند که بر اساس
+{{domxref("CanvasRenderingContext2D.strokeStyle", "strokeStyle")}} و سایر تنظیمات زمینه،
+فقط خطِ دور آن (طرح کلی) ترسیم می‌شود.
 
-This method draws directly to the canvas without modifying the current path, so any
-subsequent {{domxref("CanvasRenderingContext2D.fill()", "fill()")}} or
-{{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}} calls will have no effect
-on it.
+این متد مستقیماً روی بوم نقاشی می‌کشد و مسیر فعلی را تغییر نمی‌دهد، بنابراین
+تماس‌های بعدی با {{domxref("CanvasRenderingContext2D.fill()", "fill()")}} یا
+{{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}} هیچ تأثیری روی آن نخواهند داشت.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 strokeRect(x, y, width, height)
 ```
 
-The `strokeRect()` method draws a stroked rectangle whose starting point is
-at `(x, y)` and whose size is specified by `width` and
-`height`.
+متد `strokeRect()` یک مستطیل خط‌دورکشیده رسم می‌کند که نقطهٔ شروع آن
+در `(x, y)` است و اندازهٔ آن توسط `width` و `height` مشخص می‌شود.
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : The x-axis coordinate of the rectangle's starting point.
+  - : مختصات محور x نقطهٔ شروع مستطیل.
 - `y`
-  - : The y-axis coordinate of the rectangle's starting point.
+  - : مختصات محور y نقطهٔ شروع مستطیل.
 - `width`
-  - : The rectangle's width. Positive values are to the right, and negative to the left.
+  - : عرض مستطیل. مقادیر مثبت به سمت راست و مقادیر منفی به سمت چپ هستند.
 - `height`
-  - : The rectangle's height. Positive values are down, and negative are up.
+  - : ارتفاع مستطیل. مقادیر مثبت به سمت پایین و مقادیر منفی به سمت بالا هستند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### A simple stroked rectangle
+### یک مستطیل خط‌دورکشیده ساده
 
-This example draws a rectangle with a green outline using the `strokeRect()`
-method.
+این مثال یک مستطیل با خط دور سبز را با استفاده از متد `strokeRect()` رسم می‌کند.
 
 #### HTML
 
@@ -65,8 +56,7 @@ method.
 
 #### JavaScript
 
-The rectangle's top-left corner is at (20, 10). It has a width of 160 and a height of
-100\.
+گوشهٔ بالا-چپ مستطیل در (20, 10) قرار دارد. عرض آن 160 و ارتفاع آن 100 است.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -75,13 +65,13 @@ ctx.strokeStyle = "green";
 ctx.strokeRect(20, 10, 160, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('A_simple_stroked_rectangle', 700, 180) }}
 
-### Applying various context settings
+### اعمال تنظیمات مختلف زمینه
 
-This example draws a rectangle with a drop shadow and thick, beveled outlines.
+این مثال مستطیلی را با سایهٔ افتاده و خطوط دور ضخیم و پخ‌دار رسم می‌کند.
 
 #### HTML
 
@@ -102,21 +92,21 @@ ctx.strokeStyle = "#3388ff";
 ctx.strokeRect(30, 30, 160, 90);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Applying_various_context_settings', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کنندهٔ این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.strokeStyle")}}
 - {{domxref("CanvasRenderingContext2D.clearRect()")}}
 - {{domxref("CanvasRenderingContext2D.fillRect()")}}
