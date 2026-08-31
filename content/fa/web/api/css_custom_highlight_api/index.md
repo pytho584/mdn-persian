@@ -1,11 +1,5 @@
 ---
 title: "CSS Custom Highlight API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Custom_Highlight_API"
-status: "needs-translation"
----
-
----
-title: CSS Custom Highlight API
 slug: Web/API/CSS_Custom_Highlight_API
 page-type: web-api-overview
 browser-compat:
@@ -17,26 +11,26 @@ spec-urls: https://drafts.csswg.org/css-highlight-api-1/
 
 {{DefaultAPISidebar("CSS Custom Highlight API")}}
 
-The CSS Custom Highlight API provides a mechanism for styling arbitrary text ranges on a document by using JavaScript to create the ranges, and CSS to style them.
+CSS Custom Highlight API سازوکاری برای استایل‌دهی به بازه‌های متنی دلخواه در یک سند فراهم می‌کند، به گونه‌ای که با استفاده از جاوااسکریپت بازه‌ها را ایجاد کرده و با CSS آن‌ها را استایل می‌دهید.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-Styling text ranges on a webpage can be very useful. For example, text editing web apps highlight spelling or grammar errors, and code editors highlight syntax errors.
+استایل‌دهی به بازه‌های متنی در یک صفحه وب می‌تواند بسیار مفید باشد. برای مثال، برنامه‌های ویرایش متن وب، خطاهای املایی یا دستوری را برجسته می‌کنند و ویرایشگرهای کد نیز خطاهای نحوی را هایلایت می‌کنند.
 
-The CSS Custom Highlight API extends the concept of other highlight pseudo-elements such as {{cssxref('::selection')}}, {{cssxref('::spelling-error')}}, {{cssxref('::grammar-error')}}, and {{cssxref('::target-text')}} by providing a way to create and style arbitrary {{domxref('Range')}} objects, rather than being limited to browser-defined ranges.
+CSS Custom Highlight API مفهوم شبه‌عنصر‌های هایلایت دیگر مانند {{cssxref('::selection')}}، {{cssxref('::spelling-error')}}، {{cssxref('::grammar-error')}} و {{cssxref('::target-text')}} را گسترش می‌دهد. این API راهی برای ایجاد و استایل‌دهی به اشیای {{domxref('Range')}} دلخواه فراهم می‌کند، به جای اینکه تنها به بازه‌های تعریف‌شده توسط مرورگر محدود باشید.
 
-Using the CSS Custom Highlight API, you can programmatically create text ranges and highlight them without affecting the DOM structure in the page.
+با استفاده از CSS Custom Highlight API می‌توانید برنامه‌نویسی (programmatically) بازه‌های متنی ایجاد کنید و آن‌ را بدون تأثیر بر ساختار DOM صفحه، برجسته (highlight) کنید.
 
-There are four steps to style text ranges on a webpage using the CSS Custom Highlight API:
+برای استایل‌دهی به بازه‌های متنی در یک صفحه وب با استفاده از CSS Custom Highlight API چهار مرحله وجود دارد:
 
-1. Creating {{domxref("Range")}} objects.
-2. Creating {{domxref("Highlight")}} objects for these ranges.
-3. Registering the highlights using the {{domxref("HighlightRegistry")}}.
-4. Styling the highlights using the {{cssxref("::highlight", "::highlight()")}} pseudo-element.
+1. ایجاد اشیای {{domxref("Range")}}.
+2. ایجاد اشیای {{domxref("Highlight")}} برای این بازه‌ها.
+3. ثبت هایلایت‌ها با استفاده از {{domxref("HighlightRegistry")}}.
+4. استایل‌دهی به هایلایت‌ها با استفاده از شبه‌عنصر {{cssxref("::highlight", "::highlight()")}}.
 
-### Create ranges
+### ایجاد بازه‌ها
 
-The first step is to define the text ranges that you want to style by creating {{domxref("Range")}} objects in JavaScript. For example:
+اولین قدم، تعریف بازه‌های متنی است که می‌خواهید با ایجاد اشیای {{domxref("Range")}} در جاوااسکریپت استایل دهید. برای مثال:
 
 ```js
 const parentNode = document.getElementById("foo");
@@ -50,39 +44,39 @@ range2.setStart(parentNode, 40);
 range2.setEnd(parentNode, 60);
 ```
 
-### Create highlights
+### ایجاد هایلایت‌ها
 
-The second step is to instantiate {{domxref("Highlight")}} objects for your text ranges.
+دومین قدم، نمونه‌سازی (instantiate) اشیای {{domxref("Highlight")}} برای بازه‌های متنی شماست.
 
-Multiple ranges can be associated to one highlight. If you want to highlight multiple pieces of text the same way, you need to create a single highlight and initialize it with the corresponding ranges.
+می‌توان چندین بازه را به یک هایلایت مرتبط کرد. اگر می‌خواهید چندین بخش متن را به یک شکل هایلایت کنید، باید یک هایلایت واحد ایجاد کرده و آن را با بازه‌های مربوطه مقداردهی اولیه کنید.
 
 ```js
 const highlight = new Highlight(range1, range2);
 ```
 
-But you can also create as many highlights as you need. For example, if you are building a collaborative text editor where each user gets a different text color, then you can create one highlight per user, as seen in the code snippet below:
+اما می‌توانید به تعداد نیاز هایلایت ایجاد کنید. برای مثال، اگر در حال ساختن یک ویرایشگر متن مشارکتی (collaborative) هستید که هر کاربر رنگ متنی متفاوتی دارد، می‌توانید به ازای هر کاربر یک هایلایت ایجاد کنید، همانطور که در قطعه کد زیر می‌بینید:
 
 ```js
 const user1Highlight = new Highlight(user1Range1, user1Range2);
 const user2Highlight = new Highlight(user2Range1, user2Range2, user2Range3);
 ```
 
-Each highlight can be styled differently.
+هر هایلایت می‌تواند به صورت متفاوت استایل داده شود.
 
-### Register highlights
+### ثبت هایلایت‌ها
 
-Once highlights have been created, register them by using the {{domxref("HighlightRegistry")}} available as {{domxref("CSS/highlights_static", "CSS.highlights")}}.
+پس از ایجاد هایلایت‌ها، آن‌ها را با استفاده از {{domxref("HighlightRegistry")}} که به عنوان {{domxref("CSS/highlights_static", "CSS.highlights")}} در دسترس است، ثبت کنید.
 
-The registry is a {{jsxref("Map")}}-like object used to register highlights by names, as seen below:
+این رجیستری یک شیء شبیه به {{jsxref("Map")}} است که برای ثبت هایلایت‌ها با نام‌های مشخص استفاده می‌شود، همانطور که در زیر می‌بینید:
 
 ```js
 CSS.highlights.set("user-1-highlight", user1Highlight);
 CSS.highlights.set("user-2-highlight", user2Highlight);
 ```
 
-In the above code snippet, the `user-1-highlight` and `user-2-highlight` strings are custom identifiers that can be used in CSS to apply styles to the registered highlights.
+در قطعه کد بالا، رشته‌های `"user-1-highlight"` و `"user-2-highlight"` شناسه‌های سفارشی هستند که می‌توان در CSS برای اعمال استایل به هایلایت‌های ثبت‌شده استفاده کرد.
 
-You can register as many highlights as you need in the registry, as well as remove highlights and clear the entire registry.
+می‌توانید به تعداد نیاز هایلایت در رجیستری ثبت کنید، همچنین هایلایت‌ها را حذف کرده و کل رجیستری را پاک کنید.
 
 ```js
 // Remove a single highlight from the registry.
@@ -92,9 +86,9 @@ CSS.highlights.delete("user-1-highlight");
 CSS.highlights.clear();
 ```
 
-### Style highlights
+### استایل‌دهی به هایلایت‌ها
 
-The final step is to style the registered highlights. This is done by using the {{cssxref("::highlight", "::highlight()")}} pseudo-element. For example, to style the `user-1-highlight` highlight registered in the previous step:
+آخرین مرحله، استایل‌دهی به هایلایت‌های ثبت‌شده است. این کار با استفاده از شبه‌عنصر {{cssxref("::highlight", "::highlight()")}} انجام می‌شود. برای مثال، برای استایل‌دهی به هایلایت `"user-1-highlight"` که در مرحله قبل ثبت شده است:
 
 ```css
 ::highlight(user-1-highlight) {
@@ -103,22 +97,22 @@ The final step is to style the registered highlights. This is done by using the 
 }
 ```
 
-## Interfaces
+## رابط‌ها (Interfaces)
 
 - {{domxref("Highlight")}}
-  - : This interface is used to represent a collection of ranges to be styled on a document.
+  - : این رابط برای نمایش مجموعه‌ای از بازه‌ها که باید در یک سند استایل داده شوند، استفاده می‌شود.
 - {{domxref("HighlightRegistry")}}
-  - : Accessible via {{domxref("CSS/highlights_static", "CSS.highlights")}}, this {{jsxref("Map")}}-like object is used to register highlights with custom identifiers.
+  - : که از طریق {{domxref("CSS/highlights_static", "CSS.highlights")}} قابل دسترسی است، این شیء شبیه به {{jsxref("Map")}} برای ثبت هایلایت‌ها با شناسه‌های سفارشی استفاده می‌شود.
 
-## Examples
+## نمونه‌ها
 
-### Highlighting search results
+### هایلایت کردن نتایج جستجو
 
-This example shows how to use the CSS Custom Highlight API to highlight search results.
+این نمونه نشان می‌دهد که چگونه از CSS Custom Highlight API برای هایلایت کردن نتایج جستجو استفاده کنید.
 
 #### HTML
 
-The HTML code snippet below defines a search field and an article with a few paragraphs of text:
+قطعه کد HTML زیر یک فیلد جستجو و یک مقاله با چند پاراگراف متن را تعریف می‌کند:
 
 ```html
 <label>Search within text <input id="query" type="text" /></label>
@@ -146,7 +140,7 @@ The HTML code snippet below defines a search field and an article with a few par
 
 #### JavaScript
 
-JavaScript is used to listen to the `input` event on the search field. When the event is fired, the code locates matches for the input text in the article text. It then creates ranges for the matches, and uses the CSS Custom Highlight API to create and register a `search-results` highlight object:
+از جاوااسکریپت برای گوش دادن به رویداد `input` روی فیلد جستجو استفاده می‌شود. هنگامی که رویداد رخ می‌دهد، کد به دنبال تطابق‌های متن ورودی در متن مقاله می‌گردد. سپس برای این تطابق‌ها بازه‌هایی ایجاد می‌کند و با استفاده از CSS Custom Highlight API یک شیء هایلایت به نام `"search-results"` ایجاد و ثبت می‌کند:
 
 ```js
 const query = document.getElementById("query");
@@ -215,7 +209,7 @@ query.addEventListener("input", () => {
 
 #### CSS
 
-Finally, the `::highlight()` pseudo-element is used in CSS to style the highlights:
+در نهایت، شبه‌عنصر `::highlight()` در CSS برای استایل‌دهی به هایلایت‌ها استفاده می‌شود:
 
 ```css
 ::highlight(search-results) {
@@ -224,23 +218,23 @@ Finally, the `::highlight()` pseudo-element is used in CSS to style the highligh
 }
 ```
 
-#### Result
+#### نتیجه
 
-The result is shown below. Type text within the search field to highlight matches in the article:
+نتیجه در زیر نشان داده شده است. متنی را در فیلد جستجو تایپ کنید تا تطابق‌های موجود در مقاله هایلایت شوند:
 
 {{ EmbedLiveSample('Highlighting search results', 700, 300) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML [`contentEditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) attribute
+- ویژگی HTML [`contentEditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable)
 - CSS {{cssxref("pseudo-elements")}}
-- [CSS custom highlight API](/en-US/docs/Web/CSS/Guides/Custom_highlight_API) module
-- [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/) via CSS-Tricks (2022)
+- ماژول [CSS custom highlight API](/en-US/docs/Web/CSS/Guides/Custom_highlight_API)
+- [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/) از CSS-Tricks (2022)
