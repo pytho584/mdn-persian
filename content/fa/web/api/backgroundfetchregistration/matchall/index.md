@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRegistration: matchAll() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/matchAll"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,7 +16,7 @@ browser-compat: api.BackgroundFetchRegistration.matchAll
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`matchAll()`** method of the {{domxref("BackgroundFetchRegistration")}} interface returns an array of matching {{domxref("BackgroundFetchRecord")}} objects.
+متد **`matchAll()`** از رابط {{domxref("BackgroundFetchRegistration")}} یک آرایه از اشیاء {{domxref("BackgroundFetchRecord")}} مطابق را برمی‌گرداند.
 
 ## Syntax
 
@@ -29,37 +29,29 @@ matchAll(request,options)
 ### Parameters
 
 - `request` {{optional_inline}}
-  - : The {{domxref("Request")}} for which you are attempting to find records.
-    This can be a {{domxref("Request")}} object or a URL. If this parameter is omitted, all records are included in the result.
+  - : {{domxref("Request")}}ای که برای یافتن رکوردها تلاش می‌کنید.
+    این می‌تواند یک شیء {{domxref("Request")}} یا یک URL باشد. اگر این پارامتر حذف شود، همه رکوردها در نتیجه گنجانده می‌شوند.
 - `options` {{optional_inline}}
-  - : An object that sets options for the `match` operation. The available
-    options are:
+  - : شیءای که گزینه‌هایی را برای عملیات `match` تنظیم می‌کند. گزینه‌های موجود عبارتند از:
     - `ignoreSearch` {{optional_inline}}
-      - : A boolean value that specifies whether to
-        ignore the query string in the URL. For example, if set to
-        `true` the `?value=bar` part of
-        `https://example.com/?value=bar` would be ignored when performing a match.
-        It defaults to `false`.
+      - : یک مقدار بولی که مشخص می‌کند آیا رشته query در URL نادیده گرفته شود. برای مثال، اگر روی `true` تنظیم شود، بخش `?value=bar` از `https://example.com/?value=bar` هنگام انجام تطبیق نادیده گرفته می‌شود. پیش‌فرض `false` است.
     - `ignoreMethod` {{optional_inline}}
-      - : A boolean value. When `true`,
-        prevents matching operations from validating the {{domxref("Request")}} `http` method.
-        If `false` (the default) only `GET` and `HEAD` are allowed.
+      - : یک مقدار بولی. وقتی `true` باشد، از اعتبارسنجی متد `http` {{domxref("Request")}} در عملیات تطبیق جلوگیری می‌کند. اگر `false` (پیش‌فرض) باشد، فقط `GET` و `HEAD` مجاز هستند.
     - `ignoreVary` {{optional_inline}}
-      - : A boolean value. When `true` indicates that the {{HTTPHeader("Vary")}} header should be ignored.
-        It defaults to `false`.
+      - : یک مقدار بولی. وقتی `true` باشد، نشان می‌دهد که هدر {{HTTPHeader("Vary")}} باید نادیده گرفته شود. پیش‌فرض `false` است.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves with an array of all matching {{domxref("BackgroundFetchRecord")}} objects.
+یک {{jsxref("Promise")}} که با یک آرایه از تمام اشیاء {{domxref("BackgroundFetchRecord")}} مطابق حل می‌شود.
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Returned if the {{domxref("BackgroundFetchRegistration.recordsAvailable","recordsAvailable")}} flag is `false`, indicating that there is no fetch in progress.
+  - : اگر پرچم {{domxref("BackgroundFetchRegistration.recordsAvailable","recordsAvailable")}} `false` باشد، بازگردانده می‌شود و نشان می‌دهد که هیچ واکشی در حال انجام نیست.
 
 ## Examples
 
-Use `matchAll()` with no parameters to return all of the records in a background fetch.
+از `matchAll()` بدون پارامتر استفاده کنید تا تمام رکوردهای یک پس‌زمینه‌ی واکشی را برگردانید.
 
 ```js
 const records = await bgFetch.matchAll();
@@ -73,3 +65,4 @@ console.log(records); // an array of BackgroundFetchRecord objects
 ## Browser compatibility
 
 {{Compat}}
+```
