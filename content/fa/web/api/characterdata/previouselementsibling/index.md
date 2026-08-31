@@ -1,7 +1,5 @@
 ---
 title: "CharacterData: previousElementSibling property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/previousElementSibling"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,11 @@ browser-compat: api.CharacterData.previousElementSibling
 
 {{APIRef("DOM")}}
 
-The read-only **`previousElementSibling`** property of the {{domxref("CharacterData")}} interface
-returns the first {{domxref("Element")}} before the current node in its parent's children list,
-or `null` if there is none.
+ویژگی فقطخواندنیِ **`previousElementSibling`** در رابط {{domxref("CharacterData")}} نخستین عنصر ({{domxref("Element")}}) قبل از گرهٔ کنونی را در فهرست فرزندانِ والد برمی‌گرداند؛ اگر چنین عنصری وجود نداشته باشد، `null` برمی‌گردد.
 
 ## Value
 
-An {{domxref("Element")}} object, or `null` if no sibling has been found.
+یک شیء {{domxref("Element")}}، یا اگر عنصر همسطحی (sibling) یافت نشود، `null`.
 
 ## Example
 
