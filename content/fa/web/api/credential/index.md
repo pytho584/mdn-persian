@@ -1,10 +1,4 @@
 ---
-title: "Credential"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Credential"
-status: "needs-translation"
----
-
----
 title: Credential
 slug: Web/API/Credential
 page-type: web-api-interface
@@ -13,9 +7,9 @@ browser-compat: api.Credential
 
 {{APIRef("Credential Management API")}}{{securecontext_header}}
 
-The **`Credential`** interface of the [Credential Management API](/en-US/docs/Web/API/Credential_Management_API) provides information about an entity (usually a user) normally as a prerequisite to a trust decision.
+رابط **`Credential`** از [API مدیریت اعتبارنامه](/en-US/docs/Web/API/Credential_Management_API) اطلاعاتی درباره یک موجودیت (معمولاً یک کاربر) فراهم می‌کند که معمولاً به عنوان پیش‌نیاز یک تصمیم‌گیری اعتماد استفاده می‌شود.
 
-`Credential` objects may be of the following types:
+اشیاء `Credential` می‌توانند از انواع زیر باشند:
 
 - {{domxref("FederatedCredential")}}
 - {{domxref("IdentityCredential")}}
@@ -23,19 +17,19 @@ The **`Credential`** interface of the [Credential Management API](/en-US/docs/We
 - {{domxref("PublicKeyCredential")}}
 - {{domxref("OTPCredential")}}
 
-## Instance properties
+## خصوصیات نمونه
 
 - {{domxref("Credential.id")}} {{ReadOnlyInline}}
-  - : Returns a string containing the credential's identifier. This might be any one of a GUID, username, or email address.
+  - : یک رشته شامل شناسه اعتبارنامه برمی‌گرداند. این می‌تواند یکی از GUID، نام کاربری یا آدرس ایمیل باشد.
 - {{domxref("Credential.type")}} {{ReadOnlyInline}}
-  - : Returns a string containing the credential's type. Valid values are `password`, `federated`, `public-key`, `identity` and `otp`. (For {{domxref("PasswordCredential")}}, {{domxref("FederatedCredential")}}, {{domxref("PublicKeyCredential")}}, {{domxref("IdentityCredential")}} and {{domxref("OTPCredential")}})
+  - : یک رشته شامل نوع اعتبارنامه برمی‌گرداند. مقادیر معتبر عبارتند از `password`، `federated`، `public-key`، `identity` و `otp`. (برای {{domxref("PasswordCredential")}}، {{domxref("FederatedCredential")}}، {{domxref("PublicKeyCredential")}}، {{domxref("IdentityCredential")}} و {{domxref("OTPCredential")}})
 
-## Static methods
+## روش‌های ایستا
 
 - {{domxref("Credential.isConditionalMediationAvailable_static", "Credential.isConditionalMediationAvailable()")}}
-  - : Returns a {{jsxref("Promise")}} which always resolves to `false`. Subclasses may override this value.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که همیشه با مقدار `false` حل می‌شود. زیرکلاس‌ها می‌توانند این مقدار را بازنویسی کنند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const pwdCredential = new PasswordCredential({
@@ -47,10 +41,10 @@ const pwdCredential = new PasswordCredential({
 console.assert(pwdCredential.type === "password");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
