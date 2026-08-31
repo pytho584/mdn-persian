@@ -1,7 +1,7 @@
 ---
 title: "BlobEvent: timecode property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent/timecode"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,18 +14,18 @@ browser-compat: api.BlobEvent.timecode
 
 {{APIRef("MediaStream Recording")}}
 
-The **`timecode`** read-only property of the {{domxref("BlobEvent")}} interface indicates the difference between the timestamp of the first chunk of data, and the timestamp of the first chunk in the first `BlobEvent` produced by this recorder.
+خاصیت فقط خواندنی **`timecode`** از رابط {{domxref("BlobEvent")}} تفاوت بین زمان‌نما (timestamp) اولین تکه داده و زمان‌نمای اولین تکه در اولین `BlobEvent` تولید شده توسط این ضبط‌کننده را نشان می‌دهد.
 
-Note that the `timecode` in the first produced `BlobEvent` does not need to be zero.
+توجه داشته باشید که `timecode` در اولین `BlobEvent` تولید شده لزوماً صفر نیست.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}}.
+یک {{domxref("DOMHighResTimeStamp")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
