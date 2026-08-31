@@ -1,10 +1,4 @@
 ---
-title: "CookieStoreManager"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CookieStoreManager"
-status: "needs-translation"
----
-
----
 title: CookieStoreManager
 slug: Web/API/CookieStoreManager
 page-type: web-api-interface
@@ -13,40 +7,40 @@ browser-compat: api.CookieStoreManager
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}{{AvailableInWorkers("window_and_service")}}
 
-The **`CookieStoreManager`** interface of the {{domxref("Cookie Store API", "", "", "nocode")}} allows service workers to subscribe to cookie change events. Call {{domxref("CookieStoreManager.subscribe()","subscribe()")}} on a particular service worker registration to receive change events.
+رابط **`CookieStoreManager`** از {{domxref("Cookie Store API", "", "", "nocode")}} به سرویس‌ورکرها اجازه می‌دهد تا در رویدادهای تغییر کوکی مشترک شوند. برای دریافت رویدادهای تغییر، متد {{domxref("CookieStoreManager.subscribe()","subscribe()")}} را روی یک ثبت‌نام سرویس‌ورکر خاص فراخوانی کنید.
 
-A `CookieStoreManager` has an associated {{domxref("ServiceWorkerRegistration")}}. Each service worker registration has a cookie change subscription list, which is a list of cookie change subscriptions each containing a name and URL. The methods in this interface allow the service worker to add and remove subscriptions from this list, and to get a list of all subscriptions.
+یک `CookieStoreManager` دارای یک {{domxref("ServiceWorkerRegistration")}} مرتبط است. هر ثبت‌نام سرویس‌ورکر یک لیست اشتراک تغییر کوکی دارد که شامل لیستی از اشتراک‌های تغییر کوکی است و هر اشتراک شامل یک نام و یک URL می‌باشد. متدهای این رابط به سرویس‌ورکر اجازه می‌دهند تا اشتراک‌ها را به این لیست اضافه یا از آن حذف کند، و همچنین لیست تمام اشتراک‌ها را دریافت کند.
 
-To get a `CookieStoreManager`, call {{domxref("ServiceWorkerRegistration.cookies")}}.
+برای دریافت یک `CookieStoreManager`، متد {{domxref("ServiceWorkerRegistration.cookies")}} را فراخوانی کنید.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("CookieStoreManager.getSubscriptions()")}}
-  - : Returns a {{jsxref("Promise")}} which resolves to a list of the cookie change subscriptions for this service worker registration.
+  - یک {{jsxref("Promise")}} برمی‌گرداند که به لیستی از اشتراک‌های تغییر کوکی برای این ثبت‌نام سرویس‌ورکر resolutions می‌شود.
 - {{domxref("CookieStoreManager.subscribe()")}}
-  - : Subscribes to changes to cookies. It returns a {{jsxref("Promise")}} which resolves when the subscription is successful.
+  - در تغییرات کوکی مشترک می‌شود. یک {{jsxref("Promise")}} برمی‌گرداند که هنگام موفقیت اشتراک resolutions می‌شود.
 - {{domxref("CookieStoreManager.unsubscribe()")}}
-  - : Unsubscribes the registered service worker from changes to cookies. It returns a {{jsxref("Promise")}} which resolves when the operation is successful.
+  - سرویس‌ورکر ثبت‌شده را از تغییرات کوکی لغو اشتراک می‌کند. یک {{jsxref("Promise")}} برمی‌گرداند که هنگام موفقیت عملیات resolutions می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this example, the {{domxref("ServiceWorkerRegistration")}} represented by `registration` is subscribing to change events on the cookie named `"cookie1"` with a scope of `"/path1"`.
+در این مثال، {{domxref("ServiceWorkerRegistration")}} که با `registration` نمایش داده می‌شود، در رویدادهای تغییر کوکی به نام `"cookie1"` با محدوده `"/path1"` مشترک می‌شود.
 
 ```js
 const subscriptions = [{ name: "cookie1", url: `/path1` }];
 await registration.cookies.subscribe(subscriptions);
 ```
 
-If the {{domxref("ServiceWorkerRegistration")}} has subscribed to any cookies, then {{domxref("CookieStoreManager.getSubscriptions()","getSubscriptions()")}} will return a list of cookies represented by objects in the same format as used for the original subscription.
+اگر {{domxref("ServiceWorkerRegistration")}} در هر کوکی مشترک شده باشد، آنگاه {{domxref("CookieStoreManager.getSubscriptions()","getSubscriptions()")}} لیستی از کوکی‌ها را برمی‌گرداند که با اشیایی در همان قالب اشتراک اصلی نمایش داده می‌شوند.
 
 ```js
 const subscriptions = await self.registration.cookies.getSubscriptions();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
