@@ -1,9 +1,4 @@
----
-title: "CloseEvent: reason property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/reason"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "CloseEvent: reason property"
 short-title: reason
@@ -14,15 +9,15 @@ browser-compat: api.CloseEvent.reason
 
 {{APIRef("Websockets API")}}{{AvailableInWorkers}}
 
-The **`reason`** read-only property of the {{domxref("CloseEvent")}} interface returns the [WebSocket connection close reason](https://www.rfc-editor.org/info/rfc6455/#section-7.1.6) the server gave for closing the connection; that is, a concise human-readable prose explanation for the closure.
+ویژگی فقط‑خواندنی **`reason`** از رابط {{domxref("CloseEvent")}}، [دلیل بسته شدن اتصال WebSocket](https://www.rfc-editor.org/info/rfc6455/#section-7.1.6) را که سرور برای بستن اتصال ارائه داده است، برمی‌گرداند. این مقدار یک توضیح متنی مختصر و قابل‌فهم برای انسان در مورد علت بسته شدن اتصال است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-The following example prints the value of `reason` to the console.
+مثال زیر مقدار `reason` را در کنسول چاپ می‌کند.
 
 ```js
 WebSocket.onclose = (event) => {
@@ -30,14 +25,15 @@ WebSocket.onclose = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [RFC 6455](https://www.rfc-editor.org/info/rfc6455/) (the WebSocket Protocol specification)
+- [RFC 6455](https://www.rfc-editor.org/info/rfc6455/) (مشخصات پروتکل WebSocket)
+```
