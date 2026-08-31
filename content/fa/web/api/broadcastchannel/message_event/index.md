@@ -1,7 +1,7 @@
 ---
 title: "BroadcastChannel: message event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/message_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,11 +14,11 @@ browser-compat: api.BroadcastChannel.message_event
 
 {{APIRef("BroadCastChannel API")}}{{AvailableInWorkers}}
 
-The **`message`** event of the {{domxref("BroadcastChannel")}} interface fires when a message arrives on that channel.
+رویداد **`message`** از رابط {{domxref("BroadcastChannel")}} زمانی که پیامی روی آن کانال می‌رسد، رخ می‌دهد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("message", (event) => { })
@@ -26,17 +26,17 @@ addEventListener("message", (event) => { })
 onmessage = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MessageEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("MessageEvent")}}. از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("MessageEvent")}}
 
-## Examples
+## مثال‌ها
 
-In this example there's a "sender" {{HTMLElement("iframe")}} that broadcasts the contents of a {{HTMLElement("textarea")}} when the user clicks a button. There are two "receiver" iframes that listen to the broadcast message and write the result into a {{HTMLElement("div")}} element.
+در این مثال، یک {{HTMLElement("iframe")}} به‌عنوان «فرستنده» وجود دارد که وقتی کاربر روی دکمه کلیک می‌کند، محتویات یک {{HTMLElement("textarea")}} را پخش می‌کند. دو iframe «گیرنده» وجود دارند که به پیام پخش‌شده گوش می‌دهند و نتیجه را در یک عنصر {{HTMLElement("div")}} می‌نویسند.
 
-### Sender
+### فرستنده
 
 ```html hidden
 <h1>Sender</h1>
@@ -85,7 +85,7 @@ broadcastMessageButton.addEventListener("click", () => {
 });
 ```
 
-### Receiver 1
+### گیرنده ۱
 
 ```html hidden
 <h1>Receiver 1</h1>
@@ -115,7 +115,7 @@ channel.addEventListener("message", (event) => {
 });
 ```
 
-### Receiver 2
+### گیرنده ۲
 
 ```html hidden
 <h1>Receiver 2</h1>
@@ -145,7 +145,7 @@ channel.addEventListener("message", (event) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Sender', '100%', 220) }}
 
@@ -153,14 +153,14 @@ channel.addEventListener("message", (event) => {
 
 {{ EmbedLiveSample('Receiver_2', '100%', 160) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: {{domxref("BroadcastChannel/messageerror_event", "messageerror")}}.
+- رویدادهای مرتبط: {{domxref("BroadcastChannel/messageerror_event", "messageerror")}}.
