@@ -1,7 +1,7 @@
 ---
-title: "Compositing and clipping"
+title: "ترکیب و برش (Compositing and clipping)"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Compositing"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,35 +12,35 @@ page-type: guide
 
 {{DefaultAPISidebar("Canvas API")}} {{PreviousNext("Web/API/Canvas_API/Tutorial/Transformations", "Web/API/Canvas_API/Tutorial/Basic_animations")}}
 
-In all of our [previous examples](/en-US/docs/Web/API/Canvas_API/Tutorial/Transformations), shapes were always drawn one on top of the other. This is more than adequate for most situations, but it limits the order in which composite shapes are built. We can, however, change this behavior by setting the `globalCompositeOperation` property. In addition, the `clip` property allows us to hide unwanted parts of shapes.
+در تمام [مثال‌های قبلی](/en-US/docs/Web/API/Canvas_API/Tutorial/Transformations)، اشکال همیشه یکی روی دیگری رسم می‌شدند. این برای بیشتر موقعیت‌ها کاملاً کافی است، اما ترتیب ساخت اشکال ترکیبی را محدود می‌کند. با این حال، می‌توانیم این رفتار را با تنظیم ویژگی `globalCompositeOperation` تغییر دهیم. علاوه بر این، ویژگی `clip` به ما امکان می‌دهد بخش‌های ناخواسته اشکال را پنهان کنیم.
 
 ## `globalCompositeOperation`
 
-We can not only draw new shapes behind existing shapes but we can also use it to mask off certain areas, clear sections from the canvas (not limited to rectangles like the {{domxref("CanvasRenderingContext2D.clearRect", "clearRect()")}} method does) and more.
+ما نه تنها می‌توانیم اشکال جدید را پشت اشکال موجود رسم کنیم، بلکه می‌توانیم از آن برای پوشاندن بخش‌هایی خاص، پاک کردن بخش‌هایی از بوم (محدود به مستطیل‌ها مانند روش {{domxref("CanvasRenderingContext2D.clearRect", "clearRect()")}} نیست) و موارد دیگر استفاده کنیم.
 
 - {{domxref("CanvasRenderingContext2D.globalCompositeOperation", "globalCompositeOperation = type")}}
-  - : This sets the type of compositing operation to apply when drawing new shapes, where type is a string identifying which of the twelve compositing operations to use.
+  - : این نوع عملیات ترکیب را هنگام رسم اشکال جدید تنظیم می‌کند، که type رشته‌ای است که یکی از دوازده عملیات ترکیب را مشخص می‌کند.
 
-## Clipping paths
+## مسیرهای برش (Clipping paths)
 
-A clipping path is like a normal canvas shape but it acts as a mask to hide unwanted parts of shapes. This is visualized in the image below. The red star shape is our clipping path. Everything that falls outside of this path won't get drawn on the canvas.
+مسیر برش مانند یک شکل عادی بوم است اما به عنوان یک ماسک برای پنهان کردن بخش‌های ناخواسته اشکال عمل می‌کند. این در تصویر زیر نشان داده شده است. شکل ستاره قرمز مسیر برش ما است. هر چیزی که خارج از این مسیر باشد روی بوم رسم نمی‌شود.
 
-![A canvas with a star outlined in red color. The inside of the star is transparent, as portrayed by the grid squares inside the star being clearly visible whereas the grid squares lying outside the star are blurred. ](canvas_clipping_path.png)
+![یک بوم با یک ستاره که با رنگ قرمز دور آن خط کشیده شده است. داخل ستاره شفاف است، همانطور که مربع‌های شبکه داخل ستاره به وضوح قابل مشاهده هستند در حالی که مربع‌های شبکه خارج از ستاره تار هستند.](canvas_clipping_path.png)
 
-If we compare clipping paths to the `globalCompositeOperation` property we've seen above, we see two compositing modes that achieve more or less the same effect in `source-in` and `source-atop`. The most important differences between the two are that clipping paths are never actually drawn to the canvas and the clipping path is never affected by adding new shapes. This makes clipping paths ideal for drawing multiple shapes in a restricted area.
+اگر مسیرهای برش را با ویژگی `globalCompositeOperation` که در بالا دیدیم مقایسه کنیم، دو حالت ترکیب را می‌بینیم که تقریباً همان اثر را در `source-in` و `source-atop` به دست می‌آورند. مهم‌ترین تفاوت‌های بین آن‌ها این است که مسیرهای برش هرگز واقعاً روی بوم رسم نمی‌شوند و مسیر برش هرگز با افزودن اشکال جدید تحت تأثیر قرار نمی‌گیرد. این امر مسیرهای برش را برای رسم چندین شکل در یک منطقه محدود ایده‌آل می‌کند.
 
-In the chapter about [drawing shapes](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes) I only mentioned the `stroke()` and `fill()` methods, but there's a third method we can use with paths, called `clip()`.
+در فصل درباره [رسم اشکال](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes) من فقط به روش‌های `stroke()` و `fill()` اشاره کردم، اما روش سومی也存在 که می‌توانیم با مسیرها استفاده کنیم، به نام `clip()`.
 
 - {{domxref("CanvasRenderingContext2D.clip", "clip()")}}
-  - : Turns the path currently being built into the current clipping path.
+  - : مسیر در حال ساخت را به مسیر برش فعلی تبدیل می‌کند.
 
-You use `clip()` instead of `closePath()` to close a path and turn it into a clipping path instead of stroking or filling the path.
+شما از `clip()` به جای `closePath()` برای بستن یک مسیر و تبدیل آن به مسیر برش استفاده می‌کنید، به جای خط کشیدن یا پر کردن مسیر.
 
-By default the {{HTMLElement("canvas")}} element has a clipping path that's the exact same size as the canvas itself. In other words, no clipping occurs.
+به طور پیش‌فرض، عنصر {{HTMLElement("canvas")}} دارای یک مسیر برش است که دقیقاً به اندازه خود بوم است. به عبارت دیگر، هیچ برشی رخ نمی‌دهد.
 
-### A `clip` example
+### یک مثال `clip`
 
-In this example, we'll use a circular clipping path to restrict the drawing of a set of random stars to a particular region.
+در این مثال، از یک مسیر برش دایره‌ای برای محدود کردن رسم مجموعه‌ای از ستاره‌های تصادفی به یک منطقه خاص استفاده می‌کنیم.
 
 ```js
 function draw() {
@@ -103,17 +103,17 @@ function drawStar(ctx, r) {
 draw();
 ```
 
-In the first few lines of code, we draw a black rectangle the size of the canvas as a backdrop, then translate the origin to the center. Next, we create the circular clipping path by drawing an arc and calling `clip()`. Clipping paths are also part of the canvas save state. If we wanted to keep the original clipping path we could have saved the canvas state before creating the new one.
+در چند خط اول کد، یک مستطیل سیاه به اندازه بوم به عنوان پس‌زمینه رسم می‌کنیم، سپس مبدأ را به مرکز منتقل می‌کنیم. در ادامه، مسیر برش دایره‌ای را با رسم یک کمان و فراخوانی `clip()` ایجاد می‌کنیم. مسیرهای برش نیز بخشی از حالت ذخیره‌شده بوم هستند. اگر می‌خواستیم مسیر برش اصلی را حفظ کنیم، می‌توانستیم وضعیت بوم را قبل از ایجاد مسیر جدید ذخیره کنیم.
 
-Everything that's drawn after creating the clipping path will only appear inside that path. You can see this clearly in the linear gradient that's drawn next. After this a set of 50 randomly positioned and scaled stars is drawn, using the custom `drawStar()` function. Again the stars only appear inside the defined clipping path.
+هر چیزی که پس از ایجاد مسیر برش رسم می‌شود فقط در داخل آن مسیر ظاهر می‌شود. این را می‌توانید به وضوح در گرادیان خطی که بعداً رسم می‌شود ببینید. پس از آن، مجموعه‌ای از ۵۰ ستاره با موقعیت و اندازه تصادفی با استفاده از تابع سفارشی `drawStar()` رسم می‌شود. دوباره، ستاره‌ها فقط در داخل مسیر برش تعریف‌شده ظاهر می‌شوند.
 
 {{EmbedLiveSample("A_clip_example", "", "160")}}
 
-### Inverse clipping path
+### مسیر برش معکوس
 
-There is no such thing as an inverse clipping mask. However, we can define a mask that fills the entire canvas with a rectangle and has a hole in it for the parts that you want to skip. When [drawing a shape with a hole](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes#shapes_with_holes), we need to draw the hole in the opposite direction as the outer shape. In the example below we punch a hole into the sky.
+چیزی به نام ماسک برش معکوس وجود ندارد. با این حال، ما می‌توانیم یک ماسک تعریف کنیم که کل بوم را با یک مستطیل پر کند و سوراخی در آن برای قسمت‌هایی که می‌خواهید رد شوید داشته باشد. هنگام [رسم شکل با سوراخ](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes#shapes_with_holes)، باید سوراخ را در جهت مخالف شکل بیرونی رسم کنیم. در مثال زیر، یک سوراخ در آسمان ایجاد می‌کنیم.
 
-A rectangle does not have a drawing direction, but it behaves as if we drew it clockwise. By default, the arc command also goes clockwise, but we can change its direction with the last argument.
+یک مستطیل جهت رسم ندارد، اما طوری رفتار می‌کند که گویی آن را در جهت عقربه‌های ساعت رسم کرده‌ایم. به طور پیش‌فرض، دستور arc نیز در جهت عقربه‌های ساعت حرکت می‌کند، اما می‌توانیم جهت آن را با آخرین آرگومان تغییر دهیم.
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
