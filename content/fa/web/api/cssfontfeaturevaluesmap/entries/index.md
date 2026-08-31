@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesMap: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap/entries"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesMap: entries() method"
 short-title: entries()
 slug: Web/API/CSSFontFeatureValuesMap/entries
 page-type: web-api-instance-method
@@ -16,27 +10,27 @@ browser-compat: api.CSSFontFeatureValuesMap.entries
 
 {{APIRef("CSSOM")}}{{SeeCompatTable}}
 
-The **`entries()`** method of {{domxref("CSSFontFeatureValuesMap")}} instances returns a new [map iterator](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) object that contains the `[key, value]` pairs for each declaration in this `CSSFontFeatureValuesMap` in insertion order.
+متد **`entries()`** از نمونه‌های {{domxref("CSSFontFeatureValuesMap")}} یک شیء جدید از نوع [تکرارگر نقشه](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) برمی‌گرداند که شامل جفت‌های `[key, value]` برای هر اعلان در این `CSSFontFeatureValuesMap` به ترتیب درج است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 entries()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new iterable [iterator object](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator).
+یک [شیء تکرارگر](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) جدید و قابل تکرار.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following example assigns the entries to the `swashes` variable and then logs the first two values. This example is using `@swash` but also works with other [feature value blocks](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks).
+مثال زیر ورودی‌ها را به متغیر `swashes` اختصاص می‌دهد و سپس دو مقدار اول را ثبت می‌کند. این مثال از `@swash` استفاده می‌کند، اما با سایر [بلوک‌های مقدار ویژگی](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks) نیز کار می‌کند.
 
 #### CSS
 
@@ -52,22 +46,22 @@ The following example assigns the entries to the `swashes` variable and then log
 #### JavaScript
 
 ```js
-// get the rules
+// دریافت قوانین
 const myRule = document.styleSheets[0].cssRules[0];
-// get the entries of swash
+// دریافت ورودی‌های swash
 const swashes = myRule.swash.entries();
-console.log(swashes.next().value); // logs ["swishy", [1]]
-console.log(swashes.next().value); // logs ["swashy", [2]]
+console.log(swashes.next().value); // ["swishy", [1]] را ثبت می‌کند
+console.log(swashes.next().value); // ["swashy", [2]] را ثبت می‌کند
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Map.prototype.entries()](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/entries)
