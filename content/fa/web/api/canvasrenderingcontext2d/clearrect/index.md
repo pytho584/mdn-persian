@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: clearRect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: clearRect() method"
 short-title: clearRect()
 slug: Web/API/CanvasRenderingContext2D/clearRect
 page-type: web-api-instance-method
@@ -14,16 +8,10 @@ browser-compat: api.CanvasRenderingContext2D.clearRect
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.clearRect()`**
-method of the Canvas 2D API erases the pixels in a rectangular area by setting them to
-transparent black.
+متد **`CanvasRenderingContext2D.clearRect()`** از Canvas 2D API، پیکسل‌های یک ناحیه مستطیلی را با تنظیم آن‌ها به رنگ سیاه شفاف (transparent black) پاک می‌کند.
 
 > [!NOTE]
-> Be aware that `clearRect()` may cause unintended
-> side effects if you're not [using paths properly](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes#drawing_paths). Make sure to call
-> {{domxref("CanvasRenderingContext2D.beginPath", "beginPath()")}} before starting to
-> draw new items after calling `clearRect()`.
+> توجه داشته باشید که `clearRect()` ممکن است عوارض جانبی ناخواسته‌ای ایجاد کند اگر [از مسیرها به درستی استفاده نکنید](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes#drawing_paths). پس از فراخوانی `clearRect()`، قبل از شروع ترسیم آیتم‌های جدید، حتماً {{domxref("CanvasRenderingContext2D.beginPath", "beginPath()")}} را فراخوانی کنید.
 
 ## Syntax
 
@@ -31,34 +19,28 @@ transparent black.
 clearRect(x, y, width, height)
 ```
 
-The `clearRect()` method sets the pixels in a rectangular area to
-transparent. The rectangle's top-left corner is at
-`(x, y)`, and its size is specified by `width` and
-`height`.
+متد `clearRect()` پیکسل‌های یک ناحیه مستطیلی را به حالت شفاف تنظیم می‌کند. گوشه بالا-چپ مستطیل در مختصات `(x, y)` قرار دارد و اندازه آن توسط `width` و `height` مشخص می‌شود.
 
 ### Parameters
 
 - `x`
-  - : The x-axis coordinate of the rectangle's starting point.
+  - : مختصات محور x نقطه شروع مستطیل.
 - `y`
-  - : The y-axis coordinate of the rectangle's starting point.
+  - : مختصات محور y نقطه شروع مستطیل.
 - `width`
-  - : The rectangle's width. Positive values are to the right, and negative to the left.
+  - : عرض مستطیل. مقادیر مثبت به سمت راست و مقادیر منفی به سمت چپ هستند.
 - `height`
-  - : The rectangle's height. Positive values are down, and negative are up.
+  - : ارتفاع مستطیل. مقادیر مثبت به سمت پایین و مقادیر منفی به سمت بالا هستند.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
-### Erasing the whole canvas
+### پاک کردن کل بوم (canvas)
 
-This code snippet erases the entire canvas. This is commonly required at the start of
-each frame in an animation. The dimensions of the cleared area are set to equal the
-{{HtmlElement("canvas")}} element's `width` and `height`
-attributes.
+این قطعه کد کل بوم را پاک می‌کند. این کار معمولاً در شروع هر فریم در یک انیمیشن مورد نیاز است. ابعاد ناحیه پاک‌شده برابر با ویژگی‌های `width` و `height` عنصر {{HtmlElement("canvas")}} تنظیم می‌شود.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -66,10 +48,9 @@ const ctx = canvas.getContext("2d");
 ctx.clearRect(0, 0, canvas.width, canvas.height);
 ```
 
-### Erasing part of a canvas
+### پاک کردن بخشی از یک بوم
 
-This example draws a blue triangle on top of a yellowish background. The
-`clearRect()` method then erases part of the canvas.
+این مثال یک مثلث آبی را روی یک پس‌زمینه مایل به زرد رسم می‌کند. سپس متد `clearRect()` بخشی از بوم را پاک می‌کند.
 
 #### HTML
 
@@ -79,8 +60,7 @@ This example draws a blue triangle on top of a yellowish background. The
 
 #### JavaScript
 
-The cleared area is rectangular in shape, with its top-left corner at (10, 10). The
-cleared area has a width of 120 and a height of 100.
+ناحیه پاک‌شده به شکل مستطیل است که گوشه بالا-چپ آن در (10, 10) قرار دارد. این ناحیه دارای عرض 120 و ارتفاع 100 است.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -118,6 +98,6 @@ ctx.clearRect(10, 10, 120, 100);
 
 ## See also
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.fillRect()")}}
 - {{domxref("CanvasRenderingContext2D.strokeRect()")}}
