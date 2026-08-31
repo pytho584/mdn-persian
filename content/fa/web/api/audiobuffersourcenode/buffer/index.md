@@ -1,7 +1,7 @@
 ---
 title: "AudioBufferSourceNode: buffer property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/buffer"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,25 +14,23 @@ browser-compat: api.AudioBufferSourceNode.buffer
 
 {{ APIRef("Web Audio API") }}
 
-The **`buffer`** property of the {{domxref("AudioBufferSourceNode")}} interface provides the ability to play back audio using an {{domxref("AudioBuffer")}} as the source of the sound data.
+{{domxref("AudioBufferSourceNode")}} 接口的 **`buffer`** 属性提供使用 {{domxref("AudioBuffer")}} 作为声音数据源来播放音频的能力。
 
-If the `buffer` property is set to the value `null`, the node
-generates a single channel containing silence (that is, every sample is 0).
+如果将 `buffer` 属性设置为 `null`，该节点将生成一个包含静音的单声道（即每个采样值都为 0）。
 
-## Value
+## 值
 
-An {{domxref("AudioBuffer")}} which contains the data representing the sound which the
-node will play.
+一个 {{domxref("AudioBuffer")}}，包含表示该节点将要播放的声音的数据。
 
-## Exceptions
+## 异常
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the `buffer` property has already been set to a non-`null` value, and is then set to a non-`null` value again.
+  - : 如果 `buffer` 属性已经被设置为非 `null` 值，然后又再次设置为非 `null` 值，则抛出该异常。
 
-## Examples
+## 示例
 
 > [!NOTE]
-> For a full working example, see [this code running live](https://mdn.github.io/webaudio-examples/audio-buffer/), or [view the source](https://github.com/mdn/webaudio-examples/blob/main/audio-buffer/index.html).
+> 有关完整的工作示例，请参阅[在线运行的代码](https://mdn.github.io/webaudio-examples/audio-buffer/)，或[查看源代码](https://github.com/mdn/webaudio-examples/blob/main/audio-buffer/index.html)。
 
 ```js
 const myArrayBuffer = audioCtx.createBuffer(2, frameCount, audioCtx.sampleRate);
@@ -58,15 +56,15 @@ button.onclick = () => {
 };
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [使用 Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
