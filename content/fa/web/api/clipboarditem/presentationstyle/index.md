@@ -1,11 +1,5 @@
 ---
 title: "ClipboardItem: presentationStyle property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem/presentationStyle"
-status: "needs-translation"
----
-
----
-title: "ClipboardItem: presentationStyle property"
 short-title: presentationStyle
 slug: Web/API/ClipboardItem/presentationStyle
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.ClipboardItem.presentationStyle
 
 {{APIRef("Clipboard API")}} {{securecontext_header}}
 
-The read-only **`presentationStyle`** property of the {{domxref("ClipboardItem")}} interface returns a string indicating how an item should be presented.
+ویژگی فقط‌خواندنی **`presentationStyle`** از رابط {{domxref("ClipboardItem")}} رشته‌ای را برمی‌گرداند که نشان می‌دهد یک مورد باید چگونه نمایش داده شود.
 
-For example, in some contexts an image might be displayed inline, while in others it might be represented as an attachment.
+به‌عنوان مثال، در برخی زمینه‌ها یک تصویر ممکن است به‌صورت درون‌خطی (inline) نمایش داده شود، در حالی که در برخی دیگر ممکن است به‌صورت پیوست (attachment) ارائه شود.
 
-## Value
+## مقدار
 
-One of either `"unspecified"`, `"inline"` or `"attachment"`.
+این مقدار یکی از موارد `"unspecified"`، `"inline"` یا `"attachment"` است.
 
-## Examples
+## مثال‌ها
 
-In the below example, we're returning all items on the clipboard via the {{domxref("clipboard.read()")}} method, then logging the `presentationStyle` property.
+در مثال زیر، همه موارد موجود در کلیپ‌برد را از طریق متد {{domxref("clipboard.read()")}} برمی‌گردانیم و سپس ویژگی `presentationStyle` را در کنسول ثبت (log) می‌کنیم.
 
 ```js
 async function getClipboardContents() {
@@ -40,15 +34,15 @@ async function getClipboardContents() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Clipboard API](/en-US/docs/Web/API/Clipboard_API)
 - [Image support for Async Clipboard article](https://web.dev/articles/async-clipboard)
