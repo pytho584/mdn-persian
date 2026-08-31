@@ -1,7 +1,7 @@
 ---
 title: "BiquadFilterNode: frequency property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/frequency"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,21 +14,21 @@ browser-compat: api.BiquadFilterNode.frequency
 
 {{ APIRef("Web Audio API") }}
 
-The `frequency` property of the {{ domxref("BiquadFilterNode") }} interface is an [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}} — a double representing a frequency in the current filtering algorithm measured in hertz (Hz).
+ویژگی `frequency` در رابط {{ domxref("BiquadFilterNode") }} یک {{domxref("AudioParam")}} با نرخ [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) است — یک عدد اعشاری که فرکانس را در الگوریتم فیلتر فعلی بر حسب هرتز (Hz) نشان می‌دهد.
 
-Its default value is `350`, with a nominal range of `10` to the [Nyquist frequency](https://en.wikipedia.org/wiki/Nyquist_frequency) — that is, half of the sample rate.
+مقدار پیش‌فرض آن `350` است، با محدوده اسمی از `10` تا [فرکانس نایکوئیست](https://en.wikipedia.org/wiki/Nyquist_frequency) — یعنی نصف نرخ نمونه‌برداری.
 
-## Value
+## مقدار
 
-An {{domxref("AudioParam")}}.
+یک {{domxref("AudioParam")}}.
 
 > [!NOTE]
-> Though the `AudioParam` returned is read-only, the value it represents is not.
+> اگرچه `AudioParam` برگشتی فقط‌خواندنی است، مقداری که نشان می‌دهد فقط‌خواندنی نیست.
 
-## Examples
+## مثال‌ها
 
-The following example shows basic usage of an AudioContext to create a Biquad filter node.
-For a complete working example, check out our [voice-change-o-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) demo (look at the [source code](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) too).
+مثال زیر کاربرد پایه‌ای AudioContext را برای ایجاد یک گره فیلتر Biquad نشان می‌دهد.
+برای یک مثال کامل و قابل اجرا، نسخه نمایشی [voice-change-o-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) ما را ببینید (و همچنین [کد منبع](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) را بررسی کنید).
 
 ```js
 const audioCtx = new AudioContext();
@@ -57,14 +57,14 @@ biquadFilter.frequency.value = 1000;
 biquadFilter.gain.value = 25;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
