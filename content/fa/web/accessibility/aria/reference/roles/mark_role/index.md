@@ -1,32 +1,25 @@
 ---
 title: "ARIA: mark role"
-source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/mark_role"
-status: "needs-translation"
----
-
----
-title: "ARIA: mark role"
 short-title: mark
 slug: Web/Accessibility/ARIA/Reference/Roles/mark_role
 page-type: aria-role
 sidebar: accessibilitysidebar
+translated_by: "n8n + AI"
 ---
 
-The `mark` role denotes content which is marked or highlighted for reference or notation purposes, due to the content's relevance in the enclosing context.
+## ARIA: نقش نشان‌گذاری (mark)
 
-## Description
+نقش `mark` به محتوایی اشاره دارد که به دلیل اهمیت آن در زمینه‌ای که در آن قرار دارد، برای اهداف مرجع یا یادداشت‌برداری علامت‌گذاری یا برجسته شده است. این از نظر معنایی معادل عنصر HTML `<mark>` است. در صورت امکان، باید از این عنصر استفاده کنید.
 
-The `mark` role semantically denotes HTML elements containing text that is marked/highlighted for reference purposes. This is semantically equivalent to the HTML {{HTMLElement('mark')}} element. If possible, you should use this element instead.
+کاربردهای مثال برای `mark` دقیقاً مشابه عنصر `<mark>` است. این کاربردها شامل برجسته‌کردن متنی در یک نقل‌قول است که مورد توجه ویژه است اما در منبع اصلی علامت‌گذاری نشده است، قابل قیاس با استفاده از ماژیک‌هایلایت برای علامت‌گذاری بخش‌های یک مقاله چاپی و نشان‌دادن بخش‌هایی از محتوا که با فعالیت فعلی کاربر مرتبط است، مانند برجسته‌کردن مطابقت‌های متنی یافت‌شده توسط یک ویژگی جستجو.
 
-Example uses for `mark` are the exact same as the `<mark>` element. They include highlighting text in a quotation which is of special interest but is not marked in the original source material, comparable to using a highlighter pen to mark passages of a print article and indicating portions of the content that are relevant to the user's current activity, such as highlighting text matches found by a search feature.
+از `mark` برای سبک‌دهی صرفاً تزئینی مانند برجسته‌سازی نحو (syntax highlighting) استفاده نکنید.
 
-Don't use `mark` for purely decorative styling such as syntax highlighting.
+عنصر `mark` نباید یک نام قابل دسترسی دریافت کند؛ هر دو ویژگی `aria-label` و `aria-labelledby` در `mark` ممنوع هستند.
 
-The `mark` element should not be given an accessible name; both [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) and [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attributes are prohibited on `mark`.
+## مثال‌ها
 
-## Examples
-
-In the following example we have a document section that has been commented. The commented section is marked up using `<span role="mark">`.
+در مثال زیر یک بخش از سند داریم که نظرگذاری شده است. بخش نظرگذاری‌شده با استفاده از `<span role="mark">` نشانه‌گذاری شده است.
 
 ```html
 <p>
@@ -42,20 +35,20 @@ In the following example we have a document section that has been commented. The
 </div>
 ```
 
-The related comment is marked up using an HTML structure wrapped with a {{HTMLElement('div')}} containing [`role="comment"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/comment_role).
+نظر مرتبط با استفاده از یک ساختار HTML که در یک `<div>` با [`role="comment"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/comment_role) پیچیده شده، نشانه‌گذاری شده است.
 
-To associate the comment with the text being commented, we need to wrap the commented text with an element containing the [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) attribute, the value of which should be the ID of the comment.
+برای مرتبط‌سازی نظر با متنی که نظر روی آن داده شده، باید متن نظرگذاری‌شده را درون یک عنصر حاوی ویژگی `aria-details` قرار دهیم که مقدار آن باید شناسه (ID) نظر باشد.
 
-## Best practices
+## بهترین شیوه‌ها
 
-### Prefer HTML
+### ترجیح HTML
 
-Using the {{HTMLElement('mark')}} element will automatically communicate a node has a role of `mark`. If at all possible, prefer using it instead.
+استفاده از عنصر `<mark>` به طور خودکار اعلام می‌کند که یک گره دارای نقش `mark` است. در صورت امکان، ترجیح دهید از آن استفاده کنید.
 
-## Specifications
+## مشخصات
 
-Will be part of [WAI-ARIA 1.3](https://w3c.github.io/aria/#mark), which is still being drafted.
+بخشی از [WAI-ARIA 1.3](https://w3c.github.io/aria/#mark) خواهد بود که هنوز در حال پیش‌نویس است.
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement('mark')}} element
+- عنصر HTML `<mark>`
