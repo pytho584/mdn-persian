@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRegistration: downloadTotal property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/downloadTotal"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,24 +16,24 @@ browser-compat: api.BackgroundFetchRegistration.downloadTotal
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`downloadTotal`** read-only property of the {{domxref("BackgroundFetchRegistration")}} interface returns the total size in bytes of this download. This is set when the background fetch was registered, or `0` if not set.
+ویژگی فقط خواندنی **`downloadTotal`** از رابط {{domxref("BackgroundFetchRegistration")}} اندازه کل این دانلود را به بایت برمی‌گرداند. این مقدار هنگام ثبت واکشی پس‌زمینه تنظیم می‌شود، یا اگر تنظیم نشده باشد `0` است.
 
-## Value
+## مقدار
 
-A {{jsxref("Number")}}.
+یک {{jsxref("Number")}}.
 
-## Examples
+## مثال‌ها
 
-Logging this property to the console returns the total size in bytes of this download.
+لاگ کردن این ویژگی در کنسول اندازه کل این دانلود را به بایت برمی‌گرداند.
 
 ```js
 console.log(bgFetch.downloadTotal);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
