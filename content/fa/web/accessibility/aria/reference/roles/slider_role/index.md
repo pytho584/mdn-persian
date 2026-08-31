@@ -1,7 +1,7 @@
 ---
 title: "ARIA: slider role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,120 +13,120 @@ spec-urls: https://w3c.github.io/aria/#slider
 sidebar: accessibilitysidebar
 ---
 
-The `slider` role defines an input where the user selects a value from within a given range.
+نقش `slider` یک ورودی را تعریف می‌کند که کاربر در آن مقداری را از میان یک بازهٔ مشخص انتخاب می‌کند.
 
-## Description
+## توضیحات
 
-The `slider` role is for range input widgets where the user selects a value from within given minimum and maximum values.
+نقش `slider` برای ویجت‌های ورودی بازه‌ای است که کاربر در آن‌ها مقداری را از میان حداقل و حداکثر مشخص‌شده انتخاب می‌کند.
 
-### The `slider` role compared other range options
+### نقش `slider` در مقایسه با سایر گزینه‌های بازه‌ای
 
-ARIA provides developers with six different range [widget roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#2._widget_roles), including `progressbar`, `meter`, and `slider`.
+ARIA شش [نقش ویجت](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#2._widget_roles) بازه‌ای مختلف را در اختیار توسعه‌دهندگان قرار می‌دهد، از جمله `progressbar`، `meter` و `slider`.
 
-The [`progressbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role) role, similar to HTML's {{HTMLElement('progress')}} element, is a read-only range indicating the portion of completion of a task, progressing in a single direction, such as a file upload's loading progress bar that eventually reaches 100% when fully loaded.
+نقش [`progressbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role)، مشابه عنصر {{HTMLElement('progress')}} در HTML، یک بازهٔ فقط‌خواندنی است که بخش تکمیل‌شدهٔ یک کار را نشان می‌دهد و در یک جهت واحد پیشرفت می‌کند؛ مانند نوار پیشرفت بارگذاری یک فایل که با تکمیل بارگذاری، در نهایت به ۱۰۰٪ می‌رسد.
 
-The [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role) role, similar to HTML's {{HTMLElement('meter')}} element, is a read-only gauge indicating the amount of something within a known range, such as a computer's battery indicator or a car's gas gauge.
+نقش [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)، مشابه عنصر {{HTMLElement('meter')}} در HTML، یک نشانگر فقط‌خواندنی است که مقدار چیزی را در یک بازهٔ مشخص نشان می‌دهد؛ مانند نشانگر باتری رایانه یا نشانگر سوخت خودرو.
 
-The `slider` role, similar to HTML's `input` of type `range`, [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range), is a read-write input range. Sliders allow users to select a value between set minimum and maximum values. The user selects a value by moving a slider thumb along a horizontal or vertical slider to select a value.
+نقش `slider`، مشابه `input` از نوع `range` در HTML یعنی [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range)، یک ورودی بازه‌ای خواندنی-نوشتنی است. اسلایدرها به کاربران امکان می‌دهند مقداری را بین حداقل و حداکثر مشخص‌شده انتخاب کنند. کاربر با حرکت دادن دستگیرهٔ اسلایدر در طول یک اسلایدر افقی یا عمودی، مقدار موردنظر را انتخاب می‌کند.
 
-While all three of these ranges have the same ARIA states and properties, the `slider` role is the only read-write range: it is the only one whose value changes via user interaction. As such, it must be able to receive focus. In addition, keyboard interaction, mouse clicks, and touch interaction must be supported.
+اگرچه هر سه این بازه‌ها دارای حالت‌ها و خصوصیت‌های ARIA یکسانی هستند، نقش `slider` تنها بازهٔ خواندنی-نوشتنی است: تنها بازه‌ای است که مقدار آن از طریق تعامل کاربر تغییر می‌کند. بنابراین، باید بتواند فوکوس دریافت کند. علاوه بر این، تعامل با صفحه‌کلید، کلیک ماوس و تعامل لمسی باید پشتیبانی شوند.
 
 > [!WARNING]
-> To change the slider value, touch-based assistive technologies need to respond to user gestures for increasing and decreasing the value by synthesizing key events.
-> Fully test slider widgets using assistive technologies on devices where touch is a primary input mechanism before using the `slider` role (and all range widgets).
+> برای تغییر مقدار اسلایدر، فناوری‌های کمکی مبتنی بر لمس باید با شبیه‌سازی رویدادهای کلید، به ژست‌های کاربر برای افزایش و کاهش مقدار پاسخ دهند.
+> پیش از استفاده از نقش `slider` (و همهٔ ویجت‌های بازه‌ای)، ویجت‌های اسلایدر را با استفاده از فناوری‌های کمکی روی دستگاه‌هایی که لمس سازوکار ورودی اصلی آن‌هاست، به‌طور کامل آزمایش کنید.
 
-### Common attributes
+### ویژگی‌های رایج
 
-The [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) attribute sets the minimum value. If omitted or not a number, it defaults to `0` (zero).
+ویژگی [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) مقدار حداقل را تعیین می‌کند. اگر حذف شده باشد یا عدد نباشد، به‌صورت پیش‌فرض `0` (صفر) در نظر گرفته می‌شود.
 
-The [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) attribute defines the maximum value. If it is missing or not a number, it defaults to 100.
+ویژگی [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) مقدار حداکثر را تعریف می‌کند. اگر وجود نداشته باشد یا عدد نباشد، به‌صورت پیش‌فرض ۱۰۰ در نظر گرفته می‌شود.
 
-The [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) attribute value must be between the minimum and maximum values, inclusive. This attribute is required for `slider` and `meter`, and optional for `progressbar`.
+مقدار ویژگی [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) باید بین حداقل و حداکثر مقدار، به‌صورت شامل، قرار داشته باشد. این ویژگی برای `slider` و `meter` الزامی و برای `progressbar` اختیاری است.
 
-For `slider`, unless using the [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range) element, the `aria-valuenow` value must be updated programmatically when the user updates the value.
+برای `slider`، مگر در صورت استفاده از عنصر [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range)، مقدار `aria-valuenow` باید هنگام به‌روزرسانی مقدار توسط کاربر، به‌صورت برنامه‌نویسی‌شده به‌روزرسانی شود.
 
-The optional [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext) attribute is included when the `aria-valuenow` numeric value doesn't reflect the intended value of the slider. As the minimum, maximum, and current values are all numeric, when the values those numbers represent are not numeric, the `aria-valuetext` attribute should be included with a string value defining the numeric value. For example, if using a slider for t-shirt sizes, the `aria-valuetext` attribute should shift from xx-small through to XX-large as the `aria-valuenow` increases.
+ویژگی اختیاری [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext) زمانی اضافه می‌شود که مقدار عددی `aria-valuenow` بیانگر مقدار موردنظر اسلایدر نباشد. از آنجا که حداقل، حداکثر و مقادیر فعلی همگی عددی هستند، وقتی مقادیری که این اعداد نشان می‌دهند عددی نیستند، باید ویژگی `aria-valuetext` با یک مقدار رشته‌ای که معنای مقدار عددی را تعریف می‌کند ارائه شود. برای مثال، اگر از اسلایدر برای اندازه‌های تیشرت استفاده شود، وقتی `aria-valuenow` افزایش می‌یابد، ویژگی `aria-valuetext` باید از xx-small تا XX-large تغییر کند.
 
-The `aria-valuetext` value must be updated as the `value` or `aria-valuenow` is updated. While there is no equivalent HTML attribute for `<input type="range">`, you can include `aria-valuetext` on any {{htmlelement('input')}} type. ARIA attributes are supported on semantic HTML elements.
+مقدار `aria-valuetext` باید همگام با به‌روزرسانی `value` یا `aria-valuenow` به‌روزرسانی شود. اگرچه معادل HTML برای `<input type="range">` وجود ندارد، می‌توانید `aria-valuetext` را روی هر نوع {{htmlelement('input')}} قرار دهید. ویژگی‌های ARIA روی عناصر معنایی HTML پشتیبانی می‌شوند.
 
-When `aria-valuetext` is an important feature for a slider, consider using {{HTMLElement('select')}} with {{HTMLElement('option')}} elements instead. While not visually a range, every option's value is more accessible to all users, not just users of assistive technology.
+هنگامی که `aria-valuetext` برای یک اسلایدر ویژگی مهمی است، به‌جای آن استفاده از {{HTMLElement('select')}} با عناصر {{HTMLElement('option')}} را در نظر بگیرید. اگرچه از نظر ظاهری بازه نیست، مقدار هر گزینه برای همهٔ کاربران، نه فقط کاربران فناوری کمکی، در دسترس‌تر است.
 
-An accessible name is **required**. If the range's role is applied to an HTML {{HTMLElement('input')}} element (or `<meter>` or `<progress>` element), the accessible name can come from the associated {{HTMLElement('label')}}. Otherwise use [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) if a visible label is present or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) if a visible label is not present.
+یک نام قابل‌دسترس **الزامی** است. اگر نقش بازه روی یک عنصر HTML {{HTMLElement('input')}} (یا عنصر `<meter>` یا `<progress>`) اعمال شود، نام قابل‌دسترس می‌تواند از {{HTMLElement('label')}} مرتبط گرفته شود. در غیر این صورت، اگر برچسب قابل مشاهده وجود دارد از [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) و اگر برچسب قابل مشاهده وجود ندارد از [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) استفاده کنید.
 
-When not using the HTML {{HTMLElement('input')}} element to create your slider, include the [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) attribute to make the slider focusable. Of the three range types, only `slider` is user-interactive, and so is the only one that requires being able to receive focus. Focus should be placed on the slider thumb.
+هنگامی که از عنصر HTML {{HTMLElement('input')}} برای ایجاد اسلایدر خود استفاده نمی‌کنید، ویژگی [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) را برای قابل فوکوس کردن اسلایدر اضافه کنید. از میان سه نوع بازه، فقط `slider` تعاملی است و بنابراین تنها نوعی است که باید بتواند فوکوس دریافت کند. فوکوس باید روی دستگیرهٔ اسلایدر قرار گیرد.
 
-Sliders have an implicit [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) value of `horizontal`. This attribute is not supported with `meter` or `progressbar`.
+اسلایدرها به‌صورت ضمنی مقدار [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) برابر با `horizontal` دارند. این ویژگی با `meter` یا `progressbar` پشتیبانی نمی‌شود.
 
-### User interactions
+### تعاملات کاربر
 
-Unlike the read-only `meter` and `progressbar` roles, a `slider` is an input, accepting user interaction. In addition to including the [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) attribute to enable slider focus, keyboard and pointer device support must be implemented.
+برخلاف نقش‌های فقط‌خواندنی `meter` و `progressbar`، `slider` یک ورودی است و تعامل کاربر را می‌پذیرد. علاوه بر افزودن ویژگی [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) برای فعال کردن فوکوس اسلایدر، باید پشتیبانی از صفحه‌کلید و دستگاه‌های اشاره‌گر نیز پیاده‌سازی شود.
 
-The slider represents the range of possible values. The position of the slider thumb along the slider represents the current value. User actions that must be supported include changing the value by dragging the thumb or clicking the slider for pointing devices and using directional keys such as arrow keys for the keyboard users. See [keyboard interactions](#keyboard_interactions) below.
+اسلایدر بازهٔ مقادیر ممکن را نشان می‌دهد. موقعیت دستگیرهٔ اسلایدر در طول آن، مقدار فعلی را نشان می‌دهد. کنش‌های کاربر که باید پشتیبانی شوند عبارت‌اند از تغییر مقدار با کشیدن دستگیره یا کلیک روی اسلایدر برای دستگاه‌های اشاره‌گر و استفاده از کلیدهای جهت‌دار مانند کلیدهای جهت‌نما برای کاربران صفحه‌کلید. به [تعاملات صفحه‌کلید](#keyboard_interactions) در ادامه مراجعه کنید.
 
 > [!NOTE]
-> It is recommended to use native [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range) elements rather than the `slider` role. User agents provide a stylized widget for the range input element, based on the current `value` as it relates to the minimum and maximum values. When using non-semantic elements, all features of the native semantic element need to be recreated with ARIA attributes, JavaScript and CSS.
+> توصیه می‌شود به‌جای نقش `slider` از عناصر بومی [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range) استفاده کنید. عامل‌های کاربر (User agents) یک ویجت استایل‌سازیشده برای عنصر ورودی بازه‌ای ارائه می‌دهند که بر اساس `value` فعلی و رابطهٔ آن با مقادیر حداقل و حداکثر ساخته می‌شود. هنگام استفاده از عناصر غیرمعنایی، همهٔ ویژگی‌های عنصر معنایی بومی باید با ویژگی‌های ARIA، جاوااسکریپت و CSS بازآفرینی شوند.
 
-### Range with multiple thumbs
+### بازه با چند دستگیره
 
-A multi-thumb slider is a slider with two or more thumbs that each set a value in a group of related values. For example, in a product search, a two-thumb slider could be used to enable users to set the minimum and maximum price limits for the search.
+اسلایدر چنددستگیره (multi-thumb) اسلایدری است که دو یا چند دستگیره دارد و هرکدام مقداری را در یک گروه از مقادیر مرتبط تعیین می‌کنند. برای مثال، در جستجوی محصولات، می‌توان از یک اسلایدر دو دستگیره استفاده کرد تا کاربران بتوانند حداقل و حداکثر قیمت جستجو را تعیین کنند.
 
-In many two-thumb sliders, the thumbs are not allowed to pass one another, such as when the slider sets the minimum and maximum values for a range. For example, in a price-range selector, the maximum value of the thumb that sets the lower end of the range is limited by the current value of the thumb that sets the upper end of the range. The minimum value of the upper-end thumb is also limited by the current value of the lower-end thumb.
+در بسیاری از اسلایدرهای دو دستگیره، دستگیره‌ها اجازه ندارند از یکدیگر عبور کنند؛ مانند زمانی که اسلایدر مقادیر حداقل و حداکثر یک بازه را تعیین می‌کند. برای مثال، در یک انتخابگر محدودهٔ قیمت، حداکثر مقدار دستگیره‌ای که حد پایینی بازه را تعیین می‌کند، به مقدار فعلی دستگیره‌ای که حد بالایی بازه را تعیین می‌کند محدود می‌شود. همچنین حداقل مقدار دستگیرهٔ حد بالایی به مقدار فعلی دستگیرهٔ حد پایینی محدود می‌شود.
 
-It is not a requirement that the thumbs in multi-thumb sliders be dependent on the other thumb values, but intuitive user experience is a requirement, so it is recommended to avoid this anti-pattern.
+الزامی نیست که دستگیره‌های اسلایدرهای چنددستگیره به مقادیر سایر دستگیره‌ها وابسته باشند، اما تجربهٔ کاربری شهودی یک الزام است؛ بنابراین توصیه می‌شود از این ضدالگو اجتناب کنید.
 
-### All descendants are presentational
+### همهٔ عناصر فرزند نمایشی هستند
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in a `slider`. To deal with this limitation, browsers, automatically apply role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) to all descendant elements of any `slider` element as it is a role that does not support semantic children.
+برخی از انواع اجزای رابط کاربری وجود دارند که وقتی در API دسترس‌پذیری پلتفرم نمایش داده می‌شوند، فقط می‌توانند متن داشته باشند. APIهای دسترس‌پذیری راهی برای نمایش عناصر معنایی موجود در یک `slider` ندارند. برای مقابله با این محدودیت، مرورگرها به‌طور خودکار نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را روی همهٔ عناصر فرزند هر عنصر `slider` اعمال می‌کنند، زیرا این نقش از فرزندان معنایی پشتیبانی نمی‌کند.
 
-For example, consider the following `slider` element, which contains a heading.
+برای مثال، عنصر `slider` زیر را در نظر بگیرید که شامل یک عنوان است.
 
 ```html
 <div role="slider"><h3>Temperature in Celsius</h3></div>
 ```
 
-Because descendants of `slider` are presentational, the following code is equivalent:
+از آنجا که فرزندان `slider` نمایشی هستند، کد زیر معادل است با:
 
 ```html
 <div role="slider"><h3 role="presentation">Temperature in Celsius</h3></div>
 ```
 
-From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree):
+از دیدگاه کاربر فناوری کمکی، عنوان وجود ندارد، زیرا قطعه‌کدهای قبلی با کد زیر در [درخت دسترس‌پذیری](/en-US/docs/Glossary/Accessibility_tree) معادل هستند:
 
 ```html
 <div role="slider">Temperature in Celsius</div>
 ```
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
-- [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) (required)
-  - : Set to a decimal value between `aria-valuemin` and `aria-valuemax`, indicating the current value of the slider.
+- [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) (الزامی)
+  - : روی یک مقدار اعشاری بین `aria-valuemin` و `aria-valuemax` تنظیم می‌شود و مقدار فعلی اسلایدر را نشان می‌دهد.
 - [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext)
-  - : Assistive technologies often present the value of `aria-valuenow` as a number. If this would not be accurate, use `aria-valuetext` to provide the slider with a more understandable value.
+  - : فناوری‌های کمکی اغلب مقدار `aria-valuenow` را به‌صورت عدد نمایش می‌دهند. اگر این نمایش دقیق نباشد، از `aria-valuetext` استفاده کنید تا مقدار قابل‌فهم‌تری برای اسلایدر فراهم شود.
 - [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin)
-  - : Set to a decimal value representing the minimum value, and less than `aria-valuemax`. If not present, the default value is 0.
+  - : روی یک مقدار اعشاری تنظیم می‌شود که مقدار حداقل را نشان می‌دهد و از `aria-valuemax` کمتر است. اگر وجود نداشته باشد، مقدار پیش‌فرض ۰ است.
 - [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax)
-  - : Set to a decimal value representing the maximum value, and greater than `aria-valuemin`. If not present, the default value is 100.
-- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : Defines the string value or identifies the element (or elements) that label the slider element providing an accessible name. An accessible name is required.
+  - : روی یک مقدار اعشاری تنظیم می‌شود که مقدار حداکثر را نشان می‌دهد و از `aria-valuemin` بیشتر است. اگر وجود نداشته باشد، مقدار پیش‌فرض ۱۰۰ است.
+- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
+  - : مقدار رشته‌ای را تعریف می‌کند یا عنصر (یا عناصری) را که عنصر اسلایدر را برچسب‌گذاری می‌کنند مشخص می‌کند و نام قابل‌دسترس را فراهم می‌سازد. نام قابل‌دسترس الزامی است.
 - [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation)
-  - : Indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous. With a slider, the implicit value is `horizontal` but can be set to `vertical`. As it has an implicit value, the slider orientation is never ambiguous.
+  - : نشان می‌دهد که جهت عنصر افقی، عمودی یا ناشناخته/مبهم است. برای اسلایدر، مقدار ضمنی `horizontal` است، اما می‌توان آن را روی `vertical` تنظیم کرد. از آنجا که این ویژگی مقدار ضمنی دارد، جهت اسلایدر هرگز مبهم نیست.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-| Key(s)               | Action                                                              |
+| کلید(ها) | عملکرد |
 | -------------------- | ------------------------------------------------------------------- |
-| Right and Up arrows  | Increase the selected value by one step                             |
-| Left and Down arrows | Decrease the selected value by one step                             |
-| Page Up              | (Optional) increase the value by a set amount greater than one step |
-| Page Down            | (Optional) decrease the value by a set amount greater than one step |
-| Home                 | Set the slider to the minimum value.                                |
-| End                  | Set the slider to the maximum value.                                |
+| کلیدهای جهت‌نمای راست و بالا | افزایش مقدار انتخاب‌شده به اندازهٔ یک گام |
+| کلیدهای جهت‌نمای چپ و پایین | کاهش مقدار انتخاب‌شده به اندازهٔ یک گام |
+| Page Up | (اختیاری) افزایش مقدار به اندازهٔ مقداری معین، بیشتر از یک گام |
+| Page Down | (اختیاری) کاهش مقدار به اندازهٔ مقداری معین، بیشتر از یک گام |
+| Home | تنظیم اسلایدر روی حداقل مقدار. |
+| End | تنظیم اسلایدر روی حداکثر مقدار. |
 
-For the optional <kbd>Page Up</kbd> and <kbd>Page Down</kbd> keys, the change in slider value should be by an amount larger than the step changes made by up and down arrows.
+برای کلیدهای اختیاری <kbd>Page Up</kbd> و <kbd>Page Down</kbd>، تغییر مقدار اسلایدر باید اندازه‌ای بزرگ‌تر از تغییرات گامی باشد که با کلیدهای جهت‌نمای بالا و پایین انجام می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the example below, we create a vertical thermometer with which the user can set the room temperature:
+در مثال زیر، یک دماسنج عمودی ایجاد می‌کنیم که کاربر می‌تواند دمای اتاق را با آن تنظیم کند:
 
 ```html
 <div>
@@ -148,7 +148,7 @@ In the example below, we create a vertical thermometer with which the user can s
 </div>
 ```
 
-The position of the thumb is the maximum value minus the current value times the height of one degree, minus half the height of the thumb to center it. The rest of the styles are static.
+موقعیت دستگیره برابر است با حداکثر مقدار منهای مقدار فعلی، ضرب در ارتفاع یک درجه، منهای نصف ارتفاع دستگیره برای وسط‌چین کردن آن. بقیهٔ استایل‌ها ثابت هستند.
 
 ```css
 [id="temperatureSlider"] {
@@ -168,9 +168,9 @@ The position of the thumb is the maximum value minus the current value times the
 }
 ```
 
-For this example to work, we have to write a script to handle all keyboard and pointer events, including event listeners for `pointermove`, `pointerup`, `focus`, `blur`, and `keydown`, and provide styles for the default state and when the thumb and slider receive focus. The position of the thumb, the `aria-valuenow` and `aria-valuetext` values, and the inner text of the element with the [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) "temperatureValue" need to be updated every time <kbd>ArrowLeft</kbd>, <kbd>ArrowDown</kbd>, <kbd>ArrowRight</kbd>, <kbd>ArrowUp</kbd>, <kbd>Home</kbd>, <kbd>End</kbd>, and, optionally, <kbd>PageDown</kbd> and <kbd>PageUp</kbd> keys are released and when the user drags the thumb or otherwise clicks on the temperature slider.
+برای اینکه این مثال کار کند، باید یک اسکریپت بنویسیم که همهٔ رویدادهای صفحه‌کلید و رویدادهای اشاره‌گر را مدیریت کند، از جمله شنونده‌های رویداد برای `pointermove`، `pointerup`، `focus`، `blur` و `keydown`، و استایل‌هایی برای حالت پیش‌فرض و زمانی که دستگیره و اسلایدر فوکوس دریافت می‌کنند فراهم کند. موقعیت دستگیره، مقادیر `aria-valuenow` و `aria-valuetext` و متن داخلی عنصری با [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) برابر با "temperatureValue" باید هر بار که کلیدهای <kbd>ArrowLeft</kbd>، <kbd>ArrowDown</kbd>، <kbd>ArrowRight</kbd>، <kbd>ArrowUp</kbd>، <kbd>Home</kbd>، <kbd>End</kbd> و به‌صورت اختیاری <kbd>PageDown</kbd> و <kbd>PageUp</kbd> رها می‌شوند و همچنین زمانی که کاربر دستگیره را می‌کشد یا روی اسلایدر دما کلیک می‌کند، به‌روزرسانی شوند.
 
-Using semantic HTML, this could have been written as:
+با استفاده از HTML معنایی، این مثال می‌توانست به شکل زیر نوشته شود:
 
 ```html
 <label for="temperature"> Temperature </label>
@@ -191,36 +191,36 @@ Using semantic HTML, this could have been written as:
 }
 ```
 
-By using {{HTMLElement('input')}}, we get an already-styled range-input widget with keyboard focus, focus styling, keyboard interactions, and `value` updated on user interaction for free. We still need to use JavaScript to change the `aria-valuetext` and the value of the {{HTMLElement('output')}} element.
+با استفاده از {{HTMLElement('input')}}، یک ویجت ورودی بازه‌ای از پیش استایل‌سازیشده با فوکوس صفحه‌کلید، استایل فوکوس، تعاملات صفحه‌کلید و `value` که در تعامل با کاربر به‌روزرسانی می‌شود، به‌صورت رایگان دریافت می‌کنیم. همچنان باید از جاوااسکریپت برای تغییر `aria-valuetext` و مقدار عنصر {{HTMLElement('output')}} استفاده کنیم.
 
-There are a few ways to make a range input vertical. In this example, we used [CSS transforms](/en-US/docs/Web/CSS/Reference/Properties/transform).
+روش‌های مختلفی برای عمودی کردن یک ورودی بازه‌ای وجود دارد. در این مثال، از [تبدیل‌های CSS](/en-US/docs/Web/CSS/Reference/Properties/transform) استفاده کردیم.
 
-## Best practices
+## بهترین روش‌ها
 
-If the slider is describing the loading progress of a particular region of a page, include the [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) attribute to reference the slider status, and set the [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) attribute to `true` on the region until it is finished loading.
+اگر اسلایدر پیشرفت بارگذاری یک ناحیهٔ خاص از صفحه را توصیف می‌کند، ویژگی [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) را برای ارجاع به وضعیت اسلایدر اضافه کنید و ویژگی [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) را روی آن ناحیه به `true` تنظیم کنید تا بارگذاری آن به پایان برسد.
 
-HTML's `<input type="range">` implicitly has the `role` of `slider`. Do not use `aria-valuemax` or `aria-valuemin` attributes on `<input type="range">` elements; use `min` and `max` instead. Otherwise, any global `aria-*` attributes and any other `aria-*` attributes applicable to the slider role.
+`<input type="range">` در HTML به‌صورت ضمنی دارای `role` برابر با `slider` است. از ویژگی‌های `aria-valuemax` یا `aria-valuemin` روی عناصر `<input type="range">` استفاده نکنید؛ به‌جای آن‌ها از `min` و `max` استفاده کنید. در غیر این صورت، می‌توان از هر ویژگی سراسری `aria-*` و هر ویژگی `aria-*` دیگری که برای نقش `slider` قابل اعمال است استفاده کرد.
 
-### Prefer HTML
+### اولویت با HTML
 
-It is recommended to use a native {{HTMLElement("input")}} of type `range`, [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range), rather than the `slider` role.
+توصیه می‌شود به‌جای نقش `slider` از یک {{HTMLElement("input")}} بومی از نوع `range`، یعنی [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range)، استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## بیشتر ببینید
 
-- [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range),
-- HTML {{HTMLElement('progress')}} element
-- HTML {{HTMLElement('meter')}} element
-- Other range widgets include:
+- [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range)،
+- عنصر HTML {{HTMLElement('progress')}}
+- عنصر HTML {{HTMLElement('meter')}}
+- سایر ویجت‌های بازه‌ای عبارت‌اند از:
   - [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)
   - [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role)
-  - [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) (if focusable)
+  - [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) (در صورت قابل فوکوس بودن)
   - [`progressbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role)
   - [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
-- W3C WAI-ARIA practices examples:
+- نمونه‌های W3C WAI-ARIA practices:
   - [Horizontal Multi-Thumb Slider](https://www.w3.org/WAI/ARIA/apg/patterns/slider-multithumb/examples/slider-multithumb/)
   - [Color Viewer Slider](https://www.w3.org/WAI/ARIA/apg/patterns/slider/examples/slider-color-viewer/)
   - [Rating Slider](https://www.w3.org/WAI/ARIA/apg/patterns/slider/examples/slider-rating/)
