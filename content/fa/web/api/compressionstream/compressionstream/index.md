@@ -1,11 +1,5 @@
 ---
 title: "CompressionStream: CompressionStream() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CompressionStream/CompressionStream"
-status: "needs-translation"
----
-
----
-title: "CompressionStream: CompressionStream() constructor"
 short-title: CompressionStream()
 slug: Web/API/CompressionStream/CompressionStream
 page-type: web-api-constructor
@@ -14,38 +8,38 @@ browser-compat: api.CompressionStream.CompressionStream
 
 {{APIRef("Compression Streams API")}}{{AvailableInWorkers}}
 
-The **`CompressionStream()`** constructor creates a new {{domxref("CompressionStream")}} object which compresses a stream of data.
+سازندهٔ **`CompressionStream()`** یک شیء جدید {{domxref("CompressionStream")}} می‌سازد که یک جریان داده را فشرده می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new CompressionStream(format)
 ```
 
-### Parameters
+### پارامترها
 
 - `format`
-  - : One of the following allowed compression formats:
-    - `"brotli"`
-      - : Compresses the stream using the [Brotli](https://www.rfc-editor.org/info/rfc7932/) algorithm.
+  - : یکی از قالب‌های فشرده‌سازی مجاز زیر:
     - `"gzip"`
-      - : Compresses the stream using the [GZIP](https://www.rfc-editor.org/info/rfc1952/) format.
+      - : جریان را با استفاده از قالب [GZIP](https://www.rfc-editor.org/info/rfc1952/) فشرده می‌کند.
+    - `"brotli"`
+      - : جریان را با استفاده از الگوریتم [Brotli](https://www.rfc-editor.org/info/rfc7932/) فشرده می‌کند.
     - `"deflate"`
-      - : Compresses the stream using the [DEFLATE](https://www.rfc-editor.org/info/rfc1950/) algorithm in ZLIB Compressed Data Format.
-        The ZLIB format includes a header with information about the compression method and the uncompressed size of the data, and a trailing checksum for verifying the integrity of the data
+      - : جریان را با استفاده از الگوریتم [DEFLATE](https://www.rfc-editor.org/info/rfc1950/) در قالب دادهٔ فشردهٔ ZLIB فشرده می‌کند.
+        قالب ZLIB شامل یک سربرگ با اطلاعاتی دربارهٔ روش فشرده‌سازی و اندازهٔ بدون فشرده‌سازی داده‌ها، و یک جمع‌بندی انتهایی (checksum) برای تأیید صحت داده‌ها است.
     - `"deflate-raw"`
-      - : Compresses the stream using the [DEFLATE](https://www.rfc-editor.org/info/rfc1951/) algorithm without a header and trailing checksum.
+      - : جریان را با استفاده از الگوریتم [DEFLATE](https://www.rfc-editor.org/info/rfc1951/) بدون سربرگ و جمع‌بندی انتهایی فشرده می‌کند.
     - `"zstd"`
-      - : Compresses the stream using the [ZSTD](https://datatracker.ietf.org/doc/html/rfc8478) algorithm.
+      - : جریان را با استفاده از الگوریتم [ZSTD](https://datatracker.ietf.org/doc/html/rfc8478) فشرده می‌کند.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the format passed to the constructor is not supported.
+  - : اگر قالبی که به سازنده داده شده است پشتیبانی نشود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this example a stream is compressed using gzip compression.
+در این مثال، یک جریان با استفاده از فشرده‌سازی gzip فشرده می‌شود.
 
 ```js
 const compressedReadableStream = inputReadableStream.pipeThrough(
@@ -53,10 +47,10 @@ const compressedReadableStream = inputReadableStream.pipeThrough(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
