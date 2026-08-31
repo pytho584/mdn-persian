@@ -1,7 +1,7 @@
 ---
 title: "CanMakePaymentEvent: CanMakePaymentEvent() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CanMakePaymentEvent/CanMakePaymentEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,22 +16,22 @@ browser-compat: api.CanMakePaymentEvent.CanMakePaymentEvent
 
 {{APIRef("Web-Based Payment Handler API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`CanMakePaymentEvent()`** constructor creates a new {{domxref("CanMakePaymentEvent")}} object instance.
+**`CanMakePaymentEvent()`** سازنده، یک نمونه جدید از شی {{domxref("CanMakePaymentEvent")}} ایجاد می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new CanMakePaymentEvent(type)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the type of event. In the case of `CanMakePaymentEvent` this is always `canmakepayment`.
+  - : یک رشته است که نوع رویداد را نشان می‌دهد. در مورد `CanMakePaymentEvent` این مقدار همیشه `canmakepayment` است.
 
-## Examples
+## مثال‌ها
 
-A developer would not use this constructor manually. A new `CanMakePaymentEvent` object is constructed when a handler is invoked as a result of the {{domxref("ServiceWorkerGlobalScope.canmakepayment_event", "canmakepayment")}} event firing.
+یک توسعه‌دهنده از این سازنده به صورت دستی استفاده نمی‌کند. یک شیء جدید `CanMakePaymentEvent` زمانی ساخته می‌شود که یک هندلر در نتیجهٔ رویداد {{domxref("ServiceWorkerGlobalScope.canmakepayment_event", "canmakepayment")}} فراخوانی شود.
 
 ```js
 self.addEventListener("canmakepayment", (e) => {
@@ -49,19 +49,19 @@ self.addEventListener("canmakepayment", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Web-based Payment Handler API", "", "", "nocode")}}
-- [Web-based payment apps overview](https://web.dev/articles/web-based-payment-apps-overview)
-- [Setting up a payment method](https://web.dev/articles/setting-up-a-payment-method)
-- [Life of a payment transaction](https://web.dev/articles/life-of-a-payment-transaction)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- [Payment processing concepts](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+- [بررسی اجمالی برنامه‌های پرداخت مبتنی بر وب](https://web.dev/articles/web-based-payment-apps-overview)
+- [راه‌اندازی یک روش پرداخت](https://web.dev/articles/setting-up-a-payment-method)
+- [چرخه حیات یک تراکنش پرداخت](https://web.dev/articles/life-of-a-payment-transaction)
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [مفاهیم پردازش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts)
