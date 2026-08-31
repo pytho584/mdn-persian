@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: shadowBlur property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowBlur"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: shadowBlur property"
 short-title: shadowBlur
 slug: Web/API/CanvasRenderingContext2D/shadowBlur
 page-type: web-api-instance-property
@@ -14,29 +8,28 @@ browser-compat: api.CanvasRenderingContext2D.shadowBlur
 
 {{APIRef("Canvas API")}}
 
-The
+ویژگی
 **`CanvasRenderingContext2D.shadowBlur`**
-property of the Canvas 2D API specifies the amount of blur applied to shadows. The
-default is `0` (no blur).
+در API Canvas 2D میزان محو شدن سایه‌ها را مشخص می‌کند. مقدار پیش‌فرض آن
+`0` (بدون محو شدگی) است.
 
 > [!NOTE]
-> Shadows are only drawn if the
-> {{domxref("CanvasRenderingContext2D.shadowColor", "shadowColor")}} property is set to
-> a non-transparent value. One of the `shadowBlur`,
-> {{domxref("CanvasRenderingContext2D.shadowOffsetX", "shadowOffsetX")}}, or
-> {{domxref("CanvasRenderingContext2D.shadowOffsetY", "shadowOffsetY")}} properties must
-> be non-zero, as well.
+> سایه‌ها تنها زمانی رسم می‌شوند که ویژگی
+> {{domxref("CanvasRenderingContext2D.shadowColor", "shadowColor")}} روی یک مقدار غیرشفاف تنظیم شده باشد.
+> همچنین یکی از ویژگی‌های `shadowBlur`،
+> {{domxref("CanvasRenderingContext2D.shadowOffsetX", "shadowOffsetX")}} یا
+> {{domxref("CanvasRenderingContext2D.shadowOffsetY", "shadowOffsetY")}} باید غیر از صفر باشد.
 
-## Value
+## مقدار
 
-A non-negative float specifying the level of shadow blur, where `0` represents no blur and larger numbers represent increasingly more blur. This value doesn't correspond to a number of pixels, and is not affected by the current transformation matrix. The default value is `0`. Negative, {{jsxref("Infinity")}}, and {{jsxref("NaN")}} values are ignored.
+یک عدد اعشاری نامنفی که میزان محو شدگی سایه را مشخص می‌کند؛ `0` به معنای بدون محو شدگی و اعداد بزرگ‌تر به معنای محو شدگی بیشتر است. این مقدار با تعداد پیکسل‌ها متناظر نیست و تحت تأثیر ماتریس تبدیل فعلی قرار نمی‌گیرد. مقدار پیش‌فرض `0` است. مقادیر منفی، {{jsxref("Infinity")}} و {{jsxref("NaN")}} نادیده گرفته می‌شوند.
 
-## Examples
+## نمونه‌ها
 
-### Adding a shadow to a shape
+### افزودن سایه به یک شکل
 
-This example adds a blurred shadow to a rectangle. The `shadowColor`
-property sets its color, and `shadowBlur` sets its level of blurriness.
+این مثال یک سایه‌ی محو شده به یک مستطیل اضافه می‌کند. ویژگی `shadowColor`
+رنگ آن را تنظیم می‌کند و `shadowBlur` میزان محو شدگی آن را مشخص می‌کند.
 
 #### HTML
 
@@ -44,37 +37,37 @@ property sets its color, and `shadowBlur` sets its level of blurriness.
 <canvas id="canvas"></canvas>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// Shadow
+// سایه
 ctx.shadowColor = "red";
 ctx.shadowBlur = 15;
 
-// Rectangle
+// مستطیل
 ctx.fillStyle = "blue";
 ctx.fillRect(20, 20, 150, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Adding_a_shadow_to_a_shape', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-### WebKit/Blink-specific notes
+### نکات ویژه WebKit/Blink
 
-In WebKit- and Blink-based browsers, the non-standard and deprecated method
-`ctx.setShadow()` is implemented besides this property.
+در مرورگرهای مبتنی بر WebKit و Blink، متد غیراستاندارد و منسوخ‌شده
+`ctx.setShadow()` علاوه بر این ویژگی پیاده‌سازی شده است.
 
 ```js
 setShadow(width, height, blur, color, alpha);
@@ -83,7 +76,7 @@ setShadow(width, height, blur, r, g, b, a);
 setShadow(width, height, blur, c, m, y, k, a);
 ```
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این ویژگی: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.shadowColor")}}
