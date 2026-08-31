@@ -1,7 +1,7 @@
 ---
 title: "ARIA: menuitemradio role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,45 +15,45 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-A `menuitemradio` is checkable menuitem in a set of elements with the same role, only one of which can be checked at a time.
+یک `menuitemradio` یک آیتم منوی قابل بررسی در مجموعه‌ای از عناصر با نقش یکسان است که تنها یکی از آن‌ها در یک زمان می‌تواند بررسی شود.
 
-## Description
+## توضیحات
 
-The items in menu and menubars are menu items. There are three types of menu items: [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role), [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role), and `menuitemradio`. To limit the number of checked menu items to one within a group, use the `menuitemradio` role on all the elements in the group.
+آیتم‌های موجود در منوها و نوارهای منو، آیتم‌های منو هستند. سه نوع آیتم منو وجود دارد: [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role)، [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role) و `menuitemradio`. برای محدود کردن تعداد آیتم‌های منوی بررسی‌شده به یک آیتم در یک گروه، از نقش `menuitemradio` روی همه عناصر گروه استفاده کنید.
 
-A `menuitemradio` is checkable menuitem in a set of elements with the same role, of which only can be checked at a time.
+یک `menuitemradio` یک آیتم منوی قابل بررسی در مجموعه‌ای از عناصر با نقش یکسان است که تنها یکی از آن‌ها در یک زمان می‌تواند بررسی شود.
 
-The three menu item elements can only be contained in, or owned by, an element with role [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role) or [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role), optionally nested within a grouping element with role of [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role). Being nested or otherwise owned (see [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns)) in a `menu` or `menubar` identifies the menu items as being related widgets.
+سه عنصر آیتم منو فقط می‌توانند درون یک عنصر با نقش [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role) یا [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role) قرار گیرند یا متعلق به آن باشند، و به صورت اختیاری درون یک عنصر گروه‌بندی با نقش [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) تودرتو شده باشند. تودرتو بودن یا به صورت دیگر متعلق بودن (به [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) مراجعه کنید) به یک `menu` یا `menubar`، آیتم‌های منو را به عنوان ویجت‌های مرتبط شناسایی می‌کند.
 
-When all items in a submenu are members of the same radio group, the `group` is defined by the menu element; the `group` element is not necessary.
+وقتی همه آیتم‌های یک زیرمنو اعضای یک گروه رادیویی یکسان باشند، `group` توسط عنصر منو تعریف می‌شود و عنصر `group` ضروری نیست.
 
-Menu items containing the role of `menuitemradio` must include the [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) attribute to expose the radio button's state to assistive technology, unless using [`<input type="radio">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox), in which case the [`checked`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox#checked) attribute should be used.
+آیتم‌های منوی حاوی نقش `menuitemradio` باید شامل ویژگی [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) باشند تا وضعیت دکمه رادیویی را برای فناوری کمکی آشکار کنند، مگر اینکه از [`<input type="radio">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox) استفاده شود، که در این صورت باید از ویژگی [`checked`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox#checked) استفاده شود.
 
-Similar to the `checked` attribute of {{HTMLElement('input')}}s of type `radio`, the `aria-checked` attribute of a `menuitemradio` indicates whether the menu item is checked (`true`), unchecked (`false`). There is no `mixed` value like there is for `menuitemcheckbox`.
+مشابه ویژگی `checked` در {{HTMLElement('input')}}های نوع `radio`، ویژگی `aria-checked` یک `menuitemradio` نشان می‌دهد که آیا آیتم منو بررسی شده است (`true`) یا بررسی نشده است (`false`). برخلاف `menuitemcheckbox`، مقدار `mixed` وجود ندارد.
 
-Only one `menuitemradio` in a group can be checked at the same time. When one item in the group is checked, the `aria-checked` attribute gets set to `true`, while the previously checked `menuitemradio` element in the same group, if there was one, becomes unchecked, by having the `aria-checked` attribute value switched to `false`.
+فقط یک `menuitemradio` در یک گروه می‌تواند همزمان بررسی شود. وقتی یک آیتم در گروه بررسی می‌شود، ویژگی `aria-checked` به `true` تنظیم می‌شود، در حالی که عنصر `menuitemradio` قبلاً بررسی‌شده در همان گروه، اگر وجود داشته باشد، با تغییر مقدار ویژگی `aria-checked` به `false`، بررسی‌نشده می‌شود.
 
-If your want more than one item in a group to be checked, or if you want to enable checking and unchecking an item, consider using `menuitemcheckbox`.
+اگر می‌خواهید بیش از یک آیتم در یک گروه بررسی شود، یا می‌خواهید امکان بررسی و لغو بررسی یک آیتم را فعال کنید، از `menuitemcheckbox` استفاده کنید.
 
-If a `menu` or `menubar` contains more than one group of `menuitemradio` elements, or if the `menu` contains a group of `menuitemradio` elements as well as other, unrelated `menuitem` elements and/or `menuitemcheckbox` elements, contain each set of related `menuitemradio` elements in a `group` element or delimit the group the `menuitemradio` elements from the other menu items with a `separator` element (or an HTML element with an equivalent role such as a {{HTMLElement('fieldset')}} grouping or a thematic break {{HTMLElement('hr')}} separator.
+اگر یک `menu` یا `menubar` شامل بیش از یک گروه از عناصر `menuitemradio` باشد، یا اگر `menu` شامل یک گروه از عناصر `menuitemradio` به همراه سایر عناصر `menuitem` نامرتبط و/یا عناصر `menuitemcheckbox` باشد، هر مجموعه از عناصر `menuitemradio` مرتبط را در یک عنصر `group` قرار دهید یا گروه عناصر `menuitemradio` را از سایر آیتم‌های منو با یک عنصر `separator` (یا یک عنصر HTML با نقش معادل مانند یک {{HTMLElement('fieldset')}} گروه‌بندی یا یک جداکننده موضوعی {{HTMLElement('hr')}}) جدا کنید.
 
-An accessible name is required. Ideally, the accessible name should come from an associated {{htmlelement('label')}} element if using `<input type="radio">` or visible, descendant content. Realize if the label or descendant content is not sufficient and, preferably, [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) is used referencing non-descendant content or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) is used, these two ARIA properties will hide other descendant content from assistive technologies.
+یک نام قابل دسترسی الزامی است. در حالت ایده‌آل، نام قابل دسترسی باید از یک عنصر {{htmlelement('label')}} مرتبط (در صورت استفاده از `<input type="radio">`) یا محتوای قابل مشاهده و فرزند به دست آید. توجه داشته باشید که اگر برچسب یا محتوای فرزند کافی نباشد و ترجیحاً از [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) با ارجاع به محتوای غیرفرزند یا [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) استفاده شود، این دو ویژگی ARIA سایر محتوای فرزند را از فناوری‌های کمکی پنهان خواهند کرد.
 
-If all elements in the set are not present in the DOM include the [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) and [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) properties. When specifying `aria-setsize` and `aria-posinset` on a `menuitemradio`, set the value with respect to the total number of items in the menu, excluding any separators.
+اگر همه عناصر موجود در مجموعه در DOM حضور ندارند، ویژگی‌های [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) و [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) را شامل کنید. هنگام مشخص کردن `aria-setsize` و `aria-posinset` روی یک `menuitemradio`، مقدار را با توجه به تعداد کل آیتم‌های موجود در منو، به استثنای هر جداکننده، تنظیم کنید.
 
-The `menuitemradio` element can have phrasing content, but can not have interactive content as descendants and no descendants with a `tabindex` attribute specified.
+عنصر `menuitemradio` می‌تواند محتوای عبارتی داشته باشد، اما نمی‌تواند محتوای تعاملی به عنوان فرزند داشته باشد و هیچ فرزندی با ویژگی `tabindex` مشخص شده نداشته باشد.
 
-### All descendants are presentational
+### همه فرزندان ارائه‌ای هستند
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in a `menuitemradio`. To deal with this limitation, browsers, automatically apply role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) to all descendant elements of any `menuitemradio` element as it is a role that does not support semantic children.
+برخی از انواع اجزای رابط کاربری وجود دارند که وقتی در یک API دسترسی‌پذیری پلتفرم نمایش داده می‌شوند، فقط می‌توانند حاوی متن باشند. APIهای دسترسی‌پذیری راهی برای نمایش عناصر معنایی موجود در یک `menuitemradio` ندارند. برای مقابله با این محدودیت، مرورگرها به طور خودکار نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را به همه عناصر فرزند هر عنصر `menuitemradio` اعمال می‌کنند، زیرا این نقشی است که از فرزندان معنایی پشتیبانی نمی‌کند.
 
-For example, consider the following `menuitemradio` element, which contains a heading.
+به عنوان مثال، عنصر `menuitemradio` زیر را در نظر بگیرید که شامل یک عنوان است.
 
 ```html
 <div role="menuitemradio"><h6>Name of my radio button</h6></div>
 ```
 
-Because descendants of `menuitemradio` are presentational, the following code is equivalent:
+از آنجایی که فرزندان `menuitemradio` ارائه‌ای هستند، کد زیر معادل است:
 
 ```html
 <div role="menuitemradio">
@@ -61,68 +61,68 @@ Because descendants of `menuitemradio` are presentational, the following code is
 </div>
 ```
 
-From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree):
+از دیدگاه کاربر فناوری کمکی، عنوان وجود ندارد، زیرا قطعه کدهای قبلی با موارد زیر در [درخت دسترسی‌پذیری](/en-US/docs/Glossary/Accessibility_tree) معادل هستند:
 
 ```html
 <div role="menuitemradio">Name of my radio button</div>
 ```
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های WAI-ARIA مرتبط
 
-- [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role) role
-  - : Widget that offers a list of common actions or functions the user can invoke.
-- [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role) role
-  - : Similar to `menu` for a consistent set of frequently used commands remaining visible and usually presented horizontally.
-- [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) role
-  - : Container for a group of `menuitem` elements, including `menuitemradio` elements within a `menu` or `menubar`.
-- [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) (Required)
-  - : Set to `true` or `false`, it indicates the current "checked" state of the menuitemradio
+- نقش [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role)
+  - : ویجتی که فهرستی از اقدامات یا عملکردهای رایجی را که کاربر می‌تواند فراخوانی کند، ارائه می‌دهد.
+- نقش [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role)
+  - : مشابه `menu` برای مجموعه‌ای ثابت از دستورات پرکاربرد که قابل مشاهده باقی می‌مانند و معمولاً به صورت افقی نمایش داده می‌شوند.
+- نقش [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role)
+  - : ظرفی برای گروهی از عناصر `menuitem`، از جمله عناصر `menuitemradio` درون یک `menu` یا `menubar`.
+- [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) (الزامی)
+  - : تنظیم شده به `true` یا `false`، وضعیت فعلی "بررسی شده" `menuitemradio` را نشان می‌دهد.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-When a `menu` opens, or when a `menubar` receives focus, keyboard focus is placed on the first item. All items in both are focusable, including all `menuitemradio` elements.
+وقتی یک `menu` باز می‌شود، یا وقتی یک `menubar` فوکوس دریافت می‌کند، فوکوس صفحه‌کلید روی اولین آیتم قرار می‌گیرد. همه آیتم‌ها در هر دو قابل فوکوس هستند، از جمله همه عناصر `menuitemradio`.
 
-If the `menuitemradio` is in a submenu in a `menubar` or a menu opened with a menu button, the following keyboard interactions must be programmed in. :
+اگر `menuitemradio` در یک زیرمنو در یک `menubar` یا یک منوی باز شده با یک دکمه منو باشد، تعاملات صفحه‌کلید زیر باید برنامه‌ریزی شوند:
 
 - <kbd>Enter</kbd>
-  - : If not checked, checks the focused `menuitemradio` and unchecks any other checked `menuitemradio` element in the same group. Also, closes the menu.
+  - : اگر بررسی نشده باشد، `menuitemradio` متمرکز را بررسی می‌کند و هر عنصر `menuitemradio` دیگری را که در همان گروه بررسی شده است، لغو بررسی می‌کند. همچنین منو را می‌بندد.
 - <kbd>Space</kbd>
-  - : If not checked, checks the focused `menuitemradio` and unchecks any other checked `menuitemradio` element in the same group without closing the menu.
+  - : اگر بررسی نشده باشد، `menuitemradio` متمرکز را بررسی می‌کند و هر عنصر `menuitemradio` دیگری را که در همان گروه بررسی شده است، بدون بستن منو لغو بررسی می‌کند.
 - <kbd>Escape</kbd>
-  - : Closes menu. In menubar, moves focus to parent menubar item.
+  - : منو را می‌بندد. در نوار منو، فوکوس را به آیتم نوار منوی والد منتقل می‌کند.
 - <kbd>Right Arrow</kbd>
-  - : Closes submenu. In menubar, moves focus to next item in the menubar, opening any submenu if there is one.
+  - : زیرمنو را می‌بندد. در نوار منو، فوکوس را به آیتم بعدی در نوار منو منتقل می‌کند و در صورت وجود زیرمنو، آن را باز می‌کند.
 - <kbd>Left Arrow</kbd>
-  - : Closes menu. In menubar, moves focus to previous item in the menubar, opening any submenu if there is one.
+  - : منو را می‌بندد. در نوار منو، فوکوس را به آیتم قبلی در نوار منو منتقل می‌کند و در صورت وجود زیرمنو، آن را باز می‌کند.
 - <kbd>Down Arrow</kbd>
-  - : Moves focus to the next item in the menu. If focus is on the last item, moves focus to the first item.
+  - : فوکوس را به آیتم بعدی در منو منتقل می‌کند. اگر فوکوس روی آخرین آیتم باشد، فوکوس را به اولین آیتم منتقل می‌کند.
 - <kbd>Up Arrow</kbd>
-  - : Moves focus to previous item in the menu. If focus is on the first item, moves focus to the last item.
+  - : فوکوس را به آیتم قبلی در منو منتقل می‌کند. اگر فوکوس روی اولین آیتم باشد، فوکوس را به آخرین آیتم منتقل می‌کند.
 - <kbd>Home</kbd>
-  - : Moves focus to the first item in the menu.
+  - : فوکوس را به اولین آیتم در منو منتقل می‌کند.
 - <kbd>End</kbd>
-  - : Moves focus to the last item in the menu.
+  - : فوکوس را به آخرین آیتم در منو منتقل می‌کند.
 - <kbd>Character</kbd>
-  - : Moves focus to the next item having a name that starts with the typed character. If none of the items have a name starting with the typed character, focus does not move.
+  - : فوکوس را به آیتم بعدی که نامی با حرف تایپ شده شروع می‌شود، منتقل می‌کند. اگر هیچ یک از آیتم‌ها نامی با حرف تایپ شده شروع نشود، فوکوس حرکت نمی‌کند.
 
-### Required JavaScript
+### جاوااسکریپت مورد نیاز
 
-#### Required event handlers
+#### کنترل‌کننده‌های رویداد مورد نیاز
 
 - `onclick`
-  - : Handle mouse clicks on both the radio button and the associated label that will change the state of the radio button by changing the value of the `aria-checked` attribute and the appearance of the radio button so it appears checked or unchecked to the sighted user
+  - : کلیک‌های ماوس را روی دکمه رادیویی و برچسب مرتبط مدیریت می‌کند که وضعیت دکمه رادیویی را با تغییر مقدار ویژگی `aria-checked` و ظاهر دکمه رادیویی تغییر می‌دهد تا برای کاربر بینا به صورت بررسی‌شده یا بررسی‌نشده به نظر برسد.
 - `onKeyDown`
-  - : Handle the case where the user presses the <kbd>Space</kbd> key to change the state of the radio button by changing the value of the `aria-checked` attribute and the appearance of the radio button so it appears checked or unchecked to the sighted user. Also handles all keys listed in the keyboard navigation section above.
+  - : موردی را مدیریت می‌کند که کاربر کلید <kbd>Space</kbd> را برای تغییر وضعیت دکمه رادیویی با تغییر مقدار ویژگی `aria-checked` و ظاهر دکمه رادیویی فشار می‌دهد تا برای کاربر بینا به صورت بررسی‌شده یا بررسی‌نشده به نظر برسد. همچنین تمام کلیدهای ذکر شده در بخش پیمایش صفحه‌کلید بالا را مدیریت می‌کند.
 
-## Examples
+## مثال‌ها
 
 ```html
 <li role="menuitemradio" tabindex="-1" aria-checked="false">Purple</li>
 ```
 
-The [`tabindex="-1"`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) makes the `menuitemradio` focusable but not part of the page tab sequence. Had we included `aria-checked="true"` it would have indicated that the `menuitemradio` was checked, and we would have visually styled the selected state to look checked using the attribute selector `[role='menuitemradio'][aria-checked='true']`. Instead, the presence of `aria-checked="false"` indicates to assistive technologies that the `menuitemradio` is checkable but not currently checked. The accessible name "purple" comes from the contents.
+[`tabindex="-1"`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) باعث می‌شود `menuitemradio` قابل فوکوس باشد اما بخشی از ترتیب زبانه صفحه نباشد. اگر `aria-checked="true"` را گنجانده بودیم، نشان می‌داد که `menuitemradio` بررسی شده است، و ما حالت انتخاب‌شده را به صورت بصری با استفاده از انتخابگر ویژگی `[role='menuitemradio'][aria-checked='true']` به صورت بررسی‌شده طراحی می‌کردیم. در عوض، وجود `aria-checked="false"` به فناوری‌های کمکی نشان می‌دهد که `menuitemradio` قابل بررسی است اما در حال حاضر بررسی نشده است. نام قابل دسترسی "purple" از محتوا می‌آید.
 
-The visual appearance of the selected state is a checked radio button which we can create using [generated content](/en-US/docs/Web/CSS/Guides/Generated_content), making it visible and the same color as the content by synchronizing with the `aria-checked` value using CSS [attribute selectors](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) and changing the {{cssxref("background-color")}}.
+ظاهر بصری حالت انتخاب‌شده یک دکمه رادیویی بررسی‌شده است که می‌توانیم با استفاده از [محتوای تولیدشده](/en-US/docs/Web/CSS/Guides/Generated_content) آن را ایجاد کنیم، آن را قابل مشاهده کرده و با همرنگ کردن محتوا با مقدار `aria-checked` با استفاده از [انتخابگرهای ویژگی](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) CSS و تغییر {{cssxref("background-color")}} همگام‌سازی کنیم.
 
 ```css
 [role="menuitemradio"]::before {
@@ -142,17 +142,17 @@ The visual appearance of the selected state is a checked radio button which we c
 }
 ```
 
-Don't use the {{cssxref("background")}} shorthand property, as that will override the {{cssxref("background-clip")}} property we used to create the radio button effect.
+از ویژگی کوتاه‌نویس {{cssxref("background")}} استفاده نکنید، زیرا ویژگی {{cssxref("background-clip")}} را که برای ایجاد اثر دکمه رادیویی استفاده کرده‌ایم، لغو می‌کند.
 
-### Prefer HTML
+### HTML را ترجیح دهید
 
-The first rule of ARIA is: if a native HTML element or attribute has the semantics and behavior you require, use it instead of re-purposing an element and adding an ARIA role, state or property to make it accessible. As such, it is recommended to use the native [HTML radio button](/en-US/docs/Web/HTML/Reference/Elements/input/radio) form control instead of recreating a radio button's functionality with JavaScript and ARIA.
+اولین قانون ARIA این است: اگر یک عنصر یا ویژگی HTML بومی دارای معناشناسی و رفتاری است که نیاز دارید، از آن استفاده کنید به جای اینکه عنصری را تغییر کاربری داده و نقش، حالت یا ویژگی ARIA به آن اضافه کنید تا قابل دسترسی شود. بنابراین، توصیه می‌شود به جای بازسازی عملکرد یک دکمه رادیویی با جاوااسکریپت و ARIA، از کنترل فرم بومی [دکمه رادیویی HTML](/en-US/docs/Web/HTML/Reference/Elements/input/radio) استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [`radio` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role)
+- نقش [`radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role)
 - [`<input type="radio">`](/en-US/docs/Web/HTML/Reference/Elements/input/radio)
