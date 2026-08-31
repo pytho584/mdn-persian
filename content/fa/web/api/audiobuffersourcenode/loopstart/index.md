@@ -1,7 +1,7 @@
 ---
 title: "AudioBufferSourceNode: loopStart property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopStart"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,28 +14,26 @@ browser-compat: api.AudioBufferSourceNode.loopStart
 
 {{ APIRef("Web Audio API") }}
 
-The **`loopStart`** property of the {{domxref("AudioBufferSourceNode")}} interface is a floating-point value indicating, in seconds, where in the {{domxref("AudioBuffer")}} the restart of the play must happen.
+ویژگی **`loopStart`** از رابط {{domxref("AudioBufferSourceNode")}} یک مقدار ممیز شناور است که بر حسب ثانیه تعیین می‌کند که در کجای {{domxref("AudioBuffer")}} باید پخش دوباره آغاز شود.
 
-The `loopStart` property's default value is `0`.
+مقدار پیش‌فرض ویژگی `loopStart` برابر با `0` است.
 
-## Value
+## مقدار
 
-A floating-point number indicating the offset, in seconds, into the audio buffer at
-which each loop should begin during playback. This value is only used when the
-{{domxref("AudioBufferSourceNode.loop", "loop")}} parameter is `true`.
+یک عدد ممیز شناور که انحراف (offset) را بر حسب ثانیه درون بافر صوتی نشان می‌دهد؛ جایی که هر تکرار باید هنگام پخش از آنجا شروع شود. این مقدار تنها زمانی استفاده می‌شود که پارامتر {{domxref("AudioBufferSourceNode.loop", "loop")}} برابر با `true` باشد.
 
-## Examples
+## مثال‌ها
 
-### Setting `loopStart`
+### تنظیم `loopStart`
 
-In this example, when the user presses "Play", we load an audio track, decode it, and put it into an {{domxref("AudioBufferSourceNode")}}.
+در این مثال، وقتی کاربر دکمهٔ «Play» را فشار می‌دهد، یک قطعهٔ صوتی بارگذاری می‌کنیم، آن را کدگشایی (decode) می‌کنیم و در یک {{domxref("AudioBufferSourceNode")}} قرار می‌دهیم.
 
-The example then sets the `loop` property to `true`, so the track loops, and plays the track.
+سپس مثال، ویژگی `loop` را روی `true` تنظیم می‌کند تا قطعه به‌صورت حلقه درآید و آن را پخش کند.
 
-The user can set the `loopStart` and `loopEnd` properties using [range controls](/en-US/docs/Web/HTML/Reference/Elements/input/range).
+کاربر می‌تواند ویژگی‌های `loopStart` و `loopEnd` را با استفاده از [کنترل‌های بازه](/en-US/docs/Web/HTML/Reference/Elements/input/range) تنظیم کند.
 
 > [!NOTE]
-> You can [run the full example live](https://mdn.github.io/webaudio-examples/audio-buffer-source-node/loop/) (or [view the source](https://github.com/mdn/webaudio-examples/tree/main/audio-buffer-source-node/loop).)
+> می‌توانید [نمونهٔ کامل را به‌صورت زنده اجرا کنید](https://mdn.github.io/webaudio-examples/audio-buffer-source-node/loop/) (یا [کد منبع را مشاهده کنید](https://github.com/mdn/webaudio-examples/tree/main/audio-buffer-source-node/loop).)
 
 ```js
 let audioCtx;
@@ -102,15 +100,15 @@ loopendControl.addEventListener("input", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
