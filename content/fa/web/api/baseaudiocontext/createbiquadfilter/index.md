@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createBiquadFilter() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createBiquadFilter"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,33 +14,28 @@ browser-compat: api.BaseAudioContext.createBiquadFilter
 
 {{ APIRef("Web Audio API") }}
 
-The `createBiquadFilter()` method of the {{ domxref("BaseAudioContext") }}
-interface creates a {{ domxref("BiquadFilterNode") }}, which represents a second order
-filter configurable as several different common filter types.
+روش `createBiquadFilter()` از رابط {{ domxref("BaseAudioContext") }} یک {{ domxref("BiquadFilterNode") }} ایجاد می‌کند که یک فیلتر مرتبه دوم را نشان می‌دهد که به‌عنوان چندین نوع فیلتر رایج مختلف قابل پیکربندی است.
 
 > [!NOTE]
-> The {{domxref("BiquadFilterNode.BiquadFilterNode", "BiquadFilterNode()")}} constructor is the
-> recommended way to create a {{domxref("BiquadFilterNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> سازنده {{domxref("BiquadFilterNode.BiquadFilterNode", "BiquadFilterNode()")}} روش توصیه‌شده برای ایجاد یک {{domxref("BiquadFilterNode")}} است؛ برای اطلاعات بیشتر به [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createBiquadFilter()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("BiquadFilterNode")}}.
+یک {{domxref("BiquadFilterNode")}}.
 
-## Examples
+## مثال‌ها
 
-The following example shows basic usage of an AudioContext to create a Biquad filter node.
-For more complete applied examples/information, check out our [Voice-change-O-matic](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) demo (see [app.js lines 108–193](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js#L108-L193) for relevant code).
+مثال زیر کاربرد پایه یک AudioContext را برای ایجاد یک گره فیلتر Biquad نشان می‌دهد. برای مثال‌ها/اطلاعات کاربردی کامل‌تر، دموی [Voice-change-O-matic](https://github.com/mdn/webaudio-examples/tree/main/voice-change-o-matic) ما را ببینید (برای کد مرتبط به [خطوط ۱۰۸ تا ۱۹۳ app.js](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js#L108-L193) مراجعه کنید).
 
 ```js
 const audioCtx = new AudioContext();
@@ -69,14 +64,14 @@ biquadFilter.frequency.setValueAtTime(1000, audioCtx.currentTime);
 biquadFilter.gain.setValueAtTime(25, audioCtx.currentTime);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
