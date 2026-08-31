@@ -1,11 +1,5 @@
 ---
 title: "CreateMonitor: downloadprogress event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CreateMonitor/downloadprogress_event"
-status: "needs-translation"
----
-
----
-title: "CreateMonitor: downloadprogress event"
 short-title: downloadprogress
 slug: Web/API/CreateMonitor/downloadprogress_event
 page-type: web-api-event
@@ -16,11 +10,11 @@ browser-compat: api.CreateMonitor.downloadprogress_event
 
 {{APIRef("Summarizer API")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`downloadprogress`** event of the {{domxref("CreateMonitor")}} interface is fired when progress is made on the AI model download.
+رویداد **`downloadprogress`** از رابط {{domxref("CreateMonitor")}} زمانی رخ می‌دهد که پیشرفتی در دانلود مدل هوش مصنوعی حاصل شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم یک ویژگی مدیریت‌کننده رویداد، به صورت زیر عمل کنید:
 
 ```js-nolint
 addEventListener("downloadprogress", (event) => { })
@@ -28,25 +22,25 @@ addEventListener("downloadprogress", (event) => { })
 ondownloadprogress = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("ProgressEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("ProgressEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("ProgressEvent")}}
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("CreateMonitor")}} page for an example.
+برای مشاهده مثال، به صفحه اصلی {{domxref("CreateMonitor")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Summarizer API](/en-US/docs/Web/API/Summarizer_API/Using)
-- [Web AI demos](https://chrome.dev/web-ai-demos/) on chrome.dev.
+- [استفاده از Summarizer API](/en-US/docs/Web/API/Summarizer_API/Using)
+- [دموهای وب AI](https://chrome.dev/web-ai-demos/) در chrome.dev.
