@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: getLineDash() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getLineDash"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: getLineDash() method"
 short-title: getLineDash()
 slug: Web/API/CanvasRenderingContext2D/getLineDash
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.CanvasRenderingContext2D.getLineDash
 
 {{APIRef("Canvas API")}}
 
-The **`getLineDash()`** method of the Canvas 2D API's
-{{domxref("CanvasRenderingContext2D")}} interface gets the current line dash pattern.
+متد **`getLineDash()`** در رابط {{domxref("CanvasRenderingContext2D")}} مربوط به Canvas 2D API، الگوی خط‌چین فعلی را برمی‌گرداند.
 
 ## Syntax
 
@@ -25,21 +18,19 @@ getLineDash()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-An {{jsxref("Array")}} of numbers that specify distances to alternately draw a line and
-a gap (in coordinate space units). If the number, when setting the elements, is odd, the
-elements of the array get copied and concatenated. For example, setting the line dash to
-`[5, 15, 25]` will result in getting back
-`[5, 15, 25, 5, 15, 25]`.
+یک {{jsxref("Array")}} از اعداد که فاصله‌ها را برای رسم متناوب خط و فاصله (بر حسب واحد فضای مختصات) مشخص می‌کند. اگر تعداد عناصر، هنگام تنظیم، فرد باشد، عناصر آرایه کپی و به هم الحاق می‌شوند. برای مثال، تنظیم خط‌چین روی
+`[5, 15, 25]` باعث می‌شود که مقدار بازگشتی
+`[5, 15, 25, 5, 15, 25]` باشد.
 
 ## Examples
 
-### Getting the current line dash setting
+### دریافت تنظیمات فعلی خط‌چین
 
-This example demonstrates the `getLineDash()` method.
+این مثال متد `getLineDash()` را نشان می‌دهد.
 
 #### HTML
 
@@ -49,9 +40,7 @@ This example demonstrates the `getLineDash()` method.
 
 #### JavaScript
 
-As set by {{domxref("CanvasRenderingContext2D.setLineDash()", "setLineDash()")}},
-strokes consist of lines that are 10 units wide, with spaces of 20 units in between each
-line.
+همان‌طور که توسط {{domxref("CanvasRenderingContext2D.setLineDash()", "setLineDash()")}} تنظیم شده، ضربه‌های قلم شامل خطوطی به عرض ۱۰ واحد هستند که بین هر خط، فاصله‌ای به اندازه ۲۰ واحد وجود دارد.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -67,7 +56,7 @@ ctx.lineTo(300, 50);
 ctx.stroke();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Getting_the_current_line_dash_setting', 700, 180) }}
 
@@ -81,6 +70,6 @@ ctx.stroke();
 
 ## See also
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.setLineDash()")}}
 - {{domxref("CanvasRenderingContext2D.lineDashOffset")}}
