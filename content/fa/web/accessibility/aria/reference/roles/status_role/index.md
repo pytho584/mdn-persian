@@ -1,7 +1,7 @@
 ---
 title: "ARIA: status role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,35 +13,35 @@ spec-urls: https://w3c.github.io/aria/#status
 sidebar: accessibilitysidebar
 ---
 
-The `status` role defines a [live region](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) containing advisory information for the user that is not important enough to be an [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role).
+نقش `status` یک [منطقه زنده](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) را تعریف می‌کند که حاوی اطلاعات راهنمایی برای کاربر است و به اندازه‌ای مهم نیست که یک [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role) باشد.
 
-## Description
+## توضیحات
 
-A `status` is a type of [live region](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) providing advisory information that is not important enough to justify an alert, which would immediately interrupt the announcement of a user's current activity. It is often, but not necessarily, presented as a status bar.
+یک `status` نوعی [منطقه زنده](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) است که اطلاعات راهنمایی ارائه می‌دهد که به اندازه‌ای مهم نیست که یک هشدار (alert) را توجیه کند، زیرا هشدار بلافاصله اعلام فعالیت فعلی کاربر را قطع می‌کند. این معمولاً، اما نه لزوماً، به صورت یک نوار وضعیت نمایش داده می‌شود.
 
-Do not give focus to the status when its content updates. Live regions are meant to inform users of dynamic updates that have occurred in other areas of the current web page, but which do not necessitate interrupting the user's current activity with a change in context. If a situation requires that focus needs to be moved, then using a `status`, or other live region, are likely not appropriate.
+هنگامی که محتوای status به‌روزرسانی می‌شود، به آن فوکوس ندهید. مناطق زنده برای اطلاع‌رسانی به کاربران در مورد به‌روزرسانی‌های پویایی که در سایر مناطق صفحه وب فعلی رخ داده‌اند، در نظر گرفته شده‌اند، اما نیازی به قطع فعالیت فعلی کاربر با تغییر زمینه ندارند. اگر موقعیتی نیاز به جابجایی فوکوس دارد، استفاده از یک `status` یا سایر مناطق زنده احتمالاً مناسب نیست.
 
-Elements with the role status have an implicit [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) value of `polite` and an implicit [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic) value of `true`.
+عناصر با نقش status دارای یک [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) ضمنی با مقدار `polite` و یک [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic) ضمنی با مقدار `true` هستند.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
 - [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic)
-  - : Defines whether assistive technologies should present all, or only parts of, the changed region. Elements with the role `status` have an implicit `aria-atomic` value of `true`.
+  - : تعریف می‌کند که آیا فناوری‌های کمکی باید تمام یا فقط بخشی از منطقه تغییر یافته را ارائه دهند. عناصر با نقش `status` دارای یک `aria-atomic` ضمنی با مقدار `true` هستند.
 
 - [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live)
-  - : Defines when assistive technology should inform the user of updates to content. Elements with the role `status` have an implicit `aria-live` value of `polite`, meaning screen readers will announce changes inside the log when the user is idle.
+  - : تعریف می‌کند که چه زمانی فناوری کمکی باید کاربر را از به‌روزرسانی‌های محتوا مطلع کند. عناصر با نقش `status` دارای یک `aria-live` ضمنی با مقدار `polite` هستند، به این معنی که صفحه‌خوان‌ها تغییرات داخل log را زمانی که کاربر بیکار است اعلام می‌کنند.
 
-- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : Some screen readers announce the name of a status element before announcing its contents. If a name is visible, reference it using `aria-labelledby`. Including an `aria-label` provides a method for prefacing the visible content of a status element with text that is not displayed when a screen reader reads the content. Naming a status is not required so if nothing is appropriate both these attributes can be omitted.
+- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
+  - : برخی از صفحه‌خوان‌ها نام یک عنصر status را قبل از اعلام محتوای آن اعلام می‌کنند. اگر یک نام قابل مشاهده است، با استفاده از `aria-labelledby` به آن ارجاع دهید. گنجاندن یک `aria-label` روشی برای مقدمه‌سازی محتوای قابل مشاهده یک عنصر status با متنی که هنگام خواندن محتوا توسط صفحه‌خوان نمایش داده نمی‌شود، فراهم می‌کند. نام‌گذاری یک status الزامی نیست، بنابراین اگر هیچ چیز مناسبی وجود ندارد، می‌توان هر دو ویژگی را حذف کرد.
 
 ## Specifications
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: `alert` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)
-- [ARIA: `log` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role)
-- [ARIA: `marquee` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/marquee_role)
-- [ARIA: `timer` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/timer_role)
-- [ARIA live regions](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
+- [ARIA: نقش `alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)
+- [ARIA: نقش `log`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role)
+- [ARIA: نقش `marquee`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/marquee_role)
+- [ARIA: نقش `timer`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/timer_role)
+- [مناطق زنده ARIA](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
