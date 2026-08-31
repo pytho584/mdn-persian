@@ -1,11 +1,5 @@
 ---
 title: "CSSImportRule: media property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/media"
-status: "needs-translation"
----
-
----
-title: "CSSImportRule: media property"
 short-title: media
 slug: Web/API/CSSImportRule/media
 page-type: web-api-instance-property
@@ -14,22 +8,19 @@ browser-compat: api.CSSImportRule.media
 
 {{APIRef("CSSOM")}}
 
-The read-only **`media`** property of the {{domxref("CSSImportRule")}} interface returns a {{domxref("MediaList")}} object representing the media query list of the {{cssxref("@import")}} rule.
+ویژگی فقط‌خواندنی **`media`** از رابط {{domxref("CSSImportRule")}} یک شیء {{domxref("MediaList")}} برمی‌گرداند که فهرست رسانهٔ قاعدهٔ {{cssxref("@import")}} را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("MediaList")}} object.
+یک شیء {{domxref("MediaList")}}.
 
-Although the `media` property itself is read-only in the sense that you can't replace the `MediaList` object, you can still assign to the `media` property directly, which is equivalent to assigning to its {{domxref("MediaList/mediaText", "mediaText")}} property. You can also modify the `MediaList` object using the {{domxref("MediaList/appendMedium", "appendMedium()")}} and {{domxref("MediaList/deleteMedium", "deleteMedium()")}} methods.
+اگرچه خود ویژگی `media` از این نظر فقط‌خواندنی است که نمی‌توانید شیء `MediaList` را جایگزین کنید، همچنان می‌توانید مستقیماً به ویژگی `media` مقدار بدهید که معادل مقدار دادن به ویژگی {{domxref("MediaList/mediaText", "mediaText")}} آن است. همچنین می‌توانید شیء `MediaList` را با استفاده از روش‌های {{domxref("MediaList/appendMedium", "appendMedium()")}} و {{domxref("MediaList/deleteMedium", "deleteMedium()")}} تغییر دهید.
 
-## Examples
+## نمونه‌ها
 
-### Getting the media property
+### دریافت ویژگی media
 
-The following stylesheet includes a single {{cssxref("@import")}} rule. Therefore the
-first item in the list of CSS rules will be a `CSSImportRule`. The
-`media` property returns a {{domxref("MediaList")}} object. This includes
-the `mediaText` property with a value of `screen`.
+استایل‌شیت زیر شامل یک قاعدهٔ {{cssxref("@import")}} است. بنابراین اولین مورد در فهرست قواعد CSS یک `CSSImportRule` خواهد بود. ویژگی `media` یک شیء {{domxref("MediaList")}} برمی‌گرداند که شامل ویژگی `mediaText` با مقدار `screen` است.
 
 ```css
 @import "style.css" screen;
@@ -40,19 +31,19 @@ const myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].media); // A MediaList
 ```
 
-### Setting the media property
+### تنظیم ویژگی media
 
-To change the `media` attribute of the associated stylesheet, set the value of `media` to a string containing the new value.
+برای تغییر ویژگی `media` استایل‌شیت مرتبط، مقدار `media` را روی رشته‌ای شامل مقدار جدید قرار دهید.
 
 ```js
 const myRules = document.styleSheets[0].cssRules;
 myRules[0].media = "print";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
