@@ -1,7 +1,7 @@
 ---
 title: "AudioContext: outputLatency property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/outputLatency"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,36 +14,32 @@ browser-compat: api.AudioContext.outputLatency
 
 {{APIRef("Web Audio API")}}
 
-The **`outputLatency`** read-only property of
-the {{domxref("AudioContext")}} Interface provides an estimation of the output latency
-of the current audio context.
+ویژگی فقط‌خواندنی **`outputLatency`** در رابط {{domxref("AudioContext")}} تخمینی از تأخیر خروجی زمینه صوتی فعلی ارائه می‌دهد.
 
-This is the time, in seconds, between the browser passing an audio buffer out of an
-audio graph over to the host system's audio subsystem to play, and the time at which the
-first sample in the buffer is actually processed by the audio output device.
+این زمان، بر حسب ثانیه، بین زمانی است که مرورگر یک بافر صوتی را از نمودار صوتی به زیرسیستم صوتی سیستم میزبان برای پخش می‌فرستد، و زمانی که اولین نمونه در بافر واقعاً توسط دستگاه خروجی صوتی پردازش می‌شود.
 
-It varies depending on the platform and the available hardware.
+این مقدار بسته به پلتفرم و سخت‌افزار موجود متفاوت است.
 
-## Value
+## مقدار
 
-A double representing the output latency in seconds.
+یک double که تأخیر خروجی را بر حسب ثانیه نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new AudioContext();
 console.log(audioCtx.outputLatency);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
