@@ -1,10 +1,4 @@
 ---
-title: "Console API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Console_API"
-status: "needs-translation"
----
-
----
 title: Console API
 slug: Web/API/Console_API
 page-type: web-api-overview
@@ -13,25 +7,25 @@ browser-compat: api.console
 
 {{DefaultAPISidebar("Console API")}} {{AvailableInWorkers}}
 
-The Console API provides functionality to allow developers to perform debugging tasks, such as logging messages or the values of variables at set points in your code, or timing how long an operation takes to complete.
+API کنسول (Console API) قابلیت‌هایی را در اختیار توسعه‌دهندگان قرار می‌دهد تا بتوانند کارهای اشکال‌زدایی را انجام دهند؛ مانند ثبت پیام‌ها یا مقادیر متغیرها در نقاط مشخصی از کد، یا اندازه‌گیری مدت زمانی که طول می‌کشد تا یک عملیات تکمیل شود.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-The Console API started as a largely proprietary API, with different browsers implementing it, albeit in inconsistent ways. [The Console API spec](https://console.spec.whatwg.org/) was created to define consistent behavior, and all modern browsers eventually settled on implementing this behavior — although some implementations still have their own additional proprietary functions. Find out about these at:
+API کنسول در ابتدا عمدتاً یک API اختصاصی بود و مرورگرهای مختلف آن را به شیوه‌های ناسازگار پیاده‌سازی می‌کردند. [مشخصات فنی API کنسول](https://console.spec.whatwg.org/) برای تعریف رفتار یکپارچه ایجاد شد و در نهایت همه مرورگرهای مدرن به پیاده‌سازی این رفتار روی آوردند؛ اگرچه برخی پیاده‌سازی‌ها همچنان توابع اختصاصی اضافی خود را دارند. این موارد را در این نشانی‌ها ببینید:
 
-- [Google Chrome DevTools implementation](https://developer.chrome.com/docs/devtools/console/api/)
-- [Safari DevTools implementation](https://webkit.org/web-inspector/console-object-api/)
+- [پیاده‌سازی Google Chrome DevTools](https://developer.chrome.com/docs/devtools/console/api/)
+- [پیاده‌سازی Safari DevTools](https://webkit.org/web-inspector/console-object-api/)
 
-Usage is very simple — the {{domxref("console")}} object contains many methods that you can call to perform rudimentary debugging tasks, generally focused around logging various values to the browser's [Web Console](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html).
+استفاده از آن بسیار ساده است — شیء {{domxref("console")}} شامل متدهای زیادی است که می‌توانید برای انجام کارهای ابتدایی اشکال‌زدایی صدا بزنید؛ این متدها عمدتاً بر ثبت مقادیر مختلف در [کنسول وب](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html) مرورگر متمرکز هستند.
 
-By far the most commonly-used method is {{domxref("console/log_static", "console.log()")}}, which is used to log the current value contained inside a specific variable.
+بدون شک پرکاربردترین متد، {{domxref("console/log_static", "console.log()")}} است که برای ثبت مقدار فعلیِ درونِ یک متغیر خاص به کار می‌رود.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("console")}}
-  - : Provides rudimentary debugging functionality, including logging, stack traces, timers, and counters.
+  - : قابلیت‌های ابتدایی اشکال‌زدایی، شامل ثبت لاگ، ردیابی پشته، زمان‌سنج‌ها و شمارنده‌ها را فراهم می‌کند.
 
-## Examples
+## مثال‌ها
 
 ```js
 let myString = "Hello world";
@@ -40,18 +34,18 @@ let myString = "Hello world";
 console.log(myString);
 ```
 
-See the [console](/en-US/docs/Web/API/console) reference page for more examples.
+برای مثال‌های بیشتر به صفحه مرجع [console](/en-US/docs/Web/API/console) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Tools](https://firefox-source-docs.mozilla.org/devtools-user/index.html)
-- [Web Console](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html) — how the Web Console in Firefox handles console API calls
-- [about:debugging](https://firefox-source-docs.mozilla.org/devtools-user/about_colon_debugging/index.html) — how to see console output when the debugging target is a mobile device
+- [ابزارها](https://firefox-source-docs.mozilla.org/devtools-user/index.html)
+- [کنسول وب](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html) — نحوه مدیریت فراخوانی‌های API کنسول در کنسول وب فایرفاکس
+- [about:debugging](https://firefox-source-docs.mozilla.org/devtools-user/about_colon_debugging/index.html) — نحوه مشاهده خروجی کنسول وقتی هدف اشکال‌زدایی یک دستگاه همراه است.
