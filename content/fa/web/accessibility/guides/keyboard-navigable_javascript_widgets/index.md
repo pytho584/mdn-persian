@@ -1,7 +1,7 @@
 ---
 title: "Keyboard-navigable JavaScript widgets"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Keyboard-navigable_JavaScript_widgets"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -11,62 +11,62 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-Web applications often use JavaScript to mimic desktop widgets such as menus, tree views, rich text fields, and tab panels. These widgets are typically composed of {{ HTMLElement("div") }} and {{ HTMLElement("span") }} elements that do not, by nature, offer the same keyboard functionality that their desktop counterparts do. This document describes techniques to make JavaScript widgets accessible with the keyboard.
+برنامههای وب اغلب از جاوااسکریپت برای شبیهسازی ویجتهای دسکتاپ مانند منوها، نمای درختی، فیلدهای متن غنی و پنلهای تب استفاده میکنند. این ویجتها معمولاً از عناصر {{ HTMLElement("div") }} و {{ HTMLElement("span") }} تشکیل شدهاند که بهطور طبیعی، عملکرد کیبورد مشابه همتایان دسکتاپی خود را ارائه نمیدهند. این سند تکنیکهایی را برای قابل دسترس کردن ویجتهای جاوااسکریپت با کیبورد توصیف میکند.
 
-## Using tabindex
+## استفاده از tabindex
 
-By default, when people use the tab key to browse a webpage, only interactive elements (like links, form controls) get focused. With the `tabindex` [global attribute](/en-US/docs/Web/HTML/Reference/Global_attributes), authors can make other elements focusable, too. When set to `0`, the element becomes focusable by keyboard and script. When set to `-1`, the element becomes focusable by script, but it does not become part of the keyboard focus order.
+بهطور پیشفرض، وقتی کاربران از کلید Tab برای مرور یک صفحه وب استفاده میکنند، تنها عناصر تعاملی (مانند پیوندها، کنترلهای فرم) فوکوس میگیرند. با استفاده از ویژگی سراسری `tabindex`، نویسندگان میتوانند عناصر دیگر را نیز قابل فوکوس کنند. وقتی روی `0` تنظیم شود، عنصر با کیبورد و اسکریپت قابل فوکوس میشود. وقتی روی `1-` تنظیم شود، عنصر با اسکریپت قابل فوکوس میشود، اما بخشی از ترتیب فوکوس کیبورد نیست.
 
-The order in which elements gain focus when using a keyboard, is the source order by default. In exceptional circumstances, authors may want to redefine the order. To do this, authors can set `tabindex` to any positive number.
+ترتیبی که عناصر هنگام استفاده از کیبورد فوکوس میگیرند، بهطور پیشفرض ترتیب منبع است. در شرایط استثنایی، نویسندگان ممکن است بخواهند ترتیب را بازتعریف کنند. برای این کار، میتوانند `tabindex` را روی هر عدد مثبتی تنظیم کنند.
 
 > [!WARNING]
-> Avoid using positive values for `tabindex`. Elements with a positive `tabindex` are put before the default interactive elements on the page, which means page authors will have to set (and maintain) `tabindex` values for all focusable elements on the page whenever they use one or more positive values for `tabindex`.
+> از استفاده از مقادیر مثبت برای `tabindex` خودداری کنید. عناصر با `tabindex` مثبت قبل از عناصر تعاملی پیشفرض صفحه قرار میگیرند، به این معنی که نویسندگان صفحه باید مقادیر `tabindex` را برای همه عناصر قابل فوکوس صفحه تنظیم (و حفظ) کنند، هر زمان که از یک یا چند مقدار مثبت برای `tabindex` استفاده میکنند.
 
-The following table describes `tabindex` behavior in modern browsers:
+جدول زیر رفتار `tabindex` را در مرورگرهای مدرن توصیف میکند:
 
 <table>
   <thead>
     <tr>
-      <th><code>tabindex</code> attribute</th>
-      <th>Focusable with mouse or JavaScript via <code>element.focus()</code></th>
-      <th>Tab navigable</th>
+      <th>ویژگی <code>tabindex</code></th>
+      <th>قابل فوکوس با ماوس یا جاوااسکریپت از طریق <code>element.focus()</code></th>
+      <th>قابل پیمایش با Tab</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>not present</td>
-      <td>Follows the platform convention of the element (yes for form controls, links, etc.).</td>
-      <td>Follows the platform convention of the element.</td>
+      <td>وجود ندارد</td>
+      <td>از قرارداد پلتفرم عنصر پیروی میکند (بله برای کنترلهای فرم، پیوندها و غیره).</td>
+      <td>از قرارداد پلتفرم عنصر پیروی میکند.</td>
     </tr>
     <tr>
-      <td>Negative (i.e., <code>tabindex="-1"</code>)</td>
-      <td>Yes</td>
-      <td>No; author must focus the element with <a href="/en-US/docs/Web/API/HTMLElement/focus"><code>focus()</code></a> in response to arrow or other key presses.</td>
+      <td>منفی (یعنی <code>tabindex="-1"</code>)</td>
+      <td>بله</td>
+      <td>خیر؛ نویسنده باید عنصر را با <a href="/en-US/docs/Web/API/HTMLElement/focus"><code>focus()</code></a> در پاسخ به فشارهای کلید جهت یا سایر کلیدها فوکوس کند.</td>
     </tr>
     <tr>
-      <td>Zero (i.e., <code>tabindex="0"</code>)</td>
-      <td>Yes</td>
-      <td>In tab order relative to element's position in document (note that interactive elements like {{HTMLElement('a')}} have this behavior by default, they don't need the attribute).</td>
+      <td>صفر (یعنی <code>tabindex="0"</code>)</td>
+      <td>بله</td>
+      <td>در ترتیب Tab نسبت به موقعیت عنصر در سند (توجه داشته باشید که عناصر تعاملی مانند {{HTMLElement('a')}} بهطور پیشفرض این رفتار را دارند و به ویژگی نیاز ندارند).</td>
     </tr>
     <tr>
-      <td>Positive (e.g., <code>tabindex="33"</code>)</td>
-      <td>Yes</td>
-      <td><code>tabindex</code> value determines where this element is positioned in the tab order: smaller values will position elements earlier in the tab order than larger values (for example, <code>tabindex="7"</code> will be positioned before <code>tabindex="11"</code>).</td>
+      <td>مثبت (مثلاً <code>tabindex="33"</code>)</td>
+      <td>بله</td>
+      <td>مقدار <code>tabindex</code> تعیین میکند که این عنصر در ترتیب Tab کجا قرار گیرد: مقادیر کوچکتر عناصر را زودتر از مقادیر بزرگتر در ترتیب Tab قرار میدهند (مثلاً <code>tabindex="7"</code> قبل از <code>tabindex="11"</code> قرار میگیرد).</td>
     </tr>
   </tbody>
 </table>
 
-### Non-native controls
+### کنترلهای غیربومی
 
-Native HTML elements that are interactive, like {{ HTMLElement("a") }}, {{ HTMLElement("input") }} and {{ HTMLElement("select") }}, are already accessible by keyboards, so to use one of them is the fastest path to make components work with keyboards.
+عناصر HTML بومی که تعاملی هستند، مانند {{ HTMLElement("a") }}، {{ HTMLElement("input") }} و {{ HTMLElement("select") }}، از قبل توسط کیبورد قابل دسترس هستند، بنابراین استفاده از یکی از آنها سریعترین مسیر برای کار کردن کامپوننتها با کیبورد است.
 
-Authors can also make a {{ HTMLElement("div") }} or {{ HTMLElement("span") }} keyboard accessible by adding a `tabindex` of `0`. This is particularly useful for components that use interactive elements that do not exist in HTML.
+نویسندگان همچنین میتوانند یک {{ HTMLElement("div") }} یا {{ HTMLElement("span") }} را با افزودن `tabindex` با مقدار `0` برای کیبورد قابل دسترس کنند. این بهویژه برای کامپوننتهایی مفید است که از عناصر تعاملی استفاده میکنند که در HTML وجود ندارند.
 
-### Grouping controls
+### گروهبندی کنترلها
 
-For grouping widgets such as menus, tablists, grids, or tree views, the parent element should be in the tab order (`tabindex="0"`), and each descendant choice/tab/cell/row should be removed from the tab order (`tabindex="-1"`). Users should be able to navigate the descendant elements using arrow keys. (For a full description of the keyboard support that is normally expected for typical widgets, see the [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/).)
+برای گروهبندی ویجتها مانند منوها، لیستهای تب، گریدها یا نمای درختی، عنصر والد باید در ترتیب Tab باشد (`tabindex="0"`)، و هر گزینه/تب/سلول/ردیف فرزند باید از ترتیب Tab حذف شود (`tabindex="-1"`). کاربران باید بتوانند عناصر فرزند را با کلیدهای جهتنما پیمایش کنند. (برای توضیح کامل پشتیبانی کیبورد که معمولاً برای ویجتهای معمولی انتظار میرود، به [شیوههای نویسندگی WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/) مراجعه کنید.)
 
-The example below shows this technique used with a nested menu control. Once keyboard focus lands on the containing {{ HTMLElement("ul") }} element, the JavaScript developer must programmatically manage focus and respond to arrow keys. For techniques for managing focus within widgets, see "Managing focus inside groups" below.
+مثال زیر این تکنیک را با یک کنترل منوی تو در تو نشان میدهد. وقتی فوکوس کیبورد روی عنصر {{ HTMLElement("ul") }} حاوی قرار میگیرد، توسعهدهنده جاوااسکریپت باید بهصورت برنامهریزیشده فوکوس را مدیریت کرده و به کلیدهای جهتنما پاسخ دهد. برای تکنیکهای مدیریت فوکوس در داخل ویجتها، به «مدیریت فوکوس در داخل گروهها» در زیر مراجعه کنید.
 
 ```html
 <ul id="mb1" tabindex="0">
@@ -99,57 +99,57 @@ The example below shows this technique used with a nested menu control. Once key
 </ul>
 ```
 
-#### Disabled controls
+#### کنترلهای غیرفعال
 
-When a custom control becomes disabled, remove it from the tab order by setting `tabindex="-1"`. Note that disabled items within a grouped widget (such as menu items in a menu) should remain navigable using arrow keys.
+وقتی یک کنترل سفارشی غیرفعال میشود، با تنظیم `tabindex="-1"` آن را از ترتیب Tab حذف کنید. توجه داشته باشید که آیتمهای غیرفعال در یک ویجت گروهبندیشده (مانند آیتمهای منو در یک منو) باید با کلیدهای جهتنما قابل پیمایش باقی بمانند.
 
-## Managing focus inside groups
+## مدیریت فوکوس در داخل گروهها
 
-When a user tabs away from a widget and returns, focus should return to the specific element that had focus, for example, the tree item or grid cell. There are two techniques for accomplishing this:
+وقتی کاربر با Tab از یک ویجت خارج میشود و برمیگردد، فوکوس باید به عنصر خاصی که فوکوس داشت بازگردد، مثلاً آیتم درخت یا سلول گرید. دو تکنیک برای انجام این کار وجود دارد:
 
-1. Roving `tabindex`: programmatically moving focus
-2. `aria-activedescendant`: managing a 'virtual' focus
+1. `tabindex` چرخان: جابهجایی برنامهریزیشده فوکوس
+2. `aria-activedescendant`: مدیریت یک فوکوس «مجازی»
 
-### Technique 1: Roving tabindex
+### تکنیک ۱: tabindex چرخان
 
-Setting the `tabindex` of the focused element to "0" ensures that if the user tabs away from the widget and then returns, the selected item within the group retains focus. Note that updating the `tabindex` to "0" requires also updating the previously selected item to `tabindex="-1"`. This technique involves programmatically moving focus in response to key events and updating the `tabindex` to reflect the currently focused item. To do this:
+تنظیم `tabindex` عنصر فوکوسشده روی «0» تضمین میکند که اگر کاربر با Tab از ویجت خارج شود و سپس برگردد، آیتم انتخابشده در گروه فوکوس را حفظ کند. توجه داشته باشید که بهروزرسانی `tabindex` به «0» همچنین نیازمند بهروزرسانی آیتم قبلاً انتخابشده به `tabindex="-1"` است. این تکنیک شامل جابهجایی برنامهریزیشده فوکوس در پاسخ به رویدادهای کلید و بهروزرسانی `tabindex` برای انعکاس آیتم فوکوسشده فعلی است. برای انجام این کار:
 
-Bind a key down handler to each element in the group, and when an arrow key is used to move to another element:
+یک کنترلکننده رویداد key down به هر عنصر در گروه متصل کنید و وقتی از یک کلید جهتنما برای حرکت به عنصر دیگر استفاده میشود:
 
-1. programmatically apply focus to the new element,
-2. update the `tabindex` of the focused element to "0", and
-3. update the `tabindex` of the previously focused element to "-1".
+1. بهصورت برنامهریزیشده فوکوس را روی عنصر جدید اعمال کنید،
+2. `tabindex` عنصر فوکوسشده را به «0» بهروزرسانی کنید، و
+3. `tabindex` عنصر قبلاً فوکوسشده را به «1-» بهروزرسانی کنید.
 
-### Technique 2: `aria-activedescendant`
+### تکنیک ۲: `aria-activedescendant`
 
-This technique involves binding a single event handler to the container widget and using the `aria-activedescendant` to track a "virtual" focus. (For more information about ARIA, see this [overview of accessible web applications and widgets](/en-US/docs/Web/Accessibility/Guides/Accessible_web_applications_and_widgets).)
+این تکنیک شامل اتصال یک کنترلکننده رویداد واحد به ویجت کانتینر و استفاده از `aria-activedescendant` برای ردیابی یک فوکوس «مجازی» است. (برای اطلاعات بیشتر درباره ARIA، این [نمای کلی از برنامهها و ویجتهای وب قابل دسترس](/en-US/docs/Web/Accessibility/Guides/Accessible_web_applications_and_widgets) را ببینید.)
 
-The `aria-activedescendant` property identifies the ID of the descendant element that currently has the virtual focus. The event handler on the container must respond to key and mouse events by updating the value of `aria-activedescendant` and ensuring that the current item is styled appropriately (for example, with a border or background color).
+ویژگی `aria-activedescendant` شناسه عنصر فرزندی را که در حال حاضر فوکوس مجازی دارد شناسایی میکند. کنترلکننده رویداد روی کانتینر باید به رویدادهای کلید و ماوس با بهروزرسانی مقدار `aria-activedescendant` و اطمینان از اینکه آیتم فعلی بهدرستی استایلدهی شده است (مثلاً با رنگ حاشیه یا پسزمینه) پاسخ دهد.
 
-## General guidelines
+## دستورالعملهای کلی
 
-### Usage of focus events
+### استفاده از رویدادهای فوکوس
 
-- Do not dispatch the [`focus`](/en-US/docs/Web/API/Element/focus_event) event to send focus to an element. DOM focus events are considered informational only: they are generated by the system after something is focused, but not actually used to set focus. Use `element.focus()` instead.
-- Do listen for the [`focus`](/en-US/docs/Web/API/Element/focus_event) and [`blur`](/en-US/docs/Web/API/Element/blur_event) events to track focus changes. Don't assume that all focus changes will come via key and mouse events: assistive technologies such as screen readers can set the focus to any focusable element. If you want to track the focus status for the whole document, you can use the [`document.activeElement`](/en-US/docs/Web/API/Document/activeElement) to get the active element, or [`document.hasFocus`](/en-US/docs/Web/API/Document/hasFocus) to make sure if the current document has focus.
+- رویداد [`focus`](/en-US/docs/Web/API/Element/focus_event) را برای ارسال فوکوس به یک عنصر ارسال نکنید. رویدادهای فوکوس DOM فقط اطلاعاتی در نظر گرفته میشوند: آنها توسط سیستم پس از فوکوس شدن چیزی تولید میشوند، اما در واقع برای تنظیم فوکوس استفاده نمیشوند. در عوض از `element.focus()` استفاده کنید.
+- به رویدادهای [`focus`](/en-US/docs/Web/API/Element/focus_event) و [`blur`](/en-US/docs/Web/API/Element/blur_event) گوش دهید تا تغییرات فوکوس را ردیابی کنید. فرض نکنید که همه تغییرات فوکوس از طریق رویدادهای کلید و ماوس میآیند: فناوریهای کمکی مانند صفحهخوانها میتوانند فوکوس را روی هر عنصر قابل فوکوسی تنظیم کنند. اگر میخواهید وضعیت فوکوس کل سند را ردیابی کنید، میتوانید از [`document.activeElement`](/en-US/docs/Web/API/Document/activeElement) برای دریافت عنصر فعال استفاده کنید، یا از [`document.hasFocus`](/en-US/docs/Web/API/Document/hasFocus) برای اطمینان از اینکه سند فعلی فوکوس دارد استفاده کنید.
 
-### Ensure that keyboard and mouse produce the same experience
+### اطمینان از اینکه کیبورد و ماوس تجربه یکسانی ایجاد میکنند
 
-To ensure that the user experience is consistent regardless of input device, keyboard and mouse event handlers should share code where appropriate. For example, the code that updates the `tabindex` or the styling when users navigate using the arrow keys should also be used by mouse click handlers to produce the same changes.
+برای اطمینان از اینکه تجربه کاربری بدون توجه به دستگاه ورودی سازگار است، کنترلکنندههای رویداد کیبورد و ماوس باید در صورت لزوم کد مشترکی داشته باشند. بهعنوان مثال، کدی که `tabindex` یا استایلها را هنگام پیمایش کاربران با کلیدهای جهتنما بهروزرسانی میکند، باید توسط کنترلکنندههای کلیک ماوس نیز برای ایجاد همان تغییرات استفاده شود.
 
-### Ensure that the keyboard can be used to activate element
+### اطمینان از اینکه میتوان از کیبورد برای فعال کردن عنصر استفاده کرد
 
-To ensure that the keyboard can be used to activate elements, any handlers bound to mouse events should also be bound to keyboard events. For example, to ensure that the Enter key will activate an element, if you have an `onclick="doSomething()"`, you should bind `doSomething()` to the key down event as well: `onkeydown="event.code === "Enter" && doSomething();"`.
+برای اطمینان از اینکه میتوان از کیبورد برای فعال کردن عناصر استفاده کرد، هر کنترلکنندهای که به رویدادهای ماوس متصل است باید به رویدادهای کیبورد نیز متصل شود. بهعنوان مثال، برای اطمینان از اینکه کلید Enter یک عنصر را فعال میکند، اگر `onclick="doSomething()"` دارید، باید `doSomething()` را نیز به رویداد key down متصل کنید: `onkeydown="event.code === "Enter" && doSomething();"`.
 
-### Always draw the focus for tabindex="-1" items and elements that receive focus programmatically
+### همیشه برای آیتمهای `tabindex="-1"` و عناصری که بهصورت برنامهریزیشده فوکوس دریافت میکنند، فوکوس رسم کنید
 
-Ensure that focused elements have a focus ring. This can be done using the CSS {{cssxref("outline")}} property, which should not be unconditionally set to `none`—if you want to prevent unnecessary focus rings being displayed, use the {{cssxref(":focus-visible")}} pseudo-class.
+اطمینان حاصل کنید که عناصر فوکوسشده یک حلقه فوکوس دارند. این کار را میتوان با استفاده از ویژگی CSS {{cssxref("outline")}} انجام داد، که نباید بهطور غیرشرطی روی `none` تنظیم شود—اگر میخواهید از نمایش حلقههای فوکوس غیرضروری جلوگیری کنید، از کلاس شبه {{cssxref(":focus-visible")}} استفاده کنید.
 
-### Prevent used key events from performing browser functions
+### جلوگیری از اجرای عملکردهای مرورگر توسط کلیدهای استفادهشده
 
-If your widget handles a key event, prevent the browser from also handling it (for example, scrolling in response to the arrow keys) by using your event handler's return code. If your event handler returns `false`, the event will not be propagated beyond your handler.
+اگر ویجت شما یک رویداد کلید را مدیریت میکند، با استفاده از کد بازگشتی کنترلکننده رویداد خود، از مدیریت آن توسط مرورگر نیز جلوگیری کنید (مثلاً پیمایش در پاسخ به کلیدهای جهتنما). اگر کنترلکننده رویداد شما `false` برمیگرداند، رویداد فراتر از کنترلکننده شما منتشر نخواهد شد.
 
-For example:
+برای مثال:
 
 ```html
 <span tabindex="-1">…</span>
@@ -159,8 +159,8 @@ For example:
 span.onkeydown = handleKeyDown;
 ```
 
-If `handleKeyDown()` returns `false`, the event will be consumed, preventing the browser from performing any action based on the keystroke.
+اگر `handleKeyDown()` مقدار `false` برگرداند، رویداد مصرف میشود و از انجام هرگونه اقدام مرورگر بر اساس ضربه کلید جلوگیری میکند.
 
-### Don't rely on consistent behavior for key repeat, at this point
+### در این مرحله به رفتار سازگار برای تکرار کلید تکیه نکنید
 
-Unfortunately `onkeydown` may or may not repeat depending on what browser and OS you're running on.
+متأسفانه `onkeydown` ممکن است بسته به مرورگر و سیستمعامل شما تکرار شود یا نشود.
