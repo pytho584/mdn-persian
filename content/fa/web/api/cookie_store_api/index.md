@@ -1,7 +1,5 @@
 ---
 title: "Cookie Store API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Cookie_Store_API"
-status: "needs-translation"
 ---
 
 ---
@@ -16,47 +14,46 @@ spec-urls: https://cookiestore.spec.whatwg.org/
 
 {{securecontext_header}}{{DefaultAPISidebar("Cookie Store API")}}{{AvailableInWorkers("window_and_service")}}
 
-The **Cookie Store API** is an asynchronous API for managing cookies, available in windows and also [service workers](/en-US/docs/Web/API/Service_Worker_API).
+**Cookie Store API** یک API ناهمگام برای مدیریت کوکی‌ها است که در پنجره‌ها و همچنین [سرویس‌ورکرها](/en-US/docs/Web/API/Service_Worker_API) در دسترس است.
 
-## Concepts and Usage
+## مفاهیم و کاربرد
 
-The original method of getting and setting cookies involves working with {{domxref("document.cookie")}} to get and set cookie information as a string of key/value pairs.
-In addition to this being cumbersome and error prone, it also has a host of issues in the context of modern web development.
+روش اصلی دریافت و تنظیم کوکی‌ها شامل کار با {{domxref("document.cookie")}} برای دریافت و تنظیم اطلاعات کوکی به‌صورت یک رشته از جفت‌های کلید/مقدار است. این روش علاوه بر اینکه دست‌وپاگیر و مستعد خطاست، در بستر توسعه وب مدرن نیز مشکلات متعددی به همراه دارد.
 
-The `document.cookie` interface is {{Glossary("synchronous")}}, single-threaded, and blocking. When writing a cookie you must wait for the browser to update the string of all cookies. In addition, the reliance on {{domxref("document")}} means that cookies cannot be accessed by service workers, as they cannot access the `document` object.
+رابط `document.cookie` {{Glossary("synchronous")}} (همگام)، تک‌نخی، و مسدودکننده است. هنگام نوشتن یک کوکی، باید منتظر بمانید تا مرورگر رشته همه کوکی‌ها را به‌روزرسانی کند. علاوه بر این، وابستگی به {{domxref("document")}} به این معناست که سرویس‌ورکرها نمی‌توانند به کوکی‌ها دسترسی داشته باشند، زیرا آن‌ها به شیء `document` دسترسی ندارند.
 
-The _Cookie Store API_ provides an updated method of managing cookies. It is {{Glossary("asynchronous")}} and promise-based, therefore does not block the event loop. It does not rely on {{domxref("Document")}} and so is available to service workers. The methods for getting and setting cookies also provide more feedback by way of error messages. This means that web developers do not have to set then immediately read back a cookie to check that setting was successful.
+_Cookie Store API_ روشی به‌روز برای مدیریت کوکی‌ها فراهم می‌کند. این API {{Glossary("asynchronous")}} (ناهمگام) و مبتنی بر Promise است؛ بنابراین حلقه رویداد (event loop) را مسدود نمی‌کند. به {{domxref("Document")}} وابسته نیست و در نتیجه در دسترس سرویس‌ورکرها قرار دارد. روش‌های دریافت و تنظیم کوکی‌ها همچنین از طریق پیام‌های خطا، بازخورد بیشتری ارائه می‌دهند. این بدان معناست که توسعه‌دهندگان وب مجبور نیستند برای اطمینان از موفقیت‌آمیز بودن تنظیم، بلافاصله کوکی را دوباره بخوانند.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("CookieStore")}} {{Experimental_Inline}}
-  - : The `CookieStore` interface enables getting and setting cookies.
+  - : رابط `CookieStore` امکان دریافت و تنظیم کوکی‌ها را فراهم می‌کند.
 - {{domxref("CookieStoreManager")}} {{Experimental_Inline}}
-  - : The `CookieStoreManager` interface provides a service worker registration to enable service workers to subscribe to cookie change events.
+  - : رابط `CookieStoreManager` یک ثبت‌نام (registration) سرویس‌ورکر فراهم می‌کند تا سرویس‌ورکرها بتوانند در رویدادهای تغییر کوکی مشترک شوند.
 - {{domxref("CookieChangeEvent")}} {{Experimental_Inline}}
-  - : A `CookieChangeEvent` named `change` is dispatched against `CookieStore` objects in {{domxref("Window")}} contexts when any script-visible cookies changes occur.
+  - : یک `CookieChangeEvent` به نام `change` زمانی که هر تغییری در کوکی‌های قابل مشاهده توسط اسکریپت رخ دهد، در بافت‌های {{domxref("Window")}} علیه اشیاء `CookieStore` گسیل می‌شود.
 - {{domxref("ExtendableCookieChangeEvent")}}
-  - : An `ExtendableCookieChangeEvent` named `cookiechange` is dispatched in {{domxref("ServiceWorkerGlobalScope")}} contexts when any script-visible cookie changes occur that match the service worker's cookie change subscription list.
+  - : زمانی که هر تغییر قابل مشاهده توسط اسکریپت در کوکی‌ها رخ دهد که با فهرست اشتراک تغییر کوکی سرویس‌ورکر مطابقت داشته باشد، یک `ExtendableCookieChangeEvent` به نام `cookiechange` در بافت‌های {{domxref("ServiceWorkerGlobalScope")}} گسیل می‌شود.
 
-### Extensions to other interfaces
+### توسعه‌هایی برای سایر رابط‌ها
 
 - {{domxref("ServiceWorkerGlobalScope.cookieStore")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a reference to the {{domxref("CookieStore")}} object associated with the service worker.
+  - : یک ارجاع به شیء {{domxref("CookieStore")}} مرتبط با سرویس‌ورکر برمی‌گرداند.
 - {{domxref("ServiceWorkerRegistration.cookies")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a reference to the {{domxref("CookieStoreManager")}} interface, which enables a web app to subscribe to and unsubscribe from cookie change events.
+  - : یک ارجاع به رابط {{domxref("CookieStoreManager")}} برمی‌گرداند که به یک وب‌اپلیکیشن امکان می‌دهد در رویدادهای تغییر کوکی مشترک شود یا اشتراک خود را لغو کند.
 - {{domxref("Window.cookieStore")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a reference to the {{domxref("CookieStore")}} object for the current document context.
+  - : یک ارجاع به شیء {{domxref("CookieStore")}} برای بافت سند جاری برمی‌گرداند.
 - {{domxref("ServiceWorkerGlobalScope/cookiechange_event", "cookiechange")}} event {{Experimental_Inline}}
-  - : Fired when any cookie changes have occurred which match the service worker's cookie change subscription list.
+  - : وقتی شلیک می‌شود که هر تغییری در کوکی‌ها رخ داده باشد که با فهرست اشتراک تغییر کوکی سرویس‌ورکر مطابقت داشته باشد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Service Worker API](/en-US/docs/Web/API/Service_Worker_API)
