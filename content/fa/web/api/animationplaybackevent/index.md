@@ -1,7 +1,7 @@
 ---
 title: "AnimationPlaybackEvent"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationPlaybackEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,33 +13,33 @@ browser-compat: api.AnimationPlaybackEvent
 
 {{ APIRef("Web Animations") }}
 
-The AnimationPlaybackEvent interface of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) represents animation events.
+رابط `AnimationPlaybackEvent` از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) رویدادهای انیمیشن را نشان می‌دهد.
 
-As animations play, they report changes to their {{domxref("Animation.playState", "playState")}} through animation events.
+همانطور که انیمیشن‌ها اجرا می‌شوند، تغییرات {{domxref("Animation.playState", "playState")}} خود را از طریق رویدادهای انیمیشن گزارش می‌دهند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("AnimationPlaybackEvent.AnimationPlaybackEvent", "AnimationPlaybackEvent()")}}
-  - : Constructs a new `AnimationPlaybackEvent` object instance.
+  - : یک نمونه شیء جدید از `AnimationPlaybackEvent` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("AnimationPlaybackEvent.currentTime")}} {{ReadOnlyInline}}
-  - : The current time of the animation that generated the event.
+  - : زمان جاری انیمیشنی که رویداد را تولید کرده است.
 - {{domxref("AnimationPlaybackEvent.timelineTime")}} {{ReadOnlyInline}}
-  - : The time value of the timeline of the animation that generated the event.
+  - : مقدار زمانی خط زمانی انیمیشنی که رویداد را تولید کرده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("Animation.playState")}}
