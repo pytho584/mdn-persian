@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-colspan attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,22 +13,22 @@ spec-urls: https://w3c.github.io/aria/#aria-colspan
 sidebar: accessibilitysidebar
 ---
 
-The `aria-colspan` attribute defines the number of columns spanned by a cell or gridcell within a [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role), [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role), or [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role).
+ویژگی `aria-colspan` تعداد ستون‌هایی را که یک سلول (cell) یا گریدسل (gridcell) درون یک [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)، [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) یا [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) پوشش می‌دهد، تعریف می‌کند.
 
-## Description
+## توضیحات
 
-Intended for [`cell`s](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role) and [`gridcell`s](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role) which are not contained in a native HTML {{HTMLElement('table')}}, the `aria-colspan` property value defines the number of columns spanned by an individual cell an ARIA [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role), [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role), or [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role).
+این ویژگی برای [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role)‌ها و [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)‌هایی در نظر گرفته شده است که در یک {{HTMLElement('table')}} بومی HTML قرار ندارند. مقدار ویژگی `aria-colspan` تعریف می‌کند که یک سلول منفرد در یک [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)، [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) یا [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) ARIA چند ستون را پوشش می‌دهد.
 
-In HTML, {{HTMLElement('th')}} and {{HTMLElement('td')}} elements have the [`colspan`](/en-US/docs/Web/HTML/Reference/Elements/td#attributes) attribute. When using the semantic {{HTMLElement('table')}}, use the native `colspan` attribute as designed. This ARIA attribute is intended for cells and gridcells which are not contained in a native table, and will be ignored if used on a cell in a {{HTMLElement('table')}}.
+در HTML، عناصر {{HTMLElement('th')}} و {{HTMLElement('td')}} دارای ویژگی [`colspan`](/en-US/docs/Web/HTML/Reference/Elements/td#attributes) هستند. هنگام استفاده از {{HTMLElement('table')}} معنایی، از ویژگی بومی `colspan` همان‌طور که طراحی شده استفاده کنید. این ویژگی ARIA برای سلول‌ها و گریدسل‌هایی در نظر گرفته شده است که در جدول بومی قرار ندارند و اگر روی سلولی در یک {{HTMLElement('table')}} استفاده شود، نادیده گرفته می‌شود.
 
 > [!NOTE]
-> The first rule of ARIA use is if you can use a native feature with the semantics and behavior you require already built in, instead of repurposing an element and **adding** an ARIA role, state or property to make it accessible, then do so. Employ HTML {{HTMLelement('table')}} elements, including {{HTMLelement('td')}} and {{HTMLelement('th')}} with the `colspan` attribute instead of non-semantic elements with ARIA roles and attributes whenever possible.
+> اولین قانون استفاده از ARIA این است: اگر می‌توانید از یک ویژگی بومی استفاده کنید که معنا و رفتار مورد نیاز شما از قبل در آن تعبیه شده است، به‌جای تغییر کاربری یک عنصر و **افزودن** نقش، حالت یا ویژگی ARIA برای قابل‌دسترس کردن آن، این کار را انجام دهید. تا حد امکان از عناصر HTML جدول، از جمله {{HTMLElement('td')}} و {{HTMLElement('th')}} با ویژگی `colspan` به‌جای عناصر غیر معنایی با نقش‌ها و ویژگی‌های ARIA استفاده کنید.
 
-The value of `aria-colspan` should be a positive integer. The default or assumed value of a cell span is 1. Make sure that the included value does cause the cell or gridcell to overlap the next cell or gridcell in the same row and does not cause the cell to span outside of the containing table, grid, or treegrid.
+مقدار `aria-colspan` باید یک عدد صحیح مثبت باشد. مقدار پیش‌فرض یا مفروض گستره یک سلول، ۱ است. مطمئن شوید که مقدار درج‌شده باعث هم‌پوشانی سلول یا گریدسل با سلول یا گریدسل بعدی در همان ردیف نمی‌شود و باعث نمی‌شود سلول از جدول، گرید یا درخت‌گریدِ حاوی آن خارج شود.
 
-## Example
+## مثال
 
-The following is an example of part of a bowling tournament league scoring spreadsheet. Each game spans 10 frames, and each frame spans a 3 scores: two balls and the current total. The 10th (and last) frame in each game spans 4 columns in case someone is scoring all strikes.
+در ادامه نمونه‌ای از بخشی از یک صفحه گسترده امتیازات لیگ مسابقات بولینگ آورده شده است. هر بازی شامل ۱۰ فریم است و هر فریم ۳ امتیاز را پوشش می‌دهد: دو توپ و مجموع فعلی. دهمین (و آخرین) فریم در هر بازی ۴ ستون را پوشش می‌دهد، در صورتی که کسی تمام توپ‌ها را استرایک بزند.
 
 ```html
 <div role="grid" aria-rowcount="27">
@@ -141,38 +141,38 @@ The following is an example of part of a bowling tournament league scoring sprea
 </div>
 ```
 
-If we had used a {{HTMLElement('table')}} and semantic table elements our markup would have been less verbose and accessible by default.
+اگر از {{HTMLElement('table')}} و عناصر جدول معنایی استفاده می‌کردیم، نشانه‌گذاری ما خلاصه‌تر بود و به‌طور پیش‌فرض قابل‌دسترس بود.
 
-## Values
+## مقادیر
 
 - `<integer>`
-  - : An integer greater than or equal to the default value of 1 defining the number of columns spanned by the cell. The value must be less than what would cause a cell to overlap the next cell in the same row.
+  - : عددی صحیح بزرگ‌تر یا مساوی مقدار پیش‌فرض ۱ که تعداد ستون‌های تحت پوشش سلول را تعریف می‌کند. مقدار باید کمتر از مقداری باشد که باعث هم‌پوشانی سلول با سلول بعدی در همان ردیف می‌شود.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaColSpan")}}
-  - : The [`ariaColSpan`](/en-US/docs/Web/API/Element/ariaColSpan) property, part of each element's interface, reflects the value of the `aria-colspan` attribute, which defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid.
+  - : ویژگی [`ariaColSpan`](/en-US/docs/Web/API/Element/ariaColSpan) که بخشی از رابط هر عنصر است، مقدار ویژگی `aria-colspan` را بازتاب می‌دهد؛ ویژگی‌ای که تعداد ستون‌های پوشش‌داده‌شده توسط یک سلول یا گریدسل درون یک جدول، گرید یا درخت‌گرید را تعریف می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده‌شده در نقش‌ها:
 
 - [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role)
 
-Inherits into roles:
+در نقش‌های زیر به ارث می‌رسد:
 
 - [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
 - [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement('th')}} and {{HTMLElement('td')}} [`colspan`](/en-US/docs/Web/HTML/Reference/Elements/td#attributes) attribute
-- [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) property
-- [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan) property
-- [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role) role
-- [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) role
-- [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) role
+- ویژگی [`colspan`](/en-US/docs/Web/HTML/Reference/Elements/td#attributes) برای عناصر {{HTMLElement('th')}} و {{HTMLElement('td')}}
+- ویژگی [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex)
+- ویژگی [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan)
+- نقش [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role)
+- نقش [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
+- نقش [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
