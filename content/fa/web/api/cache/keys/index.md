@@ -1,7 +1,7 @@
 ---
 title: "Cache: keys() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Cache/keys"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,15 +14,12 @@ browser-compat: api.Cache.keys
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`keys()`** method of the {{domxref("Cache")}} interface returns a
-{{jsxref("Promise")}} that resolves to an array of {{domxref("Request")}} objects
-representing the keys of the {{domxref("Cache")}}.
+متد **`keys()`** از رابط {{domxref("Cache")}} یک {{jsxref("Promise")}} را برمی‌گرداند که به آرایه‌ای از اشیاء {{domxref("Request")}} تبدیل می‌شود و کلیدهای {{domxref("Cache")}} را نشان می‌دهد.
 
-The requests are returned in the same order that they were inserted.
+درخواست‌ها به همان ترتیبی که درج شده‌اند بازگردانده می‌شوند.
 
 > [!NOTE]
-> Requests with duplicate URLs but different headers can be
-> returned if their responses have the `VARY` header set on them.
+> اگر پاسخ‌های درخواست‌هایی با URL‌های تکراری اما هدرهای متفاوت، هدر `VARY` را تنظیم کرده باشند، می‌توانند بازگردانده شوند.
 
 ## Syntax
 
@@ -35,37 +32,21 @@ keys(request, options)
 ### Parameters
 
 - `request` {{optional_inline}}
-  - : The {{domxref("Request")}} want to return, if a specific key is desired. This can be
-    a `Request` object or a URL.
+  - : {{domxref("Request")}} مورد نظر برای بازگرداندن، در صورت نیاز به یک کلید خاص. این می‌تواند یک شیء `Request` یا یک URL باشد.
 - `options` {{optional_inline}}
-  - : An object whose properties control how matching is done in the `keys`
-    operation. The available options are:
+  - : یک شیء که ویژگی‌های آن نحوه تطبیق در عملیات `keys` را کنترل می‌کند. گزینه‌های موجود عبارتند از:
     - `ignoreSearch`
-      - : A boolean value that specifies whether the
-        matching process should ignore the query string in the URL. If set to
-        `true`, the `?value=bar` part of
-        `https://example.com/?value=bar` would be ignored when performing a match.
-        It defaults to `false`.
+      - : یک مقدار بولی که مشخص می‌کند آیا فرآیند تطبیق باید رشته جستجو در URL را نادیده بگیرد. اگر روی `true` تنظیم شود، قسمت `?value=bar` از `https://example.com/?value=bar` هنگام انجام تطبیق نادیده گرفته می‌شود. مقدار پیش‌فرض `false` است.
     - `ignoreMethod`
-      - : A boolean value that, when set to
-        `true`, prevents matching operations from validating the
-        {{domxref("Request")}} `HTTP` method (normally only `GET`
-        and `HEAD` are allowed.) It defaults to `false`.
+      - : یک مقدار بولی که وقتی روی `true` تنظیم شود، از اعتبارسنجی متد {{domxref("Request")}} `HTTP` توسط عملیات تطبیق جلوگیری می‌کند (معمولاً فقط `GET` و `HEAD` مجاز هستند). مقدار پیش‌فرض `false` است.
     - `ignoreVary`
-      - : A boolean value that, when set to
-        `true`, tells the matching operation not to perform `VARY`
-        header matching. In other words, if the URL matches you will get a match
-        regardless of whether the {{domxref("Response")}} object has a `VARY`
-        header. It defaults to `false`.
+      - : یک مقدار بولی که وقتی روی `true` تنظیم شود، به عملیات تطبیق می‌گوید که تطبیق هدر `VARY` را انجام ندهد. به عبارت دیگر، اگر URL مطابقت داشته باشد، بدون توجه به اینکه شیء {{domxref("Response")}} هدر `VARY` داشته باشد، تطبیق انجام می‌شود. مقدار پیش‌فرض `false` است.
     - `cacheName`
-      - : A string that represents a specific
-        cache to search within. Note that this option is ignored by
-        `Cache.keys()`.
+      - : یک رشته که یک کش خاص را برای جستجو در آن مشخص می‌کند. توجه داشته باشید که این گزینه توسط `Cache.keys()` نادیده گرفته می‌شود.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves to an array of {{domxref("Request")}}
-objects.
+یک {{jsxref("Promise")}} که به آرایه‌ای از اشیاء {{domxref("Request")}} تبدیل می‌شود.
 
 ## Examples
 
@@ -90,6 +71,6 @@ caches
 
 ## See also
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 - {{domxref("Cache")}}
-- {{domxref("Window.caches")}} and {{domxref("WorkerGlobalScope.caches")}}
+- {{domxref("Window.caches")}} و {{domxref("WorkerGlobalScope.caches")}}
