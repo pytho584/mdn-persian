@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchManager: fetch() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchManager/fetch"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,65 +16,61 @@ browser-compat: api.BackgroundFetchManager.fetch
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`fetch()`** method of the {{domxref("BackgroundFetchManager")}} interface initiates a background fetch operation, given one or more URLs or {{domxref("Request")}} objects.
+**`fetch()`** متد از رابط {{domxref("BackgroundFetchManager")}} یک عملیات واکشی پس‌زمینه را آغاز می‌کند، با دادن یک یا چند URL یا شیء {{domxref("Request")}}.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 fetch(id, requests)
 fetch(id, requests, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `id`
-  - : A developer-defined identifier that can be passed to the other methods to retrieve the {{domxref("BackgroundFetchRegistration")}} for this operation.
+  - : یک شناسه تعریف‌شده توسط توسعه‌دهنده که می‌تواند به سایر متدها منتقل شود تا {{domxref("BackgroundFetchRegistration")}} مربوط به این عملیات بازیابی شود.
 - `requests`
-  - : A `RequestInfo` object or an array of `RequestInfo` objects.
+  - : یک شیء `RequestInfo` یا آرایه‌ای از اشیاء `RequestInfo`.
 
-    Each `RequestInfo` object is a {{domxref("Request")}} object or a string that will be given as the `input` argument to the {{domxref("Request.Request()", "Request()")}} constructor.
+    هر شیء `RequestInfo` یک شیء {{domxref("Request")}} یا یک رشته است که به عنوان آرگومان `input` به سازنده {{domxref("Request.Request()", "Request()")}} داده می‌شود.
 
 - `options` {{optional_inline}}
-  - : An object which will be used to customize the fetch progress dialog that the browser shows to the user. It has the following properties:
+  - : یک شیء که برای سفارشی‌سازی گفتگوی پیشرفت واکشی که مرورگر به کاربر نشان می‌دهد استفاده می‌شود. دارای ویژگی‌های زیر است:
     - `title` {{optional_inline}}
-      - : A string that will be used as the title for the progress dialog.
+      - : رشته‌ای که به عنوان عنوان گفتگوی پیشرفت استفاده می‌شود.
     - `icons` {{optional_inline}}
-      - : An array of objects, each representing an icon that the browser may use for the progress dialog. Each object has the following properties:
+      - : آرایه‌ای از اشیاء که هر کدام نمادی را نشان می‌دهند که مرورگر ممکن است برای گفتگوی پیشرفت استفاده کند. هر شیء دارای ویژگی‌های زیر است:
         - `src`
-          - : A string representing a URL to the icon file.
+          - : رشته‌ای که URL فایل آیکون را نشان می‌دهد.
         - `sizes` {{optional_inline}}
-          - : A string representing the sizes of the image, expressed using the same syntax as the `sizes` attribute of the {{HTMLElement("link")}} element.
+          - : رشته‌ای که اندازه‌های تصویر را نشان می‌دهد، با استفاده از همان نحو ویژگی `sizes` عنصر {{HTMLElement("link")}} بیان می‌شود.
         - `type` {{optional_inline}}
-          - : A string representing the {{Glossary("MIME")}} type of the icon.
+          - : رشته‌ای که نوع {{Glossary("MIME")}} آیکون را نشان می‌دهد.
         - `label` {{optional_inline}}
-          - : A string representing the accessible name of the icon.
+          - : رشته‌ای که نام قابل دسترس آیکون را نشان می‌دهد.
     - `downloadTotal` {{optional_inline}}
-      - : A number representing the estimated total download size, in bytes, for the fetch operation. This is used to show the user how big the download is and to show the user download progress.
+      - : عددی که اندازه کل دانلود تخمینی را بر حسب بایت برای عملیات واکشی نشان می‌دهد. این برای نشان دادن اندازه دانلود به کاربر و نمایش پیشرفت دانلود استفاده می‌شود.
 
-        As soon as the total download size exceeds `downloadTotal`, then the fetch is aborted.
+        به محض اینکه اندازه کل دانلود از `downloadTotal` فراتر رفت، واکشی لغو می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a {{domxref("BackgroundFetchRegistration")}} object.
+یک {{jsxref("Promise")}} که با یک شیء {{domxref("BackgroundFetchRegistration")}} حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Raised if no request is provided, if the mode of a request is `no-cors`, if no service worker is present, a request already exists with the requested `id`, or the request fails.
+  - : اگر درخواستی ارائه نشود، اگر حالت یک درخواست `no-cors` باشد، اگر هیچ سرویس‌کارگری وجود نداشته باشد، اگر درخواستی با `id` درخواستی از قبل وجود داشته باشد، یا اگر درخواست شکست بخورد، مطرح می‌شود.
 - `AbortError` {{domxref("DOMException")}}
-  - : Indicates that the fetch was aborted.
+  - : نشان می‌دهد که واکشی لغو شده است.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Indicates that user permission has not been granted to make background fetches.
+  - : نشان می‌دهد که مجوز کاربر برای انجام واکشی‌های پس‌زمینه داده نشده است.
 - {{domxref("QuotaExceededError")}}
-  - : Thrown if storing requests failed due to exceed the browser's [storage quota](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
+  - : اگر ذخیره‌سازی درخواست‌ها به دلیل فراتر رفتن از [سهمیه ذخیره‌سازی](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria) مرورگر شکست بخورد، مطرح می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example shows how to use `fetch()` to initiate a background fetch operation. With an active
-{{domxref('ServiceWorker', 'service worker', "", "nocode")}}, use the
-{{domxref('ServiceWorkerRegistration.backgroundFetch')}} property to access the
-`BackgroundFetchManager` object and call its `fetch()`
-method.
+مثال زیر نحوه استفاده از `fetch()` را برای شروع یک عملیات واکشی پس‌زمینه نشان می‌دهد. با یک {{domxref('ServiceWorker', 'سرویس‌کارگر', "", "nocode")}} فعال، از ویژگی {{domxref('ServiceWorkerRegistration.backgroundFetch')}} برای دسترسی به شیء `BackgroundFetchManager` و فراخوانی متد `fetch()` آن استفاده کنید.
 
 ```js
 navigator.serviceWorker.ready.then(async (swReg) => {
@@ -97,10 +93,10 @@ navigator.serviceWorker.ready.then(async (swReg) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
