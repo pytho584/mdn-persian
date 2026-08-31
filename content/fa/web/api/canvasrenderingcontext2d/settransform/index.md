@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: setTransform() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setTransform"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: setTransform() method"
 short-title: setTransform()
 slug: Web/API/CanvasRenderingContext2D/setTransform
 page-type: web-api-instance-method
@@ -14,57 +8,56 @@ browser-compat: api.CanvasRenderingContext2D.setTransform
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.setTransform()`** method of the Canvas 2D API resets (overrides) the current transformation to the identity matrix, and then invokes a transformation described by the arguments of this method. This lets you scale, rotate, translate (move), and skew the context.
+متد **`CanvasRenderingContext2D.setTransform()`** در Canvas 2D API، تبدیل فعلی را به ماتریس همانندی (identity matrix) بازنشانی (بازنویسی) می‌کند و سپس تبدیلی را که توسط آرگومان‌های این متد توصیف شده اعمال می‌کند. این به شما امکان می‌دهد بافت (context) را مقیاس‌بندی، چرخش، انتقال (جابه‌جایی) و اریب کنید.
 
 > [!NOTE]
-> See also the {{domxref("CanvasRenderingContext2D.transform()", "transform()")}} method; instead of overriding the current transform matrix, it
-> multiplies it with a given one.
+> همچنین به متد {{domxref("CanvasRenderingContext2D.transform()", "transform()")}} مراجعه کنید؛ به‌جای بازنویسی ماتریس تبدیل فعلی، آن را در یک ماتریس داده‌شده ضرب می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setTransform(a, b, c, d, e, f)
 setTransform(matrix)
 ```
 
-The transformation matrix is described by: <math><semantics><mrow><mo>[</mo><mtable columnalign="center center center" rowspacing="0.5ex"><mtr><mtd><mi>a</mi></mtd><mtd><mi>c</mi></mtd><mtd><mi>e</mi></mtd></mtr><mtr><mtd><mi>b</mi></mtd><mtd><mi>d</mi></mtd><mtd><mi>f</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>]</mo></mrow><annotation encoding="TeX">\left[ \begin{array}{ccc} a & c & e \\ b & d & f \\ 0 & 0 & 1 \end{array} \right]</annotation></semantics></math>.
+ماتریس تبدیل به این شکل توصیف می‌شود: <math><semantics><mrow><mo>[</mo><mtable columnalign="center center center" rowspacing="0.5ex"><mtr><mtd><mi>a</mi></mtd><mtd><mi>c</mi></mtd><mtd><mi>e</mi></mtd></mtr><mtr><mtd><mi>b</mi></mtd><mtd><mi>d</mi></mtd><mtd><mi>f</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>]</mo></mrow><annotation encoding="TeX">\left[ \begin{array}{ccc} a & c & e \\ b & d & f \\ 0 & 0 & 1 \end{array} \right]</annotation></semantics></math>.
 
-This transformation matrix gets multiplied on the left of a column vector representing each point being drawn on the canvas, to produce the final coordinate used on the canvas.
+این ماتریس تبدیل در سمت چپ بردار ستونی که نمایانگر هر نقطه‌ای است که روی بوم (canvas) رسم می‌شود ضرب می‌شود تا مختصات نهایی مورد استفاده روی بوم تولید شود.
 
-### Parameters
+### پارامترها
 
-`setTransform()` accepts two types of parameters. The older type consists of several parameters representing the individual components of the transformation matrix to set:
+`setTransform()` دو نوع پارامتر می‌پذیرد. نوع قدیمی‌تر شامل چند پارامتر است که مؤلفه‌های جداگانه ماتریس تبدیل را برای تنظیم مشخص می‌کنند:
 
 - `a` (`m11`)
-  - : The cell in the first row and first column of the matrix.
+  - : خانه‌ی سطر اول و ستون اول ماتریس.
 - `b` (`m12`)
-  - : The cell in the second row and first column of the matrix.
+  - : خانه‌ی سطر دوم و ستون اول ماتریس.
 - `c` (`m21`)
-  - : The cell in the first row and second column of the matrix.
+  - : خانه‌ی سطر اول و ستون دوم ماتریس.
 - `d` (`m22`)
-  - : The cell in the second row and second column of the matrix.
+  - : خانه‌ی سطر دوم و ستون دوم ماتریس.
 - `e` (`m41`)
-  - : The cell in the first row and third column of the matrix.
+  - : خانه‌ی سطر اول و ستون سوم ماتریس.
 - `f` (`m42`)
-  - : The cell in the second row and third column of the matrix.
+  - : خانه‌ی سطر دوم و ستون سوم ماتریس.
 
-Alternatively, you can pass a single parameter which is an object containing the values above as properties. The parameter names are the property keys, and if two synonymous names are both present (e.g., `m11` and `a`), they must be the same number value, or a {{jsxref("TypeError")}} will be thrown. Using the object form allows omitting some parameters — `a` and `d` default to `1`, while the rest default to `0`.
+به‌عنوان جایگزین، می‌توانید یک پارامتر واحد که یک شیء حاوی مقادیر بالا به‌عنوان ویژگی است را ارسال کنید. نام پارامترها کلیدهای ویژگی هستند و اگر هر دو نام مترادف وجود داشته باشند (مثلاً `m11` و `a`)، باید مقدار عددی یکسانی داشته باشند، در غیر این صورت یک {{jsxref("TypeError")}} پرتاب می‌شود. استفاده از فرم شیء اجازه می‌دهد برخی پارامترها حذف شوند — `a` و `d` به‌طور پیش‌فرض `1` و بقیه به‌طور پیش‌فرض `0` هستند.
 
-If a point originally had coordinates <math><semantics><mrow><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="TeX">(x, y)</annotation></semantics></math>, then after the transformation it will have coordinates <math><semantics><mrow><mo>(</mo><mi>a</mi><mi>x</mi><mo>+</mo><mi>c</mi><mi>y</mi><mo>+</mo><mi>e</mi><mo>,</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>d</mi><mi>y</mi><mo>+</mo><mi>f</mi><mo>)</mo></mrow><annotation encoding="TeX">(ax + cy + e, bx + dy + f)</annotation></semantics></math>. This means:
+اگر یک نقطه در ابتدا مختصات <math><semantics><mrow><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="TeX">(x, y)</annotation></semantics></math> داشته باشد، پس از تبدیل مختصات آن <math><semantics><mrow><mo>(</mo><mi>a</mi><mi>x</mi><mo>+</mo><mi>c</mi><mi>y</mi><mo>+</mo><mi>e</mi><mo>,</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>d</mi><mi>y</mi><mo>+</mo><mi>f</mi><mo>)</mo></mrow><annotation encoding="TeX">(ax + cy + e, bx + dy + f)</annotation></semantics></math> خواهد بود. این یعنی:
 
-- `e` and `f` control the horizontal and vertical translation of the context.
-- When `b` and `c` are `0`, `a` and `d` control the horizontal and vertical scaling of the context.
-- When `a` and `d` are `1`, `b` and `c` control the horizontal and vertical skewing of the context.
+- `e` و `f` انتقال افقی و عمودی بافت را کنترل می‌کنند.
+- وقتی `b` و `c` صفر باشند، `a` و `d` مقیاس‌بندی افقی و عمودی بافت را کنترل می‌کنند.
+- وقتی `a` و `d` برابر ۱ باشند، `b` و `c` اریب‌شدن افقی و عمودی بافت را کنترل می‌کنند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Skewing a shape
+### اریب کردن یک شکل
 
-This example skews a rectangle both vertically (`.2`) and horizontally (`.8`). Scaling and translation remain unchanged.
+این مثال یک مستطیل را هم به‌صورت عمودی (`.2`) و هم به‌صورت افقی (`.8`) اریب می‌کند. مقیاس‌بندی و انتقال بدون تغییر می‌مانند.
 
 #### HTML
 
@@ -82,15 +75,15 @@ ctx.setTransform(1, 0.2, 0.8, 1, 0, 0);
 ctx.fillRect(0, 0, 100, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Skewing_a_shape', 700, 180) }}
 
-### Retrieving and passing a DOMMatrix object
+### دریافت و ارسال یک شیء DOMMatrix
 
-In the following example, we have two {{htmlelement("canvas")}} elements. We apply a transform to the first one's context using the first type of `setTransform()` and draw a square on it, then retrieve the matrix from it using {{domxref("CanvasRenderingContext2D.getTransform()")}}.
+در مثال زیر، دو عنصر {{htmlelement("canvas")}} داریم. با استفاده از نوع اول `setTransform()` یک تبدیل روی بافت عنصر اول اعمال می‌کنیم و یک مربع روی آن رسم می‌کنیم، سپس ماتریس را با استفاده از {{domxref("CanvasRenderingContext2D.getTransform()")}} از آن دریافت می‌کنیم.
 
-We then apply the retrieved matrix directly to the second canvas context by passing the `DOMMatrix` object directly to `setTransform()` (i.e., the second type), and draw a circle on it.
+سپس ماتریس دریافت‌شده را مستقیماً با ارسال شیء `DOMMatrix` به `setTransform()` (یعنی نوع دوم) روی بافت عنصر دوم اعمال می‌کنیم و یک دایره روی آن رسم می‌کنیم.
 
 #### HTML
 
@@ -128,19 +121,19 @@ ctx2.arc(50, 50, 50, 0, 2 * Math.PI);
 ctx2.fill();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Retrieving_and_passing_a_DOMMatrix_object', "100%", 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.transform()")}}
