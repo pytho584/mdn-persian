@@ -1,7 +1,7 @@
 ---
 title: "AudioPlaybackStats: underrunEvents property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioPlaybackStats/underrunEvents"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,15 +16,15 @@ browser-compat: api.AudioPlaybackStats.underrunEvents
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`underrunEvents`** read-only property of the {{domxref("AudioPlaybackStats")}} interface is a number indicating how many [underrun events](/en-US/docs/Web/API/AudioPlaybackStats#underrun_event) have occurred since the audio context was initialized.
+ویژگی فقط‌خواندنی **`underrunEvents`** در رابط {{domxref("AudioPlaybackStats")}} عددی است که نشان می‌دهد چند [underrun events](/en-US/docs/Web/API/AudioPlaybackStats#underrun_event) از زمان مقداردهی اولیه بافت صوتی رخ داده است.
 
-## Value
+## ارزش
 
-An integer indicating the number of underrun events. Initialized to `0`.
+یک عدد صحیح که تعداد رویدادهای underrun را نشان می‌دهد. مقدار اولیه آن `0` است.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 const audioCtx = new AudioContext();
@@ -36,16 +36,16 @@ const stats = audioCtx.playbackStats;
 console.log(stats.underrunEvents);
 ```
 
-See also the main {{domxref("AudioPlaybackStats")}} reference page for a more in-depth example.
+برای مثال دقیق‌تر، همچنین به صفحه مرجع اصلی {{domxref("AudioPlaybackStats")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
