@@ -1,11 +1,5 @@
 ---
 title: "ContentIndex: add() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContentIndex/add"
-status: "needs-translation"
----
-
----
-title: "ContentIndex: add() method"
 short-title: add()
 slug: Web/API/ContentIndex/add
 page-type: web-api-instance-method
@@ -16,73 +10,63 @@ browser-compat: api.ContentIndex.add
 
 {{APIRef("Content Index API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`add()`** method of the
-{{domxref("ContentIndex")}} interface registers an item with the [content index](/en-US/docs/Web/API/Content_Index_API).
+متد **`add()`** از رابط {{domxref("ContentIndex")}} یک مورد را در [فهرست محتوا](/en-US/docs/Web/API/Content_Index_API) ثبت می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 add(contentDescription)
 ```
 
-### Parameters
+### پارامترها
 
 - `contentDescription`
-  - : An {{jsxref('Object')}} containing the following data:
+  - : یک {{jsxref('Object')}} شامل داده‌های زیر:
     - `id`
-      - : A unique {{jsxref('String')}} identifier.
+      - : یک شناسه منحصربه‌فرد از نوع {{jsxref('String')}}.
     - `title`
-      - : A {{jsxref('String')}} title for the item. Used in
-        user-visible lists of content.
+      - : یک عنوان از نوع {{jsxref('String')}} برای مورد. در لیست‌های قابل مشاهده برای کاربر از محتوا استفاده می‌شود.
     - `description`
-      - : A {{jsxref('String')}} description of the item. Used
-        in user-visible lists of content.
+      - : یک توضیح از نوع {{jsxref('String')}} برای مورد. در لیست‌های قابل مشاهده برای کاربر از محتوا استفاده می‌شود.
     - `url`
-      - : A {{jsxref('String')}} containing the URL of the corresponding
-        HTML document. Needs to be under the scope of the current
-        [service worker](/en-US/docs/Web/API/ServiceWorker).
+      - : یک {{jsxref('String')}} شامل URL سند HTML مربوطه. باید در حیطه (scope) [service worker](/en-US/docs/Web/API/ServiceWorker) جاری باشد.
     - `category` {{Optional_Inline}}
-      - : A {{jsxref('String')}} defining the
-        category of content. Can be:
-        - `''` An empty {{jsxref('String')}}, this is the default.
+      - : یک {{jsxref('String')}} که دسته‌بندی محتوا را تعریف می‌کند. می‌تواند:
+        - `''` یک {{jsxref('String')}} خالی، که پیش‌فرض است.
         - `homepage`
         - `article`
         - `video`
         - `audio`
-
     - `icons` {{Optional_Inline}}
-      - : An {{jsxref('Array')}} of image
-        resources, defined as an {{jsxref('Object')}} with the following data:
+      - : یک {{jsxref('Array')}} از منابع تصویر، که به صورت یک {{jsxref('Object')}} با داده‌های زیر تعریف می‌شود:
         - `src`
-          - : A URL {{jsxref('String')}} of the source image.
+          - : یک URL از نوع {{jsxref('String')}} برای تصویر منبع.
         - `sizes` {{Optional_Inline}}
-          - : A {{jsxref('String')}} representation of the image size.
+          - : یک نمایش از نوع {{jsxref('String')}} از اندازه تصویر.
         - `type` {{Optional_Inline}}
-          - : The {{Glossary("MIME type")}} of the image.
+          - : {{Glossary("MIME type")}} تصویر.
         - `label` {{Optional_Inline}}
-          - : A string representing the accessible name of the icon.
+          - : یک رشته که نام قابل دسترس (accessible) آیکون را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a {{jsxref("Promise")}} that resolves with `undefined`.
+یک {{jsxref("Promise")}} برمی‌گرداند که با `undefined` حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : This exception is thrown in the following conditions:
-    - The service worker's registration is not present or the service worker does not contain a {{domxref('FetchEvent')}}.
-    - One of `id`, `title`, `description` or `url` parameter are missing, not of type {{jsxref('String')}}, or an empty {{jsxref('String')}}.
-    - The `url` parameter is not {{glossary("same-origin policy")}} with the {{domxref("ServiceWorker", "service worker", "", "nocode")}}.
-    - One of the items in `icons` are not an image type, or fetching one of the items in `icons` failed with a network error or decode error.
+  - : این استثنا در شرایط زیر پرتاب می‌شود:
+    - ثبت (registration) سرویس‌ورکر وجود ندارد یا سرویس‌ورکر شامل {{domxref('FetchEvent')}} نیست.
+    - یکی از پارامترهای `id`، `title`، `description` یا `url` وجود نداشته باشد، از نوع {{jsxref('String')}} نباشد، یا یک {{jsxref('String')}} خالی باشد.
+    - پارامتر `url` با {{glossary("same-origin policy")}} (خط مشی همان مبدأ) {{domxref("ServiceWorker", "سرویس‌ورکر", "", "nocode")}} مطابقت نداشته باشد.
+    - یکی از موارد موجود در `icons` از نوع تصویر نباشد، یا واکشی یکی از موارد موجود در `icons` با خطای شبکه یا خطای رمزگشایی (decode) شکست بخورد.
 
-## Examples
+## مثال‌ها
 
-Here we're declaring an item in the correct format and creating an asynchronous
-function which uses the `add` method to register it with the
-[content index](/en-US/docs/Web/API/Content_Index_API).
+در اینجا یک مورد را با فرمت صحیح اعلام می‌کنیم و یک تابع ناهمگام (async) ایجاد می‌کنیم که از متد `add` برای ثبت آن در [فهرست محتوا](/en-US/docs/Web/API/Content_Index_API) استفاده می‌کند.
 
 ```js
-// our content
+// محتوای ما
 const item = {
   id: "post-1",
   url: "/posts/amet.html",
@@ -99,16 +83,16 @@ const item = {
   category: "article",
 };
 
-// our asynchronous function to add indexed content
+// تابع ناهمگام ما برای افزودن محتوای فهرست‌شده
 async function registerContent(data) {
   const registration = await navigator.serviceWorker.ready;
 
-  // feature detect Content Index
+  // تشخیص قابلیت Content Index
   if (!registration.index) {
     return;
   }
 
-  // register content
+  // ثبت محتوا
   try {
     await registration.index.add(data);
   } catch (e) {
@@ -117,11 +101,10 @@ async function registerContent(data) {
 }
 ```
 
-The `add` method can also be used within the
-[service worker](/en-US/docs/Web/API/ServiceWorker) scope.
+متد `add` همچنین می‌تواند در حیطه (scope) [سرویس‌ورکر](/en-US/docs/Web/API/ServiceWorker) استفاده شود.
 
 ```js
-// our content
+// محتوای ما
 const item = {
   id: "post-1",
   url: "/posts/amet.html",
@@ -141,15 +124,15 @@ const item = {
 self.registration.index.add(item);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [An introductory article on the Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
-- [Service Worker API, along with information about Cache and CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
+- [یک مقاله مقدماتی درباره Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
+- [Service Worker API، همراه با اطلاعاتی درباره Cache و CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
