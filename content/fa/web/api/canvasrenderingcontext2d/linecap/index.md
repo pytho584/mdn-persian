@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: lineCap property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: lineCap property"
 short-title: lineCap
 slug: Web/API/CanvasRenderingContext2D/lineCap
 page-type: web-api-instance-property
@@ -14,32 +8,27 @@ browser-compat: api.CanvasRenderingContext2D.lineCap
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.lineCap`**
-property of the Canvas 2D API determines the shape used to draw the end points of lines.
+ویژگی **`CanvasRenderingContext2D.lineCap`** از Canvas 2D API شکل مورد استفاده برای رسم نقاط انتهایی خطوط را تعیین می‌کند.
 
 > [!NOTE]
-> Lines can be drawn with the
-> {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}}, {{domxref("CanvasRenderingContext2D.strokeRect()", "strokeRect()")}},
-> and {{domxref("CanvasRenderingContext2D.strokeText()", "strokeText()")}} methods.
+> خطوط را می‌توان با استفاده از متدهای {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}}، {{domxref("CanvasRenderingContext2D.strokeRect()", "strokeRect()")}} و {{domxref("CanvasRenderingContext2D.strokeText()", "strokeText()")}} رسم کرد.
 
-## Value
+## مقدار
 
-One of the following:
+یکی از موارد زیر:
 
 - `"butt"`
-  - : The ends of lines are squared off at the endpoints. Default value.
+  - : انتهای خطوط در نقاط انتهایی به صورت مربعی بریده می‌شوند. مقدار پیش‌فرض.
 - `"round"`
-  - : The ends of lines are rounded.
+  - : انتهای خطوط گرد می‌شوند.
 - `"square"`
-  - : The ends of lines are squared off by adding a box with an equal width and half the
-    height of the line's thickness.
+  - : انتهای خطوط با افزودن یک جعبه با عرض برابر و نصف ارتفاع ضخامت خط به صورت مربعی بریده می‌شوند.
 
-## Examples
+## مثال‌ها
 
-### Changing the shape of line caps
+### تغییر شکل سرپوش‌های خط
 
-This example rounds the end caps of a straight line.
+این مثال سرپوش‌های انتهای یک خط مستقیم را گرد می‌کند.
 
 #### HTML
 
@@ -61,21 +50,15 @@ ctx.lineTo(100, 100);
 ctx.stroke();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Changing_the_shape_of_line_caps', 700, 180) }}
 
-### Comparison of line caps
+### مقایسه سرپوش‌های خط
 
-In this example three lines are drawn, each with a different value for the
-`lineCap` property. Two guides to see the exact differences between the three
-are added. Each of these lines starts and ends exactly on these guides.
+در این مثال سه خط رسم شده‌اند که هر کدام مقدار متفاوتی برای ویژگی `lineCap` دارند. دو راهنما برای مشاهده تفاوت‌های دقیق بین سه خط اضافه شده است. هر یک از این خطوط دقیقاً روی این راهنماها شروع و پایان می‌یابند.
 
-The line on the left uses the default `"butt"` option. It's drawn completely
-flush with the guides. The second is set to use the `"round"` option. This
-adds a semicircle to the end that has a radius half the width of the line. The line on
-the right uses the `"square"` option. This adds a box with an equal width and
-half the height of the line thickness.
+خط سمت چپ از گزینه پیش‌فرض `"butt"` استفاده می‌کند. این خط کاملاً هم‌سطح با راهنماها رسم شده است. خط دوم با گزینه `"round"` تنظیم شده است. این گزینه یک نیم‌دایره به انتهای خط اضافه می‌کند که شعاع آن نصف عرض خط است. خط سمت راست از گزینه `"square"` استفاده می‌کند. این گزینه یک جعبه با عرض برابر و نصف ارتفاع ضخامت خط اضافه می‌کند.
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -85,7 +68,7 @@ half the height of the line thickness.
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// Draw guides
+// رسم راهنماها
 ctx.strokeStyle = "#0099ff";
 ctx.beginPath();
 ctx.moveTo(10, 10);
@@ -94,7 +77,7 @@ ctx.moveTo(10, 140);
 ctx.lineTo(140, 140);
 ctx.stroke();
 
-// Draw lines
+// رسم خطوط
 ctx.strokeStyle = "black";
 ["butt", "round", "square"].forEach((lineCap, i) => {
   ctx.lineWidth = 15;
@@ -108,22 +91,21 @@ ctx.strokeStyle = "black";
 
 {{EmbedLiveSample("Comparison_of_line_caps", "180", "180")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-### WebKit/Blink-specific notes
+### یادداشت‌های مخصوص WebKit/Blink
 
-- In WebKit- and Blink-based Browsers, a non-standard and deprecated method
-  `ctx.setLineCap()` is implemented in addition to this property.
+- در مرورگرهای مبتنی بر WebKit و Blink، یک متد غیراستاندارد و منسوخ شده به نام `ctx.setLineCap()` علاوه بر این ویژگی پیاده‌سازی شده است.
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این ویژگی: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.lineWidth")}}
 - {{domxref("CanvasRenderingContext2D.lineJoin")}}
-- [Applying styles and color](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors)
+- [اعمال سبک‌ها و رنگ‌ها](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors)
