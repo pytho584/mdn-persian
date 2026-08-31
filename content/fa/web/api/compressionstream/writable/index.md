@@ -1,11 +1,5 @@
 ---
 title: "CompressionStream: writable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CompressionStream/writable"
-status: "needs-translation"
----
-
----
-title: "CompressionStream: writable property"
 short-title: writable
 slug: Web/API/CompressionStream/writable
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CompressionStream.writable
 
 {{APIRef("Compression Streams API")}}{{AvailableInWorkers}}
 
-The **`writable`** read-only property of the {{domxref("CompressionStream")}} interface returns a {{domxref("WritableStream")}} that accepts uncompressed data to be compressed, in the form of {{jsxref("ArrayBuffer")}}, {{jsxref("TypedArray")}}, or {{jsxref("DataView")}} chunks.
+ویژگی فقط‑خواندنی **`writable`** از رابط {{domxref("CompressionStream")}} یک {{domxref("WritableStream")}} برمی‌گرداند که داده‌های فشرده‌نشده را به صورت تکه‌های {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}} می‌پذیرد تا فشرده شوند.
 
-## Value
+## مقدار
 
-A {{domxref("WritableStream")}}.
+یک {{domxref("WritableStream")}}.
 
-## Examples
+## مثال‌ها
 
-This example creates a `CompressionStream` that performs gzip compression. It writes some binary data to the `writable` stream, then reads the compressed data from the `readable` stream.
+این مثال یک `CompressionStream` ایجاد می‌کند که فشرده‌سازی gzip را انجام می‌دهد. برخی داده‌های باینری را به جریان `writable` می‌نویسد، سپس داده‌های فشرده‌شده را از جریان `readable` می‌خواند.
 
 ```js
 const stream = new CompressionStream("gzip");
@@ -47,14 +41,14 @@ while (!done) {
 console.log(new Uint8Array(output).toBase64()); // H4sIAAAAAAAAE/NIzcnJ11Eozy/KSVEEAObG5usNAAAA
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("TransformStream.writable")}}
