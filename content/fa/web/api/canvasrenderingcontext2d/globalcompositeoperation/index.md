@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: globalCompositeOperation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: globalCompositeOperation property"
 short-title: globalCompositeOperation
 slug: Web/API/CanvasRenderingContext2D/globalCompositeOperation
 page-type: web-api-instance-property
@@ -14,76 +8,72 @@ browser-compat: api.CanvasRenderingContext2D.globalCompositeOperation
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.globalCompositeOperation`**
-property of the Canvas 2D API sets the type of compositing operation to apply when
-drawing new shapes.
+ویژگی **`CanvasRenderingContext2D.globalCompositeOperation`** در Canvas 2D API نوع عملیات ترکیب (compositing) را برای زمان رسم اشکال جدید تعیین می‌کند.
 
-See also [Compositing and clipping](/en-US/docs/Web/API/Canvas_API/Tutorial/Compositing) in the [Canvas Tutorial](/en-US/docs/Web/API/Canvas_API/Tutorial).
+همچنین به [Compositing and clipping](/en-US/docs/Web/API/Canvas_API/Tutorial/Compositing) در [Canvas Tutorial](/en-US/docs/Web/API/Canvas_API/Tutorial) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string identifying which of the compositing or blending mode operations to use. This may be any of the following values:
+یک رشته که مشخص می‌کند از کدام یک از عملیات ترکیب یا حالت ترکیب (blending mode) استفاده شود. این رشته می‌تواند هر یک از مقادیر زیر باشد:
 
 - `"source-over"`
-  - : This is the default setting and draws new shapes on top of the existing canvas content.
+  - : این تنظیم پیش‌فرض است و اشکال جدید را روی محتوای موجود بوم (canvas) رسم می‌کند.
 - `"source-in"`
-  - : The new shape is drawn only where both the new shape and the destination canvas overlap. Everything else is made transparent.
+  - : شکل جدید فقط در جایی رسم می‌شود که هم شکل جدید و هم بوم مقصد هم‌پوشانی دارند. بقیه قسمت‌ها شفاف می‌شوند.
 - `"source-out"`
-  - : The new shape is drawn where it doesn't overlap the existing canvas content.
+  - : شکل جدید در جایی رسم می‌شود که با محتوای موجود بوم هم‌پوشانی ندارد.
 - `"source-atop"`
-  - : The new shape is only drawn where it overlaps the existing canvas content.
+  - : شکل جدید فقط در جایی رسم می‌شود که با محتوای موجود بوم هم‌پوشانی دارد.
 - `"destination-over"`
-  - : New shapes are drawn behind the existing canvas content.
+  - : اشکال جدید پشت محتوای موجود بوم رسم می‌شوند.
 - `"destination-in"`
-  - : The existing canvas content is kept where both the new shape and existing canvas content overlap. Everything else is made transparent.
+  - : محتوای موجود بوم در جایی که هم شکل جدید و هم محتوای موجود بوم هم‌پوشانی دارند حفظ می‌شود. بقیه قسمت‌ها شفاف می‌شوند.
 - `"destination-out"`
-  - : The existing content is kept where it doesn't overlap the new shape.
+  - : محتوای موجود در جایی که با شکل جدید هم‌پوشانی ندارد حفظ می‌شود.
 - `"destination-atop"`
-  - : The existing canvas is only kept where it overlaps the new shape. The new shape is drawn behind the canvas content.
+  - : بوم موجود فقط در جایی که با شکل جدید هم‌پوشانی دارد حفظ می‌شود. شکل جدید پشت محتوای بوم رسم می‌شود.
 - `"lighter"`
-  - : Where both shapes overlap, the color is determined by adding color values.
+  - : در جایی که هر دو شکل هم‌پوشانی دارند، رنگ با جمع مقادیر رنگ تعیین می‌شود.
 - `"copy"`
-  - : Only the new shape is shown.
+  - : فقط شکل جدید نمایش داده می‌شود.
 - `"xor"`
-  - : Shapes are made transparent where both overlap and drawn normal everywhere else.
+  - : اشکال در جایی که هم‌پوشانی دارند شفاف می‌شوند و در بقیه جاها به صورت عادی رسم می‌شوند.
 - `"multiply"`
-  - : The pixels of the top layer are multiplied with the corresponding pixels of the bottom layer. A darker picture is the result.
+  - : پیکسل‌های لایه بالا در پیکسل‌های متناظر لایه پایین ضرب می‌شوند. نتیجه تصویری تیره‌تر است.
 - `"screen"`
-  - : The pixels are inverted, multiplied, and inverted again. A lighter picture is the result (opposite of `multiply`)
+  - : پیکسل‌ها معکوس، ضرب و دوباره معکوس می‌شوند. نتیجه تصویری روشن‌تر است (برعکس `multiply`).
 - `"overlay"`
-  - : A combination of `multiply` and `screen`. Dark parts on the base layer become darker, and light parts become lighter.
+  - : ترکیبی از `multiply` و `screen`. قسمت‌های تیره در لایه پایه تیره‌تر و قسمت‌های روشن روشن‌تر می‌شوند.
 - `"darken"`
-  - : Retains the darkest pixels of both layers.
+  - : تیره‌ترین پیکسل‌های هر دو لایه را حفظ می‌کند.
 - `"lighten"`
-  - : Retains the lightest pixels of both layers.
+  - : روشن‌ترین پیکسل‌های هر دو لایه را حفظ می‌کند.
 - `"color-dodge"`
-  - : Divides the bottom layer by the inverted top layer.
+  - : لایه پایین را بر لایه بالای معکوس شده تقسیم می‌کند.
 - `"color-burn"`
-  - : Divides the inverted bottom layer by the top layer, and then inverts the result.
+  - : لایه پایین معکوس شده را بر لایه بالا تقسیم می‌کند و سپس نتیجه را معکوس می‌کند.
 - `"hard-light"`
-  - : Like `overlay`, a combination of `multiply` and `screen` — but instead with the top layer and bottom layer swapped.
+  - : مانند `overlay`، ترکیبی از `multiply` و `screen` – اما با جابجایی لایه بالا و لایه پایین.
 - `"soft-light"`
-  - : A softer version of `hard-light`. Pure black or white does not result in pure black or white.
+  - : نسخه نرم‌تر `hard-light`. سیاه یا سفید خالص منجر به سیاه یا سفید خالص نمی‌شود.
 - `"difference"`
-  - : Subtracts the bottom layer from the top layer — or the other way round — to always get a positive value.
+  - : لایه پایین را از لایه بالا کم می‌کند – یا برعکس – تا همیشه یک مقدار مثبت به دست آید.
 - `"exclusion"`
-  - : Like `difference`, but with lower contrast.
+  - : مانند `difference`، اما با کنتراست کمتر.
 - `"hue"`
-  - : Preserves the luma and chroma of the bottom layer, while adopting the hue of the top layer.
+  - : درخشندگی (luma) و خلوص رنگ (chroma) لایه پایین را حفظ می‌کند، در حالی که رنگ (hue) لایه بالا را می‌پذیرد.
 - `"saturation"`
-  - : Preserves the luma and hue of the bottom layer, while adopting the chroma of the top layer.
+  - : درخشندگی و رنگ لایه پایین را حفظ می‌کند، در حالی که خلوص رنگ لایه بالا را می‌پذیرد.
 - `"color"`
-  - : Preserves the luma of the bottom layer, while adopting the hue and chroma of the top layer.
+  - : درخشندگی لایه پایین را حفظ می‌کند، در حالی که رنگ و خلوص رنگ لایه بالا را می‌پذیرد.
 - `"luminosity"`
-  - : Preserves the hue and chroma of the bottom layer, while adopting the luma of the top layer.
+  - : رنگ و خلوص رنگ لایه پایین را حفظ می‌کند، در حالی که درخشندگی لایه بالا را می‌پذیرد.
 
-## Examples
+## مثال‌ها
 
-### Changing the composite operation
+### تغییر عملیات ترکیب
 
-This example uses the `globalCompositeOperation` property to draw two
-rectangles that exclude themselves where they overlap.
+این مثال از ویژگی `globalCompositeOperation` برای رسم دو مستطیل استفاده می‌کند که در محل هم‌پوشانی یکدیگر را حذف می‌کنند.
 
 #### HTML
 
@@ -106,15 +96,15 @@ ctx.fillStyle = "red";
 ctx.fillRect(50, 50, 100, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Changing_the_composite_operation', 700, 180) }}
 
-### Demonstration of all values
+### نمایش همه مقادیر
 
-#### Global values
+#### مقادیر سراسری
 
-This code sets up the global values used by the rest of the program.
+این کد مقادیر سراسری مورد استفاده بقیه برنامه را تنظیم می‌کند.
 
 ```js
 const canvas1 = document.createElement("canvas");
@@ -191,9 +181,9 @@ canvas2.width = width;
 canvas2.height = height;
 ```
 
-#### Main program
+#### برنامه اصلی
 
-This code, `runComposite()`, handles the bulk of the work, relying on a number of utility functions to do the hard parts.
+این کد، `runComposite()`، بخش عمده کار را انجام می‌دهد و به تعدادی توابع کمکی برای انجام کارهای سخت وابسته است.
 
 ```js
 function createCanvas(op) {
@@ -268,9 +258,9 @@ function runComposite(op) {
 }
 ```
 
-#### Utility functions
+#### توابع کمکی
 
-The program relies on a number of utility functions.
+برنامه به تعدادی توابع کمکی وابسته است.
 
 ```js
 function lightMix() {
@@ -410,9 +400,9 @@ function createInterlace(size, color1, color2) {
 const op8x8 = createInterlace(8, "white", "#eeeeee");
 ```
 
-#### Start running
+#### شروع اجرا
 
-Finally, we call the functions to set everything in motion.
+در نهایت، توابع را برای راه‌اندازی همه چیز فراخوانی می‌کنیم.
 
 ```js
 lightMix();
@@ -420,19 +410,19 @@ colorSphere();
 runComposite(op8x8);
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Demonstration of all values", "100%", 7250)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این ویژگی: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.globalAlpha")}}
