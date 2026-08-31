@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-atomic attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,31 +13,29 @@ spec-urls: https://w3c.github.io/aria/#aria-atomic
 sidebar: accessibilitysidebar
 ---
 
-In ARIA live regions, the global `aria-atomic` attribute indicates whether assistive technologies such as a screen reader will present all, or only parts of, the changed region based on the change notifications defined by the [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) attribute.
+در مناطق زنده ARIA، ویژگی سراسری `aria-atomic` نشان می‌دهد که آیا فناوری‌های کمکی مانند صفحه‌خوان، همه یا فقط بخش‌هایی از منطقه تغییر یافته را بر اساس اعلان‌های تغییر تعریف‌شده توسط ویژگی [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) ارائه خواهند کرد یا خیر.
 
-## Description
+مناطق زنده بخش‌هایی از یک صفحه وب هستند که چه با تعامل کاربر و چه بدون آن، زمانی که فوکوس کاربر در جای دیگری است، به‌روزرسانی می‌شوند. از آنجا که این به‌روزرسانی‌ها خارج از فوکوس کاربر رخ می‌دهند، فناوری‌های کمکی مانند صفحه‌خوان‌ها ممکن است به‌روزرسانی را برای گزارش به کاربر «نبینند». WAI-ARIA دارای ۴ ویژگی است که به توسعه‌دهنده امکان می‌دهد این مناطق زنده را شناسایی کرده و به فناوری کمکی بگوید چگونه آن‌ها را پردازش کند، از جمله [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live)، [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant)، [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) و `aria-atomic`.
 
-Live regions are sections of a web page that are updated, whether by user interaction or not, when user focus is elsewhere. As they update outside the user's focus, assistive technologies such as screen readers may not "see" the update to report it to the user. WAI-ARIA has 4 properties that allow the developer to identify these live regions and tell the assistive technology how to process them, including [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live), [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant), [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) and `aria-atomic`.
+هنگامی که محتوای یک منطقه زنده تغییر می‌کند، DOM از عنصر تغییر یافته به سمت اجداد آن پیمایش می‌شود تا اولین عنصری که `aria-atomic` در آن تنظیم شده است پیدا شود. این تعیین می‌کند که چه محتوایی باید به کاربر ارائه شود.
 
-When the content of a live region changes, the DOM is traversed from the changed element through its ancestors to find the first element with `aria-atomic` set. This determines the content that the user should be presented with.
+اگر هیچ جدی به‌طور صریح `aria-atomic` را تنظیم نکرده باشد، فقط گره یا گره‌های محتوای منطقه زنده که به‌روزرسانی شده‌اند خوانده می‌شوند. تفاوت بین حذف کامل `aria-atomic` و تنظیم صریح گره جد یک منطقه زنده ARIA با `aria-atomic="false"` این است که تنظیم صریح `aria-atomic="false"` باعث می‌شود صفحه‌خوان از بالا رفتن در زنجیره اجداد متوقف شود. هر دو به خوانده شدن فقط گره به‌روزرسانی‌شده منجر می‌شوند. وقتی روی `aria-atomic="true"` تنظیم شود، کل منطقه تغییر یافته به‌صورت یکپارچه ارائه می‌شود، از جمله `label` گره به‌روزرسانی‌شده، در صورت وجود.
 
-If no ancestor has explicitly set `aria-atomic`, only the node or nodes of live region content that have been updated are read. The difference between omitting `aria-atomic` altogether and explicitly setting an ARIA live region's ancestor node with `aria-atomic="false"` is that explicitly setting `aria-atomic="false"` will stop the screen reader from going up the ancestor chain. Both lead to only the updated node being read. When set to `aria-atomic="true"`, the entire changed region as a whole will be presented, including the updated node's `label`, if there is one.
+## مقادیر
 
-## Values
-
-- `false` (default)
-  - : present only the changed node or nodes.
+- `false` (پیش‌فرض)
+  - : فقط گره یا گره‌های تغییر یافته ارائه می‌شوند.
 - `true`
-  - : present the entire changed region as a whole, including the author-defined label if one exists.
+  - : کل منطقه تغییر یافته به‌صورت یکپارچه ارائه می‌شود، از جمله برچسب تعریف‌شده توسط نویسنده در صورت وجود.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** [roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles).
+استفاده شده در **همه** [نقش‌ها](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [Event.ariaAtomic](/en-US/docs/Web/API/Element/ariaAtomic)
