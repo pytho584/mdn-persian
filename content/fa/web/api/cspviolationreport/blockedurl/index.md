@@ -1,11 +1,5 @@
 ---
 title: "CSPViolationReport: blockedURL property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSPViolationReport/blockedURL"
-status: "needs-translation"
----
-
----
-title: "CSPViolationReport: blockedURL property"
 short-title: blockedURL
 slug: Web/API/CSPViolationReport/blockedURL
 page-type: web-api-instance-property
@@ -14,37 +8,35 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}
 
-The **`blockedURL`** property of the {{domxref("CSPViolationReport")}} dictionary is a string value that represents the resource that was blocked because it violates a [Content Security Policy (CSP)](/en-US/docs/Web/HTTP/Guides/CSP).
+ویژگی **`blockedURL`** از دیکشنری {{domxref("CSPViolationReport")}} یک مقدار رشته‌ای است که منبعی را نشان می‌دهد که به دلیل نقض [سیاست امنیت محتوا (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) مسدود شده است.
 
-## Value
+## مقدار
 
-A string containing a value or URL that represents the resource that violated the policy.
+یک رشته شامل یک مقدار یا URL که منبع ناقض سیاست را نشان می‌دهد.
 
-If the value is not the URL of a resource, it must be one of the following strings:
+اگر مقدار URL یک منبع نباشد، باید یکی از رشته‌های زیر باشد:
 
 - `inline`
-  - : An inline resource.
-    For example, an inline script that was used when [`'unsafe-inline'`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#unsafe-inline) was not specified in the CSP.
+  - : یک منبع درون‌خطی (inline).
+    به عنوان مثال، یک اسکریپت درون‌خطی که زمانی استفاده شده است که [`'unsafe-inline'`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#unsafe-inline) در CSP مشخص نشده بود.
 - `eval`
-  - : An `eval()`.
-    For example, `eval()` was used but [`'unsafe-eval'`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#unsafe-eval) was not specified in the CSP.
+  - : یک `eval()`.
+    به عنوان مثال، `eval()` استفاده شده اما [`'unsafe-eval'`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#unsafe-eval) در CSP مشخص نشده بود.
 - `wasm-eval`
-  - : A Wasm evaluation.
-    For example, `eval()` was used but [`'wasm-unsafe-eval'`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#wasm-unsafe-eval) was not specified in the CSP.
+  - : یک ارزیابی Wasm.
+    به عنوان مثال، `eval()` استفاده شده اما [`'wasm-unsafe-eval'`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#wasm-unsafe-eval) در CSP مشخص نشده بود.
 - `trusted-types-policy`
-  - : A resource that violated the [`trusted-types`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/trusted-types) CSP directive.
-    For example, a {{domxref("TrustedTypePolicy")}} was created using {{domxref("TrustedTypePolicyFactory/createPolicy", "window.trustedTypes.createPolicy()")}} with a name that wasn't listed in the CSP `trusted-types` directive.
+  - : منبعی که دستور CSP [`trusted-types`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/trusted-types) را نقض کرده است.
+    به عنوان مثال، یک {{domxref("TrustedTypePolicy")}} با استفاده از {{domxref("TrustedTypePolicyFactory/createPolicy", "window.trustedTypes.createPolicy()")}} با نامی ایجاد شده که در دستور CSP `trusted-types` فهرست نشده بود.
 - `trusted-types-sink`
-  - : A resource that violated the [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/trusted-types) CSP directive.
-    For example, the directive was set to `script` but the document did not use a {{domxref("TrustedTypePolicy")}} to sanitize data before passing it to a sink such as {{domxref("Element.innerHTML")}}.
+  - : منبعی که دستور CSP [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/trusted-types) را نقض کرده است.
+    به عنوان مثال، دستور روی `script` تنظیم شده بود اما سند از یک {{domxref("TrustedTypePolicy")}} برای پالایش داده‌ها قبل از ارسال به یک sink مانند {{domxref("Element.innerHTML")}} استفاده نکرد.
 
-## Examples
+## مثال‌ها
 
-The following examples show HTML that would result in some of the `blockedURL` values outlined above.
+مثال‌های زیر HTMLهایی را نشان می‌دهند که منجر به برخی از مقادیر `blockedURL` ذکر شده در بالا می‌شوند.
 
-The examples assume that you have a JavaScript file named `main.js` imported into your script from the same domain.
-The script, which is shown below, creates a new {{domxref("ReportingObserver")}} to observe content violation reports of type `"csp-violation"`.
-Each time the callback function is invoked, we log the `blockedURL` in the first entry of the reports array.
+این مثال‌ها فرض می‌کنند که شما یک فایل جاوااسکریپت به نام `main.js` از همان دامنه به اسکریپت خود وارد کرده‌اید. اسکریپت، که در زیر نشان داده شده است، یک {{domxref("ReportingObserver")}} جدید برای مشاهده گزارش‌های نقض محتوا از نوع `"csp-violation"` ایجاد می‌کند. هر بار که تابع callback فراخوانی می‌شود، `blockedURL` را در اولین ورودی آرایه گزارش‌ها ثبت می‌کنیم.
 
 ```js
 const observer = new ReportingObserver(
@@ -60,11 +52,11 @@ const observer = new ReportingObserver(
 observer.observe();
 ```
 
-Note that while there might be multiple reports in the returned array, for brevity we only log the blocked URL of the first report.
+توجه داشته باشید که اگرچه ممکن است چندین گزارش در آرایه برگشتی وجود داشته باشد، اما برای اختصار فقط URL مسدود شده اولین گزارش را ثبت می‌کنیم.
 
-### blockedURL for an external resource
+### blockedURL برای یک منبع خارجی
 
-The HTML below sets a policy of `Content-Security-Policy: default-src 'self'`, which only allows resources from the same site to be loaded, and then attempts to load a script from the external site `https://apis.google.com`.
+HTML زیر یک سیاست با مقدار `Content-Security-Policy: default-src 'self'` تنظیم می‌کند که فقط بارگیری منابع از همان سایت را مجاز می‌داند و سپس سعی می‌کند یک اسکریپت از سایت خارجی `https://apis.google.com` بارگیری کند.
 
 ```html
 <!doctype html>
@@ -80,16 +72,15 @@ The HTML below sets a policy of `Content-Security-Policy: default-src 'self'`, w
 </html>
 ```
 
-The result of logging the `blockedURL` would be:
+نتیجه ثبت `blockedURL` به صورت زیر خواهد بود:
 
 ```plain
 blockedURL: https://apis.google.com/js/platform.js
 ```
 
-### blockedURL for unsafe-inline resources
+### blockedURL برای منابع unsafe-inline
 
-The HTML below demonstrates the conditions that would result in a `blockedURL` of `inline`.
-This sets a policy of `Content-Security-Policy: default-src 'self'`, which does not allow inline scripts to be executed, causing a violation because the page contains an inline script.
+HTML زیر شرایطی را نشان می‌دهد که منجر به `blockedURL` با مقدار `inline` می‌شود. این یک سیاست با مقدار `Content-Security-Policy: default-src 'self'` تنظیم می‌کند که اجازه اجرای اسکریپت‌های درون‌خطی را نمی‌دهد و باعث نقض می‌شود زیرا صفحه شامل یک اسکریپت درون‌خطی است.
 
 ```html
 <!doctype html>
@@ -106,17 +97,15 @@ This sets a policy of `Content-Security-Policy: default-src 'self'`, which does 
 </html>
 ```
 
-The result of logging the `blockedURL` would be:
+نتیجه ثبت `blockedURL` به صورت زیر خواهد بود:
 
 ```plain
 blockedURL: inline
 ```
 
-### blockedURL for trusted-types-policy resources
+### blockedURL برای منابع trusted-types-policy
 
-The HTML below demonstrates the conditions that would result in a `blockedURL` of `trusted-types-policy`.
-First it defines a policy that allows `'unsafe-inline'` scripts to be executed, so that we can create a {{domxref("TrustedTypePolicy")}} that will trigger a violation.
-The policy also uses the `trusted-types` directive to specify that a {{domxref("TrustedTypePolicy")}} with the name `myPolicy` is allowed to be created.
+HTML زیر شرایطی را نشان می‌دهد که منجر به `blockedURL` با مقدار `trusted-types-policy` می‌شود. ابتدا یک سیاست تعریف می‌کند که اسکریپت‌های `'unsafe-inline'` را مجاز می‌داند تا بتوانیم یک {{domxref("TrustedTypePolicy")}} ایجاد کنیم که باعث نقض شود. این سیاست همچنین از دستور `trusted-types` استفاده می‌کند تا مشخص کند ایجاد یک {{domxref("TrustedTypePolicy")}} با نام `myPolicy` مجاز است.
 
 ```html
 <!doctype html>
@@ -139,26 +128,25 @@ The policy also uses the `trusted-types` directive to specify that a {{domxref("
 </html>
 ```
 
-In the script a policy is created with the name `somePolicy`.
+در اسکریپت، یک سیاست با نام `somePolicy` ایجاد می‌شود.
 
 > [!NOTE]
-> The particular policy we defined above is not a very good policy.
-> The aim of using trusted types is not to enforce a _particular_ policy, but to require enforcement of some policy, and ensure that the sanitization code is in one place and easy to review.
+> سیاست خاصی که در بالا تعریف کردیم، سیاست خیلی خوبی نیست.
+> هدف از استفاده از انواع مورد اعتماد (trusted types) اعمال یک سیاست _خاص_ نیست، بلکه الزام به اعمال یک سیاست و اطمینان از این است که کد پالایش در یک مکان قرار دارد و به راحتی قابل بررسی است.
 
-Because this is not listed in the `trusted-types` directive it is a CSP violation, and we'd see the log output:
+از آنجایی که این نام در دستور `trusted-types` فهرست نشده است، نقض CSP محسوب می‌شود و خروجی لاگ زیر را مشاهده می‌کنیم:
 
 ```plain
 blockedURL: trusted-types-policy
 ```
 
-If we changed the name of the allowed policy to `somePolicy`, the page would no longer be in violation.
+اگر نام سیاست مجاز را به `somePolicy` تغییر دهیم، صفحه دیگر در وضعیت نقض نخواهد بود.
 
-### blockedURL for trusted-types-sink resources
+### blockedURL برای منابع trusted-types-sink
 
-The HTML below demonstrates the conditions that would result in a `blockedURL` of `trusted-types-sink`.
-First it defines a policy that allows `'unsafe-inline'` scripts to be executed, and as in the previous example it use the `trusted-types` directive to specify that a {{domxref("TrustedTypePolicy")}} with the name `myPolicy` is allowed to be created.
+HTML زیر شرایطی را نشان می‌دهد که منجر به `blockedURL` با مقدار `trusted-types-sink` می‌شود. ابتدا یک سیاست تعریف می‌کند که اسکریپت‌های `'unsafe-inline'` را مجاز می‌داند و مانند مثال قبلی از دستور `trusted-types` استفاده می‌کند تا مشخص کند ایجاد یک {{domxref("TrustedTypePolicy")}} با نام `myPolicy` مجاز است.
 
-In addition, it specifies the directive `require-trusted-types-for 'script'`, which enforces that sinks should only be passed content that has been sanitized using a trusted type.
+علاوه بر این، دستور `require-trusted-types-for 'script'` را مشخص می‌کند که الزام می‌کند sinks فقط باید محتوایی را دریافت کنند که با استفاده از یک نوع مورد اعتماد پالایش شده است.
 
 ```html
 <!doctype html>
@@ -188,14 +176,13 @@ In addition, it specifies the directive `require-trusted-types-for 'script'`, wh
 </html>
 ```
 
-The `updateContent()` method passes unsanitized content to the element's `innerHTML` property, which will cause a CSP violation.
-We'd see the log output:
+متد `updateContent()` محتوای پالایش نشده را به ویژگی `innerHTML` عنصر منتقل می‌کند که باعث نقض CSP می‌شود. خروجی لاگ زیر را مشاهده می‌کنیم:
 
 ```plain
 blockedURL: trusted-types-sink
 ```
 
-In order to avoid the violation we would need to update the script to define a trusted type policy, and use it to sanitize the input passed to the element:
+برای جلوگیری از نقض، باید اسکریپت را به‌روزرسانی کنیم تا یک سیاست نوع مورد اعتماد تعریف کرده و از آن برای پالایش ورودی ارسالی به عنصر استفاده کنیم:
 
 ```js
 const policy = trustedTypes.createPolicy("myPolicy", {
@@ -210,14 +197,14 @@ function updateContent() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SecurityPolicyViolationEvent.blockedURI")}}
