@@ -1,7 +1,5 @@
 ---
 title: "CountQueuingStrategy: highWaterMark property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy/highWaterMark"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.CountQueuingStrategy.highWaterMark
 
 {{APIRef("Streams")}}{{AvailableInWorkers}}
 
-The read-only **`CountQueuingStrategy.highWaterMark`** property returns the total number of chunks that can be contained in the internal queue before backpressure is applied.
+خاصیت فقط خواندنی **`CountQueuingStrategy.highWaterMark`** تعداد کل chunk‌هایی (بازه‌های داده) را برمی‌گرداند که می‌توانند در صف داخلی قبل از اعمال فشار برگشتی (backpressure) قرار بگیرند.
 
-## Values
+## مقدار
 
-An integer representing a number of chunks.
+یک عدد صحیح که تعداد chunk‌ها را نشان می‌دهد.
 
-## Examples
+## مثال
 
 ```js
 const queueingStrategy = new CountQueuingStrategy({ highWaterMark: 1 });
@@ -44,14 +42,14 @@ const size = queuingStrategy.size(chunk);
 console.log(`highWaterMark value: ${queuingStrategy.highWaterMark}$`);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("CountQueuingStrategy.CountQueuingStrategy", "CountQueuingStrategy()")}} constructor
+- سازنده {{domxref("CountQueuingStrategy.CountQueuingStrategy", "CountQueuingStrategy()")}}
