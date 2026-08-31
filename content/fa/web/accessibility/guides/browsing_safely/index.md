@@ -1,7 +1,7 @@
 ---
 title: "Accessibility: What personalization helps browse more safely"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Browsing_safely"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,86 +12,86 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-This article discusses making web content accessible for those with vestibular disorders, and those who support them, by taking advantage of personalization and accessibility settings built into the operating systems. Taking advantage of personalization settings can help prevent exposure to content leading to seizures and / or other physical reactions.
+این مقاله دربارهٔ قابل‌دسترس‌کردن محتوای وب برای افراد مبتلا به اختلالات دهلیزی و کسانی که از آن‌ها حمایت می‌کنند، با بهره‌گیری از تنظیمات شخصی‌سازی و دسترس‌پذیری تعبیه‌شده در سیستم‌عامل‌ها بحث می‌کند. بهره‌گیری از تنظیمات شخصی‌سازی می‌تواند به جلوگیری از مواجهه با محتوایی که منجر به تشنج و/یا سایر واکنش‌های فیزیکی می‌شود کمک کند.
 
-## Personalization and accessibility settings
+### شخصی‌سازی و تنظیمات دسترس‌پذیری
 
-From the article, "**[Understanding Success Criterion 2.3.1: Three Flashes or Below Threshold](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html)**"
+از مقالهٔ «**[درک معیار موفقیت ۲.۳.۱: سه فلش یا کمتر از آستانه](https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html)**»:
 
-> Flashing can be caused by the display, the computer rendering the image or by the content being rendered. The author has no control of the first two. They can be addressed by the design and speed of the display and computer
+> فلش می‌تواند توسط نمایشگر، رایانه‌ای که تصویر را رندر می‌کند، یا محتوایی که رندر می‌شود ایجاد شود. نویسنده کنترلی بر دو مورد اول ندارد. آن‌ها را می‌توان با طراحی و سرعت نمایشگر و رایانه برطرف کرد.
 
-### Hardware and operating systems on many computers offer control that is not afforded to developers
+### سخت‌افزار و سیستم‌عامل‌ها در بسیاری از رایانه‌ها کنترلی ارائه می‌دهند که در اختیار توسعه‌دهندگان نیست
 
-The user can do much to protect themselves by learning their operating system, its personalization and accessibility settings. Those in the public sector who must accommodate those with special sensitivities, should consider setting aside at least one work station and becoming familiar with its personalization and accessibility settings. Understanding personalization and accessibility settings can actually be a money-saving endeavor. One work station can be set up to accommodate both a low-vision individual (needs high-contrast) and to accommodate an individual with photosensitive susceptibilities, by adjusting personalization and accessibility settings.
+کاربر می‌تواند با یادگیری سیستم‌عامل خود و تنظیمات شخصی‌سازی و دسترس‌پذیری آن، کارهای زیادی برای محافظت از خود انجام دهد. کسانی که در بخش عمومی باید نیازهای افراد با حساسیت‌های خاص را برآورده کنند، باید در نظر بگیرند که حداقل یک ایستگاه کاری را اختصاص دهند و با تنظیمات شخصی‌سازی و دسترس‌پذیری آن آشنا شوند. درک تنظیمات شخصی‌سازی و دسترس‌پذیری در واقع می‌تواند یک اقدام صرفه‌جویی در هزینه باشد. با تنظیم تنظیمات شخصی‌سازی و دسترس‌پذیری، می‌توان یک ایستگاه کاری را برای تطبیق با فردی با بینایی کم (که به کنتراست بالا نیاز دارد) و همچنین فردی با حساسیت به نور آماده کرد.
 
-### Use modern browsers. Learn personalization and accessibility settings
+### از مرورگرهای مدرن استفاده کنید. تنظیمات شخصی‌سازی و دسترس‌پذیری را یاد بگیرید
 
-Modern browsers support the CSS media feature [`prefers-reduced-motion`](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion). Browsers can detect whether a user has requested a reduced motion experience. The user would access this through an accessibility interface, as seen below.
+مرورگرهای مدرن از ویژگی رسانه‌ای CSS [`prefers-reduced-motion`](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) پشتیبانی می‌کنند. مرورگرها می‌توانند تشخیص دهند که آیا کاربر تجربهٔ حرکت کاهش‌یافته را درخواست کرده است یا خیر. کاربر از طریق یک رابط دسترس‌پذیری به این ویژگی دسترسی پیدا می‌کند، همان‌طور که در زیر مشاهده می‌کنید.
 
-![Screen shot showing how to turn off animations in Windows 10.](android-remove-animations.png)
+![تصویری که نحوه خاموش کردن انیمیشن‌ها در ویندوز ۱۰ را نشان می‌دهد](android-remove-animations.png)
 
-CSS Transition events are supported. Examples include:
+رویدادهای انتقال CSS پشتیبانی می‌شوند. مثال‌ها عبارت‌اند از:
 
 - `transitionrun`
 - `transitionstart`
 - `transitionend`
 - `transitioncancel`
 
-### Safari 10.1 and above (Desktop)
+### Safari 10.1 و بالاتر (دسکتاپ)
 
-Do not enable Auto-Play (does not work for GIFs)
+پخش خودکار را فعال نکنید (برای GIFها کار نمی‌کند).
 
-#### iOS Safari 10.3 and above (Mobile and Tablet)
+#### iOS Safari 10.3 و بالاتر (موبایل و تبلت)
 
-Select the "Reduce motion option" in OS Accessibility settings for Apple (image source: developers.google.com from Thomas Steiner's article "Move Ya! Or maybe, don't, if the user prefers-reduced-motion!"). This will not work on animated GIFs; the source of the animation is self-contained within a gif and is not affected by these settings.![Screen shot showing how to reduce motion on a MAC OS](macos-reduce-motion.png)
+گزینهٔ «Reduce motion» را در تنظیمات دسترس‌پذیری سیستم‌عامل اپل انتخاب کنید (منبع تصویر: developers.google.com از مقالهٔ توماس اشتاینر «Move Ya! Or maybe, don't, if the user prefers-reduced-motion!»). این روش روی GIFهای متحرک کار نخواهد کرد؛ منبع انیمیشن به‌صورت خودکفا درون یک gif قرار دارد و تحت تأثیر این تنظیمات قرار نمی‌گیرد.![تصویری که نحوه کاهش حرکت در سیستم‌عامل مک را نشان می‌دهد](macos-reduce-motion.png)
 
-#### Use Reader Mode on browsers
+#### استفاده از حالت مطالعه در مرورگرها
 
-- Enable Content Blockers; gets rid of ads, reduces and/or removes distractions
-- Enables text-to-speech
-- In certain browsers, enable fonts by choice
-- Enable Page Zoom
+- فعال‌سازی مسدودکننده‌های محتوا؛ حذف تبلیغات، کاهش و/یا حذف عوامل حواس‌پرتی
+- فعال‌سازی تبدیل متن به گفتار
+- در برخی مرورگرها، فعال‌سازی انتخاب قلم دلخواه
+- فعال‌سازی بزرگ‌نمایی صفحه
 
-#### Turn off animated GIFs in the browser
+#### خاموش کردن GIFهای متحرک در مرورگر
 
-Browsers offer much power to their users; it's just a matter of knowing where to go. Using Firefox as an example, it explains that by changing the value of the **image.animation_mode** from "normal" to "none", all animated images will be blocked. To reverse it, you will have to change the value back to "normal"
+مرورگرها قدرت زیادی به کاربران خود می‌دهند؛ فقط باید بدانید کجا بروید. مرورگر فایرفاکس به‌عنوان مثال توضیح می‌دهد که با تغییر مقدار **image.animation_mode** از «normal» به «none»، همهٔ تصاویر متحرک مسدود خواهند شد. برای بازگرداندن آن، باید مقدار را به «normal» تغییر دهید.
 
-![Screenshot of image.animation.mode selected in Firefox](image_animation_mode.png)
+![تصویری از انتخاب image.animation.mode در فایرفاکس](image_animation_mode.png)
 
-#### Use browser extensions
+#### استفاده از افزونه‌های مرورگر
 
-- [Gif Blocker](https://chromewebstore.google.com/detail/gif-blocker/ahkidgegbmbnggcnmejhobepkaphkfhl?hl=en) For Chrome, GIF Blocker is an extension available at the web store.
-- [Gif Scrubber](https://chromewebstore.google.com/detail/gif-scrubber/gbdacbnhlfdlllckelpdkgeklfjfgcmp?hl=en) Gif Scrubber is a chrome extension that allows you to control GIFs like a video player. There is a GitHub repository for it at **<https://github.com/0ui/gif-scrubber>**
-- [Beeline Reader](https://www.beelinereader.com/) Beeline Reader has a browser extension that allows you to set up for grayscale and Dyslexi font, among other things
+- [Gif Blocker](https://chromewebstore.google.com/detail/gif-blocker/ahkidgegbmbnggcnmejhobepkaphkfhl?hl=en) برای کروم، Gif Blocker افزونه‌ای است که در فروشگاه وب در دسترس است.
+- [Gif Scrubber](https://chromewebstore.google.com/detail/gif-scrubber/gbdacbnhlfdlllckelpdkgeklfjfgcmp?hl=en) Gif Scrubber یک افزونهٔ کروم است که به شما امکان می‌دهد GIFها را مانند یک پخش‌کنندهٔ ویدیو کنترل کنید. یک مخزن گیت‌هاب برای آن در **<https://github.com/0ui/gif-scrubber>** وجود دارد.
+- [Beeline Reader](https://www.beelinereader.com/) Beeline Reader یک افزونهٔ مرورگر دارد که به شما امکان می‌دهد حالت مقیاس خاکستری و فونت Dyslexi و موارد دیگر را تنظیم کنید.
 
-![Screenshot showing modes of Beeline Reader a user can adjust in browser](beelinereader.png)
+![تصویری که حالت‌های قابل تنظیم Beeline Reader در مرورگر را نشان می‌دهد](beelinereader.png)
 
-### Take advantage of Operating System accessibility features
+### از ویژگی‌های دسترس‌پذیری سیستم‌عامل بهره ببرید
 
-Most operating systems such as Windows 10, have accessibility options that are surprisingly powerful. Usually they are quite easy to find by typing (or saying) in the word, "Accessibility" in the search finder of the operating system.
+بیشتر سیستم‌عامل‌ها مانند ویندوز ۱۰، گزینه‌های دسترس‌پذیری دارند که به‌طرز شگفت‌آوری قدرتمند هستند. معمولاً پیدا کردن آن‌ها با تایپ (یا گفتن) کلمهٔ «Accessibility» در جست‌وجوی سیستم‌عامل بسیار آسان است.
 
-#### Turn off animations in the operating system
+#### خاموش کردن انیمیشن‌ها در سیستم‌عامل
 
-In the Windows 10 operating system, the user has an ability to turn off animations. This will not work on animated GIFs; the source of the animation is self-contained within a gif and is not affected by these settings.
+در سیستم‌عامل ویندوز ۱۰، کاربر امکان خاموش کردن انیمیشن‌ها را دارد. این کار روی GIFهای متحرک اثر نمی‌کند؛ منبع انیمیشن به‌صورت خودکفا درون یک gif قرار دارد و تحت تأثیر این تنظیمات قرار نمی‌گیرد.
 
-![Screen shot showing how to turn off animations in Windows10](turnoffanimationsinwindows.png)
+![تصویری که نحوه خاموش کردن انیمیشن‌ها در ویندوز ۱۰ را نشان می‌دهد](turnoffanimationsinwindows.png)
 
-#### Grayscale
+#### مقیاس خاکستری
 
-Those who have suffered traumatic brain injury (TBI) may be highly sensitive to color; it can require such a great "investment of cognitive energy" on their part, there's no energy for other daily tasks. Enabling grayscale presentation of the content reduces the cognitive workload. It may assist users with other disabilities, as well. An interesting discussion by users on the benefits of using grayscale may be found in the discussion thread, "[What is the "grayscale" setting for in accessibility options?](https://ask.metafilter.com/312049/What-is-the-grayscale-setting-for-in-accessibility-options)". Of particular interest is a user who has Photosensitive Epilepsy, and uses it when feeling "seizure-y".
+افرادی که دچار آسیب مغزی تروماتیک (TBI) شده‌اند ممکن است به رنگ بسیار حساس باشند؛ این موضوع ممکن است به «سرمایه‌گذاری زیاد انرژی شناختی» از سوی آن‌ها نیاز داشته باشد و برای سایر کارهای روزانه انرژی باقی نماند. فعال‌سازی نمایش محتوا با مقیاس خاکستری بار شناختی را کاهش می‌دهد. همچنین ممکن است به کاربران دارای سایر معلولیت‌ها کمک کند. یک بحث جالب توسط کاربران دربارهٔ مزایای استفاده از مقیاس خاکستری را می‌توان در تاپیک گفتگو «[تنظیم «grayscale» در گزینه‌های دسترس‌پذیری برای چیست؟](https://ask.metafilter.com/312049/What-is-the-grayscale-setting-for-in-accessibility-options)» یافت. به‌ویژه کاربری جالب توجه است که صرع حساس به نور دارد و وقتی احساس می‌کند «در آستانهٔ تشنج است» از آن استفاده می‌کند.
 
-Most Operating Systems have a way to let the user make an adjustment on the workstation. In the screenshot below, you can see an example of Windows 10 Accessibility Settings allowing for color filters to be selected. Grayscale is enabled when the color filters button is toggled "on".
+بیشتر سیستم‌عامل‌ها راهی برای تنظیم توسط کاربر در ایستگاه کاری فراهم می‌کنند. در تصویر زیر، نمونه‌ای از تنظیمات دسترس‌پذیری ویندوز ۱۰ را می‌بینید که امکان انتخاب فیلترهای رنگی را فراهم می‌کند. مقیاس خاکستری زمانی فعال می‌شود که دکمهٔ فیلترهای رنگی به حالت «روشن» تغییر وضعیت دهد.
 
-![Shows Windows 10 Accessibility Settings for GrayScale](colorfiltersgrayscaleinwindows.png)
+![نمایش تنظیمات دسترس‌پذیری ویندوز ۱۰ برای مقیاس خاکستری](colorfiltersgrayscaleinwindows.png)
 
-## See also
+## همچنین ببینید
 
-- [Accessibility](/en-US/docs/Web/Accessibility)
-- [Accessibility learning path](/en-US/docs/Learn_web_development/Core/Accessibility)
-- [Web accessibility for seizures and physical reactions](/en-US/docs/Web/Accessibility/Guides/Seizure_disorders)
-- [Color vision simulation](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/simulation/index.html)
-- Discussion: "[What is the "grayscale" setting for in accessibility options?](https://ask.metafilter.com/312049/What-is-the-grayscale-setting-for-in-accessibility-options)"
+- [دسترس‌پذیری](/en-US/docs/Web/Accessibility)
+- [مسیر یادگیری دسترس‌پذیری](/en-US/docs/Learn_web_development/Core/Accessibility)
+- [دسترس‌پذیری وب برای تشنج و واکنش‌های فیزیکی](/en-US/docs/Web/Accessibility/Guides/Seizure_disorders)
+- [شبیه‌سازی بینایی رنگ](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/simulation/index.html)
+- گفتگو: «[تنظیم «grayscale» در گزینه‌های دسترس‌پذیری برای چیست؟](https://ask.metafilter.com/312049/What-is-the-grayscale-setting-for-in-accessibility-options)»
 
-### Contributors
+### مشارکت‌کنندگان
 
-Many, many thanks to Eric Eggert from [Knowbility](https://knowbility.org/) for his discussions and huge help on this topic.
+بسیار سپاسگزاریم از اریک اگرت از [Knowbility](https://knowbility.org/) بابت بحث‌ها و کمک بسیار زیادش در این موضوع.
