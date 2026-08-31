@@ -1,7 +1,7 @@
 ---
 title: "ARIA: tree role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,231 +15,211 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-A `tree` is a widget that allows the user to select one or more items from a hierarchically organized collection.
+یک `tree` ویجتی است که به کاربر اجازه میدهد یک یا چند مورد را از یک مجموعه سلسلهمراتبی سازمانیافته انتخاب کند.
 
-## Description
+## توضیحات
 
-A `tree` widget is a hierarchical list with parent and child nodes that can expand and collapse. Any item in the hierarchy may have child tree items, set with [`role="treeitem"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treeitem_role). Tree items that have children can be expanded or collapsed, showing and hiding their children.
+ویجت `tree` یک فهرست سلسلهمراتبی با گرههای والد و فرزند است که میتوانند باز و بسته شوند. هر مورد در سلسلهمراتب ممکن است آیتمهای درختی فرزند داشته باشد که با [`role="treeitem"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treeitem_role) تنظیم میشوند. آیتمهای درختی که فرزند دارند میتوانند باز یا بسته شوند و فرزندان خود را نشان دهند یا پنهان کنند.
 
-An example of a `tree` is a file system selection user interface: a tree view displaying folders and files. Folder items can be expanded to reveal the contents of the folder — which may be files, folders, or both — and collapsed, hiding its contents.
+یک مثال از `tree`، رابط کاربری انتخاب سیستم فایل است: نمای درختی که پوشهها و فایلها را نمایش میدهد. موارد پوشه را میتوان باز کرد تا محتویات پوشه — که ممکن است فایلها، پوشهها یا هر دو باشند — نمایان شود و میتوان آن را بست تا محتویاتش پنهان شود.
 
-ARIA tree views are navigated primarily with arrow keys on the keyboard instead of the <kbd>Tab</kbd>. This form of navigation is not common for most browser content, though normal and expected for native applications. For this reason, before creating a tree view, consider alternative options to address the functionality you need.
+نمایشهای درختی ARIA عمدتاً با کلیدهای جهتنما روی صفحهکلید به جای <kbd>Tab</kbd> پیمایش میشوند. این شکل از پیمایش برای بیشتر محتوای مرورگر رایج نیست، اگرچه برای برنامههای بومی عادی و مورد انتظار است. به همین دلیل، قبل از ایجاد نمای درختی، گزینههای جایگزین را برای تأمین عملکرد مورد نیاز خود در نظر بگیرید.
 
 > [!WARNING]
-> Tree views use navigation more similar to native applications than to web applications. For this reason, consider alternative options to address the functionality you need before creating a tree view.
+> نمایشهای درختی از پیمایشی استفاده میکنند که بیشتر شبیه برنامههای بومی است تا برنامههای وب. به همین دلیل، قبل از ایجاد نمای درختی، گزینههای جایگزین را برای تأمین عملکرد مورد نیاز خود در نظر بگیرید.
 
-### Single and multiple select trees
+### درختهای تکگزینهای و چندگزینهای
 
-Trees can be "single-select", allowing users to choose just one item for an action, or "multi-select", where users are able to select more than one item for an action. In multi-select trees, the `tree` has [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable) set to true. Otherwise, `aria-multiselectable` is either set to `false` or the default value of `false` is implied. In both cases, to be keyboard accessible, focus must be managed for all tree descendants.
+درختها میتوانند «تکگزینهای» باشند که به کاربران اجازه میدهند فقط یک مورد را برای یک اقدام انتخاب کنند، یا «چندگزینهای» که در آن کاربران میتوانند بیش از یک مورد را برای یک اقدام انتخاب کنند. در درختهای چندگزینهای، `tree` دارای [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable) تنظیمشده بر روی `true` است. در غیر این صورت، `aria-multiselectable` یا بر روی `false` تنظیم میشود یا مقدار پیشفرض `false` به صورت ضمنی در نظر گرفته میشود. در هر دو مورد، برای اینکه از طریق صفحهکلید قابل دسترس باشد، فوکوس باید برای همه فرزندان درخت مدیریت شود.
 
-In some implementations of single-select tree, the focused item also has a selected state; this is known as "selection follows focus". When a single-select tree receives focus, if none of the tree items are selected before the tree receives focus, focus is set on the first node. If a tree item is selected before the tree receives focus, focus is set on the selected tree item. In single-select trees, [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) is set to `true` for the selected tree items and it is not present on any other tree item in the tree.
+در برخی پیادهسازیهای درخت تکگزینهای، مورد دارای فوکوس نیز حالت انتخابشده دارد؛ این به عنوان «انتخاب از فوکوس پیروی میکند» شناخته میشود. وقتی یک درخت تکگزینهای فوکوس دریافت میکند، اگر هیچیک از آیتمهای درخت قبل از دریافت فوکوس توسط درخت انتخاب نشده باشند، فوکوس روی اولین گره قرار میگیرد. اگر یک آیتم درخت قبل از دریافت فوکوس توسط درخت انتخاب شده باشد، فوکوس روی آیتم درخت انتخابشده قرار میگیرد. در درختهای تکگزینهای، [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) برای آیتمهای درخت انتخابشده بر روی `true` تنظیم میشود و در هیچ آیتم درخت دیگری در درخت وجود ندارد.
 
-In multi-select trees, all selected tree items have `aria-selected="true"` set and all tree item nodes that are selectable but not currently selected have `aria-selected="false"` set. Do not includes the `aria-selected` attribute on tree items that are not selectable.
+در درختهای چندگزینهای، همه آیتمهای درخت انتخابشده دارای `aria-selected="true"` هستند و همه گرههای آیتم درختی که قابل انتخاب هستند اما در حال حاضر انتخاب نشدهاند دارای `aria-selected="false"` هستند. ویژگی `aria-selected` را روی آیتمهای درختی که قابل انتخاب نیستند قرار ندهید.
 
-When a multi-select tree receives focus, if none of the tree items are selected before the tree receives focus, focus is set on the first tree item. If one or more tree items are selected before the tree receives focus, focus is set on the first selected node.
+وقتی یک درخت چندگزینهای فوکوس دریافت میکند، اگر هیچیک از آیتمهای درخت قبل از دریافت فوکوس توسط درخت انتخاب نشده باشند، فوکوس روی اولین آیتم درخت قرار میگیرد. اگر یک یا چند آیتم درخت قبل از دریافت فوکوس توسط درخت انتخاب شده باشند، فوکوس روی اولین گره انتخابشده قرار میگیرد.
 
-In multi-select trees, the selected state is always independent of the focus. For example, in a typical file system navigator, the user can move focus to select any number of files for an action, such as copy or move. The visual design should make it clear which items are selected and which item has focus.
+در درختهای چندگزینهای، حالت انتخابشده همیشه مستقل از فوکوس است. به عنوان مثال، در یک پیمایشگر معمولی سیستم فایل، کاربر میتواند فوکوس را جابهجا کند تا هر تعداد فایل را برای یک اقدام، مانند کپی یا انتقال، انتخاب کند. طراحی بصری باید به وضوح مشخص کند که کدام موارد انتخاب شدهاند و کدام مورد فوکوس دارد.
 
-### Tree hierarchy
+### سلسلهمراتب درخت
 
-In a tree view, the `tree` node is the root node; it can have child, grandchild, and further descendant `treeitem` nodes.
+در نمای درختی، گره `tree` گره ریشه است؛ میتواند گرههای فرزند، نوه و فرزندان دورتر `treeitem` داشته باشد.
 
-Each element serving as a tree node has role `treeitem`, except for the root tree node which has a role of `tree`. A `tree` does not have a parent `tree` node - it is the root node. If a node is both nested in a tree and has descendant tree items, then it has the role `treeitem` and the [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) attribute; `aria-expanded="false"` is set when the node is in a closed state, `aria-expanded="true"` is set when the node is in an open state.
+هر عنصری که به عنوان گره درخت عمل میکند، نقش `treeitem` دارد، به جز گره ریشه درخت که نقش `tree` دارد. یک `tree` گره والد `tree` ندارد - آن گره ریشه است. اگر یک گره هم در یک درخت تودرتو باشد و هم آیتمهای درختی نسل بعدی داشته باشد، نقش `treeitem` و ویژگی [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) را دارد؛ `aria-expanded="false"` زمانی تنظیم میشود که گره در حالت بسته است و `aria-expanded="true"` زمانی تنظیم میشود که گره در حالت باز است.
 
-`treeitem` nodes can be direct children of the `tree` root node, nested within a `treeitem` node, or, optionally nested in a [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) element, which, when nested in a `tree` is an expandable collection of treeitem elements.
+گرههای `treeitem` میتوانند فرزندان مستقیم گره ریشه `tree` باشند، درون یک گره `treeitem` تودرتو باشند، یا به صورت اختیاری در یک عنصر [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) تودرتو باشند، که وقتی در یک `tree` تودرتو است، مجموعهای قابل باز شدن از عناصر treeitem است.
 
-Do not include `aria-expanded` on end nodes — those without tree item children — as that would incorrectly describe the node as a parent node to assistive technologies.
+`aria-expanded` را روی گرههای انتهایی — آنهایی که فرزند آیتم درختی ندارند — قرار ندهید، زیرا این کار به طور نادرست گره را به عنوان یک گره والد به فناوریهای کمکی توصیف میکند.
 
-### DOM placement and presence
+### جایگذاری و حضور در DOM
 
-All treeitems are contained in or owned by an element with role `tree`. If there are any tree items that are not direct descendants of the `tree` in the markup, include [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) on the owning tree container to include elements that are not DOM children of the container. These non-child owned elements will appear in the reading order in the sequence they are referenced and after any tree items that are DOM children. Scripts that manage focus need to ensure the visual focus order matches this assistive technology reading order.
+همه treeitemها در یک عنصر با نقش `tree` قرار دارند یا متعلق به آن هستند. اگر آیتمهای درختی وجود دارند که در نشانهگذاری، فرزندان مستقیم `tree` نیستند، [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) را روی ظرف درخت مالک قرار دهید تا عناصری را که فرزندان DOM ظرف نیستند شامل شود. این عناصر غیرفرزندِ متعلق، در ترتیب خواندن به ترتیبی که به آنها ارجاع داده شده است و پس از هر آیتم درختی که فرزند DOM است ظاهر میشوند. اسکریپتهایی که فوکوس را مدیریت میکنند باید اطمینان حاصل کنند که ترتیب فوکوس بصری با این ترتیب خواندن فناوری کمکی مطابقت دارد.
 
-If the complete set of available nodes is not present in the DOM due to dynamic loading as the user moves focus in or scrolls the tree, each node has [`aria-level`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level), [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize), and [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) specified.
+اگر مجموعه کامل گرههای موجود به دلیل بارگذاری پویا هنگام جابهجایی فوکوس کاربر در درخت یا اسکرول کردن آن در DOM وجود نداشته باشد، هر گره دارای [`aria-level`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level)، [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) و [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) مشخصشده است.
 
-### Accessible name
+### نام قابل دسترس
 
-The `tree` must be provided with an accessible name. Either reference a visible label referenced with [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) or specify a label with [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label).
+`tree` باید با یک نام قابل دسترس ارائه شود. یا به یک برچسب بصری که با [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) ارجاع داده شده است مراجعه کنید یا یک برچسب با [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) مشخص کنید.
 
-### Menu orientation
+### جهتگیری منو
 
-Elements with the role `tree` have an implicit [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) value of vertical. If the tree element is horizontally oriented, include `aria-orientation="horizontal"`.
+عناصر با نقش `tree` دارای مقدار ضمنی [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) به صورت عمودی هستند. اگر عنصر درخت به صورت افقی جهتگیری شده است، `aria-orientation="horizontal"` را شامل کنید.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقشها، حالتها و ویژگیهای مرتبط WAI-ARIA
 
 - [`role="treeitem"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treeitem_role)
-  - : An item in a tree.
+  - : یک مورد در درخت.
 - [`role="group"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role)
-  - : An expandable collection of tree items.
+  - : مجموعهای قابل باز شدن از آیتمهای درخت.
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : Identifies the element (or elements) that labels the `tree` providing the required accessible name when a visible label is present. Otherwise use `aria-label`.
+  - : عنصر (یا عناصری) را که `tree` را برچسبگذاری میکنند شناسایی میکند و نام قابل دسترس مورد نیاز را زمانی که برچسب بصری وجود دارد فراهم میکند. در غیر این صورت از `aria-label` استفاده کنید.
 - [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
-  - : Defines a string value that labels the `tree` when no visible label is present.
+  - : یک مقدار رشتهای را تعریف میکند که وقتی هیچ برچسب بصری وجود ندارد، `tree` را برچسبگذاری میکند.
 - [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation)
-  - : indicates whether the tree orientation is horizontal or vertical; defaults to `vertical` if omitted.
+  - : نشان میدهد که جهتگیری درخت افقی است یا عمودی؛ در صورت حذف شدن، پیشفرض `vertical` است.
 - [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable)
-  - : When set to true, indicates the user may select more than one tree item from the tree's current selectable descendants.
+  - : وقتی روی true تنظیم شود، نشان میدهد که کاربر ممکن است بیش از یک آیتم درخت را از فرزندان قابل انتخاب فعلی درخت انتخاب کند.
 
-### Keyboard interactions
+### تعاملات صفحهکلید
 
-For a vertically oriented `tree`, which is the default orientation:
+برای یک `tree` با جهتگیری عمودی، که جهتگیری پیشفرض است:
 
 <table>
 <tr>
 <td><kbd>Right arrow</kbd></td>
 <td>
 <ul>
-<li>When focus is on a closed node, opens the node; focus does not move.
-<li>When focus is on an open node, moves focus to the first child node.
-<li>When focus is on an end node (a tree item with no children), does nothing.
+<li>وقتی فوکوس روی یک گره بسته است، گره را باز میکند؛ فوکوس حرکت نمیکند.
+<li>وقتی فوکوس روی یک گره باز است، فوکوس را به اولین گره فرزند منتقل میکند.
+<li>وقتی فوکوس روی یک گره انتهایی (یک آیتم درختی بدون فرزند) است، هیچ کاری انجام نمیدهد.
 </td>
 </tr>
 <tr>
 <td><kbd>Left arrow</kbd></td>
 <td>
 <ul>
-<li>When focus is on an open node, closes the node.
-<li>When focus is on a child node that is also either an end node or a closed node, moves focus to its parent node.
-<li>When focus is on a closed tree, does nothing.
+<li>وقتی فوکوس روی یک گره باز است، گره را میبندد.
+<li>وقتی فوکوس روی یک گره فرزند است که همچنین یا یک گره انتهایی است یا یک گره بسته، فوکوس را به گره والد آن منتقل میکند.
+<li>وقتی فوکوس روی یک درخت بسته است، هیچ کاری انجام نمیدهد.
 </td>
 </tr>
 <tr>
 <td><kbd>Down Arrow</kbd></td>
-<td> Moves focus to the next node that is focusable without opening or closing a node.
+<td> فوکوس را به گره بعدی که قابل فوکوس است منتقل میکند بدون اینکه گرهی را باز یا بسته کند.
 </td>
 </tr>
 <tr>
 <td><kbd>Up Arrow</kbd></td>
-<td> Moves focus to the previous node that is focusable without opening or closing a node.
+<td> فوکوس را به گره قبلی که قابل فوکوس است منتقل میکند بدون اینکه گرهی را باز یا بسته کند.
 </td>
 </tr>
 <tr>
 <td><kbd>Home</kbd></td>
-<td> Moves focus to the first node in the tree without opening or closing a node.
+<td> فوکوس را به اولین گره در درخت منتقل میکند بدون اینکه گرهی را باز یا بسته کند.
 </td>
 </tr>
 <tr>
 <td><kbd>End</kbd></td>
-<td> Moves focus to the last node in the tree that is focusable without opening the node.
+<td> فوکوس را به آخرین گره در درخت که قابل فوکوس است منتقل میکند بدون اینکه گره را باز کند.
 </td>
 </tr>
 <tr>
 <td><kbd>Enter</kbd></td>
-<td>Performs the default action of the currently focused node. For parent nodes, it opens or closes the node. In single-select trees, if the node has no children, selects the current node if not already selected (which is the default action).
+<td>عمل پیشفرض گره دارای فوکوس فعلی را انجام میدهد. برای گرههای والد، گره را باز یا بسته میکند. در درختهای تکگزینهای، اگر گره فرزندی نداشته باشد، گره فعلی را در صورت انتخاب نشدن انتخاب میکند (که عمل پیشفرض است).
 </td>
 </tr>
 <tr>
-<td>Type a character*</td>
+<td>تایپ یک کاراکتر*</td>
 <td>
 <ul>
-<li>Focus moves to the next node with a name that starts with the typed character.
-<li>If multiple characters are typed in rapid succession, focus moves to the next node with a name that starts with the string of characters typed.
+<li>فوکوس به گره بعدی با نامی که با کاراکتر تایپشده شروع میشود منتقل میشود.
+<li>اگر چند کاراکتر پشت سر هم با سرعت تایپ شوند، فوکوس به گره بعدی با نامی که با رشته کاراکترهای تایپشده شروع میشود منتقل میشود.
 </td>
 </tr>
 <tr>
 <td>
-<kbd>*</kbd> (Optional)</td>
-<td> Expands all siblings that are at the same level as the current node.
+<kbd>*</kbd> (اختیاری)</td>
+<td> همه خواهر-برادرهایی را که در همان سطح گره فعلی هستند باز میکند.
 </td>
 </tr>
 </table>
 
-\* Type-ahead is recommended for all trees, especially for trees with more than 7 root nodes
+\* تایپ پیشاپیش (Type-ahead) برای همه درختها توصیه میشود، به ویژه برای درختهایی با بیش از ۷ گره ریشه
 
-### Multi-select keyboard interactions
+### تعاملات صفحهکلید برای انتخاب چندگانه
 
-There are two interaction models for multi-select trees: While you can require that users press a modifier key, such as <kbd>Shift</kbd> or <kbd>Control</kbd> while navigating the list in order to avoid losing selection states, the model that does not require the user to hold a modifier key is recommended.
+دو مدل تعامل برای درختهای چندگزینهای وجود دارد: در حالی که میتوانید از کاربران بخواهید هنگام پیمایش در فهرست، یک کلید اصلاحکننده مانند <kbd>Shift</kbd> یا <kbd>Control</kbd> را فشار دهند تا حالتهای انتخاب از دست نرود، مدلی که نیاز به نگه داشتن کلید اصلاحکننده توسط کاربر ندارد توصیه میشود.
 
-#### Recommended multi user select model
+#### مدل انتخاب چندگانه کاربر توصیهشده
 
 <table>
 <tr>
 <td><kbd>Space</kbd></td>
-<td> Toggles the selection state of the focused node.
+<td> وضعیت انتخاب گره دارای فوکوس را تغییر میدهد.
 </td>
 </tr>
 <tr>
-<td><kbd>Shift + Down Arrow</kbd> (Optional)</td>
-<td> Moves focus to and toggles the selection state of the next node.
+<td><kbd>Shift + Down Arrow</kbd> (اختیاری)</td>
+<td> فوکوس را به گره بعدی منتقل میکند و وضعیت انتخاب آن را تغییر میدهد.
 </td>
 </tr>
 <tr>
-<td><kbd>Shift + Up Arrow</kbd> (Optional)</td>
-<td> Moves focus to and toggles the selection state of the previous node.
+<td><kbd>Shift + Up Arrow</kbd> (اختیاری)</td>
+<td> فوکوس را به گره قبلی منتقل میکند و وضعیت انتخاب آن را تغییر میدهد.
 </td>
 </tr>
 <tr>
-<td><kbd>Shift + Space</kbd> (Optional)</td>
-<td> Selects contiguous nodes from the most recently selected node to the current node.
+<td><kbd>Shift + Space</kbd> (اختیاری)</td>
+<td> گرههای پیوسته را از آخرین گره انتخابشده تا گره فعلی انتخاب میکند.
 </td>
 </tr>
 <tr>
-<td><kbd>Control + Shift + Home</kbd> (Optional)</td>
-<td> Selects the node with focus and all nodes up to the first node. Optionally, moves focus to the first node.
+<td><kbd>Control + Shift + Home</kbd> (اختیاری)</td>
+<td> گره دارای فوکوس و همه گرهها تا اولین گره را انتخاب میکند. به صورت اختیاری، فوکوس را به اولین گره منتقل میکند.
 </td>
 </tr>
 <tr>
-<td><kbd>Control + Shift + End</kbd> (Optional)</td>
-<td> Selects the node with focus and all nodes down to the last node. Optionally, moves focus to the last node.
+<td><kbd>Control + Shift + End</kbd> (اختیاری)</td>
+<td> گره دارای فوکوس و همه گرهها تا آخرین گره را انتخاب میکند. به صورت اختیاری، فوکوس را به آخرین گره منتقل میکند.
 </td>
 </tr>
 <tr>
-<td><kbd>Control + A</kbd> (Optional)</td>
-<td> Selects all nodes in the tree. Optionally, if all nodes are selected, it can also unselect all nodes.</td>
+<td><kbd>Control + A</kbd> (اختیاری)</td>
+<td> همه گرههای درخت را انتخاب میکند. به صورت اختیاری، اگر همه گرهها انتخاب شده باشند، میتواند همه گرهها را از حالت انتخاب خارج کند.</td>
 </tr>
 </table>
 
-#### Alternative multi-selection model
+#### مدل جایگزین انتخاب چندگانه
 
-The alternative multi-selection model is a modifier key model in which moving focus without holding a modifier key such as <kbd>Shift</kbd> or <kbd>Control</kbd> unselects all selected nodes except for the focused node:
+مدل جایگزین انتخاب چندگانه، یک مدل کلید اصلاحکننده است که در آن حرکت فوکوس بدون نگه داشتن یک کلید اصلاحکننده مانند <kbd>Shift</kbd> یا <kbd>Control</kbd> همه گرههای انتخابشده به جز گره دارای فوکوس را از حالت انتخاب خارج میکند:
 
 <table>
 <tr>
 <td><kbd>Shift + Down Arrow</kbd></td>
-<td> Moves focus to and toggles the selection state of the next node.
+<td> فوکوس را به گره بعدی منتقل میکند و وضعیت انتخاب آن را تغییر میدهد.
 </td>
 </tr>
 <tr>
 <td><kbd>Shift + Up Arrow</kbd></td>
-<td> Moves focus to and toggles the selection state of the previous node.
+<td> فوکوس را به گره قبلی منتقل میکند و وضعیت انتخاب آن را تغییر میدهد.
 </td>
 </tr>
 <tr>
 <td><kbd>Control + Down Arrow</kbd></td>
-<td> Without changing the selection state, moves focus to the next node.
+<td> بدون تغییر وضعیت انتخاب، فوکوس را به گره بعدی منتقل میکند.
 </td>
 </tr>
 <tr>
 <td><kbd>Control + Up Arrow</kbd></td>
-<td> Without changing the selection state, moves focus to the previous node.
+<td> بدون تغییر وضعیت انتخاب، فوکوس را به گره قبلی منتقل میکند.
 </td>
 </tr>
 <tr>
 <td><kbd>Control + Space</kbd></td>
-<td> Toggles the selection state of the focused node.
+<td> وضعیت انتخاب گره دارای فوکوس را تغییر میدهد.
 </td>
 </tr>
 <tr>
-<td><kbd>Shift + Space</kbd> (Optional)</td>
-<td> Selects contiguous nodes from the most recently selected node to the current node.
+<td><kbd>Shift + Space</kbd> (اختیاری)</td>
+<td> گرههای پیوسته را از آخرین گره انتخابشده تا گره فعلی انتخاب میکند.
 </td>
 </tr>
-<tr>
-<td><kbd>Control + Shift + Home</kbd> (Optional)</td>
-<td> Selects the node with focus and all nodes up to the first node. Optionally, moves focus to the first node.
-</td>
-</tr>
-<tr>
-<td><kbd>Control + Shift + End</kbd> (Optional)</td>
-<td> Selects the node with focus and all nodes down to the last node. Optionally, moves focus to the last node.
-</td>
-</tr>
-<tr>
-<td><kbd>Control + A</kbd> (Optional)</td>
-<td> Selects all nodes in the tree. Optionally, if all nodes are selected, it can also unselect all nodes.
-</td>
-</tr>
-</table>
-
-## Specifications
-
-{{Specifications}}
