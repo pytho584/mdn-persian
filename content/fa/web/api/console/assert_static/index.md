@@ -1,11 +1,5 @@
 ---
 title: "console: assert() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/assert_static"
-status: "needs-translation"
----
-
----
-title: "console: assert() static method"
 short-title: assert()
 slug: Web/API/console/assert_static
 page-type: web-api-static-method
@@ -14,9 +8,9 @@ browser-compat: api.console.assert_static
 
 {{APIRef("Console API")}} {{AvailableInWorkers}}
 
-The **`console.assert()`** static method writes an error message to the console if the assertion is false. If the assertion is true, nothing happens.
+متد استاتیک **`console.assert()`** اگر گزاره (assertion) نادرست باشد، یک پیام خطا به کنسول می‌نویسد. اگر گزاره درست باشد، هیچ اتفاقی رخ نمی‌دهد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 console.assert(assertion)
@@ -30,26 +24,26 @@ console.assert(assertion, msg, subst1)
 console.assert(assertion, msg, subst1, /* …, */ substN)
 ```
 
-### Parameters
+### پارامترها
 
 - `assertion`
-  - : Any boolean expression. If the assertion is false, a generic message indicating assertion failure is written to the console.
+  - : هر عبارت بولی. اگر این گزاره نادرست باشد، یک پیام عمومی مبنی بر شکست گزاره به کنسول نوشته می‌شود.
 - `val1` … `valN`
-  - : A list of JavaScript values to output. A representation of each of these values is output to the console after a generic assertion failure message (which may be different from the message output when these values are not present) in the order given with some type of separation between the message and between each of them. There is a special case if `val1` is a string, which is described subsequently.
+  - : فهرستی از مقادیر جاوااسکریپت برای خروجی. نمایشی از هر یک از این مقادیر پس از یک پیام عمومی شکست گزاره (که ممکن است با پیامی که در نبود این مقادیر خروجی داده می‌شود متفاوت باشد) به ترتیب داده‌شده، با نوعی جداسازی بین پیام و بین هر یک از آن‌ها، به کنسول خروجی داده می‌شود. حالت خاصی وجود دارد اگر `val1` یک رشته باشد که در ادامه شرح داده می‌شود.
 - `msg`
-  - : A JavaScript string containing zero or more substitution strings, which are replaced with `subst1` through `substN` in consecutive order up to the number of substitution strings. A colon, a space, and then the substituted string are appended to the generic assertion message to form a detailed assertion message, and the result is output to the console. See [Using string substitutions](/en-US/docs/Web/API/console#using_string_substitutions) for a description of how substitutions work.
+  - : یک رشته جاوااسکریپت شامل صفر یا چند رشته جایگزین که به ترتیب متوالی تا تعداد رشته‌های جایگزین با `subst1` تا `substN` جایگزین می‌شوند. یک دونقطه، یک فاصله و سپس رشته جایگزین‌شده به پیام عمومی گزاره اضافه می‌شود تا یک پیام گزارهٔ دقیق‌تر ساخته شود و نتیجه به کنسول خروجی داده می‌شود. برای شرح نحوه عملکرد جایگزینی‌ها، به [استفاده از جایگزینی‌های رشته](/en-US/docs/Web/API/console#using_string_substitutions) مراجعه کنید.
 - `subst1` … `substN`
-  - : JavaScript values with which to replace substitution strings within `msg`. If there are more substitution values than there are substitution strings, the extra values are themselves written to the console after the detailed assertion message in the same manner as when there's no format string.
+  - : مقادیر جاوااسکریپتی که رشته‌های جایگزین درون `msg` با آن‌ها جایگزین می‌شوند. اگر تعداد مقادیر جایگزین بیشتر از تعداد رشته‌های جایگزین باشد، مقادیر اضافی خودشان پس از پیام گزارهٔ دقیق‌تر، به همان شکلی که در نبود رشتهٔ قالب‌بندی انجام می‌شود، به کنسول نوشته می‌شوند.
 
-See [Outputting text to the console](/en-US/docs/Web/API/console#outputting_text_to_the_console) in the documentation of {{domxref("console")}} for further details.
+برای جزئیات بیشتر، [خروجی دادن متن به کنسول](/en-US/docs/Web/API/console#outputting_text_to_the_console) را در مستندات {{domxref("console")}} ببینید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-The following code example demonstrates the use of a JavaScript object following the assertion:
+کد مثال زیر استفاده از یک شیء جاوااسکریپت را پس از گزاره نشان می‌دهد:
 
 ```js
 const errorMsg = "the # is not even";
@@ -66,16 +60,16 @@ for (let number = 2; number <= 5; number++) {
 // Assertion failed: {number: 5, errorMsg: "the # is not even"}
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Microsoft Edge's documentation for `console.assert()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#assert)
-- [Node.js documentation for `console.assert()`](https://nodejs.org/docs/latest/api/console.html#consoleassertvalue-message)
-- [Google Chrome's documentation for `console.dir()`](https://developer.chrome.com/docs/devtools/console/api/#dir)
+- [مستندات Microsoft Edge برای `console.assert()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#assert)
+- [مستندات Node.js برای `console.assert()`](https://nodejs.org/docs/latest/api/console.html#consoleassertvalue-message)
+- [مستندات Google Chrome برای `console.dir()`](https://developer.chrome.com/docs/devtools/console/api/#dir)
