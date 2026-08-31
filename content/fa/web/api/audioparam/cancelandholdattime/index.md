@@ -1,44 +1,36 @@
 ---
 title: "AudioParam: cancelAndHoldAtTime() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/cancelAndHoldAtTime"
-status: "needs-translation"
----
-
----
-title: "AudioParam: cancelAndHoldAtTime() method"
 short-title: cancelAndHoldAtTime()
 slug: Web/API/AudioParam/cancelAndHoldAtTime
 page-type: web-api-instance-method
 browser-compat: api.AudioParam.cancelAndHoldAtTime
+source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/cancelAndHoldAtTime"
+translated_by: "n8n + AI"
 ---
 
 {{APIRef("Web Audio API")}}
 
-The **`cancelAndHoldAtTime()`** method of the
-{{domxref("AudioParam")}} interface cancels all scheduled future changes to the
-`AudioParam` but holds its value at a given time until further changes are
-made using other methods.
+**`cancelAndHoldAtTime()`** از رابط {{domxref("AudioParam")}} تمام تغییرات زمان‌بندی شده آینده در `AudioParam` را لغو می‌کند اما مقدار آن را در یک زمان مشخص حفظ می‌کند تا زمانی که تغییرات دیگری با استفاده از روش‌های دیگر اعمال شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 cancelAndHoldAtTime(cancelTime)
 ```
 
-### Parameters
+### پارامترها
 
 - `cancelTime`
-  - : A double representing the time (in seconds) after the [`AudioContext`](/en-US/docs/Web/API/AudioContext) was
-    first created after which all scheduled changes will be cancelled.
+  - : یک عدد اعشاری که نشان‌دهنده زمان (به ثانیه) پس از ایجاد اولیه [`AudioContext`](/en-US/docs/Web/API/AudioContext) است که پس از آن تمام تغییرات زمان‌بندی شده لغو خواهند شد.
 
-### Return value
+### مقدار بازگشتی
 
-A reference to the {{domxref("AudioParam")}} it was called on.
+یک ارجاع به {{domxref("AudioParam")}} که این روش روی آن فراخوانی شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
