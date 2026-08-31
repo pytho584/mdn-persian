@@ -1,7 +1,7 @@
 ---
 title: "AuthenticatorAttestationResponse: attestationObject property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/attestationObject"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,33 +14,21 @@ browser-compat: api.AuthenticatorAttestationResponse.attestationObject
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`attestationObject`** property of the
-{{domxref("AuthenticatorAttestationResponse")}} interface returns an
-{{jsxref("ArrayBuffer")}} containing the new public key, as well as signature over the
-entire `attestationObject` with a private key that is stored in the
-authenticator when it is manufactured.
+ویژگی **`attestationObject`** از رابط {{domxref("AuthenticatorAttestationResponse")}} یک {{jsxref("ArrayBuffer")}} را بازمی‌گرداند که شامل کلید عمومی جدید و همچنین امضایی بر روی کل `attestationObject` با یک کلید خصوصی است که در هنگام ساخته شدن در احراز هویت‌کننده ذخیره می‌شود.
 
-As part of the {{domxref("CredentialsContainer.create()")}} call, an authenticator will
-create a new key pair as well as an `attestationObject` for that key pair. The public key
-that corresponds to the private key that has created the attestation signature is well
-known; however, there are various well known attestation public key chains for different
-ecosystems (for example, Android or TPM attestations).
+به عنوان بخشی از فراخوانی {{domxref("CredentialsContainer.create()")}}، یک احراز هویت‌کننده یک جفت کلید جدید و همچنین یک `attestationObject` برای آن جفت کلید ایجاد می‌کند. کلید عمومی که با کلید خصوصی ایجادکننده امضای تأییدیه (attestation signature) مطابقت دارد، به خوبی شناخته شده است؛ با این حال، زنجیره‌های کلید عمومی تأییدیه شناخته شده مختلفی برای اکوسیستم‌های گوناگون (مانند تأییدیه‌های Android یا TPM) وجود دارد.
 
-## Value
+## مقدار
 
-After decoding the [CBOR](https://datatracker.ietf.org/doc/html/rfc8949) encoded
-`ArrayBuffer`, the resulting JavaScript object will contain the following
-properties:
+پس از رمزگشایی `ArrayBuffer` رمزگذاری‌شده با [CBOR](https://datatracker.ietf.org/doc/html/rfc8949)، شیء جاوااسکریپت حاصل شامل ویژگی‌های زیر خواهد بود:
 
 - `authData`
-  - : The [Authenticator data](/en-US/docs/Web/API/Web_Authentication_API/Authenticator_data) for the operation. Note that in {{domxref("AuthenticatorAssertionResponse")}}, the `authenticatorData` is exposed as a property in a JavaScript object (see {{domxref("AuthenticatorAssertionResponse.authenticatorData")}}) while in {{domxref("AuthenticatorAttestationResponse")}}, the `authenticatorData` is a property in a [CBOR](https://datatracker.ietf.org/doc/html/rfc8949) map.
+  - : [داده‌های احراز هویت](/en-US/docs/Web/API/Web_Authentication_API/Authenticator_data) برای عملیات. توجه داشته باشید که در {{domxref("AuthenticatorAssertionResponse")}}، `authenticatorData` به عنوان یک ویژگی در یک شیء جاوااسکریپت نمایش داده می‌شود (به {{domxref("AuthenticatorAssertionResponse.authenticatorData")}} مراجعه کنید) در حالی که در {{domxref("AuthenticatorAttestationResponse")}}، `authenticatorData` یک ویژگی در یک نقشه [CBOR](https://datatracker.ietf.org/doc/html/rfc8949) است.
 
-    The same {{domxref("AuthenticatorAssertionResponse.authenticatorData")}} field is used by both `AuthenticatorAttestationResponse` and by `AuthenticatorAssertionResponse`. When used in attestation, it contains an optional field, `attestedCredentialData`. This field is not included when used in the `AuthenticatorAssertionResponse`. The attestedCredentialData field contains the `credentialId` and `credentialPublicKey`.
+    فیلد {{domxref("AuthenticatorAssertionResponse.authenticatorData")}} یکسان توسط هر دو `AuthenticatorAttestationResponse` و `AuthenticatorAssertionResponse` استفاده می‌شود. هنگامی که در تأییدیه استفاده می‌شود، شامل یک فیلد اختیاری به نام `attestedCredentialData` است. این فیلد هنگام استفاده در `AuthenticatorAssertionResponse` گنجانده نمی‌شود. فیلد attestedCredentialData شامل `credentialId` و `credentialPublicKey` است.
 
 - `fmt`
-  - : A text string that indicates the format of the attStmt. The [WebAuthn specification defines a number of formats](https://w3c.github.io/webauthn/#sctn-defined-attestation-formats); however, formats may also be defined
-    in other specifications and registered in an [IANA registry](https://w3c.github.io/webauthn/#sctn-att-fmt-reg). Formats
-    defined by WebAuthn are:
+  - : یک رشته متنی که قالب attStmt را نشان می‌دهد. [مشخصات WebAuthn تعدادی قالب را تعریف می‌کند](https://w3c.github.io/webauthn/#sctn-defined-attestation-formats)؛ با این حال، قالب‌ها ممکن است در مشخصات دیگر نیز تعریف شده و در یک [ثبت IANA](https://w3c.github.io/webauthn/#sctn-att-fmt-reg) ثبت شوند. قالب‌های تعریف‌شده توسط WebAuthn عبارتند از:
     - `"packed"`
     - `"tpm"`
     - `"android-key"`
@@ -49,23 +37,20 @@ properties:
     - `"none"`
 
 - `attStmt`
-  - : An attestation statement that is of the format defined by `"fmt"`. For
-    now, [see the WebAuthn specification for details on each format](https://w3c.github.io/webauthn/#sctn-defined-attestation-formats).
+  - : یک عبارت تأییدیه (attestation statement) که در قالب تعریف‌شده توسط `"fmt"` است. در حال حاضر، [برای جزئیات هر قالب به مشخصات WebAuthn مراجعه کنید](https://w3c.github.io/webauthn/#sctn-defined-attestation-formats).
 
-## Examples
+## مثال‌ها
 
-See [Creating a public key credential](/en-US/docs/Web/API/CredentialsContainer/create#creating_a_public_key_credential) for a detailed example.
+برای یک مثال دقیق، [ایجاد یک اعتبارنامه کلید عمومی](/en-US/docs/Web/API/CredentialsContainer/create#creating_a_public_key_credential) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("CredentialsContainer.create()")}}: the method used to create a statement with
-  a cryptographic `challenge` which signature by the authenticator is contained in `attStmt`,
-  with the specified `attestation` transport option.
+- {{domxref("CredentialsContainer.create()")}}: روشی که برای ایجاد یک عبارت با یک `challenge` رمزنگاری استفاده می‌شود که امضای آن توسط احراز هویت‌کننده در `attStmt` موجود است، با گزینه انتقال `attestation` مشخص‌شده.
