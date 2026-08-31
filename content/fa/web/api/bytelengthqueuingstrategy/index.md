@@ -1,7 +1,7 @@
 ---
-title: "ByteLengthQueuingStrategy"
+title: ByteLengthQueuingStrategy
 source: "https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,24 +13,24 @@ browser-compat: api.ByteLengthQueuingStrategy
 
 {{APIRef("Streams")}}{{AvailableInWorkers}}
 
-The **`ByteLengthQueuingStrategy`** interface of the [Streams API](/en-US/docs/Web/API/Streams_API) provides a built-in byte length queuing strategy that can be used when constructing streams.
+**`ByteLengthQueuingStrategy`** واسط (interface) از [Streams API](/en-US/docs/Web/API/Streams_API) یک استراتژی صف‌بندی بر اساس طول بایت داخلی فراهم می‌کند که می‌تواند هنگام ساخت استریم‌ها استفاده شود.
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("ByteLengthQueuingStrategy.ByteLengthQueuingStrategy", "ByteLengthQueuingStrategy()")}}
-  - : Creates a new `ByteLengthQueuingStrategy` object instance.
+  - : یک نمونه جدید از شیء `ByteLengthQueuingStrategy` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
 - {{domxref("ByteLengthQueuingStrategy.highWaterMark")}} {{ReadOnlyInline}}
-  - : The total number of bytes that can be contained in the internal queue before [backpressure](/en-US/docs/Web/API/Streams_API/Concepts#backpressure) is applied.
+  - : تعداد کل بایت‌هایی که می‌توانند در صف داخلی قبل از اعمال [backpressure](/en-US/docs/Web/API/Streams_API/Concepts#backpressure) نگهداری شوند.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
 - {{domxref("ByteLengthQueuingStrategy.size()")}}
-  - : Returns the given chunk's `byteLength` property.
+  - : ویژگی `byteLength` داده‌های (chunk) داده شده را برمی‌گرداند.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const queueingStrategy = new ByteLengthQueuingStrategy({ highWaterMark: 1024 });
@@ -53,16 +53,16 @@ const readableStream = new ReadableStream(
 const size = queueingStrategy.size(chunk);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Streams API", "Streams API", "", "nocode")}}
-- [Internal queues and queuing strategies](/en-US/docs/Web/API/Streams_API/Concepts#internal_queues_and_queuing_strategies)
-- {{domxref("ByteLengthQueuingStrategy.ByteLengthQueuingStrategy", "ByteLengthQueuingStrategy()")}} constructor
+- [صف‌های داخلی و استراتژی‌های صف‌بندی](/en-US/docs/Web/API/Streams_API/Concepts#internal_queues_and_queuing_strategies)
+- سازنده {{domxref("ByteLengthQueuingStrategy.ByteLengthQueuingStrategy", "ByteLengthQueuingStrategy()")}}
