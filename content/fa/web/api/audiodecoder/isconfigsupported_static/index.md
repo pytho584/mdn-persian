@@ -1,7 +1,7 @@
 ---
 title: "AudioDecoder: isConfigSupported() static method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioDecoder/isConfigSupported_static"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,36 +14,36 @@ browser-compat: api.AudioDecoder.isConfigSupported_static
 
 {{APIRef("WebCodecs API")}}{{SecureContext_Header}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`isConfigSupported()`** static method of the {{domxref("AudioDecoder")}} interface checks if the given config is supported (that is, if {{domxref("AudioDecoder")}} objects can be successfully configured with the given config).
+**`isConfigSupported()`** 静态方法属于 {{domxref("AudioDecoder")}} 接口，用于检查给定的配置是否受支持（即 {{domxref("AudioDecoder")}} 对象能否使用该配置成功初始化）。
 
-## Syntax
+## 语法
 
 ```js-nolint
 AudioDecoder.isConfigSupported(config)
 ```
 
-### Parameters
+### 参数
 
 - `config`
-  - : The dictionary object accepted by {{domxref("AudioDecoder.configure")}}
+  - : 由 {{domxref("AudioDecoder.configure")}} 接受的字典对象。
 
-### Return value
+### 返回值
 
-A {{jsxref("Promise")}} that resolves with an object containing the following members:
+一个 {{jsxref("Promise")}}，解析为包含以下成员的对象：
 
 - `supported`
-  - : A boolean value which is `true` if the given config is supported by the decoder.
+  - : 布尔值，如果给定的配置被解码器支持，则为 `true`。
 - `config`
-  - : A copy of the given config with all the fields recognized by the decoder.
+  - : 给定配置的副本，其中包含解码器能识别的所有字段。
 
-### Exceptions
+### 异常
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the provided `config` is invalid; that is, if doesn't have required values (such as an empty `codec` field) or has invalid values (such as a negative `sampleRate`).
+  - : 如果提供的 `config` 无效则抛出；即缺少必需值（例如空的 `codec` 字段）或包含无效值（例如负的 `sampleRate`）。
 
-## Examples
+## 示例
 
-The following example tests if the browser supports several audio codecs.
+以下示例测试浏览器是否支持多种音频编解码器。
 
 ```js
 const codecs = ["mp4a.40.2", "mp3", "alaw", "ulaw"];
@@ -66,10 +66,10 @@ for (const config of configs) {
 }
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
