@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTService: uuid property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/uuid"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,17 +16,17 @@ browser-compat: api.BluetoothRemoteGATTService.uuid
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothGATTService.uuid`** read-only property
-returns a string representing the UUID of this service.
+خاصیت فقطخواندنی **`BluetoothGATTService.uuid`**
+رشتهای را برمیگرداند که UUID این سرویس را نشان میدهد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
