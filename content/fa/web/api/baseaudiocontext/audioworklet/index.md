@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: audioWorklet property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/audioWorklet"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,30 +14,25 @@ browser-compat: api.BaseAudioContext.audioWorklet
 
 {{ APIRef("Web Audio API") }}{{securecontext_header}}
 
-The `audioWorklet` read-only property of the
-{{domxref("BaseAudioContext")}} interface returns an instance of
-{{domxref("AudioWorklet")}} that can be used for adding
-{{domxref("AudioWorkletProcessor")}}-derived classes which implement custom audio
-processing.
+ویژصیت فقط خواندنی `audioWorklet` از رابط {{domxref("BaseAudioContext")}} یک نمونه از {{domxref("AudioWorklet")}} را برمی‌گرداند که می‌تواند برای افزودن کلاس‌های مشتق شده از {{domxref("AudioWorkletProcessor")}} که پردازش صوتی سفارشی را پیاده‌سازی می‌کنند، استفاده شود.
 
-## Value
+## مقدار
 
-An {{domxref("AudioWorklet")}} instance.
+یک نمونه از {{domxref("AudioWorklet")}}.
 
-## Examples
+## مثال‌ها
 
-_For a complete example demonstrating user-defined audio processing, see the
-{{domxref("AudioWorkletNode")}} page._
+_برای یک مثال کامل از پردازش صوتی تعریف‌شده توسط کاربر، صفحه {{domxref("AudioWorkletNode")}} را ببینید._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - {{domxref("AudioWorkletNode")}}
