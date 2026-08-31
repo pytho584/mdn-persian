@@ -1,7 +1,5 @@
 ---
 title: "CSSFontFeatureValuesRule: fontFamily property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesRule/fontFamily"
-status: "needs-translation"
 ---
 
 ---
@@ -14,17 +12,17 @@ browser-compat: api.CSSFontFeatureValuesRule.fontFamily
 
 {{ APIRef("CSSOM") }}
 
-The **`fontFamily`** property of the {{domxref("CSSFontFeatureValuesRule")}} interface represents the name of the font family it applies to.
+ویژگی **`fontFamily`** از رابط {{domxref("CSSFontFeatureValuesRule")}} نام خانواده فونتی را که این قاعده روی آن اعمال می‌شود، نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Read font family
+### خواندن خانواده فونت
 
-In this example, we declare two {{cssxref("@font-feature-values")}} one for the _Font One_ font family, and the other for _Font Two_. We then use the CSSOM to read these font families, displaying them into the log.
+در این مثال، دو {{cssxref("@font-feature-values")}} تعریف می‌کنیم؛ یکی برای خانواده فونت _Font One_ و دیگری برای _Font Two_. سپس با استفاده از CSSOM این خانواده فونت‌ها را می‌خوانیم و آن‌ها را در لاگ نمایش می‌دهیم.
 
 ```html
 <pre id="log"></pre>
@@ -68,10 +66,10 @@ log.textContent += `The 2nd '@font-feature-values' family: "${fontTwo.fontFamily
 
 {{EmbedLiveSample("read_font_family", "100%", "75px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
