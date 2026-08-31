@@ -1,11 +1,5 @@
 ---
 title: "Credential: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Credential/type"
-status: "needs-translation"
----
-
----
-title: "Credential: type property"
 short-title: type
 slug: Web/API/Credential/type
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.Credential.type
 
 {{APIRef("Credential Management API")}}{{SecureContext_Header}}
 
-The **`type`** read-only property of the {{domxref("Credential")}} interface returns a string containing the credential's type. Valid values are `password`, `federated`, `public-key`, `identity` and `otp`.
+خاصیت فقط خواندنی **`type`** از رابط {{domxref("Credential")}} یک رشته حاوی نوع اعتبارنامه (credential) برمی‌گرداند. مقادیر معتبر عبارتند از `password`، `federated`، `public-key`، `identity` و `otp`.
 
-## Value
+## مقدار
 
-A string contains a credential's given name.
+یک رشته که شامل نام داده شده (given name) اعتبارنامه است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
