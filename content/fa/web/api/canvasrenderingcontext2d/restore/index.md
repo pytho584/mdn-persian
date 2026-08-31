@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: restore() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/restore"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: restore() method"
 short-title: restore()
 slug: Web/API/CanvasRenderingContext2D/restore
 page-type: web-api-instance-method
@@ -14,35 +8,31 @@ browser-compat: api.CanvasRenderingContext2D.restore
 
 {{APIRef("Canvas API")}}
 
-The
+متد
 **`CanvasRenderingContext2D.restore()`**
-method of the Canvas 2D API restores the most recently saved canvas state by popping the
-top entry in the drawing state stack. If there is no saved state, this method does
-nothing.
+از API بوم ۲ بعدی (Canvas 2D)، آخرین حالت ذخیره‌شدهٔ بوم را با خارج کردن ورودی بالایی از پشتهٔ حالت‌های رسم بازیابی می‌کند. اگر حالتی ذخیره نشده باشد، این متد هیچ کاری انجام نمی‌دهد.
 
-For more information about the [drawing state](/en-US/docs/Web/API/CanvasRenderingContext2D/save#description), see {{domxref("CanvasRenderingContext2D.save()")}}.
+برای اطلاعات بیشتر دربارهٔ [حالت رسم](/en-US/docs/Web/API/CanvasRenderingContext2D/save#description)، به {{domxref("CanvasRenderingContext2D.save()")}} مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 restore()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Restoring a saved state
+### بازیابی یک حالت ذخیره‌شده
 
-This example uses the `save()` method to save the current state and
-`restore()` to restore it later, so that you are able to draw a rect with the
-current state later.
+این مثال از متد `save()` برای ذخیرهٔ حالت فعلی و از `restore()` برای بازیابی بعدی آن استفاده می‌کند، تا بتوانید بعداً یک مستطیل را با حالت فعلی رسم کنید.
 
 #### HTML
 
@@ -50,37 +40,37 @@ current state later.
 <canvas id="canvas"></canvas>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// Save the current state
+// ذخیرهٔ حالت فعلی
 ctx.save();
 
 ctx.fillStyle = "green";
 ctx.fillRect(10, 10, 100, 100);
 
-// Restore to the state saved by the most recent call to save()
+// بازگشت به حالتی که در آخرین فراخوانی save() ذخیره شده بود
 ctx.restore();
 
 ctx.fillRect(150, 40, 100, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Restoring_a_saved_state', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کنندهٔ این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.save()")}}
