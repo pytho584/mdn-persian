@@ -1,7 +1,7 @@
 ---
 title: "BluetoothCharacteristicProperties: broadcast property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothCharacteristicProperties/broadcast"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,19 +16,19 @@ browser-compat: api.BluetoothCharacteristicProperties.broadcast
 
 {{securecontext_header}}{{APIRef("Bluetooth API")}}{{SeeCompatTable}}
 
-The **`broadcast`** read-only property of the
-{{domxref("BluetoothCharacteristicProperties")}} interface returns a
-`boolean` that is `true` if the broadcast of the characteristic
-value is permitted using the Server Characteristic Configuration Descriptor.
+ویژگی فقط‌خواندنی **`broadcast`** از رابط
+{{domxref("BluetoothCharacteristicProperties")}} یک `boolean` برمی‌گرداند که
+`true` است اگر پخش مقدار مشخصه با استفاده از
+Server Characteristic Configuration Descriptor مجاز باشد.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
