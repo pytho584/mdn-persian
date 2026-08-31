@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-placeholder attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-placeholder"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,13 +13,13 @@ spec-urls: https://w3c.github.io/aria/#aria-placeholder
 sidebar: accessibilitysidebar
 ---
 
-The `aria-placeholder` attribute defines a short hint (a word or short phrase) intended to help the user with data entry when a form control has no value. The hint can be a sample value or a brief description of the expected format.
+ویژگی `aria-placeholder` یک راهنمای کوتاه (یک کلمه یا عبارت کوتاه) را تعریف می‌کند که برای کمک به کاربر در ورود داده‌ها زمانی که یک کنترل فرم مقداری ندارد، در نظر گرفته شده است. این راهنما می‌تواند یک مقدار نمونه یا توضیح مختصری از قالب مورد انتظار باشد.
 
-## Description
+## توضیحات
 
-A placeholder is text that appears in the form control when it has no value set. The HTML [`placeholder`](/en-US/docs/Web/HTML/Reference/Elements/input#placeholder) attribute enables providing a sample value or a brief description of the expected format for several HTML {{HTMLElement('input')}} types and {{HTMLElement('textarea')}}.
+placeholder متنی است که در کنترل فرم زمانی که مقداری تنظیم نشده باشد ظاهر می‌شود. ویژگی HTML [`placeholder`](/en-US/docs/Web/HTML/Reference/Elements/input#placeholder) امکان ارائه یک مقدار نمونه یا توضیح مختصری از قالب مورد انتظار برای چندین نوع HTML {{HTMLElement('input')}} و {{HTMLElement('textarea')}} را فراهم می‌کند.
 
-If you are creating a `textbox` using any other element, `placeholder` is not supported. That is where `aria-placeholder` comes into play. The `aria-placeholder` attribute can be used to defines a short hint to help the user understand what type of data is expected when a non-semantic form control has no value.
+اگر با استفاده از هر عنصر دیگری یک `textbox` ایجاد می‌کنید، `placeholder` پشتیبانی نمی‌شود. اینجاست که `aria-placeholder` وارد عمل می‌شود. ویژگی `aria-placeholder` می‌تواند برای تعریف یک راهنمای کوتاه برای کمک به کاربر در درک نوع داده‌ای که انتظار می‌رود، زمانی که یک کنترل فرم غیرمعنایی مقداری ندارد، استفاده شود.
 
 ```html
 <span id="date-of-birth">Birthday</span>
@@ -32,47 +32,47 @@ If you are creating a `textbox` using any other element, `placeholder` is not su
 </div>
 ```
 
-The placeholder hint should be shown to the user whenever the control's value is empty, including when a value is deleted.
+راهنمای placeholder باید هر زمان که مقدار کنترل خالی است، از جمله زمانی که یک مقدار حذف می‌شود، به کاربر نشان داده شود.
 
 > [!NOTE]
-> ARIA is only modify the accessibility tree for an element and therefore how assistive technology presents the content to your users. ARIA doesn't change anything about an elements function or behavior. When not using semantic HTML elements for their intended purpose and default functionality, you must use JavaScript to manage behavior.
+> ARIA فقط درخت دسترسی یک عنصر را اصلاح می‌کند و بنابراین نحوه ارائه محتوا به کاربران توسط فناوری کمکی را تغییر می‌دهد. ARIA هیچ چیزی را در مورد عملکرد یا رفتار یک عنصر تغییر نمی‌دهد. هنگامی که از عناصر HTML معنایی برای هدف مورد نظر و عملکرد پیش‌فرض آنها استفاده نمی‌کنید، باید از JavaScript برای مدیریت رفتار استفاده کنید.
 
-The `aria-placeholder` is used in addition to, not instead of, a label. They have different purposes and different functionality. A label explains what kind of information is expected. Placeholder text provides a hint about the expected value.
+`aria-placeholder` علاوه بر برچسب استفاده می‌شود، نه به جای آن. آنها اهداف و عملکردهای متفاوتی دارند. برچسب توضیح می‌دهد که چه نوع اطلاعاتی انتظار می‌رود. متن placeholder یک راهنمایی در مورد مقدار مورد انتظار ارائه می‌دهد.
 
 > [!WARNING]
-> Using a placeholder instead of a visible label harms accessibility and usability for many users including older users and users with cognitive, mobility, fine motor skill and vision impairments. Labels are better: they are always visible and they provide for a larger hit region to focus on the control. Placeholders have several drawbacks: they disappear when the control has any value including just white space, they can confuse users into thinking the value is pre-filled, and the default color has insufficient contrast.
+> استفاده از placeholder به جای برچسب قابل مشاهده به دسترسی و قابلیت استفاده برای بسیاری از کاربران از جمله کاربران مسن و کاربران دارای اختلالات شناختی، حرکتی، مهارت‌های حرکتی ظریف و بینایی آسیب می‌زند. برچسب‌ها بهتر هستند: آنها همیشه قابل مشاهده هستند و ناحیه ضربه بزرگتری برای تمرکز روی کنترل فراهم می‌کنند. Placeholderها چندین اشکال دارند: زمانی که کنترل هر مقداری داشته باشد، حتی فضای خالی، ناپدید می‌شوند، می‌توانند کاربران را در مورد پر شدن از قبل مقدار گیج کنند، و رنگ پیش‌فرض دارای کنتراست کافی نیست.
 
 > [!NOTE]
-> Placeholders should only be used to show an example of the type of data that should be entered into a form; they don't replace a proper label.
+> Placeholderها فقط باید برای نشان دادن یک نمونه از نوع داده‌ای که باید در فرم وارد شود استفاده شوند؛ آنها جایگزین یک برچسب مناسب نمی‌شوند.
 
-## Values
+## مقادیر
 
 - `<string>`
-  - : The word or short phrase to display in a control when the control has no value.
+  - : کلمه یا عبارت کوتاهی که در یک کنترل زمانی که کنترل مقداری ندارد نمایش داده می‌شود.
 
-## Associated interfaces
+## واسط‌های مرتبط
 
 - {{domxref("Element.ariaPlaceholder")}}
-  - : The [`ariaPlaceholder`](/en-US/docs/Web/API/Element/ariaPlaceholder) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-placeholder` attribute.
+  - : ویژگی [`ariaPlaceholder`](/en-US/docs/Web/API/Element/ariaPlaceholder)، بخشی از واسط {{domxref("Element")}}، مقدار ویژگی `aria-placeholder` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaPlaceholder")}}
-  - : The [`ariaPlaceholder`](/en-US/docs/Web/API/ElementInternals/ariaPlaceholder) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-placeholder` attribute.
+  - : ویژگی [`ariaPlaceholder`](/en-US/docs/Web/API/ElementInternals/ariaPlaceholder)، بخشی از واسط {{domxref("ElementInternals")}}، مقدار ویژگی `aria-placeholder` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده شده در نقش‌ها:
 
 - [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
 
-Inherited into roles:
+به ارث برده شده در نقش‌ها:
 
 - [`searchbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/searchbox_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [HTML `placeholder` attribute](/en-US/docs/Web/HTML/Reference/Elements/input#placeholder)
+- [ویژگی HTML `placeholder`](/en-US/docs/Web/HTML/Reference/Elements/input#placeholder)
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
 - [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
