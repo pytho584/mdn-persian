@@ -1,7 +1,7 @@
 ---
 title: "CanvasCaptureMediaStreamTrack"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasCaptureMediaStreamTrack"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,32 +13,32 @@ browser-compat: api.CanvasCaptureMediaStreamTrack
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`CanvasCaptureMediaStreamTrack`** interface of the {{domxref("Media Capture and Streams API", "", "", "nocode")}} represents the video track contained in a {{domxref("MediaStream")}} being generated from a {{HTMLElement("canvas")}} following a call to {{domxref("HTMLCanvasElement.captureStream()")}}.
+**`CanvasCaptureMediaStreamTrack`** 接口属于 {{domxref("Media Capture and Streams API", "", "", "nocode")}}，表示在调用 {{domxref("HTMLCanvasElement.captureStream()")}} 后，从 {{HTMLElement("canvas")}} 生成的 {{domxref("MediaStream")}} 中所包含的视频轨道。
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## 实例属性
 
-_This interface inherits the properties of its parent, {{domxref("MediaStreamTrack")}}._
+_此接口继承其父接口 {{domxref("MediaStreamTrack")}} 的属性。_
 
 - {{domxref("CanvasCaptureMediaStreamTrack.canvas")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("HTMLCanvasElement")}} object whose surface is captured in real-time.
+  - : 返回实时捕获其表面的 {{domxref("HTMLCanvasElement")}} 对象。
 
-## Instance methods
+## 实例方法
 
-_This interface inherits the methods of its parent, {{domxref("MediaStreamTrack")}}._
+_此接口继承其父接口 {{domxref("MediaStreamTrack")}} 的方法。_
 
 - {{domxref("CanvasCaptureMediaStreamTrack.requestFrame()")}}
-  - : Manually forces a frame to be captured and sent to the stream. This lets applications that wish to specify the frame capture times directly do so, if they specified a `frameRate` of 0 when calling {{domxref("HTMLCanvasElement.captureStream", "captureStream()")}}.
+  - : 手动强制捕获一帧并发送到流中。这允许希望直接指定帧捕获时间的应用程序在调用 {{domxref("HTMLCanvasElement.captureStream", "captureStream()")}} 时指定 `frameRate` 为 0，从而实现这一点。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- {{domxref("HTMLCanvasElement.captureStream()")}} to begin capturing frames from a canvas
+- {{domxref("HTMLCanvasElement.captureStream()")}} 用于开始从画布捕获帧
