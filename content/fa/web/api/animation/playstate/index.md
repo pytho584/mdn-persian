@@ -1,7 +1,7 @@
 ---
 title: "Animation: playState property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/playState"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,24 +14,24 @@ browser-compat: api.Animation.playState
 
 {{APIRef("Web Animations")}}
 
-The read-only **`Animation.playState`** property of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) returns an enumerated value describing the playback state of an animation.
+خاصیت فقط خواندنی **`Animation.playState`** از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) یک مقدار شمارشی را برمی‌گرداند که وضعیت پخش یک انیمیشن را توصیف می‌کند.
 
-## Value
+## مقدار
 
 - `idle`
-  - : The current time of the animation is unresolved and there are no pending tasks.
+  - : زمان جاری انیمیشن نامشخص است و هیچ کار در انتظاری وجود ندارد.
 - `running`
-  - : The animation is running.
+  - : انیمیشن در حال اجراست.
 - `paused`
-  - : The animation was suspended and the {{domxref("Animation.currentTime")}} property is not updating.
+  - : انیمیشن متوقف شده است و خاصیت {{domxref("Animation.currentTime")}} به‌روز نمی‌شود.
 - `finished`
-  - : The animation has reached one of its boundaries and the {{domxref("Animation.currentTime")}} property is not updating.
+  - : انیمیشن به یکی از مرزهای خود رسیده است و خاصیت {{domxref("Animation.currentTime")}} به‌روز نمی‌شود.
 
-Previously, Web Animations defined a **`pending`** value to indicate that some asynchronous operation such as initiating playback was yet to complete. This is now indicated by the separate {{domxref("Animation.pending")}} property.
+پیشتر، Web Animations یک مقدار **`pending`** را تعریف کرده بود برای نشان دادن اینکه برخی عملیات ناهمگام مانند شروع پخش هنوز کامل نشده است. اکنون این با خاصیت جداگانه {{domxref("Animation.pending")}} نشان داده می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the [Growing/Shrinking Alice Game](https://codepen.io/rachelnabors/pen/PNYGZQ?editors=0010) example, players can get an ending with [Alice crying into a pool of tears](https://codepen.io/rachelnabors/pen/EPJdJx?editors=0010). In the game, for performance reasons, the tears should only be animating when they're visible. So they must be paused as soon as they are animated like so:
+در مثال [بازی رشد/کوچک شدن آلیس](https://codepen.io/rachelnabors/pen/PNYGZQ?editors=0010)، بازیکنان می‌توانند به پایانی برسند که [آلیس در یک استخر اشک گریه می‌کند](https://codepen.io/rachelnabors/pen/EPJdJx?editors=0010). در بازی، به دلایل عملکرد، اشک‌ها فقط زمانی باید متحرک شوند که قابل مشاهده هستند. بنابراین به محض اینکه متحرک شدند باید متوقف شوند مانند زیر:
 
 ```js
 // Setting up the tear animations
@@ -60,15 +60,15 @@ tears.forEach((el) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
-- {{domxref("Animation")}} for other methods and properties you can use to control web page animation.
+- {{domxref("Animation")}} برای سایر متدها و خاصیت‌هایی که می‌توانید برای کنترل انیمیشن صفحه وب استفاده کنید.
