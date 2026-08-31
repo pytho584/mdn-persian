@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-level attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,59 +13,59 @@ spec-urls: https://w3c.github.io/aria/#aria-level
 sidebar: accessibilitysidebar
 ---
 
-The `aria-level` attribute defines the hierarchical level of an element within a structure.
+ویژگی `aria-level` سطح سلسله‌مراتبی یک عنصر را در یک ساختار تعریف می‌کند.
 
-## Description
+## توضیحات
 
-Levels of hierarchy appear in headings, trees, nested grid, nested tablists, and more. If the DOM ancestry does not accurately represent the level, the `aria-level` attribute should be used to define the hierarchical level elements within their hierarchical structures. Levels increase with depth. The value for aria-level is an integer greater than or equal to `1`.
+سطوح سلسله‌مراتب در عنوان‌ها، درخت‌ها، شبکه‌های تودرتو، فهرست‌های برگه‌ای تودرتو و موارد دیگر ظاهر می‌شوند. اگر نسب‌های DOM به‌دقت سطح را نشان ندهند، باید از ویژگی `aria-level` برای تعریف سطح سلسله‌مراتبی عناصر در ساختارهای سلسله‌مراتبی آن‌ها استفاده کرد. سطوح با عمق افزایش می‌یابند. مقدار `aria-level` یک عدد صحیح بزرگ‌تر یا مساوی با `1` است.
 
-When it comes to the headings in a document structure, you can have first-level headings, second-level headings, third-level headings, etc. In trees, you have the root element, its children, the children's children (or grandchildren), and so on.
+وقتی صحبت از عنوان‌ها در ساختار یک سند می‌شود، می‌توانید عنوان‌های سطح اول، سطح دوم، سطح سوم و غیره داشته باشید. در درخت‌ها، عنصر ریشه، فرزندان آن، فرزندان فرزندان (یا نوه‌ها) و غیره دارید.
 
-The `aria-level` attribute exposes hierarchy to assistive technologies so it can be communicated to the users. Like all ARIA attributes, it has no impact on the user agent and therefore no impact on the user agent's determination of the document structure.
+ویژگی `aria-level` سلسله‌مراتب را در اختیار فناوری‌های کمکی قرار می‌دهد تا بتوان آن را به کاربران منتقل کرد. مانند همه ویژگی‌های ARIA، تأثیری بر عامل کاربر ندارد و بنابراین تأثیری بر تعیین ساختار سند توسط عامل کاربر ندارد.
 
-If the DOM ancestry accurately represents the level, the user agent can calculate the level of an item from the document structure, making `aria-level` not only redundant but a risk of creating misinformation. `aria-level` should really only be used to provide an explicit indication of level when it is not possible to calculate from the document structure. Test to see if this attribute is needed. If the user agent can calculate the level, it is best to omit the `aria-level` attribute.
+اگر نسب‌های DOM سطح را به‌دقت نشان دهند، عامل کاربر می‌تواند سطح یک مورد را از ساختار سند محاسبه کند، که این نه‌تنها `aria-level` را اضافی می‌کند بلکه خطر ایجاد اطلاعات نادرست را نیز به همراه دارد. `aria-level` در واقع فقط باید برای ارائه نشانه صریح سطح زمانی که محاسبه آن از ساختار سند ممکن نیست استفاده شود. آزمایش کنید که آیا این ویژگی مورد نیاز است یا خیر. اگر عامل کاربر بتواند سطح را محاسبه کند، بهتر است ویژگی `aria-level` حذف شود.
 
-### With `heading` role
+### با نقش `heading`
 
-The `aria-level` attribute is a required attribute of the [`heading`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role) role which indicates to assistive technologies that the element should be treated as a heading. `<div role="heading" aria-level="1">` defines the `<div>` as being the main heading of the page. A level 2 heading, defined with `aria-level="2"` would be the first subsection, a level 3 is a subsection of that, and so on.
+ویژگی `aria-level` یک ویژگی الزامی برای نقش [`heading`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role) است که به فناوری‌های کمکی نشان می‌دهد که عنصر باید به عنوان یک عنوان در نظر گرفته شود. `<div role="heading" aria-level="1">` عنصر `<div>` را به عنوان عنوان اصلی صفحه تعریف می‌کند. یک عنوان سطح 2 که با `aria-level="2"` تعریف می‌شود، اولین زیربخش است، سطح 3 زیربخشی از آن و غیره.
 
 ```html
 <div role="heading" aria-level="3">Heading for this sub section</div>
 ```
 
-Opt for using the {{htmlelement("Heading_Elements", "h1")}} through {{htmlelement("Heading_Elements", "h6")}} elements instead.
+در عوض بهتر است از عناصر {{htmlelement("Heading_Elements", "h1")}} تا {{htmlelement("Heading_Elements", "h6")}} استفاده کنید.
 
-### Within `treegrid` role
+### در نقش `treegrid`
 
-In the case of a [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role), `aria-level` is supported on elements with the role [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role), not elements with role [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role). Rows act as leaf nodes within the vertical orientation of the grid. Gridcells are leaf nodes within the horizontal orientation of each row. `Aria-level` is not supported on cells within rows. So, in treegrids, the `aria-level` attribute is applied to the element with the role `row`.
+در مورد [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)، ویژگی `aria-level` روی عناصر دارای نقش [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) پشتیبانی می‌شود، نه روی عناصر دارای نقش [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role). ردیف‌ها به عنوان گره‌های برگ در جهت عمودی شبکه عمل می‌کنند. خانه‌های شبکه گره‌های برگ در جهت افقی هر ردیف هستند. `Aria-level` روی سلول‌های داخل ردیف‌ها پشتیبانی نمی‌شود. بنابراین، در شبکه‌های درختی، ویژگی `aria-level` روی عنصر دارای نقش `row` اعمال می‌شود.
 
-If a complete set of available nodes is not present in the DOM due to dynamic loading as the user moves focus in or scrolls the tree, each node has `aria-level`, [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize), and [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) included.
+اگر به دلیل بارگذاری پویا هنگام حرکت تمرکز کاربر یا اسکرول در درخت، مجموعه کاملی از گره‌های موجود در DOM وجود نداشته باشد، هر گره شامل `aria-level`، [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) و [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) است.
 
-## Values
+## مقادیر
 
 - `<integer>`
-  - : An integer greater than or equal to 1
+  - : یک عدد صحیح بزرگ‌تر یا مساوی با 1
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaLevel")}}
-  - : The [`ariaLevel`](/en-US/docs/Web/API/Element/ariaLevel) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-level` attribute.
+  - : ویژگی [`ariaLevel`](/en-US/docs/Web/API/Element/ariaLevel) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-level` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaLevel")}}
-  - : The [`ariaLevel`](/en-US/docs/Web/API/ElementInternals/ariaLevel) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-level` attribute.
+  - : ویژگی [`ariaLevel`](/en-US/docs/Web/API/ElementInternals/ariaLevel) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-level` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده شده در نقش‌ها:
 
 - [`associationlistitemkey`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles)
 - [`comment`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/comment_role)
 - [`heading`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role)
 - [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [`<h1>` through `<h6>`: The HTML Section Heading elements](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements) ({{htmlelement("Heading_Elements", "h1")}}, {{htmlelement("Heading_Elements", "h2")}}, {{htmlelement("Heading_Elements", "h3")}}, {{htmlelement("Heading_Elements", "h4")}}, {{htmlelement("Heading_Elements", "h5")}}, and {{htmlelement("Heading_Elements", "h6")}})
+- [`<h1>` تا `<h6>`: عناصر عنوان بخش HTML](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements) ({{htmlelement("Heading_Elements", "h1")}}، {{htmlelement("Heading_Elements", "h2")}}، {{htmlelement("Heading_Elements", "h3")}}، {{htmlelement("Heading_Elements", "h4")}}، {{htmlelement("Heading_Elements", "h5")}} و {{htmlelement("Heading_Elements", "h6")}})
