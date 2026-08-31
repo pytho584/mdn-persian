@@ -1,7 +1,7 @@
 ---
 title: "AudioData: close() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioData/close"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,34 +14,34 @@ browser-compat: api.AudioData.close
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`close()`** method of the {{domxref("AudioData")}} interface clears all states and releases the reference to the media resource.
+متد **`close()`** از رابط {{domxref("AudioData")}} تمام وضعیت‌ها را پاک می‌کند و ارجاع به منبع رسانه را آزاد می‌سازد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-Undefined.
+تعریف‌نشده (Undefined).
 
-## Examples
+## مثال‌ها
 
-The following example shows the `AudioData` object being closed.
+مثال زیر نحوه بسته شدن شیء `AudioData` را نشان می‌دهد.
 
 ```js
 AudioData.close();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
