@@ -1,7 +1,7 @@
 ---
 title: "Animation: updatePlaybackRate() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/updatePlaybackRate"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,22 +14,12 @@ browser-compat: api.Animation.updatePlaybackRate
 
 {{APIRef("Web Animations")}}
 
-The **`updatePlaybackRate()`** method of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)'s
-{{domxref("Animation")}} Interface sets the speed of an animation after first
-synchronizing its playback position.
+متد **`updatePlaybackRate()`** از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
+در رابط {{domxref("Animation")}}، سرعت یک انیمیشن را پس از همگام‌سازی‌ اولیه موقعیت پخش آن تنظیم می‌کند.
 
-In some cases, an animation may run on a separate thread or process and will continue
-updating even while long-running JavaScript delays the main thread. In such a case,
-setting the {{domxref("Animation.playbackRate", "playbackRate")}} on the animation
-directly may cause the animation's playback position to jump since its playback
-position on the main thread may have drifted from the playback position where it is
-currently running.
+در برخی موارد، یک انیمیشن ممکن است در یک رشته (thread) یا فرآیند جداگانه اجرا شود و حتی زمانی که جاوااسکریپت طولانی‌مدت، رشته اصلی را به تأخیر می‌اندازد، به‌روزرسانی ادامه یابد. در چنین حالتی، تنظیم مستقیم {{domxref("Animation.playbackRate", "playbackRate")}} روی انیمیشن ممکن است باعث پرش موقعیت پخش انیمیشن شود، زیرا موقعیت پخش آن در رشته اصلی ممکن است از موقعیت پخش جاری آن جا مانده باشد.
 
-`updatePlaybackRate()` is an asynchronous method that sets the speed of an
-animation after synchronizing with its current playback position, ensuring that the
-resulting change in speed does not produce a sharp jump. After calling
-`updatePlaybackRate()` the animation's {{domxref("Animation.playbackRate", "playbackRate")}} is _not_ immediately updated.
-It will be updated once the animation's {{domxref("Animation.ready", "ready")}} promise is resolved.
+`updatePlaybackRate()` یک متد ناهمگام (asynchronous) است که سرعت یک انیمیشن را پس از همگام‌سازی با موقعیت پخش فعلی آن تنظیم می‌کند و اطمینان می‌دهد که تغییر سرعت حاصل، باعث پرش ناگهانی نمی‌شود. پس از فراخوانی `updatePlaybackRate()`، ویژگی {{domxref("Animation.playbackRate", "playbackRate")}} انیمیشن _بلافاصله_ به‌روزرسانی نمی‌شود. این مقدار زمانی به‌روزرسانی می‌شود که پرامیسه {{domxref("Animation.ready", "ready")}} انیمیشن حل شود.
 
 ## Syntax
 
@@ -40,18 +30,15 @@ updatePlaybackRate(playbackRate)
 ### Parameters
 
 - `playbackRate`
-  - : The new speed to set. This may be a positive number (to speed up or slow down
-    the animation), a negative number (to make it play backwards), or zero (to
-    effectively pause the animation).
+  - : سرعت جدیدی که باید تنظیم شود. این می‌تواند یک عدد مثبت (برای افزایش یا کاهش سرعت انیمیشن)، یک عدد منفی (برای پخش معکوس)، یا صفر (برای توقف مؤثر انیمیشن) باشد.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ مقداری ({{jsxref("undefined")}}).
 
 ## Examples
 
-A speed selector component would benefit from smooth updating of
-`updatePlaybackRate()`, as demonstrated below:
+یک کامپوننت انتخاب‌گر سرعت می‌تواند از به‌روزرسانی نرم `updatePlaybackRate()` بهره‌مند شود، همانطور که در زیر نشان داده شده است:
 
 ```js
 speedSelector.addEventListener("input", (evt) => {
@@ -73,9 +60,6 @@ speedSelector.addEventListener("input", (evt) => {
 ## See also
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
-- {{domxref("Animation.playbackRate")}} — read back the current playback rate or set
-  it in a synchronous manner.
-- {{domxref("Animation.reverse()")}} — invert the playback rate and restart playback
-  if necessary.
-- {{domxref("Animation")}} — contains other methods and properties you can use to
-  control web page animation.
+- {{domxref("Animation.playbackRate")}} — خواندن نرخ پخش فعلی یا تنظیم آن به صورت همگام.
+- {{domxref("Animation.reverse()")}} — معکوس کردن نرخ پخش و راه‌اندازی مجدد پخش در صورت نیاز.
+- {{domxref("Animation")}} — شامل سایر متدها و ویژگی‌هایی است که می‌توانید برای کنترل انیمیشن صفحه وب استفاده کنید.
