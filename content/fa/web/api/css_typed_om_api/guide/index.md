@@ -1,34 +1,28 @@
 ---
 title: "Using the CSS Typed Object Model"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide"
-status: "needs-translation"
----
-
----
-title: Using the CSS Typed Object Model
 slug: Web/API/CSS_Typed_OM_API/Guide
 page-type: guide
 ---
 
 {{DefaultAPISidebar("CSS Typed Object Model API")}}
 
-The **[CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)** exposes CSS values as typed JavaScript objects to allow their performant manipulation.
+**CSS Typed Object Model API** (مدل شیء تایپ‌شده CSS) مقادیر CSS را به عنوان اشیاء تایپ‌شده جاوااسکریپت در معرض دید قرار می‌دهد تا امکان دستکاری کارآمد آن‌ها فراهم شود.
 
-Converting [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model) value strings into meaningfully-typed JavaScript representations and back (via {{domxref("HTMLElement.style")}}) can incur a significant performance overhead.
+تبدیل رشته‌های مقدار [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model) به نمایش‌های جاوااسکریپتی با نوع‌معنی و برگشت (از طریق {{domxref("HTMLElement.style")}}) می‌تواند سربار عملکرد قابل توجهی ایجاد کند.
 
-The CSS Typed OM makes CSS manipulation more logical and performant by providing object features (rather than CSSOM string manipulation), providing access to types, methods, and an object model for CSS values.
+CSS Typed OM با ارائه ویژگی‌های شیء (به جای دستکاری رشته‌ای CSSOM)، دسترسی به انواع، روش‌ها و یک مدل شیء برای مقادیر CSS، دستکاری CSS را منطقی‌تر و کارآمدتر می‌کند.
 
-This article provides an introduction to all of its main features.
+این مقاله مقدمه‌ای بر تمام ویژگی‌های اصلی آن ارائه می‌دهد.
 
 ## computedStyleMap()
 
-With the CSS Typed OM API, we can access all the CSS properties and values — including custom properties — that are impacting an element. Let's see how this works by creating our first example, which explores {{domxref('Element.computedStyleMap()', 'computedStyleMap()')}}.
+با CSS Typed OM API، می‌توانیم به تمام ویژگی‌ها و مقادیر CSS – از جمله ویژگی‌های سفارشی – که بر یک عنصر تأثیر می‌گذارند دسترسی داشته باشیم. بیایید با ایجاد اولین مثال خود که {{domxref('Element.computedStyleMap()', 'computedStyleMap()')}} را بررسی می‌کند، نحوه کار این را ببینیم.
 
-### Getting all the properties and values
+### دریافت تمام ویژگی‌ها و مقادیر
 
 #### HTML
 
-We start with some HTML: a paragraph with a link, as well as a definition list to which we will add all the CSS Property / Value pairs.
+با مقداری HTML شروع می‌کنیم: یک پاراگراف با یک پیوند، و همچنین یک لیست تعریف که تمام جفت‌های ویژگی/مقدار CSS را به آن اضافه خواهیم کرد.
 
 ```html
 <p>
@@ -39,7 +33,7 @@ We start with some HTML: a paragraph with a link, as well as a definition list t
 
 #### JavaScript
 
-We add JavaScript to grab our unstyled link and return back a definition list of all the default CSS property values impacting the link using `computedStyleMap()`.
+جاوااسکریپت را اضافه می‌کنیم تا پیوند بدون استایل خود را بگیرد و با استفاده از `computedStyleMap()` یک لیست تعریف از تمام مقادیر ویژگی CSS پیش‌فرض که بر پیوند تأثیر می‌گذارند، برگرداند.
 
 ```js
 // Get the element
@@ -65,19 +59,19 @@ for (const [prop, val] of defaultComputedStyles) {
 }
 ```
 
-The `computedStyleMap()` method returns a {{domxref('StylePropertyMapReadOnly')}} object containing the [`size`](/en-US/docs/Web/API/StylePropertyMapReadOnly/size) property, which indicates how many properties are in the map. We iterate through the style map, creating a [`<dt>`](/en-US/docs/Web/HTML/Reference/Elements/dt) and [`<dd>`](/en-US/docs/Web/HTML/Reference/Elements/dd) for each property and value respectively.
+متد `computedStyleMap()` یک شیء {{domxref('StylePropertyMapReadOnly')}} حاوی ویژگی [`size`](/en-US/docs/Web/API/StylePropertyMapReadOnly/size) برمی‌گرداند که نشان می‌دهد چند ویژگی در نقشه وجود دارد. ما درون نقشه استایل تکرار می‌کنیم و به ترتیب برای هر ویژگی و مقدار یک [`<dt>`](/en-US/docs/Web/HTML/Reference/Elements/dt) و [`<dd>`](/en-US/docs/Web/HTML/Reference/Elements/dd) ایجاد می‌کنیم.
 
-#### Result
+#### نتیجه
 
-In [browsers that support `computedStyleMap()`](/en-US/docs/Web/API/Element/computedStyleMap#browser_compatibility), you'll see a list of all the CSS properties and values. In other browsers, you'll just see a link.
+در [مرورگرهایی که از `computedStyleMap()` پشتیبانی می‌کنند](/en-US/docs/Web/API/Element/computedStyleMap#browser_compatibility)، لیستی از تمام ویژگی‌ها و مقادیر CSS را خواهید دید. در سایر مرورگرها، فقط یک پیوند را مشاهده می‌کنید.
 
 {{EmbedLiveSample("Getting_all_the_properties_and_values", 120, 300)}}
 
-Did you realize how many default CSS properties a link had? Update the first `document.querySelector` call to select the {{htmlelement("p")}} rather than the {{htmlelement("a")}}. You'll notice a difference in the {{cssxref("margin-top")}} and {{cssxref("margin-bottom")}} default computed values.
+آیا متوجه شدید که یک پیوند چند ویژگی پیش‌فرض CSS دارد؟ اولین فراخوانی `document.querySelector` را به انتخاب {{htmlelement("p")}} به جای {{htmlelement("a")}} تغییر دهید. در مقادیر محاسبه‌شده پیش‌فرض {{cssxref("margin-top")}} و {{cssxref("margin-bottom")}} تفاوت را مشاهده خواهید کرد.
 
-### .get() method / custom properties
+### متد .get() / ویژگی‌های سفارشی
 
-Let's update our example to only retrieve a few properties and values. Let's start by adding some CSS to our example, including a custom property and an inheritable property:
+بیایید مثال خود را به‌روزرسانی کنیم تا فقط چند ویژگی و مقدار را بازیابی کنیم. ابتدا مقداری CSS به مثال خود اضافه می‌کنیم، از جمله یک ویژگی سفارشی و یک ویژگی قابل ارث‌بری:
 
 ```css
 p {
@@ -90,7 +84,7 @@ a {
 }
 ```
 
-Instead of getting _all_ the properties, we create an array of properties of interest and use the {{domxref('StylePropertyMapReadOnly.get()')}} method to get each of their values:
+به جای دریافت _همه_ ویژگی‌ها، یک آرایه از ویژگی‌های مورد نظر ایجاد کرده و از متد {{domxref('StylePropertyMapReadOnly.get()')}} برای دریافت هر یک از مقادیر آن‌ها استفاده می‌کنیم:
 
 ```html hidden
 <p>
@@ -128,19 +122,19 @@ for (const value of ofInterest) {
 
 {{EmbedLiveSample(".get_method_custom_properties", 120, 300)}}
 
-We included {{cssxref('border-left-color')}} to demonstrate that, had we included all the properties, every value that defaults to [`currentColor`](/en-US/docs/Web/CSS/Reference/Values/color_value) (including {{cssxref('caret-color')}}, {{cssxref('outline-color')}}, {{cssxref('text-decoration-color')}}, {{cssxref('column-rule-color')}}, etc.) would return `rgb(255 0 0)`. The link has inherited `font-weight: bold;` from the paragraph's styles, listing it as `font-weight: 700`. Custom properties, like our `--color: red`, are properties. As such, they are accessible via `get()`.
+ما {{cssxref('border-left-color')}} را گنجانده‌ایم تا نشان دهیم که اگر همه ویژگی‌ها را شامل می‌شدیم، هر مقداری که به طور پیش‌فرض [`currentColor`](/en-US/docs/Web/CSS/Reference/Values/color_value) است (از جمله {{cssxref('caret-color')}}، {{cssxref('outline-color')}}، {{cssxref('text-decoration-color')}}، {{cssxref('column-rule-color')}} و غیره) `rgb(255 0 0)` را برمی‌گرداند. پیوند `font-weight: bold;` را از استایل‌های پاراگراف به ارث برده است که به صورت `font-weight: 700` فهرست شده است. ویژگی‌های سفارشی، مانند `--color: red` ما، ویژگی هستند. بنابراین، از طریق `get()` قابل دسترسی هستند.
 
-You'll note that custom properties retain the value as written in the stylesheet, whereas computed styles will be listed as the computed value — {{cssxref('color')}} was listed as an [`rgb()`](/en-US/docs/Web/CSS/Reference/Values/color_value) value and the {{cssxref('font-weight')}} returned was `700` even though we use a [named color](/en-US/docs/Web/CSS/Reference/Values/named-color) and the `bold` keyword.
+توجه خواهید کرد که ویژگی‌های سفارشی مقدار را همانطور که در شیوه‌نامه نوشته شده حفظ می‌کنند، در حالی که استایل‌های محاسبه‌شده به عنوان مقدار محاسبه‌شده فهرست می‌شوند – {{cssxref('color')}} به عنوان یک مقدار [`rgb()`](/en-US/docs/Web/CSS/Reference/Values/color_value) و {{cssxref('font-weight')}} برگشتی `700` بود، حتی اگر ما از یک [رنگ نام‌گذاری‌شده](/en-US/docs/Web/CSS/Reference/Values/named-color) و کلیدواژه `bold` استفاده می‌کنیم.
 
-### CSSUnitValue and CSSKeywordValue
+### CSSUnitValue و CSSKeywordValue
 
-The power of the CSS Typed OM is that values are separate from units; parsing and concatenating string values may become be a thing of the past. Every CSS property in a style map has a value. If the value is a keyword, the object returned is a [`CSSKeywordValue`](/en-US/docs/Web/API/CSSKeywordValue). If the value is numeric, a [`CSSUnitValue`](/en-US/docs/Web/API/CSSUnitValue) is returned.
+قدرت CSS Typed OM در این است که مقادیر از واحدها جدا هستند؛ تجزیه و الحاق رشته‌های مقدار ممکن است به گذشته تبدیل شود. هر ویژگی CSS در یک نقشه استایل یک مقدار دارد. اگر مقدار یک کلیدواژه باشد، شیء برگشتی یک [`CSSKeywordValue`](/en-US/docs/Web/API/CSSKeywordValue) است. اگر مقدار عددی باشد، یک [`CSSUnitValue`](/en-US/docs/Web/API/CSSUnitValue) برگردانده می‌شود.
 
-`CSSKeywordValue` is a class that defines keywords like `inherit`, `initial`, `unset`, and other strings you don't quote, such as `auto` and `grid`. This subclass gives you a `value` property via {{domxref("cssKeywordValue.value")}}.
+`CSSKeywordValue` کلاسی است که کلیدواژه‌هایی مانند `inherit`، `initial`، `unset` و سایر رشته‌هایی که نقل قول نمی‌شوند، مانند `auto` و `grid` را تعریف می‌کند. این زیرکلاس یک ویژگی `value` از طریق {{domxref("cssKeywordValue.value")}} به شما می‌دهد.
 
-`CSSUnitValue` is returned if the value is a unit type. It is a class that defines numbers with units of measurement like `20px`, `40%`, `200ms`, or `7`. It is returned with two properties: a `value` and a `unit`. With this type we can access the numeric value — {{domxref('cssUnitValue.value')}} — and its unit — {{domxref('cssUnitValue.unit')}}.
+`CSSUnitValue` در صورتی برگردانده می‌شود که مقدار از نوع واحد باشد. این کلاسی است که اعداد با واحدهای اندازه‌گیری مانند `20px`، `40%`، `200ms` یا `7` را تعریف می‌کند. با دو ویژگی `value` و `unit` برگردانده می‌شود. با این نوع می‌توانیم به مقدار عددی – {{domxref('cssUnitValue.value')}} – و واحد آن – {{domxref('cssUnitValue.unit')}} – دسترسی داشته باشیم.
 
-Let's write a plain paragraph, apply no styles, and inspect a few of its CSS properties by returning a table with the unit and value:
+بیایید یک پاراگراف ساده بنویسیم، هیچ استایلی اعمال نکنیم و با برگرداندن یک جدول با واحد و مقدار، چند ویژگی CSS آن را بررسی کنیم:
 
 ```html
 <p>
@@ -159,7 +153,7 @@ Let's write a plain paragraph, apply no styles, and inspect a few of its CSS pro
 </table>
 ```
 
-For each property of interest, we list the name of the property, use `.get(propertyName).value` to return the value, and, if the object returned by the `get()` is a `CSSUnitValue`, list the unit type we retrieve with `.get(propertyName).unit`.
+برای هر ویژگی مورد نظر، نام ویژگی را فهرست می‌کنیم، از `.get(propertyName).value` برای برگرداندن مقدار استفاده می‌کنیم، و اگر شیء برگشتی توسط `get()` یک `CSSUnitValue` باشد، نوع واحدی را که با `.get(propertyName).unit` بازیابی می‌کنیم فهرست می‌کنیم.
 
 ```js
 // Get the element we're inspecting
@@ -216,7 +210,7 @@ for (const value of ofInterest) {
 
 {{EmbedLiveSample("CSSUnitValue_and_CSSKeywordValue", 120, 300)}}
 
-For those of you using a non-supporting browser, the above output should look something like this:
+برای کسانی که از مرورگر غیرپشتیبان استفاده می‌کنند، خروجی بالا باید چیزی شبیه به این باشد:
 
 | Property                                 | Value | Unit        |
 | ---------------------------------------- | ----- | ----------- |
@@ -229,33 +223,33 @@ For those of you using a non-supporting browser, the above output should look so
 | {{cssxref("width")}}                     | auto  | _undefined_ |
 | {{cssxref("height")}}                    | auto  | _undefined_ |
 
-You'll note the {{cssxref('&lt;length&gt;')}} unit returned is `px`, the {{cssxref('&lt;percentage&gt;')}} unit returned is `percent`, the {{cssxref('&lt;time&gt;')}} unit is `s` for 'seconds', and the unitless {{cssxref('&lt;number&gt;')}} unit is `number`.
+توجه خواهید کرد که واحد {{cssxref('&lt;length&gt;')}} بازگشتی `px` است، واحد {{cssxref('&lt;percentage&gt;')}} بازگشتی `percent` است، واحد {{cssxref('&lt;time&gt;')}} برای 'ثانیه' `s` است، و واحد بدون عدد {{cssxref('&lt;number&gt;')}} `number` است.
 
-We didn't declare a {{cssxref('width')}} or a {{cssxref('height')}} for the paragraph, both of which default to `auto` and therefore return a [`CSSKeywordValue`](/en-US/docs/Web/API/CSSKeywordValue) instead of a [`CSSUnitValue`](/en-US/docs/Web/API/CSSUnitValue). `CSSKeywordValue`s do not have a unit property, so in these cases our `get().unit` returns `undefined`.
+ما برای پاراگراف {{cssxref('width')}} یا {{cssxref('height')}} اعلام نکردیم، که هر دو به طور پیش‌فرض `auto` هستند و بنابراین به جای [`CSSUnitValue`](/en-US/docs/Web/API/CSSUnitValue) یک [`CSSKeywordValue`](/en-US/docs/Web/API/CSSKeywordValue) برمی‌گردانند. `CSSKeywordValue`ها ویژگی unit ندارند، بنابراین در این موارد `get().unit` ما `undefined` برمی‌گرداند.
 
-Had the `width` or `height` been defined in a `<length>` or `<percent>`, the [`CSSUnitValue`](/en-US/docs/Web/API/CSSUnitValue) unit would have been `px` or `percent` respectively.
+اگر `width` یا `height` در یک `<length>` یا `<percent>` تعریف شده بود، واحد [`CSSUnitValue`](/en-US/docs/Web/API/CSSUnitValue) به ترتیب `px` یا `percent` بود.
 
-There are other types available:
+انواع دیگری نیز موجود است:
 
-- An {{cssxref("image")}} will return a {{domxref('CSSImageValue')}}.
-- A {{cssxref("&lt;color&gt;")}} would return a {{domxref('CSSStyleValue')}}.
-- A {{cssxref('transform')}} returns a `CSSTransformValue`.
-- A [custom property](/en-US/docs/Web/CSS/Reference/Properties/--*) returns a {{domxref('CSSUnparsedValue')}}.
+- یک {{cssxref("image")}} یک {{domxref('CSSImageValue')}} برمی‌گرداند.
+- یک {{cssxref("&lt;color&gt;")}} یک {{domxref('CSSStyleValue')}} برمی‌گرداند.
+- یک {{cssxref('transform')}} یک `CSSTransformValue` برمی‌گرداند.
+- یک [ویژگی سفارشی](/en-US/docs/Web/CSS/Reference/Properties/--*) یک {{domxref('CSSUnparsedValue')}} برمی‌گرداند.
 
-You can use a `CSSUnitValue` or `CSSKeywordValue` to create other objects.
+می‌توانید از یک `CSSUnitValue` یا `CSSKeywordValue` برای ایجاد اشیاء دیگر استفاده کنید.
 
 ## CSSStyleValue
 
-The `CSSStyleValue` interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model#css_typed_object_model) is the base class of all CSS values accessible through the Typed OM API, including {{domxref('CSSImageValue')}}, {{domxref('CSSKeywordValue')}}, {{domxref('CSSNumericValue')}}, {{domxref('CSSPositionValue')}}, {{domxref('CSSTransformValue')}}, and {{domxref('CSSUnparsedValue')}}.
+رابط `CSSStyleValue` از [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model#css_typed_object_model) کلاس پایه همه مقادیر CSS قابل دسترسی از طریق Typed OM API است، از جمله {{domxref('CSSImageValue')}}، {{domxref('CSSKeywordValue')}}، {{domxref('CSSNumericValue')}}، {{domxref('CSSPositionValue')}}، {{domxref('CSSTransformValue')}} و {{domxref('CSSUnparsedValue')}}.
 
-It has two methods:
+دارای دو روش است:
 
 - {{domxref("CSSStyleValue/parse_static", "CSSStyleValue.parse()")}}
 - {{domxref("CSSStyleValue/parseAll_static", "CSSStyleValue.parseAll()")}}
 
-As noted above, `StylePropertyMapReadOnly.get('--customProperty')` returns a {{domxref('CSSUnparsedValue')}}. We can parse `CSSUnparsedValue` object instances with the inherited {{domxref('CSSStyleValue/parse_static', 'CSSStyleValue.parse()')}} and {{domxref('CSSStyleValue/parseAll_static', 'CSSStyleValue.parseAll()')}} methods.
+همانطور که در بالا ذکر شد، `StylePropertyMapReadOnly.get('--customProperty')` یک {{domxref('CSSUnparsedValue')}} برمی‌گرداند. ما می‌توانیم نمونه‌های شیء `CSSUnparsedValue` را با روش‌های به ارث‌رسیده {{domxref('CSSStyleValue/parse_static', 'CSSStyleValue.parse()')}} و {{domxref('CSSStyleValue/parseAll_static', 'CSSStyleValue.parseAll()')}} تجزیه کنیم.
 
-Let's examine a CSS example with several custom properties, transforms, `calc()`s, and other features. We'll take a look at what their types are by employing short JavaScript snippets outputting to {{domxref("console/log_static", "console.log()")}}:
+بیایید یک مثال CSS با چندین ویژگی سفارشی، تبدیل‌ها، `calc()`ها و ویژگی‌های دیگر را بررسی کنیم. با استفاده از قطعه‌های کوتاه جاوااسکریپت که به {{domxref("console/log_static", "console.log()")}} خروجی می‌دهند، به نوع آن‌ها نگاه خواهیم کرد:
 
 ```css
 :root {
@@ -280,7 +274,7 @@ button {
 }
 ```
 
-Let's add the class to a button (a button which does nothing).
+بیایید کلاس را به یک دکمه اضافه کنیم (دکمه‌ای که هیچ کاری انجام نمی‌دهد).
 
 ```html
 <button>Styled Button</button>
@@ -293,17 +287,17 @@ Let's add the class to a button (a button which does nothing).
 </p>
 ```
 
-We grab our `StylePropertyMapReadOnly` with the following JavaScript:
+ما `StylePropertyMapReadOnly` خود را با جاوااسکریپت زیر می‌گیریم:
 
 ```js
 const allComputedStyles = document.querySelector("button").computedStyleMap();
 ```
 
-The following examples reference `allComputedStyles`:
+مثال‌های زیر به `allComputedStyles` اشاره دارند:
 
 ### CSSUnparsedValue
 
-The {{domxref('CSSUnparsedValue')}} represents [custom properties](/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties):
+{{domxref('CSSUnparsedValue')}} نمایانگر [ویژگی‌های سفارشی](/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties) است:
 
 ```js
 // CSSUnparsedValue
@@ -313,7 +307,7 @@ console.log(unit); // CSSUnparsedValue {0: " 1.2rem", length: 1}
 console.log(unit[0]); // " 1.2rem"
 ```
 
-When we invoke `get()`, a custom property of type `CSSUnparsedValue` is returned. Note the space before the `1.2rem`. To get a unit and value, we need a `CSSUnitValue`, which we can retrieve using the `CSSStyleValue.parse()` method on the `CSSUnparsedValue`.
+هنگامی که `get()` را فراخوانی می‌کنیم، یک ویژگی سفارشی از نوع `CSSUnparsedValue` برگردانده می‌شود. به فاصله قبل از `1.2rem` توجه کنید. برای به دست آوردن یک واحد و مقدار، به یک `CSSUnitValue` نیاز داریم که می‌توانیم با استفاده از روش `CSSStyleValue.parse()` روی `CSSUnparsedValue` آن را بازیابی کنیم.
 
 ```js
 const parsedUnit = CSSNumericValue.parse(unit);
@@ -324,11 +318,11 @@ console.log(parsedUnit.value); // 1.2
 
 ### CSSMathSum
 
-Although the [`<button>`](/en-US/docs/Web/HTML/Reference/Elements/button) element is an inline element by default, we've added [`display: inline-block;`](/en-US/docs/Web/CSS/Guides/Display) to enable sizing. In our CSS we have `width: calc(30% + 20px);`, which is a {{cssxref("calc()")}} function to define the width.
+اگرچه عنصر [`<button>`](/en-US/docs/Web/HTML/Reference/Elements/button) به طور پیش‌فرض یک عنصر درون‌خطی است، ما [`display: inline-block;`](/en-US/docs/Web/CSS/Guides/Display) را برای فعال‌سازی اندازه‌دهی اضافه کرده‌ایم. در CSS ما `width: calc(30% + 20px);` داریم که یک تابع {{cssxref("calc()")}} برای تعریف عرض است.
 
-When we `get()` the `width`, we get a [`CSSMathSum`](/en-US/docs/Web/API/CSSMathSum) returned. {{domxref('CSSMathSum.values')}} is a {{domxref('CSSNumericArray')}} with 2 `CSSUnitValues`.
+هنگامی که `width` را `get()` می‌کنیم، یک [`CSSMathSum`](/en-US/docs/Web/API/CSSMathSum) برگردانده می‌شود. {{domxref('CSSMathSum.values')}} یک {{domxref('CSSNumericArray')}} با 2 `CSSUnitValue` است.
 
-The value of {{domxref('CSSMathValue.operator')}} is `sum`:
+مقدار {{domxref('CSSMathValue.operator')}} `sum` است:
 
 ```js
 const btnWidth = allComputedStyles.get("width");
@@ -338,9 +332,9 @@ console.log(btnWidth.values); // CSSNumericArray {0: CSSUnitValue, 1: CSSUnitVal
 console.log(btnWidth.operator); // 'sum'
 ```
 
-### CSSTransformValue with CSSScale
+### CSSTransformValue با CSSScale
 
-The [`display: inline-block;`](/en-US/docs/Web/CSS/Guides/Display) also enables transforming. In our CSS we have `transform: scale(0.95);`, which is a {{cssxref('transform')}} function.
+[`display: inline-block;`](/en-US/docs/Web/CSS/Guides/Display) همچنین تبدیل را فعال می‌کند. در CSS ما `transform: scale(0.95);` داریم که یک تابع {{cssxref('transform')}} است.
 
 ```js
 const transform = allComputedStyles.get("transform");
@@ -354,15 +348,15 @@ console.log(transform[0].z); // CSSUnitValue {value: 1, unit: "number"}
 console.log(transform.is2D); // true
 ```
 
-When we `get()` the `transform` property, we get a {{domxref('CSSTransformValue')}}. We can query the length (or number) of transform functions with the `length` property.
+هنگامی که ویژگی `transform` را `get()` می‌کنیم، یک {{domxref('CSSTransformValue')}} دریافت می‌کنیم. می‌توانیم طول (یا تعداد) توابع تبدیل را با ویژگی `length` پرس‌وجو کنیم.
 
-Seen as we have a length of `1`, which represents a single transform function, we log the first object and get a `CSSScale` object. We get `CSSUnitValues` when we query the `x`, `y`, and `z` scaling. The readonly `CSSScale.is2D` property is `true` in this scenario.
+از آنجایی که طول `1` داریم که نشان‌دهنده یک تابع تبدیل واحد است، اولین شیء را ثبت می‌کنیم و یک شیء `CSSScale` دریافت می‌کنیم. هنگامی که `x`، `y` و `z` مقیاس‌بندی را پرس‌وجو می‌کنیم، `CSSUnitValue` دریافت می‌کنیم. ویژگی فقط‌خواندنی `CSSScale.is2D` در این سناریو `true` است.
 
-Had we added `translate()`, `skew()`, and `rotate()` transform functions, the length would have been `4`, each with their own `x`, `y`, `z` values, and each with an `.is2D` property. For example, had we included `transform: translate3d(1px, 1px, 3px)`, the `.get('transform')` would have returned a `CSSTranslate` with `CSSUnitValues` for `x`, `y`, and `z`, and the readonly `.is2D` property would have been `false`.
+اگر توابع تبدیل `translate()`، `skew()` و `rotate()` را اضافه کرده بودیم، طول `4` بود، هر کدام با مقادیر `x`، `y`، `z` خود و هر کدام با یک ویژگی `.is2D`. به عنوان مثال، اگر `transform: translate3d(1px, 1px, 3px)` را گنجانده بودیم، `.get('transform')` یک `CSSTranslate` با `CSSUnitValues` برای `x`، `y` و `z` برمی‌گرداند و ویژگی فقط‌خواندنی `.is2D` `false` بود.
 
 ### CSSImageValue
 
-Our button has one background image: a magic wand.
+دکمه ما یک تصویر پس‌زمینه دارد: یک عصای جادویی.
 
 ```js
 const bgImage = allComputedStyles.get("background-image");
@@ -371,18 +365,18 @@ console.log(bgImage); // CSSImageValue
 console.log(bgImage.toString()); // url("magic-wand.png")
 ```
 
-When we `get()` the `'background-image'`, a {{domxref('CSSImageValue')}} is returned. While we used the CSS {{cssxref('background')}} shorthand property, the inherited {{jsxref("Object/toString", "Object.prototype.toString()")}} method, shows we returned only the image, `'url("magic-wand.png")'`.
+هنگامی که `'background-image'` را `get()` می‌کنیم، یک {{domxref('CSSImageValue')}} برگردانده می‌شود. در حالی که ما از ویژگی کوتاه‌نویس {{cssxref('background')}} CSS استفاده کرده‌ایم، روش به ارث‌رسیده {{jsxref("Object/toString", "Object.prototype.toString()")}} نشان می‌دهد که ما فقط تصویر، `'url("magic-wand.png")'` را برگردانده‌ایم.
 
-Notice that the value returned is the absolute path to the image — this is returned even if the original `url()` value was relative. Had the background image been a gradient or multiple background images, `.get('background-image')` would have returned a `CSSStyleValue`. The `CSSImageValue` is returned only if there is a single image, and only if that single image declaration is a URL.
+توجه داشته باشید که مقدار برگشتی مسیر مطلق تصویر است – این حتی اگر مقدار اصلی `url()` نسبی بوده باشد، برگردانده می‌شود. اگر تصویر پس‌زمینه یک گرادیان یا چندین تصویر پس‌زمینه بود، `.get('background-image')` یک `CSSStyleValue` برمی‌گرداند. `CSSImageValue` فقط در صورتی برگردانده می‌شود که یک تصویر واحد وجود داشته باشد و فقط اگر آن اعلام تصویر واحد یک URL باشد.
 
-Finally, we put all this together in one live sample. Remember to use your browser's console to inspect the output.
+در نهایت، همه اینها را در یک نمونه زنده کنار هم قرار می‌دهیم. برای بازرسی خروجی، از کنسول مرورگر خود استفاده کنید.
 
 {{EmbedLiveSample("CSSStyleValue", 120, 300)}}
 
-## Summary
+## خلاصه
 
-This should get you started with understanding the CSS Typed OM. Take a look at all the [CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API) interfaces to learn more.
+این باید شما را برای درک CSS Typed OM شروع کند. برای کسب اطلاعات بیشتر به تمام [رابط‌های CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API) نگاهی بیندازید.
 
-## See also
+## همچنین ببینید
 
-- [Using the CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API/Guide)
+- [استفاده از CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API/Guide)
