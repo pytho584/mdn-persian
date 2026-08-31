@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchManager: get() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchManager/get"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,26 +16,26 @@ browser-compat: api.BackgroundFetchManager.get
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`get()`** method of the {{domxref("BackgroundFetchManager")}} interface returns a {{jsxref("Promise")}} that resolves with the {{domxref("BackgroundFetchRegistration")}} associated with the provided `id` or {{jsxref("undefined")}} if the `id` is not found.
+متد **`get()`** از رابط {{domxref("BackgroundFetchManager")}} یک {{jsxref("Promise")}} برمی‌گرداند که با {{domxref("BackgroundFetchRegistration")}} مرتبط با `id` ارائه‌شده حل می‌شود، یا اگر `id` پیدا نشد، {{jsxref("undefined")}} برمی‌گرداند.
 
-## Syntax
+## نحوۀ استفاده
 
 ```js-nolint
 get(id)
 ```
 
-### Parameters
+### پارامترها
 
 - `id`
-  - : The ID of a {{domxref("BackgroundFetchRegistration")}} defined by calling {{domxref("BackgroundFetchManager.fetch","fetch()")}}.
+  - : شناسه یک {{domxref("BackgroundFetchRegistration")}} که با فراخوانی {{domxref("BackgroundFetchManager.fetch","fetch()")}} تعریف شده است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a {{domxref("BackgroundFetchRegistration")}} or {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با یک {{domxref("BackgroundFetchRegistration")}} یا {{jsxref("undefined")}} حل می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following examples shows how to use `get()` to retrieve a {{domxref("BackgroundFetchRegistration")}}. With an active [service worker](/en-US/docs/Web/API/ServiceWorker), use the {{domxref('ServiceWorkerRegistration.backgroundFetch')}} to access the `BackgroundFetchManager` object and call its `get()` method.
+مثال زیر نحوه استفاده از `get()` را برای بازیابی یک {{domxref("BackgroundFetchRegistration")}} نشان می‌دهد. با یک [service worker](/en-US/docs/Web/API/ServiceWorker) فعال، از {{domxref('ServiceWorkerRegistration.backgroundFetch')}} برای دسترسی به شیء `BackgroundFetchManager` و فراخوانی متد `get()` آن استفاده کنید.
 
 ```js
 navigator.serviceWorker.ready.then(async (swReg) => {
@@ -44,10 +44,10 @@ navigator.serviceWorker.ready.then(async (swReg) => {
 // my code block
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
