@@ -1,7 +1,7 @@
 ---
 title: "AudioNode: numberOfOutputs property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/numberOfOutputs"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,16 +14,13 @@ browser-compat: api.AudioNode.numberOfOutputs
 
 {{APIRef("Web Audio API")}}
 
-The `numberOfOutputs` property of
-the {{ domxref("AudioNode") }} interface returns the number of outputs coming out of
-the node. Destination nodes — like {{domxref("AudioDestinationNode") }} — have
-a value of 0 for this attribute.
+ویژگی `numberOfOutputs` از رابط {{ domxref("AudioNode") }} تعداد خروجی‌های خارج‌شده از گره را برمی‌گرداند. گره‌های مقصد — مانند {{domxref("AudioDestinationNode") }} — برای این ویژگی مقدار ۰ دارند.
 
-## Value
+## مقدار
 
-An integer ≥ 0.
+یک عدد صحیح ≥ ۰.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new AudioContext();
@@ -38,14 +35,14 @@ console.log(gainNode.numberOfOutputs); // 1
 console.log(audioCtx.destination.numberOfOutputs); // 0
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
