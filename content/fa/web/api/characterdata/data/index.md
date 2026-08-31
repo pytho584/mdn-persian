@@ -1,11 +1,5 @@
 ---
 title: "CharacterData: data property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/data"
-status: "needs-translation"
----
-
----
-title: "CharacterData: data property"
 short-title: data
 slug: Web/API/CharacterData/data
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.CharacterData.data
 
 {{APIRef("DOM")}}
 
-The **`data`** property of the {{domxref("CharacterData")}} interface represent the value of the current object's data.
+خاصیت **`data`** در رابط {{domxref("CharacterData")}} مقدار داده‌های شیء فعلی را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string with the character information contained in the {{domxref("CharacterData")}} node.
+رشته‌ای شامل اطلاعات کاراکتری موجود در گره {{domxref("CharacterData")}}.
 
-When set to the `null` value, that `null` value is converted to the empty string (`""`), so `cd.data = null` is equivalent to `cd.data = ""`.
+وقتی روی مقدار `null` تنظیم شود، آن مقدار `null` به رشته خالی (`""`) تبدیل می‌شود؛ بنابراین `cd.data = null` معادل `cd.data = ""` است.
 
-## Example
+## مثال
 
 > [!NOTE]
-> {{domxref("CharacterData")}} is an abstract interface.
-> The examples below use two concrete interfaces implementing it, {{domxref("Text")}} and {{domxref("Comment")}}.
+> {{domxref("CharacterData")}} یک رابط انتزاعی است.
+> مثال‌های زیر از دو رابط مشخص استفاده می‌کنند که آن را پیاده‌سازی کرده‌اند: {{domxref("Text")}} و {{domxref("Comment")}}.
 
-### Reading a comment using data
+### خواندن یک کامنت با استفاده از data
 
 ```html
 <!-- This is an HTML comment -->
@@ -44,7 +38,7 @@ output.value = comment.data;
 
 {{EmbedLiveSample("Reading_a_comment_using_data", "100%", 50)}}
 
-### Setting the content of a text node using data
+### تنظیم محتوای یک گره متنی با استفاده از data
 
 ```html
 <span>Result: </span>Not set.
@@ -59,14 +53,14 @@ textNode.data = "This text has been set using 'textNode.data'.";
 
 {{EmbedLiveSample("Setting_the_content_of_a_text_node_using_data", "100%", 50)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("CharacterData.length")}} returning the length of the data contained in the {{domxref("CharacterData")}} node.
+- {{domxref("CharacterData.length")}} طول داده‌های موجود در گره {{domxref("CharacterData")}} را برمی‌گرداند.
