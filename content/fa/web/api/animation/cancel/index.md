@@ -1,7 +1,7 @@
 ---
 title: "Animation: cancel() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/cancel"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,41 +14,41 @@ browser-compat: api.Animation.cancel
 
 {{ APIRef("Web Animations") }}
 
-The [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)'s **`cancel()`** method of the {{domxref("Animation")}} interface clears all {{domxref("KeyframeEffect")}}s caused by this animation and aborts its playback.
+متد **`cancel()`** از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) در رابط {{domxref("Animation")}}، تمام {{domxref("KeyframeEffect")}}هایی را که توسط این انیمیشن ایجاد شده‌اند پاک می‌کند و پخش آن را متوقف می‌کند.
 
 > [!NOTE]
-> When an animation is cancelled, its {{domxref("Animation.startTime", "startTime")}} and {{domxref("Animation.currentTime", "currentTime")}} are set to `null`.
+> هنگامی که یک انیمیشن لغو می‌شود، {{domxref("Animation.startTime", "startTime")}} و {{domxref("Animation.currentTime", "currentTime")}} آن به `null` تنظیم می‌شوند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 cancel()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
-This method doesn't directly throw exceptions; however, if the animation's {{domxref("Animation.playState", "playState")}} is anything but `"idle"` when cancelled, the {{domxref("Animation.finished", "current finished promise", "", 1)}} is rejected with a {{domxref("DOMException")}} named `AbortError`.
+این متد به طور مستقیم استثنا پرتاب نمی‌کند؛ با این حال، اگر {{domxref("Animation.playState", "playState")}} انیمیشن در هنگام لغو چیزی غیر از `"idle"` باشد، {{domxref("Animation.finished", "پرامیس پایان فعلی", "", 1)}} با یک {{domxref("DOMException")}} به نام `AbortError` رد می‌شود.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید (See also)
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("KeyframeEffect")}}
 - {{domxref("Animation")}}
 - {{domxref("Animation.playState")}}
-- {{domxref("Animation.finished")}} returns the promise this action will reject if the animation's `playState` is not `"idle"`.
+- {{domxref("Animation.finished")}} پرامیس را برمی‌گرداند که اگر `playState` انیمیشن `"idle"` نباشد، این عمل آن را رد خواهد کرد.
