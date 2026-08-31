@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: resetTransform() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/resetTransform"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: resetTransform() method"
 short-title: resetTransform()
 slug: Web/API/CanvasRenderingContext2D/resetTransform
 page-type: web-api-instance-method
@@ -14,9 +8,7 @@ browser-compat: api.CanvasRenderingContext2D.resetTransform
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.resetTransform()`**
-method of the Canvas 2D API resets the current transform to the identity matrix.
+متد **`CanvasRenderingContext2D.resetTransform()`** در Canvas 2D API، تبدیل (transform) جاری را به ماتریس همانی (identity matrix) بازنشانی می‌کند.
 
 ## Syntax
 
@@ -26,18 +18,17 @@ resetTransform()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
-### Resetting the matrix
+### بازنشانی ماتریس
 
-This example draws a rotated rectangle after modifying the matrix, and then resets the
-matrix using the `resetTransform()` method.
+در این مثال، یک مستطیل چرخیده پس از تغییر ماتریس رسم می‌شود و سپس ماتریس با استفاده از متد `resetTransform()` بازنشانی می‌شود.
 
 #### HTML
 
@@ -47,8 +38,7 @@ matrix using the `resetTransform()` method.
 
 #### JavaScript
 
-The {{domxref("CanvasRenderingContext2D.rotate()", "rotate()")}} method rotates the
-transformation matrix by 45°. The {{domxref("CanvasRenderingContext2D.fillRect()", "fillRect()")}} method draws a filled rectangle, adjusted according to that matrix.
+متد {{domxref("CanvasRenderingContext2D.rotate()", "rotate()")}} ماتریس تبدیل را به اندازه ۴۵ درجه می‌چرخاند. متد {{domxref("CanvasRenderingContext2D.fillRect()", "fillRect()")}} یک مستطیل توپر را با توجه به آن ماتریس رسم می‌کند.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -66,12 +56,9 @@ ctx.resetTransform();
 
 {{ EmbedLiveSample('Resetting_the_matrix', 700, 180) }}
 
-### Continuing with a regular matrix
+### ادامه با ماتریس معمولی
 
-Whenever you're done drawing transformed shapes, you should call
-`resetTransform()` before rendering anything else. In this example, the first
-two shapes are drawn with a skew transformation, and the last two are drawn with the
-identity (regular) transformation.
+هر زمان که رسم شکل‌های تبدیل‌شده را تمام کردید، باید قبل از رندر کردن هر چیز دیگری `resetTransform()` را فراخوانی کنید. در این مثال، دو شکل اول با تبدیل مایل (skew) و دو شکل آخر با تبدیل همانی (معمولی) رسم شده‌اند.
 
 #### HTML
 
@@ -100,13 +87,13 @@ ctx.fillRect(40, 90, 50, 20);
 
 #### Result
 
-The skewed rectangles are gray, and the non-skewed rectangles are red.
+مستطیل‌های مایل خاکستری و مستطیل‌های غیرمایل قرمز هستند.
 
 {{ EmbedLiveSample('Continuing_with_a_regular_matrix', 700, 180) }}
 
 ## Polyfill
 
-You can also use the {{domxref("CanvasRenderingContext2D.setTransform()", "setTransform()")}} method to reset the current transform to the identity matrix, like so:
+همچنین می‌توانید از متد {{domxref("CanvasRenderingContext2D.setTransform()", "setTransform()")}} برای بازنشانی تبدیل فعلی به ماتریس همانی استفاده کنید، به این صورت:
 
 ```js
 ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -122,4 +109,4 @@ ctx.setTransform(1, 0, 0, 1, 0, 0);
 
 ## See also
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابطی که این متد را تعریف می‌کند: {{domxref("CanvasRenderingContext2D")}}
