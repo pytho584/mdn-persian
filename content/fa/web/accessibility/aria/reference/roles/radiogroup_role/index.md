@@ -1,7 +1,7 @@
 ---
 title: "ARIA: radiogroup role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radiogroup_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,65 +15,65 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `radiogroup` role is a group of `radio` buttons.
+نقش `radiogroup` گروهی از دکمه‌های `radio` است.
 
-## Description
+## توضیحات
 
-Radio groups are collections describing a set of related [`radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role) options. A `radiogroup` is a type of [`select`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/select_role) list that can only have a single entry, or `radio`, checked at any one time.
+گروه‌های رادیویی مجموعه‌ای هستند که مجموعه‌ای از گزینه‌های [`radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role) مرتبط را توصیف می‌کنند. یک `radiogroup` نوعی فهرست [`select`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/select_role) است که در هر زمان فقط یک ورودی یا `radio` می‌تواند علامت‌خورده باشد.
 
-When using HTML's native input radio button, [`<input type="radio">`](/en-US/docs/Web/HTML/Reference/Elements/input/radio), the radio buttons are grouped when each of input radio buttons in the group is given the same [`name`](/en-US/docs/Web/HTML/Reference/Elements/input#name). Once a group of same-named input radio buttons is established, selecting any input radio button in that group automatically deselects any currently-selected input radio button in the same group. While this will associate the radio buttons together, to expose a grouping of radio buttons as a `radiogroup` explicitly set the ARIA role.
+هنگام استفاده از دکمه رادیویی بومی HTML، [`<input type="radio">`](/en-US/docs/Web/HTML/Reference/Elements/input/radio)، دکمه‌های رادیویی زمانی گروه‌بندی می‌شوند که به هر یک از دکمه‌های رادیویی ورودی در گروه، همان [`name`](/en-US/docs/Web/HTML/Reference/Elements/input#name) داده شود. پس از ایجاد گروهی از دکمه‌های رادیویی ورودی با نام یکسان، انتخاب هر دکمه رادیویی ورودی در آن گروه به‌طور خودکار هر دکمه رادیویی ورودیِ انتخاب‌شدهٔ فعلی را در همان گروه از انتخاب خارج می‌کند. اگرچه این کار دکمه‌های رادیویی را به هم مرتبط می‌کند، برای نمایش صریح گروهی از دکمه‌های رادیویی به‌عنوان `radiogroup`، نقش ARIA را به‌طور صریح تنظیم کنید.
 
-It is recommended to create radio groups by using same-named HTML input radio buttons, but, if you must use ARIA roles and attributes instead of semantic HTML form controls, custom `radio` buttons can and should act like native HTML radio input buttons.
+توصیه می‌شود گروه‌های رادیویی با استفاده از دکمه‌های رادیویی ورودی HTML با نام یکسان ایجاد شوند، اما اگر به‌جای کنترل‌های فرم HTML معنایی باید از نقش‌ها و ویژگی‌های ARIA استفاده کنید، دکمه‌های `radio` سفارشی می‌توانند و باید مانند دکمه‌های رادیویی ورودی HTML بومی عمل کنند.
 
-When using non-semantic elements as radio buttons, you must ensure your users can only select one radio button from the group at a time. When one item in the group is checked, having their [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) attribute set to `true`, the previously checked item becomes unchecked, with its `aria-checked` attribute becoming `false`. The `aria-checked` attribute is set on the associated `radio` roles, not on the `radiogroup` itself.
+هنگام استفاده از عناصر غیرمعنایی به‌عنوان دکمه‌های رادیویی، باید مطمئن شوید که کاربران شما می‌توانند در هر زمان فقط یک دکمه رادیویی از گروه را انتخاب کنند. وقتی یک مورد در گروه علامت‌خورده است و ویژگی [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) آن روی `true` تنظیم شده است، مورد قبلاً انتخاب‌شده از انتخاب خارج می‌شود و ویژگی `aria-checked` آن به `false` تبدیل می‌شود. ویژگی `aria-checked` روی نقش‌های `radio` مرتبط تنظیم می‌شود، نه روی خود `radiogroup`.
 
-Some `radiogroup` implementations initialize the set with all buttons in the unchecked state. Once a `radio` in a `radiogroup` is checked, it is generally not possible to return to an all-unchecked state.
+برخی پیاده‌سازی‌های `radiogroup` مجموعه را با تمام دکمه‌ها در حالت بدون علامت مقداردهی اولیه می‌کنند. پس از علامت‌خورده شدن یک `radio` در یک `radiogroup`، معمولاً بازگشت به حالت تمام بدون علامت ممکن نیست.
 
-The `radiogroup` must have an accessible name either by a visible label referenced by [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) or has a label specified with [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label). If elements provide additional information about the radio group, those elements are referenced by the `radiogroup` element with the [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) property.
+`radiogroup` باید یک نام قابل‌دسترس داشته باشد، یا با یک برچسب قابل مشاهده که توسط [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) ارجاع داده می‌شود، یا دارای برچسبی باشد که با [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) مشخص شده است. اگر عناصری اطلاعات بیشتری درباره گروه رادیویی فراهم می‌کنند، آن عناصر توسط عنصر `radiogroup` با ویژگی [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) ارجاع داده می‌شوند.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
-- [`radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role) role
-  - : One of a group of checkable buttons, in a `radiogroup`, where no more than one of the buttons can be checked at a time.
+- [`radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role) نقش
+  - : یکی از گروهی از دکمه‌های قابل‌علامت، در یک `radiogroup`، که در آن در هر زمان بیش از یکی از دکمه‌ها نمی‌تواند علامت‌خورده باشد.
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) / [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
-  - : The `radiogroup` must have an accessible name either by a visible label referenced by `aria-labelledby` or has a label specified with `aria-label`.
+  - : `radiogroup` باید یک نام قابل‌دسترس داشته باشد، یا با یک برچسب قابل مشاهده که توسط `aria-labelledby` ارجاع داده می‌شود، یا دارای برچسبی باشد که با `aria-label` مشخص شده است.
 - [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby)
-  - : Reference to elements providing additional information about the `radiogroup`
+  - : ارجاع به عناصری که اطلاعات بیشتری درباره `radiogroup` فراهم می‌کنند.
 - [`aria-required`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-required)
-  - : Indicates that one `radio` within the group must have `aria-checked="true"` set before the form may be submitted. The required state is specified on the `radiogroup` element rather than one of the `radio` elements, unlike when using HTML radio buttons where the [`required`](/en-US/docs/Web/HTML/Reference/Attributes/required) attribute is set directly on one or more radio {{HTMLElement('input')}} elements.
+  - : نشان می‌دهد که قبل از ارسال فرم، یکی از `radio`های داخل گروه باید `aria-checked="true"` تنظیم شده باشد. حالت الزامی روی عنصر `radiogroup` مشخص می‌شود نه روی یکی از عناصر `radio`، برخلاف دکمه‌های رادیویی HTML که در آن‌ها ویژگی [`required`](/en-US/docs/Web/HTML/Reference/Attributes/required) مستقیماً روی یک یا چند {{HTMLElement('input')}} رادیویی تنظیم می‌شود.
 - [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage)
-  - : Identifies the element that provides an error message for the `radiogroup`, if there is an error. That message should be hidden while not relevant.
+  - : عنصری را که در صورت وجود خطا، پیام خطا را برای `radiogroup` فراهم می‌کند، مشخص می‌کند. آن پیام باید تا زمانی که مرتبط نیست پنهان بماند.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-For `radio` buttons in a `radiogroup` that is NOT in a [`toolbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/toolbar_role), the following keyboard interactions must be supported:
+برای دکمه‌های `radio` در یک `radiogroup` که در یک [`toolbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/toolbar_role) نیست، تعاملات صفحه‌کلید زیر باید پشتیبانی شوند:
 
-- <kbd>Tab</kbd> and <kbd>Shift + Tab</kbd>
-  - : Move focus into and out of the `radiogroup`. When focus moves into a `radiogroup`, if a radio button is checked, focus is set on the checked button. If none of the radio buttons are checked, focus is set on the first radio button in the group.
+- <kbd>Tab</kbd> و <kbd>Shift + Tab</kbd>
+  - : فوکوس را به داخل و خارج از `radiogroup` منتقل می‌کند. وقتی فوکوس وارد یک `radiogroup` می‌شود، اگر یک دکمه رادیویی علامت‌خورده باشد، فوکوس روی دکمه علامت‌خورده قرار می‌گیرد. اگر هیچ‌کدام از دکمه‌های رادیویی علامت‌خورده نباشند، فوکوس روی اولین دکمه رادیویی در گروه قرار می‌گیرد.
 - <kbd>Space</kbd>
-  - : Checks the focused radio button if it is not already checked.
-- <kbd>Right Arrow</kbd> and <kbd>Down Arrow</kbd>
-  - : Moves focus to the next radio button in the group, unchecking the previously focused button, and checking the newly focused button. If focus is on the last button, focus moves to the first button.
-- <kbd>Left Arrow</kbd> and <kbd>Up Arrow</kbd>
-  - : Moves focus to the previous radio button in the group, unchecking the previously focused button, and checking the newly focused button. If focus is on the first button, focus moves to the last button.
+  - : دکمه رادیویی متمرکز را اگر قبلاً علامت نخورده باشد، علامت می‌زند.
+- <kbd>Right Arrow</kbd> و <kbd>Down Arrow</kbd>
+  - : فوکوس را به دکمه رادیویی بعدی در گروه منتقل می‌کند، دکمه قبلی را از علامت خارج می‌کند و دکمه جدید متمرکز را علامت می‌زند. اگر فوکوس روی آخرین دکمه باشد، فوکوس به اولین دکمه منتقل می‌شود.
+- <kbd>Left Arrow</kbd> و <kbd>Up Arrow</kbd>
+  - : فوکوس را به دکمه رادیویی قبلی در گروه منتقل می‌کند، دکمه قبلی را از علامت خارج می‌کند و دکمه جدید متمرکز را علامت می‌زند. اگر فوکوس روی اولین دکمه باشد، فوکوس به آخرین دکمه منتقل می‌شود.
 
-Arrow keys are used to navigate among elements of a toolbar. When a `radiogroup` is nested inside a toolbar, users need to be able to navigate among all toolbar elements, including the radio buttons, without changing which radio button is checked. So, when navigating through a `radiogroup` in a [`toolbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/toolbar_role) with arrow keys, the button that is checked does not change. Rather, when inside a `toolbar`, the <kbd>Space</kbd> and <kbd>Enter</kbd> keys check the focused `radio` button if it is not already checked, with <kbd>Tab</kbd> moving focus into and out of the `toolbar`.
+از کلیدهای جهت‌نما برای پیمایش بین عناصر یک نوار ابزار استفاده می‌شود. وقتی یک `radiogroup` درون یک نوار ابزار قرار می‌گیرد، کاربران باید بتوانند بین تمام عناصر نوار ابزار، از جمله دکمه‌های رادیویی، بدون تغییر دکمه رادیویی علامت‌خورده پیمایش کنند. بنابراین، هنگام پیمایش در یک `radiogroup` در یک [`toolbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/toolbar_role) با کلیدهای جهت‌نما، دکمه‌ای که علامت‌خورده است تغییر نمی‌کند. در عوض، وقتی داخل یک `toolbar` هستید، کلیدهای <kbd>Space</kbd> و <kbd>Enter</kbd> دکمه `radio` متمرکز را اگر قبلاً علامت نخورده باشد علامت می‌زنند، و <kbd>Tab</kbd> فوکوس را به داخل و خارج از `toolbar` منتقل می‌کند.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-User interactions for `radiogroup`s must replicate the user interaction of a user entering into a group of same-named HTML radio buttons. Keyboard events for tabs, space, and arrow keys must be captured. Click events on both the radio elements and their associated labels must also be captured. Additionally, [focus must be managed](https://primer.style/accessibility/design-guidance/focus-management/).
+تعاملات کاربر برای `radiogroup`ها باید تعامل کاربر را هنگام ورود به گروهی از دکمه‌های رادیویی HTML با نام یکسان بازتولید کنند. رویدادهای صفحه‌کلید برای Tab، Space و کلیدهای جهت‌نما باید ضبط شوند. رویدادهای کلیک روی عناصر رادیویی و برچسب‌های مرتبط با آن‌ها نیز باید ضبط شوند. علاوه بر این، [فوکوس باید مدیریت شود](https://primer.style/accessibility/design-guidance/focus-management/).
 
-While generally moving off an a focused element brings you to the next focusable element in the DOM order, using the arrow keys to navigate through a group of radio button keeps you in the group, moving focus to the first radio button when the <kbd>Right Arrow</kbd> or <kbd>Down Arrow</kbd> is released when focus was on the last radio in the group, and moving to the last radio if the <kbd>Left Arrow</kbd> or <kbd>Up Arrow</kbd> is released if focus was on the first radio. Managing roving [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) is one method to manage arrow key events.
+در حالی که معمولاً دور شدن از یک عنصر متمرکز شما را به عنصر قابل فوکوس بعدی در ترتیب DOM می‌برد، استفاده از کلیدهای جهت‌نما برای پیمایش در گروهی از دکمه‌های رادیویی شما را در گروه نگه می‌دارد و وقتی <kbd>Right Arrow</kbd> یا <kbd>Down Arrow</kbd> در حالی که فوکوس روی آخرین رادیو در گروه بود آزاد می‌شود، فوکوس به اولین دکمه رادیویی منتقل می‌شود و اگر <kbd>Left Arrow</kbd> یا <kbd>Up Arrow</kbd> در حالی که فوکوس روی اولین رادیو بود آزاد شود، فوکوس به آخرین رادیو منتقل می‌شود. مدیریت [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) چرخشی یکی از روش‌های مدیریت رویدادهای کلید جهت‌نما است.
 
-### Required CSS features
+### ویژگی‌های CSS مورد نیاز
 
-Use the `[aria-checked="true"]` [attribute selector](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) to style the checked state of checked radio buttons.
+از [انتخابگر ویژگی](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) `[aria-checked="true"]` برای استایل‌دهی حالت علامت‌خورده دکمه‌های رادیویی علامت‌خورده استفاده کنید.
 
-Use CSS {{CSSXRef(':hover')}} and {{CSSXRef(':focus')}} pseudo-classes for styling visual keyboard focus and hover. The focus and hover effect should encompass both the radio button and label to make it easier to perceive which option is being chosen and to indicate that clicking either the label or button will activate the radio button.
+برای استایل‌دهی فوکوس بصری صفحه‌کلید و هاور از شبه‌کلاس‌های CSS {{CSSXRef(':hover')}} و {{CSSXRef(':focus')}} استفاده کنید. اثر فوکوس و هاور باید هم دکمه رادیویی و هم برچسب را در بر بگیرد تا درک اینکه کدام گزینه در حال انتخاب است آسان‌تر شود و نشان دهد که کلیک روی برچسب یا دکمه، دکمه رادیویی را فعال می‌کند.
 
-## Examples
+## مثال‌ها
 
-The basic set up for a `radiogroup` using non-semantic ARIA roles instead of semantic HTML is as follows:
+راه‌اندازی اولیه برای یک `radiogroup` با استفاده از نقش‌های ARIA غیرمعنایی به‌جای HTML معنایی به صورت زیر است:
 
 ```html
 <div role="radiogroup" aria-labelledby="question">
@@ -119,7 +119,7 @@ The basic set up for a `radiogroup` using non-semantic ARIA roles instead of sem
 </div>
 ```
 
-This could have been written using semantic HTML, which requires no CSS or JavaScript:
+این می‌توانست با استفاده از HTML معنایی نوشته شود که به هیچ CSS یا جاوااسکریپتی نیاز ندارد:
 
 ```html
 <fieldset>
@@ -143,17 +143,17 @@ This could have been written using semantic HTML, which requires no CSS or JavaS
 </fieldset>
 ```
 
-In this {{HTMLElement('fieldset')}} example, while `role="radiogroup"` is not necessary, to have this grouping explicitly announced as `radiogroup`, include the ARIA role.
+در این مثال {{HTMLElement('fieldset')}}، اگرچه `role="radiogroup"` ضروری نیست، برای اینکه این گروه‌بندی به‌طور صریح به‌عنوان `radiogroup` اعلام شود، نقش ARIA را اضافه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement('fieldset')}} element
-- HTML {{HTMLElement('input/radio', '&lt;input type="radio">')}} radio button element
-- [ARIA `radio` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role)
+- عنصر HTML {{HTMLElement('fieldset')}}
+- عنصر دکمه رادیویی HTML {{HTMLElement('input/radio', '&lt;input type="radio">')}}
+- نقش [ARIA `radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role)
 - [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage)
 - [`aria-invalid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid)
 - [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly)
