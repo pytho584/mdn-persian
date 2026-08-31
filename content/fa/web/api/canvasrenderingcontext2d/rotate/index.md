@@ -1,7 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: rotate() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rotate"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,9 @@ browser-compat: api.CanvasRenderingContext2D.rotate
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.rotate()`**
-method of the Canvas 2D API adds a rotation to the transformation matrix.
+روش **`CanvasRenderingContext2D.rotate()`** از Canvas 2D API، چرخشی به ماتریس تبدیل اضافه می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 rotate(angle)
@@ -26,26 +22,24 @@ rotate(angle)
 
 ![Rectangular coordinate system with the rotation of the abscissa axis by the alpha angle](canvas_grid_rotate.png)
 
-### Parameters
+### پارامترها
 
 - `angle`
-  - : The rotation angle, clockwise in radians. You can use
-    `degree * Math.PI / 180` to calculate a radian from a degree.
+  - : زاویهٔ چرخش، در جهت عقربه‌های ساعت و بر حسب رادیان. برای محاسبهٔ رادیان از روی درجه، می‌توانید از
+    `degree * Math.PI / 180` استفاده کنید.
 
-The rotation center point is always the canvas origin. To change the center point, you
-will need to move the canvas by using the
-{{domxref("CanvasRenderingContext2D.translate", "translate()")}} method.
+نقطهٔ مرکز چرخش همیشه مبدأ بوم است. برای تغییر نقطهٔ مرکز، باید بوم را با استفاده از روش
+{{domxref("CanvasRenderingContext2D.translate", "translate()")}} جابه‌جا کنید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Rotating a shape
+### چرخاندن یک شکل
 
-This example rotates a rectangle by 45°. Note that the center of rotation is the
-top-left corner of the canvas, and not a location relative to any shape.
+در این مثال، یک مستطیل به اندازهٔ ۴۵ درجه چرخانده می‌شود. توجه داشته باشید که مرکز چرخش، گوشهٔ بالا-چپ بوم است، نه مکانی که نسبت به یک شکل تعریف شده باشد.
 
 #### HTML
 
@@ -77,23 +71,19 @@ ctx.fillRect(100, 0, 80, 20);
 ctx.setTransform(1, 0, 0, 1, 0, 0);
 ```
 
-#### Result
+#### نتیجه
 
-The center of rotation is blue. The non-rotated rectangle is gray, and the rotated rectangle is red.
+مرکز چرخش آبی است. مستطیل چرخانده‌نشده خاکستری و مستطیل چرخانده‌شده قرمز است.
 
 {{ EmbedLiveSample('Rotating_a_shape', 700, 180) }}
 
-### Rotating a shape around its center
+### چرخاندن یک شکل حول مرکز آن
 
-This example rotates a shape around its center point. To do this, the following steps
-are applied to the matrix:
+در این مثال، یک شکل حول نقطهٔ مرکزی خودش چرخانده می‌شود. برای این کار، مراحل زیر به ماتریس اعمال می‌شوند:
 
-1. First, {{domxref("CanvasRenderingContext2D.translate()", "translate()")}} moves the
-   matrix's origin to the shape's center.
-2. `rotate()` rotates the matrix by the desired amount.
-3. Finally, `translate()` moves the matrix's origin back to its starting
-   point. This is done by applying the values of the shape's center coordinates in a
-   negative direction.
+1. ابتدا، {{domxref("CanvasRenderingContext2D.translate()", "translate()")}} مبدأ ماتریس را به مرکز شکل منتقل می‌کند.
+2. `rotate()` ماتریس را به اندازهٔ دلخواه می‌چرخاند.
+3. در پایان، `translate()` مبدأ ماتریس را به نقطهٔ شروع بازمی‌گرداند. این کار با اعمال مقادیر منفی مختصات مرکز شکل انجام می‌شود.
 
 #### HTML
 
@@ -103,9 +93,7 @@ are applied to the matrix:
 
 #### JavaScript
 
-The shape is a rectangle with its corner at (80, 60), a width of 140, a height of 30.
-Its horizontal center is at (80 + 140 / 2), or 150. Its vertical center is at (60 + 30 /
-2\), or 75. Thus, the center point is at (150, 75).
+شکل یک مستطیل است که گوشهٔ آن در (۸۰، ۶۰) قرار دارد، عرض آن ۱۴۰ و ارتفاع آن ۳۰ است. مرکز افقی آن در (۸۰ + ۱۴۰ / ۲)، یعنی ۱۵۰ قرار دارد. مرکز عمودی آن در (۶۰ + ۳۰ / ۲)، یعنی ۷۵ قرار دارد. بنابراین، نقطهٔ مرکز در (۱۵۰، ۷۵) است.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -125,20 +113,20 @@ ctx.fillStyle = "red";
 ctx.fillRect(80, 60, 140, 30);
 ```
 
-#### Result
+#### نتیجه
 
-The non-rotated rectangle is gray, and the rotated rectangle is red.
+مستطیل چرخانده‌نشده خاکستری و مستطیل چرخانده‌شده قرمز است.
 
 {{ EmbedLiveSample('Rotating_a_shape_around_its_center', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- واسطی که این روش را تعریف می‌کند: {{domxref("CanvasRenderingContext2D")}}
