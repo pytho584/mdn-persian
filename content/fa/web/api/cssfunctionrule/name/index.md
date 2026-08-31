@@ -1,7 +1,5 @@
 ---
 title: "CSSFunctionRule: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionRule/name"
-status: "needs-translation"
 ---
 
 ---
@@ -16,24 +14,24 @@ browser-compat: api.CSSFunctionRule.name
 
 {{ APIRef("CSSOM") }}{{SeeCompatTable}}
 
-The **`name`** property of the {{domxref("CSSFunctionRule")}} interface returns a string representing the custom function's name.
+ویژگی **`name`** در رابط {{domxref("CSSFunctionRule")}} رشتهای را برمیگرداند که نشاندهنده نام تابع سفارشی است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثالها
 
-See the main {{domxref("CSSFunctionRule")}} reference page for an example.
+برای مشاهده یک مثال، به صفحه مرجع اصلی {{domxref("CSSFunctionRule")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@function")}}
