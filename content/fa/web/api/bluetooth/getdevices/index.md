@@ -1,7 +1,7 @@
 ---
 title: "Bluetooth: getDevices() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/getDevices"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,31 +16,31 @@ browser-compat: api.Bluetooth.getDevices
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`getDevices()`** method of the {{DOMxRef("Bluetooth")}} interface returns an array containing the Bluetooth devices that this origin is allowed to access — including those that are out of range and powered off.
+متد **`getDevices()`** از رابط {{DOMxRef("Bluetooth")}} آرایه‌ای از دستگاه‌های بلوتوث را برمی‌گرداند که این مبدأ اجازه دسترسی به آن‌ها را دارد — از جمله دستگاه‌هایی که خارج از محدوده هستند یا خاموش می‌باشند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getDevices()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{JSxRef("Promise")}} that resolves with an array of {{DOMxRef("BluetoothDevice")}} objects.
+یک {{JSxRef("Promise")}} که با آرایه‌ای از اشیاء {{DOMxRef("BluetoothDevice")}} حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if this operation is not permitted in this context due to [security concerns](/en-US/docs/Web/API/Web_Bluetooth_API#security_considerations), such as being called when access to the current document is blocked by the [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) directive {{HTTPHeader("Permissions-Policy/bluetooth","bluetooth")}}.
+  - : در صورتی پرتاب می‌شود که این عملیات در این زمینه به دلیل [نگرانی‌های امنیتی](/en-US/docs/Web/API/Web_Bluetooth_API#security_considerations) مجاز نباشد؛ مانند زمانی که متد در حالی فراخوانی می‌شود که دسترسی به سند جاری توسط دستور [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) {{HTTPHeader("Permissions-Policy/bluetooth","bluetooth")}} مسدود شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
