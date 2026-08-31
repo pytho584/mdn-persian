@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: arcTo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arcTo"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: arcTo() method"
 short-title: arcTo()
 slug: Web/API/CanvasRenderingContext2D/arcTo
 page-type: web-api-instance-method
@@ -14,15 +8,12 @@ browser-compat: api.CanvasRenderingContext2D.arcTo
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.arcTo()`** method of the Canvas 2D API adds a circular arc to the current sub-path, using the given control points and radius.
-The arc is automatically connected to the path's latest point with a straight line if necessary, for example if the starting point and control points are in a line.
+متد **`CanvasRenderingContext2D.arcTo()`** از رابط Canvas 2D یک کمان دایره‌ای به زیرمسیر جاری اضافه می‌کند، با استفاده از نقاط کنترلی و شعاع داده شده. در صورت نیاز، مثلاً اگر نقطه شروع و نقاط کنترلی روی یک خط باشند، کمان به‌طور خودکار با یک خط راست به آخرین نقطه مسیر متصل می‌شود.
 
-This method is commonly used for making rounded corners.
+این متد معمولاً برای ساخت گوشه‌های گرد استفاده می‌شود.
 
 > [!NOTE]
-> You may get unexpected results when using a
-> relatively large radius: the arc's connecting line will go in whatever direction it
-> must to meet the specified radius.
+> ممکن است هنگام استفاده از یک شعاع نسبتاً بزرگ نتایج غیرمنتظره‌ای بگیرید: خط اتصال کمان برای رسیدن به شعاع مشخص‌شده در هر جهتی که لازم باشد حرکت می‌کند.
 
 ## Syntax
 
@@ -30,47 +21,43 @@ This method is commonly used for making rounded corners.
 arcTo(x1, y1, x2, y2, radius)
 ```
 
-### Parameters
+### پارامترها
 
 - `x1`
-  - : The x-axis coordinate of the first control point.
+  - : مختصات محور x اولین نقطه کنترلی.
 - `y1`
-  - : The y-axis coordinate of the first control point.
+  - : مختصات محور y اولین نقطه کنترلی.
 - `x2`
-  - : The x-axis coordinate of the second control point.
+  - : مختصات محور x دومین نقطه کنترلی.
 - `y2`
-  - : The y-axis coordinate of the second control point.
+  - : مختصات محور y دومین نقطه کنترلی.
 - `radius`
-  - : The arc's radius. Must be non-negative.
+  - : شعاع کمان. باید غیرمنفی باشد.
 
-#### Usage notes
+#### نکات استفاده
 
-Assume <em>P<sub>0</sub></em> is the point on the path when `arcTo()` is called, <em>P<sub>1</sub></em> = (`x1`, `y1`) and <em>P<sub>2</sub></em> = (`x2`, `y2`) are the first and second control points, respectively, and _r_ is the `radius` specified in the call:
+فرض کنید <em>P<sub>0</sub></em> نقطه‌ای روی مسیر است که `arcTo()` فراخوانی می‌شود، <em>P<sub>1</sub></em> = (`x1`, `y1`) و <em>P<sub>2</sub></em> = (`x2`, `y2`) به ترتیب نقاط کنترلی اول و دوم هستند، و _r_ همان `radius` مشخص‌شده در فراخوانی است:
 
-- If _r_ is negative, an `IndexSizeError` [exception](#exceptions) is raised.
-- If _r_ is 0, `arcTo()` behaves as if <em>P<sub>0</sub></em>, <em>P<sub>1</sub></em>, and <em>P<sub>2</sub></em> are collinear (in a line).
-- In the case of all of the points being collinear, a line from <em>P<sub>0</sub></em> to <em>P<sub>1</sub></em> is drawn unless the points <em>P<sub>0</sub></em> and <em>P<sub>1</sub></em> are coincident (having the same coordinates), in which case nothing is drawn.
+- اگر _r_ منفی باشد، یک `IndexSizeError` [استثنا](#exceptions) صادر می‌شود.
+- اگر _r_ صفر باشد، `arcTo()` طوری رفتار می‌کند که گویی <em>P<sub>0</sub></em>، <em>P<sub>1</sub></em> و <em>P<sub>2</sub></em> هم‌خط (روی یک خط) هستند.
+- در صورت هم‌خط بودن همه نقاط، یک خط از <em>P<sub>0</sub></em> به <em>P<sub>1</sub></em> رسم می‌شود مگر اینکه نقاط <em>P<sub>0</sub></em> و <em>P<sub>1</sub></em> بر هم منطبق باشند (مختصات یکسان داشته باشند) که در این صورت چیزی رسم نمی‌شود.
 
-These conditions can be created in the [Constructing an arcTo() path](#constructing_an_arcto_path) example below to see the results.
+این شرایط را می‌توانید در مثال [ساخت یک مسیر arcTo()](#constructing_an_arcto_path) در زیر ببینید تا نتایج را مشاهده کنید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if `radius` is a negative value.
+  - : اگر `radius` یک مقدار منفی باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### How `arcTo()` works
+### نحوه عملکرد `arcTo()`
 
-One way to think about `arcTo()` is to imagine two straight segments: one
-from the starting point to a first control point, and another from there to a second
-control point. Without `arcTo()`, these two segments would form a sharp
-corner: `arcTo()` creates a circular arc at this corner and smooths it
-out. In other words, the arc is tangential to both segments.
+یک راه برای فکر کردن در مورد `arcTo()` این است که دو پاره‌خط مستقیم را تصور کنید: یکی از نقطه شروع به اولین نقطه کنترلی، و دیگری از آنجا به دومین نقطه کنترلی. بدون `arcTo()`، این دو پاره‌خط یک گوشه تیز تشکیل می‌دادند: `arcTo()` یک کمان دایره‌ای در این گوشه ایجاد می‌کند و آن را صاف می‌کند. به عبارت دیگر، کمان مماس بر هر دو پاره‌خط است.
 
 #### HTML
 
@@ -114,17 +101,15 @@ ctx.arc(50, 20, 5, 0, 2 * Math.PI); // Control point two
 ctx.fill();
 ```
 
-#### Result
+#### نتیجه
 
-In this example, the path created by `arcTo()` is **thick and
-black**. Tangent lines are gray, control points are red, and the start point is blue.
+در این مثال، مسیر ایجاد شده توسط `arcTo()` **ضخیم و سیاه** است. خطوط مماس خاکستری، نقاط کنترلی قرمز و نقطه شروع آبی هستند.
 
 {{ EmbedLiveSample('How_arcTo_works', 315, 170) }}
 
-### Creating a rounded corner
+### ایجاد یک گوشه گرد
 
-This example creates a rounded corner using `arcTo()`. This is one of the
-method's most common uses.
+این مثال یک گوشه گرد را با استفاده از `arcTo()` ایجاد می‌کند. این یکی از رایج‌ترین کاربردهای این متد است.
 
 #### HTML
 
@@ -134,11 +119,7 @@ method's most common uses.
 
 #### JavaScript
 
-The arc begins at the point specified by `moveTo()`: (230, 20). It is shaped
-to fit control points at (90, 130) and (20, 20), and has a radius of 50. The
-`lineTo()` method connects the arc to (20, 20) with a straight line. Note
-that the arc's second control point and the point specified by `lineTo()` are
-the same, which produces a totally smooth corner.
+کمان از نقطه‌ای که توسط `moveTo()` مشخص شده شروع می‌شود: (230, 20). به گونه‌ای شکل می‌گیرد که با نقاط کنترلی در (90, 130) و (20, 20) مطابقت داشته باشد و شعاع آن 50 است. متد `lineTo()` کمان را با یک خط راست به (20, 20) متصل می‌کند. توجه داشته باشید که دومین نقطه کنترلی کمان و نقطه‌ای که توسط `lineTo()` مشخص شده یکی هستند، که یک گوشه کاملاً صاف ایجاد می‌کند.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -166,16 +147,13 @@ labelPoint(p2);
 ctx.stroke();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Creating_a_rounded_corner', 315, 165) }}
 
-### Result of a large radius
+### نتیجه یک شعاع بزرگ
 
-If you use a relatively large radius, the arc may appear in a place you didn't expect.
-In this example, the arc's connecting line goes above, instead of below, the coordinate
-specified by `moveTo()`. This happens because the radius is too large for the
-arc to fit entirely below the starting point.
+اگر از یک شعاع نسبتاً بزرگ استفاده کنید، ممکن است کمان در جایی ظاهر شود که انتظار ندارید. در این مثال، خط اتصال کمان به بالا می‌رود، به جای پایین، نسبت به مختصات مشخص‌شده توسط `moveTo()`. این اتفاق می‌افتد زیرا شعاع بیش از حد بزرگ است که کمان کاملاً زیر نقطه شروع قرار گیرد.
 
 #### HTML
 
@@ -196,30 +174,21 @@ ctx.lineTo(110, 130);
 ctx.stroke();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Result_of_a_large_radius', 315, 165) }}
 
-### Constructing an arcTo() path
+### ساخت یک مسیر arcTo()
 
-The demo shows the semi-infinite lines and circle with center _C_ tangent
-to the lines at <em>T<sub>1</sub></em> and <em>T<sub>2</sub></em> used to
-determine the path rendered by `arcTo()`.
+این نمایش، خطوط نیمه‌بینهایت و دایره‌ای با مرکز _C_ مماس بر خطوط در <em>T<sub>1</sub></em> و <em>T<sub>2</sub></em> را نشان می‌دهد که برای تعیین مسیر ارائه‌شده توسط `arcTo()` استفاده می‌شوند.
 
-Note that `arcTo` will create a straight line from <em>P<sub>0</sub></em>
-to <em>P<sub>1</sub></em> when all points are in a line. Additionally,
-nothing is drawn by `arcTo` if <em>P<sub>0</sub></em> and
-<em>P<sub>1</sub></em> have the same coordinates.
+توجه داشته باشید که `arcTo` یک خط راست از <em>P<sub>0</sub></em> به <em>P<sub>1</sub></em> ایجاد می‌کند وقتی همه نقاط روی یک خط باشند. همچنین اگر <em>P<sub>0</sub></em> و <em>P<sub>1</sub></em> مختصات یکسانی داشته باشند، توسط `arcTo` چیزی رسم نمی‌شود.
 
-Besides being able to set the arc radius with the slider, the initial point
-<em>P<sub>0</sub></em> and control points <em>P<sub>1</sub></em> and
-<em>P<sub>2</sub></em> can be moved by dragging them with the mouse with the
-left button down. The numeric values can also be edited, and the arrow keys
-can be used to change an underlined element that is in focus.
+علاوه بر امکان تنظیم شعاع کمان با لغزنده، نقطه اولیه <em>P<sub>0</sub></em> و نقاط کنترلی <em>P<sub>1</sub></em> و <em>P<sub>2</sub></em> را می‌توان با کشیدن آنها با ماوس و دکمه چپ پایین جابجا کرد. مقادیر عددی نیز قابل ویرایش هستند و می‌توان از کلیدهای جهت‌نما برای تغییر یک عنصر زیرخط‌دار که در فوکوس است استفاده کرد.
 
 ```html hidden
 <div>
-  <label for="arc-radius">arc radius <em>r</em></label>
+  <label for="arc-radius">شعاع کمان <em>r</em></label>
   <input name="arc-radius" type="range" id="radius-slider" min="0" />
   <label
     for="arc-radius"
@@ -442,8 +411,8 @@ function initDemoState({
   hitDistance = 5,
   errorTolCenter = 1e-4,
   radiusMax = 250,
-  P0x = 0,
-  P0y = 0,
+  POx = 0,
+  POy = 0,
   P1x = 0,
   P1y = 0,
   P2x = 0,
@@ -452,7 +421,7 @@ function initDemoState({
 } = {}) {
   const s = {};
   s.controlPoints = [
-    Math2D.point(P0x, P0y),
+    Math2D.point(P0x, POy),
     Math2D.point(P1x, P1y),
     Math2D.point(P2x, P2y),
   ];
@@ -547,7 +516,7 @@ function drawCanvas() {
 
     /* Draw the semi-infinite lines, a radius, and the circle */
     ctx.beginPath();
-    ctx.moveTo(state.P0Inf.x, state.P0Inf.y);
+    ctx.moveTo(state.P0Inf.x, state.P0Inf.y));
     ctx.lineTo(P1.x, P1.y);
     ctx.lineTo(state.P2Inf.x, state.P2Inf.y);
     ctx.stroke();
@@ -986,18 +955,15 @@ ConstructionPoints.print(state.T1, state.T2, state.C); // output pts
 
 {{ EmbedLiveSample("constructing_an_arcto_path", 350, 450) }}
 
-### Animating `arcTo()` drawing
+### انیمیشن رسم `arcTo()`
 
-For this example, you can play around with the arc radius to see how
-the path changes. The path is drawn from the starting point _p0_ using `arcTo()` with control points
-_p1_ and _p2_ and a radius that varies from 0 to the maximum radius selected with the slider.
-Then a `lineTo()` call completes the path to _p2_.
+در این مثال، می‌توانید با شعاع کمان بازی کنید تا ببینید مسیر چگونه تغییر می‌کند. مسیر از نقطه شروع _p0_ با استفاده از `arcTo()` با نقاط کنترلی _p1_ و _p2_ و شعاعی که از 0 تا حداکثر شعاع انتخاب‌شده با لغزنده تغییر می‌کند، رسم می‌شود. سپس یک فراخوانی `lineTo()` مسیر را به _p2_ کامل می‌کند.
 
 #### HTML
 
 ```html
 <div>
-  <label for="radius">Radius: </label>
+  <label for="radius">شعاع: </label>
   <input name="radius" type="range" id="radius" min="0" max="100" value="50" />
   <label for="radius" id="radius-output">50</label>
 </div>
@@ -1057,18 +1023,18 @@ function loop(t) {
 loop(0);
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('animating_arcto_drawing', 315, 200) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
