@@ -1,7 +1,7 @@
 ---
 title: "BroadcastChannel: postMessage() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/postMessage"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,11 +14,11 @@ browser-compat: api.BroadcastChannel.postMessage
 
 {{APIRef("BroadCastChannel API")}} {{AvailableInWorkers}}
 
-The **`postMessage()`** method of the {{domxref("BroadcastChannel")}} interface sends a message,
-which can be of any kind of {{jsxref("Object")}},
-to each listener in any {{glossary("browsing context")}} with the same {{glossary("origin")}}.
-The message is transmitted as a {{domxref("BroadcastChannel/message_event", "message")}} event
-targeted at each {{domxref("BroadcastChannel")}} bound to the channel.
+روش **`postMessage()`** از رابط {{domxref("BroadcastChannel")}} یک پیام ارسال می‌کند،
+که می‌تواند از هر نوع {{jsxref("Object")}} باشد،
+به هر شنونده‌ای در هر {{glossary("browsing context")}} با همان {{glossary("origin")}}.
+پیام به‌عنوان یک رویداد {{domxref("BroadcastChannel/message_event", "message")}} منتقل می‌شود
+که به هر {{domxref("BroadcastChannel")}} متصل به کانال هدف می‌گیرد.
 
 ## Syntax
 
@@ -29,22 +29,22 @@ postMessage(message)
 ### Parameters
 
 - `message`
-  - : Data to be sent to the other window. The data is serialized using the [structured clone algorithm](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm).
-    This means you can pass a broad variety of data objects safely to the destination window without having to serialize them yourself.
+  - : داده‌ای که به پنجره دیگر ارسال می‌شود. داده با استفاده از [الگوریتم شبیه‌سازی ساختاری](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) سریال‌سازی می‌شود.
+    این بدان معناست که می‌توانید انواع متنوعی از اشیاء داده را به‌طور ایمن به پنجره مقصد ارسال کنید بدون اینکه خودتان آن‌ها را سریال‌سازی کنید.
 
     > [!NOTE]
-    > Execution contexts that can message each other may not be in the same [agent cluster](/en-US/docs/Web/JavaScript/Reference/Execution_model#agent_clusters_and_memory_sharing), and therefore cannot share memory. {{jsxref("SharedArrayBuffer")}} objects, or buffer views backed by one, cannot be posted across agent clusters. Trying to do so will generate a {{domxref("BroadcastChannel/messageerror_event", "messageerror")}} event containing a `DataCloneError` {{domxref("DOMException")}} on the receiving end.
+    > ممکن است زمینه‌های اجرایی که می‌توانند با یکدیگر پیام رد و بدل کنند در یک [خوشه عامل](/en-US/docs/Web/JavaScript/Reference/Execution_model#agent_clusters_and_memory_sharing) نباشند و بنابراین نمی‌توانند حافظه را به اشتراک بگذارند. اشیاء {{jsxref("SharedArrayBuffer")}}، یا نماهای بافری که توسط یکی پشتیبانی می‌شوند، نمی‌توانند در بین خوشه‌های عامل ارسال شوند. تلاش برای انجام این کار یک رویداد {{domxref("BroadcastChannel/messageerror_event", "messageerror")}} حاوی `DataCloneError` {{domxref("DOMException")}} در سمت دریافت‌کننده ایجاد می‌کند.
 
 ### Return value
 
-None.
+هیچ.
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("BroadcastChannel")}} has already been closed.
+  - : اگر {{domxref("BroadcastChannel")}} قبلاً بسته شده باشد پرتاب می‌شود.
 - `DataCloneError` {{domxref("DOMException")}}
-  - : Thrown if any part of the input data is not serializable.
+  - : اگر هر بخشی از داده ورودی قابل سریال‌سازی نباشد پرتاب می‌شود.
 
 ## Specifications
 
@@ -56,4 +56,4 @@ None.
 
 ## See also
 
-- {{domxref("BroadcastChannel")}}, the interface it belongs to.
+- {{domxref("BroadcastChannel")}}، رابطی که به آن تعلق دارد.
