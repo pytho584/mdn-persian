@@ -1,10 +1,4 @@
 ---
-title: "CSSFontFeatureValuesMap"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap"
-status: "needs-translation"
----
-
----
 title: CSSFontFeatureValuesMap
 slug: Web/API/CSSFontFeatureValuesMap
 page-type: web-api-interface
@@ -15,53 +9,49 @@ browser-compat: api.CSSFontFeatureValuesMap
 
 {{APIRef("CSSOM")}}{{SeeCompatTable}}
 
-The **`CSSFontFeatureValuesMap`** interface of the [CSS Object Model (CSSOM)](/en-US/docs/Web/API/CSS_Object_Model) represents an iterable and read-only set of the [CSSFontFeatureValuesRule](/en-US/docs/Web/API/CSSFontFeatureValuesRule) properties, such as [`swash`](/en-US/docs/Web/API/CSSFontFeatureValuesRule/swash), [`annotation`](/en-US/docs/Web/API/CSSFontFeatureValuesRule/annotation), [`ornaments`](/en-US/docs/Web/API/CSSFontFeatureValuesRule/ornaments), etc.
+رابط **`CSSFontFeatureValuesMap`** در [مدل شیء CSS (CSSOM)](/en-US/docs/Web/API/CSS_Object_Model) مجموعه‌ای تکرارپذیر و فقط‌خواندنی از ویژگی‌های [CSSFontFeatureValuesRule](/en-US/docs/Web/API/CSSFontFeatureValuesRule) مانند [`swash`](/en-US/docs/Web/API/CSSFontFeatureValuesRule/swash)، [`annotation`](/en-US/docs/Web/API/CSSFontFeatureValuesRule/annotation)، [`ornaments`](/en-US/docs/Web/API/CSSFontFeatureValuesRule/ornaments) و غیره را نمایش می‌دهد.
 
-A `CSSFontFeatureValuesMap` instance is a read-only [Map-like object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis), in which each key is the user-defined name used to reference a font feature, and the corresponding value is the index for the font feature within the font.
+یک نمونهٔ `CSSFontFeatureValuesMap` یک [شیء شبیه به Map](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis) فقط‌خواندنی است که در آن هر کلید، نام تعریف‌شده توسط کاربر برای ارجاع به یک ویژگی قلم است و مقدار متناظر، ایندکس آن ویژگی قلم درون فونت است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('CSSFontFeatureValuesMap.size')}} {{experimental_inline}}
-  - : Returns a positive integer containing the size of the `CSSFontFeatureValuesMap` object.
+  - : یک عدد صحیح مثبت شامل اندازهٔ شیء `CSSFontFeatureValuesMap` را برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref('CSSFontFeatureValuesMap.clear()')}} {{experimental_inline}}
-  - : Removes all declarations in the `CSSFontFeatureValuesMap`.
+  - : تمام اعلان‌های موجود در `CSSFontFeatureValuesMap` را حذف می‌کند.
 - {{domxref('CSSFontFeatureValuesMap.delete()')}} {{experimental_inline}}
-  - : Removes the CSS declaration with the given property in the `CSSFontFeatureValuesMap`.
+  - : اعلان CSS مربوط به ویژگی داده‌شده را در `CSSFontFeatureValuesMap` حذف می‌کند.
 - {{domxref('CSSFontFeatureValuesMap.entries()')}} {{experimental_inline}}
-  - : Returns a new [map iterator](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) object that contains the `[key, value]` pairs for each declaration in this `CSSFontFeatureValuesMap` in insertion order.
+  - : یک شیء [تکرارگر Map](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) جدید برمی‌گرداند که شامل جفت‌های `[key, value]` برای هر اعلان در این `CSSFontFeatureValuesMap` به ترتیب درج است.
 - {{domxref('CSSFontFeatureValuesMap.forEach()')}} {{experimental_inline}}
-  - : Executes a provided function once per each key/value pair in this `CSSFontFeatureValuesMap` in insertion order.
+  - : یک تابع داده‌شده را برای هر جفت کلید/مقدار در این `CSSFontFeatureValuesMap`، به ترتیب درج، یک‌بار اجرا می‌کند.
 - {{domxref('CSSFontFeatureValuesMap.get()')}} {{experimental_inline}}
-  - : Returns value corresponding to the key in this `CSSFontFeatureValuesMap`, or `undefined` if there is none.
+  - : مقدار متناظر با کلید را در این `CSSFontFeatureValuesMap` برمی‌گرداند، یا اگر وجود نداشته باشد، `undefined` را برمی‌گرداند.
 - {{domxref('CSSFontFeatureValuesMap.has()')}} {{experimental_inline}}
-  - : Returns a boolean indicating whether an entry with the specified key exists in this `CSSFontFeatureValuesMap` or not.
+  - : یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا ورودی با کلید مشخص‌شده در این `CSSFontFeatureValuesMap` وجود دارد یا خیر.
 - {{domxref('CSSFontFeatureValuesMap.keys()')}} {{experimental_inline}}
-  - : Returns a new [map iterator](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) object that contains the `key` for each declaration in this `CSSFontFeatureValuesMap` in insertion order.
+  - : یک شیء [تکرارگر Map](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) جدید برمی‌گرداند که شامل `key` برای هر اعلان در این `CSSFontFeatureValuesMap` به ترتیب درج است.
 - {{domxref('CSSFontFeatureValuesMap.set()')}} {{experimental_inline}}
-  - : Adds a new entry with a specified key and value to this `CSSFontFeatureValuesMap`, or updates an existing entry if the key already exists.
+  - : یک ورودی جدید با کلید و مقدار مشخص‌شده به این `CSSFontFeatureValuesMap` اضافه می‌کند، یا اگر کلید از قبل وجود داشته باشد، ورودی موجود را به‌روزرسانی می‌کند.
 - {{domxref('CSSFontFeatureValuesMap.values()')}} {{experimental_inline}}
-  - : Returns a new [map iterator](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) object that contains the `value` for each declaration in this `CSSFontFeatureValuesMap` in insertion order.
+  - : یک شیء [تکرارگر Map](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator) جدید برمی‌گرداند که شامل `value` برای هر اعلان در این `CSSFontFeatureValuesMap` به ترتیب درج است.
 - [`CSSFontFeatureValuesMap.[Symbol.iterator]()`](/en-US/docs/Web/API/CSSFontFeatureValuesMap/Symbol.iterator)
-  - : Returns the iterator object itself. This allows iterator objects to also be iterable.
+  - : خود شیء تکرارگر را برمی‌گرداند. این امکان را فراهم می‌کند که اشیاء تکرارگر نیز تکرارپذیر باشند.
 
-## Examples
+## نمونه‌ها
 
 ### Logging user-defined names
 
-This example shows how you can log the user-defined names (and their mapped index) stored in a `CSSFontFeatureValuesMap` (for particular `CSSFontFeatureValuesRule` properties).
+این مثال نشان می‌دهد که چگونه می‌توانید نام‌های تعریف‌شده توسط کاربر (و ایندکس نگاشت‌شدهٔ آن‌ها) را که در یک `CSSFontFeatureValuesMap` (برای ویژگی‌های خاص `CSSFontFeatureValuesRule`) ذخیره شده‌اند، ثبت (log) کنید.
 
 #### CSS
 
-First we declare a {{cssxref("@font-feature-values")}} for the _Font One_ font family.
-This includes the declaration of the names "nice-style" and "odd-style" that can be used to represent the `styleset` alternate glyphs for _Font One_ and specify the index values for those alternates.
-It also includes the declaration of the name "swishy" that can be used to represent the `swash` alternate glyphs for _Font One_ and specify the index for that alternate.
+ابتدا یک {{cssxref("@font-feature-values")}} برای خانوادهٔ فونت _Font One_ اعلان می‌کنیم. این شامل اعلان نام‌های «nice-style» و «odd-style» است که می‌توانند برای نمایش گلیف‌های جایگزین `styleset` برای _Font One_ استفاده شوند و مقادیر ایندکس آن گلیف‌های جایگزین را مشخص کنند. همچنین شامل اعلان نام «swishy» است که می‌تواند برای نمایش گلیف‌های جایگزین `swash` برای _Font One_ استفاده شود و ایندکس آن گلیف جایگزین را مشخص کند.
 
-The "nice-style" alternate glyphs are then applied for any `.nice-look` class, using {{CSSXRef("font-variant-alternates")}} property and passing the name to the [`styleset()`](/en-US/docs/Web/CSS/Reference/Properties/font-variant-alternates#styleset) function.
-The same is done for the name "swishy" for the `swash` alternate glyphs, which is then passed to the [`swash()`](/en-US/docs/Web/CSS/Reference/Properties/font-variant-alternates#swash) function.
-The "odd-style" glyphs are not used (they are just added to demonstrate that multiple values may be defined in the map.)
+سپس گلیف‌های جایگزین «nice-style» برای هر کلاس `.nice-look` با استفاده از ویژگی {{CSSXRef("font-variant-alternates")}} و ارسال نام به تابع [`styleset()`](/en-US/docs/Web/CSS/Reference/Properties/font-variant-alternates#styleset) اعمال می‌شوند. همین کار برای نام «swishy» و گلیف‌های جایگزین `swash` انجام می‌شود و این نام به تابع [`swash()`](/en-US/docs/Web/CSS/Reference/Properties/font-variant-alternates#swash) ارسال می‌گردد. گلیف‌های «odd-style» استفاده نمی‌شوند (آن‌ها فقط برای نشان دادن اینکه می‌توان چند مقدار را در نقشه تعریف کرد، اضافه شده‌اند).
 
 ```css
 /* At-rule for "nice-style", "odd-style", and "swishy" in Font One */
@@ -99,9 +89,7 @@ The "odd-style" glyphs are not used (they are just added to demonstrate that mul
 
 #### JavaScript
 
-The code below finds the corresponding `CSSFontFeatureValuesRule` for the CSS `@font-feature-values` at-rule added above.
-It then iterates the values of the `styleset` and `swash` properties, which are represented by `CSSFontFeatureValuesMap` instances, using the [`forEach()`](/en-US/docs/Web/API/CSSFontFeatureValuesMap/forEach) method.
-On each step it logs the user-defined names and index values.
+کد زیر، `CSSFontFeatureValuesRule` متناظر با اتریول (at-rule) CSS یعنی `@font-feature-values` را که در بالا اضافه شد، پیدا می‌کند. سپس مقادیر ویژگی‌های `styleset` و `swash` را که توسط نمونه‌های `CSSFontFeatureValuesMap` نمایش داده می‌شوند، با استفاده از متد [`forEach()`](/en-US/docs/Web/API/CSSFontFeatureValuesMap/forEach) پیمایش می‌کند. در هر مرحله، نام‌های تعریف‌شده توسط کاربر و مقادیر ایندکس را ثبت می‌کند.
 
 ```js
 const logElement = document.querySelector("#log");
@@ -134,18 +122,18 @@ if (fontOne.swash) {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Logging user-defined names", "100%", "200px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@font-feature-values")}}
