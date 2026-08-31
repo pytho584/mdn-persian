@@ -1,11 +1,5 @@
 ---
 title: "CaretPosition: getClientRect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CaretPosition/getClientRect"
-status: "needs-translation"
----
-
----
-title: "CaretPosition: getClientRect() method"
 short-title: getClientRect()
 slug: Web/API/CaretPosition/getClientRect
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.CaretPosition.getClientRect
 
 {{APIRef("CSSOM view API")}}
 
-The `getClientRect()` method of the {{domxref("CaretPosition")}} interface returns the client rectangle for the caret range.
+متد `getClientRect()` از رابط {{domxref("CaretPosition")}}، مستطیل کلاینت (client rectangle) مربوط به محدودهٔ محل قرارگیری نشانهٔ درج متن (caret) را برمی‌گرداند.
 
 ## Syntax
 
@@ -22,17 +16,17 @@ The `getClientRect()` method of the {{domxref("CaretPosition")}} interface retur
 getClientRect()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("DOMRect")}} object.
+یک شیء {{domxref("DOMRect")}}.
 
-## Examples
+## مثال‌ها
 
-### Get the caret's screen position
+### دریافت موقعیت صفحه‌ای نشانهٔ درج متن
 
 ```html
 <input aria-label="text field" value="Click inside this input field" />
@@ -65,14 +59,14 @@ document.querySelector("input").addEventListener("click", (event) => {
 
   const caret = document.caretPositionFromPoint?.(x, y);
   if (!caret) {
-    log("Not supported");
+    log("پشتیبانی نمی‌شود");
     return;
   }
 
   const rect = caret.getClientRect();
 
-  log(`Caret bounding rect: ${JSON.stringify(rect)}`);
-  log(`Caret is at (${rect.x.toFixed(2)}, ${rect.y.toFixed(2)})`);
+  log(`مستطیل محدودهٔ نشانهٔ درج متن: ${JSON.stringify(rect)}`);
+  log(`نشانهٔ درج متن در موقعیت (${rect.x.toFixed(2)}, ${rect.y.toFixed(2)}) قرار دارد.`);
 });
 ```
 
@@ -86,15 +80,15 @@ function log(text) {
 
 {{EmbedLiveSample("Get the caret's screen position", "", 300)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMRect")}}
 - {{domxref("Document.caretPositionFromPoint()")}}
