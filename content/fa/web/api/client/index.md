@@ -1,10 +1,4 @@
 ---
-title: "Client"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Client"
-status: "needs-translation"
----
-
----
 title: Client
 slug: Web/API/Client
 page-type: web-api-interface
@@ -13,32 +7,32 @@ browser-compat: api.Client
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The `Client` interface represents an executable context such as a {{domxref("Worker")}}, or a {{domxref("SharedWorker")}}. {{domxref("Window")}} clients are represented by the more-specific {{domxref("WindowClient")}}. You can get `Client`/`WindowClient` objects from methods such as {{domxref("Clients.matchAll","Clients.matchAll()")}} and {{domxref("Clients.get","Clients.get()")}}.
+رابط `Client` نمایانگر یک بستر اجرایی مانند {{domxref("Worker")}} یا {{domxref("SharedWorker")}} است. کلاینت‌های {{domxref("Window")}} توسط رابط خاص‌تر {{domxref("WindowClient")}} نمایش داده می‌شوند. می‌توانید اشیاء `Client`/`WindowClient` را از روش‌هایی مانند {{domxref("Clients.matchAll","Clients.matchAll()")}} و {{domxref("Clients.get","Clients.get()")}} دریافت کنید.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("Client.postMessage()")}}
-  - : Sends a message to the client.
+  - : یک پیام به کلاینت ارسال می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("Client.frameType")}} {{ReadOnlyInline}}
-  - : The client's frame type as a string. It can be `"auxiliary"`, `"top-level"`, `"nested"`, or `"none"`.
+  - : نوع قاب کلاینت به‌صورت رشته. می‌تواند `"auxiliary"`، `"top-level"`، `"nested"` یا `"none"` باشد.
 - {{domxref("Client.id")}} {{ReadOnlyInline}}
-  - : The universally unique identifier of the client as a string.
+  - : شناسه یکتای همگانی (UUID) کلاینت به‌صورت رشته.
 - {{domxref("Client.type")}} {{ReadOnlyInline}}
-  - : The client's type as a string. It can be `"window"`, `"worker"`, or `"sharedworker"`.
+  - : نوع کلاینت به‌صورت رشته. می‌تواند `"window"`، `"worker"` یا `"sharedworker"` باشد.
 - {{domxref("Client.url")}} {{ReadOnlyInline}}
-  - : The URL of the client as a string.
+  - : URL کلاینت به‌صورت رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
