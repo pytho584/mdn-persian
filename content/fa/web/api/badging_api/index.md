@@ -1,7 +1,7 @@
 ---
 title: "Badging API"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Badging_API"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,81 +13,78 @@ browser-compat: api.Navigator.setAppBadge
 
 {{DefaultAPISidebar("Badging API")}}{{securecontext_header}}{{AvailableInWorkers}}
 
-The **Badging API** gives web developers a method of setting a badge on a document or application, to act as a notification that state has changed without displaying a more distracting notification. A common use case for this would be an application with a messaging feature displaying a badge on the app icon to show that new messages have arrived.
+**Badging API** به توسعه‌دهندگان وب روشی برای تنظیم یک نشان بر روی یک سند یا برنامه می‌دهد، تا به عنوان اعلانی عمل کند که وضعیت تغییر کرده است بدون نمایش یک اعلان حواس‌پرتی‌کننده‌تر. یک مورد استفاده رایج برای این، برنامه‌ای با ویژگی پیام‌رسانی است که یک نشان بر روی نماد برنامه نمایش می‌دهد تا نشان دهد پیام‌های جدیدی رسیده‌اند.
 
-## Concepts and Usage
+## مفاهیم و کاربرد
 
-Web developers frequently update document favicons or titles in order to indicate status. The Badging API provides a more elegant way to show status, by providing a method which has meaning to the user agent and can therefore be displayed in a way that matches the rest of the UI.
+توسعه‌دهندگان وب اغلب نمادهای برگه (favicon) یا عنوان‌های اسناد را به‌روزرسانی می‌کنند تا وضعیت را نشان دهند. **Badging API** روشی زیباتر برای نمایش وضعیت فراهم می‌کند، با ارائه متدی که برای عامل کاربر معنا دارد و بنابراین می‌تواند به گونه‌ای نمایش داده شود که با بقیه رابط کاربری هماهنگ باشد.
 
-### Types of badges
+### انواع نشان‌ها
 
-There are two types of badges:
+دو نوع نشان وجود دارد:
 
-- Document badges, which are typically shown in the browser tab near or on the page icon.
-- App badges, which are associated with the icon of an installed web app. These may display on the app icon in the dock, shelf, or home screen depending on the device in use.
+- نشان‌های سند که معمولاً در برگه مرورگر در نزدیکی یا روی نماد صفحه نمایش داده می‌شوند.
+- نشان‌های برنامه که با نماد یک برنامه وب نصب‌شده مرتبط هستند. این نشان‌ها ممکن است بر روی نماد برنامه در داک، قفسه یا صفحه اصلی بسته به دستگاه مورد استفاده نمایش داده شوند.
 
-### Badge states
+### حالت‌های نشان
 
-A badge can have one of three possible values, which are set internally:
+یک نشان می‌تواند یکی از سه مقدار ممکن داشته باشد که به صورت داخلی تنظیم می‌شوند:
 
-- `nothing`
-  - : Indicating that no badge is currently set. A badge can be in this state due to it being cleared by the application, or being reset by the user agent.
-- `flag`
-  - : Indicating that the badge is set, but has no specific data to display. A badge will be in this state if the application has set a badge, but has not passed any value to the method.
-- an integer
-  - : A value passed when setting the badge. This value will never be `0`, passing a value of `0` when setting a badge will cause the user agent to clear the badge by setting it to `nothing`.
+- `nothing` (هیچ): نشان می‌دهد که در حال حاضر هیچ نشان‌ای تنظیم نشده است. یک نشان می‌تواند به دلیل پاک شدن توسط برنامه یا بازنشانی توسط عامل کاربر در این حالت باشد.
+- `flag` (پرچم): نشان می‌دهد که نشان تنظیم شده است، اما داده خاصی برای نمایش ندارد. یک نشان در این حالت خواهد بود اگر برنامه یک نشان تنظیم کرده باشد، اما هیچ مقداری به متد ارسال نکرده باشد.
+- یک عدد صحیح: مقداری که هنگام تنظیم نشان ارسال می‌شود. این مقدار هرگز `0` نخواهد بود، ارسال مقدار `0` هنگام تنظیم نشان باعث می‌شود عامل کاربر با تنظیم آن به `nothing` نشان را پاک کند.
 
-### Setting badges
+### تنظیم نشان‌ها
 
-A badge is set with the methods `setAppBadge()` (for installed apps). If no parameters are passed to these methods then the badge value is flag. The user agent will display its notification badge, for example, a colored circle on the icon.
+یک نشان با متدهای `setAppBadge()` (برای برنامه‌های نصب‌شده) تنظیم می‌شود. اگر هیچ پارامتری به این متدها ارسال نشود، مقدار نشان flag خواهد بود. عامل کاربر نشان اعلان خود را نمایش می‌دهد، مثلاً یک دایره رنگی روی نماد.
 
-These methods can also be passed a parameter `contents`, which should be a number. This will then be displayed as part of the badge. User agents may change this value in some way. For example, if you pass a very large number such as 4000, the user agent may display this as 99+ in the badge. User agents may also ignore this data and display a marker instead.
+این متدها همچنین می‌توانند یک پارامتر `contents` دریافت کنند که باید یک عدد باشد. سپس این مقدار به عنوان بخشی از نشان نمایش داده می‌شود. عامل‌های کاربر ممکن است این مقدار را به نحوی تغییر دهند. به عنوان مثال، اگر عدد بسیار بزرگی مانند 4000 ارسال کنید، عامل کاربر ممکن است آن را به صورت 99+ در نشان نمایش دهد. عامل‌های کاربر همچنین ممکن است این داده را نادیده بگیرند و به جای آن یک نشانگر نمایش دهند.
 
-### Clearing badges
+### پاک کردن نشان‌ها
 
-Badges are cleared with the `clearAppBadge()` methods. These do not take any parameters and set the badge to the value `nothing`. Additionally, passing a value of `0` to `setAppBadge()` will set the badge to `nothing` and clear the badge.
+نشان‌ها با متد `clearAppBadge()` پاک می‌شوند. این متدها هیچ پارامتری دریافت نمی‌کنند و نشان را به مقدار `nothing` تنظیم می‌کنند. علاوه بر این، ارسال مقدار `0` به `setAppBadge()` نشان را به `nothing` تنظیم کرده و آن را پاک می‌کند.
 
-## Interfaces
+## رابط‌ها
 
-None.
+هیچکدام.
 
-### Extensions to the Navigator interface
+### افزونه‌های رابط Navigator
 
 - {{domxref("Navigator.setAppBadge()")}}
-  - : Sets a badge on the icon associated with this app.
+  - یک نشان بر روی نماد مرتبط با این برنامه تنظیم می‌کند.
 - {{domxref("Navigator.clearAppBadge()")}}
-  - : Clears the badge on the icon associated with this app.
+  - نشان روی نماد مرتبط با این برنامه را پاک می‌کند.
 
-### Extensions to the WorkerNavigator interface
+### افزونه‌های رابط WorkerNavigator
 
 - {{domxref("WorkerNavigator.setAppBadge()")}}
-  - : Sets a badge on the icon associated with this app.
+  - یک نشان بر روی نماد مرتبط با این برنامه تنظیم می‌کند.
 - {{domxref("WorkerNavigator.clearAppBadge()")}}
-  - : Clears the badge on the icon associated with this app.
+  - نشان روی نماد مرتبط با این برنامه را پاک می‌کند.
 
-## Examples
+## مثال‌ها
 
-To set a notification badge on the current app with a value of 12:
+برای تنظیم یک نشان اعلان بر روی برنامه فعلی با مقدار 12:
 
 ```js
 navigator.setAppBadge(12);
 ```
 
-To clear a notification badge on the current app:
+برای پاک کردن یک نشان اعلان بر روی برنامه فعلی:
 
 ```js
 navigator.clearAppBadge();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Badging for app icons](https://developer.chrome.com/docs/capabilities/web-apis/badging-api)
-- [Badging API Explainer](https://github.com/w3c/badging/blob/main/explainer.md)
+- [نشان‌گذاری برای نمادهای برنامه](https://developer.chrome.com/docs/capabilities/web-apis/badging-api)
+- [توضیح‌دهنده Badging API](https://github.com/w3c/badging/blob/main/explainer.md)
