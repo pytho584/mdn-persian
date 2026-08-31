@@ -1,7 +1,7 @@
 ---
 title: "ARIA: heading role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,44 +15,44 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `heading` role defines this element as a heading to a page or section, with the [`aria-level`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level) attribute providing for more structure.
+نقش `heading` این عنصر را به عنوان عنوان یک صفحه یا بخش تعریف می‌کند و ویژگی [`aria-level`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level) ساختار بیشتری فراهم می‌کند.
 
-## Description
+## توضیحات
 
-The heading role indicates to assistive technologies that this element should be treated like a heading. Screen readers would read the text and indicate that it is formatted like a heading. In addition, the level tells assistive technologies which part of the page structure this heading represents. A level 1 heading, indicated with `aria-level="1"`, usually indicates the main heading of a page, a level 2 heading, defined with `aria-level="2"` the first subsection, a level 3 is a subsection of that, and so on.
+نقش heading به فناوری‌های کمکی نشان می‌دهد که این عنصر باید مانند یک عنوان رفتار شود. صفحه‌خوان‌ها متن را می‌خوانند و نشان می‌دهند که مانند یک عنوان قالب‌بندی شده است. علاوه بر این، سطح به فناوری‌های کمکی می‌گوید که این عنوان کدام بخش از ساختار صفحه را نشان می‌دهد. عنوان سطح ۱، که با `aria-level="1"` نشان داده می‌شود، معمولاً عنوان اصلی یک صفحه را نشان می‌دهد؛ عنوان سطح ۲، که با `aria-level="2"` تعریف می‌شود، اولین زیربخش را نشان می‌دهد؛ سطح ۳ زیربخشی از آن است و به همین ترتیب.
 
 ```html
 <div role="heading" aria-level="1">This is a main page heading</div>
 ```
 
-This defines the text in the `<div>` to be the main heading of the page, indicated by being level 1 via the `aria-level` attribute. Opt for using the {{HTMLElement("Heading_Elements", "h1")}} (through {{HTMLElement("Heading_Elements", "h6")}}) element instead.
+این کار متن درون `<div>` را به عنوان عنوان اصلی صفحه تعریف می‌کند، که با ویژگی `aria-level` در سطح ۱ قرار می‌گیرد. بهتر است به جای آن از عنصر {{HTMLElement("Heading_Elements", "h1")}} (تا {{HTMLElement("Heading_Elements", "h6")}}) استفاده کنید.
 
 ```html
 <h1>This is a main page heading</h1>
 ```
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های WAI-ARIA مرتبط
 
 - [`aria-level`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level)
-  - : The `aria-level` attribute specifies the heading level in the document structure. This attribute is required: authors must indicate the proper nesting level to ensure elements with a `role` of `heading` are organized into a logical outline. If the attribute is erroneously unspecified, then browsers will use a [fallback value of 2](https://w3c.github.io/aria/#authorErrorDefaultValuesTable).
+  - : ویژگی `aria-level` سطح عنوان را در ساختار سند مشخص می‌کند. این ویژگی الزامی است: نویسندگان باید سطح تودرتو مناسب را مشخص کنند تا اطمینان حاصل شود عناصری که `role` آن‌ها `heading` است، در یک طرح کلی منطقی سازماندهی می‌شوند. اگر این ویژگی به اشتباه مشخص نشده باشد، مرورگرها از [مقدار جایگزین ۲](https://w3c.github.io/aria/#authorErrorDefaultValuesTable) استفاده می‌کنند.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-This role does not require any special keyboard navigation. As with any heading, giving it an ID ensures it can be referenced from anchor links, making it accessible via the keyboard.
+این نقش به هیچ ناوبری ویژه صفحه‌کلید نیاز ندارد. مانند هر عنوان، دادن یک ID به آن اطمینان می‌دهد که بتوان از پیوندهای لنگر به آن ارجاع داد و از این طریق با صفحه‌کلید در دسترس باشد.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-- Required event handlers
-  - : None.
-- Changing attribute values
-  - : Usually not required, unless dynamically inserting content. In that case, the newly-added headings need `aria-level` attributes whose values are consistent with the rest of the document structure.
+- کنترل‌کننده‌های رویداد مورد نیاز
+  - : هیچ.
+- تغییر مقادیر ویژگی
+  - : معمولاً لازم نیست، مگر در هنگام درج پویای محتوا. در آن صورت، عنوان‌های تازه‌اضافه‌شده به ویژگی‌های `aria-level` نیاز دارند که مقادیرشان با بقیه ساختار سند سازگار باشد.
 
 > [!NOTE]
-> Instead of using a `<div>` or `<span>` with a `heading` role and `aria-level`, consider using a native {{HTMLElement("Heading_Elements", "h1")}} through {{HTMLElement("Heading_Elements", "h6")}} elements instead to indicate that this text is a heading, and what part of the structure it represents.
+> به جای استفاده از یک `<div>` یا `<span>` با نقش `heading` و `aria-level`، از عناصر بومی {{HTMLElement("Heading_Elements", "h1")}} تا {{HTMLElement("Heading_Elements", "h6")}} استفاده کنید تا نشان دهید این متن یک عنوان است و کدام بخش از ساختار را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The following shows a typical page structure.
+مثال زیر یک ساختار صفحه معمولی را نشان می‌دهد.
 
 ```html
 <div id="container">
@@ -67,7 +67,7 @@ The following shows a typical page structure.
 </div>
 ```
 
-However, instead, you should do:
+با این حال، در عوض باید این کار را انجام دهید:
 
 ```html
 <div id="container">
@@ -82,20 +82,20 @@ However, instead, you should do:
 </div>
 ```
 
-## Accessibility concerns
+## نکات دسترس‌پذیری
 
 > [!WARNING]
-> Using [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) will hide the content of your heading from assistive technologies, reading the label instead of the heading.
+> استفاده از [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) محتوای عنوان شما را از فناوری‌های کمکی پنهان می‌کند و به جای عنوان، برچسب را می‌خوانند.
 
-If you must use the `heading` role and [`aria-level`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level) attribute, do not go over level 6 so that you are consistent with HTML. Although theoretically you can go higher, and some screen readers may support it, the results can be unpredictable with other browser and screen reader combinations.
+اگر مجبور به استفاده از نقش `heading` و ویژگی [`aria-level`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level) هستید، از سطح ۶ فراتر نروید تا با HTML سازگار باشید. اگرچه از نظر تئوری می‌توانید بالاتر بروید و برخی صفحه‌خوان‌ها ممکن است از آن پشتیبانی کنند، اما نتایج در ترکیب‌های دیگر مرورگر و صفحه‌خوان ممکن است غیرقابل پیش‌بینی باشد.
 
-## Best practices
+## بهترین روش‌ها
 
-The best way to use this role is to **not use it at all**, and instead use the native heading tags {{HTMLElement("Heading_Elements", "h1")}} through {{HTMLElement("Heading_Elements", "h6")}} as shown in the example above. The `heading` role and `aria-level` attribute should only be used to retrofit accessibility on legacy code that you cannot make major changes to.
+بهترین راه برای استفاده از این نقش این است که **اصلاً از آن استفاده نکنید** و در عوض از تگ‌های عنوان بومی {{HTMLElement("Heading_Elements", "h1")}} تا {{HTMLElement("Heading_Elements", "h6")}} همانطور که در مثال بالا نشان داده شده استفاده کنید. نقش `heading` و ویژگی `aria-level` فقط باید برای بازسازی دسترس‌پذیری در کدهای قدیمی استفاده شوند که نمی‌توانید تغییرات عمده‌ای در آن‌ها ایجاد کنید.
 
-Instead of using the ARIA `heading` role, use the semantic HTML element:
+به جای استفاده از نقش `heading` در ARIA، از عنصر معنایی HTML استفاده کنید:
 
-| HTML Element                              | `heading` role                        |
+| عنصر HTML                              | نقش `heading`                        |
 | ----------------------------------------- | ------------------------------------- |
 | {{HTMLElement("Heading_Elements", "h1")}} | `<div role="heading" aria-level="1">` |
 | {{HTMLElement("Heading_Elements", "h2")}} | `<div role="heading" aria-level="2">` |
@@ -104,18 +104,18 @@ Instead of using the ARIA `heading` role, use the semantic HTML element:
 | {{HTMLElement("Heading_Elements", "h5")}} | `<div role="heading" aria-level="5">` |
 | {{HTMLElement("Heading_Elements", "h6")}} | `<div role="heading" aria-level="6">` |
 
-### Added benefits
+### مزایای اضافه
 
-None.
+هیچ.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Precedence order
+## ترتیب تقدم
 
-The heading role overrides the native semantic meaning of the element it is being used for. The `aria-level` attribute, in addition, determines what level of heading is being exposed.
+نقش heading بر معنای بومی عنصری که برای آن استفاده می‌شود غلبه می‌کند. علاوه بر این، ویژگی `aria-level` تعیین می‌کند که چه سطحی از عنوان نمایش داده شود.
 
-## See also
+## همچنین ببینید
 
-- [`<h1>` through `<h6>`: The HTML Section Heading elements](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)
+- [`<h1>` تا `<h6>`: عناصر عنوان بخش HTML](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)
