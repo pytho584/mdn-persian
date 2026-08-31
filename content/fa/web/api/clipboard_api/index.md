@@ -1,7 +1,5 @@
 ---
 title: "Clipboard API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API"
-status: "needs-translation"
 ---
 
 ---
@@ -17,93 +15,85 @@ browser-compat:
 
 {{DefaultAPISidebar("Clipboard API")}}
 
-The **Clipboard API** provides the ability to respond to clipboard commands (cut, copy, and paste), as well as to asynchronously read from and write to the system clipboard.
+**Clipboard API** توانایی پاسخ به دستورات کلیپ‌بورد (برش، کپی و چسباندن) و همچنین خواندن و نوشتن ناهمگام (async) در کلیپ‌بورد سیستم را فراهم می‌کند.
 
 > [!NOTE]
-> Use this API in preference to the deprecated {{domxref("document.execCommand()")}} method for accessing the clipboard.
+> برای دسترسی به کلیپ‌بورد، از این API به جای متد منسوخ شده {{domxref("document.execCommand()")}} استفاده کنید.
 
 > [!NOTE]
-> This API is _not available_ in [Web Workers](/en-US/docs/Web/API/Web_Workers_API) (not exposed via {{domxref("WorkerNavigator")}}).
+> این API در [Web Workers](/en-US/docs/Web/API/Web_Workers_API) _در دسترس نیست_ (از طریق {{domxref("WorkerNavigator")}} در معرض دید قرار نمی‌گیرد).
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-The _system clipboard_ is a data buffer belonging to the operating system hosting the browser, which is used for short-term data storage and/or data transfers between documents or applications.
-It is usually implemented as an anonymous, temporary [data buffer](https://en.wikipedia.org/wiki/Data_buffer), sometimes called the _paste buffer_, that can be accessed from most or all programs within the environment via defined programming interfaces.
+_کلیپ‌بورد سیستم_ یک بافر داده (data buffer) متعلق به سیستم‌عامل میزبان مرورگر است که برای ذخیره‌سازی موقت داده‌ها و/یا انتقال داده‌ها بین اسناد یا برنامه‌ها استفاده می‌شود. این معمولاً به عنوان یک [بافر داده](https://en.wikipedia.org/wiki/Data_buffer) موقت و ناشناس پیاده‌سازی می‌شود که گاهی _بافر چسباندن_ (paste buffer) نامیده می‌شود و از طریق واسط‌های برنامه‌نویسی تعریف‌شده، از اکثر یا همه برنامه‌های درون محیط قابل دسترسی است.
 
-The Clipboard API allows users to programmatically read and write text and other kinds of data to and from the system clipboard in [secure contexts](/en-US/docs/Web/Security/Defenses/Secure_Contexts), provided the user has met the criteria outlined in the [Security considerations](#security_considerations).
+Clipboard API به کاربران امکان می‌دهد تا متن و انواع دیگر داده‌ها را به صورت برنامه‌ریزی‌شده (programmatic) از کلیپ‌بورد سیستم بخوانند و بنویسند، البته در [زمینه‌های امن (secure contexts)](/en-US/docs/Web/Security/Defenses/Secure_Contexts) و به شرطی که کاربر معیارهای ذکر شده در بخش [ملاحظات امنیتی](#security_considerations) را برآورده کرده باشد.
 
-Events are fired as the result of {{domxref("Element/cut_event", "cut")}}, {{domxref("Element/copy_event", "copy")}}, and {{domxref("Element/paste_event", "paste")}} operations modifying the clipboard.
-The events have a default action, for example the `copy` action copies the current selection to the system clipboard by default.
-The default action can be overridden by the event handler — see each of the events for more information.
+رویدادها در نتیجه عملیات {{domxref("Element/cut_event", "cut")}} (برش)، {{domxref("Element/copy_event", "copy")}} (کپی) و {{domxref("Element/paste_event", "paste")}} (چسباندن) که کلیپ‌بورد را تغییر می‌دهند، فعال می‌شوند. این رویدادها دارای یک عملکرد پیش‌فرض هستند، برای مثال عملکرد `copy` به طور پیش‌فرض انتخاب فعلی را در کلیپ‌بورد سیستم کپی می‌کند. عملکرد پیش‌فرض می‌تواند توسط کنترل‌کننده رویداد لغو شود — برای اطلاعات بیشتر به هر یک از رویدادها مراجعه کنید.
 
-There is also a {{domxref("Clipboard.clipboardchange_event","clipboardchange")}} event fired directly on the {{domxref("Clipboard")}} object whenever the system clipboard's contents are changed. This is useful for notifying apps of a change to the system clipboard, for example if they have their own clipboard that needs to be kept in sync.
+همچنین یک رویداد {{domxref("Clipboard.clipboardchange_event","clipboardchange")}} وجود دارد که مستقیماً روی شیء {{domxref("Clipboard")}} هر زمان که محتویات کلیپ‌بورد سیستم تغییر کند، فعال می‌شود. این برای اطلاع‌رسانی به برنامه‌ها درباره تغییر در کلیپ‌بورد سیستم مفید است، مثلاً اگر برنامه‌ها کلیپ‌بورد مخصوص خود را داشته باشند که باید همگام‌سازی شود.
 
-## Interfaces
+## واسط‌ها
 
 - {{domxref("Clipboard")}} {{securecontext_inline}}
-  - : Provides an interface for reading and writing text and data to or from the system clipboard.
-    The specification refers to this as the 'Async Clipboard API'.
+  - : یک واسط برای خواندن و نوشتن متن و داده به/از کلیپ‌بورد سیستم فراهم می‌کند. مشخصات فنی از این به عنوان 'Async Clipboard API' یاد می‌کند.
 - {{domxref("ClipboardChangeEvent")}}
-  - : Represents events fired whenever the contents of the system clipboard are changed.
+  - : نمایانگر رویدادهایی است که هر زمان محتویات کلیپ‌بورد سیستم تغییر کند، فعال می‌شوند.
 - {{domxref("ClipboardEvent")}}
-  - : Represents events providing information related to modification of the clipboard, that is {{domxref("Element/cut_event", "cut")}}, {{domxref("Element/copy_event", "copy")}}, and {{domxref("Element/paste_event", "paste")}} events.
-    The specification refers to this as the 'Clipboard Event API'.
+  - : نمایانگر رویدادهایی است که اطلاعات مربوط به تغییر کلیپ‌بورد را ارائه می‌دهند، یعنی رویدادهای {{domxref("Element/cut_event", "cut")}}، {{domxref("Element/copy_event", "copy")}} و {{domxref("Element/paste_event", "paste")}}. مشخصات فنی از این به عنوان 'Clipboard Event API' یاد می‌کند.
 - {{domxref("ClipboardItem")}} {{securecontext_inline}}
-  - : Represents a single item format, used when reading or writing data.
+  - : نمایانگر یک قالب آیتم واحد است که هنگام خواندن یا نوشتن داده استفاده می‌شود.
 
-### Extensions to other interfaces
+### افزونه‌های سایر واسط‌ها
 
-The Clipboard API extends the following APIs, adding the listed features.
+Clipboard API واسط‌های زیر را با افزودن ویژگی‌های ذکر شده گسترش می‌دهد.
 
 - {{domxref("Navigator.clipboard")}} {{readonlyinline}} {{securecontext_inline}}
-  - : Returns a {{domxref("Clipboard")}} object that provides read and write access to the system clipboard.
-- `Element` [`copy`](/en-US/docs/Web/API/Element/copy_event) event
-  - : An event fired whenever the user initiates a copy action.
-- `Element` [`cut`](/en-US/docs/Web/API/Element/cut_event) event
-  - : An event fired whenever the user initiates a cut action.
-- `Element` [`paste`](/en-US/docs/Web/API/Element/paste_event) event
-  - : An event fired whenever the user initiates a paste action.
+  - : یک شیء {{domxref("Clipboard")}} برمی‌گرداند که دسترسی خواندن و نوشتن به کلیپ‌بورد سیستم را فراهم می‌کند.
+- رویداد `Element` [`copy`](/en-US/docs/Web/API/Element/copy_event)
+  - : رویدادی که هر زمان کاربر یک عمل کپی را آغاز کند، فعال می‌شود.
+- رویداد `Element` [`cut`](/en-US/docs/Web/API/Element/cut_event)
+  - : رویدادی که هر زمان کاربر یک عمل برش را آغاز کند، فعال می‌شود.
+- رویداد `Element` [`paste`](/en-US/docs/Web/API/Element/paste_event)
+  - : رویدادی که هر زمان کاربر یک عمل چسباندن را آغاز کند، فعال می‌شود.
 
-## Security considerations
+## ملاحظات امنیتی
 
-The Clipboard API allows users to programmatically read and write text and other kinds of data to and from the system clipboard in [secure contexts](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
+Clipboard API به کاربران امکان می‌دهد تا متن و انواع دیگر داده‌ها را به صورت برنامه‌ریزی‌شده از کلیپ‌بورد سیستم بخوانند و بنویسند، البته در [زمینه‌های امن (secure contexts)](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
 
-When reading from the clipboard, the specification requires that a user has recently interacted with the page ([transient user activation](/en-US/docs/Web/Security/Defenses/User_activation)) and that the call is made as a result of the user interacting with a browser or OS "paste element" (such as choosing "Paste" on a native context menu). In practice, browsers often allow read operations that do not satisfy these requirements, while placing other requirements instead (such as a permission or per-operation prompt).
-For writing to the clipboard the specification expects that the page has been granted the [Permissions API](/en-US/docs/Web/API/Permissions_API) `clipboard-write` permission, and the browser may also require [transient user activation](/en-US/docs/Web/Security/Defenses/User_activation).
-Browsers may place additional restrictions over use of the methods to access the clipboard.
+هنگام خواندن از کلیپ‌بورد، مشخصات فنی ایجاب می‌کند که کاربر اخیراً با صفحه تعامل داشته باشد ([فعال‌سازی موقت کاربر (transient user activation)](/en-US/docs/Web/Security/Defenses/User_activation)) و فراخوانی در نتیجه تعامل کاربر با یک «عنصر چسباندن» مرورگر یا سیستم‌عامل (مانند انتخاب «چسباندن» در منوی زمینه بومی) انجام شود. در عمل، مرورگرها اغلب عملیات خواندنی را که این الزامات را برآورده نمی‌کنند مجاز می‌دانند، اما در عوض الزامات دیگری (مانند مجوز یا درخواست در هر عملیات) قرار می‌دهند.
 
-The {{domxref("Clipboard.clipboardchange_event", "clipboardchange")}} event is only fired with [sticky activation](/en-US/docs/Glossary/Sticky_activation) or after the `clipboard-read` permission is granted.
+برای نوشتن در کلیپ‌بورد، مشخصات فنی انتظار دارد که صفحه مجوز `clipboard-write` از [Permissions API](/en-US/docs/Web/API/Permissions_API) را دریافت کرده باشد، و مرورگر ممکن است به [فعال‌سازی موقت کاربر (transient user activation)](/en-US/docs/Web/Security/Defenses/User_activation) نیز نیاز داشته باشد. مرورگرها ممکن است محدودیت‌های اضافی برای استفاده از متدهای دسترسی به کلیپ‌بورد اعمال کنند.
 
-Browser implementations have diverged from the specification.
-The differences are captured in the [Browser compatibility](#browser_compatibility) section and the current state is summarized below:
+رویداد {{domxref("Clipboard.clipboardchange_event", "clipboardchange")}} تنها با [فعال‌سازی چسبنده (sticky activation)](/en-US/docs/Glossary/Sticky_activation) یا پس از اعطای مجوز `clipboard-read` فعال می‌شود.
 
-Chromium browsers:
+پیاده‌سازی‌های مرورگرها از مشخصات فنی فاصله گرفته‌اند. تفاوت‌ها در بخش [سازگاری مرورگر](#browser_compatibility) ثبت شده است و وضعیت فعلی در زیر خلاصه شده است:
 
-- If a read isn't allowed by the spec and the document has focus, it triggers a request to use permission `clipboard-read`, and succeeds if the permission is granted (either because the user accepted the prompt, or because the permission was granted already).
-- Writing requires either the `clipboard-write` permission or transient activation.
-  If the permission is granted, it persists, and further transient activation is not required.
-- The HTTP [Permissions-Policy](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy) permissions `clipboard-read` and `clipboard-write` must be allowed for {{HTMLElement("iframe")}} elements that access the clipboard.
+مرورگرهای کروم (Chromium):
 
-Firefox & Safari:
+- اگر خواندن طبق مشخصات مجاز نباشد و سند فوکوس داشته باشد، درخواستی برای استفاده از مجوز `clipboard-read` ایجاد می‌کند و در صورت اعطای مجوز (چه به دلیل پذیرش درخواست توسط کاربر یا قبلاً اعطا شده باشد) موفق می‌شود.
+- نوشتن نیاز به مجوز `clipboard-write` یا فعال‌سازی موقت دارد. اگر مجوز اعطا شود، پایدار می‌ماند و فعال‌سازی موقت بیشتری لازم نیست.
+- مجوزهای HTTP [Permissions-Policy](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy) یعنی `clipboard-read` و `clipboard-write` باید برای عناصر {{HTMLElement("iframe")}} که به کلیپ‌بورد دسترسی دارند، مجاز باشند.
 
-- If a read isn't allowed by the spec but transient user activation is still met, it triggers a user prompt in the form of an ephemeral context menu with a single "Paste" option (which becomes enabled after 1 second) and succeeds if the user chooses the option.
-- Writing requires transient activation.
-- The paste-prompt is suppressed if reading same-origin clipboard content, but not cross-origin content.
-- The `clipboard-read` and `clipboard-write` permissions are not supported (and not planned to be supported) by Firefox or Safari.
+فایرفاکس و سافاری:
 
-Firefox [web extensions](/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard):
+- اگر خواندن طبق مشخصات مجاز نباشد اما فعال‌سازی موقت کاربر همچنان برقرار باشد، یک اعلان کاربر به صورت یک منوی زمینه موقت با یک گزینه «چسباندن» (که پس از ۱ ثانیه فعال می‌شود) ایجاد می‌کند و در صورت انتخاب گزینه توسط کاربر موفق می‌شود.
+- نوشتن نیاز به فعال‌سازی موقت دارد.
+- اعلان چسباندن در صورت خواندن محتوای کلیپ‌بورد هم‌ریشه (same-origin) سرکوب می‌شود، اما برای محتوای غیر هم‌ریشه (cross-origin) نه.
+- مجوزهای `clipboard-read` و `clipboard-write` توسط فایرفاکس یا سافاری پشتیبانی نمی‌شوند (و برنامه‌ای برای پشتیبانی ندارند).
 
-- Reading is available to extensions with the web extension [`clipboardRead`](/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions#clipboardread) permission. With this permission, the extension doesn't require transient activation or use the paste prompt. From Firefox 147, reading is also available without the permission in a secure context, with transient activation, and after the user clicks the paste prompt in an ephemeral context menu.
-- Writing is available in a secure context and with transient activation. However, with the web extension [`clipboardWrite`](/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions#clipboardwrite) permission transient activation is not required.
+افزونه‌های وب فایرفاکس:
 
-## Examples
+- خواندن برای افزونه‌هایی که مجوز [`clipboardRead`](/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions#clipboardread) را دارند در دسترس است. با این مجوز، افزونه نیازی به فعال‌سازی موقت یا استفاده از اعلان چسباندن ندارد. از فایرفاکس ۱۴۷، خواندن بدون مجوز نیز در یک زمینه امن، با فعال‌سازی موقت و پس از کلیک کاربر روی اعلان چسباندن در یک منوی زمینه موقت در دسترس است.
+- نوشتن در یک زمینه امن و با فعال‌سازی موقت در دسترس است. با این حال، با مجوز [`clipboardWrite`](/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions#clipboardwrite) فعال‌سازی موقت لازم نیست.
 
-### Accessing the clipboard
+## مثال‌ها
 
-The system clipboard is accessed through the {{domxref("Navigator.clipboard")}} global.
+### دسترسی به کلیپ‌بورد
 
-This snippet fetches the text from the clipboard and appends it to the first element found with the class `editor`.
-Since {{domxref("Clipboard.readText", "readText()")}} returns an empty string if the clipboard isn't text, this code is safe.
+کلیپ‌بورد سیستم از طریق شیء سراسری {{domxref("Navigator.clipboard")}} قابل دسترسی است.
+
+این قطعه کد متن را از کلیپ‌بورد دریافت کرده و به اولین عنصر با کلاس `editor` اضافه می‌کند. از آنجایی که در صورت متنی نبودن کلیپ‌بورد، {{domxref("Clipboard.readText", "readText()")}} یک رشته خالی برمی‌گرداند، این کد ایمن است.
 
 ```js
 navigator.clipboard
@@ -113,10 +103,10 @@ navigator.clipboard
   );
 ```
 
-## Specifications
+## مشخصات فنی
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
