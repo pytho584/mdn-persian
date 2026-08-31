@@ -1,7 +1,7 @@
 ---
 title: "AudioBuffer: getChannelData() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/getChannelData"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,26 +14,26 @@ browser-compat: api.AudioBuffer.getChannelData
 
 {{ APIRef("Web Audio API") }}
 
-The **`getChannelData()`** method of the {{ domxref("AudioBuffer") }} Interface returns a {{jsxref("Float32Array")}} containing the PCM data associated with the channel, defined by the channel parameter (with 0 representing the first channel).
+متد **`getChannelData()`** از رابط {{ domxref("AudioBuffer") }} یک {{jsxref("Float32Array")}} شامل داده‌های PCM مرتبط با کانال را برمی‌گرداند، که با پارامتر `channel` تعریف می‌شود (با ۰ که نشان‌دهندهٔ اولین کانال است).
 
-## Syntax
+## نحو
 
 ```js-nolint
 getChannelData(channel)
 ```
 
-### Parameters
+### پارامترها
 
 - `channel`
-  - : The channel property is an index representing the particular channel to get data for. An index value of 0 represents the first channel. If the `channel` index value is greater than of equal to {{domxref("AudioBuffer.numberOfChannels")}}, an `INDEX_SIZE_ERR` exception will be thrown.
+  - : ویژگی `channel` یک اندیس است که کانال خاصی را برای دریافت داده نمایش می‌دهد. مقدار اندیس ۰ نشان‌دهندهٔ اولین کانال است. اگر مقدار اندیس `channel` بزرگ‌تر یا مساوی با {{domxref("AudioBuffer.numberOfChannels")}} باشد، یک استثنای `INDEX_SIZE_ERR` پرتاب می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Float32Array")}}.
+یک {{jsxref("Float32Array")}}.
 
-## Examples
+## مثال‌ها
 
-In the following example we create a two second buffer, fill it with white noise, and then play it via an {{ domxref("AudioBufferSourceNode") }}. The comments should clearly explain what is going on. You can also [run the code live](https://mdn.github.io/webaudio-examples/audio-buffer/), or [view the source](https://github.com/mdn/webaudio-examples).
+در مثال زیر، یک بافر دو ثانیه‌ای ایجاد می‌کنیم، آن را با نویز سفید پر می‌کنیم و سپس از طریق یک {{ domxref("AudioBufferSourceNode") }} پخش می‌کنیم. کامنت‌ها باید به‌وضوح توضیح دهند که چه اتفاقی می‌افتد. همچنین می‌توانید [اجرای زندهٔ کد](https://mdn.github.io/webaudio-examples/audio-buffer/) را ببینید یا [مشاهدهٔ منبع](https://github.com/mdn/webaudio-examples).
 
 ```js
 const audioCtx = new AudioContext();
@@ -77,14 +77,14 @@ button.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
