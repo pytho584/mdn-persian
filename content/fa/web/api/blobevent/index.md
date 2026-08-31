@@ -1,50 +1,43 @@
 ---
 title: "BlobEvent"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BlobEvent"
-status: "needs-translation"
----
-
----
-title: BlobEvent
-slug: Web/API/BlobEvent
-page-type: web-api-interface
-browser-compat: api.BlobEvent
+translated_by: "n8n + AI"
 ---
 
 {{APIRef("MediaStream Recording")}}
 
-The **`BlobEvent`** interface of the [MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API) represents events associated with a {{domxref("Blob")}}. These blobs are typically, but not necessarily, associated with media content.
+رابط **`BlobEvent`** از [MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API) رویدادهای مرتبط با یک {{domxref("Blob")}} را نمایش می‌دهد. این Blobها معمولاً، اما نه لزوماً، با محتوای رسانه‌ای مرتبط هستند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("BlobEvent.BlobEvent", "BlobEvent()")}}
-  - : Creates a `BlobEvent` event with the given parameters.
+  - : یک رویداد `BlobEvent` را با پارامترهای داده‌شده ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent {{domxref("Event")}}_.
+_ویژگی‌ها را از والد خود {{domxref("Event")}} به ارث می‌برد._
 
 - {{domxref("BlobEvent.data")}} {{ReadOnlyInline}}
-  - : A {{domxref("Blob")}} representing the data associated with the event. The event was fired on the {{domxref("EventTarget")}} because of something happening on that specific {{domxref("Blob")}}.
+  - : یک {{domxref("Blob")}} که داده‌های مرتبط با رویداد را نشان می‌دهد. رویداد روی {{domxref("EventTarget")}} به دلیل رخ دادن چیزی روی همان {{domxref("Blob")}} خاص صادر شد.
 - {{domxref("BlobEvent.timecode")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} indicating the difference between the timestamp of the first chunk in data and the timestamp of the first chunk in the first BlobEvent produced by this recorder. Note that the timecode in the first produced BlobEvent does not need to be zero.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که تفاوت بین برچسب زمانی اولین تکه در داده و برچسب زمانی اولین تکه در اولین BlobEvent تولیدشده توسط این ضبط‌کننده را نشان می‌دهد. توجه داشته باشید که timecode در اولین BlobEvent تولیدشده لازم نیست صفر باشد.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent {{domxref("Event")}}._
+_متد خاصی ندارد؛ متدها را از والد خود {{domxref("Event")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("Event")}} base interface.
-- [MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API): Sends `BlobEvent` objects each time a chunk of media is ready.
+- رابط پایه {{domxref("Event")}}.
+- [MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API): هر بار که یک قطعه رسانه آماده باشد، اشیاء `BlobEvent` را ارسال می‌کند.
 - [Using the MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
