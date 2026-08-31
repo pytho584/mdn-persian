@@ -1,7 +1,7 @@
 ---
 title: "AuthenticatorAssertionResponse: userHandle property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse/userHandle"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,28 +14,28 @@ browser-compat: api.AuthenticatorAssertionResponse.userHandle
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`userHandle`** read-only property of the {{domxref("AuthenticatorAssertionResponse")}} interface is an {{jsxref("ArrayBuffer")}} object providing an opaque identifier for the given user. Such an identifier can be used by the relying party's server to link the user account with its corresponding credentials and other data.
+ویژگی فقط‌خواندنی **`userHandle`** از رابط {{domxref("AuthenticatorAssertionResponse")}} یک شیء {{jsxref("ArrayBuffer")}} است که یک شناسه‌ی مبهم (opaque) برای کاربر معین فراهم می‌کند. چنین شناسه‌ای را سرور طرف تکیه‌کننده می‌تواند برای پیوند دادن حساب کاربر با اعتبارنامه‌ها و سایر داده‌های متناظر آن استفاده کند.
 
-This value is specified as `user.id` in the options passed to the originating {{domxref("CredentialsContainer.create()","navigator.credentials.create()")}} call.
+این مقدار به‌عنوان `user.id` در گزینه‌های ارسال‌شده به فراخوانی اولیه {{domxref("CredentialsContainer.create()","navigator.credentials.create()")}} مشخص می‌شود.
 
-## Value
+## مقدار
 
-An {{jsxref("ArrayBuffer")}} object representing an identifier for the current user. This is not intended to be human-readable. The relying party should make sure that the `user.id` passed into the originating `create()` call does **not** contain any personally identifying information (for example user name, email, or phone number).
+یک شیء {{jsxref("ArrayBuffer")}} که نمایانگر شناسه‌ای برای کاربر فعلی است. این مقدار برای خواندن انسان در نظر گرفته نشده است. طرف تکیه‌کننده باید اطمینان حاصل کند که `user.id` ارسال‌شده به فراخوانی اولیه `create()` حاوی **هیچ** اطلاعات شناسایی شخصی (مانند نام کاربری، ایمیل یا شماره تلفن) نباشد.
 
-For {{domxref("CredentialsContainer.create()","navigator.credentials.create()")}} calls made with a non-empty `allowCredentials` properties, the returned `userHandle` may be null.
+برای فراخوانی‌های {{domxref("CredentialsContainer.create()","navigator.credentials.create()")}} که با ویژگی غیرخالی `allowCredentials` انجام می‌شوند، `userHandle` بازگشتی ممکن است null باشد.
 
-## Examples
+## مثال‌ها
 
-See [Retrieving a public key credential](/en-US/docs/Web/API/CredentialsContainer/get#retrieving_a_public_key_credential) for a detailed example.
+برای یک مثال دقیق، [بازیابی یک اعتبار کلید عمومی](/en-US/docs/Web/API/CredentialsContainer/get#retrieving_a_public_key_credential) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("CredentialsContainer.create()")}} that sets the value of this property
+- {{domxref("CredentialsContainer.create()")}} که مقدار این ویژگی را تعیین می‌کند
