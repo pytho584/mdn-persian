@@ -1,7 +1,8 @@
+```
 ---
 title: "Accessibility information for web authors"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Information_for_Web_authors"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,27 +13,27 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-This document lists guidelines and regulations, how-to's, and tools for checking and repairing accessibility problems with websites.
+این سند فهرستی از دستورالعمل‌ها و مقررات، راهنماهای عملی و ابزارهایی برای بررسی و رفع مشکلات دسترس‌پذیری در وب‌سایت‌ها ارائه می‌دهد.
 
-## Guidelines and Regulations
+## دستورالعمل‌ها و مقررات
 
-- [<abbr>ARIA</abbr> Authoring Practices Guide (<abbr>APG</abbr>)](https://www.w3.org/WAI/ARIA/apg/)
-  - : Guide to accessibility semantics defined by the Accessible Rich Internet Application (<abbr>ARIA</abbr>) specification to create accessible web experiences. Describes how to apply accessibility semantics to common design patterns and widgets, providing design patterns and functional examples.
-- [Web Content Accessibility Guidelines (<abbr>WCAG</abbr>)](https://www.w3.org/WAI/standards-guidelines/wcag/)
-  - : Another important set of guidelines from the W3C _Web Accessibility Initiative (<abbr>WAI</abbr>)_. The European Union is looking to base their upcoming accessibility regulations on these guidelines. These guidelines are discussed on the [<abbr>WAI</abbr> interest group discussion list](https://www.w3.org/WAI/about/groups/waiig/#mailinglist).
-- [ARIA on this site](/en-US/docs/Web/Accessibility/ARIA)
-  - : <abbr>MDN</abbr> guide to all the [ARIA roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) and [ARIA properties](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes), including best practices, related roles and properties, and examples.
+- [<abbr>ARIA</abbr> راهنمای شیوه‌های تألیف (<abbr>APG</abbr>)](https://www.w3.org/WAI/ARIA/apg/)
+  - : راهنمایی برای معناشناسی دسترس‌پذیری که توسط مشخصات برنامه کاربردی اینترنتی غنی از دسترس‌پذیری (<abbr>ARIA</abbr>) تعریف شده است تا تجربه‌های وب قابل دسترسی ایجاد کند. نحوه اعمال معناشناسی دسترس‌پذیری به الگوهای طراحی و ویجت‌های رایج را توصیف می‌کند و الگوهای طراحی و مثال‌های کاربردی ارائه می‌دهد.
+- [دستورالعمل‌های دسترس‌پذیری محتوای وب (<abbr>WCAG</abbr>)](https://www.w3.org/WAI/standards-guidelines/wcag/)
+  - : مجموعه مهم دیگری از دستورالعمل‌های _ابتکار دسترس‌پذیری وب (<abbr>WAI</abbr>)_ در W3C. اتحادیه اروپا قصد دارد مقررات آینده دسترس‌پذیری خود را بر اساس این دستورالعمل‌ها بنا کند. این دستورالعمل‌ها در [فهرست بحث گروه علاقه‌مندان <abbr>WAI</abbr>](https://www.w3.org/WAI/about/groups/waiig/#mailinglist) مورد بحث قرار می‌گیرند.
+- [ARIA در این سایت](/en-US/docs/Web/Accessibility/ARIA)
+  - : <abbr>MDN</abbr> راهنمای همه [نقش‌های ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) و [ویژگی‌های ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes)، شامل بهترین شیوه‌ها، نقش‌ها و ویژگی‌های مرتبط و مثال‌ها.
 
-## How-to's
+## راهنماهای عملی
 
-- [Accessibility for teams](https://digital.gov/guides/accessibility-for-teams/)
-  - : A brief guide from the U.S. General Services administration's Technology Transformation Services covering several accessibility topics with links to "how-to" videos and to related WCAG references.
-- [Accessible Web Page Authoring](https://www.ibm.com/able/requirements/requirements/)
-  - : IBM has made their accessibility requirements that need to be met public and interactive.
+- [دسترس‌پذیری برای تیم‌ها](https://digital.gov/guides/accessibility-for-teams/)
+  - : راهنمای مختصری از خدمات تحول فناوری اداره خدمات عمومی ایالات متحده که چندین موضوع دسترس‌پذیری را پوشش می‌دهد و پیوندهایی به ویدیوهای «چگونگی» و منابع مرتبط با <abbr>WCAG</abbr> دارد.
+- [نویسندگی صفحات وب قابل دسترس](https://www.ibm.com/able/requirements/requirements/)
+  - : IBM الزامات دسترس‌پذیری خود را که باید رعایت شوند به‌صورت عمومی و تعاملی در دسترس قرار داده است.
 
-## Automated Checking & Repair
+## بررسی و ترمیم خودکار
 
-Use a tool to quickly check for common errors in your browser.
+برای بررسی سریع خطاهای رایج در مرورگر خود از یک ابزار استفاده کنید.
 
 - [HTML CodeSniffer](https://squizlabs.github.io/HTML_CodeSniffer/)
 - [aXe](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US)
@@ -40,15 +41,16 @@ Use a tool to quickly check for common errors in your browser.
 - [Accessibility Insights](https://accessibilityinsights.io/)
 - [<abbr>WAVE</abbr>](https://wave.webaim.org/extension/)
 
-Tools to integrate into your build process, programmatically adding accessibility tests, so you can catch errors as you develop your web application:
+ابزارهایی برای ادغام در فرآیند ساخت خود، که به‌صورت برنامه‌نویسی آزمون‌های دسترس‌پذیری را اضافه می‌کنند، تا بتوانید هنگام توسعه برنامه وب خود خطاها را شناسایی کنید:
 
 - [axe-core](https://github.com/dequelabs/axe-core)
 - [jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
 - [Lighthouse Audits](https://github.com/GoogleChrome/lighthouse/blob/main/docs/readme.md#using-programmatically)
 - [AccessLint.js](https://github.com/accesslint/accesslint.js/tree/master)
 
-{{glossary("Continuous integration")}} tools to find accessibility issues in your GitHub pull requests:
+{{glossary("Continuous integration")}} ابزارهایی برای یافتن مشکلات دسترس‌پذیری در درخواست‌های کشش گیت‌هاب شما:
 
 - [AccessLint](https://www.accesslint.com/)
 
-While best to test your web applications with real users, you can simulate color blindness, low vision, low and contrast, and zooming. You should always test your site with out a mouse and touch to test keyboard navigation. You may also want to try your site using voice commands. Try disabling your mouse and using browser extensions like [Web Disability Simulator](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla)
+اگرچه بهترین کار آزمایش برنامه‌های وب با کاربران واقعی است، می‌توانید کوررنگی، کم‌بینایی، کنتراست پایین و بزرگنمایی را شبیه‌سازی کنید. همیشه باید سایت خود را بدون ماوس و بدون لمس، برای آزمایش پیمایش با صفحه‌کلید، امتحان کنید. همچنین ممکن است بخواهید سایت خود را با دستورات صوتی امتحان کنید. سعی کنید ماوس خود را غیرفعال کنید و از افزونه‌های مرورگر مانند [Web Disability Simulator](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) استفاده کنید.
+```
