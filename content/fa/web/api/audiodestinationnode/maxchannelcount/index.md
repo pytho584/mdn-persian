@@ -1,7 +1,7 @@
 ---
 title: "AudioDestinationNode: maxChannelCount property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioDestinationNode/maxChannelCount"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,17 +14,17 @@ browser-compat: api.AudioDestinationNode.maxChannelCount
 
 {{ APIRef("Web Audio API") }}
 
-The `maxChannelCount` property of the {{ domxref("AudioDestinationNode") }} interface is an `unsigned long` defining the maximum amount of channels that the physical device can handle.
+ویژگی `maxChannelCount` از رابط {{ domxref("AudioDestinationNode") }} یک `unsigned long` است که حداکثر تعداد کانال‌هایی را که دستگاه فیزیکی می‌تواند مدیریت کند، تعیین می‌کند.
 
-The {{domxref("AudioNode.channelCount")}} property can be set between 0 and this value (both included). If `maxChannelCount` is `0`, like in {{domxref("OfflineAudioContext")}}, the channel count cannot be changed.
+ویژگی {{domxref("AudioNode.channelCount")}} را می‌توان بین ۰ و این مقدار (هر دو شامل) تنظیم کرد. اگر `maxChannelCount` برابر با `۰` باشد، مانند {{domxref("OfflineAudioContext")}}، تعداد کانال قابل تغییر نیست.
 
-## Value
+## مقدار
 
-An `unsigned long`.
+یک `unsigned long`.
 
-## Examples
+## مثال‌ها
 
-The following would set up an audio graph, featuring an `AudioDestinationNode` with `maxChannelCount` of 2:
+مثال زیر یک گراف صوتی را راه‌اندازی می‌کند که شامل یک `AudioDestinationNode` با `maxChannelCount` برابر با ۲ است:
 
 ```js
 const audioCtx = new AudioContext();
@@ -34,16 +34,16 @@ audioCtx.destination.maxChannelCount = 2;
 gainNode.connect(audioCtx.destination);
 ```
 
-To see a more complete implementation, check out one of our MDN Web Audio examples, such as [Voice-change-o-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) or [Violent Theremin](https://mdn.github.io/webaudio-examples/violent-theremin/).
+برای مشاهده پیاده‌سازی کامل‌تر، یکی از نمونه‌های Web Audio ماز در MDN، مانند [Voice-change-o-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) یا [Violent Theremin](https://mdn.github.io/webaudio-examples/violent-theremin/) را بررسی کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
