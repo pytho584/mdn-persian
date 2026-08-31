@@ -1,7 +1,7 @@
 ---
 title: "AudioParam: minValue property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/minValue"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,19 +14,15 @@ browser-compat: api.AudioParam.minValue
 
 {{APIRef("Web Audio API")}}
 
-The **`minValue`**
-read-only property of the {{domxref("AudioParam")}} interface represents the minimum
-possible value for the parameter's nominal (effective) range.
+خاصیت فقط خواندنی **`minValue`** از رابط {{domxref("AudioParam")}}، حداقل مقدار ممکن برای محدوده اسمی (موثر) پارامتر را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A floating-point {{jsxref("Number")}} indicating the minimum value permitted for the
-parameter's nominal range.
+یک {{jsxref("Number")}} از نوع اعشاری که حداقل مقدار مجاز برای محدوده اسمی پارامتر را مشخص می‌کند.
 
-The default value of `minValue` is the minimum negative single-precision
-floating-point value (-340,282,346,638,528,859,811,704,183,484,516,925,440).
+مقدار پیش‌فرض `minValue`، حداقل مقدار اعشاری تک‌دقت منفی است (-340,282,346,638,528,859,811,704,183,484,516,925,440).
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new AudioContext();
@@ -34,14 +30,14 @@ const gainNode = audioCtx.createGain();
 console.log(gainNode.gain.minValue); // -3.4028234663852886e38
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("AudioParam.maxValue")}}
