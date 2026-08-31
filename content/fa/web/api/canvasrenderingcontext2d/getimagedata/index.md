@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: getImageData() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: getImageData() method"
 short-title: getImageData()
 slug: Web/API/CanvasRenderingContext2D/getImageData
 page-type: web-api-instance-method
@@ -14,21 +8,14 @@ browser-compat: api.CanvasRenderingContext2D.getImageData
 
 {{APIRef("Canvas API")}}
 
-The {{domxref("CanvasRenderingContext2D")}} method
-**`getImageData()`** of the Canvas 2D API returns an
-{{domxref("ImageData")}} object representing the underlying pixel data for a specified
-portion of the canvas.
+متد **`getImageData()`** از {{domxref("CanvasRenderingContext2D")}} در Canvas 2D API یک شیء {{domxref("ImageData")}} را برمی‌گرداند که داده‌های پیکسلی زیرین را برای یک بخش مشخص از canvas نشان می‌دهد.
 
-This method is not affected by the canvas's transformation matrix. If the specified
-rectangle extends outside the bounds of the canvas, the pixels outside the canvas are
-transparent black in the returned `ImageData` object.
+این متد تحت تأثیر ماتریس تبدیل canvas قرار نمی‌گیرد. اگر مستطیل مشخص‌شده از مرزهای canvas خارج شود، پیکسل‌های خارج از canvas در شیء `ImageData` برگشتی به‌صورت سیاه شفاف (transparent black) هستند.
 
 > [!NOTE]
-> Image data can be painted onto a canvas using the
-> {{domxref("CanvasRenderingContext2D.putImageData()", "putImageData()")}} method.
+> داده‌های تصویر را می‌توان با استفاده از متد {{domxref("CanvasRenderingContext2D.putImageData()", "putImageData()")}} روی canvas نقاشی کرد.
 
-You can find more information about `getImageData()` and general
-manipulation of canvas contents in [Pixel manipulation with canvas](/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas).
+اطلاعات بیشتر درباره `getImageData()` و دستکاری کلی محتوای canvas را در [Pixel manipulation with canvas](/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas) بیابید.
 
 ## Syntax
 
@@ -40,55 +27,43 @@ getImageData(sx, sy, sw, sh, settings)
 ### Parameters
 
 - `sx`
-  - : The x-axis coordinate of the top-left corner of the rectangle from which the
-    `ImageData` will be extracted.
+  - : مختصات محور x گوشه بالا-چپ مستطیلی که `ImageData` از آن استخراج خواهد شد.
 - `sy`
-  - : The y-axis coordinate of the top-left corner of the rectangle from which the
-    `ImageData` will be extracted.
+  - : مختصات محور y گوشه بالا-چپ مستطیلی که `ImageData` از آن استخراج خواهد شد.
 - `sw`
-  - : The width of the rectangle from which the `ImageData` will be extracted.
-    Positive values are to the right, and negative to the left.
+  - : عرض مستطیلی که `ImageData` از آن استخراج خواهد شد. مقادیر مثبت به سمت راست و مقادیر منفی به سمت چپ هستند.
 - `sh`
-  - : The height of the rectangle from which the `ImageData` will be extracted.
-    Positive values are down, and negative are up.
+  - : ارتفاع مستطیلی که `ImageData` از آن استخراج خواهد شد. مقادیر مثبت به سمت پایین و مقادیر منفی به سمت بالا هستند.
 - `settings` {{optional_inline}}
-  - : An object with the following properties:
+  - : یک شیء با ویژگی‌های زیر:
     - `colorSpace`
-      - : Specifies the color space of the image data. Can be set to `"srgb"` for the [sRGB color space](https://en.wikipedia.org/wiki/SRGB) or `"display-p3"` for the [display-p3 color space](https://en.wikipedia.org/wiki/DCI-P3).
+      - : فضای رنگی داده‌های تصویر را مشخص می‌کند. می‌تواند به `"srgb"` برای [فضای رنگی sRGB](https://en.wikipedia.org/wiki/SRGB) یا `"display-p3"` برای [فضای رنگی display-p3](https://en.wikipedia.org/wiki/DCI-P3) تنظیم شود.
     - `pixelFormat`
-      - : Specifies the pixel format. Possible values:
-        - `"rgba-unorm8"`, for RGBA with 8 bit per component unsigned normalized format, using a {{jsxref("Uint8ClampedArray")}}.
-        - `"rgba-float16"`, for RGBA with 16 bits per component, using a {{jsxref("Float16Array")}}. Floating-point pixel values allow representing colors in arbitrarily wide gamuts and high dynamic range (HDR).
+      - : فرمت پیکسل را مشخص می‌کند. مقادیر ممکن:
+        - `"rgba-unorm8"`، برای RGBA با فرمت unsigned normalized 8 بیت به ازای هر مؤلفه، با استفاده از {{jsxref("Uint8ClampedArray")}}.
+        - `"rgba-float16"`، برای RGBA با 16 بیت به ازای هر مؤلفه، با استفاده از {{jsxref("Float16Array")}}. مقادیر پیکسل ممیز-شناور امکان نمایش رنگ‌ها در طیف‌های رنگی دلخواه و دامنه دینامیک بالا (HDR) را فراهم می‌کنند.
 
 ### Return value
 
-An {{domxref("ImageData")}} object containing the image data for the rectangle of the
-canvas specified. The coordinates of the rectangle's top-left corner are
-`(sx, sy)`, while the coordinates of the bottom corner are
-`(sx + sw - 1, sy + sh - 1)`.
+یک شیء {{domxref("ImageData")}} شامل داده‌های تصویر برای مستطیل مشخص‌شده از canvas. مختصات گوشه بالا-چپ مستطیل `(sx, sy)` و مختصات گوشه پایین-راست `(sx + sw - 1, sy + sh - 1)` هستند.
 
 > [!NOTE]
-> With certain privacy settings (such as fingerprinting protection), random subtle noise is introduced to the `getImageData()` result to prevent the website from inferring the user's rendering device. Therefore, `putImageData()` and `getImageData()` may not round-trip.
+> با برخی تنظیمات حریم خصوصی (مانند محافظت در برابر اثر انگشت‌گذاری (fingerprinting))، نویز تصادفی ظریفی به نتیجه `getImageData()` اضافه می‌شود تا از استنباط دستگاه رندر کاربر توسط وب‌سایت جلوگیری شود. بنابراین، `putImageData()` و `getImageData()` ممکن است رفت و برگشت کاملی نداشته باشند.
 
 ### Exceptions
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if either `sw` or `sh` are zero.
+  - : اگر `sw` یا `sh` صفر باشند، پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : The canvas contains or may contain pixels which were loaded from an origin other
-    than the one from which the document itself was loaded.
-    To avoid a `SecurityError` {{domxref("DOMException")}} being thrown in this situation,
-    configure CORS to allow the source image to be used in this way.
-    See [Allowing cross-origin use of images and canvas](/en-US/docs/Web/HTML/How_to/CORS_enabled_image).
+  - : canvas حاوی یا ممکن است حاوی پیکسل‌هایی باشد که از یک مبدأ (origin) غیر از مبدأ بارگذاری سند بارگذاری شده‌اند. برای جلوگیری از پرتاب شدن `SecurityError` {{domxref("DOMException")}} در این شرایط، CORS را به‌گونه‌ای پیکربندی کنید که استفاده از تصویر منبع به این روش مجاز باشد. به [Allowing cross-origin use of images and canvas](/en-US/docs/Web/HTML/How_to/CORS_enabled_image) مراجعه کنید.
 
 ## Examples
 
-### Getting image data from a canvas
+### دریافت داده‌های تصویر از یک canvas
 
-This example draws an image, and then uses `getImageData()` to grab a
-portion of the canvas.
+این مثال یک تصویر را رسم می‌کند و سپس از `getImageData()` برای گرفتن بخشی از canvas استفاده می‌کند.
 
-We use `getImageData()` to extract a slice of the image, starting at `(10, 20)`, with a width of `80` and a height of `230`. We then draw this slice three times, positioning the slices progressively below and to the right of the last slice.
+ما از `getImageData()` برای استخراج یک برش از تصویر استفاده می‌کنیم، که از `(10, 20)` شروع می‌شود، با عرض `80` و ارتفاع `230`. سپس این برش را سه بار رسم می‌کنیم و برش‌ها را به‌ترتیب در پایین و سمت راست برش قبلی قرار می‌دهیم.
 
 #### HTML
 
@@ -118,9 +93,9 @@ image.addEventListener("load", () => {
 
 {{EmbedLiveSample("Getting_image_data_from_a_canvas", "", 420)}}
 
-### Color space conversion
+### تبدیل فضای رنگی
 
-The optional `colorSpace` setting allows you to get image data in the desired format.
+تنظیم اختیاری `colorSpace` به شما امکان می‌دهد داده‌های تصویر را در قالب دلخواه دریافت کنید.
 
 ```js
 const context = canvas.getContext("2d", { colorSpace: "display-p3" });
@@ -132,9 +107,9 @@ const imageData = context.getImageData(0, 0, 1, 1, { colorSpace: "srgb" });
 console.log(imageData.colorSpace); // "srgb"
 ```
 
-### Getting data in different pixel formats
+### دریافت داده در قالب‌های پیکسل مختلف
 
-The optional `pixelFormat` setting allows you to get image data in the desired pixel format.
+تنظیم اختیاری `pixelFormat` به شما امکان می‌دهد داده‌های تصویر را در قالب پیکسل دلخواه دریافت کنید.
 
 ```js
 const context = canvas.getContext("2d");
@@ -158,7 +133,7 @@ console.log(float16ImageData.pixelFormat); // "rgba-float16"
 
 ## See also
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
-- {{domxref("ImageData")}} object
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
+- شیء {{domxref("ImageData")}}
 - {{domxref("CanvasRenderingContext2D.putImageData()")}}
 - [Pixel manipulation with canvas](/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas)
