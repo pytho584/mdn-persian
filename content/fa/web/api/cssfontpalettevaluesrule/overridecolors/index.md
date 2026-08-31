@@ -1,11 +1,5 @@
 ---
 title: "CSSFontPaletteValuesRule: overrideColors property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule/overrideColors"
-status: "needs-translation"
----
-
----
-title: "CSSFontPaletteValuesRule: overrideColors property"
 short-title: overrideColors
 slug: Web/API/CSSFontPaletteValuesRule/overrideColors
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.CSSFontPaletteValuesRule.overrideColors
 
 {{APIRef("CSSOM")}}
 
-The read-only **`overrideColors`** property of the {{domxref("CSSFontPaletteValuesRule")}} interface is a string containing a list of color index and color pair that are to be used instead. It is specified in the same format as the corresponding {{cssxref("@font-palette-values/override-colors", "override-colors")}} descriptor.
+خاصیت فقط‌خواندنی **`overrideColors`** در رابط {{domxref("CSSFontPaletteValuesRule")}} رشته‌ای است حاوی فهرستی از اندیس‌های رنگ و جفت‌های رنگی که باید به‌جای رنگ‌های پیش‌فرض استفاده شوند. این خاصیت در قالبی مشابه توصیفگر متناظر {{cssxref("@font-palette-values/override-colors", "override-colors")}} تعریف شده است.
 
-## Value
+## مقدار
 
-A string containing a comma-separated list of color index and color pair
+رشته‌ای حاوی فهرستی جداشده با ویرگول از اندیس‌های رنگ و جفت‌های رنگ.
 
-## Examples
+## مثال‌ها
 
-### Read the overridden color
+### خواندن رنگ جایگزین‌شده
 
-This example first defines a few at-rules, among them two {{cssxref("@font-palette-values")}}. The MDN [live sample](/en-US/docs/MDN/Writing_guidelines/Page_structures/Live_samples) infrastructure combines all the CSS blocks in the example into a single inline style with the id `css-output`, so we first use {{domxref("document.getElementById()")}} to find that sheet.
+این مثال ابتدا چند at-rule تعریف می‌کند، از جمله دو {{cssxref("@font-palette-values")}}. زیرساخت [نمونهٔ زنده](/en-US/docs/MDN/Writing_guidelines/Page_structures/Live_samples) MDN همهٔ بلوک‌های CSS موجود در مثال را در یک استایل درون‌خطی با شناسهٔ `css-output` ترکیب می‌کند؛ بنابراین ابتدا با استفاده از {{domxref("document.getElementById()")}} آن برگه را پیدا می‌کنیم.
 
 #### HTML
 
@@ -93,19 +87,19 @@ button.addEventListener("click", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Read the overridden colors", "100", "125")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{cssxref("@font-palette-values")}} at-rule
-- {{cssxref("@font-palette-values/override-colors", "override-colors")}} descriptor
+- at-rule {{cssxref("@font-palette-values")}}
+- توصیفگر {{cssxref("@font-palette-values/override-colors", "override-colors")}}
