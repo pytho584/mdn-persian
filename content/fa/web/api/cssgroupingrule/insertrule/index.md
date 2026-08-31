@@ -1,11 +1,5 @@
 ---
 title: "CSSGroupingRule: insertRule() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSGroupingRule/insertRule"
-status: "needs-translation"
----
-
----
-title: "CSSGroupingRule: insertRule() method"
 short-title: insertRule()
 slug: Web/API/CSSGroupingRule/insertRule
 page-type: web-api-instance-method
@@ -14,37 +8,36 @@ browser-compat: api.CSSGroupingRule.insertRule
 
 {{ APIRef("CSSOM") }}
 
-The **`insertRule()`** method of the
-{{domxref("CSSGroupingRule")}} interface adds a new CSS rule to a list of CSS rules.
+متد **`insertRule()`** از رابط {{domxref("CSSGroupingRule")}} یک قانون CSS جدید به فهرستی از قوانین CSS اضافه می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 insertRule(rule)
 insertRule(rule, index)
 ```
 
-### Parameters
+### پارامترها
 
 - `rule`
-  - : A string
+  - : یک رشته (string)
 - `index` {{optional_inline}}
-  - : An optional index at which to insert the rule; defaults to 0.
+  - : یک ایندکس اختیاری که قانون در آن درج می‌شود؛ پیش‌فرض ۰ است.
 
-### Return value
+### مقدار بازگشتی
 
-The index of the new rule.
+ایندکس قانون جدید.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if _index_ is greater than the number of child CSS rules.
+  - : اگر `index` بزرگ‌تر از تعداد قوانین CSS فرزند باشد، پرتاب می‌شود.
 - `HierarchyRequestError` {{domxref("DOMException")}}
-  - : Thrown if `rule` cannot be inserted at the specified index due to some CSS constraint.
+  - : اگر `rule` به دلیل برخی محدودیت‌های CSS در ایندکس مشخص‌شده قابل درج نباشد، پرتاب می‌شود.
 - `HierarchyRequestError` {{domxref("DOMException")}}
-  - : Thrown if the `rule` is a valid statement but not a [nested statement](/en-US/docs/Web/CSS/Guides/Syntax/Introduction#nested_statements).
+  - : اگر `rule` یک دستور معتبر باشد اما یک [دستور تو در تو](/en-US/docs/Web/CSS/Guides/Syntax/Introduction#nested_statements) نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 let myRules = document.styleSheets[0].cssRules;
@@ -54,10 +47,10 @@ myRules[0].insertRule(
 ); /* inserts a rule for the HTML element at position 0 */
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
