@@ -1,11 +1,7 @@
 ---
 title: "ARIA: aria-valuemax attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax"
-status: "needs-translation"
----
-
----
-title: "ARIA: aria-valuemax attribute"
+translated_by: "n8n + AI"
 short-title: aria-valuemax
 slug: Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax
 page-type: aria-attribute
@@ -13,22 +9,22 @@ spec-urls: https://w3c.github.io/aria/#aria-valuemax
 sidebar: accessibilitysidebar
 ---
 
-The `aria-valuemax` attribute defines the maximum allowed value for a range widget.
+ویژگی `aria-valuemax` حداکثر مقدار مجاز را برای یک ویجت محدوده تعریف می‌کند.
 
-## Description
+## توضیحات
 
-The `aria-valuemax` attribute defines the maximum value allowed for range widgets. It is similar to the `max` attribute of {{HTMLElement('progress')}}, {{HTMLElement('meter')}}, and {{HTMLElement('input')}} of type [`range`](/en-US/docs/Web/HTML/Reference/Elements/input/range), [`number`](/en-US/docs/Web/HTML/Reference/Elements/input/number) and all the date-time types.
+ویژگی `aria-valuemax` حداکثر مقدار مجاز را برای ویجت‌های محدوده تعریف می‌کند. این ویژگی مشابه ویژگی `max` عناصر {{HTMLElement('progress')}}، {{HTMLElement('meter')}} و {{HTMLElement('input')}} از نوع [`range`](/en-US/docs/Web/HTML/Reference/Elements/input/range)، [`number`](/en-US/docs/Web/HTML/Reference/Elements/input/number) و تمام انواع تاریخ-زمان است.
 
-When creating a range type role, including [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role), [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role), [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role), and [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role) on a non-semantic element, the `aria-valuemax` enables defining a maximum that is more than the minimum value and is a required attribute of `slider`, `scrollbar` and `spinbutton`.
+هنگام ایجاد یک نقش از نوع محدوده، شامل [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)، [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role)، [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role) و [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role) روی یک عنصر غیر معنایی، `aria-valuemax` امکان تعریف حداکثر مقداری که بیشتر از حداقل مقدار است را فراهم می‌کند و یک ویژگی ضروری برای `slider`، `scrollbar` و `spinbutton` است.
 
-Declaring the minimum and maximum values allows assistive technologies to convey the size of the range to users. The minimum value is defined with [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin).
+اعلام حداقل و حداکثر مقادیر به فناوری‌های کمکی امکان می‌دهد تا اندازه محدوده را به کاربران منتقل کنند. حداقل مقدار با [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) تعریف می‌شود.
 
 > [!WARNING]
-> The [`range`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role) role itself should **NOT** be used as it is an ["abstract"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles). The `aria-valuemax` attribute is used on all of the range roles subtypes.
+> خود نقش [`range`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role) **نباید** استفاده شود زیرا یک نقش [«انتزاعی»](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles) است. ویژگی `aria-valuemax` در تمام زیرنوع‌های نقش‌های محدوده استفاده می‌شود.
 
-## Example
+## مثال
 
-The code below shows a slider with a maximum value of 9.
+کد زیر یک نوار لغزنده با حداکثر مقدار ۹ را نشان می‌دهد.
 
 ```html
 <div id="dimesLabel">Dimes</div>
@@ -41,29 +37,29 @@ The code below shows a slider with a maximum value of 9.
   id="dimes"></div>
 ```
 
-## Values
+## مقادیر
 
 - `<number>`
-  - : An integer or decimal number that is greater than the minimum value.
+  - : یک عدد صحیح یا اعشاری که بزرگتر از حداقل مقدار است.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaValueMax")}}
-  - : The [`ariaValueMax`](/en-US/docs/Web/API/Element/ariaValueMax) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-valuemax` attribute.
+  - : ویژگی [`ariaValueMax`](/en-US/docs/Web/API/Element/ariaValueMax) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-valuemax` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaValueMax")}}
-  - : The [`ariaValueMax`](/en-US/docs/Web/API/ElementInternals/ariaValueMax) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-valuemax` attribute.
+  - : ویژگی [`ariaValueMax`](/en-US/docs/Web/API/ElementInternals/ariaValueMax) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-valuemax` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده شده در نقش‌ها:
 
 - [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)
-- [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role) (required)
+- [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role) (ضروری)
 - [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role)
-- [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role) (required)
-- [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role) (required)
+- [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role) (ضروری)
+- [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role) (ضروری)
 
-Inherited into roles:
+به ارث رسیده به نقش‌ها:
 
 - [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)
 - [`progressbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role)
@@ -71,13 +67,13 @@ Inherited into roles:
 - [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
 - [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [`range` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role)
-- [`<input type="range>` element `max` attribute](/en-US/docs/Web/HTML/Reference/Elements/input/range#max)
+- [`range` نقش](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role)
+- [`<input type="range">` عنصر `max` ویژگی](/en-US/docs/Web/HTML/Reference/Elements/input/range#max)
 - [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin)
 - [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow)
