@@ -1,7 +1,7 @@
 ---
 title: "BluetoothCharacteristicProperties: reliableWrite property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothCharacteristicProperties/reliableWrite"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,19 +16,16 @@ browser-compat: api.BluetoothCharacteristicProperties.reliableWrite
 
 {{securecontext_header}}{{APIRef("Bluetooth API")}}{{SeeCompatTable}}
 
-The **`reliableWrite`** read-only property of
-the {{domxref("BluetoothCharacteristicProperties")}} interface returns a
-`boolean` that is `true` if reliable writes to the characteristic
-is permitted.
+ویژگی فقط‌خواندنی **`reliableWrite`** از رابط {{domxref("BluetoothCharacteristicProperties")}} یک `boolean` برمی‌گرداند که اگر نوشتن قابل اعتماد برای مشخصه مجاز باشد، `true` است.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
