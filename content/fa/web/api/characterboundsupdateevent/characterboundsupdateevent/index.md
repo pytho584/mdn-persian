@@ -1,7 +1,5 @@
 ---
 title: "CharacterBoundsUpdateEvent: CharacterBoundsUpdateEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterBoundsUpdateEvent/CharacterBoundsUpdateEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -16,34 +14,34 @@ browser-compat: api.CharacterBoundsUpdateEvent.CharacterBoundsUpdateEvent
 
 {{APIRef("CharacterBoundsUpdateEvent API")}}{{SeeCompatTable}}
 
-The **`CharacterBoundsUpdateEvent()`** constructor returns a new {{DOMxRef("CharacterBoundsUpdateEvent")}} object.
+سازندهی **`CharacterBoundsUpdateEvent()`** یک شیء جدید {{DOMxRef("CharacterBoundsUpdateEvent")}} برمیگرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new CharacterBoundsUpdateEvent(type)
 new CharacterBoundsUpdateEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the type of the event. Possible values: `"characterboundsupdate"`.
+  - : رشتهای است که نوع رویداد را مشخص میکند. مقادیر ممکن: `"characterboundsupdate"`.
 - `options` {{optional_inline}}
-  - : An optional object with the following properties:
+  - : یک شیء اختیاری با ویژگیهای زیر:
     - `rangeStart`
-      - : A number to set the offset of the first character within the editable text region which this event applies to.
+      - : عددی برای تنظیم افست نخستین نویسه در ناحیهی متنی قابل ویرایش که این رویداد روی آن اعمال میشود.
     - `rangeEnd`
-      - : A number to set the offset of the last character within the editable text region which this event applies to.
+      - : عددی برای تنظیم افست آخرین نویسه در ناحیهی متنی قابل ویرایش که این رویداد روی آن اعمال میشود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{DOMxRef("CharacterBoundsUpdateEvent")}} interface it belongs to.
+- رابط {{DOMxRef("CharacterBoundsUpdateEvent")}} که این سازنده به آن تعلق دارد.
