@@ -1,11 +1,5 @@
 ---
 title: "console: group() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/group_static"
-status: "needs-translation"
----
-
----
-title: "console: group() static method"
 short-title: group()
 slug: Web/API/console/group_static
 page-type: web-api-static-method
@@ -14,29 +8,29 @@ browser-compat: api.console.group_static
 
 {{APIRef("Console API")}} {{AvailableInWorkers}}
 
-The **`console.group()`** static method creates a new inline group in the [Web console](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html) log, causing any subsequent console messages to be indented by an additional level, until {{domxref("console/groupEnd_static", "console.groupEnd()")}} is called.
+متد ایستای **`console.group()`** یک گروه درون‌خطی جدید در [وب کنسول](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html) ایجاد می‌کند. در نتیجه، هر پیام کنسول بعدی تا زمانی که {{domxref("console/groupEnd_static", "console.groupEnd()")}} فراخوانی نشود، با یک سطح تورفتگی اضافی نمایش داده می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 console.group()
 console.group(label)
 ```
 
-### Parameters
+### پارامترها
 
 - `label` {{optional_inline}}
-  - : Label for the group.
+  - : برچسب گروه.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-You can use nested groups to help organize your output by visually associating related messages. To create a new nested block, call `console.group()`. The `console.groupCollapsed()` method is similar, but the new block is collapsed and requires clicking a disclosure button to read it.
+می‌توانید از گروه‌های تودرتو برای سازماندهی بهتر خروجی و ارتباط بصری پیام‌های مرتبط استفاده کنید. برای ایجاد یک بلوک تودرتوی جدید، `console.group()` را فراخوانی کنید. متد `console.groupCollapsed()` مشابه است، با این تفاوت که بلوک جدید جمع‌شده بوده و برای خواندن آن نیاز به کلیک روی دکمه‌ی افشا است.
 
-To exit the current group, call `console.groupEnd()`. For example, given this code:
+برای خروج از گروه فعلی، `console.groupEnd()` را فراخوانی کنید. برای مثال، با این کد:
 
 ```js
 console.log("This is the outer level");
@@ -51,24 +45,24 @@ console.groupEnd();
 console.log("Back to the outer level");
 ```
 
-The output looks like this:
+خروجی به این شکل خواهد بود:
 
-![A screenshot of messages nested in the console output.](nesting.png)
+![تصویری از پیام‌های تودرتو در خروجی کنسول.](nesting.png)
 
-See [Using groups in the console](/en-US/docs/Web/API/console#using_groups_in_the_console) in the documentation of {{domxref("console")}} for more details.
+برای جزئیات بیشتر، بخش [استفاده از گروه‌ها در کنسول](/en-US/docs/Web/API/console#using_groups_in_the_console) در مستندات {{domxref("console")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("console/groupEnd_static", "console.groupEnd()")}}
 - {{domxref("console/groupCollapsed_static", "console.groupCollapsed()")}}
-- [Microsoft Edge's documentation for `console.group()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#group)
-- [Node.js documentation for `console.group()`](https://nodejs.org/docs/latest/api/console.html#consolegrouplabel)
-- [Google Chrome's documentation for `console.group()`](https://developer.chrome.com/docs/devtools/console/api/#group)
+- [مستندات Microsoft Edge برای `console.group()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#group)
+- [مستندات Node.js برای `console.group()`](https://nodejs.org/docs/latest/api/console.html#consolegrouplabel)
+- [مستندات Google Chrome برای `console.group()`](https://developer.chrome.com/docs/devtools/console/api/#group)
