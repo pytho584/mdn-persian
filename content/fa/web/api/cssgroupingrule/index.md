@@ -1,10 +1,4 @@
 ---
-title: "CSSGroupingRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSGroupingRule"
-status: "needs-translation"
----
-
----
 title: CSSGroupingRule
 slug: Web/API/CSSGroupingRule
 page-type: web-api-interface
@@ -13,34 +7,34 @@ browser-compat: api.CSSGroupingRule
 
 {{ APIRef("CSSOM") }}
 
-The **`CSSGroupingRule`** interface of the [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model) represents any CSS [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) that contains other rules nested within it.
+رابط **`CSSGroupingRule`** در [مدل شیء CSS](/en-US/docs/Web/API/CSS_Object_Model) نشان‌دهنده‌ی هر [قاعده‌ی at](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) در CSS است که شامل قواعد دیگری درون خود باشد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from {{domxref("CSSRule")}}._
+_این رابط همچنین ویژگی‌های {{domxref("CSSRule")}} را به ارث می‌برد._
 
 - {{domxref("CSSGroupingRule.cssRules")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("CSSRuleList")}} of the CSS rules in the media rule.
+  - : یک {{domxref("CSSRuleList")}} از قواعد CSS موجود در قاعده‌ی رسانه (media rule) را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface also inherits methods from {{domxref("CSSRule")}}._
+_این رابط همچنین روش‌های {{domxref("CSSRule")}} را به ارث می‌برد._
 
 - {{domxref("CSSGroupingRule.deleteRule")}}
-  - : Deletes a rule from the style sheet.
+  - : یک قاعده را از شیوه‌نامه حذف می‌کند.
 - {{domxref("CSSGroupingRule.insertRule")}}
-  - : Inserts a new style rule into the current style sheet.
+  - : یک قاعده‌ی سبک جدید را به شیوه‌نامه‌ی جاری اضافه می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
+- [استفاده از اطلاعات سبک‌دهی پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
