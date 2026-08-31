@@ -1,7 +1,7 @@
 ---
 title: "AnimationTimeline: duration property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationTimeline/duration"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,19 +14,19 @@ browser-compat: api.AnimationTimeline.duration
 
 {{ APIRef("Web Animations") }}
 
-The **`duration`** read-only property of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)'s {{domxref("AnimationTimeline")}} interface returns the maximum value for this timeline or `null`.
+ویژگی فقط‌خواندنی **`duration`** در رابط {{domxref("AnimationTimeline")}} از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)، حداکثر مقدار این خط زمانی (timeline) را برمی‌گرداند یا `null`.
 
-Note that the derived interfaces {{domxref("ViewTimeline")}} and {{domxref("ScrollTimeline")}} always return a duration of 100%, while {{domxref("DocumentTimeline")}} has no duration, and returns `null`.
+توجه داشته باشید که رابط‌های مشتق‌شده {{domxref("ViewTimeline")}} و {{domxref("ScrollTimeline")}} همیشه مدت‌زمان ۱۰۰٪ را برمی‌گردانند، در حالی که {{domxref("DocumentTimeline")}} مدت‌زمانی ندارد و `null` برمی‌گرداند.
 
-## Value
+## مقدار
 
-A number representing the timeline's duration (the maximum value for this timeline) or `null`.
+یک عدد که نشان‌دهنده مدت‌زمان خط زمانی (حداکثر مقدار برای این خط زمانی) است یا `null`.
 
-## Examples
+## مثال‌ها
 
-### View timeline duration
+### مدت‌زمان خط زمانی نمای (View Timeline)
 
-The {{domxref("ViewTimeline")}} always returns a duration of 100% as a {{domxref("CSSUnitValue")}}.
+{{domxref("ViewTimeline")}} همیشه مدت‌زمان ۱۰۰٪ را به صورت یک {{domxref("CSSUnitValue")}} برمی‌گرداند.
 
 ```js
 const subject = document.querySelector(".subject");
@@ -38,9 +38,9 @@ const timeline = new ViewTimeline({
 timeline.duration; // CSSUnitValue { value: 100, unit: "percent" }
 ```
 
-### Scroll timeline duration
+### مدت‌زمان خط زمانی پیمایش (Scroll Timeline)
 
-The {{domxref("ScrollTimeline")}} always returns a duration of 100% as a {{domxref("CSSUnitValue")}}.
+{{domxref("ScrollTimeline")}} همیشه مدت‌زمان ۱۰۰٪ را به صورت یک {{domxref("CSSUnitValue")}} برمی‌گرداند.
 
 ```js
 const timeline = new ScrollTimeline({
@@ -51,26 +51,27 @@ const timeline = new ScrollTimeline({
 timeline.duration; // CSSUnitValue { value: 100, unit: "percent" }
 ```
 
-### Document timeline duration
+### مدت‌زمان خط زمانی سند (Document Timeline)
 
-The {{domxref("DocumentTimeline")}} has no duration.
+{{domxref("DocumentTimeline")}} مدت‌زمانی ندارد.
 
 ```js
 document.timeline.duration; // null
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("AnimationTimeline")}}
-- {{domxref("DocumentTimeline")}} inherits this property
-- {{domxref("ScrollTimeline")}} inherits this property
-- {{domxref("ViewTimeline")}} inherits this property
+- {{domxref("DocumentTimeline")}} این ویژگی را به ارث می‌برد
+- {{domxref("ScrollTimeline")}} این ویژگی را به ارث می‌برد
+- {{domxref("ViewTimeline")}} این ویژگی را به ارث می‌برد
+```
