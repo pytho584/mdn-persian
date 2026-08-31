@@ -1,7 +1,7 @@
 ---
 title: "AudioProcessingEvent: outputBuffer property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioProcessingEvent/outputBuffer"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,17 +16,17 @@ browser-compat: api.AudioProcessingEvent.outputBuffer
 
 {{APIRef("Web Audio API")}}{{Deprecated_header}}
 
-The **`outputBuffer`** read-only property of the {{domxref("AudioProcessingEvent")}} interface represents the output buffer of an audio processing event.
+{{domxref("AudioProcessingEvent")}} 接口的 **`outputBuffer`** 只读属性表示音频处理事件的输出缓冲区。
 
-The output buffer is represented by an {{domxref("AudioBuffer")}} object, which contains a collection of audio channels, each of which is an array of floating-point values representing the audio signal waveform encoded as a series of amplitudes. The number of channels and the length of each channel are determined by the channel count and buffer size properties of the `AudioBuffer`.
+输出缓冲区由 {{domxref("AudioBuffer")}} 对象表示，该对象包含一组音频通道，每个通道都是一个浮点值数组，表示以一系列幅度编码的音频信号波形。通道数和每个通道的长度由 `AudioBuffer` 的通道数和缓冲区大小属性决定。
 
-## Value
+## 值
 
-An {{domxref("AudioBuffer")}} object.
+一个 {{domxref("AudioBuffer")}} 对象。
 
-## Examples
+## 示例
 
-In this example, a {{domxref("ScriptProcessorNode")}} is created with a buffer size of 256 samples, 2 input channels, and 2 output channels. When an {{domxref("ScriptProcessorNode/audioprocess_event", "audioprocess")}} event is fired, the input and output buffers are retrieved from the event object. The audio data in the input buffer is processed, and the result is written to the output buffer. In this case, the audio data is scaled down by a factor of 0.5.
+在此示例中，创建了一个缓冲区大小为 256 个采样、2 个输入通道和 2 个输出通道的 {{domxref("ScriptProcessorNode")}}。当触发 {{domxref("ScriptProcessorNode/audioprocess_event", "audioprocess")}} 事件时，会从事件对象中获取输入和输出缓冲区。处理输入缓冲区中的音频数据，并将结果写入输出缓冲区。在本例中，音频数据按 0.5 的系数缩小。
 
 ```js
 const audioContext = new AudioContext();
@@ -50,15 +50,15 @@ processor.addEventListener("audioprocess", (event) => {
 processor.connect(audioContext.destination);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("AudioProcessingEvent.inputBuffer")}}
 - {{domxref("ScriptProcessorNode")}}
