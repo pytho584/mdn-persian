@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-sort attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-sort"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,37 +13,37 @@ spec-urls: https://w3c.github.io/aria/#aria-sort
 sidebar: accessibilitysidebar
 ---
 
-The `aria-sort` attribute indicates if items in a table or grid are sorted in ascending or descending order.
+ویژگی `aria-sort` نشان می‌دهد که آیا آیتم‌های یک جدول یا شبکه به ترتیب صعودی یا نزولی مرتب شده‌اند.
 
-## Description
+## توضیحات
 
-If a grid or table provides sort functionality, the `aria-sort` attribute should be set to either `ascending` or `descending` (or `other`) on the header cell element for the sorted column or row.
+اگر یک شبکه یا جدول قابلیت مرتب‌سازی را فراهم کند، ویژگی `aria-sort` باید روی عنصر سلول سرستون برای ستون یا ردیف مرتب‌شده، به یکی از مقادیر `ascending` یا `descending` (یا `other`) تنظیم شود.
 
-The `aria-sort` attribute is only set on the currently sorted column or row. Set `aria-sort="ascending"` to indicate the data cells in the column or row are sorted in ascending order. If the sort order is reversed, toggle the value to `aria-sort="descending"`. When a different column or row becomes sorted, the single `aria-sort` attribute is moved to the header cell for the newly sorted column or row with the appropriate value for the sort order.
+ویژگی `aria-sort` فقط روی ستون یا ردیف مرتب‌شده در حال حاضر تنظیم می‌شود. برای نشان دادن اینکه سلول‌های داده در ستون یا ردیف به ترتیب صعودی مرتب شده‌اند، `aria-sort="ascending"` را تنظیم کنید. اگر ترتیب مرتب‌سازی معکوس شود، مقدار را به `aria-sort="descending"` تغییر دهید. هنگامی که یک ستون یا ردیف دیگر مرتب می‌شود، ویژگی `aria-sort` به سلول سرستون ستون یا ردیف جدیداً مرتب‌شده با مقدار مناسب منتقل می‌شود.
 
-The `aria-sort` attribute should only be added to a single table or grid header at a time. The attribute is set to inform assistive technology users which column or row is sorted. It doesn't have any impact on the actual sort order.
+ویژگی `aria-sort` فقط باید در یک زمان به یک سرستون جدول یا شبکه اضافه شود. این ویژگی برای اطلاع‌رسانی به کاربران فناوری‌های کمکی درباره ستون یا ردیف مرتب‌شده تنظیم می‌شود و هیچ تأثیری بر ترتیب واقعی مرتب‌سازی ندارد.
 
-## Examples
+## مثال‌ها
 
-This table loads with the last name column sorted in ascending order.
+این جدول با ستون نام خانوادگی به ترتیب صعودی بارگذاری می‌شود.
 
 ```html
 <table>
   <caption>
-    Steering Committee Members
+    اعضای کمیته راهبری
   </caption>
   <thead>
     <tr>
       <th>
-        <button>First Name</button>
+        <button>نام</button>
       </th>
       <th aria-sort="ascending">
-        <button>Last Name</button>
+        <button>نام خانوادگی</button>
       </th>
       <th>
-        <button>Company</button>
+        <button>شرکت</button>
       </th>
-      <th>Email</th>
+      <th>ایمیل</th>
     </tr>
   </thead>
   <tbody>
@@ -52,41 +52,41 @@ This table loads with the last name column sorted in ascending order.
 </table>
 ```
 
-If a user clicks on the _Last Name_ button, [`aria-pressed="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) would be added to the {{HTMLElement('button')}} element and the `aria-sort` value would be toggled to `"descending"` with JavaScript. If the user clicks on a different header button, the `aria-sort` would be removed from the _Last Name_ header to be placed on the clicked button's {{HTMLElement('th')}} parent.
+اگر کاربر روی دکمه _نام خانوادگی_ کلیک کند، [`aria-pressed="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) به عنصر {{HTMLElement('button')}} اضافه می‌شود و مقدار `aria-sort` با استفاده از جاوااسکریپت به `"descending"` تغییر می‌کند. اگر کاربر روی دکمه سرستون دیگری کلیک کند، `aria-sort` از سرستون _نام خانوادگی_ حذف شده و روی والد {{HTMLElement('th')}} دکمه کلیک‌شده قرار می‌گیرد.
 
-We provided instructions in the caption for assistive technology who may not see the down arrows that we would add with CSS targeting the `th[aria-sort="ascending"]` and `th[aria-sort="descending"]` selectors.
+ما دستورالعمل‌هایی را در عنوان جدول برای فناوری‌های کمکی که ممکن است فلش‌های پایین را نبینند، ارائه داده‌ایم. این فلش‌ها را با استفاده از CSS و انتخابگرهای `th[aria-sort="ascending"]` و `th[aria-sort="descending"]` اضافه خواهیم کرد.
 
-## Values
+## مقادیر
 
 - `ascending`
-  - : Items are sorted in ascending order by this column.
+  - : آیتم‌ها به ترتیب صعودی توسط این ستون مرتب شده‌اند.
 - `descending`
-  - : Items are sorted in descending order by this column.
-- `none` (default)
-  - : There is no defined sort applied to the column.
+  - : آیتم‌ها به ترتیب نزولی توسط این ستون مرتب شده‌اند.
+- `none` (پیش‌فرض)
+  - : هیچ مرتب‌سازی مشخصی برای ستون اعمال نشده است.
 - `other`
-  - : A sorting algorithm other than ascending or descending has been applied.
+  - : یک الگوریتم مرتب‌سازی غیر از صعودی یا نزولی اعمال شده است.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaSort")}}
-  - : The [`ariaSort`](/en-US/docs/Web/API/Element/ariaSort) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-sort` attribute.
+  - : ویژگی [`ariaSort`](/en-US/docs/Web/API/Element/ariaSort) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-sort` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaSort")}}
-  - : The [`ariaSort`](/en-US/docs/Web/API/ElementInternals/ariaSort) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-sort` attribute.
+  - : ویژگی [`ariaSort`](/en-US/docs/Web/API/ElementInternals/ariaSort) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-sort` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده شده در نقش‌ها:
 
 - [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
 - [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [Sortable table example](https://www.w3.org/WAI/ARIA/apg/patterns/table/examples/sortable-table/) - ARIA Authoring Practices Guide (APG)
+- [مثال جدول قابل مرتب‌سازی](https://www.w3.org/WAI/ARIA/apg/patterns/table/examples/sortable-table/) - راهنمای شیوه‌های تألیف ARIA (APG)
 - [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed)
-- The {{HTMLElement('th')}} element
+- عنصر {{HTMLElement('th')}}
