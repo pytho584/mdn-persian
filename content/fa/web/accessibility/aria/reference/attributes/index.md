@@ -1,7 +1,7 @@
 ---
 title: "ARIA states and properties (attributes)"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,18 +12,18 @@ page-type: landing-page
 sidebar: accessibilitysidebar
 ---
 
-This page lists reference pages covering all the <abbr>WAI-ARIA</abbr> attributes discussed on MDN.
+این صفحه صفحات مرجع مربوط به تمام ویژگی‌های <abbr>WAI-ARIA</abbr> مورد بحث در MDN را فهرست می‌کند.
 
-<abbr>ARIA</abbr> attributes enable modifying an element's states and properties as defined in the accessibility tree.
+ویژگی‌های <abbr>ARIA</abbr> امکان تغییر حالت‌ها و ویژگی‌های یک عنصر را همان‌گونه که در درخت دسترس‌پذیری تعریف شده است، فراهم می‌کنند.
 
 > [!NOTE]
-> ARIA only modifies the accessibility tree, modifying how assistive technology presents the content to your users. ARIA doesn't change anything about an element's function or behavior. When not using semantic HTML elements for their intended purpose and default functionality, you must use JavaScript to manage behavior, focus, and ARIA states.
+> ARIA فقط درخت دسترس‌پذیری را تغییر می‌دهد و نحوه ارائه محتوا به کاربران توسط فناوری کمکی را اصلاح می‌کند. ARIA هیچ چیزی را در مورد عملکرد یا رفتار یک عنصر تغییر نمی‌دهد. وقتی از عناصر معنایی HTML برای هدف مورد نظر و عملکرد پیش‌فرض آن‌ها استفاده نمی‌کنید، باید از JavaScript برای مدیریت رفتار، تمرکز و حالت‌های ARIA استفاده کنید.
 
-## ARIA attribute types
+## انواع ویژگی‌های ARIA
 
-There are 4 categories of ARIA states and properties:
+4 دسته از حالت‌ها و ویژگی‌های ARIA وجود دارد:
 
-### Widget attributes
+### ویژگی‌های ویجت
 
 - [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete)
 - [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked)
@@ -50,19 +50,19 @@ There are 4 categories of ARIA states and properties:
 - [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow)
 - [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext)
 
-### Live region attributes
+### ویژگی‌های ناحیه زنده
 
 - [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy)
 - [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live)
 - [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant)
 - [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic)
 
-### Drag-and-Drop attributes
+### ویژگی‌های کشیدن و رها کردن
 
 - [`aria-dropeffect`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-dropeffect)
 - [`aria-grabbed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-grabbed)
 
-### Relationship attributes
+### ویژگی‌های رابطه
 
 - [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant)
 - [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount)
@@ -82,11 +82,11 @@ There are 4 categories of ARIA states and properties:
 - [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan)
 - [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize)
 
-## Global ARIA attributes
+## ویژگی‌های سراسری ARIA
 
-Some states and properties apply to all HTML elements regardless of whether an ARIA role is applied. These are defined as "Global" attributes. Global states and properties are supported by all roles and base markup elements.
+برخی از حالت‌ها و ویژگی‌ها بدون توجه به اینکه نقش ARIA اعمال شده باشد یا نه، روی همه عناصر HTML اعمال می‌شوند. این‌ها به‌عنوان ویژگی‌های «سراسری» تعریف می‌شوند. حالت‌ها و ویژگی‌های سراسری توسط همه نقش‌ها و عناصر پایه نشانه‌گذاری پشتیبانی می‌شوند.
 
-Many of the above attributes are global, meaning they can be included on any element unless specifically disallowed:
+بسیاری از ویژگی‌های بالا سراسری هستند، به این معنی که می‌توان آن‌ها را روی هر عنصری گنجاند مگر اینکه به‌طور خاص منع شده باشند:
 
 - [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic)
 - [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy)
@@ -111,14 +111,14 @@ Many of the above attributes are global, meaning they can be included on any ele
 - [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant)
 - [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription)
 
-By "specifically disallowed," all the above attributes are global except for the `aria-label` and `aria-labelledby` properties, which are not allowed on elements with role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) nor its synonym [`none`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/none_role) role.
+با «منع به‌طور خاص»، همه ویژگی‌های بالا سراسری هستند به‌جز ویژگی‌های `aria-label` و `aria-labelledby` که روی عناصر دارای نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) و همچنین نقش مترادف آن [`none`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/none_role) مجاز نیستند.
 
-## Index of states and properties
+## فهرست حالت‌ها و ویژگی‌ها
 
-The following are the reference pages covering the <abbr>WAI-ARIA</abbr> states and properties described on <abbr>MDN</abbr>.
+در ادامه صفحات مرجعی هستند که حالت‌ها و ویژگی‌های WAI-ARIA توصیف‌شده در MDN را پوشش می‌دهند.
 
 {{SubpagesWithSummaries}}
 
-## See also
+## همچنین ببینید
 
 - [Using ARIA: roles, states, and properties](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques)
