@@ -1,7 +1,5 @@
 ---
 title: "console: time() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/time_static"
-status: "needs-translation"
 ---
 
 ---
@@ -14,37 +12,37 @@ browser-compat: api.console.time_static
 
 {{APIRef("Console API")}} {{AvailableInWorkers}}
 
-The **`console.time()`** static method starts a timer you can use to track how long an operation takes. You give each timer a unique name, and may have up to 10,000 timers running on a given page. When you call {{domxref("console/timeEnd_static", "console.timeEnd()")}} with the same name, the browser will output the time, in milliseconds, that elapsed since the timer was started.
+متد ایستای **`console.time()`** یک زمان‌سنج را شروع می‌کند که می‌توانید برای پیگیری مدت‌زمان اجرای یک عملیات از آن استفاده کنید. به هر زمان‌سنج یک نام یکتا بدهید؛ در هر صفحه می‌توانید حداکثر ۱۰٬۰۰۰ زمان‌سنج فعال داشته باشید. وقتی با همان نام {{domxref("console/timeEnd_static", "console.timeEnd()")}} را فراخوانی کنید، مرورگر مدت‌زمان سپری‌شده از شروع زمان‌سنج را برحسب میلی‌ثانیه نمایش می‌دهد.
 
-See [Timers](/en-US/docs/Web/API/console#timers) in the {{domxref("console")}} documentation for details and examples.
+برای جزئیات و مثال‌ها، بخش [زمان‌سنج‌ها](/en-US/docs/Web/API/console#timers) را در مستندات {{domxref("console")}} ببینید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 console.time()
 console.time(label)
 ```
 
-### Parameters
+### پارامترها
 
 - `label` {{optional_inline}}
-  - : A string representing the name to give the new timer. This will identify the timer; use the same name when calling {{domxref("console/timeEnd_static", "console.timeEnd()")}} to stop the timer and get the time output to the console. If omitted, the label `"default"` is used.
+  - : رشته‌ای است که نام زمان‌سنج جدید را مشخص می‌کند. این نام، زمان‌سنج را شناسایی می‌کند؛ هنگام فراخوانی {{domxref("console/timeEnd_static", "console.timeEnd()")}} از همین نام استفاده کنید تا زمان‌سنج متوقف شود و مدت‌زمان سپری‌شده در کنسول نمایش داده شود. اگر این پارامتر حذف شود، برچسب `"default"` استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- See {{domxref("console/timeLog_static", "console.timeLog()")}} and {{domxref("console/timeEnd_static", "console.timeEnd()")}} for examples
-- [Microsoft Edge's documentation for `console.time()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#time)
-- [Node.js documentation for `console.time()`](https://nodejs.org/docs/latest/api/console.html#consoletimelabel)
-- [Google Chrome's documentation for `console.time()`](https://developer.chrome.com/docs/devtools/console/api/#time)
+- برای مثال‌ها، {{domxref("console/timeLog_static", "console.timeLog()")}} و {{domxref("console/timeEnd_static", "console.timeEnd()")}} را ببینید
+- [مستندات `console.time()` در Microsoft Edge](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#time)
+- [مستندات `console.time()` در Node.js](https://nodejs.org/docs/latest/api/console.html#consoletimelabel)
+- [مستندات `console.time()` در Google Chrome](https://developer.chrome.com/docs/devtools/console/api/#time)
