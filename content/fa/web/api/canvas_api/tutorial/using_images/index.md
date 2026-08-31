@@ -1,7 +1,7 @@
 ---
 title: "Using images"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,46 +12,46 @@ page-type: guide
 
 {{DefaultAPISidebar("Canvas API")}} {{PreviousNext("Web/API/Canvas_API/Tutorial/Drawing_text", "Web/API/Canvas_API/Tutorial/Transformations" )}}
 
-Until now we have created our own [shapes](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes) and [applied styles](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) to them. One of the more exciting features of {{HTMLElement("canvas")}} is the ability to use images. These can be used to do dynamic photo compositing or as backdrops of graphs, for sprites in games, and so forth. External images can be used in any format supported by the browser, such as PNG, GIF, or JPEG. You can even use the image produced by other canvas elements on the same page as the source!
+تاکنون [شکل‌های](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes) خود را ایجاد کرده‌ایم و [سبک‌هایی](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) به آن‌ها اعمال کرده‌ایم. یکی از ویژگی‌های هیجان‌انگیزتر {{HTMLElement("canvas")}} قابلیت استفاده از تصاویر است. از این تصاویر می‌توان برای ترکیب‌بندی پویای عکس‌ها یا به عنوان پس‌زمینه نمودارها، برای اسپرایت‌ها در بازی‌ها و موارد دیگر استفاده کرد. تصاویر خارجی را می‌توان در هر قالبی که مرورگر پشتیبانی می‌کند، مانند PNG، GIF یا JPEG استفاده کرد. حتی می‌توانید از تصویری که توسط سایر عناصر canvas در همان صفحه تولید شده است به عنوان منبع استفاده کنید!
 
-Importing images into a canvas is basically a two step process:
+وارد کردن تصاویر به canvas اساساً یک فرآیند دو مرحله‌ای است:
 
-1. Get a reference to an {{domxref("HTMLImageElement")}} object or to another canvas element as a source. It is also possible to use images by providing a URL.
-2. Draw the image on the canvas using the `drawImage()` function.
+1. یک مرجع به یک شی {{domxref("HTMLImageElement")}} یا به یک عنصر canvas دیگر به عنوان منبع به دست آورید. همچنین می‌توان با ارائه یک URL از تصاویر استفاده کرد.
+2. تصویر را با استفاده از تابع `drawImage()` روی canvas رسم کنید.
 
-Let's take a look at how to do this.
+بیایید نحوه انجام این کار را بررسی کنیم.
 
-## Getting images to draw
+## به دست آوردن تصاویر برای رسم
 
-The canvas API is able to use any of the following data types as an image source:
+API canvas قادر است از هر یک از انواع داده‌های زیر به عنوان منبع تصویر استفاده کند:
 
 - {{domxref("HTMLImageElement")}}
-  - : These are images created using the `Image()` constructor, as well as any {{HTMLElement("img")}} element.
+  - : این‌ها تصاویری هستند که با استفاده از سازنده `Image()` ایجاد می‌شوند، همچنین هر عنصر {{HTMLElement("img")}}.
 - {{domxref("SVGImageElement")}}
-  - : These are images embedded using the {{SVGElement("image")}} element.
+  - : این‌ها تصاویری هستند که با استفاده از عنصر {{SVGElement("image")}} جاسازی شده‌اند.
 - {{domxref("HTMLVideoElement")}}
-  - : Using an HTML {{HTMLElement("video")}} element as your image source grabs the current frame from the video and uses it as an image.
+  - : استفاده از یک عنصر HTML {{HTMLElement("video")}} به عنوان منبع تصویر، فریم فعلی از ویدیو را گرفته و از آن به عنوان یک تصویر استفاده می‌کند.
 - {{domxref("HTMLCanvasElement")}}
-  - : You can use another {{HTMLElement("canvas")}} element as your image source.
+  - : می‌توانید از یک عنصر {{HTMLElement("canvas")}} دیگر به عنوان منبع تصویر خود استفاده کنید.
 - {{domxref("ImageBitmap")}}
-  - : A bitmap image, eventually cropped. Such type are used to extract part of an image, a _sprite_, from a larger image
+  - : یک تصویر بیت‌مپ، که احتمالاً برش خورده است. از این نوع برای استخراج بخشی از یک تصویر، یک _اسپرایت_، از یک تصویر بزرگتر استفاده می‌شود.
 - {{domxref("OffscreenCanvas")}}
-  - : A special kind of `<canvas>` that is not displayed and is prepared without being displayed. Using such an image source allows to switch to it without the composition of the content to be visible to the user.
+  - : یک نوع خاص از `<canvas>` که نمایش داده نمی‌شود و بدون نمایش آماده می‌شود. استفاده از چنین منبع تصویری امکان تغییر به آن را بدون اینکه ترکیب محتوا برای کاربر قابل مشاهده باشد، فراهم می‌کند.
 - {{domxref("VideoFrame")}}
-  - : An image representing one single frame of a video.
+  - : یک تصویر که نمایانگر یک فریم واحد از یک ویدیو است.
 
-There are several ways to get images for use on a canvas.
+چندین راه برای به دست آوردن تصاویر برای استفاده در canvas وجود دارد.
 
-### Using images from the same page
+### استفاده از تصاویر از همان صفحه
 
-We can obtain a reference to images on the same page as the canvas by using one of:
+می‌توانیم با استفاده از یکی از روش‌های زیر یک مرجع به تصاویر موجود در همان صفحه canvas به دست آوریم:
 
-- The {{domxref("document.images")}} collection
-- The {{domxref("document.getElementsByTagName()")}} method
-- If you know the ID of the specific image you wish to use, you can use {{domxref("document.getElementById()")}} to retrieve that specific image
+- مجموعه {{domxref("document.images")}}
+- متد {{domxref("document.getElementsByTagName()")}}
+- اگر ID تصویر خاصی را که می‌خواهید استفاده کنید می‌دانید، می‌توانید از {{domxref("document.getElementById()")}} برای بازیابی آن تصویر خاص استفاده کنید.
 
-If you want to use many images or [lazy-load resources](/en-US/docs/Web/Performance/Guides/Lazy_loading), you probably need to wait for all the files to be available before drawing to the canvas.
-The example below deals with multiple images using an async function and [`Promise.all`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) to wait for all images to load before calling `drawImage()`:
+اگر می‌خواهید از تصاویر زیادی استفاده کنید یا [منابع را با بارگذاری تنبل (lazy-load)](/en-US/docs/Web/Performance/Guides/Lazy_loading) بارگذاری کنید، احتمالاً باید منتظر بمانید تا همه فایل‌ها قبل از رسم روی canvas در دسترس باشند.
+مثال زیر با استفاده از یک تابع ناهمگام (async) و [`Promise.all`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) چندین تصویر را مدیریت می‌کند تا قبل از فراخوانی `drawImage()` منتظر بارگذاری همه تصاویر بماند:
 
 ```js
 async function draw() {
@@ -69,17 +69,17 @@ async function draw() {
 draw();
 ```
 
-### Creating images from scratch
+### ایجاد تصاویر از ابتدا
 
-Another option is to create new {{domxref("HTMLImageElement")}} objects in our script. To do this, we have the convenience of an `Image()` constructor:
+گزینه دیگر ایجاد اشیاء جدید {{domxref("HTMLImageElement")}} در اسکریپت ما است. برای این کار، یک سازنده `Image()` راحت داریم:
 
 ```js
 const img = new Image(); // Create new img element
 img.src = "myImage.png"; // Set source path
 ```
 
-When this script gets executed, the image starts loading, but if you try to call `drawImage()` before the image has finished loading, it won't do anything.
-Older browsers may even throw an exception, so you need to be sure to use the [load event](/en-US/docs/Web/API/HTMLElement/load_event) so you don't draw the image to the canvas before it's ready:
+وقتی این اسکریپت اجرا می‌شود، تصویر شروع به بارگذاری می‌کند، اما اگر قبل از اتمام بارگذاری تصویر سعی کنید `drawImage()` را فراخوانی کنید، کاری انجام نمی‌دهد.
+مرورگرهای قدیمی‌تر ممکن است حتی یک استثنا پرتاب کنند، بنابراین باید مطمئن شوید که از [رویداد load](/en-US/docs/Web/API/HTMLElement/load_event) استفاده می‌کنید تا تصویر را قبل از آماده شدن روی canvas رسم نکنید:
 
 ```js
 const ctx = document.getElementById("canvas").getContext("2d");
@@ -92,11 +92,11 @@ img.addEventListener("load", () => {
 img.src = "myImage.png";
 ```
 
-Whether you have `<img>` elements in your markup or you create them programmatically in JavaScript, external images may have [CORS](/en-US/docs/Web/HTTP/Guides/CORS) restrictions. By default, externally fetched images [taint the canvas](/en-US/docs/Web/HTML/How_to/CORS_enabled_image#security_and_tainted_canvases), preventing your site from reading data cross-origin. Using the [`crossorigin`](/en-US/docs/Web/HTML/Reference/Elements/img#crossorigin) attribute of an {{HTMLElement("img")}} element (reflected by the {{domxref("HTMLImageElement.crossOrigin")}} property), you can request permission to load an image from another domain using CORS. If the hosting domain permits cross-domain access to the image, the image can be used in your canvas without tainting it.
+چه عناصر `<img>` در نشانه‌گذاری خود داشته باشید یا آن‌ها را به صورت برنامه‌نویسی در جاوااسکریپت ایجاد کنید، تصاویر خارجی ممکن است دارای محدودیت‌های [CORS](/en-US/docs/Web/HTTP/Guides/CORS) باشند. به طور پیش‌فرض، تصاویر واکشی شده از خارج [canvas را آلوده (taint) می‌کنند](/en-US/docs/Web/HTML/How_to/CORS_enabled_image#security_and_tainted_canvases) و از خواندن داده‌های بین‌دامنه‌ای توسط سایت شما جلوگیری می‌کنند. با استفاده از ویژگی [`crossorigin`](/en-US/docs/Web/HTML/Reference/Elements/img#crossorigin) یک عنصر {{HTMLElement("img")}} (که توسط ویژگی {{domxref("HTMLImageElement.crossOrigin")}} منعکس می‌شود)، می‌توانید برای بارگذاری یک تصویر از دامنه دیگر با استفاده از CORS درخواست مجوز دهید. اگر دامنه میزبان به دسترسی بین‌دامنه‌ای به تصویر اجازه دهد، می‌توان از تصویر در canvas شما بدون آلوده کردن آن استفاده کرد.
 
-### Embedding an image via data: URL
+### جاسازی یک تصویر از طریق داده: URL
 
-Another possible way to include images is via the [data: URL](/en-US/docs/Web/URI/Reference/Schemes/data). Data URLs allow you to completely define an image as a Base64 encoded string of characters directly in your code.
+روش ممکن دیگر برای شامل کردن تصاویر از طریق [data: URL](/en-US/docs/Web/URI/Reference/Schemes/data) است. داده URLs به شما این امکان را می‌دهد که یک تصویر را به طور کامل به عنوان یک رشته کاراکتر کدگذاری شده Base64 مستقیماً در کد خود تعریف کنید.
 
 ```js
 const img = new Image(); // Create new img element
@@ -104,19 +104,19 @@ img.src =
   "data:image/gif;base64,R0lGODlhCwALAIAAAAAA3pn/ZiH5BAEAAAEALAAAAAALAAsAAAIUhA+hkcuO4lmNVindo7qyrIXiGBYAOw==";
 ```
 
-One advantage of data URLs is that the resulting image is available immediately without another round trip to the server. Another potential advantage is that it is also possible to encapsulate in one file all of your [CSS](/en-US/docs/Web/CSS), [JavaScript](/en-US/docs/Web/JavaScript), [HTML](/en-US/docs/Web/HTML), and images, making it more portable to other locations.
+یک مزیت داده URLs این است که تصویر حاصل بلافاصله بدون رفت و برگشت اضافی به سرور در دسترس است. مزیت بالقوه دیگر این است که می‌توان تمام [CSS](/en-US/docs/Web/CSS)، [جاوااسکریپت](/en-US/docs/Web/JavaScript)، [HTML](/en-US/docs/Web/HTML) و تصاویر خود را در یک فایل کپسوله کرد و آن را به مکان‌های دیگر قابل حمل‌تر کرد.
 
-Some disadvantages of this method are that your image is not cached, and for larger images the encoded URL can become quite long.
+برخی از معایب این روش این است که تصویر شما ذخیره نمی‌شود (cached) و برای تصاویر بزرگتر، URL کدگذاری شده می‌تواند بسیار طولانی شود.
 
-### Using other canvas elements
+### استفاده از سایر عناصر canvas
 
-Just as with normal images, we access other canvas elements using either the {{domxref("document.getElementsByTagName()")}} or {{domxref("document.getElementById()")}} method. Be sure you've drawn something to the source canvas before using it in your target canvas.
+درست مانند تصاویر معمولی، با استفاده از متد {{domxref("document.getElementsByTagName()")}} یا {{domxref("document.getElementById()")}} به سایر عناصر canvas دسترسی پیدا می‌کنیم. قبل از استفاده از canvas منبع در canvas مقصد، مطمئن شوید که چیزی روی آن رسم کرده‌اید.
 
-One of the more practical uses of this would be to use a second canvas element as a thumbnail view of the other larger canvas.
+یکی از کاربردهای عملی‌تر این کار، استفاده از یک عنصر canvas دوم به عنوان نمای بندانگشتی از canvas بزرگتر دیگر است.
 
-### Using frames from a video
+### استفاده از فریم‌های یک ویدیو
 
-You can also use frames from a video being presented by a {{HTMLElement("video")}} element (even if the video is not visible). For example, if you have a {{HTMLElement("video")}} element with the ID "myVideo", you can do this:
+همچنین می‌توانید از فریم‌های یک ویدیو که توسط یک عنصر {{HTMLElement("video")}} ارائه می‌شود استفاده کنید (حتی اگر ویدیو قابل مشاهده نباشد). به عنوان مثال، اگر یک عنصر {{HTMLElement("video")}} با ID "myVideo" دارید، می‌توانید این کار را انجام دهید:
 
 ```js
 const video = document.getElementById("myVideo");
@@ -124,21 +124,21 @@ video.currentTime = 10; // Seek to 10 seconds into the video
 video.pause(); // Pause the video to freeze the frame
 ```
 
-Now the {{domxref("HTMLVideoElement")}} is at the 10 second mark, and you can draw the current frame to your canvas. To make sure that the frame is available when you call `drawImage()`, call `drawImage()` within [`requestVideoFrameCallback()`](/en-US/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback#drawing_video_frames_on_a_canvas).
+اکنون {{domxref("HTMLVideoElement")}} در ثانیه ۱۰ قرار دارد و می‌توانید فریم فعلی را روی canvas خود رسم کنید. برای اطمینان از اینکه فریم هنگام فراخوانی `drawImage()` در دسترس است، `drawImage()` را در داخل [`requestVideoFrameCallback()`](/en-US/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback#drawing_video_frames_on_a_canvas) فراخوانی کنید.
 
-## Drawing images
+## رسم تصاویر
 
-Once we have a reference to our source image object we can use the `drawImage()` method to render it to the canvas. As we will see later the `drawImage()` method is overloaded and has several variants. In its most basic form it looks like this:
+هنگامی که یک مرجع به شیء تصویر منبع خود داریم، می‌توانیم از متد `drawImage()` برای رندر کردن آن روی canvas استفاده کنیم. همانطور که بعداً خواهیم دید، متد `drawImage()` بارگذاری شده (overloaded) است و چندین نوع دارد. در ساده‌ترین شکل آن به این صورت است:
 
 - {{domxref("CanvasRenderingContext2D.drawImage", "drawImage(image, x, y)")}}
-  - : Draws the image specified by the `image` parameter at the coordinates (`x`, `y`).
+  - : تصویر مشخص شده توسط پارامتر `image` را در مختصات (`x`، `y`) رسم می‌کند.
 
 > [!NOTE]
-> SVG images must specify a width and height in the root \<svg> element.
+> تصاویر SVG باید یک عرض و ارتفاع در عنصر ریشه \<svg> مشخص کنند.
 
-### Example: A small line graph
+### مثال: یک نمودار خطی کوچک
 
-In the following example, we will use an external image as the backdrop for a small line graph. Using backdrops can make your script considerably smaller because we can avoid the need for code to generate the background. In this example, we're only using one image, so I use the image object's `load` event handler to execute the drawing statements. The `drawImage()` method places the backdrop at the coordinate (0, 0), which is the top-left corner of the canvas.
+در مثال زیر، از یک تصویر خارجی به عنوان پس‌زمینه یک نمودار خطی کوچک استفاده خواهیم کرد. استفاده از پس‌زمینه می‌تواند اسکریپت شما را به طور قابل توجهی کوچک‌تر کند زیرا از نیاز به کد برای تولید پس‌زمینه جلوگیری می‌کند. در این مثال، ما فقط از یک تصویر استفاده می‌کنیم، بنابراین از کنترل‌کننده رویداد `load` شیء تصویر برای اجرای دستورات رسم استفاده می‌کنم. متد `drawImage()` پس‌زمینه را در مختصات (0, 0) که گوشه بالا-چپ canvas است قرار می‌دهد.
 
 ```html hidden
 <canvas id="canvas" width="180" height="150"></canvas>
@@ -163,23 +163,23 @@ function draw() {
 draw();
 ```
 
-The resulting graph looks like this:
+نمودار حاصل به این شکل است:
 
 {{EmbedLiveSample("Example_A_simple_line_graph", "", "160")}}
 
-## Scaling
+## مقیاس‌بندی
 
-The second variant of the `drawImage()` method adds two new parameters and lets us place scaled images on the canvas.
+نوع دوم متد `drawImage()` دو پارامتر جدید اضافه می‌کند و به ما امکان می‌دهد تصاویر مقیاس‌بندی شده را روی canvas قرار دهیم.
 
 - {{domxref("CanvasRenderingContext2D.drawImage", "drawImage(image, x, y, width, height)")}}
-  - : This adds the `width` and `height` parameters, which indicate the size to which to scale the image when drawing it onto the canvas.
+  - : این پارامترهای `width` و `height` را اضافه می‌کند که اندازه‌ای را مشخص می‌کنند که تصویر هنگام رسم روی canvas به آن مقیاس‌بندی شود.
 
-### Example: Tiling an image
+### مثال: کاشی‌کاری یک تصویر
 
-In this example, we'll use an image as a wallpaper and repeat it several times on the canvas. This is done by looping and placing the scaled images at different positions. In the code below, the first `for` loop iterates over the rows. The second `for` loop iterates over the columns. The image is scaled to one third of its original size, which is 50x38 pixels.
+در این مثال، از یک تصویر به عنوان کاغذدیواری استفاده می‌کنیم و آن را چندین بار روی canvas تکرار می‌کنیم. این کار با حلقه زدن و قرار دادن تصاویر مقیاس‌بندی شده در موقعیت‌های مختلف انجام می‌شود. در کد زیر، اولین حلقه `for` روی ردیف‌ها تکرار می‌شود. دومین حلقه `for` روی ستون‌ها تکرار می‌شود. تصویر به یک سوم اندازه اصلی خود مقیاس‌بندی می‌شود که ۵۰x۳۸ پیکسل است.
 
 > [!NOTE]
-> Images can become blurry when scaling up or grainy if they're scaled down too much. Scaling is probably best not done if you've got some text in it which needs to remain legible.
+> تصاویر هنگام بزرگ‌نمایی می‌توانند تار شوند یا اگر بیش از حد کوچک شوند دانه‌دار شوند. اگر متنی در تصویر دارید که باید خوانا باقی بماند، احتمالاً بهتر است مقیاس‌بندی انجام نشود.
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -202,28 +202,28 @@ function draw() {
 draw();
 ```
 
-The resulting canvas looks like this:
+canvas حاصل به این شکل است:
 
 {{EmbedLiveSample("Example_Tiling_an_image", "", "160")}}
 
-## Slicing
+## برش
 
-The third and last variant of the `drawImage()` method has eight parameters in addition to the image source. It lets us cut out a section of the source image, then scale and draw it on our canvas.
+سومین و آخرین نوع متد `drawImage()` علاوه بر منبع تصویر، هشت پارامتر دارد. این به ما امکان می‌دهد بخشی از تصویر منبع را برش دهیم، سپس آن را مقیاس‌بندی کرده و روی canvas خود رسم کنیم.
 
 - {{domxref("CanvasRenderingContext2D.drawImage", "drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)")}}
-  - : Given an `image`, this function takes the area of the source image specified by the rectangle whose top-left corner is (`sx`, `sy`) and whose width and height are `sWidth` and `sHeight` and draws it into the canvas, placing it on the canvas at (`dx`, `dy`) and scaling it to the size specified by `dWidth` and `dHeight`, maintaining its {{glossary("aspect ratio")}}.
+  - : با توجه به یک `image`، این تابع ناحیه‌ای از تصویر منبع را که توسط مستطیلی با گوشه بالا-چپ (`sx`، `sy`) و عرض و ارتفاع `sWidth` و `sHeight` مشخص شده است، می‌گیرد و آن را روی canvas رسم می‌کند، آن را در (`dx`، `dy`) روی canvas قرار می‌دهد و به اندازه مشخص شده توسط `dWidth` و `dHeight` مقیاس‌بندی می‌کند، در حالی که {{glossary("aspect ratio")}} آن حفظ می‌شود.
 
-To really understand what this does, it may help to look at this image:
+برای درک واقعی این موضوع، ممکن است نگاه کردن به این تصویر کمک کند:
 
-![The rectangular source image top left coordinates are sx and sy with a width and height of sWidth and sHeight respectively. The source image is translated to the destination canvas where the top-left corner coordinates are dx and dy, with a width and height of dWidth and dHeight respectively.](canvas_drawimage.jpg)
+![مختصات گوشه بالا-چپ تصویر منبع مستطیلی sx و sy با عرض و ارتفاع به ترتیب sWidth و sHeight است. تصویر منبع به canvas مقصد منتقل می‌شود که در آن مختصات گوشه بالا-چپ dx و dy با عرض و ارتفاع به ترتیب dWidth و dHeight است.](canvas_drawimage.jpg)
 
-The first four parameters define the location and size of the slice on the source image. The last four parameters define the rectangle into which to draw the image on the destination canvas.
+چهار پارامتر اول مکان و اندازه برش را روی تصویر منبع تعریف می‌کنند. چهار پارامتر آخر مستطیلی را تعریف می‌کنند که تصویر در آن روی canvas مقصد رسم می‌شود.
 
-Slicing can be a useful tool when you want to make compositions. You could have all elements in a single image file and use this method to composite a complete drawing. For instance, if you want to make a chart you could have a PNG image containing all the necessary text in a single file and depending on your data could change the scale of your chart fairly easily. Another advantage is that you don't need to load every image individually, which can improve load performance.
+برش می‌تواند یک ابزار مفید زمانی باشد که می‌خواهید ترکیب‌بندی ایجاد کنید. می‌توانید همه عناصر را در یک فایل تصویری واحد داشته باشید و از این روش برای ترکیب یک نقاشی کامل استفاده کنید. به عنوان مثال، اگر می‌خواهید یک نمودار بسازید، می‌توانید یک تصویر PNG داشته باشید که شامل تمام متن‌های لازم در یک فایل است و بسته به داده‌های خود می‌توانید مقیاس نمودار خود را به راحتی تغییر دهید. مزیت دیگر این است که نیازی به بارگذاری هر تصویر به صورت جداگانه ندارید که می‌تواند عملکرد بارگذاری را بهبود بخشد.
 
-### Example: Framing an image
+### مثال: قاب‌بندی یک تصویر
 
-In this example, we'll use the same rhino as in the previous example, but we'll slice out its head and composite it into a picture frame. The picture frame image is a 24-bit PNG which includes a drop shadow. Because 24-bit PNG images include a full 8-bit alpha channel, unlike GIF and 8-bit PNG images, it can be placed onto any background without worrying about a matte color.
+در این مثال، از همان کرگدن مثال قبلی استفاده می‌کنیم، اما سر آن را برش می‌دهیم و آن را در یک قاب عکس ترکیب می‌کنیم. تصویر قاب عکس یک PNG 24 بیتی است که شامل یک سایه افتاده است. از آنجایی که تصاویر PNG 24 بیتی شامل یک کانال آلفای کامل 8 بیتی هستند، برخلاف تصاویر GIF و PNG 8 بیتی، می‌توان آن را بدون نگرانی از رنگ مات روی هر پس‌زمینه‌ای قرار داد.
 
 ```html
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -276,23 +276,23 @@ async function draw() {
 draw();
 ```
 
-We took a different approach to loading the images this time. Instead of loading them by creating new {{domxref("HTMLImageElement")}} objects, we included them as {{HTMLElement("img")}} tags in our HTML source and retrieved the images from those when drawing to the canvas. The images are hidden from page by setting the CSS property {{cssxref("display")}} to `none` for those images.
+این بار رویکرد متفاوتی برای بارگذاری تصاویر در پیش گرفتیم. به جای بارگذاری آن‌ها با ایجاد اشیاء جدید {{domxref("HTMLImageElement")}}، آن‌ها را به عنوان تگ‌های {{HTMLElement("img")}} در منبع HTML خود قرار دادیم و هنگام رسم روی canvas، تصاویر را از آن‌ها بازیابی کردیم. تصاویر با تنظیم ویژگی CSS {{cssxref("display")}} روی `none` برای آن تصاویر از صفحه پنهان شده‌اند.
 
 {{EmbedLiveSample("example_framing_an_image", "", "160")}}
 
-Each {{HTMLElement("img")}} is assigned an ID attribute, so we have one for a `source` and one for the `frame`, which makes them easy to select using {{domxref("document.getElementById()")}}.
-We're using [Promise.all](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) to wait for all images to load before calling `drawImage()`.
-`drawImage()` slices the rhino out of the first image and scales it onto the canvas.
-Lastly, we draw the picture frame using a second `drawImage()` call.
+به هر {{HTMLElement("img")}} یک ویژگی ID اختصاص داده شده است، بنابراین ما یکی برای `source` و یکی برای `frame` داریم که انتخاب آن‌ها را با استفاده از {{domxref("document.getElementById()")}} آسان می‌کند.
+ما از [Promise.all](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) برای انتظار برای بارگذاری همه تصاویر قبل از فراخوانی `drawImage()` استفاده می‌کنیم.
+`drawImage()` کرگدن را از تصویر اول برش می‌دهد و آن را روی canvas مقیاس‌بندی می‌کند.
+در نهایت، قاب عکس را با استفاده از یک فراخوانی دوم `drawImage()` رسم می‌کنیم.
 
-## Art gallery example
+## مثال گالری هنر
 
-In the final example of this chapter, we'll build a little art gallery. The gallery consists of a table containing several images. When the page is loaded, a {{HTMLElement("canvas")}} element is inserted for each image and a frame is drawn around it.
+در مثال نهایی این فصل، یک گالری هنری کوچک می‌سازیم. گالری از یک جدول شامل چندین تصویر تشکیل شده است. وقتی صفحه بارگذاری می‌شود، یک عنصر {{HTMLElement("canvas")}} برای هر تصویر درج می‌شود و یک قاب دور آن رسم می‌شود.
 
-In this case, every image has a fixed width and height, as does the frame that's drawn around them. You could enhance the script so that it uses the image's width and height to make the frame fit perfectly around it.
+در این مورد، هر تصویر دارای عرض و ارتفاع ثابتی است، همانطور که قاب دور آن‌ها رسم می‌شود. می‌توانید اسکریپت را بهبود دهید تا از عرض و ارتفاع تصویر برای تطبیق کامل قاب دور آن استفاده کند.
 
-In the code below, we're using [Promise.all](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) to wait for all images to load before drawing any images to the canvas.
-We loop through the {{domxref("document.images")}} container and add new canvas elements for each one. One other thing to note is the use of the {{domxref("Node.insertBefore")}} method. `insertBefore()` is a method of the parent node (a table cell) of the element (the image) before which we want to insert our new node (the canvas element).
+در کد زیر، ما از [Promise.all](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) برای انتظار برای بارگذاری همه تصاویر قبل از رسم هر تصویری روی canvas استفاده می‌کنیم.
+ما از طریق ظرف {{domxref("document.images")}} حلقه می‌زنیم و برای هر یک عناصر canvas جدید اضافه می‌کنیم. نکته دیگری که باید به آن توجه کرد استفاده از متد {{domxref("Node.insertBefore")}} است. `insertBefore()` یک متد از گره والد (یک سلول جدول) عنصر (تصویر) است که می‌خواهیم گره جدید خود (عنصر canvas) را قبل از آن درج کنیم.
 
 ```html
 <table>
@@ -314,7 +314,7 @@ We loop through the {{domxref("document.images")}} container and add new canvas 
 <img id="frame" src="canvas_picture_frame.png" width="132" height="150" />
 ```
 
-And here's some CSS to make things look nice:
+و در اینجا مقداری CSS برای زیبا کردن ظاهر:
 
 ```css
 body {
@@ -335,7 +335,7 @@ td {
 }
 ```
 
-Tying it all together is the JavaScript to draw our framed images:
+جاوااسکریپت زیر همه چیز را به هم متصل می‌کند تا تصاویر قاب‌بندی شده ما رسم شوند:
 
 ```js
 async function draw() {
@@ -375,8 +375,8 @@ draw();
 
 {{EmbedLiveSample("Art_gallery_example", 725, 400)}}
 
-## Controlling image scaling behavior
+## کنترل رفتار مقیاس‌بندی تصویر
 
-As mentioned previously, scaling images can result in fuzzy or blocky artifacts due to the scaling process. You can use the drawing context's {{domxref("CanvasRenderingContext2D.imageSmoothingEnabled", "imageSmoothingEnabled")}} property to control the use of image smoothing algorithms when scaling images within your context. By default, this is `true`, meaning images will be smoothed when scaled.
+همانطور که قبلاً اشاره شد، مقیاس‌بندی تصاویر می‌تواند به دلیل فرآیند مقیاس‌بندی منجر به مصنوعات تار یا دانه‌دار شود. می‌توانید از ویژگی {{domxref("CanvasRenderingContext2D.imageSmoothingEnabled", "imageSmoothingEnabled")}} زمینه نقاشی برای کنترل استفاده از الگوریتم‌های هموارسازی تصویر هنگام مقیاس‌بندی تصاویر در زمینه خود استفاده کنید. به طور پیش‌فرض، این ویژگی `true` است، به این معنی که تصاویر هنگام مقیاس‌بندی هموار می‌شوند.
 
 {{PreviousNext("Web/API/Canvas_API/Tutorial/Drawing_text", "Web/API/Canvas_API/Tutorial/Transformations")}}
