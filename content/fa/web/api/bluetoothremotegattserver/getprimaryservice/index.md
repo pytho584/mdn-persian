@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTServer: getPrimaryService() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/getPrimaryService"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,9 +16,7 @@ browser-compat: api.BluetoothRemoteGATTServer.getPrimaryService
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTServer.getPrimaryService()`** method
-returns a promise to the primary {{domxref("BluetoothRemoteGATTService")}} offered by the
-Bluetooth device for a specified bluetooth service UUID.
+متد **`BluetoothRemoteGATTServer.getPrimaryService()`** یک قول (Promise) را به سرویس اصلی {{domxref("BluetoothRemoteGATTService")}} که توسط دستگاه بلوتوث برای یک UUID سرویس بلوتوث مشخص ارائه می‌شود، برمی‌گرداند.
 
 ## Syntax
 
@@ -26,19 +24,19 @@ Bluetooth device for a specified bluetooth service UUID.
 getPrimaryService(bluetoothServiceUUID)
 ```
 
-### Parameters
+### پارامترها
 
 - `bluetoothServiceUUID`
-  - : A Bluetooth service universally unique identifier for a specified device, that is either a 128-bit UUID, a 16-bit or 32-bit UUID alias, or a string from the list of [GATT assigned services](https://github.com/WebBluetoothCG/registries/blob/master/gatt_assigned_services.txt) keys.
+  - : یک شناسه منحصربه‌فرد جهانی سرویس بلوتوث برای یک دستگاه مشخص، که می‌تواند یک UUID 128-بیتی، یک نام مستعار UUID 16-بیتی یا 32-بیتی، یا یک رشته از فهرست کلیدهای [سرویس‌های اختصاصی GATT](https://github.com/WebBluetoothCG/registries/blob/master/gatt_assigned_services.txt) باشد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to a {{domxref("BluetoothRemoteGATTService")}} object.
+یک {{jsxref("Promise")}} که به یک شیء {{domxref("BluetoothRemoteGATTService")}} حل می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
