@@ -1,7 +1,7 @@
 ---
 title: "AudioPlaybackStats: underrunDuration property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioPlaybackStats/underrunDuration"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,15 +16,15 @@ browser-compat: api.AudioPlaybackStats.underrunDuration
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`underrunDuration`** read-only property of the {{domxref("AudioPlaybackStats")}} interface is a number indicating the total duration of the [underrun events](/en-US/docs/Web/API/AudioPlaybackStats#underrun_event) that have occurred since the audio context was initialized.
+**`underrunDuration`** خاصیت فقط خواندنی رابط {{domxref("AudioPlaybackStats")}} است، عددی که مجموع مدت‌زمان [رخدادهای underrun](/en-US/docs/Web/API/AudioPlaybackStats#underrun_event) را از زمان راه‌اندازی زمینه صوتی نشان می‌دهد.
 
-## Value
+## مقدار
 
-A double-precision floating point number indicating the duration of underrun events, in seconds. Initialized to `0`.
+یک عدد ممیز شناور با دقت دوگانه که مدت‌زمان رخدادهای underrun را بر حسب ثانیه نشان می‌دهد. مقدار اولیه `0` است.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### کاربرد پایه
 
 ```js
 const audioCtx = new AudioContext();
@@ -36,16 +36,16 @@ const stats = audioCtx.playbackStats;
 console.log(stats.underrunDuration);
 ```
 
-See also the main {{domxref("AudioPlaybackStats")}} reference page for a more in-depth example.
+برای یک مثال عمیق‌تر، به صفحه مرجع اصلی {{domxref("AudioPlaybackStats")}} نیز مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
