@@ -1,7 +1,7 @@
 ---
 title: "CanvasCaptureMediaStreamTrack: canvas property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasCaptureMediaStreamTrack/canvas"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,13 +14,13 @@ browser-compat: api.CanvasCaptureMediaStreamTrack.canvas
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`canvas`** read-only property of the {{domxref("CanvasCaptureMediaStreamTrack")}} interface returns the {{domxref("HTMLCanvasElement")}} from which frames are being captured.
+ویژگی فقط‌خواندنی **`canvas`** از رابط {{domxref("CanvasCaptureMediaStreamTrack")}} عنصر {{domxref("HTMLCanvasElement")}} را که فریم‌ها از آن گرفته می‌شوند برمی‌گرداند.
 
-## Value
+## مقدار
 
-An `HTMLCanvasElement` indicating the canvas, which is the source of the frames being captured.
+یک `HTMLCanvasElement` که بوم را نشان می‌دهد و منبع فریم‌های در حال ضبط است.
 
-## Example
+## مثال
 
 ```js
 // Find the canvas element to capture
@@ -36,16 +36,15 @@ const stream = canvasElt.captureStream(25); // 25 FPS
 const canvas = stream.canvas;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLCanvasElement.captureStream()")}} to create a stream to capture a
-  given canvas element.
+- {{domxref("HTMLCanvasElement.captureStream()")}} برای ایجاد یک جریان برای ضبط یک عنصر بوم معین.
 - {{HTMLElement("canvas")}}
