@@ -1,7 +1,7 @@
 ---
 title: "BarcodeDetector: BarcodeDetector() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BarcodeDetector/BarcodeDetector"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,38 +16,30 @@ browser-compat: api.BarcodeDetector.BarcodeDetector
 
 {{securecontext_header}}{{APIRef("Barcode Detector API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`BarcodeDetector()`** constructor creates
-a new {{domxref("BarcodeDetector")}} object which detects linear and two-dimensional
-barcodes in images.
+سازندهٔ **`BarcodeDetector()`** یک شیء جدید از {{domxref("BarcodeDetector")}} می‌سازد که بارکدهای خطی و دوبعدی را در تصاویر شناسایی می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new BarcodeDetector()
 new BarcodeDetector(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An options object containing a series of `BarcodeFormats` to search for
-    in the subsequent {{domxref('BarcodeDetector.detect()','detect()')}} calls. The
-    options are:
+  - : یک شیء گزینه‌ها حاوی مجموعه‌ای از `BarcodeFormats` برای جستجو در فراخوانی‌های بعدی {{domxref('BarcodeDetector.detect()','detect()')}} است. گزینه‌ها شامل:
     - `formats` {{optional_inline}}
-      - : An {{jsxref('Array')}} of barcode formats as strings.
-        If not provided, `detect()` calls search for all supported formats.
-        Limiting to specific formats is therefore recommended for performance reasons.
-        To see a full list of supported formats see the [supported barcode format](/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats).
+      - : یک {{jsxref('Array')}} از قالب‌های بارکد به‌صورت رشته. اگر ارائه نشود، فراخوانی‌های `detect()` همهٔ قالب‌های پشتیبانی‌شده را جستجو می‌کنند. بنابراین به دلایل کارایی توصیه می‌شود به قالب‌های خاص محدود شود. برای مشاهدهٔ فهرست کامل قالب‌های پشتیبانی‌شده، به [قالب‌های بارکد پشتیبانی‌شده](/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats) مراجعه کنید.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the `formats` is specified and the parameter is empty or contains `unknown`.
+  - : اگر `formats` مشخص شده باشد و پارامتر خالی یا شامل `unknown` باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example creates a new barcode detector object, with specified supported formats
-and tests for browser compatibility.
+این مثال یک شیء جدید تشخیص بارکد با قالب‌های پشتیبانی‌شدهٔ مشخص می‌سازد و سازگاری مرورگر را آزمایش می‌کند.
 
 ```js
 // check compatibility
@@ -63,10 +55,10 @@ if (!("BarcodeDetector" in globalThis)) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
