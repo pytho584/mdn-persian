@@ -1,25 +1,18 @@
 ---
 title: "AudioContext: createMediaStreamSource() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamSource"
-status: "needs-translation"
----
-
----
-title: "AudioContext: createMediaStreamSource() method"
 short-title: createMediaStreamSource()
 slug: Web/API/AudioContext/createMediaStreamSource
 page-type: web-api-instance-method
 browser-compat: api.AudioContext.createMediaStreamSource
+translated_by: "n8n + AI"
 ---
 
 {{ APIRef("Web Audio API") }}
 
-The `createMediaStreamSource()` method of the {{ domxref("AudioContext") }}
-Interface is used to create a new {{ domxref("MediaStreamAudioSourceNode") }}
-object, given a media stream (say, from a {{ domxref("MediaDevices.getUserMedia") }}
-instance), the audio from which can then be played and manipulated.
+متد `createMediaStreamSource()` از رابط {{ domxref("AudioContext") }} برای ایجاد یک شیء جدید {{ domxref("MediaStreamAudioSourceNode") }} استفاده می‌شود، که یک جریان رسانه‌ای (مثلاً از یک نمونه {{ domxref("MediaDevices.getUserMedia") }}) داده می‌شود و صدای آن می‌تواند پخش و دستکاری شود.
 
-For more details about media stream audio source nodes, check out the {{domxref("MediaStreamAudioSourceNode")}} reference page.
+برای جزئیات بیشتر درباره گره‌های منبع صوتی جریان رسانه‌ای، صفحه مرجع {{domxref("MediaStreamAudioSourceNode")}} را بررسی کنید.
 
 ## Syntax
 
@@ -30,26 +23,20 @@ createMediaStreamSource(stream)
 ### Parameters
 
 - `stream`
-  - : A {{domxref("MediaStream")}} to serve as an audio source to be fed into an audio
-    processing graph for use and manipulation.
+  - : یک {{domxref("MediaStream")}} که به عنوان یک منبع صوتی برای تغذیه به یک گراف پردازش صوتی برای استفاده و دستکاری استفاده می‌شود.
 
 ### Return value
 
-A new {{domxref("MediaStreamAudioSourceNode")}} object representing the audio node
-whose media is obtained from the specified source stream.
+یک شیء جدید {{domxref("MediaStreamAudioSourceNode")}} که نمایانگر گره صوتی است که رسانه آن از جریان منبع مشخص شده به دست آمده است.
 
 ## Examples
 
-In this example, we grab a media (audio + video) stream from {{domxref("navigator.getUserMedia")}}, feed the media into a {{htmlelement("video")}} element to play then mute the audio, but then also feed the audio into a {{domxref("MediaStreamAudioSourceNode")}}.
-Next, we feed this source audio into a low pass {{ domxref("BiquadFilterNode") }} (which effectively serves as a bass booster),
-then an {{domxref("AudioDestinationNode") }}.
+در این مثال، ما یک جریان رسانه‌ای (صدا + ویدیو) را از {{domxref("navigator.getUserMedia")}} دریافت می‌کنیم، آن را در یک عنصر {{htmlelement("video")}} برای پخش قرار می‌دهیم و سپس صدا را بی‌صدا می‌کنیم، اما همچنین صدا را به یک {{domxref("MediaStreamAudioSourceNode")}} وارد می‌کنیم. سپس، این منبع صوتی را به یک {{ domxref("BiquadFilterNode") }} با فیلتر پایین‌گذر (که به عنوان یک تقویت‌کننده باس عمل می‌کند) و سپس به یک {{domxref("AudioDestinationNode") }} وارد می‌کنیم.
 
-The range slider below the {{ htmlelement("video") }} element controls the amount of
-gain given to the lowpass filter — increase the value of the slider to make the audio
-sound more bass heavy!
+لغزنده محدوده زیر عنصر {{ htmlelement("video") }} میزان بهره اعمال شده به فیلتر پایین‌گذر را کنترل می‌کند — با افزایش مقدار لغزنده، صدا باس‌دارتر می‌شود!
 
 > [!NOTE]
-> You can see this [example running live](https://mdn.github.io/webaudio-examples/stream-source-buffer/), or [view the source](https://github.com/mdn/webaudio-examples/tree/main/stream-source-buffer).
+> می‌توانید این [مثال را به صورت زنده](https://mdn.github.io/webaudio-examples/stream-source-buffer/) مشاهده کنید، یا [کد منبع](https://github.com/mdn/webaudio-examples/tree/main/stream-source-buffer) را ببینید.
 
 ```js
 const pre = document.querySelector("pre");
@@ -109,11 +96,7 @@ pre.textContent = myScript.textContent;
 ```
 
 > [!NOTE]
-> As a consequence of calling
-> `createMediaStreamSource()`, audio playback from the media stream will
-> be re-routed into the processing graph of the {{domxref("AudioContext")}}. So
-> playing/pausing the stream can still be done through the media element API and the
-> player controls.
+> در نتیجه فراخوانی `createMediaStreamSource()`، پخش صدا از جریان رسانه‌ای به گراف پردازش {{domxref("AudioContext")}} هدایت می‌شود. بنابراین پخش/توقف جریان همچنان می‌تواند از طریق API عنصر رسانه و کنترل‌های پخش انجام شود.
 
 ## Specifications
 
@@ -125,4 +108,4 @@ pre.textContent = myScript.textContent;
 
 ## See also
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
