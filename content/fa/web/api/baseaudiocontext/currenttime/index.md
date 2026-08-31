@@ -1,28 +1,18 @@
 ---
 title: "BaseAudioContext: currentTime property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/currentTime"
-status: "needs-translation"
----
-
----
-title: "BaseAudioContext: currentTime property"
-short-title: currentTime
-slug: Web/API/BaseAudioContext/currentTime
-page-type: web-api-instance-property
-browser-compat: api.BaseAudioContext.currentTime
+translated_by: "n8n + AI"
 ---
 
 {{ APIRef("Web Audio API") }}
 
-The `currentTime` read-only property of the {{ domxref("BaseAudioContext") }}
-interface returns a double representing an ever-increasing hardware timestamp in seconds that
-can be used for scheduling audio playback, visualizing timelines, etc. It starts at 0.
+{{ domxref("BaseAudioContext") }} 接口的 `currentTime` 只读属性返回一个双精度浮点数，表示不断增加的硬件时间戳（以秒为单位），可用于调度音频播放、可视化时间线等。它从 0 开始。
 
-## Value
+## 值
 
-A floating point number.
+一个浮点数。
 
-## Examples
+## 示例
 
 ```js
 const audioCtx = new AudioContext();
@@ -33,11 +23,11 @@ const audioCtx = new AudioContext();
 console.log(audioCtx.currentTime);
 ```
 
-## Reduced time precision
+## 降低的时间精度
 
-To offer protection against timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting), the precision of `audioCtx.currentTime` might get rounded depending on browser settings. In Firefox, the `privacy.reduceTimerPrecision` preference is enabled by default and defaults to 2ms. You can also enable `privacy.resistFingerprinting`, in which case the precision will be 100ms or the value of `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`, whichever is larger.
+为了防范时间攻击和[指纹识别](/en-US/docs/Glossary/Fingerprinting)，`audioCtx.currentTime` 的精度可能会根据浏览器设置被舍入。在 Firefox 中，`privacy.reduceTimerPrecision` 偏好默认启用，默认值为 2ms。你还可以启用 `privacy.resistFingerprinting`，在这种情况下，精度将为 100ms 或 `privacy.resistFingerprinting.reduceTimerPrecision.microseconds` 的值，以较大者为准。
 
-For example, with reduced time precision, the result of `audioCtx.currentTime` will always be a multiple of 0.002, or a multiple of 0.1 (or `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) with `privacy.resistFingerprinting` enabled.
+例如，在降低时间精度的情况下，`audioCtx.currentTime` 的结果将始终是 0.002 的倍数，或者在启用 `privacy.resistFingerprinting` 时是 0.1（或 `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`）的倍数。
 
 ```js
 // reduced time precision (2ms) in Firefox 60
@@ -57,14 +47,14 @@ audioCtx.currentTime;
 // …
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Using Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [使用 Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
