@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTCharacteristic"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,49 +15,49 @@ browser-compat: api.BluetoothRemoteGATTCharacteristic
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The `BluetoothRemoteGattCharacteristic` interface of the [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) represents a GATT Characteristic, which is a basic data element that provides further information about a peripheral's service.
+رابط `BluetoothRemoteGattCharacteristic` از [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) یک مشخصه GATT را نشان می‌دهد که یک عنصر داده پایه است که اطلاعات بیشتری درباره سرویس یک دستگاه جانبی فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{DOMxRef("BluetoothRemoteGATTCharacteristic.service")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the {{DOMxRef("BluetoothRemoteGATTService")}} this characteristic belongs to.
+  - : {{DOMxRef("BluetoothRemoteGATTService")}} که این مشخصه به آن تعلق دارد را برمی‌گرداند.
 - {{DOMxRef("BluetoothRemoteGATTCharacteristic.uuid")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a string containing the UUID of the characteristic, for example `'00002a37-0000-1000-8000-00805f9b34fb'` for the Heart Rate Measurement characteristic.
+  - : یک رشته حاوی UUID مشخصه را برمی‌گرداند، برای مثال `'00002a37-0000-1000-8000-00805f9b34fb'` برای مشخصه اندازه‌گیری ضربان قلب.
 - {{DOMxRef("BluetoothRemoteGATTCharacteristic.properties")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the properties of this characteristic.
+  - : ویژگی‌های این مشخصه را برمی‌گرداند.
 - {{DOMxRef("BluetoothRemoteGATTCharacteristic.value")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : The currently cached characteristic value. This value gets updated when the value of the characteristic is read or updated via a notification or indication.
+  - : مقدار مشخصه ذخیره‌شده فعلی. این مقدار زمانی به‌روز می‌شود که مقدار مشخصه از طریق یک اعلان یا نشانه خوانده یا به‌روز شود.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{DOMxRef("BluetoothRemoteGATTCharacteristic.getDescriptor()")}} {{Experimental_Inline}}
-  - : Returns a {{JSxRef("Promise")}} that resolves to the first {{DOMxRef("BluetoothRemoteGATTDescriptor")}} for a given descriptor UUID.
+  - : یک {{JSxRef("Promise")}} برمی‌گرداند که به اولین {{DOMxRef("BluetoothRemoteGATTDescriptor")}} برای یک UUID توصیف‌کننده مشخص حل می‌شود.
 - {{DOMxRef("BluetoothRemoteGATTCharacteristic.getDescriptors()")}} {{Experimental_Inline}}
-  - : Returns a {{JSxRef("Promise")}} that resolves to an {{JSxRef("Array")}} of all {{DOMxRef("BluetoothRemoteGATTDescriptor")}} objects for a given descriptor UUID.
+  - : یک {{JSxRef("Promise")}} برمی‌گرداند که به یک {{JSxRef("Array")}} از تمام اشیاء {{DOMxRef("BluetoothRemoteGATTDescriptor")}} برای یک UUID توصیف‌کننده مشخص حل می‌شود.
 - {{DOMxRef("BluetoothRemoteGATTCharacteristic.readValue()")}} {{Experimental_Inline}}
-  - : Returns a {{JSxRef("Promise")}} that resolves to a {{JSxRef("DataView")}} holding a duplicate of the `value` property if it is available and supported. Otherwise it throws an error.
+  - : یک {{JSxRef("Promise")}} برمی‌گرداند که به یک {{JSxRef("DataView")}} حاوی یک کپی از ویژگی `value` در صورت در دسترس بودن و پشتیبانی شدن حل می‌شود. در غیر این صورت یک خطا پرتاب می‌کند.
 - {{DOMxRef("BluetoothRemoteGATTCharacteristic.writeValue()")}} {{Deprecated_Inline}}
-  - : Sets the `value` property to the bytes contained in a given {{JSxRef("ArrayBuffer")}}, [writes the characteristic value with optional response](https://webbluetoothcg.github.io/web-bluetooth/#writecharacteristicvalue), and returns the resulting {{JSxRef("Promise")}}.
+  - : ویژگی `value` را به بایت‌های موجود در یک {{JSxRef("ArrayBuffer")}} مشخص تنظیم می‌کند، [مقدار مشخصه را با پاسخ اختیاری می‌نویسد](https://webbluetoothcg.github.io/web-bluetooth/#writecharacteristicvalue) و {{JSxRef("Promise")}} حاصل را برمی‌گرداند.
 - {{DOMxRef("BluetoothRemoteGATTCharacteristic.writeValueWithResponse()")}} {{Experimental_Inline}}
-  - : Sets the `value` property to the bytes contained in a given {{JSxRef("ArrayBuffer")}}, [writes the characteristic value with required response](https://webbluetoothcg.github.io/web-bluetooth/#writecharacteristicvalue), and returns the resulting {{JSxRef("Promise")}}.
+  - : ویژگی `value` را به بایت‌های موجود در یک {{JSxRef("ArrayBuffer")}} مشخص تنظیم می‌کند، [مقدار مشخصه را با پاسخ الزامی می‌نویسد](https://webbluetoothcg.github.io/web-bluetooth/#writecharacteristicvalue) و {{JSxRef("Promise")}} حاصل را برمی‌گرداند.
 - {{DOMxRef("BluetoothRemoteGATTCharacteristic.writeValueWithoutResponse()")}} {{Experimental_Inline}}
-  - : Sets the `value` property to the bytes contained in a given {{JSxRef("ArrayBuffer")}}, [writes the characteristic value without response](https://webbluetoothcg.github.io/web-bluetooth/#writecharacteristicvalue), and returns the resulting {{JSxRef("Promise")}}.
+  - : ویژگی `value` را به بایت‌های موجود در یک {{JSxRef("ArrayBuffer")}} مشخص تنظیم می‌کند، [مقدار مشخصه را بدون پاسخ می‌نویسد](https://webbluetoothcg.github.io/web-bluetooth/#writecharacteristicvalue) و {{JSxRef("Promise")}} حاصل را برمی‌گرداند.
 - {{DOMxRef("BluetoothRemoteGATTCharacteristic.startNotifications()")}} {{Experimental_Inline}}
-  - : Returns a {{JSxRef("Promise")}} that resolves when `navigator.bluetooth` is added to the active notification context.
+  - : یک {{JSxRef("Promise")}} برمی‌گرداند که وقتی `navigator.bluetooth` به زمینه اعلان فعال اضافه می‌شود، حل می‌شود.
 - {{DOMxRef("BluetoothRemoteGATTCharacteristic.stopNotifications()")}} {{Experimental_Inline}}
-  - : Returns a {{JSxRef("Promise")}} that resolves when `navigator.bluetooth` is removed from the active notification context.
+  - : یک {{JSxRef("Promise")}} برمی‌گرداند که وقتی `navigator.bluetooth` از زمینه اعلان فعال حذف می‌شود، حل می‌شود.
 
-## Events
+## رویدادها
 
 - {{DOMxRef("BluetoothRemoteGATTCharacteristic/characteristicvaluechanged_event", "characteristicvaluechanged")}} {{Experimental_Inline}}
-  - : Fired on a `BluetoothRemoteGATTCharacteristic` when its value changes.
+  - : وقتی مقدار آن تغییر می‌کند، روی یک `BluetoothRemoteGATTCharacteristic` فعال می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
