@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-multiline attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiline"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,51 +13,50 @@ spec-urls: https://w3c.github.io/aria/#aria-multiline
 sidebar: accessibilitysidebar
 ---
 
-The `aria-multiline` attribute indicates whether a `textbox` accepts multiple lines of input or only a single line.
+ویژگی `aria-multiline` مشخص می‌کند که یک `textbox` ورودی چندخطی را می‌پذیرد یا فقط یک خط را.
 
-## Description
+## توضیحات
 
-The default behavior of the <kbd>Enter</kbd> or <kbd>Return</kbd> key differs between single-line and multi-line text fields. When user focus is in a single-line `{{htmlelement("input/text", '&lt;input type="text"&gt;')}}`, an <kbd>Enter</kbd> or <kbd>Return</kbd> keystroke usually submits the form.
+رفتار پیش‌فرض کلیدهای <kbd>Enter</kbd> یا <kbd>Return</kbd> بین فیلدهای متنی تک‌خطی و چندخطی متفاوت است. هنگامی که تمرکز کاربر در یک `{{htmlelement("input/text", '&lt;input type="text"&gt;')}}` تک‌خطی باشد، معمولاً فشردن کلید <kbd>Enter</kbd> یا <kbd>Return</kbd> فرم را ارسال می‌کند.
 
-When user focus is in a multi-line {{HTMLElement('textarea')}}, the keystroke inserts a line break. Only relevant for elements with the [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role) role set, the `aria-multiline` attribute indicates to assistive technologies whether that text box accepts multiple lines of input or only a single line, setting expectations as to what type of data to enter and what those keystroke will do.
+هنگامی که تمرکز کاربر در یک {{HTMLElement('textarea')}} چندخطی باشد، فشردن کلید یک شکست خط درج می‌کند. این ویژگی فقط برای عناصری با نقش [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role) مرتبط است؛ ویژگی `aria-multiline` به فناوری‌های کمکی نشان می‌دهد که آیا آن جعبه متن ورودی چندخطی می‌پذیرد یا فقط تک‌خطی، و انتظارات را درباره نوع داده‌ای که باید وارد شود و عملکرد آن کلیدها تعیین می‌کند.
 
 > [!NOTE]
-> Where possible, use the HTML {{HTMLElement('input')}} or the {{HTMLElement('textarea')}}, as these have built in semantics and behaviors, do not require ARIA attributes or scripting, and have keyboard support built in.
+> در صورت امکان، از {{HTMLElement('input')}} یا {{HTMLElement('textarea')}} HTML استفاده کنید، زیرا این عناصر دارای معناشناسی و رفتارهای داخلی هستند، به ویژگی‌ها یا اسکریپت‌نویسی ARIA نیاز ندارند و پشتیبانی از صفحه‌کلید را به‌صورت داخلی دارند.
 
-If the `aria-multiline="true"` is set, it means the textbox widget will accept line breaks within the input, similar to the HTML {{HTMLElement('textarea')}}. Elements with a role of `textbox` that do not have the attribute, or with the value set to `false`, are simple text boxes.
+اگر `aria-multiline="true"` تنظیم شود، به این معنی است که ویجت textbox شکست خط را در ورودی می‌پذیرد، مشابه {{HTMLElement('textarea')}} در HTML. عناصر دارای نقش `textbox` که این ویژگی را ندارند یا مقدار آن `false` است، جعبه‌های متنی ساده هستند.
 
-Be aware of focus and keystrokes when designing text boxes. ARIA only modifies the accessibility tree and therefore how assistive technology presents the textbox to your users. ARIA doesn't change anything about an element's default function or behavior. When not using semantic HTML elements for their intended purpose and default functionality, you must use JavaScript to manage behavior and functionality, including responding to keystroke events.
+هنگام طراحی جعبه‌های متن، از تمرکز و کلیدهای فشرده آگاه باشید. ARIA فقط درخت دسترس‌پذیری و در نتیجه نحوه ارائه textbox به کاربران شما توسط فناوری کمکی را تغییر می‌دهد. ARIA هیچ چیزی را درباره عملکرد یا رفتار پیش‌فرض یک عنصر تغییر نمی‌دهد. هنگامی که از عناصر معنایی HTML برای هدف و عملکرد پیش‌فرض آن‌ها استفاده نمی‌کنید، باید از جاوااسکریپت برای مدیریت رفتار و عملکرد، از جمله پاسخ به رویدادهای کلید، استفاده کنید.
 
-## Values
+## مقادیر
 
 - `true`
-  - : The text box accepts multiple lines of input.
-
+  - : جعبه متن ورودی چندخطی را می‌پذیرد.
 - `false`
-  - : The text box only accepts a single line of input.
+  - : جعبه متن فقط یک خط ورودی را می‌پذیرد.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaMultiLine")}}
-  - : The [`ariaMultiLine`](/en-US/docs/Web/API/Element/ariaMultiLine) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-multiline` attribute.
+  - : ویژگی [`ariaMultiLine`](/en-US/docs/Web/API/Element/ariaMultiLine) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-multiline` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaMultiLine")}}
-  - : The [`ariaMultiLine`](/en-US/docs/Web/API/ElementInternals/ariaMultiLine) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-multiline` attribute.
+  - : ویژگی [`ariaMultiLine`](/en-US/docs/Web/API/ElementInternals/ariaMultiLine) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-multiline` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+نقش‌های استفاده‌شده:
 
 - [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
 
-Inherits into roles:
+به نقش‌های زیر به ارث می‌رود:
 
 - [`searchbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/searchbox_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- ARIA [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role) role
-- ARIA [`searchbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/searchbox_role) role
+- نقش ARIA [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
+- نقش ARIA [`searchbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/searchbox_role)
