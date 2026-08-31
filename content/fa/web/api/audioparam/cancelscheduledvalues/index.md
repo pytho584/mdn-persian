@@ -1,7 +1,7 @@
 ---
 title: "AudioParam: cancelScheduledValues() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/cancelScheduledValues"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,27 +14,24 @@ browser-compat: api.AudioParam.cancelScheduledValues
 
 {{ APIRef("Web Audio API") }}
 
-The `cancelScheduledValues()` method of the {{ domxref("AudioParam") }}
-Interface cancels all scheduled future changes to the `AudioParam`.
+متد `cancelScheduledValues()` از رابط {{ domxref("AudioParam") }} تمام تغییرات برنامه‌ریزی‌شده آینده را برای `AudioParam` لغو می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 cancelScheduledValues(startTime)
 ```
 
-### Parameters
+### پارامترها
 
 - `startTime`
-  - : A double representing the time (in seconds) after the {{ domxref("AudioContext") }}
-    was first created after which all scheduled changes will be cancelled.
+  - : یک عدد اعشاری (double) که زمان (به ثانیه) پس از ایجاد نخستین {{ domxref("AudioContext") }} را نشان می‌دهد که بعد از آن همه تغییرات برنامه‌ریزی‌شده لغو خواهند شد.
 
-### Return value
+### مقدار بازگشتی
 
-A reference to this `AudioParam` object. In some older implementations this
-method returns {{jsxref('undefined')}}.
+یک ارجاع به این شیء `AudioParam`. در برخی پیاده‌سازی‌های قدیمی‌تر، این متد {{jsxref('undefined')}} را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const gainNode = audioCtx.createGain();
@@ -42,14 +39,14 @@ gainNode.gain.setValueCurveAtTime(waveArray, audioCtx.currentTime, 2); // 'gain'
 gainNode.gain.cancelScheduledValues(audioCtx.currentTime);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
