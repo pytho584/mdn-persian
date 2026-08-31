@@ -1,7 +1,7 @@
 ---
 title: "AudioTrack: kind property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack/kind"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,46 +14,37 @@ browser-compat: api.AudioTrack.kind
 
 {{APIRef("HTML DOM")}}
 
-The **`kind`** property contains a
-string indicating the category of audio contained in the
-**{{domxref("AudioTrack")}}**.
+ویژگی **`kind`**包含 یک رشته است که دسته‌بندی صوتی موجود در **{{domxref("AudioTrack")}}** را نشان می‌دهد.
 
-The `kind` can be used
-to determine the scenarios in which specific tracks should be enabled or disabled. See
-[Audio track kind strings](#audio_track_kind_strings) for a list of the kinds available for audio tracks.
+می‌توان از `kind` برای تعیین سناریوهایی که در آن‌ها باید آهنگ‌های خاص فعال یا غیرفعال شوند استفاده کرد. برای فهرستی از انواع موجود برای آهنگ‌های صوتی به [رشته‌های نوع آهنگ صوتی](#audio_track_kind_strings) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string specifying the type of content the media represents. The
-string is one of those found in [Audio track kind strings](#audio_track_kind_strings) below.
+یک رشته که نوع محتوای رسانه را مشخص می‌کند. این رشته یکی از موارد موجود در [رشته‌های نوع آهنگ صوتی](#audio_track_kind_strings) در زیر است.
 
-## Audio track kind strings
+## رشته‌های نوع آهنگ صوتی
 
-The kinds available for audio tracks are:
+انواع موجود برای آهنگ‌های صوتی عبارتند از:
 
 - `"alternative"`
-  - : A potential alternative to the main track, such as a different audio take or a
-    version of the soundtrack with only the music and no dialogue.
+  - : یک جایگزین بالقوه برای آهنگ اصلی، مانند یک برداشت صوتی متفاوت یا نسخه‌ای از موسیقی متن که فقط موسیقی دارد و بدون دیالوگ.
 - `"descriptions"`
-  - : An audio track providing audible descriptions of the action depicted in a video
-    track.
+  - : یک آهنگ صوتی که توصیف‌های شنیداری از اقدامات به تصویر کشیده شده در یک آهنگ ویدیویی ارائه می‌دهد.
 - `"main"`
-  - : The primary audio track.
+  - : آهنگ صوتی اصلی.
 - `"main-desc"`
-  - : The primary audio track with audio descriptions mixed into it.
+  - : آهنگ صوتی اصلی با توصیف‌های صوتی ترکیب شده در آن.
 - `"translation"`
-  - : A translated version of the primary audio track.
+  - : نسخه ترجمه شده آهنگ صوتی اصلی.
 - `"commentary"`
-  - : An audio track containing a commentary. This might be used to contain the director's
-    commentary track on a movie, for example.
-- `""` (empty string)
-  - : The track doesn't have an explicit kind, or the kind provided by the track's
-    metadata isn't recognized by the {{Glossary("user agent")}}.
+  - : یک آهنگ صوتی حاوی تفسیر. برای مثال، ممکن است برای شامل کردن آهنگ تفسیر کارگردان در یک فیلم استفاده شود.
+- `""` (رشته خالی)
+  - : آهنگ نوع صریحی ندارد، یا نوع ارائه شده توسط فراداده آهنگ توسط {{Glossary("user agent")}} شناسایی نمی‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
