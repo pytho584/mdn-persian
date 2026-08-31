@@ -1,11 +1,5 @@
 ---
 title: "CaptureController: setFocusBehavior() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/setFocusBehavior"
-status: "needs-translation"
----
-
----
-title: "CaptureController: setFocusBehavior() method"
 short-title: setFocusBehavior()
 slug: Web/API/CaptureController/setFocusBehavior
 page-type: web-api-instance-method
@@ -16,36 +10,36 @@ browser-compat: api.CaptureController.setFocusBehavior
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The {{domxref("CaptureController")}} interface's **`setFocusBehavior()`** method controls whether the captured tab or window will be focused when an associated {{domxref("MediaDevices.getDisplayMedia()")}} {{jsxref("Promise")}} fulfills, or whether the focus will remain with the tab containing the capturing app.
+متود **`setFocusBehavior()`** از رابط {{domxref("CaptureController")}} کنترل می‌کند که آیا زبانه یا پنجره‌ی ضبط‌شده زمانی که {{jsxref("Promise")}} مربوط به {{domxref("MediaDevices.getDisplayMedia()")}} برآورده می‌شود، فوکوس شود یا اینکه فوکوس روی زبانه‌ای که اپلیکیشن ضبط‌کننده در آن قرار دارد باقی بماند.
 
-You can set this behavior multiple times before the {{domxref("MediaDevices.getDisplayMedia()")}} call, or once immediately after its `Promise` resolves. After that, the focus behavior is said to be finalized, and can't be changed.
+شما می‌توانید این رفتار را چندین بار قبل از فراخوانی {{domxref("MediaDevices.getDisplayMedia()")}} یا یک بار بلافاصله پس از حل شدن `Promise` آن تنظیم کنید. پس از آن، رفتار فوکوس نهایی شده تلقی می‌شود و قابل تغییر نیست.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setFocusBehavior(focusBehavior)
 ```
 
-### Parameters
+### پارامترها
 
 - `focusBehavior`
-  - : An enumerated value that describes whether the user agent should transfer focus to the captured display surface, or keep the capturing app focused. Possible values are `focus-captured-surface` (transfer focus) and `no-focus-change` (keep focus on the capturing app).
+  - : یک مقدار شمارشی که توضیح می‌دهد آیا عامل کاربر باید فوکوس را به سطح نمایش ضبط‌شده منتقل کند یا اپلیکیشن ضبط‌کننده را متمرکز نگه دارد. مقادیر ممکن عبارتند از `focus-captured-surface` (انتقال فوکوس) و `no-focus-change` (حفظ فوکوس روی اپلیکیشن ضبط‌کننده).
 
-### Return value
+### مقدار بازگشتی
 
-None (`undefined`).
+هیچ‌کدام (`undefined`).
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The capture stream has been stopped.
-    - The user chose to share a screen ({{domxref("MediaTrackSettings.displaySurface", "displaySurface")}} type `monitor`) rather than a `browser` tab or `window` — you can't focus a monitor. In this case the exception is thrown after the {{domxref("MediaDevices.getDisplayMedia()")}} `Promise` resolves.
-    - Enough time has elapsed after the {{domxref("MediaDevices.getDisplayMedia()")}} `Promise` fulfills that the focus behavior has been finalized.
+  - : در صورت‌های زیر پرتاب می‌شود:
+    - جریان ضبط متوقف شده باشد.
+    - کاربر به جای یک زبانه یا پنجره‌ی `browser`، یک صفحه‌نمایش (نوع `displaySurface` برابر `monitor`) را برای اشتراک‌گذاری انتخاب کرده باشد – شما نمی‌توانید یک مانیتور را فوکوس کنید. در این حالت، استثنا پس از حل شدن {{jsxref("Promise")}} مربوط به {{domxref("MediaDevices.getDisplayMedia()")}} پرتاب می‌شود.
+    - زمان کافی پس از برآورده شدن {{jsxref("Promise")}} مربوط به {{domxref("MediaDevices.getDisplayMedia()")}} سپری شده باشد و رفتار فوکوس نهایی شده باشد.
 
-## Examples
+## مثال‌ها
 
-### Basic `setFocusBehavior()` usage
+### استفاده پایه از `setFocusBehavior()`
 
 ```js
 // Create a new CaptureController instance
@@ -68,15 +62,15 @@ if (displaySurface === "browser") {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - {{domxref("MediaDevices.getDisplayMedia()")}}
