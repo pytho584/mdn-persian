@@ -1,7 +1,7 @@
 ---
 title: "BatteryManager"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,51 +13,51 @@ browser-compat: api.BatteryManager
 
 {{ApiRef("Battery API")}}{{securecontext_header}}
 
-The **`BatteryManager`** interface of the {{domxref("Battery Status API", "", "", "nocode")}} provides information about the system's battery charge level. The {{domxref("navigator.getBattery()")}} method returns a promise that resolves with a `BatteryManager` interface.
+**`BatteryManager`** 接口（属于 {{domxref("Battery Status API", "", "", "nocode")}}）提供关于系统电池电量级别的信息。{{domxref("navigator.getBattery()")}} 方法返回一个 promise，该 promise 解析为一个 `BatteryManager` 接口。
 
-Since Chrome 103, the `BatteryManager` interface of {{domxref("Battery Status API", "", "", "nocode")}} only expose to secure context.
+自 Chrome 103 起，{{domxref("Battery Status API", "", "", "nocode")}} 的 `BatteryManager` 接口仅暴露给安全上下文。
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## 实例属性
 
-_Also inherits properties from its parent interface, {{domxref("EventTarget")}}._
+_还从父接口 {{domxref("EventTarget")}} 继承属性。_
 
 - {{domxref("BatteryManager.charging")}} {{ReadOnlyInline}}
-  - : A Boolean value indicating whether the battery is currently being charged.
+  - : 一个布尔值，指示电池当前是否正在充电。
 - {{domxref("BatteryManager.chargingTime")}} {{ReadOnlyInline}}
-  - : A number representing the remaining time in seconds until the battery is fully charged, or 0 if the battery is already fully charged.
+  - : 一个数字，表示距离电池充满电还需要的时间（以秒为单位），如果电池已充满电则为 0。
 - {{domxref("BatteryManager.dischargingTime")}} {{ReadOnlyInline}}
-  - : A number representing the remaining time in seconds until the battery is completely discharged and the system suspends.
+  - : 一个数字，表示距离电池完全放电且系统挂起之前剩余的时间（以秒为单位）。
 - {{domxref("BatteryManager.level")}} {{ReadOnlyInline}}
-  - : A number representing the system's battery charge level scaled to a value between 0.0 and 1.0.
+  - : 一个数字，表示系统电池电量级别，范围在 0.0 到 1.0 之间。
 
-## Instance methods
+## 实例方法
 
-_Also inherits methods from its parent interface, {{domxref("EventTarget")}}._
+_还从父接口 {{domxref("EventTarget")}} 继承方法。_
 
-## Events
+## 事件
 
-_Also inherits events from its parent interface, {{domxref("EventTarget")}}._
+_还从父接口 {{domxref("EventTarget")}} 继承事件。_
 
 - {{domxref("BatteryManager/chargingchange_event", "chargingchange")}}
-  - : Fired when the battery charging state (the {{domxref("BatteryManager.charging", "charging")}} property) is updated.
+  - : 当电池充电状态（{{domxref("BatteryManager.charging", "charging")}} 属性）更新时触发。
 - {{domxref("BatteryManager/chargingtimechange_event", "chargingtimechange")}}
-  - : Fired when the battery charging time (the {{domxref("BatteryManager.chargingTime", "chargingTime")}} property) is updated.
+  - : 当电池充电时间（{{domxref("BatteryManager.chargingTime", "chargingTime")}} 属性）更新时触发。
 - {{domxref("BatteryManager/dischargingtimechange_event", "dischargingtimechange")}}
-  - : Fired when the battery discharging time (the {{domxref("BatteryManager.dischargingTime", "dischargingTime")}} property) is updated.
+  - : 当电池放电时间（{{domxref("BatteryManager.dischargingTime", "dischargingTime")}} 属性）更新时触发。
 - {{domxref("BatteryManager/levelchange_event", "levelchange")}}
-  - : Fired when the battery level (the {{domxref("BatteryManager.level", "level")}} property) is updated.
+  - : 当电池电量级别（{{domxref("BatteryManager.level", "level")}} 属性）更新时触发。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The {{domxref("Battery Status API", "", "", "nocode")}}
+- {{domxref("Battery Status API", "", "", "nocode")}}
 - {{domxref("Navigator.getBattery()")}}
