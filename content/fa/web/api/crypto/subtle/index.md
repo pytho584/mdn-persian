@@ -1,11 +1,5 @@
 ---
 title: "Crypto: subtle property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Crypto/subtle"
-status: "needs-translation"
----
-
----
-title: "Crypto: subtle property"
 short-title: subtle
 slug: Web/API/Crypto/subtle
 page-type: web-api-instance-property
@@ -14,24 +8,21 @@ browser-compat: api.Crypto.subtle
 
 {{APIRef("Web Crypto API")}}{{SecureContext_header}}{{AvailableInWorkers}}
 
-The **`Crypto.subtle`** read-only property returns a
-{{domxref("SubtleCrypto")}} which can then be used to perform low-level
-cryptographic operations.
+ویژگی فقط‌خواندنی **`Crypto.subtle`** یک {{domxref("SubtleCrypto")}} را برمی‌گرداند که می‌توان از آن برای انجام عملیات رمزنگاری سطح پایین استفاده کرد.
 
-## Value
+## مقدار
 
-A {{domxref("SubtleCrypto")}} object you can use to interact with the Web Crypto API's
-low-level cryptography features.
+یک شیء {{domxref("SubtleCrypto")}} که می‌توانید برای تعامل با ویژگی‌های رمزنگاری سطح پایین Web Crypto API از آن استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Crypto")}}.
 - {{domxref("SubtleCrypto")}}.
