@@ -1,7 +1,7 @@
 ---
 title: "ARIA: generic role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/generic_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,38 +13,38 @@ spec-urls: https://w3c.github.io/aria/#generic
 sidebar: accessibilitysidebar
 ---
 
-The `generic` role creates a nameless container element which has no semantic meaning on its own.
+نقش `generic` یک عنصر محفظهای بدون نام ایجاد میکند که به خودی خود هیچ معنای معنایی ندارد.
 
 > [!NOTE]
-> The `generic` role is the implicit role of generic elements used by user agents. It is included here for completeness of documentation. It should not be used by web authors.
+> نقش `generic` نقش ضمنی عناصر عمومی است که توسط عامل‌های کاربر استفاده می‌شود. این نقش برای کامل‌سازی مستندات در اینجا آورده شده است. نباید توسط نویسندگان وب استفاده شود.
 
-## Description
+## توضیحات
 
-While ARIA is primarily used to express semantics, there are some elements that shouldn't expose a semantic name to assistive technologies. The `generic` role indicates an element's role is equivalent to that of the non-semantic {{HTMLElement('div')}} and {{HTMLElement('span')}} elements.
+در حالی که ARIA عمدتاً برای بیان معناشناسی استفاده می‌شود، برخی عناصر وجود دارند که نباید یک نام معنایی را در معرض فناوری‌های کمکی قرار دهند. نقش `generic` نشان می‌دهد که نقش یک عنصر معادل با عناصر غیرمعنایی {{HTMLElement('div')}} و {{HTMLElement('span')}} است.
 
-The `generic` role is intended for use as the implicit role of generic elements in host languages for use by user agents only; not for use by developers. Instead, to remove implicit accessibility semantics, use [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) or `none`, the {{HTMLElement('div')}} and {{HTMLElement('span')}} elements that have no semantic meaning, or semantic container roles such as [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) to semantically group descendants in a named container.
+نقش `generic` برای استفاده به عنوان نقش ضمنی عناصر عمومی در زبان‌های میزبان توسط عامل‌های کاربر در نظر گرفته شده است، نه برای استفاده توسط توسعه‌دهندگان. به جای آن، برای حذف معناشناسی دسترسی ضمنی، از نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) یا `none`، عناصر {{HTMLElement('div')}} و {{HTMLElement('span')}} که هیچ معنای معنایی ندارند، یا نقش‌های محفظه‌ای معنایی مانند [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) برای گروه‌بندی معنایی فرزندان در یک محفظه نام‌گذاری شده استفاده کنید.
 
-Like an element with role `presentation`, an element with `role="generic"` can provide a limited number of accessible states and properties for its descendants, such as [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) attributes. However, unlike elements with role `presentation`, `generic` elements are exposed in accessibility APIs so that assistive technologies can gather certain properties such as layout and bounds.
+مانند یک عنصر با نقش `presentation`، یک عنصر با `role="generic"` می‌تواند تعداد محدودی از ویژگی‌ها و حالت‌های دسترسی را برای فرزندان خود فراهم کند، مانند ویژگی‌های [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live). با این حال، برخلاف عناصر با نقش `presentation`، عناصر `generic` در APIهای دسترسی نمایش داده می‌شوند تا فناوری‌های کمکی بتوانند ویژگی‌هایی مانند چیدمان و مرزها را جمع‌آوری کنند.
 
-Because the generic role is nameless, the [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) and [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) attributes are prohibited. Because the role is generic, the [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) and [`aria-brailleroledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-brailleroledescription) attributes are also prohibited.
+از آنجایی که نقش generic بی‌نام است، ویژگی‌های [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) و [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) ممنوع هستند. از آنجایی که نقش عمومی است، ویژگی‌های [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) و [`aria-brailleroledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-brailleroledescription) نیز ممنوع هستند.
 
 > [!NOTE]
-> The element with `role="generic"` should not have an accessible name or role description.
+> عنصر با `role="generic"` نباید دارای نام دسترسی یا توضیح نقش باشد.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های WAI-ARIA مرتبط
 
-None. If a global ARIA state and property is set, `generic` or `none` will be ignored, and the implicit role of the element will be used.
+هیچکدام. اگر یک ویژگی یا حالت سراسری ARIA تنظیم شود، `generic` یا `none` نادیده گرفته می‌شوند و نقش ضمنی عنصر استفاده خواهد شد.
 
-## Examples
+## مثال‌ها
 
-This role is for use by user agents and not by developers. As such, no appropriate example exists.
+این نقش برای استفاده توسط عامل‌های کاربر است و نه توسط توسعه‌دهندگان. بنابراین، هیچ مثال مناسبی وجود ندارد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement('div')}} and {{HTMLElement('span')}} elements
-- [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) roles such as
-- [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) role
+- عناصر HTML {{HTMLElement('div')}} و {{HTMLElement('span')}}
+- نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role)
+- نقش [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role)
