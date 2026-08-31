@@ -1,70 +1,69 @@
 ---
 title: "ARIA: meter role"
-source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role"
-status: "needs-translation"
+source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_ole"
+translated_by: "n8n + AI"
 ---
 
 ---
-title: "ARIA: meter role"
-short-title: meter
+title: "ARIA: نقش متر"
+short-title: متر
 slug: Web/Accessibility/ARIA/Reference/Roles/meter_role
 page-type: aria-role
 spec-urls: https://w3c.github.io/aria/#meter
 sidebar: accessibilitysidebar
----
 
-The `meter` role is used to identify an element being used as a meter.
+نقش `meter` برای شناسایی عنصری که به عنوان یک متر استفاده می‌شود، به کار می‌رود.
 
 > [!NOTE]
-> Where possible, it is recommended that you use a native {{HTMLElement("meter")}} element rather than the `meter` role, as native elements are more widely supported by user agents and assistive technology.
+> در صورت امکان، توصیه می‌شود به جای نقش `meter` از عنصر بومی {{HTMLElement("meter")}} استفاده کنید، زیرا عناصر بومی توسط عوامل کاربر و فناوری‌های کمکی پشتیبانی گسترده‌تری دارند.
 
-## Description
+## توضیحات
 
-A meter is a graphical display of a numeric value within a defined range. For example, showing battery percentage. A meter is not appropriate for values that do not have a meaningful maximum limit. Meters should not be used to indicate progress (for example loading), this should be communicated with the {{HTMLElement('progress')}} element.
+متر یک نمایش گرافیکی از یک مقدار عددی در یک محدوده تعریف‌شده است. به عنوان مثال، نمایش درصد باتری. برای مقادیری که حداکثر معناداری ندارند، متر مناسب نیست. نباید از متر برای نشان دادن پیشرفت (مانند بارگذاری) استفاده کرد؛ برای این منظور باید از عنصر {{HTMLElement('progress')}} استفاده شود.
 
-Each element with `role="meter"` must also have one of the following:
+هر عنصر با `role="meter"` باید یکی از موارد زیر را نیز داشته باشد:
 
-- An [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) attribute.
-- An [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attribute pointing to an element with text that describes the meter.
+- یک ویژگی [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
+- یک ویژگی [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) که به عنصری حاوی متنی برای توصیف متر اشاره کند.
 
-### All descendants are presentational
+### تمام فرزندان نمایشی هستند
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in a `meter`. To deal with this limitation, browsers, automatically apply role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) to all descendant elements of any `meter` element as it is a role that does not support semantic children.
+برخی از انواع اجزای رابط کاربری، هنگامی که در یک API دسترس‌پذیری پلتفرم نمایش داده می‌شوند، فقط می‌توانند حاوی متن باشند. APIهای دسترس‌پذیری راهی برای نمایش عناصر معنایی موجود در یک `meter` ندارند. برای مقابله با این محدودیت، مرورگرها به‌طور خودکار نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را به همه عناصر فرزند هر عنصر `meter` ` اعمال می‌کنند، زیرا این نقشی است که از فرزندان معنایی پشتیبانی نمی‌کند.
 
-For example, consider the following `meter` element, which contains a heading.
-
-```html
-<div role="meter"><h3>Title of my meter</h3></div>
-```
-
-Because descendants of `meter` are presentational, the following code is equivalent:
+برای مثال، عنصر `meter` زیر را در نظر بگیرید که حاوی یک عنوان است:
 
 ```html
-<div role="meter"><h3 role="presentation">Title of my meter</h3></div>
+<div role="meter"><h3>عنوان متر من</h3></div>
 ```
 
-From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree).:
+از آنجایی که فرزندان `meter` نمایشی هستند، کد زیر معادل است:
 
 ```html
-<div role="meter">Title of my meter</div>
+<div role="meter"><h3 role="presentation">عنوان متر من</h3></div>
 ```
 
-### Associated ARIA roles, states, and properties
+از دیدگاه کاربر فناوری کمکی، عنوان وجود ندارد، زیرا قطعه کدهای قبلی با مورد زیر در [درخت دسترس‌پذیری](/en-US/docs/Glossary/Accessibility_tree) معادل هستند:
+
+```html
+<div role="meter">عنوان متر من</div>
+```
+
+### نقش‌ها، حالت‌ها و ویژگی‌های ARIA مرتبط
 
 - [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow)
-  - : Set to a decimal value between `aria-valuemin` and `aria-valuemax` indicating the current value of the meter.
+  -: به یک مقدار اعشاری بین `aria-valuemin` و `aria-valuemax` تنظیم می‌شود که مقدار فعلی متر را نشان می‌دهد.
 - [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext)
-  - : Assistive technologies often present the value of `aria-valuenow` as a percentage. If this would not be accurate use this property to make the meter value understandable.
+  - : فناوری‌های کمکی اغلب مقدار `aria-valuenow` را به صورت درصد نمایش می‌دهند. اگر این دقیق نیست، از این ویژگی برای قابل فهم کردن مقدار متر استفاده کنید.
 - [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin)
-  - : Set to a decimal value representing the minimum value, and less than `aria-valuemax`.
+  - : به یک مقدار اعشاری که حداقل مقدار را نشان می‌دهد و کمتر از `aria-valuemax` است، تنظیم می‌شود.
 - [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax)
-  - : Set to a decimal value representing the maximum value, and greater than `aria-valuemin`.
+  - : به یک مقدار اعشاری که حداکثر مقدار را نشان می‌دهد و بزرگتر از `aria-valuemin` است، تنظیم می‌شود.
 
-It is recommended to use a native {{HTMLElement("meter")}} element rather than the `meter` role. User agents provide a stylize widget for the {{HTMLElement("meter")}} element based on the current `value` as it relates to the `min` and `max` values. When using non-semantic elements, all features of the native semantic element need to be recreated with ARIA attributes, JavaScript and CSS.
+توصیه می‌شود به جای نقش `meter` از عنصر بومی {{HTMLElement("meter")}} استفاده کنید. عوامل کاربر یک ویجت استایل‌ده برای عنصر {{HTMLElement("meter")}} بر اساس مقدار فعلى `value` نسبت به مقادیر `min` و `max` فرهم می‌کنند. هنگام استفاده از عناصر غیرمعنایی، تمام ویژگی‌های عنصر بومی معنایی باید با ویژگی‌های ARIA، جاوا اسکریپت و CSS بازسازی شونند.
 
-## Examples
+## مثال‌ها
 
-An example of a meter using `role="meter"`:
+مثالی از یک متر با استفاده از `role="meter"`:
 
 ```html
 <div
@@ -79,13 +78,13 @@ An example of a meter using `role="meter"`:
 </div>
 ```
 
-In the above scenario, when the `aria-valuenow` value updates, the width of the SVG also needs to be updated as can be seen in [the ARIA Authoring Practices Guide (APG) working meter example](https://www.w3.org/WAI/ARIA/apg/patterns/meter/examples/meter/).
+در سناریوی بالا، هنگامی که مقدار `aria-valuenow` به‌روز می‌شود، عرض SVG نیز باید به‌روز شود، همانطور که در [مثال کار متر راهنمای عملی نویسندگی ARIA (APG)] (https://www.w3.org/WAI/ARIA/apg/patterns/meter/examples/meter/) مشاهده می‌شود.
 
-## Specifications
+## مشخصات
 
-{{Specifications}}
+{{Spcifications}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement('meter')}}
 - {{HTMLElement('progress')}}
