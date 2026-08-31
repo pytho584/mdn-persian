@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: letterSpacing property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/letterSpacing"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: letterSpacing property"
 short-title: letterSpacing
 slug: Web/API/CanvasRenderingContext2D/letterSpacing
 page-type: web-api-instance-property
@@ -14,22 +8,19 @@ browser-compat: api.CanvasRenderingContext2D.letterSpacing
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.letterSpacing`** property of the [Canvas API](/en-US/docs/Web/API/Canvas_API) specifies the spacing between letters when drawing text.
+ویژگی **`CanvasRenderingContext2D.letterSpacing`** از [Canvas API](/en-US/docs/Web/API/Canvas_API) فاصله بین حروف هنگام ترسیم متن را مشخص می‌کند.
 
-This corresponds to the CSS {{cssxref("letter-spacing")}} property.
+این ویژگی معادل ویژگی CSS {{cssxref("letter-spacing")}} است.
 
-## Value
+## مقدار
 
-The letter spacing as a string in the CSS {{cssxref("length")}} data format.
-The default is `0px`.
+فاصله بین حروف به صورت یک رشته در قالب داده {{cssxref("length")}} در CSS. مقدار پیش‌فرض `0px` است.
 
-The property can be used to get or set the spacing.
-The property value will remain unchanged if set to an invalid/unparsable value.
+از این ویژگی می‌توان برای دریافت یا تنظیم فاصله استفاده کرد. اگر مقدار نامعتبر یا غیرقابل تجزیه تنظیم شود، مقدار ویژگی بدون تغییر باقی می‌ماند.
 
-## Examples
+## مثال‌ها
 
-In this example we display the text "Hello World" three times, using the `letterSpacing` property to modify the letter spacing in each case.
-The spacing is also displayed for each case, using the value of the property.
+در این مثال، متن "Hello World" را سه بار نمایش می‌دهیم و از ویژگی `letterSpacing` برای تغییر فاصله بین حروف در هر مورد استفاده می‌کنیم. همچنین فاصله برای هر مورد با استفاده از مقدار ویژگی نمایش داده می‌شود.
 
 ### HTML
 
@@ -45,30 +36,30 @@ const ctx = canvas.getContext("2d");
 
 ctx.font = "30px serif";
 
-// Default letter spacing
+// فاصله پیش‌فرض بین حروف
 ctx.fillText(`Hello world (default: ${ctx.letterSpacing})`, 10, 40);
 
-// Custom letter spacing: 10px
+// فاصله سفارشی: 10px
 ctx.letterSpacing = "10px";
 ctx.fillText(`Hello world (${ctx.letterSpacing})`, 10, 90);
 
-// Custom letter spacing: 20px
+// فاصله سفارشی: 20px
 ctx.letterSpacing = "20px";
 ctx.fillText(`Hello world (${ctx.letterSpacing})`, 10, 140);
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CanvasRenderingContext2D.wordSpacing")}}
