@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-hidden attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,50 +13,48 @@ spec-urls: https://w3c.github.io/aria/#aria-hidden
 sidebar: accessibilitysidebar
 ---
 
-The `aria-hidden` state indicates whether the element is exposed to an accessibility API.
+# ARIA: ویژگی aria-hidden
 
-## Description
+وضعیت `aria-hidden` نشان می‌دهد که آیا عنصر در معرض یک API دسترس‌پذیری قرار می‌گیرد یا خیر.
 
-The `aria-hidden` attribute can be used to hide non-interactive content from the accessibility API.
+## توضیحات
 
-Adding `aria-hidden="true"` to an element removes that element and all of its children from the accessibility tree. This can improve the experience for assistive technology users by hiding:
+از ویژگی `aria-hidden` می‌توان برای پنهان کردن محتوای غیرتعاملی از API دسترس‌پذیری استفاده کرد.
 
-- Purely decorative content, such as icons or images
-- Duplicated content, such as repeated text
-- Offscreen or collapsed content, such as menus
+افزودن `aria-hidden="true"` به یک عنصر، آن عنصر و همه فرزندانش را از درخت دسترس‌پذیری حذف می‌کند. این کار می‌تواند تجربه کاربران فناوری کمکی را با پنهان کردن موارد زیر بهبود بخشد:
 
-The presence of the `aria-hidden` attribute hides content from assistive technology but doesn't visually hide anything.
+- محتوای صرفاً تزئینی، مانند آیکون‌ها یا تصاویر
+- محتوای تکراری، مانند متن تکرارشده
+- محتوای خارج از صفحه یا جمع‌شده، مانند منوها
 
-`aria-hidden="true"` should not be used on elements that can receive focus. Additionally, since this attribute is inherited by an element's children, it should not be added onto the parent or ancestor of a focusable element.
+وجود ویژگی `aria-hidden` محتوا را از فناوری کمکی پنهان می‌کند، اما از نظر بصری چیزی را پنهان نمی‌کند.
+
+`aria-hidden="true"` نباید روی عناصری که می‌توانند فوکوس دریافت کنند استفاده شود. علاوه بر این، چون این ویژگی توسط فرزندان یک عنصر به ارث برده می‌شود، نباید به والد یا اجداد یک عنصر قابل فوکوس اضافه شود.
 
 > [!WARNING]
-> Do not use `aria-hidden="true"` on focusable elements.
-
-An element's hidden status is based on whether it is rendered. Rendering is usually controlled by CSS. For example, an element whose `display` property is set to `none` via CSS is not rendered. An element is considered hidden if it, or any of its ancestors are not rendered or have their `aria-hidden` attribute value set to true. Note that an element and its children that has `aria-hidden="true"` declared on it will still be visible, unless also hidden by CSS.
-
-Use caution when using `aria-hidden` to hide visibly rendered content from assistive technologies. You should not be hiding visible content unless doing so improves the experience for users of assistive technologies by removing redundant or extraneous content. Only when identical or equivalent meaning and functionality is exposed to assistive technologies can removing visible content from the accessibility API be considered.
+> از `aria-hidden="true"` روی عناصر قابل فوکوس استفاده نکنید.
 
 > [!NOTE]
-> Consider all disabilities when hiding visibly rendered content from assistive technologies. Not all users of assistive technology are visually impaired. If visible content doesn't match text content in the accessibility API, the user experience will be negatively impacted for sighted users.
+> هنگام پنهان کردن محتوای قابل مشاهده از فناوری‌های کمکی، همه ناتوانی‌ها را در نظر بگیرید. همه کاربران فناوری کمکی کم‌بینا نیستند. اگر محتوای قابل مشاهده با محتوای متنی در API دسترس‌پذیری مطابقت نداشته باشد، تجربه کاربری برای کاربران بینا تحت تأثیر منفی قرار می‌گیرد.
 
-On the surface, the `aria-hidden="true"` and the `role="presentation"` and its synonym `role="none"` seem similar, but the intent behind each is different.
+در ظاهر، `aria-hidden="true"` و `role="presentation"` و مترادف آن `role="none"` مشابه به نظر می‌رسند، اما هدف پشت هر یک متفاوت است.
 
-- `aria-hidden="true"` will remove the entire element from the accessibility API.
-- `role="presentation"` and `role="none"` will remove the semantic meaning of an element while still exposing it and its content to assistive technology.
+- `aria-hidden="true"` کل عنصر را از API دسترس‌پذیری حذف می‌کند.
+- `role="presentation"` و `role="none"` معنای معنایی یک عنصر را حذف می‌کنند، در حالی که همچنان آن عنصر و محتوایش را در معرض فناوری کمکی قرار می‌دهند.
 
-`aria-hidden="true"` should not be added when:
+`aria-hidden="true"` نباید در موارد زیر اضافه شود:
 
-- The HTML [`hidden`](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) attribute is present
-- The element or the element's ancestor is hidden with [`display: none`](/en-US/docs/Web/CSS/Reference/Properties/display)
-- The element or the element's ancestor is hidden with [`visibility: hidden`](/en-US/docs/Web/CSS/Reference/Properties/visibility)
+- ویژگی [`hidden`](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) در HTML وجود داشته باشد
+- عنصر یا جد عنصر با [`display: none`](/en-US/docs/Web/CSS/Reference/Properties/display) پنهان شده باشد
+- عنصر یا جد عنصر با [`visibility: hidden`](/en-US/docs/Web/CSS/Reference/Properties/visibility) پنهان شده باشد
 
-In all three scenarios, the attribute is unnecessary to add because the element has already been removed from the accessibility tree. Visually hiding elements with `display` or `visibility` hides content from the screen and from assistive technologies.
+در هر سه سناریو، افزودن این ویژگی ضروری نیست، زیرا عنصر قبلاً از درخت دسترس‌پذیری حذف شده است. پنهان کردن بصری عناصر با `display` یا `visibility` محتوا را از صفحه نمایش و از فناوری‌های کمکی پنهان می‌کند.
 
-Using `aria-hidden="false"` will not re-expose the element to assistive technology if any of its parents specify `aria-hidden="true"`.
+استفاده از `aria-hidden="false"` اگر هر یک از والدین آن `aria-hidden="true"` را مشخص کرده باشند، عنصر را دوباره در معرض فناوری کمکی قرار نمی‌دهد.
 
-## Example
+## مثال
 
-Adding `aria-hidden="true"` to the icon hides the icon character from being included in the accessible name.
+افزودن `aria-hidden="true"` به آیکون، کاراکتر آیکون را از قرار گرفتن در نام قابل دسترس پنهان می‌کند.
 
 ```html
 <button>
@@ -65,37 +63,37 @@ Adding `aria-hidden="true"` to the icon hides the icon character from being incl
 </button>
 ```
 
-We have a button with [a Font Awesome icon](https://fontawesome.com/). We hide the icon from assistive technologies with `aria-hidden="true"`, as exposing the icon to assistive technologies could lead to redundancy or, if the icon doesn't have the same content as the visible text, confusion.
+ما یک دکمه با [آیکون Font Awesome](https://fontawesome.com/) داریم. آیکون را با `aria-hidden="true"` از فناوری‌های کمکی پنهان می‌کنیم، زیرا قرار دادن آیکون در معرض فناوری‌های کمکی می‌تواند منجر به افزونگی یا، اگر آیکون محتوای یکسانی با متن قابل مشاهده نداشته باشد، سردرگمی شود.
 
-## Values
+## مقادیر
 
 - `false`
-  - : The element is exposed to the accessibility API as if it was rendered.
+  - : عنصر به‌گونه‌ای در معرض API دسترس‌پذیری قرار می‌گیرد که گویی رندر شده است.
 - `true`
-  - : The element is hidden from the accessibility API.
-- `undefined` (default)
-  - : The element's hidden state is determined by the user agent based on whether it is rendered.
+  - : عنصر از API دسترس‌پذیری پنهان است.
+- `undefined` (پیش‌فرض)
+  - : وضعیت پنهان عنصر توسط عامل کاربر بر اساس اینکه آیا رندر شده است تعیین می‌شود.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaHidden")}}
-  - : The [`ariaHidden`](/en-US/docs/Web/API/Element/ariaHidden) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-hidden` attribute, which Indicates whether the element is exposed to an accessibility API.
+  - : ویژگی [`ariaHidden`](/en-US/docs/Web/API/Element/ariaHidden)، بخشی از رابط {{domxref("Element")}}، مقدار ویژگی `aria-hidden` را منعکس می‌کند که نشان می‌دهد آیا عنصر در معرض API دسترس‌پذیری قرار می‌گیرد یا خیر.
 - {{domxref("ElementInternals.ariaHidden")}}
-  - : The [`ariaHidden`](/en-US/docs/Web/API/ElementInternals/ariaHidden) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-hidden` attribute
+  - : ویژگی [`ariaHidden`](/en-US/docs/Web/API/ElementInternals/ariaHidden)، بخشی از رابط {{domxref("ElementInternals")}}، مقدار ویژگی `aria-hidden` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** roles
+مورد استفاده در **همه** نقش‌ها
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-disabled`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled)
 - [`aria-modal`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-modal)
 - [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded)
-- HTML [`hidden`](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) attribute
-- CSS {{CSSXref('display')}} property
-- CSS {{CSSXref('visibility')}} property
+- ویژگی HTML [`hidden`](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden)
+- ویژگی CSS {{CSSXref('display')}}
+- ویژگی CSS {{CSSXref('visibility')}}
