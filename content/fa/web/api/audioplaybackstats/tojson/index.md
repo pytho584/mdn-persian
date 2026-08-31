@@ -1,7 +1,7 @@
 ---
 title: "AudioPlaybackStats: toJSON() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioPlaybackStats/toJSON"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,27 +16,27 @@ browser-compat: api.AudioPlaybackStats.toJSON
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`toJSON()`** method of the {{domxref("AudioPlaybackStats")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("AudioPlaybackStats")}} object.
+متد **`toJSON()`** از رابط {{domxref("AudioPlaybackStats")}} یک {{Glossary("Serialization","سریال‌ساز")}} است؛ یک نمایش JSON از شیء {{domxref("AudioPlaybackStats")}} را برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("AudioPlaybackStats")}} object.
+یک شیء {{jsxref("JSON")}} که سریال‌سازی شیء {{domxref("AudioPlaybackStats")}} است.
 
-## Examples
+## مثال‌ها
 
-### Using the toJSON method
+### استفاده از متد toJSON
 
-In this example, calling `stats.toJSON()` returns a JSON representation of the `AudioPlaybackStats` object.
+در این مثال، فراخوانی `stats.toJSON()` یک نمایش JSON از شیء `AudioPlaybackStats` را برمی‌گرداند.
 
 ```js
 const audioCtx = new AudioContext();
@@ -48,7 +48,7 @@ const stats = audioCtx.playbackStats;
 console.log(stats.toJSON());
 ```
 
-This would log a JSON object like so:
+این یک شیء JSON به شکل زیر را ثبت می‌کند:
 
 ```json
 {
@@ -61,17 +61,17 @@ This would log a JSON object like so:
 }
 ```
 
-To get a JSON string, you can use [`JSON.stringify(stats)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت یک رشته JSON، می‌توانید مستقیماً از [`JSON.stringify(stats)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این متد به‌طور خودکار `toJSON()` را فراخوانی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
