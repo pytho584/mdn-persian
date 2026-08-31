@@ -1,7 +1,7 @@
 ---
 title: "AudioContext: createMediaStreamDestination() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamDestination"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,33 +14,33 @@ browser-compat: api.AudioContext.createMediaStreamDestination
 
 {{ APIRef("Web Audio API") }}
 
-The `createMediaStreamDestination()` method of the {{ domxref("AudioContext") }} Interface is used to create a new {{domxref("MediaStreamAudioDestinationNode")}} object associated with a [WebRTC](/en-US/docs/Web/API/WebRTC_API) {{domxref("MediaStream")}} representing an audio stream, which may be stored in a local file or sent to another computer.
+متد `createMediaStreamDestination()` از رابط {{ domxref("AudioContext") }} برای ایجاد یک شیء جدید {{domxref("MediaStreamAudioDestinationNode")}} استفاده می‌شود که با یک {{domxref("MediaStream")}} از نوع [WebRTC](/en-US/docs/Web/API/WebRTC_API) مرتبط است. این `MediaStream` یک جریان صوتی را نمایش می‌دهد که می‌تواند در یک فایل محلی ذخیره شود یا به کامپیوتر دیگری ارسال گردد.
 
-The {{domxref("MediaStream")}} is created when the node is created and is accessible via the {{domxref("MediaStreamAudioDestinationNode")}}'s `stream` attribute. This stream can be used in a similar way as a `MediaStream` obtained via {{domxref("navigator.getUserMedia") }} — it can, for example, be sent to a remote peer using the `addStream()` method of `RTCPeerConnection`.
+{{domxref("MediaStream")}} در زمان ایجاد گره ساخته می‌شود و از طریق ویژگی `stream` متعلق به {{domxref("MediaStreamAudioDestinationNode")}} قابل دسترسی است. این جریان را می‌توان به همان شیوه‌ای که یک `MediaStream` به دست آمده از طریق {{domxref("navigator.getUserMedia") }} استفاده می‌شود، به کار برد — برای مثال، می‌توان آن را با استفاده از متد `addStream()` مربوط به `RTCPeerConnection` به یک همتای راه دور ارسال کرد.
 
-For more details about media stream destination nodes, check out the {{domxref("MediaStreamAudioDestinationNode")}} reference page.
+برای جزئیات بیشتر درباره گره‌های مقصد جریان رسانه، به صفحه مرجع {{domxref("MediaStreamAudioDestinationNode")}} مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 createMediaStreamDestination()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("MediaStreamAudioDestinationNode")}}.
+یک {{domxref("MediaStreamAudioDestinationNode")}}.
 
-## Examples
+## مثال‌ها
 
-In the following simple example, we create a {{domxref("MediaStreamAudioDestinationNode")}}, an {{ domxref("OscillatorNode") }} and a {{ domxref("MediaRecorder") }} (the example will therefore only work in Firefox and Chrome at this time.) The `MediaRecorder` is set up to record information from the `MediaStreamDestinationNode`.
+در مثال ساده زیر، یک {{domxref("MediaStreamAudioDestinationNode")}}، یک {{ domxref("OscillatorNode") }} و یک {{ domxref("MediaRecorder") }} ایجاد می‌کنیم (بنابراین این مثال در حال حاضر فقط در Firefox و Chrome کار خواهد کرد). `MediaRecorder` برای ضبط اطلاعات از `MediaStreamDestinationNode` تنظیم شده است.
 
-When the button is clicked, the oscillator starts, and the `MediaRecorder` is started. When the button is stopped, the oscillator and `MediaRecorder` both stop. Stopping the `MediaRecorder` causes the `dataavailable` event to fire, and the event data is pushed into the `chunks` array. After that, the `stop` event fires, a new `blob` is made of type opus — which contains the data in the `chunks` array, and a new window (tab) is then opened that points to a URL created from the blob.
+وقتی دکمه کلیک می‌شود، اسیلاتور شروع به کار می‌کند و `MediaRecorder` شروع به ضبط می‌کند. وقتی دکمه متوقف می‌شود، اسیلاتور و `MediaRecorder` هر دو متوقف می‌شوند. توقف `MediaRecorder` باعث می‌شود رویداد `dataavailable` رخ دهد و داده‌های رویداد به آرایه `chunks` اضافه شوند. پس از آن، رویداد `stop` رخ می‌دهد، یک `blob` جدید از نوع opus ساخته می‌شود — که داده‌های موجود در آرایه `chunks` را شامل می‌شود — و یک پنجره (تب) جدید باز می‌شود که به آدرسی ساخته شده از آن blob اشاره می‌کند.
 
-From here, you can play and save the opus file.
+از اینجا می‌توانید فایل opus را پخش و ذخیره کنید.
 
 ```html
 <button>Make sine wave</button> <audio controls></audio>
@@ -82,16 +82,16 @@ mediaRecorder.onstop = (evt) => {
 ```
 
 > [!NOTE]
-> You can [view this example live](https://mdn.github.io/webaudio-examples/create-media-stream-destination/index.html), or [study the source code](https://github.com/mdn/webaudio-examples/blob/main/create-media-stream-destination/index.html), on GitHub.
+> می‌توانید [این مثال را به صورت زنده مشاهده کنید](https://mdn.github.io/webaudio-examples/create-media-stream-destination/index.html)، یا [کد منبع آن را مطالعه کنید](https://github.com/mdn/webaudio-examples/blob/main/create-media-stream-destination/index.html) در GitHub.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
