@@ -1,11 +1,7 @@
 ---
 title: "AudioBuffer: numberOfChannels property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/numberOfChannels"
-status: "needs-translation"
----
-
----
-title: "AudioBuffer: numberOfChannels property"
+translated_by: "n8n + AI"
 short-title: numberOfChannels
 slug: Web/API/AudioBuffer/numberOfChannels
 page-type: web-api-instance-property
@@ -14,34 +10,31 @@ browser-compat: api.AudioBuffer.numberOfChannels
 
 {{ APIRef("Web Audio API") }}
 
-The `numberOfChannels` property of the {{ domxref("AudioBuffer") }}
-interface returns an integer representing the number of discrete audio channels
-described by the PCM data stored in the buffer.
+ویژگی `numberOfChannels` از رابط {{ domxref("AudioBuffer") }} یک عدد صحیح را برمی‌گرداند که نشان‌دهنده تعداد کانال‌های مجزای صوتی توصیف‌شده توسط داده‌های PCM ذخیره‌شده در بافر است.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Stereo
 const channels = 2;
 
-// Create an empty two second stereo buffer at the
-// sample rate of the AudioContext
+// یک بافر استریوی دو ثانیه‌ای خالی با نرخ نمونه‌برداری AudioContext ایجاد کنید
 const frameCount = audioCtx.sampleRate * 2.0;
 const myArrayBuffer = audioCtx.createBuffer(2, frameCount, audioCtx.sampleRate);
 
 button.onclick = () => {
-  // Fill the buffer with white noise;
-  // just random values between -1.0 and 1.0
+  // بافر را با نویز سفید پر کنید؛
+  // فقط مقادیر تصادفی بین 1.0- و 1.0
   for (let channel = 0; channel < channels; channel++) {
-    // This gives us the actual ArrayBuffer that contains the data
+    // این به ما ArrayBuffer واقعی حاوی داده‌ها را می‌دهد
     const nowBuffering = myArrayBuffer.getChannelData(channel);
     for (let i = 0; i < frameCount; i++) {
-      // Math.random() is in [0; 1.0]
-      // audio needs to be in [-1.0; 1.0]
+      // Math.random() در بازه [0; 1.0] است
+      // صدا باید در بازه [1.0-; 1.0] باشد
       nowBuffering[i] = Math.random() * 2 - 1;
     }
   }
@@ -50,14 +43,14 @@ button.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
