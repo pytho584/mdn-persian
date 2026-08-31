@@ -1,7 +1,7 @@
 ---
 title: "AudioWorkletGlobalScope"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,40 +13,39 @@ browser-compat: api.AudioWorkletGlobalScope
 
 {{APIRef("Web Audio API")}}
 
-The **`AudioWorkletGlobalScope`** interface of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) represents a global execution context for user-supplied code, which defines custom {{domxref("AudioWorkletProcessor")}}-derived classes.
+واسط **`AudioWorkletGlobalScope`** از [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) یک زمینه اجرای سراسری برای کد ارائه‌شده توسط کاربر را نشان می‌دهد که کلاس‌های سفارشی مشتق‌شده از {{domxref("AudioWorkletProcessor")}} را تعریف می‌کند.
 
-Each {{domxref("BaseAudioContext")}} has a single {{domxref("AudioWorklet")}} available under the {{domxref("BaseAudioContext.audioWorklet", "audioWorklet")}} property, which runs its code in a single `AudioWorkletGlobalScope`.
+هر {{domxref("BaseAudioContext")}} یک {{domxref("AudioWorklet")}} واحد دارد که تحت ویژگی {{domxref("BaseAudioContext.audioWorklet", "audioWorklet")}} در دسترس است و کد خود را در یک `AudioWorkletGlobalScope` واحد اجرا می‌کند.
 
-As the global execution context is shared across the current `BaseAudioContext`, it's possible to define any other variables and perform any actions allowed in worklets — apart from defining `AudioWorkletProcessor` derived classes.
+از آنجایی که زمینه اجرای سراسری در سراسر `BaseAudioContext` جاری به اشتراک گذاشته می‌شود، می‌توان هر متغیر دیگری را تعریف کرد و هر عملی را که در worklet‌ها مجاز است انجام داد - به جز تعریف کلاس‌های مشتق‌شده از `AudioWorkletProcessor`.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties defined on its parent interface, {{domxref("WorkletGlobalScope")}}._
+_این واسط همچنین ویژگی‌های تعریف‌شده در واسط والد خود، {{domxref("WorkletGlobalScope")}} را به ارث می‌برد._
 
 - {{domxref("AudioWorkletGlobalScope.currentFrame", "currentFrame")}} {{ReadOnlyInline}}
-  - : Returns an integer that represents the ever-increasing current sample-frame of the audio block being processed. It is incremented by 128 (the size of a render quantum) after the processing of each audio block.
+  - : یک عدد صحیح را برمی‌گرداند که نشان‌دهنده فریم نمونه فعلی و در حال افزایش بلوک صوتی در حال پردازش است. پس از پردازش هر بلوک صوتی ۱۲۸ (اندازه یک کوانتوم رندر) افزایش می‌یابد.
 - {{domxref("AudioWorkletGlobalScope.currentTime", "currentTime")}} {{ReadOnlyInline}}
-  - : Returns a double that represents the ever-increasing context time of the audio block being processed. It is equal to the {{domxref("BaseAudioContext.currentTime", "currentTime")}} property of the {{domxref("BaseAudioContext")}} the worklet belongs to.
+  - : یک عدد اعشاری را برمی‌گرداند که نشان‌دهنده زمان زمینه در حال افزایش بلوک صوتی در حال پردازش است. این مقدار برابر با ویژگی {{domxref("BaseAudioContext.currentTime", "currentTime")}} مربوط به {{domxref("BaseAudioContext")}}ای است که worklet به آن تعلق دارد.
 - {{domxref("AudioWorkletGlobalScope.sampleRate", "sampleRate")}} {{ReadOnlyInline}}
-  - : Returns a float that represents the sample rate of the associated {{domxref("BaseAudioContext")}}.
+  - : یک عدد اعشاری را برمی‌گرداند که نشان‌دهنده نرخ نمونه مربوط به {{domxref("BaseAudioContext")}} است.
 - {{domxref("AudioWorkletGlobalScope.port", "port")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : Returns a {{domxref("MessagePort")}} for custom, asynchronous communication between code in the main thread and the global scope of an audio worklet.
-    This allows for custom messages, such as sending and receiving control data or global settings.
+  - : یک {{domxref("MessagePort")}} برای ارتباط ناهمزمان سفارشی بین کد در رشته اصلی و دامنه سراسری یک audio worklet برمی‌گرداند. این امکان ارسال و دریافت پیام‌های سفارشی مانند داده‌های کنترل یا تنظیمات سراسری را فراهم می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface also inherits methods defined on its parent interface, {{domxref("WorkletGlobalScope")}}._
+_این واسط همچنین روش‌های تعریف‌شده در واسط والد خود، {{domxref("WorkletGlobalScope")}} را به ارث می‌برد._
 
 - {{domxref("AudioWorkletGlobalScope.registerProcessor", "registerProcessor()")}}
-  - : Registers a class derived from the {{domxref('AudioWorkletProcessor')}} interface. The class can then be used by creating an {{domxref("AudioWorkletNode")}}, providing its registered name.
+  - : یک کلاس مشتق‌شده از واسط {{domxref('AudioWorkletProcessor')}} را ثبت می‌کند. سپس می‌توان از این کلاس با ایجاد یک {{domxref("AudioWorkletNode")}} با استفاده از نام ثبت‌شده آن استفاده کرد.
 
-## Examples
+## مثال‌ها
 
-In this example we output all global properties into the console in the constructor of a custom {{domxref("AudioWorkletProcessor")}}.
+در این مثال، تمام ویژگی‌های سراسری را در سازنده یک {{domxref("AudioWorkletProcessor")}} سفارشی در کنسول چاپ می‌کنیم.
 
-First we need to define the processor, and register it. Note that this should be done in a separate file.
+ابتدا باید پردازنده را تعریف کرده و آن را ثبت کنیم. توجه داشته باشید که این کار باید در یک فایل جداگانه انجام شود.
 
 ```js
 // AudioWorkletProcessor defined in : test-processor.js
@@ -80,7 +79,7 @@ console.log(usefulVariable);
 registerProcessor("test-processor", TestProcessor);
 ```
 
-Next, in our main scripts file we'll load the processor, create an instance of {{domxref("AudioWorkletNode")}} — passing the name of the processor to it — and connect the node to an audio graph. We should see the output of {{domxref("console/log_static", "console.log()")}} calls in the console:
+سپس، در فایل اسکریپت اصلی خود، پردازنده را بارگذاری می‌کنیم، یک نمونه از {{domxref("AudioWorkletNode")}} - با نام پردازنده - ایجاد می‌کنیم و آن را به یک گراف صوتی متصل می‌کنیم. باید خروجی فراخوانی‌های {{domxref("console/log_static", "console.log()")}} را در کنسول ببینیم:
 
 ```js
 const audioContext = new AudioContext();
@@ -89,16 +88,16 @@ const testNode = new AudioWorkletNode(audioContext, "test-processor");
 testNode.connect(audioContext.destination);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
-- [Using AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
