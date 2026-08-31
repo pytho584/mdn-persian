@@ -1,7 +1,7 @@
 ---
 title: "Manipulating video using canvas"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,13 +12,13 @@ page-type: guide
 
 {{DefaultAPISidebar("Canvas API")}}
 
-By combining the capabilities of the [`video`](/en-US/docs/Web/HTML/Reference/Elements/video) element with a [`canvas`](/en-US/docs/Web/HTML/Reference/Elements/canvas), you can manipulate video data in real time to incorporate a variety of visual effects to the video being displayed. This tutorial demonstrates how to perform chroma-keying (also known as the "green screen effect") using JavaScript code.
+با ترکیب قابلیت‌های عنصر [`video`](/en-US/docs/Web/HTML/Reference/Elements/video) با یک [`canvas`](/en-US/docs/Web/HTML/Reference/Elements/canvas)، می‌توانید داده‌های ویدیویی را در زمان واقعی دستکاری کرده و جلوه‌های بصری گوناگونی بر ویدیوی در حال پخش اعمال کنید. این آموزش نحوه اجرای کروماکی (که با نام «جلوه صفحه سبز» نیز شناخته می‌شود) را با استفاده از کد جاوااسکریپت نشان می‌دهد.
 
 {{EmbedGHLiveSample('dom-examples/canvas/chroma-keying/index.html', 700, 400) }}
 
-## The document content
+## محتوای سند
 
-The HTML document used to render this content is shown below.
+سند HTML که برای نمایش این محتوا استفاده شده است در زیر نشان داده شده است.
 
 ```html
 <!doctype html>
@@ -62,18 +62,18 @@ The HTML document used to render this content is shown below.
 </html>
 ```
 
-The key bits to take away from this are:
+نکات کلیدی که از این بخش باید در نظر بگیرید عبارتند از:
 
-1. This document establishes two [`canvas`](/en-US/docs/Web/HTML/Reference/Elements/canvas) elements, with the IDs `c1` and `c2`. Canvas `c1` is used to display the current frame of the original video, while `c2` is used to display the video after performing the chroma-keying effect; `c2` is preloaded with the still image that will be used to replace the green background in the video.
-2. The JavaScript code is imported from a script named `processor.js`.
+1. این سند دو عنصر [`canvas`](/en-US/docs/Web/HTML/Reference/Elements/canvas) با شناسه‌های `c1` و `c2` ایجاد می‌کند. از بوم `c1` برای نمایش فریم فعلی ویدیوی اصلی استفاده می‌شود، در حالی که `c2` برای نمایش ویدیو پس از اعمال افکت کروماکی به کار می‌رود؛ `c2` از قبل با تصویر ثابتی بارگذاری شده است که برای جایگزینی پس‌زمینه سبز در ویدیو استفاده خواهد شد.
+2. کد جاوااسکریپت از اسکریپتی به نام `processor.js` وارد می‌شود.
 
-## The JavaScript code
+## کد جاوااسکریپت
 
-The JavaScript code in `processor.js` consists of three methods.
+کد جاوااسکریپت در `processor.js` از سه روش تشکیل شده است.
 
-### Initializing the chroma-key player
+### مقداردهی اولیه پخش‌کننده کروماکی
 
-The `doLoad()` method is called when the HTML document initially loads. This method's job is to prepare the variables needed by the chroma-key processing code, and to set up an event listener so we can detect when the user starts playing the video.
+متد `doLoad()` زمانی فراخوانی می‌شود که سند HTML در ابتدا بارگذاری می‌شود. وظیفه این متد آماده‌سازی متغیرهای مورد نیاز برای پردازش کروماکی و تنظیم یک شنونده رویداد است تا بتوانیم زمانی را که کاربر شروع به پخش ویدیو می‌کند تشخیص دهیم.
 
 ```js
 const processor = {};
@@ -96,13 +96,13 @@ processor.doLoad = function doLoad() {
 };
 ```
 
-This code grabs references to the elements in the HTML document that are of particular interest, namely the `video` element and the two `canvas` elements. It also fetches references to the graphics contexts for each of the two canvases. These will be used when we're actually doing the chroma-keying effect.
+این کد ارجاعاتی به عناصر مورد نظر در سند HTML می‌گیرد، یعنی عنصر `video` و دو عنصر `canvas`. همچنین ارجاع به زمینه‌های گرافیکی هر یک از دو بوم را دریافت می‌کند. این‌ها زمانی که واقعاً افکت کروماکی را اجرا می‌کنیم استفاده خواهند شد.
 
-Then `addEventListener()` is called to begin watching the `video` element so that we obtain notification when the user presses the play button on the video. In response to the user beginning playback, this code fetches the width and height of the video, halving each (we will be halving the size of the video when we perform the chroma-keying effect), then calls the `timerCallback()` method to start watching the video and computing the visual effect.
+سپس `addEventListener()` فراخوانی می‌شود تا عنصر `video` را زیر نظر بگیرد و زمانی که کاربر دکمه پخش را روی ویدیو فشار می‌دهد، اعلان دریافت کنیم. در پاسخ به شروع پخش توسط کاربر، این کد عرض و ارتفاع ویدیو را دریافت و هر یک را نصف می‌کند (هنگام اجرای افکت کروماکی اندازه ویدیو را نصف خواهیم کرد)، سپس متد `timerCallback()` را برای شروع تماشای ویدیو و محاسبه افکت بصری فراخوانی می‌کند.
 
-### The timer callback
+### فراخوانی زمان‌سنج (Timer Callback)
 
-The timer callback is called initially when the video starts playing (when the "play" event occurs), then takes responsibility for establishing itself to be called periodically in order to launch the keying effect for each frame.
+فراخوانی زمان‌سنج ابتدا وقتی ویدیو شروع به پخش می‌کند (هنگام رخداد «play») فراخوانی می‌شود و سپس مسئولیت تنظیم خود را برای فراخوانی دوره‌ای به عهده می‌گیرد تا افکت کروماکی برای هر فریم اجرا شود.
 
 ```js
 processor.timerCallback = function timerCallback() {
@@ -116,15 +116,15 @@ processor.timerCallback = function timerCallback() {
 };
 ```
 
-The first thing the callback does is check to see if the video is even playing; if it's not, the callback returns immediately without doing anything.
+اولین کاری که این فراخوانی انجام می‌دهد بررسی این است که آیا ویدیو اصلاً در حال پخش است یا نه؛ اگر در حال پخش نباشد، فراخوانی بلافاصله بدون انجام هیچ کاری بازمی‌گردد.
 
-Then it calls the `computeFrame()` method, which performs the chroma-keying effect on the current video frame.
+سپس متد `computeFrame()` را فراخوانی می‌کند که افکت کروماکی را روی فریم فعلی ویدیو اعمال می‌کند.
 
-The last thing the callback does is call `setTimeout()` to schedule itself to be called again as soon as possible. In the real world, you would probably schedule this to be done based on knowledge of the video's frame rate.
+آخرین کاری که فراخوانی انجام می‌دهد، فراخوانی `setTimeout()` برای زمان‌بندی فراخوانی دوباره خود در سریع‌ترین زمان ممکن است. در دنیای واقعی، احتمالاً این کار را بر اساس آگاهی از نرخ فریم ویدیو زمان‌بندی می‌کنید.
 
-### Manipulating the video frame data
+### دستکاری داده‌های فریم ویدیو
 
-The `computeFrame()` method, shown below, is responsible for actually fetching a frame of data and performing the chroma-keying effect.
+متد `computeFrame()` که در زیر نشان داده شده است، مسئول دریافت واقعی یک فریم از داده‌ها و اعمال افکت کروماکی است.
 
 ```js
 processor.computeFrame = function () {
@@ -144,30 +144,30 @@ processor.computeFrame = function () {
 };
 ```
 
-When this routine is called, the video element is displaying the most recent frame of video data, which looks like this:
+وقتی این روال فراخوانی می‌شود، عنصر ویدیو آخرین فریم از داده‌های ویدیویی را نمایش می‌دهد که به این شکل است:
 
-![A single frame of the video element. There is a person wearing a black t-shirt. The background-color is yellow.](video.png)
+![یک فریم از عنصر ویدیو. شخصی با تیشرت مشکی وجود دارد. رنگ پس‌زمینه زرد است.](video.png)
 
-That frame of video is copied into the graphics context `ctx1` of the first canvas, specifying as the height and width the values we previously saved to draw the frame at half size. Note that you can pass the video element into the context's `drawImage()` method to draw the current video frame into the context. The result is:
+آن فریم از ویدیو به زمینه گرافیکی `ctx1` بوم اول کپی می‌شود، و ارتفاع و عرض همان مقادیری که قبلاً برای ترسیم فریم در نصف اندازه ذخیره کرده‌ایم تعیین می‌شود. توجه داشته باشید که می‌توانید عنصر ویدیو را به متد `drawImage()` زمینه بدهید تا فریم جاری ویدیو در آن زمینه ترسیم شود. نتیجه به این شکل است:
 
-![A single frame of the video element. There is a person wearing a black t-shirt. The background-color is yellow. This is a smaller version of the picture above.](sourcectx.png)
+![یک فریم از عنصر ویدیو. شخصی با تیشرت مشکی وجود دارد. رنگ پس‌زمینه زرد است. این نسخه کوچک‌تر تصویر بالاست.](sourcectx.png)
 
-Calling the `getImageData()` method on the first context fetches a copy of the raw graphics data for the current frame of video. This provides raw 32-bit pixel image data we can then manipulate. We then compute the number of pixels in the image by dividing the total size of the frame's image data by four.
+فراخوانی متد `getImageData()` روی زمینه اول، یک کپی از داده‌های گرافیکی خام فریم جاری ویدیو دریافت می‌کند. این کار داده‌های خام تصویری ۳۲-بیتی پیکسلی فراهم می‌کند که می‌توانیم سپس آن‌ها را دستکاری کنیم. سپس تعداد پیکسل‌های تصویر را با تقسیم اندازه کل داده‌های تصویر فریم بر چهار محاسبه می‌کنیم.
 
-The `for` loop scans through the frame's pixels, pulling out the red, green, and blue values for each pixel, and compares the values against predetermined numbers that are used to detect the green screen that will be replaced with the still background image imported from `foo.png`.
+حلقه `for` پیکسل‌های فریم را اسکن می‌کند و مقادیر قرمز، سبز و آبی را برای هر پیکسل استخراج می‌کند و آن‌ها را با اعداد از پیش تعیین‌شده‌ای مقایسه می‌کند که برای تشخیص صفحه سبزی که با تصویر پس‌زمینه ثابت وارد شده از `foo.png` جایگزین می‌شود، استفاده می‌شوند.
 
-Every pixel in the frame's image data that is found that is within the parameters that are considered to be part of the green screen has its alpha value replaced with a zero, indicating that the pixel is entirely transparent. As a result, the final image has the entire green screen area 100% transparent, so that when it's drawn into the destination context using `ctx2.putImageData`, the result is an overlay onto the static backdrop.
+هر پیکسل در داده‌های تصویر فریم که در محدوده پارامترهایی که بخشی از صفحه سبز محسوب می‌شوند قرار گیرد، مقدار آلفای آن با صفر جایگزین می‌شود و این نشان می‌دهد که پیکسل کاملاً شفاف است. در نتیجه، تصویر نهایی کل ناحیه صفحه سبز را ۱۰۰٪ شفاف دارد، به طوری که وقتی با استفاده از `ctx2.putImageData` در زمینه مقصد ترسیم می‌شود، نتیجه یک روی‌هم‌گذاری روی پس‌زمینه ثابت است.
 
-The resulting image looks like this:
+تصویر حاصل به این شکل است:
 
-![A single frame of the video element shows the same person wearing a black t-shirt as in the photos above. The background is different: it is the Firefox logo.](output.png)
+![یک فریم از عنصر ویدیو همان شخص با تیشرت مشکی را نشان می‌دهد که در تصاویر بالا دیده می‌شود. پس‌زمینه متفاوت است: لوگوی فایرفاکس است.](output.png)
 
-This is done repeatedly as the video plays, so that frame after frame is processed and displayed with the chroma-key effect.
+این کار به‌طور مکرر در حین پخش ویدیو انجام می‌شود، بنابراین فریم به فریم با افکت کروماکی پردازش و نمایش داده می‌شود.
 
-[View the full source for this example](https://github.com/mdn/dom-examples/tree/main/canvas/chroma-keying).
+[مشاهده منبع کامل این مثال](https://github.com/mdn/dom-examples/tree/main/canvas/chroma-keying).
 
-## See also
+## همچنین ببینید
 
-- [Web media technologies](/en-US/docs/Web/Media)
-- [Guide to media types and formats on the web](/en-US/docs/Web/Media/Guides/Formats)
-- [Learning area: HTML video and audio](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio)
+- [فناوری‌های رسانه‌ای وب](/en-US/docs/Web/Media)
+- [راهنمای انواع و قالب‌های رسانه در وب](/en-US/docs/Web/Media/Guides/Formats)
+- [منطقه یادگیری: ویدیو و صوت HTML](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio)
