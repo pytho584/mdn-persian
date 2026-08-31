@@ -1,7 +1,7 @@
 ---
 title: "Color contrast"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -11,27 +11,27 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-The [color contrast](https://w3c.github.io/wcag/guidelines/22/#dfn-contrast-ratio) between background and foreground content (that is, usually text) should be great enough to ensure legibility.
+[کنتراست رنگ](https://w3c.github.io/wcag/guidelines/22/#dfn-contrast-ratio) بین زمینه و محتوای پیش‌زمینه (که معمولاً متن است) باید به اندازه‌ای زیاد باشد که خوانایی تضمین شود.
 
-When designing readable interfaces for different vision capabilities, the WCAG guidelines recommend the following contrast ratios:
+هنگام طراحی رابط‌های خوانا برای توانایی‌های مختلف بینایی، دستورالعمل‌های WCAG نسبت‌های کنتراست زیر را توصیه می‌کنند:
 
-| Type of content                                                                 | Minimum ratio (AA rating) | Enhanced ratio (AAA rating) |
+| نوع محتوا                                                                 | حداقل نسبت (رتبه AA) | نسبت بهبودیافته (رتبه AAA) |
 | ------------------------------------------------------------------------------- | ------------------------- | --------------------------- |
-| Body text                                                                       | 4.5 : 1                   | 7 : 1                       |
-| Large-scale text (120-150% larger than body text)                               | 3 : 1                     | 4.5 : 1                     |
-| Active user interface components and graphical objects such as icons and graphs | 3 : 1                     | Not defined                 |
+| متن بدنه                                                                       | 4.5 : 1                   | 7 : 1                       |
+| متن بزرگ (120-150% بزرگ‌تر از متن بدنه)                               | 3 : 1                     | 4.5 : 1                     |
+| اجزای رابط کاربری فعال و اشیاء گرافیکی مانند آیکون‌ها و نمودارها | 3 : 1                     | تعریف نشده                 |
 
-These ratios do not apply to "incidental" text, such as inactive controls, logotypes, or purely decorative text.
+این نسبت‌ها برای متن‌های «تصادفی» مانند کنترل‌های غیرفعال، لوگوها یا متن‌های صرفاً تزئینی اعمال نمی‌شوند.
 
-See the [Solution](#solution) section below for further information.
+برای اطلاعات بیشتر، بخش [راه‌حل](#solution) را ببینید.
 
-Having good color contrast on your site benefits all your users, but it is particularly beneficial to users with certain types of color blindness and other similar conditions, who experience low contrast, and have trouble differentiating between similar colors. This is because they don't see bright and dark areas as readily as those without such conditions, and therefore have trouble seeing edges, borders, and other details.
+داشتن کنتراست رنگ خوب در سایت شما به همه کاربران کمک می‌کند، اما به ویژه برای کاربران با انواع خاصی از کوررنگی و سایر شرایط مشابه که کنتراست پایینی را تجربه می‌کنند و در تشخیص رنگ‌های مشابه مشکل دارند، مفید است. این به دلیل آن است که آنها نواحی روشن و تاریک را به راحتی افرادی که چنین شرایطی ندارند نمی‌بینند و در نتیجه در دیدن لبه‌ها، حاشیه‌ها و سایر جزئیات مشکل دارند.
 
-It is good to have a cool design on your website, but the design is worthless if your users can't read your content.
+داشتن طراحی جذاب در وب‌سایت شما خوب است، اما اگر کاربران نتوانند محتوای شما را بخوانند، طراحی بی‌ارزش است.
 
-## Examples
+## مثال‌ها
 
-Let's have a look at some HTML and CSS code:
+بیایید نگاهی به برخی کدهای HTML و CSS بیندازیم:
 
 ```html
 <div class="good">Good contrast</div>
@@ -52,11 +52,11 @@ div {
 }
 ```
 
-Both pieces of text have their default black color.
+هر دو قطعه متن رنگ پیش‌فرض سیاه خود را دارند.
 
-### Good Contrast
+### کنتراست خوب
 
-The "good" `<div>` has a neon blue background, which makes the text easy to read:
+`<div>` «خوب» دارای پس‌زمینه آبی نئونی است که خواندن متن را آسان می‌کند:
 
 ```html
 <div class="good">Good contrast</div>
@@ -81,9 +81,9 @@ div {
 
 {{EmbedLiveSample('Good_Contrast', '100%', '100')}}
 
-### Bad Contrast
+### کنتراست بد
 
-The "bad" `<div>` on the other hand has a very dark purple background, which makes the text much harder to read:
+از طرف دیگر، `<div>` «بد» دارای پس‌زمینه بنفش بسیار تیره است که خواندن متن را بسیار دشوارتر می‌کند:
 
 ```html
 <div class="bad">Bad contrast</div>
@@ -108,33 +108,33 @@ div {
 
 {{EmbedLiveSample('Bad_Contrast', '100%', '100')}}
 
-## Solution
+## راه‌حل
 
-When choosing a color scheme for your website, choose foreground and background colors that have good contrast. Make the color contrast as good as it can be within your design constraints — ideally go for the AAA rating (see 1.4.6 below), but at least meet the AA rating (see 1.4.3 below).
+هنگام انتخاب طرح رنگ برای وب‌سایت خود، رنگ‌های پیش‌زمینه و پس‌زمینه‌ای را انتخاب کنید که کنتراست خوبی دارند. کنتراست رنگ را تا حد امکان در محدودیت‌های طراحی خود خوب کنید - ایده‌آل این است که به رتبه AAA برسید (به 1.4.6 در زیر مراجعه کنید)، اما حداقل رتبه AA را برآورده کنید (به 1.4.3 در زیر مراجعه کنید).
 
-If you are including non-text content such as video or animation, you should follow 1.4.11 (again, see below).
+اگر محتوای غیرمتنی مانند ویدیو یا انیمیشن را شامل می‌شوید، باید از 1.4.11 پیروی کنید (دوباره، به زیر مراجعه کنید).
 
-To check your contrast as you make your color choices, use a tool such as WebAIM's [Color Contrast Checker](https://webaim.org/resources/contrastchecker/).
+برای بررسی کنتراست خود هنگام انتخاب رنگ، از ابزاری مانند [بررسی‌کننده کنتراست رنگ](https://webaim.org/resources/contrastchecker/) متعلق به WebAIM استفاده کنید.
 
-You can also check color contrast on the fly using Firefox's Developer Tools — see the [Accessibility inspector](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html) guide, and in particular the section [Check for accessibility issues](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html#check-for-accessibility-issues). Try using it on the live examples in the description section.
+همچنین می‌توانید کنتراست رنگ را به‌طور لحظه‌ای با استفاده از ابزارهای توسعه‌دهنده Firefox بررسی کنید — راهنمای [بازرس دسترسی](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html) و به ویژه بخش [بررسی مشکلات دسترسی](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html#check-for-accessibility-issues) را ببینید. سعی کنید از آن روی مثال‌های زنده در بخش توضیحات استفاده کنید.
 
-## Related WCAG success criteria
+## معیارهای موفقیت مرتبط WCAG
 
-- [1.4.3 Minimum contrast (AA)](https://w3c.github.io/wcag/guidelines/22/#contrast-minimum)
-  - : The color contrast between background and foreground content should be at a minimum level to ensure legibility:
-    - Text and its background should have a contrast ratio of at least 4.5:1.
-    - Heading (or just larger) text should have a ratio of at least 3:1. Larger text is defined as at least 18pt, or 14pt bold.
+- [1.4.3 حداقل کنتراست (AA)](https://w3c.github.io/wcag/guidelines/22/#contrast-minimum)
+  - : کنتراست رنگ بین پس‌زمینه و محتوای پیش‌زمینه باید در حداقل سطح باشد تا خوانایی تضمین شود:
+    - متن و پس‌زمینه آن باید نسبت کنتراست حداقل 4.5:1 داشته باشند.
+    - متن عنوان (یا فقط بزرگ‌تر) باید نسبت حداقل 3:1 داشته باشد. متن بزرگ به عنوان حداقل 18pt یا 14pt پررنگ تعریف می‌شود.
 
-- [1.4.6 Enhanced contrast (AAA)](https://w3c.github.io/wcag/guidelines/22/#contrast-enhanced)
-  - : This follows, and builds on, criterion 1.4.3.
-    - Text and its background should have a contrast ratio of at least 7:1.
-    - Heading (or just larger) text should have a ratio of at least 4.5:1.
+- [1.4.6 کنتراست بهبودیافته (AAA)](https://w3c.github.io/wcag/guidelines/22/#contrast-enhanced)
+  - : این معیار از معیار 1.4.3 پیروی می‌کند و بر آن بنا می‌شود.
+    - متن و پس‌زمینه آن باید نسبت کنتراست حداقل 7:1 داشته باشند.
+    - متن عنوان (یا فقط بزرگ‌تر) باید نسبت حداقل 4.5:1 داشته باشد.
 
-- [1.4.11 Non-Text Contrast (AA)](https://w3c.github.io/wcag/guidelines/22/#non-text-contrast)
-  - : There should be a minimum color contrast ratio of 3 to 1 for user interface components and graphical objects.
+- [1.4.11 کنتراست غیرمتن (AA)](https://w3c.github.io/wcag/guidelines/22/#non-text-contrast)
+  - : باید حداقل نسبت کنتراست رنگ 3 به 1 برای اجزای رابط کاربری و اشیاء گرافیکی وجود داشته باشد.
 
-## See also
+## همچنین ببینید
 
-- [Color and color contrast](/en-US/docs/Learn_web_development/Core/Accessibility/CSS_and_JavaScript#color_and_color_contrast)
-- [Multiple labels](/en-US/docs/Learn_web_development/Extensions/Forms/How_to_structure_a_web_form#multiple_labels)
-- [Understanding Non-Text Contrast](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html)
+- [رنگ و کنتراست رنگ](/en-US/docs/Learn_web_development/Core/Accessibility/CSS_and_JavaScript#color_and_color_contrast)
+- [برچسب‌های چندگانه](/en-US/docs/Learn_web_development/Extensions/Forms/How_to_structure_a_web_form#multiple_labels)
+- [درک کنتراست غیرمتن](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html)
