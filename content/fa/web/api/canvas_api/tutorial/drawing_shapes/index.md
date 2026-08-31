@@ -1,7 +1,7 @@
 ---
 title: "Drawing shapes with canvas"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,34 +12,34 @@ page-type: guide
 
 {{DefaultAPISidebar("Canvas API")}} {{PreviousNext("Web/API/Canvas_API/Tutorial/Basic_usage", "Web/API/Canvas_API/Tutorial/Applying_styles_and_colors")}}
 
-Now that we have set up our [canvas environment](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage), we can get into the details of how to draw on the canvas. By the end of this article, you will have learned how to draw rectangles, triangles, lines, arcs and curves, providing familiarity with some of the basic shapes. Working with paths is essential when drawing objects onto the canvas and we will see how that can be done.
+حالا که [محیط بوم](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage) خود را راه‌اندازی کرده‌ایم، می‌توانیم به جزئیات نحوه رسم روی بوم بپردازیم. در پایان این مقاله، یاد خواهید گرفت که چگونه مستطیل‌ها، مثلث‌ها، خط‌ها، کمان‌ها و منحنی‌ها را رسم کنید و با برخی از شکل‌های پایه آشنا خواهید شد. کار با مسیرها هنگام رسم اشیاء روی بوم ضروری است و خواهیم دید که چگونه می‌توان این کار را انجام داد.
 
-## The grid
+## شبکه
 
-Before we can start drawing, we need to talk about the canvas grid or **coordinate space**. Our HTML skeleton from the previous page had a canvas element 150 pixels wide and 150 pixels high.
+پیش از آنکه بتوانیم رسم را شروع کنیم، باید درباره شبکهٔ بوم یا **فضای مختصات** صحبت کنیم. اسکلت HTML صفحهٔ قبل یک عنصر بوم با عرض ۱۵۰ پیکسل و ارتفاع ۱۵۰ پیکسل داشت.
 
 ![Canvas grid with a blue square demonstrating coordinates and axes.](canvas_default_grid.png)
 
-Normally 1 unit in the grid corresponds to 1 pixel on the canvas. The origin of this grid is positioned in the _top left_ corner at coordinate (0,0). All elements are placed relative to this origin. So the position of the top left corner of the blue square becomes x pixels from the left and y pixels from the top, at coordinate (x,y). Later in this tutorial we'll see how we can translate the origin to a different position, rotate the grid and even scale it, but for now we'll stick to the default.
+به‌طور معمول، ۱ واحد در شبکه معادل ۱ پیکسل روی بوم است. مبدأ این شبکه در گوشهٔ _بالا سمت چپ_ و در مختصات (0,0) قرار دارد. همهٔ عناصر نسبت به این مبدأ جای‌گذاری می‌شوند. بنابراین موقعیت گوشهٔ بالای سمت چپ مربع آبی، x پیکسل از چپ و y پیکسل از بالا، با مختصات (x,y) مشخص می‌شود. بعداً در این آموزش خواهیم دید که چگونه می‌توان مبدأ را به موقعیت دیگری منتقل کرد، شبکه را چرخاند و حتی مقیاس آن را تغییر داد، اما فعلاً به حالت پیش‌فرض می‌مانیم.
 
-## Drawing rectangles
+## رسم مستطیل‌ها
 
-Unlike {{Glossary("SVG")}}, {{HTMLElement("canvas")}} only supports two primitive shapes: rectangles and paths (lists of points connected by lines). All other shapes must be created by combining one or more paths. Luckily, we have an assortment of path drawing functions which make it possible to compose very complex shapes.
+برخلاف {{Glossary("SVG")}}، {{HTMLElement("canvas")}} تنها از دو شکل ابتدایی پشتیبانی می‌کند: مستطیل‌ها و مسیرها (فهرستی از نقاط که با خط به هم متصل شده‌اند). همهٔ شکل‌های دیگر باید با ترکیب یک یا چند مسیر ساخته شوند. خوشبختانه، مجموعه‌ای از توابع رسم مسیر در اختیار داریم که ترکیب شکل‌های بسیار پیچیده را ممکن می‌سازند.
 
-First let's look at the rectangle. There are three functions that draw rectangles on the canvas:
+اول بیایید مستطیل را بررسی کنیم. سه تابع وجود دارد که روی بوم مستطیل رسم می‌کنند:
 
 - {{domxref("CanvasRenderingContext2D.fillRect", "fillRect(x, y, width, height)")}}
-  - : Draws a filled rectangle.
+  - : یک مستطیل توپُر رسم می‌کند.
 - {{domxref("CanvasRenderingContext2D.strokeRect", "strokeRect(x, y, width, height)")}}
-  - : Draws a rectangular outline.
+  - : یک حاشیهٔ مستطیلی رسم می‌کند.
 - {{domxref("CanvasRenderingContext2D.clearRect", "clearRect(x, y, width, height)")}}
-  - : Clears the specified rectangular area, making it fully transparent.
+  - : ناحیهٔ مستطیلی مشخص‌شده را پاک می‌کند و آن را کاملاً شفاف می‌سازد.
 
-Each of these three functions takes the same parameters. `x` and `y` specify the position on the canvas (relative to the origin) of the top-left corner of the rectangle. `width` and `height` provide the rectangle's size.
+هر یک از این سه تابع پارامترهای یکسانی می‌گیرند. `x` و `y` موقعیت گوشهٔ بالای سمت چپ مستطیل را روی بوم (نسبت به مبدأ) مشخص می‌کنند. `width` و `height` اندازهٔ مستطیل را تعیین می‌کنند.
 
-Below is the `draw()` function from the previous page, but now it is making use of these three functions.
+در زیر تابع `draw()` از صفحهٔ قبل آورده شده است، اما حالا از این سه تابع استفاده می‌کند.
 
-### Rectangular shape example
+### مثال شکل مستطیلی
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -60,19 +60,19 @@ function draw() {
 draw();
 ```
 
-This example's output is shown below.
+خروجی این مثال در زیر نشان داده شده است.
 
 {{EmbedLiveSample("Rectangular_shape_example", "", "160")}}
 
-The `fillRect()` function draws a large black square 100 pixels on each side. The `clearRect()` function then erases a 60x60 pixel square from the center, and then `strokeRect()` is called to create a rectangular outline 50x50 pixels within the cleared square (_conceptually_ 50x50; in reality it's 52x52, as the next section will explain).
+تابع `fillRect()` یک مربع سیاه بزرگ به ضلع ۱۰۰ پیکسل رسم می‌کند. سپس تابع `clearRect()` یک مربع ۶۰×۶۰ پیکسلی را از مرکز پاک می‌کند و در ادامه `strokeRect()` فراخوانی می‌شود تا یک حاشیهٔ مستطیلی ۵۰×۵۰ پیکسلی درون مربع پاک‌شده ایجاد کند (_از نظر مفهومی_ ۵۰×۵۰؛ در واقعیت ۵۲×۵۲ است، همان‌طور که در بخش بعد توضیح داده می‌شود).
 
-In upcoming pages we'll see two alternative methods for `clearRect()`, and we'll also see how to change the color and stroke style of the rendered shapes.
+در صفحه‌های آینده دو روش جایگزین برای `clearRect()` خواهیم دید و همچنین خواهیم دید که چگونه رنگ و سبک خط (stroke) شکل‌های رندر شده را تغییر دهیم.
 
-Unlike the path functions we'll see in the next section, all three rectangle functions draw immediately to the canvas.
+برخلاف توابع مسیر که در بخش بعد خواهیم دید، هر سه تابع مستطیل بلافاصله روی بوم رسم می‌کنند.
 
-## Seeing blurry edges?
+## لبه‌های تار می‌بینید؟
 
-In the rectangle example above, and in all the examples to come, you may notice that the shapes' edges may appear blurrier than the equivalent shapes drawn with SVG or CSS. This is not because the canvas API is incapable of drawing sharp edges, but rather because of the way the canvas grid maps to the actual pixels on the screen, and also, in certain cases, because of how the browser scales the canvas. If the above example is not apparent enough, let's enlarge the canvas using CSS:
+در مثال مستطیل بالا و در تمام مثال‌های پیش رو، ممکن است متوجه شوید که لبه‌های شکل‌ها نسبت به شکل‌های معادل رسم‌شده با SVG یا CSS تارتر به نظر می‌رسند. این به این دلیل نیست که Canvas API قادر به رسم لبه‌های تیز نیست، بلکه به دلیل نحوه نگاشت شبکهٔ بوم به پیکسل‌های واقعی روی صفحه و همچنین، در برخی موارد، به دلیل نحوه مقیاس‌بندی بوم توسط مرورگر است. اگر مثال بالا به اندازه کافی واضح نیست، بیایید بوم را با استفاده از CSS بزرگ‌تر کنیم:
 
 ```html live-sample___seeing_blurry_edges live-sample___seeing_blurry_edges_2 live-sample___seeing_blurry_edges_3
 <canvas id="canvas" width="15" height="15"></canvas>
@@ -100,7 +100,7 @@ draw();
 
 {{EmbedLiveSample("Seeing blurry edges", "", "350")}}
 
-In this example, we create our canvas really small (15x15), but then use CSS to scale it up to 300x300 pixels. As a result, each canvas pixel is now represented by a 20x20 block of CSS pixels. We draw a stroked rectangle from (2,2) to (12,12) and a filled rectangle from (7,7) to (8,8). It appears _really_ blurry. This is because by default, when the browser scales raster images, it uses a smoothing algorithm to interpolate the extra pixels. This is great for photographs or canvas graphics with curly edges, but not so great for straight-edged shapes. To fix this, we can set {{cssxref("image-rendering")}} to `pixelated`:
+در این مثال، بوم را بسیار کوچک (۱۵×۱۵) ایجاد می‌کنیم، اما سپس با CSS آن را تا ۳۰۰×۳۰۰ پیکسل بزرگ می‌کنیم. در نتیجه، هر پیکسل بوم اکنون با یک بلوک ۲۰×۲۰ از پیکسل‌های CSS نمایش داده می‌شود. یک مستطیل خط‌دار از (2,2) تا (12,12) و یک مستطیل توپُر از (7,7) تا (8,8) رسم می‌کنیم. ظاهر آن _واقعاً_ تار است. دلیل این است که مرورگر به‌طور پیش‌فرض هنگام بزرگ‌نمایی تصاویر شطرنجی، از یک الگوریتم هموارسازی برای درون‌یابی پیکسل‌های اضافی استفاده می‌کند. این برای عکس‌ها یا گرافیک‌های بوم با لبه‌های منحنی عالی است، اما برای شکل‌های با لبهٔ صاف چندان مناسب نیست. برای رفع این مشکل، می‌توانیم {{cssxref("image-rendering")}} را روی `pixelated` قرار دهیم:
 
 ```css live-sample___seeing_blurry_edges_2 live-sample___seeing_blurry_edges_3
 #canvas {
@@ -110,25 +110,25 @@ In this example, we create our canvas really small (15x15), but then use CSS to 
 
 {{EmbedLiveSample("Seeing blurry edges 2", "", "350")}}
 
-Now, when the browser scales the canvas, it preserves the pixelation of the original as much as possible.
+حالا وقتی مرورگر بوم را مقیاس‌بندی می‌کند، در حد امکان پیکسل‌بندی (pixelation) اصلی را حفظ می‌کند.
 
 > [!NOTE]
-> `image-rendering: pixelated` is not without its problems as a crisp-edge-preservation technique. When CSS pixels don't align with device pixels (if the {{domxref("Window/devicePixelRatio", "devicePixelRatio")}} is not an integer), certain pixels may be drawn larger than others, resulting in a non-uniform appearance. This is not an easy problem to solve, however, because it is impossible to fill device pixels precisely when the CSS pixels cannot accurately map to them.
+> `image-rendering: pixelated` به‌عنوان یک تکنیک حفظ لبه‌های تیز خالی از مشکل نیست. وقتی پیکسل‌های CSS با پیکسل‌های دستگاه هم‌تراز نباشند (اگر {{domxref("Window/devicePixelRatio", "devicePixelRatio")}} عددی صحیح نباشد)، ممکن است برخی پیکسل‌ها بزرگ‌تر از بقیه رسم شوند و ظاهری نایک‌نواخت ایجاد کنند. با این حال، حل این مشکل آسان نیست، زیرا زمانی که پیکسل‌های CSS نتوانند به‌طور دقیق به پیکسل‌های دستگاه نگاشت شوند، پر کردن دقیق پیکسل‌های دستگاه غیرممکن است.
 
-But now another issue becomes apparent, one that you can actually also observe in the original rectangle example: the stroked rectangle is not only 2 pixels wide instead of 1, but also appears gray rather than the default black. This is because of how the coordinates are interpreted as shape boundaries.
+اما حالا مشکل دیگری نمایان می‌شود، مشکلی که در مثال مستطیل اولیه نیز می‌توانید مشاهده کنید: مستطیل خط‌دار نه‌تنها به‌جای ۱ پیکسل، ۲ پیکسل عرض دارد، بلکه به‌جای رنگ سیاه پیش‌فرض، خاکستری به نظر می‌رسد. این به این دلیل است که مختصات‌ها به‌عنوان مرزهای شکل تفسیر می‌شوند.
 
-If you look at the [grid](#the_grid) diagram above again, you can see that coordinates like `2` or `12` do not identify a pixel, but rather the edge between two pixels. In the images below, the grid represents the canvas coordinate grid. The squares between grid lines are actual on-screen pixels. In the first grid image below, a rectangle from (2,1) to (5,5) is filled. The entire area between them (light red) falls on pixel boundaries, so the resulting filled rectangle will have crisp edges.
+اگر دوباره به نمودار [شبکه](#the_grid) در بالا نگاه کنید، می‌بینید که مختصاتی مانند `2` یا `12` یک پیکسل را مشخص نمی‌کنند، بلکه لبهٔ بین دو پیکسل را مشخص می‌کنند. در تصویرهای زیر، شبکه نشان‌دهندهٔ شبکهٔ مختصات بوم است. مربع‌های بین خطوط شبکه، پیکسل‌های واقعی روی صفحه هستند. در نخستین تصویر شبکه در زیر، یک مستطیل از (2,1) تا (5,5) پر شده است. کل ناحیهٔ بین آن‌ها (قرمز روشن) روی مرز پیکسل‌ها قرار می‌گیرد، بنابراین مستطیل توپُر حاصل لبه‌های تیزی خواهد داشت.
 
 ![Three coordinate grids. The grid lines are actual pixels on the screen. The top left corner of each grid is labeled (0,0). In the first grid, a rectangle from (2,1) to (5,5) is filled in light-red color. In the second grid, (3,1) to (3,5) is joined with a 1-pixel thick royal blue line. The royal-blue line is centered on a grid line, extends from 2.5 to 3.5 on the x access, halfway into the pixels on either side of the graph line, with a light blue background on either side extending from 2 to 4 on the x-access. To avoid the light blue blur extension of the line in the second coordinate grid, the path in, the third coordinate grid is a royal-blue from line (3.5,1) to (3.5,5). The 1 pixel line width ends up completely and precisely filling a single pixel vertical line.](canvas-grid.png)
 
-If you consider a path from (3,1) to (3,5) with a line thickness of `1.0`, you end up with the situation in the second image. The actual area to be filled (dark blue) only extends halfway into the pixels on either side of the path. An approximation of this has to be rendered, which means that those pixels being only partially shaded, and results in the entire area (the light blue and dark blue) being filled in with a color only half as dark as the actual stroke color. This is what happens with the `1.0` width line in the `strokeRect()` call in the rectangle example above.
+اگر مسیری از (3,1) تا (3,5) با ضخامت خط `1.0` در نظر بگیرید، به وضعیت تصویر دوم می‌رسید. ناحیهٔ واقعی که باید پر شود (آبی تیره) فقط تا نیمی از پیکسل‌های دو طرف مسیر پیش می‌رود. باید تقریبی از این وضعیت رندر شود، به این معنی که آن پیکسل‌ها فقط به‌طور جزئی سایه می‌خورند و در نتیجه کل ناحیه (آبی روشن و آبی تیره) با رنگی پر می‌شود که تنها نصف تیرگی رنگ واقعی خط است. این دقیقاً همان چیزی است که با خط با عرض `1.0` در فراخوانی `strokeRect()` در مثال مستطیل بالا رخ می‌دهد.
 
-To fix this, you have to be very precise in your path creation. Knowing that a `1.0` width line will extend half a unit to either side of the path, creating the path from _centers_ of pixels results in the situation in the third image—the `1.0` line width ends up completely and precisely filling a single pixel vertical line.
+برای رفع این مشکل، باید در ایجاد مسیر بسیار دقیق باشید. با دانستن اینکه یک خط با عرض `1.0` نیم واحد به هر سمت مسیر گسترش می‌یابد، ایجاد مسیر از _مرکز_ پیکسل‌ها به وضعیت تصویر سوم منجر می‌شود—عرض خط `1.0` در نهایت یک خط عمودی تک‌پیکسلی را به‌طور کامل و دقیق پر می‌کند.
 
 > [!NOTE]
-> Be aware that in our vertical line example, the Y position still referenced an integer grid line position—if it hadn't, we would see pixels with half coverage at the endpoints.
+> توجه داشته باشید که در مثال خط عمودی، موقعیت Y همچنان به یک موقعیت عدد صحیح روی خط شبکه اشاره می‌کرد—اگر این‌طور نبود، در نقاط انتهایی پیکسل‌هایی با پوشش نصفه می‌دیدیم.
 
-So this is why we said earlier that the `strokeRect(50, 50, 50, 50)` call in the rectangle example was _conceptually_ 50x50, but in reality it is 52x52. The actual filled region for the outline starts at (49.5, 49.5) and ends at (100.5, 100.5), and because of the partially filled pixels, the actually filled area is from (49,49) to (101,101), which is 52x52, and the edges are 2-pixel wide. To get a solid 1-pixel wide outline that is exactly 50x50, you would need to _shrink_ the rectangle by the thickness of the outline (1px), and move it by half the thickness (0.5px):
+به همین دلیل است که قبلاً گفتیم فراخوانی `strokeRect(50, 50, 50, 50)` در مثال مستطیل _از نظر مفهومی_ ۵۰×۵۰ است، اما در واقعیت ۵۲×۵۲ است. ناحیهٔ واقعی پر شده برای حاشیه از (49.5, 49.5) شروع و به (100.5, 100.5) ختم می‌شود، و به دلیل پیکسل‌های نیمه‌پر، ناحیهٔ واقعاً پر شده از (49,49) تا (101,101) است که ۵۲×۵۲ است و لبه‌ها ۲ پیکسل عرض دارند. برای به دست آوردن یک خط دور توپُر با عرض ۱ پیکسل که دقیقاً ۵۰×۵۰ باشد، باید مستطیل را به اندازهٔ ضخامت خط دور (۱px) _کوچک_ کنید و آن را به اندازهٔ نصف ضخامت (0.5px) جابه‌جا کنید:
 
 ```js live-sample___seeing_blurry_edges_3
 function draw() {
@@ -141,11 +141,11 @@ function draw() {
 
 {{EmbedLiveSample("Seeing blurry edges 3", "", "350")}}
 
-For even-width lines, each half ends up being an integer amount of pixels, so you want a path that is between pixels (that is, (3,1) to (3,5)), instead of down the middle of pixels.
+برای خطوط با عرض زوج، هر نیمه به تعداد صحیحی پیکسل تبدیل می‌شود، بنابراین مسیری می‌خواهید که بین پیکسل‌ها باشد (یعنی (3,1) تا (3,5))، نه درست از وسط پیکسل‌ها.
 
-While slightly painful when initially working with scalable 2D graphics, paying attention to the pixel grid and the position of paths ensures that your drawings will look correct regardless of scaling or any other transformations involved. A 1.0-width vertical line drawn at the correct position will become a crisp 2-pixel line when scaled up by 2, and will appear at the correct position.
+هرچند در ابتدای کار با گرافیک دوبعدی مقیاس‌پذیر کمی دشوار است، اما توجه به شبکهٔ پیکسل و موقعیت مسیرها تضمین می‌کند که رسم‌های شما بدون توجه به مقیاس‌بندی یا هر تبدیل دیگری که انجام می‌شود، درست به نظر برسند. یک خط عمودی با عرض 1.0 که در موقعیت صحیح رسم شود، هنگام بزرگ‌نمایی ۲ برابر، به یک خط تیز ۲ پیکسلی تبدیل می‌شود و در موقعیت صحیح ظاهر می‌شود.
 
-This phenomenon of partially filled pixels also extends to shapes that don't align to the pixel grid. For example, consider a rotated rectangle (you'll learn about drawing it in the next section). To see what it's like with and without `image-rendering: pixelated`, we have two canvases side by side, and a third one drawn at full scale, with grid lines:
+این پدیدهٔ پیکسل‌های نیمه‌پر به شکل‌هایی که با شبکهٔ پیکسل هم‌تراز نیستند نیز گسترش می‌یابد. برای مثال، یک مستطیل چرخیده را در نظر بگیرید (در بخش بعد دربارهٔ رسم آن یاد خواهید گرفت). برای دیدن وضعیت با و بدون `image-rendering: pixelated`، دو بوم در کنار هم داریم و بوم سومی که در مقیاس کامل، با خطوط شبکه رسم شده است:
 
 ```html hidden live-sample___seeing_blurry_edges_4
 <canvas id="canvas1" width="12" height="12"></canvas>
@@ -219,44 +219,44 @@ drawFullScale();
 
 {{EmbedLiveSample("Seeing blurry edges 4", "", "350")}}
 
-If scaling _up_ an image makes it appear blurrier than intended, then scaling _down_ an image would make it appear _sharper_. For example, if you want a canvas to appear as 300x150 pixels on the screen, you can create it as 600x300 pixels and then use CSS to scale it down. This is especially useful on high-DPI screens (such as Apple's Retina displays) where a CSS pixel is represented by multiple screen pixels, so if you faithfully paint a 300x150 pixel canvas, it will not have the same pixel resolution as other elements on the page.
+اگر بزرگ‌کردن تصویر آن را تارتر از حد انتظار نشان دهد، کوچک‌کردن تصویر آن را _تیزتر_ نشان می‌دهد. مثلاً اگر می‌خواهید یک بوم روی صفحه به‌صورت ۳۰۰×۱۵۰ پیکسل دیده شود، می‌توانید آن را با اندازهٔ ۶۰۰×۳۰۰ پیکسل ایجاد کنید و سپس با CSS آن را کوچک کنید. این به‌ویژه در صفحه‌های با DPI بالا (مانند نمایشگرهای رتینا اپل) مفید است، جایی که یک پیکسل CSS با چند پیکسل صفحه نمایش داده می‌شود؛ بنابراین اگر یک بوم ۳۰۰×۱۵۰ پیکسلی را دقیق رنگ‌آمیزی کنید، وضوح پیکسلی یکسانی با دیگر عناصر صفحه نخواهد داشت.
 
-## Drawing paths
+## رسم مسیرها
 
-Now let's look at paths. A path is a list of points, connected by segments of lines that can be of different shapes, curved or not, of different width and of different color. A path, or even a subpath, can be closed. To make shapes using paths, we take some extra steps:
+حالا بیایید مسیرها را بررسی کنیم. مسیر فهرستی از نقاط است که توسط پاره‌خط‌هایی به هم متصل شده‌اند؛ این پاره‌خط‌ها می‌توانند شکل‌های مختلفی داشته باشند، منحنی یا غیرمنحنی، با عرض‌ها و رنگ‌های متفاوت. یک مسیر یا حتی یک زیرمسیر می‌تواند بسته باشد. برای ساخت شکل‌ها با استفاده از مسیرها، چند گام اضافی برمی‌داریم:
 
-1. First, you create the path.
-2. Then you use [drawing commands](/en-US/docs/Web/API/CanvasRenderingContext2D#paths) to draw into the path.
-3. Once the path has been created, you can stroke or fill the path to render it.
+1. ابتدا مسیر را ایجاد می‌کنید.
+2. سپس از [دستورهای رسم](/en-US/docs/Web/API/CanvasRenderingContext2D#paths) برای رسم درون مسیر استفاده می‌کنید.
+3. پس از ایجاد مسیر، می‌توانید آن را خط‌گذاری (stroke) یا پر کنید تا رندر شود.
 
-Here are the functions used to perform these steps:
+در اینجا توابعی که برای انجام این مراحل استفاده می‌شوند آورده شده است:
 
 - {{domxref("CanvasRenderingContext2D.beginPath", "beginPath()")}}
-  - : Creates a new path. Once created, future drawing commands are directed into the path and used to build the path up.
-- [Path methods](/en-US/docs/Web/API/CanvasRenderingContext2D#paths)
-  - : Methods to set different paths for objects.
+  - : یک مسیر جدید ایجاد می‌کند. پس از ایجاد، دستورهای رسم بعدی به سمت این مسیر هدایت شده و برای ساخت مسیر استفاده می‌شوند.
+- [روش‌های مسیر](/en-US/docs/Web/API/CanvasRenderingContext2D#paths)
+  - : روش‌هایی برای تنظیم مسیرهای مختلف برای اشیاء.
 - {{domxref("CanvasRenderingContext2D.closePath", "closePath()")}}
-  - : Adds a straight line to the path, going to the start of the current sub-path.
+  - : یک خط مستقیم به مسیر اضافه می‌کند که به شروع زیرمسیر جاری می‌رود.
 - {{domxref("CanvasRenderingContext2D.stroke", "stroke()")}}
-  - : Draws the shape by stroking its outline.
+  - : شکل را با خط‌گذاری دور آن رسم می‌کند.
 - {{domxref("CanvasRenderingContext2D.fill", "fill()")}}
-  - : Draws a solid shape by filling the path's content area.
+  - : یک شکل توپُر را با پر کردن ناحیهٔ محتوای مسیر رسم می‌کند.
 
-The first step to create a path is to call the `beginPath()`. Internally, paths are stored as a list of sub-paths (lines, arcs, etc.) which together form a shape. Every time this method is called, the list is reset and we can start drawing new shapes.
-
-> [!NOTE]
-> When the current path is empty, such as immediately after calling `beginPath()`, or on a newly created canvas, the first path construction command is always treated as a `moveTo()`, regardless of what it actually is. For that reason, you will almost always want to specifically set your starting position after resetting a path.
-
-The second step is calling the methods that actually specify the paths to be drawn. We'll see these shortly.
-
-The third, and an optional step, is to call `closePath()`. This method tries to close the shape by drawing a straight line from the current point to the start. If the shape has already been closed or there's only one point in the list, this function does nothing.
+اولین گام برای ایجاد یک مسیر، فراخوانی `beginPath()` است. در داخل، مسیرها به‌صورت فهرستی از زیرمسیرها (خط‌ها، کمان‌ها و غیره) ذخیره می‌شوند که با هم یک شکل را تشکیل می‌دهند. هر بار که این متد فراخوانی شود، فهرست بازنشانی می‌شود و می‌توانیم رسم شکل‌های جدید را شروع کنیم.
 
 > [!NOTE]
-> When you call `fill()`, any open shapes are closed automatically, so you don't have to call `closePath()`. This is **not** the case when you call `stroke()`.
+> وقتی مسیر جاری خالی است، مثلاً بلافاصله پس از فراخوانی `beginPath()` یا روی یک بوم تازه ایجاد شده، نخستین دستور ساخت مسیر همیشه به‌عنوان `moveTo()` در نظر گرفته می‌شود، صرف‌نظر از اینکه واقعاً چیست. به همین دلیل، تقریباً همیشه می‌خواهید پس از بازنشانی مسیر، موقعیت شروع خود را به‌طور مشخص تنظیم کنید.
 
-### Drawing a triangle
+گام دوم، فراخوانی روش‌هایی است که مسیرهای مورد نظر برای رسم را مشخص می‌کنند. به‌زودی آن‌ها را خواهیم دید.
 
-For example, the code for drawing a triangle would look something like this:
+گام سوم و اختیاری، فراخوانی `closePath()` است. این روش تلاش می‌کند شکل را با کشیدن یک خط مستقیم از نقطهٔ جاری به نقطهٔ شروع ببندد. اگر شکل از قبل بسته شده باشد یا فقط یک نقطه در فهرست وجود داشته باشد، این تابع کاری انجام نمی‌دهد.
+
+> [!NOTE]
+> وقتی `fill()` را فراخوانی می‌کنید، هر شکل باز به‌طور خودکار بسته می‌شود؛ بنابراین نیازی به فراخوانی `closePath()` ندارید. اما وقتی `stroke()` را فراخوانی می‌کنید این‌طور **نیست**.
+
+### رسم یک مثلث
+
+برای مثال، کد رسم یک مثلث چیزی شبیه به این خواهد بود:
 
 ```html hidden
 <canvas id="canvas" width="100" height="100"></canvas>
@@ -279,20 +279,20 @@ function draw() {
 draw();
 ```
 
-The result looks like this:
+نتیجه به این شکل است:
 
 {{EmbedLiveSample("Drawing_a_triangle", "", "110")}}
 
-### Moving the pen
+### جابه‌جایی قلم
 
-One very useful function, which doesn't actually draw anything but becomes part of the path list described above, is the `moveTo()` function. You can probably best think of this as lifting a pen or pencil from one spot on a piece of paper and placing it on the next.
+یکی از توابع بسیار مفید که در واقع چیزی رسم نمی‌کند اما بخشی از فهرست مسیر توصیف‌شده در بالا می‌شود، تابع `moveTo()` است. احتمالاً بهترین راه برای درک آن این است که آن را مانند برداشتن قلم یا مداد از یک نقطه روی کاغذ و قرار دادن آن روی نقطهٔ بعدی تصور کنید.
 
 - {{domxref("CanvasRenderingContext2D.moveTo", "moveTo(x, y)")}}
-  - : Moves the pen to the coordinates specified by `x` and `y`.
+  - : قلم را به مختصات مشخص‌شده توسط `x` و `y` حرکت می‌دهد.
 
-When the canvas is initialized or `beginPath()` is called, you typically will want to use the `moveTo()` function to place the starting point somewhere else. We could also use `moveTo()` to draw unconnected paths. Take a look at the smiley face below.
+وقتی بوم مقداردهی اولیه می‌شود یا `beginPath()` فراخوانی می‌شود، معمولاً می‌خواهید از تابع `moveTo()` برای قرار دادن نقطهٔ شروع در جای دیگری استفاده کنید. همچنین می‌توانیم از `moveTo()` برای رسم مسیرهای بدون اتصال استفاده کنیم. به شکلک صورت خندان زیر نگاه کنید.
 
-To try this for yourself, you can use the code snippet below. Just paste it into the `draw()` function we saw earlier.
+برای امتحان کردن این کار، می‌توانید از قطعه‌کد زیر استفاده کنید. کافی است آن را در تابع `draw()` که قبلاً دیدیم قرار دهید.
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -319,25 +319,25 @@ function draw() {
 draw();
 ```
 
-The result looks like this:
+نتیجه به این شکل است:
 
 {{EmbedLiveSample("Moving_the_pen", "", "160")}}
 
-If you'd like to see the connecting lines, you can remove the lines that call `moveTo()`.
+اگر می‌خواهید خطوط اتصال را ببینید، می‌توانید خطوطی را که `moveTo()` را فراخوانی می‌کنند حذف کنید.
 
 > [!NOTE]
-> To learn more about the `arc()` function, see the [Arcs](#arcs) section below.
+> برای آشنایی بیشتر با تابع `arc()`، به بخش [کمان‌ها](#arcs) در زیر مراجعه کنید.
 
-### Lines
+### خط‌ها
 
-For drawing straight lines, use the `lineTo()` method.
+برای رسم خطوط مستقیم، از روش `lineTo()` استفاده کنید.
 
 - {{domxref("CanvasRenderingContext2D.lineTo", "lineTo(x, y)")}}
-  - : Draws a line from the current drawing position to the position specified by `x` and `y`.
+  - : خطی از موقعیت رسم فعلی به موقعیت مشخص‌شده توسط `x` و `y` رسم می‌کند.
 
-This method takes two arguments, `x` and `y`, which are the coordinates of the line's end point. The starting point is dependent on previously drawn paths, where the end point of the previous path is the starting point for the following, etc. The starting point can also be changed by using the `moveTo()` method.
+این روش دو آرگومان `x` و `y` می‌گیرد که مختصات نقطهٔ پایان خط هستند. نقطهٔ شروع به مسیرهای قبلی رسم‌شده بستگی دارد، به این صورت که نقطهٔ پایان مسیر قبلی، نقطهٔ شروع مسیر بعدی است و غیره. نقطهٔ شروع را نیز می‌توان با استفاده از روش `moveTo()` تغییر داد.
 
-The example below draws two triangles, one filled and one outlined.
+مثال زیر دو مثلث رسم می‌کند: یکی توپُر و یکی خط‌دار.
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -369,36 +369,36 @@ function draw() {
 draw();
 ```
 
-This starts by calling `beginPath()` to start a new shape path. We then use the `moveTo()` method to move the starting point to the desired position. Below this, two lines are drawn which make up two sides of the triangle.
+این کار با فراخوانی `beginPath()` برای شروع یک مسیر شکل جدید آغاز می‌شود. سپس از روش `moveTo()` برای انتقال نقطهٔ شروع به موقعیت مورد نظر استفاده می‌کنیم. در ادامه، دو خط رسم می‌شود که دو ضلع مثلث را تشکیل می‌دهند.
 
 {{EmbedLiveSample("Lines", "", "160")}}
 
-You'll notice the difference between the filled and stroked triangle. This is, as mentioned above, because shapes are automatically closed when a path is filled, but not when they are stroked. If we left out the `closePath()` for the stroked triangle, only two lines would have been drawn, not a complete triangle.
+تفاوت بین مثلث توپُر و مثلث خط‌دار را مشاهده خواهید کرد. همان‌طور که در بالا ذکر شد، این به این دلیل است که هنگام پر شدن یک مسیر، شکل‌ها به‌طور خودکار بسته می‌شوند، اما هنگام خط‌گذاری این‌طور نیست. اگر `closePath()` را برای مثلث خط‌دار حذف می‌کردیم، فقط دو خط رسم می‌شد، نه یک مثلث کامل.
 
-### Arcs
+### کمان‌ها
 
-To draw arcs or circles, we use the `arc()` or `arcTo()` methods.
+برای رسم کمان یا دایره، از روش‌های `arc()` یا `arcTo()` استفاده می‌کنیم.
 
 - {{domxref("CanvasRenderingContext2D.arc", "arc(x, y, radius, startAngle, endAngle, counterclockwise)")}}
-  - : Draws an arc which is centered at _(x, y)_ position with radius _r_ starting at _startAngle_ and ending at _endAngle_ going in the given direction indicated by _counterclockwise_ (defaulting to clockwise).
+  - : کمانی رسم می‌کند که در موقعیت _(x, y)_ با شعاع _r_ مرکز آن قرار دارد و از _startAngle_ شروع و به _endAngle_ ختم می‌شود و در جهت مشخص‌شده توسط _counterclockwise_ حرکت می‌کند (پیش‌فرض در جهت عقربه‌های ساعت است).
 - {{domxref("CanvasRenderingContext2D.arcTo", "arcTo(x1, y1, x2, y2, radius)")}}
-  - : Draws an arc with the given control points and radius, connected to the previous point by a straight line.
+  - : کمانی را با نقاط کنترل و شعاع داده‌شده رسم می‌کند که با یک خط مستقیم به نقطهٔ قبلی متصل می‌شود.
 
-Let's have a more detailed look at the `arc` method, which takes six parameters: `x` and `y` are the coordinates of the center of the circle on which the arc should be drawn. `radius` is self-explanatory. The `startAngle` and `endAngle` parameters define the start and end points of the arc in radians, along the curve of the circle. These are measured from the x axis. The `counterclockwise` parameter is a Boolean value which, when `true`, draws the arc counterclockwise; otherwise, the arc is drawn clockwise.
-
-> [!NOTE]
-> Angles in the `arc` function are measured in radians, not degrees. To convert degrees to radians you can use the following JavaScript expression: `radians = (Math.PI/180)*degrees`.
-
-The following example is a little more complex than the ones we've seen above. It draws 12 different arcs all with different angles and fills.
-
-The two [`for` loops](/en-US/docs/Web/JavaScript/Reference/Statements/for) are for looping through the rows and columns of arcs. For each arc, we start a new path by calling `beginPath()`. In the code, each of the parameters for the arc is in a variable for clarity, but you wouldn't necessarily do that in real life.
-
-The `x` and `y` coordinates should be clear enough. `radius` and `startAngle` are fixed. The `endAngle` starts at 180 degrees (half a circle) in the first column and is increased by steps of 90 degrees, culminating in a complete circle in the last column.
-
-The statement for the `clockwise` parameter results in the first and third row being drawn as clockwise arcs and the second and fourth row as counterclockwise arcs. Finally, the `if` statement makes the top half stroked arcs and the bottom half filled arcs.
+بیایید نگاه دقیق‌تری به روش `arc` بیندازیم که شش پارامتر می‌گیرد: `x` و `y` مختصات مرکز دایره‌ای هستند که کمان باید روی آن رسم شود. `radius` نیاز به توضیح ندارد. پارامترهای `startAngle` و `endAngle` نقاط شروع و پایان کمان را بر حسب رادیان، در امتداد منحنی دایره تعریف می‌کنند. این زاویه‌ها از محور x اندازه‌گیری می‌شوند. پارامتر `counterclockwise` یک مقدار بولی است که وقتی `true` باشد، کمان در خلاف جهت عقربه‌های ساعت رسم می‌شود؛ در غیر این صورت، کمان در جهت عقربه‌های ساعت رسم می‌شود.
 
 > [!NOTE]
-> This example requires a slightly larger canvas than the others on this page: 150 x 200 pixels.
+> زاویه‌ها در تابع `arc` بر حسب رادیان اندازه‌گیری می‌شوند، نه درجه. برای تبدیل درجه به رادیان می‌توانید از عبارت جاوااسکریپت زیر استفاده کنید: `radians = (Math.PI/180)*degrees`.
+
+مثال زیر کمی پیچیده‌تر از مثال‌هایی است که در بالا دیدیم. این مثال ۱۲ کمان مختلف با زاویه‌ها و حالت‌های پر شدن متفاوت رسم می‌کند.
+
+دو [حلقهٔ `for`](/en-US/docs/Web/JavaScript/Reference/Statements/for) برای پیمایش سطرها و ستون‌های کمان‌ها هستند. برای هر کمان، با فراخوانی `beginPath()` یک مسیر جدید شروع می‌کنیم. در کد، هر یک از پارامترهای کمان برای خوانایی بیشتر در یک متغیر قرار گرفته است، اما در عمل لزوماً این کار را نمی‌کنید.
+
+مختصات `x` و `y` به اندازه کافی واضح هستند. `radius` و `startAngle` ثابت هستند. `endAngle` در ستون اول از ۱۸۰ درجه (نصف دایره) شروع می‌شود و با گام‌های ۹۰ درجه افزایش می‌یابد و در ستون آخر به یک دایرهٔ کامل می‌رسد.
+
+عبارت مربوط به پارامتر `clockwise` باعث می‌شود سطرهای اول و سوم به‌صورت کمان‌های ساعتگرد و سطرهای دوم و چهارم به‌صورت کمان‌های پادساعتگرد رسم شوند. در نهایت، عبارت `if` باعث می‌شود نیمهٔ بالایی کمان‌ها خط‌دار و نیمهٔ پایینی توپُر باشند.
+
+> [!NOTE]
+> این مثال به بوم کمی بزرگ‌تر از سایر مثال‌های این صفحه نیاز دارد: ۱۵۰×۲۰۰ پیکسل.
 
 ```html hidden
 <canvas id="canvas" width="150" height="200"></canvas>
@@ -437,27 +437,28 @@ draw();
 
 {{EmbedLiveSample("Arcs", "", "210")}}
 
-### Bezier and quadratic curves
+### منحنی‌های بزیه و درجه دوم
 
-The next type of paths available are [Bézier curves](/en-US/docs/Glossary/Bezier_curve), available in both cubic and quadratic varieties. These are generally used to draw complex organic shapes.
+نوع بعدی مسیرهای موجود، [منحنی‌های بزیه](/en-US/docs/Glossary/Bezier_curve) هستند که در دو نوع مکعبی و درجه دوم موجودند. این منحنی‌ها معمولاً برای رسم شکل‌های ارگانیک پیچیده استفاده می‌شوند.
 
 - {{domxref("CanvasRenderingContext2D.quadraticCurveTo", "quadraticCurveTo(cp1x, cp1y, x, y)")}}
-  - : Draws a quadratic Bézier curve from the current pen position to the end point specified by `x` and `y`, using the control point specified by `cp1x` and `cp1y`.
+  - : یک منحنی بزیهٔ درجه دوم از موقعیت فعلی قلم تا نقطهٔ پایان مشخص‌شده توسط `x` و `y` رسم می‌کند و از نقطهٔ کنترل مشخص‌شده توسط `cp1x` و `cp1y` استفاده می‌کند.
 - {{domxref("CanvasRenderingContext2D.bezierCurveTo", "bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)")}}
-  - : Draws a cubic Bézier curve from the current pen position to the end point specified by `x` and `y`, using the control points specified by (`cp1x`, `cp1y`) and (`cp2x`, `cp2y`).
+  - : یک منحنی بزیهٔ مکعبی از موقعیت فعلی قلم تا نقطهٔ پایان مشخص‌شده توسط `x` و `y`، با استفاده از نقاط کنترل مشخص‌شده توسط (`cp1x`, `cp1y`) و (`cp2x`, `cp2y`) رسم می‌کند.
 
-The difference between these is that a quadratic Bézier curve has a start and an end point (blue dots) and just one **control point** (indicated by the red dot) while a cubic Bézier curve uses two control points.
+تفاوت این دو در این است که یک منحنی بزیهٔ درجه دوم یک نقطهٔ شروع و یک نقطهٔ پایان دارد (نقطه‌های آبی) و فقط یک **نقطهٔ کنترل** (که با نقطهٔ قرمز نشان داده شده است)، در حالی که منحنی بزیهٔ مکعبی از دو نقطهٔ کنترل استفاده می‌کند.
+
 ![Quadratic and Bezier curve comparison.](canvas_curves.png)
 
-The `x` and `y` parameters in both of these methods are the coordinates of the end point. `cp1x` and `cp1y` are the coordinates of the first control point, and `cp2x` and `cp2y` are the coordinates of the second control point.
+پارامترهای `x` و `y` در هر دوی این روش‌ها مختصات نقطهٔ پایان هستند. `cp1x` و `cp1y` مختصات اولین نقطهٔ کنترل و `cp2x` و `cp2y` مختصات دومین نقطهٔ کنترل هستند.
 
-Using quadratic and cubic Bézier curves can be quite challenging, because unlike vector drawing software like Adobe Illustrator, we don't have direct visual feedback as to what we're doing. This makes it pretty hard to draw complex shapes. In the following example, we'll be drawing some simple organic shapes, but if you have the time and, most of all, the patience, much more complex shapes can be created.
+استفاده از منحنی‌های بزیهٔ درجه دوم و مکعبی می‌تواند کاملاً چالش‌برانگیز باشد، زیرا برخلاف نرم‌افزارهای طراحی برداری مانند Adobe Illustrator، بازخورد بصری مستقیمی از کاری که انجام می‌دهیم نداریم. این موضوع رسم شکل‌های پیچیده را بسیار دشوار می‌کند. در مثال بعدی، چند شکل ارگانیک ساده رسم خواهیم کرد، اما اگر زمان و مهم‌تر از همه، حوصله داشته باشید، می‌توان شکل‌های بسیار پیچیده‌تری نیز ایجاد کرد.
 
-There's nothing very difficult in these examples. In both cases we see a succession of curves being drawn which finally result in a complete shape.
+در این مثال‌ها چیز دشواری وجود ندارد. در هر دو مورد، دنباله‌ای از منحنی‌ها رسم می‌شوند که در نهایت به یک شکل کامل منجر می‌شوند.
 
-#### Quadratic Bezier curves
+#### منحنی‌های بزیهٔ درجه دوم
 
-This example uses multiple quadratic Bézier curves to render a speech balloon.
+این مثال از چند منحنی بزیهٔ درجه دوم برای رندر کردن یک حباب گفتار استفاده می‌کند.
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -487,9 +488,9 @@ draw();
 
 {{EmbedLiveSample("Quadratic_Bezier_curves", "", "160")}}
 
-#### Cubic Bezier curves
+#### منحنی‌های بزیهٔ مکعبی
 
-This example draws a heart using cubic Bézier curves.
+این مثال با استفاده از منحنی‌های بزیهٔ مکعبی یک قلب رسم می‌کند.
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -519,18 +520,18 @@ draw();
 
 {{EmbedLiveSample("Cubic_Bezier_curves", "", "160")}}
 
-### Rectangles
+### مستطیل‌ها
 
-In addition to the three methods we saw in [Drawing rectangles](#drawing_rectangles), which draw rectangular shapes directly to the canvas, there's also the `rect()` method, which adds a rectangular path to a currently open path.
+علاوه بر سه روشی که در [رسم مستطیل‌ها](#drawing_rectangles) دیدیم و شکل‌های مستطیلی را مستقیماً روی بوم رسم می‌کنند، روش `rect()` نیز وجود دارد که یک مسیر مستطیلی به مسیر باز فعلی اضافه می‌کند.
 
 - {{domxref("CanvasRenderingContext2D.rect", "rect(x, y, width, height)")}}
-  - : Draws a rectangle whose top-left corner is specified by (`x`, `y`) with the specified `width` and `height`.
+  - : مستطیلی را رسم می‌کند که گوشهٔ بالای سمت چپ آن توسط (`x`, `y`) مشخص شده و دارای `width` و `height` معین است.
 
-Before this method is executed, the `moveTo()` method is automatically called with the parameters (x,y). In other words, the current pen position is automatically reset to the default coordinates.
+قبل از اجرای این روش، متد `moveTo()` به‌طور خودکار با پارامترهای (x,y) فراخوانی می‌شود. به عبارت دیگر، موقعیت فعلی قلم به‌طور خودکار به مختصات پیش‌فرض بازنشانی می‌شود.
 
-### Making combinations
+### ترکیب کردن
 
-So far, each example on this page has used only one type of path function per shape. However, there's no limitation to the number or types of paths you can use to create a shape. So in this final example, let's combine all of the path functions to make a set of very famous game characters.
+تاکنون، هر مثال در این صفحه فقط از یک نوع تابع مسیر برای هر شکل استفاده کرده است. با این حال، هیچ محدودیتی برای تعداد یا انواع مسیرهایی که می‌توانید برای ایجاد یک شکل استفاده کنید وجود ندارد. بنابراین در این مثال آخر، بیایید همهٔ توابع مسیر را ترکیب کنیم تا مجموعه‌ای از شخصیت‌های بسیار معروف بازی را بسازیم.
 
 ```html hidden
 <canvas id="canvas" width="200" height="185"></canvas>
@@ -620,17 +621,17 @@ function roundedRect(ctx, x, y, width, height, radius) {
 draw();
 ```
 
-The resulting image looks like this:
+تصویر حاصل به این شکل است:
 
 {{EmbedLiveSample("Making_combinations", "", "200")}}
 
-We won't go over this in detail, since it's actually surprisingly simple. The most important things to note are the use of the `fillStyle` property on the drawing context, and the use of a utility function (in this case `roundedRect()`). Using utility functions for bits of drawing you do often can be very helpful and reduce the amount of code you need, as well as its complexity.
+ما به جزئیات این مثال نمی‌پردازیم، زیرا در واقع به‌طرز شگفت‌آوری ساده است. مهم‌ترین نکاتی که باید به آن‌ها توجه کنید، استفاده از ویژگی `fillStyle` روی زمینهٔ رسم و استفاده از یک تابع کمکی (در اینجا `roundedRect()`) است. استفاده از توابع کمکی برای بخش‌هایی از رسم که اغلب انجام می‌دهید می‌تواند بسیار مفید باشد و میزان کد مورد نیاز و همچنین پیچیدگی آن را کاهش دهد.
 
-We'll take another look at `fillStyle`, in more detail, later in this tutorial. Here, all we're doing is using it to change the fill color for paths from the default color of black to white, and then back again.
+در ادامهٔ این آموزش، دوباره با جزئیات بیشتری به `fillStyle` نگاه خواهیم کرد. در اینجا، تنها کاری که انجام می‌دهیم این است که از آن برای تغییر رنگ پر شدن مسیرها از رنگ پیش‌فرض سیاه به سفید و سپس بازگشت دوباره استفاده می‌کنیم.
 
-### Shapes with holes
+### شکل‌های دارای حفره
 
-To draw a shape with a hole in it, we need to draw the hole in different clock directions as we draw the outer shape. We either draw the outer shape clockwise and the inner shape anticlockwise or the outer shape anticlockwise and the inner shape clockwise.
+برای رسم شکلی که در آن حفرهای وجود دارد، باید حفره را در جهت متفاوتی نسبت به شکل بیرونی رسم کنیم. یا شکل بیرونی را ساعتگرد و شکل داخلی را پادساعتگرد رسم می‌کنیم، یا شکل بیرونی را پادساعتگرد و شکل داخلی را ساعتگرد.
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -663,15 +664,16 @@ draw();
 
 {{EmbedLiveSample("Shapes_with_holes", "", "160")}}
 
-In the example above, the outer triangle goes clockwise (move to the top-left corner, then draw a line to the top-right corner, and finish at the bottom) and the inner triangle goes anticlockwise (move to the top, then line to the bottom-left corner, and finish at the bottom-right).
+در مثال بالا، مثلث بیرونی ساعتگرد حرکت می‌کند (به گوشهٔ بالا سمت چپ بروید، سپس به گوشهٔ بالا سمت راست خط بکشید و در پایین تمام کنید) و مثلث داخلی پادساعتگرد حرکت می‌کند (به بالا بروید، سپس به گوشهٔ پایین سمت چپ خط بکشید و در پایین سمت راست تمام کنید).
 
-## Path2D objects
+## اشیاء Path2D
 
-As we have seen in the last example, there can be a series of paths and drawing commands to draw objects onto your canvas. To simplify the code and to improve performance, the {{domxref("Path2D")}} object, available in recent versions of browsers, lets you cache or record these drawing commands. You are able to play back your paths quickly.
-Let's see how we can construct a `Path2D` object:
+همان‌طور که در مثال آخر دیدیم، برای رسم اشیاء روی بوم می‌توان مجموعه‌ای از مسیرها و دستورهای رسم داشت. برای ساده‌سازی کد و بهبود کارایی، شیء {{domxref("Path2D")}} که در نسخه‌های اخیر مرورگرها در دسترس است، به شما امکان می‌دهد این دستورهای رسم را کش یا ضبط کنید. می‌توانید مسیرهای خود را به‌سرعت پخش کنید.
+
+بیایید ببینیم چگونه می‌توان یک شیء `Path2D` ساخت:
 
 - {{domxref("Path2D.Path2D", "Path2D()")}}
-  - : The **`Path2D()`** constructor returns a newly instantiated `Path2D` object, optionally with another path as an argument (creates a copy), or optionally with a string consisting of [SVG path](/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths) data.
+  - : سازندهٔ **`Path2D()`** یک شیء `Path2D` تازه نمونه‌سازی‌شده را برمی‌گرداند؛ به‌صورت اختیاری با یک مسیر دیگر به‌عنوان آرگومان (یک کپی ایجاد می‌کند)، یا به‌صورت اختیاری با رشته‌ای شامل داده‌های [مسیر SVG](/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths).
 
 ```js
 new Path2D(); // empty path object
@@ -679,16 +681,16 @@ new Path2D(path); // copy from another Path2D object
 new Path2D(d); // path from SVG path data
 ```
 
-All [path methods](/en-US/docs/Web/API/CanvasRenderingContext2D#paths) like `moveTo`, `rect`, `arc` or `quadraticCurveTo`, etc., which we got to know above, are available on `Path2D` objects.
+همهٔ [روش‌های مسیر](/en-US/docs/Web/API/CanvasRenderingContext2D#paths) مانند `moveTo`، `rect`، `arc` یا `quadraticCurveTo` و غیره که در بالا با آن‌ها آشنا شدیم، روی اشیاء `Path2D` در دسترس هستند.
 
-The `Path2D` API also adds a way to combine paths using the `addPath` method. This can be useful when you want to build objects from several components, for example.
+API مربوط به `Path2D` همچنین راهی برای ترکیب مسیرها با استفاده از روش `addPath` اضافه می‌کند. این می‌تواند مفید باشد، مثلاً وقتی می‌خواهید اشیاء را از چند مؤلفه بسازید.
 
 - {{domxref("Path2D.addPath", "Path2D.addPath(path [, transform])")}}
-  - : Adds a path to the current path with an optional transformation matrix.
+  - : یک مسیر را با یک ماتریس تبدیل اختیاری به مسیر جاری اضافه می‌کند.
 
-### Path2D example
+### مثال Path2D
 
-In this example, we are creating a rectangle and a circle. Both are stored as a `Path2D` object, so that they are available for later usage. With the new `Path2D` API, several methods got updated to optionally accept a `Path2D` object to use instead of the current path. Here, `stroke` and `fill` are used with a path argument to draw both objects onto the canvas, for example.
+در این مثال، یک مستطیل و یک دایره ایجاد می‌کنیم. هر دو به‌عنوان یک شیء `Path2D` ذخیره می‌شوند تا برای استفاده‌های بعدی در دسترس باشند. با API جدید `Path2D`، چندین روش به‌روزرسانی شده‌اند تا به‌صورت اختیاری یک شیء `Path2D` را به‌جای مسیر جاری بپذیرند. در اینجا، `stroke` و `fill` با آرگومان مسیر برای رسم هر دو شیء روی بوم استفاده می‌شوند.
 
 ```html hidden
 <canvas id="canvas" width="130" height="100"></canvas>
@@ -716,11 +718,11 @@ draw();
 
 {{EmbedLiveSample("Path2D_example", "", "110")}}
 
-### Using SVG paths
+### استفاده از مسیرهای SVG
 
-Another powerful feature of the new canvas `Path2D` API is using [SVG path data](/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths) to initialize paths on your canvas. This might allow you to pass around path data and re-use them in both, SVG and canvas.
+یکی دیگر از ویژگی‌های قدرتمند API جدید `Path2D` در بوم، استفاده از [داده‌های مسیر SVG](/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths) برای مقداردهی اولیهٔ مسیرها روی بوم شماست. این امکان به شما اجازه می‌دهد داده‌های مسیر را جابه‌جا کنید و در هر دو محیط SVG و بوم دوباره از آن‌ها استفاده کنید.
 
-The path will move to point (`M10 10`) and then move horizontally 80 points to the right (`h 80`), then 80 points down (`v 80`), then 80 points to the left (`h -80`), and then back to the start (`z`). You can see this example on the [`Path2D` constructor](/en-US/docs/Web/API/Path2D/Path2D#using_svg_paths) page.
+مسیر به نقطهٔ (`M10 10`) می‌رود و سپس ۸۰ واحد به سمت راست حرکت افقی می‌کند (`h 80`)، سپس ۸۰ واحد به پایین (`v 80`)، سپس ۸۰ واحد به سمت چپ (`h -80`) و در نهایت به نقطهٔ شروع بازمی‌گردد (`z`). می‌توانید این مثال را در صفحهٔ [سازندهٔ `Path2D`](/en-US/docs/Web/API/Path2D/Path2D#using_svg_paths) ببینید.
 
 ```js
 const p = new Path2D("M10 10 h 80 v 80 h -80 Z");
