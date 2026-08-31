@@ -1,10 +1,4 @@
 ---
-title: "ConstantSourceNode"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ConstantSourceNode"
-status: "needs-translation"
----
-
----
 title: ConstantSourceNode
 slug: Web/API/ConstantSourceNode
 page-type: web-api-interface
@@ -13,62 +7,60 @@ browser-compat: api.ConstantSourceNode
 
 {{APIRef("Web Audio API")}}
 
-The `ConstantSourceNode` interface—part of the Web Audio API—represents an audio source (based upon {{domxref("AudioScheduledSourceNode")}}) whose output is single unchanging value. This makes it useful for cases in which you need a constant value coming in from an audio source. In addition, it can be used like a constructible {{domxref("AudioParam")}} by automating the value of its {{domxref("ConstantSourceNode.offset", "offset")}} or by connecting another node to it; see [Controlling multiple parameters with ConstantSourceNode](/en-US/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode).
+رابط `ConstantSourceNode` — بخشی از Web Audio API — یک منبع صوتی (بر اساس {{domxref("AudioScheduledSourceNode")}}) را نشان می‌دهد که خروجی آن یک مقدار ثابت و بدون تغییر است. این ویژگی آن را برای مواردی که نیاز به یک مقدار ثابت از یک منبع صوتی دارید مفید می‌سازد. علاوه بر این، می‌توان از آن مانند یک {{domxref("AudioParam")}} قابل ساخت استفاده کرد، با خودکار کردن مقدار {{domxref("ConstantSourceNode.offset", "offset")}} یا با اتصال یک گره دیگر به آن؛ به [کنترل پارامترهای متعدد با ConstantSourceNode](/en-US/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode) مراجعه کنید.
 
-A `ConstantSourceNode` has no inputs and exactly one monaural (one-channel) output. The output's value is always the same as the value of the {{domxref("ConstantSourceNode.offset", "offset")}} parameter.
+یک `ConstantSourceNode` هیچ ورودی ندارد و دقیقاً یک خروجی مونورال (تک‌کاناله) دارد. مقدار خروجی همیشه با مقدار پارامتر {{domxref("ConstantSourceNode.offset", "offset")}} یکسان است.
 
 {{InheritanceDiagram}}
 
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">Number of inputs</th>
+      <th scope="row">تعداد ورودی‌ها</th>
       <td><code>0</code></td>
     </tr>
     <tr>
-      <th scope="row">Number of outputs</th>
+      <th scope="row">تعداد خروجی‌ها</th>
       <td><code>1</code></td>
     </tr>
   </tbody>
 </table>
 
-## Constructor
+## سازنده
 
 - {{domxref("ConstantSourceNode.ConstantSourceNode", "ConstantSourceNode()")}}
-  - : Creates and returns a new `ConstantSourceNode` instance, optionally specifying an object which establishes initial values for the object's properties. As an alternative, you can use the {{domxref("BaseAudioContext.createConstantSource()")}} factory method; see [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+  - : یک نمونه جدید از `ConstantSourceNode` ایجاد و برمی‌گرداند، و به صورت اختیاری می‌توان یک شیء که مقادیر اولیه ویژگی‌های آن را تعیین می‌کند مشخص کرد. به عنوان جایگزین، می‌توانید از روش کارخانه‌ای {{domxref("BaseAudioContext.createConstantSource()")}} استفاده کنید؛ به [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent interface, {{domxref("AudioScheduledSourceNode")}}, and adds the following properties:_
+ویژگی‌ها را از رابط والد خود، {{domxref("AudioScheduledSourceNode")}}، به ارث می‌برد و ویژگی‌های زیر را اضافه می‌کند:
 
 - {{domxref("ConstantSourceNode.offset", "offset")}}
-  - : An {{domxref("AudioParam")}} which specifies the value that this source continuously outputs. The default value is 1.0.
+  - : یک {{domxref("AudioParam")}} که مقدار خروجی پیوسته این منبع را مشخص می‌کند. مقدار پیش‌فرض 1.0 است.
 
-### Events
+### رویدادها
 
-_Inherits events from its parent interface, {{domxref("AudioScheduledSourceNode")}}._
+رویدادها را از رابط والد خود، {{domxref("AudioScheduledSourceNode")}}، به ارث می‌برد.
 
-> [!NOTE]
-> Some browsers' implementations of these events are part of the {{domxref("AudioScheduledSourceNode")}} interface.
+> [!NOTE] پیاده‌سازی برخی مرورگرها از این رویدادها بخشی از رابط {{domxref("AudioScheduledSourceNode")}} است.
 
 - {{domxref("AudioScheduledSourceNode.ended_event","ended")}}
-  - : Fired whenever the `ConstantSourceNode` data has stopped playing.
+  - : زمانی که داده‌های `ConstantSourceNode` پخش را متوقف کرده است، شلیک می‌شود.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent interface, {{domxref("AudioScheduledSourceNode")}}._
+متدها را از رابط والد خود، {{domxref("AudioScheduledSourceNode")}}، به ارث می‌برد.
 
-> [!NOTE]
-> Some browsers' implementations of these methods are part of the {{domxref("AudioScheduledSourceNode")}} interface.
+> [!NOTE] پیاده‌سازی برخی مرورگرها از این متدها بخشی از رابط {{domxref("AudioScheduledSourceNode")}} است.
 
 - {{domxref("AudioScheduledSourceNode.start", "start()")}}
-  - : Schedules a sound to playback at an exact time.
+  - : پخش یک صدا را در زمان دقیق برنامه‌ریزی می‌کند.
 - {{domxref("AudioScheduledSourceNode.stop", "stop()")}}
-  - : Schedules a sound to stop playback at an exact time.
+  - : توقف پخش یک صدا را در زمان دقیق برنامه‌ریزی می‌کند.
 
-## Example
+## مثال
 
-In the article [Controlling multiple parameters with ConstantSourceNode](/en-US/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode), a `ConstantSourceNode` is created to allow one slider control to change the gain on two {{domxref("GainNode")}}s. The three nodes are set up like this:
+در مقاله [کنترل پارامترهای متعدد با ConstantSourceNode](/en-US/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode)، یک `ConstantSourceNode` ایجاد شده است تا یک کنترل لغزنده بتواند بهره (gain) دو {{domxref("GainNode")}} را تغییر دهد. سه گره به این صورت تنظیم می‌شوند:
 
 ```js
 gainNode2 = context.createGain();
@@ -85,22 +77,22 @@ gainNode2.connect(context.destination);
 gainNode3.connect(context.destination);
 ```
 
-This code starts by creating the gain nodes and setting them and the volume control that will adjust their value all to 0.5. Then the `ConstantSourceNode` is created by calling {{domxref("BaseAudioContext/createConstantSource", "AudioContext.createConstantSource()")}}, and the gain parameters of each of the two gain nodes are connected to the `ConstantSourceNode`. After starting the constant source by calling its {{domxref("AudioScheduledSourceNode.start", "start()")}} method. Finally, the two gain nodes are connected to the audio destination (typically speakers or headphones).
+این کد با ایجاد گره‌های بهره و تنظیم آن‌ها و کنترل لغزنده که مقدار آن‌ها را به 0.5 تنظیم می‌کند شروع می‌شود. سپس `ConstantSourceNode` با فراخوانی {{domxref("BaseAudioContext/createConstantSource", "AudioContext.createConstantSource()")}} ایجاد می‌شود، و پارامترهای بهره هر یک از دو گره بهره به `ConstantSourceNode` متصل می‌شوند. پس از شروع منبع ثابت با فراخوانی متد {{domxref("AudioScheduledSourceNode.start", "start()")}} آن. در نهایت، دو گره بهره به مقصد صوتی (معمولاً بلندگوها یا هدفون) متصل می‌شوند.
 
-Now, whenever the value of {{domxref("ConstantSourceNode.offset", "constantNode.offset")}} changes, the gain on both `gainNode2` and `gainNode3` will change to have that same value.
+اکنون، هر زمان که مقدار {{domxref("ConstantSourceNode.offset", "constantNode.offset")}} تغییر کند، بهره در هر دو `gainNode2` و `gainNode3` به همان مقدار تغییر خواهد کرد.
 
-To see this example in action, as well as to read the rest of the code from which these snippets were derived, see [Controlling multiple parameters with ConstantSourceNode.](/en-US/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode)
+برای مشاهده این مثال در عمل و همچنین خواندن بقیه کدهایی که این قطعات از آن گرفته شده‌اند، به [کنترل پارامترهای متعدد با ConstantSourceNode](/en-US/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - {{domxref("AudioScheduledSourceNode")}}
 - {{domxref("AudioNode")}}
