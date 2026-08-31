@@ -1,11 +1,7 @@
 ---
 title: "AudioContext: sinkchange event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/sinkchange_event"
-status: "needs-translation"
----
-
----
-title: "AudioContext: sinkchange event"
+translated_by: "n8n + AI"
 short-title: sinkchange
 slug: Web/API/AudioContext/sinkchange_event
 page-type: web-api-event
@@ -16,11 +12,11 @@ browser-compat: api.AudioContext.sinkchange_event
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`sinkchange`** event of the {{domxref("AudioContext")}} interface is fired when the output audio device (and therefore, the {{domxref("AudioContext.sinkId")}}) has changed.
+رویداد **`sinkchange`** از رابط {{domxref("AudioContext")}} زمانی پرتاب می‌شود که دستگاه خروجی صدا (و در نتیجه {{domxref("AudioContext.sinkId")}}) تغییر کرده است.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("sinkchange", (event) => { })
@@ -28,15 +24,15 @@ addEventListener("sinkchange", (event) => { })
 onsinkchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
 {{domxref("Event")}}.
 
 {{InheritanceDiagram("Event")}}
 
-## Examples
+## مثال‌ها
 
-A `sinkchange` event listener can be used to report a change of audio output device. Note that if {{domxref("AudioContext.sinkId", "sinkId")}} contains an {{domxref("AudioSinkInfo")}} object, it indicates that the audio has been changed to not play on any output device.
+یک شنونده رویداد `sinkchange` می‌تواند برای گزارش تغییر دستگاه خروجی صدا استفاده شود. توجه داشته باشید که اگر {{domxref("AudioContext.sinkId", "sinkId")}} شامل یک شیء {{domxref("AudioSinkInfo")}} باشد، نشان می‌دهد که صدا به گونه‌ای تغییر کرده است که روی هیچ دستگاه خروجی پخش نشود.
 
 ```js
 audioCtx.addEventListener("sinkchange", () => {
@@ -48,18 +44,18 @@ audioCtx.addEventListener("sinkchange", () => {
 });
 ```
 
-See our [SetSinkId test example](https://mdn.github.io/dom-examples/audiocontext-setsinkid/) for working code (also check out the [source code](https://github.com/mdn/dom-examples/tree/main/audiocontext-setsinkid)).
+برای کد عملی، [مثال آزمایشی SetSinkId](https://mdn.github.io/dom-examples/audiocontext-setsinkid/) ما را ببینید (همچنین [کد منبع](https://github.com/mdn/dom-examples/tree/main/audiocontext-setsinkid) را بررسی کنید).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Change the destination output device in Web Audio](https://developer.chrome.com/blog/audiocontext-setsinkid/)
+- [تغییر دستگاه خروجی مقصد در Web Audio](https://developer.chrome.com/blog/audiocontext-setsinkid/)
 - {{domxref("AudioContext.setSinkId()")}}
 - {{domxref("AudioContext.sinkId")}}
