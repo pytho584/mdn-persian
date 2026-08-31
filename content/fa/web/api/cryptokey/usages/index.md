@@ -1,7 +1,5 @@
 ---
 title: "CryptoKey: usages property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CryptoKey/usages"
-status: "needs-translation"
 ---
 
 ---
@@ -14,22 +12,22 @@ browser-compat: api.CryptoKey.usages
 
 {{APIRef("Web Crypto API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The read-only **`usages`** property of the {{DOMxRef("CryptoKey")}} interface indicates what can be done with the key.
+ویژگی فقط‌خواندنی **`usages`** در رابط {{DOMxRef("CryptoKey")}} نشان می‌دهد که با کلید چه کارهایی می‌توان انجام داد.
 
-## Value
+## مقدار
 
-An {{jsxref("Array")}} of strings from the following list:
+یک {{jsxref("Array")}} از رشته‌ها از فهرست زیر:
 
-- `"encrypt"`: The key may be used to [encrypt](/en-US/docs/Web/API/SubtleCrypto/encrypt) messages.
-- `"decrypt"`: The key may be used to [decrypt](/en-US/docs/Web/API/SubtleCrypto/decrypt) messages.
-- `"sign"`: The key may be used to [sign](/en-US/docs/Web/API/SubtleCrypto/sign) messages.
-- `"verify"`: The key may be used to [verify](/en-US/docs/Web/API/SubtleCrypto/verify) signatures.
-- `"deriveKey"`: The key may be used in [deriving a new key](/en-US/docs/Web/API/SubtleCrypto/deriveKey).
-- `"deriveBits"`: The key may be used in [deriving bits](/en-US/docs/Web/API/SubtleCrypto/deriveBits).
-- `"wrapKey"`: The key may be used to [wrap a key](/en-US/docs/Web/API/SubtleCrypto/wrapKey).
-- `"unwrapKey"`: The key may be used to [unwrap a key](/en-US/docs/Web/API/SubtleCrypto/unwrapKey).
+- `"encrypt"`: از کلید می‌توان برای [رمزگذاری](/en-US/docs/Web/API/SubtleCrypto/encrypt) پیام‌ها استفاده کرد.
+- `"decrypt"`: از کلید می‌توان برای [رمزگشایی](/en-US/docs/Web/API/SubtleCrypto/decrypt) پیام‌ها استفاده کرد.
+- `"sign"`: از کلید می‌توان برای [امضای](/en-US/docs/Web/API/SubtleCrypto/sign) پیام‌ها استفاده کرد.
+- `"verify"`: از کلید می‌توان برای [تأیید](/en-US/docs/Web/API/SubtleCrypto/verify) امضاها استفاده کرد.
+- `"deriveKey"`: از کلید می‌توان در [استخراج یک کلید جدید](/en-US/docs/Web/API/SubtleCrypto/deriveKey) استفاده کرد.
+- `"deriveBits"`: از کلید می‌توان در [استخراج بیت‌ها](/en-US/docs/Web/API/SubtleCrypto/deriveBits) استفاده کرد.
+- `"wrapKey"`: از کلید می‌توان برای [دورپیچی یک کلید](/en-US/docs/Web/API/SubtleCrypto/wrapKey) استفاده کرد.
+- `"unwrapKey"`: از کلید می‌توان برای [باز کردن دورپیچی یک کلید](/en-US/docs/Web/API/SubtleCrypto/unwrapKey) استفاده کرد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const rawKey = window.crypto.getRandomValues(new Uint8Array(16));
@@ -51,10 +49,10 @@ importSecretKey(rawKey).then((key) =>
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
