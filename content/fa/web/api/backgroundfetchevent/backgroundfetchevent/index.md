@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchEvent: BackgroundFetchEvent() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchEvent/BackgroundFetchEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,32 +16,31 @@ browser-compat: api.BackgroundFetchEvent.BackgroundFetchEvent
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`BackgroundFetchEvent()`** constructor creates a new {{domxref("BackgroundFetchEvent")}} object. This constructor is not typically used as the browser creates these objects itself and provides them to background fetch event callbacks.
+**`BackgroundFetchEvent()`** 构造函数创建一个新的 {{domxref("BackgroundFetchEvent")}} 对象。此构造函数通常不被使用，因为浏览器会自行创建这些对象，并将其提供给后台获取事件回调。
 
-## Syntax
+## 语法
 
 ```js-nolint
 new BackgroundFetchEvent(type, options)
 ```
 
-### Parameters
+### 参数
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `backgroundfetchabort` or `backgroundfetchclick`.
+  - : 一个字符串，表示事件的名称。它区分大小写，浏览器会将其设置为 `backgroundfetchabort` 或 `backgroundfetchclick`。
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_, has the following properties:
+  - : 一个对象，_除了 {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}} 中定义的属性之外_，还具有以下属性：
     - `registration`
-      - : A {{domxref("BackgroundFetchRegistration")}} object.
+      - : 一个 {{domxref("BackgroundFetchRegistration")}} 对象。
 
-### Return value
+### 返回值
 
-A new {{domxref("BackgroundFetchEvent")}} object.
+一个新的 {{domxref("BackgroundFetchEvent")}} 对象。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
