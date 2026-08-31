@@ -1,7 +1,7 @@
 ---
 title: "Transformations"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Transformations"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,21 +12,21 @@ page-type: guide
 
 {{DefaultAPISidebar("Canvas API")}} {{PreviousNext("Web/API/Canvas_API/Tutorial/Using_images", "Web/API/Canvas_API/Tutorial/Compositing")}}
 
-Earlier in this tutorial we've learned about the [canvas grid](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes) and the **coordinate space**. Until now, we only used the default grid and changed the size of the overall canvas for our needs. With transformations there are more powerful ways to translate the origin to a different position, rotate the grid and even scale it.
+پیش‌تر در این آموزش با [شبکهٔ canvas](/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes) و **فضای مختصات** آشنا شدیم. تاکنون فقط از شبکهٔ پیش‌فرض استفاده کرده و اندازهٔ کلی canvas را متناسب با نیاز خود تغییر می‌دادیم. با استفاده از تبدیل‌ها (transformations) راه‌های قدرتمندتری برای انتقال مبدأ به موقعیت دیگر، چرخاندن شبکه و حتی مقیاس‌دهی آن وجود دارد.
 
-## Saving and restoring state
+## ذخیره و بازیابی حالت
 
-Before we look at the transformation methods, let's look at two other methods which are indispensable once you start generating ever more complex drawings.
+پیش از بررسی روش‌های تبدیل، به دو روش دیگر نگاه می‌کنیم که به محض شروع به ترسیم نقشه‌های پیچیده‌تر، ضروری می‌شوند.
 
 - {{domxref("CanvasRenderingContext2D.save", "save()")}}
-  - : Saves the entire state of the canvas.
+  - : کل حالت canvas را ذخیره می‌کند.
 - {{domxref("CanvasRenderingContext2D.restore", "restore()")}}
-  - : Restores the most recently saved canvas state.
+  - : آخرین حالت ذخیره‌شدهٔ canvas را بازیابی می‌کند.
 
-Canvas states are stored on a stack. Every time the `save()` method is called, the current drawing state is pushed onto the stack. A drawing state consists of
+حالت‌های Canvas در یک پشته (stack) ذخیره می‌شوند. هر بار که متد `save()` فراخوانی می‌شود، حالت فعلی ترسیم به پشته اضافه می‌شود. یک حالت ترسیم شامل موارد زیر است:
 
-- The transformations that have been applied (i.e., `translate`, `rotate` and `scale` – see below).
-- The current values of the following attributes:
+- تبدیل‌هایی که اعمال شده‌اند (یعنی `translate`، `rotate` و `scale` – به زیر مراجعه کنید).
+- مقادیر فعلی ویژگی‌های زیر:
   - {{domxref("CanvasRenderingContext2D.strokeStyle", "strokeStyle")}}
   - {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}}
   - {{domxref("CanvasRenderingContext2D.globalAlpha", "globalAlpha")}}
@@ -45,32 +45,32 @@ Canvas states are stored on a stack. Every time the `save()` method is called, t
   - {{domxref("CanvasRenderingContext2D.textBaseline", "textBaseline")}}
   - {{domxref("CanvasRenderingContext2D.direction", "direction")}}
   - {{domxref("CanvasRenderingContext2D.imageSmoothingEnabled", "imageSmoothingEnabled")}}.
-- The current [clipping path](/en-US/docs/Web/API/Canvas_API/Tutorial/Compositing#clipping_paths), which we'll see in the next section.
+- [مسیر برش (clipping path)](/en-US/docs/Web/API/Canvas_API/Tutorial/Compositing#clipping_paths) فعلی، که در بخش بعدی خواهیم دید.
 
-You can call the `save()` method as many times as you like. Each time the `restore()` method is called, the last saved state is popped off the stack and all saved settings are restored.
+می‌توانید هر چند بار که می‌خواهید متد `save()` را فراخوانی کنید. هر بار که متد `restore()` فراخوانی می‌شود، آخرین حالت ذخیره‌شده از پشته خارج شده و تمام تنظیمات ذخیره‌شده بازیابی می‌شوند.
 
-### A `save` and `restore` canvas state example
+### یک مثال از ذخیره و بازیابی حالت canvas
 
 ```js
 function draw() {
   const ctx = document.getElementById("canvas").getContext("2d");
 
-  ctx.fillRect(0, 0, 150, 150); // Draw a Black rectangle with default settings
-  ctx.save(); // Save the original default state
+  ctx.fillRect(0, 0, 150, 150); // یک مستطیل سیاه با تنظیمات پیش‌فرض رسم کنید
+  ctx.save(); // حالت پیش‌فرض اصلی را ذخیره کنید
 
-  ctx.fillStyle = "#0099ff"; // Make changes to saved settings
-  ctx.fillRect(15, 15, 120, 120); // Draw a Blue rectangle with new settings
-  ctx.save(); // Save the current state
+  ctx.fillStyle = "#0099ff"; // تغییراتی در تنظیمات ذخیره‌شده اعمال کنید
+  ctx.fillRect(15, 15, 120, 120); // یک مستطیل آبی با تنظیمات جدید رسم کنید
+  ctx.save(); // حالت فعلی را ذخیره کنید
 
-  ctx.fillStyle = "white"; // Make changes to saved settings
+  ctx.fillStyle = "white"; // تغییراتی در تنظیمات ذخیره‌شده اعمال کنید
   ctx.globalAlpha = 0.5;
-  ctx.fillRect(30, 30, 90, 90); // Draw a 50%-White rectangle with newest settings
+  ctx.fillRect(30, 30, 90, 90); // یک مستطیل ۵۰٪ سفید با جدیدترین تنظیمات رسم کنید
 
-  ctx.restore(); // Restore to previous state
-  ctx.fillRect(45, 45, 60, 60); // Draw a rectangle with restored Blue setting
+  ctx.restore(); // به حالت قبلی بازگردید
+  ctx.fillRect(45, 45, 60, 60); // یک مستطیل با تنظیمات آبی بازیابی‌شده رسم کنید
 
-  ctx.restore(); // Restore to original state
-  ctx.fillRect(60, 60, 30, 30); // Draw a rectangle with restored Black setting
+  ctx.restore(); // به حالت اصلی بازگردید
+  ctx.fillRect(60, 60, 30, 30); // یک مستطیل با تنظیمات سیاه بازیابی‌شده رسم کنید
 }
 ```
 
@@ -82,30 +82,30 @@ function draw() {
 draw();
 ```
 
-The first step is to draw a large rectangle with the default settings. Next we save this state and make changes to the fill color. We then draw the second and smaller blue rectangle and save the state. Again we change some drawing settings and draw the third semi-transparent white rectangle.
+اولین مرحله رسم یک مستطیل بزرگ با تنظیمات پیش‌فرض است. سپس این حالت را ذخیره کرده و رنگ پر کردن را تغییر می‌دهیم. سپس مستطیل دوم کوچک‌تر آبی را رسم کرده و حالت را ذخیره می‌کنیم. دوباره برخی تنظیمات رسم را تغییر داده و سومین مستطیل نیمه‌شفاف سفید را رسم می‌کنیم.
 
-So far this is pretty similar to what we've done in previous sections. However once we call the first `restore()` statement, the top drawing state is removed from the stack, and settings are restored. If we hadn't saved the state using `save()`, we would need to change the fill color and transparency manually in order to return to the previous state. This would be easy for two properties, but if we have more than that, our code would become very long, very fast.
+تا اینجا بسیار شبیه به کارهایی است که در بخش‌های قبلی انجام دادیم. اما هنگامی که اولین دستور `restore()` را فراخوانی می‌کنیم، بالاترین حالت رسم از پشته حذف شده و تنظیمات بازیابی می‌شوند. اگر حالت را با `save()` ذخیره نکرده بودیم، برای بازگشت به حالت قبلی باید رنگ پر کردن و شفافیت را به‌صورت دستی تغییر می‌دادیم. این کار برای دو ویژگی آسان است، اما اگر ویژگی‌های بیشتری داشته باشیم، کد ما خیلی سریع طولانی می‌شود.
 
-When the second `restore()` statement is called, the original state (the one we set up before the first call to `save`) is restored and the last rectangle is once again drawn in black.
+هنگامی که دستور `restore()` دوم فراخوانی می‌شود، حالت اصلی (حالتی که قبل از اولین فراخوانی `save` تنظیم کرده بودیم) بازیابی شده و آخرین مستطیل دوباره به رنگ سیاه رسم می‌شود.
 
 {{EmbedLiveSample("A_save_and_restore_canvas_state_example", "", "160")}}
 
-## Translating
+## انتقال (Translate)
 
-The first of the transformation methods we'll look at is `translate()`. This method is used to move the canvas and its origin to a different point in the grid.
+اولین روش از روش‌های تبدیل که بررسی می‌کنیم `translate()` است. این روش برای جابه‌جایی canvas و مبدأ آن به نقطه‌ای متفاوت در شبکه استفاده می‌شود.
 
 - {{domxref("CanvasRenderingContext2D.translate", "translate(x, y)")}}
-  - : Moves the canvas and its origin on the grid. `x` indicates the horizontal distance to move, and `y` indicates how far to move the grid vertically.
+  - : Canvas و مبدأ آن را روی شبکه جابه‌جا می‌کند. `x` فاصلهٔ افقی و `y` فاصلهٔ عمودی جابه‌جایی را مشخص می‌کند.
 
-![The canvas is pushed down and to the right, or translated, from its origin point on the grid by 'x' units horizontally and 'y' units vertically.](canvas_grid_translate.png)
+![Canvas از نقطهٔ مبدأ خود روی شبکه به اندازهٔ 'x' واحد به صورت افقی و 'y' واحد به صورت عمودی به پایین و راست منتقل (یا ترجمه) می‌شود.](canvas_grid_translate.png)
 
-It's a good idea to save the canvas state before doing any transformations. In most cases, it is just easier to call the `restore` method than having to do a reverse translation to return to the original state. Also if you're translating inside a loop and don't save and restore the canvas state, you might end up missing part of your drawing, because it was drawn outside the canvas edge.
+توصیه می‌شود قبل از انجام هر تبدیل، حالت canvas را ذخیره کنید. در بیشتر موارد، فراخوانی متد `restore` آسان‌تر از انجام یک انتقال معکوس برای بازگشت به حالت اولیه است. همچنین اگر درون یک حلقه در حال انتقال هستید و حالت canvas را ذخیره و بازیابی نمی‌کنید، ممکن است قسمتی از رسم خود را از دست بدهید، زیرا خارج از لبهٔ canvas رسم شده است.
 
-### A `translate` example
+### یک مثال از `translate`
 
-This example demonstrates some of the benefits of translating the canvas origin. Without the `translate()` method, all of the rectangles would be drawn at the same position (0,0). The `translate()` method also gives us the freedom to place the rectangle anywhere on the canvas without having to manually adjust coordinates in the `fillRect()` function. This makes it a little easier to understand and use.
+این مثال برخی از مزایای انتقال مبدأ canvas را نشان می‌دهد. بدون متد `translate()`، همهٔ مستطیل‌ها در یک موقعیت (0,0) رسم می‌شدند. متد `translate()` همچنین به ما این آزادی را می‌دهد که مستطیل را در هر جایی از canvas قرار دهیم بدون اینکه نیاز به تنظیم دستی مختصات در تابع `fillRect()` داشته باشیم. این کار درک و استفاده از آن را کمی آسان‌تر می‌کند.
 
-In the `draw()` function, we call the `fillRect()` function nine times using two `for` loops. In each loop, the canvas is translated, the rectangle is drawn, and the canvas is returned back to its original state. Note how the call to `fillRect()` uses the same coordinates each time, relying on `translate()` to adjust the drawing position.
+در تابع `draw()`، تابع `fillRect()` را نه بار با استفاده از دو حلقه `for` فراخوانی می‌کنیم. در هر حلقه، canvas انتقال داده می‌شود، مستطیل رسم می‌شود و canvas به حالت اولیه خود بازگردانده می‌شود. توجه کنید که فراخوانی `fillRect()` هر بار از مختصات یکسانی استفاده می‌کند و برای تنظیم موقعیت رسم به `translate()` وابسته است.
 
 ```js
 function draw() {
@@ -132,57 +132,57 @@ draw();
 
 {{EmbedLiveSample("A_translate_example", "", "160")}}
 
-## Rotating
+## چرخش (Rotate)
 
-The second transformation method is `rotate()`. We use it to rotate the canvas around the current origin.
+دومین روش تبدیل `rotate()` است. از آن برای چرخاندن canvas حول مبدأ فعلی استفاده می‌کنیم.
 
 - {{domxref("CanvasRenderingContext2D.rotate", "rotate(angle)")}}
-  - : Rotates the canvas clockwise around the current origin by the `angle` number of radians.
+  - : Canvas را حول مبدأ فعلی به اندازهٔ `angle` رادیان در جهت عقربه‌های ساعت می‌چرخاند.
 
-![The default origin point is at the top left, 0 degrees is horizontal and to the right. The rotation point starts from the origin point and goes clockwise.](canvas_grid_rotate.png)
+![نقطهٔ مبدأ پیش‌فرض در بالا سمت چپ است، ۰ درجه افقی و به سمت راست است. نقطهٔ چرخش از نقطهٔ مبدأ شروع شده و در جهت عقربه‌های ساعت می‌چرخد.](canvas_grid_rotate.png)
 
-The rotation center point is always the canvas origin. To change the center point, we will need to move the canvas by using the `translate()` method.
+نقطهٔ مرکز چرخش همواره مبدأ canvas است. برای تغییر نقطهٔ مرکز، باید با استفاده از متد `translate()` canvas را جابه‌جا کنیم.
 
-### A `rotate` example
+### یک مثال از `rotate`
 
-In this example, we'll use the `rotate()` method to first rotate a rectangle from the canvas origin and then from the center of the rectangle itself with the help of `translate()`.
+در این مثال، از متد `rotate()` برای چرخاندن یک مستطیل ابتدا از مبدأ canvas و سپس از مرکز خود مستطیل با کمک `translate()` استفاده می‌کنیم.
 
 > [!NOTE]
-> Angles are in radians, not degrees. To convert, we are using: `radians = (Math.PI/180)*degrees`.
+> زاویه‌ها بر حسب رادیان هستند، نه درجه. برای تبدیل، از این فرمول استفاده می‌کنیم: `radians = (Math.PI/180)*degrees`.
 
 ```js
 function draw() {
   const ctx = document.getElementById("canvas").getContext("2d");
 
-  // left rectangles, rotate from canvas origin
+  // مستطیل‌های سمت چپ، چرخش از مبدأ canvas
   ctx.save();
-  // blue rect
+  // مستطیل آبی
   ctx.fillStyle = "#0095DD";
   ctx.fillRect(30, 30, 100, 100);
   ctx.rotate((Math.PI / 180) * 25);
-  // grey rect
+  // مستطیل خاکستری
   ctx.fillStyle = "#4D4E53";
   ctx.fillRect(30, 30, 100, 100);
   ctx.restore();
 
-  // right rectangles, rotate from rectangle center
-  // draw blue rect
+  // مستطیل‌های سمت راست، چرخش از مرکز مستطیل
+  // رسم مستطیل آبی
   ctx.fillStyle = "#0095DD";
   ctx.fillRect(150, 30, 100, 100);
 
-  ctx.translate(200, 80); // translate to rectangle center
+  ctx.translate(200, 80); // انتقال به مرکز مستطیل
   // x = x + 0.5 * width
   // y = y + 0.5 * height
-  ctx.rotate((Math.PI / 180) * 25); // rotate
-  ctx.translate(-200, -80); // translate back
+  ctx.rotate((Math.PI / 180) * 25); // چرخش
+  ctx.translate(-200, -80); // انتقال به عقب
 
-  // draw grey rect
+  // رسم مستطیل خاکستری
   ctx.fillStyle = "#4D4E53";
   ctx.fillRect(150, 30, 100, 100);
 }
 ```
 
-To rotate the rectangle around its own center, we translate the canvas to the center of the rectangle, then rotate the canvas, then translate the canvas back to 0,0, and then draw the rectangle.
+برای چرخاندن مستطیل حول مرکز خود، canvas را به مرکز مستطیل منتقل می‌کنیم، سپس canvas را می‌چرخانیم، دوباره canvas را به 0,0 برمی‌گردانیم و سپس مستطیل را رسم می‌کنیم.
 
 ```html hidden
 <canvas id="canvas" width="300" height="200"></canvas>
@@ -194,32 +194,32 @@ draw();
 
 {{EmbedLiveSample("A_rotate_example", "", "220")}}
 
-## Scaling
+## مقیاس‌دهی (Scale)
 
-The next transformation method is scaling. We use it to increase or decrease the units in our canvas grid. This can be used to draw scaled down or enlarged shapes and bitmaps.
+روش تبدیل بعدی مقیاس‌دهی است. از آن برای افزایش یا کاهش واحدها در شبکهٔ canvas خود استفاده می‌کنیم. این می‌تواند برای رسم اشکال و بیت‌مپ‌های کوچک‌شده یا بزرگ‌شده استفاده شود.
 
 - {{domxref("CanvasRenderingContext2D.scale", "scale(x, y)")}}
-  - : Scales the canvas units by x horizontally and by y vertically. Both parameters are real numbers. Values that are smaller than 1.0 reduce the unit size and values above 1.0 increase the unit size. Values of 1.0 leave the units the same size.
+  - : واحدهای canvas را به صورت افقی به اندازهٔ x و به صورت عمودی به اندازهٔ y مقیاس می‌کند. هر دو پارامتر اعداد حقیقی هستند. مقادیر کوچک‌تر از 1.0 اندازهٔ واحد را کاهش می‌دهند و مقادیر بالای 1.0 اندازهٔ واحد را افزایش می‌دهند. مقادیر 1.0 واحدها را به همان اندازه نگه می‌دارند.
 
-Using negative numbers you can do axis mirroring (for example using `translate(0,canvas.height); scale(1,-1);` you will have the well-known Cartesian coordinate system, with the origin in the bottom left corner).
+با استفاده از اعداد منفی می‌توانید بازتاب محور (axis mirroring) انجام دهید (مثلاً با استفاده از `translate(0,canvas.height); scale(1,-1);` سیستم مختصات دکارتی معروف را خواهید داشت که مبدأ آن در گوشهٔ پایین سمت چپ است).
 
-By default, one unit on the canvas is exactly one pixel. If we apply, for instance, a scaling factor of 0.5, the resulting unit would become 0.5 pixels and so shapes would be drawn at half size. In a similar way setting the scaling factor to 2.0 would increase the unit size and one unit now becomes two pixels. This results in shapes being drawn twice as large.
+به طور پیش‌فرض، یک واحد در canvas دقیقاً یک پیکسل است. اگر مثلاً ضریب مقیاس 0.5 را اعمال کنیم، واحد حاصل 0.5 پیکسل می‌شود و بنابراین اشکال با نصف اندازه رسم می‌شوند. به همین ترتیب، تنظیم ضریب مقیاس به 2.0 اندازهٔ واحد را افزایش می‌دهد و یک واحد اکنون دو پیکسل می‌شود. این باعث می‌شود اشکال دو برابر بزرگتر رسم شوند.
 
-### A `scale` example
+### یک مثال از `scale`
 
-In this last example, we'll draw shapes with different scaling factors.
+در این مثال آخر، اشکالی را با ضرایب مقیاس مختلف رسم می‌کنیم.
 
 ```js
 function draw() {
   const ctx = document.getElementById("canvas").getContext("2d");
 
-  // draw a simple rectangle, but scale it.
+  // رسم یک مستطیل ساده، اما با مقیاس‌دهی
   ctx.save();
   ctx.scale(10, 3);
   ctx.fillRect(1, 10, 10, 10);
   ctx.restore();
 
-  // mirror horizontally
+  // بازتاب افقی
   ctx.scale(-1, 1);
   ctx.font = "48px serif";
   ctx.fillText("MDN", -135, 120);
@@ -236,12 +236,12 @@ draw();
 
 {{EmbedLiveSample("A_scale_example", "", "160")}}
 
-## Transforms
+## تبدیل‌ها (Transforms)
 
-Finally, the following transformation methods allow modifications directly to the transformation matrix.
+در نهایت، روش‌های تبدیل زیر امکان تغییرات مستقیم در ماتریس تبدیل را فراهم می‌کنند.
 
 - {{domxref("CanvasRenderingContext2D.transform", "transform(a, b, c, d, e, f)")}}
-  - : Multiplies the current transformation matrix with the matrix described by its arguments. The transformation matrix is described by:
+  - : ماتریس تبدیل فعلی را در ماتریس توصیف‌شده توسط آرگومان‌هایش ضرب می‌کند. ماتریس تبدیل به صورت زیر است:
 
     <!-- prettier-ignore-start -->
 
@@ -250,28 +250,28 @@ Finally, the following transformation methods allow modifications directly to th
     </math>
     <!-- prettier-ignore-end -->
 
-    If any of the arguments are [`Infinity`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity) the transformation matrix must be marked as infinite instead of the method throwing an exception.
+    اگر هر یک از آرگومان‌ها [`Infinity`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity) باشد، ماتریس تبدیل باید به‌جای پرتاب استثنا توسط متد، به‌عنوان نامتناهی علامت‌گذاری شود.
 
-The parameters of this function are:
+پارامترهای این تابع عبارتند از:
 
 - `a` (`m11`)
-  - : Horizontal scaling.
+  - : مقیاس افقی.
 - `b` (`m12`)
-  - : Horizontal skewing.
+  - : کج‌سازی افقی (horizontal skewing).
 - `c` (`m21`)
-  - : Vertical skewing.
+  - : کج‌سازی عمودی (vertical skewing).
 - `d` (`m22`)
-  - : Vertical scaling.
+  - : مقیاس عمودی.
 - `e` (`dx`)
-  - : Horizontal moving.
+  - : جابه‌جایی افقی.
 - `f` (`dy`)
-  - : Vertical moving.
+  - : جابه‌جایی عمودی.
 - {{domxref("CanvasRenderingContext2D.setTransform", "setTransform(a, b, c, d, e, f)")}}
-  - : Resets the current transform to the identity matrix, and then invokes the `transform()` method with the same arguments. This basically undoes the current transformation, then sets the specified transform, all in one step.
+  - : تبدیل فعلی را به ماتریس همانی بازنشانی می‌کند و سپس متد `transform()` را با همان آرگومان‌ها فراخوانی می‌کند. این کار اساساً تبدیل فعلی را لغو کرده و سپس تبدیل مشخص‌شده را در یک مرحله تنظیم می‌کند.
 - {{domxref("CanvasRenderingContext2D.resetTransform", "resetTransform()")}}
-  - : Resets the current transform to the identity matrix. This is the same as calling: `ctx.setTransform(1, 0, 0, 1, 0, 0);`
+  - : تبدیل فعلی را به ماتریس همانی بازنشانی می‌کند. این معادل فراخوانی `ctx.setTransform(1, 0, 0, 1, 0, 0);` است.
 
-### Example for `transform` and `setTransform`
+### مثال برای `transform` و `setTransform`
 
 ```js
 function draw() {
