@@ -1,11 +1,5 @@
 ---
 title: "ContactAddress: organization property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContactAddress/organization"
-status: "needs-translation"
----
-
----
-title: "ContactAddress: organization property"
 short-title: organization
 slug: Web/API/ContactAddress/organization
 page-type: web-api-instance-property
@@ -16,16 +10,16 @@ browser-compat: api.ContactAddress.organization
 
 {{securecontext_header}}{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
-The **`organization`** read-only property of the {{domxref("ContactAddress")}} interface returns a string containing the name of the organization, firm, company, or institution at the address.
+ویژگیِ فقط‌خواندنی **`organization`** در رابط {{domxref("ContactAddress")}} یک رشته برمی‌گرداند که نام سازمان، شرکت، مؤسسه یا نهاد را در آن آدرس نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string whose value is the name of the organization or company located at the address described by the `ContactAddress` object.
+رشته‌ای که مقدار آن نام سازمان یا شرکتی است که در آدرس توصیف‌شده توسط شیء `ContactAddress` قرار دارد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
