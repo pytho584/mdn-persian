@@ -1,7 +1,7 @@
 ---
 title: "AudioData: numberOfFrames property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioData/numberOfFrames"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,24 +14,24 @@ browser-compat: api.AudioData.numberOfFrames
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`numberOfFrames`** read-only property of the {{domxref("AudioData")}} interface returns the number of frames in the `AudioData` object.
+ویژگی فقط خواندنی **`numberOfFrames`** از رابط {{domxref("AudioData")}} تعداد فریم‌ها را در شیء `AudioData` برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-The below example prints the value of `numberOfFrames` to the console.
+مثال زیر مقدار `numberOfFrames` را در کنسول چاپ می‌کند.
 
 ```js
 console.log(AudioData.numberOfFrames);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
