@@ -1,7 +1,7 @@
 ---
 title: "Bluetooth: requestDevice() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth/requestDevice"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,106 +16,105 @@ browser-compat: api.Bluetooth.requestDevice
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`Bluetooth.requestDevice()`** method of the {{domxref("Bluetooth")}} interface returns a {{jsxref("Promise")}} that fulfills with a {{domxref("BluetoothDevice")}} object matching the specified options.
-If there is no chooser UI, this method returns the first device matching the criteria.
+متد **`Bluetooth.requestDevice()`** از رابط {{domxref("Bluetooth")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء {{domxref("BluetoothDevice")}} مطابق با گزینه‌های مشخص‌شده تکمیل می‌شود. اگر رابط کاربری انتخاب‌گر وجود نداشته باشد، این متد اولین دستگاهی را که با معیارها مطابقت دارد برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 requestDevice()
 requestDevice(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object that sets options for selecting an appropriate device.
-    The available options are:
+  - : یک شیء که گزینه‌هایی را برای انتخاب یک دستگاه مناسب تنظیم می‌کند.
+    گزینه‌های موجود عبارت‌اند از:
     - `filters` {{optional_inline}}
-      - : An array of filter objects indicating the properties of devices that will be matched.
-        To match a filter object, a device must match all the values of the filter: all its specified `services`, `name`, `namePrefix`, and so on.
+      - : آرایه‌ای از اشیاء فیلتر که ویژگی‌های دستگاه‌هایی را که مطابقت داده می‌شوند نشان می‌دهد.
+        برای مطابقت با یک شیء فیلتر، یک دستگاه باید با تمام مقادیر فیلتر مطابقت داشته باشد: تمام `services`، `name`، `namePrefix` و غیره مشخص‌شده.
 
-        Each filter consists of an array of objects with the following properties:
+        هر فیلتر از آرایه‌ای از اشیاء با ویژگی‌های زیر تشکیل شده است:
         - `services` {{optional_inline}}
-          - : An array of values indicating the Bluetooth GATT (Generic Attribute Profile) services that a Bluetooth device must support.
-            Each value can be a valid name from the [GATT assigned services list](https://github.com/WebBluetoothCG/registries/blob/master/gatt_assigned_services.txt), such as `'battery_service'` or `'blood_pressure'`.
-            You can also pass a full service UUID such as `'0000180F-0000-1000-8000-00805f9b34fb'` or the short 16-bit (`0x180F`) or 32-bit alias.
-            Note that these are the same values that can be passed to {{domxref("BluetoothUUID/getService_static","BluetoothUUID.getService()")}}.
+          - : آرایه‌ای از مقادیر که خدمات GATT (پروفایل ویژگی عمومی) بلوتوث را نشان می‌دهد که یک دستگاه بلوتوث باید پشتیبانی کند.
+            هر مقدار می‌تواند یک نام معتبر از [لیست خدمات اختصاص‌داده‌شده GATT](https://github.com/WebBluetoothCG/registries/blob/master/gatt_assigned_services.txt) باشد، مانند `'battery_service'` یا `'blood_pressure'`.
+            همچنین می‌توانید یک UUID کامل سرویس مانند `'0000180F-0000-1000-8000-00805f9b34fb'` یا نام مستعار کوتاه 16 بیتی (`0x180F`) یا 32 بیتی را ارسال کنید.
+            توجه داشته باشید که اینها همان مقادیری هستند که می‌توان به {{domxref("BluetoothUUID/getService_static","BluetoothUUID.getService()")}} ارسال کرد.
 
         - `name` {{optional_inline}}
-          - : A string containing the precise name of the device to match against.
+          - : رشته‌ای حاوی نام دقیق دستگاهی که باید با آن مطابقت داده شود.
         - `namePrefix` {{optional_inline}}
-          - : A string containing the name prefix to match against.
-            All devices that have a name starting with this string will be matched.
+          - : رشته‌ای حاوی پیشوند نام که باید با آن مطابقت داده شود.
+            تمام دستگاه‌هایی که نامشان با این رشته شروع می‌شود مطابقت داده می‌شوند.
         - `manufacturerData` {{optional_inline}}
-          - : An array of objects matching against manufacturer data in the Bluetooth Low Energy (BLE) advertising packets. <!-- BluetoothManufacturerDataFilterInit -->
-            Each filter object has the following properties:
+          - : آرایه‌ای از اشیاء که با داده‌های تولیدکننده در بسته‌های تبلیغاتی بلوتوث کم‌مصرف (BLE) مطابقت دارند. <!-- BluetoothManufacturerDataFilterInit -->
+            هر شیء فیلتر دارای ویژگی‌های زیر است:
             - `companyIdentifier`
-              - : A mandatory number identifying the manufacturer of the device.
-                Company identifiers are listed in the Bluetooth specification [Assigned numbers](https://www.bluetooth.com/specifications/assigned-numbers/), Section 7.
-                For example, to match against devices manufactured by "Digianswer A/S", with assigned hex number `0x000C`, you would specify `12`.
+              - : یک عدد اجباری که تولیدکننده دستگاه را شناسایی می‌کند.
+                شناسه‌های شرکت در [اعداد اختصاص‌داده‌شده](https://www.bluetooth.com/specifications/assigned-numbers/) مشخصات بلوتوث، بخش 7 فهرست شده‌اند.
+                به عنوان مثال، برای مطابقت با دستگاه‌های تولید شده توسط "Digianswer A/S"، با عدد هگز اختصاص‌داده‌شده `0x000C`، باید `12` را مشخص کنید.
             - `dataPrefix` {{optional_inline}}
-              - : The data prefix.
-                A buffer containing values to match against the values at the start of the advertising manufacturer data.
+              - : پیشوند داده.
+                یک بافر حاوی مقادیری که باید با مقادیر ابتدای داده‌های تولیدکننده تبلیغاتی مطابقت داده شوند.
             - `mask` {{optional_inline}}
-              - : This allows you to match against bytes within the manufacturer data, by masking some bytes of the service data `dataPrefix`.
+              - : این به شما امکان می‌دهد با ماسک کردن برخی بایت‌های `dataPrefix` داده سرویس، با بایت‌های موجود در داده‌های تولیدکننده مطابقت دهید.
 
         - `serviceData` {{optional_inline}} <!-- BluetoothServiceDataFilterInit -->
-          - : An array of objects matching against service data in the Bluetooth Low Energy (BLE) advertising packets.<!-- BluetoothServiceDataFilterInit -->
-            Each filter object has the following properties:
+          - : آرایه‌ای از اشیاء که با داده‌های سرویس در بسته‌های تبلیغاتی بلوتوث کم‌مصرف (BLE) مطابقت دارند.<!-- BluetoothServiceDataFilterInit -->
+            هر شیء فیلتر دارای ویژگی‌های زیر است:
             - `service`
-              - : The GATT service name, the service UUID, or the UUID 16-bit or 32-bit form.
-                This takes the same values as the elements of the [`services`](#services) array.
+              - : نام سرویس GATT، UUID سرویس، یا فرم 16 بیتی یا 32 بیتی UUID.
+                این همان مقادیری را می‌گیرد که عناصر آرایه [`services`](#services).
             - `dataPrefix` {{optional_inline}}
-              - : The data prefix.
-                A buffer containing values to match against the values at the start of the advertising service data.
+              - : پیشوند داده.
+                یک بافر حاوی مقادیری که باید با مقادیر ابتدای داده‌های سرویس تبلیغاتی مطابقت داده شوند.
             - `mask` {{optional_inline}}
-              - : This allows you to match against bytes within the service data, by masking some bytes of the service data `dataPrefix`.
+              - : این به شما امکان می‌دهد با ماسک کردن برخی بایت‌های `dataPrefix` داده سرویس، با بایت‌های موجود در داده‌های سرویس مطابقت دهید.
 
     - `exclusionFilters` {{optional_inline}}
-      - : An array of filter objects indicating the characteristics of devices that will be excluded from matching.
-        The properties of the array elements are the same as for [`filters`](#filters).
+      - : آرایه‌ای از اشیاء فیلتر که ویژگی‌های دستگاه‌هایی را نشان می‌دهد که از مطابقت حذف خواهند شد.
+        ویژگی‌های عناصر آرایه همانند [`filters`](#filters) است.
     - `optionalServices` {{optional_inline}}
-      - : An array of optional service identifiers.
+      - : آرایه‌ای از شناسه‌های سرویس اختیاری.
 
-        The identifiers take the same values as the elements of the [`services`](#services) array (a GATT service name, service UUID, or UUID short 16-bit or 32-bit form).
+        شناسه‌ها همان مقادیری را می‌گیرند که عناصر آرایه [`services`](#services) (نام سرویس GATT، UUID سرویس، یا فرم کوتاه 16 بیتی یا 32 بیتی UUID).
 
     - `optionalManufacturerData` {{optional_inline}}
-      - : An optional array of integer manufacturer codes.
-        This takes the same values as [`companyIdentifier`](#companyidentifier).
+      - : یک آرایه اختیاری از کدهای صحیح تولیدکننده.
+        این همان مقادیری را می‌گیرد که [`companyIdentifier`](#companyidentifier).
 
-        The data is not used for filtering the devices, but advertisements that match the specified set are still delivered in `advertisementreceived` events.
-        This is useful because it allows code to specify an interest in data received from Bluetooth devices without constraining the filter controlling which devices are presented to the user in the permission prompt.
+        از این داده‌ها برای فیلتر کردن دستگاه‌ها استفاده نمی‌شود، اما تبلیغاتی که با مجموعه مشخص‌شده مطابقت دارند همچنان در رویدادهای `advertisementreceived` تحویل داده می‌شوند.
+        این مفید است زیرا به کد اجازه می‌دهد علاقه‌مندی به داده‌های دریافت‌شده از دستگاه‌های بلوتوث را بدون محدود کردن فیلتری که کنترل می‌کند کدام دستگاه‌ها در اعلان مجوز به کاربر نمایش داده می‌شوند، مشخص کند.
 
     - `acceptAllDevices` {{optional_inline}}
-      - : A boolean value indicating that the requesting script can accept all Bluetooth devices.
-        The default is `false`.
+      - : یک مقدار بولی که نشان می‌دهد اسکریپت درخواست‌دهنده می‌تواند تمام دستگاه‌های بلوتوث را بپذیرد.
+        پیش‌فرض `false` است.
 
-        This option is appropriate when devices have not advertised enough information for filtering to be useful.
-        When `acceptAllDevices` is set to `true` you should omit all [`filters`](#filters) and [`exclusionFilters`](#exclusionfilters), and you must set [`optionalServices`](#optionalservices) to be able to _use_ the returned device.
+        این گزینه زمانی مناسب است که دستگاه‌ها اطلاعات کافی برای مفید بودن فیلتر کردن را تبلیغ نکرده‌اند.
+        وقتی `acceptAllDevices` روی `true` تنظیم شده است، باید تمام [`filters`](#filters) و [`exclusionFilters`](#exclusionfilters) را حذف کنید، و باید [`optionalServices`](#optionalservices) را تنظیم کنید تا بتوانید از دستگاه بازگشتی _استفاده_ کنید.
 
-After the user selects a device to pair in the current origin, it is only allowed to access services whose UUID was listed in the services list in any element of [`filters.services`](#services) or in [`optionalServices`](#optionalservices).
-It is therefore important to list the required services.
-In particular, when filtering with just [`name`](#name) you must remember to also specify the desired services in [`optionalServices`](#optionalservices).
+پس از اینکه کاربر دستگاهی را برای جفت‌سازی در مبدأ فعلی انتخاب کرد، فقط دسترسی به خدماتی مجاز است که UUID آن در لیست خدمات در هر عنصر از [`filters.services`](#services) یا در [`optionalServices`](#optionalservices) فهرست شده باشد.
+بنابراین مهم است که خدمات مورد نیاز را فهرست کنید.
+به ویژه، هنگام فیلتر کردن فقط با [`name`](#name) باید به خاطر داشته باشید که خدمات مورد نظر را نیز در [`optionalServices`](#optionalservices) مشخص کنید.
 
 > [!NOTE]
-> Even though the `options` argument is technically optional, in order to return any results you must either set a value for `filters` or set `acceptAllDevices` to `true`.
+> اگرچه آرگومان `options` از نظر فنی اختیاری است، اما برای بازگرداندن هر نتیجه‌ای باید یا مقداری برای `filters` تنظیم کنید یا `acceptAllDevices` را روی `true` قرار دهید.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} to a {{domxref("BluetoothDevice")}} object.
+یک {{jsxref("Promise")}} به یک شیء {{domxref("BluetoothDevice")}}.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the provided `options` do not make sense.
-    For example, if `options.filters` is present and `options.acceptAllDevices` is `true`, `options.filters` is not present and `options.acceptAllDevices` is `false`, or `options.filters` is `[]`.
+  - : اگر `options` ارائه‌شده معنی‌دار نباشند پرتاب می‌شود.
+    به عنوان مثال، اگر `options.filters` وجود داشته باشد و `options.acceptAllDevices` برابر `true` باشد، `options.filters` وجود نداشته باشد و `options.acceptAllDevices` برابر `false` باشد، یا `options.filters` برابر `[]` باشد.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if there is no Bluetooth device that matches the specified options.
+  - : اگر هیچ دستگاه بلوتوثی که با گزینه‌های مشخص‌شده مطابقت داشته باشد وجود نداشته باشد پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if this operation is not permitted in this context due to [security concerns](/en-US/docs/Web/API/Web_Bluetooth_API#security_considerations), such as being called from an insecure origin.
+  - : اگر این عملیات در این زمینه به دلیل [ملاحظات امنیتی](/en-US/docs/Web/API/Web_Bluetooth_API#security_considerations)، مانند فراخوانی از یک مبدأ ناامن، مجاز نباشد پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Discovery options match any devices advertising:
@@ -147,16 +146,16 @@ navigator.bluetooth
   .catch((error) => console.error(`Something went wrong. ${error}`));
 ```
 
-[Detailed examples](https://webbluetoothcg.github.io/web-bluetooth/#example-filter-by-services) are in the specification and also in [Communicating with Bluetooth devices over JavaScript](https://developer.chrome.com/docs/capabilities/bluetooth) on _developer.chrome.com_.
+[مثال‌های دقیق‌تر](https://webbluetoothcg.github.io/web-bluetooth/#example-filter-by-services) در مشخصات و همچنین در [ارتباط با دستگاه‌های بلوتوث از طریق جاوااسکریپت](https://developer.chrome.com/docs/capabilities/bluetooth) در _developer.chrome.com_ موجود است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Communicating with Bluetooth devices over JavaScript](https://developer.chrome.com/docs/capabilities/bluetooth) on _developer.chrome.com_.
+- [ارتباط با دستگاه‌های بلوتوث از طریق جاوااسکریپت](https://developer.chrome.com/docs/capabilities/bluetooth) در _developer.chrome.com_.
