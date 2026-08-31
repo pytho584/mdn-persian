@@ -1,7 +1,7 @@
 ---
 title: "Animation: effect property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/effect"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,21 +14,21 @@ browser-compat: api.Animation.effect
 
 {{ APIRef("Web Animations") }}
 
-The **`Animation.effect`** property of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) gets and sets the target effect of an animation. The target effect may be either an effect object of a type based on {{domxref("AnimationEffect")}}, such as {{domxref("KeyframeEffect")}}, or `null`.
+ویژگی **`Animation.effect`** از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) اثر هدف یک انیمیشن را دریافت و تنظیم می‌کند. اثر هدف می‌تواند یک شیء اثری از نوع مبتنی بر {{domxref("AnimationEffect")}} مانند {{domxref("KeyframeEffect")}}، یا `null` باشد.
 
-## Value
+## مقدار
 
-An {{domxref("AnimationEffect")}} object describing the target animation effect for the animation, or `null` to indicate no active effect.
+یک شیء {{domxref("AnimationEffect")}} که اثر انیمیشن هدف را برای انیمیشن توصیف می‌کند، یا `null` برای نشان دادن عدم وجود اثر فعال.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("AnimationEffect")}}
