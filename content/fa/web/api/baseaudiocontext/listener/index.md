@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: listener property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/listener"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,18 +14,16 @@ browser-compat: api.BaseAudioContext.listener
 
 {{ APIRef("Web Audio API") }}
 
-The `listener` property of the {{ domxref("BaseAudioContext") }} interface
-returns an {{ domxref("AudioListener") }} object that can then be used for
-implementing 3D audio spatialization.
+ویژگی `listener` از رابط {{ domxref("BaseAudioContext") }} یک شیء {{ domxref("AudioListener") }} را برمی‌گرداند که سپس می‌تواند برای پیاده‌سازی فضایی‌سازی صوتی سه‌بعدی استفاده شود.
 
-## Value
+## مقدار
 
-An {{ domxref("AudioListener") }} object.
+یک شیء {{ domxref("AudioListener") }}.
 
-## Examples
+## مثال‌ها
 
 > [!NOTE]
-> For a full Web Audio spatialization example, see our [panner-node](https://github.com/mdn/webaudio-examples/tree/main/panner-node) demo.
+> برای یک مثال کامل از فضایی‌سازی صوتی Web Audio، دموی [panner-node](https://github.com/mdn/webaudio-examples/tree/main/panner-node) ما را ببینید.
 
 ```js
 const audioCtx = new AudioContext();
@@ -36,14 +34,14 @@ const audioCtx = new AudioContext();
 const myListener = audioCtx.listener;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
