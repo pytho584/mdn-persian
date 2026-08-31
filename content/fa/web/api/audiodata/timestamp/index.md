@@ -1,7 +1,7 @@
 ---
 title: "AudioData: timestamp property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioData/timestamp"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,24 +14,24 @@ browser-compat: api.AudioData.timestamp
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`timestamp`** read-only property of the {{domxref("AudioData")}} interface returns the timestamp of this `AudioData` object.
+خاصیت فقط‌خواندنی **`timestamp`** در رابط {{domxref("AudioData")}}، برچسب زمانی این شیء `AudioData` را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-The below example prints the value of `timestamp` to the console.
+مثال زیر مقدار `timestamp` را در کنسول چاپ می‌کند.
 
 ```js
 console.log(AudioData.timestamp);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
