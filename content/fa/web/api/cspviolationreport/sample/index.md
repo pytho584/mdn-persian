@@ -1,7 +1,5 @@
 ---
 title: "CSPViolationReport: sample property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSPViolationReport/sample"
-status: "needs-translation"
 ---
 
 ---
@@ -14,34 +12,28 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}
 
-The **`sample`** property of the {{domxref("CSPViolationReport")}} dictionary is a string that contains a part of the resource that violated the [Content Security Policy (CSP)](/en-US/docs/Web/HTTP/Guides/CSP).
+ویژگی **`sample`** در دیکشنری {{domxref("CSPViolationReport")}} رشته‌ای است که شامل بخشی از منبعی است که [سیاست امنیت محتوا (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) را نقض کرده است.
 
-This sample is usually the first 40 characters of the inline script, event handler, or style that violated a CSP restriction.
-If not populated it is the empty string `""`.
+این نمونه معمولاً ۴۰ کاراکتر نخست اسکریپت درون‌خطی، کنترل‌کنندهٔ رویداد یا استایلی است که یک محدودیت CSP را نقض کرده است. اگر پر نشده باشد، رشتهٔ خالی `""` است.
 
-Note that this is only populated when attempting to load _inline_ scripts, event handlers, or styles that violate CSP [`script-src*`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/script-src) and [`style-src*`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/style-src) rules — external resources that violate the CSP will not generate a sample.
-In addition, a sample is only included if the `Content-Security-Policy` directive that was violated also contains the [`'report-sample'`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#report-sample) keyword.
+توجه داشته باشید که این مقدار تنها زمانی پر می‌شود که تلاش شود اسکریپت‌های _درون‌خطی_، کنترل‌کننده‌های رویداد یا استایل‌هایی بارگذاری شوند که قوانین [`script-src*`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/script-src) و [`style-src*`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/style-src) CSP را نقض می‌کنند — منابع خارجی که CSP را نقض می‌کنند، نمونه‌ای تولید نمی‌کنند. علاوه بر این، نمونه تنها زمانی گنجانده می‌شود که دایرکتیو `Content-Security-Policy` نقض‌شده نیز کلیدواژهٔ [`'report-sample'`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#report-sample) را داشته باشد.
 
 > [!NOTE]
-> Violation reports should be considered attacker-controlled data.
-> The content of this field _in particular_ should be sanitized before storing or rendering.
+> گزارش‌های نقض باید داده‌هایی در نظر گرفته شوند که توسط مهاجم کنترل می‌شوند. محتوای این فیلد _به‌ویژه_ باید پیش از ذخیره‌سازی یا رندر کردن پاکسازی شود.
 
-## Value
+## مقدار
 
-A string containing a sample of the inline resource that violated the CSP, usually the first 40 characters, or the empty string.
+رشته‌ای شامل نمونه‌ای از منبع درون‌خطی که CSP را نقض کرده است؛ معمولاً ۴۰ کاراکتر نخست، یا رشتهٔ خالی.
 
-## Examples
+## مثال‌ها
 
-### CSP inline script violation
+### نقض CSP با اسکریپت درون‌خطی
 
-This example triggers a CSP violation using an inline script, and reports the violation using a {{domxref("ReportingObserver")}}.
-We also add `'report-sample'` to the CSP in order to populate a `sample` in the body.
+این مثال با استفاده از یک اسکریپت درون‌خطی، یک نقض CSP ایجاد می‌کند و این نقض را با استفاده از یک {{domxref("ReportingObserver")}} گزارش می‌دهد. ما همچنین `'report-sample'` را به CSP اضافه می‌کنیم تا مقدار `sample` در بدنهٔ گزارش پر شود.
 
 #### HTML
 
-The HTML file below uses the [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) element to set the {{httpheader('Content-Security-Policy')}} `script-src-elem` to `self`, which allows scripts to be loaded from the same domain, but does not allow inline scripts to be executed.
-We include `'report-sample'` in the directive so that a sample is generated.
-The document also includes an inline script, which should trigger a CSP violation.
+فایل HTML زیر از عنصر [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) برای تنظیم دایرکتیو `script-src-elem` هدر {{httpheader('Content-Security-Policy')}} روی مقدار `self` استفاده می‌کند؛ این کار اجازه می‌دهد اسکریپت‌ها از همان دامنه بارگذاری شوند، اما اجازهٔ اجرای اسکریپت‌های درون‌خطی را نمی‌دهد. ما `'report-sample'` را در دایرکتیو قرار می‌دهیم تا یک نمونه تولید شود. سند همچنین شامل یک اسکریپت درون‌خطی است که باید یک نقض CSP ایجاد کند.
 
 ```html
 <!doctype html>
@@ -64,11 +56,9 @@ The document also includes an inline script, which should trigger a CSP violatio
 
 #### JavaScript (main.js)
 
-The document above also loads the external script `main.js`, which is shown below.
-Because this is loaded from the same domain as the HTML, it is not blocked by the CSP.
+سند بالا همچنین اسکریپت خارجی `main.js` را بارگذاری می‌کند که در ادامه نشان داده شده است. از آنجا که این اسکریپت از همان دامنه‌ای بارگذاری می‌شود که HTML در آن قرار دارد، توسط CSP مسدود نمی‌شود.
 
-The script creates a new {{domxref("ReportingObserver")}} to observe content violation reports of type `"csp-violation"`.
-Each time the callback function is invoked, we get the body of the first entry of the reports array, and use it to log the violation `sample` to the console.
+این اسکریپت یک {{domxref("ReportingObserver")}} جدید می‌سازد تا گزارش‌های نقض محتوا از نوع `"csp-violation"` را مشاهده کند. هر بار که تابع callback فراخوانی می‌شود، بدنهٔ اولین عنصر آرایهٔ گزارش‌ها را می‌گیریم و از آن برای ثبت مقدار `sample` این نقض در کنسول استفاده می‌کنیم.
 
 ```js
 // main.js
@@ -85,26 +75,26 @@ const observer = new ReportingObserver(
 observer.observe();
 ```
 
-Note that while there might be multiple reports in the returned array, for brevity we only log the values of the first element.
+توجه داشته باشید که اگرچه ممکن است چندین گزارش در آرایهٔ بازگشتی وجود داشته باشد، برای اختصار فقط مقدار اولین عنصر را ثبت می‌کنیم.
 
-#### Results
+#### نتایج
 
-The console output for the above code is:
+خروجی کنسول برای کد بالا به این صورت است:
 
 ```plain
 sample: const int = 4;
 ```
 
-In this case the sample contains the entire content of the inline script.
+در این حالت، نمونه شامل تمام محتوای اسکریپت درون‌خطی است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SecurityPolicyViolationEvent.sample")}}
