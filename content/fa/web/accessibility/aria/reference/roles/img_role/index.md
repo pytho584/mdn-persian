@@ -1,7 +1,7 @@
 ---
 title: "ARIA: img role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/img_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,7 +13,7 @@ spec-urls: https://w3c.github.io/aria/#img
 sidebar: accessibilitysidebar
 ---
 
-The ARIA `img` role can be used to identify multiple elements inside page content that should be considered as a single image. These elements could be images, code snippets, text, emojis, or other content that can be combined to deliver information in a visual manner.
+نقش `img` در ARIA می‌تواند برای شناسایی چندین عنصر در محتوای صفحه استفاده شود که باید به‌عنوان یک تصویر واحد در نظر گرفته شوند. این عناصر می‌توانند تصاویر، قطعه‌کدها، متن، ایموجی‌ها یا محتوای دیگری باشند که می‌توانند برای انتقال اطلاعات به‌صورت بصری ترکیب شوند.
 
 ```html
 <div role="img" aria-label="Description of the overall image">
@@ -22,11 +22,11 @@ The ARIA `img` role can be used to identify multiple elements inside page conten
 </div>
 ```
 
-## Description
+## توضیحات
 
-Any set of content that should be consumed as a single image (which could include images, video, audio, code snippets, emojis, or other content) can be identified using `role="img"`.
+هر مجموعه‌ای از محتوا که باید به‌عنوان یک تصویر واحد در نظر گرفته شود (که می‌تواند شامل تصاویر، ویدئو، صدا، قطعه‌کدها، ایموجی‌ها یا محتوای دیگر باشد) می‌تواند با استفاده از `role="img"` شناسایی شود.
 
-You shouldn't count on the alt text of individual images for conveying context to assistive technologies; most screen readers will consider the element with `role="img"` set on it to be like a black box, and not access the individual elements inside it. Therefore, provide a comprehensive overall descriptive alt text for image, either in the surrounding text, or by using an [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) attribute, with `alt` attributes for search engines or sighted users to be written to the page should an image fail:
+برای انتقال زمینه به فناوری‌های کمکی، نباید به متن جایگزین (alt) تصاویر تکی تکیه کنید؛ بیشتر صفحه‌خوان‌ها عنصری که `role="img"` روی آن تنظیم شده است را مانند یک جعبه سیاه در نظر می‌گیرند و به عناصر درونی آن دسترسی نخواهند داشت. بنابراین، یک متن جایگزین توصیفی جامع برای تصویر فراهم کنید، یا در متن اطراف آن، یا با استفاده از ویژگی [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)؛ و برای موتورهای جستجو یا کاربران بینا، ویژگی‌های `alt` را در صفحه قرار دهید تا در صورت بارگذاری نشدن تصویر نمایش داده شوند:
 
 ```html
 <div role="img" aria-label="Description of the overall image">
@@ -35,12 +35,12 @@ You shouldn't count on the alt text of individual images for conveying context t
 </div>
 ```
 
-If you wish to add a caption or label to your image that is visible on the page, you can do using:
+اگر می‌خواهید یک زیرنویس یا برچسب قابل مشاهده برای تصویر خود اضافه کنید، می‌توانید از موارد زیر استفاده کنید:
 
-- [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) when the text is a concise label.
-- [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) when the text is a longer description.
+- [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) زمانی که متن یک برچسب مختصر است.
+- [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) زمانی که متن یک توصیف طولانی‌تر است.
 
-For example:
+برای مثال:
 
 ```html
 <div role="img" aria-labelledby="image-1">
@@ -49,11 +49,11 @@ For example:
 </div>
 ```
 
-If an image is purely presentational, consider using the [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) role.
+اگر تصویری صرفاً جنبه ارائه (نمایشی) دارد، استفاده از نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را در نظر بگیرید.
 
-### SVG and role="img"
+### SVG و role="img"
 
-If you are using embedded SVG images in your page, it is a good idea to set `role="img"` on the outer {{SVGElement('svg')}} element and give it a label. This will cause screen readers to just consider it as a single entity and describe it using the label, rather than trying to read out all the child nodes:
+اگر از تصاویر SVG جاسازی‌شده در صفحه خود استفاده می‌کنید، ایده خوبی است که `role="img"` را روی عنصر بیرونی {{SVGElement('svg')}} تنظیم کنید و به آن یک برچسب بدهید. این کار باعث می‌شود صفحه‌خوان‌ها آن را فقط به‌عنوان یک موجودیت واحد در نظر بگیرند و با استفاده از برچسب آن را توصیف کنند، به‌جای اینکه بخواهند همه گره‌های فرزند را بخوانند:
 
 ```html
 <svg role="img" aria-label="Description of your SVG image">
@@ -61,11 +61,11 @@ If you are using embedded SVG images in your page, it is a good idea to set `rol
 </svg>
 ```
 
-### Using role="img" to confer meaning that is obscured or implied
+### استفاده از role="img" برای انتقال معناهای پنهان یا ضمنی
 
-In certain cases, assistive technology users won't be able to get the meaning of content expressed in certain ways, through certain media, or implied in certain ways. This is obvious to fix in the case of images (you can use the `alt` attribute), but in the case of mixed or other certain types of content it is not so obvious, and `role="img"` can come into play.
+در برخی موارد، کاربران فناوری کمکی نمی‌توانند معنای محتوایی را که به روش‌های خاص، از طریق رسانه‌های خاص یا به‌صورت ضمنی بیان شده است، درک کنند. این مشکل در مورد تصاویر به‌وضوح قابل حل است (می‌توانید از ویژگی `alt` استفاده کنید)، اما در مورد محتوای ترکیبی یا برخی انواع دیگر محتوا چندان آشکار نیست و `role="img"` می‌تواند وارد عمل شود.
 
-For example, if you use emojis in your text, the meaning might be obvious to a sighted user, but someone using a screen reader might get confused because the emojis might have either no text representation at all, or the alternative text might be confusing and not match the context it is being used in. For example, take the following code:
+برای مثال، اگر از ایموجی‌ها در متن خود استفاده می‌کنید، ممکن است معنا برای کاربر بینا آشکار باشد، اما فردی که از صفحه‌خوان استفاده می‌کند ممکن است گیج شود، زیرا ایموجی‌ها یا اصلاً نمایش متنی ندارند، یا متن جایگزین ممکن است گیج‌کننده باشد و با زمینه‌ای که در آن استفاده شده است مطابقت نداشته باشد. برای مثال، کد زیر را در نظر بگیرید:
 
 ```html
 <div role="img" aria-label="That cat is so cute">
@@ -73,11 +73,11 @@ For example, if you use emojis in your text, the meaning might be obvious to a s
 </div>
 ```
 
-`&#x1F408; &#x1F602;`, 🐈 and 😂, are entity references for emojis read out as "Cat" and "Face with tears of joy", but this doesn't necessarily make sense — the implied meaning is possibly more like "That cat is so cute", so we include that in an `aria-label` along with `role="img"`.
+`&#x1F408; &#x1F602;`، 🐈 و 😂، ارجاع‌های موجودیتی برای ایموجی‌هایی هستند که به‌صورت «گربه» و «صورت با اشک شادی» خوانده می‌شوند، اما این لزوماً معنادار نیست — معنای ضمنی احتمالاً بیشتر مانند «آن گربه خیلی ناز است» است، بنابراین ما آن را در یک `aria-label` همراه با `role="img"` قرار می‌دهیم.
 
-This seems to work OK across some browser/screen reader combinations, but some of them end up reading the label out twice. Use with caution and test thoroughly.
+این روش به نظر می‌رسد در برخی ترکیب‌های مرورگر/صفحه‌خوان به‌درستی کار می‌کند، اما برخی از آن‌ها ممکن است برچسب را دو بار بخوانند. با احتیاط استفاده کنید و به‌طور کامل آزمایش کنید.
 
-Another example where this might be suitable is when using {{Glossary("ASCII")}} emoji combinations, like the legendary "Table flip":
+مثال دیگری که این روش ممکن است مناسب باشد، زمانی است که از ترکیب‌های ایموجی {{Glossary("ASCII")}} استفاده می‌کنید، مانند «Table flip» افسانه‌ای:
 
 ```html
 <div role="img" aria-label="Table flip">
@@ -85,36 +85,36 @@ Another example where this might be suitable is when using {{Glossary("ASCII")}}
 </div>
 ```
 
-If `aria-labelledby` were used, the screen reader would read it. In this case, only the contents of the `aria-label` are announced to screen reader users, hiding the gibberish of the characters without the need for descendant ARIA to hide things, but also hiding potential content that may be part of the image.
+اگر از `aria-labelledby` استفاده می‌شد، صفحه‌خوان آن را می‌خواند. در این حالت، فقط محتویات `aria-label` به کاربران صفحه‌خوان اعلام می‌شود و محتوای بی‌معنی نویسه‌ها پنهان می‌ماند، بدون نیاز به ARIA فرزندان برای پنهان‌سازی چیزها؛ اما این کار همچنین محتوای بالقوه‌ای را که ممکن است بخشی از تصویر باشد پنهان می‌کند.
 
-### All descendants are presentational
+### همه فرزندان، ارائه‌ای هستند
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in an `img`. To deal with this limitation, browsers, automatically apply role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) to all descendant elements of any `img` element as it is a role that does not support semantic children.
+برخی از انواع اجزای رابط کاربری وجود دارند که وقتی در یک API دسترس‌پذیری پلتفرم نمایش داده می‌شوند، فقط می‌توانند متن داشته باشند. APIهای دسترس‌پذیری هیچ روشی برای نمایش عناصر معنایی موجود در یک `img` ندارند. برای مقابله با این محدودیت، مرورگرها به‌طور خودکار نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را به همه عناصر فرزند هر عنصر `img` اعمال می‌کنند، زیرا این نقشی است که از فرزندان معنایی پشتیبانی نمی‌کند.
 
-For example, consider the following `img` element, which contains a heading.
+برای مثال، عنصر `img` زیر را در نظر بگیرید که شامل یک عنوان است.
 
 ```html
 <div role="img"><h3>Title of my image</h3></div>
 ```
 
-Because descendants of `img` are presentational, the following code is equivalent:
+از آنجا که فرزندان `img` ارائه‌ای هستند، کد زیر معادل است:
 
 ```html
 <div role="img"><h3 role="presentation">Title of my image</h3></div>
 ```
 
-From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree).:
+از دید کاربر فناوری کمکی، عنوان وجود ندارد، زیرا قطعه‌کدهای قبلی با موارد زیر در [درخت دسترس‌پذیری](/en-US/docs/Glossary/Accessibility_tree) معادل هستند:
 
 ```html
 <div role="img">Title of my image</div>
 ```
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
-- `aria-label` or `aria-labelledby`
-  - : An accessible name is required. For the HTML {{HTMLElement('img')}} element, use the `alt` attribute. For all other elements with the `img` role, use `aria-labelledby` if a visible label is present, otherwise use `aria-label`.
+- `aria-label` یا `aria-labelledby`
+  - : یک نام قابل‌دسترس الزامی است. برای عنصر HTML {{HTMLElement('img')}}، از ویژگی `alt` استفاده کنید. برای همه عناصر دیگر با نقش `img`، اگر برچسب قابل مشاهده وجود دارد از `aria-labelledby` استفاده کنید، در غیر این صورت از `aria-label` استفاده کنید.
 
-## Examples
+## مثال‌ها
 
 ```html
 <span role="img" aria-label="Rating: 4 out of 5 stars">
@@ -126,17 +126,17 @@ From the assistive technology user's perspective, the heading does not exist sin
 </span>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement('img')}} element
-- The {{SVGElement('svg')}} element
-- The {{HTMLElement('picture')}} element
-- The {{HTMLElement('audio')}} element
-- The {{HTMLElement('video')}} element
-- [ARIA: `presentation` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role)
-- [Accessibility Object Model](https://wicg.github.io/aom/spec/)
-- [ARIA in HTML](https://w3c.github.io/html-aria/)
+- عنصر {{HTMLElement('img')}}
+- عنصر {{SVGElement('svg')}}
+- عنصر {{HTMLElement('picture')}}
+- عنصر {{HTMLElement('audio')}}
+- عنصر {{HTMLElement('video')}}
+- [نقش `presentation` در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role)
+- [مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/spec/)
+- [ARIA در HTML](https://w3c.github.io/html-aria/)
