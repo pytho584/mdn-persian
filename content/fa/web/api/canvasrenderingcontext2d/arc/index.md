@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: arc() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: arc() method"
 short-title: arc()
 slug: Web/API/CanvasRenderingContext2D/arc
 page-type: web-api-instance-method
@@ -14,48 +8,43 @@ browser-compat: api.CanvasRenderingContext2D.arc
 
 {{APIRef("Canvas API")}}
 
-The
+متد
 **`CanvasRenderingContext2D.arc()`**
-method of the [Canvas 2D API](/en-US/docs/Web/API/CanvasRenderingContext2D) adds a circular arc to the current sub-path.
+از [Canvas 2D API](/en-US/docs/Web/API/CanvasRenderingContext2D) یک کمان دایره‌ای به زیرمسیر فعلی اضافه می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 arc(x, y, radius, startAngle, endAngle)
 arc(x, y, radius, startAngle, endAngle, counterclockwise)
 ```
 
-The `arc()` method creates a circular arc centered at `(x, y)`
-with a radius of `radius`. The path starts at `startAngle`, ends
-at `endAngle`, and travels in the direction given by
-`counterclockwise` (defaulting to clockwise).
+متد `arc()` یک کمان دایره‌ای با مرکز `(x, y)` و شعاع `radius` ایجاد می‌کند. مسیر از `startAngle` شروع می‌شود، به `endAngle` ختم می‌شود و در جهتی که توسط `counterclockwise` مشخص شده است حرکت می‌کند (پیش‌فرض: ساعتگرد).
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : The horizontal coordinate of the arc's center.
+  - : مختصات افقی مرکز کمان.
 - `y`
-  - : The vertical coordinate of the arc's center.
+  - : مختصات عمودی مرکز کمان.
 - `radius`
-  - : The arc's radius. Must be positive.
+  - : شعاع کمان. باید مثبت باشد.
 - `startAngle`
-  - : The angle at which the arc starts in radians, measured from the positive x-axis.
+  - : زاویهٔ شروع کمان بر حسب رادیان، که از محور مثبت x اندازه‌گیری می‌شود.
 - `endAngle`
-  - : The angle at which the arc ends in radians, measured from the positive x-axis.
+  - : زاویهٔ پایان کمان بر حسب رادیان، که از محور مثبت x اندازه‌گیری می‌شود.
 - `counterclockwise` {{optional_inline}}
-  - : An optional boolean value. If `true`, draws the arc
-    counter-clockwise between the start and end angles. The default is `false`
-    (clockwise).
+  - : یک مقدار بولی اختیاری. اگر `true` باشد، کمان را در خلاف جهت ساعتگرد بین زوایای شروع و پایان رسم می‌کند. مقدار پیش‌فرض `false` است (ساعتگرد).
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Drawing a full circle
+### رسم یک دایره کامل
 
-This example draws a complete circle with the `arc()` method.
+این مثال با متد `arc()` یک دایرهٔ کامل رسم می‌کند.
 
 #### HTML
 
@@ -65,9 +54,7 @@ This example draws a complete circle with the `arc()` method.
 
 #### JavaScript
 
-The arc is given an x-coordinate of 100, a y-coordinate of 75, and a radius of 50. To
-make a full circle, the arc begins at an angle of 0 radians (0°), and
-ends at an angle of 2π radians (360°).
+به کمان یک مختصات x برابر 100، مختصات y برابر 75 و شعاع 50 داده می‌شود. برای ایجاد یک دایرهٔ کامل، کمان از زاویهٔ 0 رادیان (0 درجه) شروع می‌شود و به زاویهٔ 2π رادیان (360 درجه) ختم می‌شود.
 
 ```js
 const canvas = document.querySelector("canvas");
@@ -78,13 +65,13 @@ ctx.arc(100, 75, 50, 0, 2 * Math.PI);
 ctx.stroke();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Drawing_a_full_circle', 700, 180) }}
 
-### Different shapes demonstrated
+### نمایش اشکال مختلف
 
-This example draws various shapes to show what is possible with `arc()`.
+این مثال اشکال گوناگونی را رسم می‌کند تا امکانات `arc()` را نشان دهد.
 
 ```html hidden
 <canvas width="150" height="200"></canvas>
@@ -116,19 +103,19 @@ for (let i = 0; i <= 3; i++) {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('Different_shapes_demonstrated', "", "210")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
-- Use {{domxref("CanvasRenderingContext2D.ellipse()")}} to draw an elliptical arc.
+- رابط تعریف‌کنندهٔ این متد: {{domxref("CanvasRenderingContext2D")}}
+- برای ترسیم کمان بیضی از {{domxref("CanvasRenderingContext2D.ellipse()")}} استفاده کنید.
