@@ -1,26 +1,22 @@
 ---
 title: "BroadcastChannel: name property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/name"
-status: "needs-translation"
----
-
----
-title: "BroadcastChannel: name property"
 short-title: name
 slug: Web/API/BroadcastChannel/name
 page-type: web-api-instance-property
 browser-compat: api.BroadcastChannel.name
+translated_by: "n8n + AI"
 ---
 
 {{APIRef("BroadCastChannel API")}} {{AvailableInWorkers}}
 
-The **`name`** read-only property of the {{domxref("BroadcastChannel")}} interface returns a string, which uniquely identifies the given channel with its name. This name is passed to the {{domxref("BroadcastChannel.BroadCastChannel", "BroadcastChannel()")}} constructor at creation time and is therefore read-only.
+ویژگی فقط-خواندنی **`name`** از رابط {{domxref("BroadcastChannel")}} یک رشته را برمی‌گرداند که به طور یکتا کانال داده شده را با نام آن شناسایی می‌کند. این نام به سازنده {{domxref("BroadcastChannel.BroadCastChannel", "BroadcastChannel()")}} در زمان ایجاد ارسال می‌شود و بنابراین فقط-خواندنی است.
 
-## Values
+## مقادیر
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Connect to a channel
@@ -35,14 +31,14 @@ console.log(bc.name); // "test_channel"
 bc.close();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("BroadcastChannel")}}, the interface it belongs to.
+- {{domxref("BroadcastChannel")}}، رابطی که به آن تعلق دارد.
