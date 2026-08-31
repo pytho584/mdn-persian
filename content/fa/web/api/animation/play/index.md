@@ -1,7 +1,7 @@
 ---
 title: "Animation: play() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/play"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,25 +14,25 @@ browser-compat: api.Animation.play
 
 {{ APIRef("Web Animations") }}
 
-The **`play()`** method of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)'s {{ domxref("Animation") }} Interface starts or resumes playing of an animation. If the animation is finished, calling `play()` restarts the animation, playing it from the beginning.
+**`play()`** روشی از رابط {{ domxref("Animation") }} در [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) است که پخش یک انیمیشن را شروع یا از سر می‌گیرد. اگر انیمیشن به پایان رسیده باشد، فراخوانی `play()` انیمیشن را دوباره راه‌اندازی کرده و آن را از ابتدا پخش می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 play()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-In the [Growing/Shrinking Alice Game](https://codepen.io/rachelnabors/pen/PNYGZQ?editors=0010) example, clicking or tapping the cake causes Alice's growing animation (`aliceChange`) to play forward, causing her to get bigger, as well as triggering the cake's animation. Two `Animation.play()`s, one `EventListener`:
+در مثال [بازی رشد/کوچک‌شدن آلیس](https://codepen.io/rachelnabors/pen/PNYGZQ?editors=0010)، کلیک یا لمس کیک باعث می‌شود انیمیشن رشد آلیس (`aliceChange`) به جلو پخش شود و او بزرگ‌تر شود، همچنین انیمیشن کیک نیز فعال می‌شود. دو `Animation.play()`، یک `EventListener`:
 
 ```js
 // The cake has its own animation:
@@ -64,19 +64,19 @@ cake.addEventListener("mousedown", growAlice);
 cake.addEventListener("touchstart", growAlice);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
-- {{domxref("Animation")}} for other methods and properties you can use to control web page animation.
-- {{domxref("Animation.pause()")}} to pause an animation.
-- {{domxref("Animation.reverse()")}} to play an animation backwards.
-- {{domxref("Animation.finish()")}} to finish an animation.
-- {{domxref("Animation.cancel()")}} to cancel an animation.
+- {{domxref("Animation")}} برای سایر روش‌ها و ویژگی‌هایی که می‌توانید برای کنترل انیمیشن صفحه وب استفاده کنید.
+- {{domxref("Animation.pause()")}} برای توقف موقت یک انیمیشن.
+- {{domxref("Animation.reverse()")}} برای پخش معکوس یک انیمیشن.
+- {{domxref("Animation.finish()")}} برای پایان دادن به یک انیمیشن.
+- {{domxref("Animation.cancel()")}} برای لغو یک انیمیشن.
