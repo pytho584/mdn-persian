@@ -1,32 +1,25 @@
 ---
 title: "BatteryManager: dischargingTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/dischargingTime"
-status: "needs-translation"
----
-
----
-title: "BatteryManager: dischargingTime property"
 short-title: dischargingTime
 slug: Web/API/BatteryManager/dischargingTime
 page-type: web-api-instance-property
 browser-compat: api.BatteryManager.dischargingTime
+source: "https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/dischargingTime"
+translated_by: "n8n + AI"
 ---
 
 {{ApiRef("Battery API")}}{{securecontext_header}}
 
-The **`dischargingTime`** read-only property of the {{domxref("BatteryManager")}} interface indicates the amount of time, in seconds, that remains until the battery is fully discharged,
-or {{jsxref("Infinity")}} if the battery is currently charging rather than discharging or the user agent is unable to report the battery status information.
-When its value changes, the {{domxref("BatteryManager/dischargingtimechange_event", "dischargingtimechange")}} event is fired.
+ویژگی فقط‌خواندنی **`dischargingTime`** از رابط {{domxref("BatteryManager")}} مدت زمان باقی‌مانده تا تخلیه کامل باتری را بر حسب ثانیه نشان می‌دهد، یا {{jsxref("Infinity")}} اگر باتری در حال شارژ باشد به جای تخلیه، یا اگر عامل کاربر نتواند اطلاعات وضعیت باتری را گزارش دهد. هنگامی که مقدار آن تغییر کند، رویداد {{domxref("BatteryManager/dischargingtimechange_event", "dischargingtimechange")}} فعال می‌شود.
 
 > [!NOTE]
-> Even if the time returned is precise to the second, browsers round them to a higher
-> interval (typically to the closest 15 minutes) for privacy reasons.
+> حتی اگر زمان برگشتی تا ثانیه دقیق باشد، مرورگرها آن را به یک بازه بزرگتر (معمولاً نزدیک‌ترین ۱۵ دقیقه) به دلایل حریم خصوصی گرد می‌کنند.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -47,15 +40,15 @@ navigator.getBattery().then((battery) => {
 
 {{ EmbedLiveSample('Examples', '100%', 30) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("BatteryManager")}}
 - {{domxref("Navigator.getBattery()")}}
