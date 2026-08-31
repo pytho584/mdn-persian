@@ -1,73 +1,64 @@
 ---
-title: "CloseWatcher"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher"
-status: "needs-translation"
----
-
----
 title: CloseWatcher
-slug: Web/API/CloseWatcher
-page-type: web-api-interface
-browser-compat: api.CloseWatcher
 ---
 
 {{APIRef("HTML DOM")}}
 
-The `CloseWatcher` interface allows a custom UI component with open and close semantics to respond to device-specific close actions in the same way as a built-in component.
+رابط کاربری `CloseWatcher` به یک کامپوننت UI سفارشی که دارای معنای باز و بسته شدن است، امکان میدهد تا به اقدامات بستنِ مخصوص دستگاه، دقیقاً به همان روشی که کامپوننتهای داخلی پاسخ میدهند، واکنش نشان دهد.
 
 {{InheritanceDiagram}}
 
-The `CloseWatcher` interface inherits from {{domxref("EventTarget")}}.
+رابط `CloseWatcher` از {{domxref("EventTarget")}} به ارث میبرد.
 
-## Constructor
+## سازنده
 
 - {{domxref("CloseWatcher.CloseWatcher", "CloseWatcher()")}}
-  - : Creates a new `CloseWatcher` instance.
+  - : یک نمونهی جدید از `CloseWatcher` میسازد.
 
-## Instance methods
+## روشهای نمونه
 
-_This interface also inherits methods from its parent, {{domxref("EventTarget")}}._
+_این رابط همچنین روشهای والد خود، {{domxref("EventTarget")}} را به ارث میبرد._
 
 - {{domxref("CloseWatcher.requestClose()")}}
-  - : Fires a `cancel` event and if that event is not canceled with {{domxref("Event.preventDefault()")}}, proceeds to fire a `close` event, and then finally deactivates the close watcher as if `destroy()` was called.
+  - : یک رویداد `cancel` را فعال میکند و اگر آن رویداد با {{domxref("Event.preventDefault()")}} لغو نشود، به راهاندازی رویداد `close` ادامه میدهد و در نهایت watcher را به همان صورت که گویی `destroy()` فراخوانی شده است، غیرفعال میکند.
 - {{domxref("CloseWatcher.close()")}}
-  - : Immediately fires the `close` event, without firing `cancel` first, and deactivates the close watcher as if `destroy()` was called.
+  - : بلافاصله رویداد `close` را فعال میکند، بدون اینکه ابتدا `cancel` را فعال کند، و watcher را به همان صورت که گویی `destroy()` فراخوانی شده است، غیرفعال میکند.
 - {{domxref("CloseWatcher.destroy()")}}
-  - : Deactivates the close watcher so that it will no longer receive `close` events.
+  - : watcher را غیرفعال میکند تا دیگر رویدادهای `close` را دریافت نکند.
 
-## Events
+## رویدادها
 
 - {{domxref("CloseWatcher.cancel_event", "cancel")}}
-  - : An event fired before the `close` event, so that `close` can be prevented from firing.
+  - : رویدادی که قبل از رویداد `close` فعال میشود، به طوری که میتوان از فعال شدن `close` جلوگیری کرد.
 - {{domxref("CloseWatcher.close_event", "close")}}
-  - : An event fired when a close request was received.
+  - : رویدادی که هنگام دریافت درخواست بستن فعال میشود.
 
-## Description
+## توضیحات
 
-Some UI components have "close behavior", meaning that the component appears, and the user can close it when they are finished with it. For example: sidebars, popups, dialogs, or notifications.
+برخی از کامپوننتهای UI «رفتار بستن» دارند، به این معنی که کامپوننت ظاهر میشود و کاربر میتواند پس از اتمام کار با آن، آن را ببندد. به عنوان مثال: نوارهای کناری، پنجرههای بازشو (popup)، دیالوگها یا اعلانها.
 
-Users generally expect to be able to use a particular mechanism to close these elements, and the mechanism tends to be device-specific. For example, on a device with a keyboard it might be the <kbd>Esc</kbd> key, but Android might use the back button. For built-in components, such as [popover](/en-US/docs/Web/API/Popover_API) or {{htmlelement("dialog")}} elements, the browser takes care of these differences, closing the element when the user performs the close action appropriate for the device. However, when a web developer implements their own closable UI component (for example, a sidebar), it is hard to implement this kind of device-specific close behavior.
+کاربران معمولاً انتظار دارند بتوانند از یک سازوکار خاص برای بستن این عناصر استفاده کنند و این سازوکار معمولاً مخصوص دستگاه است. به عنوان مثال، در دستگاهی با صفحهکلید، ممکن است کلید <kbd>Esc</kbd> باشد، اما اندروید ممکن است از دکمهی بازگشت استفاده کند. برای کامپوننتهای داخلی، مانند [popover](/en-US/docs/Web/API/Popover_API) یا عناصر {{htmlelement("dialog")}}، مرورگر این تفاوتها را مدیریت میکند و هنگام انجام عمل بستن مناسب برای دستگاه، عنصر را میبندد. با این حال، زمانی که یک توسعهدهندهی وب کامپوننت UI قابل بستن خودش را پیادهسازی میکند (مثلاً یک نوار کناری)، پیادهسازی این رفتار بستن مخصوص دستگاه دشوار است.
 
-The `CloseWatcher` interface solves this problem by delivering a `cancel` event, followed by a `close` event, when the user executes the device-specific close action.
-Web applications can use the `onclose` handler to close the UI element in response to the device-specific event.
-They can also trigger these same events in response to the UI element's normal closing mechanism, and then implement common `close` event handling for both the application- and device-specific close action.
-Once the `onclose` event handler completes the `CloseWatcher` is destroyed and the events will no longer be fired.
+رابط `CloseWatcher` این مشکل را با ارائهی یک رویداد `cancel` و به دنبال آن یک رویداد `close`، زمانی که کاربر عمل بستن مخصوص دستگاه را انجام میدهد، حل میکند.
+برنامههای وب میتوانند از کنترلکنندهی `onclose` برای بستن عنصر UI در پاسخ به رویداد مخصوص دستگاه استفاده کنند.
+آنها همچنین میتوانند این رویدادها را در پاسخ به سازوکار عادی بستن عنصر UI فعال کنند و سپس مدیریت مشترک رویداد `close` را هم برای عمل بستنِ مبتنی بر برنامه و هم برای عمل بستنِ مخصوص دستگاه پیادهسازی کنند.
+هنگامی که کنترلکنندهی رویداد `onclose` کامل شد، `CloseWatcher` از بین میرود و رویدادها دیگر فعال نخواهند شد.
 
-In some applications the UI element may only be allowed to close when it is in a particular state; for example, when some needed information is populated.
-To address these cases, applications can prevent the `close` event from being emitted by implementing a handler for the `cancel` event that calls {{domxref("Event.preventDefault()")}} if the UI element is not ready to close.
+در برخی برنامهها، عنصر UI فقط زمانی مجاز به بستن است که در حالت خاصی باشد؛ به عنوان مثال، زمانی که اطلاعات لازم پر شده باشد.
+برای رسیدگی به این موارد، برنامهها میتوانند با پیادهسازی یک کنترلکننده برای رویداد `cancel` که در صورت آماده نبودن عنصر UI برای بستن، {{domxref("Event.preventDefault()")}} را فراخوانی میکند، از انتشار رویداد `close` جلوگیری کنند.
 
-You can create `CloseWatcher` instances without [user activation](/en-US/docs/Web/Security/Defenses/User_activation), and this can be useful to implement cases like session inactivity timeout dialogs. However, if you create more than one `CloseWatcher` without user activation, then the watchers will be grouped, so a single close request will close them both.
-In addition, the first close watcher does not necessarily have to be a `CloseWatcher` object: it could be a modal dialog element, or a popover generated by an element with the popover attribute
+میتوانید نمونههای `CloseWatcher` را بدون [فعالسازی کاربر](/en-US/docs/Web/Security/Defenses/User_activation) ایجاد کنید، و این میتواند برای پیادهسازی مواردی مانند دیالوگهای تایم اوت عدم فعالیت مفید باشد. با این حال، اگر بیش از یک `CloseWatcher` بدون فعالسازی کاربر ایجاد کنید، watcherها گروهبندی میشوند، بنابراین یک درخواست بستنِ واحد، هر دوی آنها را میبندد.
+علاوه بر این، اولین watcher بستن لزوماً نباید یک شیء `CloseWatcher` باشد: میتواند یک عنصر دیالوگ مودال باشد، یا یک popover که توسط عنصری با ویژگی popover تولید شده است.
 
-## Examples
+## مثالها
 
-### Processing close requests
+### پردازش درخواستهای بستن
 
-In this example, you have your own UI component (a picker) and you want to support both, the platform's default close method (e.g., the <kbd>Esc</kbd> key) and your custom close method (a close button).
+در این مثال، شما یک کامپوننت UI اختصاصی خودتان (یک انتخابگر) دارید و میخواهید هم از روش بستن پیشفرض پلتفرم (مثلاً کلید <kbd>Esc</kbd>) و هم از روش بستن سفارشی خودتان (دکمهی بستن) پشتیبانی کنید.
 
-You create a `CloseWatcher` to handle all `close` events.
+شما یک `CloseWatcher` برای مدیریت همهی رویدادهای `close` ایجاد میکنید.
 
-The `onclick` handler of your UI component can call `requestClose` to request a close and to route your close request through the same `onclose` handler the platform close method uses.
+کنترلکنندهی `onclick` کامپوننت UI شما میتواند `requestClose` را فراخوانی کند تا درخواست بستن را انجام دهد و درخواست بستن شما را از طریق همان کنترلکنندهی `onclose` که روش بستن پلتفرم استفاده میکند، هدایت کند.
 
 ```js
 const watcher = new CloseWatcher();
@@ -82,18 +73,18 @@ watcher.onclose = () => {
 picker.querySelector(".close-button").onclick = () => watcher.requestClose();
 ```
 
-### Closing a sidebar using a platform close request
+### بستن یک نوار کناری با استفاده از درخواست بستن پلتفرم
 
-In this example we have a sidebar component that is displayed when an "Open" button is selected, and hidden using either a "Close" button or platform-native mechanisms.
-To make it more interesting, this is a live example!
+در این مثال، یک کامپوننت نوار کناری داریم که با انتخاب دکمهی «باز کردن» نمایش داده میشود و با استفاده از دکمهی «بستن» یا سازوکارهای بومی پلتفرم پنهان میشود.
+برای جالبتر کردن آن، این یک مثال زنده است!
 
-Note also that the example is a little contrived, because normally we would use a toggle button to change a sidebar state.
-We could certainly do that, but using separate "Open" and "Close" buttons makes it easier to demonstrate the feature.
+همچنین توجه داشته باشید که مثال کمی مصنوعی است، زیرا معمولاً از یک دکمهی تغییر وضعیت برای تغییر حالت نوار کناری استفاده میکنیم.
+مطمئناً میتوانیم این کار را انجام دهیم، اما استفاده از دکمههای جداگانهی «باز کردن» و «بستن» نمایش این ویژگی را آسانتر میکند.
 
 #### HTML
 
-The HTML defines "Open" and "Close" {{htmlelement("button")}} elements, along with {{htmlelement("div")}} elements for the main content and the sidebar.
-CSS is used to animate the display of the sidebar element when the `open` class is added or removed from the sidebar and content elements (this CSS is hidden because it is not relevant to the example).
+HTML عناصر {{htmlelement("button")}} «باز کردن» و «بستن»، همراه با عناصر {{htmlelement("div")}} برای محتوای اصلی و نوار کناری را تعریف میکند.
+از CSS برای متحرک سازی نمایش عنصر نوار کناری هنگام اضافه یا حذف شدن کلاس `open` از عناصر نوار کناری و محتوا استفاده میشود (این CSS پنهان است زیرا به مثال مربوط نمیشود).
 
 ```html
 <button id="sidebar-open" type="button">Open</button>
@@ -136,10 +127,10 @@ CSS is used to animate the display of the sidebar element when the `open` class 
 }
 ```
 
-#### JavaScript
+#### جاواسکریپت
 
-The code first gets variables for the buttons and `<div>` elements defined in the HTML.
-It also defines a function `closeSidebar()` that is called when the sidebar is closed, to remove the `open` class from the `<div>` elements, and adds a `click` event listener that calls the `openSidebar()` method when the "Open" button is clicked.
+کد ابتدا متغیرهایی برای دکمهها و عناصر `<div>` تعریفشده در HTML میگیرد.
+همچنین تابع `closeSidebar()` را تعریف میکند که هنگام بستن نوار کناری فراخوانی میشود تا کلاس `open` را از عناصر `<div>` حذف کند، و یک شنوندهی رویداد `click` اضافه میکند که با کلیک روی دکمهی «باز کردن»، متد `openSidebar()` را فراخوانی میکند.
 
 ```js
 const sidebar = document.querySelector(".sidebar");
@@ -155,12 +146,12 @@ function closeSidebar() {
 sidebarOpen.addEventListener("click", openSidebar);
 ```
 
-The implementation of `openSidebar()` is given below.
-The method first checks if the sidebar is already open, and if not, adds the `open` class to the elements so that the sidebar is displayed.
+پیادهسازی `openSidebar()` در زیر آورده شده است.
+متد ابتدا بررسی میکند که آیا نوار کناری از قبل باز است یا خیر، و اگر نبود، کلاس `open` را به عناصر اضافه میکند تا نوار کناری نمایش داده شود.
 
-We then create a new `CloseWatcher` and add a listener that will call {{domxref("CloseWatcher.close()", "close()")}} on it if the "Close" button is clicked.
-This ensures that the `close` event is called when either platform native close methods or the "Close" button are used.
-The implementation of the `onclose()` event handler simply closes the sidebar, and the `CloseWatcher` is then destroyed automatically.
+سپس یک `CloseWatcher` جدید ایجاد میکنیم و یک شنونده اضافه میکنیم که اگر دکمهی «بستن» کلیک شود، {{domxref("CloseWatcher.close()", "close()")}} را روی آن فراخوانی کند.
+این تضمین میکند که رویداد `close` چه زمانی که روشهای بستن بومی پلتفرم استفاده میشوند و چه زمانی که دکمهی «بستن» استفاده میشود، فراخوانی شود.
+پیادهسازی کنترلکنندهی رویداد `onclose()` به سادگی نوار کناری را میبندد و `CloseWatcher` سپس به طور خودکار از بین میرود.
 
 ```js
 function openSidebar() {
@@ -181,22 +172,22 @@ function openSidebar() {
 }
 ```
 
-Note that we chose to call `close()` on the watcher instead of {{domxref("CloseWatcher.requestClose()")}} because we don't need the `cancel` event to be emitted (we would use `requestClose()` and the `cancel` event handler if there was a reason to ever prevent the sidebar from closing prematurely).
+توجه کنید که ما تصمیم گرفتیم به جای {{domxref("CloseWatcher.requestClose()")}} متد `close()` را روی watcher فراخوانی کنیم، زیرا نیازی به انتشار رویداد `cancel` نداریم (اگر دلیلی برای جلوگیری از بسته شدن زودهنگام نوار کناری وجود داشت، از `requestClose()` و کنترلکنندهی رویداد `cancel` استفاده میکردیم).
 
-#### Result
+#### نتیجه
 
-Select the "Open" button to open the sidebar. You should be able to close the sidebar using the "Close" button or the usual platform method, such as the <kbd>Esc</kbd> key on Windows.
+دکمهی «باز کردن» را برای باز کردن نوار کناری انتخاب کنید. باید بتوانید نوار کناری را با استفاده از دکمهی «بستن» یا روش معمول پلتفرم، مانند کلید <kbd>Esc</kbd> در ویندوز، ببندید.
 
 {{ EmbedLiveSample("Closing a sidebar using a platform close request", "100%", "200") }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLDialogElement.close_event", "close")}} event on {{domxref("HTMLDialogElement")}}
+- رویداد {{domxref("HTMLDialogElement.close_event", "close")}} در {{domxref("HTMLDialogElement")}}
