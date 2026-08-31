@@ -1,10 +1,4 @@
 ---
-title: "CryptoKey"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CryptoKey"
-status: "needs-translation"
----
-
----
 title: CryptoKey
 slug: Web/API/CryptoKey
 page-type: web-api-interface
@@ -13,27 +7,27 @@ browser-compat: api.CryptoKey
 
 {{APIRef("Web Crypto API")}}{{SecureContext_header}}{{AvailableInWorkers}}
 
-The **`CryptoKey`** interface of the [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) represents a cryptographic {{glossary("key")}} obtained from one of the {{domxref("SubtleCrypto")}} methods {{domxref("SubtleCrypto.generateKey", "generateKey()")}}, {{domxref("SubtleCrypto.deriveKey", "deriveKey()")}}, {{domxref("SubtleCrypto.importKey", "importKey()")}}, or {{domxref("SubtleCrypto.unwrapKey", "unwrapKey()")}}.
+رابط **`CryptoKey`** از [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) یک {{glossary("key")}} رمزنگاری را نشان می‌دهد که از یکی از متدهای {{domxref("SubtleCrypto")}} یعنی {{domxref("SubtleCrypto.generateKey", "generateKey()")}}، {{domxref("SubtleCrypto.deriveKey", "deriveKey()")}}، {{domxref("SubtleCrypto.importKey", "importKey()")}} یا {{domxref("SubtleCrypto.unwrapKey", "unwrapKey()")}} به دست می‌آید.
 
-For security reasons, the `CryptoKey` interface can only be used in a [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
+به دلایل امنیتی، رابط `CryptoKey` فقط در یک [زمینه امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts) قابل استفاده است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("CryptoKey.type")}} {{ReadOnlyInline}}
-  - : The type of key the object represents. It may take one of the following values: `"secret"`, `"private"` or `"public"`.
+  - : نوع کلیدی که شیء نشان می‌دهد. می‌تواند یکی از مقادیر `"secret"`، `"private"` یا `"public"` باشد.
 
 - {{domxref("CryptoKey.extractable")}} {{ReadOnlyInline}}
-  - : A boolean value indicating whether or not the key may be extracted using [`SubtleCrypto.exportKey()`](/en-US/docs/Web/API/SubtleCrypto/exportKey) or [`SubtleCrypto.wrapKey()`](/en-US/docs/Web/API/SubtleCrypto/wrapKey).
+  - : یک مقدار بولی که نشان می‌دهد آیا کلید می‌تواند با استفاده از [`SubtleCrypto.exportKey()`](/en-US/docs/Web/API/SubtleCrypto/exportKey) یا [`SubtleCrypto.wrapKey()`](/en-US/docs/Web/API/SubtleCrypto/wrapKey) استخراج شود یا خیر.
 
 - {{domxref("CryptoKey.algorithm")}} {{ReadOnlyInline}}
-  - : An object describing the algorithm for which this key can be used and any associated extra parameters.
+  - : یک شیء که الگوریتمی را که این کلید می‌تواند برای آن استفاده شود و هر پارامتر اضافی مرتبط را توصیف می‌کند.
 
 - {{domxref("CryptoKey.usages")}} {{ReadOnlyInline}}
-  - : An {{jsxref("Array")}} of strings, indicating what can be done with the key. Possible values for array elements are `"encrypt"`, `"decrypt"`, `"sign"`, `"verify"`, `"deriveKey"`, `"deriveBits"`, `"wrapKey"`, and `"unwrapKey"`.
+  - : یک {{jsxref("Array")}} از رشته‌ها که نشان می‌دهد چه عملیاتی با کلید می‌توان انجام داد. مقادیر ممکن برای عناصر آرایه عبارتند از `"encrypt"`، `"decrypt"`، `"sign"`، `"verify"`، `"deriveKey"`، `"deriveBits"`، `"wrapKey"` و `"unwrapKey"`.
 
-## Examples
+## مثال‌ها
 
-The examples for `SubtleCrypto` methods often use `CryptoKey` objects. For example:
+مثال‌های متدهای `SubtleCrypto` اغلب از اشیاء `CryptoKey` استفاده می‌کنند. برای مثال:
 
 - [`SubtleCrypto.generateKey()`](/en-US/docs/Web/API/SubtleCrypto/generateKey)
 - [`SubtleCrypto.deriveKey()`](/en-US/docs/Web/API/SubtleCrypto/deriveKey)
@@ -46,17 +40,17 @@ The examples for `SubtleCrypto` methods often use `CryptoKey` objects. For examp
 - [`SubtleCrypto.sign()`](/en-US/docs/Web/API/SubtleCrypto/sign)
 - [`SubtleCrypto.verify()`](/en-US/docs/Web/API/SubtleCrypto/verify)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API)
-- [Web security](/en-US/docs/Web/Security)
-- [Privacy, permissions, and information security](/en-US/docs/Web/Privacy)
-- {{domxref("Crypto")}} and {{domxref("Crypto.subtle")}}.
+- [امنیت وب](/en-US/docs/Web/Security)
+- [حریم خصوصی، مجوزها و امنیت اطلاعات](/en-US/docs/Web/Privacy)
+- {{domxref("Crypto")}} و {{domxref("Crypto.subtle")}}
