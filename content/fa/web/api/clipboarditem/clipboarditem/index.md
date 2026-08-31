@@ -1,26 +1,14 @@
 ---
 title: "ClipboardItem: ClipboardItem() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem/ClipboardItem"
-status: "needs-translation"
 ---
 
----
-title: "ClipboardItem: ClipboardItem() constructor"
-short-title: ClipboardItem()
-slug: Web/API/ClipboardItem/ClipboardItem
-page-type: web-api-constructor
-browser-compat: api.ClipboardItem.ClipboardItem
----
-
-{{APIRef("Clipboard API")}} {{securecontext_header}}
-
-The **`ClipboardItem()`** constructor creates a new {{domxref("ClipboardItem")}} object, which represents data to be stored or retrieved via the [Clipboard API](/en-US/docs/Web/API/Clipboard_API) {{domxref("clipboard.write()")}} and {{domxref("clipboard.read()")}} methods, respectively.
+سازندهٔ **`ClipboardItem()`** یک شیء جدید {{domxref("ClipboardItem")}} ایجاد می‌کند که داده‌ای را برای ذخیره‌سازی یا بازیابی از طریق متدهای {{domxref("clipboard.read()")}} و {{domxref("clipboard.write()")}} از [API کلیپ‌بورد](/en-US/docs/Web/API/Clipboard_API) به ترتیب نمایش می‌دهد.
 
 > [!NOTE]
-> The `read()` and `write()` methods can be used to work with text strings and arbitrary data items represented by {{domxref("Blob")}} instances. However, if you are solely working with text, it is more convenient to use the {{domxref("Clipboard.readText()")}} and {{domxref("Clipboard.writeText()")}} methods.
+> متدهای `read()` و `write()` را می‌توان برای کار با رشته‌های متنی و آیتم‌های داده‌ای دلخواه که توسط نمونه‌های {{domxref("Blob")}} نمایش داده می‌شوند استفاده کرد. با این حال، اگر فقط با متن کار می‌کنید، استفاده از متدهای {{domxref("Clipboard.readText()")}} و {{domxref("Clipboard.writeText()")}} راحت‌تر است.
 
 > [!NOTE]
-> Image format support varies by browser. See the [browser compatibility table](/en-US/docs/Web/API/Clipboard#browser_compatibility) for the `Clipboard` interface.
+> پشتیبانی از فرمت تصویر در مرورگرهای مختلف متفاوت است. برای رابط `Clipboard` به [جدول سازگاری مرورگرها](/en-US/docs/Web/API/Clipboard#browser_compatibility) مراجعه کنید.
 
 ## Syntax
 
@@ -32,26 +20,23 @@ new ClipboardItem(data, options)
 ### Parameters
 
 - `data`
-  - : An {{jsxref("Object")}} with the {{Glossary("MIME type")}} as the key and data as the value.
-    The data can be represented as one of the following:
-    - a {{domxref("Blob")}}
-    - a string
-    - a {{jsxref("Promise")}} that resolves to either a `Blob` or string.
+  - : یک {{jsxref("Object")}} با {{Glossary("MIME type")}} به عنوان کلید و داده به عنوان مقدار. داده می‌تواند به یکی از اشکال زیر نمایش داده شود:
+    - یک {{domxref("Blob")}}
+    - یک رشته
+    - یک {{jsxref("Promise")}} که به یک `Blob` یا رشته حل می‌شود.
 - `options` {{optional_inline}}
-  - : An object with the following properties:
+  - : یک شیء با ویژگی‌های زیر:
     - `presentationStyle` {{optional_inline}}
-      - : One of the three strings: `unspecified`, `inline` or `attachment`.
-        The default is `unspecified`.
+      - : یکی از سه رشته: `unspecified`، `inline` یا `attachment`. پیش‌فرض `unspecified` است.
 
-        `inline` signifies to apps that receive the paste that the `ClipboardItem` should be inserted inline at the point of paste. `attachment` signifies to apps that receive the paste that the `ClipboardItem` should be added as an attachment. `unspecified` doesn't signify any information to apps that receive the paste.
+        `inline` به برنامه‌هایی که جای‌گذاری را دریافت می‌کنند نشان می‌دهد که `ClipboardItem` باید در نقطهٔ جای‌گذاری به صورت درون‌خطی درج شود. `attachment` به برنامه‌هایی که جای‌گذاری را دریافت می‌کنند نشان می‌دهد که `ClipboardItem` باید به عنوان پیوست اضافه شود. `unspecified` هیچ اطلاعاتی به برنامه‌های دریافت‌کنندهٔ جای‌گذاری نمی‌دهد.
 
 ## Examples
 
-The below example requests a PNG image using {{domxref("Window/fetch", "fetch()")}}, and in turn, the {{domxref("Response.blob()")}} method, to create a new {{domxref("ClipboardItem")}}.
-This item is then written to the clipboard, using the {{domxref("Clipboard.write()")}} method.
+نمونهٔ زیر یک تصویر PNG را با استفاده از {{domxref("Window/fetch", "fetch()")}} و به نوبهٔ خود متد {{domxref("Response.blob()")}} درخواست می‌کند تا یک {{domxref("ClipboardItem")}} جدید ایجاد کند. سپس این آیتم با استفاده از متد {{domxref("Clipboard.write()")}} در کلیپ‌بورد نوشته می‌شود.
 
 > [!NOTE]
-> You can only pass in one clipboard item at a time.
+> شما فقط می‌توانید یک آیتم کلیپ‌بورد را در یک زمان ارسال کنید.
 
 ```js
 async function writeClipImg() {
@@ -85,5 +70,5 @@ async function writeClipImg() {
 
 ## See also
 
-- [Clipboard API](/en-US/docs/Web/API/Clipboard_API)
-- [Image support for Async Clipboard article](https://web.dev/articles/async-clipboard)
+- [API کلیپ‌بورد](/en-US/docs/Web/API/Clipboard_API)
+- [مقالهٔ پشتیبانی از تصویر در کلیپ‌بورد ناهمگام](https://web.dev/articles/async-clipboard)
