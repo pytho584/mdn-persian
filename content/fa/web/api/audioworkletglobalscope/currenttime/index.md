@@ -1,7 +1,7 @@
 ---
 title: "AudioWorkletGlobalScope: currentTime property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/currentTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,15 +14,15 @@ browser-compat: api.AudioWorkletGlobalScope.currentTime
 
 {{APIRef("Web Audio API")}}
 
-The read-only **`currentTime`** property of the {{domxref("AudioWorkletGlobalScope")}} interface returns a double that represents the ever-increasing context time of the audio block being processed. It is equal to the {{domxref("BaseAudioContext.currentTime", "currentTime")}} property of the {{domxref("BaseAudioContext")}} the worklet belongs to.
+ویژگی فقط‌خواندنی **`currentTime`** از رابط {{domxref("AudioWorkletGlobalScope")}} یک double را برمی‌گرداند که زمانِ به‌طور مداوم در حال افزایشِ کانتکستِ بلاک صوتیِ در حال پردازش را نشان می‌دهد. این مقدار با ویژگی {{domxref("BaseAudioContext.currentTime", "currentTime")}} از {{domxref("BaseAudioContext")}} که ورک‌لت به آن تعلق دارد برابر است.
 
-## Value
+## مقدار
 
-A floating-point number representing the time.
+یک عدد اعشاری که زمان را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The {{domxref("AudioWorkletProcessor")}} has access to the specific {{domxref("AudioWorkletGlobalScope")}} properties:
+{{domxref("AudioWorkletProcessor")}} به ویژگی‌های خاص {{domxref("AudioWorkletGlobalScope")}} دسترسی دارد:
 
 ```js
 // AudioWorkletProcessor defined in : test-processor.js
@@ -56,7 +56,7 @@ console.log(usefulVariable);
 registerProcessor("test-processor", TestProcessor);
 ```
 
-The main script loads the processor, creates an instance of {{domxref("AudioWorkletNode")}}, passes the name of the processor to it, and connects the node to an audio graph. We should see the output of {{domxref("console/log_static", "console.log()")}} calls in the console:
+اسکریپت اصلی پردازنده را بارگذاری می‌کند، نمونه‌ای از {{domxref("AudioWorkletNode")}} ایجاد می‌کند، نام پردازنده را به آن منتقل می‌کند و گره را به یک گراف صوتی متصل می‌کند. باید خروجی فراخوانی‌های {{domxref("console/log_static", "console.log()")}} را در کنسول ببینیم:
 
 ```js
 const audioContext = new AudioContext();
@@ -65,15 +65,15 @@ const testNode = new AudioWorkletNode(audioContext, "test-processor");
 testNode.connect(audioContext.destination);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
