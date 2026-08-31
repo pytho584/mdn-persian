@@ -1,7 +1,5 @@
 ---
 title: "CSSFontFeatureValuesRule: ornaments property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesRule/ornaments"
-status: "needs-translation"
 ---
 
 ---
@@ -16,17 +14,17 @@ browser-compat: api.CSSFontFeatureValuesRule.ornaments
 
 {{ APIRef("CSSOM") }}{{SeeCompatTable}}
 
-The read-only **ornaments** property of the {{domXRef("CSSFontFeatureValuesRule")}} interface contains a {{domXRef("CSSFontFeatureValuesMap")}} object representing the [user-defined-ident](/en-US/docs/Web/CSS/Reference/Values/custom-ident) and [feature index](/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings#optional_value) for a variable font which supports {{CSSXRef("font-variant-alternates", "ornaments()", "#ornaments")}}.
+ویژگی فقط‌خواندنی **ornaments** در رابط {{domXRef("CSSFontFeatureValuesRule")}} شامل یک شیء {{domXRef("CSSFontFeatureValuesMap")}} است که [شناسه تعریف‌شده توسط کاربر](/en-US/docs/Web/CSS/Reference/Values/custom-ident) و [شاخص ویژگی](/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings#optional_value) را برای یک فونت متغیر که از {{CSSXRef("font-variant-alternates", "ornaments()", "#ornaments")}} پشتیبانی می‌کند، نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("CSSFontFeatureValuesMap")}} object.
+یک شیء {{domxref("CSSFontFeatureValuesMap")}}.
 
-Although the `ornaments` property itself is read-only in the sense that you can't replace the `CSSFontFeatureValuesMap` object, you can still assign to the `ornaments` property directly. You can also modify the values of the `ornaments` using the [`CSSFontFeatureValuesMap` instance methods](/en-US/docs/Web/API/CSSFontFeatureValuesMap#instance_methods).
+اگرچه خود ویژگی `ornaments` از این نظر فقط‌خواندنی است که نمی‌توانید شیء `CSSFontFeatureValuesMap` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به ویژگی `ornaments` مقداردهی کنید. همچنین می‌توانید با استفاده از [متدهای نمونه `CSSFontFeatureValuesMap`](/en-US/docs/Web/API/CSSFontFeatureValuesMap#instance_methods) مقادیر `ornaments` را تغییر دهید.
 
-## Example
+## مثال
 
-### Basic usage
+### کاربرد پایه
 
 #### CSS
 
@@ -38,7 +36,7 @@ Although the `ornaments` property itself is read-only in the sense that you can'
 }
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 // look for the first stylesheet and the first cssRule in that sheet
@@ -49,16 +47,16 @@ if (myRule instanceof CSSFontFeatureValuesRule && myRule.ornaments.size) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{cssxRef("@font-feature-values","@ornaments","#ornaments")}}
-- {{cssxRef("font-variant-alternates","ornaments()","#ornaments")}} functional notation
+- {{cssxRef("font-variant-alternates","ornaments()","#ornaments")}} نشانه‌گذاری تابعی
 - {{domxref("CSSFontFeatureValuesMap")}}
