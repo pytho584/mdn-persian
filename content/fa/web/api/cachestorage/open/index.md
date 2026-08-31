@@ -1,7 +1,7 @@
 ---
 title: "CacheStorage: open() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/open"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,39 +14,31 @@ browser-compat: api.CacheStorage.open
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`open()`** method of the
-{{domxref("CacheStorage")}} interface returns a {{jsxref("Promise")}} that resolves to
-the {{domxref("Cache")}} object matching the `cacheName`.
+متد **`open()`** از رابط {{domxref("CacheStorage")}} یک {{jsxref("Promise")}} را برمی‌گرداند که به شیء {{domxref("Cache")}} مطابق با `cacheName` حل می‌شود.
 
-You can access `CacheStorage` through the {{domxref("Window.caches")}} property in windows or through the {{domxref("WorkerGlobalScope.caches")}} property in workers.
+می‌توانید از طریق ویژگی {{domxref("Window.caches")}} در پنجره‌ها یا از طریق ویژگی {{domxref("WorkerGlobalScope.caches")}} در کارگران به `CacheStorage` دسترسی پیدا کنید.
 
 > [!NOTE]
-> If the specified {{domxref("Cache")}} does not exist, a new
-> cache is created with that `cacheName` and a {{jsxref("Promise")}} that
-> resolves to this new {{domxref("Cache")}} object is returned.
+> اگر {{domxref("Cache")}} مشخص شده وجود نداشته باشد، یک حافظه نهان جدید با آن `cacheName` ایجاد می‌شود و یک {{jsxref("Promise")}} که به این شیء {{domxref("Cache")}} جدید حل می‌شود، بازگردانده می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 open(cacheName)
 ```
 
-### Parameters
+### پارامترها
 
 - `cacheName`
-  - : The name of the cache you want to open.
+  - : نام حافظه نهانی که می‌خواهید باز کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to the requested {{domxref("Cache")}} object.
+یک {{jsxref("Promise")}} که به شیء {{domxref("Cache")}} درخواست شده حل می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example is from the MDN [simple service worker example](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker) (see [simple service worker running live](https://bncb2v.csb.app/)).
-Here we wait for an {{domxref("InstallEvent")}} to fire, then runs
-{{domxref("ExtendableEvent.waitUntil","waitUntil()")}} to handle the install process for
-the app. This consists of calling `CacheStorage.open()` to create a new
-cache, then using {{domxref("Cache.addAll()")}} to add a series of assets to it.
+این مثال از [نمونه سرویس‌ورکر ساده](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker) MDN گرفته شده است (نمونه [سرویس‌ورکر ساده در حال اجرا](https://bncb2v.csb.app/) را ببینید). در اینجا منتظر می‌مانیم تا یک {{domxref("InstallEvent")}} رخ دهد، سپس {{domxref("ExtendableEvent.waitUntil","waitUntil()")}} را اجرا می‌کنیم تا فرآیند نصب برنامه را مدیریت کند. این کار شامل فراخوانی `CacheStorage.open()` برای ایجاد یک حافظه نهان جدید و سپس استفاده از {{domxref("Cache.addAll()")}} برای افزودن مجموعه‌ای از دارایی‌ها به آن است.
 
 ```js
 self.addEventListener("install", (event) => {
@@ -70,16 +62,16 @@ self.addEventListener("install", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 - {{domxref("Cache")}}
-- {{domxref("Window.caches")}} and {{domxref("WorkerGlobalScope.caches")}}
+- {{domxref("Window.caches")}} و {{domxref("WorkerGlobalScope.caches")}}
