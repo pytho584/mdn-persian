@@ -1,11 +1,6 @@
 ---
 title: "ARIA: aria-keyshortcuts attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-keyshortcuts"
-status: "needs-translation"
----
-
----
-title: "ARIA: aria-keyshortcuts attribute"
 short-title: aria-keyshortcuts
 slug: Web/Accessibility/ARIA/Reference/Attributes/aria-keyshortcuts
 page-type: aria-attribute
@@ -13,25 +8,26 @@ spec-urls:
   - https://w3c.github.io/aria/#aria-keyshortcuts
   - https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/
 sidebar: accessibilitysidebar
+translated_by: "n8n + AI"
 ---
 
-The global `aria-keyshortcuts` attribute indicates keyboard shortcuts that an author has implemented to activate or give focus to an element.
+ویژگی سراسری `aria-keyshortcuts` میانبرهای صفحه‌کلیدی را نشان می‌دهد که نویسنده برای فعال‌سازی یا دادن فوکوس به یک عنصر پیاده‌سازی کرده است.
 
-## Description
+## توضیحات
 
-A keyboard shortcut is a series of one or several keys that tells software to perform a pre-programmed action. Keyboard shortcuts enable keyboard users to invoke commands using the keyboard that would otherwise require accessing a menu or using touch or a mouse. The `aria-keyshortcuts` property defines the keyboard keys that have been implemented to activate or give focus to the element on which the attribute is set.
+میانبر صفحه‌کلید مجموعه‌ای از یک یا چند کلید است که به نرم‌افزار می‌گوید یک عمل از پیش برنامه‌ریزی شده را انجام دهد. میانبرهای صفحه‌کلید به کاربران صفحه‌کلید امکان می‌دهند تا با استفاده از صفحه‌کلید دستوراتی را فراخوانی کنند که در غیر این صورت نیاز به دسترسی به منو یا استفاده از لمس یا ماوس داشت. ویژگی `aria-keyshortcuts` کلیدهای صفحه‌کلیدی را تعریف می‌کند که برای فعال‌سازی یا دادن فوکوس به عنصری که ویژگی روی آن تنظیم شده است، پیاده‌سازی شده‌اند.
 
-The `aria-keyshortcuts` attribute exposes the existence of the shortcut to assistive technologies so the presence of the shortcut can be communicated to its users. Like all ARIA attributes, it has no effect on the functionality of the page; the keyboard behavior must be added via JavaScript event handlers.
+ویژگی `aria-keyshortcuts` وجود میانبر را برای فناوری‌های کمکی آشکار می‌کند تا وجود میانبر به کاربران آن‌ها اطلاع داده شود. مانند تمام ویژگی‌های ARIA، این ویژگی تأثیری بر عملکرد صفحه ندارد؛ رفتار صفحه‌کلید باید از طریق event handlerهای جاوااسکریپت اضافه شود.
 
-Keyboard shortcuts applied to disabled elements should also be disabled. For example, when disabling an element for mouse users, remember to disable it for keyboard shortcut users.
+میانبرهای صفحه‌کلید اعمال شده روی عناصر غیرفعال نیز باید غیرفعال شوند. برای مثال، هنگام غیرفعال کردن یک عنصر برای کاربران ماوس، به یاد داشته باشید که آن را برای کاربران میانبر صفحه‌کلید نیز غیرفعال کنید.
 
-Ensure all keyboard shortcuts are both visible to sighted users and made available to assistive technology. If your application is complex enough to need keyboard shortcuts, also known as "hot keys", include a guided tour of your application, an accessibility page documenting shortcuts and other accessibility features, a shortcut cheat sheet page or dialog pop up, or other method of making the availability of keyboard short cuts known. In addition, show the shortcut in menus and tooltips.
+اطمینان حاصل کنید که تمام میانبرهای صفحه‌کلید هم برای کاربران بینا قابل مشاهده هستند و هم در دسترس فناوری کمکی قرار می‌گیرند. اگر برنامه شما به اندازه کافی پیچیده است که به میانبرهای صفحه‌کلید نیاز دارد (که به «کلیدهای داغ» نیز معروف هستند)، یک تور راهنما از برنامه، یک صفحه دسترسی‌پذیری که میانبرها و سایر ویژگی‌های دسترسی‌پذیری را مستند می‌کند، یک صفحه یا پنجره پاپ‌آپ برگه تقلب میانبرها، یا روش دیگری برای اطلاع‌رسانی وجود میانبرهای صفحه‌کلید در نظر بگیرید. علاوه بر این، میانبر را در منوها و tooltipها نشان دهید.
 
-### Property value rules
+### قوانین مقدار ویژگی
 
-The value of the `aria-keyshortcuts` attribute is a space-separated list of key combinations that can be pressed to activate a command or textbox widget. Each key combination includes zero, one or more modifier keys followed by exactly one non-modifier key to be pressed at the same time joined with a plus sign ("+"). The attribute value is case-insensitive.
+مقدار ویژگی `aria-keyshortcuts` یک لیست جدا شده با فاصله از ترکیب‌کلیدهایی است که می‌توان برای فعال کردن یک دستور یا ویجت جعبه متن فشار داد. هر ترکیب کلید شامل صفر، یک یا چند کلید اصلاح‌کننده به همراه دقیقاً یک کلید غیر اصلاح‌کننده است که همزمان فشار داده می‌شوند و با علامت مثبت ("+") به هم متصل می‌شوند. مقدار ویژگی به حروف بزرگ و کوچک حساس نیست.
 
-Examples of valid keyboard shortcuts include:
+نمونه‌هایی از میانبرهای صفحه‌کلید معتبر عبارتند از:
 
 ```plain
 aria-keyshortcuts="A"
@@ -42,51 +38,51 @@ aria-keyshortcuts="alt+shift+p control+f"
 aria-keyshortcuts="Meta+C Meta+Shift+C"
 ```
 
-Modifier keys are keys that don't have any impact when used on their own. They are written as "Alt", "Control", "Shift", "Meta" (Command key on Mac), or "AltGraph" (Option key on Mac).
+کلیدهای اصلاح‌کننده کلیدهایی هستند که وقتی به تنهایی استفاده شوند تأثیری ندارند. آن‌ها به صورت "Alt"، "Control"، "Shift"، "Meta" (کلید Command در مک) یا "AltGraph" (کلید Option در مک) نوشته می‌شوند.
 
-Non-modifier keys are keys that have impact when used alone, be that printing a character, moving focus, or otherwise creating a keyboard event when used. Non-modifiers that print a single character include characters like `P`, `z` and `.`.
+کلیدهای غیر اصلاح‌کننده کلیدهایی هستند که وقتی به تنهایی استفاده شوند تأثیر دارند، خواه چاپ یک کاراکتر، جابجایی فوکوس یا ایجاد یک رویداد صفحه‌کلید. کلیدهای غیر اصلاح‌کننده که یک کاراکتر واحد چاپ می‌کنند شامل کاراکترهایی مانند `P`، `z` و `.` هستند.
 
-Since the plus sign is used in writing key combinations, it is written as `plus` if used as the non-modifier. Other written-out non-modifiers include white space characters `Space`, `Tab`, and `Enter`, and all characters that result in actions, like `ArrowUp`, `PageUp`, and `Escape`.
+از آنجا که علامت مثبت در نوشتن ترکیب کلیدها استفاده می‌شود، اگر به عنوان کلید غیر اصلاح‌کننده استفاده شود، به صورت `plus` نوشته می‌شود. سایر کلیدهای غیر اصلاح‌کننده نوشته شده شامل کاراکترهای فضای خالی `Space`، `Tab` و `Enter` و تمام کاراکترهایی که منجر به عمل می‌شوند، مانند `ArrowUp`، `PageUp` و `Escape` هستند.
 
-If you want to use a character that might cause problems, like a double quote character within double quotes, escape the character: `Control+&#39;`.
+اگر می‌خواهید از کاراکتری استفاده کنید که ممکن است باعث مشکل شود، مانند کاراکتر نقل قول دوتایی درون نقل قول‌های دوتایی، کاراکتر را escape کنید: `Control+&#39;`.
 
-Modifier keys must be listed first in each key combination. Possible key combinations include `Control+P` or `Shift+Space` and `Q`. If the full shortcut requires all three of these combinations in order, it would be written as `aria-keyshortcuts="Control+P Shift+Space Q"`. When a key combination includes more than one modifier key, the order of the modifiers doesn't matter, but they all must come first, before the non-modifier.
+کلیدهای اصلاح‌کننده باید در هر ترکیب کلید ابتدا لیست شوند. ترکیب‌های کلید ممکن شامل `Control+P` یا `Shift+Space` و `Q` هستند. اگر میانبر کامل به هر سه این ترکیب‌ها به ترتیب نیاز داشته باشد، به صورت `aria-keyshortcuts="Control+P Shift+Space Q"` نوشته می‌شود. وقتی یک ترکیب کلید شامل بیش از یک کلید اصلاح‌کننده است، ترتیب اصلاح‌کننده‌ها مهم نیست، اما همه باید قبل از کلید غیر اصلاح‌کننده بیایند.
 
-These two attribute declarations are equivalent.
+این دو اعلام ویژگی معادل هستند.
 
 ```plain example-good
 aria-keyshortcuts="Shift+Control+V"
 aria-keyshortcuts="control+shift+v"
 ```
 
-Note that text case doesn't matter. But order of non-modifier does.
+توجه داشته باشید که حروف بزرگ و کوچک مهم نیستند. اما ترتیب کلید غیر اصلاح‌کننده مهم است.
 
-These two attribute declarations are invalid because the non-modifier must be last.
+این دو اعلام ویژگی نامعتبر هستند زیرا کلید غیر اصلاح‌کننده باید آخر باشد.
 
 ```plain example-bad
 aria-keyshortcuts="V+Shift+Control"
 aria-keyshortcuts="V+Control+Shift"
 ```
 
-The key combination listed must be the keys the user needs to press, not the outcome of the combined key strokes. For example, on a USA keyboard, if you need the `@` symbol, the key combination is written as `"Shift+2"`, not `"@"` nor `"Shift+@"`.
+ترکیب کلیدهای لیست شده باید کلیدهایی باشند که کاربر باید فشار دهد، نه نتیجه ضربات کلید ترکیبی. برای مثال، روی یک صفحه‌کلید آمریکایی، اگر به نماد `@` نیاز دارید، ترکیب کلید به صورت `"Shift+2"` نوشته می‌شود، نه `"@"` و نه `"Shift+@"`.
 
-### Best practices
+### بهترین روش‌ها
 
-In trying to improve the accessibility of your sites and applications, there are some best practices to follow to ensure your "enhancements" don't negatively impact user experience. Remember, no ARIA is better than bad ARIA.
+در تلاش برای بهبود دسترسی‌پذیری سایت‌ها و برنامه‌های خود، برخی بهترین روش‌ها وجود دارند که باید برای اطمینان از اینکه «بهبودهای» شما تأثیر منفی بر تجربه کاربری ندارند، دنبال کنید. به یاد داشته باشید، هیچ ARIA بهتر از ARIA بد است.
 
-#### Don't override browser, assistive technology, or operating system shortcuts
+#### میانبرهای مرورگر، فناوری کمکی یا سیستم عامل را بازنویسی نکنید
 
-When implementing keyboard shortcuts, make sure you don't create shortcuts that are already being used by the browser, assistive technology, or operating system, unless they are used for the same thing. For example, `"Control+P"` is used by most user-agents to initiate print functionality. Generally a web application should not create a "Control+P" shortcut as it will usurp browser functionality. There are exceptions. Web applications where printing is common, like email applications or document editors, usurping the browser's `"Control+P"` printing functionality for an application specific print flow would be expected.
+هنگام پیاده‌سازی میانبرهای صفحه‌کلید، مطمئن شوید که میانبرهایی ایجاد نمی‌کنید که قبلاً توسط مرورگر، فناوری کمکی یا سیستم عامل استفاده می‌شوند، مگر اینکه برای همان کار استفاده شوند. برای مثال، `"Control+P"` توسط بیشتر user-agentها برای شروع عملکرد چاپ استفاده می‌شود. به طور کلی، یک برنامه وب نباید میانبر "Control+P" ایجاد کند زیرا عملکرد مرورگر را تصاحب می‌کند. استثناهایی وجود دارد. برنامه‌های وب که چاپ در آن‌ها رایج است، مانند برنامه‌های ایمیل یا ویرایشگرهای اسناد، تصاحب عملکرد چاپ `"Control+P"` مرورگر برای یک جریان چاپ خاص برنامه قابل انتظار است.
 
-Unless you're creating an HTML version of a productivity application, you should likely avoid implementing keyboard shortcut. While overriding an operating system or browser keyboard shortcut can be annoying for non-assistive technology users, if you override a screen reader's keyboard functionality you can completely shut down access for the assistive technology user. If you must create keyboard shortcuts, avoid single letter keyboard shortcuts and common screen reader keyboard shortcuts.
+مگر اینکه یک نسخه HTML از یک برنامه بهره‌وری ایجاد می‌کنید، احتمالاً باید از پیاده‌سازی میانبر صفحه‌کلید خودداری کنید. در حالی که بازنویسی یک میانبر صفحه‌کلید سیستم عامل یا مرورگر می‌تواند برای کاربران غیر فناوری کمکی آزاردهنده باشد، اگر عملکرد صفحه‌کلید یک screen reader را بازنویسی کنید، می‌توانید دسترسی کاربر فناوری کمکی را کاملاً قطع کنید. اگر مجبور به ایجاد میانبرهای صفحه‌کلید هستید، از میانبرهای تک حرفی و میانبرهای صفحه‌کلید رایج screen reader خودداری کنید.
 
-#### Consider language and keyboard differences
+#### تفاوت‌های زبان و صفحه‌کلید را در نظر بگیرید
 
-Take into account the diversity of available keyboards and the various keyboard language preferences. Modifier keys are often used to create language specific common punctuation symbols and number characters. For example, numbers, when the keyboard language preference is set to French (France), use the Shift key.
+تنوع صفحه‌کلیدهای موجود و ترجیحات مختلف زبان صفحه‌کلید را در نظر بگیرید. کلیدهای اصلاح‌کننده اغلب برای ایجاد نمادهای نقطه‌گذاری رایج و کاراکترهای عددی خاص زبان استفاده می‌شوند. برای مثال، اعداد، وقتی ترجیح زبان صفحه‌کلید به فرانسوی (فرانسه) تنظیم شده است، از کلید Shift استفاده می‌کنند.
 
-#### Don't use HTML instead
+#### از HTML به جای آن استفاده نکنید
 
-The `aria-keyshortcuts` attribute is very similar to the [problematic](https://webaim.org/techniques/keyboard/accesskey#spec) HTML [`accesskey`](/en-US/docs/Web/HTML/Reference/Global_attributes/accesskey), which generates a keyboard shortcut for the current element. When an `accesskey` is defined for an element, the browser defines the modifiers and does all the work of handling the shortcut with no scripting required. Every browser and operating system combination has their own modifier keys for the non-modifier set in the `accesskey` attribute. What may work for one combination of operating system, assistive technology, and browser may not work with other combinations. With `aria-keyshortcuts`, the modifier keys are included in the attribute value list of key combinations and the functionality has to be scripted in.
+ویژگی `aria-keyshortcuts` بسیار شبیه به ویژگی HTML [`accesskey`](/en-US/docs/Web/HTML/Reference/Global_attributes/accesskey) است که [مشکل‌دار](https://webaim.org/techniques/keyboard/accesskey#spec) است و یک میانبر صفحه‌کلید برای عنصر فعلی تولید می‌کند. وقتی یک `accesskey` برای یک عنصر تعریف می‌شود، مرورگر اصلاح‌کننده‌ها را تعریف می‌کند و تمام کار مدیریت میانبر را بدون نیاز به اسکریپت انجام می‌دهد. هر ترکیب مرورگر و سیستم عامل، کلیدهای اصلاح‌کننده خاص خود را برای کلید غیر اصلاح‌کننده تنظیم شده در ویژگی `accesskey` دارد. آنچه برای یک ترکیب از سیستم عامل، فناوری کمکی و مرورگر کار می‌کند ممکن است برای ترکیبات دیگر کار نکند. با `aria-keyshortcuts`، کلیدهای اصلاح‌کننده در لیست مقدار ویژگی ترکیب‌کلیدها گنجانده شده‌اند و عملکرد باید با اسکریپت اضافه شود.
 
 ```html
 <p>
@@ -97,47 +93,47 @@ The `aria-keyshortcuts` attribute is very similar to the [problematic](https://w
 <button accesskey="s">Stress reliever</button>
 ```
 
-In this example, we ensured the presence of the shortcut was known to sighted users a well by highlighting the non-modifier character.
+در این مثال، ما با برجسته کردن کاراکتر غیر اصلاح‌کننده، اطمینان حاصل کردیم که وجود میانبر برای کاربران بینا نیز شناخته شده است.
 
-While the goal of the `accesskey` attribute matches the intention of `aria-keyshortcuts` and to do so natively, `accesskey` is rife with issues. Because of these issues, it is generally advised not to use access keys for most general-purpose websites and web apps.
+در حالی که هدف ویژگی `accesskey` با هدف `aria-keyshortcuts` مطابقت دارد و این کار را به صورت بومی انجام می‌دهد، `accesskey` مملو از مشکلات است. به دلیل این مشکلات، معمولاً توصیه می‌شود که برای بیشتر وب‌سایت‌ها و برنامه‌های وب عمومی از کلیدهای دسترسی استفاده نکنید.
 
-In addition to poor browser support, the same concerns arise for `accesskey` as exist for `aria-keyshortcuts`:
+علاوه بر پشتیبانی ضعیف مرورگر، نگرانی‌های مشابهی برای `accesskey` وجود دارد که برای `aria-keyshortcuts` نیز وجود دارد:
 
-- An accesskey value can conflict with a system or browser keyboard shortcut, or assistive technology functionality.
-- Certain key values may not be present on certain keyboards, especially when internationalization is a concern. So adapting to specific languages could cause further problems.
-- Values that rely on numbers may be confusing to individuals experiencing cognitive concerns, where the number doesn't have a logical association with the functionality it triggers.
-- Informing the user that shortcuts are present, so that they are aware of the functionality. If the system lacks a method of notifying the user about this feature, the user might accidentally activate a shortcut.
+- مقدار accesskey می‌تواند با میانبر صفحه‌کلید سیستم یا مرورگر، یا عملکرد فناوری کمکی تضاد داشته باشد.
+- برخی مقادیر کلید ممکن است در برخی صفحه‌کلیدها وجود نداشته باشند، به ویژه زمانی که بین‌المللی‌سازی مورد توجه است. بنابراین تطبیق با زبان‌های خاص می‌تواند مشکلات بیشتری ایجاد کند.
+- مقادیری که به اعداد متکی هستند ممکن است برای افرادی که مشکلات شناختی دارند گیج‌کننده باشند، جایی که عدد ارتباط منطقی با عملکردی که راه‌اندازی می‌کند ندارد.
+- اطلاع‌رسانی به کاربر مبنی بر وجود میانبرها، به طوری که از عملکرد آگاه شوند. اگر سیستم فاقد روشی برای اطلاع‌رسانی به کاربر در مورد این ویژگی باشد، کاربر ممکن است به طور تصادفی یک میانبر را فعال کند.
 
-## Values
+## مقادیر
 
 - `<string>`
-  - : The space-separated list of key combinations that, when pressed, perform the action.
+  - : لیست جدا شده با فاصله از ترکیب‌کلیدهایی که با فشار دادن آن‌ها عمل انجام می‌شود.
 
-## Example
+## مثال
 
-In this example, the `aria-keyshortcuts` attribute on the element is set to "Alt+Shift+A".
+در این مثال، ویژگی `aria-keyshortcuts` روی عنصر به "Alt+Shift+A" تنظیم شده است.
 
 ```html
 <a href="#content" aria-keyshortcuts="Alt+Shift+A">Skip to content</a>
 ```
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaKeyShortcuts")}}
-  - : The [`ariaKeyShortcuts`](/en-US/docs/Web/API/Element/ariaKeyShortcuts) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-keyshortcuts` attribute.
+  - : ویژگی [`ariaKeyShortcuts`](/en-US/docs/Web/API/Element/ariaKeyShortcuts) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-keyshortcuts` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaKeyShortcuts")}}
-  - : The [`ariaKeyShortcuts`](/en-US/docs/Web/API/ElementInternals/ariaKeyShortcuts) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-keyshortcuts` attribute.
+  - : ویژگی [`ariaKeyShortcuts`](/en-US/docs/Web/API/ElementInternals/ariaKeyShortcuts) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-keyshortcuts` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** roles.
+در **تمام** نقش‌ها استفاده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [Keyboard Shortcuts](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#keyboardshortcuts) section in ARIA Authoring Practices
-- HTML [`accesskey`](/en-US/docs/Web/HTML/Reference/Global_attributes/accesskey) attribute
-- [Issues with `accesskey`](https://webaim.org/techniques/keyboard/accesskey#spec)
+- [میانبرهای صفحه‌کلید](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#keyboardshortcuts) بخشی از شیوه‌های تألیف ARIA
+- ویژگی HTML [`accesskey`](/en-US/docs/Web/HTML/Reference/Global_attributes/accesskey)
+- [مشکلات `accesskey`](https://webaim.org/techniques/keyboard/accesskey#spec)
