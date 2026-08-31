@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: scale() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/scale"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: scale() method"
 short-title: scale()
 slug: Web/API/CanvasRenderingContext2D/scale
 page-type: web-api-instance-method
@@ -14,16 +8,11 @@ browser-compat: api.CanvasRenderingContext2D.scale
 
 {{APIRef("Canvas API")}}
 
-The
+متد
 **`CanvasRenderingContext2D.scale()`**
-method of the Canvas 2D API adds a scaling transformation to the canvas units
-horizontally and/or vertically.
+از API بوم (Canvas) 2D، یک تبدیل مقیاسبندی به واحدهای بوم بهصورت افقی و/یا عمودی اضافه میکند.
 
-By default, one unit on the canvas is exactly one pixel. A scaling transformation
-modifies this behavior. For instance, a scaling factor of 0.5 results in a unit size of
-0.5 pixels; shapes are thus drawn at half the normal size. Similarly, a scaling factor
-of 2.0 increases the unit size so that one unit becomes two pixels; shapes are thus
-drawn at twice the normal size.
+بهطور پیشفرض، یک واحد روی بوم دقیقاً برابر با یک پیکسل است. یک تبدیل مقیاسبندی این رفتار را تغییر میدهد. برای مثال، ضریب مقیاس 0.5 باعث میشود اندازه هر واحد به 0.5 پیکسل تبدیل شود؛ بنابراین اشکال با نصف اندازه معمولی رسم میشوند. بهطور مشابه، ضریب مقیاس 2.0 اندازه واحد را افزایش میدهد بهگونهای که یک واحد به دو پیکسل تبدیل میشود؛ بنابراین اشکال با دو برابر اندازه معمولی رسم میشوند.
 
 ## Syntax
 
@@ -34,22 +23,19 @@ scale(x, y)
 ### Parameters
 
 - `x`
-  - : Scaling factor in the horizontal direction. A negative value flips pixels across the
-    vertical axis. A value of `1` results in no horizontal scaling.
+  - : ضریب مقیاس در جهت افقی. مقدار منفی پیکسلها را حول محور عمودی برعکس میکند. مقدار `1` به این معناست که هیچ مقیاسبندی افقی اعمال نمیشود.
 - `y`
-  - : Scaling factor in the vertical direction. A negative value flips pixels across the
-    horizontal axis. A value of `1` results in no vertical scaling.
+  - : ضریب مقیاس در جهت عمودی. مقدار منفی پیکسلها را حول محور افقی برعکس میکند. مقدار `1` به این معناست که هیچ مقیاسبندی عمودی اعمال نمیشود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
-### Scaling a shape
+### مقیاسبندی یک شکل
 
-This example draws a scaled rectangle. A non-scaled rectangle is then drawn for
-comparison.
+این مثال یک مستطیل مقیاسبندیشده رسم میکند. یک مستطیل بدون مقیاس نیز برای مقایسه رسم شده است.
 
 #### HTML
 
@@ -59,12 +45,9 @@ comparison.
 
 #### JavaScript
 
-The rectangle has a specified width of 8 and a height of 20. The transformation matrix
-scales it by 9x horizontally and by 3x vertically. Thus, its final size is a width of 72
-and a height of 60.
+مستطیل دارای عرض مشخص 8 و ارتفاع 20 است. ماتریس تبدیل آن را بهصورت افقی 9 برابر و بهصورت عمودی 3 برابر مقیاسبندی میکند. بنابراین، اندازه نهایی آن عرض 72 و ارتفاع 60 است.
 
-Notice that its position on the canvas also changes. Since its specified corner is (10,
-10\), its rendered corner becomes (90, 30).
+توجه داشته باشید که موقعیت آن روی بوم نیز تغییر میکند. از آنجا که گوشه مشخصشده آن (10, 10) است، گوشه رندر شده آن به (90, 30) تبدیل میشود.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -85,20 +68,15 @@ ctx.fillRect(10, 10, 8, 20);
 
 #### Result
 
-The scaled rectangle is red, and the non-scaled rectangle is gray.
+مستطیل مقیاسبندیشده قرمز است و مستطیل بدون مقیاس خاکستری.
 
 {{ EmbedLiveSample('Scaling_a_shape', 700, 180) }}
 
-### Flipping things horizontally or vertically
+### برعکس کردن افقی یا عمودی اشیا
 
-You can use `scale(-1, 1)` to flip the context horizontally and
-`scale(1, -1)` to flip it vertically. In this example, the words "Hello
-world!" are flipped horizontally.
+میتوانید از `scale(-1, 1)` برای برعکس کردن افقی بافت و از `scale(1, -1)` برای برعکس کردن عمودی آن استفاده کنید. در این مثال، عبارت «Hello world!» بهصورت افقی برعکس میشود.
 
-Note that the call to {{domxref("CanvasRenderingContext2D.fillText()", "fillText()")}}
-specifies a negative x coordinate. This is to adjust for the negative scaling factor:
-`-280 * -1` becomes `280`, and text is drawn leftwards from that
-point.
+توجه داشته باشید که فراخوانی {{domxref("CanvasRenderingContext2D.fillText()", "fillText()")}} یک مختصات x منفی را مشخص میکند. این تنظیم برای جبران ضریب مقیاس منفی است: `-280 * -1` به `280` تبدیل میشود و متن از آن نقطه به سمت چپ رسم میشود.
 
 #### HTML
 
@@ -132,4 +110,4 @@ ctx.setTransform(1, 0, 0, 1, 0, 0);
 
 ## See also
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریفکننده این متد: {{domxref("CanvasRenderingContext2D")}}
