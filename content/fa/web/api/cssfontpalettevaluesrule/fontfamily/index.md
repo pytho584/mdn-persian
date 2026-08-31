@@ -1,11 +1,5 @@
 ---
 title: "CSSFontPaletteValuesRule: fontFamily property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule/fontFamily"
-status: "needs-translation"
----
-
----
-title: "CSSFontPaletteValuesRule: fontFamily property"
 short-title: fontFamily
 slug: Web/API/CSSFontPaletteValuesRule/fontFamily
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.CSSFontPaletteValuesRule.fontFamily
 
 {{APIRef("CSSOM")}}
 
-The read-only **`fontFamily`** property of the {{domxref("CSSFontPaletteValuesRule")}} interface lists the font families the rule can be applied to. The font families must be _named_ families; _generic_ families like `courier` are not valid.
+ویژگی فقط‌خواندنی **`fontFamily`** از رابط {{domxref("CSSFontPaletteValuesRule")}} فهرستی از خانواده‌های فونت را ارائه می‌دهد که این قاعده می‌تواند روی آن‌ها اعمال شود. خانواده‌های فونت باید خانواده‌های _نام‌دار_ باشند؛ خانواده‌های _عمومی_ مانند `courier` معتبر نیستند.
 
-## Value
+## مقدار
 
-A string containing a space-separated list of the font families on which the rule can be applied
+یک رشته شامل فهرستی از خانواده‌های فونت که با فاصله از هم جدا شده‌اند و قاعده می‌تواند روی آن‌ها اعمال شود.
 
-## Examples
+## مثال‌ها
 
-### Read the associated font family
+### خواندن خانواده فونت مرتبط
 
-This example first defines an {{cssxref("@import")}} and an {{cssxref("@font-palette-values")}} at-rule. Then it reads the {{cssxref("@font-palette-values")}} rule and displays its name. The MDN [live sample](/en-US/docs/MDN/Writing_guidelines/Page_structures/Live_samples) infrastructure combines all the CSS blocks in the example into a single inline style with the id `css-output`, so we first use {{domxref("document.getElementById()")}} to find that sheet. The palette will be the second {{domxref("CSSRule")}} in that stylesheet. So, `rules[1]` returns a `CSSFontPaletteValuesRule` object, from which we can access `fontFamily`.
+این مثال ابتدا یک {{cssxref("@import")}} و یک قاعده at-rule به نام {{cssxref("@font-palette-values")}} تعریف می‌کند. سپس قاعده {{cssxref("@font-palette-values")}} را می‌خواند و نام آن را نمایش می‌دهد. زیرساخت [نمونه زنده](/en-US/docs/MDN/Writing_guidelines/Page_structures/Live_samples) MDN همه بلوک‌های CSS موجود در مثال را در یک استایل داخلی با شناسه `css-output` ترکیب می‌کند، بنابراین ابتدا از {{domxref("document.getElementById()")}} برای یافتن آن شیوه‌نامه استفاده می‌کنیم. پالت، دومین {{domxref("CSSRule")}} در آن شیوه‌نامه خواهد بود. بنابراین، `rules[1]` یک شیء `CSSFontPaletteValuesRule` برمی‌گرداند که از آن می‌توانیم به `fontFamily` دسترسی داشته باشیم.
 
 #### HTML
 
 ```html
 <pre id="log">
-The @font-palette-values at-rule's applies to the font families:</pre>
+قاعده @font-palette-values برای این خانواده‌های فونت اعمال می‌شود:</pre>
 ```
 
 #### CSS
@@ -56,23 +50,23 @@ The @font-palette-values at-rule's applies to the font families:</pre>
 const log = document.getElementById("log");
 
 const rules = document.getElementById("css-output").sheet.cssRules;
-const fontPaletteValuesRule = rules[1]; // a CSSFontPaletteValuesRule interface
+const fontPaletteValuesRule = rules[1]; // یک رابط CSSFontPaletteValuesRule
 log.textContent += ` ${fontPaletteValuesRule.fontFamily}`;
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Read the associated font family", "100", "40")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{cssxref("@font-palette-values")}} at-rule
-- {{cssxref("@font-palette-values/font-family", "font-family")}} descriptor
+- قاعده at-rule {{cssxref("@font-palette-values")}}
+- توصیفگر {{cssxref("@font-palette-values/font-family", "font-family")}}
