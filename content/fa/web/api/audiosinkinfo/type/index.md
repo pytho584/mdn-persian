@@ -1,7 +1,7 @@
 ---
 title: "AudioSinkInfo: type property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioSinkInfo/type"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,23 +16,23 @@ browser-compat: api.AudioSinkInfo.type
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`type`** read-only property of the {{domxref("AudioSinkInfo")}} interface returns the type of the audio output device.
+ویژگی فقط‌خواندنی **`type`** در رابط {{domxref("AudioSinkInfo")}} نوع دستگاه خروجی صدا را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string. Currently the only value is `none`.
+یک رشته. در حال حاضر تنها مقدار `none` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [SetSinkId test example](https://mdn.github.io/dom-examples/audiocontext-setsinkid/) (check out the [source code](https://github.com/mdn/dom-examples/tree/main/audiocontext-setsinkid))
+- [مثال تست SetSinkId](https://mdn.github.io/dom-examples/audiocontext-setsinkid/) (کد منبع را [اینجا](https://github.com/mdn/dom-examples/tree/main/audiocontext-setsinkid) ببینید)
 - {{domxref("AudioContext.setSinkId()")}}
 - {{domxref("AudioContext.sinkId")}}
 - {{domxref("AudioContext/sinkchange_event", "sinkchange")}}
