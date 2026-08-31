@@ -1,7 +1,7 @@
 ---
 title: "AudioPlaybackStats: minimumLatency property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioPlaybackStats/minimumLatency"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,15 +16,15 @@ browser-compat: api.AudioPlaybackStats.minimumLatency
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`minimumLatency`** read-only property of the {{domxref("AudioPlaybackStats")}} interface is a number indicating the minimum latency since the audio context was initialized or since {{domxref("AudioPlaybackStats.resetLatency()")}} was last called.
+خاصیت فقط خواندنی **`minimumLatency`** از رابط {{domxref("AudioPlaybackStats")}} یک عدد است که کمترین تأخیر (latency) را از زمان راه‌اندازی بافت صوتی یا از زمان آخرین فراخوانی {{domxref("AudioPlaybackStats.resetLatency()")}} نشان می‌دهد.
 
-## Value
+## مقدار
 
-A double-precision floating point number indicating the minimum latency, in seconds. Initialized to `0`.
+یک عدد ممیز شناور با دقت دوگانه که کمترین تأخیر را بر حسب ثانیه نشان می‌دهد. مقدار اولیه `0` است.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 const audioCtx = new AudioContext();
@@ -36,16 +36,16 @@ const stats = audioCtx.playbackStats;
 console.log(stats.minimumLatency);
 ```
 
-See also the main {{domxref("AudioPlaybackStats")}} reference page for a more in-depth example.
+همچنین به صفحه اصلی مرجع {{domxref("AudioPlaybackStats")}} برای یک مثال جامع‌تر مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
