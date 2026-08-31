@@ -1,7 +1,8 @@
+```yaml
 ---
 title: "BluetoothRemoteGATTServer: connect() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/connect"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,28 +17,27 @@ browser-compat: api.BluetoothRemoteGATTServer.connect
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The
-**`BluetoothRemoteGATTServer.connect()`** method causes the
-script execution environment to connect to `this.device`.
+متد **`BluetoothRemoteGATTServer.connect()`** باعث می‌شود محیط اجرای اسکریپت به `this.device` متصل شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 connect()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to a {{domxref("BluetoothRemoteGATTServer")}}.
+یک {{jsxref("Promise")}} که به یک {{domxref("BluetoothRemoteGATTServer")}} تبدیل می‌شود.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر (Browser compatibility)
 
 {{Compat}}
+```
