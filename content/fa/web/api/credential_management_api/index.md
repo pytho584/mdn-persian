@@ -1,10 +1,4 @@
 ---
-title: "Credential Management API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Credential_Management_API"
-status: "needs-translation"
----
-
----
 title: Credential Management API
 slug: Web/API/Credential_Management_API
 page-type: web-api-overview
@@ -18,52 +12,52 @@ spec-urls: https://w3c.github.io/webappsec-credential-management/
 
 {{DefaultAPISidebar("Credential Management API")}}{{securecontext_header}}
 
-The Credential Management API enables a website to create, store, and retrieve {{glossary("credential", "credentials")}}. A credential is an item which enables a system to make an {{glossary("authentication")}} decision: for example, to decide whether to sign a user into an account. We can think of it as a piece of evidence that a user presents to a website to demonstrate that they really are the person they are claiming to be.
+API مدیریت اعتبارنامه (Credential Management API) به وب‌سایت‌ها امکان می‌دهد اعتبارنامه‌ها ({{glossary("credential", "credentials")}}) را ایجاد، ذخیره و بازیابی کنند. اعتبارنامه موردی است که سیستم را قادر می‌سازد تصمیم {{glossary("authentication")}} بگیرد؛ برای مثال، اینکه آیا کاربر را به حساب کاربری وارد کند یا نه. می‌توان آن را به‌عنوان مدرکی در نظر گرفت که کاربر به وب‌سایت ارائه می‌کند تا ثابت کند واقعاً همان شخصی است که ادعا می‌کند.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-The central interface is the {{domxref("CredentialsContainer")}}, which is accessed through the {{domxref("navigator.credentials")}} property and provides three main functions:
+رابط اصلی {{domxref("CredentialsContainer")}} است که از طریق ویژگی {{domxref("navigator.credentials")}} در دسترس قرار می‌گیرد و سه عملکرد اصلی را ارائه می‌دهد:
 
-- {{domxref("CredentialsContainer.create", "create()")}}: create a new credential.
-- {{domxref("CredentialsContainer.store", "store()")}}: store a new credential locally.
-- {{domxref("CredentialsContainer.get", "get()")}}: retrieve a credential, which can then be used to log a user in.
+- {{domxref("CredentialsContainer.create", "create()")}}: ایجاد یک اعتبارنامه جدید.
+- {{domxref("CredentialsContainer.store", "store()")}}: ذخیره‌سازی یک اعتبارنامه جدید به‌صورت محلی.
+- {{domxref("CredentialsContainer.get", "get()")}}: بازیابی یک اعتبارنامه که سپس می‌توان از آن برای ورود کاربر استفاده کرد.
 
-The API supports four different types of credential, which are all represented as subclasses of {{domxref("Credential")}}:
+این API از چهار نوع مختلف اعتبارنامه پشتیبانی می‌کند که همگی به‌صورت زیرکلاس‌هایی از {{domxref("Credential")}} نمایش داده می‌شوند:
 
-| Type                    | Interface                                                                          |
+| نوع | رابط |
 | ----------------------- | ---------------------------------------------------------------------------------- |
-| Password                | {{domxref("PasswordCredential")}}                                                  |
-| Federated identity      | {{domxref("IdentityCredential")}}, {{domxref("FederatedCredential")}} (deprecated) |
-| One-time password (OTP) | {{domxref("OTPCredential")}}                                                       |
-| Web Authentication      | {{domxref("PublicKeyCredential")}}                                                 |
+| گذرواژه | {{domxref("PasswordCredential")}} |
+| هویت فدرال | {{domxref("IdentityCredential")}}, {{domxref("FederatedCredential")}} (منسوخ) |
+| رمز یک‌بارمصرف (OTP) | {{domxref("OTPCredential")}} |
+| احراز هویت وب | {{domxref("PublicKeyCredential")}} |
 
-The guide page [Credential types](/en-US/docs/Web/API/Credential_Management_API/Credential_types) gives an overview of the different credential types and how they are used.
+صفحه راهنمای [انواع اعتبارنامه](/en-US/docs/Web/API/Credential_Management_API/Credential_types) مروری بر انواع مختلف اعتبارنامه‌ها و نحوه استفاده از آن‌ها ارائه می‌دهد.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("Credential")}}
-  - : Provides information about an entity as a prerequisite to a trust decision.
+  - : اطلاعاتی درباره یک موجودیت (entity) به‌عنوان پیش‌شرط تصمیم اعتماد فراهم می‌کند.
 - {{domxref("CredentialsContainer")}}
-  - : Exposes methods to request credentials and notify the user agent when interesting events occur such as successful sign in or sign out. This interface is accessible from `navigator.credentials`.
+  - : روش‌هایی را برای درخواست اعتبارنامه‌ها ارائه می‌دهد و هنگام وقوع رویدادهای مهم مانند ورود یا خروج موفق، عامل کاربر (user agent) را مطلع می‌کند. این رابط از طریق `navigator.credentials` قابل دسترسی است.
 - {{domxref("FederatedCredential")}}
-  - : Provides information about credentials from a federated identity provider, which is an entity that a website trusts to correctly authenticate a user, and which provides an API for that purpose. [OpenID Connect](https://openid.net/developers/specs/) is an example of such a framework.
+  - : اطلاعاتی درباره اعتبارنامه‌های یک تأمین‌کننده هویت فدرال (federated identity provider) فراهم می‌کند؛ تأمین‌کننده‌ای که وب‌سایت به آن اعتماد دارد تا کاربر را به‌درستی احراز هویت کند و API را برای این منظور ارائه می‌دهد. [OpenID Connect](https://openid.net/developers/specs/) نمونه‌ای از چنین چارچوبی است.
 - {{domxref("PasswordCredential")}}
-  - : Provides information about a username/password pair.
+  - : اطلاعاتی درباره یک جفت نام کاربری/گذرواژه فراهم می‌کند.
 
-### Extensions to other interfaces
+### افزونه‌هایی برای سایر رابط‌ها
 
 - {{domxref("Navigator.credentials")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("CredentialsContainer")}} interface which exposes methods to request credentials and notify the user agent when interesting events occur such as successful sign in or sign out.
+  - : رابط {{domxref("CredentialsContainer")}} را برمی‌گرداند که روش‌هایی را برای درخواست اعتبارنامه‌ها و مطلع کردن عامل کاربر هنگام وقوع رویدادهای مهم مانند ورود یا خروج موفق ارائه می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Web Authentication API", "", "", "nocode")}}
 - {{domxref("WebOTP API", "", "", "nocode")}}
