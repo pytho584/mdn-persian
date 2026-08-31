@@ -1,11 +1,5 @@
 ---
 title: "Clipboard: read() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/read"
-status: "needs-translation"
----
-
----
-title: "Clipboard: read() method"
 short-title: read()
 slug: Web/API/Clipboard/read
 page-type: web-api-instance-method
@@ -14,47 +8,47 @@ browser-compat: api.Clipboard.read
 
 {{APIRef("Clipboard API")}} {{securecontext_header}}
 
-The **`read()`** method of the {{domxref("Clipboard")}} interface requests a copy of the clipboard's contents, fulfilling the returned {{jsxref("Promise")}} with the data.
+متد **`read()`** در رابط {{domxref("Clipboard")}} درخواست یک کپی از محتویات کلیپبورد را ارسال میکند و {{jsxref("Promise")}} بازگشتی را با دادهها تکمیل میکند.
 
-The method can in theory return arbitrary data (unlike {{domxref("Clipboard.readText", "readText()")}}, which can only return text).
-Browsers commonly support reading text, HTML, and PNG image data.
+این متد در تئوری میتواند دادههای دلخواه را برگرداند (برخلاف {{domxref("Clipboard.readText", "readText()")}} که فقط متن برمیگرداند).
+مرورگرها معمولاً از خواندن متن، HTML و دادههای تصویر PNG پشتیبانی میکنند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 read()
 read(formats)
 ```
 
-### Parameters
+### پارامترها
 
 - `formats` {{optional_inline}}
-  - : An optional object with the following properties:
+  - : یک شیء اختیاری با ویژگیهای زیر:
     - `unsanitized` {{optional_inline}}
-      - : An {{jsxref("Array")}} of strings containing MIME types of data formats that should not be sanitized when reading from the clipboard.
+      - : یک {{jsxref("Array")}} از رشتههای حاوی انواع MIME برای قالبهای دادهای که هنگام خواندن از کلیپبورد نباید پاکسازی (sanitize) شوند.
 
-        Certain browsers may sanitize the clipboard data when it is read, to prevent malicious content from being pasted into the document. For example, Chrome (and other Chromium-based browsers) sanitizes HTML data by stripping `<script>` tags and other potentially dangerous content. Use the `unsanitized` array to specify a list of MIME types that should not be sanitized.
+        برخی مرورگرها ممکن است دادههای کلیپبورد را هنگام خواندن پاکسازی کنند تا از چسباندن محتوای مخرب در سند جلوگیری شود. برای مثال، کروم (و سایر مرورگرهای مبتنی بر کرومیوم) دادههای HTML را با حذف تگهای `<script>` و سایر محتوای بالقوه خطرناک پاکسازی میکند. از آرایه `unsanitized` برای指定 فهرستی از انواع MIME که نباید پاکسازی شوند استفاده کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with an array of {{domxref("ClipboardItem")}} objects containing the clipboard's contents.
+یک {{jsxref("Promise")}} که با آرایهای از اشیاء {{domxref("ClipboardItem")}} حاوی محتویات کلیپبورد حل میشود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the reading from the clipboard is not allowed.
+  - : در صورتی که خواندن از کلیپبورد مجاز نباشد پرتاب میشود.
 
-## Security considerations
+## ملاحظات امنیتی
 
-Reading from the clipboard can only be done in a [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
+خواندن از کلیپبورد فقط در [زمینه امن (secure context)](/en-US/docs/Web/Security/Defenses/Secure_Contexts) قابل انجام است.
 
-Additional security requirements are covered in the [Security consideration](/en-US/docs/Web/API/Clipboard_API#security_considerations) section of the API overview topic.
+ملزومات امنیتی اضافی در بخش [ملاحظات امنیتی](/en-US/docs/Web/API/Clipboard_API#security_considerations) در مبحث نمای کلی API پوشش داده شده است.
 
-## Examples
+## مثال‌ها
 
-### Reading image data from clipboard
+### خواندن داده تصویر از کلیپبورد
 
-This example uses the `read()` method to read image data from the clipboard and paste it into an {{HTMLElement("img")}} element.
+این مثال از متد `read()` برای خواندن داده تصویر از کلیپبورد و چسباندن آن در یک عنصر {{HTMLElement("img")}} استفاده میکند.
 
 #### HTML
 
@@ -82,7 +76,7 @@ img {
 
 #### JavaScript
 
-This code provides a mechanism to log any errors to the element with id `log`.
+این کد مکانیزمی برای ثبت هرگونه خطا در عنصر با شناسه `log` فراهم میکند.
 
 ```js
 const logElement = document.querySelector("#log");
@@ -91,7 +85,7 @@ function log(text) {
 }
 ```
 
-We also add code to reload and clear the example when the "Reload" button is pressed.
+همچنین کدی برای بارگذاری مجدد و پاک کردن مثال هنگام فشردن دکمه «Reload» اضافه میکنیم.
 
 ```js
 const reload = document.querySelector("#reload");
@@ -101,8 +95,8 @@ reload.addEventListener("click", () => {
 });
 ```
 
-The remaining code reads the clipboard when the destination element is clicked and copies the image data into the `destinationImage` element.
-It logs an error if it is unable to use the `read()` method, or if the clipboard does not contain data in PNG format.
+کد باقیمانده هنگام کلیک روی عنصر مقصد، کلیپبورد را میخواند و داده تصویر را در عنصر `destinationImage` کپی میکند.
+در صورت عدم توانایی در استفاده از متد `read()` یا اینکه کلیپبورد حاوی داده با فرمت PNG نباشد، خطا ثبت میکند.
 
 ```js
 const destinationImage = document.querySelector("#destination");
@@ -124,22 +118,22 @@ async function pasteImage() {
 }
 ```
 
-#### Result
+#### نتیجه
 
-Copy the butterfly image on the left by right-clicking the image and selecting "Copy image" from the context menu.
-Then click on the empty frame on the right.
-The example will fetch the image data from the clipboard and display the image in the empty frame.
+تصویر پروانه در سمت چپ را با کلیک راست روی تصویر و انتخاب «Copy image» از منوی زمینه کپی کنید.
+سپس روی قاب خالی در سمت راست کلیک کنید.
+مثال داده تصویر را از کلیپبورد دریافت کرده و تصویر را در قاب خالی نمایش میدهد.
 
 {{EmbedLiveSample("Reading image data from clipboard", "100%", "250", "", "", "", "clipboard-read")}}
 
 > [!NOTE]
-> If prompted, grant permission in order to paste the image.
+> در صورت درخواست، برای چسباندن تصویر اجازه دهید.
 
-### Reading data from the clipboard
+### خواندن داده از کلیپبورد
 
-This example uses the `read()` method to read data from the clipboard and log whatever data is stored in the clipboard.
+این مثال از متد `read()` برای خواندن داده از کلیپبورد و ثبت هر داده ذخیرهشده در کلیپبورد استفاده میکند.
 
-This differs from the previous version in that it will display text, HTML, and image {{domxref("ClipboardItem")}} objects (rather than just images).
+این با نسخه قبلی تفاوت دارد زیرا اشیاء {{domxref("ClipboardItem")}} متنی، HTML و تصویری را نمایش میدهد (و نه فقط تصاویر).
 
 #### HTML
 
@@ -175,7 +169,7 @@ img {
 
 #### JavaScript
 
-This code provides a mechanism to log any errors to the element with id `log`.
+این کد مکانیزمی برای ثبت هرگونه خطا در عنصر با شناسه `log` فراهم میکند.
 
 ```js
 const logElement = document.querySelector("#log");
@@ -184,7 +178,7 @@ function log(text) {
 }
 ```
 
-We also add code to reload and clear the example when the "Reload" button is pressed.
+همچنین کدی برای بارگذاری مجدد و پاک کردن مثال هنگام فشردن دکمه «Reload» اضافه میکنیم.
 
 ```js
 const reload = document.querySelector("#reload");
@@ -194,8 +188,8 @@ reload.addEventListener("click", () => {
 });
 ```
 
-The remaining code reads the clipboard when the destination element is clicked and displays each {{domxref("ClipboardItem")}} element along with its MIME type.
-It logs an error it is unable to use the `read()` method, or if the clipboard contains any other MIME type.
+کد باقیمانده هنگام کلیک روی عنصر مقصد، کلیپبورد را میخواند و هر عنصر {{domxref("ClipboardItem")}} را همراه با نوع MIME آن نمایش میدهد.
+در صورت عدم توانایی در استفاده از متد `read()` یا وجود هر نوع MIME دیگر در کلیپبورد، خطا ثبت میکند.
 
 ```js
 const destinationDiv = document.querySelector("#destination");
@@ -239,22 +233,22 @@ async function pasteData() {
 }
 ```
 
-#### Result
+#### نتیجه
 
-Copy some text or the butterfly (JPG) image below (to copy images right-click on them and then select "Copy image" from the context menu).
-Select the indicated frame below to paste this information from the clipboard into the frame.
+مقداری متن یا تصویر پروانه (JPG) زیر را کپی کنید (برای کپی تصاویر روی آنها کلیک راست کرده و سپس «Copy image» را از منوی زمینه انتخاب کنید).
+قاب مشخصشده در زیر را انتخاب کنید تا این اطلاعات از کلیپبورد در قاب چسبانده شود.
 
 {{EmbedLiveSample("Reading data from the clipboard", "100%", "500", "", "", "", "clipboard-read")}}
 
-Notes:
+توجه:
 
-- Even though the butterfly image is a JPG file, when read from the clipboard it is a PNG.
-- If prompted, you will need to grant permission in order to paste the image.
-- This may not work on chromium browsers as the sample frame is not granted the [Permissions-Policy](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy) `clipboard-read` and `clipboard-write` permissions ([required by Chromium browsers](/en-US/docs/Web/API/Clipboard_API#security_considerations)).
+- حتی اگر تصویر پروانه یک فایل JPG باشد، هنگام خواندن از کلیپبورد بهصورت PNG است.
+- در صورت درخواست، برای چسباندن تصویر باید اجازه دهید.
+- این ممکن است در مرورگرهای کرومیوم کار نکند زیرا قاب نمونه دارای مجوز [Permissions-Policy](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy) برای `clipboard-read` و `clipboard-write` نیست ([الزامی توسط مرورگرهای کرومیوم](/en-US/docs/Web/API/Clipboard_API#security_considerations)).
 
-### Reading unsanitized HTML from the clipboard
+### خواندن HTML پاکسازینشده از کلیپبورد
 
-This example uses the `formats` parameter to read HTML data from the clipboard and get the code in its original form, without the browser sanitizing it first.
+این مثال از پارامتر `formats` برای خواندن داده HTML از کلیپبورد و دریافت کد به شکل اصلی آن، بدون پاکسازی قبلی مرورگر، استفاده میکند.
 
 #### HTML
 
@@ -344,25 +338,25 @@ pasteUnsanitizedButton.addEventListener("click", async () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-First click the "Copy HTML" button to write the HTML code from the first textarea to the clipboard. Then either click the "Paste HTML" button or the "Paste unsanitized HTML" button to paste the sanitized or unsanitized HTML code into the second textarea.
+ابتدا دکمه «Copy HTML» را کلیک کنید تا کد HTML از اولین textarea در کلیپبورد نوشته شود. سپس یا دکمه «Paste HTML» یا دکمه «Paste unsanitized HTML» را کلیک کنید تا کد HTML پاکسازیشده یا پاکسازینشده در textarea دوم چسبانده شود.
 
 {{EmbedLiveSample("Reading unsanitized HTML from the clipboard", "100%", "250", "", "", "", "clipboard-read; clipboard-write")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Clipboard API](/en-US/docs/Web/API/Clipboard_API)
-- [Unblocking clipboard access](https://web.dev/articles/async-clipboard) on web.dev
-- [Unsanitized HTML in the Async Clipboard API](https://developer.chrome.com/docs/web-platform/unsanitized-html-async-clipboard) on developer.chrome.com
+- [رفع انسداد دسترسی به کلیپبورد](https://web.dev/articles/async-clipboard) در web.dev
+- [HTML پاکسازینشده در Async Clipboard API](https://developer.chrome.com/docs/web-platform/unsanitized-html-async-clipboard) در developer.chrome.com
 - {{domxref("Clipboard.readText()")}}
 - {{domxref("Clipboard.writeText()")}}
 - {{domxref("Clipboard.write()")}}
