@@ -1,11 +1,5 @@
 ---
 title: "CSSCounterStyleRule: pad property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSCounterStyleRule/pad"
-status: "needs-translation"
----
-
----
-title: "CSSCounterStyleRule: pad property"
 short-title: pad
 slug: Web/API/CSSCounterStyleRule/pad
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CSSCounterStyleRule.pad
 
 {{APIRef("CSSOM")}}
 
-The **`pad`** property of the {{domxref("CSSCounterStyleRule")}} interface gets and sets the value of the {{cssxref("@counter-style/pad", "pad")}} descriptor. If the descriptor does not have a value set, this attribute returns an empty string.
+ویژگی **`pad`** از رابط {{domxref("CSSCounterStyleRule")}} مقدار توصیفگر {{cssxref("@counter-style/pad", "pad")}} را دریافت و تنظیم می‌کند. اگر برای این توصیفگر مقداری تعیین نشده باشد، این ویژگی یک رشته خالی برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-The following example shows a {{cssxref("@counter-style")}} rule. In JavaScript, `myRules[0]` is this `@counter-style` rule, returning `pad` gives us the value "0".
+مثال زیر یک قانون {{cssxref("@counter-style")}} را نشان می‌دهد. در جاوااسکریپت، `myRules[0]` همان قانون `@counter-style` است و بازگرداندن `pad` مقدار «0» را به ما می‌دهد.
 
 ```css
 @counter-style box-corner {
@@ -37,10 +31,10 @@ let myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].pad); // "0"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
