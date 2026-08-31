@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createIIRFilter() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createIIRFilter"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,12 +14,10 @@ browser-compat: api.BaseAudioContext.createIIRFilter
 
 {{ APIRef("Web Audio API") }}
 
-The **`createIIRFilter()`** method of the {{domxref("BaseAudioContext")}} interface creates an {{ domxref("IIRFilterNode") }}, which represents a general **[infinite impulse response](https://en.wikipedia.org/wiki/Infinite_impulse_response)** (IIR) filter which can be configured to serve as various types of filter.
+روش **`createIIRFilter()`** از رابط {{domxref("BaseAudioContext")}} یک {{ domxref("IIRFilterNode") }} می‌سازد که نمایانگر یک فیلتر **[پاسخ ضربه بینهایت](https://en.wikipedia.org/wiki/Infinite_impulse_response)** (IIR) عمومی است که می‌تواند به عنوان انواع مختلف فیلتر پیکربندی شود.
 
 > [!NOTE]
-> The {{domxref("IIRFilterNode.IIRFilterNode", "IIRFilterNode()")}}
-> constructor is the recommended way to create an {{domxref("IIRFilterNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> سازنده {{domxref("IIRFilterNode.IIRFilterNode", "IIRFilterNode()")}} روش توصیه‌شده برای ایجاد یک {{domxref("IIRFilterNode")}} است؛ به [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
 ## Syntax
 
@@ -30,26 +28,20 @@ createIIRFilter(feedforward, feedback)
 ### Parameters
 
 - `feedforward`
-  - : An array of floating-point values specifying the feedforward (numerator)
-    coefficients for the transfer function of the IIR filter. The maximum length of this
-    array is 20, and at least one value must be nonzero.
+  - : آرایه‌ای از مقادیر ممیز شناور که ضرایب پیش‌خور (صورت) را برای تابع انتقال فیلتر IIR مشخص می‌کند. حداکثر طول این آرایه ۲۰ است و حداقل یک مقدار باید غیرصفر باشد.
 - `feedback`
-  - : An array of floating-point values specifying the feedback (denominator) coefficients
-    for the transfer function of the IIR filter. This array may have up to 20 members, the
-    first of which must not be zero.
+  - : آرایه‌ای از مقادیر ممیز شناور که ضرایب بازخورد (مخرج) را برای تابع انتقال فیلتر IIR مشخص می‌کند. این آرایه می‌تواند تا ۲۰ عضو داشته باشد که اولین آنها نباید صفر باشد.
 
 ### Return value
 
-An {{domxref("IIRFilterNode")}} implementing the filter with the specified feedback and
-feedforward coefficient arrays.
+یک {{domxref("IIRFilterNode")}} که فیلتر را با آرایه‌های ضرایب بازخورد و پیش‌خور مشخص‌شده پیاده‌سازی می‌کند.
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if all of the `feedforward` coefficients are 0, or if the first
-    `feedback` coefficient is 0.
+  - : اگر تمام ضرایب `feedforward` صفر باشند، یا اگر اولین ضریب `feedback` صفر باشد، پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if one or both of the input arrays exceeds 20 members.
+  - : اگر یکی یا هر دو آرایه ورودی بیش از ۲۰ عضو داشته باشند، پرتاب می‌شود.
 
 ## Specifications
 
@@ -61,6 +53,6 @@ feedforward coefficient arrays.
 
 ## See also
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - {{domxref("IIRFilterNode")}}
 - {{domxref("AudioNode")}}
