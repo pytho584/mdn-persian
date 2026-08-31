@@ -1,33 +1,33 @@
 ---
 title: "ARIA Screen Reader Implementors Guide"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Guides/Screen_Reader_Implementors"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
-title: ARIA Screen Reader Implementors Guide
-short-title: Screen reader implementors guide
+title: راهنمای پیاده‌سازان صفحه‌خوان ARIA
+short-title: راهنمای پیاده‌سازان صفحه‌خوان
 slug: Web/Accessibility/ARIA/Guides/Screen_Reader_Implementors
 page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-## Live Regions
+## مناطق زنده (Live Regions)
 
-This is just a guide. Live region markup is a complex area which is somewhat open to interpretation. The following is intended to provide implementation guidance that respects screen readers developers' need to try different things. The intention is to strike a balance between providing useful guidance on how to use the markup's intended meaning while supporting live regions as an area for screen readers to innovate and compete.
+این فقط یک راهنماست. نشانه‌گذاری منطقه زنده، حوزه‌ای پیچیده است که تا حدی به تفسیر باز است. موارد زیر برای ارائه راهنمایی‌های پیاده‌سازی در نظر گرفته شده است که به نیاز توسعه‌دهندگان صفحه‌خوان برای امتحان رویکردهای مختلف احترام می‌گذارد. هدف، ایجاد تعادل بین ارائه راهنمایی مفید در مورد نحوه استفاده از معنای مورد نظر نشانه‌گذاری و در عین حال پشتیبانی از مناطق زنده به‌عنوان حوزه‌ای برای نوآوری و رقابت صفحه‌خوان‌ها است.
 
-### Interpreting WAI-ARIA live region markup
+### تفسیر نشانه‌گذاری منطقه زنده WAI-ARIA
 
-1. Live changes are hints: in general live region markup is provided by the author as hints, and the assistive technology may allow for global, site or even region-specific settings, as well as heuristics to help with live changes on pages that have no WAI-ARIA hints.
-2. Optionally, create a second, additional queue if the user configures a second hardware channel: If there are two channels for presentation (e.g., text to speech and a Braille display), then two queues can be maintained to allow for parallel presentation. The channels could be user configured for presenting live regions based on role or politeness.
-3. Busy regions: Any changes in a region marked with aria-busy="true" should not be added to the queue until that attribute is cleared.
-4. Politeness (`aria-live` or from [role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles)) takes first precedence,: items should be added to the queue based on their politeness level from the `aria-live` property or inherited from the `role` (e.g., [role="log"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role) is polite by default). Assertive items are first then politeness level. Alternatively, implementations may choose to have a policy of clearing more polite items, e.g., assertive items clear any polite items from the queue.
-5. Time takes second precedence: Prioritize items with the same politeness level according to when the event occurs (earlier events come first). Present items of the same politeness level in the order of what occurred first.
-6. Atomic (`aria-atomic="true"`) regions with multiple changes should not be presented twice with the same content. As a new event for an atomic region is added to the queue remove an earlier event for the same region. It is probably desirable to have at least a tiny timeout before presenting atomic region changes, in order to avoid presenting the region twice for two changes that occur quickly one after the other.
-7. Include labels when presenting changes: if the change occurs in something with a semantic label of some kind, speak the label. This is particularly important for changes in data cells, where the column and row headers provide important contextual information.
+1. تغییرات زنده، نکات راهنما هستند: به‌طور کلی، نشانه‌گذاری منطقه زنده توسط نویسنده به‌عنوان نکات راهنما ارائه می‌شود و فناوری کمکی ممکن است تنظیمات سراسری، سطح سایت یا حتی مخصوص منطقه، و همچنین روش‌های اکتشافی را برای کمک به تغییرات زنده در صفحاتی که هیچ نکته راهنمای WAI-ARIA ندارند، مجاز کند.
+2. در صورت اختیاری، اگر کاربر یک کانال سخت‌افزاری دوم پیکربندی کند، یک صف دوم و اضافی ایجاد کنید: اگر دو کانال برای ارائه وجود داشته باشد (مثلاً گفتار و صفحه نمایش بریل)، می‌توان دو صف برای امکان ارائه موازی حفظ کرد. کانال‌ها می‌توانند توسط کاربر برای ارائه مناطق زنده بر اساس نقش یا میزان ادب پیکربندی شوند.
+3. مناطق مشغول (Busy): هر تغییری در منطقه‌ای که با `aria-busy="true"` علامت‌گذاری شده است، نباید تا زمانی که آن ویژگی پاک نشده به صف اضافه شود.
+4. ادب (`aria-live` یا از [نقش](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles)) اولویت اول را دارد: موارد باید بر اساس سطح ادب از ویژگی `aria-live` یا به ارث رسیده از `role` (مثلاً [role="log"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role) به‌طور پیش‌فرض مؤدبانه است) به صف اضافه شوند. موارد قاطع (assertive) ابتدا و سپس سطح ادب. به‌عنوان جایگزین، پیاده‌سازی‌ها ممکن است سیاست پاک‌سازی موارد مؤدبانه‌تر را انتخاب کنند، مثلاً موارد قاطع هر مورد مؤدبانه‌ای را از صف پاک می‌کنند.
+5. زمان اولویت دوم را دارد: موارد با همان سطح ادب را بر اساس زمان وقوع رویداد اولویت‌بندی کنید (رویدادهای زودتر اول می‌آیند). موارد با همان سطح ادب را به ترتیب وقوع ارائه دهید.
+6. مناطق اتمی (`aria-atomic="true"`) با تغییرات متعدد نباید دو بار با محتوای یکسان ارائه شوند. وقتی رویداد جدیدی برای یک منطقه اتمی به صف اضافه می‌شود، رویداد قبلی همان منطقه را حذف کنید. احتمالاً مطلوب است که حداقل یک تایم‌اوت کوچک قبل از ارائه تغییرات منطقه اتمی وجود داشته باشد تا از ارائه دوباره منطقه برای دو تغییری که پشت سر هم به سرعت رخ می‌دهند جلوگیری شود.
+7. هنگام ارائه تغییرات، برچسب‌ها را شامل کنید: اگر تغییر در چیزی با برچسب معنایی از نوعی رخ دهد، برچسب را بخوانید. این امر به‌ویژه برای تغییرات در سلول‌های داده مهم است، جایی که سربرگ‌های ستون و ردیف اطلاعات زمینه‌ای مهمی را فراهم می‌کنند.
 
-### Ideas for Settings and Heuristics
+### ایده‌هایی برای تنظیمات و روش‌های اکتشافی
 
-1. Allow for a different voice (in text-to-speech) or other varying presentational characteristics to set live changes apart.
-2. When no WAI-ARIA markup is present, automatically present some changes unless the user configures all live changes to off. For example, automatically speak changes that are caused by the user's own input, as part of the context of that input.
-3. Allow global settings to turn off the presentation of live changes, present all live changes, use markup, or be "smart" (use heuristics)
+1. اجازه دهید صدای متفاوت (در گفتار) یا سایر ویژگی‌های ارائه متفاوت، تغییرات زنده را متمایز کند.
+2. وقتی نشانه‌گذاری WAI-ARIA وجود ندارد، به‌طور خودکار برخی تغییرات را ارائه دهید، مگر اینکه کاربر همه تغییرات زنده را خاموش کند. به‌عنوان مثال، تغییراتی که در نتیجه ورودی خود کاربر رخ می‌دهند را به‌عنوان بخشی از زمینه آن ورودی، به‌طور خودکار بخوانید.
+3. تنظیمات سراسری را برای خاموش کردن ارائه تغییرات زنده، ارائه همه تغییرات زنده، استفاده از نشانه‌گذاری، یا «هوشمند بودن» (استفاده از روش‌های اکتشافی) مجاز کنید.
