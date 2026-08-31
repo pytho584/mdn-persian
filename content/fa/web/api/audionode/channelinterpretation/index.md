@@ -1,35 +1,31 @@
 ---
 title: "AudioNode: channelInterpretation property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/channelInterpretation"
-status: "needs-translation"
----
-
----
-title: "AudioNode: channelInterpretation property"
 short-title: channelInterpretation
 slug: Web/API/AudioNode/channelInterpretation
 page-type: web-api-instance-property
 browser-compat: api.AudioNode.channelInterpretation
+translated_by: "n8n + AI"
 ---
 
 {{ APIRef("Web Audio API") }}
 
-The **`channelInterpretation`** property of the {{domxref("AudioNode")}} interface represents an enumerated value describing how input channels are mapped to output channels when the number of inputs/outputs is different. For example, this setting defines how a mono input will be up-mixed to a stereo or 5.1 channel output, or how a quad channel input will be down-mixed to a stereo or mono output.
+ویژگی **`channelInterpretation`** از رابط {{domxref("AudioNode")}} یک مقدار شمارشی را نشان می‌دهد که نحوه نگاشت کانال‌های ورودی به کانال‌های خروجی را هنگامی که تعداد ورودی‌ها/خروجی‌ها متفاوت است، توصیف می‌کند. به عنوان مثال، این تنظیم مشخص می‌کند که چگونه یک ورودی مونو به خروجی استریو یا 5.1 کاناله up-mix می‌شود، یا چگونه یک ورودی چهار کاناله به خروجی استریو یا مونو down-mix می‌شود.
 
-The property has two options: `speakers` and `discrete`. These are documented in [Basic concepts behind Web Audio API > up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing).
+این ویژگی دو گزینه دارد: `speakers` و `discrete`. این موارد در [مفاهیم پایه پشت Web Audio API > up-mixing و down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) مستند شده‌اند.
 
-## Value
+## مقدار
 
-The values are documented in [Basic concepts behind Web Audio API > up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing).
+مقادیر در [مفاهیم پایه پشت Web Audio API > up-mixing و down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) مستند شده‌اند.
 
-In summary:
+به طور خلاصه:
 
 - `speakers`
-  - : Use set of "standard" mappings for combinations of common speaker input and outputs setups (mono, stereo, quad, 5.1). For example, with this setting a mono channel input will output to both channels of a stereo output.
+  - : از مجموعه‌ای از نگاشت‌های «استاندارد» برای ترکیب‌های تنظیمات رایج بلندگوهای ورودی و خروجی (مونو، استریو، چهارکاناله، 5.1) استفاده می‌کند. به عنوان مثال، با این تنظیم، یک ورودی کانال مونو به هر دو کانال خروجی استریو خروجی می‌دهد.
 - `discrete`
-  - : Input channels are mapped to output channels in order. If there are more inputs that outputs the additional inputs are dropped; if there are fewer than the unused outputs are silent.
+  - : کانال‌های ورودی به ترتیب به کانال‌های خروجی نگاشت می‌شوند. اگر تعداد ورودی‌ها بیشتر از خروجی‌ها باشد، ورودی‌های اضافی حذف می‌شوند؛ اگر تعداد کمتر باشد، خروجی‌های استفاده نشده ساکت هستند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new AudioContext();
@@ -43,14 +39,14 @@ gainNode.connect(audioCtx.destination);
 oscillator.channelInterpretation = "discrete";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
