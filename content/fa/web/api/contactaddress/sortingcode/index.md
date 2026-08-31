@@ -1,11 +1,5 @@
 ---
 title: "ContactAddress: sortingCode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContactAddress/sortingCode"
-status: "needs-translation"
----
-
----
-title: "ContactAddress: sortingCode property"
 short-title: sortingCode
 slug: Web/API/ContactAddress/sortingCode
 page-type: web-api-instance-property
@@ -16,16 +10,16 @@ browser-compat: api.ContactAddress.sortingCode
 
 {{securecontext_header}}{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
-The **`sortingCode`** read-only property of the {{domxref("ContactAddress")}} interface returns a string containing a postal sorting code such as is used in France.
+ویژگی فقط‌خواندنی **`sortingCode`** در رابط {{domxref("ContactAddress")}} یک رشته برمی‌گرداند که شامل کد مرتب‌سازی پستی (مانند کدهایی که در فرانسه استفاده می‌شود) است.
 
-## Value
+## مقدار
 
-A string containing the sorting code portion of the address.
+یک رشته که بخش کد مرتب‌سازی آدرس را شامل می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
