@@ -1,7 +1,7 @@
 ---
 title: "AudioEncoder: configure() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder/configure"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,88 +14,88 @@ browser-compat: api.AudioEncoder.configure
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`configure()`** method of the {{domxref("AudioEncoder")}} interface enqueues a control message to configure the audio encoder for encoding chunks.
+متد **`configure()`** از رابط {{domxref("AudioEncoder")}} یک پیام کنترلی را برای پیکربندی رمزگذار صوتی جهت رمزگذاری تکه‌ها در صف قرار می‌دهد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 configure(config)
 ```
 
-### Parameters
+### پارامترها
 
 - `config`
-  - : A dictionary object containing the following members:
+  - : یک شیء دیکشنری شامل اعضای زیر:
     - `codec`
-      - : A string containing a [valid codec string](https://w3c.github.io/webcodecs/codec_registry.html#audio-codec-registry). See ["codecs" parameter](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter#codec_options_by_container) for details on codec string construction.
+      - : یک رشته حاوی [valid codec string](https://w3c.github.io/webcodecs/codec_registry.html#audio-codec-registry). برای جزئیات ساخت رشته کدک، به ["codecs" parameter](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter#codec_options_by_container) مراجعه کنید.
     - `sampleRate`
-      - : An integer representing the number of frame samples per second.
+      - : یک عدد صحیح که تعداد نمونه‌های فریم در هر ثانیه را نشان می‌دهد.
     - `numberOfChannels`
-      - : An integer representing the number of audio channels.
+      - : یک عدد صحیح که تعداد کانال‌های صوتی را نشان می‌دهد.
     - `bitrate` {{optional_inline}}
-      - : An integer representing the bitrate.
+      - : یک عدد صحیح که نرخ بیت را نشان می‌دهد.
     - `bitrateMode` {{optional_inline}}
-      - : An enumerated value that defines the bitrate mode the encoder should use. Possible values are:
+      - : یک مقدار شمارشی که حالت نرخ بیت مورد استفاده رمزگذار را تعیین می‌کند. مقادیر ممکن عبارتند از:
         - `"constant"`
-          - : Forces an audio encoder to maintain the same bitrate, regardless of the audio content. This can be useful when a predictable bandwidth consumption is preferable.
-        - `"variable"` (default)
-          - : Allows an audio encoder to increase or lower its bitrate according to the content of the audio it is encoding, in order to preserve bandwidth/binary-size, while still maintaining a target quality. For example, an encoder might lower its bitrate when encoding silence, and revert to a full bitrate when encoding speech.
+          - : رمزگذار صوتی را مجبور می‌کند تا بدون توجه به محتوای صوتی، همان نرخ بیت را حفظ کند. این می‌تواند زمانی مفید باشد که مصرف پهنای باند قابل پیش‌بینی ترجیح داده شود.
+        - `"variable"` (پیش‌فرض)
+          - : به رمزگذار صوتی اجازه می‌دهد تا نرخ بیت خود را بر اساس محتوای صوتی که در حال رمزگذاری آن است افزایش یا کاهش دهد، تا پهنای باند/حجم باینری حفظ شود، در حالی که همچنان کیفیت هدف حفظ می‌شود. به عنوان مثال، یک رمزگذار ممکن است هنگام رمزگذاری سکوت، نرخ بیت را کاهش دهد و هنگام رمزگذاری گفتار به نرخ بیت کامل بازگردد.
 
-        Specific codec encoder implementations may use slightly different terminology (for example, CBR vs VBR for Opus), but they should all map to the general concept of "constant" versus "variable" bitrate.
+        پیاده‌سازی‌های خاص رمزگذار کدک ممکن است از اصطلاحات کمی متفاوت استفاده کنند (مثلاً CBR در مقابل VBR برای Opus)، اما همه آن‌ها باید به مفهوم کلی نرخ بیت «ثابت» در مقابل «متغیر» نگاشت شوند.
 
     - `opus` {{optional_inline}}
-      - : Specifies codec configuration options specific to the Opus codec. Its value is an `OpusEncoderConfig` object, the possible properties of which are as follows:
+      - : گزینه‌های پیکربندی کدک مخصوص کدک Opus را مشخص می‌کند. مقدار آن یک شیء `OpusEncoderConfig` است که ویژگی‌های ممکن آن به شرح زیر است:
         - `application` {{optional_inline}}
-          - : An enumerated value that specifies the encoder's intended application type. Possible values are:
-            - `audio` (default)
-              - : Process the signal faithfully to the original input.
+          - : یک مقدار شمارشی که نوع کاربرد مورد نظر رمزگذار را مشخص می‌کند. مقادیر ممکن عبارتند از:
+            - `audio` (پیش‌فرض)
+              - : پردازش سیگنال به‌طور وفادارانه نسبت به ورودی اصلی.
             - `lowdelay`
-              - : When processing the signal, configure the minimum possible encoding delay by disabling certain modes of operation.
+              - : هنگام پردازش سیگنال، با غیرفعال کردن برخی حالت‌های عملیاتی، حداقل تأخیر ممکن رمزگذاری را پیکربندی می‌کند.
             - `voip`
-              - : Process signal for improved speech intelligibility.
+              - : پردازش سیگنال برای بهبود وضوح گفتار.
         - `complexity` {{optional_inline}}
-          - : A number that defines the encoder's computational complexity, based on the aspects described in section [RFC6716, 2.1.5. — Complexity](https://www.rfc-editor.org/info/rfc6716/#section-2.1.5). The valid range is 0 to 10, with 10 representing the highest complexity. If no value is specified, the default value is platform-specific, with the specification recommending 5 for mobile platforms, and 9 for all other platforms.
+          - : عددی که پیچیدگی محاسباتی رمزگذار را بر اساس جنبه‌های شرح داده شده در بخش [RFC6716, 2.1.5. — Complexity](https://www.rfc-editor.org/info/rfc6716/#section-2.1.5) تعریف می‌کند. محدوده معتبر از 0 تا 10 است که 10 بالاترین پیچیدگی را نشان می‌دهد. اگر مقداری مشخص نشود، مقدار پیش‌فرض به پلتفرم بستگی دارد؛ مشخصات برای پلتفرم‌های موبایل 5 و برای سایر پلتفرم‌ها 9 را توصیه می‌کند.
         - `format` {{optional_inline}}
-          - : An enumerated value that specifies the format in which the encoder should output {{domxref("EncodedAudioChunk")}}s. Possible values are:
-            - `opus` (default)
-              - : Output `EncodedAudioChunk`s in Opus format. In this case, no metadata are necessary to decode the encoded audio stream.
+          - : یک مقدار شمارشی که قالبی را مشخص می‌کند که رمزگذار باید {{domxref("EncodedAudioChunk")}}ها را در آن خروجی دهد. مقادیر ممکن عبارتند از:
+            - `opus` (پیش‌فرض)
+              - : خروجی `EncodedAudioChunk`ها در قالب Opus. در این حالت، برای رمزگشایی جریان صوتی رمزگذاری‌شده هیچ فراداده‌ای لازم نیست.
             - `ogg`
-              - : Output `EncodedAudioChunk`s in Ogg format. In this case, no metadata are necessary to decode the encoded audio stream. In this case, the metadata of the encoded audio stream are provided in the decoder configuration — via the [`description`](/en-US/docs/Web/API/AudioDecoder/configure#description) property of the config object passed into {{domxref("AudioDecoder.configure()")}}.
+              - : خروجی `EncodedAudioChunk`ها در قالب Ogg. در این حالت، برای رمزگشایی جریان صوتی رمزگذاری‌شده هیچ فراداده‌ای لازم نیست. در این حالت، فراداده‌های جریان صوتی رمزگذاری‌شده در پیکربندی رمزگشا — از طریق ویژگی [`description`](/en-US/docs/Web/API/AudioDecoder/configure#description) شیء پیکربندی که به {{domxref("AudioDecoder.configure()")}} منتقل می‌شود — ارائه می‌شوند.
         - `frameDuration` {{optional_inline}}
-          - : A number that defines the frame duration, in microseconds, of `EncodedAudioChunk`s outputted by the encoder. If not specified, `frameDuration` defaults to `20000`.
+          - : عددی که مدت زمان فریم، به میکروثانیه، `EncodedAudioChunk`های خروجی رمزگذار را تعریف می‌کند. اگر مشخص نشود، `frameDuration` به طور پیش‌فرض `20000` است.
         - `packetlossperc` {{optional_inline}}
-          - : A number that defines the encoder's expected packet loss percentage. The valid range is 0 to 100. If not specified, `packetlossperc` defaults to `0`.
+          - : عددی که درصد از دست رفتن بسته مورد انتظار رمزگذار را تعریف می‌کند. محدوده معتبر از 0 تا 100 است. اگر مشخص نشود، `packetlossperc` به طور پیش‌فرض `0` است.
         - `signal` {{optional_inline}}
-          - : An enumerated value that specifies the default value for the type of audio signal being encoded. Possible values are:
-            - `auto` (default)
-              - : The audio signal is not specified to be of a particular type.
+          - : یک مقدار شمارشی که مقدار پیش‌فرض نوع سیگنال صوتی در حال رمزگذاری را مشخص می‌کند. مقادیر ممکن عبارتند از:
+            - `auto` (پیش‌فرض)
+              - : سیگنال صوتی به عنوان نوع خاصی مشخص نشده است.
             - `music`
-              - : The audio signal is music.
+              - : سیگنال صوتی موسیقی است.
             - `voice`
-              - : The audio signal is voice or speech.
+              - : سیگنال صوتی صدا یا گفتار است.
         - `usedtx` {{optional_inline}}
-          - : A boolean value that specifies whether the encoder uses Discontinuous Transmission (DTX), which reduces the bitrate during silence or background noise. When DTX is enabled, only one frame is encoded every 400 milliseconds. If not specified, `usedtx` defaults to `false`.
+          - : یک مقدار بولی که مشخص می‌کند آیا رمزگذار از انتقال ناپیوسته (DTX) استفاده می‌کند یا خیر، که نرخ بیت را در طول سکوت یا نویز پس‌زمینه کاهش می‌دهد. وقتی DTX فعال باشد، فقط یک فریم هر 400 میلی‌ثانیه رمزگذاری می‌شود. اگر مشخص نشود، `usedtx` به طور پیش‌فرض `false` است.
         - `useinbandfec` {{optional_inline}}
-          - : A boolean value that specifies whether the encoder provides Opus in-band Forward Error Correction (FEC). This results in packets that are determined to contain perceptually important speech information — such as onsets or transients — to be re-encoded at a lower bitrate and added to a subsequent packet. If not specified, `useinbandfec` defaults to `false`.
+          - : یک مقدار بولی که مشخص می‌کند آیا رمزگذار تصحیح خطای پیشرو (FEC) درون‌باند Opus را ارائه می‌کند یا خیر. این باعث می‌شود بسته‌هایی که مشخص شده حاوی اطلاعات گفتاری مهم ادراکی هستند — مانند شروع‌ها یا گذراها — با نرخ بیت پایین‌تر دوباره رمزگذاری شده و به بسته بعدی اضافه شوند. اگر مشخص نشود، `useinbandfec` به طور پیش‌فرض `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the provided `config` is invalid.
+  - : اگر `config` ارائه‌شده نامعتبر باشد پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("AudioEncoder.state","state")}} is `"closed"`.
+  - : اگر {{domxref("AudioEncoder.state","state")}} برابر با `"closed"` باشد پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the provided `config` is valid but the user agent cannot provide a codec that can decode this profile.
+  - : اگر `config` ارائه‌شده معتبر باشد اما عامل کاربر نتواند کدکی را ارائه دهد که بتواند این پروفایل را رمزگشایی کند، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic configuration example
+### مثال پیکربندی پایه
 
-The following example creates a new {{domxref("AudioEncoder")}} and configures it with some of the available options.
+مثال زیر یک {{domxref("AudioEncoder")}} جدید ایجاد می‌کند و آن را با برخی از گزینه‌های موجود پیکربندی می‌کند.
 
 ```js
 const init = {
@@ -117,9 +117,9 @@ let encoder = new AudioEncoder(init);
 encoder.configure(config);
 ```
 
-### Opus-specific configuration example
+### مثال پیکربندی مخصوص Opus
 
-The following example creates a new {{domxref("AudioEncoder")}} and configures it with Opus-specific options.
+مثال زیر یک {{domxref("AudioEncoder")}} جدید ایجاد می‌کند و آن را با گزینه‌های مخصوص Opus پیکربندی می‌کند.
 
 ```js
 const init = {
@@ -148,10 +148,10 @@ let encoder = new AudioEncoder(init);
 encoder.configure(config);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
