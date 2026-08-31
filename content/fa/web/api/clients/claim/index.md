@@ -1,11 +1,5 @@
 ---
 title: "Clients: claim() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Clients/claim"
-status: "needs-translation"
----
-
----
-title: "Clients: claim() method"
 short-title: claim()
 slug: Web/API/Clients/claim
 page-type: web-api-instance-method
@@ -14,31 +8,27 @@ browser-compat: api.Clients.claim
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`claim()`** method of the {{domxref("Clients")}} interface allows an active service worker to set itself as the {{domxref("ServiceWorkerContainer.controller", "controller")}} for all clients within its {{domxref("ServiceWorkerRegistration.scope", "scope")}}.
-This triggers a `controllerchange` event on {{domxref("ServiceWorkerContainer","navigator.serviceWorker")}} in any clients that become controlled by this service worker.
+متد **`claim()`** در رابط {{domxref("Clients")}} به یک service worker فعال اجازه می‌دهد تا خود را به‌عنوان {{domxref("ServiceWorkerContainer.controller", "کنترل‌کننده")}} برای همهٔ کلاینت‌های درون {{domxref("ServiceWorkerRegistration.scope", "حوزهٔ (scope)")}} خود تنظیم کند. این کار باعث می‌شود رویداد `controllerchange` روی {{domxref("ServiceWorkerContainer","navigator.serviceWorker")}} در هر کلاینتی که تحت کنترل این service worker قرار می‌گیرد، آغاز شود.
 
-When a service worker is initially registered, pages won't use it until they next
-load. The `claim()` method causes those pages to be controlled immediately.
-Be aware that this results in your service worker controlling pages that loaded
-regularly over the network, or possibly via a different service worker.
+هنگامی که یک service worker برای اولین بار ثبت می‌شود، صفحات تا بارگذاری بعدی خود از آن استفاده نمی‌کنند. متد `claim()` باعث می‌شود آن صفحات بلافاصله تحت کنترل قرار گیرند. توجه داشته باشید که این کار سبب می‌شود service worker شما صفحاتی را کنترل کند که به‌طور عادی از طریق شبکه بارگذاری شده‌اند یا احتمالاً توسط یک service worker دیگر کنترل می‌شده‌اند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 claim()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to `undefined`.
+یک {{jsxref("Promise")}} که به `undefined` resolve می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example uses `claim()` inside service worker's `activate` event listener so that clients loaded in the same scope do not need to be reloaded before their fetches will go through this service worker.
+مثال زیر از `claim()` درون شنوندهٔ رویداد `activate` سرویس‌ورکر استفاده می‌کند تا کلاینت‌هایی که در همان حوزهٔ (scope) بارگذاری شده‌اند، پیش از اینکه درخواست‌هایشان از این سرویس‌ورکر عبور کند، نیازی به بارگذاری مجدد نداشته باشند.
 
 ```js
 self.addEventListener("activate", (event) => {
@@ -46,16 +36,16 @@ self.addEventListener("activate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-- [The service worker lifecycle](https://web.dev/articles/service-worker-lifecycle)
-- {{domxref("ServiceWorkerGlobalScope.skipWaiting()", "self.skipWaiting()")}} - skip the service worker's waiting phase
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [چرخهٔ حیات سرویس‌ورکر](https://web.dev/articles/service-worker-lifecycle)
+- {{domxref("ServiceWorkerGlobalScope.skipWaiting()", "self.skipWaiting()")}} - رد شدن از مرحلهٔ انتظار سرویس‌ورکر
