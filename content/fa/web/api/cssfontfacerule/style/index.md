@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFaceRule: style property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFaceRule/style"
-status: "needs-translation"
----
-
----
-title: "CSSFontFaceRule: style property"
 short-title: style
 slug: Web/API/CSSFontFaceRule/style
 page-type: web-api-instance-property
@@ -14,20 +8,19 @@ browser-compat: api.CSSFontFaceRule.style
 
 {{APIRef("CSSOM")}}
 
-The read-only **`style`** property of the {{domxref("CSSFontFaceRule")}} interface returns a {{domxref("CSSFontFaceDescriptors")}} object representing the descriptors available in the {{cssxref("@font-face")}} rule's body.
+ویژگی فقط خواندنی **`style`** در رابط {{domxref("CSSFontFaceRule")}} یک شیء از نوع {{domxref("CSSFontFaceDescriptors")}} را برمی‌گرداند که نشان‌دهندهٔ توصیف‌گرهای (descriptors) موجود در بدنهٔ قانون {{cssxref("@font-face")}} است.
 
-## Value
+## مقدار
 
-A {{domxref("CSSFontFaceDescriptors")}} object.
+یک شیء {{domxref("CSSFontFaceDescriptors")}}.
 
-Although the `style` property itself is read-only in the sense that you can't replace the `CSSFontFaceDescriptors` object, you can still assign to the `style` property directly, which is equivalent to assigning to its {{domxref("CSSStyleDeclaration/cssText", "cssText")}} property.
-You can also modify the `CSSFontFaceDescriptors` object using the {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} and {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} methods.
+اگرچه خود ویژگی `style` به این معنا فقط خواندنی است که نمی‌توانید شیء `CSSFontFaceDescriptors` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به `style` مقداردهی کنید که معادل مقداردهی به ویژگی {{domxref("CSSStyleDeclaration/cssText", "cssText")}} آن است. همچنین می‌توانید شیء `CSSFontFaceDescriptors` را با استفاده از روش‌های {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} و {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-This example defines a {{cssxref("@font-face")}} rule and then uses `CSSFontFaceDescriptors` to read back the descriptor values.
+این مثال یک قانون {{cssxref("@font-face")}} تعریف می‌کند و سپس از `CSSFontFaceDescriptors` برای خواندن مقادیر توصیف‌گرها استفاده می‌کند.
 
 #### CSS
 
@@ -87,14 +80,14 @@ for (const rule of myRules) {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Basic usage", "100%", "250px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
