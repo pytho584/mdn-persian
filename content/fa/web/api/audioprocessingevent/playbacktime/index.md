@@ -1,7 +1,7 @@
 ---
 title: "AudioProcessingEvent: playbackTime property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioProcessingEvent/playbackTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,13 +16,13 @@ browser-compat: api.AudioProcessingEvent.playbackTime
 
 {{APIRef("Web Audio API")}}{{Deprecated_header}}
 
-The **`playbackTime`** read-only property of the {{domxref("AudioProcessingEvent")}} interface represents the time when the audio will be played. It is in the same coordinate system as the time used by the {{domxref("AudioContext")}}.
+خاصیت فقط خواندنی **`playbackTime`** از رابط {{domxref("AudioProcessingEvent")}} نشان‌دهنده زمان پخش صدا است. این زمان در همان سیستم مختصات زمانی است که توسط {{domxref("AudioContext")}} استفاده می‌شود.
 
-## Value
+## مقدار
 
-A number that doesn't need to be an integer.
+عددی که نیازی به عدد صحیح بودن ندارد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioContext = new AudioContext();
@@ -49,15 +49,15 @@ processor.addEventListener("audioprocess", (event) => {
 processor.connect(audioContext.destination);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("AudioProcessingEvent")}}
 - {{domxref("ScriptProcessorNode")}}
