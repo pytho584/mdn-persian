@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: setLineDash() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: setLineDash() method"
 short-title: setLineDash()
 slug: Web/API/CanvasRenderingContext2D/setLineDash
 page-type: web-api-instance-method
@@ -14,14 +8,10 @@ browser-compat: api.CanvasRenderingContext2D.setLineDash
 
 {{APIRef("Canvas API")}}
 
-The **`setLineDash()`** method of the Canvas 2D API's
-{{domxref("CanvasRenderingContext2D")}} interface sets the line dash pattern used when
-stroking lines. It uses an array of values that specify alternating lengths of lines
-and gaps which describe the pattern.
+متد **`setLineDash()`** از رابط {{domxref("CanvasRenderingContext2D")}} در API Canvas 2D، الگوی خط‌چین را برای ترسیم خطوط تنظیم می‌کند. این متد از آرایه‌ای از مقادیر استفاده می‌کند که طول‌های متناوب خطوط و فاصله‌های خالی را مشخص می‌کنند و الگو را توصیف می‌نماید.
 
 > [!NOTE]
-> To return to using solid lines, set the line dash list to an
-> empty array.
+> برای بازگشت به خطوط توپر، لیست خط‌چین را روی یک آرایه خالی تنظیم کنید.
 
 ## Syntax
 
@@ -32,23 +22,17 @@ setLineDash(segments)
 ### Parameters
 
 - `segments`
-  - : An {{jsxref("Array")}} of numbers that specify distances to alternately draw a
-    line and a gap (in coordinate space units). If the number of elements in the array
-    is odd, the elements of the array get copied and concatenated. For example,
-    `[5, 15, 25]` will become `[5, 15, 25, 5, 15, 25]`. If the
-    array is empty, the line dash list is cleared and line strokes return to being
-    solid.
+  - : یک {{jsxref("Array")}} از اعداد که فاصله‌ها را برای ترسیم متناوب یک خط و یک فاصله خالی مشخص می‌کند (بر حسب واحد فضای مختصات). اگر تعداد عناصر آرایه فرد باشد، عناصر آرایه کپی و به هم الحاق می‌شوند. به عنوان مثال، `[5, 15, 25]` به `[5, 15, 25, 5, 15, 25]` تبدیل می‌شود. اگر آرایه خالی باشد، لیست خط‌چین پاک می‌شود و خطوط به حالت توپر بازمی‌گردند.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
-### Basic example
+### مثال پایه
 
-This example uses the `setLineDash()` method to draw a dashed line above a
-solid line.
+این مثال از متد `setLineDash()` برای رسم یک خط چین بالای یک خط توپر استفاده می‌کند.
 
 #### HTML
 
@@ -62,14 +46,14 @@ solid line.
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-// Dashed line
+// خط چین
 ctx.beginPath();
 ctx.setLineDash([5, 15]);
 ctx.moveTo(0, 50);
 ctx.lineTo(300, 50);
 ctx.stroke();
 
-// Solid line
+// خط توپر
 ctx.beginPath();
 ctx.setLineDash([]);
 ctx.moveTo(0, 100);
@@ -77,13 +61,13 @@ ctx.lineTo(300, 100);
 ctx.stroke();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Basic_example', 700, 180) }}
 
-### Some common patterns
+### چند الگوی رایج
 
-This example illustrates a variety of common line dash patterns.
+این مثال انواع مختلفی از الگوهای رایج خط‌چین را نشان می‌دهد.
 
 #### HTML
 
@@ -93,8 +77,7 @@ This example illustrates a variety of common line dash patterns.
 
 #### JavaScript
 
-The `drawDashedLine()` function created below makes the drawing of multiple
-dashed lines simple. It receives a pattern array as its only parameter.
+تابع `drawDashedLine()` که در زیر ساخته شده است، رسم چندین خط چین را ساده می‌کند. این تابع یک آرایه الگو را به عنوان تنها پارامتر خود دریافت می‌کند.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -116,10 +99,10 @@ drawDashedLine([10, 10]);
 drawDashedLine([20, 5]);
 drawDashedLine([15, 3, 3, 3]);
 drawDashedLine([20, 3, 3, 3, 3, 3, 3, 3]);
-drawDashedLine([12, 3, 3]); // Equals [12, 3, 3, 12, 3, 3]
+drawDashedLine([12, 3, 3]); // برابر است با [12, 3, 3, 12, 3, 3]
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Some_common_patterns', 700, 180) }}
 
@@ -133,6 +116,6 @@ drawDashedLine([12, 3, 3]); // Equals [12, 3, 3, 12, 3, 3]
 
 ## See also
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.getLineDash()")}}
 - {{domxref("CanvasRenderingContext2D.lineDashOffset")}}
