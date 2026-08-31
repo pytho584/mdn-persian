@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTCharacteristic: getDescriptors() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/getDescriptors"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,29 +16,26 @@ browser-compat: api.BluetoothRemoteGATTCharacteristic.getDescriptors
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTCharacteristic.getDescriptors()`** method
-returns a {{jsxref("Promise")}} that resolves to an {{jsxref("Array")}} of all
-{{domxref("BluetoothRemoteGATTDescriptor")}} objects for a given descriptor UUID.
+متد **`BluetoothRemoteGATTCharacteristic.getDescriptors()`** یک {{jsxref("Promise")}} برمی‌گرداند که به یک {{jsxref("Array")}} از همه اشیاء {{domxref("BluetoothRemoteGATTDescriptor")}} برای یک UUID توصیفگر معین حل می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getDescriptors(bluetoothDescriptorUUID)
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to an {{jsxref("Array")}}
-of {{domxref("BluetoothRemoteGATTDescriptor")}} objects.
+یک {{jsxref("Promise")}} که به یک {{jsxref("Array")}} از اشیاء {{domxref("BluetoothRemoteGATTDescriptor")}} حل می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
