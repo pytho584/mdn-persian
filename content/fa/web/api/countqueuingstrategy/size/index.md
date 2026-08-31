@@ -1,11 +1,5 @@
 ---
 title: "CountQueuingStrategy: size() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy/size"
-status: "needs-translation"
----
-
----
-title: "CountQueuingStrategy: size() method"
 short-title: size()
 slug: Web/API/CountQueuingStrategy/size
 page-type: web-api-instance-method
@@ -14,25 +8,23 @@ browser-compat: api.CountQueuingStrategy.size
 
 {{APIRef("Streams")}}{{AvailableInWorkers}}
 
-The **`size()`** method of the
-{{domxref("CountQueuingStrategy")}} interface always returns `1`, so that the
-total queue size is a count of the number of chunks in the queue.
+متد **`size()`** از رابط {{domxref("CountQueuingStrategy")}} همیشه `1` را برمی‌گرداند، به طوری که اندازه کل صف، تعداد تکه‌های موجود در صف است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 size()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
 `1`.
 
-## Examples
+## مثال‌ها
 
 ```js
 const queuingStrategy = new CountQueuingStrategy({ highWaterMark: 1 });
@@ -56,14 +48,14 @@ const writableStream = new WritableStream(
 const size = queuingStrategy.size();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("CountQueuingStrategy.CountQueuingStrategy", "CountQueuingStrategy()")}} constructor
+- سازنده {{domxref("CountQueuingStrategy.CountQueuingStrategy", "CountQueuingStrategy()")}}
