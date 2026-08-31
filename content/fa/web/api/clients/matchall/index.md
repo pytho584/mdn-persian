@@ -1,11 +1,5 @@
 ---
 title: "Clients: matchAll() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Clients/matchAll"
-status: "needs-translation"
----
-
----
-title: "Clients: matchAll() method"
 short-title: matchAll()
 slug: Web/API/Clients/matchAll
 page-type: web-api-instance-method
@@ -14,43 +8,29 @@ browser-compat: api.Clients.matchAll
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`matchAll()`** method of the {{domxref("Clients")}}
-interface returns a {{jsxref("Promise")}} for a list of service worker
-{{domxref("Client")}} objects. Include the `options` parameter to return all service worker
-clients whose origin is the same as the associated service worker's origin. If options
-are not included, the method returns only the service worker clients controlled by the
-service worker.
+متد **`matchAll()`** از رابط {{domxref("Clients")}} یک {{jsxref("Promise")}} برای فهرستی از اشیاء {{domxref("Client")}} سرویس‌ورکر برمی‌گرداند. پارامتر `options` را برای بازگرداندن تمام کلاینت‌های سرویس‌ورکر که مبدأ آن‌ها با مبدأ سرویس‌ورکر مرتبط یکسان است، وارد کنید. اگر گزینه‌ای وارد نشود، متد تنها کلاینت‌های سرویس‌ورکر تحت کنترل سرویس‌ورکر را برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 matchAll()
 matchAll(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An options object allowing you to set options for the matching operation. Available
-    options are:
+  - : یک شیء گزینه که به شما امکان می‌دهد گزینه‌هایی برای عملیات تطبیق تنظیم کنید. گزینه‌های موجود عبارتند از:
     - `includeUncontrolled`
-      - : A boolean value — if set to
-        `true`, the matching operation will return all service worker clients
-        who share the same origin as the current service worker. Otherwise, it returns
-        only the service worker clients controlled by the current service worker. The
-        default is `false`.
+      - : یک مقدار بولین — اگر روی `true` تنظیم شود، عملیات تطبیق تمام کلاینت‌های سرویس‌ورکر که مبدأ یکسانی با سرویس‌ورکر جاری دارند را برمی‌گرداند. در غیر این صورت، تنها کلاینت‌های سرویس‌ورکر تحت کنترل سرویس‌ورکر جاری را برمی‌گرداند. مقدار پیش‌فرض `false` است.
     - `type`
-      - : Sets the type of clients you want matched. Available values
-        are `"window"`, `"worker"`, `"sharedworker"`, and
-        `"all"`. The default is `"window"`.
+      - : نوع کلاینت‌هایی را که می‌خواهید مطابقت داده شوند، تنظیم می‌کند. مقادیر موجود عبارتند از `"window"`، `"worker"`، `"sharedworker"` و `"all"`. مقدار پیش‌فرض `"window"` است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to an array of {{domxref("Client")}} objects. In
-Chrome 46/Firefox 54 and later, this method returns clients in most recently focused
-order, correct as per spec.
+یک {{jsxref("Promise")}} که به یک آرایه از اشیاء {{domxref("Client")}} حل می‌شود. در کروم ۴۶/فایرفاکس ۵۴ و بعد از آن، این متد کلاینت‌ها را به ترتیب آخرین فوکوس شده برمی‌گرداند که مطابق با مشخصات است.
 
-## Examples
+## نمونه‌ها
 
 ```js
 clients.matchAll(options).then((clientList) => {
@@ -63,10 +43,10 @@ clients.matchAll(options).then((clientList) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
