@@ -1,7 +1,7 @@
 ---
 title: "AudioParam: setValueAtTime() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/setValueAtTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,38 +14,28 @@ browser-compat: api.AudioParam.setValueAtTime
 
 {{ APIRef("Web Audio API") }}
 
-The `setValueAtTime()` method of the
-{{domxref("AudioParam")}} interface schedules an instant change to the
-`AudioParam` value at a precise time, as measured against
-{{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}}. The new value is given in the value parameter.
+متد `setValueAtTime()` از رابط {{domxref("AudioParam")}} یک تغییر فوری در مقدار `AudioParam` را در زمان دقیقی، که بر اساس {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}} اندازه‌گیری می‌شود، زمان‌بندی می‌کند. مقدار جدید در پارامتر value داده می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setValueAtTime(value, startTime)
 ```
 
-### Parameters
+### پارامترها
 
 - `value`
-  - : A floating point number representing the value the AudioParam will change to at the
-    given time.
+  - : یک عدد اعشاری (floating point) که نشان‌دهنده مقداری است که AudioParam در زمان مشخص‌شده به آن تغییر خواهد کرد.
 - `startTime`
-  - : A double representing the time (in seconds) after the {{domxref("AudioContext")}}
-    was first created that the change in value will happen. If the time is less than {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}}, the change happens immediately. A {{jsxref("TypeError")}} is thrown if this value is negative.
+  - : یک عدد double که نشان‌دهنده زمان (به ثانیه) پس از ایجاد اولین بار {{domxref("AudioContext")}} است که تغییر مقدار در آن رخ می‌دهد. اگر این زمان کمتر از {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}} باشد، تغییر بلافاصله اتفاق می‌افتد. اگر این مقدار منفی باشد، یک {{jsxref("TypeError")}} پرتاب می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A reference to this `AudioParam` object. In some browsers older
-implementations of this interface return {{jsxref('undefined')}}.
+یک ارجاع به این شیء `AudioParam`. در برخی مرورگرها، پیاده‌سازی‌های قدیمی‌تر این رابط {{jsxref('undefined')}} را برمی‌گردانند.
 
-## Examples
+## مثال‌ها
 
-This simple example features a media element source with two control buttons (see our
-[webaudio-examples repo](https://github.com/mdn/webaudio-examples/blob/main/audio-param/index.html) for the source code, or [view the example live](https://mdn.github.io/webaudio-examples/audio-param/)). When the buttons are pressed, the `currGain` variable is
-incremented/decremented by 0.25, then the `setValueAtTime()` method is used
-to set the gain value equal to `currGain`, one second from now
-(`audioCtx.currentTime + 1`.)
+این مثال ساده شامل یک منبع رسانه‌ای (media element) با دو دکمه کنترل است (کد منبع را در [مخزن webaudio-examples](https://github.com/mdn/webaudio-examples/blob/main/audio-param/index.html) ببینید، یا [مثال را به صورت زنده مشاهده کنید](https://mdn.github.io/webaudio-examples/audio-param/)). وقتی دکمه‌ها فشرده می‌شوند، متغیر `currGain` به مقدار 0.25 افزایش/کاهش می‌یابد، سپس از متد `setValueAtTime()` برای تنظیم مقدار gain برابر با `currGain`، یک ثانیه بعد از حالا (`audioCtx.currentTime + 1`) استفاده می‌شود.
 
 ```js
 // create audio context
@@ -87,14 +77,14 @@ targetAtTimeMinus.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
