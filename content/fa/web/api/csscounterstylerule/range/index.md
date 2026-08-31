@@ -1,7 +1,5 @@
 ---
 title: "CSSCounterStyleRule: range property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSCounterStyleRule/range"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.CSSCounterStyleRule.range
 
 {{APIRef("CSSOM")}}
 
-The **`range`** property of the {{domxref("CSSCounterStyleRule")}} interface gets and sets the value of the {{cssxref("@counter-style/range","range")}} descriptor. If the descriptor does not have a value set, this attribute returns an empty string.
+خاصیت **`range`** در رابط {{domxref("CSSCounterStyleRule")}} مقدار توصیفگر {{cssxref("@counter-style/range","range")}} را خوانده و تنظیم می‌کند. اگر برای این توصیفگر مقداری تعیین نشده باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-The following example shows a {{cssxref("@counter-style")}} rule. In JavaScript, `myRules[0]` is this `@counter-style` rule, returning `range` gives us the value "2 4, 7 9".
+مثال زیر یک قانون {{cssxref("@counter-style")}} را نشان می‌دهد. در جاوااسکریپت، `myRules[0]` همین قانون `@counter-style` است و فراخوانی `range` مقدار `"2 4, 7 9"` را برمی‌گرداند.
 
 ```css
 @counter-style range-multi-example {
@@ -39,10 +37,10 @@ let myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].range); // "2 4, 7 9"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
