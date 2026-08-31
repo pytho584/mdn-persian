@@ -1,11 +1,5 @@
 ---
 title: "CloseEvent: wasClean property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/wasClean"
-status: "needs-translation"
----
-
----
-title: "CloseEvent: wasClean property"
 short-title: wasClean
 slug: Web/API/CloseEvent/wasClean
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CloseEvent.wasClean
 
 {{APIRef("Websockets API")}}{{AvailableInWorkers}}
 
-The **`wasClean`** read-only property of the {{domxref("CloseEvent")}} interface returns `true` if the connection closed cleanly.
+خاصیت فقط‑خواندنی **`wasClean`** از رابط {{domxref("CloseEvent")}} اگر اتصال به‌طور تمیز بسته شده باشد، `true` برمی‌گرداند.
 
-## Value
+## مقدار
 
-A boolean value. True if the connection closed cleanly, false otherwise.
+یک مقدار Boolean. اگر اتصال به‌طور تمیز بسته شده باشد `true`، در غیر این صورت `false`.
 
-## Examples
+## مثال‌ها
 
-The following example prints the value of `wasClean` to the console.
+مثال زیر مقدار `wasClean` را در کنسول چاپ می‌کند.
 
 ```js
 WebSocket.onclose = (event) => {
@@ -30,10 +24,10 @@ WebSocket.onclose = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
