@@ -1,23 +1,10 @@
 ---
 title: "CanvasRenderingContext2D: save() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/save"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: save() method"
-short-title: save()
-slug: Web/API/CanvasRenderingContext2D/save
-page-type: web-api-instance-method
-browser-compat: api.CanvasRenderingContext2D.save
 ---
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.save()`**
-method of the Canvas 2D API saves the entire state of the canvas by pushing the current
-state onto a stack.
+متد **`CanvasRenderingContext2D.save()`** از Canvas 2D API، کل وضعیت بوم (canvas) را با افزودن وضعیت فعلی به یک پشته (stack) ذخیره می‌کند.
 
 ## Syntax
 
@@ -27,20 +14,20 @@ save()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Description
 
-The drawing state that gets saved onto a stack consists of:
+وضعیت ترسیم که روی یک پشته ذخیره می‌شود شامل موارد زیر است:
 
-- The current transformation matrix.
-- The current clipping region.
-- The current dash list.
-- The current values of the following attributes:
+- ماتریس تبدیل فعلی.
+- ناحیه برش فعلی.
+- فهرست خط‌چین فعلی.
+- مقادیر فعلی ویژگی‌های زیر:
   - {{domxref("CanvasRenderingContext2D.direction", "direction")}}
   - {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}}
   - {{domxref("CanvasRenderingContext2D.filter", "filter")}}
@@ -70,11 +57,9 @@ The drawing state that gets saved onto a stack consists of:
 
 ## Examples
 
-### Saving the drawing state
+### ذخیره وضعیت ترسیم
 
-This example uses the `save()` method to save the current state and
-`restore()` to restore it later, so that you are able to draw a rect with the
-current state later.
+این مثال از متد `save()` برای ذخیره وضعیت فعلی و از `restore()` برای بازگردانی آن بعداً استفاده می‌کند، تا بتوانید بعداً یک مستطیل با وضعیت فعلی رسم کنید.
 
 #### HTML
 
@@ -100,7 +85,7 @@ ctx.restore();
 ctx.fillRect(150, 40, 100, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Saving_the_drawing_state', 700, 180) }}
 
