@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-posinset attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,15 +13,15 @@ spec-urls: https://w3c.github.io/aria/#aria-posinset
 sidebar: accessibilitysidebar
 ---
 
-The `aria-posinset` attribute defines an element's number or position in the current set of listitems or treeitems when not all items are present in the DOM.
+ویژگی `aria-posinset` شماره یا موقعیت یک عنصر را در مجموعه فعلی از listitem ها یا treeitem ها تعریف می‌کند، زمانی که همه آیتم‌ها در DOM وجود ندارند.
 
-## Description
+## توضیحات
 
-Short for "position in set", the `aria-posinset` attribute defines the position of the element within the whole set of listitems or treeitems when only a subset of the items are present in the DOM.
+ویژگی `aria-posinset` که مخفف «position in set» (موقعیت در مجموعه) است، موقعیت عنصر را در کل مجموعه listitem ها یا treeitem ها تعریف می‌کند، زمانی که تنها زیرمجموعه‌ای از آیتم‌ها در DOM وجود دارند.
 
-If all the items in a list are present in the DOM, the browser can calculate the total and the position of each, making `aria-posinset` unnecessary. When only a portion of a set is in the DOM, include `aria-posinset` to provide information about the element's position within the set along with [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) to inform the user how many items are in the full set.
+اگر همه آیتم‌های یک فهرست در DOM موجود باشند، مرورگر می‌تواند تعداد کل و موقعیت هر آیتم را محاسبه کند و در نتیجه `aria-posinset` ضروری نیست. زمانی که تنها بخشی از یک مجموعه در DOM وجود دارد، `aria-posinset` را به‌همراه [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) وارد کنید تا به کاربر اطلاع دهد در مجموعه کامل چند آیتم وجود دارد.
 
-The following example shows a listbox with four element options out of the 118 in the periodic table of chemical elements.
+مثال زیر یک جعبه‌فهرست (listbox) با چهار گزینه عنصر از میان ۱۱۸ عنصر جدول تناوبی عناصر شیمیایی را نشان می‌دهد.
 
 ```html
 <h2 id="periodic-table">Periodic table of chemical elements</h2>
@@ -33,30 +33,30 @@ The following example shows a listbox with four element options out of the 118 i
 </ul>
 ```
 
-The value of each `aria-posinset` is an integer greater than or equal to `1`, and less than or equal to the size of the set when that size is known.
+مقدار هر `aria-posinset` یک عدد صحیح بزرگ‌تر یا مساوی `1` و کوچک‌تر یا مساوی اندازه مجموعه است، زمانی که آن اندازه مشخص باشد.
 
 > [!NOTE]
-> When using `aria-posinset` you must also include value for [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize), which is the size of the entire set. If the size of the entire set is unknown, set `aria-setsize="-1"`.
+> هنگام استفاده از `aria-posinset` باید مقدار [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) را نیز وارد کنید که اندازه کل مجموعه است. اگر اندازه کل مجموعه نامشخص است، مقدار `aria-setsize="-1"` را تنظیم کنید.
 
-For [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role), [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role), or [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role), set the value of `aria-posinset` with respect to the total number of items in the menu, excluding any separators.
+برای [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role)، [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role) یا [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role)، مقدار `aria-posinset` را با توجه به تعداد کل آیتم‌های منو، به‌جز جداکننده‌ها، تنظیم کنید.
 
-In a [`feed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/feed_role), each {{HTMLElement('article')}} element has `aria-posinset` set to a value that represents its position in the feed along with the `aria-setsize` set to either the number of articles that have been loaded or the total number in the feed, depending on which value is most helpful to users.
+در یک [`feed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/feed_role)، هر عنصر {{HTMLElement('article')}} دارای `aria-posinset` است که به مقداری تنظیم شده که موقعیت آن را در فید نشان می‌دهد. همچنین `aria-setsize` یا به تعداد مقاله‌های بارگذاری‌شده یا به تعداد کل مقاله‌های موجود در فید تنظیم می‌شود، بسته به اینکه کدام مقدار برای کاربران مفیدتر است.
 
-## Values
+## مقادیر
 
 - `<integer>`
-  - : Integer greater than or equal to 1, and less than or equal to the value of `aria-setsize`.
+  - : عدد صحیح بزرگ‌تر یا مساوی 1 و کوچک‌تر یا مساوی مقدار `aria-setsize`.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaPosInSet")}}
-  - : The [`ariaPosInSet`](/en-US/docs/Web/API/Element/ariaPosInSet) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-posinset` attribute.
+  - : ویژگی [`ariaPosInSet`](/en-US/docs/Web/API/Element/ariaPosInSet) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-posinset` را بازتاب می‌دهد.
 - {{domxref("ElementInternals.ariaPosInSet")}}
-  - : The [`ariaPosInSet`](/en-US/docs/Web/API/ElementInternals/ariaPosInSet) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-posinset` attribute.
+  - : ویژگی [`ariaPosInSet`](/en-US/docs/Web/API/ElementInternals/ariaPosInSet) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-posinset` را بازتاب می‌دهد.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده‌شده در نقش‌ها:
 
 - [`article`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role)
 - [`associationlistitemkey`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structural_roles)
@@ -69,17 +69,17 @@ Used in roles:
 - [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
 - [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role)
 
-Inherits into roles:
+به نقش‌های زیر به ارث می‌رسد:
 
 - [`comment`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/comment_role)
 - [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role)
 - [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role)
 - [`treeitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treeitem_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize)
