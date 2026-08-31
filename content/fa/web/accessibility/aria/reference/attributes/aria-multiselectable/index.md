@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-multiselectable attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,160 +13,160 @@ spec-urls: https://w3c.github.io/aria/#aria-multiselectable
 sidebar: accessibilitysidebar
 ---
 
-The `aria-multiselectable` attribute indicates that the user may select more than one item from the current selectable descendants.
+ویژگی `aria-multiselectable` نشان می‌دهد که کاربر می‌تواند بیش از یک مورد را از بین فرزندان قابل انتخاب فعلی انتخاب کند.
 
-## Description
+## توضیحات
 
-The default behavior of selection lists, such as {{HTMLElement('select')}}, is to be able to choose only one item or option. By default or by convention, when a user is presented with list from which they must select an item, they assume they can only select a single item unless otherwise notified. The `aria-multiselectable` attribute is the way to inform assistive technology users that they may select more than one item from the current selectable items if they so choose. Lists and trees are examples of roles that might allow users to select more than one item at a time.
+رفتار پیش‌فرض لیست‌های انتخابی، مانند {{HTMLElement('select')}}، این است که فقط یک مورد یا گزینه قابل انتخاب است. به‌طور پیش‌فرض یا بر اساس قرارداد، وقتی کاربر با لیستی مواجه می‌شود که باید از آن یک مورد را انتخاب کند، فرض می‌کند که فقط می‌تواند یک مورد را انتخاب کند، مگر اینکه اطلاع‌رسانی دیگری شود. ویژگی `aria-multiselectable` روشی است برای اطلاع‌رسانی به کاربران فناوری کمکی که می‌توانند بیش از یک مورد را از بین موارد قابل انتخاب فعلی انتخاب کنند، در صورت تمایل. لیست‌ها و درختان نمونه‌هایی از نقش‌هایی هستند که ممکن است به کاربران اجازه دهند بیش از یک مورد را همزمان انتخاب کنند.
 
 > [!NOTE]
-> When allowing for multiple selections, inform the user that multiple values are allowed and provide directions on how to provide multiple values, such as "to select more than one value, keep the control key pressed during selection."
+> هنگام اجازه دادن به انتخاب‌های چندگانه، کاربر را از امکان انتخاب چند مقدار مطلع کنید و دستورالعمل‌هایی برای نحوه انتخاب چند مقدار ارائه دهید، مانند "برای انتخاب بیش از یک مقدار، کلید کنترل را در حین انتخاب نگه دارید."
 
-### Used with `aria-selected`
+### استفاده با `aria-selected`
 
-When the user does select one or more items, remember to set the selected descendants as selected with [`aria-selected="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected), and selectable descendants that are not selected have `aria-selected="false"` set. If an element is not selectable, omit the `aria-selected` attribute altogether as its presence informs the user the item is selectable.
+وقتی کاربر یک یا چند مورد را انتخاب می‌کند، به یاد داشته باشید که فرزندان انتخاب‌شده را با [`aria-selected="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) به عنوان انتخاب‌شده علامت‌گذاری کنید، و فرزندان قابل انتخاب که انتخاب نشده‌اند دارای `aria-selected="false"` باشند. اگر یک عنصر قابل انتخاب نیست، به‌کلی ویژگی `aria-selected` را حذف کنید، زیرا وجود آن به کاربر اطلاع می‌دهد که آیتم قابل انتخاب است.
 
-If a tree, grid, tab list, or list box supports selection of more than one node, the element with role [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role), [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role), [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role), or [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role) has `aria-multiselectable` set to `true`. Otherwise, `aria-multiselectable` is either set to `false` or the default value of false is implied.
+اگر یک درخت، شبکه، لیست زبانه‌ها یا جعبه لیست از انتخاب بیش از یک گره پشتیبانی می‌کند، عنصری با نقش [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role)، [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role)، [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role) یا [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role) دارای `aria-multiselectable` با مقدار `true` است. در غیر این صورت، `aria-multiselectable` یا روی `false` تنظیم می‌شود یا مقدار پیش‌فرض false ضمنی است.
 
-## Example
+## مثال
 
 ```html
-<p id="colorOptions">Choose the colors for your flag.</p>
+<p id="colorOptions">رنگ‌های پرچم خود را انتخاب کنید.</p>
 <ul
   tabindex="0"
   role="listbox"
   aria-labelledby="colorOptions"
   aria-multiselectable="true">
-  <li id="red" role="option" aria-selected="false">Red</li>
-  <li id="orange" role="option" aria-selected="false">Orange</li>
-  <li id="yellow" role="option" aria-selected="false">Yellow</li>
-  <li id="green" role="option" aria-selected="false">Green</li>
-  <li id="blue" role="option" aria-selected="false">Blue</li>
-  <li id="purple" role="option" aria-selected="false">Purple</li>
-  <li id="magenta" role="option" aria-selected="false">Hot pink</li>
-  <li id="lightpink" role="option" aria-selected="true">Light pink</li>
-  <li id="white" role="option" aria-selected="true">White</li>
-  <li id="lightblue" role="option" aria-selected="true">Light blue</li>
-  <li id="black" role="option" aria-selected="false">Black</li>
-  <li id="brown" role="option" aria-selected="false">Brown</li>
+  <li id="red" role="option" aria-selected="false">قرمز</li>
+  <li id="orange" role="option" aria-selected="false">نارنجی</li>
+  <li id="yellow" role="option" aria-selected="false">زرد</li>
+  <li id="green" role="option" aria-selected="false">سبز</li>
+  <li id="blue" role="option" aria-selected="false">آبی</li>
+  <li id="purple" role="option" aria-selected="false">بنفش</li>
+  <li id="magenta" role="option" aria-selected="false">صورتی تند</li>
+  <li id="lightpink" role="option" aria-selected="true">صورتی روشن</li>
+  <li id="white" role="option" aria-selected="true">سفید</li>
+  <li id="lightblue" role="option" aria-selected="true">آبی روشن</li>
+  <li id="black" role="option" aria-selected="false">سیاه</li>
+  <li id="brown" role="option" aria-selected="false">قهوه‌ای</li>
 </ul>
 ```
 
-This listbox supports multiple selection so we set the element with role `listbox` with `aria-multiselectable="true"`. All selected options have `aria-selected` set to `true`. All options that are not selected but are selectable have `aria-selected` set to false. Had we included options that were disabled or otherwise not selectable, we would have omitted the `aria-selected` attribute altogether. Including the attribute, even with no value or explicitly set to `false` indicates to assistive technology users that the item is selectable.
+این جعبه لیست از انتخاب چندگانه پشتیبانی می‌کند، بنابراین عنصر با نقش `listbox` را با `aria-multiselectable="true"` تنظیم می‌کنیم. تمام گزینه‌های انتخاب‌شده دارای `aria-selected` با مقدار `true` هستند. تمام گزینه‌هایی که انتخاب نشده‌اند اما قابل انتخاب هستند، دارای `aria-selected` با مقدار `false` هستند. اگر گزینه‌هایی را شامل می‌کردیم که غیرفعال یا غیرقابل انتخاب بودند، ویژگی `aria-selected` را به‌کلی حذف می‌کردیم. گنجاندن ویژگی، حتی بدون مقدار یا با مقدار صریح `false`، به کاربران فناوری کمکی نشان می‌دهد که آیتم قابل انتخاب است.
 
-The first rule of ARIA use is "if you can use a native feature with the semantics and behavior you require already built in, instead of repurposing an element and **adding** an ARIA role, state or property to make it accessible, then do so." Instead of creating an unordered list requiring [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex), ARIA and JavaScript to turn text into selectable options, we could have used a native multiselect: the {{htmlelement('select')}} element has a Boolean [`multiple`](/en-US/docs/Web/HTML/Reference/Elements/select#multiple) attribute. If included, the user can select multiple options. If not, only a single option can be selected.
+اولین قانون استفاده از ARIA این است: "اگر می‌توانید از یک ویژگی بومی با معناشناسی و رفتاری که نیاز دارید استفاده کنید، به جای تغییر کاربری یک عنصر و **افزودن** نقش، حالت یا ویژگی ARIA برای دسترسی‌پذیر کردن آن، این کار را انجام دهید." به جای ایجاد یک لیست نامرتب که نیاز به [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex)، ARIA و جاوااسکریپت برای تبدیل متن به گزینه‌های قابل انتخاب دارد، می‌توانستیم از یک انتخاب چندگانه بومی استفاده کنیم: عنصر {{htmlelement('select')}} دارای یک ویژگی بولی [`multiple`](/en-US/docs/Web/HTML/Reference/Elements/select#multiple) است. اگر شامل شود، کاربر می‌تواند چندین گزینه را انتخاب کند. اگر نه، فقط یک گزینه قابل انتخاب است.
 
 ```html
-<label for="flagcolors"> Choose the colors for your flag. </label>
+<label for="flagcolors"> رنگ‌های پرچم خود را انتخاب کنید. </label>
 <select multiple id="flagcolors">
-  <option value="red">Red</option>
-  <option value="orange">Orange</option>
-  <option value="yellow">Yellow</option>
-  <option value="green">Green</option>
-  <option value="blue">Blue</option>
-  <option value="purple">Purple</option>
-  <option value="magenta">Hot pink</option>
-  <option value="lightpink" selected>Light pink</option>
-  <option value="white" selected>White</option>
-  <option value="lightblue" selected>Light blue</option>
-  <option value="black">Black</option>
-  <option value="brown">Brown</option>
+  <option value="red">قرمز</option>
+  <option value="orange">نارنجی</option>
+  <option value="yellow">زرد</option>
+  <option value="green">سبز</option>
+  <option value="blue">آبی</option>
+  <option value="purple">بنفش</option>
+  <option value="magenta">صورتی تند</option>
+  <option value="lightpink" selected>صورتی روشن</option>
+  <option value="white" selected>سفید</option>
+  <option value="lightblue" selected>آبی روشن</option>
+  <option value="black">سیاه</option>
+  <option value="brown">قهوه‌ای</option>
 </select>
 ```
 
-This HTML `<select>` version is accessible and interactive, and needs no ARIA or JavaScript to function.
+این نسخه `<select>` HTML دسترسی‌پذیر و تعاملی است و نیازی به ARIA یا جاوااسکریپت برای عملکرد ندارد.
 
-If the above isn't stylable to your liking, you can also create a list of selectable options with HTML checkboxes, which is also semantic, focusable, and infinitely stylable with CSS:
+اگر موارد بالا مطابق سلیقه شما قابل استایل‌دهی نیستند، می‌توانید با چک‌باکس‌های HTML نیز لیستی از گزینه‌های قابل انتخاب ایجاد کنید، که همچنین معنایی، قابل تمرکز و با CSS بی‌نهایت قابل استایل‌دهی است:
 
 ```html
 <fieldset>
-  <legend>Choose the colors for your flag.</legend>
+  <legend>رنگ‌های پرچم خود را انتخاب کنید.</legend>
   <ul>
     <li>
-      <label><input type="checkbox" name="fc" value="red" />Red</label>
+      <label><input type="checkbox" name="fc" value="red" />قرمز</label>
     </li>
     <li>
-      <label><input type="checkbox" name="fc" value="orange" />Orange</label>
+      <label><input type="checkbox" name="fc" value="orange" />نارنجی</label>
     </li>
     <li>
-      <label><input type="checkbox" name="fc" value="yellow" />Yellow</label>
+      <label><input type="checkbox" name="fc" value="yellow" />زرد</label>
     </li>
     <li>
-      <label><input type="checkbox" name="fc" value="green" />Green</label>
+      <label><input type="checkbox" name="fc" value="green" />سبز</label>
     </li>
     <li>
-      <label><input type="checkbox" name="fc" value="blue" />Blue</label>
+      <label><input type="checkbox" name="fc" value="blue" />آبی</label>
     </li>
     <li>
-      <label><input type="checkbox" name="fc" value="purple" />Purple</label>
+      <label><input type="checkbox" name="fc" value="purple" />بنفش</label>
     </li>
     <li>
-      <label><input type="checkbox" name="fc" value="magenta" />Hot pink</label>
+      <label><input type="checkbox" name="fc" value="magenta" />صورتی تند</label>
     </li>
     <li>
       <label
-        ><input type="checkbox" name="fc" value="lightpink" checked />Light
-        pink</label
+        ><input type="checkbox" name="fc" value="lightpink" checked />صورتی
+        روشن</label
       >
     </li>
     <li>
       <label
-        ><input type="checkbox" name="fc" value="white" checked />White</label
+        ><input type="checkbox" name="fc" value="white" checked />سفید</label
       >
     </li>
     <li>
       <label
-        ><input type="checkbox" name="fc" value="lightblue" checked />Light
-        blue</label
+        ><input type="checkbox" name="fc" value="lightblue" checked />آبی
+        روشن</label
       >
     </li>
     <li>
-      <label><input type="checkbox" name="fc" value="black" />Black</label>
+      <label><input type="checkbox" name="fc" value="black" />سیاه</label>
     </li>
     <li>
-      <label><input type="checkbox" name="fc" value="brown" />Brown</label>
+      <label><input type="checkbox" name="fc" value="brown" />قهوه‌ای</label>
     </li>
   </ul>
 </fieldset>
 ```
 
-Instead of `aria-selected="true"`, include the [`checked`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox#checked) attribute. The browser does the rest.
+به جای `aria-selected="true"`، ویژگی [`checked`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox#checked) را شامل کنید. مرورگر بقیه کار را انجام می‌دهد.
 
-## Values
+## مقادیر
 
 - `true`
-  - : More than one item in the widget may be selected at a time
+  - : بیش از یک مورد در ویجت ممکن است همزمان انتخاب شوند.
 - `false`
-  - : Only one item can be selected
+  - : فقط یک مورد می‌تواند انتخاب شود.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaMultiSelectable")}}
-  - : The [`ariaMultiSelectable`](/en-US/docs/Web/API/Element/ariaMultiSelectable) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-multiselectable` attribute.
+  - : ویژگی [`ariaMultiSelectable`](/en-US/docs/Web/API/Element/ariaMultiSelectable)، بخشی از رابط {{domxref("Element")}}، مقدار ویژگی `aria-multiselectable` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaMultiSelectable")}}
-  - : The [`ariaMultiSelectable`](/en-US/docs/Web/API/ElementInternals/ariaMultiSelectable) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-multiselectable` attribute.
+  - : ویژگی [`ariaMultiSelectable`](/en-US/docs/Web/API/ElementInternals/ariaMultiSelectable)، بخشی از رابط {{domxref("ElementInternals")}}، مقدار ویژگی `aria-multiselectable` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+مورد استفاده در نقش‌ها:
 
 - [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role)
 - [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role)
 - [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role)
 - [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role)
 
-Inherited into roles:
+به ارث برده شده در نقش‌ها:
 
 - [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement('select')}} element
-- HTML {{HTMLElement('option')}} element
-- HTML {{HTMLElement('input')}} element
-- [multiple](/en-US/docs/Web/HTML/Reference/Attributes/multiple) attribute
+- عنصر HTML {{HTMLElement('select')}}
+- عنصر HTML {{HTMLElement('option')}}
+- عنصر HTML {{HTMLElement('input')}}
+- ویژگی [`multiple`](/en-US/docs/Web/HTML/Reference/Attributes/multiple)
 - [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected)
