@@ -1,7 +1,7 @@
 ---
 title: "AuthenticatorResponse: clientDataJSON property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorResponse/clientDataJSON"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,55 +14,42 @@ browser-compat: api.AuthenticatorResponse.clientDataJSON
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`clientDataJSON`** property of the {{domxref("AuthenticatorResponse")}} interface stores a [JSON](/en-US/docs/Learn_web_development/Core/Scripting/JSON) string in an
-{{jsxref("ArrayBuffer")}}, representing the client data that was passed to {{domxref("CredentialsContainer.create()", "navigator.credentials.create()")}} or {{domxref("CredentialsContainer.get()", "navigator.credentials.get()")}}. This property is only accessed on one of the child objects of `AuthenticatorResponse`, specifically {{domxref("AuthenticatorAttestationResponse")}} or {{domxref("AuthenticatorAssertionResponse")}}.
+ویژگی **`clientDataJSON`** در رابط {{domxref("AuthenticatorResponse")}} یک رشته [JSON](/en-US/docs/Learn_web_development/Core/Scripting/JSON) را در یک {{jsxref("ArrayBuffer")}} ذخیره می‌کند که داده‌های کلاینت ارسال‌شده به {{domxref("CredentialsContainer.create()", "navigator.credentials.create()")}} یا {{domxref("CredentialsContainer.get()", "navigator.credentials.get()")}} را نشان می‌دهد. این ویژگی فقط بر روی یکی از اشیاء فرزند `AuthenticatorResponse` قابل دسترسی است، به‌طور خاص {{domxref("AuthenticatorAttestationResponse")}} یا {{domxref("AuthenticatorAssertionResponse")}}.
 
-## Value
+## مقدار
 
-An {{jsxref("ArrayBuffer")}}.
+یک {{jsxref("ArrayBuffer")}}.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-After the `clientDataJSON` object is converted from an
-`ArrayBuffer` to a JavaScript object, it will have the following properties:
+پس از اینکه شیء `clientDataJSON` از یک `ArrayBuffer` به یک شیء جاوااسکریپت تبدیل شود، دارای ویژگی‌های زیر خواهد بود:
 
 - `challenge`
-  - : The [base64url](/en-US/docs/Glossary/Base64)
-    encoded version of the cryptographic challenge sent from the relying party's server.
-    The original value are passed as the `challenge` option in
-    {{domxref("CredentialsContainer.get()")}} or
-    {{domxref("CredentialsContainer.create()")}}.
+  - : نسخه‌ی کدگذاری‌شده‌ی [base64url](/en-US/docs/Glossary/Base64) از چالش رمزنگاری ارسال‌شده از سرور طرف اعتماد. مقدار اصلی به‌عنوان گزینه‌ی `challenge` در {{domxref("CredentialsContainer.get()")}} یا {{domxref("CredentialsContainer.create()")}} ارسال می‌شود.
 
 - `crossOrigin` {{optional_inline}}
-  - : A boolean. If set to `true`, it means that the calling context is an {{htmlelement("iframe")}} that is not same origin with its ancestor frames.
+  - : یک مقدار بولین. اگر روی `true` تنظیم شود، به این معنی است که زمینه‌ی فراخوانی یک {{htmlelement("iframe")}} است که با فریم‌های بالادستی خود هم‌مبدأ نیست.
 
 - `origin`
-  - : The fully qualified origin of the relying party which has been given by the
-    client/browser to the authenticator. We should expect the _relying party's
-    id_ to be a suffix of this value.
+  - : مبدأ کاملاً واجد شرایط (fully qualified) طرف اعتماد که توسط کلاینت/مرورگر به احرازهویت‌کننده (authenticator) داده شده است. باید انتظار داشته باشیم که _شناسه‌ی طرف اعتماد_ پسوندی از این مقدار باشد.
 
 - `tokenBinding` {{optional_inline}} {{deprecated_inline}}
-  - : An object describing the state of [the token binding protocol](https://datatracker.ietf.org/doc/html/rfc8471) for the communication with the relying party. It has two properties:
-    - `status`: A string which is either `"supported"` which
-      indicates the client support token binding but did not negotiate with the relying
-      party or `"present"` when token binding was used already
-    - `id`: A string which is the [base64url](/en-US/docs/Glossary/Base64)
-      encoding of the token binding ID which was used for the communication.
+  - : یک شیء که وضعیت [پروتکل اتصال توکن (token binding)](https://datatracker.ietf.org/doc/html/rfc8471) را برای ارتباط با طرف اعتماد توصیف می‌کند. این شیء دارای دو ویژگی است:
+    - `status`: یک رشته که یا `"supported"` است، که نشان می‌دهد کلاینت از اتصال توکن پشتیبانی می‌کند اما با طرف اعتماد مذاکره نکرده است، یا `"present"` زمانی که اتصال توکن قبلاً استفاده شده است.
+    - `id`: یک رشته که [base64url](/en-US/docs/Glossary/Base64) شناسه‌ی اتصال توکن (token binding ID) استفاده‌شده برای ارتباط است.
 
-    Should this property be absent, it would indicate that the client does not support
-    token binding.
+    اگر این ویژگی وجود نداشته باشد، نشان می‌دهد که کلاینت از اتصال توکن پشتیبانی نمی‌کند.
 
     > [!NOTE]
-    > `tokenBinding` is deprecated as of Level 3 of the spec, but the field is reserved so that it won't be reused for a different purpose.
+    > `tokenBinding` از سطح 3 (Level 3) مشخصات (spec) منسوخ شده است، اما این فیلد محفوظ است تا برای هدف دیگری استفاده نشود.
 
 - `topOrigin` {{optional_inline}}
-  - : Contains the fully qualified top-level origin of the relying party. It is set only if it `crossOrigin` is `true`.
+  - : شامل مبدأ کاملاً واجد شرایط سطح بالای طرف اعتماد است. فقط اگر `crossOrigin` برابر با `true` باشد تنظیم می‌شود.
 
 - `type`
-  - : A string which is either `"webauthn.get"` when an existing credential is
-    retrieved or `"webauthn.create"` when a new credential is created.
+  - : یک رشته که یا `"webauthn.get"` است زمانی که یک اعتبارنامه‌ی موجود بازیابی می‌شود، یا `"webauthn.create"` زمانی که یک اعتبارنامه‌ی جدید ایجاد می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 function arrayBufferToStr(buf) {
@@ -78,10 +65,10 @@ console.log(clientDataObj.challenge); // base64 encoded String containing the or
 console.log(clientDataObj.origin); // the window.origin
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
