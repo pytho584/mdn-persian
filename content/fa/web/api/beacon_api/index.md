@@ -1,7 +1,7 @@
 ---
 title: "Beacon API"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,33 +13,33 @@ browser-compat: api.Navigator.sendBeacon
 
 {{DefaultAPISidebar("Beacon")}}
 
-The **`Beacon`** API is used to send an asynchronous and non-blocking request to a web server. The request does not expect a response. Unlike requests made using {{domxref("XMLHttpRequest")}} or the [Fetch API](/en-US/docs/Web/API/Fetch_API), the browser guarantees to initiate beacon requests before the page is unloaded and to run them to completion.
+API **`Beacon`** برای ارسال یک درخواست ناهمگام و غیرمسدودکننده به یک وب‌سرور استفاده می‌شود. این درخواست انتظار پاسخی ندارد. برخلاف درخواست‌هایی که با استفاده از {{domxref("XMLHttpRequest")}} یا [Fetch API](/en-US/docs/Web/API/Fetch_API) ساخته می‌شوند، مرورگر تضمین می‌کند که درخواست‌های beacon را قبل از تخلیه صفحه آغاز کند و آن‌ها را تا پایان اجرا کند.
 
-The main use case for the Beacon API is to send analytics such as client-side events or session data to the server. Historically, websites have used {{domxref("XMLHttpRequest")}} for this, but browsers do not guarantee to send these asynchronous requests in some circumstances (for example, if the page is about to be unloaded). To combat this, websites have resorted to various techniques, such as making the request synchronous, that have a bad effect on responsiveness. Because beacon requests are both asynchronous and guaranteed to be sent, they combine good performance characteristics and reliability.
+کاربرد اصلی API Beacon ارسال داده‌های تحلیلی مانند رویدادهای سمت کلاینت یا داده‌های نشست به سرور است. از لحاظ تاریخی، وب‌سایت‌ها از {{domxref("XMLHttpRequest")}} برای این کار استفاده کرده‌اند، اما مرورگرها در برخی شرایط ارسال این درخواست‌های ناهمگام را تضمین نمی‌کنند (مثلاً اگر صفحه در آستانه تخلیه باشد). برای مقابله با این مشکل، وب‌سایت‌ها به تکنیک‌های مختلفی متوسل شده‌اند، مانند همگام کردن درخواست، که تأثیر بدی بر پاسخگویی دارند. از آنجا که درخواست‌های beacon هم ناهمگام هستند و هم ارسال آن‌ها تضمین شده است، ترکیبی از ویژگی‌های عملکرد خوب و قابلیت اطمینان را دارند.
 
-For more details about the motivation for and usage of this API, see the documentation for the {{domxref("navigator.sendBeacon()")}} method.
+برای جزئیات بیشتر درباره انگیزه و استفاده از این API، مستندات متد {{domxref("navigator.sendBeacon()")}} را ببینید.
 
 > [!NOTE]
-> This API is _not available_ in [Web Workers](/en-US/docs/Web/API/Web_Workers_API) (not exposed via {{domxref("WorkerNavigator")}}).
+> این API در [Web Workers](/en-US/docs/Web/API/Web_Workers_API) _در دسترس نیست_ (از طریق {{domxref("WorkerNavigator")}} در معرض دید قرار نمی‌گیرد).
 
-## Interfaces
+## رابط‌ها
 
-This API defines a single method: {{domxref("navigator.sendBeacon()")}}.
+این API یک متد واحد را تعریف می‌کند: {{domxref("navigator.sendBeacon()")}}.
 
-The method takes two arguments, the URL and the data to send in the request. The data argument is optional and its type may be a string, an {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, a {{jsxref("DataView")}}, a {{domxref("ReadableStream")}}, a {{domxref("Blob")}}, a {{domxref("FormData")}} object, or a {{domxref("URLSearchParams")}} object. If the browser successfully queues the request for delivery, the method returns `true`; otherwise, it returns `false`.
+این متد دو آرگومان می‌گیرد: URL و داده‌ای که در درخواست ارسال می‌شود. آرگومان داده اختیاری است و نوع آن ممکن است یک رشته، یک {{jsxref("ArrayBuffer")}}، یک {{jsxref("TypedArray")}}، یک {{jsxref("DataView")}}، یک {{domxref("ReadableStream")}}، یک {{domxref("Blob")}}، یک شیء {{domxref("FormData")}} یا یک شیء {{domxref("URLSearchParams")}} باشد. اگر مرورگر با موفقیت درخواست را برای ارسال در صف قرار دهد، متد `true` برمی‌گرداند؛ در غیر این صورت `false` برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Beacon standard](https://w3c.github.io/beacon/)
-- [Beacon CanIUse data](https://caniuse.com/#search=beacon)
-- [Intercepting beacons through service workers](https://ehsanakhgari.org/blog/2015-04-08/intercepting-beacons-through-service-workers/); Ehsan Akhgari; 2015-Apr-08
+- [استاندارد Beacon](https://w3c.github.io/beacon/)
+- [داده‌های CanIUse برای Beacon](https://caniuse.com/#search=beacon)
+- [رهگیری beacon‌ها از طریق service workers](https://ehsanakhgari.org/blog/2015-04-08/intercepting-beacons-through-service-workers/)؛ Ehsan Akhgari؛ 2015-Apr-08
 - <https://webkit.org/blog/8821/link-click-analytics-and-privacy/>
-- [Beaconing in Practice](https://calendar.perfplanet.com/2020/beaconing-in-practice/)
+- [ارسال Beacon در عمل](https://calendar.perfplanet.com/2020/beaconing-in-practice/)
