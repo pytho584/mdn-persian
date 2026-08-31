@@ -1,7 +1,7 @@
 ---
 title: "AudioParam: defaultValue property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/defaultValue"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,16 +14,13 @@ browser-compat: api.AudioParam.defaultValue
 
 {{APIRef("Web Audio API")}}
 
-The **`defaultValue`**
-read-only property of the {{ domxref("AudioParam") }} interface represents the initial
-value of the attributes as defined by the specific {{domxref("AudioNode")}} creating
-the `AudioParam`.
+**`defaultValue`** ویژگی فقط-خواندنی از رابط {{ domxref("AudioParam") }} مقدار اولیه ویژگی‌ها را مطابق با آنچه توسط {{domxref("AudioNode")}} خاصی که `AudioParam` را ایجاد کرده است، نشان می‌دهد.
 
-## Value
+## مقدار
 
-A floating-point {{jsxref("Number")}}.
+یک {{jsxref("Number")}} ممیز شناور.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new AudioContext();
@@ -33,14 +30,14 @@ console.log(defaultVal); // 1
 console.log(defaultVal === gainNode.gain.value); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
