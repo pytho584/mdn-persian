@@ -1,7 +1,7 @@
 ---
 title: "ARIA: table role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,7 +15,7 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `table` value of the ARIA `role` attribute identifies the element containing the role as having a non-interactive table structure containing data arranged in rows and columns, similar to the native {{HTMLElement('table')}} HTML element.
+مقدار `table` از ویژگی `role` در ARIA، عنصری که این نقش را دارد را به عنوان یک ساختار جدول غیرتعاملی شامل داده‌های مرتب‌شده در سطرها و ستون‌ها، مشابه عنصر HTML بومی {{HTMLElement('table')}}، شناسایی می‌کند.
 
 ```html
 <div
@@ -53,51 +53,51 @@ The `table` value of the ARIA `role` attribute identifies the element containing
 </div>
 ```
 
-## Description
+## توضیحات
 
-An element with `role="table"` is a static tabular structure with rows containing cells. The cells are not focusable or selectable, though widgets within individual cells of the table can be interactive. Using a native HTML {{HTMLElement('table')}} element whenever possible is strongly encouraged.
+یک عنصر با `role="table"` یک ساختار جدولی ایستا با سطرهایی شامل سلول‌ها است. سلول‌ها قابل تمرکز یا انتخاب نیستند، اگرچه ویجت‌های داخل سلول‌های جداگانه جدول می‌توانند تعاملی باشند. استفاده از عنصر HTML بومی {{HTMLElement('table')}} تا حد امکان به شدت توصیه می‌شود.
 
 > [!WARNING]
-> If a table maintains a selection state, has two-dimensional navigation, or allows the user to rearrange cell order use [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) or [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) instead.
+> اگر یک جدول حالت انتخاب را حفظ می‌کند، ناوبری دو بعدی دارد، یا به کاربر اجازه می‌دهد ترتیب سلول‌ها را تغییر دهد، به جای آن از [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) یا [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) استفاده کنید.
 
-To create an ARIA table, add `role="table"` to the container element. Within that container, each row has `role="row"` set and contains child cells. Each cell has a role of either `columnheader`, `rowheader`, or `cell`. Rows can be children of the table or within a `rowgroup`.
+برای ایجاد یک جدول ARIA، `role="table"` را به عنصر ظرف اضافه کنید. درون آن ظرف، هر سطر دارای `role="row"` است و شامل سلول‌های فرزند می‌شود. هر سلول یکی از نقش‌های `columnheader`، `rowheader` یا `cell` را دارد. سطرها می‌توانند فرزندان جدول یا درون یک `rowgroup` باشند.
 
-The table caption can be defined via [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label). All other semantic table elements, such as {{HTMLElement('tbody')}}, {{HTMLElement('thead')}}, {{HTMLElement('tr')}}, {{HTMLElement('th')}}, and {{HTMLElement('td')}}, need to be added via associated roles, such as `rowgroup`, `row`, `columnheader`, and `cell`.
+عنوان جدول را می‌توان از طریق [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) یا [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) تعریف کرد. تمام عناصر جدول معنایی دیگر، مانند {{HTMLElement('tbody')}}، {{HTMLElement('thead')}}، {{HTMLElement('tr')}}، {{HTMLElement('th')}} و {{HTMLElement('td')}}، باید از طریق نقش‌های مرتبط مانند `rowgroup`، `row`، `columnheader` و `cell` اضافه شوند.
 
-If the table contains sortable columns or rows, the [`aria-sort`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-sort) attribute should be added on the header cell element (not the table itself). If any rows or columns are hidden, the [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount) or [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) should be included indicating the total number of columns or rows, respectively, along with the [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) or [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) on each cell. The [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) or [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) is set to the position of a cell within the row or column, respectively. If the table includes cells that span multiple rows or multiple columns, then [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan) or [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan) should be included as well. Realize, it is much simpler to use the {{HTMLElement('table')}} element, along with all the related semantic elements and attributes that are all supported by all assistive technologies.
+اگر جدول شامل ستون‌ها یا سطرهای قابل مرتب‌سازی است، ویژگی [`aria-sort`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-sort) باید روی عنصر سلول سرستون (نه خود جدول) اضافه شود. اگر هر سطر یا ستونی پنهان است، باید [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount) یا [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) به ترتیب برای نشان دادن تعداد کل ستون‌ها یا سطرها، همراه با [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) یا [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) روی هر سلول گنجانده شود. [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) یا [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) به ترتیب به موقعیت یک سلول درون سطر یا ستون تنظیم می‌شود. اگر جدول شامل سلول‌هایی است که چندین سطر یا چندین ستون را پوشش می‌دهند، باید [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan) یا [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan) نیز گنجانده شود. توجه داشته باشید که استفاده از عنصر {{HTMLElement('table')}} به همراه تمام عناصر و ویژگی‌های معنایی مرتبط که توسط تمام فناوری‌های کمکی پشتیبانی می‌شوند، بسیار ساده‌تر است.
 
-To create an interactive widget that has a tabular structure, use the `grid` pattern instead. If the interaction provides for the selection state of individual cells, if left to right and top to bottom navigation is provided, or if the user interface allows the rearranging of cell order or otherwise changing individual cell order such as through drag and drop, use [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) or [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) instead.
+برای ایجاد یک ویجت تعاملی که ساختار جدولی دارد، به جای آن از الگوی `grid` استفاده کنید. اگر تعامل حالت انتخاب سلول‌های جداگانه را فراهم می‌کند، ناوبری از چپ به راست و بالا به پایین ارائه می‌شود، یا اگر رابط کاربری امکان تغییر ترتیب سلول‌ها یا تغییر ترتیب سلول‌های جداگانه مانند کشیدن و رها کردن را فراهم می‌کند، به جای آن از [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) یا [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) استفاده کنید.
 
 > [!NOTE]
-> Using a native HTML table element whenever possible is strongly encouraged.
+> استفاده از عنصر جدول HTML بومی تا حد امکان به شدت توصیه می‌شود.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
 - `role="rowgroup"`
-  - : An optional child of the table, the row group encapsulates a group of rows, similar to {{HTMLElement('thead')}}, {{HTMLElement('tbody')}}, and {{HTMLElement('tfoot')}}.
+  - : یک فرزند اختیاری جدول، گروه سطر یک گروه از سطرها را محصور می‌کند، مشابه {{HTMLElement('thead')}}، {{HTMLElement('tbody')}} و {{HTMLElement('tfoot')}}.
 - [`role="row"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
-  - : A row within the table, and optionally within a rowgroup that contains one or more cells, column headers, or row headers.
-- [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) attribute
-  - : Takes as its value the id of the element that serves as a description for the table.
-- [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) attribute
-  - : The [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) provides an accessible name for the table.
-- [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount) attribute
-  - : This attribute is only required if the columns are not present in the DOM all the time. It provides an explicit indication of the number of columns in the full table. Set the value to the total number of columns in the full table. If unknown, set `aria-colcount="-1"`.
-- [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) attribute
-  - : This attribute is only required if the rows are not present in the DOM all the time, such as scrollable tables that reuse rows to minimize the number of DOM nodes. It provides an explicit indication of the number of rows in the full table. Set the value to the total number of rows in the full table. If unknown, set `aria-rowcount="-1"`.
+  - : یک سطر درون جدول، و به صورت اختیاری درون یک rowgroup که شامل یک یا چند سلول، سرستون‌های ستون یا سرستون‌های سطر است.
+- ویژگی [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby)
+  - : مقدار آن id عنصری است که به عنوان توضیحی برای جدول عمل می‌کند.
+- ویژگی [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
+  - : [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یک نام قابل دسترس برای جدول فراهم می‌کند.
+- ویژگی [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount)
+  - : این ویژگی فقط زمانی لازم است که ستون‌ها همیشه در DOM حضور نداشته باشند. این یک نشانه صریح از تعداد ستون‌ها در جدول کامل ارائه می‌دهد. مقدار را به تعداد کل ستون‌های جدول کامل تنظیم کنید. اگر نامشخص است، `aria-colcount="-1"` را تنظیم کنید.
+- ویژگی [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount)
+  - : این ویژگی فقط زمانی لازم است که سطرها همیشه در DOM حضور نداشته باشند، مانند جداول قابل پیمایش که سطرها را برای به حداقل رساندن تعداد گره‌های DOM دوباره استفاده می‌کنند. این یک نشانه صریح از تعداد سطرها در جدول کامل ارائه می‌دهد. مقدار را به تعداد کل سطرهای جدول کامل تنظیم کنید. اگر نامشخص است، `aria-rowcount="-1"` را تنظیم کنید.
 
-### Keyboard interactions
+### تعاملات صفحه کلید
 
-None.
+هیچ‌کدام.
 
-### Required JavaScript features
+### ویژگی‌های JavaScript مورد نیاز
 
-None. For sortable columns, see the [columnheader](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) aria role.
+هیچ‌کدام. برای ستون‌های قابل مرتب‌سازی، به نقش aria [columnheader](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) مراجعه کنید.
 
 > [!NOTE]
-> The first rule of ARIA use is if you can use a native feature with the semantics and behavior you require already built in, instead of re-purposing an element and **adding** an ARIA role, state or property to make it accessible, then do so. Employ the HTML {{HTMLElement('table')}} element instead of the ARIA role of table whenever possible.
+> اولین قانون استفاده از ARIA این است که اگر می‌توانید از یک ویژگی بومی با معناشناسی و رفتاری که نیاز دارید استفاده کنید، به جای تغییر کاربری یک عنصر و **افزودن** نقش، حالت یا ویژگی ARIA برای دسترس‌پذیر کردن آن، این کار را انجام دهید. تا حد امکان از عنصر HTML {{HTMLElement('table')}} به جای نقش جدول ARIA استفاده کنید.
 
-## Examples
+## مثال‌ها
 
 ```html
 <div
@@ -135,17 +135,17 @@ None. For sortable columns, see the [columnheader](/en-US/docs/Web/Accessibility
 </div>
 ```
 
-The above is part of a table. While the full table has 81 entries, as indicated by the [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) property, only four are currently visible. The columns are sortable, but not currently sorted, as indicated by the [`aria-sort`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-sort) property on the column headers.
+مثال بالا بخشی از یک جدول است. در حالی که جدول کامل 81 ورودی دارد، همانطور که توسط ویژگی [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) نشان داده شده است، تنها چهار مورد در حال حاضر قابل مشاهده هستند. ستون‌ها قابل مرتب‌سازی هستند، اما در حال حاضر مرتب نشده‌اند، همانطور که توسط ویژگی [`aria-sort`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-sort) روی سرستون‌های ستون نشان داده شده است.
 
-## Best practices
+## بهترین روش‌ها
 
-Only use {{HTMLElement('table')}}, {{HTMLElement('tbody')}}, {{HTMLElement('thead')}}, {{HTMLElement('tr')}}, {{HTMLElement('th')}}, {{HTMLElement('td')}}, etc., for data table structure. You can add these ARIA roles to ensure accessibility should the native semantics of the table be removed, such as with CSS. A relevant use case for the ARIA table role is when CSS's display property overrides the native semantics of a table, such as by `display: grid`. In this case, you can use the ARIA table roles to re-add the semantics.
+فقط از {{HTMLElement('table')}}، {{HTMLElement('tbody')}}، {{HTMLElement('thead')}}، {{HTMLElement('tr')}}، {{HTMLElement('th')}}، {{HTMLElement('td')}} و غیره برای ساختار جدول داده استفاده کنید. می‌توانید این نقش‌های ARIA را اضافه کنید تا در صورت حذف معناشناسی بومی جدول، مانند با CSS، دسترس‌پذیری تضمین شود. یک مورد استفاده مرتبط برای نقش جدول ARIA زمانی است که ویژگی display CSS معناشناسی بومی جدول را لغو می‌کند، مانند `display: grid`. در این مورد، می‌توانید از نقش‌های جدول ARIA برای افزودن مجدد معناشناسی استفاده کنید.
 
 ## Specifications
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [Learn: HTML table accessibility](/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility)
 - [Learn: HTML table basics](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics)
