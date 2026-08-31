@@ -1,10 +1,4 @@
 ---
-title: "Using channel messaging"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging"
-status: "needs-translation"
----
-
----
 title: Using channel messaging
 slug: Web/API/Channel_Messaging_API/Using_channel_messaging
 page-type: guide
@@ -15,32 +9,32 @@ browser-compat:
 
 {{DefaultAPISidebar("Channel Messaging API")}} {{AvailableInWorkers}}
 
-The [Channel Messaging API](/en-US/docs/Web/API/Channel_Messaging_API) allows two separate scripts running in different browsing contexts attached to the same document (e.g., two {{HTMLElement("iframe")}} elements, the main document and a single {{HTMLElement("iframe")}}, or two documents via a {{domxref("SharedWorker")}}) to communicate directly, passing messages between each other through two-way channels (or pipes) with a port at each end.
+[Channel Messaging API](/en-US/docs/Web/API/Channel_Messaging_API) به دو اسکریپت مجزا که در زمینه‌های مرورگری متفاوتِ متصل به یک سند واحد اجرا می‌شوند (مثلاً دو عنصر {{HTMLElement("iframe")}}، سند اصلی و یک {{HTMLElement("iframe")}}، یا دو سند از طریق یک {{domxref("SharedWorker")}}) اجازه می‌دهد مستقیماً با یکدیگر ارتباط برقرار کنند و پیام‌ها را از طریق کانال‌های دوطرفه (یا لوله‌ها) که در هر انتها یک پورت دارند، بین خود رد و بدل کنند.
 
-In this article we'll explore the basics of using this technology.
+در این مقاله، اصول اولیه استفاده از این فناوری را بررسی خواهیم کرد.
 
-## Use cases
+## موارد استفاده
 
-Channel messaging is mainly useful in cases where you've got a social site that embeds capabilities from other sites into its main interface via iframes, such as games, address books or an audio player with personalized music choices. When these act as standalone units, things are OK, but the difficulty comes when you want interaction between the main site and the {{HTMLElement("iframe")}} elements, or between different {{HTMLElement("iframe")}} elements. For example, what if you wanted to add a contact to the address book from the main site, add high scores from your game to your main profile, or add new background music choices from the audio player to the game? Such things are not so easy using conventional web technology, because of the security models the web uses. You have to think about whether the origins trust each other, and how the messages are passed.
+پیام‌رسانی کانال عمدتاً در مواردی مفید است که یک سایت اجتماعی قابلیت‌هایی را از سایت‌های دیگر از طریق iframe در رابط اصلی خود جاسازی می‌کند، مانند بازی‌ها، دفترچه‌های آدرس یا یک پخش‌کننده صوتی با انتخاب‌های موسیقی شخصی‌سازی‌شده. وقتی این‌ها به‌عنوان واحدهای مستقل عمل می‌کنند، همه‌چیز روبهراه است؛ اما وقتی می‌خواهید بین سایت اصلی و عناصر {{HTMLElement("iframe")}} یا بین عناصر مختلف {{HTMLElement("iframe")}} تعامل برقرار کنید، کار دشوار می‌شود. مثلاً اگر بخواهید از سایت اصلی یک مخاطب به دفترچه آدرس اضافه کنید، امتیازهای بالای بازیتان را به پروفایل اصلی خود بیفزایید، یا انتخاب‌های موسیقی پس‌زمینه جدیدی از پخش‌کننده صوتی به بازی اضافه کنید، چه؟ چنین کارهایی با فناوری مرسوم وب چندان آسان نیستند، زیرا مدل‌های امنیتی‌ای که وب استفاده می‌کند، ایجاب می‌کند به این بیندیشید که آیا مبدأها (origins) به یکدیگر اعتماد دارند و پیام‌ها چگونه رد و بدل می‌شوند.
 
-Message channels on the other hand can provide a secure channel that allows you to pass data between different browsing contexts.
+از سوی دیگر، کانال‌های پیام می‌توانند یک کانال امن فراهم کنند که به شما امکان می‌دهد داده‌ها را بین زمینه‌های مرورگری مختلف رد و بدل کنید.
 
 > [!NOTE]
-> For more information and ideas, the [Ports as the basis of an object-capability model on the Web](https://html.spec.whatwg.org/multipage/comms.html#ports-as-the-basis-of-an-object-capability-model-on-the-web) section of the spec is a useful read.
+> برای اطلاعات و ایده‌های بیشتر، بخش [Ports as the basis of an object-capability model on the Web](https://html.spec.whatwg.org/multipage/comms.html#ports-as-the-basis-of-an-object-capability-model-on-the-web) از مشخصات مرجع، مطالعه مفیدی است.
 
-## Simple examples
+## مثال‌های ساده
 
-To get you started, we have published a couple of demos on GitHub. First, check our [channel messaging basic demo](https://github.com/mdn/dom-examples/tree/main/channel-messaging-basic) ([run it live too](https://mdn.github.io/dom-examples/channel-messaging-basic/)), which shows a really simple single message transfer between a page and an embedded {{htmlelement("iframe")}}.
+برای شروع، چند دمو در GitHub منتشر کرده‌ایم. اول، [دموی پایه پیام‌رسانی کانال](https://github.com/mdn/dom-examples/tree/main/channel-messaging-basic) را ببینید ([و به‌صورت زنده هم اجرایش کنید](https://mdn.github.io/dom-examples/channel-messaging-basic/)) که یک انتقال ساده تک‌پیام بین یک صفحه و یک {{htmlelement("iframe")}} تعبیه‌شده را نشان می‌دهد.
 
-Second, have a look at our [multimessaging demo](https://github.com/mdn/dom-examples/tree/main/channel-messaging-multimessage) ([run this live](https://mdn.github.io/dom-examples/channel-messaging-multimessage/)), which shows a slightly more complex setup that can send multiple messages between the main page and an IFrame.
+دوم، به [دموی چندپیامه](https://github.com/mdn/dom-examples/tree/main/channel-messaging-multimessage) ما نگاهی بیندازید ([آن را به‌صورت زنده اجرا کنید](https://mdn.github.io/dom-examples/channel-messaging-multimessage/)) که یک ساختار کمی پیچیده‌تر را نشان می‌دهد و می‌تواند چندین پیام را بین صفحه اصلی و یک IFrame ارسال کند.
 
-We'll be focusing on the latter example in this article, which looks like:
+در این مقاله روی همین مثال دوم تمرکز خواهیم کرد که به این شکل است:
 
 ![Demo with "Hello this is my demo" sent as five separate messages. The messages are displayed as a bulleted list.](channel-messaging-demo.png)
 
-## Creating the channel
+## ایجاد کانال
 
-In the main page of the demo, we have a simple form with a text input for entering messages to be sent to an {{htmlelement("iframe")}}. We also have a paragraph which we will use later on to display confirmation messages that we will receive back from the {{htmlelement("iframe")}}.
+در صفحه اصلی دمو، یک فرم ساده با یک فیلد متنی برای وارد کردن پیام‌هایی که قرار است به یک {{htmlelement("iframe")}} ارسال شوند داریم. همچنین یک پاراگراف داریم که بعداً از آن برای نمایش پیام‌های تأییدی که از {{htmlelement("iframe")}} دریافت خواهیم کرد استفاده می‌کنیم.
 
 ```js
 const input = document.getElementById("message-input");
@@ -78,21 +72,21 @@ function onMessage(e) {
 }
 ```
 
-We start off by creating a new message channel by using the {{domxref("MessageChannel.MessageChannel","MessageChannel()")}} constructor.
+ما با استفاده از سازنده {{domxref("MessageChannel.MessageChannel","MessageChannel()")}} یک کانال پیام جدید می‌سازیم.
 
-When the IFrame has loaded, we register an `onclick` handler for our button and an `onmessage` handler for {{domxref("MessageChannel.port1")}}. Finally we transfer {{domxref("MessageChannel.port2")}} to the IFrame using the {{domxref("window.postMessage")}} method.
+وقتی IFrame بارگذاری شد، یک کنترل‌کننده `onclick` برای دکمه و یک کنترل‌کننده `onmessage` برای {{domxref("MessageChannel.port1")}} ثبت می‌کنیم. در نهایت، {{domxref("MessageChannel.port2")}} را با استفاده از متد {{domxref("window.postMessage")}} به IFrame منتقل می‌کنیم.
 
-Let's explore how the `iframe.contentWindow.postMessage` line works in more detail. It takes three arguments:
+بیایید دقیق‌تر ببینیم خط `iframe.contentWindow.postMessage` چگونه کار می‌کند. این خط سه آرگومان می‌گیرد:
 
-1. The message being sent. For this initial port transferring this message could be an empty string but in this example it is set to `'init'`.
-2. The origin the message is to be sent to. `*` means "any origin".
-3. An object, the ownership of which is transferred to the receiving browsing context. In this case, we are transferring {{domxref("MessageChannel.port2")}} to the IFrame, so it can be used to communicate with the main page.
+1. پیامی که ارسال می‌شود. برای این انتقال اولیه پورت، این پیام می‌تواند یک رشته خالی باشد، اما در این مثال روی `'init'` تنظیم شده است.
+2. مبدأ (origin) مقصدی که پیام باید به آن ارسال شود. `*` به معنای «هر مبدأی» است.
+3. یک شیء که مالکیت آن به زمینه مرورگر دریافت‌کننده منتقل می‌شود. در این مورد، ما {{domxref("MessageChannel.port2")}} را به IFrame منتقل می‌کنیم تا بتوان از آن برای برقراری ارتباط با صفحه اصلی استفاده کرد.
 
-When our button is clicked, we prevent the form from submitting as normal and then send the value entered in our text input to the IFrame via the {{domxref("MessageChannel")}}.
+وقتی دکمه ما کلیک می‌شود، از ارسال عادی فرم جلوگیری می‌کنیم و سپس مقدار واردشده در فیلد متنی را از طریق {{domxref("MessageChannel")}} به IFrame ارسال می‌کنیم.
 
-## Receiving the port and message in the IFrame
+## دریافت پورت و پیام در IFrame
 
-In the {{HTMLElement("iframe")}} elements, we have the following JavaScript:
+در عناصر {{HTMLElement("iframe")}}، کد جاوااسکریپت زیر را داریم:
 
 ```js
 const list = document.querySelector("ul");
@@ -116,15 +110,15 @@ function onMessage(e) {
 }
 ```
 
-When the initial message is received from the main page via the {{domxref("window.postMessage")}} method, we run the `initPort` function. This saves the transferred port and registers an `onmessage` handler that will be called each time a message is passed through our {{domxref("MessageChannel")}}.
+وقتی پیام اولیه از صفحه اصلی از طریق متد {{domxref("window.postMessage")}} دریافت می‌شود، تابع `initPort` را اجرا می‌کنیم. این تابع پورت منتقل‌شده را ذخیره می‌کند و یک کنترل‌کننده `onmessage` ثبت می‌کند که هر بار یک پیام از طریق {{domxref("MessageChannel")}} عبور کند فراخوانی می‌شود.
 
-When a message is received from the main page, we create a list item and insert it in the unordered list, setting the {{domxref("Node.textContent","textContent")}} of the list item equal to the event's `data` attribute (this contains the actual message).
+هنگامی که پیامی از صفحه اصلی دریافت می‌شود، یک آیتم فهرست (list item) می‌سازیم و آن را در فهرست نامرتب درج می‌کنیم و {{domxref("Node.textContent","textContent")}} آیتم فهرست را برابر ویژگی `data` رویداد قرار می‌دهیم (این ویژگی شامل خود پیام است).
 
-Next, we post a confirmation message back to the main page via the message channel by calling {{domxref("MessagePort.postMessage")}} on {{domxref("MessageChannel.port2")}} that was initially transferred to the iframe.
+سپس، با فراخوانی {{domxref("MessagePort.postMessage")}} روی {{domxref("MessageChannel.port2")}} که ابتدا به iframe منتقل شده بود، یک پیام تأیید از طریق کانال پیام به صفحه اصلی ارسال می‌کنیم.
 
-## Receiving the confirmation in the main page
+## دریافت تأییدیه در صفحه اصلی
 
-Returning to the main page, let's now look at the `onmessage` handler function.
+با بازگشت به صفحه اصلی، اکنون نگاهی به تابع کنترل‌کننده `onmessage` می‌اندازیم.
 
 ```js
 // Handle messages received on port1
@@ -134,17 +128,17 @@ function onMessage(e) {
 }
 ```
 
-When a message is received back from the IFrame confirming that the original message was received successfully, this outputs the confirmation to a paragraph and empties the text input ready for the next message to be sent.
+وقتی پیامی از IFrame دریافت می‌شود که تأیید می‌کند پیام اصلی با موفقیت دریافت شده است، این تابع تأییدیه را در یک پاراگراف نمایش می‌دهد و فیلد متنی را برای ارسال پیام بعدی خالی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Channel Messaging API](/en-US/docs/Web/API/Channel_Messaging_API)
 - [Web Workers API](/en-US/docs/Web/API/Web_Workers_API)
