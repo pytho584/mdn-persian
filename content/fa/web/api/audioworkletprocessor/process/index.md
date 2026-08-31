@@ -1,7 +1,7 @@
 ---
 title: "AudioWorkletProcessor: process() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor/process"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,141 +14,67 @@ spec-urls: https://webaudio.github.io/web-audio-api/#process
 
 {{APIRef("Web Audio API")}}
 
-The **`process()`**
-method of an {{domxref("AudioWorkletProcessor")}}-derived class implements the audio
-processing algorithm for the audio processor worklet.
+متد **`process()`** از کلاس مشتق‌شده از {{domxref("AudioWorkletProcessor")}}، الگوریتم پردازش صوتی را برای worklet پردازنده صوتی پیاده‌سازی می‌کند.
 
-Although the method is
-not a part of the {{domxref("AudioWorkletProcessor")}} interface, any implementation
-of `AudioWorkletProcessor` must provide a `process()` method.
+اگرچه این متد بخشی از رابط {{domxref("AudioWorkletProcessor")}} نیست، هر پیاده‌سازی از `AudioWorkletProcessor` باید یک متد `process()` ارائه دهد.
 
-The method is called synchronously from the audio rendering thread, once for each block
-of audio (also known as a rendering quantum) being directed through the processor's
-corresponding {{domxref("AudioWorkletNode")}}. In other words, every time a new block of
-audio is ready for your processor to manipulate, your `process()` function is
-invoked to do so.
+این متد به‌صورت همزمان از رشته رندر صوتی، برای هر بلوک از صدا (که به عنوان یک کوانتوم رندر نیز شناخته می‌شود) که از طریق {{domxref("AudioWorkletNode")}} متناظر پردازنده هدایت می‌شود، فراخوانی می‌شود. به عبارت دیگر، هر بار که یک بلوک جدید از صدا آماده دستکاری توسط پردازنده شما است، تابع `process()` شما برای انجام این کار فراخوانی می‌شود.
 
 > [!NOTE]
-> Currently, audio data blocks are always 128 frames
-> long—that is, they contain 128 32-bit floating-point samples for each of the inputs'
-> channels. However, plans are already in place to revise the specification to allow the
-> size of the audio blocks to be changed depending on circumstances (for example, if the
-> audio hardware or CPU utilization is more efficient with larger block sizes).
-> Therefore, you _must always check the size of the sample array_ rather than
-> assuming a particular size.
+> در حال حاضر، بلوک‌های داده صوتی همیشه 128 فریم طول دارند—یعنی برای هر یک از کانال‌های ورودی، شامل 128 نمونه ممیز شناور 32 بیتی هستند. با این حال، برنامه‌هایی برای بازبینی مشخصات وجود دارد تا امکان تغییر اندازه بلوک‌های صوتی بسته به شرایط فراهم شود (به عنوان مثال، اگر سخت‌افزار صوتی یا استفاده از CPU با اندازه‌های بلوک بزرگ‌تر کارآمدتر باشد). بنابراین، شما _همیشه باید اندازه آرایه نمونه را بررسی کنید_ و اندازه خاصی را فرض نکنید.
 >
-> This size may even be allowed to change over time, so you mustn't look at just the
-> first block and assume the sample buffers will always be the same size.
+> این اندازه حتی ممکن است در طول زمان تغییر کند، بنابراین نباید فقط به بلوک اول نگاه کنید و فرض کنید که بافرهای نمونه همیشه یک اندازه خواهند بود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 process(inputs, outputs, parameters)
 ```
 
-### Parameters
+### پارامترها
 
 - `inputs`
-  - : An array of _inputs_ connected to the node, each item of which is, in turn,
-    an array of _channels_. Each _channel_ is a {{jsxref("Float32Array")}}
-    containing 128 samples. For example, `inputs[n][m][i]` will access
-    _n_-th input, _m_-th channel of that input, and _i_-th sample
-    of that channel.
+  - : آرایه‌ای از _ورودی‌های_ متصل به گره، که هر آیتم آن به نوبه خود آرایه‌ای از _کانال‌ها_ است. هر _کانال_ یک {{jsxref("Float32Array")}} شامل 128 نمونه است. به عنوان مثال، `inputs[n][m][i]` به _n_-امین ورودی، _m_-امین کانال آن ورودی، و _i_-امین نمونه آن کانال دسترسی خواهد داشت.
 
-    Each sample value is in range of `[-1 .. 1]`.
+    هر مقدار نمونه در محدوده `[-1 .. 1]` است.
 
-    The number of _inputs_ and thus the length of that array is fixed at the
-    construction of the node (see {{domxref("AudioWorkletNode")}}). If there is
-    no active node connected to the _n_-th input of the node,
-    `inputs[n]` will be an empty array (zero input channels available).
+    تعداد _ورودی‌ها_ و بنابراین طول آن آرایه در زمان ساخت گره ثابت است (به {{domxref("AudioWorkletNode")}} مراجعه کنید). اگر هیچ گره فعالی به _n_-امین ورودی گره متصل نباشد، `inputs[n]` یک آرایه خالی خواهد بود (صفر کانال ورودی در دسترس است).
 
-    The number of _channels_ in each input may vary, depending on
-    {{domxref("AudioNode.channelCount", "channelCount")}} and
-    {{domxref("AudioNode.channelCountMode", "channelCountMode")}} properties.
+    تعداد _کانال‌ها_ در هر ورودی ممکن است بسته به ویژگی‌های {{domxref("AudioNode.channelCount", "channelCount")}} و {{domxref("AudioNode.channelCountMode", "channelCountMode")}} متفاوت باشد.
 
 - `outputs`
-  - : An array of _outputs_ that is similar to the `inputs` parameter in
-    structure. It is intended to be filled during the execution of the
-    `process()` method. Each of the output channels is filled with zeros by
-    default — the processor will output silence unless the output arrays are modified.
+  - : آرایه‌ای از _خروجی‌ها_ که از نظر ساختار مشابه پارامتر `inputs` است. قرار است در طول اجرای متد `process()` پر شود. هر یک از کانال‌های خروجی به طور پیش‌فرض با صفر پر شده است—پردازنده سکوت را خروجی می‌دهد مگر اینکه آرایه‌های خروجی اصلاح شوند.
 - `parameters`
-  - : An object containing string keys and {{jsxref("Float32Array")}} values. For each
-    custom {{domxref("AudioParam")}} defined using the
-    {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}}
-    getter, the key in the object is a `name` of that
-    {{domxref("AudioParam")}}, and the value is a {{jsxref("Float32Array")}}. The values
-    of the array are calculated by taking scheduled automation events into
-    consideration.
+  - : یک شیء حاوی کلیدهای رشته‌ای و مقادیر {{jsxref("Float32Array")}}. برای هر {{domxref("AudioParam")}} سفارشی که با استفاده از getter {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} تعریف شده است، کلید در شیء یک `name` از آن {{domxref("AudioParam")}} است و مقدار یک {{jsxref("Float32Array")}} است. مقادیر آرایه با در نظر گرفتن رویدادهای automation زمان‌بندی‌شده محاسبه می‌شوند.
 
-    If the automation rate of the parameter is
-    [`"a-rate"`](/en-US/docs/Web/API/AudioParam#a-rate), the array
-    will contain 128 values — one for each frame in the current audio block. If there's
-    no automation happening during the time represented by the current block, the array
-    may contain a single value that is constant for the entire block, instead of 128
-    identical values.
+    اگر نرخ automation پارامتر [`"a-rate"`](/en-US/docs/Web/API/AudioParam#a-rate) باشد، آرایه شامل 128 مقدار خواهد بود—یک مقدار برای هر فریم در بلوک صوتی فعلی. اگر در طول زمان نمایش‌داده‌شده توسط بلوک فعلی هیچ automation اتفاق نیفتد، آرایه ممکن است به جای 128 مقدار یکسان، یک مقدار واحد داشته باشد که برای کل بلوک ثابت است.
 
-    If the automation rate is
-    [`"k-rate"`](/en-US/docs/Web/API/AudioParam#k-rate), the array
-    will contain a single value, which is to be used for each of 128 frames.
+    اگر نرخ automation [`"k-rate"`](/en-US/docs/Web/API/AudioParam#k-rate) باشد، آرایه شامل یک مقدار واحد خواهد بود که برای هر یک از 128 فریم استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A Boolean value indicating whether or not to force the {{domxref("AudioWorkletNode")}}
-to remain active even if the {{Glossary("user agent", "user agent's")}} internal logic
-would otherwise decide that it's safe to shut down the node.
+یک مقدار بولی که نشان می‌دهد آیا {{domxref("AudioWorkletNode")}} حتی اگر منطق داخلی {{Glossary("user agent", "عامل کاربر")}} در غیر این صورت تصمیم بگیرد که خاموش کردن گره امن است، فعال بماند یا خیر.
 
-The returned value lets your processor have influence over the lifetime policy of
-the {{domxref("AudioWorkletProcessor")}} and the node that owns it. If the combination
-of the return value and the state of the node causes the browser to decide to stop the
-node, `process()` will not be called again.
+مقدار بازگشتی به پردازنده شما اجازه می‌دهد بر سیاست طول عمر {{domxref("AudioWorkletProcessor")}} و گره‌ای که مالک آن است تأثیر بگذارد. اگر ترکیب مقدار بازگشتی و وضعیت گره باعث شود مرورگر تصمیم بگیرد گره را متوقف کند، `process()` دوباره فراخوانی نخواهد شد.
 
-Returning `true` forces the Web Audio API to keep the node alive,
-while returning `false` allows the browser to terminate the node if it is
-neither generating new audio data nor receiving data through its inputs that it is
-processing.
+بازگرداندن `true` Web Audio API را مجبور می‌کند گره را زنده نگه دارد، در حالی که بازگرداندن `false` به مرورگر اجازه می‌دهد گره را خاتمه دهد اگر نه داده صوتی جدید تولید می‌کند و نه از طریق ورودی‌های خود داده‌ای که در حال پردازش است دریافت می‌کند.
 
-The 3 most common types of audio node are:
+3 نوع رایج گره صوتی عبارتند از:
 
-1. A source of output. An {{domxref("AudioWorkletProcessor")}} implementing such a node
-   should return `true` from the `process` method as long as it
-   produces an output. The method should return `false` as soon as it's known
-   that it will no longer produce an output. For example, take the
-   {{domxref("AudioBufferSourceNode")}} — the processor behind such a node should return
-   `true` from the `process` method while the buffer is playing,
-   and start returning `false` when the buffer playing has ended (there's no
-   way to call `play` on the same {{domxref("AudioBufferSourceNode")}} again).
-2. A node that transforms its input. A processor implementing such a node should return
-   `false` from the `process` method to allow the presence of
-   active input nodes and references to the node to determine whether it can be
-   garbage-collected. An example of a node with this behavior is the
-   {{domxref("GainNode")}}. As soon as there are no inputs connected and references
-   retained, gain can no longer be applied to anything, so it can be safely
-   garbage-collected.
-3. A node that transforms its input, but has a so-called _tail-time_ — this
-   means that it will produce an output for some time even after its inputs are
-   disconnected or are inactive (producing zero-channels). A processor implementing such
-   a node should return `true` from the `process` method for the
-   period of the _tail-time_, beginning as soon as inputs are found that contain
-   zero-channels. An example of such a node is the {{domxref("DelayNode")}} — it has a
-   _tail-time_ equal to its {{domxref("DelayNode.delayTime", "delayTime")}}
-   property.
+1. منبع خروجی. یک {{domxref("AudioWorkletProcessor")}} که چنین گره‌ای را پیاده‌سازی می‌کند باید تا زمانی که خروجی تولید می‌کند، `true` را از متد `process` بازگرداند. به محض اینکه مشخص شد دیگر خروجی تولید نخواهد کرد، متد باید `false` بازگرداند. به عنوان مثال، {{domxref("AudioBufferSourceNode")}} را در نظر بگیرید—پردازنده پشت چنین گره‌ای باید در حالی که بافر در حال پخش است `true` را از متد `process` بازگرداند و وقتی پخش بافر به پایان رسید شروع به بازگرداندن `false` کند (هیچ راهی برای فراخوانی `play` روی همان {{domxref("AudioBufferSourceNode")}} دوباره وجود ندارد).
+2. گره‌ای که ورودی خود را تبدیل می‌کند. پردازنده‌ای که چنین گره‌ای را پیاده‌سازی می‌کند باید `false` را از متد `process` بازگرداند تا وجود گره‌های ورودی فعال و ارجاعات به گره تعیین کند که آیا می‌توان آن را garbage-collect کرد. نمونه‌ای از گره با این رفتار {{domxref("GainNode")}} است. به محض اینکه هیچ ورودی متصل و ارجاع حفظ‌شده‌ای وجود نداشته باشد، بهره دیگر نمی‌تواند روی چیزی اعمال شود، بنابراین می‌توان آن را با خیال راحت garbage-collect کرد.
+3. گره‌ای که ورودی خود را تبدیل می‌کند، اما دارای به اصطلاح _tail-time_ است—این بدان معنی است که برای مدتی حتی پس از قطع شدن یا غیرفعال شدن ورودی‌هایش (تولید صفر کانال) خروجی تولید می‌کند. پردازنده‌ای که چنین گره‌ای را پیاده‌سازی می‌کند باید در طول دوره _tail-time_، از همان لحظه‌ای که ورودی‌های حاوی صفر کانال پیدا می‌شوند، `true` را از متد `process` بازگرداند. نمونه‌ای از چنین گره‌ای {{domxref("DelayNode")}} است—دارای _tail-time_ برابر با ویژگی {{domxref("DelayNode.delayTime", "delayTime")}} خود است.
 
 > [!NOTE]
-> An absence of the `return` statement means that the method returns `undefined`, and as this is a falsy value, it is like returning `false`.
-> Omitting an explicit `return` statement may cause hard-to-detect problems for your nodes.
+> نبود دستور `return` به این معنی است که متد `undefined` بازمی‌گرداند، و چون این یک مقدار falsy است، مانند بازگرداندن `false` است. حذف یک دستور `return` صریح ممکن است مشکلاتی ایجاد کند که به سختی قابل تشخیص باشند.
 
-### Exceptions
+### استثناها
 
-As the `process()` method is implemented by the user, it can throw anything.
-If an uncaught error is thrown, the node will emit a
-{{domxref("AudioWorkletNode.processorerror_event", "processorerror")}} event and will
-output silence for the rest of its lifetime.
+از آنجا که متد `process()` توسط کاربر پیاده‌سازی می‌شود، می‌تواند هر چیزی پرتاب کند. اگر یک خطای uncaught پرتاب شود، گره یک رویداد {{domxref("AudioWorkletNode.processorerror_event", "processorerror")}} منتشر می‌کند و برای بقیه عمر خود سکوت را خروجی می‌دهد.
 
-## Examples
+## مثال‌ها
 
-In this example we create an `AudioWorkletProcessor` that outputs white
-noise to its first output. The gain can be controlled by the `customGain`
-parameter.
+در این مثال ما یک `AudioWorkletProcessor` ایجاد می‌کنیم که صدای سفید (white noise) را به اولین خروجی خود خروجی می‌دهد. بهره را می‌توان با پارامتر `customGain` کنترل کرد.
 
 ```js
 class WhiteNoiseProcessor extends AudioWorkletProcessor {
@@ -191,14 +117,14 @@ class WhiteNoiseProcessor extends AudioWorkletProcessor {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
-This is not a method provided by browsers, but a callback method that must be written in client code.
+این یک متد ارائه‌شده توسط مرورگرها نیست، بلکه یک متد callback است که باید در کد کلاینت نوشته شود.
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
