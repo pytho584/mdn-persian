@@ -1,10 +1,4 @@
 ---
-title: "CSS"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS"
-status: "needs-translation"
----
-
----
 title: CSS
 slug: Web/API/CSS
 page-type: web-api-interface
@@ -13,44 +7,44 @@ browser-compat: api.CSS
 
 {{APIRef("CSSOM")}}
 
-The **`CSS`** interface holds useful CSS-related methods. No objects with this interface are implemented: it contains only static methods and is therefore a utilitarian interface.
+اینترفیس **`CSS`** شامل متدهای کاربردی مرتبط با CSS است. هیچ شیئی با این اینترفیس پیاده‌سازی نمی‌شود؛ این اینترفیس فقط متدهای استاتیک دارد و بنابراین یک اینترفیس کاربردی (Utility) محسوب می‌شود.
 
-## Static properties
+## ویژگی‌های استاتیک
 
 - {{DOMxRef("CSS/highlights_static", "CSS.highlights")}}
-  - : Provides access to the `HighlightRegistry` used to style arbitrary text ranges using the {{domxref("css_custom_highlight_api", "CSS Custom Highlight API", "", "nocode")}}.
+  - : دسترسی به `HighlightRegistry` را فراهم می‌کند که برای استایل‌دهی به محدوده‌های متنی دلخواه با استفاده از {{domxref("css_custom_highlight_api", "CSS Custom Highlight API", "", "nocode")}} به کار می‌رود.
 - {{DOMxRef("CSS/paintWorklet_static", "CSS.paintWorklet")}} {{Experimental_Inline}} {{SecureContext_Inline}}
-  - : Provides access to the Worklet responsible for all the classes related to painting.
+  - : دسترسی به Worklet مسئول تمام کلاس‌های مرتبط با نقاشی (Painting) را فراهم می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_The CSS interface is a utility interface and no object of this type can be created: only static properties are defined on it._
+_اینترفیس CSS یک اینترفیس کاربردی است و هیچ شیئی از این نوع نمی‌تواند ساخته شود؛ فقط ویژگی‌های استاتیک روی آن تعریف شده‌اند._
 
-## Static methods
+## متدهای استاتیک
 
-_No inherited static methods_.
+_هیچ متد استاتیک به ارث‌رسیده‌ای وجود ندارد._
 
 - {{DOMxRef("CSS/registerProperty_static", "CSS.registerProperty()")}}
-  - : Registers [custom properties](/en-US/docs/Web/CSS/Reference/Properties/--*), allowing for property type checking, default values, and properties that do or do not inherit their value.
+  - : [ویژگی‌های سفارشی](/en-US/docs/Web/CSS/Reference/Properties/--*) را ثبت می‌کند و امکان بررسی نوع ویژگی، مقادیر پیش‌فرض، و ویژگی‌هایی که مقدار خود را به ارث می‌برند یا نمی‌برند، فراهم می‌سازد.
 - {{DOMxRef("CSS/supports_static", "CSS.supports()")}}
-  - : Returns a boolean value indicating if the pair _property-value_, or the condition, given in parameter is supported.
+  - : یک مقدار بولین برمی‌گرداند که نشان می‌دهد جفت _ویژگی-مقدار_ یا شرط داده‌شده در پارامتر پشتیبانی می‌شود یا خیر.
 - {{DOMxRef("CSS/escape_static", "CSS.escape()")}}
-  - : Can be used to escape a string mostly for use as part of a CSS selector.
-- [CSS factory functions](/en-US/docs/Web/API/CSS/factory_functions_static)
-  - : Can be used to return a new [`CSSUnitValue`](/en-US/docs/Web/API/CSSUnitValue) with a value of the parameter number of the units of the name of the factory function method used.
+  - : برای فرار (escape) دادن یک رشته استفاده می‌شود، عمدتاً برای استفاده به عنوان بخشی از یک انتخابگر CSS.
+- [توابع کارخانه‌ای CSS](/en-US/docs/Web/API/CSS/factory_functions_static)
+  - : برای بازگرداندن یک [`CSSUnitValue`](/en-US/docs/Web/API/CSSUnitValue) جدید با مقدار عددی برابر با پارامتر داده‌شده برحسب واحد نام متد تابع کارخانه‌ای استفاده می‌شوند.
 
     ```js
     CSS.em(3); // CSSUnitValue {value: 3, unit: "em"}
     ```
 
-## Instance methods
+## متدهای نمونه
 
-_The CSS interface is a utility interface and no object of this type can be created: only static methods are defined on it._
+_اینترفیس CSS یک اینترفیس کاربردی است و هیچ شیئی از این نوع نمی‌تواند ساخته شود؛ فقط متدهای استاتیک روی آن تعریف شده‌اند._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
