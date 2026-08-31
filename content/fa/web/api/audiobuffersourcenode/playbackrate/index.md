@@ -1,7 +1,7 @@
 ---
 title: "AudioBufferSourceNode: playbackRate property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/playbackRate"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,41 +14,32 @@ browser-compat: api.AudioBufferSourceNode.playbackRate
 
 {{ APIRef("Web Audio API") }}
 
-The **`playbackRate`** property of
-the {{ domxref("AudioBufferSourceNode") }} interface Is a [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}} that
-defines the speed at which the audio asset will be played.
+ویژگی **`playbackRate`** در interface {{ domxref("AudioBufferSourceNode") }} یک {{domxref("AudioParam")}} از نوع [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) است که سرعت پخش فایل صوتی را تعیین می‌کند.
 
-A value of 1.0 indicates it should play at the same speed as its sampling rate,
-values less than 1.0 cause the sound to play more slowly, while values greater than
-1.0 result in audio playing faster than normal. The default value is `1.0`.
-When set to another value, the `AudioBufferSourceNode` resamples the audio
-before sending it to the output.
+مقدار `1.0` نشان می‌دهد که صدا باید با همان سرعت نرخ نمونه‌برداری خود پخش شود، مقادیر کمتر از `1.0` باعث می‌شوند صدا کندتر پخش شود، در حالی که مقادیر بیشتر از `1.0` باعث می‌شوند صدا سریع‌تر از حالت عادی پخش شود. مقدار پیش‌فرض `1.0` است. وقتی به مقدار دیگری تنظیم شود، `AudioBufferSourceNode` صدا را قبل از ارسال به خروجی، دوباره نمونه‌برداری (resample) می‌کند.
 
-## Value
+## مقدار
 
-An {{domxref("AudioParam")}} whose {{domxref("AudioParam.value", "value")}} is a
-floating-point value indicating the playback rate of the audio as a decimal proportion
-of the original sampling rate.
+یک {{domxref("AudioParam")}} که {{domxref("AudioParam.value", "value")}} آن یک عدد اعشاری است که نرخ پخش صدا را به صورت نسبت اعشاری از نرخ نمونه‌برداری اصلی نشان می‌دهد.
 
-Consider a sound buffer containing audio sampled at 44.1 kHz (44,100 samples per
-second). Let's see what a few values of `playbackRate` do:
+یک بافر صوتی را در نظر بگیرید که حاوی صدایی با نمونه‌برداری ۴۴.۱ کیلوهرتز (۴۴٬۱۰۰ نمونه در ثانیه) است. بیایید ببینیم چند مقدار مختلف `playbackRate` چه می‌کنند:
 
-- A `playbackRate` of 1.0 plays the audio at full speed, or 44,100 Hz.
-- A `playbackRate` of 0.5 plays the audio at half speed, or 22,050 Hz.
-- A `playbackRate` of 2.0 doubles the audio's playback rate to 88,200 Hz.
+- `playbackRate` برابر با `1.0` صدا را با سرعت کامل پخش می‌کند، یعنی ۴۴٬۱۰۰ هرتز.
+- `playbackRate` برابر با `0.5` صدا را با نصف سرعت پخش می‌کند، یعنی ۲۲٬۰۵۰ هرتز.
+- `playbackRate` برابر با `2.0` نرخ پخش صدا را به ۸۸٬۲۰۰ هرتز دو برابر می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Setting `playbackRate`
+### تنظیم `playbackRate`
 
-In this example, when the user presses "Play", we load an audio track, decode it, and put it into an {{domxref("AudioBufferSourceNode")}}.
+در این مثال، وقتی کاربر دکمه «Play» را فشار می‌دهد، ما یک فایل صوتی بارگذاری می‌کنیم، آن را decode می‌کنیم و در یک {{domxref("AudioBufferSourceNode")}} قرار می‌دهیم.
 
-The example then sets the `loop` property to `true`, so the track loops, and plays the track.
+سپس مثال ویژگی `loop` را روی `true` تنظیم می‌کند تا حلقه تکرار شود و آهنگ پخش شود.
 
-The user can set the `playbackRate` property using a [range control](/en-US/docs/Web/HTML/Reference/Elements/input/range).
+کاربر می‌تواند ویژگی `playbackRate` را با استفاده از یک [کنترل بازه‌ای (range control)](/en-US/docs/Web/HTML/Reference/Elements/input/range) تنظیم کند.
 
 > [!NOTE]
-> You can [run the full example live](https://mdn.github.io/webaudio-examples/audio-buffer-source-node/playbackrate/) (or [view the source](https://github.com/mdn/webaudio-examples/tree/main/audio-buffer-source-node/playbackrate).)
+> می‌توانید [مثال کامل را به صورت زنده اجرا کنید](https://mdn.github.io/webaudio-examples/audio-buffer-source-node/playbackrate/) (یا [سورس کد را مشاهده کنید](https://github.com/mdn/webaudio-examples/tree/main/audio-buffer-source-node/playbackrate)).
 
 ```js
 let audioCtx;
@@ -101,15 +92,15 @@ playbackControl.oninput = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
