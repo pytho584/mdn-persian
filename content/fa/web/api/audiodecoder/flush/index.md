@@ -1,7 +1,7 @@
 ---
 title: "AudioDecoder: flush() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioDecoder/flush"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,7 +14,7 @@ browser-compat: api.AudioDecoder.flush
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`flush()`** method of the {{domxref("AudioDecoder")}} interface returns a Promise that resolves once all pending messages in the queue have been completed.
+**`flush()`** 方法是 {{domxref("AudioDecoder")}} 接口的一个方法，它返回一个 Promise，该 Promise 在所有队列中待处理的消息完成后解析。
 
 ## Syntax
 
@@ -24,22 +24,22 @@ flush()
 
 ### Parameters
 
-None.
+无。
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves with undefined.
+一个解析为 undefined 的 {{jsxref("Promise")}}。
 
 ### Exceptions
 
-If an error occurs, the promise will resolve with one of the following exceptions:
+如果发生错误，Promise 将以下列异常之一解析：
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Returned if the Promise is rejected because the {{domxref("AudioDecoder.state","state")}} is not `configured`.
+  - : 如果由于 {{domxref("AudioDecoder.state","state")}} 不是 `configured` 而导致 Promise 被拒绝，则返回该异常。
 
 ## Examples
 
-The following example flushes the `AudioDecoder`.
+下面的示例刷新 `AudioDecoder`。
 
 ```js
 await audioDecoder.flush();
