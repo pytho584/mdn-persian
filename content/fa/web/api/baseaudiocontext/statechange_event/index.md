@@ -1,24 +1,22 @@
 ---
 title: "BaseAudioContext: statechange event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/statechange_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
----
 title: "BaseAudioContext: statechange event"
 short-title: statechange
 slug: Web/API/BaseAudioContext/statechange_event
 page-type: web-api-event
 browser-compat: api.BaseAudioContext.statechange_event
----
 
 {{APIRef("Web Audio API")}}
 
-A `statechange` event is fired at a {{DOMxRef("BaseAudioContext")}} object when its {{domxref("BaseAudioContext.state", "state")}} member changes.
+یک رویداد `statechange` بر روی یک شیء {{DOMxRef("BaseAudioContext")}} هنگامی که عضو {{domxref("BaseAudioContext.state", "state")}} آن تغییر می‌کند، شلیک می‌شود.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("statechange", (event) => { })
@@ -28,12 +26,11 @@ onstatechange = (event) => { }
 
 ## Event type
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
 ## Examples
 
-The following snippet is taken from our [AudioContext states demo](https://github.com/mdn/webaudio-examples) ([see it running live](https://mdn.github.io/webaudio-examples/audiocontext-states/).) The `onstatechange` handler is used to log the current
-{{domxref("BaseAudioContext.state", "state")}} to the console every time it changes.
+قطعه کد زیر از [نمونه وضعیت‌های AudioContext](https://github.com/mdn/webaudio-examples) ما گرفته شده است ([اجرای زنده آن را ببینید](https://mdn.github.io/webaudio-examples/audiocontext-states/)). کنترل‌کننده `onstatechange` برای ثبت {{domxref("BaseAudioContext.state", "state")}} فعلی در کنسول هر بار که تغییر می‌کند استفاده می‌شود.
 
 ```js
 audioCtx.onstatechange = () => {
@@ -51,4 +48,4 @@ audioCtx.onstatechange = () => {
 
 ## See also
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
