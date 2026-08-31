@@ -1,7 +1,7 @@
 ---
 title: "AudioNode: connect() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/connect"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,13 +14,9 @@ browser-compat: api.AudioNode.connect
 
 {{ APIRef("Web Audio API") }}
 
-The `connect()` method of the {{ domxref("AudioNode") }} interface lets
-you connect one of the node's outputs to a target, which may be either another
-`AudioNode` (thereby directing the sound data to the specified node) or an
-{{domxref("AudioParam")}}, so that the node's output data is automatically used to
-change the value of that parameter over time.
+روش `connect()` در رابط {{ domxref("AudioNode") }} به شما امکان می‌دهد یکی از خروجی‌های گره را به یک هدف متصل کنید، که می‌تواند یا یک `AudioNode` دیگر باشد (در نتیجه داده‌های صوتی را به گره مشخص‌شده هدایت می‌کند) یا یک {{domxref("AudioParam")}}، به‌طوری‌که داده‌های خروجی گره به‌طور خودکار برای تغییر مقدار آن پارامتر در طول زمان استفاده شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 connect(destination)
@@ -28,61 +24,37 @@ connect(destination, outputIndex)
 connect(destination, outputIndex, inputIndex)
 ```
 
-### Parameters
+### پارامترها
 
 - `destination`
-  - : The {{domxref("AudioNode")}} or {{domxref("AudioParam")}} to which to connect.
+  - : مقصدی که به آن متصل می‌شود ({{domxref("AudioNode")}} یا {{domxref("AudioParam")}}).
 - `outputIndex` {{optional_inline}}
-  - : An index specifying which output of the current `AudioNode` to connect to
-    the destination. The index numbers are defined according to the number of output
-    channels (see [Audio channels](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#audio_channels)).
-    While you can only connect a given output to a given input once
-    (repeated attempts are ignored), you can connect an output to multiple inputs by
-    calling `connect()` repeatedly. This makes [fan-out](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#fan-in_and_fan-out)
-    possible. The default value is 0.
+  - : شاخصی که مشخص می‌کند کدام خروجی از `AudioNode` فعلی به مقصد متصل شود. شماره شاخص‌ها بر اساس تعداد کانال‌های خروجی تعریف می‌شوند (ببینید [Audio channels](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#audio_channels)). اگرچه می‌توانید فقط یک خروجی معین را به یک ورودی معین یک‌بار متصل کنید (تلاش‌های تکراری نادیده گرفته می‌شوند)، می‌توانید با فراخوانی مکرر `connect()` یک خروجی را به چندین ورودی متصل کنید. این امر [fan-out](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#fan-in_and_fan-out) را ممکن می‌سازد. مقدار پیش‌فرض 0 است.
 - `inputIndex` {{optional_inline}}
-  - : An index describing which input of the destination you want to connect the current
-    `AudioNode` to; the default is 0. The index numbers are defined according
-    to the number of input channels
-    (see [Audio channels](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#audio_channels)). It is possible to connect an `AudioNode` to another
-    `AudioNode`, which in turn connects back to the first
-    `AudioNode`, creating a cycle.
+  - : شاخصی که توصیف می‌کند می‌خواهید کدام ورودی از مقصد را به `AudioNode` فعلی متصل کنید؛ پیش‌فرض 0 است. شماره شاخص‌ها بر اساس تعداد کانال‌های ورودی تعریف می‌شوند (ببینید [Audio channels](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#audio_channels)). امکان اتصال یک `AudioNode` به یک `AudioNode` دیگر وجود دارد که به نوبه خود به `AudioNode` اول متصل می‌شود و یک چرخه ایجاد می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-If the destination is a node, `connect()` returns a reference to the
-destination {{domxref("AudioNode")}} object, allowing you to chain multiple
-`connect()` calls. In some browsers, older implementations of this interface
-return {{jsxref("undefined")}}.
+اگر مقصد یک گره باشد، `connect()` یک ارجاع به شیء {{domxref("AudioNode")}} مقصد برمی‌گرداند و به شما امکان می‌دهد چندین فراخوانی `connect()` را زنجیره کنید. در برخی مرورگرها، پیاده‌سازی‌های قدیمی‌تر این رابط {{jsxref("undefined")}} برمی‌گردانند.
 
-If the destination is an `AudioParam`, `connect()` returns
-`undefined`.
+اگر مقصد یک `AudioParam` باشد، `connect()` مقدار `undefined` را برمی‌گرداند.
 
-### Exceptions
+### استثناها
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if the value specified as `outputIndex` or `inputIndex` doesn't correspond to an existing input or output.
+  - : اگر مقدار مشخص‌شده به‌عنوان `outputIndex` یا `inputIndex` با ورودی یا خروجی موجود مطابقت نداشته باشد، پرتاب می‌شود.
 - `InvalidAccessError` {{domxref("DOMException")}}
-  - : Thrown if the destination node is not part of the same audio context as the source node.
+  - : اگر گره مقصد بخشی از همان زمینه صوتی (audio context) گره مبدأ نباشد، پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the specified connection would create a cycle (in which the audio loops back through
-    the same nodes repeatedly) and there are no {{domxref("DelayNode")}} objects in the cycle to
-    prevent the resulting waveform from getting stuck constructing the same audio frame
-    indefinitely. Also thrown if the `inputIndex` parameter is used while the destination is an {{domxref("AudioParam")}}.
+  - : اگر اتصال مشخص‌شده یک چرخه ایجاد کند (که در آن صدا به‌طور مکرر از طریق همان گره‌ها به عقب باز می‌گردد) و هیچ شیء {{domxref("DelayNode")}} در چرخه وجود نداشته باشد تا از گیر کردن شکل موج حاصل در ساخت همان قاب صوتی به‌طور نامحدود جلوگیری کند، پرتاب می‌شود. همچنین اگر پارامتر `inputIndex` در حالی استفاده شود که مقصد یک {{domxref("AudioParam")}} باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Connecting to an audio input
+### اتصال به یک ورودی صوتی
 
-The most obvious use of the `connect()` method is to direct the audio output
-from one node into the audio input of another node for further processing. For example,
-you might send the audio from a {{domxref("MediaElementAudioSourceNode")}}—that is, the
-audio from an HTML media element such as {{HTMLElement("audio")}}—through a band pass
-filter implemented using a {{domxref("BiquadFilterNode")}} to reduce noise before then
-sending the audio along to the speakers.
+بارزترین کاربرد روش `connect()` هدایت خروجی صوتی از یک گره به ورودی صوتی گره دیگر برای پردازش بیشتر است. به عنوان مثال، ممکن است صدا را از یک {{domxref("MediaElementAudioSourceNode")}} — یعنی صدای یک عنصر رسانه‌ای HTML مانند {{HTMLElement("audio")}} — از طریق یک فیلتر باند گذر که با استفاده از {{domxref("BiquadFilterNode")}} پیاده‌سازی شده است ارسال کنید تا نویز کاهش یابد و سپس صدا را به بلندگوها بفرستید.
 
-This example creates an oscillator, then links it to a gain node, so that the gain node
-controls the volume of the oscillator node.
+این مثال یک نوسان‌ساز (oscillator) ایجاد می‌کند و آن را به یک گره بهره (gain node) متصل می‌کند، به طوری که گره بهره صدای گره نوسان‌ساز را کنترل می‌کند.
 
 ```js
 const audioCtx = new AudioContext();
@@ -94,11 +66,9 @@ oscillator.connect(gainNode);
 gainNode.connect(audioCtx.destination);
 ```
 
-### AudioParam example
+### مثال با AudioParam
 
-In this example, we will be altering the gain value of a {{domxref("GainNode")}} using
-an {{domxref("OscillatorNode")}} with a slow frequency value. This technique is know as
-an _LFO_-controlled parameter.
+در این مثال، مقدار بهره یک {{domxref("GainNode")}} را با استفاده از یک {{domxref("OscillatorNode")}} با فرکانس پایین تغییر خواهیم داد. این تکنیک به عنوان پارامتر کنترل‌شده با _LFO_ شناخته می‌شود.
 
 ```js
 const audioCtx = new AudioContext();
@@ -133,31 +103,22 @@ oscillator.start();
 lfo.start();
 ```
 
-#### AudioParam notes
+#### نکات مربوط به AudioParam
 
-It is possible to connect an `AudioNode` output to more than one {{domxref("AudioParam")}}, and more than one AudioNode output to a single {{domxref("AudioParam")}}, with multiple calls to `connect()`.
-[Fan-in and fan-out](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#fan-in_and_fan-out) are therefore supported.
+امکان اتصال خروجی یک `AudioNode` به بیش از یک {{domxref("AudioParam")}} و همچنین اتصال خروجی بیش از یک AudioNode به یک {{domxref("AudioParam")}} با فراخوانی‌های متعدد `connect()` وجود دارد. بنابراین [Fan-in and fan-out](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#fan-in_and_fan-out) پشتیبانی می‌شوند.
 
-An {{ domxref("AudioParam") }} will take the rendered audio data from any
-`AudioNode` output connected to it and convert it to mono by [down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing)
-(if it is not already mono). Next, it will mix it together with any other such outputs,
-and the intrinsic parameter value (the value the {{ domxref("AudioParam") }} would
-normally have without any audio connections), including any timeline changes scheduled
-for the parameter.
+یک {{ domxref("AudioParam") }} داده‌های صوتی رندر شده را از هر خروجی `AudioNode` متصل به خود می‌گیرد و آن را با [down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) به مونو تبدیل می‌کند (اگر قبلاً مونو نباشد). سپس آن را با هر خروجی مشابه دیگر مخلوط می‌کند و همچنین مقدار پارامتر ذاتی (مقداری که {{ domxref("AudioParam") }} به طور معمول بدون هیچ اتصال صوتی دارد)، از جمله هر تغییر زمانی برنامه‌ریزی‌شده برای پارامتر را در نظر می‌گیرد.
 
-Therefore, it is possible to choose the range in which an {{domxref("AudioParam")}}
-will change by setting the value of the {{domxref("AudioParam")}} to the central
-frequency, and to use a {{domxref("GainNode")}} between the audio source and the
-{{domxref("AudioParam")}} to adjust the range of the {{domxref("AudioParam")}} changes.
+بنابراین، می‌توان محدوده‌ای را که در آن یک {{domxref("AudioParam")}} تغییر می‌کند با تنظیم مقدار {{domxref("AudioParam")}} به فرکانس مرکزی انتخاب کرد و از یک {{domxref("GainNode")}} بین منبع صوتی و {{domxref("AudioParam")}} برای تنظیم محدوده تغییرات {{domxref("AudioParam")}} استفاده کرد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
