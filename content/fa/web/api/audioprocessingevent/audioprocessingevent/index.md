@@ -1,7 +1,7 @@
 ---
 title: "AudioProcessingEvent: AudioProcessingEvent() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioProcessingEvent/AudioProcessingEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,44 +16,43 @@ browser-compat: api.AudioProcessingEvent.AudioProcessingEvent
 
 {{APIRef("Web Audio API")}}{{Deprecated_header}}
 
-The **`AudioProcessingEvent()`** constructor creates a new {{domxref("AudioProcessingEvent")}} object.
+سازنده **`AudioProcessingEvent()`** یک شیء جدید {{domxref("AudioProcessingEvent")}} ایجاد می‌کند.
 
 > [!NOTE]
-> Usually, this constructor is not directly called by your code, as the browser creates these objects itself and provides them to the event handler.
+> معمولاً این سازنده مستقیماً توسط کد شما فراخوانی نمی‌شود، زیرا مرورگر خود این اشیاء را ایجاد کرده و آن‌ها را به کنترل‌کننده رویداد ارائه می‌دهد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new AudioProcessingEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `audioprocess`.
+  - : یک رشته با نام رویداد. این رشته به حروف بزرگ و کوچک حساس است و مرورگرها همیشه آن را روی `audioprocess` تنظیم می‌کنند.
 - `options`
-  - : An object that has the following properties:
+  - : یک شیء که دارای ویژگی‌های زیر است:
     - `playbackTime`
-      - : A number representing the time when the audio will be played.
+      - : یک عدد که نشان‌دهنده زمانی است که صدا پخش خواهد شد.
     - `inputBuffer`
-      - : An {{domxref("AudioBuffer")}} containing the input audio data.
+      - : یک {{domxref("AudioBuffer")}} حاوی داده‌های صوتی ورودی.
     - `outputBuffer`
-      - : An {{domxref("AudioBuffer")}} where the output audio data will be written.
+      - : یک {{domxref("AudioBuffer")}} که داده‌های صوتی خروجی در آن نوشته خواهد شد.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("AudioProcessingEvent")}}.
+یک {{domxref("AudioProcessingEvent")}} جدید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("AudioProcessingEvent")}}
 - {{domxref("ScriptProcessorNode")}}
