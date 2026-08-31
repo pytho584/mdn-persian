@@ -1,7 +1,6 @@
 ---
-title: "CommandEvent"
+title: CommandEvent
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CommandEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,29 +12,29 @@ browser-compat: api.CommandEvent
 
 {{APIRef("Invoker Commands API")}}
 
-The **`CommandEvent`** interface represents an event notifying the user when a {{domxref("HTMLButtonElement", "button")}} element with valid {{domxref("HTMLButtonElement.commandForElement", "commandForElement")}} and {{domxref("HTMLButtonElement.command", "command")}} attributes is about to invoke an interactive element.
+رابطهٔ **`CommandEvent`** رویدادی را نشان می‌دهد که زمانی به کاربر اطلاع می‌دهد که یک عنصر {{domxref("HTMLButtonElement", "دکمه")}} با ویژگی‌های معتبر {{domxref("HTMLButtonElement.commandForElement", "commandForElement")}} و {{domxref("HTMLButtonElement.command", "command")}} در آستانهٔ فراخوانی یک عنصر تعاملی است.
 
-This is the event object for the `HTMLElement` {{domxref("HTMLElement.command_event", "command")}} event, which represents an action from an Invoker Control when it is invoked (for example when it is clicked or pressed).
+این شیء رویداد برای رویداد `command` عنصر `HTMLElement` ({{domxref("HTMLElement.command_event", "رویداد command")}}) است که عملی از یک کنترل فراخوان (Invoker Control) را هنگام فراخوانی (برای مثال هنگام کلیک یا فشردن) نشان می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CommandEvent.CommandEvent", "CommandEvent()")}}
-  - : Creates a `CommandEvent` object.
+  - : یک شیء `CommandEvent` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface inherits properties from its parent, {{DOMxRef("Event")}}._
+_این رابط ویژگی‌های والد خود، {{DOMxRef("Event")}} را به ارث می‌برد._
 
 - {{domxref("CommandEvent.source")}} {{ReadOnlyInline}}
-  - : An {{domxref("HTMLButtonElement")}} representing the button that caused this invocation.
+  - : یک {{domxref("HTMLButtonElement")}} که دکمهٔ منجر به این فراخوانی را نشان می‌دهد.
 - {{domxref("CommandEvent.command")}} {{ReadOnlyInline}}
-  - : A string representing the {{domxref("HTMLButtonElement.command", "command")}} value of the source button.
+  - : یک رشته که مقدار {{domxref("HTMLButtonElement.command", "command")}} دکمهٔ مبدأ را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Basic example
+### مثال پایه
 
 ```html
 <button commandfor="mypopover" command="show-popover">Show popover</button>
@@ -58,9 +57,9 @@ popover.addEventListener("command", (event) => {
 });
 ```
 
-### Using custom values for commands
+### استفاده از مقادیر سفارشی برای دستورها
 
-In this example three buttons have been created with [`commands` with custom values](/en-US/docs/Web/HTML/Reference/Elements/button#custom_values).
+در این مثال سه دکمه با [`دستورهایی با مقادیر سفارشی`](/en-US/docs/Web/HTML/Reference/Elements/button#custom_values) ساخته شده‌اند.
 
 ```html
 <div class="controls">
@@ -81,8 +80,7 @@ In this example three buttons have been created with [`commands` with custom val
 }
 ```
 
-An event listener is attached to the image using the [`command` event](/en-US/docs/Web/API/HTMLElement/command_event).
-When one of the buttons is clicked, the listener runs code based on the custom `command` value assigned to the button, rotating the image and also updating it's `alt` text to indicate the new angle of the image.
+یک شنوندهٔ رویداد با استفاده از [رویداد `command`](/en-US/docs/Web/API/HTMLElement/command_event) به تصویر متصل شده است. وقتی یکی از دکمه‌ها کلیک می‌شود، شنونده کدی را بر اساس مقدار سفارشی `command` اختصاص‌داده‌شده به دکمه اجرا می‌کند، تصویر را می‌چرخاند و متن `alt` آن را نیز به‌روزرسانی می‌کند تا زاویهٔ جدید تصویر را نشان دهد.
 
 ```js
 const image = document.getElementById("the-image");
@@ -105,15 +103,15 @@ image.addEventListener("command", (event) => {
 
 {{EmbedLiveSample('using_custom_values_for_commands', '100%', "220")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Invoker Commands API", "Invoker Commands API", "", "nocode")}}
 - {{domxref("HTMLButtonElement.command")}}
