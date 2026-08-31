@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTCharacteristic: uuid property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/uuid"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,19 +16,16 @@ browser-compat: api.BluetoothRemoteGATTCharacteristic.uuid
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTCharacteristic.uuid`** read-only
-property returns a string containing the UUID of the characteristic, for
-example `'00002a37-0000-1000-8000-00805f9b34fb'` for the Heart Rate
-Measurement characteristic.
+ویژگی فقط‌خواندنی **`BluetoothRemoteGATTCharacteristic.uuid`** یک رشته شامل UUID مشخصه را برمی‌گرداند، برای مثال `'00002a37-0000-1000-8000-00805f9b34fb'` برای مشخصه اندازه‌گیری ضربان قلب.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
