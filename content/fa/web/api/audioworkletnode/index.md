@@ -14,42 +14,42 @@ browser-compat: api.AudioWorkletNode
 {{APIRef("Web Audio API")}}{{SecureContext_Header}}
 
 > [!NOTE]
-> Although the interface is available outside [secure contexts](/en-US/docs/Web/Security/Defenses/Secure_Contexts), the {{domxref("BaseAudioContext.audioWorklet")}} property is not, thus custom {{domxref("AudioWorkletProcessor")}}s cannot be defined outside them.
+> اگرچه این رابط خارج از [بسترهای امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts) در دسترس است، ویژگی {{domxref("BaseAudioContext.audioWorklet")}} در آنجا در دسترس نیست، بنابراین {{domxref("AudioWorkletProcessor")}}های سفارشی نمی‌توانند خارج از آن بسترها تعریف شوند.
 
-The **`AudioWorkletNode`** interface of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) represents a base class for a user-defined {{domxref("AudioNode")}}, which can be connected to an audio routing graph along with other nodes. It has an associated {{domxref("AudioWorkletProcessor")}}, which does the actual audio processing in a Web Audio rendering thread.
+رابط **`AudioWorkletNode`** در [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) نشان‌دهندهٔ یک کلاس پایه برای یک {{domxref("AudioNode")}} تعریف‌شده توسط کاربر است که می‌تواند همراه با سایر گره‌ها به یک گراف مسیردهی صوتی متصل شود. این رابط یک {{domxref("AudioWorkletProcessor")}} مرتبط دارد که پردازش واقعی صدا را در یک ریسمان رندر Web Audio انجام می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("AudioWorkletNode.AudioWorkletNode", "AudioWorkletNode()")}}
-  - : Creates a new instance of an `AudioWorkletNode` object.
+  - : یک نمونه جدید از یک شیء `AudioWorkletNode` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also Inherits properties from its parent, {{domxref("AudioNode")}}_.
+_ویژگی‌های والد خود، {{domxref("AudioNode")}} را نیز به ارث می‌برد._
 
 - {{domxref("AudioWorkletNode.port")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("MessagePort")}} used for bidirectional communication between the node and its associated {{domxref("AudioWorkletProcessor")}}. The other end is available under the {{domxref("AudioWorkletProcessor.port", "port")}} property of the processor.
+  - : یک {{domxref("MessagePort")}} برمی‌گرداند که برای ارتباط دوطرفه بین گره و {{domxref("AudioWorkletProcessor")}} مرتبط با آن استفاده می‌شود. انتهای دیگر در ویژگی {{domxref("AudioWorkletProcessor.port", "port")}} پردازنده در دسترس است.
 - {{domxref("AudioWorkletNode.parameters")}} {{ReadOnlyInline}}
-  - : Returns an {{domxref("AudioParamMap")}} — a collection of {{domxref("AudioParam")}} objects. They are instantiated during the creation of the underlying `AudioWorkletProcessor`. If the `AudioWorkletProcessor` has a static {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} getter, the {{domxref("AudioParamDescriptor")}} array returned from it is used to create `AudioParam` objects on the `AudioWorkletNode`. With this mechanism it is possible to make your own `AudioParam` objects accessible from your `AudioWorkletNode`. You can then use their values in the associated `AudioWorkletProcessor`.
+  - : یک {{domxref("AudioParamMap")}} برمی‌گرداند — مجموعه‌ای از اشیاء {{domxref("AudioParam")}}. این اشیاء هنگام ایجاد `AudioWorkletProcessor` زیرین نمونه‌سازی می‌شوند. اگر `AudioWorkletProcessor` یک getter ایستا به نام {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} داشته باشد، آرایه {{domxref("AudioParamDescriptor")}} برگشت‌داده‌شده از آن برای ایجاد اشیاء `AudioParam` روی `AudioWorkletNode` استفاده می‌شود. با این سازوکار می‌توان اشیاء `AudioParam` خود را از `AudioWorkletNode` در دسترس قرار داد. سپس می‌توانید مقادیر آن‌ها را در `AudioWorkletProcessor` مرتبط استفاده کنید.
 
-### Events
+### رویدادها
 
 - {{domxref("AudioWorkletNode.processorerror_event", "processorerror")}}
-  - : Fired when an error is thrown in associated {{domxref("AudioWorkletProcessor")}}. Once fired, the processor and consequently the node will output silence throughout its lifetime.
+  - : زمانی که خطایی در {{domxref("AudioWorkletProcessor")}} مرتبط پرتاب شود، فعال می‌شود. پس از فعال شدن، پردازنده و در نتیجه گره تا پایان عمر خود خروجی سکوت خواهند داد.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent, {{domxref("AudioNode")}}_.
+_روش‌های والد خود، {{domxref("AudioNode")}} را نیز به ارث می‌برد._
 
-_The `AudioWorkletNode` interface does not define any methods of its own._
+_رابط `AudioWorkletNode` هیچ روشی از خود تعریف نمی‌کند._
 
-## Examples
+## نمونه‌ها
 
-In this example we create a custom `AudioWorkletNode` that outputs random noise.
+در این مثال، یک `AudioWorkletNode` سفارشی ایجاد می‌کنیم که نویز تصادفی خروجی می‌دهد.
 
-First, we need to define a custom {{domxref("AudioWorkletProcessor")}}, which will output random noise, and register it. Note that this should be done in a separate file.
+ابتدا باید یک {{domxref("AudioWorkletProcessor")}} سفارشی تعریف کنیم که نویز تصادفی خروجی بدهد و آن را ثبت کنیم. توجه داشته باشید که این کار باید در یک فایل جداگانه انجام شود.
 
 ```js
 // random-noise-processor.js
@@ -68,7 +68,7 @@ class RandomNoiseProcessor extends AudioWorkletProcessor {
 registerProcessor("random-noise-processor", RandomNoiseProcessor);
 ```
 
-Next, in our main script file we'll load the processor, create an instance of `AudioWorkletNode` passing it the name of the processor, and connect the node to an audio graph.
+سپس، در فایل اسکریپت اصلی خود، پردازنده را بارگذاری می‌کنیم، یک نمونه از `AudioWorkletNode` با ارسال نام پردازنده به آن ایجاد می‌کنیم و گره را به یک گراف صوتی متصل می‌کنیم.
 
 ```js
 const audioContext = new AudioContext();
@@ -80,16 +80,16 @@ const randomNoiseNode = new AudioWorkletNode(
 randomNoiseNode.connect(audioContext.destination);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
-- [Using AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
