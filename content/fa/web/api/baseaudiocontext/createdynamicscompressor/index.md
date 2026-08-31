@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createDynamicsCompressor() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,37 +14,32 @@ browser-compat: api.BaseAudioContext.createDynamicsCompressor
 
 {{ APIRef("Web Audio API") }}
 
-The `createDynamicsCompressor()` method of the {{domxref("BaseAudioContext")}} Interface is used to create a {{domxref("DynamicsCompressorNode")}}, which can be used to apply compression to an audio signal.
+متد `createDynamicsCompressor()` از رابط {{domxref("BaseAudioContext")}} برای ایجاد یک {{domxref("DynamicsCompressorNode")}} استفاده می‌شود که می‌توان از آن برای اعمال فشرده‌سازی بر روی سیگنال صوتی استفاده کرد.
 
-Compression lowers the volume of the loudest parts of the signal and raises the volume
-of the softest parts. Overall, a louder, richer, and fuller sound can be achieved. It is
-especially important in games and musical applications where large numbers of individual
-sounds are played simultaneously, where you want to control the overall signal level and
-help avoid clipping (distorting) of the audio output.
+فشرده‌سازی بلندی بلندترین بخش‌های سیگنال را کاهش می‌دهد و بلندی بخش‌های کم‌صدا را افزایش می‌دهد. به‌طور کلی، می‌توان صدای بلندتر، غنی‌تر و پربارتری به دست آورد. این امر به‌ویژه در بازی‌ها و برنامه‌های موسیقی که تعداد زیادی صداهای مجزا به‌طور هم‌زمان پخش می‌شوند، مهم است؛ جایی که می‌خواهید سطح کلی سیگنال را کنترل کنید و به جلوگیری از کلیپینگ (اعوجاج) خروجی صوتی کمک کنید.
 
 > [!NOTE]
-> The {{domxref("DynamicsCompressorNode.DynamicsCompressorNode", "DynamicsCompressorNode()")}}
-> constructor is the recommended way to create a {{domxref("DynamicsCompressorNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> سازندهٔ {{domxref("DynamicsCompressorNode.DynamicsCompressorNode", "DynamicsCompressorNode()")}}
+> روش پیشنهادی برای ایجاد یک {{domxref("DynamicsCompressorNode")}} است؛ به
+> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createDynamicsCompressor()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("DynamicsCompressorNode")}}.
+یک {{domxref("DynamicsCompressorNode")}}.
 
-## Examples
+## مثال‌ها
 
-The code below shows how to use `createDynamicsCompressor()`
-to add compression to an audio track. For a more complete example, have a look at our [basic Compressor example](https://mdn.github.io/webaudio-examples/compressor-example/) ([view the source code](https://github.com/mdn/webaudio-examples/tree/main/compressor-example)).
+کد زیر نحوهٔ استفاده از `createDynamicsCompressor()` را برای افزودن فشرده‌سازی به یک قطعهٔ صوتی نشان می‌دهد. برای مثالی کامل‌تر، به [basic Compressor example](https://mdn.github.io/webaudio-examples/compressor-example/) ([view the source code](https://github.com/mdn/webaudio-examples/tree/main/compressor-example)) نگاهی بیندازید.
 
 ```js
 // Create a MediaElementAudioSourceNode
@@ -82,14 +77,14 @@ button.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
