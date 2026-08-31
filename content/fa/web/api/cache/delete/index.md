@@ -1,7 +1,7 @@
 ---
 title: "Cache: delete() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Cache/delete"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,48 +14,39 @@ browser-compat: api.Cache.delete
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`delete()`** method of the {{domxref("Cache")}} interface finds the {{domxref("Cache")}} entry whose key is the request, and if found, deletes the {{domxref("Cache")}} entry and returns a {{jsxref("Promise")}} that resolves to `true`.
-If no {{domxref("Cache")}} entry is found, it resolves to `false`.
+متد **`delete()`** از رابط {{domxref("Cache")}}، ورودی مربوط به {{domxref("Cache")}} را که کلیدش درخواست است پیدا می‌کند و در صورت یافتن، آن ورودی {{domxref("Cache")}} را حذف کرده و یک {{jsxref("Promise")}} برمی‌گرداند که به `true` resolve می‌شود. اگر هیچ ورودی {{domxref("Cache")}} یافت نشود، به `false` resolve می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 delete(request)
 delete(request, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `request`
-  - : The {{domxref("Request")}} you are looking to delete.
-    This can be a `Request` object or a URL.
+  - : {{domxref("Request")}} که به دنبال حذف آن هستید.
+    این می‌تواند یک شیء `Request` یا یک URL باشد.
 - `options` {{optional_inline}}
-  - : An object whose properties control how matching is done in the `delete` operation.
-    The available options are:
+  - : شیئی که ویژگی‌هایش نحوه تطبیق را در عملیات `delete` کنترل می‌کند.
+    گزینه‌های موجود عبارت‌اند از:
     - `ignoreSearch`
-      - : A boolean value that specifies whether the matching process should ignore the query string in the URL.
-        If set to `true`, the `?value=bar` part of `https://example.com/?value=bar` would be ignored when performing a match.
-        It defaults to `false`.
+      - : یک مقدار بولین که مشخص می‌کند آیا فرآیند تطبیق باید رشته جستجو (query string) در URL را نادیده بگیرد یا نه.
+        اگر روی `true` تنظیم شود، بخش `?value=bar` از `https://example.com/?value=bar` هنگام انجام تطبیق نادیده گرفته می‌شود.
+        مقدار پیش‌فرض `false` است.
     - `ignoreMethod`
-      - : A boolean value that, when set to
-        `true`, prevents matching operations from validating the
-        {{domxref("Request")}} `HTTP` method (normally only `GET`
-        and `HEAD` are allowed.) It defaults to `false`.
+      - : یک مقدار بولین که وقتی روی `true` تنظیم شود، از اعتبارسنجی متد `HTTP` در عملیات تطبیق جلوگیری می‌کند (به‌طور معمول فقط `GET` و `HEAD` مجاز هستند). مقدار پیش‌فرض `false` است.
     - `ignoreVary`
-      - : A boolean value that, when set to
-        `true`, tells the matching operation not to perform `VARY`
-        header matching. In other words, if the URL matches you will get a match
-        regardless of whether the {{domxref("Response")}} object has a `VARY`
-        header. It defaults to `false`.
+      - : یک مقدار بولین که وقتی روی `true` تنظیم شود، به عملیات تطبیق می‌گوید که تطبیق هدر `VARY` را انجام ندهد. به عبارت دیگر، اگر URL مطابقت داشته باشد، بدون توجه به اینکه شیء {{domxref("Response")}} هدر `VARY` داشته باشد یا نه، تطبیق انجام می‌شود. مقدار پیش‌فرض `false` است.
     - `cacheName`
-      - : A string that represents a specific cache to search within. Note that this option is ignored by `Cache.delete()`.
+      - : یک رشته که نمایانگر یک کش خاص برای جستجو در آن است. توجه داشته باشید که این گزینه توسط `Cache.delete()` نادیده گرفته می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to `true` if the cache entry is
-deleted, or `false` otherwise.
+یک {{jsxref("Promise")}} که اگر ورودی کش حذف شود به `true` resolve می‌شود، و در غیر این صورت به `false` resolve می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 caches
@@ -66,16 +57,16 @@ caches
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 - {{domxref("Cache")}}
-- {{domxref("Window.caches")}} and {{domxref("WorkerGlobalScope.caches")}}
+- {{domxref("Window.caches")}} و {{domxref("WorkerGlobalScope.caches")}}
