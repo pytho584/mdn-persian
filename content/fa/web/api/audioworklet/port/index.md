@@ -1,7 +1,7 @@
 ---
 title: "AudioWorklet: port"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorklet/port"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,21 +16,21 @@ browser-compat: api.AudioWorklet.port
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`port`** read-only property of the {{domxref("AudioWorklet")}} interface returns a {{domxref("MessagePort")}} object that can be used to send and receive messages between the main thread and the associated {{domxref("AudioWorkletGlobalScope")}}.
+{{domxref("AudioWorklet")}} 接口的 **`port`** 只读属性返回一个 {{domxref("MessagePort")}} 对象，可用于在主线程和关联的 {{domxref("AudioWorkletGlobalScope")}} 之间发送和接收消息。
 
-This allows for custom, asynchronous communication between code in the main thread and the global scope of an audio worklet, such as receiving control data or global settings.
+这允许在主线程中的代码与音频工作let的全局作用域之间进行自定义的异步通信，例如接收控制数据或全局设置。
 
-## Value
+## 值
 
-The {{domxref("MessagePort")}} object connecting the `AudioWorklet` and its associated `AudioWorkletGlobalScope`.
+连接 `AudioWorklet` 及其关联 `AudioWorkletGlobalScope` 的 {{domxref("MessagePort")}} 对象。
 
-## Examples
+## 示例
 
-See [`AudioWorkletNode.port`](/en-US/docs/Web/API/AudioWorkletNode/port#examples) for more examples.
+有关更多示例，请参阅 [`AudioWorkletNode.port`](/en-US/docs/Web/API/AudioWorkletNode/port#examples)。
 
-### Using a port for global messages
+### 使用端口进行全局消息传递
 
-In the following example, we can use `port.onmessage` to receive data and `port.postMessage` to send data:
+在以下示例中，我们可以使用 `port.onmessage` 接收数据，并使用 `port.postMessage` 发送数据：
 
 ```js
 const context = new AudioContext();
@@ -48,17 +48,17 @@ context.audioWorklet.port.postMessage({
 });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- {{domxref("AudioWorkletGlobalScope")}} — the global execution context of an `AudioWorklet`
+- {{domxref("AudioWorkletGlobalScope")}} — `AudioWorklet` 的全局执行上下文
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
-- [Using AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
+- [使用 Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [使用 AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
