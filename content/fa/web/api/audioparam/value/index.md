@@ -1,7 +1,7 @@
 ---
 title: "AudioParam: value property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/value"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,24 +14,21 @@ browser-compat: api.AudioParam.value
 
 {{APIRef("Web Audio API")}}
 
-The **`value`** property of the {{domxref("AudioParam")}} interface gets or sets the value of this `AudioParam` at the current time.
-Initially, the value is set to {{domxref("AudioParam.defaultValue")}}.
+ویژگی **`value`** از رابط {{domxref("AudioParam")}} مقدار این `AudioParam` را در زمان فعلی دریافت یا تنظیم می‌کند. در ابتدا، مقدار روی {{domxref("AudioParam.defaultValue")}} تنظیم می‌شود.
 
-Setting `value` has the same effect as calling {{domxref("AudioParam.setValueAtTime")}} with the time returned by the `AudioContext`'s {{domxref("BaseAudioContext/currentTime", "currentTime")}} property.
+تنظیم `value` همان اثر فراخوانی {{domxref("AudioParam.setValueAtTime")}} را با زمانی دارد که توسط ویژگی {{domxref("BaseAudioContext/currentTime", "currentTime")}} از `AudioContext` بازگردانده می‌شود.
 
-## Value
+## مقدار
 
-A floating-point {{jsxref("Number")}} indicating the parameter's value as of the current time.
-This value will be between the values specified by the {{domxref("AudioParam.minValue", "minValue")}} and {{domxref("AudioParam.maxValue", "maxValue")}} properties.
+یک {{jsxref("Number")}} ممیز شناور که مقدار پارامتر را در زمان فعلی نشان می‌دهد. این مقدار بین مقادیر مشخص‌شده توسط ویژگی‌های {{domxref("AudioParam.minValue", "minValue")}} و {{domxref("AudioParam.maxValue", "maxValue")}} خواهد بود.
 
-## Description
+## توضیحات
 
-### Value precision and variation
+### دقت و تغییرپذیری مقدار
 
-The data type used internally to store `value` is a single-precision (32-bit) floating point number, while JavaScript uses 64-bit double-precision floating point numbers.
-As a result, the value you read from the `value` property may not always exactly equal what you set it to.
+نوع داده‌ای که به صورت داخلی برای ذخیره‌سازی `value` استفاده می‌شود، عدد ممیز شناور تک‌دقت (۳۲ بیتی) است، در حالی که جاوااسکریپت از اعداد ممیز شناور با دقت مضاعف ۶۴ بیتی استفاده می‌کند. در نتیجه، مقداری که از ویژگی `value` می‌خوانید ممکن است همیشه دقیقاً برابر با مقداری که تنظیم کرده‌اید نباشد.
 
-Consider this example:
+این مثال را در نظر بگیرید:
 
 ```js
 const source = new AudioBufferSourceNode(/* … */);
@@ -40,8 +37,7 @@ source.playbackRate.value = rate;
 console.log(source.playbackRate.value === rate);
 ```
 
-The log output will be `false`, because the playback rate parameter, `rate`, was converted to the 32-bit floating-point number closest to 5.3, which yields 5.300000190734863.
-One solution is to use the {{jsxref("Math.fround()")}} method, which returns the single-precision value equivalent to the 64-bit JavaScript value specified—when setting `value`, like this:
+خروجی لاگ `false` خواهد بود، زیرا پارامتر نرخ پخش، `rate`، به نزدیک‌ترین عدد ممیز شناور ۳۲ بیتی به ۵.۳ تبدیل شده است که ۵.300000190734863 را به دست می‌دهد. یک راه‌حل استفاده از روش {{jsxref("Math.fround()")}} است که مقدار تک‌دقت معادل با مقدار جاوااسکریپت ۶۴ بیتی مشخص‌شده را برمی‌گرداند — هنگام تنظیم `value`، به این صورت:
 
 ```js
 const source = new AudioBufferSourceNode(/* … */);
@@ -50,29 +46,25 @@ source.playbackRate.value = rate;
 console.log(source.playbackRate.value === rate);
 ```
 
-In this case, the log output will be `true`.
+در این حالت، خروجی لاگ `true` خواهد بود.
 
-### Value of a property which is changing over time
+### مقدار ویژگی که با گذشت زمان تغییر می‌کند
 
-The `value` of an `AudioParam` can either be fixed or can vary over time.
-This is reflected by the `value` getter, which returns the value of the parameter as of the audio rendering engine's most recent **render quantum**, or moment at which audio buffers are processed and updated.
-In addition to processing audio buffers, each render quantum updates the `value` of each `AudioParam` as needed given the current time and any established time-based parameter value changes.
+مقدار یک `AudioParam` می‌تواند ثابت باشد یا با گذشت زمان تغییر کند. این توسط getter مربوط به `value` منعکس می‌شود، که مقدار پارامتر را از آخرین **کوانتوم رندر** موتور رندر صوتی، یا لحظه‌ای که بافرهای صوتی پردازش و به‌روزرسانی می‌شوند، برمی‌گرداند. علاوه بر پردازش بافرهای صوتی، هر کوانتوم رندر، `value` هر `AudioParam` را در صورت نیاز با توجه به زمان فعلی و هر تغییر زمان‌بندی‌شده در مقدار پارامتر به‌روزرسانی می‌کند.
 
-Upon first creating the parameter, its value is set to its default value, given by {{domxref("AudioParam.defaultValue")}}.
-This is the parameter's value at a time of 0.0 seconds, and will remain the parameter's value until the first render quantum in which the value is altered.
+هنگام ایجاد اولیه پارامتر، مقدار آن روی مقدار پیش‌فرض خود، که توسط {{domxref("AudioParam.defaultValue")}} داده می‌شود، تنظیم می‌شود. این مقدار پارامتر در زمان ۰.۰ ثانیه است و تا اولین کوانتوم رندری که در آن مقدار تغییر می‌کند، مقدار پارامتر باقی می‌ماند.
 
-During each render quantum, the browser does the following things related to managing the value of a parameter:
+در طول هر کوانتوم رندر، مرورگر کارهای زیر را برای مدیریت مقدار یک پارامتر انجام می‌دهد:
 
-- If the `value` setter has been used, the parameter's value is changed to the value given.
-- If the current time equals or exceeds the time specified by a previous call to {{domxref("AudioParam.setValueAtTime", "setValueAtTime()")}}, the `value` is changed to the value passed into `setValueAtTime()`.
-- If any graduated or ramped value changing methods have been called and the current time is within the time range over which the graduated change should occur, the value is updated based on the appropriate algorithm.
-  These ramped or graduated value-changing methods include {{domxref("AudioParam.linearRampToValueAtTime", "linearRampToValueAtTime()")}}, {{domxref("AudioParam.setTargetAtTime", "setTargetAtTime()")}}, and {{domxref("AudioParam.setValueCurveAtTime", "setValueCurveAtTime()")}}.
+- اگر setter مربوط به `value` استفاده شده باشد، مقدار پارامتر به مقدار داده‌شده تغییر می‌کند.
+- اگر زمان فعلی برابر یا بیشتر از زمانی باشد که توسط فراخوانی قبلی {{domxref("AudioParam.setValueAtTime", "setValueAtTime()")}} مشخص شده است، `value` به مقداری که به `setValueAtTime()` ارسال شده تغییر می‌کند.
+- اگر هر یک از روش‌های تغییر مقدار پلکانی یا شیب‌دار فراخوانی شده باشند و زمان فعلی در محدوده زمانی باشد که تغییر پلکانی باید رخ دهد، مقدار بر اساس الگوریتم مناسب به‌روزرسانی می‌شود. این روش‌های تغییر مقدار شیب‌دار یا پلکانی شامل {{domxref("AudioParam.linearRampToValueAtTime", "linearRampToValueAtTime()")}}، {{domxref("AudioParam.setTargetAtTime", "setTargetAtTime()")}} و {{domxref("AudioParam.setValueCurveAtTime", "setValueCurveAtTime()")}} هستند.
 
-Thus, the `value` of a parameter is maintained to accurately reflect the state of the parameter over time.
+بنابراین، `value` یک پارامتر به گونه‌ای نگهداری می‌شود که وضعیت پارامتر را در طول زمان به دقت منعکس کند.
 
-## Examples
+## مثال‌ها
 
-This example instantly changes the volume of a {{domxref("GainNode")}} to 40%.
+این مثال به‌طور آنی حجم یک {{domxref("GainNode")}} را به ۴۰٪ تغییر می‌دهد.
 
 ```js
 const audioCtx = new AudioContext();
@@ -82,14 +74,14 @@ gainNode.gain.value = 0.4;
 gainNode.gain.setValueAtTime(0.4, audioCtx.currentTime);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
