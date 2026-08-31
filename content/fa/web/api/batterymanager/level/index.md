@@ -1,7 +1,7 @@
 ---
 title: "BatteryManager: level property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/level"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,18 +14,11 @@ browser-compat: api.BatteryManager.level
 
 {{ApiRef("Battery API")}}{{securecontext_header}}
 
-The **`level`** read-only property of the {{domxref("BatteryManager")}} interface indicates the current battery charge level as a value between `0.0` and `1.0`.
-A value of `0.0` means the battery is empty and the system is about to be suspended.
-A value of `1.0` means the battery is full or the user agent is unable to report the battery status information.
-When its value changes, the {{domxref("BatteryManager/levelchange_event", "levelchange")}} event is fired.
+ویژگی فقط‌خواندنی **`level`** در رابط {{domxref("BatteryManager")}}، سطح شارژ فعلی باتری را به صورت عددی بین `0.0` و `1.0` نشان می‌دهد. مقدار `0.0` به این معنی است که باتری خالی است و سیستم در آستانه تعلیق است. مقدار `1.0` به این معنی است که باتری کاملاً پر است یا عامل کاربر قادر به گزارش اطلاعات وضعیت باتری نیست. وقتی مقدار آن تغییر کند، رویداد {{domxref("BatteryManager/levelchange_event", "levelchange")}} فعال می‌شود.
 
-## Value
+## مثال‌ها
 
-A number.
-
-## Examples
-
-### Getting the battery level
+### دریافت سطح باتری
 
 #### HTML
 
@@ -51,19 +44,19 @@ getLevel.addEventListener("click", async () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-{{ EmbedLiveSample('Getting the battery level') }}
+{{ EmbedLiveSample('دریافت سطح باتری') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("BatteryManager")}}
 - {{domxref("Navigator.getBattery()")}}
