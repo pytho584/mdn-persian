@@ -1,7 +1,7 @@
 ---
 title: "ARIA: rowgroup role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,7 +13,7 @@ spec-urls: https://w3c.github.io/aria/#rowgroup
 sidebar: accessibilitysidebar
 ---
 
-An element with `role="rowgroup"` is a group of [rows](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) within a tabular structure. A `rowgroup` contains one or more rows of [cells](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role), [grid cells](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role), [column headers](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role), or [row headers](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role) within a [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role), [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role) or [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role).
+یک عنصر با `role="rowgroup"` گروهی از [ردیف‌ها](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) در یک ساختار جدولی است. یک `rowgroup` شامل یک یا چند ردیف از [سلول‌ها](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role)، [سلول‌های شبکه‌ای](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)، [سرستون‌ها](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) یا [سرردیف‌ها](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role) در یک [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role)، [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role) یا [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) است.
 
 ```html
 <div
@@ -40,43 +40,41 @@ An element with `role="rowgroup"` is a group of [rows](/en-US/docs/Web/Accessibi
 </div>
 ```
 
-## Description
+## توضیحات
 
-`Rowgroup` establishes a relationship between owned row elements and is a structural equivalent to the {{HTMLElement('thead')}}, {{HTMLElement('tfoot')}} and {{HTMLElement('tbody')}} elements in HTML. There is, however, no differentiation between different types of row groups. Their elements must be contained in, or owned by, elements with either the [table](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role) or [grid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) role. Using the native {{HTMLElement('thead')}}, {{HTMLElement('tfoot')}} and {{HTMLElement('tbody')}} HTML elements, whenever possible, is strongly encouraged.
+`Rowgroup` رابطه‌ای بین عناصر ردیف متعلق به خود برقرار می‌کند و معادل ساختاری عناصر {{HTMLElement('thead')}}، {{HTMLElement('tfoot')}} و {{HTMLElement('tbody')}} در HTML است. با این حال، هیچ تمایزی بین انواع مختلف گروه‌های ردیف وجود ندارد. عناصر آن‌ها باید در عناصری با نقش [table](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role) یا [grid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) قرار داشته باشند یا متعلق به آن‌ها باشند. استفاده از عناصر بومی HTML {{HTMLElement('thead')}}، {{HTMLElement('tfoot')}} و {{HTMLElement('tbody')}} در صورت امکان، به شدت توصیه می‌شود.
 
-To create an ARIA table header, table footer or table body, add `role="rowgroup"` to the element. That rowgroup should be nested within a grid, table or treegrid, encompassing a group of one or more rows. Each row, in turn, contains child cells. These cells can be of different types, depending on whether they are column or row headers, or plain or grid cells.
+برای ایجاد سربرگ جدول، پابرگ جدول یا بدنه جدول ARIA، `role="rowgroup"` را به عنصر اضافه کنید. آن گروه ردیف باید درون یک grid، table یا treegrid قرار گیرد و گروهی از یک یا چند ردیف را در بر بگیرد. هر ردیف به نوبه خود شامل سلول‌های فرزند است. این سلول‌ها بسته به اینکه سرستون یا سرردیف باشند یا سلول‌های ساده یا شبکه‌ای، می‌توانند انواع مختلفی داشته باشند.
 
 > [!NOTE]
-> Using the native HTML table element ({{HTMLElement('table')}}) along with the table header ({{HTMLElement('thead')}}), footer ({{HTMLElement('tfoot')}}), and body ({{HTMLElement('tbody')}}) elements whenever possible is strongly encouraged.
+> استفاده از عنصر بومی HTML جدول ({{HTMLElement('table')}}) به همراه عناصر سربرگ جدول ({{HTMLElement('thead')}})، پابرگ ({{HTMLElement('tfoot')}}) و بدنه ({{HTMLElement('tbody')}}) در صورت امکان به شدت توصیه می‌شود.
 
-### Associated WAI-ARIA roles, states, and properties
-
-#### Context roles
+### نقش‌های زمینه
 
 - [role="table"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
-  - : One of the three possible contexts (along with grid and treegrid) in which you'll find a row. It identifies the row as being part of a non-interactive table structure containing data arranged in rows and columns, similar to the native {{HTMLElement('table')}} HTML element.
+  - : یکی از سه زمینه ممکن (به همراه grid و treegrid) که در آن یک ردیف پیدا می‌کنید. این ردیف را به عنوان بخشی از یک ساختار جدولی غیرتعاملی شامل داده‌های مرتب‌شده در سطرها و ستون‌ها شناسایی می‌کند، مشابه عنصر بومی HTML {{HTMLElement('table')}}.
 - [role="grid"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role)
-  - : One of the three possible contexts (along with table and treegrid) in which you'll find a row. It identifies the row as being part of a non-interactive table structure containing data arranged in rows and columns, similar to the native {{HTMLElement('table')}} HTML element.
+  - : یکی از سه زمینه ممکن (به همراه table و treegrid) که در آن یک ردیف پیدا می‌کنید. این ردیف را به عنوان بخشی از یک ساختار جدولی غیرتعاملی شامل داده‌های مرتب‌شده در سطرها و ستون‌ها شناسایی می‌کند، مشابه عنصر بومی HTML {{HTMLElement('table')}}.
 - [role="treegrid"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
-  - : Similar to a grid, but with rows that can be expanded and collapsed in the same manner as for a tree.
+  - : مشابه یک grid، اما با ردیف‌هایی که می‌توانند به همان روش درخت باز و بسته شوند.
 
-#### Descendant roles
+### نقش‌های فرزند
 
 - [role="row"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
-  - : A row of cells within a tabular structure. A row contains one or more [cells](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role), [gridcell](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role), or [column headers](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role), and sometimes a [row header](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role).
+  - : یک ردیف از سلول‌ها در یک ساختار جدولی. یک ردیف شامل یک یا چند [سلول](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role)، [سلول شبکه‌ای](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role) یا [سرستون‌ها](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) و گاهی یک [سرردیف](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role) است.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-None.
+هیچ‌کدام.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-None.
+هیچ‌کدام.
 
 > [!NOTE]
-> The first rule of ARIA use is if you can use a native feature with the semantics and behavior you require already built in, instead of re-purposing an element and **adding** an ARIA role, state or property to make it accessible, then do so. Employ the HTML `<table>` element instead of the ARIA role of table whenever possible.
+> اولین قانون استفاده از ARIA این است که اگر می‌توانید از یک ویژگی بومی با معنا و رفتار مورد نیاز خود که از قبل ساخته شده است استفاده کنید، به جای تغییر کاربری یک عنصر و **افزودن** نقش، حالت یا ویژگی ARIA برای قابل دسترس کردن آن، این کار را انجام دهید. در صورت امکان به جای نقش ARIA جدول، از عنصر HTML `<table>` استفاده کنید.
 
-## Examples
+## مثال‌ها
 
 ```html
 <div
@@ -114,11 +112,11 @@ None.
 </div>
 ```
 
-The above is a non-semantic ARIA table with a table header and table body, with five of 81 rows present in the DOM: one within a table header and four rows within the table body. The header row, alone in a header rowgroup, has two column headers. The columns are sortable, but not currently sorted, as indicated by the [`aria-sort`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-sort) property. The table body is a separate rowgroup, with four rows currently in the DOM. Because not all the rows are in the DOM, we've included the [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) property on every row.
+نمونه بالا یک جدول ARIA غیر معنایی با سربرگ جدول و بدنه جدول است که پنج ردیف از ۸۱ ردیف در DOM وجود دارد: یکی در سربرگ جدول و چهار ردیف در بدنه جدول. ردیف سربرگ، که به تنهایی در یک گروه ردیف سربرگ قرار دارد، دو سرستون دارد. ستون‌ها قابل مرتب‌سازی هستند، اما در حال حاضر مرتب نشده‌اند، همان‌طور که ویژگی [`aria-sort`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-sort) نشان می‌دهد. بدنه جدول یک گروه ردیف جداگانه است که چهار ردیف در DOM دارد. از آنجا که همه ردیف‌ها در DOM نیستند، ویژگی [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) را روی هر ردیف قرار داده‌ایم.
 
-## Best practices
+## بهترین روش‌ها
 
-Only use {{HTMLElement('table')}}, {{HTMLElement('tbody')}}, {{HTMLElement('thead')}}, {{HTMLElement('tr')}}, {{HTMLElement('th')}}, {{HTMLElement('td')}}, and so on for data table structure. You can add these ARIA roles to ensure accessibility should the native semantics of the table be removed, such as with CSS. A relevant use case for the ARIA table role is when the CSS's display property overrides the native semantics of a table, such as by `display: grid`. In this case, you can use the ARIA table roles to add in the semantics.
+فقط از {{HTMLElement('table')}}، {{HTMLElement('tbody')}}، {{HTMLElement('thead')}}، {{HTMLElement('tr')}}، {{HTMLElement('th')}}، {{HTMLElement('td')}} و غیره برای ساختار جدول داده استفاده کنید. می‌توانید این نقش‌های ARIA را برای تضمین دسترسی‌پذیری اضافه کنید اگر معنای ذاتی جدول حذف شود، مثلاً با CSS. یک مورد استفاده مرتبط برای نقش ARIA table زمانی است که ویژگی display در CSS معنای ذاتی جدول را لغو کند، مانند `display: grid`. در این حالت، می‌توانید از نقش‌های ARIA table برای افزودن معنا استفاده کنید.
 
 ```html
 <table
@@ -148,19 +146,19 @@ Only use {{HTMLElement('table')}}, {{HTMLElement('tbody')}}, {{HTMLElement('thea
 </table>
 ```
 
-Above is the semantic way of writing a table. The ARIA roles are only necessary if the native semantics of the table, and therefore the table rows, are obliterated, such as by setting the [display property to flex or grid](/en-US/docs/Web/CSS/Reference/Properties/display#accessibility).
+در بالا روش معنایی نوشتن جدول آمده است. نقش‌های ARIA تنها زمانی لازم هستند که معنای ذاتی جدول، و در نتیجه ردیف‌های جدول، از بین بروند، مانند تنظیم [خاصیت display روی flex یا grid](/en-US/docs/Web/CSS/Reference/Properties/display#accessibility).
 
-### Added benefits
+### مزایای افزوده
 
-none
+هیچ‌کدام
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## جستارهای وابسته
 
-- [HTML table](/en-US/docs/Web/HTML/Reference/Elements/table)
-- [HTML table body](/en-US/docs/Web/HTML/Reference/Elements/tbody)
-- [HTML table footer](/en-US/docs/Web/HTML/Reference/Elements/tfoot)
-- [HTML table header](/en-US/docs/Web/HTML/Reference/Elements/thead)
+- [جدول HTML](/en-US/docs/Web/HTML/Reference/Elements/table)
+- [بدنه جدول HTML](/en-US/docs/Web/HTML/Reference/Elements/tbody)
+- [پابرگ جدول HTML](/en-US/docs/Web/HTML/Reference/Elements/tfoot)
+- [سربرگ جدول HTML](/en-US/docs/Web/HTML/Reference/Elements/thead)
