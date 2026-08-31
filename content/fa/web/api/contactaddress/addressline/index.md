@@ -1,11 +1,5 @@
 ---
 title: "ContactAddress: addressLine property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContactAddress/addressLine"
-status: "needs-translation"
----
-
----
-title: "ContactAddress: addressLine property"
 short-title: addressLine
 slug: Web/API/ContactAddress/addressLine
 page-type: web-api-instance-property
@@ -16,11 +10,11 @@ browser-compat: api.ContactAddress.addressLine
 
 {{securecontext_header}}{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
-The **`addressLine`** read-only property of the {{domxref("ContactAddress")}} interface is an array of strings, each specifying a line of the address that is not covered by one of the other properties of `ContactAddress`. The array may include the street name, the house number, apartment number, the rural delivery route, descriptive instructions, or the post office box.
+ویژگی فقط‌خواندنی **`addressLine`** از رابط {{domxref("ContactAddress")}}، آرایه‌ای از رشته‌ها است که هر کدام یک خط از آدرس را مشخص می‌کند که توسط هیچ‌کدام از سایر ویژگی‌های `ContactAddress` پوشش داده نشده است. این آرایه ممکن است شامل نام خیابان، شماره پلاک، شماره واحد، مسیر تحویل روستایی، دستورالعمل‌های توصیفی یا صندوق پستی باشد.
 
-## Value
+## مقدار
 
-An array of strings, each containing one line of the address. For example, the `addressLine` property for the Mozilla Space in London would have the following entries:
+آرایه‌ای از رشته‌ها که هر کدام حاوی یک خط از آدرس است. برای مثال، ویژگی `addressLine` برای دفتر Mozilla در لندن دارای ورودی‌های زیر خواهد بود:
 
 | Index | addressLine[] value       |
 | ----- | ------------------------- |
@@ -28,7 +22,7 @@ An array of strings, each containing one line of the address. For example, the `
 | 1     | Suite 441, 4th floor      |
 | 2     | 30 Great Guildford Street |
 
-These, combined with additional values for other properties of the {{domxref("ContactAddress")}}, would represent the full address, which is:
+این‌ها همراه با مقادیر اضافی برای سایر ویژگی‌های {{domxref("ContactAddress")}}، آدرس کامل را نشان می‌دهند که به صورت زیر است:
 
 ```plain
 Mozilla
@@ -39,10 +33,10 @@ London SE1 0HS
 United Kingdom
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
