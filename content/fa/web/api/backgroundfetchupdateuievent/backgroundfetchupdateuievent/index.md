@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchUpdateUIEvent: BackgroundFetchUpdateUIEvent() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchUpdateUIEvent/BackgroundFetchUpdateUIEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,32 +16,32 @@ browser-compat: api.BackgroundFetchUpdateUIEvent.BackgroundFetchUpdateUIEvent
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`BackgroundFetchUpdateUIEvent()`** constructor creates a new {{domxref("BackgroundFetchUpdateUIEvent")}} object. This constructor is not typically used as the browser creates these objects itself and provides them to background fetch event callbacks.
+سازندهٔ **`BackgroundFetchUpdateUIEvent()`** یک شیء جدید از نوع {{domxref("BackgroundFetchUpdateUIEvent")}} می‌سازد. این سازنده معمولاً به‌طور مستقیم استفاده نمی‌شود، زیرا مرورگر این اشیاء را به‌طور خودکار ساخته و آن‌ها را به فراخوانی‌های رویداد background fetch ارائه می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new BackgroundFetchEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `backgroundfetchsuccess` or `backgroundfetchfail`.
+  - : رشته‌ای شامل نام رویداد.
+    این مقدار به حروف بزرگ و کوچک حساس است و مرورگر آن را روی `backgroundfetchsuccess` یا `backgroundfetchfail` تنظیم می‌کند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_, has the following properties:
+  - : شیءای که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_، دارای ویژگی‌های زیر است:
     - `registration`
-      - : A {{domxref("BackgroundFetchRegistration")}} object.
+      - : یک شیء {{domxref("BackgroundFetchRegistration")}}.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("BackgroundFetchUpdateUIEvent")}} object.
+یک شیء جدید از نوع {{domxref("BackgroundFetchUpdateUIEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
