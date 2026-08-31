@@ -1,7 +1,6 @@
 ---
 title: "ClipboardItem: getType() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem/getType"
-status: "needs-translation"
 ---
 
 ---
@@ -14,33 +13,33 @@ browser-compat: api.ClipboardItem.getType
 
 {{APIRef("Clipboard API")}} {{securecontext_header}}
 
-The **`getType()`** method of the {{domxref("ClipboardItem")}} interface returns a {{jsxref("Promise")}} that resolves with a {{domxref("Blob")}} of the requested {{Glossary("MIME type")}} or an error if the MIME type is not found.
+متد **`getType()`** در رابط {{domxref("ClipboardItem")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک {{domxref("Blob")}} از نوع {{Glossary("MIME type")}} درخواستی حل می‌شود، یا در صورت یافت نشدن نوع MIME، یک خطا برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getType(type)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A valid {{Glossary("MIME type")}}.
+  - : یک {{Glossary("MIME type")}} معتبر.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a {{domxref("Blob")}} object.
+یک {{jsxref("Promise")}} که با یک شیء {{domxref("Blob")}} حل می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : The `type` does not match a known {{Glossary("MIME type")}}.
+  - : `type` با هیچ {{Glossary("MIME type")}} شناخته‌شده‌ای مطابقت ندارد.
 - {{jsxref("TypeError")}}
-  - : No parameter is specified or the `type` is not that of the {{domxref("ClipboardItem")}}.
+  - : هیچ پارامتری مشخص نشده است یا `type` مربوط به {{domxref("ClipboardItem")}} نیست.
 
-## Examples
+## مثال‌ها
 
-In the following example, we're returning all items on the clipboard via the {{domxref("clipboard.read()")}} method. For each one, we pass the {{domxref("ClipboardItem.types")}} property to the `getType()` method, which returns the corresponding `Blob` object.
+در مثال زیر، تمام آیتم‌های کلیپ‌بورد را از طریق متد {{domxref("clipboard.read()")}} برمی‌گردانیم. برای هر آیتم، ویژگی {{domxref("ClipboardItem.types")}} را به متد `getType()` پاس می‌دهیم که شیء `Blob` مربوطه را برمی‌گرداند.
 
 ```js
 async function getClipboardContents() {
@@ -59,15 +58,15 @@ async function getClipboardContents() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Clipboard API](/en-US/docs/Web/API/Clipboard_API)
 - [Image support for Async Clipboard article](https://web.dev/articles/async-clipboard)
