@@ -1,11 +1,5 @@
 ---
 title: "CloseWatcher: CloseWatcher() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher/CloseWatcher"
-status: "needs-translation"
----
-
----
-title: "CloseWatcher: CloseWatcher() constructor"
 short-title: CloseWatcher()
 slug: Web/API/CloseWatcher/CloseWatcher
 page-type: web-api-constructor
@@ -14,9 +8,9 @@ browser-compat: api.CloseWatcher.CloseWatcher
 
 {{APIRef("HTML DOM")}}
 
-The **`CloseWatcher()`** constructor creates a new {{domxref("CloseWatcher")}} object.
+سازندهٔ **`CloseWatcher()`** یک شیء جدید از نوع {{domxref("CloseWatcher")}} می‌سازد.
 
-You can create `CloseWatcher` instances without [user activation](/en-US/docs/Web/Security/Defenses/User_activation), and this can be useful to implement cases like session inactivity timeout dialogs. However, if you create more than one `CloseWatcher` without user activation, then the newly-created one will be grouped together with the last one, so a single close request will close them both. This means that it is important to call {{domxref("CloseWatcher.destroy()", "destroy()")}}, {{domxref("CloseWatcher.close()", "close()")}}, and {{domxref("CloseWatcher.requestClose()", "requestClose()")}} properly.
+شما می‌توانید نمونه‌های `CloseWatcher` را بدون [فعالیت کاربر](/en-US/docs/Web/Security/Defenses/User_activation) ایجاد کنید، و این می‌تواند برای پیاده‌سازی مواردی مانند گفتگوهای وقفه به دلیل عدم فعالیت نشست مفید باشد. با این حال، اگر بیش از یک `CloseWatcher` بدون فعالیت کاربر ایجاد کنید، نمونهٔ تازه‌ساخته‌شده با نمونهٔ قبلی گروه‌بندی می‌شود، بنابراین یک درخواست بستن، هر دوی آن‌ها را می‌بندد. این بدان معناست که مهم است متدهای {{domxref("CloseWatcher.destroy()", "destroy()")}}، {{domxref("CloseWatcher.close()", "close()")}} و {{domxref("CloseWatcher.requestClose()", "requestClose()")}} را به‌درستی فراخوانی کنید.
 
 ## Syntax
 
@@ -28,25 +22,25 @@ new CloseWatcher(options)
 ### Parameters
 
 - `options` {{optional_inline}}
-  - : An object that has the following properties:
+  - : شیئی است که ویژگی‌های زیر را دارد:
     - `signal`
-      - : An {{domxref("AbortSignal")}}. If this is provided, then the watcher can be destroyed (as if by calling {{domxref("CloseWatcher.destroy()")}}) by calling {{domxref("AbortController.abort()")}} on the corresponding {{domxref("AbortController")}}.
+      - : یک {{domxref("AbortSignal")}}. اگر این مورد ارائه شود، ناظر (watcher) می‌تواند (مشابه فراخوانی {{domxref("CloseWatcher.destroy()")}}) با فراخوانی {{domxref("AbortController.abort()")}} روی {{domxref("AbortController")}} متناظر از بین برود.
 
 ### Return value
 
-A new {{domxref("CloseWatcher")}} object.
+یک شیء جدید از نوع {{domxref("CloseWatcher")}}.
 
 ## Examples
 
-### Creating new `CloseWatcher` instances
+### ایجاد نمونه‌های جدید `CloseWatcher`
 
-Create a new `CloseWatcher`.
+یک `CloseWatcher` جدید ایجاد کنید.
 
 ```js
 const watcher = new CloseWatcher();
 ```
 
-Create a new `CloseWatcher` with an {{domxref("AbortSignal")}} that controls destroying the watcher.
+یک `CloseWatcher` جدید با یک {{domxref("AbortSignal")}} ایجاد کنید که از بین بردن ناظر را کنترل می‌کند.
 
 ```js
 const controller = new AbortController();
