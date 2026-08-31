@@ -1,7 +1,7 @@
 ---
 title: "AnimationEvent: elapsedTime property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/elapsedTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,33 +14,22 @@ browser-compat: api.AnimationEvent.elapsedTime
 
 {{APIRef("Web Animations")}}
 
-The **`AnimationEvent.elapsedTime`** read-only property is a
-`float` giving the amount of time the animation has been running, in seconds,
-when this event fired, excluding any time the animation was paused. For an
-{{domxref("Element/animationstart_event", "animationstart")}} event,
-`elapsedTime` is `0.0` unless there was a negative value for
-{{cssxref("animation-delay")}}, in which case the event will be fired with
-`elapsedTime` containing `(-1 * delay)`.
+خصوصیت فقط-خواندنی **`AnimationEvent.elapsedTime`** یک `float` است که مقدار زمان اجرای انیمیشن را بر حسب ثانیه، هنگام فعال شدن این رویداد، به‌جز زمان‌هایی که انیمیشن مکث شده، برمی‌گرداند. برای رویداد {{domxref("Element/animationstart_event", "animationstart")}}، `elapsedTime` برابر `0.0` است مگر اینکه مقدار منفی برای {{cssxref("animation-delay")}} وجود داشته باشد، که در آن صورت رویداد با `elapsedTime` حاوی `(-1 * delay)` فراخوانی می‌شود.
 
-## Value
+## مقدار
 
-A `float` giving the amount of time in seconds.
+یک `float` که مقدار زمان را بر حسب ثانیه می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using CSS animations](/en-US/docs/Web/CSS/Guides/Animations/Using)
-- Animation-related CSS properties and at-rules: {{cssxref("animation")}},
-  {{cssxref("animation-delay")}}, {{cssxref("animation-direction")}},
-  {{cssxref("animation-duration")}}, {{cssxref("animation-fill-mode")}},
-  {{cssxref("animation-iteration-count")}}, {{cssxref("animation-name")}},
-  {{cssxref("animation-play-state")}}, {{cssxref("animation-timing-function")}},
-  {{cssxref("@keyframes")}}.
-- The {{domxref("AnimationEvent")}} interface it belongs to.
+- [استفاده از انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations/Using)
+- خصوصیات و قواعد CSS مرتبط با انیمیشن: {{cssxref("animation")}}، {{cssxref("animation-delay")}}، {{cssxref("animation-direction")}}، {{cssxref("animation-duration")}}، {{cssxref("animation-fill-mode")}}، {{cssxref("animation-iteration-count")}}، {{cssxref("animation-name")}}، {{cssxref("animation-play-state")}}، {{cssxref("animation-timing-function")}}، {{cssxref("@keyframes")}}.
+- رابط {{domxref("AnimationEvent")}} که این خصوصیت به آن تعلق دارد.
