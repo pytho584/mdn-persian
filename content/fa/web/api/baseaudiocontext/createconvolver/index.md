@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createConvolver() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createConvolver"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,40 +14,38 @@ browser-compat: api.BaseAudioContext.createConvolver
 
 {{ APIRef("Web Audio API") }}
 
-The `createConvolver()` method of the {{ domxref("BaseAudioContext") }}
-interface creates a {{ domxref("ConvolverNode") }}, which is commonly used to apply
-reverb effects to your audio. See the [spec definition of Convolution](https://webaudio.github.io/web-audio-api/#background-3) for more information.
+متد `createConvolver()` از رابط {{ domxref("BaseAudioContext") }} یک {{ domxref("ConvolverNode") }} ایجاد می‌کند که معمولاً برای اعمال افکت‌های ریورب به صدای شما استفاده می‌شود. برای اطلاعات بیشتر به [تعریف مشخصات Convolution](https://webaudio.github.io/web-audio-api/#background-3) مراجعه کنید.
 
 > [!NOTE]
-> The {{domxref("ConvolverNode.ConvolverNode", "ConvolverNode()")}}
-> constructor is the recommended way to create a {{domxref("ConvolverNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> سازنده {{domxref("ConvolverNode.ConvolverNode", "ConvolverNode()")}}
+> روش توصیه‌شده برای ایجاد یک {{domxref("ConvolverNode")}} است؛ به
+> [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createConvolver()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("ConvolverNode")}}.
+یک {{domxref("ConvolverNode")}}.
 
-## Examples
+## مثال‌ها
 
-### Creating a convolver node
+### ایجاد یک گره کانولور
 
-The following example shows how to use an AudioContext to create a convolver node.
-You create an {{domxref("AudioBuffer")}} containing a sound sample to be used
-as an ambience to shape the convolution (called the _impulse response_) and
-apply that to the convolver. The example below uses a short sample of a concert hall
-crowd, so the reverb effect applied is really deep and echoey.
+مثال زیر نحوه استفاده از یک AudioContext برای ایجاد یک گره کانولور را نشان می‌دهد.
+شما یک {{domxref("AudioBuffer")}} حاوی یک نمونه صوتی ایجاد می‌کنید که به عنوان
+محیط برای شکل‌دهی به کانولوشن (به نام _پاسخ ضربه_) استفاده می‌شود و
+آن را روی کانولور اعمال می‌کنید. مثال زیر از یک نمونه کوتاه از جمعیت سالن کنسرت
+استفاده می‌کند، بنابراین افکت ریورب اعمال‌شده واقعاً عمیق و پرطنین است.
 
-For more complete applied examples/information, check out our [Voice-change-O-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) demo (see [app.js](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js) for the code that is excerpted below).
+برای مثال‌های کاربردی کامل‌تر/اطلاعات بیشتر، دموی [Voice-change-O-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) ما را ببینید (برای کدی که در زیر گزیده شده است، [app.js](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js) را ببینید).
 
 ```js
 const audioCtx = new AudioContext();
@@ -71,14 +69,14 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
