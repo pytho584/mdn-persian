@@ -1,11 +1,5 @@
 ---
 title: "CloseWatcher: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher/close"
-status: "needs-translation"
----
-
----
-title: "CloseWatcher: close() method"
 short-title: close()
 slug: Web/API/CloseWatcher/close
 page-type: web-api-instance-method
@@ -14,36 +8,36 @@ browser-compat: api.CloseWatcher.close
 
 {{APIRef("HTML DOM")}}
 
-The **`close()`** method of the {{domxref("CloseWatcher")}} interface lets you skip any logic in the `cancel` event handler and immediately fire the `close` event. It then deactivates the close watcher as if `destroy()` was called.
+متد **`close()`** از رابط {{domxref("CloseWatcher")}} به شما امکان می‌دهد تا هر منطقی را در کنترل‌کننده رویداد `cancel` نادیده گرفته و بلافاصله رویداد `close` را فعال کنید. سپس، watcher بسته شدن را غیرفعال می‌کند، گویی که متد `destroy()` فراخوانی شده است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچکدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Using the `close()` method
+### استفاده از متد `close()`
 
-Use the `close()` method to deactivate the close watcher and destroy it.
+از متد `close()` برای غیرفعال کردن watcher بسته شدن و نابود کردن آن استفاده کنید.
 
 ```js
 watcher.close();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
