@@ -1,7 +1,7 @@
 ---
 title: "ARIA: banner role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/banner_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,35 +15,35 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `banner` role is for defining a global site header, which usually includes a logo, company name, search feature, and possibly the global navigation or a slogan. It is generally located at the top of the page.
+نقش `banner` برای تعریف سرصفحه سراسری سایت استفاده می‌شود که معمولاً شامل لوگو، نام شرکت، قابلیت جستجو و احتمالاً ناوبری سراسری یا یک شعار است. این عنصر معمولاً در بالای صفحه قرار دارد.
 
-By default, the HTML's {{htmlelement("header")}} element has an identical meaning to the `banner` landmark, unless it is a descendant of {{htmlelement("aside")}}, {{htmlelement("article")}}, {{htmlelement("main")}}, {{htmlelement("nav")}}, or {{htmlelement("section")}}, at which point {{htmlelement("header")}} exposes a [`generic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/generic_role) role, and not the equivalent of the site-wide banner.
+به‌طور پیش‌فرض، عنصر {{htmlelement("header")}} در HTML معنای یکسانی با نقطه عطف `banner` دارد، مگر اینکه فرزند یکی از عناصر {{htmlelement("aside")}}، {{htmlelement("article")}}، {{htmlelement("main")}}، {{htmlelement("nav")}} یا {{htmlelement("section")}} باشد، که در آن صورت {{htmlelement("header")}} نقش [`generic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/generic_role) را نمایش می‌دهد، نه معادل بنر سراسری سایت را.
 
-## Description
+## توضیحات
 
-A `banner` landmark role overwrites the implicit ARIA role of the container element upon which it is applied. It should be reserved for globally repeating site-wide content that is generally located at the top of every page.
+نقش نقطه عطف `banner` نقش ARIA ضمنی عنصر ظرفی را که روی آن اعمال می‌شود، بازنویسی می‌کند. این نقش باید برای محتوای سراسری و تکراری سایت که معمولاً در بالای هر صفحه قرار دارد، اختصاص داده شود.
 
-The banner typically includes things such as a logo or corporate identity, or possibly a site-specific search tool, and is generally what your marketing team would call the "header" or "top banner" of the site. If the [`header` element](/en-US/docs/Web/HTML/Reference/Elements/header) technique is not being used for that banner, a declaration of `role="banner"` should be used to define a banner landmark to assistive technologies.
+بنر معمولاً شامل مواردی مانند لوگو یا هویت سازمانی، یا احتمالاً ابزار جستجوی مخصوص سایت است و به طور کلی چیزی است که تیم بازاریابی شما آن را «هدر» یا «بنر بالای» سایت می‌نامد. اگر از تکنیک [`عنصر header`](/en-US/docs/Web/HTML/Reference/Elements/header) برای آن بنر استفاده نمی‌شود، باید اعلان `role="banner"` برای تعریف یک نقطه عطف بنر برای فناوری‌های کمکی استفاده شود.
 
-Assistive technologies can identify the `header` element of a page as the `banner` if it is a descendant of the [`body` element](/en-US/docs/Web/HTML/Reference/Elements/body), and not nested within an `article`, `aside`, `main`, `nav` or `section` subsection.
+فناوری‌های کمکی می‌توانند عنصر `header` یک صفحه را به عنوان `banner` شناسایی کنند، اگر این عنصر فرزند [`عنصر body`](/en-US/docs/Web/HTML/Reference/Elements/body) باشد و در زیربخش‌های `article`، `aside`، `main`، `nav` یا `section` قرار نگرفته باشد.
 
-Each page may have a `banner` landmark, but each page should generally be limited to a single element with the role of banner. In the case of a page containing nested `document` and/or `application` roles, each nested `document` or `application` role may also have one `banner` landmark. If a page includes more than one `banner` landmark, each should have a unique accessible name.
+هر صفحه می‌تواند یک نقطه عطف `banner` داشته باشد، اما هر صفحه معمولاً باید به یک عنصر واحد با نقش بنر محدود شود. در مورد صفحه‌ای که شامل نقش‌های تودرتوی `document` و/یا `application` است، هر نقش `document` یا `application` تودرتو نیز می‌تواند یک نقطه عطف `banner` داشته باشد. اگر یک صفحه شامل بیش از یک نقطه عطف `banner` باشد، هر کدام باید یک نام قابل دسترس منحصر به فرد داشته باشند.
 
-### Associated ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های ARIA مرتبط
 
-None.
+هیچ‌کدام.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-None.
+هیچ‌کدام.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-None.
+هیچ‌کدام.
 
-## Examples
+## مثال‌ها
 
-Here's a fake banner with a skip to navigation link, a logo, a title and a subtitle. As this is the main header for the site, we've added the `banner` landmark role to the container element.
+در اینجا یک بنر نمونه با لینک پرش به ناوبری، لوگو، عنوان و زیرعنوان آورده شده است. از آنجایی که این سرصفحه اصلی سایت است، ما نقش نقطه عطف `banner` را به عنصر ظرف اضافه کرده‌ایم.
 
 ```html
 <div role="banner">
@@ -55,7 +55,7 @@ Here's a fake banner with a skip to navigation link, a logo, a title and a subti
 </div>
 ```
 
-We could also have written the above with the HTML `header` element:
+ما همچنین می‌توانستیم مثال بالا را با عنصر `header` در HTML بنویسیم:
 
 ```html
 <header>
@@ -67,17 +67,17 @@ We could also have written the above with the HTML `header` element:
 </header>
 ```
 
-## Best practices
+## بهترین روش‌ها
 
-Using the {{HTMLElement('header')}} element will automatically communicate that the element has a role of `banner`. If possible, prefer using the semantic `<header>` element instead of the `banner` role.
+استفاده از عنصر {{HTMLElement('header')}} به طور خودکار به اطلاع می‌رساند که عنصر دارای نقش `banner` است. در صورت امکان، ترجیح دهید از عنصر معنایی `<header>` به جای نقش `banner` استفاده کنید.
 
-While it is best to use the `header` element and ensure it is not a descendant of any subsection of the page, sometimes you don't have access to the underlying HTML. If this is the case, you can add the role of `banner` to the element of the page which should be exposed as a `banner` with JavaScript. Identifying the page's banner in this way will help improve the site's accessibility.
+در حالی که بهتر است از عنصر `header` استفاده کنید و مطمئن شوید که فرزند هیچ زیربخشی از صفحه نیست، گاهی اوقات به HTML اصلی دسترسی ندارید. در این صورت، می‌توانید نقش `banner` را با جاوااسکریپت به عنصری از صفحه که باید به عنوان `banner` نمایش داده شود، اضافه کنید. شناسایی بنر صفحه به این روش به بهبود دسترسی‌پذیری سایت کمک می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [HTML `header` element](/en-US/docs/Web/HTML/Reference/Elements/header)
-- [WC3 Landmarks Example](https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/banner.html)
+- [عنصر `header` در HTML](/en-US/docs/Web/HTML/Reference/Elements/header)
+- [مثال نقاط عطف WC3](https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/banner.html)
