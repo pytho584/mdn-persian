@@ -1,7 +1,7 @@
 ---
 title: "ARIA: region role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/region_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,92 +15,92 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The **`region`** role is used to identify document areas the author deems significant. It is a generic landmark available to aid in navigation when none of the other landmark roles are appropriate.
+نقش **`region`** برای شناسایی بخش‌هایی از سند استفاده می‌شود که نویسنده آن‌ها را قابل توجه می‌داند. این یک landmark عمومی است که برای کمک به ناوبری در زمانی که هیچ‌یک از نقش‌های landmark دیگر مناسب نیستند، در دسترس قرار دارد.
 
 ```html
 <div role="region" aria-label="Example">
-  <!-- region content -->
+  <!-- محتوای region -->
 </div>
 ```
 
-## Description
+## توضیحات
 
-The `region` role is an [ARIA landmark](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) role.
-The `region` role should be reserved for sections of content sufficiently important that users will likely want to navigate to the section easily and to have it listed in a summary of the page. A region role is a more generic term, and should only be used if the section needing to be identified is not accurately described by one of the other landmark roles, such as [`banner`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/banner_role), [`main`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/main_role), [`contentinfo`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/contentinfo_role), [`complementary`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/complementary_role), or [`navigation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/navigation_role).
+نقش `region` یک نقش [landmark ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) است.
+نقش `region` باید برای بخش‌هایی از محتوا که به اندازه کافی مهم هستند که کاربران احتمالاً بخواهند به راحتی به آن بخش پیمایش کنند و آن را در خلاصه صفحه فهرست کنند، اختصاص داده شود. نقش region یک اصطلاح عمومی‌تر است و فقط باید در صورتی استفاده شود که بخش مورد نیاز توسط یکی از سایر نقش‌های landmark مانند [`banner`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/banner_role)، [`main`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/main_role)، [`contentinfo`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/contentinfo_role)، [`complementary`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/complementary_role) یا [`navigation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/navigation_role) به طور دقیق توصیف نشده باشد.
 
-Every element with a `region` role should include a label that describes the purpose of the content in the region, preferably with an [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) referencing a visible header. If no visible appropriate header is present, [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) should be used.
+هر عنصر با نقش `region` باید دارای برچسبی باشد که هدف محتوای موجود در region را توصیف کند، ترجیحاً با [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) که به یک عنوان قابل مشاهده اشاره می‌کند. اگر عنوان قابل مشاهده مناسب موجود نباشد، باید از [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) استفاده شود.
 
-The `region` landmark role's content should make sense if separated from the main content of the document.
+محتوای نقش landmark `region` باید در صورت جدا شدن از محتوای اصلی سند، منطقی و قابل درک باشد.
 
-Using the {{HTMLElement('section')}} element will automatically communicate a section has a role of `region` if it is given an accessible name. Developers should always prefer using the correct semantic HTML element, in this case `<section>`, over using ARIA.
+استفاده از عنصر {{HTMLElement('section')}} به طور خودکار نشان می‌دهد که یک بخش دارای نقش `region` است، اگر به آن یک نام قابل دسترس (accessible name) داده شود. توسعه‌دهندگان همیشه باید ترجیح دهند از عنصر HTML معنایی صحیح، در این مورد `<section>`، به جای استفاده از ARIA استفاده کنند.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
-- [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
-  - : Use this attribute to label the region. Often, the value of the `aria-labelledby` attribute will be the id of the element used to title the section. If no visible appropriate header is present, `aria-label` should be used.
+- [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) یا [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
+  - : از این ویژگی برای برچسب‌گذاری region استفاده کنید. اغلب، مقدار ویژگی `aria-labelledby` شناسه (id) عنصری خواهد بود که برای عنوان‌دهی به بخش استفاده می‌شود. اگر عنوان قابل مشاهده مناسب موجود نباشد، باید از `aria-label` استفاده شود.
 
-## Examples
+## مثال‌ها
 
 ```html
 <div role="region" aria-labelledby="region-heading">
   <h2 id="region-heading">
-    This heading's `id` attribute helps this region have an accessible name
+    ویژگی `id` این عنوان به این region کمک می‌کند تا یک نام قابل دسترس داشته باشد
   </h2>
-  <!-- region content -->
+  <!-- محتوای region -->
 </div>
 ```
 
-## Accessibility concerns
+## نگرانی‌های دسترس‌پذیری
 
-Use sparingly! [Landmark roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) are intended to be used sparingly, to identify larger overall sections of the document. Using too many landmark roles can create "noise" in screen readers, making it difficult to understand the overall layout of the page.
+کم استفاده کنید! [نقش‌های landmark](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) برای استفاده کم در نظر گرفته شده‌اند تا بخش‌های بزرگ‌تر و کلی سند را شناسایی کنند. استفاده بیش از حد از نقش‌های landmark می‌تواند در صفحه‌خوان‌ها "نویز" ایجاد کند و درک طرح کلی صفحه را دشوار کند.
 
-Only use the `region` role if no other relevant [content sectioning](/en-US/docs/Web/HTML/Reference/Elements#content_sectioning) element or [landmark role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) applies. If multiple regions exist on a page, it may be worth reinvestigating the page's overall structure.
+فقط در صورتی از نقش `region` استفاده کنید که هیچ [عنصر بخش‌بندی محتوا](/en-US/docs/Web/HTML/Reference/Elements#content_sectioning) مرتبط یا [نقش landmark](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) دیگری کاربرد نداشته باشد. اگر چندین region در یک صفحه وجود دارد، ممکن است ارزش بررسی مجدد ساختار کلی صفحه را داشته باشد.
 
-## Best practices
+## بهترین روش‌ها
 
-### Prefer HTML
+### ترجیح HTML
 
-Using the {{HTMLElement('section')}} element will automatically communicate that the element has a role of `region`. If possible, prefer using the semantic `<section>` element instead of the `region` role.
+استفاده از عنصر {{HTMLElement('section')}} به طور خودکار نشان می‌دهد که عنصر دارای نقش `region` است. در صورت امکان، استفاده از عنصر معنایی `<section>` را به جای نقش `region` ترجیح دهید.
 
-### Labeling landmarks
+### برچسب‌گذاری landmarkها
 
-If there is more than one `region` landmark role in a document, provide a unique label for each one. This label will allow an assistive technology user to be able to quickly understand the purpose of each landmark.
+اگر بیش از یک نقش landmark `region` در یک سند وجود دارد، برای هر یک یک برچسب منحصر به فرد ارائه دهید. این برچسب به کاربر فناوری کمکی اجازه می‌دهد تا به سرعت هدف هر landmark را درک کند.
 
 ```html
 <div role="region" aria-labelledby="use-discretion">
-  <h3 id="use-discretion">Please use the `region` role with discretion</h3>
-  <!-- content -->
+  <h3 id="use-discretion">لطفاً از نقش `region` با احتیاط استفاده کنید</h3>
+  <!-- محتوا -->
 </div>
 
 …
 
 <div role="region" aria-labelledby="please-reconsider">
-  <h3 id="please-reconsider">Please reconsider your document structure</h3>
-  <!-- content -->
+  <h3 id="please-reconsider">لطفاً ساختار سند خود را بازنگری کنید</h3>
+  <!-- محتوا -->
 </div>
 ```
 
-In this example, the region's label is being generated by the [`aria-labelledby` attribute](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby).
+در این مثال، برچسب region توسط [ویژگی `aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) تولید می‌شود.
 
-### Scrolling content areas with overflow text
+### مناطق محتوای قابل پیمایش با متن سرریز
 
-If there is a content area with `tabindex="0"`, add `role="region"` to convey to screen reader users that is a generic region. This is done to allow keyboard-only users to scroll regions with overflow text.
+اگر یک ناحیه محتوا با `tabindex="0"` وجود دارد، `role="region"` را اضافه کنید تا به کاربران صفحه‌خوان منتقل شود که این یک منطقه عمومی است. این کار برای اجازه دادن به کاربران فقط با صفحه‌کلید برای پیمایش مناطق با متن سرریز انجام می‌شود.
 
 ### SVG
 
-`role="region"` can be declared on areas of {{SVGElement('svg')}} along with an `aria-label` to allow individual sections of the SVG to be described.
+`role="region"` را می‌توان بر روی بخش‌هایی از {{SVGElement('svg')}} به همراه یک `aria-label` اعلام کرد تا بخش‌های جداگانه SVG توصیف شوند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement('section')}} element
-- [ARIA: `banner` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/banner_role)
-- [ARIA: `main` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/main_role)
-- [ARIA: `contentinfo` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/contentinfo_role)
-- [ARIA: `complementary` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/complementary_role)
-- [ARIA: `navigation` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/navigation_role)
-- [Landmark roles: Using ARIA: Roles, States, and Properties](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques#landmark_roles)
-- [Accessible Landmarks | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
+- عنصر {{HTMLElement('section')}}
+- [نقش ARIA: `banner`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/banner_role)
+- [نقش ARIA: `main`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/main_role)
+- [نقش ARIA: `contentinfo`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/contentinfo_role)
+- [نقش ARIA: `complementary`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/complementary_role)
+- [نقش ARIA: `navigation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/navigation_role)
+- [نقش‌های landmark: استفاده از ARIA: نقش‌ها، حالت‌ها و ویژگی‌ها](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques#landmark_roles)
+- [Landmarkهای قابل دسترس | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
