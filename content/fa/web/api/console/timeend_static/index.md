@@ -1,11 +1,5 @@
 ---
 title: "console: timeEnd() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/timeEnd_static"
-status: "needs-translation"
----
-
----
-title: "console: timeEnd() static method"
 short-title: timeEnd()
 slug: Web/API/console/timeEnd_static
 page-type: web-api-static-method
@@ -14,27 +8,27 @@ browser-compat: api.console.timeEnd_static
 
 {{APIRef("Console API")}} {{AvailableInWorkers}}
 
-The **`console.timeEnd()`** static method stops a timer that was previously started by calling {{domxref("console/time_static", "console.time()")}}.
+متد استاتیک **`console.timeEnd()`** تایمری را متوقف می‌کند که قبلاً با فراخوانی {{domxref("console/time_static", "console.time()")}} شروع شده است.
 
-See [Timers](/en-US/docs/Web/API/console#timers) in the documentation for details and examples.
+برای جزئیات و مثال‌ها، بخش [تایمرها](/en-US/docs/Web/API/console#timers) را در مستندات ببینید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 console.timeEnd()
 console.timeEnd(label)
 ```
 
-### Parameters
+### پارامترها
 
 - `label` {{optional_inline}}
-  - : A string representing the name of the timer to stop. Once stopped, the elapsed time is automatically displayed in the console along with an indicator that the time has ended. If omitted, the label "default" is used.
+  - : رشته‌ای که نام تایمر را برای توقف مشخص می‌کند. پس از توقف، زمان سپری‌شده به‌طور خودکار در کنسول به‌همراه نشانگری که پایان زمان را اعلام می‌کند، نمایش داده می‌شود. اگر این پارامتر حذف شود، برچسب "default" استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 console.time("answer time");
@@ -44,25 +38,24 @@ alert("Do a bunch of other stuff…");
 console.timeEnd("answer time");
 ```
 
-The output from the example above shows the time taken by the user to dismiss the first alert box, followed by the cumulative time it took for the user to dismiss both alerts:
+خروجی مثال بالا، مدت زمانی را نشان می‌دهد که کاربر برای بستن اولین جعبه هشدار صرف کرده است و سپس زمان تجمعی که کاربر برای بستن هر دو هشدار صرف کرده است:
 
-![Timer output in Firefox console](timer_output.png)
+![خروجی تایمر در کنسول فایرفاکس](timer_output.png)
 
-Notice that the timer's name is displayed when the timer value is logged using `console.timeLog()` and again when it's stopped. In addition, the call to `console.timeEnd()` has the additional information, "timer ended" to make it obvious that the timer is no
-longer tracking time.
+توجه داشته باشید که نام تایمر هنگام ثبت مقدار تایمر با استفاده از `console.timeLog()` و همچنین هنگام متوقف شدن آن نمایش داده می‌شود. علاوه بر این، فراخوانی `console.timeEnd()` اطلاعات اضافی «timer ended» را ارائه می‌دهد تا مشخص شود که تایمر دیگر زمان را پیگیری نمی‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- See {{domxref("console/timeLog_static", "console.timeLog()")}} for additional examples
+- برای مثال‌های بیشتر، {{domxref("console/timeLog_static", "console.timeLog()")}} را ببینید.
 - {{domxref("console/time_static", "console.time()")}}
-- [Microsoft Edge's documentation for `console.timeEnd()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#timeend)
-- [Node.js documentation for `console.timeEnd()`](https://nodejs.org/docs/latest/api/console.html#consoletimeendlabel)
-- [Google Chrome's documentation for `console.timeEnd()`](https://developer.chrome.com/docs/devtools/console/api/#timeend)
+- [مستندات `console.timeEnd()` در Microsoft Edge](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#timeend)
+- [مستندات `console.timeEnd()` در Node.js](https://nodejs.org/docs/latest/api/console.html#consoletimeendlabel)
+- [مستندات `console.timeEnd()` در Google Chrome](https://developer.chrome.com/docs/devtools/console/api/#timeend)
