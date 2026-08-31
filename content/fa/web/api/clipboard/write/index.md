@@ -1,11 +1,5 @@
 ---
 title: "Clipboard: write() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/write"
-status: "needs-translation"
----
-
----
-title: "Clipboard: write() method"
 short-title: write()
 slug: Web/API/Clipboard/write
 page-type: web-api-instance-method
@@ -14,11 +8,9 @@ browser-compat: api.Clipboard.write
 
 {{APIRef("Clipboard API")}} {{securecontext_header}}
 
-The **`write()`** method of the {{domxref("Clipboard")}} interface writes arbitrary {{domxref("ClipboardItem")}} data such as images and text to the clipboard, fulfilling the returned {{jsxref("Promise")}} on completion.
-This can be used to implement cut and copy functionality.
+متد **`write()`** در رابط {{domxref("Clipboard")}} داده‌های دلخواه {{domxref("ClipboardItem")}} مانند تصاویر و متن را در کلیپ‌بورد می‌نویسد و پس از اتمام، {{jsxref("Promise")}} برگشتی را برآورده می‌کند. از این متد می‌توان برای پیاده‌سازی قابلیت برش و کپی استفاده کرد.
 
-The method can in theory write arbitrary data (unlike {{domxref("Clipboard.writeText", "writeText()")}}, which can only write text).
-Browsers commonly support writing text, HTML, and PNG image data.
+این متد از نظر تئوری می‌تواند داده‌های دلخواه را بنویسد (برخلاف {{domxref("Clipboard.writeText", "writeText()")}} که فقط می‌تواند متن بنویسد). مرورگرها معمولاً از نوشتن متن، HTML و داده‌های تصویر PNG پشتیبانی می‌کنند.
 
 ## Syntax
 
@@ -29,32 +21,26 @@ write(data)
 ### Parameters
 
 - `data`
-  - : An array of {{domxref("ClipboardItem")}} objects containing data to be written to the clipboard.
+  - : یک آرایه از اشیاء {{domxref("ClipboardItem")}} حاوی داده‌هایی که باید در کلیپ‌بورد نوشته شوند.
 
 ### Return value
 
-A {{jsxref("Promise")}} which is resolved when the data has been written to the clipboard.
-Note that if the underlying OS does not support multiple native clipboard items on the system clipboard, then only the first {{domxref("ClipboardItem")}} in the array is written.
-
-The promise is rejected if the clipboard is unable to write to the clipboard.
+یک {{jsxref("Promise")}} که وقتی داده‌ها در کلیپ‌بورد نوشته شدند، حل می‌شود. توجه داشته باشید که اگر سیستم‌عامل زیرین از چندین آیتم کلیپ‌بورد بومی روی کلیپ‌بورد سیستم پشتیبانی نکند، فقط اولین {{domxref("ClipboardItem")}} در آرایه نوشته می‌شود. اگر کلیپ‌بورد قادر به نوشتن نباشد، promise رد می‌شود.
 
 ### Exceptions
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if writing to the clipboard is not allowed.
+  - : اگر نوشتن در کلیپ‌بورد مجاز نباشد، پرتاب می‌شود.
 
 ## Security considerations
 
-Writing to the clipboard can only be done in a [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
-
-Additional security requirements are covered in the [Security consideration](/en-US/docs/Web/API/Clipboard_API#security_considerations) section of the API overview topic.
+نوشتن در کلیپ‌بورد فقط در یک [زمینه امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts) قابل انجام است. الزامات امنیتی اضافی در بخش [ملاحظات امنیتی](/en-US/docs/Web/API/Clipboard_API#security_considerations) از مبحث نمای کلی API پوشش داده شده است.
 
 ## Examples
 
 ### Write text to the clipboard
 
-This example function replaces the current contents of the clipboard with a specified string when a button is pressed.
-Note that for this particular case, you could just as readily use `Clipboard.writeText()`.
+این تابع نمونه، محتوای فعلی کلیپ‌بورد را با یک رشته مشخص وقتی دکمه‌ای فشار داده می‌شود جایگزین می‌کند. توجه داشته باشید که برای این مورد خاص، به راحتی می‌توانید از `Clipboard.writeText()` استفاده کنید.
 
 ```js
 button.addEventListener("click", () => setClipboard("<empty clipboard>"));
@@ -69,18 +55,17 @@ async function setClipboard(text) {
 }
 ```
 
-The `setClipboard()` function specifies a `"text/plain"` MIME type in the `type` constant, then specifies a `clipboardItemData` object with a single property — its key is the MIME type, and its value is the passed in text that we want to write to the clipboard. We then construct a new {{domxref("ClipboardItem")}} object into which the `clipboardItemData` object is passed.
+تابع `setClipboard()` یک نوع MIME `"text/plain"` را در ثابت `type` مشخص می‌کند، سپس یک شیء `clipboardItemData` با یک ویژگی واحد تعریف می‌کند – کلید آن نوع MIME است و مقدار آن متنی است که می‌خواهیم در کلیپ‌بورد بنویسیم. سپس یک شیء جدید {{domxref("ClipboardItem")}} می‌سازیم که شیء `clipboardItemData` به آن داده می‌شود.
 
-Finally, `write()` is called with `await` to write the data to the clipboard.
+در نهایت، `write()` با `await` فراخوانی می‌شود تا داده‌ها را در کلیپ‌بورد بنویسد.
 
 ### Write canvas contents to the clipboard
 
-This example draws a blue rectangle to the canvas.
-You can click the rectangle to copy the content of the canvas into the clipboard as an image, and then select another element and paste in the content from the clipboard.
+این مثال یک مستطیل آبی روی بوم (canvas) رسم می‌کند. می‌توانید روی مستطیل کلیک کنید تا محتوای بوم به عنوان یک تصویر در کلیپ‌بورد کپی شود، و سپس عنصر دیگری را انتخاب کرده و محتوا را از کلیپ‌بورد جای‌گذاری کنید.
 
 #### HTML
 
-The HTML just defines our `<canvas>` element and the `<div>` element with id `target` where the canvas image will be pasted.
+HTML فقط عنصر `<canvas>` ما و عنصر `<div>` با id `target` را تعریف می‌کند که تصویر بوم در آن جای‌گذاری می‌شود.
 
 ```html
 <canvas id="canvas" width="100" height="100"></canvas>
@@ -111,8 +96,7 @@ function log(text) {
 
 #### JavaScript
 
-First we define an `async` function to copy a canvas to a blob.
-This wraps the old callback-style {{domxref("HTMLCanvasElement.toBlob()")}} method into the more intuitive `Promise` based function.
+ابتدا یک تابع `async` برای کپی کردن بوم به یک blob تعریف می‌کنیم. این تابع، متد قدیمی مبتنی بر callback {{domxref("HTMLCanvasElement.toBlob()")}} را به یک تابع مبتنی بر `Promise` بصری‌تر تبدیل می‌کند.
 
 ```js
 // Async/await method replacing toBlob() callback
@@ -129,9 +113,9 @@ async function getBlobFromCanvas(canvas) {
 }
 ```
 
-Next we set up our canvas and add an event listener for the `click` event.
+سپس بوم خود را تنظیم کرده و یک شنونده رویداد برای رویداد `click` اضافه می‌کنیم.
 
-When you click the blue rectangle, the canvas displaying the rectangle is copied into a blob, and then the blob is added to a `ClipboardItem` and then written to the clipboard.
+وقتی روی مستطیل آبی کلیک می‌کنید، بوم نمایش‌دهنده مستطیل به یک blob کپی می‌شود، سپس blob به یک `ClipboardItem` اضافه شده و در کلیپ‌بورد نوشته می‌شود.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -159,10 +143,9 @@ async function copyCanvasContentsToClipboard() {
 }
 ```
 
-Note that if you are fetching a less-common file type or a resource that you don't know the type in advance, you may want to use {{domxref("ClipboardItem.supports_static", "ClipboardItem.supports()")}} to check if the file type is supported, and provide a good error message to the user in case it isn't.
+توجه داشته باشید که اگر در حال دریافت یک نوع فایل کمتر رایج یا منبعی هستید که نوع آن را از قبل نمی‌دانید، ممکن است بخواهید از {{domxref("ClipboardItem.supports_static", "ClipboardItem.supports()")}} برای بررسی پشتیبانی از نوع فایل استفاده کنید و در صورت عدم پشتیبانی، یک پیام خطای مناسب به کاربر ارائه دهید.
 
-We then define an event listener for [`paste` events](/en-US/docs/Web/API/Element/paste_event) on then element where we want to display the clipboard contents as an image.
-The [FileReader API](/en-US/docs/Web/API/FileReader) allows us to read the blob using the [`readAsDataUrl`](/en-US/docs/Web/API/FileReader/readAsDataURL) method and create an `<img>` element with the canvas contents:
+سپس یک شنونده رویداد برای [`paste` events](/en-US/docs/Web/API/Element/paste_event) روی عنصری که می‌خواهیم محتوای کلیپ‌بورد را به عنوان تصویر نمایش دهیم، تعریف می‌کنیم. [FileReader API](/en-US/docs/Web/API/FileReader) به ما امکان می‌دهد blob را با استفاده از متد [`readAsDataUrl`](/en-US/docs/Web/API/FileReader/readAsDataURL) بخوانیم و یک عنصر `<img>` با محتوای بوم ایجاد کنیم:
 
 ```js
 target.addEventListener("paste", (event) => {
@@ -196,8 +179,7 @@ img {
 
 #### Result
 
-The result is shown below.
-First click on the blue square, and then select the text "Paste here" and use your OS-specific keyboard combinations to paste from the clipboard (such as `Ctrl+V` on Windows).
+نتیجه در زیر نشان داده شده است. ابتدا روی مربع آبی کلیک کنید، سپس متن "Paste here" را انتخاب کرده و از ترکیب‌های صفحه‌کلید مخصوص سیستم‌عامل خود برای جای‌گذاری از کلیپ‌بورد استفاده کنید (مانند `Ctrl+V` در ویندوز).
 
 {{embedlivesample("write_canvas_contents_to_the_clipboard", "", "420", "", "", "", "clipboard-write")}}
 
