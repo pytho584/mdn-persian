@@ -1,7 +1,7 @@
 ---
 title: "BatteryManager: chargingchange event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/chargingchange_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,11 +14,11 @@ browser-compat: api.BatteryManager.chargingchange_event
 
 {{ApiRef("Battery API")}}{{securecontext_header}}
 
-The **`chargingchange`** event of the {{domxref("BatteryManager")}} interface is fired when the battery {{domxref("BatteryManager.charging", "charging")}} property is updated.
+**`chargingchange`** رویداد رابط {{domxref("BatteryManager")}} زمانی فعال می‌شود که ویژگی {{domxref("BatteryManager.charging", "charging")}} باتری به‌روزرسانی شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("chargingchange", (event) => { })
@@ -26,11 +26,11 @@ addEventListener("chargingchange", (event) => { })
 onchargingchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-_A generic {{domxref("Event")}}._
+_یک {{domxref("Event")}} عمومی._
 
-## Example
+## مثال
 
 ### HTML
 
@@ -52,15 +52,15 @@ navigator.getBattery().then((battery) => {
 
 {{ EmbedLiveSample('Example', '100%', 40) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("BatteryManager")}}
 - {{domxref("Navigator.getBattery()")}}
