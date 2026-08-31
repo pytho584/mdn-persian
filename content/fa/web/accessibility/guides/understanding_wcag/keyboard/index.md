@@ -1,7 +1,7 @@
 ---
 title: "Keyboard accessible"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Keyboard"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -11,72 +11,72 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-To be fully accessible, a web page must be operable by someone using only a keyboard to access and control it. This includes users of screen readers, but can also include users who have trouble operating a pointing device such as a mouse or trackball, or whose mouse is not working at the moment, or who prefer to use a keyboard for input whenever possible.
+برای دسترسی‌پذیری کامل، یک صفحه وب باید قابل استفاده توسط شخصی باشد که تنها با استفاده از صفحه‌کلید به آن دسترسی و کنترل می‌کند. این شامل کاربران صفحه‌خوان‌ها می‌شود، اما همچنین می‌تواند شامل کاربرانی باشد که در استفاده از یک دستگاه اشاره‌گر مانند ماوس یا ترک‌بال مشکل دارند، یا ماوس آن‌ها در حال حاضر کار نمی‌کند، یا ترجیح می‌دهند تا حد امکان از صفحه‌کلید برای ورودی استفاده کنند.
 
-## Focusable elements should have interactive semantics
+## عناصر قابل تمرکز باید معنای تعاملی داشته باشند
 
-If an element can be focused using the keyboard, then it should be interactive; that is, the user should be able to do something to it and produce a change of some kind (for example, activating a link or changing an option).
+اگر یک عنصر بتواند با استفاده از صفحه‌کلید تمرکز شود، باید تعاملی باشد؛ یعنی کاربر باید بتواند کاری با آن انجام دهد و نوعی تغییر ایجاد کند (برای مثال، فعال کردن یک پیوند یا تغییر یک گزینه).
 
 > [!NOTE]
-> One important exception to this rule is if the element has `role="document"` applied to it, **inside** an interactive context (such as `role="application"`). In such a case, focusing the nested document is the only way of returning assistive technology to a non-interactive state (often called "browse mode").
+> یک استثنای مهم برای این قاعده زمانی است که عنصر دارای `role="document"` اعمال شده باشد، **در داخل** یک زمینه تعاملی (مانند `role="application"`). در چنین حالتی، تمرکز بر روی سند تو در تو تنها راه بازگرداندن فناوری کمکی به حالت غیرتعاملی (اغلب "حالت مرور" نامیده می‌شود) است.
 
-Most interactive elements are focusable by default; you can make an element focusable by adding a `tabindex=0` attribute value to it. However, you should only add `tabindex` if you have also made the element interactive, for example, by defining appropriate event handlers keyboard events.
+بیشتر عناصر تعاملی به طور پیش‌فرض قابل تمرکز هستند؛ شما می‌توانید یک عنصر را با اضافه کردن مقدار ویژگی `tabindex=0` به آن قابل تمرکز کنید. با این حال، شما فقط باید `tabindex` را اضافه کنید اگر عنصر را نیز تعاملی کرده‌اید، به عنوان مثال، با تعریف کنترل‌کننده‌های رویداد مناسب برای رویدادهای صفحه‌کلید.
 
-### See also
+### همچنین ببینید
 
-- [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) global HTML attribute
-- Element: [keydown event](/en-US/docs/Web/API/Element/keydown_event)
-- Element: [keyup event](/en-US/docs/Web/API/Element/keyup_event)
+- [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) ویژگی سراسری HTML
+- عنصر: [keydown event](/en-US/docs/Web/API/Element/keydown_event)
+- عنصر: [keyup event](/en-US/docs/Web/API/Element/keyup_event)
 
-## Avoid using `tabindex` attribute greater than zero
+## از استفاده از ویژگی `tabindex` بزرگتر از صفر خودداری کنید
 
-The `tabindex` attribute indicates that an element is focusable using the keyboard. A value of zero indicates that the element is part of the default focus order, which is based on the ordering of elements in the HTML document. A positive value puts the element ahead of those in the default ordering; elements with positive values are focused in the order of their `tabindex` values (1, then 2, then 3, etc.).
+ویژگی `tabindex` نشان می‌دهد که یک عنصر با استفاده از صفحه‌کلید قابل تمرکز است. مقدار صفر نشان می‌دهد که عنصر بخشی از ترتیب تمرکز پیش‌فرض است که بر اساس ترتیب عناصر در سند HTML است. یک مقدار مثبت عنصر را جلوتر از آن‌هایی که در ترتیب پیش‌فرض هستند قرار می‌دهد؛ عناصر با مقادیر مثبت به ترتیب مقادیر `tabindex` خود تمرکز می‌شوند (1، سپس 2، سپس 3، و غیره).
 
-This creates confusion for keyboard-only users when the focus order differs from the logical order of the page. A better strategy is to structure the HTML document so that focusable elements are in a logical order, without the need to re-order them with positive `tabindex` values.
+این باعث سردرگمی برای کاربران فقط با صفحه‌کلید می‌شود وقتی ترتیب تمرکز با ترتیب منطقی صفحه متفاوت است. یک استراتژی بهتر این است که سند HTML را به گونه‌ای ساختاردهی کنید که عناصر قابل تمرکز در یک ترتیب منطقی قرار گیرند، بدون نیاز به مرتب‌سازی مجدد آن‌ها با مقادیر مثبت `tabindex`.
 
-### See also
+### همچنین ببینید
 
-- [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) global HTML attribute
+- [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) ویژگی سراسری HTML
 - [Understanding focus order](https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html)
 - [Don't use tabindex greater than 0](https://adrianroselli.com/2014/11/dont-use-tabindex-greater-than-0.html)
 
-## Clickable elements must be focusable and should have interactive semantics
+## عناصر قابل کلیک باید قابل تمرکز باشند و باید معنای تعاملی داشته باشند
 
-If an element can be clicked with a pointing device, such as a mouse, then it should also be focusable using the keyboard, and the user should be able to do something by interacting with it.
+اگر یک عنصر بتواند با یک دستگاه اشاره‌گر، مانند ماوس، کلیک شود، باید با استفاده از صفحه‌کلید نیز قابل تمرکز باشد، و کاربر باید بتواند با تعامل با آن کاری انجام دهد.
 
-An element is clickable if it has an `onclick` event handler defined. You can make it focusable by adding a `tabindex=0` attribute value to it. You can make it operable with the keyboard by defining an `onkeydown` event handler; in most cases, the action taken by event handler should be the same for both types of events.
+یک عنصر قابل کلیک است اگر یک کنترل‌کننده رویداد `onclick` تعریف شده داشته باشد. شما می‌توانید آن را با اضافه کردن مقدار ویژگی `tabindex=0` قابل تمرکز کنید. می‌توانید آن را با تعریف یک کنترل‌کننده رویداد `onkeydown` با صفحه‌کلید قابل استفاده کنید؛ در بیشتر موارد، عملی که توسط کنترل‌کننده رویداد انجام می‌شود باید برای هر دو نوع رویداد یکسان باشد.
 
-### See also
+### همچنین ببینید
 
-- [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) global HTML attribute
-- Element: [keydown event](/en-US/docs/Web/API/Element/keydown_event)
-- Element: [keyup event](/en-US/docs/Web/API/Element/keyup_event)
+- [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) ویژگی سراسری HTML
+- عنصر: [keydown event](/en-US/docs/Web/API/Element/keydown_event)
+- عنصر: [keyup event](/en-US/docs/Web/API/Element/keyup_event)
 
-## Interactive elements must be able to be activated using a keyboard
+## عناصر تعاملی باید بتوانند با استفاده از صفحه‌کلید فعال شوند
 
-If the user can interact with an element using touch or a pointing device, then the element should also support interacting using the keyboard. That is, if you have defined event handlers for touch or click events, you should also define them for keyboard events. The keyboard event handlers should enable effectively the same interaction as the touch or click handlers.
+اگر کاربر بتواند با یک عنصر با استفاده از لمس یا دستگاه اشاره‌گر تعامل کند، پس عنصر باید از تعامل با استفاده از صفحه‌کلید نیز پشتیبانی کند. یعنی اگر کنترل‌کننده‌های رویداد برای رویدادهای لمسی یا کلیک تعریف کرده‌اید، باید آن‌ها را برای رویدادهای صفحه‌کلید نیز تعریف کنید. کنترل‌کننده‌های رویداد صفحه‌کلید باید عملاً همان تعامل را مانند کنترل‌کننده‌های لمسی یا کلیک فراهم کنند.
 
-### See also
+### همچنین ببینید
 
-- Element: [keydown event](/en-US/docs/Web/API/Element/keydown_event)
-- Element: [keyup event](/en-US/docs/Web/API/Element/keyup_event)
+- عنصر: [keydown event](/en-US/docs/Web/API/Element/keydown_event)
+- عنصر: [keyup event](/en-US/docs/Web/API/Element/keyup_event)
 
-## Interactive elements must be focusable
+## عناصر تعاملی باید قابل تمرکز باشند
 
-If the user can interact with an element (for example, using touch or a pointing device), then it should be focusable using the keyboard. You can make it focusable by adding a `tabindex=0` attribute value to it. That will add the element to the list of elements that can be focused by pressing the <kbd>Tab</kbd> key, in the sequence of such elements as defined in the HTML document.
+اگر کاربر بتواند با یک عنصر تعامل کند (برای مثال، با استفاده از لمس یا یک دستگاه اشاره‌گر)، پس باید با استفاده از صفحه‌کلید قابل تمرکز باشد. می‌توانید آن را با اضافه کردن مقدار ویژگی `tabindex=0` قابل تمرکز کنید. این کار عنصر را به لیست عناصری که با فشار دادن کلید <kbd>Tab</kbd> می‌توانند تمرکز شوند، در ترتیب چنین عناصری که در سند HTML تعریف شده است، اضافه می‌کند.
 
-### See also
+### همچنین ببینید
 
-- [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) global HTML attribute
+- [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) ویژگی سراسری HTML
 
-## Focusable element must have focus styling
+## عنصر قابل تمرکز باید دارای استایل تمرکز باشد
 
-Any element that can receive keyboard focus should have visible styling that indicates when the element is focused. You can do this with the {{cssxref(":focus")}} and {{cssxref(":focus-visible")}} CSS pseudo-classes.
+هر عنصری که می‌تواند تمرکز صفحه‌کلید را دریافت کند باید دارای استایل قابل مشاهده‌ای باشد که نشان دهد چه زمانی عنصر تمرکز شده است. می‌توانید این کار را با شبه‌کلاس‌های CSS {{cssxref(":focus")}} و {{cssxref(":focus-visible")}} انجام دهید.
 
-Standard focusable elements such as links and input fields are given special styling by the browser by default, so you might not need to specify focus styling for such elements, unless you want the focus styling to be more distinctive.
+عناصر قابل تمرکز استاندارد مانند پیوندها و فیلدهای ورودی به طور پیش‌فرض توسط مرورگر استایل ویژه‌ای دریافت می‌کنند، بنابراین ممکن است نیازی به مشخص کردن استایل تمرکز برای چنین عناصری نداشته باشید، مگر اینکه بخواهید استایل تمرکز متمایزتر باشد.
 
-If you create your own focusable components, be sure that you also define focus styling for them.
+اگر مؤلفه‌های قابل تمرکز خود را ایجاد می‌کنید، مطمئن شوید که استایل تمرکز را نیز برای آن‌ها تعریف می‌کنید.
 
-### See also
+### همچنین ببینید
 
 - [Using CSS to change the presentation of a UI component when it receives focus](https://www.w3.org/WAI/WCAG21/Techniques/css/C15.html)
