@@ -1,35 +1,24 @@
 ---
 title: "AudioTrackList: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList/length"
-status: "needs-translation"
----
-
----
-title: "AudioTrackList: length property"
 short-title: length
 slug: Web/API/AudioTrackList/length
 page-type: web-api-instance-property
 browser-compat: api.AudioTrackList.length
+source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrackList/length"
+translated_by: "n8n + AI"
 ---
 
 {{APIRef("HTML DOM")}}
 
-The read-only **{{domxref("AudioTrackList")}}**
-property **`length`** returns the number of entries in the
-`AudioTrackList`, each of which is an {{domxref("AudioTrack")}}
-representing one audio track in the media element. A value of 0 indicates that
-there are no audio tracks in the media.
+ویژگی فقط‌خواندنی **{{domxref("AudioTrackList")}}** به نام **`length`** تعداد ورودی‌های موجود در `AudioTrackList` را برمی‌گرداند که هر کدام یک {{domxref("AudioTrack")}} است و نمایانگر یک آهنگ صوتی در عنصر رسانه‌ای است. مقدار ۰ نشان می‌دهد که هیچ آهنگ صوتی در رسانه وجود ندارد.
 
-## Value
+## مقدار
 
-A number indicating how many audio tracks are included in the
-`AudioTrackList`. Each track can be accessed by treating the
-`AudioTrackList` as an array of objects of type {{domxref("AudioTrack")}}.
+عددی که نشان می‌دهد چند آهنگ صوتی در `AudioTrackList` گنجانده شده است. هر آهنگ را می‌توان با در نظر گرفتن `AudioTrackList` به‌عنوان یک آرایه از اشیاء از نوع {{domxref("AudioTrack")}} دسترسی پیدا کرد.
 
-## Examples
+## مثال‌ها
 
-This snippet gets the number of audio tracks in the first {{HTMLElement("video")}}
-element found in the {{Glossary("DOM")}} by {{domxref("Document.querySelector", "querySelector()")}}.
+این قطعه کد تعداد آهنگ‌های صوتی اولین عنصر {{HTMLElement("video")}} یافت‌شده در {{Glossary("DOM")}} را توسط {{domxref("Document.querySelector", "querySelector()")}} دریافت می‌کند.
 
 ```js
 const videoElem = document.querySelector("video");
@@ -40,13 +29,12 @@ if (videoElem.audioTracks) {
 }
 ```
 
-Note that this sample checks to be sure {{domxref("HTMLMediaElement.audioTracks")}} is
-defined, to avoid failing on browsers without support for {{domxref("AudioTrack")}}.
+توجه داشته باشید که این نمونه مطمئن می‌شود که {{domxref("HTMLMediaElement.audioTracks")}} تعریف شده است تا در مرورگرهایی که از {{domxref("AudioTrack")}} پشتیبانی نمی‌کنند، خطایی رخ ندهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
