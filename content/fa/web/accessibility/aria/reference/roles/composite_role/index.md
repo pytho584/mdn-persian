@@ -1,11 +1,7 @@
 ---
 title: "ARIA: composite role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/composite_role"
-status: "needs-translation"
----
-
----
-title: "ARIA: composite role"
+translated_by: "n8n + AI"
 short-title: composite
 slug: Web/Accessibility/ARIA/Reference/Roles/composite_role
 page-type: aria-role
