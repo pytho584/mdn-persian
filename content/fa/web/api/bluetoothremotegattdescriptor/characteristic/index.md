@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTDescriptor: characteristic property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/characteristic"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,18 +16,16 @@ browser-compat: api.BluetoothRemoteGATTDescriptor.characteristic
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTDescriptor.characteristic`**
-read-only property returns the {{domxref("BluetoothRemoteGATTCharacteristic")}} this
-descriptor belongs to.
+**`BluetoothRemoteGATTDescriptor.characteristic`** 只读属性返回此描述符所属的 {{domxref("BluetoothRemoteGATTCharacteristic")}}。
 
-## Value
+## 值
 
-An instance of {{domxref("BluetoothRemoteGATTCharacteristic")}}.
+一个 {{domxref("BluetoothRemoteGATTCharacteristic")}} 实例。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
