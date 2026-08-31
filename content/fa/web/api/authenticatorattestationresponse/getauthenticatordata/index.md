@@ -1,7 +1,7 @@
 ---
 title: "AuthenticatorAttestationResponse: getAuthenticatorData() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAttestationResponse/getAuthenticatorData"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,9 +14,9 @@ browser-compat: api.AuthenticatorAttestationResponse.getAuthenticatorData
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`getAuthenticatorData()`** method of the {{domxref("AuthenticatorAttestationResponse")}} interface returns an {{jsxref("ArrayBuffer")}} containing the authenticator data contained within the {{domxref("AuthenticatorAttestationResponse.attestationObject")}} property.
+متد **`getAuthenticatorData()`** از رابط {{domxref("AuthenticatorAttestationResponse")}} یک {{jsxref("ArrayBuffer")}} حاوی داده‌های احراز هویت موجود در ویژگی {{domxref("AuthenticatorAttestationResponse.attestationObject")}} را برمی‌گرداند.
 
-This is a convenience function, created to allow easy access to the authenticator data without having to write extra parsing code to extract it from the `attestationObject`.
+این یک تابع کمکی است که برای دسترسی آسان به داده‌های احراز هویت بدون نیاز به نوشتن کد تجزیه اضافی برای استخراج آن از `attestationObject` ایجاد شده است.
 
 ## Syntax
 
@@ -24,24 +24,24 @@ This is a convenience function, created to allow easy access to the authenticato
 getAuthenticatorData()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An {{jsxref("ArrayBuffer")}} with a {{jsxref("ArrayBuffer.byteLength", "byteLength")}} of at least 37 bytes, which contains the data structure explained in [Authenticator data](/en-US/docs/Web/API/Web_Authentication_API/Authenticator_data).
+یک {{jsxref("ArrayBuffer")}} با {{jsxref("ArrayBuffer.byteLength", "byteLength")}} حداقل ۳۷ بایت، که شامل ساختار داده توضیح داده شده در [Authenticator data](/en-US/docs/Web/API/Web_Authentication_API/Authenticator_data) است.
 
-This will be equivalent to the authenticator data contained within the {{domxref("AuthenticatorAttestationResponse.attestationObject")}} property.
+این معادل داده‌های احراز هویت موجود در ویژگی {{domxref("AuthenticatorAttestationResponse.attestationObject")}} خواهد بود.
 
-## Examples
+## مثال‌ها
 
-See [Creating a public key credential](/en-US/docs/Web/API/CredentialsContainer/create#creating_a_public_key_credential) for a detailed example.
+برای یک مثال کامل، [ایجاد یک اعتبارنامه کلید عمومی](/en-US/docs/Web/API/CredentialsContainer/create#creating_a_public_key_credential) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
