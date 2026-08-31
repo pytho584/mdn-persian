@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: roundRect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/roundRect"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: roundRect() method"
 short-title: roundRect()
 slug: Web/API/CanvasRenderingContext2D/roundRect
 page-type: web-api-instance-method
@@ -14,12 +8,11 @@ browser-compat: api.CanvasRenderingContext2D.roundRect
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.roundRect()`** method of the Canvas 2D API adds a rounded rectangle to the current path.
+متد **`CanvasRenderingContext2D.roundRect()`** از Canvas 2D API یک مستطیل گردشده به مسیر فعلی اضافه می‌کند.
 
-The radii of the corners can be specified in much the same way as the CSS {{cssxref("border-radius")}} property.
+شعاع گوشه‌ها را می‌توان به همان شیوه‌ای که در ویژگی CSS {{cssxref("border-radius")}} مشخص می‌شود، تعیین کرد.
 
-Like other methods that modify the current path, this method does not directly render anything.
-To draw the rounded rectangle onto a canvas, you can use the {{domxref("CanvasRenderingContext2D.fill", "fill()")}} or {{domxref("CanvasRenderingContext2D.stroke", "stroke()")}} methods.
+مانند سایر متدهایی که مسیر فعلی را تغییر می‌دهند، این متد مستقیماً چیزی را رسم نمی‌کند. برای رسم مستطیل گردشده روی بوم، می‌توانید از متدهای {{domxref("CanvasRenderingContext2D.fill", "fill()")}} یا {{domxref("CanvasRenderingContext2D.stroke", "stroke()")}} استفاده کنید.
 
 ## Syntax
 
@@ -30,43 +23,39 @@ roundRect(x, y, width, height, radii)
 ### Parameters
 
 - `x`
-  - : The x-axis coordinate of the rectangle's starting point, in pixels.
+  - : مختصات محور x نقطه شروع مستطیل، بر حسب پیکسل.
 - `y`
-  - : The y-axis coordinate of the rectangle's starting point, in pixels.
+  - : مختصات محور y نقطه شروع مستطیل، بر حسب پیکسل.
 - `width`
-  - : The rectangle's width. Positive values are to the right, and negative to the left.
+  - : عرض مستطیل. مقادیر مثبت به سمت راست و مقادیر منفی به سمت چپ هستند.
 - `height`
-  - : The rectangle's height. Positive values are down, and negative are up.
+  - : ارتفاع مستطیل. مقادیر مثبت به سمت پایین و مقادیر منفی به سمت بالا هستند.
 - `radii`
-  - : A number or list specifying the radii of the circular arc to be used for the corners of the rectangle.
-    The number and order of the radii function in the same way as the {{cssxref("border-radius")}} CSS property when `width` and `height` are _positive_:
+  - : یک عدد یا لیستی که شعاع قوس دایره‌ای را برای گوشه‌های مستطیل مشخص می‌کند. تعداد و ترتیب شعاع‌ها به همان شیوه‌ای عمل می‌کند که ویژگی CSS {{cssxref("border-radius")}} زمانی که `width` و `height` _مثبت_ هستند عمل می‌کند:
     - `all-corners`
     - `[all-corners]`
     - `[top-left-and-bottom-right, top-right-and-bottom-left]`
     - `[top-left, top-right-and-bottom-left, bottom-right]`
     - `[top-left, top-right, bottom-right, bottom-left]`
 
-    If `width` is _negative_ the rounded rectangle is flipped horizontally, so the radius values that normally apply to the left corners are used on the right and vice versa.
-    Similarly, when `height` is negative, the rounded rect is flipped vertically.
-    The specified radii may be scaled (reduced) if any of the edges are shorter than the combined radius of the vertices on either end.
+    اگر `width` _منفی_ باشد، مستطیل گردشده به صورت افقی برعکس می‌شود، بنابراین مقادیر شعاعی که معمولاً برای گوشه‌های چپ اعمال می‌شوند برای راست استفاده می‌شوند و بالعکس. به طور مشابه، وقتی `height` منفی است، مستطیل گردشده به صورت عمودی برعکس می‌شود. ممکن است شعاع‌های مشخص‌شده مقیاس‌بندی (کاهش) شوند اگر هر یک از لبه‌ها کوتاه‌تر از مجموع شعاع رئوس در دو انتها باشند.
 
-    The `radii` parameter can also be a {{domxref("DOMPoint")}} or {{domxref("DOMPointReadOnly")}} instance, or an object containing the same properties (`{x: 0, y: 0}`), or a list of such objects, or a list mixing numbers and such objects.
+    پارامتر `radii` همچنین می‌تواند یک نمونه {{domxref("DOMPoint")}} یا {{domxref("DOMPointReadOnly")}} باشد، یا یک شیء حاوی همان ویژگی‌ها (`{x: 0, y: 0}`)، یا یک لیست از چنین اشیایی، یا یک لیست که اعداد و چنین اشیایی را ترکیب می‌کند.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ### Exceptions
 
 - {{jsxref("RangeError")}}
-  - : If `radii` is a list that has zero or more than four elements, or if one of its values is a negative number.
+  - : اگر `radii` یک لیست با صفر یا بیش از چهار عنصر باشد، یا اگر یکی از مقادیر آن یک عدد منفی باشد.
 
 ## Examples
 
 ### Drawing rectangles
 
-This example creates a number of rounded rectangular paths using the `roundRect()` method.
-The paths are then rendered using the `stroke()` method.
+این مثال تعدادی مسیر مستطیل گردشده را با استفاده از متد `roundRect()` ایجاد می‌کند. سپس مسیرها با استفاده از متد `stroke()` رسم می‌شوند.
 
 #### HTML
 
@@ -76,16 +65,14 @@ The paths are then rendered using the `stroke()` method.
 
 #### JavaScript
 
-First we create a context for drawing our rounded rectangles.
+ابتدا یک بافت برای رسم مستطیل‌های گردشده خود ایجاد می‌کنیم.
 
 ```js
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 ```
 
-The code below draws two rectangles, both starting from the point (10, 20) and with a width of 150 and a height of 100.
-The first rectangle is drawn in red and specifies a zero radius for all the corners using a number as an argument.
-The second is drawn in blue, and specifies a 40px radius as a single element in a list.
+کد زیر دو مستطیل را رسم می‌کند که هر دو از نقطه (10, 20) شروع می‌شوند و عرض 150 و ارتفاع 100 دارند. مستطیل اول به رنگ قرمز رسم شده و با استفاده از یک عدد به عنوان آرگومان، شعاع صفر را برای همه گوشه‌ها مشخص می‌کند. دومی به رنگ آبی رسم شده و یک شعاع 40 پیکسلی را به عنوان یک عنصر تکی در یک لیست مشخص می‌کند.
 
 ```js
 // Rounded rectangle with zero radius (specified as a number)
@@ -101,7 +88,7 @@ ctx.roundRect(10, 20, 150, 100, [40]);
 ctx.stroke();
 ```
 
-Below the previous rectangle we draw another in orange that specifies the values of the radii of opposite corners.
+در زیر مستطیل قبلی، مستطیل دیگری به رنگ نارنجی رسم می‌کنیم که مقادیر شعاع گوشه‌های مقابل را مشخص می‌کند.
 
 ```js
 // Rounded rectangle with 2 different radii
@@ -111,8 +98,7 @@ ctx.roundRect(10, 150, 150, 100, [10, 40]);
 ctx.stroke();
 ```
 
-Finally, we draw two rounded rectangles that have four values for the radii and the same starting point.
-The difference here is that the second is drawn with a negative width.
+در نهایت، دو مستطیل گردشده رسم می‌کنیم که چهار مقدار برای شعاع‌ها و نقطه شروع یکسان دارند. تفاوت در اینجا این است که دومی با عرض منفی رسم شده است.
 
 ```js
 // Rounded rectangle with four different radii
@@ -130,8 +116,7 @@ ctx.stroke();
 
 #### Result
 
-The result is shown below.
-For the two rectangles on the right, note how the bottom rectangle is drawn with a negative width, and how this flips the rectangle horizontally.
+نتیجه در زیر نشان داده شده است. برای دو مستطیل سمت راست، توجه کنید که مستطیل پایینی با عرض منفی رسم شده است و چگونه این کار مستطیل را به صورت افقی برعکس می‌کند.
 
 {{ EmbedLiveSample('Drawing_a_rectangle', 700, 300) }}
 
