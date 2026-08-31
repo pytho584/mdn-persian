@@ -1,11 +1,5 @@
 ---
 title: "CharacterData: replaceData() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/replaceData"
-status: "needs-translation"
----
-
----
-title: "CharacterData: replaceData() method"
 short-title: replaceData()
 slug: Web/API/CharacterData/replaceData
 page-type: web-api-instance-method
@@ -14,34 +8,33 @@ browser-compat: api.CharacterData.replaceData
 
 {{APIRef("DOM")}}
 
-The **`replaceData()`** method of the {{domxref("CharacterData")}} interface removes a certain number of characters of the existing text in a given `CharacterData` node and replaces those characters with the text provided.
+روش **`replaceData()`** از رابط {{domxref("CharacterData")}} تعداد مشخصی از کاراکترهای متن موجود در یک گره `CharacterData` را حذف کرده و آن کاراکترها را با متن ارائه‌شده جایگزین می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 replaceData(offset, count, data)
 ```
 
-### Parameters
+### پارامترها
 
 - `offset`
-  - : The number of characters from the start of the data to insert at.
-    `0` is the first character of the string.
+  - : تعداد کاراکترهایی از ابتدای داده که در آن درج شود. `0` اولین کاراکتر رشته است.
 - `count`
-  - : The number of characters to replace with the provided data.
+  - : تعداد کاراکترهایی که با داده ارائه‌شده جایگزین می‌شوند.
 - `data`
-  - : The data to insert.
+  - : داده‌ای که درج می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None.
+هیچ‌کدام.
 
-### Exceptions
+### استثناها
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if `offset` or `count` is negative or `offset` is greater than the length of the contained data.
+  - : اگر `offset` یا `count` منفی باشد یا `offset` بزرگ‌تر از طول داده موجود باشد، پرتاب می‌شود.
 
-## Example
+## مثال
 
 ```html
 <span>Result: </span>A long string.
@@ -56,15 +49,15 @@ textNode.replaceData(2, 4, "replaced");
 
 {{EmbedLiveSample("Example", "100%", 50)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CharacterData.appendData()")}}
 - {{domxref("CharacterData.deleteData()")}}
