@@ -1,11 +1,5 @@
 ---
 title: "CryptoKey: extractable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CryptoKey/extractable"
-status: "needs-translation"
----
-
----
-title: "CryptoKey: extractable property"
 short-title: extractable
 slug: Web/API/CryptoKey/extractable
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.CryptoKey.extractable
 
 {{APIRef("Web Crypto API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The read-only **`extractable`** property of the {{DOMxRef("CryptoKey")}} interface indicates whether or not the key may be extracted using [`SubtleCrypto.exportKey()`](/en-US/docs/Web/API/SubtleCrypto/exportKey) or [`SubtleCrypto.wrapKey()`](/en-US/docs/Web/API/SubtleCrypto/wrapKey).
+ویژگی فقط‌خواندنی **`extractable`** از رابط {{DOMxRef("CryptoKey")}} مشخص می‌کند که آیا کلید را می‌توان با استفاده از [`SubtleCrypto.exportKey()`](/en-US/docs/Web/API/SubtleCrypto/exportKey) یا [`SubtleCrypto.wrapKey()`](/en-US/docs/Web/API/SubtleCrypto/wrapKey) استخراج کرد یا خیر.
 
-If the key cannot be exported, [`exportKey()`](/en-US/docs/Web/API/SubtleCrypto/exportKey) or [`wrapKey()`](/en-US/docs/Web/API/SubtleCrypto/wrapKey) will throw an exception if used to extract it.
+اگر کلید قابل استخراج نباشد، استفاده از [`exportKey()`](/en-US/docs/Web/API/SubtleCrypto/exportKey) یا [`wrapKey()`](/en-US/docs/Web/API/SubtleCrypto/wrapKey) برای استخراج آن یک استثنا ایجاد می‌کند.
 
-## Value
+## مقدار
 
-A boolean value that is `true` if the key can be exported and `false` if not.
+یک مقدار بولین که اگر کلید قابل استخراج باشد `true` و در غیر این صورت `false` است.
 
-## Examples
+## مثال‌ها
 
-In this example, the _Export_ button is disabled, and no listener added, if the key cannot be exported.
+در این مثال، اگر کلید قابل استخراج نباشد، دکمه _Export_ غیرفعال می‌شود و هیچ شنونده‌ای به آن اضافه نمی‌شود.
 
 ```js
 // Export the given key and write it into the "exported-key" space.
@@ -64,10 +58,10 @@ window.crypto.subtle
   .then(setExportButton(key));
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
