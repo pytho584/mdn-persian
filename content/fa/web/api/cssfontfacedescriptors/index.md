@@ -1,10 +1,4 @@
 ---
-title: "CSSFontFaceDescriptors"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFaceDescriptors"
-status: "needs-translation"
----
-
----
 title: CSSFontFaceDescriptors
 slug: Web/API/CSSFontFaceDescriptors
 page-type: web-api-interface
@@ -13,52 +7,51 @@ browser-compat: api.CSSFontFaceDescriptors
 
 {{APIRef("CSSOM")}}
 
-The **`CSSFontFaceDescriptors`** interface represents a CSS declaration block for an {{cssxref("@font-face")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+رابطهٔ **`CSSFontFaceDescriptors`** نمایانگر یک بلوک اعلان‌های CSS برای یک [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) با نام {{cssxref("@font-face")}} است.
 
-Each descriptor in the body of the corresponding {{cssxref("@font-face")}} at-rule can be accessed using either its kebab-case property name in [bracket notation](/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#bracket_notation) or the camel-case version of the property name in [dot notation](/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#dot_notation).
-For example, you can access the `font-family` CSS descriptor as `style["font-family"]` or `style.fontFamily`, where `style` is a `CSSFontFaceDescriptors` instance.
+هر توصیفگر در بدنهٔ قانون {{cssxref("@font-face")}} مربوطه را می‌توان با استفاده از نام ویژگی kebab-case آن در [نماد براکتی](/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#bracket_notation) یا با استفاده از نسخهٔ camel-case نام ویژگی در [نماد نقطه‌ای](/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#dot_notation) مورد دسترسی قرار داد. برای مثال، می‌توانید به توصیفگر CSS با نام `font-family` به‌صورت `style["font-family"]` یا `style.fontFamily` دسترسی داشته باشید، که در آن `style` نمونه‌ای از `CSSFontFaceDescriptors` است.
 
 > [!NOTE]
-> The {{domxref("CSSFontFaceRule")}} interface represents a {{cssxref("@font-face")}} at-rule, and the {{domxref("CSSFontFaceRule.style")}} property is an instance of this object.
+> رابطهٔ {{domxref("CSSFontFaceRule")}} نمایانگر یک at-rule با نام {{cssxref("@font-face")}} است و ویژگی {{domxref("CSSFontFaceRule.style")}} نمونه‌ای از این شیء است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestor {{domxref("CSSStyleDeclaration")}}._
+_ویژگی‌های نمونه را از نیای خود، {{domxref("CSSStyleDeclaration")}}، به ارث می‌برد._
 
-The following property names, in kebab-case (accessed using bracket notation) and camel-case (accessed using dot notation), each represent the value of a descriptor in the corresponding `@font-face` at-rule:
+نام‌های ویژگی زیر، به‌صورت kebab-case (دسترسی با نماد براکتی) و camel-case (دسترسی با نماد نقطه‌ای)، هر کدام نمایانگر مقدار یک توصیفگر در قانون `@font-face` مربوطه هستند:
 
-- `font-display` or `fontDisplay`
-  - : A string representing the value of the {{cssxref("@font-face/font-display", "font-display")}} descriptor.
-- `font-family` or `fontFamily`
-  - : A string representing the value of the {{cssxref("@font-face/font-family", "font-family")}} descriptor.
-- `font-feature-settings` or `fontFeatureSettings`
-  - : A string representing the value of the {{cssxref("@font-face/font-feature-settings", "font-feature-settings")}} descriptor.
-- `font-stretch` or `fontStretch`
-  - : A string representing the value of the {{cssxref("@font-face/font-stretch", "font-stretch")}} descriptor.
-- `font-style` or `fontStyle`
-  - : A string representing the value of the {{cssxref("@font-face/font-style", "font-style")}} descriptor.
-- `font-weight` or `fontWeight`
-  - : A string representing the value of the {{cssxref("@font-face/font-weight", "font-weight")}} descriptor.
-- `font-width` or `fontWidth` {{experimental_inline}}
-  - : A string representing the value of the {{cssxref("@font-face/font-width", "font-width")}} descriptor.
-- `size-adjust` or `sizeAdjust`
-  - : A string representing the value of the {{cssxref("@font-face/size-adjust", "size-adjust")}} descriptor.
+- `font-display` یا `fontDisplay`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("@font-face/font-display", "font-display")}} را نشان می‌دهد.
+- `font-family` یا `fontFamily`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("@font-face/font-family", "font-family")}} را نشان می‌دهد.
+- `font-feature-settings` یا `fontFeatureSettings`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("@font-face/font-feature-settings", "font-feature-settings")}} را نشان می‌دهد.
+- `font-stretch` یا `fontStretch`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("@font-face/font-stretch", "font-stretch")}} را نشان می‌دهد.
+- `font-style` یا `fontStyle`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("@font-face/font-style", "font-style")}} را نشان می‌دهد.
+- `font-weight` یا `fontWeight`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("@font-face/font-weight", "font-weight")}} را نشان می‌دهد.
+- `font-width` یا `fontWidth` {{experimental_inline}}
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("@font-face/font-width", "font-width")}} را نشان می‌دهد.
+- `size-adjust` یا `sizeAdjust`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("@font-face/size-adjust", "size-adjust")}} را نشان می‌دهد.
 - `src`
-  - : A string representing the value of the {{cssxref("@font-face/src", "src")}} descriptor.
-- `unicode-range` or `unicodeRange`
-  - : A string representing the value of the {{cssxref("@font-face/unicode-range", "unicode-range")}} descriptor.
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("@font-face/src", "src")}} را نشان می‌دهد.
+- `unicode-range` یا `unicodeRange`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("@font-face/unicode-range", "unicode-range")}} را نشان می‌دهد.
 
-## Instance methods
+## متدهای نمونه
 
-_No specific methods; inherits methods from its ancestor {{domxref("CSSStyleDeclaration")}}._
+_متد خاصی ندارد؛ متدهای نیای خود {{domxref("CSSStyleDeclaration")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Accessing @font-face descriptor values
+### دسترسی به مقادیر توصیفگرهای @font-face
 
-This example defines a {{cssxref("@font-face")}} rule and then uses `CSSFontFaceDescriptors` to read back the descriptor values.
+این مثال یک قانون {{cssxref("@font-face")}} تعریف می‌کند و سپس با استفاده از `CSSFontFaceDescriptors` مقادیر توصیفگرها را بازخوانی می‌کند.
 
 #### CSS
 
@@ -112,19 +105,19 @@ for (const rule of myRules) {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Accessing @font-face descriptor values", "100%", "250px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSFontFaceRule")}}
 - {{domxref("CSSFontFaceRule.style")}}
