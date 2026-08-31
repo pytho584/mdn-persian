@@ -1,7 +1,7 @@
 ---
 title: "AudioScheduledSourceNode: stop() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioScheduledSourceNode/stop"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,50 +14,39 @@ browser-compat: api.AudioScheduledSourceNode.stop
 
 {{ APIRef("Web Audio API") }}
 
-The `stop()` method on {{domxref("AudioScheduledSourceNode")}} schedules a
-sound to cease playback at the specified time. If no time is specified, then the sound
-stops playing immediately.
+متد `stop()` روی {{domxref("AudioScheduledSourceNode")}} توقف پخش یک صدا را در زمان مشخص‌شده زمان‌بندی می‌کند. اگر زمانی مشخص نشود، پخش صدا بلافاصله متوقف می‌شود.
 
-Each time you call `stop()` on the same node, the specified time replaces
-any previously-scheduled stop time that hasn't occurred yet. If the node has already
-stopped, this method has no effect.
+هر بار که `stop()` را روی همان نود صدا بزنید، زمان مشخص‌شده جایگزین هر زمان توقف قبلی می‌شود که هنوز رخ نداده است. اگر نود قبلاً متوقف شده باشد، این متد هیچ اثری ندارد.
 
 > [!NOTE]
-> If a scheduled stop time occurs before the node's scheduled
-> start time, the node never starts to play.
+> اگر زمان توقف زمان‌بندی‌شده قبل از زمان شروع زمان‌بندی‌شده نود رخ دهد، نود هرگز شروع به پخش نمی‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 stop()
 stop(when)
 ```
 
-### Parameters
+### پارامترها
 
 - `when` {{optional_inline}}
-  - : The time, in seconds, at which the sound should stop playing. This value is
-    specified in the same time coordinate system as the {{domxref("AudioContext")}} is
-    using for its {{domxref("BaseAudioContext/currentTime", "currentTime")}} attribute.
-    Omitting this parameter, specifying a value of 0, or passing a negative value causes
-    the sound to stop playback immediately.
+  - : زمان بر حسب ثانیه که صدا باید پخش آن متوقف شود. این مقدار در همان سیستم مختصات زمانی مشخص می‌شود که {{domxref("AudioContext")}} برای ویژگی {{domxref("BaseAudioContext/currentTime", "currentTime")}} خود استفاده می‌کند. حذف این پارامتر، تعیین مقدار ۰، یا عبور دادن یک مقدار منفی باعث می‌شود پخش صدا بلافاصله متوقف شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidStateNode` {{domxref("DOMException")}}
-  - : Thrown if the node has not been started by calling {{domxref("AudioScheduledSourceNode.start", "start()")}}.
+  - : اگر نود با فراخوانی {{domxref("AudioScheduledSourceNode.start", "start()")}} شروع نشده باشد، پرتاب می‌شود.
 - {{jsxref("RangeError")}}
-  - : Thrown if the value specified for `when` is negative.
+  - : اگر مقدار مشخص‌شده برای `when` منفی باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example demonstrates starting an oscillator node, scheduled to begin playing at
-once and to stop playing in one second. The stop time is determined by taking the audio
-context's current time from {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}} and adding 1 second.
+این مثال نحوه شروع یک نود نوسان‌ساز را نشان می‌دهد که زمان‌بندی شده است بلافاصله شروع به پخش کند و پس از یک ثانیه پخش آن متوقف شود. زمان توقف با گرفتن زمان فعلی زمینه صوتی از {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}} و اضافه کردن ۱ ثانیه تعیین می‌شود.
 
 ```js
 context = new AudioContext();
@@ -70,17 +59,17 @@ osc.start();
 osc.stop(context.currentTime + 1);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - {{domxref("AudioScheduledSourceNode.start", "start()")}}
 - {{domxref("AudioScheduledSourceNode")}}
 - {{domxref("AudioBufferSourceNode")}}
