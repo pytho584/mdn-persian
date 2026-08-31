@@ -1,7 +1,7 @@
 ---
 title: "AudioEncoder: flush() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder/flush"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,39 +14,39 @@ browser-compat: api.AudioEncoder.flush
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`flush()`** method of the {{domxref("AudioEncoder")}} interface returns a Promise that resolves once all pending messages in the queue have been completed.
+متد **`flush()`** از رابط {{domxref("AudioEncoder")}} یک Promise برمی‌گرداند که پس از تکمیل تمام پیام‌های در انتظار در صف، حل می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 flush()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with undefined.
+یک {{jsxref("Promise")}} که با undefined حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the Promise is rejected because the {{domxref("AudioEncoder.state","state")}} is not `"configured"`.
+  - : اگر Promise به دلیل اینکه {{domxref("AudioEncoder.state","state")}} برابر `"configured"` نیست رد شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example flushes the `AudioEncoder`.
+مثال زیر `AudioEncoder` را فلش می‌کند.
 
 ```js
 AudioEncoder.flush();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
