@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: fillRect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillRect"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: fillRect() method"
 short-title: fillRect()
 slug: Web/API/CanvasRenderingContext2D/fillRect
 page-type: web-api-instance-method
@@ -14,47 +8,38 @@ browser-compat: api.CanvasRenderingContext2D.fillRect
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.fillRect()`**
-method of the Canvas 2D API draws a rectangle that is filled according to the current
-{{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}}.
+متد **`CanvasRenderingContext2D.fillRect()`** در Canvas 2D API یک مستطیل رسم می‌کند که بر اساس {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} کنونی پر می‌شود.
 
-This method draws directly to the canvas without modifying the current path, so any
-subsequent {{domxref("CanvasRenderingContext2D.fill()", "fill()")}} or
-{{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}} calls will have no effect
-on it.
+این متد مستقیماً روی بوم (canvas) رسم می‌کند و مسیر فعلی را تغییر نمی‌دهد؛ بنابراین هر فراخوانی بعدی {{domxref("CanvasRenderingContext2D.fill()", "fill()")}} یا {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}} هیچ تأثیری روی آن نخواهد داشت.
 
-## Syntax
+## نحو
 
 ```js-nolint
 fillRect(x, y, width, height)
 ```
 
-The `fillRect()` method draws a filled rectangle whose starting point is at
-`(x, y)` and whose size is specified by `width` and
-`height`. The fill style is determined by the current `fillStyle`
-attribute.
+متد `fillRect()` یک مستطیل توپر رسم می‌کند که نقطه شروع آن در `(x, y)` است و اندازه آن با `width` و `height` مشخص می‌شود. سبک پر کردن با توجه به ویژگی `fillStyle` فعلی تعیین می‌شود.
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : The x-axis coordinate of the rectangle's starting point.
+  - : مختصات محور x نقطه شروع مستطیل.
 - `y`
-  - : The y-axis coordinate of the rectangle's starting point.
+  - : مختصات محور y نقطه شروع مستطیل.
 - `width`
-  - : The rectangle's width. Positive values are to the right, and negative to the left.
+  - : عرض مستطیل. مقادیر مثبت به سمت راست و مقادیر منفی به سمت چپ هستند.
 - `height`
-  - : The rectangle's height. Positive values are down, and negative are up.
+  - : ارتفاع مستطیل. مقادیر مثبت به سمت پایین و مقادیر منفی به سمت بالا هستند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### A simple filled rectangle
+### یک مستطیل توپر ساده
 
-This example draws a filled green rectangle using the `fillRect()` method.
+این مثال با استفاده از متد `fillRect()` یک مستطیل توپر سبز رسم می‌کند.
 
 #### HTML
 
@@ -62,10 +47,9 @@ This example draws a filled green rectangle using the `fillRect()` method.
 <canvas id="canvas"></canvas>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-The rectangle's top-left corner is at (20, 10). It has a width of 150 and a height of
-100\.
+گوشه بالا-چپ مستطیل در نقطه (20, 10) قرار دارد. عرض آن ۱۵۰ و ارتفاع آن ۱۰۰ است.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -74,16 +58,13 @@ ctx.fillStyle = "green";
 ctx.fillRect(20, 10, 150, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('A_simple_filled_rectangle', 700, 180) }}
 
-### Filling the whole canvas
+### پر کردن کل بوم
 
-This code snippet fills the entire canvas with a rectangle. This is often useful for
-creating a background, on top of which other things may then be drawn. To achieve this,
-the dimensions of the rectangle are set to equal the {{HtmlElement("canvas")}} element's
-`width` and `height` attributes.
+این قطعه‌کد کل بوم را با یک مستطیل پر می‌کند. این کار اغلب برای ایجاد پس‌زمینه‌ای مفید است که بتوان بعداً چیزهای دیگری را روی آن رسم کرد. برای این کار، ابعاد مستطیل را برابر با ویژگی‌های `width` و `height` عنصر {{HtmlElement("canvas")}} قرار می‌دهیم.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -91,17 +72,17 @@ const ctx = canvas.getContext("2d");
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابطی که این متد را تعریف می‌کند: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.fillStyle")}}
 - {{domxref("CanvasRenderingContext2D.clearRect()")}}
 - {{domxref("CanvasRenderingContext2D.strokeRect()")}}
