@@ -1,11 +1,5 @@
 ---
 title: "ContactsManager: select() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContactsManager/select"
-status: "needs-translation"
----
-
----
-title: "ContactsManager: select() method"
 short-title: select()
 slug: Web/API/ContactsManager/select
 page-type: web-api-instance-method
@@ -16,11 +10,7 @@ browser-compat: api.ContactsManager.select
 
 {{securecontext_header}}{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
-The **`select()`** method of the
-{{domxref("ContactsManager")}} interface returns a {{jsxref('Promise')}} which, when
-resolved, presents the user with a contact picker which allows them to select contact(s)
-they wish to share. This method requires a user gesture for the {{jsxref('Promise')}} to
-resolve.
+متد **`select()`** از رابط {{domxref("ContactsManager")}} یک {{jsxref('Promise')}} برمی‌گرداند که پس از حل شدن، یک انتخاب‌گر مخاطب (contact picker) به کاربر نمایش می‌دهد و به او امکان می‌دهد مخاطب(هایی) را که می‌خواهد به اشتراک بگذارد، انتخاب کند. این متد برای حل شدن {{jsxref('Promise')}} نیاز به یک کنش کاربری (user gesture) دارد.
 
 ## Syntax
 
@@ -29,61 +19,56 @@ select(properties)
 select(properties, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `properties`
-  - : An array of {{jsxref('String', 'strings')}} defining what information to retrieve
-    from a contact. Allowed values are as follows:
-    - `'name'`: The contact's name.
-    - `'tel'`: The telephone number(s) of the contact.
-    - `'email'`: The email address of the contact.
-    - `'address'`: The contact's postal address.
-    - `'icon'`: The avatar of the contact.
+  - : آرایه‌ای از {{jsxref('String', 'رشته‌ها')}} که مشخص می‌کند چه اطلاعاتی از یک مخاطب دریافت شود. مقادیر مجاز به شرح زیر است:
+    - `'name'`: نام مخاطب.
+    - `'tel'`: شماره(های) تلفن مخاطب.
+    - `'email'`: آدرس ایمیل مخاطب.
+    - `'address'`: آدرس پستی مخاطب.
+    - `'icon'`: تصویر آواتار مخاطب.
 
 - `options` {{optional_inline}}
-  - : Options are as follows:
+  - : گزینه‌ها به شرح زیر است:
     - `multiple`
-      - : A Boolean that allows multiple contacts to be selected. The default is `false`.
+      - : یک مقدار بولین که امکان انتخاب چندین مخاطب را فراهم می‌کند. مقدار پیش‌فرض `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a {{jsxref('Promise')}} that resolves with an array of objects containing contact information. Each object represents a single contact may contain the following properties:
+یک {{jsxref('Promise')}} برمی‌گرداند که با آرایه‌ای از اشیاء حاوی اطلاعات مخاطب حل می‌شود. هر شیء نمایانگر یک مخاطب است و ممکن است شامل ویژگی‌های زیر باشد:
 
 - `address`
-  - : An {{jsxref("Array")}} of {{domxref("ContactAddress")}} objects, each containing specifics of a unique physical address.
+  - : یک {{jsxref("Array")}} از اشیاء {{domxref("ContactAddress")}} که هر کدام جزئیات یک آدرس فیزیکی منحصربه‌فرد را شامل می‌شود.
 - `email`
-  - : An array of strings containing email addresses.
+  - : آرایه‌ای از رشته‌ها حاوی آدرس‌های ایمیل.
 - `icon`
-  - : An array of {{domxref("Blob")}} objects containing images of an individual.
+  - : آرایه‌ای از اشیاء {{domxref("Blob")}} حاوی تصاویر یک شخص.
 - `name`
-  - : An array strings, each containing a unique name of an individual.
+  - : آرایه‌ای از رشته‌ها، هر کدام حاوی یک نام منحصربه‌فرد از یک شخص.
 - `tel`
-  - : An array strings, each containing a unique phone number of an individual.
+  - : آرایه‌ای از رشته‌ها، هر کدام حاوی یک شماره تلفن منحصربه‌فرد از یک شخص.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Returned if the browsing context is not top-level, if the contact picker shows a flag that denotes an already existing contact picker since only one picker can exist at any time, or if launching a contact picker failed.
+  - : اگر زمینه مرورگر (browsing context) سطح بالا نباشد، اگر انتخاب‌گر مخاطب پرچمی را نشان دهد که نشان‌دهنده یک انتخاب‌گر مخاطب از قبل موجود است (زیرا فقط یک انتخاب‌گر می‌تواند در هر زمان وجود داشته باشد)، یا اگر راه‌اندازی انتخاب‌گر مخاطب با شکست مواجه شود، برگردانده می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Returned if the method is not triggered by [user activation](/en-US/docs/Web/Security/Defenses/User_activation).
+  - : اگر متد توسط [فعال‌سازی کاربر](/en-US/docs/Web/Security/Defenses/User_activation) راه‌اندازی نشود، برگردانده می‌شود.
 - {{jsxref("TypeError")}}
-  - : Returned if `properties` is empty, or if any of the specified properties are not
-    supported.
+  - : اگر `properties` خالی باشد، یا اگر هر یک از ویژگی‌های مشخص‌شده پشتیبانی نشوند، برگردانده می‌شود.
 
-## Security
+## امنیت
 
-{{Glossary("Transient activation")}} is required. The user has to interact with the page or a UI element in order for this feature to work.
+{{Glossary("Transient activation")}} (فعال‌سازی زودگذر) مورد نیاز است. کاربر باید با صفحه یا یک عنصرUI تعامل داشته باشد تا این ویژگی کار کند.
 
-## Examples
+## مثال‌ها
 
-### Basic Example
+### مثال پایه
 
-The following example sets an array of properties to be retrieved for each contact, as
-well as setting an options object to allow for multiple contacts to be selected.
+مثال زیر یک آرایه از ویژگی‌هایی را که برای هر مخاطب باید بازیابی شود، تنظیم می‌کند و همچنین یک شیء گزینه را تنظیم می‌کند تا امکان انتخاب چندین مخاطب فراهم شود.
 
-An asynchronous function is then defined which uses the `select()` method to
-present the user with a contact picker interface and handle the chosen results.
-`handleResults()` is a developer defined function.
+سپس یک تابع ناهمگام (asynchronous) تعریف می‌شود که از متد `select()` برای نمایش یک رابط انتخاب‌گر مخاطب به کاربر و مدیریت نتایج انتخاب‌شده استفاده می‌کند. `handleResults()` یک تابع تعریف‌شده توسط توسعه‌دهنده است.
 
 ```js
 const props = ["name", "email", "tel", "address", "icon"];
@@ -99,9 +84,9 @@ async function getContacts() {
 }
 ```
 
-### Select Using Only Supported Properties
+### انتخاب فقط با استفاده از ویژگی‌های پشتیبانی‌شده
 
-The following example uses {{domxref("ContactsManager.getProperties", "getProperties()")}} to ensure that only supported properties are passed. Otherwise, `select()` might throw a {{jsxref("TypeError")}}. `handleResults()` is a developer defined function.
+مثال زیر از {{domxref("ContactsManager.getProperties", "getProperties()")}} استفاده می‌کند تا اطمینان حاصل شود که فقط ویژگی‌های پشتیبانی‌شده ارسال می‌شوند. در غیر این صورت، `select()` ممکن است یک {{jsxref("TypeError")}} پرتاب کند. `handleResults()` یک تابع تعریف‌شده توسط توسعه‌دهنده است.
 
 ```js
 const supportedProperties = await navigator.contacts.getProperties();
@@ -116,10 +101,10 @@ async function getContacts() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
