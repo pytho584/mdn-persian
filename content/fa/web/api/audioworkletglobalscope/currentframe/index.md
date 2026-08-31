@@ -1,9 +1,8 @@
 ---
 title: "AudioWorkletGlobalScope: currentFrame property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/currentFrame"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
-
 ---
 title: "AudioWorkletGlobalScope: currentFrame property"
 short-title: currentFrame
@@ -14,15 +13,15 @@ browser-compat: api.AudioWorkletGlobalScope.currentFrame
 
 {{APIRef("Web Audio API")}}
 
-The read-only **`currentFrame`** property of the {{domxref("AudioWorkletGlobalScope")}} interface returns an integer that represents the ever-increasing current sample-frame of the audio block being processed. It is incremented by 128 (the size of a render quantum) after the processing of each audio block.
+ویژگی فقط خواندنی **`currentFrame`** از رابط {{domxref("AudioWorkletGlobalScope")}} یک عدد صحیح را برمی‌گرداند که نشان‌دهنده فریم نمونه فعلی و همیشه در حال افزایش بلوک صوتی در حال پردازش است. این مقدار پس از پردازش هر بلوک صوتی به اندازه ۱۲۸ (اندازه یک کوانتوم رندر) افزایش می‌یابد.
 
-## Value
+## مقدار
 
-An integer number.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-The {{domxref("AudioWorkletProcessor")}} has access to the specific {{domxref("AudioWorkletGlobalScope")}} properties:
+{{domxref("AudioWorkletProcessor")}} به ویژگی‌های خاص {{domxref("AudioWorkletGlobalScope")}} دسترسی دارد:
 
 ```js
 // AudioWorkletProcessor defined in : test-processor.js
@@ -56,7 +55,7 @@ console.log(usefulVariable);
 registerProcessor("test-processor", TestProcessor);
 ```
 
-The main script loads the processor, creates an instance of {{domxref("AudioWorkletNode")}}, passes the name of the processor to it, and connects the node to an audio graph. We should see the output of {{domxref("console/log_static", "console.log()")}} calls in the console:
+اسکریپت اصلی پردازنده را بارگذاری می‌کند، یک نمونه از {{domxref("AudioWorkletNode")}} ایجاد می‌کند، نام پردازنده را به آن می‌دهد، و گره را به یک گراف صوتی متصل می‌کند. ما باید خروجی فراخوانی‌های {{domxref("console/log_static", "console.log()")}} را در کنسول ببینیم:
 
 ```js
 const audioContext = new AudioContext();
@@ -65,15 +64,15 @@ const testNode = new AudioWorkletNode(audioContext, "test-processor");
 testNode.connect(audioContext.destination);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [API وب صوتی](/en-US/docs/Web/API/Web_Audio_API)
+- [استفاده از API وب صوتی](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
