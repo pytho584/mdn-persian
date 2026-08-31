@@ -1,7 +1,5 @@
 ---
 title: "Managing screen orientation"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Managing_screen_orientation"
-status: "needs-translation"
 ---
 
 ---
@@ -12,17 +10,17 @@ page-type: guide
 
 {{DefaultAPISidebar("Screen Orientation API")}}
 
-The term _screen orientation_ refers to whether a browser [viewport](/en-US/docs/Glossary/Viewport) is in landscape mode (that is, the width of the viewport is greater than its height), or else in portrait mode (the height of the viewport is greater than its width)
+اصطلاح _جهت‌گیری صفحه_ به وضعیت [نمای دید (viewport)](/en-US/docs/Glossary/Viewport) مرورگر اشاره دارد: آیا در حالت افقی (landscape) است — یعنی عرض نمای دید بیشتر از ارتفاع آن است — یا در حالت عمودی (portrait) — یعنی ارتفاع نمای دید بیشتر از عرض آن است.
 
-CSS provides the {{cssxref("@media/orientation")}} media feature to allow adjusting layout based on screen orientation.
+CSS ویژگی رسانه‌ای {{cssxref("@media/orientation")}} را فراهم می‌کند تا تنظیم چیدمان بر اساس جهت‌گیری صفحه امکان‌پذیر شود.
 
-The [Screen Orientation API](/en-US/docs/Web/API/Screen_Orientation_API) provides a programmatic JavaScript API for working with screen orientation — including the ability to lock the viewport to a specific orientation.
+[Screen Orientation API](/en-US/docs/Web/API/Screen_Orientation_API) یک رابط برنامه‌نویسی جاوااسکریپتی برای کار با جهت‌گیری صفحه فراهم می‌کند — از جمله قابلیت قفل کردن نمای دید در یک جهت‌گیری خاص.
 
-## Adjusting layout based on the orientation
+## تنظیم چیدمان بر اساس جهت‌گیری
 
-One of the most common cases for orientation changes is when you want to revise the layout of your content based on the orientation of the device. For example, perhaps you want a button bar to stretch along the longest dimension of the device's display. By using a media query, you can do this easily and automatically.
+یکی از رایج‌ترین موارد تغییر جهت‌گیری زمانی است که می‌خواهید چیدمان محتوای خود را بر اساس جهت‌گیری دستگاه اصلاح کنید. برای مثال، شاید بخواهید یک نوار دکمه در امتداد بزرگ‌ترین بُعد نمایشگر دستگاه کشیده شود. با استفاده از یک کوئری رسانه می‌توانید این کار را به‌سادگی و به‌طور خودکار انجام دهید.
 
-Let's have an example with the following HTML code
+بیایید مثالی با کد HTML زیر داشته باشیم:
 
 ```html
 <ul id="toolbar">
@@ -39,7 +37,7 @@ Let's have an example with the following HTML code
 </p>
 ```
 
-CSS relies on the orientation media query to handle specific styles based on the screen orientation
+CSS برای اعمال استایل‌های خاص بر اساس جهت‌گیری صفحه، به کوئری رسانه جهت‌گیری متکی است:
 
 ```css
 /* First let's define some common styles */
@@ -84,7 +82,7 @@ li {
 }
 ```
 
-Once we have some common styles we can start defining a special case for the orientation
+وقتی تعدادی استایل مشترک داشته باشیم، می‌توانیم شروع به تعریف حالت خاصی برای جهت‌گیری کنیم:
 
 ```css
 /* For portrait, we want the toolbar on top */
@@ -114,13 +112,13 @@ Once we have some common styles we can start defining a special case for the ori
 }
 ```
 
-And here's the result
+و در اینجا نتیجه آمده است:
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th scope="col">Portrait</th>
-      <th scope="col">Landscape</th>
+      <th scope="col">عمودی</th>
+      <th scope="col">افقی</th>
     </tr>
   </thead>
   <tbody>
@@ -140,17 +138,17 @@ And here's the result
 </table>
 
 > [!NOTE]
-> The orientation media query actually applies based on the orientation of the browser window (or iframe) not the orientation of the device.
+> کوئری رسانه جهت‌گیری در واقع بر اساس جهت‌گیری پنجره مرورگر (یا iframe) اعمال می‌شود، نه جهت‌گیری خود دستگاه.
 
-## Locking the screen orientation
+## قفل کردن جهت‌گیری صفحه
 
-Some devices (mainly mobile devices) can dynamically change the orientation of the screen based on their own orientation, ensuring that the user will always be able to read what's on the screen. While this behavior is perfectly suited for text content, there is some content that can be negatively affected by such a change. For example, games based on the orientation of the device could be messed up by such a change of the orientation.
+برخی دستگاه‌ها (عمدتاً دستگاه‌های همراه) می‌توانند جهت‌گیری صفحه را به‌صورت پویا بر اساس جهت‌گیری خودشان تغییر دهند تا اطمینان حاصل شود که کاربر همیشه بتواند محتوای روی صفحه را بخواند. هرچند این رفتار برای محتوای متنی کاملاً مناسب است، برخی محتواها ممکن است تحت تأثیر منفی چنین تغییری قرار گیرند. برای مثال، بازی‌هایی که بر اساس جهت‌گیری دستگاه طراحی شده‌اند ممکن است با چنین تغییری به هم بریزند.
 
-The Screen Orientation API is made to prevent or handle such a change.
+Screen Orientation API برای جلوگیری یا مدیریت چنین تغییری ساخته شده است.
 
-### Listening to orientation changes
+### گوش دادن به تغییرات جهت‌گیری
 
-Each time the orientation of the screen changes, the {{domxref("ScreenOrientation.change_event", "change")}} event of the {{domxref("ScreenOrientation")}} interface is triggered:
+هر بار که جهت‌گیری صفحه تغییر کند، رویداد {{domxref("ScreenOrientation.change_event", "change")}} در رابط {{domxref("ScreenOrientation")}} فعال می‌شود:
 
 ```js
 screen.orientation.addEventListener("change", () => {
@@ -158,26 +156,26 @@ screen.orientation.addEventListener("change", () => {
 });
 ```
 
-### Preventing orientation change
+### جلوگیری از تغییر جهت‌گیری
 
-Any web application can lock the screen to suits its own needs. The screen is locked using the {{domxref("ScreenOrientation.lock()", "screen.orientation.lock()")}} method and unlocked using the {{domxref("ScreenOrientation.unlock()", "screen.orientation.unlock()")}} method.
+هر برنامه وب می‌تواند صفحه را مطابق نیاز خود قفل کند. صفحه با استفاده از متد {{domxref("ScreenOrientation.lock()", "screen.orientation.lock()")}} قفل می‌شود و با متد {{domxref("ScreenOrientation.unlock()", "screen.orientation.unlock()")}} از قفل خارج می‌شود.
 
-The {{domxref("ScreenOrientation.lock()", "screen.orientation.lock()")}} method accepts one of the following values to define the kind of lock to apply: `any`, `natural`. `portrait-primary`, `portrait-secondary`, `landscape-primary`, `landscape-secondary`, `portrait`, and `landscape`:
+متد {{domxref("ScreenOrientation.lock()", "screen.orientation.lock()")}} یکی از مقادیر زیر را برای تعریف نوع قفل می‌پذیرد: `any`، `natural`، `portrait-primary`، `portrait-secondary`، `landscape-primary`، `landscape-secondary`، `portrait` و `landscape`:
 
 ```js
 screen.orientation.lock();
 ```
 
-It returns a [promise](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves after the lock succeeds.
+این متد یک [وعده (promise)](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) برمی‌گرداند که پس از موفقیت قفل، حل می‌شود.
 
 > [!NOTE]
-> A screen lock is web application dependent. If application A is locked to `landscape` and application B is locked to `portrait`, switching from application A to B or B to A will not fire a `change` event on `ScreenOrientation` because both applications will keep the orientation they had.
+> قفل کردن صفحه به برنامه وب وابسته است. اگر برنامه A به حالت `landscape` قفل شده و برنامه B به حالت `portrait` قفل شده باشد، جابه‌جایی از برنامه A به B یا از B به A رویداد `change` را روی `ScreenOrientation` فعال نمی‌کند، زیرا هر دو برنامه جهت‌گیری‌ای را که داشتند حفظ می‌کنند.
 >
-> However, locking the orientation can fire a `change` event if the orientation had to be changed to satisfy the lock requirements.
+> با این حال، قفل کردن جهت‌گیری ممکن است رویداد `change` را فعال کند اگر جهت‌گیری برای برآوردن الزامات قفل مجبور به تغییر باشد.
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Screen.orientation", "screen.orientation")}}
 - {{domxref("ScreenOrientation")}}
-- {{DOMxRef("ScreenOrientation.change_event", "change")}} event of {{domxref("ScreenOrientation")}}
+- رویداد {{DOMxRef("ScreenOrientation.change_event", "change")}} از {{domxref("ScreenOrientation")}}
 - {{cssxref("@media/orientation")}}
