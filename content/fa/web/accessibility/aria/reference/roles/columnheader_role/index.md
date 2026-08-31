@@ -1,7 +1,7 @@
 ---
 title: "ARIA: columnheader role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,28 +15,28 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `columnheader` value of the ARIA role attribute identifies an element as being a cell in a row contains header information for a column, similar to the native {{HTMLElement('th')}} element with column scope.
+مقدار `columnheader` از ویژگی نقش ARIA، یک عنصر را به عنوان سلولی در یک ردیف که اطلاعات سربرگ برای یک ستون را شامل می‌شود، شناسایی می‌کند، مشابه عنصر بومی {{HTMLElement('th')}} با دامنه ستون.
 
-## Description
+## توضیحات
 
-An element with `role="columnheader"` nested as a descendant for an element with `role="row"`, is a static tabular structure of a column header cell in a tabular container, either a table or grid, or other chart that needs to show data relationships. To be supported, the columnheader must be nested in an element with the [role of `row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role).
+یک عنصر با `role="columnheader"` که به‌عنوان فرزند یک عنصر با `role="row"` قرار گرفته است، یک ساختار جدولی ایستا از یک سلول سربرگ ستون در یک ظرف جدولی، خواه یک جدول یا شبکه، یا نمودار دیگری که نیاز به نمایش روابط داده دارد، می‌باشد. برای پشتیبانی، columnheader باید درون یک عنصر با [نقش `row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) قرار گیرد.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های WAI-ARIA مرتبط
 
-All column headers should be nested within a [row](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role). Every row, in turn, should be nested within a [grid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role), [table](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role), or [treegrid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role), alternatively within a [rowgroup](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role) nested within one of the above.
+تمامی سربرگ‌های ستون باید درون یک [row](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) قرار گیرند. هر ردیف نیز به نوبه خود باید درون یک [grid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role)، [table](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)، یا [treegrid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)، یا به‌طور جایگزین درون یک [rowgroup](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role) که درون یکی از موارد بالا قرار دارد، باشد.
 
 - [`aria-sort`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-sort)
-  - : Only applied to one column header at a time, if any, the `aria-sort` attribute indicates if a column is sorted in the three values of `ascending` or `descending` order, or `none` for not sorted.
+  - : فقط در یک زمان به یک سربرگ ستون اعمال می‌شود، در صورت وجود، ویژگی `aria-sort` نشان می‌دهد که آیا یک ستون به ترتیب صعودی (`ascending`) یا نزولی (`descending`) مرتب شده است، یا `none` برای مرتب نبودن.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-This role does not support any specific keyboard interaction.
+این نقش از هیچ تعامل خاص صفحه‌کلید پشتیبانی نمی‌کند.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-JavaScript is only required if the `aria-sort` attribute is used.
+جاوااسکریپت فقط در صورت استفاده از ویژگی `aria-sort` مورد نیاز است.
 
-## Examples
+## مثال‌ها
 
 ```html
 <table>
@@ -62,23 +62,23 @@ JavaScript is only required if the `aria-sort` attribute is used.
 </table>
 ```
 
-## Best practices
+## بهترین روش‌ها
 
-Column headers should contain a title or header information for the column.
+سربرگ‌های ستون باید شامل یک عنوان یا اطلاعات سربرگ برای ستون باشند.
 
-The first rule of ARIA is: if a native HTML element or attribute has the semantics and behavior you require, use it instead of re-purposing an element and adding an ARIA role, state or property to make it accessible. It is recommended to use the native HTML `<th>` element with the `scope` attribute set `<th scope="col">` instead of a `<div>` or other element. If you use semantic HTML's `<th scope="col">` the role attribute is not required, but can be included as a back up to ensure the table retains its semantics should the default semantics be removed with a CSS display property value.
+اولین قانون ARIA این است: اگر یک عنصر یا ویژگی HTML بومی دارای معناشناسی و رفتاری است که نیاز دارید، از آن استفاده کنید به جای اینکه یک عنصر را تغییر کاربری داده و یک نقش، حالت یا ویژگی ARIA به آن اضافه کنید تا قابل دسترسی شود. توصیه می‌شود از عنصر بومی HTML `<th>` با ویژگی `scope` تنظیم شده به `<th scope="col">` استفاده کنید به جای یک `<div>` یا عنصر دیگر. اگر از HTML معنایی `<th scope="col">` استفاده کنید، ویژگی role مورد نیاز نیست، اما می‌تواند به عنوان پشتیبان گنجانده شود تا اطمینان حاصل شود که جدول در صورت حذف معناشناسی پیش‌فرض با مقدار ویژگی display CSS، معناشناسی خود را حفظ می‌کند.
 
-The `aria-sort` attribute can be added to a `<th scope="col">` even when the ARIA role attribute is not specified.
+ویژگی `aria-sort` می‌تواند به یک `<th scope="col">` اضافه شود حتی زمانی که ویژگی role ARIA مشخص نشده باشد.
 
-### Prefer HTML
+### ترجیح HTML
 
-Columnheader has the same semantics `<th scope="col">`.
+Columnheader دارای معناشناسی مشابه `<th scope="col">` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`table` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
 - [`grid` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role)
