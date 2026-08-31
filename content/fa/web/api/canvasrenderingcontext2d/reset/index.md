@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: reset() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/reset"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: reset() method"
 short-title: reset()
 slug: Web/API/CanvasRenderingContext2D/reset
 page-type: web-api-instance-method
@@ -14,30 +8,29 @@ browser-compat: api.CanvasRenderingContext2D.reset
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.reset()`** method of the Canvas 2D API resets the rendering context to its default state, allowing it to be reused for drawing something else without having to explicitly reset all the properties.
+**`CanvasRenderingContext2D.reset()`** 方法用于将 2D 渲染上下文重置为其默认状态，从而无需显式重置所有属性即可重新用于绘制其他内容。
 
-Resetting clears the backing buffer, drawing state stack, any defined paths, and styles.
-This includes the current [transformation](/en-US/docs/Web/API/CanvasRenderingContext2D#transformations) matrix, [compositing](/en-US/docs/Web/API/CanvasRenderingContext2D#compositing) properties, clipping region, dash list, [line styles](/en-US/docs/Web/API/CanvasRenderingContext2D#line_styles), [text styles](/en-US/docs/Web/API/CanvasRenderingContext2D#text_styles), [shadows](/en-US/docs/Web/API/CanvasRenderingContext2D#shadows), [image smoothing](/en-US/docs/Web/API/CanvasRenderingContext2D#image_smoothing), [filters](/en-US/docs/Web/API/CanvasRenderingContext2D#filters), and so on.
+重置操作会清除后备缓冲区、绘图状态栈、所有已定义的路径以及样式。这包括当前的[变换](/en-US/docs/Web/API/CanvasRenderingContext2D#transformations)矩阵、[合成](/en-US/docs/Web/API/CanvasRenderingContext2D#compositing)属性、裁剪区域、虚线列表、[线条样式](/en-US/docs/Web/API/CanvasRenderingContext2D#line_styles)、[文本样式](/en-US/docs/Web/API/CanvasRenderingContext2D#text_styles)、[阴影](/en-US/docs/Web/API/CanvasRenderingContext2D#shadows)、[图像平滑](/en-US/docs/Web/API/CanvasRenderingContext2D#image_smoothing)、[滤镜](/en-US/docs/Web/API/CanvasRenderingContext2D#filters)等等。
 
-## Syntax
+## 语法
 
 ```js-nolint
 reset()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-## Examples
+## 示例
 
-This example shows how we can use `reset()` to completely clear the context before redrawing.
+此示例展示了如何在重绘之前使用 `reset()` 完全清除上下文。
 
-First we define a button and a canvas.
+首先我们定义一个按钮和一个画布。
 
 ```css
 #toggle-reset {
@@ -50,54 +43,51 @@ First we define a button and a canvas.
 <canvas id="my-house" width="500" height="200"></canvas>
 ```
 
-The code first gets a `2d` context for the canvas.
-It then defines functions that can use the context to draw a rectangle and a circle, respectively.
+代码首先获取画布的 `2d` 上下文。然后定义函数分别使用该上下文绘制矩形和圆形。
 
 ```js
-// Get the 2d context
+// 获取 2d 上下文
 const canvas = document.getElementById("my-house");
 const ctx = canvas.getContext("2d");
 
 function drawRect() {
-  // Set line width
+  // 设置线宽
   ctx.lineWidth = 10;
 
-  // Stroke rect outline
+  // 描边矩形轮廓
   ctx.strokeRect(50, 50, 150, 100);
 
-  // Create filled text
+  // 创建填充文本
   ctx.font = "50px serif";
   ctx.fillText("Rect!", 70, 110);
 }
 
 function drawCircle() {
-  // Set line width
+  // 设置线宽
   ctx.lineWidth = 5;
 
-  // Stroke out circle
+  // 描边圆形
   ctx.beginPath();
   ctx.arc(300, 100, 50, 0, 2 * Math.PI);
   ctx.stroke();
 
-  // Create filled text
+  // 创建填充文本
   ctx.font = "25px sans-serif";
   ctx.fillText("Circle!", 265, 100);
 }
 ```
 
-We then draw the rectangle using its function.
-The button toggles drawing the circle and rectangle.
-Note how `reset()` is called before drawing to clear the context.
+然后我们使用其函数绘制矩形。按钮用于在圆形和矩形之间切换。注意在绘制之前调用了 `reset()` 来清除上下文。
 
 ```js
 drawRect();
 
-// Toggle between circle and rectangle using button
+// 使用按钮在圆形和矩形之间切换
 let toggle = true;
 const myButton = document.getElementById("toggle-reset");
 
 myButton.addEventListener("click", () => {
-  ctx.reset(); // Clear the context!
+  ctx.reset(); // 清除上下文！
   if (toggle) {
     drawCircle();
   } else {
@@ -107,18 +97,18 @@ myButton.addEventListener("click", () => {
 });
 ```
 
-The result looks like this:
+结果如下所示：
 
 {{EmbedLiveSample("Examples", 500, 250)}}
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- 定义此方法的接口：{{domxref("CanvasRenderingContext2D")}}
