@@ -1,7 +1,7 @@
 ---
 title: "ARIA: dialog role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,7 +15,7 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `dialog` role is used to mark up an HTML based application dialog or window that separates content or UI from the rest of the web application or page. Dialogs are generally placed on top of the rest of the page content using an overlay. Dialogs can be either non-modal (it's still possible to interact with content outside of the dialog) or modal (only the content in the dialog can be interacted with).
+نقش `dialog` برای علامت‌گذاری یک دیالوگ یا پنجره مبتنی بر HTML استفاده می‌شود که محتوا یا UI را از بقیه برنامه وب یا صفحه جدا می‌کند. دیالوگ‌ها معمولاً با استفاده از یک لایه رویی (overlay) در بالای بقیه محتوای صفحه قرار می‌گیرند. دیالوگ‌ها می‌توانند غیر مودال باشند (همچنان امکان تعامل با محتوای خارج از دیالوگ وجود دارد) یا مودال (فقط محتوای داخل دیالوگ قابل تعامل است).
 
 ```html
 <div
@@ -30,22 +30,22 @@ The `dialog` role is used to mark up an HTML based application dialog or window 
 </div>
 ```
 
-## Description
+## توضیحات
 
-A dialog is a descendant window of the primary window of a web application. For HTML pages, the primary application window is the entire web document, i.e., the body element.
+دیالوگ یک پنجره فرعی از پنجره اصلی یک برنامه وب است. برای صفحات HTML، پنجره اصلی برنامه کل سند وب است، یعنی عنصر `body`.
 
-Marking up a dialog element with the `dialog` role helps assistive technology identify the dialog's content as being grouped and separated from the rest of the page content. However, adding `role="dialog"` alone is not sufficient to make a dialog accessible. Additionally, the following needs to be done:
+علامت‌گذاری یک عنصر دیالوگ با نقش `dialog` به فناوری کمکی کمک می‌کند تا محتوای دیالوگ را به‌عنوان محتوایی گروه‌بندی‌شده و جدا از بقیه محتوای صفحه تشخیص دهد. با این حال، افزودن `role="dialog"` به تنهایی برای قابل دسترس‌سازی یک دیالوگ کافی نیست. علاوه بر آن، موارد زیر نیز باید انجام شوند:
 
-- The dialog must be properly labeled
-- Keyboard focus must be managed correctly
+- دیالوگ باید به درستی برچسب‌گذاری شود
+- مدیریت صحیح فوکوس صفحه‌کلید
 
-The sections below describe how these two requirements can be met.
+بخش‌های زیر نحوه برآورده‌سازی این دو نیاز را توضیح می‌دهند.
 
-### Labeling
+### برچسب‌گذاری
 
-Even though it is not required for the dialog itself to be able to receive focus, it still needs to be labeled. The label given to the dialog will provide contextual information for the interactive controls inside the dialog. In other words, the dialog's label acts like a grouping label for the controls inside it (similar to how a `<legend>` element provides a grouping label for the controls inside a `<fieldset>` element).
+اگرچه برای خود دیالوگ دریافت فوکوس الزامی نیست، اما همچنان باید برچسب‌گذاری شود. برچسب داده‌شده به دیالوگ، اطلاعات متنی را برای کنترل‌های تعاملی داخل دیالوگ فراهم می‌کند. به عبارت دیگر، برچسب دیالوگ مانند یک برچسب گروه‌بندی برای کنترل‌های داخل آن عمل می‌کند (مشابه اینکه یک عنصر `<legend>` برچسب گروه‌بندی را برای کنترل‌های داخل یک `<fieldset>` فراهم می‌کند).
 
-If a dialog already has a visible title bar, the text inside that bar can be used to label the dialog itself. The best way to achieve this is by using the [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attribute to the `role="dialog"` element. Additionally, if the dialog contains additional descriptive text besides the dialog title, this text can be associated with the dialog using the [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) attribute. This approach is shown in the code snippet below:
+اگر دیالوگ از قبل یک نوار عنوان قابل مشاهده دارد، متن داخل آن نوار می‌تواند برای برچسب‌گذاری خود دیالوگ استفاده شود. بهترین روش برای این کار استفاده از ویژگی [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) روی عنصر `role="dialog"` است. علاوه بر این، اگر دیالوگ علاوه بر عنوان، متن توصیفی دیگری نیز داشته باشد، این متن می‌تواند با استفاده از ویژگی [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) به دیالوگ مرتبط شود. این رویکرد در قطعه کد زیر نشان داده شده است:
 
 ```html
 <div
@@ -61,42 +61,42 @@ If a dialog already has a visible title bar, the text inside that bar can be use
 ```
 
 > [!NOTE]
-> Keep in mind that a dialog's title and description text do not have to be focusable in order to be perceived by screen readers operating in a non-virtual mode. The combination of the ARIA dialog role and labeling techniques should make the screen reader announce the dialog's information when focus is moved into it.
+> به خاطر داشته باشید که عنوان و متن توصیفی یک دیالوگ نیازی ندارند که قابل فوکوس باشند تا توسط صفحه‌خوان‌هایی که در حالت غیرمجازی کار می‌کنند درک شوند. ترکیب نقش ARIA دیالوگ و تکنیک‌های برچسب‌گذاری باید باعث شود که صفحه‌خوان اطلاعات دیالوگ را وقتی فوکوس به داخل آن منتقل می‌شود اعلام کند.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-#### Focus management
+#### مدیریت فوکوس
 
-A dialog has particular requirements for how keyboard focus should be managed:
+یک دیالوگ الزامات خاصی برای نحوه مدیریت فوکوس صفحه‌کلید دارد:
 
-- Dialogs should always have at least one focusable control. For many dialogs, there will be a button like "Close", "OK" or "Cancel". In addition to the needed control, dialogs can contain any number of focusable elements, even entire forms or other container widgets like tabs.
-- When the dialog appears on the screen, keyboard focus (whose control depends upon the dialog's purpose) should be moved to the default focusable control inside the dialog. For dialogs that only provide a basic message, it could be an "OK" button. For dialogs containing a form it could be the first field in the form.
-- After the dialog is dismissed, keyboard focus should be moved back to where it was before it moved into the dialog. Otherwise the focus can be dropped to the beginning of the page.
-- For most dialogs, the expected behavior is that the dialog's tab order _wraps_, which means that when the user tabs through the focusable elements in the dialog, the first focusable element will be focused after the last one has been reached. In other words, the tab order should be contained within and by the dialog.
-- If the dialog can be moved or resized, ensure that these actions must be performable by keyboard users as well as mouse users. Similarly, if a dialog provides special features like toolbars or context menus, these must be reachable and operable by keyboard users as well.
-- Dialogs can be modal or non-modal. When a _modal_ dialog appears on the screen, it's not possible to interact with any page content outside the dialog. In other words, the main application UI or page content is considered to be temporarily disabled as long as the modal dialog is showing. For _non-modal_ dialogs it is still possible to interact with content outside of the dialog while the dialog is showing. Note that for non-modal dialogs there will have to be a global keyboard shortcut that allows focus to be moved between opened dialogs and the main page.
+- دیالوگ‌ها باید همیشه حداقل یک کنترل قابل فوکوس داشته باشند. برای بسیاری از دیالوگ‌ها، دکمه‌ای مانند «بستن»، «تأیید» یا «انصراف» وجود خواهد داشت. علاوه بر کنترل مورد نیاز، دیالوگ‌ها می‌توانند هر تعداد عنصر قابل فوکوس داشته باشند، حتی فرم‌های کامل یا ویجت‌های ظرف دیگری مانند تب‌ها.
+- وقتی دیالوگ روی صفحه ظاهر می‌شود، فوکوس صفحه‌کلید (که کنترل آن بستگی به هدف دیالوگ دارد) باید به کنترل قابل فوکوس پیش‌فرض داخل دیالوگ منتقل شود. برای دیالوگ‌هایی که فقط یک پیام اساسی ارائه می‌دهند، این می‌تواند یک دکمه «تأیید» باشد. برای دیالوگ‌هایی که شامل یک فرم هستند، می‌تواند اولین فیلد فرم باشد.
+- پس از بسته شدن دیالوگ، فوکوس صفحه‌کلید باید به جایی که قبل از ورود به دیالوگ بود بازگردانده شود. در غیر این صورت، فوکوس ممکن است به ابتدای صفحه پرتاب شود.
+- برای اکثر دیالوگ‌ها، رفتار مورد انتظار این است که ترتیب تب دیالوگ _حلقه می‌زند_، به این معنی که وقتی کاربر از میان عناصر قابل فوکوس در دیالوگ تب می‌برد، پس از رسیدن به آخرین عنصر، اولین عنصر قابل فوکوس فوکوس می‌شود. به عبارت دیگر، ترتیب تب باید در داخل و توسط دیالوگ محصور شود.
+- اگر دیالوگ قابل جابجایی یا تغییر اندازه باشد، اطمینان حاصل کنید که این اقدامات باید برای کاربران صفحه‌کلید نیز قابل انجام باشد، همان‌طور که برای کاربران ماوس. به طور مشابه، اگر دیالوگ ویژگی‌های خاصی مانند نوار ابزار یا منوهای زمینه ارائه می‌دهد، این موارد نیز باید برای کاربران صفحه‌کلید قابل دسترسی و قابل استفاده باشند.
+- دیالوگ‌ها می‌توانند مودال یا غیر مودال باشند. وقتی یک دیالوگ _مودال_ روی صفحه ظاهر می‌شود، امکان تعامل با هیچ محتوای صفحه خارج از دیالوگ وجود ندارد. به عبارت دیگر، UI اصلی برنامه یا محتوای صفحه تا زمانی که دیالوگ مودال نمایش داده می‌شود، به‌طور موقت غیرفعال در نظر گرفته می‌شود. برای دیالوگ‌های _غیر مودال_، همچنان امکان تعامل با محتوای خارج از دیالوگ در حالی که دیالوگ نمایش داده می‌شود وجود دارد. توجه داشته باشید که برای دیالوگ‌های غیر مودال، باید یک میانبر صفحه‌کلید سراسری وجود داشته باشد که امکان جابجایی فوکوس بین دیالوگ‌های باز و صفحه اصلی را فراهم کند.
 
-### Associated ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های ARIA مرتبط
 
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : Use this attribute to label the dialog. Often, the value of the `aria-labelledby` attribute will be the id of the element used to title the dialog.
+  - : از این ویژگی برای برچسب‌گذاری دیالوگ استفاده کنید. اغلب، مقدار ویژگی `aria-labelledby` شناسه (id) عنصری است که برای عنوان‌دهی دیالوگ استفاده می‌شود.
 - [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby)
-  - : Use this attribute to describe the contents of the dialog.
+  - : از این ویژگی برای توصیف محتویات دیالوگ استفاده کنید.
 
-### Possible effects on user agents and assistive technology
+### اثرات احتمالی بر عوامل کاربر و فناوری کمکی
 
-When the `dialog` role is used, the user agent should do the following:
+وقتی نقش `dialog` استفاده می‌شود، عامل کاربر باید موارد زیر را انجام دهد:
 
-- Expose the element as a dialog in the operating system's accessibility API.
+- عنصر را به‌عنوان یک دیالوگ در API دسترس‌پذیری سیستم عامل معرفی کند.
 
-When the dialog is correctly labeled and focus is moved to an element (often an interactive element, such as a button) inside the dialog, screen readers should announce the dialog's accessible role, name and optionally description, along with announcing the focused element.
+وقتی دیالوگ به درستی برچسب‌گذاری شده و فوکوس به عنصری (اغلب یک عنصر تعاملی، مانند دکمه) در داخل دیالوگ منتقل می‌شود، صفحه‌خوان‌ها باید نقش قابل دسترس، نام و در صورت امکان توضیحات دیالوگ را به همراه اعلام عنصر دارای فوکوس اعلام کنند.
 
 > [!NOTE]
-> Opinions may differ on how assistive technology should handle this technique, and the order of announcements may differ depending on the assistive technology used. The information provided above is one of those opinions and may change as the specification is defined.
+> ممکن است نظرات در مورد نحوه برخورد فناوری کمکی با این تکنیک متفاوت باشد و ترتیب اعلام‌ها ممکن است بسته به فناوری کمکی مورد استفاده متفاوت باشد. اطلاعات ارائه‌شده در بالا یکی از این نظرات است و ممکن است با تعریف مشخصات تغییر کند.
 
-## Examples
+## مثال‌ها
 
-### A dialog containing a form
+### یک دیالوگ حاوی فرم
 
 ```html
 <div
@@ -129,21 +129,21 @@ When the dialog is correctly labeled and focus is moved to an element (often an 
 </div>
 ```
 
-#### Working Examples
+#### مثال‌های کاربردی
 
 - [jQuery-UI Dialog](https://jqueryui.com/dialog/)
 
-### Notes
+### یادداشت‌ها
 
 > [!NOTE]
-> While it is possible to prevent keyboard users from moving focus to elements outside of the dialog, screen reader users may still be able to navigate to that content using their screen reader's virtual cursor.
-> It is important for developers to ensure that content outside of the modal dialog is inaccessible to all users while the modal dialog is active.
+> اگرچه امکان جلوگیری از انتقال فوکوس کاربران صفحه‌کلید به عناصر خارج از دیالوگ وجود دارد، کاربران صفحه‌خوان ممکن است همچنان بتوانند با مکان‌نمای مجازی صفحه‌خوان خود به آن محتوا پیمایش کنند.
+> برای توسعه‌دهندگان مهم است که اطمینان حاصل کنند محتوای خارج از دیالوگ مودال در حالی که دیالوگ مودال فعال است برای همه کاربران غیرقابل دسترس است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: alertdialog role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role)
+- [ARIA: نقش alertdialog](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role)
 - {{HTMLElement('dialog', 'The HTML <code>&lt;dialog&gt;</code> element')}}
