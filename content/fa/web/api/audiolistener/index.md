@@ -1,74 +1,67 @@
 ---
 title: "AudioListener"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioListener"
-status: "needs-translation"
----
-
----
-title: AudioListener
-slug: Web/API/AudioListener
-page-type: web-api-interface
-browser-compat: api.AudioListener
+translated_by: "n8n + AI"
 ---
 
 {{ APIRef("Web Audio API") }}
 
-The `AudioListener` interface represents the position and orientation of the unique person listening to the audio scene, and is used in [audio spatialization](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics). All {{domxref("PannerNode")}}s spatialize in relation to the `AudioListener` stored in the {{domxref("BaseAudioContext.listener")}} attribute.
+رابط `AudioListener` موقعیت و جهت شخصی را که به صحنه صوتی گوش میدهد، نشان میدهد و در [مکانمندی صوتی](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics) استفاده میشود. همه {{domxref("PannerNode")}}ها در رابطه با `AudioListener` ذخیره‌شده در ویژگی {{domxref("BaseAudioContext.listener")}} مکانمند می‌شوند.
 
-It is important to note that there is only one listener per context and that it isn't an {{domxref("AudioNode")}}.
+توجه به این نکته مهم است که فقط یک شنونده برای هر زمینه وجود دارد و آن یک {{domxref("AudioNode")}} نیست.
 
 ![We see the position, up and front vectors of an AudioListener, with the up and front vectors at 90° from the other.](webaudiolistenerreduced.png)
 
-## Instance properties
+## ویژگی‌های نمونه
 
 > [!NOTE]
-> The position, forward, and up value are set and retrieved using different syntaxes. Retrieval is done by accessing, for example, `AudioListener.positionX`, while setting the same property is done with `AudioListener.positionX.value`. This is why these values are not marked read only, which is how they appear in the specification's IDL.
+> مقادیر موقعیت، رو به جلو و بالا با استفاده از نحوهای متفاوت تنظیم و بازیابی می‌شوند. بازیابی، برای مثال، با دسترسی به `AudioListener.positionX` انجام می‌شود، در حالی که تنظیم همان ویژگی با `AudioListener.positionX.value` انجام می‌شود. به همین دلیل این مقادیر فقط خواندنی علامت‌گذاری نشده‌اند، همان‌طور که در IDL مشخصات ظاهر می‌شوند.
 
 - {{domxref("AudioListener.positionX")}}
-  - : Represents the horizontal position of the listener in a right-hand cartesian coordinate system. The default is 0.
+  - : موقعیت افقی شنونده را در یک دستگاه مختصات دکارتی راست‌دست نشان می‌دهد. مقدار پیش‌فرض 0 است.
 - {{domxref("AudioListener.positionY")}}
-  - : Represents the vertical position of the listener in a right-hand cartesian coordinate system. The default is 0.
+  - : موقعیت عمودی شنونده را در یک دستگاه مختصات دکارتی راست‌دست نشان می‌دهد. مقدار پیش‌فرض 0 است.
 - {{domxref("AudioListener.positionZ")}}
-  - : Represents the longitudinal (back and forth) position of the listener in a right-hand cartesian coordinate system. The default is 0.
+  - : موقعیت طولی (جلو و عقب) شنونده را در یک دستگاه مختصات دکارتی راست‌دست نشان می‌دهد. مقدار پیش‌فرض 0 است.
 - {{domxref("AudioListener.forwardX")}}
-  - : Represents the horizontal position of the listener's forward direction in the same cartesian coordinate system as the position (`positionX`, `positionY`, and `positionZ`) values. The forward and up values are linearly independent of each other. The default is 0.
+  - : موقعیت افقی جهت رو به جلوی شنونده را در همان دستگاه مختصات دکارتی مقادیر موقعیت (`positionX`، `positionY` و `positionZ`) نشان می‌دهد. مقادیر رو به جلو و بالا به صورت خطی از یکدیگر مستقل هستند. مقدار پیش‌فرض 0 است.
 - {{domxref("AudioListener.forwardY")}}
-  - : Represents the vertical position of the listener's forward direction in the same cartesian coordinate system as the position (`positionX`, `positionY`, and `positionZ`) values. The forward and up values are linearly independent of each other. The default is 0.
+  - : موقعیت عمودی جهت رو به جلوی شنونده را در همان دستگاه مختصات دکارتی مقادیر موقعیت (`positionX`، `positionY` و `positionZ`) نشان می‌دهد. مقادیر رو به جلو و بالا به صورت خطی از یکدیگر مستقل هستند. مقدار پیش‌فرض 0 است.
 - {{domxref("AudioListener.forwardZ")}}
-  - : Represents the longitudinal (back and forth) position of the listener's forward direction in the same cartesian coordinate system as the position (`positionX`, `positionY`, and `positionZ`) values. The forward and up values are linearly independent of each other. The default is -1.
+  - : موقعیت طولی (جلو و عقب) جهت رو به جلوی شنونده را در همان دستگاه مختصات دکارتی مقادیر موقعیت (`positionX`، `positionY` و `positionZ`) نشان می‌دهد. مقادیر رو به جلو و بالا به صورت خطی از یکدیگر مستقل هستند. مقدار پیش‌فرض 1- است.
 - {{domxref("AudioListener.upX")}}
-  - : Represents the horizontal position of the top of the listener's head in the same cartesian coordinate system as the position (`positionX`, `positionY`, and `positionZ`) values. The forward and up values are linearly independent of each other. The default is 0.
+  - : موقعیت افقی بالای سر شنونده را در همان دستگاه مختصات دکارتی مقادیر موقعیت (`positionX`، `positionY` و `positionZ`) نشان می‌دهد. مقادیر رو به جلو و بالا به صورت خطی از یکدیگر مستقل هستند. مقدار پیش‌فرض 0 است.
 - {{domxref("AudioListener.upY")}}
-  - : Represents the vertical position of the top of the listener's head in the same cartesian coordinate system as the position (`positionX`, `positionY`, and `positionZ`) values. The forward and up values are linearly independent of each other. The default is 1.
+  - : موقعیت عمودی بالای سر شنونده را در همان دستگاه مختصات دکارتی مقادیر موقعیت (`positionX`، `positionY` و `positionZ`) نشان می‌دهد. مقادیر رو به جلو و بالا به صورت خطی از یکدیگر مستقل هستند. مقدار پیش‌فرض 1 است.
 - {{domxref("AudioListener.upZ")}}
-  - : Represents the longitudinal (back and forth) position of the top of the listener's head in the same cartesian coordinate system as the position (`positionX`, `positionY`, and `positionZ`) values. The forward and up values are linearly independent of each other. The default is 0.
+  - : موقعیت طولی (جلو و عقب) بالای سر شنونده را در همان دستگاه مختصات دکارتی مقادیر موقعیت (`positionX`، `positionY` و `positionZ`) نشان می‌دهد. مقادیر رو به جلو و بالا به صورت خطی از یکدیگر مستقل هستند. مقدار پیش‌فرض 0 است.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("AudioListener.setOrientation()")}} {{deprecated_inline}}
-  - : Sets the orientation of the listener.
+  - : جهت شنونده را تنظیم می‌کند.
 - {{domxref("AudioListener.setPosition()")}} {{deprecated_inline}}
-  - : Sets the position of the listener.
+  - : موقعیت شنونده را تنظیم می‌کند.
 
 > [!NOTE]
-> Although these methods are deprecated they are currently the only way to set the orientation and position in Firefox (see [Firefox bug 1283029](https://bugzil.la/1283029)).
+> اگرچه این روش‌ها منسوخ شده‌اند، اما در حال حاضر تنها راه تنظیم جهت و موقعیت در فایرفاکس هستند (به [باگ 1283029 فایرفاکس](https://bugzil.la/1283029) مراجعه کنید).
 
-## Deprecated features
+## ویژگی‌های منسوخ
 
-The `setOrientation()` and `setPosition()` methods have been replaced by setting their property value equivalents. For example `setPosition(x, y, z)` can be achieved by setting `positionX.value`, `positionY.value`, and `positionZ.value` respectively.
+روش‌های `setOrientation()` و `setPosition()` با تنظیم معادل‌های ویژگی آن‌ها جایگزین شده‌اند. برای مثال، `setPosition(x, y, z)` را می‌توان با تنظیم `positionX.value`، `positionY.value` و `positionZ.value` به ترتیب به دست آورد.
 
-## Example
+## مثال
 
-See [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) for example code.
+برای کد مثال به [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
