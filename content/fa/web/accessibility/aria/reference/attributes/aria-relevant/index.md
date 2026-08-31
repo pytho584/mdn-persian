@@ -1,63 +1,61 @@
 ---
 title: "ARIA: aria-relevant attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant"
-status: "needs-translation"
----
+translated_by: "n8n + AI"
 
 ---
-title: "ARIA: aria-relevant attribute"
+title: "ARIA: ویژگی aria-relevant"
 short-title: aria-relevant
 slug: Web/Accessibility/ARIA/Reference/Attributes/aria-relevant
 page-type: aria-attribute
 spec-urls: https://w3c.github.io/aria/#aria-relevant
 sidebar: accessibilitysidebar
----
 
-Used in ARIA live regions, the global `aria-relevant` attribute indicates what notifications the user agent will trigger when the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree) within a live region is modified.
+در نواحی زندهٔ ARIA استفاده می‌شود، ویژگی سراسری `aria-relevant` مشخص می‌کند که عامل کاربر (user agent) چه اعلان‌هایی را هنگامی که [درخت دسترسی‌پذیری](/en-US/docs/Glossary/Accessibility_tree) درون یک ناحیهٔ زنده تغییر می‌کند، فعال کند.
 
-## Description
+## توضیحات
 
-[ARIA live regions](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) are areas of a web page that are updated when user's attention may be elsewhere. When an update is outside of the user's keyboard focus, assistive technologies such as screen readers use a live region area to report updates to the user.
+[نواحی زندهٔ ARIA](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) بخش‌هایی از یک صفحهٔ وب هستند که وقتی توجه کاربر ممکن است در جای دیگری باشد، به‌روز می‌شوند. هنگامی که یک به‌روزرسانی خارج از فوکوس صفحه‌کلید کاربر است، فناوری‌های کمکی مانند صفحه‌خوان‌ها از یک ناحیهٔ زنده برای گزارش به‌روزرسانی به کاربر استفاده می‌کنند.
 
-Examples of live regions include news marquees, stock tickers, chat windows, and score boards. These update without user interaction. Some updates are important for the user to know about. They're relevant. Others are not. The `aria-relevant` is used to describe what types of changes have occurred to an [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) region, and which are relevant and should be announced.
+نمونه‌هایی از نواحی زنده عبارتند از تیترهای خبری متحرک، تیکرهای سهام، پنجره‌های گفتگو و تابلوهای امتیاز. این موارد بدون تعامل کاربر به‌روز می‌شوند. برخی به‌روزرسانی‌ها برای کاربر مهم هستند که بداند. آنها «مرتبط» هستند. برخی دیگر نیستند. `aria-relevant` برای توصیف نوع تغییراتی که در یک ناحیهٔ [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) رخ داده و کدام‌ها مرتبط و باید اعلام شوند، استفاده می‌شود.
 
-The value is a space-separated list of change types, including `additions`, `removals`, and `text`, with a shorthand `all` meaning all three.
+مقدار یک لیست جدا شده با فاصله از انواع تغییرات است، شامل `additions`، `removals` و `text`، با یک مخفف `all` به معنی هر سه مورد.
 
-When `aria-relevant` is not defined, the value is inherited from the nearest ancestor with a defined value. Inherited values are not additive; the value provided on a descendant element completely overrides any inherited value from an ancestor element. When a live region doesn't have an `aria-relevant` attribute set and has no ancestor with it set, it defaults to `additions text`, which means element nodes are added to the accessibility tree within the live region, AND text content or a text alternative is added to any descendant in the accessibility tree of the live region. This is because generally text modifications and node additions are relevant, but node removals are not.
+وقتی `aria-relevant` تعریف نشده باشد، مقدار از نزدیک‌ترین جد (ancestor) با مقدار تعریف‌شده به ارث برده می‌شود. مقادیر به‌ارث‌برده جمع‌پذیر نیستند؛ مقدار ارائه‌شده روی یک عنصر فرزند به‌طور کامل هر مقدار به‌ارث‌برده از یک عنصر جد را لغو می‌کند. وقتی یک ناحیهٔ زنده ویژگی `aria-relevant` را تنظیم نکرده باشد و هیچ جدی با این ویژگی تنظیم‌شده نداشته باشد، به طور پیش‌فرض `additions text` است، یعنی گره‌های عنصر به درخت دسترسی‌پذیری درون ناحیهٔ زنده اضافه می‌شوند، و همچنین محتوای متنی یا یک جایگزین متنی به هر فرزندی در درخت دسترسی‌پذیری ناحیهٔ زنده اضافه می‌شود. این به این دلیل است که به طور کلی تغییرات متنی و اضافه‌شدن گره‌ها مرتبط هستند، اما حذف گره‌ها مرتبط نیست.
 
-While not a supported value, if the value of `none` makes the most sense, it should not be a live region.
+اگرچه مقدار پشتیبانی‌شده‌ای نیست، اگر مقدار `none` منطقی‌ترین باشد، آن ناحیه نباید یک ناحیهٔ زنده باشد.
 
-The values of `removals` and `all` should be used sparingly. For example, when a goal happens in the World Cup, the new score (the addition) is important, the old value (the removal) is not. Assistive technologies only need to be informed of content removal when its removal represents an important change, such as when a player is taken out of the game.
+مقادیر `removals` و `all` باید با احتیاط استفاده شوند. برای مثال، وقتی یک گل در جام جهانی اتفاق می‌افتد، امتیاز جدید (اضافه‌شدن) مهم است، مقدار قدیمی (حذف) مهم نیست. فناوری‌های کمکی فقط زمانی باید از حذف محتوا مطلع شوند که حذف آن نشان‌دهندهٔ یک تغییر مهم باشد، مانند زمانی که یک بازیکن از بازی خارج می‌شود.
 
-## Values
+## مقادیر
 
 - `additions`
-  - : Element nodes are added to the accessibility tree within the live region.
+  - : گره‌های عنصر به درخت دسترسی‌پذیری درون ناحیهٔ زنده اضافه می‌شوند.
 - `all`
-  - : Shorthand for `additions removals text`.
+  - : مخفف `additions removals text`.
 - `removals`
-  - : Text content, a text alternative, or an element node within the live region is removed from the accessibility tree.
+  - : محتوای متنی، یک جایگزین متنی، یا یک گره عنصر درون ناحیهٔ زنده از درخت دسترسی‌پذیری حذف می‌شود.
 - `text`
-  - : Text content or a text alternative is added to any descendant in the accessibility tree of the live region.
+  - : محتوای متنی یا یک جایگزین متنی به هر فرزندی در درخت دسترسی‌پذیری ناحیهٔ زنده اضافه می‌شود.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaRelevant")}}
-  - : The [`ariaRelevant`](/en-US/docs/Web/API/Element/ariaRelevant) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-relevant` attribute.
+  - : ویژگی [`ariaRelevant`](/en-US/docs/Web/API/Element/ariaRelevant) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-relevant` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaRelevant")}}
-  - : The [`ariaRelevant`](/en-US/docs/Web/API/ElementInternals/ariaRelevant) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-relevant` attribute.
+  - : ویژگی [`ariaRelevant`](/en-US/docs/Web/API/ElementInternals/ariaRelevant) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-relevant` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** roles.
+در **تمامی** نقش‌ها استفاده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic)
 - [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live)
 - [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy)
-- [ARIA live regions](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
+- [نواحی زندهٔ ARIA](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
