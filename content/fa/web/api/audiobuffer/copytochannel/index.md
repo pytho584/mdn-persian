@@ -1,7 +1,7 @@
 ---
 title: "AudioBuffer: copyToChannel() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/copyToChannel"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,8 +14,7 @@ browser-compat: api.AudioBuffer.copyToChannel
 
 {{ APIRef("Web Audio API") }}
 
-The `copyToChannel()` method of the {{ domxref("AudioBuffer") }} interface copies
-the samples to the specified channel of the `AudioBuffer`, from the source array.
+متد `copyToChannel()` از رابط {{ domxref("AudioBuffer") }} نمونه‌ها را از آرایه مبدأ به کانال مشخص‌شده `AudioBuffer` کپی می‌کند.
 
 ## Syntax
 
@@ -27,19 +26,15 @@ copyToChannel(source, channelNumber, startInChannel)
 ### Parameters
 
 - `source`
-  - : A {{jsxref("Float32Array")}} that the channel data will be copied from.
+  - : یک {{jsxref("Float32Array")}} که داده‌های کانال از آن کپی خواهد شد.
 - `channelNumber`
-  - : The channel number of the current {{domxref("AudioBuffer")}} to copy the channel
-    data to. If _channelNumber_ is greater than or equal to
-    {{domxref("AudioBuffer.numberOfChannels")}}, an `INDEX_SIZE_ERR` will be
-    thrown.
+  - : شماره کانال {{domxref("AudioBuffer")}} فعلی که داده‌های کانال به آن کپی می‌شود. اگر _channelNumber_ بزرگ‌تر یا مساوی {{domxref("AudioBuffer.numberOfChannels")}} باشد، یک خطای `INDEX_SIZE_ERR` پرتاب می‌شود.
 - `startInChannel` {{optional_inline}}
-  - : An optional offset to copy the data to. If _startInChannel_ is greater than
-    {{domxref("AudioBuffer.length")}}, an `INDEX_SIZE_ERR` will be thrown.
+  - : یک افست اختیاری برای کپی داده‌ها. اگر _startInChannel_ بزرگ‌تر از {{domxref("AudioBuffer.length")}} باشد، یک خطای `INDEX_SIZE_ERR` پرتاب می‌شود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
@@ -62,4 +57,4 @@ myArrayBuffer.copyToChannel(anotherArray, 0, 0);
 
 ## See also
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
