@@ -1,10 +1,4 @@
 ---
-title: "Clients"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Clients"
-status: "needs-translation"
----
-
----
 title: Clients
 slug: Web/API/Clients
 page-type: web-api-interface
@@ -13,22 +7,22 @@ browser-compat: api.Clients
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The `Clients` interface provides access to {{domxref("Client")}} objects. Access it via `{{domxref("ServiceWorkerGlobalScope", "self")}}.clients` within a [service worker](/en-US/docs/Web/API/Service_Worker_API).
+رابط `Clients` دسترسی به اشیاء {{domxref("Client")}} را فراهم می‌کند. می‌توانید از طریق `{{domxref("ServiceWorkerGlobalScope", "self")}}.clients` در یک [service worker](/en-US/docs/Web/API/Service_Worker_API) به آن دسترسی پیدا کنید.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("Clients.get()")}}
-  - : Returns a {{jsxref("Promise")}} for a {{domxref("Client")}} matching a given {{domxref("Client.id", "id")}}.
+  - : یک {{jsxref("Promise")}} برای یک {{domxref("Client")}} مطابق با {{domxref("Client.id", "id")}} مشخص برمی‌گرداند.
 - {{domxref("Clients.matchAll()")}}
-  - : Returns a {{jsxref("Promise")}} for an array of {{domxref("Client")}} objects. An options argument allows you to control the types of clients returned.
+  - : یک {{jsxref("Promise")}} برای آرایه‌ای از اشیاء {{domxref("Client")}} برمی‌گرداند. یک آرگومان options به شما امکان می‌دهد انواع کلاینت‌های بازگردانده‌شده را کنترل کنید.
 - {{domxref("Clients.openWindow()")}}
-  - : Opens a new browser window for a given URL and returns a {{jsxref("Promise")}} for the new {{domxref("WindowClient")}}.
+  - : یک پنجره مرورگر جدید برای یک URL مشخص باز می‌کند و یک {{jsxref("Promise")}} برای {{domxref("WindowClient")}} جدید برمی‌گرداند.
 - {{domxref("Clients.claim()")}}
-  - : Allows an active service worker to set itself as the {{domxref("ServiceWorkerContainer.controller", "controller")}} for all clients within its {{domxref("ServiceWorkerRegistration.scope", "scope")}}.
+  - : به یک service worker فعال اجازه می‌دهد خود را به عنوان {{domxref("ServiceWorkerContainer.controller", "controller")}} برای همه کلاینت‌های درون {{domxref("ServiceWorkerRegistration.scope", "scope")}} خود تنظیم کند.
 
-## Examples
+## مثال‌ها
 
-The following example shows an existing chat window or creates a new one when the user clicks a notification.
+مثال زیر یک پنجره چت موجود را نشان می‌دهد یا زمانی که کاربر روی یک اعلان کلیک می‌کند، پنجره جدیدی ایجاد می‌کند.
 
 ```js
 addEventListener("notificationclick", (event) => {
@@ -40,37 +34,37 @@ addEventListener("notificationclick", (event) => {
 
       let chatClient;
 
-      // Let's see if we already have a chat window open:
+      // ببینیم آیا از قبل پنجره چت باز داریم:
       for (const client of allClients) {
         const url = new URL(client.url);
 
         if (url.pathname === "/chat/") {
-          // Excellent, let's use it!
+          // عالی است، از آن استفاده می‌کنیم!
           client.focus();
           chatClient = client;
           break;
         }
       }
 
-      // If we didn't find an existing chat window,
-      // open a new one:
+      // اگر پنجره چت موجود پیدا نکردیم،
+      // یک پنجره جدید باز کن:
       chatClient ??= await clients.openWindow("/chat/");
 
-      // Message the client:
+      // به کلاینت پیام بده:
       chatClient.postMessage("New chat messages!");
     })(),
   );
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
