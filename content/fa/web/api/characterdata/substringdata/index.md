@@ -1,11 +1,5 @@
 ---
 title: "CharacterData: substringData() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/substringData"
-status: "needs-translation"
----
-
----
-title: "CharacterData: substringData() method"
 short-title: substringData()
 slug: Web/API/CharacterData/substringData
 page-type: web-api-instance-method
@@ -14,38 +8,34 @@ browser-compat: api.CharacterData.substringData
 
 {{APIRef("DOM")}}
 
-The **`substringData()`** method of the {{domxref("CharacterData")}} interface
-returns a portion of the existing data,
-starting at the specified index
-and extending for a given number of characters afterwards.
+متد **`substringData()`** از رابط {{domxref("CharacterData")}} بخشی از داده‌های موجود را برمی‌گرداند که از شاخص مشخص‌شده شروع شده و به تعداد کاراکتر مشخصی ادامه می‌یابد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 substringData(offset, count)
 ```
 
-### Parameters
+### پارامترها
 
 - `offset`
-  - : The index of the first character to include in the returned substring.
-    `0` is the first character of the string.
+  - : شاخص اولین کاراکتری که در زیررشته بازگشتی قرار می‌گیرد. `0` اولین کاراکتر رشته است.
 - `count`
-  - : The number of characters to return.
+  - : تعداد کاراکترهایی که باید برگردانده شوند.
 
-### Return value
+### مقدار بازگشتی
 
-A string with the substring.
+یک رشته حاوی زیررشته.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if `offset` + `count` is larger than the length of the contained data.
+  - : اگر `offset + count` از طول داده‌های موجود بزرگ‌تر باشد، پرتاب می‌شود.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
