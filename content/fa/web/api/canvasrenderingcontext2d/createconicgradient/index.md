@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: createConicGradient() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createConicGradient"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: createConicGradient() method"
 short-title: createConicGradient()
 slug: Web/API/CanvasRenderingContext2D/createConicGradient
 page-type: web-api-instance-method
@@ -14,37 +8,37 @@ browser-compat: api.CanvasRenderingContext2D.createConicGradient
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.createConicGradient()`** method of the Canvas 2D API creates a gradient around a point with given coordinates.
+متد **`CanvasRenderingContext2D.createConicGradient()`** متعلق به Canvas 2D API، یک گرادیان دور یک نقطه با مختصات مشخص ایجاد می‌کند.
 
-This method returns a conic {{domxref("CanvasGradient")}}. To be applied to a shape, the gradient must first be assigned to the {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} or {{domxref("CanvasRenderingContext2D.strokeStyle", "strokeStyle")}} properties.
+این متد یک {{domxref("CanvasGradient")}} مخروطی برمی‌گرداند. برای اعمال به یک شکل، ابتدا باید گرادیان به ویژگی‌های {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} یا {{domxref("CanvasRenderingContext2D.strokeStyle", "strokeStyle")}} اختصاص داده شود.
 
 > [!NOTE]
-> Gradient coordinates are global, i.e., relative to the current coordinate space. When applied to a shape, the coordinates are NOT relative to the shape's coordinates.
+> مختصات گرادیان سراسری هستند، یعنی نسبت به فضای مختصات فعلی سنجیده می‌شوند. وقتی روی یک شکل اعمال می‌شود، مختصات نسبت به مختصات خودِ شکل **نیستند**.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createConicGradient(startAngle, x, y)
 ```
 
-### Parameters
+### پارامترها
 
 - `startAngle`
-  - : The angle at which to begin the gradient, in radians. The angle starts from a line going horizontally right from the center, and proceeds clockwise.
+  - : زاویه‌ای که گرادیان از آن شروع می‌شود، بر حسب رادیان. زاویه از خطی که از مرکز به سمت راست به صورت افقی می‌رود آغاز شده و در جهت عقربه‌های ساعت ادامه می‌یابد.
 - `x`
-  - : The x-axis coordinate of the center of the gradient.
+  - : مختصات محور x مرکز گرادیان.
 - `y`
-  - : The y-axis coordinate of the center of the gradient.
+  - : مختصات محور y مرکز گرادیان.
 
-### Return value
+### مقدار بازگشتی
 
-A conic {{domxref("CanvasGradient")}}.
+یک {{domxref("CanvasGradient")}} مخروطی.
 
-## Examples
+## مثال‌ها
 
-### Filling a rectangle with a conic gradient
+### پر کردن یک مستطیل با گرادیان مخروطی
 
-This example initializes a conic gradient using the `createConicGradient()` method. Five color stops between around the center coordinate are then created. Finally, the gradient is assigned to the canvas context, and is rendered to a filled rectangle.
+این مثال با استفاده از متد `createConicGradient()` یک گرادیان مخروطی مقداردهی می‌کند. سپس پنج ایستگاه رنگی (color stop) در اطراف مختصات مرکز ایجاد می‌شود. در نهایت، گرادیان به بافت بوم (canvas context) اختصاص داده شده و روی یک مستطیل پر شده رندر می‌شود.
 
 #### HTML
 
@@ -75,21 +69,21 @@ ctx.fillStyle = gradient;
 ctx.fillRect(20, 20, 200, 200);
 ```
 
-#### Rectangle result
+#### نتیجه مستطیل
 
 {{ EmbedLiveSample('Filling_a_rectangle_with_a_conic_gradient', 240, 240) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasGradient")}}
 - {{domxref("CanvasRenderingContext2D.createLinearGradient()")}}
 - {{domxref("CanvasRenderingContext2D.createRadialGradient()")}}
