@@ -1,9 +1,6 @@
 ---
 title: "CreateMonitor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CreateMonitor"
-status: "needs-translation"
 ---
-
 ---
 title: CreateMonitor
 slug: Web/API/CreateMonitor
@@ -15,9 +12,9 @@ browser-compat: api.CreateMonitor
 
 {{APIRef("Summarizer API")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`CreateMonitor`** interface provides information on the progress of an AI model download, for example a language pack or some fine-tuning data.
+رابط **`CreateMonitor`** اطلاعاتی درباره پیشرفت دانلود یک مدل هوش مصنوعی، مثلاً یک بسته زبانی یا داده‌های تنظیم دقیق (fine-tuning)، فراهم می‌کند.
 
-It can be used via:
+می‌توان از آن از طریق موارد زیر استفاده کرد:
 
 - {{domxref("LanguageDetector.create_static", "LanguageDetector.create()")}}
 - {{domxref("LanguageModel.create_static", "LanguageModel.create()")}}
@@ -26,18 +23,18 @@ It can be used via:
 
 {{InheritanceDiagram}}
 
-## Events
+## رویدادها (Events)
 
-_Inherits events from its parent, {{DOMxRef("EventTarget")}}._
+رویدادها را از والد خود، {{DOMxRef("EventTarget")}} به ارث می‌برد.
 
 - {{domxref("CreateMonitor/downloadprogress_event", "downloadprogress")}} {{Experimental_Inline}}
-  - : Fired when progress is made on the AI model download.
+  - زمانی که پیشرفتی در دانلود مدل هوش مصنوعی حاصل شود، این رویداد فعال می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic `CreateMonitor` usage
+### استفاده پایه از `CreateMonitor`
 
-A `CreateMonitor` instance is used via the `monitor` property of an AI API's `create()` method ({{domxref("Summarizer.create_static", "Summarizer.create()")}} is shown below). The `monitor` property takes a callback function as a value, the argument of which is the `CreateMonitor` instance. You can then monitor download progress via the instance's {{domxref("CreateMonitor/downloadprogress_event", "downloadprogress")}} event.
+یک نمونه از `CreateMonitor` از طریق ویژگی `monitor` متد `create()` یک API هوش مصنوعی استفاده می‌شود (در زیر {{domxref("Summarizer.create_static", "Summarizer.create()")}} نشان داده شده است). ویژگی `monitor` یک تابع callback (بازگشتی) به عنوان مقدار می‌پذیرد که آرگومان آن نمونه `CreateMonitor` است. سپس می‌توانید پیشرفت دانلود را از طریق رویداد {{domxref("CreateMonitor/downloadprogress_event", "downloadprogress")}} آن نمونه نظارت کنید.
 
 ```js
 const summarizer = await Summarizer.create({
@@ -53,17 +50,17 @@ const summarizer = await Summarizer.create({
 const summary = await summarizer.summarize(myText);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
-- [Using the Summarizer API](/en-US/docs/Web/API/Summarizer_API/Using)
-- [Using the Translator and Language Detector APIs](/en-US/docs/Web/API/Translator_and_Language_Detector_APIs/Using)
-- [Web AI demos](https://chrome.dev/web-ai-demos/) on chrome.dev.
+- [استفاده از Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
+- [استفاده از Summarizer API](/en-US/docs/Web/API/Summarizer_API/Using)
+- [استفاده از APIهای Translator و Language Detector](/en-US/docs/Web/API/Translator_and_Language_Detector_APIs/Using)
+- [نمونه‌های Web AI](https://chrome.dev/web-ai-demos/) در chrome.dev
