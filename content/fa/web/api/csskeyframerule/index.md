@@ -1,10 +1,4 @@
 ---
-title: "CSSKeyframeRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframeRule"
-status: "needs-translation"
----
-
----
 title: CSSKeyframeRule
 slug: Web/API/CSSKeyframeRule
 page-type: web-api-interface
@@ -13,27 +7,26 @@ browser-compat: api.CSSKeyframeRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSKeyframeRule`** interface describes an object representing a set of styles for a given keyframe. It corresponds to the contents of a single keyframe of a {{cssxref("@keyframes")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+رابطه (interface) **`CSSKeyframeRule`** یک شیء را توصیف می‌کند که مجموعه‌ای از سبک‌ها برای یک keyframe مشخص را نشان می‌دهد. این رابط معادل محتویات یک keyframe تکی از یک [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) {{cssxref("@keyframes")}} است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-_Inherits properties from its ancestor {{domxref("CSSRule")}}._
+_ویژگی‌های مربوط به رابطه (interface) والد خود یعنی {{domxref("CSSRule")}} را به ارث می‌برد._
 
 - {{domxref("CSSKeyframeRule.keyText")}}
-  - : Represents the key of the keyframe, like `'10%'`, `'75%'`. The `from` keyword maps to `'0%'` and the `to` keyword maps to `'100%'`.
+  - : کلید keyframe را نشان می‌دهد، مانند `'10%'` یا `'75%'`. کلمه کلیدی `from` به `'0%'` و کلمه کلیدی `to` به `'100%'` نگاشت می‌شود.
 - {{domxref("CSSKeyframeRule.style")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("CSSStyleDeclaration")}} of the CSS style associated with the keyframe.
+  - : یک {{domxref("CSSStyleDeclaration")}} از سبک CSS مرتبط با keyframe را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-_No specific methods; inherits methods from its ancestor {{domxref("CSSRule")}}._
+_روش خاصی ندارد؛ روش‌های مربوط به رابطه والد خود یعنی {{domxref("CSSRule")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-The CSS includes a keyframes at-rule. This will be the first {{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`.
-`myRules[0]` returns a {{domxref("CSSKeyframesRule")}} object, which will contain individual `CSSKeyFrameRule` objects for each keyframe.
+CSS شامل یک at-rule keyframes است. این اولین {{domxref("CSSRule")}} خواهد بود که توسط `document.styleSheets[0].cssRules` برگردانده می‌شود. `myRules[0]` یک شیء {{domxref("CSSKeyframesRule")}} را برمی‌گرداند که شامل اشیاء `CSSKeyFrameRule` جداگانه برای هر keyframe است.
 
 ```css
 @keyframes slide-in {
@@ -49,19 +42,19 @@ The CSS includes a keyframes at-rule. This will be the first {{domxref("CSSRule"
 
 ```js
 let myRules = document.styleSheets[0].cssRules;
-let keyframes = myRules[0]; // a CSSKeyframesRule
-console.log(keyframes[0]); // a CSSKeyframeRule representing an individual keyframe.
+let keyframes = myRules[0]; // یک CSSKeyframesRule
+console.log(keyframes[0]); // یک CSSKeyframeRule که یک keyframe تکی را نشان می‌دهد.
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@keyframes")}}
 - {{domxref("CSSKeyFramesRule")}}
