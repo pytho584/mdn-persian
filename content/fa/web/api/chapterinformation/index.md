@@ -1,10 +1,4 @@
 ---
-title: "ChapterInformation"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ChapterInformation"
-status: "needs-translation"
----
-
----
 title: ChapterInformation
 slug: Web/API/ChapterInformation
 page-type: web-api-interface
@@ -15,24 +9,24 @@ browser-compat: api.ChapterInformation
 
 {{APIRef("Media Session API")}}{{SeeCompatTable}}
 
-The **`ChapterInformation`** interface of the {{domxref("Media Session API", "", "", "nocode")}} represents the metadata for an individual chapter of a media resource (i.e., a video or audio file).
+**`ChapterInformation`** 接口 از {{domxref("Media Session API", "", "", "nocode")}} ابرداده‌های مربوط به یک فصل خاص از یک منبع رسانه‌ای (یعنی یک فایل ویدئویی یا صوتی) را نمایش می‌دهد.
 
-The chapter information for a given media resource is set when it is first created, via the `chapterInfo` property of the {{domxref("MediaMetadata.MediaMetadata", "MediaMetadata()")}} constructor's initialization object. The property takes an array of `ChapterInformation` objects as its value.
+اطلاعات فصل برای یک منبع رسانه‌ای مشخص، هنگام ایجاد اولیه آن، از طریق ویژگی `chapterInfo` در شیء مقداردهی اولیه سازنده {{domxref("MediaMetadata.MediaMetadata", "MediaMetadata()")}} تنظیم می‌شود. این ویژگی یک آرایه از اشیاء `ChapterInformation` را به عنوان مقدار خود می‌گیرد.
 
-You can access the chapter information for an existing {{domxref("MediaMetadata")}} object via its {{domxref("MediaMetadata.chapterInfo", "chapterInfo")}} property. This returns an array of `ChapterInformation` objects.
+شما می‌توانید اطلاعات فصل را برای یک شیء {{domxref("MediaMetadata")}} موجود از طریق ویژگی {{domxref("MediaMetadata.chapterInfo", "chapterInfo")}} آن دسترسی داشته باشید. این ویژگی یک آرایه از اشیاء `ChapterInformation` برمی‌گرداند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("ChapterInformation.artwork")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : Returns an {{jsxref("Array")}} of objects representing images associated with the chapter.
+  - : یک {{jsxref("Array")}} از اشیاء مرتبط با تصاویر فصل را برمی‌گرداند.
 - {{domxref("ChapterInformation.startTime")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : Returns a number, in seconds, representing the start time of the chapter.
+  - : یک عدد بر حسب ثانیه را برمی‌گرداند که زمان شروع فصل را نشان می‌دهد.
 - {{domxref("ChapterInformation.title")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : Returns a string representing the title of the chapter.
+  - : یک رشته (string) را برمی‌گرداند که عنوان فصل را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The sample code below from [Video / Media Session Sample](https://googlechrome.github.io/samples/media-session/video.html) shows a typical structure for the `ChapterInformation` object:
+کد نمونه زیر از [نمونه ویدیو / رسانه (Video / Media Session Sample)](https://googlechrome.github.io/samples/media-session/video.html) ساختار معمولی برای شیء `ChapterInformation` را نشان می‌دهد:
 
 ```js
 const BASE_URL = "https://storage.googleapis.com/media-session/";
@@ -76,7 +70,7 @@ const metadata = {
 };
 ```
 
-The following snippet shows how it can be used inside Media Session code (the above object property is part of the `playlist` object referenced below):
+قطعه کد زیر نحوه استفاده از آن را در کد Media Session نشان می‌دهد (ویژگی شیء فوق بخشی از شیء `playlist` است که در زیر به آن اشاره شده است):
 
 ```js
 function updateMetadata() {
@@ -94,14 +88,14 @@ function updateMetadata() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MediaMetadata")}}
