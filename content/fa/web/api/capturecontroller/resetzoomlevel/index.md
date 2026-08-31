@@ -1,11 +1,5 @@
 ---
 title: "CaptureController: resetZoomLevel() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/resetZoomLevel"
-status: "needs-translation"
----
-
----
-title: "CaptureController: resetZoomLevel() method"
 short-title: resetZoomLevel()
 slug: Web/API/CaptureController/resetZoomLevel
 page-type: web-api-instance-method
@@ -16,9 +10,9 @@ browser-compat: api.CaptureController.resetZoomLevel
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The {{domxref("CaptureController")}} interface's **`resetZoomLevel()`** method resets the captured display surface's zoom to its initial level, which is `100`.
+متد **`resetZoomLevel()`** در رابط {{domxref("CaptureController")}}، سطح بزرگنمایی (zoom) سطح نمایشِ در حال ضبط را به مقدار اولیهٔ آن، یعنی `100` بازنشانی می‌کند.
 
-The `resetZoomLevel()` method must be invoked via [transient activation](/en-US/docs/Glossary/Transient_activation). In addition, the user is asked for permission to share tabs when screen capture is first attempted; if the user denies permission the zoom level cannot be changed even with transient activation.
+متد `resetZoomLevel()` باید از طریق [فعال‌سازی گذرا (transient activation)](/en-US/docs/Glossary/Transient_activation) فراخوانی شود. علاوه بر این، هنگام اولین تلاش برای ضبط صفحه، از کاربر برای به اشتراک‌گذاری تب‌ها اجازه گرفته می‌شود؛ اگر کاربر اجازه را رد کند، حتی با فعال‌سازی گذرا نیز نمی‌توان سطح بزرگنمایی را تغییر داد.
 
 ## Syntax
 
@@ -28,26 +22,26 @@ resetZoomLevel()
 
 ### Parameters
 
-None.
+هیچ‌کدام.
 
 ### Return value
 
-A {{jsxref("Promise")}} that fulfills with {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} انجام می‌شود (fulfill).
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : An attempt is made to invoke `resetZoomLevel()` without transient activation.
+  - : زمانی پرتاب می‌شود که تلاش شود `resetZoomLevel()` بدون فعال‌سازی گذرا فراخوانی شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown when:
-    - The page's {{HTTPHeader("Permissions-Policy/captured-surface-control", "captured-surface-control")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) does not permit the page to use the Captured Surface Control API.
-    - Permission to capture the display surface is explicitly denied by the user.
+  - : در شرایط زیر پرتاب می‌شود:
+    - [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) صفحه، با هدر {{HTTPHeader("Permissions-Policy/captured-surface-control", "captured-surface-control")}} به صفحه اجازهٔ استفاده از Captured Surface Control API را ندهد.
+    - اجازهٔ ضبط سطح نمایش به‌صراحت توسط کاربر رد شده باشد.
 
 ## Examples
 
-### Basic `resetZoomLevel()` usage
+### استفادهٔ پایه از `resetZoomLevel()`
 
-The following snippet adds an event listener to a button so that when it is clicked, the `resetZoom()` function is called. This in turn calls the `resetZoomLevel()` method, resetting the captured surface's zoom level to `100`.
+قطعهٔ کد زیر یک شنوندهٔ رویداد به یک دکمه اضافه می‌کند تا وقتی روی آن کلیک شد، تابع `resetZoom()` فراخوانی شود. این تابع نیز به نوبهٔ خود متد `resetZoomLevel()` را فراخوانی می‌کند و سطح بزرگنمایی سطحِ ضبط‌شده را به `100` بازنشانی می‌کند.
 
 ```js
 // Create controller and start capture
@@ -65,7 +59,7 @@ async function resetZoom() {
 }
 ```
 
-See [Using the Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control) for a full working example.
+برای مشاهدهٔ یک مثال کامل و کاربردی، به [استفاده از Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control) مراجعه کنید.
 
 ## Specifications
 
@@ -79,4 +73,4 @@ See [Using the Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - {{domxref("MediaDevices.getDisplayMedia()")}}
-- [Using the Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control)
+- [استفاده از Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control)
