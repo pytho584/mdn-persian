@@ -1,7 +1,7 @@
 ---
 title: "Generating attribution reports"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,31 +14,31 @@ status:
 
 {{DefaultAPISidebar("Attribution Reporting API")}}{{deprecated_header}}
 
-This article explains how [Attribution Reporting API](/en-US/docs/Web/API/Attribution_Reporting_API) reports are generated — both attribution reports and debug reports — and how you can control the generated reports. This includes handling noise, prioritizing reports, filtering reports, and generating debug reports.
+این مقاله توضیح می‌دهد که چگونه گزارش‌های [API گزارش‌دهی انتساب](/en-US/docs/Web/API/Attribution_Reporting_API) — چه گزارش‌های انتساب و چه گزارش‌های اشکال‌زدایی — تولید می‌شوند و چگونه می‌توانید گزارش‌های تولید شده را کنترل کنید. این شامل مدیریت نویز، اولویت‌بندی گزارش‌ها، فیلتر کردن گزارش‌ها و تولید گزارش‌های اشکال‌زدایی است.
 
-## Basic process
+## فرآیند پایه
 
-When a match occurs between a trigger and a source, the browser generates a report and sends it via an uncredentialed [`POST`](/en-US/docs/Web/HTTP/Reference/Methods/POST) request to a specific endpoint on the reporting origin:
+هنگامی که یک تطابق بین یک محرک و یک منبع رخ می‌دهد، مرورگر یک گزارش تولید کرده و آن را از طریق یک درخواست [`POST`](/en-US/docs/Web/HTTP/Reference/Methods/POST) بدون اعتبارنامه به یک نقطه پایانی خاص در مبدأ گزارش‌دهی ارسال می‌کند:
 
-- For event-level reports, this is `<reporting-origin>/.well-known/attribution-reporting/report-event-attribution`.
-- For summary reports, this is `<reporting-origin>/.well-known/attribution-reporting/report-aggregate-attribution`.
+- برای گزارش‌های سطح رویداد، این نقطه پایانی `<reporting-origin>/.well-known/attribution-reporting/report-event-attribution` است.
+- برای گزارش‌های خلاصه، این نقطه پایانی `<reporting-origin>/.well-known/attribution-reporting/report-aggregate-attribution` است.
 
-The `<reporting-origin>` will be same-origin with the one that registered the source and trigger.
+`<reporting-origin>` با مبدأی که منبع و محرک را ثبت کرده است، هم‌ریشه خواهد بود.
 
-The report data is contained in a JSON structure.
+داده‌های گزارش در یک ساختار JSON قرار دارند.
 
-## Event-level reports
+## گزارش‌های سطح رویداد
 
-Event-level reports are generated and scheduled to be sent at the end of their containing **report window**. The length of the report window is determined by the values set in the [`"event_report_window"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#event_report_window) or [`"event_report_windows"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#event_report_windows) field set in the source's {{httpheader("Attribution-Reporting-Register-Source")}} header.
+گزارش‌های سطح رویداد در پایان **پنجره گزارش** مربوطه خود تولید و زمان‌بندی ارسال می‌شوند. طول پنجره گزارش توسط مقادیر تعیین شده در فیلد [`"event_report_window"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#event_report_window) یا [`"event_report_windows"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#event_report_windows) که در هدر {{httpheader("Attribution-Reporting-Register-Source")}} منبع تنظیم شده است، تعیین می‌شود.
 
-If neither of these fields are specified, the report window falls back to the following defaults:
+اگر هیچ‌یک از این فیلدها مشخص نشده باشند، پنجره گزارش به موارد پیش‌فرض زیر بازمی‌گردد:
 
-- For [event-based sources](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#event-based_attribution_sources), the default report window ends at the source's expiry, which is set in the `Attribution-Reporting-Register-Source` [`"expiry"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#expiry) field. This defaults to 30 days after registration if not explicitly set.
-- For [navigation-based sources](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#navigation-based_attribution_sources), the default report windows are 2 days, 7 days, and the source's `"expiry"`.
+- برای [منابع مبتنی بر رویداد](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#event-based_attribution_sources)، پنجره گزارش پیش‌فرض در زمان انقضای منبع به پایان می‌رسد، که در فیلد `"expiry"` هدر `Attribution-Reporting-Register-Source` تنظیم شده است. در صورت عدم تنظیم صریح، این مقدار به طور پیش‌فرض ۳۰ روز پس از ثبت است.
+- برای [منابع مبتنی بر پیمایش](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#navigation-based_attribution_sources)، پنجره‌های گزارش پیش‌فرض ۲ روز، ۷ روز و `"expiry"` منبع هستند.
 
-See [Custom report windows](https://privacysandbox.google.com/private-advertising/attribution-reporting/custom-report-windows) for more details.
+برای جزئیات بیشتر به [پنجره‌های گزارش سفارشی](https://privacysandbox.google.com/private-advertising/attribution-reporting/custom-report-windows) مراجعه کنید.
 
-Once an event-level report is received at the appropriate endpoint, how the data is processed, stored, and displayed is completely up to the developer. A typical event-level report might look like this:
+هنگامی که یک گزارش سطح رویداد در نقطه پایانی مناسب دریافت شد، نحوه پردازش، ذخیره و نمایش داده‌ها کاملاً به عهده توسعه‌دهنده است. یک گزارش سطح رویداد معمولی ممکن است به صورت زیر باشد:
 
 ```json
 {
@@ -54,39 +54,39 @@ Once an event-level report is received at the appropriate endpoint, how the data
 }
 ```
 
-The properties are as follows:
+ویژگی‌ها به شرح زیر هستند:
 
 - `"attribution_destination"`
-  - : A string, or an array of 2–3 strings, depending on whether the source was registered with multiple destinations or not. These strings represent the attribution [`"destination"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#destination) site(s) set in the source registration via the associated {{httpheader("Attribution-Reporting-Register-Source")}} response header.
+  - : یک رشته، یا یک آرایه از ۲ تا ۳ رشته، بسته به اینکه منبع با چندین مقصد ثبت شده باشد یا خیر. این رشته‌ها نشان‌دهنده سایت(های) انتساب [`"destination"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#destination) هستند که در ثبت منبع از طریق هدر پاسخ {{httpheader("Attribution-Reporting-Register-Source")}} مرتبط تنظیم شده‌اند.
 - `"source_event_id"`
-  - : A string representing the attribution source ID. This is equal to the [`"source_event_id"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#source_event_id) set in the source registration (via the associated {{httpheader("Attribution-Reporting-Register-Source")}} response header).
+  - : یک رشته نشان‌دهنده شناسه منبع انتساب. این مقدار برابر با [`"source_event_id"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#source_event_id) تنظیم شده در ثبت منبع (از طریق هدر پاسخ {{httpheader("Attribution-Reporting-Register-Source")}} مرتبط) است.
 - `"trigger_data"`
-  - : A string representing data originating from the attribution trigger, set in the trigger registration (the [`"trigger_data"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Trigger#trigger_data) set via the associated {{httpheader("Attribution-Reporting-Register-Trigger")}} response header).
+  - : یک رشته نشان‌دهنده داده‌های حاصل از محرک انتساب، که در ثبت محرک (مقدار [`"trigger_data"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Trigger#trigger_data) تنظیم شده از طریق هدر پاسخ {{httpheader("Attribution-Reporting-Register-Trigger")}} مرتبط) تنظیم شده است.
 - `"report_id"`
-  - : A string representing a [Universally Unique Identifier (UUID)](/en-US/docs/Glossary/UUID) for this report, which can be used to prevent duplicate counting.
+  - : یک رشته نشان‌دهنده یک [شناسه یکتای جهانی (UUID)](/en-US/docs/Glossary/UUID) برای این گزارش که می‌تواند برای جلوگیری از شمارش تکراری استفاده شود.
 - `"source_type"`
-  - : A string equal to either `"navigation"` or `"event"`, which respectively indicate whether the associated attribution source is [navigation-based](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#navigation-based_attribution_sources), or [event-based](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#event-based_attribution_sources).
+  - : یک رشته برابر با `"navigation"` یا `"event"` که به ترتیب نشان می‌دهد منبع انتساب مرتبط [مبتنی بر پیمایش](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#navigation-based_attribution_sources) است یا [مبتنی بر رویداد](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#event-based_attribution_sources).
 - `"randomized_trigger_rate"`
-  - : A random number between 0 and 1 indicating how often [noise](#adding_noise_to_reports) is applied for this particular source configuration.
+  - : یک عدد تصادفی بین ۰ و ۱ که نشان می‌دهد چند وقت یکبار [نویز](#adding_noise_to_reports) برای این پیکربندی منبع خاص اعمال می‌شود.
 - `"scheduled_report_time"`
-  - : A string representing the number of seconds from the Unix Epoch until the browser initially scheduled the report to be sent (to avoid inaccuracies as a result of offline devices reporting late).
+  - : یک رشته نشان‌دهنده تعداد ثانیه‌های سپری شده از مبدأ Unix تا زمانی که مرورگر در ابتدا گزارش را برای ارسال زمان‌بندی کرده است (برای جلوگیری از عدم دقت ناشی از گزارش‌دهی دیرهنگام دستگاه‌های آفلاین).
 - `"source_debug_key"` {{optional_inline}}
-  - : A 64 bit unsigned integer representing the debugging key for the attribution source. This mirrors the value set in the associated {{httpheader("Attribution-Reporting-Register-Source")}} header's [`"debug_key"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#debug_key) field. See [Debug reports](#debug_reports) for more information.
+  - : یک عدد صحیح ۶۴ بیتی بدون علامت نشان‌دهنده کلید اشکال‌زدایی برای منبع انتساب. این مقدار منعکس‌کننده مقدار تنظیم شده در فیلد [`"debug_key"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#debug_key) هدر {{httpheader("Attribution-Reporting-Register-Source")}} مرتبط است. برای اطلاعات بیشتر به [گزارش‌های اشکال‌زدایی](#debug_reports) مراجعه کنید.
 - `"trigger_debug_key"` {{optional_inline}}
-  - : A 64 bit unsigned integer representing the debugging key for the attribution trigger. This mirrors the value set in the associated {{httpheader("Attribution-Reporting-Register-Trigger")}} header's `"debug_key"` field. See [Debug reports](#debug_reports) for more information.
+  - : یک عدد صحیح ۶۴ بیتی بدون علامت نشان‌دهنده کلید اشکال‌زدایی برای محرک انتساب. این مقدار منعکس‌کننده مقدار تنظیم شده در فیلد `"debug_key"` هدر {{httpheader("Attribution-Reporting-Register-Trigger")}} مرتبط است. برای اطلاعات بیشتر به [گزارش‌های اشکال‌زدایی](#debug_reports) مراجعه کنید.
 
-## Summary reports
+## گزارش‌های خلاصه
 
-A summary report is created from several aggregatable reports received at the appropriate endpoint and then [batched](https://privacysandbox.google.com/private-advertising/attribution-reporting/summary-reports-intro#batching) to prepare them to be processed by an [aggregation service](https://privacysandbox.google.com/private-advertising/aggregation-service). When this has occurred, how the data is processed, stored, and displayed is completely up to the developer.
+یک گزارش خلاصه از چندین گزارش قابل تجمیع که در نقطه پایانی مناسب دریافت شده‌اند ایجاد می‌شود و سپس برای آماده‌سازی جهت پردازش توسط یک [سرویس تجمیع](https://privacysandbox.google.com/private-advertising/aggregation-service) [دسته‌بندی](https://privacysandbox.google.com/private-advertising/attribution-reporting/summary-reports-intro#batching) می‌شود. هنگامی که این اتفاق افتاد، نحوه پردازش، ذخیره و نمایش داده‌ها کاملاً به عهده توسعه‌دهنده است.
 
-An aggregatable report by default is generated and scheduled to be sent after a trigger is interacted with, with a random delay to help fuzz the timings and improve privacy. For a given registered attribution source, attribution source events will be recorded from registration up until the source expires - this is referred to as the **report window**.
+یک گزارش قابل تجمیع به طور پیش‌فرض پس از تعامل با یک محرک تولید و با تأخیر تصادفی برای کمک به محو کردن زمان‌بندی‌ها و بهبود حریم خصوصی، زمان‌بندی ارسال می‌شود. برای یک منبع انتساب ثبت‌شده، رویدادهای منبع انتساب از زمان ثبت تا زمان انقضای منبع ثبت می‌شوند - این به عنوان **پنجره گزارش** نامیده می‌شود.
 
-The expiry time is defined by the `expiry` value set in the associated {{httpheader("Attribution-Reporting-Register-Source")}} header, which defaults to 30 days after registration if not explicitly set. Bear in mind that the length of the report window can be further modified by setting an `aggregatable_report_window` value in the `Attribution-Reporting-Register-Source` header. See [Custom report windows](https://privacysandbox.google.com/private-advertising/attribution-reporting/custom-report-windows) for more details.
+زمان انقضا توسط مقدار `expiry` تنظیم شده در هدر {{httpheader("Attribution-Reporting-Register-Source")}} مرتبط تعریف می‌شود که در صورت عدم تنظیم صریح، به طور پیش‌فرض ۳۰ روز پس از ثبت است. به خاطر داشته باشید که طول پنجره گزارش می‌تواند با تنظیم یک مقدار `aggregatable_report_window` در هدر `Attribution-Reporting-Register-Source` بیشتر تغییر کند. برای جزئیات بیشتر به [پنجره‌های گزارش سفارشی](https://privacysandbox.google.com/private-advertising/attribution-reporting/custom-report-windows) مراجعه کنید.
 
 > [!NOTE]
-> To further protect user privacy, the summary report values associated with each attribution source have a finite total value — this is called the **contribution budget**. This value may very across different implementations of the API; in Chrome it is 65,536. Any conversions that would generate reports adding values over that limit are not recorded. Make sure you keep track of the budget and share it between the different metrics you are trying to measure.
+> برای محافظت بیشتر از حریم خصوصی کاربر، مقادیر گزارش خلاصه مرتبط با هر منبع انتساب دارای یک مقدار کل محدود هستند — این **بودجه مشارکت** نامیده می‌شود. این مقدار ممکن است در پیاده‌سازی‌های مختلف API متفاوت باشد؛ در کروم این مقدار ۶۵۵۳۶ است. هر تبدیلی که باعث تولید گزارش‌هایی با مقادیر بیش از این حد شود، ثبت نمی‌شود. مطمئن شوید که بودجه را پیگیری کرده و آن را بین معیارهای مختلفی که می‌خواهید اندازه‌گیری کنید، به اشتراک بگذارید.
 
-A typical aggregatable report might look like this:
+یک گزارش قابل تجمیع معمولی ممکن است به صورت زیر باشد:
 
 ```json
 {
@@ -104,28 +104,28 @@ A typical aggregatable report might look like this:
 }
 ```
 
-The properties are as follows:
+ویژگی‌ها به شرح زیر هستند:
 
 - `"shared_info"`
-  - : This is a serialized JSON object providing information that an aggregation service will use to put together a summary report. This data is [encrypted](/en-US/docs/Glossary/Encryption) using [AEAD](https://en.wikipedia.org/wiki/Authenticated_encryption) to prevent tampering. The following properties are represented in the serialized string:
+  - : این یک شیء JSON سریال‌سازی شده است که اطلاعاتی را ارائه می‌دهد که سرویس تجمیع از آن برای تهیه یک گزارش خلاصه استفاده خواهد کرد. این داده‌ها برای جلوگیری از دستکاری با استفاده از [AEAD](https://en.wikipedia.org/wiki/Authenticated_encryption) [رمزگذاری](/en-US/docs/Glossary/Encryption) شده‌اند. ویژگی‌های زیر در رشته سریال‌سازی شده نشان داده شده‌اند:
     - `"api"`
-      - : An enumerated value representing the API that triggered the report generation. Currently this will always be equal to `"attribution-reporting"`, but it may be extended with additional values to support other APIs in the future.
+      - : یک مقدار شمارشی نشان‌دهنده API که تولید گزارش را فعال کرده است. در حال حاضر این مقدار همیشه برابر با `"attribution-reporting"` خواهد بود، اما ممکن است در آینده با مقادیر اضافی برای پشتیبانی از APIهای دیگر گسترش یابد.
     - `"attribution_destination"`
-      - : A string representing the attribution [`"destination"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#destination) URL set in the source registration (via the associated {{httpheader("Attribution-Reporting-Register-Source")}} response header).
+      - : یک رشته نشان‌دهنده URL [`"destination"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#destination) انتساب تنظیم شده در ثبت منبع (از طریق هدر پاسخ {{httpheader("Attribution-Reporting-Register-Source")}} مرتبط).
     - `"report_id"`
-      - : A string representing a [Universally Unique Identifier (UUID)](/en-US/docs/Glossary/UUID) for this report, which can be used to prevent duplicate counting.
+      - : یک رشته نشان‌دهنده یک [شناسه یکتای جهانی (UUID)](/en-US/docs/Glossary/UUID) برای این گزارش که می‌تواند برای جلوگیری از شمارش تکراری استفاده شود.
     - `"reporting_origin"`
-      - : The origin that triggered the report generation.
+      - : مبدأی که تولید گزارش را فعال کرده است.
     - `"scheduled_report_time"`
-      - : A string representing the number of seconds from the Unix Epoch until the browser initially scheduled the report to be sent (to avoid inaccuracies as a result of offline devices reporting late).
+      - : یک رشته نشان‌دهنده تعداد ثانیه‌های سپری شده از مبدأ Unix تا زمانی که مرورگر در ابتدا گزارش را برای ارسال زمان‌بندی کرده است (برای جلوگیری از عدم دقت ناشی از گزارش‌دهی دیرهنگام دستگاه‌های آفلاین).
     - `"source_registration_time"`
-      - : A string representing the number of seconds from the Unix Epoch until the attribution source was registered, rounded down to a whole day.
+      - : یک رشته نشان‌دهنده تعداد ثانیه‌های سپری شده از مبدأ Unix تا زمانی که منبع انتساب ثبت شده است، که به پایین‌ترین روز کامل گرد شده است.
     - `"version"`
-      - : A string representing the version of the API used to generate the report.
+      - : یک رشته نشان‌دهنده نسخه API مورد استفاده برای تولید گزارش.
 - `"aggregation_service_payloads"`
-  - : An array of objects representing payload objects containing the histogram contributions used by the aggregation service to assemble the data contained in the report. Currently, only a single payload is supported per report, configured by the browser. In the future multiple, customizable payloads may be supported. Each payload object can contain the following properties:
+  - : یک آرایه از اشیاء نشان‌دهنده اشیاء بار (payload) حاوی مشارکت‌های هیستوگرام که توسط سرویس تجمیع برای جمع‌آوری داده‌های موجود در گزارش استفاده می‌شود. در حال حاضر، تنها یک بار در هر گزارش پشتیبانی می‌شود که توسط مرورگر پیکربندی شده است. در آینده، ممکن است بارهای متعدد و قابل تنظیم پشتیبانی شوند. هر شیء بار می‌تواند شامل ویژگی‌های زیر باشد:
     - `"payload"`
-      - : A [CBOR](https://cbor.io/) map encrypted via [HPKE](https://datatracker.ietf.org/doc/rfc9180/) and then [base64](/en-US/docs/Glossary/Base64)-encoded, with the following structure (using JSON for notation only):
+      - : یک نقشه [CBOR](https://cbor.io/) که از طریق [HPKE](https://datatracker.ietf.org/doc/rfc9180/) رمزگذاری شده و سپس با [base64](/en-US/docs/Glossary/Base64) کدگذاری شده است، با ساختار زیر (با استفاده از JSON فقط برای نمادگذاری):
 
         ```json
         {
@@ -140,21 +140,21 @@ The properties are as follows:
         }
         ```
 
-        The `operation` is always `"histogram"`; it allows for the service to support other operations in the future.
+        `operation` همیشه `"histogram"` است؛ این امکان را فراهم می‌کند که سرویس در آینده از عملیات‌های دیگر پشتیبانی کند.
 
     - `"key_id"`
-      - : A string identifying the public key used to encrypt the payload.
+      - : یک رشته شناسایی‌کننده کلید عمومی مورد استفاده برای رمزگذاری بار.
     - `"debug_cleartext_payload"` {{optional_inline}}
-      - : Optional debugging information.
+      - : اطلاعات اشکال‌زدایی اختیاری.
 
 - `"aggregation_coordinator_origin"`
-  - : The deployment option for the aggregation service.
+  - : گزینه استقرار برای سرویس تجمیع.
 - `"source_debug_key"` {{optional_inline}}
-  - : A 64 bit unsigned integer representing the debugging key for the attribution source. This mirrors the value set in the associated {{httpheader("Attribution-Reporting-Register-Source")}} header's [`"debug_key"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#debug_key) field. See [Debug reports](#debug_reports) for more information.
+  - : یک عدد صحیح ۶۴ بیتی بدون علامت نشان‌دهنده کلید اشکال‌زدایی برای منبع انتساب. این مقدار منعکس‌کننده مقدار تنظیم شده در فیلد [`"debug_key"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#debug_key) هدر {{httpheader("Attribution-Reporting-Register-Source")}} مرتبط است. برای اطلاعات بیشتر به [گزارش‌های اشکال‌زدایی](#debug_reports) مراجعه کنید.
 - `"trigger_debug_key"` {{optional_inline}}
-  - : A 64 bit unsigned integer representing the debugging key for the attribution trigger. This mirrors the value set in the associated {{httpheader("Attribution-Reporting-Register-Trigger")}} header's `"debug_key"` field. See [Debug reports](#debug_reports) for more information.
+  - : یک عدد صحیح ۶۴ بیتی بدون علامت نشان‌دهنده کلید اشکال‌زدایی برای محرک انتساب. این مقدار منعکس‌کننده مقدار تنظیم شده در فیلد `"debug_key"` هدر {{httpheader("Attribution-Reporting-Register-Trigger")}} مرتبط است. برای اطلاعات بیشتر به [گزارش‌های اشکال‌زدایی](#debug_reports) مراجعه کنید.
 
-## Adding noise to reports
+## افزودن نویز به گزارش‌ها
 
 <!--
 THIS INFORMATION IS NOT COMPLETE; WE HAVE PARKED IT FOR NOW SO THAT WE CAN GET THIS DOCUMENTATION PUBLISHED, AND WE WILL DO MORE WORK ON ARA NOISE ON A FUTURE DATE, IF/WHEN THE DEMAND IS THERE
@@ -195,42 +195,42 @@ A matching {{httpheader("Attribution-Reporting-Register-Trigger")}} could contai
 It is however still possible that a match may not occur, based on the randomized response algorithm described above.
 -->
 
-Noise is added to reports in order to obscure the output associated with a particular source, and thereby protect user privacy. The exact source data cannot be identified and attributed back to individual users, but the overall patterns taken from the data will still provide the same meaning.
+نویز به گزارش‌ها اضافه می‌شود تا خروجی مرتبط با یک منبع خاص مبهم شود و در نتیجه حریم خصوصی کاربر محافظت شود. داده‌های دقیق منبع قابل شناسایی و نسبت دادن به کاربران فردی نیستند، اما الگوهای کلی گرفته شده از داده‌ها همچنان همان معنی را ارائه می‌دهند.
 
-For information on how noise works in attribution reporting, see:
+برای اطلاعات در مورد نحوه عملکرد نویز در گزارش‌دهی انتساب، به موارد زیر مراجعه کنید:
 
-- [Understanding noise in summary reports](https://privacysandbox.google.com/private-advertising/attribution-reporting/understanding-noise).
-- [Data limits and noise](https://github.com/WICG/attribution-reporting-api/blob/main/EVENT.md#data-limits-and-noise)
-- [Working with noise](https://privacysandbox.google.com/private-advertising/attribution-reporting/working-with-noise)
+- [درک نویز در گزارش‌های خلاصه](https://privacysandbox.google.com/private-advertising/attribution-reporting/understanding-noise).
+- [محدودیت‌های داده و نویز](https://github.com/WICG/attribution-reporting-api/blob/main/EVENT.md#data-limits-and-noise)
+- [کار با نویز](https://privacysandbox.google.com/private-advertising/attribution-reporting/working-with-noise)
 
-## Report priorities and limits
+## اولویت‌ها و محدودیت‌های گزارش
 
-By default, all attribution sources have the same priority, and the attribution model is last-touch, meaning that a conversion is attributed to the most recent matching source event. For both event-level and aggregatable reports you can change source priority by setting a new value for the `"priority"` field in the associated {{httpheader("Attribution-Reporting-Register-Source")}} header. The default value is `0`; if you set a `"priority"` value of `1` on a particular source, that source will be matched first, before any priority `0` sources. Sources with `"priority": "2"` will be matched before `"priority": "1"` sources, and so on.
+به طور پیش‌فرض، همه منابع انتساب دارای اولویت یکسانی هستند و مدل انتساب آخرین لمس است، به این معنی که یک تبدیل به آخرین رویداد منبع منطبق نسبت داده می‌شود. برای هر دو گزارش سطح رویداد و قابل تجمیع، می‌توانید اولویت منبع را با تنظیم یک مقدار جدید برای فیلد `"priority"` در هدر {{httpheader("Attribution-Reporting-Register-Source")}} مرتبط تغییر دهید. مقدار پیش‌فرض `0` است؛ اگر مقدار `"priority"` برابر `1` را روی یک منبع خاص تنظیم کنید، آن منبع ابتدا مطابقت داده می‌شود، قبل از هر منبع با اولویت `0`. منابع با `"priority": "2"` قبل از منابع `"priority": "1"` مطابقت داده می‌شوند و به همین ترتیب.
 
-Attribution trigger priorities work the same way; you can also set trigger priorities by adding a `"priority"` field to the associated {{httpheader("Attribution-Reporting-Register-Trigger")}} header, but only for event-level reports.
+اولویت‌های محرک انتساب نیز به همین صورت کار می‌کنند؛ همچنین می‌توانید با افزودن یک فیلد `"priority"` به هدر {{httpheader("Attribution-Reporting-Register-Trigger")}} مرتبط، اولویت‌های محرک را تنظیم کنید، اما فقط برای گزارش‌های سطح رویداد.
 
-Different source types have different default limits:
+انواع مختلف منبع دارای محدودیت‌های پیش‌فرض متفاوتی هستند:
 
-- [Navigation-based attribution sources](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#navigation-based_attribution_sources) have a three-report limit by default. For example, say a user clicks an ad and converts four times: they visit the advertiser site homepage, then visit a product page, sign up to the newsletter, and finally make a purchase. The purchase report would be dropped, as it comes from the fourth conversion.
-- [Event-based attribution sources](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#event-based_attribution_sources) have a one-report limit by default.
+- [منابع انتساب مبتنی بر پیمایش](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#navigation-based_attribution_sources) به طور پیش‌فرض دارای محدودیت سه گزارش هستند. به عنوان مثال، فرض کنید یک کاربر روی یک تبلیغ کلیک می‌کند و چهار بار تبدیل می‌کند: از صفحه اصلی سایت تبلیغ‌کننده بازدید می‌کند، سپس از صفحه محصول بازدید می‌کند، در خبرنامه ثبت نام می‌کند و در نهایت خرید می‌کند. گزارش خرید حذف می‌شود، زیرا از چهارمین تبدیل می‌آید.
+- [منابع انتساب مبتنی بر رویداد](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#event-based_attribution_sources) به طور پیش‌فرض دارای محدودیت یک گزارش هستند.
 
 > [!NOTE]
-> The report limit can be adjusted by setting a different number of `"end_times"` in the [`"event_report_windows"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#event_report_windows) fields of the associated `Attribution-Reporting-Register-Source` header.
+> محدودیت گزارش را می‌توان با تنظیم تعداد متفاوتی از `"end_times"` در فیلدهای [`"event_report_windows"`](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Source#event_report_windows) هدر `Attribution-Reporting-Register-Source` مرتبط تنظیم کرد.
 
-When an attribution is triggered for a given source event, if the maximum number of attributions (three for clicks, one for images/scripts) has been reached for this source the browser will:
+هنگامی که یک انتساب برای یک رویداد منبع مشخص فعال می‌شود، اگر حداکثر تعداد انتساب‌ها (سه تا برای کلیک‌ها، یک تا برای تصاویر/اسکریپت‌ها) برای این منبع به دست آمده باشد، مرورگر موارد زیر را انجام می‌دهد:
 
-- Compare the priority of the new report with the priorities of existing scheduled reports for that same source.
-- Delete the report with the lowest priority to schedule the new report instead. If the new report is the one with the lowest priority, it is ignored and you won't receive it.
+- اولویت گزارش جدید را با اولویت‌های گزارش‌های زمان‌بندی شده موجود برای همان منبع مقایسه می‌کند.
+- گزارش با کمترین اولویت را حذف می‌کند تا گزارش جدید را جایگزین کند. اگر گزارش جدید دارای کمترین اولویت باشد، نادیده گرفته می‌شود و آن را دریافت نخواهید کرد.
 
-If no priorities are set, the browser falls back to its default behavior: any conversion happening after the third conversion for clicks or the first conversion for views is dropped.
+اگر هیچ اولویتی تنظیم نشده باشد، مرورگر به رفتار پیش‌فرض خود بازمی‌گردد: هر تبدیلی که بعد از سومین تبدیل برای کلیک‌ها یا اولین تبدیل برای بازدیدها رخ دهد، حذف می‌شود.
 
-## Filters
+## فیلترها
 
-You can define rules for which conversions generate reports using filters. For example, you could choose to only count conversions for a specific product category, and filter out conversions for other categories.
+می‌توانید قوانینی را برای تعیین اینکه کدام تبدیل‌ها گزارش تولید می‌کنند، با استفاده از فیلترها تعریف کنید. به عنوان مثال، می‌توانید انتخاب کنید که فقط تبدیل‌های یک دسته محصول خاص شمارش شوند و تبدیل‌های سایر دسته‌ها فیلتر شوند.
 
-To declare filters:
+برای اعلام فیلترها:
 
-1. On source registration, add a `filter_data` field to the {{httpheader("Attribution-Reporting-Register-Source")}} header that defines the filter keys you will use to filter the conversions over on the trigger side. These are completely custom fields. For example, to specify only conversions on particular subdomains, and for particular products:
+1. در ثبت منبع، یک فیلد `filter_data` به هدر {{httpheader("Attribution-Reporting-Register-Source")}} اضافه کنید که کلیدهای فیلتری را که برای فیلتر کردن تبدیل‌ها در سمت محرک استفاده خواهید کرد، تعریف می‌کند. این فیلدها کاملاً سفارشی هستند. برای مثال، برای مشخص کردن فقط تبدیل‌ها در زیردامنه‌های خاص و برای محصولات خاص:
 
    ```json
    {
@@ -244,7 +244,7 @@ To declare filters:
    }
    ```
 
-2. On trigger registration, add a `filters` field to the {{httpheader("Attribution-Reporting-Register-Trigger")}} header. The following, for example, causes trigger interactions to match the above source registration, as they both contain the `"electronics.megastore"` `"conversion_subdomain"` field. The `"directory"` filter on the other hand is ignored when a match is attempted, because it was not included in the above source registration.
+2. در ثبت محرک، یک فیلد `filters` به هدر {{httpheader("Attribution-Reporting-Register-Trigger")}} اضافه کنید. برای مثال، موارد زیر باعث می‌شود که تعاملات محرک با ثبت منبع فوق مطابقت داشته باشند، زیرا هر دو حاوی فیلد `"conversion_subdomain"` برابر `"electronics.megastore"` هستند. از طرف دیگر، فیلتر `"directory"` زمانی که تطابق تلاش می‌شود نادیده گرفته می‌شود، زیرا در ثبت منبع فوق گنجانده نشده است.
 
    ```json
    {
@@ -255,13 +255,13 @@ To declare filters:
    }
    ```
 
-If the `"filter_data"` and `"filters"` fields contain matching subfields (like `"conversion_subdomain"` in the example above) but none of the subfield's values match, the trigger is ignored, resulting in no match.
+اگر فیلدهای `"filter_data"` و `"filters"` حاوی زیرفیلدهای منطبق (مانند `"conversion_subdomain"` در مثال بالا) باشند اما هیچ‌یک از مقادیر زیرفیلد مطابقت نداشته باشد، محرک نادیده گرفته می‌شود و در نتیجه هیچ تطابقی رخ نمی‌دهد.
 
-### Filtering trigger data
+### فیلتر کردن داده‌های محرک
 
-The `event_trigger_data` field in the {{httpheader("Attribution-Reporting-Register-Trigger")}} header can be extended to do selective filtering to set `trigger_data`, `priority`, or `deduplication_key`, based on `filter_data` defined in the {{httpheader("Attribution-Reporting-Register-Source")}} header.
+فیلد `event_trigger_data` در هدر {{httpheader("Attribution-Reporting-Register-Trigger")}} می‌تواند برای انجام فیلتر انتخابی برای تنظیم `trigger_data`، `priority` یا `deduplication_key`، بر اساس `filter_data` تعریف شده در هدر {{httpheader("Attribution-Reporting-Register-Source")}} گسترش یابد.
 
-For example:
+به عنوان مثال:
 
 ```json
 {
@@ -279,12 +279,12 @@ For example:
 ```
 
 > [!NOTE]
-> `"source_type"` is an automatically populated field available on the source's `"filter_data"`.
+> `"source_type"` یک فیلد به طور خودکار پر شده است که در `"filter_data"` منبع موجود است.
 
 > [!NOTE]
-> `not_filters`, which filters with negation, is also supported.
+> `not_filters`، که با نفی فیلتر می‌کند، نیز پشتیبانی می‌شود.
 
-In this context, `filters` can be an object or an array of objects. When a list is specified, only one dictionary has to match for the trigger to be considered.
+در این زمینه، `filters` می‌تواند یک شیء یا یک آرایه از اشیاء باشد. هنگامی که یک لیست مشخص شده است، فقط یک دیکشنری باید مطابقت داشته باشد تا محرک در نظر گرفته شود.
 
 ```json
 {
@@ -306,31 +306,31 @@ In this context, `filters` can be an object or an array of objects. When a list 
 }
 ```
 
-If the filters do not match for any of the event triggers, no event-level report will be created. If the filters match for multiple event triggers, the first matching event trigger is used.
+اگر فیلترها برای هیچ‌یک از محرک‌های رویداد مطابقت نداشته باشند، هیچ گزارش سطح رویدادی ایجاد نخواهد شد. اگر فیلترها برای چندین محرک رویداد مطابقت داشته باشند، اولین محرک رویداد منطبق استفاده می‌شود.
 
-## Debug reports
+## گزارش‌های اشکال‌زدایی
 
-You can enable debug reports to return troubleshooting information about your attribution reports. These can, for example, be used to check that your setup is working properly and understand gaps in measurement results between your old cookie-based implementation and your new Attribution Reporting implementation. Debug reports are sent immediately; they are not subject to the same scheduling as event-level and summary reports.
+می‌توانید گزارش‌های اشکال‌زدایی را برای بازگرداندن اطلاعات عیب‌یابی درباره گزارش‌های انتساب خود فعال کنید. این موارد می‌توانند، برای مثال، برای بررسی اینکه تنظیمات شما به درستی کار می‌کنند و درک شکاف‌ها در نتایج اندازه‌گیری بین پیاده‌سازی قدیمی مبتنی بر کوکی و پیاده‌سازی جدید گزارش‌دهی انتساب استفاده شوند. گزارش‌های اشکال‌زدایی بلافاصله ارسال می‌شوند؛ آنها مشمول همان زمان‌بندی گزارش‌های سطح رویداد و خلاصه نیستند.
 
-There are two different types of debug report:
+دو نوع مختلف گزارش اشکال‌زدایی وجود دارد:
 
-- **Success debug reports** track successful generation of a specific attribution report. Success debug reports are generated and sent as soon as the corresponding trigger is registered.
-- **Verbose debug reports** give you more visibility into the attribution source and attribution trigger events associated with an attribution report. They enable you to ensure that sources were registered successfully, or track missing reports and determine why they're missing (for example due to failure in source or trigger event registration or failure when sending or generating the report). Verbose debug reports are sent immediately upon source or trigger registration.
+- **گزارش‌های اشکال‌زدایی موفقیت** تولید موفق یک گزارش انتساب خاص را ردیابی می‌کنند. گزارش‌های اشکال‌زدایی موفقیت به محض ثبت محرک مربوطه تولید و ارسال می‌شوند.
+- **گزارش‌های اشکال‌زدایی مفصل** دید بیشتری به شما در مورد رویدادهای منبع انتساب و رویدادهای محرک انتساب مرتبط با یک گزارش انتساب می‌دهند. آنها به شما امکان می‌دهند اطمینان حاصل کنید که منابع با موفقیت ثبت شده‌اند، یا گزارش‌های از دست رفته را ردیابی کنید و دلیل فقدان آنها را تعیین کنید (به عنوان مثال به دلیل شکست در ثبت رویداد منبع یا محرک یا شکست در ارسال یا تولید گزارش). گزارش‌های اشکال‌زدایی مفصل بلافاصله پس از ثبت منبع یا محرک ارسال می‌شوند.
 
 > [!NOTE]
-> To use debug reports, the reporting origin needs to set a cookie. If the origin configured to receive reports is a third party, this cookie will be a [third-party cookie](/en-US/docs/Web/Privacy/Guides/Third-party_cookies), which means that debug reports will not be available in browsers where third-party cookies are disabled/not available.
+> برای استفاده از گزارش‌های اشکال‌زدایی، مبدأ گزارش‌دهی باید یک کوکی تنظیم کند. اگر مبدأ پیکربندی شده برای دریافت گزارش‌ها شخص ثالث باشد، این کوکی یک [کوکی شخص ثالث](/en-US/docs/Web/Privacy/Guides/Third-party_cookies) خواهد بود، به این معنی که گزارش‌های اشکال‌زدایی در مرورگرهایی که کوکی‌های شخص ثالث غیرفعال/در دسترس نیستند، در دسترس نخواهند بود.
 
-### Using debug reports
+### استفاده از گزارش‌های اشکال‌زدایی
 
-To use debug reports, you need to:
+برای استفاده از گزارش‌های اشکال‌زدایی، باید:
 
-1. Set the `ar_debug` cookie on your reporting origin. This needs to be present during both source and trigger registration:
+1. کوکی `ar_debug` را در مبدأ گزارش‌دهی خود تنظیم کنید. این باید در طول ثبت منبع و محرک وجود داشته باشد:
 
    ```http
    Set-Cookie: ar_debug=1; SameSite=None; Secure; Path=/; HttpOnly
    ```
 
-2. Set the `debug_key` field in any {{httpheader("Attribution-Reporting-Register-Source")}} and {{httpheader("Attribution-Reporting-Register-Trigger")}} response headers related to attribution reports that you want to expose debugging information for. Each `debug_key` value must be a 64-bit unsigned integer formatted as a base-10 string. Make each debug key a unique ID — you could for example set each one as Cookie ID + source/trigger timestamp (and capture that same timestamp in your older cookie-based system if you want to compare the two).
+2. فیلد `debug_key` را در هر هدر پاسخ {{httpheader("Attribution-Reporting-Register-Source")}} و {{httpheader("Attribution-Reporting-Register-Trigger")}} مرتبط با گزارش‌های انتسابی که می‌خواهید اطلاعات اشکال‌زدایی را برای آنها افشا کنید، تنظیم کنید. هر مقدار `debug_key` باید یک عدد صحیح ۶۴ بیتی بدون علامت باشد که به عنوان یک رشته پایه ۱۰ قالب‌بندی شده است. هر کلید اشکال‌زدایی را یک شناسه منحصر به فرد کنید — به عنوان مثال می‌توانید هر کدام را به عنوان شناسه کوکی + مهر زمانی منبع/محرک تنظیم کنید (و اگر می‌خواهید این دو را مقایسه کنید، همان مهر زمانی را در سیستم قدیمی مبتنی بر کوکی خود ثبت کنید).
 
    ```json
    {
@@ -339,9 +339,9 @@ To use debug reports, you need to:
    ```
 
    > [!NOTE]
-   > Make the source-side debug key different from the `source_event_id`, so that you can differentiate individual reports that have the same source event ID.
+   > کلید اشکال‌زدایی سمت منبع را با `source_event_id` متفاوت کنید، تا بتوانید گزارش‌های فردی را که دارای شناسه رویداد منبع یکسانی هستند، متمایز کنید.
 
-3. Optionally, set the `debug_reporting` field to `true`, in both the `Attribution-Reporting-Register-Source` and `Attribution-Reporting-Register-Trigger` headers. If you do this, a verbose debug report will be generated. If you don't do this, a success debug report will be generated that mirrors the type of attribution report you are generating (event-level or aggregatable).
+3. به صورت اختیاری، فیلد `debug_reporting` را روی `true`، در هر دو هدر `Attribution-Reporting-Register-Source` و `Attribution-Reporting-Register-Trigger` تنظیم کنید. اگر این کار را انجام دهید، یک گزارش اشکال‌زدایی مفصل تولید خواهد شد. اگر این کار را انجام ندهید، یک گزارش اشکال‌زدایی موفقیت تولید می‌شود که نوع گزارش انتسابی را که تولید می‌کنید (سطح رویداد یا قابل تجمیع) منعکس می‌کند.
 
    ```json
    {
@@ -350,15 +350,15 @@ To use debug reports, you need to:
    }
    ```
 
-4. Set up appropriate endpoints to receive the debug reports you want to generate. Debug reports are sent to three separate endpoints in the reporting origin:
-   - Endpoint for event-level success debug reports: `<reporting-origin>/.well-known/attribution-reporting/debug/report-event-attribution`
-   - Endpoint for aggregatable success debug reports: `<reporting-origin>/.well-known/attribution-reporting/debug/report-aggregate-attribution`
-   - Endpoint for verbose debug reports: `<reporting-origin>/.well-known/attribution-reporting/debug/verbose`
+4. نقاط پایانی مناسب را برای دریافت گزارش‌های اشکال‌زدایی که می‌خواهید تولید کنید، راه‌اندازی کنید. گزارش‌های اشکال‌زدایی به سه نقطه پایانی جداگانه در مبدأ گزارش‌دهی ارسال می‌شوند:
+   - نقطه پایانی برای گزارش‌های اشکال‌زدایی موفقیت سطح رویداد: `<reporting-origin>/.well-known/attribution-reporting/debug/report-event-attribution`
+   - نقطه پایانی برای گزارش‌های اشکال‌زدایی موفقیت قابل تجمیع: `<reporting-origin>/.well-known/attribution-reporting/debug/report-aggregate-attribution`
+   - نقطه پایانی برای گزارش‌های اشکال‌زدایی مفصل: `<reporting-origin>/.well-known/attribution-reporting/debug/verbose`
 
-Generated success debug reports are identical to attribution reports, and contain the source-side and the trigger-side debug keys, in the `"source_debug_key"` and `"trigger_debug_key"` fields respectively.
+گزارش‌های اشکال‌زدایی موفقیت تولید شده با گزارش‌های انتساب یکسان هستند و حاوی کلیدهای اشکال‌زدایی سمت منبع و سمت محرک، به ترتیب در فیلدهای `"source_debug_key"` و `"trigger_debug_key"` هستند.
 
-For further information and examples, see:
+برای اطلاعات بیشتر و مثال‌ها، به موارد زیر مراجعه کنید:
 
-- [Introduction to debug reports](https://privacysandbox.google.com/private-advertising/attribution-reporting/attribution-reporting-debugging/) on privacysandbox.google.com (2023)
-- [Set up debug reports](https://privacysandbox.google.com/private-advertising/attribution-reporting/attribution-reporting-debugging/part-2/) on privacysandbox.google.com (2023)
-- [Debugging cookbook](https://privacysandbox.google.com/private-advertising/attribution-reporting/attribution-reporting-debugging/part-3/) on privacysandbox.google.com (2023)
+- [مقدمه‌ای بر گزارش‌های اشکال‌زدایی](https://privacysandbox.google.com/private-advertising/attribution-reporting/attribution-reporting-debugging/) در privacysandbox.google.com (2023)
+- [راه‌اندازی گزارش‌های اشکال‌زدایی](https://privacysandbox.google.com/private-advertising/attribution-reporting/attribution-reporting-debugging/part-2/) در privacysandbox.google.com (2023)
+- [کتاب آشپزی اشکال‌زدایی](https://privacysandbox.google.com/private-advertising/attribution-reporting/attribution-reporting-debugging/part-3/) در privacysandbox.google.com (2023)
