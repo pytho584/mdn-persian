@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchManager: getIds() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchManager/getIds"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,29 +16,29 @@ browser-compat: api.BackgroundFetchManager.getIds
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`getIds()`** method of the {{domxref("BackgroundFetchManager")}} interface returns the IDs of all registered background fetches.
+متد **`getIds()`** از رابط {{domxref("BackgroundFetchManager")}} شناسه‌های تمام واکشی‌های پس‌زمینه ثبت‌شده را برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getIds()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with an {{jsxref('Array')}} of {{jsxref('String', 'strings')}}.
+یک {{jsxref("Promise")}} که با یک {{jsxref('Array')}} از {{jsxref('String', 'رشته‌ها')}} حل می‌شود.
 
-### Exceptions
+### استثناها
 
-None.
+هیچ‌کدام.
 
-## Examples
+## مثال‌ها
 
-The following examples shows how to retrieve the IDs of all registered background fetches. With an active [service worker](/en-US/docs/Web/API/ServiceWorker), use the {{domxref('ServiceWorkerRegistration.backgroundFetch')}} property to access the `BackgroundFetchManager` object and call its `getIds()` method.
+مثال زیر نحوه بازیابی شناسه‌های تمام واکشی‌های پس‌زمینه ثبت‌شده را نشان می‌دهد. با یک [service worker](/en-US/docs/Web/API/ServiceWorker) فعال، از ویژگی {{domxref('ServiceWorkerRegistration.backgroundFetch')}} برای دسترسی به شیء `BackgroundFetchManager` استفاده کنید و متد `getIds()` آن را فراخوانی کنید.
 
 ```js
 navigator.serviceWorker.ready.then(async (swReg) => {
@@ -46,10 +46,10 @@ navigator.serviceWorker.ready.then(async (swReg) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
