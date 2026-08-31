@@ -1,7 +1,7 @@
 ---
 title: "AudioSession"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioSession"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,20 +15,20 @@ browser-compat: api.AudioSession
 
 {{APIRef("Audio Session API")}}{{SeeCompatTable}}
 
-The **`AudioSession`** interface of the [Audio Session API](/en-US/docs/Web/API/Audio_Session_API) lets a web page declare the type of audio it is producing — for example music playback, a video call, or a short notification. The platform uses that declaration to decide how the page's audio and audio from other applications and tabs should coexist — whether to pause, duck (lower the volume), or play in parallel.
+رابط **`AudioSession`** از [API Audio Session](/en-US/docs/Web/API/Audio_Session_API) به یک صفحه وب اجازه می‌دهد نوع صدایی را که تولید می‌کند اعلام کند — برای مثال پخش موسیقی، تماس ویدیویی، یا یک اعلان کوتاه. پلتفرم از این اعلام برای تصمیم‌گیری درباره نحوه‌ی همزیستی صدای صفحه و صدای سایر برنامه‌ها و تب‌ها استفاده می‌کند — اینکه آیا صدا را مکث کند، کاهش دهد (duck) یا به صورت موازی پخش کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("AudioSession.type")}} {{Experimental_Inline}}
-  - : A string representing the type of the audio session. Possible values include `"auto"`, `"playback"`, `"transient"`, `"transient-solo"`, `"ambient"`, and `"play-and-record"`.
+  - : رشته‌ای است که نوع جلسه صوتی را نشان می‌دهد. مقادیر احتمالی شامل `"auto"`, `"playback"`, `"transient"`, `"transient-solo"`, `"ambient"` و `"play-and-record"` هستند.
 
-## Examples
+## مثال‌ها
 
-### Setting the audio session type for a video conferencing app
+### تنظیم نوع جلسه صوتی برای یک برنامه کنفرانس ویدیویی
 
-The following example sets the audio session type to `"play-and-record"` for a video conferencing application. On supporting platforms, this signals that the page needs simultaneous playback and recording, which may cause the system to route audio through the correct output (for example, earpiece instead of speaker on mobile devices) and prevent other applications' audio from interrupting the call.
+مثال زیر نوع جلسه صوتی را برای یک برنامه کنفرانس ویدیویی روی `"play-and-record"` تنظیم می‌کند. در پلتفرم‌های پشتیبانی‌شده، این سیگنال می‌دهد که صفحه به پخش و ضبط همزمان نیاز دارد، که ممکن است باعث شود سیستم صدا را از طریق خروجی مناسب هدایت کند (مثلاً گوشی به جای بلندگو در دستگاه‌های تلفن همراه) و از قطع شدن صدای سایر برنامه‌ها در طول تماس جلوگیری کند.
 
 ```js
 navigator.audioSession.type = "play-and-record";
@@ -45,15 +45,15 @@ const stream = await navigator.mediaDevices.getUserMedia({
 localVideo.srcObject = stream;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Navigator.audioSession")}}
 - [Audio Session API](/en-US/docs/Web/API/Audio_Session_API)
