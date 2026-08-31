@@ -1,18 +1,14 @@
 ---
 title: "ARIA: checkbox role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role"
-status: "needs-translation"
----
-
----
-title: "ARIA: checkbox role"
+translated_by: "n8n + AI"
 short-title: checkbox
 slug: Web/Accessibility/ARIA/Reference/Roles/checkbox_role
 page-type: aria-role
 sidebar: accessibilitysidebar
 ---
 
-The `checkbox` role is for checkable interactive controls. Elements containing `role="checkbox"` must also include the [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) attribute to expose the checkbox's state to assistive technology.
+نقش `checkbox` برای کنترل‌های تعاملی قابل علامت‌گذاری است. عناصری که حاوی `role="checkbox"` هستند باید شامل ویژگی [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) باشند تا وضعیت چک‌باکس را به فناوری کمکی نشان دهند.
 
 ```html
 <span
@@ -24,75 +20,75 @@ The `checkbox` role is for checkable interactive controls. Elements containing `
 ```
 
 > [!NOTE]
-> The first rule of ARIA is if a native HTML element or attribute has the semantics and behavior you require, use it instead of re-purposing an element and adding ARIA. Instead use the native [HTML checkbox of `<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox) (with an associated {{HTMLElement('label')}}), which natively provides all the functionality required:
+> اولین قانون ARIA این است که اگر یک عنصر یا ویژگی بومی HTML دارای معناشناسی و رفتار مورد نیاز شما است، از آن استفاده کنید به جای اینکه یک عنصر را تغییر کاربری داده و ARIA اضافه کنید. به جای آن از [چک‌باکس HTML `<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox) (با یک {{HTMLElement('label')}} مرتبط) استفاده کنید که به صورت بومی تمام عملکرد مورد نیاز را فراهم می‌کند:
 
 ```html
 <input type="checkbox" id="chk1-label" name="RememberPreferences" />
 <label for="chk1-label">Remember my preferences</label>
 ```
 
-## Description
+## توضیحات
 
-The native HTML checkbox ([`<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox)) form control had two states ("checked" or "not checked"), with an [`indeterminate`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox#indeterminate_state_checkboxes) state settable via JavaScript. Similarly, an element with `role="checkbox"` can expose three states through the `aria-checked` attribute: `true`, `false`, or `mixed`.
+کنترل فرم چک‌باکس بومی HTML ([`<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox)) دو حالت داشت ("علامت‌خورده" یا "علامت‌نخورده")، با یک حالت [`indeterminate`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox#indeterminate_state_checkboxes) که از طریق جاوااسکریپت قابل تنظیم است. به طور مشابه، یک عنصر با `role="checkbox"` می‌تواند سه حالت را از طریق ویژگی `aria-checked` نشان دهد: `true`، `false` یا `mixed`.
 
-Since a checkbox is an interactive control, it must be focusable and keyboard accessible. If the role is applied to a non-focusable element, use the [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) attribute to change this. The expected keyboard shortcut for activating a checkbox is the <kbd>Space</kbd> key.
+از آنجایی که چک‌باکس یک کنترل تعاملی است، باید قابل فوکوس و قابل دسترس از طریق صفحه‌کلید باشد. اگر نقش به یک عنصر غیرقابل فوکوس اعمال می‌شود، از ویژگی [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) برای تغییر این وضعیت استفاده کنید. میانبر مورد انتظار صفحه‌کلید برای فعال کردن یک چک‌باکس کلید <kbd>Space</kbd> است.
 
-The developer is required to change the value of the `aria-checked` attribute dynamically when the checkbox is activated.
+توسعه‌دهنده موظف است مقدار ویژگی `aria-checked` را به صورت پویا در هنگام فعال شدن چک‌باکس تغییر دهد.
 
-### All descendants are presentational
+### همه فرزندان نمایشی هستند
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in a `checkbox`. To deal with this limitation, browsers, automatically apply role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) to all descendant elements of any `checkbox` element as it is a role that does not support semantic children.
+برخی از انواع اجزای رابط کاربری وجود دارند که وقتی در API دسترس‌پذیری پلتفرم نمایش داده می‌شوند، فقط می‌توانند حاوی متن باشند. APIهای دسترس‌پذیری راهی برای نمایش عناصر معنایی موجود در یک `checkbox` ندارند. برای مقابله با این محدودیت، مرورگرها به طور خودکار نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را به تمام عناصر فرزند هر عنصر `checkbox` اعمال می‌کنند، زیرا این نقشی است که از فرزندان معنایی پشتیبانی نمی‌کند.
 
-For example, consider the following `checkbox` element, which contains a heading.
+به عنوان مثال، عنصر `checkbox` زیر را در نظر بگیرید که شامل یک عنوان است.
 
 ```html
 <div role="checkbox"><h6>Name of my checkbox</h6></div>
 ```
 
-Because descendants of `checkbox` are presentational, the following code is equivalent:
+از آنجایی که فرزندان `checkbox` نمایشی هستند، کد زیر معادل است:
 
 ```html
 <div role="checkbox"><h6 role="presentation">Name of my checkbox</h6></div>
 ```
 
-From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree):
+از دیدگاه کاربر فناوری کمکی، عنوان وجود ندارد زیرا قطعه کدهای قبلی با موارد زیر در [درخت دسترس‌پذیری](/en-US/docs/Glossary/Accessibility_tree) معادل هستند:
 
 ```html
 <div role="checkbox">Name of my checkbox</div>
 ```
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های WAI-ARIA مرتبط
 
 - [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked)
-  - : The value of `aria-checked` defines the state of a checkbox. This attribute has one of three possible values:
+  - : مقدار `aria-checked` وضعیت یک چک‌باکس را تعریف می‌کند. این ویژگی یکی از سه مقدار ممکن را دارد:
     - `true`
-      - : The checkbox is checked.
+      - : چک‌باکس علامت‌خورده است.
     - `false`
-      - : The checkbox is not checked.
+      - : چک‌باکس علامت‌نخورده است.
     - `mixed`
-      - : The checkbox is partially checked, or indeterminate.
+      - : چک‌باکس تا حدی علامت‌خورده یا نامشخص است.
 
 - `tabindex="0"`
-  - : Used to make it focusable so the assistive technology user can tab to it and start reading right away.
+  - : برای قابل فوکوس کردن آن استفاده می‌شود تا کاربر فناوری کمکی بتواند با کلید Tab به آن برسد و بلافاصله خواندن را شروع کند.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-| Key              | Function               |
+| کلید              | عملکرد               |
 | ---------------- | ---------------------- |
-| <kbd>Space</kbd> | Activates the checkbox |
+| <kbd>Space</kbd> | چک‌باکس را فعال می‌کند |
 
-### Required JavaScript
+### جاوااسکریپت مورد نیاز
 
-#### Required event handlers
+#### کنترل‌کننده‌های رویداد مورد نیاز
 
 - `onclick`
-  - : Handle mouse clicks on both the checkbox and the associated label that will change the state of the checkbox by changing the value of the `aria-checked` attribute and the appearance of the checkbox so it appears checked or unchecked to the sighted user
+  - : کلیک‌های ماوس روی چک‌باکس و برچسب مرتبط را مدیریت می‌کند که وضعیت چک‌باکس را با تغییر مقدار ویژگی `aria-checked` و ظاهر چک‌باکس تغییر می‌دهد تا برای کاربر بینا علامت‌خورده یا علامت‌نخورده به نظر برسد.
 - `onKeyDown`
-  - : Handle the case where the user presses the <kbd>Space</kbd> key to change the state of the checkbox by changing the value of the `aria-checked` attribute and the appearance of the checkbox so it appears checked or unchecked to the sighted user
+  - : موردی را مدیریت می‌کند که کاربر کلید <kbd>Space</kbd> را فشار می‌دهد تا وضعیت چک‌باکس را با تغییر مقدار ویژگی `aria-checked` و ظاهر چک‌باکس تغییر دهد تا برای کاربر بینا علامت‌خورده یا علامت‌نخورده به نظر برسد.
 
-## Examples
+## مثال‌ها
 
-The following example creates an otherwise non-semantic checkbox element using CSS and JavaScript to handle the checked or unchecked status of the element.
+مثال زیر یک عنصر چک‌باکس غیر معنایی را با استفاده از CSS و جاوااسکریپت ایجاد می‌کند تا وضعیت علامت‌خورده یا علامت‌نخورده عنصر را مدیریت کند.
 
 ### HTML
 
@@ -159,31 +155,31 @@ label.addEventListener("click", changeCheckbox);
 
 {{EmbedLiveSample("Examples", 230, 250)}}
 
-## Accessibility concerns
+## ملاحظات دسترس‌پذیری
 
-When the `checkbox` role is added to an element, the user agent should do the following:
+هنگامی که نقش `checkbox` به یک عنصر اضافه می‌شود، عامل کاربر باید موارد زیر را انجام دهد:
 
-- Expose the element as having a `checkbox` role in the operating system's accessibility API.
-- When the `aria-checked` value changes, send an accessible state changed event.
+- عنصر را به عنوان دارای نقش `checkbox` در API دسترس‌پذیری سیستم عامل نشان دهد.
+- هنگامی که مقدار `aria-checked` تغییر می‌کند، یک رویداد تغییر حالت قابل دسترس ارسال کند.
 
-Assistive technology products should do the following:
+محصولات فناوری کمکی باید موارد زیر را انجام دهند:
 
-- Screen readers should announce the element as a checkbox, and optionally provide instructions on how to activate it.
+- صفحه‌خوان‌ها باید عنصر را به عنوان یک چک‌باکس اعلام کنند و در صورت تمایل دستورالعمل‌هایی برای فعال کردن آن ارائه دهند.
 
-People implementing checkboxes should do the following:
+افرادی که چک‌باکس‌ها را پیاده‌سازی می‌کنند باید موارد زیر را انجام دهند:
 
-- Ensure that the checkbox can be reached and interacted with by both keyboard controls and clicks
-- Keep the `aria-checked` attribute up to date following user interactions
-- Provide styles that indicate when the checkbox has focus
+- اطمینان حاصل کنند که چک‌باکس با کنترل‌های صفحه‌کلید و کلیک‌ها قابل دسترسی و تعامل است.
+- ویژگی `aria-checked` را پس از تعاملات کاربر به‌روز نگه دارند.
+- سبک‌هایی ارائه دهند که نشان دهد چک‌باکس فوکوس دارد.
 
 > [!NOTE]
-> Opinions may differ on how assistive technology should handle this technique. The information provided above is one of those opinions and may change.
+> نظرات ممکن است در مورد نحوه برخورد فناوری کمکی با این تکنیک متفاوت باشد. اطلاعات ارائه شده در بالا یکی از این نظرات است و ممکن است تغییر کند.
 
-## Best practices
+## بهترین روش‌ها
 
-The first rule of ARIA is: if a native HTML element or attribute has the semantics and behavior you require, use it instead of re-purposing an element and adding an ARIA role, state or property to make it accessible. As such, it is recommended to use the native [HTML checkbox](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox) using form control instead of recreating a checkbox's functionality with JavaScript and ARIA.
+اولین قانون ARIA این است: اگر یک عنصر یا ویژگی بومی HTML دارای معناشناسی و رفتار مورد نیاز شما است، از آن استفاده کنید به جای اینکه یک عنصر را تغییر کاربری داده و یک نقش، حالت یا ویژگی ARIA اضافه کنید تا آن را قابل دسترس کنید. از این رو، توصیه می‌شود از [چک‌باکس HTML](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox) با استفاده از کنترل فرم استفاده کنید به جای بازآفرینی عملکرد یک چک‌باکس با جاوااسکریپت و ARIA.
 
-## See also
+## همچنین ببینید
 
 - [`<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox)
 - [ARIA: `radio` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role)
