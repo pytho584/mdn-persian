@@ -1,11 +1,5 @@
 ---
 title: "ARIA: aria-valuemin attribute"
-source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin"
-status: "needs-translation"
----
-
----
-title: "ARIA: aria-valuemin attribute"
 short-title: aria-valuemin
 slug: Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin
 page-type: aria-attribute
@@ -13,36 +7,34 @@ spec-urls: https://w3c.github.io/aria/#aria-valuemin
 sidebar: accessibilitysidebar
 ---
 
-The `aria-valuemin` attribute defines the minimum allowed value for a range widget.
+ویژگی `aria-valuemin` حداقل مقدار مجاز را برای یک ویجت محدوده تعریف می‌کند.
 
-## Description
+این ویژگی مشابه ویژگی `min` در عناصر {{HTMLElement('progress')}}، {{HTMLElement('meter')}} و {{HTMLElement('input')}} از نوع [`range`](/en-US/docs/Web/HTML/Reference/Elements/input/range)، [`number`](/en-US/docs/Web/HTML/Reference/Elements/input/number) و تمام انواع تاریخ-زمان است.
 
-The `aria-valuemin` attribute defines the minimum value allowed for range widgets. It is similar to the `min` attribute of {{HTMLElement('progress')}}, {{HTMLElement('meter')}}, and {{HTMLElement('input')}} of type [`range`](/en-US/docs/Web/HTML/Reference/Elements/input/range), [`number`](/en-US/docs/Web/HTML/Reference/Elements/input/number) and all the date-time types.
+هنگام ایجاد یک نقش از نوع محدوده، از جمله [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)، [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role)، [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role) و [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role) روی یک عنصر غیرمعنایی، `aria-valuemin` امکان تعریف حداقلی کمتر از حداکثر مقدار را فراهم می‌کند و یک ویژگی ضروری برای `slider`، `scrollbar` و `spinbutton` است.
 
-When creating a range type role, including [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role), [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role), [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role), and [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role) on a non-semantic element, the `aria-valuemin` enables defining a minimum that is less than the maximum value and is a required attribute of `slider`, `scrollbar` and `spinbutton`.
+اعلان حداقل و حداکثر مقادیر به فناوری‌های کمکی اجازه می‌دهد تا اندازه محدوده را به کاربران منتقل کنند.
 
-Declaring the minimum and maximum values allows assistive technologies to convey the size of the range to users.
-
-The maximum value is defined with [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax).
+حداکثر مقدار با [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) تعریف می‌شود.
 
 > [!WARNING]
-> The [`range`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role) role itself should **NOT** be used as it is an ["abstract"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles). The `aria-valuemin` attribute is used on all of the range roles subtypes.
+> خود نقش [`range`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role) **نباید** استفاده شود زیرا یک [نقش «انتزاعی»](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles) است. ویژگی `aria-valuemin` روی همه زیرنوع‌های نقش محدوده استفاده می‌شود.
 
-## Values
+## مقادیر
 
 - `<number>`
-  - : A decimal number, below the maximum value.
+  - : یک عدد اعشاری، پایین‌تر از حداکثر مقدار.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaValueMin")}}
-  - : The [`ariaValueMin`](/en-US/docs/Web/API/Element/ariaValueMin) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-valuemin` attribute.
+  - : ویژگی [`ariaValueMin`](/en-US/docs/Web/API/Element/ariaValueMin) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-valuemin` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaValueMin")}}
-  - : The [`ariaValueMin`](/en-US/docs/Web/API/ElementInternals/ariaValueMin) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-valuemin` attribute.
+  - : ویژگی [`ariaValueMin`](/en-US/docs/Web/API/ElementInternals/ariaValueMin) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-valuemin` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+مورد استفاده در نقش‌ها:
 
 - [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)
 - [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role)
@@ -50,7 +42,7 @@ Used in roles:
 - [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
 - [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
 
-Inherited into roles:
+به ارث رفته در نقش‌ها:
 
 - [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)
 - [`progressbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role)
@@ -58,13 +50,13 @@ Inherited into roles:
 - [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
 - [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [`range` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role)
-- [`<input type="range>` element `min` attribute](/en-US/docs/Web/HTML/Reference/Elements/input/range#min)
+- [نقش `range`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role)
+- [ویژگی `min` عنصر `<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range#min)
 - [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax)
 - [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow)
