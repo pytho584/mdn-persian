@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRegistration: result property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/result"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,33 +16,33 @@ browser-compat: api.BackgroundFetchRegistration.result
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`result`** read-only property of the {{domxref("BackgroundFetchRegistration")}} interface returns a string indicating whether the background fetch was successful or failed.
+ویژگی فقط خواندنی **`result`** از رابط {{domxref("BackgroundFetchRegistration")}} یک رشته برمی‌گرداند که نشان می‌دهد واکشی پس‌زمینه موفقیت‌آمیز بوده یا ناموفق.
 
-If the value of this property changes, the [progress](/en-US/docs/Web/API/BackgroundFetchRegistration/progress_event) event is fired at the associated {{domxref("BackgroundFetchRegistration")}} object.
+اگر مقدار این ویژگی تغییر کند، رویداد [progress](/en-US/docs/Web/API/BackgroundFetchRegistration/progress_event) در شیء {{domxref("BackgroundFetchRegistration")}} مرتبط فعال می‌شود.
 
-## Value
+## مقدار
 
-One of the following strings:
+یکی از رشته‌های زیر:
 
 - `""`
-  - : The fetch is active so there is no result.
+  - : واکشی فعال است بنابراین نتیجه‌ای وجود ندارد.
 - `"success"`
-  - : The background fetch was successful.
+  - : واکشی پس‌زمینه موفقیت‌آمیز بود.
 - `"failure"`
-  - : The background fetch failed. This only appears when there is no ability for the browser to retry.
+  - : واکشی پس‌زمینه ناموفق بود. این تنها زمانی ظاهر می‌شود که مرورگر قابلیت تلاش مجدد را نداشته باشد.
 
-## Examples
+## مثال‌ها
 
-Logging this property to the console returns a string indicating the status, or an empty string if the fetch is still active.
+ثبت این ویژگی در کنسول یک رشته را برمی‌گرداند که وضعیت را نشان می‌دهد، یا در صورت فعال بودن واکشی، یک رشته خالی.
 
 ```js
 console.log(bgFetch.result);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
