@@ -1,11 +1,5 @@
 ---
 title: "Client: url property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Client/url"
-status: "needs-translation"
----
-
----
-title: "Client: url property"
 short-title: url
 slug: Web/API/Client/url
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Client.url
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`url`** read-only property of the {{domxref("Client")}} interface returns the URL of the current service worker client.
+ویژگی فقط‌خواندنی **`url`** از رابط {{domxref("Client")}}، نشانی اینترنتی (URL) کلاینتِ فعلیِ service worker را بازمی‌گرداند.
 
-Note that the `url` property is not updated unless a new page is actually loaded. This means that it will not be updated if the user navigates within the same page using a URL fragment, or if a {{glossary("SPA", "single-page app (SPA)")}} intercepts a navigation event (for example, using the [Navigation API](/en-US/docs/Web/API/Navigation_API)) and updates the page content using client-side code.
+توجه داشته باشید که ویژگی `url` به‌روزرسانی نمی‌شود مگر اینکه یک صفحهٔ جدید واقعاً بارگذاری شود. این بدان معناست که اگر کاربر در همان صفحه با استفاده از قطعهٔ URL پیمایش کند، یا اگر یک برنامهٔ تک‌صفحه‌ای ({{glossary("SPA", "single-page app (SPA)")}}) یک رویداد پیمایش را رهگیری کند (مثلاً با استفاده از [Navigation API](/en-US/docs/Web/API/Navigation_API)) و محتوای صفحه را با کد سمت کلاینت به‌روزرسانی کند، این ویژگی تغییر نخواهد کرد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```js
 self.addEventListener("notificationclick", (event) => {
@@ -50,10 +44,10 @@ self.addEventListener("notificationclick", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
