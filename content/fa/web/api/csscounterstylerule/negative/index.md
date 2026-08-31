@@ -1,7 +1,5 @@
 ---
 title: "CSSCounterStyleRule: negative property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSCounterStyleRule/negative"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.CSSCounterStyleRule.negative
 
 {{APIRef("CSSOM")}}
 
-The **`negative`** property of the {{domxref("CSSCounterStyleRule")}} interface gets and sets the value of the {{cssxref("@counter-style/negative","negative")}} descriptor. If the descriptor does not have a value set, this attribute returns an empty string.
+ویژگی **`negative`** از رابط {{domxref("CSSCounterStyleRule")}} مقدار توصیفگر {{cssxref("@counter-style/negative","negative")}} را دریافت و تنظیم می‌کند. اگر برای این توصیفگر مقداری تعیین نشده باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-The following example shows a {{cssxref("@counter-style")}} rule. In JavaScript, `myRules[0]` is this `@counter-style` rule, returning `negative` gives us the value "-".
+مثال زیر یک قانون {{cssxref("@counter-style")}} را نشان می‌دهد. در جاوااسکریپت، `myRules[0]` همین قانون `@counter-style` است و فراخوانی `negative` مقدار «-» را به ما می‌دهد.
 
 ```css
 @counter-style neg {
@@ -37,10 +35,10 @@ let myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].negative); // "-"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
