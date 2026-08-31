@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: sampleRate property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/sampleRate"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,20 +14,16 @@ browser-compat: api.BaseAudioContext.sampleRate
 
 {{ APIRef("Web Audio API") }}
 
-The `sampleRate` property of the {{domxref("BaseAudioContext")}} interface returns a floating point number representing the sample rate, in samples per second, used by all nodes in this audio context.
-This limitation means that sample-rate converters are not supported.
+ویژگی `sampleRate` از رابط {{domxref("BaseAudioContext")}} یک عدد اعشاری برمی‌گرداند که نرخ نمونه‌برداری، بر حسب نمونه در ثانیه، مورد استفاده تمام گره‌ها در این زمینه صوتی را نشان می‌دهد. این محدودیت به این معناست که مبدل‌های نرخ نمونه‌برداری پشتیبانی نمی‌شوند.
 
-## Value
+## مقدار
 
-A floating point number indicating the audio context's sample rate, in samples per
-second.
+یک عدد اعشاری که نرخ نمونه‌برداری زمینه صوتی را بر حسب نمونه در ثانیه نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 > [!NOTE]
-> For a full Web Audio example implementation, see one of our
-> Web Audio Demos on the [MDN GitHub repo](https://github.com/mdn/webaudio-examples). Try entering
-> `audioCtx.sampleRate` into your browser console.
+> برای یک مثال کامل از پیاده‌سازی Web Audio، یکی از نمونه‌های Web Audio ما را در [MDN GitHub repo](https://github.com/mdn/webaudio-examples) ببینید. سعی کنید `audioCtx.sampleRate` را در کنسول مرورگر خود وارد کنید.
 
 ```js
 const audioCtx = new AudioContext();
@@ -38,14 +34,14 @@ const audioCtx = new AudioContext();
 console.log(audioCtx.sampleRate);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
