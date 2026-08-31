@@ -1,7 +1,7 @@
 ---
 title: "Bluetooth"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Bluetooth"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,27 +15,27 @@ browser-compat: api.Bluetooth
 
 {{APIRef("Bluetooth API")}}{{securecontext_header}}{{SeeCompatTable}}
 
-The **`Bluetooth`** interface of the [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) provides methods to query Bluetooth availability and request access to devices.
+رابط **`Bluetooth`** در [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) روش‌هایی برای بررسی در دسترس بودن بلوتوث و درخواست دسترسی به دستگاه‌ها فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent {{domxref("EventTarget")}}._
+_ویژگی‌ها را از والد خود، {{domxref("EventTarget")}}، به ارث می‌برد._
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("Bluetooth.getAvailability","Bluetooth.getAvailability()")}} {{Experimental_Inline}}
-  - : Returns a {{jsxref("Promise")}} that resolves to a boolean value indicating whether the user agent can support Bluetooth. Some user agents let the user configure an option that specifies what value is returned by this method.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که به یک مقدار بولی (Boolean) تبدیل می‌شود و نشان می‌دهد که آیا عامل کاربر (User Agent) می‌تواند از بلوتوث پشتیبانی کند یا خیر. برخی عامل‌های کاربر به کاربر اجازه می‌دهند گزینه‌ای را تنظیم کند که مشخص می‌کند این متد چه مقداری را برمی‌گرداند.
 - {{domxref("Bluetooth.getDevices","Bluetooth.getDevices()")}} {{Experimental_Inline}}
-  - : Returns a {{jsxref("Promise")}} that resolves to an array of {{domxref("BluetoothDevice")}}s this origin is allowed to access. Permission is obtained via previous calls to {{domxref("Bluetooth.requestDevice","Bluetooth.requestDevice()")}}.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که به آرایه‌ای از {{domxref("BluetoothDevice")}}ها تبدیل می‌شود که این مبدأ (origin) اجازه دسترسی به آن‌ها را دارد. مجوز از طریق فراخوانی‌های قبلی {{domxref("Bluetooth.requestDevice","Bluetooth.requestDevice()")}} به دست می‌آید.
 - {{domxref("Bluetooth.requestDevice","Bluetooth.requestDevice()")}} {{Experimental_Inline}}
-  - : Returns a {{jsxref("Promise")}} that resolves to a {{domxref("BluetoothDevice")}} object matching the specified options.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که به یک شیء {{domxref("BluetoothDevice")}} منطبق با گزینه‌های مشخص‌شده تبدیل می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
