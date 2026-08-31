@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: fontVariantCaps property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fontVariantCaps"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: fontVariantCaps property"
 short-title: fontVariantCaps
 slug: Web/API/CanvasRenderingContext2D/fontVariantCaps
 page-type: web-api-instance-property
@@ -14,41 +8,41 @@ browser-compat: api.CanvasRenderingContext2D.fontVariantCaps
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.fontVariantCaps`** property of the [Canvas API](/en-US/docs/Web/API/Canvas_API) specifies an alternative capitalization of the rendered text.
+ویژگی **`CanvasRenderingContext2D.fontVariantCaps`** از [Canvas API](/en-US/docs/Web/API/Canvas_API) یک حالت بزرگ‌نمایی جایگزین برای متن نمایش‌داده‌شده مشخص می‌کند.
 
-This corresponds to the CSS {{cssxref("font-variant-caps")}} property.
+این ویژگی معادل ویژگی CSS {{cssxref("font-variant-caps")}} است.
 
-## Value
+## مقدار
 
-The font alternative capitalization value, which is one of:
+مقدار حالت بزرگ‌نمایی جایگزین قلم، که یکی از موارد زیر است:
 
-- `normal` (default)
-  - : Deactivates of the use of alternate glyphs.
+- `normal` (پیش‌فرض)
+  - استفاده از گلیف‌های جایگزین را غیرفعال می‌کند.
 - `small-caps`
-  - : Enables display of small capitals (OpenType feature: `smcp`).
-    Small-caps glyphs typically use the form of uppercase letters but are reduced to the size of lowercase letters.
+  - نمایش حروف بزرگ کوچک (small capitals) را فعال می‌کند (ویژگی OpenType: `smcp`).
+    گلیف‌های حروف بزرگ کوچک معمولاً از شکل حروف بزرگ استفاده می‌کنند اما به اندازه حروف کوچک کاهش می‌یابند.
 - `all-small-caps`
-  - : Enables display of small capitals for both upper and lowercase letters (OpenType features: `c2sc`, `smcp`).
+  - نمایش حروف بزرگ کوچک را برای هر دو حرف بزرگ و کوچک فعال می‌کند (ویژگی‌های OpenType: `c2sc`, `smcp`).
 - `petite-caps`
-  - : Enables display of petite capitals (OpenType feature: `pcap`).
+  - نمایش حروف بزرگ ریز (petite capitals) را فعال می‌کند (ویژگی OpenType: `pcap`).
 - `all-petite-caps`
-  - : Enables display of petite capitals for both upper and lowercase letters (OpenType features: `c2pc`, `pcap`).
+  - نمایش حروف بزرگ ریز را برای هر دو حرف بزرگ و کوچک فعال می‌کند (ویژگی‌های OpenType: `c2pc`, `pcap`).
 - `unicase`
-  - : Enables display of mixture of small capitals for uppercase letters with normal lowercase letters (OpenType feature: `unic`).
+  - نمایش ترکیبی از حروف بزرگ کوچک برای حروف بزرگ با حروف کوچک معمولی را فعال می‌کند (ویژگی OpenType: `unic`).
 - `titling-caps`
-  - : Enables display of titling capitals (OpenType feature: `titl`).
-    Uppercase letter glyphs are often designed for use with lowercase letters.
-    When used in all uppercase titling sequences they can appear too strong.
-    Titling capitals are designed specifically for this situation.
+  - نمایش حروف بزرگ عنوان (titling capitals) را فعال می‌کند (ویژگی OpenType: `titl`).
+    گلیف‌های حروف بزرگ اغلب برای استفاده با حروف کوچک طراحی شده‌اند.
+    هنگامی که در دنباله‌های تمام‌بزرگ عنوان استفاده می‌شوند، ممکن است بیش از حد قوی به نظر برسند.
+    حروف بزرگ عنوان به طور خاص برای این وضعیت طراحی شده‌اند.
 
-The property can be used to get or set the font capitalization value.
+از این ویژگی می‌توان برای دریافت یا تنظیم مقدار بزرگ‌نمایی قلم استفاده کرد.
 
-Note that there are accessibility concerns with some of these, which are outlined in the corresponding [`font-variant-caps`](/en-US/docs/Web/CSS/Reference/Properties/font-variant-caps#accessibility) topic.
+توجه داشته باشید که برخی از این موارد نگرانی‌های دسترسی‌پذیری دارند که در مبحث مربوطه [`font-variant-caps`](/en-US/docs/Web/CSS/Reference/Properties/font-variant-caps#accessibility) توضیح داده شده‌اند.
 
-## Examples
+## مثال‌ها
 
-In this example we display the text "Hello World" using each of the supported values of the `fontVariantCaps` property.
-The value is also displayed for each case by reading the property.
+در این مثال متن "Hello World" را با استفاده از هر یک از مقادیر پشتیبانی‌شده ویژگی `fontVariantCaps` نمایش می‌دهیم.
+مقدار نیز برای هر مورد با خواندن ویژگی نمایش داده می‌شود.
 
 ### HTML
 
@@ -91,14 +85,14 @@ ctx.fontVariantCaps = "titling-caps";
 ctx.fillText(`Hello world (${ctx.fontVariantCaps})`, 5, 200);
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 700, 230) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
