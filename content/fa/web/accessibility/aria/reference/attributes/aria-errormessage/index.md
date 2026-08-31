@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-errormessage attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,29 +13,29 @@ spec-urls: https://w3c.github.io/aria/#aria-errormessage
 sidebar: accessibilitysidebar
 ---
 
-The `aria-errormessage` attribute on an object identifies the element(s) that provides an error message for that object.
+ویژگی `aria-errormessage` روی یک شیء، عنصر(هایی) را مشخص می‌کند که پیام خطا برای آن شیء را ارائه می‌دهند.
 
-## Description
+## توضیحات
 
-When there is a user-created error, you want to let the user know it exists and tell them how to fix it. There are two attributes you need to use: set [`aria-invalid="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid) to define the object as being in an error state, then add the `aria-errormessage` attribute with the value being the `id` of the element (or elements) containing the error message text for that object.
+وقتی خطایی از طرف کاربر ایجاد می‌شود، باید به کاربر اطلاع دهید که خطا وجود دارد و نحوه رفع آن را به او بگویید. دو ویژگی وجود دارد که باید استفاده کنید: [`aria-invalid="true"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid) را برای تعریف شیء به عنوان حالت خطا تنظیم کنید، سپس ویژگی `aria-errormessage` را با مقدار `id` عنصر (یا عناصری) که حاوی متن پیام خطا برای آن شیء است، اضافه کنید.
 
-The `aria-errormessage` attribute should only be used when the value of an object is not valid; when [`aria-invalid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid) is set to `true`. If the object is valid and you include the `aria-errormessage` attribute, make sure the element referenced is hidden, as the message it contains is not relevant.
+ویژگی `aria-errormessage` فقط زمانی باید استفاده شود که مقدار یک شیء معتبر نباشد؛ یعنی زمانی که [`aria-invalid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid) روی `true` تنظیم شده باشد. اگر شیء معتبر است و شما ویژگی `aria-errormessage` را اضافه کرده‌اید، مطمئن شوید که عنصر ارجاع‌داده‌شده پنهان است، زیرا پیام موجود در آن مرتبط نیست.
 
-When `aria-errormessage` is relevant, the element(s) it references must be visible so users can see or hear the error message.
+وقتی `aria-errormessage` مرتبط است، عنصر(هایی) که به آن ارجاع می‌دهد باید قابل مشاهده باشند تا کاربران بتوانند پیام خطا را ببینند یا بشنوند.
 
-Often times, you will want the element with the error message to be an [ARIA live region](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions), such as when an error message is displayed to users after they have provided an invalid value. The error message should describe what is wrong and inform the user what is required to make the object valid. Adding the error message as an ARIA live region informs assistive technologies that the user may benefit from the error message content even if the error message wouldn't otherwise be conveyed to the user.
+اغلب اوقات، می‌خواهید عنصر حاوی پیام خطا یک [ناحیه زنده ARIA](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) باشد، مانند زمانی که یک پیام خطا پس از ارائه مقدار نامعتبر به کاربر نمایش داده می‌شود. پیام خطا باید توضیح دهد که چه چیزی اشتباه است و به کاربر اطلاع دهد که برای معتبر کردن شیء چه چیزی لازم است. افزودن پیام خطا به عنوان یک ناحیه زنده ARIA به فناوری‌های کمکی اطلاع می‌دهد که کاربر ممکن است از محتوای پیام خطا بهره‌مند شود حتی اگر پیام خطا به طور دیگری به کاربر منتقل نشود.
 
-Include a visible error message and link the invalid object with the `aria-errormessage` attribute if the failure is visually apparent and an explicit description of the error is necessary.
+اگر شکست از نظر بصری آشکار است و توضیح صریح خطا ضروری است، یک پیام خطای قابل مشاهده قرار دهید و شیء نامعتبر را با ویژگی `aria-errormessage` پیوند دهید.
 
-## Example
+## مثال
 
-We create some styles to:
+ما چند استایل ایجاد می‌کنیم تا:
 
-1. Hide all error messages,
-2. Make invalid objects appear invalid, and
-3. Show error messages that are siblings coming after an invalid object.
+1. همه پیام‌های خطا را پنهان کنیم،
+2. اشیاء نامعتبر را به صورت نامعتبر نشان دهیم، و
+3. پیام‌های خطایی که خواهر/برادر بعد از یک شیء نامعتبر هستند را نشان دهیم.
 
-We use `aria-invalid="true"` to identify invalid objects:
+از `aria-invalid="true"` برای شناسایی اشیاء نامعتبر استفاده می‌کنیم:
 
 ```css
 .errormessage {
@@ -51,7 +51,7 @@ We use `aria-invalid="true"` to identify invalid objects:
 }
 ```
 
-When an object is invalid, we use JavaScript to add `aria-invalid="true"`. The above CSS makes the `.errormessage` following an invalid object become visible.
+وقتی یک شیء نامعتبر است، از جاوااسکریپت برای اضافه کردن `aria-invalid="true"` استفاده می‌کنیم. CSS بالا باعث می‌شود `.errormessage` که بعد از یک شیء نامعتبر قرار دارد قابل مشاهده شود.
 
 ```html
 <p>
@@ -66,25 +66,23 @@ When an object is invalid, we use JavaScript to add `aria-invalid="true"`. The a
 </p>
 ```
 
-When we went from valid to invalid, the only JavaScript change for this example was an update to `aria-invalid` on the email input object. As the error message follows the input and becomes visible and available on the accessibility tree, we are able to keep our example simple. We could have also applied an [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) property or used a live region roles such as [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role).
+وقتی از حالت معتبر به نامعتبر رفتیم، تنها تغییر جاوااسکریپت برای این مثال به‌روزرسانی `aria-invalid` روی شیء ورودی ایمیل بود. از آنجایی که پیام خطا بعد از ورودی قرار دارد و قابل مشاهده و در دسترس در درخت دسترسی‌پذیری می‌شود، توانستیم مثال خود را ساده نگه داریم. همچنین می‌توانستیم از یک ویژگی [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) یا یک نقش ناحیه زنده مانند [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role) استفاده کنیم.
 
-## Values
+## مقادیر
 
-- ID reference list
-  - : The `id` or space-separated list of element `id`s that contain the error message for the current element.
+- لیست ارجاع‌های ID
+  - : `id` یا لیست جدا شده با فاصله از `id`های عناصری که حاوی پیام خطا برای عنصر فعلی هستند.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaErrorMessageElements")}}
-  - : The `ariaErrorMessageElements` property is part of each element's interface.
-    Its value is an array of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-errormessage` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaErrorMessageElements` بخشی از رابط هر عنصر است. مقدار آن یک آرایه از زیرکلاس‌های {{domxref("Element")}} است که ارجاع‌های `id` در ویژگی `aria-errormessage` را منعکس می‌کند ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 - {{domxref("ElementInternals.ariaErrorMessageElements")}}
-  - : The `ariaErrorMessageElements` property is part of each custom element's interface.
-    Its value is an array of subclasses of {{domxref("Element")}} that reflect the `id` references in the `aria-errormessage` attribute ([with some caveats](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
+  - : ویژگی `ariaErrorMessageElements` بخشی از رابط هر عنصر سفارشی است. مقدار آن یک آرایه از زیرکلاس‌های {{domxref("Element")}} است که ارجاع‌های `id` در ویژگی `aria-errormessage` را منعکس می‌کند ([با برخی ملاحظات](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references)).
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده شده در نقش‌ها:
 
 - [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role)
 - [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
@@ -97,7 +95,7 @@ Used in roles:
 - [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
 - [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role)
 
-Inherits from roles:
+به ارث برده از نقش‌ها:
 
 - [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
 - [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role)
@@ -105,13 +103,13 @@ Inherits from roles:
 - [`switch`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/switch_role)
 - [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- CSS {{CSSxref(':invalid')}} pseudoclass
+- شبه‌کلاس CSS {{CSSxref(':invalid')}}
 - [`aria-invalid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid)
 - [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby)
 - [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live)
