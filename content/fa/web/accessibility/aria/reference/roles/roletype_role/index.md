@@ -1,7 +1,7 @@
 ---
 title: "ARIA: roletype role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/roletype_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,22 +13,22 @@ spec-urls: https://w3c.github.io/aria/#roletype
 sidebar: accessibilitysidebar
 ---
 
-The **`roletype`** role, an [abstract role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles), is the base role from which all other ARIA roles inherit.
+نقش **`roletype`**، یک [نقش انتزاعی](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles)، نقش پایه‌ای است که تمام نقش‌های ARIA دیگر از آن ارث می‌برند.
 
 > [!WARNING]
-> The `roletype` role is an abstract role used for the ontology. It is included here for completeness of documentation. It should not be used by web authors.
+> نقش `roletype` یک نقش انتزاعی است که برای هستی‌شناسی استفاده می‌شود. برای کامل بودن مستندات در اینجا آورده شده است. نباید توسط نویسندگان وب استفاده شود.
 
-## Description
+## توضیحات
 
-The `roletype` role's properties describe the structural and functional purpose of objects that are assigned this role, or "instances". A role is a concept that can be used to understand and operate instances.
+ویژگی‌های نقش `roletype` هدف ساختاری و عملکردی اشیایی را توصیف می‌کنند که این نقش به آن‌ها اختصاص یافته است، یا «نمونه‌ها». نقش مفهومی است که می‌توان از آن برای درک و کار با نمونه‌ها استفاده کرد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: `structure` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structure_role)
-- [ARIA: `widget` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/widget_role)
-- [ARIA: `window` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/window_role)
-- The HTML [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) attribute
+- [نقش `structure` در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/structure_role)
+- [نقش `widget` در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/widget_role)
+- [نقش `window` در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/window_role)
+- ویژگی [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) در HTML
