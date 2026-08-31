@@ -1,7 +1,5 @@
 ---
 title: "CSSFunctionDescriptors: result property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFunctionDescriptors/result"
-status: "needs-translation"
 ---
 
 ---
@@ -16,26 +14,26 @@ browser-compat: api.CSSFunctionDescriptors.result
 
 {{ APIRef("CSSOM") }}{{SeeCompatTable}}
 
-The **`result`** property of the {{domxref("CSSFunctionDescriptors")}} interface returns a string representing a `result` descriptor, if one exists in the associated set of declarations.
+ویژگی **`result`** در رابط {{domxref("CSSFunctionDescriptors")}} یک رشته برمی‌گرداند که یک توصیف‌گر `result` را نمایش می‌دهد، در صورتی که در مجموعه اعلان‌های مرتبط وجود داشته باشد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-If no `result` descriptor exists in the associated set of declarations, an empty string is returned.
+اگر هیچ توصیف‌گر `result` در مجموعه اعلان‌های مرتبط وجود نداشته باشد، یک رشته خالی برگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("CSSFunctionDescriptors")}} reference page for an example.
+برای مثال، به صفحه مرجع اصلی {{domxref("CSSFunctionDescriptors")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@function")}}
