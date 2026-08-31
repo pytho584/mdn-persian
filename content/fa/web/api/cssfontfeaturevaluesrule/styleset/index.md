@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesRule: styleset property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesRule/styleset"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesRule: styleset property"
 short-title: styleset
 slug: Web/API/CSSFontFeatureValuesRule/styleset
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.CSSFontFeatureValuesRule.styleset
 
 {{ APIRef("CSSOM") }}{{SeeCompatTable}}
 
-The read-only **styleset** property of the {{domXRef("CSSFontFeatureValuesRule")}} interface contains a {{domXRef("CSSFontFeatureValuesMap")}} object representing the [user-defined-ident](/en-US/docs/Web/CSS/Reference/Values/custom-ident) and [feature index](/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings#optional_value) for a variable font which supports {{CSSXRef("font-variant-alternates", "styleset()", "#styleset")}}.
+ویژگی فقط‌خواندنی **styleset** در رابط {{domXRef("CSSFontFeatureValuesRule")}} شامل یک شیء {{domXRef("CSSFontFeatureValuesMap")}} است که [شناسه تعریف‌شده توسط کاربر](/en-US/docs/Web/CSS/Reference/Values/custom-ident) و [اندیس ویژگی](/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings#optional_value) را برای یک فونت متغیر که از {{CSSXRef("font-variant-alternates", "styleset()", "#styleset")}} پشتیبانی می‌کند، نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("CSSFontFeatureValuesMap")}} object.
+یک شیء {{domxref("CSSFontFeatureValuesMap")}}.
 
-Although the `styleset` property itself is read-only in the sense that you can't replace the `CSSFontFeatureValuesMap` object, you can still assign to the `styleset` property directly. You can also modify the values of the `styleset` using the [`CSSFontFeatureValuesMap` instance methods](/en-US/docs/Web/API/CSSFontFeatureValuesMap#instance_methods).
+اگرچه خود ویژگی `styleset` به این معنا فقط‌خواندنی است که نمی‌توانید شیء `CSSFontFeatureValuesMap` را جایگزین کنید، همچنان می‌توانید مستقیماً به ویژگی `styleset` مقدار نسبت دهید. همچنین می‌توانید مقادیر `styleset` را با استفاده از [متدهای نمونه `CSSFontFeatureValuesMap`](/en-US/docs/Web/API/CSSFontFeatureValuesMap#instance_methods) تغییر دهید.
 
-## Example
+## مثال
 
-### Basic usage
+### استفاده پایه
 
 #### CSS
 
@@ -38,27 +32,27 @@ Although the `styleset` property itself is read-only in the sense that you can't
 }
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
-// look for the first stylesheet and the first cssRule in that sheet
+// به دنبال اولین شیوه‌نامه و اولین قانون CSS در آن شیوه‌نامه می‌گردیم
 const myRule = document.styleSheets[0].cssRules[0];
-// check
+// بررسی
 if (myRule instanceof CSSFontFeatureValuesRule && myRule.styleset.size) {
-  // do something with the styleset
+  // کاری با styleset انجام دهید
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxRef("@font-feature-values","@styleset","#styleset")}}
-- {{cssxRef("font-variant-alternates","styleset()","#styleset")}} functional notation
+- نماد تابعی {{cssxRef("font-variant-alternates","styleset()","#styleset")}}
 - {{domxref("CSSFontFeatureValuesMap")}}
