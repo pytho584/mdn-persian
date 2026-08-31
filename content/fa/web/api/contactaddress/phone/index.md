@@ -1,11 +1,5 @@
 ---
 title: "ContactAddress: phone property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContactAddress/phone"
-status: "needs-translation"
----
-
----
-title: "ContactAddress: phone property"
 short-title: phone
 slug: Web/API/ContactAddress/phone
 page-type: web-api-instance-property
@@ -16,16 +10,16 @@ browser-compat: api.ContactAddress.phone
 
 {{securecontext_header}}{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
-The read-only **`phone`** property of the {{domxref("ContactAddress")}} interface returns a string containing the telephone number of the recipient or contact person at the address.
+ویژگی فقطخواندنی **`phone`** در رابط {{domxref("ContactAddress")}}، رشتهای شامل شماره تلفن گیرنده یا شخص تماس در آن آدرس را بازمیگرداند.
 
-## Value
+## مقدار
 
-A string containing the telephone number for the recipient of the shipment. If no phone number is available, this value is an empty string.
+یک رشته شامل شماره تلفن گیرنده محموله. اگر شماره تلفنی در دسترس نباشد، این مقدار یک رشته خالی است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
