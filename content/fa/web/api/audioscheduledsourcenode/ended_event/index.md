@@ -1,7 +1,7 @@
 ---
 title: "AudioScheduledSourceNode: ended event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioScheduledSourceNode/ended_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,15 +14,15 @@ browser-compat: api.AudioScheduledSourceNode.ended_event
 
 {{APIRef("Web Audio API")}}
 
-The `ended` event of the {{domxref("AudioScheduledSourceNode")}} interface is fired when the source node has stopped playing.
+رویداد `ended` از رابط {{domxref("AudioScheduledSourceNode")}} زمانی فعال می‌شود که گره منبع پخش خود را متوقف کرده است.
 
-This event occurs when an {{domxref("AudioScheduledSourceNode")}} has stopped playing, either because it's reached a predetermined stop time, the full duration of the audio has been performed, or because the entire buffer has been played.
+این رویداد زمانی رخ می‌دهد که یک {{domxref("AudioScheduledSourceNode")}} پخش خود را متوقف کرده است، خواه به دلیل رسیدن به زمان توقف از پیش تعیین‌شده، اجرای کامل مدت زمان صوتی، یا پخش کامل بافر باشد.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و منتشر نمی‌شود (bubble نمی‌کند).
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("ended", (event) => { })
@@ -30,13 +30,13 @@ addEventListener("ended", (event) => { })
 onended = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-In this simple example, an event listener for the `ended` event is set up to enable a "Start" button in the user interface when the node stops playing:
+در این مثال ساده، یک شنونده رویداد برای رویداد `ended` تنظیم شده است تا دکمه "شروع" را در رابط کاربری زمانی که گره پخش را متوقف می‌کند، فعال کند:
 
 ```js
 node.addEventListener("ended", () => {
@@ -44,7 +44,7 @@ node.addEventListener("ended", () => {
 });
 ```
 
-You can also set up the event handler using the `onended` property:
+همچنین می‌توانید کنترل‌کننده رویداد را با استفاده از ویژگی `onended` تنظیم کنید:
 
 ```js
 node.onended = () => {
@@ -52,26 +52,26 @@ node.onended = () => {
 };
 ```
 
-For an example of the ended event in use, see our [audio-buffer example on GitHub](https://mdn.github.io/webaudio-examples/audio-buffer/).
+برای مشاهده یک مثال از رویداد ended در عمل، به [مثال audio-buffer ما در GitHub](https://mdn.github.io/webaudio-examples/audio-buffer/) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## Related events
+## رویدادهای مرتبط
 
 - [audioprocess](/en-US/docs/Web/API/ScriptProcessorNode/audioprocess_event)
 - [complete](/en-US/docs/Web/API/OfflineAudioContext/complete_event)
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAudioElement")}}
 - {{domxref("HTMLVideoElement")}}
 - {{HTMLElement("audio")}}
 - {{HTMLElement("video")}}
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ended_event", 'ended')}} event
-- The MediaStreamTrack {{domxref("MediaStreamTrack.ended_event", 'ended')}} event
+- رویداد {{domxref("HTMLMediaElement.ended_event", 'ended')}} در HTMLMediaElement
+- رویداد {{domxref("MediaStreamTrack.ended_event", 'ended')}} در MediaStreamTrack
