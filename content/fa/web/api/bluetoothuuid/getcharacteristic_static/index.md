@@ -1,7 +1,7 @@
 ---
 title: "BluetoothUUID: getCharacteristic() static method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothUUID/getCharacteristic_static"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,41 +16,41 @@ browser-compat: api.BluetoothUUID.getCharacteristic_static
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}
 
-The **`getCharacteristic()`** static method of the {{domxref("BluetoothUUID")}} interface returns a UUID representing a registered characteristic when passed a name or the 16- or 32-bit UUID alias.
+**`getCharacteristic()`** 是 {{domxref("BluetoothUUID")}} 接口的一个静态方法，当传入一个名称或 16 位/32 位 UUID 别名时，返回一个表示已注册特征的 UUID。
 
-## Syntax
+## 语法
 
 ```js-nolint
 BluetoothUUID.getCharacteristic(name)
 ```
 
-### Parameters
+### 参数
 
 - `name`
-  - : A string containing the name of the characteristic.
+  - : 一个包含特征名称的字符串。
 
-### Return value
+### 返回值
 
-A 128-bit UUID.
+一个 128 位 UUID。
 
-### Exceptions
+### 异常
 
 - {{jsxref("TypeError")}}
-  - : Thrown if `name` does not appear in the registry.
+  - : 如果 `name` 不在注册表中，则抛出该异常。
 
-## Examples
+## 示例
 
-In the following example the UUID representing the characteristic named `apparent_wind_direction` is returned and printed to the console.
+在以下示例中，返回名为 `apparent_wind_direction` 的特征所对应的 UUID，并打印到控制台。
 
 ```js
 let result = BluetoothUUID.getCharacteristic("apparent_wind_direction");
 console.log(result); // "00002a73-0000-1000-8000-00805f9b34fb"
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
