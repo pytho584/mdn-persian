@@ -1,11 +1,5 @@
 ---
 title: "CSSImportRule: layerName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSImportRule/layerName"
-status: "needs-translation"
----
-
----
-title: "CSSImportRule: layerName property"
 short-title: layerName
 slug: Web/API/CSSImportRule/layerName
 page-type: web-api-instance-property
@@ -14,21 +8,19 @@ browser-compat: api.CSSImportRule.layerName
 
 {{APIRef("CSSOM")}}
 
-The read-only **`layerName`** property of the {{domxref("CSSImportRule")}} interface returns the name of the cascade layer created by the {{cssxref("@import")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+ویژگی فقط‑خواندنی **`layerName`** از رابط {{domxref("CSSImportRule")}} نام لایهٔ آبشاری ایجاد شده توسط [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) {{cssxref("@import")}} را برمی‌گرداند.
 
-If the created layer is anonymous, the string is empty (`""`), if no layer has been
-created, it is the `null` object.
+اگر لایهٔ ایجاد شده ناشناس (anonymous) باشد، رشته خالی (`""`) است؛ اگر هیچ لایه‌ای ایجاد نشده باشد، شیء `null` است.
 
-## Value
+## مقدار
 
-A string, that can be empty, or the `null` object.
+یک رشته که می‌تواند خالی باشد، یا شیء `null`.
 
-## Examples
+## مثال‌ها
 
-The document's single stylesheet contains three {{cssxref("@import")}} rules. The first declaration imports a stylesheet into a named layer. The second declaration imports a stylesheet into an anonymous layer. The third declaration imports a stylesheet without a layer declaration.
+شیوه‌نامهٔ (stylesheet) تنها سند شامل سه قاعدهٔ {{cssxref("@import")}} است. اعلام اول یک شیوه‌نامه را به یک لایهٔ نام‌دار (named layer) وارد می‌کند. اعلام دوم یک شیوه‌نامه را به یک لایهٔ ناشناس (anonymous layer) وارد می‌کند. اعلام سوم یک شیوه‌نامه را بدون اعلام لایه وارد می‌کند.
 
-The `layerName` property returns the name of the layer associated with the imported
-stylesheet.
+ویژگی `layerName` نام لایهٔ مرتبط با شیوه‌نامهٔ وارد شده را برمی‌گرداند.
 
 ```css
 @import "style1.css" layer(layer-1);
@@ -43,15 +35,15 @@ console.log(myRules[1].layerName); // returns `""` (an anonymous layer)
 console.log(myRules[2].layerName); // returns `null`
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- Learning area : [Cascade layers](/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)
-- {{cssxref("@import")}} and {{cssxref("@layer")}}
+- ناحیهٔ یادگیری: [لایه‌های آبشاری](/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)
+- {{cssxref("@import")}} و {{cssxref("@layer")}}
