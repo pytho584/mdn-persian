@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchUpdateUIEvent: updateUI() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchUpdateUIEvent/updateUI"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,50 +16,50 @@ browser-compat: api.BackgroundFetchUpdateUIEvent.updateUI
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`updateUI()`** method of the {{domxref("BackgroundFetchUpdateUIEvent")}} interface updates the title and icon in the user interface to show the status of a background fetch.
+متد **`updateUI()`** از رابط {{domxref("BackgroundFetchUpdateUIEvent")}} عنوان و آیکون را در رابط کاربری به‌روزرسانی می‌کند تا وضعیت یک واکشی پس‌زمینه را نمایش دهد.
 
-This method may only be run once, to notify the user on a failed or a successful fetch.
+این متد فقط یک بار می‌تواند اجرا شود تا کاربر را در صورت موفقیت یا شکست واکشی مطلع کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 updateUI()
 updateUI(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object containing any of the following:
+  - : شیئی شامل هر یک از موارد زیر:
     - `icons` {{optional_inline}}
-      - : A list of one or more image resources, containing icons for use in the user interface. An image resource is an object containing:
+      - : فهرستی از یک یا چند منبع تصویر، شامل آیکون‌ها برای استفاده در رابط کاربری. یک منبع تصویر شیئی است شامل:
         - `src`
-          - : A string which is a URL of an image.
+          - : یک رشته که آدرس URL یک تصویر است.
         - `sizes` {{optional_inline}}
-          - : A string which is equivalent to the `sizes` attribute of the {{HTMLElement("link")}} element.
+          - : یک رشته که معادل ویژگی `sizes` عنصر {{HTMLElement("link")}} است.
         - `type` {{optional_inline}}
-          - : A string containing an image MIME type.
+          - : یک رشته حاوی نوع MIME تصویر.
         - `label` {{optional_inline}}
-          - : A string providing a name for the associated image.
+          - : یک رشته که نامی برای تصویر مرتبط فراهم می‌کند.
 
     - `title` {{optional_inline}}
-      - : A string containing the new title of the user interface.
+      - : یک رشته حاوی عنوان جدید رابط کاربری.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}}.
+یک {{jsxref("Promise")}}.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if any of the following are true:
-    - The {{domxref("Event.isTrusted","isTrusted")}} property is `false`.
-    - The {{domxref("BackgroundFetchUpdateUIEvent")}} UI updated flag is already set, indicating that the `updateUI()` method has already been called.
-    - The {{domxref("BackgroundFetchUpdateUIEvent")}} is not active.
+  - : اگر هر یک از موارد زیر درست باشد پرتاب می‌شود:
+    - ویژگی {{domxref("Event.isTrusted","isTrusted")}} برابر `false` باشد.
+    - پرچم به‌روزرسانی رابط کاربری {{domxref("BackgroundFetchUpdateUIEvent")}} قبلاً تنظیم شده باشد، که نشان می‌دهد متد `updateUI()` قبلاً فراخوانی شده است.
+    - {{domxref("BackgroundFetchUpdateUIEvent")}} فعال نباشد.
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates updating the UI with a title and image icon on a successful fetch.
+مثال زیر نحوه به‌روزرسانی رابط کاربری با یک عنوان و آیکون تصویر در صورت موفقیت واکشی را نشان می‌دهد.
 
 ```js
 addEventListener("backgroundfetchsuccess", (event) => {
@@ -73,10 +73,10 @@ addEventListener("backgroundfetchsuccess", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
