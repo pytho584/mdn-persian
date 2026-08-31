@@ -1,7 +1,7 @@
 ---
 title: "ARIA: list role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,7 +13,7 @@ spec-urls: https://w3c.github.io/aria/#list
 sidebar: accessibilitysidebar
 ---
 
-The ARIA `list` role can be used to identify a list of items. It is normally used in conjunction with the `listitem` role, which is used to identify a list item contained inside the list.
+نقش ARIA `list` می‌تواند برای شناسایی فهرستی از موارد استفاده شود. این نقش معمولاً همراه با نقش `listitem` که برای شناسایی یک مورد فهرست درون فهرست استفاده می‌شود، به کار می‌رود.
 
 ```html
 <div role="list">
@@ -23,25 +23,25 @@ The ARIA `list` role can be used to identify a list of items. It is normally use
 </div>
 ```
 
-## Description
+## توضیحات
 
-Any content that consists of an outer container with a list of elements inside can be identified to assistive technologies using the `list` and `listitem` containers, respectively. A `list` can only contain zero or more `listitem` children.
+هر محتوایی که از یک ظرف بیرونی با فهرستی از عناصر درون آن تشکیل شده باشد، می‌تواند با استفاده از ظرف‌های `list` و `listitem` به ترتیب برای فناوری‌های کمکی شناسایی شود. یک `list` فقط می‌تواند صفر یا بیشتر فرزند `listitem` داشته باشد.
 
-There are no hard and fast rules about which elements you should use to mark up the list and list items, but you should make sure that the list items make sense in the context of a list, e.g., a shopping list, recipe steps, driving directions.
+هیچ قانون سخت و سریعی در مورد اینکه از کدام عناصر برای نشانه‌گذاری فهرست و موارد فهرست استفاده کنید وجود ندارد، اما باید مطمئن شوید که موارد فهرست در زمینه یک فهرست معنادار هستند، به عنوان مثال، فهرست خرید، مراحل دستور پخت، مسیرهای رانندگی.
 
 > [!NOTE]
-> Best practices dictate using the appropriate semantic HTML elements over ARIA roles to mark up lists and listitems — {{HTMLElement("ul")}}, {{HTMLElement("ol")}} and {{HTMLElement("li")}}. See [Best practices](#best_practices) for a full example.
+> بهترین روش‌ها حکم می‌کنند که از عناصر معنایی HTML مناسب به جای نقش‌های ARIA برای نشانه‌گذاری فهرست‌ها و موارد فهرست استفاده شود — {{HTMLElement("ul")}}، {{HTMLElement("ol")}} و {{HTMLElement("li")}}. برای یک مثال کامل، [بهترین روش‌ها](#best_practices) را ببینید.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
 - [`listitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listitem_role) role
-  - : A single item in a list. Elements with role `listitem` can only be found in an element with the role `list`.
+  - : یک مورد منفرد در یک فهرست. عناصر با نقش `listitem` فقط می‌توانند در عنصری با نقش `list` یافت شوند.
 
-## Best practices
+## بهترین روش‌ها
 
-Only use `role="list"` and `role="listitem"` if you have to — for example if you don't have control over your HTML but are able to improve accessibility dynamically after the fact with JavaScript.
+فقط در صورت لزوم از `role="list"` و `role="listitem"` استفاده کنید — به عنوان مثال اگر کنترلی بر HTML خود ندارید اما می‌توانید پس از آن به صورت پویا با جاوااسکریپت دسترسی‌پذیری را بهبود ببخشید.
 
-Unlike the HTML {{HTMLElement("ol")}} and {{HTMLElement("ul")}}, the ARIA `list` roles doesn't distinguish between ordered and unordered lists. If at all possible, you should use the appropriate semantic HTML elements to mark up a list ({{HTMLElement("ol")}} and {{HTMLElement("ul")}}) and list items ({{HTMLElement("li")}}). For example, our above example should be rewritten as follows:
+برخلاف {{HTMLElement("ol")}} و {{HTMLElement("ul")}} در HTML، نقش‌های `list` در ARIA بین فهرست‌های مرتب و نامرتب تمایز قائل نمی‌شوند. در صورت امکان، باید از عناصر معنایی HTML مناسب برای نشانه‌گذاری فهرست ({{HTMLElement("ol")}} و {{HTMLElement("ul")}}) و موارد فهرست ({{HTMLElement("li")}}) استفاده کنید. به عنوان مثال، مثال بالا باید به صورت زیر بازنویسی شود:
 
 ```html
 <ul>
@@ -51,7 +51,7 @@ Unlike the HTML {{HTMLElement("ol")}} and {{HTMLElement("ul")}}, the ARIA `list`
 </ul>
 ```
 
-or use an ordered list if the order of the list items matters:
+یا اگر ترتیب موارد فهرست مهم است از یک فهرست مرتب استفاده کنید:
 
 ```html
 <ol>
@@ -62,23 +62,23 @@ or use an ordered list if the order of the list items matters:
 ```
 
 > [!NOTE]
-> The ARIA `list` / `listitem` roles don't distinguish between ordered and unordered lists.
+> نقش‌های `list` / `listitem` در ARIA بین فهرست‌های مرتب و نامرتب تمایز قائل نمی‌شوند.
 
-As an aside, note that if you are using the semantic HTML elements of `<ol>` or `<ul>` and apply a role of [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role), each child `<li>` element inherits the `presentation` role because ARIA requires the `listitem` elements to have the parent `list` element. So, the `<li>` elements are not exposed to assistive technologies, but elements contained inside of those `<li>` elements, including nested lists, are visible to assistive technologies.
+به عنوان یک نکته جانبی، توجه داشته باشید که اگر از عناصر HTML معنایی `<ol>` یا `<ul>` استفاده می‌کنید و نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را اعمال می‌کنید، هر عنصر فرزند `<li>` نقش `presentation` را به ارث می‌برد، زیرا ARIA ایجاب می‌کند که عناصر `listitem` دارای عنصر والد `list` باشند. بنابراین، عناصر `<li>` در معرض فناوری‌های کمکی قرار نمی‌گیرند، اما عناصر موجود در داخل آن عناصر `<li>`، از جمله فهرست‌های تودرتو، برای فناوری‌های کمکی قابل مشاهده هستند.
 
 > [!NOTE]
-> If you are marking up a list of items that will function as a tabbed interface, you should instead use the [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role), [`tabpanel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role), and [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role) roles.
+> اگر در حال نشانه‌گذاری فهرستی از موارد هستید که به عنوان رابط برگه‌ای عمل می‌کنند، در عوض باید از نقش‌های [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role)، [`tabpanel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role) و [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role) استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement("ul")}} element
-- The {{HTMLElement("ol")}} element
-- The {{HTMLElement("li")}} element
+- عنصر {{HTMLElement("ul")}}
+- عنصر {{HTMLElement("ol")}}
+- عنصر {{HTMLElement("li")}}
 - [ARIA: listitem role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listitem_role)
-- [ARIA Lists examples](https://www.scottohara.me/blog/2018/05/26/aria-lists.html) — by Scott O'Hara
+- [ARIA Lists examples](https://www.scottohara.me/blog/2018/05/26/aria-lists.html) — توسط Scott O'Hara
 - [Accessibility Object Model](https://wicg.github.io/aom/spec/)
 - [ARIA in HTML](https://w3c.github.io/html-aria/)
