@@ -1,7 +1,7 @@
 ---
 title: "Pixel manipulation with canvas"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,22 +12,22 @@ page-type: guide
 
 {{DefaultAPISidebar("Canvas API")}} {{PreviousNext("Web/API/Canvas_API/Tutorial/Advanced_animations", "Web/API/Canvas_API/Tutorial/Optimizing_canvas")}}
 
-Until now we haven't looked at the actual pixels of our canvas. With the `ImageData` object you can directly read and write a data array to manipulate pixel data. We will also look into how image smoothing (anti-aliasing) can be controlled and how to save images from your canvas.
+تاکنون به پیکسل‌های واقعی بوم (canvas) نگاه نکرده‌ایم. با استفاده از شیء `ImageData` می‌توانید مستقیماً یک آرایه داده را برای دستکاری داده‌های پیکسل بخوانید و بنویسید. همچنین بررسی خواهیم کرد که چگونه می‌توان هموارسازی تصویر (anti-aliasing) را کنترل کرد و چگونه تصاویر را از بوم خود ذخیره کرد.
 
-## The ImageData object
+## شیء ImageData
 
-The {{domxref("ImageData")}} object represents the underlying pixel data of an area of a canvas object.
-Its `data` property returns a {{jsxref("Uint8ClampedArray")}} (or {{jsxref("Float16Array")}} if requested) which can be accessed to look at the raw pixel data; each pixel is represented by four one-byte values (red, green, blue, and alpha, in that order; that is, "RGBA" format). Each color component is represented by an integer between 0 and 255. Each component is assigned a consecutive index within the array, with the top left pixel's red component being at index 0 within the array. Pixels then proceed from left to right, then downward, throughout the array.
+شیء {{domxref("ImageData")}} داده‌های پیکسلی زیرین یک ناحیه از یک شیء canvas را نشان می‌دهد.
+ویژگی `data` آن یک {{jsxref("Uint8ClampedArray")}} (یا در صورت درخواست، {{jsxref("Float16Array")}}) برمی‌گرداند که می‌توان برای بررسی داده‌های خام پیکسل به آن دسترسی داشت؛ هر پیکسل با چهار مقدار یک‌بایتی (قرمز، سبز، آبی و آلفا، به همین ترتیب؛ یعنی قالب «RGBA») نمایش داده می‌شود. هر مؤلفه رنگی با یک عدد صحیح بین ۰ تا ۲۵۵ نمایش داده می‌شود. به هر مؤلفه یک ایندکس متوالی در آرایه اختصاص داده می‌شود، به طوری که مؤلفه قرمز پیکسل بالا-چپ در ایندکس ۰ آرایه قرار دارد. سپس پیکسل‌ها در سراسر آرایه از چپ به راست و سپس به سمت پایین ادامه می‌یابند.
 
-The {{jsxref("Uint8ClampedArray")}} contains `height` × `width` × 4 bytes of data, with index values ranging from 0 to (`height` × `width` × 4) - 1.
+{{jsxref("Uint8ClampedArray")}} شامل `height` × `width` × ۴ بایت داده است و مقادیر ایندکس از ۰ تا (`height` × `width` × ۴) - ۱ متغیر است.
 
-For example, to read the blue component's value from the pixel at column 200, row 50 in the image, you would do the following:
+برای مثال، برای خواندن مقدار مؤلفه آبی از پیکسل واقع در ستون ۲۰۰ و ردیف ۵۰ در تصویر، می‌توانید کار زیر را انجام دهید:
 
 ```js
 const blueComponent = imageData.data[50 * (imageData.width * 4) + 200 * 4 + 2];
 ```
 
-If given a set of coordinates (X and Y), you may end up doing something like this:
+اگر یک مجموعه مختصات (X و Y) داشته باشید، ممکن است به کاری مانند زیر برسید:
 
 ```js
 const xCoord = 50;
@@ -44,49 +44,49 @@ const colorIndices = getColorIndicesForCoord(xCoord, yCoord, canvasWidth);
 const [redIndex, greenIndex, blueIndex, alphaIndex] = colorIndices;
 ```
 
-You may also access the size of the pixel array in bytes by reading the `Uint8ClampedArray.length` attribute:
+همچنین می‌توانید با خواندن ویژگی `Uint8ClampedArray.length` به اندازه آرایه پیکسل بر حسب بایت دسترسی پیدا کنید:
 
 ```js
 const numBytes = imageData.data.length;
 ```
 
-## Creating an ImageData object
+## ایجاد یک شیء ImageData
 
-To create a new, blank `ImageData` object, you should use the {{domxref("CanvasRenderingContext2D.createImageData", "createImageData()")}} method. There are two versions of the `createImageData()` method:
+برای ایجاد یک شیء `ImageData` جدید و خالی، باید از متد {{domxref("CanvasRenderingContext2D.createImageData", "createImageData()")}} استفاده کنید. دو نسخه از متد `createImageData()` وجود دارد:
 
 ```js
 const myImageData = ctx.createImageData(width, height);
 ```
 
-This creates a new `ImageData` object with the specified dimensions. All pixels are preset to transparent.
+این کار یک شیء `ImageData` جدید با ابعاد مشخص‌شده ایجاد می‌کند. همه پیکسل‌ها از پیش شفاف تنظیم شده‌اند.
 
-You can also create a new `ImageData` object with the same dimensions as the object specified by `anotherImageData`. The new object's pixels are all preset to transparent black. **This does not copy the image data!**
+همچنین می‌توانید یک شیء `ImageData` جدید با همان ابعاد شیء مشخص‌شده توسط `anotherImageData` ایجاد کنید. پیکسل‌های شیء جدید همگی از پیش روی مشکی شفاف تنظیم شده‌اند. **این کار داده‌های تصویر را کپی نمی‌کند!**
 
 ```js
 const myImageData = ctx.createImageData(anotherImageData);
 ```
 
-## Getting the pixel data for a context
+## به‌دست آوردن داده‌های پیکسل برای یک بافت
 
-To obtain an `ImageData` object containing a copy of the pixel data for a canvas context, you can use the `getImageData()` method:
+برای دریافت یک شیء `ImageData` حاوی کپی‌ای از داده‌های پیکسل برای بافت canvas، می‌توانید از متد `getImageData()` استفاده کنید:
 
 ```js
 const myImageData = ctx.getImageData(left, top, width, height);
 ```
 
-This method returns an `ImageData` object representing the pixel data for the area of the canvas whose corners are represented by the points (`left`, `top`), (`left+width`, `top`), (`left`, `top+height`), and (`left+width`, `top+height`). The coordinates are specified in canvas coordinate space units.
+این متد یک شیء `ImageData` برمی‌گرداند که داده‌های پیکسل را برای ناحیه‌ای از canvas نشان می‌دهد که گوشه‌های آن با نقاط (`left`, `top`)، (`left+width`, `top`)، (`left`, `top+height`) و (`left+width`, `top+height`) نمایش داده می‌شود. مختصات در واحدهای فضای مختصات canvas مشخص می‌شوند.
 
 > [!NOTE]
-> Any pixels outside the canvas are returned as transparent black in the resulting `ImageData` object.
+> هر پیکسلی که خارج از canvas باشد، در شیء `ImageData` حاصل به صورت مشکی شفاف برگردانده می‌شود.
 
-This method is also demonstrated in the article [Manipulating video using canvas](/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas).
+این روش همچنین در مقاله [دستکاری ویدیو با استفاده از canvas](/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas) نشان داده شده است.
 
-## Creating a color picker
+## ایجاد یک انتخاب‌گر رنگ
 
-In this example, we are using the [`getImageData()`](/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData) method to display the color under the mouse cursor.
-For this, we need the current position of the mouse, then we look up the pixel data at that position in the pixel array that [`getImageData()`](/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData) provides.
-Finally, we use the array data to set a background color and a text in the `<div>` to display the color.
-Clicking on the image will do the same operation but uses the selected color.
+در این مثال، از متد [`getImageData()`](/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData) برای نمایش رنگ زیر نشانگر ماوس استفاده می‌کنیم.
+برای این کار، به موقعیت فعلی ماوس نیاز داریم، سپس داده‌های پیکسل را در آن موقعیت در آرایه پیکسلی که [`getImageData()`](/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData) فراهم می‌کند جستجو می‌کنیم.
+در نهایت، از داده‌های آرایه برای تنظیم رنگ پس‌زمینه و متنی در `<div>` برای نمایش رنگ استفاده می‌کنیم.
+کلیک روی تصویر همان عملیات را انجام می‌دهد اما از رنگ انتخاب‌شده استفاده می‌کند.
 
 ```html
 <table>
@@ -157,33 +157,32 @@ td {
 }
 ```
 
-Hover your cursor anywhere over the image to see the result in the "Hovered color" column.
-Click anywhere in the image to see the result in the "Selected color" column.
+نشانگر ماوس را هر جای تصویر ببرید تا نتیجه را در ستون «Hovered color» ببینید. روی هر نقطه از تصویر کلیک کنید تا نتیجه را در ستون «Selected color» مشاهده کنید.
 
 {{embedlivesample("creating_a_color_picker", , 300)}}
 
-## Painting pixel data into a context
+## نقاشی کردن داده‌های پیکسل در یک بافت
 
-You can use the [putImageData()](/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData) method to paint pixel data into a context:
+می‌توانید از متد [putImageData()](/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData) برای نقاشی کردن داده‌های پیکسل در یک بافت استفاده کنید:
 
 ```js
 ctx.putImageData(myImageData, dx, dy);
 ```
 
-The `dx` and `dy` parameters indicate the device coordinates within the context at which to paint the top left corner of the pixel data you wish to draw.
+پارامترهای `dx` و `dy` مختصات دستگاه را در داخل بافت نشان می‌دهند که در آن گوشه بالا-چپ داده‌های پیکسلی که می‌خواهید رسم کنید، نقاشی می‌شود.
 
-For example, to paint the entire image represented by `myImageData` to the top left corner of the context, you can do the following:
+برای مثال، برای نقاشی کردن کل تصویر نمایش‌داده‌شده توسط `myImageData` در گوشه بالا-چپ بافت، می‌توانید کار زیر را انجام دهید:
 
 ```js
 ctx.putImageData(myImageData, 0, 0);
 ```
 
-## Grayscaling and inverting colors
+## خاکستری‌سازی و وارونه‌سازی رنگ‌ها
 
-In this example, we iterate over all pixels to change their values, then we put the modified pixel array back onto the canvas using [putImageData()](/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData).
-The `invert` function subtracts each color from the max value, `255`.
-The `grayscale` function uses the average of red, green and blue. You can also use a weighted average, given by the formula `x = 0.299r + 0.587g + 0.114b`, for example.
-See [Grayscale](https://en.wikipedia.org/wiki/Grayscale) on Wikipedia for more information.
+در این مثال، روی همه پیکسل‌ها پیمایش می‌کنیم تا مقادیر آن‌ها را تغییر دهیم، سپس آرایه پیکسل اصلاح‌شده را با استفاده از [putImageData()](/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData) روی canvas بازمی‌گردانیم.
+تابع `invert` هر رنگ را از حداکثر مقدار، یعنی `255` کم می‌کند.
+تابع `grayscale` از میانگین قرمز، سبز و آبی استفاده می‌کند. همچنین می‌توانید از میانگین وزنی استفاده کنید، مثلاً با فرمول `x = 0.299r + 0.587g + 0.114b`.
+برای اطلاعات بیشتر، [Grayscale](https://en.wikipedia.org/wiki/Grayscale) را در ویکی‌پدیا ببینید.
 
 ```html
 <canvas id="canvas" width="300" height="227"></canvas>
@@ -275,13 +274,13 @@ for (const input of inputs) {
 }
 ```
 
-Click different options to view the result in action.
+برای مشاهده نتیجه به صورت عملی، گزینه‌های مختلف را کلیک کنید.
 
 {{embedlivesample("grayscaling_and_inverting_colors", , 300)}}
 
-## Zooming and anti-aliasing
+## بزرگ‌نمایی و ضدهموارسازی
 
-With the help of the {{domxref("CanvasRenderingContext2D.drawImage", "drawImage()")}} method, a second canvas, and the {{domxref("CanvasRenderingContext2D.imageSmoothingEnabled", "imageSmoothingEnabled")}} property, we are able to zoom in on our picture and see the details. A third canvas without {{domxref("CanvasRenderingContext2D.imageSmoothingEnabled", "imageSmoothingEnabled")}} is also drawn to allow a side by side comparison.
+با کمک متد {{domxref("CanvasRenderingContext2D.drawImage", "drawImage()")}}، یک canvas دوم و ویژگی {{domxref("CanvasRenderingContext2D.imageSmoothingEnabled", "imageSmoothingEnabled")}}، می‌توانیم روی تصویر خود بزرگنمایی کنیم و جزئیات را ببینیم. یک canvas سوم بدون {{domxref("CanvasRenderingContext2D.imageSmoothingEnabled", "imageSmoothingEnabled")}} نیز رسم می‌شود تا امکان مقایسه کنار هم فراهم شود.
 
 ```html
 <table>
@@ -314,8 +313,8 @@ body {
 }
 ```
 
-We get the position of the mouse and crop an image of 5 pixels left and above to 5 pixels right and below.
-Then we copy that one over to another canvas and resize the image to the size we want it to. In the zoom canvas we resize a 10×10 pixel crop of the original canvas to 200×200:
+موقعیت ماوس را می‌گیریم و تصویری به ابعاد ۵ پیکسل به چپ و بالا تا ۵ پیکسل به راست و پایین برش می‌دهیم.
+سپس آن را روی canvas دیگری کپی می‌کنیم و اندازه تصویر را به اندازه دلخواه تغییر می‌دهیم. در canvas بزرگنمایی، یک برش ۱۰×۱۰ پیکسل از canvas اصلی را به ۲۰۰×۲۰۰ تغییر اندازه می‌دهیم:
 
 ```js
 const img = new Image();
@@ -361,30 +360,29 @@ function draw(image) {
 
 {{embedlivesample("zooming_and_anti-aliasing", , 300)}}
 
-## Saving images
+## ذخیره تصاویر
 
-The {{domxref("HTMLCanvasElement")}} provides a `toDataURL()` method, which is useful when saving images. It returns a [data URL](/en-US/docs/Web/URI/Reference/Schemes/data) containing a representation of the image in the format specified by the `type` parameter (defaults to [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics)). The returned image is in a resolution of 96 dpi.
+{{domxref("HTMLCanvasElement")}} یک متد `toDataURL()` ارائه می‌دهد که برای ذخیره تصاویر مفید است. این متد یک [data URL](/en-US/docs/Web/URI/Reference/Schemes/data) شامل نمایشی از تصویر در قالبی که توسط پارامتر `type` مشخص شده است (پیش‌فرض [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics)) برمی‌گرداند. تصویر برگشتی در وضوح ۹۶ dpi است.
 
 > [!NOTE]
-> Be aware that if the canvas contains any pixels that were obtained from another {{Glossary("origin")}} without using CORS, the canvas is **tainted** and its contents can no longer be read and saved.
-> See [Security and tainted canvases](/en-US/docs/Web/HTML/How_to/CORS_enabled_image#security_and_tainted_canvases).
+> توجه داشته باشید که اگر canvas شامل هر پیکسلی باشد که از {{Glossary("origin")}} دیگری بدون استفاده از CORS به دست آمده باشد، canvas به وضعیت **آلوده (tainted)** در می‌آید و دیگر نمی‌توان محتوای آن را خواند و ذخیره کرد. به [مشکلات امنیتی و canvasهای آلوده](/en-US/docs/Web/HTML/How_to/CORS_enabled_image#security_and_tainted_canvases) مراجعه کنید.
 
 - {{domxref("HTMLCanvasElement.toDataURL", "canvas.toDataURL('image/png')")}}
-  - : Default setting. Creates a PNG image.
+  - : تنظیم پیش‌فرض. یک تصویر PNG ایجاد می‌کند.
 - {{domxref("HTMLCanvasElement.toDataURL", "canvas.toDataURL('image/jpeg', quality)")}}
-  - : Creates a JPG image. Optionally, you can provide a quality in the range from 0 to 1, with one being the best quality and with 0 almost not recognizable but small in file size.
+  - : یک تصویر JPG ایجاد می‌کند. به‌صورت اختیاری، می‌توانید کیفیتی در بازه ۰ تا ۱ ارائه دهید که ۱ بهترین کیفیت و ۰ تقریباً غیرقابل تشخیص اما با حجم فایل کوچک است.
 
-Once you have generated a data URL from your canvas, you are able to use it as the source of any {{HTMLElement("img")}} or put it into a hyperlink with a [download attribute](/en-US/docs/Web/HTML/Reference/Elements/a#download) to save it to disc, for example.
+هنگامی که یک data URL از canvas خود تولید کردید، می‌توانید از آن به عنوان منبع هر {{HTMLElement("img")}} استفاده کنید، یا مثلاً آن را در یک پیوند با [ویژگی download](/en-US/docs/Web/HTML/Reference/Elements/a#download) قرار دهید تا روی دیسک ذخیره شود.
 
-You can also create a {{domxref("Blob")}} from the canvas.
+همچنین می‌توانید یک {{domxref("Blob")}} از canvas ایجاد کنید.
 
 - {{domxref("HTMLCanvasElement.toBlob", "canvas.toBlob(callback, type, encoderOptions)")}}
-  - : Creates a `Blob` object representing the image contained in the canvas.
+  - : یک شیء `Blob` ایجاد می‌کند که تصویر موجود در canvas را نشان می‌دهد.
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ImageData")}}
-- [Manipulating video using canvas](/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas)
-- [Download Canvas API-Generated Images Using toBlob](https://www.digitalocean.com/community/tutorials/js-canvas-toblob)
+- [دستکاری ویدیو با استفاده از canvas](/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas)
+- [دانلود تصاویر تولیدشده با Canvas API با استفاده از toBlob](https://www.digitalocean.com/community/tutorials/js-canvas-toblob)
 
 {{PreviousNext("Web/API/Canvas_API/Tutorial/Advanced_animations", "Web/API/Canvas_API/Tutorial/Optimizing_canvas")}}
