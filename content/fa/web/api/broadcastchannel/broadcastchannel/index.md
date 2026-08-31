@@ -1,7 +1,7 @@
 ---
 title: "BroadcastChannel: BroadcastChannel() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/BroadcastChannel"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,38 +14,36 @@ browser-compat: api.BroadcastChannel.BroadcastChannel
 
 {{APIRef("BroadCastChannel API")}} {{AvailableInWorkers}}
 
-The **`BroadcastChannel()`** constructor creates a new
-{{domxref("BroadcastChannel")}} and connects it to the underlying channel.
+سازندهٔ **`BroadcastChannel()`** یک {{domxref("BroadcastChannel")}} جدید می‌سازد و آن را به کانال اصلی متصل می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new BroadcastChannel(channelName)
 ```
 
-### Parameters
+### پارامترها
 
 - `channelName`
-  - : A string representing the name of the channel; there is one
-    single channel with this name for all {{glossary("browsing context", "browsing contexts")}} with the same {{glossary("origin")}}.
+  - : رشته‌ای که نام کانال را نشان می‌دهد؛ برای همهٔ {{glossary("browsing context", "زمینه‌های مرور")}} با {{glossary("origin", "خاستگاه")}} یکسان، فقط یک کانال با این نام وجود دارد.
 
-## Examples
+## مثال‌ها
 
 ```js
-// create a new channel listening to the "internal_notification" channel.
+// ایجاد یک کانال جدید که به کانال "internal_notification" گوش می‌دهد.
 
 const bc = new BroadcastChannel("internal_notification");
 bc.postMessage("New listening connected!");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("BroadcastChannel")}}, the interface it belongs to.
+- {{domxref("BroadcastChannel")}}، واسطی که این به آن تعلق دارد.
