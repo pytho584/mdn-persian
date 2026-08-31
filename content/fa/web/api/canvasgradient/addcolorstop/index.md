@@ -1,7 +1,7 @@
 ---
 title: "CanvasGradient: addColorStop() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasGradient/addColorStop"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,42 +14,37 @@ browser-compat: api.CanvasGradient.addColorStop
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`CanvasGradient.addColorStop()`** method adds a new color stop,
-defined by an `offset` and a `color`, to a given canvas gradient.
+متد **`CanvasGradient.addColorStop()`** یک ایستگاه رنگی جدید، که توسط یک `offset` و یک `color` تعریف می‌شود، به یک گرادیان بوم اضافه می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 addColorStop(offset, color)
 ```
 
-### Parameters
+### پارامترها
 
 - `offset`
-  - : A number between `0` and `1`, inclusive, representing the
-    position of the color stop. `0` represents the start of the gradient and
-    `1` represents the end.
+  - : عددی بین `0` و `1`، به‌صورت شامل، که موقعیت ایستگاه رنگی را نشان می‌دهد. `0` شروع گرادیان و `1` پایان آن را نشان می‌دهد.
 - `color`
-  - : A [CSS](/en-US/docs/Web/CSS) {{cssxref("&lt;color&gt;")}} value
-    representing the color of the stop.
+  - : یک مقدار [CSS](/en-US/docs/Web/CSS) {{cssxref("&lt;color&gt;")}} که رنگ ایستگاه را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if `offset` is not between 0 and 1 (both included).
+  - : اگر `offset` بین 0 و 1 (هر دو شامل) نباشد، پرتاب می‌شود.
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if `color` cannot be parsed as a CSS {{cssxref("&lt;color&gt;")}} value.
+  - : اگر `color` نتواند به‌عنوان یک مقدار CSS {{cssxref("&lt;color&gt;")}} تجزیه شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Adding stops to a gradient
+### افزودن ایستگاه‌ها به یک گرادیان
 
-This example uses the `addColorStop` method to add stops to a linear
-{{domxref("CanvasGradient")}} object. The gradient is then used to fill a rectangle.
+این مثال از متد `addColorStop` برای افزودن ایستگاه‌ها به یک شیء خطی از نوع {{domxref("CanvasGradient")}} استفاده می‌کند. سپس گرادیان برای پر کردن یک مستطیل استفاده می‌شود.
 
 #### HTML
 
@@ -57,7 +52,7 @@ This example uses the `addColorStop` method to add stops to a linear
 <canvas id="canvas"></canvas>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -71,20 +66,20 @@ ctx.fillStyle = gradient;
 ctx.fillRect(10, 10, 200, 100);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Adding_stops_to_a_gradient', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasGradient")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasGradient")}}
 - {{domxref("CanvasRenderingContext2D.createLinearGradient()")}}
 - {{domxref("CanvasRenderingContext2D.createRadialGradient()")}}
