@@ -1,7 +1,7 @@
 ---
 title: "AudioDecoder: reset() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioDecoder/reset"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,34 +14,34 @@ browser-compat: api.AudioDecoder.reset
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`reset()`** method of the {{domxref("AudioDecoder")}} interface resets all states including configuration, control messages in the control message queue, and all pending callbacks.
+متد **`reset()`** در رابط {{domxref("AudioDecoder")}} همهٔ حالت‌ها از جمله پیکربندی، پیام‌های کنترلی در صف پیام‌های کنترلی و همهٔ فراخوانی‌های در انتظار را بازنشانی می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 reset()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-The following example resets the `AudioDecoder`.
+مثال زیر، `AudioDecoder` را بازنشانی می‌کند.
 
 ```js
 AudioDecoder.reset();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
