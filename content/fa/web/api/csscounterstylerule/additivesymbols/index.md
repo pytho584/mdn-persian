@@ -1,11 +1,5 @@
 ---
 title: "CSSCounterStyleRule: additiveSymbols property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSCounterStyleRule/additiveSymbols"
-status: "needs-translation"
----
-
----
-title: "CSSCounterStyleRule: additiveSymbols property"
 short-title: additiveSymbols
 slug: Web/API/CSSCounterStyleRule/additiveSymbols
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CSSCounterStyleRule.additiveSymbols
 
 {{APIRef("CSSOM")}}
 
-The **`additiveSymbols`** property of the {{domxref("CSSCounterStyleRule")}} interface gets and sets the value of the {{cssxref("@counter-style/additive-symbols","additive-symbols")}} descriptor. If the descriptor does not have a value set, this attribute returns an empty string.
+خاصیت **`additiveSymbols`** از رابط {{domxref("CSSCounterStyleRule")}} مقدار توصیف‌گر {{cssxref("@counter-style/additive-symbols","additive-symbols")}} را دریافت و تنظیم می‌کند. اگر توصیف‌گر مقداری تعیین نکرده باشد، این ویژگی یک رشته خالی برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-The following example shows a {{cssxref("@counter-style")}} rule. In JavaScript, `myRules[0]` is this `@counter-style` rule, returning `additiveSymbols` gives us the value " V 5, IV 4, I 1".
+مثال زیر یک قانون {{cssxref("@counter-style")}} را نشان می‌دهد. در جاوااسکریپت، `myRules[0]` همین قانون `@counter-style` است و `additiveSymbols` مقدار `" V 5, IV 4, I 1"` را برمی‌گرداند.
 
 ```css
 @counter-style additive-symbols-example {
@@ -39,10 +33,10 @@ let myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].additiveSymbols); // " V 5, IV 4, I 1"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
