@@ -1,7 +1,7 @@
 ---
 title: "CanvasCaptureMediaStreamTrack: requestFrame() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasCaptureMediaStreamTrack/requestFrame"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,40 +14,31 @@ browser-compat: api.CanvasCaptureMediaStreamTrack.requestFrame
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`requestFrame()`** method of the {{domxref("CanvasCaptureMediaStreamTrack")}} interface requests that a frame be captured from the canvas and sent to the stream.
+متد **`requestFrame()`** از رابط {{domxref("CanvasCaptureMediaStreamTrack")}} درخواست می‌کند که یک فریم از بوم گرفته شود و به جریان ارسال شود.
 
-Applications that need to carefully control
-the timing of rendering and frame capture can use `requestFrame()` to
-directly specify when it's time to capture a frame.
+برنامه‌هایی که نیاز به کنترل دقیق زمان‌بندی رندر و ضبط فریم دارند، می‌توانند برای مشخص کردن مستقیم زمان مناسب ضبط یک فریم، از `requestFrame()` استفاده کنند.
 
-To prevent automatic capture of frames, so that frames are only captured when
-`requestFrame()` is called, specify a value of 0 for the
-{{domxref("HTMLCanvasElement.captureStream", "captureStream()")}} method when creating
-the stream.
+برای جلوگیری از ضبط خودکار فریم‌ها، به‌طوری که فریم‌ها فقط زمانی که `requestFrame()` فراخوانی می‌شود ضبط شوند، هنگام ایجاد جریان، مقدار 0 را برای متد {{domxref("HTMLCanvasElement.captureStream", "captureStream()")}} مشخص کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 requestFrame()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Usage notes
+## یادداشت‌های استفاده
 
-There is currently an issue flagged in the specification pointing out that at this
-time, no exceptions are being thrown if the canvas isn't origin-clean. This may change
-in the future, so it would be wise to plan ahead and watch for exceptions such as
-`SecurityError` (although the specific error that might be thrown is not
-mentioned in the spec, this is a likely candidate).
+در حال حاضر یک مشکل در مشخصات علامت‌گذاری شده است که اشاره می‌کند در این زمان، اگر بوم از نظر مبدأ پاک (origin-clean) نباشد، هیچ استثنایی پرتاب نمی‌شود. این ممکن است در آینده تغییر کند؛ بنابراین عاقلانه است که از قبل برنامه‌ریزی کرده و مراقب استثناهایی مانند `SecurityError` باشید (اگرچه خطای خاصی که ممکن است پرتاب شود در مشخصات ذکر نشده است، اما این یک گزینه محتمل است).
 
-## Example
+## مثال
 
 ```js
 // Find the canvas element to capture
@@ -60,15 +51,15 @@ const stream = canvasElt.captureStream(25); // 25 FPS
 stream.getVideoTracks()[0].requestFrame();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("CanvasCaptureMediaStreamTrack")}}, the interface it belongs to.
+- {{domxref("CanvasCaptureMediaStreamTrack")}}، رابطی که این متد به آن تعلق دارد.
 - {{HTMLElement("canvas")}}
