@@ -1,7 +1,7 @@
 ---
 title: "AudioListener: positionX property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/positionX"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,27 +14,27 @@ browser-compat: api.AudioListener.positionX
 
 {{ APIRef("Web Audio API") }}
 
-The `positionX` read-only property of the {{ domxref("AudioListener") }} interface is an {{domxref("AudioParam")}} representing the x position of the listener in 3D cartesian space.
+ویژگی فقطخواندنی `positionX` در رابط {{ domxref("AudioListener") }} یک {{domxref("AudioParam")}} است که موقعیت x شنونده را در فضای دکارتی سه‌بعدی نشان می‌دهد.
 
 > [!NOTE]
-> The parameter is [_a-rate_](/en-US/docs/Web/API/AudioParam#a-rate) when used with a {{domxref("PannerNode")}} whose {{domxref("PannerNode.panningModel", "PannerNode")}} is set to equalpower, or [_k-rate_](/en-US/docs/Web/API/AudioParam#k-rate) otherwise.
+> پارامتر وقتی با یک {{domxref("PannerNode")}} که {{domxref("PannerNode.panningModel", "PannerNode")}} آن روی equalpower تنظیم شده است استفاده می‌شود، [_a-rate_](/en-US/docs/Web/API/AudioParam#a-rate) است، یا در غیر این صورت [_k-rate_](/en-US/docs/Web/API/AudioParam#k-rate).
 
-## Value
+## مقدار
 
-An {{domxref("AudioParam")}}. Its default value is 0, and it can range between positive and negative infinity.
+یک {{domxref("AudioParam")}}. مقدار پیش‌فرض آن ۰ است و می‌تواند در بازه‌ای از بی‌نهایت منفی تا بی‌نهایت مثبت قرار گیرد.
 
-## Examples
+## نمونه‌ها
 
-See [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) for example code.
+برای کد مثال، [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
