@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesRule: stylistic property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesRule/stylistic"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesRule: stylistic property"
 short-title: stylistic
 slug: Web/API/CSSFontFeatureValuesRule/stylistic
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.CSSFontFeatureValuesRule.stylistic
 
 {{ APIRef("CSSOM") }}{{SeeCompatTable}}
 
-The read-only **stylistic** property of the {{domXRef("CSSFontFeatureValuesRule")}} interface contains a {{domXRef("CSSFontFeatureValuesMap")}} object representing the [user-defined-ident](/en-US/docs/Web/CSS/Reference/Values/custom-ident) and [feature index](/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings#optional_value) for a variable font which supports {{CSSXRef("font-variant-alternates", "stylistic()", "#stylistic")}}.
+ویژگی فقط‌خواندنی **stylistic** در رابط {{domXRef("CSSFontFeatureValuesRule")}} حاوی یک {{domXRef("CSSFontFeatureValuesMap")}} است که [شناسه سفارشی تعریف‌شده توسط کاربر](/en-US/docs/Web/CSS/Reference/Values/custom-ident) و [شاخص ویژگی](/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings#optional_value) را برای فونت متغیری که از {{CSSXRef("font-variant-alternates", "stylistic()", "#stylistic")}} پشتیبانی می‌کند، نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("CSSFontFeatureValuesMap")}} object.
+یک شیء {{domxref("CSSFontFeatureValuesMap")}}.
 
-Although the `stylistic` property itself is read-only in the sense that you can't replace the `CSSFontFeatureValuesMap` object, you can still assign to the `stylistic` property directly. You can also modify the values of the `stylistic` using the [`CSSFontFeatureValuesMap` instance methods](/en-US/docs/Web/API/CSSFontFeatureValuesMap#instance_methods).
+اگرچه خود ویژگی `stylistic` به این معنا فقط‌خواندنی است که نمی‌توانید شیء `CSSFontFeatureValuesMap` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به ویژگی `stylistic` مقداردهی کنید. همچنین می‌توانید مقادیر `stylistic` را با استفاده از [متدهای نمونه `CSSFontFeatureValuesMap`](/en-US/docs/Web/API/CSSFontFeatureValuesMap#instance_methods) تغییر دهید.
 
-## Example
+## مثال
 
-### Basic usage
+### استفاده پایه
 
 #### CSS
 
@@ -49,16 +43,16 @@ if (myRule instanceof CSSFontFeatureValuesRule && myRule.stylistic.size) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxRef("@font-feature-values","@stylistic","#stylistic")}}
-- {{cssxRef("font-variant-alternates","stylistic()","#stylistic")}} functional notation
+- نشانه‌گذاری تابعی {{cssxRef("font-variant-alternates","stylistic()","#stylistic")}}
 - {{domxref("CSSFontFeatureValuesMap")}}
