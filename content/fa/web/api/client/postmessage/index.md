@@ -1,11 +1,5 @@
 ---
 title: "Client: postMessage() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage"
-status: "needs-translation"
----
-
----
-title: "Client: postMessage() method"
 short-title: postMessage()
 slug: Web/API/Client/postMessage
 page-type: web-api-instance-method
@@ -14,11 +8,7 @@ browser-compat: api.Client.postMessage
 
 {{APIRef("Service Worker API")}}{{AvailableInWorkers("service")}}
 
-The **`postMessage()`** method of the
-{{domxref("Client")}} interface allows a service worker to send a message to a client
-(a {{domxref("Window")}}, {{domxref("Worker")}}, or {{domxref("SharedWorker")}}). The
-message is received in the `message` event on
-{{domxref("ServiceWorkerContainer", "navigator.serviceWorker")}}.
+**`postMessage()`** متد در رابط {{domxref("Client")}} به یک service worker اجازه می‌دهد تا پیامی را به یک client (یک {{domxref("Window")}}، {{domxref("Worker")}} یا {{domxref("SharedWorker")}}) ارسال کند. این پیام در رویداد `message` روی {{domxref("ServiceWorkerContainer", "navigator.serviceWorker")}} دریافت می‌شود.
 
 ## Syntax
 
@@ -31,41 +21,41 @@ postMessage(message, options)
 ### Parameters
 
 - `message`
-  - : The message to send to the client. This can be any [structured-cloneable type](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm).
+  - : پیامی که به client ارسال می‌شود. این می‌تواند هر [نوع قابل ساختار-شبیه‌سازی‌شده](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) باشد.
 
     > [!NOTE]
-    > A service worker is not in the same [agent cluster](/en-US/docs/Web/JavaScript/Reference/Execution_model#agent_clusters_and_memory_sharing) as its client, and therefore cannot share memory. {{jsxref("SharedArrayBuffer")}} objects, or buffer views backed by one, cannot be posted across agent clusters. Trying to do so will generate a {{domxref("BroadcastChannel/messageerror_event", "messageerror")}} event containing a `DataCloneError` {{domxref("DOMException")}} on the receiving end.
+    > یک service worker در همان [خوشه عامل](/en-US/docs/Web/JavaScript/Reference/Execution_model#agent_clusters_and_memory_sharing) client خود قرار ندارد و بنابراین نمی‌تواند حافظه را به اشتراک بگذارد. اشیاء {{jsxref("SharedArrayBuffer")}} یا نماهای بافری که بر پایه آن‌ها هستند، نمی‌توانند بین خوشه‌های عامل ارسال شوند. تلاش برای انجام این کار، رویدادی به نام {{domxref("BroadcastChannel/messageerror_event", "messageerror")}} تولید می‌کند که حاوی یک {{domxref("DOMException")}} از نوع `DataCloneError` در سمت دریافت‌کننده است.
 
 - `transfer` {{optional_inline}}
-  - : An optional [array](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) of [transferable objects](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) to transfer ownership of. The ownership of these objects is given to the destination side and they are no longer usable on the sending side. These transferable objects are not automatically sent; they must either be contained in the message or be accessible to the recipient via other means, such as {{domxref("MessagePort")}} via {{domxref("MessageEvent.ports")}}.
+  - : یک [آرایه](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) اختیاری از [اشیاء قابل انتقال](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) برای انتقال مالکیت آن‌ها. مالکیت این اشیاء به سمت مقصد منتقل می‌شود و دیگر در سمت فرستنده قابل استفاده نیستند. این اشیاء قابل انتقال به‌طور خودکار ارسال نمی‌شوند؛ آن‌ها باید یا در پیام موجود باشند یا از طریق روش‌های دیگری مانند {{domxref("MessagePort")}} از طریق {{domxref("MessageEvent.ports")}} برای گیرنده قابل دسترسی باشند.
 - `options` {{optional_inline}}
-  - : An optional object containing the following properties:
+  - : یک شیء اختیاری حاوی ویژگی‌های زیر:
     - `transfer` {{optional_inline}}
-      - : Has the same meaning as the `transfer` parameter.
+      - : معنای مشابهی با پارامتر `transfer` دارد.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
-The code below sends a message from a service worker to a client. The client is fetched using the {{domxref("Clients.get()", "get()")}} method on {{domxref("ServiceWorkerGlobalScope.clients", "clients")}}, which is a global in service worker scope.
+کد زیر یک پیام را از service worker به یک client ارسال می‌کند. client با استفاده از متد {{domxref("Clients.get()", "get()")}} روی {{domxref("ServiceWorkerGlobalScope.clients", "clients")}} که یک متغیر سراسری در حوزه service worker است، دریافت می‌شود.
 
 ```js
 addEventListener("fetch", (event) => {
   event.waitUntil(
     (async () => {
-      // Exit early if we don't have access to the client.
-      // Eg, if it's cross-origin.
+      // اگر به client دسترسی نداریم، زود خارج می‌شویم.
+      // مثلاً اگر cross-origin باشد.
       if (!event.clientId) return;
 
-      // Get the client.
+      // دریافت client
       const client = await self.clients.get(event.clientId);
-      // Exit early if we don't get the client.
-      // Eg, if it closed.
+      // اگر client را دریافت نکردیم، زود خارج می‌شویم.
+      // مثلاً اگر بسته شده باشد.
       if (!client) return;
 
-      // Send a message to the client.
+      // ارسال پیام به client
       client.postMessage({
         msg: "Hey I just got a fetch from you!",
         url: event.request.url,
@@ -75,7 +65,7 @@ addEventListener("fetch", (event) => {
 });
 ```
 
-Receiving that message:
+دریافت آن پیام:
 
 ```js
 navigator.serviceWorker.addEventListener("message", (event) => {
