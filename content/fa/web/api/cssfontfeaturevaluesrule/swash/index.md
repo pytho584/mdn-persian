@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesRule: swash property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesRule/swash"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesRule: swash property"
 short-title: swash
 slug: Web/API/CSSFontFeatureValuesRule/swash
 page-type: web-api-instance-property
@@ -16,49 +10,49 @@ browser-compat: api.CSSFontFeatureValuesRule.swash
 
 {{ APIRef("CSSOM") }}{{SeeCompatTable}}
 
-The read-only **swash** property of the {{domXRef("CSSFontFeatureValuesRule")}} interface contains a {{domXRef("CSSFontFeatureValuesMap")}} object representing the [developer-provided name](/en-US/docs/Web/CSS/Reference/Values/custom-ident) and [feature index](/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings#optional_value) for a variable font which supports {{CSSXRef("font-variant-alternates", "swash()", "#swash")}}.
+ویژگیِ فقط‌خواندنی **`swash`** در رابط {{domXRef("CSSFontFeatureValuesRule")}} یک شیء {{domXRef("CSSFontFeatureValuesMap")}} را نگه می‌دارد که نشان‌دهندهٔ [نام تعریف‌شده توسط توسعه‌دهنده](/en-US/docs/Web/CSS/Reference/Values/custom-ident) و [شاخص ویژگی](/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings#optional_value) برای یک فونت متغیر است که از {{CSSXRef("font-variant-alternates", "swash()", "#swash")}} پشتیبانی می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref("CSSFontFeatureValuesMap")}} object.
+یک شیء {{domxref("CSSFontFeatureValuesMap")}}.
 
-Although the `swash` property itself is read-only in the sense that you can't replace the `CSSFontFeatureValuesMap` object, you can still assign to the `swash` property directly. You can also modify the values of the `swash` using the [`CSSFontFeatureValuesMap` instance methods](/en-US/docs/Web/API/CSSFontFeatureValuesMap#instance_methods).
+اگرچه خود ویژگی `swash` به این معنا فقط‌خواندنی است که نمی‌توانید شیء `CSSFontFeatureValuesMap` را جایگزین کنید، همچنان می‌توانید مستقیماً به ویژگی `swash` مقدار اختصاص دهید. همچنین می‌توانید مقادیر `swash` را با استفاده از [متدهای نمونهٔ `CSSFontFeatureValuesMap`](/en-US/docs/Web/API/CSSFontFeatureValuesMap#instance_methods) تغییر دهید.
 
-## Example
+## مثال
 
-### Basic usage
+### استفادهٔ پایه
 
 #### CSS
 
 ```css
 @font-feature-values "MonteCarlo" {
   @swash {
-    my-swashes: 1; /* Custom name for a particular set of swash alternate glyphs */
+    my-swashes: 1; /* نام سفارشی برای مجموعه‌ای خاص از گلیف‌های جایگزین swash */
   }
 }
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
-// look for the first stylesheet and the first cssRule in that sheet
+// به دنبال اولین استایل‌شیت و اولین قانون css در آن بگرد
 const myRule = document.styleSheets[0].cssRules[0];
-// check
+// بررسی کن
 if (myRule instanceof CSSFontFeatureValuesRule && myRule.swash.size) {
-  // do something with the swash
+  // کاری با swash انجام بده
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{cssxRef("@font-feature-values","@swash","#swash")}}
-- {{cssxRef("font-variant-alternates","swash()","#swash")}} functional notation
+- نشانه‌گذاری تابعی {{cssxRef("font-variant-alternates","swash()","#swash")}}
 - {{domxref("CSSFontFeatureValuesMap")}}
