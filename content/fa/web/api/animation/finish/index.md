@@ -1,45 +1,37 @@
 ---
 title: "Animation: finish() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/finish"
-status: "needs-translation"
----
-
----
-title: "Animation: finish() method"
-short-title: finish()
-slug: Web/API/Animation/finish
-page-type: web-api-instance-method
-browser-compat: api.Animation.finish
+translated_by: "n8n + AI"
 ---
 
 {{APIRef("Web Animations")}}
 
-The **`finish()`** method of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)'s {{domxref("Animation")}} Interface sets the current playback time to the end of the animation corresponding to the current playback direction.
+متد **`finish()`** در رابط {{domxref("Animation")}} در [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)، زمان پخش فعلی را به پایان انیمیشن، متناسب با جهت پخش فعلی، تنظیم می‌کند.
 
-That is, if the animation is playing forward, it sets the playback time to the length of the animation sequence, and if the animation is playing in reverse (having had its {{domxref("Animation.reverse", "reverse()")}} method called), it sets the playback time to 0.
+به عبارت دیگر، اگر انیمیشن در حال پخش به جلو باشد، زمان پخش را به طول توالی انیمیشن تنظیم می‌کند و اگر انیمیشن در حال پخش معکوس باشد (با فراخوانی متد {{domxref("Animation.reverse", "reverse()")}})، زمان پخش را روی ۰ تنظیم می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 finish()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidState`
-  - : The player's playback rate is 0 or the animation's playback rate is greater than 0 and the end time of the animation is infinity.
+  - : نرخ پخش پخش‌کننده ۰ باشد یا نرخ پخش انیمیشن بزرگ‌تر از ۰ باشد و زمان پایان انیمیشن بی‌نهایت باشد.
 
-## Examples
+## مثال‌ها
 
-The following example shows how to use the `finish()` method and catch an `InvalidState` error.
+مثال زیر نحوه استفاده از متد `finish()` و مدیریت خطای `InvalidState` را نشان می‌دهد.
 
 ```js
 interfaceElement.addEventListener("mousedown", () => {
@@ -55,23 +47,23 @@ interfaceElement.addEventListener("mousedown", () => {
 });
 ```
 
-The following example finishes all the animations on a single element, regardless of their direction of playback.
+مثال زیر تمام انیمیشن‌های یک عنصر را بدون توجه به جهت پخش آن‌ها به پایان می‌برد.
 
 ```js
 elem.getAnimations().forEach((animation) => animation.finish());
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
-- {{domxref("Animation")}} for other methods and properties you can use to control web page animation.
-- {{domxref("Animation.play()")}} to play an animation forward.
-- {{domxref("Animation.reverse()")}} to play an animation backward.
+- {{domxref("Animation")}} برای سایر متدها و ویژگی‌هایی که می‌توانید برای کنترل انیمیشن صفحه وب استفاده کنید.
+- {{domxref("Animation.play()")}} برای پخش انیمیشن به جلو.
+- {{domxref("Animation.reverse()")}} برای پخش انیمیشن به عقب.
