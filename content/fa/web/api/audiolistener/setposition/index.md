@@ -1,7 +1,7 @@
 ---
 title: "AudioListener: setPosition() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioListener/setPosition"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,14 +16,14 @@ browser-compat: api.AudioListener.setPosition
 
 {{ APIRef("Web Audio API") }} {{deprecated_header}}
 
-The `setPosition()` method of the {{ domxref("AudioListener") }} Interface defines the position of the listener.
+متد `setPosition()` از رابط {{ domxref("AudioListener") }} موقعیت شنونده را تعریف می‌کند.
 
-The three parameters `x`, `y` and `z` are unitless and describe the listener's position in 3D space according to the right-hand Cartesian coordinate system. {{domxref("PannerNode")}} objects use this position relative to individual audio sources for spatialization.
+سه پارامتر `x`، `y` و `z` بدون واحد هستند و موقعیت شنونده را در فضای سه‌بعدی بر اساس دستگاه مختصات دکارتی راست‌گرد توصیف می‌کنند. اشیاء {{domxref("PannerNode")}} از این موقعیت نسبت به منابع صوتی فردی برای فضایی‌سازی استفاده می‌کنند.
 
-The default value of the position vector is `(0, 0, 0)`.
+مقدار پیش‌فرض بردار موقعیت `(0, 0, 0)` است.
 
 > [!NOTE]
-> As this method is deprecated, use the three {{domxref("AudioListener.positionX", "positionX")}}, {{domxref("AudioListener.positionY", "positionY")}}, and {{domxref("AudioListener.positionZ", "positionZ")}} properties instead.
+> از آنجایی که این متد منسوخ شده است، به جای آن از سه ویژگی {{domxref("AudioListener.positionX", "positionX")}}، {{domxref("AudioListener.positionY", "positionY")}} و {{domxref("AudioListener.positionZ", "positionZ")}} استفاده کنید.
 
 ## Syntax
 
@@ -34,19 +34,19 @@ setPosition(x, y, z)
 ### Parameters
 
 - `x`
-  - : The x position of the listener in 3D space.
+  - : موقعیت x شنونده در فضای سه‌بعدی.
 - `y`
-  - : The y position of the listener in 3D space.
+  - : موقعیت y شنونده در فضای سه‌بعدی.
 - `z`
-  - : The z position of the listener in 3D space.
+  - : موقعیت z شنونده در فضای سه‌بعدی.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
-See [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) for example code.
+برای کد مثال، [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) را ببینید.
 
 ## Specifications
 
@@ -58,4 +58,4 @@ See [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/cre
 
 ## See also
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
