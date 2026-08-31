@@ -1,7 +1,7 @@
 ---
 title: "AnimationEvent: animationName property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent/animationName"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,29 +14,22 @@ browser-compat: api.AnimationEvent.animationName
 
 {{APIRef("Web Animations")}}
 
-The **`AnimationEvent.animationName`** read-only property is a
-string containing the value of the {{cssxref("animation-name")}} CSS
-property associated with the transition.
+ویژگی فقط‌خواندنی **`AnimationEvent.animationName`** یک رشته شامل مقدار ویژگی CSS {{cssxref("animation-name")}} مرتبط با انتقال است.
 
-## Value
+## مقدار
 
-A string containing the value of the {{cssxref("animation-name")}} CSS property.
+یک رشته شامل مقدار ویژگی CSS {{cssxref("animation-name")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using CSS animations](/en-US/docs/Web/CSS/Guides/Animations/Using)
-- Animation-related CSS properties and at-rules: {{cssxref("animation")}},
-  {{cssxref("animation-delay")}}, {{cssxref("animation-direction")}},
-  {{cssxref("animation-duration")}}, {{cssxref("animation-fill-mode")}},
-  {{cssxref("animation-iteration-count")}}, {{cssxref("animation-name")}},
-  {{cssxref("animation-play-state")}}, {{cssxref("animation-timing-function")}},
-  {{cssxref("@keyframes")}}.
-- The {{domxref("AnimationEvent")}} interface it belongs to.
+- [استفاده از انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations/Using)
+- ویژگی‌ها و قواعد مرتبط با انیمیشن CSS: {{cssxref("animation")}}، {{cssxref("animation-delay")}}، {{cssxref("animation-direction")}}، {{cssxref("animation-duration")}}، {{cssxref("animation-fill-mode")}}، {{cssxref("animation-iteration-count")}}، {{cssxref("animation-name")}}، {{cssxref("animation-play-state")}}، {{cssxref("animation-timing-function")}}، {{cssxref("@keyframes")}}.
+- رابط {{domxref("AnimationEvent")}} که این ویژگی به آن تعلق دارد.
