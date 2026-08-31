@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-valuenow attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,16 +13,16 @@ spec-urls: https://w3c.github.io/aria/#aria-valuenow
 sidebar: accessibilitysidebar
 ---
 
-The `aria-valuenow` attribute defines the current value for a `range` widget.
+ویژگی `aria-valuenow` مقدار فعلی را برای یک ویجت `range` تعریف می‌کند.
 
-## Description
+## توضیحات
 
-The `aria-valuenow` attribute defines the current value for range widgets. It is similar to the `value` attribute of {{HTMLElement('progress')}}, {{HTMLElement('meter')}}, and {{HTMLElement('input')}} of type [`range`](/en-US/docs/Web/HTML/Reference/Elements/input/range), [`number`](/en-US/docs/Web/HTML/Reference/Elements/input/number) and all the date-time types.
+ویژگی `aria-valuenow` مقدار فعلی را برای ویجت‌های range تعریف می‌کند. این ویژگی مشابه ویژگی `value` در {{HTMLElement('progress')}}، {{HTMLElement('meter')}} و {{HTMLElement('input')}} از نوع [`range`](/en-US/docs/Web/HTML/Reference/Elements/input/range)، [`number`](/en-US/docs/Web/HTML/Reference/Elements/input/number) و همه انواع تاریخ-زمان است.
 
-When creating a range type role, including [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role), [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role), [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role), and [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role) on a non-semantic element, the `aria-valuenow` enables defining a current numeric value between the minimum and maximum values. The minimum and maximum values are defined with [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) and [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax).
+هنگام ایجاد نقشی از نوع range، شامل [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)، [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role)، [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role) و [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role) روی یک عنصر غیرمعنایی، `aria-valuenow` امکان تعریف یک مقدار عددی فعلی بین مقادیر حداقل و حداکثر را می‌دهد. مقادیر حداقل و حداکثر با [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) و [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) تعریف می‌شوند.
 
 > [!WARNING]
-> The [`range`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role) role itself should **NOT** be used as it is an ["abstract"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles). The `aria-valuenow` attribute is used on all of the range roles subtypes.
+> نقش [`range`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role) به خودی خود **نباید** استفاده شود، زیرا یک نقش [«abstract»](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles) است. ویژگی `aria-valuenow` بر روی همه زیرنوع‌های نقش‌های range استفاده می‌شود.
 
 ```html
 <p id="birthyearLabel">What year were you born?</p>
@@ -45,24 +45,24 @@ When creating a range type role, including [`meter`](/en-US/docs/Web/Accessibili
 </div>
 ```
 
-Use semantic HTML elements when you can:
+در صورت امکان از عناصر HTML معنایی استفاده کنید:
 
 ```html
 <label for="birthyear">What year were you born?</label>
 <input type="number" id="birthyear" value="1984" min="1900" max="2021" />
 ```
 
-If there is no known value, like when a progress bar is in an indeterminate state, don't set an `aria-valuenow` attribute.
+اگر مقدار مشخصی وجود ندارد، مانند زمانی که یک نوار پیشرفت در وضعیت نامعین است، ویژگی `aria-valuenow` را تنظیم نکنید.
 
-When there is no `aria-valuenow` set, no information is implied about a current value.
+وقتی `aria-valuenow` تنظیم نشده باشد، هیچ اطلاعاتی درباره مقدار فعلی در نظر گرفته نمی‌شود.
 
-When used with sliders and spinbuttons, assistive technologies announce the actual value to users.
+هنگام استفاده با اسلایدرها و spinbuttonها، فناوری‌های کمکی مقدار واقعی را به کاربران اعلام می‌کنند.
 
-When used with progressbar and scrollbar, assistive technologies announce the value to users as a percent. When `aria-valuemin` and `aria-valuemax` are both defined, the percent value is calculated as a position on the range. Otherwise, the actual value is announced as a percent.
+هنگام استفاده با progressbar و scrollbar، فناوری‌های کمکی مقدار را به‌صورت درصد به کاربران اعلام می‌کنند. وقتی هر دو `aria-valuemin` و `aria-valuemax` تعریف شده باشند، مقدار درصد به‌عنوان موقعیتی در محدوده محاسبه می‌شود. در غیر این صورت، مقدار واقعی به‌صورت درصد اعلام می‌شود.
 
-When the value to be announced, either the actual value or the value as a percent, may not be clear to users, the [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext) attribute should be used to provide a user-friendly representation of the value. When set, the valuetext string is announced instead of the valuenow numeric value. For example, if a slider represents the days of the week, so the day of the week's `aria-valuenow` is a number, the `aria-valuetext` property should be set to a string that makes the slider value understandable, such as "Monday".
+وقتی مقداری که باید اعلام شود، خواه مقدار واقعی یا مقدار به‌صورت درصد، ممکن است برای کاربران واضح نباشد، باید از ویژگی [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext) برای ارائه نمایشی کاربرپسند از مقدار استفاده شود. وقتی تنظیم شد، رشته valuetext به جای مقدار عددی valuenow اعلام می‌شود. برای مثال، اگر یک اسلایدر روزهای هفته را نشان دهد، به‌طوری‌که `aria-valuenow` روز هفته یک عدد است، ویژگی `aria-valuetext` باید روی رشته‌ای تنظیم شود که مقدار اسلایدر را قابل فهم کند، مانند «دوشنبه».
 
-## Examples
+## مثال‌ها
 
 ```html
 <p id="temperatureLabel">Oven Temperature</p>
@@ -77,30 +77,30 @@ When the value to be announced, either the actual value or the value as a percen
 </div>
 ```
 
-The first rule of ARIA use is "if you can use a native feature with the semantics and behavior you require already built in, instead of repurposing an element and **adding** an ARIA role, state or property to make it accessible, then do so."
+اولین قانون استفاده از ARIA این است: «اگر می‌توانید از یک ویژگی بومی با معناشناسی و رفتاری که از قبل به آن نیاز دارید استفاده کنید، به جای تغییر کاربری یک عنصر و **افزودن** نقش، حالت یا ویژگی ARIA برای قابل دسترس ساختن آن، این کار را انجام دهید.»
 
 ```html
 <label for="temperature">Oven Temperature</label>
 <input type="range" id="temperature" value="205" min="70" max="250" step="5" />
 ```
 
-If we employ native HTML semantics with {{HTMLElement('input')}} we get styles and semantics for free.
+اگر از معناشناسی بومی HTML با {{HTMLElement('input')}} استفاده کنیم، استایل‌ها و معناشناسی را به رایگان به دست می‌آوریم.
 
-## Values
+## مقادیر
 
 - `<number>`
-  - : A decimal number, between the minimum and maximum values.
+  - : یک عدد اعشاری، بین مقادیر حداقل و حداکثر.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaValueNow")}}
-  - : The [`ariaValueNow`](/en-US/docs/Web/API/Element/ariaValueNow) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-valuenow` attribute.
+  - : ویژگی [`ariaValueNow`](/en-US/docs/Web/API/Element/ariaValueNow) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-valuenow` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaValueNow")}}
-  - : The [`ariaValueNow`](/en-US/docs/Web/API/ElementInternals/ariaValueNow) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-valuenow` attribute.
+  - : ویژگی [`ariaValueNow`](/en-US/docs/Web/API/ElementInternals/ariaValueNow) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-valuenow` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده‌شده در نقش‌ها:
 
 - [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)
 - [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role)
@@ -108,7 +108,7 @@ Used in roles:
 - [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
 - [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
 
-Inherited into roles:
+به ارث برده‌شده در نقش‌ها:
 
 - [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)
 - [`progressbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role)
@@ -116,14 +116,14 @@ Inherited into roles:
 - [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
 - [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [`range` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role)
-- [`<input type="range>` element `value` attribute](/en-US/docs/Web/HTML/Reference/Elements/input/range#value)
+- [نقش `range`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/range_role)
+- [ویژگی `value` عنصر `<input type="range>`](/en-US/docs/Web/HTML/Reference/Elements/input/range#value)
 - [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext)
 - [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax)
-- [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin).
+- [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin)
