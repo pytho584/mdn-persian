@@ -1,7 +1,7 @@
 ---
 title: "AudioTrack: label property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack/label"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,26 +14,17 @@ browser-compat: api.AudioTrack.label
 
 {{APIRef("HTML DOM")}}
 
-The read-only **{{domxref("AudioTrack")}}**
-property **`label`** returns a string specifying the audio
-track's human-readable label, if one is available; otherwise, it returns an empty
-string.
+ویژگی فقط خواندنی **`label`** از {{domxref("AudioTrack")}} یک رشته را برمی‌گرداند که برچسب قابل خواندن برای انسان مسیر صوتی را مشخص می‌کند، در صورت وجود؛ در غیر این صورت، یک رشته خالی برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string specifying the track's human-readable label, if one is
-available in the track metadata. Otherwise, an empty string (`""`) is
-returned.
+یک رشته که برچسب قابل خواندن برای انسان مسیر را مشخص می‌کند، در صورت وجود در فراداده‌های مسیر. در غیر این صورت، یک رشته خالی (`""`) برگردانده می‌شود.
 
-For example, a track whose {{domxref("AudioTrack.kind", "kind")}} is
-`"commentary"` might have a `label` such as
-`"Commentary with director Mark Markmarkimark and star Donna Donnalidon"`.
+برای مثال، یک مسیر که {{domxref("AudioTrack.kind", "kind")}} آن `"commentary"` است ممکن است `label` ای مانند `"Commentary with director Mark Markmarkimark and star Donna Donnalidon"` داشته باشد.
 
-## Examples
+## مثال‌ها
 
-This example returns an array of track kinds and labels for potential use in a user
-interface to select audio tracks for a specified media element. The list is filtered to
-only allow certain track kinds through.
+این مثال یک آرایه از انواع و برچسب‌های مسیر را برای استفاده بالقوه در یک رابط کاربری برای انتخاب مسیرهای صوتی برای یک عنصر رسانه مشخص برمی‌گرداند. این فهرست فیلتر می‌شود تا فقط انواع خاصی از مسیرها مجاز باشند.
 
 ```js
 function getTrackList(el) {
@@ -59,14 +50,12 @@ function getTrackList(el) {
 }
 ```
 
-The resulting `trackList` contains an array of audio tracks whose
-`kind` is one of those in the array `wantedKinds`, with each entry
-providing the track's {{domxref("AudioTrack.id", "id")}}, {{domxref("AudioTrack.kind", "kind")}}, and `label`.
+`trackList` حاصل شامل یک آرایه از مسیرهای صوتی است که `kind` آن‌ها یکی از موارد موجود در آرایه `wantedKinds` است، و هر ورودی {{domxref("AudioTrack.id", "id")}}، {{domxref("AudioTrack.kind", "kind")}} و `label` مسیر را ارائه می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
