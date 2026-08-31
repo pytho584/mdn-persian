@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-dropeffect attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-dropeffect"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,56 +15,56 @@ spec-urls: https://w3c.github.io/aria/#aria-dropeffect
 sidebar: accessibilitysidebar
 ---
 
-The global `aria-dropeffect` attribute indicates what functions may be performed when a dragged object is released on the drop target. {{deprecated_inline}}
+ویژگی سراسری `aria-dropeffect` نشان می‌دهد که هنگام رها شدن یک شیء کشیده‌شده روی هدف رهاسازی، چه عملکردهایی ممکن است انجام شود. {{deprecated_inline}}
 
-## Description
+## توضیحات
 
-Deprecated in ARIA 1.1, the `aria-dropeffect` property indicates what functions may be performed when a dragged object is released on the drop target. The global `aria-dropeffect` attribute provides assistive technology users the same information provided via the [`DataTransfer.dropEffect`](/en-US/docs/Web/API/DataTransfer/dropEffect) to sighted users via the dropeffect icon.
+ویژگی `aria-dropeffect` که در ARIA 1.1 منسوخ شده است، نشان می‌دهد که هنگام رها شدن یک شیء کشیده‌شده روی هدف رهاسازی، چه عملکردهایی ممکن است انجام شود. ویژگی سراسری `aria-dropeffect` اطلاعاتی را که کاربران فناوری‌های کمکی از طریق [`DataTransfer.dropEffect`](/en-US/docs/Web/API/DataTransfer/dropEffect) دریافت می‌کنند، به همان شکلی که کاربران بینا از طریق آیکون dropeffect دریافت می‌کنند، فراهم می‌کند.
 
-Text selections, images, and links can be dragged by default. Setting the global [`draggable="true"`](/en-US/docs/Web/HTML/Reference/Global_attributes/draggable) attribute, part of HTML5's [Drag and Drop API](/en-US/docs/Web/API/HTML_Drag_and_Drop_API), with a [`dragstart` event handler](/en-US/docs/Web/API/HTMLElement/dragstart_event), means any DOM node can be made draggable as well.
+انتخاب‌های متنی، تصاویر و پیوندها به‌طور پیش‌فرض قابل کشیدن هستند. تنظیم ویژگی سراسری [`draggable="true"`](/en-US/docs/Web/HTML/Reference/Global_attributes/draggable) که بخشی از [API کشیدن و رها کردن HTML5](/en-US/docs/Web/API/HTML_Drag_and_Drop_API) است، به همراه یک [مدیر رویداد `dragstart`](/en-US/docs/Web/API/HTMLElement/dragstart_event)، به این معناست که هر گره DOM نیز می‌تواند قابل کشیدن شود.
 
-When a drag event occurs, a translucent image is generated of the dragged element which follows the user's pointer during the drag. The default image can be changed to any image with [`setDragImage`](/en-US/docs/Web/API/DataTransfer/setDragImage). Along with the default image identifying the element being dragged, there is a [`dataTransfer.dropEffect`](/en-US/docs/Web/API/DataTransfer/dropEffect) property that can be used to control the visual feedback the user is given during a drag-and-drop operation. The `aria-dropeffect` property should be used to provide assistive technology users the same feedback provided to sighted users via `dataTransfer.dropEffect` property.
+هنگامی که یک رویداد کشیدن رخ می‌دهد، یک تصویر نیمه‌شفاف از عنصر کشیده‌شده تولید می‌شود که در طول کشیدن، مکان‌نمای کاربر را دنبال می‌کند. تصویر پیش‌فرض را می‌توان با [`setDragImage`](/en-US/docs/Web/API/DataTransfer/setDragImage) به هر تصویری تغییر داد. در کنار تصویر پیش‌فرض که عنصر در حال کشیده‌شدن را شناسایی می‌کند، یک ویژگی [`dataTransfer.dropEffect`](/en-US/docs/Web/API/DataTransfer/dropEffect) وجود دارد که می‌تواند برای کنترل بازخورد بصری که به کاربر در طول عملیات کشیدن و رها کردن داده می‌شود، استفاده شود. ویژگی `aria-dropeffect` باید برای ارائه همان بازخوردی که کاربران بینا از طریق ویژگی `dataTransfer.dropEffect` دریافت می‌کنند، به کاربران فناوری‌های کمکی استفاده شود.
 
-`dropeffect` defines which cursor the browser displays while dragging, and is set on the element on which the element may be dropped. During the drag operation, as the draggable element is dragged over different drop areas, the drag effects—both the `dataTransfer.dropeffect` and the `aria-dropeffect` should be modified to indicate the type of operation that will occur if the dragged element is released.
+`dropeffect` تعیین می‌کند که مرورگر هنگام کشیدن، کدام مکان‌نما را نمایش می‌دهد و روی عنصری تنظیم می‌شود که ممکن است عنصر روی آن رها شود. در طول عملیات کشیدن، وقتی عنصر قابل کشیدن روی نواحی مختلف رهاسازی کشیده می‌شود، اثرات کشیدن — هم `dataTransfer.dropeffect` و هم `aria-dropeffect` — باید تغییر کنند تا نوع عملیاتی که در صورت رها شدن عنصر کشیده‌شده انجام می‌شود، نشان داده شود.
 
-More than one drop effect may be supported for a given element. Therefore, the value of the `aria-dropeffect` attribute is a space separated list of functions. Functions include `copy`, `execute`, `link`, and `move`. The default is `none`, meaning there is no supported functionality in the application. Setting `aria-dropeffect="popup"` informs assistive technology users that there is a popup menu or dialog of drag operations from which the user can choose.
+ممکن است بیش از یک اثر رهاسازی برای یک عنصر خاص پشتیبانی شود. بنابراین، مقدار ویژگی `aria-dropeffect` یک لیست جدا شده با فاصله از عملکردها است. عملکردها شامل `copy`، `execute`، `link` و `move` هستند. مقدار پیش‌فرض `none` است، به این معنی که هیچ عملکرد پشتیبانی‌شده‌ای در برنامه وجود ندارد. تنظیم `aria-dropeffect="popup"` به کاربران فناوری‌های کمکی اطلاع می‌دهد که یک منوی بازشو یا گفتگوی عملیات کشیدن وجود دارد که کاربر می‌تواند از بین آن‌ها انتخاب کند.
 
-Including the attribute provides assistive technologies the ability to convey the possible drag options available to the assistive technology user, but doesn't add any actual functionality.
+گنجاندن این ویژگی به فناوری‌های کمکی امکان می‌دهد که گزینه‌های کشیدن احتمالی موجود را به کاربر فناوری کمکی منتقل کنند، اما هیچ عملکرد واقعی اضافه نمی‌کند.
 
-The `aria-dropeffect` property is expected to be replaced by a new feature in a future version of WAI-ARIA and is considered deprecated.
+انتظار می‌رود ویژگی `aria-dropeffect` در نسخه آینده WAI-ARIA با یک ویژگی جدید جایگزین شود و منسوخ در نظر گرفته می‌شود.
 
-Typically, drop effect functions can only be provided once an object has been grabbed for a drag operation, as the drop effect functions available are dependent on the object being dragged. Therefore, you'll generally add `aria-dropeffect` to all the potential drop targets when the {{domxref("HTMLElement/dragstart_event", "dragstart")}} event is fired.
+به طور معمول، عملکردهای اثر رهاسازی فقط زمانی می‌توانند ارائه شوند که یک شیء برای عملیات کشیدن گرفته شده باشد، زیرا عملکردهای اثر رهاسازی موجود به شیء در حال کشیده‌شدن بستگی دارند. بنابراین، معمولاً `aria-dropeffect` را به همه اهداف رهاسازی بالقوه وقتی رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} رخ می‌دهد، اضافه می‌کنید.
 
-## Values
+## مقادیر
 
-The value is a space separated list of possible actions. The following are the valid tokens:
+مقدار، یک لیست جدا شده با فاصله از اقدامات ممکن است. توکن‌های معتبر عبارتند از:
 
 - `copy`
-  - : A duplicate of the source object will be dropped into the target.
+  - : یک نسخه تکراری از شیء مبدأ روی هدف رها می‌شود.
 - `execute`
-  - : A function supported by the drop target is executed, using the drag source as an input.
+  - : یک عملکرد پشتیبانی‌شده توسط هدف رهاسازی با استفاده از منبع کشیدن به عنوان ورودی اجرا می‌شود.
 - `link`
-  - : A reference or shortcut to the dragged object will be created in the target object.
+  - : یک مرجع یا میانبر به شیء کشیده‌شده در شیء هدف ایجاد می‌شود.
 - `move`
-  - : The source object will be removed from its current location and dropped into the target.
-- `none` (default)
-  - : No operation can be performed; effectively cancels the drag operation if an attempt is made to drop on this object. Ignored if combined with any other token value; for example, 'none copy' is equivalent to a 'copy' value.
+  - : شیء مبدأ از مکان فعلی خود حذف و روی هدف رها می‌شود.
+- `none` (پیش‌فرض)
+  - : هیچ عملیاتی نمی‌تواند انجام شود؛ در صورت تلاش برای رها کردن روی این شیء، عملیات کشیدن عملاً لغو می‌شود. اگر با هر مقدار توکن دیگری ترکیب شود نادیده گرفته می‌شود؛ به عنوان مثال، 'none copy' معادل مقدار 'copy' است.
 - `popup`
-  - : There is a popup menu or dialog that allows the user to choose one of the drag operations (copy, move, link, execute) and any other drag functionality, such as cancel.
+  - : یک منوی بازشو یا گفتگو وجود دارد که به کاربر اجازه می‌دهد یکی از عملیات کشیدن (کپی، انتقال، پیوند، اجرا) و هر عملکرد کشیدن دیگری مانند لغو را انتخاب کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** roles.
+در **همه** نقش‌ها استفاده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-grabbed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-grabbed)
-- [HTML global `draggable` attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/draggable)
-- HTML [Drag and Drop API](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+- [ویژگی سراسری HTML `draggable`](/en-US/docs/Web/HTML/Reference/Global_attributes/draggable)
+- [API کشیدن و رها کردن HTML](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
 - {{domxref('dataTransfer')}}
 - {{domxref('DataTransfer.dropEffect')}}
 - {{domxref("HTMLElement/dragstart_event", "dragstart")}}
