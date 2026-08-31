@@ -1,9 +1,4 @@
----
-title: "Client: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Client/type"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "Client: type property"
 short-title: type
@@ -11,21 +6,21 @@ slug: Web/API/Client/type
 page-type: web-api-instance-property
 browser-compat: api.Client.type
 ---
+```
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`type`** read-only property of the {{domxref("Client")}}
-interface indicates the type of client the service worker is controlling.
+خاصیت فقط-خواندنی **`type`** از رابط {{domxref("Client")}} نشان‌دهنده نوع کلاینتی است که سرویس‌ورکر آن را کنترل می‌کند.
 
-## Value
+## مقدار
 
-A string, representing the client type. The value can be one of
+یک رشته (string) که نوع کلاینت را نشان می‌دهد. مقدار می‌تواند یکی از موارد زیر باشد:
 
 - `"window"`
 - `"worker"`
 - `"sharedworker"`
 
-## Examples
+## مثال‌ها
 
 ```js
 // service worker client (e.g. a document)
@@ -48,10 +43,10 @@ self.addEventListener("message", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
