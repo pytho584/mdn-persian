@@ -1,7 +1,7 @@
 ---
 title: "AudioWorklet"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorklet"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,45 +13,44 @@ browser-compat: api.AudioWorklet
 
 {{APIRef("Web Audio API")}}{{securecontext_header}}
 
-The **`AudioWorklet`** interface of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) is used to supply custom audio processing scripts that execute in a separate thread to provide very low latency audio processing.
+رابط **`AudioWorklet`** از [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) برای ارائه اسکریپت‌های پردازش صوتی سفارشی که در یک رشته‌ی جداگانه اجرا می‌شوند، استفاده می‌شود تا پردازش صوتی با تأخیر بسیار کم فراهم شود.
 
-The worklet's code is run in the {{domxref("AudioWorkletGlobalScope")}} global execution context, using a separate Web Audio thread which is shared by the worklet and other audio nodes.
+کد worklet در زمینه اجرای سراسری {{domxref("AudioWorkletGlobalScope")}} اجرا می‌شود، با استفاده از یک رشته‌ی Web Audio جداگانه که بین worklet و سایر گره‌های صوتی مشترک است.
 
-Access the audio context's instance of `AudioWorklet` through the {{domxref("BaseAudioContext.audioWorklet")}} property.
+به نمونه‌ی `AudioWorklet` موجود در زمینه صوتی از طریق ویژگی {{domxref("BaseAudioContext.audioWorklet")}} دسترسی پیدا کنید.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties defined on its parent interface, {{domxref("Worklet")}}._
+این رابط همچنین ویژگی‌های تعریف‌شده در رابط والد خود، {{domxref("Worklet")}} را به ارث می‌برد.
 
 - {{domxref("AudioWorklet.port", "port")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : Returns a {{domxref("MessagePort")}} for custom, asynchronous communication between code in the main thread and the global scope of an audio worklet.
-    This allows for custom messages, such as sending and receiving control data or global settings.
+  - : یک {{domxref("MessagePort")}} برای ارتباط ناهمگام سفارشی بین کد در رشته‌ی اصلی و محدوده‌ی سراسری یک worklet صوتی برمی‌گرداند. این امکان ارسال پیام‌های سفارشی، مانند ارسال و دریافت داده‌های کنترلی یا تنظیمات سراسری را فراهم می‌کند.
 
-## Instance methods
+## متدهای نمونه
 
-_This interface inherits methods from {{domxref('Worklet')}}. The `AudioWorklet` interface does not define any methods of its own._
+این رابط متدهایی را از {{domxref('Worklet')}} به ارث می‌برد. رابط `AudioWorklet` هیچ متدی از خود تعریف نمی‌کند.
 
-## Events
+## رویدادها
 
-_`AudioWorklet` has no events to which it responds._
+`AudioWorklet` هیچ رویدادی ندارد که به آن‌ها پاسخ دهد.
 
-## Examples
+## مثال‌ها
 
-See {{domxref("AudioWorkletNode")}} for complete examples of custom audio node creation.
+برای مثال‌های کامل ایجاد گره‌های صوتی سفارشی، به {{domxref("AudioWorkletNode")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("AudioWorkletGlobalScope")}} — the global execution context of an `AudioWorklet`
+- {{domxref("AudioWorkletGlobalScope")}} — زمینه‌ی اجرای سراسری یک `AudioWorklet`
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
-- [Using AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از AudioWorklet](/en-US/docs/Web/API/Web_Audio_API/Using_AudioWorklet)
