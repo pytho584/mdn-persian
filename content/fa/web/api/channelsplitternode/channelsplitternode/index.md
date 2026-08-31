@@ -1,20 +1,12 @@
 ---
 title: "ChannelSplitterNode: ChannelSplitterNode() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ChannelSplitterNode/ChannelSplitterNode"
-status: "needs-translation"
----
-
----
-title: "ChannelSplitterNode: ChannelSplitterNode() constructor"
 short-title: ChannelSplitterNode()
 slug: Web/API/ChannelSplitterNode/ChannelSplitterNode
 page-type: web-api-constructor
 browser-compat: api.ChannelSplitterNode.ChannelSplitterNode
 ---
 
-{{APIRef("Web Audio API")}}
-
-The **`ChannelSplitterNode()`** constructor of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) creates a new {{domxref("ChannelSplitterNode")}} object instance, representing a node that splits the input into a separate output for each of the source node's audio channels.
+{{APIRef("Web Audio API")}}سازندهٔ **`ChannelSplitterNode()`** در [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) یک نمونهٔ جدید از شیء {{domxref("ChannelSplitterNode")}} می‌سازد؛ گره‌ای که ورودی را به تعداد خروجی‌های جداگانه به تعداد کانال‌های صوتی گرهٔ منبع تقسیم می‌کند.
 
 ## Syntax
 
@@ -23,32 +15,26 @@ new ChannelSplitterNode(context)
 new ChannelSplitterNode(context, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `context`
-  - : A {{domxref("BaseAudioContext")}} representing the audio context you want the node to be associated with.
+  - : یک {{domxref("BaseAudioContext")}} که نشان‌دهندهٔ بافت صوتی مورد نظر برای اتصال گره به آن است.
 - `options` {{optional_inline}}
-  - : An object defining the properties you want the `ChannelSplitterNode` to have:
+  - : شیءای که ویژگی‌های مورد نظر برای `ChannelSplitterNode` را تعریف می‌کند:
     - `numberOfOutputs` {{optional_inline}}
-      - : A number defining the number of outputs the {{domxref("ChannelSplitterNode")}} should have. If not specified, the default value used is 6.
+      - : عددی که تعداد خروجی‌های {{domxref("ChannelSplitterNode")}} را مشخص می‌کند. اگر مشخص نشود، مقدار پیش‌فرض ۶ است.
     - `channelCount` {{optional_inline}}
-      - : An integer used to determine how many channels are used when [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) connections to any inputs to the node.
-        (See {{domxref("AudioNode.channelCount")}} for more information.)
-        Its usage and precise definition depend on the value of `channelCountMode`.
+      - : یک عدد صحیح که تعیین می‌کند هنگام [افزایش و کاهش تعداد کانال‌ها](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) در اتصالات ورودی‌های گره، چند کانال استفاده شود. (برای اطلاعات بیشتر به {{domxref("AudioNode.channelCount")}} مراجعه کنید.) کاربرد و تعریف دقیق آن به مقدار `channelCountMode` بستگی دارد.
     - `channelCountMode` {{optional_inline}}
-      - : A string describing the way channels must be matched between the node's inputs and outputs.
-        (See {{domxref("AudioNode.channelCountMode")}} for more information including default values.)
+      - : رشته‌ای که نحوهٔ تطبیق کانال‌ها بین ورودی‌ها و خروجی‌های گره را توصیف می‌کند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
     - `channelInterpretation` {{optional_inline}}
-      - : A string describing the meaning of the channels.
-        This interpretation will define how audio [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) will happen.
-        The possible values are `"speakers"` or `"discrete"`.
-        (See {{domxref("AudioNode.channelCountMode")}} for more information including default values.)
+      - : رشته‌ای که معنای کانال‌ها را توصیف می‌کند. این تفسیر تعیین می‌کند که [افزایش و کاهش تعداد کانال‌ها](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) چگونه انجام شود. مقادیر ممکن عبارت‌اند از `"speakers"` یا `"discrete"`. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("ChannelSplitterNode")}} object instance.
+یک نمونهٔ جدید از شیء {{domxref("ChannelSplitterNode")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const ac = new AudioContext();
@@ -60,10 +46,10 @@ const options = {
 const mySplitter = new ChannelSplitterNode(ac, options);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
