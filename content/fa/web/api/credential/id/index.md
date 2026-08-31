@@ -1,7 +1,5 @@
 ---
 title: "Credential: id property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Credential/id"
-status: "needs-translation"
 ---
 
 ---
@@ -14,16 +12,16 @@ browser-compat: api.Credential.id
 
 {{APIRef("Credential Management API")}}{{SecureContext_Header}}
 
-The **`id`** read-only property of the {{domxref("Credential")}} interface returns a string containing the credential's identifier. This might be a GUID, username, or email address, or some other value, depending on the type of credential.
+ویژگی فقط‌خواندنی **`id`** از رابط {{domxref("Credential")}} رشته‌ای شامل شناسهٔ اعتبارنامه برمی‌گرداند. این مقدار بسته به نوع اعتبارنامه می‌تواند GUID، نام کاربری، آدرس ایمیل یا مقدار دیگری باشد.
 
-## Value
+## مقدار
 
-A string containing the credential's identifier.
+رشته‌ای شامل شناسهٔ اعتبارنامه.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
