@@ -1,7 +1,8 @@
+```
 ---
 title: "AudioDecoder: decode() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioDecoder/decode"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,34 +15,35 @@ browser-compat: api.AudioDecoder.decode
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`decode()`** method of the {{domxref("AudioDecoder")}} interface enqueues a control message to decode a given chunk of audio.
+متد **`decode()`** از رابط {{domxref("AudioDecoder")}} یک پیام کنترلی را برای رمزگشایی یک تکه مشخص از صدا در صف قرار می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 decode(chunk)
 ```
 
-### Parameters
+### پارامترها
 
 - `chunk`
-  - : An {{domxref("EncodedAudioChunk")}} object representing a chunk of encoded audio.
+  - : یک شی {{domxref("EncodedAudioChunk")}} که نمایانگر یک تکه از صدای رمزگذاری‌شده است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("AudioDecoder.state","state")}} is not `"configured"`.
+  - : اگر {{domxref("AudioDecoder.state","state")}} برابر `"configured"` نباشد، پرتاب می‌شود.
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if the `chunk` is unable to be decoded due to relying on other frames for decoding.
+  - : اگر `chunk` به دلیل وابستگی به فریم‌های دیگر برای رمزگشایی قابل رمزگشایی نباشد، پرتاب می‌شود.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
+```
