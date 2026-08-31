@@ -1,7 +1,7 @@
 ---
 title: "AuthenticatorAssertionResponse: authenticatorData property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse/authenticatorData"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,20 +14,20 @@ browser-compat: api.AuthenticatorAssertionResponse.authenticatorData
 
 {{securecontext_header}}{{APIRef("Web Authentication API")}}
 
-The **`authenticatorData`** property of the {{domxref("AuthenticatorAssertionResponse")}} interface returns an {{jsxref("ArrayBuffer")}} containing information from the authenticator such as the Relying Party ID Hash (rpIdHash), a signature counter, test of user presence, user verification flags, and any extensions processed by the authenticator.
+خصوصیت **`authenticatorData`** از رابط {{domxref("AuthenticatorAssertionResponse")}} یک {{jsxref("ArrayBuffer")}} برمی‌گرداند که شامل اطلاعاتی از احرازکننده است؛ مانند هش شناسهٔ طرف اعتماد (rpIdHash)، شمارندهٔ امضا، تست حضور کاربر، پرچم‌های تأیید هویت کاربر و هر افزونه‌ای که توسط احرازکننده پردازش شده است.
 
-## Value
+## مقدار
 
-An {{jsxref("ArrayBuffer")}} with a {{jsxref("ArrayBuffer.byteLength", "byteLength")}} of at least 37 bytes, which contains the data structure explained in [Authenticator data](/en-US/docs/Web/API/Web_Authentication_API/Authenticator_data).
+یک {{jsxref("ArrayBuffer")}} با {{jsxref("ArrayBuffer.byteLength", "byteLength")}} حداقل ۳۷ بایت، که شامل ساختار داده‌ای است که در [داده‌های احرازکننده](/en-US/docs/Web/API/Web_Authentication_API/Authenticator_data) توضیح داده شده است.
 
-## Examples
+## مثال‌ها
 
-See [Retrieving a public key credential](/en-US/docs/Web/API/CredentialsContainer/get#retrieving_a_public_key_credential) for a detailed example.
+برای یک مثال دقیق، [بازیابی یک گواهینامه کلید عمومی](/en-US/docs/Web/API/CredentialsContainer/get#retrieving_a_public_key_credential) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
