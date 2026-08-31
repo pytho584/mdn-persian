@@ -1,11 +1,5 @@
 ---
 title: "CaptureController: forwardWheel() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/forwardWheel"
-status: "needs-translation"
----
-
----
-title: "CaptureController: forwardWheel() method"
 short-title: forwardWheel()
 slug: Web/API/CaptureController/forwardWheel
 page-type: web-api-instance-method
@@ -16,44 +10,44 @@ browser-compat: api.CaptureController.forwardWheel
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The {{domxref("CaptureController")}} interface's **`forwardWheel()`** method starts forwarding {{domxref("Element.wheel_event", "wheel")}} events fired on the referenced element to the viewport of an associated captured display surface.
+متد **`forwardWheel()`** از رابط {{domxref("CaptureController")}} ارسال رویدادهای {{domxref("Element.wheel_event", "wheel")}} (چرخ) که روی عنصر مرجع رخ می‌دهند را به نمای دید (viewport) یک سطح نمایش ضبط‌شده مرتبط آغاز می‌کند.
 
-The `forwardWheel()` method must be invoked via [transient activation](/en-US/docs/Glossary/Transient_activation). Specifically, the only events that can successfully invoke it are `click` and `input`. In addition, the user is asked for permission to share tabs when screen capture is first attempted; if the user grants permission, this also includes permission to scroll captured tabs. If the relevant permission is already `"granted"`, transient activation is not needed.
+متد `forwardWheel()` باید از طریق [فعال‌سازی موقت (transient activation)](/en-US/docs/Glossary/Transient_activation) فراخوانی شود. به طور خاص، تنها رویدادهایی که می‌توانند با موفقیت آن را فراخوانی کنند `click` و `input` هستند. همچنین، در اولین تلاش برای ضبط صفحه، از کاربر برای اشتراک‌گذاری زبانه‌ها (tabs) اجازه گرفته می‌شود؛ اگر کاربر اجازه دهد، این شامل اجازه اسکرول کردن زبانه‌های ضبط‌شده نیز می‌شود. اگر مجوز مربوطه از قبل `"granted"` (اعطا شده) باشد، فعال‌سازی موقت نیازی نیست.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 forwardWheel(element)
 ```
 
-### Parameters
+### پارامترها
 
 - `element`
-  - : A reference to the element whose `wheel` events you want to forward to the associated captured display surface.
+  - : ارجاعی به عنصری که رویدادهای `wheel` آن را می‌خواهید به سطح نمایش ضبط‌شده مرتبط ارسال کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} (تعریف‌نشده) تکمیل می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown when:
-    - The capturing {{domxref("MediaStream")}} returned by the originating {{domxref("MediaDevices.getDisplayMedia()")}} call is no longer capturing, for example because the associated {{domxref("MediaStreamTrack")}} objects have had {{domxref("MediaStreamTrack.stop", "stop()")}} called on them.
-    - The application is capturing itself.
-    - An attempt is made to invoke `forwardWheel()` without transient activation, when permission to use it has not been granted by the user.
+  - : زمانی پرتاب می‌شود که:
+    - {{domxref("MediaStream")}} ضبط‌کننده که توسط فراخوانی اصلی {{domxref("MediaDevices.getDisplayMedia()")}} بازگردانده شده، دیگر در حال ضبط نیست، مثلاً به دلیل اینکه روی اشیاء {{domxref("MediaStreamTrack")}} مرتبط متد {{domxref("MediaStreamTrack.stop", "stop()")}} فراخوانی شده است.
+    - برنامه در حال ضبط خودش است.
+    - تلاشی برای فراخوانی `forwardWheel()` بدون فعال‌سازی موقت انجام شود، در حالی‌که مجوز استفاده از آن توسط کاربر اعطا نشده است.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown when:
-    - The page's {{HTTPHeader("Permissions-Policy/captured-surface-control", "captured-surface-control")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) does not permit the page to use the Captured Surface Control API.
-    - Permission to capture the display surface is explicitly denied by the user.
+  - : زمانی پرتاب می‌شود که:
+    - [سیاست مجوز (Permissions Policy)](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) صفحه با هدر {{HTTPHeader("Permissions-Policy/captured-surface-control", "captured-surface-control")}} به صفحه اجازه استفاده از API کنترل سطح ضبط‌شده (Captured Surface Control) را نمی‌دهد.
+    - مجوز ضبط سطح نمایش به صراحت توسط کاربر رد شده است.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : The surface type being captured is not a browser tab.
+  - : نوع سطح در حال ضبط یک زبانه مرورگر نیست.
 
-## Examples
+## مثال‌ها
 
-### Basic `forwardWheel()` usage
+### استفاده پایه از `forwardWheel()`
 
-In our live demo, explained in [Using the Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control), we call a function called `startForwarding()` after the capturing `getDisplayMedia()` promise fulfills:
+در نسخه نمایشی زنده ما، که در [استفاده از API کنترل سطح ضبط‌شده (Captured Surface Control)](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control) توضیح داده شده، پس از تکمیل قول (promise) `getDisplayMedia()` ضبط‌کننده، تابعی به نام `startForwarding()` را فراخوانی می‌کنیم:
 
 ```js
 // Create controller and start capture
@@ -67,7 +61,7 @@ videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia({
 startForwarding();
 ```
 
-This function calls the `forwardWheel()` method, passing it a reference to the `<video>` element the captured stream is being displayed in:
+این تابع متد `forwardWheel()` را فراخوانی می‌کند و یک ارجاع به عنصر `<video>` که جریان ضبط‌شده در آن نمایش داده می‌شود، به آن پاس می‌دهد:
 
 ```js
 async function startForwarding() {
@@ -79,18 +73,18 @@ async function startForwarding() {
 }
 ```
 
-This results in the {{domxref("Element.wheel_event", "wheel")}} events fired on the referenced element being forwarded to the captured display surface, allowing the capturing app to scroll it.
+این باعث می‌شود رویدادهای {{domxref("Element.wheel_event", "wheel")}} (چرخ) که روی عنصر مرجع رخ می‌دهند، به سطح نمایش ضبط‌شده ارسال شوند و به برنامه ضبط‌کننده اجازه اسکرول کردن آن را بدهند.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - {{domxref("MediaDevices.getDisplayMedia()")}}
-- [Using the Captured Surface Control API](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control)
+- [استفاده از API کنترل سطح ضبط‌شده (Captured Surface Control)](/en-US/docs/Web/API/Screen_Capture_API/Captured_Surface_Control)
