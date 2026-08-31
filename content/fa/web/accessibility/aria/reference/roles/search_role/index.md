@@ -1,7 +1,7 @@
 ---
 title: "ARIA: search role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/search_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,7 +15,7 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `search` role is used to identify the search functionality; the section of the page used to search the page, site, or collection of sites.
+نقش `search` برای شناسایی قابلیت جستجو استفاده می‌شود؛ بخشی از صفحه که برای جستجو در صفحه، سایت، یا مجموعه سایت‌ها به کار می‌رود.
 
 ```html
 <form role="search">
@@ -23,13 +23,13 @@ The `search` role is used to identify the search functionality; the section of t
 </form>
 ```
 
-## Description
+## توضیحات
 
-The `search` role is [a landmark](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) role that can be added to the container element that encompasses all of the elements that combined to form the search feature of the document or application, including a descendant [`<input type="search">`](/en-US/docs/Web/HTML/Reference/Elements/input/search). If a document includes more than one search, each should have a unique label, unless they are the same search repeated, then use the same name. There is an [`input` of type `search`](/en-US/docs/Web/HTML/Reference/Elements/input/search), though this does not define a search landmark by itself. Using {{HTMLElement('search')}} is an alternative way to define a search landmark.
+نقش `search` یک [نقش لندمارک](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) است که می‌توان آن را به عنصر محتوایی اضافه کرد که همه عناصر ترکیب‌شده برای تشکیل ویژگی جستجوی سند یا برنامه را در بر می‌گیرد، از جمله یک [`<input type="search">`](/en-US/docs/Web/HTML/Reference/Elements/input/search) فرزند. اگر یک سند بیش از یک جستجو داشته باشد، هر جستجو باید برچسب منحصربه‌فرد داشته باشد، مگر اینکه همان جستجو تکرار شده باشد؛ در این صورت از همان نام استفاده کنید. یک [`input` از نوع `search`](/en-US/docs/Web/HTML/Reference/Elements/input/search) وجود دارد، اگرچه این به خودی خود یک ناحیه جستجو را تعریف نمی‌کند. استفاده از {{HTMLElement('search')}} یک راه جایگزین برای تعریف ناحیه جستجو است.
 
-## Examples
+## مثال‌ها
 
-When a {{HTMLElement('form')}} is a search form, use the `search` role instead of [`form`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/form_role) role.
+وقتی یک {{HTMLElement('form')}} یک فرم جستجو است، به جای نقش [`form`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/form_role) از نقش `search` استفاده کنید.
 
 ```html
 <form id="search" role="search">
@@ -39,23 +39,23 @@ When a {{HTMLElement('form')}} is a search form, use the `search` role instead o
 </form>
 ```
 
-## Accessibility concerns
+## نگرانی‌های دسترس‌پذیری
 
-[Landmark roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) are intended to be used sparingly, to identify larger overall sections of the document. Using too many landmark roles can create "noise" in screen readers, making it difficult to understand the overall layout of the page.
+[نقش‌های لندمارک](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) برای استفاده محدود طراحی شده‌اند تا بخش‌های بزرگ‌تر کلی سند را شناسایی کنند. استفاده بیش از حد از نقش‌های لندمارک می‌تواند در صفحه‌خوان‌ها «نویز» ایجاد کند و درک چیدمان کلی صفحه را دشوار کند.
 
-## Best practices
+## بهترین شیوه‌ها
 
-### Prefer HTML
+### ترجیح HTML
 
-Using the {{HTMLElement('search')}} element will automatically communicate that the element has a role of `search`. If possible, prefer using the semantic `<search>` element instead of the `search` role.
+استفاده از عنصر {{HTMLElement('search')}} به‌طور خودکار این را منتقل می‌کند که عنصر دارای نقش `search` است. در صورت امکان، ترجیح دهید به جای نقش `search` از عنصر معنایی `<search>` استفاده کنید.
 
-If your `<input>` of type `search` is already contained within a {{HTMLElement("form")}}, then wrapping the form in another `<search>` element may be unnecessary markup. In this case, using `role="search"` on the `<form>` itself is acceptable.
+اگر `<input>` شما از نوع `search` قبلاً درون یک {{HTMLElement("form")}} قرار دارد، پیچیدن فرم در یک عنصر `<search>` دیگر ممکن است نشانه‌گذاری غیرضروری باشد. در این حالت، استفاده از `role="search"` روی خود `<form>` قابل قبول است.
 
-### Labeling landmarks
+### برچسب‌گذاری لندمارک‌ها
 
-#### Multiple landmarks
+#### لندمارک‌های متعدد
 
-If there is more than one `search` landmark role in a document, provide a label for each landmark. This label will allow an assistive technology user to be able to quickly understand the purpose of each landmark.
+اگر بیش از یک نقش لندمارک `search` در یک سند وجود دارد، برای هر لندمارک یک برچسب فراهم کنید. این برچسب به کاربر فناوری کمکی امکان می‌دهد تا به سرعت هدف هر لندمارک را درک کند.
 
 ```html
 <form id="site-search" role="search" aria-label="Sitewide">
@@ -69,9 +69,9 @@ If there is more than one `search` landmark role in a document, provide a label 
 </form>
 ```
 
-#### Repeated landmarks
+#### لندمارک‌های تکراری
 
-If a `search` landmark role in a document is repeated in a document, and both landmarks have identical content, use the same label for each landmark. An example of this would be repeating the sitewide search at the top and bottom of the page.
+اگر یک نقش لندمارک `search` در یک سند تکرار شده باشد و هر دو لندمارک محتوای یکسانی داشته باشند، از همان برچسب برای هر لندمارک استفاده کنید. نمونه‌ای از این حالت، تکرار جستجوی سراسری در بالای صفحه و پایین صفحه است.
 
 ```html
 <header>
@@ -89,18 +89,18 @@ If a `search` landmark role in a document is repeated in a document, and both la
 </footer>
 ```
 
-#### Redundant descriptions
+#### توضیحات تکراری
 
-Screen readers will announce the type of role the landmark is. Because of this, you do not need to describe what the landmark is in its label. For example, a declaration of `role="search"` with an [`aria-label="Sitewide search"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) may be announced redundantly as, "sitewide search search".
+صفحه‌خوان‌ها نوع نقشی که لندمارک دارد را اعلام می‌کنند. به همین دلیل، نیازی نیست در برچسب توصیف کنید که لندمارک چیست. برای مثال، یک اعلان `role="search"` با [`aria-label="Sitewide search"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) ممکن است به صورت تکراری اعلام شود، مانند «جستجوی سراسری جستجو».
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement('form')}} element
-- The {{HTMLElement('input')}} element
-- The {{HTMLElement('search')}} element
+- عنصر {{HTMLElement('form')}}
+- عنصر {{HTMLElement('input')}}
+- عنصر {{HTMLElement('search')}}
 - [`<input type="search">`](/en-US/docs/Web/HTML/Reference/Elements/input/search)
-- [Using HTML sections and outlines](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)
+- [استفاده از بخش‌ها و طرح کلی HTML](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)
