@@ -1,11 +1,5 @@
 ---
 title: "ContactsManager: getProperties() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContactsManager/getProperties"
-status: "needs-translation"
----
-
----
-title: "ContactsManager: getProperties() method"
 short-title: getProperties()
 slug: Web/API/ContactsManager/getProperties
 page-type: web-api-instance-method
@@ -16,43 +10,39 @@ browser-compat: api.ContactsManager.getProperties
 
 {{securecontext_header}}{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
-The **`getProperties()`** method of the
-{{domxref("ContactsManager")}} interface returns a {{jsxref('Promise')}} which resolves
-with an {{jsxref('Array')}} of {{jsxref('String','strings')}} indicating which contact
-properties are available.
+**`getProperties()`** 方法属于 {{domxref("ContactsManager")}} 接口，返回一个 {{jsxref('Promise')}}，该 Promise 解析为一个包含 {{jsxref('String','字符串')}} 的 {{jsxref('Array')}}，用于表示当前系统可用的联系人属性。
 
-## Syntax
+## 语法
 
 ```js-nolint
 getProperties()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-Returns a {{jsxref('Promise')}} that resolves with an {{jsxref('Array')}} of {{jsxref('String','strings')}} naming the contact properties that can be returned by the current system.
+返回一个 {{jsxref('Promise')}}，解析为一个包含 {{jsxref('String','字符串')}} 的 {{jsxref('Array')}}，这些字符串表示当前系统可以返回的联系人属性。
 
-Properties can include the following:
+属性可能包括以下值：
 
-- `'name'`: The contact's name.
-- `'tel'`: The telephone number(s) of the contact.
-- `'email'`: The email address of the contact.
-- `'address'`: The contact's postal address.
-- `'icon'`: The avatar of the contact.
+- `'name'`：联系人的姓名。
+- `'tel'`：联系人的电话号码。
+- `'email'`：联系人的电子邮件地址。
+- `'address'`：联系人的邮寄地址。
+- `'icon'`：联系人的头像。
 
-### Exceptions
+### 异常
 
-No exceptions are thrown.
+不会抛出异常。
 
-## Examples
+## 示例
 
-### Verify Property Support
+### 验证属性支持情况
 
-The following asynchronous function uses the `getProperties()` method to check
-whether the current system supports the `icon` property.
+以下异步函数使用 `getProperties()` 方法来检查当前系统是否支持 `icon` 属性。
 
 ```js
 async function checkProperties() {
@@ -63,9 +53,9 @@ async function checkProperties() {
 }
 ```
 
-### Select Using Only Supported Properties
+### 仅使用受支持的属性进行选择
 
-The following example is similar to one for the {{domxref("ContactsManager.select", "select()")}} method. Instead of hard-coding the properties passed to `select()`, it uses `getProperties()` to ensure that only supported properties are passed. Otherwise, `select()` might throw a {{jsxref("TypeError")}}. `handleResults()` is a developer defined function.
+以下示例与 {{domxref("ContactsManager.select", "select()")}} 方法的示例类似。它没有硬编码传递给 `select()` 的属性，而是使用 `getProperties()` 来确保只传递受支持的属性。否则，`select()` 可能会抛出 {{jsxref("TypeError")}}。`handleResults()` 是一个由开发者定义的函数。
 
 ```js
 const supportedProperties = await navigator.contacts.getProperties();
@@ -80,10 +70,10 @@ async function getContacts() {
 }
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
