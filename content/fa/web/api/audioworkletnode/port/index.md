@@ -1,7 +1,7 @@
 ---
 title: "AudioWorkletNode: port property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/port"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,29 +14,20 @@ browser-compat: api.AudioWorkletNode.port
 
 {{APIRef("Web Audio API")}}{{SecureContext_Header}}
 
-The read-only **`port`** property of the
-{{domxref("AudioWorkletNode")}} interface returns the associated
-{{domxref("MessagePort")}}. It can be used to communicate between the node and its
-associated {{domxref("AudioWorkletProcessor")}}.
+ویژگی‌ی فقط‌خواندنی **`port`** از رابط {{domxref("AudioWorkletNode")}}، {{domxref("MessagePort")}} مرتبط را بازمی‌گرداند. از آن می‌توان برای برقراری ارتباط بین گره و {{domxref("AudioWorkletProcessor")}} مرتبط با آن استفاده کرد.
 
 > [!NOTE]
-> The port at the other end of the channel is
-> available under the {{domxref("AudioWorkletProcessor.port", "port")}} property of the
-> processor.
+> پورت در انتهای دیگر کانال، در ویژگی {{domxref("AudioWorkletProcessor.port", "port")}} پردازنده در دسترس است.
 
-## Value
+## مقدار
 
-The {{domxref("MessagePort")}} object that is connecting the
-`AudioWorkletNode` and its associated `AudioWorkletProcessor`.
+شیء {{domxref("MessagePort")}} که `AudioWorkletNode` و `AudioWorkletProcessor` مرتبط با آن را به هم متصل می‌کند.
 
-## Examples
+## مثال‌ها
 
-To demonstrate bidirectional communication capabilities, we'll create an
-`AudioWorkletProcessor`, which will output silence and respond to ping
-requests from its `AudioWorkletNode`.
+برای نشان دادن قابلیت‌های ارتباطی دوطرفه، یک `AudioWorkletProcessor` ایجاد می‌کنیم که خروجی‌اش سکوت است و به درخواست‌های پینگ از `AudioWorkletNode` پاسخ می‌دهد.
 
-First, we need to define a custom `AudioWorkletProcessor`, and register it.
-Note that this should be done in a separate file.
+ابتدا باید یک `AudioWorkletProcessor` سفارشی تعریف و آن را ثبت کنیم. توجه داشته باشید که این کار باید در یک فایل جداگانه انجام شود.
 
 ```js
 // ping-pong-processor.js
@@ -56,33 +47,30 @@ class PingPongProcessor extends AudioWorkletProcessor {
 registerProcessor("ping-pong-processor", PingPongProcessor);
 ```
 
-Now in our main scripts file we'll load the processor, create an instance of
-`AudioWorkletNode` passing the name of the processor, and connect the node to
-an audio graph.
+حالا در فایل اسکریپت اصلی خود، پردازنده را بارگذاری می‌کنیم، نمونه‌ای از `AudioWorkletNode` با نام پردازنده ایجاد می‌کنیم و گره را به یک گراف صوتی متصل می‌کنیم.
 
 ```js
 const audioContext = new AudioContext();
 await audioContext.audioWorklet.addModule("ping-pong-processor.js");
 const pingPongNode = new AudioWorkletNode(audioContext, "ping-pong-processor");
-// send the message containing 'ping' string
-// to the AudioWorkletProcessor from the AudioWorkletNode every second
+// ارسال پیام حاوی رشته 'ping'
+// از AudioWorkletNode به AudioWorkletProcessor هر ثانیه
 setInterval(() => pingPongNode.port.postMessage("ping"), 1000);
 pingPongNode.port.onmessage = (e) => console.log(e.data);
 pingPongNode.connect(audioContext.destination);
 ```
 
-This will output `"ping"` and `"pong"` strings to the console
-every second.
+این کار رشته‌های `"ping"` و `"pong"` را هر ثانیه در کنسول چاپ می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
