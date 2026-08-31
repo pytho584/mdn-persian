@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: imageSmoothingEnabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: imageSmoothingEnabled property"
 short-title: imageSmoothingEnabled
 slug: Web/API/CanvasRenderingContext2D/imageSmoothingEnabled
 page-type: web-api-instance-property
@@ -14,31 +8,24 @@ browser-compat: api.CanvasRenderingContext2D.imageSmoothingEnabled
 
 {{APIRef("Canvas API")}}
 
-The **`imageSmoothingEnabled`** property of the
-{{domxref("CanvasRenderingContext2D")}} interface, part of the [Canvas API](/en-US/docs/Web/API/Canvas_API), determines whether scaled images
-are smoothed (`true`, default) or not (`false`). On getting the
-`imageSmoothingEnabled` property, the last value it was set to is returned.
+خاصیت **`imageSmoothingEnabled`** از رابط {{domxref("CanvasRenderingContext2D")}} که بخشی از [Canvas API](/en-US/docs/Web/API/Canvas_API) است، تعیین می‌کند که آیا تصاویر مقیاس‌شده هموار (smooth) شوند (`true`، پیش‌فرض) یا خیر (`false`). هنگام خواندن خاصیت `imageSmoothingEnabled`، آخرین مقداری که به آن اختصاص داده شده است بازگردانده می‌شود.
 
-This property is useful for games and other apps that use pixel art. When enlarging
-images, the default resizing algorithm will blur the pixels. Set this property to
-`false` to retain the pixels' sharpness.
+این خاصیت برای بازی‌ها و سایر برنامه‌هایی که از پیکسل‌آرت (pixel art) استفاده می‌کنند مفید است. هنگام بزرگ کردن تصاویر، الگوریتم پیش‌فرض تغییر اندازه، پیکسل‌ها را تار می‌کند. این خاصیت را روی `false` تنظیم کنید تا وضوح پیکسل‌ها حفظ شود.
 
 > [!NOTE]
-> You can adjust the smoothing quality with the
+> می‌توانید کیفیت هموارسازی را با خاصیت
 > {{domxref("CanvasRenderingContext2D.imageSmoothingQuality", "imageSmoothingQuality")}}
-> property.
+> تنظیم کنید.
 
 ## Value
 
-A boolean value indicating whether to smooth scaled images or not. The default value is `true`.
+یک مقدار بولی (boolean) که نشان می‌دهد تصاویر مقیاس‌شده هموار شوند یا نه. مقدار پیش‌فرض `true` است.
 
 ## Examples
 
-### Disabling image smoothing
+### غیرفعال کردن هموارسازی تصویر
 
-This example compares three images. The first image is drawn at its natural size, the
-second is scaled to 3X and drawn with image smoothing enabled, and the third is scaled
-to 3X but drawn with image smoothing disabled.
+این مثال سه تصویر را مقایسه می‌کند. تصویر اول در اندازه طبیعی خود رسم می‌شود، تصویر دوم با مقیاس ۳ برابر و با فعال بودن هموارسازی تصویر رسم می‌شود، و تصویر سوم نیز با مقیاس ۳ برابر اما با غیرفعال بودن هموارسازی تصویر رسم می‌شود.
 
 #### HTML
 
