@@ -1,11 +1,5 @@
 ---
 title: "console: trace() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/trace_static"
-status: "needs-translation"
----
-
----
-title: "console: trace() static method"
 short-title: trace()
 slug: Web/API/console/trace_static
 page-type: web-api-static-method
@@ -14,30 +8,30 @@ browser-compat: api.console.trace_static
 
 {{APIRef("Console API")}} {{AvailableInWorkers}}
 
-The **`console.trace()`** static method outputs a stack trace to the console.
+متد ایستای **`console.trace()`** یک ردیابی پشته (stack trace) را در کنسول خروجی می‌دهد.
 
 > [!NOTE]
-> In some browsers, `console.trace()` may also output the sequence of calls and asynchronous events leading to the current `console.trace()` which are not on the call stack — to help identify the origin of the current event evaluation loop.
+> در برخی مرورگرها، `console.trace()` ممکن است علاوه بر پشته، توالی فراخوانی‌ها و رویدادهای ناهمگام (async events) که به `console.trace()` فعلی منتهی شده‌اند را نیز نمایش دهد — حتی اگر آن‌ها روی پشته‌ی فراخوانی نباشند — تا به شناسایی منشأ حلقه‌ی ارزیابی رویداد فعلی کمک کند.
 
-See [Stack traces](/en-US/docs/Web/API/console#stack_traces) in the {{domxref("console")}} documentation for details and examples.
+برای جزئیات و مثال‌ها، بخش [ردیابی پشته](/en-US/docs/Web/API/console#stack_traces) را در مستندات {{domxref("console")}} ببینید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 console.trace()
 console.trace(object1, /* …, */ objectN)
 ```
 
-### Parameters
+### پارامترها
 
 - `objects` {{optional_inline}}
-  - : Zero or more objects to be output to console along with the trace. These are assembled and formatted the same way they would be if passed to the {{domxref("console/log_static", "console.log()")}} method.
+  - : صفر یا چند شیء که همراه با ردیابی در کنسول خروجی داده می‌شوند. این اشیاء دقیقاً به همان روشی که اگر به متد {{domxref("console/log_static", "console.log()")}} منتقل می‌شدند، جمع‌آوری و قالب‌بندی می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 function foo() {
@@ -50,7 +44,7 @@ function foo() {
 foo();
 ```
 
-In the console, the following trace will be displayed:
+در کنسول، ردیابی زیر نمایش داده می‌شود:
 
 ```plain
 bar
@@ -58,16 +52,16 @@ foo
 <anonymous>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Microsoft Edge's documentation for `console.trace()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#trace)
-- [Node.js documentation for `console.trace()`](https://nodejs.org/docs/latest/api/console.html#consoletracemessage-args)
-- [Google Chrome's documentation for `console.trace()`](https://developer.chrome.com/docs/devtools/console/api/#trace)
+- [مستندات Microsoft Edge برای `console.trace()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#trace)
+- [مستندات Node.js برای `console.trace()`](https://nodejs.org/docs/latest/api/console.html#consoletracemessage-args)
+- [مستندات Google Chrome برای `console.trace()`](https://developer.chrome.com/docs/devtools/console/api/#trace)
