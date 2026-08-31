@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTServer: device property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer/device"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,17 +16,16 @@ browser-compat: api.BluetoothRemoteGATTServer.device
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTServer.device`** read-only property
-returns a reference to the {{domxref("BluetoothDevice")}} running the server.
+ویژگی فقط‌خواندنی **`BluetoothRemoteGATTServer.device`** مرجعی به {{domxref("BluetoothDevice")}} که سرور را اجرا می‌کند بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A reference to the {{domxref("BluetoothDevice")}}.
+مرجعی به {{domxref("BluetoothDevice")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
