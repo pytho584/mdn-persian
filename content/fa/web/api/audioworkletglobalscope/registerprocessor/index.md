@@ -1,7 +1,7 @@
 ---
 title: "AudioWorkletGlobalScope: registerProcessor() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/registerProcessor"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,53 +14,45 @@ browser-compat: api.AudioWorkletGlobalScope.registerProcessor
 
 {{ APIRef("Web Audio API") }}
 
-The **`registerProcessor`** method of the
-{{domxref("AudioWorkletGlobalScope")}} interface registers a class constructor derived
-from {{domxref("AudioWorkletProcessor")}} interface under a specified _name_.
+متد **`registerProcessor`** از رابط {{domxref("AudioWorkletGlobalScope")}} یک سازنده کلاس مشتق‌شده از رابط {{domxref("AudioWorkletProcessor")}} را تحت یک _نام_ مشخص ثبت می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 registerProcessor(name, processorCtor)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : A string representing the name under which the processor will be registered.
+  - : رشته‌ای که نامی را نشان می‌دهد که پردازنده با آن ثبت خواهد شد.
 - `processorCtor`
-  - : The constructor of a class derived from {{domxref("AudioWorkletProcessor")}}.
+  - : سازنده کلاسی مشتق‌شده از {{domxref("AudioWorkletProcessor")}}.
 
 > [!NOTE]
-> A key-value pair `{ name: constructor }`
-> is saved internally in the {{domxref("AudioWorkletGlobalScope")}} once the processor
-> is registered. The _name_ is to be referred to when creating an
-> {{domxref("AudioWorkletNode")}} based on the registered processor. A new processor by
-> the given name is internally created and associated with the new node.
+> پس از ثبت پردازنده، یک جفت کلید-مقدار `{ name: constructor }` به صورت داخلی در {{domxref("AudioWorkletGlobalScope")}} ذخیره می‌شود. برای ایجاد یک {{domxref("AudioWorkletNode")}} بر اساس پردازنده ثبت‌شده، باید به _نام_ ارجاع داده شود. یک پردازنده جدید با نام داده‌شده به صورت داخلی ایجاد و با گره جدید مرتبط می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown under the following conditions:
-    - The _name_ is an empty string.
-    - A constructor under the given _name_ is already registered. Registering
-      the same name twice is not allowed.
+  - : در شرایط زیر پرتاب می‌شود:
+    - _نام_ یک رشته خالی باشد.
+    - سازandهای با _نام_ داده‌شده از قبل ثبت شده باشد. ثبت نام یکسان دو بار مجاز نیست.
 
 - {{jsxref("TypeError")}}
-  - : Thrown under the following conditions:
-    - The _processorCtor_ is not a callable constructor.
-    - The {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} property of the constructor exists and doesn't return an array of {{domxref("AudioParamDescriptor")}}-based objects.
+  - : در شرایط زیر پرتاب می‌شود:
+    - _processorCtor_ یک سازنده قابل فراخوانی نباشد.
+    - ویژگی {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} سازنده وجود داشته باشد و آرایه‌ای از اشیاء مبتنی بر {{domxref("AudioParamDescriptor")}} برنگرداند.
 
-## Examples
+## مثال‌ها
 
-In this example we create a custom `AudioWorkletNode` that outputs silence.
+در این مثال، یک `AudioWorkletNode` سفارشی می‌سازیم که خروجی آن سکوت است.
 
-First, we need to define a custom {{domxref("AudioWorkletProcessor")}} and register it.
-Note that this should be done in a separate file.
+ابتدا باید یک {{domxref("AudioWorkletProcessor")}} سفارشی تعریف کرده و آن را ثبت کنیم. توجه داشته باشید که این کار باید در یک فایل جداگانه انجام شود.
 
 ```js
 // test-processor.js
@@ -73,9 +65,7 @@ class TestProcessor extends AudioWorkletProcessor {
 registerProcessor("test-processor", TestProcessor);
 ```
 
-Next, in our main script file we'll load the processor, create an instance of
-`AudioWorkletNode` — passing it the processor name that we used when calling
-`registerProcessor` — and connect it to an audio graph.
+سپس، در فایل اسکریپت اصلی خود، پردازنده را بارگذاری می‌کنیم، یک نمونه از `AudioWorkletNode` ایجاد می‌کنیم — نام پردازنده‌ای را که هنگام فراخوانی `registerProcessor` استفاده کردیم به آن می‌دهیم — و آن را به یک گراف صوتی متصل می‌کنیم.
 
 ```js
 const audioContext = new AudioContext();
@@ -84,14 +74,14 @@ const node = new AudioWorkletNode(audioContext, "test-processor");
 node.connect(audioContext.destination);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
