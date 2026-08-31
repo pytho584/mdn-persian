@@ -1,11 +1,5 @@
 ---
 title: "console: profileEnd() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/profileEnd_static"
-status: "needs-translation"
----
-
----
-title: "console: profileEnd() static method"
 short-title: profileEnd()
 slug: Web/API/console/profileEnd_static
 page-type: web-api-static-method
@@ -16,33 +10,33 @@ browser-compat: api.console.profileEnd_static
 
 {{APIRef("Console API")}}{{Non-standard_header}} {{AvailableInWorkers}}
 
-The **`console.profileEnd()`** static method stops recording a profile previously started with {{domxref("console/profile_static", "console.profile()")}}.
+متد استاتیک **`console.profileEnd()`** ضبط یک پروفایل را که قبلاً با {{domxref("console/profile_static", "console.profile()")}} شروع شده است، متوقف می‌کند.
 
-You can optionally supply an argument to name the profile. Doing so enables you to stop only that profile if you have multiple profiles being recorded.
+می‌توانید به‌صورت اختیاری یک آرگومان برای نام‌گذاری پروفایل ارائه دهید. این کار به شما امکان می‌دهد اگر چندین پروفایل در حال ضبط دارید، فقط آن پروفایل خاص را متوقف کنید.
 
-- If `console.profileEnd()` is passed a profile name, and it matches the name of a profile being recorded, then that profile is stopped.
-- If `console.profileEnd()` is passed a profile name and it does not match the name of a profile being recorded, no changes will be made.
-- If `console.profileEnd()` is not passed a profile name, the most recently started profile is stopped.
+- اگر به `console.profileEnd()` یک نام پروفایل داده شود و با نام پروفایل در حال ضبط مطابقت داشته باشد، آن پروفایل متوقف می‌شود.
+- اگر به `console.profileEnd()` یک نام پروفایل داده شود و با نام پروفایل در حال ضبط مطابقت نداشته باشد، هیچ تغییری اعمال نخواهد شد.
+- اگر به `console.profileEnd()` نام پروفایلی داده نشود، آخرین پروفایل شروع‌شده توقف می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 console.profileEnd(profileName)
 ```
 
-### Parameters
+### پارامترها
 
 - `profileName` {{Optional_Inline}}
-  - : The name to give the profile.
+  - : نامی که به پروفایل داده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("console/profile_static", "console.profile()")}}
