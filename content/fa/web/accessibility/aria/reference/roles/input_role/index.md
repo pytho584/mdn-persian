@@ -1,11 +1,7 @@
 ---
 title: "ARIA: input role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/input_role"
-status: "needs-translation"
----
-
----
-title: "ARIA: input role"
+translated_by: "n8n + AI"
 short-title: input
 slug: Web/Accessibility/ARIA/Reference/Roles/input_role
 page-type: aria-role
@@ -13,27 +9,27 @@ spec-urls: https://w3c.github.io/aria/#input
 sidebar: accessibilitysidebar
 ---
 
-The `input` abstract role is a generic type of widget that allows user input.
+نقش انتزاعی `input` یک نوع عمومی از ویجت است که ورودی کاربر را ممکن می‌سازد.
 
 > [!WARNING]
-> The `input` role is an [abstract role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles). It is included here for completeness of documentation. It is not to be used by web authors.
+> نقش `input` یک [نقش انتزاعی](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#6._abstract_roles) است. برای کامل بودن مستندات در اینجا گنجانده شده است. نویسندگان وب نباید از آن استفاده کنند.
 
-## Description
+## توضیحات
 
-The `input` role is an abstract role. It must not be used by web authors. It is the superclass for input widgets that provide for user input, including [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role), [`radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role), and [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role). For all three, consider using the {{HTMLElement("input")}} element of type [`checkbox`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox), [`radio`](/en-US/docs/Web/HTML/Reference/Elements/input/radio) and [`text`](/en-US/docs/Web/HTML/Reference/Elements/input/text), respectively.
+نقش `input` یک نقش انتزاعی است. نویسندگان وب نباید از آن استفاده کنند. این ابرکلاس ویجت‌های ورودی است که ورودی کاربر را فراهم می‌کنند، از جمله [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)، [`radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role)، و [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role). برای هر سه مورد، به ترتیب، استفاده از عنصر {{HTMLElement("input")}} از نوع [`checkbox`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox)، [`radio`](/en-US/docs/Web/HTML/Reference/Elements/input/radio) و [`text`](/en-US/docs/Web/HTML/Reference/Elements/input/text) را در نظر بگیرید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: `widget` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/widget_role)
-- [ARIA: `checkbox` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
-- [ARIA: `combobox` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)
-- [ARIA: `option` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role)
-- [ARIA: `radio` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role)
-- [ARIA: `slider` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
-- [ARIA: `spinbutton` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
-- [ARIA: `textbox` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
-- [HTML: the `input` element](/en-US/docs/Web/HTML/Reference/Elements/input)
+- [ARIA: نقش `widget`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/widget_role)
+- [ARIA: نقش `checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
+- [ARIA: نقش `combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)
+- [ARIA: نقش `option`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/option_role)
+- [ARIA: نقش `radio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radio_role)
+- [ARIA: نقش `slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
+- [ARIA: نقش `spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
+- [ARIA: نقش `textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
+- [HTML: عنصر `input`](/en-US/docs/Web/HTML/Reference/Elements/input)
