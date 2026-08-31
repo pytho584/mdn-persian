@@ -1,11 +1,5 @@
 ---
 title: "CSSFontPaletteValuesRule: basePalette property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule/basePalette"
-status: "needs-translation"
----
-
----
-title: "CSSFontPaletteValuesRule: basePalette property"
 short-title: basePalette
 slug: Web/API/CSSFontPaletteValuesRule/basePalette
 page-type: web-api-instance-property
@@ -14,24 +8,24 @@ browser-compat: api.CSSFontPaletteValuesRule.basePalette
 
 {{APIRef("CSSOM")}}
 
-The read-only **`basePalette`** property of the {{domxref("CSSFontPaletteValuesRule")}} interface indicates the base palette associated with the rule.
+خاصیت فقط خواندنی **`basePalette`** از رابط {{domxref("CSSFontPaletteValuesRule")}} نشان‌دهندهٔ پالت پایه مرتبط با قانون است.
 
-## Value
+## مقدار
 
-A string that can be one of the following color values:
+یک رشته که می‌تواند یکی از مقادیر رنگی زیر باشد:
 
 - `light`
-  - : Matches the first palette in the font file that is marked as applicable to a light background, that is, _close to white_. If there is no palette in the font or if no palette has the required metadata, the value is equivalent to `"0"`, that is, the first palette in the font.
+  - : با اولین پالت در فایل فونت که به عنوان مناسب برای پس‌زمینهٔ روشن (نزدیک به سفید) علامت‌گذاری شده است، مطابقت دارد. اگر هیچ پالتی در فونت وجود نداشته باشد یا هیچ پالتی فرادادهٔ مورد نیاز را نداشته باشد، مقدار معادل `"0"` یعنی اولین پالت در فونت است.
 - `dark`
-  - : Matches the first palette in the font file that is marked as applicable to a dark background, that is, _close to black_. If there is no palette in the font or if no palette has the required metadata, the value is equivalent to `"0"`, that is, the first palette in the font.
-- a string containing an index (like `"0"`, `"1"`, …)
-  - : Matches the palette corresponding to the index. The first palette corresponds to `"0"`.
+  - : با اولین پالت در فایل فونت که به عنوان مناسب برای پس‌زمینهٔ تیره (نزدیک به سیاه) علامت‌گذاری شده است، مطابقت دارد. اگر هیچ پالتی در فونت وجود نداشته باشد یا هیچ پالتی فرادادهٔ مورد نیاز را نداشته باشد، مقدار معادل `"0"` یعنی اولین پالت در فونت است.
+- یک رشته شامل یک ایندکس (مانند `"0"`, `"1"`, …)
+  - : با پالت متناظر با ایندکس مطابقت دارد. اولین پالت با `"0"` مطابقت دارد.
 
-## Examples
+## مثال‌ها
 
-### Read the associated base palette
+### خواندن پالت پایهٔ مرتبط
 
-The MDN [live sample](/en-US/docs/MDN/Writing_guidelines/Page_structures/Live_samples) infrastructure combines all the CSS blocks in the example into a single inline style with the id `css-output`, so we first use {{domxref("document.getElementById()")}} to find that sheet. `rules[2]` returns the first {{domxref("CSSFontPaletteValuesRule")}} object, and `rules[3]` the second one.
+زیرساخت نمونه‌های زندهٔ MDN تمام بلوک‌های CSS موجود در مثال را در یک استایل in-line با شناسهٔ `css-output` ترکیب می‌کند، بنابراین ابتدا از {{domxref("document.getElementById()")}} برای پیدا کردن آن شیوه‌نامه استفاده می‌کنیم. `rules[2]` اولین شیء {{domxref("CSSFontPaletteValuesRule")}} و `rules[3]` دومی را بازمی‌گرداند.
 
 #### HTML
 
@@ -83,19 +77,19 @@ log.textContent = `The ${twoRule.name} @font-palette-values base palette is: ${t
 log.textContent += `The ${fiveRule.name} @font-palette-values base palette is: ${fiveRule.basePalette}`;
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Read the associated base palette", "100", "255")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{cssxref("@font-palette-values")}} at-rule
-- {{cssxref("@font-palette-values/base-palette", "base-palette")}} descriptor
+- {{cssxref("@font-palette-values")}} قاعدهٔ at-rule
+- توصیف‌کنندهٔ {{cssxref("@font-palette-values/base-palette", "base-palette")}}
