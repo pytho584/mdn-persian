@@ -1,7 +1,5 @@
 ---
 title: "CSPViolationReport: sourceFile property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSPViolationReport/sourceFile"
-status: "needs-translation"
 ---
 
 ---
@@ -14,31 +12,27 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}
 
-The **`sourceFile`** property of the {{domxref("CSPViolationReport")}} dictionary indicates the URL of the source file that violated the [Content Security Policy (CSP)](/en-US/docs/Web/HTTP/Guides/CSP).
+ویژگی **`sourceFile`** از دیکشنری {{domxref("CSPViolationReport")}} نشانی URL فایل منبعی را نشان می‌دهد که [سیاست امنیت محتوا (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) را نقض کرده است.
 
-For a violation triggered by the use of an inline script, `sourceFile` is the URL of the current document.
-Similarly, if a document successfully loads a script that then violates the document CSP, the `sourceFile` is the URL of the script.
+برای نقضی که در اثر استفاده از یک اسکریپت درون‌خطی (inline script) رخ می‌دهد، `sourceFile` نشانی URL سند جاری است. به طور مشابه، اگر یک سند با موفقیت اسکریپتی را بارگذاری کند که سپس CSP سند را نقض کند، `sourceFile` نشانی URL آن اسکریپت خواهد بود.
 
-This property is used with the {{domxref("CSPViolationReport.lineNumber")}} and {{domxref("CSPViolationReport.columnNumber")}} properties, which together provide the exact location in the source that caused the violation.
+این ویژگی به همراه ویژگی‌های {{domxref("CSPViolationReport.lineNumber")}} و {{domxref("CSPViolationReport.columnNumber")}} استفاده می‌شود که با هم موقعیت دقیق در منبع را که باعث نقض شده است، مشخص می‌کنند.
 
-Note however that if a document with a CSP that blocks external resources attempts to load an external resource, `sourceFile` will be `null`.
-This is because the browser extracts the value from _the global object_ of the file that triggered the violation.
-Because of the CSP restriction the external resource is never loaded, and therefore has no corresponding global object.
+توجه داشته باشید که اگر یک سند با CSP که منابع خارجی را مسدود می‌کند، تلاش کند یک منبع خارجی را بارگذاری کند، `sourceFile` مقدار `null` خواهد داشت. دلیل این است که مرورگر مقدار را از _شیء سراسری (global object)_ فایلی که باعث نقض شده است استخراج می‌کند. به دلیل محدودیت CSP، منبع خارجی هرگز بارگذاری نمی‌شود و بنابراین شیء سراسری متناظری ندارد.
 
-## Value
+## مقدار
 
-A string containing the URL of the file that triggered the violation, or `null`.
+یک رشته شامل نشانی URL فایلی که باعث نقض شده است، یا `null`.
 
-## Examples
+## مثال‌ها
 
-### CSP inline script violation
+### نقض CSP با اسکریپت درون‌خطی
 
-This example triggers a CSP violation using an inline script, and reports the violation using a {{domxref("ReportingObserver")}}.
+این مثال با استفاده از یک اسکریپت درون‌خطی، نقض CSP را ایجاد کرده و آن را با استفاده از یک {{domxref("ReportingObserver")}} گزارش می‌دهد.
 
 #### HTML
 
-The HTML file below uses the [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) element to set the {{httpheader('Content-Security-Policy')}} `default-src` to `self`, which allows scripts and other resources to be loaded from the same origin, but does not allow inline scripts to be executed.
-The document also includes an inline script, which should therefore trigger a CSP violation.
+فایل HTML زیر از عنصر [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) برای تنظیم {{httpheader('Content-Security-Policy')}} با مقدار `default-src 'self'` استفاده می‌کند که اجازه می‌دهد اسکریپت‌ها و سایر منابع از همان خاستگاه (origin) بارگذاری شوند، اما اجازه اجرای اسکریپت‌های درون‌خطی را نمی‌دهد. سند همچنین شامل یک اسکریپت درون‌خطی است که بنابراین باید یک نقض CSP را ایجاد کند.
 
 ```html
 <!doctype html>
@@ -64,11 +58,9 @@ The document also includes an inline script, which should therefore trigger a CS
 
 #### JavaScript (main.js)
 
-The document above also loads the external script `main.js`, which is shown below.
-Because this is loaded from the same domain as the HTML, it is not blocked by the CSP.
+سند بالا همچنین اسکریپت خارجی `main.js` را بارگذاری می‌کند که در زیر نشان داده شده است. از آنجایی که این اسکریپت از همان دامنه HTML بارگذاری می‌شود، توسط CSP مسدود نمی‌شود.
 
-The script creates a new {{domxref("ReportingObserver")}} to observe content violation reports of type `"csp-violation"`.
-Each time the callback function is invoked, we get the body of the first entry of the reports array, and use it to log the file, line, and column of the violation to the console.
+این اسکریپت یک {{domxref("ReportingObserver")}} جدید برای مشاهده گزارش‌های نقض محتوا از نوع `"csp-violation"` ایجاد می‌کند. هر بار که تابع callback فراخوانی می‌شود، بدنه اولین ورودی آرایه reports را می‌گیریم و از آن برای ثبت فایل، خط و ستون نقض در کنسول استفاده می‌کنیم.
 
 ```js
 // main.js
@@ -88,15 +80,13 @@ const observer = new ReportingObserver(
 observer.observe();
 ```
 
-Note that while there might be multiple reports in the returned array, for brevity we only log the values of the first element.
+توجه داشته باشید که اگرچه ممکن است چندین گزارش در آرایه بازگشتی وجود داشته باشد، برای اختصار فقط مقادیر اولین عنصر را ثبت می‌کنیم.
 
-#### Results
+#### نتایج
 
-You can try this out using a [local server](/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server).
-Copy the above code into `test/index.html` and `test/main.js` and run the server in the root directory.
-Assuming the address of the local server is `http://127.0.0.1:9999`, you can then load the HTML file from `http://127.0.0.1:9999/test/` (or `http://127.0.0.1:9999/test/index.html`).
+می‌توانید این را با استفاده از یک [سرور محلی](/en-US/docs/Learn_web_development/Howto/Tools_and_setup/set_up_a_local_testing_server) امتحان کنید. کد بالا را در فایل‌های `test/index.html` و `test/main.js` کپی کرده و سرور را در دایرکتوری ریشه اجرا کنید. با فرض اینکه آدرس سرور محلی `http://127.0.0.1:9999` است، می‌توانید فایل HTML را از `http://127.0.0.1:9999/test/` (یا `http://127.0.0.1:9999/test/index.html`) بارگذاری کنید.
 
-With the above setup, the output of the log on Chrome is:
+با تنظیمات فوق، خروجی لاگ در کروم به صورت زیر است:
 
 ```plain
 sourceFile: http://127.0.0.1:9999/test/
@@ -104,7 +94,7 @@ lineNumber: 15
 columnNumber: 0
 ```
 
-The result is similar for Firefox:
+نتیجه برای فایرفاکس مشابه است:
 
 ```plain
 sourceFile: http://127.0.0.1:9999/test/
@@ -112,18 +102,16 @@ lineNumber: 15
 columnNumber: 13
 ```
 
-Note that the column number is different for the two browsers.
-Chrome always appears to report `0`.
-The value on Firefox represents the position of the first character after the end of the opening `<script>` element.
+توجه داشته باشید که شماره ستون برای دو مرورگر متفاوت است. کروم همیشه مقدار `0` را گزارش می‌دهد. مقدار در فایرفاکس نشان‌دهنده موقعیت اولین کاراکتر پس از پایان عنصر `<script>` بازشونده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SecurityPolicyViolationEvent.sourceFile")}}
