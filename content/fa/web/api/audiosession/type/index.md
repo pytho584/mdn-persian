@@ -1,7 +1,7 @@
 ---
 title: "AudioSession: type property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioSession/type"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,30 +16,30 @@ browser-compat: api.AudioSession.type
 
 {{APIRef("Audio Session API")}}{{SeeCompatTable}}
 
-The **`type`** property of the {{domxref("AudioSession")}} interface returns or sets the type of the audio session.
+**`type`** ویژگی از رابط {{domxref("AudioSession")}} نوع جلسه صوتی را برمی‌گرداند یا تنظیم می‌کند.
 
-The audio session type describes the general nature of a web page's audio output, allowing the platform to determine how web-based audio should interact with other audio playing on the device.
+نوع جلسه صوتی ماهیت کلی خروجی صوتی یک صفحه وب را توصیف می‌کند و به پلتفرم اجازه می‌دهد تعیین کند که صدای مبتنی بر وب چگونه باید با سایر صداهای در حال پخش روی دستگاه تعامل داشته باشد.
 
-## Value
+## مقدار
 
-A string representing the audio session type. Possible values are:
+یک رشته که نوع جلسه صوتی را نشان می‌دهد. مقادیر ممکن عبارتند از:
 
 - `"auto"`
-  - : The default value. The user agent automatically chooses the best audio session type based on the audio APIs used by the page.
+  - : مقدار پیش‌فرض. عامل کاربر به طور خودکار بهترین نوع جلسه صوتی را بر اساس APIهای صوتی استفاده‌شده توسط صفحه انتخاب می‌کند.
 - `"playback"`
-  - : Audio for media playback, such as video or music playback, podcasts, etc. This is an exclusive type that will pause other playback audio on the device, but may allow non-playback audio (such as notification sounds) to continue.
+  - : صدا برای پخش رسانه، مانند پخش ویدیو یا موسیقی، پادکست‌ها و غیره. این یک نوع انحصاری است که سایر صداهای پخش روی دستگاه را متوقف می‌کند، اما ممکن است به صداهای غیر پخش (مانند صداهای اعلان) اجازه ادامه دهد.
 - `"transient"`
-  - : Transient audio, such as notification sounds. This type usually plays on top of other audio and may cause it to duck (reduce in volume).
+  - : صدای گذرا، مانند صداهای اعلان. این نوع معمولاً روی سایر صداها پخش می‌شود و ممکن است باعث شود که آن‌ها کاهش حجم پیدا کنند (duck).
 - `"transient-solo"`
-  - : Transient solo audio, such as driving directions or voice prompts. This type pauses or mutes all other audio and plays exclusively. When the audio ends, previously playing audio may resume.
+  - : صدای گذرای انحصاری، مانند مسیریابی یا پیام‌های صوتی. این نوع تمام صداهای دیگر را متوقف یا ساکت می‌کند و به طور انحصاری پخش می‌شود. وقتی صدا به پایان رسید، صدای قبلی ممکن است از سر گرفته شود.
 - `"ambient"`
-  - : Ambient audio that can mix with other types of audio. This is useful when users want to mix audio from multiple pages or applications.
+  - : صدای محیطی که می‌تواند با سایر انواع صدا ترکیب شود. این برای زمانی مفید است که کاربران می‌خواهند صدا را از چندین صفحه یا برنامه ترکیب کنند.
 - `"play-and-record"`
-  - : Audio for recording or real-time communication. This is appropriate when the microphone is being used or in video conferencing applications.
+  - : صدا برای ضبط یا ارتباطات بلادرنگ. این زمانی مناسب است که از میکروفون استفاده می‌شود یا در برنامه‌های کنفرانس ویدیویی.
 
-## Examples
+## مثال‌ها
 
-### Setting the audio session type for media playback
+### تنظیم نوع جلسه صوتی برای پخش رسانه
 
 ```js
 // Set the audio session type for music playback
@@ -49,7 +49,7 @@ navigator.audioSession.type = "playback";
 audioElement.play();
 ```
 
-### Setting up a video conference call
+### راه‌اندازی کنفرانس ویدیویی
 
 ```js
 // Set up for video conferencing (both playback and recording)
@@ -63,7 +63,7 @@ const stream = await navigator.mediaDevices.getUserMedia({
 localVideo.srcObject = stream;
 ```
 
-### Using transient audio for notifications
+### استفاده از صدای گذرا برای اعلان‌ها
 
 ```js
 // Set transient type for a notification sound
@@ -73,15 +73,15 @@ navigator.audioSession.type = "transient";
 notificationSound.play();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("AudioSession")}}
 - {{domxref("Navigator.audioSession")}}
