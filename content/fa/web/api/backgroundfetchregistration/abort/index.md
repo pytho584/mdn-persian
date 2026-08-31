@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRegistration: abort() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/abort"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,7 +16,7 @@ browser-compat: api.BackgroundFetchRegistration.abort
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`abort()`** method of the {{domxref("BackgroundFetchRegistration")}} interface aborts an active background fetch.
+**`abort()`** method از رابط {{domxref("BackgroundFetchRegistration")}} یک دریافت (fetch) فعال در پس‌زمینه را لغو می‌کند.
 
 ## Syntax
 
@@ -24,26 +24,26 @@ The **`abort()`** method of the {{domxref("BackgroundFetchRegistration")}} inter
 abort()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with `true` if the fetch is successfully aborted.
+یک {{jsxref("Promise")}} که با `true` حل می‌شود اگر دریافت با موفقیت لغو شود.
 
-## Examples
+## مثال‌ها
 
-Use `abort()` to terminate a background fetch that is in progress.
+از `abort()` برای پایان دادن به یک دریافت در حال انجام در پس‌زمینه استفاده کنید.
 
 ```js
 bgFetch.abort();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
