@@ -1,7 +1,7 @@
 ---
 title: "ARIA: contentinfo role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/contentinfo_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,7 +15,7 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `contentinfo` role defines a footer, containing identifying information such as copyright information, navigation links, and privacy statements, found on every document within a site. This section is commonly called a footer.
+نقش `contentinfo` یک فوتر را تعریف می‌کند که شامل اطلاعات شناسایی مانند اطلاعات کپی‌رایت، پیوندهای ناوبری و بیانیه‌های حریم خصوصی است و در هر سند از یک وب‌سایت یافت می‌شود. این بخش معمولاً «فوتر» نامیده می‌شود.
 
 ```html
 <div role="contentinfo">
@@ -24,7 +24,7 @@ The `contentinfo` role defines a footer, containing identifying information such
 </div>
 ```
 
-This is a website footer. Using the {{HTMLElement('footer')}} element instead is recommended:
+این یک فوتر وب‌سایت است. توصیه می‌شود به جای آن از عنصر {{HTMLElement('footer')}} استفاده کنید:
 
 ```html
 <footer>
@@ -33,16 +33,16 @@ This is a website footer. Using the {{HTMLElement('footer')}} element instead is
 </footer>
 ```
 
-## Description
+## توضیحات
 
-The `contentinfo` role is [a landmark](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) used to identify a page footer. Landmarks can be used by assistive technology to quickly identify and navigate to large sections of the document. Pages should only include one top-level `contentinfo` landmark role per page.
+نقش `contentinfo` یک [نقطه عطف](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) است که برای شناسایی فوتر صفحه استفاده می‌شود. نقاط عطف می‌توانند توسط فناوری کمکی برای شناسایی سریع و پیمایش به بخش‌های بزرگ سند استفاده شوند. هر صفحه باید فقط یک نقش نقطه عطف `contentinfo` در سطح بالا داشته باشد.
 
-Each page should only include one `contentinfo` landmark, created by either using the {{HTMLElement('footer')}} element or by declaring `role="contentinfo"`. `contentinfo` landmarks present in content embedded via {{HTMLElement('iframe')}} do not count towards this limit.
+هر صفحه باید فقط یک نقطه عطف `contentinfo` داشته باشد، که با استفاده از عنصر {{HTMLElement('footer')}} یا با اعلام `role="contentinfo"` ایجاد می‌شود. نقاط عطف `contentinfo` که در محتوای جاسازی‌شده از طریق {{HTMLElement('iframe')}} وجود دارند، به این محدودیت محاسبه نمی‌شوند.
 
 > [!NOTE]
-> Using the {{HTMLElement('footer')}} element will automatically communicate a section has a role of `contentinfo`. Developers should always prefer using the correct semantic HTML element over using ARIA, making sure to {{HTMLElement('footer#accessibility', 'test for known issues')}} in VoiceOver.
+> استفاده از عنصر {{HTMLElement('footer')}} به‌طور خودکار نشان می‌دهد که یک بخش نقش `contentinfo` دارد. توسعه‌دهندگان باید همیشه استفاده از عنصر HTML معنایی صحیح را به استفاده از ARIA ترجیح دهند و حتماً در VoiceOver {{HTMLElement('footer#accessibility', 'تست برای مشکلات شناخته‌شده')}} را انجام دهند.
 
-## Examples
+## مثال‌ها
 
 ```html
 <body>
@@ -64,27 +64,27 @@ Each page should only include one `contentinfo` landmark, created by either usin
 </body>
 ```
 
-## Accessibility concerns
+## نگرانی‌های دسترس‌پذیری
 
-### Use sparingly
+### به‌ندرت استفاده کنید
 
-[Landmark roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) are intended to identify larger overall sections of the document. Using too many landmark roles can create "noise" in screen readers, making it difficult to understand the overall layout of the page.
+[نقش‌های نقطه عطف](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#3._landmark_roles) برای شناسایی بخش‌های بزرگ کلی سند در نظر گرفته شده‌اند. استفاده از نقش‌های نقطه عطف زیاد می‌تواند «نویز» در صفحه‌خوان‌ها ایجاد کند و درک چیدمان کلی صفحه را دشوار کند.
 
-### One `contentinfo` landmark per page
+### یک نقطه عطف `contentinfo` در هر صفحه
 
-#### The `<body>` element
+#### عنصر `<body>`
 
-There should be only one `contentinfo` landmark per document, used as the immediate descendant of the {{HTMLElement('body')}} element.
+باید فقط یک نقطه عطف `contentinfo` در هر سند وجود داشته باشد که به‌عنوان فرزند مستقیم عنصر {{HTMLElement('body')}} باشد.
 
-#### Mega-footers
+#### مگافوترها
 
-Do not nest additional {{HTMLElement('footer')}} elements or `contentinfo` landmarks inside the document's footer. Use other [content sectioning elements](/en-US/docs/Web/HTML/Reference/Elements#content_sectioning) instead.
+عناصر {{HTMLElement('footer')}} اضافی یا نقاط عطف `contentinfo` را داخل فوتر سند تو در تو نکنید. به جای آن از سایر [عناصر بخش‌بندی محتوا](/en-US/docs/Web/HTML/Reference/Elements#content_sectioning) استفاده کنید.
 
-### Labeling landmarks
+### برچسب‌گذاری نقاط عطف
 
-#### Multiple landmarks
+#### چندین نقطه عطف
 
-If there is more than one `contentinfo` landmark role or {{HTMLElement('footer')}} element in a document, provide a label with the [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) attribute for each landmark. This label will allow assistive technology users to quickly understand the purpose of each landmark.
+اگر در یک سند بیش از یک نقش نقطه عطف `contentinfo` یا عنصر {{HTMLElement('footer')}} وجود دارد، برای هر نقطه عطف یک برچسب با ویژگی [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) فراهم کنید. این برچسب به کاربران فناوری کمکی امکان می‌دهد تا به‌سرعت هدف هر نقطه عطف را درک کنند.
 
 ```html
 <body>
@@ -109,29 +109,29 @@ If there is more than one `contentinfo` landmark role or {{HTMLElement('footer')
 </body>
 ```
 
-#### Redundant descriptions
+#### توضیحات تکراری
 
-Screen readers will announce the type of role the landmark is. Because of this, you do not need to describe what the landmark is in its label. For example, a declaration of `role="contentinfo"` with an of `aria-label="Footer"` may be announced redundantly as, "contentinfo footer".
+صفحه‌خوان‌ها نوع نقشی که نقطه عطف است را اعلام می‌کنند. به همین دلیل، نیازی نیست در برچسب آن توصیف کنید که نقطه عطف چیست. برای مثال، اعلام `role="contentinfo"` با یک `aria-label="Footer"` ممکن است به‌طور تکراری به‌صورت «contentinfo footer» اعلام شود.
 
-## Best practices
+## بهترین روش‌ها
 
-### Prefer HTML
+### ترجیح دادن HTML
 
-When it is an immediate descendant of the {{HTMLElement('body')}} using the {{HTMLElement('footer')}} element will automatically communicate a section has a role of `contentinfo` (save for {{HTMLElement('footer#accessibility', 'a known issue')}} in VoiceOver). If at all possible, prefer using `<footer>` instead. Note that a `footer` element nested within an `article`, `aside`, `main`, `nav`, or `section` is not considered `contentinfo`.
+وقتی عنصر {{HTMLElement('footer')}} فرزند مستقیم {{HTMLElement('body')}} باشد، به‌طور خودکار نشان می‌دهد که بخش دارای نقش `contentinfo` است (به‌جز {{HTMLElement('footer#accessibility', 'یک مشکل شناخته‌شده')}} در VoiceOver). اگر امکان دارد، به جای آن از `<footer>` استفاده کنید. توجه داشته باشید که عنصر `footer` که درون `article`، `aside`، `main`، `nav` یا `section` تودرتو شده است، به‌عنوان `contentinfo` در نظر گرفته نمی‌شود.
 
-### Added benefits
+### مزایای اضافی
 
-Certain technologies such as browser extensions can generate lists of all landmark roles present on a page, allowing non-screen reader users to also quickly identify and navigate to large sections of the document.
+برخی فناوری‌ها مانند افزونه‌های مرورگر می‌توانند فهرستی از تمام نقش‌های نقطه عطف موجود در یک صفحه تولید کنند و به کاربرانی که از صفحه‌خوان استفاده نمی‌کنند نیز امکان می‌دهند تا به‌سرعت بخش‌های بزرگ سند را شناسایی و پیمایش کنند.
 
-- [Landmarks browser extension](https://matatk.agrip.org.uk/landmarks/)
+- [افزونه‌ی مرورگر Landmarks](https://matatk.agrip.org.uk/landmarks/)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement('footer')}} element
-- [Using HTML sections and outlines](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)
-- [Accessible Landmarks | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
-- [The Footer Element Update | HTML5 Doctor](https://html5doctor.com/the-footer-element-update/)
+- عنصر {{HTMLElement('footer')}}
+- [استفاده از بخش‌ها و خطوط HTML](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)
+- [نقاط عطف قابل دسترسی | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
+- [به‌روزرسانی عنصر فوتر | HTML5 Doctor](https://html5doctor.com/the-footer-element-update/)
