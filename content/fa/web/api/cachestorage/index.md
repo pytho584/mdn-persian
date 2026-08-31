@@ -1,7 +1,7 @@
 ---
 title: "CacheStorage"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,50 +13,50 @@ browser-compat: api.CacheStorage
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`CacheStorage`** interface represents the storage for {{domxref("Cache")}} objects.
+رابط **`CacheStorage`** نمایانگر ذخیره‌سازی برای اشیاء {{domxref("Cache")}} است.
 
-The interface:
+این رابط:
 
-- Provides a master directory of all the named caches that can be accessed by a {{domxref("ServiceWorker")}} or other type of worker or {{domxref("window")}} scope (you're not limited to only using it with service workers).
-- Maintains a mapping of string names to corresponding {{domxref("Cache")}} objects.
+- یک دایرکتوری اصلی از تمام کش‌های نام‌گذاری شده که توسط یک {{domxref("ServiceWorker")}} یا نوع دیگری از کارگر یا محدوده {{domxref("window")}} قابل دسترسی است، فراهم می‌کند (شما محدود به استفاده فقط با سرویس‌ورکرها نیستید).
+- یک نگاشت از نام‌های رشته‌ای به اشیاء {{domxref("Cache")}} مربوطه را حفظ می‌کند.
 
-Use {{domxref("CacheStorage.open()")}} to obtain a {{domxref("Cache")}} instance.
+از {{domxref("CacheStorage.open()")}} برای دریافت یک نمونه {{domxref("Cache")}} استفاده کنید.
 
-Use {{domxref("CacheStorage.match()")}} to check if a given {{domxref("Request")}} is a key in any of the {{domxref("Cache")}} objects that the `CacheStorage` object tracks.
+از {{domxref("CacheStorage.match()")}} برای بررسی اینکه آیا یک {{domxref("Request")}} داده شده یک کلید در هر یک از اشیاء {{domxref("Cache")}} است که شیء `CacheStorage` آن‌ها را ردیابی می‌کند، استفاده کنید.
 
-You can access `CacheStorage` through the {{domxref("Window.caches")}} property in windows or through the {{domxref("WorkerGlobalScope.caches")}} property in workers.
-
-> [!NOTE]
-> `CacheStorage` always rejects with a `SecurityError` on untrusted origins (i.e., those that aren't using HTTPS, although this definition will likely become more complex in the future.) When testing on Firefox, you can get around this by checking the **Enable Service Workers over HTTP (when toolbox is open)** option in the Firefox DevTools options/gear menu. Furthermore, because `CacheStorage` requires file-system access, it may be unavailable in private mode in Firefox.
+شما می‌توانید به `CacheStorage` از طریق ویژگی {{domxref("Window.caches")}} در پنجره‌ها یا از طریق ویژگی {{domxref("WorkerGlobalScope.caches")}} در کارگرها دسترسی داشته باشید.
 
 > [!NOTE]
-> {{domxref("CacheStorage.match()")}} is a convenience method. Equivalent functionality to match a cache entry can be implemented by returning an array of cache names from {{domxref("CacheStorage.keys()")}}, opening each cache with {{domxref("CacheStorage.open()")}}, and matching the one you want with {{domxref("Cache.match()")}}.
+> `CacheStorage` همیشه در مبدأهای نامعتبر (یعنی آن‌هایی که از HTTPS استفاده نمی‌کنند، اگرچه این تعریف احتمالاً در آینده پیچیده‌تر خواهد شد) با یک `SecurityError` رد می‌شود. هنگام آزمایش در Firefox، می‌توانید با علامت زدن گزینه **Enable Service Workers over HTTP (when toolbox is open)** در منوی گزینه‌ها/چرخ دنده Firefox DevTools از این مشکل عبور کنید. علاوه بر این، از آنجایی که `CacheStorage` به دسترسی به سیستم فایل نیاز دارد، ممکن است در حالت خصوصی Firefox در دسترس نباشد.
 
-## Instance methods
+> [!NOTE]
+> {{domxref("CacheStorage.match()")}} یک روش راحت است. عملکرد مشابه برای تطبیق یک ورودی کش می‌تواند با بازگرداندن آرایه‌ای از نام‌های کش از {{domxref("CacheStorage.keys()")}}، باز کردن هر کش با {{domxref("CacheStorage.open()")}} و تطبیق مورد نظر با {{domxref("Cache.match()")}} پیاده‌سازی شود.
+
+## روش‌های نمونه
 
 - {{domxref("CacheStorage.match()")}}
-  - : Checks if a given {{domxref("Request")}} is a key in any of the {{domxref("Cache")}} objects that the `CacheStorage` object tracks, and returns a {{jsxref("Promise")}} that resolves to that match.
+  - : بررسی می‌کند که آیا یک {{domxref("Request")}} داده شده یک کلید در هر یک از اشیاء {{domxref("Cache")}} است که شیء `CacheStorage` آن‌ها را ردیابی می‌کند، و یک {{jsxref("Promise")}} برمی‌گرداند که به آن تطبیق حل می‌شود.
 - {{domxref("CacheStorage.has()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves to `true` if a {{domxref("Cache")}} object matching the `cacheName` exists.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که اگر یک شیء {{domxref("Cache")}} مطابق با `cacheName` وجود داشته باشد، به `true` حل می‌شود.
 - {{domxref("CacheStorage.open()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves to the {{domxref("Cache")}} object matching the `cacheName` (a new cache is created if it doesn't already exist.)
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که به شیء {{domxref("Cache")}} مطابق با `cacheName` حل می‌شود (اگر از قبل وجود نداشته باشد، یک کش جدید ایجاد می‌شود.)
 - {{domxref("CacheStorage.delete()")}}
-  - : Finds the {{domxref("Cache")}} object matching the `cacheName`, and if found, deletes the {{domxref("Cache")}} object and returns a {{jsxref("Promise")}} that resolves to `true`. If no {{domxref("Cache")}} object is found, it resolves to `false`.
+  - : شیء {{domxref("Cache")}} مطابق با `cacheName` را پیدا می‌کند، و اگر پیدا شود، شیء {{domxref("Cache")}} را حذف می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند که به `true` حل می‌شود. اگر هیچ شیء {{domxref("Cache")}} پیدا نشود، به `false` حل می‌شود.
 - {{domxref("CacheStorage.keys()")}}
-  - : Returns a {{jsxref("Promise")}} that will resolve with an array containing strings corresponding to all of the named {{domxref("Cache")}} objects tracked by the `CacheStorage`. Use this method to iterate over a list of all the {{domxref("Cache")}} objects.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که با آرایه‌ای حاوی رشته‌های مربوط به تمام اشیاء {{domxref("Cache")}} نام‌گذاری شده که توسط `CacheStorage` ردیابی می‌شوند، حل می‌شود. از این روش برای پیمایش لیست تمام اشیاء {{domxref("Cache")}} استفاده کنید.
 
-## Examples
+## مثال‌ها
 
-This code snippet is from the MDN [simple service worker example](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker) (see [simple service worker running live](https://bncb2v.csb.app/).)
-This service worker script waits for an {{domxref("ServiceWorkerGlobalScope/install_event", "install")}} event to fire, then runs {{domxref("ExtendableEvent.waitUntil","waitUntil")}} to handle the install process for the app. This consists of calling {{domxref("CacheStorage.open")}} to create a new cache, then using {{domxref("Cache.addAll")}} to add a series of assets to it.
+این قطعه کد از [مثال سرویس‌ورکر ساده MDN](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker) است ( [مثال سرویس‌ورکر ساده در حال اجرا](https://bncb2v.csb.app/) را ببینید.)
+این اسکریپت سرویس‌ورکر منتظر می‌ماند تا یک رویداد {{domxref("ServiceWorkerGlobalScope/install_event", "install")}} فعال شود، سپس {{domxref("ExtendableEvent.waitUntil","waitUntil")}} را برای مدیریت فرآیند نصب برنامه اجرا می‌کند. این شامل فراخوانی {{domxref("CacheStorage.open")}} برای ایجاد یک کش جدید، سپس استفاده از {{domxref("Cache.addAll")}} برای افزودن مجموعه‌ای از دارایی‌ها به آن است.
 
-In the second code block, we wait for a {{domxref("FetchEvent")}} to fire. We construct a custom response like so:
+در بلوک کد دوم، منتظر می‌مانیم تا یک {{domxref("FetchEvent")}} فعال شود. یک پاسخ سفارشی به صورت زیر می‌سازیم:
 
-1. Check whether a match for the request is found in the CacheStorage. If so, serve that.
-2. If not, fetch the request from the network, then also open the cache created in the first block and add a clone of the request to it using {{domxref("Cache.put")}} (`cache.put(event.request, response.clone())`.)
-3. If this fails (e.g., because the network is down), return a fallback response.
+1. بررسی کنید که آیا تطبیقی برای درخواست در CacheStorage پیدا شده است. اگر چنین است، آن را ارائه دهید.
+2. اگر نه، درخواست را از شبکه دریافت کنید، سپس کش ایجاد شده در بلوک اول را باز کنید و یک کلون از درخواست را با استفاده از {{domxref("Cache.put")}} (`cache.put(event.request, response.clone())`) به آن اضافه کنید.
+3. اگر این کار ناموفق بود (مثلاً به دلیل قطع شدن شبکه)، یک پاسخ بازگشتی برگردانید.
 
-Finally, return whatever the custom response ended up being equal to, using {{domxref("FetchEvent.respondWith")}}.
+در نهایت، هر چیزی که پاسخ سفارشی برابر با آن شد را با استفاده از {{domxref("FetchEvent.respondWith")}} برگردانید.
 
 ```js
 self.addEventListener("install", (event) => {
@@ -105,7 +105,7 @@ self.addEventListener("fetch", (event) => {
 });
 ```
 
-This snippet shows how the API can be used outside of a service worker context, and uses the `await` operator for much more readable code.
+این قطعه نشان می‌دهد که چگونه می‌توان از API خارج از زمینه سرویس‌ورکر استفاده کرد، و از عملگر `await` برای کد بسیار خواناتر استفاده می‌کند.
 
 ```js
 // Try to get data from the cache, but fall back to fetching it live.
@@ -163,17 +163,17 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [استفاده از سرویس‌ورکرها](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 - {{domxref("Cache")}}
-- {{domxref("Window.caches")}} and {{domxref("WorkerGlobalScope.caches")}}
-- [Private Browsing / Incognito modes](/en-US/docs/Web/API/Web_Storage_API#private_browsing_incognito_modes)
+- {{domxref("Window.caches")}} و {{domxref("WorkerGlobalScope.caches")}}
+- [حالت‌های مرور خصوصی / ناشناس](/en-US/docs/Web/API/Web_Storage_API#private_browsing_incognito_modes)
