@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-readonly attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,45 +13,45 @@ spec-urls: https://w3c.github.io/aria/#aria-readonly
 sidebar: accessibilitysidebar
 ---
 
-The `aria-readonly` attribute indicates that the element is not editable, but is otherwise operable.
+ویژگی `aria-readonly` نشان می‌دهد که عنصر قابل ویرایش نیست، اما در غیر این صورت قابل استفاده است.
 
-## Description
+## توضیحات
 
-When you want to indicate that an interactive element works but is not editable, set `aria-readonly="true"`. This indicates to the user that an interactive element that would normally be focusable and copyable has been placed in a read-only (not disabled) state.
+زمانی که می‌خواهید نشان دهید یک عنصر تعاملی کار می‌کند اما قابل ویرایش نیست، `aria-readonly="true"` را تنظیم کنید. این به کاربر نشان می‌دهد که یک عنصر تعاملی که معمولاً قابل تمرکز و کپی کردن است، در حالت فقط خواندنی (نه غیرفعال) قرار گرفته است.
 
-When `aria-readonly` is set to `true`, it means the user can read but not set the value of the widget. Read-only elements are still relevant to the user, so you should not prevent the user from navigating to the element or its focusable descendants or copying the value.
+وقتی `aria-readonly` روی `true` تنظیم می‌شود، به این معنی است که کاربر می‌تواند مقدار ویجت را بخواند اما تنظیم نکند. عناصر فقط خواندنی همچنان برای کاربر مرتبط هستند، بنابراین نباید از پیمایش کاربر به عنصر یا فرزندان قابل تمرکز آن یا کپی کردن مقدار جلوگیری کنید.
 
-Examples include:
+مثال‌ها عبارتند از:
 
-- Form elements which should not be changed.
-- Row and column headers in a spreadsheet.
-- The total value in a shopping cart.
+- عناصر فرمی که نباید تغییر کنند.
+- سرستون‌ها و سرسطرها در یک صفحه‌گسترده.
+- مقدار کل در یک سبد خرید.
 
-If the non-changeable value shouldn't be able to receive focus, use [`aria-disabled`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) instead.
-
-> [!NOTE]
-> When using semantic HTML form controls, if you set the `readonly` attribute, you don't need to include `aria-readonly="true"`.
+اگر مقدار غیرقابل تغییر نباید قابلیت دریافت تمرکز را داشته باشد، به جای آن از [`aria-disabled`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) استفاده کنید.
 
 > [!NOTE]
-> The value of `<input type="checkbox">` can not be edited making `readonly` not relevant. However, when creating checkboxes with `role="checkbox"` the `aria-readonly` attribute _is_ supported.
+> هنگام استفاده از کنترل‌های فرم HTML معنایی، اگر ویژگی `readonly` را تنظیم کنید، نیازی به گنجاندن `aria-readonly="true"` ندارید.
 
-## Values
+> [!NOTE]
+> مقدار `<input type="checkbox">` قابل ویرایش نیست و بنابراین `readonly` مرتبط نیست. با این حال، هنگام ایجاد چک‌باکس‌ها با `role="checkbox"`، ویژگی `aria-readonly` _پشتیبانی می‌شود_.
+
+## مقادیر
 
 - `true`
-  - : The element is readonly.
-- `false` (default)
-  - : The element is not readonly.
+  - : عنصر فقط خواندنی است.
+- `false` (پیش‌فرض)
+  - : عنصر فقط خواندنی نیست.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaReadOnly")}}
-  - : The [`ariaReadOnly`](/en-US/docs/Web/API/Element/ariaReadOnly) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-readonly` attribute.
+  - : ویژگی [`ariaReadOnly`](/en-US/docs/Web/API/Element/ariaReadOnly) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-readonly` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaReadOnly")}}
-  - : The [`ariaReadOnly`](/en-US/docs/Web/API/ElementInternals/ariaReadOnly) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-readonly` attribute.
+  - : ویژگی [`ariaReadOnly`](/en-US/docs/Web/API/ElementInternals/ariaReadOnly) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-readonly` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+استفاده شده در نقش‌ها:
 
 - [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
 - [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)
@@ -63,7 +63,7 @@ Used in roles:
 - [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)
 - [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
 
-Inherited into roles:
+به ارث برده شده در نقش‌ها:
 
 - [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
 - [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role)
@@ -71,11 +71,11 @@ Inherited into roles:
 - [`switch`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/switch_role)
 - [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [HTML `readonly` attribute](/en-US/docs/Web/HTML/Reference/Attributes/readonly)
+- [ویژگی `readonly` در HTML](/en-US/docs/Web/HTML/Reference/Attributes/readonly)
 - [`aria-disabled`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled)
