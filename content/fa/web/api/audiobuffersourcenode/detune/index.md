@@ -1,7 +1,7 @@
 ---
 title: "AudioBufferSourceNode: detune property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/detune"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,23 +14,18 @@ browser-compat: api.AudioBufferSourceNode.detune
 
 {{APIRef("Web Audio API")}}
 
-The **`detune`** property of the
-{{domxref("AudioBufferSourceNode")}} interface is a [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}}
-representing detuning of oscillation in [cents](https://en.wikipedia.org/wiki/Cent_%28music%29).
+ویژگی **`detune`** از رابط {{domxref("AudioBufferSourceNode")}} یک {{domxref("AudioParam")}} با [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) است که میزان انحراف نوسان را بر حسب [سانت](https://en.wikipedia.org/wiki/Cent_%28music%29) نشان می‌دهد.
 
-For example, values of +100 and -100 detune the source up or down by one semitone,
-while +1200 and -1200 detune it up or down by one octave.
+برای مثال، مقادیر 100+ و 100- منبع را به اندازه یک نیم‌پرده بالا یا پایین می‌برند، در حالی که 1200+ و 1200- آن را به اندازه یک اکتاو بالا یا پایین می‌برند.
 
-## Value
+## مقدار
 
-A [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}}
-whose value indicates the detuning of oscillation in [cents](https://en.wikipedia.org/wiki/Cent_%28music%29).
+یک {{domxref("AudioParam")}} با [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) که مقدار آن نشان‌دهنده میزان انحراف نوسان بر حسب [سانت](https://en.wikipedia.org/wiki/Cent_%28music%29) است.
 
 > [!NOTE]
-> Though the `AudioParam` returned is read-only, the
-> value it represents is not.
+> اگرچه `AudioParam` بازگردانده‌شده فقط‌خواندنی است، اما مقداری که نشان می‌دهد فقط‌خواندنی نیست.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new AudioContext();
@@ -58,15 +53,15 @@ source.detune.value = 100; // value in cents
 source.start();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
