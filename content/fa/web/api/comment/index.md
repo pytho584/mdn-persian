@@ -1,10 +1,4 @@
 ---
-title: "Comment"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Comment"
-status: "needs-translation"
----
-
----
 title: Comment
 slug: Web/API/Comment
 page-type: web-api-interface
@@ -13,33 +7,33 @@ browser-compat: api.Comment
 
 {{ ApiRef("DOM") }}
 
-The **`Comment`** interface represents textual notations within markup; although it is generally not visually shown, such comments are available to be read in the source view.
+رابط **`Comment`** یادداشت‌های متنی درون نشانه‌گذاری را نشان می‌دهد؛ اگرچه چنین یادداشت‌هایی معمولاً به‌صورت بصری نمایش داده نمی‌شوند، اما می‌توان آن‌ها را در نمایِ منبع (source view) خواند.
 
-Comments are represented in HTML and XML as content between `<!--` and `-->`. In XML, like inside SVG or MathML markup, the character sequence `--` cannot be used within a comment.
+نظرات در HTML و XML به‌صورت محتوایی بین `<!--` و `-->` نمایش داده می‌شوند. در XML، مانند داخل نشانه‌گذاری SVG یا MathML، نمی‌توان از توالی کاراکتریِ `--` درون یک نظر استفاده کرد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface has no specific property, but inherits those of its parent, {{domxref("CharacterData")}}, and indirectly those of {{domxref("Node")}}._
+_این رابط ویژگی اختصاصی ندارد، اما ویژگی‌های والد خود، {{domxref("CharacterData")}}، و به‌طور غیرمستقیم ویژگی‌های {{domxref("Node")}} را به ارث می‌برد._
 
-## Constructor
+## سازنده
 
 - {{ domxref("Comment.Comment()", "Comment()") }}
-  - : Returns a new `Comment` object with the parameter as its textual content. If not present, its default value is the empty string, `''`.
+  - : یک شیء `Comment` جدید با پارامترِ داده‌شده به‌عنوان محتوای متنی آن برمی‌گرداند. اگر پارامتری وجود نداشته باشد، مقدار پیش‌فرض آن رشتهٔ خالی، `''` است.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface has no specific method, but inherits those of its parent, {{domxref("CharacterData")}}, and indirectly those of {{domxref("Node")}}._
+_این رابط روش خاصی ندارد، اما روش‌های والد خود، {{domxref("CharacterData")}}، و به‌طور غیرمستقیم روش‌های {{domxref("Node")}} را به ارث می‌برد._
 
-## Specifications
+## توصیفات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [The DOM API](/en-US/docs/Web/API/Document_Object_Model)
+- [رابط برنامه‌نویسی DOM](/en-US/docs/Web/API/Document_Object_Model)
