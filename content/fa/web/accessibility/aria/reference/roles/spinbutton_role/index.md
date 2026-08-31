@@ -1,7 +1,7 @@
 ---
 title: "ARIA: spinbutton role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,94 +13,90 @@ spec-urls: https://w3c.github.io/aria/#spinbutton
 sidebar: accessibilitysidebar
 ---
 
-The `spinbutton` role defines a type of range that expects the user to select a value from among discrete choices.
+نقش `spinbutton` نوعی محدوده را تعریف میکند که از کاربر انتظار دارد مقداری را از میان انتخاب‌های گسسته انتخاب کند.
 
-## Description
+## توضیحات
 
-The `spinbutton` role indicates that the element is an input widget that restricts its value to a set or range of discrete values. The role also comes with increment and decrement functionality. For example, in a widget that enables users to choose an amount to bet in a game of Texas Holdem, the `spinbutton` role can allow users to select a number between the minimum and maximum bets in increments, as allowed by the current game rules.
+نقش `spinbutton` نشان می‌دهد که عنصر یک ویجت ورودی است که مقدار آن را به مجموعه‌ای یا محدوده‌ای از مقادیر گسسته محدود می‌کند. این نقش همچنین دارای قابلیت افزایش و کاهش است. به عنوان مثال، در یک ویجت که به کاربران اجازه می‌دهد مقدار شرط‌بندی را در بازی Texas Holdem انتخاب کنند، نقش `spinbutton` می‌تواند به کاربران اجازه دهد عددی بین حداقل و حداکثر شرط را با افزایش‌های مجاز طبق قوانین فعلی بازی انتخاب کنند.
 
-The spinbutton represents the range of possible values. The value of the spinbutton input represents the current value.
+spinbutton محدوده مقادیر ممکن را نشان می‌دهد. مقدار ورودی spinbutton نمایانگر مقدار فعلی است.
 
-Spinbuttons often have three components, including a text field that displays the current value, an increment button, and a decrement button. The text field is usually the only focusable component because the increment and decrement functions are keyboard-accessible via arrow keys. Typically, the text field also allows users to directly edit the value.
+spinbuttonها اغلب دارای سه جزء هستند: یک فیلد متنی که مقدار فعلی را نمایش می‌دهد، یک دکمه افزایش و یک دکمه کاهش. فیلد متنی معمولاً تنها جزء قابل تمرکز است، زیرا عملکردهای افزایش و کاهش از طریق کلیدهای جهت‌نما در دسترس هستند. به طور معمول، فیلد متنی همچنین به کاربران اجازه می‌دهد تا مقدار را مستقیماً ویرایش کنند.
 
-In addition to including the [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) attribute to enable spinbutton focus, keyboard and pointer device support must be implemented. Directional keys such as the arrow keys must be supported for keyboard users. Changing the value when increment and decrement buttons are clicked must be supported for pointing devices. See [keyboard interactions](#keyboard_interactions) below.
+علاوه بر شامل کردن ویژگی [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) برای فعال کردن تمرکز spinbutton، پشتیبانی از صفحه‌کلید و دستگاه‌های اشاره‌گر نیز باید پیاده‌سازی شود. کلیدهای جهت‌نما مانند کلیدهای جهت‌نما باید برای کاربران صفحه‌کلید پشتیبانی شوند. تغییر مقدار هنگام کلیک بر روی دکمه‌های افزایش و کاهش باید برای دستگاه‌های اشاره‌گر پشتیبانی شود. به [تعاملات صفحه‌کلید](#keyboard_interactions) در زیر مراجعه کنید.
 
 > [!NOTE]
-> It is recommended to use [`<input type="number">`](/en-US/docs/Web/HTML/Reference/Elements/input/number) element, or other input types for dates and time that also implicitly have the `role="spinbutton"` semantic, rather than the `spinbutton` role. User agents provide stylized widgets for these input elements which provide default increment, decrement, and native range limiting functionality. When using non-semantic elements, all features of the native semantic element need to be recreated with ARIA attributes, JavaScript, and CSS.
+> توصیه می‌شود از عنصر [`<input type="number">`](/en-US/docs/Web/HTML/Reference/Elements/input/number) یا سایر انواع ورودی برای تاریخ و زمان که به‌طور ضمنی دارای معنای `role="spinbutton"` هستند، به جای نقش `spinbutton` استفاده کنید. عامل‌های کاربر ویجت‌های سبک‌داری برای این عناصر ورودی فراهم می‌کنند که عملکرد پیش‌فرض افزایش، کاهش و محدودسازی بومی محدوده را ارائه می‌دهند. هنگام استفاده از عناصر غیر معنایی، تمام ویژگی‌های عنصر معنایی بومی باید با ویژگی‌های ARIA، جاوااسکریپت و CSS بازآفرینی شوند.
 
-### ARIA range widget options
+### گزینه‌های ویجت محدوده ARIA
 
-ARIA provides developers with six different range [widget roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#2._widget_roles), including `progressbar`, `meter`, `slider`, and `spinbutton`.
+ARIA به توسعه‌دهندگان شش نقش مختلف [ویجت محدوده](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#2._widget_roles) ارائه می‌دهد، از جمله `progressbar`، `meter`، `slider` و `spinbutton`.
 
-The [`progressbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role) role, similar to HTML's {{HTMLElement('progress')}} element, is a read-only range. It indicates the portion of completion of a task, progressing in a single direction, such as a file upload's loading progress bar that eventually reaches 100% when fully loaded.
+نقش [`progressbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role) مشابه عنصر {{HTMLElement('progress')}} در HTML، یک محدوده فقط‌خواندنی است. این نقش نشان‌دهنده بخشی از تکمیل یک وظیفه است که در یک جهت پیشرفت می‌کند، مانند نوار پیشرفت بارگذاری یک فایل که هنگام بارگذاری کامل در نهایت به ۱۰۰٪ می‌رسد.
 
-The [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role) role, similar to HTML's {{HTMLElement('meter')}} element, is a read-only gauge. It indicates the amount of something within a known range, such as a computer's battery indicator or a car's gas gauge.
+نقش [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role) مشابه عنصر {{HTMLElement('meter')}} در HTML، یک نشانگر فقط‌خواندنی است. این نقش مقدار چیزی را در یک محدوده شناخته‌شده نشان می‌دهد، مانند نشانگر باتری رایانه یا نشانگر سوخت خودرو.
 
-The `slider` role, similar to HTML's `input` of type `range`, [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range), is a read-write input range. Sliders allow users to select a value between the predefined minimum and maximum values. The user selects a value by moving a slider thumb along a horizontal or vertical slider to select a value.
+نقش `slider` مشابه ورودی HTML از نوع `range`، [`<input type="range">`](/en-US/docs/Web/HTML/Reference/Elements/input/range)، یک محدوده ورودی خواندنی-نوشتنی است. اسلایدرها به کاربران اجازه می‌دهند مقداری را بین حداقل و حداکثر از پیش تعریف‌شده انتخاب کنند. کاربر با حرکت دادن دکمه اسلایدر در امتداد یک اسلایدر افقی یا عمودی، مقداری را انتخاب می‌کند.
 
-The `spinbutton` role is also read-write: the range of discrete values it provides is selected via user interaction. Like `slider` controls, `spinbutton` widgets must be able to receive focus and support keyboard, pointer, and touch interaction.
+نقش `spinbutton` نیز خواندنی-نوشتنی است: محدوده مقادیر گسسته‌ای که فراهم می‌کند از طریق تعامل کاربر انتخاب می‌شود. مانند کنترل‌های `slider`، ویجت‌های `spinbutton` باید بتوانند تمرکز دریافت کنند و از تعامل با صفحه‌کلید، اشاره‌گر و لمسی پشتیبانی کنند.
 
 > [!WARNING]
-> To change the spinbutton value, touch-based assistive technologies need to respond to user gestures for increasing and decreasing the value by synthesizing key events.
-> Fully test spinbutton widgets using assistive technologies on devices where touch is a primary input mechanism before using the `spinbutton` role (and all range widgets).
+> برای تغییر مقدار spinbutton، فناوری‌های کمکی مبتنی بر لمس باید به حرکات کاربر برای افزایش و کاهش مقدار با شبیه‌سازی رویدادهای کلید پاسخ دهند.
+> قبل از استفاده از نقش `spinbutton` (و همه ویجت‌های محدوده)، ویجت‌های spinbutton را با فناوری‌های کمکی در دستگاه‌هایی که لمس مکانیزم ورودی اصلی است، به‌طور کامل آزمایش کنید.
 
-### Common attributes
+### ویژگی‌های مشترک
 
-The [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) attribute sets the minimum value. If omitted or not a number, it defaults to `0` (zero).
+ویژگی [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) حداقل مقدار را تعیین می‌کند. اگر حذف شود یا عدد نباشد، به‌طور پیش‌فرض `0` (صفر) است.
 
-The [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) attribute defines the maximum value. If it is missing or not a number, it defaults to `100`.
+ویژگی [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) حداکثر مقدار را تعریف می‌کند. اگر وجود نداشته باشد یا عدد نباشد، به‌طور پیش‌فرض `100` است.
 
-The [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) attribute value must be between the minimum and maximum values, both inclusive. This attribute is required for and `meter` and optional for `progressbar`.
+مقدار ویژگی [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) باید بین حداقل و حداکثر مقادیر، هر دو به‌طور شامل، باشد. این ویژگی برای `meter` الزامی و برای `progressbar` اختیاری است.
 
-For `spinbutton`, unless using semantic HTML elements like [`<input type="number">`](/en-US/docs/Web/HTML/Reference/Elements/input/number), if the value is updated, the `aria-valuenow` value must also be updated programmatically.
+برای `spinbutton`، مگر اینکه از عناصر HTML معنایی مانند [`<input type="number">`](/en-US/docs/Web/HTML/Reference/Elements/input/number) استفاده کنید، اگر مقدار به‌روزرسانی شود، مقدار `aria-valuenow` نیز باید به‌صورت برنامه‌نویسی به‌روزرسانی شود.
 
-The optional [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext) attribute is included when the `aria-valuenow` numeric value doesn't reflect the intended value of the spinbutton. The optional minimum, maximum, and current values should be numeric. When the values these numbers represent are not numeric, the `aria-valuetext` attribute should be included with a string value defining the numeric value. For example, if using a spinbutton for t-shirt sizes, the `aria-valuetext` attribute should shift from `XX-Small` through `XX-Large` as the `aria-valuenow` increases.
+ویژگی اختیاری [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext) زمانی گنجانده می‌شود که مقدار عددی `aria-valuenow` مقدار مورد نظر spinbutton را منعکس نکند. مقادیر اختیاری حداقل، حداکثر و فعلی باید عددی باشند. وقتی مقادیری که این اعداد نشان می‌دهند عددی نیستند، ویژگی `aria-valuetext` باید با یک رشته که مقدار عددی را تعریف می‌کند گنجانده شود. به عنوان مثال، اگر از spinbutton برای اندازه‌های تیشرت استفاده کنید، ویژگی `aria-valuetext` باید با افزایش `aria-valuenow` از `XX-Small` به `XX-Large` تغییر کند.
 
-The `aria-valuetext` value must be updated as the value or `aria-valuenow` is updated. ARIA attributes are supported on semantic HTML elements. While there is no equivalent HTML attribute for `<input>`, you can include `aria-valuetext` on any {{htmlelement('input')}} type. When `aria-valuetext` is an important feature for a spinbutton, consider using {{HTMLElement('select')}} with {{HTMLElement('option')}} elements instead.
+مقدار `aria-valuetext` باید همزمان با به‌روزرسانی مقدار یا `aria-valuenow` به‌روزرسانی شود. ویژگی‌های ARIA بر روی عناصر HTML معنایی پشتیبانی می‌شوند. اگرچه هیچ ویژگی HTML معادلی برای `<input>` وجود ندارد، می‌توانید `aria-valuetext` را بر روی هر نوع {{htmlelement('input')}} قرار دهید. وقتی `aria-valuetext` یک ویژگی مهم برای spinbutton است، به جای آن از {{HTMLElement('select')}} با عناصر {{HTMLElement('option')}} استفاده کنید.
 
-An accessible name is **required**. If the `spinbutton` role is applied to an HTML {{HTMLElement('input')}} element, the accessible name can come from the associated {{HTMLElement('label')}}. Otherwise, use [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) if a visible label is present or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) if a visible label is not present.
+یک نام قابل دسترس **الزامی** است. اگر نقش `spinbutton` بر روی یک عنصر HTML {{HTMLElement('input')}} اعمال شود، نام قابل دسترس می‌تواند از {{HTMLElement('label')}} مرتبط بیاید. در غیر این صورت، اگر برچسب قابل مشاهده وجود دارد از [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) و اگر برچسب قابل مشاهده وجود ندارد از [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) استفاده کنید.
 
-When not using the HTML {{HTMLElement('input')}} element to create your spinbutton, include the [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) attribute to make the spinbutton focusable. The `spinbutton` role is user-interactive, and therefore, requires being able to receive focus. Focus should be placed on the spinbutton input and not on the associated buttons that increment and decrement the spinbutton value.
+هنگامی که از عنصر HTML {{HTMLElement('input')}} برای ایجاد spinbutton خود استفاده نمی‌کنید، ویژگی [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) را برای قابل تمرکز کردن spinbutton اضافه کنید. نقش `spinbutton` تعاملی با کاربر است و بنابراین باید بتواند تمرکز دریافت کند. تمرکز باید بر روی ورودی spinbutton قرار گیرد، نه بر روی دکمه‌های مرتبطی که مقدار spinbutton را افزایش و کاهش می‌دهند.
 
-### Descendants limited to buttons or text
+### فرزندان محدود به دکمه‌ها یا متن
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain specific content. The children or owned elements of `spinbutton` are limited to a textbox and two buttons. Alternatively, the `spinbutton` role can be applied to a `text` input and sibling buttons can be used to support the increment and decrement functions.
+برخی از انواع اجزای رابط کاربری وجود دارند که وقتی در API دسترس‌پذیری پلتفرم نمایش داده می‌شوند، فقط می‌توانند محتوای خاصی را شامل شوند. فرزندان یا عناصر متعلق به `spinbutton` به یک جعبه متن و دو دکمه محدود می‌شوند. همچنین می‌توان نقش `spinbutton` را بر روی یک ورودی `text` اعمال کرد و از دکمه‌های هم‌سطح برای پشتیبانی از عملکردهای افزایش و کاهش استفاده کرد.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
 - [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow)
-  - : Set to a decimal value between `aria-valuemin` and `aria-valuemax`, indicating the current value of the spinbutton. If not present, the spinbutton element has no current value.
-
+  - : روی یک مقدار اعشاری بین `aria-valuemin` و `aria-valuemax` تنظیم می‌شود که مقدار فعلی spinbutton را نشان می‌دهد. اگر وجود نداشته باشد، عنصر spinbutton مقدار فعلی ندارد.
 - [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext)
-  - : Assistive technologies often present the value of `aria-valuenow` as a number. If `aria-valuenow` cannot be accurate, use `aria-valuetext` to provide the spinbutton with a more understandable value.
-
+  - : فناوری‌های کمکی اغلب مقدار `aria-valuenow` را به صورت عدد ارائه می‌دهند. اگر `aria-valuenow` نتواند دقیق باشد، از `aria-valuetext` برای ارائه مقدار قابل درک‌تر به spinbutton استفاده کنید.
 - [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin)
-  - : Set to a decimal value representing the minimum value and less than `aria-valuemax`. If not present, there is no default value.
-
+  - : روی یک مقدار اعشاری نمایانگر حداقل مقدار و کمتر از `aria-valuemax` تنظیم می‌شود. اگر وجود نداشته باشد، مقدار پیش‌فرضی وجود ندارد.
 - [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax)
-  - : Set to a decimal value representing the maximum value and greater than `aria-valuemin`. If not present, there is no default value.
-
+  - : روی یک مقدار اعشاری نمایانگر حداکثر مقدار و بیشتر از `aria-valuemin` تنظیم می‌شود. اگر وجود نداشته باشد، مقدار پیش‌فرضی وجود ندارد.
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : Defines the string value or identifies the element (or elements) that label the spinbutton element providing an accessible name. An accessible name is required.
+  - : مقدار رشته‌ای را تعریف می‌کند یا عنصر (یا عناصری) را که عنصر spinbutton را برچسب‌گذاری می‌کنند و نام قابل دسترس فراهم می‌کنند، شناسایی می‌کند. نام قابل دسترس الزامی است.
 - [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
-  - : Defines a string value that labels the spinbutton element. This provides an accessible name to the element when no visible label is available to provide the required accessible name via {{HTMLElement('label')}} or `aria-labelledby`.
+  - : مقدار رشته‌ای را تعریف می‌کند که عنصر spinbutton را برچسب‌گذاری می‌کند. این مقدار نام قابل دسترسی را به عنصر ارائه می‌دهد زمانی که هیچ برچسب قابل مشاهده برای ارائه نام قابل دسترس مورد نیاز از طریق {{HTMLElement('label')}} یا `aria-labelledby` در دسترس نیست.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-| Key(s)               | Action                                                                          |
-| -------------------- | ------------------------------------------------------------------------------- |
-| Right and Up arrows  | Increase the selected value by one step                                         |
-| Left and Down arrows | Decrease the selected value by one step                                         |
-| Page Up              | (Optional) Increase the value by a set amount greater than or equal to one step |
-| Page Down            | (Optional) Decrease the value by a set amount greater than or equal to one step |
-| Home                 | Set the spinbutton to the minimum value                                         |
-| End                  | Set the spinbutton to the maximum value                                         |
+| کلید(ها) | عملیات |
+| --- | --- |
+| فلش‌های راست و بالا | مقدار انتخاب‌شده را یک مرحله افزایش دهید |
+| فلش‌های چپ و پایین | مقدار انتخاب‌شده را یک مرحله کاهش دهید |
+| Page Up | (اختیاری) مقدار را به میزان معینی بزرگ‌تر یا مساوی یک مرحله افزایش دهید |
+| Page Down | (اختیاری) مقدار را به میزان معینی بزرگ‌تر یا مساوی یک مرحله کاهش دهید |
+| Home | spinbutton را به حداقل مقدار تنظیم کنید |
+| End | spinbutton را به حداکثر مقدار تنظیم کنید |
 
-For the optional <kbd>Page Up</kbd> and <kbd>Page Down</kbd> keys, the change in spinbutton value should preferably be by an amount larger than the step changes made by Up and Down arrow keys.
+برای کلیدهای اختیاری <kbd>Page Up</kbd> و <kbd>Page Down</kbd>، تغییر در مقدار spinbutton ترجیحاً باید مقداری بزرگ‌تر از تغییرات گام انجام‌شده توسط فلش‌های بالا و پایین باشد.
 
-## Examples
+## مثال‌ها
 
-In the example below, a `spinbutton` role has been defined to allow users to select a day of the month.
+در مثال زیر، یک نقش `spinbutton` تعریف شده است تا به کاربران اجازه دهد روزی از ماه را انتخاب کنند.
 
 ```html
 <p id="day">Enter the day of the month</p>
@@ -118,11 +114,11 @@ In the example below, a `spinbutton` role has been defined to allow users to sel
 <button type="button" tabindex="-1" aria-label="next day">˲</button>
 ```
 
-In this example, we included a negative `tabindex` to remove the buttons from the default tabbing order. We also added `tabindex` to a normally non-interactive {{HTMLElement('div')}} to add the `spinbutton` itself to the tabbing order. This example requires JavaScript to handle keyboard actions when the spinbutton has focus and when a mouse user clicks on the buttons.
+در این مثال، ما یک `tabindex` منفی اضافه کردیم تا دکمه‌ها را از ترتیب تب پیش‌فرض حذف کنیم. همچنین `tabindex` را به یک {{HTMLElement('div')}} که معمولاً غیرتعاملی است اضافه کردیم تا خود `spinbutton` را به ترتیب تب وارد کنیم. این مثال برای مدیریت اقدامات صفحه‌کلید زمانی که spinbutton فوکوس دارد و زمانی که کاربر ماوس روی دکمه‌ها کلیک می‌کند، به جاوااسکریپت نیاز دارد.
 
-### With semantic HTML
+### با HTML معنایی
 
-This could have also been written using semantic HTML, removing the need for any CSS or JavaScript and also removing the need to include and provide functionality for extraneous incrementing and decrementing buttons. The code snippet below shows the previous example without the `spinbutton` role and using semantic HTML.
+این مثال همچنین می‌توانست با HTML معنایی نوشته شود و نیاز به هرگونه CSS یا جاوااسکریپت و همچنین نیاز به گنجاندن و ارائه عملکرد برای دکمه‌های افزایش و کاهش اضافی را برطرف کند. قطعه کد زیر مثال قبلی را بدون نقش `spinbutton` و با استفاده از HTML معنایی نشان می‌دهد.
 
 ```html
 <label for="day">Enter the day of the month</label>
@@ -137,31 +133,21 @@ This could have also been written using semantic HTML, removing the need for any
 
 {{EmbedLiveSample("With_semantic_HTML", 50, 50)}}
 
-In this case, the only JavaScript needed would be to update the `aria-valuetext` when the input value changes, which really is an optional feature in this case.
+در این حالت، تنها جاوااسکریپت مورد نیاز، به‌روزرسانی `aria-valuetext` هنگام تغییر مقدار ورودی است که در این مورد واقعاً یک ویژگی اختیاری است.
 
-## Best practices
+## بهترین روش‌ها
 
-HTML's `<input type="number">` implicitly has the `role` of `spinbutton`. HTML's `<input type="date">` has 3 nested spin buttons, one each for month, day, and year. When using semantic HTML form elements for their intended purposes, do not use `aria-valuemax` or `aria-valuemin` attributes; use `min` and `max` instead. Otherwise, any global `aria-*` attributes and any other `aria-*` attributes are applicable to the `spinbutton` role.
+`<input type="number">` در HTML به‌طور ضمنی نقش `spinbutton` را دارد. `<input type="date">` در HTML دارای ۳ دکمه چرخان تودرتو است، یکی برای هر کدام از ماه، روز و سال. هنگام استفاده از عناصر فرم HTML معنایی برای اهداف مورد نظرشان، از ویژگی‌های `aria-valuemax` یا `aria-valuemin` استفاده نکنید؛ به جای آن از `min` و `max` استفاده کنید. در غیر این صورت، هر ویژگی سراسری `aria-*` و هر ویژگی `aria-*` دیگری برای نقش `spinbutton` قابل اعمال است.
 
-### Prefer semantic HTML
+### ترجیح HTML معنایی
 
-It is recommended to use the native {{HTMLElement("input")}} element of type `number`, [`<input type="number">`](/en-US/docs/Web/HTML/Reference/Elements/input/number), rather than the `spinbutton` role.
+توصیه می‌شود از عنصر بومی {{HTMLElement("input")}} از نوع `number`، [`<input type="number">`](/en-US/docs/Web/HTML/Reference/Elements/input/number)، به جای نقش `spinbutton` استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`<input type="number">`](/en-US/docs/Web/HTML/Reference/Elements/input/number)
-- [`<input type="date">`](/en-US/docs/Web/HTML/Reference/Elements/input/date)
-- [`<input type="time">`](/en-US/docs/Web/HTML/Reference/Elements/input/time)
-- Other range widgets include:
-  - [`meter`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/meter_role)
-  - [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role)
-  - [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) (if focusable)
-  - [`progressbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/progressbar_role)
-  - [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)
-- Working examples:
-  - [Date picker spin button example](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/examples/datepicker-spinbuttons/)
-  - [Toolbar example: font-size picker](https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/examples/toolbar/)
+- [`<input type="date">`](/en-US/docs/Web/HTML/Reference/Elements/input/
