@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: textAlign property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textAlign"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: textAlign property"
 short-title: textAlign
 slug: Web/API/CanvasRenderingContext2D/textAlign
 page-type: web-api-instance-property
@@ -14,41 +8,38 @@ browser-compat: api.CanvasRenderingContext2D.textAlign
 
 {{APIRef("Canvas API")}}
 
-The
+ویژگی
 **`CanvasRenderingContext2D.textAlign`**
-property of the Canvas 2D API specifies the current text alignment used when drawing
-text.
+در Canvas 2D API، ترازبندی فعلی متن را هنگام رسم متن مشخص می‌کند.
 
-The alignment is relative to the `x` value of the
-{{domxref("CanvasRenderingContext2D.fillText", "fillText()")}} method. For example, if
-`textAlign` is `"center"`, then the text's left edge will be at
-`x - (textWidth / 2)`.
+ترازبندی نسبت به مقدار `x` متد
+{{domxref("CanvasRenderingContext2D.fillText", "fillText()")}} انجام می‌شود. برای مثال، اگر
+`textAlign` برابر با `"center"` باشد، لبه چپ متن در موقعیت
+`x - (textWidth / 2)` قرار می‌گیرد.
 
-## Value
+## مقدار
 
-Possible values:
+مقادیر ممکن:
 
 - `"left"`
-  - : The text is left-aligned.
+  - : متن به چپ تراز می‌شود.
 - `"right"`
-  - : The text is right-aligned.
+  - : متن به راست تراز می‌شود.
 - `"center"`
-  - : The text is centered.
+  - : متن در مرکز قرار می‌گیرد.
 - `"start"`
-  - : The text is aligned at the normal start of the line (left-aligned for left-to-right
-    locales, right-aligned for right-to-left locales).
+  - : متن در ابتدای عادی خط تراز می‌شود (برای زبان‌های چپ‌به‌راست به چپ و برای زبان‌های راست‌به‌چپ به راست).
 - `"end"`
-  - : The text is aligned at the normal end of the line (right-aligned for left-to-right
-    locales, left-aligned for right-to-left locales).
+  - : متن در انتهای عادی خط تراز می‌شود (برای زبان‌های چپ‌به‌راست به راست و برای زبان‌های راست‌به‌چپ به چپ).
 
-The default value is `"start"`.
+مقدار پیش‌فرض `"start"` است.
 
-## Examples
+## مثال‌ها
 
-### General text alignment
+### ترازبندی عمومی متن
 
-This example demonstrates the three "physical" values of the `textAlign`
-property: `"left"`, `"center"`, and `"right"`.
+این مثال سه مقدار «فیزیکی» ویژگی `textAlign` را نشان می‌دهد:
+`"left"`، `"center"` و `"right"`.
 
 #### HTML
 
@@ -81,17 +72,16 @@ ctx.textAlign = "right";
 ctx.fillText("right-aligned", x, 130);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('General_text_alignment', 700, 180) }}
 
-### Direction-dependent text alignment
+### ترازبندی متن وابسته به جهت
 
-This example demonstrates the two direction-dependent values of the
-`textAlign` property: `"start"` and `"end"`. Note that
-the {{domxref("CanvasRenderingContext2D.direction", "direction")}} property is manually
-specified as `"ltr"`, although this is also the default for English-language
-text.
+این مثال دو مقدار وابسته به جهت ویژگی `textAlign` را نشان می‌دهد:
+`"start"` و `"end"`. توجه داشته باشید که ویژگی
+{{domxref("CanvasRenderingContext2D.direction", "direction")}} به صورت دستی
+روی `"ltr"` تنظیم شده است، اگرچه این مقدار برای متن انگلیسی به صورت پیش‌فرض نیز همین است.
 
 #### HTML
 
@@ -115,18 +105,18 @@ ctx.textAlign = "end";
 ctx.fillText("End-aligned", canvas.width, 120);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Direction-dependent_text_alignment', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این ویژگی: {{domxref("CanvasRenderingContext2D")}}
