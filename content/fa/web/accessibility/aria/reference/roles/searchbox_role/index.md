@@ -1,7 +1,7 @@
 ---
 title: "ARIA: searchbox role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/searchbox_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,30 +13,29 @@ spec-urls: https://w3c.github.io/aria/#searchbox
 sidebar: accessibilitysidebar
 ---
 
-The `searchbox` role indicates an element is a type of `textbox` intended for specifying search criteria.
+نقش `searchbox` نشان‌دهنده عنصری است که نوعی `textbox` برای تعیین معیارهای جستجو است.
 
-## Description
+## توضیحات
 
-The `searchbox` can be used instead of [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role) when the text box is within an element with role [`search`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/search_role). A `searchbox` is the semantic equivalent is HTML's {{HTMLElement('input')}} of type `search`, [`<input type="search">`](/en-US/docs/Web/HTML/Reference/Elements/input/search), which should be used instead if possible.
+می‌توان از `searchbox` به جای [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role) استفاده کرد، زمانی که جعبه متن درون عنصری با نقش [`search`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/search_role) قرار دارد. معادل معنایی `searchbox` در HTML، {{HTMLElement('input')}} از نوع `search` یعنی [`<input type="search">`](/en-US/docs/Web/HTML/Reference/Elements/input/search) است که در صورت امکان باید به جای آن استفاده شود.
 
-The `searchbox` must have an accessible name. If the `searchbox` role is applied to an HTML {{HTMLElement('input')}} element, an associated {{HTMLElement('label')}} should be used.
-Otherwise, use [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) if a visible label is present, or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) if a visible label is not present.
+`searchbox` باید دارای یک نام دسترس‌پذیر باشد. اگر نقش `searchbox` روی یک عنصر HTML {{HTMLElement('input')}} اعمال شود، باید از یک {{HTMLElement('label')}} مرتبط استفاده کرد. در غیر این صورت، اگر برچسب قابل مشاهده وجود دارد از [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) استفاده کنید، یا اگر برچسب قابل مشاهده وجود ندارد از [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) استفاده کنید.
 
-The screen reader will announce "search box", "search edit", or "search field" plus the accessible name. This can be redundant if "search" is included in the label.
+صفحه‌خوان عبارت «search box»، «search edit» یا «search field» را به همراه نام دسترس‌پذیر اعلام می‌کند. اگر «search» در برچسب گنجانده شده باشد، این امر می‌تواند تکراری باشد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <div tabindex="0" aria-label="search" role="searchbox" contenteditable></div>
 ```
 
-While the above is valid, it is simpler, more concise, and less redundant to the screen reader user to write:
+در حالی که مثال بالا معتبر است، نوشتن کد زیر برای کاربر صفحه‌خوان ساده‌تر، خلاصه‌تر و با تکرار کمتر است:
 
 ```html
 <input type="search" />
 ```
 
-The following is a search form with a searchbox and button, ARIA live region, and container for search results.
+در ادامه یک فرم جستجو با یک searchbox و دکمه، ناحیه زنده ARIA و ظرفی برای نتایج جستجو آورده شده است.
 
 ```html
 <form role="search">
@@ -55,7 +54,7 @@ The following is a search form with a searchbox and button, ARIA live region, an
 <div id="search-results"></div>
 ```
 
-Including `role="searchbox"` when the form is a `search` and the label indicates the element is a search may result in assistive technology announcing something along the lines of "search search this site search box", which is redundant. The inclusion of `role="searchbox"` is not necessary:
+افزودن `role="searchbox"` زمانی که فرم از نوع `search` است و برچسب نشان می‌دهد عنصر یک جستجو است، ممکن است باعث شود فناوری کمکی چیزی مانند «search search this site search box» را اعلام کند که تکراری است. بنابراین گنجاندن `role="searchbox"` ضروری نیست:
 
 ```html
 <input
@@ -65,11 +64,11 @@ Including `role="searchbox"` when the form is a `search` and the label indicates
   value="" />
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`<input type="search">`](/en-US/docs/Web/HTML/Reference/Elements/input/search)
 - [ARIA: `search` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/search_role)
