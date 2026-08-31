@@ -1,11 +1,5 @@
 ---
 title: "CSSAnimation: animationName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSAnimation/animationName"
-status: "needs-translation"
----
-
----
-title: "CSSAnimation: animationName property"
 short-title: animationName
 slug: Web/API/CSSAnimation/animationName
 page-type: web-api-instance-property
@@ -14,23 +8,17 @@ browser-compat: api.CSSAnimation.animationName
 
 {{APIRef("Web Animations")}}
 
-The **`animationName`** property of the
-{{domxref("CSSAnimation")}} interface returns the {{CSSXref("animation-name")}}. This
-specifies one or more keyframe at-rules which describe the animation applied to the
-element.
+ویژگی **`animationName`** از رابط {{domxref("CSSAnimation")}} مقدار {{CSSXref("animation-name")}} را برمی‌گرداند. این ویژگی یک یا چند at-rule keyframe را مشخص می‌کند که انیمیشن اعمال‌شده به عنصر را توصیف می‌کنند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Returning the animationName
+### بازگرداندن animationName
 
-The animation in the following example is defined in CSS with the name
-`slide-in`. Calling {{domxref("Element.getAnimations()")}} returns an array
-of all {{domxref("Animation")}} objects. The `animationName` property returns
-the name given to the animation, in our case `slide-in`.
+انیمیشن در مثال زیر در CSS با نام `slide-in` تعریف شده است. فراخوانی {{domxref("Element.getAnimations()")}} یک آرایه از تمام اشیاء {{domxref("Animation")}} را برمی‌گرداند. ویژگی `animationName` نام داده شده به انیمیشن را برمی‌گرداند، که در اینجا `slide-in` است.
 
 ```css
 .animate {
@@ -52,10 +40,10 @@ let animations = document.querySelector(".animate").getAnimations();
 console.log(animations[0].animationName);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
