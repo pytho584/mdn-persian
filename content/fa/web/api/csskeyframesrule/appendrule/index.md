@@ -1,42 +1,36 @@
 ---
 title: "CSSKeyframesRule: appendRule() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/appendRule"
-status: "needs-translation"
----
-
----
-title: "CSSKeyframesRule: appendRule() method"
 short-title: appendRule()
 slug: Web/API/CSSKeyframesRule/appendRule
 page-type: web-api-instance-method
 browser-compat: api.CSSKeyframesRule.appendRule
 ---
 
-{{APIRef("CSSOM") }}
+{{APIRef("CSSOM")}}
 
-The **`appendRule()`** method of the {{domxref("CSSKeyframeRule")}} interface appends a {{domxref("CSSKeyFrameRule")}} to the end of the rules.
+**`appendRule()`** 方法属于 {{domxref("CSSKeyframeRule")}} 接口，用于将一条 {{domxref("CSSKeyFrameRule")}} 追加到规则列表的末尾。
 
-## Syntax
+## 语法
 
 ```js-nolint
 appendRule(rule)
 ```
 
-### Parameters
+### 参数
 
 - `rule`
-  - : A string containing a keyframe rule.
+  - : 一个包含关键帧规则的字符串。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-## Examples
+## 示例
 
-The CSS includes a keyframes at-rule. This will be the first {{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`.
-`myRules[0]` returns a {{domxref("CSSKeyframesRule")}} object. Returning the `cssRules` property would return a {{domxref("CSSRuleList")}} containing one rule.
+CSS 中包含一个关键帧 at-rule。它将是 `document.styleSheets[0].cssRules` 返回的第一个 {{domxref("CSSRule")}}。
+`myRules[0]` 返回一个 {{domxref("CSSKeyframesRule")}} 对象。返回 `cssRules` 属性会得到一个包含一条规则的 {{domxref("CSSRuleList")}}。
 
-After appending another rule with `appendRule` the `cssRules` property returns a {{domxref("CSSRuleList")}} containing two rules.
+使用 `appendRule` 追加另一条规则后，`cssRules` 属性返回的 {{domxref("CSSRuleList")}} 将包含两条规则。
 
 ```css
 @keyframes slide-in {
@@ -48,9 +42,9 @@ After appending another rule with `appendRule` the `cssRules` property returns a
 
 ```js
 let myRules = document.styleSheets[0].cssRules;
-let keyframes = myRules[0]; // a CSSKeyframesRule
+let keyframes = myRules[0]; // 一个 CSSKeyframesRule 对象
 keyframes.appendRule("to {transform: translateX(100%);}");
-console.log(keyframes.cssRules); // a CSSRuleList object with two rules
+console.log(keyframes.cssRules); // 一个包含两条规则的 CSSRuleList 对象
 ```
 
 ## Specifications
