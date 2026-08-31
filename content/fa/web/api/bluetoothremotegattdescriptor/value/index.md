@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTDescriptor: value property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTDescriptor/value"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,18 +16,16 @@ browser-compat: api.BluetoothRemoteGATTDescriptor.value
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTDescriptor.value`**
-read-only property returns a {{jsxref("DataView")}} containing the currently cached
-descriptor value. This value gets updated when the value of the descriptor is read.
+ویژگی فقط-خواندنی **`BluetoothRemoteGATTDescriptor.value`** یک {{jsxref("DataView")}} حاوی مقدار توصیفگر ذخیره‌شدهٔ فعلی را برمی‌گرداند. این مقدار زمانی که مقدار توصیفگر خوانده می‌شود به‌روزرسانی می‌شود.
 
-## Value
+## مقدار
 
-A {{jsxref("DataView")}}.
+یک {{jsxref("DataView")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
