@@ -1,7 +1,7 @@
 ---
 title: "AudioEncoder: encodeQueueSize property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioEncoder/encodeQueueSize"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,24 +14,24 @@ browser-compat: api.AudioEncoder.encodeQueueSize
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`encodeQueueSize`** read-only property of the {{domxref("AudioEncoder")}} interface returns the number of pending encode requests in the queue.
+{{domxref("AudioEncoder")}} 接口的 **`encodeQueueSize`** 只读属性返回队列中待处理的编码请求数。
 
-## Value
+## 值
 
-An integer containing the number of requests.
+一个整数，包含请求数。
 
-## Examples
+## 示例
 
-The following example prints the size of the queue to the console.
+以下示例将队列大小打印到控制台。
 
 ```js
 console.log(AudioEncoder.encodeQueueSize);
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
