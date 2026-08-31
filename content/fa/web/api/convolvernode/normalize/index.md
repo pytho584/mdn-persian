@@ -1,11 +1,5 @@
 ---
 title: "ConvolverNode: normalize property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/normalize"
-status: "needs-translation"
----
-
----
-title: "ConvolverNode: normalize property"
 short-title: normalize
 slug: Web/API/ConvolverNode/normalize
 page-type: web-api-instance-property
@@ -14,26 +8,19 @@ browser-compat: api.ConvolverNode.normalize
 
 {{ APIRef("Web Audio API") }}
 
-The `normalize` property of the {{ domxref("ConvolverNode") }} interface
-is a boolean that controls whether the impulse response from the buffer will be
-scaled by an equal-power normalization when the `buffer` attribute is set,
-or not.
+ویژگی `normalize` در رابط {{ domxref("ConvolverNode") }} یک مقدار بولین است که مشخص می‌کند آیا هنگام تنظیم ویژگی `buffer`، پاسخ ضربه (impulse response) موجود در بافر با نرمال‌سازی توان برابر (equal-power normalization) مقیاس‌بندی شود یا نه.
 
-Its default value is `true` in order to achieve a more uniform output
-level from the convolver, when loaded with diverse impulse responses. If normalize is
-set to `false`, then the convolution will be rendered with no
-pre-processing/scaling of the impulse response. Changes to this value do not take
-effect until the next time the `buffer` attribute is set.
+مقدار پیش‌فرض آن `true` است تا وقتی کانولور با پاسخ‌های ضربه متنوع بارگذاری می‌شود، سطح خروجی یکنواخت‌تری به دست آید. اگر `normalize` روی `false` تنظیم شود، کانولوشن بدون پیش‌پردازش یا مقیاس‌بندی پاسخ ضربه رندر خواهد شد. تغییرات این مقدار تا دفعه بعدی که ویژگی `buffer` تنظیم شود، اعمال نمی‌شوند.
 
-## Value
+## مقدار
 
-A boolean.
+یک بولین.
 
-## Examples
+## مثال‌ها
 
-### Switching normalization off
+### خاموش کردن نرمال‌سازی
 
-The following example creates a convolver node and assigns it an {{domxref("AudioBuffer")}}. Before assigning the audio buffer, it sets `normalize` to `false`.
+مثال زیر یک گره کانولور می‌سازد و یک {{domxref("AudioBuffer")}} به آن اختصاص می‌دهد. قبل از انتصاب بافر صوتی، مقدار `normalize` را روی `false` تنظیم می‌کند.
 
 ```js
 const audioCtx = new AudioContext();
@@ -58,14 +45,14 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
