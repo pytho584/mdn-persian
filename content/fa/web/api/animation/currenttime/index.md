@@ -1,7 +1,7 @@
 ---
 title: "Animation: currentTime property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/currentTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,23 +14,23 @@ browser-compat: api.Animation.currentTime
 
 {{APIRef("Web Animations")}}
 
-The **`Animation.currentTime`** property of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) returns and sets the current time value of the animation in milliseconds, whether running or paused.
+خاصیت **`Animation.currentTime`** از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)، مقدار زمانی جاری انیمیشن را بر حسب میلی‌ثانیه بازمی‌گرداند و تنظیم می‌کند، چه در حال اجرا باشد چه متوقف شده باشد.
 
-If the animation lacks a {{domxref("AnimationTimeline", "timeline")}}, is inactive, or hasn't been played yet, `currentTime`'s return value is `null`.
+اگر انیمیشن فاقد {{domxref("AnimationTimeline", "timeline")}} باشد، غیرفعال باشد، یا هنوز پخش نشده باشد، مقدار بازگشتی `currentTime` برابر با `null` است.
 
-## Value
+## مقدار
 
-A number representing the current time in milliseconds, or `null` to deactivate the animation.
+عددی که زمان جاری را بر حسب میلی‌ثانیه نشان می‌دهد، یا `null` برای غیرفعال کردن انیمیشن.
 
-## Examples
+## مثال‌ها
 
-In the [Drink Me/Eat Me game](https://codepen.io/rachelnabors/pen/PNYGZQ?editors=0010), Alice's height is animated so it can go from small to large or large to small. At the start of the game, her height is set between the two extremes by setting her animation's `currentTime` to half her `KeyframeEffect`'s duration:
+در بازی [Drink Me/Eat Me game](https://codepen.io/rachelnabors/pen/PNYGZQ?editors=0010)، ارتفاع آلیس به‌گونه‌ای انیمیشن‌سازی می‌شود که بتواند از کوچک به بزرگ یا از بزرگ به کوچک تغییر کند. در شروع بازی، ارتفاع او با تنظیم `currentTime` انیمیشنش بر روی نصف مدت زمان `KeyframeEffect`، بین دو حالت حدی قرار می‌گیرد:
 
 ```js
 aliceChange.currentTime = aliceChange.effect.timing.duration / 2;
 ```
 
-A more generic means of seeking to the 50% mark of an animation would be:
+یک روش عمومی‌تر برای پرش به نشانه ۵۰٪ یک انیمیشن به این صورت است:
 
 ```js
 animation.currentTime =
@@ -38,11 +38,11 @@ animation.currentTime =
   animation.effect.getComputedTiming().activeDuration / 2;
 ```
 
-## Reduced time precision
+## دقت زمانی کاهش‌یافته
 
-To offer protection against timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting), the precision of `animation.currentTime` might get rounded depending on browser settings. In Firefox, the `privacy.reduceTimerPrecision` preference is enabled by default and defaults to 2ms. You can also enable `privacy.resistFingerprinting`, in which case the precision will be 100ms or the value of `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`, whichever is larger.
+به‌منظور محافظت در برابر حملات زمان‌بندی و [fingerprinting](/en-US/docs/Glossary/Fingerprinting)، ممکن است دقت `animation.currentTime` بسته به تنظیمات مرورگر گرد شود. در فایرفاکس، ترجیح `privacy.reduceTimerPrecision` به‌صورت پیش‌فرض فعال است و پیش‌فرض آن ۲ میلی‌ثانیه است. همچنین می‌توانید `privacy.resistFingerprinting` را فعال کنید؛ در این صورت دقت، ۱۰۰ میلی‌ثانیه یا مقدار `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`، هر کدام بزرگ‌تر باشد، خواهد بود.
 
-For example, with reduced time precision, the result of `animation.currentTime` will always be a multiple of 0.002, or a multiple of 0.1 (or `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) with `privacy.resistFingerprinting` enabled.
+برای مثال، با دقت زمانی کاهش‌یافته، نتیجه `animation.currentTime` همیشه مضربی از ۰٫۰۰۲، یا - با فعال بودن `privacy.resistFingerprinting` - مضربی از ۰٫۱ (یا `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) خواهد بود.
 
 ```js
 // reduced time precision (2ms) in Firefox 60
@@ -62,16 +62,16 @@ animation.currentTime;
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Animation")}} for other methods and properties you can use to control web page animation.
-- {{domxref("Animation.startTime")}} for the time an animation is scheduled to start.
+- {{domxref("Animation")}} برای سایر روش‌ها و ویژگی‌هایی که می‌توانید برای کنترل انیمیشن صفحه وب استفاده کنید.
+- {{domxref("Animation.startTime")}} برای زمانی که یک انیمیشن برنامه‌ریزی شده تا شروع شود.
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
