@@ -1,7 +1,7 @@
 ---
 title: "BluetoothUUID"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothUUID"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,40 +13,38 @@ browser-compat: api.BluetoothUUID
 
 {{APIRef("Bluetooth API")}}
 
-The **`BluetoothUUID`** interface of the [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) provides a way to look up Universally Unique Identifier (UUID) values by name in the
-[registry](https://www.bluetooth.com/specifications/assigned-numbers/) maintained by the Bluetooth SIG.
+رابط **`BluetoothUUID`** از [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) راهی برای جستجوی مقادیر شناسه یکتای جهانی (UUID) بر اساس نام در [ثبت](https://www.bluetooth.com/specifications/assigned-numbers/) نگهداری شده توسط Bluetooth SIG فراهم می‌کند.
 
-## Description
+## توضیحات
 
-A UUID string is a 128-bit UUID, for example `00001818-0000-1000-8000-00805f9b34fb`.
-The Bluetooth registry contains lists of descriptors, services, and characteristics identified by these UUIDs in addition to a 16- or 32- bit alias, and a name.
+یک رشته UUID یک UUID 128 بیتی است، برای مثال `00001818-0000-1000-8000-00805f9b34fb`. ثبث Bluetooth شامل لیست‌هایی از توصیف‌گرها، خدمات و ویژگی‌های شناسایی شده توسط این UUIDها به همراه یک نام مستعار 16 یا 32 بیتی و یک نام است.
 
-The `BluetoothUUID` interface provides methods to retrieve these 128-bit UUIDs.
+رابط `BluetoothUUID` روش‌هایی برای بازیابی این UUIDهای 128 بیتی فراهم می‌کند.
 
-## Static methods
+## روش‌های استاتیک
 
 - [`BluetoothUUID.canonicalUUID()`](/en-US/docs/Web/API/BluetoothUUID/canonicalUUID_static) {{Experimental_Inline}}
-  - : Returns the 128-bit UUID when passed the 16- or 32-bit UUID alias.
+  - : UUID 128 بیتی را زمانی که نام مستعار UUID 16 یا 32 بیتی به آن داده شود، برمی‌گرداند.
 - [`BluetoothUUID.getCharacteristic()`](/en-US/docs/Web/API/BluetoothUUID/getCharacteristic_static) {{Experimental_Inline}}
-  - : Returns the 128-bit UUID representing a registered characteristic when passed a name or the 16- or 32-bit UUID alias.
+  - : UUID 128 بیتی نماینده یک ویژگی ثبت‌شده را زمانی که یک نام یا نام مستعار UUID 16 یا 32 بیتی به آن داده شود، برمی‌گرداند.
 - [`BluetoothUUID.getDescriptor()`](/en-US/docs/Web/API/BluetoothUUID/getDescriptor_static) {{Experimental_Inline}}
-  - : Returns a UUID representing a registered descriptor when passed a name or the 16- or 32-bit UUID alias.
+  - : UUID نماینده یک توصیف‌گر ثبت‌شده را زمانی که یک نام یا نام مستعار UUID 16 یا 32 بیتی به آن داده شود، برمی‌گرداند.
 - [`BluetoothUUID.getService()`](/en-US/docs/Web/API/BluetoothUUID/getService_static) {{Experimental_Inline}}
-  - : Returns a UUID representing a registered service when passed a name or the 16- or 32-bit UUID alias.
+  - : UUID نماینده یک سرویس ثبت‌شده را زمانی که یک نام یا نام مستعار UUID 16 یا 32 بیتی به آن داده شود، برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-In the following example the UUID representing the service named `device_information` is returned and printed to the console.
+در مثال زیر UUID نماینده سرویس به نام `device_information` برگردانده شده و در کنسول چاپ می‌شود.
 
 ```js
 let result = BluetoothUUID.getService("device_information");
 console.log(result); // "0000180a-0000-1000-8000-00805f9b34fb"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
