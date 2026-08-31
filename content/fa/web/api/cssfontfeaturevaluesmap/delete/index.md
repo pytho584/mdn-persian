@@ -1,7 +1,5 @@
 ---
 title: "CSSFontFeatureValuesMap: delete() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap/delete"
-status: "needs-translation"
 ---
 
 ---
@@ -16,7 +14,7 @@ browser-compat: api.CSSFontFeatureValuesMap.delete
 
 {{APIRef("CSSOM")}}{{SeeCompatTable}}
 
-The **`delete()`** method of the {{domxref("CSSFontFeatureValuesMap")}} interface removes the CSS declaration with the given property in the `CSSFontFeatureValuesMap`.
+متد **`delete()`** از رابط {{domxref("CSSFontFeatureValuesMap")}} اعلامیه‌ی CSS مربوط به ویژگی داده‌شده را در `CSSFontFeatureValuesMap` حذف می‌کند.
 
 ## Syntax
 
@@ -24,20 +22,20 @@ The **`delete()`** method of the {{domxref("CSSFontFeatureValuesMap")}} interfac
 delete(property)
 ```
 
-### Parameters
+### پارامترها
 
 - `property`
-  - : An identifier indicating the declaration to remove.
+  - : یک شناسه که نشان‌دهنده‌ی اعلامیه‌ای است که باید حذف شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده‌ی پایه
 
-The following example deletes the first declaration within the [`@swash`](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#swash) feature block. This example is using `@swash` but also works with other [feature value blocks](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks).
+مثال زیر اولین اعلامیه را درون بلوک ویژگی [`@swash`](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#swash) حذف می‌کند. این مثال از `@swash` استفاده می‌کند اما با سایر [بلوک‌های مقادیر ویژگی](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks) نیز کار می‌کند.
 
 #### CSS
 
@@ -60,14 +58,14 @@ myRule.swash.delete("swishy");
 console.log(myRule.swash.has("swishy")); // logs false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Map.prototype.delete()](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/delete)
