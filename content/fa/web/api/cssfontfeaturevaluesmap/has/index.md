@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesMap: has() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap/has"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesMap: has() method"
 short-title: has()
 slug: Web/API/CSSFontFeatureValuesMap/has
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.CSSFontFeatureValuesMap.has
 
 {{APIRef("CSSOM")}}{{SeeCompatTable}}
 
-The **`has()`** method of the {{domxref("CSSFontFeatureValuesMap")}} interface returns a boolean indicating whether an entry with the specified key exists in this `CSSFontFeatureValuesMap` or not.
+متد **`has()`** از رابط {{domxref("CSSFontFeatureValuesMap")}} یک مقدار بولی بازمی‌گرداند که نشان می‌دهد آیا یک ورودی با کلید مشخص‌شده در این `CSSFontFeatureValuesMap` وجود دارد یا خیر.
 
 ## Syntax
 
@@ -24,20 +18,20 @@ The **`has()`** method of the {{domxref("CSSFontFeatureValuesMap")}} interface r
 has(property)
 ```
 
-### Parameters
+### پارامترها
 
 - `key`
-  - : The key of the value to return from the `CSSFontFeatureValuesMap` object.
+  - : کلید مقداری که باید از شیء `CSSFontFeatureValuesMap` بازگردانده شود.
 
-### Return value
+### مقدار بازگشتی
 
-The value associated with the specified key in the `CSSFontFeatureValuesMap` object. If the key can't be found, [undefined](/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) is returned.
+مقدار مرتبط با کلید مشخص‌شده در شیء `CSSFontFeatureValuesMap`. اگر کلید پیدا نشود، [undefined](/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following example returns `true` or `false` if the `@swash` rule contains the `key`. This example is using `@swash` but also works with other [feature value blocks](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks).
+مثال زیر `true` یا `false` را برمی‌گرداند اگر قاعده `@swash` حاوی `key` باشد. این مثال از `@swash` استفاده می‌کند اما با سایر [بلوک‌های مقادیر ویژگی](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks) نیز کار می‌کند.
 
 #### CSS
 
@@ -53,20 +47,20 @@ The following example returns `true` or `false` if the `@swash` rule contains th
 #### JavaScript
 
 ```js
-// get the rules
+// دریافت قواعد
 const myRule = document.styleSheets[0].cssRules[0];
-console.log(myRule.swash.has("swishy")); // logs true
-console.log(myRule.swash.has("swooshy")); // logs false
+console.log(myRule.swash.has("swishy")); // true را ثبت می‌کند
+console.log(myRule.swash.has("swooshy")); // false را ثبت می‌کند
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Map.prototype.has()](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has)
