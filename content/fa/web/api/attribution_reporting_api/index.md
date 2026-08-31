@@ -1,7 +1,7 @@
 ---
 title: "Attribution Reporting API"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Attribution_Reporting_API"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,111 +16,111 @@ browser-compat: html.elements.a.attributionsrc
 
 {{securecontext_header}}{{DefaultAPISidebar("Attribution Reporting API")}}{{deprecated_header}}{{non-standard_header}}
 
-The **Attribution Reporting API** enables developers to measure conversions — for example when a user clicks an ad embedded on one site and then proceeds to purchase the item over on the vendor's site — and then access reports on those conversions. It does this without relying on third-party tracking cookies.
+**Attribution Reporting API** به توسعه‌دهندگان امکان اندازه‌گیری تبدیل‌ها (conversions) را می‌دهد - برای مثال زمانی که کاربر روی یک تبلیغ جاسازی‌شده در یک سایت کلیک می‌کند و سپس اقدام به خرید همان کالا در سایت فروشنده می‌کند - و سپس گزارش‌هایی از این تبدیل‌ها دریافت می‌کند. این کار بدون استفاده از کوکی‌های ردیابی شخص ثالث (third-party tracking cookies) انجام می‌شود.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-Advertisers commonly want to measure how many users see an ad and then go on to view and purchase a product (conversions). This allows them to figure out what advertising placements are giving them the greatest return on investment (ROI) so they can adjust their advertising strategy accordingly. The process of measuring conversions usually includes capturing data such as:
+تبلیغ‌دهندگان معمولاً می‌خواهند تعداد کاربرانی را که تبلیغ را می‌بینند و سپس محصول را مشاهده و خریداری می‌کنند (تبدیل) اندازه‌گیری کنند. این به آنها امکان می‌دهد بفهمند کدام مکان‌های تبلیغاتی بیشترین بازده سرمایه‌گذاری (ROI) را دارند و استراتژی تبلیغاتی خود را متناسباً تنظیم کنند. فرآیند اندازه‌گیری تبدیل‌ها معمولاً شامل ثبت داده‌هایی مانند موارد زیر است:
 
-- Which users converted (for example purchased an item, or signed up for a service), and how many.
-- The geographic regions they are based in.
-- What sites the ads were placed on.
-- How many products were sold, services were signed up for, etc.
-- How much revenue was generated.
+- کدام کاربران تبدیل شدند (مثلاً یک کالا خریدند یا در یک سرویس ثبت‌نام کردند)، و چند نفر.
+- مناطق جغرافیایی که در آن قرار دارند.
+- سایت‌هایی که تبلیغات در آنها قرار داده شده است.
+- چند محصول فروخته شد، چند سرویس ثبت‌نام شد و غیره.
+- چه میزان درآمد ایجاد شد.
 
-Traditionally on the web, conversion has been measured using third-party tracking cookies. An ad will typically be embedded on a web page in an {{htmlelement("iframe")}}, which can set a cookie containing information about the user and their interaction with the ad.
+به‌طور سنتی در وب، تبدیل با استفاده از کوکی‌های ردیابی شخص ثالث اندازه‌گیری می‌شد. یک تبلیغ معمولاً در یک صفحه وب درون یک {{htmlelement("iframe")}} جاسازی می‌شود که می‌تواند یک کوکی حاوی اطلاعاتی درباره کاربر و تعامل او با تبلیغ تنظیم کند.
 
-Later on, when the user decides to visit the advertiser's site, provided it is from the same domain as the ad, that site can access the third-party cookie set previously by the ad. The advertiser can then associate the data from the ad with their own first-party data to answer questions such as "did the user purchase a product after interacting with an ad for the product from another site?"
+بعداً، هنگامی که کاربر تصمیم می‌گیرد از سایت تبلیغ‌دهنده بازدید کند، به شرطی که از همان دامنه تبلیغ باشد، آن سایت می‌تواند به کوکی شخص ثالثی که قبلاً توسط تبلیغ تنظیم شده است دسترسی پیدا کند. سپس تبلیغ‌دهنده می‌تواند داده‌های تبلیغ را با داده‌های اولیه خود مرتبط کند تا به سؤالاتی مانند «آیا کاربر پس از تعامل با یک تبلیغ برای محصول از سایت دیگر، محصول را خریداری کرد؟» پاسخ دهد.
 
-This is bad for user [privacy](/en-US/docs/Web/Privacy). At this point, any page from the same domain can get access to that cookie, plus information from sites that embed those pages. A surprisingly large number of parties will be able to access that data, and infer other data about the user based on their browsing habits.
+این برای [حریم خصوصی](/en-US/docs/Web/Privacy) کاربر مضر است. در این مرحله، هر صفحه از همان دامنه می‌تواند به آن کوکی و همچنین اطلاعات سایت‌هایی که آن صفحات را جاسازی می‌کنند دسترسی پیدا کند. تعداد قابل توجهی از طرف‌ها می‌توانند به این داده‌ها دسترسی پیدا کرده و داده‌های دیگری درباره کاربر بر اساس عادات مرور او استنباط کنند.
 
-The Attribution Reporting API provides a way to measure ad conversions in a way that protects user privacy.
+Attribution Reporting API روشی برای اندازه‌گیری تبدیل‌های تبلیغاتی به گونه‌ای ارائه می‌دهد که از حریم خصوصی کاربر محافظت می‌کند.
 
-### How does it work?
+### چگونه کار می‌کند؟
 
-Let's illustrate how the Attribution Reporting API works via an example.
+بیایید نحوه کار Attribution Reporting API را با یک مثال توضیح دهیم.
 
-Say we have an online shop, `shop.example` (aka the advertiser), which embeds an ad for one of its products on a content site, `news.example` (aka the publisher). The ad content is found at `ad.shop.example`.
+فرض کنید یک فروشگاه آنلاین به نام `shop.example` (تبلیغ‌دهنده) داریم که یک تبلیغ برای یکی از محصولات خود را در یک سایت محتوایی به نام `news.example` (ناشر) جاسازی می‌کند. محتوای تبلیغ در `ad.shop.example` قرار دارد.
 
-The online shop owners want to measure how many conversions they get from users interacting with the ad, viewing the product page on their site, and putting the product into their shopping cart.
+صاحبان فروشگاه آنلاین می‌خواهند تعداد تبدیل‌هایی را که از تعامل کاربران با تبلیغ، مشاهده صفحه محصول در سایت خود و اضافه کردن محصول به سبد خرید دریافت می‌کنند، اندازه‌گیری کنند.
 
-![Image representation of the steps described below](/shared-assets/images/diagrams/api/attribution-reporting/ara-flow.svg)
+![تصویری از مراحل شرح داده شده در زیر](/shared-assets/images/diagrams/api/attribution-reporting/ara-flow.svg)
 
-The steps involved are as follows:
+مراحل به شرح زیر است:
 
-1. When a user visits the `news.example` site, an **attribution source** can be registered for specific user interactions with the embedded ad. There are several ways that a user can interact with ads on the page. For an ad interaction to register an attribution source, the ad must send a request with an {{httpheader("Attribution-Reporting-Eligible")}} header to indicate that the response is eligible to register an attribution source. Registration will be completed if the response includes an appropriate {{httpheader("Attribution-Reporting-Register-Source")}} header. The attribution source can be, for example:
-   - A link. In this case, the interaction is the user clicking on the link (directly via an {{htmlelement("a")}} element, or via a {{domxref("Window.open()")}} call). The source is registered via the response to the navigation request.
-   - An image such as an advertising banner or a 1x1 transparent tracking pixel. In this case, the interaction is the user visiting the page. The source is registered when the image loads, i.e., when the server responds to the image request.
-   - A fetch request (i.e., a {{domxref("Window/fetch", "fetch()")}} or {{domxref("XMLHttpRequest")}}). In this case the interaction can be specified as whatever makes sense for your app — for example the fetch request could be invoked by a `click` or `submit` event. The source is registered once the response comes back.
-2. When the attribution source interaction occurs, the source data returned in the {{httpheader("Attribution-Reporting-Register-Source")}} header is stored in a private local cache accessible only by the browser. This data includes the contextual and first-party data available to the page and the advertiser, the origin of the ad tech company that is collecting the conversion data, and one or more destinations ({{glossary("registrable domain", "registrable domains")}}) where you expect the conversion from that ad to occur (i.e., the advertiser's site(s), for example `shop.example`).
-3. When the user later visits `shop.example`, this site can register an **attribution trigger** when an interaction indicates that a conversion has occurred (for example, the user clicks the "Add to cart" button on `shop.example`). The browser will then send a request along with an {{httpheader("Attribution-Reporting-Eligible")}} header to indicate that the response is eligible to register an attribution trigger, and registration will be completed if the response includes an appropriate {{httpheader("Attribution-Reporting-Register-Trigger")}} header. The attribution trigger can be, for example:
-   - An image such as a shopping cart icon or a 1x1 transparent tracking pixel. In this case, the interaction is the user visiting the page. The trigger is registered when the image loads, i.e., when the server responds to the image request.
-   - A fetch request (i.e., a {{domxref("Window/fetch", "fetch()")}} or {{domxref("XMLHttpRequest")}}). In this case the interaction can be specified as whatever makes sense for your app — for example the fetch request could be invoked by a `click` or `submit` event. The trigger is registered once the response comes back.
-4. When the trigger attribution completes, the browser attempts to match the data from the [Attribution-Reporting-Register-Trigger](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Trigger) header with a source data entry saved in the private local cache (see 2.). See [Registering attribution triggers](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_triggers) for matching methodology and requirements.
-5. If a match is made, the browser sends report data to an endpoint on a reporting server typically owned by the ad tech provider where it can be securely analyzed. Unlike with cookies, the data is only available to the specific site you send it to - there will be no data shared elsewhere. These reports can be either:
-   - **Event-level reports**: Reports based on an attribution source event, where detailed source data is associated with coarse trigger data. For example, a report may look like "Click ID 200498 on `ad.shop.example` led to a purchase on `shop.example`", where "Click ID 200498" is the detailed source data, and "purchase" is the coarse trigger data. The detailed source data may encode first-party or contextual data from the source page, and the trigger data may encode the event from the trigger page.
-   - **Summary reports**: More detailed reports that combine data from multiple conversions on both the source and trigger side. For example "Campaign ID 774653 on `news.example` has led to 654 sales of widgets on `shop.example` from users in Italy, with a total revenue of $9540." Compiling a summary report requires usage of an aggregation service (see for example the [Google aggregation service](https://github.com/privacysandbox/aggregation-service)).
+1. هنگامی که کاربر از سایت `news.example` بازدید می‌کند، یک **منبع انتساب (attribution source)** می‌تواند برای تعاملات خاص کاربر با تبلیغ جاسازی‌شده ثبت شود. چندین راه وجود دارد که کاربر می‌تواند با تبلیغات در صفحه تعامل داشته باشد. برای اینکه یک تعامل با تبلیغ یک منبع انتساب را ثبت کند، تبلیغ باید یک درخواست با هدر {{httpheader("Attribution-Reporting-Eligible")}} ارسال کند تا نشان دهد که پاسخ واجد شرایط ثبت یک منبع انتساب است. ثبت‌نام در صورت تکمیل می‌شود که پاسخ شامل یک هدر {{httpheader("Attribution-Reporting-Register-Source")}} مناسب باشد. منبع انتساب می‌تواند، برای مثال، موارد زیر باشد:
+   - یک پیوند. در این حالت، تعامل همان کلیک کاربر روی پیوند است (به طور مستقیم از طریق یک عنصر {{htmlelement("a")}}، یا از طریق فراخوانی {{domxref("Window.open()")}}). منبع از طریق پاسخ به درخواست ناوبری ثبت می‌شود.
+   - یک تصویر مانند بنر تبلیغاتی یا یک پیکسل ردیابی شفاف 1x1. در این حالت، تعامل همان بازدید کاربر از صفحه است. منبع زمانی که تصویر بارگذاری می‌شود، یعنی زمانی که سرور به درخواست تصویر پاسخ می‌دهد، ثبت می‌شود.
+   - یک درخواست fetch (یعنی {{domxref("Window/fetch", "fetch()")}} یا {{domxref("XMLHttpRequest")}}). در این حالت تعامل می‌تواند هر چیزی که برای برنامه شما منطقی است مشخص شود - برای مثال، درخواست fetch می‌تواند توسط یک رویداد `click` یا `submit` فراخوانی شود. منبع پس از بازگشت پاسخ ثبت می‌شود.
+2. هنگامی که تعامل با منبع انتساب رخ می‌دهد، داده‌های منبع برگشتی در هدر {{httpheader("Attribution-Reporting-Register-Source")}} در یک حافظه پنهان محلی خصوصی که فقط توسط مرورگر قابل دسترسی است ذخیره می‌شود. این داده‌ها شامل داده‌های زمینه‌ای (contextual) و اولیه (first-party) موجود در صفحه و تبلیغ‌دهنده، مبدأ شرکت فناوری تبلیغاتی که داده‌های تبدیل را جمع‌آوری می‌کند، و یک یا چند مقصد ({{glossary("registrable domain", "دامنه‌های قابل ثبت")}}) که انتظار دارید تبدیل از آن تبلیغ رخ دهد (یعنی سایت(های) تبلیغ‌دهنده، به عنوان مثال `shop.example`) است.
+3. هنگامی که کاربر بعداً از `shop.example` بازدید می‌کند، این سایت می‌تواند یک **محرک انتساب (attribution trigger)** را زمانی که تعامل نشان‌دهنده وقوع یک تبدیل است (برای مثال، کاربر دکمه «افزودن به سبد خرید» را در `shop.example` کلیک می‌کند) ثبت کند. سپس مرورگر یک درخواست به همراه هدر {{httpheader("Attribution-Reporting-Eligible")}} ارسال می‌کند تا نشان دهد که پاسخ واجد شرایط ثبت یک محرک انتساب است، و ثبت‌نام در صورت تکمیل می‌شود که پاسخ شامل یک هدر {{httpheader("Attribution-Reporting-Register-Trigger")}} مناسب باشد. محرک انتساب می‌تواند، برای مثال، موارد زیر باشد:
+   - یک تصویر مانند آیکون سبد خرید یا یک پیکسل ردیابی شفاف 1x1. در این حالت، تعامل همان بازدید کاربر از صفحه است. محرک زمانی که تصویر بارگذاری می‌شود، یعنی زمانی که سرور به درخواست تصویر پاسخ می‌دهد، ثبت می‌شود.
+   - یک درخواست fetch (یعنی {{domxref("Window/fetch", "fetch()")}} یا {{domxref("XMLHttpRequest")}}). در این حالت تعامل می‌تواند هر چیزی که برای برنامه شما منطقی است مشخص شود - برای مثال، درخواست fetch می‌تواند توسط یک رویداد `click` یا `submit` فراخوانی شود. محرک پس از بازگشت پاسخ ثبت می‌شود.
+4. هنگامی که انتساب محرک کامل می‌شود، مرورگر سعی می‌کند داده‌های هدر [Attribution-Reporting-Register-Trigger](/en-US/docs/Web/HTTP/Reference/Headers/Attribution-Reporting-Register-Trigger) را با یک ورودی داده منبع ذخیره‌شده در حافظه پنهان محلی خصوصی مطابقت دهد (به مرحله 2 مراجعه کنید). برای روش و الزامات تطبیق، به [ثبت محرک‌های انتساب](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_triggers) مراجعه کنید.
+5. اگر مطابقت پیدا شود، مرورگر داده‌های گزارش را به یک نقطه پایانی (endpoint) در یک سرور گزارش‌دهی که معمولاً متعلق به ارائه‌دهنده فناوری تبلیغاتی است ارسال می‌کند تا بتوان به طور امن آن را تحلیل کرد. برخلاف کوکی‌ها، داده‌ها فقط برای سایت خاصی که به آن ارسال می‌کنید قابل دسترسی است - هیچ داده‌ای به اشتراک گذاشته نمی‌شود. این گزارش‌ها می‌توانند از انواع زیر باشند:
+   - **گزارش‌های سطح رویداد (Event-level reports)**: گزارش‌های مبتنی بر یک رویداد منبع انتساب، که در آن داده‌های منبع دقیق با داده‌های محرک کلی (coarse) مرتبط می‌شوند. به عنوان مثال، یک گزارش ممکن است شبیه «کلیک ID 200498 در `ad.shop.example` منجر به خرید در `shop.example` شد» باشد، که در آن «کلیک ID 200498» داده منبع دقیق و «خرید» داده محرک کلی است. داده‌های منبع دقیق ممکن است داده‌های اولیه یا زمینه‌ای از صفحه منبع را رمزگذاری کنند، و داده‌های محرک ممکن است رویداد را از صفحه محرک رمزگذاری کنند.
+   - **گزارش‌های خلاصه (Summary reports)**: گزارش‌های دقیق‌تری که داده‌های چندین تبدیل را در هر دو طرف منبع و محرک ترکیب می‌کنند. به عنوان مثال «شناسه کمپین 774653 در `news.example` منجر به 654 فروش از ویجت‌ها در `shop.example` توسط کاربران در ایتالیا با درآمد کل 9540 دلار شده است». تهیه یک گزارش خلاصه نیازمند استفاده از یک سرویس تجمیع (aggregation service) است (به عنوان مثال به [سرویس تجمیع Google](https://github.com/privacysandbox/aggregation-service) مراجعه کنید).
 
-For more information on implementing the functionality required for the above steps, see:
+برای اطلاعات بیشتر در مورد پیاده‌سازی عملکرد مورد نیاز برای مراحل فوق، به موارد زیر مراجعه کنید:
 
-1. [Registering attribution sources](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources)
-2. [Registering attribution triggers](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_triggers)
-3. [Generating reports](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports)
+1. [ثبت منابع انتساب](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources)
+2. [ثبت محرک‌های انتساب](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_triggers)
+3. [تولید گزارش‌ها](/en-US/docs/Web/API/Attribution_Reporting_API/Generating_reports)
 
-## Interfaces
+## رابط‌ها (Interfaces)
 
-The Attribution Reporting API doesn't define any distinct interfaces of its own.
+Attribution Reporting API هیچ رابط مجزایی از خود تعریف نمی‌کند.
 
-### Extensions to other interfaces
+### افزونه‌هایی به سایر رابط‌ها
 
 - {{domxref("HTMLAnchorElement.attributionSrc")}}, {{domxref("HTMLImageElement.attributionSrc")}}, {{domxref("HTMLScriptElement.attributionSrc")}}
-  - : The `attributionSrc` property allows you to get and set the `attributionsrc` attribute on {{htmlelement("a")}}, {{htmlelement("img")}}, and {{htmlelement("script")}} elements programmatically. It reflects the value of that attribute.
-- {{domxref("Window/fetch", "fetch()")}} and the {{domxref("Request.Request", "Request()")}} constructor, the `attributionReporting` option
-  - : When generating a request via {{domxref("Window/fetch", "fetch()")}}, this indicates that you want the response to be able to register an attribution source or trigger.
+  - : ویژگی `attributionSrc` به شما امکان می‌دهد تا ویژگی `attributionsrc` را در عناصر {{htmlelement("a")}}، {{htmlelement("img")}} و {{htmlelement("script")}} به صورت برنامه‌نویسی دریافت و تنظیم کنید. این ویژگی مقدار آن ویژگی را منعکس می‌کند.
+- {{domxref("Window/fetch", "fetch()")}} و سازنده {{domxref("Request.Request", "Request()")}}، گزینه `attributionReporting`
+  - : هنگام ایجاد یک درخواست از طریق {{domxref("Window/fetch", "fetch()")}}، این نشان می‌دهد که می‌خواهید پاسخ بتواند یک منبع یا محرک انتساب را ثبت کند.
 - {{domxref("XMLHttpRequest.setAttributionReporting()")}}
-  - : When generating a request via {{domxref("XMLHttpRequest")}}, this indicates that you want the response to be able to register an attribution source or trigger.
-- {{domxref("Window.open()")}}, the `attributionsrc` feature keyword
-  - : Causes completion of the registration of an attribution source _and_ triggers the browser to store the associated source data (as provided in the {{httpheader("Attribution-Reporting-Register-Source")}} response header) when the `open()` method completes. Note that `Window.open()` calls cannot be used to register attribution triggers.
+  - : هنگام ایجاد یک درخواست از طریق {{domxref("XMLHttpRequest")}}، این نشان می‌دهد که می‌خواهید پاسخ بتواند یک منبع یا محرک انتساب را ثبت کند.
+- {{domxref("Window.open()")}}، کلمه کلیدی ویژگی `attributionsrc`
+  - : باعث تکمیل ثبت یک منبع انتساب _و_ باعث می‌شود مرورگر داده‌های منبع مرتبط (همانطور که در هدر پاسخ {{httpheader("Attribution-Reporting-Register-Source")}} ارائه شده است) را زمانی که متد `open()` کامل می‌شود ذخیره کند. توجه داشته باشید که فراخوانی‌های `Window.open()` نمی‌توانند برای ثبت محرک‌های انتساب استفاده شوند.
 
-## HTML elements
+## عناصر HTML
 
-- {{htmlelement("a")}}, {{htmlelement("img")}}, and {{htmlelement("script")}} — the `attributionsrc` attribute
-  - : Specifies that you want the browser to send an {{httpheader("Attribution-Reporting-Eligible")}} header along with the associated resource request. On the server-side this header is used to trigger sending an {{httpheader("Attribution-Reporting-Register-Source")}} or {{httpheader("Attribution-Reporting-Register-Trigger")}} header in the response. When registering an attribution source, this is required; when registering an attribution trigger it is only required if you want to specify a separate registration server to the resource the `src` attribute is pointing at. Note that `<a>` elements cannot be used to register attribution triggers.
+- {{htmlelement("a")}}، {{htmlelement("img")}} و {{htmlelement("script")}} — ویژگی `attributionsrc`
+  - : مشخص می‌کند که می‌خواهید مرورگر یک هدر {{httpheader("Attribution-Reporting-Eligible")}} را به همراه درخواست منبع مرتبط ارسال کند. در سمت سرور، این هدر برای راه‌اندازی ارسال یک هدر {{httpheader("Attribution-Reporting-Register-Source")}} یا {{httpheader("Attribution-Reporting-Register-Trigger")}} در پاسخ استفاده می‌شود. هنگام ثبت یک منبع انتساب، این مورد الزامی است؛ هنگام ثبت یک محرک انتساب، فقط در صورتی الزامی است که بخواهید یک سرور ثبت جداگانه به غیر از منبعی که ویژگی `src` به آن اشاره می‌کند مشخص کنید. توجه داشته باشید که عناصر `<a>` نمی‌توانند برای ثبت محرک‌های انتساب استفاده شوند.
 
-## HTTP headers
+## هدرهای HTTP
 
 - {{httpheader("Attribution-Reporting-Eligible")}}
-  - : HTTP request that indicates that the corresponding response is eligible to register an attribution source or trigger.
+  - : درخواست HTTP که نشان می‌دهد پاسخ مربوطه واجد شرایط ثبت یک منبع یا محرک انتساب است.
 - {{httpheader("Attribution-Reporting-Register-Source")}}
-  - : HTTP response that registers a page feature as an attribution source. This is included as part of a response to a request that included an `Attribution-Reporting-Eligible` header.
+  - : پاسخ HTTP که یک ویژگی صفحه را به عنوان یک منبع انتساب ثبت می‌کند. این بخشی از یک پاسخ به درخواستی است که شامل یک هدر `Attribution-Reporting-Eligible` بوده است.
 - {{httpheader("Attribution-Reporting-Register-Trigger")}}
-  - : HTTP response that registers a page feature as an attribution trigger. This is included as part of a response to a request that included an `Attribution-Reporting-Eligible` header.
-- {{httpheader("Permissions-Policy")}} {{httpheader('Permissions-Policy/attribution-reporting','attribution-reporting')}} directive
-  - : Controls whether the current document is allowed to use attribution reporting.
+  - : پاسخ HTTP که یک ویژگی صفحه را به عنوان یک محرک انتساب ثبت می‌کند. این بخشی از یک پاسخ به درخواستی است که شامل یک هدر `Attribution-Reporting-Eligible` بوده است.
+- دستور {{httpheader("Permissions-Policy")}} {{httpheader('Permissions-Policy/attribution-reporting','attribution-reporting')}}
+  - : کنترل می‌کند که آیا سند فعلی مجاز به استفاده از گزارش‌دهی انتساب است یا خیر.
 
-## Enrollment and local testing
+## ثبت‌نام و آزمایش محلی
 
-To use the Attribution Reporting API in your sites, you must specify it in the [privacy sandbox enrollment process](/en-US/docs/Web/Privacy/Guides/Privacy_sandbox#enrollment). If you don't do this, the API flow is blocked at response time, i.e., the response headers are ignored and sources and triggers are not registered.
+برای استفاده از Attribution Reporting API در سایت‌های خود، باید آن را در [فرآیند ثبت‌نام حریم خصوصی sandbox](/en-US/docs/Web/Privacy/Guides/Privacy_sandbox#enrollment) مشخص کنید. اگر این کار را انجام ندهید، جریان API در زمان پاسخ مسدود می‌شود، یعنی هدرهای پاسخ نادیده گرفته می‌شوند و منابع و محرک‌ها ثبت نمی‌شوند.
 
-You can still test your Attribution Reporting API code locally without enrollment. To allow local testing, enable the following Chrome developer flag:
+شما همچنان می‌توانید کد Attribution Reporting API خود را به صورت محلی بدون ثبت‌نام آزمایش کنید. برای فعال کردن آزمایش محلی، پرچم توسعه‌دهنده Chrome زیر را فعال کنید:
 
 `chrome://flags/#privacy-sandbox-enrollment-overrides`
 
-## Examples
+## مثال‌ها
 
-See [Demo: Attribution Reporting API](https://arapi-home.web.app/) for an example implementation (see the [source code also](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/attribution-reporting)).
+برای یک نمونه پیاده‌سازی، به [دمو: Attribution Reporting API](https://arapi-home.web.app/) مراجعه کنید (همچنین [کد منبع](https://github.com/GoogleChromeLabs/trust-safety-demo/tree/main/attribution-reporting) را ببینید).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Attribution Reporting Header Validation tool](https://wicg.github.io/attribution-reporting-api/validate-headers)
-- [Attribution reporting](https://privacysandbox.google.com/private-advertising/attribution-reporting/) on privacysandbox.google.com (2023)
-- [Enable conversion measurement](https://privacysandbox.google.com/private-advertising/attribution-reporting/enable-conversion-measurement) on privacysandbox.google.com (2023)
-- [The Privacy Sandbox](https://privacysandbox.google.com/) on privacysandbox.google.com (2023)
+- [ابزار اعتبارسنجی هدر گزارش‌دهی انتساب](https://wicg.github.io/attribution-reporting-api/validate-headers)
+- [گزارش‌دهی انتساب](https://privacysandbox.google.com/private-advertising/attribution-reporting/) در privacysandbox.google.com (2023)
+- [فعال‌سازی اندازه‌گیری تبدیل](https://privacysandbox.google.com/private-advertising/attribution-reporting/enable-conversion-measurement) در privacysandbox.google.com (2023)
+- [The Privacy Sandbox](https://privacysandbox.google.com/) در privacysandbox.google.com (2023)
