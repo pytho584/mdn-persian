@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: textRendering property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/textRendering"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: textRendering property"
 short-title: textRendering
 slug: Web/API/CanvasRenderingContext2D/textRendering
 page-type: web-api-instance-property
@@ -14,34 +8,28 @@ browser-compat: api.CanvasRenderingContext2D.textRendering
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.textRendering`** property of the [Canvas API](/en-US/docs/Web/API/Canvas_API) provides information to the rendering engine about what to optimize for when rendering text.
+خصوصیت **`CanvasRenderingContext2D.textRendering`** در [Canvas API](/en-US/docs/Web/API/Canvas_API) اطلاعاتی را در اختیار موتور رندر قرار می‌دهد که هنگام رندر کردن متن، چه چیزی باید بهینه شود.
 
-The values correspond to the SVG [`text-rendering`](/en-US/docs/Web/SVG/Reference/Attribute/text-rendering) attribute (and CSS {{cssxref("text-rendering")}} property).
+مقادیر این خصوصیت با صفت SVG [`text-rendering`](/en-US/docs/Web/SVG/Reference/Attribute/text-rendering) (و خصوصیت CSS {{cssxref("text-rendering")}}) مطابقت دارند.
 
-## Value
+## مقدار
 
-A text-rendering hint to the browser engine.
-This one of:
+یک راهنمای text-rendering برای موتور مرورگر. این مقدار یکی از موارد زیر است:
 
 - `auto`
-  - : The browser makes educated guesses about when to optimize for speed, legibility, and geometric precision while drawing text.
+  - : مرورگر هنگام رسم متن، حدس‌های آگاهانه‌ای درباره زمان بهینه‌سازی برای سرعت، خوانایی و دقت هندسی می‌زند.
 - `optimizeSpeed`
-  - : The browser emphasizes rendering speed over legibility and geometric precision when drawing text.
-    It disables kerning and ligatures.
+  - : مرورگر هنگام رسم متن، سرعت رندر را بر خوانایی و دقت هندسی ترجیح می‌دهد. این مقدار کرنینگ و لیگاتورها را غیرفعال می‌کند.
 - `optimizeLegibility`
-  - : The browser emphasizes legibility over rendering speed and geometric precision.
-    This enables kerning and optional ligatures.
+  - : مرورگر خوانایی را بر سرعت رندر و دقت هندسی ترجیح می‌دهد. این مقدار کرنینگ و لیگاتورهای اختیاری را فعال می‌کند.
 - `geometricPrecision`
-  - : The browser emphasizes geometric precision over rendering speed and legibility.
-    Certain aspects of fonts — such as kerning — don't scale linearly.
-    For large scale factors, you might see less-than-beautiful text rendering, but the size is what you would expect (neither rounded up nor down to the nearest font size supported by the underlying operating system).
+  - : مرورگر دقت هندسی را بر سرعت رندر و خوانایی ترجیح می‌دهد. برخی از جنبه‌های فونت‌ها — مانند کرنینگ — به صورت خطی مقیاس‌پذیر نیستند. برای ضریب‌های مقیاس بزرگ، ممکن است رندر متنی با کیفیت کمتر از حد مطلوب ببینید، اما اندازه دقیقاً همان چیزی است که انتظار دارید (نه گرد شده به بالا و نه به پایین به نزدیک‌ترین اندازه فونت پشتیبانی‌شده توسط سیستم عامل).
 
-The property can be used to get or set the value.
+از این خصوصیت می‌توان برای دریافت یا تنظیم مقدار استفاده کرد.
 
-## Examples
+## مثال‌ها
 
-In this example we display the text "Hello World" using each of the supported values of the `textRendering` property.
-The value is also displayed for each case by reading the property.
+در این مثال، متن «Hello World» را با استفاده از هر یک از مقادیر پشتیبانی‌شده خصوصیت `textRendering` نمایش می‌دهیم. مقدار برای هر حالت نیز با خواندن خصوصیت نمایش داده می‌شود.
 
 ### HTML
 
@@ -72,14 +60,14 @@ ctx.textRendering = "geometricPrecision";
 ctx.fillText(`Hello world (${ctx.textRendering})`, 5, 110);
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 700, 230) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
