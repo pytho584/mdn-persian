@@ -1,11 +1,5 @@
 ---
 title: "CloseEvent: CloseEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent/CloseEvent"
-status: "needs-translation"
----
-
----
-title: "CloseEvent: CloseEvent() constructor"
 short-title: CloseEvent()
 slug: Web/API/CloseEvent/CloseEvent
 page-type: web-api-constructor
@@ -14,41 +8,41 @@ browser-compat: api.CloseEvent.CloseEvent
 
 {{APIRef("Websockets API")}}{{AvailableInWorkers}}
 
-The **`CloseEvent()`** constructor creates a new {{domxref("CloseEvent")}} object.
+سازندهٔ **`CloseEvent()`** یک شیء جدید از نوع {{domxref("CloseEvent")}} ایجاد می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new CloseEvent(type)
 new CloseEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `close`.
+  - : رشته‌ای است با نام رویداد.
+    این مقدار به حروف بزرگ و کوچک حساس است و مرورگرها همیشه آن را روی `close` قرار می‌دهند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, has the following properties:
+  - : شیءایی است که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، ویژگی‌های زیر را دارد:
     - `wasClean` {{optional_inline}}
-      - : A boolean value indicating if the connection has been closed cleanly or not. It defaults to `false`.
+      - : یک مقدار بولی که نشان می‌دهد آیا اتصال به‌طور تمیز بسته شده است یا نه. مقدار پیش‌فرض آن `false` است.
     - `code` {{optional_inline}}
-      - : An integer representing the _connection close code_ sent by the server. It defaults to `0`.
+      - : یک عدد صحیح که _کد بستن اتصال_ ارسال‌شده توسط سرور را نمایش می‌دهد. مقدار پیش‌فرض آن `0` است.
     - `reason` {{optional_inline}}
-      - : A string containing a human-readable reason describing why the server closed the connection. It defaults to `''`
+      - : رشته‌ای شامل دلیلی قابل‌فهم برای انسان که توصیف می‌کند چرا سرور اتصال را بسته است. مقدار پیش‌فرض آن `''` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("CloseEvent")}} object.
+یک شیء جدید از نوع {{domxref("CloseEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("CloseEvent")}}, the interface of the objects it constructs.
+- {{domxref("CloseEvent")}}، رابط (interface) شیءهایی که این سازنده می‌سازد.
