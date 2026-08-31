@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: closePath() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/closePath"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: closePath() method"
 short-title: closePath()
 slug: Web/API/CanvasRenderingContext2D/closePath
 page-type: web-api-instance-method
@@ -14,15 +8,9 @@ browser-compat: api.CanvasRenderingContext2D.closePath
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.closePath()`**
-method of the Canvas 2D API attempts to add a straight line from the current point to
-the start of the current sub-path. If the shape has already been closed or has only one
-point, this function does nothing.
+متد **`CanvasRenderingContext2D.closePath()`** از Canvas 2D API تلاش می‌کند یک خط مستقیم از نقطهٔ کنونی به آغاز زیرمسیر کنونی اضافه کند. اگر شکل از قبل بسته شده باشد یا فقط یک نقطه داشته باشد، این تابع هیچ کاری انجام نمی‌دهد.
 
-This method doesn't draw anything to the canvas directly. You can render the path using
-the {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}} or
-{{domxref("CanvasRenderingContext2D.fill()", "fill()")}} methods.
+این متد مستقیماً چیزی روی بوم رسم نمی‌کند. می‌توانید مسیر را با استفاده از متدهای {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}} یا {{domxref("CanvasRenderingContext2D.fill()", "fill()")}} رندر کنید.
 
 ## Syntax
 
@@ -32,20 +20,17 @@ closePath()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
 ### Closing a triangle
 
-This example creates the first two (diagonal) sides of a triangle using the
-`lineTo()` method. After that, the triangle's base is created with the
-`closePath()` method, which automatically connects the shape's first and last
-points.
+این مثال دو ضلع نخست (مورب) یک مثلث را با استفاده از متد `lineTo()` می‌سازد. پس از آن، قاعدهٔ مثلث با متد `closePath()` ایجاد می‌شود که به‌طور خودکار نخستین و آخرین نقطهٔ شکل را به یکدیگر متصل می‌کند.
 
 #### HTML
 
@@ -55,7 +40,7 @@ points.
 
 #### JavaScript
 
-The triangle's corners are at (20, 140), (120, 10), and (220, 140).
+گوشه‌های مثلث در نقاط (20, 140)، (120, 10) و (220, 140) قرار دارند.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -75,11 +60,10 @@ ctx.stroke();
 
 ### Closing just one sub-path
 
-This example draws a smiley face consisting of three disconnected sub-paths.
+این مثال یک شکلک خندان (smiley face) شامل سه زیرمسیر نامتصل را رسم می‌کند.
 
 > [!NOTE]
-> Although `closePath()` is called after all the arcs have been
-> created, only the last arc (sub-path) gets closed.
+> اگرچه `closePath()` پس از ایجاد همهٔ کمان‌ها فراخوانی می‌شود، فقط آخرین کمان (زیرمسیر) بسته می‌شود.
 
 #### HTML
 
@@ -89,7 +73,7 @@ This example draws a smiley face consisting of three disconnected sub-paths.
 
 #### JavaScript
 
-The first two arcs create the face's eyes. The last arc creates the mouth.
+دو کمان نخست چشم‌های صورت را می‌سازند. آخرین کمان دهان را می‌سازد.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -120,5 +104,5 @@ ctx.stroke();
 
 ## See also
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کنندهٔ این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.beginPath()")}}
