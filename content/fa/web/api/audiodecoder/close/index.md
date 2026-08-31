@@ -1,7 +1,7 @@
 ---
 title: "AudioDecoder: close() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioDecoder/close"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,34 +14,34 @@ browser-compat: api.AudioDecoder.close
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`close()`** method of the {{domxref("AudioDecoder")}} interface ends all pending work and releases system resources.
+**`close()`** 方法属于 {{domxref("AudioDecoder")}} 接口，用于结束所有待处理的工作并释放系统资源。
 
-## Syntax
+## 语法
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-## Examples
+## 示例
 
-The following example closes the `AudioDecoder`.
+以下示例关闭了 `AudioDecoder`。
 
 ```js
 AudioDecoder.close();
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
