@@ -1,11 +1,5 @@
 ---
 title: "CSSCounterStyleRule: suffix property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSCounterStyleRule/suffix"
-status: "needs-translation"
----
-
----
-title: "CSSCounterStyleRule: suffix property"
 short-title: suffix
 slug: Web/API/CSSCounterStyleRule/suffix
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CSSCounterStyleRule.suffix
 
 {{APIRef("CSSOM")}}
 
-The **`suffix`** property of the {{domxref("CSSCounterStyleRule")}} interface gets and sets the value of the {{cssxref("@counter-style/suffix","suffix")}} descriptor. If the descriptor does not have a value set, this attribute returns an empty string.
+**`suffix`** 属性属于 {{domxref("CSSCounterStyleRule")}} 接口，用于获取和设置 {{cssxref("@counter-style/suffix","suffix")}} 描述符的值。如果该描述符没有设置值，此属性返回空字符串。
 
-## Value
+## 值
 
-A string.
+一个字符串。
 
-## Examples
+## 示例
 
-The following example shows a {{cssxref("@counter-style")}} rule. In JavaScript, `myRules[0]` is this `@counter-style` rule, returning `suffix` gives us the value ": ".
+以下示例展示了一条 {{cssxref("@counter-style")}} 规则。在 JavaScript 中，`myRules[0]` 就是这条 `@counter-style` 规则，访问 `suffix` 会返回值 ": "。
 
 ```css
 @counter-style box-corner {
@@ -38,10 +32,10 @@ let myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].suffix); // ": "
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
