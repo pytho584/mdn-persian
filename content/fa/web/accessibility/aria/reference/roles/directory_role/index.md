@@ -1,7 +1,7 @@
 ---
 title: "ARIA: directory role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/directory_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,24 +15,24 @@ spec-urls: https://w3c.github.io/aria/#directory
 sidebar: accessibilitysidebar
 ---
 
-The `directory` role was for a list of references to members of a group, such as a static table of contents.
+نقش `directory` برای فهرستی از ارجاعات به اعضای یک گروه، مانند فهرست مطالب ایستا، استفاده می‌شد.
 
 > [!WARNING]
-> The `directory` role was deprecated in ARIA 1.2
+> نقش `directory` در ARIA 1.2 منسوخ شده است.
 
-## Description
+## توصیف
 
-A directory is a static table of contents, whether linked or unlinked. This includes tables of contents built with lists, including nested lists. Dynamic tables of contents, however, might use a tree role instead.
+فهرست مطالب (directory) یک فهرست مطالب ایستا است، چه پیوندی داشته باشد چه نداشته باشد. این شامل فهرست‌های مطالب ساخته‌شده با فهرست‌ها، از جمله فهرست‌های تودرتو می‌شود. با این حال، فهرست‌های مطالب پویا ممکن است به جای آن از نقش درخت (tree) استفاده کنند.
 
-The deprecated `directory` role was used for lists of references to members of a group, such as a static table of contents.
-Use the [`list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role) role instead. Or, better yet, use the {{HTMLElement('ul')}} or {{HTMLElement('ol')}} elements, as using `directory` does not provide any additional benefits to assistive technology users.
+نقش منسوخ‌شده `directory` برای فهرست‌های ارجاعات به اعضای یک گروه، مانند فهرست مطالب ایستا، استفاده می‌شد.
+به جای آن از نقش [`list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role) استفاده کنید. یا حتی بهتر، از عناصر {{HTMLElement('ul')}} یا {{HTMLElement('ol')}} استفاده کنید، زیرا استفاده از `directory` هیچ مزیت اضافی برای کاربران فناوری کمکی فراهم نمی‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## جستارهای وابسته
 
-- [The `list` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role)
-- The {{HTMLElement('ul')}} element
-- The {{HTMLElement('ol')}} element
+- [نقش `list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role)
+- عنصر {{HTMLElement('ul')}}
+- عنصر {{HTMLElement('ol')}}
