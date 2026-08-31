@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: translate() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/translate"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: translate() method"
 short-title: translate()
 slug: Web/API/CanvasRenderingContext2D/translate
 page-type: web-api-instance-method
@@ -14,42 +8,34 @@ browser-compat: api.CanvasRenderingContext2D.translate
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.translate()`**
-method of the Canvas 2D API adds a translation transformation to the current matrix.
+متد **`CanvasRenderingContext2D.translate()`** در Canvas 2D API یک تبدیل انتقال (translation) به ماتریس جاری اضافه می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 translate(x, y)
 ```
 
-The `translate()` method adds a translation transformation to the current
-matrix by moving the canvas and its origin `x` units horizontally and
-`y` units vertically on the grid.
+متد `translate()` با جابه‌جایی بوم (canvas) و مبدأ آن روی شبکه به اندازه `x` واحد در جهت افقی و `y` واحد در جهت عمودی، یک تبدیل انتقال به ماتریس جاری اضافه می‌کند.
 
-![A canvas's origin moved on the x and y axes based on the values of the translate method.](canvas_grid_translate.png)
+![مبدأ یک بوم (canvas) بر اساس مقادیر متد translate روی محورهای x و y جابه‌جا شده است.](canvas_grid_translate.png)
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : Distance to move in the horizontal direction. Positive values are to the right, and
-    negative to the left.
+  - : مسافت حرکت در جهت افقی. مقادیر مثبت به سمت راست و مقادیر منفی به سمت چپ هستند.
 - `y`
-  - : Distance to move in the vertical direction. Positive values are down, and negative
-    are up.
+  - : مسافت حرکت در جهت عمودی. مقادیر مثبت به سمت پایین و مقادیر منفی به سمت بالا هستند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Moving a shape
+### جابه‌جایی یک شکل
 
-This example draws a square that is moved from its default position by the
-`translate()` method. An unmoved square of the same size is then drawn for
-comparison.
+در این مثال، یک مربع با استفاده از متد `translate()` از موقعیت پیش‌فرض خود جابه‌جا شده است. برای مقایسه، یک مربع هم‌اندازه که جابه‌جا نشده نیز رسم می‌شود.
 
 #### HTML
 
@@ -59,8 +45,7 @@ comparison.
 
 #### JavaScript
 
-The `translate()` method translates the context by 110 horizontally and 30
-vertically. The first square is shifted by those amounts from its default position.
+متد `translate()` کانتکست را ۱۱۰ واحد در جهت افقی و ۳۰ واحد در جهت عمودی جابه‌جا می‌کند. مربع اول به این اندازه‌ها از موقعیت پیش‌فرض خود منتقل می‌شود.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -79,20 +64,20 @@ ctx.fillStyle = "gray";
 ctx.fillRect(0, 0, 80, 80);
 ```
 
-#### Result
+#### نتیجه
 
-The moved square is red, and the unmoved square is gray.
+مربع جابه‌جاشده قرمز است و مربع بدون جابه‌جایی خاکستری است.
 
 {{ EmbedLiveSample('Moving_a_shape', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
