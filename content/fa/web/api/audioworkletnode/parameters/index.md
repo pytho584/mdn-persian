@@ -1,7 +1,7 @@
 ---
 title: "AudioWorkletNode: parameters property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletNode/parameters"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,35 +14,19 @@ browser-compat: api.AudioWorkletNode.parameters
 
 {{APIRef("Web Audio API")}}{{SecureContext_Header}}
 
-The read-only **`parameters`** property of the
-{{domxref("AudioWorkletNode")}} interface returns the associated
-{{domxref("AudioParamMap")}} — that is, a `Map`-like collection of
-{{domxref("AudioParam")}} objects. They are instantiated during creation of the
-underlying {{domxref("AudioWorkletProcessor")}} according to its
-{{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} static
-getter.
+ویژگی فقط‌خواندنی **`parameters`** از رابط {{domxref("AudioWorkletNode")}}، {{domxref("AudioParamMap")}} مرتبط را بازمی‌گرداند — یعنی مجموعه‌ای شبیه به `Map` از اشیاء {{domxref("AudioParam")}}. این اشیاء در زمان ایجاد {{domxref("AudioWorkletProcessor")}} زیرین، بر اساس دریافت‌کنندهٔ ایستای {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} آن نمونه‌سازی می‌شوند.
 
-## Value
+## مقدار
 
-The {{domxref("AudioParamMap")}} object containing {{domxref("AudioParam")}} instances.
-They can be automated in the same way as with default `AudioNode`s, and their
-calculated values can be used in the {{domxref("AudioWorkletProcessor.process", "process")}} method of your {{domxref("AudioWorkletProcessor")}}.
+شیء {{domxref("AudioParamMap")}} شامل نمونه‌های {{domxref("AudioParam")}}. این‌ها را می‌توان به همان روشی که با گره‌های `AudioNode` پیش‌فرض خودکار می‌شوند، خودکار کرد و مقادیر محاسبه‌شدهٔ آن‌ها را می‌توان در متد {{domxref("AudioWorkletProcessor.process", "process")}} مربوط به {{domxref("AudioWorkletProcessor")}} استفاده کرد.
 
-## Examples
+## مثال‌ها
 
-To demonstrate creation and usage of custom `AudioParam`s, we'll expand the
-example from {{domxref("AudioWorkletNode")}} page. There we've created a simple node
-which outputs white noise. Here, additionally, we'll create a custom gain parameter, so
-we can directly change volume of the output (although you could use
-{{domxref("GainNode")}} to achieve this as well).
+برای نشان دادن ایجاد و استفاده از `AudioParam`های سفارشی، مثال صفحهٔ {{domxref("AudioWorkletNode")}} را گسترش می‌دهیم. در آنجا یک گرهٔ ساده ساختیم که نویز سفید خروجی می‌دهد. در اینجا، به‌علاوه، یک پارامتر بهرهٔ سفارشی ایجاد می‌کنیم تا بتوانیم مستقیماً بلندی صدای خروجی را تغییر دهیم (اگرچه برای این منظور می‌توانید از {{domxref("GainNode")}} نیز استفاده کنید).
 
-First, we need to define a custom `AudioWorkletProcessor`, and register it.
-Note that this should be done in a separate file.
+ابتدا باید یک `AudioWorkletProcessor` سفارشی تعریف کرده و آن را ثبت کنیم. توجه داشته باشید که این کار باید در یک فایل جداگانه انجام شود.
 
-We expand the processor by adding a static
-{{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}}
-getter. It will be used internally by the `AudioWorkletNode` constructor to
-populate its `parameters` with instantiated `AudioParam` objects.
+ما پردازنده را با افزودن یک دریافت‌کنندهٔ ایستای {{domxref("AudioWorkletProcessor.parameterDescriptors", "parameterDescriptors")}} گسترش می‌دهیم. این دریافت‌کننده به‌صورت داخلی توسط سازندهٔ `AudioWorkletNode` برای پر کردن `parameters` آن با اشیاء `AudioParam` نمونه‌سازی‌شده استفاده خواهد شد.
 
 ```js
 // white-noise-processor.js
@@ -80,9 +64,7 @@ class WhiteNoiseProcessor extends AudioWorkletProcessor {
 registerProcessor("white-noise-processor", WhiteNoiseProcessor);
 ```
 
-Next, in our main scripts file we'll load the processor, create an instance of
-`AudioWorkletNode` passing it the name of the processor, and connect the node
-to an audio graph.
+سپس، در فایل اصلی اسکریپت، پردازنده را بارگذاری می‌کنیم، نمونه‌ای از `AudioWorkletNode` با ارسال نام پردازنده می‌سازیم و گره را به گراف صوتی متصل می‌کنیم.
 
 ```js
 const audioContext = new AudioContext();
@@ -94,7 +76,7 @@ const whiteNoiseNode = new AudioWorkletNode(
 whiteNoiseNode.connect(audioContext.destination);
 ```
 
-Now we can change the gain on the node like this:
+اکنون می‌توانیم بهره را روی گره به این صورت تغییر دهیم:
 
 ```js
 const gainParam = whiteNoiseNode.parameters.get("customGain");
@@ -102,15 +84,15 @@ gainParam.setValueAtTime(0, audioContext.currentTime);
 gainParam.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.5);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
