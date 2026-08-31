@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTCharacteristic: readValue() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/readValue"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,29 +16,26 @@ browser-compat: api.BluetoothRemoteGATTCharacteristic.readValue
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTCharacteristic.readValue()`** method
-returns a {{jsxref("Promise")}} that resolves to a {{jsxref("DataView")}} holding a
-duplicate of the `value` property if it is available and supported. Otherwise
-it throws an error.
+متد **`BluetoothRemoteGATTCharacteristic.readValue()`** یک {{jsxref("Promise")}} برمی‌گرداند که به یک {{jsxref("DataView")}} شامل نسخه‌ای از ویژگی `value` (در صورت موجود بودن و پشتیبانی شدن) تبدیل می‌شود. در غیر این صورت، یک خطا پرتاب می‌کند.
 
-## Syntax
+### نحو
 
 ```js-nolint
 readValue()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to a {{jsxref("DataView")}}.
+یک {{jsxref("Promise")}} که به یک {{jsxref("DataView")}} تبدیل می‌شود.
 
-## Specifications
+### مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+### سازگاری مرورگر
 
 {{Compat}}
