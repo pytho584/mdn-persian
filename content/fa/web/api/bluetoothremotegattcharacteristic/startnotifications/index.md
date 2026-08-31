@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTCharacteristic: startNotifications() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/startNotifications"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,9 +16,7 @@ browser-compat: api.BluetoothRemoteGATTCharacteristic.startNotifications
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTCharacteristic.startNotifications()`** method
-returns a {{jsxref("Promise")}} to the BluetoothRemoteGATTCharacteristic instance when
-there is an active notification on it.
+متد **`BluetoothRemoteGATTCharacteristic.startNotifications()`** یک {{jsxref("Promise")}} به نمونه BluetoothRemoteGATTCharacteristic برمی‌گرداند زمانی که یک اعلان فعال روی آن وجود دارد.
 
 ## Syntax
 
@@ -28,11 +26,11 @@ startNotifications()
 
 ### Parameters
 
-None.
+هیچکدام.
 
 ### Return value
 
-A {{jsxref("Promise")}} to the BluetoothRemoteGATTCharacteristic instance.
+یک {{jsxref("Promise")}} به نمونه BluetoothRemoteGATTCharacteristic.
 
 ## Specifications
 
