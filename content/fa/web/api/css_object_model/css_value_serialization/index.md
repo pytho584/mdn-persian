@@ -1,7 +1,5 @@
 ---
 title: "CSS value serialization"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/CSS_value_serialization"
-status: "needs-translation"
 ---
 
 ---
@@ -15,43 +13,43 @@ spec-urls:
 
 {{APIRef("CSSOM")}}
 
-Some CSSOM APIs _serialize_ property values into standardized string representations based on the value's [data type](/en-US/docs/Web/CSS/Reference/Values/Data_types). For example, you might set a color using the `hsl(240 100% 50%)` syntax, but when accessed through JavaScript, the value will be returned in the equivalent `"rgb(0, 0, 255)"` syntax.
+برخی از APIهای CSSOM، مقادیر ویژگی‌ها را بر اساس [نوع داده](/en-US/docs/Web/CSS/Reference/Values/Data_types)یِ آن مقدار، به نمایش‌های رشته‌ای استانداردی _سریال‌سازی_ می‌کنند. برای مثال، ممکن است یک رنگ را با استفاده از نحو `hsl(240 100% 50%)` تنظیم کنید، اما وقتی از طریق جاوااسکریپت به آن دسترسی پیدا کنید، مقدار معادل به شکل `"rgb(0, 0, 255)"` بازگردانده می‌شود.
 
-CSS data types can often be expressed in multiple syntaxes. For example, the {{cssxref("&lt;color&gt;")}} data type can be represented using named colors (`red`), hexadecimal notation (`#ff0000`), functional notation (`rgb(255 0 0)`), and more. These different syntaxes are exactly equivalent at every stage of [CSS value processing](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing), similar to how in JavaScript, the same string can be written with single quotes or double quotes, or the same number can be written in different formats (like `16`, `16.0`, or `0x10`).
+انواع داده‌ی CSS اغلب می‌توانند با چندین نحو بیان شوند. برای مثال، نوع داده‌ی {{cssxref("&lt;color&gt;")}} را می‌توان با رنگ‌های نام‌گذاری‌شده (`red`)، نماد هگزادسیمال (`#ff0000`)، نماد تابعی (`rgb(255 0 0)`) و موارد دیگر نمایش داد. این نحوهای مختلف در تمام مراحل [پردازش مقدار CSS](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing) دقیقاً معادل یکدیگرند؛ مشابه اینکه در جاوااسکریپت، یک رشته‌ی یکسان را می‌توان با نقل‌قول تکی یا دوتایی نوشت، یا یک عدد یکسان را در قالب‌های متفاوتی (مانند `16`، `16.0` یا `0x10`) نوشت.
 
-Because CSS converts all these surface representations to the same underlying value during value processing, it is often impossible to recover the original syntax from the already-parsed CSSOM. Furthermore, a _canonical_ representation is often more useful for scripts, because it allows comparisons and calculations based on how the content is presented to the user, rather than how it was originally authored.
+از آنجا که CSS در طول پردازش مقدار، همه‌ی این نمایش‌های سطحی را به مقدار زیربناییِ یکسانی تبدیل می‌کند، بازیابی نحو اصلی از CSSOMِ تجزیه‌شده اغلب غیرممکن است. علاوه بر این، یک نمایش _متعارف_ (canonical) معمولاً برای اسکریپت‌ها کاربرد بیشتری دارد، زیرا امکان مقایسه و محاسبه را بر اساس نحوه‌ی ارائه‌ی محتوا به کاربر فراهم می‌کند، نه بر اساس روشی که در ابتدا نگارش شده است.
 
-## When and how values are serialized
+## چه زمانی و چگونه مقادیر سریال‌سازی می‌شوند
 
-Serialization happens whenever CSS property values are read as strings through JavaScript APIs, such as:
+سریال‌سازی زمانی رخ می‌دهد که مقادیر ویژگی‌های CSS از طریق APIهای جاوااسکریپت به صورت رشته خوانده شوند، مانند:
 
 - {{domxref("CSSStyleDeclaration.getPropertyValue()")}}
 - {{domxref("CSSStyleDeclaration.cssText")}}
-- Accessing properties directly on {{domxref("CSSStyleDeclaration")}} objects (e.g., `element.style.backgroundColor`)
+- دسترسی مستقیم به ویژگی‌ها روی آبجکت‌های {{domxref("CSSStyleDeclaration")}} (مثلاً `element.style.backgroundColor`)
 
-Different APIs return `CSSStyleDeclaration` objects at different stages of [value processing](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing), which have slightly different serialization behaviors. For example, {{domxref("Window.getComputedStyle()")}} and {{domxref("HTMLElement.style")}} returns the [resolved value](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#resolved_value) of properties, while {{domxref("CSSStyleRule.style")}} returns _more or less_ the [declared value](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#declared_value).
+APIهای مختلف، آبجکت‌های `CSSStyleDeclaration` را در مراحل متفاوتی از [پردازش مقدار](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing) بازمی‌گردانند که رفتارهای سریال‌سازیِ کمی متفاوتی دارند. برای مثال، {{domxref("Window.getComputedStyle()")}} و {{domxref("HTMLElement.style")}} [مقدار حل‌شده](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#resolved_value) ویژگی‌ها را بازمی‌گردانند، در حالی که {{domxref("CSSStyleRule.style")}} _کمابیش_ [مقدار اعلام‌شده](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#declared_value) را بازمی‌گرداند.
 
 > [!NOTE]
-> The [CSS Typed OM API](/en-US/docs/Web/API/CSS_Typed_OM_API) is able to represent units and other CSS syntaxes; however, style declarations retrieved from an element are still processed and don't preserve the original syntax. For example, `CSS.cm(1).toString()` returns `"1cm"` instead of serializing to pixels, but `element.computedStyleMap().get("margin-left").toString()` returns the resolved pixel value.
+> [CSS Typed OM API](/en-US/docs/Web/API/CSS_Typed_OM_API) قادر است واحدها و سایر نحوهای CSS را نمایش دهد؛ با این حال، اعلان‌های استایلی که از یک عنصر بازیابی می‌شوند همچنان پردازش می‌شوند و نحو اصلی را حفظ نمی‌کنند. برای مثال، `CSS.cm(1).toString()` به جای سریال‌سازی به پیکسل، `"1cm"` را برمی‌گرداند، اما `element.computedStyleMap().get("margin-left").toString()` مقدار پیکسلیِ حل‌شده را برمی‌گرداند.
 
-Each CSS value type has an associated serialization format defined by the CSS specifications. Some common rules include:
+هر نوع مقدار CSS دارای قالب سریال‌سازیِ مرتبطی است که توسط مشخصات CSS تعریف شده است. برخی از قواعد رایج عبارت‌اند از:
 
-- Keywords (like `auto`, `block`, `none`) serialize to all lowercase.
-- {{cssxref("angle")}}: serialized to some angle unit, depending on the context (unspecified). For `element.style` and `getComputedStyle()`, this is `deg`.
+- کلیدواژه‌ها (مانند `auto`، `block`، `none`) به صورت تمام‌حروف کوچک سریال‌سازی می‌شوند.
+- {{cssxref("angle")}}: بسته به زمینه، به یک واحد زاویه سریال‌سازی می‌شود (نامشخص). برای `element.style` و `getComputedStyle()`، این واحد `deg` است.
 - {{cssxref("&lt;color&gt;")}}:
-  - For sRGB colors ({{cssxref("named-color")}}, `transparent`, {{cssxref("system-color")}}, {{cssxref("hex-color")}}, `rgb`, `hsl`, `hwb`): serialized as legacy comma-separated syntax `rgb(R, G, B)` or `rgba(R, G, B, A)`, where all arguments are numbers. The `rgb` form is selected if the alpha is exactly `1`.
-  - For `lab()`, `lch()`, `oklab()`, `oklch()`, and `color()` colors: the function form is preserved, with numeric arguments.
-  - The keyword `currentColor` serializes as `currentcolor`.
-- {{cssxref("percentage")}}: preserved as a percentage.
-- {{cssxref("ratio")}}: serialized to two numbers separated by `" / "`.
-- {{cssxref("url_value", "&lt;url&gt;")}}: serialized as a quoted {{cssxref("url_value", "&lt;url&gt;")}} (`url("...")`), with the URL resolved to an absolute URL.
+  - برای رنگ‌های sRGB ({{cssxref("named-color")}}، `transparent`، {{cssxref("system-color")}}، {{cssxref("hex-color")}}، `rgb`، `hsl`، `hwb`): به صورت نحو قدیمیِ جداشده با کاما `rgb(R, G, B)` یا `rgba(R, G, B, A)` سریال‌سازی می‌شود، که در آن همه‌ی آرگومان‌ها عدد هستند. اگر آلفا دقیقاً `1` باشد، شکل `rgb` انتخاب می‌شود.
+  - برای رنگ‌های `lab()`، `lch()`، `oklab()`، `oklch()` و `color()`: شکل تابعی با آرگومان‌های عددی حفظ می‌شود.
+  - کلیدواژه‌ی `currentColor` به صورت `currentcolor` سریال‌سازی می‌شود.
+- {{cssxref("percentage")}}: به صورت درصد حفظ می‌شود.
+- {{cssxref("ratio")}}: به صورت دو عدد که با `" / "` از هم جدا شده‌اند سریال‌سازی می‌شود.
+- {{cssxref("url_value", "&lt;url&gt;")}}: به صورت یک {{cssxref("url_value", "&lt;url&gt;")}} با نقل‌قول (`url("...")`) سریال‌سازی می‌شود و URL به یک URL مطلق تبدیل می‌شود.
 
-Note that `<percentage>` values often get computed into absolute dimensions (like `<length>`) during value processing, so they may not appear as percentages when serialized from computed styles. For dimensions with units, such as {{cssxref("&lt;frequency&gt;")}}, {{cssxref("&lt;length&gt;")}}, {{cssxref("&lt;resolution&gt;")}}, and {{cssxref("&lt;time&gt;")}}, the serialized unit depends on the context and is not well-specified. `getComputedStyle()` and `element.style` serialize them into `Hz`, `px`, `dppx`, and `s` respectively.
+توجه داشته باشید که مقادیر `<percentage>` در طول پردازش مقدار اغلب به ابعاد مطلق (مانند `<length>`) تبدیل می‌شوند، بنابراین هنگام سریال‌سازی از استایل‌های محاسبه‌شده ممکن است به صورت درصد ظاهر نشوند. برای ابعادی که واحد دارند، مانند {{cssxref("&lt;frequency&gt;")}}، {{cssxref("&lt;length&gt;")}}، {{cssxref("&lt;resolution&gt;")}} و {{cssxref("&lt;time&gt;")}}، واحد سریال‌سازی‌شده به زمینه بستگی دارد و به خوبی مشخص نشده است. `getComputedStyle()` و `element.style` آن‌ها را به ترتیب به `Hz`، `px`، `dppx` و `s` سریال‌سازی می‌کنند.
 
-When serializing the value for shorthand properties, its constituent longhand properties are serialized and combined according to the rules for that shorthand.
+هنگام سریال‌سازی مقدار ویژگی‌های کوتاه‌نویسی (shorthand)، ویژگی‌های بلندنویسی (longhand)ِ تشکیل‌دهنده‌ی آن بر اساس قواعد مربوط به آن ویژگی کوتاه‌نویسی سریال‌سازی و ترکیب می‌شوند.
 
 > [!NOTE]
-> There are a lot of complex details regarding how CSS properties are serialized, especially for complex properties like `font`. They may be unspecified in the specifications or even inconsistent across browsers. You need to test and verify the behavior for your specific use case.
+> جزئیات پیچیده‌ی زیادی درباره‌ی نحوه‌ی سریال‌سازی ویژگی‌های CSS وجود دارد، به‌ویژه برای ویژگی‌های پیچیده‌ای مانند `font`. این جزئیات ممکن است در مشخصات تعریف نشده باشند یا حتی در مرورگرهای مختلف ناسازگار باشند. برای مورد استفاده‌ی خاص خودتان باید رفتار را آزمایش و تأیید کنید.
 
 ```html
 <div>Example Element</div>
@@ -112,13 +110,13 @@ document.body.appendChild(table);
 
 {{EmbedLiveSample("", "", 400)}}
 
-## Examples
+## مثال‌ها
 
-### Color value serialization
+### سریال‌سازی مقدار رنگ
 
-Colors are among the most common types affected by serialization. Regardless of whether you define a color using `hsl()`, `hwb()`, a keyword, or a modern color space, JavaScript usually returns it in [legacy `rgb()` or `rgba()` format](/en-US/docs/Web/CSS/Reference/Values/color_value/rgb#syntax).
+رنگ‌ها از رایج‌ترین انواعی هستند که از سریال‌سازی تأثیر می‌پذیرند. صرف‌نظر از اینکه یک رنگ را با `hsl()`، `hwb()`، یک کلیدواژه یا یک فضای رنگی مدرن تعریف کنید، جاوااسکریپت معمولاً آن را در [قالب قدیمی `rgb()` یا `rgba()`](/en-US/docs/Web/CSS/Reference/Values/color_value/rgb#syntax) برمی‌گرداند.
 
-The following examples demonstrate how different color formats are serialized when accessed through JavaScript.
+مثال‌های زیر نشان می‌دهند که چگونه قالب‌های رنگی مختلف هنگام دسترسی از طریق جاوااسکریپت سریال‌سازی می‌شوند.
 
 ```html
 <div class="example hsl">HSL Color</div>
@@ -164,9 +162,9 @@ examples.forEach((element) => {
 
 {{EmbedLiveSample("Color value serialization", , 400)}}
 
-### Length value serialization
+### سریال‌سازی مقدار طول
 
-Lengths are another common case. Relative units (like `em`, `%`) are often resolved to absolute pixels when serialized through JavaScript APIs.
+طول‌ها نیز مورد رایج دیگری هستند. واحدهای نسبی (مانند `em`، `%`) اغلب هنگام سریال‌سازی از طریق APIهای جاوااسکریپت به پیکسل‌های مطلق تبدیل می‌شوند.
 
 ```js
 element.style.marginLeft = "2em";
@@ -174,16 +172,16 @@ console.log(getComputedStyle(element).marginLeft);
 // "32px" (depending on font size)
 ```
 
-This normalization allows scripts to compare or calculate lengths consistently.
+این نرمال‌سازی به اسکریپت‌ها امکان می‌دهد طول‌ها را به شکلی سازگار مقایسه یا محاسبه کنند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`CSSStyleDeclaration.getPropertyValue()`](/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue)
 - [`Window.getComputedStyle()`](/en-US/docs/Web/API/Window/getComputedStyle)
-- [CSS colors](/en-US/docs/Web/CSS/Guides/Colors)
+- [رنگ‌های CSS](/en-US/docs/Web/CSS/Guides/Colors)
 - {{cssxref("&lt;color&gt;")}}
-- [CSS values and units](/en-US/docs/Web/CSS/Guides/Values_and_units) module
+- ماژول [مقادیر و واحدهای CSS](/en-US/docs/Web/CSS/Guides/Values_and_units)
