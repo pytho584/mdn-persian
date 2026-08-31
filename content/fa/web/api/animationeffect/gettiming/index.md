@@ -1,7 +1,7 @@
 ---
 title: "AnimationEffect: getTiming() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/getTiming"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,92 +14,84 @@ browser-compat: api.AnimationEffect.getTiming
 
 {{ APIRef("Web Animations") }}
 
-The `AnimationEffect.getTiming()` method of the {{domxref("AnimationEffect")}} interface returns an object containing the timing properties for the Animation Effect.
+متد `AnimationEffect.getTiming()` از رابط {{domxref("AnimationEffect")}} یک شیء شامل ویژگی‌های زمان‌بندی افکت انیمیشن را برمی‌گرداند.
 
 > [!NOTE]
-> Several of the timing properties returned by `getTiming()` may take on the placeholder value `"auto"`. To obtain resolved values for use in timing computations, instead use {{domxref("AnimationEffect.getComputedTiming()")}}.
+> چندین ویژگی از ویژگی‌های زمان‌بندی بازگردانده‌شده توسط `getTiming()` ممکن است مقدار مکان‌نمای `"auto"` را بگیرند. برای دریافت مقادیر قطعی جهت استفاده در محاسبات زمان‌بندی، به‌جای آن از {{domxref("AnimationEffect.getComputedTiming()")}} استفاده کنید.
 >
-> In the future, `"auto"` or similar values might be added to the types of more timing properties, and new types of {{domxref("AnimationEffect")}} might resolve `"auto"` to different values.
+> در آینده، `"auto"` یا مقادیر مشابه ممکن است به انواع ویژگی‌های زمان‌بندی بیشتری اضافه شوند و انواع جدید {{domxref("AnimationEffect")}} ممکن است `"auto"` را به مقادیر متفاوتی تفسیر کنند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getTiming()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An object containing the following properties:
+یک شیء شامل ویژگی‌های زیر:
 
 - `delay`
-  - : The `number` of milliseconds of delay before the start of the effect.
+  - : تعداد میلی‌ثانیه‌های تأخیر قبل از شروع افکت (`number`).
 
-    (See also {{cssxref("animation-delay")}}.)
+    (همچنین ببینید: {{cssxref("animation-delay")}}.)
 
 - `direction`
-  - : `"normal"`, `"reverse"`, `"alternate"`, or `"alternate-reverse"`.
+  - : `"normal"`, `"reverse"`, `"alternate"`، یا `"alternate-reverse"`.
 
-    Indicates whether the effect runs forwards (`"normal"`), backwards (`"reverse"`), switches direction
-    after each iteration (`"alternate"`), or runs backwards and switches direction after each iteration
-    (`"alternate-reverse"`).
+    مشخص می‌کند که آیا افکت به جلو (`"normal"`) اجرا می‌شود، به عقب (`"reverse"`) اجرا می‌شود، بعد از هر تکرار جهت را تغییر می‌دهد (`"alternate"`)، یا به عقب اجرا شده و بعد از هر تکرار جهت را تغییر می‌دهد (`"alternate-reverse"`).
 
-    (See also {{cssxref("animation-direction")}}.)
+    (همچنین ببینید: {{cssxref("animation-direction")}}.)
 
 - `duration`
-  - : A `number` of milliseconds or the `string` `"auto"`.
+  - : مقداری از نوع `number` بر حسب میلی‌ثانیه، یا `string` با مقدار `"auto"`.
 
-    Indicates the time one iteration of the animation takes to complete.
+    مدت زمانی را نشان می‌دهد که یک تکرار از انیمیشن برای تکمیل شدن طول می‌کشد.
 
-    The meaning of `"auto"` may differ depending on the type of effect; for {{domxref("KeyframeEffect")}}, `"auto"` is the same as `0`.
+    معنای `"auto"` ممکن است بسته به نوع افکت متفاوت باشد؛ برای {{domxref("KeyframeEffect")}}، `"auto"` معادل `0` است.
 
-    (See also {{cssxref("animation-duration")}}.)
+    (همچنین ببینید: {{cssxref("animation-duration")}}.)
 
 - `easing`
-  - : A `string` representing an {{cssxref("easing-function")}} describing the rate of change of the effect over time.
+  - : یک `string` نمایانگر {{cssxref("easing-function")}} که نرخ تغییر افکت را در طول زمان توصیف می‌کند.
 
-    (See also {{cssxref("animation-timing-function")}}.)
+    (همچنین ببینید: {{cssxref("animation-timing-function")}}.)
 
 - `endDelay`
-  - : The `number` of milliseconds of delay after the end of the effect.
+  - : تعداد میلی‌ثانیه‌های تأخیر پس از پایان افکت (`number`).
 
-    This is primarily of use when sequencing animations based on the end time of another animation.
+    این عمدتاً هنگام ترتیب‌دهی انیمیشن‌ها بر اساس زمان پایان یک انیمیشن دیگر مفید است.
 
 - `fill`
-  - : `"none"`, `"forwards"`, `"backwards"`, `"both"`, or `"auto"`.
+  - : `"none"`, `"forwards"`, `"backwards"`, `"both"`، یا `"auto"`.
 
-    Indicates whether the effect is reflected by its target(s) prior to playing
-    (`"backwards"`), retained after the effect has completed (`"forwards"`), `"both"`, or
-    neither (`"none"`).
+    مشخص می‌کند که آیا افکت توسط هدف(های) خود پیش از پخش منعکس می‌شود (`"backwards"`)، پس از تکمیل افکت باقی می‌ماند (`"forwards"`)، هر دو (`"both"`)، یا هیچ‌کدام (`"none"`).
 
-    The meaning of `"auto"` may differ depending on the type of effect; for
-    {{domxref("KeyframeEffect")}}, `"auto"` is the same as `"none"`.
+    معنای `"auto"` ممکن است بسته به نوع افکت متفاوت باشد؛ برای {{domxref("KeyframeEffect")}}، `"auto"` معادل `"none"` است.
 
-    (See also {{cssxref("animation-fill-mode")}}.)
+    (همچنین ببینید: {{cssxref("animation-fill-mode")}}.)
 
 - `iterations`
-  - : The `number` of times the effect will repeat. A value of {{jsxref("Infinity")}} indicates that
-    the effect repeats indefinitely.
+  - : تعداد (`number`) دفعاتی که افکت تکرار خواهد شد. مقدار {{jsxref("Infinity")}} نشان می‌دهد که افکت به‌طور نامحدود تکرار می‌شود.
 
-    (See also {{cssxref("animation-iteration-count")}}.)
+    (همچنین ببینید: {{cssxref("animation-iteration-count")}}.)
 
 - `iterationStart`
-  - : A `number` indicating at what point in the iteration the effect starts. For example, an effect with
-    an `iterationStart` of 0.5 and 2 `iterations` would start halfway through its first iteration
-    and end halfway through a third iteration.
+  - : یک `number` که مشخص می‌کند افکت از چه نقطه‌ای از تکرار شروع می‌شود. برای مثال، افکتی با `iterationStart` برابر با 0.5 و 2 تکرار از نیمه اولین تکرار خود شروع شده و در نیمه یک تکرار سوم پایان می‌یابد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("AnimationEffect")}}
