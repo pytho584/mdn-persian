@@ -1,7 +1,7 @@
 ---
 title: "ARIA: menuitemcheckbox role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,37 +15,37 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-A `menuitemcheckbox` is a `menuitem` with a checkable state whose possible values are `true`, `false`, or `mixed`.
+یک `menuitemcheckbox` یک `menuitem` با حالت علامت‌پذیر است که مقادیر ممکن آن `true`، `false` یا `mixed` هستند.
 
-## Description
+## توضیحات
 
-The items in menu and menubars are menu items. There are three types of menu items: [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role), [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role), and `menuitemcheckbox`.
+آیتم‌های موجود در منوها و نوارهای منو، آیتم‌های منو هستند. سه نوع آیتم منو وجود دارد: [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role)، [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role) و `menuitemcheckbox`.
 
-These three elements can only be contained in, or owned by, an element with role [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role) or [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role), optionally nested within a grouping element with role of [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role). Being nested or otherwise owned (see [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns)) in a `menu` or `menubar` identifies the menu items as being related widgets.
+این سه عنصر فقط می‌توانند در یک عنصر با نقش [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role) یا [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role) قرار گیرند یا متعلق به آن باشند، و به‌صورت اختیاری در یک عنصر گروه‌بندی با نقش [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) تودرتو شوند. تودرتو بودن یا به شکل دیگری متعلق بودن (به [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) مراجعه کنید) به یک `menu` یا `menubar`، آیتم‌های منو را به‌عنوان ویجت‌های مرتبط شناسایی می‌کند.
 
-Menu items, including `menuitemcheckbox` elements, may be grouped within `group` elements or separated by elements with the [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) role or other equivalent native role such as {{HTMLElement('fieldset')}} and {{HTMLElement('hr')}}.
+آیتم‌های منو، از جمله عناصر `menuitemcheckbox`، ممکن است در عناصر `group` گروه‌بندی شوند یا با عناصری که نقش `separator` دارند یا سایر نقش‌های بومی معادل مانند {{HTMLElement('fieldset')}} و {{HTMLElement('hr')}} از هم جدا شوند.
 
-Menu items containing the role of `menuitemcheckbox` must include the [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) attribute to expose the checkbox's state to assistive technology, unless using [`<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox), in which case the [`checked`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox#checked) attribute should be used.
+آیتم‌های منویی که نقش `menuitemcheckbox` را دارند باید ویژگی [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) را شامل شوند تا حالت چک‌باکس را در معرض فناوری کمکی قرار دهند، مگر اینکه از [`<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox) استفاده شود که در آن صورت باید از ویژگی [`checked`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox#checked) استفاده کرد.
 
-Similar to the `checked` attribute of {{HTMLElement('input')}}s of type `checkbox`, the `aria-checked` attribute of a `menuitemcheckbox` indicates whether the menu item is checked (`true`), unchecked (`false`), or represents a sub-level menu of other menu items that have a mixture of checked and unchecked values (`mixed`). The `mixed` value is similar to the checkbox's [`indeterminate`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox#indeterminate_state_checkboxes) attribute, which gives the appearance of a third, neither checked nor unchecked, state.
+مشابه ویژگی `checked` در {{HTMLElement('input')}} های نوع `checkbox`، ویژگی `aria-checked` یک `menuitemcheckbox` نشان می‌دهد که آیتم منو علامت خورده است (`true`)، علامت نخورده است (`false`)، یا نمایانگر یک زیرمنو از سایر آیتم‌های منو است که ترکیبی از مقادیر علامت‌خورده و علامت‌نخورده دارند (`mixed`). مقدار `mixed` مشابه ویژگی [`indeterminate`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox#indeterminate_state_checkboxes) چک‌باکس است که ظاهر حالت سومی را می‌دهد که نه علامت‌خورده و نه علامت‌نخورده است.
 
-An accessible name is required. Ideally, the accessible name should come from an associated {{htmlelement('label')}} element if using `<input type="checkbox">` or visible, descendant content. Realize if the label or descendant content is not sufficient and, preferably, [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) is used referencing non-descendant content or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) is used, these two ARIA properties will hide other descendant content from assistive technologies.
+یک نام دسترس‌پذیر الزامی است. در حالت ایده‌آل، نام دسترس‌پذیر باید از یک عنصر {{htmlelement('label')}} مرتبط، در صورت استفاده از `<input type="checkbox">`، یا از محتوای نمایان و فرزند بیاید. توجه داشته باشید که اگر برچسب یا محتوای فرزند کافی نباشد و ترجیحاً از [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) برای ارجاع به محتوای غیرفرزند استفاده شود یا از [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) استفاده شود، این دو ویژگی ARIA سایر محتوای فرزند را از فناوری‌های کمکی پنهان خواهند کرد.
 
-If all elements in the set are not present in the DOM include the [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) and [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) properties. When specifying `aria-setsize` and `aria-posinset` on a `menuitemcheckbox`, set the value with respect to the total number of items in the menu, excluding any separators.
+اگر همه عناصر مجموعه در DOM حضور ندارند، ویژگی‌های [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) و [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) را لحاظ کنید. هنگام تعیین `aria-setsize` و `aria-posinset` روی یک `menuitemcheckbox`، مقدار را بر اساس تعداد کل آیتم‌های منو، به‌جز هرگونه جداکننده، تنظیم کنید.
 
-The `menuitemcheckbox` element can have phrasing content, but can not have interactive content as descendants and no descendants with a `tabindex` attribute specified.
+عنصر `menuitemcheckbox` می‌تواند محتوای عبارتی (phrasing content) داشته باشد، اما نمی‌تواند محتوای تعاملی به‌عنوان فرزند داشته باشد و هیچ فرزندی با ویژگی `tabindex` مشخص‌شده نیز نداشته باشد.
 
-### All descendants are presentational
+### همهٔ فرزندان، نمایشی هستند
 
-There are some types of user interface components that, when represented in a platform accessibility API, can only contain text. Accessibility APIs do not have a way of representing semantic elements contained in a `menuitemcheckbox`. To deal with this limitation, browsers, automatically apply role [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) to all descendant elements of any `menuitemcheckbox` element as it is a role that does not support semantic children.
+برخی از انواع اجزای رابط کاربری، وقتی در یک API دسترس‌پذیری پلتفرم نمایش داده می‌شوند، فقط می‌توانند متن داشته باشند. APIهای دسترس‌پذیری راهی برای نمایش عناصر معنایی موجود در یک `menuitemcheckbox` ندارند. برای مقابله با این محدودیت، مرورگرها به‌طور خودکار نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) را به همه عناصر فرزند هر عنصر `menuitemcheckbox` اعمال می‌کنند، زیرا این نقشی است که فرزندان معنایی را پشتیبانی نمی‌کند.
 
-For example, consider the following `menuitemcheckbox` element, which contains a heading.
+برای مثال، عنصر `menuitemcheckbox` زیر را در نظر بگیرید که شامل یک عنوان است.
 
 ```html
 <div role="menuitemcheckbox"><h6>Name of my checkbox</h6></div>
 ```
 
-Because descendants of `menuitemcheckbox` are presentational, the following code is equivalent:
+چون فرزندان `menuitemcheckbox` نمایشی هستند، کد زیر معادل است:
 
 ```html
 <div role="menuitemcheckbox">
@@ -53,68 +53,68 @@ Because descendants of `menuitemcheckbox` are presentational, the following code
 </div>
 ```
 
-From the assistive technology user's perspective, the heading does not exist since the previous code snippets are equivalent to the following in the [accessibility tree](/en-US/docs/Glossary/Accessibility_tree):
+از دید کاربر فناوری کمکی، عنوان وجود ندارد، زیرا قطعه‌کدهای قبلی با مورد زیر در [درخت دسترس‌پذیری](/en-US/docs/Glossary/Accessibility_tree) معادل هستند:
 
 ```html
 <div role="menuitemcheckbox">Name of my checkbox</div>
 ```
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های WAI-ARIA مرتبط
 
-- [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role) role
-  - : Widget that offers a list of common actions or functions the user can invoke.
-- [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role) role
-  - : Similar to `menu` for a consistent set of frequently used commands remaining visible and usually presented horizontally.
-- [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) role
-  - : Container for a group of `menuitem` elements, including `menuitemcheckbox` elements within a `menu` or `menubar`.
-- [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) (Required)
-  - : Set to `true`, `false`, or `mixed`, it indicates the current "checked" state of the menuitemcheckbox
+- نقش [`menu`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menu_role)
+  - : ویجتی که فهرستی از اقدامات یا عملکردهای رایج را ارائه می‌دهد که کاربر می‌تواند آن‌ها را فراخوانی کند.
+- نقش [`menubar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role)
+  - : مشابه `menu` برای مجموعه‌ای ثابت از فرمان‌های پرکاربرد که همواره قابل مشاهده هستند و معمولاً به‌صورت افقی نمایش داده می‌شوند.
+- نقش [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role)
+  - : ظرفی برای گروهی از عناصر `menuitem`، از جمله عناصر `menuitemcheckbox` درون یک `menu` یا `menubar`.
+- [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) (الزامی)
+  - : روی `true`، `false` یا `mixed` تنظیم می‌شود و حالت «علامت‌خورده» فعلی menuitemcheckbox را نشان می‌دهد.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-When a `menu` opens, or when a `menubar` receives focus, keyboard focus is placed on the first item. All items in both are focusable, including all `menuitemcheckbox` elements.
+وقتی یک `menu` باز می‌شود، یا وقتی یک `menubar` فوکوس می‌گیرد، فوکوس صفحه‌کلید روی اولین آیتم قرار می‌گیرد. همه آیتم‌ها در هر دو، از جمله همه عناصر `menuitemcheckbox`، فوکوس‌پذیر هستند.
 
-If the `menuitemcheckbox` is in a submenu in a `menubar` or a menu opened with a menu button, the following keyboard interactions must be programmed in. :
+اگر `menuitemcheckbox` در یک زیرمنو در `menubar` یا در منویی باشد که با دکمه منو باز شده است، تعاملات صفحه‌کلید زیر باید برنامه‌ریزی شوند:
 
 - <kbd>Enter</kbd>
-  - : Toggles the `aria-checked` state of the `menuitemcheckbox` and closes the menu.
+  - : حالت `aria-checked` آیتم `menuitemcheckbox` را تغییر می‌دهد و منو را می‌بندد.
 - <kbd>Space</kbd>
-  - : Toggles the `aria-checked` state of the `menuitemcheckbox`. Does not close the menu.
+  - : حالت `aria-checked` آیتم `menuitemcheckbox` را تغییر می‌دهد. منو را نمی‌بندد.
 - <kbd>Escape</kbd>
-  - : Closes menu. In menubar, moves focus to parent menubar item.
+  - : منو را می‌بندد. در menubar، فوکوس را به آیتم والد menubar منتقل می‌کند.
 - <kbd>Right Arrow</kbd>
-  - : Closes submenu. In menubar, moves focus to next item in the menubar, opening any submenu if there is one.
+  - : زیرمنو را می‌بندد. در menubar، فوکوس را به آیتم بعدی در menubar منتقل می‌کند و در صورت وجود زیرمنو، آن را باز می‌کند.
 - <kbd>Left Arrow</kbd>
-  - : Closes menu. In menubar, moves focus to previous item in the menubar, opening any submenu if there is one.
+  - : منو را می‌بندد. در menubar، فوکوس را به آیتم قبلی در menubar منتقل می‌کند و در صورت وجود زیرمنو، آن را باز می‌کند.
 - <kbd>Down Arrow</kbd>
-  - : Moves focus to the next item in the menu. If focus is on the last item, moves focus to the first item.
+  - : فوکوس را به آیتم بعدی در منو منتقل می‌کند. اگر فوکوس روی آخرین آیتم باشد، فوکوس به اولین آیتم منتقل می‌شود.
 - <kbd>Up Arrow</kbd>
-  - : Moves focus to previous item in the menu. If focus is on the first item, moves focus to the last item.
+  - : فوکوس را به آیتم قبلی در منو منتقل می‌کند. اگر فوکوس روی اولین آیتم باشد، فوکوس به آخرین آیتم منتقل می‌شود.
 - <kbd>Home</kbd>
-  - : Moves focus to the first item in the menu.
+  - : فوکوس را به اولین آیتم در منو منتقل می‌کند.
 - <kbd>End</kbd>
-  - : Moves focus to the last item in the menu.
+  - : فوکوس را به آخرین آیتم در منو منتقل می‌کند.
 - <kbd>Character</kbd>
-  - : Moves focus to the next item having a name that starts with the typed character. If none of the items have a name starting with the typed character, focus does not move.
+  - : فوکوس را به آیتم بعدی که نامش با نویسه تایپ‌شده شروع می‌شود منتقل می‌کند. اگر هیچ‌یک از آیتم‌ها نامی نداشته باشند که با نویسه تایپ‌شده شروع شود، فوکوس جابه‌جا نمی‌شود.
 
-### Required JavaScript
+### جاوااسکریپت موردنیاز
 
-#### Required event handlers
+#### کنترل‌کننده‌های رویداد موردنیاز
 
 - `onclick`
-  - : Handle mouse clicks on both the checkbox and the associated label that will change the state of the checkbox by changing the value of the `aria-checked` attribute and the appearance of the checkbox so it appears checked or unchecked to the sighted user
+  - : کلیک‌های ماوس را روی چک‌باکس و برچسب مرتبط مدیریت می‌کند. این کار با تغییر مقدار ویژگی `aria-checked` و ظاهر چک‌باکس، حالت آن را تغییر می‌دهد تا برای کاربر بینا علامت‌خورده یا علامت‌نخورده به نظر برسد.
 - `onKeyDown`
-  - : Handle the case where the user presses the <kbd>Space</kbd> key to change the state of the checkbox by changing the value of the `aria-checked` attribute and the appearance of the checkbox so it appears checked or unchecked to the sighted user. Also handles all keys listed in the keyboard navigation section above.
+  - : حالتی را مدیریت می‌کند که کاربر کلید <kbd>Space</kbd> را فشار می‌دهد تا با تغییر مقدار ویژگی `aria-checked` و ظاهر چک‌باکس، حالت چک‌باکس تغییر کند و برای کاربر بینا علامت‌خورده یا علامت‌نخورده به نظر برسد. همچنین همه کلیدهای ذکرشده در بخش پیمایش صفحه‌کلید بالا را مدیریت می‌کند.
 
-## Examples
+## مثال‌ها
 
 ```html
 <li role="menuitemcheckbox" tabindex="-1" aria-checked="false">Purple</li>
 ```
 
-The [`tabindex="-1"`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) makes the `menuitemcheckbox` focusable but not part of the page tab sequence. Had we included `aria-checked="true"` it would have indicated that the `menuitemcheckbox` was checked, and we would have visually styled the selected state to look checked using the attribute selector `[role='menuitemcheckbox'][aria-checked='true']`. Instead, the presence of `aria-checked="false"` indicates to assistive technologies that the `menuitemcheckbox` is checkable but not currently checked. The accessible name "purple" comes from the contents.
+ویژگی [`tabindex="-1"`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) باعث می‌شود `menuitemcheckbox` فوکوس‌پذیر باشد اما بخشی از توالی تب صفحه نباشد. اگر `aria-checked="true"` را گنجانده بودیم، نشان می‌داد که `menuitemcheckbox` علامت خورده است و با استفاده از انتخاب‌گر ویژگی `[role='menuitemcheckbox'][aria-checked='true']` حالت انتخاب‌شده را به‌صورت بصری علامت‌خورده استایل می‌دادیم. در عوض، وجود `aria-checked="false"` به فناوری‌های کمکی نشان می‌دهد که `menuitemcheckbox` قابل علامت‌گذاری است اما در حال حاضر علامت نخورده است. نام دسترس‌پذیر «purple» از محتوا می‌آید.
 
-The visual appearance of the selected state is a checked checkbox which we can create using [generated content](/en-US/docs/Web/CSS/Guides/Generated_content), making it visible and the same color as the content by synchronizing with the `aria-checked` value using CSS [attribute selectors](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) and [inheriting](/en-US/docs/Web/CSS/Reference/Values/inherit) the color.
+نمای بصری حالت انتخاب‌شده، یک چک‌باکس علامت‌خورده است که می‌توانیم با استفاده از [محتواهای تولیدشده](/en-US/docs/Web/CSS/Guides/Generated_content) آن را ایجاد کنیم و با همگام‌سازی با مقدار `aria-checked` به کمک [انتخاب‌گرهای ویژگی](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) و [ارث‌بری](/en-US/docs/Web/CSS/Reference/Values/inherit) رنگ، آن را قابل مشاهده و هم‌رنگ محتوا کنیم.
 
 ```css
 [role="menuitemcheckbox"]::before {
@@ -133,16 +133,16 @@ The visual appearance of the selected state is a checked checkbox which we can c
 }
 ```
 
-### Prefer HTML
+### HTML را ترجیح دهید
 
-The first rule of ARIA is: if a native HTML element or attribute has the semantics and behavior you require, use it instead of re-purposing an element and adding an ARIA role, state or property to make it accessible. As such, it is recommended to use the native [HTML checkbox](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox) form control instead of recreating a checkbox's functionality with JavaScript and ARIA.
+اولین قانون ARIA این است: اگر یک عنصر یا ویژگی HTML بومی دارای معناشناسی و رفتاری است که به آن نیاز دارید، به‌جای تغییر کاربری یک عنصر و افزودن نقش، حالت یا ویژگی ARIA برای دسترس‌پذیر کردن آن، از همان عنصر یا ویژگی استفاده کنید. بنابراین، توصیه می‌شود به‌جای بازسازی عملکرد چک‌باکس با جاوااسکریپت و ARIA، از کنترل فرم بومی [چک‌باکس HTML](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox) استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [`menuitemradio` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role)
-- [`checkbox` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
+- [نقش `menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role)
+- [نقش `checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
 - [`<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox)
