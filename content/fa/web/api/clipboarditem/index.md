@@ -1,10 +1,4 @@
 ---
-title: "ClipboardItem"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem"
-status: "needs-translation"
----
-
----
 title: ClipboardItem
 slug: Web/API/ClipboardItem
 page-type: web-api-interface
@@ -13,46 +7,46 @@ browser-compat: api.ClipboardItem
 
 {{APIRef("Clipboard API")}}{{SecureContext_Header}}
 
-The **`ClipboardItem`** interface of the [Clipboard API](/en-US/docs/Web/API/Clipboard_API) represents a single item format, used when reading or writing clipboard data using {{domxref("Clipboard.read()")}} and {{domxref("Clipboard.write()")}} respectively.
+رابط **`ClipboardItem`** از [API کلیپ‌بورد](/en-US/docs/Web/API/Clipboard_API) یک قالب واحد را نشان می‌دهد که هنگام خواندن یا نوشتن داده‌های کلیپ‌بورد با استفاده از {{domxref("Clipboard.read()")}} و {{domxref("Clipboard.write()")}} به‌کار می‌رود.
 
-The **`ClipboardItem`** interface enables developers to use a single type to represent a range of different data formats.
+رابط **`ClipboardItem`** به توسعه‌دهندگان امکان می‌دهد تا با یک نوع واحد، طیفی از قالب‌های داده‌ای مختلف را نمایش دهند.
 
 > [!NOTE]
-> The `read()` and `write()` methods can be used to work with text strings and arbitrary data items represented by {{domxref("Blob")}} instances. However, if you are solely working with text, it is more convenient to use the {{domxref("Clipboard.readText()")}} and {{domxref("Clipboard.writeText()")}} methods.
+> متدهای `read()` و `write()` برای کار با رشته‌های متنی و آیتم‌های داده‌ای دلخواه که توسط نمونه‌های {{domxref("Blob")}} نمایش داده می‌شوند، قابل استفاده هستند. با این حال، اگر تنها با متن کار می‌کنید، استفاده از متدهای {{domxref("Clipboard.readText()")}} و {{domxref("Clipboard.writeText()")}} راحت‌تر است.
 
-## Constructor
+## سازنده
 
 - {{domxref("ClipboardItem.ClipboardItem", "ClipboardItem()")}}
-  - : Creates a new **`ClipboardItem`** object, with the {{Glossary("MIME type")}} as the key and the data as the value.
+  - : یک شیء جدید **`ClipboardItem`** می‌سازد که در آن {{Glossary("MIME type")}} به عنوان کلید و داده به عنوان مقدار استفاده می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("ClipboardItem.types", "types")}} {{ReadOnlyInline}}
-  - : Returns an {{jsxref("Array")}} of MIME types available within the **`ClipboardItem`**.
+  - : یک {{jsxref("Array")}} از انواع MIME موجود در **`ClipboardItem`** را برمی‌گرداند.
 - {{domxref("ClipboardItem.presentationStyle", "presentationStyle")}} {{ReadOnlyInline}}
-  - : Returns one of the following: `"unspecified"`, `"inline"` or `"attachment"`.
+  - : یکی از مقادیر `"unspecified"`، `"inline"` یا `"attachment"` را برمی‌گرداند.
 
-## Static methods
+## روش‌های ایستا
 
 - {{domxref("ClipboardItem.supports_static", "ClipboardItem.supports()")}}
-  - : Checks whether a given {{Glossary("MIME type")}} is supported by the clipboard. This enables a website to detect whether a MIME type is supported before attempting to write data.
+  - : بررسی می‌کند که آیا یک {{Glossary("MIME type")}} معین توسط کلیپ‌بورد پشتیبانی می‌شود یا خیر. این امکان را به وب‌سایت می‌دهد تا قبل از تلاش برای نوشتن داده، از پشتیبانی نوع MIME مطلع شود.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("ClipboardItem.getType", "getType()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves with a {{domxref("Blob")}} of the requested {{Glossary("MIME type")}}, or an error if the MIME type is not found.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که با یک {{domxref("Blob")}} از نوع {{Glossary("MIME type")}} درخواستی حل می‌شود، یا در صورت یافت نشدن آن نوع MIME خطا برمی‌گرداند.
 
-## Examples
+## نمونه‌ها
 
-### Writing text to the clipboard
+### نوشتن متن در کلیپ‌بورد
 
-In this example we first define two constants containing references to a {{htmlelement("p")}} element containing some text and a {{htmlelement("button")}} element.
+در این مثال ابتدا دو ثابت شامل ارجاع به یک عنصر {{htmlelement("p")}} حاوی متن و یک عنصر {{htmlelement("button")}} تعریف می‌کنیم.
 
-Next, we define a function called `copyToClipboard()`. This starts off by storing a `"text/plain"` MIME type in a constant, then creating an object called `clipboardItemData` that contains one property with a key equal to the MIME type and a value of the text we want to copy to the clipboard (the content of the `<p>` element, in this case). Because we are working with text, we can pass it in directly rather than having to create a {{domxref("Blob")}}.
+سپس تابعی به نام `copyToClipboard()` تعریف می‌کنیم. این تابع ابتدا نوع MIME `"text/plain"` را در یک ثابت ذخیره می‌کند، سپس یک شیء به نام `clipboardItemData` می‌سازد که شامل یک ویژگی با کلید برابر نوع MIME و مقدار برابر متنی است که می‌خواهیم به کلیپ‌بورد کپی کنیم (در اینجا محتوای عنصر `<p>`). از آنجا که با متن کار می‌کنیم، می‌توانیم آن را مستقیماً ارسال کنیم بدون نیاز به ایجاد یک {{domxref("Blob")}}.
 
-We construct a new `ClipboardItem` object using the {{domxref("ClipboardItem.ClipboardItem", "ClipboardItem()")}} constructor, and pass it into the {{domxref("Clipboard.write()")}} method to copy the text to the clipboard.
+یک شیء `ClipboardItem` جدید با استفاده از سازنده {{domxref("ClipboardItem.ClipboardItem", "ClipboardItem()")}} می‌سازیم و آن را به متد {{domxref("Clipboard.write()")}} می‌دهیم تا متن در کلیپ‌بورد کپی شود.
 
-Finally, we add an event listener to the `<button>` so that it runs the function when pressed.
+در نهایت، یک شنونده رویداد به `<button>` اضافه می‌کنیم تا هنگام کلیک تابع اجرا شود.
 
 ```js
 const textSource = document.querySelector("p");
@@ -70,10 +64,9 @@ async function copyToClipboard() {
 copyBtn.addEventListener("click", copyToClipboard);
 ```
 
-### Writing an image to the clipboard
+### نوشتن یک تصویر در کلیپ‌بورد
 
-Here we use {{domxref("ClipboardItem.supports_static", "supports()")}} to check whether the `image/svg+xml` MIME data type is supported.
-If it is, we fetch an SVG image with the [Fetch API](/en-US/docs/Web/API/Fetch_API), and then read it into a {{domxref("Blob")}}, which we can use to create a `ClipboardItem` that is written to the clipboard.
+در اینجا از {{domxref("ClipboardItem.supports_static", "supports()")}} استفاده می‌کنیم تا بررسی کنیم آیا نوع داده MIME `image/svg+xml` پشتیبانی می‌شود یا خیر. اگر پشتیبانی شود، یک تصویر SVG را با استفاده از [API Fetch](/en-US/docs/Web/API/Fetch_API) دریافت می‌کنیم و سپس آن را به صورت یک {{domxref("Blob")}} می‌خوانیم که می‌توانیم از آن برای ایجاد یک `ClipboardItem` استفاده کنیم و آن را در کلیپ‌بورد بنویسیم.
 
 ```js
 async function writeClipImg() {
@@ -97,10 +90,9 @@ async function writeClipImg() {
 }
 ```
 
-### Reading from the clipboard
+### خواندن از کلیپ‌بورد
 
-Here we're returning all items on the clipboard via the {{domxref("clipboard.read()")}} method.
-Then utilizing the {{domxref("ClipboardItem.types")}} property to set the {{domxref("ClipboardItem.getType", "getType()")}} argument and return the corresponding blob object.
+در اینجا تمام آیتم‌های موجود در کلیپ‌بورد را از طریق متد {{domxref("clipboard.read()")}} برمی‌گردانیم. سپس از ویژگی {{domxref("ClipboardItem.types")}} برای تنظیم آرگومان {{domxref("ClipboardItem.getType", "getType()")}} و دریافت شیء blob متناظر استفاده می‌کنیم.
 
 ```js
 async function getClipboardContents() {
@@ -110,7 +102,7 @@ async function getClipboardContents() {
     for (const clipboardItem of clipboardItems) {
       for (const type of clipboardItem.types) {
         const blob = await clipboardItem.getType(type);
-        // we can now use blob here
+        // اکنون می‌توانیم از blob در اینجا استفاده کنیم
       }
     }
   } catch (err) {
@@ -119,16 +111,16 @@ async function getClipboardContents() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ClipboardChangeEvent")}}
-- [Clipboard API](/en-US/docs/Web/API/Clipboard_API)
-- [Image support for Async Clipboard article](https://web.dev/articles/async-clipboard)
+- [API کلیپ‌بورد](/en-US/docs/Web/API/Clipboard_API)
+- [مقاله پشتیبانی از تصویر در کلیپ‌بورد ناهمگام](https://web.dev/articles/async-clipboard)
