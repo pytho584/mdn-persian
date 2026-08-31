@@ -1,7 +1,7 @@
 ---
 title: "ARIA: window role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/window_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,20 +13,20 @@ spec-urls: https://w3c.github.io/aria/#window
 sidebar: accessibilitysidebar
 ---
 
-The `window` role defines a browser or app window.
+نقش `window` یک پنجره مرورگر یا برنامه را تعریف می‌کند.
 
 > [!WARNING]
-> The `window` role is an abstract role. It is included here for completeness of documentation. It should not be used by web authors.
+> نقش `window` یک نقش انتزاعی است. این نقش برای کامل بودن مستندات در اینجا آورده شده است. نباید توسط توسعه‌دهندگان وب استفاده شود.
 
-## Description
+## توضیحات
 
-The `window` role, an abstract role, is a superclass for roles defining a browser or app window. The sub-class roles, currently only the [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role) role, have a window-like <abbr>GUI</abbr>, or graphical user interface, whether it's a full native window or just a section of a document styled to look like a window, where `role="dialog"` would be appropriate.
+نقش `window`، یک نقش انتزاعی، ابرکلاسی برای نقش‌هایی است که یک پنجره مرورگر یا برنامه را تعریف می‌کنند. نقش‌های زیرکلاس، در حال حاضر فقط نقش [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role)، دارای یک <abbr>GUI</abbr> پنجره‌مانند یا رابط کاربری گرافیکی هستند، خواه یک پنجره کامل بومی باشد یا فقط بخشی از یک سند که به‌گونه‌ای طراحی شده که شبیه یک پنجره باشد، جایی که `role="dialog"` مناسب است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: `roletype` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/roletype_role)
-- [ARIA: `dialog` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role)
+- [ARIA: نقش `roletype`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/roletype_role)
+- [ARIA: نقش `dialog`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role)
