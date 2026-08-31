@@ -1,11 +1,5 @@
 ---
 title: "console: timeStamp() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/timeStamp_static"
-status: "needs-translation"
----
-
----
-title: "console: timeStamp() static method"
 short-title: timeStamp()
 slug: Web/API/console/timeStamp_static
 page-type: web-api-static-method
@@ -16,11 +10,11 @@ browser-compat: api.console.timeStamp_static
 
 {{APIRef("Console API")}}{{Non-standard_header}} {{AvailableInWorkers}}
 
-The **`console.timeStamp()`** static method adds a single marker to the browser's Performance tool ([Firefox bug 1387528](https://bugzil.la/1387528), [Chrome](https://developer.chrome.com/docs/devtools/performance/reference)). This lets you correlate a point in your code with the other events recorded in the timeline, such as layout and paint events.
+متد استاتیک **`console.timeStamp()`** یک نشانه‌گذار (marker) واحد به ابزار Performance مرورگر اضافه می‌کند ([باگ فایرفاکس 1387528](https://bugzil.la/1387528)، [کروم](https://developer.chrome.com/docs/devtools/performance/reference)). این به شما امکان می‌دهد یک نقطه در کد خود را با سایر رویدادهای ثبت‌شده در خط زمانی (timeline) مانند رویدادهای layout و paint مرتبط کنید.
 
-You can optionally supply an argument to label the timestamp, and this label will then be shown alongside the marker.
+شما می‌توانید به صورت اختیاری یک آرگومان برای برچسب‌گذاری timestamp ارائه دهید و این برچسب در کنار نشانه‌گذار نمایش داده می‌شود.
 
-Some browsers have further extended this `console.timeStamp()` method to allow additional, optional parameters to be provided as part of its extensibility API that surfaces these in performances traces. See the [Chrome's extensibility API documentation](https://developer.chrome.com/docs/devtools/performance/extension#inject_your_data_with_consoletimestamp) for more information.
+برخی مرورگرها این متد `console.timeStamp()` را بیشتر گسترش داده‌اند تا امکان ارائه پارامترهای اختیاری اضافی به عنوان بخشی از API توسعه‌پذیری (extensibility API) خود فراهم کنند که این موارد را در ردیابی‌های عملکرد (performance traces) نمایش می‌دهد. برای اطلاعات بیشتر به [مستندات API توسعه‌پذیری کروم](https://developer.chrome.com/docs/devtools/performance/extension#inject_your_data_with_consoletimestamp) مراجعه کنید.
 
 ## Syntax
 
@@ -32,42 +26,42 @@ console.timeStamp(label, start, end, trackName, trackGroup, color, data);
 ### Parameters
 
 - `color` {{Optional_Inline}} {{Experimental_Inline}}
-  - : A string for the display colour of the entry. Must be one of `"primary"`, `"primary-light"`, `"primary-dark"`, `"secondary"`, `"secondary-light"`, `"secondary-dark"`, `"tertiary"`, `"tertiary-light"`, `"tertiary-dark"`, `"error"`.
+  - : یک رشته برای رنگ نمایش ورودی. باید یکی از `"primary"`, `"primary-light"`, `"primary-dark"`, `"secondary"`, `"secondary-light"`, `"secondary-dark"`, `"tertiary"`, `"tertiary-light"`, `"tertiary-dark"`, `"error"` باشد.
 
 - `data` {{Optional_Inline}} {{Experimental_Inline}}
-  - : An object with additional data to display. URLs may automatically be turned into links by some browsers.
+  - : یک شیء با داده‌های اضافی برای نمایش. URLها ممکن است به طور خودکار توسط برخی مرورگرها به پیوند تبدیل شوند.
 
 > [!NOTE]
-> Support for the `data` parameter varies across browsers and their DevTools implementations. For example, in some versions of Chrome, this data may not appear in the Performance panel.
+> پشتیبانی از پارامتر `data` در مرورگرها و پیاده‌سازی‌های DevTools آنها متفاوت است. به عنوان مثال، در برخی نسخه‌های کروم، این داده ممکن است در پنل Performance ظاهر نشود.
 
 - `end` {{Optional_Inline}} {{Experimental_Inline}}
-  - : A string referencing a previously defined `timeStamp` label or a timestamp ({{domxref("DOMHighResTimeStamp")}}) to be used as the end time.
+  - : یک رشته که به یک برچسب `timeStamp` تعریف‌شده قبلی یا یک timestamp ({{domxref("DOMHighResTimeStamp")}}) اشاره می‌کند و به عنوان زمان پایان استفاده می‌شود.
 
 - `label` {{Optional_Inline}}
-  - : Label for the timestamp.
+  - : برچسب برای timestamp.
 
 - `start` {{Optional_Inline}} {{Experimental_Inline}}
-  - : A string referencing a previously defined `timeStamp` label or a timestamp ({{domxref("DOMHighResTimeStamp")}}) to be used as the start time.
+  - : یک رشته که به یک برچسب `timeStamp` تعریف‌شده قبلی یا یک timestamp ({{domxref("DOMHighResTimeStamp")}}) اشاره می‌کند و به عنوان زمان شروع استفاده می‌شود.
 
 - `trackName` {{Optional_Inline}} {{Experimental_Inline}}
-  - : The name of the custom track used to display the timestamp data
+  - : نام ردیف سفارشی (custom track) که برای نمایش داده‌های timestamp استفاده می‌شود.
 
 - `trackGroup` {{Optional_Inline}} {{Experimental_Inline}}
-  - : The group of the custom track used to display the timestamp data
+  - : گروه ردیف سفارشی که برای نمایش داده‌های timestamp استفاده می‌شود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Examples
 
-### Basic usage
+### استفاده پایه
 
 ```js
 console.timeStamp("marker 1");
 ```
 
-### Using the Extensibility API to provide richer details for display
+### استفاده از API توسعه‌پذیری برای ارائه جزئیات غنی‌تر برای نمایش
 
 ```js
 // 1. Create a duration event with rich data
@@ -107,7 +101,7 @@ console.timeStamp(
   "Tasks", // trackName
   "My Extension", // trackGroup
   "primary-light", // color
-  linkData, // data (object)
+  linkData, // data (object),
 );
 ```
 
@@ -122,5 +116,5 @@ console.timeStamp(
 - {{domxref("console/timeEnd_static", "console.timeEnd()")}}
 - {{domxref("performance/mark", "performance.mark()")}}
 - {{domxref("performance/measure", "performance.measure()")}}
-- [Adding markers with the console API](https://web.archive.org/web/20211207010020/https://firefox-source-docs.mozilla.org/devtools-user/performance/waterfall/index.html#adding-markers-with-the-console-api)
-- [Chrome DevTools extensibility API](https://developer.chrome.com/docs/devtools/performance/extension#inject_your_data_with_consoletimestamp)
+- [افزودن نشانه‌گذارها با استفاده از API کنسول](https://web.archive.org/web/20211207010020/https://firefox-source-docs.mozilla.org/devtools-user/performance/waterfall/index.html#adding-markers-with-the-console-api)
+- [API توسعه‌پذیری DevTools کروم](https://developer.chrome.com/docs/devtools/performance/extension#inject_your_data_with_consoletimestamp)
