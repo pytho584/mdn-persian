@@ -1,7 +1,7 @@
 ---
 title: "ARIA: tablist role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -46,43 +46,43 @@ Elements with the `tablist` role have an implicit [`aria-orientation`](/en-US/do
 - [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable)
   - : When set to `true`, indicates the user may select more than one `tab` from the `tablist` descendants.
 - [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation)
-  - : If the tablist element is vertically oriented, set `aria-orientation="vertical"`. The default is `horizontal`.
+  -: If the tablist element is vertically oriented, set `aria-orientation="vertical"`. The default is `horizontal`.
 
 ### Keyboard interactions
 
 For the tab list:
 
 - <kbd>Tab</kbd>
-  - : When focus moves into the tab list, places focus on the active `tab` element. <br/><br/>When the tab list contains the focus, moves focus to the next element in the page tab sequence outside the tablist, which is the tabpanel unless the first element containing meaningful content inside the tabpanel is focusable.
+  -: When focus moves into the tab list, places focus on the active `tab` element. <br/><br/>When the tab list contains the focus, moves focus to the next element in the page tab sequence outside the tablist, which is the tabpanel unless the first element containing meaningful content inside the tabpanel is focusable.
 
 When focus is on a tab element in a horizontal tab list:
 
 - <kbd>Left Arrow</kbd>
-  - : moves focus to the previous tab. If focus is on the first tab, moves focus to the last tab. Optionally, activates the newly focused tab
+  -: moves focus to the previous tab. If focus is on the first tab, moves focus to the last tab. Optionally, activates the newly focused tab
 - <kbd>Right Arrow</kbd>
-  - : Moves focus to the next tab. If focus is on the last tab element, moves focus to the first tab. Optionally, activates the newly focused tab
+  -: Moves focus to the next tab. If focus is on the last tab element, moves focus to the first tab. Optionally, activates the newly focused tab
 
 When focus is on a tab element in a vertical tab list:
 
 - <kbd>Up Arrow</kbd>
-  - : moves focus to the previous tab. If focus is on the first tab, moves focus to the last tab. Optionally, activates the newly focused tab
+  -: moves focus to the previous tab. If focus is on the first tab, moves focus to the last tab. Optionally, activates the newly focused tab
 - <kbd>Down Arrow</kbd>
-  - : Moves focus to the next tab. If focus is on the last tab element, moves focus to the first tab. Optionally, activates the newly focused tab
+  -: Moves focus to the next tab. If focus is on the last tab element, moves focus to the first tab. Optionally, activates the newly focused tab
 
 If the tab list is horizontal, it does not listen for <kbd>Down Arrow</kbd> or <kbd>Up Arrow</kbd> so those keys can provide their normal browser scrolling functions even when focus is inside the tab list.
 
 When focus is on a tab in a tablist with either horizontal or vertical orientation:
 
 - <kbd>Space</kbd> or <kbd>Enter</kbd>
-  - : Activates the tab if it was not activated automatically on focus.
+  -: Activates the tab if it was not activated automatically on focus.
 - <kbd>Home</kbd> (Optional)
-  - : Moves focus to the first tab. Optionally, activates the newly focused tab
+  -: Moves focus to the first tab. Optionally, activates the newly focused tab
 - <kbd>End</kbd> (Optional)
-  - : Moves focus to the last tab. Optionally, activates the newly focused tab
+  -: Moves focus to the last tab. Optionally, activates the newly focused tab
 - <kbd>Shift + F10</kbd>
-  - : If the tab has an associated popup menu, opens the menu.
+  -: If the tab has an associated popup menu, opens the menu.
 - <kbd>Delete</kbd> (Optional)
-  - : If deletion is allowed, deletes (closes) the current tab element and its associated tab panel, sets focus on the tab following the tab that was closed, and optionally activates the newly focused tab. If there is not a tab that followed the tab that was deleted, e.g., the deleted tab was the right-most tab in a left-to-right horizontal tab list, sets focus on and optionally activates the tab that preceded the deleted tab. If the application allows all tabs to be deleted, and the user deletes the last remaining tab in the tab list, the application moves focus to another element that provides a logical work flow. As an alternative to Delete, or in addition to supporting Delete, the delete function is available in a context menu.
+  -: If deletion is allowed, deletes (closes) the current tab element and its associated tab panel, sets focus on the tab following the tab that was closed, and optionally activates the newly focused tab. If there is not a tab that followed the tab that was deleted, e.g., the deleted tab was the right-most tab in a left-to-right horizontal tab list, sets focus on and optionally activates the tab that preceded the deleted tab. If the application allows all tabs to be deleted, and the user deletes the last remaining tab in the tab list, the application moves focus to another element that provides a logical work flow. As an alternative to Delete, or in addition to supporting Delete, the delete function is available in a context menu.
 
 <!--
 ### Required JavaScript features
