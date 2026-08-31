@@ -1,7 +1,7 @@
 ---
 title: "AudioNode: context property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/context"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,17 +14,13 @@ browser-compat: api.AudioNode.context
 
 {{APIRef("Web Audio API")}}
 
-The read-only `context` property of the
-{{domxref("AudioNode")}} interface returns the associated
-{{domxref("BaseAudioContext")}}, that is the object representing the processing graph
-the node is participating in.
+خاصیت `context` فقط‌خواندنی در رابط {{domxref("AudioNode")}}، شیء مرتبط با {{domxref("BaseAudioContext")}} را برمی‌گرداند؛ یعنی همان شیئی که نمودار پردازشی را که گره در آن مشارکت دارد نشان می‌دهد.
 
-## Value
+## مقدار
 
-The {{domxref("AudioContext")}} or {{domxref("OfflineAudioContext")}} object that was
-used to construct this `AudioNode`.
+شیء {{domxref("AudioContext")}} یا {{domxref("OfflineAudioContext")}} که برای ساخت این `AudioNode` استفاده شده است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new AudioContext();
@@ -37,14 +33,14 @@ console.log(oscillator.context); // AudioContext
 console.log(oscillator.context === audioCtx); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
