@@ -1,10 +1,4 @@
 ---
-title: "CSSCounterStyleRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSCounterStyleRule"
-status: "needs-translation"
----
-
----
 title: CSSCounterStyleRule
 slug: Web/API/CSSCounterStyleRule
 page-type: web-api-interface
@@ -13,51 +7,51 @@ browser-compat: api.CSSCounterStyleRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSCounterStyleRule`** interface represents an {{CSSxRef("@counter-style")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+رابطهٔ **`CSSCounterStyleRule`** نمایانگر یک [قانون at](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) از نوع {{CSSxRef("@counter-style")}} است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from its parent {{DOMxRef("CSSRule")}}._
+_این رابط همچنین ویژگی‌های والد خود، {{DOMxRef("CSSRule")}} را به ارث می‌برد._
 
 - {{DOMxRef("CSSCounterStyleRule.name")}}
-  - : A string that contains the serialization of the {{CSSxRef("&lt;custom-ident&gt;")}} defined as the `name` for the associated rule.
+  - : رشته‌ای که شامل سریال‌سازی {{CSSxRef("&lt;custom-ident&gt;")}} تعریف‌شده به‌عنوان `name` برای قانون مرتبط است.
 - {{DOMxRef("CSSCounterStyleRule.system")}}
-  - : A string that contains the serialization of the {{CSSxRef("@counter-style/system", "system")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.
+  - : رشته‌ای که شامل سریال‌سازی توصیفگر {{CSSxRef("@counter-style/system", "system")}} تعریف‌شده برای قانون مرتبط است. اگر این توصیفگر در قانون مرتبط مشخص نشده باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 - {{DOMxRef("CSSCounterStyleRule.symbols")}}
-  - : A string that contains the serialization of the {{CSSxRef("@counter-style/symbols", "symbols")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.
+  - : رشته‌ای که شامل سریال‌سازی توصیفگر {{CSSxRef("@counter-style/symbols", "symbols")}} تعریف‌شده برای قانون مرتبط است. اگر این توصیفگر در قانون مرتبط مشخص نشده باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 - {{DOMxRef("CSSCounterStyleRule.additiveSymbols")}}
-  - : A string that contains the serialization of the {{CSSxRef("@counter-style/additive-symbols", "additive-symbols")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.
+  - : رشته‌ای که شامل سریال‌سازی توصیفگر {{CSSxRef("@counter-style/additive-symbols", "additive-symbols")}} تعریف‌شده برای قانون مرتبط است. اگر این توصیفگر در قانون مرتبط مشخص نشده باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 - {{DOMxRef("CSSCounterStyleRule.negative")}}
-  - : A string that contains the serialization of the {{CSSxRef("@counter-style/negative", "negative")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.
+  - : رشته‌ای که شامل سریال‌سازی توصیفگر {{CSSxRef("@counter-style/negative", "negative")}} تعریف‌شده برای قانون مرتبط است. اگر این توصیفگر در قانون مرتبط مشخص نشده باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 - {{DOMxRef("CSSCounterStyleRule.prefix")}}
-  - : A string that contains the serialization of the {{CSSxRef("@counter-style/prefix", "prefix")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.
+  - : رشته‌ای که شامل سریال‌سازی توصیفگر {{CSSxRef("@counter-style/prefix", "prefix")}} تعریف‌شده برای قانون مرتبط است. اگر این توصیفگر در قانون مرتبط مشخص نشده باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 - {{DOMxRef("CSSCounterStyleRule.suffix")}}
-  - : A string that contains the serialization of the {{CSSxRef("@counter-style/suffix", "suffix")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.
+  - : رشته‌ای که شامل سریال‌سازی توصیفگر {{CSSxRef("@counter-style/suffix", "suffix")}} تعریف‌شده برای قانون مرتبط است. اگر این توصیفگر در قانون مرتبط مشخص نشده باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 - {{DOMxRef("CSSCounterStyleRule.range")}}
-  - : A string that contains the serialization of the {{CSSxRef("@counter-style/range", "range")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.
+  - : رشته‌ای که شامل سریال‌سازی توصیفگر {{CSSxRef("@counter-style/range", "range")}} تعریف‌شده برای قانون مرتبط است. اگر این توصیفگر در قانون مرتبط مشخص نشده باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 - {{DOMxRef("CSSCounterStyleRule.pad")}}
-  - : A string that contains the serialization of the {{CSSxRef("@counter-style/pad", "pad")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.
+  - : رشته‌ای که شامل سریال‌سازی توصیفگر {{CSSxRef("@counter-style/pad", "pad")}} تعریف‌شده برای قانون مرتبط است. اگر این توصیفگر در قانون مرتبط مشخص نشده باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 - {{DOMxRef("CSSCounterStyleRule.speakAs")}}
-  - : A string that contains the serialization of the {{CSSxRef("@counter-style/speak-as", "speak-as")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.
+  - : رشته‌ای که شامل سریال‌سازی توصیفگر {{CSSxRef("@counter-style/speak-as", "speak-as")}} تعریف‌شده برای قانون مرتبط است. اگر این توصیفگر در قانون مرتبط مشخص نشده باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 - {{DOMxRef("CSSCounterStyleRule.fallback")}}
-  - : A string that contains the serialization of the {{CSSxRef("@counter-style/fallback", "fallback")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.
+  - : رشته‌ای که شامل سریال‌سازی توصیفگر {{CSSxRef("@counter-style/fallback", "fallback")}} تعریف‌شده برای قانون مرتبط است. اگر این توصیفگر در قانون مرتبط مشخص نشده باشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface doesn't implement any specific method but inherits methods from its parent {{DOMxRef("CSSRule")}}._
+_این رابط هیچ روش خاصی را پیاده‌سازی نمی‌کند، اما روش‌های والد خود، {{DOMxRef("CSSRule")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{CSSxRef("@counter-style")}}
-- [CSS counter styles](/en-US/docs/Web/CSS/Guides/Counter_styles) module
-- [Using CSS counters](/en-US/docs/Web/CSS/Guides/Counter_styles/Using_counters) guide
+- ماژول [سبک‌های شمارندهٔ CSS](/en-US/docs/Web/CSS/Guides/Counter_styles)
+- راهنمای [استفاده از شمارنده‌های CSS](/en-US/docs/Web/CSS/Guides/Counter_styles/Using_counters)
