@@ -1,7 +1,7 @@
 ---
 title: "BrowserCaptureMediaStreamTrack: clone() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BrowserCaptureMediaStreamTrack/clone"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,28 +16,28 @@ browser-compat: api.BrowserCaptureMediaStreamTrack.clone
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`clone()`** method of the {{domxref("BrowserCaptureMediaStreamTrack")}} interface returns a clone of the original `BrowserCaptureMediaStreamTrack`.
+**`clone()`** 方法是 {{domxref("BrowserCaptureMediaStreamTrack")}} 接口的一个方法，用于返回原始 `BrowserCaptureMediaStreamTrack` 的克隆。
 
-This method is functionally identical to {{domxref("MediaStreamTrack.clone()")}}, except that it handles cases where cropping or restriction have been applied to the track. The returned clone is identical to the original `BrowserCaptureMediaStreamTrack`, but with any cropping or restriction removed.
+此方法在功能上与 {{domxref("MediaStreamTrack.clone()")}} 相同，不同之处在于它处理了轨道已应用裁剪或限制的情况。返回的克隆与原始 `BrowserCaptureMediaStreamTrack` 相同，但移除了任何裁剪或限制。
 
 > [!NOTE]
-> In Chromium, if a track has clones, its {{domxref("BrowserCaptureMediaStreamTrack.cropTo", "cropTo()")}} and {{domxref("BrowserCaptureMediaStreamTrack.restrictTo", "restrictTo()")}} methods will reject (see [Chrome issue 41482026](https://crbug.com/41482026)).
+> 在 Chromium 中，如果轨道有克隆，则其 {{domxref("BrowserCaptureMediaStreamTrack.cropTo", "cropTo()")}} 和 {{domxref("BrowserCaptureMediaStreamTrack.restrictTo", "restrictTo()")}} 方法将被拒绝（参见 [Chrome issue 41482026](https://crbug.com/41482026)）。
 
-## Syntax
+## 语法
 
 ```js-nolint
 clone()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A {{domxref("BrowserCaptureMediaStreamTrack")}} instance.
+一个 {{domxref("BrowserCaptureMediaStreamTrack")}} 实例。
 
-## Examples
+## 示例
 
 ```js
 // Options for getDisplayMedia()
@@ -61,15 +61,15 @@ await track.cropTo(cropTarget);
 const clonedTrack = track.clone();
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
-- [Using the Element Capture and Region Capture APIs](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture)
+- [屏幕捕获 API](/en-US/docs/Web/API/Screen_Capture_API)
+- [使用元素捕获和区域捕获 API](/en-US/docs/Web/API/Screen_Capture_API/Element_Region_Capture)
