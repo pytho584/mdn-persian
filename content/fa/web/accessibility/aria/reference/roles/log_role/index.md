@@ -1,7 +1,7 @@
 ---
 title: "ARIA: log role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/log_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,39 +13,39 @@ spec-urls: https://w3c.github.io/aria/#log
 sidebar: accessibilitysidebar
 ---
 
-The `log` role is used to identify an element that creates a [live region](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) where new information is added in a meaningful order and old information may disappear.
+نقش `log` برای شناسایی عنصری استفاده می‌شود که یک [منطقه زنده](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) ایجاد می‌کند که در آن اطلاعات جدید به ترتیب معنادار اضافه می‌شوند و اطلاعات قدیمی ممکن است حذف شوند.
 
-## Description
+## توضیحات
 
-A log is a type of live region where new information is added in meaningful order and old information may disappear. Examples include chat logs, messaging history, game log, or an error log. In contrast to other live regions, in this role there is a relationship between the arrival of new items in the log and the reading order. The log contains a meaningful sequence and new information is added only to the end of the log, not at arbitrary points.
+لاگ نوعی منطقه زنده است که در آن اطلاعات جدید به ترتیب معنادار اضافه می‌شوند و اطلاعات قدیمی ممکن است حذف شوند. نمونه‌ها شامل لاگ‌های گفتگو، تاریخچه پیام‌رسانی، لاگ بازی یا لاگ خطا هستند. برخلاف سایر مناطق زنده، در این نقش رابطه‌ای بین arrival آیتم‌های جدید در لاگ و ترتیب خواندن وجود دارد. لاگ شامل یک توالی معنادار است و اطلاعات جدید فقط به انتهای لاگ اضافه می‌شوند، نه در نقاط دلخواه.
 
-In contrast to other types of live region, a log is sequentially ordered and new information is only added to the end of the log. When this role is added to an element, the browser will send out an accessible log event to assistive technology products which can then notify the user about it.
+برخلاف سایر انواع مناطق زنده، لاگ به صورت ترتیبی مرتب شده است و اطلاعات جدید فقط به انتهای لاگ اضافه می‌شوند. وقتی این نقش به یک عنصر اضافه می‌شود، مرورگر یک رویداد لاگ قابل دسترس به محصولات فناوری کمکی ارسال می‌کند که می‌توانند کاربر را در مورد آن مطلع کنند.
 
-By default, updates contain only the changes to the live region and these are announced when the user is idle. Elements with the role `log` have an implicit `aria-live` value of `polite`. Where the user needs to hear the entire live region upon a change `aria-atomic="true"` should be set. To have announcements made as soon as possible and where the user may be interrupted, `aria-live="assertive"` can be set for more aggressive updates.
+به طور پیش‌فرض، به‌روزرسانی‌ها فقط شامل تغییرات منطقه زنده هستند و زمانی که کاربر بیکار است اعلام می‌شوند. عناصر با نقش `log` مقدار ضمنی `aria-live` برابر با `polite` دارند. در جایی که کاربر نیاز دارد در هنگام تغییر کل منطقه زنده را بشنود، باید `aria-atomic="true"` تنظیم شود. برای اینکه اعلام‌ها در سریع‌ترین زمان ممکن انجام شوند و در جایی که ممکن است کاربر قطع شود، می‌توان `aria-live="assertive"` را برای به‌روزرسانی‌های تهاجمی‌تر تنظیم کرد.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
 - [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic)
-  - : Defines whether assistive technologies should present all, or only parts of, the changed region. Elements with the role `log` have an implicit `aria-atomic` value of `false`.
+  - : تعیین می‌کند که آیا فناوری‌های کمکی باید همه یا فقط بخشی از منطقه تغییر یافته را ارائه دهند. عناصر با نقش `log` مقدار ضمنی `aria-atomic` برابر با `false` دارند.
 
 - [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live)
-  - : Defines when assistive technology should inform the user of updates to content. Elements with the role `log` have an implicit `aria-live` value of `polite`, meaning screen readers will announce changes inside the log when the user is idle.
+  - : تعیین می‌کند که فناوری کمکی چه زمانی باید کاربر را از به‌روزرسانی‌های محتوا مطلع کند. عناصر با نقش `log` مقدار ضمنی `aria-live` برابر با `polite` دارند، به این معنی که صفحه‌خوان‌ها تغییرات داخل لاگ را زمانی که کاربر بیکار است اعلام می‌کنند.
 
-- `aria-label` and `aria-labelledby`
-  - : The `log` is required to have an accessible name. Use `aria-labelledby` if a visible label is present, otherwise use `aria-label`.
+- `aria-label` و `aria-labelledby`
+  - : `log` باید دارای نام قابل دسترس باشد. اگر برچسب قابل مشاهده‌ای وجود دارد از `aria-labelledby` استفاده کنید، در غیر این صورت از `aria-label` استفاده کنید.
 
-## Best practices
+## بهترین روش‌ها
 
-With an area that has scrolling text, such as a stock ticker, the [`marquee`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/marquee_role) role should be used instead.
+برای ناحیه‌ای با متن اسکرول‌شونده، مانند تیکر سهام، باید از نقش [`marquee`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/marquee_role) استفاده شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: `alert` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)
-- [ARIA: `marquee` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/marquee_role)
-- [ARIA: `status` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role)
-- [ARIA: `timer` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/timer_role)
-- [ARIA live regions](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
+- [ARIA: نقش `alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role)
+- [ARIA: نقش `marquee`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/marquee_role)
+- [ARIA: نقش `status`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/status_role)
+- [ARIA: نقش `timer`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/timer_role)
+- [مناطق زنده ARIA](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions)
