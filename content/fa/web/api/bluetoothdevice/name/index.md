@@ -1,7 +1,7 @@
 ---
 title: "BluetoothDevice: name property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothDevice/name"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,17 +16,16 @@ browser-compat: api.BluetoothDevice.name
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothDevice.name`** read-only property returns a
-string that provides a human-readable name for the device.
+ویژگی فقط‌خواندنی **`BluetoothDevice.name`** یک رشته برمی‌گرداند که نام قابل‌خواندن توسط انسان را برای دستگاه فراهم می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
