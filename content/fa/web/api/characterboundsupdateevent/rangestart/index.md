@@ -1,7 +1,5 @@
 ---
 title: "CharacterBoundsUpdateEvent: rangeStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterBoundsUpdateEvent/rangeStart"
-status: "needs-translation"
 ---
 
 ---
@@ -16,17 +14,17 @@ browser-compat: api.CharacterBoundsUpdateEvent.rangeStart
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`CharacterBoundsUpdateEvent.rangeStart`** read-only property represents the offset of the first character within the editable text region for which the operating system needs the bounds.
+**خاصیت فقط‌خواندنی `CharacterBoundsUpdateEvent.rangeStart`** افست (offset) اولین کاراکتر در ناحیه‌ی متن قابل‌ویرایش را نشان می‌دهد که سیستم‌عامل به مرزهای (bounds) آن نیاز دارد.
 
-## Value
+## مقدار
 
-A {{jsxref("Number")}}.
+یک {{jsxref("Number")}}.
 
-## Examples
+## مثال‌ها
 
-### Reading the `rangeStart` value
+### خواندن مقدار `rangeStart`
 
-This example shows how to use the `characterboundsupdate` event and read the value of the `rangeStart` and `rangeEnd` properties.
+این مثال نحوه‌ی استفاده از رویداد `characterboundsupdate` و خواندن مقدار خاصیت‌های `rangeStart` و `rangeEnd` را نشان می‌دهد.
 
 ```js
 const editContext = new EditContext();
@@ -39,10 +37,10 @@ editContext.addEventListener("characterboundsupdate", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
