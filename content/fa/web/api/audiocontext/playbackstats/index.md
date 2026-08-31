@@ -1,7 +1,7 @@
 ---
 title: "AudioContext: playbackStats property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/playbackStats"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,17 +16,17 @@ browser-compat: api.AudioContext.playbackStats
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`playbackStats`** read-only property of the {{domxref("AudioContext")}} interface returns an {{domxref("AudioPlaybackStats")}} object providing access to duration, underrun, and latency statistics for the `AudioContext`. These statistics allow you to measure audio delay and glitches.
+ویژگی فقط‌خواندنی **`playbackStats`** از رابط {{domxref("AudioContext")}} یک شیء {{domxref("AudioPlaybackStats")}} برمی‌گرداند که دسترسی به آمار مدت، کمبود داده (underrun) و تأخیر را برای `AudioContext` فراهم می‌کند. این آمار به شما امکان می‌دهد تأخیر صوتی و خطاهای پخش را اندازه‌گیری کنید.
 
-It is possible to retrieve the immediate playout latency of the context via the {{domxref("AudioContext.outputLatency")}} property; `playbackStats`, however, provides access to more detailed statistics that update over time, including average, minimum, and maximum latency.
+امکان دریافت تأخیر پخش بی‌درنگ زمینه از طریق ویژگی {{domxref("AudioContext.outputLatency")}} وجود دارد؛ با این حال، `playbackStats` دسترسی به آمار جزئی‌تری فراهم می‌کند که به مرور زمان به‌روزرسانی می‌شوند، از جمله میانگین، حداقل و حداکثر تأخیر.
 
-## Value
+## مقدار
 
-An {{domxref("AudioPlaybackStats")}} object.
+یک شیء {{domxref("AudioPlaybackStats")}}.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
 ```js
 const audioCtx = new AudioContext();
@@ -38,16 +38,16 @@ const stats = audioCtx.playbackStats;
 console.log(stats.averageLatency);
 ```
 
-See also the main {{domxref("AudioPlaybackStats")}} reference page for a more in-depth example.
+برای مثالی کامل‌تر، به صفحهٔ مرجع اصلی {{domxref("AudioPlaybackStats")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
