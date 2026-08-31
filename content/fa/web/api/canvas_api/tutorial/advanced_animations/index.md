@@ -1,7 +1,7 @@
 ---
 title: "Advanced animations"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Advanced_animations"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -12,17 +12,17 @@ page-type: guide
 
 {{DefaultAPISidebar("Canvas API")}} {{PreviousNext("Web/API/Canvas_API/Tutorial/Basic_animations", "Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas")}}
 
-In the last chapter we made some [basic animations](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations) and got to know ways to get things moving. In this part we will have a closer look at the motion itself and are going to add some physics to make our animations more advanced.
+در فصل قبل، تعدادی [انیمیشن پایه](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations) ساختیم و با روش‌های حرکت دادن اشیا آشنا شدیم. در این بخش، نگاه دقیق‌تری به خود حرکت خواهیم داشت و فیزیک را اضافه خواهیم کرد تا انیمیشن‌های پیشرفته‌تری بسازیم.
 
-## Drawing a ball
+## رسم یک توپ
 
-We are going to use a ball for our animation studies, so let's first draw that ball onto the canvas. The following code will set us up.
+ما برای مطالعهٔ انیمیشن از یک توپ استفاده خواهیم کرد، بنابراین بیایید ابتدا آن توپ را روی بوم رسم کنیم. کد زیر ما را آماده می‌کند.
 
 ```html
 <canvas id="canvas" width="600" height="300"></canvas>
 ```
 
-As usual, we need a drawing context first. To draw the ball, we will create a `ball` object which contains properties and a `draw()` method to paint it on the canvas.
+طبق معمول، ابتدا به یک زمینهٔ ترسیم نیاز داریم. برای رسم توپ، یک شیء `ball` ایجاد می‌کنیم که شامل ویژگی‌ها و یک متد `draw()` برای رسم آن روی بوم است.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -45,11 +45,11 @@ const ball = {
 ball.draw();
 ```
 
-Nothing special here, the ball is actually a simple circle and gets drawn with the help of the {{domxref("CanvasRenderingContext2D.arc()", "arc()")}} method.
+در اینجا چیز خاصی وجود ندارد؛ توپ در واقع یک دایرهٔ ساده است و با کمک متد {{domxref("CanvasRenderingContext2D.arc()", "arc()")}} رسم می‌شود.
 
-## Adding velocity
+## افزودن سرعت
 
-Now that we have a ball, we are ready to add a basic animation like we have learned in the [last chapter](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations) of this tutorial. Again, {{domxref("window.requestAnimationFrame()")}} helps us to control the animation. The ball gets moving by adding a velocity vector to the position. For each frame, we also {{domxref("CanvasRenderingContext2D.clearRect", "clear", "", 1)}} the canvas to remove old circles from prior frames.
+حالا که توپ را داریم، آماده‌ایم یک انیمیشن پایه مانند آنچه در [فصل قبل](/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations) این آموزش یاد گرفتیم اضافه کنیم. باز هم، {{domxref("window.requestAnimationFrame()")}} به ما در کنترل انیمیشن کمک می‌کند. توپ با افزودن بردار سرعت به موقعیت، به حرکت در می‌آید. برای هر فریم، ما همچنین بوم را {{domxref("CanvasRenderingContext2D.clearRect", "پاک‌سازی", "", 1)}} می‌کنیم تا دایره‌های قدیمی فریم‌های قبلی حذف شوند.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -91,9 +91,9 @@ canvas.addEventListener("mouseout", (e) => {
 ball.draw();
 ```
 
-## Boundaries
+## مرزها
 
-Without any boundary collision testing our ball runs out of the canvas quickly. We need to check if the `x` and `y` position of the ball is out of the canvas dimensions and invert the direction of the velocity vectors. To do so, we add the following checks to the `draw` method:
+بدون تست برخورد مرزی، توپ ما به سرعت از بوم خارج می‌شود. باید بررسی کنیم که آیا موقعیت `x` و `y` توپ خارج از ابعاد بوم است و جهت بردارهای سرعت را معکوس کنیم. برای انجام این کار، بررسی‌های زیر را به متد `draw` اضافه می‌کنیم:
 
 ```js
 if (
@@ -110,9 +110,9 @@ if (
 }
 ```
 
-### First demo
+### نمایش اول
 
-Let's see how it looks in action so far.
+بیایید ببینیم تا اینجا در عمل چگونه به نظر می‌رسد.
 
 #### HTML
 
@@ -182,24 +182,24 @@ canvas.addEventListener("mouseout", (e) => {
 ball.draw();
 ```
 
-#### Result
+#### نتیجه
 
-Move your mouse into the canvas to start the animation.
+برای شروع انیمیشن، ماوس خود را داخل بوم ببرید.
 
 {{EmbedLiveSample("First_demo", "610", "340")}}
 
-## Acceleration
+## شتاب
 
-To make the motion more real, you can play with the velocity like this, for example:
+برای واقعی‌تر کردن حرکت، می‌توانید سرعت را به این صورت تغییر دهید، برای مثال:
 
 ```js
 ball.vy *= 0.99;
 ball.vy += 0.25;
 ```
 
-This slows down the vertical velocity each frame, so that the ball will just bounce on the floor in the end.
+این کار سرعت عمودی را در هر فریم کاهش می‌دهد، به طوری که در نهایت توپ فقط روی زمین می‌پرد.
 
-### Second demo
+### نمایش دوم
 
 #### HTML
 
@@ -271,20 +271,20 @@ canvas.addEventListener("mouseout", (e) => {
 ball.draw();
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Second_demo", "610", "340")}}
 
-## Trailing effect
+## اثر دنباله
 
-Until now we have made use of the {{domxref("CanvasRenderingContext2D.clearRect", "clearRect")}} method when clearing prior frames. If you replace this method with a semi-transparent {{domxref("CanvasRenderingContext2D.fillRect", "fillRect")}}, you can easily create a trailing effect.
+تا کنون هنگام پاک‌سازی فریم‌های قبلی از متد {{domxref("CanvasRenderingContext2D.clearRect", "clearRect")}} استفاده کرده‌ایم. اگر این متد را با یک {{domxref("CanvasRenderingContext2D.fillRect", "fillRect")}} نیمه‌شفاف جایگزین کنید، می‌توانید به راحتی یک اثر دنباله ایجاد کنید.
 
 ```js
 ctx.fillStyle = "rgb(255 255 255 / 30%)";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 ```
 
-### Third demo
+### نمایش سوم
 
 #### HTML
 
@@ -357,15 +357,15 @@ canvas.addEventListener("mouseout", (e) => {
 ball.draw();
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Third_demo", "610", "340")}}
 
-## Adding mouse control
+## افزودن کنترل ماوس
 
-To get some control over the ball, we can make it follow our mouse using the [`mousemove`](/en-US/docs/Web/API/Element/mousemove_event) event, for example. The [`click`](/en-US/docs/Web/API/Element/click_event) event releases the ball and lets it bounce again.
+برای به دست آوردن کنترل بر روی توپ، می‌توانیم آن را با استفاده از رویداد [`mousemove`](/en-US/docs/Web/API/Element/mousemove_event) دنبال ماوس حرکت دهیم، برای مثال. رویداد [`click`](/en-US/docs/Web/API/Element/click_event) توپ را آزاد می‌کند و اجازه می‌دهد دوباره بپرد.
 
-### Fourth demo
+### نمایش چهارم
 
 #### HTML
 
@@ -454,17 +454,17 @@ canvas.addEventListener("mouseout", (e) => {
 ball.draw();
 ```
 
-#### Result
+#### نتیجه
 
-Move the ball using your mouse and release it with a click.
+توپ را با ماوس خود حرکت دهید و با یک کلیک آن را آزاد کنید.
 
 {{EmbedLiveSample("Fourth_demo", "610", "340")}}
 
-## Breakout
+## بریکاوت
 
-This short chapter only explains some techniques to create more advanced animations. There are many more! How about adding a paddle, some bricks, and turn this demo into a [Breakout](https://en.wikipedia.org/wiki/Breakout_%28video_game%29) game? Check out our [Game development](/en-US/docs/Games) area for more gaming related articles.
+این فصل کوتاه فقط برخی تکنیک‌ها برای ایجاد انیمیشن‌های پیشرفته‌تر را توضیح می‌دهد. تکنیک‌های بسیار بیشتری نیز وجود دارد! چه‌طور است یک پارو، چند آجر اضافه کنید و این نمایش را به یک بازی [بریکاوت](https://en.wikipedia.org/wiki/Breakout_%28video_game%29) تبدیل کنید؟ برای مقالات بیشتر مرتبط با بازی، به بخش [توسعه بازی](/en-US/docs/Games) ما مراجعه کنید.
 
-## See also
+## همچنین ببینید
 
 - {{domxref("window.requestAnimationFrame()")}}
 
