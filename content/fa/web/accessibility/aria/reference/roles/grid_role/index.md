@@ -1,7 +1,7 @@
 ---
 title: "ARIA: grid role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,108 +13,108 @@ spec-urls: https://w3c.github.io/aria/#grid
 sidebar: accessibilitysidebar
 ---
 
-The grid role is for a widget that contains one or more rows of cells. The position of each cell is significant and can be focused using keyboard input.
+نقش `grid` برای یک ویجت است که شامل یک یا چند ردیف از سلول‌ها است. موقعیت هر سلول مهم است و می‌توان با استفاده از ورودی صفحه‌کلید روی آن تمرکز کرد.
 
-## Description
+## توضیحات
 
-The `grid` role is a composite widget containing a collection of one or more rows with one or more cells where some or all cells in the grid are focusable by using methods of two-dimensional navigation, such as directional arrow keys.
+نقش `grid` یک ویجت ترکیبی است که شامل مجموعه‌ای از یک یا چند ردیف با یک یا چند سلول است که برخی یا همه سلول‌های موجود در شبکه با استفاده از روش‌های ناوبری دو بعدی، مانند کلیدهای جهت‌دار، قابل تمرکز هستند.
 
 ```html
 <table role="grid" aria-labelledby="id-select-your-seat">
   <caption id="id-select-your-seat">
-    Select your seat
+    صندلی خود را انتخاب کنید
   </caption>
   <tbody role="presentation">
     <tr role="presentation">
       <td></td>
-      <th>Row A</th>
-      <th>Row B</th>
+      <th>ردیف A</th>
+      <th>ردیف B</th>
     </tr>
     <tr>
-      <th scope="row">Aisle 1</th>
+      <th scope="row">راهرو 1</th>
       <td tabindex="0">
         <button id="btn-1a" tabindex="-1">1A</button>
       </td>
       <td tabindex="-1">
         <button id="btn-1b" tabindex="-1">1B</button>
       </td>
-      <!-- More Columns -->
+      <!-- ستون‌های بیشتر -->
     </tr>
     <tr>
-      <th scope="row">Aisle 2</th>
+      <th scope="row">راهرو 2</th>
       <td tabindex="-1">
         <button id="btn-2a" tabindex="-1">2A</button>
       </td>
       <td tabindex="-1">
         <button id="btn-2b" tabindex="-1">2B</button>
       </td>
-      <!-- More Columns -->
+      <!-- ستون‌های بیشتر -->
     </tr>
   </tbody>
 </table>
 ```
 
-A grid widget contains one or more rows with one or more cells of thematically related interactive content. While it does not imply a specific visual presentation, it implies a relationship among elements. Uses fall into two categories: presenting tabular information (data grids) and grouping other widgets (layout grids). Even though both data grids and layout grids employ the same ARIA roles, states, and properties, differences in their content and purpose surface factors that are important to consider in keyboard interaction design. See [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) for more details.
+یک ویجت شبکه شامل یک یا چند ردیف با یک یا چند سلول از محتوای تعاملی مرتبط موضوعی است. اگرچه به یک نمایش بصری خاص دلالت ندارد، اما به رابطه بین عناصر دلالت دارد. کاربردها به دو دسته تقسیم می‌شوند: ارائه اطلاعات جدولی (شبکه‌های داده) و گروه‌بندی ویجت‌های دیگر (شبکه‌های چیدمان). اگرچه هر دو شبکه داده و شبکه چیدمان از همان نقش‌ها، حالات و ویژگی‌های ARIA استفاده می‌کنند، تفاوت‌های موجود در محتوا و هدف آنها عواملی را آشکار می‌کند که در طراحی تعامل با صفحه‌کلید مهم هستند. برای جزئیات بیشتر به [راهنمای شیوه‌های تألیف ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) مراجعه کنید.
 
-Cell elements have the role [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role), unless they are a row or column header, in which case, the elements are [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role) and [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role), respectively. Cell elements need to be owned by elements with a [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) role. Rows can be grouped using the [`rowgroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role) role.
+عناصر سلول دارای نقش [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role) هستند، مگر اینکه سرستون ردیف یا ستون باشند، که در این صورت عناصر به ترتیب [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role) و [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role) هستند. عناصر سلول باید متعلق به عناصری با نقش [`row`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) باشند. ردیف‌ها را می‌توان با استفاده از نقش [`rowgroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role) گروه‌بندی کرد.
 
-If the grid is used as an interactive widget, [keyboard interactions](#keyboard_interactions) need to be implemented.
+اگر شبکه به عنوان یک ویجت تعاملی استفاده می‌شود، [تعاملات صفحه‌کلید](#تعاملات-صفحه‌کلید) باید پیاده‌سازی شوند.
 
-### Associated ARIA roles, states, and properties
+### نقش‌ها، حالات و ویژگی‌های مرتبط ARIA
 
-#### Roles
+#### نقش‌ها
 
-- [treegrid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) (subclass)
-  - : If a grid has columns that can expanded or collapsed, a treegrid can be used.
+- [treegrid](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) (زیرمجموعه)
+  - : اگر یک شبکه دارای ستون‌هایی باشد که می‌توانند باز یا بسته شوند، می‌توان از treegrid استفاده کرد.
 - [row](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
-  - : A row inside the grid.
+  - : یک ردیف درون شبکه.
 - [rowgroup](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role)
-  - : A group containing one or multiple [row](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)s.
+  - : یک گروه حاوی یک یا چند [row](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role).
 
-#### States and properties
+#### حالات و ویژگی‌ها
 
 - [aria-level](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level)
-  - : Indicates the hierarchical level of the grid within other structures.
+  - : سطح سلسله‌مراتبی شبکه را درون ساختارهای دیگر نشان می‌دهد.
 - [aria-multiselectable](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable)
-  - : If `aria-multiselectable` is set to `true`, multiple items in the grid can be selected. The default value is `false`.
+  - : اگر `aria-multiselectable` روی `true` تنظیم شود، چندین آیتم در شبکه قابل انتخاب هستند. مقدار پیش‌فرض `false` است.
 - [aria-readonly](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly)
-  - : If the user can navigate the grid but not change the value or values of the grid, the [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly) should be set to `true`. The default value is `false`.
+  - : اگر کاربر بتواند در شبکه حرکت کند اما نتواند مقدار یا مقادیر شبکه را تغییر دهد، [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly) باید روی `true` تنظیم شود. مقدار پیش‌فرض `false` است.
 
 > [!NOTE]
-> For many use cases, an HTML {{HTMLElement('table')}} element is sufficient as it and the various table elements already include many ARIA roles.
+> برای بسیاری از موارد استفاده، یک عنصر HTML {{HTMLElement('table')}} کافی است زیرا خود آن و عناصر جدول مختلف از قبل شامل بسیاری از نقش‌های ARIA هستند.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-When a keyboard user encounters a grid, they navigate the rows and columns using the <kbd>left</kbd>, <kbd>right</kbd>, <kbd>top</kbd> and <kbd>down</kbd> keys. To activate the interactive component, they will use the <kbd>return</kbd> and <kbd>space</kbd> keys.
+وقتی یک کاربر صفحه‌کلید با یک شبکه مواجه می‌شود، با استفاده از کلیدهای <kbd>چپ</kbd>، <kbd>راست</kbd>، <kbd>بالا</kbd> و <kbd>پایین</kbd> در ردیف‌ها و ستون‌ها حرکت می‌کند. برای فعال کردن مؤلفه تعاملی، از کلیدهای <kbd>return</kbd> و <kbd>space</kbd> استفاده می‌کنند.
 
-| Key                               | Action                                                                                                                                                                                                                                |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <kbd>→</kbd>                      | Moves focus one cell to the right. Optionally (layout grids), if focus is on the right-most cell in the row, focus may move to the first cell in the following row. If focus is on the last cell in the grid, focus does not move.    |
-| <kbd>←</kbd>                      | Moves focus one cell to the left. Optionally (layout grids), if focus is on the left-most cell in the row, focus may move to the last cell in the previous row. If focus is on the first cell in the grid, focus does not move.       |
-| <kbd>↓</kbd>                      | Moves focus one cell down. Optionally (layout grids), if focus is on the bottom cell in the column, focus may move to the top cell in the following column. If focus is on the last cell in the grid, focus does not move.            |
-| <kbd>↑</kbd>                      | Moves focus one cell up. Optionally (layout grids), if focus is on the top cell in the column, focus may move to the bottom cell in the previous column. If focus is on the first cell in the grid, focus does not move.              |
-| <kbd>Page Down</kbd>              | Moves focus down an author-determined number of rows, typically scrolling so the bottom row in the currently visible set of rows becomes one of the first visible rows. If focus is in the last row of the grid, focus does not move. |
-| <kbd>Page Up</kbd>                | Moves focus up an author-determined number of rows, typically scrolling so the top row in the currently visible set of rows becomes one of the last visible rows. If focus is in the first row of the grid, focus does not move.      |
-| <kbd>Home</kbd>                   | Moves focus to the first cell in the row that contains focus.                                                                                                                                                                         |
-| <kbd>End</kbd>                    | Moves focus to the last cell in the row that contains focus.                                                                                                                                                                          |
-| <kbd>ctrl</kbd> + <kbd>Home</kbd> | Moves focus to the first cell in the first row.                                                                                                                                                                                       |
-| <kbd>ctrl</kbd> + <kbd>End</kbd>  | Moves focus to the last cell in the last row.                                                                                                                                                                                         |
+| کلید                             | عمل                                                                                                                                                                                                                                                                                             |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <kbd>→</kbd>                     | تمرکز را یک سلول به سمت راست حرکت می‌دهد. به صورت اختیاری (شبکه‌های چیدمان)، اگر تمرکز روی سمت‌راست‌ترین سلول در ردیف باشد، تمرکز ممکن است به اولین سلول در ردیف بعدی حرکت کند. اگر تمرکز روی آخرین سلول در شبکه باشد، تمرکز حرکت نمی‌کند.                                                         |
+| <kbd>←</kbd>                     | تمرکز را یک سلول به سمت چپ حرکت می‌دهد. به صورت اختیاری (شبکه‌های چیدمان)، اگر تمرکز روی سمت‌چپ‌ترین سلول در ردیف باشد، تمرکز ممکن است به آخرین سلول در ردیف قبلی حرکت کند. اگر تمرکز روی اولین سلول در شبکه باشد، تمرکز حرکت نمی‌کند.                                                            |
+| <kbd>↓</kbd>                     | تمرکز را یک سلول به پایین حرکت می‌دهد. به صورت اختیاری (شبکه‌های چیدمان)، اگر تمرکز روی پایین‌ترین سلول در ستون باشد، تمرکز ممکن است به بالاترین سلول در ستون بعدی حرکت کند. اگر تمرکز روی آخرین سلول در شبکه باشد، تمرکز حرکت نمی‌کند.                                                         |
+| <kbd>↑</kbd>                     | تمرکز را یک سلول به بالا حرکت می‌دهد. به صورت اختیاری (شبکه‌های چیدمان)، اگر تمرکز روی بالاترین سلول در ستون باشد، تمرکز ممکن است به پایین‌ترین سلول در ستون قبلی حرکت کند. اگر تمرکز روی اولین سلول در شبکه باشد، تمرکز حرکت نمی‌کند.                                                           |
+| <kbd>Page Down</kbd>             | تمرکز را به تعداد ردیف‌های مشخص‌شده توسط نویسنده به پایین حرکت می‌دهد، معمولاً به گونه‌ای اسکرول می‌کند که پایین‌ترین ردیف در مجموعه ردیف‌های قابل مشاهده فعلی تبدیل به یکی از اولین ردیف‌های قابل مشاهده شود. اگر تمرکز در آخرین ردیف شبکه باشد، تمرکز حرکت نمی‌کند.                              |
+| <kbd>Page Up</kbd>               | تمرکز را به تعداد ردیف‌های مشخص‌شده توسط نویسنده به بالا حرکت می‌دهد، معمولاً به گونه‌ای اسکرول می‌کند که بالاترین ردیف در مجموعه ردیف‌های قابل مشاهده فعلی تبدیل به یکی از آخرین ردیف‌های قابل مشاهده شود. اگر تمرکز در اولین ردیف شبکه باشد، تمرکز حرکت نمی‌کند.                               |
+| <kbd>Home</kbd>                  | تمرکز را به اولین سلول در ردیفی که حاوی تمرکز است حرکت می‌دهد.                                                                                                                                                                                                                                  |
+| <kbd>End</kbd>                   | تمرکز را به آخرین سلول در ردیفی که حاوی تمرکز است حرکت می‌دهد.                                                                                                                                                                                                                                  |
+| <kbd>ctrl</kbd> + <kbd>Home</kbd> | تمرکز را به اولین سلول در اولین ردیف حرکت می‌دهد.                                                                                                                                                                                                                                                |
+| <kbd>ctrl</kbd> + <kbd>End</kbd>  | تمرکز را به آخرین سلول در آخرین ردیف حرکت می‌دهد.                                                                                                                                                                                                                                                |
 
-If cells, rows, or columns can be selected, the following key combination are commonly used:
+اگر سلول‌ها، ردیف‌ها یا ستون‌ها قابل انتخاب باشند، ترکیب‌های کلید زیر معمولاً استفاده می‌شوند:
 
-| Key combination                     | Action                                                                                                                                                                                              |
-| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <kbd>ctrl</kbd> + <kbd>Space</kbd>  | Select the column that contains the focus.                                                                                                                                                          |
-| <kbd>shift</kbd> + <kbd>Space</kbd> | Selects the row that contains the focus. If the grid includes a column with checkboxes to select rows, this key combination can be used to check that box even if the focus is not on the checkbox. |
-| <kbd>ctrl</kbd> + <kbd>A</kbd>      | Selects all cells.                                                                                                                                                                                  |
-| <kbd>shift</kbd> + <kbd>→</kbd>     | Extends selection one cell to the right.                                                                                                                                                            |
-| <kbd>shift</kbd> + <kbd>←</kbd>     | Extends selection one cell to the left.                                                                                                                                                             |
-| <kbd>shift</kbd> + <kbd>↓</kbd>     | Extends selection one cell down.                                                                                                                                                                    |
-| <kbd>shift</kbd> + <kbd>↑</kbd>     | Extends selection one cell up.                                                                                                                                                                      |
+| ترکیب کلید                         | عمل                                                                                                                                                                                                                                                         |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <kbd>ctrl</kbd> + <kbd>Space</kbd>  | ستونی که حاوی تمرکز است را انتخاب می‌کند.                                                                                                                                                                                                                   |
+| <kbd>shift</kbd> + <kbd>Space</kbd> | ردیفی که حاوی تمرکز است را انتخاب می‌کند. اگر شبکه شامل یک ستون با چک‌باکس برای انتخاب ردیف‌ها باشد، این ترکیب کلید می‌تواند برای علامت زدن آن چک‌باکس حتی اگر تمرکز روی چک‌باکس نباشد استفاده شود.                                                          |
+| <kbd>ctrl</kbd> + <kbd>A</kbd>      | تمام سلول‌ها را انتخاب می‌کند.                                                                                                                                                                                                                               |
+| <kbd>shift</kbd> + <kbd>→</kbd>     | انتخاب را یک سلول به سمت راست گسترش می‌دهد.                                                                                                                                                                                                                 |
+| <kbd>shift</kbd> + <kbd>←</kbd>     | انتخاب را یک سلول به سمت چپ گسترش می‌دهد.                                                                                                                                                                                                                   |
+| <kbd>shift</kbd> + <kbd>↓</kbd>     | انتخاب را یک سلول به پایین گسترش می‌دهد.                                                                                                                                                                                                                    |
+| <kbd>shift</kbd> + <kbd>↑</kbd>     | انتخاب را یک سلول به بالا گسترش می‌دهد.                                                                                                                                                                                                                     |
 
-## Examples
+## مثال‌ها
 
-### Calendar example
+### مثال تقویم
 
 {{EmbedLiveSample("Calendar_example", "100%", "300")}}
 
@@ -123,23 +123,23 @@ If cells, rows, or columns can be selected, the following key combination are co
 ```html
 <table role="grid" aria-labelledby="calendarheader">
   <caption id="calendarheader">
-    September 2018
+    سپتامبر 2018
   </caption>
   <thead role="rowgroup">
     <tr role="row">
       <td></td>
-      <th role="columnheader" aria-label="Sunday">S</th>
-      <th role="columnheader" aria-label="Monday">M</th>
-      <th role="columnheader" aria-label="Tuesday">T</th>
-      <th role="columnheader" aria-label="Wednesday">W</th>
-      <th role="columnheader" aria-label="Thursday">T</th>
-      <th role="columnheader" aria-label="Friday">F</th>
-      <th role="columnheader" aria-label="Saturday">S</th>
+      <th role="columnheader" aria-label="یکشنبه">ی</th>
+      <th role="columnheader" aria-label="دوشنبه">د</th>
+      <th role="columnheader" aria-label="سه‌شنبه">س</th>
+      <th role="columnheader" aria-label="چهارشنبه">چ</th>
+      <th role="columnheader" aria-label="پنجشنبه">پ</th>
+      <th role="columnheader" aria-label="جمعه">ج</th>
+      <th role="columnheader" aria-label="شنبه">ش</th>
     </tr>
   </thead>
   <tbody role="rowgroup">
     <tr role="row">
-      <th scope="row" role="rowheader">Week 1</th>
+      <th scope="row" role="rowheader">هفته 1</th>
       <td>26</td>
       <td>27</td>
       <td>28</td>
@@ -149,7 +149,7 @@ If cells, rows, or columns can be selected, the following key combination are co
       <td role="gridcell" tabindex="-1">1</td>
     </tr>
     <tr role="row">
-      <th scope="row" role="rowheader">Week 2</th>
+      <th scope="row" role="rowheader">هفته 2</th>
       <td role="gridcell" tabindex="-1">2</td>
       <td role="gridcell" tabindex="-1">3</td>
       <td role="gridcell" tabindex="-1">4</td>
@@ -159,7 +159,7 @@ If cells, rows, or columns can be selected, the following key combination are co
       <td role="gridcell" tabindex="-1">8</td>
     </tr>
     <tr role="row">
-      <th scope="row" role="rowheader">Week 3</th>
+      <th scope="row" role="rowheader">هفته 3</th>
       <td role="gridcell" tabindex="-1">9</td>
       <td role="gridcell" tabindex="-1">10</td>
       <td role="gridcell" tabindex="-1">11</td>
@@ -169,7 +169,7 @@ If cells, rows, or columns can be selected, the following key combination are co
       <td role="gridcell" tabindex="-1">15</td>
     </tr>
     <tr role="row">
-      <th scope="row" role="rowheader">Week 4</th>
+      <th scope="row" role="rowheader">هفته 4</th>
       <td role="gridcell" tabindex="-1">16</td>
       <td role="gridcell" tabindex="-1">17</td>
       <td role="gridcell" tabindex="-1">18</td>
@@ -179,7 +179,7 @@ If cells, rows, or columns can be selected, the following key combination are co
       <td role="gridcell" tabindex="-1">22</td>
     </tr>
     <tr role="row">
-      <th scope="row" role="rowheader">Week 5</th>
+      <th scope="row" role="rowheader">هفته 5</th>
       <td role="gridcell" tabindex="-1">23</td>
       <td role="gridcell" tabindex="-1">24</td>
       <td role="gridcell" tabindex="-1">25</td>
@@ -189,7 +189,7 @@ If cells, rows, or columns can be selected, the following key combination are co
       <td role="gridcell" tabindex="-1">29</td>
     </tr>
     <tr role="row">
-      <th scope="row" role="rowheader">Week 6</th>
+      <th scope="row" role="rowheader">هفته 6</th>
       <td role="gridcell" tabindex="-1">30</td>
       <td>1</td>
       <td>2</td>
@@ -362,31 +362,31 @@ document.querySelector("table").addEventListener("keydown", (event) => {
 });
 ```
 
-### More examples
+### مثال‌های بیشتر
 
-- [Data Grid Examples](https://www.w3.org/WAI/ARIA/apg/example-index/grid/dataGrids.html)
-- [Layout Grids Examples](https://www.w3.org/WAI/ARIA/apg/example-index/grid/LayoutGrids.html)
-- [W3C/WAI Tutorial: Tables](https://www.w3.org/WAI/tutorials/tables/)
+- [مثال‌های شبکه داده](https://www.w3.org/WAI/ARIA/apg/example-index/grid/dataGrids.html)
+- [مثال‌های شبکه‌های چیدمان](https://www.w3.org/WAI/ARIA/apg/example-index/grid/LayoutGrids.html)
+- [آموزش W3C/WAI: جداول](https://www.w3.org/WAI/tutorials/tables/)
 
-## Accessibility concerns
+## نگرانی‌های دسترسی
 
-Even if the keyboard use is properly implemented, some users might not be aware that they have to use the arrow keys. Make sure that the functionality and interaction needed can be best achieved using the grid role.
+حتی اگر استفاده از صفحه‌کلید به درستی پیاده‌سازی شود، برخی کاربران ممکن است از اینکه باید از کلیدهای جهت‌دار استفاده کنند آگاه نباشند. مطمئن شوید که قابلیت و تعامل مورد نیاز با استفاده از نقش grid به بهترین شکل ممکن انجام می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA `composite` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/composite_role)
-- [ARIA `table` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
-- [ARIA `treegrid` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
-- [ARIA `row` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
-- [ARIA `rowgroup` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role)
-- [ARIA: `gridcell` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)
-- [ARIA: `rowheader` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role)
-- [ARIA: columnheader role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
-- {{HTMLElement('table','HTML <code>&lt;table&gt;</code> element')}}
+- [نقش `composite` ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/composite_role)
+- [نقش `table` ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
+- [نقش `treegrid` ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
+- [نقش `row` ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
+- [نقش `rowgroup` ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role)
+- [نقش `gridcell` ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)
+- [نقش `rowheader` ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role)
+- [نقش `columnheader` ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
+- {{HTMLElement('table','عنصر HTML <code>&lt;table&gt;</code>')}}
 - [`aria-level`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level)
 - [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable)
 - [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly)
