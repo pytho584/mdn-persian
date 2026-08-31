@@ -1,11 +1,5 @@
 ---
 title: "CountQueuingStrategy: CountQueuingStrategy() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy/CountQueuingStrategy"
-status: "needs-translation"
----
-
----
-title: "CountQueuingStrategy: CountQueuingStrategy() constructor"
 short-title: CountQueuingStrategy()
 slug: Web/API/CountQueuingStrategy/CountQueuingStrategy
 page-type: web-api-constructor
@@ -14,32 +8,30 @@ browser-compat: api.CountQueuingStrategy.CountQueuingStrategy
 
 {{APIRef("Streams")}}{{AvailableInWorkers}}
 
-The **`CountQueuingStrategy()`** constructor
-creates and returns a `CountQueuingStrategy` object instance.
+سازندهٔ **`CountQueuingStrategy()`** یک نمونه از شیء `CountQueuingStrategy` را می‌سازد و بازمی‌گرداند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new CountQueuingStrategy(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options`
-  - : An object with the following property:
+  - : شیءای با ویژگی زیر:
     - `highWaterMark`
-      - : The total number of chunks that can be contained in the internal
-        queue before backpressure is applied.
+      - : تعداد کل تکه‌هایی (chunks) که می‌توانند در صف داخلی قرار گیرند، پیش از آنکه فشار معکوس (backpressure) اعمال شود.
 
-### Return value
+### مقدار بازگشتی
 
-An instance of the {{domxref("CountQueuingStrategy")}} object.
+یک نمونه از شیء {{domxref("CountQueuingStrategy")}}.
 
-### Exceptions
+### استثناها
 
-None.
+هیچکدام.
 
-## Examples
+## مثال‌ها
 
 ```js
 const queuingStrategy = new CountQueuingStrategy({ highWaterMark: 1 });
@@ -63,14 +55,14 @@ const writableStream = new WritableStream(
 const size = queuingStrategy.size();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CountQueuingStrategy")}}
