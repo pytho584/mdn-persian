@@ -1,7 +1,7 @@
 ---
 title: "Audio Output Devices API"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Audio_Output_Devices_API"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -20,67 +20,60 @@ spec-urls: https://w3c.github.io/mediacapture-output/
 
 {{DefaultAPISidebar("Audio Output Devices API")}}{{securecontext_header}}{{SeeCompatTable}}
 
-The **Audio Output Devices API** allows web applications to prompt users about what output device should be used for audio playback.
+API **Audio Output Devices** به برنامه‌های وب اجازه می‌دهد تا از کاربران درباره اینکه از کدام دستگاه خروجی برای پخش صدا استفاده شود، سوال کند.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-Operating systems commonly allow users to specify that audio should be played from speakers, a Bluetooth headset, or some other audio output device.
-This API allows applications to provide this same functionality from within a web page.
+سیستم‌های عامل معمولاً به کاربران اجازه می‌دهند تا مشخص کنند که صدا از بلندگوها، هدست بلوتوث یا برخی دستگاه‌های خروجی دیگر پخش شود. این API به برنامه‌ها اجازه می‌دهد تا همین قابلیت را درون یک صفحه وب فراهم کنند.
 
-Even if allowed by a permission policy, access to a particular audio output device still requires explicit user permission, as the user may be in a location where playing audio through some output devices is not appropriate.
+حتی اگر توسط یک خط مشی مجوز اجازه داده شود، دسترسی به یک دستگاه خروجی صوتی خاص همچنان نیازمند مجوز صریح کاربر است، زیرا ممکن است کاربر در مکانی باشد که پخش صدا از طریق برخی دستگاه‌های خروجی مناسب نباشد.
 
-The API provides the {{domxref("MediaDevices.selectAudioOutput()")}} method that allows users to select their desired audio output from those that are allowed by the [`speaker-selection`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/speaker-selection) directive of the {{httpheader("Permissions-Policy")}} HTTP header for the document.
-The selected device then has user permission, allowing it to be enumerated with {{domxref("MediaDevices.enumerateDevices()")}} and set as the audio output device using {{domxref("HTMLMediaElement.setSinkId()")}}.
+این API متد {{domxref("MediaDevices.selectAudioOutput()")}} را فراهم می‌کند که به کاربران اجازه می‌دهد دستگاه خروجی صوتی مورد نظر خود را از میان دستگاه‌هایی که توسط دایرکتیو [`speaker-selection`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/speaker-selection) سربرگ HTTP {{httpheader("Permissions-Policy")}} برای سند مجاز شده‌اند، انتخاب کنند. سپس دستگاه انتخاب‌شده مجوز کاربر را دارد و می‌توان با {{domxref("MediaDevices.enumerateDevices()")}} آن را شمارش کرد و با استفاده از {{domxref("HTMLMediaElement.setSinkId()")}} به عنوان دستگاه خروجی صوتی تنظیم کرد.
 
-Audio devices may arbitrarily connect and disconnect.
-Applications that wish to react to this kind of change can listen to the {{domxref("MediaDevices/devicechange_event", "devicechange")}} event and use {{domxref("MediaDevices.enumerateDevices", "enumerateDevices()")}} to determine if `sinkId` is present in the returned devices.
-This might trigger, for example, pausing or unpausing playback.
+دستگاه‌های صوتی ممکن است به طور دلخواه متصل و قطع شوند. برنامه‌هایی که می‌خواهند به این نوع تغییر واکنش نشان دهند می‌توانند به رویداد {{domxref("MediaDevices/devicechange_event", "devicechange")}} گوش دهند و از {{domxref("MediaDevices.enumerateDevices", "enumerateDevices()")}} برای تعیین اینکه آیا `sinkId` در دستگاه‌های بازگشتی وجود دارد استفاده کنند. این ممکن است باعث توقف یا ازسرگیری پخش شود.
 
-## Interfaces
+## رابط‌ها
 
-### Extensions to other interfaces
+### افزونه‌هایی به رابط‌های دیگر
 
-The Audio Output Devices API extends the following APIs, adding the listed features:
+API Audio Output Devices API‌های زیر را گسترش می‌دهد و ویژگی‌های ذکر شده را اضافه می‌کند:
 
 #### MediaDevices
 
 - {{domxref("MediaDevices.selectAudioOutput()")}}
-  - : This method prompts the user to select a specific audio output device, for example a speaker or headset.
-    Selecting a device grants user permission to use that device and returns information about the device, including its ID.
+  - : این متد از کاربر می‌خواهد یک دستگاه خروجی صوتی خاص، مثلاً یک بلندگو یا هدست را انتخاب کند. انتخاب یک دستگاه به کاربر مجوز استفاده از آن دستگاه را می‌دهد و اطلاعاتی درباره دستگاه، از جمله شناسه آن، بازمی‌گرداند.
 
 #### HTMLMediaElement
 
 - {{domxref("HTMLMediaElement.setSinkId()")}}
-  - : This method sets the ID of the audio device to use for output, which will be used if permitted.
+  - : این متد شناسه دستگاه صوتی را که برای خروجی استفاده می‌شود تنظیم می‌کند، در صورت مجاز بودن از آن استفاده خواهد شد.
 - {{domxref("HTMLMediaElement.sinkId")}}
-  - : This property returns the unique ID of the audio device being used for output, or an empty string if the default user agent device is being used.
+  - : این ویژگی شناسه یکتای دستگاه صوتی مورد استفاده برای خروجی را بازمی‌گرداند، یا اگر دستگاه پیش‌فرض عامل کاربر استفاده می‌شود یک رشته خالی.
 
-## Security requirements
+## الزامات امنیتی
 
-Access to the API is subject to the following constraints:
+دسترسی به API مشروط به محدودیت‌های زیر است:
 
-- All methods and properties may only be called in a [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
+- همه متدها و ویژگی‌ها فقط در یک [زمینه امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts) قابل فراخوانی هستند.
 
-- {{domxref("MediaDevices.selectAudioOutput()")}} grants user permission for a selected device to be used as the audio output sink:
-  - Access may be gated by the [`speaker-selection`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/speaker-selection) HTTP [Permission Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
-  - [Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required.
-    The user has to interact with the page or a UI element for the method to be called.
+- {{domxref("MediaDevices.selectAudioOutput()")}} مجوز کاربر را برای استفاده از یک دستگاه انتخاب‌شده به عنوان خروجی صدا اعطا می‌کند:
+  - دسترسی ممکن است توسط [خط مشی مجوز](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) HTTP [`speaker-selection`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/speaker-selection) محدود شود.
+  - [فعال‌سازی موقت کاربر](/en-US/docs/Web/Security/Defenses/User_activation) الزامی است. کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل داشته باشد تا متد فراخوانی شود.
 
-- {{domxref("HTMLMediaElement.setSinkId()")}} sets a permitted ID as the audio output:
-  - Access may be gated by the [`speaker-selection`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/speaker-selection) HTTP [Permission Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
-  - User permission is required to set a non-default device ID.
-    - This can come from selection in the prompt launched by `MediaDevices.selectAudioOutput()`
-    - User permission to set the output device is also implicitly granted if the user has already granted permission to use a media input device in the same group with {{domxref("MediaDevices.getUserMedia()")}}.
+- {{domxref("HTMLMediaElement.setSinkId()")}} یک شناسه مجاز را به عنوان خروجی صدا تنظیم می‌کند:
+  - دسترسی ممکن است توسط [خط مشی مجوز](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) HTTP [`speaker-selection`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/speaker-selection) محدود شود.
+  - مجوز کاربر برای تنظیم یک شناسه دستگاه غیرپیش‌فرض الزامی است.
+    - این می‌تواند از انتخاب در پنجره بازشوی راه‌اندازی‌شده توسط `MediaDevices.selectAudioOutput()` حاصل شود.
+    - مجوز کاربر برای تنظیم دستگاه خروجی همچنین به طور ضمنی اعطا می‌شود اگر کاربر قبلاً مجوز استفاده از یک دستگاه ورودی رسانه در همان گروه را با {{domxref("MediaDevices.getUserMedia()")}} اعطا کرده باشد.
 
 <!-- The line below is "true" but this is not implemented in any browser -->
 <!-- The permission status can be queried using the [Permissions API](/en-US/docs/Web/API/Permissions_API) method [`navigator.permissions.query()`](/en-US/docs/Web/API/Permissions/query), passing a permission descriptor with the `speaker-selection` permission. -->
 
-## Examples
+## نمونه‌ها
 
-Here's an example of using `selectAudioOutput()`, within a function that is triggered by a button click, and then setting the selected device as the audio output.
+در اینجا مثالی از استفاده از `selectAudioOutput()`، درون یک تابع که با کلیک دکمه فعال می‌شود، و سپس تنظیم دستگاه انتخاب‌شده به عنوان خروجی صدا آورده شده است.
 
-The code first checks if `selectAudioOutput()` is supported, and if it is, uses it to select an output and return a [device ID](/en-US/docs/Web/API/MediaDeviceInfo/deviceId).
-We then play some audio using the default output, and then call `setSinkId()` in order to switch to the selected output device.
+کد ابتدا بررسی می‌کند که آیا `selectAudioOutput()` پشتیبانی می‌شود، و اگر پشتیبانی می‌شود، از آن برای انتخاب یک خروجی و بازگرداندن [شناسه دستگاه](/en-US/docs/Web/API/MediaDeviceInfo/deviceId) استفاده می‌کند. سپس با استفاده از خروجی پیش‌فرض مقداری صدا پخش می‌کنیم و سپس `setSinkId()` را فراخوانی می‌کنیم تا به دستگاه خروجی انتخاب‌شده سوئیچ کنیم.
 
 ```js
 document.querySelector("#myButton").addEventListener("click", async () => {
@@ -102,7 +95,7 @@ document.querySelector("#myButton").addEventListener("click", async () => {
 });
 ```
 
-Note that if you log the output details, they might look something like this:
+توجه داشته باشید که اگر جزئیات خروجی را لاگ کنید، ممکن است چیزی شبیه به این باشد:
 
 ```js
 console.log(
@@ -111,10 +104,10 @@ console.log(
 // audiooutput: Realtek Digital Output (Realtek(R) Audio) id = 0wE6fURSZ20H0N2NbxqgowQJLWbwo+5ablCVVJwRM3k=
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
