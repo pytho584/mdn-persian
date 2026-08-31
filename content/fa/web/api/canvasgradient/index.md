@@ -1,10 +1,4 @@
 ---
-title: "CanvasGradient"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasGradient"
-status: "needs-translation"
----
-
----
 title: CanvasGradient
 slug: Web/API/CanvasGradient
 page-type: web-api-interface
@@ -13,28 +7,28 @@ browser-compat: api.CanvasGradient
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`CanvasGradient`** interface represents an [opaque object](https://en.wikipedia.org/wiki/Opaque_data_type) describing a gradient. It is returned by the methods {{domxref("CanvasRenderingContext2D.createLinearGradient()")}}, {{domxref("CanvasRenderingContext2D.createConicGradient()")}} or {{domxref("CanvasRenderingContext2D.createRadialGradient()")}}.
+رابط **`CanvasGradient`** نمایانگر یک [شیء مات](https://en.wikipedia.org/wiki/Opaque_data_type) است که یک گرادیان را توصیف می‌کند. این رابط توسط متدهای {{domxref("CanvasRenderingContext2D.createLinearGradient()")}}، {{domxref("CanvasRenderingContext2D.createConicGradient()")}} یا {{domxref("CanvasRenderingContext2D.createRadialGradient()")}} بازگردانده می‌شود.
 
-It can be used as a {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} or {{domxref("CanvasRenderingContext2D.strokeStyle", "strokeStyle")}}.
+می‌توان از آن به عنوان `fillStyle` یا `strokeStyle` استفاده کرد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_As an opaque object, there is no exposed property._
+_به عنوان یک شیء مات، هیچ ویژگی آشکاری وجود ندارد._
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("CanvasGradient.addColorStop()")}}
-  - : Adds a new stop, defined by an `offset` and a `color`, to the gradient.
+  - یک توقف جدید را که توسط یک `offset` و یک `color` تعریف می‌شود، به گرادیان اضافه می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Creator methods in {{domxref("CanvasRenderingContext2D")}}.
-- The {{HTMLElement("canvas")}} element and its associated interface, {{domxref("HTMLCanvasElement")}}.
+- متدهای ایجادکننده در {{domxref("CanvasRenderingContext2D")}}.
+- عنصر {{HTMLElement("canvas")}} و رابط مرتبط با آن، {{domxref("HTMLCanvasElement")}}.
