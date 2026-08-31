@@ -1,7 +1,7 @@
 ---
 title: "ARIA: toolbar role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/toolbar_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,90 +15,90 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `toolbar` role defines the containing element as a collection of commonly used function buttons or controls represented in a compact visual form.
+نقش `toolbar` عنصرِ شامل را به‌عنوان مجموعه‌ای از دکمه‌ها یا کنترل‌های پرکاربرد که به‌صورت فشرده‌ای بصری نمایش داده می‌شوند، تعریف می‌کند.
 
-## Description
+## توضیحات
 
-A toolbar is a collection of commonly used controls, such as buttons or checkboxes, grouped together in a compact visual form. The `toolbar` role can be used to communicate the presence and purpose of such a grouping to screen reader users and can help reduce the number of tab stops for keyboard users. Only use the `toolbar` role to group 3 or more controls.
+نوار ابزار (toolbar) مجموعه‌ای از کنترل‌های پرکاربرد، مانند دکمه‌ها یا چک‌باکس‌ها است که به‌صورت فشرده در کنار هم گروه‌بندی شده‌اند. نقش `toolbar` می‌تواند برای انتقال وجود و هدف چنین گروه‌بندی به کاربران صفحه‌خوان استفاده شود و به کاهش تعداد توقف‌های تب (tab stops) برای کاربران صفحه‌کلید کمک کند. فقط زمانی از نقش `toolbar` استفاده کنید که ۳ یا بیشتر کنترل را گروه‌بندی می‌کنید.
 
-The toolbar is commonly a subset of functions found in a `menubar` as a way to reduce user effort. If you have more than one toolbar in a menubar, each toolbar requires a label; which you can include with [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label).
+نوار ابزار معمولاً زیرمجموعه‌ای از عملکردهای موجود در یک `menubar` است تا تلاش کاربر را کاهش دهد. اگر بیش از یک نوار ابزار در یک منوبار دارید، هر نوار ابزار نیاز به برچسب دارد؛ که می‌توانید با [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) یا [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) آن را اضافه کنید.
 
-When creating a toolbar, you need to implement focus management and keyboard interactions within the toolbar, handling when the same keyboard interactions is used both in the toolbar and in included native control. The <kbd>Left Arrow</kbd> and <kbd>Right Arrow</kbd> should be used to navigate between the controls within a horizontal tool bar. The <kbd>Up Arrow</kbd> and <kbd>Down Arrow</kbd> should be used if the toolbar is vertical — in which case you also want to include the `aria-orientation="vertical"` — or, in a horizontal toolbar, can be reserved for operating controls, such as spin buttons that require vertical arrow keys to operate.
+هنگام ایجاد یک نوار ابزار، باید مدیریت فوکوس و تعاملات صفحه‌کلید را در داخل نوار ابزار پیاده‌سازی کنید و مواردی را که تعاملات صفحه‌کلید یکسان هم در نوار ابزار و هم در کنترل‌های بومی موجود استفاده می‌شود، مدیریت کنید. از <kbd>پیکان چپ</kbd> و <kbd>پیکان راست</kbd> برای پیمایش بین کنترل‌های داخل یک نوار ابزار افقی استفاده کنید. اگر نوار ابزار عمودی است — در این صورت باید `aria-orientation="vertical"` را نیز اضافه کنید — از <kbd>پیکان بالا</kbd> و <kbd>پیکان پایین</kbd> استفاده کنید؛ یا در یک نوار ابزار افقی، این کلیدها را می‌توان برای کار با کنترل‌هایی مانند دکمه‌های اسپینر (spin buttons) که برای کار کردن به کلیدهای پیکان عمودی نیاز دارند، اختصاص داد.
 
-Avoid including controls whose operation requires arrow keys used for toolbar navigation. If you must include such a control, make it the last control in the toolbar. For example, in a horizontal toolbar, a textbox could be included as the last element.
+از گنجاندن کنترل‌هایی که عملکرد آن‌ها به کلیدهای پیکانی مورد استفاده برای پیمایش نوار ابزار نیاز دارد، خودداری کنید. اگر باید چنین کنترلی را اضافه کنید، آن را به‌عنوان آخرین کنترل در نوار ابزار قرار دهید. به عنوان مثال، در یک نوار ابزار افقی، می‌توان یک جعبه متن را به‌عنوان عنصر آخر قرار داد.
 
-If any of the otherwise interactive elements within the toolbar are temporarily disabled, consider letting them remain focusable so screen reader users can be made aware of their presence.
+اگر هر یک از عناصر به‌طور معمول تعاملی داخل نوار ابزار به‌طور موقت غیرفعال شده‌اند، در نظر بگیرید که آن‌ها را قابل فوکوس نگه دارید تا کاربران صفحه‌خوان بتوانند از وجود آن‌ها مطلع شوند.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
 - [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation)
-  - : Elements with the role toolbar have an implicit `aria-orientation` value of horizontal.
+  - : عناصر با نقش toolbar دارای مقدار ضمنی `aria-orientation` برابر با `horizontal` هستند.
 
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) / [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
-  - : If the toolbar has a visible label, reference it by ID with the `aria-labelledby` attribute. Otherwise, provide an `aria-label`. If there is more than one toolbar in a menu, naming is required.
+  - : اگر نوار ابزار برچسب قابل مشاهده دارد، با ویژگی `aria-labelledby` به شناسه آن ارجاع دهید. در غیر این صورت، یک `aria-label` ارائه دهید. اگر بیش از یک نوار ابزار در یک منو وجود داشته باشد، نام‌گذاری الزامی است.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-Implement focus management so the keyboard tab sequence includes one stop for the toolbar and arrow keys move focus among the controls in the toolbar.
+مدیریت فوکوس را به‌گونه‌ای پیاده‌سازی کنید که توالی تب صفحه‌کلید شامل یک توقف برای نوار ابزار باشد و کلیدهای پیکان فوکوس را بین کنترل‌های نوار ابزار جابه‌جا کنند.
 
-- <kbd>Tab</kbd> and <kbd>Shift + Tab</kbd>
-  - : Move focus into and out of the toolbar. When focus moves into a toolbar:
-    - If focus is moving into the toolbar for the first time, focus is set on the first control that is not disabled.
-    - If the toolbar has previously contained focus, focus is optionally set on the control that last had focus. Otherwise, it is set on the first control that is not disabled.
+- <kbd>Tab</kbd> و <kbd>Shift + Tab</kbd>
+  - : فوکوس را به داخل و خارج از نوار ابزار منتقل می‌کنند. وقتی فوکوس وارد نوار ابزار می‌شود:
+    - اگر فوکوس برای اولین بار وارد نوار ابزار می‌شود، فوکوس روی اولین کنترلی که غیرفعال نیست قرار می‌گیرد.
+    - اگر نوار ابزار قبلاً دارای فوکوس بوده است، بنا به انتخاب، فوکوس روی کنترلی قرار می‌گیرد که آخرین بار فوکوس داشته است. در غیر این صورت، روی اولین کنترلی که غیرفعال نیست قرار می‌گیرد.
 
-- <kbd>Home</kbd> (Optional)
-  - : Moves focus to first element.
+- <kbd>Home</kbd> (اختیاری)
+  - : فوکوس را به اولین عنصر منتقل می‌کند.
 
-- <kbd>End</kbd> (Optional)
-  - : Moves focus to last element.
+- <kbd>End</kbd> (اختیاری)
+  - : فوکوس را به آخرین عنصر منتقل می‌کند.
 
-#### Horizontal toolbar
+#### نوار ابزار افقی
 
-Elements with the role toolbar have an implicit `aria-orientation` value of horizontal. If the toolbar indeed has this orientation, the following keyboard interactions need to be implemented:
+عناصر با نقش toolbar دارای مقدار ضمنی `aria-orientation` برابر با `horizontal` هستند. اگر نوار ابزار واقعاً این جهت‌گیری را دارد، تعاملات صفحه‌کلید زیر باید پیاده‌سازی شوند:
 
-- <kbd>Left Arrow</kbd>
-  - : Moves focus to the previous control. Optionally, focus movement may wrap from the first element to the last element.
+- <kbd>پیکان چپ</kbd>
+  - : فوکوس را به کنترل قبلی منتقل می‌کند. بنا به انتخاب، حرکت فوکوس ممکن است از اولین عنصر به آخرین عنصر بپیچد (wrap).
 
-- <kbd>Right Arrow</kbd>
-  - : Moves focus to the next control. Optionally, focus movement may wrap from the last element to the first element.
+- <kbd>پیکان راست</kbd>
+  - : فوکوس را به کنترل بعدی منتقل می‌کند. بنا به انتخاب، حرکت فوکوس ممکن است از آخرین عنصر به اولین عنصر بپیچد.
 
-In toolbars with multiple rows of controls, allow the left and right arrows to wraps from row to row, leaving the option of reserving vertical arrow keys for operating controls, such as navigating among radios buttons, or incrementing/decrementing a numeric spinner.
+در نوار ابزارهای دارای چند ردیف کنترل، اجازه دهید کلیدهای چپ و راست از ردیفی به ردیف دیگر بپیچند و گزینه اختصاص دادن کلیدهای پیکان عمودی را برای کار با کنترل‌ها، مانند پیمایش بین دکمه‌های رادیویی یا افزایش/کاهش عددی اسپینر، باقی بگذارید.
 
-#### Vertical toolbar
+#### نوار ابزار عمودی
 
-If the toolbar is vertical, ensure `aria-orientation="vertical"` is set, and the following keyboard interactions are implemented:
+اگر نوار ابزار عمودی است، مطمئن شوید که `aria-orientation="vertical"` تنظیم شده است و تعاملات صفحه‌کلید زیر پیاده‌سازی شده‌اند:
 
-- <kbd>Up Arrow</kbd>
-  - : Moves focus to the previous control. Optionally, focus movement may wrap from the first element to the last element.
+- <kbd>پیکان بالا</kbd>
+  - : فوکوس را به کنترل قبلی منتقل می‌کند. بنا به انتخاب، حرکت فوکوس ممکن است از اولین عنصر به آخرین عنصر بپیچد.
 
-- <kbd>Down Arrow</kbd>
-  - : Moves focus to the next control. Optionally, focus movement may wrap from the last element to the first element.
+- <kbd>پیکان پایین</kbd>
+  - : فوکوس را به کنترل بعدی منتقل می‌کند. بنا به انتخاب، حرکت فوکوس ممکن است از آخرین عنصر به اولین عنصر بپیچد.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-Implement focus management so the keyboard tab sequence includes one stop for the toolbar and arrow keys move focus among the controls in the toolbar. When tabbing into the toolbar, focus returns to the control that last had focus.
+مدیریت فوکوس را به‌گونه‌ای پیاده‌سازی کنید که توالی تب صفحه‌کلید شامل یک توقف برای نوار ابزار باشد و کلیدهای پیکان فوکوس را بین کنترل‌های نوار ابزار جابه‌جا کنند. هنگام ورود با تب به نوار ابزار، فوکوس به کنترلی که آخرین بار فوکوس داشته بازمی‌گردد.
 
-While the toolbar element itself does not receive focus, focus on movement into, out of, and within the toolbar has to be managed. On load, the first element in the tabbing sequence within the toolbar has `tabindex="0"` with `tabindex="-1"` set on all other focusable elements within the toolbar. Depending on the [keyboard interaction], the element receiving focus gets set to `tabindex="0"` and the element that just lost focus gets switched back to `tabindex="-1"`. Set focus, `element.focus()`, on the element that has `tabindex="0"`. This is called "roving tabindex". A benefit of using roving tabindex to manage focus is that the browser will scroll the newly focused element into view.
+اگرچه خود عنصر نوار ابزار فوکوس دریافت نمی‌کند، فوکوس در هنگام حرکت به داخل، خارج و داخل خود نوار ابزار باید مدیریت شود. هنگام بارگذاری، اولین عنصر در توالی تب در داخل نوار ابزار دارای `tabindex="0"` است و `tabindex="-1"` روی همه عناصر قابل فوکوس دیگر در داخل نوار ابزار تنظیم می‌شود. بسته به [تعامل صفحه‌کلید]، عنصری که فوکوس دریافت می‌کند روی `tabindex="0"` تنظیم می‌شود و عنصری که به تازگی فوکوس را از دست داده به `tabindex="-1"` برمی‌گردد. فوکوس را با `element.focus()` روی عنصری که `tabindex="0"` دارد تنظیم کنید. به این کار «roving tabindex» می‌گویند. مزیت استفاده از roving tabindex برای مدیریت فوکوس این است که مرورگر عنصر تازه فوکوس‌شده را به نمای دید اسکرول می‌کند.
 
-If the design calls for a specific element to be focused the next time the user moves focus into the toolbar with <kbd>Tab</kbd> or <kbd>Shift + Tab</kbd>, check if that target element has `tabindex="0"` when toolbar loses focus.
+اگر طراحی ایجاب می‌کند که عنصر خاصی دفعه بعد که کاربر با <kbd>Tab</kbd> یا <kbd>Shift + Tab</kbd> فوکوس را به نوار ابزار منتقل می‌کند، فوکوس بگیرد، بررسی کنید که آن عنصر هدف هنگام از دست رفتن فوکوس نوار ابزار دارای `tabindex="0"` باشد.
 
-When the toolbar has focus within it, provide visual cues. When an element within the toolbar has focus, a visual cue must be included on both the toolbar itself - to help the toolbar supports directional navigation with the arrow keys - and the control that has focus. The CSS pseudoclasses of `:focus` and `:focus-within` can be used to target both elements.
+وقتی نوار ابزار در داخل خود فوکوس دارد، نشانه‌های بصری ارائه دهید. وقتی عنصری در داخل نوار ابزار فوکوس دارد، باید یک نشانه بصری هم روی خود نوار ابزار — برای کمک به پشتیبانی نوار ابزار از ناوبری جهتی با کلیدهای پیکان — و هم روی کنترلی که فوکوس دارد، گنجانده شود. شبه‌کلاس‌های CSS `:focus` و `:focus-within` می‌توانند برای هدف قرار دادن هر دو عنصر استفاده شوند.
 
-## Examples
+## مثال‌ها
 
-[Toolbar example from ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/)
+[مثال نوار ابزار از راهنمای شیوه‌های تألیف ARIA (APG)](https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/)
 
-## Accessibility concerns
+## نگرانی‌های دسترسی
 
-Avoid including controls whose operation requires arrow keys used for toolbar navigation (right and left arrows, or top and bottom for vertical toolbars). If you must include such a control, make it the last control in the toolbar. For example, in a horizontal toolbar, a textbox could be included as the last element.
+از گنجاندن کنترل‌هایی که عملکرد آن‌ها به کلیدهای پیکانی مورد استفاده برای پیمایش نوار ابزار نیاز دارد (پیکان راست و چپ، یا بالا و پایین برای نوار ابزار عمودی) خودداری کنید. اگر باید چنین کنترلی را اضافه کنید، آن را به‌عنوان آخرین کنترل در نوار ابزار قرار دهید. به عنوان مثال، در یک نوار ابزار افقی، می‌توان یک جعبه متن را به‌عنوان عنصر آخر قرار داد.
 
-If any of the otherwise interactive elements within the toolbar are disabled, consider letting them remain focusable so screen reader users can be made aware of their presence.
+اگر هر یک از عناصر به‌طور معمول تعاملی داخل نوار ابزار غیرفعال هستند، در نظر بگیرید که آن‌ها را قابل فوکوس نگه دارید تا کاربران صفحه‌خوان بتوانند از وجود آن‌ها مطلع شوند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [The CSS `:focus` pseudoclass](/en-US/docs/Web/CSS/Reference/Selectors/:focus)
-- [The CSS `:focus-within` pseudoclass](/en-US/docs/Web/CSS/Reference/Selectors/:focus-within)
+- [شبه‌کلاس CSS `:focus`](/en-US/docs/Web/CSS/Reference/Selectors/:focus)
+- [شبه‌کلاس CSS `:focus-within`](/en-US/docs/Web/CSS/Reference/Selectors/:focus-within)
