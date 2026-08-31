@@ -1,7 +1,7 @@
 ---
 title: "Text labels and names"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Text_labels_and_names"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -11,15 +11,15 @@ page-type: guide
 sidebar: accessibilitysidebar
 ---
 
-There are many situations in which a control, dialog, or other website feature should be given a descriptive name or label to allow users of assistive technologies to understand what its purpose is and how to operate it correctly. There are a number of different types of problems in this category, found in different contexts, and each has its own solution. The different problems and solutions are discussed in the sections below.
+موقعیت‌های زیادی وجود دارد که در آن‌ها باید به یک کنترل، گفتگو یا سایر ویژگی‌های وب‌سایت، یک نام یا برچسب توصیفی داده شود تا کاربران فناوری‌های کمکی بتوانند هدف آن را درک کرده و نحوه استفاده صحیح از آن را بدانند. مشکلات مختلفی در این دسته وجود دارد که در بافت‌های متفاوتی یافت می‌شوند و هرکدام راه‌حل مخصوص به خود را دارند. مشکلات و راه‌حل‌های مختلف در بخش‌های زیر بحث شده‌اند.
 
-## Use alt attribute to label area elements that have the href attribute
+## برای برچسب‌گذاری عناصر area که دارای ویژگی href هستند از ویژگی alt استفاده کنید
 
-In image maps, give each {{htmlelement("area")}} element an `alt` attribute containing a name that describes what resources the areas links to. Failure to do so makes an image map hard to use for users of assistive technology — they need alternative text to be able to understand the purpose of an image.
+در نقشه‌های تصویری، به هر عنصر {{htmlelement("area")}} یک ویژگی `alt` حاوی نامی بدهید که توصیف می‌کند آن ناحیه به چه منابعی پیوند می‌دهد. انجام ندادن این کار، استفاده از نقشه تصویری را برای کاربران فناوری کمکی دشوار می‌کند — آن‌ها برای درک هدف یک تصویر به متن جایگزین نیاز دارند.
 
-### Examples
+### مثال‌ها
 
-The following example show an image map (taken from [H24: Providing text alternatives for the area elements of image maps](https://www.w3.org/TR/WCAG20-TECHS/H24.html)):
+مثال زیر یک نقشه تصویری را نشان می‌دهد (برگرفته از [H24: ارائه متن جایگزین برای عناصر area در نقشه‌های تصویری](https://www.w3.org/TR/WCAG20-TECHS/H24.html)):
 
 ```html
 <img
@@ -37,22 +37,22 @@ more information on that area." />
 </map>
 ```
 
-See the [`<area>` element reference page](/en-US/docs/Web/HTML/Reference/Elements/area) for a live interactive example.
+برای مشاهده یک مثال تعاملی زنده، به [صفحه مرجع عنصر `<area>`](/en-US/docs/Web/HTML/Reference/Elements/area) مراجعه کنید.
 
-### See also
+### همچنین ببینید
 
 - {{htmlelement("area")}}
-- [H24: Providing text alternatives for the area elements of image maps](https://www.w3.org/TR/WCAG20-TECHS/H24.html)
+- [H24: ارائه متن جایگزین برای عناصر area در نقشه‌های تصویری](https://www.w3.org/TR/WCAG20-TECHS/H24.html)
 
-## Dialogs should be labeled
+## گفتگوها باید برچسب‌گذاری شوند
 
-For any container whose contents act as a dialog box (for example, a modal dialog asking the user to make a choice or respond to an action being taken), give it a descriptive label or name, so that assistive technology users can easily discover what its purpose is.
+برای هر ظرفی که محتویات آن به‌عنوان کادر گفتگو عمل می‌کند (مثلاً یک گفتگوی مُدال که از کاربر می‌خواهد انتخابی کند یا به اقدامی که انجام شده پاسخ دهد)، یک برچسب یا نام توصیفی به آن بدهید تا کاربران فناوری کمکی به‌راحتی بتوانند هدف آن را کشف کنند.
 
-A dialog box is generally denoted by an ARIA [`role="dialog"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role) or [`role="alertdialog"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role); you can use the [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) or [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attributes to provide a label.
+یک کادر گفتگو معمولاً با ARIA [`role="dialog"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role) یا [`role="alertdialog"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role) نشان داده می‌شود؛ می‌توانید از ویژگی‌های [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) یا [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) برای ارائه برچسب استفاده کنید.
 
-### Examples
+### مثال‌ها
 
-The following example shows a dialog box, defined as such using `role="dialog"` and labelled using `aria-labelledby`.
+مثال زیر یک کادر گفتگو را نشان می‌دهد که با استفاده از `role="dialog"` تعریف شده و با `aria-labelledby` برچسب‌گذاری شده است.
 
 ```html
 <div
@@ -67,7 +67,7 @@ The following example shows a dialog box, defined as such using `role="dialog"` 
 </div>
 ```
 
-If the dialog box doesn't have a heading, you can instead use `aria-label` to contain the label text:
+اگر کادر گفتگو سرتیتری ندارد، می‌توانید به‌جای آن از `aria-label` برای درج متن برچسب استفاده کنید:
 
 ```html
 <div role="dialog" aria-label="Personal details updated confirmation">
@@ -79,21 +79,21 @@ If the dialog box doesn't have a heading, you can instead use `aria-label` to co
 </div>
 ```
 
-### See also
+### همچنین ببینید
 
 - [`role="dialog"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role)
 - [`role="alertdialog"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alertdialog_role)
 - [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label)
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-- [Dialog authoring practices](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)
+- [روش‌های تألیف گفتگو](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)
 
-## Documents must have a title
+## اسناد باید دارای عنوان (title) باشند
 
-It is important in each HTML document to include a {{htmlelement("title")}} that describes the page's purpose. A common navigation technique for users of assistive technology is to infer what content a page contains by reading its title. If the title is not available, they have to navigate the page to determine its content, which can be a time consuming and potentially confusing process.
+در هر سند HTML مهم است که یک {{htmlelement("title")}} گنجانده شود که هدف صفحه را توصیف می‌کند. یک تکنیک رایج ناوبری برای کاربران فناوری کمکی این است که محتوای یک صفحه را با خواندن عنوان آن استنباط کنند. اگر عنوان در دسترس نباشد، آن‌ها باید در صفحه پیمایش کنند تا محتوای آن را تعیین کنند، که می‌تواند فرآیندی زمان‌بر و بالقوه گیج‌کننده باشد.
 
-### Examples
+### مثال‌ها
 
-The title for the reference article about the {{htmlelement("title")}} element is as follows:
+عنوان مقاله مرجع درباره عنصر {{htmlelement("title")}} به این صورت است:
 
 ```html
 <title>
@@ -102,33 +102,33 @@ The title for the reference article about the {{htmlelement("title")}} element i
 </title>
 ```
 
-Another example might look like so:
+مثال دیگر می‌تواند به این شکل باشد:
 
 ```html
 <title>Fill in your details to register — myGov services</title>
 ```
 
-To help the user, you can update the page title value to reflect significant page state changes (such as form validation problems):
+برای کمک به کاربر، می‌توانید مقدار عنوان صفحه را به‌روزرسانی کنید تا تغییرات مهم وضعیت صفحه (مانند مشکلات اعتبارسنجی فرم) را منعکس کند:
 
 ```html
 <title>2 errors — Fill in your details to register — myGov services</title>
 ```
 
-### See also
+### همچنین ببینید
 
 - {{htmlelement("title")}}
 
-## Embedded content must be labeled
+## محتوای تعبیه‌شده باید برچسب‌گذاری شود
 
-Make sure that elements that embed content have a [title](/en-US/docs/Web/HTML/Reference/Global_attributes/title) attribute that describes the embedded content. This includes the {{htmlelement("embed")}} and {{htmlelement("object")}} elements. These elements are often used for graphical content, much like the {{HTMLelement("img")}} element. A descriptive title helps users of assistive technology understand what the element is showing.
+اطمینان حاصل کنید که عناصری که محتوا را تعبیه می‌کنند دارای ویژگی [title](/en-US/docs/Web/HTML/Reference/Global_attributes/title) هستند که محتوای تعبیه‌شده را توصیف می‌کند. این شامل عناصر {{htmlelement("embed")}} و {{htmlelement("object")}} می‌شود. این عناصر اغلب برای محتوای گرافیکی استفاده می‌شوند، بسیار شبیه به عنصر {{HTMLelement("img")}}. یک عنوان توصیفی به کاربران فناوری کمکی کمک می‌کند تا بفهمند عنصر چه چیزی را نشان می‌دهد.
 
-## Figures with optional captions should be labeled
+## شکل‌ها (Figures) با زیرنویس اختیاری باید برچسب‌گذاری شوند
 
-For best accessibility, include a {{HTMLElement("figcaption")}} within a {{HTMLElement("figure")}} element, even though doing so is technically optional. The caption is in addition to any alternative text on images within the figure. The caption describes the purpose of the figure in the document, which may be different from a description of a visual item, as provided by the alternative text.
+برای بهترین دسترس‌پذیری، یک {{HTMLElement("figcaption")}} را در داخل عنصر {{HTMLElement("figure")}} قرار دهید، حتی اگر از نظر فنی اختیاری باشد. زیرنویس علاوه بر هر متن جایگزینی برای تصاویر داخل شکل است. زیرنویس هدف شکل را در سند توصیف می‌کند، که ممکن است با توصیف یک آیتم بصری، همان‌طور که توسط متن جایگزین ارائه می‌شود، متفاوت باشد.
 
-### Example
+### مثال
 
-The following example shows code for a figure with a caption. The `alt` attribute of the {{htmlelement("img")}} describes the appearance of the image; the {{htmlelement("figcaption")}} describes it from a functional perspective (in this case, the Latin name of the flower in the image).
+مثال زیر کدی برای یک شکل با زیرنویس نشان می‌دهد. ویژگی `alt` عنصر {{htmlelement("img")}} ظاهر تصویر را توصیف می‌کند؛ {{htmlelement("figcaption")}} آن را از دیدگاه عملکردی توصیف می‌کند (در این مورد، نام لاتین گل در تصویر).
 
 ```html
 <figure>
@@ -139,17 +139,17 @@ The following example shows code for a figure with a caption. The `alt` attribut
 </figure>
 ```
 
-## Fieldset elements must be labeled
+## عناصر Fieldset باید برچسب‌گذاری شوند
 
-Fieldset elements must have a text description, similar to other form elements. Use the {{htmlelement("legend")}} element to describe the purpose of a fieldset.
+عناصر Fieldset باید مانند سایر عناصر فرم دارای توضیح متنی باشند. از عنصر {{htmlelement("legend")}} برای توصیف هدف یک fieldset استفاده کنید.
 
-## Use a legend to label a fieldset
+## برای برچسب‌گذاری یک fieldset از legend استفاده کنید
 
-When grouping a set of form elements together with a {{htmlelement("fieldset")}} element, you should include a nested {{htmlelement("legend")}} element inside it, containing a clear description of the group.
+هنگامی که مجموعه‌ای از عناصر فرم را با یک عنصر {{htmlelement("fieldset")}} گروه‌بندی می‌کنید، باید یک عنصر تودرتوی {{htmlelement("legend")}} در داخل آن قرار دهید که شامل توضیح واضحی از گروه باشد.
 
-Users of assistive technology find this description helpful when trying to work out the overall purpose of the group. Without the legend, they would have to navigate around the individual form controls in the group to infer an idea of the overall purpose, which could result in confusion.
+کاربران فناوری کمکی این توضیح را هنگام تلاش برای درک هدف کلی گروه مفید می‌یابند. بدون legend، آن‌ها باید در میان کنترل‌های فرم منفرد در گروه پیمایش کنند تا ایده‌ای از هدف کلی به دست آورند، که می‌تواند منجر به سردرگمی شود.
 
-### Examples
+### مثال‌ها
 
 ```html
 <form>
@@ -168,20 +168,20 @@ Users of assistive technology find this description helpful when trying to work 
 </form>
 ```
 
-You can see a live, interactive version of this example on the [`<fieldset>` reference page](/en-US/docs/Web/HTML/Reference/Elements/fieldset).
+می‌توانید نسخه زنده و تعاملی این مثال را در [صفحه مرجع `<fieldset>`](/en-US/docs/Web/HTML/Reference/Elements/fieldset) مشاهده کنید.
 
-### See also
+### همچنین ببینید
 
 - {{htmlelement("fieldset")}}
 - {{htmlelement("legend")}}
 
-## Form elements must be labeled
+## عناصر فرم باید برچسب‌گذاری شوند
 
-All elements within a form must have a {{htmlelement("label")}} that identifies its purpose. This applies to all types of {{htmlelement("input")}} items, as well as {{htmlelement("button")}}, {{htmlelement("output")}}, {{htmlelement("select")}}, {{htmlelement("textarea")}}, {{htmlelement("progress")}} and {{htmlelement("meter")}} elements, as well as any element with the [`switch` ARIA role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/switch_role).
+همه عناصر درون یک فرم باید یک {{htmlelement("label")}} داشته باشند که هدف آن را مشخص کند. این برای همه انواع موارد {{htmlelement("input")}} و همچنین عناصر {{htmlelement("button")}}، {{htmlelement("output")}}، {{htmlelement("select")}}، {{htmlelement("textarea")}}، {{htmlelement("progress")}} و {{htmlelement("meter")}}، و همچنین هر عنصری با [نقش ARIA switch](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/switch_role) صدق می‌کند.
 
-The form element can be placed inside the {{htmlelement("label")}}, in which case the association between the form element and the label is obvious from the structure. Or, you can create an association between a {{htmlelement("label")}} and a form element by specifying the form element's `id` value as the value of the label's `for` attribute.
+عنصر فرم را می‌توان در داخل {{htmlelement("label")}} قرار داد، در این صورت ارتباط بین عنصر فرم و برچسب از ساختار مشخص است. همچنین می‌توانید با تعیین مقدار `id` عنصر فرم به‌عنوان مقدار ویژگی `for` برچسب، ارتباطی بین {{htmlelement("label")}} و یک عنصر فرم ایجاد کنید.
 
-### Example
+### مثال
 
 ```html
 <label
@@ -193,19 +193,19 @@ The form element can be placed inside the {{htmlelement("label")}}, in which cas
 <label for="email-opt-in">Yes, please send me news about this product.</label>
 ```
 
-## Form elements should have a visible text label
+## عناصر فرم باید دارای برچسب متنی قابل مشاهده باشند
 
-In addition to having a {{htmlelement("label")}} for every form element, those labels should be visible, not hidden. Visible labels help _all_ users understand the purpose of a form element. Do not rely on placeholder text, because it disappears as soon as the user starts typing.
+علاوه بر داشتن {{htmlelement("label")}} برای هر عنصر فرم، این برچسب‌ها باید قابل مشاهده باشند، نه پنهان. برچسب‌های قابل مشاهده به _همه_ کاربران کمک می‌کنند تا هدف یک عنصر فرم را درک کنند. به متن placeholder (متن راهنما) تکیه نکنید، زیرا به محض شروع تایپ کاربر ناپدید می‌شود.
 
-## Frame elements must be labeled
+## عناصر قاب (Frame) باید برچسب‌گذاری شوند
 
-Frame elements, both {{htmlelement("iframe")}} and the older, obsolete {{htmlelement("frame")}}, must have a title to describe the contents of the frame. Use the `title` attribute to label a frame element. Without a title, users of assistive technologies have to navigate into the frame in order to understand what it contains, which can be difficult and confusing.
+عناصر قاب، هم {{htmlelement("iframe")}} و هم {{htmlelement("frame")}} قدیمی و منسوخ، باید دارای عنوانی برای توصیف محتویات قاب باشند. از ویژگی `title` برای برچسب‌گذاری یک عنصر قاب استفاده کنید. بدون عنوان، کاربران فناوری‌های کمکی باید برای درک محتوای قاب به داخل آن پیمایش کنند، که می‌تواند دشوار و گیج‌کننده باشد.
 
-The {{HTMLElement('frame')}} element is no longer part of the HTML specification. Support for it may be dropped by browsers in the future. In addition, it is difficult for screen readers to navigate pages with {{HTMLElement('frame')}} elements. For best accessibility and future maintenance, redesign any pages that use frames to use CSS to achieve a similar layout.
+عنصر {{HTMLElement('frame')}} دیگر بخشی از مشخصات HTML نیست. پشتیبانی از آن ممکن است در آینده توسط مرورگرها حذف شود. علاوه بر این، برای صفحه‌خوان‌ها پیمایش صفحات دارای عناصر {{HTMLElement('frame')}} دشوار است. برای بهترین دسترس‌پذیری و نگهداری در آینده، هر صفحه‌ای که از قاب‌ها استفاده می‌کند را بازطراحی کنید تا با استفاده از CSS به چیدمان مشابهی دست یابید.
 
-As a best practice, also provide a {{htmlelement("title")}} for the document that is enclosed in the frame, with content identical to the frame's `title` attribute. (This assumes that the enclosed document is under your control; if not, try to match the frame's `title` attribute to the document's title.) Some screen readers replace the contents of the `title` attribute with the contents of the enclosed document's {{htmlelement("title")}}. It's safest and most accessible to provide the same title in both places.
+به‌عنوان یک بهترین روش، همچنین یک {{htmlelement("title")}} برای سندی که در قاب محصور شده است فراهم کنید، با محتوایی یکسان با ویژگی `title` قاب. (این فرض می‌کند که سند محصور تحت کنترل شماست؛ اگر نه، سعی کنید ویژگی `title` قاب را با عنوان سند مطابقت دهید.) برخی صفحه‌خوان‌ها محتویات ویژگی `title` را با محتویات {{htmlelement("title")}} سند محصور جایگزین می‌کنند. امن‌ترین و در دسترس‌ترین کار این است که عنوان یکسانی را در هر دو مکان ارائه دهید.
 
-### Example
+### مثال
 
 ```html
 <iframe
@@ -216,77 +216,22 @@ As a best practice, also provide a {{htmlelement("title")}} for the document tha
 </iframe>
 ```
 
-## Headings must be labeled
+## سرتیترها باید برچسب‌گذاری شوند
 
-Make sure that your headings have non-empty text content, and are not hidden, such as with CSS `display:none` or `aria-hidden=true`. Users of screen readers rely on headings to understand the structure and content of a document.
+مطمئن شوید که سرتیترهای شما دارای محتوای متنی غیر خالی هستند و پنهان نیستند، مانند استفاده از CSS `display:none` یا `aria-hidden=true`. کاربران صفحه‌خوان برای درک ساختار و محتوای یک سند به سرتیترها تکیه می‌کنند.
 
-Also, be sure you are using [heading elements](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements) only for actual section headings, and not as a shortcut way to make text stand out. Screen reader users typically "skim" a page's headings, much like sighted users; non-heading text that is marked-up with heading elements can cause confusion.
+همچنین، مطمئن شوید که از [عناصر سرتیتر](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements) فقط برای سرتیترهای واقعی بخش‌ها استفاده می‌کنید، نه به‌عنوان یک راه میانبر برای برجسته کردن متن. کاربران صفحه‌خوان معمولاً سرتیترهای صفحه را «مرور» می‌کنند، بسیار شبیه به کاربران بینا؛ متنی که سرتیتر نیست اما با عناصر سرتیتر علامت‌گذاری شده باشد می‌تواند باعث سردرگمی شود.
 
-## Headings should have visible text content
+## سرتیترها باید دارای محتوای متنی قابل مشاهده باشند
 
-Make sure that your headings have non-empty text content, and are not hidden, such as with CSS `display:none` or `aria-hidden=true`. Users of screen readers rely on headings to understand the structure and content of a document. Do not use heading elements to mark up images or other graphical content.
+مطمئن شوید که سرتیترهای شما دارای محتوای متنی غیر خالی هستند و پنهان نیستند، مانند استفاده از CSS `display:none` یا `aria-hidden=true`. کاربران صفحه‌خوان برای درک ساختار و محتوای یک سند به سرتیترها تکیه می‌کنند. از عناصر سرتیتر برای علامت‌گذاری تصاویر یا سایر محتوای گرافیکی استفاده نکنید.
 
-## Use title attribute to describe `<iframe>` content
+## برای توصیف محتوای `<iframe>` از ویژگی title استفاده کنید
 
-Make sure that {{htmlelement("iframe")}} elements have a `title` attribute to describe the contents of the frame. Without a title, users of assistive technologies have to navigate into the frame in order to understand what it contains, which can be difficult and confusing.
+مطمئن شوید که عناصر {{htmlelement("iframe")}} دارای ویژگی `title` برای توصیف محتویات قاب هستند. بدون عنوان، کاربران فناوری‌های کمکی باید برای درک محتوای قاب به داخل آن پیمایش کنند، که می‌تواند دشوار و گیج‌کننده باشد.
 
-As a best practice, also provide a {{htmlelement("title")}} for the document that is enclosed in the frame, with content identical to the frame's `title` attribute. (This assumes that the enclosed document is under your control; if not, try to match the frame's `title` attribute to the document's title.) Some screen readers replace the contents of the `title` attribute with the contents of the enclosed document's {{htmlelement("title")}}. It's safest and most accessible to provide the same title in both places.
+به‌عنوان یک بهترین روش، همچنین یک {{htmlelement("title")}} برای سندی که در قاب محصور شده است فراهم کنید، با محتوایی یکسان با ویژگی `title` قاب. (این فرض می‌کند که سند محصور تحت کنترل شماست؛ اگر نه، سعی کنید ویژگی `title` قاب را با عنوان سند مطابقت دهید.) برخی صفحه‌خوان‌ها محتویات ویژگی `title` را با محتویات {{htmlelement("title")}} سند محصور جایگزین می‌کنند. امن‌ترین و در دسترس‌ترین کار این است که عنوان یکسانی را در هر دو مکان ارائه دهید.
 
-## Content with images must be labeled
+## محتوای دارای تصویر باید برچسب‌گذاری شود
 
-Provide descriptive text for all contentful (that is, non-decorative) images and image-like elements. This includes SVG images, {{htmlelement("img")}}, {{htmlelement("canvas")}}, {{htmlelement("map")}}, and {{htmlelement("area")}} elements, as well as {{htmlelement("input")}} elements where `type=image` and {{htmlelement("object")}} elements where the `type` starts with `image/`. The typical way to do this is with the `alt` attribute, but for elements that don't allow the `alt` attribute, such as {{htmlelement("canvas")}}, use [`role="img"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/img_role) and [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) instead. Be sure that the description conveys what is shown in the image.
-
-For `alt` attributes on images which _are_ purely decorative, an empty value can be used to signal to accessibility tools that the element should be ignored.
-
-### Example
-
-```html
-<img
-  src="milkweed.jgp"
-  alt="Black and white close-up photo of milkweed flowers" />
-```
-
-## Interactive elements must be labeled
-
-If an element is intended for users to interact with it, it should have a label. Interactive elements include links ({{htmlelement("a")}}), form elements, buttons, and any element that has a handler for mouse or keyboard events. The way to label an element depends on its type: for form elements, use a {{htmlelement("label")}}; for links, buttons and clickable elements, the text content of the element typically provides the label. If no other option exists for labeling an element, use the [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) attribute.
-
-## Use label attribute on optgroup elements
-
-In an {{htmlelement("optgroup")}} element, use the `label` attribute to describe the group so that assistive technologies can access it for their users.
-
-### Example
-
-In this example, the `label` attribute on the {{HTMLElement('optgroup')}} elements gives a category name for the group of options.
-
-```html
-<label for="dino-select">Choose a dinosaur:</label>
-<select id="dino-select">
-  <optgroup label="Theropods">
-    <option>Tyrannosaurus</option>
-    <option>Velociraptor</option>
-    <option>Deinonychus</option>
-  </optgroup>
-  <optgroup label="Sauropods">
-    <option>Diplodocus</option>
-    <option>Saltasaurus</option>
-    <option>Apatosaurus</option>
-  </optgroup>
-</select>
-```
-
-## Toolbars must be labeled when there is more than one toolbar
-
-If you define more than one toolbar in a web application using the ARIA `toolbar` role, you must use the [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) attribute to label each one so that it can be described by assistive technology. It is a good practice to label a toolbar, even if there is only one per page.
-
-### See also
-
-- [W3C ARIA toolbar example](https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/examples/toolbar/)
-
-## Related WCAG success criteria
-
-- [1.1.1 Non-text Content (A)](https://w3c.github.io/wcag/guidelines/22/#non-text-content)
-  - : All non-text content that is presented to the user has a text alternative that serves the equivalent purpose, except for the situations listed in the above link.
-- [2.4.4 Link Purpose (In Context) (A)](https://w3c.github.io/wcag/guidelines/22/#link-purpose-in-context)
-  - : The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link context, except where the purpose of the link would be ambiguous to users in general.
-- [2.4.9 Link Purpose (Link Only) (AAA)](https://w3c.github.io/wcag/guidelines/22/#link-purpose-link-only)
-  - : A mechanism is available to allow the purpose of each link to be identified from link text alone, except where the purpose of the link would be ambiguous to users in general.
+برای همه تصاویر دارای محتوا (یعنی غیر تزئینی) و عناصر ش
