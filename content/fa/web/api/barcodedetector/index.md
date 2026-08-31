@@ -1,7 +1,7 @@
 ---
 title: "BarcodeDetector"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BarcodeDetector"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,32 +15,32 @@ browser-compat: api.BarcodeDetector
 
 {{securecontext_header}}{{APIRef("Barcode Detector API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`BarcodeDetector`** interface of the {{domxref('Barcode Detection API', '', '', 'nocode')}} allows detection of linear and two dimensional barcodes in images.
+رابط **`BarcodeDetector`** از {{domxref('Barcode Detection API', '', '', 'nocode')}} امکان تشخیص بارکدهای خطی و دوبعدی را در تصاویر فراهم می‌کند.
 
-## Constructors
+## سازنده‌ها
 
 - {{domxref('BarcodeDetector.BarcodeDetector', 'BarcodeDetector.BarcodeDetector()')}} {{Experimental_Inline}}
-  - : Creates and returns a `BarcodeDetector` object, with optional `BarcodeDetectorOptions`.
+  - : یک شیء `BarcodeDetector` را با `BarcodeDetectorOptions` اختیاری ایجاد و بازمی‌گرداند.
 
-## Static methods
+## متدهای ایستا
 
 - {{domxref('BarcodeDetector/getSupportedFormats_static', 'getSupportedFormats()')}} {{Experimental_Inline}}
-  - : Returns a {{jsxref('Promise')}} which fulfills with an {{jsxref('Array')}} of supported [barcode format types](/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats).
+  - : یک {{jsxref('Promise')}} را برمی‌گرداند که با یک {{jsxref('Array')}} از [barcode format types](/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats) پشتیبانی‌شده تکمیل می‌شود.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref('BarcodeDetector.detect', 'detect()')}} {{Experimental_Inline}}
-  - : Returns a {{jsxref('Promise')}} which fulfills with an array of `DetectedBarcode` objects with the following properties:
-    - `boundingBox`: A {{domxref('DOMRectReadOnly')}}, which returns the dimensions of a rectangle representing the extent of a detected barcode, aligned with the image.
-    - `cornerPoints`: The x and y co-ordinates of the four corner points of the detected barcode relative to the image, starting with the top left and working clockwise. This may not be square due to perspective distortions within the image.
-    - `format`: The detected barcode format. (For a full list of formats, consult the [supported barcode format](/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats)) list.
-    - `rawValue`: A string decoded from the barcode data.
+  - : یک {{jsxref('Promise')}} را برمی‌گرداند که با آرایه‌ای از اشیاء `DetectedBarcode` با ویژگی‌های زیر تکمیل می‌شود:
+    - `boundingBox`: یک {{domxref('DOMRectReadOnly')}} که ابعاد یک مستطیل را برمی‌گرداند که گستره‌ی بارکد شناسایی‌شده را نشان می‌دهد و با تصویر هم‌راستا است.
+    - `cornerPoints`: مختصات x و y چهار گوشه‌ی بارکد شناسایی‌شده نسبت به تصویر، که از بالا چپ شروع شده و در جهت عقربه‌های ساعت حرکت می‌کند. این نقاط ممکن است به دلیل اعوجاج‌های پرسپکتیو در تصویر مربع نباشند.
+    - `format`: قالب بارکد شناسایی‌شده. (برای فهرست کامل قالب‌ها، به فهرست [supported barcode format](/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats) مراجعه کنید.)
+    - `rawValue`: یک رشته که از داده‌های بارکد رمزگشایی شده است.
 
-## Examples
+## مثال‌ها
 
-### Creating A Detector
+### ایجاد یک آشکارساز
 
-This example creates a new barcode detector object, with specified supported formats and tests for browser compatibility.
+این مثال یک شیء جدید تشخیص بارکد، با قالب‌های پشتیبانی‌شده‌ی مشخص‌شده ایجاد می‌کند و سازگاری مرورگر را آزمایش می‌کند.
 
 ```js
 // check compatibility
@@ -56,9 +56,9 @@ if (!("BarcodeDetector" in globalThis)) {
 }
 ```
 
-### Getting Supported Formats
+### دریافت قالب‌های پشتیبانی‌شده
 
-The following example calls the `getSupportedFormats()` static method and logs the results to the console.
+مثال زیر متد ایستا `getSupportedFormats()` را فراخوانی می‌کند و نتایج را در کنسول ثبت می‌کند.
 
 ```js
 // check supported types
@@ -67,9 +67,9 @@ BarcodeDetector.getSupportedFormats().then((supportedFormats) => {
 });
 ```
 
-### Detect Barcodes
+### تشخیص بارکدها
 
-This example uses the `detect()` method to detect the barcodes within the given image. These are iterated over and the barcode data is logged to the console.
+این مثال از متد `detect()` برای شناسایی بارکدهای موجود در تصویر داده‌شده استفاده می‌کند. این بارکدها پیمایش می‌شوند و داده‌های بارکد در کنسول ثبت می‌شوند.
 
 ```js
 barcodeDetector
@@ -82,15 +82,15 @@ barcodeDetector
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [barcodefaq.com: A website with information about different barcodes and examples of the different types.](https://www.barcodefaq.com/)
 - [Accelerated Shape Detection in Images](https://developer.chrome.com/docs/capabilities/shape-detection#barcodedetector)
