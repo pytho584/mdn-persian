@@ -1,7 +1,7 @@
 ---
 title: "BatteryManager: dischargingtimechange event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/dischargingtimechange_event"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,11 +14,11 @@ browser-compat: api.BatteryManager.dischargingtimechange_event
 
 {{ApiRef("Battery API")}}{{securecontext_header}}
 
-The **`dischargingtimechange`** event of the {{domxref("BatteryManager")}} interface is fired when the battery {{domxref("BatteryManager.dischargingTime", "dischargingTime")}} property is updated.
+رویداد **`dischargingtimechange`** از رابط {{domxref("BatteryManager")}} زمانی رخ می‌دهد که ویژگی {{domxref("BatteryManager.dischargingTime", "dischargingTime")}} باتری به‌روزرسانی شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("dischargingtimechange", (event) => { })
@@ -26,11 +26,11 @@ addEventListener("dischargingtimechange", (event) => { })
 ondischargingtimechange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-_A generic {{domxref("Event")}}._
+_یک {{domxref("Event")}} عمومی._
 
-## Example
+## مثال
 
 ### HTML
 
@@ -52,15 +52,15 @@ navigator.getBattery().then((battery) => {
 
 {{ EmbedLiveSample('Example', '100%', 40) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("BatteryManager")}}
 - {{domxref("Navigator.getBattery()")}}
