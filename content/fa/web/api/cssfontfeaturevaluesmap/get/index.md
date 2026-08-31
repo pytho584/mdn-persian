@@ -1,11 +1,5 @@
 ---
 title: "CSSFontFeatureValuesMap: get() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesMap/get"
-status: "needs-translation"
----
-
----
-title: "CSSFontFeatureValuesMap: get() method"
 short-title: get()
 slug: Web/API/CSSFontFeatureValuesMap/get
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.CSSFontFeatureValuesMap.get
 
 {{APIRef("CSSOM")}}{{SeeCompatTable}}
 
-The **`get()`** method of the {{domxref("CSSFontFeatureValuesMap")}} interface returns value corresponding to the key in this `CSSFontFeatureValuesMap`, or `undefined` if there is none.
+متد **`get()`** در رابط {{domxref("CSSFontFeatureValuesMap")}} مقداری را برمی‌گرداند که با کلید داده‌شده در این `CSSFontFeatureValuesMap` مطابقت دارد؛ یا اگر کلیدی وجود نداشته باشد، `undefined` را برمی‌گرداند.
 
 ## Syntax
 
@@ -27,17 +21,17 @@ get(property)
 ### Parameters
 
 - `key`
-  - : The key of the value to return from the `CSSFontFeatureValuesMap` object.
+  - : کلیدی که مقدار مربوط به آن باید از شیء `CSSFontFeatureValuesMap` بازگردانده شود.
 
 ### Return value
 
-Returns `true` if an entry with the specified key exists in the `CSSFontFeatureValuesMap` object; otherwise `false`.
+اگر یک ورودی با کلید مشخص‌شده در شیء `CSSFontFeatureValuesMap` وجود داشته باشد، `true` برمی‌گرداند؛ در غیر این صورت `false`.
 
 ## Examples
 
 ### Basic usage
 
-The following example gets the values that match the `key`s in the `@swash` rule. This example is using `@swash` but also works with other [feature value blocks](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks).
+مثال زیر مقادیری را که با `key`ها در قانون `@swash` مطابقت دارند دریافت می‌کند. این مثال از `@swash` استفاده می‌کند اما با سایر [بلوک‌های مقدار ویژگی](/en-US/docs/Web/CSS/Reference/At-rules/@font-feature-values#feature_value_blocks) نیز کار می‌کند.
 
 #### CSS
 
