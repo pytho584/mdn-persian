@@ -1,7 +1,7 @@
 ---
 title: "AuthenticatorAssertionResponse: signature property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AuthenticatorAssertionResponse/signature"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,33 +14,22 @@ browser-compat: api.AuthenticatorAssertionResponse.signature
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`signature`** read-only property of the
-{{domxref("AuthenticatorAssertionResponse")}} interface is an {{jsxref("ArrayBuffer")}}
-object which is the signature of the authenticator for both
-{{domxref("AuthenticatorAssertionResponse.authenticatorData")}} and a SHA-256 hash of
-the client data
-({{domxref("AuthenticatorResponse.clientDataJSON","AuthenticatorAssertionResponse.clientDataJSON")}}).
+ویژگی فقط‌خواندنی **`signature`** از رابط {{domxref("AuthenticatorAssertionResponse")}} یک شیء {{jsxref("ArrayBuffer")}} است که امضای احرازکننده برای هر دو {{domxref("AuthenticatorAssertionResponse.authenticatorData")}} و یک هش SHA-256 از داده‌های کلاینت ({{domxref("AuthenticatorResponse.clientDataJSON","AuthenticatorAssertionResponse.clientDataJSON")}}) است.
 
-This signature will be sent to the server for control, as part of the response. It
-provides the proof that an authenticator does possess the private key which was used for
-the credential's generation.
+این امضا به‌عنوان بخشی از پاسخ، برای بررسی به سرور ارسال می‌شود. این امضا ثابت می‌کند که احرازکننده دارای کلید خصوصی‌ای است که برای تولید اعتبارنامه استفاده شده است.
 
-## Value
+## مقدار
 
-An {{jsxref("ArrayBuffer")}} object which the signature of the authenticator (using its
-private key) for both {{domxref("AuthenticatorAssertionResponse.authenticatorData")}}
-and a SHA-256 hash given by the client for its data (the challenge, the origin, etc. and
-available from
-{{domxref("AuthenticatorResponse.clientDataJSON","AuthenticatorAssertionResponse.clientDataJSON")}}).
+یک شیء {{jsxref("ArrayBuffer")}} که امضای احرازکننده (با استفاده از کلید خصوصی آن) برای هر دو {{domxref("AuthenticatorAssertionResponse.authenticatorData")}} و یک هش SHA-256 از داده‌های کلاینت (چالش، مبدأ و غیره) است که از {{domxref("AuthenticatorResponse.clientDataJSON","AuthenticatorAssertionResponse.clientDataJSON")}} در دسترس است.
 
-## Examples
+## مثال‌ها
 
-See [Retrieving a public key credential](/en-US/docs/Web/API/CredentialsContainer/get#retrieving_a_public_key_credential) for a detailed example.
+برای یک مثال مفصل، [Retrieving a public key credential](/en-US/docs/Web/API/CredentialsContainer/get#retrieving_a_public_key_credential) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
