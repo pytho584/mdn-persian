@@ -1,7 +1,7 @@
 ---
 title: "Animation: timeline property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/timeline"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,32 +14,32 @@ browser-compat: api.Animation.timeline
 
 {{ APIRef("Web Animations") }}
 
-The **`Animation.timeline`** property of the {{domxref("Animation")}} interface returns or sets the {{domxref("AnimationTimeline", "timeline")}} associated with this animation. A timeline is a source of time values for synchronization purposes, and is an {{domxref("AnimationTimeline")}}-based object. By default, the animation's timeline and the {{domxref("Document")}}'s timeline are the same.
+ویژگی **`Animation.timeline`** در رابط {{domxref("Animation")}}، {{domxref("AnimationTimeline", "timeline")}} مرتبط با این انیمیشن را برمی‌گرداند یا تنظیم می‌کند. یک timeline منبعی از مقادیر زمانی برای اهداف همگام‌سازی است و یک شیء مبتنی بر {{domxref("AnimationTimeline")}} است. به‌طور پیش‌فرض، timeline انیمیشن و timeline سند {{domxref("Document")}} یکسان هستند.
 
-## Value
+## مقدار
 
-A {{domxref("AnimationTimeline", "timeline object", "", 1)}} to use as the timing source for the animation, or `null` to use the default, which is the {{domxref("Document")}}'s timeline.
+یک {{domxref("AnimationTimeline", "شیء timeline", "", 1)}} که به عنوان منبع زمان‌بندی برای انیمیشن استفاده می‌شود، یا `null` برای استفاده از حالت پیش‌فرض، که همان timeline سند {{domxref("Document")}} است.
 
-## Examples
+## مثال‌ها
 
-Here we set the animation's timeline to be the same as the document's timeline (this is the default timeline for all animations, by the way):
+در اینجا ما timeline انیمیشن را همانند timeline سند تنظیم می‌کنیم (به هر حال، این timeline پیش‌فرض برای همه انیمیشن‌ها است):
 
 ```js
 animation.timeline = document.timeline;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("Animation")}}
-- {{domxref("AnimationTimeline")}} the parent object all timelines inherit from.
-- {{domxref("DocumentTimeline")}} the only kind of timeline object available at this time.
-- {{domxref("Document.timeline")}} is the default timeline all animations are assigned.
+- {{domxref("AnimationTimeline")}} شیء والد که همه timelineها از آن ارث می‌برند.
+- {{domxref("DocumentTimeline")}} تنها نوع شیء timeline که در حال حاضر موجود است.
+- {{domxref("Document.timeline")}} timeline پیش‌فرضی است که همه انیمیشن‌ها به آن اختصاص می‌یابند.
