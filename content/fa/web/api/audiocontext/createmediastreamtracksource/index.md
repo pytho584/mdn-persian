@@ -1,11 +1,5 @@
 ---
 title: "AudioContext: createMediaStreamTrackSource() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamTrackSource"
-status: "needs-translation"
----
-
----
-title: "AudioContext: createMediaStreamTrackSource() method"
 short-title: createMediaStreamTrackSource()
 slug: Web/API/AudioContext/createMediaStreamTrackSource
 page-type: web-api-instance-method
@@ -14,41 +8,30 @@ browser-compat: api.AudioContext.createMediaStreamTrackSource
 
 {{ APIRef("Web Audio API") }}
 
-The **`createMediaStreamTrackSource()`** method of the {{domxref("AudioContext")}} interface creates and returns a {{domxref("MediaStreamTrackAudioSourceNode")}} which represents an audio source whose data comes from the specified {{domxref("MediaStreamTrack")}}.
+**`createMediaStreamTrackSource()`** روشی از interface {{domxref("AudioContext")}} است که یک {{domxref("MediaStreamTrackAudioSourceNode")}} ایجاد و برمی‌گرداند که منبع صوتی است که داده‌های آن از {{domxref("MediaStreamTrack")}} مشخص‌شده می‌آید.
 
-This differs from {{domxref("AudioContext.createMediaStreamSource", "createMediaStreamSource()")}}, which creates a {{domxref("MediaStreamAudioSourceNode")}} whose audio comes from the audio track in a specified {{domxref("MediaStream")}} whose {{domxref("MediaStreamTrack.id", "id")}} is first, lexicographically (alphabetically).
+این روش با {{domxref("AudioContext.createMediaStreamSource", "createMediaStreamSource()")}} تفاوت دارد؛后者 یک {{domxref("MediaStreamAudioSourceNode")}} ایجاد می‌کند که صدای آن از track صوتی در یک {{domxref("MediaStream")}} مشخص می‌آید که {{domxref("MediaStreamTrack.id", "id")}} آن به ترتیب واژه‌نامه‌ای (الفبایی) اول است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createMediaStreamTrackSource(track)
 ```
 
-### Parameters
+### پارامترها
 
 - `track`
-  - : The {{domxref("MediaStreamTrack")}} to use as the source of all audio data for the
-    new node.
+  - : {{domxref("MediaStreamTrack")}} که به عنوان منبع تمام داده‌های صوتی برای گره جدید استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("MediaStreamTrackAudioSourceNode")}} object which acts as a source for
-audio data found in the specified audio track.
+یک شیء {{domxref("MediaStreamTrackAudioSourceNode")}} که به عنوان منبعی برای داده‌های صوتی موجود در track صوتی مشخص‌شده عمل می‌کند.
 
-## Examples
+## مثال‌ها
 
-In this example, {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} is used to
-request access to the user's microphone. Once that access is attained, an audio context
-is established and a {{domxref("MediaStreamTrackAudioSourceNode")}} is created using
-`createMediaStreamTrackSource()`, taking its audio from the first audio track
-in the stream returned by `getUserMedia()`.
+در این مثال، از {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} برای درخواست دسترسی به میکروفون کاربر استفاده می‌شود. پس از دستیابی به این دسترسی، یک زمینه صوتی (audio context) ایجاد می‌شود و یک {{domxref("MediaStreamTrackAudioSourceNode")}} با استفاده از `createMediaStreamTrackSource()` ساخته می‌شود که صدای خود را از اولین track صوتی در stream برگشتی از `getUserMedia()` می‌گیرد.
 
-Then a {{domxref("BiquadFilterNode")}} is created using
-{{domxref("BaseAudioContext/createBiquadFilter", "createBiquadFilter()")}}, and it's
-configured as desired to perform a lowshelf filter on the audio coming from the source.
-The output from the microphone is then routed into the new biquad filter, and the
-filter's output is in turn routed to the audio context's
-{{domxref("BaseAudioContext/destination", "destination")}}.
+سپس یک {{domxref("BiquadFilterNode")}} با استفاده از {{domxref("BaseAudioContext/createBiquadFilter", "createBiquadFilter()")}} ایجاد می‌شود و به دلخواه برای اجرای یک فیلتر lowshelf روی صدای ورودی از منبع پیکربندی می‌شود. خروجی میکروفون به فیلتر biquad جدید هدایت می‌شود و خروجی فیلتر نیز به نوبه خود به {{domxref("BaseAudioContext/destination", "destination")}} زمینه صوتی هدایت می‌شود.
 
 ```js
 navigator.mediaDevices
@@ -77,16 +60,16 @@ navigator.mediaDevices
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - Web Audio API
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - {{domxref("MediaStreamTrackAudioSourceNode")}}
