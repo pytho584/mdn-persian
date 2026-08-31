@@ -1,11 +1,7 @@
 ---
 title: "ARIA: cell role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role"
-status: "needs-translation"
----
-
----
-title: "ARIA: cell role"
+translated_by: "n8n + AI"
 short-title: cell
 slug: Web/Accessibility/ARIA/Reference/Roles/cell_role
 page-type: aria-role
@@ -15,7 +11,7 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The `cell` value of the ARIA _role_ attribute identifies an element as being a cell in a tabular container that does not contain column or row header information. To be supported, the cell must be nested in an element with the role of `row`.
+مقدار `cell` از ویژگی _role_ ARIA یک عنصر را به عنوان یک سلول در یک ظرف جدولی که حاوی اطلاعات سرستون ستون یا ردیف نیست، شناسایی می‌کند. برای پشتیبانی، سلول باید درون یک عنصر با نقش `row` قرار گیرد.
 
 ```html
 <div role="row">
@@ -24,7 +20,7 @@ The `cell` value of the ARIA _role_ attribute identifies an element as being a c
 </div>
 ```
 
-A better, more semantic way of writing the cells above would be to use the semantic [`<td>`](/en-US/docs/Web/HTML/Reference/Elements/td) element.
+روش بهتر و معنایی‌تر برای نوشتن سلول‌های بالا استفاده از عنصر معنایی [`<td>`](/en-US/docs/Web/HTML/Reference/Elements/td) است.
 
 ```html
 <tr role="row">
@@ -33,61 +29,61 @@ A better, more semantic way of writing the cells above would be to use the seman
 </tr>
 ```
 
-## Description
+## توضیحات
 
-The element with `role="cell"` is a cell within a row, optionally within a [`rowgroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role), within a [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role). If the cell is in a [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) or [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role), opt for [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role). Using native HTML {{HTMLElement('td')}} elements, whenever possible, is strongly encouraged.
+عنصری با `role="cell"` یک سلول درون یک ردیف است، به‌طور اختیاری درون یک [`rowgroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role) و درون یک [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role). اگر سلول در یک [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role) یا [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) باشد، از [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role) استفاده کنید. استفاده از عناصر بومی HTML {{HTMLElement('td')}} تا حد امکان به شدت توصیه می‌شود.
 
-Each element with `role="cell"` MUST be nested in a container element with [`role="row"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role). That row, in turn, can be nested within an element with [`role="rowgroup"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role), and should be nested within a `grid`, `table` or `treegrid`. If a cell contains column or row header information, use the `columnheader` or `rowheader` roles, respectively. If the cell does not contain header information and is nested in a `grid` or `treegrid`, the role of `gridcell` may be more appropriate.
+هر عنصر با `role="cell"` باید درون یک عنصر ظرف با [`role="row"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role) قرار گیرد. آن ردیف نیز به نوبه خود می‌تواند درون یک عنصر با [`role="rowgroup"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role) قرار گیرد و باید درون یک `grid`، `table` یا `treegrid` باشد. اگر یک سلول حاوی اطلاعات سرستون ستون یا ردیف است، به ترتیب از نقش‌های `columnheader` یا `rowheader` استفاده کنید. اگر سلول حاوی اطلاعات سرستون نیست و درون `grid` یا `treegrid` قرار دارد، نقش `gridcell` ممکن است مناسب‌تر باشد.
 
-A cell can contain a number of property attributes clarifying the cell's position within the tabular data structure, including [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex), [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan), [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex), and [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan).
+یک سلول می‌تواند دارای تعدادی ویژگی (attribute) باشد که موقعیت سلول را در ساختار داده‌های جدولی مشخص می‌کند، از جمله [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex)، [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan)، [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) و [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan).
 
 > [!NOTE]
-> Using the native HTML table element ({{HTMLElement('table')}}) element, along with the table row element ({{HTMLElement('tr')}}), and table cell element ({{HTMLElement('td')}}), whenever possible, is strongly encouraged.
+> استفاده از عنصر جدول HTML بومی ({{HTMLElement('table')}}) به همراه عنصر ردیف جدول ({{HTMLElement('tr')}}) و عنصر سلول جدول ({{HTMLElement('td')}}) تا حد امکان به شدت توصیه می‌شود.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های WAI-ARIA مرتبط
 
-#### Context roles
+#### نقش‌های زمینه
 
 - [role="row"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
-  - : An element with `role="row"` is a row of cells within a tabular structure. A row contains one or more cells, grid cells, column headers, or row headers within a [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role), [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role) or `treegrid`, and optionally within a [`rowgroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role).
+  - : یک عنصر با `role="row"` یک ردیف از سلول‌ها درون یک ساختار جدولی است. یک ردیف شامل یک یا چند سلول، سلول‌های شبکه، سرستون‌های ستون یا سرستون‌های ردیف درون یک [`grid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role)، [`table`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role) یا `treegrid` و به‌طور اختیاری درون یک [`rowgroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role) است.
 - [role="rowgroup"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowgroup_role)
-  - : `Row` is a required cell parent. `Rowgroup` is an optional contextual row parent. It establishes a relationship between descendant rows. It is a structural equivalent to the [`thead`](/en-US/docs/Web/HTML/Reference/Elements/thead), [`tfoot`](/en-US/docs/Web/HTML/Reference/Elements/tfoot), and [`tbody`](/en-US/docs/Web/HTML/Reference/Elements/tbody) elements in an [HTML `table`](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics) element.
+  - : `Row` یک والد ضروری برای سلول است. `Rowgroup` یک والد ردیف زمینه‌ای اختیاری است. این نقش یک رابطه بین ردیف‌های فرزند برقرار می‌کند. از نظر ساختاری معادل عناصر [`thead`](/en-US/docs/Web/HTML/Reference/Elements/thead)، [`tfoot`](/en-US/docs/Web/HTML/Reference/Elements/tfoot) و [`tbody`](/en-US/docs/Web/HTML/Reference/Elements/tbody) در یک عنصر [HTML `table`](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics) است.
 - [role="table"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
-  - : One of the three possible contexts (along with `grid` and `treegrid`) in which you'll find a row containing cells. Table identifies the cell as being part of a non-interactive table structure containing data arranged in rows and columns, similar to the native HTML [`<table>`](/en-US/docs/Web/HTML/Reference/Elements/table) element.
+  - : یکی از سه زمینه ممکن (به همراه `grid` و `treegrid`) که در آن یک ردیف حاوی سلول پیدا می‌کنید. Table سلول را به عنوان بخشی از یک ساختار جدولی غیرتعاملی حاوی داده‌های مرتب‌شده در ردیف‌ها و ستون‌ها، مشابه عنصر بومی HTML [`<table>`](/en-US/docs/Web/HTML/Reference/Elements/table) شناسایی می‌کند.
 - [role="grid"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/grid_role)
-  - : One of the three possible contexts (along with `table` and `treegrid`) in which you'll find a row containing `cells` and `gridcells`. `Grid` identifies a cell as being part of a possibly interactive table structure containing data arranged in rows and columns, similar to the native [`<table>`](/en-US/docs/Web/HTML/Reference/Elements/table) HTML element.
+  - : یکی از سه زمینه ممکن (به همراه `table` و `treegrid`) که در آن یک ردیف حاوی `cells` و `gridcells` پیدا می‌کنید. `Grid` یک سلول را به عنوان بخشی از یک ساختار جدولی احتمالاً تعاملی حاوی داده‌های مرتب‌شده در ردیف‌ها و ستون‌ها، مشابه عنصر HTML بومی [`<table>`](/en-US/docs/Web/HTML/Reference/Elements/table) شناسایی می‌کند.
 - [role="treegrid"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
-  - : Similar to a grid, but with rows that can be expanded and collapsed in the same manner as for a tree.
+  - : مشابه یک grid، اما با ردیف‌هایی که می‌توانند به همان روش یک درخت باز و بسته شوند.
 
-#### Subclass roles
+#### نقش‌های زیرمجموعه
 
 - [role="gridcell"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)
-  - : A cell in a row within a `grid` or `treegrid`.
+  - : یک سلول در یک ردیف درون یک `grid` یا `treegrid`.
 - [role="columnheader"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
-  - : A header cell that is the structural equivalent of the HTML [`<th>`](/en-US/docs/Web/HTML/Reference/Elements/th) element with a column scope. Unlike a plain cell, the `columnheader` role establishes a relationship between it and all cells in the corresponding column.
+  - : یک سلول سرستون که از نظر ساختاری معادل عنصر HTML [`<th>`](/en-US/docs/Web/HTML/Reference/Elements/th) با دامنه ستون است. برخلاف یک سلول ساده، نقش `columnheader` یک رابطه بین آن و تمام سلول‌های ستون مربوطه برقرار می‌کند.
 - [role="rowheader"](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role)
-  - : A header cell that is the structural equivalent of the HTML [`<th>`](/en-US/docs/Web/HTML/Reference/Elements/th) element with a row scope. Unlike a plain cell, the `rowheader` role establishes a relationship between it and all cells in the corresponding row.
+  - : یک سلول سرستون که از نظر ساختاری معادل عنصر HTML [`<th>`](/en-US/docs/Web/HTML/Reference/Elements/th) با دامنه ردیف است. برخلاف یک سلول ساده، نقش `rowheader` یک رابطه بین آن و تمام سلول‌های ردیف مربوطه برقرار می‌کند.
 
-#### States and properties
+#### حالت‌ها و ویژگی‌ها
 
 - [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan)
-  - : Similar to the HTML [`<th>`](/en-US/docs/Web/HTML/Reference/Elements/th) and [`<td>` colspan attribute](/en-US/docs/Web/HTML/Reference/Elements/td), it defines the number of columns spanned by the cell.
+  - : مشابه ویژگی colspan در HTML [`<th>`](/en-US/docs/Web/HTML/Reference/Elements/th) و [`<td>`](/en-US/docs/Web/HTML/Reference/Elements/td)، تعداد ستون‌هایی که سلول در بر می‌گیرد را تعریف می‌کند.
 - [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan)
-  - : Similar to the HTML [`<th>`](/en-US/docs/Web/HTML/Reference/Elements/th) and [`<td>` rowspan attribute](/en-US/docs/Web/HTML/Reference/Elements/td), it defines the number of rows spanned by the cell.
-- [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) attribute
-  - : The `aria-colindex` attribute is only needed if columns are hidden from the DOM. The attribute takes as its value an integer between 1 and the total number of columns within the `table`, `grid` or `treegrid`. The `aria-colindex` defines an element's column index or position with respect to the total number of columns within a row. If all the columns are in the DOM, this attribute is not necessary.
-- [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) attribute
-  - : The `aria-rowindex` attribute is only needed if rows are hidden from the DOM, to indicate which row, in the list of total rows, the current cell is in. The attribute, takes as its value an integer between 1 and the total number of rows within the table, grid, or treegrid, indicating the position, or index, of the cell. For example, a cell in the first row of the first header would likely have `aria-rowindex="1"` set, and cells in row 47 would have `aria-rowindex="47"`, if `aria-rowindex` were needed due to not all rows being in the DOM. If the rows that are visible are contiguous, and there are no cells with a `colspan` or `rowspan` greater than one, this property can be added to the parent rows instead of all the rows' cells.
+  - : مشابه ویژگی rowspan در HTML [`<th>`](/en-US/docs/Web/HTML/Reference/Elements/th) و [`<td>`](/en-US/docs/Web/HTML/Reference/Elements/td)، تعداد ردیف‌هایی که سلول در بر می‌گیرد را تعریف می‌کند.
+- [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex)
+  - : ویژگی `aria-colindex` فقط زمانی لازم است که ستون‌ها از DOM پنهان شده باشند. این ویژگی یک عدد صحیح بین 1 و تعداد کل ستون‌های داخل `table`، `grid` یا `treegrid` را به عنوان مقدار می‌گیرد. `aria-colindex` شاخص یا موقعیت ستون یک عنصر را نسبت به تعداد کل ستون‌های داخل یک ردیف تعریف می‌کند. اگر همه ستون‌ها در DOM باشند، این ویژگی ضروری نیست.
+- [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex)
+  - : ویژگی `aria-rowindex` فقط زمانی لازم است که ردیف‌ها از DOM پنهان شده باشند، تا مشخص کند سلول جاری در کدام ردیف از لیست کل ردیف‌ها قرار دارد. این ویژگی یک عدد صحیح بین 1 و تعداد کل ردیف‌های داخل جدول، grid یا treegrid را به عنوان مقدار می‌گیرد که موقعیت یا شاخص سلول را نشان می‌دهد. برای مثال، یک سلول در اولین ردیف از اولین سرستون احتمالاً `aria-rowindex="1"` را تنظیم کرده است، و سلول‌های ردیف 47 دارای `aria-rowindex="47"` خواهند بود، اگر به دلیل نبودن همه ردیف‌ها در DOM نیاز به `aria-rowindex` باشد. اگر ردیف‌هایی که قابل مشاهده هستند متوالی باشند و هیچ سلولی با `colspan` یا `rowspan` بزرگتر از یک وجود نداشته باشد، این ویژگی می‌تواند به ردیف‌های والد اضافه شود نه به تمام سلول‌های ردیف‌ها.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-None.
+هیچ‌کدام.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-The first rule of ARIA use is if you can use a native feature with the semantics and behavior you require already built in, instead of repurposing an element and **adding** an ARIA role, state or property to make it accessible, then do so. Employ the HTML [`<td>`](/en-US/docs/Web/HTML/Reference/Elements/td) element instead of the ARIA role of `cell` whenever possible.
+اولین قانون استفاده از ARIA این است که اگر می‌توانید از یک ویژگی بومی با معانی و رفتار مورد نیاز خود استفاده کنید که از قبل تعبیه شده است، به جای تغییر کاربری یک عنصر و **اضافه کردن** یک نقش، حالت یا ویژگی ARIA برای دسترسی‌پذیر کردن آن، این کار را انجام دهید. تا حد امکان از عنصر HTML [`<td>`](/en-US/docs/Web/HTML/Reference/Elements/td) به جای نقش ARIA `cell` استفاده کنید.
 
-## Examples
+## مثال‌ها
 
 ```html
 <div
@@ -129,11 +125,11 @@ The first rule of ARIA use is if you can use a native feature with the semantics
 </div>
 ```
 
-The above is a non-semantic ARIA table with five of 81 rows present in the DOM: one within a table header and four rows within the table body. Because not all the rows are in the DOM, we've included the `aria-rowindex` property on every cell. If no cells spanned more than one row or column, the `aria-rowindex` could have been placed on the row rather than the row's individual cells.
+مثال بالا یک جدول ARIA غیرمعنایی است که پنج ردیف از 81 ردیف در DOM وجود دارد: یکی درون سربرگ جدول و چهار ردیف درون بدنه جدول. از آنجایی که همه ردیف‌ها در DOM نیستند، ویژگی `aria-rowindex` را روی هر سلول قرار داده‌ایم. اگر هیچ سلولی بیش از یک ردیف یا ستون را پوشش نمی‌داد، می‌توانستیم `aria-rowindex` را روی ردیف به جای سلول‌های جداگانه ردیف قرار دهیم.
 
-## Best practices
+## بهترین روش‌ها
 
-Only use {{HTMLElement('table')}}, {{HTMLElement('tbody')}}, {{HTMLElement('thead')}}, {{HTMLElement('tr')}}, {{HTMLElement('th')}}, {{HTMLElement('td')}}, etc., for data table structure. You can add ARIA roles to ensure accessibility should the native semantics of the table be removed, such as with CSS. A relevant use case for the ARIA table role is when the native semantics of a table are overridden by [CSS's display property, such as by display: grid](/en-US/docs/Web/CSS/Reference/Properties/display#accessibility). In this case, you can use the ARIA table roles to add the semantics back in.
+فقط از {{HTMLElement('table')}}، {{HTMLElement('tbody')}}، {{HTMLElement('thead')}}، {{HTMLElement('tr')}}، {{HTMLElement('th')}}، {{HTMLElement('td')}} و غیره برای ساختار جدول داده استفاده کنید. می‌توانید نقش‌های ARIA را برای اطمینان از دسترسی‌پذیری در صورت حذف معانی بومی جدول، مانند با CSS، اضافه کنید. یک مورد استفاده مرتبط برای نقش ARIA table زمانی است که معانی بومی یک جدول توسط [ویژگی display در CSS، مانند display: grid](/en-US/docs/Web/CSS/Reference/Properties/display#accessibility) لغو می‌شود. در این صورت، می‌توانید از نقش‌های جدول ARIA برای بازگرداندن معانی استفاده کنید.
 
 ```html
 <table
@@ -173,17 +169,17 @@ Only use {{HTMLElement('table')}}, {{HTMLElement('tbody')}}, {{HTMLElement('thea
 </table>
 ```
 
-Above is the semantic way of writing a table. The ARIA roles are not necessary if the native semantics of the table, and therefore the table rows, have not been altered, such as through [the display property](/en-US/docs/Web/CSS/Reference/Properties/display#accessibility).
+در بالا روش معنایی نوشتن یک جدول نشان داده شده است. نقش‌های ARIA در صورت عدم تغییر معانی بومی جدول و بنابراین ردیف‌های جدول، مانند از طریق [ویژگی display](/en-US/docs/Web/CSS/Reference/Properties/display#accessibility)، ضروری نیستند.
 
-### Added benefits
+### مزایای اضافه
 
-When applied to a {{HTMLElement('td')}}, it returns cell semantics to the element in case the semantics were removed, such as with `display: grid;`.
+هنگامی که روی یک {{HTMLElement('td')}} اعمال شود، معانی سلول را به عنصر باز می‌گرداند در صورتی که معانی حذف شده باشند، مانند با `display: grid;`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`role="row"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/row_role)
 - [`role="gridcell"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)
