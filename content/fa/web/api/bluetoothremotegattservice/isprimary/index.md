@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTService: isPrimary property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/isPrimary"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,18 +16,16 @@ browser-compat: api.BluetoothRemoteGATTService.isPrimary
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothGATTService.isPrimary`** read-only property
-returns a boolean value that indicates whether this is a primary service. If it
-is not a primary service, it is a secondary service.
+خاصیت فقط خواندنی **`BluetoothGATTService.isPrimary`** یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا این یک سرویس اصلی است. اگر سرویس اصلی نباشد، یک سرویس ثانویه است.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
