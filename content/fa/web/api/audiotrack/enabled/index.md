@@ -1,7 +1,7 @@
 ---
 title: "AudioTrack: enabled property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack/enabled"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,22 +14,15 @@ browser-compat: api.AudioTrack.enabled
 
 {{APIRef("HTML DOM")}}
 
-The **{{domxref("AudioTrack")}}** property
-**`enabled`** specifies whether or not the described audio
-track is currently enabled for use. If the track is disabled by setting
-`enabled` to `false`, the track is muted and does not produce
-audio.
+ویژگی **{{domxref("AudioTrack")}}** با نام **`enabled`** مشخص می‌کند که آیا مسیر صوتی توصیف‌شده در حال حاضر برای استفاده فعال است یا خیر. اگر مسیر با تنظیم `enabled` روی `false` غیرفعال شود، مسیر بی‌صدا می‌شود و صدایی تولید نمی‌کند.
 
-## Value
+## مقدار
 
-The `enabled` property is a Boolean whose value is `true` if the
-track is enabled; enabled tracks produce audio while the media is playing. Setting
-`enabled` to `false` effectively mutes the audio track, preventing
-it from contributing to the media's audio performance.
+ویژگی `enabled` یک مقدار بولی است که اگر مسیر فعال باشد، مقدار آن `true` است؛ مسیرهای فعال در حین پخش رسانه صدا تولید می‌کنند. تنظیم `enabled` روی `false` عملاً مسیر صوتی را بی‌صدا می‌کند و از مشارکت آن در خروجی صدای رسانه جلوگیری می‌کند.
 
-## Example
+## مثال
 
-This example switches between the main and commentary audio tracks of a media element.
+این مثال بین مسیرهای صوتی اصلی و commentary یک عنصر رسانه جابه‌جا می‌شود.
 
 ```js
 function swapCommentaryMain() {
@@ -53,31 +46,19 @@ function swapCommentaryMain() {
 }
 ```
 
-The `swapCommentaryMain()` function above finds within the audio tracks of
-the {{HTMLElement("video")}} element `"main-video"` the audio tracks whose
-{{domxref("AudioTrack.kind", "kind")}} values are `"main"` and
-`"commentary"`. These represent the primary audio track and the commentary
-track.
+تابع `swapCommentaryMain()` در بالا در میان مسیرهای صوتی عنصر {{HTMLElement("video")}} با شناسه `"main-video"` به دنبال مسیرهایی می‌گردد که مقدار {{domxref("AudioTrack.kind", "kind")}} آن‌ها `"main"` و `"commentary"` است. این مسیرها نشان‌دهنده مسیر صوتی اصلی و مسیر commentary هستند.
 
 > [!NOTE]
-> This example assumes that there is only one of each kind of
-> track in the video, but this is not necessarily the case.
+> این مثال فرض می‌کند که در ویدیو فقط یک مسیر از هر نوع وجود دارد، اما این لزوماً همیشه صادق نیست.
 
-The element's audio tracks are then scanned through using the JavaScript
-{{jsxref("Array.forEach", "forEach()")}} method (although the
-{{domxref("HTMLMediaElement.audioTracks", "audioTracks")}} property of a media element
-isn't actually a JavaScript array, it can be accessed like one for the most part).
+سپس مسیرهای صوتی عنصر با استفاده از روش جاوااسکریپت {{jsxref("Array.forEach", "forEach()")}} پیمایش می‌شوند (اگرچه ویژگی {{domxref("HTMLMediaElement.audioTracks", "audioTracks")}} یک عنصر رسانه در واقع آرایه جاوااسکریپتی نیست، اما در بیشتر موارد می‌توان مانند یک آرایه به آن دسترسی داشت).
 
-The scan looks for the tracks whose {{domxref("AudioTrack.kind", "kind")}} values are
-`"main"` and `"commentary"` and remembers those
-{{domxref("AudioTrack")}} objects. Once those have been found, the values of the two
-tracks' `enabled` properties are exchanged, which results in swapping which
-of the two tracks is currently active.
+این پیمایش به دنبال مسیرهایی می‌گردد که مقدار {{domxref("AudioTrack.kind", "kind")}} آن‌ها `"main"` و `"commentary"` است و آن اشیاء {{domxref("AudioTrack")}} را به خاطر می‌سپارد. پس از یافتن آن‌ها، مقادیر ویژگی‌های `enabled` دو مسیر با یکدیگر مبادله می‌شوند که منجر به جابه‌جایی مسیر فعال فعلی بین آن دو می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
