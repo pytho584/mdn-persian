@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-required attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-required"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,32 +13,32 @@ spec-urls: https://w3c.github.io/aria/#aria-required
 sidebar: accessibilitysidebar
 ---
 
-The `aria-required` attribute indicates that user input is required on the element before a form may be submitted.
+ویژگی `aria-required` نشان می‌دهد که ورودی کاربر در آن عنصر قبل از ارسال فرم ضروری است.
 
-## Description
+## توضیحات
 
-When a semantic HTML {{htmlelement("input")}}, {{htmlelement("select")}}, or {{htmlelement("textarea")}} must have a value, it should have the [`required`](/en-US/docs/Web/HTML/Reference/Elements/input#required) attribute applied to it. The HTML `required` attribute disables submitting the form unless the required form controls have valid values, while ensuring those navigating with the aid of assistive technologies understand which semantic form controls need valid content.
+زمانی که یک عنصر معنایی HTML مانند {{htmlelement("input")}}، {{htmlelement("select")}} یا {{htmlelement("textarea")}} باید دارای مقدار باشد، باید ویژگی [`required`](/en-US/docs/Web/HTML/Reference/Elements/input#required) به آن اعمال شود. ویژگی `required` در HTML از ارسال فرم جلوگیری می‌کند مگر اینکه کنترل‌های فرم ضروری دارای مقادیر معتبر باشند، و در عین حال اطمینان حاصل می‌کند که افرادی که با کمک فناوری‌های کمکی پیمایش می‌کنند، متوجه می‌شوند کدام کنترل‌های فرم معنایی نیاز به محتوای معتبر دارند.
 
-When form controls are created using non-semantic elements, such as a {{HTMLElement('div')}} with a [role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) of [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role), the `aria-required` attribute should be included, with a value of `true`, to indicate to assistive technologies that user input is required on the element for the form to be submittable. The `aria-required` attribute can be used with HTML form elements; it is not limited to elements that have an ARIA role assigned.
+هنگامی که کنترل‌های فرم با استفاده از عناصر غیر معنایی، مانند یک {{HTMLElement('div')}} با [نقش](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role) ساخته می‌شوند، باید ویژگی `aria-required` با مقدار `true` گنجانده شود تا به فناوری‌های کمکی نشان دهد که ورودی کاربر در آن عنصر برای قابل ارسال بودن فرم ضروری است. ویژگی `aria-required` می‌تواند با عناصر فرم HTML استفاده شود؛ محدود به عناصری نیست که دارای نقش ARIA هستند.
 
-Similar to the HTML `required` attribute set on semantic HTML form controls, the `aria-required` attribute explicitly conveys to assistive technologies that the element is required before a form may be submitted. The `required` attribute on a semantic HTML form control will prevent the form control from being submitted if no value is present — providing native error messaging in some browsers if a required value is invalid when the user attempts to submit the form. The `aria-required` attribute, like all ARIA states and properties, has no impact on element functionality. Functionality and behavior must be added in with JavaScript.
-
-> [!NOTE]
-> ARIA only modifies the accessibility tree, modifying how assistive technology presents content to users. ARIA does not change anything about an element's function or behavior. When not using semantic HTML elements for their intended purpose and default functionality, you must use JavaScript to manage behavior, focus, and ARIA states.
-
-The CSS {{CSSXRef(':required')}} and {{CSSXRef(':optional')}} pseudoclasses match {{htmlelement("input")}}, {{htmlelement("select")}}, and {{htmlelement("textarea")}} elements based on whether they are required or optional, respectively. When using non-semantic elements as form controls, you don't get this CSS pseudoclass selector benefit. You can, however, use attribute selectors if the attribute is present: `[aria-required="true"]` or `[aria-required="false"]`.
-
-If a form contains both required and optional form elements, the required elements should be indicated visually using a treatment that does not rely solely on color to convey meaning. Typically, descriptive text and/or an icon are used.
+مشابه ویژگی `required` در HTML که روی کنترل‌های فرم معنایی تنظیم می‌شود، ویژگی `aria-required` به صراحت به فناوری‌های کمکی اعلام می‌کند که عنصر قبل از ارسال فرم ضروری است. ویژگی `required` روی یک کنترل فرم معنایی HTML از ارسال کنترل فرم در صورت отсутствие مقدار جلوگیری می‌کند و در برخی مرورگرها پیام خطای بومی ارائه می‌دهد اگر مقدار ضروری در هنگام تلاش کاربر برای ارسال فرم نامعتبر باشد. ویژگی `aria-required`، مانند تمام حالات و ویژگی‌های ARIA، تأثیری بر عملکرد عنصر ندارد. عملکرد و رفتار باید با جاوااسکریپت اضافه شود.
 
 > [!NOTE]
-> Which elements are required should be apparent to all users. Ensure the visual presentation indicates the form control is required in a consistent, visible manner, remembering that color is not enough to convey information.
+> ARIA تنها درخت دسترسی را تغییر می‌دهد و نحوه ارائه محتوا به کاربران توسط فناوری کمکی را تغییر می‌دهد. ARIA چیزی در مورد عملکرد یا رفتار یک عنصر تغییر نمی‌دهد. هنگامی که از عناصر HTML معنایی برای هدف مورد نظر و عملکرد پیش‌فرض آنها استفاده نمی‌کنید، باید از جاوااسکریپت برای مدیریت رفتار، فوکوس و حالات ARIA استفاده کنید.
 
-## Examples
+شبه‌کلاس‌های CSS {{CSSXRef(':required')}} و {{CSSXRef(':optional')}} به ترتیب عناصر {{htmlelement("input")}}، {{htmlelement("select")}} و {{htmlelement("textarea")}} را بر اساس ضروری یا اختیاری بودن آنها مطابقت می‌دهند. هنگام استفاده از عناصر غیر معنایی به عنوان کنترل‌های فرم، از این مزیت انتخاب‌گر شبه‌کلاس CSS برخوردار نیستید. با این حال، می‌توانید از انتخاب‌گرهای ویژگی در صورت وجود ویژگی استفاده کنید: `[aria-required="true"]` یا `[aria-required="false"]`.
 
-The attribute should be added to the form-control role. If the user needs to fill in an email address [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role), include `aria-required="true"` on the textbox.
+اگر یک فرم شامل عناصر فرم ضروری و اختیاری باشد، عناصر ضروری باید به صورت بصری با استفاده از روشی که صرفاً به رنگ وابسته نیست، نشان داده شوند. معمولاً از متن توصیفی و/یا یک نماد استفاده می‌شود.
+
+> [!NOTE]
+> باید برای همه کاربران مشخص باشد که کدام عناصر ضروری هستند. اطمینان حاصل کنید که نمایش بصری کنترل فرم را به صورت ضروری و به شیوه‌ای ثابت و قابل مشاهده نشان می‌دهد، و به خاطر داشته باشید که رنگ به تنهایی برای انتقال اطلاعات کافی نیست.
+
+## مثال‌ها
+
+ویژگی باید به نقش کنترل فرم اضافه شود. اگر کاربر نیاز به پر کردن آدرس ایمیل [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role) دارد، `aria-required="true"` را روی جعبه متن قرار دهید.
 
 ```html
-<div id="tbLabel">Email Address *</div>
+<div id="tbLabel">آدرس ایمیل *</div>
 <div
   role="textbox"
   contenteditable
@@ -48,34 +48,34 @@ The attribute should be added to the form-control role. If the user needs to fil
 ```
 
 > [!NOTE]
-> If the field's label already contains the word "required", it is recommended to leave out the `aria-required` attribute. This avoids that screen readers read out the term "required" twice.
+> اگر برچسب فیلد از قبل شامل کلمه «ضروری» است، توصیه می‌شود ویژگی `aria-required` را حذف کنید. این کار از خواندن دوباره عبارت «ضروری» توسط صفحه‌خوان‌ها جلوگیری می‌کند.
 
-In this example, JavaScript must be used to prevent the containing form from being submitted if the textbox has no content.
+در این مثال، باید از جاوااسکریپت استفاده شود تا از ارسال فرم حاوی آن در صورت نداشتن محتوای جعبه متن جلوگیری شود.
 
-This could be written semantically, without the need for JavaScript:
+این می‌تواند به صورت معنایی و بدون نیاز به جاوااسکریپت نوشته شود:
 
 ```html
-<label for="email1">Email Address (required)</label>
+<label for="email1">آدرس ایمیل (ضروری)</label>
 <input type="email" id="email1" required />
 ```
 
-## Values
+## مقادیر
 
 - `true`
-  - : The element requires a value or must be checked for the form to be submittable.
+  - : عنصر نیاز به مقدار دارد یا باید برای قابل ارسال بودن فرم علامت‌گذاری شود.
 - `false`
-  - : The element is not required.
+  - : عنصر ضروری نیست.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaRequired")}}
-  - : The [`ariaRequired`](/en-US/docs/Web/API/Element/ariaRequired) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-required` attribute.
+  - : ویژگی [`ariaRequired`](/en-US/docs/Web/API/Element/ariaRequired) که بخشی از رابط {{domxref("Element")}} است، مقدار ویژگی `aria-required` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaRequired")}}
-  - : The [`ariaRequired`](/en-US/docs/Web/API/ElementInternals/ariaRequired) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-required` attribute.
+  - : ویژگی [`ariaRequired`](/en-US/docs/Web/API/ElementInternals/ariaRequired) که بخشی از رابط {{domxref("ElementInternals")}} است، مقدار ویژگی `aria-required` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+مورد استفاده در نقش‌ها:
 
 - [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
 - [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)
@@ -86,7 +86,7 @@ Used in roles:
 - [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
 - [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role)
 
-Inherits into roles:
+به ارث برده شده در نقش‌ها:
 
 - [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
 - [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role)
@@ -94,15 +94,15 @@ Inherits into roles:
 - [`switch`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/switch_role)
 - [`treegrid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- HTML [`required`](/en-US/docs/Web/HTML/Reference/Elements/input#required) attribute
-- [`:optional` pseudoclass](/en-US/docs/Web/CSS/Reference/Selectors/:optional)
-- [`:required` pseudoclass](/en-US/docs/Web/CSS/Reference/Selectors/:required)
-- [`aria-invalid` attribute](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid)
-- [MDN Understanding WCAG, Guideline 3.3 explanations](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Understandable#guideline_3.3_%e2%80%94_input_assistance_help_users_avoid_and_correct_mistakes)
+- ویژگی HTML [`required`](/en-US/docs/Web/HTML/Reference/Elements/input#required)
+- [شبه‌کلاس `:optional`](/en-US/docs/Web/CSS/Reference/Selectors/:optional)
+- [شبه‌کلاس `:required`](/en-US/docs/Web/CSS/Reference/Selectors/:required)
+- [ویژگی `aria-invalid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid)
+- [MDN Understanding WCAG, Guideline 3.3 توضیحات](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Understandable#guideline_3.3_%e2%80%94_input_assistance_help_users_avoid_and_correct_mistakes)
 - [Understanding Success Criterion 3.3.2 | W3C Understanding WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/minimize-error-cues.html)
