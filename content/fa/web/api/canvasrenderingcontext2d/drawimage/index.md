@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: drawImage() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: drawImage() method"
 short-title: drawImage()
 slug: Web/API/CanvasRenderingContext2D/drawImage
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.CanvasRenderingContext2D.drawImage
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.drawImage()`** method of the
-Canvas 2D API provides different ways to draw an image onto the canvas.
+متد **`CanvasRenderingContext2D.drawImage()`** از Canvas 2D API راه‌های مختلفی برای رسم یک تصویر روی بوم (canvas) ارائه می‌دهد.
 
 ## Syntax
 
@@ -27,69 +20,50 @@ drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
 
 ![drawImage](canvas_drawimage.jpg)
 
-### Parameters
+### پارامترها
 
 - `image`
-  - : An element to draw into the context. The specification permits any canvas image
-    source, specifically,
-    an {{domxref("HTMLImageElement")}},
-    an {{domxref("SVGImageElement")}},
-    an {{domxref("HTMLVideoElement")}},
-    an {{domxref("HTMLCanvasElement")}},
-    an {{domxref("ImageBitmap")}},
-    an {{domxref("OffscreenCanvas")}},
-    or a {{domxref("VideoFrame")}}.
+  - : عنصری که باید در زمینه (context) رسم شود. مشخصات (specification) هر منبع تصویر بوم را مجاز می‌داند، به طور خاص:
+    یک {{domxref("HTMLImageElement")}}،
+    یک {{domxref("SVGImageElement")}}،
+    یک {{domxref("HTMLVideoElement")}}،
+    یک {{domxref("HTMLCanvasElement")}}،
+    یک {{domxref("ImageBitmap")}}،
+    یک {{domxref("OffscreenCanvas")}}،
+    یا یک {{domxref("VideoFrame")}}.
 - `sx` {{optional_inline}}
-  - : The x-axis coordinate of the top left corner of the sub-rectangle of the source
-    `image` to draw into the destination context. Use the 3- or 5-argument syntax
-    to omit this argument.
+  - : مختصات محور x گوشه بالا-چپ زیر-مستطیل از `image` مبدأ که باید در زمینه مقصد رسم شود. برای حذف این آرگومان از syntax 3 یا 5 آرگومانی استفاده کنید.
 - `sy` {{optional_inline}}
-  - : The y-axis coordinate of the top left corner of the sub-rectangle of the source
-    `image` to draw into the destination context. Use the 3- or 5-argument syntax
-    to omit this argument.
+  - : مختصات محور y گوشه بالا-چپ زیر-مستطیل از `image` مبدأ که باید در زمینه مقصد رسم شود. برای حذف این آرگومان از syntax 3 یا 5 آرگومانی استفاده کنید.
 - `sWidth` {{optional_inline}}
-  - : The width of the sub-rectangle of the source `image` to draw into the
-    destination context. If not specified, the entire rectangle from the coordinates
-    specified by `sx` and `sy` to the bottom-right corner of the
-    image is used. Use the 3- or 5-argument syntax to omit this argument.
-    Negative values grow the sub-rectangle in the opposite direction, but pixels are always processed in the original direction and the image is not flipped.
+  - : عرض زیر-مستطیل از `image` مبدأ که باید در زمینه مقصد رسم شود. اگر مشخص نشود، کل مستطیل از مختصات مشخص شده توسط `sx` و `sy` تا گوشه پایین-راست تصویر استفاده می‌شود. برای حذف این آرگومان از syntax 3 یا 5 آرگومانی استفاده کنید. مقادیر منفی زیر-مستطیل را در جهت مخالف بزرگ می‌کنند، اما پیکسل‌ها همیشه در جهت اصلی پردازش می‌شوند و تصویر برعکس نمی‌شود.
 - `sHeight` {{optional_inline}}
-  - : The height of the sub-rectangle of the source `image` to draw into the
-    destination context. Use the 3- or 5-argument syntax to omit this argument.
-    Negative values grow the sub-rectangle in the opposite direction, but pixels are always processed in the original direction and the image is not flipped.
+  - : ارتفاع زیر-مستطیل از `image` مبدأ که باید در زمینه مقصد رسم شود. برای حذف این آرگومان از syntax 3 یا 5 آرگومانی استفاده کنید. مقادیر منفی زیر-مستطیل را در جهت مخالف بزرگ می‌کنند، اما پیکسل‌ها همیشه در جهت اصلی پردازش می‌شوند و تصویر برعکس نمی‌شود.
 - `dx`
-  - : The x-axis coordinate in the destination canvas at which to place the top-left
-    corner of the source `image`.
+  - : مختصات محور x در بوم مقصد که گوشه بالا-چپ `image` مبدأ در آن قرار می‌گیرد.
 - `dy`
-  - : The y-axis coordinate in the destination canvas at which to place the top-left
-    corner of the source `image`.
+  - : مختصات محور y در بوم مقصد که گوشه بالا-چپ `image` مبدأ در آن قرار می‌گیرد.
 - `dWidth`
-  - : The width to draw the `image` in the destination canvas. This allows
-    scaling of the drawn image. If not specified, the image is not scaled in width when
-    drawn. Note that this argument is not included in the 3-argument syntax.
-    Negative values grow the sub-rectangle in the opposite direction, but pixels are always processed in the original direction and the image is not flipped.
+  - : عرضی که `image` در بوم مقصد رسم می‌شود. این امکان مقیاس‌بندی تصویر رسم شده را فراهم می‌کند. اگر مشخص نشود، تصویر هنگام رسم در عرض مقیاس‌بندی نمی‌شود. توجه داشته باشید که این آرگومان در syntax 3 آرگومانی گنجانده نشده است. مقادیر منفی زیر-مستطیل را در جهت مخالف بزرگ می‌کنند، اما پیکسل‌ها همیشه در جهت اصلی پردازش می‌شوند و تصویر برعکس نمی‌شود.
 - `dHeight`
-  - : The height to draw the `image` in the destination canvas. This allows
-    scaling of the drawn image. If not specified, the image is not scaled in height when
-    drawn. Note that this argument is not included in the 3-argument syntax.
-    Negative values grow the sub-rectangle in the opposite direction, but pixels are always processed in the original direction and the image is not flipped.
+  - : ارتفاعی که `image` در بوم مقصد رسم می‌شود. این امکان مقیاس‌بندی تصویر رسم شده را فراهم می‌کند. اگر مشخص نشود، تصویر هنگام رسم در ارتفاع مقیاس‌بندی نمی‌شود. توجه داشته باشید که این آرگومان در syntax 3 آرگومانی گنجانده نشده است. مقادیر منفی زیر-مستطیل را در جهت مخالف بزرگ می‌کنند، اما پیکسل‌ها همیشه در جهت اصلی پردازش می‌شوند و تصویر برعکس نمی‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown when the image has no image data or if the canvas or source rectangle width or height is zero.
+  - : زمانی پرتاب می‌شود که تصویر داده تصویری نداشته باشد یا عرض یا ارتفاع بوم یا مستطیل مبدأ صفر باشد.
 - `TypeMismatchError` {{domxref("DOMException")}}
-  - : Thrown when a `null` or `undefined` image is passed as parameter.
+  - : زمانی پرتاب می‌شود که یک تصویر `null` یا `undefined` به عنوان پارامتر ارسال شود.
 
-## Examples
+## مثال‌ها
 
-### Drawing an image to the canvas
+### رسم یک تصویر روی بوم
 
-This example draws an image to the canvas using the `drawImage()` method.
+این مثال یک تصویر را با استفاده از متد `drawImage()` روی بوم رسم می‌کند.
 
 #### HTML
 
@@ -112,9 +86,7 @@ This example draws an image to the canvas using the `drawImage()` method.
 
 #### JavaScript
 
-The source image is taken from the coordinates (33, 71), with a width of 104 and a
-height of 124. It is drawn to the canvas at (21, 20), where it is given a width of 87
-and a height of 104.
+تصویر مبدأ از مختصات (33, 71) با عرض 104 و ارتفاع 124 گرفته شده است. روی بوم در (21, 20) رسم می‌شود و در آنجا عرض 87 و ارتفاع 104 به آن داده می‌شود.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -126,22 +98,15 @@ image.addEventListener("load", (e) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Drawing_an_image_to_the_canvas', 700, 180) }}
 
-### Understanding source element size
+### درک اندازه عنصر مبدأ
 
-The `drawImage()` method uses the source element's _intrinsic size in CSS
-pixels_ when drawing.
+متد `drawImage()` هنگام رسم از _اندازه ذاتی (intrinsic size) عنصر مبدأ بر حسب پیکسل CSS_ استفاده می‌کند.
 
-For example, if you load an `Image` and specify the optional size parameters
-in its [constructor](/en-US/docs/Web/API/HTMLImageElement/Image), you will
-have to use the `naturalWidth` and `naturalHeight` properties of
-the created instance to properly calculate things like crop and scale regions, rather
-than `element.width` and `element.height`. The same goes for
-`videoWidth` and `videoHeight` if the element is a
-{{htmlelement("video")}} element, and so on.
+برای مثال، اگر یک `Image` بارگذاری کنید و پارامترهای اندازه اختیاری را در [سازنده (constructor)](/en-US/docs/Web/API/HTMLImageElement/Image) آن مشخص کنید، باید از ویژگی‌های `naturalWidth` و `naturalHeight` نمونه ایجاد شده برای محاسبه صحیح مواردی مانند مناطق برش و مقیاس استفاده کنید، نه از `element.width` و `element.height`. همین موضوع برای `videoWidth` و `videoHeight` اگر عنصر یک {{htmlelement("video")}} باشد و غیره صادق است.
 
 #### HTML
 
@@ -155,53 +120,45 @@ than `element.width` and `element.height`. The same goes for
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-const image = new Image(60, 45); // Using optional size for image
-image.onload = drawImageActualSize; // Draw when image has loaded
+const image = new Image(60, 45); // استفاده از اندازه اختیاری برای تصویر
+image.onload = drawImageActualSize; // هنگام بارگذاری تصویر رسم کن
 
-// Load an image of intrinsic size 300x227 in CSS pixels
+// بارگذاری تصویری با اندازه ذاتی 300x227 پیکسل CSS
 image.src = "https://mdn.github.io/shared-assets/images/examples/rhino.jpg";
 
 function drawImageActualSize() {
-  // Use the intrinsic size of image in CSS pixels for the canvas element
+  // استفاده از اندازه ذاتی تصویر بر حسب پیکسل CSS برای عنصر بوم
   canvas.width = this.naturalWidth;
   canvas.height = this.naturalHeight;
 
-  // Will draw the image as 300x227, ignoring the custom size of 60x45
-  // given in the constructor
+  // تصویر را به صورت 300x227 رسم می‌کند و اندازه سفارشی 60x45 داده شده
+  // در سازنده را نادیده می‌گیرد
   ctx.drawImage(this, 0, 0);
 
-  // To use the custom size we'll have to specify the scale parameters
-  // using the element's width and height properties - lets draw one
-  // on top in the corner:
+  // برای استفاده از اندازه سفارشی باید پارامترهای مقیاس را با استفاده از
+  // ویژگی‌های width و height عنصر مشخص کنیم - بیایید یکی را در گوشه روی آن رسم کنیم:
   ctx.drawImage(this, 0, 0, this.width, this.height);
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('Understanding_source_element_size', 700, 260)}}
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## Notes
+## نکات
 
-- `drawImage()` only works correctly on an {{domxref("HTMLVideoElement")}}
-  when its {{domxref("HTMLMediaElement.readyState")}} is greater than 1 (i.e.,
-  **seek** event fired after setting the `currentTime`
-  property).
-- `drawImage()` will always use the source element's _intrinsic size in
-  CSS pixels_ when drawing, cropping, and/or scaling.
-- In some older browser versions, `drawImage()` will ignore all EXIF
-  metadata in images, including the Orientation. This behavior is especially troublesome
-  on iOS devices. You should detect the Orientation yourself and use
-  `rotate()` to make it right.
+- `drawImage()` تنها زمانی روی یک {{domxref("HTMLVideoElement")}} به درستی کار می‌کند که {{domxref("HTMLMediaElement.readyState")}} آن بزرگتر از 1 باشد (یعنی رویداد **seek** پس از تنظیم خاصیت `currentTime` فعال شده باشد).
+- `drawImage()` همیشه از _اندازه ذاتی عنصر مبدأ بر حسب پیکسل CSS_ هنگام رسم، برش و/یا مقیاس‌بندی استفاده می‌کند.
+- در برخی نسخه‌های قدیمی مرورگر، `drawImage()` تمام متاداده‌های EXIF در تصاویر، از جمله جهت‌گیری (Orientation) را نادیده می‌گیرد. این رفتار به ویژه در دستگاه‌های iOS مشکل‌ساز است. شما باید خودتان جهت‌گیری را تشخیص دهید و از `rotate()` برای اصلاح آن استفاده کنید.
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این متد: {{domxref("CanvasRenderingContext2D")}}
