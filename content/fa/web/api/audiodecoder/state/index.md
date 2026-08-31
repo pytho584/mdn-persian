@@ -1,7 +1,7 @@
 ---
 title: "AudioDecoder: state property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioDecoder/state"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,31 +14,31 @@ browser-compat: api.AudioDecoder.state
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`state`** read-only property of the {{domxref("AudioDecoder")}} interface returns the current state of the underlying codec.
+ویژگی فقط‌خواندنی **`state`** در رابط {{domxref("AudioDecoder")}} وضعیت فعلی کدک زیرین را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string containing one of the following values:
+رشته‌ای شامل یکی از مقادیر زیر:
 
 - `"unconfigured"`
-  - : The codec is not configured for decoding.
+  - : کدک برای رمزگشایی پیکربندی نشده است.
 - `"configured"`
-  - : The codec has a valid configuration and is ready.
+  - : کدک پیکربندی معتبری دارد و آماده است.
 - `"closed"`
-  - : The codec is no longer usable and system resources have been released.
+  - : کدک دیگر قابل استفاده نیست و منابع سیستم آزاد شده‌اند.
 
-## Examples
+## مثال‌ها
 
-The following example prints the state of the `AudioDecoder` to the console.
+مثال زیر وضعیت `AudioDecoder` را در کنسول چاپ می‌کند.
 
 ```js
 console.log(AudioDecoder.state);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
