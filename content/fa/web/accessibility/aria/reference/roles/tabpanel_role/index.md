@@ -1,7 +1,7 @@
 ---
 title: "ARIA: tabpanel role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tabpanel_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,64 +15,64 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-The ARIA `tabpanel` is a container for the resources of layered content associated with a `tab`.
+نقش `tabpanel` در ARIA یک محفظه برای منابع محتوای لایه‌ای است که با یک `tab` مرتبط است.
 
-## Description
+## توضیحات
 
-The `tabpanel` role indicates the element is a container for the resources associated with a [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) role, where each `tab` is contained in a [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role).
+نقش `tabpanel` نشان می‌دهد که عنصر ظرفی برای منابع مرتبط با نقش [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) است، که در آن هر `tab` در یک [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role) قرار می‌گیرد.
 
-A `tabpanel` is part of a tab interface, a common user experience pattern in which a group of visual tabs allow for quickly switching between multiple layered views. Each tab is defined as such with the `tab` role, and these tabs are contained within an element with the `tablist` role. The `tablist` is often visually positioned above or to the side of a content area, containing the associated tabpanels. The `tabpanel` is the role of the container for each pane of content that is associated with a corresponding `tab` in the tab interface's `tablist`.
+یک `tabpanel` بخشی از رابط tab است، یک الگوی رایج تجربه کاربری که در آن گروهی از tabهای بصری امکان جابه‌جایی سریع بین چند نمای لایه‌ای را فراهم می‌کنند. هر tab با نقش `tab` تعریف می‌شود و این tabها در عنصری با نقش `tablist` قرار می‌گیرند. `tablist` اغلب به‌صورت بصری در بالای ناحیه محتوا یا کنار آن قرار می‌گیرد و tabpanelهای مرتبط را در بر می‌گیرد. `tabpanel` نقش ظرف برای هر صفحه محتوایی است که با یک tab متناظر در `tablist` رابط tab مرتبط است.
 
-In many tab interfaces, only a single `tabpanel` will be visible at a time. However, some interfaces may require multiple tab panels to be displayed at once. In these cases the `tablist` would be provided the [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable) attribute, and the `tab` elements would then use the [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) attribute to indicate whether its associated `tabpanel` was visible or not. The tab's selected state would instead be used to indicate which tabpanel is the currently 'active' panel. For example, this could indicate which tabpanel keyboard focus would move to if someone were to press the <kbd>tab</kbd> key when focused on a tab within the multi-select `tablist`.
+در بسیاری از رابط‌های tab، تنها یک `tabpanel` در هر زمان قابل مشاهده است. با این حال، برخی رابط‌ها ممکن است نیاز به نمایش همزمان چند tabpanel داشته باشند. در این موارد، به `tablist` ویژگی [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable) داده می‌شود و عناصر `tab` از ویژگی [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) استفاده می‌کنند تا مشخص کنند آیا `tabpanel` مرتبط با آن‌ها قابل مشاهده است یا خیر. حالت انتخاب‌شده tab در عوض برای مشخص کردن اینکه کدام tabpanel در حال حاضر پنل «فعال» است استفاده می‌شود. برای مثال، این می‌تواند نشان دهد که اگر شخصی هنگام تمرکز روی یک tab در `tablist` چندانتخابی، کلید <kbd>tab</kbd> را فشار دهد، کانون صفحه‌کلید به کدام tabpanel منتقل می‌شود.
 
-In single-select tab interfaces, only the `tabpanel` associated with the currently selected tab is displayed. All other `tabpanel` elements associated with the unselected tabs must be hidden from users. So when tab selection changes, the displayed tabpanel would also, while the previously-displayed tabpanel would then become hidden.
+در رابط‌های tab با انتخاب تکی، تنها `tabpanel` مرتبط با tab انتخاب‌شده فعلی نمایش داده می‌شود. همه عناصر `tabpanel` دیگر که با tabهای انتخاب‌نشده مرتبط هستند باید از کاربران پنهان شوند. بنابراین وقتی انتخاب tab تغییر می‌کند، tabpanel نمایش‌داده‌شده نیز تغییر می‌کند، در حالی که tabpanel نمایش‌داده‌شده قبلی پنهان می‌شود.
 
-In multi-select tab interfaces, multiple `tabpanel` elements may be displayed, matching the expanded state of their associated `tab` elements.
+در رابط‌های tab با چندانتخابی، ممکن است چندین عنصر `tabpanel` مطابق با حالت بازشدگی عناصر `tab` مرتبط‌شان نمایش داده شوند.
 
-Tabs do not act as anchor links to individual panels — and upon activation, keyboard focus should remain on the current `tab` element and not automatically move to the newly displayed `tabpanel`. While a tab interface may be progressively enhanced based off an underlying markup pattern of in-page hyperlinks pointing to their associated sections of content, when JavaScript is used to modify these elements into a tabbed interface, the hyperlinks' default behavior should be prevented. Ideally, this could be done by removing or modifying the `href` attribute, as this would have the added benefit of removing the hyperlink-specific menu items from the element's browser context menu.
+tabها به عنوان پیوندهای لنگر به پنل‌های جداگانه عمل نمی‌کنند — و هنگام فعال‌سازی، کانون صفحه‌کلید باید روی عنصر `tab` فعلی باقی بماند و به‌طور خودکار به `tabpanel` تازه نمایش‌داده‌شده منتقل نشود. اگرچه یک رابط tab ممکن است بر اساس یک الگوی نشانه‌گذاری زیرین از ابرپیوندهای درون‌صفحه‌ای که به بخش‌های محتوای مرتبط اشاره می‌کنند، به‌صورت تدریجی تقویت شود، اما وقتی جاوااسکریپت برای تبدیل این عناصر به یک رابط tab استفاده می‌شود، رفتار پیش‌فرض ابرپیوندها باید جلوگیری شود. ایدئال این است که با حذف یا اصلاح ویژگی `href` این کار انجام شود، زیرا مزیت اضافی حذف موارد منوی مخصوص ابرپیوند از منوی زمینه مرورگر عنصر را نیز دارد.
 
-When keyboard focus is on a `tablist`, or a `tab` within the `tablist`, the <kbd>Tab</kbd> key should be programmed to move from the focused tab — which may or may not be the selected tab — to the `tabpanel` which represents the currently selected tab.
+هنگامی که کانون صفحه‌کلید روی یک `tablist` یا یک `tab` درون `tablist` است، کلید <kbd>Tab</kbd> باید طوری برنامه‌ریزی شود که از tab متمرکز‌شده — که ممکن است tab انتخاب‌شده باشد یا نباشد — به `tabpanel` که نمایانگر tab انتخاب‌شده فعلی است منتقل شود.
 
-Each `tab` in a `tablist` can serve as the label for its corresponding `tabpanel`. Include the `id` of each `tab` as the value for each `tabpanel`'s [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attribute.
+هر `tab` در یک `tablist` می‌تواند به عنوان برچسبی برای `tabpanel` متناظر خود عمل کند. مقدار `id` هر `tab` را به عنوان مقدار ویژگی [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) برای هر `tabpanel` قرار دهید.
 
-You can also optionally associate each `tabpanel` with its associated `tab` by including the [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) of the `tabpanel` as the value of the `tab`'s [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) attribute.
+همچنین می‌توانید به‌صورت اختیاری هر `tabpanel` را با `tab` مرتبط آن با گنجاندن [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) `tabpanel` به عنوان مقدار ویژگی [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) متعلق به `tab` مرتبط کنید.
 
-When a tabbed interface is initialized, one `tabpanel` is displayed and its associated `tab` is styled to indicate that it is active, reflecting its programmatic state. All inactive `tabpanel` elements must be hidden to all users. This is most commonly achieved by use of CSS's `display: none`.
+هنگامی که یک رابط tab مقداردهی اولیه می‌شود، یک `tabpanel` نمایش داده می‌شود و `tab` مرتبط با آن به‌گونه‌ای استایل می‌گیرد که نشان دهد فعال است، که این وضعیت برنامه‌ای آن را منعکس می‌کند. همه عناصر `tabpanel` غیرفعال باید از دید همه کاربران پنهان شوند. این کار معمولاً با استفاده از `display: none` در CSS انجام می‌شود.
 
-See the [ARIA `tab` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) article for more information specific to the use of this role.
+برای اطلاعات بیشتر مختص استفاده از این نقش، مقاله [نقش `tab` در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) را ببینید.
 
-Include [`tabindex="-1"`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) to allow a `tabpanel` to receive focus without including the `tabpanel` in the page's keyboard focus order.
+ویژگی [`tabindex="-1"`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) را اضافه کنید تا به یک `tabpanel` اجازه دریافت کانون داده شود بدون اینکه `tabpanel` در ترتیب کانون صفحه‌کلید صفحه قرار گیرد.
 
-Make sure to define styles for a `tabpanel` for when it receives focus, optimally using the CSS {{CSSXref(':focus')}} pseudo-class, so keyboard users know there was a change in focus and are aware of what content currently has focus.
+مطمئن شوید که برای `tabpanel` زمانی که کانون دریافت می‌کند، استایل تعریف می‌کنید، ترجیحاً با استفاده از شبه‌کلاس CSS {{CSSXref(':focus')}}، تا کاربران صفحه‌کلید بدانند که تغییر کانون رخ داده است و از محتوایی که در حال حاضر کانون دارد آگاه باشند.
 
-Carousels can be created using this tab pattern: A slide picker controls can be marked up as `tabs` in a `tablist` with the slide represented by a `tabpanel` element.
+چرخ فلک‌ها را می‌توان با این الگوی tab ایجاد کرد: کنترل‌کننده انتخاب اسلاید می‌تواند به‌صورت `tabs` در یک `tablist` نشانه‌گذاری شود و اسلاید با عنصر `tabpanel` نمایش داده شود.
 
-### Associated Roles and Attributes
+### نقش‌ها و ویژگی‌های مرتبط
 
-- [`tab` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role)
-  - : Controls the visibility of the associated `tabpanel`
-- [`tablist` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role)
-  - : Group of `tab` elements.
+- [نقش `tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role)
+  - : قابلیت مشاهده `tabpanel` مرتبط را کنترل می‌کند.
+- [نقش `tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role)
+  - : گروه عناصر `tab`.
 - [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
-  - : Provides an accessible name. References the `tab` element that controls the panel
+  - : یک نام دسترس‌پذیر فراهم می‌کند. به عنصر `tab` اشاره می‌کند که پنل را کنترل می‌کند.
 - [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded)
-  - : Should be used on the necessary `tab` elements if a multi-selectable `tablist` is used.
+  - : باید روی عناصر `tab` لازم استفاده شود اگر از `tablist` چندانتخابی استفاده می‌شود.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-See the [`tablist` keyboard interactions](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role#keyboard_interactions) in the [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role) role definition.
+تعاملات صفحه‌کلید [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role#keyboard_interactions) را در تعریف نقش [`tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role) ببینید.
 
-## Example
+## مثال
 
-See the [`tabpanel`, `tab`, and `tablist` example](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role#example) in the [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) role definition.
+مثال [`tabpanel`، `tab`، و `tablist`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role#example) را در تعریف نقش [`tab`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role) ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA `tab` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role)
-- [ARIA `tablist` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role)
-- [Example: Tabs with Automatic Activation](https://www.w3.org/WAI/ARIA/apg/example-index/tabs/tabs-automatic.html) - W3C
-- [Example: Tabs with Manual Activation](https://www.w3.org/WAI/ARIA/apg/example-index/tabs/tabs-manual.html) -W3C
+- [نقش `tab` در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role)
+- [نقش `tablist` در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tablist_role)
+- [مثال: برگه‌ها با فعال‌سازی خودکار](https://www.w3.org/WAI/ARIA/apg/example-index/tabs/tabs-automatic.html) - W3C
+- [مثال: برگه‌ها با فعال‌سازی دستی](https://www.w3.org/WAI/ARIA/apg/example-index/tabs/tabs-manual.html) -W3C
