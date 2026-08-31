@@ -1,7 +1,7 @@
 ---
 title: "BluetoothUUID: getService() static method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothUUID/getService_static"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,41 +16,41 @@ browser-compat: api.BluetoothUUID.getService_static
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}
 
-The **`getService()`** static method of the {{domxref("BluetoothUUID")}} interface returns a UUID representing a registered service when passed a name or the 16- or 32-bit UUID alias.
+متد ایستا **`getService()`** در رابط {{domxref("BluetoothUUID")}} یک UUID برمی‌گرداند که نشان‌دهنده یک سرویس ثبت‌شده است، زمانی که یک نام یا نام مستعار UUID ۱۶ یا ۳۲ بیتی به آن داده شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 BluetoothUUID.getService(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : A string containing the name of the service.
+  - : رشته‌ای شامل نام سرویس.
 
-### Return value
+### مقدار بازگشتی
 
-A 128-bit UUID.
+یک UUID ۱۲۸ بیتی.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if `name` does not appear in the registry.
+  - : اگر `name` در رجیستری وجود نداشته باشد پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example the UUID representing the service named `device_information` is returned and printed to the console.
+در مثال زیر، UUID نشان‌دهنده سرویس به نام `device_information` برگردانده شده و در کنسول چاپ می‌شود.
 
 ```js
 let result = BluetoothUUID.getService("device_information");
 console.log(result); // "0000180a-0000-1000-8000-00805f9b34fb"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
