@@ -1,7 +1,7 @@
 ---
 title: "ARIA: presentation role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,19 +13,19 @@ spec-urls: https://w3c.github.io/aria/#presentation
 sidebar: accessibilitysidebar
 ---
 
-The `presentation` role and its synonym `none` remove an element's implicit ARIA semantics from being exposed to the accessibility tree.
+نقش `presentation` و مترادف آن `none`، معنای ضمنی ARIA یک عنصر را از قرار گرفتن در درخت دسترس‌پذیری حذف می‌کنند.
 
-The content of the element will still be available to assistive technologies; it is only the semantics of the container — and in some instance, required associated descendants — which will no longer expose their mappings to the accessibility API.
+محتوای عنصر همچنان برای فناوری‌های کمکی در دسترس خواهد بود؛ فقط معنای ظرف — و در برخی موارد، عناصر فرعی مرتبط الزامی — دیگر نگاشت خود را به API دسترس‌پذیری افشا نمی‌کنند.
 
-## Description
+## توضیحات
 
-While ARIA is primarily used to express semantics, there are some situations where hiding an element's semantics from assistive technologies is helpful. This is done with the `presentation` role or its synonym role `none`, which declare that an element is being used only for presentation and therefore does not have any accessibility semantics.
+در حالی که ARIA عمدتاً برای بیان معنای عناصر استفاده می‌شود، برخی موقعیت‌ها وجود دارند که پنهان کردن معنای یک عنصر از فناوری‌های کمکی مفید است. این کار با نقش `presentation` یا نقش مترادف آن `none` انجام می‌شود که اعلام می‌کنند عنصر فقط برای ارائه (نمایش) استفاده شده و بنابراین هیچ معنای دسترس‌پذیری ندارد.
 
-Writing `<h2 role="presentation">Democracy Dies in Darkness</h2>` removes the heading semantics of the {{HTMLElement("Heading_Elements", "h2")}} element, making it the equivalent of `<div>Democracy Dies in Darkness</div>`. The heading role semantics are removed, but the content itself is still available.
+نوشتن `<h2 role="presentation">Democracy Dies in Darkness</h2>` معنای عنوان عنصر {{HTMLElement("Heading_Elements", "h2")}} را حذف می‌کند و آن را معادل `<div>Democracy Dies in Darkness</div>` می‌سازد. معنای نقش عنوان حذف شده، اما خود محتوا همچنان در دسترس است.
 
-When an element has required descendants, such as the various {{HTMLElement('table')}}, elements and {{HTMLElement('li')}}s children of a {{HTMLElement('ul')}} or {{HTMLElement('ol')}}, the `presentation` or `none` role on the table or list removes the default semantics of the element on which it was applied and their required descendant elements.
+هنگامی که یک عنصر دارای عناصر فرعی الزامی است، مانند عناصر مختلف {{HTMLElement('table')}} و فرزندان {{HTMLElement('li')}} از {{HTMLElement('ul')}} یا {{HTMLElement('ol')}}، نقش `presentation` یا `none` روی جدول یا فهرست، معنای پیش‌فرض عنصر مورد نظر و عناصر فرعی الزامی آن را حذف می‌کند.
 
-If `presentation` or `none` is applied to a {{HTMLElement('table')}} element, the descendant {{HTMLElement('caption')}}, {{HTMLElement('thead')}}, {{HTMLElement('tbody')}}, {{HTMLElement('tfoot')}}, {{HTMLElement('tr')}}, {{HTMLElement('th')}}, and {{HTMLElement('td')}} elements inherit the role and are thus not exposed to assistive technologies. But, elements inside of the {{HTMLElement('th')}} and {{HTMLElement('td')}} elements, including nested tables, are exposed to assistive technologies.
+اگر `presentation` یا `none` روی عنصر {{HTMLElement('table')}} اعمال شود، عناصر فرعی {{HTMLElement('caption')}}، {{HTMLElement('thead')}}، {{HTMLElement('tbody')}}، {{HTMLElement('tfoot')}}، {{HTMLElement('tr')}}، {{HTMLElement('th')}} و {{HTMLElement('td')}} این نقش را به ارث می‌برند و بنابراین در معرض فناوری‌های کمکی قرار نمی‌گیرند. اما عناصر داخل عناصر {{HTMLElement('th')}} و {{HTMLElement('td')}}، از جمله جدول‌های تو در تو، در معرض فناوری‌های کمکی قرار می‌گیرند.
 
 ```html
 <ul role="presentation">
@@ -41,27 +41,27 @@ If `presentation` or `none` is applied to a {{HTMLElement('table')}} element, th
 </ul>
 ```
 
-Because the `presentation` role was applied to the {{HTMLElement('ul')}} element, every child {{HTMLElement('li')}} element inherits the `presentation` role. This is because ARIA requires the `listitem` elements to have a parent `list` element. While the {{HTMLElement('li')}} elements, in this case, are not exposed to assistive technologies, descendants of those required elements are exposed. If we had nested a list within one of those {{HTMLElement('li')}}'s, they would be visible to assistive technologies. For elements with no required children, any elements nested inside the element with `role="presentation"` or `role="none"` preserve their semantics. In this case, the {{HTMLElement('a')}} elements contained inside of those {{HTMLElement('li')}} elements are exposed.
+از آنجا که نقش `presentation` روی عنصر {{HTMLElement('ul')}} اعمال شده، هر عنصر فرزند {{HTMLElement('li')}} این نقش را به ارث می‌برد. این به این دلیل است که ARIA ایجاب می‌کند عناصر `listitem` دارای عنصر والد `list` باشند. در این مورد، عناصر {{HTMLElement('li')}} در معرض فناوری‌های کمکی قرار نمی‌گیرند، اما فرزندان این عناصر الزامی در معرض قرار می‌گیرند. اگر یک فهرست را درون یکی از آن عناصر {{HTMLElement('li')}} تودرتو کرده بودیم، برای فناوری‌های کمکی قابل مشاهده می‌بود. برای عناصری که فرزندان الزامی ندارند، هر عنصری که درون عنصر با `role="presentation"` یا `role="none"` تودرتو شده باشد، معنای خود را حفظ می‌کند. در این مورد، عناصر {{HTMLElement('a')}} که درون آن عناصر {{HTMLElement('li')}} قرار دارند، در معرض قرار می‌گیرند.
 
-The {{HTMLElement('a')}} is a special case. Its role would have been exposed even if it had the `presentation` or `none` role directly applied to it. Browsers ignore `role="presentation"` and `role="none"` on focusable elements, including link and inputs, or anything with a [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) attribute set. Browsers also ignore the inclusion of the role if any of the element contains any global ARIA states and properties, such as [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby).
+عنصر {{HTMLElement('a')}} یک مورد خاص است. نقش آن حتی اگر نقش `presentation` یا `none` مستقیماً روی آن اعمال شده باشد، در معرض قرار می‌گرفت. مرورگرها `role="presentation"` و `role="none"` را روی عناصر قابل تمرکز، از جمله پیوندها و ورودی‌ها، یا هر چیزی با ویژگی [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) نادیده می‌گیرند. مرورگرها همچنین در صورتی که عنصر دارای هر گونه حالت یا ویژگی سراسری ARIA باشد، مانند [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby)، این نقش را نادیده می‌گیرند.
 
 > [!NOTE]
-> The element with `role="presentation"` is not part of the accessibility tree and should not have an accessible name. Do **not** use [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label).
+> عنصر با `role="presentation"` بخشی از درخت دسترس‌پذیری نیست و نباید نام دسترس‌پذیر داشته باشد. از [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) یا [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) استفاده **نکنید**.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
-None. If a global ARIA state and property is set, `presentation` or `none` will be ignored, and the implicit role of the element will be used.
+هیچ‌کدام. اگر یک حالت یا ویژگی سراسری ARIA تنظیم شده باشد، `presentation` یا `none` نادیده گرفته می‌شود و نقش ضمنی عنصر استفاده خواهد شد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <hr role="none" />
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [`aria-hidden`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden) versus [`role="presentation/none"`](https://www.scottohara.me/blog/2018/05/05/hidden-vs-none.html) - by Scott O'Hara
+- [`aria-hidden`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden) در مقایسه با [`role="presentation/none"`](https://www.scottohara.me/blog/2018/05/05/hidden-vs-none.html) - نوشتهٔ Scott O'Hara
