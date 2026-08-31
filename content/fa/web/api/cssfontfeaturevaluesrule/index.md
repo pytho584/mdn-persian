@@ -1,10 +1,4 @@
 ---
-title: "CSSFontFeatureValuesRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontFeatureValuesRule"
-status: "needs-translation"
----
-
----
 title: CSSFontFeatureValuesRule
 slug: Web/API/CSSFontFeatureValuesRule
 page-type: web-api-interface
@@ -13,69 +7,69 @@ browser-compat: api.CSSFontFeatureValuesRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSFontFeatureValuesRule`** interface represents an {{cssxref("@font-feature-values")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules). The values of its instance properties can be accessed with the [`CSSFontFeatureValuesMap`](/en-US/docs/Web/API/CSSFontFeatureValuesMap) interface.
+رابط **`CSSFontFeatureValuesRule`** یک [قاعده-at](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) {{cssxref("@font-feature-values")}} را نمایش می‌دهد. مقادیر ویژگی‌های نمونه آن را می‌توان با استفاده از رابط [`CSSFontFeatureValuesMap`](/en-US/docs/Web/API/CSSFontFeatureValuesMap) به دست آورد.
 
-`@font-feature-values` allows developers to associate, for a given font face, a human-readable name with a numeric index that controls a particular [OpenType font feature](/en-US/docs/Web/CSS/Guides/Fonts/OpenType_fonts).
-For features that select alternative glyphs (stylistic, styleset, character-variant, swash, ornament or annotation), the {{cssxref("font-variant-alternates")}} property can then reference the human-readable name in order to apply the associated feature.
-This is convenient, because it allows the same name to be used of represent a set of alternative glyphs across a number of fonts.
+`@font-feature-values` به توسعه‌دهندگان اجازه می‌دهد تا برای یک چهره قلم مشخص، یک نام خوانا برای انسان را با یک شاخص عددی که یک ویژگی [قلم OpenType](/en-US/docs/Web/CSS/Guides/Fonts/OpenType_fonts) خاص را کنترل می‌کند، مرتبط کنند.
+برای ویژگی‌هایی که شکل‌واره‌های جایگزین را انتخاب می‌کنند (stylistic، styleset، character-variant، swash، ornament یا annotation)، ویژگی {{cssxref("font-variant-alternates")}} می‌تواند به نام خوانا برای انسان ارجاع دهد تا ویژگی مرتبط اعمال شود.
+این کار راحت است، زیرا اجازه می‌دهد از یک نام یکسان برای نمایش مجموعه‌ای از شکل‌واره‌های جایگزین در چندین قلم استفاده شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestor {{domxref("CSSRule")}}._
+_ویژگی‌ها را از جد خود {{domxref("CSSRule")}} به ارث می‌برد._
 
 - {{domxref("CSSFontFeatureValuesRule.annotation")}} {{experimental_inline}}
-  - : A user defined value definition and value that applies an alternate annotation of the font.
+  - : یک تعریف و مقدار مقدار تعریف‌شده توسط کاربر که یک حاشیه‌نویسی جایگزین از قلم را اعمال می‌کند.
 - {{domxref("CSSFontFeatureValuesRule.characterVariant")}} {{experimental_inline}}
-  - : A user defined value definition and value that applies a stylistic alternatives for characters of the font.
+  - : یک تعریف و مقدار مقدار تعریف‌شده توسط کاربر که جایگزین‌های سبکی برای کاراکترهای قلم اعمال می‌کند.
 - {{domxref("CSSFontFeatureValuesRule.fontFamily")}}
-  - : A string that identifies the font family this rule applies to.
+  - : یک رشته که خانواده قلمی را که این قاعده به آن اعمال می‌شود، مشخص می‌کند.
 - {{domxref("CSSFontFeatureValuesRule.ornaments")}} {{experimental_inline}}
-  - : A user defined value definition and value that applies alternative ornaments of the font.
+  - : یک تعریف و مقدار مقدار تعریف‌شده توسط کاربر که تزئینات جایگزین قلم را اعمال می‌کند.
 - {{domxref("CSSFontFeatureValuesRule.styleset")}} {{experimental_inline}}
-  - : A user defined value definition and value that applies alternate style sets of the font.
+  - : یک تعریف و مقدار مقدار تعریف‌شده توسط کاربر که مجموعه‌های سبک جایگزین قلم را اعمال می‌کند.
 - {{domxref("CSSFontFeatureValuesRule.stylistic")}} {{experimental_inline}}
-  - : A user defined value definition and value that applies alternative glyphs of the font.
+  - : یک تعریف و مقدار مقدار تعریف‌شده توسط کاربر که شکل‌واره‌های جایگزین قلم را اعمال می‌کند.
 - {{domxref("CSSFontFeatureValuesRule.swash")}} {{experimental_inline}}
-  - : A user defined value definition and value that applies alternative swashes of the font.
+  - : یک تعریف و مقدار مقدار تعریف‌شده توسط کاربر که swashهای جایگزین قلم را اعمال می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its ancestor {{domxref("CSSRule")}}._
+_روش‌ها را از جد خود {{domxref("CSSRule")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Read font family
+### خواندن خانواده قلم
 
-In this example, we declare two {{cssxref("@font-feature-values")}} one for the _Font One_ font family, and the other for _Font Two_.
-In both declarations we define that the name "nice-style" can be used to represent the styleset alternate glyphs for both of the fonts, specifying the index for that alternate in each font family.
-The alternate glyphs are then applied for any `.nice-look` class, using {{cssxref("font-variant-alternates")}} and passing the name to the [`styleset()`](/en-US/docs/Web/CSS/Reference/Properties/font-variant-alternates#styleset) function.
+در این مثال، ما دو {{cssxref("@font-feature-values")}} اعلام می‌کنیم: یکی برای خانواده قلم _Font One_ و دیگری برای _Font Two_.
+در هر دو اعلام، ما تعریف می‌کنیم که نام "nice-style" می‌تواند برای نمایش شکل‌واره‌های جایگزین styleset برای هر دو قلم استفاده شود، و شاخص آن جایگزین را در هر خانواده قلم مشخص می‌کنیم.
+سپس شکل‌واره‌های جایگزین برای هر کلاس `.nice-look` با استفاده از {{cssxref("font-variant-alternates")}} و ارسال نام به تابع [`styleset()`](/en-US/docs/Web/CSS/Reference/Properties/font-variant-alternates#styleset) اعمال می‌شوند.
 
-We then use the CSSOM to read these declaration as `CSSFontFeatureValuesRule` instances, displaying them into the log.
+سپس با استفاده از CSSOM این اعلام‌ها را به عنوان نمونه‌های `CSSFontFeatureValuesRule` می‌خوانیم و آنها را در لاگ نمایش می‌دهیم.
 
 #### CSS
 
 ```css
-/* At-rule for "nice-style" in Font One */
+/* قاعده-at برای "nice-style" در Font One */
 @font-feature-values Font One {
   @styleset {
-    nice-style: 12; /* name used to represent the alternate set of glyphs at index 12 */
+    nice-style: 12; /* نامی که برای نمایش مجموعه جایگزین شکل‌واره‌ها در شاخص 12 استفاده می‌شود */
   }
 }
 
-/* At-rule for "nice-style" in Font Two */
+/* قاعده-at برای "nice-style" در Font Two */
 @font-feature-values Font Two {
   @styleset {
     nice-style: 4;
   }
 }
 
-/* Apply the at-rules with a single declaration */
+/* اعمال قواعد-at با یک اعلام واحد */
 .nice-look {
   font-variant-alternates: styleset(
     nice-style
-  ); /* name selects different index for same alternate in different fonts */
+  ); /* نام، شاخص متفاوتی را برای همان جایگزین در قلم‌های مختلف انتخاب می‌کند */
 }
 ```
 
@@ -105,23 +99,23 @@ function log(text) {
 ```js
 const rules = document.getElementById("css-output").sheet.cssRules;
 
-const fontOne = rules[0]; // A CSSFontFeatureValuesRule
-log(`The 1st '@font-feature-values' family: "${fontOne.fontFamily}".`);
+const fontOne = rules[0]; // یک CSSFontFeatureValuesRule
+log(`خانواده قلم اول '@font-feature-values': "${fontOne.fontFamily}".`);
 
-const fontTwo = rules[1]; // Another CSSFontFeatureValuesRule
-log(`The 2nd '@font-feature-values' family: "${fontTwo.fontFamily}"`);
+const fontTwo = rules[1]; // یک CSSFontFeatureValuesRule دیگر
+log(`خانواده قلم دوم '@font-feature-values': "${fontTwo.fontFamily}"`);
 ```
 
 {{EmbedLiveSample("read_font_family", "100%", "100px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@font-feature-values")}}
