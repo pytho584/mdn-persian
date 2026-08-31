@@ -1,10 +1,4 @@
 ---
-title: "ConvolverNode"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode"
-status: "needs-translation"
----
-
----
 title: ConvolverNode
 slug: Web/API/ConvolverNode
 page-type: web-api-interface
@@ -13,59 +7,59 @@ browser-compat: api.ConvolverNode
 
 {{APIRef("Web Audio API")}}
 
-The `ConvolverNode` interface is an {{domxref("AudioNode")}} that performs a Linear Convolution on a given {{domxref("AudioBuffer")}}, often used to achieve a reverb effect. A `ConvolverNode` always has exactly one input and one output.
+رابطهٔ `ConvolverNode` یک {{domxref("AudioNode")}} است که یک پیچیدگی خطی (Linear Convolution) روی یک {{domxref("AudioBuffer")}} مشخص انجام می‌دهد و معمولاً برای ایجاد افکت ریورب (بازتاب صدا) استفاده می‌شود. یک `ConvolverNode` همیشه دقیقاً یک ورودی و یک خروجی دارد.
 
 > [!NOTE]
-> For more information on the theory behind Linear Convolution, see the [Convolution article on Wikipedia](https://en.wikipedia.org/wiki/Convolution).
+> برای اطلاعات بیشتر دربارهٔ نظریهٔ پیچیدگی خطی، مقالهٔ [Convolution در ویکی‌پدیا](https://en.wikipedia.org/wiki/Convolution) را ببینید.
 
 {{InheritanceDiagram}}
 
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">Number of inputs</th>
+      <th scope="row">تعداد ورودی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Number of outputs</th>
+      <th scope="row">تعداد خروجی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count mode</th>
+      <th scope="row">حالت تعداد کانال‌ها</th>
       <td><code>"clamped-max"</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count</th>
-      <td><code>1</code>, <code>2</code>, or <code>4</code></td>
+      <th scope="row">تعداد کانال‌ها</th>
+      <td><code>1</code>، <code>2</code> یا <code>4</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel interpretation</th>
+      <th scope="row">تفسیر کانال‌ها</th>
       <td><code>"speakers"</code></td>
     </tr>
   </tbody>
 </table>
 
-## Constructor
+## سازنده
 
 - {{domxref("ConvolverNode.ConvolverNode()", "ConvolverNode()")}}
-  - : Creates a new `ConvolverNode` object instance.
+  - : یک نمونهٔ جدید از شیء `ConvolverNode` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("AudioNode")}}_.
+_ویژگی‌های والد خود، {{domxref("AudioNode")}} را به ارث می‌برد._
 
 - {{domxref("ConvolverNode.buffer")}}
-  - : A mono, stereo, or 4-channel _{{domxref("AudioBuffer")}}_ containing the (possibly multichannel) impulse response used by the `ConvolverNode` to create the reverb effect.
+  - : یک _{{domxref("AudioBuffer")}}_ تَک‌کاناله، استریو یا ۴ کاناله که شامل پاسخ ضربه (impulse response) (احتمولاً چندکاناله) است؛ پاسخی که `ConvolverNode` برای ایجاد افکت ریورب از آن استفاده می‌کند.
 - {{domxref("ConvolverNode.normalize")}}
-  - : A boolean that controls whether the impulse response from the buffer will be scaled by an equal-power normalization when the `buffer` attribute is set, or not.
+  - : یک مقدار بولی که کنترل می‌کند آیا پاسخ ضربهٔ موجود در بافر هنگام تنظیم ویژگی `buffer` با نرمال‌سازی توان برابر (equal-power normalization) مقیاس‌دهی شود یا نه.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("AudioNode")}}_.
+_روش خاصی ندارد؛ روش‌های والد خود، {{domxref("AudioNode")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-The following example shows basic usage of an AudioContext to create a convolver node. You will need to find an impulse response to complete the example below. See our [HolySpaceCow](https://mdn.github.io/webaudio-examples/holy-space-cow/) example for a complete, applied example.
+مثال زیر کاربرد پایهٔ یک AudioContext را برای ساخت گرهٔ Convolver نشان می‌دهد. برای تکمیل مثال زیر باید یک پاسخ ضربه پیدا کنید. برای مشاهدهٔ یک مثال کامل و کاربردی، نمونهٔ [HolySpaceCow](https://mdn.github.io/webaudio-examples/holy-space-cow/) ما را ببینید.
 
 ```js
 let audioCtx = new window.AudioContext();
@@ -90,14 +84,14 @@ someOtherAudioNode.connect(reverb);
 reverb.connect(audioCtx.destination);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
