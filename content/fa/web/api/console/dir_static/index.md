@@ -1,11 +1,5 @@
 ---
 title: "console: dir() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/console/dir_static"
-status: "needs-translation"
----
-
----
-title: "console: dir() static method"
 short-title: dir()
 slug: Web/API/console/dir_static
 page-type: web-api-static-method
@@ -14,13 +8,13 @@ browser-compat: api.console.dir_static
 
 {{APIRef("Console API")}} {{AvailableInWorkers}}
 
-The **`console.dir()`** static method displays a list of the properties of the specified JavaScript object. In browser consoles, the output is presented as a hierarchical listing with disclosure triangles that let you see the contents of child objects.
+متد ایستا **`console.dir()`** فهرستی از ویژگی‌های شیء جاوااسکریپت مشخص‌شده را نمایش می‌دهد. در کنسول‌های مرورگر، خروجی به صورت فهرست سلسله‌مراتبی با مثلث‌های بازشونده ارائه می‌شود که به شما امکان می‌دهد محتویات اشیاء فرزند را مشاهده کنید.
 
-Unlike other logging methods, `console.dir()` does not attempt to pretty-print the object. For example, if you pass a DOM element to `console.dir()`, it will not be displayed like in the element inspector, but will instead show a list of properties.
+برخلاف دیگر متدهای لاگ‌گیری، `console.dir()` تلاش نمی‌کند شیء را به صورت زیبا (pretty-print) نمایش دهد. برای مثال، اگر یک عنصر DOM را به `console.dir()` بدهید، مانند بازرس عنصر (element inspector) نمایش داده نمی‌شود، بلکه فهرستی از ویژگی‌ها را نشان می‌دهد.
 
-![A screenshot of the Firefox console where console.dir(document.location) is run. We can see the URL of the page, followed by a block of properties. If the property is a function or an object, a disclosure triangle is prepended.](console-dir.png)
+![تصویری از کنسول فایرفاکس که در آن console.dir(document.location) اجرا شده است. URL صفحه را می‌بینیم و به دنبال آن بلوکی از ویژگی‌ها. اگر ویژگی یک تابع یا شیء باشد، یک مثلث بازشونده قبل از آن قرار دارد.](console-dir.png)
 
-In runtimes like {{glossary("Node.js", "Node")}} and {{glossary("Deno")}}, where console output goes to the terminal and is therefore not interactive, the `options` parameter provides a way to customize the way the object is presented.
+در زمان‌های اجرا (runtimes) مانند {{glossary("Node.js", "Node")}} و {{glossary("Deno")}}، که خروجی کنسول به ترمینال می‌رود و بنابراین تعاملی نیست، پارامتر `options` راهی برای سفارشی‌سازی نحوه ارائه شیء فراهم می‌کند.
 
 ## Syntax
 
@@ -32,19 +26,19 @@ console.dir(object, options)
 ### Parameters
 
 - `object`
-  - : A JavaScript object whose properties should be printed.
+  - : یک شیء جاوااسکریپت که ویژگی‌های آن باید چاپ شوند.
 - `options` {{optional_inline}}
-  - : An object with the following properties, all optional:
+  - : یک شیء با ویژگی‌های زیر، همه اختیاری:
     - `colors` {{non-standard_inline}} {{optional_inline}}
-      - : A boolean value: if `true`, style the properties of the object according to their type. Defaults to `true`.
+      - : یک مقدار بولی: اگر `true` باشد، ویژگی‌های شیء را بر اساس نوع آن‌ها سبک‌دهی می‌کند. پیش‌فرض `true`.
     - `depth` {{non-standard_inline}} {{optional_inline}}
-      - : A number representing the number of nesting levels to print when an object contains other objects or arrays. The value `null` means: print all levels. Defaults to 2.
+      - : یک عدد که تعداد سطوح تو در تو را برای چاپ زمانی که یک شیء شامل اشیاء یا آرایه‌های دیگر است مشخص می‌کند. مقدار `null` به معنای چاپ همه سطوح است. پیش‌فرض ۲.
     - `showHidden` {{non-standard_inline}} {{optional_inline}}
-      - : A boolean value: if `true`, print the object's non-enumerable and symbol properties. Defaults to `false`.
+      - : یک مقدار بولی: اگر `true` باشد، ویژگی‌های غیرقابل شمارش (non-enumerable) و نماد (symbol) شیء را چاپ می‌کند. پیش‌فرض `false`.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Specifications
 
@@ -56,6 +50,6 @@ None ({{jsxref("undefined")}}).
 
 ## See also
 
-- [Microsoft Edge's documentation for `console.dir()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#dir)
-- [Node.js documentation for `console.dir()`](https://nodejs.org/docs/latest/api/console.html#consoledirobj-options)
-- [Google Chrome's documentation for `console.dir()`](https://developer.chrome.com/docs/devtools/console/api/#dir)
+- [مستندات Microsoft Edge برای `console.dir()`](https://learn.microsoft.com/en-us/microsoft-edge/devtools/console/api#dir)
+- [مستندات Node.js برای `console.dir()`](https://nodejs.org/docs/latest/api/console.html#consoledirobj-options)
+- [مستندات Google Chrome برای `console.dir()`](https://developer.chrome.com/docs/devtools/console/api/#dir)
