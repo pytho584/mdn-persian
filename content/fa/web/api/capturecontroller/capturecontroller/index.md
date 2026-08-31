@@ -1,11 +1,5 @@
 ---
 title: "CaptureController: CaptureController() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CaptureController/CaptureController"
-status: "needs-translation"
----
-
----
-title: "CaptureController: CaptureController() constructor"
 short-title: CaptureController()
 slug: Web/API/CaptureController/CaptureController
 page-type: web-api-constructor
@@ -16,19 +10,19 @@ browser-compat: api.CaptureController.CaptureController
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The {{domxref("CaptureController")}} constructor creates a new `CaptureController` object instance.
+سازندهٔ {{domxref("CaptureController")}} یک نمونه شیء جدید از `CaptureController` ایجاد می‌کند.
 
-## Syntax
+## دستور زبان
 
 ```js-nolint
 CaptureController()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Create a new CaptureController instance
@@ -51,15 +45,15 @@ if (displaySurface === "browser") {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - {{domxref("MediaDevices.getDisplayMedia()")}}
