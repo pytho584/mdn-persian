@@ -1,7 +1,7 @@
 ---
 title: "Animation: pending property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Animation/pending"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,21 +14,21 @@ browser-compat: api.Animation.pending
 
 {{APIRef("Web Animations")}}
 
-The read-only **`Animation.pending`** property of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) indicates whether the animation is currently waiting for an asynchronous operation such as initiating playback or pausing a running animation.
+ویژگی فقط‌خواندنی **`Animation.pending`** از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) نشان می‌دهد که آیا انیمیشن در حال حاضر منتظر یک عملیات ناهمزمان مانند شروع پخش یا توقف یک انیمیشن در حال اجرا است.
 
-## Value
+## مقدار
 
-**`true`** if the animation is pending, **`false`** otherwise.
+اگر انیمیشن در حالت انتظار باشد، مقدار **`true`** و در غیر این صورت، مقدار **`false`** است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("Animation")}} for other methods and properties you can use to control web page animation.
+- {{domxref("Animation")}} برای سایر روش‌ها و ویژگی‌هایی که می‌توانید برای کنترل انیمیشن صفحه وب استفاده کنید.
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
