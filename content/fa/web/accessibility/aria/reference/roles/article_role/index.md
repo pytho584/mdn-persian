@@ -1,9 +1,4 @@
----
-title: "ARIA: article role"
-source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/article_role"
-status: "needs-translation"
----
-
+```
 ---
 title: "ARIA: article role"
 short-title: article
@@ -13,9 +8,10 @@ spec-urls:
   - https://w3c.github.io/aria/#article
   - https://www.w3.org/WAI/ARIA/apg/patterns/feed/examples/feed/
 sidebar: accessibilitysidebar
+translated_by: "n8n + AI"
 ---
 
-The `article` role indicates a section of a page that could easily stand on its own on a page, in a document, or on a website. It is usually set on related content items such as comments, forum posts, newspaper articles or other items grouped together on one page.
+نقش `article` (مقاله) نشان‌دهنده بخشی از یک صفحه است که می‌تواند به‌راحتی به‌عنوان یک صفحه، سند یا وب‌سایت مستقل در نظر گرفته شود. این نقش معمولاً روی موارد محتوایی مرتبط مانند دیدگاه‌ها (comments)، پست‌های انجمن (forum posts)، مقالات خبری یا موارد دیگری که در یک صفحه گروه‌بندی شده‌اند، تنظیم می‌شود.
 
 ```html
 <div role="article">
@@ -27,12 +23,12 @@ The `article` role indicates a section of a page that could easily stand on its 
 <div role="article">…</div>
 ```
 
-This example shows two articles side by side on one page that could be structured similarly and are related.
+این مثال دو مقاله را نشان می‌دهد که در یک صفحه کنار یکدیگر قرار دارند، می‌توانند ساختار مشابهی داشته باشند و مرتبط باشند.
 
 > [!NOTE]
-> Instead of a `<div>` with an `article` role, use the {{HTMLElement('article')}} element. **Always use native element if available**
+> به جای `<div>` با نقش `article`، از عنصر {{HTMLElement('article')}} استفاده کنید. **در صورت وجود، همیشه از عنصر بومی (native element) استفاده کنید.**
 
-Don't use `role="article"`. Instead use the `<article>` element.
+از `role="article"` استفاده نکنید. در عوض از عنصر `<article>` استفاده کنید.
 
 ```html
 <article>
@@ -44,56 +40,57 @@ Don't use `role="article"`. Instead use the `<article>` element.
 <article>…</article>
 ```
 
-## Description
+## توضیحات
 
-The `article` [document structure role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#1._document_structure_roles) denotes a section of a document, page, or site that, if it were standing on its own, could be viewed as a complete document, page or site. The aim of a set of article sections is to indicate their relationship to one another.
+نقش `article` (یکی از [نقش‌های ساختار سند](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles#1._document_structure_roles)) به بخشی از یک سند، صفحه یا سایت اشاره دارد که اگر به‌تنهایی می‌بود، می‌توانست به‌عنوان یک سند، صفحه یا سایت کامل در نظر گرفته شود. هدف از مجموعه بخش‌های مقاله، نشان‌دادن ارتباط آن‌ها با یکدیگر است.
 
-Articles are not considered a navigational landmark, but many assistive technologies that support landmarks also support a means to navigate among articles. They may also support indication of nesting relationships within articles.
+مقالات به‌عنوان یک نشانه‌گذاری (landmark) ناوبری در نظر گرفته نمی‌شوند، اما بسیاری از فناوری‌های کمکی که از نشانه‌گذاری‌ها پشتیبانی می‌کنند، از راهکاری برای پیمایش بین مقالات نیز پشتیبانی می‌کنند. آن‌ها ممکن است از نشان‌دادن روابط تودرتو درون مقالات نیز پشتیبانی کنند.
 
-Articles can be nested, indicating that a nested article directly relates to the one it is nested in, but not necessarily to the ones outside the nesting hierarchy. Reference the examples for specific use cases.
+مقالات می‌توانند تودرتو باشند، که نشان می‌دهد یک مقاله تودرتو مستقیماً با مقاله‌ای که در آن قرار گرفته مرتبط است، اما لزوماً با مقالات خارج از سلسله‌مراتب تودرتو مرتبط نیست. برای موارد استفاده خاص به مثال‌ها مراجعه کنید.
 
-If an article is part of a feed, it can have the [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) and [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) attributes set to indicate which position within the feed this particular article represents.
+اگر مقاله‌ای بخشی از یک فید (feed) باشد، می‌تواند ویژگی‌های [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) و [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) را داشته باشد تا مشخص کند این مقاله خاص چه جایگاهی در فید دارد.
 
-Inside an `application` or other widget that causes screen readers and other assistive technologies to be in pass-through mode, an article can be used to indicate that these should switch back to treating the enclosed content as regular web content.
+در داخل یک `application` یا سایر ویجت‌هایی که باعث می‌شوند صفحه‌خوان‌ها و سایر فناوری‌های کمکی در حالت عبور مستقیم (pass-through) قرار گیرند، می‌توان از یک مقاله برای نشان دادن این استفاده کرد که آن‌ها باید به حالت پردازش محتوای محصورشده به‌عنوان محتوای وب معمولی بازگردند.
 
-Instead of including the `article` role on a non-semantic element, the {{HTMLElement('article')}} element should be used. User agents translate this to the appropriate accessibility information just like the `article` role. Using the {{HTMLElement('article')}} element also helps search engines better discover the structure of a page. Examples of appropriate uses of the `role="article"`, or preferably `<article>`, include blog posts, forum posts, a comment to a forum or blog post, any an item in a social media feed.
+به جای قرار دادن نقش `article` روی یک عنصر غیر معنایی (non-semantic)، باید از عنصر {{HTMLElement('article')}} استفاده شود. عامل‌های کاربر (user agents) این عنصر را دقیقاً مانند نقش `article` به اطلاعات دسترس‌پذیری مناسب ترجمه می‌کنند. استفاده از عنصر {{HTMLElement('article')}} همچنین به موتورهای جستجو کمک می‌کند تا ساختار صفحه را بهتر کشف کنند. نمونه‌های استفاده مناسب از `role="article"` یا ترجیحاً `<article>` شامل پست‌های وبلاگ، پست‌های انجمن، یک دیدگاه روی یک پست انجمن یا وبلاگ، و هر آیتم در یک فید رسانه اجتماعی است.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
 - [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset)
-  - : In the context of a feed, indicates the position of this particular article within that feed, based on a count starting at 1.
+  - : در زمینه یک فید، موقعیت این مقاله خاص را در آن فید، بر اساس شمارشی که از ۱ شروع می‌شود، نشان می‌دهد.
 - [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize)
-  - : In the context of a feed, indicates how many article items there are within that feed.
+  - : در زمینه یک فید، تعداد آیتم‌های مقاله موجود در آن فید را نشان می‌دهد.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-This role does not support any specific keyboard interaction.
+این نقش از هیچ تعامل صفحه‌کلید خاصی پشتیبانی نمی‌کند.
 
-### Required JavaScript features
+### ویژگی‌های جاوااسکریپت مورد نیاز
 
-- Event handlers
-  - : This role does not require any event handlers to be present.
-- Changing attribute values
-  - : When constructing a feed, set the `aria-posinset` and `aria-setsize` attributes on each article role to the appropriate values, bearing in mind that `aria-posinset` is 1-based.
+- مدیریت‌کننده‌های رویداد (Event handlers)
+  - : این نقش به وجود هیچ مدیریت‌کننده رویدادی نیاز ندارد.
+- تغییر مقادیر ویژگی‌ها
+  - : هنگام ساخت یک فید، ویژگی‌های `aria-posinset` و `aria-setsize` را روی هر نقش مقاله با مقادیر مناسب تنظیم کنید، با در نظر گرفتن این نکته که `aria-posinset` مبتنی بر ۱ است.
 
 > [!NOTE]
-> **Always use native element if available.** Instead of a `<div>` with the `article` role, the `<article>` element should be used.
+> **در صورت وجود، همیشه از عنصر بومی استفاده کنید.** به جای `<div>` با نقش `article`، باید از عنصر `<article>` استفاده شود.
 
-## Examples
+## مثال‌ها
 
-- The [restaurant recommendations feed display](https://www.w3.org/WAI/ARIA/apg/patterns/feed/examples/feed-display.html) along with its separate [documentation](https://www.w3.org/WAI/ARIA/apg/patterns/feed/examples/feed/) from the WAI-ARIA 1.1 authoring practices feed design pattern
+- [نمایش فید توصیه‌های رستوران](https://www.w3.org/WAI/ARIA/apg/patterns/feed/examples/feed-display.html) به همراه [مستندات](https://www.w3.org/WAI/ARIA/apg/patterns/feed/examples/feed/) جداگانه آن از الگوی طراحی فید در شیوه‌های نویسندگی WAI-ARIA 1.1
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Precedence order
+## ترتیب اولویت
 
-This role corresponds to the {{HTMLElement('article')}} element in HTML, and that element should be used instead, if possible. This role does not require any specific roles to be present among its children. It is the only role allowed as a direct child of an element with the [`feed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/feed_role) role.
+این نقش با عنصر {{HTMLElement('article')}} در HTML مطابقت دارد و در صورت امکان باید از آن عنصر استفاده شود. این نقش به وجود هیچ نقش خاصی در میان فرزندانش نیاز ندارد. این تنها نقشی است که به‌عنوان فرزند مستقیم یک عنصر با نقش [`feed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/feed_role) مجاز است.
 
-## See also
+## همچنین ببینید
 
-- [`feed` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/feed_role)
-- [`section` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/section_role)
-- The {{HTMLElement('article')}} element
-- {{Glossary("RSS")}} glossary definition
+- [نقش `feed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/feed_role)
+- [نقش `section`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/section_role)
+- عنصر {{HTMLElement('article')}}
+- تعریف واژه‌نامه {{Glossary("RSS")}}
+```
