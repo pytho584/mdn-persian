@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: miterLimit property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/miterLimit"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: miterLimit property"
 short-title: miterLimit
 slug: Web/API/CanvasRenderingContext2D/miterLimit
 page-type: web-api-instance-property
@@ -14,32 +8,31 @@ browser-compat: api.CanvasRenderingContext2D.miterLimit
 
 {{APIRef("Canvas API")}}
 
-The **`CanvasRenderingContext2D.miterLimit`** property of the
-Canvas 2D API sets the miter limit ratio.
+ویژگی **`CanvasRenderingContext2D.miterLimit`** در Canvas 2D API نسبت حد میتر (miter limit ratio) را تنظیم می‌کند.
 
 > [!NOTE]
-> For more info about miters, see [Applying styles and color](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) in the [Canvas tutorial](/en-US/docs/Web/API/Canvas_API/Tutorial).
+> برای اطلاعات بیشتر درباره میترها، به [اعمال استایل‌ها و رنگ‌ها](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors) در [آموزش Canvas](/en-US/docs/Web/API/Canvas_API/Tutorial) مراجعه کنید.
 
-## Value
+## مقدار
 
-A number specifying the miter limit ratio, in coordinate space units. Zero, negative, {{jsxref("Infinity")}}, and {{jsxref("NaN")}} values are ignored. The default value is `10.0`.
+عددی که نسبت حد میتر را بر حسب واحدهای فضای مختصات مشخص می‌کند. مقادیر صفر، منفی، {{jsxref("Infinity")}} و {{jsxref("NaN")}} نادیده گرفته می‌شوند. مقدار پیش‌فرض `10.0` است.
 
-## Examples
+## مثال‌ها
 
-### Using the `miterLimit` property
+### استفاده از ویژگی `miterLimit`
 
-See the chapter [Applying styles and color](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors#a_demo_of_the_miterlimit_property) in the [Canvas tutorial](/en-US/docs/Web/API/Canvas_API/Tutorial) for more information.
+برای اطلاعات بیشتر، به فصل [اعمال استایل‌ها و رنگ‌ها](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors#a_demo_of_the_miterlimit_property) در [آموزش Canvas](/en-US/docs/Web/API/Canvas_API/Tutorial) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این ویژگی: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.lineCap")}}
 - {{domxref("CanvasRenderingContext2D.lineJoin")}}
