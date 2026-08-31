@@ -1,7 +1,7 @@
 ---
 title: "AudioScheduledSourceNode: start() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioScheduledSourceNode/start"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,66 +14,57 @@ browser-compat: api.AudioScheduledSourceNode.start
 
 {{APIRef("Web Audio API")}}
 
-The `start()` method on {{domxref("AudioScheduledSourceNode")}} schedules a sound to begin playback at the specified time.
-If no time is specified, then the sound begins playing immediately.
+{{domxref("AudioScheduledSourceNode")}} 接口的 `start()` 方法会在指定时间安排声音开始播放。如果未指定时间，则声音会立即开始播放。
 
-## Syntax
+## 语法
 
 ```js-nolint
 start()
 start(when)
 ```
 
-### Parameters
+### 参数
 
 - `when` {{optional_inline}}
-  - : The time, in seconds, at which the sound should begin to play. This value is
-    specified in the same time coordinate system as the {{domxref("AudioContext")}} is
-    using for its {{domxref("BaseAudioContext/currentTime", "currentTime")}} attribute. A
-    value of 0 (or omitting the `when` parameter entirely) causes the sound to
-    start playback immediately.
+  - : 声音开始播放的时间，以秒为单位。该值使用与 {{domxref("AudioContext")}} 在其 {{domxref("BaseAudioContext/currentTime", "currentTime")}} 属性中相同的时间坐标系。值为 0（或完全省略 `when` 参数）会导致声音立即开始播放。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-### Exceptions
+### 异常
 
 - `InvalidStateNode` {{domxref("DOMException")}}
-  - : Thrown if the node has already been started. This error occurs even if the node is no longer
-    running because of a prior call to {{domxref("AudioScheduledSourceNode.stop", "stop()")}}.
+  - : 如果节点已经启动，则抛出此异常。即使节点因先前调用 {{domxref("AudioScheduledSourceNode.stop", "stop()")}} 而不再运行，也会发生此错误。
 - {{jsxref("RangeError")}}
-  - : Thrown if the value specified for `when` is negative.
+  - : 如果为 `when` 指定的值为负数，则抛出此异常。
 
-## Examples
+## 示例
 
-This example demonstrates how to create an {{domxref("OscillatorNode")}} which is
-scheduled to start playing in 2 seconds and stop playing 1 second after that. The times
-are calculated by adding the desired number of seconds to the context's current time
-stamp returned by {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}}.
+此示例演示如何创建一个 {{domxref("OscillatorNode")}}，并安排其在 2 秒后开始播放，并在其之后 1 秒停止播放。时间是通过将所需的秒数添加到由 {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}} 返回的上下文的当前时间戳来计算的。
 
 ```js
 context = new AudioContext();
 osc = context.createOscillator();
 osc.connect(context.destination);
 
-/* Schedule the start and stop times for the oscillator */
+/* 安排振荡器的开始和停止时间 */
 
 osc.start(context.currentTime + 2);
 osc.stop(context.currentTime + 3);
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [使用 Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - {{domxref("AudioScheduledSourceNode.stop", "stop()")}}
 - {{domxref("AudioScheduledSourceNode")}}
 - {{domxref("AudioBufferSourceNode")}}
