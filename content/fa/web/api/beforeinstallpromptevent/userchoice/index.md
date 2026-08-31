@@ -1,7 +1,7 @@
 ---
 title: "BeforeInstallPromptEvent: userChoice property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent/userChoice"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -17,25 +17,25 @@ browser-compat: api.BeforeInstallPromptEvent.userChoice
 
 {{APIRef}}{{SeeCompatTable}}{{Non-standard_header}}
 
-The **`userChoice`** property of the {{domxref("BeforeInstallPromptEvent")}} interface represents the installation choice that the user made, when they were prompted to install the app.
+ویژگی **`userChoice`** از رابط {{domxref("BeforeInstallPromptEvent")}} انتخابی را که کاربر هنگام درخواست نصب برنامه انجام داده است، نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{jsxref("Promise")}} which resolves to an object containing two properties:
+یک {{jsxref("Promise")}} که به یک شیء شامل دو ویژگی تبدیل می‌شود:
 
 - `outcome` {{experimental_inline}} {{non-standard_inline}}
-  - : A string indicating whether the user chose to install the app or not. It must be one of the following values:
-    - `"accepted"`: The user installed the app.
-    - `"dismissed"`: The user did not install the app.
+  - : رشته‌ای که نشان می‌دهد کاربر نصب برنامه را انتخاب کرده است یا نه. باید یکی از مقادیر زیر باشد:
+    - `"accepted"`: کاربر برنامه را نصب کرد.
+    - `"dismissed"`: کاربر برنامه را نصب نکرد.
 
 - `platform` {{experimental_inline}} {{non-standard_inline}}
-  - : If the user chose to install the app, this is a string naming the selected platform, which is one of the values from the {{domxref("BeforeInstallPromptEvent.platforms")}} property. If the user chose not to install the app, this is an empty string.
+  - : اگر کاربر نصب برنامه را انتخاب کرده باشد، این یک رشته است که نام پلتفرم انتخابی را مشخص می‌کند و یکی از مقادیر ویژگی {{domxref("BeforeInstallPromptEvent.platforms")}} است. اگر کاربر انتخاب کرده باشد برنامه را نصب نکند، این یک رشته خالی است.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Making PWAs installable](/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable)
-- [How to provide your own in-app install experience](https://web.dev/articles/customize-install) on web.dev (2021)
+- [قابل نصب کردن PWAها](/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable)
+- [چگونه تجربه نصب درون‌برنامه‌ای خود را ارائه دهید](https://web.dev/articles/customize-install) در web.dev (2021)
