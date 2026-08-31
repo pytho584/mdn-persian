@@ -1,11 +1,5 @@
 ---
 title: "CharacterData: replaceWith() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/replaceWith"
-status: "needs-translation"
----
-
----
-title: "CharacterData: replaceWith() method"
 short-title: replaceWith()
 slug: Web/API/CharacterData/replaceWith
 page-type: web-api-instance-method
@@ -14,36 +8,34 @@ browser-compat: api.CharacterData.replaceWith
 
 {{APIRef("DOM")}}
 
-The **`replaceWith()`** method of the {{domxref("CharacterData")}} interface
-replaces this node in the children list of its parent
-with a set of {{domxref("Node")}} objects or string.
+متد **`replaceWith()`** از رابط {{domxref("CharacterData")}} این گره را در فهرست فرزندان والدش با مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته جایگزین می‌کند.
 
-Strings are inserted as {{domxref("Text")}} nodes; the string is being passed as argument to the {{domxref("Text/Text", "Text()")}} constructor.
+رشته‌ها به‌عنوان گره‌های {{domxref("Text")}} درج می‌شوند؛ این رشته به‌عنوان آرگومان به سازنده {{domxref("Text/Text", "Text()")}} ارسال می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 replaceWith(...nodes)
 ```
 
-### Parameters
+### پارامترها
 
 - `nodes` {{optional_inline}}
-  - : A comma-separated list of {{domxref("Node")}} objects or strings that will replace the current node.
+  - : فهرستی با جداکننده کاما از اشیاء {{domxref("Node")}} یا رشته‌هایی که جایگزین گره فعلی خواهند شد.
 
 > [!NOTE]
-> If no arguments are passed in, this method removes the node from the DOM tree.
+> اگر هیچ آرگومانی ارسال نشود، این متد گره را از درخت DOM حذف می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the node cannot be inserted at the specified point in the hierarchy.
+  - : زمانی که گره را نتوان در نقطه مشخص‌شده در سلسله‌مراتب درج کرد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```html
 <p id="myText">Some text</p>
@@ -59,15 +51,15 @@ text.replaceWith(em); // Replace `Some text` by `Italic text`
 
 {{EmbedLiveSample("Examples", "100%", 30)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CharacterData.replaceData()")}}
 - {{domxref("DocumentType.replaceWith()")}}
