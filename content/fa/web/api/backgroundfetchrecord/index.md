@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRecord"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRecord"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,22 +15,22 @@ browser-compat: api.BackgroundFetchRecord
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`BackgroundFetchRecord`** interface of the {{domxref('Background Fetch API','','',' ')}} represents an individual request and response.
+رابط **`BackgroundFetchRecord`** از {{domxref('Background Fetch API','','',' ')}} نشان‌دهنده‌ی یک درخواست و پاسخ مجزا است.
 
-A `BackgroundFetchRecord` is created by the {{domxref("BackgroundFetchRegistration.match()","BackgroundFetchRegistration.matchAll()")}} method, therefore there is no constructor for this interface.
+یک `BackgroundFetchRecord` توسط متد {{domxref("BackgroundFetchRegistration.match()","BackgroundFetchRegistration.matchAll()")}} ایجاد می‌شود، بنابراین هیچ سازنده‌ای برای این رابط وجود ندارد.
 
-There will be one `BackgroundFetchRecord` for each resource requested by `fetch()`.
+برای هر منبعی که توسط `fetch()` درخواست می‌شود، یک `BackgroundFetchRecord` وجود خواهد داشت.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("BackgroundFetchRecord.request","request")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("Request")}}.
+  - : یک {{domxref("Request")}} را برمی‌گرداند.
 - {{domxref("BackgroundFetchRecord.responseReady","responseReady")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a promise that resolves with a {{domxref("Response")}}.
+  - : یک promise را برمی‌گرداند که با یک {{domxref("Response")}} حل می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this example an individual `BackgroundFetchRecord` is returned using {{domxref("BackgroundFetchRegistration.match()","BackgroundFetchRegistration.matchAll()")}}. The {{domxref("BackgroundFetchRecord.request")}} and {{domxref("BackgroundFetchRecord.responseReady")}} are returned and logged to the console.
+در این مثال، یک `BackgroundFetchRecord` مجزا با استفاده از {{domxref("BackgroundFetchRegistration.match()","BackgroundFetchRegistration.matchAll()")}} برگردانده می‌شود. {{domxref("BackgroundFetchRecord.request")}} و {{domxref("BackgroundFetchRecord.responseReady")}} برگردانده شده و در کنسول ثبت می‌شوند.
 
 ```js
 bgFetch.match("/ep-5.mp3").then(async (record) => {
@@ -45,10 +45,10 @@ bgFetch.match("/ep-5.mp3").then(async (record) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
