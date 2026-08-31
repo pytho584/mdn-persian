@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: lineJoin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: lineJoin property"
 short-title: lineJoin
 slug: Web/API/CanvasRenderingContext2D/lineJoin
 page-type: web-api-instance-property
@@ -14,45 +8,34 @@ browser-compat: api.CanvasRenderingContext2D.lineJoin
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.lineJoin`**
-property of the Canvas 2D API determines the shape used to join two line segments where
-they meet.
+ویژگی **`CanvasRenderingContext2D.lineJoin`** در Canvas 2D API شکلی را تعیین می‌کند که برای اتصال دو پاره‌خط در نقطه‌ای که به هم می‌رسند استفاده می‌شود.
 
-This property has no effect wherever two connected segments have the same direction,
-because no joining area will be added in this case. Degenerate segments with a length of
-zero (i.e., with all endpoints and control points at the exact same position) are also
-ignored.
+این ویژگی در هر جایی که دو بخش متصل به هم هم‌جهت باشند اثری ندارد، زیرا در این حالت ناحیهٔ اتصال اضافه نمی‌شود. همچنین بخش‌های تباهیده (degenerate) با طول صفر (یعنی جایی که همهٔ نقاط پایانی و نقاط کنترلی دقیقاً در یک موقعیت قرار دارند) نادیده گرفته می‌شوند.
 
 > [!NOTE]
-> Lines can be drawn with the
-> {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}},
-> {{domxref("CanvasRenderingContext2D.strokeRect()", "strokeRect()")}},
-> and {{domxref("CanvasRenderingContext2D.strokeText()", "strokeText()")}} methods.
+> خطوط را می‌توان با روش‌های
+> {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}}،
+> {{domxref("CanvasRenderingContext2D.strokeRect()", "strokeRect()")}} و
+> {{domxref("CanvasRenderingContext2D.strokeText()", "strokeText()")}} رسم کرد.
 
-## Value
+## مقدار
 
-There are three possible values for this property: `"round"`, `"bevel"`, and `"miter"`. The default is `"miter"`.
+برای این ویژگی سه مقدار ممکن وجود دارد: `"round"`، `"bevel"` و `"miter"`. مقدار پیش‌فرض `"miter"` است.
 
-![Three horizontal zigzag lines with round, bevel, and miter values, shown from top to bottom respectively.](canvas_linejoin.png)
+![سه خط زیگزاگی افقی با مقادیر round، bevel و miter، به ترتیب از بالا به پایین.](canvas_linejoin.png)
 
 - `"round"`
-  - : Rounds off the corners of a shape by filling an additional sector of disc centered
-    at the common endpoint of connected segments. The radius for these rounded corners is
-    equal to the line width.
+  - : گوشه‌های یک شکل را با پر کردن یک بخش اضافی از دایره که مرکز آن در نقطهٔ مشترک بخش‌های متصل است، گرد می‌کند. شعاع این گوشه‌های گرد برابر با پهنای خط است.
 - `"bevel"`
-  - : Fills an additional triangular area between the common endpoint of connected
-    segments, and the separate outside rectangular corners of each segment.
+  - : یک ناحیهٔ مثلثی اضافی بین نقطهٔ مشترک بخش‌های متصل و گوشه‌های مستطیلی بیرونی جداگانهٔ هر بخش را پر می‌کند.
 - `"miter"`
-  - : Connected segments are joined by extending their outside edges to connect at a
-    single point, with the effect of filling an additional lozenge-shaped area. This
-    setting is affected by the {{domxref("CanvasRenderingContext2D.miterLimit", "miterLimit")}} property. Default value.
+  - : بخش‌های متصل با امتداد یافتن لبه‌های بیرونی آن‌ها به یکدیگر و اتصال در یک نقطه به هم می‌پیوندند، به‌گونه‌ای که یک ناحیهٔ لوزی‌مانند اضافی پر شود. این تنظیم تحت تأثیر ویژگی {{domxref("CanvasRenderingContext2D.miterLimit", "miterLimit")}} قرار دارد. مقدار پیش‌فرض.
 
-## Examples
+## مثال‌ها
 
-### Changing the joins in a path
+### تغییر اتصال‌ها در یک مسیر
 
-This example applies rounded line joins to a path.
+این مثال اتصال‌های گرد خط را روی یک مسیر اعمال می‌کند.
 
 #### HTML
 
@@ -76,14 +59,13 @@ ctx.lineTo(280, 150);
 ctx.stroke();
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Changing_the_joins_in_a_path', 700, 180) }}
 
-### Comparison of line joins
+### مقایسهٔ اتصال خط‌ها
 
-The example below draws three different paths, demonstrating each of the three
-`lineJoin` options.
+مثال زیر سه مسیر متفاوت رسم می‌کند و هر یک از سه گزینهٔ `lineJoin` را نشان می‌دهد.
 
 ```html hidden
 <canvas id="canvas" width="150" height="150"></canvas>
@@ -107,22 +89,21 @@ ctx.lineWidth = 10;
 
 {{EmbedLiveSample("Comparison_of_line_joins", "", "180")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-### WebKit/Blink-specific notes
+### نکات مخصوص WebKit/Blink
 
-- In WebKit- and Blink-based Browsers, a non-standard and deprecated method
-  `ctx.setLineJoin()` is implemented in addition to this property.
+- در مرورگرهای مبتنی بر WebKit و Blink، علاوه بر این ویژگی، یک متد غیراستاندارد و منسوخ به نام `ctx.setLineJoin()` نیز پیاده‌سازی شده است.
 
-## See also
+## جستارهای وابسته
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابطی که این ویژگی را تعریف می‌کند: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.lineCap")}}
 - {{domxref("CanvasRenderingContext2D.lineWidth")}}
-- [Applying styles and color](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors)
+- [اعمال استایل‌ها و رنگ](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors)
