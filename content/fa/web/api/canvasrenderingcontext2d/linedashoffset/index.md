@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: lineDashOffset property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: lineDashOffset property"
 short-title: lineDashOffset
 slug: Web/API/CanvasRenderingContext2D/lineDashOffset
 page-type: web-api-instance-property
@@ -14,24 +8,20 @@ browser-compat: api.CanvasRenderingContext2D.lineDashOffset
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.lineDashOffset`**
-property of the Canvas 2D API sets the line dash offset, or "phase."
+ویژگی **`CanvasRenderingContext2D.lineDashOffset`** در Canvas 2D API، افست خط‌چین (یا «فاز») را تنظیم می‌کند.
 
 > [!NOTE]
-> Lines are drawn by calling the
-> {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}} method.
+> خطوط با فراخوانی متد {{domxref("CanvasRenderingContext2D.stroke()", "stroke()")}} رسم می‌شوند.
 
-## Value
+## مقدار
 
-A float specifying the amount of the line dash offset. The default value is `0.0`.
+یک عدد اعشاری که مقدار افست خط‌چین را مشخص می‌کند. مقدار پیش‌فرض `0.0` است.
 
-## Examples
+## مثال‌ها
 
-### Offsetting a line dash
+### جابجایی یک خط‌چین
 
-This example draws two dashed lines. The first has no dash offset. The second has a
-dash offset of 4.
+این مثال دو خط چین رسم می‌کند. خط اول هیچ افستی ندارد و خط دوم دارای افست ۴ است.
 
 #### HTML
 
@@ -47,13 +37,13 @@ const ctx = canvas.getContext("2d");
 
 ctx.setLineDash([4, 16]);
 
-// Dashed line with no offset
+// خط چین بدون افست
 ctx.beginPath();
 ctx.moveTo(0, 50);
 ctx.lineTo(300, 50);
 ctx.stroke();
 
-// Dashed line with offset of 4
+// خط چین با افست ۴
 ctx.beginPath();
 ctx.strokeStyle = "red";
 ctx.lineDashOffset = 4;
@@ -62,18 +52,15 @@ ctx.lineTo(300, 100);
 ctx.stroke();
 ```
 
-#### Result
+#### نتیجه
 
-The line with a dash offset is drawn in red.
+خطی که دارای افست خط‌چین است به رنگ قرمز رسم شده است.
 
 {{ EmbedLiveSample('Offsetting_a_line_dash', 700, 180) }}
 
-### Marching ants
+### مورچه‌های راهپیمایی
 
-The [marching ants](https://en.wikipedia.org/wiki/Marching_ants) effect is
-an animation technique often found in selection tools of computer graphics programs. It
-helps the user to distinguish the selection border from the image background by
-animating the border.
+اثر [مورچه‌های راهپیمایی](https://en.wikipedia.org/wiki/Marching_ants) یک تکنیک انیمیشن است که اغلب در ابزارهای انتخاب نرم‌افزارهای گرافیکی کامپیوتری دیده می‌شود. این تکنیک با متحرک‌سازی حاشیه، به کاربر کمک می‌کند تا مرز انتخاب را از پس‌زمینه تصویر تشخیص دهد.
 
 ```html hidden
 <canvas id="canvas"></canvas>
@@ -105,17 +92,17 @@ march();
 
 {{ EmbedLiveSample('Marching_ants', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this property: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کننده این ویژگی: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.getLineDash()")}}
 - {{domxref("CanvasRenderingContext2D.setLineDash()")}}
-- [Applying styles and color](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors)
+- [اعمال سبک‌ها و رنگ‌ها](/en-US/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors)
