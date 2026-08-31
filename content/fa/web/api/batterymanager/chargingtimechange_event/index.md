@@ -1,11 +1,7 @@
 ---
 title: "BatteryManager: chargingtimechange event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager/chargingtimechange_event"
-status: "needs-translation"
----
-
----
-title: "BatteryManager: chargingtimechange event"
+translated_by: "n8n + AI"
 short-title: chargingtimechange
 slug: Web/API/BatteryManager/chargingtimechange_event
 page-type: web-api-event
@@ -14,11 +10,11 @@ browser-compat: api.BatteryManager.chargingtimechange_event
 
 {{ApiRef("Battery API")}}{{securecontext_header}}
 
-The **`chargingtimechange`** event of the {{domxref("BatteryManager")}} interface is fired when the battery {{domxref("BatteryManager.chargingTime", "chargingTime")}} property is updated.
+رویداد **`chargingtimechange`** از رابط {{domxref("BatteryManager")}} زمانی رخ می‌دهد که ویژگی {{domxref("BatteryManager.chargingTime", "chargingTime")}} باتری به‌روز می‌شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("chargingtimechange", (event) => { })
@@ -26,17 +22,17 @@ addEventListener("chargingtimechange", (event) => { })
 onchargingtimechange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-_A generic {{domxref("Event")}}._
+یک {{domxref("Event")}} عمومی.
 
-## Example
+## مثال
 
 ### HTML
 
 ```html
-<div id="level">(battery level unknown)</div>
-<div id="chargingTime">(charging time unknown)</div>
+<div id="level">(میزان باتری نامشخص)</div>
+<div id="chargingTime">(زمان شارژ نامشخص)</div>
 ```
 
 ### JavaScript
@@ -52,15 +48,15 @@ navigator.getBattery().then((battery) => {
 
 {{ EmbedLiveSample('Example', '100%', 40) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("BatteryManager")}}
 - {{domxref("Navigator.getBattery()")}}
