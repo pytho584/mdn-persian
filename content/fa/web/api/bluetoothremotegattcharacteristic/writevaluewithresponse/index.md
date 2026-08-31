@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTCharacteristic: writeValueWithResponse() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValueWithResponse"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,27 +16,27 @@ browser-compat: api.BluetoothRemoteGATTCharacteristic.writeValueWithResponse
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothRemoteGATTCharacteristic.writeValueWithResponse()`** method sets a {{domxref("BluetoothRemoteGATTCharacteristic")}} object's `value` property to the bytes contained in a given {{jsxref("ArrayBuffer")}}, {{jsxref("TypedArray")}}, or {{jsxref("DataView")}}, [writes the characteristic value with required response](https://webbluetoothcg.github.io/web-bluetooth/#writecharacteristicvalue), and returns the resulting {{JSxRef("Promise")}}.
+متد **`BluetoothRemoteGATTCharacteristic.writeValueWithResponse()`** ویژگی `value` یک شیء {{domxref("BluetoothRemoteGATTCharacteristic")}} را به بایت‌های موجود در یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}} داده شده تنظیم می‌کند، [مقدار مشخصه را با پاسخ مورد نیاز می‌نویسد](https://webbluetoothcg.github.io/web-bluetooth/#writecharacteristicvalue) و {{JSxRef("Promise")}} حاصل را بازمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 writeValueWithResponse(value)
 ```
 
-### Parameters
+### پارامترها
 
 - `value`
-  - : An {{jsxref("ArrayBuffer")}}, {{jsxref("TypedArray")}}, or {{jsxref("DataView")}}.
+  - : یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}}.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}}.
+یک {{jsxref("Promise")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
