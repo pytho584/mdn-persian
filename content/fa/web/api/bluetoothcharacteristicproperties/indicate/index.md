@@ -1,7 +1,7 @@
 ---
 title: "BluetoothCharacteristicProperties: indicate property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothCharacteristicProperties/indicate"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,19 +16,16 @@ browser-compat: api.BluetoothCharacteristicProperties.indicate
 
 {{securecontext_header}}{{APIRef("Bluetooth API")}}{{SeeCompatTable}}
 
-The **`indicate`** read-only property of the
-{{domxref("BluetoothCharacteristicProperties")}} interface returns a
-`boolean` that is `true` if indications of the characteristic
-value with acknowledgement is permitted.
+**`indicate`** 只读属性，属于 {{domxref("BluetoothCharacteristicProperties")}} 接口，返回一个 `boolean` 值，如果允许带确认地指示（indication）该特征值，则该值为 `true`。
 
-## Value
+## 值
 
-A boolean value.
+一个布尔值。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
