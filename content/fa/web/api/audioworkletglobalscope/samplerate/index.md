@@ -1,7 +1,7 @@
 ---
 title: "AudioWorkletGlobalScope: sampleRate property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletGlobalScope/sampleRate"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,15 +14,15 @@ browser-compat: api.AudioWorkletGlobalScope.sampleRate
 
 {{APIRef("Web Audio API")}}
 
-The read-only **`sampleRate`** property of the {{domxref("AudioWorkletGlobalScope")}} interface returns a float that represents the sample rate of the associated {{domxref("BaseAudioContext")}} the worklet belongs to.
+ویژگی فقط خواندنی **`sampleRate`** از رابط {{domxref("AudioWorkletGlobalScope")}} یک عدد اعشاری برمی‌گرداند که نرخ نمونه‌برداری {{domxref("BaseAudioContext")}} مرتبطی که وورک‌لت به آن تعلق دارد را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A floating-point number representing the associated sample rate.
+یک عدد اعشاری که نرخ نمونه‌برداری مرتبط را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The {{domxref("AudioWorkletProcessor")}} has access to the specific {{domxref("AudioWorkletGlobalScope")}} properties:
+{{domxref("AudioWorkletProcessor")}} به ویژگی‌های خاص {{domxref("AudioWorkletGlobalScope")}} دسترسی دارد:
 
 ```js
 // AudioWorkletProcessor defined in : test-processor.js
@@ -56,7 +56,7 @@ console.log(usefulVariable);
 registerProcessor("test-processor", TestProcessor);
 ```
 
-The main script loads the processor, creates an instance of {{domxref("AudioWorkletNode")}}, passes the name of the processor to it, and connects the node to an audio graph. We should see the output of {{domxref("console/log_static", "console.log()")}} calls in the console:
+اسکریپت اصلی پردازنده را بارگذاری می‌کند، یک نمونه از {{domxref("AudioWorkletNode")}} ایجاد می‌کند، نام پردازنده را به آن می‌دهد، و گره را به یک گراف صوتی متصل می‌کند. ما باید خروجی فراخوانی‌های {{domxref("console/log_static", "console.log()")}} را در کنسول ببینیم:
 
 ```js
 const audioContext = new AudioContext();
@@ -65,15 +65,15 @@ const testNode = new AudioWorkletNode(audioContext, "test-processor");
 testNode.connect(audioContext.destination);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
