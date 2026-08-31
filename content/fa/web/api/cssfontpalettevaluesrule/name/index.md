@@ -1,9 +1,4 @@
----
-title: "CSSFontPaletteValuesRule: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSFontPaletteValuesRule/name"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "CSSFontPaletteValuesRule: name property"
 short-title: name
@@ -11,25 +6,26 @@ slug: Web/API/CSSFontPaletteValuesRule/name
 page-type: web-api-instance-property
 browser-compat: api.CSSFontPaletteValuesRule.name
 ---
+```
 
 {{APIRef("CSSOM")}}
 
-The read-only **`name`** property of the {{domxref("CSSFontPaletteValuesRule")}} interface represents the name identifying the associated {{CSSxRef("@font-palette-values")}} at-rule. A valid name always starts with two dashes, such as `--Alternate`.
+ویژگی فقط خواندنی **`name`** در رابط {{domxref("CSSFontPaletteValuesRule")}}، نامی را نشان می‌دهد که قاعده at-rule {{CSSxRef("@font-palette-values")}} مرتبط را شناسایی می‌کند. یک نام معتبر همیشه با دو خط تیره شروع می‌شود، مانند `--Alternate`.
 
-## Value
+## مقدار
 
-A string beginning with two dashes.
+یک رشته که با دو خط تیره شروع می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Read the at-rule's name
+### خواندن نام at-rule
 
-This example first defines an {{cssxref("@import")}} and an {{cssxref("@font-palette-values")}} at-rule. Then it reads the {{cssxref("@font-palette-values")}} rule and displays its name. The MDN [live sample](/en-US/docs/MDN/Writing_guidelines/Page_structures/Live_samples) infrastructure combines all the CSS blocks in the example into a single inline style with the id `css-output`, so we first use {{domxref("document.getElementById()")}} to find that sheet. The palette will be the second {{domxref("CSSRule")}} in that stylesheet. So, `rules[1]` returns a `CSSFontPaletteValuesRule` object, from which we can access `name`.
+این مثال ابتدا یک قاعده {{cssxref("@import")}} و یک قاعده {{cssxref("@font-palette-values")}} تعریف می‌کند. سپس قاعده {{cssxref("@font-palette-values")}} را خوانده و نام آن را نمایش می‌دهد. زیرساخت [نمونه زنده](/en-US/docs/MDN/Writing_guidelines/Page_structures/Live_samples) MDN تمام بلوک‌های CSS موجود در مثال را در یک استایل درون‌خطی واحد با شناسه `css-output` ترکیب می‌کند، بنابراین ابتدا از {{domxref("document.getElementById()")}} برای پیدا کردن آن شیوه‌نامه استفاده می‌کنیم. پالت، دومین {{domxref("CSSRule")}} در آن شیوه‌نامه خواهد بود. بنابراین، `rules[1]` یک شیء `CSSFontPaletteValuesRule` برمی‌گرداند که از آن می‌توانیم به `name` دسترسی داشته باشیم.
 
 #### HTML
 
 ```html
-<pre id="log">The @font-palette-values at-rule's name:</pre>
+<pre id="log">نام قاعده @font-palette-values:</pre>
 ```
 
 #### CSS
@@ -59,18 +55,18 @@ const fontPaletteValuesRule = rules[1]; // a CSSFontPaletteValuesRule interface
 log.textContent += ` ${fontPaletteValuesRule.name}`;
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Read the at-rule's name", "100", "40")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{cssxref("@font-palette-values")}} at-rule
+- قاعده at-rule {{cssxref("@font-palette-values")}}
