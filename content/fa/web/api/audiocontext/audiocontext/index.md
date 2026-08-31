@@ -1,7 +1,7 @@
 ---
 title: "AudioContext: AudioContext() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/AudioContext"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,10 +14,7 @@ browser-compat: api.AudioContext.AudioContext
 
 {{APIRef("Web Audio API")}}
 
-The **`AudioContext()`** constructor
-creates a new {{domxref("AudioContext")}} object which represents an audio-processing
-graph, built from audio modules linked together, each represented by an
-{{domxref("AudioNode")}}.
+سازنده **`AudioContext()`** یک شیء جدید {{domxref("AudioContext")}} ایجاد می‌کند که نمایانگر یک گراف پردازش صوتی است، ساخته شده از ماژول‌های صوتی که به هم متصل شده‌اند، که هر یک توسط یک {{domxref("AudioNode")}} نمایش داده می‌شوند.
 
 ## Syntax
 
@@ -26,77 +23,67 @@ new AudioContext()
 new AudioContext(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object used to configure the context. The available properties are:
+  - : یک شیء که برای پیکربندی زمینه استفاده می‌شود. ویژگی‌های موجود عبارتند از:
     - `latencyHint` {{optional_inline}}
-      - : The type of playback that the context will be used for, as a predefined string (`"balanced"`, `"interactive"` or `"playback"`)
-        or a double-precision floating-point value indicating the preferred maximum latency of the context in seconds.
-        The user agent may or may not choose to meet this request;
-        check the value of {{domxref("AudioContext.baseLatency")}} to determine the true latency after creating the context.
-        - `"balanced"`: The browser balances audio output latency and power consumption when selecting a latency value.
-        - `"interactive"` (default value): The audio is involved in interactive elements,
-          such as responding to user actions or needing to coincide with visual cues such as a video or game action.
-          The browser selects the lowest possible latency that doesn't cause glitches in the audio. This is likely to require increased power consumption.
-        - `"playback"`: The browser selects a latency that will maximize playback time by minimizing power consumption at the expense of latency.
-          Useful for non-interactive playback, such as playing music.
+      - : نوع پخش‌هایی که زمینه برای آن استفاده خواهد شد، به صورت یک رشته از پیش تعریف شده (`"balanced"`، `"interactive"` یا `"playback"`)
+        یا یک مقدار ممیز شناور دو‌دقیقه‌ای که حداکثر تأخیر ترجیحی زمینه را بر حسب ثانیه نشان می‌دهد.
+        عامل کاربر ممکن است این درخواست را برآورده کند یا نکند؛
+        مقدار {{domxref("AudioContext.baseLatency")}} را برای تعیین تأخیر واقعی پس از ایجاد زمینه بررسی کنید.
+        - `"balanced"`: مرورگر هنگام انتخاب مقدار تأخیر، تأخیر خروجی صوتی و مصرف انرژی را متعادل می‌کند.
+        - `"interactive"` (مقدار پیش‌فرض): صدا درگیر عناصر تعاملی است،
+          مانند پاسخ به اقدامات کاربر یا نیاز به همزمانی با نشانه‌های بصری مانند ویدیو یا عملکرد بازی.
+          مرورگر کمترین تأخیر ممکن را انتخاب می‌کند که باعث ایجاد گلیچ در صدا نشود. این احتمالاً نیاز به مصرف انرژی بیشتری دارد.
+        - `"playback"`: مرورگر تأخیری را انتخاب می‌کند که زمان پخش را با به حداقل رساندن مصرف انرژی به قیمت تأخیر به حداکثر برساند.
+          مفید برای پخش غیرتعاملی، مانند پخش موسیقی.
     - `sampleRate` {{optional_inline}}
-      - : Indicates the sample rate to use for the new context. The value must be a floating-point value indicating the sample rate,
-        in samples per second, for which to configure the new context;
-        additionally, the value must be one which is supported by {{domxref("AudioBuffer.sampleRate")}}.
-        The value will typically be between 8,000 Hz and 96,000 Hz; the default will vary depending on the output device, but the sample rate 44,100 Hz is the most common.
-        If the `sampleRate` property is not included in the options, or the options are not specified when creating the audio context,
-        the new context's output device's preferred sample rate is used by default.
+      - : نرخ نمونه‌برداری که برای زمینه جدید استفاده شود. مقدار باید یک مقدار ممیز شناور باشد که نرخ نمونه‌برداری را بر حسب نمونه در ثانیه نشان می‌دهد
+        که برای پیکربندی زمینه جدید استفاده می‌شود؛
+        علاوه بر این، مقدار باید یکی از مقادیر پشتیبانی شده توسط {{domxref("AudioBuffer.sampleRate")}} باشد.
+        مقدار معمولاً بین ۸۰۰۰ هرتز و ۹۶۰۰۰ هرتز خواهد بود؛ مقدار پیش‌فرض بسته به دستگاه خروجی متفاوت خواهد بود، اما نرخ نمونه‌برداری ۴۴۱۰۰ هرتز رایج‌ترین است.
+        اگر ویژگی `sampleRate` در گزینه‌ها گنجانده نشده باشد، یا گزینه‌ها هنگام ایجاد زمینه صوتی مشخص نشده باشند،
+        نرخ نمونه‌برداری ترجیحی دستگاه خروجی زمینه جدید به طور پیش‌فرض استفاده می‌شود.
     - `sinkId` {{optional_inline}} {{Experimental_Inline}}
-      - : Specifies the sink ID of the audio output device to use for the `AudioContext`. This can take one of the following value types:
-        - A string representing the sink ID, retrieved for example via the `deviceId` property of the {{domxref("MediaDeviceInfo")}} objects returned by {{domxref("MediaDevices.enumerateDevices()")}}.
-        - An object representing different options for a sink ID. Currently, this takes a single property, `type`, with a value of `none`. Setting this parameter causes the audio to be processed without being played through any audio output device.
+      - : شناسه خروجی دستگاه صوتی که برای `AudioContext` استفاده می‌شود را مشخص می‌کند. این می‌تواند یکی از انواع مقدار زیر را بگیرد:
+        - یک رشته که نشان‌دهنده شناسه خروجی است، که مثلاً از طریق ویژگی `deviceId` اشیاء {{domxref("MediaDeviceInfo")}} برگردانده شده توسط {{domxref("MediaDevices.enumerateDevices()")}} بازیابی شده است.
+        - یک شیء که گزینه‌های مختلف برای یک شناسه خروجی را نشان می‌دهد. در حال حاضر، این یک ویژگی به نام `type` با مقدار `none` را می‌گیرد. تنظیم این پارامتر باعث می‌شود صدا بدون پخش از طریق هیچ دستگاه خروجی صوتی پردازش شود.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("AudioContext")}} instance.
+یک نمونه جدید {{domxref("AudioContext")}}.
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the specified `sampleRate` isn't supported by the context.
+  - : اگر `sampleRate` مشخص شده توسط زمینه پشتیبانی نشود، پرتاب می‌شود.
 
-## Usage notes
+## نکات استفاده
 
-The specification doesn't go into a lot of detail about things like how many audio
-contexts a user agent should support, or minimum or maximum latency requirements (if
-any), so these details can vary from browser to browser. Be sure to check the values if
-they matter to you.
+مشخصات جزئیات زیادی در مورد مواردی مانند تعداد زمینه‌های صوتی که یک عامل کاربر باید پشتیبانی کند، یا حداقل یا حداکثر نیازهای تأخیر (در صورت وجود) ارائه نمی‌دهد، بنابراین این جزئیات ممکن است از مرورگری به مرورگر دیگر متفاوت باشد. اگر این مقادیر برای شما مهم هستند، حتماً آنها را بررسی کنید.
 
-In particular, the specification doesn't indicate a maximum or minimum number of audio
-contexts that must be able to be open at the same time, so this is left up to the
-browser implementations to decide.
+به طور خاص، مشخصات حداکثر یا حداقل تعداد زمینه‌های صوتی که باید بتوانند همزمان باز باشند را نشان نمی‌دهد، بنابراین این به تصمیم پیاده‌سازی مرورگر واگذار می‌شود.
 
 ### Google Chrome
 
-#### Per-tab audio context limitation in Chrome
+#### محدودیت زمینه صوتی به ازای هر تب در Chrome
 
-Prior to version 66 Google Chrome only supported up to six audio contexts _per
-tab_ at a time.
+قبل از نسخه ۶۶، Google Chrome فقط تا شش زمینه صوتی _به ازای هر تب_ را در یک زمان پشتیبانی می‌کرد.
 
-#### Non-standard exceptions in Chrome
+#### استثناهای غیر استاندارد در Chrome
 
-If the value of the `latencyHint` property isn't valid,
-Chrome throws a {{jsxref("TypeError")}} exception with the message
-"The provided value '...' is not a valid enum value of type
-AudioContextLatencyCategory".
+اگر مقدار ویژگی `latencyHint` معتبر نباشد، Chrome یک استثنای {{jsxref("TypeError")}} با پیام "The provided value '...' is not a valid enum value of type AudioContextLatencyCategory" پرتاب می‌کند.
 
-## Example
+## مثال
 
-This example creates a new {{domxref("AudioContext")}} for interactive audio
-(optimizing for latency), with a sample rate of 44.1kHz and a specific audio output.
+این مثال یک {{domxref("AudioContext")}} جدید برای صوتی تعاملی (بهینه‌سازی برای تأخیر) با نرخ نمونه‌برداری ۴۴.۱ کیلوهرتز و یک خروجی صوتی خاص ایجاد می‌کند.
 
 ```js
 const audioCtx = new AudioContext({
   latencyHint: "interactive",
   sampleRate: 44100,
-  sinkId: "bb04fea9a8318c96de0bd...", // truncated for brevity
+  sinkId: "bb04fea9a8318c96de0bd...", // برای اختصار کوتاه شده
 });
 ```
 
@@ -110,4 +97,4 @@ const audioCtx = new AudioContext({
 
 ## See also
 
-- {{domxref("OfflineAudioContext.OfflineAudioContext()", "OfflineAudioContext()")}} constructor
+- سازنده {{domxref("OfflineAudioContext.OfflineAudioContext()", "OfflineAudioContext()")}}
