@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createGain() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createGain"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,40 +14,32 @@ browser-compat: api.BaseAudioContext.createGain
 
 {{ APIRef("Web Audio API") }}
 
-The `createGain()` method of the {{ domxref("BaseAudioContext") }}
-interface creates a {{ domxref("GainNode") }}, which can be used to control the
-overall gain (or volume) of the audio graph.
+{{ domxref("BaseAudioContext") }} 接口的 `createGain()` 方法用于创建一个 {{ domxref("GainNode") }}，该节点可用于控制音频图的整体增益（或音量）。
 
 > [!NOTE]
-> The {{domxref("GainNode.GainNode", "GainNode()")}}
-> constructor is the recommended way to create a {{domxref("GainNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> {{domxref("GainNode.GainNode", "GainNode()")}} 构造函数是创建 {{domxref("GainNode")}} 的推荐方式；参见
+> [创建 AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode)。
 
-## Syntax
+## 语法
 
 ```js-nolint
 createGain()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A {{domxref("GainNode")}} which takes as input one or more audio sources and outputs
-audio whose volume has been adjusted in gain (volume) to a level specified by the node's
-{{domxref("GainNode.gain")}} [a-rate](/en-US/docs/Web/API/AudioParam#a-rate)
-parameter.
+一个 {{domxref("GainNode")}}，它接收一个或多个音频源作为输入，并输出音量已按该节点的 {{domxref("GainNode.gain")}} [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) 参数所指定的增益（音量）调整后的音频。
 
-## Examples
+## 示例
 
-The following example shows basic usage of an {{domxref("AudioContext")}} to create a
-`GainNode`, which is then used to mute and unmute the audio when a Mute
-button is clicked by changing the `gain` property value.
+以下示例展示了 {{domxref("AudioContext")}} 的基本用法：创建一个 `GainNode`，然后在点击“静音”按钮时通过修改 `gain` 属性值来静音和取消静音音频。
 
-The below snippet wouldn't work as is — for a complete working example, check out our
-[Voice-change-O-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) demo ([view source](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js).)
+下面的代码片段不能直接运行——有关完整可运行的示例，请参阅我们的
+[Voice-change-O-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) 演示（[查看源代码](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js)）。
 
 ```html
 <div>
@@ -102,14 +94,14 @@ mute.onclick = () => {
 };
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [使用 Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
