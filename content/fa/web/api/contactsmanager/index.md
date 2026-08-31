@@ -1,10 +1,4 @@
 ---
-title: "ContactsManager"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ContactsManager"
-status: "needs-translation"
----
-
----
 title: ContactsManager
 slug: Web/API/ContactsManager
 page-type: web-api-interface
@@ -15,30 +9,30 @@ browser-compat: api.ContactsManager
 
 {{securecontext_header}}{{APIRef("Contact Picker API")}}{{SeeCompatTable}}
 
-The **`ContactsManager`** interface of the [Contact Picker API](/en-US/docs/Web/API/Contact_Picker_API) allows users to select entries from their contact list and share limited details of the selected entries with a website or application.
+**`ContactsManager`** رابطِ [Contact Picker API](/en-US/docs/Web/API/Contact_Picker_API) است که به کاربران اجازه می‌دهد از لیست مخاطبین خود انتخاب کرده و اطلاعات محدودی از مخاطبین انتخابی را با یک وب‌سایت یا برنامه به اشتراک بگذارند.
 
-The `ContactsManager` is available through the global {{domxref('navigator.contacts')}} property.
+`ContactsManager` از طریق ویژگی سراسری {{domxref('navigator.contacts')}} در دسترس است.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref('ContactsManager.select','select()')}} {{Experimental_Inline}}
-  - : Returns a {{jsxref('Promise')}} which, when resolved, presents the user with a contact picker which allows them to select contact(s) they wish to share.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که پس از حل شدن، یک انتخاب‌گر مخاطب به کاربر نمایش می‌دهد تا مخاطب(های) مورد نظر خود را برای به اشتراک‌گذاری انتخاب کند.
 - {{domxref('ContactsManager.getProperties()','getProperties()')}} {{Experimental_Inline}}
-  - : Returns a {{jsxref('Promise')}} which resolves with an {{jsxref('Array')}} of {{jsxref('String','strings')}} indicating which contact properties are available.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که با یک {{jsxref('Array')}} از {{jsxref('String','string ها')}} حل می‌شود و نشان می‌دهد کدام ویژگی‌های مخاطب در دسترس هستند.
 
-## Examples
+## مثال‌ها
 
-### Feature Detection
+### تشخیص ویژگی
 
-The following code checks whether the Contact Picker API is supported.
+کد زیر بررسی می‌کند که آیا Contact Picker API پشتیبانی می‌شود یا خیر.
 
 ```js
 const supported = "contacts" in navigator && "ContactsManager" in window;
 ```
 
-### Checking for Supported Properties
+### بررسی ویژگی‌های پشتیبانی‌شده
 
-The following asynchronous function uses the `getProperties` method to check for supported properties.
+تابع ناهمگام زیر از روش `getProperties` برای بررسی ویژگی‌های پشتیبانی‌شده استفاده می‌کند.
 
 ```js
 async function checkProperties() {
@@ -61,11 +55,11 @@ async function checkProperties() {
 }
 ```
 
-### Selecting Contacts
+### انتخاب مخاطبین
 
-The following example sets an array of properties to be retrieved for each contact, as well as setting an options object to allow for multiple contacts to be selected.
+مثال زیر یک آرایه از ویژگی‌هایی را که باید برای هر مخاطب بازیابی شوند تعیین می‌کند و همچنین یک شیء options برای اجازه انتخاب چند مخاطب تنظیم می‌کند.
 
-An asynchronous function is then defined which uses the `select()` method to present the user with a contact picker interface and handle the chosen results.
+سپس یک تابع ناهمگام تعریف می‌شود که از روش `select()` برای نمایش رابط انتخاب‌گر مخاطب به کاربر و پردازش نتایج انتخاب‌شده استفاده می‌کند.
 
 ```js
 const props = ["name", "email", "tel", "address", "icon"];
@@ -81,17 +75,17 @@ async function getContacts() {
 }
 ```
 
-`handleResults()` is a developer defined function.
+`handleResults()` یک تابع تعریف‌شده توسط توسعه‌دهنده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [A Contact Picker for the Web](https://developer.chrome.com/docs/capabilities/web-apis/contact-picker)
-- [Contact Picker API live demo](https://mdn.github.io/dom-examples/contact-picker/)
+- [یک انتخاب‌گر مخاطب برای وب](https://developer.chrome.com/docs/capabilities/web-apis/contact-picker)
+- [دموی زنده Contact Picker API](https://mdn.github.io/dom-examples/contact-picker/)
