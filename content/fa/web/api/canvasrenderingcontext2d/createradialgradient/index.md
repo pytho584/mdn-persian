@@ -1,11 +1,5 @@
 ---
 title: "CanvasRenderingContext2D: createRadialGradient() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/createRadialGradient"
-status: "needs-translation"
----
-
----
-title: "CanvasRenderingContext2D: createRadialGradient() method"
 short-title: createRadialGradient()
 slug: Web/API/CanvasRenderingContext2D/createRadialGradient
 page-type: web-api-instance-method
@@ -14,62 +8,53 @@ browser-compat: api.CanvasRenderingContext2D.createRadialGradient
 
 {{APIRef("Canvas API")}}
 
-The
-**`CanvasRenderingContext2D.createRadialGradient()`**
-method of the Canvas 2D API creates a radial gradient using the size and coordinates of
-two circles.
+متد **`CanvasRenderingContext2D.createRadialGradient()`** در Canvas 2D API با استفاده از اندازه و مختصات دو دایره، یک گرادیان شعاعی ایجاد می‌کند.
 
-This method returns a {{domxref("CanvasGradient")}}. To be applied to a shape, the
-gradient must first be assigned to the {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} or {{domxref("CanvasRenderingContext2D.strokeStyle", "strokeStyle")}} properties.
+این متد یک {{domxref("CanvasGradient")}} برمی‌گرداند. برای اینکه گرادیان روی یک شکل اعمال شود، ابتدا باید به ویژگی‌های {{domxref("CanvasRenderingContext2D.fillStyle", "fillStyle")}} یا {{domxref("CanvasRenderingContext2D.strokeStyle", "strokeStyle")}} اختصاص داده شود.
 
 > [!NOTE]
-> Gradient coordinates are global, i.e., relative to the current
-> coordinate space. When applied to a shape, the coordinates are NOT relative to the
-> shape's coordinates.
+> مختصات گرادیان سراسری (global) هستند، یعنی نسبت به فضای مختصات فعلی.
+> وقتی گرادیان روی یک شکل اعمال می‌شود، مختصات نسبت به مختصات خودِ شکل نیستند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 createRadialGradient(x0, y0, r0, x1, y1, r1)
 ```
 
-The `createRadialGradient()` method is specified by six parameters, three
-defining the gradient's start circle, and three defining the end circle.
+متد `createRadialGradient()` با شش پارامتر مشخص می‌شود؛ سه پارامتر دایرهٔ شروع گرادیان و سه پارامتر دایرهٔ پایان آن را تعریف می‌کنند.
 
-### Parameters
+### پارامترها
 
 - `x0`
-  - : The x-axis coordinate of the start circle.
+  - : مختصات محور x دایرهٔ شروع.
 - `y0`
-  - : The y-axis coordinate of the start circle.
+  - : مختصات محور y دایرهٔ شروع.
 - `r0`
-  - : The radius of the start circle. Must be non-negative and finite.
+  - : شعاع دایرهٔ شروع. باید نامنفی و متناهی باشد.
 - `x1`
-  - : The x-axis coordinate of the end circle.
+  - : مختصات محور x دایرهٔ پایان.
 - `y1`
-  - : The y-axis coordinate of the end circle.
+  - : مختصات محور y دایرهٔ پایان.
 - `r1`
-  - : The radius of the end circle. Must be non-negative and finite.
+  - : شعاع دایرهٔ پایان. باید نامنفی و متناهی باشد.
 
-### Return value
+### مقدار بازگشتی
 
-A radial {{domxref("CanvasGradient")}} initialized with the two specified circles.
+یک {{domxref("CanvasGradient")}} شعاعی که با دو دایرهٔ مشخص‌شده مقداردهی اولیه شده است.
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown when non-finite values are passed in parameter.
+  - : هنگامی که مقادیر نامتناهی در پارامترها ارسال شوند، پرتاب می‌شود.
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown when a negative radius is passed in parameter.
+  - : هنگامی که شعاع منفی در پارامترها ارسال شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Filling a rectangle with a radial gradient
+### پر کردن یک مستطیل با گرادیان شعاعی
 
-This example initializes a radial gradient using the
-`createRadialGradient()` method. Three color stops between the gradient's two
-circles are then created. Finally, the gradient is assigned to the canvas context, and
-is rendered to a filled rectangle.
+در این مثال، یک گرادیان شعاعی با استفاده از متد `createRadialGradient()` مقداردهی اولیه می‌شود. سپس سه ایستگاه رنگی بین دو دایرهٔ گرادیان ایجاد می‌شود. در نهایت گرادیان به بافت بوم (canvas context) اختصاص داده شده و روی یک مستطیل پرشده رندر می‌شود.
 
 #### HTML
 
@@ -98,20 +83,20 @@ ctx.fillStyle = gradient;
 ctx.fillRect(20, 20, 160, 160);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Filling_a_rectangle_with_a_radial_gradient', 700, 240) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("CanvasRenderingContext2D")}}
+- رابط تعریف‌کنندهٔ این متد: {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("CanvasRenderingContext2D.createLinearGradient()")}}
 - {{domxref("CanvasRenderingContext2D.createConicGradient()")}}
