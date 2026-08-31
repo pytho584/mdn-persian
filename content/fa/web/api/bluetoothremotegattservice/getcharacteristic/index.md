@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTService: getCharacteristic() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService/getCharacteristic"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,10 +16,7 @@ browser-compat: api.BluetoothRemoteGATTService.getCharacteristic
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`BluetoothGATTService.getCharacteristic()`** method
-returns a {{jsxref("Promise")}} to an instance of
-{{domxref("BluetoothRemoteGATTCharacteristic")}} for a given universally unique identifier
-(UUID).
+متد **`BluetoothGATTService.getCharacteristic()`** یک {{jsxref("Promise")}} به یک نمونه از {{domxref("BluetoothRemoteGATTCharacteristic")}} برای یک شناسه یکتای جهانی (UUID) برمی‌گرداند.
 
 ## Syntax
 
@@ -27,21 +24,19 @@ returns a {{jsxref("Promise")}} to an instance of
 getCharacteristic(characteristic)
 ```
 
-### Parameters
+### پارامترها
 
 - `characteristic`
-  - : The UUID of a characteristic, for
-    example `'00002a37-0000-1000-8000-00805f9b34fb'` for the Heart Rate
-    Measurement characteristic.
+  - : UUID یک مشخصه، برای مثال `'00002a37-0000-1000-8000-00805f9b34fb'` برای مشخصه اندازه‌گیری ضربان قلب (Heart Rate Measurement).
 
-### Return value
+### مقدار برگشتی
 
-A {{jsxref("Promise")}} to an instance of {{domxref("BluetoothRemoteGATTCharacteristic")}}
+یک {{jsxref("Promise")}} به یک نمونه از {{domxref("BluetoothRemoteGATTCharacteristic")}}
 
 ## Specifications
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
