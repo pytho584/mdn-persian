@@ -1,11 +1,5 @@
 ---
 title: "CSSCounterStyleRule: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSCounterStyleRule/name"
-status: "needs-translation"
----
-
----
-title: "CSSCounterStyleRule: name property"
 short-title: name
 slug: Web/API/CSSCounterStyleRule/name
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CSSCounterStyleRule.name
 
 {{APIRef("CSSOM")}}
 
-The **`name`** property of the {{domxref("CSSCounterStyleRule")}} interface gets and sets the {{CSSxRef("&lt;custom-ident&gt;")}} defined as the `name` for the associated rule.
+ویژگی **`name`** در رابط {{domxref("CSSCounterStyleRule")}}، {{CSSxRef("&lt;custom-ident&gt;")}} تعریف‌شده به عنوان `name` برای قانون مرتبط را دریافت و تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-The following example shows a {{cssxref("@counter-style")}} rule. In JavaScript, `myRules[0]` is this `@counter-style` rule, returning `name` gives us the custom ident "box-corner".
+مثال زیر یک قانون {{cssxref("@counter-style")}} را نشان می‌دهد. در جاوااسکریپت، `myRules[0]` این قانون `@counter-style` است و بازگرداندن `name` شناسه سفارشی "box-corner" را به ما می‌دهد.
 
 ```css
 @counter-style box-corner {
@@ -38,10 +32,10 @@ let myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].name); // "box-corner"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
