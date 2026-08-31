@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRegistration: failureReason property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration/failureReason"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,39 +16,39 @@ browser-compat: api.BackgroundFetchRegistration.failureReason
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`failureReason`** read-only property of the {{domxref("BackgroundFetchRegistration")}} interface returns a string with a value that indicates a reason for a background fetch failure.
+ویژگی فقط‌خواندنی **`failureReason`** از رابط {{domxref("BackgroundFetchRegistration")}} رشته‌ای را برمی‌گرداند که مقدار آن نشان‌دهندهٔ دلیل شکست یک واکشی پس‌زمینه است.
 
-If the value of this property changes, the [progress](/en-US/docs/Web/API/BackgroundFetchRegistration/progress_event) event is fired at the associated {{domxref("BackgroundFetchRegistration")}} object.
+اگر مقدار این ویژگی تغییر کند، رویداد [progress](/en-US/docs/Web/API/BackgroundFetchRegistration/progress_event) روی شیء {{domxref("BackgroundFetchRegistration")}} مرتبط فعال می‌شود.
 
-## Value
+## مقدار
 
-One of the following strings:
+یکی از رشته‌های زیر:
 
 - `""`
-  - : The background fetch has not completed, or was successful.
+  - واکشی پس‌زمینه کامل نشده است، یا با موفقیت انجام شده است.
 - `"aborted"`
-  - : The operation was cancelled by the user, or {{domxref("BackgroundFetchRegistration.abort()","abort()")}} was called.
+  - عملیات توسط کاربر لغو شد، یا {{domxref("BackgroundFetchRegistration.abort()","abort()")}} فراخوانی شد.
 - `"bad-status"`
-  - : A response had a not-ok status (a status outside the range 200-299).
+  - یک پاسخ دارای وضعیت ناموفق بود (وضعیتی خارج از بازهٔ ۲۰۰ تا ۲۹۹).
 - `"fetch-error"`
-  - : A fetch failed for other reasons, for example CORS, or a network failure.
+  - یک واکشی به دلایل دیگری شکست خورد، برای مثال CORS یا خطای شبکه.
 - `"quota-exceeded"`
-  - : Storage quota was reached during the operation.
+  - در حین عملیات، سهمیه ذخیره‌سازی به پایان رسید.
 - `"download-total-exceeded"`
-  - : The provided `downloadTotal` was exceeded. This value was set when the background fetch was registered.
+  - `downloadTotal` ارائه‌شده بیش از حد شد. این مقدار هنگام ثبت واکشی پس‌زمینه تنظیم شده بود.
 
-## Examples
+## مثال‌ها
 
-Logging this property to the console prints the reason the fetch failed, or an empty string if it was successful or has not yet completed.
+ثبت این ویژگی در کنسول، دلیل شکست واکشی را چاپ می‌کند، یا اگر موفق یا هنوز کامل نشده باشد، یک رشته خالی چاپ می‌کند.
 
 ```js
 console.log(bgFetch.failureReason);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
