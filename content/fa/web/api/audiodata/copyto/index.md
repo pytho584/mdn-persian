@@ -1,7 +1,7 @@
 ---
 title: "AudioData: copyTo() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioData/copyTo"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,60 +14,60 @@ browser-compat: api.AudioData.copyTo
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`copyTo()`** method of the {{domxref("AudioData")}} interface copies a plane of an `AudioData` object to a destination buffer.
+متد **`copyTo()`** از رابط {{domxref("AudioData")}} یک پلن از یک شیء `AudioData` را در یک بافر مقصد کپی می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 copyTo(destination, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `destination`
-  - : An {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, or a {{jsxref("DataView")}} to copy the plane to.
+  - : یک {{jsxref("ArrayBuffer")}}، یک {{jsxref("TypedArray")}} یا یک {{jsxref("DataView")}} که پلن به آن کپی می‌شود.
 - `options`
-  - : An object containing the following:
+  - : یک شیء که شامل موارد زیر است:
     - `planeIndex`
-      - : The index of the plane to copy from.
+      - : شاخص پلنی که باید از آن کپی شود.
     - `frameOffset` {{optional_inline}}
-      - : An integer giving the offset of the first frame to copy within the plane. Defaults to `0`.
+      - : یک عدد صحیح که افست اولین فریمی که در داخل پلن کپی می‌شود را مشخص می‌کند. پیش‌فرض `0` است.
     - `frameCount` {{optional_inline}}
-      - : An integer giving the number of frames to copy. If omitted, all frames from `frameOffset` to the end of the plane are copied.
+      - : یک عدد صحیح که تعداد فریم‌های قابل کپی را مشخص می‌کند. اگر حذف شود، همه فریم‌ها از `frameOffset` تا انتهای پلن کپی می‌شوند.
     - `format` {{optional_inline}}
-      - : A string indicating the audio format that the source samples should be converted to when copied to the destination.
-        This can be any of the values: `"u8"`, `"s16"`, `"s32"`, `"f32"`, `"u8-planar"`, `"s16-planar"`, `"s32-planar"`, and `"f32-planar"` (see {{domxref("AudioData.format")}} for more information).
-        Note that `"f32-planar"` must be supported.
-        If omitted, the samples are copied in the `AudioData`'s own format.
+      - : یک رشته که فرمت صوتی را مشخص می‌کند که نمونه‌های مبدأ هنگام کپی شدن به مقصد، به آن تبدیل شوند.
+        این می‌تواند هر یک از مقادیر `"u8"`, `"s16"`, `"s32"`, `"f32"`, `"u8-planar"`, `"s16-planar"`, `"s32-planar"` و `"f32-planar"` باشد (برای اطلاعات بیشتر به {{domxref("AudioData.format")}} مراجعه کنید).
+        توجه داشته باشید که `"f32-planar"` باید پشتیبانی شود.
+        اگر حذف شود، نمونه‌ها در قالب خود `AudioData` کپی می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-Undefined.
+تعریف‌نشده.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the `AudioData` object has been [transferred](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects).
+  - : اگر شیء `AudioData` [انتقال یافته](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) باشد، پرتاب می‌شود.
 - {{jsxref("RangeError")}}
-  - : Thrown if one of the following conditions is met:
-    - The length of the sample is longer than the destination length.
-    - The format of the `AudioData` object describes a planar format, but `options.planeIndex` is outside of the number of planes available.
-    - The format of the `AudioData` object describes an interleaved format, but `options.planeIndex` is greater than `0`.
+  - : اگر یکی از شرایط زیر برقرار باشد، پرتاب می‌شود:
+    - طول نمونه از طول مقصد بیشتر باشد.
+    - فرمت شیء `AudioData` یک فرمت پلانار را توصیف کند، اما `options.planeIndex` خارج از تعداد پلن‌های موجود باشد.
+    - فرمت شیء `AudioData` یک فرمت درهم‌تنیده (interleaved) را توصیف کند، اما `options.planeIndex` بزرگ‌تر از `0` باشد.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the specified [`format`](#format) to convert the data to is not supported.
+  - : اگر [`format`](#format) مشخص‌شده برای تبدیل داده‌ها پشتیبانی نشود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example copies the plane at index `1` to a destination buffer.
+مثال زیر پلن در شاخص `1` را در یک بافر مقصد کپی می‌کند.
 
 ```js
 AudioData.copyTo(AudioBuffer, { planeIndex: 1 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
