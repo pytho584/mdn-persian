@@ -1,7 +1,7 @@
 ---
 title: "AudioProcessingEvent"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioProcessingEvent"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,54 +15,39 @@ browser-compat: api.AudioProcessingEvent
 
 {{APIRef("Web Audio API")}}{{deprecated_header}}
 
-The `AudioProcessingEvent` interface of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) represents events that occur when a {{domxref("ScriptProcessorNode")}} input buffer is ready to be processed.
+رابطه `AudioProcessingEvent` در [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) رویدادهایی را نشان می‌دهد که زمانی رخ می‌دهند که یک بافر ورودی {{domxref("ScriptProcessorNode")}} آماده پردازش است.
 
-An `audioprocess` event with this interface is fired on a {{domxref("ScriptProcessorNode")}} when audio processing is required. During audio processing, the input buffer is read and processed to produce output audio data, which is then written to the output buffer.
+یک رویداد `audioprocess` با این رابط روی {{domxref("ScriptProcessorNode")}} زمانی که پردازش صوتی لازم است فعال می‌شود. در طول پردازش صوتی، بافر ورودی خوانده و پردازش می‌شود تا داده‌های صوتی خروجی تولید شود، که سپس در بافر خروجی نوشته می‌شود.
 
 > [!WARNING]
-> This feature has been deprecated and should be replaced by an [`AudioWorklet`](/en-US/docs/Web/API/AudioWorklet).
+> این ویژگی منسوخ شده است و باید با یک [`AudioWorklet`](/en-US/docs/Web/API/AudioWorklet) جایگزین شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("AudioProcessingEvent.AudioProcessingEvent", "AudioProcessingEvent()")}} {{Deprecated_Inline}}
-  - : Creates a new `AudioProcessingEvent` object.
+  - : یک شیء `AudioProcessingEvent` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also implements the properties inherited from its parent, {{domxref("Event")}}_.
+_همچنین ویژگی‌های به ارث رسیده از والد خود، {{domxref("Event")}}، را پیاده‌سازی می‌کند._
 
 - {{domxref("AudioProcessingEvent.playbackTime", "playbackTime")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : A double representing the time when the audio will be played,
-    as defined by the time of {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}}.
+  - : یک عدد اعشاری (double) که زمان پخش صدا را نشان می‌دهد، همانطور که توسط زمان {{domxref("BaseAudioContext/currentTime", "AudioContext.currentTime")}} تعریف شده است.
 - {{domxref("AudioProcessingEvent.inputBuffer", "inputBuffer")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : An {{domxref("AudioBuffer")}} that is the buffer containing the input audio data to be processed.
-    The number of channels is defined as a parameter `numberOfInputChannels`,
-    of the factory method {{domxref("BaseAudioContext/createScriptProcessor", "AudioContext.createScriptProcessor()")}}.
-    Note that the returned <code>AudioBuffer</code> is only valid in the scope of the event handler.
+  - : یک {{domxref("AudioBuffer")}} که بافر حاوی داده‌های صوتی ورودی برای پردازش است. تعداد کانال‌ها به عنوان پارامتر `numberOfInputChannels` از متد کارخانه‌ای {{domxref("BaseAudioContext/createScriptProcessor", "AudioContext.createScriptProcessor()")}} تعریف می‌شود. توجه داشته باشید که <code>AudioBuffer</code> برگشتی فقط در محدوده کنترل‌کننده رویداد معتبر است.
 - {{domxref("AudioProcessingEvent.outputBuffer", "outputBuffer")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : An {{domxref("AudioBuffer")}} that is the buffer where the output audio data should be written.
-    The number of channels is defined as a parameter, <code>numberOfOutputChannels</code>,
-    of the factory method {{domxref("BaseAudioContext/createScriptProcessor", "AudioContext.createScriptProcessor()")}}.
-    Note that the returned <code>AudioBuffer</code> is only valid in the scope of the event handler.
+  - : یک {{domxref("AudioBuffer")}} که بافری است که داده‌های صوتی خروجی باید در آن نوشته شود. تعداد کانال‌ها به عنوان پارامتر <code>numberOfOutputChannels</code> از متد کارخانه‌ای {{domxref("BaseAudioContext/createScriptProcessor", "AudioContext.createScriptProcessor()")}} تعریف می‌شود. توجه داشته باشید که <code>AudioBuffer</code> برگشتی فقط در محدوده کنترل‌کننده رویداد معتبر است.
 
-## Examples
+## مثال‌ها
 
-### Adding white noise using a script processor
+### افزودن نویز سفید با استفاده از یک پردازنده اسکریپت
 
-The following example shows how to use of a `ScriptProcessorNode` to take a
-track loaded via {{domxref("BaseAudioContext/decodeAudioData", "AudioContext.decodeAudioData()")}}, process it, adding a bit
-of white noise to each audio sample of the input track (buffer) and play it through the
-{{domxref("AudioDestinationNode")}}. For each channel and each sample frame, the
-`scriptNode.onaudioprocess` function takes the associated
-`audioProcessingEvent` and uses it to loop through each channel of the input
-buffer, and each sample in each channel, and add a small amount of white noise, before
-setting that result to be the output sample in each case.
+مثال زیر نحوه استفاده از یک `ScriptProcessorNode` را برای گرفتن یک قطعه صوتی بارگذاری‌شده از طریق {{domxref("BaseAudioContext/decodeAudioData", "AudioContext.decodeAudioData()")}}، پردازش آن، افزودن کمی نویز سفید به هر نمونه صوتی از قطعه ورودی (بافر) و پخش آن از طریق {{domxref("AudioDestinationNode")}} نشان می‌دهد. برای هر کانال و هر قاب نمونه، تابع `scriptNode.onaudioprocess` رویداد صوتی مرتبط (`audioProcessingEvent`) را دریافت می‌کند و از آن برای حلقه زدن روی هر کانال از بافر ورودی و هر نمونه در هر کانال استفاده می‌کند و مقدار کمی نویز سفید اضافه می‌کند، سپس نتیجه را به عنوان نمونه خروجی در هر مورد تنظیم می‌کند.
 
 > [!NOTE]
-> For a full working example, see our [script-processor-node](https://mdn.github.io/webaudio-examples/script-processor-node/)
-> GitHub repo. (You can also access the [source code](https://github.com/mdn/webaudio-examples/tree/main/script-processor-node).)
+> برای یک مثال کامل در حال اجرا، مخزن گیت‌هاب [script-processor-node](https://mdn.github.io/webaudio-examples/script-processor-node/) ما را ببینید. (همچنین می‌توانید به [کد منبع](https://github.com/mdn/webaudio-examples/tree/main/script-processor-node) دسترسی داشته باشید.)
 
 ```js
 const myScript = document.querySelector("script");
@@ -135,14 +120,14 @@ playButton.addEventListener("click", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
