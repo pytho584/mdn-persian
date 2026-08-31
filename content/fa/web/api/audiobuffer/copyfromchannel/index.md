@@ -1,62 +1,45 @@
 ---
 title: "AudioBuffer: copyFromChannel() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/copyFromChannel"
-status: "needs-translation"
----
-
----
-title: "AudioBuffer: copyFromChannel() method"
 short-title: copyFromChannel()
 slug: Web/API/AudioBuffer/copyFromChannel
 page-type: web-api-instance-method
 browser-compat: api.AudioBuffer.copyFromChannel
+translated_by: "n8n + AI"
 ---
 
 {{APIRef("Web Audio API")}}
 
-The
-**`copyFromChannel()`** method of the
-{{domxref("AudioBuffer")}} interface copies the audio sample data from the specified
-channel of the `AudioBuffer` to a specified
-{{jsxref("Float32Array")}}.
+متد **`copyFromChannel()`** از رابط {{domxref("AudioBuffer")}} داده‌های نمونه صوتی را از کانال مشخص‌شده در `AudioBuffer` به یک {{jsxref("Float32Array")}} مشخص کپی می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 copyFromChannel(destination, channelNumber, startInChannel)
 ```
 
-### Parameters
+### پارامترها
 
 - `destination`
-  - : A {{jsxref("Float32Array")}} to copy the channel's samples to.
+  - : یک {{jsxref("Float32Array")}} که نمونه‌های کانال به آن کپی می‌شوند.
 - `channelNumber`
-  - : The channel number of the current `AudioBuffer` to copy the channel data
-    from.
+  - : شماره کانال `AudioBuffer` فعلی که داده‌های کانال از آن کپی می‌شود.
 - `startInChannel` {{optional_inline}}
-  - : An optional offset into the source channel's buffer from which to begin copying
-    samples. If not specified, a value of 0 (the beginning of the buffer) is assumed by
-    default.
+  - : یک آفست اختیاری در بافر کانال مبدأ که کپی نمونه‌ها از آنجا آغاز می‌شود. اگر مشخص نشود، به‌طور پیش‌فرض مقدار 0 (آغاز بافر) در نظر گرفته می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `indexSizeError`
-  - : One of the input parameters has a value that is outside the accepted range:
-    - The value of `channelNumber` specifies a channel number
-      which doesn't exist (that is, it's greater than or equal to the value of
-      {{domxref("AudioBuffer.numberOfChannels", "numberOfChannels")}} on the channel).
-    - The value of `startInChannel` is outside the current range
-      of samples that already exist in the source buffer; that is, it's greater than its
-      current {{domxref("AudioBuffer.length", "length")}}.
+  - : یکی از پارامترهای ورودی مقداری خارج از محدوده مجاز دارد:
+    - مقدار `channelNumber` شماره کانالی را مشخص می‌کند که وجود ندارد (یعنی بزرگ‌تر یا مساوی مقدار {{domxref("AudioBuffer.numberOfChannels", "numberOfChannels")}} در کانال است).
+    - مقدار `startInChannel` خارج از محدوده فعلی نمونه‌هایی است که در بافر مبدأ وجود دارند؛ یعنی بزرگ‌تر از {{domxref("AudioBuffer.length", "length")}} فعلی آن است.
 
-## Examples
+## مثال‌ها
 
-This example creates a new audio buffer, then copies the samples from another channel
-into it.
+این مثال یک بافر صوتی جدید ایجاد می‌کند و سپس نمونه‌ها را از کانال دیگری به آن کپی می‌کند.
 
 ```js
 const myArrayBuffer = audioCtx.createBuffer(2, frameCount, audioCtx.sampleRate);
@@ -64,14 +47,14 @@ const anotherArray = new Float32Array(length);
 myArrayBuffer.copyFromChannel(anotherArray, 1, 0);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
