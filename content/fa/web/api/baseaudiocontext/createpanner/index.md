@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createPanner() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createPanner"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,60 +14,37 @@ browser-compat: api.BaseAudioContext.createPanner
 
 {{ APIRef("Web Audio API") }}
 
-The `createPanner()` method of the {{ domxref("BaseAudioContext") }}
-Interface is used to create a new {{domxref("PannerNode")}}, which is used to
-spatialize an incoming audio stream in 3D space.
+`createPanner()` 方法属于 {{ domxref("BaseAudioContext") }} 接口，用于创建一个新的 {{domxref("PannerNode")}}，该节点用于在三维空间中对传入的音频流进行空间化处理。
 
-The panner node is spatialized in relation to the AudioContext's
-{{domxref("AudioListener") }} (defined by the {{domxref("BaseAudioContext/listener", "AudioContext.listener")}}
-attribute), which represents the position and orientation of the person listening to the
-audio.
+panner 节点相对于 AudioContext 的 {{domxref("AudioListener") }}（由 {{domxref("BaseAudioContext/listener", "AudioContext.listener")}} 属性定义）进行空间化处理，该监听器表示听音频的人的位置和朝向。
 
 > [!NOTE]
-> The {{domxref("PannerNode.PannerNode", "PannerNode()")}}
-> constructor is the recommended way to create a {{domxref("PannerNode")}}; see
-> [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+> 推荐使用 {{domxref("PannerNode.PannerNode", "PannerNode()")}} 构造函数来创建 {{domxref("PannerNode")}}；参见 [创建 AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode)。
 
-## Syntax
+## 语法
 
 ```js-nolint
 createPanner()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A {{domxref("PannerNode")}}.
+一个 {{domxref("PannerNode")}}。
 
-## Examples
+## 示例
 
-In the following example, you can see an example of how the `createPanner()`
-method, {{domxref("AudioListener")}} and {{domxref("PannerNode")}} would be used to
-control audio spatialization. Generally you will define the position in 3D space that
-your audio listener and panner (source) occupy initially, and then update the position
-of one or both of these as the application is used. You might be moving a character
-around inside a game world for example, and wanting delivery of audio to change
-realistically as your character moves closer to or further away from a music player such
-as a stereo. In the example you can see this being controlled by the functions
-`moveRight()`, `moveLeft()`, etc., which set new values for the
-panner position via the `PositionPanner()` function.
+在以下示例中，你可以看到如何使用 `createPanner()` 方法、{{domxref("AudioListener")}} 和 {{domxref("PannerNode")}} 来控制音频的空间化。通常，你首先定义音频监听器和 panner（音源）在三维空间中的初始位置，然后在应用程序使用过程中更新其中一个或两个的位置。例如，你可能在游戏世界中移动一个角色，并且希望当角色靠近或远离音响等音乐播放器时，音频传递能够逼真地变化。在示例中，你可以看到通过 `moveRight()`、`moveLeft()` 等函数来控制这一过程，这些函数通过 `PositionPanner()` 函数为 panner 位置设置新值。
 
-To see a complete implementation, check out our [panner-node example](https://mdn.github.io/webaudio-examples/panner-node/)
-([view the source code](https://github.com/mdn/webaudio-examples/tree/main/panner-node)) — this demo transports you to the 2.5D "Room of metal", where you can
-play a track on a boom box and then walk around the boom box to see how the sound
-changes!
+要查看完整的实现，请参阅我们的 [panner-node 示例](https://mdn.github.io/webaudio-examples/panner-node/)（[查看源代码](https://github.com/mdn/webaudio-examples/tree/main/panner-node)）——这个演示将你传送到 2.5D 的“金属房间”中，你可以在音箱上播放一首曲子，然后绕着音箱走动，观察声音如何变化！
 
-Note how we have used some feature detection to either give the browser the newer
-property values (like {{domxref("AudioListener.forwardX")}}) for setting position, etc.
-if it supports those, or older methods (like
-{{domxref("AudioListener.setOrientation()")}}) if it still supports those but not the
-new properties.
+请注意，我们使用了一些特性检测，以便在浏览器支持的情况下使用较新的属性值（如 {{domxref("AudioListener.forwardX")}}）来设置位置等，如果浏览器不支持这些新属性，则使用较旧的方法（如 {{domxref("AudioListener.setOrientation()")}}）。
 
 ```js
-// set up listener and panner position information
+// 设置监听器和 panner 的位置信息
 const WIDTH = window.innerWidth;
 const HEIGHT = window.innerHeight;
 
@@ -75,7 +52,7 @@ const xPos = Math.floor(WIDTH / 2);
 const yPos = Math.floor(HEIGHT / 2);
 const zPos = 295;
 
-// define other variables
+// 定义其他变量
 
 const audioCtx = new AudioContext();
 
@@ -125,7 +102,7 @@ rightBound = xPos - 50;
 
 xIterator = WIDTH / 150;
 
-// listener will always be in the same place for this demo
+// 在这个演示中，监听器始终保持在相同的位置
 
 if (listener.positionX) {
   listener.positionX.setValueAtTime(xPos, audioCtx.currentTime);
@@ -137,7 +114,7 @@ if (listener.positionX) {
 
 listenerData.textContent = `Listener data: X ${xPos} Y ${yPos} Z 300`;
 
-// panner will move as the boombox graphic moves around on the screen
+// panner 将随着音箱图形在屏幕上移动而移动
 function positionPanner() {
   if (panner.positionX) {
     panner.positionX.setValueAtTime(xPos, audioCtx.currentTime);
@@ -151,19 +128,16 @@ function positionPanner() {
 ```
 
 > [!NOTE]
-> In terms of working out what position values to apply to the
-> listener and panner, to make the sound appropriate to what the visuals are doing on
-> screen, there is quite a bit of math involved, but you will soon get used to it with a
-> bit of experimentation.
+> 要确定应用到监听器和 panner 的位置值，以使声音与屏幕上的视觉效果相匹配，需要进行相当多的数学计算，但只要稍加尝试，你很快就会熟悉它。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [使用 Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
