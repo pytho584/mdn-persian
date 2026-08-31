@@ -1,7 +1,7 @@
 ---
 title: "AudioBuffer: duration property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioBuffer/duration"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,13 +14,13 @@ browser-compat: api.AudioBuffer.duration
 
 {{ APIRef("Web Audio API") }}
 
-The **`duration`** property of the {{ domxref("AudioBuffer")}} interface returns a double representing the duration, in seconds, of the PCM data stored in the buffer.
+خاصیت **`duration`** از رابط {{ domxref("AudioBuffer")}} یک عدد اعشاری (double) را برمی‌گرداند که مدت زمان (بر حسب ثانیه) داده‌های PCM ذخیره شده در بافر را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A double.
+یک عدد اعشاری (double).
 
-## Examples
+## مثال‌ها
 
 ```js
 // Stereo
@@ -48,14 +48,14 @@ button.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
