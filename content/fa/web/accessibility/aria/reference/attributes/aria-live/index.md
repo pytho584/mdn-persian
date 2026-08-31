@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-live attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,19 +13,19 @@ spec-urls: https://w3c.github.io/aria/#aria-live
 sidebar: accessibilitysidebar
 ---
 
-The global `aria-live` attribute indicates that an element will be updated, and describes the types of updates the user agents, assistive technologies, and user can expect from the live region.
+ویژگی سراسری `aria-live` نشان می‌دهد که یک عنصر به‌روزرسانی خواهد شد و انواع به‌روزرسانی‌هایی را توصیف می‌کند که عامل‌های کاربر، فناوری‌های کمکی و کاربر می‌توانند از ناحیه زنده (live region) انتظار داشته باشند.
 
-## Description
+## توضیحات
 
-When content changes after initial load, assistive technology (AT) users may not "see" the changes. Some changes are important. Others are not. The `aria-live` attribute enables developers to inform the user of updates and choose, based on importance and urgency, whether to immediately, proactively, or passively inform AT users of changes to the content.
+وقتی محتوا پس از بارگذاری اولیه تغییر می‌کند، کاربران فناوری کمکی (AT) ممکن است تغییرات را «نبینند». برخی تغییرات مهم هستند و برخی نه. ویژگی `aria-live` به توسعه‌دهندگان امکان می‌دهد کاربر را از به‌روزرسانی‌ها آگاه کنند و بر اساس اهمیت و فوریت، انتخاب کنند که آیا به‌طور بلافاصله، فعالانه یا منفعلانه کاربران فناوری کمکی را از تغییرات محتوا مطلع کنند.
 
-If a section of the screen updates, if it's styled in a way to be noticeable, most sighted users will generally notice live updates. Screen readers, on the other hand, only focus on one part of the page at a time; and that part may not be where the update is. The `aria-live` attribute provides a way for developers to announce such changes to AT based on event triggers set by the developer rather than by user initiated actions so they are made aware that the content has changed.
+اگر بخشی از صفحه به‌روزرسانی شود و به‌گونه‌ای استایل‌دهی شده باشد که قابل توجه باشد، بیشتر کاربران بینا معمولاً به‌روزرسانی‌های زنده را متوجه می‌شوند. از سوی دیگر، صفحه‌خوان‌ها در هر لحظه فقط روی یک بخش از صفحه تمرکز می‌کنند؛ و آن بخش ممکن است جایی نباشد که به‌روزرسانی در آن رخ می‌دهد. ویژگی `aria-live` راهی را در اختیار توسعه‌دهندگان قرار می‌دهد تا چنین تغییراتی را بر اساس محرک‌های رویدادی که توسعه‌دهنده تعیین کرده است، به‌جای کنش‌های آغازشده توسط کاربر، به فناوری کمکی اعلام کنند تا کاربران متوجه شوند که محتوا تغییر کرده است.
 
 ```html
 <div id="announce" aria-live="polite"></div>
 ```
 
-The `aria-live` attribute is set on an **empty** element. When an update to the page occurs, the empty element with that `aria-live` attribute should be updated with a brief announcement informing the user an update has been made.
+ویژگی `aria-live` روی یک عنصر **خالی** تنظیم می‌شود. وقتی به‌روزرسانی در صفحه رخ می‌دهد، عنصر خالیِ دارای آن ویژگی `aria-live` باید با یک اعلام کوتاه به‌روزرسانی شود که به کاربر اطلاع می‌دهد یک به‌روزرسانی انجام شده است.
 
 ```html
 <div id="announce" aria-live="polite">
@@ -33,62 +33,62 @@ The `aria-live` attribute is set on an **empty** element. When an update to the 
 </div>
 ```
 
-When the accessibility API recognizes a change to the live region above, it will announce the contents of that live region based on the value of the attribute. The element is **not** given focus.
+وقتی API دسترس‌پذیری تغییری را در ناحیه زنده بالا تشخیص دهد، محتوای آن ناحیه زنده را بر اساس مقدار ویژگی اعلام می‌کند. به این عنصر **فوکوس** داده نمی‌شود.
 
-If you want all the contents of the live region to be read, use the [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic). Use [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) to define only the sections of an update that need to be reread to the user. Use [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) to prevent announcements while updates are still being made.
+اگر می‌خواهید تمام محتوای ناحیه زنده خوانده شود، از [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic) استفاده کنید. از [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) برای تعریف فقط بخش‌هایی از یک به‌روزرسانی استفاده کنید که باید دوباره برای کاربر خوانده شوند. از [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) استفاده کنید تا تا زمانی که به‌روزرسانی‌ها همچنان در حال انجام هستند، از اعلام‌ها جلوگیری شود.
 
-### Choosing the `aria-live` value
+### انتخاب مقدار `aria-live`
 
-As some assistive technology users can't "see" live updates, the `aria-live` attribute is used to define what updated information the user should be:
+از آنجا که برخی از کاربران فناوری کمکی نمی‌توانند به‌روزرسانی‌های زنده را «ببینند»، از ویژگی `aria-live` برای تعریف این استفاده می‌شود که کاربر باید درباره کدام اطلاعات به‌روزشده:
 
-- Made aware of immediately,
-- Informed about if the opportunity avails itself, and
-- Proactively informed about but can learn when they choose to focus on the updated area.
+- بلافاصله آگاه شود،
+- در صورت فراهم شدن فرصت مطلع شود، و
+- به‌طور فعالانه مطلع شود، اما بتواند زمانی که انتخاب می‌کند روی ناحیه به‌روزشده تمرکز کند، آن را دریابد.
 
-`aria-live`'s value describes the types of updates the user agents, assistive technologies, and user can expect from the live region, and is used to express degrees of importance.
+مقدار `aria-live` انواع به‌روزرسانی‌هایی را توصیف می‌کند که عامل‌های کاربر، فناوری‌های کمکی و کاربر می‌توانند از ناحیه زنده انتظار داشته باشند و برای بیان درجه‌های اهمیت استفاده می‌شود.
 
-When `aria-live`'s attribute is set to `polite`, assistive technologies will notify users of updates but generally do not interrupt the current task, with the updates having a low priority. When set to `assertive`, assistive technologies immediately notify the user, potentially clearing the speech queue of previous updates.
+وقتی ویژگی `aria-live` روی `polite` تنظیم شود، فناوری‌های کمکی کاربران را از به‌روزرسانی‌ها مطلع می‌کنند اما معمولاً کارِ جاری را قطع نمی‌کنند؛ این به‌روزرسانی‌ها اولویت پایینی دارند. وقتی روی `assertive` تنظیم شود، فناوری‌های کمکی بلافاصله به کاربر اطلاع می‌دهند و احتمالاً صف گفتارِ به‌روزرسانی‌های قبلی را پاک می‌کنند.
 
-Screen readers buffer content when the page is loaded. Because of this, content added after the initial accessibility tree is built may not be noticed as AT users start consuming content before dynamic widgets are populated—users may not know about the page or view content updating as widgets finish loading. In this situation you can let users know the page has been updated by setting `aria-live="polite"`.
+صفحه‌خوان‌ها هنگام بارگذاری صفحه، محتوا را بافر می‌کنند. به همین دلیل، محتوایی که پس از ساخته‌شدن درخت دسترس‌پذیری اولیه اضافه می‌شود ممکن است مورد توجه قرار نگیرد، زیرا کاربران فناوری کمکی پیش از پر شدن ویجت‌های پویا مصرف محتوا را آغاز می‌کنند — کاربران ممکن است از به‌روزرسانی محتوای صفحه یا نما در حالی که ویجت‌ها در حال بارگذاری هستند بی‌اطلاع بمانند. در این شرایط می‌توانید با تنظیم `aria-live="polite"` به کاربران اطلاع دهید که صفحه به‌روزرسانی شده است.
 
-Fully populated pages may have updates too. Examples are content like real-time sports scores, news crawlers, and stock market tickers. Unless these kinds of updates are the main function of the page, you likely do not want to inform the user every time it updates, but do want to inform them the widget does get updated. Here, you would set `aria-live="off"`. In these scenarios there is no reason to inform the user of updates unless they are focused on the live region.
+صفحات کاملاً پرشده نیز ممکن است به‌روزرسانی داشته باشند. نمونه‌هایی از این محتوا عبارت‌اند از نتایج ورزشی بیدرنگ، خبرخوان‌های متحرک و تیکرهای بازار سهام. مگر اینکه این نوع به‌روزرسانی‌ها وظیفه اصلی صفحه باشند، احتمالاً نمی‌خواهید کاربر را در هر بار به‌روزرسانی مطلع کنید، اما می‌خواهید به او اطلاع دهید که ویجت به‌روزرسانی می‌شود. در اینجا باید `aria-live="off"` را تنظیم کنید. در این سناریوها دلیلی برای مطلع کردن کاربر از به‌روزرسانی‌ها وجود ندارد مگر اینکه روی ناحیه زنده فوکوس داشته باشد.
 
-Some live updates are important and time sensitive. For example, if you are selling concert tickets and the user has a limited time to make the purchase, you don't want to wait until a lull in activity to tell them their time is almost up (or already over). When being informed as soon as possible is necessary, set `aria-live="assertive"`. If the updated information is an [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role), the `aria-live` attribute is not needed.
+برخی به‌روزرسانی‌های زنده مهم و حساس به زمان هستند. به‌عنوان مثال، اگر در حال فروش بلیط کنسرت هستید و کاربر زمان محدودی برای خرید دارد، نمی‌خواهید تا وقتی فعالیت کمرنگ می‌شود صبر کنید تا به او بگویید زمانش تقریباً تمام شده (یا کاملاً تمام شده). وقتی اطلاع‌رسانی در سریع‌ترین زمان ممکن ضروری است، `aria-live="assertive"` را تنظیم کنید. اگر اطلاعات به‌روزشده یک [`alert`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/alert_role) است، ویژگی `aria-live` لازم نیست.
 
-In this time-limit scenario, to be accessible, you need to also [provide a way for users to extend the time available or turn the timer off completely](https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html).
+در این سناریوی محدودیت زمانی، برای دسترس‌پذیری، باید همچنین [provide a way for users to extend the time available or turn the timer off completely](https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html).
 
-### Using `aria-live`
+### استفاده از `aria-live`
 
-A live region includes the element and all its descendants. When not set on updating content, `aria-live`'s value comes from the nearest ancestor with a valid `aria-live` attribute value set. When set to `off`, or when the attribute is omitted altogether on the updated element and all the ancestor nodes in the DOM tree, the user is not informed. Users will still be able to hear the updates if they navigate to the live region, however.
+ناحیه زنده شامل عنصر و همه نوادگان آن است. وقتی `aria-live` روی محتوای در حال به‌روزرسانی تنظیم نشده باشد، مقدار آن از نزدیک‌ترین جدی (ancestor) که دارای مقدار معتبر برای ویژگی `aria-live` است گرفته می‌شود. وقتی روی `off` تنظیم شود، یا وقتی ویژگی به‌طور کلی روی عنصر به‌روزشده و همه گره‌های جد (ancestor nodes) در درخت DOM حذف شده باشد، کاربر مطلع نمی‌شود. با این حال، کاربران همچنان می‌توانند به‌روزرسانی‌ها را بشنوند، اگر به ناحیه زنده پیمایش کنند.
 
 > [!WARNING]
-> Because an interruption may disorient users or cause them to not complete their current task, don't use the `assertive` value unless the interruption is imperative.
+> از آنجا که یک وقفه ممکن است کاربران را سردرگم کند یا باعث شود کار فعلی خود را کامل نکنند، از مقدار `assertive` استفاده نکنید مگر اینکه وقفه ضروری باشد.
 
-## Values
+## مقادیر
 
 - `assertive`
-  - : Indicates that updates to the region have the highest priority and should be presented to the user immediately.
-- `off` (default)
-  - : Indicates that updates to the region should **not** be presented to the user unless the user is currently focused on that region.
+  - : نشان می‌دهد که به‌روزرسانی‌های ناحیه بالاترین اولویت را دارند و باید بلافاصله به کاربر ارائه شوند.
+- `off` (پیش‌فرض)
+  - : نشان می‌دهد که به‌روزرسانی‌های ناحیه **نباید** به کاربر ارائه شوند مگر اینکه کاربر در حال حاضر روی آن ناحیه فوکوس داشته باشد.
 - `polite`
-  - : Indicates that updates to the region should be presented at the next graceful opportunity, such as at the end of speaking the current sentence or when the user pauses typing.
+  - : نشان می‌دهد که به‌روزرسانی‌های ناحیه باید در نخستین فرصت مناسب ارائه شوند، مانند پایان جمله فعلی یا وقتی کاربر در تایپ مکث می‌کند.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaLive")}}
-  - : The [`ariaLive`](/en-US/docs/Web/API/Element/ariaLive) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-live` attribute.
+  - : ویژگی [`ariaLive`](/en-US/docs/Web/API/Element/ariaLive)، بخشی از رابط {{domxref("Element")}}، مقدار ویژگی `aria-live` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaLive")}}
-  - : The [`ariaLive`](/en-US/docs/Web/API/ElementInternals/ariaLive) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-live` attribute.
+  - : ویژگی [`ariaLive`](/en-US/docs/Web/API/ElementInternals/ariaLive)، بخشی از رابط {{domxref("ElementInternals")}}، مقدار ویژگی `aria-live` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in **ALL** roles.
+در **همه** نقش‌ها استفاده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## جستارهای وابسته
 
 - [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic)
 - [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant)
