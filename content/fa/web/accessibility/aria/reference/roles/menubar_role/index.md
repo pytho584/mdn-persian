@@ -1,7 +1,7 @@
 ---
 title: "ARIA: menubar role"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menubar_role"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,86 +15,86 @@ spec-urls:
 sidebar: accessibilitysidebar
 ---
 
-A `menubar` is a presentation of `menu` that usually remains visible and is usually presented horizontally.
+یک `menubar` نمایشی از `menu` است که معمولاً قابل مشاهده باقی می‌ماند و معمولاً به صورت افقی ارائه می‌شود.
 
-## Description
+## توضیحات
 
-A menu is a widget that offers a list of choices to the user, such as a set of actions or functions. The menubar type of menu is usually presented as a persistently visible horizontal bar of commands. Menubars behave like native operating system menubars, such as the menubars containing pull down menus, commonly found at the top of many desktop application windows.
+منو (menu) یک ویجت است که فهرستی از گزینه‌ها را به کاربر ارائه می‌دهد، مانند مجموعه‌ای از اقدامات یا عملکردها. نوع منوی menubar معمولاً به صورت یک نوار افقی از دستورات که به طور مداوم قابل مشاهده است ارائه می‌شود. منوبرها مانند نوارهای منوی سیستم‌عامل بومی رفتار می‌کنند، مانند نوارهای منویی که شامل منوهای کشویی هستند و معمولاً در بالای بسیاری از پنجره‌های برنامه‌های دسکتاپ یافت می‌شوند.
 
-The `menubar` role is used to create a menu bar similar to those found near the top of the window in many desktop applications, visually persistent, typically horizontal, bar of menu items offering the user quick access to a consistent set of commands.
+نقش `menubar` برای ایجاد یک نوار منو مشابه آنچه در بالای پنجره در بسیاری از برنامه‌های دسکتاپ یافت می‌شود استفاده می‌شود؛ نواری بصری و معمولاً افقی از آیتم‌های منو که به کاربر دسترسی سریع به مجموعه‌ای ثابت از دستورات را می‌دهد.
 
-A `menubar` contains three types of menu items, including [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role), [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role) and [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role). These menu items may optionally be nested in one or more [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) containers. Groups or items may optionally by separated with [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) elements. While every menu item must be able to receive focus, even if disabled, the `group` and `separator` elements are not focusable.
+یک `menubar` شامل سه نوع آیتم منو است، از جمله [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role)، [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role) و [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role). این آیتم‌های منو ممکن است به صورت اختیاری در یک یا چند ظرف [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) تودرتو قرار گیرند. گروه‌ها یا آیتم‌ها ممکن است به صورت اختیاری با عناصر [`separator`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/separator_role) از هم جدا شوند. در حالی که هر آیتم منو باید بتواند فوکوس دریافت کند، حتی اگر غیرفعال باشد، عناصر `group` و `separator` فوکوس‌پذیر نیستند.
 
-An example of a native menubar is the bar which may be present at the top of the screen if you are reading this in a desktop browser. An example of a web-based menubar is the horizontal menu bar that reads "File Edit View Insert Format", etc., which is usually visible under the document name in a Google doc.
+یک مثال از menubar بومی، نواری است که ممکن است در بالای صفحه وجود داشته باشد اگر در حال خواندن این مطلب در یک مرورگر دسکتاپ هستید. یک مثال از menubar مبتنی بر وب، نوار منوی افقی است که عبارت "File Edit View Insert Format" و غیره را نشان می‌دهد و معمولاً در زیر نام سند در یک سند گوگل قابل مشاهده است.
 
-Menubar interactions should be similar to the typical menu bar interaction in a desktop graphical user interface. In Google Docs, each of those menu items is a `menuitem` with a popup submenu, so each has an `aria-haspopup` attribute set to `true`. The `menubar` element does not.
+تعاملات menubar باید مشابه تعاملات معمول نوار منو در یک رابط کاربری گرافیکی دسکتاپ باشد. در Google Docs، هر یک از آن آیتم‌های منو یک `menuitem` با زیرمنوی بازشو دارند، بنابراین هر کدام دارای ویژگی `aria-haspopup` با مقدار `true` هستند. عنصر `menubar` این ویژگی را ندارد.
 
-The menubar and all the menu items are focusable and have a [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) attribute set. When the menubar receives focus through tabbing, keyboard focus is placed on the first menuitem. Each item in the menu has `tabindex` set to `-1`, except the first item has which has its `tabindex` set to `0`.
+menubar و همه آیتم‌های منو فوکوس‌پذیر هستند و دارای ویژگی [tabindex](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) هستند. هنگامی که menubar از طریق کلید Tab فوکوس دریافت می‌کند، فوکوس صفحه‌کلید بر روی اولین آیتم منو قرار می‌گیرد. هر آیتم در منو دارای `tabindex` با مقدار `-1` است، به جز اولین آیتم که `tabindex` آن `0` است.
 
-If a menubar receives focus as a result of a context action, such as a shortcut key, <kbd>Escape</kbd> or <kbd>Enter</kbd> may return focus to the invoking context. That said, make sure not to create shortcut keys that interfere with user agent, operating system, or assistive technology shortcuts - any UA, OS, or AT.
+اگر یک menubar در نتیجه یک اقدام زمینه‌ای، مانند یک کلید میانبر، فوکوس دریافت کند، کلیدهای <kbd>Escape</kbd> یا <kbd>Enter</kbd> ممکن است فوکوس را به زمینه فراخوان بازگردانند. با این حال، مطمئن شوید که کلیدهای میانبری ایجاد نمی‌کنید که با میانبرهای عامل کاربر، سیستم‌عامل یا فناوری کمکی تداخل داشته باشند - هر UA، OS یا AT.
 
-Every menu item, no matter how deeply nested, is able to receive focus, even if disabled.
+هر آیتم منو، صرف‌نظر از عمق تودرتو بودن، قادر به دریافت فوکوس است، حتی اگر غیرفعال باشد.
 
-If a `menubar` has a visible label, include [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) set to a value that refers to the labelling element. Otherwise, provide the menubar with an accessible name by including a descriptive [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label).
+اگر یک `menubar` برچسب قابل مشاهده دارد، [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) را با مقداری که به عنصر برچسب‌گذار اشاره می‌کند قرار دهید. در غیر این صورت، با گنجاندن یک [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) توصیفی، نام قابل دسترس برای menubar فراهم کنید.
 
-A `menuitem` element in the `menubar` can contain a child submenu of menu items. Submenus can be nested several deep. Generally, the outer `menubar` is horizontal and all the submenus are vertical. If this is not the case, if your menubar is vertical, include [`aria-orientation="vertical"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) on the `menubar` element. Otherwise, this attribute is not necessary, as the default value is horizontal.
+یک عنصر `menuitem` در `menubar` می‌تواند شامل یک زیرمنوی فرزند از آیتم‌های منو باشد. زیرمنوها می‌توانند چندین سطح عمق داشته باشند. به طور کلی، `menubar` بیرونی افقی است و همه زیرمنوها عمودی هستند. اگر اینطور نیست، اگر menubar شما عمودی است، [`aria-orientation="vertical"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) را روی عنصر `menubar` قرار دهید. در غیر این صورت، این ویژگی لازم نیست، زیرا مقدار پیش‌فرض افقی است.
 
-### Associated WAI-ARIA roles, states, and properties
+### نقش‌ها، حالت‌ها و ویژگی‌های مرتبط WAI-ARIA
 
-- [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) role
-  - : Identifies a set of menu items
-- [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role) role
-  - : An option in a set of choices contained by a `menubar`. May have a submenu.
-- [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role) role
-  - : A checkable menu item in a set of elements with the same role, only one of which can be checked at a time.
-- [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role) role
-  - : a menu item with a checkable state whose possible values are `true`, `false`, or `mixed`.
+- نقش [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role)
+  - : مجموعه‌ای از آیتم‌های منو را شناسایی می‌کند.
+- نقش [`menuitem`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role)
+  - : یک گزینه در مجموعه‌ای از انتخاب‌های موجود در یک `menubar`. ممکن است زیرمنو داشته باشد.
+- نقش [`menuitemradio`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role)
+  - : یک آیتم منوی قابل علامت‌گذاری در مجموعه‌ای از عناصر با نقش یکسان که فقط یکی از آن‌ها در یک زمان می‌تواند علامت‌گذاری شود.
+- نقش [`menuitemcheckbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role)
+  - : یک آیتم منو با حالت قابل علامت‌گذاری که مقادیر ممکن آن `true`، `false` یا `mixed` است.
 - [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation)
-  - : Include `aria-orientation="vertical"` on `menubar` element if it's the menubar is vertical. The default orientation is `horizontal`.
+  - : اگر menubar عمودی است، `aria-orientation="vertical"` را روی عنصر `menubar` قرار دهید. جهت‌گیری پیش‌فرض `horizontal` است.
 
-### Keyboard interactions
+### تعاملات صفحه‌کلید
 
-When focus is in a `menubar` it is always on a menu item within the menu bar. When focus is on a top level `menuitem` in a menu bar, the following keyboard interactions must be supported:
+هنگامی که فوکوس در یک `menubar` است، همیشه روی یک آیتم منو در داخل نوار منو قرار دارد. هنگامی که فوکوس روی یک `menuitem` سطح بالا در یک نوار منو است، تعاملات صفحه‌کلید زیر باید پشتیبانی شوند:
 
-- <kbd>Down Arrow</kbd>
-  - : If the currently focused `menuitem` has a submenu, opens the submenu and places focus on the first item in the submenu.
-- <kbd>Up Arrow</kbd>
-  - : (Optional) If the currently focused `menuitem` has a submenu, opens the submenu and places focus on the _last_ item in the submenu.
-- <kbd>Right Arrow</kbd>
-  - : Moves focus to the next item, optionally wrapping from the last to the first.
-- <kbd>Left Arrow</kbd>
-  - : Moves focus to the previous item, optionally wrapping from the first to the last.
+- <kbd>پیکان رو به پایین</kbd>
+  - : اگر `menuitem` دارای فوکوس، زیرمنو داشته باشد، زیرمنو را باز می‌کند و فوکوس را روی اولین آیتم در زیرمنو قرار می‌دهد.
+- <kbd>پیکان رو به بالا</kbd>
+  - : (اختیاری) اگر `menuitem` دارای فوکوس، زیرمنو داشته باشد، زیرمنو را باز می‌کند و فوکوس را روی _آخرین_ آیتم در زیرمنو قرار می‌دهد.
+- <kbd>پیکان رو به راست</kbd>
+  - : فوکوس را به آیتم بعدی منتقل می‌کند، به صورت اختیاری از آخرین به اولین می‌پیچد.
+- <kbd>پیکان رو به چپ</kbd>
+  - : فوکوس را به آیتم قبلی منتقل می‌کند، به صورت اختیاری از اولین به آخرین می‌پیچد.
 - <kbd>Home</kbd>
-  - : If arrow key wrapping is not supported, moves focus to the first item in the `menubar`.
+  - : اگر پیچیدن کلید پیکان پشتیبانی نمی‌شود، فوکوس را به اولین آیتم در `menubar` منتقل می‌کند.
 - <kbd>End</kbd>
-  - : If arrow key wrapping is not supported, moves focus to the last item in the `menubar`.
+  - : اگر پیچیدن کلید پیکان پشتیبانی نمی‌شود، فوکوس را به آخرین آیتم در `menubar` منتقل می‌کند.
 - <kbd>Tab</kbd>
-  - : Moves focus to the next element in the tab sequence. If that makes it exit the menubar, all submenus in the menubar get closed.
+  - : فوکوس را به عنصر بعدی در توالی تب منتقل می‌کند. اگر این باعث خروج از menubar شود، همه زیرمنوهای موجود در menubar بسته می‌شوند.
 - <kbd>shift + Tab</kbd>
-  - : Moves focus to the previous element in the tab sequence. If that makes it exit the menubar, all submenus in the menubar get closed.
+  - : فوکوس را به عنصر قبلی در توالی تب منتقل می‌کند. اگر این باعث خروج از menubar شود، همه زیرمنوهای موجود در menubar بسته می‌شوند.
 
-See [`menuitem` keyboard interactions](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role#keyboard_interactions), [`menuitemradio` keyboard interactions](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role#keyboard_interactions), and [`menuitemcheckbox` keyboard interactions](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role#keyboard_interactions) for more information on keyboard interactions when focus is on a menuitem in a menubar (which it always is).
+برای اطلاعات بیشتر در مورد تعاملات صفحه‌کلید هنگامی که فوکوس روی یک آیتم منو در یک menubar است (که همیشه چنین است)، به [`menuitem` keyboard interactions](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitem_role#keyboard_interactions)، [`menuitemradio` keyboard interactions](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemradio_role#keyboard_interactions) و [`menuitemcheckbox` keyboard interactions](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/menuitemcheckbox_role#keyboard_interactions) مراجعه کنید.
 
-Note: The above interactions assumed the `menubar` is horizontal. If the `menubar` is vertical, include `aria-orientation="vertical"` and change the following keyboard keys accordingly:
+توجه: تعاملات بالا فرض می‌کنند `menubar` افقی است. اگر `menubar` عمودی است، `aria-orientation="vertical"` را اضافه کنید و کلیدهای صفحه‌کلید زیر را به ترتیب تغییر دهید:
 
-- <kbd>Down Arrow</kbd>
-  - : Performs like the <kbd>Right Arrow</kbd> as described above.
-- <kbd>Up Arrow</kbd>
-  - : Performs like the <kbd>Left Arrow</kbd> as described above
-- <kbd>Right Arrow</kbd>
-  - : Performs like the <kbd>Down Arrow</kbd> as described above.
-- <kbd>Left Arrow</kbd>
-  - : Performs as the <kbd>Up Arrow</kbd> as described above
+- <kbd>پیکان رو به پایین</kbd>
+  - : مانند <kbd>پیکان رو به راست</kbd> که در بالا توضیح داده شد عمل می‌کند.
+- <kbd>پیکان رو به بالا</kbd>
+  - : مانند <kbd>پیکان رو به چپ</kbd> که در بالا توضیح داده شد عمل می‌کند.
+- <kbd>پیکان رو به راست</kbd>
+  - : مانند <kbd>پیکان رو به پایین</kbd> که در بالا توضیح داده شد عمل می‌کند.
+- <kbd>پیکان رو به چپ</kbd>
+  - : مانند <kbd>پیکان رو به بالا</kbd> که در بالا توضیح داده شد عمل می‌کند.
 
-## Examples
+## مثال‌ها
 
-- [W3C WAI-ARIA practices: navigation `menubar` example](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-navigation/)
-- [W3C WAI-ARIA practices: editor `menubar` example](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-editor/)
+- [تمرین‌های W3C WAI-ARIA: مثال `menubar` ناوبری](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-navigation/)
+- [تمرین‌های W3C WAI-ARIA: مثال `menubar` ویرایشگر](https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-editor/)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [`toolbar` role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/toolbar_role)
+- [نقش `toolbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/toolbar_role)
