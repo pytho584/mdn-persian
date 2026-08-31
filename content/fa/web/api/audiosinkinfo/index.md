@@ -1,7 +1,7 @@
 ---
 title: "AudioSinkInfo"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioSinkInfo"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,18 +15,18 @@ browser-compat: api.AudioSinkInfo
 
 {{APIRef("Web Audio API")}}{{SeeCompatTable}}
 
-The **`AudioSinkInfo`** interface of the {{domxref("Web Audio API", "Web Audio API", "", "nocode")}} represents information describing an {{domxref("AudioContext")}}'s sink ID, retrieved via {{domxref("AudioContext.sinkId")}}.
+**`AudioSinkInfo`** 是 {{domxref("Web Audio API", "Web Audio API", "", "nocode")}} 的一个接口，表示描述 {{domxref("AudioContext")}} 的 sink ID 的信息，可通过 {{domxref("AudioContext.sinkId")}} 获取。
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## 实例属性
 
 - {{domxref("AudioSinkInfo.type", "type")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the type of the audio output device.
+  - : 返回音频输出设备的类型。
 
-## Examples
+## 示例
 
-If a new {{domxref("AudioContext")}} is created with a `sinkId` value of `{ type: 'none' }`, calling {{domxref("AudioContext.sinkId")}} later in the code will return an `AudioSinkInfo` object containing `type: 'none'`. This is currently the only value available.
+如果使用 `sinkId` 值 `{ type: 'none' }` 创建新的 {{domxref("AudioContext")}}，则在代码后面调用 {{domxref("AudioContext.sinkId")}} 将返回包含 `type: 'none'` 的 `AudioSinkInfo` 对象。这是目前唯一可用的值。
 
 ```js
 audioCtx = new window.AudioContext({
@@ -38,17 +38,17 @@ audioCtx = new window.AudioContext({
 audioCtx.sinkId;
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [SetSinkId test example](https://mdn.github.io/dom-examples/audiocontext-setsinkid/) (check out the [source code](https://github.com/mdn/dom-examples/tree/main/audiocontext-setsinkid))
+- [SetSinkId 测试示例](https://mdn.github.io/dom-examples/audiocontext-setsinkid/)（查看[源代码](https://github.com/mdn/dom-examples/tree/main/audiocontext-setsinkid)）
 - {{domxref("AudioContext.setSinkId()")}}
 - {{domxref("AudioContext.sinkId")}}
 - {{domxref("AudioContext/sinkchange_event", "sinkchange")}}
