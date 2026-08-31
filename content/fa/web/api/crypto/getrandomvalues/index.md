@@ -1,11 +1,5 @@
 ---
 title: "Crypto: getRandomValues() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues"
-status: "needs-translation"
----
-
----
-title: "Crypto: getRandomValues() method"
 short-title: getRandomValues()
 slug: Web/API/Crypto/getRandomValues
 page-type: web-api-instance-method
@@ -14,13 +8,13 @@ browser-compat: api.Crypto.getRandomValues
 
 {{APIRef("Web Crypto API")}}{{AvailableInWorkers}}
 
-The **`Crypto.getRandomValues()`** method lets you get cryptographically strong random values.
-The array given as the parameter is filled with random numbers (random in its cryptographic meaning).
+روش **`Crypto.getRandomValues()`** به شما امکان می‌دهد مقادیر تصادفی قوی از نظر رمزنگاری (Cryptographically strong) بدست آورید.
+آرایه‌ای که به عنوان پارامتر داده می‌شود با اعداد تصادفی (تصادفی به معنای رمزنگاری آن) پر می‌شود.
 
-To guarantee enough performance, implementations are not using a truly random number generator, but they are using a pseudo-random number generator _seeded_ with a value with enough entropy.
-The pseudo-random number generator algorithm (PRNG) may vary across {{Glossary("user agent", "user agents")}}, but is suitable for cryptographic purposes.
+برای تضمین عملکرد کافی، پیاده‌سازی‌ها از یک مولد اعداد تصادفی واقعی استفاده نمی‌کنند، بلکه از یک مولد اعداد شبه‌تصادفی (Pseudo-random number generator) استفاده می‌کنند که با یک مقدار دارای آنتروپی کافی _seed_ (seed) شده است.
+الگوریتم مولد اعداد شبه‌تصادفی (PRNG) ممکن است در بین {{Glossary("user agent", "عامل‌های کاربر")}} متفاوت باشد، اما برای اهداف رمزنگاری مناسب است.
 
-`getRandomValues()` is the only member of the `Crypto` interface which can be used from an insecure context.
+`getRandomValues()` تنها عضو رابط `Crypto` است که می‌توان از یک زمینه ناامن (insecure context) استفاده کرد.
 
 ## Syntax
 
@@ -28,36 +22,36 @@ The pseudo-random number generator algorithm (PRNG) may vary across {{Glossary("
 getRandomValues(typedArray)
 ```
 
-### Parameters
+### پارامترها
 
 - `typedArray`
-  - : An integer-based {{jsxref("TypedArray")}}, that is one of: {{jsxref("Int8Array")}}, {{jsxref("Uint8Array")}},
-    {{jsxref("Uint8ClampedArray")}}, {{jsxref("Int16Array")}}, {{jsxref("Uint16Array")}},
-    {{jsxref("Int32Array")}}, {{jsxref("Uint32Array")}}, {{jsxref("BigInt64Array")}},
-    {{jsxref("BigUint64Array")}} (but **not** `Float16Array`, `Float32Array` nor `Float64Array`).
-    All elements in the array will be overwritten with random numbers.
+  - : یک {{jsxref("TypedArray")}} مبتنی بر اعداد صحیح، که یکی از انواع زیر است: {{jsxref("Int8Array")}}، {{jsxref("Uint8Array")}}،
+    {{jsxref("Uint8ClampedArray")}}، {{jsxref("Int16Array")}}، {{jsxref("Uint16Array")}}،
+    {{jsxref("Int32Array")}}، {{jsxref("Uint32Array")}}، {{jsxref("BigInt64Array")}}،
+    {{jsxref("BigUint64Array")}} (اما **نه** `Float16Array`، `Float32Array` و `Float64Array`).
+    تمام عناصر آرایه با اعداد تصادفی بازنویسی خواهند شد.
 
-### Return value
+### مقدار بازگشتی
 
-The same array passed as `typedArray` but with its contents replaced with the newly generated random numbers.
-Note that `typedArray` is modified in-place, and no copy is made.
+همان آرایه‌ای که به عنوان `typedArray` ارسال شده است، اما محتویات آن با اعداد تصادفی تازه تولید شده جایگزین شده است.
+توجه داشته باشید که `typedArray` به صورت درجا (in-place) تغییر می‌کند و هیچ کپی‌ای ساخته نمی‌شود.
 
-### Exceptions
+### استثناها
 
 - {{domxref("QuotaExceededError")}}
-  - : Thrown if the {{jsxref("TypedArray.byteLength", "byteLength")}} of `typedArray` exceeds 65,536.
+  - : اگر {{jsxref("TypedArray.byteLength", "byteLength")}} آرایه `typedArray` از ۶۵۵۳۶ بیشتر شود، این خطا پرتاب می‌شود.
 
-## Usage notes
+## نکات استفاده
 
-Prefer the {{domxref("SubtleCrypto.generateKey", "generateKey()")}} method for key generation, which is guaranteed to be running in a secure context.
+برای تولید کلید، از روش {{domxref("SubtleCrypto.generateKey", "generateKey()")}} استفاده کنید که تضمین می‌شود در یک زمینه امن اجرا شود.
 
-There is no minimum degree of entropy mandated by the Web Cryptography specification.
-User agents are instead urged to provide the best entropy they can when generating random numbers,
-using a well-defined, efficient pseudorandom number generator built into the user agent itself,
-but seeded with values taken from an external source of pseudorandom numbers, such as a platform-specific random number function,
-the Unix `/dev/urandom` device, or other source of random or pseudorandom data.
+هیچ درجه حداقلی از آنتروپی توسط مشخصات Web Cryptography الزامی نشده است.
+در عوض، به عامل‌های کاربر توصیه می‌شود که بهترین آنتروپی ممکن را هنگام تولید اعداد تصادفی ارائه دهند،
+با استفاده از یک مولد اعداد شبه‌تصادفی کارآمد و خوب تعریف‌شده که در خود عامل کاربر تعبیه شده است،
+اما با مقادیری که از یک منبع خارجی اعداد شبه‌تصادفی گرفته شده‌اند، مانند یک تابع اعداد تصادفی خاص پلتفرم،
+دستگاه `/dev/urandom` یونیکس، یا دیگر منابع داده‌های تصادفی یا شبه‌تصادفی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const array = new Uint32Array(10);
@@ -69,15 +63,15 @@ for (const num of array) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API)
-- {{jsxref("Math.random")}}, a non-cryptographic source of random numbers.
+- {{jsxref("Math.random")}}، یک منبع غیر رمزنگاری از اعداد تصادفی.
