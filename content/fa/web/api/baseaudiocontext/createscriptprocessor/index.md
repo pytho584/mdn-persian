@@ -1,7 +1,7 @@
 ---
 title: "BaseAudioContext: createScriptProcessor() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createScriptProcessor"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,63 +16,52 @@ browser-compat: api.BaseAudioContext.createScriptProcessor
 
 {{APIRef("Web Audio API")}}{{deprecated_header}}
 
-The `createScriptProcessor()` method of the {{domxref("BaseAudioContext")}} interface
-creates a {{domxref("ScriptProcessorNode")}} used for direct audio processing.
+متد `createScriptProcessor()` از رابط {{domxref("BaseAudioContext")}} یک {{domxref("ScriptProcessorNode")}} برای پردازش مستقیم صدا ایجاد می‌کند.
 
 > [!NOTE]
-> This feature was replaced by [AudioWorklets](/en-US/docs/Web/API/AudioWorklet) and the {{domxref("AudioWorkletNode")}} interface.
+> این قابلیت با [AudioWorklets](/en-US/docs/Web/API/AudioWorklet) و رابط {{domxref("AudioWorkletNode")}} جایگزین شده است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels)
 ```
 
-### Parameters
+### پارامترها
 
 - `bufferSize`
-  - : The buffer size in units of sample-frames. If specified, the bufferSize must be one
-    of the following values: 256, 512, 1024, 2048, 4096, 8192, 16384. If it's not passed
-    in, or if the value is 0, then the implementation will choose the best buffer size for
-    the given environment, which will be a constant power of 2 throughout the lifetime of
-    the node.
+  - : اندازه بافر بر حسب واحد نمونه-فریم. اگر مشخص شود، bufferSize باید یکی از مقادیر زیر باشد: 256، 512، 1024، 2048، 4096، 8192، 16384. اگر مقدار داده نشود یا برابر 0 باشد، پیاده‌سازی بهترین اندازه بافر را برای محیط داده‌شده انتخاب می‌کند، که در طول عمر گره، توانی ثابت از 2 خواهد بود.
 
-    This value controls how frequently the `audioprocess` event is dispatched
-    and how many sample-frames need to be processed each call. Lower values for
-    `bufferSize` will result in a lower (better) latency. Higher values will be
-    necessary to avoid audio breakup and glitches. It is recommended for authors to not
-    specify this buffer size and allow the implementation to pick a good buffer size to
-    balance between latency and audio quality.
+    این مقدار کنترل می‌کند که رویداد `audioprocess` با چه فرکانسی ارسال شود و در هر بار فراخوانی چند نمونه-فریم باید پردازش شود. مقادیر کمتر برای `bufferSize` منجر به تأخیر کمتر (بهتر) می‌شود. مقادیر بیشتر برای جلوگیری از قطع شدن صدا و خطاهای صوتی ضروری هستند. توصیه می‌شود که این اندازه بافر را مشخص نکنید و به پیاده‌سازی اجازه دهید اندازه بافر مناسبی را برای ایجاد تعادل بین تأخیر و کیفیت صدا انتخاب کند.
 
 - `numberOfInputChannels`
-  - : Integer specifying the number of channels for this node's input, defaults to 2.
-    Values of up to 32 are supported.
+  - : عدد صحیحی که تعداد کانال‌های ورودی این گره را مشخص می‌کند؛ پیش‌فرض ۲ است. مقادیر تا ۳۲ پشتیبانی می‌شوند.
+
 - `numberOfOutputChannels`
-  - : Integer specifying the number of channels for this node's output, defaults to 2.
-    Values of up to 32 are supported.
+  - : عدد صحیحی که تعداد کانال‌های خروجی این گره را مشخص می‌کند؛ پیش‌فرض ۲ است. مقادیر تا ۳۲ پشتیبانی می‌شوند.
 
 > [!WARNING]
-> WebKit currently (version 31) requires that a valid
-> `bufferSize` be passed when calling this method.
+> وب‌کیت (نسخه ۳۱) در حال حاضر نیاز دارد که یک
+> `bufferSize` معتبر هنگام فراخوانی این متد ارسال شود.
 
 > [!NOTE]
-> It is invalid for both `numberOfInputChannels` and
-> `numberOfOutputChannels` to be zero.
+> صفر بودن هر دو `numberOfInputChannels` و
+> `numberOfOutputChannels` نامعتبر است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("ScriptProcessorNode")}}.
+یک {{domxref("ScriptProcessorNode")}}.
 
-## Examples
+## مثال‌ها
 
-### Adding white noise using a script processor
+### افزودن نویز سفید با استفاده از پردازنده اسکریپتی
 
-The following example shows how to use a `ScriptProcessorNode` to take a track loaded via {{domxref("BaseAudioContext/decodeAudioData", "AudioContext.decodeAudioData()")}}, process it, adding a bit of white noise to each audio sample of the input track, and play it through the {{domxref("AudioDestinationNode")}}.
+مثال زیر نشان می‌دهد که چگونه از یک `ScriptProcessorNode` برای گرفتن یک قطعه صوتی بارگذاری‌شده از طریق {{domxref("BaseAudioContext/decodeAudioData", "AudioContext.decodeAudioData()")}}، پردازش آن، افزودن کمی نویز سفید به هر نمونه صوتی از قطعه ورودی، و پخش آن از طریق {{domxref("AudioDestinationNode")}} استفاده کنیم.
 
-For each channel and each sample frame, the script node's {{domxref("ScriptProcessorNode.audioprocess_event", "audioprocess")}} event handler uses the associated `audioProcessingEvent` to loop through each channel of the input buffer, and each sample in each channel, and add a small amount of white noise, before setting that result to be the output sample in each case.
+برای هر کانال و هر قاب نمونه، کنترل‌کننده رویداد {{domxref("ScriptProcessorNode.audioprocess_event", "audioprocess")}} گره اسکریپتی از `audioProcessingEvent` مرتبط استفاده می‌کند تا در هر کانال از بافر ورودی و هر نمونه در هر کانال حلقه بزند و مقدار کمی نویز سفید اضافه کند، سپس آن نتیجه را به‌عنوان نمونه خروجی در هر مورد تنظیم کند.
 
 > [!NOTE]
-> You can [run the full example live](https://mdn.github.io/webaudio-examples/script-processor-node/), or [view the source](https://github.com/mdn/webaudio-examples/tree/main/script-processor-node).
+> می‌توانید [مثال کامل را به‌صورت زنده اجرا کنید](https://mdn.github.io/webaudio-examples/script-processor-node/) یا [کد منبع را مشاهده کنید](https://github.com/mdn/webaudio-examples/tree/main/script-processor-node).
 
 ```js
 const myScript = document.querySelector("script");
@@ -144,14 +133,14 @@ playButton.addEventListener("click", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
