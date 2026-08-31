@@ -1,7 +1,7 @@
 ---
 title: "ARIA: aria-rowspan attribute"
 source: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,47 +13,47 @@ spec-urls: https://w3c.github.io/aria/#aria-rowspan
 sidebar: accessibilitysidebar
 ---
 
-The `aria-rowspan` attribute defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid.
+ویژگی `aria-rowspan` تعداد ردیف‌هایی را تعریف می‌کند که یک سلول یا سلول شبکه‌ای در یک جدول، شبکه یا شبکه درختی می‌پوشاند.
 
-## Description
+## توضیحات
 
-Similar to the `rowspan` attribute of the {{HTMLElement('td')}} and {{HTMLElement('th')}} elements, but for cells and gridcells which are not contained in a native table, the `aria-rowspan` attribute defines the number of rows spanned by a `cell` or `gridcell` within a `table`, `grid`, or `treegrid`.
+مشابه ویژگی `rowspan` در عناصر {{HTMLElement('td')}} و {{HTMLElement('th')}}، اما برای سلول‌ها و سلول‌های شبکه‌ای که در جدول بومی قرار ندارند، ویژگی `aria-rowspan` تعداد ردیف‌هایی را که یک `cell` یا `gridcell` در یک `table`، `grid` یا `treegrid` می‌پوشاند، تعریف می‌کند.
 
-This attribute is intended for cells and gridcells which are **not** part of an HTML {{HTMLElement('table')}}. When a cell is nested in a semantic `<table>`, the `rowspan` attribute should be used when a <td> or <th> spans more than one row. If both are present, `rowspan` takes precedence over `aria-rowspan`. But, like all ARIA attributes, `aria-rowspan` only impacts the accessibility tree. It doesn't change your layout.
+این ویژگی برای سلول‌ها و سلول‌های شبکه‌ای در نظر گرفته شده است که **جزء** یک {{HTMLElement('table')}} در HTML نیستند. وقتی یک سلول در یک `<table>` معنایی قرار می‌گیرد، اگر یک `<td>` یا `<th>` بیش از یک ردیف را پوشش دهد، باید از ویژگی `rowspan` استفاده کرد. اگر هر دو وجود داشته باشند، `rowspan` بر `aria-rowspan` اولویت دارد. اما مانند همه ویژگی‌های ARIA، `aria-rowspan` تنها بر درخت دسترس‌پذیری تأثیر می‌گذارد و چیدمان شما را تغییر نمی‌دهد.
 
 > [!NOTE]
-> ARIA modifies the accessibility tree and how assistive technology presents content to your users. ARIA doesn't change anything about an element's function, behavior, or appearance. When using non-semantic elements, you must use CSS to manage layout and appearance.
+> ARIA درخت دسترس‌پذیری و نحوه ارائه محتوا توسط فناوری کمکی به کاربران شما را تغییر می‌دهد. ARIA هیچ چیز را در مورد عملکرد، رفتار یا ظاهر یک عنصر تغییر نمی‌دهد. هنگام استفاده از عناصر غیرمعنایی، باید از CSS برای مدیریت چیدمان و ظاهر استفاده کنید.
 
-The value of `aria-rowspan` is an integer greater than or equal to 0 and less than the value which would cause the cell or gridcell to overlap the next cell or gridcell in the same column. Setting the value to `0` indicates that the cell or gridcell is to span all the remaining rows in the row group. The default value is `1`.
+مقدار `aria-rowspan` یک عدد صحیح بزرگ‌تر یا مساوی ۰ و کمتر از مقداری است که باعث می‌شود سلول یا سلول شبکه‌ای با سلول یا سلول شبکه‌ای بعدی در همان ستون هم‌پوشانی پیدا کند. تنظیم مقدار روی `0` نشان می‌دهد که سلول یا سلول شبکه‌ای باید همه ردیف‌های باقی‌مانده در گروه ردیف را پوشش دهد. مقدار پیش‌فرض `1` است.
 
-## Values
+## مقدارها
 
 - `<integer>`
-  - : An integer greater than or equal to `0` and less than would cause a cell to overlap the next cell in the same column.
+  - : یک عدد صحیح بزرگ‌تر یا مساوی `0` و کمتر از مقداری که باعث می‌شود یک سلول با سلول بعدی در همان ستون هم‌پوشانی پیدا کند.
 
-## Associated interfaces
+## رابط‌های مرتبط
 
 - {{domxref("Element.ariaRowSpan")}}
-  - : The [`ariaRowSpan`](/en-US/docs/Web/API/Element/ariaRowSpan) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-rowspan` attribute.
+  - : ویژگی [`ariaRowSpan`](/en-US/docs/Web/API/Element/ariaRowSpan)، بخشی از رابط {{domxref("Element")}}، مقدار ویژگی `aria-rowspan` را منعکس می‌کند.
 - {{domxref("ElementInternals.ariaRowSpan")}}
-  - : The [`ariaRowSpan`](/en-US/docs/Web/API/ElementInternals/ariaRowSpan) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-rowspan` attribute.
+  - : ویژگی [`ariaRowSpan`](/en-US/docs/Web/API/ElementInternals/ariaRowSpan)، بخشی از رابط {{domxref("ElementInternals")}}، مقدار ویژگی `aria-rowspan` را منعکس می‌کند.
 
-## Associated roles
+## نقش‌های مرتبط
 
-Used in roles:
+نقش‌های استفاده‌شده:
 
 - [`cell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/cell_role)
 
-Inherited into roles:
+به ارث برده‌شده در نقش‌ها:
 
 - [`columnheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/columnheader_role)
 - [`rowheader`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/rowheader_role)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - The [`rowspan`](/en-US/docs/Web/HTML/Reference/Elements/td#rowspan) attribute on {{HTMLElement('td')}}
 - [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex)
