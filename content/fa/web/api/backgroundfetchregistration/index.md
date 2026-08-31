@@ -1,7 +1,7 @@
 ---
 title: "BackgroundFetchRegistration"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BackgroundFetchRegistration"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,60 +15,56 @@ browser-compat: api.BackgroundFetchRegistration
 
 {{APIRef("Background Fetch API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`BackgroundFetchRegistration`** interface of the {{domxref('Background Fetch API','','',' ')}} represents an individual background fetch.
+رابط **`BackgroundFetchRegistration`** از {{domxref('Background Fetch API','','',' ')}} یک واکشی پس‌زمینه‌ی منفرد را نشان می‌دهد.
 
-A `BackgroundFetchRegistration` instance is returned by the {{domxref("BackgroundFetchManager.fetch()")}} or {{domxref("BackgroundFetchManager.get()")}} methods, and therefore there has no constructor.
+یک نمونه از `BackgroundFetchRegistration` توسط متدهای {{domxref("BackgroundFetchManager.fetch()")}} یا {{domxref("BackgroundFetchManager.get()")}} بازگردانده می‌شود و بنابراین سازنده‌ای ندارد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent, {{domxref("EventTarget")}}._
+_همچنین ویژگی‌های والد خود، {{domxref("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("BackgroundFetchRegistration.id")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string containing the background fetch's ID.
+  - : رشته‌ای شامل شناسه‌ی واکشی پس‌زمینه.
 - {{domxref("BackgroundFetchRegistration.uploadTotal")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{jsxref("Number")}} containing the total number of bytes to be uploaded.
+  - : عددی ({{jsxref("Number")}}) شامل تعداد کل بایت‌هایی که باید بارگذاری شوند.
 - {{domxref("BackgroundFetchRegistration.uploaded")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{jsxref("Number")}} containing the size in bytes successfully sent, initially `0`.
+  - : عددی ({{jsxref("Number")}}) شامل اندازه به بایت که با موفقیت ارسال شده، در ابتدا `0`.
 - {{domxref("BackgroundFetchRegistration.downloadTotal")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{jsxref("Number")}} containing the total size in bytes of this download. This is the value set when the background fetch was registered, or `0`.
+  - : عددی ({{jsxref("Number")}}) شامل اندازه کل این دانلود به بایت. این مقدار هنگام ثبت واکشی پس‌زمینه تنظیم شده است، یا `0`.
 - {{domxref("BackgroundFetchRegistration.downloaded")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{jsxref("Number")}} containing the size in bytes that has been downloaded, initially `0`.
+  - : عددی ({{jsxref("Number")}}) شامل اندازه به بایت که دانلود شده است، در ابتدا `0`.
 - {{domxref("BackgroundFetchRegistration.result")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns an empty string initially, on completion either the string `"success"` or `"failure"`.
+  - : در ابتدا یک رشته‌ی خالی بازمی‌گرداند، پس از تکمیل، یا رشته‌ی `"success"` یا `"failure"`.
 - {{domxref("BackgroundFetchRegistration.failureReason")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string with a value that indicates a reason for a background fetch failure. Can be one of the following values: `""`, `"aborted"`, `"bad-status"`, `"fetch-error"`, `"quota-exceeded"`, `"download-total-exceeded"`.
+  - : رشته‌ای با مقداری که دلیل شکست واکشی پس‌زمینه را نشان می‌دهد. می‌تواند یکی از مقادیر زیر باشد: `""`، `"aborted"`، `"bad-status"`، `"fetch-error"`، `"quota-exceeded"`، `"download-total-exceeded"`.
 - {{domxref("BackgroundFetchRegistration.recordsAvailable")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{jsxref("Boolean")}} indicating whether the `recordsAvailable` flag is set.
+  - : یک {{jsxref("Boolean")}} که نشان می‌دهد پرچم `recordsAvailable` تنظیم شده است یا خیر.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent, {{domxref("EventTarget")}}._
+_همچنین روش‌های والد خود، {{domxref("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("BackgroundFetchRegistration.abort()")}} {{Experimental_Inline}}
-  - : Aborts the background fetch. Returns a {{jsxref("Promise")}} that resolves with `true` if the fetch was successfully aborted.
+  - : واکشی پس‌زمینه را لغو می‌کند. یک {{jsxref("Promise")}} بازمی‌گرداند که با `true` حل می‌شود اگر واکشی با موفقیت لغو شده باشد.
 - {{domxref("BackgroundFetchRegistration.match()")}} {{Experimental_Inline}}
-  - : Returns a single {{domxref("BackgroundFetchRecord")}} object which is the first match for the arguments.
+  - : یک شیء {{domxref("BackgroundFetchRecord")}} را بازمی‌گرداند که اولین تطابق با آرگومان‌ها است.
 - {{domxref("BackgroundFetchRegistration.matchAll()")}} {{Experimental_Inline}}
-  - : Returns a {{jsxref("Promise")}} that resolves with an array of {{domxref("BackgroundFetchRecord")}} objects containing requests and responses.
+  - : یک {{jsxref("Promise")}} بازمی‌گرداند که با آرایه‌ای از اشیاء {{domxref("BackgroundFetchRecord")}} شامل درخواست‌ها و پاسخ‌ها حل می‌شود.
 
-## Events
+## رویدادها
 
-_Also inherits events from its parent, {{domxref("EventTarget")}}._
+_همچنین رویدادهای والد خود، {{domxref("EventTarget")}} را به ارث می‌برد._
 
-Listen to these events using {{domxref("EventTarget.addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface.
+برای گوش دادن به این رویدادها از {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید یا با اختصاص یک شنونده‌ی رویداد به ویژگی `oneventname` این رابط.
 
 - {{domxref("BackgroundFetchRegistration/progress_event", "progress")}} {{Experimental_Inline}}
-  - : Fired when there is a change to any of the following properties:
-    {{domxref("BackgroundFetchRegistration.uploaded", "uploaded")}},
-    {{domxref("BackgroundFetchRegistration.downloaded", "downloaded")}},
-    {{domxref("BackgroundFetchRegistration.result", "result")}} or
-    {{domxref("BackgroundFetchRegistration.failureReason", "failureReason")}}.
+  - : زمانی که تغییری در هر یک از ویژگی‌های زیر رخ دهد، فعال می‌شود: {{domxref("BackgroundFetchRegistration.uploaded", "uploaded")}}، {{domxref("BackgroundFetchRegistration.downloaded", "downloaded")}}، {{domxref("BackgroundFetchRegistration.result", "result")}} یا {{domxref("BackgroundFetchRegistration.failureReason", "failureReason")}}.
 
-## Examples
+## نمونه‌ها
 
-The following code creates a `BackGroundFetchRegistration` as `bgFetch`, with an `id` of `"my-fetch"`.
+کد زیر یک `BackGroundFetchRegistration` به‌عنوان `bgFetch` با `id` برابر با `"my-fetch"` ایجاد می‌کند.
 
 ```js
 navigator.serviceWorker.ready.then(async (swReg) => {
@@ -90,13 +86,13 @@ navigator.serviceWorker.ready.then(async (swReg) => {
 });
 ```
 
-Logging the {{domxref("BackgroundFetchRegistration.id","id")}} to the console returns `"my-fetch"`.
+ثبت {{domxref("BackgroundFetchRegistration.id","id")}} در کنسول، `"my-fetch"` را برمی‌گرداند.
 
 ```js
 console.log(bgFetch.id); // "my-fetch"
 ```
 
-The {{domxref("BackgroundFetchRegistration.match","match()")}} method can be used to find a particular {{domxref("BackgroundFetchRecord")}} from those that are part of the registration.
+متد {{domxref("BackgroundFetchRegistration.match","match()")}} می‌تواند برای یافتن یک {{domxref("BackgroundFetchRecord")}} خاص از میان آن‌هایی که بخشی از ثبت هستند استفاده شود.
 
 ```js
 bgFetch.match("/ep-5.mp3").then(async (record) => {
@@ -111,10 +107,10 @@ bgFetch.match("/ep-5.mp3").then(async (record) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
