@@ -1,10 +1,4 @@
 ---
-title: "Content Index API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Content_Index_API"
-status: "needs-translation"
----
-
----
 title: Content Index API
 slug: Web/API/Content_Index_API
 page-type: web-api-overview
@@ -18,42 +12,42 @@ spec-urls: https://wicg.github.io/content-index/spec/
 
 {{DefaultAPISidebar("Content Index API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **Content Index API** allows developers to register their offline enabled content with the browser.
+**Content Index API** به توسعه‌دهندگان اجازه می‌دهد محتوای آفلاین‌فعال خود را با مرورگر ثبت کنند.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-As it stands, offline web content is not easily discoverable by users. Content indexing allows developers to tell the browser about their specific offline content. This allows users to discover and view what is available, while giving developers the ability to add and manage this content. Examples could be a news website prefetching the latest articles in the background, or a content streaming app registering downloaded content.
+در حال حاضر، محتوای وب آفلاین به‌راحتی توسط کاربران قابل کشف نیست. نمایه‌سازی محتوا (Content Indexing) به توسعه‌دهندگان امکان می‌دهد تا مرورگر را از محتوای آفلاین خاص خود مطلع کنند. این کار به کاربران اجازه می‌دهد محتوای موجود را کشف و مشاهده کنند و در عین حال به توسعه‌دهندگان توانایی افزودن و مدیریت این محتوا را می‌دهد. به عنوان مثال، یک وب‌سایت خبری می‌تواند آخرین مقاله‌ها را در پس‌زمینه از قبل دریافت کند، یا یک برنامه‌ی استریم محتوا می‌تواند محتوای دانلود شده را ثبت کند.
 
-The Content Index API is an extension to [service workers](/en-US/docs/Web/API/Service_Worker_API), which allows developers to add URLs and metadata of already cached pages, under the scope of the current service worker. The browser can then use these entries to display offline reading to a user. As a developer you can also display these entries within your application.
+Content Index API یک افزونه بر [سرویس‌ورکرها](/en-US/docs/Web/API/Service_Worker_API) است که به توسعه‌دهندگان اجازه می‌دهد تا URLها و فراداده‌ی صفحات ذخیره‌شده را در محدوده‌ی سرویس‌ورکر جاری اضافه کنند. سپس مرورگر می‌تواند از این ورودی‌ها برای نمایش خواندن آفلاین به کاربر استفاده کند. به عنوان توسعه‌دهنده، شما نیز می‌توانید این ورودی‌ها را در برنامه‌ی خود نمایش دهید.
 
-Indexed entries do not automatically expire. It's good practice to present an interface for clearing out entries, or periodically remove older entries.
+ورودی‌های نمایه‌شده به صورت خودکار منقضی نمی‌شوند. بهتر است یک رابط کاربری برای پاک‌کردن ورودی‌ها ارائه دهید یا به صورت دوره‌ای ورودی‌های قدیمی‌تر را حذف کنید.
 
 > [!NOTE]
-> The API supports indexing URLs corresponding to HTML documents. A URL for a cached media file, for example, can't be indexed directly. Instead, you need to provide a URL for a page that displays media, and which works offline.
+> این API از نمایه‌سازی URLهایی که به اسناد HTML اشاره می‌کنند پشتیبانی می‌کند. برای مثال، URL یک فایل رسانه‌ای ذخیره‌شده را نمی‌توان به طور مستقیم نمایه‌سازی کرد. در عوض، باید URL صفحه‌ای را ارائه دهید که رسانه را نمایش می‌دهد و به صورت آفلاین کار می‌کند.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("ContentIndex")}} {{Experimental_Inline}}
-  - : Provides functionality to register content available offline.
+  - : امکان ثبت محتوای قابل دسترسی به صورت آفلاین را فراهم می‌کند.
 - {{domxref("ContentIndexEvent")}} {{Experimental_Inline}}
-  - : Defines the object used to represent the {{domxref("ServiceWorkerGlobalScope.contentdelete_event", "contentdelete")}} event.
+  - : شیء مورد استفاده برای نمایش رویداد {{domxref("ServiceWorkerGlobalScope.contentdelete_event", "contentdelete")}} را تعریف می‌کند.
 
-### Extensions to other interfaces
+### افزونه‌های رابط‌های دیگر
 
-The following additions to the {{domxref('ServiceWorker')}} have been specified in the Content Index API spec to provide an entry point for using content indexing.
+افزونه‌های زیر در مشخصات Content Index API به {{domxref('ServiceWorker')}} اضافه شده‌اند تا نقطه‌ی ورودی برای استفاده از نمایه‌سازی محتوا فراهم کنند.
 
 - {{domxref("ServiceWorkerRegistration.index")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a reference to the {{domxref("ContentIndex")}} interface for indexing cached pages.
+  - : یک مرجع به رابط {{domxref("ContentIndex")}} برای نمایه‌سازی صفحات ذخیره‌شده برمی‌گرداند.
 - {{domxref("ServiceWorkerGlobalScope.contentdelete_event", "contentdelete")}} event {{Experimental_Inline}}
-  - : Fired when content is removed by the user agent.
+  - : زمانی که محتوا توسط عامل کاربر حذف می‌شود، رخ می‌دهد.
 
-## Examples
+## مثال‌ها
 
-All the following examples assume a service worker has been registered. For more information see the [Service Worker API](/en-US/docs/Web/API/Service_Worker_API).
+همه‌ی مثال‌های زیر فرض می‌کنند که یک سرویس‌ورکر ثبت شده است. برای اطلاعات بیشتر به [Service Worker API](/en-US/docs/Web/API/Service_Worker_API) مراجعه کنید.
 
-### Feature detection and interface access
+### تشخیص قابلیت و دسترسی به رابط
 
-Here we get a reference to the {{domxref('ServiceWorkerRegistration')}}, then check for the `index` property, which gives us access to the content index interface.
+در اینجا یک مرجع به {{domxref('ServiceWorkerRegistration')}} می‌گیریم و سپس ویژگی `index` را بررسی می‌کنیم که به ما دسترسی به رابط نمایه‌ی محتوا می‌دهد.
 
 ```js
 // reference registration
@@ -66,9 +60,9 @@ if ("index" in registration) {
 }
 ```
 
-### Adding to the content index
+### افزودن به نمایه‌ی محتوا
 
-Here we're declaring an item in the correct format and creating an asynchronous function which uses the {{domxref('ContentIndex.add','add()')}} method to register it with the content index.
+در اینجا یک آیتم را در قالب صحیح تعریف می‌کنیم و یک تابع ناهمگام می‌سازیم که از متد {{domxref('ContentIndex.add','add()')}} برای ثبت آن در نمایه‌ی محتوا استفاده می‌کند.
 
 ```js
 // our content
@@ -106,9 +100,9 @@ async function registerContent(data) {
 }
 ```
 
-### Retrieving items within the current index
+### بازیابی آیتم‌ها در نمایه‌ی فعلی
 
-The below example shows an asynchronous function that retrieves items within the content index and iterates over each entry, building a list for the interface.
+مثال زیر یک تابع ناهمگام را نشان می‌دهد که آیتم‌های موجود در نمایه‌ی محتوا را بازیابی می‌کند و روی هر ورودی تکرار می‌کند تا فهرستی برای رابط کاربری بسازد.
 
 ```js
 async function createReadingList() {
@@ -148,9 +142,9 @@ async function createReadingList() {
 }
 ```
 
-### Unregistering indexed content
+### لغو ثبت محتوای نمایه‌شده
 
-Below is an asynchronous function, that removes an item from the content index.
+در زیر یک تابع ناهمگام است که یک آیتم را از نمایه‌ی محتوا حذف می‌کند.
 
 ```js
 async function unregisterContent(article) {
@@ -165,7 +159,7 @@ async function unregisterContent(article) {
 }
 ```
 
-All the above methods are available within the scope of the [service worker](/en-US/docs/Web/API/ServiceWorker). They are accessible from the {{domxref('WorkerGlobalScope.self')}} property:
+همه‌ی متدهای بالا در محدوده‌ی [سرویس‌ورکر](/en-US/docs/Web/API/ServiceWorker) در دسترس هستند. این متدها از طریق ویژگی {{domxref('WorkerGlobalScope.self')}} قابل دسترسی‌اند:
 
 ```js
 // service worker script
@@ -177,9 +171,9 @@ self.registration.index.delete(item.id);
 const contentIndexItems = self.registration.index.getAll();
 ```
 
-### The contentdelete event
+### رویداد contentdelete
 
-When an item is removed from the user agent interface, a `contentdelete` event is received by the service worker.
+هنگامی که یک آیتم از رابط کاربری عامل کاربر حذف می‌شود، یک رویداد `contentdelete` توسط سرویس‌ورکر دریافت می‌شود.
 
 ```js
 self.addEventListener("contentdelete", (event) => {
@@ -189,17 +183,17 @@ self.addEventListener("contentdelete", (event) => {
 });
 ```
 
-The {{domxref('ServiceWorkerGlobalScope.contentdelete_event', "contentdelete")}} event is only fired when the deletion happens due to interaction with the browser's built-in user interface. It is not fired when the {{domxref('ContentIndex.delete()')}} method is called.
+رویداد {{domxref('ServiceWorkerGlobalScope.contentdelete_event', "contentdelete")}} تنها زمانی رخ می‌دهد که حذف به دلیل تعامل با رابط کاربری داخلی مرورگر باشد. این رویداد هنگامی که متد {{domxref('ContentIndex.delete()')}} فراخوانی می‌شود، رخ نمی‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [An introductory article on the Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
-- [Service Worker API, along with information about Cache and CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
+- [یک مقاله‌ی مقدماتی درباره‌ی Content Index API](https://developer.chrome.com/docs/capabilities/web-apis/content-indexing-api)
+- [Service Worker API، همراه با اطلاعاتی درباره‌ی Cache و CacheStorage](/en-US/docs/Web/API/Service_Worker_API)
