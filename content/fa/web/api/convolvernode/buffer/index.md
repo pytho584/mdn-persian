@@ -1,7 +1,5 @@
 ---
 title: "ConvolverNode: buffer property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode/buffer"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,23 @@ browser-compat: api.ConvolverNode.buffer
 
 {{ APIRef("Web Audio API") }}
 
-The **`buffer`** property of the {{ domxref("ConvolverNode") }} interface represents a mono, stereo, or 4-channel {{domxref("AudioBuffer")}} containing the (possibly multichannel) impulse response used by the `ConvolverNode` to create the reverb effect.
+ویژگی **`buffer`** در رابط {{ domxref("ConvolverNode") }} یک {{domxref("AudioBuffer")}} مونو، استریو یا چهارکاناله را نشان می‌دهد که حاوی پاسخ ضربه (impulse response) (احتمالاً چندکاناله) است و توسط `ConvolverNode` برای ایجاد افکت طنین (reverb) استفاده می‌شود.
 
-This is normally a simple recording of as-close-to-an-impulse as can be found in the space you want to model. For example, if you want to model the reverb in your bathroom, you might set up a microphone near the door to record the sound of a balloon pop or synthesized impulse from the sink. That audio recording could then be used as the buffer.
+این معمولاً یک ضبط ساده از نزدیک‌ترین چیز به یک ضربه است که می‌توان در فضای مورد نظر برای مدل‌سازی یافت. برای مثال، اگر بخواهید طنین حمام خانه خود را مدل‌سازی کنید، می‌توانید یک میکروفون نزدیک درب قرار دهید و صدای ترکیدن بادکنک یا یک ضربهٔ مصنوعی تولیدشده از سینک را ضبط کنید. آن ضبط صوتی سپس می‌تواند به‌عنوان بافر استفاده شود.
 
-This audio buffer must have the same sample-rate as the `AudioContext` or an exception will be thrown. At the time when this attribute is set, the buffer and the state of the attribute will be used to configure the `ConvolverNode` with this impulse response having the given normalization. The initial value of this attribute is `null`.
+این بافر صوتی باید نرخ نمونه‌برداری (sample-rate) یکسانی با `AudioContext` داشته باشد؛ در غیر این صورت یک استثنا پرتاب خواهد شد. در زمانی که این ویژگی تنظیم می‌شود، بافر و وضعیت ویژگی برای پیکربندی `ConvolverNode` با این پاسخ ضربه و با نرمال‌سازی مشخص‌شده استفاده خواهند شد. مقدار اولیهٔ این ویژگی `null` است.
 
-## Value
+## مقدار
 
-An {{domxref("AudioBuffer")}}.
+یک {{domxref("AudioBuffer")}}.
 
-## Examples
+## مثال‌ها
 
-### Assigning an audio buffer
+### اختصاص یک بافر صوتی
 
-The following example creates a convolver node and assigns it an {{domxref("AudioBuffer")}}.
+مثال زیر یک گره کانوالور (convolver node) ایجاد می‌کند و یک {{domxref("AudioBuffer")}} به آن اختصاص می‌دهد.
 
-For more complete applied examples/information, check out our [Voice-change-O-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) demo (see [app.js](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js) for the code that is excerpted below).
+برای مثال‌ها/اطلاعات کاربردی کامل‌تر، به دموی [Voice-change-O-matic](https://mdn.github.io/webaudio-examples/voice-change-o-matic/) مراجعه کنید (برای کدی که در ادامه آورده شده، [app.js](https://github.com/mdn/webaudio-examples/blob/main/voice-change-o-matic/scripts/app.js) را ببینید).
 
 ```js
 const audioCtx = new AudioContext();
@@ -54,14 +52,14 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
