@@ -1,7 +1,7 @@
 ---
 title: "Attr: prefix property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Attr/prefix"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,20 +14,20 @@ browser-compat: api.Attr.prefix
 
 {{APIRef("DOM")}}
 
-The read-only **`prefix`** property of the {{domxref("Attr")}} returns the namespace prefix of the attribute, or `null` if no prefix is specified.
+ویژگی فقط خواندنی **`prefix`** از {{domxref("Attr")}}، پیشوند فضای نام (namespace prefix) ویژگی را برمی‌گرداند، یا اگر پیشوندی مشخص نشده باشد، `null` را برمی‌گرداند.
 
-The prefix is always in lower case, whatever case is used at the attribute creation.
+پیشوند همیشه با حروف کوچک (lower case) است، صرف‌نظر از اینکه در زمان ایجاد ویژگی از چه حروفی استفاده شده باشد.
 
 > [!NOTE]
-> Only XML supports namespaces. HTML does not. That means that the prefix of an attribute of an HTML element will always be `null`.
+> فقط XML از فضاهای نام پشتیبانی می‌کند. HTML این کار را نمی‌کند. به این معنی که پیشوند یک ویژگی از یک عنصر HTML همیشه `null` خواهد بود.
 
-Also, only the `xml` (for the `xml:lang` attribute), `xlink` (for the `xlink:href`, `xlink:show`, `xlink:target` and `xlink:title` attributes) and `xpath` namespaces are supported, and only on SVG and MathML elements.
+همچنین، فقط فضاهای نام `xml` (برای ویژگی `xml:lang`)، `xlink` (برای ویژگی‌های `xlink:href`، `xlink:show`، `xlink:target` و `xlink:title`) و `xpath` پشتیبانی می‌شوند، و فقط روی عناصر SVG و MathML.
 
-## Value
+## مقدار
 
-A string containing the prefix of the namespace the attribute belongs too. If none, it returns `null`.
+یک رشته (string) که شامل پیشوند فضای نامی است که ویژگی به آن تعلق دارد. اگر هیچکدام نباشد، `null` را برمی‌گرداند.
 
-## Example
+## مثال
 
 ### HTML
 
@@ -36,13 +36,13 @@ A string containing the prefix of the namespace the attribute belongs too. If no
 <label xml:lang="en-US" class="struct"></label>
 
 <p>
-  <button>Show value for &lt;svg&gt;</button>
-  <button>Show value for &lt;label&gt;</button>
+  <button>نمایش مقدار برای &lt;svg&gt;</button>
+  <button>نمایش مقدار برای &lt;label&gt;</button>
 </p>
 
 <p>
-  Prefix of the attribute <code>xml:lang</code>:
-  <output id="result">None.</output>
+  پیشوند ویژگی <code>xml:lang</code>:
+  <output id="result">هیچکدام.</output>
 </p>
 ```
 
@@ -66,15 +66,15 @@ for (const button of buttons) {
 
 {{ EmbedLiveSample('Example','100%',100) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The properties {{domxref("Attr.name")}}, returning the qualified name of the attribute, and {{domxref("Attr.localName")}}, its local name.
-- The {{domxref("Element.prefix()")}} property, returning the namespace prefix of an {{domxref("Element")}}.
+- ویژگی‌های {{domxref("Attr.name")}} که نام واجد شرایط (qualified name) ویژگی را برمی‌گرداند، و {{domxref("Attr.localName")}}، نام محلی آن.
+- ویژگی {{domxref("Element.prefix()")}} که پیشوند فضای نام یک {{domxref("Element")}} را برمی‌گرداند.
