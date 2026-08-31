@@ -1,7 +1,7 @@
 ---
 title: "BufferedChangeEvent: removedRanges property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BufferedChangeEvent/removedRanges"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -16,17 +16,17 @@ browser-compat: api.BufferedChangeEvent.removedRanges
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}{{SeeCompatTable}}
 
-The **`removedRanges`** read-only property of the {{domxref("BufferedChangeEvent")}} interface returns a {{domxref("TimeRanges")}} object representing the time ranges that were removed from the associated {{domxref("ManagedSourceBuffer")}}. These are the ranges removed between the last `updatestart` and `updateend` events, during the most recent run of the coded frame removal or coded frame eviction algorithm, or as a consequence of the user agent running the memory cleanup algorithm.
+خاصیت فقط خواندنی **`removedRanges`** از رابط {{domxref("BufferedChangeEvent")}} یک شیء {{domxref("TimeRanges")}} را برمی‌گرداند که بازه‌های زمانی حذف شده از {{domxref("ManagedSourceBuffer")}} مرتبط را نشان می‌دهد. این بازه‌ها بین آخرین رویدادهای `updatestart` و `updateend`، در طول آخرین اجرای الگوریتم حذف فریم کدگذاری شده یا الگوریتم تخلیه فریم کدگذاری شده، یا در نتیجه اجرای الگوریتم پاکسازی حافظه توسط عامل کاربر حذف شده‌اند.
 
-## Value
+## مقدار
 
-A {{domxref("TimeRanges")}} object.
+یک شیء {{domxref("TimeRanges")}}.
 
-## Examples
+## مثال‌ها
 
-### Logging removed ranges on buffer change
+### ثبت بازه‌های حذف شده در تغییر بافر
 
-This example creates a {{domxref("ManagedMediaSource")}}, attaches it to a {{htmlelement("video")}} element, fetches a fragmented MP4 file, and then removes a portion of the buffered data. The `bufferedchange` event handler logs any removed time ranges.
+این مثال یک {{domxref("ManagedMediaSource")}} ایجاد می‌کند، آن را به یک عنصر {{htmlelement("video")}} متصل می‌کند، یک فایل MP4 تکه‌تکه شده را واکشی می‌کند، و سپس بخشی از داده‌های بافر شده را حذف می‌کند. کنترل‌کننده رویداد `bufferedchange` هر بازه زمانی حذف شده را ثبت می‌کند.
 
 ```js
 const videoUrl =
@@ -68,15 +68,15 @@ if (ManagedMediaSource.isTypeSupported(mediaType)) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("BufferedChangeEvent.addedRanges")}}
 - {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} event
