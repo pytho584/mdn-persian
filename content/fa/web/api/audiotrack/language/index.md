@@ -1,7 +1,7 @@
 ---
 title: "AudioTrack: language property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack/language"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,33 +14,21 @@ browser-compat: api.AudioTrack.language
 
 {{APIRef("HTML DOM")}}
 
-The read-only **{{domxref("AudioTrack")}}**
-property **`language`** returns a string identifying the
-language used in the audio track.
+ویژگی **`language`** (فقط‌خواندنی) در {{domxref("AudioTrack")}}، رشته‌ای را برمی‌گرداند که زبان استفاده‌شده در تراک صوتی را مشخص می‌کند.
 
-For tracks that include multiple languages
-(such as a movie in English in which a few lines are spoken in other languages), this
-should be the video's primary language.
+برای تراک‌هایی که شامل چند زبان هستند (مانند فیلمی به زبان انگلیسی که چند جمله به زبان‌های دیگر در آن گفته می‌شود)، این مقدار باید زبان اصلی ویدیو باشد.
 
-## Value
+## مقدار
 
-A string specifying the {{glossary("BCP 47 language tag")}} of
-the primary language used in the audio track, or an empty string (`""`) if
-the language is not specified or known, or if the track doesn't contain speech.
+رشته‌ای که {{glossary("BCP 47 language tag")}} زبان اصلی استفاده‌شده در تراک صوتی را مشخص می‌کند، یا رشتهٔ خالی (`""`) اگر زبان مشخص یا شناخته‌شده نباشد، یا اگر تراک شامل گفتار نباشد.
 
-For example, if the primary language used in the track is United States English, this
-value would be `"en-US"`. For Brazilian Portuguese, the value would be
-`"pt-BR"`.
+به عنوان مثال، اگر زبان اصلی استفاده‌شده در تراک انگلیسی ایالات متحده باشد، این مقدار `"en-US"` خواهد بود. برای پرتغالی برزیلی، مقدار `"pt-BR"` خواهد بود.
 
-## Examples
+## مثال‌ها
 
-This example locates all of a media element's primary language and translated audio
-tracks and returns a list of objects containing each of those tracks'
-{{domxref("AudioTrack.id", "id")}}, {{domxref("AudioTrack.kind", "kind")}}, and
-`language`.
+این مثال تمام تراک‌های صوتی زبان اصلی و ترجمه‌شدهٔ یک المان رسانه را پیدا می‌کند و فهرستی از اشیاء حاوی {{domxref("AudioTrack.id", "id")}}، {{domxref("AudioTrack.kind", "kind")}} و `language` هر یک از آن تراک‌ها را برمی‌گرداند.
 
-This could then be used to build a user interface for selecting the language the user
-would like to listen to while watching a movie, for example.
+سپس می‌توان از آن برای ساخت رابط کاربری برای انتخاب زبانی که کاربر می‌خواهد هنگام تماشای فیلم به آن گوش دهد استفاده کرد، به عنوان مثال.
 
 ```js
 function getAvailableLanguages(el) {
@@ -60,10 +48,10 @@ function getAvailableLanguages(el) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
