@@ -1,7 +1,7 @@
 ---
 title: "BluetoothRemoteGATTService"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTService"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -15,38 +15,30 @@ browser-compat: api.BluetoothRemoteGATTService
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The `BluetoothRemoteGATTService` interface of the [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) represents a
-service provided by a GATT server, including a device, a list of referenced services,
-and a list of the characteristics of this service.
+رابط `BluetoothRemoteGATTService` در [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) نمایانگر سرویسی است که توسط سرور GATT ارائه می‌شود، شامل یک دستگاه، فهرستی از سرویس‌های ارجاع‌شده، و فهرستی از ویژگی‌های این سرویس.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("BluetoothRemoteGATTService.device")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns information about a Bluetooth device through an instance of
-    {{domxref("BluetoothDevice")}}.
+  - : اطلاعاتی درباره یک دستگاه بلوتوث از طریق یک نمونه از {{domxref("BluetoothDevice")}} برمی‌گرداند.
 - {{domxref("BluetoothRemoteGATTService.isPrimary")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a boolean value indicating whether this is a primary or secondary
-    service.
+  - : یک مقدار بولی برمی‌گرداند که نشان می‌دهد این سرویس اولیه است یا ثانویه.
 - {{domxref("BluetoothRemoteGATTService.uuid")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a string representing the UUID of this service.
+  - : یک رشته برمی‌گرداند که UUID این سرویس را نشان می‌دهد.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("BluetoothRemoteGATTService.getCharacteristic()")}} {{Experimental_Inline}}
-  - : Returns a {{jsxref("Promise")}} to an instance of
-    {{domxref("BluetoothRemoteGATTCharacteristic")}} for a given universally unique identifier
-    (UUID).
+  - : یک {{jsxref("Promise")}} به یک نمونه از {{domxref("BluetoothRemoteGATTCharacteristic")}} برای یک شناسه یکتای جهانی (UUID) معین برمی‌گرداند.
 - {{domxref("BluetoothRemoteGATTService.getCharacteristics()")}} {{Experimental_Inline}}
-  - : Returns a {{jsxref("Promise")}} to an {{jsxref("Array")}} of
-    {{domxref("BluetoothRemoteGATTCharacteristic")}} instances for an optional universally
-    unique identifier (UUID).
+  - : یک {{jsxref("Promise")}} به یک {{jsxref("Array")}} از نمونه‌های {{domxref("BluetoothRemoteGATTCharacteristic")}} برای یک شناسه یکتای جهانی (UUID) اختیاری برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
