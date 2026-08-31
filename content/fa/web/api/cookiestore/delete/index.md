@@ -1,23 +1,12 @@
 ---
 title: "CookieStore: delete() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CookieStore/delete"
-status: "needs-translation"
----
-
----
-title: "CookieStore: delete() method"
-short-title: delete()
-slug: Web/API/CookieStore/delete
-page-type: web-api-instance-method
-browser-compat: api.CookieStore.delete
 ---
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}{{AvailableInWorkers("window_and_service")}}
 
-The **`delete()`** method of the {{domxref("CookieStore")}} interface deletes a cookie that matches the given `name` or `options` object.
-The method expires the cookie by changing its date to one in the past.
+متد **`delete()`** از رابط {{domxref("CookieStore")}} کوکی‌ای را که با `name` یا شیء `options` داده‌شده مطابقت دارد حذف می‌کند. این متد با تغییر تاریخ کوکی به تاریخی در گذشته، آن را منقضی می‌کند.
 
-Note that there is no error if a cookie cannot be matched: the returned promise will fulfill when the matched cookie is deleted or if no cookie is matched.
+توجه داشته باشید که اگر کوکی‌ای مطابقت داده نشود خطایی رخ نمی‌دهد: پرامیس بازگردانده‌شده زمانی fulfilled می‌شود که کوکی مطابق حذف شود یا اگر هیچ کوکی‌ای مطابقت نداشته باشد.
 
 ## Syntax
 
@@ -28,47 +17,46 @@ delete(options)
 
 ### Parameters
 
-This method requires one of the following:
+این متد به یکی از موارد زیر نیاز دارد:
 
 - `name` {{optional_inline}}
-  - : A string with the name of a cookie.
+  - : رشته‌ای شامل نام یک کوکی.
 
-Or
+یا
 
 - `options` {{optional_inline}}
-  - : An object containing:
+  - : شیئی شامل:
     - `name`
-      - : A string with the name of a cookie.
+      - : رشته‌ای شامل نام یک کوکی.
     - `domain` {{Optional_Inline}}
-      - : A string with the domain of a cookie. Defaults to `null`.
+      - : رشته‌ای شامل دامنهٔ کوکی. پیش‌فرض `null`.
     - `path` {{Optional_Inline}}
-      - : A string containing a path. Defaults to `/`.
+      - : رشته‌ای شامل یک مسیر. پیش‌فرض `/`.
     - `partitioned` {{Optional_Inline}}
-      - : A boolean value that defaults to `false`. Setting it to `true` specifies that the cookie to delete will be a partitioned cookie. See [Cookies Having Independent Partitioned State (CHIPS)](/en-US/docs/Web/Privacy/Guides/Third-party_cookies/Partitioned_cookies) for more information.
+      - : یک مقدار بولی که پیش‌فرض آن `false` است. تنظیم آن به `true` مشخص می‌کند که کوکی مورد حذف، یک کوکی پارتیشن‌بندی‌شده (partitioned) خواهد بود. برای اطلاعات بیشتر به [Cookies Having Independent Partitioned State (CHIPS)](/en-US/docs/Web/Privacy/Guides/Third-party_cookies/Partitioned_cookies) مراجعه کنید.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves with {{jsxref("undefined")}} when the deletion operation completes or no cookie is matched.
+یک {{jsxref("Promise")}} که وقتی عملیات حذف کامل می‌شود یا هیچ کوکی‌ای مطابقت داده نمی‌شود، با {{jsxref("undefined")}} resolve می‌شود.
 
 ### Exceptions
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the origin can not be {{glossary("Serialization", "serialized")}} to a URL.
+  - : در صورتی که origin نتواند به یک URL {{glossary("Serialization", "serialized")}} شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if a cookie that matches a given `name` or `options` cannot be deleted.
+  - : در صورتی که کوکی مطابق با `name` یا `options` داده‌شده قابل حذف نباشد.
 
 ## Examples
 
 <!-- The examples don't work as live examples in MDN environment (due to unknown errors) -->
 
-### Delete a named cookie
+### حذف یک کوکی با نام
 
-This example shows how a cookie can be deleted by passing its name to the `delete()` method.
+این مثال نشان می‌دهد که چگونه می‌توان یک کوکی را با ارسال نام آن به متد `delete()` حذف کرد.
 
-This will work if the cookie to be deleted matches the cookie name and the default values of the [`options`](#options) above.
-This will be the case if the cookie was {{domxref("CookieStore/set","set()")}} using the just a name and value, but may not be if the cookie was created with options or using {{domxref("Document.cookie")}}.
+این کار زمانی کار می‌کند که کوکی مورد حذف با نام کوکی و مقادیر پیش‌فرض [`options`](#options) بالا مطابقت داشته باشد. این حالت زمانی رخ می‌دهد که کوکی با استفاده از فقط یک نام و مقدار {{domxref("CookieStore/set","set()")}} شده باشد، اما ممکن است اگر کوکی با گزینه‌ها یا با استفاده از {{domxref("Document.cookie")}} ایجاد شده باشد، چنین نباشد.
 
-The code first defines `setTestCookies()` which creates some test cookies and logs their names.
+کد ابتدا تابع `setTestCookies()` را تعریف می‌کند که چند کوکی آزمایشی ایجاد می‌کند و نام آن‌ها را ثبت می‌کند.
 
 ```js
 async function setTestCookies() {
@@ -93,8 +81,7 @@ async function setTestCookies() {
 }
 ```
 
-The `cookieTest()` method calls `setTestCookies()`.
-It then deletes "cookie1" that we just created, and lists all cookie names again.
+متد `cookieTest()` تابع `setTestCookies()` را فراخوانی می‌کند. سپس "cookie1" را که به‌تازگی ایجاد کرده‌ایم حذف می‌کند و دوباره نام همه کوکی‌ها را فهرست می‌کند.
 
 ```js
 async function cookieTest() {
@@ -120,14 +107,13 @@ async function cookieTest() {
 cookieTest();
 ```
 
-When run, the console log should initially show that both cookie1 and cookie2 are present, but cookie1 is not listed after it has been deleted.
+هنگام اجرا، لاگ کنسول باید ابتدا نشان دهد که هر دو cookie1 و cookie2 وجود دارند، اما پس از حذف cookie1، دیگر فهرست نشود.
 
-### Delete a cookie with options
+### حذف یک کوکی با گزینه‌ها
 
-This example is almost identical to the previous one, except it demonstrates that the options must match those of the cookie to be deleted.
+این مثال تقریباً مشابه مثال قبلی است، با این تفاوت که نشان می‌دهد گزینه‌ها باید با گزینه‌های کوکی مورد حذف مطابقت داشته باشند.
 
-The code first defines `setTestCookies()`.
-This creates two cookies with the `partitioned` property set to `true`, and logs their names.
+کد ابتدا تابع `setTestCookies()` را تعریف می‌کند. این تابع دو کوکی با ویژگی `partitioned` تنظیم‌شده روی `true` ایجاد می‌کند و نام آن‌ها را ثبت می‌کند.
 
 ```js
 async function setTestCookies() {
@@ -160,9 +146,7 @@ async function setTestCookies() {
 }
 ```
 
-The `cookieTest()` method calls `setTestCookies()`.
-It then attempts to delete the cookies named "cookie1", specifying its name, and "cookie2" specifying its name and `partitioned: true`.
-The method then lists the cookie names again.
+متد `cookieTest()` تابع `setTestCookies()` را فراخوانی می‌کند. سپس تلاش می‌کند کوکی‌های "cookie1" (با مشخص کردن نام آن) و "cookie2" (با مشخص کردن نام و `partitioned: true`) را حذف کند. سپس دوباره نام کوکی‌ها را فهرست می‌کند.
 
 ```js
 async function cookieTest() {
@@ -198,22 +182,19 @@ async function cookieTest() {
 cookieTest();
 ```
 
-When run, the console log should show that both "cookie1" and "cookie2" are present initially, but "cookie2" is not listed afterwards.
-The cookie named "cookie1" is still present because it does not match the cookies specified in the `delete()` call.
+هنگام اجرا، لاگ کنسول باید نشان دهد که هر دو "cookie1" و "cookie2" در ابتدا وجود دارند، اما "cookie2" پس از آن فهرست نمی‌شود. کوکی به نام "cookie1" همچنان وجود دارد زیرا با کوکی‌های مشخص‌شده در فراخوانی `delete()` مطابقت ندارد.
 
 > [!NOTE]
-> The deletion silently fails if no cookie is matched.
+> اگر هیچ کوکی‌ای مطابقت داده نشود، حذف بی‌صدا شکست می‌خورد.
 
-### Delete cookies created using document.cookies
+### حذف کوکی‌های ایجادشده با استفاده از document.cookies
 
-Deleting a cookie that was created using {{domxref("document.cookie")}} has the same requirements as deleting a cookie created using {{domxref("CookieStore.set()")}}: the cookie either needs to match the passed `options`, or the `name` and the default options.
+حذف کوکی‌ای که با استفاده از {{domxref("document.cookie")}} ایجاد شده است، الزامات مشابهی با حذف کوکی‌ای دارد که با استفاده از {{domxref("CookieStore.set()")}} ایجاد شده است: کوکی یا باید با `options` ارسال‌شده مطابقت داشته باشد، یا با `name` و گزینه‌های پیش‌فرض.
 
 > [!NOTE]
-> Cookies created with `set()` always have a [default path](/en-US/docs/Web/HTTP/Guides/Cookies#define_where_cookies_are_sent) of `/`, while cookies created with `document.cookie` have a default path equal to the path of the document they are created in.
-> Therefore when deleting cookies created with `document.cookie`, you can't assume they have the path `/` (unless it was been explicitly set as such), and hence that it will match the default `delete()` options.
+> کوکی‌های ایجادشده با `set()` همیشه یک [مسیر پیش‌فرض](/en-US/docs/Web/HTTP/Guides/Cookies#define_where_cookies_are_sent) `/` دارند، در حالی که کوکی‌های ایجادشده با `document.cookie` مسیر پیش‌فرضی برابر با مسیر سندی که در آن ایجاد شده‌اند دارند. بنابراین هنگام حذف کوکی‌های ایجادشده با `document.cookie`، نمی‌توانید فرض کنید که مسیر `/` را دارند (مگر اینکه صریحاً چنین تنظیم شده باشد)، و در نتیجه نمی‌توانید فرض کنید که با گزینه‌های پیش‌فرض `delete()` مطابقت خواهد داشت.
 
-The code below uses `document.cookie` to create cookies named "doc_cookie1" and "doc_cookie2", with the paths `/some_path` and `/` respectively, and then logs both cookies.
-The code then deletes both cookies without specifying a `path` match option, and lists the cookies again.
+کد زیر از `document.cookie` برای ایجاد کوکی‌های "doc_cookie1" و "doc_cookie2" با مسیرهای `/some_path` و `/` به ترتیب استفاده می‌کند و سپس هر دو کوکی را ثبت می‌کند. سپس کد هر دو کوکی را بدون مشخص کردن گزینه تطبیق `path` حذف می‌کند و دوباره کوکی‌ها را فهرست می‌کند.
 
 ```js
 async function cookieTest() {
@@ -257,9 +238,7 @@ async function cookieTest() {
 cookieTest();
 ```
 
-When run, the first log should show that both cookies are present.
-The second log should not include "doc_cookie2", as it should have matched and been deleted.
-It should include "doc_cookie1" because `/some_path` will not match the default deletion path (`/`).
+هنگام اجرا، لاگ اول باید نشان دهد که هر دو کوکی وجود دارند. لاگ دوم نباید شامل "doc_cookie2" باشد، زیرا باید مطابقت داده شده و حذف شده باشد. همچنین باید شامل "doc_cookie1" باشد، زیرا `/some_path` با مسیر حذف پیش‌فرض (`/`) مطابقت نخواهد داشت.
 
 ## Specifications
 
