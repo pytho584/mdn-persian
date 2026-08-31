@@ -1,10 +1,4 @@
 ---
-title: "CaptureController"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CaptureController"
-status: "needs-translation"
----
-
----
 title: CaptureController
 slug: Web/API/CaptureController
 page-type: web-api-interface
@@ -15,41 +9,41 @@ browser-compat: api.CaptureController
 
 {{APIRef("Screen Capture API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`CaptureController`** interface provides methods that can be used to further manipulate a captured display surface (captured via {{domxref("MediaDevices.getDisplayMedia()")}})
+رابطهٔ **`CaptureController`** روش‌هایی را فراهم می‌کند که می‌توان از آن‌ها برای دستکاری بیشتر سطح نمایشِ ضبط‌شده (که از طریق {{domxref("MediaDevices.getDisplayMedia()")}} ضبط شده است) استفاده کرد.
 
-A `CaptureController` object is associated with a captured display surface by passing it into a `getDisplayMedia()` call as the value of the options object's `controller` property.
+یک شیء `CaptureController` با ارسال آن به فراخوانی `getDisplayMedia()` به‌عنوان مقدار ویژگی `controller` در شیء گزینه‌ها، با سطح نمایش ضبط‌شده مرتبط می‌شود.
 
-## Constructor
+## سازنده
 
 - {{ domxref("CaptureController.CaptureController", "CaptureController()") }} {{Experimental_Inline}}
-  - : Creates a new `CaptureController` object instance.
+  - : یک نمونهٔ جدید از شیء `CaptureController` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{ domxref("CaptureController.zoomLevel", "zoomLevel") }} {{Experimental_Inline}}
-  - : The captured display surface's current zoom level.
+  - : سطح زوم فعلی سطح نمایش ضبط‌شده.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{ domxref("CaptureController.decreaseZoomLevel", "decreaseZoomLevel()") }} {{Experimental_Inline}}
-  - : Decreases the captured display surface's zoom level by one increment.
+  - : سطح زوم سطح نمایش ضبط‌شده را به‌اندازهٔ یک پله کاهش می‌دهد.
 - {{ domxref("CaptureController.forwardWheel", "forwardWheel()") }} {{Experimental_Inline}}
-  - : Starts forwarding {{domxref("Element.wheel_event", "wheel")}} events fired on the referenced element to the viewport of an associated captured display surface.
+  - : شروع به ارسال رویدادهای {{domxref("Element.wheel_event", "wheel")}} می‌کند که روی عنصر ارجاع‌داده‌شده رخ می‌دهند به viewport سطح نمایش ضبط‌شدهٔ مرتبط.
 - {{ domxref("CaptureController.getSupportedZoomLevels", "getSupportedZoomLevels()") }} {{Experimental_Inline}}
-  - : Returns the different zoom levels supported by the captured display surface.
+  - : سطوح زوم مختلف پشتیبانی‌شده توسط سطح نمایش ضبط‌شده را برمی‌گرداند.
 - {{ domxref("CaptureController.increaseZoomLevel", "increaseZoomLevel()") }} {{Experimental_Inline}}
-  - : Increases the captured display surface's zoom level by one increment.
+  - : سطح زوم سطح نمایش ضبط‌شده را به‌اندازهٔ یک پله افزایش می‌دهد.
 - {{ domxref("CaptureController.resetZoomLevel", "resetZoomLevel()") }} {{Experimental_Inline}}
-  - : Resets the captured display surface's zoom to its initial level, which is `100`.
+  - : زوم سطح نمایش ضبط‌شده را به سطح اولیهٔ آن یعنی `100` بازنشانی می‌کند.
 - {{ domxref("CaptureController.setFocusBehavior", "setFocusBehavior()") }} {{Experimental_Inline}}
-  - : Controls whether the captured tab or window will be focused or whether the focus will remain with the tab containing the capturing app.
+  - : کنترل می‌کند که آیا تب یا پنجرهٔ ضبط‌شده فوکوس شود یا فوکوس در تب حاوی برنامهٔ ضبط‌کننده باقی بماند.
 
-## Events
+## رویدادها
 
 - {{ domxref("CaptureController.zoomlevelchange_event", "zoomlevelchange") }} {{Experimental_Inline}}
-  - : Fires when the captured display surface's zoom level changes.
+  - : زمانی که سطح زوم سطح نمایش ضبط‌شده تغییر می‌کند، رخ می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Create a new CaptureController instance
@@ -72,15 +66,15 @@ if (displaySurface === "browser") {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - {{domxref("MediaDevices.getDisplayMedia()")}}
