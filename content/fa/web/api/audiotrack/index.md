@@ -1,7 +1,7 @@
 ---
 title: "AudioTrack"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioTrack"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -13,43 +13,43 @@ browser-compat: api.AudioTrack
 
 {{APIRef("HTML DOM")}}
 
-The **`AudioTrack`** interface represents a single audio track from one of the HTML media elements, {{HTMLElement("audio")}} or {{HTMLElement("video")}}.
+رابط **`AudioTrack`** یک مسیر صوتی واحد از یکی از عناصر رسانه‌ای HTML، یعنی {{HTMLElement("audio")}} یا {{HTMLElement("video")}} را نمایش می‌دهد.
 
-The most common use for accessing an `AudioTrack` object is to toggle its {{domxref("AudioTrack.enabled", "enabled")}} property in order to mute and unmute the track.
+رایج‌ترین کاربرد دسترسی به یک شیء `AudioTrack`، تغییر وضعیت ویژگی {{domxref("AudioTrack.enabled", "enabled")}} آن برای بی‌صدا کردن و بازگرداندن صدای مسیر است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("AudioTrack.enabled", "enabled")}}
-  - : A Boolean value which controls whether or not the audio track's sound is enabled. Setting this value to `false` mutes the track's audio.
+  - : یک مقدار بولی که کنترل می‌کند آیا صدای مسیر صوتی فعال است یا خیر. تنظیم این مقدار روی `false` صدای مسیر را بی‌صدا می‌کند.
 - {{domxref("AudioTrack.id", "id")}} {{ReadOnlyInline}}
-  - : A string which uniquely identifies the track within the media. This ID can be used to locate a specific track within an audio track list by calling {{domxref("AudioTrackList.getTrackById()")}}. The ID can also be used as the fragment part of the URL if the media supports seeking by media fragment per the [Media Fragments URI specification](https://www.w3.org/TR/media-frags/).
+  - : یک رشته که مسیر را به‌طور یکتا درون رسانه شناسایی می‌کند. می‌توان از این شناسه برای یافتن یک مسیر خاص در فهرست مسیرهای صوتی با فراخوانی {{domxref("AudioTrackList.getTrackById()")}} استفاده کرد. همچنین اگر رسانه از جست‌وجو بر اساس قطعه رسانه مطابق [Media Fragments URI specification](https://www.w3.org/TR/media-frags/) پشتیبانی کند، می‌توان از این شناسه به‌عنوان بخش قطعه از URL استفاده کرد.
 - {{domxref("AudioTrack.kind", "kind")}} {{ReadOnlyInline}}
-  - : A string specifying the category into which the track falls. For example, the main audio track would have a `kind` of `"main"`.
+  - : یک رشته که دسته‌ای را مشخص می‌کند که مسیر در آن قرار می‌گیرد. برای مثال، مسیر صوتی اصلی دارای `kind` با مقدار `"main"` خواهد بود.
 - {{domxref("AudioTrack.label", "label")}} {{ReadOnlyInline}}
-  - : A string providing a human-readable label for the track. For example, an audio commentary track for a movie might have a `label` of `"Commentary with director Christopher Nolan and actors Leonardo DiCaprio and Elliot Page."` This string is empty if no label is provided.
+  - : یک رشته که برچسبی قابل‌خواندن برای انسان برای مسیر فراهم می‌کند. برای مثال، یک مسیر توضیحات صوتی برای یک فیلم ممکن است `label` با مقدار `"Commentary with director Christopher Nolan and actors Leonardo DiCaprio and Elliot Page."` داشته باشد. اگر برچسبی ارائه نشده باشد، این رشته خالی است.
 - {{domxref("AudioTrack.language", "language")}} {{ReadOnlyInline}}
-  - : A string specifying the audio track's primary language, or an empty string if unknown. The language is specified as a {{glossary("BCP 47 language tag")}}, such as `"en-US"` or `"pt-BR"`.
+  - : یک رشته که زبان اصلی مسیر صوتی را مشخص می‌کند، یا اگر ناشناخته باشد یک رشته خالی است. زبان به‌صورت یک {{glossary("BCP 47 language tag")}} مانند `"en-US"` یا `"pt-BR"` مشخص می‌شود.
 - {{domxref("AudioTrack.sourceBuffer", "sourceBuffer")}} {{ReadOnlyInline}}
-  - : The {{domxref("SourceBuffer")}} that created the track. Returns null if the track was not created by a {{domxref("SourceBuffer")}} or the {{domxref("SourceBuffer")}} has been removed from the {{domxref("MediaSource.sourceBuffers")}} attribute of its parent media source.
+  - : {{domxref("SourceBuffer")}} که مسیر را ایجاد کرده است. اگر مسیر توسط یک {{domxref("SourceBuffer")}} ایجاد نشده باشد یا {{domxref("SourceBuffer")}} از ویژگی {{domxref("MediaSource.sourceBuffers")}} منبع رسانه والد خود حذف شده باشد، `null` برمی‌گرداند.
 
-## Usage notes
+## نکات استفاده
 
-To get an `AudioTrack` for a given media element, use the element's {{domxref("HTMLMediaElement.audioTracks", "audioTracks")}} property, which returns an {{domxref("AudioTrackList")}} object from which you can get the individual tracks contained in the media:
+برای دریافت یک `AudioTrack` برای یک عنصر رسانه‌ای مشخص، از ویژگی {{domxref("HTMLMediaElement.audioTracks", "audioTracks")}} عنصر استفاده کنید که یک شیء {{domxref("AudioTrackList")}} برمی‌گرداند و می‌توانید از آن مسیرهای فردی موجود در رسانه را دریافت کنید:
 
 ```js
 const el = document.querySelector("video");
 const tracks = el.audioTracks;
 ```
 
-You can then access the media's individual tracks using either array syntax or functions such as {{jsxref("Array.forEach", "forEach()")}}.
+سپس می‌توانید با استفاده از نحو آرایه یا توابعی مانند {{jsxref("Array.forEach", "forEach()")}} به مسیرهای فردی رسانه دسترسی پیدا کنید.
 
-This first example gets the first audio track on the media:
+این مثال اول، اولین مسیر صوتی رسانه را دریافت می‌کند:
 
 ```js
 const firstTrack = tracks[0];
 ```
 
-The next example scans through all of the media's audio tracks, enabling any that are in the user's preferred language (taken from a variable `userLanguage`) and disabling any others.
+مثال بعدی تمام مسیرهای صوتی رسانه را اسکن می‌کند و هر کدام را که به زبان ترجیحی کاربر هستند (که از متغیر `userLanguage` گرفته شده است) فعال می‌کند و بقیه را غیرفعال می‌کند.
 
 ```js
 tracks.forEach((track) => {
@@ -57,16 +57,16 @@ tracks.forEach((track) => {
 });
 ```
 
-The {{domxref("AudioTrack.language", "language")}} is specified as a valid {{glossary("BCP 47 language tag")}}, for example `"en-US"` for US English.
+{{domxref("AudioTrack.language", "language")}} به‌صورت یک {{glossary("BCP 47 language tag")}} معتبر مشخص می‌شود، برای مثال `"en-US"` برای انگلیسی آمریکایی.
 
-## Example
+## مثال
 
-See [`AudioTrack.label`](/en-US/docs/Web/API/AudioTrack/label#examples) for an example that shows how to get an array of track kinds and labels for a specified media element, filtered by kind.
+برای نمونه‌ای که نحوه دریافت آرایه‌ای از انواع و برچسب‌های مسیر برای یک عنصر رسانه‌ای مشخص، فیلترشده بر اساس نوع را نشان می‌دهد، به [`AudioTrack.label`](/en-US/docs/Web/API/AudioTrack/label#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
