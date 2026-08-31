@@ -1,11 +1,5 @@
 ---
 title: "CompressionStream: readable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CompressionStream/readable"
-status: "needs-translation"
----
-
----
-title: "CompressionStream: readable property"
 short-title: readable
 slug: Web/API/CompressionStream/readable
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CompressionStream.readable
 
 {{APIRef("Compression Streams API")}}{{AvailableInWorkers}}
 
-The **`readable`** read-only property of the {{domxref("CompressionStream")}} interface returns a {{domxref("ReadableStream")}} that emits compressed data as {{jsxref("Uint8Array")}} chunks.
+ویژگی فقط‌خواندنی **`readable`** از رابط {{domxref("CompressionStream")}} یک {{domxref("ReadableStream")}} برمی‌گرداند که داده‌های فشرده‌شده را به صورت تکه‌های {{jsxref("Uint8Array")}} منتشر می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref("ReadableStream")}}.
+یک {{domxref("ReadableStream")}}.
 
-## Examples
+## مثال‌ها
 
-This example creates a `CompressionStream` that performs gzip compression. It writes some binary data to the `writable` stream, then reads the compressed data from the `readable` stream.
+این مثال یک `CompressionStream` می‌سازد که فشرده‌سازی gzip را انجام می‌دهد. سپس داده‌های باینری را در جریان `writable` می‌نویسد و داده‌های فشرده‌شده را از جریان `readable` می‌خواند.
 
 ```js
 const stream = new CompressionStream("gzip");
@@ -47,14 +41,14 @@ while (!done) {
 console.log(new Uint8Array(output).toBase64()); // H4sIAAAAAAAAE/NIzcnJ11Eozy/KSVEEAObG5usNAAAA
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("TransformStream.readable")}}
