@@ -1,7 +1,7 @@
 ---
 title: "AudioParam: linearRampToValueAtTime() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/linearRampToValueAtTime"
-status: "needs-translation"
+translated_by: "n8n + AI"
 ---
 
 ---
@@ -14,39 +14,28 @@ browser-compat: api.AudioParam.linearRampToValueAtTime
 
 {{ APIRef("Web Audio API") }}
 
-The `linearRampToValueAtTime()` method of the {{ domxref("AudioParam") }}
-Interface schedules a gradual linear change in the value of the
-`AudioParam`. The change starts at the time specified for the
-_previous_ event, follows a linear ramp to the new value given in the
-`value` parameter, and reaches the new value at the time given in the
-`endTime` parameter.
+متد `linearRampToValueAtTime()` از رابط {{ domxref("AudioParam") }} یک تغییر خطی تدریجی در مقدار `AudioParam` زمان‌بندی می‌کند. تغییر از زمان مشخص‌شده برای رویداد _قبلی_ شروع می‌شود، از یک رمپ خطی به مقدار جدید داده‌شده در پارامتر `value` پیروی می‌کند، و در زمان داده‌شده در پارامتر `endTime` به مقدار جدید می‌رسد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 linearRampToValueAtTime(value, endTime)
 ```
 
-### Parameters
+### پارامترها
 
 - `value`
-  - : A floating point number representing the value the `AudioParam` will ramp
-    to by the given time.
+  - : یک عدد اعشاری (float) که نشان‌دهنده مقداری است که `AudioParam` تا زمان مشخص‌شده به آن رمپ می‌کند.
 - `endTime`
-  - : A double representing the exact time (in seconds) after the ramping starts that the
-    changing of the value will stop.
+  - : یک عدد double که زمان دقیق (به ثانیه) پس از شروع رمپ را نشان می‌دهد که تغییر مقدار در آن متوقف می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A reference to this `AudioParam` object. In some browsers older
-implementations of this interface return {{jsxref('undefined')}}.
+یک ارجاع به این شیء `AudioParam`. در برخی مرورگرها، پیاده‌سازی‌های قدیمی‌تر این رابط {{jsxref('undefined')}} را برمی‌گردانند.
 
-## Examples
+## مثال‌ها
 
-In this example, we have a media source with two control buttons (see the [audio-param repo](https://github.com/mdn/webaudio-examples/tree/main/audio-param) for the source code, or [view the example live](https://mdn.github.io/webaudio-examples/audio-param/).) When these buttons are pressed, `linearRampToValueAtTime()` is
-used to fade the gain value up to 1.0, and down to 0, respectively. This is pretty
-useful for fade in/fade out effects, although {{domxref("AudioParam.exponentialRampToValueAtTime()")}} is often said to be a bit more
-natural.
+در این مثال، یک منبع رسانه‌ای با دو دکمه کنترل داریم (برای مشاهده کد منبع، به [مخزن audio-param](https://github.com/mdn/webaudio-examples/tree/main/audio-param) مراجعه کنید یا [مثال را به‌صورت زنده ببینید](https://mdn.github.io/webaudio-examples/audio-param/).) وقتی این دکمه‌ها فشرده می‌شوند، `linearRampToValueAtTime()` برای محو کردن مقدار گین به ترتیب به 1.0 و پایین به 0 استفاده می‌شود. این برای افکت‌های محو شدن و ظاهر شدن بسیار مفید است، اگرچه اغلب گفته می‌شود {{domxref("AudioParam.exponentialRampToValueAtTime()")}} کمی طبیعی‌تر است.
 
 ```js
 // create audio context
@@ -81,14 +70,14 @@ linearRampMinus.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
