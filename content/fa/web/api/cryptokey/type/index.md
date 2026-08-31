@@ -1,11 +1,5 @@
 ---
 title: "CryptoKey: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CryptoKey/type"
-status: "needs-translation"
----
-
----
-title: "CryptoKey: type property"
 short-title: type
 slug: Web/API/CryptoKey/type
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.CryptoKey.type
 
 {{APIRef("Web Crypto API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The read-only **`type`** property of the {{DOMxRef("CryptoKey")}} interface indicates which kind of key is represented by the object. It can have the following values:
+خاصیت فقط‌خواندنی **`type`** در رابط {{DOMxRef("CryptoKey")}} مشخص می‌کند که شیء نمایانگر چه نوع کلیدی است. این خاصیت می‌تواند مقادیر زیر را داشته باشد:
 
-- `"secret"`: This key is a secret key for use with a {{Glossary("Symmetric-key cryptography", "symmetric algorithm")}}.
-- `"private"`: This key is the private half of an {{Glossary("Public-key cryptography", "asymmetric algorithm's")}} [`CryptoKeyPair`](/en-US/docs/Web/API/CryptoKeyPair).
-- `"public"`: This key is the public half of an {{Glossary("Public-key cryptography", "asymmetric algorithm's")}} [`CryptoKeyPair`](/en-US/docs/Web/API/CryptoKeyPair).
+- `"secret"`: این کلید، یک کلید محرمانه برای استفاده با یک {{Glossary("Symmetric-key cryptography", "الگوریتم متقارن")}} است.
+- `"private"`: این کلید، نیمه خصوصی یک [`CryptoKeyPair`](/en-US/docs/Web/API/CryptoKeyPair) متعلق به یک {{Glossary("Public-key cryptography", "الگوریتم نامتقارن")}} است.
+- `"public"`: این کلید، نیمه عمومی یک [`CryptoKeyPair`](/en-US/docs/Web/API/CryptoKeyPair) متعلق به یک {{Glossary("Public-key cryptography", "الگوریتم نامتقارن")}} است.
 
-## Value
+## مقدار
 
-One of the following strings: `"secret"`, `"private"`, or `"public"`.
+یکی از رشته‌های زیر: `"secret"`، `"private"` یا `"public"`.
 
-## Examples
+## مثال‌ها
 
-This function verifies a message using {{domxref("SubtleCrypto.verify()")}} and a public key given in the parameter. If the key is not a public key, it always returns `"invalid"`, as such verification is fundamentally insecure.
+این تابع یک پیام را با استفاده از {{domxref("SubtleCrypto.verify()")}} و یک کلید عمومی که به عنوان پارامتر داده شده است، تأیید می‌کند. اگر کلید از نوع عمومی نباشد، تابع همیشه `"invalid"` برمی‌گرداند، زیرا چنین تأییدی ذاتاً ناامن است.
 
 ```js
 async function verifyMessage(publicKey) {
@@ -51,10 +45,10 @@ async function verifyMessage(publicKey) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
