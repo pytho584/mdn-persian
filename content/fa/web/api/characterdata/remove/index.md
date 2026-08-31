@@ -1,11 +1,5 @@
 ---
 title: "CharacterData: remove() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CharacterData/remove"
-status: "needs-translation"
----
-
----
-title: "CharacterData: remove() method"
 short-title: remove()
 slug: Web/API/CharacterData/remove
 page-type: web-api-instance-method
@@ -14,8 +8,8 @@ browser-compat: api.CharacterData.remove
 
 {{APIRef("DOM")}}
 
-The **`remove()`** method of the {{domxref("CharacterData")}} removes it from its parent node.
-If it has no parent node, calling `remove()` does nothing.
+متد **`remove()`** در رابط {{domxref("CharacterData")}} آن را از والد خود حذف می‌کند.
+اگر این شیء والد نداشته باشد، فراخوانی `remove()` هیچ کاری انجام نمی‌دهد.
 
 ## Syntax
 
@@ -25,15 +19,15 @@ remove()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Example
 
-### Using `remove()`
+### استفاده از `remove()`
 
 ```html
 <span>Result: </span>A long string.
