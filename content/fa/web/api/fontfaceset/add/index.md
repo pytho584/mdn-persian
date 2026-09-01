@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSet: add() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/add"
-status: "needs-translation"
----
-
----
-title: "FontFaceSet: add() method"
 short-title: add()
 slug: Web/API/FontFaceSet/add
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.FontFaceSet.add
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`add()`** method of the {{domxref("FontFaceSet")}} interface adds a new font to the set.
+متد **`add()`** از رابط {{domxref("FontFaceSet")}} یک فونت جدید به مجموعه اضافه می‌کند.
 
 ## Syntax
 
@@ -22,33 +16,33 @@ The **`add()`** method of the {{domxref("FontFaceSet")}} interface adds a new fo
 add(font)
 ```
 
-### Parameters
+### پارامترها
 
 - `font`
-  - : A {{domxref("FontFace")}} to be added to the set.
+  - : یک {{domxref("FontFace")}} که باید به مجموعه اضافه شود.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("FontFaceSet")}}.
+یک {{domxref("FontFaceSet")}} جدید.
 
-### Exceptions
+### استثناها
 
 - `InvalidModificationError` {{domxref("DOMException")}}
-  - : Thrown if this font is already included via the CSS {{cssxref("@font-face")}} rule.
+  - : اگر این فونت از قبل از طریق قانون CSS {{cssxref("@font-face")}} اضافه شده باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example a new {{domxref("FontFace")}} object is created and then added to the {{domxref("FontFaceSet")}}.
+در مثال زیر یک شیء {{domxref("FontFace")}} جدید ساخته می‌شود و سپس به {{domxref("FontFaceSet")}} اضافه می‌گردد.
 
 ```js
 const font = new FontFace("MyFont", 'url("myFont.woff2")');
 document.fonts.add(font);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
