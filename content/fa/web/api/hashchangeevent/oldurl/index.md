@@ -1,7 +1,5 @@
 ---
 title: "HashChangeEvent: oldURL property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HashChangeEvent/oldURL"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,13 @@ browser-compat: api.HashChangeEvent.oldURL
 
 {{APIRef("HTML DOM")}}
 
-The **`oldURL`** read-only property of the
-{{domxref("HashChangeEvent")}} interface returns the previous URL from which the window
-was navigated.
+ویژگی فقط‌خواندنی **`oldURL`** از رابط {{domxref("HashChangeEvent")}} نشانی وب قبلی را که پنجره به آن ناوبری شده بود برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("hashchange", (event) => {
@@ -30,10 +26,10 @@ window.addEventListener("hashchange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
