@@ -1,10 +1,4 @@
 ---
-title: "GPUBindGroup"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUBindGroup"
-status: "needs-translation"
----
-
----
 title: GPUBindGroup
 slug: Web/API/GPUBindGroup
 page-type: web-api-interface
@@ -13,25 +7,25 @@ browser-compat: api.GPUBindGroup
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUBindGroup`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} is based on a {{domxref("GPUBindGroupLayout")}} and defines a set of resources to be bound together in a group and how those resources are used in shader stages.
+رابط **`GPUBindGroup`** از {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} بر اساس یک {{domxref("GPUBindGroupLayout")}} است و مجموعه‌ای از منابع را تعریف می‌کند که در یک گروه به هم متصل می‌شوند و همچنین نحوه استفاده از این منابع را در مراحل شیدر مشخص می‌کند.
 
-A `GPUBindGroup` object instance is created using the {{domxref("GPUDevice.createBindGroup()")}} method.
+یک نمونه از شیء `GPUBindGroup` با استفاده از متد {{domxref("GPUDevice.createBindGroup()")}} ایجاد می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPUBindGroup.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : رشته‌ای که برچسبی برای شناسایی شیء فراهم می‌کند؛ برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Examples
+## مثال‌ها
 
 > [!NOTE]
-> The [WebGPU samples](https://webgpu.github.io/webgpu-samples/) feature many more examples.
+> [WebGPU samples](https://webgpu.github.io/webgpu-samples/) شامل مثال‌های بسیار بیشتری هستند.
 
-### Basic example
+### مثال پایه
 
-Our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/) shows an example of creating a bind group layout and then using that as a template when creating a bind group.
+در [دموی محاسبات پایه](https://mdn.github.io/dom-examples/webgpu-compute-demo/) ما، نمونه‌ای از ایجاد چیدمان گروه اتصال و سپس استفاده از آن به‌عنوان قالب برای ساخت یک گروه اتصال نشان داده شده است.
 
 ```js
 // …
@@ -63,14 +57,14 @@ const bindGroup = device.createBindGroup({
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
