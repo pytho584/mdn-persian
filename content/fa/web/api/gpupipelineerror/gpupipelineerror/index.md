@@ -1,11 +1,5 @@
 ---
-title: "GPUPipelineError: GPUPipelineError() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineError/GPUPipelineError"
-status: "needs-translation"
----
-
----
-title: "GPUPipelineError: GPUPipelineError() constructor"
+title: "GPUPipelineError: GPUPipelineError() سازنده"
 short-title: GPUPipelineError()
 slug: Web/API/GPUPipelineError/GPUPipelineError
 page-type: web-api-constructor
@@ -14,41 +8,41 @@ browser-compat: api.GPUPipelineError.GPUPipelineError
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUPipelineError()`** constructor creates a new
-{{domxref("GPUPipelineError")}} object instance.
+سازندهٔ **`GPUPipelineError()`** یک نمونهٔ جدید از شیء
+{{domxref("GPUPipelineError")}} ایجاد می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new GPUPipelineError(message, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `message` {{optional_inline}}
-  - : A string providing a human-readable message that explains why the error occurred. If not specified, `message` defaults to an empty string (`""`).
+  - : یک رشته که پیامی قابل‌فهم برای انسان فراهم می‌کند و توضیح می‌دهد چرا خطا رخ داده است. اگر مشخص نشود، `message` به طور پیش‌فرض یک رشتهٔ خالی (`""`) خواهد بود.
 - `options`
-  - : An object, which can contain the following properties:
+  - : یک شیء که می‌تواند ویژگی‌های زیر را شامل شود:
     - `reason`
-      - : An enumerated value that defines the reason the pipeline creation failed in a machine-readable way. The value can be one of:
-        - `"internal"`: Pipeline creation failed because of an internal error (see {{domxref("GPUInternalError")}} for more information about these kinds of error).
-        - `"validation"`: Pipeline creation failed because of a validation error (see {{domxref("GPUValidationError")}} for more information about these kinds of error).
+      - : یک مقدار شمارشی که دلیل شکست ایجاد پایپ‌لاین را به صورت قابل‌خواندن برای ماشین تعریف می‌کند. مقدار می‌تواند یکی از موارد زیر باشد:
+        - `"internal"`: ایجاد پایپ‌لاین به دلیل یک خطای داخلی شکست خورده است (برای اطلاعات بیشتر دربارهٔ این نوع خطاها به {{domxref("GPUInternalError")}} مراجعه کنید).
+        - `"validation"`: ایجاد پایپ‌لاین به دلیل یک خطای اعتبارسنجی شکست خورده است (برای اطلاعات بیشتر دربارهٔ این نوع خطاها به {{domxref("GPUValidationError")}} مراجعه کنید).
 
-## Examples
+## مثال‌ها
 
-A developer would not manually use the constructor to create a `GPUPipelineError` object. The user agent uses this constructor to create an appropriate object when a {{jsxref("Promise")}} returned by a {{domxref("GPUDevice.createComputePipelineAsync()")}} or {{domxref("GPUDevice.createRenderPipelineAsync()")}} call rejects, signalling a pipeline failure.
+یک توسعه‌دهنده معمولاً به صورت دستی از سازنده برای ایجاد یک شیء `GPUPipelineError` استفاده نمی‌کند. عامل کاربر (user agent) از این سازنده برای ایجاد یک شیء مناسب زمانی استفاده می‌کند که یک {{jsxref("Promise")}} برگشتی از یک فراخوانی {{domxref("GPUDevice.createComputePipelineAsync()")}} یا {{domxref("GPUDevice.createRenderPipelineAsync()")}} رد (reject) شود و نشان‌دهندهٔ شکست پایپ‌لاین باشد.
 
-See the main [`GPUPipelineError`](/en-US/docs/Web/API/GPUPipelineError#examples) page for an example involving a `GPUPipelineError` object instance.
+برای مشاهدهٔ مثالی شامل یک نمونهٔ شیء `GPUPipelineError`، به صفحهٔ اصلی [`GPUPipelineError`](/en-US/docs/Web/API/GPUPipelineError#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
-- [WebGPU Error Handling best practices](https://toji.dev/webgpu-best-practices/error-handling)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [بهترین روش‌های مدیریت خطا در WebGPU](https://toji.dev/webgpu-best-practices/error-handling)
