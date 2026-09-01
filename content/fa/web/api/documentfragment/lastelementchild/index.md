@@ -1,11 +1,5 @@
 ---
 title: "DocumentFragment: lastElementChild property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/lastElementChild"
-status: "needs-translation"
----
-
----
-title: "DocumentFragment: lastElementChild property"
 short-title: lastElementChild
 slug: Web/API/DocumentFragment/lastElementChild
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.DocumentFragment.lastElementChild
 
 {{ APIRef("DOM") }}
 
-The **`DocumentFragment.lastElementChild`** read-only property
-returns the document fragment's last child {{domxref("Element")}}, or `null` if there
-are no child elements.
+ویژگی فقط‌خواندنی **`DocumentFragment.lastElementChild`** آخرین فرزند {{domxref("Element")}} از این قطعه سند (document fragment) را برمی‌گرداند، یا اگر هیچ عنصر فرزندی وجود نداشته باشد، `null` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} that is the last child `Element` of the object, or `null` if there are none.
+یک {{domxref("Element")}} که آخرین `Element` فرزند این شیء است، یا اگر هیچ‌کدام وجود نداشته باشد `null`.
 
-## Examples
+## مثال‌ها
 
 ```js
 let fragment = new DocumentFragment();
@@ -34,14 +26,14 @@ fragment.appendChild(paragraph);
 fragment.lastElementChild; // <p>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.lastElementChild")}}
