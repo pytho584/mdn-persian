@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: lost property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/lost"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: lost property"
 short-title: lost
 slug: Web/API/GPUDevice/lost
 page-type: web-api-instance-property
@@ -14,21 +8,20 @@ browser-compat: api.GPUDevice.lost
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`lost`** read-only property of the
-{{domxref("GPUDevice")}} interface contains a {{jsxref("Promise")}} that remains pending throughout the device's lifetime and resolves with a {{domxref("GPUDeviceLostInfo")}} object when the device is lost.
+ویژگی فقط‌خواندنی **`lost`** از رابط {{domxref("GPUDevice")}} شامل یک {{jsxref("Promise")}} است که در تمام طول عمر دستگاه در حالت «در انتظار» (pending) باقی می‌ماند و زمانی که دستگاه از دست برود، با یک شیء {{domxref("GPUDeviceLostInfo")}} resolved می‌شود.
 
-{{domxref("GPUAdapter.requestDevice()")}} will never return `null`, and it will reject only if the request is invalid, i.e., it exceeds the capabilities of the {{domxref("GPUAdapter")}}. If a valid device request can't be fulfilled for some reason however it may resolve to a device that has already been lost. Additionally, devices can be lost at any time after creation for a variety of reasons (such as browser resource management or driver updates), so it's a good idea to always handle lost devices gracefully.
+{{domxref("GPUAdapter.requestDevice()")}} هرگز `null` برنمی‌گرداند و تنها در صورتی reject می‌کند که درخواست نامعتبر باشد، یعنی فراتر از قابلیت‌های {{domxref("GPUAdapter")}} باشد. با این حال، اگر به دلایلی یک درخواست معتبر دستگاه قابل انجام نباشد، ممکن است به دستگاهی resolve شود که قبلاً از دست رفته است. علاوه بر این، دستگاه‌ها می‌توانند در هر زمانی پس از ایجاد، به دلایل مختلفی (مانند مدیریت منابع مرورگر یا به‌روزرسانی درایور) از دست بروند، بنابراین همیشه بهتر است دستگاه‌های از دست رفته را به‌شکلی مناسب مدیریت کنید.
 
-Many causes for lost devices are transient, so you should try getting a new device once a previous one has been lost unless the loss was caused by the application intentionally destroying the device (i.e., with {{domxref("GPUDevice.destroy()")}}). Note that any WebGPU resources created with a previous device (buffers, textures, etc.) will need to be re-created with the new one.
+بسیاری از دلایل از دست رفتن دستگاه گذرا هستند، بنابراین پس از از دست رفتن دستگاه قبلی باید تلاش کنید دستگاه جدیدی به دست آورید، مگر اینکه این از دست رفتن عمداً توسط برنامه و با از بین بردن دستگاه (یعنی با {{domxref("GPUDevice.destroy()")}}) ایجاد شده باشد. توجه داشته باشید که تمام منابع WebGPU ساخته‌شده با دستگاه قبلی (بافرها، بافت‌ها و غیره) باید با دستگاه جدید از نو ساخته شوند.
 
 > [!NOTE]
-> Also bear in mind that a `GPUAdapter` may become unavailable, e.g., if the physical GPU is unplugged from the system or disabled to save power. From then on, the adapter can no longer return valid devices, and will always return already-lost devices.
+> همچنین در نظر داشته باشید که یک `GPUAdapter` ممکن است در دسترس نباشد، مثلاً اگر GPU فیزیکی از سیستم جدا شود یا برای صرفه‌جویی در مصرف انرژی غیرفعال شود. از آن به بعد، آداپتور دیگر نمی‌تواند دستگاه‌های معتبر برگرداند و همیشه دستگاه‌هایی را برمی‌گرداند که از قبل از دست رفته‌اند.
 
-## Value
+## مقدار
 
-A promise that resolves with a {{domxref("GPUDeviceLostInfo")}} object when the device is lost.
+یک Promise که وقتی دستگاه از دست برود، با یک شیء {{domxref("GPUDeviceLostInfo")}} resolve می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function init() {
@@ -58,14 +51,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
