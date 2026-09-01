@@ -1,7 +1,6 @@
 ---
 title: "DocumentFragment: append() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/append"
-status: "needs-translation"
 ---
 
 ---
@@ -14,14 +13,11 @@ browser-compat: api.DocumentFragment.append
 
 {{APIRef("DOM")}}
 
-The **`DocumentFragment.append()`** method
-inserts a set of {{domxref("Node")}} objects or strings after
-the last child of the document fragment. Strings
-are inserted as equivalent {{domxref("Text")}} nodes.
+متد **`DocumentFragment.append()`** مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را پس از آخرین فرزندِ قطعه سند (document fragment) درج می‌کند. رشته‌ها به‌صورت گره‌های متنی معادل ({{domxref("Text")}}) درج می‌شوند.
 
-This method appends a child to a `DocumentFragment`. To append to an arbitrary element in the tree, see {{domxref("Element.append()")}}.
+این متد یک فرزند به `DocumentFragment` اضافه می‌کند. برای افزودن به یک عنصر دلخواه در درخت DOM، به {{domxref("Element.append()")}} مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 append(param1)
@@ -29,23 +25,23 @@ append(param1, param2)
 append(param1, param2, /* …, */ paramN)
 ```
 
-### Parameters
+### پارامترها
 
-- `param1`, …, `paramN`
-  - : A set of {{domxref("Node")}} objects or strings to insert.
+- `param1`، …, `paramN`
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها که باید درج شوند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the node cannot be inserted at the specified point in the hierarchy.
+  - : زمانی پرتاب می‌شود که گره نتواند در نقطه مشخص‌شده از سلسله‌مراتب درج شود.
 
-## Examples
+## مثال‌ها
 
-### Appending an element to a document fragment
+### افزودن یک عنصر به قطعه سند
 
 ```js
 let fragment = new DocumentFragment();
@@ -55,15 +51,15 @@ fragment.append(div);
 fragment.children; // HTMLCollection [<div>]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("DocumentFragment.prepend()")}}
 - {{domxref("Element.append()")}}
