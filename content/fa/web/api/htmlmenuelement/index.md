@@ -1,10 +1,4 @@
 ---
-title: "HTMLMenuElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMenuElement"
-status: "needs-translation"
----
-
----
 title: HTMLMenuElement
 slug: Web/API/HTMLMenuElement
 page-type: web-api-interface
@@ -13,28 +7,28 @@ browser-compat: api.HTMLMenuElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMenuElement`** interface provides additional properties (beyond those inherited from the {{domxref("HTMLElement")}} interface) for manipulating a {{HTMLElement("menu")}} element.
-`<menu>` is a semantic alternative to the {{HTMLElement("ul")}} element.
+رابط **`HTMLMenuElement`** ویژگی‌های اضافی (فراتر از مواردی که از رابط {{domxref("HTMLElement")}} به ارث برده) را برای دستکاری یک عنصر {{HTMLElement("menu")}} فراهم می‌کند.
+`<menu>` یک جایگزین معنایی برای عنصر {{HTMLElement("ul")}} است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}, and its ancestors._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}}، و اجداد آن را به ارث می‌برد._
 
 - {{domxref("HTMLMenuElement.compact")}} {{deprecated_inline}}
-  - : A boolean determining if the menu displays compactly.
+  - : یک بولین که تعیین می‌کند آیا منو به صورت فشرده نمایش داده می‌شود یا خیر.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{domxref("HTMLElement")}}, and its ancestors._
+_متدهای والد خود، {{domxref("HTMLElement")}}، و اجداد آن را به ارث می‌برد._
 
-_`HTMLMenuElement` doesn't implement specific methods._
+_`HTMLMenuElement` متد خاصی را پیاده‌سازی نمی‌کند._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
