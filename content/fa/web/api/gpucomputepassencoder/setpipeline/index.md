@@ -1,7 +1,6 @@
 ---
 title: "GPUComputePassEncoder: setPipeline() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/setPipeline"
-status: "needs-translation"
 ---
 
 ---
@@ -14,8 +13,7 @@ browser-compat: api.GPUComputePassEncoder.setPipeline
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`setPipeline()`** method of the
-{{domxref("GPUComputePassEncoder")}} interface sets the {{domxref("GPUComputePipeline")}} to use for this compute pass.
+متد **`setPipeline()`** از رابط {{domxref("GPUComputePassEncoder")}}، {{domxref("GPUComputePipeline")}} را برای استفاده در این پاس محاسباتی تنظیم می‌کند.
 
 ## Syntax
 
@@ -23,61 +21,61 @@ The **`setPipeline()`** method of the
 setPipeline(pipeline)
 ```
 
-### Parameters
+### پارامترها
 
 - `pipeline`
-  - : The {{domxref("GPUComputePipeline")}} to use for this compute pass.
+  - : {{domxref("GPUComputePipeline")}} که قرار است برای این پاس محاسباتی استفاده شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-In our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/), several commands are recorded via a {{domxref("GPUCommandEncoder")}}. Most of these commands originate from the {{domxref("GPUComputePassEncoder")}} created via `beginComputePass()`. The `setPipeline()` call is used as appropriate to set the pipeline to use for this pass.
+در [نمونه محاسباتی پایه ما](https://mdn.github.io/dom-examples/webgpu-compute-demo/)، چندین دستور از طریق یک {{domxref("GPUCommandEncoder")}} ثبت می‌شوند. بیشتر این دستورها از {{domxref("GPUComputePassEncoder")}} که با `beginComputePass()` ایجاد شده است، سرچشمه می‌گیرند. فراخوانی `setPipeline()` در صورت لزوم برای تنظیم پایپ‌لاین استفاده‌شده در این پاس به کار می‌رود.
 
 ```js
 const BUFFER_SIZE = 1000;
 
 // …
 
-// Create GPUCommandEncoder to encode commands to issue to the GPU
+// ایجاد GPUCommandEncoder برای رمزگذاری دستورهایی که به GPU ارسال می‌شوند
 const commandEncoder = device.createCommandEncoder();
 
-// Initiate compute pass
+// شروع پاس محاسباتی
 const passEncoder = commandEncoder.beginComputePass();
 
-// Issue commands
+// ارسال دستورها
 passEncoder.setPipeline(computePipeline);
 passEncoder.setBindGroup(0, bindGroup);
 passEncoder.dispatchWorkgroups(Math.ceil(BUFFER_SIZE / 64));
 
-// End the render pass
+// پایان پاس رندر
 passEncoder.end();
 
-// Copy output buffer to staging buffer
+// کپی بافر خروجی به بافر موقت
 commandEncoder.copyBufferToBuffer(
   output,
-  0, // Source offset
+  0, // افست مبدأ
   stagingBuffer,
-  0, // Destination offset
+  0, // افست مقصد
   BUFFER_SIZE,
 );
 
-// End frame by passing array of command buffers to command queue for execution
+// پایان فریم با ارسال آرایه‌ای از بافرهای فرمان به صف فرمان برای اجرا
 device.queue.submit([commandEncoder.finish()]);
 
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
