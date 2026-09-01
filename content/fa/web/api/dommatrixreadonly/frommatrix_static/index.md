@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: fromMatrix() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/fromMatrix_static"
-status: "needs-translation"
----
-
----
-title: "DOMMatrixReadOnly: fromMatrix() static method"
 short-title: fromMatrix()
 slug: Web/API/DOMMatrixReadOnly/fromMatrix_static
 page-type: web-api-static-method
@@ -14,43 +8,43 @@ browser-compat: api.DOMMatrixReadOnly.fromMatrix_static
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`fromMatrix()`** static method of the {{domxref("DOMMatrixReadOnly")}} interface creates a new {{domxref("DOMMatrixReadOnly")}} object given an existing matrix or an object which provides the values for its properties.
+متد ایستای **`fromMatrix()`** از رابط {{domxref("DOMMatrixReadOnly")}} یک شیء جدید {{domxref("DOMMatrixReadOnly")}} ایجاد می‌کند، با گرفتن یک ماتریس موجود یا یک شیء که مقادیر ویژگی‌های آن را فراهم می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 DOMMatrixReadOnly.fromMatrix()
 DOMMatrixReadOnly.fromMatrix(other)
 ```
 
-### Parameters
+### پارامترها
 
 - `other` {{optional_inline}}
-  - : A {{domxref("DOMMatrix")}}, {{domxref("DOMMatrixReadOnly")}}, or an object with the same properties. All properties default to `0`. The properties are:
+  - : یک {{domxref("DOMMatrix")}}، {{domxref("DOMMatrixReadOnly")}}، یا یک شیء با همان ویژگی‌ها. همه ویژگی‌ها به‌طور پیش‌فرض `0` هستند. ویژگی‌ها عبارت‌اند از:
     - `is2D`
-      - : A boolean. `true` if the matrix should be created as a 2D matrix. Defaults to `false` if at least one of `m13`, `m14`, `m23`, `m24`, `m31`, `m32`, `m34`, or `m43` is non-zero, or at least one of `m33` or `m44` is not 1; otherwise, defaults to `true`.
+      - : یک مقدار بولین (Boolean). `true` اگر ماتریس باید به‌صورت ماتریس دوبعدی ساخته شود. پیش‌فرض `false` است اگر حداقل یکی از `m13`، `m14`، `m23`، `m24`، `m31`، `m32`، `m34`، یا `m43` غیرصفر باشد، یا حداقل یکی از `m33` یا `m44` برابر با `1` نباشد؛ در غیر این صورت، پیش‌فرض `true` است.
     - `m11`, `m12`, `m13`, `m14`, `m21`, `m22`, `m23`, `m24`, `m31`, `m32`, `m33`, `m34`, `m41`, `m42`, `m43`, `m44`
-      - : Numbers representing each component of a 4×4 matrix, where `m11` through `m14` are the first column, `m21` through `m24` are the second column, and so forth. `m11`, `m22`, `m33`, and `m44` default to `1`, and all other components default to `0`.
+      - : اعدادی که هر مؤلفه از یک ماتریس ۴×۴ را نشان می‌دهند، که در آن `m11` تا `m14` ستون اول، `m21` تا `m24` ستون دوم، و به همین ترتیب هستند. `m11`, `m22`, `m33`, و `m44` پیش‌فرض `1` دارند و همه مؤلفه‌های دیگر پیش‌فرض `0` دارند.
 
-        If `is2D` is explicitly set to `true`, `m13`, `m14`, `m23`, `m24`, `m31`, `m32`, `m34`, or `m43` must either be omitted or set to `0`, and `m33` and `m44` must either be omitted or set to `1`.
+        اگر `is2D` به صراحت روی `true` تنظیم شود، `m13`, `m14`, `m23`, `m24`, `m31`, `m32`, `m34`, یا `m43` باید یا حذف شوند یا روی `0` تنظیم شوند، و `m33` و `m44` باید یا حذف شوند یا روی `1` تنظیم شوند.
 
     - `a`, `b`, `c`, `d`, `e`, `f`
-      - : Aliases for `m11`, `m12`, `m21`, `m22`, `m41`, and `m42`, respectively, for convenience when initializing 2D matrices. If these aliases are provided with the `m` counterparts, their values must be equal.
+      - : به ترتیب نام‌های مستعار برای `m11`, `m12`, `m21`, `m22`, `m41`, و `m42` هستند، برای سهولت هنگام مقداردهی اولیه ماتریس‌های دوبعدی. اگر این نام‌های مستعار همراه با معادل‌های `m` ارائه شوند، مقادیر آن‌ها باید برابر باشند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("DOMMatrixReadOnly")}} object.
+یک شیء {{domxref("DOMMatrixReadOnly")}}.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the provided object's properties are inconsistent (for example, if both `a` and `m11` are provided but have different values).
+  - : پرتاب می‌شود اگر ویژگی‌های شیء ارائه‌شده ناسازگار باشند (برای مثال، اگر هر دو `a` و `m11` ارائه شده باشند اما مقادیر متفاوتی داشته باشند).
 
-## Examples
+## نمونه‌ها
 
-### Creating a matrix from an object
+### ایجاد ماتریس از روی یک شیء
 
-This example creates a `DOMMatrixReadOnly` by providing matrix values in an object.
+این مثال یک `DOMMatrixReadOnly` را با ارائه مقادیر ماتریس در یک شیء ایجاد می‌کند.
 
 ```js
 const matrix = DOMMatrixReadOnly.fromMatrix({
@@ -70,9 +64,9 @@ console.log(matrix.is2D);
 // Output: true
 ```
 
-### Creating a matrix from an existing matrix
+### ایجاد ماتریس از روی یک ماتریس موجود
 
-This example creates a new `DOMMatrixReadOnly` from an existing `DOMMatrixReadOnly`.
+این مثال یک `DOMMatrixReadOnly` جدید را از یک `DOMMatrixReadOnly` موجود ایجاد می‌کند.
 
 ```js
 const matrix1 = new DOMMatrixReadOnly([1, 0, 0, 1, 100, 100]);
@@ -82,9 +76,9 @@ console.log(matrix2.toString());
 // Output: matrix(1, 0, 0, 1, 100, 100)
 ```
 
-### Creating a default identity matrix
+### ایجاد ماتریس همانی پیش‌فرض
 
-This example shows how calling `fromMatrix()` with no arguments creates an identity matrix.
+این مثال نشان می‌دهد که چگونه فراخوانی `fromMatrix()` بدون آرگومان، یک ماتریس همانی ایجاد می‌کند.
 
 ```js
 const identityMatrix = DOMMatrixReadOnly.fromMatrix();
@@ -96,16 +90,16 @@ console.log(identityMatrix.isIdentity);
 // Output: true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("DOMMatrixReadOnly.DOMMatrixReadOnly", "DOMMatrixReadOnly()")}} constructor
+- سازنده {{domxref("DOMMatrixReadOnly.DOMMatrixReadOnly", "DOMMatrixReadOnly()")}}
 - {{domxref("DOMMatrixReadOnly.fromFloat32Array_static", "DOMMatrixReadOnly.fromFloat32Array()")}}
 - {{domxref("DOMMatrixReadOnly.fromFloat64Array_static", "DOMMatrixReadOnly.fromFloat64Array()")}}
