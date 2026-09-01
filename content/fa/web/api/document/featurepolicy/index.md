@@ -1,7 +1,5 @@
 ---
 title: "Document: featurePolicy property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/featurePolicy"
-status: "needs-translation"
 ---
 
 ---
@@ -17,16 +15,16 @@ browser-compat: api.Document.featurePolicy
 
 {{APIRef("Feature Policy")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`featurePolicy`** read-only property of the {{domxref("Document")}} interface returns the {{domxref("FeaturePolicy")}} interface which provides a simple API for inspecting the [Permissions Policies](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) applied to a specific document.
+**`featurePolicy`** 只读属性属于 {{domxref("Document")}} 接口，返回 {{domxref("FeaturePolicy")}} 接口，后者提供一个简单的 API，用于检查应用于特定文档的[权限策略](/en-US/docs/Web/HTTP/Guides/Permissions_Policy)。
 
-## Value
+## 值
 
-A {{domxref("FeaturePolicy")}} object that can be used to inspect the Permissions Policy settings applied to the document.
+一个 {{domxref("FeaturePolicy")}} 对象，可用于检查应用于该文档的权限策略设置。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
