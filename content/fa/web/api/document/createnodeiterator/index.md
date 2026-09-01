@@ -1,11 +1,5 @@
 ---
 title: "Document: createNodeIterator() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createNodeIterator"
-status: "needs-translation"
----
-
----
-title: "Document: createNodeIterator() method"
 short-title: createNodeIterator()
 slug: Web/API/Document/createNodeIterator
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.Document.createNodeIterator
 
 {{APIRef("DOM")}}
 
-The **`Document.createNodeIterator()`** method returns a new [`NodeIterator`](/en-US/docs/Web/API/NodeIterator) object.
+متد **`Document.createNodeIterator()`** یک شیء [`NodeIterator`](/en-US/docs/Web/API/NodeIterator) جدید برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 createNodeIterator(root)
@@ -24,46 +18,43 @@ createNodeIterator(root, whatToShow)
 createNodeIterator(root, whatToShow, filter)
 ```
 
-### Parameters
+### پارامترها
 
 - `root`
-  - : The root node at which to begin the {{ domxref("NodeIterator") }}'s traversal.
+  - : گره ریشه‌ای که پیمایش {{ domxref("NodeIterator") }} از آن آغاز می‌شود.
 
 - `whatToShow` {{optional_inline}}
-  - : An optional `unsigned long` representing a bitmask created by
-    combining the constant properties of `NodeFilter`.
-    It is a convenient way of filtering for certain types of node. It defaults to
-    `0xFFFFFFFF` representing the `SHOW_ALL` constant.
+  - : یک `unsigned long` اختیاری که یک bitmask ایجاد شده با ترکیب ثابت‌های `NodeFilter` است. این یک روش مناسب برای فیلتر کردن انواع خاصی از گره‌ها است. به طور پیش‌فرض مقدار `0xFFFFFFFF` را دارد که نمایانگر ثابت `SHOW_ALL` است.
 
-    | Constant                                                 | Numerical value | Description                                       |
+    | ثابت                                                     | مقدار عددی      | توضیحات                                          |
     | -------------------------------------------------------- | --------------- | ------------------------------------------------- |
-    | `NodeFilter.SHOW_ALL`                                    | `0xFFFFFFFF`    | Shows all nodes.                                  |
-    | `NodeFilter.SHOW_ATTRIBUTE`                              | `0x2`           | Shows {{domxref("Attr")}} nodes.                  |
-    | `NodeFilter.SHOW_CDATA_SECTION`                          | `0x8`           | Shows {{domxref("CDATASection")}} nodes.          |
-    | `NodeFilter.SHOW_COMMENT`                                | `0x80`          | Shows {{domxref("Comment")}} nodes.               |
-    | `NodeFilter.SHOW_DOCUMENT`                               | `0x100`         | Shows {{domxref("Document")}} nodes.              |
-    | `NodeFilter.SHOW_DOCUMENT_FRAGMENT`                      | `0x400`         | Shows {{domxref("DocumentFragment")}} nodes.      |
-    | `NodeFilter.SHOW_DOCUMENT_TYPE`                          | `0x200`         | Shows {{domxref("DocumentType")}} nodes.          |
-    | `NodeFilter.SHOW_ELEMENT`                                | `0x1`           | Shows {{domxref("Element")}} nodes.               |
-    | `NodeFilter.SHOW_ENTITY` {{deprecated_inline}}           | `0x20`          | Legacy, no longer effective.                      |
-    | `NodeFilter.SHOW_ENTITY_REFERENCE` {{deprecated_inline}} | `0x10`          | Legacy, no longer effective.                      |
-    | `NodeFilter.SHOW_NOTATION` {{deprecated_inline}}         | `0x800`         | Legacy, no longer effective.                      |
-    | `NodeFilter.SHOW_PROCESSING_INSTRUCTION`                 | `0x40`          | Shows {{domxref("ProcessingInstruction")}} nodes. |
-    | `NodeFilter.SHOW_TEXT`                                   | `0x4`           | Shows {{domxref("Text")}} nodes.                  |
+    | `NodeFilter.SHOW_ALL`                                    | `0xFFFFFFFF`    | همه گره‌ها را نشان می‌دهد.                        |
+    | `NodeFilter.SHOW_ATTRIBUTE`                              | `0x2`           | گره‌های {{domxref("Attr")}} را نشان می‌دهد.       |
+    | `NodeFilter.SHOW_CDATA_SECTION`                          | `0x8`           | گره‌های {{domxref("CDATASection")}} را نشان می‌دهد. |
+    | `NodeFilter.SHOW_COMMENT`                                | `0x80`          | گره‌های {{domxref("Comment")}} را نشان می‌دهد.    |
+    | `NodeFilter.SHOW_DOCUMENT`                               | `0x100`         | گره‌های {{domxref("Document")}} را نشان می‌دهد.   |
+    | `NodeFilter.SHOW_DOCUMENT_FRAGMENT`                      | `0x400`         | گره‌های {{domxref("DocumentFragment")}} را نشان می‌دهد. |
+    | `NodeFilter.SHOW_DOCUMENT_TYPE`                          | `0x200`         | گره‌های {{domxref("DocumentType")}} را نشان می‌دهد. |
+    | `NodeFilter.SHOW_ELEMENT`                                | `0x1`           | گره‌های {{domxref("Element")}} را نشان می‌دهد.    |
+    | `NodeFilter.SHOW_ENTITY` {{deprecated_inline}}           | `0x20`          | قدیمی، دیگر مؤثر نیست.                            |
+    | `NodeFilter.SHOW_ENTITY_REFERENCE` {{deprecated_inline}} | `0x10`          | قدیمی، دیگر مؤثر نیست.                            |
+    | `NodeFilter.SHOW_NOTATION` {{deprecated_inline}}         | `0x800`         | قدیمی، دیگر مؤثر نیست.                            |
+    | `NodeFilter.SHOW_PROCESSING_INSTRUCTION`                 | `0x40`          | گره‌های {{domxref("ProcessingInstruction")}} را نشان می‌دهد. |
+    | `NodeFilter.SHOW_TEXT`                                   | `0x4`           | گره‌های {{domxref("Text")}} را نشان می‌دهد.       |
 
     > [!NOTE]
-    > The `NodeFilter.SHOW_ATTRIBUTE` constant is only effective when the root is an attribute node. Since the parent of any `Attr` node is always `null`, {{DOMXref("TreeWalker.nextNode()")}} and {{DOMXref("TreeWalker.previousNode()")}} will never return an `Attr` node. To traverse `Attr` nodes, use {{DOMXref("Element.attributes")}} instead.
+    > ثابت `NodeFilter.SHOW_ATTRIBUTE` تنها زمانی مؤثر است که ریشه یک گره ویژگی (attribute) باشد. از آنجا که والد هر گره `Attr` همیشه `null` است، {{DOMXref("TreeWalker.nextNode()")}} و {{DOMXref("TreeWalker.previousNode()")}} هرگز یک گره `Attr` را برنمی‌گردانند. برای پیمایش گره‌های `Attr`، از {{DOMXref("Element.attributes")}} استفاده کنید.
 
 - `filter` {{optional_inline}}
-  - : A callback function or an object with an `acceptNode()` method. The function or method will be called for each node in the subtree based at root which is accepted as included by the whatToShow flag to determine whether or not to include it in the list of iterable nodes. The method should return one of `NodeFilter.FILTER_ACCEPT`, `NodeFilter.FILTER_REJECT`, or `NodeFilter.FILTER_SKIP`. See the [Example](#examples).
+  - : یک تابع callback یا یک شیء با متد `acceptNode()`. این تابع یا متد برای هر گره در زیردرخت مبتنی بر ریشه که توسط پرچم whatToShow پذیرفته شده است فراخوانی می‌شود تا مشخص کند که آیا آن گره در فهرست گره‌های قابل پیمایش قرار گیرد یا نه. متد باید یکی از مقادیر `NodeFilter.FILTER_ACCEPT`، `NodeFilter.FILTER_REJECT` یا `NodeFilter.FILTER_SKIP` را برگرداند. به [مثال](#examples) مراجعه کنید.
 
-    For `createNodeIterator`, the values `NodeFilter.FILTER_REJECT` and `NodeFilter.FILTER_SKIP` are equivalent. This node will not be included in the list of iterable nodes, but its children will continue to be iterated over.
+    برای `createNodeIterator`، مقادیر `NodeFilter.FILTER_REJECT` و `NodeFilter.FILTER_SKIP` معادل هستند. این گره در فهرست گره‌های قابل پیمایش قرار نمی‌گیرد، اما فرزندان آن همچنان پیمایش می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-A new [`NodeIterator`](/en-US/docs/Web/API/NodeIterator) object.
+یک شیء [`NodeIterator`](/en-US/docs/Web/API/NodeIterator) جدید.
 
-## Examples
+## مثال‌ها
 
 ```js
 const nodeIterator = document.createNodeIterator(
@@ -82,7 +73,7 @@ while ((currentNode = nodeIterator.nextNode())) {
 }
 ```
 
-The same, but using an object with an `acceptNode()` method:
+همان مثال، اما با استفاده از یک شیء دارای متد `acceptNode()`:
 
 ```js
 const nodeIterator = document.createNodeIterator(
@@ -104,10 +95,10 @@ while ((currentNode = nodeIterator.nextNode())) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
