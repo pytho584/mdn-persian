@@ -1,11 +1,5 @@
 ---
 title: "FormData: keys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormData/keys"
-status: "needs-translation"
----
-
----
-title: "FormData: keys() method"
 short-title: keys()
 slug: Web/API/FormData/keys
 page-type: web-api-instance-method
@@ -14,23 +8,23 @@ browser-compat: api.FormData.keys
 
 {{APIRef("XMLHttpRequest API")}} {{AvailableInWorkers}}
 
-The **`FormData.keys()`** method returns an [iterator](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) which iterates through all keys contained in the {{domxref("FormData")}}. The keys are strings.
+روش **`FormData.keys()`** یک [تکرارکننده (iterator)](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) برمی‌گرداند که روی تمام کلیدهای موجود در {{domxref("FormData")}} تکرار می‌کند. کلیدها رشته‌ها هستند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 keys()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-An [`iterator`](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) of {{domxref("FormData")}}'s keys.
+یک [`تکرارکننده`](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) از کلیدهای {{domxref("FormData")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const formData = new FormData();
@@ -43,22 +37,22 @@ for (const key of formData.keys()) {
 }
 ```
 
-The result is:
+نتیجه:
 
 ```plain
 key1
 key2
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using FormData objects](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
+- [استفاده از اشیاء FormData](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
 - {{HTMLElement("Form")}}
