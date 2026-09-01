@@ -1,9 +1,4 @@
----
-title: "FormData: get() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormData/get"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "FormData: get() method"
 short-title: get()
@@ -14,50 +9,48 @@ browser-compat: api.FormData.get
 
 {{APIRef("XMLHttpRequest API")}} {{AvailableInWorkers}}
 
-The **`get()`** method of the {{domxref("FormData")}} interface
-returns the first value associated with a given key from within a `FormData`
-object. If you expect multiple values and want all of them, use the
-{{domxref("FormData.getAll()","getAll()")}} method instead.
+متد **`get()`** از رابط {{domxref("FormData")}} اولین مقداری را که با یک کلید مشخص در یک شیء `FormData` مرتبط است، برمی‌گرداند. اگر انتظار چندین مقدار دارید و همه‌ی آنها را می‌خواهید، از متد {{domxref("FormData.getAll()","getAll()")}} استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 get(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : A string representing the name of the key you want to retrieve.
+  - : یک رشته (string) که نام کلیدی را که می‌خواهید بازیابی کنید، مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A value whose key matches the specified `name`. Otherwise, [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null).
+یک مقدار که کلید آن با `name` مشخص‌شده مطابقت دارد. در غیر این صورت، [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null).
 
-## Examples
+## مثال‌ها
 
-If we add two `username` values to a {{domxref("FormData")}} using {{domxref("FormData.append", "append()")}}:
+اگر دو مقدار `username` را با استفاده از {{domxref("FormData.append", "append()")}} به یک {{domxref("FormData")}} اضافه کنیم:
 
 ```js
 formData.append("username", "Chris");
 formData.append("username", "Bob");
 ```
 
-The following `get()` method will only return the first `username` value:
+متد `get()` زیر تنها اولین مقدار `username` را برمی‌گرداند:
 
 ```js
 formData.get("username"); // Returns "Chris"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using FormData objects](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
+- [استفاده از اشیاء FormData](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
 - {{HTMLElement("Form")}}
+```
