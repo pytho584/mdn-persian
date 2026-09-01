@@ -1,9 +1,4 @@
----
-title: "FileSystemSyncAccessHandle: truncate() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemSyncAccessHandle/truncate"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "FileSystemSyncAccessHandle: truncate() method"
 short-title: truncate()
@@ -14,37 +9,36 @@ browser-compat: api.FileSystemSyncAccessHandle.truncate
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers("dedicated")}}
 
-The **`truncate()`** method of the
-{{domxref("FileSystemSyncAccessHandle")}} interface resizes the file associated with the handle to a specified number of bytes.
+متد **`truncate()`** از رابط {{domxref("FileSystemSyncAccessHandle")}} اندازه فایل مرتبط با دسته را به تعداد مشخصی بایت تغییر می‌دهد.
 
 > [!NOTE]
-> In earlier versions of the spec, {{domxref("FileSystemSyncAccessHandle.close()", "close()")}}, {{domxref("FileSystemSyncAccessHandle.flush()", "flush()")}}, {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}}, and `truncate()` were wrongly specified as asynchronous methods, and older versions of some browsers implement them in this way. However, all current browsers that support these methods implement them as synchronous methods.
+> در نسخه‌های اولیه مشخصات، متدهای {{domxref("FileSystemSyncAccessHandle.close()", "close()")}}، {{domxref("FileSystemSyncAccessHandle.flush()", "flush()")}}، {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}} و `truncate()` به اشتباه به‌عنوان متدهای ناهمزمان (async) مشخص شده بودند و نسخه‌های قدیمی‌تر برخی مرورگرها آن‌ها را به همین صورت پیاده‌سازی کرده‌اند. با این حال، تمام مرورگرهای فعلی که از این متدها پشتیبانی می‌کنند، آن‌ها را به‌عنوان متدهای همزمان (sync) پیاده‌سازی می‌کنند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 truncate(newSize)
 ```
 
-### Parameters
+### پارامترها
 
 - `newSize`
-  - : The number of bytes to resize the file to.
+  - : تعداد بایت‌هایی که فایل باید به آن اندازه تغییر کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref('undefined')}}).
+هیچ‌کدام ({{jsxref('undefined')}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the associated access handle is already closed, or if the modification of the file's binary data otherwise fails.
+  - : در صورتی که دسته دسترسی مرتبط از قبل بسته شده باشد، یا اگر تغییر داده‌های باینری فایل به‌دلایل دیگر ناموفق باشد، پرتاب می‌شود.
 - {{domxref("QuotaExceededError")}}
-  - : Thrown if the `newSize` is larger than the original size of the file, and exceeds the browser's [storage quota](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
+  - : اگر `newSize` بزرگتر از اندازه اصلی فایل باشد و از [سهمیه ذخیره‌سازی](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria) مرورگر فراتر رود، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if the underlying file system does not support setting the file size to the new size.
+  - : اگر سیستم فایل زیرین از تنظیم اندازه فایل به اندازه جدید پشتیبانی نکند، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function truncateFile() {
@@ -65,15 +59,16 @@ async function truncateFile() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
+```
