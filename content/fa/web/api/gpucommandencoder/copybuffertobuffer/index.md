@@ -1,11 +1,5 @@
 ---
 title: "GPUCommandEncoder: copyBufferToBuffer() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyBufferToBuffer"
-status: "needs-translation"
----
-
----
-title: "GPUCommandEncoder: copyBufferToBuffer() method"
 short-title: copyBufferToBuffer()
 slug: Web/API/GPUCommandEncoder/copyBufferToBuffer
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.GPUCommandEncoder.copyBufferToBuffer
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}
 
-The **`copyBufferToBuffer()`** method of the
-{{domxref("GPUCommandEncoder")}} interface encodes a command that copies data from one {{domxref("GPUBuffer")}} to another.
+متد **`copyBufferToBuffer()`** از رابط {{domxref("GPUCommandEncoder")}} دستوری را کدگذاری می‌کند که داده‌ها را از یک {{domxref("GPUBuffer")}} به GPUBuffer دیگری کپی می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 copyBufferToBuffer(source, destination)
@@ -25,40 +18,40 @@ copyBufferToBuffer(source, destination, size)
 copyBufferToBuffer(source, sourceOffset, destination, destinationOffset, size)
 ```
 
-### Parameters
+### پارامترها
 
 - `source`
-  - : The {{domxref("GPUBuffer")}} to copy from.
+  - : {{domxref("GPUBuffer")}} مبدأ که داده‌ها از آن کپی می‌شوند.
 - `sourceOffset` {{optional_inline}}
-  - : The offset, in bytes, into the `source` to begin copying from.
+  - : افست بر حسب بایت در `source` که کپی از آن آغاز می‌شود.
 - `destination`
-  - : The {{domxref("GPUBuffer")}} to copy to.
+  - : {{domxref("GPUBuffer")}} مقصد که داده‌ها به آن کپی می‌شوند.
 - `destinationOffset` {{optional_inline}}
-  - : The offset, in bytes, into the `destination` to begin copying to.
+  - : افست بر حسب بایت در `destination` که کپی به آن آغاز می‌شود.
 - `size` {{optional_inline}}
-  - : The number of bytes to copy.
+  - : تعداد بایت‌هایی که باید کپی شوند.
 
 > [!NOTE]
-> The `sourceOffset` and `destinationOffset` can be omitted if you are copying part of the source buffer at a `0` offset in both the source and destination buffers. The `sourceOffset`, `destinationOffset`, and `size` can be omitted if you are copying the entire source buffer to the destination buffer.
+> اگر در حال کپی کردن بخشی از بافر مبدأ با افست صفر در هر دو بافر مبدأ و مقصد هستید، می‌توانید `sourceOffset` و `destinationOffset` را حذف کنید. اگر کل بافر مبدأ را به بافر مقصد کپی می‌کنید، می‌توانید `sourceOffset`، `destinationOffset` و `size` را حذف کنید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ مقداری ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`copyBufferToBuffer()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUCommandEncoder")}} becomes invalid:
+هنگام فراخوانی **`copyBufferToBuffer()`** باید معیارهای زیر برقرار باشند؛ در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPUCommandEncoder")}} نامعتبر می‌شود:
 
-- The `source`'s {{domxref("GPUBuffer.usage")}} includes the `GPUBufferUsage.COPY_SRC` flag.
-- The `destination`'s {{domxref("GPUBuffer.usage")}} includes the `GPUBufferUsage.COPY_DST` flag.
-- `size`, `sourceOffset`, and `destinationOffset` are all multiples of 4.
-- The `source`'s {{domxref("GPUBuffer.size")}} is greater than or equal to `sourceOffset` + `size`.
-- The `destination`'s {{domxref("GPUBuffer.size")}} is greater than or equal to `destinationOffset` + `size`.
-- `source` and `destination` are different {{domxref("GPUBuffer")}}s (you can't copy from and to the same buffer).
+- {{domxref("GPUBuffer.usage")}} مربوط به `source` شامل پرچم `GPUBufferUsage.COPY_SRC` باشد.
+- {{domxref("GPUBuffer.usage")}} مربوط به `destination` شامل پرچم `GPUBufferUsage.COPY_DST` باشد.
+- `size`، `sourceOffset` و `destinationOffset` همگی مضربی از ۴ باشند.
+- {{domxref("GPUBuffer.size")}} مربوط به `source` بزرگ‌تر یا مساوی `sourceOffset` + `size` باشد.
+- {{domxref("GPUBuffer.size")}} مربوط به `destination` بزرگ‌تر یا مساوی `destinationOffset` + `size` باشد.
+- `source` و `destination` دو {{domxref("GPUBuffer")}} متفاوت باشند (نمی‌توان از یک بافر به همان بافر کپی کرد).
 
-## Examples
+## مثال‌ها
 
-In our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/), we use `copyBufferToBuffer()` to copy the contents of our `outputBuffer` to the `stagingBuffer`.
+در [نمونه محاسبات پایه](https://mdn.github.io/dom-examples/webgpu-compute-demo/)، از `copyBufferToBuffer()` برای کپی کردن محتویات `outputBuffer` به `stagingBuffer` استفاده می‌کنیم.
 
 ```js
 // …
@@ -97,14 +90,14 @@ commandEncoder.copyBufferToBuffer(
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
