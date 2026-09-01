@@ -1,11 +1,5 @@
 ---
 title: "HTMLOptionElement: Option() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement/Option"
-status: "needs-translation"
----
-
----
-title: "HTMLOptionElement: Option() constructor"
 short-title: Option()
 slug: Web/API/HTMLOptionElement/Option
 page-type: web-api-constructor
@@ -14,10 +8,9 @@ browser-compat: api.HTMLOptionElement.Option
 
 {{APIRef("HTML DOM")}}
 
-The **`Option()`** constructor creates a new
-{{domxref("HTMLOptionElement")}}.
+سازندهٔ **`Option()`** یک {{domxref("HTMLOptionElement")}} جدید می‌سازد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new Option()
@@ -27,35 +20,23 @@ new Option(text, value, defaultSelected)
 new Option(text, value, defaultSelected, selected)
 ```
 
-### Parameters
+### پارامترها
 
 - `text` {{optional_inline}}
-  - : A string representing the content of the element, i.e., the
-    displayed text. If this is not specified, a default value of "" (empty string) is
-    used.
+  - : رشته‌ای که محتوای عنصر را نشان می‌دهد، یعنی متنی که نمایش داده می‌شود. اگر مشخص نشود، مقدار پیش‌فرض `""` (رشتهٔ خالی) استفاده می‌شود.
 - `value` {{optional_inline}}
-  - : A string representing the value of the
-    {{domxref("HTMLOptionElement")}}, i.e., the value attribute of the equivalent
-    {{htmlelement("option")}}. If this is not specified, the value of text is used as the
-    value, e.g., for the associated {{htmlelement("select")}} element's value when the form
-    is submitted to the server.
+  - : رشته‌ای که مقدار {{domxref("HTMLOptionElement")}} را نشان می‌دهد، یعنی ویژگی value معادل {{htmlelement("option")}}. اگر مشخص نشود، مقدار `text` به‌عنوان مقدار استفاده می‌شود، مثلاً برای مقدار عنصر {{htmlelement("select")}} مرتبط وقتی فرم به سرور ارسال می‌شود.
 - `defaultSelected` {{optional_inline}}
-  - : A value of either `true` or `false` that sets the [`selected`](/en-US/docs/Web/HTML/Reference/Elements/option#selected)
-    attribute value, i.e., so that this {{htmlelement("option")}} will be the default value
-    selected in the {{htmlelement("select")}} element when the page is first loaded. If
-    this is not specified, a default value of false is used. Note that a value of true
-    does not set the option to selected if it is not already selected.
+  - : مقداری `true` یا `false` که ویژگی [`selected`](/en-US/docs/Web/HTML/Reference/Elements/option#selected) را تنظیم می‌کند، یعنی این {{htmlelement("option")}} به‌عنوان مقدار پیش‌فرض در عنصر {{htmlelement("select")}} هنگام بارگذاری اولیهٔ صفحه انتخاب می‌شود. اگر مشخص نشود، مقدار پیش‌فرض `false` استفاده می‌شود. توجه کنید که مقدار `true` باعث نمی‌شود گزینه در حالتی که از قبل انتخاب نشده است، انتخاب شود.
 - `selected` {{optional_inline}}
-  - : A value of either `true` or `false` that sets the option's selected state; the default is false
-    (not selected). If omitted, even if the defaultSelected argument is true, the option
-    is not selected.
+  - : مقداری `true` یا `false` که وضعیت انتخاب گزینه را تنظیم می‌کند؛ پیش‌فرض `false` است (انتخاب‌نشده). اگر حذف شود، حتی اگر آرگومان `defaultSelected` برابر `true` باشد، گزینه انتخاب نمی‌شود.
 
-## Examples
+## مثال‌ها
 
-### Just add new options
+### فقط افزودن گزینه‌های جدید
 
 ```js
-/* assuming we have the following HTML
+/* فرض کنید HTML زیر را داریم
 <select id='s'>
 
 </select>
@@ -69,7 +50,7 @@ options.forEach((element, key) => {
 });
 ```
 
-### Append options with different parameters
+### افزودن گزینه‌ها با پارامترهای مختلف
 
 ```html
 <select id="s"></select>
@@ -84,29 +65,29 @@ options.forEach((element, key) => {
     s[key] = new Option(element, s.options.length, false, false);
   }
   if (element === "one") {
-    s[key] = new Option(element, s.options.length, true, false); // Will add the "selected" attribute
+    s[key] = new Option(element, s.options.length, true, false); // ویژگی "selected" را اضافه می‌کند
   }
   if (element === "two") {
-    s[key] = new Option(element, s.options.length, false, true); // Will actually be selected in the view
+    s[key] = new Option(element, s.options.length, false, true); // در واقع در دید کاربر انتخاب می‌شود
   }
 });
 ```
 
-Result:
+نتیجه:
 
 ```html
 <select id="s">
   <option value="0">zero</option>
   <option value="1" selected>one</option>
   <option value="2">two</option>
-  <!-- User will see two as 'selected' -->
+  <!-- کاربر «two» را به‌عنوان انتخاب‌شده می‌بیند -->
 </select>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
