@@ -1,11 +1,5 @@
 ---
 title: "Element: input event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/input_event"
-status: "needs-translation"
----
-
----
-title: "Element: input event"
 short-title: input
 slug: Web/API/Element/input_event
 page-type: web-api-event
@@ -14,19 +8,19 @@ browser-compat: api.Element.input_event
 
 {{APIRef("UI Events")}}
 
-The **`input`** event fires when the `value` of an {{HTMLElement("input")}}, {{HTMLElement("select")}}, or {{HTMLElement("textarea")}} element has been changed as a direct result of a user action (such as typing in a textbox or checking a checkbox).
+رویداد **`input`** زمانی رخ می‌دهد که مقدار (`value`) یک عنصر {{HTMLElement("input")}}، {{HTMLElement("select")}} یا {{HTMLElement("textarea")}} در نتیجهٔ مستقیم یک اقدام کاربر (مانند تایپ کردن در یک جعبه متن یا علامت زدن یک چک‌باکس) تغییر کند.
 
-The event also applies to elements with {{domxref("HTMLElement.contentEditable", "contenteditable")}} enabled, and to any element when {{domxref("Document.designMode", "designMode")}} is turned on. In the case of `contenteditable` and `designMode`, the event target is the _editing host_. If these properties apply to multiple elements, the editing host is the nearest ancestor element whose parent isn't editable.
+این رویداد همچنین برای عناصری که {{domxref("HTMLElement.contentEditable", "contenteditable")}} در آن‌ها فعال است و نیز هر عنصری وقتی {{domxref("Document.designMode", "designMode")}} روشن باشد اعمال می‌شود. در مورد `contenteditable` و `designMode`، هدف رویداد، _میزبان ویرایش_ (editing host) است. اگر این ویژگی‌ها برای چندین عنصر اعمال شوند، میزبان ویرایش، نزدیک‌ترین عنصر بالادستی (ancestor) است که والد آن قابل ویرایش نباشد.
 
-For `<input>` elements with `type=checkbox` or `type=radio`, the `input` event should fire whenever a user toggles the control, per the [HTML Living Standard specification](https://html.spec.whatwg.org/multipage/input.html#the-input-element:event-input-2). However, historically this has not always been the case. Check compatibility, or use the {{domxref("HTMLElement/change_event", "change")}} event instead for elements of these types.
+برای عناصر `<input>` با `type=checkbox` یا `type=radio`، رویداد `input` باید هر بار که کاربر کنترل را تغییر می‌دهد، مطابق [مشخصات HTML Living Standard](https://html.spec.whatwg.org/multipage/input.html#the-input-element:event-input-2) رخ دهد. با این حال، از نظر تاریخی همیشه این‌طور نبوده است. سازگاری را بررسی کنید، یا برای این نوع عناصر به جای آن از رویداد {{domxref("HTMLElement/change_event", "change")}} استفاده کنید.
 
-For {{htmlelement("textarea")}} and {{htmlelement("input")}} elements that accept text input (`type=text`, `type=tel`, etc.), the interface is {{DOMxRef("InputEvent")}}; for others, the interface is {{DOMxRef("Event")}}.
+برای عناصر {{htmlelement("textarea")}} و {{htmlelement("input")}} که ورودی متنی می‌پذیرند (`type=text`، `type=tel` و غیره)، رابط رویداد {{DOMxRef("InputEvent")}} است؛ برای بقیه، رابط رویداد {{DOMxRef("Event")}} است.
 
-The `input` event is fired every time the `value` of the element changes. This is unlike the {{domxref("HTMLElement/change_event", "change")}} event, which only fires when the value is committed, such as by pressing the enter key or selecting a value from a list of options. Note that the `input` event is not fired when JavaScript changes an element's `value` programmatically.
+رویداد `input` هر بار که مقدار (`value`) عنصر تغییر کند، رخ می‌دهد. این برخلاف رویداد {{domxref("HTMLElement/change_event", "change")}} است که فقط زمانی رخ می‌دهد که مقدار ثبت (commit) شود، مثلاً با فشردن کلید Enter یا انتخاب یک مقدار از فهرست گزینه‌ها. توجه داشته باشید که وقتی JavaScript به‌صورت برنامه‌نویسی‌شده مقدار (`value`) یک عنصر را تغییر دهد، رویداد `input` رخ نمی‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("input", (event) => { })
@@ -34,15 +28,15 @@ addEventListener("input", (event) => { })
 oninput = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("InputEvent")}}. Inherits from {{domxref("UIEvent")}}.
+یک {{domxref("InputEvent")}}. از {{domxref("UIEvent")}} به ارث می‌برد.
 
 {{InheritanceDiagram("InputEvent")}}
 
-## Examples
+## مثال‌ها
 
-This example logs the value whenever you change the value of the {{HtmlElement("input")}} element.
+این مثال هر بار که مقدار عنصر {{HtmlElement("input")}} را تغییر دهید، مقدار جدید را ثبت (log) می‌کند.
 
 ### HTML
 
@@ -64,21 +58,21 @@ function updateValue(e) {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events
+- رویدادهای مرتبط
   - {{domxref("Element/beforeinput_event", "beforeinput")}}
   - {{domxref("HTMLElement/change_event", "change")}}
   - {{domxref("HTMLInputElement/invalid_event", "invalid")}}
