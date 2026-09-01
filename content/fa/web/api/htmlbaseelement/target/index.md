@@ -1,11 +1,5 @@
 ---
 title: "HTMLBaseElement: target property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLBaseElement/target"
-status: "needs-translation"
----
-
----
-title: "HTMLBaseElement: target property"
 short-title: target
 slug: Web/API/HTMLBaseElement/target
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.HTMLBaseElement.target
 
 {{ApiRef("HTML DOM")}}
 
-The `target` property of the {{domxref("HTMLBaseElement")}} interface is a string that represents the default target tab to show the resulting output for hyperlinks and form elements.
+ویژگی `target` در رابط {{domxref("HTMLBaseElement")}} یک رشته است که نمایانگر تب هدف پیش‌فرض برای نمایش خروجی حاصل از پیوندها و عناصر فرم می‌باشد.
 
-It reflects the [`target`](/en-US/docs/Web/HTML/Reference/Elements/base#target) attribute of the {{HTMLElement("base")}} element.
+این ویژگی منعکس‌کنندهٔ صفت [`target`](/en-US/docs/Web/HTML/Reference/Elements/base#target) عنصر {{HTMLElement("base")}} است.
 
-## Value
+## مقدار
 
-A string representing the target. Its value can be:
+یک رشته که نمایانگر هدف است. مقدار آن می‌تواند:
 
-- The name of a {{HTMLElement("frame")}}.
-- One of the [keyword with specific values](/en-US/docs/Web/HTML/Reference/Elements/base#target): `_blank`, `_self`, `_parent`, or `_top`.
+- نام یک {{HTMLElement("frame")}}.
+- یکی از [کلمات کلیدی با مقادیر مشخص](/en-US/docs/Web/HTML/Reference/Elements/base#target): `_blank`، `_self`، `_parent`، یا `_top`.
 
-## Example
+## مثال
 
 ```html
 <head>
@@ -38,15 +32,15 @@ const baseElement = document.getElementsByTagName("base")[0];
 console.log(baseElement.target); // Output: '_top'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAnchorElement.target")}} property
 - {{domxref("HTMLAreaElement.target")}} property
