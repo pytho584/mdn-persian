@@ -1,11 +1,5 @@
 ---
 title: "DOMPointReadOnly: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/toJSON"
-status: "needs-translation"
----
-
----
-title: "DOMPointReadOnly: toJSON() method"
 short-title: toJSON()
 slug: Web/API/DOMPointReadOnly/toJSON
 page-type: web-api-instance-method
@@ -14,29 +8,25 @@ browser-compat: api.DOMPointReadOnly.toJSON
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The {{domxref("DOMPointReadOnly")}} method
-`toJSON()` returns an object giving the
-{{Glossary("JSON")}} form of the point object.
+متد `toJSON()` از {{domxref("DOMPointReadOnly")}} شیئی برمی‌گرداند که نمایش {{Glossary("JSON")}} شیء نقطه است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new object whose properties are set to the values in the
-`DOMPoint` or `DOMPointReadOnly` on which the method was called.
+یک شیء جدید که ویژگی‌های آن با مقادیر موجود در `DOMPoint` یا `DOMPointReadOnly` که متد روی آن فراخوانده شده است، مقداردهی می‌شوند.
 
-## Examples
+## مثال‌ها
 
-This example creates a {{domxref("DOMPoint")}} object representing the top-left corner
-of the current window, in screen coordinates, then converts that to JSON.
+این مثال یک شیء {{domxref("DOMPoint")}} می‌سازد که گوشهٔ بالا-چپ پنجرهٔ فعلی را در مختصات صفحه نمایش نشان می‌دهد، سپس آن را به JSON تبدیل می‌کند.
 
 ```js
 const topLeft = new DOMPoint(window.screenX, window.screenY);
@@ -44,10 +34,10 @@ const topLeft = new DOMPoint(window.screenX, window.screenY);
 const pointJSON = topLeft.toJSON();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
