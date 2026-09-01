@@ -1,24 +1,14 @@
 ---
 title: "CustomStateSet: size property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomStateSet/size"
-status: "needs-translation"
----
-
----
-title: "CustomStateSet: size property"
-short-title: size
-slug: Web/API/CustomStateSet/size
-page-type: web-api-instance-property
-browser-compat: api.CustomStateSet.size
 ---
 
 {{APIRef("Web Components")}}
 
-The **`size`** property of the {{domxref("CustomStateSet")}} interface returns the number of values in the `CustomStateSet`.
+خصوصیت **`size`** از رابط {{domxref("CustomStateSet")}} تعداد مقادیر موجود در `CustomStateSet` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer indicating how many properties the `CustomStateSet` has.
+یک عدد صحیح که نشان‌دهنده تعداد خصوصیات موجود در `CustomStateSet` است.
 
 ## Specifications
 
