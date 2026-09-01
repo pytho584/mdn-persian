@@ -1,28 +1,16 @@
 ---
 title: "EditContext: textupdate event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/textupdate_event"
-status: "needs-translation"
----
-
----
-title: "EditContext: textupdate event"
-short-title: textupdate
-slug: Web/API/EditContext/textupdate_event
-page-type: web-api-event
-status:
-  - experimental
-browser-compat: api.EditContext.textupdate_event
 ---
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The `textupdate` event of the {{domxref("EditContext")}} interface fires when the user has made changes to the text or selection of an editable region that's attached to an `EditContext` instance.
+رویداد `textupdate` از رابط {{domxref("EditContext")}} زمانی رخ می‌دهد که کاربر تغییراتی در متن یا انتخاب (selection) یک ناحیه قابل ویرایش که به یک نمونه `EditContext` متصل است، ایجاد کرده باشد.
 
-This event makes it possible to render the updated text and selection in the UI, in response to user input.
+این رویداد امکان رندر کردن متن و انتخاب به‌روز شده در رابط کاربری (UI) را در پاسخ به ورودی کاربر فراهم می‌کند.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی event handler تنظیم کنید.
 
 ```js-nolint
 addEventListener("textupdate", (event) => { })
@@ -32,13 +20,13 @@ ontextupdate = (event) => { }
 
 ## Event type
 
-A {{domxref("TextUpdateEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("TextUpdateEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 ## Examples
 
-### Rendering the updated text on `textupdate`
+### رندر کردن متن به‌روز شده در `textupdate`
 
-In the following example, the `textupdate` event of the EditContext API is used to render the text a user enters in an editable `<canvas>` element.
+در مثال زیر، از رویداد `textupdate` API EditContext برای رندر کردن متنی که کاربر در یک عنصر `<canvas>` قابل ویرایش وارد می‌کند، استفاده شده است.
 
 ```html
 <canvas id="editor-canvas"></canvas>
