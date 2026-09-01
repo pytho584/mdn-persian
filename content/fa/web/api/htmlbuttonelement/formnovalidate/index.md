@@ -1,11 +1,5 @@
 ---
 title: "HTMLButtonElement: formNoValidate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/formNoValidate"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: formNoValidate property"
 short-title: formNoValidate
 slug: Web/API/HTMLButtonElement/formNoValidate
 page-type: web-api-instance-property
@@ -14,30 +8,30 @@ browser-compat: api.HTMLButtonElement.formNoValidate
 
 {{APIRef("HTML DOM")}}
 
-The **`formNoValidate`** property of the {{domxref("HTMLButtonElement")}} interface is a boolean value indicating if the {{htmlelement("form")}} will bypass [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) when submitted via the {{htmlelement("button")}}. It reflects the `<button>` element's [`formnovalidate`](/en-US/docs/Web/HTML/Reference/Elements/button#formnovalidate) attribute.
+ویژگی **`formNoValidate`** در رابط {{domxref("HTMLButtonElement")}} یک مقدار بولی است که نشان می‌دهد آیا {{htmlelement("form")}} هنگام ارسال از طریق {{htmlelement("button")}}، [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) را نادیده می‌گیرد یا خیر. این ویژگی بازتابی از ویژگی [`formnovalidate`](/en-US/docs/Web/HTML/Reference/Elements/button#formnovalidate) عنصر `<button>` است.
 
-Its value overrides the {{domxref("HTMLFormElement.noValidate", "noValidate")}} property of the {{domxref("HTMLFormElement")}} interface if the form is submitted via the button. This property can be retrieved or set.
+مقدار این ویژگی، اگر فرم از طریق دکمه ارسال شود، بر ویژگی {{domxref("HTMLFormElement.noValidate", "noValidate")}} در رابط {{domxref("HTMLFormElement")}} غلبه می‌کند. این ویژگی قابل خواندن و تنظیم است.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const buttonElement = document.getElementById("myButton");
 console.log(buttonElement.formNoValidate);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLButtonElement.reportValidity()")}}
 - {{domxref("HTMLButtonElement.checkValidity()")}}
@@ -48,5 +42,5 @@ console.log(buttonElement.formNoValidate);
 - {{HTMLElement("form")}}
 - {{domxref("HTMLFormElement.noValidate")}}
 - {{domxref("HTMLInputElement.formNoValidate")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
