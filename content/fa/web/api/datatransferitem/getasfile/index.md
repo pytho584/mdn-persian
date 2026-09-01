@@ -1,7 +1,5 @@
 ---
 title: "DataTransferItem: getAsFile() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/getAsFile"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +12,25 @@ browser-compat: api.DataTransferItem.getAsFile
 
 {{APIRef("HTML Drag and Drop API")}}
 
-If the item is a file, the **`DataTransferItem.getAsFile()`** method returns the drag data item's {{domxref("File")}} object.
-If the item is not a file, this method returns `null`.
+اگر آیتم یک فایل باشد، متد **`DataTransferItem.getAsFile()`** شیء {{domxref("File")}} آیتم داده‌ی درگ را برمی‌گرداند. اگر آیتم فایل نباشد، این متد `null` برمی‌گرداند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getAsFile()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-If the drag data item is a file, a {{domxref("File")}} object is returned; otherwise `null` is returned.
+اگر آیتم داده‌ی درگ یک فایل باشد، یک شیء {{domxref("File")}} برگردانده می‌شود؛ در غیر این صورت `null` برگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example shows the use of the `getAsFile()` method in a {{domxref("HTMLElement/drop_event", "drop")}} event handler.
+این مثال استفاده از متد `getAsFile()` را در یک مدیریت‌کننده رویداد {{domxref("HTMLElement/drop_event", "drop")}} نشان می‌دهد.
 
 ```js
 function dropHandler(ev) {
@@ -60,14 +57,14 @@ function dropHandler(ev) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DataTransfer.files")}}
