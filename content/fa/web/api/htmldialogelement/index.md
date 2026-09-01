@@ -1,10 +1,4 @@
 ---
-title: "HTMLDialogElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement"
-status: "needs-translation"
----
-
----
 title: HTMLDialogElement
 slug: Web/API/HTMLDialogElement
 page-type: web-api-interface
@@ -16,60 +10,59 @@ browser-compat:
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLDialogElement`** interface provides methods to manipulate {{HTMLElement("dialog")}} elements. It inherits properties and methods from the {{domxref("HTMLElement")}} interface.
+رابط **`HTMLDialogElement`** متدهایی برای کنترل عناصر {{HTMLElement("dialog")}} فراهم می‌کند. این رابط ویژگی‌ها و متدها را از رابط {{domxref("HTMLElement")}} به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{domxref("HTMLElement")}}._
+_همچنین ویژگی‌ها را از رابط والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLDialogElement.closedBy")}}
-  - : A string that sets or returns the [`closedby`](/en-US/docs/Web/HTML/Reference/Elements/dialog#closedby) HTML attribute, indicating the types of user actions that can be used to close the dialog.
+  - : یک رشته است که صفت HTML [`closedby`](/en-US/docs/Web/HTML/Reference/Elements/dialog#closedby) را تنظیم یا برمی‌گرداند و انواع اقدام‌های کاربر را مشخص می‌کند که می‌توانند برای بستن دیالوگ استفاده شوند.
 - {{domxref("HTMLDialogElement.open")}}
-  - : A boolean value reflecting the [`open`](/en-US/docs/Web/HTML/Reference/Elements/dialog#open) HTML attribute, indicating whether the dialog is available for interaction.
+  - : یک مقدار بولی که صفت HTML [`open`](/en-US/docs/Web/HTML/Reference/Elements/dialog#open) را منعکس می‌کند و نشان می‌دهد که آیا دیالوگ برای تعامل در دسترس است.
 - {{domxref("HTMLDialogElement.returnValue")}}
-  - : A string that sets or returns the return value for the dialog.
+  - : یک رشته که مقدار بازگشتی دیالوگ را تنظیم یا برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
-_Also inherits methods from its parent interface, {{domxref("HTMLElement")}}._
+_همچنین متدها را از رابط والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLDialogElement.close()")}}
-  - : Closes the dialog. An optional string may be passed as an argument, updating the {{domxref("HTMLDialogElement.returnValue", "returnValue")}} of the dialog.
+  - : دیالوگ را می‌بندد. یک رشته اختیاری می‌تواند به‌عنوان آرگومان ارسال شود و {{domxref("HTMLDialogElement.returnValue", "returnValue")}} دیالوگ را به‌روزرسانی کند.
 - {{domxref("HTMLDialogElement.requestClose()")}}
-  - : Requests to close the dialog. An optional string may be passed as an argument, updating the {{domxref("HTMLDialogElement.returnValue", "returnValue")}} of the dialog.
+  - : درخواست بستن دیالوگ را می‌کند. یک رشته اختیاری می‌تواند به‌عنوان آرگومان ارسال شود و {{domxref("HTMLDialogElement.returnValue", "returnValue")}} دیالوگ را به‌روزرسانی کند.
 - {{domxref("HTMLDialogElement.show()")}}
-  - : Displays the dialog modelessly, i.e., still allowing interaction with content outside of the dialog.
+  - : دیالوگ را به‌صورت غیرمودال نمایش می‌دهد، یعنی همچنان امکان تعامل با محتوای خارج از دیالوگ فراهم است.
 - {{domxref("HTMLDialogElement.showModal()")}}
-  - : Displays the dialog as a modal, over the top of any other dialogs that might be present. Everything outside the dialog is {{DOMxRef("HTMLElement.inert", "inert")}} with interactions outside the dialog being blocked.
+  - : دیالوگ را به‌صورت مودال و در بالای هر دیالوگ دیگری که ممکن است وجود داشته باشد نمایش می‌دهد. همه‌چیز خارج از دیالوگ {{DOMxRef("HTMLElement.inert", "inert")}} (غیرفعال) است و تعامل‌های خارج از دیالوگ مسدود می‌شوند.
 
-## Events
+## رویدادها
 
-_Also inherits events from its parent interface, {{DOMxRef("HTMLElement")}}._
+_همچنین رویدادها را از رابط والد خود، {{DOMxRef("HTMLElement")}} به ارث می‌برد._
 
-Listen to these events using {{DOMxRef("EventTarget.addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface.
+برای گوش دادن به این رویدادها از {{DOMxRef("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید یا یک شنونده رویداد را به ویژگی `oneventname` این رابط اختصاص دهید.
 
 - {{domxref("HTMLDialogElement/cancel_event", "cancel")}}
-  - : Fired when the dialog is requested to close, whether with the escape key, or via the {{domxref("HTMLDialogElement.requestClose()", "requestClose()")}} method. If the event is canceled (via {{domxref("Event.preventDefault()")}}), the dialog will remain open. If not canceled, the dialog will close and the {{domxref("HTMLDialogElement/close_event", "close")}} event will be fired.
+  - : هنگامی که درخواست بستن دیالوگ داده می‌شود، چه با کلید <kbd>Esc</kbd> و چه از طریق متد {{domxref("HTMLDialogElement.requestClose()", "requestClose()")}}، این رویداد فعال می‌شود. اگر رویداد لغو شود (از طریق {{domxref("Event.preventDefault()")}})، دیالوگ باز می‌ماند. اگر لغو نشود، دیالوگ بسته می‌شود و رویداد {{domxref("HTMLDialogElement/close_event", "close")}} فعال می‌شود.
 - {{domxref("HTMLDialogElement/close_event", "close")}}
-  - : Fired when the dialog is closed.
+  - : هنگامی که دیالوگ بسته می‌شود، فعال می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Open / close a modal dialog
+### باز کردن / بستن یک دیالوگ مودال
 
-The following example shows a button that, when clicked, uses the {{domxref("HTMLDialogElement.showModal()", "showModal()")}} function to open a modal dialog containing a form.
+مثال زیر دکمه‌ای را نشان می‌دهد که با کلیک روی آن، از تابع {{domxref("HTMLDialogElement.showModal()", "showModal()")}} برای باز کردن یک دیالوگ مودال حاوی فرم استفاده می‌شود.
 
-While open, everything other than the modal dialog's contents is inert.
-You can click the _Close_ button to close the dialog (via the {{domxref("HTMLDialogElement.close()", "close()")}} function), or submit the form via the _Confirm_ button.
+در حالی که دیالوگ باز است، همه‌چیز به‌جز محتوای دیالوگ مودال غیرفعال (inert) است. می‌توانید روی دکمه _Close_ (بستن) کلیک کنید تا دیالوگ (از طریق تابع {{domxref("HTMLDialogElement.close()", "close()")}}) بسته شود، یا فرم را از طریق دکمه _Confirm_ (تأیید) ارسال کنید.
 
-The example demonstrates:
+این مثال موارد زیر را نشان می‌دهد:
 
-1. Closing a form with the {{domxref("HTMLDialogElement.close()", "close()")}} function
-2. Closing a form on form submit and setting the dialog {{domxref("HTMLDialogElement.returnValue", "returnValue")}}
-3. Closing a form with the <kbd>Esc</kbd> key
-4. "state change" events that can be fired on the dialog: {{domxref("HTMLDialogElement/cancel_event", "cancel")}} and {{domxref("HTMLDialogElement/close_event", "close")}}, and the inherited events {{domxref("HTMLElement/beforetoggle_event", "beforetoggle")}}, and {{domxref("HTMLElement/toggle_event", "toggle")}}.
+1. بستن یک فرم با تابع {{domxref("HTMLDialogElement.close()", "close()")}}
+2. بستن فرم هنگام ارسال فرم و تنظیم {{domxref("HTMLDialogElement.returnValue", "returnValue")}} دیالوگ
+3. بستن فرم با کلید <kbd>Esc</kbd>
+4. رویدادهای «تغییر حالت» که می‌توانند روی دیالوگ فعال شوند: {{domxref("HTMLDialogElement/cancel_event", "cancel")}} و {{domxref("HTMLDialogElement/close_event", "close")}}، و رویدادهای به‌ارث‌برده {{domxref("HTMLElement/beforetoggle_event", "beforetoggle")}} و {{domxref("HTMLElement/toggle_event", "toggle")}}.
 
 #### HTML
 
@@ -118,10 +111,9 @@ function log(text) {
 
 #### JavaScript
 
-##### Open the dialog
+##### باز کردن دیالوگ
 
-The code first gets objects for the {{htmlelement("dialog")}} element, the {{htmlelement("button")}} elements, and the {{htmlelement("select")}} element.
-It then adds a listener to call the {{domxref("HTMLDialogElement.showModal()")}} function when the _Open Dialog_ button is clicked.
+کد ابتدا اشیاء مربوط به عنصر {{htmlelement("dialog")}}، عناصر {{htmlelement("button")}} و عنصر {{htmlelement("select")}} را دریافت می‌کند. سپس یک شنونده اضافه می‌کند تا وقتی دکمه _Open Dialog_ کلیک شد، تابع {{domxref("HTMLDialogElement.showModal()")}} فراخوانی شود.
 
 ```js
 const dialog = document.getElementById("dialog");
@@ -134,9 +126,9 @@ openButton.addEventListener("click", () => {
 });
 ```
 
-##### Close the dialog when the _Close_ button is clicked
+##### بستن دیالوگ وقتی دکمه _Close_ کلیک می‌شود
 
-Next we add a listener to the _Close_ button {{domxref("Element/click_event", "click")}} event. The handler set the {{domxref("HTMLDialogElement.returnValue", "returnValue")}} and calls the {{domxref("HTMLDialogElement.close()", "close()")}} function to close the dialog.
+سپس یک شنونده به رویداد {{domxref("Element/click_event", "click")}} دکمه _Close_ اضافه می‌کنیم. کنترل‌کننده مقدار {{domxref("HTMLDialogElement.returnValue", "returnValue")}} را تنظیم می‌کند و تابع {{domxref("HTMLDialogElement.close()", "close()")}} را برای بستن دیالوگ فراخوانی می‌کند.
 
 ```js
 // Close button closes the dialog box
@@ -149,10 +141,9 @@ closeButton.addEventListener("click", () => {
 });
 ```
 
-##### Close the dialog when _Confirm_ button is clicked via form submission
+##### بستن دیالوگ هنگام کلیک روی دکمه _Confirm_ از طریق ارسال فرم
 
-Next we add a listener to the {{htmlelement("form")}} {{domxref("HTMLFormElement.submit_event", "submit")}} event.
-The form is submitted when the required {{htmlelement("select")}} element has a value and the _Confirm_ button is clicked. If the {{htmlelement("select")}} element does not have a value the form will not submit and the dialog will remain open.
+سپس یک شنونده به رویداد {{domxref("HTMLFormElement.submit_event", "submit")}} عنصر {{htmlelement("form")}} اضافه می‌کنیم. فرم زمانی ارسال می‌شود که عنصر الزامی {{htmlelement("select")}} دارای مقدار باشد و دکمه _Confirm_ کلیک شده باشد. اگر عنصر {{htmlelement("select")}} مقدار نداشته باشد، فرم ارسال نمی‌شود و دیالوگ باز می‌ماند.
 
 ```js
 // Confirm button closes dialog if there is a selection.
@@ -168,9 +159,9 @@ form.addEventListener("submit", () => {
 });
 ```
 
-##### Get the `returnValue` on `close`
+##### دریافت `returnValue` در رویداد `close`
 
-Calling {{domxref("HTMLDialogElement.close()", "close()")}} (or successfully submitting a form with `method="dialog"`") fires the {{domxref("HTMLDialogElement/close_event", "close")}} event, which we implement below by logging the return value of the dialog.
+فراخوانی {{domxref("HTMLDialogElement.close()", "close()")}} (یا ارسال موفق فرم با `method="dialog"`") رویداد {{domxref("HTMLDialogElement/close_event", "close")}} را فعال می‌کند که در ادامه با ثبت مقدار بازگشتی دیالوگ در log آن را پیاده‌سازی می‌کنیم.
 
 ```js
 dialog.addEventListener("close", (event) => {
@@ -178,12 +169,9 @@ dialog.addEventListener("close", (event) => {
 });
 ```
 
-##### `cancel` event
+##### رویداد `cancel`
 
-The {{domxref("HTMLDialogElement/cancel_event", "cancel")}} event is fired when "platform specific methods" are used to close the dialog, such as the <kbd>Esc</kbd> key.
-It is also fired when the {{domxref("HTMLDialogElement.requestClose()", "requestClose()")}} method is called.
-The event is "cancelable" which means that we could use it to prevent the dialog from closing.
-Here we just treat the cancel as a "close" operation, and reset the {{domxref("HTMLDialogElement.returnValue", "returnValue")}} to `""` to clear any value that may have been set.
+رویداد {{domxref("HTMLDialogElement/cancel_event", "cancel")}} زمانی فعال می‌شود که از «روش‌های خاص پلتفرم» برای بستن دیالوگ استفاده شود، مانند کلید <kbd>Esc</kbd>. همچنین زمانی که متد {{domxref("HTMLDialogElement.requestClose()", "requestClose()")}} فراخوانی شود، این رویداد فعال می‌شود. این رویداد «قابل لغو» (cancelable) است، یعنی می‌توانیم از آن برای جلوگیری از بسته‌شدن دیالوگ استفاده کنیم. در اینجا ما فقط cancel را به‌عنوان یک عملیات «بستن» در نظر می‌گیریم و مقدار {{domxref("HTMLDialogElement.returnValue", "returnValue")}} را به `""` بازنشانی می‌کنیم تا هر مقدار احتمالی پاک شود.
 
 ```js
 dialog.addEventListener("cancel", (event) => {
@@ -192,15 +180,14 @@ dialog.addEventListener("cancel", (event) => {
 });
 ```
 
-##### `toggle` event
+##### رویداد `toggle`
 
-The {{domxref("HTMLElement/toggle_event", "toggle")}} event (inherited from {{domxref("HTMLElement", "HTMLElement")}}) is fired just after a dialog has opened or closed (but before the {{domxref("HTMLDialogElement/close_event", "close")}} event).
+رویداد {{domxref("HTMLElement/toggle_event", "toggle")}} (که از {{domxref("HTMLElement", "HTMLElement")}} به ارث رسیده است) درست بعد از باز یا بسته‌شدن دیالوگ فعال می‌شود (اما قبل از رویداد {{domxref("HTMLDialogElement/close_event", "close")}}).
 
-Here we add a listener to log when the dialog opens and closes.
+در اینجا یک شنونده اضافه می‌کنیم تا زمان باز و بسته‌شدن دیالوگ را در log ثبت کند.
 
 > [!NOTE]
-> The {{domxref("HTMLElement/toggle_event", "toggle")}} and {{domxref("HTMLElement/beforetoggle_event", "beforetoggle")}} events may not be fired at dialog elements on all browsers.
-> On these browser versions you can instead check the {{domxref("HTMLDialogElement.open", "open")}} property after attempting to open/close the dialog.
+> رویدادهای {{domxref("HTMLElement/toggle_event", "toggle")}} و {{domxref("HTMLElement/beforetoggle_event", "beforetoggle")}} ممکن است روی عناصر dialog در همه مرورگرها فعال نشوند. در این نسخه‌های مرورگر، می‌توانید به‌جای آن پس از تلاش برای باز/بستن دیالوگ، ویژگی {{domxref("HTMLDialogElement.open", "open")}} را بررسی کنید.
 
 ```js
 dialog.addEventListener("toggle", (event) => {
@@ -208,12 +195,11 @@ dialog.addEventListener("toggle", (event) => {
 });
 ```
 
-##### `beforetoggle` event
+##### رویداد `beforetoggle`
 
-The {{domxref("HTMLElement/beforetoggle_event", "beforetoggle")}} event (inherited from {{domxref("HTMLElement", "HTMLElement")}}) is a cancellable event that is fired just before a dialog is opened or closed.
-If needed, this can be used to prevent a dialog from showing, or to perform actions on other elements that are affected by the dialog open/close state, such as adding classes on them to trigger animations.
+رویداد {{domxref("HTMLElement/beforetoggle_event", "beforetoggle")}} (که از {{domxref("HTMLElement", "HTMLElement")}} به ارث رسیده است) یک رویداد قابل لغو است که درست قبل از باز یا بسته‌شدن دیالوگ فعال می‌شود. در صورت نیاز، می‌توان از آن برای جلوگیری از نمایش دیالوگ یا انجام اقدام‌هایی روی عناصر دیگر که تحت تأثیر وضعیت باز/بسته دیالوگ قرار می‌گیرند استفاده کرد، مانند افزودن کلاس‌هایی به آن‌ها برای راه‌اندازی انیمیشن.
 
-In this case we just log the old and new state.
+در این مورد، فقط وضعیت قبلی و جدید را در log ثبت می‌کنیم.
 
 ```js
 dialog.addEventListener("beforetoggle", (event) => {
@@ -230,21 +216,20 @@ dialog.addEventListener("beforetoggle", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-Try out the example below.
-Note that both `Confirm` and `Close` buttons result in the {{domxref("HTMLDialogElement/close_event", "close")}} event being fired, and that the result should reflect the selected dialog option.
+مثال زیر را امتحان کنید. توجه داشته باشید که هر دو دکمه `Confirm` و `Close` باعث فعال‌شدن رویداد {{domxref("HTMLDialogElement/close_event", "close")}} می‌شوند و نتیجه باید منعکس‌کننده گزینه انتخاب‌شده در دیالوگ باشد.
 
 {{EmbedLiveSample("Open / close a modal dialog", '100%', "250px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{htmlelement("dialog")}} element
+- عنصر HTML {{htmlelement("dialog")}}
