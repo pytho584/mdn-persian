@@ -1,11 +1,5 @@
 ---
 title: "Element: removeAttributeNode() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttributeNode"
-status: "needs-translation"
----
-
----
-title: "Element: removeAttributeNode() method"
 short-title: removeAttributeNode()
 slug: Web/API/Element/removeAttributeNode
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.Element.removeAttributeNode
 
 {{ APIRef("DOM") }}
 
-The **`removeAttributeNode()`** method of the {{domxref("Element")}} interface removes the specified {{domxref("Attr")}} node from the element.
+متد **`removeAttributeNode()`** از رابط {{domxref("Element")}}، گره {{domxref("Attr")}} مشخص‌شده را از عنصر حذف می‌کند.
 
-If you don't need to inspect the attribute node before removing it, you can use the {{domxref("Element.removeAttribute()")}} method instead.
+اگر نیازی به بررسی گره ویژگی قبل از حذف آن ندارید، می‌توانید از متد {{domxref("Element.removeAttribute()")}} استفاده کنید.
 
 ## Syntax
 
@@ -27,16 +21,16 @@ removeAttributeNode(attributeNode)
 ### Parameters
 
 - `attributeNode`
-  - : The attribute node to remove from the element.
+  - : گره ویژگی‌ای که باید از عنصر حذف شود.
 
 ### Return value
 
-The attribute node that was removed.
+گره ویژگی‌ای که حذف شده است.
 
 ### Exceptions
 
 - `NotFoundError` {{DOMxRef("DOMException")}}
-  - : Thrown when the element's attribute list does not contain the attribute node.
+  - : زمانی پرتاب می‌شود که فهرست ویژگی‌های عنصر شامل گره ویژگی مورد نظر نباشد.
 
 ## Examples
 
@@ -50,13 +44,9 @@ d.removeAttributeNode(dLang);
 
 ## Notes
 
-If the removed attribute has a default value, it is immediately replaced. The replacing
-attribute has the same namespace URI and local name, as well as the original prefix,
-when applicable.
+اگر ویژگی حذف‌شده دارای مقدار پیش‌فرض باشد، بلافاصله جایگزین می‌شود. ویژگی جایگزین دارای همان URI فضای نام و نام محلی، و همچنین پیشوند اصلی (در صورت وجود) است.
 
-There is no `removeAttributeNodeNS` method; the
-`removeAttributeNode` method can remove both namespaced attributes and
-non-namespaced attributes.
+متدی به نام `removeAttributeNodeNS` وجود ندارد؛ متد `removeAttributeNode` می‌تواند هم ویژگی‌های دارای فضای نام و هم ویژگی‌های بدون فضای نام را حذف کند.
 
 ## Specifications
 
