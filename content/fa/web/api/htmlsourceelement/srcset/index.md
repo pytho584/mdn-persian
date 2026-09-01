@@ -1,11 +1,5 @@
 ---
 title: "HTMLSourceElement: srcset property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSourceElement/srcset"
-status: "needs-translation"
----
-
----
-title: "HTMLSourceElement: srcset property"
 short-title: srcset
 slug: Web/API/HTMLSourceElement/srcset
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLSourceElement.srcset
 
 {{APIRef("HTML DOM")}}
 
-The **`srcset`** property of the {{domxref("HTMLSourceElement")}} interface is a string containing a comma-separated list of candidate images.
+ویژگی **`srcset`** در رابط {{domxref("HTMLSourceElement")}} یک رشته است که فهرستی از تصاویر نامزد (candidate images) را با جداسازی کاما در خود دارد.
 
-Each candidate image includes the URL of an image resource to use as the source for the element and optionally a descriptor indicating the circumstances in which the image should be used. The descriptor is either a number followed by `'w'`, indicating the element width, or a number followed by `'x'`, indicating the device pixel density.
+هر تصویر نامزد شامل URL یک منبع تصویری است که به‌عنوان منبع عنصر استفاده می‌شود و به‌صورت اختیاری یک توصیفگر (descriptor) دارد که شرایط استفاده از آن تصویر را مشخص می‌کند. این توصیفگر یا یک عدد است که بعد از آن `'w'` می‌آید (نشان‌دهنده عرض عنصر) و یا یک عدد است که بعد از آن `'x'` می‌آید (نشان‌دهنده تراکم پیکسلی دستگاه).
 
-It reflects the `srcset` attribute of the {{HTMLElement("source")}} element nested in a {{htmlelement("picture")}} element. It has no meaning and is ignored when it is nested in an {{htmlelement("audio")}} or {{htmlelement("video")}} element, which use the {{domxref("HTMLSourceElement.src", "src")}} attribute instead.
+این ویژگی منعکس‌کننده ویژگی `srcset` در عنصر {{HTMLElement("source")}} است که درون یک عنصر {{htmlelement("picture")}} قرار می‌گیرد. زمانی که عنصر `source` درون یک عنصر {{htmlelement("audio")}} یا {{htmlelement("video")}} قرار داشته باشد، این ویژگی هیچ معنایی ندارد و نادیده گرفته می‌شود؛ این عناصر در عوض از ویژگی {{domxref("HTMLSourceElement.src", "src")}} استفاده می‌کنند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```html
 <picture>
@@ -41,15 +35,15 @@ console.log(el.srcset); // Output: "smile.png, smile-1.5x.png 1.5x, smile-large 
 el.srcset = "smile.png, smile-med.png 600w, smile-large.png 800w"; // Updates the srcset value
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLSourceElement.type")}}
 - {{domxref("HTMLSourceElement.src")}}
