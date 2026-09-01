@@ -1,7 +1,5 @@
 ---
 title: "Highlight: delete() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Highlight/delete"
-status: "needs-translation"
 ---
 
 ---
@@ -15,9 +13,9 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`delete()`** method of the {{domxref("Highlight")}} interface removes a specified {{domxref("AbstractRange")}} object from a `Highlight` object.
+متد **`delete()`** از رابط {{domxref("Highlight")}} یک شیء {{domxref("AbstractRange")}} مشخص را از یک شیء `Highlight` حذف می‌کند.
 
-`Highlight` is a {{jsxref("Set")}}-like object, so this is similar to using {{jsxref("Set.delete()")}}.
+`Highlight` یک شیء شبیه به {{jsxref("Set")}} است، بنابراین این متد مشابه استفاده از {{jsxref("Set.delete()")}} است.
 
 ## Syntax
 
@@ -28,15 +26,15 @@ delete(range)
 ### Parameters
 
 - `range`
-  - : The {{domxref("AbstractRange")}} object to remove from the `Highlight`.
+  - : شیء {{domxref("AbstractRange")}} که باید از `Highlight` حذف شود.
 
 ### Return value
 
-Returns `true` if `range` was already in `Highlight`; otherwise `false`.
+اگر `range` قبلاً در `Highlight` وجود داشته باشد `true` و در غیر این صورت `false` بازمی‌گرداند.
 
 ## Examples
 
-The code snippet below shows how to create a new highlight with two ranges, and then delete one of them:
+قطعه کد زیر نحوه ایجاد یک هایلایت جدید با دو ناحیه و سپس حذف یکی از آنها را نشان می‌دهد:
 
 ```js
 const range1 = new Range();
