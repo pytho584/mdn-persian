@@ -1,10 +1,4 @@
 ---
-title: "EcKeyImportParams"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EcKeyImportParams"
-status: "needs-translation"
----
-
----
 title: EcKeyImportParams
 slug: Web/API/EcKeyImportParams
 page-type: web-api-interface
@@ -13,31 +7,31 @@ spec-urls: https://w3c.github.io/webcrypto/#dfn-EcKeyImportParams
 
 {{ APIRef("Web Crypto API") }}
 
-The **`EcKeyImportParams`** dictionary of the [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) represents the object that should be passed as the `algorithm` parameter into {{domxref("SubtleCrypto.importKey()")}} or {{domxref("SubtleCrypto.unwrapKey()")}}, when generating any elliptic-curve-based key pair: that is, when the algorithm is identified as either of [ECDSA](/en-US/docs/Web/API/SubtleCrypto/sign#ecdsa) or [ECDH](/en-US/docs/Web/API/SubtleCrypto/deriveKey#ecdh).
+دیکشنری **`EcKeyImportParams`** از [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) نمایانگر شیئی است که باید به عنوان پارامتر `algorithm` به متدهای {{domxref("SubtleCrypto.importKey()")}} یا {{domxref("SubtleCrypto.unwrapKey()")}} ارسال شود، هنگام تولید هر جفت‌کلید مبتنی بر منحنی بیضوی: یعنی زمانی که الگوریتم به عنوان یکی از [ECDSA](/en-US/docs/Web/API/SubtleCrypto/sign#ecdsa) یا [ECDH](/en-US/docs/Web/API/SubtleCrypto/deriveKey#ecdh) شناسایی شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `name`
-  - : A string. This should be set to `ECDSA` or `ECDH`, depending on the algorithm you want to use.
+  - : یک رشته. این باید به `ECDSA` یا `ECDH` تنظیم شود، بسته به الگوریتمی که می‌خواهید استفاده کنید.
 - `namedCurve`
-  - : A string representing the name of the elliptic curve to use. This may be any of the following names for [NIST](https://www.nist.gov/)-approved curves:
+  - : یک رشته که نام منحنی بیضوی مورد استفاده را نشان می‌دهد. این می‌تواند یکی از نام‌های زیر برای منحنی‌های تأیید شده توسط [NIST](https://www.nist.gov/) باشد:
     - `P-256`
     - `P-384`
     - `P-521`
 
-## Examples
+## مثال‌ها
 
-See the examples for {{domxref("SubtleCrypto.importKey()")}}.
+مثال‌های مربوط به {{domxref("SubtleCrypto.importKey()")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
-Browsers that support the "ECDH" or "ECDSA" algorithms for the {{domxref("SubtleCrypto.importKey()")}} or {{domxref("SubtleCrypto.wrapKey()")}} methods will support this type.
+مرورگرهایی که از الگوریتم‌های "ECDH" یا "ECDSA" برای متدهای {{domxref("SubtleCrypto.importKey()")}} یا {{domxref("SubtleCrypto.wrapKey()")}} پشتیبانی می‌کنند، از این نوع پشتیبانی خواهند کرد.
 
-## See also
+## همچنین ببینید
 
-- {{domxref("SubtleCrypto.importKey()")}}.
-- {{domxref("SubtleCrypto.unwrapKey()")}}.
+- {{domxref("SubtleCrypto.importKey()")}}
+- {{domxref("SubtleCrypto.unwrapKey()")}}
