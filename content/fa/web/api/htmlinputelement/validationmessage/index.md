@@ -1,7 +1,5 @@
 ---
 title: "HTMLInputElement: validationMessage property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/validationMessage"
-status: "needs-translation"
 ---
 
 ---
@@ -14,32 +12,32 @@ browser-compat: api.HTMLInputElement.validationMessage
 
 {{APIRef("HTML DOM")}}
 
-The **`validationMessage`** read-only property of the {{domxref("HTMLInputElement")}} interface returns a string representing a localized message that describes the validation constraints that the {{htmlelement("input")}} control does not satisfy (if any).
+ویژگی فقط‌خواندنی **`validationMessage`** از رابط {{domxref("HTMLInputElement")}} رشته‌ای را برمی‌گرداند که نمایانگر یک پیام محلی‌سازی‌شده است و محدودیت‌های اعتبارسنجی‌ای را توصیف می‌کند که کنترل {{htmlelement("input")}} آن‌ها را برآورده نمی‌کند (در صورت وجود).
 
-If the `<input>` element is not a candidate for constraint validation ({{domxref("HTMLInputElement.willValidate")}} is `false`), or it satisfies its constraints, the value is the empty string (`""`).
+اگر عنصر `<input>` کاندیدای اعتبارسنجی محدودیت نباشد (یعنی {{domxref("HTMLInputElement.willValidate")}} برابر با `false` باشد)، یا محدودیت‌های خود را برآورده کند، مقدار این ویژگی، رشتهٔ خالی (`""`) خواهد بود.
 
-If the element is a candidate for constraint validation (`willValidate` is `true`) and the constraints are not met (the {{domxref("HTMLInputElement.validity")}} object's `valid` property is `false`), the value is the error message that would be shown to the user during validation.
+اگر عنصر کاندیدای اعتبارسنجی محدودیت باشد (`willValidate` برابر با `true` باشد) و محدودیت‌ها برآورده نشوند (ویژگی `valid` آبجکت {{domxref("HTMLInputElement.validity")}} برابر با `false` باشد)، مقدار این ویژگی، همان پیام خطایی است که در هنگام اعتبارسنجی به کاربر نمایش داده می‌شود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Example
+## مثال
 
 ```js
 const input = document.getElementById("myInput");
 const errorMessage = input.validationMessage;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLelement("input")}}
 - {{domxref("HTMLInputElement")}}
@@ -48,6 +46,6 @@ const errorMessage = input.validationMessage;
 - {{domxref("HTMLInputElement.checkValidity()")}}
 - {{domxref("HTMLInputElement.reportValidity()")}}
 - {{domxref("HTMLInputElement.setCustomValidity()")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
-- CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+- [یادگیری: اعتبارسنجی فرم سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}}
