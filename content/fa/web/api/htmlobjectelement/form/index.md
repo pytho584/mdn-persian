@@ -1,11 +1,5 @@
 ---
 title: "HTMLObjectElement: form property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/form"
-status: "needs-translation"
----
-
----
-title: "HTMLObjectElement: form property"
 short-title: form
 slug: Web/API/HTMLObjectElement/form
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.HTMLObjectElement.form
 
 {{APIRef("HTML DOM")}}
 
-The **`form`** read-only property of the {{domxref("HTMLObjectElement")}} interface returns an {{domxref("HTMLFormElement")}} object that owns this {{htmlelement("object")}}, or `null` if this object element is not owned by any form.
+خصوصیت فقط-خواندنی **`form`** از رابط {{domxref("HTMLObjectElement")}} یک شیء {{domxref("HTMLFormElement")}} را برمی‌گرداند که مالک این {{htmlelement("object")}} است، یا `null` اگر این عنصر object توسط هیچ فرمی مالکیت نشده باشد.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLFormElement")}} or `null`.
+یک {{domxref("HTMLFormElement")}} یا `null`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLObjectElement")}}
 - {{domxref("HTMLFormElement")}}
 - {{HTMLElement("object")}}
-- [HTML forms guide](/en-US/docs/Learn_web_development/Extensions/Forms)
+- [راهنمای فرم‌های HTML](/en-US/docs/Learn_web_development/Extensions/Forms)
