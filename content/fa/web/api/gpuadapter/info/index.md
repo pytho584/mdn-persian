@@ -1,11 +1,5 @@
 ---
 title: "GPUAdapter: info property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/info"
-status: "needs-translation"
----
-
----
-title: "GPUAdapter: info property"
 short-title: info
 slug: Web/API/GPUAdapter/info
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.GPUAdapter.info
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`info`** read-only property of the
-{{domxref("GPUAdapter")}} interface returns a {{domxref("GPUAdapterInfo")}} object containing identifying information about the adapter.
+ویژگی فقط‌خواندنی **`info`** در رابط {{domxref("GPUAdapter")}} یک شیء {{domxref("GPUAdapterInfo")}} برمی‌گرداند که حاوی اطلاعات شناسایی دربارهٔ آداپتور است.
 
-## Value
+## مقدار
 
-A {{domxref("GPUAdapterInfo")}} object instance.
+یک نمونهٔ شیء {{domxref("GPUAdapterInfo")}}.
 
-## Examples
+## مثال‌ها
 
-### Basic info usage
+### استفادهٔ پایه از info
 
 ```js
 const adapter = await navigator.gpu.requestAdapter();
@@ -36,14 +29,14 @@ console.log(adapterInfo.vendor);
 console.log(adapterInfo.architecture);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
