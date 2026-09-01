@@ -1,11 +1,5 @@
 ---
 title: "FeaturePolicy: allowsFeature() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FeaturePolicy/allowsFeature"
-status: "needs-translation"
----
-
----
-title: "FeaturePolicy: allowsFeature() method"
 short-title: allowsFeature()
 slug: Web/API/FeaturePolicy/allowsFeature
 page-type: web-api-instance-method
@@ -17,36 +11,29 @@ browser-compat: api.FeaturePolicy.allowsFeature
 
 {{APIRef("Feature Policy API")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`allowsFeature()`** method of
-the {{DOMxRef("FeaturePolicy")}} interface enables introspection of individual
-directives of the [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) it is run on. It returns a {{JSxRef("Boolean")}}
-that is `true` if and only if the specified feature is allowed in the
-specified context (or the default context if no context is specified).
+متد **`allowsFeature()`** از رابط {{DOMxRef("FeaturePolicy")}} امکان بررسی دستورهای جداگانه‌ی [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) اجراشده روی آن را فراهم می‌کند. این متد یک {{JSxRef("Boolean")}} برمی‌گرداند که اگر و فقط اگر ویژگی مشخص‌شده در زمینه‌ی مشخص‌شده (یا در زمینه‌ی پیش‌فرض، اگر زمینه‌ای مشخص نشده باشد) مجاز باشد، مقدار آن `true` است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 allowsFeature(feature)
 allowsFeature(feature, origin)
 ```
 
-### Parameters
+### پارامترها
 
 - `feature`
-  - : The specific feature name to check its availability.
+  - : نام ویژگی خاصی که می‌خواهید در دسترس بودن آن را بررسی کنید.
 - `origin` {{Optional_inline}}
-  - : The specific origin name to check its availability. If not specified, the default origin will be used.
+  - : نام مبدأ خاصی که می‌خواهید در دسترس بودن آن را بررسی کنید. اگر مشخص نشود، مبدأ پیش‌فرض استفاده خواهد شد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{JSxRef("Boolean")}} that is `true` if and only if the feature is
-allowed.
+یک {{JSxRef("Boolean")}} که اگر و فقط اگر ویژگی مجاز باشد `true` است.
 
-## Example
+## مثال
 
-The following example queries whether or not the document is allowed to use camera API
-by the Permissions Policy. Please note that Camera API might be restricted by the
-Permissions API, if the user did not grant the corresponding permission yet.
+مثال زیر بررسی می‌کند که آیا سند طبق Permissions Policy اجازه‌ی استفاده از API دوربین را دارد یا خیر. توجه داشته باشید که اگر کاربر هنوز مجوز مربوطه را اعطا نکرده باشد، API دوربین ممکن است توسط Permissions API محدود شده باشد.
 
 ```js
 // First, get the Feature Policy object
@@ -62,10 +49,10 @@ if (allowed) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
