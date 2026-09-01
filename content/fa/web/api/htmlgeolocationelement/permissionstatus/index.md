@@ -1,11 +1,5 @@
 ---
 title: "HTMLGeolocationElement: permissionStatus property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLGeolocationElement/permissionStatus"
-status: "needs-translation"
----
-
----
-title: "HTMLGeolocationElement: permissionStatus property"
 short-title: permissionStatus
 slug: Web/API/HTMLGeolocationElement/permissionStatus
 page-type: web-api-instance-property
@@ -16,26 +10,26 @@ browser-compat: api.HTMLGeolocationElement.permissionStatus
 
 {{APIRef("Navigation API")}}{{SeeCompatTable}}
 
-The **`permissionStatus`** read-only property of the {{domxref("HTMLGeolocationElement")}} interface returns an enumerated value representing the current permission status for the `geolocation` feature.
+ویژگی فقط‑خواندنی **`permissionStatus`** از رابط {{domxref("HTMLGeolocationElement")}} یک مقدار شمارشی برمی‌گرداند که وضعیت مجوز فعلی برای ویژگی `geolocation` را نشان می‌دهد.
 
-If you want to access the initial permission status for the `geolocation` feature as it was when the page first loaded, use the {{domxref("HTMLGeolocationElement.initialPermissionStatus", "initialPermissionStatus")}} property.
+اگر می‌خواهید به وضعیت مجوز اولیه برای ویژگی `geolocation` در زمان بارگذاری اولیه صفحه دسترسی داشته باشید، از ویژگی {{domxref("HTMLGeolocationElement.initialPermissionStatus", "initialPermissionStatus")}} استفاده کنید.
 
-## Value
+## مقدار
 
-An enumerated value, which can be one of:
+یک مقدار شمارشی که می‌تواند یکی از موارد زیر باشد:
 
 - `granted`
-  - : The user has granted permission for the browser to use the `geolocation` feature, either via the {{htmlelement("geolocation")}} element or some other mechanism. When using the `<geolocation>` element, this means that the user has pressed the rendered button and selected an "allow" option, at which point the browser will start to request location data.
+  - : کاربر به مرورگر اجازه استفاده از ویژگی `geolocation` را داده است، چه از طریق عنصر {{htmlelement("geolocation")}} و چه از طریق مکانیزم دیگری. هنگام استفاده از عنصر `<geolocation>`، این بدان معناست که کاربر دکمه رندر شده را فشار داده و گزینه «allow» (اجازه) را انتخاب کرده است، و در این مرحله مرورگر شروع به درخواست داده‌های موقعیت مکانی می‌کند.
 - `denied`
-  - : The user has denied permission for the browser to use the `geolocation` feature, either via the `<geolocation>` element or some other mechanism. When using the `<geolocation>` element, this means that the user has pressed the rendered button and selected a "don't allow" option, at which point the browser will not request location data until the user presses the rendered button again and selects an "allow" option.
+  - : کاربر از دادن اجازه به مرورگر برای استفاده از ویژگی `geolocation` خودداری کرده است، چه از طریق عنصر `<geolocation>` و چه از طریق مکانیزم دیگری. هنگام استفاده از عنصر `<geolocation>`، این بدان معناست که کاربر دکمه رندر شده را فشار داده و گزینه «don't allow» (اجازه نده) را انتخاب کرده است، و در این مرحله مرورگر تا زمانی که کاربر دوباره دکمه رندر شده را فشار دهد و گزینه «allow» را انتخاب کند، داده‌های موقعیت مکانی را درخواست نخواهد کرد.
 - `prompt`
-  - : The user has not specifically granted or denied permission for the browser to use the `geolocation` feature, which means that the browser won't request location data until they grant permission. When using the `<geolocation>` element, this means that the user has not yet pressed the rendered button. When they do, they'll be given the option to grant or deny permission for the browser to request location data.
+  - : کاربر به طور خاص به مرورگر اجازه استفاده از ویژگی `geolocation` را نداده یا آن را رد نکرده است، یعنی مرورگر تا زمانی که کاربر مجوز ندهد، داده‌های موقعیت مکانی را درخواست نخواهد کرد. هنگام استفاده از عنصر `<geolocation>`، این بدان معناست که کاربر هنوز دکمه رندر شده را فشار نداده است. وقتی این کار را انجام دهد، گزینه اعطا یا رد مجوز برای درخواست داده‌های موقعیت مکانی به او ارائه می‌شود.
 
-The permission status persists between page loads. If the `<geolocation>` element has its [`autolocate`](/en-US/docs/Web/HTML/Reference/Elements/geolocation#autolocate) attribute set to `true`, and permission was previously granted, the browser will start to request location data as soon as the `<geolocation>` element renders without requiring the user to press the button.
+وضعیت مجوز بین بارگذاری‌های صفحه پایدار می‌ماند. اگر عنصر `<geolocation>` دارای ویژگی [`autolocate`](/en-US/docs/Web/HTML/Reference/Elements/geolocation#autolocate) با مقدار `true` باشد و مجوز قبلاً اعطا شده باشد، مرورگر به محض رندر شدن عنصر `<geolocation>` بدون نیاز به فشار دادن دکمه توسط کاربر، شروع به درخواست داده‌های موقعیت مکانی می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```html
 <geolocation></geolocation>
@@ -44,38 +38,38 @@ The permission status persists between page loads. If the `<geolocation>` elemen
 ```js
 const geo = document.querySelector("geolocation");
 console.log(geo.permissionStatus);
-// "prompt" if this is the first time the user has accessed this page
+// "prompt" اگر اولین بار است که کاربر به این صفحه دسترسی پیدا می‌کند
 ```
 
-### Using permission status to inform the user
+### استفاده از وضعیت مجوز برای اطلاع‌رسانی به کاربر
 
-In our [Embedded map](https://mdn.github.io/dom-examples/geolocation-element/embedded-map/) example ([source code](https://github.com/mdn/dom-examples/tree/main/geolocation-element/embedded-map)), we add a {{domxref("HTMLGeolocationElement.promptaction_event", "promptaction")}} event listener to the `HTMLGeolocationElement` object representing our `<geolocation>` element.
+در مثال [نقشه تعبیه‌شده](https://mdn.github.io/dom-examples/geolocation-element/embedded-map/) ما ([کد منبع](https://github.com/mdn/dom-examples/tree/main/geolocation-element/embedded-map))، یک شنونده رویداد {{domxref("HTMLGeolocationElement.promptaction_event", "promptaction")}} به شیء `HTMLGeolocationElement` که عنصر `<geolocation>` ما را نشان می‌دهد، اضافه می‌کنیم.
 
 ```js
 geo.addEventListener("promptaction", notifyUserGrantPermission);
 ```
 
-In the referenced `notifyUserGrantPermission()` function, we use the `permissionStatus` property to check whether the permission status is `denied` or `prompt` and if so, we ask the user to press the button again and allow location. We don't need to ask this if they grant permission.
+در تابع `notifyUserGrantPermission()` ارجاع‌شده، از ویژگی `permissionStatus` برای بررسی اینکه آیا وضعیت مجوز `denied` یا `prompt` است استفاده می‌کنیم و اگر چنین بود، از کاربر می‌خواهیم دوباره دکمه را فشار دهد و موقعیت مکانی را مجاز کند. اگر کاربر مجوز بدهد نیازی به این درخواست نیست.
 
 ```js
 function notifyUserGrantPermission() {
   if (geo.permissionStatus === "denied" || geo.permissionStatus === "prompt") {
     statusElem.textContent =
-      'Please press the "Use location" button again and allow location for this site.';
+      'لطفاً دوباره دکمه "Use location" را فشار دهید و موقعیت مکانی را برای این سایت مجاز کنید.';
   }
 }
 ```
 
-See the main {{domxref("HTMLGeolocationElement")}} page for a full walkthrough of this example.
+برای توضیح کامل این مثال به صفحه اصلی {{domxref("HTMLGeolocationElement")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{htmlelement("geolocation")}} element
+- عنصر {{htmlelement("geolocation")}}
