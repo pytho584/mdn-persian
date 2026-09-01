@@ -1,7 +1,5 @@
 ---
 title: "CSSTransformValue: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue/entries"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,8 @@ browser-compat: api.CSSTransformValue.entries
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSTransformValue.entries()`** method
-returns an array of a given object's own enumerable
-property `[key, value]` pairs in the same order as that provided by a
-[`for...in`](/en-US/docs/Web/JavaScript/Reference/Statements/for...in) loop (the difference being that a for-in loop enumerates
-properties in the prototype chain as well).
+متد **`CSSTransformValue.entries()`** آرایه‌ای از جفت‌های `[key, value]` مربوط به ویژگی‌های قابل شمارش خود شیء را برمی‌گرداند، به همان ترتیبی که توسط حلقه
+[`for...in`](/en-US/docs/Web/JavaScript/Reference/Statements/for...in) ارائه می‌شود (تفاوت این است که حلقه for-in ویژگی‌های زنجیره prototype را نیز شمارش می‌کند).
 
 ## Syntax
 
@@ -29,17 +24,15 @@ entries(obj)
 ### Parameters
 
 - `obj`
-  - : The {{domxref('CSSTransformValue')}} whose enumerable own property
-    `[key, value]` pairs are to be returned.
+  - : یک {{domxref('CSSTransformValue')}} که قرار است جفت‌های `[key, value]` ویژگی‌های قابل شمارش خودش برگردانده شود.
 
 ### Return value
 
-An array of the given `CSSTransformValue` object's own enumerable property
-`[key, value]` pairs.
+آرایه‌ای از جفت‌های `[key, value]` ویژگی‌های قابل شمارش خود شیء `CSSTransformValue` داده‌شده.
 
 ## Examples
 
-To Do
+در انتظار تکمیل
 
 ## Specifications
 
