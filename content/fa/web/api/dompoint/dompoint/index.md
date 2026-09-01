@@ -1,11 +1,5 @@
 ---
-title: "DOMPoint: DOMPoint() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/DOMPoint"
-status: "needs-translation"
----
-
----
-title: "DOMPoint: DOMPoint() constructor"
+title: "DOMPoint: سازنده DOMPoint()"
 short-title: DOMPoint()
 slug: Web/API/DOMPoint/DOMPoint
 page-type: web-api-constructor
@@ -14,15 +8,11 @@ browser-compat: api.DOMPoint.DOMPoint
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMPoint()`** constructor
-creates and returns a new {{domxref("DOMPoint")}} object, given the values for some or
-all of its properties.
+سازنده **`DOMPoint()`** یک شیء جدید از نوع {{domxref("DOMPoint")}} ایجاد و برمی‌گرداند، با توجه به مقادیر داده شده برای برخی یا تمام ویژگی‌های آن.
 
-You can also create a `DOMPoint` by calling the
-{{domxref("DOMPoint.fromPoint_static", "DOMPoint.fromPoint()")}} static function. That function accepts any object with the required parameters, including a `DOMPoint` or
-{{domxref("DOMPointReadOnly")}}.
+همچنین می‌توانید یک `DOMPoint` را با فراخوانی تابع ایستای {{domxref("DOMPoint.fromPoint_static", "DOMPoint.fromPoint()")}} ایجاد کنید. این تابع هر شیءای که پارامترهای مورد نیاز را داشته باشد، از جمله یک `DOMPoint` یا {{domxref("DOMPointReadOnly")}}، می‌پذیرد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new DOMPoint()
@@ -32,22 +22,20 @@ new DOMPoint(x, y, z)
 new DOMPoint(x, y, z, w)
 ```
 
-### Parameters
+### پارامترها
 
 - `x` {{optional_inline}}
-  - : The `x` coordinate for the new `DOMPoint`.
+  - : مختصات `x` برای `DOMPoint` جدید.
 - `y` {{optional_inline}}
-  - : The `y` coordinate for the new `DOMPoint`.
+  - : مختصات `y` برای `DOMPoint` جدید.
 - `z` {{optional_inline}}
-  - : The `z` coordinate for the new `DOMPoint`.
+  - : مختصات `z` برای `DOMPoint` جدید.
 - `w` {{optional_inline}}
-  - : The perspective value of the new `DOMPoint`.
+  - : مقدار پرسپکتیو برای `DOMPoint` جدید.
 
-## Examples
+## مثال‌ها
 
-This example creates a `DOMPoint` representing the top-left corner of the
-current window, then creates a second point based on the first, which is then offset by
-100 pixels both vertically and horizontally.
+این مثال یک `DOMPoint` ایجاد می‌کند که گوشه‌ی بالا-چپ پنجره‌ی جاری را نشان می‌دهد، سپس یک نقطه‌ی دوم بر اساس نقطه‌ی اول ایجاد می‌کند که با ۱۰۰ پیکسل در هر دو جهت عمودی و افقی جابه‌جا شده است.
 
 ```js
 const windTopLeft = new DOMPoint(window.screenX, window.screenY);
@@ -56,15 +44,15 @@ newTopLeft.x += 100;
 newTopLeft.y += 100;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMPointReadOnly.DOMPointReadOnly", "DOMPointReadOnly()")}}
 - {{domxref("DOMRect")}}
