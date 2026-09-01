@@ -1,7 +1,5 @@
 ---
 title: "CSSMathProduct"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathProduct"
-status: "needs-translation"
 ---
 
 ---
@@ -13,46 +11,46 @@ browser-compat: api.CSSMathProduct
 
 {{APIRef("CSS Typed Object Model API")}}{{AvailableInWorkers}}
 
-The **`CSSMathProduct`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the product of two or more {{domxref('CSSNumericValue')}} values — in cases where the result can't be represented as a single value.
+رابطهٔ **`CSSMathProduct`** در [API مدل شیء تایپ‌شدهٔ CSS](/en-US/docs/Web/API/CSS_Object_Model)، حاصل‌ضرب دو یا چند مقدار {{domxref('CSSNumericValue')}} را نشان می‌دهد — در مواردی که نتیجه را نمی‌توان به‌صورت یک مقدار واحد نمایش داد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSMathProduct.CSSMathProduct", "CSSMathProduct()")}} {{Experimental_Inline}}
-  - : Creates a new `CSSMathProduct` object.
+  - : یک شیء `CSSMathProduct` جدید می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین ویژگی‌های رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
 - {{domxref('CSSMathProduct.values')}} {{ReadOnlyInline}}
-  - : Returns a {{domxref('CSSNumericArray')}} object which contains one or more {{domxref('CSSNumericValue')}} objects.
+  - : یک شیء {{domxref('CSSNumericArray')}} برمی‌گرداند که شامل یک یا چند شیء {{domxref('CSSNumericValue')}} است.
 
-## Static methods
+## روش‌های ایستا
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین روش‌های رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین روش‌های رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
-## Description
+## توضیحات
 
-A `CSSMathProduct` is produced whenever a multiplication or division can't be resolved to a single value — this happens when more than one operand carries a unit, for example, multiplying two lengths (`10px * 20px`) or a length by a percentage, rather than a value and a plain number.
+یک `CSSMathProduct` زمانی تولید می‌شود که یک ضرب یا تقسیم نتواند به یک مقدار واحد ساده‌سازی شود — این اتفاق زمانی می‌افتد که بیش از یک عملوند دارای واحد باشد، مثلاً ضرب دو طول (`10px * 20px`) یا ضرب یک طول در یک درصد، به‌جای ضرب یک مقدار در یک عدد ساده.
 
-Calling {{domxref('CSSNumericValue.mul','mul()')}} or {{domxref('CSSNumericValue.div','div()')}} on operands that can't be combined returns a `CSSMathProduct`; if every operand is a plain number, or all but one of them are, they resolve immediately to a single {{domxref('CSSUnitValue')}} instead.
+فراخوانی {{domxref('CSSNumericValue.mul','mul()')}} یا {{domxref('CSSNumericValue.div','div()')}} روی عملوندهایی که قابل ترکیب نیستند، یک `CSSMathProduct` برمی‌گرداند؛ اگر همهٔ عملوندها اعداد ساده باشند یا همه به‌جز یکی از آن‌ها ساده باشند، بلافاصله به یک {{domxref('CSSUnitValue')}} واحد تبدیل می‌شوند.
 
-[`StylePropertyMapReadOnly.get()`](/en-US/docs/Web/API/StylePropertyMapReadOnly/get) returns a `CSSMathProduct` the same way — for a {{cssxref("calc()")}} value that resolves to a multiplication or division it can't combine into one value.
+[`StylePropertyMapReadOnly.get()`](/en-US/docs/Web/API/StylePropertyMapReadOnly/get) نیز به همین ترتیب یک `CSSMathProduct` برمی‌گرداند — برای یک مقدار {{cssxref("calc()")}} که به ضرب یا تقسیمی منجر می‌شود که نمی‌توان آن را در یک مقدار واحد ترکیب کرد.
 
-`CSSMathProduct` represents the product expression itself, not a resolved value.
-To get the resolved value, use {{domxref("Window.getComputedStyle", "getComputedStyle()")}}.
+`CSSMathProduct` خودِ عبارت حاصل‌ضرب را نشان می‌دهد، نه یک مقدار نهایی محاسبه‌شده.
+برای دریافت مقدار نهایی، از {{domxref("Window.getComputedStyle", "getComputedStyle()")}} استفاده کنید.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### کاربرد پایه
 
-The following code creates a `CSSMathProduct` instance from two values, then reads back its `operator` and `values` properties.
+کد زیر یک نمونهٔ `CSSMathProduct` از دو مقدار می‌سازد و سپس ویژگی‌های `operator` و `values` آن را می‌خواند.
 
 ```js
 const product = new CSSMathProduct(CSS.px(10), CSS.percent(50));
@@ -63,9 +61,9 @@ console.log(product.values); // CSSNumericArray {0: CSSUnitValue, 1: CSSUnitValu
 console.log(product.values[0]); // CSSUnitValue {value: 10, unit: "px"}
 ```
 
-### `calc()` representations
+### بازنمایی‌های `calc()`
 
-This example shows how a {{cssxref("calc()")}} multiplication is represented by a {{domxref("CSSUnitValue")}} or a `CSSMathProduct`, depending on whether it can be resolved to a single value.
+این مثال نشان می‌دهد که یک ضرب {{cssxref("calc()")}} چگونه توسط یک {{domxref("CSSUnitValue")}} یا یک `CSSMathProduct` نمایش داده می‌شود، بسته به اینکه آیا می‌توان آن را به یک مقدار واحد ساده‌سازی کرد یا نه.
 
 #### HTML
 
@@ -79,8 +77,8 @@ This example shows how a {{cssxref("calc()")}} multiplication is represented by 
 
 #### CSS
 
-`width` is set using a `calc()` product of a length and a plain number, so the browser can resolve it to a single fixed value immediately.
-`font-size` is set using a `calc()` product that multiplies a plain number by a parenthesized sum of `1rem` and `5vw`; since the sum itself can't be combined into a single value (it mixes units), the product can't either, and this will be represented by a `CSSMathProduct`.
+`width` با استفاده از یک حاصل‌ضرب `calc()` شامل یک طول و یک عدد ساده تنظیم شده است، بنابراین مرورگر می‌تواند بلافاصله آن را به یک مقدار ثابت واحد تبدیل کند.
+`font-size` با استفاده از یک حاصل‌ضرب `calc()` تنظیم شده است که یک عدد ساده را در یک مجموع داخل پرانتز شامل `1rem` و `5vw` ضرب می‌کند؛ از آنجا که خودِ مجموع را نمی‌توان به یک مقدار واحد ترکیب کرد (واحدها متفاوت هستند)، حاصل‌ضرب نیز نمی‌تواند، و این توسط یک `CSSMathProduct` نمایش داده می‌شود.
 
 ```css
 #demoBox {
@@ -107,7 +105,7 @@ function log(text) {
 }
 ```
 
-First we find the demo box's style rule and read its `width` and `font-size` values using {{domxref("CSSStyleRule.styleMap", "styleMap")}}.
+ابتدا قانون سبک مربوط به جعبهٔ demo را پیدا می‌کنیم و مقادیر `width` و `font-size` آن را با استفاده از {{domxref("CSSStyleRule.styleMap", "styleMap")}} می‌خوانیم.
 
 ```js
 const demoBox = document.querySelector("#demoBox");
@@ -119,7 +117,7 @@ const width = styleMap.get("width");
 const fontSize = styleMap.get("font-size");
 ```
 
-We then log the type and value of the CSS Typed OM representations, followed by the computed (resolved) values.
+سپس نوع و مقدار بازنمایی‌های CSS Typed OM را ثبت می‌کنیم و به‌دنبال آن مقادیر نهایی محاسبه‌شده (resolved) را.
 
 ```js
 log("width");
@@ -133,22 +131,22 @@ log(` values: [${[...fontSize.values].join(", ")}]`);
 log(` resolved: ${getComputedStyle(demoBox).fontSize}`);
 ```
 
-#### Result
+#### نتیجه
 
-`width` is represented by a `CSSUnitValue` object, which has a value that matches the resolved width.
-`font-size` is represented by a `CSSMathProduct` object that exposes the `calc()` product's original terms.
+`width` توسط یک شیء `CSSUnitValue` نمایش داده می‌شود که مقداری مطابق با عرض نهایی دارد.
+`font-size` توسط یک شیء `CSSMathProduct` نمایش داده می‌شود که عبارت‌های اصلیِ حاصل‌ضرب `calc()` را در دسترس قرار می‌دهد.
 
 {{EmbedLiveSample("`calc()` representations", 300, 300)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSNumericValue.mul", "mul()")}}
 - {{domxref("CSSNumericValue.div", "div()")}}
