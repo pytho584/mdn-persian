@@ -1,10 +1,4 @@
 ---
-title: "FileSystemObserver"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemObserver"
-status: "needs-translation"
----
-
----
 title: FileSystemObserver
 slug: Web/API/FileSystemObserver
 page-type: web-api-interface
@@ -16,34 +10,34 @@ browser-compat: api.FileSystemObserver
 
 {{securecontext_header}}{{APIRef("File System API")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`FileSystemObserver`** interface of the {{domxref("File System API", "File System API", "", "nocode")}} provides a mechanism to observe changes to the user-observable file system and the [Origin Private File System](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) (OPFS). This means web applications don't have to poll the file system to find changes in the files or folder structure, which can be time-consuming and wasteful.
+接口 **`FileSystemObserver`** 属于 {{domxref("File System API", "File System API", "", "nocode")}}，提供了一种机制来观察用户可见文件系统和[源私有文件系统](/en-US/docs/Web/API/File_System_API/Origin_private_file_system)（OPFS）的变化。这意味着 Web 应用无需轮询文件系统即可发现文件或文件夹结构的变化，从而避免了耗时且浪费资源的操作。
 
-## Constructor
+## 构造函数
 
 - {{domxref("FileSystemObserver.FileSystemObserver", "FileSystemObserver()")}} {{Experimental_Inline}} {{non-standard_inline}}
-  - : Creates a new `FileSystemObserver` object instance.
+  - : 创建一个新的 `FileSystemObserver` 对象实例。
 
-## Instance methods
+## 实例方法
 
 - {{domxref("FileSystemObserver.disconnect", "disconnect()")}} {{Experimental_Inline}} {{non-standard_inline}}
-  - : Stop observing the filesystem.
+  - : 停止观察文件系统。
 - {{domxref("FileSystemObserver.observe", "observe()")}} {{Experimental_Inline}} {{non-standard_inline}}
-  - : Start observing changes to a given file or directory.
+  - : 开始观察指定文件或目录的变化。
 
-## Examples
+## 示例
 
 > [!NOTE]
-> For a complete working example, check out [File System Observer Demo](https://mdn.github.io/dom-examples/file-system-api/filesystemobserver/) ([source code](https://github.com/mdn/dom-examples/tree/main/file-system-api/filesystemobserver)).
+> 有关完整的可运行示例，请参阅 [File System Observer Demo](https://mdn.github.io/dom-examples/file-system-api/filesystemobserver/)（[源代码](https://github.com/mdn/dom-examples/tree/main/file-system-api/filesystemobserver)）。
 
-### Initialize a `FileSystemObserver`
+### 初始化 `FileSystemObserver`
 
-Before you can start observing file or directory changes, you need to initialize a `FileSystemObserver` to handle the observations. This is done using the {{domxref("FileSystemObserver.FileSystemObserver", "FileSystemObserver()")}} constructor, which takes a callback function as an argument:
+在开始观察文件或目录变化之前，您需要先初始化一个 `FileSystemObserver` 来处理观察操作。这可以通过 {{domxref("FileSystemObserver.FileSystemObserver", "FileSystemObserver()")}} 构造函数完成，该构造函数接受一个回调函数作为参数：
 
 ```js
 const observer = new FileSystemObserver(callback);
 ```
 
-The [callback function](/en-US/docs/Web/API/FileSystemObserver/FileSystemObserver#callback) body can be specified to return and process file change observations in any way you want:
+[回调函数](/en-US/docs/Web/API/FileSystemObserver/FileSystemObserver#callback)的主体可以按您的需求定义，以返回并处理文件变化观察记录：
 
 ```js
 const callback = (records, observer) => {
@@ -57,11 +51,11 @@ const callback = (records, observer) => {
 };
 ```
 
-### Observe a file or directory
+### 观察文件或目录
 
-Once a `FileSystemObserver` instance is available, you can start observing changes to a file system entry by calling the {{domxref("FileSystemObserver.observe()")}} method.
+一旦拥有了 `FileSystemObserver` 实例，您就可以通过调用 {{domxref("FileSystemObserver.observe()")}} 方法来开始观察文件系统条目的变化。
 
-You can observe a file or directory in the user-observable file system or the [Origin Private File System](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) (OPFS) by passing a {{domxref("FileSystemFileHandle")}} or {{domxref("FileSystemDirectoryHandle")}} to `observe()`. Instances of these objects can be returned, for example, when asking the user to select a file or directory using {{domxref("Window.showSaveFilePicker()")}} or {{domxref("Window.showDirectoryPicker()")}}:
+您可以将 {{domxref("FileSystemFileHandle")}} 或 {{domxref("FileSystemDirectoryHandle")}} 传递给 `observe()`，以观察用户可见文件系统或[源私有文件系统](/en-US/docs/Web/API/File_System_API/Origin_private_file_system)（OPFS）中的文件或目录。这些对象的实例可以通过例如 {{domxref("Window.showSaveFilePicker()")}} 或 {{domxref("Window.showDirectoryPicker()")}} 让用户选择文件或目录时获得：
 
 ```js
 // Observe a file
@@ -79,7 +73,7 @@ async function observeDirectory() {
 }
 ```
 
-You can also observe changes to the OPFS by passing a {{domxref("FileSystemSyncAccessHandle")}} to `observe()`:
+您还可以通过将 {{domxref("FileSystemSyncAccessHandle")}} 传递给 `observe()` 来观察 OPFS 的变化：
 
 ```js
 // Observe an OPFS file system entry
@@ -92,23 +86,23 @@ async function observeOPFSFile() {
 }
 ```
 
-### Stop observing the file system
+### 停止观察文件系统
 
-When you want to stop observing changes to the file system entry, you can call {{domxref("FileSystemObserver.disconnect()")}}:
+当您想要停止观察文件系统条目的变化时，可以调用 {{domxref("FileSystemObserver.disconnect()")}}：
 
 ```js
 observer.disconnect();
 ```
 
-## Specifications
+## 规范
 
-Not currently part of a specification. See [https://github.com/whatwg/fs/pull/165](https://github.com/whatwg/fs/pull/165) for the relevant specification PR.
+目前不属于任何规范的一部分。相关规范 PR 请参见 [https://github.com/whatwg/fs/pull/165](https://github.com/whatwg/fs/pull/165)。
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
-- [The File System Observer API origin trial](https://developer.chrome.com/blog/file-system-observer#stop-observing-the-file-system) on developer.chrome.com (2024)
+- [The File System Observer API origin trial](https://developer.chrome.com/blog/file-system-observer#stop-observing-the-file-system)（developer.chrome.com，2024）
