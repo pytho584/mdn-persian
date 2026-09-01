@@ -1,11 +1,5 @@
 ---
 title: "EncodedVideoChunk: byteLength property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/byteLength"
-status: "needs-translation"
----
-
----
-title: "EncodedVideoChunk: byteLength property"
 short-title: byteLength
 slug: Web/API/EncodedVideoChunk/byteLength
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.EncodedVideoChunk.byteLength
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`byteLength`** read-only property of the {{domxref("EncodedVideoChunk")}} interface returns the length in bytes of the encoded video data.
+ویژگی فقط‌خواندنی **`byteLength`** از رابط {{domxref("EncodedVideoChunk")}} طول داده‌های ویدیویی کدگذاری‌شده را بر حسب بایت برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In the following example the `byteLength` is printed to the console.
+در مثال زیر، `byteLength` در کنسول چاپ شده است.
 
 ```js
 const init = {
@@ -36,10 +30,10 @@ const chunk = new EncodedVideoChunk(init);
 console.log(chunk.byteLength); // 352800
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
