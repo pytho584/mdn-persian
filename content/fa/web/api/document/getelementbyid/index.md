@@ -1,11 +1,5 @@
 ---
 title: "Document: getElementById() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById"
-status: "needs-translation"
----
-
----
-title: "Document: getElementById() method"
 short-title: getElementById()
 slug: Web/API/Document/getElementById
 page-type: web-api-instance-method
@@ -14,37 +8,35 @@ browser-compat: api.Document.getElementById
 
 {{ ApiRef("DOM") }}
 
-The **`getElementById()`** method of the {{domxref("Document")}} interface returns an {{domxref("Element")}} object representing the element whose {{domxref("Element.id", "id")}} property matches the specified string. Since element IDs are required to be unique if specified, they're a useful way to get access to a specific element quickly.
+متد **`getElementById()`** از رابط {{domxref("Document")}} یک شیء {{domxref("Element")}} برمی‌گرداند که نمایانگر عنصری است که ویژگی {{domxref("Element.id", "id")}} آن با رشته مشخص‌شده مطابقت دارد. از آنجایی که شناسه‌های عناصر در صورت تعریف باید یکتا باشند، این روش راهی مفید برای دسترسی سریع به یک عنصر خاص است.
 
-If you need to get access to an element which doesn't have an ID, you can use {{domxref("Document.querySelector", "querySelector()")}} to find the element using any {{Glossary("CSS selector", "selector")}}.
+اگر نیاز به دسترسی به عنصری دارید که شناسه ندارد، می‌توانید از {{domxref("Document.querySelector", "querySelector()")}} برای یافتن عنصر با استفاده از هر {{Glossary("CSS selector", "انتخاب‌گر")}} استفاده کنید.
 
-> [!NOTE]
-> IDs should be unique inside a document. If two or more elements in a document have the same ID, this method returns the first element found.
+> **نکته:** شناسه‌ها باید در یک سند یکتا باشند. اگر دو یا چند عنصر در یک سند دارای شناسه یکسان باشند، این متد اولین عنصر یافت‌شده را برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getElementById(id)
 ```
 
-> [!NOTE]
-> The capitalization of `"Id"` in the name of this method _must_ be correct for the code to function; `getElementByID()` is _not_ valid and will not work, however natural it may seem.
+> **نکته:** حروف بزرگ و کوچک `"Id"` در نام این متد _باید_ برای عملکرد کد صحیح باشد؛ `getElementByID()` _معتبر نیست_ و کار نخواهد کرد، هرچند که طبیعی به نظر برسد.
 
-### Parameters
+### پارامترها
 
 - `id`
-  - : The ID of the element to locate. The ID is a case-sensitive string which is unique within the document; only one element should have any given ID.
+  - : شناسه عنصر مورد نظر برای مکان‌یابی. شناسه یک رشته حساس به حروف بزرگ و کوچک است که درون سند یکتا است؛ تنها یک عنصر باید دارای هر شناسه مشخصی باشد.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("Element")}} object describing the DOM element object matching the specified ID, or `null` if no matching element was found in the document.
+یک شیء {{domxref("Element")}} که عنصر DOM منطبق با شناسه مشخص‌شده را توصیف می‌کند، یا اگر هیچ عنصر منطبقی در سند یافت نشود، `null` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
 ```html
-<p id="para">Some text here</p>
+<p id="para">متن اینجا</p>
 <button>blue</button>
 <button>red</button>
 ```
@@ -64,22 +56,22 @@ document.querySelectorAll("button").forEach((button) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 250, 120) }}
 
-## Usage notes
+## نکات استفاده
 
-Unlike some other element-lookup methods such as {{domxref("Document.querySelector()")}} and {{domxref("Document.querySelectorAll()")}}, `getElementById()` is only available as a method of the global `document` object, and _not_ available as a method on all element objects in the DOM. Because ID values must be unique throughout the entire document, there is no need for "local" versions of the function.
+برخلاف برخی روش‌های دیگر جستجوی عناصر مانند {{domxref("Document.querySelector()")}} و {{domxref("Document.querySelectorAll()")}}، `getElementById()` تنها به عنوان متدی از شیء سراسری `document` در دسترس است و _نه_ به عنوان متدی بر روی تمام اشیاء عنصر در DOM. از آنجایی که مقادیر شناسه باید در کل سند یکتا باشند، نیازی به نسخه‌های «محلی» این تابع نیست.
 
-### Example
+### مثال
 
 ```html
 <div id="parent-id">
-  <p>hello word1</p>
-  <p id="test1">hello word2</p>
-  <p>hello word3</p>
-  <p>hello word4</p>
+  <p>سلام دنیا ۱</p>
+  <p id="test1">سلام دنیا ۲</p>
+  <p>سلام دنیا ۳</p>
+  <p>سلام دنیا ۴</p>
 </div>
 ```
 
@@ -88,28 +80,28 @@ const parentDOM = document.getElementById("parent-id");
 const test1 = parentDOM.getElementById("test1");
 ```
 
-If there is no element with the given `id`, this function returns `null`. Note that the `id` parameter is case-sensitive, so `document.getElementById("Main")` will return `null` instead of the element `<div id="main">` because "M" and "m" are different for the purposes of this method.
+اگر هیچ عنصری با `id` داده‌شده وجود نداشته باشد، این تابع `null` برمی‌گرداند. توجه داشته باشید که پارامتر `id` به حروف بزرگ و کوچک حساس است، بنابراین `document.getElementById("Main")` به جای عنصر `<div id="main">` مقدار `null` را برمی‌گرداند، زیرا "M" و "m" برای اهداف این متد متفاوت هستند.
 
-Elements not in the document are not searched by `getElementById()`. When creating an element and assigning it an ID, you have to insert the element into the document tree with {{domxref("Node.insertBefore()")}} or a similar method before you can access it with `getElementById()`:
+عناصری که در سند نیستند توسط `getElementById()` جستجو نمی‌شوند. هنگام ایجاد یک عنصر و اختصاص یک شناسه به آن، باید عنصر را با {{domxref("Node.insertBefore()")}} یا روشی مشابه در درخت سند وارد کنید تا بتوانید با `getElementById()` به آن دسترسی پیدا کنید:
 
 ```js
 const element = document.createElement("div");
 element.id = "test";
-const el = document.getElementById("test"); // el will be null!
+const el = document.getElementById("test"); // el برابر null خواهد بود!
 ```
 
-In non-HTML documents, the DOM implementation must have information on which attributes are of type ID. Attributes with the name "id" are not of type ID unless so defined in the document's DTD. The `id` attribute is defined to be of ID type in the common cases of [XHTML](/en-US/docs/Glossary/XHTML), XUL, and others. Implementations that do not know whether attributes are of type ID or not are expected to return `null`.
+در اسناد غیر HTML، پیاده‌سازی DOM باید اطلاعاتی در مورد اینکه کدام ویژگی‌ها از نوع ID هستند داشته باشد. ویژگی‌های با نام "id" از نوع ID نیستند مگر اینکه در DTD سند چنین تعریف شده باشند. ویژگی `id` در موارد رایج [XHTML](/en-US/docs/Glossary/XHTML)، XUL و موارد دیگر به عنوان نوع ID تعریف شده است. پیاده‌سازی‌هایی که نمی‌دانند آیا ویژگی‌ها از نوع ID هستند یا خیر، انتظار می‌رود که `null` را برگردانند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Document")}} reference for other methods and properties you can use to get references to elements in the document.
-- {{domxref("Document.querySelector()")}} for selectors via queries like `'div.myclass'`
-- {{domxref("Document.evaluate()")}} - has a utility method for selecting by `xml:id` in {{glossary("XML")}} documents
+- مرجع {{domxref("Document")}} برای سایر روش‌ها و ویژگی‌هایی که می‌توانید برای دریافت ارجاع به عناصر در سند استفاده کنید.
+- {{domxref("Document.querySelector()")}} برای انتخاب‌گرها از طریق پرس‌وجوهایی مانند `'div.myclass'`
+- {{domxref("Document.evaluate()")}} - دارای یک روش کاربردی برای انتخاب با `xml:id` در اسناد {{glossary("XML")}}
