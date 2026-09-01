@@ -1,11 +1,5 @@
 ---
 title: "CSSTranslate: z property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate/z"
-status: "needs-translation"
----
-
----
-title: "CSSTranslate: z property"
 short-title: z
 slug: Web/API/CSSTranslate/z
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.CSSTranslate.z
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`z`** property of the {{domxref("CSSTranslate")}} interface represents the z-component of the translating vector.
-A positive value moves the element towards the viewer, and a negative value farther away.
+**`z`** ویژگی از رابط {{domxref("CSSTranslate")}} نمایانگر مؤلفه z بردار انتقال است.
+مقدار مثبت، عنصر را به سمت بیننده حرکت می‌دهد و مقدار منفی آن را دورتر می‌کند.
 
-If this value is present then the transform is a 3D transform and the `is2D` property will be set to false.
+اگر این مقدار وجود داشته باشد، تبدیل یک تبدیل سه‌بعدی است و ویژگی `is2D` روی `false` تنظیم خواهد شد.
 
-## Value
+## مقدار
 
-A {{cssxref('length')}}.
+یک {{cssxref('length')}}.
 
-## Examples
+## مثال‌ها
 
-To Do
+در دست اقدام
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
