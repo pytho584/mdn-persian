@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement"
-status: "needs-translation"
----
-
----
-title: HTMLFormElement
 slug: Web/API/HTMLFormElement
 page-type: web-api-interface
 browser-compat: api.HTMLFormElement
@@ -13,121 +7,121 @@ browser-compat: api.HTMLFormElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLFormElement`** interface represents a {{HTMLElement("form")}} element in the DOM. It allows access to—and, in some cases, modification of—aspects of the form, as well as access to its component elements.
+رابط **`HTMLFormElement`** یک عنصر {{HTMLElement("form")}} را در DOM نمایش می‌دهد. این رابط امکان دسترسی به جنبه‌های فرم و در برخی موارد تغییر آن‌ها را فراهم می‌کند، همچنین دسترسی به عناصر تشکیل‌دهنده آن را نیز ممکن می‌سازد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from its parent, {{domxref("HTMLElement")}}._
+_این رابط همچنین ویژگی‌هایی را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref("HTMLFormElement.acceptCharset")}}
-  - : A string reflecting the value of the form's [`accept-charset`](/en-US/docs/Web/HTML/Reference/Elements/form#accept-charset) HTML attribute.
+  - : یک رشته که مقدار ویژگی HTML [`accept-charset`](/en-US/docs/Web/HTML/Reference/Elements/form#accept-charset) فرم را منعکس می‌کند.
 - {{domxref("HTMLFormElement.action")}}
-  - : A string reflecting the value of the form's [`action`](/en-US/docs/Web/HTML/Reference/Elements/form#action) HTML attribute, containing the URI of a program that processes the information submitted by the form.
+  - : یک رشته که مقدار ویژگی HTML [`action`](/en-US/docs/Web/HTML/Reference/Elements/form#action) فرم را منعکس می‌کند و شامل URI برنامه‌ای است که اطلاعات ارسال‌شده توسط فرم را پردازش می‌کند.
 - {{domxref("HTMLFormElement.autocomplete")}}
-  - : A string reflecting the value of the form's [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) HTML attribute, indicating whether the controls in this form can have their values automatically populated by the browser.
-- {{domxref("HTMLFormElement.encoding")}} or {{domxref("HTMLFormElement.enctype")}}
-  - : A string reflecting the value of the form's [`enctype`](/en-US/docs/Web/HTML/Reference/Elements/form#enctype) HTML attribute, indicating the type of content that is used to transmit the form to the server. Only specified values can be set. The two properties are synonyms.
+  - : یک رشته که مقدار ویژگی HTML [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) فرم را منعکس می‌کند و نشان می‌دهد که آیا کنترل‌های این فرم می‌توانند مقادیر خود را به‌طور خودکار توسط مرورگر پر کنند.
+- {{domxref("HTMLFormElement.encoding")}} یا {{domxref("HTMLFormElement.enctype")}}
+  - : یک رشته که مقدار ویژگی HTML [`enctype`](/en-US/docs/Web/HTML/Reference/Elements/form#enctype) فرم را منعکس می‌کند و نوع محتوایی را که برای ارسال فرم به سرور استفاده می‌شود، مشخص می‌کند. فقط مقادیر مشخص‌شده قابل تنظیم هستند. این دو ویژگی مترادف هستند.
 - {{domxref("HTMLFormElement.elements")}} {{ReadOnlyInline}}
-  - : A {{domxref("HTMLFormControlsCollection")}} holding all form controls belonging to this form element.
+  - : یک {{domxref("HTMLFormControlsCollection")}} که تمام کنترل‌های فرم متعلق به این عنصر فرم را در خود نگه می‌دارد.
 - {{domxref("HTMLFormElement.length")}} {{ReadOnlyInline}}
-  - : A `long` reflecting the number of controls in the form.
+  - : یک `long` که تعداد کنترل‌های موجود در فرم را منعکس می‌کند.
 - {{domxref("HTMLFormElement.name")}}
-  - : A string reflecting the value of the form's [`name`](/en-US/docs/Web/HTML/Reference/Elements/form#name) HTML attribute, containing the name of the form.
+  - : یک رشته که مقدار ویژگی HTML [`name`](/en-US/docs/Web/HTML/Reference/Elements/form#name) فرم را منعکس می‌کند و شامل نام فرم است.
 - {{domxref("HTMLFormElement.noValidate")}}
-  - : A boolean value reflecting the value of the form's [`novalidate`](/en-US/docs/Web/HTML/Reference/Elements/form#novalidate) HTML attribute, indicating whether the form should not be validated.
+  - : یک مقدار بولی که مقدار ویژگی HTML [`novalidate`](/en-US/docs/Web/HTML/Reference/Elements/form#novalidate) فرم را منعکس می‌کند و نشان می‌دهد که آیا فرم نباید اعتبارسنجی شود.
 - {{domxref("HTMLFormElement.method")}}
-  - : A string reflecting the value of the form's [`method`](/en-US/docs/Web/HTML/Reference/Elements/form#method) HTML attribute, indicating the HTTP method used to submit the form. Only specified values can be set.
+  - : یک رشته که مقدار ویژگی HTML [`method`](/en-US/docs/Web/HTML/Reference/Elements/form#method) فرم را منعکس می‌کند و روش HTTP مورد استفاده برای ارسال فرم را مشخص می‌کند. فقط مقادیر مشخص‌شده قابل تنظیم هستند.
 - {{domxref("HTMLFormElement.rel")}}
-  - : A string reflecting the value of the form's [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) HTML attribute, which represents what kinds of links the form creates as a space-separated list of enumerated values.
+  - : یک رشته که مقدار ویژگی HTML [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) فرم را منعکس می‌کند و نشان می‌دهد که فرم چه نوع پیوندهایی را به عنوان یک فهرست جدا شده با فاصله از مقادیر شمارشی ایجاد می‌کند.
 - {{domxref("HTMLFormElement.relList")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMTokenList")}} that reflects the [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) HTML attribute, as a list of tokens.
+  - : یک {{domxref("DOMTokenList")}} که ویژگی HTML [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) را به عنوان یک فهرست از توکن‌ها منعکس می‌کند.
 - {{domxref("HTMLFormElement.target")}}
-  - : A string reflecting the value of the form's [`target`](/en-US/docs/Web/HTML/Reference/Elements/form#target) HTML attribute, indicating where to display the results received from submitting the form.
+  - : یک رشته که مقدار ویژگی HTML [`target`](/en-US/docs/Web/HTML/Reference/Elements/form#target) فرم را منعکس می‌کند و مشخص می‌کند که نتایج دریافتی از ارسال فرم در کجا نمایش داده شود.
 
-Named inputs are added to their owner form instance as properties, and can overwrite native properties if they share the same name (e.g., a form with an input named `action` will have its `action` property return that input instead of the form's [`action`](/en-US/docs/Web/HTML/Reference/Elements/form#action) HTML attribute).
+ورودی‌های نام‌دار به عنوان ویژگی‌هایی به نمونه فرم مالک خود اضافه می‌شوند و در صورت اشتراک نام می‌توانند ویژگی‌های بومی را بازنویسی کنند (مثلاً، یک فرم با ورودی به نام `action` ویژگی `action` خود را به جای ویژگی HTML [`action`](/en-US/docs/Web/HTML/Reference/Elements/form#action) فرم، آن ورودی را برمی‌گرداند).
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface also inherits methods from its parent, {{domxref("HTMLElement")}}._
+_این رابط همچنین روش‌هایی را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref("HTMLFormElement.checkValidity", "checkValidity()")}}
-  - : Returns `true` if the element's child controls are subject to [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) and satisfy those constraints; returns `false` if some controls do not satisfy their constraints. Fires an event named {{domxref("HTMLInputElement/invalid_event", "invalid")}} at any control that does not satisfy its constraints; such controls are considered invalid if the event is not canceled. It is up to the programmer to decide how to respond to `false`.
+  - : اگر کنترل‌های فرزند عنصر تحت [اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation) قرار گیرند و آن محدودیت‌ها را برآورده کنند، `true` برمی‌گرداند؛ اگر برخی کنترل‌ها محدودیت‌های خود را برآورده نکنند، `false` برمی‌گرداند. یک رویداد به نام {{domxref("HTMLInputElement/invalid_event", "invalid")}} در هر کنترلی که محدودیت‌های خود را برآورده نمی‌کند، فعال می‌کند؛ چنین کنترل‌هایی در صورت لغو نشدن رویداد، نامعتبر در نظر گرفته می‌شوند. این به برنامه‌نویس بستگی دارد که چگونه به `false` پاسخ دهد.
 - {{domxref("HTMLFormElement.reportValidity", "reportValidity()")}}
-  - : Returns `true` if the element's child controls satisfy their [validation constraints](/en-US/docs/Web/HTML/Guides/Constraint_validation). When `false` is returned, cancelable {{domxref("HTMLInputElement/invalid_event", "invalid")}} events are fired for each invalid child and validation problems are reported to the user.
+  - : اگر کنترل‌های فرزند عنصر [محدودیت‌های اعتبارسنجی](/en-US/docs/Web/HTML/Guides/Constraint_validation) خود را برآورده کنند، `true` برمی‌گرداند. وقتی `false` برگردانده شود، رویدادهای قابل لغو {{domxref("HTMLInputElement/invalid_event", "invalid")}} برای هر فرزند نامعتبر فعال شده و مشکلات اعتبارسنجی به کاربر گزارش می‌شود.
 - {{domxref("HTMLFormElement.requestSubmit", "requestSubmit()")}}
-  - : Requests that the form be submitted using the specified submit button and its corresponding configuration.
+  - : درخواست ارسال فرم با استفاده از دکمه ارسال مشخص‌شده و پیکربندی متناظر آن را می‌کند.
 - {{domxref("HTMLFormElement.reset", "reset()")}}
-  - : Resets the form to its initial state.
+  - : فرم را به حالت اولیه خود بازنشانی می‌کند.
 - {{domxref("HTMLFormElement.submit", "submit()")}}
-  - : Submits the form to the server.
+  - : فرم را به سرور ارسال می‌کند.
 
-## Events
+## رویدادها
 
-Listen to these events using `addEventListener()`, or by assigning an event listener to the `oneventname` property of this interface.
+با استفاده از `addEventListener()` یا با انتساب یک شنونده رویداد به ویژگی `oneventname` این رابط به این رویدادها گوش دهید.
 
 - {{domxref("HTMLFormElement/formdata_event", "formdata")}}
-  - : The `formdata` event fires after the entry list representing the form's data is constructed.
+  - : رویداد `formdata` پس از ساخته شدن فهرست ورودی‌هایی که داده‌های فرم را نشان می‌دهند، فعال می‌شود.
 - {{domxref("HTMLFormElement/reset_event", "reset")}}
-  - : The `reset` event fires when a form is reset.
+  - : رویداد `reset` زمانی فعال می‌شود که یک فرم بازنشانی می‌شود.
 - {{domxref("HTMLFormElement/submit_event", "submit")}}
-  - : The `submit` event fires when a form is submitted.
+  - : رویداد `submit` زمانی فعال می‌شود که یک فرم ارسال می‌شود.
 
-## Usage notes
+## نکات استفاده
 
-### Obtaining a form element object
+### به دست آوردن یک شیء عنصر فرم
 
-To obtain an `HTMLFormElement` object, you can use a [CSS selector](/en-US/docs/Web/CSS/Guides/Selectors) with {{domxref("Document.querySelector", "querySelector()")}}, or you can get a list of all of the forms in the document using its {{domxref("Document.forms", "forms")}} property.
+برای به دست آوردن یک شیء `HTMLFormElement`، می‌توانید از یک [انتخاب‌گر CSS](/en-US/docs/Web/CSS/Guides/Selectors) با {{domxref("Document.querySelector", "querySelector()")}} استفاده کنید، یا می‌توانید با استفاده از ویژگی {{domxref("Document.forms", "forms")}} آن، فهرستی از تمام فرم‌های موجود در سند را دریافت کنید.
 
-{{domxref("Document.forms")}} returns an array of `HTMLFormElement` objects listing each of the forms on the page. You can then use any of the following syntaxes to get an individual form:
+{{domxref("Document.forms")}} آرایه‌ای از اشیاء `HTMLFormElement` را برمی‌گرداند که هر یک از فرم‌های صفحه را فهرست می‌کند. سپس می‌توانید از هر یک از نحوهای زیر برای به دست آوردن یک فرم خاص استفاده کنید:
 
 - `document.forms[index]`
-  - : Returns the form at the specified `index` into the array of forms.
+  - : فرم را در `index` مشخص‌شده در آرایه فرم‌ها برمی‌گرداند.
 - `document.forms[id]`
-  - : Returns the form whose ID is `id`.
+  - : فرمی را که شناسه آن `id` است برمی‌گرداند.
 - `document.forms[name]`
-  - : Returns the form whose `name` attribute's value is `name`.
+  - : فرمی را که مقدار ویژگی `name` آن `name` است برمی‌گرداند.
 
-### Accessing the form's elements
+### دسترسی به عناصر فرم
 
-You can access the list of the form's data-containing elements by examining the form's {{domxref("HTMLFormElement.elements", "elements")}} property. This returns an {{domxref("HTMLFormControlsCollection")}} listing all of the form's user data entry elements, both those which are descendants of the `<form>` and those which are made members of the form using their `form` attributes.
+با بررسی ویژگی {{domxref("HTMLFormElement.elements", "elements")}} فرم می‌توانید به فهرست عناصر حاوی داده فرم دسترسی پیدا کنید. این یک {{domxref("HTMLFormControlsCollection")}} را برمی‌گرداند که تمام عناصر ورود داده کاربر فرم را فهرست می‌کند، هم آن‌هایی که از نوادگان `<form>` هستند و هم آن‌هایی که با استفاده از ویژگی `form` خود به اعضای فرم تبدیل شده‌اند.
 
-You can also get the form's element by using its `name` attribute as a key of the `form`, but using `elements` is a better approach—it contains _only_ the form's elements, and it cannot be mixed with other attributes of the `form`.
+همچنین می‌توانید عنصر فرم را با استفاده از ویژگی `name` آن به عنوان کلید `form` به دست آورید، اما استفاده از `elements` رویکرد بهتری است—زیرا _فقط_ عناصر فرم را شامل می‌شود و نمی‌تواند با سایر ویژگی‌های `form` مخلوط شود.
 
-### Issues with Naming Elements
+### مشکلات نام‌گذاری عناصر
 
-Some names will interfere with JavaScript access to the form's properties and elements.
+برخی نام‌ها در دسترسی جاوااسکریپت به ویژگی‌ها و عناصر فرم اختلال ایجاد می‌کنند.
 
-For example:
+به عنوان مثال:
 
-- `<input name="id">` will take precedence over `<form id="…">`. This means that `form.id` will not refer to the form's id, but to the element whose name is `"id"`. This will be the case with any other form properties, such as `<input name="action">` or `<input name="post">`.
-- `<input name="elements">` will render the form's `elements` collection inaccessible. The reference `form.elements` will now refer to the individual element.
+- `<input name="id">` بر `<form id="…">` اولویت خواهد داشت. این بدان معناست که `form.id` به شناسه فرم اشاره نمی‌کند، بلکه به عنصری که نام آن `"id"` است اشاره می‌کند. این مورد برای سایر ویژگی‌های فرم نیز صادق است، مانند `<input name="action">` یا `<input name="post">`.
+- `<input name="elements">` مجموعه `elements` فرم را غیرقابل دسترسی می‌کند. اکنون مرجع `form.elements` به عنصر منفرد اشاره خواهد کرد.
 
-To avoid such problems with element names:
+برای جلوگیری از چنین مشکلاتی با نام عناصر:
 
-- _Always_ use the `elements` collection to avoid ambiguity between an element name and a form property.
-- _Never_ use `"elements"` as an element name.
+- _همیشه_ از مجموعه `elements` استفاده کنید تا از ابهام بین نام یک عنصر و ویژگی فرم جلوگیری شود.
+- _هرگز_ از `"elements"` به عنوان نام یک عنصر استفاده نکنید.
 
-If you are not using JavaScript, this will not cause a problem.
+اگر از جاوااسکریپت استفاده نمی‌کنید، این مشکل ایجاد نخواهد شد.
 
-### Elements that are considered form controls
+### عناصری که کنترل‌های فرم در نظر گرفته می‌شوند
 
-The elements included by `HTMLFormElement.elements` and `HTMLFormElement.length` are the following:
+عناصری که توسط `HTMLFormElement.elements` و `HTMLFormElement.length` شامل می‌شوند، عبارتند از:
 
 - {{HTMLElement("button")}}
 - {{HTMLElement("fieldset")}}
-- {{HTMLElement("input")}} (with the exception that any whose [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) is `"image"` are omitted for historical reasons)
+- {{HTMLElement("input")}} (به استثنای آن‌هایی که [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) آن‌ها `"image"` است، که به دلایل تاریخی حذف شده‌اند)
 - {{HTMLElement("object")}}
 - {{HTMLElement("output")}}
 - {{HTMLElement("select")}}
 - {{HTMLElement("textarea")}}
 
-No other elements are included in the list returned by `elements`, which makes it an excellent way to get at the most important elements when processing forms.
+هیچ عنصر دیگری در فهرست بازگردانده‌شده توسط `elements` گنجانده نشده است، که این امر آن را به روشی عالی برای دسترسی به مهم‌ترین عناصر هنگام پردازش فرم‌ها تبدیل می‌کند.
 
-## Examples
+## مثال‌ها
 
-Creating a new form element, modifying its attributes, then submitting it:
+ایجاد یک عنصر فرم جدید، تغییر ویژگی‌های آن و سپس ارسال آن:
 
 ```js
 const f = document.createElement("form"); // Create a form
@@ -137,7 +131,7 @@ f.method = "POST";
 f.submit(); // Call the form's submit() method
 ```
 
-Extract information from a `<form>` element and set some of its attributes:
+استخراج اطلاعات از یک عنصر `<form>` و تنظیم برخی از ویژگی‌های آن:
 
 ```html
 <form name="formA" action="/cgi-bin/test" method="post">
@@ -188,7 +182,7 @@ document.getElementById("set-info").addEventListener("click", (e) => {
 });
 ```
 
-Submit a `<form>` into a new window:
+ارسال یک `<form>` به یک پنجره جدید:
 
 ```html
 <form action="test.php" target="_blank">
@@ -233,14 +227,14 @@ Submit a `<form>` into a new window:
 </form>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("form")}}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("form")}}.
