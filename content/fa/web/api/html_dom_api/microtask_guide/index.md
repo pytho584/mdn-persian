@@ -1,10 +1,4 @@
 ---
-title: "Using microtasks in JavaScript with queueMicrotask()"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide"
-status: "needs-translation"
----
-
----
 title: Using microtasks in JavaScript with queueMicrotask()
 slug: Web/API/HTML_DOM_API/Microtask_guide
 page-type: guide
@@ -12,51 +6,51 @@ page-type: guide
 
 {{DefaultAPISidebar("HTML DOM")}}
 
-A **microtask** is a short function which is executed after the function or program which created it exits _and_ only if the [JavaScript execution stack](/en-US/docs/Web/JavaScript/Reference/Execution_model#stack_and_execution_contexts) is empty, but before returning control to the event loop being used by the {{Glossary("user agent")}} to drive the script's execution environment.
+یک **microtask** (ریزکار) تابعی کوتاه است که پس از پایان یافتن تابع یا برنامه‌ای که آن را ایجاد کرده اجرا می‌شود، و تنها در صورتی که [پشته اجرای جاوااسکریپت](/en-US/docs/Web/JavaScript/Reference/Execution_model#stack_and_execution_contexts) خالی باشد، اما پیش از بازگرداندن کنترل به حلقه رویدادی که {{Glossary("user agent")}} برای هدایت محیط اجرای اسکریپت استفاده می‌کند.
 
-This event loop may be either the browser's main event loop or the event loop driving a [web worker](/en-US/docs/Web/API/Web_Workers_API). This lets the given function run without the risk of interfering with another script's execution, yet also ensures that the microtask runs before the user agent has the opportunity to react to actions taken by the microtask.
+این حلقه رویداد می‌تواند حلقه رویداد اصلی مرورگر یا حلقه رویدادی باشد که یک [web worker](/en-US/docs/Web/API/Web_Workers_API) را هدایت می‌کند. این امر به تابع موردنظر اجازه می‌دهد بدون خطر تداخل با اجرای اسکریپت دیگری اجرا شود، و همچنین تضمین می‌کند که ریزکار پیش از آن‌که عامل کاربر فرصت واکنش به اقدامات انجام‌شده توسط ریزکار را داشته باشد، اجرا شود.
 
-JavaScript [promises](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and the [Mutation Observer API](/en-US/docs/Web/API/MutationObserver) both use the microtask queue to run their callbacks, but there are other times when the ability to defer work until the current event loop pass is wrapping up is helpful. In order to allow microtasks to be used by third-party libraries, frameworks, and polyfills, the {{domxref("Window.queueMicrotask()", "queueMicrotask()")}} method is exposed on the {{domxref("Window")}} and {{domxref("WorkerGlobalScope")}} interfaces.
+هم [Promiseهای](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) جاوااسکریپت و هم [Mutation Observer API](/en-US/docs/Web/API/MutationObserver) از صف ریزکارها برای اجرای فراخوان‌های خود استفاده می‌کنند، اما مواقع دیگری نیز وجود دارد که توانایی به تعویق انداختن کار تا پایان یافتن عبور فعلی حلقه رویداد مفید است. برای اینکه کتابخانه‌ها، فریمورک‌ها و polyfillهای شخص ثالث بتوانند از ریزکارها استفاده کنند، متد {{domxref("Window.queueMicrotask()", "queueMicrotask()")}} در رابط‌های {{domxref("Window")}} و {{domxref("WorkerGlobalScope")}} در دسترس قرار گرفته است.
 
-## Tasks vs. microtasks
+## وظایف (Tasks) در برابر ریزکارها (Microtasks)
 
-To properly discuss microtasks, it's first useful to know what a JavaScript task is and how microtasks differ from tasks. This is a quick, simplified explanation, but if you would like more details, you can read the information in the article [In depth: Microtasks and the JavaScript runtime environment](/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth).
+برای بحث درست درباره ریزکارها، ابتدا بهتر است بدانیم وظیفه (task) در جاوااسکریپت چیست و ریزکارها چه تفاوتی با وظیفه‌ها دارند. این توضیحی سریع و ساده‌شده است؛ اما اگر جزئیات بیشتری می‌خواهید، می‌توانید مطالب مقاله [در عمق: ریزکارها و محیط اجرای جاوااسکریپت](/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth) را بخوانید.
 
-### Tasks
+### وظایف (Tasks)
 
-A **task** is anything which is scheduled to be run by the standard mechanisms such as initially starting to run a program, an event being dispatched asynchronously, or an interval or timeout being fired. These all get scheduled on the **task queue**.
+یک **وظیفه (task)** هر چیزی است که توسط سازوکارهای استاندارد زمان‌بندی می‌شود تا اجرا شود؛ مانند شروع اولیه اجرای یک برنامه، ارسال ناهمگام یک رویداد، یا فعال‌شدن یک بازه زمانی (interval) یا تایم‌اوت. همه این‌ها در **صف وظایف (task queue)** زمان‌بندی می‌شوند.
 
-For example, tasks get added to the task queue when:
+به عنوان مثال، وظیفه‌ها در این موارد به صف وظایف اضافه می‌شوند:
 
-- A new JavaScript program or subprogram is executed (such as from a console, or by running the code in a {{HTMLElement("script")}} element) directly.
-- The user clicks an element. A task is then created and executes all event callbacks.
-- A timeout or interval created with {{domxref("Window.setTimeout", "setTimeout()")}} or {{domxref("Window.setInterval", "setInterval()")}} is reached, causing the corresponding callback to be added to the task queue.
+- یک برنامه یا زیربرنامه جدید جاوااسکریپت به‌طور مستقیم اجرا شود (مثلاً از کنسول، یا با اجرای کد داخل یک عنصر {{HTMLElement("script")}}).
+- کاربر روی یک عنصر کلیک کند. در این صورت یک وظیفه ایجاد شده و همه فراخوان‌های رویداد را اجرا می‌کند.
+- یک تایم‌اوت یا بازه زمانی که با {{domxref("Window.setTimeout", "setTimeout()")}} یا {{domxref("Window.setInterval", "setInterval()")}} ایجاد شده به پایان برسد و باعث شود فراخوان متناظر به صف وظایف اضافه شود.
 
-The event loop driving your code handles these tasks one after another, in the order in which they were enqueued. The oldest runnable task in the task queue will be executed during a single iteration of the event loop. After that, microtasks will be executed until the microtask queue is empty, and then the browser may choose to update rendering. Then the browser moves on to the next iteration of event loop.
+حلقه رویدادی که کد شما را هدایت می‌کند این وظیفه‌ها را یکی پس از دیگری و به ترتیبی که وارد صف شده‌اند پردازش می‌کند. قدیمی‌ترین وظیفه قابل اجرا در صف وظایف در طی یک تکرار از حلقه رویداد اجرا خواهد شد. پس از آن، ریزکارها تا زمانی که صف ریزکارها خالی شود اجرا می‌شوند و سپس مرورگر ممکن است تصمیم بگیرد رندر را به‌روزرسانی کند. سپس مرورگر به تکرار بعدی حلقه رویداد می‌رود.
 
-### Microtasks
+### ریزکارها (Microtasks)
 
-At first the difference between microtasks and tasks seems minor. And they are similar; both are made up of JavaScript code which gets placed on a queue and run at an appropriate time. However, whereas the event loop runs only the tasks present on the queue when the iteration began, one after another, it handles the microtask queue very differently.
+در نگاه اول تفاوت بین ریزکارها و وظیفه‌ها جزئی به نظر می‌رسد. آن‌ها شبیه هم هستند؛ هر دو از کد جاوااسکریپت تشکیل شده‌اند که در یک صف قرار می‌گیرند و در زمان مناسب اجرا می‌شوند. با این حال، در حالی که حلقه رویداد فقط وظیفه‌هایی را که در شروع تکرار در صف وجود داشته‌اند یکی پس از دیگری اجرا می‌کند، با صف ریزکارها بسیار متفاوت رفتار می‌کند.
 
-There are two key differences:
+دو تفاوت کلیدی وجود دارد:
 
-1. Each time a task exits, the event loop checks to see if the task is returning control to other JavaScript code. If not, it runs all of the microtasks in the microtask queue. The microtask queue is, then, processed multiple times per iteration of the event loop, including after handling events and other callbacks.
-2. If a microtask adds more microtasks to the queue by calling {{domxref("Window.queueMicrotask()", "queueMicrotask()")}}, those newly-added microtasks _execute before the next task is run_. That's because the event loop will keep calling microtasks until there are none left in the queue, even if more keep getting added.
+1. هر بار که یک وظیفه به پایان می‌رسد، حلقه رویداد بررسی می‌کند که آیا آن وظیفه کنترل را به کد جاوااسکریپت دیگری برمی‌گرداند یا خیر. اگر نه، همه ریزکارهای موجود در صف ریزکارها را اجرا می‌کند. بنابراین صف ریزکارها چندین بار در هر تکرار حلقه رویداد پردازش می‌شود، از جمله پس از پردازش رویدادها و سایر فراخوان‌ها.
+2. اگر یک ریزکار با فراخوانی {{domxref("Window.queueMicrotask()", "queueMicrotask()")}} ریزکارهای بیشتری به صف اضافه کند، این ریزکارهای تازه اضافه‌شده _قبل از اجرای وظیفه بعدی_ اجرا می‌شوند. دلیلش این است که حلقه رویداد به فراخوانی ریزکارها ادامه می‌دهد تا زمانی که هیچ ریزکاری در صف باقی نماند، حتی اگر ریزکارهای بیشتری مدام اضافه شوند.
 
 > [!WARNING]
-> Since microtasks can themselves enqueue more microtasks, and the event loop continues processing microtasks until the queue is empty, there's a real risk of getting the event loop endlessly processing microtasks. Be cautious with how you go about recursively adding microtasks.
+> چون ریزکارها خودشان می‌توانند ریزکارهای بیشتری را وارد صف کنند و حلقه رویداد نیز تا خالی‌شدن صف به پردازش ریزکارها ادامه می‌دهد، این خطر واقعی وجود دارد که حلقه رویداد بی‌نهایت مشغول پردازش ریزکارها شود. در نحوه افزودن بازگشتی ریزکارها محتاط باشید.
 
-## Using microtasks
+## استفاده از ریزکارها
 
-Before getting farther into this, it's important to note again that most developers won't use microtasks much, if at all. They're a highly specialized feature of modern browser-based JavaScript development, allowing you to schedule code to jump in front of other things in the long set of things waiting to happen on the user's computer. Abusing this capability will lead to performance problems.
+قبل از پرداختن بیشتر به این موضوع، مهم است دوباره تأکید کنیم که بیشتر توسعه‌دهندگان، اگر نگوییم هرگز، چندان از ریزکارها استفاده نخواهند کرد. این‌ها ویژگی‌ای بسیار تخصصی در توسعه جاوااسکریپت مدرن مبتنی بر مرورگر هستند که به شما امکان می‌دهند کد را طوری زمان‌بندی کنید که از جلوی چیزهای دیگر در فهرست طولانی کارهایی که در انتظار رخ‌دادن روی رایانه کاربر هستند بپرد. سوءاستفاده از این قابلیت به مشکلات عملکردی منجر خواهد شد.
 
-### Enqueueing microtasks
+### قرار دادن ریزکارها در صف
 
-As such, you should typically use microtasks only when there's no other solution, or when creating frameworks or libraries that need to use microtasks in order to create the functionality they're implementing. While there have been tricks available that made it possible to enqueue microtasks in the past (such as by creating a promise that resolves immediately), the addition of the {{domxref("Window.queueMicrotask()", "queueMicrotask()")}} method adds a standard way to introduce a microtask safely and without tricks.
+بنابراین، معمولاً باید فقط زمانی از ریزکارها استفاده کنید که راه حل دیگری وجود نداشته باشد، یا در حال ساخت فریمورک یا کتابخانه‌ای باشید که برای پیاده‌سازی عملکرد خود به ریزکارها نیاز دارد. در گذشته ترفندهایی وجود داشت که امکان قرار دادن ریزکار در صف را فراهم می‌کرد (مانند ساخت یک Promise که بلافاصله resolve می‌شود)، اما افزوده شدن متد {{domxref("Window.queueMicrotask()", "queueMicrotask()")}} روشی استاندارد برای معرفی ایمن یک ریزکار بدون ترفند ارائه می‌دهد.
 
-By introducing `queueMicrotask()`, the quirks that arise when sneaking in using promises to create microtasks can be avoided. For instance, when using promises to create microtasks, exceptions thrown by the callback are reported as rejected promises rather than being reported as standard exceptions. Also, creating and destroying promises takes additional overhead both in terms of time and memory, which a function that properly enqueues microtasks avoids.
+با معرفی `queueMicrotask()`، می‌توان از مشکلاتی که هنگام استفاده پنهانی از Promiseها برای ایجاد ریزکار پیش می‌آیند اجتناب کرد. برای مثال، وقتی از Promiseها برای ایجاد ریزکار استفاده می‌کنید، استثناهای پرتاب‌شده توسط فراخوان به‌صورت Promiseهای ردشده (rejected) گزارش می‌شوند، نه به‌صورت استثناهای استاندارد. همچنین، ایجاد و نابودی Promiseها سربار اضافی هم از نظر زمان و هم از نظر حافظه دارد؛ سرباری که تابعی که به‌درستی ریزکارها را وارد صف می‌کند از آن اجتناب می‌کند.
 
-Pass the JavaScript {{jsxref("Function")}} to call while the context is handling microtasks into the `queueMicrotask()` method, which is exposed on the global context as defined by either the {{domxref("Window")}} or {{domxref("Worker")}} interface, depending on the current execution context.
+تابع جاوااسکریپت {{jsxref("Function")}} را که باید هنگام پردازش ریزکارها توسط زمینه (context) فراخوانی شود، به متد `queueMicrotask()` منتقل کنید. این متد بر روی زمینه سراسری که توسط رابط {{domxref("Window")}} یا {{domxref("Worker")}} تعریف می‌شود (بسته به زمینه اجرای فعلی) در دسترس است.
 
 ```js
 queueMicrotask(() => {
@@ -64,19 +58,19 @@ queueMicrotask(() => {
 });
 ```
 
-The microtask function itself takes no parameters, and does not return a value.
+خود تابع ریزکار هیچ پارامتری نمی‌گیرد و مقداری بازنمی‌گرداند.
 
-### When to use microtasks
+### چه زمانی از ریزکارها استفاده کنیم؟
 
-In this section, we'll take a look at scenarios in which microtasks are particularly useful. Generally, it's about capturing or checking results, or performing cleanup, after the main body of a JavaScript execution context exits—but _before_ any event handlers, timeouts and intervals, or other callbacks are processed.
+در این بخش، سناریوهایی را بررسی می‌کنیم که ریزکارها در آن‌ها به‌ویژه مفید هستند. به‌طور کلی، موضوع درباره گرفتن یا بررسی نتایج، یا انجام پاکسازی، پس از پایان یافتن بدنه اصلی یک زمینه اجرای جاوااسکریپت است — اما _پیش از_ پردازش هرگونه رویدادگردان، تایم‌اوت و بازه زمانی، یا سایر فراخوان‌ها.
 
-When is that useful?
+چه زمانی این مفید است؟
 
-The main reason to use microtasks is to ensure consistent ordering of tasks, even when results or data is available synchronously, but while simultaneously reducing the risk of user-discernible delays in operations.
+دلیل اصلی استفاده از ریزکارها تضمین ترتیب سازگار اجرای وظیفه‌هاست، حتی زمانی که نتایج یا داده‌ها به‌صورت همزمان در دسترس هستند، و همزمان کاهش خطر تأخیرهای قابل‌تشخیص توسط کاربر در عملیات‌ها.
 
-#### Ensuring ordering on conditional use of promises
+#### تضمین ترتیب در استفاده شرطی از Promiseها
 
-One situation in which microtasks can be used to ensure that the ordering of execution is always consistent is when promises are used in one clause of an `if...else` statement (or other conditional statement), but not in the other clause. Consider code such as this:
+یک موقعیت که در آن می‌توان از ریزکارها برای تضمین سازگاری همیشگی ترتیب اجرا استفاده کرد، وقتی است که Promiseها در یکی از شاخه‌های یک دستور `if...else` (یا سایر دستورهای شرطی) استفاده می‌شوند اما در شاخه دیگر نه. کدی مانند این را در نظر بگیرید:
 
 ```js
 customElement.prototype.getData = function (url) {
@@ -95,18 +89,11 @@ customElement.prototype.getData = function (url) {
 };
 ```
 
-The problem introduced here is that by using a task in one branch of the `if...else` statement (in the case in which the image is available in the cache) but having promises involved in the `else` clause, we have a situation in which the order of operations can vary; for example, as seen below.
+مشکلی که در اینجا ایجاد می‌شود این است که با استفاده از یک task در یک شاخه از دستور `if...else` (در حالتی که تصویر در حافظه نهان موجود است) در حالی که در شاخه `else` از Promiseها استفاده شده، وضعیتی پیش می‌آید که ترتیب عملیات‌ها می‌تواند متفاوت باشد؛ برای مثال، همان‌طور که در زیر مشاهده می‌کنید.
 
-```js
-element.addEventListener("load", () => console.log("Loaded data"));
-console.log("Fetching data…");
-element.getData();
-console.log("Data fetched");
-```
+اجرای این کد دو بار پشت سر هم نتایج زیر را به دست می‌دهد.
 
-Executing this code twice in a row gives the following results.
-
-When the data is not cached:
+وقتی داده در حافظه نهان نیست:
 
 ```plain
 Fetching data…
@@ -114,7 +101,7 @@ Data fetched
 Loaded data
 ```
 
-When the data is cached:
+وقتی داده در حافظه نهان است:
 
 ```plain
 Fetching data…
@@ -122,9 +109,9 @@ Loaded data
 Data fetched
 ```
 
-Even worse, sometimes the element's `data` property will be set, but other times it won't complete before this code finishes running.
+حتی بدتر از آن، گاهی ویژگی `data` عنصر تنظیم می‌شود و گاهی قبل از پایان اجرای این کد تکمیل نمی‌شود.
 
-We can ensure consistent ordering of these operations by using a microtask in the `if` clause to balance the two clauses:
+با استفاده از یک ریزکار در شاخه `if` می‌توانیم ترتیب سازگار این عملیات‌ها را تضمین کنیم و دو شاخه را متعادل کنیم:
 
 ```js
 customElement.prototype.getData = function (url) {
@@ -145,13 +132,13 @@ customElement.prototype.getData = function (url) {
 };
 ```
 
-This balances the clauses by having both situations handle the setting of `data` and firing of the `load` event within a microtask (using `queueMicrotask()` in the `if` clause and using the promises used by {{domxref("Window/fetch", "fetch()")}} in the `else` clause).
+این کار شاخه‌ها را متعادل می‌کند، زیرا هر دو وضعیت تنظیم `data` و رویداد `load` را در یک ریزکار انجام می‌دهند (در شاخه `if` از `queueMicrotask()` و در شاخه `else` از Promiseهای استفاده‌شده توسط {{domxref("Window/fetch", "fetch()")}}).
 
-#### Batching operations
+#### دسته‌بندی عملیات‌ها
 
-You can also use microtasks to collect multiple requests from various sources into a single batch, avoiding the possible overhead involved with multiple calls to handle the same kind of work.
+همچنین می‌توانید از ریزکارها برای جمع‌آوری چندین درخواست از منابع مختلف در یک دسته واحد استفاده کنید و از سربار احتمالی چندین فراخوانی برای انجام همان نوع کار اجتناب کنید.
 
-The snippet below creates a function that batches multiple messages into an array, using a microtask to send them as a single object when the context exits.
+قطعه کد زیر تابعی ایجاد می‌کند که چندین پیام را در یک آرایه دسته‌بندی می‌کند و از یک ریزکار برای ارسال آن‌ها به‌صورت یک شیء واحد هنگام خروج از زمینه استفاده می‌کند.
 
 ```js
 const messageQueue = [];
@@ -169,21 +156,21 @@ let sendMessage = (message) => {
 };
 ```
 
-When `sendMessage()` gets called, the specified message is first pushed onto the message queue array. Then things get interesting.
+وقتی `sendMessage()` فراخوانی می‌شود، ابتدا پیام مشخص‌شده به آرایه صف پیام اضافه می‌شود. سپس کار جالب می‌شود.
 
-If the message we just added to the array is the first one, we enqueue a microtask that will send a batch. The microtask will execute, as always, when the JavaScript execution path reaches the top level, just before running callbacks. That means that any further calls to `sendMessage()` made in the interim will push their messages onto the message queue, but because of the array length check before adding a microtask, no new microtask is enqueued.
+اگر پیامی که تازه به آرایه اضافه کرده‌ایم اولین پیام باشد، یک ریزکار وارد صف می‌کنیم که یک دسته را ارسال خواهد کرد. این ریزکار، مثل همیشه، زمانی اجرا می‌شود که مسیر اجرای جاوااسکریپت به سطح بالا برسد، درست قبل از اجرای فراخوان‌ها. این بدان معناست که هر فراخوانی دیگری از `sendMessage()` که در این فاصله انجام شود، پیام خود را به صف پیام اضافه می‌کند؛ اما به دلیل بررسی طول آرایه قبل از افزودن ریزکار، ریزکار جدیدی وارد صف نمی‌شود.
 
-When the microtask runs, then, it has an array of potentially many messages waiting for it. It starts by encoding it as JSON using the {{jsxref("JSON.stringify()")}} method. After that, the array's contents aren't needed anymore, so we empty the `messageQueue` array. Finally, we use the {{domxref("Window/fetch", "fetch()")}} method to send the JSON string to the server.
+پس وقتی ریزکار اجرا می‌شود، آرایه‌ای از پیام‌های متعدد در انتظار آن است. ابتدا با استفاده از متد {{jsxref("JSON.stringify()")}} آن را به JSON کدگذاری می‌کند. پس از آن، دیگر محتویات آرایه مورد نیاز نیست، بنابراین آرایه `messageQueue` را خالی می‌کنیم. در نهایت، با استفاده از متد {{domxref("Window/fetch", "fetch()")}} رشته JSON را به سرور ارسال می‌کنیم.
 
-This lets every call to `sendMessage()` made during the same iteration of the event loop add their messages to the same `fetch()` operation, without potentially having other tasks such as timeouts or the like delay the transmission.
+این کار به هر فراخوانی از `sendMessage()` که در طول همان تکرار حلقه رویداد انجام می‌شود اجازه می‌دهد پیام خود را به همان عملیات `fetch()` اضافه کند، بدون اینکه وظیفه‌های دیگری مانند تایم‌اوت‌ها یا موارد مشابه، ارسال را به تأخیر بیندازند.
 
-The server will receive the JSON string, then will presumably decode it and process the messages it finds in the resulting array.
+سرور رشته JSON را دریافت می‌کند و سپس احتمالاً آن را رمزگشایی کرده و پیام‌های موجود در آرایه حاصل را پردازش می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Simple microtask example
+### مثال ساده ریزکار
 
-In this simple example, we see that enqueueing a microtask causes the microtask's callback to run after the body of this top-level script is done running.
+در این مثال ساده، می‌بینیم که وارد کردن یک ریزکار به صف باعث می‌شود فراخوان ریزکار پس از پایان اجرای بدنه این اسکریپت سطح بالا اجرا شود.
 
 ```html hidden
 <pre id="log"></pre>
@@ -196,7 +183,7 @@ const logElem = document.getElementById("log");
 const log = (s) => (logElem.innerText += `${s}\n`);
 ```
 
-In the following code, we see a call to {{domxref("Window.queueMicrotask()", "queueMicrotask()")}} used to schedule a microtask to run. This call is bracketed by calls to `log()`, a custom function that outputs text to the screen.
+در کد زیر، فراخوانی {{domxref("Window.queueMicrotask()", "queueMicrotask()")}} را می‌بینیم که برای زمان‌بندی اجرای یک ریزکار استفاده شده است. این فراخوانی بین دو فراخوانی `log()` قرار گرفته است؛ تابع سفارشی که متن را روی صفحه نمایش می‌دهد.
 
 ```js
 log("Before enqueueing the microtask");
@@ -206,93 +193,6 @@ queueMicrotask(() => {
 log("After enqueueing the microtask");
 ```
 
-#### Result
+#### نتیجه
 
-{{EmbedLiveSample("Simple_microtask_example", 640, 80)}}
-
-### Timeout and microtask example
-
-In this example, a timeout is scheduled to fire after zero milliseconds (or "as soon as possible"). This demonstrates the difference between what "as soon as possible" means when scheduling a new task (such as by using `setTimeout()`) versus using a microtask.
-
-```html hidden
-<pre id="log"></pre>
-```
-
-#### JavaScript
-
-```js hidden
-const logElem = document.getElementById("log");
-const log = (s) => (logElem.innerText += `${s}\n`);
-```
-
-In the following code, we see a call to {{domxref("Window.queueMicrotask()", "queueMicrotask()")}} used to schedule a microtask to run. This call is bracketed by calls to `log()`, a custom function that outputs text to the screen.
-
-The code below schedules a timeout to occur in zero milliseconds, then enqueues a microtask. This is bracketed by calls to `log()` to output additional messages.
-
-```js
-const callback = () => log("Regular timeout callback has run");
-
-const urgentCallback = () => log("*** Oh noes! An urgent callback has run!");
-
-log("Main program started");
-setTimeout(callback, 0);
-queueMicrotask(urgentCallback);
-log("Main program exiting");
-```
-
-#### Result
-
-{{EmbedLiveSample("Timeout_and_microtask_example", 640, 100)}}
-
-Note that the output logged from the main program body appears first, followed by the output from the microtask, followed by the timeout's callback. That's because when the task that's handling the execution of the main program exits, the microtask queue gets processed before the task queue on which the timeout callback is located. To help keep this straight, remember that tasks and microtasks are kept on separate queues, and that microtasks run first.
-
-### Microtask from a function
-
-This example expands slightly on the previous one by adding a function that does some work. This function uses `queueMicrotask()` to schedule a microtask. The important thing to take away from this one is that the microtask isn't processed when the function exits, but when the main program exits.
-
-```html hidden
-<pre id="log"></pre>
-```
-
-#### JavaScript
-
-```js hidden
-const logElem = document.getElementById("log");
-const log = (s) => (logElem.innerText += `${s}\n`);
-```
-
-The main program code follows. The `doWork()` function here calls `queueMicrotask()`, yet the microtask still doesn't fire until the entire program exits, since that's when the task exits and there's nothing else on the execution stack.
-
-```js
-const callback = () => log("Regular timeout callback has run");
-
-const urgentCallback = () => log("*** Oh noes! An urgent callback has run!");
-
-const doWork = () => {
-  let result = 1;
-
-  queueMicrotask(urgentCallback);
-
-  for (let i = 2; i <= 10; i++) {
-    result *= i;
-  }
-  return result;
-};
-
-log("Main program started");
-setTimeout(callback, 0);
-log(`10! equals ${doWork()}`);
-log("Main program exiting");
-```
-
-#### Result
-
-{{EmbedLiveSample("Microtask_from_a_function", 640, 100)}}
-
-## See also
-
-- [In depth: Microtasks and the JavaScript runtime environment](/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth)
-- {{domxref("Window.queueMicrotask()", "queueMicrotask()")}}
-- [Asynchronous JavaScript](/en-US/docs/Learn_web_development/Extensions/Async_JS)
-  - [Introducing asynchronous JavaScript](/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing)
-  - [Graceful asynchronous programming with Promises](/en-US/docs/Learn_web_development/Extensions/Async_JS/Promises)
+{{EmbedLive
