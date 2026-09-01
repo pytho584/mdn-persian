@@ -1,11 +1,5 @@
 ---
 title: "DataCue: DataCue() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataCue/DataCue"
-status: "needs-translation"
----
-
----
-title: "DataCue: DataCue() constructor"
 short-title: DataCue()
 slug: Web/API/DataCue/DataCue
 page-type: web-api-constructor
@@ -16,7 +10,7 @@ browser-compat: api.DataCue.DataCue
 
 {{APIRef("WebVTT")}}{{SeeCompatTable}}
 
-The **`DataCue()`** constructor creates and returns a new {{domxref("DataCue")}} object that represents a timed metadata cue over a given time range. The resulting cue can be added to a metadata {{domxref("TextTrack")}} using {{domxref("TextTrack.addCue()")}}, allowing arbitrary data to be synchronized with audio or video playback.
+سازندهٔ **`DataCue()`** یک شیء {{domxref("DataCue")}} جدید می‌سازد و برمی‌گرداند که نشان‌دهندهٔ یک نشانه (cue) فراداده‌ای زمان‌بندی‌شده در یک بازهٔ زمانی معین است. نشانهٔ حاصل را می‌توان با استفاده از {{domxref("TextTrack.addCue()")}} به یک {{domxref("TextTrack")}} فراداده‌ای اضافه کرد و بدین ترتیب داده‌های دلخواه را با پخش صدا یا ویدیو همگام‌سازی نمود.
 
 ## Syntax
 
@@ -25,26 +19,26 @@ new DataCue(startTime, endTime, value)
 new DataCue(startTime, endTime, value, type)
 ```
 
-### Parameters
+### پارامترها
 
 - `startTime`
-  - : A number representing the start time, in seconds, for the cue's time range. This corresponds to the point on the media timeline at which the cue becomes active and its {{domxref("TextTrackCue/enter_event", "enter")}} event fires.
+  - : عددی که زمان شروع، بر حسب ثانیه، برای بازهٔ زمانی نشانه را مشخص می‌کند. این مقدار با نقطه‌ای از خط زمانی رسانه مطابقت دارد که نشانه در آن فعال می‌شود و رویداد {{domxref("TextTrackCue/enter_event", "enter")}} آن رخ می‌دهد.
 - `endTime`
-  - : A number representing the end time, in seconds, for the cue's time range. When the media playback reaches this time, the cue's {{domxref("TextTrackCue/exit_event", "exit")}} event fires. Use `Infinity` for a cue that remains active until the end of the media.
+  - : عددی که زمان پایان، بر حسب ثانیه، برای بازهٔ زمانی نشانه را مشخص می‌کند. وقتی پخش رسانه به این زمان برسد، رویداد {{domxref("TextTrackCue/exit_event", "exit")}} نشانه رخ می‌دهد. برای نشانه‌ای که تا پایان رسانه فعال می‌ماند، از `Infinity` استفاده کنید.
 - `value`
-  - : The data payload associated with the cue. This can be any type, such as a string, a JavaScript object, or an {{jsxref("ArrayBuffer")}}. The value is stored in the cue's {{domxref("DataCue.value", "value")}} property.
+  - : بار داده‌ای (payload) مرتبط با نشانه. این مقدار می‌تواند از هر نوعی باشد؛ مانند یک رشته، یک شیء جاوااسکریپت یا یک {{jsxref("ArrayBuffer")}}. این مقدار در ویژگی {{domxref("DataCue.value", "value")}} نشانه ذخیره می‌شود.
 - `type` {{optional_inline}}
-  - : A string identifying the type or schema of the data in `value`. This is typically a reverse-domain notation string (e.g., `"org.id3"`, `"org.mp4ra"`). The value is stored in the cue's {{domxref("DataCue.type", "type")}} property and defaults to an empty string if not provided.
+  - : رشته‌ای که نوع یا طرحوارهٔ داده‌های موجود در `value` را مشخص می‌کند. این رشته معمولاً با نماد دامنهٔ معکوس نوشته می‌شود (مثلاً `"org.id3"` یا `"org.mp4ra"`). این مقدار در ویژگی {{domxref("DataCue.type", "type")}} نشانه ذخیره می‌شود و اگر ارائه نشود، به‌صورت پیش‌فرض یک رشتهٔ خالی خواهد بود.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("DataCue")}} object.
+یک شیء جدید {{domxref("DataCue")}}.
 
-## Examples
+## مثال‌ها
 
-### Creating a DataCue with geolocation data
+### ساخت DataCue با داده‌های موقعیت جغرافیایی
 
-This example creates a `DataCue` that carries geolocation coordinates, using a reverse-domain string as the `type` to identify the data format.
+این مثال یک `DataCue` می‌سازد که مختصات موقعیت جغرافیایی را حمل می‌کند و از یک رشتهٔ دامنهٔ معکوس به‌عنوان `type` برای شناسایی قالب داده استفاده می‌کند.
 
 ```html
 <video controls src="video.mp4"></video>
@@ -55,7 +49,7 @@ const video = document.querySelector("video");
 const track = video.addTextTrack("metadata", "Geo Track");
 track.mode = "hidden";
 
-// Create a cue from 5 seconds to the end of the media
+// ساخت یک نشانه از ثانیهٔ ۵ تا پایان رسانه
 const data = { latitude: 51.5043, longitude: -0.0762 };
 const cue = new DataCue(5.0, Infinity, data, "org.example.geo");
 
@@ -67,18 +61,18 @@ cue.addEventListener("enter", (e) => {
 track.addCue(cue);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DataCue")}}
 - {{domxref("TextTrack")}}
 - {{domxref("TextTrack.addCue()")}}
-- {{domxref("TextTrackCue/enter_event", "enter")}} event
-- {{domxref("TextTrackCue/exit_event", "exit")}} event
+- رویداد {{domxref("TextTrackCue/enter_event", "enter")}}
+- رویداد {{domxref("TextTrackCue/exit_event", "exit")}}
