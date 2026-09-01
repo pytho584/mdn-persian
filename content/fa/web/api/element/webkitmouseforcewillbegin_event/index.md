@@ -1,11 +1,5 @@
 ---
 title: "Element: webkitmouseforcewillbegin event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/webkitmouseforcewillbegin_event"
-status: "needs-translation"
----
-
----
-title: "Element: webkitmouseforcewillbegin event"
 short-title: webkitmouseforcewillbegin
 slug: Web/API/Element/webkitmouseforcewillbegin_event
 page-type: web-api-event
@@ -16,17 +10,17 @@ browser-compat: api.Element.webkitmouseforcewillbegin_event
 
 {{APIRef("Force Touch Events")}}{{Non-standard_header}}
 
-Safari for macOS fires the non-standard **`webkitmouseforcewillbegin`** event at an {{domxref("Element")}} before firing the initial {{domxref("Element/mousedown_event", "mousedown")}} event.
+سافاری در macOS، رویداد غیراستاندارد **`webkitmouseforcewillbegin`** را روی یک {{domxref("Element")}} پیش از فعال‌سازی رویداد اولیه {{domxref("Element/mousedown_event", "mousedown")}} صادر می‌کند.
 
-This offers the opportunity to tell the system not to trigger any default Force Touch actions if and when the click turns into a [Force Touch events](/en-US/docs/Web/API/Force_Touch_events).
+این رویداد فرصتی فراهم می‌کند تا به سیستم اعلام کنید که در صورت تبدیل شدن کلیک به [رویدادهای Force Touch](/en-US/docs/Web/API/Force_Touch_events)، هیچ‌یک از اقدامات پیش‌فرض Force Touch فعال نشوند.
 
-To instruct macOS not to engage any default Force Touch actions if the user apply enough pressure to activate a Force Touch event, call {{domxref("Event.preventDefault", "preventDefault()")}} on the `webkitmouseforcewillbegin` event object.
+برای اینکه به macOS بگویید در صورتی که کاربر فشار کافی برای فعال‌سازی رویداد Force Touch اعمال کند، هیچ اقدام پیش‌فرضی از نوع Force Touch انجام ندهد، متد {{domxref("Event.preventDefault", "preventDefault()")}} را روی شیء رویداد `webkitmouseforcewillbegin` فراخوانی کنید.
 
-**`webkitmouseforcewillbegin`** is a proprietary, WebKit-specific event. It is part of the [Force Touch events](/en-US/docs/Web/API/Force_Touch_events) feature.
+**`webkitmouseforcewillbegin`** یک رویداد اختصاصی و مخصوص WebKit است. این رویداد بخشی از قابلیت [رویدادهای Force Touch](/en-US/docs/Web/API/Force_Touch_events) محسوب می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم ویژگی handler رویداد، از الگوی زیر استفاده کنید:
 
 ```js-nolint
 addEventListener("webkitmouseforcewillbegin", (event) => { })
@@ -34,23 +28,23 @@ addEventListener("webkitmouseforcewillbegin", (event) => { })
 onwebkitmouseforcewillbegin = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MouseEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("MouseEvent")}}. از {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("MouseEvent")}}
 
-## Specifications
+## مشخصات
 
-_Not part of any specification._ Apple has [a description at the Mac Developer Library](https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/SafariJSProgTopics/RespondingtoForceTouchEventsfromJavaScript.html).
+_مشخصات خاصی برای این رویداد وجود ندارد._ اپل [توضیحاتی در Mac Developer Library](https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/SafariJSProgTopics/RespondingtoForceTouchEventsfromJavaScript.html) ارائه کرده است.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Learn: Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
+- [یادگیری: آشنایی با رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events)
 - {{domxref("Element/webkitmouseforcedown_event", "webkitmouseforcedown")}}
 - {{domxref("Element/webkitmouseforceup_event", "webkitmouseforceup")}}
 - {{domxref("Element/webkitmouseforcechanged_event", "webkitmouseforcechanged")}}
