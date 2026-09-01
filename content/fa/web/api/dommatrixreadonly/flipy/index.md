@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: flipY() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/flipY"
-status: "needs-translation"
----
-
----
-title: "DOMMatrixReadOnly: flipY() method"
 short-title: flipY()
 slug: Web/API/DOMMatrixReadOnly/flipY
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.DOMMatrixReadOnly.flipY
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`flipY()`** method of the {{domxref("DOMMatrixReadOnly")}} interface creates a new matrix being the result of the original matrix flipped about the y-axis. This is equivalent to multiplying the matrix by `DOMMatrix(1, 0, 0, -1, 0, 0)`. The original matrix is not modified.
+متد **`flipY()`** در رابط {{domxref("DOMMatrixReadOnly")}} یک ماتریس جدید ایجاد می‌کند که حاصل وارونه‌سازی ماتریس اصلی حول محور Y است. این معادل ضرب ماتریس در `DOMMatrix(1, 0, 0, -1, 0, 0)` می‌باشد. ماتریس اصلی تغییر نمی‌کند.
 
 ## Syntax
 
@@ -24,17 +18,17 @@ flipY()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-A [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix).
+یک [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix).
 
 ## Examples
 
-### Inverting a triangle
+### وارونه‌سازی یک مثلث
 
-In this example, the SVG contains two identical [paths](/en-US/docs/Web/SVG/Reference/Attribute/d) in the shape of a triangle; they are both drawn to have the same size and position. The view box has a negative y value showing us content from both sides of the y-axis. This enables the flipped triangle to be within the viewport after it is transformed.
+در این مثال، SVG شامل دو [مسیر](/en-US/docs/Web/SVG/Reference/Attribute/d) یکسان به شکل مثلث است؛ هر دو با اندازه و موقعیت یکسان رسم شده‌اند. جعبه دید (viewBox) مقدار y منفی دارد که محتوای هر دو سمت محور Y را به ما نشان می‌دهد. این کار باعث می‌شود مثلث وارونه‌شده پس از تبدیل، در داخل دید قرار گیرد.
 
 #### HTML
 
@@ -47,7 +41,7 @@ In this example, the SVG contains two identical [paths](/en-US/docs/Web/SVG/Refe
 
 #### JavaScript
 
-The JavaScript creates an [identity matrix](/en-US/docs/Web/API/DOMMatrixReadOnly/isIdentity), then uses the `flipY()` method to create a new matrix, which is then applied to the blue triangle, inverting it across the y-axis. The red triangle is left in place.
+جاوااسکریپت یک [ماتریس همانی](/en-US/docs/Web/API/DOMMatrixReadOnly/isIdentity) ایجاد می‌کند و سپس با استفاده از متد `flipY()` یک ماتریس جدید می‌سازد که روی مثلث آبی اعمال می‌شود و آن را حول محور Y وارونه می‌کند. مثلث قرمز در جای خود باقی می‌ماند.
 
 ```js
 const flipped = document.getElementById("flipped");
