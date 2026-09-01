@@ -1,7 +1,6 @@
 ---
 title: "Element: ariaRowSpan property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaRowSpan"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +13,15 @@ browser-compat: api.Element.ariaRowSpan
 
 {{APIRef("DOM")}}
 
-The **`ariaRowSpan`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan) attribute, which defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid.
+ویژگی **`ariaRowSpan`** در رابط {{domxref("Element")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan) است که تعداد ردیف‌های تحت پوشش یک سلول یا سلول شبکه‌ای را در یک جدول، شبکه یا درخت‌شبکه تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string which contains an integer.
+رشته‌ای شامل یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-rowspan` attribute on the element with an ID of `spanning-heading` is set to "3". Using `ariaRowSpan` we update the value to "2".
+در این مثال، ویژگی `aria-rowspan` روی عنصری با شناسهٔ `spanning-heading` برابر «۳» تنظیم شده است. با استفاده از `ariaRowSpan` مقدار را به «۲» تغییر می‌دهیم.
 
 ```html
 <table>
@@ -52,14 +51,14 @@ el.ariaRowSpan = "2";
 console.log(el.ariaRowSpan);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
+- [ARIA: نقش table](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
