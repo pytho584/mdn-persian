@@ -1,7 +1,5 @@
 ---
 title: "GPUCommandBuffer"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandBuffer"
-status: "needs-translation"
 ---
 
 ---
@@ -13,21 +11,21 @@ browser-compat: api.GPUCommandBuffer
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUCommandBuffer`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents a pre-recorded list of GPU commands that can be submitted to a {{domxref("GPUQueue")}} for execution.
+رابط **`GPUCommandBuffer`** در {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} نمایانگر فهرستی از پیش ضبط‌شده از دستورات GPU است که می‌توان برای اجرا به یک {{domxref("GPUQueue")}} ارسال کرد.
 
-A `GPUCommandBuffer` is created via the {{domxref("GPUCommandEncoder.finish()")}} method; the GPU commands recorded within are submitted for execution by passing the `GPUCommandBuffer` into the parameter of a {{domxref("GPUQueue.submit()")}} call.
+یک `GPUCommandBuffer` از طریق متد {{domxref("GPUCommandEncoder.finish()")}} ایجاد می‌شود؛ دستورات GPU ثبت‌شده در آن با ارسال `GPUCommandBuffer` به‌عنوان پارامتر فراخوانی {{domxref("GPUQueue.submit()")}} برای اجرا ارسال می‌شوند.
 
 > [!NOTE]
-> Once a `GPUCommandBuffer` object has been submitted, it cannot be used again.
+> وقتی یک شیء `GPUCommandBuffer` ارسال شد، دیگر نمی‌توان از آن استفاده کرد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPUCommandBuffer.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : رشته‌ای که برچسبی برای شناسایی شیء فراهم می‌کند، برای مثال در پیام‌های {{domxref("GPUError")}} یا اخطارهای کنسول.
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -37,16 +35,16 @@ device.queue.submit([commandBuffer]);
 ```
 
 > [!NOTE]
-> Study the [WebGPU samples](https://webgpu.github.io/webgpu-samples/) to find complete examples.
+> برای مشاهدهٔ مثال‌های کامل، [نمونه‌های WebGPU](https://webgpu.github.io/webgpu-samples/) را مطالعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
