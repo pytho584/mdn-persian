@@ -1,11 +1,5 @@
 ---
 title: "Element: lastElementChild property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/lastElementChild"
-status: "needs-translation"
----
-
----
-title: "Element: lastElementChild property"
 short-title: lastElementChild
 slug: Web/API/Element/lastElementChild
 page-type: web-api-instance-property
@@ -14,42 +8,39 @@ browser-compat: api.Element.lastElementChild
 
 {{ APIRef("DOM") }}
 
-The **`Element.lastElementChild`** read-only property
-returns an element's last child {{domxref("Element")}}, or `null` if there
-are no child elements.
+خاصیت فقط‌خواندنی **`Element.lastElementChild`** آخرین فرزند {{domxref("Element")}} یک عنصر را برمی‌گرداند، یا در صورت نبود هیچ عنصر فرزندی، `null` را برمی‌گرداند.
 
-`Element.lastElementChild` includes only element nodes.
-To get all child nodes, including non-element nodes like text and comment nodes, use {{domxref("Node.lastChild")}}.
+`Element.lastElementChild` فقط گره‌های عنصر (element nodes) را شامل می‌شود. برای دریافت همه گره‌های فرزند، از جمله گره‌های غیرعنصر مانند متن و توضیحات، از {{domxref("Node.lastChild")}} استفاده کنید.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} object, or `null`.
+یک شیء {{domxref("Element")}}، یا `null`.
 
-## Examples
+## مثال‌ها
 
 ```html
 <ul id="list">
-  <li>First (1)</li>
-  <li>Second (2)</li>
-  <li>Third (3)</li>
+  <li>اول (1)</li>
+  <li>دوم (2)</li>
+  <li>سوم (3)</li>
 </ul>
 ```
 
 ```js
 const list = document.getElementById("list");
 console.log(list.lastElementChild.textContent);
-// logs "Third (3)"
+// چاپ می‌کند "سوم (3)"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.previousElementSibling")}}
 - {{domxref("Element.firstElementChild")}}
