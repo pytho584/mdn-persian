@@ -1,11 +1,5 @@
 ---
 title: "CSSMathValue: operator property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathValue/operator"
-status: "needs-translation"
----
-
----
-title: "CSSMathValue: operator property"
 short-title: operator
 slug: Web/API/CSSMathValue/operator
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.CSSMathValue.operator
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`operator`** read-only property of the {{domxref("CSSMathValue")}} interface returns the operator that the current subtype represents.
-For example, if the current `CSSMathValue` subtype is `CSSMathSum`, this property will return the string `"sum"`.
+ویژگی فقط‌خواندنی **`operator`** در رابط {{domxref("CSSMathValue")}} عملگری را برمی‌گرداند که زیرنوع فعلی نشان‌دهندهٔ آن است.
+برای مثال، اگر زیرنوع فعلی `CSSMathValue` از نوع `CSSMathSum` باشد، این ویژگی رشتهٔ `"sum"` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{jsxref('String')}}.
+یک {{jsxref('String')}}.
 
-| Interface                     | Value       |
-| ----------------------------- | ----------- |
-| {{domxref('CSSMathSum')}}     | `"sum"`     |
-| {{domxref('CSSMathProduct')}} | `"product"` |
-| {{domxref('CSSMathMin')}}     | `"min"`     |
-| {{domxref('CSSMathMax')}}     | `"max"`     |
-| {{domxref('CSSMathClamp')}}   | `"clamp"`   |
-| {{domxref('CSSMathNegate')}}  | `"negate"`  |
-| {{domxref('CSSMathInvert')}}  | `"invert"`  |
+| رابط                           | مقدار        |
+| ------------------------------ | ------------ |
+| {{domxref('CSSMathSum')}}      | `"sum"`      |
+| {{domxref('CSSMathProduct')}}  | `"product"`  |
+| {{domxref('CSSMathMin')}}      | `"min"`      |
+| {{domxref('CSSMathMax')}}      | `"max"`      |
+| {{domxref('CSSMathClamp')}}    | `"clamp"`    |
+| {{domxref('CSSMathNegate')}}   | `"negate"`   |
+| {{domxref('CSSMathInvert')}}   | `"invert"`   |
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-This example shows how the `operator` property identifies the operation represented by a {{cssxref("calc()")}} value's `CSSMathValue` subtype, including for a nested value.
+این مثال نشان می‌دهد که ویژگی `operator` چگونه عملگرِ نمایش‌داده‌شده توسط زیرنوع `CSSMathValue` یک مقدار {{cssxref("calc()")}} را شناسایی می‌کند، از جمله برای یک مقدار تو در تو.
 
 #### HTML
 
@@ -49,7 +43,7 @@ This example shows how the `operator` property identifies the operation represen
 
 #### CSS
 
-`width` is set using a `calc()` subtraction, which is represented as a `CSSMathSum` whose second term is negated.
+`width` با استفاده از یک تفریق `calc()` تنظیم شده است که به صورت یک `CSSMathSum` نمایش داده می‌شود و جملهٔ دوم آن منفی شده است.
 
 ```css
 #demoBox {
@@ -75,7 +69,7 @@ function log(text) {
 }
 ```
 
-We read the `width` value using {{domxref("Element.computedStyleMap()", "computedStyleMap()")}}, then log its `operator` and the `operator` of its nested value.
+مقدار `width` را با استفاده از {{domxref("Element.computedStyleMap()", "computedStyleMap()")}} می‌خوانیم و سپس `operator` آن و `operator` مقدار تودرتو را ثبت می‌کنیم.
 
 ```js
 const styleMap = document.querySelector("#demoBox").computedStyleMap();
@@ -85,17 +79,17 @@ log(`operator: ${width.operator}`);
 log(`nested value operator: ${width.values[1].operator}`);
 ```
 
-#### Result
+#### نتیجه
 
-`width` is represented by a `CSSMathSum` object whose `operator` is `"sum"`, because `calc(50% - 0.5vw)` is represented as an addition of `50%` and the negation of `0.5vw`.
-The second nested value's `operator` is `"negate"`, reflecting that negation.
+`width` توسط یک شیء `CSSMathSum` نمایش داده می‌شود که `operator` آن `"sum"` است، زیرا `calc(50% - 0.5vw)` به صورت جمع `50%` و نفی `0.5vw` نمایش داده می‌شود.
+`operator` مقدار تودرتوی دوم `"negate"` است که این نفی را بازتاب می‌دهد.
 
 {{EmbedLiveSample("Basic usage", 300, 170)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
