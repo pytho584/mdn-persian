@@ -1,11 +1,5 @@
 ---
 title: "GPUCommandEncoder: resolveQuerySet() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/resolveQuerySet"
-status: "needs-translation"
----
-
----
-title: "GPUCommandEncoder: resolveQuerySet() method"
 short-title: resolveQuerySet()
 slug: Web/API/GPUCommandEncoder/resolveQuerySet
 page-type: web-api-instance-method
@@ -14,43 +8,42 @@ browser-compat: api.GPUCommandEncoder.resolveQuerySet
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`resolveQuerySet()`** method of the
-{{domxref("GPUCommandEncoder")}} interface encodes a command that resolves a {{domxref("GPUQuerySet")}}, copying the results into a specified {{domxref("GPUBuffer")}}.
+**`resolveQuerySet()`** 方法属于 {{domxref("GPUCommandEncoder")}} 接口，用于编码一条命令，将 {{domxref("GPUQuerySet")}} 中的查询结果解析并复制到指定的 {{domxref("GPUBuffer")}} 中。
 
-## Syntax
+## 语法
 
 ```js-nolint
 resolveQuerySet(querySet, firstQuery, queryCount, destination, destinationOffset)
 ```
 
-### Parameters
+### 参数
 
 - `querySet`
-  - : A {{domxref("GPUQuerySet")}} object representing the query set to be resolved.
+  - : 一个 {{domxref("GPUQuerySet")}} 对象，表示要解析的查询集。
 - `firstQuery`
-  - : The index number of the first query value to be copied over to the buffer.
+  - : 第一个要复制到缓冲区的查询值的索引编号。
 - `queryCount`
-  - : The number of queries to be copied over to the buffer, starting from `firstQuery`.
+  - : 从 `firstQuery` 开始，要复制到缓冲区的查询数量。
 - `destination`
-  - : A {{domxref("GPUBuffer")}} representing the buffer to copy the query values to.
+  - : 一个 {{domxref("GPUBuffer")}} 对象，表示用于接收查询值的目标缓冲区。
 - `destinationOffset`
-  - : A number representing the offset, in bytes, from the start of the buffer to start writing the query values at.
+  - : 一个数字，表示从缓冲区起始位置开始写入查询值的偏移量（以字节为单位）。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-### Validation
+### 验证条件
 
-The following criteria must be met when calling **`resolveQuerySet()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUCommandEncoder")}} becomes invalid:
+调用 **`resolveQuerySet()`** 时必须满足以下条件，否则会生成一个 {{domxref("GPUValidationError")}}，并且该 {{domxref("GPUCommandEncoder")}} 将变为无效：
 
-- The `destination.buffer`'s {{domxref("GPUBuffer.usage")}} includes the `GPUBufferUsage.QUERY_RESOLVE` flag.
-- `firstQuery` is smaller than the number of queries in `querySet`.
-- `firstQuery` + `queryCount` is smaller than or equal to the number of queries in `querySet`.
-- `destinationOffset` is a multiple of 256.
-- `destinationOffset` + 8 × `queryCount` is less than or equal to `destination.size`.
+- `destination.buffer` 的 {{domxref("GPUBuffer.usage")}} 必须包含 `GPUBufferUsage.QUERY_RESOLVE` 标志。
+- `firstQuery` 必须小于 `querySet` 中的查询总数。
+- `firstQuery + queryCount` 必须小于或等于 `querySet` 中的查询总数。
+- `destinationOffset` 必须是 256 的倍数。
+- `destinationOffset + 8 × queryCount` 必须小于或等于 `destination.size`。
 
-## Examples
+## 示例
 
 ```js
 // …
@@ -69,33 +62,33 @@ const querySet = device.createQuerySet({
 
 const commandEncoder = device.createCommandEncoder();
 
-// Write timestamps to querySet
+// 向 querySet 写入时间戳
 commandEncoder.writeTimestamp(querySet, 0);
 // …
 commandEncoder.writeTimestamp(querySet, 1);
-// etc.
+// 等等
 
 // …
 
 commandEncoder.resolveQuerySet(
   querySet,
-  0, // First query to write
-  16, // Number of queries to count
+  0, // 要写入的第一个查询
+  16, // 要计数的查询数量
   queryBuffer,
-  0, // Buffer offset
+  0, // 缓冲区偏移量
 );
 
 // …
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
