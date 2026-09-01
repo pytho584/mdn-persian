@@ -1,11 +1,5 @@
 ---
 title: "EditContext: characterBounds() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/characterBounds"
-status: "needs-translation"
----
-
----
-title: "EditContext: characterBounds() method"
 short-title: characterBounds()
 slug: Web/API/EditContext/characterBounds
 page-type: web-api-instance-method
@@ -16,36 +10,36 @@ browser-compat: api.EditContext.characterBounds
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`characterBounds()`** method of the {{domxref("EditContext")}} interface returns an {{jsxref("Array")}} containing the list of bounding rectangles for the characters in the `EditContext` object.
+متد **`characterBounds()`** از رابط {{domxref("EditContext")}} یک {{jsxref("Array")}} شامل لیست مستطیل‌های مرزی (bounding rectangles) برای کاراکترهای موجود در شیء `EditContext` بازمی‌گرداند.
 
-The position and size of the characters in an `EditContext` object is used by the operating system to correctly position platform-specific editing-related UI surfaces such as an {{glossary("Input Method Editor")}} (IME) window when needed. This is especially important in situations where the operating system can't automatically detect the position and size of the characters, such as when rendering text in a `<canvas>` element.
+موقعیت و اندازه کاراکترها در یک شیء `EditContext` توسط سیستم‌عامل برای تعیین موقعیت صحیح سطوح رابط کاربری ویرایشی مختص پلتفرم، مانند پنجره {{glossary("Input Method Editor")}} (ویرایشگر روش ورودی، IME) در صورت نیاز استفاده می‌شود. این موضوع به‌ویژه در شرایطی که سیستم‌عامل نمی‌تواند به‌طور خودکار موقعیت و اندازه کاراکترها را تشخیص دهد، مانند زمانی که متن در یک عنصر `<canvas>` رندر می‌شود، اهمیت دارد.
 
-Web developers will most likely be interested in using the {{domxref("EditContext.characterboundsupdate_event", "characterboundsupdate")}} event together with the {{domxref("EditContext.updateCharacterBounds()")}} method to update the character bounds when the operating system indicates that it requires information about the position and size of the characters.
+توسعه‌دهندگان وب به احتمال زیاد به استفاده از رویداد {{domxref("EditContext.characterboundsupdate_event", "characterboundsupdate")}} به همراه متد {{domxref("EditContext.updateCharacterBounds()")}} برای به‌روزرسانی مرزهای کاراکترها زمانی که سیستم‌عامل نشان می‌دهد به اطلاعاتی درباره موقعیت و اندازه کاراکترها نیاز دارد، علاقه‌مند خواهند بود.
 
-The `characterBounds()` method returns the list of character bounds that were last updated with `updateCharacterBounds()`. The list doesn't contain an item for every character in the `EditContext` object, only for the characters that were updated with `updateCharacterBounds()`. To know where the characters are located in the `EditContext` object, use the {{domxref("EditContext.characterBoundsRangeStart")}} property.
+متد `characterBounds()` لیست مرزهای کاراکترهایی را که آخرین بار با `updateCharacterBounds()` به‌روزرسانی شده‌اند، بازمی‌گرداند. این لیست شامل یک آیتم برای هر کاراکتر در شیء `EditContext` نیست، بلکه فقط برای کاراکترهایی است که با `updateCharacterBounds()` به‌روزرسانی شده‌اند. برای دانستن محل قرارگیری کاراکترها در شیء `EditContext`، از ویژگی {{domxref("EditContext.characterBoundsRangeStart")}} استفاده کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 characterBounds()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-An {{jsxref("Array")}} containing {{domxref("DOMRect")}} objects.
+یک {{jsxref("Array")}} شامل اشیاء {{domxref("DOMRect")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{DOMxRef("EditContext")}} interface it belongs to.
+- رابط {{DOMxRef("EditContext")}} که این متد به آن تعلق دارد.
