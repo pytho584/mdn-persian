@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaDisabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaDisabled"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaDisabled property"
 short-title: ariaDisabled
 slug: Web/API/ElementInternals/ariaDisabled
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.ElementInternals.ariaDisabled
 
 {{APIRef("Web Components")}}
 
-The **`ariaDisabled`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-disabled`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) attribute, which indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
+ویژگی **`ariaDisabled`** از رابط {{domxref("ElementInternals")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-disabled`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) است که نشان می‌دهد عنصر قابل درک است اما غیرفعال شده و بنابراین قابل ویرایش یا تعامل نیست.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. این ویژگی‌ها ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما اطمینان حاصل می‌کنند که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آن‌ها را اضافه نکند، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+رشته‌ای با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The element and all focusable descendants are disabled, but perceivable, and their values cannot be changed by the user.
+  - : عنصر و همهٔ عناصر فرزند قابل فوکوس غیرفعال هستند، اما قابل درک‌اند و کاربر نمی‌تواند مقادیر آن‌ها را تغییر دهد.
 - `"false"`
-  - : The element is enabled.
+  - : عنصر فعال است.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaDisabled` is set to "true".
+در این مثال مقدار `ariaDisabled` روی «true» تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -43,10 +37,10 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
