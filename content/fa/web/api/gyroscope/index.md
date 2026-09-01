@@ -1,7 +1,5 @@
 ---
 title: "Gyroscope"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope"
-status: "needs-translation"
 ---
 
 ---
@@ -13,37 +11,37 @@ browser-compat: api.Gyroscope
 
 {{securecontext_header}}{{APIRef("Sensor API")}}
 
-The **`Gyroscope`** interface of the [Sensor APIs](/en-US/docs/Web/API/Sensor_APIs) provides on each reading the angular velocity of the device along all three axes.
+رابط **`Gyroscope`** از [Sensor APIs](/en-US/docs/Web/API/Sensor_APIs) در هر بار خواندن، سرعت زاویه‌ای دستگاه را در هر سه محور فراهم می‌کند.
 
-To use this sensor, the user must grant permission to the `'gyroscope'` device sensor through the [Permissions API](/en-US/docs/Web/API/Permissions_API). In addition, this feature may be blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) set on your server.
+برای استفاده از این سنسور، کاربر باید از طریق [Permissions API](/en-US/docs/Web/API/Permissions_API) به سنسور دستگاه `'gyroscope'` مجوز بدهد. علاوه بر این، ممکن است این قابلیت توسط یک [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) تنظیم‌شده روی سرور شما مسدود شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("Gyroscope.Gyroscope", "Gyroscope()")}}
-  - : Creates a new `Gyroscope` object.
+  - : یک شیء `Gyroscope` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('Gyroscope.x')}} {{ReadOnlyInline}}
-  - : Returns a double, containing the angular velocity of the device along the device's x axis.
+  - : یک مقدار double برمی‌گرداند که شامل سرعت زاویه‌ای دستگاه در امتداد محور x دستگاه است.
 - {{domxref('Gyroscope.y')}} {{ReadOnlyInline}}
-  - : Returns a double, containing the angular velocity of the device along the device's y axis.
+  - : یک مقدار double برمی‌گرداند که شامل سرعت زاویه‌ای دستگاه در امتداد محور y دستگاه است.
 - {{domxref('Gyroscope.z')}} {{ReadOnlyInline}}
-  - : Returns a double, containing the angular velocity of the device along the device's z axis.
+  - : یک مقدار double برمی‌گرداند که شامل سرعت زاویه‌ای دستگاه در امتداد محور z دستگاه است.
 
-## Instance methods
+## روش‌های نمونه
 
-_`Gyroscope` doesn't have own methods. However, it inherits methods from its parent interfaces, {{domxref("Sensor")}} and {{domxref("EventTarget")}}._
+_`Gyroscope` روش‌های اختصاصی خود را ندارد. با این حال، روش‌هایی را از رابط‌های والد خود، یعنی {{domxref("Sensor")}} و {{domxref("EventTarget")}} به ارث می‌برد._
 
-## Events
+## رویدادها
 
-_`Gyroscope` doesn't have own events. However, it inherits events from its parent interface, {{domxref('Sensor')}}._
+_`Gyroscope` رویدادهای اختصاصی خود را ندارد. با این حال، رویدادهایی را از رابط والد خود، یعنی {{domxref('Sensor')}} به ارث می‌برد._
 
-## Example
+## مثال
 
-The gyroscope is typically read in the {{domxref('Sensor.reading_event', 'reading')}} event callback. In the example below this occurs sixty times a second.
+ژیروسکوپ معمولاً در تابع بازخوانی رویداد {{domxref('Sensor.reading_event', 'reading')}} خوانده می‌شود. در مثال زیر، این کار شصت بار در ثانیه انجام می‌شود.
 
 ```js
 let gyroscope = new Gyroscope({ frequency: 60 });
@@ -56,10 +54,10 @@ gyroscope.addEventListener("reading", (e) => {
 gyroscope.start();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
