@@ -1,7 +1,6 @@
 ---
 title: "DOMException: message property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMException/message"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +13,16 @@ browser-compat: api.DOMException.message
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`message`** read-only property of the
-{{domxref("DOMException")}} interface returns a string representing
-a message or description associated with the given [error name](/en-US/docs/Web/API/DOMException#error_names).
+خصوصیت فقط‌خواندنی **`message`** در رابط {{domxref("DOMException")}} رشته‌ای را برمی‌گرداند که پیام یا توضیح مرتبط با [نام خطای](/en-US/docs/Web/API/DOMException#error_names) مشخص‌شده را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
