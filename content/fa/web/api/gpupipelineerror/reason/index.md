@@ -1,11 +1,5 @@
 ---
 title: "GPUPipelineError: reason property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineError/reason"
-status: "needs-translation"
----
-
----
-title: "GPUPipelineError: reason property"
 short-title: reason
 slug: Web/API/GPUPipelineError/reason
 page-type: web-api-instance-property
@@ -14,30 +8,29 @@ browser-compat: api.GPUPipelineError.reason
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`reason`** read-only property of the
-{{domxref("GPUPipelineError")}} interface defines the reason the pipeline creation failed in a machine-readable way.
+ویژگی فقط‌خواندنی **`reason`** در رابط {{domxref("GPUPipelineError")}} دلیل شکست ایجاد خط لوله (pipeline) را به شکلی قابل‌خواندن برای ماشین مشخص می‌کند.
 
-## Value
+## مقدار
 
-An enumerated value that can be one of:
+یک مقدار شمارشی که می‌تواند یکی از موارد زیر باشد:
 
 - `"internal"`
-  - : Pipeline creation failed because of an internal error (see {{domxref("GPUInternalError")}} for more information about these kinds of error.)
+  - : ایجاد خط لوله به دلیل یک خطای داخلی شکست خورده است (برای اطلاعات بیشتر درباره این نوع خطاها به {{domxref("GPUInternalError")}} مراجعه کنید.)
 - `"validation"`
-  - : Pipeline creation failed because of a validation error (see {{domxref("GPUValidationError")}} for more information about these kinds of error.)
+  - : ایجاد خط لوله به دلیل یک خطای اعتبارسنجی شکست خورده است (برای اطلاعات بیشتر درباره این نوع خطاها به {{domxref("GPUValidationError")}} مراجعه کنید.)
 
-## Examples
+## مثال‌ها
 
-See the main [`GPUPipelineError`](/en-US/docs/Web/API/GPUPipelineError#examples) page for an example involving a `GPUPipelineError` object instance.
+برای مثالی که شامل یک نمونه شیء `GPUPipelineError` است، به صفحه اصلی [`GPUPipelineError`](/en-US/docs/Web/API/GPUPipelineError#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
