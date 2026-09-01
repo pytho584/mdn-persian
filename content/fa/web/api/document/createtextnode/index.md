@@ -1,11 +1,5 @@
 ---
 title: "Document: createTextNode() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode"
-status: "needs-translation"
----
-
----
-title: "Document: createTextNode() method"
 short-title: createTextNode()
 slug: Web/API/Document/createTextNode
 page-type: web-api-instance-method
@@ -14,25 +8,24 @@ browser-compat: api.Document.createTextNode
 
 {{APIRef("DOM")}}
 
-Creates a new {{domxref("Text")}} node. This method can be used to escape HTML
-characters.
+یک گره جدید از نوع {{domxref("Text")}} ایجاد می‌کند. از این متد می‌توان برای escape کردن نویسه‌های HTML استفاده کرد.
 
-## Syntax
+## دستور نحوی (Syntax)
 
 ```js-nolint
 createTextNode(data)
 ```
 
-### Parameters
+### پارامترها
 
 - `data`
-  - : A string containing the data to be put in the text node.
+  - : رشته‌ای شامل داده‌ای که قرار است در گره متنی قرار گیرد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("Text")}} node.
+یک گره از نوع {{domxref("Text")}}.
 
-## Examples
+## مثال‌ها
 
 ```html
 <button>YES!</button>
@@ -61,10 +54,10 @@ document.querySelectorAll("button").forEach((button) => {
 
 {{EmbedLiveSample('Examples')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
