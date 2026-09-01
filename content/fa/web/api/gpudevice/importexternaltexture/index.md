@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: importExternalTexture() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/importExternalTexture"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: importExternalTexture() method"
 short-title: importExternalTexture()
 slug: Web/API/GPUDevice/importExternalTexture
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.GPUDevice.importExternalTexture
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`importExternalTexture()`** method of the
-{{domxref("GPUDevice")}} interface takes an {{domxref("HTMLVideoElement")}} or a {{domxref("VideoFrame")}} object as an input and returns a {{domxref("GPUExternalTexture")}} wrapper object containing a snapshot of the video that can be used as a frame in GPU rendering operations.
+متد **`importExternalTexture()`** در رابط {{domxref("GPUDevice")}} یک شیء {{domxref("HTMLVideoElement")}} یا {{domxref("VideoFrame")}} را به عنوان ورودی می‌گیرد و یک شیء wrapper به نام {{domxref("GPUExternalTexture")}} برمی‌گرداند که شامل یک عکس فوری (snapshot) از ویدیو است و می‌تواند به عنوان یک فریم در عملیات رندر GPU استفاده شود.
 
 ## Syntax
 
@@ -26,37 +19,37 @@ importExternalTexture(descriptor)
 ### Parameters
 
 - `descriptor`
-  - : An object containing the following properties:
+  - : یک شیء شامل ویژگی‌های زیر:
     - `colorSpace` {{optional_inline}}
-      - : An enumerated value specifying the color space to use for the video frame. Possible values are `"srgb"` and `"display-p3"`. If omitted, `colorSpace` defaults to `"srgb"`.
+      - : یک مقدار شمارشی (enumerated) که فضای رنگی مورد استفاده برای فریم ویدیو را مشخص می‌کند. مقادیر ممکن عبارت‌اند از `"srgb"` و `"display-p3"`. اگر حذف شود، `colorSpace` به صورت پیش‌فرض روی `"srgb"` قرار می‌گیرد.
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : یک رشته که برچسبی برای شناسایی شیء فراهم می‌کند، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
     - `source`
-      - : The {{domxref("HTMLVideoElement")}} or {{domxref("VideoFrame")}} source of the video snapshot.
+      - : منبع {{domxref("HTMLVideoElement")}} یا {{domxref("VideoFrame")}} برای عکس فوری ویدیو.
 
 ### Return value
 
-A {{domxref("GPUExternalTexture")}} object instance.
+یک نمونه از شیء {{domxref("GPUExternalTexture")}}.
 
-Note that the moment when the {{domxref("GPUExternalTexture")}} object expires (is destroyed) depends on what its source is:
+توجه داشته باشید که لحظه‌ای که شیء {{domxref("GPUExternalTexture")}} منقضی می‌شود (از بین می‌رود) به منبع آن بستگی دارد:
 
-- {{domxref("GPUExternalTexture")}} objects with an {{domxref("HTMLVideoElement")}} source expire as soon as they are used (for example in a bind group).
-- {{domxref("GPUExternalTexture")}} objects with a {{domxref("VideoFrame")}} source expire only when the `VideoFrame` is closed, for example via a {{domxref("VideoFrame.close()")}} call.
+- اشیاء {{domxref("GPUExternalTexture")}} با منبع {{domxref("HTMLVideoElement")}} به محض استفاده (مثلاً در یک bind group) منقضی می‌شوند.
+- اشیاء {{domxref("GPUExternalTexture")}} با منبع {{domxref("VideoFrame")}} فقط زمانی منقضی می‌شوند که `VideoFrame` بسته شود، مثلاً از طریق فراخوانی {{domxref("VideoFrame.close()")}}.
 
 ### Validation
 
-The following criteria must be met when calling **`importExternalTexture()`**, otherwise a {{domxref("GPUValidationError")}} is generated and an invalid {{domxref("GPUExternalTexture")}} object is returned:
+برای فراخوانی **`importExternalTexture()`** معیارهای زیر باید برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و یک شیء نامعتبر {{domxref("GPUExternalTexture")}} برگردانده می‌شود:
 
-- The video snapshot is usable (e.g., the video source is loaded properly, and doesn't have a width or height of 0).
+- عکس فوری ویدیو قابل استفاده باشد (مثلاً منبع ویدیو به درستی بارگذاری شده باشد و عرض یا ارتفاع آن ۰ نباشد).
 
 ### Exceptions
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the video source data is cross-origin.
+  - : اگر داده‌های منبع ویدیو از مبدأ متقاطع (cross-origin) باشند، پرتاب می‌شود.
 
 ## Examples
 
-In the WebGPU samples [Video Uploading sample](https://webgpu.github.io/webgpu-samples/samples/videoUploading/), an `importExternalTexture()` call is used as the value of a bind group entry `resource`, specified when creating a {{domxref("GPUBindGroup")}} via a {{domxref("GPUDevice.createBindGroup()")}} call:
+در نمونه‌های WebGPU، [نمونه آپلود ویدیو](https://webgpu.github.io/webgpu-samples/samples/videoUploading/)، از فراخوانی `importExternalTexture()` به عنوان مقدار یک ورودی bind group به نام `resource` استفاده شده است که هنگام ایجاد یک {{domxref("GPUBindGroup")}} از طریق فراخوانی {{domxref("GPUDevice.createBindGroup()")}} مشخص می‌شود:
 
 ```js
 // …
@@ -90,4 +83,4 @@ const uniformBindGroup = device.createBindGroup({
 
 ## See also
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
