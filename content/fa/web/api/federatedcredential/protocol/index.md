@@ -1,7 +1,5 @@
 ---
 title: "FederatedCredential: protocol property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FederatedCredential/protocol"
-status: "needs-translation"
 ---
 
 ---
@@ -16,27 +14,22 @@ browser-compat: api.FederatedCredential.protocol
 
 {{SeeCompatTable}}{{APIRef("Credential Management API")}}{{securecontext_header}}
 
-The **`protocol`** property of the
-{{domxref("FederatedCredential")}} interface returns a read-only
-string containing a credential's federated identity protocol. If this
-property is [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null), the protocol may be inferred from the
-{{domxref("FederatedCredential.provider")}} property.
+ویژگی **`protocol`** در رابط {{domxref("FederatedCredential")}} یک رشتهٔ فقط‌خواندنی برمی‌گرداند که پروتکل هویت فدرال یک اعتبارنامه را شامل می‌شود. اگر این ویژگی [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) باشد، می‌توان پروتکل را از روی ویژگی {{domxref("FederatedCredential.provider")}} استنتاج کرد.
 
-## Value
+## مقدار
 
-A string containing a credential's federated identity protocol (e.g.
-`openidconnect`).
+یک رشته که پروتکل هویت فدرال یک اعتبارنامه را مشخص می‌کند (مثلاً `openidconnect`).
 
-## Examples
+## نمونه‌ها
 
 ```js
 // TBD
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
