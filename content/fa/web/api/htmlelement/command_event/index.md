@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: command event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/command_event"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: command event"
 slug: Web/API/HTMLElement/command_event
 page-type: web-api-event
 browser-compat: api.HTMLElement.command_event
@@ -13,11 +7,11 @@ browser-compat: api.HTMLElement.command_event
 
 {{APIRef("Invoker Commands API")}}
 
-The **`command`** event of the {{domxref("HTMLElement")}} interface fires on an element that is controlled via a {{domxref("HTMLButtonElement", "button")}} with valid {{domxref("HTMLButtonElement.commandForElement", "commandForElement")}} and {{domxref("HTMLButtonElement.command", "command")}} values, whenever the button is interacted with (e.g., it is clicked).
+رویداد **`command`** از رابط {{domxref("HTMLElement")}} روی عنصری که توسط یک {{domxref("HTMLButtonElement", "دکمه")}} با مقادیر معتبر {{domxref("HTMLButtonElement.commandForElement", "commandForElement")}} و {{domxref("HTMLButtonElement.command", "command")}} کنترل می‌شود، هر زمان که با دکمه تعامل شود (مثلاً کلیک شود)، فعال می‌گردد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم یک ویژگی handler رویداد، از روش زیر استفاده کنید.
 
 ```js-nolint
 addEventListener("command", (event) => { })
@@ -25,15 +19,15 @@ addEventListener("command", (event) => { })
 oncommand = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("CommandEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("CommandEvent")}} که از {{domxref("Event")}} به ارث برده است.
 
 {{InheritanceDiagram("CommandEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Basic example
+### مثال پایه
 
 ```js
 const popover = document.getElementById("mypopover");
@@ -42,39 +36,39 @@ const popover = document.getElementById("mypopover");
 
 popover.addEventListener("command", (event) => {
   if (event.command === "show-popover") {
-    console.log("Popover is about to be shown");
+    console.log("Popover قرار است نمایش داده شود");
   }
 });
 ```
 
-### Event dispatch and cancellation
+### ارسال رویداد و لغو آن
 
-It is worth pointing out that `command` events fire on the element being invoked. If the button is clicked, it will first dispatch a `click` event which, if cancelled, then the `command` event will not fire and the default behavior will not be run.
-In addition to cancelling the `click` event on the button, it is also possible to cancel the `command` event.
+نکته قابل توجه این است که رویدادهای `command` روی عنصر فراخوانی‌شده فعال می‌شوند. اگر دکمه کلیک شود، ابتدا یک رویداد `click` ارسال می‌شود که اگر لغو گردد، رویداد `command` فعال نخواهد شد و رفتار پیش‌فرض اجرا نمی‌شود.
+علاوه بر لغو رویداد `click` روی دکمه، امکان لغو رویداد `command` نیز وجود دارد.
 
-For example:
+برای مثال:
 
 ```js
 button.addEventListener("click", (event) => {
-  event.preventDefault(); // the `command` event will never fire
+  event.preventDefault(); // رویداد `command` هرگز فعال نخواهد شد
 });
 ```
 
 ```js
 element.addEventListener("command", (event) => {
-  event.preventDefault(); // the `command` event fires but the default behavior is cancelled
+  event.preventDefault(); // رویداد `command` فعال می‌شود اما رفتار پیش‌فرض لغو می‌گردد
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Invoker Commands API", "Invoker Commands API", "", "nocode")}}
 - {{domxref("HTMLButtonElement.command")}}
