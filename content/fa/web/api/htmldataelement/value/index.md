@@ -1,11 +1,5 @@
 ---
 title: "HTMLDataElement: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDataElement/value"
-status: "needs-translation"
----
-
----
-title: "HTMLDataElement: value property"
 short-title: value
 slug: Web/API/HTMLDataElement/value
 page-type: web-api-instance-property
@@ -14,17 +8,16 @@ browser-compat: api.HTMLDataElement.value
 
 {{APIRef("HTML DOM")}}
 
-The **`value`** property of the {{domxref("HTMLDataElement")}}
-interface returns a string reflecting the [`value`](/en-US/docs/Web/HTML/Reference/Elements/data#value) HTML attribute.
+خاصیت **`value`** در رابط {{domxref("HTMLDataElement")}} یک رشته را برمی‌گرداند که منعکس‌کنندهٔ ویژگی HTML [`value`](/en-US/docs/Web/HTML/Reference/Elements/data#value) است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
