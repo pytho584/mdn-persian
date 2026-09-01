@@ -1,11 +1,5 @@
 ---
 title: "Element: pointerover event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerover_event"
-status: "needs-translation"
----
-
----
-title: "Element: pointerover event"
 short-title: pointerover
 slug: Web/API/Element/pointerover_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Element.pointerover_event
 
 {{APIRef("Pointer Events")}}
 
-The `pointerover` event is fired when a pointing device is moved into an element's hit test boundaries.
+رویداد `pointerover` زمانی فعال می‌شود که یک ابزار اشاره‌گر به داخل مرزهای آزمایش برخورد (hit test) یک عنصر حرکت کند.
 
-`pointerover` events have the same problems as {{domxref("Element/mouseover_event", "mouseover")}}. If the target element has child elements, `pointerout` and `pointerover` events fire as the pointer moves over the boundaries of these elements too, not just the target element itself. Usually, {{domxref("Element/pointerenter_event", "pointerenter")}} and {{domxref("Element/pointerleave_event", "pointerleave")}} events' behavior is more sensible, because they are not affected by moving into child elements.
+رویدادهای `pointerover` همان مشکلات {{domxref("Element/mouseover_event", "mouseover")}} را دارند. اگر عنصر هدف دارای عناصر فرزند باشد، رویدادهای `pointerout` و `pointerover` نیز هنگام حرکت اشاره‌گر روی مرزهای این عناصر فعال می‌شوند، نه فقط خود عنصر هدف. معمولاً رفتار رویدادهای {{domxref("Element/pointerenter_event", "pointerenter")}} و {{domxref("Element/pointerleave_event", "pointerleave")}} منطقی‌تر است، زیرا با ورود به عناصر فرزند تحت تأثیر قرار نمی‌گیرند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("pointerover", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("pointerover", (event) => { })
 onpointerover = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PointerEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PointerEvent")}}. ارث‌بری از {{domxref("Event")}}.
 
 {{InheritanceDiagram("PointerEvent")}}
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+### استفاده از `addEventListener()`
 
 ```js
 const para = document.querySelector("p");
@@ -46,7 +40,7 @@ para.addEventListener("pointerover", (event) => {
 });
 ```
 
-Using the `onpointerover` event handler property:
+### استفاده از ویژگی کنترل‌کننده رویداد `onpointerover`
 
 ```js
 const para = document.querySelector("p");
@@ -56,17 +50,17 @@ para.onpointerover = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events
+- رویدادهای مرتبط
   - {{domxref('Element/gotpointercapture_event', 'gotpointercapture')}}
   - {{domxref('Element/lostpointercapture_event', 'lostpointercapture')}}
   - {{domxref('Element/pointerenter_event', 'pointerenter')}}
