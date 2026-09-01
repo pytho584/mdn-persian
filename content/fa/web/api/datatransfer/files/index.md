@@ -1,11 +1,5 @@
 ---
 title: "DataTransfer: files property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/files"
-status: "needs-translation"
----
-
----
-title: "DataTransfer: files property"
 short-title: files
 slug: Web/API/DataTransfer/files
 page-type: web-api-instance-property
@@ -14,23 +8,22 @@ browser-compat: api.DataTransfer.files
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`files`** read-only property of [`DataTransfer`](/en-US/docs/Web/API/DataTransfer) objects is a [list of the files](/en-US/docs/Web/API/FileList) in the drag operation. If the operation includes no files, the list is empty.
+خاصیت **`files`** (فقط‌خواندنی) اشیاء [`DataTransfer`](/en-US/docs/Web/API/DataTransfer) فهرستی از [فایل‌ها](/en-US/docs/Web/API/FileList) در عملیات کشیدن (drag) است. اگر عملیات شامل هیچ فایلی نباشد، فهرست خالی است.
 
-This feature can be used to drag files from a user's desktop to the browser.
+این قابلیت برای کشیدن فایل‌ها از دسکتاپ کاربر به داخل مرورگر استفاده می‌شود.
 
 > [!NOTE]
-> The `files` property of [`DataTransfer`](/en-US/docs/Web/API/DataTransfer) objects can only be accessed from within the {{domxref("HTMLElement/drop_event", "drop")}} and {{domxref("Element/paste_event", "paste")}} events. For all other events, the `files` property will be empty — because its underlying data store will be in a [protected mode](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store#protected_mode).
+> خاصیت `files` اشیاء [`DataTransfer`](/en-US/docs/Web/API/DataTransfer) فقط از داخل رویدادهای {{domxref("HTMLElement/drop_event", "drop")}} و {{domxref("Element/paste_event", "paste")}} قابل دسترسی است. برای همه رویدادهای دیگر، خاصیت `files` خالی خواهد بود — زیرا مخزن دادهٔ زیرین آن در [حالت محافظت‌شده](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store#protected_mode) قرار دارد.
 
-## Value
+## مقدار
 
-A {{domxref("FileList")}} of the files in a drag operation, one list item for
-each file in the operation. If the drag operation had no files, the list is empty.
+یک {{domxref("FileList")}} شامل فایل‌های موجود در عملیات کشیدن، که به ازای هر فایل یک آیتم در آن وجود دارد. اگر عملیات کشیدن فایلی نداشته باشد، فهرست خالی است.
 
-## Examples
+## مثال‌ها
 
-### Reading the files list
+### خواندن فهرست فایل‌ها
 
-This example creates a basic area that you can drop files into and displays some metadata.
+این مثال یک ناحیهٔ ساده می‌سازد که می‌توانید فایل‌ها را در آن رها کنید و برخی فراداده‌ها را نمایش می‌دهد.
 
 ```html
 <pre id="output">Drop files here from your file system.</pre>
@@ -74,10 +67,10 @@ output.addEventListener("drop", (e) => {
 
 {{EmbedLiveSample("reading_the_files_list", "", "300")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
