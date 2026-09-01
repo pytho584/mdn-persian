@@ -1,11 +1,5 @@
 ---
 title: "CSSRuleList: item() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSRuleList/item"
-status: "needs-translation"
----
-
----
-title: "CSSRuleList: item() method"
 short-title: item()
 slug: Web/API/CSSRuleList/item
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.CSSRuleList.item
 
 {{ APIRef("CSSOM") }}
 
-The **`item()`** method of the {{domxref("CSSRuleList")}} interface returns the {{domxref("CSSRule")}} object at the specified `index` or `null` if the specified `index` doesn't exist.
+متود **`item()`** در رابط {{domxref("CSSRuleList")}}، شیء {{domxref("CSSRule")}} را در `index` مشخصشده برمیگرداند، یا اگر `index` موردنظر وجود نداشته باشد، `null` را برمیگرداند.
 
 ## Syntax
 
@@ -25,21 +19,21 @@ item(index)
 ### Parameters
 
 - `index`
-  - : An integer.
+  - : یک عدد صحیح.
 
 ### Return value
 
-A {{domxref("CSSRule")}}.
+یک {{domxref("CSSRule")}}.
 
 ## Examples
 
-In the following example, we assume that the `myRules` list has three items only.
+در مثال زیر، فرض میکنیم که لیست `myRules` فقط سه آیتم دارد.
 
 ```js
 let myRules = document.styleSheets[0].cssRules;
-console.log(myRules.item(0)); // Logs the first CSSRule item from this list
+console.log(myRules.item(0)); // اولین آیتم CSSRule از این لیست را ثبت میکند
 
-// Accessing non-existing items using this method will return null instead of undefined
+// دسترسی به آیتمهای ناموجود با این متود، null برمیگرداند نه undefined
 console.log(myRules.item(5)); // null
 console.log(myRules[5]); // undefined
 ```
