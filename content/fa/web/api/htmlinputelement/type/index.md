@@ -1,7 +1,6 @@
 ---
 title: "HTMLInputElement: type property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/type"
-status: "needs-translation"
 ---
 
 ---
@@ -14,17 +13,17 @@ browser-compat: api.HTMLInputElement.type
 
 {{ApiRef("HTML DOM")}}
 
-The **`type`** property of the {{domxref("HTMLInputElement")}} interface indicates the kind of data allowed in the {{HTMLElement("input")}} element, for example a number, a date, or an email. Browsers will select the appropriate widget and behavior to help users to enter a valid value.
+خاصیت **`type`** از رابط {{domxref("HTMLInputElement")}} مشخص می‌کند که چه نوع داده‌ای در عنصر {{HTMLElement("input")}} مجاز است، مثلاً یک عدد، یک تاریخ یا یک ایمیل. مرورگرها برای کمک به کاربر در وارد کردن یک مقدار معتبر، ابزار و رفتار مناسب را انتخاب می‌کنند.
 
-It reflects the [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) attribute of the {{HTMLElement("input")}} element.
+این خاصیت منعکس‌کنندهٔ ویژگی [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) عنصر {{HTMLElement("input")}} است.
 
-## Value
+## مقدار
 
-A string representing the type.
+یک رشته که نوع را نشان می‌دهد.
 
-Its possible values are listed in the attribute's [input types](/en-US/docs/Web/HTML/Reference/Elements/input#input_types) section.
+مقادیر ممکن آن در بخش [انواع ورودی](/en-US/docs/Web/HTML/Reference/Elements/input#input_types) ویژگی ذکر شده است.
 
-## Example
+## مثال
 
 ### HTML
 
@@ -36,18 +35,18 @@ Its possible values are listed in the attribute's [input types](/en-US/docs/Web/
 
 ```js
 const inputElement = document.querySelector("#input1");
-console.log(inputElement.type); // Output: "date"
+console.log(inputElement.type); // خروجی: "date"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLTextAreaElement.type")}} property
-- {{domxref("HTMLButtonElement.type")}} property
+- خاصیت {{domxref("HTMLTextAreaElement.type")}}
+- خاصیت {{domxref("HTMLButtonElement.type")}}
