@@ -1,34 +1,22 @@
 ---
 title: "Element: afterscriptexecute event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/afterscriptexecute_event"
-status: "needs-translation"
----
-
----
-title: "Element: afterscriptexecute event"
-short-title: afterscriptexecute
-slug: Web/API/Element/afterscriptexecute_event
-page-type: web-api-event
-status:
-  - deprecated
-  - non-standard
-browser-compat: api.Element.afterscriptexecute_event
 ---
 
 {{APIRef}}{{Non-standard_header}}{{deprecated_header}}
 
 > [!WARNING]
-> This event was a proposal in an early version of the specification. Do not rely on it.
+> این رویداد در نسخه‌ای اولیه از مشخصات به‌عنوان پیشنهاد مطرح شده بود. به آن اتکا نکنید.
 
-The **`afterscriptexecute`** event is fired after a script has been executed.
+رویداد **`afterscriptexecute`** پس از اجرا شدن یک اسکریپت فعال می‌شود.
 
-It is a proprietary event specific to Gecko (Firefox).
+این یک رویداد اختصاصی مربوط به Gecko (فایرفاکس) است.
 
-This event is not cancelable.
+این رویداد قابل لغو (cancelable) نیست.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("afterscriptexecute", (event) => { })
@@ -36,18 +24,18 @@ addEventListener("afterscriptexecute", (event) => { })
 onafterscriptexecute = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Specifications
+## مشخصات
 
-Not part of any specification.
+بخشی از هیچ مشخصه‌ای نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`beforescriptexecute`](/en-US/docs/Web/API/Element/beforescriptexecute_event) event
+- رویداد [`beforescriptexecute`](/en-US/docs/Web/API/Element/beforescriptexecute_event)
