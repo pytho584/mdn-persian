@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaCurrent property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaCurrent"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaCurrent property"
 short-title: ariaCurrent
 slug: Web/API/ElementInternals/ariaCurrent
 page-type: web-api-instance-property
@@ -14,33 +8,33 @@ browser-compat: api.ElementInternals.ariaCurrent
 
 {{APIRef("Web Components")}}
 
-The **`ariaCurrent`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-current`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current) attribute, which indicates the element that represents the current item within a container or set of related elements.
+ویژگی **`ariaCurrent`** از رابط {{domxref("ElementInternals")}} مقدار ویژگی [`aria-current`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current) را منعکس می‌کند. این ویژگی نشان‌دهنده عنصری است که آیتم جاری را در یک ظرف یا مجموعه‌ای از عناصر مرتبط مشخص می‌کند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` به شما امکان می‌دهد معناشناسی پیش‌فرض را برای یک عنصر سفارشی تعریف کنید. این ویژگی‌ها ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که در صورت حذف آن ویژگی‌ها توسط نویسنده یا عدم افزودن آن‌ها، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح‌دهنده مدل شیء دسترسی‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"page"`
-  - : Represents the current page within a set of pages.
+  - : نشان‌دهنده صفحه جاری در یک مجموعه از صفحات است.
 - `"step"`
-  - : Represents the current step within a process.
+  - : نشان‌دهنده گام جاری در یک فرآیند است.
 - `"location"`
-  - : Represents the current location, for example the current page in a breadcrumbs hierarchy.
+  - : نشان‌دهنده مکان جاری، مثلاً صفحه جاری در یک سلسله‌مراتب خرده‌نان (breadcrumbs) است.
 - `"date"`
-  - : Represents the current date within a collection of dates.
+  - : نشان‌دهنده تاریخ جاری در یک مجموعه از تاریخ‌ها است.
 - `"time"`
-  - : Represents the current time within a set of times.
+  - : نشان‌دهنده زمان جاری در یک مجموعه از زمان‌ها است.
 - `"true"`
-  - : Represents the current item within a set.
+  - : نشان‌دهنده آیتم جاری در یک مجموعه است.
 - `"false"`
-  - : Does not represent the current item within a set.
+  - : نشان‌دهنده آیتم جاری در یک مجموعه نیست.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaCurrent` is set to "page".
+در این مثال مقدار `ariaCurrent` روی `"page"` تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -53,14 +47,14 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the aria-current attribute](https://tink.uk/using-the-aria-current-attribute/)
+- [استفاده از ویژگی aria-current](https://tink.uk/using-the-aria-current-attribute/)
