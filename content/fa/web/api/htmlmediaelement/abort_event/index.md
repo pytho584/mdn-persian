@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: abort event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/abort_event"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: abort event"
 short-title: abort
 slug: Web/API/HTMLMediaElement/abort_event
 page-type: web-api-event
@@ -14,14 +8,14 @@ browser-compat: api.HTMLMediaElement.abort_event
 
 {{APIRef("HTML DOM")}}
 
-The **`abort`** event is fired when media resource loading is stopped before completion, but not as the result of an error.
-This is usually achieved by removing the `src` attribute or setting it to the empty string (`""`), then calling `load()`.
+رویداد **`abort`** زمانی پرتاب می‌شود که بارگذاری منبع رسانه پیش از تکمیل‌شدن متوقف شود، اما نه در نتیجهٔ بروز خطا.
+این کار معمولاً با حذف ویژگی `src` یا تنظیم آن به رشتهٔ خالی (`""`) و سپس فراخوانی `load()` انجام می‌شود.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و bubble نمی‌شود.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد، می‌توانید آن را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی مدیریت رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("abort", (event) => { })
@@ -31,16 +25,16 @@ onabort = (event) => { }
 
 ## Event type
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
 ## Examples
 
-### Abort loading a media resource
+مثال زیر نشان می‌دهد که چگونه می‌توان بارگذاری یک ویدیو را لغو کرد.
+با فشردن دکمه، بارگذاری منبع ویدیو شروع می‌شود.
+پس از یک وقفهٔ کوتاه، با حذف ویژگی `src` و فراخوانی متد `load()` بارگذاری لغو می‌شود.
+اگر در زمان فراخوانی `load()` منبع ویدیو همچنان در حال بارگذاری باشد، رویداد `abort` پرتاب می‌شود.
 
-The following example demonstrates how to abort a video.
-When you press the button it starts loading a video resource.
-After a short timeout it aborts the load by removing the `src` attribute and calling the `load()` method.
-If the video resource is still loading when `load()` is called, the `abort` event fires.
+### Abort loading a media resource
 
 #### HTML
 
