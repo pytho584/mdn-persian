@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaColCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaColCount"
-status: "needs-translation"
----
-
----
-title: "Element: ariaColCount property"
 short-title: ariaColCount
 slug: Web/API/Element/ariaColCount
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Element.ariaColCount
 
 {{APIRef("DOM")}}
 
-The **`ariaColCount`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount) attribute, which defines the number of columns in a table, grid, or treegrid.
+ویژگی **`ariaColCount`** از رابط {{domxref("Element")}} منعکس‌کننده مقدار ویژگی [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount) است که تعداد ستون‌ها را در یک جدول، شبکه (grid) یا شبکه درختی (treegrid) تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-colcount` attribute on the element with an ID of `semantic-table` is set to "2". Using `ariaColCount` we update the value to "3".
+در این مثال، ویژگی `aria-colcount` روی عنصری با شناسه `semantic-table` برابر با "2" تنظیم شده است. با استفاده از `ariaColCount` مقدار را به "3" به‌روزرسانی می‌کنیم.
 
 ```html
 <table
@@ -71,14 +65,14 @@ el.ariaColCount = "3";
 console.log(el.ariaColCount); // 3
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
+- [ARIA: نقش table](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
