@@ -1,11 +1,5 @@
 ---
 title: "Document: elementFromPoint() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/elementFromPoint"
-status: "needs-translation"
----
-
----
-title: "Document: elementFromPoint() method"
 short-title: elementFromPoint()
 slug: Web/API/Document/elementFromPoint
 page-type: web-api-instance-method
@@ -14,28 +8,17 @@ browser-compat: api.Document.elementFromPoint
 
 {{APIRef("DOM")}}
 
-The **`elementFromPoint()`**
-method, available on the {{domxref("Document")}} object, returns the topmost {{domxref("Element")}} at the specified coordinates
-(relative to the viewport).
+متد **`elementFromPoint()`** که روی شیء {{domxref("Document")}} در دسترس است، بالاترین {{domxref("Element")}} را در مختصات مشخص‌شده (نسبت به viewport) برمی‌گرداند.
 
-If the element at the specified point belongs to another document (for example, the
-document of an {{HTMLElement("iframe")}}), that document's parent element is returned
-(the `<iframe>` itself). If the element at the given point is anonymous
-or XBL generated content, such as a textbox's scroll bars, then the first non-anonymous
-ancestor element (for example, the textbox) is returned.
+اگر عنصر در نقطه مشخص‌شده متعلق به سند دیگری باشد (مثلاً سند یک {{HTMLElement("iframe")}})، عنصر والد آن سند برگردانده می‌شود (یعنی خود `<iframe>`). اگر عنصر در نقطه داده‌شده محتوای ناشناس (anonymous) یا تولیدشده توسط XBL باشد، مانند نوارهای پیمایش یک جعبه متنی، اولین عنصر جد ancestor غیرناشناس (مثلاً همان جعبه متنی) برگردانده می‌شود.
 
-Elements with {{cssxref("pointer-events")}} set to `none` will be ignored,
-and the element below it will be returned.
+عناصری که {{cssxref("pointer-events")}} آن‌ها روی `none` تنظیم شده باشد نادیده گرفته می‌شوند و عنصر زیرین آن‌ها برگردانده می‌شود.
 
-If the method is run on another document (like an `<iframe>`'s
-subdocument), the coordinates are relative to the document where the method is being
-called.
+اگر متد روی سند دیگری اجرا شود (مثلاً زیرسند یک `<iframe>`)، مختصات نسبت به سندی که متد روی آن فراخوانی می‌شود سنجیده می‌شوند.
 
-If the specified point is outside the visible bounds of the document or either
-coordinate is negative, the result is `null`.
+اگر نقطه مشخص‌شده خارج از محدوده قابل مشاهده سند باشد یا هر یک از مختصات منفی باشد، نتیجه `null` است.
 
-If you need to find the specific position inside the element, use
-{{domxref("Document.caretPositionFromPoint()")}}.
+اگر نیاز به یافتن موقعیت دقیق داخل عنصر دارید، از {{domxref("Document.caretPositionFromPoint()")}} استفاده کنید.
 
 ## Syntax
 
@@ -43,23 +26,20 @@ If you need to find the specific position inside the element, use
 elementFromPoint(x, y)
 ```
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : The horizontal coordinate of a point, relative to the left edge of the current
-    {{Glossary("viewport")}}.
+  - : مختصات افقی یک نقطه، نسبت به لبه چپ {{Glossary("viewport")}} جاری.
 - `y`
-  - : The vertical coordinate of a point, relative to the top edge of the current
-    viewport.
+  - : مختصات عمودی یک نقطه، نسبت به لبه بالای viewport جاری.
 
-### Return value
+### مقدار بازگشتی
 
-The topmost {{domxref("Element")}} object located at the specified coordinates.
+بالاترین شیء {{domxref("Element")}} واقع در مختصات مشخص‌شده.
 
-## Examples
+## مثال‌ها
 
-This example creates two buttons which let you set the current color of the paragraph
-element located under the coordinates `(2, 2)`.
+این مثال دو دکمه ایجاد می‌کند که به شما امکان می‌دهند رنگ فعلی عنصر پاراگراف واقع در مختصات `(2, 2)` را تنظیم کنید.
 
 ### HTML
 
@@ -69,8 +49,7 @@ element located under the coordinates `(2, 2)`.
 <button>Red</button>
 ```
 
-The HTML provides the paragraph whose color will be affected, as well as two buttons:
-one to change the color to blue, and another to change the color to red.
+HTML شامل پاراگرافی است که رنگ آن تغییر می‌کند و همچنین دو دکمه: یکی برای تغییر رنگ به آبی و دیگری برای تغییر رنگ به قرمز.
 
 ### JavaScript
 
@@ -87,22 +66,20 @@ document.querySelectorAll("button").forEach((button) => {
 });
 ```
 
-The `changeColor()` method obtains the element located at the specified
-point, then sets that element's current foreground {{cssxref("color")}} property to the
-color specified by the `newColor` parameter.
+متد `changeColor()` عنصر واقع در نقطه مشخص‌شده را به دست می‌آورد و سپس ویژگی {{cssxref("color")}} فعلی آن عنصر را به رنگی که در پارامتر `newColor` مشخص شده تنظیم می‌کند.
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Examples', 400, 120)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.elementsFromPoint()")}}
