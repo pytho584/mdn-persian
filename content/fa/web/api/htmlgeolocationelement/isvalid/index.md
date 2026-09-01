@@ -1,11 +1,5 @@
 ---
 title: "HTMLGeolocationElement: isValid property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLGeolocationElement/isValid"
-status: "needs-translation"
----
-
----
-title: "HTMLGeolocationElement: isValid property"
 short-title: isValid
 slug: Web/API/HTMLGeolocationElement/isValid
 page-type: web-api-instance-property
@@ -16,24 +10,24 @@ browser-compat: api.HTMLGeolocationElement.isValid
 
 {{APIRef("Navigation API")}}{{SeeCompatTable}}
 
-The **`isValid`** read-only property of the {{domxref("HTMLGeolocationElement")}} interface returns a boolean value indicating whether the associated {{htmlelement("geolocation")}} element is valid or invalid (blocked).
+خاصیت خواندنی **`isValid`** از رابط {{domxref("HTMLGeolocationElement")}} یک مقدار بولین بازمی‌گرداند که نشان می‌دهد عنصر {{htmlelement("geolocation")}} مرتبط معتبر (معتبر) یا نامعتبر (مسدود) است.
 
-When a [blocker](/en-US/docs/Web/HTML/Reference/Elements/geolocation#geolocation_blocking) is active on a `<geolocation>` element, it is prevented from functioning (invalid), either temporarily or permanently, depending on the reason.
+وقتی یک [مسدودکننده](/en-US/docs/Web/HTML/Reference/Elements/geolocation#geolocation_blocking) روی یک عنصر `<geolocation>` فعال باشد، از عملکرد آن جلوگیری می‌شود (نامعتبر می‌شود) – چه به صورت موقت و چه دائمی، بسته به دلیل.
 
-You can return the reason why it is invalid via the {{domxref("HTMLGeolocationElement.invalidReason")}} property — see that page for a full list of possible reasons.
+می‌توانید دلیل نامعتبر بودن آن را از طریق خاصیت {{domxref("HTMLGeolocationElement.invalidReason")}} بیابید – برای فهرست کامل دلایل ممکن به آن صفحه مراجعه کنید.
 
-## Value
+## مقدار
 
-A boolean value:
+یک مقدار بولین:
 
-- If `true`, the `<geolocation>` element is valid and functional, meaning that it can be used to request location data.
-- If `false`, the `<geolocation>` element is invalid and non-functional, meaning that it can't be used to request location data.
+- اگر `true` باشد، عنصر `<geolocation>` معتبر و کاربردی است، یعنی می‌توان از آن برای درخواست داده‌های مکان استفاده کرد.
+- اگر `false` باشد، عنصر `<geolocation>` نامعتبر و غیرفعال است، یعنی نمی‌توان از آن برای درخواست داده‌های مکان استفاده کرد.
 
-Defaults to `false`.
+پیش‌فرض `false` است.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```html
 <geolocation></geolocation>
@@ -42,19 +36,19 @@ Defaults to `false`.
 ```js
 const geo = document.querySelector("geolocation");
 console.log(geo.isValid);
-// true, provided the `<geolocation>` element is not blocked in some way
+// true، به شرطی که عنصر `<geolocation>` به نحوی مسدود نشده باشد
 ```
 
-See the {{domxref("HTMLGeolocationElement.invalidReason")}} page for a more complete example involving `isValid`.
+برای یک مثال کامل‌تر که شامل `isValid` می‌شود، به صفحه {{domxref("HTMLGeolocationElement.invalidReason")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{htmlelement("geolocation")}} element
+- عنصر {{htmlelement("geolocation")}}
