@@ -1,7 +1,5 @@
 ---
 title: "HTMLFormElement: reset() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reset"
-status: "needs-translation"
 ---
 
 ---
@@ -14,43 +12,36 @@ browser-compat: api.HTMLFormElement.reset
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLFormElement.reset()`** method restores a form
-element's default values. This method does the same thing as clicking the form's
-[`<input type="reset">`](/en-US/docs/Web/HTML/Reference/Elements/input/reset) control.
+متد **`HTMLFormElement.reset()`** مقادیر پیش‌فرض عنصر فرم را بازیابی می‌کند. این متد همان کاری را انجام می‌دهد که کلیک روی کنترل [`<input type="reset">`](/en-US/docs/Web/HTML/Reference/Elements/input/reset) فرم انجام می‌دهد.
 
-If a form control (such as a reset button) has a name or id of _reset_ it will
-mask the form's reset method. It does not reset other attributes in the input, such as
-`disabled`.
+اگر یک کنترل فرم (مانند دکمهٔ بازنشانی) نام یا شناسهٔ `_reset_` داشته باشد، متد `reset` فرم را می‌پوشاند. این متد سایر ویژگی‌های عنصر `input`، مانند `disabled` را بازنشانی نمی‌کند.
 
-Note that if {{domxref("Element.setAttribute", "setAttribute()")}} is called to set
-the value of a particular attribute, a subsequent call to `reset()` won't
-reset the attribute to its default value, but instead will keep the attribute at
-whatever value the {{domxref("Element.setAttribute", "setAttribute()")}} call set it to.
+توجه داشته باشید که اگر {{domxref("Element.setAttribute", "setAttribute()")}} برای تنظیم مقدار یک ویژگی خاص فراخوانی شود، فراخوانی بعدی `reset()` آن ویژگی را به مقدار پیش‌فرض خود بازنشانی نمی‌کند؛ بلکه ویژگی را در همان مقداری نگه می‌دارد که فراخوانی {{domxref("Element.setAttribute", "setAttribute()")}} آن را تنظیم کرده است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 reset()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 document.getElementById("my-form").reset();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
