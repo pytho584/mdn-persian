@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSet: size property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/size"
-status: "needs-translation"
----
-
----
-title: "FontFaceSet: size property"
 short-title: size
 slug: Web/API/FontFaceSet/size
 page-type: web-api-instance-property
@@ -14,24 +8,24 @@ browser-compat: api.FontFaceSet.size
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`size`** property of the {{domxref("FontFaceSet")}} interface returns the number of items in the `FontFaceSet`.
+ویژگی **`size`** در رابط {{domxref("FontFaceSet")}} تعداد آیتم‌های موجود در `FontFaceSet` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer indicating the number of items in the `FontFaceSet`.
+یک عدد صحیح که تعداد آیتم‌های موجود در `FontFaceSet` را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-In the following example the `size` of the `FontFaceSet` is printed to the console.
+در مثال زیر، مقدار `size` مربوط به `FontFaceSet` در کنسول چاپ می‌شود.
 
 ```js
 console.log(document.fonts.size);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
