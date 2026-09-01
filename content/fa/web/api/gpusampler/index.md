@@ -1,10 +1,4 @@
 ---
-title: "GPUSampler"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUSampler"
-status: "needs-translation"
----
-
----
 title: GPUSampler
 slug: Web/API/GPUSampler
 page-type: web-api-interface
@@ -13,20 +7,20 @@ browser-compat: api.GPUSampler
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUSampler`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents an object that can control how shaders transform and filter texture resource data.
+رابط **`GPUSampler`** از {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} شیئی را نشان می‌دهد که می‌تواند نحوه تبدیل و فیلتر کردن داده‌های منابع بافت توسط شیدرها را کنترل کند.
 
-A `GPUSampler` object instance is created using the {{domxref("GPUDevice.createSampler()")}} method.
+یک نمونه از شیء `GPUSampler` با استفاده از متد {{domxref("GPUDevice.createSampler()")}} ایجاد می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPUSampler.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : یک رشته که برچسبی برای شناسایی شیء فراهم می‌کند، برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Examples
+## مثال‌ها
 
-The following snippet creates a `GPUSampler` that does trilinear filtering and repeats texture coordinates:
+قطعه کد زیر یک `GPUSampler` ایجاد می‌کند که فیلترینگ سه‌خطی انجام می‌دهد و مختصات بافت را تکرار می‌کند:
 
 ```js
 // …
@@ -39,16 +33,16 @@ const sampler = device.createSampler({
 });
 ```
 
-The WebGPU samples [Shadow Mapping sample](https://webgpu.github.io/webgpu-samples/samples/shadowMapping/) uses comparison samplers to sample from a depth texture to render shadows.
+نمونه‌های WebGPU [نمونه نگاشت سایه](https://webgpu.github.io/webgpu-samples/samples/shadowMapping/) از نمونه‌بردارهای مقایسه‌ای برای نمونه‌برداری از یک بافت عمق جهت رندر سایه‌ها استفاده می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
