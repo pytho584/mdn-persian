@@ -1,7 +1,5 @@
 ---
 title: "DataTransferItem"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem"
-status: "needs-translation"
 ---
 
 ---
@@ -13,38 +11,38 @@ browser-compat: api.DataTransferItem
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DataTransferItem`** object represents one drag data item. During a _drag operation_, each {{domxref("DragEvent")}} has a {{domxref("DragEvent.dataTransfer","dataTransfer")}} property which contains a {{domxref("DataTransferItemList","list")}} of drag data items. Each item in the list is a `DataTransferItem` object.
+شیء **`DataTransferItem`** نمایانگر یک آیتم داده‌ای کشیدن است. در طول یک _عملیات کشیدن_، هر {{domxref("DragEvent")}} دارای ویژگی {{domxref("DragEvent.dataTransfer","dataTransfer")}} است که شامل یک {{domxref("DataTransferItemList","فهرست")}} از آیتم‌های داده‌ای کشیدن می‌شود. هر آیتم در این فهرست یک شیء `DataTransferItem` است.
 
-`DataTransferItem` was primarily designed for the [HTML Drag and Drop API](/en-US/docs/Web/API/HTML_Drag_and_Drop_API), and is still specified in the HTML drag-and-drop section, but it is now also used by other APIs, such as {{domxref("ClipboardEvent.clipboardData")}} and {{domxref("InputEvent.dataTransfer")}}. Documentation of `DataTransferItem` will primarily discuss its usage in drag-and-drop operations, and you should refer to the other APIs' documentation for usage of `DataTransferItem` in those contexts.
+`DataTransferItem` در ابتدا برای [HTML Drag and Drop API](/en-US/docs/Web/API/HTML_Drag_and_Drop_API) طراحی شده بود و همچنان در بخش HTML drag-and-drop تعریف می‌شود، اما اکنون توسط APIهای دیگری مانند {{domxref("ClipboardEvent.clipboardData")}} و {{domxref("InputEvent.dataTransfer")}} نیز استفاده می‌شود. مستندات `DataTransferItem` در درجه اول کاربرد آن را در عملیات کشیدن و رها کردن توضیح می‌دهد و برای کاربرد `DataTransferItem` در آن بافتارها باید به مستندات سایر APIها مراجعه کنید.
 
-This interface has no constructor.
+این رابط سازنده ندارد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("DataTransferItem.kind")}} {{ReadOnlyInline}}
-  - : The _kind_ of drag data item, `string` or `file`.
+  - : _نوع_ آیتم داده‌ای کشیدن، `string` یا `file`.
 - {{domxref("DataTransferItem.type")}} {{ReadOnlyInline}}
-  - : The drag data item's type, typically a MIME type.
+  - : نوع آیتم داده‌ای کشیدن، معمولاً یک نوع MIME.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("DataTransferItem.getAsFile()")}}
-  - : Returns the {{domxref("File")}} object associated with the drag data item (or null if the drag item is not a file).
+  - : شیء {{domxref("File")}} مرتبط با آیتم داده‌ای کشیدن را برمی‌گرداند (یا در صورتی که آیتم کشیدن یک فایل نباشد، `null`).
 - {{domxref("DataTransferItem.getAsFileSystemHandle()")}} {{Experimental_Inline}}
-  - : Returns a {{jsxref('Promise')}} that fulfills with a {{domxref('FileSystemFileHandle')}} if the dragged item is a file, or fulfills with a {{domxref('FileSystemDirectoryHandle')}} if the dragged item is a directory.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که اگر آیتم کشیده‌شده یک فایل باشد، با یک {{domxref('FileSystemFileHandle')}} و اگر یک پوشه باشد، با یک {{domxref('FileSystemDirectoryHandle')}} تکمیل می‌شود.
 - {{domxref("DataTransferItem.getAsString()")}}
-  - : Invokes the specified callback with the drag data item string as its argument.
+  - : تابع بازگشتی مشخص‌شده را با رشته آیتم داده‌ای کشیدن به‌عنوان آرگومان فراخوانی می‌کند.
 - {{domxref("DataTransferItem.webkitGetAsEntry()")}}
-  - : Returns an object based on {{domxref("FileSystemEntry")}} representing the selected file's entry in its file system. This will generally be either a {{domxref("FileSystemFileEntry")}} or {{domxref("FileSystemDirectoryEntry")}} object.
+  - : یک شیء بر اساس {{domxref("FileSystemEntry")}} برمی‌گرداند که نشان‌دهنده ورودی فایل انتخابی در سامانه فایل آن است. این شیء معمولاً یا یک {{domxref("FileSystemFileEntry")}} است یا یک {{domxref("FileSystemDirectoryEntry")}}.
 
-## Example
+## مثال
 
-All of this interface's methods and properties have their own reference page, and each reference page has an example of its usage.
+همه روش‌ها و ویژگی‌های این رابط صفحه مرجع خود را دارند و هر صفحه مرجع شامل یک مثال از کاربرد آن است.
 
-## Specifications
+## مشخصات‌ها
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
