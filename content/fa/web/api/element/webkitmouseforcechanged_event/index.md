@@ -1,11 +1,5 @@
 ---
 title: "Element: webkitmouseforcechanged event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/webkitmouseforcechanged_event"
-status: "needs-translation"
----
-
----
-title: "Element: webkitmouseforcechanged event"
 short-title: webkitmouseforcechanged
 slug: Web/API/Element/webkitmouseforcechanged_event
 page-type: web-api-event
@@ -16,15 +10,15 @@ browser-compat: api.Element.webkitmouseforcechanged_event
 
 {{APIRef("Force Touch Events")}}{{Non-standard_header}}
 
-The non-standard **`webkitmouseforcechanged`** event is fired by Safari each time the amount of pressure changes on the trackpad/touchscreen.
+رویداد غیراستاندارد **`webkitmouseforcechanged`** هر بار که مقدار فشار روی ترک‌پد یا صفحه لمسی تغییر می‌کند، توسط Safari فعال می‌شود.
 
-**`webkitmouseforcechanged`** is a proprietary, WebKit-specific event introduced by Apple to support their [Force Touch events](/en-US/docs/Web/API/Force_Touch_events) feature.
+**`webkitmouseforcechanged`** یک رویداد اختصاصی و مخصوص WebKit است که توسط Apple برای پشتیبانی از ویژگی [Force Touch events](/en-US/docs/Web/API/Force_Touch_events) معرفی شده است.
 
-This event first fires after the {{domxref("Element/mousedown_event", "mousedown")}} event and stops firing before the {{domxref("Element/mouseup_event", "mouseup")}} event.
+این رویداد ابتدا پس از رویداد {{domxref("Element/mousedown_event", "mousedown")}} فعال می‌شود و قبل از رویداد {{domxref("Element/mouseup_event", "mouseup")}} از فعال شدن بازمی‌ایستد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از این رویداد، نام آن را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید یا یک ویژگی مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("webkitmouseforcechanged", (event) => { })
@@ -32,23 +26,23 @@ addEventListener("webkitmouseforcechanged", (event) => { })
 onwebkitmouseforcechanged = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MouseEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("MouseEvent")}}. این رویداد از {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("MouseEvent")}}
 
-## Specifications
+## مشخصات
 
-_Not part of any specification._ Apple has [a description at the Mac Developer Library](https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/SafariJSProgTopics/RespondingtoForceTouchEventsfromJavaScript.html).
+_بخشی از هیچ مشخصاتی نیست._ Apple [شرحی را در کتابخانه توسعه‌دهندگان Mac](https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/SafariJSProgTopics/RespondingtoForceTouchEventsfromJavaScript.html) ارائه کرده است.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Learn: Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
+- [یادگیری: آشنایی با رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events)
 - {{domxref("Element/webkitmouseforcewillbegin_event", "webkitmouseforcewillbegin")}}
 - {{domxref("Element/webkitmouseforcedown_event", "webkitmouseforcedown")}}
 - {{domxref("Element/webkitmouseforceup_event", "webkitmouseforceup")}}
