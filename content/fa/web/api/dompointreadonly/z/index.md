@@ -1,11 +1,5 @@
 ---
 title: "DOMPointReadOnly: z property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/z"
-status: "needs-translation"
----
-
----
-title: "DOMPointReadOnly: z property"
 short-title: z
 slug: Web/API/DOMPointReadOnly/z
 page-type: web-api-instance-property
@@ -14,33 +8,24 @@ browser-compat: api.DOMPointReadOnly.z
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMPointReadOnly`** interface's
-**`z`** property holds the depth coordinate, z, for a
-read-only point in space.
+**ویژگی `z`** در رابط **`DOMPointReadOnly`** مختصات عمق (z) را برای یک نقطهٔ فقط‌خواندنی در فضا نگه می‌دارد.
 
-If your script needs to be able to change the value
-of this property, you should instead use the {{domxref("DOMPoint")}} object.
+اگر اسکریپت شما نیاز به تغییر مقدار این ویژگی دارد، باید به جای آن از شیء {{domxref("DOMPoint")}} استفاده کنید.
 
-In general, positive values of `z` mean toward the user (out from the
-screen), and negative values of `z` mean away from the user (into the
-screen), assuming no transforms have resulted in a reversal.
+به‌طور کلی، مقادیر مثبت `z` به معنای حرکت به سمت کاربر (خارج شدن از صفحه) و مقادیر منفی `z` به معنای دور شدن از کاربر (ورود به صفحه) هستند، به شرطی که هیچ تبدیلی باعث وارونگی نشده باشد.
 
-## Value
+## مقدار
 
-A double-precision floating-point value indicating the z coordinate's value for the
-point. This value is **unrestricted**, meaning that it is allowed to be
-infinite or invalid (that is, its value may be {{jsxref("NaN")}} or {{jsxref("Infinity", "±Infinity")}}).
+یک مقدار ممیز شناور با دقت دوگانه که مقدار مختصات z را برای نقطه نشان می‌دهد. این مقدار **نامحدود** است، به این معنی که می‌تواند بی‌نهایت یا نامعتبر باشد (یعنی مقدار آن می‌تواند {{jsxref("NaN")}} یا {{jsxref("Infinity", "±Infinity")}} باشد).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The other coordinate properties: {{domxref("DOMPointReadOnly.x", "x")}},
-  {{domxref("DOMPointReadOnly.y", "y")}}, and the perspective value,
-  {{domxref("DOMPointReadOnly.w", "w")}}.
+- سایر ویژگی‌های مختصات: {{domxref("DOMPointReadOnly.x", "x")}}، {{domxref("DOMPointReadOnly.y", "y")}}، و مقدار پرسپکتیو، {{domxref("DOMPointReadOnly.w", "w")}}.
