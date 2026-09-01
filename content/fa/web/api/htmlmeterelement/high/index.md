@@ -1,11 +1,5 @@
 ---
 title: "HTMLMeterElement: high property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/high"
-status: "needs-translation"
----
-
----
-title: "HTMLMeterElement: high property"
 short-title: high
 slug: Web/API/HTMLMeterElement/high
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.HTMLMeterElement.high
 
 {{ APIRef("HTML DOM") }}
 
-The **`high`** property of the {{DOMxRef("HTMLMeterElement")}} interface represents the high boundary of the {{htmlelement("meter")}} element as a floating-point number. It reflects the element's [`high`](/en-US/docs/Web/HTML/Reference/Elements/meter#high) attribute, or the value of `max` if not defined. The value of `high` is clamped by the `low` and `max` values.
+ویژگی **`high`** در رابط {{DOMxRef("HTMLMeterElement")}}، مرز بالایی عنصر {{htmlelement("meter")}} را به صورت یک عدد ممیز شناور نشان می‌دهد. این ویژگی، ویژگی [`high`](/en-US/docs/Web/HTML/Reference/Elements/meter#high) عنصر را منعکس می‌کند و در صورت تعریف‌نشدن، مقدار `max` را برمی‌گرداند. مقدار `high` توسط مقادیر `low` و `max` محدود (clamp) می‌شود.
 
-This property can also be set directly, for example to set a default value based on some condition.
+این ویژگی را می‌توان به‌طور مستقیم نیز مقداردهی کرد، مثلاً برای تنظیم یک مقدار پیش‌فرض بر اساس یک شرط خاص.
 
-## Value
+## مقدار
 
-A number that is not less than {{DOMxRef("HTMLMeterElement.low")}} nor greater than {{DOMxRef("HTMLMeterElement.max")}}.
+عددی که نه کمتر از {{DOMxRef("HTMLMeterElement.low")}} و نه بیشتر از {{DOMxRef("HTMLMeterElement.max")}} باشد.
 
-## Examples
+## مثال‌ها
 
 ```html
-<label for="fuel">Current fuel level:</label>
+<label for="fuel">سطح سوخت فعلی:</label>
 <meter
   id="fuel"
   min="0"
@@ -43,15 +37,15 @@ console.log(meterElement.high); // 66
 console.log(meterElement.high); // 67
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("meter")}}
 - {{DOMXref("HTMLMeterElement.value")}}
