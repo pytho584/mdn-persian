@@ -1,11 +1,5 @@
 ---
 title: "EncodedAudioChunk: EncodedAudioChunk() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedAudioChunk/EncodedAudioChunk"
-status: "needs-translation"
----
-
----
-title: "EncodedAudioChunk: EncodedAudioChunk() constructor"
 short-title: EncodedAudioChunk()
 slug: Web/API/EncodedAudioChunk/EncodedAudioChunk
 page-type: web-api-constructor
@@ -14,7 +8,7 @@ browser-compat: api.EncodedAudioChunk.EncodedAudioChunk
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`EncodedAudioChunk()`** constructor creates a new {{domxref("EncodedAudioChunk")}} object representing a chunk of encoded audio.
+سازندهٔ **`EncodedAudioChunk()`** یک شیء جدید {{domxref("EncodedAudioChunk")} می‌سازد که یک قطعه‌ی صوتی رمزگذاری‌شده را نمایش می‌دهد.
 
 ## Syntax
 
@@ -25,25 +19,25 @@ new EncodedAudioChunk(options)
 ### Parameters
 
 - `options`
-  - : An object containing the following members:
+  - : یک شیء حاوی اعضای زیر:
     - `type`
-      - : Indicates if the chunk is a key chunk that does not rely on other frames for encoding. One of:
+      - : مشخص می‌کند که آیا این قطعه، یک قطعه‌ی کلیدی است که برای رمزگشایی به فریم‌های دیگر وابسته نیست. یکی از مقادیر زیر:
         - `"key"`
-          - : The data is a key chunk.
+          - : داده، یک قطعه‌ی کلیدی است.
         - `"delta"`
-          - : The data is not a key chunk.
+          - : داده، یک قطعه‌ی کلیدی نیست.
     - `timestamp`
-      - : An integer representing the timestamp of the audio in microseconds.
+      - : یک عدد صحیح که برچسب زمانی صدا را بر حسب میکروثانیه نشان می‌دهد.
     - `duration`
-      - : An integer representing the length of the audio in microseconds.
+      - : یک عدد صحیح که طول صدا را بر حسب میکروثانیه نشان می‌دهد.
     - `data`
-      - : An {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, or a {{jsxref("DataView")}} containing the audio data.
+      - : یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}} حاوی داده‌های صوتی.
     - `transfer`
-      - : An array of {{jsxref("ArrayBuffer")}}s that `EncodedAudioChunk` will detach and take ownership of. If the array contains the {{jsxref("ArrayBuffer")}} backing `data`, `EncodedAudioChunk` will use that buffer directly instead of copying from it.
+      - : آرایه‌ای از {{jsxref("ArrayBuffer")}}ها که `EncodedAudioChunk` آن‌ها را detach می‌کند و مالکیت آن‌ها را بر عهده می‌گیرد. اگر آرایه شامل {{jsxref("ArrayBuffer")}} پشتیبانِ `data` باشد، `EncodedAudioChunk` مستقیماً از همان بافر استفاده می‌کند و آن را کپی نمی‌کند.
 
 ## Examples
 
-In the following example a new `EncodedAudioChunk` is created.
+در مثال زیر، یک `EncodedAudioChunk` جدید ساخته می‌شود.
 
 ```js
 const init = {
@@ -63,3 +57,4 @@ chunk = new EncodedAudioChunk(init);
 ## Browser compatibility
 
 {{Compat}}
+```
