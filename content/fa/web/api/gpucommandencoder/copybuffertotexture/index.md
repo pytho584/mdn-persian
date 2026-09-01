@@ -1,11 +1,5 @@
 ---
 title: "GPUCommandEncoder: copyBufferToTexture() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyBufferToTexture"
-status: "needs-translation"
----
-
----
-title: "GPUCommandEncoder: copyBufferToTexture() method"
 short-title: copyBufferToTexture()
 slug: Web/API/GPUCommandEncoder/copyBufferToTexture
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.GPUCommandEncoder.copyBufferToTexture
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}
 
-The **`copyBufferToTexture()`** method of the
-{{domxref("GPUCommandEncoder")}} interface encodes a command that copies data from a {{domxref("GPUBuffer")}} to a {{domxref("GPUTexture")}}.
+متد **`copyBufferToTexture()`** از رابط {{domxref("GPUCommandEncoder")}} دستوری را رمزگذاری می‌کند که داده‌ها را از یک {{domxref("GPUBuffer")}} به یک {{domxref("GPUTexture")}} کپی می‌کند.
 
 ## Syntax
 
@@ -26,67 +19,67 @@ copyBufferToTexture(source, destination, copySize)
 ### Parameters
 
 - `source`
-  - : An object that defines the buffer to copy from, plus the layout of the data in the buffer to be copied to the texture. Combined with `copySize`, it defines the region of the source buffer. `source` can take the following properties:
+  - : یک شیء که بافر مبدأ و همچنین چیدمان داده‌های درون بافر که به بافت کپی می‌شوند را تعریف می‌کند. همراه با `copySize`، ناحیه‌ای از بافر مبدأ را مشخص می‌کند. `source` می‌تواند ویژگی‌های زیر را داشته باشد:
     - `buffer`
-      - : The {{domxref("GPUBuffer")}} to copy from.
+      - : {{domxref("GPUBuffer")}} مبدأ برای کپی.
     - `offset` {{optional_inline}}
-      - : The offset, in bytes, from the beginning of `data` to the start of the image data to be copied. If omitted, `offset` defaults to 0.
+      - : آفست (بر حسب بایت) از ابتدای `data` تا شروع داده‌های تصویری که باید کپی شوند. اگر حذف شود، `offset` به طور پیش‌فرض 0 است.
     - `bytesPerRow` {{optional_inline}}
-      - : A number representing the stride, in bytes, between the start of each block row (i.e., a row of complete texel blocks) and the subsequent block row. This is required if there are multiple block rows (i.e., the copy height or depth is more than one block).
+      - : عددی که گام (stride) بر حسب بایت بین شروع هر ردیف بلوک (یعنی یک ردیف از بلوک‌های کامل تکسِل) و ردیف بلوک بعدی را نشان می‌دهد. اگر چندین ردیف بلوک وجود داشته باشد (یعنی ارتفاع یا عمق کپی بیش از یک بلوک باشد) این پارامتر الزامی است.
     - `rowsPerImage` {{optional_inline}}
-      - : The number of block rows per single image inside the data. `bytesPerRow` &times; `rowsPerImage` will give you the stride, in bytes, between the start of each complete image. This is required if there are multiple images to copy.
+      - : تعداد ردیف‌های بلوک در هر تصویر واحد درون داده‌ها. `bytesPerRow` × `rowsPerImage` گام (بر حسب بایت) بین شروع هر تصویر کامل را به شما می‌دهد. اگر چندین تصویر برای کپی وجود داشته باشد، این پارامتر الزامی است.
 - `destination`
-  - : An object defining the texture to write the data to. Combined with `copySize`, defines the region of the destination texture subresource. `destination` can take the following properties:
+  - : یک شیء که بافت مقصد را برای نوشتن داده‌ها تعریف می‌کند. همراه با `copySize`، ناحیه‌ای از زیرمنبع بافت مقصد را مشخص می‌کند. `destination` می‌تواند ویژگی‌های زیر را داشته باشد:
     - `aspect` {{optional_inline}}
-      - : An enumerated value defining which aspects of the texture to write the data to. Possible values are:
+      - : یک مقدار شمارشی که مشخص می‌کند داده‌ها به کدام جنبه‌های بافت نوشته شوند. مقادیر ممکن عبارتند از:
         - `"all"`
-          - : All available aspects of the texture format will be written to, which can mean all or any of color, depth, and stencil, depending on what kind of format you are dealing with.
+          - : تمام جنبه‌های موجود قالب بافت نوشته می‌شود، که بسته به نوع قالبی که با آن کار می‌کنید، می‌تواند به معنای همه یا هر یک از رنگ، عمق و استنسیل باشد.
         - `"depth-only"`
-          - : Only the depth aspect of a [depth-or-stencil format](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) will be written to.
+          - : فقط جنبه عمق یک [قالب عمق-یا-استنسیل](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) نوشته می‌شود.
         - `"stencil-only"`
-          - : Only the stencil aspect of a depth-or-stencil format will be written to.
+          - : فقط جنبه استنسیل یک قالب عمق-یا-استنسیل نوشته می‌شود.
 
-        If omitted, `aspect` takes a value of `"all"`.
+        اگر حذف شود، `aspect` مقدار `"all"` می‌گیرد.
 
     - `mipLevel` {{optional_inline}}
-      - : A number representing the mip-map level of the texture to write the data to. If omitted, `mipLevel` defaults to 0.
+      - : عددی که سطح mip-map بافت مقصد برای نوشتن داده‌ها را نشان می‌دهد. اگر حذف شود، `mipLevel` به طور پیش‌فرض 0 است.
     - `origin` {{optional_inline}}
-      - : An object or array specifying the origin of the copy — the minimum corner of the texture region to write the data to. Together with `size`, this defines the full extent of the region to copy to. The `x`, `y`, and `z` values default to 0 if any of all of `origin` is omitted.
+      - : یک شیء یا آرایه که مبدأ کپی را مشخص می‌کند — کوچک‌ترین گوشه ناحیه بافت برای نوشتن داده‌ها. همراه با `size`، گستره کامل ناحیه کپی را تعریف می‌کند. مقادیر `x`، `y` و `z` در صورت حذف شدن `origin` به طور پیش‌فرض 0 هستند.
 
-        For example, you can pass an array like `[0, 0, 0]`, or its equivalent object `{ x: 0, y: 0, z: 0 }`.
+        به عنوان مثال، می‌توانید یک آرایه مانند `[0, 0, 0]` یا شیء معادل آن `{ x: 0, y: 0, z: 0 }` را پاس کنید.
 
     - `texture`
-      - : A {{domxref("GPUTexture")}} object representing the texture to write the data to.
+      - : یک شیء {{domxref("GPUTexture")}} که بافت مقصد برای نوشتن داده‌ها را نشان می‌دهد.
 
 - `copySize`
-  - : An object or array specifying the width, height, and depth/array layer count of the copied data. The width value must always be specified, while the height and depth/array layer count values are optional and will default to 1 if omitted.
+  - : یک شیء یا آرایه که عرض، ارتفاع و تعداد لایه‌های عمق/آرایه داده‌های کپی‌شده را مشخص می‌کند. مقدار عرض همیشه باید مشخص شود، در حالی که ارتفاع و تعداد لایه‌های عمق/آرایه اختیاری هستند و در صورت حذف به طور پیش‌فرض 1 هستند.
 
-    For example, you can pass an array `[16, 16, 2]`, or its equivalent object `{ width: 16, height: 16, depthOrArrayLayers: 2 }`.
+    به عنوان مثال، می‌توانید یک آرایه `[16, 16, 2]` یا شیء معادل آن `{ width: 16, height: 16, depthOrArrayLayers: 2 }` را پاس کنید.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ### Validation
 
-The following criteria must be met when calling **`copyBufferToTexture()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUCommandEncoder")}} becomes invalid.
+هنگام فراخوانی **`copyBufferToTexture()`**، معیارهای زیر باید رعایت شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید می‌شود و {{domxref("GPUCommandEncoder")}} نامعتبر می‌شود.
 
-For the `source`:
+برای `source`:
 
-- `source.bytesPerRow` is a multiple of 256.
-- The `source.buffer`'s {{domxref("GPUBuffer.usage")}} includes the `GPUBufferUsage.COPY_SRC` flag.
+- `source.bytesPerRow` مضربی از 256 است.
+- {{domxref("GPUBuffer.usage")}} مربوط به `source.buffer` شامل پرچم `GPUBufferUsage.COPY_SRC` است.
 
-For the `destination`:
+برای `destination`:
 
-- `mipLevel` is less than the {{domxref("GPUTexture.mipLevelCount")}}.
-- `origin.x` is a multiple of the texel block width of the {{domxref("GPUTexture.format")}}.
-- `origin.y` is a multiple of the texel block height of the {{domxref("GPUTexture.format")}}.
-- If the {{domxref("GPUTexture.format")}} is a [depth-or-stencil format](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) or {{domxref("GPUTexture.sampleCount")}} is more than 1, the subresource size is equal to `size`.
-- The `destination`'s {{domxref("GPUTexture.usage")}} includes the `GPUTextureUsage.COPY_DST` flag.
-- The `destination`'s {{domxref("GPUTexture.sampleCount")}} is 1.
-- `destination.aspect` refers to a single aspect of the {{domxref("GPUTexture.format")}}.
-- That aspect is a valid image copy destination according to [depth-or-stencil formats](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format).
-- The `destination` is compatible with the `copySize`.
+- `mipLevel` کمتر از {{domxref("GPUTexture.mipLevelCount")}} است.
+- `origin.x` مضربی از عرض بلوک تکسِل {{domxref("GPUTexture.format")}} است.
+- `origin.y` مضربی از ارتفاع بلوک تکسِل {{domxref("GPUTexture.format")}} است.
+- اگر {{domxref("GPUTexture.format")}} یک [قالب عمق-یا-استنسیل](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) باشد یا {{domxref("GPUTexture.sampleCount")}} بیشتر از 1 باشد، اندازه زیرمنبع برابر با `size` است.
+- {{domxref("GPUTexture.usage")}} مربوط به `destination` شامل پرچم `GPUTextureUsage.COPY_DST` است.
+- {{domxref("GPUTexture.sampleCount")}} مربوط به `destination` برابر با 1 است.
+- `destination.aspect` به یک جنبه واحد از {{domxref("GPUTexture.format")}} اشاره می‌کند.
+- آن جنبه یک مقصد معتبر برای کپی تصویر مطابق با [قالب‌های عمق-یا-استنسیل](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) است.
+- `destination` با `copySize` سازگار است.
 
 ## Examples
 
@@ -116,4 +109,4 @@ commandEncoder.copyBufferToTexture(
 
 ## See also
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
