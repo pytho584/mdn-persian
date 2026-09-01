@@ -1,11 +1,5 @@
 ---
 title: "HTMLFieldSetElement: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFieldSetElement/type"
-status: "needs-translation"
----
-
----
-title: "HTMLFieldSetElement: type property"
 short-title: type
 slug: Web/API/HTMLFieldSetElement/type
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.HTMLFieldSetElement.type
 
 {{ApiRef("HTML DOM")}}
 
-The **`type`** read-only property of the {{domxref("HTMLFieldSetElement")}} interface returns the string `"fieldset"`.
+خاصیت فقط-خواندنی **`type`** از رابط {{domxref("HTMLFieldSetElement")}} رشته `"fieldset"` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-The string `"fieldset"`.
+رشته `"fieldset"`.
 
-## Example
+## مثال
 
 ```js
 const fs = document.querySelector("fieldset");
 console.log(fs.type); // "fieldset"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLFieldSetElement")}}
 - {{HTMLElement("fieldset")}}
