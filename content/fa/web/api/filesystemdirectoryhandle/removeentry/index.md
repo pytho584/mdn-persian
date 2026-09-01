@@ -1,11 +1,5 @@
 ---
 title: "FileSystemDirectoryHandle: removeEntry() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/removeEntry"
-status: "needs-translation"
----
-
----
-title: "FileSystemDirectoryHandle: removeEntry() method"
 short-title: removeEntry()
 slug: Web/API/FileSystemDirectoryHandle/removeEntry
 page-type: web-api-instance-method
@@ -14,9 +8,7 @@ browser-compat: api.FileSystemDirectoryHandle.removeEntry
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`removeEntry()`** method of the
-{{domxref("FileSystemDirectoryHandle")}} interface attempts to remove an entry if the
-directory handle contains a file or directory called the name specified.
+متد **`removeEntry()`** در رابط {{domxref("FileSystemDirectoryHandle")}} تلاش می‌کند یک ورودی را حذف کند، در صورتی که هندل دایرکتوری شامل یک فایل یا پوشه با نام مشخص‌شده باشد.
 
 ## Syntax
 
@@ -28,31 +20,30 @@ removeEntry(name, options)
 ### Parameters
 
 - `name`
-  - : A string representing the {{domxref('FileSystemHandle.name')}} of
-    the entry you wish to remove.
+  - : یک رشته که {{domxref('FileSystemHandle.name')}} ورودی مورد نظر برای حذف را نشان می‌دهد.
 - `options` {{optional_inline}}
-  - : An optional object containing options, which are as follows:
+  - : یک شیء اختیاری حاوی گزینه‌ها که به صورت زیر است:
     - `recursive` {{optional_inline}}
-      - : A boolean value, which defaults to `false`. When set to `true` entries will be removed recursively.
+      - : یک مقدار بولین که به طور پیش‌فرض `false` است. وقتی روی `true` تنظیم شود، ورودی‌ها به صورت بازگشتی حذف می‌شوند.
 
 ### Return value
 
-A {{jsxref('Promise')}} which resolves with `undefined`.
+یک {{jsxref('Promise')}} که با `undefined` حل می‌شود.
 
 ### Exceptions
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the name is not a valid string or contains characters not allowed on the file system.
+  - : اگر نام یک رشته معتبر نباشد یا حاوی کاراکترهای مجاز در سیستم فایل نباشد، پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref('PermissionStatus.state')}} for the handle is not `'granted'` in `readwrite` mode.
+  - : اگر {{domxref('PermissionStatus.state')}} برای هندل در حالت `'granted'` با مجوز `readwrite` نباشد، پرتاب می‌شود.
 - `InvalidModificationError` {{domxref("DOMException")}}
-  - : Thrown if `recursive` is set to false and the entry to be removed has children.
+  - : اگر `recursive` روی `false` تنظیم شده باشد و ورودی مورد نظر برای حذف دارای زیرشاخه باشد، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the current entry is not found or if the entry of the specific name is not found or matched.
+  - : اگر ورودی فعلی یافت نشود یا ورودی با نام مشخص‌شده یافت یا مطابقت داده نشود، پرتاب می‌شود.
 
 ## Examples
 
-The following example removes an entry within the directory handle.
+مثال زیر یک ورودی را در داخل هندل دایرکتوری حذف می‌کند.
 
 ```js
 const entryName = "entryToRemove";
