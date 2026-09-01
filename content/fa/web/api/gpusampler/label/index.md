@@ -1,7 +1,5 @@
 ---
 title: "GPUSampler: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUSampler/label"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,17 @@ browser-compat: api.GPUSampler.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** property of the
-{{domxref("GPUSampler")}} interface provides a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی **`label`** در رابط {{domxref("GPUSampler")}} برچسبی را فراهم می‌کند که می‌توان از آن برای شناسایی شیء استفاده کرد، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUDevice.createSampler()")}} call, or you can get and set it directly on the `GPUSampler` object.
+این برچسب را می‌توان با ارائه‌ی یک ویژگی `label` در شیء توصیفگر که به فراخوانی {{domxref("GPUDevice.createSampler()")}} اصلی منتقل می‌شود تنظیم کرد، یا می‌توانید آن را مستقیماً روی شیء `GPUSampler` بخوانید یا بنویسید.
 
-## Value
+## مقدار
 
-A string. If this has not been previously set as described above, it will be an empty string.
+یک رشته. اگر قبلاً به شکل بالا تنظیم نشده باشد، یک رشته‌ی خالی خواهد بود.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUSampler.label`:
+تنظیم و خواندن برچسب از طریق `GPUSampler.label`:
 
 ```js
 // …
@@ -39,7 +36,7 @@ sampler.label = "my_sampler";
 console.log(sampler.label); // "my_sampler"
 ```
 
-Setting a label via the originating {{domxref("GPUDevice.createSampler()")}} call, and then getting it via `GPUSampler.label`:
+تنظیم برچسب از طریق فراخوانی {{domxref("GPUDevice.createSampler()")}} اصلی و سپس خواندن آن از طریق `GPUSampler.label`:
 
 ```js
 // …
@@ -52,14 +49,14 @@ const sampler = device.createSampler({
 console.log(sampler.label); // "my_sampler"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
