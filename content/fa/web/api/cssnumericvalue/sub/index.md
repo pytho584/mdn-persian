@@ -1,11 +1,5 @@
 ---
 title: "CSSNumericValue: sub() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/sub"
-status: "needs-translation"
----
-
----
-title: "CSSNumericValue: sub() method"
 short-title: sub()
 slug: Web/API/CSSNumericValue/sub
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.CSSNumericValue.sub
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`sub()`** method of the {{domxref("CSSNumericValue")}} interface subtracts a supplied number from the `CSSNumericValue`.
+متد **`sub()`** از رابط {{domxref("CSSNumericValue")}} یک عدد داده‌شده را از `CSSNumericValue` کم می‌کند.
 
 ## Syntax
 
@@ -27,17 +21,17 @@ sub(number1, number2, /* …, */ numberN)
 
 ### Parameters
 
-- `number1`, …, `numberN` {{optional_inline}}
-  - : Either a number or a {{domxref('CSSNumericValue')}}.
+- `number1`، …، `numberN` {{optional_inline}}
+  - : یا یک عدد یا یک {{domxref('CSSNumericValue')}}.
 
 ### Return value
 
-A {{domxref('CSSMathSum')}}, or a {{domxref('CSSUnitValue')}} if `this` and every argument share the same unit.
+یک {{domxref('CSSMathSum')}}، یا اگر `this` و همه آرگومان‌ها واحد مشترکی داشته باشند یک {{domxref('CSSUnitValue')}}.
 
 ### Exceptions
 
 - {{jsxref("TypeError")}}
-  - : Thrown if an invalid type was passed to the method.
+  - : اگر نوع نامعتبری به متد ارسال شود پرتاب می‌شود.
 
 ## Examples
 
