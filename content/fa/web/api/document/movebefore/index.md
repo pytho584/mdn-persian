@@ -1,11 +1,5 @@
 ---
 title: "Document: moveBefore() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/moveBefore"
-status: "needs-translation"
----
-
----
-title: "Document: moveBefore() method"
 short-title: moveBefore()
 slug: Web/API/Document/moveBefore
 page-type: web-api-instance-method
@@ -14,72 +8,72 @@ browser-compat: api.Document.moveBefore
 
 {{APIRef("DOM")}}
 
-The **`moveBefore()`** method of the {{domxref("Document")}} interface moves a given {{domxref("Node")}} inside the `Document` DOM node as a direct child, before a given reference node.
+متد **`moveBefore()`** از رابط {{domxref("Document")}} یک {{domxref("Node")}} معین را به‌عنوان فرزند مستقیم، درون گره DOM سند، قبل از یک گره مرجع معین جابه‌جا می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 moveBefore(movedNode, referenceNode)
 ```
 
-### Parameters
+### پارامترها
 
 - `movedNode`
-  - : A {{domxref("Node")}} representing the node to be moved. Note that this must be an {{domxref("Element")}} or a {{domxref("CharacterData")}} node.
+  - : یک {{domxref("Node")}} که نشان‌دهنده گره موردنظر برای جابه‌جایی است. توجه داشته باشید که این گره باید یک {{domxref("Element")}} یا {{domxref("CharacterData")}} باشد.
 - `referenceNode`
-  - : A {{domxref("Node")}} that `movedNode` will be moved before, or `null`. If the value is `null`, `movedNode` is inserted at the end of the `Document`'s child nodes.
+  - : یک {{domxref("Node")}} که `movedNode` قبل از آن جابه‌جا می‌شود، یا `null`. اگر مقدار `null` باشد، `movedNode` در انتهای گره‌های فرزند سند درج می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{jsxref("TypeError")}}
-  - : Thrown in any of the following situations:
-    - The specified `movedNode` is not part of this document.
-    - The specified `movedNode` is not an {{domxref("Element")}} or {{domxref("CharacterData")}} node.
-    - You are trying to move `movedNode` before the document's {{glossary("doctype")}} (represented by a {{domxref("DocumentType")}} object).
+  - : در هر یک از شرایط زیر پرتاب می‌شود:
+    - `movedNode` مشخص‌شده بخشی از این سند نیست.
+    - `movedNode` مشخص‌شده یک {{domxref("Element")}} یا {{domxref("CharacterData")}} نیست.
+    - در حال تلاش برای جابه‌جایی `movedNode` قبل از document type سند (که با یک شیء {{domxref("DocumentType")}} نمایش داده می‌شود) هستید.
 - `NotFoundError` {{jsxref("TypeError")}}
-  - : The specified `referenceNode` is not a child of the node you are calling `moveBefore()` on, that is, the node you are trying to move `movedNode` inside.
+  - : `referenceNode` مشخص‌شده فرزند گرهی نیست که روی آن `moveBefore()` را فراخوانی کرده‌اید؛ به عبارت دیگر، گرهی که می‌خواهید `movedNode` را در داخل آن جابه‌جا کنید.
 - `TypeError` {{jsxref("TypeError")}}
-  - : The second argument was not supplied.
+  - : آرگومان دوم ارائه نشده است.
 
-## Description
+## توضیحات
 
-The `moveBefore()` method moves a given node to a new place in the DOM. It provides similar functionality to the {{domxref("Node.insertBefore()")}} method, except that it doesn't remove and then reinsert the node. This means that the state of the node (which would be reset if moving it with `insertBefore()` and similar mechanisms) is preserved after the move. This includes:
+متد `moveBefore()` یک گره معین را به مکان جدیدی در DOM منتقل می‌کند. این متد عملکردی مشابه متد {{domxref("Node.insertBefore()")}} ارائه می‌دهد، با این تفاوت که گره را حذف و سپس دوباره درج نمی‌کند. این بدان معناست که وضعیت گره (که اگر با `insertBefore()` و سازوکارهای مشابه جابه‌جا می‌شد بازنشانی می‌شد) پس از جابه‌جایی حفظ می‌شود. این وضعیت‌ها شامل موارد زیر است:
 
-- [Animation](/en-US/docs/Web/CSS/Guides/Animations) and [transition](/en-US/docs/Web/CSS/Guides/Transitions) state.
-- {{htmlelement("iframe")}} loading state.
-- Interactivity states (for example, {{cssxref(":focus")}} and {{cssxref(":active")}}).
-- [Fullscreen](/en-US/docs/Web/API/Fullscreen_API) element state.
-- Open/close state of [popovers](/en-US/docs/Web/API/Popover_API).
-- Modal state of {{htmlelement("dialog")}} elements (modal dialogs will not be closed).
+- وضعیت [انیمیشن](/en-US/docs/Web/CSS/Guides/Animations) و [ترانزیشن](/en-US/docs/Web/CSS/Guides/Transitions).
+- وضعیت بارگذاری {{htmlelement("iframe")}}.
+- وضعیت‌های تعاملی (برای مثال {{cssxref(":focus")}} و {{cssxref(":active")}}).
+- وضعیت عنصر [تمام‌صفحه](/en-US/docs/Web/API/Fullscreen_API).
+- وضعیت باز/بسته بودن [پاپ‌اورها](/en-US/docs/Web/API/Popover_API).
+- وضعیت مودال عناصر {{htmlelement("dialog")}} (دیالوگ‌های مودال بسته نخواهند شد).
 
-The play state of {{htmlelement("video")}} and {{htmlelement("audio")}} elements is not included in the above list, as these elements retain their state when removed and reinserted, regardless of the mechanism used.
+وضعیت پخش عناصر {{htmlelement("video")}} و {{htmlelement("audio")}} در فهرست بالا گنجانده نشده است، زیرا این عناصر هنگام حذف و درج مجدد، صرف‌نظر از سازوکار مورد استفاده، وضعیت خود را حفظ می‌کنند.
 
-When observing changes to the DOM using a {{domxref("MutationObserver")}}, nodes moved with `moveBefore()` will be recorded with a [removed node](/en-US/docs/Web/API/MutationRecord/removedNodes) and an [added node](/en-US/docs/Web/API/MutationRecord/addedNodes).
+هنگام مشاهده تغییرات DOM با استفاده از یک {{domxref("MutationObserver")}}، گره‌هایی که با `moveBefore()` جابه‌جا شده‌اند به‌صورت یک [گره حذف‌شده](/en-US/docs/Web/API/MutationRecord/removedNodes) و یک [گره افزوده‌شده](/en-US/docs/Web/API/MutationRecord/addedNodes) ثبت خواهند شد.
 
-The `moveBefore()` method is not particularly useful when invoked on the `Document` node. There are some non-element uses for it, for example you could use `moveBefore()` to move comment nodes around the root of the `Document`. However, you are much more likely to find a use for invoking it on an individual `DocumentFragment` or `Element` — see {{domxref("DocumentFragment.moveBefore()")}} and {{domxref("Element.moveBefore()")}}.
+متد `moveBefore()` زمانی که روی گره `Document` فراخوانی شود کاربرد چندانی ندارد. برخی کاربردهای غیرعنصری برای آن وجود دارد؛ برای مثال می‌توانید از `moveBefore()` برای جابه‌جایی گره‌های دیدگاه (comment) در اطراف ریشه `Document` استفاده کنید. با این حال، بسیار محتمل‌تر است که استفاده از آن روی یک `DocumentFragment` یا `Element` خاص برای شما مفید باشد — به {{domxref("DocumentFragment.moveBefore()")}} و {{domxref("Element.moveBefore()")}} مراجعه کنید.
 
-### `moveBefore()` constraints
+### محدودیت‌های `moveBefore()`
 
-There are some constraints to be aware of when using `moveBefore()`:
+هنگام استفاده از `moveBefore()` باید از چند محدودیت آگاه باشید:
 
-- It can only work when moving a node within the same document.
-- It won't work if you try to move a node that is not connected to the DOM to an already connected parent, or vice versa.
+- فقط زمانی کار می‌کند که یک گره را در همان سند جابه‌جا کنید.
+- اگر بخواهید گرهی را که به DOM متصل نیست به یک والد متصل منتقل کنید، یا برعکس، کار نخواهد کرد.
 
-In such cases, `moveBefore()` will fail with a `HierarchyRequestError` exception. If the above constraints are requirements for your particular use case, you should use {{domxref("Node.insertBefore()")}} instead, or use [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) to handle the errors that arise from such cases.
+در چنین مواردی، `moveBefore()` با استثنای `HierarchyRequestError` شکست می‌خورد. اگر محدودیت‌های بالا برای مورد استفاده خاص شما الزامی هستند، به‌جای آن از {{domxref("Node.insertBefore()")}} استفاده کنید یا از [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) برای مدیریت خطاهای ناشی از این موارد بهره ببرید.
 
-## Examples
+## مثال‌ها
 
-### Moving a comment node with `moveBefore()`
+### جابه‌جایی یک گره دیدگاه با `moveBefore()`
 
-In this demo we show how to use `document.moveBefore()` to move a comment node within the DOM.
+در این نمایش، نشان می‌دهیم که چگونه می‌توان از `document.moveBefore()` برای جابه‌جایی یک گره دیدگاه در DOM استفاده کرد.
 
 #### HTML
 
-The HTML is a minimal template that features a comment inside the {{htmlelement("body")}}.
+اچ‌تی‌ام‌ال یک الگوی حداقلی است که یک دیدگاه را داخل {{htmlelement("body")}} دارد.
 
 ```html live-sample___movebefore-comment
 <!doctype html>
@@ -97,7 +91,7 @@ The HTML is a minimal template that features a comment inside the {{htmlelement(
 
 #### JavaScript
 
-In our script, we loop through all the {{domxref("Node.childNodes", "childNodes")}} of the `<body>` element. When we find a node with a {{domxref("Node.nodeType", "nodeType")}} value of `8` (which indicates a comment node), we store a reference to it inside a variable called `commentNode`. We then invoke `document.moveBefore()`, specifying that we want to move the comment node, and specifying a second argument of `null` to insert our comment the end of the `Document`'s child nodes.
+در اسکریپت خود، از میان تمام {{domxref("Node.childNodes", "childNodes")}} عنصر `<body>` حلقه می‌زنیم. وقتی گرهی با مقدار {{domxref("Node.nodeType", "nodeType")}} برابر با `8` پیدا می‌کنیم (که نشان‌دهنده یک گره دیدگاه است)، ارجاع به آن را در متغیری به نام `commentNode` ذخیره می‌کنیم. سپس `document.moveBefore()` را فراخوانی می‌کنیم و مشخص می‌کنیم که می‌خواهیم گره دیدگاه را جابه‌جا کنیم و آرگومان دوم را `null` قرار می‌دهیم تا دیدگاه را در انتهای گره‌های فرزند `Document` درج کنیم.
 
 ```js live-sample___movebefore-comment
 let commentNode;
@@ -111,23 +105,23 @@ for (node of document.querySelector("body").childNodes) {
 document.moveBefore(commentNode, null);
 ```
 
-#### Result
+#### نتیجه
 
-The rendered example looks like this:
+نمونه رندر شده به این صورت است:
 
 {{EmbedLiveSample("movebefore-comment", "100%", "60px")}}
 
-If you inspect the example with your browser's developer tools, you'll notice that the comment has been moved to the end of the document, after the closing `</html>` tag.
+اگر مثال را با ابزار توسعه‌دهنده مرورگر خود بررسی کنید، متوجه می‌شوید که دیدگاه به انتهای سند، پس از تگ بسته‌شونده `</html>` منتقل شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DocumentFragment.moveBefore()")}}
 - {{domxref("Element.moveBefore()")}}
