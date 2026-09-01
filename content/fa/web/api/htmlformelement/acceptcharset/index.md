@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement: acceptCharset property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/acceptCharset"
-status: "needs-translation"
----
-
----
-title: "HTMLFormElement: acceptCharset property"
 short-title: acceptCharset
 slug: Web/API/HTMLFormElement/acceptCharset
 page-type: web-api-instance-property
@@ -14,26 +8,26 @@ browser-compat: api.HTMLFormElement.acceptCharset
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLFormElement.acceptCharset`** property represents the {{glossary("character encoding")}} for the given {{htmlelement("form")}} element.
+ویژگی **`HTMLFormElement.acceptCharset`** نشان‌دهندهٔ {{glossary("character encoding","رمزگذاری نویسه‌ها")}} برای عنصر {{htmlelement("form")}} داده شده است.
 
-The specification allows a single case-insensitive value of `"UTF-8"`, reflecting the ubiquity of this encoding (historically multiple character encodings could be specified as a comma-separated or space-separated list).
+این مشخصات تنها یک مقدار بدون حساسیت به بزرگی/کوچکی حروف به نام `"UTF-8"` را مجاز می‌داند که نشان‌دهندهٔ فراگیری این رمزگذاری است (از نظر تاریخی، چندین رمزگذاری نویسه می‌توانستند به صورت فهرست جدا شده با کاما یا فاصله مشخص شوند).
 
-This reflects the value of the form's [`accept-charset`](/en-US/docs/Web/HTML/Reference/Elements/form#accept-charset) HTML attribute.
+این ویژگی منعکس‌کنندهٔ مقدار ویژگی HTML [`accept-charset`](/en-US/docs/Web/HTML/Reference/Elements/form#accept-charset) فرم است.
 
-## Value
+## مقدار
 
-A string which may be a case-insensitive match for `UTF-8`.
+یک رشته که می‌تواند یک تطابق بدون حساسیت به بزرگی/کوچکی حروف با `UTF-8` باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 let charSet = document.forms["my-form"].acceptCharset;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
