@@ -1,9 +1,4 @@
----
-title: "HTMLInputElement: placeholder property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/placeholder"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "HTMLInputElement: placeholder property"
 short-title: placeholder
@@ -14,30 +9,31 @@ browser-compat: api.HTMLInputElement.placeholder
 
 {{ APIRef("HTML DOM") }}
 
-The **`placeholder`** property of the {{DOMxRef("HTMLInputElement")}} interface represents a hint to the user of what can be entered in the control. It reflects the {{htmlelement("input")}} element's [`placeholder`](/en-US/docs/Web/HTML/Reference/Elements/input#placeholder) attribute.
+ویژگی **`placeholder`** در رابط {{DOMxRef("HTMLInputElement")}} یک راهنمایی برای کاربر دربارهٔ آنچه می‌توان در کنترل وارد کرد، ارائه می‌دهد. این ویژگی منعکس‌کنندهٔ ویژگی [`placeholder`](/en-US/docs/Web/HTML/Reference/Elements/input#placeholder) عنصر {{htmlelement("input")}} است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const inputElement = document.getElementById("phone");
 console.log(input.placeholder);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("input")}}
 - {{DOMXref("HTMLInputElement.value")}}
-- {{cssxref("::placeholder")}} pseudo-element
-- {{CSSXref(":placeholder-shown")}} pseudo-class
+- {{cssxref("::placeholder")}} شبه‌عنصر
+- {{CSSXref(":placeholder-shown")}} شبه‌کلاس
+```
