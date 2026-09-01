@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: hspace property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/hspace"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: hspace property"
 short-title: hspace
 slug: Web/API/HTMLImageElement/hspace
 page-type: web-api-instance-property
@@ -16,23 +10,23 @@ browser-compat: api.HTMLImageElement.hspace
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The _deprecated_ **`hspace`** property of the {{domxref("HTMLImageElement")}} interface specifies the number of pixels of empty space to leave empty on the left and right sides of the {{HTMLElement("img")}} element when laying out the page. It reflects the `<img>` element's [`hspace`](/en-US/docs/Web/HTML/Reference/Elements/img#hspace) content attribute.
+خاصیتِ **منسوخ‌شدهٔ `hspace`** در رابط {{domxref("HTMLImageElement")}} تعداد پیکسل‌های فضای خالی را مشخص می‌کند که باید در هنگام چیدمان صفحه، در سمت چپ و راست عنصر {{HTMLElement("img")}} خالی بماند. این خاصیت، مشخصهٔ محتوایی `hspace` عنصر `<img>` را بازتاب می‌دهد.
 
-You should instead use the CSS property {{cssxref("margin")}} or its longhand properties to establish margin space around an image.
+در عوض باید از ویژگی CSS {{cssxref("margin")}} یا مشخصه‌های جداگانهٔ آن برای ایجاد حاشیه در اطراف تصویر استفاده کنید.
 
-## Value
+## مقدار
 
-An integer value specifying the width, in pixels, of the horizontal margin to apply to the left and right sides of the image.
+یک عدد صحیح که عرض حاشیهٔ افقی را بر حسب پیکسل مشخص می‌کند و به سمت چپ و راست تصویر اعمال می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{cssxref("margin")}}
 - {{domxref("HTMLImageElement.vspace")}}
