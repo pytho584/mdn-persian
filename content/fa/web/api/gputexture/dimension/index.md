@@ -1,11 +1,5 @@
 ---
 title: "GPUTexture: dimension property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/dimension"
-status: "needs-translation"
----
-
----
-title: "GPUTexture: dimension property"
 short-title: dimension
 slug: Web/API/GPUTexture/dimension
 page-type: web-api-instance-property
@@ -14,20 +8,19 @@ browser-compat: api.GPUTexture.dimension
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`dimension`** read-only property of the
-{{domxref("GPUTexture")}} interface represents the dimension of the set of texels for each `GPUTexture` subresource.
+خاصیتِ فقط‌خواندنی **`dimension`** در رابط {{domxref("GPUTexture")}}، ابعاد مجموعه‌ی تکسِل‌ها را برای هر زیرمنبع `GPUTexture` نشان می‌دهد.
 
-This is set via the `dimension` property in the descriptor object passed into the originating {{domxref("GPUDevice.createTexture()")}} call, which defaults to `"2d"` if omitted.
+این مقدار از طریق خاصیت `dimension` در شیء توصیفگری که به فراخوانِ اصلی {{domxref("GPUDevice.createTexture()")}} داده می‌شود تنظیم می‌گردد؛ اگر این خاصیت حذف شود، مقدار پیش‌فرض آن `"2d"` است.
 
-## Value
+## مقدار
 
-An enumerated value. Possible values are:
+یک مقدار شمارشی (enumerated value). مقادیر ممکن عبارت‌اند از:
 
-- `"1d"`: A one-dimensional texture with a single dimension, width.
-- `"2d"`: A two-dimensional texture with a width and height, which may also have layers. Only `"2d"` textures can have mipmaps, be multisampled, use a compressed or depth/stencil format, and be used as a render attachment.
-- `"3d"`: A three-dimensional texture with a width, height, and depth.
+- `"1d"`: یک بافت یک‌بعدی با یک بُعد، یعنی عرض.
+- `"2d"`: یک بافت دوبعدی با عرض و ارتفاع، که می‌تواند لایه‌ها نیز داشته باشد. فقط بافت‌های `"2d"` می‌توانند میپ‌مپ (mipmap) داشته باشند، چندنمونه‌ای (multisampled) باشند، از فرمت فشرده یا عمق/قالب استفاده کنند، و به‌عنوان پیوستِ رندر (render attachment) به کار روند.
+- `"3d"`: یک بافت سه‌بعدی با عرض، ارتفاع، و عمق.
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -41,14 +34,14 @@ const depthTexture = device.createTexture({
 console.log(depthTexture.dimension); // "2d"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
