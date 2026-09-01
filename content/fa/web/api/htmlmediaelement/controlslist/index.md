@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: controlsList property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/controlsList"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: controlsList property"
 short-title: controlsList
 slug: Web/API/HTMLMediaElement/controlsList
 page-type: web-api-instance-property
@@ -14,23 +8,19 @@ browser-compat: api.HTMLMediaElement.controlsList
 
 {{APIRef("HTML DOM")}}
 
-The **`controlsList`** property of the
-{{domxref("HTMLMediaElement")}} interface returns a DOMTokenList that helps the user
-agent select what controls to show on the media element whenever the user agent shows
-its own set of controls. The DOMTokenList takes one or more of three possible values:
-`nodownload`, `nofullscreen`, and `noremoteplayback`.
+ویژگی **`controlsList`** از رابط {{domxref("HTMLMediaElement")}} یک {{domxref("DOMTokenList")}} برمی‌گرداند که به عامل کاربر (user agent) کمک می‌کند تا انتخاب کند چه کنترل‌هایی را روی عنصر رسانه نشان دهد، هرگاه عامل کاربر مجموعه کنترل‌های خود را نمایش می‌دهد. این DOMTokenList می‌تواند یک یا چند مقدار از سه مقدار ممکن را بگیرد: `nodownload`، `nofullscreen` و `noremoteplayback`.
 
-## Value
+## مقدار
 
-A {{domxref("DOMTokenList")}}.
+یک {{domxref("DOMTokenList")}}.
 
-The value of `controlsList` can be set by passing a string representing the `DOMTokenList`'s {{domxref("DOMTokenList/value", "value")}} property.
+مقدار `controlsList` را می‌توان با ارسال یک رشته که نشان‌دهنده ویژگی {{domxref("DOMTokenList/value", "value")}} مربوط به `DOMTokenList` است، تنظیم کرد.
 
-## Examples
+## مثال‌ها
 
-### Getting the controlsList property
+### دریافت ویژگی controlsList
 
-The `controlsList` property returns a {{domxref("DOMTokenList")}} object containing the current set value.
+ویژگی `controlsList` یک شیء {{domxref("DOMTokenList")}} شامل مقدار فعلی تنظیم‌شده را برمی‌گرداند.
 
 ```js
 const video = document.createElement("video");
@@ -40,23 +30,23 @@ video.controlsList.add("noremoteplayback");
 console.log(video.controlsList.value); // "noremoteplayback"
 ```
 
-### Setting the controlsList property
+### تنظیم ویژگی controlsList
 
-You can also modify `controlsList` by directly setting it to a string containing the new value.
+همچنین می‌توانید `controlsList` را با تنظیم مستقیم آن به یک رشته حاوی مقدار جدید، تغییر دهید.
 
 ```js
 const audio = document.createElement("audio");
 audio.controlsList = "nodownload";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Chrome HTMLMediaElement controlsList Sample](https://googlechrome.github.io/samples/media/controlslist.html)
