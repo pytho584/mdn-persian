@@ -1,11 +1,5 @@
 ---
 title: "GPUAdapterInfo: architecture property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapterInfo/architecture"
-status: "needs-translation"
----
-
----
-title: "GPUAdapterInfo: architecture property"
 short-title: architecture
 slug: Web/API/GPUAdapterInfo/architecture
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.GPUAdapterInfo.architecture
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`architecture`** read-only property of the
-{{domxref("GPUAdapterInfo")}} interface returns the name of the family or class of GPUs the adapter belongs to, or an empty string if it is not available.
+ویژگی فقط‌خواندنی **`architecture`** در رابط {{domxref("GPUAdapterInfo")}} نام خانواده یا کلاس GPUهایی را که آداپتور به آن تعلق دارد بازمی‌گرداند؛ یا در صورت در دسترس نبودن، یک رشته خالی.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const adapter = await navigator.gpu.requestAdapter();
@@ -33,14 +26,14 @@ const adapterInfo = adapter.info;
 console.log(adapterInfo.architecture);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
