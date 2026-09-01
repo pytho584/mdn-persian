@@ -1,42 +1,22 @@
 ---
 title: "Document: pictureInPictureEnabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/pictureInPictureEnabled"
-status: "needs-translation"
----
-
----
-title: "Document: pictureInPictureEnabled property"
-short-title: pictureInPictureEnabled
-slug: Web/API/Document/pictureInPictureEnabled
-page-type: web-api-instance-property
-browser-compat: api.Document.pictureInPictureEnabled
 ---
 
 {{APIRef("Picture-in-Picture API")}}
 
-The read-only
-**`pictureInPictureEnabled`** property of the
-{{domxref("Document")}} interface indicates whether or not picture-in-picture mode is
-available.
+خاصیت فقط‌خواندنی **`pictureInPictureEnabled`** از رابط {{domxref("Document")}} مشخص می‌کند که آیا حالت تصویر-در-تصویر (Picture-in-Picture) در دسترس است یا نه.
 
-Picture-in-Picture mode is available by default unless specified
-otherwise by a [Permissions-Policy](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/picture-in-picture).
+حالت تصویر-در-تصویر به‌طور پیش‌فرض در دسترس است، مگر اینکه توسط [Permissions-Policy](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/picture-in-picture) به‌گونه‌ای دیگر تعیین شده باشد.
 
-Although this property is read-only, it will not throw if it is modified (even in
-strict mode); the setter is a no-operation and will be ignored.
+اگرچه این خاصیت فقط‌خواندنی است، تغییر دادن آن هیچ خطایی ایجاد نمی‌کند (حتی در حالت سخت‌گیرانه)؛ تنظیم‌کننده (setter) آن هیچ عملی انجام نمی‌دهد و نادیده گرفته می‌شود.
 
-## Value
+## مقدار
 
-A boolean value, which is `true` if a video can enter
-picture-in-picture and be displayed in a floating window by calling
-{{domxref("HTMLVideoElement.requestPictureInPicture()")}}. If picture-in-picture mode isn't
-available, this value is `false`.
+یک مقدار بولین که اگر ویدیو بتواند با فراخوانی {{domxref("HTMLVideoElement.requestPictureInPicture()")}} وارد حالت تصویر-در-تصویر شده و در یک پنجره شناور نمایش داده شود، `true` است. اگر حالت تصویر-در-تصویر در دسترس نباشد، این مقدار `false` است.
 
-## Examples
+## مثال‌ها
 
-In this example, before attempting to enter picture-in-picture mode for a
-{{htmlElement("video")}} element the value of `pictureInPictureEnabled` is
-checked, to avoid making the call if the feature is not available.
+در این مثال، قبل از تلاش برای وارد شدن به حالت تصویر-در-تصویر برای یک عنصر {{htmlElement("video")}}، مقدار `pictureInPictureEnabled` بررسی می‌شود تا اگر این قابلیت در دسترس نبود، فراخوانی انجام نشود.
 
 ```js
 function requestPictureInPicture() {
@@ -48,15 +28,15 @@ function requestPictureInPicture() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("HTMLVideoElement.requestPictureInPicture()")}}
 - {{DOMxRef("HTMLVideoElement.disablePictureInPicture")}}
