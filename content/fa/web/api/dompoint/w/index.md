@@ -1,11 +1,5 @@
 ---
 title: "DOMPoint: w property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/w"
-status: "needs-translation"
----
-
----
-title: "DOMPoint: w property"
 short-title: w
 slug: Web/API/DOMPoint/w
 page-type: web-api-instance-property
@@ -14,26 +8,21 @@ browser-compat: api.DOMPoint.w
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMPoint`** interface's
-**`w`** property holds the point's perspective value, w, for a
-point in space.
+ویژگی **`w`** در واسط **`DOMPoint`** مقدار پرسپکتیو نقطه، یعنی w، را برای یک نقطه در فضا نگهداری میکند.
 
-## Value
+## مقدار
 
-A double-precision floating-point value indicating the _w_ perspective value for
-the point. This value is **unrestricted**, meaning that it is allowed to be
-infinite or invalid (that is, its value may be {{jsxref("NaN")}} or {{jsxref("Infinity", "±Infinity")}}).
-The default is 1.0.
+یک عدد اعشاری با دقت دوبرابر که مقدار پرسپکتیو _w_ را برای نقطه نشان میدهد. این مقدار **نامحدود** است، به این معنی که میتواند بینهایت یا نامعتبر باشد (یعنی مقدار آن میتواند {{jsxref("NaN")}} یا {{jsxref("Infinity", "±Infinity")}} باشد). مقدار پیشفرض ۱.۰ است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The other coordinate properties: {{domxref("DOMPoint.x", "x")}},
-  {{domxref("DOMPoint.y", "y")}}, and {{domxref("DOMPoint.z", "z")}}.
+- سایر ویژگیهای مختصات: {{domxref("DOMPoint.x", "x")}}،
+  {{domxref("DOMPoint.y", "y")}} و {{domxref("DOMPoint.z", "z")}}.
