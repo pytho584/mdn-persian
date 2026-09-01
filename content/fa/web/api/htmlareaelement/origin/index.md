@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: origin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/origin"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: origin property"
 short-title: origin
 slug: Web/API/HTMLAreaElement/origin
 page-type: web-api-instance-property
@@ -14,23 +8,25 @@ browser-compat: api.HTMLAreaElement.origin
 
 {{APIRef("HTML DOM")}}
 
-The **`origin`** read-only property of the {{domxref("HTMLAreaElement")}} interface returns a string containing the Unicode serialization of the origin of the `<area>` element's `href`.
+ویژگی فقط‌خواندنیِ **`origin`** در رابط {{domxref("HTMLAreaElement")}} رشته‌ای را برمی‌گرداند که شامل سریال‌سازی یونیکدِ مبدأِ `href` عنصر `<area>` است.
 
-The exact structure varies depending on the type of URL:
+ساختار دقیق بسته به نوع URL متفاوت است:
 
-- For URLs using the `ftp:`, `http:`, `https:`, `ws:`, and `wss:` schemes, the {{domxref("HTMLAnchorElement.protocol", "protocol")}} followed by `//`, followed by the {{domxref("HTMLAnchorElement.host", "host")}}. Same as `host`, the {{domxref("HTMLAnchorElement.port", "port")}} is only included if it's not the default for the protocol.
-- For URLs using `file:` scheme, the value is browser dependent.
-- For URLs using the `blob:` scheme, the origin of the URL following `blob:`, but only if that URL uses the `http:`, `https:`, or `file:` scheme. For example, `blob:https://mozilla.org` will have `https://mozilla.org`.
+- برای URLهایی که از طرح‌های `ftp:`، `http:`، `https:`، `ws:` و `wss:` استفاده می‌کنند، {{domxref("HTMLAnchorElement.protocol", "protocol")}} و سپس `//` و بعد از آن {{domxref("HTMLAnchorElement.host", "host")}} می‌آید. همانند `host`، {{domxref("HTMLAnchorElement.port", "port")}} فقط زمانی درج می‌شود که برای آن پروتکل مقدار پیش‌فرض نباشد.
 
-For all other cases, the string `"null"` is returned.
+- برای URLهایی که از طرح `file:` استفاده می‌کنند، مقدار به مرورگر بستگی دارد.
 
-See {{domxref("URL.origin")}} for more information.
+- برای URLهایی که از طرح `blob:` استفاده می‌کنند، مبدأِ URL بعد از `blob:`، اما فقط اگر آن URL از طرح‌های `http:`، `https:` یا `file:` استفاده کند. برای مثال، `blob:https://mozilla.org` دارای مبدأ `https://mozilla.org` خواهد بود.
 
-## Value
+در همه موارد دیگر، رشته‌ی `"null"` برگردانده می‌شود.
 
-A string.
+برای اطلاعات بیشتر به {{domxref("URL.origin")}} مراجعه کنید.
 
-## Examples
+## مقدار
+
+یک رشته.
+
+## مثال‌ها
 
 ```js
 // An <area id="myArea" href="https://developer.mozilla.org/en-US/HTMLAreaElement"> element is in the document
@@ -38,14 +34,14 @@ const area = document.getElementById("myArea");
 area.origin; // returns 'https://developer.mozilla.org'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{domxref("HTMLAreaElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAreaElement")}} که این ویژگی به آن تعلق دارد.
