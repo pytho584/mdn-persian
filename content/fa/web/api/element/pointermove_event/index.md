@@ -1,7 +1,6 @@
 ---
 title: "Element: pointermove event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/pointermove_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +13,13 @@ browser-compat: api.Element.pointermove_event
 
 {{APIRef("Pointer Events")}}
 
-The `pointermove` event is fired when a pointer changes coordinates, and the pointer has not been [canceled](/en-US/docs/Web/API/Element/pointercancel_event) by a browser [touch-action](/en-US/docs/Web/CSS/Reference/Properties/touch-action). It's very similar to the {{domxref("Element/mousemove_event", "mousemove")}} event, but with more features.
+رویداد `pointermove` زمانی رخ می‌دهد که مختصات یک اشاره‌گر تغییر کند و اشاره‌گر توسط [touch-action](/en-US/docs/Web/CSS/Reference/Properties/touch-action) مرورگر [لغو](/en-US/docs/Web/API/Element/pointercancel_event) نشده باشد. این رویداد شباهت زیادی به رویداد {{domxref("Element/mousemove_event", "mousemove")}} دارد، با این تفاوت که امکانات بیشتری را فراهم می‌کند.
 
-These events happen whether or not any pointer buttons are pressed. They can fire at a very high rate, depends on how fast the user moves the pointer, how fast the machine is, what other tasks and processes are happening, etc.
+این رویدادها صرف‌نظر از فشرده بودن یا نبودن دکمه‌های اشاره‌گر رخ می‌دهند. ممکن است با نرخ بسیار بالایی رخ دهند که این نرخ به سرعت حرکت اشاره‌گر توسط کاربر، سرعت دستگاه، سایر وظایف و فرآیندهای در حال اجرا و موارد دیگر بستگی دارد.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید یا آن را به عنوان یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("pointermove", (event) => { })
@@ -30,17 +29,17 @@ onpointermove = (event) => { }
 
 ## Event type
 
-A {{domxref("PointerEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PointerEvent")}} که از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("PointerEvent")}}
 
 ## Usage notes
 
-The event, which is of type {{domxref("PointerEvent")}}, provides all the information you need to know about the user's interaction with the pointing device, including the position, movement distance, button states, and much more.
+این رویداد که از نوع {{domxref("PointerEvent")}} است، تمام اطلاعات مورد نیاز شما درباره تعامل کاربر با دستگاه اشاره‌گر را فراهم می‌کند؛ از جمله موقعیت، فاصله حرکت، وضعیت دکمه‌ها و موارد بسیار دیگر.
 
 ## Examples
 
-To add a handler for `pointermove` events using {{domxref("EventTarget.addEventListener", "addEventListener()")}}:
+برای افزودن یک کنترل‌کننده به رویدادهای `pointermove` با استفاده از {{domxref("EventTarget.addEventListener", "addEventListener()")}}:
 
 ```js
 const para = document.querySelector("p");
@@ -50,7 +49,7 @@ para.addEventListener("pointermove", (event) => {
 });
 ```
 
-You can also use the `onpointermove` event handler property:
+همچنین می‌توانید از ویژگی کنترل‌کننده رویداد `onpointermove` استفاده کنید:
 
 ```js
 const para = document.querySelector("p");
@@ -70,7 +69,7 @@ para.onpointermove = (event) => {
 
 ## See also
 
-- Related events
+- رویدادهای مرتبط
   - {{domxref('Element/gotpointercapture_event', 'gotpointercapture')}}
   - {{domxref('Element/lostpointercapture_event', 'lostpointercapture')}}
   - {{domxref('Element/pointerover_event', 'pointerover')}}
