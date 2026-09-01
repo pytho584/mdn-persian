@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: currentTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentTime"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: currentTime property"
 short-title: currentTime
 slug: Web/API/HTMLMediaElement/currentTime
 page-type: web-api-instance-property
@@ -14,76 +8,65 @@ browser-compat: api.HTMLMediaElement.currentTime
 
 {{APIRef("HTML DOM")}}
 
-The {{domxref("HTMLMediaElement")}} interface's
-**`currentTime`** property specifies the current playback time
-in seconds.
+خاصیت **`currentTime`** در رابط {{domxref("HTMLMediaElement")}} زمان پخش جاری را بر حسب ثانیه مشخص می‌کند.
 
-Changing the value of `currentTime` seeks the media to
-the new time.
+تغییر مقدار `currentTime` باعث می‌شود رسانه به زمان جدید منتقل شود (Seek).
 
-## Value
+## مقدار
 
-A double-precision floating-point value indicating the current playback time in
-seconds.
+یک عدد اعشاری با دقت دو برابر که زمان پخش جاری را بر حسب ثانیه نشان می‌دهد.
 
-If the media is not yet playing, the value of `currentTime` indicates the
-time position within the media at which playback will begin once the
-{{domxref("HTMLMediaElement.play", "play()")}} method is called.
+اگر رسانه هنوز در حال پخش نیست، مقدار `currentTime` موقعیت زمانی درون رسانه را مشخص می‌کند که پس از فراخوانی متد {{domxref("HTMLMediaElement.play", "play()")}} پخش از آن آغاز خواهد شد.
 
-Setting `currentTime` to a new value seeks the media to the given time, if
-the media is available.
+تنظیم `currentTime` به یک مقدار جدید، در صورت در دسترس بودن رسانه، آن را به زمان داده‌شده منتقل می‌کند.
 
-For media without a known duration—such as media being streamed live—it's possible that
-the browser may not be able to obtain parts of the media that have expired from the
-media buffer. Also, media whose timeline doesn't begin at 0 seconds cannot be seeked to
-a time before its timeline's earliest time.
+برای رسانه‌هایی که طول مدت مشخصی ندارند - مانند رسانه‌هایی که به صورت زنده پخش می‌شوند - ممکن است مرورگر نتواند بخش‌هایی از رسانه را که از بافر رسانه منقضی شده‌اند به دست آورد. همچنین، رسانه‌ای که خط زمانی آن از ۰ ثانیه شروع نمی‌شود را نمی‌توان به زمانی قبل از اولین زمان خط زمانی آن منتقل کرد.
 
-The length of the media in seconds can be determined using the
-{{domxref("HTMLMediaElement.duration", "duration")}} property.
+طول مدت رسانه بر حسب ثانیه را می‌توان با استفاده از خاصیت {{domxref("HTMLMediaElement.duration", "duration")}} تعیین کرد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const video = document.createElement("video");
 console.log(video.currentTime);
 ```
 
-## Usage notes
+## نکات استفاده
 
-### Reduced time precision
+### کاهش دقت زمان
 
-To offer protection against timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting), the precision of `video.currentTime` might get rounded depending on browser settings. In Firefox, the `privacy.reduceTimerPrecision` preference is enabled by default and defaults to 2ms. You can also enable `privacy.resistFingerprinting`, in which case the precision will be 100ms or the value of `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`, whichever is larger.
+برای محافظت در برابر حملات زمان‌بندی و [اثر انگشت](/fa/docs/Glossary/Fingerprinting)، دقت `video.currentTime` ممکن است بسته به تنظیمات مرورگر گرد شود. در فایرفاکس، گزینه `privacy.reduceTimerPrecision` به طور پیش‌فرض فعال است و مقدار پیش‌فرض آن ۲ میلی‌ثانیه است. همچنین می‌توانید `privacy.resistFingerprinting` را فعال کنید، که در این صورت دقت ۱۰۰ میلی‌ثانیه یا مقدار `privacy.resistFingerprinting.reduceTimerPrecision.microseconds` خواهد بود، هر کدام بزرگ‌تر باشد.
 
-For example, with reduced time precision, the result of `video.currentTime` will always be a multiple of 0.002, or a multiple of 0.1 (or `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) with `privacy.resistFingerprinting` enabled.
+به عنوان مثال، با کاهش دقت زمان، نتیجه `video.currentTime` همیشه مضربی از ۰٫۰۰۲ یا مضربی از ۰٫۱ (یا `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) با فعال بودن `privacy.resistFingerprinting` خواهد بود.
 
 ```js
-// reduced time precision (2ms) in Firefox 60
+// کاهش دقت زمان (2ms) در فایرفاکس 60
 video.currentTime;
-// Might be:
+// ممکن است:
 // 23.404
 // 24.192
 // 25.514
 // …
 
-// reduced time precision with `privacy.resistFingerprinting` enabled
+// کاهش دقت زمان با فعال بودن `privacy.resistFingerprinting`
 video.currentTime;
-// Might be:
+// ممکن است:
 // 49.8
 // 50.6
 // 51.7
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.currentTime` property
-- {{domxref("HTMLMediaElement.fastSeek()")}}: Another way to set the time
-- {{domxref("HTMLMediaElement.duration")}}: The duration of the media in seconds
+- {{domxref("HTMLMediaElement")}}: رابطی که برای تعریف خاصیت `HTMLMediaElement.currentTime` استفاده شده است
+- {{domxref("HTMLMediaElement.fastSeek()")}}: روش دیگری برای تنظیم زمان
+- {{domxref("HTMLMediaElement.duration")}}: طول مدت رسانه بر حسب ثانیه
