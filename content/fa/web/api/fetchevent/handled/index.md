@@ -1,11 +1,5 @@
 ---
 title: "FetchEvent: handled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/handled"
-status: "needs-translation"
----
-
----
-title: "FetchEvent: handled property"
 short-title: handled
 slug: Web/API/FetchEvent/handled
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.FetchEvent.handled
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`handled`** property of the {{DOMxRef("FetchEvent")}} interface returns a promise indicating if the event has been handled by the fetch algorithm or not. This property allows executing code after the browser has consumed a response, and is usually used together with the {{DOMxRef("ExtendableEvent.waitUntil", "waitUntil()")}} method.
+خاصیت **`handled`** از رابط {{DOMxRef("FetchEvent")}} یک {{jsxref("Promise")}} برمی‌گرداند که نشان می‌دهد آیا رویداد توسط الگوریتم fetch پردازش شده است یا خیر. این خاصیت امکان اجرای کد پس از مصرف پاسخ توسط مرورگر را فراهم می‌کند و معمولاً به همراه متد {{DOMxRef("ExtendableEvent.waitUntil", "waitUntil()")}} استفاده می‌شود.
 
-## Value
+## مقدار
 
-A {{jsxref("Promise")}} that is pending while the event has not been handled, and fulfilled once it has.
+یک {{jsxref("Promise")}} که تا زمانی که رویداد پردازش نشده است در حالت انتظار (pending) قرار دارد و پس از پردازش تکمیل (fulfilled) می‌شود.
 
-## Examples
+## مثال
 
 ```js
 addEventListener("fetch", (event) => {
@@ -45,14 +39,14 @@ addEventListener("fetch", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("ExtendableEvent.waitUntil()")}}
