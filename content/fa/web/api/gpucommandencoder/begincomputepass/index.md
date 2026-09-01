@@ -1,11 +1,5 @@
 ---
 title: "GPUCommandEncoder: beginComputePass() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/beginComputePass"
-status: "needs-translation"
----
-
----
-title: "GPUCommandEncoder: beginComputePass() method"
 short-title: beginComputePass()
 slug: Web/API/GPUCommandEncoder/beginComputePass
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.GPUCommandEncoder.beginComputePass
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`beginComputePass()`** method of the
-{{domxref("GPUCommandEncoder")}} interface starts encoding a compute pass, returning a {{domxref("GPUComputePassEncoder")}} that can be used to control computation.
+**`beginComputePass()`** متدی از رابط {{domxref("GPUCommandEncoder")}} است که رمزگذاری یک پاس محاسباتی (compute pass) را آغاز می‌کند و یک {{domxref("GPUComputePassEncoder")}} برمی‌گرداند که می‌تواند برای کنترل محاسبات استفاده شود.
 
 ## Syntax
 
@@ -27,34 +20,34 @@ beginComputePass(descriptor)
 ### Parameters
 
 - `descriptor` {{optional_inline}}
-  - : An object containing the following properties:
+  - : یک شیء حاوی ویژگی‌های زیر:
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : رشته‌ای که برچسبی برای شناسایی شیء فراهم می‌کند، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
     - `timestampWrites` {{optional_inline}}
-      - : An array of objects defining where and when timestamp query values will be written for this pass. These objects have the following properties:
+      - : آرایه‌ای از اشیاء که مکان و زمان نوشته‌شدن مقادیر پرس‌وجوی timestamp را برای این پاس مشخص می‌کنند. این اشیاء دارای ویژگی‌های زیر هستند:
         - `querySet`
-          - : A {{domxref("GPUQuerySet")}} of type `"timestamp"` that the timestamp query results will be written to.
+          - : یک {{domxref("GPUQuerySet")}} از نوع `"timestamp"` که نتایج پرس‌وجوی timestamp در آن نوشته خواهد شد.
         - `beginningOfPassWriteIndex`
-          - : A number specifying the query index in `querySet` where the timestamp at the beginning of the render pass will be written. This is optional - if not defined, no timestamp will be written for the beginning of the pass.
+          - : عددی که ایندکس کوئری در `querySet` را مشخص می‌کند که timestamp ابتدای پاس رندر در آن نوشته می‌شود. این ویژگی اختیاری است — اگر تعریف نشود، هیچ timestamپی برای ابتدای پاس نوشته نخواهد شد.
         - `endOfPassWriteIndex`
-          - : A number specifying the query index in `querySet` where the timestamp at the end of the render pass will be written. This is optional - if not defined, no timestamp will be written for the end of the pass.
+          - : عددی که ایندکس کوئری در `querySet` را مشخص می‌کند که timestamp انتهای پاس رندر در آن نوشته می‌شود. این ویژگی اختیاری است — اگر تعریف نشود، هیچ timestamپی برای انتهای پاس نوشته نخواهد شد.
 
         > [!NOTE]
-        > The `timestamp-query` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) needs to be enabled to use timestamp queries. Timestamp query values are written in nanoseconds, but how the value is determined is implementation-defined.
+        > برای استفاده از پرس‌وجوهای timestamp باید [feature](/en-US/docs/Web/API/GPUSupportedFeatures) به نام `timestamp-query` فعال باشد. مقادیر پرس‌وجوی timestamp بر حسب نانوثانیه نوشته می‌شوند، اما نحوه تعیین این مقدار به پیاده‌سازی بستگی دارد.
 
 ### Return value
 
-A {{domxref("GPUComputePassEncoder")}} object instance.
+یک نمونه از شیء {{domxref("GPUComputePassEncoder")}}.
 
 ### Validation
 
-The following criteria must be met when calling **`beginComputePass()`**, otherwise a {{domxref("GPUValidationError")}} is generated and an invalid {{domxref("GPUComputePassEncoder")}} is returned:
+برای فراخوانی **`beginComputePass()`** معیارهای زیر باید برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} ایجاد شده و یک {{domxref("GPUComputePassEncoder")}} نامعتبر بازگردانده می‌شود:
 
-- The `timestamp-query` {{domxref("GPUSupportedFeatures", "feature", "", "nocode")}} is enabled in the {{domxref("GPUDevice")}}.
+- ویژگی {{domxref("GPUSupportedFeatures", "feature", "", "nocode")}} به نام `timestamp-query` در {{domxref("GPUDevice")}} فعال باشد.
 
 ## Examples
 
-In our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/), several commands are recorded via a {{domxref("GPUCommandEncoder")}}. Most of these commands originate from the {{domxref("GPUComputePassEncoder")}} created via `beginComputePass()`.
+در [نمونه محاسبات پایه](https://mdn.github.io/dom-examples/webgpu-compute-demo/) ما، چندین دستور از طریق یک {{domxref("GPUCommandEncoder")}} ثبت می‌شوند. بیشتر این دستورات از {{domxref("GPUComputePassEncoder")}} که از طریق `beginComputePass()` ایجاد شده است، سرچشمه می‌گیرند.
 
 ```js
 // …
@@ -98,4 +91,4 @@ device.queue.submit([commandEncoder.finish()]);
 
 ## See also
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
