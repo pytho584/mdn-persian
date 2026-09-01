@@ -1,11 +1,5 @@
 ---
 title: "HTMLButtonElement: reportValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/reportValidity"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: reportValidity() method"
 short-title: reportValidity()
 slug: Web/API/HTMLButtonElement/reportValidity
 page-type: web-api-instance-method
@@ -14,29 +8,29 @@ browser-compat: api.HTMLButtonElement.reportValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`reportValidity()`** method of the {{domxref("HTMLButtonElement")}} interface performs the same validity checking steps as the {{domxref("HTMLButtonElement.checkValidity", "checkValidity()")}} method. In addition, if the {{domxref("HTMLElement/invalid_event", "invalid")}} event is not canceled, the browser displays the problem to the user.
+متد **`reportValidity()`** در رابط {{domxref("HTMLButtonElement")}} همان مراحل بررسی اعتبار را که در متد {{domxref("HTMLButtonElement.checkValidity", "checkValidity()")}} انجام می‌شود، اجرا می‌کند. علاوه بر این، اگر رویداد {{domxref("HTMLElement/invalid_event", "invalid")}} لغو (cancel) نشود، مرورگر مشکل را به کاربر نمایش می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 reportValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-Returns `true` if the element's value has no validity problems; otherwise, returns `false`.
+اگر مقدار عنصر هیچ مشکل اعتباری نداشته باشد، `true` و در غیر این صورت `false` برمی‌گرداند.
 
-### Examples
+### مثال‌ها
 
-This far fetched example demonstrates how a button can be made invalid.
+این مثال دور از ذهن نشان می‌دهد که چگونه می‌توان یک دکمه را نامعتبر کرد.
 
 #### HTML
 
-We create a form that only contains a few buttons:
+فرمی می‌سازیم که فقط چند دکمه دارد:
 
 ```html
 <form action="#" id="form" method="post">
@@ -54,7 +48,7 @@ We create a form that only contains a few buttons:
 
 #### CSS
 
-We add a bit of CSS, including `:valid` and `:invalid` styles for our button:
+مقداری CSS اضافه می‌کنیم، از جمله استایل‌های `:valid` و `:invalid` برای دکمه:
 
 ```css
 input[type="submit"],
@@ -75,7 +69,7 @@ button:valid {
 
 #### JavaScript
 
-We include a function to toggle the value, content, and validation message of the example button:
+تابعی برای تغییر مقدار، محتوا و پیام اعتبارسنجی دکمه مثال اضافه می‌کنیم:
 
 ```js
 const reportButton = document.querySelector("#report");
@@ -122,25 +116,25 @@ function toggleButton() {
 }
 ```
 
-#### Results
+#### نتیجه
 
 {{EmbedLiveSample("Custom error message", "100%", 220)}}
 
-The button is by default valid. Activate "THIS BUTTON" to change the value, content, and add a custom error message. Activating the "reportValidity()" button checks the validity of the button, reporting the custom error message to the user and throwing an `invalid` event if the button does not pass constraint validation due to the message.
+دکمه به‌طور پیش‌فرض معتبر است. روی «THIS BUTTON» کلیک کنید تا مقدار، محتوا و یک پیام خطای سفارشی اضافه شود. با فعال‌کردن دکمه «reportValidity()» اعتبار دکمه بررسی می‌شود؛ اگر دکمه به دلیل این پیام، تأیید محدودیت‌ها (constraint validation) را رد کند، پیام خطای سفارشی به کاربر نمایش داده می‌شود و رویداد `invalid` صادر می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLButtonElement.checkValidity()")}}
 - {{HTMLElement("button")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
-- CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}}
