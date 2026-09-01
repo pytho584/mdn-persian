@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: scale() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/scale"
-status: "needs-translation"
----
-
----
-title: "DOMMatrixReadOnly: scale() method"
 short-title: scale()
 slug: Web/API/DOMMatrixReadOnly/scale
 page-type: web-api-instance-method
@@ -14,9 +8,7 @@ browser-compat: api.DOMMatrixReadOnly.scale
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`scale()`** method of the
-{{domxref("DOMMatrixReadOnly")}} interface creates a new matrix being the result of the
-original matrix with a scale transform applied.
+متد **`scale()`** در رابط {{domxref("DOMMatrixReadOnly")}} یک ماتریس جدید می‌سازد که نتیجهٔ اعمال یک تبدیل مقیاس (scale) بر ماتریس اصلی است.
 
 ## Syntax
 
@@ -29,39 +21,30 @@ scale(scaleX, scaleY, scaleZ, originX, originY)
 scale(scaleX, scaleY, scaleZ, originX, originY, originZ)
 ```
 
-### Parameters
+### پارامترها
 
 - `scaleX`
-  - : A multiplier for the scale value on the x-axis.
+  - : ضریب مقیاس در امتداد محور x.
 - `scaleY` {{optional_inline}}
-  - : A multiplier for the scale value on the y-axis. If not supplied, this defaults to
-    the value of `scaleX`.
+  - : ضریب مقیاس در امتداد محور y. اگر مقداردهی نشود، به‌طور پیش‌فرض برابر با مقدار `scaleX` خواهد بود.
 - `scaleZ` {{optional_inline}}
-  - : A multiplier for the scale value on the z-axis. If this value is anything other
-    than 1, the resulting matrix will be 3D.
+  - : ضریب مقیاس در امتداد محور z. اگر این مقدار چیزی غیر از 1 باشد، ماتریس حاصل سه‌بعدی (3D) خواهد بود.
 - `originX` {{optional_inline}}
-  - : An x-coordinate for the origin of the transformation. If no origin is supplied,
-    this defaults to 0.
+  - : مختصات x برای مبدأ تبدیل. اگر مبدأ مشخص نشود، به‌طور پیش‌فرض برابر با 0 است.
 - `originY` {{optional_inline}}
-  - : A y-coordinate for the origin of the transformation. If no origin is supplied, this
-    defaults to 0.
+  - : مختصات y برای مبدأ تبدیل. اگر مبدأ مشخص نشود، به‌طور پیش‌فرض برابر با 0 است.
 - `originZ` {{optional_inline}}
-  - : A z-coordinate for the origin of the transformation. If no origin is supplied, this
-    defaults to 0. If this value is anything other than 0, the resulting matrix will be
-    3D.
+  - : مختصات z برای مبدأ تبدیل. اگر مبدأ مشخص نشود، به‌طور پیش‌فرض برابر با 0 است. اگر این مقدار چیزی غیر از 0 باشد، ماتریس حاصل سه‌بعدی (3D) خواهد بود.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix)
-containing a new matrix being the result of the matrix x and y dimensions being scaled
-by the given factor, centered on the origin given. The original matrix is not modified.
+یک [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) برمی‌گرداند که شامل ماتریس جدیدی است و نتیجهٔ اعمال ضریب مقیاس داده‌شده بر ابعاد x و y ماتریس اصلی، حول مبدأ مشخص‌شده است. ماتریس اصلی تغییر نمی‌کند.
 
-If a scale is applied about the z-axis, the resulting matrix will be a 4✕4 3D matrix.
+اگر مقیاس حول محور z اعمال شود، ماتریس حاصل یک ماتریس سه‌بعدی 4✕4 خواهد بود.
 
-## Examples
+## مثال‌ها
 
-This SVG contains three squares, one red, one blue, and one green, each positioned at
-the document origin:
+این SVG شامل سه مربع — یکی قرمز، یکی آبی و یکی سبز — است که همگی در مبدأ سند قرار دارند:
 
 ```html
 <svg width="250" height="250" viewBox="0 0 25 25">
@@ -71,20 +54,13 @@ the document origin:
 </svg>
 ```
 
-This JavaScript first creates an identity matrix, then uses the `scale()`
-method to create a new matrix with a single parameter.
+این جاوااسکریپت ابتدا یک ماتریس همانی (identity matrix) می‌سازد و سپس با استفاده از متد `scale()` یک ماتریس جدید با یک پارامتر ایجاد می‌کند.
 
-We test if the browser supports a six parameter `scale()` method by creating
-a new matrix using three parameters and observing its `is2D` property. If
-this is `false` then the third parameter has been accepted by the browser as
-a `scaleZ` parameter, making this a 3D matrix.
+ما با ساختن یک ماتریس جدید با سه پارامتر و بررسی ویژگی `is2D` آن، بررسی می‌کنیم که آیا مرورگر از متد `scale()` با شش پارامتر پشتیبانی می‌کند یا نه. اگر این مقدار `false` باشد، یعنی مرورگر پارامتر سوم را به‌عنوان `scaleZ` پذیرفته و این ماتریس سه‌بعدی شده است.
 
-We then create a new matrix scaled about a given origin, using either three or six
-parameters depending on the browser support.
+سپس بسته به پشتیبانی مرورگر، با سه یا شش پارامتر، ماتریس جدیدی می‌سازیم که حول یک مبدأ مشخص مقیاس‌دهی شده است.
 
-These new matrices are then applied to the blue and green squares as a
-`transform`, changing their dimensions and position. The red square is left
-in place.
+این ماتریس‌های جدید به‌عنوان `transform` روی مربع آبی و سبز اعمال می‌شوند و ابعاد و موقعیت آن‌ها را تغییر می‌دهند. مربع قرمز در جای خود باقی می‌ماند.
 
 ```js
 const matrix = new DOMMatrixReadOnly();
@@ -92,7 +68,7 @@ const scaledMatrix = matrix.scale(0.5);
 
 let scaledMatrixWithOrigin = matrix.scale(0.5, 25, 25);
 
-// if the browser has interpreted these parameters as scaleX, scaleY, scaleZ, the resulting matrix is 3D
+// اگر مرورگر این پارامترها را به‌عنوان scaleX، scaleY و scaleZ تفسیر کرده باشد، ماتریس حاصل سه‌بعدی است
 const browserExpectsSixParamScale = !scaledMatrixWithOrigin.is2D;
 if (browserExpectsSixParamScale) {
   scaledMatrixWithOrigin = matrix.scale(0.5, 0.5, 1, 25, 25, 0);
