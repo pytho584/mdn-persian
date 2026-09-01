@@ -1,11 +1,5 @@
 ---
 title: "Document: exitPictureInPicture() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/exitPictureInPicture"
-status: "needs-translation"
----
-
----
-title: "Document: exitPictureInPicture() method"
 short-title: exitPictureInPicture()
 slug: Web/API/Document/exitPictureInPicture
 page-type: web-api-instance-method
@@ -14,11 +8,7 @@ browser-compat: api.Document.exitPictureInPicture
 
 {{APIRef("Picture-in-Picture API")}}
 
-The **`exitPictureInPicture()`** method of the {{domxref("Document")}} interface
-requests that a video contained
-in this document, which is currently floating, be taken out of picture-in-picture
-mode, restoring the previous state of the screen. This usually reverses the
-effects of a previous call to {{domxref("HTMLVideoElement.requestPictureInPicture()")}}.
+متد **`exitPictureInPicture()`** از رابط {{domxref("Document")}} درخواست می‌دهد که یک ویدئوی موجود در این سند که در حال حاضر به صورت شناور (Picture-in-Picture) قرار دارد، از حالت تصویر در تصویر خارج شود و حالت قبلی صفحه بازگردانده شود. این معمولاً اثر فراخوانی قبلی {{domxref("HTMLVideoElement.requestPictureInPicture()")}} را معکوس می‌کند.
 
 ## Syntax
 
@@ -26,25 +16,22 @@ effects of a previous call to {{domxref("HTMLVideoElement.requestPictureInPictur
 exitPictureInPicture()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}}, which is resolved once the {{Glossary("user agent")}} has
-finished exiting picture-in-picture mode. If an error occurs while attempting to exit
-fullscreen mode, the `catch()` handler for the promise is called.
+یک {{jsxref("Promise")}} که به محض پایان یافتن خروج {{Glossary("user agent")}} از حالت تصویر در تصویر (Picture-in-Picture) حل می‌شود. اگر در هنگام تلاش برای خروج از حالت تمام صفحه خطایی رخ دهد، کنترل‌کننده `catch()` پرامیس فراخوانی می‌شود.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if `document.pictureInPictureElement` is `null`.
+  - : در صورتی که `document.pictureInPictureElement` برابر با `null` باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example causes the current document to exit picture-in-picture mode whenever the
-mouse button is clicked within it.
+این مثال باعث می‌شود که سند جاری هر زمان که دکمه ماوس درون آن کلیک شود، از حالت تصویر در تصویر (Picture-in-Picture) خارج شود.
 
 ```js
 document.onclick = (event) => {
@@ -59,21 +46,21 @@ document.onclick = (event) => {
 };
 ```
 
-Note that if you want to track which video on your page is currently playing in picture-in-picture mode, you should listen to the `enterpictureinpicture` and `leavepictureinpicture` events on the {{DOMxRef("HTMLVideoElement")}} element(s) in question. Alternatively, you can check whether {{DOMxRef("Document.pictureInPictureElement")}} refers to the current {{DOMxRef("HTMLVideoElement")}} element.
+توجه داشته باشید که اگر می‌خواهید پیگیری کنید کدام ویدئو در صفحه شما در حال حاضر در حالت تصویر در تصویر (Picture-in-Picture) در حال پخش است، باید به رویدادهای `enterpictureinpicture` و `leavepictureinpicture` روی عنصر(های) {{DOMxRef("HTMLVideoElement")}} مورد نظر گوش دهید. به‌طور جایگزین، می‌توانید بررسی کنید که آیا {{DOMxRef("Document.pictureInPictureElement")}} به عنصر {{DOMxRef("HTMLVideoElement")}} جاری اشاره می‌کند یا خیر.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("HTMLVideoElement.requestPictureInPicture()")}}
 - {{DOMxRef("HTMLVideoElement.disablePictureInPicture")}}
 - {{DOMxRef("Document.pictureInPictureEnabled")}}
 - {{DOMxRef("Document.pictureInPictureElement")}}
 - {{CSSxRef(":picture-in-picture")}}
-- [Picture-in-Picture events](/en-US/docs/Web/API/Picture-in-Picture_API#events)
+- [رویدادهای Picture-in-Picture](/en-US/docs/Web/API/Picture-in-Picture_API#events)
