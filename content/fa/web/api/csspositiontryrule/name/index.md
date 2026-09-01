@@ -1,11 +1,5 @@
 ---
 title: "CSSPositionTryRule: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionTryRule/name"
-status: "needs-translation"
----
-
----
-title: "CSSPositionTryRule: name property"
 short-title: name
 slug: Web/API/CSSPositionTryRule/name
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CSSPositionTryRule.name
 
 {{APIRef("CSSOM") }}
 
-The **`name`** read-only property of the {{domxref("CSSPositionTryRule")}} interface represents the name of the position try fallback option specified by the `@position-try` at-rule's {{cssxref("dashed-ident")}}.
+ویژگی فقط‌خواندنی **`name`** در رابط {{domxref("CSSPositionTryRule")}}، نام گزینهٔ جایگزین موقعیت (position try fallback option) را نشان می‌دهد که توسط {{cssxref("dashed-ident")}} قاعدهٔ at-rule «@position-try» تعیین شده است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-The CSS includes a `@position-try` at-rule with a name of `--custom-bottom` and three descriptors.
+کد CSS شامل یک قاعدهٔ at-rule «@position-try» با نام `--custom-bottom` و سه توصیفگر است.
 
 ```css
 @position-try --custom-bottom {
@@ -38,19 +32,19 @@ const tryOption = myRules[0]; // a CSSPositionTryRule
 console.log(tryOption.name); // "--custom-bottom"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("CSSPositionTryDescriptors")}}
 - {{cssxref("@position-try")}}
 - {{cssxref("position-try-fallbacks")}}
-- [CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning) module
+- ماژول [CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning)
 - [Using CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using)
 - [Handling overflow: try options and conditional hiding](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Try_options_hiding)
