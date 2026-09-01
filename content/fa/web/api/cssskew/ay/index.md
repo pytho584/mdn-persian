@@ -1,11 +1,5 @@
 ---
 title: "CSSSkew: ay property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSSkew/ay"
-status: "needs-translation"
----
-
----
-title: "CSSSkew: ay property"
 short-title: ay
 slug: Web/API/CSSSkew/ay
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.CSSSkew.ay
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`ay`** property of the {{domxref("CSSSkew")}} interface gets and sets the angle used to distort the element along the y-axis (or ordinate).
+ویژگی **`ay`** در رابط {{domxref("CSSSkew")}} زاویه‌ای را که برای کج‌کردن عنصر در امتداد محور y (یا مختصات عمودی) استفاده می‌شود، دریافت و تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref("CSSNumericValue")}}.
+یک {{domxref("CSSNumericValue")}}.
 
-## Examples
+## مثال‌ها
 
-To do
+برای انجام
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
