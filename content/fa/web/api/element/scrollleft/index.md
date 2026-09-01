@@ -1,7 +1,5 @@
 ---
 title: "Element: scrollLeft property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeft"
-status: "needs-translation"
 ---
 
 ---
@@ -14,19 +12,19 @@ browser-compat: api.Element.scrollLeft
 
 {{APIRef("DOM")}}
 
-The **`scrollLeft`** property of the {{domxref("Element")}} interface gets or sets the number of pixels by which an element's content is scrolled from its left edge. This value is subpixel precise in modern browsers, meaning that it isn't necessarily a whole number.
+خاصیت **`scrollLeft`** از رابط {{domxref("Element")}} تعداد پیکسل‌هایی را که محتوای یک عنصر از لبه چپ خود اسکرول شده است، دریافت یا تنظیم می‌کند. این مقدار در مرورگرهای مدرن با دقت زیرپیکسلی است، یعنی لزوماً یک عدد صحیح نیست.
 
-## Value
+## مقدار
 
-A double-precision floating-point value indicating the number of pixels by which the element is currently scrolled horizontally from the origin, where a positive value means the element is scrolled to the right (to reveal more content to the right). If the element isn't scrolled at all left or right, then `scrollLeft` is 0. If the document is not the active document, the returned value is 0. If the document is rendered on a subpixel-precise device, then the returned value is also subpixel-precise and may contain a decimal component.
+یک مقدار ممیز شناور با دقت دوگانه که نشان می‌دهد عنصر در حال حاضر چند پیکسل از مبدأ به صورت افقی اسکرول شده است. مقدار مثبت به این معنی است که عنصر به سمت راست اسکرول شده است (تا محتوای بیشتری در سمت راست نمایش داده شود). اگر عنصر اصلاً به چپ یا راست اسکرول نشده باشد، `scrollLeft` برابر ۰ است. اگر سند، سند فعال نباشد، مقدار بازگشتی ۰ خواهد بود. اگر سند روی دستگاهی با دقت زیرپیکسلی رندر شده باشد، مقدار بازگشتی نیز دارای دقت زیرپیکسلی بوده و ممکن است شامل یک جزء اعشاری باشد.
 
-It's possible for `scrollLeft` to be negative if the element can be scrolled to the left from the initial containing block. For example, if the element's {{cssxref("direction")}} is `rtl` (right-to-left) and content grows to the left, then `scrollLeft` is `0` when the scrollbar is at its rightmost position (at the start of the scrolled content), and then increasingly negative as you scroll towards the end of the content.
+امکان منفی شدن `scrollLeft` وجود دارد اگر عنصر بتواند از بلوک محتوی اولیه به سمت چپ اسکرول شود. به عنوان مثال، اگر {{cssxref("direction")}} عنصر `rtl` (راست‌به‌چپ) باشد و محتوا به سمت چپ رشد کند، `scrollLeft` وقتی نوار اسکرول در سمت‌راست‌ترین موقعیت خود (در ابتدای محتوای اسکرول‌شده) قرار دارد، برابر `0` خواهد بود و با اسکرول به سمت انتهای محتوا، به طور فزاینده‌ای منفی می‌شود.
 
-Safari responds to overscrolling by updating `scrollLeft` beyond the maximum scroll position (unless the default "bounce" effect is disabled, such as by setting {{cssxref("overscroll-behavior")}} to `none`), while Chrome and Firefox do not.
+Safari به اسکرول بیش از حد با به‌روزرسانی `scrollLeft` فراتر از حداکثر موقعیت اسکرول پاسخ می‌دهد (مگر اینکه اثر پیش‌فرض «جهش» غیرفعال شده باشد، مثلاً با تنظیم {{cssxref("overscroll-behavior")}} روی `none`)، در حالی که Chrome و Firefox این کار را نمی‌کنند.
 
-The `scrollLeft` property can be set, which causes the element to scroll to the specified horizontal position, in the same way as using {{domxref("Element.scroll()")}} with `behavior: "auto"`.
+خاصیت `scrollLeft` قابل تنظیم است، که باعث می‌شود عنصر به موقعیت افقی مشخص‌شده اسکرول شود، به همان روشی که با استفاده از {{domxref("Element.scroll()")}} با `behavior: "auto"` انجام می‌شود.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -64,21 +62,21 @@ button.onclick = () => {
 };
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Determining the dimensions of elements](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
+- [تعیین ابعاد عناصر](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
 - {{domxref("HTMLElement.offsetLeft")}}
 - {{domxref("Element.clientLeft")}}
 - {{domxref("Element.scrollHeight")}}
