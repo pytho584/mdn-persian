@@ -1,11 +1,5 @@
 ---
 title: "Document: xmlEncoding property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/xmlEncoding"
-status: "needs-translation"
----
-
----
-title: "Document: xmlEncoding property"
 short-title: xmlEncoding
 slug: Web/API/Document/xmlEncoding
 page-type: web-api-instance-property
@@ -16,23 +10,23 @@ browser-compat: api.Document.xmlEncoding
 
 {{APIRef("DOM")}}{{deprecated_header}}
 
-Returns the encoding as determined by the XML declaration. Should be `null` if unspecified or unknown.
+کدگذاری (encoding) مشخص‌شده توسط اعلامیه XML را بازمی‌گرداند. در صورت نامشخص یا ناشناخته بودن، باید `null` باشد.
 
 > [!WARNING]
-> Do not use this attribute; it has been removed from the DOM Level 4 specification and is no longer supported in Firefox 10.0.
+> از این ویژگی استفاده نکنید؛ این ویژگی از مشخصات DOM Level 4 حذف شده و در Firefox 10.0 پشتیبانی نمی‌شود.
 
-Consider the following XML Declaration:
+اعلامیه XML زیر را در نظر بگیرید:
 
 ```xml
 <?xml version="1.0" encoding="UTF-16"?>
 ```
 
-Then, the result should be "UTF-16".
+سپس، نتیجه باید «UTF-16» باشد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
