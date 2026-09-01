@@ -1,10 +1,4 @@
 ---
-title: "HTMLHRElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLHRElement"
-status: "needs-translation"
----
-
----
 title: HTMLHRElement
 slug: Web/API/HTMLHRElement
 page-type: web-api-interface
@@ -13,37 +7,37 @@ browser-compat: api.HTMLHRElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLHRElement`** interface provides special properties (beyond those of the {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating {{HTMLElement("hr")}} elements.
+رابط **`HTMLHRElement`** ویژگی‌های خاصی را (علاوه بر ویژگی‌هایی که از طریق ارث‌بری از رابط {{domxref("HTMLElement")}} در دسترس دارد) برای دستکاری عناصر {{HTMLElement("hr")}} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLHRElement.align")}} {{deprecated_inline}}
-  - : A string, an enumerated attribute indicating alignment of the rule with respect to the surrounding context.
+  - : یک رشته (string)، یک ویژگی شمارشی که تراز بودن خط را نسبت به زمینه اطراف نشان می‌دهد.
 - {{domxref("HTMLHRElement.color")}} {{deprecated_inline}}
-  - : A string representing the name of the color of the rule.
+  - : یک رشته که نام رنگ خط را نشان می‌دهد.
 - {{domxref("HTMLHRElement.noShade")}} {{deprecated_inline}}
-  - : A boolean value that sets the rule to have no shading.
+  - : یک مقدار بولی (boolean) که خط را بدون سایه تنظیم می‌کند.
 - {{domxref("HTMLHRElement.size")}} {{deprecated_inline}}
-  - : A string representing the height of the rule.
+  - : یک رشته که ارتفاع خط را نشان می‌دهد.
 - {{domxref("HTMLHRElement.width")}} {{deprecated_inline}}
-  - : A string representing the width of the rule on the page.
+  - : یک رشته که عرض خط را در صفحه نشان می‌دهد.
 
-## Instance methods
+## متدهای نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}_.
+_متد خاصی ندارد؛ متدها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("hr")}}
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("hr")}}
