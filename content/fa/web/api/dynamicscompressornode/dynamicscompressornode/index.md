@@ -1,7 +1,5 @@
 ---
 title: "DynamicsCompressorNode: DynamicsCompressorNode() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/DynamicsCompressorNode"
-status: "needs-translation"
 ---
 
 ---
@@ -14,9 +12,9 @@ browser-compat: api.DynamicsCompressorNode.DynamicsCompressorNode
 
 {{APIRef("Web Audio API")}}
 
-The **`DynamicsCompressorNode()`** constructor creates a new {{domxref("DynamicsCompressorNode")}} object instance, which can be used to provide a compression effect that lowers the volume of the loudest parts of a signal.
+سازندهٔ **`DynamicsCompressorNode()`** یک نمونهٔ جدید از شیء {{domxref("DynamicsCompressorNode")}} می‌سازد که می‌توان از آن برای اعمال افکت فشرده‌سازی استفاده کرد و صدای بلندترین بخش‌های یک سیگنال را کاهش می‌دهد.
 
-Compression can help prevent clipping and distortion when multiple sounds are combined, and it is also used in music production and game audio for dynamic control, tone shaping, and creative effects.
+فشرده‌سازی می‌تواند به جلوگیری از کلیپینگ (بریدگی سیگنال) و اعوجاج هنگام ترکیب چند صدا کمک کند. همچنین در تولید موسیقی و صدای بازی‌ها برای کنترل دینامیک، شکل‌دهی تُن (رنگ صدا) و افکت‌های خلاقانه استفاده می‌شود.
 
 ## Syntax
 
@@ -27,34 +25,19 @@ new DynamicsCompressorNode(context, options)
 ### Parameters
 
 - `context`
-  - : A reference to an {{domxref("AudioContext")}}.
+  - : ارجاعی به یک {{domxref("AudioContext")}}.
 - `options` {{optional_inline}}
-  - : Options are as follows:
+  - : گزینه‌ها به صورت زیر هستند:
     - `attack`
-      - : The amount of time (in seconds) to reduce the gain by 10dB.
-        Its default value is 0.003.
-        This parameter is k-rate.
-        Its nominal range is \[0, 1].
+      - : مدت زمان (بر حسب ثانیه) برای کاهش بهره (gain) به میزان ۱۰ دسیبل. مقدار پیش‌فرض آن ۰٫۰۰۳ است. این پارامتر از نوع k-rate است. محدودهٔ نامی آن \[0, 1] است.
     - `knee`
-      - : A decibel value representing the range above the threshold where the curve smoothly transitions to the "ratio" portion.
-        Its default value is 30.
-        This parameter is k-rate.
-        Its nominal range is \[0, 40].
+      - : مقدار دسیبلی که محدودهٔ بالای آستانه را نشان می‌دهد و در آن منحنی به نرمی به بخش «نسبت» (ratio) منتقل می‌شود. مقدار پیش‌فرض آن ۳۰ است. این پارامتر از نوع k-rate است. محدودهٔ نامی آن \[0, 40] است.
     - `ratio`
-      - : The amount of dB change in input for a 1 dB change in output.
-        Its default value is 12.
-        This parameter is k-rate.
-        Its nominal range is \[1, 20].
+      - : میزان تغییر دسیبل در ورودی به ازای ۱ دسیبل تغییر در خروجی. مقدار پیش‌فرض آن ۱۲ است. این پارامتر از نوع k-rate است. محدودهٔ نامی آن \[1, 20] است.
     - `release`
-      - : The amount of time (in seconds) to increase the gain by 10dB. Its
-        default value is 0.250.
-        This parameter is k-rate.
-        Its nominal range is \[0, 1].
+      - : مدت زمان (بر حسب ثانیه) برای افزایش بهره به میزان ۱۰ دسیبل. مقدار پیش‌فرض آن ۰٫۲۵۰ است. این پارامتر از نوع k-rate است. محدودهٔ نامی آن \[0, 1] است.
     - `threshold`
-      - : The decibel value above which the compression will start taking effect.
-        Its default value is -24.
-        This parameter is k-rate.
-        Its nominal range is\[-100, 0].
+      - : مقدار دسیبلی که بالاتر از آن فشرده‌سازی شروع به اثرگذاری می‌کند. مقدار پیش‌فرض آن ۲۴- است. این پارامتر از نوع k-rate است. محدودهٔ نامی آن \[-100, 0] است.
 
 ## Specifications
 
