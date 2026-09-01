@@ -1,11 +1,5 @@
 ---
 title: "Element: DOMMouseScroll event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/DOMMouseScroll_event"
-status: "needs-translation"
----
-
----
-title: "Element: DOMMouseScroll event"
 short-title: DOMMouseScroll
 slug: Web/API/Element/DOMMouseScroll_event
 page-type: web-api-event
@@ -17,17 +11,17 @@ browser-compat: api.Element.DOMMouseScroll_event
 
 {{APIRef}}{{Deprecated_Header}}{{Non-standard_header}}
 
-The DOM `DOMMouseScroll` event is fired asynchronously when mouse wheel or similar device is operated and the accumulated scroll amount is over 1 line or 1 page since last event. It's represented by the {{ domxref("MouseScrollEvent") }} interface. This event was only implemented by Firefox. You should instead use the standard {{domxref("Element.wheel_event", "wheel")}} event.
+رویداد `DOMMouseScroll` در DOM به‌صورت ناهمگام (asynchronous) زمانی پرتاب می‌شود که چرخ ماوس یا وسیله‌ای مشابه عمل کند و میزان انباشته‌شدهٔ پیمایش از آخرین رویداد، بیش از ۱ خط یا ۱ صفحه باشد. این رویداد توسط رابط {{ domxref("MouseScrollEvent") }} نمایش داده می‌شود. این رویداد فقط توسط فایرفاکس پیاده‌سازی شده بود. به‌جای آن باید از رویداد استاندارد {{domxref("Element.wheel_event", "wheel")}} استفاده کنید.
 
-If you want to prevent the default action of mouse wheel events, it's not enough to handle only this event on Gecko because If scroll amount by a native mouse wheel event is less than 1 line (or less than 1 page when the system setting is by page scroll), other mouse wheel events may be fired without this event.
+اگر می‌خواهید از اقدام پیش‌فرض رویدادهای چرخ ماوس جلوگیری کنید، در Gecko کافی نیست که فقط این رویداد را مدیریت کنید؛ زیرا اگر مقدار پیمایش توسط یک رویداد بومی چرخ ماوس کمتر از ۱ خط (یا کمتر از ۱ صفحه، زمانی که تنظیمات سیستم بر اساس پیمایش صفحه‌ای باشد) باشد، ممکن است رویدادهای چرخ ماوس دیگری بدون پرتاب این رویداد رخ دهند.
 
-On Gecko 17 (Firefox 17) or later, you need to call `preventDefault()` of `wheel` events which must be fired for every native event.
+در Gecko 17 (فایرفاکس 17) یا بالاتر، باید `preventDefault()` رویدادهای `wheel` را فراخوانی کنید، زیرا این رویدادها باید برای هر رویداد بومی پرتاب شوند.
 
-Use the standardized {{domxref("Element/wheel_event","wheel")}} event if available.
+در صورت در دسترس بودن، از رویداد استاندارد {{domxref("Element/wheel_event","wheel")}} استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کنندهٔ رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("DOMMouseScroll", (event) => { })
@@ -35,19 +29,19 @@ addEventListener("DOMMouseScroll", (event) => { })
 onDOMMouseScroll = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("WheelEvent")}}. Inherits from {{domxref("MouseEvent")}}, {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("WheelEvent")}}. از {{domxref("MouseEvent")}}، {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("WheelEvent")}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("MouseScrollEvent") }}
-- Gecko's legacy pixel scroll event: `MozMousePixelScroll`
-- Non-Gecko browsers' legacy mouse wheel event: `mousewheel`
-- Standardized wheel event: `wheel`
+- رویداد پیمایش پیکسلی قدیمی Gecko: `MozMousePixelScroll`
+- رویداد چرخ ماوس قدیمی مرورگرهای غیر-Gecko: `mousewheel`
+- رویداد استاندارد چرخ: `wheel`
