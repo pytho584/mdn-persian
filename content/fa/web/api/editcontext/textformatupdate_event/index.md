@@ -1,11 +1,5 @@
 ---
 title: "EditContext: textformatupdate event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/textformatupdate_event"
-status: "needs-translation"
----
-
----
-title: "EditContext: textformatupdate event"
 short-title: textformatupdate
 slug: Web/API/EditContext/textformatupdate_event
 page-type: web-api-event
@@ -16,19 +10,19 @@ browser-compat: api.EditContext.textformatupdate_event
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The `textformatupdate` event of the {{domxref("EditContext")}} interface fires when composition using an {{glossary("Input Method Editor")}} (IME) window is happening.
+رویداد `textformatupdate` از رابط {{domxref("EditContext")}} زمانی فعال می‌شود که ترکیب (composition) با استفاده از یک پنجرهٔ {{glossary("Input Method Editor")}} (IME) در حال انجام باشد.
 
-The event is fired when the IME decides that certain parts of the text being composed should be formatted differently to indicate the composition state.
+این رویداد زمانی فعال می‌شود که IME تشخیص دهد برخی قسمت‌های متن در حال ترکیب باید به‌طور متفاوتی قالب‌بندی شوند تا وضعیت ترکیب را نشان دهند.
 
-The following screenshot shows an example of text being written in the Notepad app on Windows, by using the Japanese IME. The text is formatted with a thick underline to indicate that it's been composed from one of the IME's suggestions.
+تصویر زیر نمونه‌ای از متنی را نشان می‌دهد که با استفاده از IME ژاپنی در برنامه Notepad در ویندوز نوشته شده است. متن با یک خط زیر ضخیم فرمت شده است تا نشان دهد که از یکی از پیشنهادهای IME ترکیب شده است.
 
-![Notepad on Windows with some Japanese text being composed from the IME window](./ime-notepad.png)
+![Notepad در ویندوز با متنی ژاپنی که از پنجره IME ترکیب شده است](./ime-notepad.png)
 
-As a web developer, you should listen for the `textformatupdate` event and update the formatting of the text displayed in your editable region accordingly.
+به‌عنوان یک توسعه‌دهنده وب، باید به رویداد `textformatupdate` گوش دهید و قالب‌بندی متن نمایش‌داده‌شده در ناحیه قابل ویرایش خود را بر اساس آن به‌روزرسانی کنید.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم نمایید.
 
 ```js-nolint
 addEventListener("textformatupdate", (event) => { })
@@ -38,13 +32,13 @@ ontextformatupdate = (event) => { }
 
 ## Event type
 
-A {{domxref("TextFormatUpdateEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("TextFormatUpdateEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 ## Examples
 
-### Rendering IME composition text formatting
+### رندر کردن قالب‌بندی متن ترکیب IME
 
-In the following example, the `textformatupdate` event is used to update the formatting of the text in the editable region. Note that the event listener callback in this example is only called when using an IME window, or other platform-specific editing UI surfaces, to compose text.
+در مثال زیر، از رویداد `textformatupdate` برای به‌روزرسانی قالب‌بندی متن در ناحیه قابل ویرایش استفاده شده است. توجه داشته باشید که فراخوانی (callback) شنونده رویداد در این مثال فقط زمانی فراخوانی می‌شود که از یک پنجره IME یا سایر سطوح رابط کاربری ویرایش مختص پلتفرم برای ترکیب متن استفاده می‌کنید.
 
 ```html
 <canvas id="editor-canvas"></canvas>
