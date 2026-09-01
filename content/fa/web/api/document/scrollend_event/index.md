@@ -1,11 +1,5 @@
 ---
 title: "Document: scrollend event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/scrollend_event"
-status: "needs-translation"
----
-
----
-title: "Document: scrollend event"
 short-title: scrollend
 slug: Web/API/Document/scrollend_event
 page-type: web-api-event
@@ -14,18 +8,15 @@ browser-compat: api.Document.scrollend_event
 
 {{APIRef("CSSOM view API")}}
 
-The **`scrollend`** event fires when the document view has completed scrolling.
-Scrolling is considered completed when the scroll position has no more pending updates and the user has completed their gesture.
+رویداد **`scrollend`** زمانی رخ می‌دهد که نمای سند (document view) اسکرول را به پایان رسانده باشد. اسکرول زمانی کامل در نظر گرفته می‌شود که موقعیت اسکرول دیگر هیچ به‌روزرسانی معلقی نداشته باشد و کاربر ژست (gesture) خود را به پایان رسانده باشد.
 
-Scroll position updates include smooth or instant mouse wheel scrolling, keyboard scrolling, scroll-snap events, or other APIs and gestures which cause the scroll position to update.
-User gestures like touch panning or trackpad scrolling aren't complete until pointers or keys have released.
-If the scroll position did not change, then no scrollend event fires.
+به‌روزرسانی‌های موقعیت اسکرول شامل اسکرول نرم یا آنی با چرخ ماوس، اسکرول با صفحه‌کلید، رویدادهای scroll-snap یا هر API و ژست دیگری که باعث تغییر موقعیت اسکرول می‌شود، هستند. ژست‌های کاربر مانند کشیدن انگشت (touch panning) یا اسکرول با ترک‌پد تا زمانی که انگشت یا کلید رها نشود کامل نمی‌شوند. اگر موقعیت اسکرول تغییری نکرده باشد، رویداد `scrollend` رخ نمی‌دهد.
 
-For detecting when scrolling inside an element is complete, see the {{domxref("Element/scrollend_event", "scrollend")}} event of `Element`.
+برای تشخیص پایان اسکرول در داخل یک عنصر، به رویداد {{domxref("Element/scrollend_event", "scrollend")}} مربوط به `Element` مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا به‌عنوان یک ویژگی مدیریت‌کننده رویداد استفاده کنید.
 
 ```js-nolint
 addEventListener("scrollend", (event) => { })
@@ -33,17 +24,15 @@ addEventListener("scrollend", (event) => { })
 onscrollend = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Using Document `scrollend` with an event listener
+### استفاده از `scrollend` سند با شنونده رویداد
 
-The following example shows how to use the `scrollend` event with an event listener to detect when the user has stopped scrolling the document.
-In the example, there is content in the embedded iframe that is taller and wider than the iframe itself, so scrolling within the iframe in both directions is possible.
-When the user stops scrolling, the `scrollend` event fires:
+مثال زیر نشان می‌دهد که چگونه می‌توان از رویداد `scrollend` با یک شنونده رویداد برای تشخیص زمانی که کاربر اسکرول سند را متوقف کرده است استفاده کرد. در این مثال، محتوایی در iframe تعبیه‌شده وجود دارد که بلندتر و عریض‌تر از خود iframe است، بنابراین اسکرول در هر دو جهت درون iframe امکان‌پذیر است. وقتی کاربر اسکرول را متوقف می‌کند، رویداد `scrollend` رخ می‌دهد:
 
 ```css hidden
 * {
@@ -95,11 +84,9 @@ document.addEventListener("scrollend", (event) => {
 
 {{EmbedLiveSample("Using_document_scrollend_with_an_event_listener", "100%", 200)}}
 
-### Using `onscrollend` event handler property
+### استفاده از ویژگی مدیریت‌کننده رویداد `onscrollend`
 
-The following example shows how to use the `scrollend` event handler property to detect when the user has stopped scrolling the document.
-In the example, there is content in the embedded iframe that is taller and wider than the iframe itself, so scrolling within the iframe in both directions is possible.
-This builds on the first example, but uses `document.onscrollend` instead of an event listener:
+مثال زیر نحوه استفاده از ویژگی مدیریت‌کننده رویداد `scrollend` را برای تشخیص زمانی که کاربر اسکرول سند را متوقف کرده است نشان می‌دهد. در این مثال، محتوایی در iframe تعبیه‌شده وجود دارد که بلندتر و عریض‌تر از خود iframe است، بنابراین اسکرول در هر دو جهت درون iframe امکان‌پذیر است. این مثال بر پایه مثال اول ساخته شده است، اما به جای شنونده رویداد از `document.onscrollend` استفاده می‌کند:
 
 ```css hidden
 * {
@@ -149,16 +136,16 @@ document.onscrollend = (event) => {
 
 {{EmbedLiveSample("Using_scrollend_with_an_event_handler_property", "100%", 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Document `scroll` event](/en-US/docs/Web/API/Document/scroll_event)
-- [Element `scrollend` event](/en-US/docs/Web/API/Element/scrollend_event)
-- [Element `scroll` event](/en-US/docs/Web/API/Element/scroll_event)
+- [رویداد `scroll` سند](/en-US/docs/Web/API/Document/scroll_event)
+- [رویداد `scrollend` عنصر](/en-US/docs/Web/API/Element/scrollend_event)
+- [رویداد `scroll` عنصر](/en-US/docs/Web/API/Element/scroll_event)
