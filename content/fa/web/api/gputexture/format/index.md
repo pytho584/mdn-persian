@@ -1,11 +1,5 @@
 ---
 title: "GPUTexture: format property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/format"
-status: "needs-translation"
----
-
----
-title: "GPUTexture: format property"
 short-title: format
 slug: Web/API/GPUTexture/format
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.GPUTexture.format
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`format`** read-only property of the
-{{domxref("GPUTexture")}} interface represents the format of the `GPUTexture`.
+خاصیت فقط‑خواندنی **`format`** از رابط {{domxref("GPUTexture")}}، فرمت `GPUTexture` را نمایش می‌دهد.
 
-This is set via the `format` property in the descriptor object passed into the originating {{domxref("GPUDevice.createTexture()")}} call.
+این مقدار از طریق خاصیت `format` در شیء توصیف‌کننده‌ای که به فراخوانی اصلی {{domxref("GPUDevice.createTexture()")}} داده می‌شود، تنظیم می‌گردد.
 
-## Value
+## مقدار
 
-An enumerated value. See the specification's [Texture formats](https://gpuweb.github.io/gpuweb/#enumdef-gputextureformat) section for all the possible values. Also see [Tier 1 and Tier 2 texture formats](/en-US/docs/Web/API/GPUDevice/createTexture#tier_1_and_tier_2_texture_formats).
+یک مقدار شمارشی (enumerated value). برای مشاهده تمام مقادیر ممکن، به بخش [Texture formats](https://gpuweb.github.io/gpuweb/#enumdef-gputextureformat) در مشخصات فنی مراجعه کنید. همچنین به [فرمت‌های بافت ردیف ۱ و ردیف ۲](/en-US/docs/Web/API/GPUDevice/createTexture#tier_1_and_tier_2_texture_formats) مراجعه نمایید.
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -37,14 +30,14 @@ const depthTexture = device.createTexture({
 console.log(depthTexture.format); // "depth24plus"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
