@@ -1,11 +1,5 @@
 ---
 title: "FileSystemObserver: disconnect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemObserver/disconnect"
-status: "needs-translation"
----
-
----
-title: "FileSystemObserver: disconnect() method"
 short-title: disconnect()
 slug: Web/API/FileSystemObserver/disconnect
 page-type: web-api-instance-method
@@ -17,42 +11,41 @@ browser-compat: api.FileSystemObserver.disconnect
 
 {{securecontext_header}}{{APIRef("File System API")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`disconnect()`** method of the
-{{domxref("FileSystemObserver")}} interface stops the observer observing the file system.
+متد **`disconnect()`** از رابط {{domxref("FileSystemObserver")}} مشاهده‌گر را از مشاهدهٔ سیستم فایل متوقف می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 disconnect()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref('undefined')}}).
+هیچ ({{jsxref('undefined')}}).
 
-## Examples
+## مثال‌ها
 
-### Stop observing the file system
+### توقف مشاهدهٔ سیستم فایل
 
-Assuming a `FileSystemObserver` instance is available, you can call the `disconnect()` method on it when you want to stop observing changes to the file system entry:
+با فرض اینکه یک نمونه از `FileSystemObserver` در دسترس باشد، می‌توانید وقتی می‌خواهید مشاهدهٔ تغییرات ورودی سیستم فایل را متوقف کنید، متد `disconnect()` را روی آن صدا بزنید:
 
 ```js
 observer.disconnect();
 ```
 
-## Specifications
+## مشخصات
 
-Not currently part of a specification. See [https://github.com/whatwg/fs/pull/165](https://github.com/whatwg/fs/pull/165) for the relevant specification PR.
+در حال حاضر بخشی از هیچ مشخصاتی نیست. برای PR مربوط به مشخصات، به [https://github.com/whatwg/fs/pull/165](https://github.com/whatwg/fs/pull/165) مراجعه کنید.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
-- [The File System Observer API origin trial](https://developer.chrome.com/blog/file-system-observer#stop-observing-the-file-system) on developer.chrome.com (2024)
+- [آزمایش origin برای File System Observer API](https://developer.chrome.com/blog/file-system-observer#stop-observing-the-file-system) در developer.chrome.com (2024)
