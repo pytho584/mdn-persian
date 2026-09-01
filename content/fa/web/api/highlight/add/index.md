@@ -1,11 +1,5 @@
 ---
 title: "Highlight: add() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Highlight/add"
-status: "needs-translation"
----
-
----
-title: "Highlight: add() method"
 short-title: add()
 slug: Web/API/Highlight/add
 page-type: web-api-instance-method
@@ -15,9 +9,9 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`add()`** method of the {{domxref("Highlight")}} interface adds a new {{domxref("AbstractRange")}} object to a highlight, to be styled using the {{domxref("css_custom_highlight_api", "CSS Custom Highlight API", "", "nocode")}}.
+متد **`add()`** در رابط {{domxref("Highlight")}} یک شیء {{domxref("AbstractRange")}} تازه به یک هایلایت اضافه می‌کند تا با استفاده از {{domxref("css_custom_highlight_api", "CSS Custom Highlight API", "", "nocode")}} استایل‌دهی شود.
 
-`Highlight` is a {{jsxref("Set")}}-like object, so this is similar to using {{jsxref("Set.add()")}}.
+`Highlight` یک شیء شبیه به {{jsxref("Set")}} است، بنابراین این کار مشابه استفاده از {{jsxref("Set.add()")}} است.
 
 ## Syntax
 
@@ -28,15 +22,15 @@ add(range)
 ### Parameters
 
 - `range`
-  - : An {{domxref("AbstractRange")}} object to add to the `Highlight`.
+  - : یک شیء {{domxref("AbstractRange")}} که باید به `Highlight` اضافه شود.
 
 ### Return value
 
-The `Highlight` object, with the added range.
+شیء `Highlight` به همراه محدوده‌ی اضافه‌شده.
 
 ## Examples
 
-The code snippet below shows how to add two ranges to a new highlight object:
+قطعه‌کد زیر نشان می‌دهد که چگونه دو range به یک شیء highlight جدید اضافه کنیم:
 
 ```js
 const highlight = new Highlight();
