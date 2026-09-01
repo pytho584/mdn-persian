@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement: elements property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/elements"
-status: "needs-translation"
----
-
----
-title: "HTMLFormElement: elements property"
 short-title: elements
 slug: Web/API/HTMLFormElement/elements
 page-type: web-api-instance-property
@@ -14,38 +8,38 @@ browser-compat: api.HTMLFormElement.elements
 
 {{APIRef("HTML DOM")}}
 
-The **`elements`** property of the {{domxref("HTMLFormElement")}} interface returns an {{domxref("HTMLFormControlsCollection")}} listing all the listed form controls associated with the {{HTMLElement("form")}} element.
+ویژگی **`elements`** در رابط {{domxref("HTMLFormElement")}} یک {{domxref("HTMLFormControlsCollection")}} برمی‌گرداند که همهٔ کنترل‌های فرم فهرست‌شدهٔ مرتبط با عنصر {{HTMLElement("form")}} را فهرست می‌کند.
 
-You can access a particular form control in the returned collection by using either an index or the element's `name` or `id` attributes.
+می‌توانید با استفاده از یک اندیس یا ویژگی‌های `name` یا `id` عنصر، به یک کنترل فرم خاص در مجموعهٔ بازگشتی دسترسی پیدا کنید.
 
-Prior to HTML 5, the returned object was an {{domxref("HTMLCollection")}}, on which `HTMLFormControlsCollection` is based.
+پیش از HTML 5، شیء بازگشتی یک {{domxref("HTMLCollection")}} بود که `HTMLFormControlsCollection` بر پایهٔ آن ساخته شده است.
 
-Independently, you can obtain just the number of associated form controls using the {{domxref("HTMLFormElement.length", "length")}} property. You can get a list of all of the forms contained within a given document using the document's {{domxref("Document.forms", "forms")}} property.
+به‌طور مستقل، می‌توانید فقط تعداد کنترل‌های فرم مرتبط را با استفاده از ویژگی {{domxref("HTMLFormElement.length", "length")}} به دست آورید. همچنین می‌توانید فهرستی از همهٔ فرم‌های موجود در یک سند را با استفاده از ویژگی {{domxref("Document.forms", "forms")}} سند دریافت کنید.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLFormControlsCollection")}} containing all non-image controls associated with the form.
-This is a live collection; if form controls are associated with or disassociated from the form, this collection will update to reflect the change.
+یک {{domxref("HTMLFormControlsCollection")}} شامل همهٔ کنترل‌های غیرتصویری مرتبط با فرم.
+این یک مجموعهٔ زنده است؛ اگر کنترل‌های فرم به فرم متصل یا از آن جدا شوند، این مجموعه برای انعکاس تغییر به‌روزرسانی می‌شود.
 
-The form controls in the returned collection are in the same order in which they appear in the document by following a preorder, depth-first traversal of the tree.
-This is called **tree order**.
+کنترل‌های فرم در مجموعهٔ بازگشتی به همان ترتیبی هستند که در سند ظاهر می‌شوند، با دنبال کردن پیمایش پیشوندی (preorder) و عمق‌اول از درخت.
+به این ترتیب **ترتیب درختی** (tree order) گفته می‌شود.
 
-Only the following form controls are returned:
+فقط کنترل‌های فرم زیر بازگردانده می‌شوند:
 
 - {{HTMLElement("button")}}
 - {{HTMLElement("fieldset")}}
-- {{HTMLElement("input")}} (with the exception that any whose [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) is `"image"` are omitted for historical reasons)
+- {{HTMLElement("input")}} (به استثنای آنهایی که ویژگی [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) آن‌ها `"image"` است، که به دلایل تاریخی حذف می‌شوند)
 - {{HTMLElement("object")}}
 - {{HTMLElement("output")}}
 - {{HTMLElement("select")}}
 - {{HTMLElement("textarea")}}
-- [form-associated custom elements](https://html.spec.whatwg.org/multipage/custom-elements.html#form-associated-custom-element)
+- [عناصر سفارشی مرتبط با فرم](https://html.spec.whatwg.org/multipage/custom-elements.html#form-associated-custom-element)
 
-## Examples
+## مثال‌ها
 
-### Quick syntax example
+### مثال نحوهٔ نوشتار سریع
 
-In this example, we see how to obtain the list of form controls as well as how to access its members by index and by name or ID.
+در این مثال، می‌بینیم که چگونه فهرست کنترل‌های فرم را به دست آوریم و همچنین چگونه به اعضای آن با اندیس و با نام یا شناسه دسترسی داشته باشیم.
 
 ```html
 <form id="my-form">
@@ -70,11 +64,11 @@ const inputByIndex = inputs[0];
 const inputByName = inputs["username"];
 ```
 
-### Associated form controls
+### کنترل‌های فرم مرتبط
 
-This example demonstrates how the {{domxref("HTMLFormControlsCollection")}} contains the form controls associated with the form, rather than the controls physically nested in the `<form>`.
+این مثال نشان می‌دهد که چگونه {{domxref("HTMLFormControlsCollection")}} شامل کنترل‌های فرم مرتبط با فرم است، نه کنترل‌هایی که به‌طور فیزیکی درون `<form>` قرار گرفته‌اند.
 
-The first form is full, with four form controls: one {{htmlelement("fieldset")}} and three {{htmlelement("input")}} elements. The {{htmlelement("legend")}} and {{htmlelement("label")}} elements are not listed form controls. The second form is sparse, with only one nested form control: a single {{htmlelement("object")}} element. All the form controls in the full form are associated with the sparse form via their `form` attribute.
+فرم اول کامل است و چهار کنترل فرم دارد: یک عنصر {{htmlelement("fieldset")}} و سه عنصر {{htmlelement("input")}}. عناصر {{htmlelement("legend")}} و {{htmlelement("label")}} کنترل‌های فرم فهرست‌شده نیستند. فرم دوم پراکنده است و فقط یک کنترل فرم تو در تو دارد: یک عنصر {{htmlelement("object")}}. همهٔ کنترل‌های فرم در فرم کامل، از طریق ویژگی `form` خود با فرم پراکنده مرتبط شده‌اند.
 
 ```html
 <form id="fullForm">
@@ -92,30 +86,30 @@ The first form is full, with four form controls: one {{htmlelement("fieldset")}}
 </form>
 ```
 
-We use the `elements` property to get the `HTMLFormControlsCollection` for each form.
+ما از ویژگی `elements` برای دریافت `HTMLFormControlsCollection` مربوط به هر فرم استفاده می‌کنیم.
 
 ```js
 const sparse = document.getElementById("sparseForm").elements;
 const full = document.getElementById("fullForm").elements;
 ```
 
-The collection includes the form element's associated form controls, meaning all the {{HTMLElement("button")}}, {{HTMLElement("fieldset")}}, {{HTMLElement("input")}}, {{HTMLElement("object")}}, {{HTMLElement("output")}}, {{HTMLElement("select")}}, {{HTMLElement("textarea")}}, and form-associated custom elements associated with the form, even if those elements are nested in another form, or not nested in any form.
+مجموعه شامل کنترل‌های فرم مرتبط با عنصر فرم است، به این معنی که همهٔ عناصر {{HTMLElement("button")}}، {{HTMLElement("fieldset")}}، {{HTMLElement("input")}}، {{HTMLElement("object")}}، {{HTMLElement("output")}}، {{HTMLElement("select")}}، {{HTMLElement("textarea")}} و عناصر سفارشی مرتبط با فرم که با فرم مرتبط هستند را شامل می‌شود، حتی اگر آن عناصر در فرم دیگری تودرتو شده باشند یا در هیچ فرمی تودرتو نباشند.
 
 ```js
 console.log(`sparse form: ${sparse.length}`); // sparse form: 5
 console.log(`full form: ${full.length}`); // full form: 0
 ```
 
-The collection's form controls are in the same order in which they appear in the document.
+کنترل‌های فرم مجموعه به همان ترتیبی هستند که در سند ظاهر می‌شوند.
 
 ```js
 console.log(`first member: ${sparse[0].tagName}`); // first member: FIELDSET
 console.log(`last member: ${sparse[sparse.length - 1].tagName}`); // last member: OBJECT
 ```
 
-### Accessing form controls
+### دسترسی به کنترل‌های فرم
 
-This example gets the form's element list, then iterates over the list, looking for {{HTMLElement("input")}} elements of type [`"text"`](/en-US/docs/Web/HTML/Reference/Elements/input/text) so that some form of processing can be performed on them.
+این مثال فهرست عناصر فرم را دریافت می‌کند، سپس روی فهرست پیمایش می‌کند و به دنبال عناصر {{HTMLElement("input")}} با [`type`](/en-US/docs/Web/HTML/Reference/Elements/input/text) برابر با `"text"` می‌گردد تا بتوان نوعی پردازش روی آن‌ها انجام داد.
 
 ```js
 const inputs = document.getElementById("my-form").elements;
@@ -129,7 +123,7 @@ for (const input of inputs) {
 }
 ```
 
-### Disabling form controls
+### غیرفعال کردن کنترل‌های فرم
 
 ```js
 const inputs = document.getElementById("my-form").elements;
@@ -141,10 +135,10 @@ for (const input of inputs) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
