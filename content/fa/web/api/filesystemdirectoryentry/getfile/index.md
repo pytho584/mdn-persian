@@ -1,7 +1,5 @@
 ---
 title: "FileSystemDirectoryEntry: getFile() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry/getFile"
-status: "needs-translation"
 ---
 
 ---
@@ -14,10 +12,7 @@ browser-compat: api.FileSystemDirectoryEntry.getFile
 
 {{APIRef("File and Directory Entries API")}}
 
-The {{domxref("FileSystemDirectoryEntry")}} interface's method
-**`getFile()`** returns a
-{{domxref("FileSystemFileEntry")}} object corresponding to a file contained somewhere
-within the directory subtree rooted at the directory on which it's called.
+متد **`getFile()`** از رابط {{domxref("FileSystemDirectoryEntry")}} یک شیء {{domxref("FileSystemFileEntry")}} برمی‌گرداند که با فایلی در زیردرخت دایرکتوریِ مورد نظر (دایرکتوری‌ای که متد روی آن فراخوانی شده است) متناظر است.
 
 ## Syntax
 
@@ -32,66 +27,50 @@ getFile(path, options, successCallback, errorCallback)
 ### Parameters
 
 - `path` {{optional_inline}}
-  - : A string specifying the path, relative to the directory on which
-    the method is called, describing which file's entry to return.
+  - : رشته‌ای است که مسیر فایل مورد نظر را نسبت به دایرکتوری‌ای که متد روی آن فراخوانی می‌شود مشخص می‌کند. این مسیر تعیین می‌کند که ورودیِ کدام فایل بازگردانده شود.
 - `options` {{optional_inline}}
-  - : An object which allows you
-    to specify whether or not to create the entry if it's missing and if it's an error if
-    the file already exists. These options are currently not useful in Web contexts.
-    See the [options parameter](#options_parameter) section for more details.
+  - : شیئی که به شما امکان می‌دهد مشخص کنید در صورتی که ورودی وجود نداشته باشد آن را بسازید یا نه، و همچنین آیا وجودِ از پیشِ فایل یک خطا محسوب می‌شود یا نه. این گزینه‌ها در حال حاضر در بستر وب کاربردی ندارند. برای جزئیات بیشتر بخش [پارامتر options](#options_parameter) را ببینید.
 - `successCallback` {{optional_inline}}
-  - : A method to be called once the {{domxref("FileSystemFileEntry")}} has been created.
-    The method receives a single parameter: the `FileSystemFileEntry` object
-    representing the file in question.
+  - : متدی که پس از ایجاد شدن {{domxref("FileSystemFileEntry")}} فراخوانی می‌شود. این متد یک پارامتر واحد دریافت می‌کند: شیء `FileSystemFileEntry` که نمایانگر فایل مورد نظر است.
 - `errorCallback` {{optional_inline}}
-  - : A method to be called if an error occurs. Receives as its sole input parameter a
-    {{domxref("DOMException")}} object describing the error which occurred.
+  - : متدی که در صورت بروز خطا فراخوانی می‌شود. تنها پارامتر ورودی آن یک شیء {{domxref("DOMException")}} است که خطای روی‌داده را توصیف می‌کند.
 
-#### `options` parameter
+#### پارامتر `options`
 
-The `options` parameter object accepts the following parameters:
+شیء پارامتر `options` پارامترهای زیر را می‌پذیرد:
 
 - `create` {{optional_inline}}
-  - : If this property is `true`, and the requested file doesn't exist, the user agent should create it.
-    The default is `false`.
-    The parent directory must already exist.
+  - : اگر این ویژگی `true` باشد و فایل درخواستی وجود نداشته باشد، عامل کاربر (user agent) باید آن را ایجاد کند. مقدار پیش‌فرض `false` است. دایرکتوری والد باید از قبل وجود داشته باشد.
 - `exclusive` {{optional_inline}}
-  - : If `true`, and the `create` option is also `true`, the file must not exist prior to issuing the call.
-    Instead, it must be possible for it to be created newly at call time.
-    The default is `false`. This parameter is ignored if `create` is `false`.
+  - : اگر `true` باشد و گزینه `create` نیز `true` باشد، فایل نباید پیش از صدور فراخوانی وجود داشته باشد؛ بلکه باید بتوان آن را به‌تازگی هنگام فراخوانی ایجاد کرد. مقدار پیش‌فرض `false` است. اگر `create` برابر `false` باشد، این پارامتر نادیده گرفته می‌شود.
 
-The table below describes the result of each possible combination of these flags depending on whether or not the target file path already exists.
+جدول زیر نتیجه هر ترکیب ممکن از این پرچم‌ها را بسته به اینکه مسیر فایل هدف از قبل وجود داشته باشد یا نه، توصیف می‌کند.
 
-| `create` option | `exclusive` option | Path condition                 | Result                                                                                                                                    |
+| گزینه `create` | گزینه `exclusive` | شرط مسیر                 | نتیجه                                                                                                                                    |
 | --------------- | ------------------ | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `false`         | _Ignored_          | Path exists and is a file      | The `successCallback` is called with a {{domxref("FileSystemFileEntry")}}.                                                                |
-| `false`         | _Ignored_          | Path exists but is a directory | The `errorCallback` is called with an appropriate error code (if the callback was provided).                                              |
-| `true`          | `false`            | Path exists                    | The existing file is removed and replaced with a new one, then the `successCallback` is called with a {{domxref("FileSystemFileEntry")}}. |
-| `true`          | `false`            | Path doesn't exist             | The file is created, then a {{domxref("FileSystemFileEntry")}} is passed to the `successCallback`.                                        |
-| `true`          | `true`             | Path exists                    | The `errorCallback` is called with an appropriate error, such as `DOMException.PATH_EXISTS_ERR`.                                          |
-| `true`          | `true`             | Path doesn't exist             | The file is created, then a {{domxref("FileSystemFileEntry")}} is passed to the `successCallback`.                                        |
+| `false`         | _نادیده گرفته می‌شود_          | مسیر موجود است و فایل است      | `successCallback` با یک {{domxref("FileSystemFileEntry")}} فراخوانی می‌شود.                                                                |
+| `false`         | _نادیده گرفته می‌شود_          | مسیر موجود است اما دایرکتوری است | `errorCallback` با کد خطای مناسب فراخوانی می‌شود (اگر تابع بازخورد ارائه شده باشد).                                              |
+| `true`          | `false`            | مسیر موجود است                    | فایل موجود حذف و با فایل جدید جایگزین می‌شود، سپس `successCallback` با یک {{domxref("FileSystemFileEntry")}} فراخوانی می‌شود. |
+| `true`          | `false`            | مسیر وجود ندارد             | فایل ایجاد می‌شود و سپس یک {{domxref("FileSystemFileEntry")}} به `successCallback` ارسال می‌شود.                                        |
+| `true`          | `true`             | مسیر موجود است                    | `errorCallback` با خطای مناسب، مانند `DOMException.PATH_EXISTS_ERR` فراخوانی می‌شود.                                          |
+| `true`          | `true`             | مسیر وجود ندارد             | فایل ایجاد می‌شود و سپس یک {{domxref("FileSystemFileEntry")}} به `successCallback` ارسال می‌شود.                                        |
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ### Exceptions
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the `create` option was not specified (or was specified as
-    `false`), and the file doesn't exist.
+  - : وقتی پرتاب می‌شود که گزینه `create` مشخص نشده باشد (یا `false` باشد) و فایل وجود نداشته باشد.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the request to access the file was denied for security reasons.
+  - : وقتی پرتاب می‌شود که درخواست دسترسی به فایل به دلایل امنیتی رد شده باشد.
 - `TypeMismatchError` {{domxref("DOMException")}}
-  - : Thrown if the path specified is not a file; it's probably a directory, but might be an
-    unsupported file descriptor such as a pipe; this depends on the user agent to some
-    extent.
+  - : وقتی پرتاب می‌شود که مسیر مشخص‌شده یک فایل نباشد؛ احتمالاً دایرکتوری است، اما ممکن است یک توصیفگر فایل (file descriptor) پشتیبانی‌نشده مانند pipe باشد؛ این موضوع تا حدی به عامل کاربر بستگی دارد.
 
 ## Examples
 
-In this example, a function is presented whose job it is to locate within a user's app
-data directory a JSON file containing a user dictionary for a specified language, then
-load that dictionary.
+در این مثال، تابعی ارائه شده است که وظیفه آن یافتن یک فایل JSON حاوی دیکشنری کاربر برای یک زبان مشخص در دایرکتوری داده‌های برنامه (app data) کاربر است و سپس بارگذاری آن دیکشنری.
 
 ```js
 let dictionary = null;
@@ -115,16 +94,7 @@ function loadDictionaryForLanguage(appDataDirEntry, lang) {
 }
 ```
 
-The `loadDictionaryForLanguage()` function starts by using
-`getDirectory()` to obtain the {{domxref("FileSystemDirectoryEntry")}} object
-representing a subfolder named "Dictionaries" located inside the specified app data
-directory. The success callback for this takes the resulting directory entry object and
-calls `getFile()` to get a
-{{domxref("FileSystemFileEntry")}} object representing the dictionary file; the success
-callback for this, in turn, creates a new {{domxref("FileReader")}} and uses it to load
-the contents of the file. When that is loaded successfully (as indicated by the
-{{domxref("FileReader/loadend_event", "loadend")}} event being fired), the loaded text is passed into
-{{jsxref("JSON.parse()")}} to be reconstituted into a JavaScript object.
+تابع `loadDictionaryForLanguage()` ابتدا با استفاده از `getDirectory()` شیء {{domxref("FileSystemDirectoryEntry")}} را به‌دست می‌آورد که نمایانگر زیرپوشه‌ای به نام «Dictionaries» در داخل دایرکتوری داده برنامه مشخص‌شده است. تابع بازخورد موفقیت این مرحله، شیء ورودی دایرکتوری به‌دست‌آمده را می‌گیرد و `getFile()` را برای دریافت یک شیء {{domxref("FileSystemFileEntry")}} که نمایانگر فایل دیکشنری است فراخوانی می‌کند. تابع بازخورد موفقیت این مرحله نیز به نوبه خود یک {{domxref("FileReader")}} جدید می‌سازد و از آن برای بارگذاری محتویات فایل استفاده می‌کند. وقتی بارگذاری با موفقیت انجام شود (که با رویداد {{domxref("FileReader/loadend_event", "loadend")}} نشان داده می‌شود)، متن بارگذاری‌شده به {{jsxref("JSON.parse()")}} داده می‌شود تا دوباره به یک شیء جاوااسکریپتی تبدیل شود.
 
 ## Specifications
 
