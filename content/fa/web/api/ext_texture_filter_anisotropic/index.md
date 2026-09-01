@@ -1,7 +1,5 @@
 ---
 title: "EXT_texture_filter_anisotropic extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_texture_filter_anisotropic"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,23 @@ browser-compat: api.EXT_texture_filter_anisotropic
 
 {{APIRef("WebGL")}}
 
-The **`EXT_texture_filter_anisotropic`** extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and exposes two constants for [anisotropic filtering (AF)](https://en.wikipedia.org/wiki/Anisotropic_filtering).
+افزونهٔ **`EXT_texture_filter_anisotropic`** بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و دو ثابت را برای [فیلتر ناهمسانگرد (AF)](https://en.wikipedia.org/wiki/Anisotropic_filtering) در اختیار قرار می‌دهد.
 
-AF improves the quality of mipmapped texture access when viewing a textured primitive at an oblique angle. Using just mipmapping, these lookups have a tendency to average to grey.
+AF کیفیت دسترسی به بافت mipmapped را هنگام مشاهدهٔ یک شیء بافت‌دار در زاویهٔ مورب بهبود می‌بخشد. با استفاده از فقط mipmapping، این دسترسی‌ها تمایل دارند به سمت خاکستری میانگین شوند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL با استفاده از روش {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، همچنین [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) را در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) ببینید.
 
 > [!NOTE]
-> This extension is available to both, {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} and {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}} contexts.
+> این افزونه برای هر دو زمینهٔ {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} و {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}} در دسترس است.
 
-## Constants
+## ثابت‌ها
 
 - `ext.MAX_TEXTURE_MAX_ANISOTROPY_EXT`
-  - : This is the `pname` argument to the {{domxref("WebGLRenderingContext.getParameter", "gl.getParameter()")}} call, and it returns the maximum available anisotropy.
+  - : این آرگومان `pname` برای فراخوانی {{domxref("WebGLRenderingContext.getParameter", "gl.getParameter()")}} است و حداکثر ناهمسانگردی موجود را برمی‌گرداند.
 - `ext.TEXTURE_MAX_ANISOTROPY_EXT`
-  - : This is the `pname` argument to the {{domxref("WebGLRenderingContext.getTexParameter", "gl.getTexParameter()")}} and {{domxref("WebGLRenderingContext.texParameter", "gl.texParameterf()")}} / {{domxref("WebGLRenderingContext.texParameter", "gl.texParameteri()")}} calls and sets the desired maximum anisotropy for a texture.
+  - : این آرگومان `pname` برای فراخوانی‌های {{domxref("WebGLRenderingContext.getTexParameter", "gl.getTexParameter()")}} و {{domxref("WebGLRenderingContext.texParameter", "gl.texParameterf()")}} / {{domxref("WebGLRenderingContext.texParameter", "gl.texParameteri()")}} است و حداکثر ناهمسانگردی مورد نظر را برای یک بافت تنظیم می‌کند.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const texture = gl.createTexture();
@@ -45,14 +43,14 @@ if (ext) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
