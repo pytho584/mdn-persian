@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: offsetWidth property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetWidth"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: offsetWidth property"
 short-title: offsetWidth
 slug: Web/API/HTMLElement/offsetWidth
 page-type: web-api-instance-property
@@ -14,31 +8,31 @@ browser-compat: api.HTMLElement.offsetWidth
 
 {{ APIRef("HTML DOM") }}
 
-The **`offsetWidth`** read-only property of the {{domxref("HTMLElement")}} interface returns the layout width of an element as an integer.
+خاصیت **`offsetWidth`** فقط-خواندنی از رابط {{domxref("HTMLElement")}} عرض چیدمان یک عنصر را به صورت یک عدد صحیح برمی‌گرداند.
 
-Typically, `offsetWidth` is a measurement in pixels of the element's CSS width, including any borders, padding, and vertical scrollbars (if rendered). It does not include the width of pseudo-elements such as `::before` or `::after`.
+به طور معمول، `offsetWidth` اندازه‌گیری بر حسب پیکسل از عرض CSS عنصر است، شامل هرگونه حاشیه (border)، فاصله داخلی (padding) و نوارهای اسکرول عمودی (در صورت رندر شدن). عرض شبه عناصر مانند `::before` یا `::after` را شامل نمی‌شود.
 
-If the element is hidden (for example, by setting `style.display` on the element or one of its ancestors to `"none"`), then `0` is returned.
+اگر عنصر پنهان باشد (برای مثال، با تنظیم `style.display` روی عنصر یا یکی از اجداد آن به `"none"`)، مقدار `0` برگردانده می‌شود.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-![An example element with large padding, border and margin. `offsetWidth` is the layout width of the element including its padding and border, and excluding its margin.](dimensions-offset.png)
+![یک عنصر نمونه با padding، border و حاشیه (margin) بزرگ. `offsetWidth` عرض چیدمان عنصر شامل padding و border آن است، و حاشیه (margin) را شامل نمی‌شود.](dimensions-offset.png)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Determining the dimensions of elements](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
+- [تعیین ابعاد عناصر](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
 - {{domxref("Element.clientWidth")}}
 - {{domxref("Element.scrollWidth")}}
 - {{domxref("HTMLElement.offsetHeight")}}
