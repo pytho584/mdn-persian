@@ -1,11 +1,5 @@
 ---
 title: "DeviceMotionEvent: requestPermission() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/requestPermission_static"
-status: "needs-translation"
----
-
----
-title: "DeviceMotionEvent: requestPermission() static method"
 short-title: requestPermission()
 slug: Web/API/DeviceMotionEvent/requestPermission_static
 page-type: web-api-static-method
@@ -14,7 +8,7 @@ browser-compat: api.DeviceMotionEvent.requestPermission_static
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`requestPermission()`** static method of the {{domxref("DeviceMotionEvent")}} interface requests the user's permission to access device motion data from the accelerometer and gyroscope sensors. This method requires {{Glossary("transient activation")}}, meaning that it must be triggered by a UI event such as a button click.
+متد ایستای **`requestPermission()``** از رابط {{domxref("DeviceMotionEvent")}} درخواست اجازه کاربر برای دسترسی به داده‌های حرکت دستگاه از حسگرهای شتاب‌سنج و ژیروسکوپ را می‌کند. این متد به {{Glossary("transient activation")}} (فعال‌سازی موقت) نیاز دارد، به این معنی که باید توسط یک رویداد UI مانند کلیک روی دکمه فراخوانی شود.
 
 ## Syntax
 
@@ -24,31 +18,31 @@ DeviceMotionEvent.requestPermission()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves with a string which is either `"granted"` or `"denied"`.
+یک {{jsxref("Promise")}} که با یک رشته حل می‌شود که یا `"granted"` است یا `"denied"`.
 
 ### Exceptions
 
-The returned promise rejects with the following exceptions:
+پرامیزی که برگردانده می‌شود با استثناهای زیر رد می‌شود:
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : The permission state is `"prompt"` and the calling function does not have {{Glossary("transient activation")}}.
+  - : وضعیت مجوز `"prompt"` است و تابع فراخواننده {{Glossary("transient activation")}} ندارد.
 
 ## Security
 
-[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required. The user has to interact with the page or a UI element in order for this feature to work.
+[فعال‌سازی موقت کاربر](/en-US/docs/Web/Security/Defenses/User_activation) مورد نیاز است. کاربر باید با صفحه یا یک عنصر UI تعامل داشته باشد تا این ویژگی کار کند.
 
 ## Examples
 
-### Requesting device motion permission on click
+### درخواست مجوز حرکت دستگاه هنگام کلیک
 
 ```js
 document.querySelector("button").addEventListener("click", async () => {
   if (typeof DeviceMotionEvent.requestPermission !== "function") {
-    // The feature is not available, or does not need permission.
+    // این ویژگی در دسترس نیست یا به مجوز نیاز ندارد.
     return;
   }
 
@@ -75,5 +69,5 @@ document.querySelector("button").addEventListener("click", async () => {
 
 - {{domxref("DeviceMotionEvent")}}
 - {{domxref("DeviceOrientationEvent.requestPermission_static", "DeviceOrientationEvent.requestPermission()")}}
-- {{domxref("Window.devicemotion_event", "devicemotion")}} event
-- {{domxref("Device orientation events/Detecting device orientation", "Detecting device orientation", "", "nocode")}}
+- رویداد {{domxref("Window.devicemotion_event", "devicemotion")}}
+- {{domxref("Device orientation events/Detecting device orientation", "تشخیص جهت‌گیری دستگاه", "", "nocode")}}
