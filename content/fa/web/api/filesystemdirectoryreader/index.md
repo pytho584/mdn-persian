@@ -1,10 +1,4 @@
 ---
-title: "FileSystemDirectoryReader"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryReader"
-status: "needs-translation"
----
-
----
 title: FileSystemDirectoryReader
 slug: Web/API/FileSystemDirectoryReader
 page-type: web-api-interface
@@ -13,23 +7,23 @@ browser-compat: api.FileSystemDirectoryReader
 
 {{APIRef("File and Directory Entries API")}}
 
-The `FileSystemDirectoryReader` interface of the [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API) lets you access the {{domxref("FileSystemFileEntry")}}-based objects (generally {{domxref("FileSystemFileEntry")}} or {{domxref("FileSystemDirectoryEntry")}}) representing each entry in a directory.
+رابط `FileSystemDirectoryReader` از [API ورودی‌های فایل و دایرکتوری](/en-US/docs/Web/API/File_and_Directory_Entries_API) به شما امکان می‌دهد به اشیاء مبتنی بر {{domxref("FileSystemFileEntry")}} (معمولاً {{domxref("FileSystemFileEntry")}} یا {{domxref("FileSystemDirectoryEntry")}}) که هر ورودی در یک دایرکتوری را نمایش می‌دهند، دسترسی پیدا کنید.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("FileSystemDirectoryReader.readEntries", "readEntries()")}}
-  - : Returns an array containing some number of the directory's entries. Each item in the array is an object based on {{domxref("FileSystemEntry")}}—typically either {{domxref("FileSystemFileEntry")}} or {{domxref("FileSystemDirectoryEntry")}}.
+  - : یک آرایه شامل تعدادی از ورودی‌های دایرکتوری برمی‌گرداند. هر آیتم در این آرایه یک شیء مبتنی بر {{domxref("FileSystemEntry")}} است – معمولاً {{domxref("FileSystemFileEntry")}} یا {{domxref("FileSystemDirectoryEntry")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
+- [API ورودی‌های فایل و دایرکتوری](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("FileSystemDirectoryEntry")}}
 - {{domxref("FileSystem")}}
