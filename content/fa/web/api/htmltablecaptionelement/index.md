@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableCaptionElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCaptionElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,29 +11,29 @@ browser-compat: api.HTMLTableCaptionElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLTableCaptionElement`** interface provides special properties (beyond the regular {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating table {{HTMLElement("caption")}} elements.
+رابط **`HTMLTableCaptionElement`** ویژگی‌های ویژه‌ای را (علاوه بر رابط معمولی {{domxref("HTMLElement")}} که به صورت ارث‌بری نیز در دسترس آن است) برای دستکاری عناصر {{HTMLElement("caption")}} جدول فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref("HTMLTableCaptionElement.align")}} {{deprecated_inline}}
-  - : A string which represents an enumerated attribute indicating alignment of the caption with respect to the table.
+  - : رشته‌ای که یک ویژگی شمارشی را نشان می‌دهد و نحوه تراز شدن عنوان (caption) را نسبت به جدول مشخص می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}_.
+_روش خاصی ندارد؛ روش‌ها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The HTML element implementing this interface: {{HTMLElement("caption")}}.
+- عنصر HTML پیاده‌ساز این رابط: {{HTMLElement("caption")}}.
