@@ -1,11 +1,5 @@
 ---
 title: "CSSUnitValue: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSUnitValue/value"
-status: "needs-translation"
----
-
----
-title: "CSSUnitValue: value property"
 short-title: value
 slug: Web/API/CSSUnitValue/value
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.CSSUnitValue.value
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`value`** property of the {{domxref("CSSUnitValue")}} interface represents the number of units.
+ویژگی **`value`** از رابط {{domxref("CSSUnitValue")}} تعداد واحدها را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following code creates a {{domxref('CSSPositionValue')}} from individual `CSSUnitValue` constructors, then queries the `CSSUnitValue.value`.
+کد زیر یک {{domxref('CSSPositionValue')}} از سازنده‌های مجزای `CSSUnitValue` ایجاد می‌کند و سپس `CSSUnitValue.value` را پرس‌وجو می‌کند.
 
 ```js
 const pos = new CSSPositionValue(
@@ -36,16 +30,16 @@ console.log(pos.x.value); // 5
 console.log(pos.y.value); // 10
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref('CSSUnitValue.unit')}}
-- [Using the CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
+- [استفاده از CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
 - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
