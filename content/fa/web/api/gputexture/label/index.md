@@ -1,11 +1,5 @@
 ---
 title: "GPUTexture: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/label"
-status: "needs-translation"
----
-
----
-title: "GPUTexture: label property"
 short-title: label
 slug: Web/API/GPUTexture/label
 page-type: web-api-instance-property
@@ -14,18 +8,17 @@ browser-compat: api.GPUTexture.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** property of the
-{{domxref("GPUTexture")}} interface provides a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+خصوصیت **`label`** در رابط {{domxref("GPUTexture")}} برچسبی را فراهم می‌کند که می‌توان از آن برای شناسایی شیء استفاده کرد، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUDevice.createTexture()")}} call, or you can get and set it directly on the `GPUTexture` object.
+این مقدار را می‌توان با ارائه‌ی یک خصوصیت `label` در شیء توصیف‌گر (descriptor) که به فراخوانی {{domxref("GPUDevice.createTexture()")}} مبدأ ارسال می‌شود تنظیم کرد، یا می‌توانید آن را مستقیماً روی شیء `GPUTexture` بخوانید و بنویسید.
 
-## Value
+## مقدار
 
-A string. If this has not been previously set as described above, it will be an empty string.
+یک رشته. اگر این مقدار قبلاً همان‌طور که در بالا توضیح داده شد تنظیم نشده باشد، یک رشته‌ی خالی خواهد بود.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUTexture.label`:
+تنظیم و خواندن یک برچسب از طریق `GPUTexture.label`:
 
 ```js
 // …
@@ -41,7 +34,7 @@ depthTexture.label = "my_texture";
 console.log(depthTexture.label); // "my_texture"
 ```
 
-Setting a label via the originating {{domxref("GPUDevice.createTexture()")}} call, and then getting it via `GPUTexture.label`:
+تنظیم یک برچسب از طریق فراخوانی {{domxref("GPUDevice.createTexture()")}} مبدأ و سپس خواندن آن از طریق `GPUTexture.label`:
 
 ```js
 // …
@@ -56,14 +49,14 @@ const depthTexture = device.createTexture({
 console.log(depthTexture.label); // "my_texture"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [رابط WebGPU API](/en-US/docs/Web/API/WebGPU_API)
