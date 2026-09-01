@@ -1,7 +1,6 @@
+```
 ---
 title: "File drag and drop"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop"
-status: "needs-translation"
 ---
 
 ---
@@ -12,11 +11,11 @@ page-type: guide
 
 {{DefaultAPISidebar("HTML Drag and Drop API")}}
 
-As mentioned on [the landing page](/en-US/docs/Web/API/HTML_Drag_and_Drop_API#concepts_and_usage), the Drag and Drop API simultaneously models three use cases: dragging elements within a page, dragging data out of a page, and dragging data into a page. This tutorial demonstrates the third use case: dragging data into a page. We will be implementing a basic drop zone that allows the user to drop image files from the user's operation system file explorer and displays them on the page. For users who can't or don't want to use drag and drop, we also provide the alternative functionality of file selection via an `<input>` element.
+همانطور که در [صفحهٔ اصلی](/en-US/docs/Web/API/HTML_Drag_and_Drop_API#concepts_and_usage) اشاره شد، Drag and Drop API به‌طور هم‌زمان سه مورد استفاده را مدل‌سازی می‌کند: کشیدن عناصر داخل یک صفحه، کشیدن داده‌ها به بیرون از صفحه، و کشیدن داده‌ها به داخل صفحه. این آموزش مورد سوم را نشان می‌دهد: کشیدن داده‌ها به داخل صفحه. ما یک ناحیهٔ رهاسازی پایه پیاده‌سازی خواهیم کرد که به کاربر اجازه می‌دهد فایل‌های تصویری را از کاوشگر فایل سیستم‌عامل کاربر بکشد و روی صفحه رها کند و آن‌ها را روی صفحه نمایش دهد. برای کاربرانی که نمی‌توانند یا نمی‌خواهند از کشیدن و رها کردن استفاده کنند، قابلیت جایگزین انتخاب فایل را نیز از طریق یک عنصر `<input>` فراهم می‌کنیم.
 
-## Basic page layout
+## چیدمان پایهٔ صفحه
 
-Because we want to allow normal `<input>` file selection as well, it makes sense for the drop zone to be backed by an `<input>` element so that we can simultaneously drag into it and click on it. We take advantage of a common trick, which is to make the `<input>` invisible, and use its associated {{HTMLElement("label")}} to interact with the user instead, because `<label>` elements are much easier to style. We also add the elements for previewing the dropped images.
+از آنجا که می‌خواهیم انتخاب فایل معمولی با `<input>` نیز امکان‌پذیر باشد، منطقی است که ناحیهٔ رهاسازی توسط یک عنصر `<input>` پشتیبانی شود تا بتوانیم هم‌زمان فایل‌ها را به داخل آن بکشیم و روی آن کلیک کنیم. ما از یک ترفند رایج استفاده می‌کنیم: `<input>` را نامرئی می‌کنیم و از {{HTMLElement("label")}} مرتبط با آن برای تعامل با کاربر بهره می‌بریم، زیرا استایل‌دهی به عناصر `<label>` بسیار آسان‌تر است. همچنین عناصر پیش‌نمایش تصاویر رهاشده را اضافه می‌کنیم.
 
 ```html live-sample___file-dnd
 <label id="drop-zone">
@@ -27,7 +26,7 @@ Because we want to allow normal `<input>` file selection as well, it makes sense
 <button id="clear-btn">Clear</button>
 ```
 
-We style the label element to visually indicate the element is a drop zone, and hide the file input.
+ما عنصر `label` را طوری استایل می‌دهیم که به‌صورت بصری یک ناحیهٔ رهاسازی باشد و ورودی فایل را پنهان می‌کنیم.
 
 ```css live-sample___file-dnd
 body {
@@ -78,11 +77,11 @@ body {
 }
 ```
 
-By virtue of us using the `<label>` and `<input>` elements, no additional JavaScript is needed to implement the file selection UX. We now focus on file dropping and the subsequent processing of the dropped files.
+به دلیل استفاده از عناصر `<label>` و `<input>`، برای پیاده‌سازی تجربهٔ کاربری انتخاب فایل به جاوااسکریپت اضافی نیاز نیست. اکنون روی رها کردن فایل و پردازش بعدی فایل‌های رهاشده تمرکز می‌کنیم.
 
-## Declaring the drop target
+## تعریف هدف رهاسازی
 
-Our drop target is the `<label>` element. As the _target element_, it listens to the {{domxref("HTMLElement/drop_event", "drop")}} event to process the dropped file.
+هدف رهاسازی ما عنصر `<label>` است. این عنصر به‌عنوان _عنصر هدف_، برای پردازش فایل رهاشده به رویداد {{domxref("HTMLElement/drop_event", "drop")}} گوش می‌دهد.
 
 ```js live-sample___file-dnd
 const dropZone = document.getElementById("drop-zone");
@@ -90,7 +89,7 @@ const dropZone = document.getElementById("drop-zone");
 dropZone.addEventListener("drop", dropHandler);
 ```
 
-For file dropping, the browser may process them by default (such as opening or downloading the file) even when the file is not dropped into a valid drop target. To prevent this behavior, we also need to listen for the `drop` event on `window` and cancel it. We take care to only handle the event only if a file is being dragged; if it's something else, such as a link, we still use the default behavior. If the dragged item is a non-image file, we still handle the event, but provide feedback to the user that it is not allowed.
+هنگام رها کردن فایل، مرورگر ممکن است آن‌ها را به‌صورت پیش‌فرض پردازش کند (مانند باز کردن یا دانلود فایل)، حتی وقتی فایل در یک هدف رهاسازی معتبر رها نشده باشد. برای جلوگیری از این رفتار، لازم است به رویداد `drop` روی `window` نیز گوش دهیم و آن را لغو کنیم. دقت می‌کنیم که رویداد را فقط زمانی مدیریت کنیم که یک فایل در حال کشیده‌شدن باشد؛ اگر چیز دیگری مانند یک پیوند باشد، همچنان از رفتار پیش‌فرض استفاده می‌کنیم. اگر آیتم کشیده‌شده یک فایل غیرتصویری باشد، باز هم رویداد را مدیریت می‌کنیم، اما بازخوردی به کاربر می‌دهیم که مجاز نیست.
 
 ```js live-sample___file-dnd
 window.addEventListener("drop", (e) => {
@@ -100,7 +99,7 @@ window.addEventListener("drop", (e) => {
 });
 ```
 
-In order for the `drop` event to fire, the element must also cancel the {{domxref("HTMLElement/dragover_event", "dragover")}} event. Because we are listening for `drop` on `window`, we need to cancel the `dragover` event for the whole `window` as well. We also set {{domxref("DataTransfer.dropEffect")}} to `none` if the file is not an image or not dragged to the correct place.
+برای اینکه رویداد `drop` فعال شود، عنصر باید رویداد {{domxref("HTMLElement/dragover_event", "dragover")}} را نیز لغو کند. از آنجا که ما به رویداد `drop` روی `window` گوش می‌دهیم، لازم است رویداد `dragover` را برای کل `window` نیز لغو کنیم. همچنین اگر فایل تصویری نباشد یا به مکان درست کشیده نشده باشد، {{domxref("DataTransfer.dropEffect")}} را روی `none` تنظیم می‌کنیم.
 
 ```js live-sample___file-dnd
 dropZone.addEventListener("dragover", (e) => {
@@ -131,12 +130,12 @@ window.addEventListener("dragover", (e) => {
 ```
 
 > [!NOTE]
-> {{domxref("HTMLElement/dragstart_event", "dragstart")}} and {{domxref("HTMLElement/dragend_event", "dragend")}} events are not fired when dragging a file into the browser from the OS. To detect when OS files are dragged into the browser, use {{domxref("HTMLElement/dragenter_event", "dragenter")}} and {{domxref("HTMLElement/dragleave_event", "dragleave")}}.
-> This means that it is not possible to use {{domxref("DataTransfer.setDragImage","setDragImage()")}} to apply a custom drag image/cursor overlay when dragging files from the OS — because the drag data store can only be modified in the {{domxref("HTMLElement/dragstart_event", "dragstart")}} event. This also applies to {{domxref("DataTransfer.setData","setData()")}}.
+> رویدادهای {{domxref("HTMLElement/dragstart_event", "dragstart")}} و {{domxref("HTMLElement/dragend_event", "dragend")}} هنگام کشیدن فایل از سیستم‌عامل به داخل مرورگر فعال نمی‌شوند. برای تشخیص کشیده‌شدن فایل‌های سیستم‌عامل به داخل مرورگر، از {{domxref("HTMLElement/dragenter_event", "dragenter")}} و {{domxref("HTMLElement/dragleave_event", "dragleave")}} استفاده کنید.
+> این بدان معناست که امکان استفاده از {{domxref("DataTransfer.setDragImage","setDragImage()")}} برای اعمال یک تصویر/نمایهٔ شناور سفارشی هنگام کشیدن فایل‌ها از سیستم‌عامل وجود ندارد — زیرا ذخیره‌گاه دادهٔ کشیدن فقط در رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} قابل تغییر است. این موضوع در مورد {{domxref("DataTransfer.setData","setData()")}} نیز صدق می‌کند.
 
-## Processing the drop
+## پردازش رهاسازی
 
-Now we implement the `dropHandler` by using the {{domxref("DataTransferItem.getAsFile","getAsFile()")}} method to access each file. Then your application can decide how to process this file using the [File API](/en-US/docs/Web/API/File_API). Here we just display them on the page; in practice, you probably want to eventually upload them to the server as well.
+اکنون `dropHandler` را با استفاده از روش {{domxref("DataTransferItem.getAsFile","getAsFile()")}} برای دسترسی به هر فایل پیاده‌سازی می‌کنیم. سپس برنامهٔ شما می‌تواند تصمیم بگیرد که این فایل را چگونه با استفاده از [File API](/en-US/docs/Web/API/File_API) پردازش کند. در اینجا ما فقط آن‌ها را روی صفحه نمایش می‌دهیم؛ در عمل احتمالاً می‌خواهید در نهایت آن‌ها را به سرور نیز بارگذاری کنید.
 
 ```js live-sample___file-dnd
 const preview = document.getElementById("preview");
@@ -164,9 +163,9 @@ function dropHandler(ev) {
 }
 ```
 
-## Adding the same behavior to the input
+## افزودن همان رفتار به عنصر input
 
-The above is the whole data flow for the drag and drop; now we need to wire the `displayImages()` function to the file input as well.
+موارد بالا کل جریان داده برای کشیدن و رها کردن است؛ اکنون باید تابع `displayImages()` را به ورودی فایل نیز متصل کنیم.
 
 ```js live-sample___file-dnd
 const fileInput = document.getElementById("file-input");
@@ -175,9 +174,9 @@ fileInput.addEventListener("change", (e) => {
 });
 ```
 
-## Clear button
+## دکمهٔ پاک کردن
 
-Finally we add a way to clear the preview area. We use {{domxref("URL.revokeObjectURL_static","URL.revokeObjectURL()")}} to release the memory used by the image objects.
+در نهایت راهی برای پاک کردن ناحیهٔ پیش‌نمایش اضافه می‌کنیم. ما از {{domxref("URL.revokeObjectURL_static","URL.revokeObjectURL()")}} برای آزاد کردن حافظهٔ استفاده‌شده توسط اشیاء تصویر بهره می‌بریم.
 
 ```js live-sample___file-dnd
 const clearBtn = document.getElementById("clear-btn");
@@ -189,11 +188,12 @@ clearBtn.addEventListener("click", () => {
 });
 ```
 
-## Result
+## نتیجه
 
 {{EmbedLiveSample("file-dnd", "", 500)}}
 
-## See also
+## همچنین ببینید
 
 - [HTML Drag and Drop API](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
-- [Drag Operations](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
+- [عملیات کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
+```
