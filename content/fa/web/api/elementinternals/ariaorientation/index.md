@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaOrientation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaOrientation"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaOrientation property"
 short-title: ariaOrientation
 slug: Web/API/ElementInternals/ariaOrientation
 page-type: web-api-instance-property
@@ -14,25 +8,25 @@ browser-compat: api.ElementInternals.ariaOrientation
 
 {{APIRef("Web Components")}}
 
-The **`ariaOrientation`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) attribute, which indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.
+خاصیت **`ariaOrientation`** از رابط {{domxref("ElementInternals")}} مقدار ویژگی [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) را منعکس می‌کند؛ این ویژگی نشان می‌دهد که جهت عنصر افقی، عمودی یا نامشخص/مبهم است.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria بر روی `ElementInternals` امکان تعریف معنای پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. ممکن است این مقادیر توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آن‌ها را اضافه نکند، معنای پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح مدل اشیاء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+رشته‌ای با یکی از مقادیر زیر:
 
 - `"horizontal"`
-  - : The element is horizontal.
+  - : عنصر افقی است.
 - `"vertical"`
-  - : The element is vertical.
+  - : عنصر عمودی است.
 - `"undefined"`
-  - : The element's orientation is unknown.
+  - : جهت عنصر نامشخص است.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaOrientation` is set to "vertical".
+در این مثال مقدار `ariaOrientation` روی «vertical» تنظیم شده است.
 
 ```js
 class CustomEl extends HTMLElement {
@@ -45,10 +39,10 @@ class CustomEl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
