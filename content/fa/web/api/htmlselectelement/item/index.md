@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: item() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/item"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: item() method"
 short-title: item()
 slug: Web/API/HTMLSelectElement/item
 page-type: web-api-instance-method
@@ -14,14 +8,9 @@ browser-compat: api.HTMLSelectElement.item
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLSelectElement.item()`** method returns the
-{{domxref("Element")}} corresponding to the {{domxref("HTMLOptionElement")}} whose
-position in the options list corresponds to the index given in the parameter, or
-`null` if there are none.
+متد **`HTMLSelectElement.item()`** عنصر {{domxref("Element")}} متناظر با {{domxref("HTMLOptionElement")}} را برمی‌گرداند که موقعیت آن در فهرست گزینه‌ها با اندیس داده‌شده در پارامتر مطابقت دارد؛ اگر چنین گزینه‌ای وجود نداشته باشد، `null` برگردانده می‌شود.
 
-In JavaScript, using the array bracket syntax with an `unsigned long`, like
-`selectElt[index]` is equivalent to
-`selectElt.item(index)`.
+در جاوااسکریپت، استفاده از نحو براکت‌گذاری آرایه‌ای با یک عدد صحیح بدون علامت، مانند `selectElt[index]`، معادل `selectElt.item(index)` است.
 
 ## Syntax
 
@@ -33,11 +22,11 @@ item(index)
 ### Parameters
 
 - `index`
-  - : A non-negative integer representing the position of the option in the list.
+  - : یک عدد صحیح نامنفی که موقعیت گزینه را در فهرست نشان می‌دهد.
 
 ### Return value
 
-An {{domxref("HTMLOptionElement")}} or `null`.
+یک {{domxref("HTMLOptionElement")}} یا `null`.
 
 ## Examples
 
@@ -69,4 +58,4 @@ elem1 = document.forms[0]["myFormControl"][1];
 
 ## See also
 
-- {{domxref("HTMLSelectElement")}} that implements it.
+- {{domxref("HTMLSelectElement")}} که آن را پیاده‌سازی می‌کند.
