@@ -1,7 +1,5 @@
 ---
 title: "CSSTranslate: CSSTranslate() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate/CSSTranslate"
-status: "needs-translation"
 ---
 
 ---
@@ -14,45 +12,41 @@ browser-compat: api.CSSTranslate.CSSTranslate
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSTranslate()`** constructor creates a new {{domxref("CSSTranslate")}} object representing the {{cssxref("transform-function/translate", "translate()")}} value of the individual {{CSSXref('transform')}} property in CSS.
+سازندهٔ **`CSSTranslate()`** یک شیء جدید {{domxref("CSSTranslate")}} می‌سازد که مقدار {{cssxref("transform-function/translate", "translate()")}} ویژگیِ مجزای {{CSSXref('transform')}} را در CSS نشان می‌دهد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new CSSTranslate(x, y)
 new CSSTranslate(x, y, z)
 ```
 
-### Parameters
+### پارامترها
 
 - {{domxref('CSSTranslate.x','x')}}
-  - : A value for the x-axis of the {{domxref('CSSTranslate')}} object to be constructed.
-    This must be a {{cssxref('length-percentage')}}.
+  - : مقداری برای محور x از شیء {{domxref('CSSTranslate')}} که قرار است ساخته شود. این مقدار باید از نوع {{cssxref('length-percentage')}} باشد.
 - {{domxref('CSSTranslate.y','y')}}
-  - : A value for the y-axis of the {{domxref('CSSTranslate')}} object to be constructed.
-    This must be a {{cssxref('length-percentage')}}.
+  - : مقداری برای محور y از شیء {{domxref('CSSTranslate')}} که قرار است ساخته شود. این مقدار باید از نوع {{cssxref('length-percentage')}} باشد.
 - {{domxref('CSSTranslate.z','z')}} {{optional_inline}}
-  - : A value for the z-axis of the {{domxref('CSSTranslate')}} object to be constructed.
-    This must be a {{cssxref('length')}}.
+  - : مقداری برای محور z از شیء {{domxref('CSSTranslate')}} که قرار است ساخته شود. این مقدار باید از نوع {{cssxref('length')}} باشد.
 
-    If a value is passed for the `z-axis` this is a 3D transform.
-    The value of `is2D` will be set to false.
+    اگر مقداری برای `z-axis` (محور z) ارسال شود، این یک تبدیل سه‌بعدی (3D transform) است و مقدار `is2D` برابر `false` قرار خواهد گرفت.
 
-### Exceptions
+### استثناها
 
 - [`TypeError`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError)
-  - : Raised if the value of `CSSTranslate.x` or `CSSTranslate.y` is not a {{cssxref('length-percentage')}}.
+  - : اگر مقدار `CSSTranslate.x` یا `CSSTranslate.y` از نوع {{cssxref('length-percentage')}} نباشد، پرتاب می‌شود.
 - [`TypeError`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError)
-  - : Raised if the value of `CSSTranslate.z` exists but is not a {{cssxref('length')}}.
+  - : اگر مقدار `CSSTranslate.z` وجود داشته باشد اما از نوع {{cssxref('length')}} نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-To do
+این بخش به‌زودی تکمیل می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
