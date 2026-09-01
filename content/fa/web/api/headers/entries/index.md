@@ -1,7 +1,5 @@
 ---
 title: "Headers: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Headers/entries"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +12,23 @@ browser-compat: api.Headers.entries
 
 {{APIRef("Fetch API")}} {{AvailableInWorkers}}
 
-The **`Headers.entries()`** method returns an
-{{jsxref("Iteration_protocols",'iterator')}} allowing to go through all key/value pairs
-contained in this object. Both the key and value of each pair are
-{{jsxref("String")}} objects.
+متد **`Headers.entries()`** یک {{jsxref("Iteration_protocols",'iterator')}} برمی‌گرداند که امکان پیمایش همه‌ی جفت‌های کلید/مقدار موجود در این شیء را فراهم می‌کند. در هر جفت، هم کلید و هم مقدار، آبجکت‌های {{jsxref("String")}} هستند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 entries()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ پارامتری.
 
-### Return value
+### مقدار بازگشتی
 
-Returns an {{jsxref("Iteration_protocols","iterator")}}.
+یک {{jsxref("Iteration_protocols","iterator")}} برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Create a test Headers object
@@ -47,23 +42,23 @@ for (const pair of myHeaders.entries()) {
 }
 ```
 
-The result is:
+نتیجه به این صورت است:
 
 ```plain
 content-type: text/xml
 vary: Accept-Language
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [ServiceWorker API](/en-US/docs/Web/API/Service_Worker_API)
-- [HTTP access control (CORS)](/en-US/docs/Web/HTTP/Guides/CORS)
+- [کنترل دسترسی HTTP (CORS)](/en-US/docs/Web/HTTP/Guides/CORS)
 - [HTTP](/en-US/docs/Web/HTTP)
