@@ -1,11 +1,5 @@
 ---
 title: "GPURenderBundleEncoder: draw() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/draw"
-status: "needs-translation"
----
-
----
-title: "GPURenderBundleEncoder: draw() method"
 short-title: draw()
 slug: Web/API/GPURenderBundleEncoder/draw
 page-type: web-api-instance-method
@@ -14,13 +8,12 @@ browser-compat: api.GPURenderBundleEncoder.draw
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`draw()`** method of the
-{{domxref("GPURenderBundleEncoder")}} interface draws primitives based on the vertex buffers provided by {{domxref("GPURenderBundleEncoder.setVertexBuffer", "setVertexBuffer()")}}.
+متد **`draw()`** از رابط {{domxref("GPURenderBundleEncoder")}}، primitives (اشکال اولیه) را بر اساس بافرهای رأس (vertex buffers) که توسط {{domxref("GPURenderBundleEncoder.setVertexBuffer", "setVertexBuffer()")}} ارائه شده‌اند، رسم می‌کند.
 
 > [!NOTE]
-> This method is functionally identical to its equivalent on {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.draw", "draw()")}}.
+> این متد از نظر عملکردی با معادل خود در {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.draw", "draw()")}} یکسان است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 draw(vertexCount)
@@ -29,22 +22,22 @@ draw(vertexCount, instanceCount, firstVertex)
 draw(vertexCount, instanceCount, firstVertex, firstInstance)
 ```
 
-### Parameters
+### پارامترها
 
 - `vertexCount`
-  - : A number defining the number of vertices to draw.
+  - : عددی که تعداد رئوس (vertices) برای رسم را مشخص می‌کند.
 - `instanceCount` {{optional_inline}}
-  - : A number defining the number of instances to draw. If omitted, `instanceCount` defaults to 1.
+  - : عددی که تعداد نمونه‌ها (instances) برای رسم را مشخص می‌کند. در صورت حذف، `instanceCount` به طور پیش‌فرض ۱ است.
 - `firstVertex` {{optional_inline}}
-  - : A number defining the offset into the vertex buffers, in vertices, to begin drawing from. If omitted, `firstVertex` defaults to 0.
+  - : عددی که افست (offset) درون بافرهای رأس، بر حسب رأس، را برای شروع رسم مشخص می‌کند. در صورت حذف، `firstVertex` به طور پیش‌فرض ۰ است.
 - `firstInstance` {{optional_inline}}
-  - : A number defining the first instance to draw. If omitted, `firstInstance` defaults to 0.
+  - : عددی که اولین نمونه برای رسم را مشخص می‌کند. در صورت حذف، `firstInstance` به طور پیش‌فرض ۰ است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 function recordRenderPass(passEncoder) {
@@ -68,16 +61,16 @@ function recordRenderPass(passEncoder) {
 }
 ```
 
-The above snippet is taken from the WebGPU Samples [Animometer example](https://webgpu.github.io/webgpu-samples/samples/animometer/).
+قطعه کد بالا از نمونه [Animometer](https://webgpu.github.io/webgpu-samples/samples/animometer/) موجود در WebGPU Samples گرفته شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
