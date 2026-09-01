@@ -1,11 +1,5 @@
 ---
 title: "Document: plugins property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/plugins"
-status: "needs-translation"
----
-
----
-title: "Document: plugins property"
 short-title: plugins
 slug: Web/API/Document/plugins
 page-type: web-api-instance-property
@@ -14,23 +8,19 @@ browser-compat: api.Document.plugins
 
 {{APIRef("DOM")}}
 
-The **`plugins`** read-only property of the
-{{domxref("Document")}} interface returns an {{domxref("HTMLCollection")}} object
-containing one or more {{domxref("HTMLEmbedElement")}}s representing the
-{{HTMLElement("embed")}} elements in the current document.
+ویژگی فقط‌خواندنی **`plugins`** در رابط {{domxref("Document")}} یک شیء {{domxref("HTMLCollection")}} برمی‌گرداند که شامل یک یا چند {{domxref("HTMLEmbedElement")}} است و عناصر {{HTMLElement("embed")}} را در سند جاری نمایش می‌دهد.
 
 > [!NOTE]
-> For a list of installed plugins, use [Navigator.plugins](/en-US/docs/Web/API/Navigator/plugins)
-> instead.
+> برای دریافت فهرست افزونه‌های نصب‌شده، به جای آن از [Navigator.plugins](/en-US/docs/Web/API/Navigator/plugins) استفاده کنید.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLCollection")}}.
+یک {{domxref("HTMLCollection")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
