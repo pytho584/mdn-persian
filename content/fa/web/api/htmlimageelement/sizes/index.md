@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: sizes property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/sizes"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: sizes property"
 short-title: sizes
 slug: Web/API/HTMLImageElement/sizes
 page-type: web-api-instance-property
@@ -14,38 +8,32 @@ browser-compat: api.HTMLImageElement.sizes
 
 {{APIRef("HTML DOM")}}
 
-The **`sizes`** property of the {{domxref("HTMLImageElement")}} interface allows you to specify the layout width of the [image](/en-US/docs/Web/HTML/Reference/Elements/img) for each of a list of [media queries](/en-US/docs/Web/CSS/Guides/Media_queries), or `auto` for lazy-loaded images to allow the browser to automatically select an image to display based on the layout size of the element.
-This allows the browser to choose between different images specified in the element {{domxref("HTMLImageElement/srcset", "srcset")}} to match different media conditions — even images with different orientations or aspect ratios.
+ویژگی **`sizes`** در رابط {{domxref("HTMLImageElement")}} به شما امکان می‌دهد عرض چیدمان [تصویر](/en-US/docs/Web/HTML/Reference/Elements/img) را برای هر یک از فهرست [پرس‌وجوهای رسانه‌ای](/en-US/docs/Web/CSS/Guides/Media_queries) یا مقدار `auto` برای تصاویر با بارگذاری تأخیری (lazy-loaded) مشخص کنید تا مرورگر بتواند به‌صورت خودکار تصویری را بر اساس اندازه چیدمان عنصر برای نمایش انتخاب کند. این امکان به مرورگر می‌دهد تا بین تصاویر مختلف مشخص‌شده در {{domxref("HTMLImageElement/srcset", "srcset")}} عنصر، تصویری را که با شرایط رسانه‌ای متفاوت (حتی تصاویر با جهت‌گیری یا نسبت ابعاد متفاوت) هم‌خوانی دارد انتخاب کند.
 
-The `sizes` property reflects the `<img>` element's [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/img#sizes) content attribute.
-It can only be present when `srcset` uses width descriptors.
+ویژگی `sizes` نمایش‌دهندهٔ ویژگی محتوایی [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/img#sizes) عنصر `<img>` است. این ویژگی فقط زمانی می‌تواند وجود داشته باشد که `srcset` از توصیف‌گرهای عرض (width descriptors) استفاده کند.
 
-## Value
+## مقدار
 
-A string that can be the `auto` keyword (optionally followed by any number of _source sizes_), or one or more _source sizes_.
+یک رشته که می‌تواند کلیدواژهٔ `auto` (اختیاری و به‌دنبال آن هر تعداد _اندازهٔ منبع_) یا یک یا چند _اندازهٔ منبع_ باشد.
 
-See the [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/img#sizes) attribute in the HTML `<img>` reference for more information.
+برای اطلاعات بیشتر، ویژگی [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/img#sizes) را در مرجع عنصر `<img>` اچ‌تی‌ام‌ال ببینید.
 
-## Examples
+## مثال‌ها
 
-### Selecting an image to fit window width
+### انتخاب تصویری که با عرض پنجره سازگار باشد
 
-This example demonstrates how the browser uses the `sizes` attribute to select an image from `srcset` based on the rendered width of the image at the current viewport width.
-It also allows you to see the effect of resizing the browser window on which image is loaded.
+این مثال نشان می‌دهد که مرورگر چگونه از ویژگی `sizes` برای انتخاب تصویری از `srcset` بر اساس عرض رندر شدهٔ تصویر در عرض فعلی viewport استفاده می‌کند. همچنین به شما امکان می‌دهد تأثیر تغییر اندازهٔ پنجرهٔ مرورگر را بر تصویری که بارگذاری می‌شود مشاهده کنید.
 
 #### HTML
 
-In order to demonstrate the effect of lazy loading the images need to be initially hidden from the {{glossary("visual viewport")}}, and then scrolled into view.
-This is achieved by having an outer `scroll-container` {{htmlelement("div")}} that nests `spacer` and `demo-wrap` containers.
-The image is contained inside the `demo-wrap` container, which is pushed out of the visual viewport by the height set on the `spacer` container.
+برای نشان دادن اثر بارگذاری تأخیری، تصاویر ابتدا باید از {{glossary("visual viewport")}} پنهان باشند و سپس با اسکرول به دید درآیند. این کار با یک {{htmlelement("div")}} بیرونی با کلاس `scroll-container` انجام می‌شود که ظرف‌های `spacer` و `demo-wrap` را در خود جای می‌دهد. تصویر داخل ظرف `demo-wrap` قرار دارد که با ارتفاع تنظیم‌شده روی ظرف `spacer` به بیرون از دیدپذیری رانده می‌شود.
 
-The {{htmlelement("img")}} element has the following attributes:
+عنصر {{htmlelement("img")}} دارای ویژگی‌های زیر است:
 
-- `srcset` defines four images and indicates that they are `600px`, `900px`, `1200px`, and `1500px` wide.
-- `src` specifies the image that will be used if `srcset` is not supported or it can't be parsed.
-  We use the largest image in the `srcset` as this will almost always downscale better than the smallest image will upscale.
-- `loading` is `lazy`.
-- `sizes` specifies the expected rendered width of the image at a set of viewport-width breakpoints, allowing the browser to select the most appropriate image from `srcset`.
+- `srcset` چهار تصویر را تعریف می‌کند و نشان می‌دهد که عرض آن‌ها به ترتیب `600px`، `900px`، `1200px` و `1500px` است.
+- `src` تصویری را مشخص می‌کند که اگر `srcset` پشتیبانی نشود یا قابل تجزیه نباشد استفاده خواهد شد. ما بزرگ‌ترین تصویر را در `srcset` استفاده می‌کنیم، زیرا تقریباً همیشه کاهش مقیاس آن بهتر از افزایش مقیاس کوچک‌ترین تصویر است.
+- `loading` برابر با `lazy` است.
+- `sizes` عرض رندر مورد انتظار تصویر را در مجموعه‌ای از نقاط شکست عرض viewport مشخص می‌کند و به مرورگر اجازه می‌دهد مناسب‌ترین تصویر را از `srcset` انتخاب کند.
 
 ```html
 <div id="scroll-container">
@@ -174,38 +162,31 @@ const observer = new IntersectionObserver(
 images.forEach((img) => observer.observe(img));
 ```
 
-The CSS and JavaScript are not shown (if you want to examine these, select "Play" to view the whole example in the interactive playground).
+CSS و جاوااسکریپت نشان داده نشده‌اند (اگر می‌خواهید آن‌ها را بررسی کنید، گزینهٔ «Play» را انتخاب کنید تا کل مثال را در زمین بازی تعاملی (interactive playground) ببینید).
 
-#### Result
+#### نتیجه
 
-The example is best {{LiveSampleLink('Selecting an image to fit window width', 'viewed in its own window')}}, so you can adjust the sizes fully, and the example is not constrained by its containing frame.
+این مثال بهتر است در {{LiveSampleLink('Selecting an image to fit window width', 'viewed in its own window')}} مشاهده شود، تا بتوانید اندازه‌ها را به‌طور کامل تنظیم کنید و مثال به قاب حاوی خود محدود نباشد.
 
-1. Scroll the frame to display the image.
-   The label at the bottom of the image shows the current container width.
-2. Resize the window — you should see the image change at the `sizes` attribute's media query break points.
+1. قاب را اسکرول کنید تا تصویر نمایش داده شود. برچسب پایین تصویر، عرض فعلی ظرف را نشان می‌دهد.
+2. اندازهٔ پنجره را تغییر دهید — باید ببینید که تصویر در نقاط شکست پرس‌وجوی رسانه‌ای ویژگی `sizes` تغییر می‌کند.
 
-   Note that the selected image may be larger than the container width alone suggests.
-   Many displays, if not most, have a [device pixel ratio (DPR)](/en-US/docs/Web/API/Window/devicePixelRatio) greater than one.
-   In order to render a sharp image at the physical pixel density of the display, a browser will multiply the matched `sizes` hint by the DPR before selecting from `srcset`.
-   For example, on a 2× display with a viewport of ~500px, the matched hint is `600px`, but the browser looks for a ~1200px image and selects `1200.png` as the closest available size and then scales it to fit in the available space.
+   توجه داشته باشید که تصویر انتخاب‌شده ممکن است بزرگ‌تر از آن چیزی باشد که فقط عرض ظرف نشان می‌دهد. بسیاری از نمایشگرها (اگر نه اکثر آن‌ها) دارای [نسبت پیکسل دستگاه (DPR)](/en-US/docs/Web/API/Window/devicePixelRatio) بزرگ‌تر از یک هستند. برای رندر تصویری شارپ با تراکم پیکسل فیزیکی صفحه، مرورگر مقدار راهنمای `sizes` منطبق‌شده را در DPR ضرب می‌کند و سپس از `srcset` انتخاب می‌کند. برای مثال، در یک نمایشگر ۲× با viewport حدوداً ۵۰۰ پیکسل، راهنمای منطبق‌شده `600px` است، اما مرورگر به دنبال تصویری حدود ۱۲۰۰ پیکسل می‌گردد و `1200.png` را به‌عنوان نزدیک‌ترین اندازهٔ موجود انتخاب کرده و سپس آن را برای تناسب با فضای موجود مقیاس‌بندی می‌کند.
 
    > [!NOTE]
-   > As a result, some of the images in the `srcset` may not be reachable on a particular display at some break points, and this may be browser dependent.
+   > در نتیجه، برخی از تصاویر موجود در `srcset` ممکن است در یک نمایشگر خاص در برخی نقاط شکست قابل دسترسی نباشند و این موضوع ممکن است به مرورگر بستگی داشته باشد.
 
 {{EmbedLiveSample("Selecting an image to fit window width", "", 600)}}
 
-The log provides information when a `load` event fires for the image, and when it intersects the visible viewport.
-Note that the image is lazy-loaded, so the `load` event should be fired just before the image enters the viewport.
+لاگ اطلاعاتی را هنگام رویداد `load` برای تصویر و زمانی که تصویر با viewport مرئی تلاقی می‌کند فراهم می‌کند. توجه داشته باشید که تصویر به‌صورت تأخیری بارگذاری می‌شود، بنابراین رویداد `load` باید درست قبل از ورود تصویر به viewport رخ دهد.
 
-### Automatic image selection for lazy loaded images
+### انتخاب خودکار تصویر برای تصاویر با بارگذاری تأخیری
 
-This example demonstrates how setting the `sizes` value to `auto` affects the selection of the image to load from the [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) when {{htmlelement("img")}} elements are lazy-loaded.
-It also allows you to see the effect of changing the size of a container on the loaded image.
+این مثال نشان می‌دهد که تنظیم مقدار `sizes` روی `auto` چگونه بر انتخاب تصویری که از [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) بارگذاری می‌شود تأثیر می‌گذارد، در حالی که عناصر {{htmlelement("img")}} به‌صورت تأخیری بارگذاری می‌شوند. همچنین به شما امکان می‌دهد تأثیر تغییر اندازهٔ یک ظرف را بر تصویر بارگذاری‌شده مشاهده کنید.
 
 #### HTML
 
-The HTML is similar to that in the previous example, except that it defines three near-identical {{htmlelement("img")}} elements, each with a `srcset` indicating 3 images that are `600px`, `400px`, and `200px` wide, and with a `sizes` value of `auto`.
-These are constrained within containers that are sized to select the different images.
+HTML تقریباً مشابه مثال قبلی است، با این تفاوت که سه عنصر {{htmlelement("img")}} تقریباً یکسان تعریف می‌کند که هر کدام دارای یک `srcset` شامل سه تصویر با عرض‌های `600px`، `400px` و `200px` و مقدار `sizes` برابر با `auto` هستند. این تصاویر درون ظرف‌هایی قرار دارند که اندازهٔ آن‌ها به‌گونه‌ای تنظیم شده است که تصاویر مختلفی انتخاب شوند.
 
 ```html
 <div id="scroll-container">
@@ -283,7 +264,7 @@ function log(text) {
 
 #### CSS
 
-Here we show the CSS classes that set the size of the different image containers.
+در اینجا کلاس‌های CSS را نشان می‌دهیم که اندازهٔ ظرف‌های مختلف تصویر را تنظیم می‌کنند.
 
 ```css hidden
 #scroll-container {
@@ -398,135 +379,12 @@ const observer = new IntersectionObserver(
 images.forEach((img) => observer.observe(img));
 ```
 
-The remaining CSS and the JavaScript that powers the slider, logging, and so on, are not shown (if you are interested in examining these, select "Play" to view the whole example in the interactive playground).
+باقی‌ماندهٔ CSS و جاوااسکریپتی که اسلایدر، ثبت گزارش (logging) و غیره را مدیریت می‌کند نشان داده نشده است (اگر علاقه‌مند به بررسی آن‌ها هستید، گزینهٔ «Play» را انتخاب کنید تا کل مثال را در زمین بازی تعاملی ببینید).
 
-#### Result
+#### نتیجه
 
-Scroll the frame to display the three images.
-The browser should have selected a different image for each based on the different width constraints.
-You can use the slider to modify the size of the container for the first image.
-Note that the browser may or may not select a new image to display as the size of the container changes as implementations are not required to react to dynamic changes.
+قاب را اسکرول کنید تا سه تصویر نمایش داده شوند. مرورگر باید بر اساس محدودیت‌های مختلف عرض، تصویر متفاوتی برای هر یک انتخاب کرده باشد. می‌توانید با اسلایدر اندازهٔ ظرف تصویر اول را تغییر دهید. توجه داشته باشید که ممکن است مرورگر با تغییر اندازهٔ ظرف، تصویر جدیدی را برای نمایش انتخاب کند یا نکند، زیرا پیاده‌سازی‌ها ملزم به واکنش به تغییرات پویا نیستند.
 
 {{EmbedLiveSample("Automatic image selection for lazy loaded images", "", 600)}}
 
-The log provides information when a `load` event fires for each image, and when an image intersects the visible viewport.
-Note that the images are lazy-loaded, so the `load` event should be fired just before the image enters the viewport.
-Also note that the `load` event also fires as you modify the container size for the first image, indicating when the browser has recalculated the layout (not necessarily that a new image has been loaded).
-
-### Blog example
-
-This example is a slightly more real-world case demonstrating how to select an image to fit a window width using source sizes.
-
-In this example, a blog-like layout is created, displaying some text and an image for which three size points are specified, depending on the width of the window.
-Three versions of the image are also available, with their widths specified. The browser takes all of this information and selects an image and width that best meets the specified values.
-
-How exactly the images are used may depend upon the browser and the pixel density of the user's display.
-
-Buttons at the bottom of the example let you actually modify the `sizes` property slightly, switching the largest of the three widths for the image between 40em and 50em.
-
-#### HTML
-
-```html
-<article>
-  <h1>An amazing headline</h1>
-  <div class="test"></div>
-  <p>
-    This is even more amazing content text. It's really spectacular. And
-    fascinating. Oh, it's also clever and witty. Award-winning stuff, I'm sure.
-  </p>
-  <img
-    src="new-york-skyline-wide.jpg"
-    srcset="
-      new-york-skyline-wide.jpg 3724w,
-      new-york-skyline-4by3.jpg 1961w,
-      new-york-skyline-tall.jpg 1060w
-    "
-    sizes="(50em <= width <= 60em) 50em,
-              (40em <= width < 50em) 30em,
-              (width < 40em) 20em"
-    alt="The New York City skyline on a beautiful day, with the One World Trade Center building in the middle." />
-  <p>
-    Then there's even more amazing stuff to say down here. Can you believe it? I
-    sure can't.
-  </p>
-
-  <button id="break40">Last Width: 40em</button>
-  <button id="break50">Last Width: 50em</button>
-</article>
-```
-
-#### CSS
-
-```css
-article {
-  margin: 1em;
-  max-width: 60em;
-  min-width: 20em;
-  border: 4em solid #880e4f;
-  border-radius: 7em;
-  padding: 1.5em;
-  font:
-    16px "Open Sans",
-    "Verdana",
-    "Helvetica",
-    "Arial",
-    sans-serif;
-}
-
-article img {
-  display: block;
-  max-width: 100%;
-  border: 1px solid #888888;
-  box-shadow: 0 0.5em 0.3em #888888;
-  margin-bottom: 1.25em;
-}
-```
-
-#### JavaScript
-
-The JavaScript code handles the two buttons that let you toggle the third width option between 40em and 50em; this is done by handling the {{domxref("Element.click_event", "click")}} event, using the JavaScript string {{jsxref("String.replace", "replace()")}} method to replace the relevant portion of the `sizes` string.
-
-```js
-const image = document.querySelector("article img");
-const break40 = document.getElementById("break40");
-const break50 = document.getElementById("break50");
-
-break40.addEventListener(
-  "click",
-  () => (image.sizes = image.sizes.replace(/50em,/, "40em,")),
-);
-
-break50.addEventListener(
-  "click",
-  () => (image.sizes = image.sizes.replace(/40em,/, "50em,")),
-);
-```
-
-#### Result
-
-The page is best {{LiveSampleLink('Blog example', 'viewed in its own window')}}, so you can adjust the sizes fully, and the example is not constrained by its containing frame.
-
-1. Enable the developer tools and change the width of the page — you should see the image change (and jump in size) at the sizes media query break points: `640px` (`40em`), and `800px` (`50em`).
-2. Set the width between `50em` `(800px)` and `60em` (`960px`) so that the last media query is selected.
-   Then alternately press each of the buttons and note how the layout size of the image is changed.
-
-{{EmbedLiveSample("Blog example", "", 1050)}}
-
-## Specifications
-
-{{Specifications}}
-
-## Browser compatibility
-
-{{Compat}}
-
-## See also
-
-- [Media queries](/en-US/docs/Web/CSS/Guides/Media_queries)
-- [Using media queries](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
-- [HTML images](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_images)
-- [Responsive images](/en-US/docs/Web/HTML/Guides/Responsive_images)
-- [Using the `srcset` and `sizes` attributes](/en-US/docs/Web/HTML/Reference/Elements/img#using_the_srcset_and_sizes_attributes)
-- {{domxref("HTMLImageElement.currentSrc")}}
-- {{domxref("HTMLImageElement.src")}}
-- {{domxref("HTMLImageElement.srcset")}}
+لاگ اطلاعاتی را هنگام رویداد `load` برای هر تصویر و زمانی که تصویر با viewport مرئی تلاقی می‌کند فراهم می‌کند. توجه داشته باشید که تصاویر به‌صورت
