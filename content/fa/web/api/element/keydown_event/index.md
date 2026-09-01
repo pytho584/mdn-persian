@@ -1,11 +1,5 @@
 ---
 title: "Element: keydown event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event"
-status: "needs-translation"
----
-
----
-title: "Element: keydown event"
 short-title: keydown
 slug: Web/API/Element/keydown_event
 page-type: web-api-event
@@ -14,19 +8,19 @@ browser-compat: api.Element.keydown_event
 
 {{APIRef("UI Events")}}
 
-The **`keydown`** event is fired when a key is pressed.
+رویداد **`keydown`** زمانی که یک کلید فشرده میشود، فعال میشود.
 
-Unlike the deprecated {{domxref("Element/keypress_event", "keypress")}} event, the `keydown` event is fired for all keys, regardless of whether they produce a character value.
+برخلاف رویداد منسوخ {{domxref("Element/keypress_event", "keypress")}}، رویداد `keydown` برای همه کلیدها، صرفنظر از اینکه مقدار کاراکتری تولید کنند یا نه، فعال میشود.
 
-The `keydown` and [`keyup`](/en-US/docs/Web/API/Element/keyup_event) events provide a code indicating which key is pressed, while `keypress` indicates which character was entered. For example, a lowercase "a" will be reported as 65 by `keydown` and `keyup`, but as 97 by `keypress`. An uppercase "A" is reported as 65 by all events.
+رویدادهای `keydown` و [`keyup`](/en-US/docs/Web/API/Element/keyup_event) کدی را ارائه میدهند که نشان میدهد کدام کلید فشرده شده است، در حالی که `keypress` نشان میدهد کدام کاراکتر وارد شده است. برای مثال، حرف کوچک «a» توسط `keydown` و `keyup` بهصورت ۶۵ گزارش میشود، اما توسط `keypress` بهصورت ۹۷. حرف بزرگ «A» توسط همه رویدادها بهصورت ۶۵ گزارش میشود.
 
-The event target of a key event is the currently focused element which is processing the keyboard activity. This includes: {{HTMLElement("input")}}, {{HTMLElement("textarea")}}, anything that is [`contentEditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable), and anything else that can be interacted with the keyboard, such as {{HTMLElement("a")}}, {{HTMLElement("button")}}, and {{HTMLElement("summary")}}. If no suitable element is in focus, the event target will be the {{HTMLElement("body")}} or the root. The event [bubbles](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling). It can reach {{domxref("Document")}} and {{domxref("Window")}}.
+هدف رویداد (event target) یک رویداد کلید، عنصری است که در حال حاضر فوکوس دارد و فعالیت صفحهکلید را پردازش میکند. این شامل {{HTMLElement("input")}}، {{HTMLElement("textarea")}}، هر چیزی که [`contentEditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) باشد، و هر چیز دیگری که میتوان با صفحهکلید با آن تعامل کرد، مانند {{HTMLElement("a")}}، {{HTMLElement("button")}} و {{HTMLElement("summary")}} میشود. اگر هیچ عنصر مناسبی در فوکوس نباشد، هدف رویداد {{HTMLElement("body")}} یا ریشه خواهد بود. رویداد [حبابگونه](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) است و میتواند به {{domxref("Document")}} و {{domxref("Window")}} برسد.
 
-The event target might change between different key events. For example, the `keydown` target for pressing the <kbd>Tab</kbd> key would be different from the `keyup` target, because the focus has changed.
+هدف رویداد ممکن است بین رویدادهای مختلف کلید تغییر کند. برای مثال، هدف `keydown` برای فشردن کلید <kbd>Tab</kbd> با هدف `keyup` متفاوت خواهد بود، زیرا فوکوس تغییر کرده است.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روشهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا با تنظیم یک ویژگی کنترلکننده رویداد استفاده کنید.
 
 ```js-nolint
 addEventListener("keydown", (event) => { })
@@ -34,20 +28,20 @@ addEventListener("keydown", (event) => { })
 onkeydown = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("KeyboardEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("KeyboardEvent")}}. ارث بردن از {{domxref("UIEvent")}} و {{domxref("Event")}}.
 
 {{InheritanceDiagram("KeyboardEvent")}}
 
-## Examples
+## مثالها
 
-### addEventListener keydown example
+### مثال addEventListener با keydown
 
-This example logs the {{domxref("KeyboardEvent.code")}} value whenever you press down a key inside the {{HtmlElement("input")}} element.
+این مثال مقدار {{domxref("KeyboardEvent.code")}} را هر بار که کلیدی را در داخل عنصر {{HtmlElement("input")}} فشار دهید، ثبت میکند.
 
 ```html
-<input placeholder="Click here, then press down a key." size="40" />
+<input placeholder="اینجا کلیک کنید، سپس یک کلید را فشار دهید." size="40" />
 <p id="log"></p>
 ```
 
@@ -64,31 +58,31 @@ function logKey(e) {
 
 {{EmbedLiveSample("addEventListener_keydown_example")}}
 
-### keydown events with IME
+### رویدادهای keydown با IME
 
-Since Firefox 65, the `keydown` and [`keyup`](/en-US/docs/Web/API/Element/keyup_event) events are now fired during {{glossary("Input method editor")}} composition, to improve cross-browser compatibility for CJKT users ([Firefox bug 354358](https://bugzil.la/354358)). To ignore all `keydown` events that are part of composition, do something like this (229 is a special value set for a `keyCode` relating to an event that has been processed by an IME):
+از Firefox ۶۵ به بعد، رویدادهای `keydown` و [`keyup`](/en-US/docs/Web/API/Element/keyup_event) اکنون در طول ترکیب در {{glossary("Input method editor")}} فعال میشوند تا سازگاری بین مرورگرها برای کاربران CJKT بهبود یابد ([بحث ۳۵۴۳۵۸ در Bugzilla](https://bugzil.la/354358)). برای نادیده گرفتن همه رویدادهای `keydown` که بخشی از ترکیب هستند، کاری شبیه به این انجام دهید (۲۲۹ یک مقدار ویژه برای `keyCode` است که مربوط به رویدادی است که توسط IME پردازش شده است):
 
 ```js
 eventTarget.addEventListener("keydown", (event) => {
   if (event.isComposing || event.keyCode === 229) {
     return;
   }
-  // do something
+  // انجام کار
 });
 ```
 
 > [!NOTE]
-> `compositionstart` may fire _after_ `keydown` when typing the first character that opens up the IME, and `compositionend` may fire _before_ `keydown` when typing the last character that closes the IME. In these cases, `isComposing` is false even when the event is part of composition. However, {{domxref("KeyboardEvent.keyCode")}} is still `229` in these cases, so it's still advisable to check `keyCode` as well, although it's deprecated.
+> `compositionstart` ممکن است _پس از_ `keydown` فعال شود، زمانی که اولین نویسه را تایپ میکنید که IME را باز میکند، و `compositionend` ممکن است _قبل از_ `keydown` فعال شود، زمانی که آخرین نویسه را تایپ میکنید که IME را میبندد. در این موارد، `isComposing` حتی زمانی که رویداد بخشی از ترکیب است، `false` است. با این حال، {{domxref("KeyboardEvent.keyCode")}} در این موارد همچنان `229` است، بنابراین همچنان توصیه میشود که `keyCode` را نیز بررسی کنید، اگرچه منسوخ شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [`input`](/en-US/docs/Web/API/Element/input_event)
 - [`keypress`](/en-US/docs/Web/API/Element/keypress_event)
