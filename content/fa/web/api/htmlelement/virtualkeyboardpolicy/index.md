@@ -1,7 +1,5 @@
 ---
 title: "HTMLElement: virtualKeyboardPolicy property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/virtualKeyboardPolicy"
-status: "needs-translation"
 ---
 
 ---
@@ -16,22 +14,22 @@ browser-compat: api.HTMLElement.virtualKeyboardPolicy
 
 {{APIRef("VirtualKeyboard API")}}{{SeeCompatTable}}
 
-The **`virtualKeyboardPolicy`** property of the {{domxref("HTMLElement")}} interface gets and sets a string indicating the on-screen virtual keyboard behavior on devices such as tablets, mobile phones, or other devices where a hardware keyboard may not be available, if the element's content is editable (for example, it is an {{htmlelement("input")}} or {{htmlelement("textarea")}} element, or an element with the [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) attribute set).
+ویژگی **`virtualKeyboardPolicy`** از واسط {{domxref("HTMLElement")}} یک رشته را دریافت و تنظیم می‌کند که رفتار صفحه‌کلید مجازی روی صفحه را در دستگاه‌هایی مانند تبلت‌ها، تلفن‌های همراه یا سایر دستگاه‌هایی که ممکن است صفحه‌کلید سخت‌افزاری در دسترس نباشد، مشخص می‌سازد — مشروط بر اینکه محتوای عنصر قابل ویرایش باشد (برای مثال، یک عنصر {{htmlelement("input")}} یا {{htmlelement("textarea")}} باشد، یا عنصری که ویژگی [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) روی آن تنظیم شده است).
 
-It reflects the value of the [`virtualkeyboardpolicy`](/en-US/docs/Web/HTML/Reference/Global_attributes/virtualkeyboardpolicy) HTML global attribute.
+این ویژگی، مقدار ویژگی سراسری HTML یعنی [`virtualkeyboardpolicy`](/en-US/docs/Web/HTML/Reference/Global_attributes/virtualkeyboardpolicy) را منعکس می‌کند.
 
 ## Value
 
-An enumerated value; possible values are:
+یک مقدار شمارشی (enumerated) است؛ مقادیر ممکن عبارت‌اند از:
 
-- `"auto"` or an empty string (`""`)
-  - : The browser automatically shows the virtual keyboard when the user taps or focuses the element.
+- `"auto"` یا یک رشتهٔ خالی (`""`)
+  - مرورگر به‌طور خودکار صفحه‌کلید مجازی را وقتی کاربر روی عنصر ضربه می‌زند یا آن را فوکوس می‌کند، نمایش می‌دهد.
 - `"manual"`
-  - : The browser does not automatically show the virtual keyboard: showing/hiding the virtual keyboard is handled manually by the script.
+  - مرورگر به‌طور خودکار صفحه‌کلید مجازی را نمایش نمی‌دهد؛ نمایش/پنهان کردن صفحه‌کلید مجازی به صورت دستی و توسط اسکریپت انجام می‌شود.
 
 ## Examples
 
-The following example shows how to control the on-screen virtual keyboard behavior via script:
+مثال زیر نشان می‌دهد که چگونه رفتار صفحه‌کلید مجازی روی صفحه را از طریق اسکریپت کنترل کنیم:
 
 ```js
 const element = document.querySelector("input");
@@ -50,4 +48,4 @@ element.virtualKeyboardPolicy = "manual";
 
 ## See also
 
-- [`virtualkeyboardpolicy`](/en-US/docs/Web/HTML/Reference/Global_attributes/virtualkeyboardpolicy) HTML global attribute
+- [`virtualkeyboardpolicy`](/en-US/docs/Web/HTML/Reference/Global_attributes/virtualkeyboardpolicy) ویژگی سراسری HTML
