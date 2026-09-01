@@ -1,11 +1,5 @@
 ---
 title: "HTMLSlotElement: assignedElements() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement/assignedElements"
-status: "needs-translation"
----
-
----
-title: "HTMLSlotElement: assignedElements() method"
 short-title: assignedElements()
 slug: Web/API/HTMLSlotElement/assignedElements
 page-type: web-api-instance-method
@@ -14,43 +8,39 @@ browser-compat: api.HTMLSlotElement.assignedElements
 
 {{APIRef("Shadow DOM API")}}
 
-The **`assignedElements()`** method of the {{domxref("HTMLSlotElement")}}
-interface returns a sequence of the elements assigned to this slot (and no
-other nodes).
+روش **`assignedElements()`** در interface {{domxref("HTMLSlotElement")}} دنباله‌ای از عناصر اختصاص‌داده‌شده به این slot را برمی‌گرداند (و هیچ گره دیگری را).
 
-If the `flatten` option is set to `true`, it returns a sequence of both the elements assigned to this slot, as well as the elements assigned to any other slots that are descendants of this slot. If no assigned elements are found, it returns the slot's fallback content.
+اگر گزینه `flatten` برابر با `true` تنظیم شود، دنباله‌ای شامل هم عناصر اختصاص‌داده‌شده به این slot و هم عناصر اختصاص‌داده‌شده به هر slot فرزند دیگری که از نوادگان این slot هستند، برگردانده می‌شود. اگر هیچ عنصر اختصاص‌داده‌شده‌ای یافت نشود، محتوای جایگزین (fallback) slot برگردانده می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 assignedElements()
 assignedElements(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object that sets options for the nodes to be returned. The available options are:
+  - : یک شیء که گزینه‌های مربوط به گره‌های بازگشتی را تنظیم می‌کند. گزینه‌های موجود عبارت‌اند از:
     - `flatten`
-      - : A boolean value indicating whether to return the
-        assigned elements of any available child `<slot>` elements
-        (`true`) or not (`false`). Defaults to `false`.
+      - : یک مقدار بولی که مشخص می‌کند آیا عناصر اختصاص‌داده‌شده به هر عنصر `<slot>` فرزند موجود بازگردانده شوند (`true`) یا نه (`false`). پیش‌فرض `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-An array of elements.
+یک آرایه از عناصر.
 
-## Examples
+## مثال‌ها
 
 ```js
 let slots = this.shadowRoot.querySelector("slot");
 let elements = slots.assignedElements({ flatten: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
