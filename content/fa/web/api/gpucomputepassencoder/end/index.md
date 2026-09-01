@@ -1,11 +1,5 @@
 ---
 title: "GPUComputePassEncoder: end() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/end"
-status: "needs-translation"
----
-
----
-title: "GPUComputePassEncoder: end() method"
 short-title: end()
 slug: Web/API/GPUComputePassEncoder/end
 page-type: web-api-instance-method
@@ -14,76 +8,75 @@ browser-compat: api.GPUComputePassEncoder.end
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`end()`** method of the
-{{domxref("GPUComputePassEncoder")}} interface completes recording of the current compute pass command sequence.
+متد **`end()`** در رابط {{domxref("GPUComputePassEncoder")}} ضبط دنباله دستوراتِ پاس محاسباتی جاری را تکمیل می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 end()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`end()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUComputePassEncoder")}} becomes invalid:
+هنگام فراخوانی **`end()`** معیارهای زیر باید برآورده شوند؛ در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPUComputePassEncoder")}} نامعتبر می‌شود:
 
-- The {{domxref("GPUComputePassEncoder")}} is open (i.e., not already ended via an `end()` call).
-- any {{domxref("GPUComputePassEncoder.pushDebugGroup", "pushDebugGroup()")}} calls made on this encoder have a corresponding {{domxref("GPUComputePassEncoder.popDebugGroup", "popDebugGroup()")}} call before `end()` is called.
+- {{domxref("GPUComputePassEncoder")}} باز باشد (یعنی قبلاً با یک فراخوانی `end()` پایان نیافته باشد).
+- هر فراخوانی {{domxref("GPUComputePassEncoder.pushDebugGroup", "pushDebugGroup()")}} که روی این انکودر انجام شده باشد، پیش از فراخوانی `end()` یک فراخوانی متناظر {{domxref("GPUComputePassEncoder.popDebugGroup", "popDebugGroup()")}} داشته باشد.
 
-## Examples
+## مثال‌ها
 
-In our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/), several commands are recorded via a {{domxref("GPUCommandEncoder")}}. Most of these commands originate from the {{domxref("GPUComputePassEncoder")}} created via {{domxref("GPUCommandEncoder.beginComputePass()")}}.
+در [نمونه محاسبات پایه](https://mdn.github.io/dom-examples/webgpu-compute-demo/)، چندین دستور از طریق یک {{domxref("GPUCommandEncoder")}} ضبط می‌شوند. بیشتر این دستورها از {{domxref("GPUComputePassEncoder")}} می‌آیند که از طریق {{domxref("GPUCommandEncoder.beginComputePass()")}} ساخته شده است.
 
 ```js
 const BUFFER_SIZE = 1000;
 
 // …
 
-// Create GPUCommandEncoder to encode commands to issue to the GPU
+// ساخت GPUCommandEncoder برای رمزگذاری دستورهایی که به GPU ارسال می‌شوند
 const commandEncoder = device.createCommandEncoder();
 
-// Initiate compute pass
+// شروع پاس محاسباتی
 const passEncoder = commandEncoder.beginComputePass();
 
-// Issue commands
+// صدور دستورها
 passEncoder.setPipeline(computePipeline);
 passEncoder.setBindGroup(0, bindGroup);
 passEncoder.dispatchWorkgroups(Math.ceil(BUFFER_SIZE / 64));
 
-// End the render pass
+// پایان دادن به پاس رندر
 passEncoder.end();
 
-// Copy output buffer to staging buffer
+// کپی کردن بافر خروجی به بافر موقت
 commandEncoder.copyBufferToBuffer(
   output,
-  0, // Source offset
+  0, // آفست مبدأ
   stagingBuffer,
-  0, // Destination offset
+  0, // آفست مقصد
   BUFFER_SIZE,
 );
 
-// End frame by passing array of command buffers to command queue for execution
+// پایان فریم با ارسال آرایه‌ای از بافرهای فرمان به صف فرمان برای اجرا
 device.queue.submit([commandEncoder.finish()]);
 
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
