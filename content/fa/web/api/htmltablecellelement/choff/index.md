@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableCellElement: chOff property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/chOff"
-status: "needs-translation"
 ---
 
 ---
@@ -16,25 +14,25 @@ browser-compat: api.HTMLTableCellElement.chOff
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The **`chOff`** property of the {{domxref("HTMLTableCellElement")}} interface does nothing. It reflects the `charoff` attribute of the cell element.
+**`chOff`** 属性属于 {{domxref("HTMLTableCellElement")}} 接口，但没有任何作用。它只反射单元格元素的 `charoff` 属性。
 
 > [!NOTE]
-> This property was designed to participate in an ability to align table cell content on a specific character (typically the decimal point), but was never implemented by browsers.
+> 此属性原本设计用于支持将表格单元格内容按特定字符（通常是小数点）对齐，但浏览器从未实现这一功能。
 >
-> To achieve such alignment, watch for the support of a string value with the {{cssxref("text-align")}} CSS property.
+> 若要实现此类对齐，请关注 {{cssxref("text-align")}} CSS 属性对字符串值的支持情况。
 
-## Value
+## 值
 
-An integer.
+一个整数。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{cssxref("text-align")}}
