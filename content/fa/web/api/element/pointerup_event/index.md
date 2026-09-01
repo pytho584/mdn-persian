@@ -1,7 +1,5 @@
 ---
 title: "Element: pointerup event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerup_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.Element.pointerup_event
 
 {{APIRef("Pointer Events")}}
 
-The `pointerup` event is fired when a pointer is no longer active. Remember that it is possible to get a [`pointercancel`](/en-US/docs/Web/API/Element/pointercancel_event) event instead.
+رویداد `pointerup` زمانی پرتاب می‌شود که یک اشاره‌گر دیگر فعال نباشد. به خاطر داشته باشید که ممکن است به‌جای آن رویداد [`pointercancel`](/en-US/docs/Web/API/Element/pointercancel_event) رخ دهد.
 
-This behavior is different from {{domxref("Element/mouseup_event", "mouseup")}} events. When using a physical mouse, `mouseup` events fire whenever any button on a mouse is released. `pointerup` events fire only upon the last button release; previous button releases, while other buttons are held down, don't fire `pointerup` events.
+این رفتار با رویدادهای `mouseup` متفاوت است. هنگام استفاده از یک موس فیزیکی، رویدادهای `mouseup` هر بار که هر دکمه‌ای از موس رها شود، پرتاب می‌شوند. رویدادهای `pointerup` فقط پس از رها شدن آخرین دکمه پرتاب می‌شوند؛ رها شدن دکمه‌های قبلی، در حالی که سایر دکمه‌ها نگه داشته شده‌اند، رویداد `pointerup` را پرتاب نمی‌کنند.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("pointerup", (event) => { })
@@ -28,15 +26,15 @@ addEventListener("pointerup", (event) => { })
 onpointerup = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PointerEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PointerEvent")}} که از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("PointerEvent")}}
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const para = document.querySelector("p");
@@ -46,7 +44,7 @@ para.addEventListener("pointerup", (event) => {
 });
 ```
 
-Using the `onpointerup` event handler property:
+استفاده از ویژگی مدیریت رویداد `onpointerup`:
 
 ```js
 const para = document.querySelector("p");
@@ -56,17 +54,17 @@ para.onpointerup = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events
+- رویدادهای مرتبط
   - {{domxref('Element/gotpointercapture_event', 'gotpointercapture')}}
   - {{domxref('Element/lostpointercapture_event', 'lostpointercapture')}}
   - {{domxref('Element/pointerover_event', 'pointerover')}}
