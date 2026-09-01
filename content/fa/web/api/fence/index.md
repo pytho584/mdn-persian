@@ -1,10 +1,4 @@
 ---
-title: "Fence"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Fence"
-status: "needs-translation"
----
-
----
 title: Fence
 slug: Web/API/Fence
 page-type: web-api-interface
@@ -15,25 +9,25 @@ browser-compat: api.Fence
 
 {{SeeCompatTable}}{{APIRef("Fenced Frame API")}}
 
-The **`Fence`** interface of the {{domxref("Fenced Frame API", "Fenced Frame API", "", "nocode")}} contains several functions relevant to {{htmlelement("fencedframe")}} functionality.
+رابط **`Fence`** از {{domxref("Fenced Frame API", "Fenced Frame API", "", "nocode")}} شامل چندین تابع مرتبط با عملکرد {{htmlelement("fencedframe")}} است.
 
-`Fence` objects are accessed through the {{domxref("Window.fence")}} property, but they are only available to documents embedded inside {{htmlelement("fencedframe")}}s (loaded via {{domxref("FencedFrameConfig")}}s) or {{htmlelement("iframe")}}s (loaded via opaque URNs).
+اشیاء `Fence` از طریق ویژگی {{domxref("Window.fence")}} قابل دسترسی هستند، اما فقط برای اسنادی که درون {{htmlelement("fencedframe")}}ها (بارگذاری شده از طریق {{domxref("FencedFrameConfig")}}ها) یا {{htmlelement("iframe")}}ها (بارگذاری شده از طریق URNهای مبهم) جاسازی شده‌اند، در دسترس هستند.
 
 > [!NOTE]
-> See [How do `<fencedframe>`s work?](/en-US/docs/Web/API/Fenced_frame_API#how_do_fencedframes_work) for some description around `FencedFrameConfig`s and opaque URNs.
+> برای توضیحاتی درباره `FencedFrameConfig`ها و URNهای مبهم، به [چگونه `<fencedframe>`ها کار می‌کنند؟](/en-US/docs/Web/API/Fenced_frame_API#how_do_fencedframes_work) مراجعه کنید.
 
 {{InheritanceDiagram}}
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("Fence.getNestedConfigs", "getNestedConfigs()")}} {{Experimental_Inline}}
-  - : Returns the {{domxref("FencedFrameConfig")}}s loaded into `<fencedframe>`s embedded inside the current `<fencedframe>`.
+  - : آرایه‌ای از `FencedFrameConfig`های بارگذاری شده در `<fencedframe>`های جاسازی شده درون `<fencedframe>` جاری را برمی‌گرداند.
 - {{domxref("Fence.reportEvent", "reportEvent()")}} {{Experimental_Inline}}
-  - : Triggers the submission of report data via a [beacon](/en-US/docs/Web/API/Beacon_API) to one ore more specific URLs registered via the {{domxref("InterestGroupReportingScriptRunnerGlobalScope.registerAdBeacon", "registerAdBeacon()")}} method of the [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience), for the purpose of collecting ad auction results.
+  - : ارسال داده‌های گزارش را از طریق یک [beacon](/en-US/docs/Web/API/Beacon_API) به یک یا چند URL خاص که از طریق متد {{domxref("InterestGroupReportingScriptRunnerGlobalScope.registerAdBeacon", "registerAdBeacon()")}} از [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience) ثبت شده‌اند، به منظور جمع‌آوری نتایج حراج تبلیغات، راه‌اندازی می‌کند.
 - {{domxref("Fence.setReportEventDataForAutomaticBeacons", "setReportEventDataForAutomaticBeacons()")}} {{Experimental_Inline}}
-  - : Specifies event data that will be sent when a navigation occurs inside a `<fencedframe>`. This data will be sent via an automatic beacon to one or more specific URLs registered via the {{domxref("InterestGroupReportingScriptRunnerGlobalScope.registerAdBeacon", "registerAdBeacon()")}} method of the [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience), for the purpose of collecting reporting data for ad auction results.
+  - : داده‌های رویدادی را مشخص می‌کند که هنگام یک پیمایش درون `<fencedframe>` ارسال خواهد شد. این داده‌ها از طریق یک beacon خودکار به یک یا چند URL خاص که از طریق متد {{domxref("InterestGroupReportingScriptRunnerGlobalScope.registerAdBeacon", "registerAdBeacon()")}} از [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience) ثبت شده‌اند، به منظور جمع‌آوری داده‌های گزارش برای نتایج حراج تبلیغات، ارسال می‌شوند.
 
-## Examples
+## مثال‌ها
 
 ```js
 window.fence.reportEvent({
@@ -43,15 +37,15 @@ window.fence.reportEvent({
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Fenced frames](https://privacysandbox.google.com/private-advertising/fenced-frame) on privacysandbox.google.com
-- [The Privacy Sandbox](https://privacysandbox.google.com/) on privacysandbox.google.com
+- [قاب‌های حصاردار (Fenced frames)](https://privacysandbox.google.com/private-advertising/fenced-frame) در privacysandbox.google.com
+- [پلتفرم Privacy Sandbox](https://privacysandbox.google.com/) در privacysandbox.google.com
