@@ -1,11 +1,5 @@
 ---
 title: "GPUBuffer: unmap() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/unmap"
-status: "needs-translation"
----
-
----
-title: "GPUBuffer: unmap() method"
 short-title: unmap()
 slug: Web/API/GPUBuffer/unmap
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.GPUBuffer.unmap
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`unmap()`** method of the
-{{domxref("GPUBuffer")}} interface unmaps the mapped range of the `GPUBuffer`, making its contents available for use by the GPU again after it has previously been mapped with {{domxref("GPUBuffer.mapAsync()")}} (the GPU cannot access a mapped `GPUBuffer`).
+متد **`unmap()`** در رابط {{domxref("GPUBuffer")}} محدودهٔ نگاشت‌شدهٔ `GPUBuffer` را از حالت نگاشت خارج می‌کند و محتویات آن را دوباره برای استفاده توسط GPU در دسترس قرار می‌دهد، پس از آنکه قبلاً با {{domxref("GPUBuffer.mapAsync()")}} نگاشت شده باشد (GPU به یک `GPUBuffer` نگاشت‌شده دسترسی ندارد).
 
-When `unmap()` is called, any {{jsxref("ArrayBuffer")}}s created via {{domxref("GPUBuffer.getMappedRange()")}} are detached.
+هنگامی که `unmap()` فراخوانی می‌شود، هر {{jsxref("ArrayBuffer")}} که از طریق {{domxref("GPUBuffer.getMappedRange()")}} ایجاد شده باشد، جدا (detach) می‌شود.
 
 ## Syntax
 
@@ -25,26 +18,26 @@ When `unmap()` is called, any {{jsxref("ArrayBuffer")}}s created via {{domxref("
 unmap()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-See the [main `GPUBuffer` page](/en-US/docs/Web/API/GPUBuffer#examples) for an example.
+برای مشاهدهٔ مثال، به [صفحهٔ اصلی `GPUBuffer`](/en-US/docs/Web/API/GPUBuffer#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
