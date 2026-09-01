@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableElement: frame property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/frame"
-status: "needs-translation"
 ---
 
 ---
@@ -16,34 +14,32 @@ browser-compat: api.HTMLTableElement.frame
 
 {{APIRef("HTML DOM")}} {{Deprecated_Header}}
 
-The {{domxref("HTMLTableElement")}} interface's **`frame`**
-property is a string that indicates which of the table's exterior borders should be
-drawn.
+مخصوصیت **`frame`** در رابط {{domxref("HTMLTableElement")}} یک رشته است که مشخص می‌کند کدام یک از مرزهای بیرونی جدول باید ترسیم شوند.
 
-## Value
+## مقدار
 
-One of the following:
+یکی از مقادیر زیر:
 
 - `void`
-  - : No sides. This is the default.
+  - : هیچ ضلعی. این مقدار پیش‌فرض است.
 - `"above"`
-  - : Top side
+  - : فقط ضلع بالا
 - `"below"`
-  - : Bottom side
+  - : فقط ضلع پایین
 - `"hsides"`
-  - : Top and bottom only
+  - : فقط بالا و پایین
 - `"vsides"`
-  - : Right and left sides only
+  - : فقط راست و چپ
 - `"lhs"`
-  - : Left-hand side only
+  - : فقط سمت چپ
 - `"rhs"`
-  - : Right-hand side only
+  - : فقط سمت راست
 - `"box"`
-  - : All four sides
+  - : هر چهار ضلع
 - `"border"`
-  - : All four sides
+  - : هر چهار ضلع
 
-## Examples
+## مثال‌ها
 
 ```js
 // Set the frame of TableA to 'border'
@@ -52,10 +48,10 @@ t.frame = "border";
 t.border = "2px";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
