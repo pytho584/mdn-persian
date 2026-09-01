@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: src property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/src"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: src property"
 short-title: src
 slug: Web/API/HTMLIFrameElement/src
 page-type: web-api-instance-property
@@ -14,12 +8,11 @@ browser-compat: api.HTMLIFrameElement.src
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLIFrameElement.src`**
-A string that reflects the [`src`](/en-US/docs/Web/HTML/Reference/Elements/iframe#src) HTML attribute, containing the address of the content to be embedded.
+خاصیت **`HTMLIFrameElement.src`** یک رشته است که منعکس‌کننده ویژگی HTML [`src`](/en-US/docs/Web/HTML/Reference/Elements/iframe#src) بوده و حاوی آدرس محتوایی است که قرار است جاسازی شود.
 
-Note that programmatically removing an `<iframe>`'s src attribute (e.g., via {{domxref("Element.removeAttribute()")}}) causes `about:blank` to be loaded in the frame.
+توجه داشته باشید که حذف برنامه‌ای ویژگی `src` یک `<iframe>` (مثلاً از طریق {{domxref("Element.removeAttribute()")}}) باعث می‌شود `about:blank` در فریم بارگذاری شود.
 
-## Example
+## مثال
 
 ```js
 const iframe = document.createElement("iframe");
@@ -28,15 +21,15 @@ const body = document.querySelector("body");
 body.appendChild(iframe); // Fetch the image using the complete URL as the referrer
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("HTMLEmbedElement.src")}}
 - {{DOMxRef("HTMLImageElement.src")}}
