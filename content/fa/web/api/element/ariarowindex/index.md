@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaRowIndex property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaRowIndex"
-status: "needs-translation"
----
-
----
-title: "Element: ariaRowIndex property"
 short-title: ariaRowIndex
 slug: Web/API/Element/ariaRowIndex
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Element.ariaRowIndex
 
 {{APIRef("DOM")}}
 
-The **`ariaRowIndex`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) attribute, which defines an element's row index or position with respect to the total number of rows within a table, grid, or treegrid.
+ویژگی **`ariaRowIndex`** از رابط {{domxref("Element")}} مقدار ویژگی [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) را نشان می‌دهد؛ این ویژگی شاخص سطر یک عنصر یا موقعیت آن را نسبت به تعداد کل سطرها در یک جدول، گرید یا treegrid تعیین می‌کند.
 
-## Value
+## مقدار
 
-A string which contains an integer.
+یک رشته (string) که شامل یک عدد صحیح است.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-rowindex` attribute on the element with an ID of `role-heading` is set to "1". Using `ariaRowIndex` we update the value to "2".
+در این مثال، ویژگی `aria-rowindex` روی عنصری با شناسهٔ `role-heading` به "1" تنظیم شده است. با استفاده از `ariaRowIndex` مقدار را به "2" تغییر می‌دهیم.
 
 ```html
 <table
@@ -80,14 +74,14 @@ el.ariaRowIndex = "2";
 console.log(el.ariaRowIndex); // 2
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
+- [نقش جدول در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
