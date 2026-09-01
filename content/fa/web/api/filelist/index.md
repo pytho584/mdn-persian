@@ -1,10 +1,4 @@
 ---
-title: "FileList"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileList"
-status: "needs-translation"
----
-
----
 title: FileList
 slug: Web/API/FileList
 page-type: web-api-interface
@@ -13,39 +7,39 @@ browser-compat: api.FileList
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`FileList`** interface represents an object of this type returned by the `files` property of the HTML {{HTMLElement("input")}} element; this lets you access the list of files selected with the `<input type="file">` element. It's also used for a list of files dropped into web content when using the drag and drop API; see the {{domxref("DataTransfer")}} object for details on this usage.
+رابطه‌ی **`FileList`**، شیءای از این نوع را نمایش می‌دهد که توسط ویژگی `files` عنصر HTML {{HTMLElement("input")}} بازگردانده می‌شود؛ این امکان را به شما می‌دهد تا به فهرست فایل‌های انتخاب‌شده با عنصر `<input type="file">` دسترسی داشته باشید. همچنین برای فهرست فایل‌هایی که هنگام استفاده از API کشیدن و رها کردن (drag and drop) در محتوای وب رها می‌شوند نیز استفاده می‌شود؛ برای جزئیات این کاربرد، شیء {{domxref("DataTransfer")}} را ببینید.
 
-All `<input>` element nodes have a `files` attribute of type `FileList` on them which allows access to the items in this list. For example, if the HTML includes the following file input:
+همه‌ی گره‌های عنصر `<input>` دارای ویژگی `files` از نوع `FileList` هستند که دسترسی به موارد موجود در این فهرست را فراهم می‌کند. برای مثال، اگر HTML شامل ورودی فایل زیر باشد:
 
 ```html
 <input id="fileItem" type="file" />
 ```
 
-The following line of code fetches the first file in the node's file list as a {{domxref("File")}} object:
+خط کد زیر، اولین فایل را از فهرست فایل‌های گره به‌صورت یک شیء {{domxref("File")}} دریافت می‌کند:
 
 ```js
 const file = document.getElementById("fileItem").files[0];
 ```
 
-This interface was an [attempt to create an unmodifiable list](https://stackoverflow.com/questions/74630989/why-use-domstringlist-rather-than-an-array/74641156#74641156) and only continues to be supported to not break code that's already using it. Modern APIs represent list structures using types based on JavaScript [arrays](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), thus making many array methods available, and at the same time imposing additional semantics on their usage (such as making their items read-only).
+این رابط، [تلاشی برای ایجاد یک فهرست غیرقابل تغییر](https://stackoverflow.com/questions/74630989/why-use-domstringlist-rather-than-an-array/74641156#74641156) بود و فقط برای این پشتیبانی می‌شود که کدهایی که قبلاً از آن استفاده می‌کنند دچار مشکل نشوند. APIهای مدرن، ساختارهای فهرستی را با استفاده از انواع مبتنی بر [آرایه‌های](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) جاوااسکریپت نمایش می‌دهند، بنابراین بسیاری از متدهای آرایه در دسترس هستند و در عین حال معنای دیگری را بر استفاده از آن‌ها تحمیل می‌کنند (مانند فقط‌خواندنی کردن موارد آن‌ها).
 
-These historical reasons do not mean that you as a developer should avoid `FileList`. You don't create `FileList` objects yourself, but you get them from APIs such as {{domxref("HTMLInputElement.files")}}, and these APIs are not deprecated. However, be careful of the semantic differences from a real array.
+این دلایل تاریخی به این معنا نیست که شما به‌عنوان یک توسعه‌دهنده باید از `FileList` اجتناب کنید. شما خودتان اشیاء `FileList` را نمی‌سازید، بلکه آن‌ها را از APIهایی مانند {{domxref("HTMLInputElement.files")}} دریافت می‌کنید و این APIها منسوخ نشده‌اند. با این حال، مراقب تفاوت‌های معنایی آن با یک آرایه‌ی واقعی باشید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{DOMxRef("FileList.length", "length")}} {{ReadOnlyInline}}
-  - : A read-only value indicating the number of files in the list.
+  - : یک مقدار فقط‌خواندنی که تعداد فایل‌های موجود در فهرست را نشان می‌دهد.
 
-## Instance methods
+## متدهای نمونه
 
 - {{DOMxRef("FileList.item()", "item()")}}
-  - : Returns a {{domxref("File")}} object representing the file at the specified index in the file list.
+  - : یک شیء {{domxref("File")}} را بازمی‌گرداند که نشان‌دهنده‌ی فایل در فهرست فایل‌ها با ایندکس مشخص‌شده است.
 
-## Example
+## مثال
 
-### Logging filenames
+### ثبت نام فایل‌ها
 
-In this example, we log the names of all the files selected by the user.
+در این مثال، نام همه‌ی فایل‌های انتخاب‌شده توسط کاربر را ثبت می‌کنیم.
 
 #### HTML
 
@@ -77,20 +71,20 @@ fileInput.addEventListener("change", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Logging filenames")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using files from web applications](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
+- [استفاده از فایل‌ها در برنامه‌های وب](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
 - {{domxref("File")}}
 - {{domxref("FileReader")}}
