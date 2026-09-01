@@ -1,11 +1,5 @@
 ---
 title: "Document: designMode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/designMode"
-status: "needs-translation"
----
-
----
-title: "Document: designMode property"
 short-title: designMode
 slug: Web/API/Document/designMode
 page-type: web-api-instance-property
@@ -14,34 +8,28 @@ browser-compat: api.Document.designMode
 
 {{APIRef("DOM")}}
 
-**`document.designMode`** controls whether the entire document
-is editable. Valid values are `"on"` and `"off"`. According to the
-specification, this property is meant to default to `"off"`. Firefox follows
-this standard. The earlier versions of Chrome and IE default to `"inherit"`.
-Starting in Chrome 43, the default is `"off"` and `"inherit"` is
-no longer supported. In IE6-10, the value is capitalized.
+**`document.designMode`** 控制整个文档是否可编辑。有效值为 `"on"` 和 `"off"`。根据规范，此属性默认应为 `"off"`。Firefox 遵循此标准。早期版本的 Chrome 和 IE 默认值为 `"inherit"`。从 Chrome 43 开始，默认值为 `"off"`，且不再支持 `"inherit"`。在 IE6-10 中，该值是大写的。
 
-## Value
+## 值
 
-A string indicating whether `designMode` is (or should be) set to on or off.
-Valid values are `on` and `off`.
+一个字符串，指示 `designMode` 是（或应当）设置为开还是关。有效值为 `on` 和 `off`。
 
-## Examples
+## 示例
 
-Make an {{HTMLElement("iframe")}}'s document editable:
+使 {{HTMLElement("iframe")}} 的文档可编辑：
 
 ```js
 iframeNode.contentDocument.designMode = "on";
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{domxref("HTMLElement.contentEditable")}}
