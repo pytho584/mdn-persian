@@ -1,7 +1,5 @@
 ---
 title: "CSSStyleDeclaration"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration"
-status: "needs-translation"
 ---
 
 ---
@@ -13,53 +11,53 @@ browser-compat: api.CSSStyleDeclaration
 
 {{APIRef("CSSOM")}}
 
-The **`CSSStyleDeclaration`** interface is the base class for objects that represent CSS declaration blocks with different supported sets of CSS style information:
+رابط **`CSSStyleDeclaration`** کلاس پایه برای اشیایی است که بلوک‌های اعلامیهٔ CSS را با مجموعه‌های مختلفی از اطلاعات سبک CSS پشتیبانی‌شده نشان می‌دهند:
 
-- {{domxref("CSSStyleProperties")}} — CSS styles declared in stylesheet ({{domxref("CSSStyleRule.style")}}), inline styles for an element such as {{DOMxRef("HTMLElement/style","HTMLElement")}}, {{domxref("SVGElement/style","SVGElement")}}, and {{domxref("MathMLElement/style","MathMLElement")}}, or the computed style for an element returned by {{DOMxRef("Window.getComputedStyle()")}}.
-- {{domxref("CSSPageDescriptors")}} — Styles for CSS [at-rules](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+- {{domxref("CSSStyleProperties")}} — سبک‌های CSS که در شیوه‌نامه اعلام شده‌اند ({{domxref("CSSStyleRule.style")}})، سبک‌های درون‌خطی برای یک عنصر مانند {{DOMxRef("HTMLElement/style","HTMLElement")}}، {{domxref("SVGElement/style","SVGElement")}} و {{domxref("MathMLElement/style","MathMLElement")}}، یا سبک محاسبه‌شده برای عنصری که توسط {{DOMxRef("Window.getComputedStyle()")}} بازگردانده شده است.
+- {{domxref("CSSPageDescriptors")}} — سبک‌ها برای [قواعد at](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) در CSS.
 
-The interface exposes style information and various style-related methods and properties.
-For example, it provides {{DOMxRef("CSSStyleDeclaration/getPropertyValue","getPropertyValue()" )}} for getting the value of a dash-named CSS property, such as `border-top`, which can't be directly accessed using dot notation because of the hyphens in its name.
+این رابط اطلاعات سبک و روش‌ها و ویژگی‌های مختلف مرتبط با سبک را در دسترس قرار می‌دهد.
+برای مثال، {{DOMxRef("CSSStyleDeclaration/getPropertyValue","getPropertyValue()" )}} را برای دریافت مقدار یک ویژگی CSS با نام دارای خط تیره، مانند `border-top`، فراهم می‌کند که به دلیل خط تیره‌های موجود در نامش نمی‌توان به‌طور مستقیم با نماد نقطه‌ای به آن دسترسی داشت.
 
 > [!NOTE]
-> Earlier versions of the specification used `CSSStyleDeclaration` to represent all CSS declaration blocks, and some browsers and browser versions may still do so (check the browser compatibility tables for the above APIs).
-> Generally the same website code will be functional in both old and new versions, but some properties returned in a `CSSStyleDeclaration` may not be relevant in a particular context.
+> نسخه‌های قبلی مشخصات از `CSSStyleDeclaration` برای نمایش همهٔ بلوک‌های اعلامیهٔ CSS استفاده می‌کردند و برخی مرورگرها و نسخه‌های مرورگر ممکن است هنوز چنین کنند (جدول‌های سازگاری مرورگر برای APIهای بالا را بررسی کنید).
+> به‌طور کلی، همان کد وب در هر دو نسخهٔ قدیمی و جدید کار می‌کند، اما برخی ویژگی‌هایی که در یک `CSSStyleDeclaration` بازگردانده می‌شوند ممکن است در یک زمینهٔ خاص مرتبط نباشند.
 
-## Attributes
+## ویژگی‌ها
 
 - {{DOMxRef("CSSStyleDeclaration.cssText")}}
-  - : Textual representation of the declaration block, if and only if it is exposed via {{DOMxRef("HTMLElement.style")}}.
-    Setting this attribute changes the inline style.
-    If you want a text representation of a computed declaration block, you can get it with `JSON.stringify()`.
+  - : نمایش متنی بلوک اعلامیه، اگر و تنها اگر از طریق {{DOMxRef("HTMLElement.style")}} در دسترس باشد.
+    تنظیم این ویژگی، سبک درون‌خطی را تغییر می‌دهد.
+    اگر نمایش متنی یک بلوک اعلامیهٔ محاسبه‌شده می‌خواهید، می‌توانید آن را با `JSON.stringify()` دریافت کنید.
 - {{DOMxRef("CSSStyleDeclaration.length")}} {{ReadOnlyInline}}
-  - : The number of properties.
-    See the {{DOMxRef("CSSStyleDeclaration.item()", 'item()')}} method below.
+  - : تعداد ویژگی‌ها.
+    به متد {{DOMxRef("CSSStyleDeclaration.item()", 'item()')}} در زیر مراجعه کنید.
 - {{DOMxRef("CSSStyleDeclaration.parentRule")}} {{ReadOnlyInline}}
-  - : The containing {{DOMxRef("CSSRule")}}.
+  - : {{DOMxRef("CSSRule")}} شامل آن.
 
-### CSS Properties
+### ویژگی‌های CSS
 
 - {{DOMxRef("CSSStyleDeclaration.cssFloat", "CSSStyleDeclaration.cssFloat")}} {{deprecated_inline}}
-  - : Special alias for the {{CSSxRef("float")}} CSS property.
-- `CSSStyleDeclaration` named properties
-  - : Dashed and camel-cased attributes for all supported CSS properties.
+  - : نام مستعار ویژه برای ویژگی CSS {{CSSxRef("float")}}.
+- ویژگی‌های نام‌گذاری‌شدهٔ `CSSStyleDeclaration`
+  - : ویژگی‌های دارای خط تیره و ویژگی‌های camelCase برای همهٔ ویژگی‌های CSS پشتیبانی‌شده.
 
-## Instance methods
+## متدهای نمونه
 
 - {{DOMxRef("CSSStyleDeclaration.getPropertyPriority()")}}
-  - : Returns the optional priority, "important".
+  - : اولویت اختیاری "important" را برمی‌گرداند.
 - {{DOMxRef("CSSStyleDeclaration.getPropertyValue()")}}
-  - : Returns the property value given a property name.
+  - : مقدار ویژگی را با توجه به نام ویژگی برمی‌گرداند.
 - {{DOMxRef("CSSStyleDeclaration.item()")}}
-  - : Returns a CSS property name by its index, or the empty string if the index is out-of-bounds.
+  - : نام یک ویژگی CSS را بر اساس ایندکس آن برمی‌گرداند، یا اگر ایندکس خارج از محدوده باشد، رشتهٔ خالی را برمی‌گرداند.
 - {{DOMxRef("CSSStyleDeclaration.removeProperty()")}}
-  - : Removes a property from the CSS declaration block.
+  - : یک ویژگی را از بلوک اعلامیهٔ CSS حذف می‌کند.
 - {{DOMxRef("CSSStyleDeclaration.setProperty()")}}
-  - : Modifies an existing CSS property or creates a new CSS property in the declaration block.
+  - : یک ویژگی CSS موجود را تغییر می‌دهد یا یک ویژگی CSS جدید در بلوک اعلامیه ایجاد می‌کند.
 - {{DOMxRef("CSSStyleDeclaration.getPropertyCSSValue()")}} {{deprecated_inline}} {{non-standard_inline}}
-  - : **Only supported via getComputedStyle in Firefox.** Returns the property value as a {{DOMxRef("CSSPrimitiveValue")}} or `null` for [shorthand properties](/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties).
+  - : **تنها از طریق getComputedStyle در فایرفاکس پشتیبانی می‌شود.** مقدار ویژگی را به صورت {{DOMxRef("CSSPrimitiveValue")}} برمی‌گرداند، یا برای [ویژگی‌های کوتاه‌نویس](/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties) مقدار `null` را برمی‌گرداند.
 
-## Example
+## مثال
 
 ```js
 const styleObj = document.styleSheets[0].cssRules[0].style;
@@ -73,10 +71,10 @@ for (let i = styleObj.length; i--;) {
 console.log(styleObj.cssText);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
