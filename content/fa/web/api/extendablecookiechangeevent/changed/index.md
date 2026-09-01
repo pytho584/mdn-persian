@@ -1,11 +1,5 @@
 ---
 title: "ExtendableCookieChangeEvent: changed property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ExtendableCookieChangeEvent/changed"
-status: "needs-translation"
----
-
----
-title: "ExtendableCookieChangeEvent: changed property"
 short-title: changed
 slug: Web/API/ExtendableCookieChangeEvent/changed
 page-type: web-api-instance-property
@@ -14,39 +8,39 @@ browser-compat: api.ExtendableCookieChangeEvent.changed
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}{{AvailableInWorkers("service")}}
 
-The **`changed`** read-only property of the {{domxref("ExtendableCookieChangeEvent")}} interface returns any cookies that have been changed by the given `ExtendableCookieChangeEvent` instance.
+خاصیتِ فقط‌خواندنی **`changed`** در رابط {{domxref("ExtendableCookieChangeEvent")}}، کوکی‌هایی را برمی‌گرداند که توسط این نمونهٔ `ExtendableCookieChangeEvent` تغییر کرده‌اند.
 
-## Value
+## مقدار
 
-An array of objects containing the changed cookie(s). Each object contains the following properties:
+آرایه‌ای از آبجکت‌ها که کوکی(های) تغییر کرده را شامل می‌شود. هر آبجکت شامل ویژگی‌های زیر است:
 
 - `name`
-  - : A string containing the name of the cookie.
+  - : رشته‌ای که نام کوکی را شامل می‌شود.
 - `value`
-  - : A string containing the value of the cookie.
+  - : رشته‌ای که مقدار کوکی را شامل می‌شود.
 - `domain`
-  - : A string containing the domain of the cookie.
+  - : رشته‌ای که دامنهٔ کوکی را شامل می‌شود.
 - `path`
-  - : A string containing the path of the cookie.
+  - : رشته‌ای که مسیر کوکی را شامل می‌شود.
 - `expires`
-  - : A timestamp, given as [Unix time](/en-US/docs/Glossary/Unix_time) in milliseconds, containing the expiration date of the cookie.
+  - : یک برچسب زمانی، که به صورت [زمان یونیکس](/en-US/docs/Glossary/Unix_time) بر حسب میلی‌ثانیه داده شده و تاریخ انقضای کوکی را شامل می‌شود.
 - `secure`
-  - : A {{jsxref("Boolean")}} indicating whether the cookie is used only in a secure context (HTTPS rather than HTTP).
+  - : یک {{jsxref("Boolean")}} که نشان می‌دهد آیا کوکی فقط در بافت امن (HTTPS به جای HTTP) استفاده می‌شود یا خیر.
 - `sameSite`
-  - : One of the following [`SameSite`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#samesitesamesite-value) values:
+  - : یکی از مقادیر [`SameSite`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#samesitesamesite-value):
     - `"strict"`
-      - : Cookies will only be sent in a first-party context and not be sent with requests initiated by third party websites.
+      - : کوکی‌ها فقط در بافت first-party ارسال می‌شوند و همراه با درخواست‌هایی که توسط وب‌سایت‌های شخص ثالث آغاز می‌شوند ارسال نمی‌شوند.
     - `"lax"`
-      - : Cookies are not sent on normal cross-site subrequests (for example to load images or frames into a third party site), but are sent when a user is navigating within the origin site (i.e., when following a link).
+      - : کوکی‌ها در درخواست‌های فرعی عادی بین‌سایتی (مثلاً برای بارگذاری تصاویر یا فریم‌ها در سایت شخص ثالث) ارسال نمی‌شوند، اما وقتی کاربر در حال پیمایش در سایت مبدأ است (مثلاً با دنبال کردن یک پیوند) ارسال می‌شوند.
     - `"none"`
-      - : Cookies will be sent in all contexts.
+      - : کوکی‌ها در همهٔ بافت‌ها ارسال می‌شوند.
 
 - `partitioned`
-  - : A boolean indicating whether the cookie is a partitioned cookie (`true`) or not (`false`). See [Cookies Having Independent Partitioned State (CHIPS)](/en-US/docs/Web/Privacy/Guides/Third-party_cookies/Partitioned_cookies) for more information.
+  - : یک مقدار بولین که نشان می‌دهد آیا کوکی یک کوکی پارتیشن‌بندی‌شده است (`true`) یا خیر (`false`). برای اطلاعات بیشتر به [کوکی‌های دارای حالت پارتیشن‌بندی‌شده مستقل (CHIPS)](/en-US/docs/Web/Privacy/Guides/Third-party_cookies/Partitioned_cookies) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-In this example when the cookie is set, the event listener logs the `changed` property to the console. The first item in that array contains an object representing the cookie that has just been set.
+در این مثال، وقتی کوکی تنظیم می‌شود، شنوندهٔ رویداد، خاصیت `changed` را در کنسول ثبت می‌کند. اولین مورد در آن آرایه حاوی آبجکتی است که کوکی تازه تنظیم‌شده را نشان می‌دهد.
 
 ```js
 self.addEventListener("cookiechange", (event) => {
@@ -62,10 +56,10 @@ cookieStore.set({
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
