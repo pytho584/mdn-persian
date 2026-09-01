@@ -1,7 +1,5 @@
 ---
 title: "HTMLFormElement: reset event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reset_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,11 @@ browser-compat: api.HTMLFormElement.reset_event
 
 {{APIRef("HTML DOM")}}
 
-The **`reset`** event fires when a {{HTMLElement("form")}} is reset.
+رویداد **`reset`** زمانی رخ می‌دهد که یک {{HTMLElement("form")}} بازنشانی می‌شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی handler رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("reset", (event) => { })
@@ -26,13 +24,13 @@ addEventListener("reset", (event) => { })
 onreset = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-This example uses {{domxref("EventTarget.addEventListener()")}} to listen for form resets, and logs the current {{domxref("Event.timeStamp")}} whenever that occurs.
+این مثال از {{domxref("EventTarget.addEventListener()")}} برای گوش دادن به بازنشانی فرم استفاده می‌کند و {{domxref("Event.timeStamp")}} فعلی را هر بار که این اتفاق می‌افتد، ثبت می‌کند.
 
 ### HTML
 
@@ -58,18 +56,18 @@ function logReset(event) {
 form.addEventListener("reset", logReset);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement("form")}} element
+- عنصر HTML {{HTMLElement("form")}}
