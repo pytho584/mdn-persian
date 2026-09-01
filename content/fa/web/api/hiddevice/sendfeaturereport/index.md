@@ -1,11 +1,5 @@
 ---
 title: "HIDDevice: sendFeatureReport() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/sendFeatureReport"
-status: "needs-translation"
----
-
----
-title: "HIDDevice: sendFeatureReport() method"
 short-title: sendFeatureReport()
 slug: Web/API/HIDDevice/sendFeatureReport
 page-type: web-api-instance-method
@@ -16,52 +10,52 @@ browser-compat: api.HIDDevice.sendFeatureReport
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`sendFeatureReport()`** method of the {{domxref("HIDDevice")}} interface sends a feature report to the HID device. Feature reports are a way for HID devices and applications to exchange non-standardized HID data.
+متد **`sendFeatureReport()`** از رابط {{domxref("HIDDevice")}} یک گزارش ویژگی (Feature Report) به دستگاه HID ارسال می‌کند. گزارش‌های ویژگی یکی از روش‌های تبادل داده‌های HID غیراستاندارد بین دستگاه‌های HID و برنامه‌ها هستند.
 
-The `reportId` for each of the report formats that this device supports can be retrieved from {{domxref("HIDDevice.collections")}}.
+`reportId` برای هر یک از قالب‌های گزارشی که این دستگاه پشتیبانی می‌کند را می‌توان از {{domxref("HIDDevice.collections")}} دریافت کرد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 sendFeatureReport(reportId, data)
 ```
 
-### Parameters
+### پارامترها
 
 - `reportId`
-  - : An 8-bit report ID. If the HID device does not use report IDs, send `0`.
+  - : یک شناسه گزارش ۸ بیتی. اگر دستگاه HID از شناسه گزارش استفاده نمی‌کند، مقدار `0` ارسال کنید.
 - `data`
-  - : Bytes as an {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, or a {{jsxref("DataView")}}.
+  - : بایت‌ها به صورت یک {{jsxref("ArrayBuffer")}}، یک {{jsxref("TypedArray")}} یا یک {{jsxref("DataView")}}.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with `undefined` once the report has been sent.
+یک {{jsxref("Promise")}} که پس از ارسال گزارش با `undefined` مقداردهی می‌شود.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if sending the report fails for any reason.
+  - : اگر ارسال گزارش به هر دلیلی ناموفق باشد، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example `sendFeatureReport()` makes a device blink. You can see more examples and live demos in the article [Connecting to uncommon HID devices](https://developer.chrome.com/docs/capabilities/hid).
+در مثال زیر `sendFeatureReport()` باعث چشمک زدن دستگاه می‌شود. مثال‌های بیشتر و دموهای زنده را در مقاله [اتصال به دستگاه‌های HID غیرمعمول](https://developer.chrome.com/docs/capabilities/hid) می‌توانید ببینید.
 
 ```js
 const reportId = 1;
 for (let i = 0; i < 10; i++) {
-  // Turn off
+  // خاموش
   await device.sendFeatureReport(reportId, Uint32Array.from([0, 0]));
   await new Promise((resolve) => setTimeout(resolve, 100));
-  // Turn on
+  // روشن
   await device.sendFeatureReport(reportId, Uint32Array.from([512, 0]));
   await new Promise((resolve) => setTimeout(resolve, 100));
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
