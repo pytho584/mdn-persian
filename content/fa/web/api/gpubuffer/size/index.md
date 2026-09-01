@@ -1,11 +1,5 @@
 ---
 title: "GPUBuffer: size property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/size"
-status: "needs-translation"
----
-
----
-title: "GPUBuffer: size property"
 short-title: size
 slug: Web/API/GPUBuffer/size
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.GPUBuffer.size
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`size`** read-only property of the
-{{domxref("GPUBuffer")}} interface represents the length of the `GPUBuffer`'s memory allocation, in bytes.
+ویژگی فقط‌خواندنی **`size`** در رابط {{domxref("GPUBuffer")}}، طول تخصیص حافظهٔ `GPUBuffer` را بر حسب بایت نشان می‌دهد.
 
-`size` is set via the `size` property in the descriptor object passed into the originating {{domxref("GPUDevice.createBuffer()")}} call.
+مقدار `size` از طریق ویژگی `size` در شیء توصیفگری که به فراخوانی {{domxref("GPUDevice.createBuffer()")}} مربوطه داده می‌شود، تنظیم می‌گردد.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Define global buffer size
@@ -39,14 +32,14 @@ const output = device.createBuffer({
 console.log(output.size); // 1000
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
