@@ -1,7 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: isIdentity property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/isIdentity"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.DOMMatrixReadOnly.isIdentity
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The readonly **`isIdentity`** property of the {{domxref("DOMMatrixReadOnly")}} interface is a Boolean whose value is `true` if the matrix is the [identity matrix](https://en.wikipedia.org/wiki/Identity_matrix).
+خصوصیت فقطخواندنی **`isIdentity`** از رابط {{domxref("DOMMatrixReadOnly")}} یک مقدار بولی است که اگر ماتریس، [identity matrix](https://en.wikipedia.org/wiki/Identity_matrix) باشد، مقدار آن `true` است.
 
-The identity matrix is one in which every value is `0` _except_ those on the main diagonal from top-left to bottom-right corner (in other words, where the offsets in each direction are equal).
+ماتریس همانی ماتریسی است که همهٔ مقادیر آن `0` هستند، _بهجز_ مقادیر روی قطر اصلی از گوشهٔ بالا-چپ به گوشهٔ پایین-راست (به عبارت دیگر، جایی که فاصله‌ها در هر جهت با هم برابرند).
 
-## Value
+## مقدار
 
-A Boolean value.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Initialize a 2D matrix
@@ -36,15 +34,15 @@ console.log(matrix.translate(0).isIdentity); // output: true
 console.log(matrix.rotate(30).isIdentity); // output: false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrix")}} interface
 - {{domxref("CSSMatrixComponent")}} interface
