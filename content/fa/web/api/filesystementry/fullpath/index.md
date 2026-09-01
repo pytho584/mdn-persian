@@ -1,11 +1,5 @@
 ---
 title: "FileSystemEntry: fullPath property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/fullPath"
-status: "needs-translation"
----
-
----
-title: "FileSystemEntry: fullPath property"
 short-title: fullPath
 slug: Web/API/FileSystemEntry/fullPath
 page-type: web-api-instance-property
@@ -14,23 +8,17 @@ browser-compat: api.FileSystemEntry.fullPath
 
 {{APIRef("File and Directory Entries API")}}
 
-The read-only **`fullPath`** property
-of the {{domxref("FileSystemEntry")}} interface returns a string
-specifying the full, absolute path from the file system's root to the file represented
-by the entry.
+ویژگی فقط خواندنی **`fullPath`** در رابط {{domxref("FileSystemEntry")}} یک رشته برمی‌گرداند که مسیر کامل و مطلق از ریشهٔ سیستم فایل تا فایل نمایش‌داده‌شده توسط این ورودی را مشخص می‌کند.
 
-This can also be thought of as a path which is relative to the root directory, with a
-"/" prepended to it to make it absolute.
+این ویژگی را می‌توان به‌عنوان مسیری که نسبت به دایرکتوری ریشه نسبی است و با یک "/" در ابتدای آن به‌صورت مطلق درآمده نیز در نظر گرفت.
 
-## Value
+## مقدار
 
-A string indicating the entry's full path.
+رشته‌ای که مسیر کامل ورودی را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-This example shows a function which is called with a file system; it then gets a
-{{domxref("FileSystemFileEntry")}} for a file named `data.json` and returns
-its full path.
+این مثال تابعی را نشان می‌دهد که با یک سیستم فایل فراخوانی می‌شود؛ سپس یک {{domxref("FileSystemFileEntry")}} برای فایلی به نام `data.json` دریافت می‌کند و مسیر کامل آن را برمی‌گرداند.
 
 ```js
 function gotFileSystem(fs) {
@@ -49,19 +37,17 @@ function gotFileSystem(fs) {
 }
 ```
 
-Obviously, this is somewhat contrived, since we know that the file's full path is
-`"/data.json"`, having just looked it up ourselves, but the concept holds up
-for scenarios in which you don't know it.
+بدیهی است که این مثال تا حدی ساختگی است، زیرا می‌دانیم مسیر کامل فایل `"/data.json"` است (چون خودمان آن را جستجو کرده‌ایم)، اما این مفهوم برای سناریوهایی که مسیر را نمی‌دانید همچنان معتبر است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("FileSystemEntry")}}
