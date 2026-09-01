@@ -1,11 +1,5 @@
 ---
 title: "Element: append() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/append"
-status: "needs-translation"
----
-
----
-title: "Element: append() method"
 short-title: append()
 slug: Web/API/Element/append
 page-type: web-api-instance-method
@@ -14,21 +8,15 @@ browser-compat: api.Element.append
 
 {{APIRef("DOM")}}
 
-The **`Element.append()`** method
-inserts a set of {{domxref("Node")}} objects or strings after
-the last child of the `Element`. Strings
-are inserted as equivalent {{domxref("Text")}} nodes.
+متد **`Element.append()`** مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را پس از آخرین فرزندِ `Element` درج می‌کند. رشته‌ها به‌صورت گره‌های {{domxref("Text")}} معادل درج می‌شوند.
 
-Differences from {{domxref("Node.appendChild()")}}:
+تفاوت‌های آن با {{domxref("Node.appendChild()")}}:
 
-- `Element.append()` allows you to also append strings, whereas `Node.appendChild()` only accepts {{domxref("Node")}}
-  objects.
-- `Element.append()` has no return value, whereas
-  `Node.appendChild()` returns the appended {{domxref("Node")}} object.
-- `Element.append()` can append several nodes and strings, whereas
-  `Node.appendChild()` can only append one node.
+- `Element.append()` به شما امکان می‌دهد رشته‌ها را نیز اضافه کنید، در حالی که `Node.appendChild()` فقط اشیاء {{domxref("Node")}} را می‌پذیرد.
+- `Element.append()` مقدار بازگشتی ندارد، در حالی که `Node.appendChild()` شیء {{domxref("Node")}} اضافه‌شده را بازمی‌گرداند.
+- `Element.append()` می‌تواند چندین گره و رشته را اضافه کند، در حالی که `Node.appendChild()` فقط می‌تواند یک گره را اضافه کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 append(param1)
@@ -36,23 +24,23 @@ append(param1, param2)
 append(param1, param2, /* …, */ paramN)
 ```
 
-### Parameters
+### پارامترها
 
 - `param1`, …, `paramN`
-  - : A set of {{domxref("Node")}} objects or strings to insert.
+  - مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها برای درج.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the node cannot be inserted at the specified point in the hierarchy.
+  - زمانی پرتاب می‌شود که گره نتواند در نقطه‌ی مشخص‌شده در سلسله‌مراتب درج شود.
 
-## Examples
+## مثال‌ها
 
-### Appending an element
+### افزودن یک عنصر
 
 ```js
 let div = document.createElement("div");
@@ -62,7 +50,7 @@ div.append(p);
 console.log(div.childNodes); // NodeList [ <p> ]
 ```
 
-### Appending text
+### افزودن متن
 
 ```js
 let div = document.createElement("div");
@@ -71,7 +59,7 @@ div.append("Some text");
 console.log(div.textContent); // "Some text"
 ```
 
-### Appending an element and text
+### افزودن یک عنصر و متن
 
 ```js
 let div = document.createElement("div");
@@ -81,10 +69,9 @@ div.append("Some text", p);
 console.log(div.childNodes); // NodeList [ #text "Some text", <p> ]
 ```
 
-### The append method is unscopable
+### متد `append()` در محدوده‌ی `with` قرار نمی‌گیرد
 
-The `append()` method is not scoped into the `with` statement.
-See {{jsxref("Symbol.unscopables")}} for more information.
+متد `append()` در محدوده‌ی عبارت `with` قرار نمی‌گیرد. برای اطلاعات بیشتر به {{jsxref("Symbol.unscopables")}} مراجعه کنید.
 
 ```js
 let div = document.createElement("div");
@@ -95,15 +82,15 @@ with (div) {
 // ReferenceError: append is not defined
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.prepend()")}}
 - {{domxref("Node.appendChild()")}}
