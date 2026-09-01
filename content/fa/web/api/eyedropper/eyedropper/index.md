@@ -1,11 +1,5 @@
 ---
 title: "EyeDropper: EyeDropper() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper/EyeDropper"
-status: "needs-translation"
----
-
----
-title: "EyeDropper: EyeDropper() constructor"
 short-title: EyeDropper()
 slug: Web/API/EyeDropper/EyeDropper
 page-type: web-api-constructor
@@ -16,22 +10,22 @@ browser-compat: api.EyeDropper.EyeDropper
 
 {{securecontext_header}}{{APIRef("EyeDropper API")}}{{SeeCompatTable}}
 
-The **`EyeDropper()`** constructor returns a new {{DOMxRef("EyeDropper")}} object.
+سازندهٔ **`EyeDropper()`** یک شیء جدید از نوع {{DOMxRef("EyeDropper")}} را بازمی‌گرداند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new EyeDropper()
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{DOMxRef("EyeDropper")}} interface it belongs to.
+- رابط {{DOMxRef("EyeDropper")}} که این سازنده به آن تعلق دارد.
