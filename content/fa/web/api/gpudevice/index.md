@@ -1,7 +1,5 @@
 ---
 title: "GPUDevice"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice"
-status: "needs-translation"
 ---
 
 ---
@@ -13,98 +11,98 @@ browser-compat: api.GPUDevice
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUDevice`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents a logical GPU device. This is the main interface through which the majority of WebGPU functionality is accessed.
+رابط **`GPUDevice`** از {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} یک دستگاه GPU منطقی را نمایش می‌دهد. این رابط اصلی است که از طریق آن بیشتر قابلیت‌های WebGPU در دسترس قرار می‌گیرند.
 
-A `GPUDevice` object is requested using the {{domxref("GPUAdapter.requestDevice()")}} method.
+یک شیء `GPUDevice` با استفاده از متد {{domxref("GPUAdapter.requestDevice()")}} درخواست می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("EventTarget")}}._
+ویژگی‌های والد خود، {{DOMxRef("EventTarget")}} را به ارث می‌برد.
 
 - {{domxref("GPUDevice.adapterInfo", "adapterInfo")}} {{ReadOnlyInline}}
-  - : A {{domxref("GPUAdapterInfo")}} object containing identifying information about the device's originating adapter.
+  - : یک شیء {{domxref("GPUAdapterInfo")}} حاوی اطلاعات شناسایی دربارهٔ آداپتور مبدأ دستگاه.
 
 - {{domxref("GPUDevice.features", "features")}} {{ReadOnlyInline}}
-  - : A {{domxref("GPUSupportedFeatures")}} object that describes additional functionality supported by the device.
+  - : یک شیء {{domxref("GPUSupportedFeatures")}} که قابلیت‌های اضافی پشتیبانی‌شده توسط دستگاه را توصیف می‌کند.
 
 - {{domxref("GPUDevice.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : یک رشته که برچسبی برای شناسایی شیء فراهم می‌کند؛ برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
 - {{domxref("GPUDevice.limits", "limits")}} {{ReadOnlyInline}}
-  - : A {{domxref("GPUSupportedLimits")}} object that describes the limits supported by the device.
+  - : یک شیء {{domxref("GPUSupportedLimits")}} که محدودیت‌های پشتیبانی‌شده توسط دستگاه را توصیف می‌کند.
 
 - {{domxref("GPUDevice.lost", "lost")}} {{ReadOnlyInline}}
-  - : Contains a {{jsxref("Promise")}} that remains pending throughout the device's lifetime and resolves with a {{domxref("GPUDeviceLostInfo")}} object when the device is lost.
+  - : یک {{jsxref("Promise")}} را نگه می‌دارد که در تمام طول عمر دستگاه در حالت pending باقی می‌ماند و هنگام از دست رفتن دستگاه، با یک شیء {{domxref("GPUDeviceLostInfo")}} حل می‌شود.
 
 - {{domxref("GPUDevice.queue", "queue")}} {{ReadOnlyInline}}
-  - : Returns the primary {{domxref("GPUQueue")}} for the device.
+  - : صف اصلی {{domxref("GPUQueue")}} دستگاه را بازمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{DOMxRef("EventTarget")}}._
+روش‌های والد خود، {{DOMxRef("EventTarget")}} را به ارث می‌برد.
 
 - {{domxref("GPUDevice.createBindGroup", "createBindGroup()")}}
-  - : Creates a {{domxref("GPUBindGroup")}} based on a {{domxref("GPUBindGroupLayout")}} that defines a set of resources to be bound together in a group and how those resources are used in shader stages.
+  - : یک {{domxref("GPUBindGroup")}} بر اساس یک {{domxref("GPUBindGroupLayout")}} ایجاد می‌کند که مجموعه‌ای از منابع را که باید با هم در یک گروه پیوند داده شوند و نحوه استفاده از آن منابع در مراحل شیدر را تعریف می‌کند.
 
 - {{domxref("GPUDevice.createBindGroupLayout", "createBindGroupLayout()")}}
-  - : Creates a {{domxref("GPUBindGroupLayout")}} that defines the structure and purpose of related GPU resources such as buffers that will be used in a pipeline, and is used as a template when creating {{domxref("GPUBindGroup")}}s.
+  - : یک {{domxref("GPUBindGroupLayout")}} ایجاد می‌کند که ساختار و هدف منابع GPU مرتبط، مانند بافرهایی که در پایپلاین استفاده می‌شوند را تعریف می‌کند و هنگام ایجاد {{domxref("GPUBindGroup")}}ها به‌عنوان الگو به کار می‌رود.
 
 - {{domxref("GPUDevice.createBuffer", "createBuffer()")}}
-  - : Creates a {{domxref("GPUBuffer")}} in which to store raw data to use in GPU operations.
+  - : یک {{domxref("GPUBuffer")}} برای ذخیره داده‌های خام جهت استفاده در عملیات GPU ایجاد می‌کند.
 
 - {{domxref("GPUDevice.createCommandEncoder", "createCommandEncoder()")}}
-  - : Creates a {{domxref("GPUCommandEncoder")}}, which is used to encode commands to be issued to the GPU.
+  - : یک {{domxref("GPUCommandEncoder")}} ایجاد می‌کند که برای رمزگذاری دستوراتی که به GPU ارسال می‌شوند استفاده می‌شود.
 
 - {{domxref("GPUDevice.createComputePipeline", "createComputePipeline()")}}
-  - : Creates a {{domxref("GPUComputePipeline")}} that can control the compute shader stage and be used in a {{domxref("GPUComputePassEncoder")}}.
+  - : یک {{domxref("GPUComputePipeline")}} ایجاد می‌کند که می‌تواند مرحله شیدر محاسباتی را کنترل کند و در یک {{domxref("GPUComputePassEncoder")}} استفاده شود.
 
 - {{domxref("GPUDevice.createComputePipelineAsync", "createComputePipelineAsync()")}}
-  - : Returns a {{jsxref("Promise")}} that fulfills with a {{domxref("GPUComputePipeline")}}, which can control the compute shader stage and be used in a {{domxref("GPUComputePassEncoder")}}, once the pipeline can be used without any stalling.
+  - : یک {{jsxref("Promise")}} بازمی‌گرداند که با یک {{domxref("GPUComputePipeline")}} fulfilled می‌شود؛ این شیء می‌تواند مرحله شیدر محاسباتی را کنترل کند و در یک {{domxref("GPUComputePassEncoder")}} استفاده شود، به محض اینکه بتوان از پایپلاین بدون هیچ وقفه‌ای استفاده کرد.
 
 - {{domxref("GPUDevice.createPipelineLayout", "createPipelineLayout()")}}
-  - : Creates a {{domxref("GPUPipelineLayout")}} that defines the {{domxref("GPUBindGroupLayout")}}s used by a pipeline. {{domxref("GPUBindGroup")}}s used with the pipeline during command encoding must have compatible {{domxref("GPUBindGroupLayout")}}s.
+  - : یک {{domxref("GPUPipelineLayout")}} ایجاد می‌کند که {{domxref("GPUBindGroupLayout")}}های استفاده‌شده توسط یک پایپلاین را تعریف می‌کند. {{domxref("GPUBindGroup")}}هایی که در هنگام رمزگذاری دستورات با پایپلاین استفاده می‌شوند باید دارای {{domxref("GPUBindGroupLayout")}}های سازگار باشند.
 
 - {{domxref("GPUDevice.createQuerySet", "createQuerySet()")}}
-  - : Creates a {{domxref("GPUQuerySet")}} that can be used to record the results of queries on passes, such as occlusion or timestamp queries.
+  - : یک {{domxref("GPUQuerySet")}} ایجاد می‌کند که می‌توان از آن برای ثبت نتایج پرس‌وجوها روی passها، مانند پرس‌وجوهای انسداد (occlusion) یا زمان‌سنج (timestamp)، استفاده کرد.
 
 - {{domxref("GPUDevice.createRenderBundleEncoder", "createRenderBundleEncoder()")}}
-  - : Creates a {{domxref("GPURenderBundleEncoder")}} that can be used to pre-record bundles of commands. These can be reused in {{domxref("GPURenderPassEncoder")}}s via the {{domxref("GPURenderPassEncoder.executeBundles", "executeBundles()")}} method, as many times as required.
+  - : یک {{domxref("GPURenderBundleEncoder")}} ایجاد می‌کند که می‌توان از آن برای ضبط از پیشِ دسته‌هایی از دستورات استفاده کرد. این دسته‌ها را می‌توان از طریق متد {{domxref("GPURenderPassEncoder.executeBundles", "executeBundles()")}} در {{domxref("GPURenderPassEncoder")}}ها، هر چند بار که لازم باشد، مجدداً استفاده کرد.
 
 - {{domxref("GPUDevice.createRenderPipeline", "createRenderPipeline()")}}
-  - : Creates a {{domxref("GPURenderPipeline")}} that can control the vertex and fragment shader stages and be used in a {{domxref("GPURenderPassEncoder")}} or {{domxref("GPURenderBundleEncoder")}}.
+  - : یک {{domxref("GPURenderPipeline")}} ایجاد می‌کند که می‌تواند مراحل شیدر رأس (vertex) و قطعه (fragment) را کنترل کند و در یک {{domxref("GPURenderPassEncoder")}} یا {{domxref("GPURenderBundleEncoder")}} استفاده شود.
 
 - {{domxref("GPUDevice.createRenderPipelineAsync", "createRenderPipelineAsync()")}}
-  - : Returns a {{jsxref("Promise")}} that fulfills with a {{domxref("GPURenderPipeline")}}, which can control the vertex and fragment shader stages and be used in a {{domxref("GPURenderPassEncoder")}} or {{domxref("GPURenderBundleEncoder")}}, once the pipeline can be used without any stalling.
+  - : یک {{jsxref("Promise")}} بازمی‌گرداند که با یک {{domxref("GPURenderPipeline")}} fulfilled می‌شود؛ این شیء می‌تواند مراحل شیدر رأس و قطعه را کنترل کند و در یک {{domxref("GPURenderPassEncoder")}} یا {{domxref("GPURenderBundleEncoder")}} استفاده شود، به محض اینکه بتوان از پایپلاین بدون هیچ وقفه‌ای استفاده کرد.
 
 - {{domxref("GPUDevice.createSampler", "createSampler()")}}
-  - : Creates a {{domxref("GPUSampler")}}, which controls how shaders transform and filter texture resource data.
+  - : یک {{domxref("GPUSampler")}} ایجاد می‌کند که نحوه تبدیل و فیلتر کردن داده‌های منبع بافت توسط شیدرها را کنترل می‌کند.
 
 - {{domxref("GPUDevice.createShaderModule", "createShaderModule()")}}
-  - : Creates a {{domxref("GPUShaderModule")}} from a string of WGSL source code.
+  - : یک {{domxref("GPUShaderModule")}} از رشته‌ای از کد منبع WGSL ایجاد می‌کند.
 
 - {{domxref("GPUDevice.createTexture", "createTexture()")}}
-  - : Creates a {{domxref("GPUTexture")}} in which to store texture data to use in GPU rendering operations.
+  - : یک {{domxref("GPUTexture")}} برای ذخیره داده‌های بافت جهت استفاده در عملیات رندر GPU ایجاد می‌کند.
 
 - {{domxref("GPUDevice.destroy", "destroy()")}}
-  - : Destroys the device, preventing further operations on it.
+  - : دستگاه را از بین می‌برد و از انجام عملیات بیشتر روی آن جلوگیری می‌کند.
 
 - {{domxref("GPUDevice.importExternalTexture", "importExternalTexture()")}}
-  - : Takes an {{domxref("HTMLVideoElement")}} as an input and returns a {{domxref("GPUExternalTexture")}} wrapper object containing a snapshot of the video that can be used in GPU rendering operations.
+  - : یک {{domxref("HTMLVideoElement")}} را به‌عنوان ورودی می‌گیرد و یک شیء پوششی {{domxref("GPUExternalTexture")}} بازمی‌گرداند که شامل یک عکس فوری (snapshot) از ویدیو است و می‌توان از آن در عملیات رندر GPU استفاده کرد.
 
 - {{domxref("GPUDevice.popErrorScope", "popErrorScope()")}}
-  - : Pops an existing GPU error scope from the error scope stack and returns a {{jsxref("Promise")}} that resolves to an object ({{domxref("GPUInternalError")}}, {{domxref("GPUOutOfMemoryError")}}, or {{domxref("GPUValidationError")}}) describing the first error captured in the scope, or `null` if no error occurred.
+  - : یک محدوده خطای GPU موجود را از پشته محدوده خطا خارج می‌کند و یک {{jsxref("Promise")}} بازمی‌گرداند که به یک شیء ({{domxref("GPUInternalError")}}، {{domxref("GPUOutOfMemoryError")}} یا {{domxref("GPUValidationError")}}) که اولین خطای ضبط‌شده در آن محدوده را توصیف می‌کند، حل می‌شود؛ یا اگر خطایی رخ نداده باشد، به `null` حل می‌شود.
 
 - {{domxref("GPUDevice.pushErrorScope", "pushErrorScope()")}}
-  - : Pushes a new GPU error scope onto the device's error scope stack, allowing you to capture errors of a particular type.
+  - : یک محدوده خطای GPU جدید به پشته محدوده خطای دستگاه اضافه می‌کند و به شما امکان می‌دهد خطاهای یک نوع خاص را ضبط کنید.
 
-## Events
+## رویدادها
 
 - {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}}
-  - : Fired when an error is thrown that has not been observed by a GPU error scope, to provide a way to report unexpected errors. Known error cases should be handled using {{domxref("GPUDevice.pushErrorScope", "pushErrorScope()")}} and {{domxref("GPUDevice.popErrorScope", "popErrorScope()")}}.
+  - : هنگامی که خطایی رخ می‌دهد که توسط محدوده خطای GPU مشاهده نشده است، برای فراهم کردن راهی برای گزارش خطاهای غیرمنتظره، شلیک می‌شود. موارد خطای شناخته‌شده باید با استفاده از {{domxref("GPUDevice.pushErrorScope", "pushErrorScope()")}} و {{domxref("GPUDevice.popErrorScope", "popErrorScope()")}} مدیریت شوند.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function init() {
@@ -127,20 +125,20 @@ async function init() {
 }
 ```
 
-See the individual member pages listed above and the following demo sites for a lot more examples of `GPUDevice` usage:
+برای نمونه‌های بسیار بیشتری از استفاده از `GPUDevice`، به صفحات اعضای جداگانهٔ فهرست‌شده در بالا و وب‌سایت‌های نمایشی زیر مراجعه کنید:
 
-- [Basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/)
-- [Basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/)
-- [WebGPU samples](https://webgpu.github.io/webgpu-samples/)
+- [نمایش ساده محاسباتی](https://mdn.github.io/dom-examples/webgpu-compute-demo/)
+- [نمایش ساده رندر](https://mdn.github.io/dom-examples/webgpu-render-demo/)
+- [نمونه‌های WebGPU](https://webgpu.github.io/webgpu-samples/)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
