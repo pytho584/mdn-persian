@@ -1,7 +1,5 @@
 ---
 title: "HTMLSelectElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,84 +11,84 @@ browser-compat: api.HTMLSelectElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLSelectElement`** interface represents a {{HTMLElement("select")}} HTML Element. These elements also share all of the properties and methods of other HTML elements via the {{domxref("HTMLElement")}} interface.
+اینترفیس **`HTMLSelectElement`** نمایانگر یک عنصر HTML {{HTMLElement("select")}} است. این عناصر همچنین تمام ویژگی‌ها و روش‌های سایر عناصر HTML را از طریق اینترفیس {{domxref("HTMLElement")}} به اشتراک می‌گذارند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface inherits the properties of {{domxref("HTMLElement")}}, and of {{domxref("Element")}} and {{domxref("Node")}}._
+_این اینترفیس ویژگی‌های {{domxref("HTMLElement")}} و همچنین {{domxref("Element")}} و {{domxref("Node")}} را به ارث می‌برد._
 
 - {{domxref("HTMLSelectElement.autocomplete")}}
-  - : A string value reflecting the [`autocomplete`](/en-US/docs/Web/HTML/Reference/Elements/select#autocomplete), which indicates whether the value of the control can be automatically completed by the browser.
+  - : یک مقدار رشته‌ای که منعکس‌کننده ویژگی [`autocomplete`](/en-US/docs/Web/HTML/Reference/Elements/select#autocomplete) است؛ مشخص می‌کند که آیا مقدار کنترل می‌تواند به‌طور خودکار توسط مرورگر تکمیل شود.
 - {{domxref("HTMLSelectElement.disabled")}}
-  - : A boolean value reflecting the [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/select#disabled) HTML attribute, which indicates whether the control is disabled. If it is disabled, it does not accept clicks.
+  - : یک مقدار بولی که ویژگی [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/select#disabled) HTML را منعکس می‌کند؛ مشخص می‌کند که آیا کنترل غیرفعال است. اگر غیرفعال باشد، کلیک‌ها را نمی‌پذیرد.
 - {{domxref("HTMLSelectElement.form")}} {{ReadOnlyInline}}
-  - : An {{domxref("HTMLFormElement")}} referencing the form that this element is associated with. If the element is not associated with of a {{HTMLElement("form")}} element, then it returns `null`.
+  - : یک {{domxref("HTMLFormElement")}} که به فرم مرتبط با این عنصر اشاره می‌کند. اگر عنصر با هیچ عنصر {{HTMLElement("form")}} مرتبط نباشد، `null` برمی‌گرداند.
 - {{domxref("HTMLSelectElement.labels")}} {{ReadOnlyInline}}
-  - : A {{domxref("NodeList")}} of {{HTMLElement("label")}} elements associated with the element.
+  - : یک {{domxref("NodeList")}} از عناصر {{HTMLElement("label")}} مرتبط با عنصر.
 - {{domxref("HTMLSelectElement.length")}}
-  - : An `unsigned long` The number of {{HTMLElement("option")}} elements in this `select` element.
+  - : یک `unsigned long`؛ تعداد عناصر {{HTMLElement("option")}} در این عنصر `select`.
 - {{domxref("HTMLSelectElement.multiple")}}
-  - : A boolean value reflecting the [`multiple`](/en-US/docs/Web/HTML/Reference/Elements/select#multiple) HTML attribute, which indicates whether multiple items can be selected.
+  - : یک مقدار بولی که ویژگی [`multiple`](/en-US/docs/Web/HTML/Reference/Elements/select#multiple) HTML را منعکس می‌کند؛ مشخص می‌کند که آیا می‌توان چندین مورد را انتخاب کرد.
 - {{domxref("HTMLSelectElement.name")}}
-  - : A string reflecting the [`name`](/en-US/docs/Web/HTML/Reference/Elements/select#name) HTML attribute, containing the name of this control used by servers and DOM search functions.
+  - : یک رشته که ویژگی [`name`](/en-US/docs/Web/HTML/Reference/Elements/select#name) HTML را منعکس می‌کند و شامل نام این کنترل است که توسط سرورها و توابع جستجوی DOM استفاده می‌شود.
 - {{domxref("HTMLSelectElement.options")}} {{ReadOnlyInline}}
-  - : An {{domxref("HTMLOptionsCollection")}} representing the set of {{HTMLElement("option")}} ({{domxref("HTMLOptionElement")}}) elements contained by this element.
+  - : یک {{domxref("HTMLOptionsCollection")}} که مجموعه عناصر {{HTMLElement("option")}} ({{domxref("HTMLOptionElement")}}) موجود در این عنصر را نشان می‌دهد.
 - {{domxref("HTMLSelectElement.required")}}
-  - : A boolean value reflecting the [`required`](/en-US/docs/Web/HTML/Reference/Elements/select#required) HTML attribute, which indicates whether the user is required to select a value before submitting the form.
+  - : یک مقدار بولی که ویژگی [`required`](/en-US/docs/Web/HTML/Reference/Elements/select#required) HTML را منعکس می‌کند؛ مشخص می‌کند که آیا کاربر ملزم است قبل از ارسال فرم یک مقدار انتخاب کند.
 - {{domxref("HTMLSelectElement.selectedIndex")}}
-  - : A `long` reflecting the index of the first selected {{HTMLElement("option")}} element. The value `-1` indicates no element is selected.
+  - : یک `long` که ایندکس نخستین عنصر {{HTMLElement("option")}} انتخاب‌شده را منعکس می‌کند. مقدار `-1` نشان می‌دهد هیچ عنصری انتخاب نشده است.
 - {{domxref("HTMLSelectElement.selectedOptions")}} {{ReadOnlyInline}}
-  - : An {{domxref("HTMLCollection")}} representing the set of {{HTMLElement("option")}} elements that are selected.
+  - : یک {{domxref("HTMLCollection")}} که مجموعه عناصر {{HTMLElement("option")}} انتخاب‌شده را نشان می‌دهد.
 - {{domxref("HTMLSelectElement.size")}}
-  - : A `long` reflecting the [`size`](/en-US/docs/Web/HTML/Reference/Elements/select#size) HTML attribute, which contains the number of visible items in the control. The default is 1, unless `multiple` is `true`, in which case it is 4.
+  - : یک `long` که ویژگی [`size`](/en-US/docs/Web/HTML/Reference/Elements/select#size) HTML را منعکس می‌کند و شامل تعداد موارد قابل مشاهده در کنترل است. مقدار پیش‌فرض ۱ است، مگر اینکه `multiple` برابر `true` باشد که در آن صورت ۴ است.
 - {{domxref("HTMLSelectElement.type")}} {{ReadOnlyInline}}
-  - : A string representing the form control's type. When `multiple` is `true`, it returns `"select-multiple"`; otherwise, it returns `"select-one"`.
+  - : یک رشته که نوع کنترل فرم را نشان می‌دهد. وقتی `multiple` برابر `true` است، `"select-multiple"` و در غیر این صورت `"select-one"` برمی‌گرداند.
 - {{domxref("HTMLSelectElement.validationMessage")}} {{ReadOnlyInline}}
-  - : A string representing a localized message that describes the validation constraints that the control does not satisfy (if any). This attribute is the empty string if the control is not a candidate for constraint validation (`willValidate` is false), or it satisfies its constraints.
+  - : یک رشته که یک پیام محلی‌سازی‌شده را توصیف می‌کند و محدودیت‌های اعتبارسنجی‌ای را که کنترل برآورده نمی‌کند (در صورت وجود) بیان می‌کند. اگر کنترل کاندیدای اعتبارسنجی محدودیت‌ها نباشد (`willValidate` برابر `false` باشد) یا محدودیت‌های خود را برآورده کند، این ویژگی رشته خالی است.
 - {{domxref("HTMLSelectElement.validity")}} {{ReadOnlyInline}}
-  - : A {{domxref("ValidityState")}} reflecting the validity state that this control is in.
+  - : یک {{domxref("ValidityState")}} که وضعیت اعتبارسنجی این کنترل را منعکس می‌کند.
 - {{domxref("HTMLSelectElement.value")}}
-  - : A string reflecting the value of the form control. Returns the `value` property of the first selected option element if there is one, otherwise the empty string.
+  - : یک رشته که مقدار کنترل فرم را منعکس می‌کند. اگر اولین عنصر گزینه انتخاب‌شده وجود داشته باشد، مقدار ویژگی `value` آن را برمی‌گرداند؛ در غیر این صورت رشته خالی.
 - {{domxref("HTMLSelectElement.willValidate")}} {{ReadOnlyInline}}
-  - : A boolean value that indicates whether the button is a candidate for constraint validation. It is `false` if any conditions bar it from constraint validation.
+  - : یک مقدار بولی که نشان می‌دهد آیا کنترل کاندیدای اعتبارسنجی محدودیت‌ها است یا خیر. اگر هر شرطی آن را از اعتبارسنجی محدودیت‌ها بازدارد، مقدار آن `false` است.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface inherits the methods of {{domxref("HTMLElement")}}, and of {{domxref("Element")}} and {{domxref("Node")}}._
+_این اینترفیس روش‌های {{domxref("HTMLElement")}} و همچنین {{domxref("Element")}} و {{domxref("Node")}} را به ارث می‌برد._
 
 - {{domxref("HTMLSelectElement.add()")}}
-  - : Adds an element to the collection of `option` elements for this `select` element.
+  - : یک عنصر به مجموعه عناصر `option` این عنصر `select` اضافه می‌کند.
 - {{domxref("HTMLSelectElement.checkValidity()")}}
-  - : Checks whether the element has any constraints and whether it satisfies them. If the element fails its constraints, the browser fires a cancelable {{domxref("HTMLInputElement/invalid_event", "invalid")}} event at the element (and returns `false`).
+  - : بررسی می‌کند که آیا عنصر محدودیتی دارد و آیا آن‌ها را برآورده می‌کند. اگر عنصر محدودیت‌های خود را نقض کند، مرورگر یک رویداد قابل‌لغو {{domxref("HTMLInputElement/invalid_event", "invalid")}} روی عنصر فعال می‌کند (و `false` برمی‌گرداند).
 - {{domxref("HTMLSelectElement.item()")}}
-  - : Gets an item from the options collection for this {{HTMLElement("select")}} element. You can also access an item by specifying the index in square brackets or parentheses, without calling this method explicitly.
+  - : یک مورد از مجموعه گزینه‌های این عنصر {{HTMLElement("select")}} دریافت می‌کند. همچنین می‌توانید با مشخص کردن ایندکس در کروشه یا پرانتز، بدون فراخوانی صریح این روش، به مورد دسترسی پیدا کنید.
 - {{domxref("HTMLSelectElement.namedItem()")}}
-  - : Gets the item in the options collection with the specified name. The name string can match either the `id` or the `name` attribute of an option node. You can also access an item by specifying the name in square brackets or parentheses, without calling this method explicitly.
+  - : موردی را با نام مشخص‌شده از مجموعه گزینه‌ها دریافت می‌کند. رشته نام می‌تواند با ویژگی `id` یا `name` یک گره گزینه مطابقت داشته باشد. همچنین می‌توانید با مشخص کردن نام در کروشه یا پرانتز، بدون فراخوانی صریح این روش، به مورد دسترسی پیدا کنید.
 - {{domxref("HTMLSelectElement.remove()")}}
-  - : Removes the element at the specified index from the options collection for this `select` element.
+  - : عنصر را در ایندکس مشخص‌شده از مجموعه گزینه‌های این عنصر `select` حذف می‌کند.
 - {{domxref("HTMLSelectElement.reportValidity()")}}
-  - : This method reports the problems with the constraints on the element, if any, to the user. If there are problems, it fires a cancelable {{domxref("HTMLInputElement/invalid_event", "invalid")}} event at the element, and returns `false`; if there are no problems, it returns `true`.
+  - : این روش مشکلات محدودیت‌های عنصر (در صورت وجود) را به کاربر گزارش می‌دهد. اگر مشکلی وجود داشته باشد، یک رویداد قابل‌لغو {{domxref("HTMLInputElement/invalid_event", "invalid")}} روی عنصر فعال می‌کند و `false` برمی‌گرداند؛ اگر مشکلی نباشد، `true` برمی‌گرداند.
 - {{domxref("HTMLSelectElement.setCustomValidity()")}}
-  - : Sets the custom validity message for the selection element to the specified message. Use the empty string to indicate that the element does _not_ have a custom validity error.
+  - : پیام اعتبارسنجی سفارشی عنصر انتخاب را به پیام مشخص‌شده تنظیم می‌کند. از رشته خالی استفاده کنید تا نشان دهید عنصر خطای اعتبارسنجی سفارشی _ندارد_.
 - {{domxref("HTMLSelectElement.showPicker()", "showPicker()")}}
-  - : Shows the option picker.
+  - : انتخاب‌گر گزینه‌ها را نمایش می‌دهد.
 
-## Events
+## رویدادها
 
-_This interface inherits the events of {{domxref("HTMLElement")}}, and of {{domxref("Element")}} and {{domxref("Node")}}._
+_این اینترفیس رویدادهای {{domxref("HTMLElement")}} و همچنین {{domxref("Element")}} و {{domxref("Node")}} را به ارث می‌برد._
 
-Listen to these events using {{domxref("EventTarget/addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface:
+به این رویدادها با استفاده از {{domxref("EventTarget/addEventListener", "addEventListener()")}} یا با انتساب یک شنونده رویداد به ویژگی `oneventname` این اینترفیس گوش دهید:
 
-- {{domxref("HTMLElement/change_event", "change")}} event
-  - : Fires when the user selects an option.
-- {{domxref("Element/input_event", "input")}} event
-  - : Fires when the `value` of an {{HTMLElement("input")}}, {{HTMLElement("select")}}, or {{HTMLElement("textarea")}} element has been changed.
+- رویداد {{domxref("HTMLElement/change_event", "change")}}
+  - : زمانی فعال می‌شود که کاربر یک گزینه را انتخاب کند.
+- رویداد {{domxref("Element/input_event", "input")}}
+  - : زمانی فعال می‌شود که `value` یک عنصر {{HTMLElement("input")}}، {{HTMLElement("select")}} یا {{HTMLElement("textarea")}} تغییر کرده باشد.
 
-## Example
+## مثال
 
-### Get information about the selected option
+### دریافت اطلاعات درباره گزینه انتخاب‌شده
 
 ```js
 /* assuming we have the following HTML
@@ -110,16 +108,16 @@ console.log(select.selectedIndex); // 1
 console.log(select.options[select.selectedIndex].value); // Second
 ```
 
-A better way to track changes to the user's selection is to watch for the {{domxref("HTMLElement/change_event", "change")}} event to occur on the `<select>`. This will tell you when the value changes, and you can then update anything you need to. See [the example provided](/en-US/docs/Web/API/HTMLElement/change_event#select_element) in the documentation for the `change` event for details.
+روش بهتر برای پیگیری تغییرات انتخاب کاربر این است که رویداد {{domxref("HTMLElement/change_event", "change")}} را روی `<select>` زیر نظر بگیرید. این کار به شما می‌گوید چه زمانی مقدار تغییر می‌کند و می‌توانید هر چیزی را که لازم است به‌روزرسانی کنید. برای جزئیات، [مثال ارائه‌شده](/en-US/docs/Web/API/HTMLElement/change_event#select_element) را در مستندات رویداد `change` ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement("select")}} HTML element, which implements this interface.
+- عنصر HTML {{HTMLElement("select")}} که این اینترفیس را پیاده‌سازی می‌کند.
