@@ -1,9 +1,4 @@
----
-title: "DOMException"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMException"
-status: "needs-translation"
----
-
+```
 ---
 title: DOMException
 slug: Web/API/DOMException
@@ -13,113 +8,114 @@ browser-compat: api.DOMException
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`DOMException`** interface represents an abnormal event (called an **exception**) that occurs as a result of calling a method or accessing a property of a web API. This is how error conditions are described in web APIs.
+رابطِ **`DOMException`** یک رویداد غیرعادی (که **exception** نامیده میشود) را نمایش میدهد که در نتیجهٔ فراخوانی یک متد یا دسترسی به یک ویژگی از یک API وب رخ میدهد. این روشی است که شرایط خطا در APIهای وب توصیف میشوند.
 
-Each exception has a **name**, which is a short "PascalCase"-style string identifying the error or abnormal condition.
+هر استثنا یک **name** دارد؛ یک رشتهٔ کوتاه به سبک "PascalCase" که خطا یا وضعیت غیرعادی را شناسایی میکند.
 
-`DOMException` is a {{Glossary("Serializable object")}}, so it can be cloned with {{DOMxRef("Window.structuredClone", "structuredClone()")}} or copied between [Workers](/en-US/docs/Web/API/Worker) using {{domxref("Worker.postMessage()", "postMessage()")}}.
+`DOMException` یک {{Glossary("Serializable object")}} است، بنابراین میتوان آن را با {{DOMxRef("Window.structuredClone", "structuredClone()")}} شبیهسازی کرد یا با استفاده از {{domxref("Worker.postMessage()", "postMessage()")}} بین [Workers](/en-US/docs/Web/API/Worker) کپی کرد.
 
-## Constructor
+## سازنده
 
 - {{domxref("DOMException.DOMException()", "DOMException()")}}
-  - : Returns a `DOMException` object with a specified message and name.
+  - : یک شیء `DOMException` با پیام و نام مشخصشده برمیگرداند.
 
-## Instance properties
+## ویژگیهای نمونه
 
 - {{domxref("DOMException.code")}} {{deprecated_inline}} {{ReadOnlyInline}}
-  - : Returns one of the legacy error code constants, or `0` if none match.
+  - : یکی از ثابتهای قدیمی کد خطا را برمیگرداند، یا اگر هیچکدام مطابقت نداشته باشند، `0` را برمیگرداند.
 - {{domxref("DOMException.message")}} {{ReadOnlyInline}}
-  - : Returns a string representing a message or description associated with the given [error name](#error_names).
+  - : رشتهای را برمیگرداند که پیام یا توضیح مرتبط با [نام خطا](#error_names) دادهشده را نشان میدهد.
 - {{domxref("DOMException.name")}} {{ReadOnlyInline}}
-  - : Returns a string that contains one of the strings associated with an [error name](#error_names).
+  - : رشتهای را برمیگرداند که حاوی یکی از رشتههای مرتبط با یک [نام خطا](#error_names) است.
 
-## Error names
+## نامهای خطا
 
-Common error names are listed here. Some APIs define their own sets of names, so this is not necessarily a complete list.
+نامهای رایج خطا در اینجا فهرست شدهاند. برخی APIها مجموعههای نام خود را تعریف میکنند، بنابراین این لزوماً یک فهرست کامل نیست.
 
-The following deprecated historical errors don't have an error name but instead have only a legacy constant code value and a legacy constant name:
+خطاهای تاریخی منسوخ زیر نام خطا ندارند، اما در عوض فقط یک مقدار کد ثابت قدیمی و یک نام ثابت قدیمی دارند:
 
-- Legacy code value: `2`, legacy constant name: `DOMSTRING_SIZE_ERR`
-- Legacy code value: `6`, legacy constant name: `NO_DATA_ALLOWED_ERR`
-- Legacy code value: `16`, legacy constant name: `VALIDATION_ERR`
+- مقدار کد قدیمی: `2`، نام ثابت قدیمی: `DOMSTRING_SIZE_ERR`
+- مقدار کد قدیمی: `6`، نام ثابت قدیمی: `NO_DATA_ALLOWED_ERR`
+- مقدار کد قدیمی: `16`، نام ثابت قدیمی: `VALIDATION_ERR`
 
 > [!NOTE]
-> Because historically the errors were identified by a numeric value that corresponded with a named variable defined to have that value, some of the entries below indicate the legacy code value and constant name that were used in the past.
+> از آنجا که در گذشته خطاها با یک مقدار عددی شناسایی میشدند که با یک متغیر نامگذاریشده با همان مقدار در ارتباط بود، برخی از موارد زیر مقدار کد قدیمی و نام ثابت استفادهشده در گذشته را نشان میدهند.
 
 - `IndexSizeError`
-  - : The index is not in the allowed range. For example, this can be thrown by the {{ domxref("Range") }} object. (Legacy code value: `1` and legacy constant name: `INDEX_SIZE_ERR`)
+  - : شاخص در محدودهٔ مجاز نیست. برای مثال، این ممکن است توسط شیء {{ domxref("Range") }} پرتاب شود. (مقدار کد قدیمی: `1` و نام ثابت قدیمی: `INDEX_SIZE_ERR`)
 - `HierarchyRequestError`
-  - : The node tree hierarchy is not correct. (Legacy code value: `3` and legacy constant name: `HIERARCHY_REQUEST_ERR`)
+  - : سلسلهمراتب درخت گره صحیح نیست. (مقدار کد قدیمی: `3` و نام ثابت قدیمی: `HIERARCHY_REQUEST_ERR`)
 - `WrongDocumentError`
-  - : The object is in the wrong {{ domxref("Document") }}. (Legacy code value: `4` and legacy constant name: `WRONG_DOCUMENT_ERR`)
+  - : شیء در {{ domxref("Document") }} اشتباهی قرار دارد. (مقدار کد قدیمی: `4` و نام ثابت قدیمی: `WRONG_DOCUMENT_ERR`)
 - `InvalidCharacterError`
-  - : The string contains invalid characters. (Legacy code value: `5` and legacy constant name: `INVALID_CHARACTER_ERR`)
+  - : رشته شامل نویسههای نامعتبر است. (مقدار کد قدیمی: `5` و نام ثابت قدیمی: `INVALID_CHARACTER_ERR`)
 - `NoModificationAllowedError`
-  - : The object cannot be modified. (Legacy code value: `7` and legacy constant name: `NO_MODIFICATION_ALLOWED_ERR`)
+  - : شیء قابل تغییر نیست. (مقدار کد قدیمی: `7` و نام ثابت قدیمی: `NO_MODIFICATION_ALLOWED_ERR`)
 - `NotFoundError`
-  - : The object cannot be found here. (Legacy code value: `8` and legacy constant name: `NOT_FOUND_ERR`)
+  - : شیء در اینجا یافت نمیشود. (مقدار کد قدیمی: `8` و نام ثابت قدیمی: `NOT_FOUND_ERR`)
 - `NotSupportedError`
-  - : The operation is not supported. (Legacy code value: `9` and legacy constant name: `NOT_SUPPORTED_ERR`)
+  - : عملیات پشتیبانی نمیشود. (مقدار کد قدیمی: `9` و نام ثابت قدیمی: `NOT_SUPPORTED_ERR`)
 - `InUseAttributeError`
-  - : The attribute is in use. (Legacy code value: `10` and legacy constant name: `INUSE_ATTRIBUTE_ERR`)
+  - : ویژگی در حال استفاده است. (مقدار کد قدیمی: `10` و نام ثابت قدیمی: `INUSE_ATTRIBUTE_ERR`)
 - `InvalidStateError`
-  - : The object is in an invalid state. (Legacy code value: `11` and legacy constant name: `INVALID_STATE_ERR`)
+  - : شیء در حالت نامعتبر است. (مقدار کد قدیمی: `11` و نام ثابت قدیمی: `INVALID_STATE_ERR`)
 - `SyntaxError`
-  - : The string did not match the expected pattern. (Legacy code value: `12` and legacy constant name: `SYNTAX_ERR`)
+  - : رشته با الگوی مورد انتظار مطابقت ندارد. (مقدار کد قدیمی: `12` و نام ثابت قدیمی: `SYNTAX_ERR`)
 - `InvalidModificationError`
-  - : The object cannot be modified in this way. (Legacy code value: `13` and legacy constant name: `INVALID_MODIFICATION_ERR`)
+  - : شیء به این صورت قابل تغییر نیست. (مقدار کد قدیمی: `13` و نام ثابت قدیمی: `INVALID_MODIFICATION_ERR`)
 - `NamespaceError`
-  - : The operation is not allowed by Namespaces in XML. (Legacy code value: `14` and legacy constant name: `NAMESPACE_ERR`)
+  - : عملیات توسط فضاهای نام در XML مجاز نیست. (مقدار کد قدیمی: `14` و نام ثابت قدیمی: `NAMESPACE_ERR`)
 - `InvalidAccessError`
-  - : The object does not support the operation or argument. (Legacy code value: `15` and legacy constant name: `INVALID_ACCESS_ERR`)
+  - : شیء از عملیات یا آرگومان پشتیبانی نمیکند. (مقدار کد قدیمی: `15` و نام ثابت قدیمی: `INVALID_ACCESS_ERR`)
 - `TypeMismatchError` {{deprecated_inline}}
-  - : The type of the object does not match the expected type. (Legacy code value: `17` and legacy constant name: `TYPE_MISMATCH_ERR`) This value is deprecated; the JavaScript {{jsxref("TypeError")}} exception is now raised instead of a `DOMException` with this value.
+  - : نوع شیء با نوع مورد انتظار مطابقت ندارد. (مقدار کد قدیمی: `17` و نام ثابت قدیمی: `TYPE_MISMATCH_ERR`) این مقدار منسوخ شده است؛ در حال حاضر به جای `DOMException` با این مقدار، استثنای جاوااسکریپتی {{jsxref("TypeError")}} ایجاد میشود.
 - `SecurityError`
-  - : The operation is insecure. (Legacy code value: `18` and legacy constant name: `SECURITY_ERR`)
+  - : عملیات ناامن است. (مقدار کد قدیمی: `18` و نام ثابت قدیمی: `SECURITY_ERR`)
 - `NetworkError` {{experimental_inline}}
-  - : A network error occurred. (Legacy code value: `19` and legacy constant name: `NETWORK_ERR`)
+  - : یک خطای شبکه رخ داد. (مقدار کد قدیمی: `19` و نام ثابت قدیمی: `NETWORK_ERR`)
 - `AbortError` {{experimental_inline}}
-  - : The operation was aborted. (Legacy code value: `20` and legacy constant name: `ABORT_ERR`)
+  - : عملیات لغو شد. (مقدار کد قدیمی: `20` و نام ثابت قدیمی: `ABORT_ERR`)
 - `URLMismatchError` {{experimental_inline}}
-  - : The given URL does not match another URL. (Legacy code value: `21` and legacy constant name: `URL_MISMATCH_ERR`)
+  - : URL دادهشده با URL دیگری مطابقت ندارد. (مقدار کد قدیمی: `21` و نام ثابت قدیمی: `URL_MISMATCH_ERR`)
 - {{domxref("QuotaExceededError")}}
-  - : The quota has been exceeded. (Legacy code value: `22` and legacy constant name: `QUOTA_EXCEEDED_ERR`) It is a proper interface that derives from `DOMException`.
+  - : سهمیه بیش از حد مجاز استفاده شده است. (مقدار کد قدیمی: `22` و نام ثابت قدیمی: `QUOTA_EXCEEDED_ERR`) این یک رابط واقعی است که از `DOMException` مشتق میشود.
 - `TimeoutError`
-  - : The operation timed out. (Legacy code value: `23` and legacy constant name: `TIMEOUT_ERR`)
+  - : زمان عملیات به پایان رسید. (مقدار کد قدیمی: `23` و نام ثابت قدیمی: `TIMEOUT_ERR`)
 - `InvalidNodeTypeError` {{experimental_inline}}
-  - : The node is incorrect or has an incorrect ancestor for this operation. (Legacy code value: `24` and legacy constant name: `INVALID_NODE_TYPE_ERR`)
+  - : گره برای این عملیات نادرست است یا جدِ نامناسبی دارد. (مقدار کد قدیمی: `24` و نام ثابت قدیمی: `INVALID_NODE_TYPE_ERR`)
 - `DataCloneError` {{experimental_inline}}
-  - : The object can not be cloned. (Legacy code value: `25` and legacy constant name: `DATA_CLONE_ERR`)
+  - : شیء قابل شبیهسازی نیست. (مقدار کد قدیمی: `25` و نام ثابت قدیمی: `DATA_CLONE_ERR`)
 - `EncodingError` {{experimental_inline}}
-  - : The encoding or decoding operation failed (No legacy code value and constant name).
+  - : عملیات رمزگذاری یا رمزگشایی شکست خورد (مقدار کد قدیمی و نام ثابت قدیمی ندارد).
 - `NotReadableError` {{experimental_inline}}
-  - : The input/output read operation failed (No legacy code value and constant name).
+  - : عملیات خواندن ورودی/خروجی شکست خورد (مقدار کد قدیمی و نام ثابت قدیمی ندارد).
 - `UnknownError` {{experimental_inline}}
-  - : The operation failed for an unknown transient reason (e.g., out of memory) (No legacy code value and constant name).
+  - : عملیات به دلیل نامعلوم موقتی (مثلاً کمبود حافظه) شکست خورد (مقدار کد قدیمی و نام ثابت قدیمی ندارد).
 - `ConstraintError` {{experimental_inline}}
-  - : A mutation operation in a transaction failed because a constraint was not satisfied (No legacy code value and constant name).
+  - : یک عملیات تغییر در یک تراکنش به دلیل برآورده نشدن یک قید شکست خورد (مقدار کد قدیمی و نام ثابت قدیمی ندارد).
 - `DataError` {{experimental_inline}}
-  - : Provided data is inadequate (No legacy code value and constant name).
+  - : دادههای ارائهشده ناکافی هستند (مقدار کد قدیمی و نام ثابت قدیمی ندارد).
 - `TransactionInactiveError` {{experimental_inline}}
-  - : A request was placed against a transaction that is currently not active or is finished (No legacy code value and constant name).
+  - : درخواستی علیه تراکنشی که در حال حاضر فعال نیست یا به پایان رسیده است، ارسال شد (مقدار کد قدیمی و نام ثابت قدیمی ندارد).
 - `ReadOnlyError` {{experimental_inline}}
-  - : The mutating operation was attempted in a "readonly" transaction (No legacy code value and constant name).
+  - : عملیات تغییر در یک تراکنش «فقطخواندنی» تلاش شد (مقدار کد قدیمی و نام ثابت قدیمی ندارد).
 - `VersionError` {{experimental_inline}}
-  - : An attempt was made to open a database using a lower version than the existing version (No legacy code value and constant name).
+  - : تلاش شد یک پایگاهداده با نسخهای پایینتر از نسخهٔ موجود باز شود (مقدار کد قدیمی و نام ثابت قدیمی ندارد).
 - `OperationError` {{experimental_inline}}
-  - : The operation failed for an operation-specific reason (No legacy code value and constant name).
+  - : عملیات به دلیلی خاص برای آن عملیات شکست خورد (مقدار کد قدیمی و نام ثابت قدیمی ندارد).
 - `NotAllowedError`
-  - : The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission (No legacy code value and constant name).
+  - : درخواست توسط عامل کاربر یا پلتفرم در زمینهٔ فعلی مجاز نیست، احتمالاً به این دلیل که کاربر اجازه را رد کرده است (مقدار کد قدیمی و نام ثابت قدیمی ندارد).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [A polyfill of `DOMException`](https://github.com/zloirock/core-js#domexception) is available in [`core-js`](https://github.com/zloirock/core-js)
+- [یک polyfill برای `DOMException`](https://github.com/zloirock/core-js#domexception) در [`core-js`](https://github.com/zloirock/core-js) موجود است.
 - {{ domxref("DOMError") }}
+```
