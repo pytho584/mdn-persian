@@ -1,7 +1,5 @@
 ---
 title: "Communication with embedded frames"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Fenced_frame_API/Communication_with_embedded_frames"
-status: "needs-translation"
 ---
 
 ---
@@ -12,34 +10,34 @@ page-type: guide
 
 {{DefaultAPISidebar("Fenced Frame API")}}
 
-This article provides information on how communication differs between an embedder and content embedded inside different types of frame (i.e., an {{htmlelement("iframe")}} and a {{htmlelement("fencedframe")}}), and how passed data can be stored.
+این مقاله توضیح می‌دهد که نحوهٔ برقراری ارتباط بین یک تعبیه‌کننده و محتوای تعبیه‌شده در انواع مختلف فریم (یعنی {{htmlelement("iframe")}} و {{htmlelement("fencedframe")}}) چگونه متفاوت است و داده‌های منتقل‌شده چگونه ذخیره می‌شوند.
 
-## How to communicate between the embedder and an `<iframe>`
+## چگونه بین تعبیه‌کننده و یک `<iframe>` ارتباط برقرار کنیم
 
-![Diagram illustrating the difference between local storage and shared storage and communication with an iframe, as explained below](iframe-storage-communication.png)
+![نموداری که تفاوت بین ذخیره‌سازی محلی و ذخیره‌سازی مشترک و ارتباط با یک iframe را نشان می‌دهد، همان‌طور که در ادامه توضیح داده شده است](iframe-storage-communication.png)
 
-When the third-party code is embedded in an `<iframe>`, the `<iframe>` and the embedder can send messages freely to each other to request data to be written into their client-side [shared storage](/en-US/docs/Web/API/Shared_Storage_API). The embedder can send a request to that `<iframe>` to write data into its own third-party storage with a cross-document communication channel using {{domxref("Window.postMessage()")}}. The third party can also send `postMessage()` requests to the embedder.
+هنگامی که کد شخص ثالث در یک `<iframe>` تعبیه می‌شود، `<iframe>` و تعبیه‌کننده می‌توانند آزادانه برای یکدیگر پیام ارسال کنند تا درخواست نوشتن داده در [ذخیره‌سازی مشترک](/en-US/docs/Web/API/Shared_Storage_API) سمت کلاینت خود را بدهند. تعبیه‌کننده می‌تواند از طریق یک کانال ارتباطی بین‌سندی و با استفاده از {{domxref("Window.postMessage()")}} به آن `<iframe>` درخواست دهد که داده‌ای را در ذخیره‌سازی شخص ثالث خودش بنویسد. شخص ثالث نیز می‌تواند درخواست‌های `postMessage()` را به تعبیه‌کننده ارسال کند.
 
-From the `<iframe>`, you can listen to a [`message`](/en-US/docs/Web/API/Window/message_event) event that comes from the embedder. When the embedder dispatches a message to the `<iframe>` using `postMessage()`, the `<iframe>` can take that data and store it in its own client-side shared storage. Conversely, the `<iframe>` can dispatch a message that the embedder can listen to, and respond by writing data into its shared storage.
+از داخل `<iframe>` می‌توانید به رویداد [`message`](/en-US/docs/Web/API/Window/message_event) که از سمت تعبیه‌کننده می‌رسد گوش دهید. وقتی تعبیه‌کننده با استفاده از `postMessage()` پیامی به `<iframe>` ارسال می‌کند، `<iframe>` می‌تواند آن داده را دریافت کرده و در ذخیره‌سازی مشترک سمت کلاینت خودش ذخیره کند. برعکس، `<iframe>` نیز می‌تواند پیامی ارسال کند که تعبیه‌کننده به آن گوش دهد و با نوشتن داده در ذخیره‌سازی مشترک خود پاسخ دهد.
 
-## How to communicate between the embedder and a `<fencedframe>`
+## چگونه بین تعبیه‌کننده و یک `<fencedframe>` ارتباط برقرار کنیم
 
-Fenced frames are intended to be used for cases such as displaying targeted ads selected via the [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience) and {{domxref("WindowSharedStorage.selectURL()")}}. Communicating between `<fencedframe>`s and other pages outside the `<fencedframe>` on the page is intentionally limited, but one method of communication between the embedder and shared storage worklets does exist — {{domxref("FencedFrameConfig.setSharedStorageContext()")}}.
+فریم‌های حصاردار (Fenced frames) برای مواردی مانند نمایش تبلیغات هدفمندی در نظر گرفته شده‌اند که از طریق [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience) و {{domxref("WindowSharedStorage.selectURL()")}} انتخاب می‌شوند. ارتباط بین `<fencedframe>`ها و سایر صفحاتِ خارج از `<fencedframe>` در همان صفحه، به‌طور عمدی محدود شده است؛ با این حال، یک روش ارتباط بین تعبیه‌کننده و worklet‌های ذخیره‌سازی مشترک وجود دارد: {{domxref("FencedFrameConfig.setSharedStorageContext()")}}.
 
 > [!NOTE]
-> Within the same `<fencedframe>` tree, communication between frames is allowed. For example, a root `<fencedframe>` can send a message to a child `<iframe>` in its own tree, and a child `<iframe>` can send a message to the parent `<fencedframe>`.
+> در درون درختِ همان `<fencedframe>`، ارتباط بین فریم‌ها مجاز است. برای مثال، یک `<fencedframe>` ریشه می‌تواند به `<iframe>` فرزند در درخت خودش پیام بفرستد و یک `<iframe>` فرزند نیز می‌تواند به `<fencedframe>` والد پیام بفرستد.
 
-Let's look at a more complex example that uses a Select URL output gate operation to render an ad in a `<fencedframe>`.
+بیایید به مثال پیچیده‌تری نگاه کنیم که از عملیات دروازه خروجی Select URL برای رندر کردن یک تبلیغ در یک `<fencedframe>` استفاده می‌کند.
 
-![A complex embedding situation with an embedder that is embedding an iframe, which is embedding a fencedframe, which is embedding an iframe](multiple-embed-levels.png)
+![یک وضعیت تعبیه پیچیده که در آن یک تعبیه‌کننده یک iframe را تعبیه کرده، آن iframe یک fencedframe را تعبیه کرده، و آن fencedframe نیز یک iframe را تعبیه کرده است](multiple-embed-levels.png)
 
-In this example, a publisher asks a third-party content provider to render some content on the page. The content chosen with {{domxref("WindowSharedStorage.selectURL()")}} is rendered in a `<fencedframe>`, and the content contains an `<iframe>` from a measurement provider. Note that a publisher can represent any entity that is embedding a third-party `<fencedframe>`. Also, a measurement provider represents any nested third-party code running in a `<fencedframe>` of a different third party.
+در این مثال، یک ناشر از یک ارائه‌دهنده محتوای شخص ثالث می‌خواهد محتوایی را در صفحه رندر کند. محتوایی که با {{domxref("WindowSharedStorage.selectURL()")}} انتخاب شده است در یک `<fencedframe>` رندر می‌شود و شامل یک `<iframe>` از یک ارائه‌دهنده اندازه‌گیری است. توجه داشته باشید که یک ناشر می‌تواند نمایانگر هر موجودیتی باشد که یک `<fencedframe>` شخص ثالث را تعبیه می‌کند. همچنین، یک ارائه‌دهنده اندازه‌گیری نمایانگر هر کد شخص ثالث تودرتویی است که درون `<fencedframe>` متعلق به شخص ثالثی دیگر اجرا می‌شود.
 
-To pass data into a `<fencedframe>` to be used in a shared storage worklet, the embedder can set the data in a {{domxref("FencedFrameConfig")}}. That value will be available as {{domxref("WorkletSharedStorage.context")}} inside the shared storage worklet. This data is not available outside a worklet, and can only be accessed inside a secure and private environment that a shared storage worklet provides.
+برای انتقال داده به یک `<fencedframe>` تا در worklet ذخیره‌سازی مشترک استفاده شود، تعبیه‌کننده می‌تواند داده را در یک {{domxref("FencedFrameConfig")}} قرار دهد. آن مقدار در داخل worklet ذخیره‌سازی مشترک به‌صورت {{domxref("WorkletSharedStorage.context")}} در دسترس خواهد بود. این داده در خارج از worklet در دسترس نیست و فقط در داخل محیط امن و خصوصی‌ای قابل دسترسی است که توسط یک worklet ذخیره‌سازی مشترک فراهم می‌شود.
 
-![A publisher created a FencedFrameConfig using selectURL, which can set contextual data using setSharedStorageContext that will then be available in a shared storage worklet](share-contextual-data.png)
+![یک ناشر با استفاده از selectURL یک FencedFrameConfig ساخته است؛ این پیکربندی می‌تواند داده‌های زمینه‌ای را با setSharedStorageContext تنظیم کند که سپس در یک worklet ذخیره‌سازی مشترک در دسترس خواهد بود](share-contextual-data.png)
 
-When a `selectURL()` call returns a `FencedFrameConfig`, the frame embedder can pass in data by calling `setSharedStorageContext(data)`:
+وقتی یک فراخوانی `selectURL()` یک `FencedFrameConfig` برمی‌گرداند، تعبیه‌کننده فریم می‌تواند با فراخوانی `setSharedStorageContext(data)` داده را به آن منتقل کند:
 
 ```js
 const fencedFrameConfig = await window.sharedStorage.selectURL(
@@ -57,9 +55,9 @@ fencedFrameConfig.setSharedStorageContext("some-data");
 document.getElementById("my-fenced-frame").config = fencedFrameConfig;
 ```
 
-`setSharedStorageContext(data)` must be called on the `fencedFrameConfig` before the intended `<fencedframe>` element recipient has its `config` attribute set to `fencedFrameConfig`, as this triggers the frame to navigate.
+باید `setSharedStorageContext(data)` را روی `fencedFrameConfig` فراخوانی کرد، پیش از آنکه ویژگی `config` عنصر `<fencedframe>` مقصد روی `fencedFrameConfig` تنظیم شود؛ زیرا این کار باعث ناوبری فریم می‌شود.
 
-Inside a shared storage worklet, `WorkletSharedStorage.context` can then be accessed to retrieve the data:
+سپس در داخل یک worklet ذخیره‌سازی مشترک، می‌توان به `WorkletSharedStorage.context` دسترسی پیدا کرد تا داده بازیابی شود:
 
 ```js
 class ReportingOperation {
