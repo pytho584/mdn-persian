@@ -1,11 +1,5 @@
 ---
 title: "Document: beforescriptexecute event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/beforescriptexecute_event"
-status: "needs-translation"
----
-
----
-title: "Document: beforescriptexecute event"
 short-title: beforescriptexecute
 slug: Web/API/Document/beforescriptexecute_event
 page-type: web-api-event
@@ -17,11 +11,11 @@ browser-compat: api.Document.beforescriptexecute_event
 
 {{APIRef("DOM")}}{{non-standard_header}}{{deprecated_header}}
 
-The `beforescriptexecute` event fires when a static {{HTMLElement("script")}} is about to start executing. It does not fire if the element is added dynamically, such as with {{domxref("Node.appendChild()", "appendChild()")}}.
+رویداد `beforescriptexecute` زمانی رخ می‌دهد که یک {{HTMLElement("script")}} ایستا (static) در آستانهٔ اجرا قرار می‌گیرد. اگر عنصر به‌صورت پویا اضافه شود، مانند استفاده از {{domxref("Node.appendChild()", "appendChild()")}}، این رویداد فعال نمی‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به‌کار ببرید یا یک ویژگی handler رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("beforescriptexecute", (event) => { })
@@ -29,11 +23,11 @@ addEventListener("beforescriptexecute", (event) => { })
 onbeforescriptexecute = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## نمونه‌ها
 
 ```js
 function starting(e) {
@@ -45,17 +39,17 @@ document.addEventListener("beforescriptexecute", starting);
 document.onbeforescriptexecute = starting;
 ```
 
-[View Live Example](https://mdn.dev/archives/media/samples/html/currentScript.html)
+[مشاهدهٔ مثال زنده](https://mdn.dev/archives/media/samples/html/currentScript.html)
 
-## Specifications
+## مشخصات
 
-Not part of any specification.
+بخشی از هیچ مشخصاتی نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Document.afterscriptexecute_event", "afterscriptexecute")}} event of `Document`
+- رویداد {{domxref("Document.afterscriptexecute_event", "afterscriptexecute")}} از `Document`
 - {{domxref("Document.currentScript")}}
