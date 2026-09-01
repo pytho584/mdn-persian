@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: readOnly property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/readOnly"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: readOnly property"
 short-title: readOnly
 slug: Web/API/HTMLInputElement/readOnly
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLInputElement.readOnly
 
 {{ APIRef("HTML DOM") }}
 
-The **`readOnly`** property of the {{DOMxRef("HTMLInputElement")}} interface indicates that the user cannot modify the value of the {{htmlelement("input")}}. It reflects the {{htmlelement("input")}} element's [`readonly`](/en-US/docs/Web/HTML/Reference/Elements/input#readonly) boolean attribute; returning `true` if the attribute is present and `false` when omitted.
+خاصیت **`readOnly`** در واسط {{DOMxRef("HTMLInputElement")}} نشان می‌دهد که کاربر نمی‌تواند مقدار {{htmlelement("input")}} را تغییر دهد. این خاصیت منعکس‌کنندهٔ ویژگی بولی [`readonly`](/en-US/docs/Web/HTML/Reference/Elements/input#readonly) عنصر {{htmlelement("input")}} است؛ در صورت وجود ویژگی، `true` و در صورت عدم وجود، `false` برمی‌گرداند.
 
-Unlike a form control with a true {{domxref("HTMLInputElement.disabled", "disabled")}} property, a true `readOnly` property value does not prevent the user from clicking or selecting in the control.
+برخلاف یک کنترل فرم با خاصیت {{domxref("HTMLInputElement.disabled", "disabled")}} برابر با `true`، مقدار `true` برای خاصیت `readOnly` از کلیک یا انتخاب کاربر در کنترل جلوگیری نمی‌کند.
 
-While the HTML `readonly` attribute is ignored if the type is `hidden`, `range`, `color`, `checkbox`, `radio`, `file`, `submit`, `reset`, `button`, and `image`, the `readOnly` property is `true` for these input types if the attribute is present, `false` otherwise.
+اگرچه ویژگی HTML `readonly` برای انواع `hidden`، `range`، `color`، `checkbox`، `radio`، `file`، `submit`، `reset`، `button` و `image` نادیده گرفته می‌شود، خاصیت `readOnly` برای این انواع ورودی در صورت وجود ویژگی `true` و در غیر این صورت `false` است.
 
-## Value
+## مقدار
 
-A boolean.
+یک بولی.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const inputElement = document.getElementById("total");
@@ -32,16 +26,16 @@ console.log(inputElement.readOnly);
 inputElement.readOnly = true;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("input")}}
 - {{DOMXref("HTMLInputElement.disabled")}}
-- {{cssxref(":read-only")}} pseudo-class
+- شبه‌کلاس {{cssxref(":read-only")}}
