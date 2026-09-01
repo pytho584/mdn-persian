@@ -1,7 +1,6 @@
 ---
 title: "HIDInputReportEvent: reportId property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDInputReportEvent/reportId"
-status: "needs-translation"
 ---
 
 ---
@@ -16,15 +15,15 @@ browser-compat: api.HIDInputReportEvent.reportId
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`reportId`** property of the {{domxref("HIDInputReportEvent")}} interface returns the one-byte identification prefix for this report, or 0 if the HID interface does not use report IDs.
+**`reportId`** ویژگی از رابط {{domxref("HIDInputReportEvent")}}، پیشوند شناسایی یک‌بایتی این گزارش را برمی‌گرداند، یا اگر رابط HID از شناسه‌های گزارش استفاده نکند، مقدار 0 را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A one-byte identification prefix.
+یک پیشوند شناسایی یک‌بایتی.
 
-## Examples
+## مثال‌ها
 
-In the following example the `reportId` of an incoming input report is logged to the console.
+در مثال زیر، `reportId` یک گزارش ورودی دریافتی در کنسول ثبت می‌شود.
 
 ```js
 device.addEventListener("inputreport", (event) => {
@@ -33,10 +32,10 @@ device.addEventListener("inputreport", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
