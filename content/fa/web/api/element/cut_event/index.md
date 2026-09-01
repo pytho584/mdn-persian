@@ -1,9 +1,4 @@
----
-title: "Element: cut event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/cut_event"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "Element: cut event"
 short-title: cut
@@ -14,25 +9,25 @@ browser-compat: api.Element.cut_event
 
 {{APIRef("Clipboard API")}}
 
-The **`cut`** event of the [Clipboard API](/en-US/docs/Web/API/Clipboard_API) is fired when the user has initiated a "cut" action through the browser's user interface.
+رویداد **`cut`** از [API کلیپبورد](/en-US/docs/Web/API/Clipboard_API) زمانی فعال میشود که کاربر یک عمل «برش» را از طریق رابط کاربری مرورگر آغاز کند.
 
-If the user attempts a cut action on uneditable content, the `cut` event still fires but the event object contains no data.
+اگر کاربر یک عمل برش را بر روی محتوای غیرقابل ویرایش انجام دهد، رویداد `cut` همچنان فعال میشود، اما شیء رویداد حاوی هیچ دادهای نخواهد بود.
 
-The event's default action is to copy the current selection (if any) to the system clipboard and remove it from the document.
+عمل پیشفرض این رویداد، کپی کردن انتخاب کنونی (در صورت وجود) به کلیپبورد سیستم و حذف آن از سند است.
 
-A handler for this event can _modify_ the clipboard contents by calling {{domxref("DataTransfer.setData", "setData(format, data)")}} on the event's {{domxref("ClipboardEvent.clipboardData")}} property, and cancelling the default action using {{domxref("Event/preventDefault", "event.preventDefault()")}}.
+یک کنترلکننده برای این رویداد میتواند محتویات کلیپبورد را با فراخوانی {{domxref("DataTransfer.setData", "setData(format, data)")}} بر روی ویژگی {{domxref("ClipboardEvent.clipboardData")}} رویداد، _تغییر_ دهد و با استفاده از {{domxref("Event/preventDefault", "event.preventDefault()")}} عمل پیشفرض را لغو کند.
 
-Note though that cancelling the default action will also prevent the document from being updated. So an event handler which wants to emulate the default action for "cut" while modifying the clipboard must also manually remove the selection from the document.
+توجه داشته باشید که لغو عمل پیشفرض، از بهروزرسانی سند نیز جلوگیری میکند. بنابراین، یک کنترلکننده رویداد که میخواهد عمل پیشفرض «برش» را شبیهسازی کند و در عین حال کلیپبورد را تغییر دهد، باید بهصورت دستی نیز انتخاب را از سند حذف کند.
 
-The handler cannot _read_ the clipboard data.
+کنترلکننده نمیتواند دادههای کلیپبورد را _بخواند_.
 
-It's possible to construct and dispatch a [synthetic](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) `cut` event, but this will not affect the system clipboard or the document's contents.
+ساخت و ارسال یک رویداد `cut` [مصنوعی](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) امکانپذیر است، اما این کار بر کلیپبورد سیستم یا محتویات سند تأثیری نخواهد داشت.
 
-This event [bubbles](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) up the DOM tree, eventually to {{domxref("Document")}} and {{domxref("Window")}}, is [cancelable](/en-US/docs/Web/API/Event/cancelable) and is [composed](/en-US/docs/Web/API/Event/composed).
+این رویداد در درخت DOM به سمت بالا [حباب میکند](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) و در نهایت به {{domxref("Document")}} و {{domxref("Window")}} میرسد، [قابل لغو](/en-US/docs/Web/API/Event/cancelable) و [ترکیبپذیر](/en-US/docs/Web/API/Event/composed) است.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روشهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترلکننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("cut", (event) => { })
@@ -40,15 +35,15 @@ addEventListener("cut", (event) => { })
 oncut = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("ClipboardEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("ClipboardEvent")}}. به ارث برده شده از {{domxref("Event")}}.
 
 {{InheritanceDiagram("ClipboardEvent")}}
 
-## Examples
+## مثالها
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -81,19 +76,20 @@ source.addEventListener("cut", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '120px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Element/copy_event", "copy")}} event
-- {{domxref("Element/paste_event", "paste")}} event
+- رویداد {{domxref("Element/copy_event", "copy")}}
+- رویداد {{domxref("Element/paste_event", "paste")}}
+```
