@@ -1,7 +1,5 @@
 ---
 title: "HTMLAnchorElement: origin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/origin"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,23 @@ browser-compat: api.HTMLAnchorElement.origin
 
 {{APIRef("HTML DOM")}}
 
-The **`origin`** read-only property of the {{domxref("HTMLAnchorElement")}} interface returns a string containing the Unicode serialization of the origin of the `<a>` element's `href`.
+ویژگی فقط‌خواندنی **`origin`** در واسط {{domxref("HTMLAnchorElement")}} رشته‌ای را برمی‌گرداند که شامل سریال‌سازی یونیکدِ origin (مبدأ) برای `href` عنصر `<a>` است.
 
-The exact structure varies depending on the type of URL:
+ساختار دقیق آن بسته به نوع URL متفاوت است:
 
-- For URLs using the `ftp:`, `http:`, `https:`, `ws:`, and `wss:` schemes, the {{domxref("HTMLAnchorElement.protocol", "protocol")}} followed by `//`, followed by the {{domxref("HTMLAnchorElement.host", "host")}}. Same as `host`, the {{domxref("HTMLAnchorElement.port", "port")}} is only included if it's not the default for the protocol.
-- For URLs using `file:` scheme, the value is browser dependent.
-- For URLs using the `blob:` scheme, the origin of the URL following `blob:`, but only if that URL uses the `http:`, `https:`, or `file:` scheme. For example, `blob:https://mozilla.org` will have `https://mozilla.org`.
+- برای URLهایی که از طرح‌های `ftp:`، `http:`، `https:`، `ws:` و `wss:` استفاده می‌کنند، مقدار از {{domxref("HTMLAnchorElement.protocol", "protocol")}} و سپس `//` و بعد از آن {{domxref("HTMLAnchorElement.host", "host")}} تشکیل می‌شود. مانند `host`، {{domxref("HTMLAnchorElement.port", "port")}} تنها زمانی درج می‌شود که پیش‌فرضِ آن پروتکل نباشد.
+- برای URLهایی که از طرح `file:` استفاده می‌کنند، مقدار به مرورگر بستگی دارد.
+- برای URLهایی که از طرح `blob:` استفاده می‌کنند، مقدار برابر با origin (مبدأ) URLِ پس از `blob:` است، اما فقط در صورتی که آن URL از طرح‌های `http:`، `https:` یا `file:` استفاده کند. برای مثال، `blob:https://mozilla.org` مقدار `https://mozilla.org` را خواهد داشت.
 
-For all other cases, the string `"null"` is returned.
+در تمام موارد دیگر، رشته `"null"` برگردانده می‌شود.
 
-See {{domxref("URL.origin")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.origin")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 // An <a id="myAnchor" href="https://developer.mozilla.org/en-US/HTMLAnchorElement"> element is in the document
@@ -38,14 +36,14 @@ const anchor = document.getElementById("myAnchor");
 anchor.origin; // returns 'https://developer.mozilla.org'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAnchorElement")}} interface it belongs to.
+- واسط {{domxref("HTMLAnchorElement")}} که این ویژگی به آن تعلق دارد.
