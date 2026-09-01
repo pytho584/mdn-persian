@@ -1,7 +1,6 @@
+```
 ---
 title: "HTMLSelectElement: namedItem() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/namedItem"
-status: "needs-translation"
 ---
 
 ---
@@ -14,29 +13,26 @@ browser-compat: api.HTMLSelectElement.namedItem
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLSelectElement.namedItem()`** method returns the
-{{domxref("HTMLOptionElement")}} corresponding to the {{domxref("HTMLOptionElement")}}
-whose `name` or `id` match the specified name, or
-`null` if no option matches.
+متد **`HTMLSelectElement.namedItem()`**، {{domxref("HTMLOptionElement")}} مربوط به گزینه‌ای را برمی‌گرداند که `name` یا `id` آن با نام مشخص‌شده مطابقت دارد؛ اگر هیچ گزینه‌ای مطابقت نداشته باشد، `null` برمی‌گرداند.
 
-In JavaScript, using `selectElt.namedItem('value')` is equivalent to `selectElt.options.namedItem('value')`.
+در جاوااسکریپت، استفاده از `selectElt.namedItem('value')` معادل `selectElt.options.namedItem('value')` است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 namedItem(str)
 ```
 
-### Parameters
+### پارامترها
 
 - `str`
-  - : A string representing the `name` or `id` of the option.
+  - : یک رشته که نمایانگر `name` یا `id` گزینه است.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("HTMLOptionElement")}} or `null`.
+یک {{domxref("HTMLOptionElement")}} یا `null` است.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -56,7 +52,7 @@ let selectElt = document.getElementById("myFormControl");
 elem1 = selectElt.namedItem("o1"); // Returns the HTMLOptionElement representing #o1
 ```
 
-But, you cannot write:
+اما نمی‌توانید بنویسید:
 
 ```js
 let selectElt = document.getElementById("myFormControl");
@@ -64,14 +60,15 @@ elem1 = selectElt.o1; // Returns undefined
 elem1 = selectElt["o1"]; // Returns undefined
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("HTMLSelectElement")}} that implements it.
+- {{domxref("HTMLSelectElement")}} که آن را پیاده‌سازی می‌کند.
+```
