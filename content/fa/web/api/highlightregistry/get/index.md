@@ -1,11 +1,5 @@
 ---
 title: "HighlightRegistry: get() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry/get"
-status: "needs-translation"
----
-
----
-title: "HighlightRegistry: get() method"
 short-title: get()
 slug: Web/API/HighlightRegistry/get
 page-type: web-api-instance-method
@@ -15,28 +9,28 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`get()`** method of the {{domxref("HighlightRegistry")}} interface returns the named {{domxref("Highlight")}} object from the registry.
+متد **`get()`** از رابط {{domxref("HighlightRegistry")}}، شیء {{domxref("Highlight")}} با نام مشخص را از ثبت‌نام (registry) بازمی‌گرداند.
 
-`HighlightRegistry` is a {{jsxref("Map")}}-like object, so this is similar to using {{jsxref("Map.get()")}}.
+`HighlightRegistry` یک شیء شبیه به {{jsxref("Map")}} است، بنابراین این متد مشابه استفاده از {{jsxref("Map.get()")}} است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 get(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the `Highlight` object to return from the registry. The name must be a {{jsxref("String")}}.
+  - : نام شیء `Highlight` که باید از ثبت‌نام بازگردانده شود. نام باید یک {{jsxref("String")}} باشد.
 
-### Return value
+### مقدار بازگشتی
 
-The `Highlight` object associated with the specified name, or {{jsxref("undefined")}} if the name can't be found in the `HighlightRegistry`.
+شیء `Highlight` مرتبط با نام مشخص‌شده، یا {{jsxref("undefined")}} اگر نام در `HighlightRegistry` یافت نشود.
 
-## Examples
+## مثال‌ها
 
-The following code sample demonstrates how to create a new `Highlight`, add it to the registry, and retrieve it by its name using the `get()` method:
+نمونه کد زیر نحوه ایجاد یک `Highlight` جدید، افزودن آن به ثبت‌نام و بازیابی آن با نامش با استفاده از متد `get()` را نشان می‌دهد:
 
 ```js
 const fooHighlight = new Highlight();
@@ -45,15 +39,15 @@ CSS.highlights.set("foo", fooHighlight);
 console.log(CSS.highlights.get("foo")); // Returns the fooHighlight object.
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
 - [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
