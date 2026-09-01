@@ -1,7 +1,5 @@
 ---
 title: "GPUTexture"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture"
-status: "needs-translation"
 ---
 
 ---
@@ -13,47 +11,47 @@ browser-compat: api.GPUTexture
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUTexture`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents a container used to store 1D, 2D, or 3D arrays of data, such as images, to use in GPU rendering operations.
+رابطهٔ **`GPUTexture`** در {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} نمایانگر یک ظرف برای ذخیرهسازی آرایههای یکبعدی، دوبعدی یا سهبعدی از دادهها، مانند تصاویر، جهت استفاده در عملیات رندر GPU است.
 
-A `GPUTexture` object instance is created using the {{domxref("GPUDevice.createTexture()")}} method.
+یک نمونه از شیء `GPUTexture` با استفاده از متد {{domxref("GPUDevice.createTexture()")}} ساخته میشود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگیهای نمونه
 
 - {{domxref("GPUTexture.depthOrArrayLayers", "depthOrArrayLayers")}} {{ReadOnlyInline}}
-  - : A number representing the depth or layer count of the `GPUTexture` (pixels, or number of layers).
+  - : عددی که عمق یا تعداد لایههای `GPUTexture` را نشان میدهد (پیکسل یا تعداد لایهها).
 - {{domxref("GPUTexture.dimension", "dimension")}} {{ReadOnlyInline}}
-  - : An enumerated value representing the dimension of the set of texels for each `GPUTexture` subresource.
+  - : یک مقدار شمارشی که ابعاد مجموعهٔ texelها را برای هر زیرمنبع `GPUTexture` نشان میدهد.
 - {{domxref("GPUTexture.format", "format")}} {{ReadOnlyInline}}
-  - : An enumerated value representing the format of the `GPUTexture`. See the [Texture formats](https://gpuweb.github.io/gpuweb/#enumdef-gputextureformat) section of the specification for all the possible values. Also see [Tier 1 and Tier 2 texture formats](/en-US/docs/Web/API/GPUDevice/createTexture#tier_1_and_tier_2_texture_formats).
+  - : یک مقدار شمارشی که قالب `GPUTexture` را نشان میدهد. برای همهٔ مقادیر ممکن به بخش [Texture formats](https://gpuweb.github.io/gpuweb/#enumdef-gputextureformat) در مشخصات مراجعه کنید. همچنین [Tier 1 and Tier 2 texture formats](/en-US/docs/Web/API/GPUDevice/createTexture#tier_1_and_tier_2_texture_formats) را ببینید.
 - {{domxref("GPUTexture.height", "height")}} {{ReadOnlyInline}}
-  - : A number representing the height of the `GPUTexture` in pixels.
+  - : عددی که ارتفاع `GPUTexture` را بر حسب پیکسل نشان میدهد.
 - {{domxref("GPUTexture.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : یک رشته که برچسبی برای شناسایی شیء فراهم میکند، مثلاً در پیامهای {{domxref("GPUError")}} یا هشدارهای کنسول.
 - {{domxref("GPUTexture.mipLevelCount", "mipLevelCount")}} {{ReadOnlyInline}}
-  - : A number representing the number of mip levels of the `GPUTexture`.
+  - : عددی که تعداد سطحهای مایپ (mip levels) `GPUTexture` را نشان میدهد.
 - {{domxref("GPUTexture.sampleCount", "sampleCount")}} {{ReadOnlyInline}}
-  - : A number representing the sample count of the `GPUTexture`.
+  - : عددی که تعداد نمونههای `GPUTexture` را نشان میدهد.
 - {{domxref("GPUTexture.usage", "usage")}} {{ReadOnlyInline}}
-  - : The {{glossary("bitwise flags")}} representing the allowed usages of the `GPUTexture`.
+  - : {{glossary("bitwise flags")}} که کاربردهای مجاز `GPUTexture` را نشان میدهد.
 - {{domxref("GPUTexture.width", "width")}} {{ReadOnlyInline}}
-  - : A number representing the width of the `GPUTexture` in pixels.
+  - : عددی که عرض `GPUTexture` را بر حسب پیکسل نشان میدهد.
 
-## Instance methods
+## روشهای نمونه
 
 - {{domxref("GPUTexture.createView", "createView()")}}
-  - : Creates a {{domxref("GPUTextureView")}} representing a specific view of the `GPUTexture`.
+  - : یک {{domxref("GPUTextureView")}} میسازد که نمای خاصی از `GPUTexture` را نشان میدهد.
 - {{domxref("GPUTexture.destroy", "destroy()")}}
-  - : Destroys the `GPUTexture`.
+  - : `GPUTexture` را از بین میبرد.
 
-## Examples
+## مثالها
 
-In the WebGPU samples [Textured Cube sample](https://webgpu.github.io/webgpu-samples/samples/texturedCube/), a texture to use on the faces of a cube is created by:
+در نمونههای WebGPU، [نمونهٔ مکعب با بافت](https://webgpu.github.io/webgpu-samples/samples/texturedCube/)، یک بافت برای استفاده روی وجههای مکعب به این صورت ساخته میشود:
 
-- Loading the image into an {{domxref("HTMLImageElement")}} and creating an image bitmap using {{domxref("Window.createImageBitmap", "createImageBitmap()")}}.
-- Creating a new `GPUTexture` using `createTexture()`.
-- Copying the image bitmap into the texture using {{domxref("GPUQueue.copyExternalImageToTexture()")}}.
+- بارگذاری تصویر در یک {{domxref("HTMLImageElement")}} و ساخت bitmap تصویر با استفاده از {{domxref("Window.createImageBitmap", "createImageBitmap()")}}.
+- ساخت یک `GPUTexture` جدید با استفاده از `createTexture()`.
+- کپی کردن bitmap تصویر در بافت با استفاده از {{domxref("GPUQueue.copyExternalImageToTexture()")}}.
 
 ```js
 // …
@@ -88,14 +86,14 @@ let cubeTexture;
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
