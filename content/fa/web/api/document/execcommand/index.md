@@ -1,7 +1,5 @@
 ---
 title: "Document: execCommand() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand"
-status: "needs-translation"
 ---
 
 ---
@@ -18,16 +16,16 @@ browser-compat: api.Document.execCommand
 {{ApiRef("DOM")}}{{deprecated_header}}{{non-standard_header}}
 
 > [!NOTE]
-> Although the `execCommand()` method is deprecated, there are still some valid use cases that do not yet have viable alternatives. For example, unlike direct DOM manipulation, modifications performed by `execCommand()` preserve the undo buffer (edit history). For these use cases, you can still use this method, but test to ensure cross-browser compatibility, such as by using {{domxref("document.queryCommandSupported()")}}.
+> اگرچه متد `execCommand()` منسوخ شده است، اما هنوز موارد استفاده معتبری وجود دارد که جایگزین مناسبی برای آنها در دسترس نیست. برای مثال، بر خلاف دستکاری مستقیم DOM، تغییراتی که توسط `execCommand()` انجام می‌شود، بافر بازگشت (تاریخچه ویرایش) را حفظ می‌کند. برای این موارد استفاده، همچنان می‌توانید از این متد استفاده کنید، اما برای اطمینان از سازگاری بین مرورگرها، تست کنید، مثلاً با استفاده از {{domxref("document.queryCommandSupported()")}}.
 
-The **`execCommand`** method implements multiple different commands. Some of them provide access to the clipboard, while others are for editing [form inputs](/en-US/docs/Web/HTML/Reference/Elements/input), [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) elements or entire documents (when switched to [design mode](/en-US/docs/Web/API/Document/designMode)).
+متد **`execCommand`** چندین دستور مختلف را پیاده‌سازی می‌کند. برخی از آنها دسترسی به کلیپ‌بورد را فراهم می‌کنند، در حالی که برخی دیگر برای ویرایش [ورودی‌های فرم](/en-US/docs/Web/HTML/Reference/Elements/input)، عناصر [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) یا کل اسناد (در حالت [design mode](/en-US/docs/Web/API/Document/designMode)) استفاده می‌شوند.
 
-To access the clipboard, the newer [Clipboard API](/en-US/docs/Web/API/Clipboard_API) is recommended over `execCommand()`.
+برای دسترسی به کلیپ‌بورد، [Clipboard API](/en-US/docs/Web/API/Clipboard_API) جدیدتر به جای `execCommand()` توصیه می‌شود.
 
-Most commands affect the document's [selection](/en-US/docs/Web/API/Selection). For example, some commands (bold, italics, etc.) format the currently selected text, while others delete the selection, insert new elements (replacing the selection) or affect an entire line (indenting). Only the currently active editable element can be modified, but some commands (e.g., `copy`) can work without an editable element.
+اکثر دستورات بر [انتخاب](/en-US/docs/Web/API/Selection) سند تأثیر می‌گذارند. برای مثال، برخی دستورات (چرب، کج و غیره) متن انتخاب‌شده را قالب‌بندی می‌کنند، در حالی که برخی دیگر انتخاب را حذف می‌کنند، عناصر جدیدی وارد می‌کنند (جایگزین انتخاب می‌شوند) یا روی یک خط کامل تأثیر می‌گذارند (تورفتگی). فقط عنصر قابل ویرایش فعال فعلی قابل تغییر است، اما برخی دستورات (مثلاً `copy`) می‌توانند بدون عنصر قابل ویرایش کار کنند.
 
 > [!NOTE]
-> Modifications performed by `execCommand()` may or may not trigger {{domxref("Element/beforeinput_event", "beforeinput")}} and {{domxref("Element/input_event", "input")}} events, depending on the browser and configuration. If triggered, the handlers for the events will run before `execCommand()` returns. Authors need to be careful about such recursive calls, especially if they call `execCommand()` in response to these events. From Firefox 82, nested `execCommand()` calls will always fail, see [bug 1634262](https://bugzil.la/1634262).
+> تغییرات انجام‌شده توسط `execCommand()` ممکن است بسته به مرورگر و تنظیمات، رویدادهای {{domxref("Element/beforeinput_event", "beforeinput")}} و {{domxref("Element/input_event", "input")}} را فعال کنند یا نکنند. در صورت فعال شدن، مدیریت‌کننده‌های رویداد قبل از بازگشت `execCommand()` اجرا می‌شوند. نویسندگان باید مراقب چنین فراخوانی‌های بازگشتی باشند، به‌ویژه اگر `execCommand()` را در پاسخ به این رویدادها فراخوانی می‌کنند. از Firefox 82، فراخوانی‌های تو در توی `execCommand()` همیشه ناموفق خواهند بود، به [bug 1634262](https://bugzil.la/1634262) مراجعه کنید.
 
 ## Syntax
 
@@ -38,144 +36,135 @@ execCommand(commandName, showDefaultUI, valueArgument)
 ### Parameters
 
 - `commandName`
-  - : A string specifying the name of the command to execute. The following commands are specified:
+  - : رشته‌ای که نام دستور مورد نظر برای اجرا را مشخص می‌کند. دستورات زیر تعریف شده‌اند:
     - `backColor`
-      - : Changes the document background color. In `styleWithCss` mode, it affects the background color of the containing block instead. This requires a {{cssxref("&lt;color&gt;")}} value string to be passed in as a value argument.
+      - : رنگ پس‌زمینه سند را تغییر می‌دهد. در حالت `styleWithCss`، به جای آن بر رنگ پس‌زمینه بلوک محتوا تأثیر می‌گذارد. این نیاز به یک رشته مقدار {{cssxref("&lt;color&gt;")}} به عنوان آرگومان `value` دارد.
     - `bold`
-      - : Toggles bold on/off for the selection or at the insertion point.
+      - : قالب چرب را برای انتخاب یا در نقطه درج روشن/خاموش می‌کند.
     - `contentReadOnly`
-      - : Makes the content document either read-only or editable. This requires a boolean true/false as the value argument.
+      - : سند محتوا را فقط خواندنی یا قابل ویرایش می‌کند. این نیاز به یک مقدار بولی `true`/`false` به عنوان آرگومان `value` دارد.
     - `copy`
-      - : Copies the current selection to the clipboard. Conditions of having this behavior enabled vary from one browser to another, and have evolved over time. Check the compatibility table to determine if you can use it in your case.
+      - : انتخاب فعلی را در کلیپ‌بورد کپی می‌کند. شرایط فعال بودن این رفتار از مرورگری به مرورگر دیگر متفاوت است و در طول زمان تکامل یافته است. برای تعیین اینکه آیا می‌توانید از آن در مورد خود استفاده کنید، جدول سازگاری را بررسی کنید.
     - `createLink`
-      - : Creates a hyperlink from the selection, but only if there is a selection. Requires a {{Glossary("URI")}} string as a value argument for the hyperlink's `href`. The URI must contain at least a single character, which may be whitespace.
+      - : یک پیوند فوق‌متن از انتخاب ایجاد می‌کند، اما فقط در صورتی که انتخاب وجود داشته باشد. نیاز به یک رشته {{Glossary("URI")}} به عنوان آرگومان `value` برای `href` پیوند دارد. URI باید حداقل یک کاراکتر داشته باشد که می‌تواند فضای خالی باشد.
     - `cut`
-      - : Removes the current selection and copies it to the clipboard. When this behavior is enabled varies between browsers, and its conditions have evolved over time. Check [the compatibility table](#browser_compatibility) for usage details.
+      - : انتخاب فعلی را حذف کرده و در کلیپ‌بورد کپی می‌کند. زمان فعال بودن این رفتار بین مرورگرها متفاوت است و شرایط آن در طول زمان تکامل یافته است. برای جزئیات استفاده، [جدول سازگاری](#browser_compatibility) را بررسی کنید.
     - `decreaseFontSize`
-      - : Adds a {{HTMLElement("small")}} tag around the selection or at the insertion point.
+      - : یک برچسب {{HTMLElement("small")}} دور انتخاب یا در نقطه درج اضافه می‌کند.
     - `defaultParagraphSeparator`
-      - : Changes the paragraph separator used when new paragraphs are created in editable text regions.
+      - : جداکننده پاراگراف مورد استفاده هنگام ایجاد پاراگراف‌های جدید در مناطق متنی قابل ویرایش را تغییر می‌دهد.
     - `delete`
-      - : Deletes the current selection.
+      - : انتخاب فعلی را حذف می‌کند.
     - `enableAbsolutePositionEditor`
-      - : Enables or disables the grabber that allows absolutely-positioned elements to be moved around. The grabber is disabled by default since Firefox 64 ([Firefox bug 1490641](https://bugzil.la/1490641)).
+      - : گیره‌ای که امکان جابجایی عناصر با موقعیت‌یابی مطلق را فراهم می‌کند، فعال یا غیرفعال می‌کند. این گیره از Firefox 64 به طور پیش‌فرض غیرفعال است ([Firefox bug 1490641](https://bugzil.la/1490641)).
     - `enableInlineTableEditing`
-      - : Enables or disables the table row/column insertion and deletion controls. The controls are disabled by default since Firefox 64 ([Firefox bug 1490641](https://bugzil.la/1490641)).
+      - : کنترل‌های درج و حذف سطر/ستون جدول را فعال یا غیرفعال می‌کند. این کنترل‌ها از Firefox 64 به طور پیش‌فرض غیرفعال هستند ([Firefox bug 1490641](https://bugzil.la/1490641)).
     - `enableObjectResizing`
-      - : Enables or disables the resize handles on images, tables, and absolutely-positioned elements and other resizable objects. The handles are disabled by default since Firefox 64 ([Firefox bug 1490641](https://bugzil.la/1490641)).
+      - : دسته‌های تغییر اندازه روی تصاویر، جداول، عناصر با موقعیت‌یابی مطلق و سایر اشیاء قابل تغییر اندازه را فعال یا غیرفعال می‌کند. این دسته‌ها از Firefox 64 به طور پیش‌فرض غیرفعال هستند ([Firefox bug 1490641](https://bugzil.la/1490641)).
     - `fontName`
-      - : Changes the font name for the selection or at the insertion point. This requires a font name string (like `"Arial"`) as a value argument.
+      - : نام فونت را برای انتخاب یا در نقطه درج تغییر می‌دهد. این نیاز به یک رشته نام فونت (مانند `"Arial"`) به عنوان آرگومان `value` دارد.
     - `fontSize`
-      - : Changes the font size for the selection or at the insertion point. This requires an integer from `1` - `7` as a value argument.
+      - : اندازه فونت را برای انتخاب یا در نقطه درج تغییر می‌دهد. این نیاز به یک عدد صحیح از `1` تا `7` به عنوان آرگومان `value` دارد.
     - `foreColor`
-      - : Changes a font color for the selection or at the insertion point. This requires a hexadecimal color value string as a value argument.
+      - : رنگ فونت را برای انتخاب یا در نقطه درج تغییر می‌دهد. این نیاز به یک رشته مقدار رنگ هگزادسیمال به عنوان آرگومان `value` دارد.
     - `formatBlock`
-      - : Adds an HTML block-level element around the line containing the current selection, replacing the block element containing the line if one exists (in Firefox, {{HTMLElement("blockquote")}} is the exception — it will wrap any containing block element). Requires a tag-name string as a value argument. Virtually all block-level elements can be used. (Legacy Edge only supports heading tags `H1` – `H6`, `ADDRESS`, and `PRE`, which must be wrapped in angle brackets, such as `"<H1>"`.)
+      - : یک عنصر بلوکی HTML در اطراف خط حاوی انتخاب فعلی اضافه می‌کند و در صورت وجود، عنصر بلوکی حاوی آن خط را جایگزین می‌کند (در Firefox، {{HTMLElement("blockquote")}} استثنا است — هر عنصر بلوکی محتوا را در بر می‌گیرد). نیاز به یک رشته نام برچسب به عنوان آرگومان `value` دارد. تقریباً تمام عناصر بلوکی قابل استفاده هستند. (Edge قدیمی فقط از برچسب‌های عنوان `H1` – `H6`، `ADDRESS` و `PRE` پشتیبانی می‌کند که باید درون براکت‌های زاویه‌ای قرار گیرند، مانند `"<H1>"`.)
     - `forwardDelete`
-      - : Deletes the character ahead of the [cursor](https://en.wikipedia.org/wiki/Cursor_%28computers%29)'s position, identical to hitting the Delete key on a Windows keyboard.
+      - : کاراکتر جلوی موقعیت [مکان‌نما](https://en.wikipedia.org/wiki/Cursor_%28computers%29) را حذف می‌کند، مشابه فشردن کلید Delete روی صفحه‌کلید ویندوز.
     - `heading`
-      - : Adds a heading element around a selection or insertion point line. Requires the tag-name string as a value argument (i.e., `"H1"`, `"H6"`). (Not supported by Safari.)
+      - : یک عنصر عنوان در اطراف یک خط انتخاب یا نقطه درج اضافه می‌کند. نیاز به رشته نام برچسب به عنوان آرگومان `value` دارد (یعنی `"H1"`، `"H6"`). (توسط Safari پشتیبانی نمی‌شود.)
     - `hiliteColor`
-      - : Changes the background color for the selection or at the insertion point. Requires a color value string as a value argument. `useCSS` must be `true` for this to function.
+      - : رنگ پس‌زمینه را برای انتخاب یا در نقطه درج تغییر می‌دهد. نیاز به یک رشته مقدار رنگ به عنوان آرگومان `value` دارد. برای عملکرد، `useCSS` باید `true` باشد.
     - `increaseFontSize`
-      - : Adds a {{HTMLElement("big")}} tag around the selection or at the insertion point.
+      - : یک برچسب {{HTMLElement("big")}} دور انتخاب یا در نقطه درج اضافه می‌کند.
     - `indent`
-      - : Indents the line containing the selection or insertion point. In Firefox, if the selection spans multiple lines at different levels of indentation, only the least indented lines in the selection will be indented.
+      - : خط حاوی انتخاب یا نقطه درج را تورفتگی می‌دهد. در Firefox، اگر انتخاب شامل چندین خط با سطوح مختلف تورفتگی باشد، فقط کم‌تورفتگی‌ترین خطوط در انتخاب تورفتگی می‌گیرند.
     - `insertBrOnReturn`
-      - : Controls whether the Enter key inserts a {{HTMLElement("br")}} element, or splits the current block element into two.
+      - : کنترل می‌کند که آیا کلید Enter یک عنصر {{HTMLElement("br")}} وارد می‌کند یا عنصر بلوکی فعلی را به دو قسمت تقسیم می‌کند.
     - `insertHorizontalRule`
-      - : Inserts a {{HTMLElement("hr")}} element at the insertion point, or replaces the selection with it.
+      - : یک عنصر {{HTMLElement("hr")}} در نقطه درج وارد می‌کند یا انتخاب را با آن جایگزین می‌کند.
     - `insertHTML`
-      - : Inserts a {{domxref("TrustedHTML")}} instance or string of HTML markup at the insertion point (deletes selection).
-        This requires valid HTML markup.
+      - : یک نمونه {{domxref("TrustedHTML")}} یا رشته‌ای از نشانه‌گذاری HTML را در نقطه درج وارد می‌کند (انتخاب را حذف می‌کند). این نیاز به نشانه‌گذاری HTML معتبر دارد.
 
         > [!WARNING]
-        > The input is parsed as HTML and written into the DOM.
-        > APIs like this are known as [injection sinks](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage), and are potentially a vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks, if the input originally came from an attacker.
+        > ورودی به عنوان HTML تجزیه شده و در DOM نوشته می‌شود. APIهایی مانند این به عنوان [sinkهای تزریق](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage) شناخته می‌شوند و به طور بالقوه یک بردار برای حملات [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) هستند، اگر ورودی در اصل از طرف یک مهاجم باشد.
         >
-        > You can mitigate this risk by always assigning {{domxref("TrustedHTML")}} objects instead of strings and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types).
-        > See the [Trusted Types API](/en-US/docs/Web/API/Trusted_Types_API) for more information.
+        > می‌توانید این خطر را با همیشه اختصاص دادن اشیاء {{domxref("TrustedHTML")}} به جای رشته‌ها و [اجباری کردن انواع مورد اعتماد](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) کاهش دهید. برای اطلاعات بیشتر به [Trusted Types API](/en-US/docs/Web/API/Trusted_Types_API) مراجعه کنید.
 
     - `insertImage`
-      - : Inserts an image at the insertion point (deletes selection). Requires a URL string for the image's `src` as a value argument. The requirements for this string are the same as `createLink`.
+      - : یک تصویر در نقطه درج وارد می‌کند (انتخاب را حذف می‌کند). نیاز به یک رشته URL برای `src` تصویر به عنوان آرگومان `value` دارد. الزامات این رشته همانند `createLink` است.
     - `insertLineBreak`
-      - : Deletes the selection, and replaces it with a [line break element](/en-US/docs/Web/HTML/Reference/Elements/br).
+      - : انتخاب را حذف کرده و آن را با یک [عنصر شکست خط](/en-US/docs/Web/HTML/Reference/Elements/br) جایگزین می‌کند.
     - `insertOrderedList`
-      - : Creates a [numbered ordered list](/en-US/docs/Web/HTML/Reference/Elements/ol) for the selection or at the insertion point.
+      - : یک [لیست مرتب شماره‌دار](/en-US/docs/Web/HTML/Reference/Elements/ol) برای انتخاب یا در نقطه درج ایجاد می‌کند.
     - `insertUnorderedList`
-      - : Creates a [bulleted unordered list](/en-US/docs/Web/HTML/Reference/Elements/ul) for the selection or at the insertion point.
+      - : یک [لیست نامرتب گلوله‌ای](/en-US/docs/Web/HTML/Reference/Elements/ul) برای انتخاب یا در نقطه درج ایجاد می‌کند.
     - `insertParagraph`
-      - : Inserts a [paragraph](/en-US/docs/Web/HTML/Reference/Elements/p) around the selection or the current line.
+      - : یک [پاراگراف](/en-US/docs/Web/HTML/Reference/Elements/p) در اطراف انتخاب یا خط فعلی وارد می‌کند.
     - `insertText`
-      - : Inserts the given plain text at the insertion point (deletes selection).
+      - : متن ساده داده شده را در نقطه درج وارد می‌کند (انتخاب را حذف می‌کند).
     - `italic`
-      - : Toggles italics on/off for the selection or at the insertion point.
+      - : قالب کج را برای انتخاب یا در نقطه درج روشن/خاموش می‌کند.
     - `justifyCenter`
-      - : Centers the selection or insertion point.
+      - : انتخاب یا نقطه درج را وسط‌چین می‌کند.
     - `justifyFull`
-      - : Justifies the selection or insertion point.
+      - : انتخاب یا نقطه درج را هم‌تراز می‌کند.
     - `justifyLeft`
-      - : Justifies the selection or insertion point to the left.
+      - : انتخاب یا نقطه درج را به چپ می‌چسباند.
     - `justifyRight`
-      - : Right-justifies the selection or the insertion point.
+      - : انتخاب یا نقطه درج را به راست می‌چسباند.
     - `outdent`
-      - : Outdents the line containing the selection or insertion point.
+      - : تورفتگی خط حاوی انتخاب یا نقطه درج را کاهش می‌دهد.
     - `paste`
-      - : Pastes the clipboard contents at the insertion point (replaces current selection).
+      - : محتویات کلیپ‌بورد را در نقطه درج می‌چسباند (انتخاب فعلی را جایگزین می‌کند).
 
-        This feature is specified as disabled for _web content_, but has been implemented via the [Clipboard API](/en-US/docs/Web/API/Clipboard_API#security_considerations) on some browsers.
-        On these browsers the feature requires {{glossary("transient activation")}}, and acknowledgement of a popup UI when pasting cross-origin content.
-        See the [Browser compatibility table](#browser_compatibility) for more information.
+        این ویژگی به عنوان غیرفعال برای _محتوای وب_ مشخص شده است، اما در برخی مرورگرها از طریق [Clipboard API](/en-US/docs/Web/API/Clipboard_API#security_considerations) پیاده‌سازی شده است. در این مرورگرها، این ویژگی نیاز به {{glossary("transient activation")}} و تأیید یک UI پاپ‌آپ هنگام چسباندن محتوای متقاطع-منبع دارد. برای اطلاعات بیشتر به [جدول سازگاری مرورگر](#browser_compatibility) مراجعه کنید.
 
     - `redo`
-      - : Redoes the previous undo command.
+      - : آخرین دستور بازگشت را دوباره انجام می‌دهد.
     - `removeFormat`
-      - : Removes all formatting from the current selection.
+      - : همه قالب‌بندی‌ها را از انتخاب فعلی حذف می‌کند.
     - `selectAll`
-      - : Selects all of the content of the editable region.
+      - : تمام محتوای منطقه قابل ویرایش را انتخاب می‌کند.
     - `strikeThrough`
-      - : Toggles strikethrough on/off for the selection or at the insertion point.
+      - : قالب خط‌خورده را برای انتخاب یا در نقطه درج روشن/خاموش می‌کند.
     - `subscript`
-      - : Toggles [subscript](/en-US/docs/Web/HTML/Reference/Elements/sub) on/off for the selection or at the insertion point.
+      - : قالب [زیرنویس](/en-US/docs/Web/HTML/Reference/Elements/sub) را برای انتخاب یا در نقطه درج روشن/خاموش می‌کند.
     - `superscript`
-      - : Toggles [superscript](/en-US/docs/Web/HTML/Reference/Elements/sup) on/off for the selection or at the insertion point.
+      - : قالب [بالانویس](/en-US/docs/Web/HTML/Reference/Elements/sup) را برای انتخاب یا در نقطه درج روشن/خاموش می‌کند.
     - `underline`
-      - : Toggles [underline](/en-US/docs/Web/HTML/Reference/Elements/u) on/off for the selection or at the insertion point.
+      - : قالب [زیرخط](/en-US/docs/Web/HTML/Reference/Elements/u) را برای انتخاب یا در نقطه درج روشن/خاموش می‌کند.
     - `undo`
-      - : Undoes the last executed command.
+      - : آخرین دستور اجرا شده را بازمی‌گرداند.
     - `unlink`
-      - : Removes the [anchor element](/en-US/docs/Web/HTML/Reference/Elements/a) from a selected hyperlink.
+      - : عنصر [لنگر](/en-US/docs/Web/HTML/Reference/Elements/a) را از یک پیوند فوق‌متن انتخاب‌شده حذف می‌کند.
     - `useCSS` {{Deprecated_inline}}
-      - : Toggles the use of HTML tags or CSS for the generated markup. Requires a boolean true/false as a value argument.
+      - : استفاده از برچسب‌های HTML یا CSS را برای نشانه‌گذاری تولید شده تغییر می‌دهد. نیاز به یک مقدار بولی `true`/`false` به عنوان آرگومان `value` دارد.
         > [!NOTE]
-        > This argument is logically backwards (i.e., use `false` to use CSS,
-        > `true` to use HTML). This has been deprecated in favor of `styleWithCSS`.
+        > این آرگومان از نظر منطقی معکوس است (یعنی برای استفاده از CSS از `false` و برای استفاده از HTML از `true` استفاده کنید). این به نفع `styleWithCSS` منسوخ شده است.
     - `styleWithCSS`
-      - : Replaces the `useCSS` command. `true` modifies/generates `style` attributes in markup, false generates presentational elements.
+      - : جایگزین دستور `useCSS` می‌شود. `true` ویژگی‌های `style` را در نشانه‌گذاری تغییر/تولید می‌کند، `false` عناصر نمایشی تولید می‌کند.
     - `AutoUrlDetect`
-      - : Changes the browser auto-link behavior.
-
+      - : رفتار تشخیص خودکار پیوند مرورگر را تغییر می‌دهد.
 - `showDefaultUI`
-  - : A boolean value indicating whether the default user interface should be shown. This is not implemented in Mozilla.
+  - : یک مقدار بولی که نشان می‌دهد آیا رابط کاربری پیش‌فرض باید نمایش داده شود یا خیر. این در موزیلا پیاده‌سازی نشده است.
 - `valueArgument`
-  - : For commands which require an input argument, is a string providing that information. For example, `insertImage` requires the URL of the image to insert. Specify `null` if no argument is needed.
+  - : برای دستوراتی که به یک آرگومان ورودی نیاز دارند، یک رشته است که آن اطلاعات را فراهم می‌کند. برای مثال، `insertImage` به URL تصویر برای درج نیاز دارد. اگر نیازی به آرگومان نیست، `null` را مشخص کنید.
 
 ### Return value
 
-A boolean value that is `false` if the command is unsupported or disabled.
+یک مقدار بولی که اگر دستور پشتیبانی نشود یا غیرفعال باشد، `false` است.
 
 > [!NOTE]
-> `document.execCommand()` only returns
-> `true` if it is invoked as part of a user interaction. You can't use it to
-> verify browser support before calling a command.
+> `document.execCommand()` فقط در صورتی `true` را برمی‌گرداند که به عنوان بخشی از یک تعامل کاربر فراخوانی شود. نمی‌توانید از آن برای تأیید پشتیبانی مرورگر قبل از فراخوانی یک دستور استفاده کنید.
 
 ## Examples
 
-### Using insertText
+### استفاده از insertText
 
-This example shows two very basic HTML editors, one using a {{HTMLElement("textarea")}} element and one using a {{HTMLElement("pre")}} element with the [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) attribute set.
+این مثال دو ویرایشگر HTML بسیار ساده را نشان می‌دهد، یکی با استفاده از عنصر {{HTMLElement("textarea")}} و دیگری با استفاده از عنصر {{HTMLElement("pre")}} با ویژگی [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) تنظیم شده.
 
-Clicking the "Bold" or "Italic" buttons inserts the appropriate tags in the element, using `insertText` to preserve the edit history, so the user can undo the action.
+با کلیک روی دکمه‌های "Bold" یا "Italic"، برچسب‌های مناسب در عنصر درج می‌شوند، با استفاده از `insertText` برای حفظ تاریخچه ویرایش، به طوری که کاربر بتواند عمل را بازگرداند.
 
 #### HTML
 
@@ -242,9 +231,9 @@ function insertText(newText, selector) {
 
 {{EmbedLiveSample("Using insertText", 100, 300)}}
 
-### Using paste
+### استفاده از paste
 
-This example has a {{HTMLElement("textarea")}} element, and a {{HTMLElement("button")}} element that you can use to paste content into it.
+این مثال دارای یک عنصر {{HTMLElement("textarea")}} و یک عنصر {{HTMLElement("button")}} است که می‌توانید از آن برای چسباندن محتوا درون آن استفاده کنید.
 
 #### HTML
 
@@ -272,14 +261,13 @@ pasteButton.addEventListener("click", () => {
 
 #### Result
 
-On browsers that implement this feature using the [Clipboard API](/en-US/docs/Web/API/Clipboard_API#security_considerations) you should be able to copy same-origin content, such as text from the text area, and then paste it to replace any selected content.
-When you try to paste cross-origin content, such as text copied from any other page or location, you will first need to select the "Paste" UI that is displayed.
+در مرورگرهایی که این ویژگی را با استفاده از [Clipboard API](/en-US/docs/Web/API/Clipboard_API#security_considerations) پیاده‌سازی می‌کنند، باید بتوانید محتوای هم‌منبع (مانند متن از ناحیه متنی) را کپی کرده و سپس آن را برای جایگزینی هر محتوای انتخاب‌شده بچسبانید. وقتی سعی می‌کنید محتوای متقاطع-منبع (مانند متنی که از هر صفحه یا مکان دیگری کپی شده است) را بچسبانید، ابتدا باید UI "Paste" که نمایش داده می‌شود را انتخاب کنید.
 
 {{EmbedLiveSample("Using paste", 100, 300)}}
 
 ## Specifications
 
-This feature is not part of any current specification. It is no longer on track to become a standard. There is an unofficial [W3C execCommand spec draft](https://w3c.github.io/editing/docs/execCommand/).
+این ویژگی بخشی از هیچ مشخصات فعلی نیست. دیگر در مسیر تبدیل شدن به یک استاندارد نیست. یک [پیش‌نویس غیررسمی مشخصات execCommand از W3C](https://w3c.github.io/editing/docs/execCommand/) وجود دارد.
 
 ## Browser compatibility
 
@@ -288,7 +276,7 @@ This feature is not part of any current specification. It is no longer on track 
 ## See also
 
 - [Clipboard API](/en-US/docs/Web/API/Clipboard_API)
-- MDN example: [execCommands supported in your browser](https://mdn.github.io/dom-examples/execcommand/)
+- مثال MDN: [execCommands پشتیبانی شده در مرورگر شما](https://mdn.github.io/dom-examples/execcommand/)
 - {{domxref("HTMLElement.contentEditable")}}
 - {{domxref("document.designMode")}}
 - {{domxref("document.queryCommandEnabled()")}}
