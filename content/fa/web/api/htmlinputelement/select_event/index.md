@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: select event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select_event"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: select event"
 short-title: select
 slug: Web/API/HTMLInputElement/select_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.HTMLInputElement.select_event
 
 {{APIRef("HTML DOM")}}
 
-The **`select`** event fires when some text has been selected.
+رویداد **`select`** زمانی فعال می‌شود که مقداری متن انتخاب شده باشد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی event handler تنظیم کنید.
 
 ```js-nolint
 addEventListener("select", (event) => { })
@@ -26,13 +20,13 @@ addEventListener("select", (event) => { })
 onselect = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Selection logger
+### ثبت‌کننده انتخاب (Selection logger)
 
 ```html
 <input value="Try selecting some text in this element." />
@@ -55,18 +49,18 @@ input.addEventListener("select", logSelection);
 
 {{EmbedLiveSample("Selection_logger")}}
 
-### onselect equivalent
+### معادل onselect
 
-You can also set up the event handler using the `onselect` property:
+همچنین می‌توانید event handler را با استفاده از ویژگی `onselect` تنظیم کنید:
 
 ```js
 input.onselect = logSelection;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
