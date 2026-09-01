@@ -1,11 +1,5 @@
 ---
 title: "Document: getElementsByTagName() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByTagName"
-status: "needs-translation"
----
-
----
-title: "Document: getElementsByTagName() method"
 short-title: getElementsByTagName()
 slug: Web/API/Document/getElementsByTagName
 page-type: web-api-instance-method
@@ -14,14 +8,9 @@ browser-compat: api.Document.getElementsByTagName
 
 {{APIRef("DOM")}}
 
-The **`getElementsByTagName`** method of
-{{domxref("Document")}} interface returns an
-{{domxref("HTMLCollection")}} of elements with the given tag name.
+متد **`getElementsByTagName`** از رابط {{domxref("Document")}} یک {{domxref("HTMLCollection")}} از عناصر با نام تگ مشخص‌شده برمی‌گرداند.
 
-The complete
-document is searched, including the root node. The returned `HTMLCollection`
-is live, meaning that it updates itself automatically to stay in sync with the DOM tree
-without having to call `document.getElementsByTagName()` again.
+کل سند، از جمله گره ریشه، جستجو می‌شود. `HTMLCollection` برگشتی **زنده** است، به این معنی که خود را به‌طور خودکار به‌روزرسانی می‌کند تا با درخت DOM همگام بماند بدون نیاز به فراخوانی دوباره `document.getElementsByTagName()`.
 
 ## Syntax
 
@@ -32,26 +21,17 @@ getElementsByTagName(name)
 ### Parameters
 
 - `name`
-  - : A string representing the name of the elements. The special
-    string `*` represents all elements.
+  - : یک رشته که نام عناصر را مشخص می‌کند. رشته خاص `*` نشان‌دهنده همه عناصر است.
 
 ### Return value
 
-A live {{domxref("HTMLCollection")}} of found elements in the order they appear in the tree.
+یک {{domxref("HTMLCollection")}} زنده از عناصر یافت‌شده به ترتیبی که در درخت ظاهر می‌شوند.
 
 ## Examples
 
-In the following example, `getElementsByTagName()` starts from a particular
-parent element and searches top-down recursively through the DOM from that parent
-element, building a collection of all descendant elements which match the tag
-`name` parameter. This demonstrates both
-`document.getElementsByTagName()` and the functionally identical
-{{domxref("Element.getElementsByTagName()")}}, which starts the search at a specific
-element within the DOM tree.
+در مثال زیر، `getElementsByTagName()` از یک عنصر والد مشخص شروع می‌کند و به صورت بازگشتی از بالا به پایین در DOM از آن عنصر والد جستجو می‌کند و مجموعه‌ای از تمام عناصر فرزند که با پارامتر نام تگ مطابقت دارند را می‌سازد. این هم `document.getElementsByTagName()` و هم {{domxref("Element.getElementsByTagName()")}} را که از یک عنصر خاص در درخت DOM جستجو را شروع می‌کند، نشان می‌دهد.
 
-Clicking the buttons uses `getElementsByTagName()` to count the descendant
-paragraph elements of a particular parent (either the document itself or one of two
-nested {{HTMLElement("div")}} elements).
+کلیک روی دکمه‌ها از `getElementsByTagName()` برای شمارش عناصر پاراگراف فرزند یک والد خاص (یا خود سند یا یکی از دو عنصر {{HTMLElement("div")}} تو در تو) استفاده می‌کند.
 
 ```html
 <p>Some outer text</p>
@@ -120,15 +100,9 @@ document.getElementById("btn3").addEventListener("click", div2ParaElems);
 
 ## Notes
 
-When called on an HTML document, `getElementsByTagName()` lower-cases its
-argument before proceeding. This is undesirable when trying to match {{Glossary("camel_case", "camel case")}} SVG
-elements in a subtree in an HTML document.
-{{Domxref("document.getElementsByTagNameNS()")}} is useful in that case. See also
-[Firefox bug 499656](https://bugzil.la/499656).
+هنگامی که روی یک سند HTML فراخوانی می‌شود، `getElementsByTagName()` آرگومان خود را قبل از انجام عملیات به حروف کوچک تبدیل می‌کند. این امر هنگام تلاش برای تطبیق عناصر SVG با نام‌های camel case در یک زیردرخت در یک سند HTML نامطلوب است. {{Domxref("document.getElementsByTagNameNS()")}} در این مورد مفید است. همچنین به [باگ فایرفاکس 499656](https://bugzil.la/499656) مراجعه کنید.
 
-`document.getElementsByTagName()` is similar to
-{{domxref("Element.getElementsByTagName()")}}, except that its search encompasses the
-whole document.
+`document.getElementsByTagName()` مشابه {{domxref("Element.getElementsByTagName()")}} است، با این تفاوت که جستجوی آن کل سند را در بر می‌گیرد.
 
 ## Specifications
 
@@ -141,9 +115,6 @@ whole document.
 ## See also
 
 - {{domxref("Element.getElementsByTagName()")}}
-- {{domxref("document.getElementById()")}} to return a reference to an element by its
-  `id`
-- {{domxref("document.getElementsByName()")}} to return a reference to an element by
-  its `name`
-- {{domxref("document.querySelector()")}} for powerful selectors via queries like
-  `'div.myclass'`
+- {{domxref("document.getElementById()")}} برای بازگرداندن ارجاع به یک عنصر با `id` آن
+- {{domxref("document.getElementsByName()")}} برای بازگرداندن ارجاع به یک عنصر با `name` آن
+- {{domxref("document.querySelector()")}} برای انتخابگرهای قدرتمند با استفاده از کوئری‌هایی مانند `'div.myclass'`
