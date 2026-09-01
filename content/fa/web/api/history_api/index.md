@@ -1,7 +1,5 @@
 ---
 title: "History API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/History_API"
-status: "needs-translation"
 ---
 
 ---
@@ -13,50 +11,50 @@ browser-compat: api.History
 
 {{DefaultAPISidebar("History API")}}
 
-The **History API** provides access to the browser's session history (not to be confused with [WebExtensions history](/en-US/docs/Mozilla/Add-ons/WebExtensions/API/history)) through the {{DOMxRef("Window.history","history")}} global object. It exposes useful methods and properties that let you navigate back and forth through the user's history, and manipulate the contents of the history stack.
+**History API** از طریق شیء سراسری {{DOMxRef("Window.history","history")}} به تاریخچه نشست مرورگر (که نباید با [تاریخچه WebExtensions](/en-US/docs/Mozilla/Add-ons/WebExtensions/API/history) اشتباه گرفته شود) دسترسی فراهم می‌کند. این API متدها و ویژگی‌های مفیدی را در اختیار شما قرار می‌دهد که با آن‌ها می‌توانید در تاریخچه کاربر به عقب و جلو حرکت کنید و محتویات پشته تاریخچه را دستکاری نمایید.
 
 > [!NOTE]
-> This API is only available on the main thread ({{domxref("Window")}}). It cannot be accessed in {{domxref("Worker")}} or {{domxref("Worklet")}} contexts.
+> این API فقط در رشته اصلی ({{domxref("Window")}}) در دسترس است. در زمینه‌های {{domxref("Worker")}} یا {{domxref("Worklet")}} قابل دسترسی نیست.
 
-## Concepts and usage
+## مفهوم و کاربرد
 
-Moving backward and forward through the user's history is done using the {{DOMxRef("History.back","back()")}}, {{DOMxRef("History.forward","forward()")}}, and {{DOMxRef("History.go","go()")}} methods.
+حرکت به عقب و جلو در تاریخچه کاربر با استفاده از متدهای {{DOMxRef("History.back","back()")}}، {{DOMxRef("History.forward","forward()")}} و {{DOMxRef("History.go","go()")}} انجام می‌شود.
 
-### Moving forward and backward
+### حرکت به جلو و عقب
 
-To move backward through history:
+برای حرکت به عقب در تاریخچه:
 
 ```js
 history.back();
 ```
 
-This acts exactly as if the user clicked on the <kbd><strong>Back</strong></kbd> button in their browser toolbar.
+این عمل دقیقاً معادل کلیک کردن کاربر بر دکمه <kbd><strong>Back</strong></kbd> (بازگشت) در نوار ابزار مرورگر است.
 
-Similarly, you can move forward (as if the user clicked the <kbd><strong>Forward</strong></kbd> button), like this:
+به همین ترتیب، می‌توانید به جلو حرکت کنید (همان‌طور که اگر کاربر دکمه <kbd><strong>Forward</strong></kbd> (رفتن به جلو) را کلیک کرده باشد)، به این صورت:
 
 ```js
 history.forward();
 ```
 
-### Moving to a specific point in history
+### رفتن به نقطه‌ای خاص در تاریخچه
 
-You can use the {{DOMxRef("History.go","go()")}} method to load a specific page from session history, identified by its relative position to the current page. (The current page's relative position is `0`.)
+می‌توانید از متد {{DOMxRef("History.go","go()")}} برای بارگذاری صفحه‌ای خاص از تاریخچه نشست استفاده کنید که با موقعیت نسبی آن نسبت به صفحه جاری مشخص می‌شود. (موقعیت نسبی صفحه جاری `0` است.)
 
-To move back one page (the equivalent of calling {{DOMxRef("History.back","back()")}}):
+برای حرکت به عقب به اندازه یک صفحه (معادل فراخوانی {{DOMxRef("History.back","back()")}}):
 
 ```js
 history.go(-1);
 ```
 
-To move forward a page, just like calling {{DOMxRef("History.forward","forward()")}}:
+برای حرکت به جلو به اندازه یک صفحه، درست مانند فراخوانی {{DOMxRef("History.forward","forward()")}}:
 
 ```js
 history.go(1);
 ```
 
-Similarly, you can move forward 2 pages by passing `2`, and so forth.
+به همین ترتیب، می‌توانید با ارسال `2` دو صفحه به جلو حرکت کنید، و همین‌طور الی آخر.
 
-Another use for the `go()` method is to refresh the current page by either passing `0`, or by invoking it without an argument:
+کاربرد دیگر متد `go()` تازه‌سازی صفحه جاری است؛ یا با ارسال `0`، یا با فراخوانی آن بدون آرگومان:
 
 ```js
 // The following statements
@@ -66,22 +64,22 @@ history.go(0);
 history.go();
 ```
 
-You can determine the number of pages in the history stack by looking at the value of the `length` property:
+برای تعیین تعداد صفحات موجود در پشته تاریخچه، می‌توانید به مقدار ویژگی `length` نگاه کنید:
 
 ```js
 const numberOfEntries = history.length;
 ```
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("History")}}
-  - : Allows manipulation of the browser _session history_ (that is, the pages visited in the tab or frame that the current page is loaded in).
+  - : دستکاری _تاریخچه نشست_ مرورگر (یعنی صفحاتی که در تب یا فریمی که صفحه جاری در آن بارگذاری شده است، بازدید شده‌اند) را امکان‌پذیر می‌کند.
 - {{domxref("PopStateEvent")}}
-  - : The interface of the {{domxref("Window.popstate_event", "popstate")}} event.
+  - : رابط مربوط به رویداد {{domxref("Window.popstate_event", "popstate")}}.
 
-## Examples
+## مثال‌ها
 
-The following example assigns a listener for the {{domxref("Window.popstate_event", "popstate")}} event. It then illustrates some of the methods of the history object to add, replace, and move within the browser history for the current tab.
+مثال زیر یک شنونده برای رویداد {{domxref("Window.popstate_event", "popstate")}} اختصاص می‌دهد. سپس برخی از متدهای شیء `history` را برای افزودن، جایگزینی و جابه‌جایی در تاریخچه مرورگر تب جاری نشان می‌دهد.
 
 ```js
 window.addEventListener("popstate", (event) => {
@@ -98,15 +96,15 @@ history.back(); // alerts "location: http://example.com/example.html, state: nul
 history.go(2); // alerts "location: http://example.com/example.html?page=3, state: {"page":3}"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("window.history", "history")}} global object
-- {{domxref("Window/popstate_event", "popstate")}} event
+- شیء سراسری {{domxref("window.history", "history")}}
+- رویداد {{domxref("Window/popstate_event", "popstate")}}
