@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: multiple property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/multiple"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: multiple property"
 short-title: multiple
 slug: Web/API/HTMLInputElement/multiple
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLInputElement.multiple
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLInputElement.multiple`** property indicates if an input can have more than one value. Firefox currently only supports `multiple` for `<input type="file">`.
+خاصیت **`HTMLInputElement.multiple`** نشان می‌دهد که آیا یک input می‌تواند بیش از یک مقدار داشته باشد. Firefox در حال حاضر فقط برای `<input type="file">` از ویژگی `multiple` پشتیبانی می‌کند.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولین (boolean).
 
-## Examples
+## مثال‌ها
 
 ```html
 <input id="my-file-input" type="file" multiple />
@@ -40,15 +34,15 @@ if (fileInput.multiple) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [FileList](/en-US/docs/Web/API/FileList)
-- [Bug 523771](https://bugzil.la/523771) - Support \<input type=file multiple>
+- [Bug 523771](https://bugzil.la/523771) - پشتیبانی از `<input type=file multiple>`
