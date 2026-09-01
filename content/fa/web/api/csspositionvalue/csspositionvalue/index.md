@@ -1,11 +1,5 @@
 ---
 title: "CSSPositionValue: CSSPositionValue() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionValue/CSSPositionValue"
-status: "needs-translation"
----
-
----
-title: "CSSPositionValue: CSSPositionValue() constructor"
 short-title: CSSPositionValue()
 slug: Web/API/CSSPositionValue/CSSPositionValue
 page-type: web-api-constructor
@@ -17,26 +11,26 @@ browser-compat: api.CSSPositionValue.CSSPositionValue
 
 {{APIRef("CSS Typed Object Model API")}}{{deprecated_header}}{{Non-standard_header}}
 
-The **`CSSPositionValue()`** constructor creates a new {{domxref("CSSPositionValue")}} object that represents values for properties that take a position, for example {{cssxref('object-position')}}.
+سازندهٔ **`CSSPositionValue()`** یک شیء جدید {{domxref("CSSPositionValue")}} ایجاد می‌کند که نشان‌دهندهٔ مقادیر ویژگی‌هایی است که یک موقعیت را می‌پذیرند، مانند {{cssxref('object-position')}}.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new CSSPositionValue(x, y)
 ```
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : A position along the web page's horizontal axis.
+  - : موقعیتی در امتداد محور افقی صفحهٔ وب.
 - `y`
-  - : A position along the web page's vertical axis.
+  - : موقعیتی در امتداد محور عمودی صفحهٔ وب.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-The following example positions a container `<div>` 5 pixels from the top and 10 pixels from the left of the page.
+مثال زیر، یک `<div>` کانتینر را در فاصلهٔ ۵ پیکسل از بالا و ۱۰ پیکسل از چپ صفحه قرار می‌دهد.
 
 ```js
 let someDiv = document.getElementById("container");
@@ -46,11 +40,11 @@ someDiv.attributeStyleMap.set("object-position", position);
 console.log(position.x.value, position.y.value); // 5 10
 ```
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("CSSPositionValue.x")}}
 - {{domxref("CSSPositionValue.y")}}
