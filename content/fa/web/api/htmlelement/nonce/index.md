@@ -1,7 +1,5 @@
 ---
 title: "HTMLElement: nonce property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/nonce"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,23 @@ browser-compat: api.HTMLElement.nonce
 
 {{APIRef("HTML DOM")}}
 
-The **`nonce`** property of the {{DOMxRef("HTMLElement")}} interface returns the cryptographic number used once that is used by [Content Security Policy](/en-US/docs/Web/HTTP/Guides/CSP) to determine whether a given fetch will be allowed to proceed.
+ویژگی **`nonce`** در رابط {{DOMxRef("HTMLElement")}} عدد رمزنگاری یک‌بارمصرف (nonce) را برمی‌گرداند که توسط [خط‌مشی امنیت محتوا](/en-US/docs/Web/HTTP/Guides/CSP) برای تعیین اینکه آیا یک درخواست (fetch) مشخص مجاز است ادامه یابد استفاده می‌شود.
 
-In later implementations, elements only expose their `nonce` attribute to scripts (and not to side-channels like CSS attribute selectors).
+در پیاده‌سازی‌های جدیدتر، عناصر ویژگی `nonce` خود را فقط در دسترس اسکریپت‌ها قرار می‌دهند (و نه کانال‌های جانبی مانند انتخاب‌گرهای ویژگی CSS).
 
-## Examples
+## مثال‌ها
 
-### Retrieving a nonce value
+### دریافت مقدار nonce
 
-In the past, not all browsers supported the `nonce` IDL attribute, so a workaround is to try to use [`getAttribute`](/en-US/docs/Web/API/Element/getAttribute) as a fallback:
+در گذشته، همه مرورگرها از ویژگی IDL `nonce` پشتیبانی نمی‌کردند؛ بنابراین یک راه‌حل جایگزین این است که از [`getAttribute`](/en-US/docs/Web/API/Element/getAttribute) به‌عنوان بازگشت به عقب (fallback) استفاده کنید:
 
 ```js
 let nonce = script["nonce"] || script.getAttribute("nonce");
 ```
 
-However, recent browsers version hide `nonce` values that are accessed this way (an empty string will be returned). The IDL property (`script['nonce']`) will be the only way to access nonces.
+با این حال، نسخه‌های اخیر مرورگرها مقادیر `nonce` را که از این طریق دسترسی داده می‌شوند پنهان می‌کنند (یک رشته خالی بازگردانده می‌شود). ویژگی IDL (`script['nonce']`) تنها راه دسترسی به nonceها خواهد بود.
 
-Nonce hiding helps prevent attackers from exfiltrating nonce data via mechanisms that can grab data from content attributes like this CSS selector:
+پنهان‌سازی nonce به جلوگیری از استخراج داده‌های nonce توسط مهاجمان از طریق مکانیزم‌هایی که می‌توانند داده‌ها را از ویژگی‌های محتوا دریافت کنند، مانند این انتخاب‌گر CSS، کمک می‌کند:
 
 ```css example-bad
 script[nonce~="whatever"] {
@@ -38,16 +36,16 @@ script[nonce~="whatever"] {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`nonce` global attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/nonce)
-- [Content Security Policy](/en-US/docs/Web/HTTP/Guides/CSP)
+- [ویژگی سراسری `nonce`](/en-US/docs/Web/HTML/Reference/Global_attributes/nonce)
+- [خط‌مشی امنیت محتوا](/en-US/docs/Web/HTTP/Guides/CSP)
 - CSP: {{CSP("script-src")}}
