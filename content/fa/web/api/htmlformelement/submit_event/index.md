@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement: submit event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event"
-status: "needs-translation"
----
-
----
-title: "HTMLFormElement: submit event"
 short-title: submit
 slug: Web/API/HTMLFormElement/submit_event
 page-type: web-api-event
@@ -14,24 +8,24 @@ browser-compat: api.HTMLFormElement.submit_event
 
 {{APIRef("HTML DOM")}}
 
-The **`submit`** event fires when a {{HtmlElement("form")}} is submitted.
+رویداد **`submit`** زمانی رخ می‌دهد که یک {{HtmlElement("form")}} ارسال می‌شود.
 
-Note that the `submit` event fires on the `<form>` element itself, and not on any {{HtmlElement("button")}} or `{{HtmlElement('input/submit', '&lt;input type="submit"&gt;')}}` inside it. However, the {{domxref("SubmitEvent")}} which is sent to indicate the form's submit action has been triggered includes a {{domxref("SubmitEvent.submitter", "submitter")}} property, which is the button that was invoked to trigger the submit request.
+توجه داشته باشید که رویداد `submit` روی خود عنصر `<form>` رخ می‌دهد، نه روی هیچ {{HtmlElement("button")}} یا `{{HtmlElement('input/submit', '&lt;input type="submit"&gt;')}}` داخل آن. با این حال، {{domxref("SubmitEvent")}} که برای نشان دادن فعال شدن اقدام ارسال فرم ارسال می‌شود، شامل یک ویژگی {{domxref("SubmitEvent.submitter", "submitter")}} است که دکمه‌ای است که برای شروع درخواست ارسال فراخوانی شده است.
 
-The `submit` event fires when:
+رویداد `submit` در موارد زیر رخ می‌دهد:
 
-- the user clicks a {{Glossary("submit button")}},
-- the user presses <kbd>Enter</kbd> while editing a field (e.g., {{HtmlElement('input/text', '&lt;input type="text"&gt;')}}) in a form,
-- a script calls the {{domxref("HTMLFormElement.requestSubmit()", "form.requestSubmit()")}} method
+- کاربر روی یک {{Glossary("submit button", "دکمه ارسال")}} کلیک کند،
+- کاربر در حال ویرایش یک فیلد (مانند {{HtmlElement('input/text', '&lt;input type="text"&gt;')}}) در یک فرم، کلید <kbd>Enter</kbd> را فشار دهد،
+- یک اسکریپت متد {{domxref("HTMLFormElement.requestSubmit()", "form.requestSubmit()")}} را فراخوانی کند.
 
-However, the event is _not_ sent to the form when a script calls the {{domxref("HTMLFormElement.submit()", "form.submit()")}} method directly.
+با این حال، رویداد _به_ فرم ارسال _نمی‌شود_ زمانی که یک اسکریپت مستقیماً متد {{domxref("HTMLFormElement.submit()", "form.submit()")}} را فراخوانی کند.
 
 > [!NOTE]
-> Trying to submit a form that does not pass [validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation) triggers an {{domxref("HTMLInputElement/invalid_event", "invalid")}} event. In this case, the validation prevents form submission, and thus there is no `submit` event.
+> تلاش برای ارسال فرمی که از [اعتبارسنجی](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation) عبور نمی‌کند، باعث رخ دادن رویداد {{domxref("HTMLInputElement/invalid_event", "invalid")}} می‌شود. در این حالت، اعتبارسنجی از ارسال فرم جلوگیری می‌کند و بنابراین رویداد `submit` وجود نخواهد داشت.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("submit", (event) => { })
@@ -39,15 +33,15 @@ addEventListener("submit", (event) => { })
 onsubmit = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("SubmitEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("SubmitEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("SubmitEvent")}}
 
-## Examples
+## نمونه‌ها
 
-This example uses {{domxref("EventTarget.addEventListener()")}} to listen for form submit, and logs the current {{domxref("Event.timeStamp")}} whenever that occurs, then prevents the default action of submitting the form.
+این مثال از {{domxref("EventTarget.addEventListener()")}} برای گوش دادن به رویداد submit فرم استفاده می‌کند و {{domxref("Event.timeStamp")}} جاری را هر بار که این رویداد رخ می‌دهد ثبت می‌کند، سپس اقدام پیش‌فرض ارسال فرم را جلوگیری می‌کند.
 
 ### HTML
 
@@ -74,19 +68,19 @@ function logSubmit(event) {
 form.addEventListener("submit", logSubmit);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", "", "", "", "", "", "", "allow-forms")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HtmlElement("form")}} element
-- Related event: {{domxref("HTMLInputElement/invalid_event", "invalid")}}
+- عنصر HTML {{HtmlElement("form")}}
+- رویداد مرتبط: {{domxref("HTMLInputElement/invalid_event", "invalid")}}
