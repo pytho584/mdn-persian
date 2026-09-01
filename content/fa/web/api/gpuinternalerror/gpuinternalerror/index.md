@@ -1,11 +1,5 @@
 ---
 title: "GPUInternalError: GPUInternalError() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUInternalError/GPUInternalError"
-status: "needs-translation"
----
-
----
-title: "GPUInternalError: GPUInternalError() constructor"
 short-title: GPUInternalError()
 slug: Web/API/GPUInternalError/GPUInternalError
 page-type: web-api-constructor
@@ -14,35 +8,34 @@ browser-compat: api.GPUInternalError.GPUInternalError
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUInternalError()`** constructor creates a new
-{{domxref("GPUInternalError")}} object instance.
+سازندهٔ **`GPUInternalError()`** یک نمونهٔ شیء جدید از {{domxref("GPUInternalError")}} ایجاد می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new GPUInternalError(message)
 ```
 
-### Parameters
+### پارامترها
 
 - `message`
-  - : A string providing a human-readable message that explains why the error occurred.
+  - : رشته‌ای که یک پیام قابل فهم برای انسان فراهم می‌کند و دلیل رخ دادن خطا را توضیح می‌دهد.
 
-## Examples
+## مثال‌ها
 
-A developer would not manually use the constructor to create a `GPUInternalError` object. The user agent uses this constructor to create an appropriate object when an internal error is surfaced by {{domxref("GPUDevice.popErrorScope")}} or the {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} event.
+یک توسعه‌دهنده معمولاً به‌صورت دستی از این سازنده برای ایجاد یک شیء `GPUInternalError` استفاده نمی‌کند. عامل کاربر (user agent) از این سازنده برای ایجاد شیء مناسب استفاده می‌کند، زمانی که یک خطای داخلی توسط {{domxref("GPUDevice.popErrorScope")}} یا رویداد {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} نمایان می‌شود.
 
-See the main [`GPUInternalError`](/en-US/docs/Web/API/GPUInternalError#examples) page for an example involving a `GPUInternalError` object instance.
+برای نمونه‌ای که شامل یک نمونهٔ شیء `GPUInternalError` است، به صفحهٔ اصلی [`GPUInternalError`](/en-US/docs/Web/API/GPUInternalError#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
 - [WebGPU Error Handling best practices](https://toji.dev/webgpu-best-practices/error-handling)
