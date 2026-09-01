@@ -1,9 +1,4 @@
----
-title: "GPUCompilationMessage: offset property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/offset"
-status: "needs-translation"
----
-
+```
 ---
 title: "GPUCompilationMessage: offset property"
 short-title: offset
@@ -14,18 +9,17 @@ browser-compat: api.GPUCompilationMessage.offset
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`offset`** read-only property of the
-{{domxref("GPUCompilationMessage")}} interface is a number representing the offset from the start of the shader code to the exact point, or the start of the relevant substring, that the message corresponds to.
+خصوصیت فقط خواندنی **`offset`** از رابط {{domxref("GPUCompilationMessage")}} یک عدد است که نشان‌دهنده فاصله از ابتدای کد شیدر تا نقطه دقیق یا شروع زیررشته مرتبطی است که پیام به آن اشاره دارد.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-To be precise, `offset` is the number of {{glossary("UTF-16", "UTF-16 code units")}} from the beginning of the shader code to the exact point or start of the relevant substring that the message corresponds to.
+به طور دقیق، `offset` تعداد واحدهای کد UTF-16 ({{glossary("UTF-16", "UTF-16 code units")}}) از ابتدای کد شیدر تا نقطه دقیق یا شروع زیررشته مرتبطی است که پیام به آن اشاره دارد.
 
-If the message does not correspond to a specific code position (perhaps it refers to the whole of the shader code), `offset` will be 0.
+اگر پیام با یک موقعیت کد خاص مطابقت نداشته باشد (احتمالاً به کل کد شیدر اشاره دارد)، `offset` برابر 0 خواهد بود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const shaderModule = device.createShaderModule({
@@ -37,16 +31,17 @@ const firstMessage = shaderInfo.messages[0];
 console.log(firstMessage.offset);
 ```
 
-See the main [`GPUCompilationInfo` page](/en-US/docs/Web/API/GPUCompilationInfo#examples) for a more detailed example.
+برای یک مثال دقیق‌تر، صفحه اصلی [`GPUCompilationInfo`](/en-US/docs/Web/API/GPUCompilationInfo#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+```
