@@ -1,7 +1,5 @@
 ---
 title: "ErrorEvent: filename property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/filename"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.ErrorEvent.filename
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`filename`** read-only property of the {{domxref("ErrorEvent")}} interface returns a string containing the name of the script file in which the error occurred.
+خاصیت فقط‌خواندنی **`filename`** از رابط {{domxref("ErrorEvent")}} رشته‌ای را برمی‌گرداند که شامل نام فایل اسکریپتی است که خطا در آن رخ داده است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("error", (ev) => {
@@ -28,10 +26,10 @@ window.addEventListener("error", (ev) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
