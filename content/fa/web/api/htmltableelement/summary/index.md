@@ -1,7 +1,6 @@
+```
 ---
 title: "HTMLTableElement: summary property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/summary"
-status: "needs-translation"
 ---
 
 ---
@@ -16,23 +15,23 @@ browser-compat: api.HTMLTableElement.summary
 
 {{APIRef("HTML DOM")}} {{Deprecated_Header}}
 
-The **`HTMLTableElement.summary`** property represents the
-table description.
+ویژگی **`HTMLTableElement.summary`** توصیف جدول را نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 HTMLTableElement.summary = "Usage statistics";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
