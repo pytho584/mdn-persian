@@ -1,11 +1,5 @@
 ---
 title: "Element: attachShadow() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow"
-status: "needs-translation"
----
-
----
-title: "Element: attachShadow() method"
 short-title: attachShadow()
 slug: Web/API/Element/attachShadow
 page-type: web-api-instance-method
@@ -14,86 +8,81 @@ browser-compat: api.Element.attachShadow
 
 {{APIRef("Shadow DOM")}}
 
-The **`attachShadow()`** method of the {{domxref("Element")}} interface attaches a shadow DOM tree to the specified element and returns a reference to its {{domxref("ShadowRoot")}}.
+متد **`attachShadow()`** از رابط {{domxref("Element")}} یک درخت DOM سایه (Shadow DOM tree) را به عنصر مشخص‌شده متصل می‌کند و یک ارجاع به {{domxref("ShadowRoot")}} آن برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 attachShadow(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options`
-  - : An object which contains the following fields:
+  - : یک شیء شامل فیلدهای زیر:
     - `mode`
-      - : A string specifying the _encapsulation mode_ for the shadow DOM tree.
-        This can be one of:
+      - : یک رشته که _حالت محصورسازی (encapsulation mode)_ برای درخت DOM سایه را مشخص می‌کند.
+        می‌تواند یکی از موارد زیر باشد:
         - `open`
-          - : Elements inside the shadow root are accessible from JavaScript via the element's {{domxref("Element.shadowRoot","shadowRoot")}} property.
+          - : عناصر داخل ریشه سایه از طریق JavaScript با استفاده از ویژگی {{domxref("Element.shadowRoot","shadowRoot")}} عنصر قابل دسترسی هستند.
         - `closed`
-          - : Elements inside the shadow root cannot be accessed from JavaScript via the {{domxref("Element.shadowRoot","shadowRoot")}} property, which is set to `null`.
+          - : عناصر داخل ریشه سایه از طریق JavaScript با استفاده از ویژگی {{domxref("Element.shadowRoot","shadowRoot")}} که به `null` تنظیم می‌شود قابل دسترسی نیستند.
 
     - `clonable` {{Optional_Inline}}
-      - : A boolean that specifies whether the shadow root is clonable: when set to `true`, the shadow host cloned with {{domxref("Node.cloneNode()")}} or {{domxref("Document.importNode()")}} will include shadow root in the copy. Its default value is `false`.
+      - : یک بولی (boolean) که مشخص می‌کند آیا ریشه سایه قابل کلون کردن است یا خیر: وقتی `true` تنظیم شود، میزبان سایه که با {{domxref("Node.cloneNode()")}} یا {{domxref("Document.importNode()")}} کلون می‌شود، ریشه سایه را نیز در کپی خود شامل می‌شود. مقدار پیش‌فرض آن `false` است.
 
     - `customElementRegistry` {{Optional_Inline}}
-      - : A {{DOMxRef('CustomElementRegistry')}} that will be used as the [scoped custom element registry](/en-US/docs/Web/API/Web_components/Using_custom_elements#scoped_custom_element_registries) of the attached shadow root.
-        If `null` or `undefined`, the shadow root will use the global registry referenced by {{domxref("Window.customElements")}}.
+      - : یک {{DOMxRef('CustomElementRegistry')}} که به عنوان [ثبت عناصر سفارشی حوزه‌دار (scoped custom element registry)](/en-US/docs/Web/API/Web_components/Using_custom_elements#scoped_custom_element_registries) ریشه سایه متصل استفاده می‌شود.
+        اگر `null` یا `undefined` باشد، ریشه سایه از ثبت جهانی که توسط {{domxref("Window.customElements")}} ارجاع داده می‌شود استفاده می‌کند.
 
     - `delegatesFocus` {{Optional_Inline}}
-      - : A boolean that, when set to `true`, specifies behavior that mitigates custom element issues around focusability.
-        When a non-focusable part of the shadow DOM is clicked, the first focusable part is given focus, and the shadow host is given any available `:focus` styling. Its default value is `false`.
+      - : یک بولی که وقتی `true` تنظیم شود، رفتاری را مشخص می‌کند که مشکلات عناصر سفارشی در مورد قابلیت دریافت فوکوس را کاهش می‌دهد.
+        وقتی بخشی از DOM سایه که قابل فوکوس نیست کلیک شود، اولین بخش قابل فوکوس فوکوس می‌گیرد و میزبان سایه هر استایل `:focus` موجود را دریافت می‌کند. مقدار پیش‌فرض آن `false` است.
 
     - `referenceTarget` {{Optional_Inline}} {{Experimental_Inline}}
-      - : A string value that indicates the effective target of any element reference made against the shadow host from outside the host element. The value should be the ID of an element inside the shadow DOM. If set, target references to the host element from outside the shadow DOM will cause the referenced target element to become the effective target of the reference to the host element.
+      - : یک رشته که هدف مؤثر هر ارجاع عنصری که از خارج عنصر میزبان به میزبان سایه انجام می‌شود را مشخص می‌کند. مقدار باید شناسه (`id`) یک عنصر داخل DOM سایه باشد. اگر تنظیم شود، ارجاع‌های هدف به عنصر میزبان از خارج DOM سایه باعث می‌شوند عنصر مرجع‌شده به هدف مؤثر ارجاع به عنصر میزبان تبدیل شود.
 
     - `serializable` {{Optional_Inline}}
-      - : A boolean that, when set to `true`, indicates that the shadow root is serializable.
-        If set, the shadow root may be serialized by calling the {{DOMxRef('Element.getHTML()')}} or {{DOMxRef('ShadowRoot.getHTML()')}} methods with the `options.serializableShadowRoots` parameter set `true`.
-        Its default value is `false`.
+      - : یک بولی که وقتی `true` تنظیم شود، نشان می‌دهد ریشه سایه قابل سریال‌سازی است.
+        اگر تنظیم شود، ریشه سایه ممکن است با فراخوانی متدهای {{DOMxRef('Element.getHTML()')}} یا {{DOMxRef('ShadowRoot.getHTML()')}} با پارامتر `options.serializableShadowRoots` برابر `true` سریال‌سازی شود.
+        مقدار پیش‌فرض آن `false` است.
 
     - `slotAssignment` {{Optional_inline}}
-      - : A string specifying the _slot assignment mode_ for the shadow DOM tree. This can be one of:
+      - : یک رشته که _حالت تخصیص اسلات (slot assignment mode)_ را برای درخت DOM سایه مشخص می‌کند. می‌تواند یکی از موارد زیر باشد:
         - `named`
-          - : Elements are automatically assigned to {{HTMLElement("slot")}} elements within this shadow root.
-            Any top-level children of the host with a `slot` attribute which matches the `name` attribute of a `<slot>` within this shadow root will be assigned to that slot.
-            Any top-level children of the host with no `slot` attribute will be assigned to the first `<slot>` with no `name` attribute (the "default slot"), if one is present.
-            This is the default value.
+          - : عناصر به طور خودکار به عناصر {{HTMLElement("slot")}} داخل این ریشه سایه تخصیص می‌یابند.
+            هر فرزند سطح بالای میزبان که دارای ویژگی `slot` مطابق با ویژگی `name` یک `<slot>` داخل این ریشه سایه باشد به آن اسلات تخصیص می‌یابد.
+            هر فرزند سطح بالای میزبان که ویژگی `slot` نداشته باشد به اولین `<slot>` بدون ویژگی `name` (اسلات پیش‌فرض) تخصیص می‌یابد، در صورت وجود. این مقدار پیش‌فرض است.
         - `manual`
-          - : Elements are manually assigned to particular slot elements using {{domxref("HTMLSlotElement.assign()")}}.
-            No automatic assignment takes place.
+          - : عناصر به صورت دستی با استفاده از {{domxref("HTMLSlotElement.assign()")}} به عناصر اسلات خاص تخصیص می‌یابند. هیچ تخصیص خودکاری انجام نمی‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a {{domxref("ShadowRoot")}} object.
+یک شیء {{domxref("ShadowRoot")}} برمی‌گرداند.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : This error may be thrown when you try to attach a shadow root to an element:
-    - outside the HTML namespace or that can't have a shadow attached to it.
-    - where the element definition static property `disabledFeatures` has been given a value of `"shadow"`.
-    - that already has a shadow root that was not created declaratively.
-    - that has a [declarative shadow root](/en-US/docs/Web/HTML/Reference/Elements/template#declarative_shadow_dom) but the specified `mode` does not match the existing mode.
-    - while passing a `customElementRegistry` value that isn't `null` or a locally scoped registry (that you created using `new CustomElementRegistry()`).
-      The error would be thrown if you passed the global registry.
+  - : این خطا ممکن است وقتی پرتاب شود که سعی کنید یک ریشه سایه را به عنصری متصل کنید که:
+    - خارج از فضای نام HTML است یا نمی‌تواند سایه به آن متصل شود.
+    - تعریف عنصر آن دارای ویژگی استاتیک `disabledFeatures` با مقدار `"shadow"` باشد.
+    - از قبل دارای یک ریشه سایه است که به صورت اعلامی (declaratively) ایجاد نشده است.
+    - دارای یک [ریشه سایه اعلامی (declarative shadow root)](/en-US/docs/Web/HTML/Reference/Elements/template#declarative_shadow_dom) است اما `mode` مشخص‌شده با حالت موجود مطابقت ندارد.
+    - در حالی که مقداری برای `customElementRegistry` ارسال شده که `null` یا یک ثبت حوزه‌دار محلی (که با `new CustomElementRegistry()` ساخته‌اید) نیست. خطا اگر ثبت جهانی را ارسال کنید پرتاب می‌شود.
 
-## Description
+## توضیحات
 
-The **`Element.attachShadow()`** method attaches a shadow DOM tree to the specified element and returns a reference to its {{domxref("ShadowRoot")}}.
+متد **`Element.attachShadow()`** یک درخت DOM سایه را به عنصر مشخص‌شده متصل می‌کند و یک ارجاع به {{domxref("ShadowRoot")}} آن برمی‌گرداند.
 
-This is the programmatic mechanism to create a `ShadowRoot`, which is the root node of a [Shadow DOM](/en-US/docs/Web/API/Web_components/Using_shadow_DOM) attached to a host element (it is also possible to create a `ShadowRoot` declaratively using the [`shadowrootmode`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootmode) attribute of the {{htmlelement("template")}} element).
-It is used for creating [custom elements](/en-US/docs/Web/API/Web_components/Using_custom_elements).
+این مکانیسم برنامه‌نویسی برای ایجاد یک `ShadowRoot` است که گره ریشه یک [DOM سایه](/en-US/docs/Web/API/Web_components/Using_shadow_DOM) متصل به یک عنصر میزبان است (همچنین می‌توان یک `ShadowRoot` را به صورت اعلامی با استفاده از ویژگی [`shadowrootmode`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootmode) عنصر {{htmlelement("template")}} ایجاد کرد). این متد برای ایجاد [عناصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements) استفاده می‌شود.
 
-### Elements you can attach a shadow to
+### عناصری که می‌توانید به آنها سایه متصل کنید
 
-Note that you can't attach a shadow root to every type of element.
-There are some that can't have a shadow DOM for security reasons (for example {{htmlelement("a")}}).
+توجه داشته باشید که نمی‌توانید یک ریشه سایه را به هر نوع عنصری متصل کنید. برخی به دلایل امنیتی نمی‌توانند DOM سایه داشته باشند (مثلاً {{htmlelement("a")}}).
 
-The following is a list of elements you _can_ attach a shadow root to:
+لیست زیر عناصری هستند که می‌توانید یک ریشه سایه به آنها متصل کنید:
 
-- Any autonomous custom element with a [valid name](https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name)
+- هر عنصر سفارشی مستقل (autonomous custom element) با یک [نام معتبر](https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name)
 - {{htmlelement("article")}}
 - {{htmlelement("aside")}}
 - {{htmlelement("blockquote")}}
@@ -113,40 +102,35 @@ The following is a list of elements you _can_ attach a shadow root to:
 - {{htmlelement("section")}}
 - {{htmlelement("span")}}
 
-### Calling this method on an element that is already a shadow host
+### فراخوانی این متد بر روی عنصری که از قبل میزبان سایه است
 
-The method may be called on an element that already has a [declarative shadow root](/en-US/docs/Web/HTML/Reference/Elements/template#declarative_shadow_dom), provided the specified mode `mode` matches the existing mode.
-In this case the {{domxref("ShadowRoot")}} that was already present will be cleared and returned.
-This allows for cases where, for example, server-side rendering has already declaratively created a shadow root, and then client-side code attempts to attach the root again.
+این متد ممکن است بر روی عنصری که از قبل دارای یک [ریشه سایه اعلامی](/en-US/docs/Web/HTML/Reference/Elements/template#declarative_shadow_dom) است فراخوانی شود، به شرطی که `mode` مشخص‌شده با حالت موجود مطابقت داشته باشد. در این صورت {{domxref("ShadowRoot")}} موجود پاک شده و بازگردانده می‌شود. این امکان را برای مواردی فراهم می‌کند که مثلاً رندر سمت سرور (server-side rendering) از قبل یک ریشه سایه به صورت اعلامی ایجاد کرده است و سپس کد سمت کلاینت سعی می‌کند دوباره ریشه را متصل کند.
 
-Otherwise calling `attachShadow()` on an element that already has a shadow root will throw an exception.
+در غیر این صورت، فراخوانی `attachShadow()` بر روی عنصری که از قبل یک ریشه سایه دارد یک استثنا پرتاب می‌کند.
 
-### Open and closed shadow roots
+### ریشه‌های سایه باز و بسته
 
-A shadow root can be attached with an encapsulation [mode](#mode), which is specified as either `open` or `closed`.
+یک ریشه سایه می‌تواند با یک حالت محصورسازی [mode](#mode) که به صورت `open` یا `closed` مشخص می‌شود متصل شود.
 
-If the `{mode: "open"}` argument is passed, the host element's {{domxref("Element.shadowRoot","shadowRoot")}} property can subsequently be used to get the attached shadow root.
-This can be used to access elements in the Shadow DOM:
+اگر آرگومان `{mode: "open"}` ارسال شود، ویژگی {{domxref("Element.shadowRoot","shadowRoot")}} عنصر میزبان می‌تواند پس از آن برای دریافت ریشه سایه متصل شده استفاده شود. این می‌تواند برای دسترسی به عناصر در DOM سایه استفاده شود:
 
 ```js
 element.attachShadow({ mode: "open" });
-element.shadowRoot; // Returns a ShadowRoot obj
+element.shadowRoot; // یک شیء ShadowRoot برمی‌گرداند
 ```
 
-If `{mode: "closed"}` is passed then the Element's {{domxref("Element.shadowRoot","shadowRoot")}} property is set to `null`.
-Note that JavaScript can still access a closed shadow root by storing the value returned by the function.
+اگر `{mode: "closed"}` ارسال شود، ویژگی {{domxref("Element.shadowRoot","shadowRoot")}} عنصر به `null` تنظیم می‌شود. توجه داشته باشید که JavaScript همچنان می‌تواند با ذخیره مقدار بازگشتی تابع به یک ریشه سایه بسته دسترسی پیدا کند.
 
 ```js
 element.attachShadow({ mode: "closed" });
-element.shadowRoot; // Returns null
+element.shadowRoot; // null برمی‌گرداند
 ```
 
-## Examples
+## نمونه‌ها
 
-### Word count custom element
+### عنصر سفارشی شمارش کلمات
 
-The following example is taken from our [word-count-web-component](https://github.com/mdn/web-components-examples/tree/main/word-count-web-component) demo ([see it live also](https://mdn.github.io/web-components-examples/word-count-web-component/)).
-You can see that we use `attachShadow()` in the middle of the code to create a shadow root, which we then attach our custom element's contents to.
+مثال زیر از دموی [word-count-web-component](https://github.com/mdn/web-components-examples/tree/main/word-count-web-component) ما گرفته شده است ([همچنین به صورت زنده ببینید](https://mdn.github.io/web-components-examples/word-count-web-component/)). می‌بینید که ما از `attachShadow()` در وسط کد برای ایجاد یک ریشه سایه استفاده می‌کنیم و سپس محتویات عنصر سفارشی خود را به آن متصل می‌کنیم.
 
 ```js
 // Create a class for the element
@@ -189,11 +173,11 @@ class WordCount extends HTMLParagraphElement {
 customElements.define("word-count", WordCount, { extends: "p" });
 ```
 
-### Disabling shadow DOM
+### غیرفعال کردن DOM سایه
 
-If the element has a static property named `disabledFeatures`, which is an array containing the string `"shadow"`, then the `attachShadow()` call will throw an exception.
+اگر عنصر دارای یک ویژگی استاتیک به نام `disabledFeatures` باشد که یک آرایه حاوی رشته `"shadow"` است، آنگاه فراخوانی `attachShadow()` یک استثنا پرتاب می‌کند.
 
-For example:
+مثال:
 
 ```js
 class MyCustomElement extends HTMLElement {
@@ -215,16 +199,15 @@ class MyCustomElement extends HTMLElement {
 customElements.define("my-custom-element", MyCustomElement);
 ```
 
-### Named slot assignment
+### تخصیص اسلات نام‌گذاری‌شده (Named slot assignment)
 
-This example demonstrates named slot assignment.
+این مثال تخصیص اسلات نام‌گذاری‌شده را نشان می‌دهد.
 
-#### Creating the web component
+#### ایجاد کامپوننت وب
 
-This code creates a web component that has three named slots for an article's title, metadata, and body section.
+این کد یک کامپوننت وب ایجاد می‌کند که دارای سه اسلات نام‌گذاری‌شده برای عنوان، فراداده (metadata) و بخش بدنه یک مقاله است.
 
-The `ShadowRoot` is attached in the custom element's constructor.
-We don't need to explicitly set the option `slotAssignment: "named"` because it is the default.
+`ShadowRoot` در سازنده عنصر سفارشی متصل می‌شود. نیازی به تنظیم صریح گزینه `slotAssignment: "named"` نیست زیرا این مقدار پیش‌فرض است.
 
 ```js
 class MyArticle extends HTMLElement {
@@ -272,11 +255,9 @@ class MyArticle extends HTMLElement {
 customElements.define("my-article", MyArticle);
 ```
 
-#### Using the web component
+#### استفاده از کامپوننت وب
 
-The HTML below uses the `<my-article>` web component we just created.
-The nested elements are rendered in the component's slots based on name matching.
-The unnamed elements are rendered in the component's unnamed slot (the body).
+HTML زیر از کامپوننت وب `<my-article>` که ایجاد کردیم استفاده می‌کند. عناصر تو در تو بر اساس تطابق نام در اسلات‌های کامپوننت رندر می‌شوند. عناصر بدون نام در اسلات بدون نام کامپوننت (بدنه) رندر می‌شوند.
 
 ```html
 <my-article>
@@ -294,21 +275,19 @@ The unnamed elements are rendered in the component's unnamed slot (the body).
 </my-article>
 ```
 
-#### Results
+#### نتایج
 
-The example below should show the content of the slots displayed in the appropriate sections.
+مثال زیر باید محتوای اسلات‌ها را در بخش‌های مناسب نشان دهد.
 
 {{EmbedLiveSample('Named slot assignment','100', '220px')}}
 
-### Unnamed slot assignment
+### تخصیص اسلات بدون نام (Unnamed slot assignment)
 
-This example demonstrates [manual slot assignment](/en-US/docs/Web/API/HTMLSlotElement/assign).
-With this approach, each element must be manually assigned to a particular slot using {{domxref("HTMLSlotElement.assign()")}}.
-There is no default assignment, so any slot that is not assigned will be empty.
+این مثال [تخصیص دستی اسلات](/en-US/docs/Web/API/HTMLSlotElement/assign) را نشان می‌دهد. با این رویکرد، هر عنصر باید به صورت دستی با استفاده از {{domxref("HTMLSlotElement.assign()")}} به یک اسلات خاص تخصیص داده شود. هیچ تخصیص پیش‌فرضی وجود ندارد، بنابراین هر اسلاتی که تخصیص داده نشود خالی خواهد بود.
 
 #### HTML
 
-First we have a hidden support warning, displayed via JavaScript if the browser doesn't support `slotAssignment: "manual"`.
+ابتدا یک هشدار پشتیبانی مخفی داریم که اگر مرورگر از `slotAssignment: "manual"` پشتیبانی نکند از طریق JavaScript نمایش داده می‌شود.
 
 ```html
 <p id="support-warning" hidden>
@@ -317,8 +296,7 @@ First we have a hidden support warning, displayed via JavaScript if the browser 
 </p>
 ```
 
-Next, we define our `<my-article>` custom element with child elements for the title, metadata, and body content.
-Each child is identified by `id`; unlike named slot assignment, no `slot` attribute is needed.
+سپس، عنصر سفارشی `<my-article>` خود را با عناصر فرزند برای عنوان، فراداده و محتوای بدنه تعریف می‌کنیم. هر فرزند با `id` شناسایی می‌شود؛ بر خلاف تخصیص اسلات نام‌گذاری‌شده، نیازی به ویژگی `slot` نیست.
 
 ```html
 <my-article>
@@ -331,10 +309,7 @@ Each child is identified by `id`; unlike named slot assignment, no `slot` attrib
 
 #### JavaScript
 
-The custom element attaches a shadow root with `slotAssignment: "manual"`.
-The shadow DOM contains unnamed slots identified by `id`.
-The `assignSlots()` method manually assigns the light DOM elements to the slots.
-Note that multiple nodes can be assigned to a single slot — the order they are specified controls the render order.
+عنصر سفارشی یک ریشه سایه با `slotAssignment: "manual"` متصل می‌کند. DOM سایه شامل اسلات‌های بدون نام است که با `id` شناسایی می‌شوند. متد `assignSlots()` به صورت دستی عناصر DOM سبک (light DOM) را به اسلات‌ها تخصیص می‌دهد. توجه داشته باشید که چندین گره می‌توانند به یک اسلات تخصیص داده شوند - ترتیب مشخص‌شده، ترتیب رندر را تعیین می‌کند.
 
 ```js
 class MyArticle extends HTMLElement {
@@ -398,7 +373,7 @@ class MyArticle extends HTMLElement {
 customElements.define("my-article", MyArticle);
 ```
 
-This code tests if the {{domxref("ShadowRoot.slotAssignment")}} property is defined, and displays the warning if it is not.
+این کد بررسی می‌کند که آیا ویژگی {{domxref("ShadowRoot.slotAssignment")}} تعریف شده است یا خیر و در صورت عدم تعریف، هشدار را نمایش می‌دهد.
 
 ```js
 const isSlotAssignmentSupported = Object.hasOwn(
@@ -411,28 +386,27 @@ document
   .toggleAttribute("hidden", isSlotAssignmentSupported);
 ```
 
-#### Results
+#### نتایج
 
-The example below should show the content of the slots displayed in the appropriate sections.
+مثال زیر باید محتوای اسلات‌ها را در بخش‌های مناسب نشان دهد.
 
 {{EmbedLiveSample('Unnamed slot assignment','100', '220px')}}
 
 > [!NOTE]
-> If manual slot assignment is not supported, a warning is displayed and the browser will use `named` assignment.
-> However, because none of the light DOM elements have a `slot` attribute, they will all be inserted into the first unnamed slot (the title slot).
+> اگر تخصیص دستی اسلات پشتیبانی نشود، یک هشدار نمایش داده می‌شود و مرورگر از تخصیص `named` استفاده می‌کند. با این حال، از آنجایی که هیچ یک از عناصر DOM سبک دارای ویژگی `slot` نیستند، همه آنها در اولین اسلات بدون نام (اسلات عنوان) درج می‌شوند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ShadowRoot.mode")}}
 - {{domxref("ShadowRoot.delegatesFocus")}}
 - {{domxref("ShadowRoot.slotAssignment")}}
-- Declaratively attach a shadow root with the [`shadowrootmode`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootmode) attribute of the [`<template>` element](/en-US/docs/Web/HTML/Reference/Elements/template)
-- [Declarative shadow DOM](https://web.dev/articles/declarative-shadow-dom) on web.dev (2023)
+- اتصال یک ریشه سایه به صورت اعلامی با ویژگی [`shadowrootmode`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootmode) عنصر [`<template>`](/en-US/docs/Web/HTML/Reference/Elements/template)
+- [DOM سایه اعلامی (Declarative shadow DOM)](https://web.dev/articles/declarative-shadow-dom) در web.dev (2023)
