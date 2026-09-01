@@ -1,11 +1,5 @@
 ---
 title: "DynamicsCompressorNode: ratio property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/ratio"
-status: "needs-translation"
----
-
----
-title: "DynamicsCompressorNode: ratio property"
 short-title: ratio
 slug: Web/API/DynamicsCompressorNode/ratio
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.DynamicsCompressorNode.ratio
 
 {{ APIRef("Web Audio API") }}
 
-The `ratio` property of the {{ domxref("DynamicsCompressorNode") }} interface Is a [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}} representing the amount of change, in dB, needed in the input for a 1 dB change in the output.
+ویژگی `ratio` از رابط {{ domxref("DynamicsCompressorNode") }} یک {{domxref("AudioParam")}} از نوع [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) است که میزان تغییر (بر حسب دسی‌بل) لازم در ورودی برای یک تغییر ۱ دسی‌بل در خروجی را نشان می‌دهد.
 
-The `ratio` property's default value is `12` and it can be set between `1` and `20`.
+مقدار پیش‌فرض ویژگی `ratio` برابر `12` است و می‌توان آن را بین `1` و `20` تنظیم کرد.
 
-![Describes the effect of different ratio on the output signal](webaudioratio.png)
+![اثر نسبت‌های مختلف بر سیگنال خروجی را توصیف می‌کند](webaudioratio.png)
 
 ## Value
 
-An {{domxref("AudioParam")}}.
+یک {{domxref("AudioParam")}}.
 
 > [!NOTE]
-> Though the {{domxref("AudioParam")}} returned is read-only, the value it represents is not.
+> اگرچه {{domxref("AudioParam")}} برگشتی فقط خواندنی است، اما مقدار آن قابل تغییر است.
 
 ## Examples
 
@@ -35,7 +29,7 @@ const compressor = audioCtx.createDynamicsCompressor();
 compressor.ratio.value = 12;
 ```
 
-See [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) for more complete example code.
+برای مثال کد کامل‌تر، به [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) مراجعه کنید.
 
 ## Specifications
 
@@ -47,4 +41,4 @@ See [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudi
 
 ## See also
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
