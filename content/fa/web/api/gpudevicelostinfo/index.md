@@ -1,10 +1,4 @@
 ---
-title: "GPUDeviceLostInfo"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDeviceLostInfo"
-status: "needs-translation"
----
-
----
 title: GPUDeviceLostInfo
 slug: Web/API/GPUDeviceLostInfo
 page-type: web-api-interface
@@ -13,20 +7,20 @@ browser-compat: api.GPUDeviceLostInfo
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUDeviceLostInfo`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents the object returned when the {{domxref("GPUDevice.lost")}} {{jsxref("Promise")}} resolves. This provides information as to why a device has been lost.
+رابط **`GPUDeviceLostInfo`** از {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} شیءای را نشان می‌دهد که هنگام حل شدن {{jsxref("Promise")}} مربوط به {{domxref("GPUDevice.lost")}} بازگردانده می‌شود. این اطلاعاتی در مورد دلیل از دست رفتن دستگاه ارائه می‌دهد.
 
-See the {{domxref("GPUDevice.lost")}} page for more information about "lost" state.
+برای اطلاعات بیشتر در مورد وضعیت «از دست رفته» به صفحه {{domxref("GPUDevice.lost")}} مراجعه کنید.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPUDeviceLostInfo.message", "message")}} {{ReadOnlyInline}}
-  - : A string providing a human-readable message that explains why the device was lost.
+  - : یک رشته که یک پیام قابل خواندن برای انسان ارائه می‌دهد و دلیل از دست رفتن دستگاه را توضیح می‌دهد.
 - {{domxref("GPUDeviceLostInfo.reason", "reason")}} {{ReadOnlyInline}}
-  - : An enumerated value that defines the reason the device was lost in a machine-readable way.
+  - : یک مقدار شمارشی که دلیل از دست رفتن دستگاه را به شکلی قابل خواندن برای ماشین تعریف می‌کند.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function init() {
@@ -53,14 +47,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- رابط [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
