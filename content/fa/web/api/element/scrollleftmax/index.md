@@ -1,11 +1,5 @@
 ---
 title: "Element: scrollLeftMax property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeftMax"
-status: "needs-translation"
----
-
----
-title: "Element: scrollLeftMax property"
 short-title: scrollLeftMax
 slug: Web/API/Element/scrollLeftMax
 page-type: web-api-instance-property
@@ -16,22 +10,20 @@ browser-compat: api.Element.scrollLeftMax
 
 {{APIRef("DOM")}}{{Non-standard_header}}
 
-The **`Element.scrollLeftMax`** read-only property returns a
-number representing the maximum left scroll offset possible for the
-element.
+ویژگی فقط‌خواندنی **`Element.scrollLeftMax`** عددی را برمی‌گرداند که حداکثر میزان پیمایش به چپ ممکن برای عنصر را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Specifications
+## مشخصات
 
-_This property is not part of any specification._
+این ویژگی بخشی از هیچ مشخصاتی نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Element.scrollTopMax")}} giving the same information for the other axis.
+- {{domxref("Element.scrollTopMax")}} که همان اطلاعات را برای محور دیگر فراهم می‌کند.
