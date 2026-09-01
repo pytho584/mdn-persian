@@ -1,11 +1,5 @@
 ---
 title: "HTMLLinkElement: media property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/media"
-status: "needs-translation"
----
-
----
-title: "HTMLLinkElement: media property"
 short-title: media
 slug: Web/API/HTMLLinkElement/media
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLLinkElement.media
 
 {{APIRef("HTML DOM")}}
 
-The **`media`** property of the {{domxref("HTMLLinkElement")}} interface is a string representing a list of one or more media formats to which the resource applies.
+ویژگی **`media`** در رابط {{domxref("HTMLLinkElement")}} یک رشته است که فهرستی از یک یا چند قالب رسانه‌ای را که منبع برای آن‌ها کاربرد دارد، نشان می‌دهد.
 
-It reflects the `media` attribute of the {{HTMLElement("link")}} element.
+این ویژگی منعکس‌کنندهٔ ویژگی `media` عنصر {{HTMLElement("link")}} است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```html
 <link
@@ -35,13 +29,14 @@ A string.
 
 ```js
 const el = document.getElementById("el");
-console.log(el.media); // Output: "screen and (width >= 600px)"
+console.log(el.media); // خروجی: "screen and (width >= 600px)"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
