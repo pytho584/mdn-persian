@@ -1,9 +1,4 @@
----
-title: "ElementInternals: ariaLabelledByElements property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaLabelledByElements"
-status: "needs-translation"
----
-
+```
 ---
 title: "ElementInternals: ariaLabelledByElements property"
 short-title: ariaLabelledByElements
@@ -14,41 +9,33 @@ browser-compat: api.ElementInternals.ariaLabelledByElements
 
 {{APIRef("DOM")}}
 
-The **`ariaLabelledByElements`** property of the {{domxref("ElementInternals")}} interface is an array containing the element (or elements) that provide an accessible name for the element it is applied to.
+ویژگی **`ariaLabelledByElements`** از رابط {{domxref("ElementInternals")}} آرایه‌ای شامل عنصر (یا عناصر) است که نام قابل‌دسترس (accessible name) را برای عنصری که به آن اعمال شده فراهم می‌کنند.
 
-The property is primarily intended to provide a label for elements that don't have a standard method for defining their accessible name.
-For example, this might be used to name a generic container element, such as a {{htmlelement("div")}} or {{htmlelement("span")}}, or a grouping of elements, such as an image with a slider that can be used to change its opacity.
-The property takes precedence over other mechanisms for providing an accessible name for elements, and may therefore also be used to provide a name for elements that would normally get it from their inner content or from an associated element such as a label.
+این ویژگی عمدتاً برای فراهم‌کردن برچسب (label) برای عناصری در نظر گرفته شده است که روش استانداردی برای تعریف نام قابل‌دسترس ندارند. برای مثال، می‌توان از آن برای نام‌گذاری یک عنصر قالبی (generic container) مانند {{htmlelement("div")}} یا {{htmlelement("span")}}، یا گروهی از عناصر مانند تصویری با یک لغزنده (slider) که برای تغییر شفافیت به کار می‌رود، استفاده کرد. این ویژگی بر سایر سازوکارهای فراهم‌کردن نام قابل‌دسترس برای عناصر اولویت دارد؛ بنابراین می‌توان از آن برای نام‌گذاری عناصری نیز استفاده کرد که به‌طور معمول نام خود را از محتوای داخلی یا از یک عنصر مرتبط مانند برچسب دریافت می‌کنند.
 
-The [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) topic contains additional information about how the attribute and property should be used.
+موضوع [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) حاوی اطلاعات بیشتری درباره نحوه استفاده از این ویژگی (attribute) و این خاصیت (property) است.
 
-## Value
+## مقدار
 
-An array of elements.
-The inner text of these elements can be joined with spaces to get the accessible name.
+آرایه‌ای از عناصر. برای به دست آوردن نام قابل‌دسترس، می‌توان متن داخلی این عناصر را با فاصله به هم پیوست.
 
-When read, the returned array is a static and read-only.
-When written, the assigned array is copied: subsequent changes to the array do not affect the value of the property.
+هنگام خواندن، آرایه بازگشتی ایستا و فقط‌خواندنی است. هنگام نوشتن، آرایه اختصاص‌داده‌شده کپی می‌شود؛ تغییرات بعدی در آرایه تأثیری بر مقدار خاصیت نخواهد گذاشت.
 
-## Description
+## توضیحات
 
-The property is a flexible alternative to using the [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attribute to set the accessible name.
-Unlike `aria-labelledby`, the elements assigned to this property do not have to have an [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute.
+این خاصیت جایگزینی منعطف برای استفاده از ویژگی [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) برای تنظیم نام قابل‌دسترس است. برخلاف `aria-labelledby`، عناصر اختصاص‌داده‌شده به این خاصیت لازم نیست دارای ویژگی [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) باشند.
 
-The property reflects the element's [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attribute when it is defined, but only for listed reference `id` values that match valid in-scope elements.
-If the property is set, then the corresponding attribute is cleared.
-For more information about reflected element references and scope see [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Reflected attributes_ guide.
+این خاصیت ویژگی [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) عنصر را هنگام‌که تعریف شده است بازتاب می‌دهد، اما فقط برای مقادیر `id` ارجاع‌داده‌شده در فهرست که با عناصر معتبر در حوزه (in-scope) مطابقت دارند. اگر این خاصیت تنظیم شود، ویژگی متناظر پاک می‌شود. برای اطلاعات بیشتر درباره ارجاع‌های بازتاب‌یافته عناصر و حوزه، به [ارجاع‌های بازتاب‌یافته عناصر](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _بازتاب ویژگی‌ها_ مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
 ### Get the accessible name
 
-This example shows how `ariaLabelledByElements` can be used to programmatically get a label defined using `aria-labelledby` within the shadow root.
+این مثال نشان می‌دهد که چگونه می‌توان از `ariaLabelledByElements` برای دریافت برنامه‌نویسی برچسبی که با استفاده از `aria-labelledby` درون shadow root تعریف شده است استفاده کرد.
 
 #### HTML
 
-The HTML defines two {{htmlelement("span")}} elements and references their ids in the `aria-labelledby` attribute of an {{htmlelement("input")}}.
-The accessible name of the `<input>` is therefore the concatenation of the inner text of the two referenced elements.
+اچ‌تی‌ام‌ال دو عنصر {{htmlelement("span")}} را تعریف می‌کند و شناسه‌های آنها را در ویژگی `aria-labelledby` یک {{htmlelement("input")}} ارجاع می‌دهد. بنابراین نام قابل‌دسترس `<input>` برابر با الحاق متن داخلی آن دو عنصر ارجاع‌داده‌شده است.
 
 ```html
 <div id="host">
@@ -75,9 +62,7 @@ The accessible name of the `<input>` is therefore the concatenation of the inner
 
 #### JavaScript
 
-The code below first checks whether the `ariaLabelledByElements` is supported and if not, logs the result and exits.
-If the property is supported it first logs the value of the property.
-It then iterates through the returned elements, concatenating their inner text, and logs the resulting accessible name of the element.
+کد زیر ابتدا بررسی می‌کند که آیا `ariaLabelledByElements` پشتیبانی می‌شود؛ اگر پشتیبانی نشود، نتیجه را در لاگ ثبت می‌کند و خارج می‌شود. اگر این خاصیت پشتیبانی شود، ابتدا مقدار خاصیت را در لاگ ثبت می‌کند. سپس روی عناصر بازگشتی پیمایش می‌کند، متن داخلی آنها را به هم می‌چسباند و نام قابل‌دسترس حاصل از عنصر را در لاگ ثبت می‌کند.
 
 ```js hidden
 const logElement = document.querySelector("#log");
@@ -110,23 +95,23 @@ if ("ariaLabelledByElements" in ElementInternals.prototype) {
 }
 ```
 
-#### Result
+#### نتیجه
 
-The log below shows the output of the above code.
-This should show the array of referenced {{domxref("HTMLSpanElement")}} elements, and the resulting accessible name from their inner text.
+لاگ زیر خروجی کد بالا را نشان می‌دهد. این باید آرایه‌ای از عناصر {{domxref("HTMLSpanElement")}} ارجاع‌داده‌شده و نام قابل‌دسترس حاصل از متن داخلی آنها را نشان دهد.
 
 {{EmbedLiveSample("Get the accessible name","100%","150px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attribute
+- ویژگی [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby)
 - {{domxref("Element.ariaLabelledByElements")}}
-- [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Attribute reflection_ guide.
+- [ارجاع‌های بازتاب‌یافته عناصر](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _بازتاب ویژگی‌ها_
+```
