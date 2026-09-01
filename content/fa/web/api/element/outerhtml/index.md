@@ -1,11 +1,5 @@
 ---
 title: "Element: outerHTML property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/outerHTML"
-status: "needs-translation"
----
-
----
-title: "Element: outerHTML property"
 short-title: outerHTML
 slug: Web/API/Element/outerHTML
 page-type: web-api-instance-property
@@ -15,100 +9,100 @@ browser-compat: api.Element.outerHTML
 {{APIRef("DOM")}}
 
 > [!WARNING]
-> This property parses its input as HTML, writing the result into the DOM.
-> APIs like this are known as [injection sinks](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage), and are potentially a vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks, if the input originally came from an attacker.
+> این ویژگی، ورودی خود را به‌عنوان HTML تجزیه کرده و نتیجه را در DOM می‌نویسد.
+> چنین APIهایی به نام [sink تزریق](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage) شناخته می‌شوند و اگر ورودی در ابتدا از طرف یک مهاجم باشد، می‌توانند بردار حمله‌ای برای [اسکریپت‌نویسی بین‌سایتی (XSS)](/en-US/docs/Web/Security/Attacks/XSS) باشند.
 >
-> You can mitigate this risk by always assigning `TrustedHTML` objects instead of strings and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types).
-> See [Security considerations](#security_considerations) for more information.
+> می‌توانید این ریسک را با اختصاص دادن همیشگی اشیاء `TrustedHTML` به‌جای رشته‌ها و [اجباری کردن types مورد اعتماد](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) کاهش دهید.
+> برای اطلاعات بیشتر به [ملاحظات امنیتی](#security_considerations) مراجعه کنید.
 
-The **`outerHTML`** attribute of the {{domxref("Element")}} interface gets or sets the HTML or XML markup of the element and its descendants, omitting any {{glossary("shadow tree", "shadow roots")}} in both cases.
+ویژگی **`outerHTML`** در رابط {{domxref("Element")}}، مارک‌آپ HTML یا XML مربوط به عنصر و همهٔ فرزندان آن را دریافت یا تنظیم می‌کند و در هر دو حالت، هر {{glossary("shadow tree", "shadow root")}} را نادیده می‌گیرد.
 
-To get or set the contents of an element, use the {{domxref("Element.innerHTML", "innerHTML")}} property instead.
+برای دریافت یا تنظیم محتوای درونی یک عنصر، به‌جای آن از ویژگی {{domxref("Element.innerHTML", "innerHTML")}} استفاده کنید.
 
-## Value
+## مقدار
 
-Getting the property returns a string containing an HTML serialization of the `element` and its descendants.
+خواندن این ویژگی، رشته‌ای شامل یک سریال‌سازی HTML از خودِ `element` و همهٔ فرزندان آن برمی‌گرداند.
 
-Setting the property accepts either a {{domxref("TrustedHTML")}} object or a string.
-The input is parsed as HTML and replaces the element and all its descendants with the result.
-When set to the `null` value, that `null` value is converted to the empty string (`""`), so `element.outerHTML = null` is equivalent to `element.outerHTML = ""`.
+تنظیم این ویژگی، یا یک شیء {{domxref("TrustedHTML")}} می‌پذیرد یا یک رشته.
+ورودی به‌عنوان HTML تجزیه می‌شود و عنصر و همهٔ فرزندان آن را با نتیجهٔ تجزیه جایگزین می‌کند.
+وقتی مقدار `null` تنظیم شود، همان `null` به رشتهٔ خالی (`""`) تبدیل می‌شود، بنابراین `element.outerHTML = null` معادل `element.outerHTML = ""` است.
 
-### Exceptions
+### استثناها
 
 - `NoModificationAllowedError` {{domxref("DOMException")}}
-  - : Thrown if an attempt was made to set `outerHTML` on an element which is a direct child of a {{domxref("Document")}}, such as {{domxref("Document.documentElement")}}.
+  - : زمانی پرتاب می‌شود که تلاش شود `outerHTML` روی عنصری تنظیم شود که فرزند مستقیم یک {{domxref("Document")}} است، مانند {{domxref("Document.documentElement")}}.
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if an attempt was made to set `outerHTML` using an XML input which is not well-formed.
+  - : زمانی پرتاب می‌شود که تلاش شود `outerHTML` با ورودی XML نامعتبر (well-formed نبودن) تنظیم شود.
 - `TypeError`
-  - : Thrown if the property is set to a string when [Trusted Types](/en-US/docs/Web/API/Trusted_Types_API) are [enforced by a CSP](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) and no default policy is defined.
+  - : زمانی پرتاب می‌شود که ویژگی با یک رشته تنظیم شود در حالی که [Trusted Types](/en-US/docs/Web/API/Trusted_Types_API) با [CSP](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) [اجباری شده‌اند](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) و هیچ خط‌مشی پیش‌فرضی تعریف نشده باشد.
 
-## Description
+## توضیحات
 
-`outerHTML` gets a serialization of the element, or sets HTML or XML that should be parsed to replace it within the element's parent.
+`outerHTML` یک سریال‌سازی از عنصر را دریافت می‌کند، یا HTML یا XMLای را تنظیم می‌کند که باید تجزیه شود تا عنصر درون والدِ خود جایگزین شود.
 
-If the element has no parent node, setting its `outerHTML` property will not change it or its descendants.
-For example:
+اگر عنصر هیچ گره والد نداشته باشد، تنظیم ویژگی `outerHTML` نه خودِ عنصر و نه فرزندانش را تغییر نمی‌دهد.
+مثلاً:
 
 ```js
 const div = document.createElement("div");
 div.outerHTML = '<div class="test">test</div>';
-console.log(div.outerHTML); // output: "<div></div>"
+console.log(div.outerHTML); // خروجی: "<div></div>"
 ```
 
-Also, while the element will be replaced in the document, the variable whose `outerHTML` property was set will still hold a reference to the original element:
+همچنین، اگرچه عنصر در سند جایگزین می‌شود، متغیری که ویژگی `outerHTML` روی آن تنظیم شده است همچنان به عنصر اصلی ارجاع می‌دهد:
 
 ```js
 const p = document.querySelector("p");
-console.log(p.nodeName); // shows: "P"
+console.log(p.nodeName); // نمایش می‌دهد: "P"
 p.outerHTML = "<div>This div replaced a paragraph.</div>";
-console.log(p.nodeName); // still "P";
+console.log(p.nodeName); // همچنان "P" است
 ```
 
-### Escaped attribute values
+### فرار دادن مقادیر ویژگی‌ها (Escaped attribute values)
 
-The returned value will escape some values in HTML attributes.
-Here we see that the `&` character is escaped:
+مقدار برگشتی برخی مقادیر را در ویژگی‌های HTML فرار (escape) می‌کند.
+در اینجا می‌بینیم که کاراکتر `&` فرار شده است:
 
 ```js
 const anchor = document.createElement("a");
 anchor.href = "https://developer.mozilla.org?a=b&c=d";
-console.log(anchor.outerHTML); // output: "<a href='https://developer.mozilla.org?a=b&amp;c=d'></a>"
+console.log(anchor.outerHTML); // خروجی: "<a href='https://developer.mozilla.org?a=b&amp;c=d'></a>"
 ```
 
-Some browsers also serialize the `<` and `>` characters as `&lt;` and `&gt;` when they appear in attribute values (see [Browser compatibility](#browser_compatibility)).
-This is to prevent a potential security vulnerability ([mutation XSS](https://www.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass.html)) in which an attacker can craft input that bypasses a [sanitization function](/en-US/docs/Web/Security/Attacks/XSS#sanitization), enabling a cross-site scripting (XSS) attack.
+بعضی مرورگرها همچنین کاراکترهای `<` و `>` را هنگام ظاهر شدن در مقادیر ویژگی‌ها به صورت `&lt;` و `&gt;` سریال‌سازی می‌کنند (به [سازگاری مرورگر](#browser_compatibility) مراجعه کنید).
+این کار برای جلوگیری از یک آسیب‌پذیری امنیتی احتمالی ([mutation XSS](https://www.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass.html)) انجام می‌شود که در آن مهاجم می‌تواند ورودی‌ای بسازد که از یک [تابع پاک‌سازی](/en-US/docs/Web/Security/Attacks/XSS#sanitization) عبور کند و در نتیجه حملهٔ اسکریپت‌نویسی بین‌سایتی (XSS) ممکن شود.
 
-### Shadow DOM considerations
+### ملاحظات Shadow DOM
 
-The serialization of the DOM tree read from the property does not include {{glossary("shadow tree", "shadow roots")}}.
-If you want to get an HTML serialization of an element that includes shadow roots, you must instead use the {{domxref("Element.getHTML()")}} method.
-Note that this gets the _contents_ of the element.
+سریال‌سازی درخت DOM که از این ویژگی خوانده می‌شود شامل {{glossary("shadow tree", "shadow root")}} نیست.
+اگر می‌خواهید یک سریال‌سازی HTML از عنصری بگیرید که shadow rootها را هم شامل شود، باید به‌جای آن از متد {{domxref("Element.getHTML()")}} استفاده کنید.
+توجه داشته باشید که این متد _محتوای_ عنصر را دریافت می‌کند.
 
-Similarly, when setting element content using `outerHTML`, the HTML input is parsed into DOM elements that do not contain shadow roots.
-So for example [`<template>`](/en-US/docs/Web/HTML/Reference/Elements/template) is parsed into as {{domxref("HTMLTemplateElement")}}, whether or not the [`shadowrootmode`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootmode) attribute is specified.
-If you want to set an element's _contents_ from an HTML input that includes declarative shadow roots, you must instead use {{domxref("Element.setHTMLUnsafe()")}} or {{domxref("ShadowRoot.setHTMLUnsafe()")}}.
+به‌طور مشابه، هنگام تنظیم محتوای عنصر با استفاده از `outerHTML`، ورودی HTML به عناصر DOMی تجزیه می‌شود که شامل shadow root نیستند.
+بنابراین برای مثال [`<template>`](/en-US/docs/Web/HTML/Reference/Elements/template) صرف‌نظر از اینکه ویژگی [`shadowrootmode`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootmode) مشخص شده باشد یا نه، به صورت {{domxref("HTMLTemplateElement")}} تجزیه می‌شود.
+اگر می‌خواهید _محتوای_ یک عنصر را از ورودی HTML که شامل shadow rootهای اعلانی (declarative) است تنظیم کنید، باید به‌جای آن از {{domxref("Element.setHTMLUnsafe()")}} یا {{domxref("ShadowRoot.setHTMLUnsafe()")}} استفاده کنید.
 
-### Security considerations
+### ملاحظات امنیتی
 
-The `outerHTML` property is possible vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks, as it can be used to inject potentially unsafe strings provided by a user into the DOM.
-While the property does prevent {{HTMLElement("script")}} elements from executing when they are injected, it is susceptible to many other ways that attackers can craft HTML to run malicious JavaScript.
-For example, the following example would execute the code in the `error` event handler, because the {{htmlelement("img")}} `src` value is not a valid image URL:
+ویژگی `outerHTML` بردار احتمالی برای حملات [اسکریپت‌نویسی بین‌سایتی (XSS)](/en-US/docs/Web/Security/Attacks/XSS) است، زیرا می‌توان از آن برای تزریق رشته‌های بالقوه ناامن ارائه‌شده توسط کاربر به DOM استفاده کرد.
+اگرچه این ویژگی از اجرا شدن عناصر {{HTMLElement("script")}} هنگام تزریق جلوگیری می‌کند، اما در برابر بسیاری از روش‌های دیگری که مهاجمان می‌توانند HTML را برای اجرای جاوااسکریپت مخرب بسازند، آسیب‌پذیر است.
+برای مثال، مثال زیر کد موجود در رویداد `error` را اجرا می‌کند، زیرا مقدار `src` در {{htmlelement("img")}} یک URL تصویر معتبر نیست:
 
 ```js
 const name = "<img src='x' onerror='alert(1)'>";
-element.outerHTML = name; // shows the alert
+element.outerHTML = name; // هشدار را نشان می‌دهد
 ```
 
-You can mitigate these issues by always assigning {{domxref("TrustedHTML")}} objects instead of strings, and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) using the [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) CSP directive.
-This ensures that the input is passed through a transformation function, which has the chance to [sanitize](/en-US/docs/Web/Security/Attacks/XSS#sanitization) the input to remove potentially dangerous markup before it is injected.
+می‌توانید این مسائل را با اختصاص دادن همیشگی اشیاء {{domxref("TrustedHTML")}} به‌جای رشته‌ها و [اجباری کردن trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) با استفاده از دستور CSP [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) کاهش دهید.
+این کار تضمین می‌کند که ورودی از یک تابع تبدیل عبور کند، که این فرصت را دارد تا ورودی را قبل از تزریق [پاک‌سازی](/en-US/docs/Web/Security/Attacks/XSS#sanitization) کند و مارک‌آپ بالقوه خطرناک را حذف نماید.
 
-## Examples
+## مثال‌ها
 
-### Getting the serialization of an element
+### دریافت سریال‌سازی یک عنصر
 
-Reading `outerHTML` causes the user agent to serialize the element.
+خواندن `outerHTML` باعث می‌شود عامل کاربر (user agent) عنصر را سریال‌سازی کند.
 
-Given the following HTML:
+با توجه به HTML زیر:
 
 ```html
 <div id="example">
@@ -117,7 +111,7 @@ Given the following HTML:
 </div>
 ```
 
-You can get and log the markup for the {{htmlelement("div")}} as shown:
+می‌توانید مارک‌آپ مربوط به {{htmlelement("div")}} را به صورت زیر دریافت و ثبت (log) کنید:
 
 ```js
 const myElement = document.querySelector("#example");
@@ -126,21 +120,21 @@ console.log(contents);
 // '<div id="example">\n  <p>Content</p>\n  <p>Further Elaborated</p>\n</div>'
 ```
 
-### Replacing the element
+### جایگزینی عنصر
 
-In this example we'll replace an element in the DOM by assigning HTML to the element's `outerHTML` property.
-To mitigate the risk of XSS, we'll first create a `TrustedHTML` object from the string containing the HTML, and then assign that object to `outerHTML`.
+در این مثال، عنصری را در DOM با اختصاص HTML به ویژگی `outerHTML` آن جایگزین می‌کنیم.
+برای کاهش ریسک XSS، ابتدا یک شیء `TrustedHTML` از رشته‌ای که HTML را شامل می‌شود می‌سازیم و سپس آن شیء را به `outerHTML` اختصاص می‌دهیم.
 
-Trusted types are not yet supported on all browsers, so first we define the [trusted types tinyfill](/en-US/docs/Web/API/Trusted_Types_API#trusted_types_tinyfill).
-This acts as a transparent replacement for the Trusted Types JavaScript API:
+Trusted types هنوز در همه مرورگرها پشتیبانی نمی‌شود، بنابراین ابتدا [tinyfill مربوط به trusted types](/en-US/docs/Web/API/Trusted_Types_API#trusted_types_tinyfill) را تعریف می‌کنیم.
+این قطعه به‌عنوان جایگزینی شفاف برای API جاوااسکریپت Trusted Types عمل می‌کند:
 
 ```js
 if (typeof trustedTypes === "undefined")
   trustedTypes = { createPolicy: (n, rules) => rules };
 ```
 
-Next we create a {{domxref("TrustedTypePolicy")}} that defines a {{domxref("TrustedTypePolicy/createHTML", "createHTML()")}} for transforming an input string into {{domxref("TrustedHTML")}} instances.
-Commonly implementations of `createHTML()` use a library such as [DOMPurify](https://github.com/cure53/DOMPurify) to sanitize the input as shown below:
+سپس یک {{domxref("TrustedTypePolicy")}} تعریف می‌کنیم که یک {{domxref("TrustedTypePolicy/createHTML", "createHTML()")}} برای تبدیل رشتهٔ ورودی به نمونه‌های {{domxref("TrustedHTML")}} تعریف می‌کند.
+معمولاً پیاده‌سازی‌های `createHTML()` از کتابخانه‌ای مانند [DOMPurify](https://github.com/cure53/DOMPurify) برای پاک‌سازی ورودی استفاده می‌کنند، همان‌طور که در زیر نشان داده شده است:
 
 ```js
 const policy = trustedTypes.createPolicy("my-policy", {
@@ -148,36 +142,36 @@ const policy = trustedTypes.createPolicy("my-policy", {
 });
 ```
 
-Then we use this `policy` object to create a `TrustedHTML` object from the potentially unsafe input string, and assign the result to the element:
+سپس از این شیء `policy` برای ایجاد یک شیء `TrustedHTML` از رشتهٔ ورودی بالقوه ناامن استفاده می‌کنیم و نتیجه را به عنصر اختصاص می‌دهیم:
 
 ```js
-// The potentially malicious string
+// رشتهٔ بالقوه مخرب
 const untrustedString = "<p>I might be XSS</p><img src='x' onerror='alert(1)'>";
 
-// Create a TrustedHTML instance using the policy
+// ایجاد یک نمونه TrustedHTML با استفاده از policy
 const trustedHTML = policy.createHTML(untrustedString);
 
-// Inject the TrustedHTML (which contains a trusted string)
+// تزریق TrustedHTML (که شامل یک رشتهٔ قابل اعتماد است)
 const element = document.querySelector("#container");
-element.outerHTML = trustedHTML; // Replaces the element with id "container"
+element.outerHTML = trustedHTML; // عنصر با شناسه "container" جایگزین می‌شود
 
-// Note that the  #container div is no longer part of the document tree,
+// توجه کنید که div با شناسه #container دیگر بخشی از درخت سند نیست
 ```
 
 > [!WARNING]
-> While you can directly assign a string to `outerHTML` this is a [security risk](#security_considerations) if the string to be inserted might contain potentially malicious content.
-> You should use `TrustedHTML` to ensure that the content is sanitized before it is inserted, and you should set a CSP header to [enforce trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types).
+> اگرچه می‌توانید مستقیماً یک رشته را به `outerHTML` اختصاص دهید، این کار یک [ریسک امنیتی](#security_considerations) است اگر رشته‌ای که قرار است درج شود شامل محتوای بالقوه مخرب باشد.
+> باید از `TrustedHTML` استفاده کنید تا مطمئن شوید محتوا قبل از درج پاک‌سازی شده است، و باید یک هدر CSP برای [اجباری کردن trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) تنظیم کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Serializing DOM trees into XML strings: {{domxref("XMLSerializer")}}
-- Parsing XML or HTML into DOM trees: {{domxref("DOMParser")}}
+- سریال‌سازی درختان DOM به رشته‌های XML: {{domxref("XMLSerializer")}}
+- تجزیه XML یا HTML به درختان DOM: {{domxref("DOMParser")}}
 - {{domxref("HTMLElement.outerText")}}
