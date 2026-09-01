@@ -1,10 +1,4 @@
 ---
-title: "HTMLButtonElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement"
-status: "needs-translation"
----
-
----
 title: HTMLButtonElement
 slug: Web/API/HTMLButtonElement
 page-type: web-api-interface
@@ -13,78 +7,77 @@ browser-compat: api.HTMLButtonElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLButtonElement`** interface provides properties and methods (beyond the regular {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating {{HTMLElement("button")}} elements.
+رابط (interface) **`HTMLButtonElement`** ویژگی‌ها و روش‌هایی (فراتر از رابط معمول {{domxref("HTMLElement")}} که به‌طور ارث‌بری در دسترس آن است) برای دستکاری عناصر {{HTMLElement("button")}} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLButtonElement.command")}}
-  - : A string value indicating the action to be performed on an element being controlled by this button.
+  - : یک مقدار رشتهای که عملیاتی را که باید روی عنصری تحت کنترل این دکمه انجام شود، مشخص می‌کند.
 - {{domxref("HTMLButtonElement.commandForElement")}}
-  - : A reference to an existing {{domxref("Element")}} that the button controls.
+  - : ارجاعی به یک {{domxref("Element")}} موجود که دکمه آن را کنترل می‌کند.
 - {{domxref("HTMLButtonElement.disabled")}}
-  - : A boolean value indicating whether or not the control is disabled, meaning that it does not accept any clicks.
+  - : یک مقدار بولی (Boolean) که نشان می‌دهد آیا کنترل غیرفعال است یا خیر؛ یعنی هیچ کلیکی را نمی‌پذیرد.
 - {{domxref("HTMLButtonElement.form")}} {{ReadOnlyInline}}
-  - : An {{domxref("HTMLFormElement")}} reflecting the form that this button is associated with. If the button is a descendant of a form element, then this attribute is a reference to that form's associated `HTMLFormElement`.
-    If the button is not a descendant of a form element, then the attribute can be a reference to any `HTMLFormElement` element in the same document it is related to, or the `null` value if none matches.
+  - : یک {{domxref("HTMLFormElement")}} که فرم مرتبط با این دکمه را منعکس می‌کند. اگر دکمه از نوادگان یک عنصر فرم باشد، این ویژگی ارجاعی به `HTMLFormElement` مرتبط با آن فرم است. اگر دکمه از نوادگان یک عنصر فرم نباشد، این ویژگی می‌تواند ارجاعی به هر عنصر `HTMLFormElement` در همان سند باشد که با آن مرتبط است، یا در صورت عدم تطابق، مقدار `null` باشد.
 - {{domxref("HTMLButtonElement.formAction")}}
-  - : A string reflecting the URI of a resource that processes information submitted by the button. If specified, this attribute overrides the [`action`](/en-US/docs/Web/HTML/Reference/Elements/form#action) attribute of the {{HTMLElement("form")}} element that owns this element.
+  - : یک رشته که URI منبعی را نشان می‌دهد که اطلاعات ارسال‌شده توسط دکمه را پردازش می‌کند. در صورت مشخص شدن، این ویژگی ویژگی [`action`](/en-US/docs/Web/HTML/Reference/Elements/form#action) عنصر {{HTMLElement("form")}} که مالک این عنصر است را نادیده می‌گیرد.
 - {{domxref("HTMLButtonElement.formEnctype")}}
-  - : A string reflecting the type of content that is used to submit the form to the server. If specified, this attribute overrides the [`enctype`](/en-US/docs/Web/HTML/Reference/Elements/form#enctype) attribute of the {{HTMLElement("form")}} element that owns this element.
+  - : یک رشته که نوع محتوای مورد استفاده برای ارسال فرم به سرور را نشان می‌دهد. در صورت مشخص شدن، این ویژگی ویژگی [`enctype`](/en-US/docs/Web/HTML/Reference/Elements/form#enctype) عنصر {{HTMLElement("form")}} که مالک این عنصر است را نادیده می‌گیرد.
 - {{domxref("HTMLButtonElement.formMethod")}}
-  - : A string reflecting the HTTP method that the browser uses to submit the form. If specified, this attribute overrides the [`method`](/en-US/docs/Web/HTML/Reference/Elements/form#method) attribute of the {{HTMLElement("form")}} element that owns this element.
+  - : یک رشته که روش HTTP مورد استفاده مرورگر برای ارسال فرم را نشان می‌دهد. در صورت مشخص شدن، این ویژگی ویژگی [`method`](/en-US/docs/Web/HTML/Reference/Elements/form#method) عنصر {{HTMLElement("form")}} که مالک این عنصر است را نادیده می‌گیرد.
 - {{domxref("HTMLButtonElement.formNoValidate")}}
-  - : A boolean value indicating that the form is not to be validated when it is submitted. If specified, this attribute overrides the [`novalidate`](/en-US/docs/Web/HTML/Reference/Elements/form#novalidate) attribute of the {{HTMLElement("form")}} element that owns this element.
+  - : یک مقدار بولی که نشان می‌دهد هنگام ارسال فرم نباید اعتبارسنجی شود. در صورت مشخص شدن، این ویژگی ویژگی [`novalidate`](/en-US/docs/Web/HTML/Reference/Elements/form#novalidate) عنصر {{HTMLElement("form")}} که مالک این عنصر است را نادیده می‌گیرد.
 - {{domxref("HTMLButtonElement.formTarget")}}
-  - : A string reflecting a name or keyword indicating where to display the response received after submitting the form. If specified, this attribute overrides the [`target`](/en-US/docs/Web/HTML/Reference/Elements/form#target) attribute of the {{HTMLElement("form")}} element that owns this element.
+  - : یک رشته که نام یا کلیدواژه‌ای را نشان می‌دهد که محل نمایش پاسخ دریافت‌شده پس از ارسال فرم را مشخص می‌کند. در صورت مشخص شدن، این ویژگی ویژگی [`target`](/en-US/docs/Web/HTML/Reference/Elements/form#target) عنصر {{HTMLElement("form")}} که مالک این عنصر است را نادیده می‌گیرد.
 - {{domxref("HTMLButtonElement.interestForElement")}} {{experimental_inline}} {{non-standard_inline}}
-  - : Gets or sets the target element of an interest invoker, in cases where the associated {{htmlelement("button")}} element is specified as an [interest invoker](/en-US/docs/Web/API/Popover_API/Using_interest_invokers#creating_an_interest_invoker).
+  - : عنصر هدف یک فراخوان‌کننده علاقه (interest invoker) را در مواردی که عنصر {{htmlelement("button")}} مرتبط به عنوان یک [فراخوان‌کننده علاقه](/en-US/docs/Web/API/Popover_API/Using_interest_invokers#creating_an_interest_invoker) مشخص شده است، دریافت یا تنظیم می‌کند.
 - {{domxref("HTMLButtonElement.labels")}} {{ReadOnlyInline}}
-  - : A {{domxref("NodeList")}} that represents a list of {{HTMLElement("label")}} elements that are labels for this button.
+  - : یک {{domxref("NodeList")}} که فهرستی از عناصر {{HTMLElement("label")}} را نشان می‌دهد که برچسب‌های این دکمه هستند.
 - {{domxref("HTMLButtonElement.name")}}
-  - : A string representing the object's name when submitted with a form. If specified, it must not be the empty string.
+  - : یک رشته که نام شیء را هنگام ارسال با یک فرم نشان می‌دهد. در صورت مشخص شدن، نباید رشته خالی باشد.
 - {{domxref("HTMLButtonElement.popoverTargetAction")}}
-  - : Gets and sets the action to be performed (`"hide"`, `"show"`, or `"toggle"`) on a popover element being controlled by a control button. It reflects the value of the [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction) HTML attribute.
+  - : عملیاتی که باید روی یک عنصر پاپ‌اور تحت کنترل یک دکمه کنترلی انجام شود (`"hide"`، `"show"` یا `"toggle"`) را دریافت و تنظیم می‌کند. این ویژگی مقدار ویژگی HTML [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction) را منعکس می‌کند.
 - {{domxref("HTMLButtonElement.popoverTargetElement")}}
-  - : Gets and sets the popover element to control via a button. The JavaScript equivalent of the [`popovertarget`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget) HTML attribute.
+  - : عنصر پاپ‌اوری را که باید از طریق یک دکمه کنترل شود، دریافت و تنظیم می‌کند. معادل جاوااسکریپتی ویژگی HTML [`popovertarget`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget).
 - {{domxref("HTMLButtonElement.type")}}
-  - : A string indicating the behavior of the button. This is an enumerated attribute with the following possible values:
-    - `submit`: The button submits the form. This is the default value if the attribute is not specified, or if it is dynamically changed to an empty or invalid value.
-    - `reset`: The button resets the form.
-    - `button`: The button does nothing.
-    - `menu`: The button displays a menu. {{experimental_inline}}
+  - : یک رشته که رفتار دکمه را نشان می‌دهد. این یک ویژگی شمارشی با مقادیر ممکن زیر است:
+    - `submit`: دکمه فرم را ارسال می‌کند. این مقدار پیش‌فرض در صورت عدم مشخص شدن ویژگی یا تغییر پویای آن به مقدار خالی یا نامعتبر است.
+    - `reset`: دکمه فرم را بازنشانی می‌کند.
+    - `button`: دکمه هیچ کاری انجام نمی‌دهد.
+    - `menu`: دکمه یک منو را نمایش می‌دهد. {{experimental_inline}}
 
 - {{domxref("HTMLButtonElement.willValidate")}} {{ReadOnlyInline}}
-  - : A boolean value indicating whether the button is a candidate for constraint validation. It is `false` if any conditions bar it from constraint validation, including: its `type` property is `reset` or `button`; it has a {{HTMLElement("datalist")}} ancestor; or the `disabled` property is set to `true`.
+  - : یک مقدار بولی که نشان می‌دهد آیا دکمه کاندیدای اعتبارسنجی محدودیت (constraint validation) است یا خیر. اگر هر شرطی آن را از اعتبارسنجی محدودیت منع کند، `false` است؛ از جمله: ویژگی `type` آن `reset` یا `button` باشد؛ دارای یک جد {{HTMLElement("datalist")}} باشد؛ یا ویژگی `disabled` روی `true` تنظیم شده باشد.
 - {{domxref("HTMLButtonElement.validationMessage")}} {{ReadOnlyInline}}
-  - : A string representing the localized message that describes the validation constraints that the control does not satisfy (if any). This attribute is the empty string if the control is not a candidate for constraint validation (`willValidate` is `false`), or it satisfies its constraints.
+  - : یک رشته که پیام بومی‌سازی‌شده‌ای را نشان می‌دهد که محدودیت‌های اعتبارسنجی را که کنترل برآورده نمی‌کند (در صورت وجود) توصیف می‌کند. اگر کنترل کاندیدای اعتبارسنجی محدودیت نباشد (`willValidate` برابر `false` است) یا محدودیت‌های خود را برآورده کند، این ویژگی رشته خالی است.
 - {{domxref("HTMLButtonElement.validity")}} {{ReadOnlyInline}}
-  - : A {{domxref("ValidityState")}} representing the validity states that this button is in.
+  - : یک {{domxref("ValidityState")}} که حالت‌های اعتبارسنجی این دکمه را نشان می‌دهد.
 - {{domxref("HTMLButtonElement.value")}}
-  - : A string representing the current form control value of the button.
+  - : یک رشته که مقدار فعلی کنترل فرم دکمه را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-_Inherits methods from its parent, {{domxref("HTMLElement")}}_.
+_روش‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLButtonElement.checkValidity()")}}
-  - : Returns `true` if the element's value has no validity problems; otherwise, returns `false`.
+  - : اگر مقدار عنصر هیچ مشکل اعتبارسنجی نداشته باشد، `true` را برمی‌گرداند؛ در غیر این صورت `false` را برمی‌گرداند.
 - {{domxref("HTMLButtonElement.reportValidity()")}}
-  - : Performs the same action as `checkValidity()`, but also reports the result to the user if the `invalid` event was not canceled.
+  - : همان عمل `checkValidity()` را انجام می‌دهد، اما در صورت لغو نشدن رویداد `invalid`، نتیجه را نیز به کاربر گزارش می‌دهد.
 - {{domxref("HTMLButtonElement.setCustomValidity()")}}
-  - : Sets the custom validity message for the element. Use the empty string to indicate that the element does _not_ have a custom validity error.
+  - : پیام اعتبارسنجی سفارشی را برای عنصر تنظیم می‌کند. از رشته خالی استفاده کنید تا نشان دهید عنصر خطای اعتبارسنجی سفارشی _ندارد_.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید (See also)
 
-- HTML element implementing this interface: {{HTMLElement("button")}}
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("button")}}
