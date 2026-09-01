@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableElement: align property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/align"
-status: "needs-translation"
 ---
 
 ---
@@ -16,18 +14,17 @@ browser-compat: api.HTMLTableElement.align
 
 {{APIRef("HTML DOM")}}{{Deprecated_Header}}
 
-The **`HTMLTableElement.align`** property represents the
-alignment of the table.
+ویژگی **`HTMLTableElement.align`** تراز جدول را نشان می‌دهد.
 
-## Value
+## مقدار
 
-One of the following string values:
+یکی از مقادیر رشته‌ای زیر:
 
 - `left`
 - `center`
 - `right`
 
-## Examples
+## مثال‌ها
 
 ```js
 // Set the alignment of a table
@@ -35,10 +32,10 @@ const t = document.getElementById("TableA");
 t.align = "center";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
