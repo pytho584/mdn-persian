@@ -1,11 +1,5 @@
 ---
 title: "HTMLProgressElement: position property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement/position"
-status: "needs-translation"
----
-
----
-title: "HTMLProgressElement: position property"
 short-title: position
 slug: Web/API/HTMLProgressElement/position
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLProgressElement.position
 
 {{APIRef("HTML DOM")}}
 
-The **`position`** read-only property of the {{DOMxRef("HTMLProgressElement")}} interface returns current progress of the {{HTMLElement("progress")}} element.
+**`position`** 只读属性，属于 {{DOMxRef("HTMLProgressElement")}} 接口，返回 {{HTMLElement("progress")}} 元素的当前进度。
 
-## Value
+## 值
 
-For determinate progress bar returns the result of current value divided by max value, i.e., a fraction between `0.0` and `1.0`.
+对于确定进度条，返回当前值除以最大值的结果，即介于 `0.0` 和 `1.0` 之间的分数。
 
-For indeterminate progress bar the value is always `-1`.
+对于不确定进度条，该值始终为 `-1`。
 
-## Examples
+## 示例
 
 ### HTML
 
@@ -49,10 +43,10 @@ setInterval(() => {
 
 {{EmbedLiveSample("Examples", "100%", 30)}}
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
