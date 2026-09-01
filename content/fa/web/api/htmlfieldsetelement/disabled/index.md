@@ -1,11 +1,5 @@
 ---
 title: "HTMLFieldSetElement: disabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFieldSetElement/disabled"
-status: "needs-translation"
----
-
----
-title: "HTMLFieldSetElement: disabled property"
 short-title: disabled
 slug: Web/API/HTMLFieldSetElement/disabled
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLFieldSetElement.disabled
 
 {{ APIRef("HTML DOM") }}
 
-The **`disabled`** property of the {{domxref("HTMLFieldSetElement")}} interface is a boolean value that reflects the {{htmlelement("fieldset")}} element's [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/fieldset#disabled) attribute, which indicates whether the control is disabled.
+ویژگی **`disabled`** در رابط {{domxref("HTMLFieldSetElement")}} یک مقدار بولی است که ویژگی [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/fieldset#disabled) عنصر {{htmlelement("fieldset")}} را بازتاب می‌دهد و نشان می‌دهد که آیا کنترل غیرفعال است یا نه.
 
-When disabled, all the form control descendants of the `<fieldset>` element, excluding elements that are descendants of the {{htmlelement("legend")}} child of the `<fieldset>`, if any, are disabled. A disabled element is unusable and un-clickable, and match the {{cssxref(":disabled")}} selector, even if their `disabled` property value is false.
+هنگامی که غیرفعال باشد، تمام عناصر کنترلی فرم که از نوادگان عنصر `<fieldset>` هستند، به‌جز عناصری که از نوادگان فرزند {{htmlelement("legend")}} آن `<fieldset>` باشند (در صورت وجود)، غیرفعال می‌شوند. یک عنصر غیرفعال غیرقابل‌استفاده و غیرقابل‌کلیک است و با انتخابگر {{cssxref(":disabled")}} مطابقت دارد، حتی اگر مقدار ویژگی `disabled` آن false باشد.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const fs = document.getElementById("billing-address");
@@ -30,15 +24,15 @@ console.log(fs.disabled);
 fs.disabled = true;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- HTML [`disabled`](/en-US/docs/Web/HTML/Reference/Attributes/disabled) attribute
-- CSS {{cssxref(":disabled")}} and {{cssxref(":enabled")}} pseudoclasses
+- ویژگی HTML [`disabled`](/en-US/docs/Web/HTML/Reference/Attributes/disabled)
+- شبه‌کلاس‌های CSS {{cssxref(":disabled")}} و {{cssxref(":enabled")}}
