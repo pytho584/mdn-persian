@@ -1,11 +1,5 @@
 ---
 title: "Event: defaultPrevented property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/defaultPrevented"
-status: "needs-translation"
----
-
----
-title: "Event: defaultPrevented property"
 short-title: defaultPrevented
 slug: Web/API/Event/defaultPrevented
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Event.defaultPrevented
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`defaultPrevented`** read-only property of the {{domxref("Event")}} interface returns a boolean value indicating whether or not the call to {{ domxref("Event.preventDefault()") }} canceled the event.
+ویژگی فقط‌خواندنی **`defaultPrevented`** از رابط {{domxref("Event")}} یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا فراخوانی {{ domxref("Event.preventDefault()") }} رویداد را لغو کرده است یا خیر.
 
-## Value
+## مقدار
 
-A boolean value, where `true` indicates that the default {{glossary("user agent")}} action was prevented, and `false` indicates that it was not.
+یک مقدار بولی، که `true` نشان می‌دهد که عملکرد پیش‌فرض {{glossary("user agent")}} (عامل کاربر) جلوگیری شده است، و `false` نشان می‌دهد که این کار انجام نشده است.
 
-## Example
+## مثال
 
-This example logs attempts to visit links from two {{htmlElement("a")}} elements. JavaScript is used to prevent the second link from working.
+این مثال تلاش برای بازدید از پیوندهای دو عنصر {{htmlElement("a")}} را ثبت می‌کند. از جاوااسکریپت برای جلوگیری از کار کردن پیوند دوم استفاده شده است.
 
 ### HTML
 
@@ -54,14 +48,14 @@ a.addEventListener("click", stopLink);
 document.addEventListener("click", logClick);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Example")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
