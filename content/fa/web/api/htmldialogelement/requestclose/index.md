@@ -1,11 +1,5 @@
 ---
 title: "HTMLDialogElement: requestClose() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/requestClose"
-status: "needs-translation"
----
-
----
-title: "HTMLDialogElement: requestClose() method"
 short-title: requestClose()
 slug: Web/API/HTMLDialogElement/requestClose
 page-type: web-api-instance-method
@@ -14,40 +8,40 @@ browser-compat: api.HTMLDialogElement.requestClose
 
 {{ APIRef("HTML DOM") }}
 
-The **`requestClose()`** method of the {{domxref("HTMLDialogElement")}} interface requests to close the {{htmlelement("dialog")}}.
-An optional string may be passed as an argument, updating the {{domxref("HTMLDialogElement.returnValue", "returnValue")}} of the dialog.
+متد **`requestClose()`** از رابط {{domxref("HTMLDialogElement")}} درخواست بستن عنصر {{htmlelement("dialog")}} را می‌دهد.
+یک رشته اختیاری می‌تواند به عنوان آرگومان ارسال شود که مقدار {{domxref("HTMLDialogElement.returnValue", "returnValue")}} دیالوگ را به‌روزرسانی می‌کند.
 
-This method differs from {{domxref("HTMLDialogElement.close()", "close()")}} in that it fires a {{domxref("HTMLDialogElement.cancel_event", "cancel")}} event before firing the {{domxref("HTMLDialogElement.close_event", "close")}} event.
-Authors can call {{domxref("Event.preventDefault()")}} in the handler for the {{domxref("HTMLDialogElement.cancel_event", "cancel")}} event to prevent the dialog from closing.
+این متد با متد {{domxref("HTMLDialogElement.close()", "close()")}} تفاوت دارد در این که قبل از فعال‌سازی رویداد {{domxref("HTMLDialogElement.close_event", "close")}}، یک رویداد {{domxref("HTMLDialogElement.cancel_event", "cancel")}} را فعال می‌کند.
+نویسندگان می‌توانند در تابع‌درمانگر رویداد {{domxref("HTMLDialogElement.cancel_event", "cancel")}} متد {{domxref("Event.preventDefault()")}} را فراخوانی کنند تا از بسته‌شدن دیالوگ جلوگیری کنند.
 
-This method exposes the same behavior as the dialog's internal close watcher.
+این متد همان رفتار ناظر داخلی بستن دیالوگ (close watcher) را ارائه می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 requestClose()
 requestClose(returnValue)
 ```
 
-### Parameters
+### پارامترها
 
 - `returnValue` {{optional_inline}}
-  - : A string representing an updated value for the {{domxref("HTMLDialogElement.returnValue")}} of the dialog.
+  - : یک رشته که مقدار به‌روزرسانی‌شده برای {{domxref("HTMLDialogElement.returnValue")}} دیالوگ را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Using `requestClose()`
+### استفاده از `requestClose()`
 
-The following example shows a button that, when clicked, opens a {{htmlelement("dialog")}} using the {{domxref("HTMLDialogElement.showModal()", "showModal()")}} method.
-From there you can click the either _Close_ button to call the `requestClose()` method and close the dialog.
+مثال زیر یک دکمه را نشان می‌دهد که با کلیک روی آن، یک {{htmlelement("dialog")}} با استفاده از متد {{domxref("HTMLDialogElement.showModal()", "showModal()")}} باز می‌شود.
+سپس می‌توانید روی هر یک از دکمه‌های _بستن_ کلیک کنید تا متد `requestClose()` فراخوانی شده و دیالوگ بسته شود.
 
-The _Close_ button closes the dialog without a {{domxref("HTMLDialogElement.returnValue", "returnValue")}}, while the _Close w/ return value_ button closes the dialog with a {{domxref("HTMLDialogElement.returnValue", "returnValue")}}.
+دکمه _بستن_ دیالوگ را بدون {{domxref("HTMLDialogElement.returnValue", "returnValue")}} می‌بندد، در حالی که دکمه _بستن با مقدار بازگشتی_ دیالوگ را با یک {{domxref("HTMLDialogElement.returnValue", "returnValue")}} می‌بندد.
 
-Preventing the dialog from closing is demonstrated with a checkbox.
+جلوگیری از بسته‌شدن دیالوگ با یک چک‌باکس نشان داده شده است.
 
 #### HTML
 
@@ -91,26 +85,26 @@ const closeButton = document.getElementById("close");
 const closeWithValueButton = document.getElementById("close-w-value");
 const preventCloseInput = document.getElementById("prevent-close");
 
-// Open button opens a modal dialog
+// دکمه باز کردن، یک دیالوگ مودال را باز می‌کند
 openButton.addEventListener("click", () => {
-  // Reset the return value
+  // بازنشانی مقدار بازگشتی
   dialog.returnValue = "";
-  // Show the dialog
+  // نمایش دیالوگ
   dialog.showModal();
 });
 
-// Close button closes the dialog box
+// دکمه بستن، دیالوگ را می‌بندد
 closeButton.addEventListener("click", () => {
   dialog.requestClose();
 });
 
-// Close button closes the dialog box with a return value
+// دکمه بستن با مقدار بازگشتی، دیالوگ را با یک مقدار بازگشتی می‌بندد
 closeWithValueButton.addEventListener("click", () => {
   dialog.requestClose("some value");
 });
 
-// Fired when requestClose() is called
-// Prevent the dialog from closing by calling event.preventDefault()
+// هنگامی که requestClose() فراخوانی می‌شود فعال می‌گردد
+// با فراخوانی event.preventDefault() از بسته‌شدن دیالوگ جلوگیری کنید
 dialog.addEventListener("cancel", (event) => {
   if (preventCloseInput.checked) {
     log("Dialog close cancelled");
@@ -118,25 +112,25 @@ dialog.addEventListener("cancel", (event) => {
   }
 });
 
-// cancel event is not prevented, dialog will close
+// رویداد cancel جلوگیری نشده است، بنابراین دیالوگ بسته خواهد شد
 dialog.addEventListener("close", () => {
   log(`Dialog closed. Return value: "${dialog.returnValue}"`);
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Using `requestClose()`', '100%', '250px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- HTML {{htmlelement("dialog")}} element
-- The {{domxref("HTMLDialogElement.cancel_event", "cancel")}} event
+- عنصر HTML {{htmlelement("dialog")}}
+- رویداد {{domxref("HTMLDialogElement.cancel_event", "cancel")}}
