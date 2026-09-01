@@ -1,11 +1,5 @@
 ---
 title: "DOMQuad: getBounds() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/getBounds"
-status: "needs-translation"
----
-
----
-title: "DOMQuad: getBounds() method"
 short-title: getBounds()
 slug: Web/API/DOMQuad/getBounds
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.DOMQuad.getBounds
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The {{domxref("DOMQuad")}} method
-`getBounds()` returns a {{domxref("DOMRect")}} object representing the smallest rectangle that fully contains the `DOMQuad` object.
+متد `getBounds()` از {{domxref("DOMQuad")}} یک شیء {{domxref("DOMRect")}} برمی‌گرداند که کوچکترین مستطیلی را نشان می‌دهد که کاملاً شیء `DOMQuad` را در بر می‌گیرد.
 
 ## Syntax
 
@@ -25,15 +18,15 @@ getBounds()
 
 ### Parameters
 
-None.
+هیچکدام.
 
 ### Return value
 
-A {{domxref("DOMRect")}} with the x, y, width, and height properties, defining the bounding box for the `DOMQuad` based on its corner coordinates.
+یک {{domxref("DOMRect")}} با خصوصیات x، y، width و height که جعبه محدودکننده (bounding box) را برای `DOMQuad` بر اساس مختصات گوشه‌های آن تعریف می‌کند.
 
 ## Examples
 
-This example creates a {{domxref("DOMQuad")}} with four points, then retrieves its bounding rectangle.
+این مثال یک {{domxref("DOMQuad")}} با چهار نقطه ایجاد می‌کند، سپس مستطیل محدودکننده آن را بازیابی می‌کند.
 
 ```js
 const quad = new DOMQuad(
@@ -46,9 +39,9 @@ const quad = new DOMQuad(
 const quadBounds = quad.getBounds();
 ```
 
-![An irregular quadrilateral with none of the sides being vertical or horizontal. Its four corners are marked with red circles. Around this quadrilateral is a dashed rectangle. All sides of this rectangle are vertical or horizontal and tangent the quadrilateral.](./domquad.svg)
+![یک چهارضلعی نامنظم که هیچ‌یک از اضلاع آن عمودی یا افقی نیستند. چهار گوشه آن با دایره‌های قرمز مشخص شده‌اند. دور این چهارضلعی یک مستطیل خط‌چین قرار دارد. تمام اضلاع این مستطیل عمودی یا افقی هستند و چهارضلعی را مماس می‌کنند.](./domquad.svg)
 
-The figure shows an irregular quadrilateral represented by a {{domxref("DOMQuad")}}. The four red colored circles represent the {{domxref("DOMPoint")}} attributes `p1` to `p4`. The dashed rectangle represents the bounding rectangle returned by the `getBounds()` method of the {{domxref("DOMQuad")}}.
+شکل یک چهارضلعی نامنظم را نشان می‌دهد که توسط یک {{domxref("DOMQuad")}} نمایش داده شده است. چهار دایره قرمز رنگ نشان‌دهنده خصوصیات {{domxref("DOMPoint")}} از `p1` تا `p4` هستند. مستطیل خط‌چین نشان‌دهنده مستطیل محدودکننده‌ای است که توسط متد `getBounds()` از {{domxref("DOMQuad")}} برگردانده شده است.
 
 ## Specifications
 
