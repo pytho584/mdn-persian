@@ -1,11 +1,5 @@
 ---
 title: "CSSScale: CSSScale() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSScale/CSSScale"
-status: "needs-translation"
----
-
----
-title: "CSSScale: CSSScale() constructor"
 short-title: CSSScale()
 slug: Web/API/CSSScale/CSSScale
 page-type: web-api-constructor
@@ -14,35 +8,35 @@ browser-compat: api.CSSScale.CSSScale
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSScale()`** constructor creates a new {{domxref("CSSScale")}} object representing the {{cssxref("transform-function/scale", "scale()")}} and {{cssxref("transform-function/scale3d", "scale3d()")}} values of the individual {{CSSXref('transform')}} property in CSS.
+سازندهٔ **`CSSScale()`** یک شیء جدید {{domxref("CSSScale")}} می‌سازد که مقادیر {{cssxref("transform-function/scale", "scale()")}} و {{cssxref("transform-function/scale3d", "scale3d()")}} ویژگی مستقل {{CSSXref('transform')}} را در CSS نمایش می‌دهد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new CSSScale(x, y)
 new CSSScale(x, y, z)
 ```
 
-### Parameters
+### پارامترها
 
 - {{domxref('CSSScale.x','x')}}
-  - : A value for the x-axis of the {{domxref('CSSScale')}} object to be constructed.
-    This must either be a number (which is wrapped into a {{domxref("CSSUnitValue")}} of `unit: "number"`) or a {{domxref("CSSNumericValue")}}.
+  - : مقداری برای محور x از شیء {{domxref('CSSScale')}} که قرار است ساخته شود.
+    این مقدار باید یا یک عدد باشد (که به یک {{domxref("CSSUnitValue")}} با `unit: "number"` تبدیل می‌شود) یا یک {{domxref("CSSNumericValue")}}.
 - {{domxref('CSSScale.y','y')}}
-  - : A value for the y-axis of the {{domxref('CSSScale')}} object to be constructed.
-    This must either be a number (which is wrapped into a {{domxref("CSSUnitValue")}} of `unit: "number"`) or a {{domxref("CSSNumericValue")}}.
+  - : مقداری برای محور y از شیء {{domxref('CSSScale')}} که قرار است ساخته شود.
+    این مقدار باید یا یک عدد باشد (که به یک {{domxref("CSSUnitValue")}} با `unit: "number"` تبدیل می‌شود) یا یک {{domxref("CSSNumericValue")}}.
 - {{domxref('CSSScale.z','z')}} {{optional_inline}}
-  - : A value for the z-axis of the {{domxref('CSSScale')}} object to be constructed.
-    This must either be a number (which is wrapped into a {{domxref("CSSUnitValue")}} of `unit: "number"`) or a {{domxref("CSSNumericValue")}}. If a value is passed, the value of `is2D` will be set to false.
+  - : مقداری برای محور z از شیء {{domxref('CSSScale')}} که قرار است ساخته شود.
+    این مقدار باید یا یک عدد باشد (که به یک {{domxref("CSSUnitValue")}} با `unit: "number"` تبدیل می‌شود) یا یک {{domxref("CSSNumericValue")}}. اگر مقداری ارسال شود، مقدار `is2D` روی `false` تنظیم خواهد شد.
 
-## Examples
+## مثال‌ها
 
-To do
+در دست انجام.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
