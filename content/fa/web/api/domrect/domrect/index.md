@@ -1,20 +1,10 @@
 ---
 title: "DOMRect: DOMRect() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/DOMRect"
-status: "needs-translation"
----
-
----
-title: "DOMRect: DOMRect() constructor"
-short-title: DOMRect()
-slug: Web/API/DOMRect/DOMRect
-page-type: web-api-constructor
-browser-compat: api.DOMRect.DOMRect
 ---
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMRect()`** constructor creates a new {{domxref("DOMRect")}} object.
+سازندهٔ **`DOMRect()`** یک شیء جدید از نوع {{domxref("DOMRect")}} ایجاد می‌کند.
 
 ## Syntax
 
@@ -25,17 +15,17 @@ new DOMRect(x, y, width, height)
 ### Parameters
 
 - {{domxref("DOMRect.x", "x")}}
-  - : The `x` coordinate of the `DOMRect`'s origin.
+  - : مختصات `x` مبدأ شیء `DOMRect`.
 - {{domxref("DOMRect.y", "y")}}
-  - : The `y` coordinate of the `DOMRect`'s origin.
+  - : مختصات `y` مبدأ شیء `DOMRect`.
 - {{domxref("DOMRect.width", "width")}}
-  - : The width of the `DOMRect`.
+  - : عرض شیء `DOMRect`.
 - {{domxref("DOMRect.height", "height")}}
-  - : The height of the `DOMRect`.
+  - : ارتفاع شیء `DOMRect`.
 
 ### Return value
 
-A new {{domxref("DOMRect")}} object.
+یک شیء جدید از نوع {{domxref("DOMRect")}}.
 
 ## Specifications
 
