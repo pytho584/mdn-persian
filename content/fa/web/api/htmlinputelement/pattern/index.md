@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: pattern property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/pattern"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: pattern property"
 short-title: pattern
 slug: Web/API/HTMLInputElement/pattern
 page-type: web-api-instance-property
@@ -14,34 +8,34 @@ browser-compat: api.HTMLInputElement.pattern
 
 {{ APIRef("HTML DOM") }}
 
-The **`pattern`** property of the {{DOMxRef("HTMLInputElement")}} interface represents a [regular expression](/en-US/docs/Web/JavaScript/Guide/Regular_expressions) a non-null {{HTMLElement("input")}} value should match. It reflects the {{htmlelement("input")}} element's [`pattern`](/en-US/docs/Web/HTML/Reference/Attributes/pattern) attribute.
+خاصیت **`pattern`** از رابط {{DOMxRef("HTMLInputElement")}} نشان‌دهنده یک [عبارت باقاعده](/en-US/docs/Web/JavaScript/Guide/Regular_expressions) است که یک مقدار غیر null عنصر {{HTMLElement("input")}} باید با آن مطابقت داشته باشد. این ویژگی منعکس‌کننده ویژگی [`pattern`](/en-US/docs/Web/HTML/Reference/Attributes/pattern) عنصر {{htmlelement("input")}} است.
 
-The `pattern` property is valid for `text`, `search`, `url`, `tel`, `email`, and `password` types. It defines a regular expression that the input's {{DOMxRef("HTMLInputElement.value", "value")}} must match in order for the value to pass [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+خاصیت `pattern` برای انواع `text`، `search`، `url`، `tel`، `email` و `password` معتبر است. این یک عبارت باقاعده تعریف می‌کند که {{DOMxRef("HTMLInputElement.value", "value")}} ورودی باید با آن مطابقت داشته باشد تا مقدار بتواند از [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) عبور کند.
 
-If a non-`null` value doesn't conform to the constraints set by the `pattern` value, the {{domxref('ValidityState')}} object's read-only {{domxref('ValidityState.patternMismatch','patternMismatch')}} property will be true.
+اگر یک مقدار غیر null با محدودیت‌های تعیین‌شده توسط مقدار `pattern` مطابقت نداشته باشد، ویژگی فقط‌خواندنی {{domxref('ValidityState.patternMismatch','patternMismatch')}} از شیء {{domxref('ValidityState')}} برابر با `true` خواهد بود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const inputElement = document.getElementById("year");
 console.log(input.pattern);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("input")}}
 - {{DOMXref("HTMLInputElement.value")}}
-- [Client-side validation](/en-US/docs/Web/HTML/Reference/Elements/input#client-side_validation)
-- {{CSSXref(":valid")}} and {{CSSXref(":invalid")}} pseudo-classes
+- [اعتبارسنجی سمت کلاینت](/en-US/docs/Web/HTML/Reference/Elements/input#client-side_validation)
+- شبه‌کلاس‌های {{CSSXref(":valid")}} و {{CSSXref(":invalid")}}
