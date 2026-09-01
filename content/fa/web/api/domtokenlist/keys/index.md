@@ -1,11 +1,5 @@
 ---
 title: "DOMTokenList: keys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/keys"
-status: "needs-translation"
----
-
----
-title: "DOMTokenList: keys() method"
 short-title: keys()
 slug: Web/API/DOMTokenList/keys
 page-type: web-api-instance-method
@@ -14,39 +8,33 @@ browser-compat: api.DOMTokenList.keys
 
 {{APIRef("DOM")}}
 
-The **`keys()`** method of the {{domxref("DOMTokenList")}} interface
-returns an {{jsxref("Iteration_protocols",'iterator',"",1)}} allowing to go through all keys contained in this object.
-The keys are unsigned integers.
+متد **`keys()`** در رابط {{domxref("DOMTokenList")}} یک {{jsxref("Iteration_protocols",'iterator',"",1)}} برمی‌گرداند که امکان پیمایش همه کلیدهای موجود در این شیء را فراهم می‌کند. این کلیدها اعداد صحیح بدون علامت هستند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 keys()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-Returns an {{jsxref("Iteration_protocols","iterator","",1)}}.
+یک {{jsxref("Iteration_protocols","iterator","",1)}} را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-In the following example we retrieve the list of classes set on a
-{{htmlelement("span")}} element as a `DOMTokenList` using
-{{domxref("Element.classList")}}. We then retrieve an iterator containing the keys using `keys()`,
-then iterate through those keys using a [for...of](/en-US/docs/Web/JavaScript/Reference/Statements/for...of) loop,
-writing each one to the `<span>`'s {{domxref("Node.textContent")}}.
+در مثال زیر، فهرست کلاس‌های اعمال‌شده روی یک عنصر {{htmlelement("span")}} را به‌صورت یک `DOMTokenList` با استفاده از {{domxref("Element.classList")}} دریافت می‌کنیم. سپس با استفاده از `keys()` یک تکرارگر شامل کلیدها به دست می‌آوریم و با یک حلقه [for...of](/en-US/docs/Web/JavaScript/Reference/Statements/for...of) روی این کلیدها پیمایش می‌کنیم و هرکدام را در {{domxref("Node.textContent")}} عنصر `<span>` می‌نویسیم.
 
-First, the HTML:
+ابتدا، HTML:
 
 ```html
 <span class="a b c"></span>
 ```
 
-Now the JavaScript:
+حالا کد جاوااسکریپت:
 
 ```js
 const span = document.querySelector("span");
@@ -58,18 +46,18 @@ for (let value of iterator) {
 }
 ```
 
-The output looks like this:
+خروجی به این صورت است:
 
 {{ EmbedLiveSample('Examples', '100%', 60) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("DOMTokenList.entries()")}}, {{domxref("DOMTokenList.forEach()")}} and {{domxref("DOMTokenList.values")}}.
+- {{domxref("DOMTokenList.entries()")}}، {{domxref("DOMTokenList.forEach()")}} و {{domxref("DOMTokenList.values")}}.
