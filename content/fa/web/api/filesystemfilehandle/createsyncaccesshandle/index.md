@@ -1,11 +1,5 @@
 ---
 title: "FileSystemFileHandle: createSyncAccessHandle() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle"
-status: "needs-translation"
----
-
----
-title: "FileSystemFileHandle: createSyncAccessHandle() method"
 short-title: createSyncAccessHandle()
 slug: Web/API/FileSystemFileHandle/createSyncAccessHandle
 page-type: web-api-instance-method
@@ -14,54 +8,51 @@ browser-compat: api.FileSystemFileHandle.createSyncAccessHandle
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers("dedicated")}}
 
-The **`createSyncAccessHandle()`** method of the
-{{domxref("FileSystemFileHandle")}} interface returns a {{jsxref('Promise')}} which resolves to a {{domxref('FileSystemSyncAccessHandle')}} object
-that can be used to synchronously read from and write to a file. The synchronous nature of this method brings performance advantages,
-but it is only usable inside dedicated [Web Workers](/en-US/docs/Web/API/Web_Workers_API) for files within the [origin private file system](/en-US/docs/Web/API/File_System_API/Origin_private_file_system).
+متد **`createSyncAccessHandle()`** در رابط {{domxref("FileSystemFileHandle")}} یک {{jsxref('Promise')}} برمی‌گرداند که به یک شیء {{domxref('FileSystemSyncAccessHandle')}} حل می‌شود و می‌توان از آن برای خواندن و نوشتن همزمان (synchronous) در یک فایل استفاده کرد. ماهیت همزمان این متد مزیت‌های عملکردی به همراه دارد، اما فقط در [Web Workers](/en-US/docs/Web/API/Web_Workers_API) اختصاصی (dedicated) و برای فایل‌های داخل [سیستم فایل خصوصی مبدأ](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) قابل استفاده است.
 
-Creating a {{domxref('FileSystemSyncAccessHandle')}} takes an exclusive lock on the file associated with the file handle. This prevents the creation of further {{domxref('FileSystemSyncAccessHandle')}}s or {{domxref('FileSystemWritableFileStream')}}s for the file until the existing access handle is closed.
+ایجاد یک {{domxref('FileSystemSyncAccessHandle')}} یک قفل انحصاری روی فایل مرتبط با هندل فایل اعمال می‌کند. این کار از ایجاد {{domxref('FileSystemSyncAccessHandle')}}های بیشتر یا {{domxref('FileSystemWritableFileStream')}}های جدید برای آن فایل تا زمانی که هندل دسترسی موجود بسته نشود، جلوگیری می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 createSyncAccessHandle()
 createSyncAccessHandle(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object with the following properties:
+  - : یک شیء با ویژگی‌های زیر:
     - `mode` {{optional_inline}} {{non-standard_inline}}
-      - : A string specifying the locking mode for the access handle. The default value is `"readwrite"`.
-        Possible values are:
+      - : رشته‌ای که حالت قفل را برای هندل دسترسی مشخص می‌کند. مقدار پیش‌فرض `"readwrite"` است.
+        مقادیر ممکن عبارتند از:
         - `"read-only"`
-          - : Multiple `FileSystemSyncAccessHandle` objects can be opened simultaneously on a file (for example when using the same app in multiple tabs), provided they are all opened in `"read-only"` mode. Once opened, read-like methods can be called on the handles — {{domxref("FileSystemSyncAccessHandle.read", "read()")}}, {{domxref("FileSystemSyncAccessHandle.getSize", "getSize()")}}, and {{domxref("FileSystemSyncAccessHandle.close", "close()")}}.
+          - : چندین شیء `FileSystemSyncAccessHandle` می‌توانند به طور همزمان روی یک فایل باز شوند (مثلاً هنگام استفاده از یک برنامه در چند تب)، به شرطی که همه آن‌ها در حالت `"read-only"` باز شده باشند. پس از باز شدن، می‌توان متدهای شبیه به خواندن را روی هندل‌ها فراخوانی کرد — {{domxref("FileSystemSyncAccessHandle.read", "read()")}}، {{domxref("FileSystemSyncAccessHandle.getSize", "getSize()")}} و {{domxref("FileSystemSyncAccessHandle.close", "close()")}}.
         - `"readwrite"`
-          - : Only one `FileSystemSyncAccessHandle` object can be opened on a file. Attempting to open subsequent handles before the first handle is closed results in a `NoModificationAllowedError` exception being thrown. Once opened, any available method can be called on the handle.
+          - : فقط یک شیء `FileSystemSyncAccessHandle` می‌تواند روی یک فایل باز شود. تلاش برای باز کردن هندل‌های بعدی قبل از بسته شدن هندل اول، منجر به پرتاب استثنای `NoModificationAllowedError` می‌شود. پس از باز شدن، می‌توان هر متد موجود را روی هندل فراخوانی کرد.
         - `"readwrite-unsafe"`
-          - : Multiple `FileSystemSyncAccessHandle` objects can be opened simultaneously on a file, provided they are all opened in `"readwrite-unsafe"` mode. Once opened, any available method can be called on the handles.
+          - : چندین شیء `FileSystemSyncAccessHandle` می‌توانند به طور همزمان روی یک فایل باز شوند، به شرطی که همه آن‌ها در حالت `"readwrite-unsafe"` باز شده باشند. پس از باز شدن، می‌توان هر متد موجود را روی هندل‌ها فراخوانی کرد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} which resolves to a {{domxref('FileSystemSyncAccessHandle')}} object.
+یک {{jsxref('Promise')}} که به یک شیء {{domxref('FileSystemSyncAccessHandle')}} حل می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref('PermissionStatus.state')}} for the handle is not `granted` in `readwrite` mode.
+  - : اگر {{domxref('PermissionStatus.state')}} برای هندل در حالت `readwrite` برابر با `granted` نباشد، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref('FileSystemSyncAccessHandle')}} object does not represent a file in the [origin private file system](/en-US/docs/Web/API/File_System_API/Origin_private_file_system).
+  - : اگر شیء {{domxref('FileSystemSyncAccessHandle')}} نمایانگر یک فایل در [سیستم فایل خصوصی مبدأ](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) نباشد، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if current entry is not found.
+  - : اگر ورودی فعلی یافت نشود، پرتاب می‌شود.
 - `NoModificationAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the browser is not able to acquire a lock on the file associated with the file handle. This could be because `mode` is set to `readwrite` and an attempt is made to open multiple handles simultaneously.
+  - : اگر مرورگر نتواند قفلی روی فایل مرتبط با هندل فایل به دست آورد، پرتاب می‌شود. این می‌تواند به این دلیل باشد که `mode` روی `readwrite` تنظیم شده و تلاش برای باز کردن همزمان چند هندل انجام می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following asynchronous event handler function is contained inside a Web Worker. The snippet inside it creates a synchronous file access handle.
+تابع رویداد ناهمگام زیر درون یک Web Worker قرار دارد. قطعه کد داخل آن یک هندل دسترسی همزمان به فایل ایجاد می‌کند.
 
 ```js
 onmessage = async (e) => {
@@ -81,17 +72,17 @@ onmessage = async (e) => {
 };
 ```
 
-### Complete example with `mode` option
+### مثال کامل با گزینه `mode`
 
-Our [`createSyncAccessHandle()` mode test](https://mdn.github.io/dom-examples/file-system-api/createsyncaccesshandle-mode/) example (see the [source code](https://github.com/mdn/dom-examples/tree/main/file-system-api/createsyncaccesshandle-mode)) provides an {{htmlelement("input")}} field to enter text into, and two buttons — one to write entered text to the end of a file in the origin private file system, and one to empty the file when it becomes too full.
+مثال [آزمون `createSyncAccessHandle()` با حالت mode](https://mdn.github.io/dom-examples/file-system-api/createsyncaccesshandle-mode/) (مشاهده [کد منبع](https://github.com/mdn/dom-examples/tree/main/file-system-api/createsyncaccesshandle-mode)) یک فیلد {{htmlelement("input")}} برای وارد کردن متن و دو دکمه فراهم می‌کند — یکی برای نوشتن متن وارد شده در انتهای یک فایل در سیستم فایل خصوصی مبدأ، و یکی برای خالی کردن فایل وقتی بیش از حد پر می‌شود.
 
-Try exploring the demo above, with the browser developer console open so you can see what is happening. If you try opening the demo in multiple browser tabs, you will find that multiple handles can be opened at once to write to the file at the same time. This is because `mode: "readwrite-unsafe"` is set on the `createSyncAccessHandle()` calls.
+نمایان بالا را با کنسول توسعه‌دهنده مرورگر باز امتحان کنید تا ببینید چه اتفاقی می‌افتد. اگر بخواهید دمو را در چند تب مرورگر باز کنید، خواهید دید که می‌توان چند هندل را به طور همزمان برای نوشتن در فایل باز کرد. این به این دلیل است که `mode: "readwrite-unsafe"` روی فراخوانی‌های `createSyncAccessHandle()` تنظیم شده است.
 
-Below we'll explore the code.
+در ادامه کد را بررسی می‌کنیم.
 
 #### HTML
 
-The two {{htmlelement("button")}} elements and text {{htmlelement("input")}} field look like this:
+دو عنصر {{htmlelement("button")}} و فیلد متنی {{htmlelement("input")}} به این شکل هستند:
 
 ```html
 <ol>
@@ -109,12 +100,12 @@ The two {{htmlelement("button")}} elements and text {{htmlelement("input")}} fie
 </ol>
 ```
 
-#### Main JavaScript
+#### جاوااسکریپت اصلی
 
-The main thread JavaScript inside the HTML file is shown below. We grab references to the write text button, empty file button, and text input field, then we create a new web worker using the {{domxref("Worker.Worker", "Worker()")}} constructor. We then define two functions and set them as event handlers on the buttons:
+جاوااسکریپت ترد اصلی داخل فایل HTML در زیر نشان داده شده است. ما ارجاع‌هایی به دکمه نوشتن متن، دکمه خالی کردن فایل و فیلد ورودی متن می‌گیریم، سپس یک web worker جدید با استفاده از سازنده {{domxref("Worker.Worker", "Worker()")}} ایجاد می‌کنیم. سپس دو تابع تعریف کرده و آن‌ها را به عنوان مدیریت‌کننده رویداد روی دکمه‌ها تنظیم می‌کنیم:
 
-- `writeToOPFS()` is run when the write text button is clicked. This function posts the entered value of the text field to the worker inside an object using the {{domxref("Worker.postMessage()")}} method, then empties the text field, ready for the next addition. Note how the passed object also includes a `command: "write"` property to specify that we want to trigger a write action with this message.
-- `emptyOPFS()` is run when the empty file button is clicked. This posts an object containing a `command: "empty"` property to the worker specifying that the file is to be emptied.
+- `writeToOPFS()` وقتی کلیک می‌شود که دکمه نوشتن متن کلیک شود. این تابع مقدار وارد شده در فیلد متنی را درون یک شیء با استفاده از متد {{domxref("Worker.postMessage()")}} به worker ارسال می‌کند و سپس فیلد متنی را خالی می‌کند تا برای افزودن بعدی آماده باشد. توجه کنید که شیء ارسال‌شده همچنین شامل یک ویژگی `command: "write"` است تا مشخص شود با این پیام می‌خواهیم عملیات نوشتن انجام دهیم.
+- `emptyOPFS()` وقتی اجرا می‌شود که دکمه خالی کردن فایل کلیک شود. این تابع یک شیء حاوی ویژگی `command: "empty"` به worker ارسال می‌کند و مشخص می‌کند که فایل باید خالی شود.
 
 ```js
 const writeBtn = document.querySelector(".write");
@@ -142,11 +133,11 @@ writeBtn.addEventListener("click", writeToOPFS);
 emptyBtn.addEventListener("click", emptyOPFS);
 ```
 
-#### Worker JavaScript
+#### جاوااسکریپت worker
 
-The worker JavaScript is shown below.
+جاوااسکریپت worker در زیر نشان داده شده است.
 
-First, we run a function called `initOPFS()` that gets a reference to the OPFS root using {{domxref("StorageManager.getDirectory()")}}, creates a file and returns its handle using {{domxref("FileSystemDirectoryHandle.getFileHandle()")}}, and then returns a {{domxref("FileSystemSyncAccessHandle")}} using `createSyncAccessHandle()`. This call includes the `mode: "readwrite-unsafe"` property, allowing multiple handles to access the same file simultaneously.
+ابتدا تابعی به نام `initOPFS()` را اجرا می‌کنیم که با استفاده از {{domxref("StorageManager.getDirectory()")}} یک ارجاع به ریشه OPFS می‌گیرد، با استفاده از {{domxref("FileSystemDirectoryHandle.getFileHandle()")}} یک فایل ایجاد کرده و هندل آن را برمی‌گرداند، و سپس با استفاده از `createSyncAccessHandle()` یک {{domxref("FileSystemSyncAccessHandle")}} برمی‌گرداند. این فراخوانی شامل ویژگی `mode: "readwrite-unsafe"` است که به چند هندل اجازه می‌دهد به طور همزمان به همان فایل دسترسی داشته باشند.
 
 ```js
 let accessHandle;
@@ -162,14 +153,14 @@ async function initOPFS() {
 initOPFS();
 ```
 
-Inside the worker's [message event](/en-US/docs/Web/API/Worker/message_event) handler function, we first get the size of the file using {{domxref("FileSystemSyncAccessHandle.getSize", "getSize()")}}. We then check to see whether the data sent in the message includes a `command` property value of `"empty"`. If so, we empty the file using {{domxref("FileSystemSyncAccessHandle.truncate", "truncate()")}} with a value of `0`, and update the file size contained in the `size` variable.
+در داخل تابع مدیریت‌کننده [رویداد پیام](/en-US/docs/Web/API/Worker/message_event) worker، ابتدا اندازه فایل را با استفاده از {{domxref("FileSystemSyncAccessHandle.getSize", "getSize()")}} می‌گیریم. سپس بررسی می‌کنیم که آیا داده ارسال‌شده در پیام شامل یک ویژگی `command` با مقدار `"empty"` است یا خیر. اگر چنین باشد، فایل را با استفاده از {{domxref("FileSystemSyncAccessHandle.truncate", "truncate()")}} با مقدار `0` خالی می‌کنیم و اندازه فایل ذخیره‌شده در متغیر `size` را به‌روزرسانی می‌کنیم.
 
-If the message data is something else, we:
+اگر داده پیام چیز دیگری باشد،:
 
-- Create a new {{domxref("TextEncoder")}} and {{domxref("TextDecoder")}} to handle encoding and decoding the text content later on.
-- Encode the message data and write the result to the end of the file using {{domxref("FileSystemSyncAccessHandle.write", "write()")}}, then update the file size contained in the `size` variable.
-- Create a {{jsxref("DataView")}} to contain the file contents, and read the content into it using {{domxref("FileSystemSyncAccessHandle.read", "read()")}}.
-- Decode the `DataView` contents and log it to the console.
+- یک {{domxref("TextEncoder")}} و {{domxref("TextDecoder")}} جدید ایجاد می‌کنیم تا بعداً رمزگذاری و رمزگشایی محتوای متنی را مدیریت کنند.
+- داده پیام را رمزگذاری کرده و نتیجه را با استفاده از {{domxref("FileSystemSyncAccessHandle.write", "write()")}} در انتهای فایل می‌نویسیم، سپس اندازه فایل ذخیره‌شده در متغیر `size` را به‌روزرسانی می‌کنیم.
+- یک {{jsxref("DataView")}} برای نگهداری محتویات فایل ایجاد می‌کنیم و محتوا را با استفاده از {{domxref("FileSystemSyncAccessHandle.read", "read()")}} در آن می‌خوانیم.
+- محتویات `DataView` را رمزگشایی کرده و در کنسول ثبت می‌کنیم.
 
 ```js
 onmessage = function (e) {
@@ -214,15 +205,15 @@ onmessage = function (e) {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
