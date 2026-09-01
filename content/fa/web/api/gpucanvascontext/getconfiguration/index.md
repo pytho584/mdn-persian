@@ -1,7 +1,5 @@
 ---
 title: "GPUCanvasContext: getConfiguration() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext/getConfiguration"
-status: "needs-translation"
 ---
 
 ---
@@ -14,24 +12,23 @@ browser-compat: api.GPUCanvasContext.getConfiguration
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`getConfiguration()`** method of the
-{{domxref("GPUCanvasContext")}} interface returns the current configuration set for the context.
+متد **`getConfiguration()`** از رابط {{domxref("GPUCanvasContext")}}، پیکربندی فعلیِ تنظیم‌شده برای context را برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getConfiguration()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An object containing the configuration options set on the context (i.e., via the {{domxref("GPUCanvasContext.configure()")}} method), or `null` if no configuration is set (either no configuration was previously set, or a configuration was set and then {{domxref("GPUCanvasContext.unconfigure()")}} was called on the context).
+یک شیء حاوی گزینه‌های پیکربندیِ تنظیم‌شده روی context (یعنی از طریق متد {{domxref("GPUCanvasContext.configure()")}})، یا `null` اگر هیچ پیکربندی‌ای تنظیم نشده باشد (یا اینکه قبلاً هیچ پیکربندی‌ای تنظیم نشده است، یا پیکربندی تنظیم شده و سپس {{domxref("GPUCanvasContext.unconfigure()")}} روی context فراخوانی شده است).
 
-## Examples
+## مثال‌ها
 
 ```js
 const canvas = document.querySelector("canvas");
@@ -71,15 +68,15 @@ console.log(context.getConfiguration());
 */
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("GPUCanvasContext.configure()")}}
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- رابط [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
