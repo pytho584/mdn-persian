@@ -1,11 +1,5 @@
 ---
 title: "HIDDevice: inputreport event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/inputreport_event"
-status: "needs-translation"
----
-
----
-title: "HIDDevice: inputreport event"
 short-title: inputreport
 slug: Web/API/HIDDevice/inputreport_event
 page-type: web-api-event
@@ -16,11 +10,11 @@ browser-compat: api.HIDDevice.inputreport_event
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`inputreport`** event of the {{domxref("HIDDevice")}} interface fires when a new report is received from the HID device.
+رویداد **`inputreport`** از رابط {{domxref("HIDDevice")}} زمانی رخ می‌دهد که یک گزارش جدید از دستگاه HID دریافت شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("inputreport", (event) => { })
@@ -28,21 +22,21 @@ addEventListener("inputreport", (event) => { })
 oninputreport = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("HIDInputReportEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("HIDInputReportEvent")}}. به ارث‌برده از {{domxref("Event")}}.
 
 {{InheritanceDiagram("HIDInputReportEvent")}}
 
-## Example
+## مثال
 
-The following example demonstrates listening for an `inputreport` event that will allow the application to detect which button is pressed on a Joy-Con Right device. You can see more examples, and live demos in the article [Connecting to uncommon HID devices](https://developer.chrome.com/docs/capabilities/hid).
+مثال زیر گوش دادن به رویداد `inputreport` را نشان می‌دهد که به برنامه اجازه می‌دهد تشخیص دهد کدام دکمه روی دستگاه Joy-Con Right فشرده شده است. نمونه‌های بیشتر و نسخه‌های نمایشی زنده را در مقاله [اتصال به دستگاه‌های HID غیرمعمول](https://developer.chrome.com/docs/capabilities/hid) می‌توانید ببینید.
 
 ```js
 device.addEventListener("inputreport", (event) => {
   const { data, device, reportId } = event;
 
-  // Handle only the Joy-Con Right device and a specific report ID.
+  // فقط دستگاه Joy-Con Right و یک شناسه گزارش خاص را پردازش کن.
   if (device.productId !== 0x2007 && reportId !== 0x3f) return;
 
   const value = data.getUint8(0);
@@ -53,10 +47,10 @@ device.addEventListener("inputreport", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
