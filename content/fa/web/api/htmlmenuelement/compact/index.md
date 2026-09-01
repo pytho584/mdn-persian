@@ -1,11 +1,5 @@
 ---
 title: "HTMLMenuElement: compact property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMenuElement/compact"
-status: "needs-translation"
----
-
----
-title: "HTMLMenuElement: compact property"
 short-title: compact
 slug: Web/API/HTMLMenuElement/compact
 page-type: web-api-instance-property
@@ -16,13 +10,13 @@ browser-compat: api.HTMLMenuElement.compact
 
 {{ApiRef("HTML DOM")}}{{Deprecated_Header}}
 
-The **`compact`** property of the {{domxref("HTMLMenuElement")}} interface indicates that spacing between list items should be reduced. The exact handling of the `compact` attribute is browser-specific. Instead of using this property, consider using CSS {{cssxref("line-height")}} instead.
+خاصیت **`compact`** از رابط {{domxref("HTMLMenuElement")}} نشان می‌دهد که فاصله بین آیتم‌های لیست باید کاهش یابد. نحوه دقیق مدیریت ویژگی `compact` مختص مرورگر است. به جای استفاده از این خاصیت، از CSS {{cssxref("line-height")}} استفاده کنید.
 
-It reflects the [`compact`](/en-US/docs/Web/HTML/Reference/Elements/menu#compact) attribute of the {{HTMLElement("menu")}} element.
+این خاصیت منعکس‌کننده ویژگی [`compact`](/en-US/docs/Web/HTML/Reference/Elements/menu#compact) عنصر {{HTMLElement("menu")}} است.
 
 ## Value
 
-A boolean.
+یک مقدار Boolean.
 
 ## Specifications
 
