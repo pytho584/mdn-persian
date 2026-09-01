@@ -1,11 +1,5 @@
 ---
 title: "DeviceOrientationEvent: requestPermission() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/requestPermission_static"
-status: "needs-translation"
----
-
----
-title: "DeviceOrientationEvent: requestPermission() static method"
 short-title: requestPermission()
 slug: Web/API/DeviceOrientationEvent/requestPermission_static
 page-type: web-api-static-method
@@ -14,43 +8,43 @@ browser-compat: api.DeviceOrientationEvent.requestPermission_static
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`requestPermission()`** static method of the {{domxref("DeviceOrientationEvent")}} interface requests the user's permission to access device orientation data from the accelerometer and gyroscope sensors. It can also request permission to access magnetometer data when absolute orientation is needed. This method requires {{Glossary("transient activation")}}, meaning that it must be triggered by a UI event such as a button click.
+متد ایستای **`requestPermission()`** از رابط {{domxref("DeviceOrientationEvent")}}، مجوز کاربر را برای دسترسی به داده‌های جهت‌گیری دستگاه از سنسورهای شتاب‌سنج و ژیروسکوپ درخواست می‌کند. همچنین می‌تواند برای دسترسی به داده‌های مغناطیس‌سنج زمانی‌ که جهت‌گیری مطلق مورد نیاز است، مجوز درخواست کند. این متد به {{Glossary("transient activation")}} (فعال‌سازی گذرا) نیاز دارد؛ یعنی باید توسط یک رویداد واسط کاربری مانند کلیک روی دکمه فعال شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 DeviceOrientationEvent.requestPermission()
 DeviceOrientationEvent.requestPermission(absolute)
 ```
 
-### Parameters
+### پارامترها
 
 - `absolute` {{optional_inline}}
-  - : A boolean indicating whether absolute orientation data is needed. When `true`, the permission request also includes the magnetometer sensor. Defaults to `false`.
+  - : یک مقدار بولی که نشان می‌دهد آیا داده‌های جهت‌گیری مطلق مورد نیاز است یا خیر. وقتی `true` باشد، درخواست مجوز شامل سنسور مغناطیس‌سنج نیز می‌شود. پیش‌فرض `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a string which is either `"granted"` or `"denied"`.
+یک {{jsxref("Promise")}} که با رشته‌ای که یا `"granted"` است یا `"denied"`، حل می‌شود.
 
-### Exceptions
+### استثناها
 
-The returned promise rejects with the following exceptions:
+پرامیس بازگشتی با استثناهای زیر رد می‌شود:
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : The permission state is `"prompt"` and the calling function does not have {{Glossary("transient activation")}}.
+  - : وضعیت مجوز `"prompt"` است و تابع فراخوانی‌شده {{Glossary("transient activation")}} ندارد.
 
-## Security
+## امنیت
 
-[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required. The user has to interact with the page or a UI element in order for this feature to work.
+[فعال‌سازی گذرای کاربر](/en-US/docs/Web/Security/Defenses/User_activation) الزامی است. کاربر باید با صفحه یا یک عنصر واسط کاربری تعامل کند تا این قابلیت کار کند.
 
-## Examples
+## مثال‌ها
 
-### Requesting device orientation permission on click
+### درخواست مجوز جهت‌گیری دستگاه با کلیک
 
 ```js
 document.querySelector("button").addEventListener("click", async () => {
   if (typeof DeviceOrientationEvent.requestPermission !== "function") {
-    // The feature is not available, or does not need permission.
+    // این قابلیت در دسترس نیست یا نیازی به مجوز ندارد.
     return;
   }
 
@@ -65,9 +59,9 @@ document.querySelector("button").addEventListener("click", async () => {
 });
 ```
 
-### Requesting absolute orientation permission
+### درخواست مجوز جهت‌گیری مطلق
 
-When absolute orientation data is needed (e.g., for compass-based applications), pass `true` as the `absolute` parameter. This additionally requests access to the magnetometer.
+وقتی داده‌های جهت‌گیری مطلق مورد نیاز است (مثلاً برای برنامه‌های مبتنی بر قطب‌نما)، مقدار `true` را به‌عنوان پارامتر `absolute` پاس دهید. این کار علاوه بر این، دسترسی به مغناطیس‌سنج را نیز درخواست می‌کند.
 
 ```js
 document.querySelector("button").addEventListener("click", async () => {
@@ -84,18 +78,18 @@ document.querySelector("button").addEventListener("click", async () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DeviceOrientationEvent")}}
 - {{domxref("DeviceMotionEvent.requestPermission_static", "DeviceMotionEvent.requestPermission()")}}
-- {{domxref("Window.deviceorientation_event", "deviceorientation")}} event
-- {{domxref("Window.deviceorientationabsolute_event", "deviceorientationabsolute")}} event
-- {{domxref("Device orientation events/Detecting device orientation", "Detecting device orientation", "", "nocode")}}
+- رویداد {{domxref("Window.deviceorientation_event", "deviceorientation")}}
+- رویداد {{domxref("Window.deviceorientationabsolute_event", "deviceorientationabsolute")}}
+- {{domxref("Device orientation events/Detecting device orientation", "تشخیص جهت‌گیری دستگاه", "", "nocode")}}
