@@ -1,21 +1,10 @@
 ---
 title: "GPURenderBundleEncoder: finish() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/finish"
-status: "needs-translation"
----
-
----
-title: "GPURenderBundleEncoder: finish() method"
-short-title: finish()
-slug: Web/API/GPURenderBundleEncoder/finish
-page-type: web-api-instance-method
-browser-compat: api.GPURenderBundleEncoder.finish
 ---
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`finish()`** method of the
-{{domxref("GPURenderBundleEncoder")}} interface completes recording of the current render bundle command sequence, returning a {{domxref("GPURenderBundle")}} object that can be passed into a {{domxref("GPURenderPassEncoder.executeBundles()")}} call to execute those commands in a specific render pass.
+متد **`finish()`** از واسط {{domxref("GPURenderBundleEncoder")}}، ثبت توالی دستورات بسته رندر جاری را کامل می‌کند و یک شیء {{domxref("GPURenderBundle")}} برمی‌گرداند که می‌تواند در فراخوانی {{domxref("GPURenderPassEncoder.executeBundles()")}} برای اجرای آن دستورات در یک پاس رندر خاص استفاده شود.
 
 ## Syntax
 
@@ -23,25 +12,25 @@ The **`finish()`** method of the
 finish(descriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `descriptor` {{optional_inline}}
-  - : An object containing the following properties:
+  - : یک شیء حاوی ویژگی‌های زیر:
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : یک رشته که برچسبی برای شناسایی شیء فراهم می‌کند، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("GPURenderBundle")}} object instance.
+یک نمونه از شیء {{domxref("GPURenderBundle")}}.
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`finish()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderBundleEncoder")}} becomes invalid:
+هنگام فراخوانی **`finish()`**، معیارهای زیر باید رعایت شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPURenderBundleEncoder")}} نامعتبر می‌شود:
 
-- The {{domxref("GPURenderBundleEncoder")}} is open (i.e., not already ended via a `finish()` call).
-- The debug stack for the current render pass is empty (i.e., no render pass debug group is currently open, as opened by {{domxref("GPURenderBundleEncoder.pushDebugGroup", "pushDebugGroup()")}}).
+- {{domxref("GPURenderBundleEncoder")}} باز است (یعنی قبلاً با یک فراخوانی `finish()` پایان نیافته است).
+- پشته اشکال‌زدایی برای پاس رندر جاری خالی است (یعنی هیچ گروه اشکال‌زدایی پاس رندر در حال حاضر باز نیست، همانطور که توسط {{domxref("GPURenderBundleEncoder.pushDebugGroup", "pushDebugGroup()")}} باز شده است).
 
-## Examples
+## مثال‌ها
 
 ```js
 const renderBundleEncoder = device.createRenderBundleEncoder({
@@ -51,16 +40,16 @@ recordRenderPass(renderBundleEncoder);
 const renderBundle = renderBundleEncoder.finish();
 ```
 
-The above snippet is taken from the WebGPU Samples [Animometer example](https://webgpu.github.io/webgpu-samples/samples/animometer/).
+قطعه کد بالا از نمونه WebGPU Samples [Animometer example](https://webgpu.github.io/webgpu-samples/samples/animometer/) گرفته شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
