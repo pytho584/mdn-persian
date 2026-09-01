@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: disabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/disabled"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: disabled property"
 short-title: disabled
 slug: Web/API/HTMLInputElement/disabled
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLInputElement.disabled
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLInputElement.disabled`** property is a boolean value that reflects the [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/input#disabled) HTML attribute, which indicates whether the control is disabled. If it is disabled, it does not accept clicks. A disabled element is unusable and un-clickable.
+ویژگی **`HTMLInputElement.disabled`** یک مقدار بولی است که منعکس‌کنندهٔ ویژگی HTML [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/input#disabled) می‌باشد. این ویژگی مشخص می‌کند که آیا کنترل غیرفعال است یا خیر. اگر کنترل غیرفعال باشد، کلیک‌ها را نمی‌پذیرد. یک عنصر غیرفعال قابل استفاده و قابل کلیک نیست.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Examples
+## نمونه‌ها
 
 ### HTML
 
@@ -50,14 +44,14 @@ toggleBox.addEventListener("change", (event) => {
 });
 ```
 
-### Result
+### نتیجه
 
-{{EmbedLiveSample('Examples')}}
+{{EmbedLiveSample('نمونه‌ها')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
