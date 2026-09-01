@@ -1,7 +1,5 @@
 ---
 title: "Document: images property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/images"
-status: "needs-translation"
 ---
 
 ---
@@ -14,17 +12,15 @@ browser-compat: api.Document.images
 
 {{APIRef("DOM")}}
 
-The **`images`** read-only property of the {{domxref("Document")}} interface returns a [collection](/en-US/docs/Web/API/HTMLCollection) of the [images](/en-US/docs/Web/API/HTMLImageElement) in the current HTML document.
+ویژگی فقط‌خواندنی **`images`** در رابط {{domxref("Document")}} یک [مجموعه](/en-US/docs/Web/API/HTMLCollection) از [تصویرها](/en-US/docs/Web/API/HTMLImageElement) موجود در سند HTML فعلی را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLCollection")}} providing a live list of all of the images contained in the current document.
-Each entry in the collection is an {{domxref("HTMLImageElement")}} representing a single image element.
+یک {{domxref("HTMLCollection")}} که فهرستی زنده از همهٔ تصویرهای موجود در سند فعلی فراهم می‌کند. هر ورودی در این مجموعه یک {{domxref("HTMLImageElement")}} است که یک عنصر تصویر را نمایش می‌دهد.
 
-## Usage notes
+## نکات استفاده
 
-You can use either JavaScript array notation or the {{domxref("HTMLCollection.item", "item()")}} method on the returned collection to access the items in the collection.
-The following are equivalent:
+برای دسترسی به آیتم‌های مجموعه، می‌توانید از نحو آرایه‌ای جاوااسکریپت یا از متد {{domxref("HTMLCollection.item", "item()")}} روی مجموعهٔ برگشتی استفاده کنید. دو روش زیر معادل یکدیگرند:
 
 ```js
 firstImage = imageCollection.item(0);
@@ -32,9 +28,9 @@ firstImage = imageCollection.item(0);
 firstImage = imageCollection[0];
 ```
 
-## Examples
+## مثال‌ها
 
-This example looks through the list of images and finds those named `"banner.gif"`.
+این مثال فهرست تصویرها را می‌پیماید و تصویرهایی را پیدا می‌کند که `"banner.gif"` نام دارند.
 
 ```js
 for (const image of document.images) {
@@ -44,10 +40,10 @@ for (const image of document.images) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
