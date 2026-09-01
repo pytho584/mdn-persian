@@ -1,11 +1,5 @@
 ---
 title: "DataTransferItemList: clear() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList/clear"
-status: "needs-translation"
----
-
----
-title: "DataTransferItemList: clear() method"
 short-title: clear()
 slug: Web/API/DataTransferItemList/clear
 page-type: web-api-instance-method
@@ -14,13 +8,9 @@ browser-compat: api.DataTransferItemList.clear
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The {{domxref("DataTransferItemList")}} method
-**`clear()`** removes all {{domxref("DataTransferItem")}}
-objects from the drag data items list, leaving the list empty.
+متد **`clear()`** از {{domxref("DataTransferItemList")}} همهٔ اشیاء {{domxref("DataTransferItem")}} را از فهرست داده‌های کشیدن (drag data items list) حذف کرده و فهرست را خالی می‌کند.
 
-The drag data store in which this list is kept is only writable while handling the
-{{domxref("HTMLElement/dragstart_event", "dragstart")}} event. While handling {{domxref("HTMLElement/drop_event", "drop")}}, the drag data store is
-in read-only mode, and this method silently does nothing. No exception is thrown.
+ذخیره‌گاه داده‌های کشیدن (drag data store) که این فهرست در آن نگهداری می‌شود فقط در هنگام پردازش رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} قابل نوشتن است. در هنگام پردازش {{domxref("HTMLElement/drop_event", "drop")}}، ذخیره‌گاه داده‌های کشیدن در حالت فقط‌خواندنی قرار دارد و این متد بی‌صدا هیچ کاری انجام نمی‌دهد. هیچ استثنایی پرتاب نمی‌شود.
 
 ## Syntax
 
@@ -30,15 +20,15 @@ clear()
 
 ### Parameters
 
-None.
+هیچکدام.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچکدام ({{jsxref("undefined")}}).
 
 ## Examples
 
-This example shows the use of the `clear()` method.
+این مثال استفاده از متد `clear()` را نشان می‌دهد.
 
 ### HTML
 
