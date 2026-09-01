@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: selectionEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/selectionEnd"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: selectionEnd property"
 short-title: selectionEnd
 slug: Web/API/HTMLInputElement/selectionEnd
 page-type: web-api-instance-property
@@ -14,33 +8,32 @@ browser-compat: api.HTMLInputElement.selectionEnd
 
 {{ApiRef("HTML DOM")}}
 
-The **`selectionEnd`** property of the {{domxref("HTMLInputElement")}} interface is a number that represents the end index of the selected text. That is, it represents the index of the character **immediately following** the selection. Likewise, when there is no selection, this returns the offset of the character immediately following the current text input cursor position.
+ویژگی **`selectionEnd`** از رابط {{domxref("HTMLInputElement")}} یک عدد است که نمایانگر اندیس پایانی متن انتخاب‌شده می‌باشد. به عبارت دیگر، این ویژگی اندیس کاراکتری را نشان می‌دهد که **بلافاصله پس از** انتخاب قرار دارد. همچنین، هنگامی که هیچ متنی انتخاب نشده باشد، این ویژگی افست (offset) کاراکتری را برمی‌گرداند که بلافاصله پس از موقعیت فعلی مکان‌نما (cursor) درون متن ورودی قرار دارد.
 
 > [!NOTE]
-> According to the [WHATWG forms spec](https://html.spec.whatwg.org/multipage/forms.html#concept-input-apply) `selectionEnd` property applies only to inputs of types text, search, URL, tel, and password. In modern browsers, throws an exception while setting `selectionEnd` property on the rest of input types. Additionally, this property returns `null` while accessing `selectionEnd` property on non-text input elements.
+> طبق [مشخصات فرم‌های WHATWG](https://html.spec.whatwg.org/multipage/forms.html#concept-input-apply) ویژگی `selectionEnd` تنها برای ورودی‌هایی از نوع text، search، URL، tel و password اعمال می‌شود. در مرورگرهای مدرن، تنظیم این ویژگی برای سایر انواع ورودی باعث بروز استثنا (exception) می‌شود. همچنین، دسترسی به `selectionEnd` در عناصر ورودی غیرمتنی مقدار `null` را برمی‌گرداند.
 
-If `selectionEnd` is less than `selectionStart`, then both are
-treated as the value of `selectionEnd`.
+اگر مقدار `selectionEnd` کمتر از `selectionStart` باشد، هر دو به‌عنوان مقدار `selectionEnd` در نظر گرفته می‌شوند.
 
-## Value
+## مقدار
 
-A non-negative number.
+یک عدد غیرمنفی.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
 ```html
-<!-- using selectionEnd on non text input element -->
-<label for="color">selectionStart property on type=color</label>
+<!-- استفاده از selectionEnd روی عنصر ورودی غیرمتنی -->
+<label for="color">ویژگی selectionStart روی نوع color</label>
 <input id="color" type="color" />
 
-<!-- using selectionEnd on text input element -->
+<!-- استفاده از selectionEnd روی عنصر ورودی متنی -->
 <fieldset>
-  <legend>selectionEnd property on type=text</legend>
-  <label for="pin">Input PIN</label>
-  <input type="text" id="pin" value="impossible PIN: 102-12-145" />
-  <button id="pin-btn" type="button">PIN correction</button>
+  <legend>ویژگی selectionEnd روی نوع text</legend>
+  <label for="pin">کد PIN را وارد کنید</label>
+  <input type="text" id="pin" value="کد PIN غیرممکن: 102-12-145" />
+  <button id="pin-btn" type="button">تصحیح PIN</button>
 </fieldset>
 ```
 
@@ -59,24 +52,24 @@ pinBtn.addEventListener("click", () => {
   text.value = correctedText;
 });
 
-// open browser console to verify output
-console.log(colorEnd.selectionEnd); // Output : null
+// برای مشاهده خروجی، کنسول مرورگر را باز کنید
+console.log(colorEnd.selectionEnd); // خروجی: null
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLTextAreaElement.selectionEnd")}} property
-- {{domxref("HTMLInputElement.selectionStart")}} property
-- {{domxref("HTMLInputElement.setSelectionRange")}} method
+- ویژگی {{domxref("HTMLTextAreaElement.selectionEnd")}}
+- ویژگی {{domxref("HTMLInputElement.selectionStart")}}
+- متد {{domxref("HTMLInputElement.setSelectionRange")}}
