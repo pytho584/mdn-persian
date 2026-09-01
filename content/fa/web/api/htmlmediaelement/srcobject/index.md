@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: srcObject property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/srcObject"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: srcObject property"
 short-title: srcObject
 slug: Web/API/HTMLMediaElement/srcObject
 page-type: web-api-instance-property
@@ -14,35 +8,26 @@ browser-compat: api.HTMLMediaElement.srcObject
 
 {{APIRef("HTML DOM")}}
 
-The **`srcObject`** property of the
-{{domxref("HTMLMediaElement")}} interface sets or returns the object which serves as
-the source of the media associated with the {{domxref("HTMLMediaElement")}}, or `null` if not assigned.
+خصوصیت **`srcObject`** از رابط {{domxref("HTMLMediaElement")}}، شیئی را که به‌عنوان منبع رسانه‌های مرتبط با {{domxref("HTMLMediaElement")}} عمل می‌کند تنظیم یا برمی‌گرداند؛ اگر اختصاص نیافته باشد، مقدار `null` برمی‌گرداند.
 
-The object can be a {{domxref("MediaStream")}}, a {{domxref("MediaSource")}}, a
-{{domxref("Blob")}}, or a {{domxref("File")}} (which inherits from `Blob`).
+این شیء می‌تواند یک {{domxref("MediaStream")}}، یک {{domxref("MediaSource")}}، یک {{domxref("Blob")}} یا یک {{domxref("File")}} باشد (که از `Blob` به ارث می‌رسد).
 
 > [!NOTE]
-> As of March 2020, only Safari has full support for `srcObject`, i.e., using `MediaSource`, `MediaStream`, `Blob`, and `File` objects as values. Other browsers support `MediaStream` objects; until they catch up, consider falling back to creating a URL with {{domxref("URL.createObjectURL_static", "URL.createObjectURL()")}} and assigning it to {{domxref("HTMLMediaElement.src")}} (see below for an example). In addition, as of version 108 Chromium supports attaching a dedicated worker `MediaSource` object by assigning that object's {{domxref("MediaSourceHandle")}} instance (transferred from the worker) to `srcObject`.
+> از مارس ۲۰۲۰، تنها سافاری از `srcObject` پشتیبانی کامل دارد؛ یعنی می‌تواند اشیاء `MediaSource`، `MediaStream`، `Blob` و `File` را به‌عنوان مقدار بپذیرد. سایر مرورگرها از اشیاء `MediaStream` پشتیبانی می‌کنند؛ تا زمانی که به این سطح نرسیده‌اند، در نظر بگیرید که با {{domxref("URL.createObjectURL_static", "URL.createObjectURL()")}} یک URL بسازید و آن را به {{domxref("HTMLMediaElement.src")}} اختصاص دهید (نمونه را در زیر ببینید). علاوه بر این، از نسخه ۱۰۸، کرومیوم از اتصال یک شیء `MediaSource` متعلق به worker اختصاصی با انتساب نمونه {{domxref("MediaSourceHandle")}} آن (که از worker منتقل شده) به `srcObject` پشتیبانی می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref('MediaStream')}}, {{domxref('MediaSource')}}, {{domxref('Blob')}}, or
-{{domxref('File')}} object (though see the compatibility table for what is actually
-supported), or `null` if not assigned.
+یک شیء {{domxref('MediaStream')}}، {{domxref('MediaSource')}}، {{domxref('Blob')}} یا {{domxref('File')}} (البته برای اطلاع از پشتیبانی واقعی، جدول سازگاری را ببینید)، یا در صورت عدم تنظیم، `null`.
 
-## Usage notes
+## نکات استفاده
 
-Older versions of the Media Source specification required using
-{{domxref("URL.createObjectURL_static", "URL.createObjectURL()")}} to create an object URL then
-setting {{domxref("HTMLMediaElement.src", "src")}} to that URL. Now you can just set
-`srcObject` to the {{domxref("MediaStream")}} directly.
+نسخه‌های قدیمی‌تر مشخصات Media Source ایجاب می‌کردند که با استفاده از {{domxref("URL.createObjectURL_static", "URL.createObjectURL()")}} یک object URL بسازید و سپس {{domxref("HTMLMediaElement.src", "src")}} را روی آن URL تنظیم کنید. اکنون می‌توانید به‌سادگی `srcObject` را مستقیماً روی {{domxref("MediaStream")}} تنظیم کنید.
 
-## Examples
+## مثال‌ها
 
-### Basic example
+### مثال پایه
 
-In this example, a {{domxref("MediaStream")}} from a camera is assigned to a
-newly-created {{HTMLElement("video")}} element.
+در این مثال، یک {{domxref("MediaStream")}} دوربین به یک عنصر {{HTMLElement("video")}} تازه‌ساخته اختصاص داده می‌شود.
 
 ```js
 const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -50,8 +35,7 @@ const video = document.createElement("video");
 video.srcObject = mediaStream;
 ```
 
-In this example, a new {{domxref('MediaSource')}} is assigned to a newly-created
-{{HTMLElement("video")}} element.
+در این مثال، یک {{domxref('MediaSource')}} جدید به یک عنصر {{HTMLElement("video")}} تازه‌ساخته اختصاص داده می‌شود.
 
 ```js
 const mediaSource = new MediaSource();
@@ -59,13 +43,11 @@ const video = document.createElement("video");
 video.srcObject = mediaSource;
 ```
 
-### Supporting fallback to the src property
+### پشتیبانی از بازگشت به خصوصیت src
 
-The examples below support older browser versions that require you to create an object
-URL and assign it to `src` if `srcObject` isn't supported.
+مثال‌های زیر از نسخه‌های قدیمی‌تر مرورگر پشتیبانی می‌کنند که در آن‌ها لازم است یک object URL بسازید و در صورت عدم پشتیبانی از `srcObject`، آن را به `src` اختصاص دهید.
 
-First, a {{domxref("MediaStream")}} from a camera is assigned to a newly-created
-{{HTMLElement("video")}} element, with fallback for older browsers.
+ابتدا، یک {{domxref("MediaStream")}} دوربین به یک عنصر {{HTMLElement("video")}} تازه‌ساخته اختصاص داده می‌شود، با مکانیزم جایگزین (fallback) برای مرورگرهای قدیمی‌تر.
 
 ```js
 const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -78,9 +60,7 @@ if ("srcObject" in video) {
 }
 ```
 
-Second, a new {{domxref('MediaSource')}} is assigned to a newly-created
-{{HTMLElement("video")}} element, with fallback for older browsers and browsers that
-don't yet support assignment of {{domxref('MediaSource')}} directly.
+دوم، یک {{domxref('MediaSource')}} جدید به یک عنصر {{HTMLElement("video")}} تازه‌ساخته اختصاص داده می‌شود، با مکانیزم جایگزین برای مرورگرهای قدیمی‌تر و مرورگرهایی که هنوز از انتساب مستقیم {{domxref('MediaSource')}} پشتیبانی نمی‌کنند.
 
 ```js
 const mediaSource = new MediaSource();
@@ -101,9 +81,9 @@ if ("srcObject" in video) {
 }
 ```
 
-### Constructing a `MediaSource` in a worker and passing it to the main thread to play
+### ساخت `MediaSource` در worker و ارسال آن به نخ اصلی برای پخش
 
-The {{domxref("MediaSource.handle")}} property can be accessed inside a dedicated worker and the resulting {{domxref("MediaSourceHandle")}} object is then transferred over to the thread that created the worker (in this case the main thread) via a {{domxref("DedicatedWorkerGlobalScope.postMessage()", "postMessage()")}} call:
+خصوصیت {{domxref("MediaSource.handle")}} را می‌توان درون یک worker اختصاصی (dedicated worker) فراخوانی کرد و شیء حاصل از آن، یعنی {{domxref("MediaSourceHandle")}}، از طریق فراخوانی {{domxref("DedicatedWorkerGlobalScope.postMessage()", "postMessage()")}} به نخی که worker را ایجاد کرده (در اینجا نخ اصلی) منتقل می‌شود:
 
 ```js
 // Inside dedicated worker
@@ -120,7 +100,7 @@ mediaSource.addEventListener("sourceopen", () => {
 });
 ```
 
-Over in the main thread, we receive the handle via a {{domxref("Worker.message_event", "message")}} event handler, attach it to a {{htmlelement("video")}} via its `HTMLMediaElement.srcObject` property, and {{domxref("HTMLMediaElement.play()", "play")}} the video:
+در نخ اصلی، handle را از طریق یک event handler به نام {{domxref("Worker.message_event", "message")}} دریافت می‌کنیم، آن را از طریق خصوصیت `HTMLMediaElement.srcObject` به یک {{htmlelement("video")}} متصل می‌کنیم و ویدیو را با {{domxref("HTMLMediaElement.play()", "play")}} پخش می‌کنیم:
 
 ```js
 worker.addEventListener("message", (msg) => {
@@ -131,12 +111,12 @@ worker.addEventListener("message", (msg) => {
 ```
 
 > [!NOTE]
-> {{domxref("MediaSourceHandle")}}s cannot be successfully transferred into or via a shared worker or service worker.
+> {{domxref("MediaSourceHandle")}}ها را نمی‌توان با موفقیت به یک shared worker یا service worker منتقل کرد یا از طریق آن‌ها منتقل نمود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
