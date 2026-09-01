@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: ping property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/ping"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: ping property"
 short-title: ping
 slug: Web/API/HTMLAnchorElement/ping
 page-type: web-api-instance-property
@@ -14,14 +8,14 @@ browser-compat: api.HTMLAnchorElement.ping
 
 {{ApiRef("HTML DOM")}}
 
-The **`ping`** property of the {{domxref("HTMLAnchorElement")}} interface is a space-separated list of URLs. When the link is followed, the browser will send {{HTTPMethod("POST")}} requests with the body PING to the URLs.
+ویژگی **`ping`** در رابط {{domxref("HTMLAnchorElement")}} فهرستی از نشانی‌های اینترنتی است که با فاصله جدا شده‌اند. وقتی روی پیوند کلیک شود، مرورگر درخواست‌های {{HTTPMethod("POST")}} با بدنه‌ی «PING» به آن نشانی‌ها ارسال می‌کند.
 
-It reflects the `ping` attribute of the {{HTMLElement("a")}} element.
+این ویژگی منعکس‌کنندهٔ ویژگی `ping` عنصر {{HTMLElement("a")}} است.
 
 > [!NOTE]
-> This property is not effective in Firefox and its usage may be limited due to privacy and security concerns.
+> این ویژگی در فایرفاکس کارایی ندارد و استفاده از آن ممکن است به دلیل نگرانی‌های مربوط به حریم خصوصی و امنیت محدود باشد.
 
-## Example
+## مثال
 
 ```html
 <a
@@ -37,14 +31,14 @@ const anchorElement = document.getElementById("exampleLink");
 console.log(anchorElement.ping); // Output: "https://example-tracking.com https://example-analytics.com"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLAreaElement.ping")}} property
+- ویژگی {{domxref("HTMLAreaElement.ping")}}
