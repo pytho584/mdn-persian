@@ -1,11 +1,6 @@
 ---
 title: "HTMLAllCollection: namedItem() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAllCollection/namedItem"
-status: "needs-translation"
----
-
----
-title: "HTMLAllCollection: namedItem() method"
 short-title: namedItem()
 slug: Web/API/HTMLAllCollection/namedItem
 page-type: web-api-instance-method
@@ -14,27 +9,27 @@ browser-compat: api.HTMLAllCollection.namedItem
 
 {{APIRef("DOM")}}
 
-The **`namedItem()`** method of the {{domxref("HTMLAllCollection")}} interface returns the first {{domxref("Element")}} in the collection whose `id` or `name` attribute matches the specified name, or `null` if no element matches.
+**`namedItem()`** متد مربوط به رابط {{domxref("HTMLAllCollection")}}، اولین {{domxref("Element")}} را در مجموعه برمیگرداند که ویژگی `id` یا `name` آن با نام مشخصشده مطابقت داشته باشد، یا اگر هیچ عنصری مطابقت نداشت، `null` برمیگرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 namedItem(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : A string representing the value of the `id` or `name` attribute of the element we are looking for.
+  - : یک رشته (string) که مقدار ویژگی `id` یا `name` عنصر مورد نظر ما را نشان میدهد.
 
-### Return value
+### مقدار بازگشتی
 
-The first {{domxref("Element")}} in the {{domxref("HTMLAllCollection")}} matching the `name`, or [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null), if there are none.
+اولین {{domxref("Element")}} در {{domxref("HTMLAllCollection")}} که با `name` مطابقت دارد، یا اگر هیچکدام وجود نداشته باشد، [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
