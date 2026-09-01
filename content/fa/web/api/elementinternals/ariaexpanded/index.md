@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaExpanded property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaExpanded"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaExpanded property"
 short-title: ariaExpanded
 slug: Web/API/ElementInternals/ariaExpanded
 page-type: web-api-instance-property
@@ -14,25 +8,25 @@ browser-compat: api.ElementInternals.ariaExpanded
 
 {{APIRef("Web Components")}}
 
-The **`ariaExpanded`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) attribute, which indicates whether a grouping element owned or controlled by this element is expanded or collapsed.
+ویژگی **`ariaExpanded`** از رابط {{domxref("ElementInternals")}} مقدار ویژگی [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) را منعکس می‌کند. این ویژگی نشان می‌دهد که آیا عنصر گروه‌بندی که متعلق به این عنصر است یا توسط آن کنترل می‌شود، باز (گسترده) است یا بسته (جمع‌شده).
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را روی یک عنصر سفارشی فراهم می‌کند. این مقادیر ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آن‌ها را اضافه نکند، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+رشته‌ای با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The grouping element this element owns or controls is expanded.
+  - : عنصر گروه‌بندی که این عنصر مالک یا کنترل‌کنندهٔ آن است، باز (گسترده) است.
 - `"false"`
-  - : The grouping element this element owns or controls is collapsed.
+  - : عنصر گروه‌بندی که این عنصر مالک یا کنترل‌کنندهٔ آن است، بسته (جمع‌شده) است.
 - `"undefined"`
-  - : The element does not own or control a grouping element that is expandable.
+  - : عنصر مالک یا کنترل‌کنندهٔ یک عنصر گروه‌بندی قابل‌بازشدن نیست.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaExpanded` is set to "true".
+در این مثال مقدار `ariaExpanded` روی «true» تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -45,10 +39,10 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
