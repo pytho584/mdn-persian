@@ -1,7 +1,6 @@
 ---
 title: "Element.ariaColIndexText"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaColIndexText"
-status: "needs-translation"
 ---
 
 ---
@@ -13,15 +12,15 @@ browser-compat: api.Element.ariaColIndexText
 
 {{APIRef("DOM")}}
 
-The **`ariaColIndexText`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-colindextext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindextext) attribute, which defines a human readable text alternative of aria-colindex.
+ویژگی **`ariaColIndexText`** در رابط {{domxref("Element")}} مقدار ویژگی [`aria-colindextext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindextext) را منعکس می‌کند؛ ویژگی‌ای که یک جایگزین متنی قابل‌فهم برای انسان به‌جای `aria-colindex` تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-colindex` attribute on the element with an ID of `role-heading` is set to "Aria Role column". Using `ariaColIndexText` we update the value to the string "New column name".
+در این مثال، ویژگی `aria-colindex` روی عنصری با شناسه `role-heading` به مقدار «Aria Role column» تنظیم شده است. با استفاده از `ariaColIndexText` مقدار را به رشته «New column name» به‌روزرسانی می‌کنیم.
 
 ```html
 <table
@@ -81,14 +80,14 @@ el.ariaColIndexText = "New column name";
 console.log(el.ariaColIndexText); // "New column name"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
+- [ARIA: نقش جدول](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
