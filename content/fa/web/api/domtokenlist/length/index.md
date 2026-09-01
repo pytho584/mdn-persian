@@ -1,11 +1,5 @@
 ---
 title: "DOMTokenList: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/length"
-status: "needs-translation"
----
-
----
-title: "DOMTokenList: length property"
 short-title: length
 slug: Web/API/DOMTokenList/length
 page-type: web-api-instance-property
@@ -14,27 +8,23 @@ browser-compat: api.DOMTokenList.length
 
 {{APIRef("DOM")}}
 
-The read-only **`length`** property of the {{domxref("DOMTokenList")}} interface is an `integer` representing the number
-of objects stored in the object.
+خاصیت فقط خواندنی **`length`** از رابط {{domxref("DOMTokenList")}} یک عدد صحیح (`integer`) است که تعداد اشیاء ذخیره‌شده در آن شیء را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A positive integer, or `0` if the list is empty.
+یک عدد صحیح مثبت، یا `0` اگر فهرست خالی باشد.
 
-## Examples
+## مثال‌ها
 
-In the following example we retrieve the list of classes set on a
-{{htmlelement("span")}} element as a `DOMTokenList` using
-{{domxref("Element.classList")}}, then write the length of the list to the
-`<span>`'s {{domxref("Node.textContent")}}.
+در مثال زیر، فهرست کلاس‌های تنظیم‌شده روی یک عنصر {{htmlelement("span")}} را به صورت یک `DOMTokenList` با استفاده از {{domxref("Element.classList")}} بازیابی می‌کنیم، سپس طول فهرست را در {{domxref("Node.textContent")}} عنصر `<span>` می‌نویسیم.
 
-First, the HTML:
+ابتدا، HTML:
 
 ```html
 <span class="a b c"></span>
 ```
 
-Now the JavaScript:
+حالا جاوااسکریپت:
 
 ```js
 const span = document.querySelector("span");
@@ -44,14 +34,14 @@ const length = classes.length;
 span.textContent = `classList length = ${length}`;
 ```
 
-The output looks like this:
+خروجی به این شکل است:
 
 {{ EmbedLiveSample('Examples', '100%', 60) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
