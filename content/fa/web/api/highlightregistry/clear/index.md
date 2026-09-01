@@ -1,11 +1,5 @@
 ---
 title: "HighlightRegistry: clear() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry/clear"
-status: "needs-translation"
----
-
----
-title: "HighlightRegistry: clear() method"
 short-title: clear()
 slug: Web/API/HighlightRegistry/clear
 page-type: web-api-instance-method
@@ -15,9 +9,9 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`clear()`** method of the {{domxref("HighlightRegistry")}} interface removes all the {{domxref("Highlight")}} objects registered in the `HighlightRegistry`.
+متد **`clear()`** از رابط {{domxref("HighlightRegistry")}} همه‌ی اشیاء {{domxref("Highlight")}} ثبت‌شده در `HighlightRegistry` را حذف می‌کند.
 
-`HighlightRegistry` is a {{jsxref("Map")}}-like object, so this is similar to using {{jsxref("Map.clear()")}}.
+`HighlightRegistry` یک شیء شبیه به {{jsxref("Map")}} است، بنابراین این متد مشابه استفاده از {{jsxref("Map.clear()")}} می‌باشد.
 
 ## Syntax
 
@@ -27,15 +21,15 @@ clear()
 
 ### Parameters
 
-None.
+هیچکدام.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچکدام ({{jsxref("undefined")}}).
 
 ## Examples
 
-The code snippet below registers two highlight objects in the registry and then clears the registry:
+قطعه کد زیر دو شیء highlight را در ثبّات (registry) ثبت می‌کند و سپس ثبّات را پاک می‌کند:
 
 ```js
 const customHighlight1 = new Highlight(range1, range2);
