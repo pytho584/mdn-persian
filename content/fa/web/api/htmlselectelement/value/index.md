@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/value"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: value property"
 short-title: value
 slug: Web/API/HTMLSelectElement/value
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLSelectElement.value
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLSelectElement.value`** property contains the value of the first selected {{htmlelement("option")}} element associated with this {{htmlelement("select")}} element.
+ویژگی **`HTMLSelectElement.value`** شامل مقدار اولین عنصر {{htmlelement("option")}} انتخاب‌شده‌ای است که با این عنصر {{htmlelement("select")}} مرتبط است.
 
-This property can also be set directly, for example to set a default value based on some condition.
+این ویژگی را می‌توان به‌طور مستقیم نیز مقداردهی کرد؛ برای مثال، برای تنظیم یک مقدار پیش‌فرض بر اساس یک شرط.
 
 ## Value
 
-A string containing the value of the first selected {{htmlelement("option")}} element in this {{htmlelement("select")}} element, or the empty string if no options are selected.
+مقدار این ویژگی یک رشته (string) است که مقدار اولین عنصر {{htmlelement("option")}} انتخاب‌شده در این عنصر {{htmlelement("select")}} را در بر می‌گیرد؛ اگر هیچ گزینه‌ای انتخاب نشده باشد، رشتهٔ خالی است.
 
 ## Examples
 
@@ -71,4 +65,4 @@ select.addEventListener("change", () => {
 
 ## See also
 
-- The {{HTMLElement("select")}} HTML element, implementing this interface.
+- عنصر HTML {{HTMLElement("select")}} که این رابط را پیاده‌سازی می‌کند.
