@@ -1,11 +1,5 @@
 ---
 title: "HTMLButtonElement: willValidate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/willValidate"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: willValidate property"
 short-title: willValidate
 slug: Web/API/HTMLButtonElement/willValidate
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.HTMLButtonElement.willValidate
 
 {{APIRef("HTML DOM")}}
 
-The **`willValidate`** read-only property of the {{domxref("HTMLButtonElement")}} interface indicates whether the {{htmlelement("button")}} element is a candidate for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation). It is `false` if any conditions bar it from constraint validation, including:
+خاصیت فقط خواندنی **`willValidate`** از رابط {{domxref("HTMLButtonElement")}} نشان می‌دهد که آیا عنصر {{htmlelement("button")}} کاندیدای [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) است یا خیر. اگر هر یک از شرایط زیر آن را از اعتبارسنجی محدودیت‌ها منع کند، مقدار آن `false` است:
 
-- Its {{domxref("HTMLButtonElement.type", "type")}} is `reset` or `button`;
-- It has a {{HTMLElement("datalist")}} ancestor;
-- The {{domxref("HTMLButtonElement.disabled", "disabled")}} property is `true`.
+- {{domxref("HTMLButtonElement.type", "type")}} آن `reset` یا `button` باشد؛
+- دارای یک عنصر جد {{HTMLElement("datalist")}} باشد؛
+- خاصیت {{domxref("HTMLButtonElement.disabled", "disabled")}} برابر `true` باشد.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLButtonElement.checkValidity()")}}
 - {{HTMLElement("button")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
