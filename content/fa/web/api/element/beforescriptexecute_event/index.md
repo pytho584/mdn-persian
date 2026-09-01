@@ -1,11 +1,5 @@
 ---
 title: "Element: beforescriptexecute event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/beforescriptexecute_event"
-status: "needs-translation"
----
-
----
-title: "Element: beforescriptexecute event"
 short-title: beforescriptexecute
 slug: Web/API/Element/beforescriptexecute_event
 page-type: web-api-event
@@ -18,15 +12,15 @@ browser-compat: api.Element.beforescriptexecute_event
 {{APIRef("DOM")}}{{Non-standard_header}}{{deprecated_header}}
 
 > [!WARNING]
-> This event was a proposal in an early version of the specification. Do not rely on it.
+> این رویداد در یک نسخهٔ اولیهٔ مشخصات به‌عنوان پیشنهاد مطرح شده بود. به آن تکیه نکنید.
 
-The **`beforescriptexecute`** event is fired when a script is about to be executed. Cancelling the event prevents the script from executing.
+رویداد **`beforescriptexecute`** زمانی که یک اسکریپت در آستانهٔ اجرا قرار دارد، فعال می‌شود. لغو کردن این رویداد از اجرای اسکریپت جلوگیری می‌کند.
 
-It is a proprietary event specific to Gecko (Firefox).
+این یک رویداد اختصاصی مربوط به Gecko (فایرفاکس) است.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی handler رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("beforescriptexecute", (event) => { })
@@ -34,18 +28,18 @@ addEventListener("beforescriptexecute", (event) => { })
 onbeforescriptexecute = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Specifications
+## مشخصات
 
-Not part of any specification.
+بخشی از هیچ مشخصاتی نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`afterscriptexecute`](/en-US/docs/Web/API/Element/afterscriptexecute_event) event
+- رویداد [`afterscriptexecute`](/en-US/docs/Web/API/Element/afterscriptexecute_event)
