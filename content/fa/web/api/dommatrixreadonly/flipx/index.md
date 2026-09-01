@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: flipX() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/flipX"
-status: "needs-translation"
----
-
----
-title: "DOMMatrixReadOnly: flipX() method"
 short-title: flipX()
 slug: Web/API/DOMMatrixReadOnly/flipX
 page-type: web-api-instance-method
@@ -14,27 +8,27 @@ browser-compat: api.DOMMatrixReadOnly.flipX
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`flipX()`** method of the {{domxref("DOMMatrixReadOnly")}} interface creates a new matrix being the result of the original matrix flipped about the x-axis. This is equivalent to multiplying the matrix by `DOMMatrix(-1, 0, 0, 1, 0, 0)`. The original matrix is not modified.
+متد **`flipX()`** در رابط {{domxref("DOMMatrixReadOnly")}} یک ماتریس جدید می‌سازد که نتیجه‌ی اعمال تبدیل ماتریس اصلی حول محور x است. این عمل معادل ضرب ماتریس در `DOMMatrix(-1, 0, 0, 1, 0, 0)` می‌باشد. ماتریس اصلی تغییری نمی‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 flipX()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix).
+یک [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Inverting a triangle
+### وارونه‌کردن یک مثلث
 
-In this example, the SVG contains two paths in the shape of a triangle, both drawn to the same position. Note that the x co-ordinate of the viewBox attribute is negative, showing us content from both sides of the x-axis.
+در این مثال، SVG شامل دو مسیر به شکل مثلث است که هر دو در موقعیت یکسان رسم شده‌اند. توجه داشته باشید که مختصه‌ی x ویژگی `viewBox` منفی است، بنابراین محتوای هر دو سمت محور x را نشان می‌دهد.
 
 #### HTML
 
@@ -45,9 +39,9 @@ In this example, the SVG contains two paths in the shape of a triangle, both dra
 </svg>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-The JavaScript first creates an identity matrix, then uses the `flipX()` method to create a new matrix, which is then applied to the blue triangle, inverting it across the x-axis. The red triangle is left in place.
+جاوااسکریپت ابتدا یک ماتریس همانی (identity matrix) می‌سازد، سپس با استفاده از متد `flipX()` یک ماتریس جدید ایجاد می‌کند که به مثلث آبی اعمال می‌شود و آن را حول محور x وارونه می‌کند. مثلث قرمز در جای خود باقی می‌ماند.
 
 ```js
 const flipped = document.getElementById("flipped");
@@ -56,18 +50,18 @@ const flippedMatrix = matrix.flipX();
 flipped.setAttribute("transform", flippedMatrix.toString());
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('Inverting a triangle')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrixReadOnly.flipY()")}}
