@@ -1,11 +1,5 @@
 ---
 title: "HTMLSourceElement: src property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSourceElement/src"
-status: "needs-translation"
----
-
----
-title: "HTMLSourceElement: src property"
 short-title: src
 slug: Web/API/HTMLSourceElement/src
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLSourceElement.src
 
 {{APIRef("HTML DOM")}}
 
-The **`src`** property of the {{domxref("HTMLSourceElement")}} interface is a string indicating the URL of a media resource to use as the source for the element.
+خصوصیت **`src`** در رابط {{domxref("HTMLSourceElement")}} یک رشته است که URL یک منبع رسانه‌ای را برای استفاده به عنوان منبع عنصر مشخص می‌کند.
 
-It reflects the `src` attribute of the {{HTMLElement("source")}} element nested in an {{htmlelement("audio")}} or {{htmlelement("video")}} element. It has no meaning and is ignored when it is nested in a {{htmlelement("picture")}} element.
+این خصوصیت منعکس‌کننده ویژگی `src` عنصر {{HTMLElement("source")}} است که درون یک عنصر {{htmlelement("audio")}} یا {{htmlelement("video")}} قرار گرفته است. وقتی درون یک عنصر {{htmlelement("picture")}} قرار گیرد، معنی ندارد و نادیده گرفته می‌شود.
 
-## Value
+## مقدار
 
-A string; the URL of a source resource to use in the element.
+یک رشته؛ URL منبعی که در عنصر استفاده می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```html
 <video>
@@ -40,15 +34,15 @@ console.log(el.src); // Output: "large.webp"
 el.src = "medium.webp"; // Updates the src value
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLSourceElement.type")}}
 - {{domxref("HTMLSourceElement.srcset")}}
