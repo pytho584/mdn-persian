@@ -1,11 +1,5 @@
 ---
 title: "Element: getAttributeNS() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttributeNS"
-status: "needs-translation"
----
-
----
-title: "Element: getAttributeNS() method"
 short-title: getAttributeNS()
 slug: Web/API/Element/getAttributeNS
 page-type: web-api-instance-method
@@ -14,42 +8,33 @@ browser-compat: api.Element.getAttributeNS
 
 {{APIRef("DOM")}}
 
-The **`getAttributeNS()`** method of the {{domxref("Element")}}
-interface returns the string value of the attribute with the specified namespace and
-name. If the named attribute does not exist, the value returned will either be
-`null` or `""` (the empty string); see [Notes](#notes) for
-details.
+متد **`getAttributeNS()`** در رابط {{domxref("Element")}} مقدار رشته‌ای ویژگی (attribute) با فضای نام (namespace) و نام مشخص‌شده را برمی‌گرداند. اگر ویژگی نام‌برده وجود نداشته باشد، مقدار بازگشتی یا `null` خواهد بود یا `""` (رشتهٔ خالی)؛ برای جزئیات به [یادداشت‌ها](#notes) مراجعه کنید.
 
-If you are working with HTML documents and you don't need to specify the requested attribute as being part of a specific namespace, use the {{domxref("Element.getAttribute()", "getAttribute()")}} method instead.
+اگر با اسناد HTML کار می‌کنید و نیازی به مشخص کردن فضای نام خاصی برای ویژگی مورد نظر ندارید، به‌جای آن از متد {{domxref("Element.getAttribute()", "getAttribute()")}} استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getAttributeNS(namespace, name)
 ```
 
-### Parameters
+### پارامترها
 
 - `namespace`
-  - : The namespace in which to look for the specified attribute.
+  - : فضای نامی که باید ویژگی مشخص‌شده در آن جستجو شود.
 - `name`
-  - : The name of the attribute to look for.
+  - : نام ویژگی که باید جستجو شود.
 
-### Return value
+### مقدار بازگشتی
 
-The string value of the specified attribute. If the attribute doesn't exist, the result
-is `null`.
+مقدار رشته‌ای ویژگی مشخص‌شده. اگر ویژگی وجود نداشته باشد، نتیجه `null` است.
 
 > [!NOTE]
-> Earlier versions of the DOM specification had
-> this method described as returning an empty string for non-existent attributes, but it
-> was not typically implemented this way since null makes more sense. The DOM4
-> specification now says this method should return null for non-existent attributes.
+> نسخه‌های اولیهٔ مشخصات DOM این متد را به‌گونه‌ای توصیف کرده بودند که برای ویژگی‌های ناموجود یک رشتهٔ خالی返回 کند، اما معمولاً به این صورت پیاده‌سازی نمی‌شد زیرا `null` منطقی‌تر است. مشخصات DOM4 اکنون بیان می‌کند که این متد باید برای ویژگی‌های ناموجود `null` بازگرداند.
 
-## Examples
+## مثال‌ها
 
-The following SVG document reads the value of the `foo` attribute in a
-custom namespace.
+سند SVG زیر مقدار ویژگی `foo` را در یک فضای نام سفارشی می‌خواند.
 
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg"
@@ -67,8 +52,7 @@ custom namespace.
 </svg>
 ```
 
-In an HTML document, the attribute has to be accessed with `test:foo` since
-namespaces are not supported.
+در یک سند HTML، ویژگی باید با `test:foo` قابل دسترسی باشد زیرا فضای نام پشتیبانی نمی‌شود.
 
 ```html
 <svg
@@ -94,30 +78,21 @@ const circle = document.getElementById("target");
 console.log(`Attribute value: ${circle.getAttribute("test:foo")}`);
 ```
 
-## Notes
+## یادداشت‌ها
 
-`getAttributeNS()` differs from {{domxref("element.getAttribute()", "getAttribute()")}}
-in that it allows you to further specify the requested attribute as
-being part of a particular namespace, as in the example above, where the attribute is
-part of the fictional "test" namespace.
+`getAttributeNS()` با {{domxref("element.getAttribute()", "getAttribute()")}} تفاوت دارد از این جهت که به شما امکان می‌دهد ویژگی مورد نظر را به‌عنوان بخشی از یک فضای نام خاص مشخص کنید، همان‌طور که در مثال بالا مشاهده می‌کنید، جایی که ویژگی بخشی از فضای نام فرضی «test» است.
 
-Prior to the DOM4 specification, this method was specified to return an empty string
-rather than null for non-existent attributes. However, most browsers instead returned
-null. Starting with DOM4, the specification now says to return null. However, some older
-browsers return an empty string. For that reason, you should use
-{{domxref("element.hasAttributeNS()", "hasAttributeNS()")}} to check for an attribute's
-existence prior to calling `getAttributeNS()` if it is possible that the
-requested attribute does not exist on the specified element.
+پیش از مشخصات DOM4، این متد به‌گونه‌ای تعریف شده بود که برای ویژگی‌های ناموجود به‌جای null یک رشتهٔ خالی بازگرداند. با این حال، بیشتر مرورگرها در عوض null برمی‌گرداندند. از DOM4 به بعد، مشخصات اکنون می‌گوید که باید null بازگردانده شود. با این حال، برخی مرورگرهای قدیمی‌تر یک رشتهٔ خالی برمی‌گردانند. به همین دلیل، اگر احتمال می‌دهید که ویژگی مورد نظر روی عنصر مشخص‌شده وجود نداشته باشد، بهتر است پیش از فراخوانی `getAttributeNS()` از {{domxref("element.hasAttributeNS()", "hasAttributeNS()")}} برای بررسی وجود ویژگی استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.hasAttributeNS()")}}
 - {{domxref("Element.setAttributeNS()")}}
