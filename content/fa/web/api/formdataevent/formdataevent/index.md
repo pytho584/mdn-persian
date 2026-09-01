@@ -1,11 +1,5 @@
 ---
 title: "FormDataEvent: FormDataEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormDataEvent/FormDataEvent"
-status: "needs-translation"
----
-
----
-title: "FormDataEvent: FormDataEvent() constructor"
 short-title: FormDataEvent()
 slug: Web/API/FormDataEvent/FormDataEvent
 page-type: web-api-constructor
@@ -14,30 +8,30 @@ browser-compat: api.FormDataEvent.FormDataEvent
 
 {{APIRef("DOM")}}
 
-The **`FormDataEvent()`** constructor creates a new {{domxref("FormDataEvent")}} object.
+سازنده‌ی **`FormDataEvent()`** یک شیء جدید از نوع {{domxref("FormDataEvent")}} می‌سازد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new FormDataEvent(type, formEventInit)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `formdata`.
+  - : یک رشته (String) شامل نام رویداد است.
+    مقدار آن به بزرگی و کوچکی حروف حساس است و مرورگرها همیشه آن را روی `formdata` تنظیم می‌کنند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء است که، _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی زیر را نیز داشته باشد:
     - `formData`
-      - : A {{domxref("FormData")}} object to pre-populate the {{domxref("FormDataEvent")}} with.
-        This would then be accessed through the {{domxref("FormDataEvent.formData")}} property.
+      - : یک شیء {{domxref("FormData")}} برای پر کردن اولیه‌ی {{domxref("FormDataEvent")}}.
+        این شیء سپس از طریق ویژگی {{domxref("FormDataEvent.formData")}} قابل دسترسی خواهد بود.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("FormDataEvent")}} object.
+یک شیء جدید از نوع {{domxref("FormDataEvent")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const fd = new FormData();
@@ -50,14 +44,14 @@ for (const value of fdEv.formData.values()) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("FormDataEvent")}}
