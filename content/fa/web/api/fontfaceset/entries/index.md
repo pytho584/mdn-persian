@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSet: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/entries"
-status: "needs-translation"
----
-
----
-title: "FontFaceSet: entries() method"
 short-title: entries()
 slug: Web/API/FontFaceSet/entries
 page-type: web-api-instance-method
@@ -14,26 +8,26 @@ browser-compat: api.FontFaceSet.entries
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`entries()`** method of the {{domxref("FontFaceSet")}} interface returns a new {{jsxref("Iterator")}} object, containing an array of `[value,value]` for each element in the `FontFaceSet`.
+متد **`entries()`** در رابط {{domxref("FontFaceSet")}} یک شیء {{jsxref("Iterator")}} جدید برمی‌گرداند که شامل آرایه‌ای از `[value, value]` برای هر عنصر در `FontFaceSet` است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 entries()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A new iterator object that contains an array of `[value, value]` for each element in the `CustomStateSet`, in insertion order.
+یک شیء iterator جدید که آرایه‌ای از `[value, value]` برای هر عنصر در `CustomStateSet`، به ترتیب درج، برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
