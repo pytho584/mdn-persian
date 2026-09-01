@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: pause event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause_event"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: pause event"
 short-title: pause
 slug: Web/API/HTMLMediaElement/pause_event
 page-type: web-api-event
@@ -14,15 +8,15 @@ browser-compat: api.HTMLMediaElement.pause_event
 
 {{APIRef("HTMLMediaElement")}}
 
-The `pause` event is sent when a request to pause an activity is handled and the activity has entered its paused state, most commonly after the media has been paused through a call to the element's {{domxref("HTMLMediaElement.pause", "pause()")}} method.
+رویداد `pause` زمانی ارسال می‌شود که درخواست توقف یک فعالیت پردازش شده و فعالیت وارد حالت توقف شده است. این حالت معمولاً پس از آن رخ می‌دهد که رسانه از طریق فراخوانی متد {{domxref("HTMLMediaElement.pause", "pause()")}} عنصر متوقف شده باشد.
 
-The event is sent once the `pause()` method returns and after the media element's {{domxref("HTMLMediaElement.paused", "paused")}} property has been changed to `true`.
+این رویداد پس از بازگشت متد `pause()` و تغییر ویژگی {{domxref("HTMLMediaElement.paused", "paused")}} عنصر رسانه به `true` ارسال می‌شود.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل ابطال نیست و به سمت بالا حباب نمی‌شود.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("pause", (event) => { })
@@ -30,15 +24,15 @@ addEventListener("pause", (event) => { })
 onpause = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک رویداد عمومی از نوع {{domxref("Event")}}.
 
-## Examples
+## مثال‌ها
 
-These examples add an event listener for the HTMLMediaElement's `pause` event, then post a message when that event handler has reacted to the event firing.
+این مثال‌ها یک شنونده رویداد برای رویداد `pause` عنصر HTMLMediaElement اضافه می‌کنند و هنگامی که مدیریت‌کننده رویداد به فعال‌شدن رویداد واکنش نشان می‌دهد، یک پیام می‌نویسند.
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const video = document.querySelector("video");
@@ -50,7 +44,7 @@ video.addEventListener("pause", (event) => {
 });
 ```
 
-Using the `onpause` event handler property:
+استفاده از ویژگی مدیریت رویداد `onpause`:
 
 ```js
 const video = document.querySelector("video");
@@ -62,35 +56,35 @@ video.onpause = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## Related Events
+## رویدادهای مرتبط
 
-- The HTMLMediaElement {{domxref("HTMLMediaElement.playing_event", 'playing')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ended_event", 'ended')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.canplaythrough_event", 'canplaythrough')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.timeupdate_event", 'timeupdate')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.play_event", 'play')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.stalled_event", 'stalled')}} event
+- رویداد {{domxref("HTMLMediaElement.playing_event", 'playing')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.ended_event", 'ended')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.canplaythrough_event", 'canplaythrough')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.timeupdate_event", 'timeupdate')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.play_event", 'play')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.stalled_event", 'stalled')}} عنصر HTMLMediaElement
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAudioElement")}}
 - {{domxref("HTMLVideoElement")}}
