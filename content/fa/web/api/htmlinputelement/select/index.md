@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: select() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: select() method"
 short-title: select()
 slug: Web/API/HTMLInputElement/select
 page-type: web-api-instance-method
@@ -14,28 +8,25 @@ browser-compat: api.HTMLInputElement.select
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLInputElement.select()`** method selects all the text
-in a {{HTMLElement("textarea")}} element or in an {{HTMLElement("input")}} element
-that includes a text field.
+متد **`HTMLInputElement.select()`** تمام متن موجود در یک عنصر {{HTMLElement("textarea")}} یا یک عنصر {{HTMLElement("input")}} که شامل فیلد متنی است را انتخاب می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 select()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-Click the button in this example to select all the text in the
-`<input>` element.
+در این مثال، با کلیک روی دکمه، تمام متن داخل عنصر `<input>` انتخاب می‌شود.
 
 ### HTML
 
@@ -56,24 +47,23 @@ function selectText() {
 document.querySelector("button").addEventListener("click", selectText);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Notes
+## نکات
 
-Calling `element.select()` will not necessarily focus the input, so it is
-often used with {{domxref("HTMLElement.focus")}}.
+فراخوانی `element.select()` لزوماً باعث فوکوس کردن ورودی نمی‌شود، بنابراین معمولاً همراه با {{domxref("HTMLElement.focus")}} استفاده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ HTMLElement("input") }}
 - {{ HTMLElement("textarea") }}
