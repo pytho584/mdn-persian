@@ -1,11 +1,5 @@
 ---
 title: "HighlightRegistry: highlightsFromPoint() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry/highlightsFromPoint"
-status: "needs-translation"
----
-
----
-title: "HighlightRegistry: highlightsFromPoint() method"
 short-title: highlightsFromPoint()
 slug: Web/API/HighlightRegistry/highlightsFromPoint
 page-type: web-api-instance-method
@@ -14,50 +8,50 @@ browser-compat: api.HighlightRegistry.highlightsFromPoint
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`highlightsFromPoint()`** method of the {{domxref("HighlightRegistry")}} interface returns an array of objects representing the custom highlights applied at a specific point within the viewport.
+متد **`highlightsFromPoint()`** از رابط {{domxref("HighlightRegistry")}} آرایه‌ای از اشیا را برمی‌گرداند که هایلایت‌های سفارشی اعمال‌شده در نقطه‌ای خاص در viewport را نشان می‌دهند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 highlightsFromPoint(x, y)
 highlightsFromPoint(x, y, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : The x-coordinate of the point within the viewport from which to return custom highlight information.
+  - : مختصات x نقطه‌ای در viewport که اطلاعات هایلایت سفارشی از آن برگردانده می‌شود.
 - `y`
-  - : The y-coordinate of the point within the viewport from which to return custom highlight information.
+  - : مختصات y نقطه‌ای در viewport که اطلاعات هایلایت سفارشی از آن برگردانده می‌شود.
 - `options` {{optional_inline}}
-  - : An object containing options, which can include:
+  - : شیءای حاوی گزینه‌ها که می‌تواند شامل موارد زیر باشد:
     - `shadowRoots`
-      - : An array of {{domxref("ShadowRoot")}} objects. Custom highlights that exist at the specified point inside shadow roots in the array will also be included in the return value, in addition to those present in the light DOM. By default, highlights inside shadow roots are not returned.
+      - : آرایه‌ای از اشیاء {{domxref("ShadowRoot")}}. هایلایت‌های سفارشی که در نقطه مشخص‌شده داخل shadow rootهای موجود در این آرایه قرار دارند، علاوه بر آن‌هایی که در light DOM هستند، در مقدار بازگشتی نیز گنجانده می‌شوند. به‌طور پیش‌فرض، هایلایت‌های داخل shadow rootها بازگردانده نمی‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-An array of objects representing the custom highlights applied at the point in the viewport specified by the `x` and `y` parameters.
+آرایه‌ای از اشیا که نمایانگر هایلایت‌های سفارشی اعمال‌شده در نقطه viewport مشخص‌شده توسط پارامترهای `x` و `y` هستند.
 
-Each object contains the following properties:
+هر شی شامل ویژگی‌های زیر است:
 
 - `highlight`
-  - : A {{domxref("Highlight")}} object representing the applied custom highlight.
+  - : یک شی {{domxref("Highlight")}} که نمایانگر هایلایت سفارشی اعمال‌شده است.
 - `ranges`
-  - : An array of {{domxref("AbstractRange")}} objects representing the ranges to which the custom highlight is applied.
+  - : آرایه‌ای از اشیاء {{domxref("AbstractRange")}} که نمایانگر محدوده‌هایی هستند که هایلایت سفارشی روی آن‌ها اعمال شده است.
 
-If no custom highlights are applied at the specified point, or the specified point is outside the viewport, the method returns an empty array.
+اگر هیچ هایلایت سفارشی در نقطه مشخص‌شده اعمال نشده باشد، یا نقطه مشخص‌شده خارج از viewport باشد، متد یک آرایه خالی برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Retrieving custom highlights applied at the mouse pointer position
+### بازیابی هایلایت‌های سفارشی اعمال‌شده در موقعیت اشاره‌گر ماوس
 
-This example demonstrates how to use the `highlightsFromPoint()` method to return the content of all custom highlights located at the mouse pointer coordinates of a user's double-click.
+این مثال نشان می‌دهد که چگونه می‌توان از متد `highlightsFromPoint()` برای بازگرداندن محتوای تمام هایلایت‌های سفارشی که در مختصات اشاره‌گر ماوس هنگام دوبار کلیک کاربر قرار دارند، استفاده کرد.
 
-In this example, multiple custom highlights can be created on a paragraph of text, and the highlights can overlap. When the user presses the <kbd>h</kbd> key after selecting some text, a new {{domxref("Highlight")}} is named and registered. This example supports up to three custom highlights at a time. When the user double-clicks within the highlighted area, the content of all highlights at that point, if any, is displayed in the output area.
+در این مثال، روی یک پاراگراف متن می‌توان چند هایلایت سفارشی ایجاد کرد و هایلایت‌ها می‌توانند با هم همپوشانی داشته باشند. وقتی کاربر پس از انتخاب متنی، کلید <kbd>h</kbd> را فشار می‌دهد، یک {{domxref("Highlight")}} جدید نام‌گذاری و ثبت می‌شود. این مثال در هر زمان از حداکثر سه هایلایت سفارشی پشتیبانی می‌کند. وقتی کاربر در ناحیه هایلایت‌شده دوبار کلیک می‌کند، محتوای تمام هایلایت‌های موجود در آن نقطه (در صورت وجود) در ناحیه خروجی نمایش داده می‌شود.
 
 #### HTML
 
-The markup includes a {{htmlelement("p")}} element and a {{htmlelement("section")}} element. The `<section>` serves as the output area where the content of the double-clicked highlights are displayed.
+این مارک‌آپ شامل یک عنصر {{htmlelement("p")}} و یک عنصر {{htmlelement("section")}} است. `<section>` به‌عنوان ناحیه خروجی عمل می‌کند که محتوای هایلایت‌های دوبار کلیک‌شده در آن نمایش داده می‌شود.
 
 ```html live-sample___highlights-from-point-example
 <h1>highlightsFromPoint() demo</h1>
@@ -76,7 +70,7 @@ The markup includes a {{htmlelement("p")}} element and a {{htmlelement("section"
 
 #### CSS
 
-In the CSS, we define styling for three custom highlights named `highlight1`, `highlight2`, and `highlight3`. We target each custom highlight using the {{cssxref("::highlight()")}} pseudo-element, making their backgrounds semi-transparent yellow, red, and blue, respectively. Where highlights overlap, the semi-transparent backgrounds combine to show a mixed color.
+در CSS، استایل سه هایلایت سفارشی به نام‌های `highlight1`، `highlight2` و `highlight3` را تعریف می‌کنیم. هر هایلایت سفارشی را با استفاده از شبه‌عنصر {{cssxref("::highlight()")}} هدف قرار می‌دهیم و پس‌زمینه آن‌ها را به‌ترتیب زرد، قرمز و آبی نیمه‌شفاف می‌کنیم. در جایی که هایلایت‌ها همپوشانی دارند، پس‌زمینه‌های نیمه‌شفاف ترکیب می‌شوند و یک رنگ ترکیبی ظاهر می‌شود.
 
 ```css live-sample___highlights-from-point-example
 ::highlight(highlight1) {
@@ -126,23 +120,17 @@ article {
 
 #### JavaScript
 
-This example has two distinct areas of functionality. We first enable the creation of custom highlights when the user clicks the <kbd>h</kbd> key after selecting some text. We then enable writing the highlighted content to the page when the user double-clicks one or more custom highlights.
+این مثال دو بخش مجزای عملکردی دارد. ابتدا هنگام فشاردادن کلید <kbd>h</kbd> توسط کاربر پس از انتخاب متن، امکان ایجاد هایلایت‌های سفارشی را فراهم می‌کنیم. سپس هنگام دوبار کلیک کاربر روی یک یا چند هایلایت سفارشی، امکان نوشتن محتوای هایلایت‌شده در صفحه را فراهم می‌کنیم.
 
-##### Creating and applying custom highlights
+##### ایجاد و اعمال هایلایت‌های سفارشی
 
-To create custom highlights, we start by grabbing references to the `<p>` element and its contained text node. We also create a variable called `highlightCount`, initially set to `1`, which is used to specify which custom highlight to apply later on.
+برای ایجاد هایلایت‌های سفارشی، ابتدا ارجاع‌هایی به عنصر `<p>` و گره متنی داخل آن می‌گیریم. همچنین متغیری به نام `highlightCount` ایجاد می‌کنیم که در ابتدا `1` است و برای مشخص کردن اینکه کدام هایلایت سفارشی بعداً اعمال شود استفاده می‌شود.
 
-```js live-sample___highlights-from-point-example
-const pElem = document.querySelector(".highlightable-text");
-const textNode = pElem.firstChild;
-let highlightCount = 1;
-```
+وقتی کاربر پس از انتخاب متنی، کلید <kbd>h</kbd> را فشار می‌دهد، باید یک شی {{domxref("Highlight")}} جدید ثبت و نام‌گذاری کنیم، به‌طوری‌که در هر زمان حداکثر سه هایلایت سفارشی پشتیبانی شود. برای این کار، یک کنترل‌کننده رویداد [`keydown`](/en-US/docs/Web/API/Element/keydown_event) تعریف می‌کنیم که در صورت فشرده‌شدن کلید <kbd>h</kbd> روی صفحه‌کلید، یک هایلایت سفارشی روی هر متن انتخاب‌شده اعمال کند. در داخل آن، ابتدا متن انتخاب‌شده را با استفاده از {{domxref("Window.getSelection()")}} می‌گیریم و آن را با {{domxref("Selection.getRangeAt()")}} به یک {{domxref("Range")}} تبدیل می‌کنیم.
 
-When the user presses the <kbd>h</kbd> key after selecting some text, we need to register and name a new {{domxref("Highlight")}} object, supporting up to three custom highlights at a time. To do this, we define a [`keydown`](/en-US/docs/Web/API/Element/keydown_event) event handler that applies a custom highlight to any selected text if <kbd>h</kbd> is pressed on the keyboard. Inside, we start by grabbing the selected text using {{domxref("Window.getSelection()")}} and converting it to a {{domxref("Range")}} using {{domxref("Selection.getRangeAt()")}}.
+بررسی می‌کنیم که [`startContainer`](/en-US/docs/Web/API/AbstractRange/startContainer) و [`endContainer`](/en-US/docs/Web/API/AbstractRange/endContainer) شیء `selectedRange` هر دو با `textNode` پاراگراف برابر باشند تا مطمئن شویم هیچ هایلایت بین‌کانتینری (cross-container) مجاز نیست. اگر این شرط برقرار بود، نام سفارشی `highlightName` موردنظرم‌ان را با استفاده از `highlight${highlightCount++}` روی `selectedRange` تنظیم می‌کنیم. از آنجا که `highlightCount` را افزایش می‌دهیم اما فقط سه هایلایت داریم، وقتی شمارنده به `4` می‌رسد، آن را به `1` برمی‌گردانیم و عملاً به ترتیب تنظیم، از میان هایلایت‌های موجود می‌چرخیم.
 
-We check that the `selectedRange` object's [`startContainer`](/en-US/docs/Web/API/AbstractRange/startContainer) and [`endContainer`](/en-US/docs/Web/API/AbstractRange/endContainer) are both equal to the paragraph `textNode`, to make sure we don't allow any cross-container highlights. If so, we set the custom `highlightName` we want to apply to the `selectedRange` using `highlight${highlightCount++}`. Since we are incrementing `highlightCount` but only have three highlights, when counter reaches `4` we set it back to `1`, effectively cycling through the available highlights in the order they are set.
-
-Finally, for the `keydown` event handler, we create a new `highlight` object using the {{domxref("Highlight.Highlight", "Highlight()")}} constructor, passing it the `selectedRange` we created earlier. We then apply the chosen custom highlight referenced in `highlightName` to `highlight` using the {{domxref("HighlightRegistry.set()")}} method.
+در نهایت، برای کنترل‌کننده رویداد `keydown`، یک شیء جدید `highlight` با استفاده از سازنده {{domxref("Highlight.Highlight", "Highlight()")}} می‌سازیم و `selectedRange` را که قبلاً ایجاد کرده‌ایم به آن می‌دهیم. سپس هایلایت سفارشی انتخابی که در `highlightName` به آن ارجاع داده شده است را با استفاده از متد {{domxref("HighlightRegistry.set()")}} روی `highlight` اعمال می‌کنیم.
 
 ```js live-sample___highlights-from-point-example
 window.addEventListener("keydown", (event) => {
@@ -164,13 +152,13 @@ window.addEventListener("keydown", (event) => {
 });
 ```
 
-##### Returning custom highlights from a point
+##### بازگرداندن هایلایت‌های سفارشی از یک نقطه
 
-Now that we can create and apply custom highlights, we can use the `highlightsFromPoint()` method to return the custom highlights applied at a specific point.
+حالا که می‌توانیم هایلایت‌های سفارشی ایجاد و اعمال کنیم، می‌توانیم از متد `highlightsFromPoint()` برای بازگرداندن هایلایت‌های سفارشی اعمال‌شده در یک نقطه خاص استفاده کنیم.
 
-We grab a reference to our `<section>` element, then define a [`dblclick`](/en-US/docs/Web/API/Element/dblclick_event) event handler function to handle outputting the highlighted text at the mouse cursor position when the event fires. Inside the handler, we pass the current mouse coordinates into a `highlightsFromPoint()` call, clear the contents of the `<section>` element, then loop through each highlight in the `highlights` array.
+یک ارجاع به عنصر `<section>` می‌گیریم، سپس یک تابع کنترل‌کننده رویداد [`dblclick`](/en-US/docs/Web/API/Element/dblclick_event) تعریف می‌کنیم تا هنگام فعال‌شدن رویداد، خروجی متن هایلایت‌شده در موقعیت مکان‌نمای ماوس را مدیریت کند. در داخل کنترل‌کننده، مختصات فعلی ماوس را به یک فراخوانی `highlightsFromPoint()` می‌دهیم، محتویات عنصر `<section>` را پاک می‌کنیم، سپس در یک حلقه، هر هایلایت در آرایه `highlights` را پیمایش می‌کنیم.
 
-For each `highlight`, we grab the first range in the [`ranges`](#ranges) array (there is only ever one range in each highlight, in this case), then get the exact highlighted string using {{domxref("Range.toString()")}} and add it to the `<section>` element's `innerHTML`, inside an `<article>` element.
+برای هر `highlight`، اولین محدوده را از آرایه [`ranges`](#ranges) می‌گیریم (در این مورد، در هر هایلایت فقط یک محدوده وجود دارد)، سپس رشته دقیق هایلایت‌شده را با استفاده از {{domxref("Range.toString()")}} به‌دست می‌آوریم و آن را داخل یک عنصر `<article>` به `innerHTML` عنصر `<section>` اضافه می‌کنیم.
 
 ```js live-sample___highlights-from-point-example
 const section = document.querySelector("section");
@@ -190,21 +178,21 @@ pElem.addEventListener("dblclick", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Examples", "100%", "600")}}
 
-To create a highlight, press <kbd>h</kbd> after selecting some text. You can create up to three highlights. Double-click on the highlights you created, preferably where they overlap, to write the content of the clicked highlights to the page.
+برای ایجاد یک هایلایت، پس از انتخاب متنی، کلید <kbd>h</kbd> را فشار دهید. می‌توانید حداکثر سه هایلایت ایجاد کنید. روی هایلایت‌هایی که ایجاد کرده‌اید، ترجیحاً در جایی که همپوشانی دارند، دوبار کلیک کنید تا محتوای هایلایت‌های کلیک‌شده در صفحه نوشته شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "CSS Custom Highlight API", "", "nocode")}}
-- [CSS custom highlight API](/en-US/docs/Web/CSS/Guides/Custom_highlight_API) module
+- ماژول [CSS custom highlight API](/en-US/docs/Web/CSS/Guides/Custom_highlight_API)
