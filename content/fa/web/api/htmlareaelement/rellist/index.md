@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: relList property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/relList"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: relList property"
 short-title: relList
 slug: Web/API/HTMLAreaElement/relList
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLAreaElement.relList
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`relList`** property of the {{domxref("HTMLAreaElement")}} returns a live {{domxref("DOMTokenList")}} object containing the set of link types indicating the relationship between the resource represented by the {{HTMLElement("area")}} element and the current document. It reflects the {{HTMLElement("area")}} element's [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) content attribute.
+ویژگی فقط‌خواندنی **`relList`** از {{domxref("HTMLAreaElement")}} یک شیء زندهٔ {{domxref("DOMTokenList")}} بازمی‌گرداند که شامل مجموعهٔ انواع پیوندها نشان‌دهندهٔ رابطه بین منبع نمایش‌داده‌شده توسط عنصر {{HTMLElement("area")}} و سند فعلی است. این ویژگی، ویژگی محتوایی [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) عنصر {{HTMLElement("area")}} را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A live {{domxref("DOMTokenList")}} object.
+یک شیء زندهٔ {{domxref("DOMTokenList")}}.
 
-Although the `relList` property itself is read-only in the sense that you can't replace the `DOMTokenList` object, you can still assign to the `relList` property directly, which is equivalent to assigning to its {{domxref("DOMTokenList/value", "value")}} property. You can also modify the `DOMTokenList` object using the {{domxref("DOMTokenList/add", "add()")}}, {{domxref("DOMTokenList/remove", "remove()")}}, {{domxref("DOMTokenList/replace", "replace()")}}, and {{domxref("DOMTokenList/toggle", "toggle()")}} methods.
+اگرچه خود ویژگی `relList` از این نظر فقط‌خواندنی است که نمی‌توانید شیء `DOMTokenList` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به ویژگی `relList` مقدار اختصاص دهید که معادل اختصاص مقدار به ویژگی {{domxref("DOMTokenList/value", "value")}} آن است. همچنین می‌توانید شیء `DOMTokenList` را با استفاده از روش‌های {{domxref("DOMTokenList/add", "add()")}}، {{domxref("DOMTokenList/remove", "remove()")}}، {{domxref("DOMTokenList/replace", "replace()")}} و {{domxref("DOMTokenList/toggle", "toggle()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
 ```js
 const areas = document.getElementsByTagName("area");
@@ -35,17 +29,17 @@ for (const area of areas) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The equivalent property on {{HTMLElement("a")}} and {{HTMLElement("link")}},
-  {{domxref("HTMLAnchorElement.relList")}} and {{domxref("HTMLLinkElement.relList")}}.
-- The very same list but as a space-separated tokens in a string:
+- ویژگی معادل روی {{HTMLElement("a")}} و {{HTMLElement("link")}}،
+  {{domxref("HTMLAnchorElement.relList")}} و {{domxref("HTMLLinkElement.relList")}}.
+- همان فهرست اما به‌صورت توکن‌های جدا شده با فاصله در یک رشته:
   {{domxref("HTMLAreaElement.rel")}}
