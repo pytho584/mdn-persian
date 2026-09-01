@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSet: status property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/status"
-status: "needs-translation"
----
-
----
-title: "FontFaceSet: status property"
 short-title: status
 slug: Web/API/FontFaceSet/status
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.FontFaceSet.status
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`status`** read-only property of the {{domxref("FontFaceSet")}} interface returns the loading state of the fonts in the set.
+ویژگی فقط‌خواندنی **`status`** در رابط {{domxref("FontFaceSet")}} وضعیت بارگذاری فونت‌های مجموعه را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-One of:
+یکی از موارد زیر:
 
 - `"loading"`
 - `"loaded"`
 
-## Examples
+## مثال‌ها
 
-In the following example the `status` of the `FontFaceSet` is printed to the console.
+در مثال زیر، `status` شیء `FontFaceSet` در کنسول چاپ می‌شود.
 
 ```js
 console.log(document.fonts.status);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
