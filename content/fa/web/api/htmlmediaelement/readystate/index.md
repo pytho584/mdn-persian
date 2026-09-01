@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: readyState property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/readyState"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: readyState property"
 short-title: readyState
 slug: Web/API/HTMLMediaElement/readyState
 page-type: web-api-instance-property
@@ -14,29 +8,26 @@ browser-compat: api.HTMLMediaElement.readyState
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.readyState`** property indicates the
-readiness state of the media.
+خاصیت **`HTMLMediaElement.readyState`** وضعیت آمادگی رسانه را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A number which is one of the five possible state constants defined on the {{domxref("HTMLMediaElement")}} interface:
+عددی که یکی از پنج ثابت وضعیت ممکن تعریف‌شده در واسط {{domxref("HTMLMediaElement")}} است:
 
 - `HTMLMediaElement.HAVE_NOTHING` (0)
-  - : No information is available about the media resource.
+  - : هیچ اطلاعاتی درباره منبع رسانه در دسترس نیست.
 - `HTMLMediaElement.HAVE_METADATA` (1)
-  - : Enough of the media resource has been retrieved that the metadata attributes are initialized. Seeking will no longer raise an exception.
+  - : به اندازه کافی از منبع رسانه دریافت شده است که ویژگی‌های فراداده مقداردهی اولیه شوند. جستجو دیگر خطا ایجاد نخواهد کرد.
 - `HTMLMediaElement.HAVE_CURRENT_DATA` (2)
-  - : Data is available for the current playback position, but not enough to actually play more than one frame.
+  - : داده‌هایی برای موقعیت پخش کنونی در دسترس است، اما به اندازه‌ای نیست که بتوان بیش از یک فریم را پخش کرد.
 - `HTMLMediaElement.HAVE_FUTURE_DATA` (3)
-  - : Data for the current playback position as well as for at least a little bit of time into the future is available (in other words, at least two frames of video, for example).
+  - : داده‌هایی برای موقعیت پخش کنونی و همچنین برای حداقل کمی از زمان آینده در دسترس است (به عبارت دیگر، حداقل دو فریم از ویدیو، به عنوان مثال).
 - `HTMLMediaElement.HAVE_ENOUGH_DATA` (4)
-  - : Enough data is available—and the download rate is high enough—that the media can be played through to the end without interruption.
+  - : داده‌های کافی در دسترس است – و نرخ دانلود به اندازه کافی بالا است – که رسانه می‌تواند بدون وقفه تا انتها پخش شود.
 
-## Examples
+## مثال‌ها
 
-This example will listen for audio data to be loaded for the element `example`. It will
-then check if at least the current playback position has been loaded. If it has, the
-audio will play.
+این مثال گوش می‌دهد تا داده‌های صوتی برای عنصر `example` بارگذاری شوند. سپس بررسی می‌کند که آیا حداقل موقعیت پخش کنونی بارگذاری شده است. اگر بارگذاری شده باشد، صدا پخش خواهد شد.
 
 ```html
 <audio id="example" preload="auto">
@@ -54,14 +45,14 @@ obj.addEventListener("loadeddata", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.readyState` property
+- {{domxref("HTMLMediaElement")}}: واسطی که برای تعریف خاصیت `HTMLMediaElement.readyState` استفاده شده است.
