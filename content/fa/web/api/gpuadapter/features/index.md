@@ -1,11 +1,5 @@
 ---
 title: "GPUAdapter: features property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/features"
-status: "needs-translation"
----
-
----
-title: "GPUAdapter: features property"
 short-title: features
 slug: Web/API/GPUAdapter/features
 page-type: web-api-instance-property
@@ -14,23 +8,22 @@ browser-compat: api.GPUAdapter.features
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`features`** read-only property of the
-{{domxref("GPUAdapter")}} interface returns a {{domxref("GPUSupportedFeatures")}} object that describes additional functionality supported by the adapter.
+ویژگی فقط‌خواندنی **`features`** در رابط {{domxref("GPUAdapter")}} یک شیء {{domxref("GPUSupportedFeatures")}} برمی‌گرداند که قابلیت‌های اضافی پشتیبانی‌شده توسط آداپتور را توصیف می‌کند.
 
-You should note that not all features will be available to WebGPU in all browsers that support it, even if the features are supported by the underlying hardware. This could be due to constraints in the underlying system, browser, or adapter. For example:
+توجه داشته باشید که همه قابلیت‌ها در همه مرورگرهایی که WebGPU را پشتیبانی می‌کنند در دسترس WebGPU نخواهند بود، حتی اگر آن قابلیت‌ها توسط سخت‌افزار زیرین پشتیبانی شوند. این ممکن است به دلیل محدودیت‌های سیستم عامل، مرورگر، یا آداپتور باشد. برای مثال:
 
-- The underlying system might not be able to guarantee exposure of a feature in a way that is compatible with a certain browser.
-- The browser vendor might not have found a secure way to implement support for that feature, or might just not have gotten round to it yet.
+- سیستم عامل ممکن است نتواند تضمین کند که یک قابلیت به شکلی سازگار با مرورگر خاصی در معرض دید قرار می‌گیرد.
+- فروشنده مرورگر ممکن است راه‌های امنی برای پیاده‌سازی پشتیبانی از آن قابلیت پیدا نکرده باشد، یا هنوز به آن نرسیده باشد.
 
-If you are hoping to take advantage of a specific additional feature in a WebGPU app, thorough testing is advised.
+اگر امیدوارید از یک قابلیت اضافی خاص در برنامه WebGPU بهره ببرید، تست کامل توصیه می‌شود.
 
-## Value
+## مقدار
 
-A {{domxref("GPUSupportedFeatures")}} object instance. This is a [setlike](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) object.
+یک نمونه از شیء {{domxref("GPUSupportedFeatures")}}. این یک شیء [مجموعه‌مانند](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) است.
 
-## Examples
+## مثال‌ها
 
-In the following code we check whether a {{domxref("GPUAdapter")}} has the `texture-compression-astc` feature available. If so, we push it into the array of `requiredFeatures`, and request a device with that feature requirement using {{domxref("GPUAdapter.requestDevice()")}}
+در کد زیر بررسی می‌کنیم که آیا {{domxref("GPUAdapter")}} دارای قابلیت `texture-compression-astc` است یا خیر. اگر داشته باشد، آن را به آرایه `requiredFeatures` اضافه می‌کنیم و با استفاده از {{domxref("GPUAdapter.requestDevice()")}} دستگاهی با آن نیازمندی درخواست می‌کنیم.
 
 ```js
 async function init() {
@@ -57,14 +50,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
