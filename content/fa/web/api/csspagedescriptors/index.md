@@ -1,10 +1,4 @@
 ---
-title: "CSSPageDescriptors"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPageDescriptors"
-status: "needs-translation"
----
-
----
 title: CSSPageDescriptors
 slug: Web/API/CSSPageDescriptors
 page-type: web-api-interface
@@ -13,46 +7,44 @@ browser-compat: api.CSSPageDescriptors
 
 {{APIRef("CSSOM")}}
 
-The **`CSSPageDescriptors`** interface represents a CSS declaration block for an {{cssxref("@page")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+**`CSSPageDescriptors`** واسطهای است که یک بلوک اعلان CSS را برای یک [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) از نوع {{cssxref("@page")}} نشان میدهد.
 
-The interface exposes style information and various style-related methods and properties for the page.
-Each multi-word property has versions in camel- and snake-case.
-This means, for example, that you can access the `margin-top` CSS property using the syntax `style["margin-top"]` or `style.marginTop` (where `style` is a `CSSPageDescriptor`).
+این واسطه اطلاعات سبک و همچنین روشها و ویژگیهای مختلف مرتبط با سبک را برای صفحه در معرض قرار میدهد. هر ویژگی چندکلمهای نسخههایی به شکل camel-case و snake-case دارد. برای مثال، این بدان معناست که میتوانید به ویژگی CSS `margin-top` با استفاده از نحو `style["margin-top"]` یا `style.marginTop` دسترسی داشته باشید (در حالی که `style` یک `CSSPageDescriptor` است).
 
-A `CSSPageDescriptors` object is accessed through the {{DOMxRef("CSSPageRule.style", "style")}} property of the `CSSPageRule` interface, which can in turn be found using the {{DOMxRef("CSSStyleSheet")}} API.
+یک شیء `CSSPageDescriptors` از طریق ویژگی {{DOMxRef("CSSPageRule.style", "style")}} از واسط `CSSPageRule` در دسترس است، که به نوبه خود میتواند با استفاده از API {{DOMxRef("CSSStyleSheet")}} یافت شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگیهای نمونه
 
-_This interface also inherits properties of its parent, {{domxref("CSSStyleDeclaration")}}._
+_این واسطه همچنین ویژگیهای والد خود، {{domxref("CSSStyleDeclaration")}} را به ارث میبرد._
 
-The following property names, in kebab-case (accessed using [bracket notation](/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#bracket_notation)) and camel-case (accessed using [dot notation](/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#dot_notation)), each represent the value of a descriptor in the corresponding `@page` at-rule:
+نام ویژگیهای زیر، به صورت kebab-case (دسترسی با [نحو براکت](/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#bracket_notation)) و camel-case (دسترسی با [نحو نقطه](/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#dot_notation))، هر کدام مقدار یک توصیفگر (descriptor) را در at-rule متناظر `@page` نشان میدهند:
 
 - `margin`
-  - : A string representing the `margin` property of the corresponding `@page` at-rule.
-- `margin-top` or `marginTop`
-  - : A string representing the `margin-top` property of the corresponding `@page` at-rule.
-- `margin-right` or `marginRight`
-  - : A string representing the `margin-right` property of the corresponding `@page` at-rule.
-- `margin-bottom` or `marginBottom`
-  - : A string representing the `margin-bottom` property of the corresponding `@page` at-rule.
-- `margin-left` or `marginLeft`
-  - : A string representing the `margin-left` property of the corresponding `@page` at-rule.
-- `page-orientation` or `pageOrientation` {{experimental_inline}}
-  - : A string representing the `page-orientation` property of the corresponding `@page` at-rule.
+  - : یک رشته که ویژگی `margin` مربوطه در at-rule `@page` را نشان میدهد.
+- `margin-top` یا `marginTop`
+  - : یک رشته که ویژگی `margin-top` مربوطه در at-rule `@page` را نشان میدهد.
+- `margin-right` یا `marginRight`
+  - : یک رشته که ویژگی `margin-right` مربوطه در at-rule `@page` را نشان میدهد.
+- `margin-bottom` یا `marginBottom`
+  - : یک رشته که ویژگی `margin-bottom` مربوطه در at-rule `@page` را نشان میدهد.
+- `margin-left` یا `marginLeft`
+  - : یک رشته که ویژگی `margin-left` مربوطه در at-rule `@page` را نشان میدهد.
+- `page-orientation` یا `pageOrientation` {{experimental_inline}}
+  - : یک رشته که ویژگی `page-orientation` مربوطه در at-rule `@page` را نشان میدهد.
 - `size`
-  - : A string representing the `size` property of the corresponding `@page` at-rule.
+  - : یک رشته که ویژگی `size` مربوطه در at-rule `@page` را نشان میدهد.
 
-## Instance methods
+## روشهای نمونه
 
-_This interface inherits the methods of its parent, {{domxref("CSSStyleDeclaration")}}._
+_این واسطه روشهای والد خود، {{domxref("CSSStyleDeclaration")}} را به ارث میبرد._
 
-## Examples
+## مثالها
 
-### Inspecting a page at-rule
+### بررسی یک at-rule صفحه
 
-This example gets the `CSSPageDescriptors` for a {{cssxref("@page")}} at-rule, if the object is supported on the browser, and then logs its properties.
+این مثال `CSSPageDescriptors` را برای یک at-rule از نوع {{cssxref("@page")}} دریافت میکند (در صورتی که شیء در مرورگر پشتیبانی شود) و سپس ویژگیهای آن را در خروجی ثبت میکند.
 
 ```html hidden
 <pre id="log"></pre>
@@ -77,10 +69,7 @@ function log(text) {
 
 #### CSS
 
-Below we define styles for the page using a {{cssxref("@page")}} at-rule.
-We assign different values for each margin property using the `margin` shorthand, and also specify the `size`.
-We don't set the `page-orientation`.
-This allows us to see how the properties map in the Web API object.
+در زیر، با استفاده از یک at-rule از نوع {{cssxref("@page")}}، سبکها را برای صفحه تعریف میکنیم. برای هر ویژگی margin مقدار متفاوتی با استفاده از شکل کوتاه‌شده `margin` اختصاص میدهیم و همچنین `size` را مشخص میکنیم. مقدار `page-orientation` را تنظیم نمیکنیم. این کار به ما امکان میدهد ببینیم ویژگیها چگونه در شیء Web API نگاشت میشوند.
 
 ```css
 @page {
@@ -92,13 +81,11 @@ This allows us to see how the properties map in the Web API object.
 
 #### JavaScript
 
-First we check if `CSSPageDescriptors` is defined on the global window object, and if not we log that the interface is not supported.
+ابتدا بررسی میکنیم که آیا `CSSPageDescriptors` در شیء سراسری window تعریف شده است یا نه؛ اگر تعریف نشده بود، این پیام را ثبت میکنیم که واسطه پشتیبانی نمیشود.
 
-If `CSSPageDescriptors` is supported, we get the target stylesheet, and then gets the `cssRules` defined in that stylesheet.
-We need to get this stylesheet because the example is embedded in a separate frame with its own sheet (index `0` is the CSS for this page).
+اگر `CSSPageDescriptors` پشتیبانی میشود، شیوه‌نامه هدف را دریافت کرده و سپس `cssRules` تعریف‌شده در آن را میگیریم. باید این شیوه‌نامه را به دست آوریم، زیرا مثال در یک فریم جداگانه با شیوه‌نامه خاص خود جاسازی شده است (اندیس `0` مربوط به CSS این صفحه است).
 
-We then iterate through the rules defined for the live example and match any that are of type `CSSPageRule`, as these correspond to `@page` rules.
-For the matching objects we then log the `style` and all its values.
+سپس روی قواعد تعریف‌شده برای مثال زنده پیمایش میکنیم و هر قاعده‌ای را که از نوع `CSSPageRule` است، مطابقت میدهیم، زیرا این قواعد معادل قواعد `@page` هستند. برای اشیاء مطابقت‌یافته، `style` و تمام مقادیر آن را در خروجی ثبت میکنیم.
 
 ```js
 if (typeof window.CSSPageDescriptors === "undefined") {
@@ -135,18 +122,16 @@ if (typeof window.CSSPageDescriptors === "undefined") {
 }
 ```
 
-#### Results
+#### نتایج
 
-The results are shown below.
-Note that the `style` object displayed at the top of the log should be a `CSSPageDescriptors` to match the current specification, but may be a `CSSStyleDeclaration` in some browsers.
-Note also that the corresponding values for properties in camel- and snake-case match each other and the `@page` declaration, and that `page-orientation` is the empty string `""` because it is not defined in `@page`.
+نتایج در زیر نشان داده شده است. توجه داشته باشید که شیء `style` نمایش‌داده‌شده در بالای خروجی، برای مطابقت با مشخصات فعلی باید یک `CSSPageDescriptors` باشد، اما در برخی مرورگرها ممکن است یک `CSSStyleDeclaration` باشد. همچنین توجه کنید که مقادیر متناظر برای ویژگیها در شکل camel-case و snake-case با یکدیگر و با اعلان `@page` مطابقت دارند و `page-orientation` رشته خالی `""` است، زیرا در `@page` تعریف نشده است.
 
 {{EmbedLiveSample("Inspecting a page at-rule", "100%", "350px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
