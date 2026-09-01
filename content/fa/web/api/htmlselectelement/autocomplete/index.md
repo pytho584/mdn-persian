@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: autocomplete property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/autocomplete"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: autocomplete property"
 short-title: autocomplete
 slug: Web/API/HTMLSelectElement/autocomplete
 page-type: web-api-instance-property
@@ -14,31 +8,31 @@ browser-compat: api.HTMLSelectElement.autocomplete
 
 {{ APIRef("HTML DOM") }}
 
-The **`autocomplete`** property of the {{DOMxRef("HTMLSelectElement")}} interface indicates whether the value of the control can be automatically completed by the browser. It reflects the `<select>` element's [`autocomplete`](/en-US/docs/Web/HTML/Reference/Elements/select#autocomplete) attribute.
+ویژگی **`autocomplete`** در رابط {{DOMxRef("HTMLSelectElement")}} نشان می‌دهد که آیا مقدار کنترول می‌تواند به‌طور خودکار توسط مرورگر تکمیل شود یا خیر. این ویژگی منعکس‌کننده صفت [`autocomplete`](/en-US/docs/Web/HTML/Reference/Elements/select#autocomplete) عنصر `<select>` است.
 
-## Value
+## مقدار
 
-A string representing the value of the `autocomplete` attribute (`"on"`, `"off"`, or a [`<token-list>`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete#token_list_tokens)) or the empty string (`""`) if unspecified.
+یک رشته که مقدار صفت `autocomplete` را نشان می‌دهد (`"on"`، `"off"` یا یک [`<token-list>`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete#token_list_tokens)) یا رشته خالی (`""`) اگر مشخص نشده باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const selectElement = document.getElementById("favorite-fruit");
 console.log(textArea.autocomplete);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("select")}}
 - {{HTMLElement("option")}}
-- HTML [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) attribute
-- ARIA [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete) attribute
-- [Turning off autocompletion](/en-US/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion)
+- صفت HTML [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete)
+- صفت ARIA [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete)
+- [غیرفعال کردن تکمیل خودکار فرم‌ها](/en-US/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion)
