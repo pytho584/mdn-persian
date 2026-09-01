@@ -1,11 +1,5 @@
 ---
 title: "CSSMathProduct: CSSMathProduct() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathProduct/CSSMathProduct"
-status: "needs-translation"
----
-
----
-title: "CSSMathProduct: CSSMathProduct() constructor"
 short-title: CSSMathProduct()
 slug: Web/API/CSSMathProduct/CSSMathProduct
 page-type: web-api-constructor
@@ -16,12 +10,11 @@ browser-compat: api.CSSMathProduct.CSSMathProduct
 
 {{APIRef("CSS Typed Object Model API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`CSSMathProduct()`** constructor creates a new {{domxref("CSSMathProduct")}} object representing the product of the arguments passed into it.
+سازندهٔ **`CSSMathProduct()`** یک شیء جدید از نوع {{domxref("CSSMathProduct")}} می‌سازد که حاصلضرب آرگومان‌های ارسال‌شده به آن را نشان می‌دهد.
 
-Numeric arguments are wrapped into {{domxref("CSSUnitValue")}} objects with a unit of `"number"`.
-All arguments are stored as separate items in its {{domxref("CSSMathProduct/values","values")}} property.
+آرگومان‌های عددی در اشیاء {{domxref("CSSUnitValue")}} با واحد `"number"` قرار می‌گیرند. همهٔ آرگومان‌ها به‌صورت آیتم‌های جداگانه در ویژگی {{domxref("CSSMathProduct/values","values")}} ذخیره می‌شوند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new CSSMathProduct(arg1)
@@ -29,24 +22,23 @@ new CSSMathProduct(arg1, arg2)
 new CSSMathProduct(arg1, arg2, /* …, */ argN)
 ```
 
-### Parameters
+### پارامترها
 
 - `arg1`, …, `argN`
-  - : One or more numbers or {{domxref("CSSNumericValue")}} objects.
+  - : یک یا چند عدد یا شیء {{domxref("CSSNumericValue")}}.
 
-### Exceptions
+### استثناها
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if no arguments are passed.
+  - : اگر هیچ آرگومانی ارسال نشود، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if the types of `arg1`, …, `argN` can't be combined into a product.
-    This is rare: multiplying values of different units (a length by a time, for example) is allowed and produces a compound type.
+  - : اگر نوع‌های `arg1`, …, `argN` نتوانند در یک حاصلضرب ترکیب شوند، پرتاب می‌شود. این مورد نادر است؛ ضرب کردن مقادیر با واحدهای مختلف (برای مثال طول در زمان) مجاز است و یک نوع مرکب ایجاد می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### کاربرد پایه
 
-The following code creates a `CSSMathProduct` instance from two values, then reads back its `operator` and `values` properties.
+کد زیر یک نمونهٔ `CSSMathProduct` از دو مقدار می‌سازد و سپس ویژگی‌های `operator` و `values` آن را می‌خواند.
 
 ```js
 const product = new CSSMathProduct(CSS.px(10), CSS.percent(50));
@@ -57,9 +49,9 @@ console.log(product.values); // CSSNumericArray {0: CSSUnitValue, 1: CSSUnitValu
 console.log(product.values[0]); // CSSUnitValue {value: 10, unit: "px"}
 ```
 
-### Empty arguments
+### آرگومان‌های خالی
 
-The constructor throws a `SyntaxError` if called with no arguments.
+اگر سازنده با هیچ آرگومانی فراخوانده شود، یک `SyntaxError` پرتاب می‌کند.
 
 ```js
 try {
@@ -70,9 +62,9 @@ try {
 }
 ```
 
-### Handling incompatible percentages
+### مدیریت درصدهای ناسازگار
 
-Multiplying a length by a time produces a valid (if unusual) compound type — unlike addition, multiplication doesn't require its arguments to share a dimension.
+ضرب کردن طول در زمان، یک نوع مرکب معتبر (هرچند غیرمعمول) تولید می‌کند — برخلاف جمع، ضرب نیازی ندارد که آرگومان‌هایش در یک بُعد مشترک باشند.
 
 ```js
 const compound = new CSSMathProduct(CSS.px(10), CSS.s(2));
@@ -81,9 +73,9 @@ console.log(compound.constructor.name); // "CSSMathProduct"
 console.log(compound.toString()); // "calc(10px * 2s)"
 ```
 
-A `TypeError` can occur in the more contrived case where two or more arguments are themselves composite values that each mix a percentage with a different unit, and the product can't resolve them to a compatible type.
-In the following code, `percentageLength` mixes a percentage with a length (so its percentage resolves to `"length"`), and `percentageAngle` mixes a percentage with an angle (so its percentage resolves to `"angle"`).
-Multiplying them fails, because their percentages can't be resolved to a common type.
+یک `TypeError` ممکن است در حالت پیچیده‌تری رخ دهد که در آن دو یا چند آرگومان خودشان مقادیر ترکیبی باشند که هر کدام یک درصد را با یک واحد متفاوت ترکیب می‌کنند و حاصلضرب نمی‌تواند آن‌ها را به یک نوع سازگار تفکیک کند.
+
+در کد زیر، `percentageLength` یک درصد را با طول ترکیب می‌کند (بنابراین درصد آن به `"length"` تفکیک می‌شود) و `percentageAngle` یک درصد را با زاویه ترکیب می‌کند (بنابراین درصد آن به `"angle"` تفکیک می‌شود). ضرب آن‌ها ناموفق است، زیرا درصدهای آن‌ها به یک نوع مشترک قابل تفکیک نیستند.
 
 ```js
 const percentageLength = CSS.percent(50).add(CSS.px(10)); // percentage resolves to "length"
@@ -97,10 +89,10 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
