@@ -1,28 +1,24 @@
 ---
-title: "HTMLSourceElement: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSourceElement/type"
-status: "needs-translation"
----
 
----
 title: "HTMLSourceElement: type property"
 short-title: type
 slug: Web/API/HTMLSourceElement/type
 page-type: web-api-instance-property
 browser-compat: api.HTMLSourceElement.type
+
 ---
 
 {{APIRef("HTML DOM")}}
 
-The **`type`** property of the {{domxref("HTMLSourceElement")}} interface is a string representing the {{glossary("MIME type")}} of the media resource.
+ویژگی **`type`** در رابط {{domxref("HTMLSourceElement")}} یک رشته (string) است که {{glossary("MIME type","نوع MIME")}} منبع رسانه را نشان میدهد.
 
-It reflects the `type` attribute of the {{HTMLElement("source")}} element.
+این ویژگی منعکسکنندهٔ ویژگی `type` عنصر {{HTMLElement("source")}} است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثالها
 
 ```html
 <video>
@@ -39,15 +35,15 @@ const el = document.getElementById("el");
 console.log(el.type); // Output: "video/webp"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLSourceElement.src")}}
 - {{domxref("HTMLSourceElement.srcset")}}
@@ -57,6 +53,6 @@ console.log(el.type); // Output: "video/webp"
 - {{htmlelement("picture")}}
 - {{htmlelement("audio")}}
 - {{htmlelement("video")}}
-- [Media types found on the web](/en-US/docs/Web/Media/Guides/Formats)
-- [Important MIME types for web developers](/en-US/docs/Web/HTTP/Guides/MIME_types#important_mime_types_for_web_developers)
-- [Media Capabilities API](/en-US/docs/Web/API/Media_Capabilities_API)
+- [انواع رسانه در وب](/en-US/docs/Web/Media/Guides/Formats)
+- [انواع MIME مهم برای توسعهدهندگان وب](/en-US/docs/Web/HTTP/Guides/MIME_types#important_mime_types_for_web_developers)
+- [API قابلیتهای رسانه](/en-US/docs/Web/API/Media_Capabilities_API)
