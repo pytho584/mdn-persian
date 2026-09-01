@@ -1,10 +1,4 @@
 ---
-title: "DOMParser"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMParser"
-status: "needs-translation"
----
-
----
 title: DOMParser
 slug: Web/API/DOMParser
 page-type: web-api-interface
@@ -13,42 +7,42 @@ browser-compat: api.DOMParser
 
 {{APIRef("DOM")}}
 
-The **`DOMParser`** interface provides the ability to parse {{Glossary("XML")}} or {{Glossary("HTML")}} source code from a string into a DOM {{domxref("Document")}}.
+رابط **`DOMParser`** امکان تجزیه کد منبع {{Glossary("XML")}} یا {{Glossary("HTML")}} از یک رشته به یک {{domxref("Document")}} در DOM را فراهم می‌کند.
 
-You can perform the opposite operation—converting a DOM tree into XML or HTML source—using the {{domxref("XMLSerializer")}} interface.
+شما می‌توانید عملیات معکوس — تبدیل یک درخت DOM به کد منبع XML یا HTML — را با استفاده از رابط {{domxref("XMLSerializer")}} انجام دهید.
 
-In the case of an HTML document, you can also replace portions of the DOM with new DOM trees built from HTML by setting the value of the {{domxref("Element.innerHTML")}} and {{domxref("Element.outerHTML", "outerHTML")}} properties. These properties can also be read to fetch HTML fragments corresponding to the corresponding DOM subtree.
+در مورد یک سند HTML، می‌توانید با تنظیم مقدار ویژگی‌های {{domxref("Element.innerHTML")}} و {{domxref("Element.outerHTML", "outerHTML")}}، بخش‌هایی از DOM را با درخت‌های DOM جدیدی که از HTML ساخته شده‌اند جایگزین کنید. همچنین می‌توان این ویژگی‌ها را برای دریافت قطعه‌های HTML متناظر با زیردرخت DOM مربوطه خواند.
 
-Note that {{domxref("XMLHttpRequest")}} can parse XML and HTML directly from a URL-addressable resource, returning a `Document` in its {{domxref("XMLHttpRequest.response", "response")}} property.
+توجه داشته باشید که {{domxref("XMLHttpRequest")}} می‌تواند XML و HTML را مستقیماً از یک منبع قابل آدرس‌دهی با URL تجزیه کند و یک `Document` را در ویژگی {{domxref("XMLHttpRequest.response", "response")}} خود بازگرداند.
 
 > [!NOTE]
-> Be aware that [block-level elements](/en-US/docs/Glossary/Block-level_content) like `<p>` will be automatically closed if another block-level element is nested inside and therefore parsed before the closing `</p>` tag.
+> آگاه باشید که [عناصر سطح-بلوک](/en-US/docs/Glossary/Block-level_content) مانند `<p>` به‌طور خودکار بسته می‌شوند اگر عنصر سطح-بلوک دیگری داخل آن‌ها تودرتو شده باشد؛ بنابراین آن عنصر داخلی قبل از تگ بسته شدن `</p>` تجزیه می‌شود.
 
-## Constructor
+## سازنده
 
 - {{domxref("DOMParser.DOMParser","DOMParser()")}}
-  - : Creates a new `DOMParser` object.
+  - : یک شیء جدید `DOMParser` می‌سازد.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("DOMParser.parseFromString()")}}
-  - : Parses an input {{domxref("TrustedHTML")}} instance or string as HTML or XML and returns a {{domxref("Document")}}.
+  - : یک نمونه از {{domxref("TrustedHTML")}} یا یک رشته را به‌عنوان HTML یا XML تجزیه کرده و یک {{domxref("Document")}} بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The documentation for {{domxref("DOMParser.parseFromString()")}}, this interface's only method, contains examples for parsing XML, SVG, and HTML strings.
+مستندات مربوط به {{domxref("DOMParser.parseFromString()")}}، که تنها متد این رابط است، شامل مثال‌هایی برای تجزیه رشته‌های XML، SVG و HTML است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Parsing and serializing XML](/en-US/docs/Web/XML/Guides/Parsing_and_serializing_XML)
+- [تجزیه و سریال‌سازی XML](/en-US/docs/Web/XML/Guides/Parsing_and_serializing_XML)
 - {{domxref("XMLHttpRequest")}}
 - {{domxref("XMLSerializer")}}
-- {{jsxref("JSON.parse()")}} - counterpart for {{jsxref("JSON")}} documents.
+- {{jsxref("JSON.parse()")}} - معادل آن برای اسناد {{jsxref("JSON")}}.
