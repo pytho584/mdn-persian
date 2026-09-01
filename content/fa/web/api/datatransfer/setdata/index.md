@@ -1,11 +1,5 @@
 ---
 title: "DataTransfer: setData() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/setData"
-status: "needs-translation"
----
-
----
-title: "DataTransfer: setData() method"
 short-title: setData()
 slug: Web/API/DataTransfer/setData
 page-type: web-api-instance-method
@@ -14,43 +8,35 @@ browser-compat: api.DataTransfer.setData
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DataTransfer.setData()`** method sets the drag
-operation's [drag data](/en-US/docs/Web/API/DataTransfer) to the specified data and type. If
-data for the given type does not exist, it is added at the end of the drag data store,
-such that the last item in the {{domxref("DataTransfer.types","types")}} list will be
-the new type. If data for the given type already exists, the existing data is replaced
-in the same position. That is, the order of the
-{{domxref("DataTransfer.types","types")}} list is not changed when replacing data of the
-same type.
+متد **`DataTransfer.setData()`** دادهٔ عملیات درگ را با داده و نوع مشخص‌شده تنظیم می‌کند. اگر داده‌ای برای نوع مشخص‌شده وجود نداشته باشد، در انتهای ذخیره‌گاه دادهٔ درگ اضافه می‌شود، به‌طوری که آخرین مورد در فهرست {{domxref("DataTransfer.types","types")}} نوع جدید خواهد بود. اگر داده‌ای برای نوع مشخص‌شده از قبل وجود داشته باشد، دادهٔ موجود در همان موقعیت جایگزین می‌شود. به عبارت دیگر، ترتیب فهرست {{domxref("DataTransfer.types","types")}} هنگام جایگزینی داده‌های همان نوع تغییر نمی‌کند.
 
-Example data types are `text/plain` and `text/uri-list`.
+نمونه‌هایی از انواع داده عبارت‌اند از `text/plain` و `text/uri-list`.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setData(format, data)
 ```
 
-### Parameters
+### پارامترها
 
 - `format`
-  - : A string representing the type of the drag data to add to the {{domxref("DataTransfer")}}.
+  - : یک رشته که نوع دادهٔ درگ مورد نظر برای افزودن به {{domxref("DataTransfer")}} را نشان می‌دهد.
 - `data`
-  - : A string representing the data to add to the {{domxref("DataTransfer")}}.
+  - : یک رشته که دادهٔ مورد نظر برای افزودن به {{domxref("DataTransfer")}} را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Dragging an element
+### کشیدن یک عنصر
 
-In this example we can drag a {{HTMLElement("p")}} element into a target {{HTMLElement("div")}} element.
+در این مثال می‌توانیم یک عنصر {{HTMLElement("p")}} را به داخل یک عنصر هدف {{HTMLElement("div")}} بکشیم.
 
-- In the `dragstart` handler, we use `setData()` to add the `id` of the `<p>` element to the {{domxref("DataTransfer")}} object.
-
-- In the `drop` handler we retrieve the `id` and use it to move the `<p>` element into the target.
+- در مدیریت‌کنندهٔ رویداد `dragstart`، از `setData()` برای افزودن `id` عنصر `<p>` به شیء {{domxref("DataTransfer")}} استفاده می‌کنیم.
+- در مدیریت‌کنندهٔ رویداد `drop`، `id` را بازیابی کرده و از آن برای انتقال عنصر `<p>` به داخل هدف استفاده می‌کنیم.
 
 #### HTML
 
@@ -122,20 +108,20 @@ const reset = document.querySelector("#reset");
 reset.addEventListener("click", () => document.location.reload());
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Dragging an element", "", 250)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Drag and drop](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
-- [Drag Operations](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
-- [Working with the drag data store](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
+- [کشیدن و رها کردن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+- [عملیات درگ](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
+- [کار با ذخیره‌گاه دادهٔ درگ](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
