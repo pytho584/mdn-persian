@@ -1,7 +1,5 @@
 ---
-title: "Detecting device orientation"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Device_orientation_events/Detecting_device_orientation"
-status: "needs-translation"
+title: "تشخیص جهتگیری دستگاه"
 ---
 
 ---
@@ -15,22 +13,22 @@ browser-compat:
 
 {{DefaultAPISidebar("Device Orientation Events")}}{{securecontext_header}}
 
-Increasingly, web-enabled devices are capable of determining their **orientation**; that is, they can report data indicating changes to their orientation with relation to the pull of gravity. In particular, hand-held devices such as mobile phones can use this information to automatically rotate the display to remain upright, presenting a wide-screen view of the web content when the device is rotated so that its width is greater than its height.
+بهطور فزایندهای، دستگاههای متصل به وب قادر به تعیین **جهتگیری** (orientation) خود هستند؛ یعنی میتوانند دادههایی را گزارش دهند که تغییرات جهتگیری آنها را نسبت به نیروی جاذبه نشان میدهد. بهویژه، دستگاههای دستی مانند تلفنهای همراه میتوانند از این اطلاعات برای چرخاندن خودکار نمایشگر و ثابت نگه داشتن آن در حالت عمودی استفاده کنند؛ به این ترتیب وقتی دستگاه چرخانده میشود بهگونهای که عرض آن بیشتر از ارتفاعش باشد، نمای عریضی از محتوای وب ارائه میشود.
 
-There are two JavaScript events that handle orientation information. The first one is the {{domxref("DeviceOrientationEvent")}}, which is sent when the accelerometer detects a change to the orientation of the device. By receiving and processing the data reported by these orientation events, it's possible to interactively respond to rotation and elevation changes caused by the user moving the device.
+دو رویداد جاوااسکریپت وجود دارند که اطلاعات جهتگیری را مدیریت میکنند. اولین مورد، {{domxref("DeviceOrientationEvent")}} است که وقتی شتابسنج تغییر در جهتگیری دستگاه را تشخیص دهد، ارسال میشود. با دریافت و پردازش دادههای گزارششده توسط این رویدادهای جهتگیری، میتوان بهطور تعاملی به چرخش و تغییرات ارتفاع ناشی از حرکت دستگاه توسط کاربر پاسخ داد.
 
-The second event is the {{domxref("DeviceMotionEvent")}}, which is sent when a change in acceleration was added. It is different from the {{domxref("DeviceOrientationEvent")}} because it is listening for changes in acceleration as opposed to orientation. Sensors that are commonly capable of detecting {{domxref("DeviceMotionEvent")}} include sensors in laptops to protect moving storage devices. {{domxref("DeviceOrientationEvent")}} is more commonly found in mobile devices.
+دومین رویداد، {{domxref("DeviceMotionEvent")}} است که وقتی تغییری در شتاب اضافه شود ارسال میشود. این رویداد با {{domxref("DeviceOrientationEvent")}} تفاوت دارد، زیرا بهجای جهتگیری، به تغییرات شتاب گوش میدهد. سنسورهایی که معمولاً قادر به تشخیص {{domxref("DeviceMotionEvent")}} هستند شامل سنسورهای موجود در لپتاپها برای محافظت از دستگاههای ذخیرهسازی در حال حرکت میباشند. {{domxref("DeviceOrientationEvent")}} بیشتر در دستگاههای تلفن همراه یافت میشود.
 
-## Requesting permission
+## درخواست مجوز
 
-Some {{Glossary("user agent", "user agents")}} require explicit permission from the user before accessing device orientation and motion data. In environments where this is needed, the {{domxref("DeviceOrientationEvent.requestPermission_static", "DeviceOrientationEvent.requestPermission()")}} and {{domxref("DeviceMotionEvent.requestPermission_static", "DeviceMotionEvent.requestPermission()")}} static methods can be used to request this permission. Both methods return a {{jsxref("Promise")}} that resolves with `"granted"` or `"denied"`, and both must be called from within a user gesture (such as a `click` event handler).
+برخی از {{Glossary("user agent", "عاملهای کاربر")}} قبل از دسترسی به دادههای جهتگیری و حرکت دستگاه، به مجوز صریح از کاربر نیاز دارند. در محیطهایی که این نیاز وجود دارد، میتوان از متدهای استاتیک {{domxref("DeviceOrientationEvent.requestPermission_static", "DeviceOrientationEvent.requestPermission()")}} و {{domxref("DeviceMotionEvent.requestPermission_static", "DeviceMotionEvent.requestPermission()")}} برای درخواست این مجوز استفاده کرد. هر دو متد یک {{jsxref("Promise")}} برمیگردانند که با مقدار `"granted"` یا `"denied"` حل میشود و هر دو باید از داخل یک ژست کاربر (مانند یک هندلر رویداد `click`) فراخوانی شوند.
 
-Because not all user agents implement these methods, you should feature-detect them before calling. The following example shows how to request both permissions from a button click handler:
+از آنجا که همه عاملهای کاربر این متدها را پیادهسازی نمیکنند، باید قبل از فراخوانی، وجود آنها را بررسی کنید (feature-detect). مثال زیر نحوه درخواست هر دو مجوز را از یک هندلر کلیک دکمه نشان میدهد:
 
 ```js
 function handleClick() {
   if (typeof DeviceMotionEvent.requestPermission === "function") {
-    // The API requires permission — request it
+    // API به مجوز نیاز دارد — آن را درخواست کن
     Promise.all([
       DeviceMotionEvent.requestPermission(),
       DeviceOrientationEvent.requestPermission(),
@@ -44,31 +42,31 @@ function handleClick() {
       }
     });
   } else {
-    // No permission needed, add event listeners directly
+    // نیازی به مجوز نیست؛ مستقیماً شنوندههای رویداد را اضافه کن
     window.addEventListener("devicemotion", handleMotion);
     window.addEventListener("deviceorientation", handleOrientation);
   }
 }
 ```
 
-## Processing orientation events
+## پردازش رویدادهای جهتگیری
 
-All you need to do in order to begin receiving orientation change is to listen to the {{domxref("Window.deviceorientation_event", "deviceorientation")}} event:
+تنها کاری که برای شروع دریافت تغییرات جهتگیری باید انجام دهید، گوش دادن به رویداد {{domxref("Window.deviceorientation_event", "deviceorientation")}} است:
 
 ```js
 window.addEventListener("deviceorientation", handleOrientation);
 ```
 
-After registering your event listener (in this case, a JavaScript function called `handleOrientation()`), your listener function periodically gets called with updated orientation data.
+پس از ثبت شنونده رویداد خود (در این مثال، یک تابع جاوااسکریپت به نام `handleOrientation()`)، تابع شنونده شما بهطور دورهای با دادههای بهروز جهتگیری فراخوانی میشود.
 
-The orientation event contains four values:
+رویداد جهتگیری شامل چهار مقدار است:
 
 - {{domxref("DeviceOrientationEvent.absolute")}}
 - {{domxref("DeviceOrientationEvent.alpha")}}
 - {{domxref("DeviceOrientationEvent.beta")}}
 - {{domxref("DeviceOrientationEvent.gamma")}}
 
-The event handler function can look something like this:
+تابع هندلر رویداد میتواند چیزی شبیه به این باشد:
 
 ```js
 function handleOrientation(event) {
@@ -77,37 +75,36 @@ function handleOrientation(event) {
   const beta = event.beta;
   const gamma = event.gamma;
 
-  // Do stuff with the new orientation data
+  // کارهای لازم با دادههای جدید جهتگیری
 }
 ```
 
 > [!NOTE]
-> [parallax](https://github.com/wagerfield/parallax) is a polyfill for normalizing the accelerometer and gyroscope data on mobile devices. This is useful for overcoming some of the differences in device support for device orientation.
+> [parallax](https://github.com/wagerfield/parallax) یک polyfill برای نرمالسازی دادههای شتابسنج و ژیروسکوپ در دستگاههای تلفن همراه است. این ابزار برای غلبه بر برخی تفاوتهای پشتیبانی دستگاهها از جهتگیری دستگاه مفید است.
 
-### Orientation values explained
+### توضیح مقادیر جهتگیری
 
-The value reported for each axis indicates the amount of rotation around a given axis in reference to a standard coordinate frame. These are described in greater detail in the [Orientation and motion data explained](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained) article which is summarized below.
+مقدار گزارششده برای هر محور، میزان چرخش حول آن محور را نسبت به یک دستگاه مختصات استاندارد نشان میدهد. این مقادیر با جزئیات بیشتر در مقاله [توضیح دادههای جهتگیری و حرکت](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained) شرح داده شدهاند که در ادامه خلاصهای از آنها آمده است.
 
-- The {{domxref("DeviceOrientationEvent.alpha")}} value represents the motion of the device around the z axis, represented in degrees with values ranging from 0 (inclusive) to 360 (exclusive).
-- The {{domxref("DeviceOrientationEvent.beta")}} value represents the motion of the device around the x axis, represented in degrees with values ranging from -180 (inclusive) to 180 (exclusive). This represents a front to back motion of the device.
-- The {{domxref("DeviceOrientationEvent.gamma")}} value represents the motion of the device around the y axis, represented in degrees with values ranging from -90 (inclusive) to 90 (exclusive). This represents a left to right motion of the device.
+- مقدار {{domxref("DeviceOrientationEvent.alpha")}} حرکت دستگاه حول محور z را نشان میدهد و بر حسب درجه با مقادیری از 0 (شامل) تا 360 (نا شامل) بیان میشود.
+- مقدار {{domxref("DeviceOrientationEvent.beta")}} حرکت دستگاه حول محور x را نشان میدهد و بر حسب درجه با مقادیری از 180- (شامل) تا 180 (نا شامل) بیان میشود. این مقدار حرکت دستگاه از جلو به عقب را نشان میدهد.
+- مقدار {{domxref("DeviceOrientationEvent.gamma")}} حرکت دستگاه حول محور y را نشان میدهد و بر حسب درجه با مقادیری از 90- (شامل) تا 90 (نا شامل) بیان میشود. این مقدار حرکت دستگاه از چپ به راست را نشان میدهد.
 
-### Orientation example
+### مثال جهتگیری
 
-This example will work on any browser supporting the {{domxref("Window.deviceorientation_event", "deviceorientation")}} event and running on a device able to detect its orientation.
+این مثال در هر مرورگری که از رویداد {{domxref("Window.deviceorientation_event", "deviceorientation")}} پشتیبانی میکند و روی دستگاهی که قادر به تشخیص جهتگیری خود است اجرا شود، کار خواهد کرد.
 
-So let's imagine a ball in a garden:
+بیایید یک توپ در یک باغچه تصور کنیم:
 
 ```html
 <div class="garden">
   <div class="ball"></div>
 </div>
-Hold the device parallel to the ground. Rotate along its x and y axes to see the
-ball move up/down and left/right respectively.
+دستگاه را موازی با زمین نگه دارید. آن را حول محورهای x و y بچرخانید تا بهترتیب حرکت توپ را به بالا/پایین و چپ/راست ببینید.
 <pre class="output"></pre>
 ```
 
-This garden is 200 pixel wide (yes, it's a tiny one), and the ball is in the center:
+این باغچه ۲۰۰ پیکسل عرض دارد (بله، خیلی کوچک است) و توپ در مرکز آن قرار دارد:
 
 ```css
 .garden {
@@ -129,7 +126,7 @@ This garden is 200 pixel wide (yes, it's a tiny one), and the ball is in the cen
 }
 ```
 
-Now, if we move our device, the ball will move accordingly:
+حالا اگر دستگاه را حرکت دهیم، توپ متناسب با آن حرکت خواهد کرد:
 
 ```js
 const ball = document.querySelector(".ball");
@@ -140,14 +137,14 @@ const maxX = garden.clientWidth - ball.clientWidth;
 const maxY = garden.clientHeight - ball.clientHeight;
 
 function handleOrientation(event) {
-  let x = event.beta; // In degree in the range [-180,180)
-  let y = event.gamma; // In degree in the range [-90,90)
+  let x = event.beta; // بر حسب درجه در بازه [180-,180)
+  let y = event.gamma; // بر حسب درجه در بازه [90-,90)
 
   output.textContent = `beta: ${x}\n`;
   output.textContent += `gamma: ${y}\n`;
 
-  // Because we don't want to have the device upside down
-  // We constrain the x value to the range [-90,90]
+  // چون نمیخواهیم دستگاه وارونه باشد
+  // مقدار x را به بازه [90-,90] محدود میکنیم
   if (x > 90) {
     x = 90;
   }
@@ -155,77 +152,77 @@ function handleOrientation(event) {
     x = -90;
   }
 
-  // To make computation easier we shift the range of
-  // x and y to [0,180]
+  // برای سادهتر شدن محاسبات، بازه
+  // x و y را به [0,180] منتقل میکنیم
   x += 90;
   y += 90;
 
-  // 10 is half the size of the ball
-  // It centers the positioning point to the center of the ball
-  ball.style.left = `${(maxY * y) / 180 - 10}px`; // rotating device around the y axis moves the ball horizontally
-  ball.style.top = `${(maxX * x) / 180 - 10}px`; // rotating device around the x axis moves the ball vertically
+  // 10 نصف اندازه توپ است
+  // نقطه موقعیتیابی را به مرکز توپ منتقل میکند
+  ball.style.left = `${(maxY * y) / 180 - 10}px`; // چرخش دستگاه حول محور y توپ را افقی حرکت میدهد
+  ball.style.top = `${(maxX * x) / 180 - 10}px`; // چرخش دستگاه حول محور x توپ را عمودی حرکت میدهد
 }
 
 window.addEventListener("deviceorientation", handleOrientation);
 ```
 
-{{LiveSampleLink("Orientation_example", "Click here")}} to open this example in a new window; because {{domxref("Window.deviceorientation_event", "deviceorientation")}} doesn't work in a cross-origin {{HTMLElement("iframe")}} in all browsers.
+{{LiveSampleLink("Orientation_example", "برای باز کردن این مثال در یک پنجره جدید اینجا کلیک کنید"}}؛ زیرا {{domxref("Window.deviceorientation_event", "deviceorientation")}} در یک {{HTMLElement("iframe")}} متقاطع (cross-origin) در همه مرورگرها کار نمیکند.
 
 {{EmbedLiveSample('Orientation_example', '230', '260')}}
 
-## Processing motion events
+## پردازش رویدادهای حرکت
 
-Motion events are handled the same way as the orientation events except that they have their own event's name: {{domxref("Window.devicemotion_event", "devicemotion")}}
+رویدادهای حرکت به همان روش رویدادهای جهتگیری مدیریت میشوند، با این تفاوت که نام رویداد خودشان را دارند: {{domxref("Window.devicemotion_event", "devicemotion")}}
 
 ```js
 window.addEventListener("devicemotion", handleMotion);
 ```
 
-What's really changed are the information provided within the {{domxref("DeviceMotionEvent")}} object passed as a parameter of the event listener (`handleMotion()` in our example).
+آنچه واقعاً تغییر میکند، اطلاعات ارائهشده در شیء {{domxref("DeviceMotionEvent")}} است که بهعنوان پارامتر به شنونده رویداد (در مثال ما `handleMotion()`) منتقل میشود.
 
-The motion event contains four properties:
+رویداد حرکت شامل چهار ویژگی است:
 
 - {{domxref("DeviceMotionEvent.acceleration")}}
 - {{domxref("DeviceMotionEvent.accelerationIncludingGravity")}}
 - {{domxref("DeviceMotionEvent.rotationRate")}}
 - {{domxref("DeviceMotionEvent.interval")}}
 
-### Motion values explained
+### توضیح مقادیر حرکت
 
-The {{domxref("DeviceMotionEvent")}} objects provide web developers with information about the speed of changes for the device's position and orientation. The changes are provided along three axis (see [Orientation and motion data explained](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained) for details).
+اشیاء {{domxref("DeviceMotionEvent")}} اطلاعاتی درباره سرعت تغییرات موقعیت و جهتگیری دستگاه در اختیار توسعهدهندگان وب قرار میدهند. این تغییرات در سه محور ارائه میشوند (برای جزئیات به [توضیح دادههای جهتگیری و حرکت](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained) مراجعه کنید).
 
-For {{domxref("DeviceMotionEvent.acceleration","acceleration")}} and {{domxref("DeviceMotionEvent.accelerationIncludingGravity","accelerationIncludingGravity")}}, those axes correspond to the following:
+برای {{domxref("DeviceMotionEvent.acceleration","acceleration")}} و {{domxref("DeviceMotionEvent.accelerationIncludingGravity","accelerationIncludingGravity")}}، این محورها به صورت زیر هستند:
 
 - `x`
-  - : Represents the axis from West to East
+  - : محوری از غرب به شرق را نشان میدهد
 - `y`
-  - : Represents the axis from South to North
+  - : محوری از جنوب به شمال را نشان میدهد
 - `z`
-  - : Represents the axis perpendicular to the ground
+  - : محوری عمود بر زمین را نشان میدهد
 
-For {{domxref("DeviceMotionEvent.rotationRate","rotationRate")}}, the situation is a bit different; the information corresponds to the following in each case:
+برای {{domxref("DeviceMotionEvent.rotationRate","rotationRate")}}، وضعیت کمی متفاوت است؛ اطلاعات در هر مورد به صورت زیر است:
 
 - `alpha`
-  - : Represents a rotation rate along the axis perpendicular to the screen (or keyboard for desktop).
+  - : نرخ چرخش حول محوری عمود بر صفحه نمایش (یا صفحهکلید در دسکتاپ) را نشان میدهد.
 - `beta`
-  - : Represents a rotation rate along the axis going from left to right of the plane of the screen (or keyboard for desktop).
+  - : نرخ چرخش حول محوری که از چپ به راست صفحه نمایش (یا صفحهکلید در دسکتاپ) میرود را نشان میدهد.
 - `gamma`
-  - : Represents a rotation rate along the axis going from bottom to top of the plane of the screen (or keyboard for desktop).
+  - : نرخ چرخش حول محوری که از پایین به بالای صفحه نمایش (یا صفحهکلید در دسکتاپ) میرود را نشان میدهد.
 
-Finally, {{domxref("DeviceMotionEvent.interval","interval")}} represents the interval of time, in milliseconds, at which data are obtained from the device.
+در نهایت، {{domxref("DeviceMotionEvent.interval","interval")}} بازه زمانی بر حسب میلیثانیه را نشان میدهد که دادهها از دستگاه دریافت میشوند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DeviceOrientationEvent")}}
 - {{domxref("DeviceMotionEvent")}}
-- [Orientation and motion data explained](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained)
-- [Using deviceorientation in 3D Transforms](/en-US/docs/Web/API/Device_orientation_events/Using_device_orientation_with_3D_transforms)
-- [Cyber Orb: 2D maze game with device orientation](/en-US/docs/Games/Tutorials/HTML5_Gamedev_Phaser_Device_Orientation)
+- [توضیح دادههای جهتگیری و حرکت](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained)
+- [استفاده از deviceorientation در تبدیلهای سهبعدی](/en-US/docs/Web/API/Device_orientation_events/Using_device_orientation_with_3D_transforms)
+- [Cyber Orb: بازی ماز دوبعدی با جهتگیری دستگاه](/en-US/docs/Games/Tutorials/HTML5_Gamedev_Phaser_Device_Orientation)
