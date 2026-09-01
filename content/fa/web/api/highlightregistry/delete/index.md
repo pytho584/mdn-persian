@@ -1,11 +1,5 @@
 ---
 title: "HighlightRegistry: delete() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry/delete"
-status: "needs-translation"
----
-
----
-title: "HighlightRegistry: delete() method"
 short-title: delete()
 slug: Web/API/HighlightRegistry/delete
 page-type: web-api-instance-method
@@ -15,28 +9,28 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`delete()`** method of the {{domxref("HighlightRegistry")}} interface removes a the named {{domxref("Highlight")}} object from the `HighlightRegistry`.
+متد **`delete()`** از رابط {{domxref("HighlightRegistry")}} یک شیء {{domxref("Highlight")}} با نام مشخص را از `HighlightRegistry` حذف می‌کند.
 
-`HighlightRegistry` is a {{jsxref("Map")}}-like object, so this is similar to using {{jsxref("Map.delete()")}}.
+`HighlightRegistry` یک شیء شبیه به {{jsxref("Map")}} است، بنابراین این متد مشابه استفاده از {{jsxref("Map.delete()")}} می‌باشد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 delete(customHighlightName)
 ```
 
-### Parameters
+### پارامترها
 
 - `customHighlightName`
-  - : The name, as a {{jsxref("String")}}, of the {{domxref("Highlight")}} object to remove from the `HighlightRegistry`.
+  - : نام شیء {{domxref("Highlight")}} به صورت یک {{jsxref("String")}} که باید از `HighlightRegistry` حذف شود.
 
-### Return value
+### مقدار بازگشتی
 
-Returns `true` if a `Highlight` object under the provided name was in the `HighlightRegistry`; otherwise `false`.
+اگر یک شیء `Highlight` با نام داده شده در `HighlightRegistry` وجود داشته باشد، `true` و در غیر این صورت `false` بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The following code sample registers a highlight in the registry, and then deletes it:
+نمونه کد زیر یک هایلایت را در ثبات ثبت می‌کند و سپس آن را حذف می‌کند:
 
 ```js
 const myHighlight = new Highlight(range1, range2);
@@ -47,15 +41,15 @@ CSS.highlights.delete("foo"); // false
 CSS.highlights.delete("my-highlight"); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
-- [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
+- [رابط برنامه‌نویسی CSS Custom Highlight: آینده برجسته‌سازی محدوده‌های متن در وب](https://css-tricks.com/css-custom-highlight-api-early-look/)
