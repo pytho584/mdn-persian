@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableCellElement: headers property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/headers"
-status: "needs-translation"
 ---
 
 ---
@@ -14,16 +12,15 @@ browser-compat: api.HTMLTableCellElement.headers
 
 {{ APIRef("HTML DOM") }}
 
-The **`headers`** property of the {{domxref("HTMLTableCellElement")}} interface
-contains a list of IDs of {{HTMLElement("th")}} elements that are _headers_ for this specific cell.
+ویژگی **`headers`** در رابط {{domxref("HTMLTableCellElement")}} شامل فهرستی از شناسه‌های (ID) عناصر {{HTMLElement("th")}} است که _سربرگ_ (header) این سلول خاص به شمار می‌روند.
 
 ## Value
 
-A string containing space-separated IDs.
+یک رشته (string) شامل شناسه‌های جدا شده با فاصله.
 
 ## Examples
 
-This example lists the ID of the last clicked cell of the table:
+این مثال شناسه آخرین سلول کلیک‌شده در جدول را فهرست می‌کند:
 
 ### HTML
 
