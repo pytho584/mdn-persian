@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableColElement: ch property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableColElement/ch"
-status: "needs-translation"
----
-
----
-title: "HTMLTableColElement: ch property"
 short-title: ch
 slug: Web/API/HTMLTableColElement/ch
 page-type: web-api-instance-property
@@ -16,25 +10,24 @@ browser-compat: api.HTMLTableColElement.ch
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The **`ch`** property of the {{domxref("HTMLTableColElement")}} interface does nothing. It reflects the `char` attribute of the {{HTMLElement("col")}} element.
+ویژگی **`ch`** در رابط {{domxref("HTMLTableColElement")}} هیچ کاری انجام نمی‌دهد. این ویژگی منعکس‌کنندهٔ ویژگی `char` عنصر {{HTMLElement("col")}} است.
 
 > [!NOTE]
-> This property was designed to participate to the ability to align table cell content on a specific character (typically the decimal point), but was never implemented by browsers.
->
-> To achieve such alignment, watch for the support of a string value with the {{cssxref("text-align")}} CSS property.
+> این ویژگی برای مشارکت در قابلیت تراز کردن محتوای سلول‌های جدول روی یک کاراکتر خاص (معمولاً نقطهٔ اعشار) طراحی شده بود، اما هرگز توسط مرورگرها پیاده‌سازی نشد.
+> برای دستیابی به چنین ترازی، به دنبال پشتیبانی از یک مقدار رشته‌ای با ویژگی CSS {{cssxref("text-align")}} باشید.
 
-## Value
+## مقدار
 
-A single character.
+یک کاراکتر.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("text-align")}}
