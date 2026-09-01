@@ -1,7 +1,5 @@
 ---
 title: "HTMLObjectElement: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/type"
-status: "needs-translation"
 ---
 
 ---
@@ -14,19 +12,16 @@ browser-compat: api.HTMLObjectElement.type
 
 {{APIRef("HTML DOM")}}
 
-The **`type`** property of the
-{{domxref("HTMLObjectElement")}} interface returns a string that
-reflects the [`type`](/en-US/docs/Web/HTML/Reference/Elements/object#type) HTML attribute, specifying the MIME type
-of the resource.
+ویژگی **`type`** در رابط {{domxref("HTMLObjectElement")}} یک رشته بازمی‌گرداند که بازتاب‌دهندهٔ ویژگی HTML [`type`](/en-US/docs/Web/HTML/Reference/Elements/object#type) است و نوع MIME منبع را مشخص می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
