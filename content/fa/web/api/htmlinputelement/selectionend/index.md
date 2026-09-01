@@ -8,16 +8,16 @@ browser-compat: api.HTMLInputElement.selectionEnd
 
 {{ApiRef("HTML DOM")}}
 
-ویژگی **`selectionEnd`** از رابط {{domxref("HTMLInputElement")}} یک عدد است که نمایانگر اندیس پایانی متن انتخاب‌شده می‌باشد. به عبارت دیگر، این ویژگی اندیس کاراکتری را نشان می‌دهد که **بلافاصله پس از** انتخاب قرار دارد. همچنین، هنگامی که هیچ متنی انتخاب نشده باشد، این ویژگی افست (offset) کاراکتری را برمی‌گرداند که بلافاصله پس از موقعیت فعلی مکان‌نما (cursor) درون متن ورودی قرار دارد.
+ویژگی **`selectionEnd`** از رابط {{domxref("HTMLInputElement")}} عددی است که اندیس پایان متن انتخاب‌شده را نشان می‌دهد. به بیان دیگر، این ویژگی اندیس نویسه‌ای را نشان می‌دهد که **بلافاصله بعد از** انتخاب قرار دارد. همچنین وقتی هیچ انتخابی وجود ندارد، این ویژگی آفست نویسه‌ای را برمی‌گرداند که بلافاصله بعد از موقعیت فعلی مکان‌نمای ورودی متن قرار دارد.
 
 > [!NOTE]
-> طبق [مشخصات فرم‌های WHATWG](https://html.spec.whatwg.org/multipage/forms.html#concept-input-apply) ویژگی `selectionEnd` تنها برای ورودی‌هایی از نوع text، search، URL، tel و password اعمال می‌شود. در مرورگرهای مدرن، تنظیم این ویژگی برای سایر انواع ورودی باعث بروز استثنا (exception) می‌شود. همچنین، دسترسی به `selectionEnd` در عناصر ورودی غیرمتنی مقدار `null` را برمی‌گرداند.
+> بر اساس [مشخصات فرم‌های WHATWG](https://html.spec.whatwg.org/multipage/forms.html#concept-input-apply)، ویژگی `selectionEnd` فقط برای ورودی‌های نوع text، search، URL، tel و password اعمال می‌شود. در مرورگرهای مدرن، تنظیم ویژگی `selectionEnd` روی سایر انواع ورودی، استثنا (exception) پرتاب می‌کند. علاوه بر این، هنگام دسترسی به ویژگی `selectionEnd` روی عناصر ورودی غیرمتنی، این ویژگی مقدار `null` برمی‌گرداند.
 
-اگر مقدار `selectionEnd` کمتر از `selectionStart` باشد، هر دو به‌عنوان مقدار `selectionEnd` در نظر گرفته می‌شوند.
+اگر `selectionEnd` کوچک‌تر از `selectionStart` باشد، هر دو به‌عنوان مقدار `selectionEnd` در نظر گرفته می‌شوند.
 
 ## مقدار
 
-یک عدد غیرمنفی.
+یک عدد نامنفی.
 
 ## مثال‌ها
 
@@ -31,13 +31,13 @@ browser-compat: api.HTMLInputElement.selectionEnd
 <!-- استفاده از selectionEnd روی عنصر ورودی متنی -->
 <fieldset>
   <legend>ویژگی selectionEnd روی نوع text</legend>
-  <label for="pin">کد PIN را وارد کنید</label>
-  <input type="text" id="pin" value="کد PIN غیرممکن: 102-12-145" />
+  <label for="pin">PIN را وارد کنید</label>
+  <input type="text" id="pin" value="impossible PIN: 102-12-145" />
   <button id="pin-btn" type="button">تصحیح PIN</button>
 </fieldset>
 ```
 
-### JavaScript
+### جاوااسکریپت
 
 ```js
 const colorEnd = document.getElementById("color");
@@ -64,7 +64,7 @@ console.log(colorEnd.selectionEnd); // خروجی: null
 
 {{Specifications}}
 
-## سازگاری با مرورگر
+## سازگاری مرورگر
 
 {{Compat}}
 
@@ -72,4 +72,4 @@ console.log(colorEnd.selectionEnd); // خروجی: null
 
 - ویژگی {{domxref("HTMLTextAreaElement.selectionEnd")}}
 - ویژگی {{domxref("HTMLInputElement.selectionStart")}}
-- متد {{domxref("HTMLInputElement.setSelectionRange")}}
+- روش {{domxref("HTMLInputElement.setSelectionRange")}}
