@@ -1,11 +1,5 @@
 ---
 title: "ExtendableEvent: waitUntil() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEvent/waitUntil"
-status: "needs-translation"
----
-
----
-title: "ExtendableEvent: waitUntil() method"
 short-title: waitUntil()
 slug: Web/API/ExtendableEvent/waitUntil
 page-type: web-api-instance-method
@@ -14,48 +8,32 @@ browser-compat: api.ExtendableEvent.waitUntil
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`ExtendableEvent.waitUntil()`**
-method tells the event dispatcher that work is ongoing. It can also be used to detect
-whether that work was successful. In service workers, `waitUntil()` tells
-the browser that work is ongoing until the promise settles, and it shouldn't terminate
-the service worker if it wants that work to complete.
+متد **`ExtendableEvent.waitUntil()`** به توزیع‌کنندهٔ رویداد (event dispatcher) اعلام می‌کند که کار همچنان در جریان است. همچنین می‌توان از آن برای تشخیص موفقیت‌آمیز بودن آن کار استفاده کرد. در service workerها، `waitUntil()` به مرورگر می‌گوید که کار تا زمانی که promise تعیین تکلیف شود (settle شود) ادامه دارد و اگر مرورگر می‌خواهد آن کار تکمیل شود، نباید service worker را خاتمه دهد.
 
-The {{domxref("ServiceWorkerGlobalScope/install_event", "install")}} events in [service workers](/en-US/docs/Web/API/ServiceWorkerGlobalScope) use
-`waitUntil()` to hold the service worker in
-the {{domxref("ServiceWorkerRegistration.installing", "installing")}} phase until tasks
-complete. If the promise passed to `waitUntil()` rejects, the install is
-considered a failure, and the installing service worker is discarded. This is primarily
-used to ensure that a service worker is not considered installed until all of the core
-caches it depends on are successfully populated.
+رویدادهای {{domxref("ServiceWorkerGlobalScope/install_event", "install")}} در [service workerها](/en-US/docs/Web/API/ServiceWorkerGlobalScope) از `waitUntil()` استفاده می‌کنند تا service worker را تا پایان یافتن کارها در مرحلهٔ {{domxref("ServiceWorkerRegistration.installing", "installing")}} نگه دارند. اگر promiseای که به `waitUntil()` داده شده رد شود (reject شود)، نصب ناموفق در نظر گرفته می‌شود و service worker در حال نصب کنار گذاشته می‌شود. این کار عمدتاً برای اطمینان از این انجام می‌شود که service worker تا زمانی که همهٔ کش‌های اصلی که به آن‌ها وابسته است با موفقیت پر نشده‌اند، نصب‌شده در نظر گرفته نشود.
 
-The {{domxref("ServiceWorkerGlobalScope/activate_event", "activate")}} events in [service workers](/en-US/docs/Web/API/ServiceWorkerGlobalScope) use
-`waitUntil()` to buffer functional events such as `fetch` and
-`push` until the promise passed to `waitUntil()` settles. This
-gives the service worker time to update database schemas and delete outdated
-{{domxref("Cache", "caches")}}, so other events can rely on a completely upgraded state.
+رویدادهای {{domxref("ServiceWorkerGlobalScope/activate_event", "activate")}} در [service workerها](/en-US/docs/Web/API/ServiceWorkerGlobalScope) از `waitUntil()` استفاده می‌کنند تا رویدادهای عملکردی مانند `fetch` و `push` را تا زمانی که promise داده‌شده به `waitUntil()` تعیین تکلیف شود، بافر کنند. این کار به service worker فرصت می‌دهد تا ساختار پایگاه‌داده (database schema) را به‌روزرسانی کرده و کش‌های منسوخ ({{domxref("Cache", "caches")}}) را حذف کند تا سایر رویدادها بتوانند به وضعیت کاملاً ارتقایافته تکیه کنند.
 
-The `waitUntil()` method must be initially called within the event callback,
-but after that it can be called multiple times, until all the promises passed to it
-settle.
+متد `waitUntil()` باید برای نخستین بار در داخل callback رویداد فراخوانی شود؛ اما پس از آن می‌توان آن را چندین بار فراخوانی کرد، تا زمانی که همهٔ promiseهای داده‌شده به آن تعیین تکلیف شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 waitUntil(promise)
 ```
 
-### Parameters
+### پارامترها
 
 - `promise`
-  - : A {{jsxref("Promise")}} that extends the lifetime of the event.
+  - : یک {{jsxref("Promise")}} که طول عمر رویداد را افزایش می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-Using `waitUntil()` within a service worker's `install` event:
+استفاده از `waitUntil()` در رویداد `install` یک service worker:
 
 ```js
 addEventListener("install", (event) => {
@@ -67,14 +45,14 @@ addEventListener("install", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [استفاده از Service Workerها](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
