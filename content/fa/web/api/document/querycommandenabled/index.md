@@ -1,7 +1,5 @@
 ---
 title: "Document: queryCommandEnabled() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/queryCommandEnabled"
-status: "needs-translation"
 ---
 
 ---
@@ -18,36 +16,31 @@ browser-compat: api.Document.queryCommandEnabled
 {{ApiRef("DOM")}}{{deprecated_header}}{{Non-standard_header}}
 
 > [!NOTE]
-> Although the {{domxref("Document/execCommand", "execCommand()")}} method is deprecated, if you do decide to use it for reasons given on that page, you should consider checking the command's availability using `queryCommandEnabled()` to ensure compatibility.
+> اگرچه متد {{domxref("Document/execCommand", "execCommand()")}} منسوخ شده است، اما اگر بنا به دلایلی که در همان صفحه ذکر شده تصمیم به استفاده از آن گرفتید، بهتر است برای اطمینان از سازگاری، در دسترس بودن دستور را با استفاده از `queryCommandEnabled()` بررسی کنید.
 
-The **`Document.queryCommandEnabled()`** method reports whether
-or not the specified editor command is enabled by the browser.
+متد **`Document.queryCommandEnabled()`** مشخص می‌کند که آیا دستور ویرایشگر مشخص‌شده توسط مرورگر فعال است یا نه.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 queryCommandEnabled(command)
 ```
 
-### Parameters
+### پارامترها
 
 - `command`
-  - : The command for which to determine support.
+  - : دستوری که باید تعیین شود آیا از آن پشتیبانی می‌شود یا نه.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a boolean value which is `true` if the command is enabled
-and `false` if the command isn't.
+یک مقدار بولی برمی‌گرداند که اگر دستور فعال باشد `true` و اگر فعال نباشد `false` است.
 
-## Notes
+## نکات
 
-- For `"cut"` and `"copy"` commands the method only returns true
-  when called from a user-initiated thread.
-- The `"paste"` command return `false` not only if the feature
-  is unavailable, but also if the script calling it has insufficient privileges to
-  perform the action.
+- برای دستورهای `"cut"` و `"copy"`، این متد فقط زمانی `true` برمی‌گرداند که از یک زمینه اجرایی (thread) ایجادشده توسط کاربر فراخوانی شود.
+- دستور `"paste"` نه‌تنها وقتی `false` برمی‌گرداند که قابلیت مربوطه در دسترس نباشد، بلکه وقتی اسکریپت فراخوانی‌کننده مجوزهای کافی برای انجام عمل را نداشته باشد نیز `false` برمی‌گرداند.
 
-## Example
+## مثال
 
 ```js
 const flg = document.queryCommandEnabled("SelectAll");
@@ -57,15 +50,15 @@ if (flg) {
 }
 ```
 
-## Specifications
+## مشخصات
 
-This feature is not part of any current specification. It is no longer on track to become a standard. There is an unofficial [W3C execCommand spec draft](https://w3c.github.io/editing/docs/execCommand/).
+این قابلیت بخشی از هیچ مشخصات فعلی نیست و دیگر در مسیر تبدیل شدن به یک استاندارد قرار ندارد. یک [پیش‌نویس غیررسمی مشخصات W3C برای execCommand](https://w3c.github.io/editing/docs/execCommand/) وجود دارد.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("document.execCommand()")}}
 - {{domxref("document.queryCommandSupported()")}}
