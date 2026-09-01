@@ -1,7 +1,5 @@
 ---
 title: "GPUComputePassEncoder: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/label"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,17 @@ browser-compat: api.GPUComputePassEncoder.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** read-only property of the
-{{domxref("GPUComputePassEncoder")}} interface is a string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی **`label`** فقط‌خواندنی در رابط {{domxref("GPUComputePassEncoder")}}، رشته‌ای است که برچسبی برای شناسایی شیء فراهم می‌کند؛ برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUCommandEncoder.beginComputePass()")}} call, or you can get and set it directly on the `GPUComputePassEncoder` object.
+این برچسب را می‌توان با ارائه‌ی یک ویژگی `label` در آبجکت توصیفگری که به فراخوانی مبدأ {{domxref("GPUCommandEncoder.beginComputePass()")}} ارسال می‌شود، تنظیم کرد؛ همچنین می‌توانید آن را مستقیماً روی شیء `GPUComputePassEncoder` بخوانید یا تنظیم کنید.
 
-## Value
+## مقدار
 
-A string. If no label value has previously been set, getting the label returns an empty string.
+یک رشته. اگر قبلاً هیچ مقدار برچسبی تنظیم نشده باشد، خواندن برچسب، یک رشته‌ی خالی برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUComputePassEncoder.label`:
+تنظیم و خواندن یک برچسب از طریق `GPUComputePassEncoder.label`:
 
 ```js
 const commandEncoder = device.createCommandEncoder();
@@ -35,7 +32,7 @@ passEncoder.label = "my_compute_pass_encoder";
 console.log(passEncoder.label); // "my_compute_pass_encoder"
 ```
 
-Setting a label via the originating {{domxref("GPUCommandEncoder.beginComputePass()")}} call, and then getting it via `GPUComputePassEncoder.label`:
+تنظیم یک برچسب از طریق فراخوانی مبدأ {{domxref("GPUCommandEncoder.beginComputePass()")}} و سپس خواندن آن از طریق `GPUComputePassEncoder.label`:
 
 ```js
 const commandEncoder = device.createCommandEncoder();
@@ -46,14 +43,14 @@ const passEncoder = commandEncoder.beginComputePass({
 console.log(passEncoder.label); // "my_compute_pass_encoder"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
