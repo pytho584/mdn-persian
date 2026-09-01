@@ -1,7 +1,5 @@
 ---
 title: "DOMMatrix: fromFloat64Array() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/fromFloat64Array_static"
-status: "needs-translation"
 ---
 
 ---
@@ -14,35 +12,35 @@ browser-compat: api.DOMMatrix.fromFloat64Array_static
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`fromFloat64Array()`** static method of the {{domxref("DOMMatrix")}} interface creates a new {{domxref("DOMMatrix")}} object given an array of double-precision (64-bit) floating-point values.
+**`fromFloat64Array()`** 静态方法，来自 {{domxref("DOMMatrix")}} 接口，根据一个双精度（64位）浮点值数组创建新的 {{domxref("DOMMatrix")}} 对象。
 
-If the array has 6 values, the result is a 2D matrix; if the array has 16 values, the result is a 3D matrix. Otherwise, a {{jsxref("TypeError")}} exception is thrown.
+如果数组有 6 个值，结果是一个 2D 矩阵；如果数组有 16 个值，结果是一个 3D 矩阵。否则，抛出 {{jsxref("TypeError")}} 异常。
 
-## Syntax
+## 语法
 
 ```js-nolint
 DOMMatrix.fromFloat64Array(array)
 ```
 
-### Parameters
+### 参数
 
 - `array`
-  - : A {{jsxref("Float64Array")}} with 6 or 16 elements in column-major order.
+  - : 一个 {{jsxref("Float64Array")}}，按列主序包含 6 或 16 个元素。
 
-### Return value
+### 返回值
 
-A {{domxref("DOMMatrix")}} object.
+一个 {{domxref("DOMMatrix")}} 对象。
 
-### Exceptions
+### 异常
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the length of the `array` parameter is not 6 or 16.
+  - : 如果 `array` 参数的长度不是 6 或 16，则抛出。
 
-## Examples
+## 示例
 
-### Creating a 2D matrix from a Float64Array
+### 从 Float64Array 创建 2D 矩阵
 
-This example creates a 2D matrix from a 6-element `Float64Array`.
+此示例从包含 6 个元素的 `Float64Array` 创建一个 2D 矩阵。
 
 ```js
 const float64Array = new Float64Array([1, 0, 0, 1, 10, 20]);
@@ -58,9 +56,9 @@ console.log(matrix2D.e, matrix2D.f);
 // Output: 10 20
 ```
 
-### Creating a 3D matrix from a Float64Array
+### 从 Float64Array 创建 3D 矩阵
 
-This example creates a 3D matrix from a 16-element `Float64Array`.
+此示例从包含 16 个元素的 `Float64Array` 创建一个 3D 矩阵。
 
 ```js
 const float64Array = new Float64Array([
@@ -75,15 +73,15 @@ console.log(matrix3D.m41, matrix3D.m42, matrix3D.m43);
 // Output: 10 20 30
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{domxref("DOMMatrix/DOMMatrix", "DOMMatrix()")}}
 - {{domxref("DOMMatrixReadOnly.toFloat32Array()")}}
