@@ -1,11 +1,5 @@
 ---
 title: "Document: hasStorageAccess() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/hasStorageAccess"
-status: "needs-translation"
----
-
----
-title: "Document: hasStorageAccess() method"
 short-title: hasStorageAccess()
 slug: Web/API/Document/hasStorageAccess
 page-type: web-api-instance-method
@@ -14,41 +8,41 @@ browser-compat: api.Document.hasStorageAccess
 
 {{APIRef("Storage Access API")}}
 
-The **`hasStorageAccess()`** method of the {{domxref("Document")}} interface returns a {{jsxref("Promise")}} that resolves with a boolean value indicating whether the document has access to [third-party](/en-US/docs/Web/Privacy/Guides/Third-party_cookies), [unpartitioned](/en-US/docs/Web/API/Storage_Access_API#unpartitioned_versus_partitioned_cookies) cookies.
+متد **`hasStorageAccess()`** از رابط {{domxref("Document")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک مقدار بولین (boolean) resolve می‌شود و نشان می‌دهد که آیا سند به [کوکی‌های شخص ثالث](/en-US/docs/Web/Privacy/Guides/Third-party_cookies) [تقسیم‌نشده (unpartitioned)](/en-US/docs/Web/API/Storage_Access_API#unpartitioned_versus_partitioned_cookies) دسترسی دارد یا نه.
 
-This method is part of the [Storage Access API](/en-US/docs/Web/API/Storage_Access_API).
+این متد بخشی از [Storage Access API](/en-US/docs/Web/API/Storage_Access_API) است.
 
 > [!NOTE]
-> This method is another name for {{DOMxRef("Document.hasUnpartitionedCookieAccess()")}}. There are no current plans to remove this method in favor of {{DOMxRef("Document.hasUnpartitionedCookieAccess()")}}.
+> این متد نام دیگری برای {{DOMxRef("Document.hasUnpartitionedCookieAccess()")}} است. در حال حاضر برنامه‌ای برای حذف این متد به نفع {{DOMxRef("Document.hasUnpartitionedCookieAccess()")}} وجود ندارد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 hasStorageAccess()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a boolean value indicating whether the document has access to third-party cookies — `true` if it does, and `false` if not.
+یک {{jsxref("Promise")}} که با یک مقدار بولین resolve می‌شود و نشان می‌دهد که آیا سند به کوکی‌های شخص ثالث دسترسی دارد — اگر داشته باشد `true` و اگر نداشته باشد `false`.
 
-The result returned by this method can be inaccurate in a couple of circumstances:
+نتیجه‌ای که این متد برمی‌گرداند ممکن است در چند شرایط نادقیق باشد:
 
-1. The user may have active browser settings that block third-party cookies; in this case, `true` may be returned even though third-party cookies are still inaccessible. To handle such a situation, you should gracefully handle any errors resulting in cookie values being unretrievable; for example, inform the user that access to their personalized settings is blocked and invite them to sign in again to use them.
-2. The browser might not block third-party cookie access by default; in this case, `false` may be returned even though third-party cookies are accessible, and storage access wouldn't need to be requested (i.e., via {{domxref("Document.requestStorageAccess()")}}). To get around this issue, you could query {{domxref("Document.cookie")}} to find out whether your cookies are accessible, and call {{domxref("Document.requestStorageAccess()")}} if they are not.
+1. ممکن است کاربر تنظیمات فعال مرورگری داشته باشد که کوکی‌های شخص ثالث را مسدود می‌کنند؛ در این حالت، ممکن است `true` برگردد حتی اگر کوکی‌های شخص ثالث همچنان در دسترس نباشند. برای مدیریت چنین وضعیتی، باید هر خطایی را که باعث می‌شود مقادیر کوکی قابل بازیابی نباشند به‌شکلی هوشمندانه مدیریت کنید؛ مثلاً به کاربر اطلاع دهید که دسترسی به تنظیمات شخصی‌سازی‌شده‌اش مسدود شده است و از او بخواهید برای استفاده از آن‌ها دوباره وارد سیستم شود.
+2. ممکن است مرورگر به‌طور پیش‌فرض دسترسی به کوکی‌های شخص ثالث را مسدود نکند؛ در این حالت، ممکن است `false` برگردد حتی اگر کوکی‌های شخص ثالث قابل دسترسی باشند و نیازی به درخواست دسترسی ذخیره‌سازی نباشد (یعنی از طریق {{domxref("Document.requestStorageAccess()")}}). برای دور زدن این مشکل، می‌توانید {{domxref("Document.cookie")}} را بررسی کنید تا بفهمید آیا کوکی‌های شما قابل دسترسی هستند یا نه، و اگر نبودند، {{domxref("Document.requestStorageAccess()")}} را فراخوانی کنید.
 
 > [!NOTE]
-> If the promise gets resolved and a user gesture event was being processed when the function was originally called, the resolve handler will run as if a user gesture was being processed, so it will be able to call APIs that require user activation.
+> اگر Promise resolve شود و هنگام فراخوانی اولیه تابع، یک رویداد ژست کاربر (user gesture) در حال پردازش باشد، هندلر resolve طوری اجرا می‌شود که گویی یک ژست کاربر در حال پردازش است؛ بنابراین می‌تواند APIهایی را فراخوانی کند که به فعال‌سازی کاربر نیاز دارند.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the current {{domxref("Document")}} is not yet active.
+  - : در صورتی پرتاب می‌شود که {{domxref("Document")}} فعلی هنوز فعال نباشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 document.hasStorageAccess().then((hasAccess) => {
@@ -64,18 +58,18 @@ document.hasStorageAccess().then((hasAccess) => {
 ```
 
 > [!NOTE]
-> See [Using the Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using) for a more complete example.
+> برای مثال کامل‌تر، [استفاده از Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.hasUnpartitionedCookieAccess()")}}, {{domxref("Document.requestStorageAccess()")}}, {{domxref("Document.requestStorageAccessFor()")}}
-- [Using the Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using)
-- [Introducing Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/) (WebKit blog)
+- [استفاده از Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using)
+- [معرفی Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/) (وبلاگ WebKit)
