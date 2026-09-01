@@ -1,11 +1,5 @@
 ---
 title: "GPURenderBundleEncoder: pushDebugGroup() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/pushDebugGroup"
-status: "needs-translation"
----
-
----
-title: "GPURenderBundleEncoder: pushDebugGroup() method"
 short-title: pushDebugGroup()
 slug: Web/API/GPURenderBundleEncoder/pushDebugGroup
 page-type: web-api-instance-method
@@ -14,13 +8,12 @@ browser-compat: api.GPURenderBundleEncoder.pushDebugGroup
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`pushDebugGroup()`** method of the
-{{domxref("GPURenderBundleEncoder")}} interface begins a render bundle debug group, which is marked with a specified label, and will contain all subsequent encoded commands up until a {{domxref("GPURenderBundleEncoder.popDebugGroup", "popDebugGroup()")}} method is invoked.
+متد **`pushDebugGroup()`** از رابط {{domxref("GPURenderBundleEncoder")}} یک گروه اشکال‌زدایی (debug group) برای بسته رندر (render bundle) آغاز می‌کند. این گروه با یک برچسب مشخص مشخص می‌شود و تمام دستورات رمزگذاری شده بعدی را تا زمانی که متد {{domxref("GPURenderBundleEncoder.popDebugGroup", "popDebugGroup()")}} فراخوانی شود، در بر می‌گیرد.
 
-This could be used for telemetry, or may be utilized in {{domxref("GPUError")}} messages, browser dev tools, or other services in the future to help with debugging.
+این قابلیت می‌تواند برای تله‌متری (telemetry) استفاده شود، یا در آینده در پیام‌های {{domxref("GPUError")}}، ابزارهای توسعه‌دهنده مرورگر، یا سایر سرویس‌ها برای کمک به اشکال‌زدایی به کار رود.
 
 > [!NOTE]
-> This method is functionally identical to its equivalent on {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.pushDebugGroup", "pushDebugGroup()")}}.
+> این متد از نظر عملکردی با معادل خود در {{domxref("GPURenderPassEncoder")}} یعنی {{domxref("GPURenderPassEncoder.pushDebugGroup", "pushDebugGroup()")}} یکسان است.
 
 ## Syntax
 
@@ -28,23 +21,23 @@ This could be used for telemetry, or may be utilized in {{domxref("GPUError")}} 
 pushDebugGroup(groupLabel)
 ```
 
-### Parameters
+### پارامترها
 
 - `groupLabel`
-  - : A string representing the label for the debug group.
+  - : یک رشته که برچسب گروه اشکال‌زدایی را مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
-// …
+// ...
 
 const bundleEncoder = device.createRenderBundleEncoder(renderBundleDescriptor);
 
-bundleEncoder.pushDebugGroup("my_group_marker"); // Start labeled debug group
+bundleEncoder.pushDebugGroup("my_group_marker"); // شروع گروه اشکال‌زدایی با برچسب
 
 bundleEncoder.setPipeline(renderPipeline);
 bundleEncoder.setVertexBuffer(0, vertexBuffer);
@@ -52,17 +45,17 @@ bundleEncoder.draw(3);
 
 bundleEncoder.popDebugGroup();
 
-// …
+// ...
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
