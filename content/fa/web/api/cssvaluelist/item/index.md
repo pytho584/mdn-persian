@@ -1,11 +1,5 @@
 ---
 title: "CSSValueList: item() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSValueList/item"
-status: "needs-translation"
----
-
----
-title: "CSSValueList: item() method"
 short-title: item()
 slug: Web/API/CSSValueList/item
 page-type: web-api-instance-method
@@ -17,46 +11,39 @@ browser-compat: api.CSSValueList.item
 
 {{APIRef("CSSOM")}}{{Deprecated_header}}{{non-standard_header}}
 
-The **`item()`** method of the {{domxref("CSSValueList")}}
-interface is used to retrieve a {{domxref("CSSValue")}} by ordinal index.
+متد **`item()`** از رابط {{domxref("CSSValueList")}} برای دریافت یک {{domxref("CSSValue")}} بر اساس اندیس ترتیبی استفاده می‌شود.
 
-The order in this collection represents the order of the values in the CSS style
-property. If the index is greater than or equal to the number of values in the list,
-this method returns `null`.
+ترتیب در این مجموعه، ترتیب مقادیر را در ویژگی استایل CSS نشان می‌دهد. اگر اندیس بزرگ‌تر یا برابر با تعداد مقادیر در فهرست باشد، این متد `null` برمی‌گرداند.
 
 > [!NOTE]
-> This method was part of an attempt to create a typed CSS Object Model. This attempt has been abandoned, and most browsers do
-> not implement it.
+> این متد بخشی از تلاش برای ایجاد یک مدل شیء CSS تایپ‌شده بود. این تلاش رها شده و اکثر مرورگرها آن را پیاده‌سازی نمی‌کنند.
 >
-> To achieve your purpose, you can use:
+> برای رسیدن به هدف خود می‌توانید از این موارد استفاده کنید:
 >
-> - the untyped [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model), widely supported, or
-> - the modern [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API), less supported and considered experimental.
+> - [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model) بدون تایپ، که به‌طور گسترده پشتیبانی می‌شود، یا
+> - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن، که پشتیبانی کمتری دارد و آزمایشی در نظر گرفته می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 item(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : An `unsigned long` representing the index of the CSS value within the
-    collection.
+  - : یک `unsigned long` که اندیس مقدار CSS را در مجموعه نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("CSSValue")}} object at the `index` position in the
-`CSSValueList`, or `null` if that is not a valid index.
+یک شیء {{domxref("CSSValue")}} در موقعیت `index` در `CSSValueList`، یا اگر اندیس معتبر نباشد، `null`.
 
-## Specifications
+## مشخصات
 
-This feature was originally defined in the [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) specification, but has been dropped from any
-standardization effort since then.
+این ویژگی در اصل در مشخصات [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) تعریف شده بود، اما از آن زمان از هرگونه تلاش برای استانداردسازی حذف شده است.
 
-It has been superseded by a modern, but incompatible, [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) that is now on the standard track.
+این ویژگی توسط [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن، اما ناسازگار، که اکنون در مسیر استاندارد قرار دارد، جایگزین شده است.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
