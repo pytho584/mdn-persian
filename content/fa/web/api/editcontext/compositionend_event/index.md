@@ -1,7 +1,5 @@
 ---
 title: "EditContext: compositionend event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/compositionend_event"
-status: "needs-translation"
 ---
 
 ---
@@ -16,11 +14,11 @@ browser-compat: api.EditContext.compositionend_event
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The `compositionend` event of the {{domxref("EditContext")}} interface fires when composition using an {{glossary("Input Method Editor")}} (IME) window ends.
+رویداد `compositionend` در رابط {{domxref("EditContext")}} زمانی رخ می‌دهد که فرایند ترکیب متن با استفاده از یک پنجرهٔ ویرایشگر روش ورودی ({{glossary("Input Method Editor")}} به‌اختصار IME) به پایان برسد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از این رویداد، می‌توانید نام آن را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید یا یک ویژگی مدیریت‌کنندهٔ رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("compositionend", (event) => { })
@@ -28,11 +26,11 @@ addEventListener("compositionend", (event) => { })
 oncompositionend = (event) => { }
 ```
 
-## Examples
+## مثال‌ها
 
-### Using `compositionend` to change the editable region's border
+### استفاده از `compositionend` برای تغییر حاشیهٔ ناحیهٔ قابل ویرایش
 
-In the following example, the editable region's border is set to red when the `compositionstart` event fires, and back to black when the `compositionend` event fires. Note that the event listener callbacks in this example are only called when using an IME window, or other platform-specific editing UI surfaces, to compose text.
+در مثال زیر، وقتی رویداد `compositionstart` رخ می‌دهد، رنگ حاشیهٔ ناحیهٔ قابل ویرایش قرمز می‌شود و با رخ دادن رویداد `compositionend` دوباره به سیاه تغییر می‌کند. توجه داشته باشید که فراخوانی‌های شنوندهٔ رویداد (event listener callbacks) در این مثال فقط زمانی فراخوانی می‌شوند که برای ترکیب متن از یک پنجرهٔ IME یا سایر رابط‌های کاربری ویرایش ویژهٔ پلتفرم استفاده کنید.
 
 ```css
 #text-editor {
@@ -61,10 +59,10 @@ editContext.addEventListener("compositionend", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
