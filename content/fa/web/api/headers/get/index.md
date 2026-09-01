@@ -1,7 +1,5 @@
 ---
 title: "Headers: get() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Headers/get"
-status: "needs-translation"
 ---
 
 ---
@@ -14,54 +12,42 @@ browser-compat: api.Headers.get
 
 {{APIRef("Fetch API")}} {{AvailableInWorkers}}
 
-The **`get()`** method of the {{domxref("Headers")}} interface
-returns a byte string of all the values of a header within a `Headers` object
-with a given name. If the requested header doesn't exist in the `Headers`
-object, it returns `null`.
+متد **`get()`** در رابط {{domxref("Headers")}} یک رشتهٔ بایتی از تمام مقادیر یک هدر را که با نام مشخصی در شیء `Headers` قرار دارد، برمی‌گرداند. اگر هدر درخواست‌شده در شیء `Headers` وجود نداشته باشد، مقدار `null` بازگردانده می‌شود.
 
-For security reasons, some headers can only be controlled by the user agent. These
-headers include the {{Glossary("Forbidden_request_header", "forbidden request headers")}}
-and {{Glossary("Forbidden_response_header_name", "forbidden response header names")}}.
+به دلایل امنیتی، برخی هدرها فقط توسط عامل کاربر (user agent) قابل کنترل هستند. این هدرها شامل {{Glossary("Forbidden_request_header", "forbidden request headers")}} (هدرهای درخواست ممنوع) و {{Glossary("Forbidden_response_header_name", "forbidden response header names")}} (نام‌های هدر پاسخ ممنوع) می‌شوند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 get(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the HTTP header whose values you want to retrieve from the
-    `Headers` object. If the given name doesn't match the
-    [field-name](https://httpwg.org/specs/rfc9110.html#fields.names)
-    production in the HTTP specification, this method throws a {{jsxref("TypeError")}}.
-    The name is case-insensitive.
+  - : نام هدر HTTP که می‌خواهید مقادیر آن را از شیء `Headers` دریافت کنید. اگر نام داده‌شده با قاعدهٔ تولید (production) [field-name](https://httpwg.org/specs/rfc9110.html#fields.names) در مشخصات HTTP مطابقت نداشته باشد، این متد یک {{jsxref("TypeError")}} پرتاب می‌کند. نام به حروف بزرگ و کوچک حساس نیست.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("String")}} sequence representing the values of the retrieved header or
-`null` if this header is not set.
+یک {{jsxref("String")}} که نشان‌دهندهٔ مقادیر هدر بازیابی‌شده است یا اگر هدر مورد نظر تنظیم نشده باشد، `null`.
 
-## Examples
+## مثال‌ها
 
-Creating an empty `Headers` object is simple:
+ساخت یک شیء `Headers` خالی ساده است:
 
 ```js
 const myHeaders = new Headers(); // Currently empty
 myHeaders.get("Not-Set"); // Returns null
 ```
 
-You could add a header to this using {{domxref("Headers.append")}}, then retrieve it
-using `get()`:
+می‌توانید با استفاده از {{domxref("Headers.append")}} یک هدر به این شیء اضافه کنید و سپس با `get()` آن را بازیابی کنید:
 
 ```js
 myHeaders.append("Content-Type", "image/jpeg");
 myHeaders.get("Content-Type"); // Returns "image/jpeg"
 ```
 
-If the header has multiple values associated with it, the byte string will contain all
-the values, in the order they were added to the Headers object:
+اگر هدر چند مقدار داشته باشد، رشتهٔ بایستی شامل تمام مقادیر به ترتیبی است که به شیء `Headers` اضافه شده‌اند:
 
 ```js
 myHeaders.append("Accept-Encoding", "deflate");
@@ -73,15 +59,15 @@ myHeaders
   .map((v) => v.trimStart()); // Returns [ "deflate", "gzip" ]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [ServiceWorker API](/en-US/docs/Web/API/Service_Worker_API)
 - [HTTP access control (CORS)](/en-US/docs/Web/HTTP/Guides/CORS)
