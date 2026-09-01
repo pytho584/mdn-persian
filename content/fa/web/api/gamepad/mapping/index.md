@@ -1,11 +1,5 @@
 ---
 title: "Gamepad: mapping property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/mapping"
-status: "needs-translation"
----
-
----
-title: "Gamepad: mapping property"
 short-title: mapping
 slug: Web/API/Gamepad/mapping
 page-type: web-api-instance-property
@@ -14,30 +8,28 @@ browser-compat: api.Gamepad.mapping
 
 {{APIRef("Gamepad API")}}
 
-The **`Gamepad.mapping`** property of the
-{{domxref("Gamepad")}} interface returns a string indicating whether the browser has
-remapped the controls on the device to a known layout.
+ویژگی **`Gamepad.mapping`** در رابط {{domxref("Gamepad")}} رشته‌ای برمی‌گرداند که نشان می‌دهد آیا مرورگر کنترل‌های دستگاه را به یک چیدمان شناخته‌شده نگاشت مجدد کرده است یا خیر.
 
-The currently supported known layouts are:
+چیدمان‌های شناخته‌شده‌ای که در حال حاضر پشتیبانی می‌شوند عبارتند از:
 
-- "standard" for the [standard gamepad](https://w3c.github.io/gamepad/#remapping).
-- "xr-standard for the [standard XR gamepad](https://immersive-web.github.io/webxr-gamepads-module/#xr-standard-heading). See also {{domxref("XRInputSource.gamepad")}}.
+- «standard» برای [دسته استاندارد](https://w3c.github.io/gamepad/#remapping).
+- «xr-standard» برای [دسته استاندارد XR](https://immersive-web.github.io/webxr-gamepads-module/#xr-standard-heading). همچنین به {{domxref("XRInputSource.gamepad")}} مراجعه کنید.
 
-## Examples
+## نمونه‌ها
 
 ```js
 let gp = navigator.getGamepads()[0];
 console.log(gp.mapping);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-[Using the Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
+[استفاده از API دسته بازی](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
