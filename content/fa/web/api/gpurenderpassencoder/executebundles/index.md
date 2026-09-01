@@ -1,7 +1,5 @@
 ---
 title: "GPURenderPassEncoder: executeBundles() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/executeBundles"
-status: "needs-translation"
 ---
 
 ---
@@ -14,40 +12,39 @@ browser-compat: api.GPURenderPassEncoder.executeBundles
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`executeBundles()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface executes commands previously recorded into the referenced {{domxref("GPURenderBundle")}}s, as part of this render pass.
+متد **`executeBundles()`** از رابط {{domxref("GPURenderPassEncoder")}} دستوراتی را که قبلاً در {{domxref("GPURenderBundle")}}های ارجاع‌شده ضبط شده‌اند، به عنوان بخشی از این رندر پاس اجرا می‌کند.
 
 > [!NOTE]
-> After calling `executeBundles()` the currently set vertex buffers, index buffers, bind groups, and pipeline are all cleared, even if no bundles are actually executed.
+> پس از فراخوانی `executeBundles()`، بافرهای رأس (vertex buffers)، بافرهای ایندکس (index buffers)، گروه‌های بایند (bind groups) و پایپ‌لاین (pipeline) که در حال حاضر تنظیم شده‌اند، همگی پاک می‌شوند، حتی اگر هیچ باندلی واقعاً اجرا نشود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 executeBundles(bundles)
 ```
 
-### Parameters
+### پارامترها
 
 - `bundles`
-  - : An array of {{domxref("GPURenderBundle")}} objects, containing the pre-recorded commands to execute.
+  - یک آرایه از اشیاء {{domxref("GPURenderBundle")}} که شامل دستورات از پیش ضبط‌شده برای اجرا هستند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`executeBundles()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderPassEncoder")}} becomes invalid.
+معیارهای زیر باید هنگام فراخوانی **`executeBundles()`** رعایت شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPURenderPassEncoder")}} نامعتبر می‌شود.
 
-For each {{domxref("GPURenderBundle")}}:
+برای هر {{domxref("GPURenderBundle")}}:
 
-- If the render pass's `depthReadOnly` property (as specified in the descriptor of the originating {{domxref("GPUCommandEncoder.beginRenderPass()")}} call) is `true`, then the bundle's `depthReadOnly` property (as specified in the descriptor of the {{domxref("GPUDevice.createRenderBundleEncoder()")}} call that created the originating {{domxref("GPURenderBundleEncoder")}}) is also `true`.
-- If the render pass's `stencilReadOnly` property (as specified in the descriptor of the originating {{domxref("GPUCommandEncoder.beginRenderPass()")}} call) is `true`, then the bundle's `stencilReadOnly` property (as specified in the descriptor of the {{domxref("GPUDevice.createRenderBundleEncoder()")}} call that created the originating {{domxref("GPURenderBundleEncoder")}}) is also `true`.
-- The layout of the render pipeline specified in {{domxref("GPURenderPassEncoder.setPipeline()")}} (as defined in the descriptor of the originating {{domxref("GPUDevice.createRenderPipeline()")}} call) equals the layout of the render bundle pipeline specified in {{domxref("GPURenderBundleEncoder.setPipeline()")}}.
+- اگر ویژگی `depthReadOnly` رندر پاس (که در توصیف‌کننده فراخوانی مبدأ {{domxref("GPUCommandEncoder.beginRenderPass()")}} مشخص شده است) `true` باشد، آنگاه ویژگی `depthReadOnly` باندل (که در توصیف‌کننده فراخوانی {{domxref("GPUDevice.createRenderBundleEncoder()")}} که {{domxref("GPURenderBundleEncoder")}} مبدأ را ایجاد کرده است مشخص شده است) نیز `true` است.
+- اگر ویژگی `stencilReadOnly` رندر پاس `true` باشد، آنگاه ویژگی `stencilReadOnly` باندل نیز `true` است.
+- چیدمان (layout) پایپ‌لاین رندر مشخص‌شده در {{domxref("GPURenderPassEncoder.setPipeline()")}} (که در توصیف‌کننده فراخوانی مبدأ {{domxref("GPUDevice.createRenderPipeline()")}} تعریف شده است) با چیدمان پایپ‌لاین رندر باندل مشخص‌شده در {{domxref("GPURenderBundleEncoder.setPipeline()")}} برابر است.
 
-## Examples
+## مثال‌ها
 
-In the WebGPU Samples [Animometer example](https://webgpu.github.io/webgpu-samples/samples/animometer/), a lot of like operations are done on many different objects simultaneously. `executeBundles()` is used to reuse the work on multiple render passes to improve performance. Study the example code listing for the full context.
+در مثال Animometer از نمونه‌های WebGPU، عملیات مشابه زیادی به طور همزمان روی اشیاء مختلف انجام می‌شود. از `executeBundles()` برای استفاده مجدد از کار روی چندین رندر پاس به منظور بهبود عملکرد استفاده می‌شود. برای زمینه کامل، فهرست کد مثال را مطالعه کنید.
 
 ```js
 // …
@@ -79,14 +76,14 @@ return function doDraw(timestamp) {
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
