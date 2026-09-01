@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: toString() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/toString"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: toString() method"
 short-title: toString()
 slug: Web/API/HTMLAreaElement/toString
 page-type: web-api-instance-method
@@ -14,42 +8,40 @@ browser-compat: api.HTMLAreaElement.toString
 
 {{ApiRef("URL API")}}
 
-The **`HTMLAreaElement.toString()`** {{Glossary("stringifier")}}
-method returns a string containing the whole URL. It is a read-only
-version of {{domxref("HTMLAreaElement.href")}}.
+متد **`HTMLAreaElement.toString()`** (رشته‌ساز) یک رشته شامل کل URL را برمی‌گرداند. این یک نسخهٔ فقط‌خواندنی از {{domxref("HTMLAreaElement.href")}} است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 toString()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A string containing the element's complete URL.
+یک رشته شامل URL کامل عنصر.
 
-## Examples
+## مثال‌ها
 
-### Calling toString on an area element
+### فراخوانی toString روی یک عنصر area
 
 ```js
-// An <area id="myArea" href="/en-US/docs/HTMLAreaElement"> element is in the document
+// یک عنصر <area id="myArea" href="/en-US/docs/HTMLAreaElement"> در سند وجود دارد
 const area = document.getElementById("myArea");
-area.toString(); // returns 'https://developer.mozilla.org/en-US/docs/HTMLAreaElement'
+area.toString(); // 'https://developer.mozilla.org/en-US/docs/HTMLAreaElement' را برمی‌گرداند
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAreaElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAreaElement")}} که این متد به آن تعلق دارد.
