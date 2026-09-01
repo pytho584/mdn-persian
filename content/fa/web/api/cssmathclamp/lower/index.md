@@ -1,11 +1,5 @@
 ---
 title: "CSSMathClamp: lower property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathClamp/lower"
-status: "needs-translation"
----
-
----
-title: "CSSMathClamp: lower property"
 short-title: lower
 slug: Web/API/CSSMathClamp/lower
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.CSSMathClamp.lower
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`lower`** read-only property of the {{domxref("CSSMathClamp")}} interface returns a {{domxref("CSSNumericValue")}} object representing its minimum value.
+ویژگی فقط‌خواندنی **`lower`** در رابط {{domxref("CSSMathClamp")}} یک شیء {{domxref("CSSNumericValue")}} برمی‌گرداند که مقدار حداقل آن را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("CSSNumericValue")}}.
+یک {{domxref("CSSNumericValue")}}.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following code creates a `CSSMathClamp` object, then reads its `lower` value.
+کد زیر یک شیء `CSSMathClamp` می‌سازد و سپس مقدار `lower` آن را می‌خواند.
 
 ```js
 const clamp = new CSSMathClamp(CSS.px(10), CSS.percent(50), CSS.px(500));
@@ -34,18 +28,18 @@ console.log(clamp.lower.value); // 10
 console.log(clamp.lower.unit); // "px"
 ```
 
-`lower` simply returns whatever {{domxref("CSSNumericValue")}} was passed into the constructor — here that's a {{domxref("CSSUnitValue")}}, since `CSS.px(10)` is a `CSSUnitValue`.
-Passing a more complex expression, such as `CSS.px(10).add(CSS.em(2))` (a {{domxref("CSSMathSum")}}), means `lower` would return that `CSSMathSum` instead.
+`lower` به سادگی هر {{domxref("CSSNumericValue")}} که به سازنده داده شده است را برمی‌گرداند — در اینجا یک {{domxref("CSSUnitValue")}} است، زیرا `CSS.px(10)` یک `CSSUnitValue` است.
+اگر یک عبارت پیچیده‌تر مانند `CSS.px(10).add(CSS.em(2))` (یک {{domxref("CSSMathSum")}}) منتقل کنید، `lower` همان `CSSMathSum` را برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSMathClamp.value")}}
 - {{domxref("CSSMathClamp.upper")}}
