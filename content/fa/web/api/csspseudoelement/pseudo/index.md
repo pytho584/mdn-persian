@@ -1,11 +1,5 @@
 ---
 title: "CSSPseudoElement: pseudo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement/pseudo"
-status: "needs-translation"
----
-
----
-title: "CSSPseudoElement: pseudo() method"
 short-title: pseudo()
 slug: Web/API/CSSPseudoElement/pseudo
 page-type: web-api-instance-method
@@ -16,41 +10,41 @@ browser-compat: api.CSSPseudoElement.pseudo
 
 {{APIRef}}{{SeeCompatTable}}
 
-The **`pseudo()`** method of the {{domxref("CSSPseudoElement")}} interface returns a `CSSPseudoElement` instance representing a specific [nested pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements#nesting_pseudo-elements).
+متد **`pseudo()`** از رابط {{domxref("CSSPseudoElement")}} یک نمونه‌ی `CSSPseudoElement` برمی‌گرداند که نمایانگر یک [شبه‌عنصر تودرتو](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements#nesting_pseudo-elements) خاص است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 pseudo(type)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the type of pseudo-element to return a representation of. Valid values are:
+  - : یک رشته که نوع شبه‌عنصری را که باید نمایی از آن برگردانده شود مشخص می‌کند. مقادیر معتبر عبارت‌اند از:
     - {{cssxref("::after")}}
     - {{cssxref("::before")}}
     - {{cssxref("::marker")}}
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("CSSPseudoElement")}} object instance, or `null` if `type` is not equal to a valid pseudo-element type.
+یک نمونه‌ی آبجکت {{domxref("CSSPseudoElement")}}، یا اگر `type` برابر با یک نوع شبه‌عنصر معتبر نباشد، `null`.
 
-## Description
+## توضیحات
 
-The `CSSPseudoElement.pseudo()` method is used to target a pseudo-element that is attached to another pseudo-element, rather than directly to a standard DOM element. For example, if a `::before` pseudo-element generates a list marker — selectable via `::before::marker` — this method can retrieve the `::marker` nested inside that `::before`. You call the method on the parent pseudo-element and pass the type of the nested child pseudo-element as an argument.
+متد `CSSPseudoElement.pseudo()` برای هدف قرار دادن شبه‌عنصری استفاده می‌شود که به شبه‌عنصر دیگری متصل است، نه مستقیماً به یک عنصر استاندارد DOM. برای مثال، اگر یک شبه‌عنصر `::before` یک نشانگر فهرست تولید کند — که از طریق `::before::marker` قابل انتخاب است — این متد می‌تواند `::marker` تودرتوی داخل آن `::before` را بازیابی کند. شما متد را روی شبه‌عنصر والد فراخوانی کرده و نوع شبه‌عنصر فرزند تودرتو را به عنوان آرگومان ارسال می‌کنید.
 
-Provided its `type` parameter contains a valid pseudo-element type, `pseudo()` will always return a `CSSPseudoElement` instance, even if that pseudo-element hasn't been generated on the calling pseudo-element.
+به شرطی که پارامتر `type` شامل یک نوع شبه‌عنصر معتبر باشد، `pseudo()` همیشه یک نمونه‌ی `CSSPseudoElement` برمی‌گرداند، حتی اگر آن شبه‌عنصر روی شبه‌عنصر فراخوانی‌شده تولید نشده باشد.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده‌ی پایه
 
-In this example, we demonstrate basic usage of the `pseudo()` method.
+در این مثال، استفاده‌ی پایه از متد `pseudo()` را نشان می‌دهیم.
 
 #### HTML
 
-We include a {{htmlelement("p")}} element containing text, and an {{htmlelement("output")}} element to log output from JavaScript.
+ما یک عنصر {{htmlelement("p")}} حاوی متن و یک عنصر {{htmlelement("output")}} برای ثبت خروجی از جاوااسکریپت قرار می‌دهیم.
 
 ```html live-sample___basic
 <p>New York's hottest club is...</p>
@@ -59,7 +53,7 @@ We include a {{htmlelement("p")}} element containing text, and an {{htmlelement(
 
 #### CSS
 
-We give the `<p>` element's {{cssxref("::after")}} pseudo-element some {{cssxref("content")}} and set its {{cssxref("display")}} to `list-item` so it will generate a `::marker`. We also apply some basic styles.
+ما به شبه‌عنصر {{cssxref("::after")}} عنصر `<p>` مقداری {{cssxref("content")}} می‌دهیم و {{cssxref("display")}} آن را روی `list-item` تنظیم می‌کنیم تا یک `::marker` تولید کند. همچنین چند سبک پایه اعمال می‌کنیم.
 
 ```css hidden live-sample___basic
 body {
@@ -86,9 +80,9 @@ p::after::marker {
 }
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-In our script, we grab references to our `<p>` and `<output>` elements, and retrieve `CSSPseudoElement` objects via the `pseudo()` method representing the `<p>` element's `::after` pseudo-element, and the `::after` pseudo-element's `::marker` pseudo-element. We then log some details of the child pseudo-element to our `<output>` element. We also include some rudimentary error handling via a [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) structure, to print an error message in non-supporting browsers.
+در اسکریپت خود، ارجاع‌هایی به عناصر `<p>` و `<output>` می‌گیریم و آبجکت‌های `CSSPseudoElement` را از طریق متد `pseudo()` بازیابی می‌کنیم که نمایانگر شبه‌عنصر `::after` عنصر `<p>` و شبه‌عنصر `::marker` شبه‌عنصر `::after` هستند. سپس چند جزئیات از شبه‌عنصر فرزند را در عنصر `<output>` خود ثبت می‌کنیم. همچنین برای مدیریت خطاهای ابتدایی، از ساختار [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) استفاده می‌کنیم تا در مرورگرهای غیرپشتیبانی‌کننده پیام خطا چاپ شود.
 
 ```js live-sample___basic
 const pElem = document.querySelector("p");
@@ -103,19 +97,19 @@ try {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{embedlivesample("basic", "100%", 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("CSSPseudoElement.element")}}
 - {{DOMxRef("CSSPseudoElement.parent")}}
