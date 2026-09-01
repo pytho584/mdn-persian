@@ -1,11 +1,5 @@
 ---
 title: "GPURenderPassEncoder: insertDebugMarker() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/insertDebugMarker"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: insertDebugMarker() method"
 short-title: insertDebugMarker()
 slug: Web/API/GPURenderPassEncoder/insertDebugMarker
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.GPURenderPassEncoder.insertDebugMarker
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`insertDebugMarker()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface marks a specific point in a series of encoded render pass commands with a label.
+متد **`insertDebugMarker()`** از رابط {{domxref("GPURenderPassEncoder")}} یک نقطهٔ خاص را در یک سری از دستورهای رمزگذاری‌شدهٔ پاس رندر با یک برچسب علامت‌گذاری می‌کند.
 
-This could be used for telemetry, or may be utilized in {{domxref("GPUError")}} messages, browser dev tools, or other services in the future to help with debugging.
+این می‌تواند برای سنجش از راه دور (telemetry) استفاده شود، یا ممکن است در پیام‌های {{domxref("GPUError")}}، ابزارهای توسعه‌دهندهٔ مرورگر، یا سایر سرویس‌ها در آینده برای کمک به اشکال‌زدایی به کار رود.
 
 ## Syntax
 
@@ -28,11 +21,11 @@ insertDebugMarker(markerLabel)
 ### Parameters
 
 - `markerLabel`
-  - : A string representing the label to insert.
+  - : یک رشته که برچسب مورد نظر برای درج را نشان می‌دهد.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Examples
 
@@ -54,4 +47,4 @@ passEncoder.insertDebugMarker("my_marker");
 
 ## See also
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
