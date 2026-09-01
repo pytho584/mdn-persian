@@ -1,7 +1,5 @@
 ---
 title: "CSSScopeRule: end property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSScopeRule/end"
-status: "needs-translation"
 ---
 
 ---
@@ -14,24 +12,24 @@ browser-compat: api.CSSScopeRule.end
 
 {{APIRef("CSSOM")}}
 
-The **`end`** property of the {{domxref("CSSScopeRule")}} interface returns a string containing the value of the `@scope` at-rule's scope limit.
+ویژگی **`end`** از رابط {{domxref("CSSScopeRule")}} رشته‌ای حاوی مقدار حدِ scope قانون at-rule `@scope` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string, or `null` if the `@scope` at-rule has no scope limit defined.
+یک رشته؛ یا `null` اگر قانون at-rule `@scope` هیچ حد scope تعریف‌شده‌ای نداشته باشد.
 
-## Example
+## مثال
 
-See the main {{domxref("CSSScopeRule")}} page for an example.
+برای مشاهدهٔ مثال، به صفحهٔ اصلی {{domxref("CSSScopeRule")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{CSSxRef("@scope")}}
