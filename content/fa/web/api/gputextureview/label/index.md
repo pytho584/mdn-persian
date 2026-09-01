@@ -1,11 +1,5 @@
 ---
 title: "GPUTextureView: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTextureView/label"
-status: "needs-translation"
----
-
----
-title: "GPUTextureView: label property"
 short-title: label
 slug: Web/API/GPUTextureView/label
 page-type: web-api-instance-property
@@ -14,18 +8,17 @@ browser-compat: api.GPUTextureView.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** property of the
-{{domxref("GPUTextureView")}} interface provides a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی **`label`** در رابط {{domxref("GPUTextureView")}} برچسبی ارائه می‌دهد که می‌توان از آن برای شناسایی شیء استفاده کرد؛ برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUTexture.createView()")}} call, or you can get and set it directly on the `GPUTextureView` object.
+این مقدار را می‌توان هنگام ساخت نمای (view) با قرار دادن ویژگی `label` در شیء توصیفگر (descriptor) که به فراخوانی {{domxref("GPUTexture.createView()")}} ارسال می‌شود تنظیم کرد. همچنین می‌توانید آن را مستقیماً روی شیء `GPUTextureView` بخوانید یا تنظیم کنید.
 
-## Value
+## مقدار
 
-A string. If this has not been previously set as described above, it will be an empty string.
+یک رشته. اگر قبلاً به‌صورت گفته‌شده تنظیم نشده باشد، این مقدار یک رشتهٔ خالی خواهد بود.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUTextureView.label`:
+تنظیم و خواندن برچسب از طریق `GPUTextureView.label`:
 
 ```js
 // …
@@ -43,7 +36,7 @@ view.label = "my_view";
 console.log(view.label); // "my_view"
 ```
 
-Setting a label via the originating {{domxref("GPUTexture.createView()")}} call, and then getting it via `GPUTextureView.label`:
+تنظیم برچسب از طریق فراخوانی {{domxref("GPUTexture.createView()")}} و سپس خواندن آن با `GPUTextureView.label`:
 
 ```js
 // …
@@ -61,14 +54,14 @@ const view = depthTexture.createView({
 console.log(view.label); // "my_view"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
