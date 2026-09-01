@@ -1,11 +1,5 @@
 ---
 title: "Element: mousewheel event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/mousewheel_event"
-status: "needs-translation"
----
-
----
-title: "Element: mousewheel event"
 short-title: mousewheel
 slug: Web/API/Element/mousewheel_event
 page-type: web-api-event
@@ -17,14 +11,14 @@ browser-compat: api.Element.mousewheel_event
 
 {{APIRef("UI Events")}}{{deprecated_header}}{{Non-standard_header}}
 
-The _obsolete_ and _non-standard_ **`mousewheel`** event is fired asynchronously at an {{domxref("Element")}} to provide updates while a mouse wheel or similar device is operated. The `mousewheel` event was never part of any standard, and while it was implemented by several browsers, it was never implemented by Firefox.
+رویداد **منسوخ** و **غیراستاندارد** `mousewheel` بهصورت ناهمزمان روی یک {{domxref("Element")}} هنگام کار با چرخ ماوس یا وسیله مشابه صادر میشود. رویداد `mousewheel` هرگز بخشی از هیچ استانداردی نبوده و اگرچه در چند مرورگر پیادهسازی شده، اما هرگز در فایرفاکس پیادهسازی نشده است.
 
 > [!NOTE]
-> Instead of this obsolete event, use the standard {{domxref("Element.wheel_event", "wheel")}} event.
+> بهجای این رویداد منسوخ، از رویداد استاندارد {{domxref("Element.wheel_event", "wheel")}} استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روشهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترلکننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("mousewheel", (event) => { })
@@ -32,67 +26,67 @@ addEventListener("mousewheel", (event) => { })
 onmousewheel = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("WheelEvent")}}. Inherits from {{domxref("MouseEvent")}}, {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("WheelEvent")}}. از {{domxref("MouseEvent")}}، {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث میبرد.
 
 {{InheritanceDiagram("WheelEvent")}}
 
-## The detail property
+## ویژگی detail
 
-The value of the {{domxref("UIEvent/detail", "detail")}} property is always zero, except in Opera, which uses `detail` similarly to the Firefox-only {{domxref("Element.DOMMouseScroll_event", "DOMMouseScroll")}} event's `detail` value, which indicates the scroll distance in terms of lines, with negative values indicating the scrolling movement is either toward the bottom or toward the right, and positive values indicating scrolling to the top or left.
+مقدار ویژگی {{domxref("UIEvent/detail", "detail")}} همیشه صفر است، بهجز در Opera که از `detail` مشابه مقدار `detail` در رویداد مخصوص فایرفاکس {{domxref("Element.DOMMouseScroll_event", "DOMMouseScroll")}} استفاده میکند. این مقدار فاصله اسکرول را بر حسب خط نشان میدهد؛ مقادیر منفی نشاندهنده حرکت اسکرول به سمت پایین یا راست و مقادیر مثبت نشاندهنده اسکرول به سمت بالا یا چپ است.
 
 > [!NOTE]
-> On macOS, the scroll distance (and therefore the value of `detail`) is computed based on the accelerated scroll distance.
+> در macOS، فاصله اسکرول (و در نتیجه مقدار `detail`) بر اساس فاصله اسکرول شتابدار محاسبه میشود.
 
-On Linux, `2` or `-2` is set per native wheel event.
+در لینوکس، بهازای هر رویداد چرخ بومی، مقدار `2` یا `-2` تنظیم میشود.
 
-## wheelDelta, wheelDeltaX and wheelDeltaY value
+## مقدار wheelDelta، wheelDeltaX و wheelDeltaY
 
-The `wheelDelta` attribute value is an abstract value which indicates how far the wheel turned. If the wheel has rotated away from the user, it's positive, otherwise negative. This means that the delta value sign is different from DOM Level 3 Event's `wheel`. However, the meaning of the amount of these values is not the same between browsers. See following explanation for the detail.
+مقدار ویژگی `wheelDelta` یک مقدار انتزاعی است که نشان میدهد چرخ چقدر چرخیده است. اگر چرخ در جهت دور شدن از کاربر بچرخد، مثبت است، در غیر این صورت منفی. این بدان معناست که علامت مقدار دلتا با رویداد `wheel` در DOM Level 3 متفاوت است. با این حال، معنای مقدار این اعداد بین مرورگرها یکسان نیست. برای جزئیات، توضیحات زیر را ببینید.
 
-IE and Opera (Presto) only support `wheelDelta` attribute and do _not_ support horizontal scroll.
+IE و Opera (Presto) فقط از ویژگی `wheelDelta` پشتیبانی میکنند و از اسکرول افقی پشتیبانی _نمیکنند_.
 
-The `wheelDeltaX` attribute value indicates the `wheelDelta` attribute value along the horizontal axis. When a user operates the device for scrolling to right, the value is negative. Otherwise, i.e., if it's to left, the value is positive.
+مقدار ویژگی `wheelDeltaX` نشاندهنده مقدار `wheelDelta` در امتداد محور افقی است. وقتی کاربر دستگاه را برای اسکرول به سمت راست کار میگیرد، مقدار منفی است. در غیر این صورت، یعنی اگر به سمت چپ باشد، مقدار مثبت است.
 
-The `wheelDeltaY` attribute value indicates the `wheelDelta` attribute value along the vertical axis. The sign of the value is the same as the `wheelDelta` attribute value.
+مقدار ویژگی `wheelDeltaY` نشاندهنده مقدار `wheelDelta` در امتداد محور عمودی است. علامت این مقدار همان علامت مقدار ویژگی `wheelDelta` است.
 
 ### Chrome
 
-On Windows, the value is the same as the delta value of `WM_MOUSEWHEEL` or `WM_MOUSEHWHEEL`. And also, the value isn't changed even if the scroll amount of system settings is page scroll, i.e., the value is the same as IE on Windows.
+در ویندوز، مقدار همان مقدار دلتای `WM_MOUSEWHEEL` یا `WM_MOUSEHWHEEL` است. همچنین، حتی اگر مقدار اسکرول در تنظیمات سیستم بهصورت «یک صفحه» باشد، مقدار تغییر نمیکند؛ یعنی همان مقدار IE در ویندوز است.
 
-On Linux, the value is `120` or `-120` per native wheel event. This makes the same behavior as IE and Chrome for Windows.
+در لینوکس، بهازای هر رویداد چرخ بومی، مقدار `120` یا `-120` است. این رفتار را با IE و Chrome در ویندوز یکسان میکند.
 
-On Mac, the value is complicated. The value is changed if the **device** that causes the native wheel event supports continuous scroll.
+در مک، مقدار پیچیده است. اگر **دستگاهی** که رویداد چرخ بومی را ایجاد میکند از اسکرول پیوسته پشتیبانی کند، مقدار تغییر میکند.
 
-If the device supports continuous scroll (e.g., trackpad of MacBook or mouse wheel which can be turned smoothly), the value is computed from accelerated scroll amount. In this case, the value is the same as Safari.
+اگر دستگاه از اسکرول پیوسته پشتیبانی کند (مثلاً ترکپد مکبوک یا چرخ ماوسی که میتوان بهآرامی چرخاند)، مقدار از میزان اسکرول شتابدار محاسبه میشود. در این حالت، مقدار با Safari یکسان است.
 
-If the device does **not** support continuous scroll (typically, old mouse wheel which cannot be turned smoothly), the value is computed from non-accelerated scroll amount (120 per notch). In this case, the value is different from Safari.
+اگر دستگاه از اسکرول پیوسته پشتیبانی **نمیکند** (معمولاً چرخ ماوس قدیمی که نمیتوان بهآرامی چرخاند)، مقدار از میزان اسکرول بدون شتاب (۱۲۰ بهازای هر بریدگی) محاسبه میشود. در این حالت، مقدار با Safari متفاوت است.
 
-This difference makes a serious issue for web application developers. That is, web developers cannot know if `mousewheel` event is caused by which device.
+این تفاوت یک مشکل جدی برای توسعهدهندگان برنامههای وب ایجاد میکند. به این معنا که توسعهدهندگان وب نمیتوانند بدانند رویداد `mousewheel` توسط کدام دستگاه ایجاد شده است.
 
 ### Safari
 
-The value is always computed from accelerated scroll amount. This is really different from other browsers except Chrome with continuous scroll supported device.
+مقدار همیشه از میزان اسکرول شتابدار محاسبه میشود. این واقعاً با سایر مرورگرها بهجز Chrome (در صورت پشتیبانی دستگاه از اسکرول پیوسته) متفاوت است.
 
 ### Opera (Presto)
 
-The value is always the `detail` attribute value ✕ `40`.
+مقدار همیشه برابر است با مقدار ویژگی `detail` ضربدر ۴۰.
 
-On Windows, since the `detail` attribute value is computed from actual scroll amount, the value is different from other browsers except the scroll amount per notch is 3 lines in system settings or a page.
+در ویندوز، چون مقدار ویژگی `detail` از میزان اسکرول واقعی محاسبه میشود، مقدار با سایر مرورگرها متفاوت است، مگر اینکه در تنظیمات سیستم، مقدار اسکرول بهازای هر بریدگی ۳ خط یا یک صفحه باشد.
 
-On Linux, the value is `80` or `-80` per native wheel event. This is different from other browsers.
+در لینوکس، بهازای هر رویداد چرخ بومی، مقدار `80` یا `-80` است. این با سایر مرورگرها متفاوت است.
 
-On Mac, the `detail` attribute value is computed from accelerated scroll amount of native event. The value is usually much bigger than Safari's or Chrome's value.
+در مک، مقدار ویژگی `detail` از میزان اسکرول شتابدار رویداد بومی محاسبه میشود. این مقدار معمولاً بسیار بزرگتر از مقدار Safari یا Chrome است.
 
-## Specifications
+## مشخصات
 
-Not part of any specification.
+بخشی از هیچ مشخصاتی نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The standard {{domxref("Element/wheel_event", "wheel")}} event to listen to instead.
+- رویداد استاندارد {{domxref("Element/wheel_event", "wheel")}} که بهجای این رویداد باید به آن گوش دهید.
