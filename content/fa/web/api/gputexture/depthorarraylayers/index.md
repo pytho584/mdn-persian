@@ -1,11 +1,5 @@
 ---
 title: "GPUTexture: depthOrArrayLayers property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/depthOrArrayLayers"
-status: "needs-translation"
----
-
----
-title: "GPUTexture: depthOrArrayLayers property"
 short-title: depthOrArrayLayers
 slug: Web/API/GPUTexture/depthOrArrayLayers
 page-type: web-api-instance-property
@@ -14,21 +8,20 @@ browser-compat: api.GPUTexture.depthOrArrayLayers
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`depthOrArrayLayers`** read-only property of the
-{{domxref("GPUTexture")}} interface represents the depth or layer count of the `GPUTexture`.
+ویژگی فقط‌خواندنی **`depthOrArrayLayers`** در رابط {{domxref("GPUTexture")}}، تعداد عمق یا لایه‌های `GPUTexture` را نشان می‌دهد.
 
-This is set based on the `size` property in the descriptor object passed into the originating {{domxref("GPUDevice.createTexture()")}} call.
+این مقدار بر اساس ویژگی `size` در شیء توصیف‌کننده‌ای تنظیم می‌شود که به فراخوانی {{domxref("GPUDevice.createTexture()")}} مبدأ ارسال شده است.
 
-## Value
+## مقدار
 
-A number. This represents:
+یک عدد. این عدد نشان‌دهنده موارد زیر است:
 
-- The depth in pixels, in the case of textures with a `"3d"` {{domxref("GPUTexture.dimension")}}.
-- The number of layers, in the case of layered textures with a `"2d"` {{domxref("GPUTexture.dimension")}}.
+- عمق بر حسب پیکسل، برای بافت‌هایی با {{domxref("GPUTexture.dimension")}} از نوع `"3d"`.
+- تعداد لایه‌ها، برای بافت‌های لایه‌ای با {{domxref("GPUTexture.dimension")}} از نوع `"2d"`.
 
-In cases where the `GPUTexture` does not have a depth or layers, the value is 1.
+در مواردی که `GPUTexture` عمق یا لایه ندارد، مقدار این ویژگی برابر با ۱ است.
 
-## Examples
+## نمونه‌ها
 
 ```js
 // …
@@ -43,14 +36,14 @@ const test = device.createTexture({
 console.log(test.depthOrArrayLayers); // 1
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
