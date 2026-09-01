@@ -1,11 +1,5 @@
 ---
 title: "HTMLButtonElement: commandForElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/commandForElement"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: commandForElement property"
 short-title: commandForElement
 slug: Web/API/HTMLButtonElement/commandForElement
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLButtonElement.commandForElement
 
 {{APIRef("Invoker Commands API")}}
 
-The **`commandForElement`** property of the {{domxref("HTMLButtonElement")}} interface gets and sets the element to control via a button.
+ویژگی **`commandForElement`** در رابط {{domxref("HTMLButtonElement")}}، عنصری را که باید توسط یک دکمه کنترل شود، دریافت و تنظیم می‌کند.
 
-It is the JavaScript equivalent of the [`commandfor`](/en-US/docs/Web/HTML/Reference/Elements/button#commandfor) HTML attribute.
+این ویژگی معادل جاوااسکریپتی ویژگی HTML [`commandfor`](/en-US/docs/Web/HTML/Reference/Elements/button#commandfor) است.
 
-## Value
+## مقدار
 
-A reference to an existing {{domxref("Element")}} that the button controls.
+ارجاع به یک {{domxref("Element")}} موجود که دکمه آن را کنترل می‌کند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const popover = document.getElementById("mypopover");
@@ -31,15 +25,15 @@ const toggleBtn = document.getElementById("toggleBtn");
 toggleBtn.commandForElement = popover;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Invoker Commands API", "Invoker Commands API", "", "nocode")}}
 - {{domxref("HTMLButtonElement.command")}}
