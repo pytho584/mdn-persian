@@ -1,7 +1,5 @@
 ---
 title: "ErrorEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,44 +11,44 @@ browser-compat: api.ErrorEvent
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`ErrorEvent`** interface represents events providing information related to errors in scripts or in files.
+رابط **`ErrorEvent`** رویدادهایی را نشان می‌دهد که اطلاعات مربوط به خطاهای موجود در اسکریپت‌ها یا فایل‌ها را ارائه می‌دهند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("ErrorEvent.ErrorEvent", "ErrorEvent()")}}
-  - : Creates an `ErrorEvent` event with the given parameters.
+  - : یک رویداد `ErrorEvent` با پارامترهای داده‌شده ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent {{domxref("Event")}}_.
+_همچنین ویژگی‌های والد خود، {{domxref("Event")}}، را به ارث می‌برد._
 
 - {{domxref("ErrorEvent.message")}} {{ReadOnlyInline}}
-  - : A string containing a human-readable error message describing the problem.
+  - : رشته‌ای شامل پیام خطای انسان‌خوان که مشکل را توصیف می‌کند.
 - {{domxref("ErrorEvent.filename")}} {{ReadOnlyInline}}
-  - : A string containing the name of the script file in which the error occurred.
+  - : رشته‌ای شامل نام فایل اسکریپتی که خطا در آن رخ داده است.
 - {{domxref("ErrorEvent.lineno")}} {{ReadOnlyInline}}
-  - : An integer containing the line number of the script file on which the error occurred.
+  - : عددی صحیح شامل شمارهٔ خط در فایل اسکریپت که خطا در آن رخ داده است.
 - {{domxref("ErrorEvent.colno")}} {{ReadOnlyInline}}
-  - : An integer containing the column number of the script file on which the error occurred.
+  - : عددی صحیح شامل شمارهٔ ستون در فایل اسکریپت که خطا در آن رخ داده است.
 - {{domxref("ErrorEvent.error")}} {{ReadOnlyInline}}
-  - : A JavaScript value, such as an {{jsxref("Error")}} or {{domxref("DOMException")}}, representing the error associated with this event.
+  - : مقدار جاوااسکریپتی، مانند {{jsxref("Error")}} یا {{domxref("DOMException")}}، که نشان‌دهندهٔ خطای مرتبط با این رویداد است.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent {{domxref("Event")}}_.
+_روش‌های والد خود، {{domxref("Event")}}، را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using web workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), most likely objects to raise such an event.
-- {{domxref("Window")}}: {{domxref("Window/error_event", "error")}} event
-- {{domxref("Navigation")}}: {{domxref("Navigation/navigateerror_event", "navigateerror")}} event
+- [استفاده از وب‌ورکرها](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)؛ اشیایی که به احتمال زیاد چنین رویدادی را ایجاد می‌کنند.
+- {{domxref("Window")}}: رویداد {{domxref("Window/error_event", "error")}}
+- {{domxref("Navigation")}}: رویداد {{domxref("Navigation/navigateerror_event", "navigateerror")}}
