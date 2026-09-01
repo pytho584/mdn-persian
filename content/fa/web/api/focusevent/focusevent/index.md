@@ -1,11 +1,5 @@
 ---
 title: "FocusEvent: FocusEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent/FocusEvent"
-status: "needs-translation"
----
-
----
-title: "FocusEvent: FocusEvent() constructor"
 short-title: FocusEvent()
 slug: Web/API/FocusEvent/FocusEvent
 page-type: web-api-constructor
@@ -14,39 +8,34 @@ browser-compat: api.FocusEvent.FocusEvent
 
 {{APIRef("UI Events")}}
 
-The **`FocusEvent()`** constructor returns a newly created
-{{domxref("FocusEvent")}} object with an optional {{domxref("EventTarget")}}. When the
-event has both a source and a destination, the `relatedTarget` value must be
-set to the other target.
+سازندهٔ **`FocusEvent()`** یک شیء {{domxref("FocusEvent")}} تازه‌ساخته با یک {{domxref("EventTarget")}} اختیاری برمی‌گرداند. وقتی رویداد هم مبدأ و هم مقصد دارد، مقدار `relatedTarget` باید روی هدف دیگر تنظیم شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new FocusEvent(type)
 new FocusEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
-_The `FocusEvent()` constructor also inherits arguments from
-{{domxref("UIEvent.UIEvent", "UIEvent()")}} and from {{domxref("Event.Event", "Event()")}}._
+_سازندهٔ `FocusEvent()` همچنین آرگومان‌هایی را از {{domxref("UIEvent.UIEvent", "UIEvent()")}} و {{domxref("Event.Event", "Event()")}} به ارث می‌برد._
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `blur`, `focus`, `focusin`, or `focusout`.
+  - : رشته‌ای با نام رویداد. این مقدار به حروف بزرگ و کوچک حساس است و مرورگرها آن را به `blur`، `focus`، `focusin` یا `focusout` تنظیم می‌کنند.
 - `options` {{optional_inline}}
-  - : An object that, in addition of the properties defined in {{domxref("UIEvent/UIEvent", "UIEvent()")}}, can have the following properties:
+  - : یک شیء که علاوه بر ویژگی‌های تعریف‌شده در {{domxref("UIEvent/UIEvent", "UIEvent()")}}، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `relatedTarget` {{optional_inline}}
-      - : An {{domxref("EventTarget")}} representing the secondary target of a {{domxref("FocusEvent")}}. It defaults to `null`.
+      - : یک {{domxref("EventTarget")}} که هدف ثانویهٔ یک {{domxref("FocusEvent")}} را نشان می‌دهد. مقدار پیش‌فرض آن `null` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("FocusEvent")}} interface it belongs to.
+- رابط {{domxref("FocusEvent")}} که این سازنده به آن تعلق دارد.
