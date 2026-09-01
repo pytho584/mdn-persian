@@ -1,11 +1,5 @@
 ---
 title: "CSSPrimitiveValue: setFloatValue() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPrimitiveValue/setFloatValue"
-status: "needs-translation"
----
-
----
-title: "CSSPrimitiveValue: setFloatValue() method"
 short-title: setFloatValue()
 slug: Web/API/CSSPrimitiveValue/setFloatValue
 page-type: web-api-instance-method
@@ -17,89 +11,82 @@ browser-compat: api.CSSPrimitiveValue.setFloatValue
 
 {{APIRef("CSSOM")}}{{deprecated_header}}{{non-standard_header}}
 
-The **`setFloatValue()`** method of the
-{{domxref("CSSPrimitiveValue")}} interface is used to set a float value. If the property
-attached to this value can't accept the specified unit or the float value, the value
-will be unchanged and a {{domxref("DOMException")}} will be raised.
+**`setFloatValue()`** 方法属于 {{domxref("CSSPrimitiveValue")}} 接口，用于设置一个浮点数值。如果绑定到该值的属性无法接受指定的单位或该浮点值，则值不会改变，并会抛出一个 {{domxref("DOMException")}}。
 
 > [!NOTE]
-> This method was part of an attempt to create a typed CSS Object Model. This attempt has been abandoned, and most browsers do
-> not implement it.
+> 此方法曾是构建类型化 CSS 对象模型（Typed CSS Object Model）尝试的一部分。该尝试已被放弃，大多数浏览器未实现此方法。
 >
-> To achieve your purpose, you can use:
+> 为了实现你的目标，你可以使用：
 >
-> - the untyped [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model), widely supported, or
-> - the modern [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API), less supported and considered experimental.
+> - 被广泛支持的 [CSS 对象模型](/en-US/docs/Web/API/CSS_Object_Model)（非类型化），或
+> - 较新的 [CSS 类型化对象模型 API](/en-US/docs/Web/API/CSS_Typed_OM_API)（支持较少，且被视为实验性）。
 
-## Syntax
+## 语法
 
 ```js-nolint
 setFloatValue(unitType, floatValue)
 ```
 
-### Parameters
+### 参数
 
 - `unitType`
-  - : An `unsigned short` representing the code for the unit type, in which the
-    value should be returned. Valid values are:
+  - : 一个 `unsigned short`，表示单位类型的编码，用于指定返回数值的单位。有效值为：
 
-    | Constant         | Description                                                                                                            |
-    | ---------------- | ---------------------------------------------------------------------------------------------------------------------- |
-    | `CSS_CM`         | The value is a {{cssxref("&lt;length&gt;")}} in centimeters.                                                           |
-    | `CSS_DEG`        | The value is an {{cssxref("&lt;angle&gt;")}} in degrees.                                                               |
-    | `CSS_DIMENSION`  | The value is a {{cssxref("&lt;number&gt;")}} with an unknown dimension.                                                |
-    | `CSS_EMS`        | The value is a {{cssxref("&lt;length&gt;")}} in em units.                                                              |
-    | `CSS_EXS`        | The value is a {{cssxref("&lt;length&gt;")}} in ex units.                                                              |
-    | `CSS_GRAD`       | The value is an {{cssxref("&lt;angle&gt;")}} in grads.                                                                 |
-    | `CSS_HZ`         | The value is a {{cssxref("&lt;frequency&gt;")}} in Hertz. The value can be obtained by using the getFloatValue method. |
-    | `CSS_IN`         | The value is a {{cssxref("&lt;length&gt;")}} in inches.                                                                |
-    | `CSS_KHZ`        | The value is a {{cssxref("&lt;frequency&gt;")}} in Kilohertz.                                                          |
-    | `CSS_MM`         | The value is a {{cssxref("&lt;length&gt;")}} in millimeters.                                                           |
-    | `CSS_MS`         | The value is a {{cssxref("&lt;time&gt;")}} in milliseconds.                                                            |
-    | `CSS_NUMBER`     | The value is a simple {{cssxref("&lt;number&gt;")}}.                                                                   |
-    | `CSS_PC`         | The value is a {{cssxref("&lt;length&gt;")}} in picas.                                                                 |
-    | `CSS_PERCENTAGE` | The value is a {{cssxref("&lt;percentage&gt;")}}.                                                                      |
-    | `CSS_PT`         | The value is a {{cssxref("&lt;length&gt;")}} in points.                                                                |
-    | `CSS_PX`         | The value is a {{cssxref("&lt;length&gt;")}} in pixels.                                                                |
-    | `CSS_RAD`        | The value is an {{cssxref("&lt;angle&gt;")}} in radians.                                                               |
-    | `CSS_S`          | The value is a {{cssxref("&lt;time&gt;")}} in seconds.                                                                 |
+    | 常量              | 描述                                                                                                                  |
+    | ----------------- | --------------------------------------------------------------------------------------------------------------------- |
+    | `CSS_CM`          | 值为以厘米（centimeters）为单位的 {{cssxref("&lt;length&gt;")}}。                                                      |
+    | `CSS_DEG`         | 值为以度（degrees）为单位的 {{cssxref("&lt;angle&gt;")}}。                                                             |
+    | `CSS_DIMENSION`   | 值为带有未知尺寸的 {{cssxref("&lt;number&gt;")}}。                                                                     |
+    | `CSS_EMS`         | 值为以 em 为单位的 {{cssxref("&lt;length&gt;")}}。                                                                     |
+    | `CSS_EXS`         | 值为以 ex 为单位的 {{cssxref("&lt;length&gt;")}}。                                                                     |
+    | `CSS_GRAD`        | 值为以百分度（grads）为单位的 {{cssxref("&lt;angle&gt;")}}。                                                           |
+    | `CSS_HZ`          | 值为以赫兹（Hertz）为单位的 {{cssxref("&lt;frequency&gt;")}}。可使用 `getFloatValue` 方法获取该值。                    |
+    | `CSS_IN`          | 值为以英寸（inches）为单位的 {{cssxref("&lt;length&gt;")}}。                                                           |
+    | `CSS_KHZ`         | 值为以千赫兹（Kilohertz）为单位的 {{cssxref("&lt;frequency&gt;")}}。                                                   |
+    | `CSS_MM`          | 值为以毫米（millimeters）为单位的 {{cssxref("&lt;length&gt;")}}。                                                      |
+    | `CSS_MS`          | 值为以毫秒（milliseconds）为单位的 {{cssxref("&lt;time&gt;")}}。                                                       |
+    | `CSS_NUMBER`      | 值为一个简单的 {{cssxref("&lt;number&gt;")}}。                                                                         |
+    | `CSS_PC`          | 值为以派卡（picas）为单位的 {{cssxref("&lt;length&gt;")}}。                                                            |
+    | `CSS_PERCENTAGE`  | 值为一个 {{cssxref("&lt;percentage&gt;")}}。                                                                            |
+    | `CSS_PT`          | 值为以磅（points）为单位的 {{cssxref("&lt;length&gt;")}}。                                                              |
+    | `CSS_PX`          | 值为以像素（pixels）为单位的 {{cssxref("&lt;length&gt;")}}。                                                             |
+    | `CSS_RAD`         | 值为以弧度（radians）为单位的 {{cssxref("&lt;angle&gt;")}}。                                                           |
+    | `CSS_S`           | 值为以秒（seconds）为单位的 {{cssxref("&lt;time&gt;")}}。                                                              |
 
 - `floatValue`
-  - : A `float` representing the new float value.
+  - : 一个 `float`，表示新的浮点数值。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-### Exceptions
+### 异常
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th scope="col"><strong>Type</strong></th>
-      <th scope="col"><strong>Description</strong></th>
+      <th scope="col"><strong>类型</strong></th>
+      <th scope="col"><strong>描述</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code>DOMException</code></td>
       <td>
-        An <code>INVALID_ACCESS_ERR</code> is raised if the CSS value doesn't
-        contain a float value or if the string value can't be converted into the
-        specified unit.<br />A NO_MODIFICATION_ALLOWED_ERR is raised if this
-        property is read-only.
+        如果 CSS 值不包含浮点数值，或者字符串值无法转换为指定的单位，则会抛出
+        <code>INVALID_ACCESS_ERR</code> 错误。<br />如果该属性是只读的，则会抛出
+        <code>NO_MODIFICATION_ALLOWED_ERR</code> 错误。
       </td>
     </tr>
   </tbody>
 </table>
 
-## Specifications
+## 规范
 
-This feature was originally defined in the [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) specification, but has been dropped from any
-standardization effort since then.
+此功能最初在 [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) 规范中定义，但此后已从所有标准化工作中移除。
 
-It has been superseded by a modern, but incompatible, [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) that is now on the standard track.
+它已被一个现代但不兼容的 [CSS 类型化对象模型 API](/en-US/docs/Web/API/CSS_Typed_OM_API) 所取代，该 API 目前正在标准轨道上。
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
