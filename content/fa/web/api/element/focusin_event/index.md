@@ -1,11 +1,5 @@
 ---
 title: "Element: focusin event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/focusin_event"
-status: "needs-translation"
----
-
----
-title: "Element: focusin event"
 short-title: focusin
 slug: Web/API/Element/focusin_event
 page-type: web-api-event
@@ -14,15 +8,15 @@ browser-compat: api.Element.focusin_event
 
 {{APIRef("UI Events")}}
 
-The **`focusin`** event fires when an element has received focus, after the {{domxref("Element/focus_event", "focus")}} event. The two events differ in that `focusin` bubbles, while `focus` does not.
+رویداد **`focusin`** هنگامی رخ میدهد که یک عنصر تمرکز (focus) را دریافت کرده باشد؛ این رویداد پس از رویداد {{domxref("Element/focus_event", "focus")}} رخ میدهد. تفاوت این دو رویداد در این است که `focusin` حباب میزند (bubbles)، در حالی که `focus` این کار را نمیکند.
 
-The opposite of `focusin` is the {{domxref("Element/focusout_event", "focusout")}} event, which fires when the element has lost focus.
+رویداد متقابل `focusin` رویداد {{domxref("Element/focusout_event", "focusout")}} است که هنگامی رخ میدهد عنصر تمرکز خود را از دست بدهد.
 
-The `focusin` event is not cancelable.
+رویداد `focusin` قابل لغو (cancelable) نیست.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روشهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی مدیریتکننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("focusin", (event) => { })
@@ -30,27 +24,27 @@ addEventListener("focusin", (event) => { })
 onfocusin = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("FocusEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("FocusEvent")}} که از {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث برده شده است.
 
 {{InheritanceDiagram("FocusEvent")}}
 
-## Examples
+## مثالها
 
-### Live example
+### مثال زنده
 
 #### HTML
 
 ```html
 <form id="form">
   <label>
-    Some text:
-    <input type="text" placeholder="text input" />
+    متنی:
+    <input type="text" placeholder="ورودی متن" />
   </label>
   <label>
-    Password:
-    <input type="password" placeholder="password" />
+    رمز عبور:
+    <input type="password" placeholder="رمز عبور" />
   </label>
 </form>
 ```
@@ -69,22 +63,22 @@ form.addEventListener("focusout", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Live_example", '100%', '50px')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
 > [!NOTE]
-> The _UI Events_ specification describes an [order of focus events](/en-US/docs/Web/API/FocusEvent#order_of_events) that's different from what current browsers implement.
+> در مشخصات _UI Events_، [ترتیبی برای رویدادهای تمرکز](/en-US/docs/Web/API/FocusEvent#order_of_events) توصیف شده است که با آنچه مرورگرهای فعلی پیادهسازی میکنند متفاوت است.
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: {{domxref("Element/blur_event", "blur")}}, {{domxref("Element/focus_event", "focus")}}, {{domxref("Element/focusout_event", "focusout")}}
-- [Focusing: focus/blur](https://javascript.info/focus-blur)
+- رویدادهای مرتبط: {{domxref("Element/blur_event", "blur")}}، {{domxref("Element/focus_event", "focus")}}، {{domxref("Element/focusout_event", "focusout")}}
+- [تمرکز: focus/blur](https://javascript.info/focus-blur)
