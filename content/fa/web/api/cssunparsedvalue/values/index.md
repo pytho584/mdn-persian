@@ -1,11 +1,5 @@
 ---
 title: "CSSUnparsedValue: values() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSUnparsedValue/values"
-status: "needs-translation"
----
-
----
-title: "CSSUnparsedValue: values() method"
 short-title: values()
 slug: Web/API/CSSUnparsedValue/values
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.CSSUnparsedValue.values
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSUnparsedValue.values()`** method returns a new _array iterator_ object that contains the values for each index in the CSSUnparsedValue object.
+متد **`CSSUnparsedValue.values()`** یک شیء _تکرارکننده آرایه_ جدید برمی‌گرداند که مقادیر هر ایندکس در شیء CSSUnparsedValue را در خود دارد.
 
 ## Syntax
 
@@ -22,28 +16,28 @@ The **`CSSUnparsedValue.values()`** method returns a new _array iterator_ object
 values()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{jsxref("Array")}}.
+یک {{jsxref("Array")}} جدید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSUnparsedValue.CSSUnparsedValue", "CSSUnparsedValue()")}}
 - {{domxref("CSSUnparsedValue.entries")}}
 - {{domxref("CSSUnparsedValue.forEach")}}
 - {{domxref("CSSUnparsedValue.keys")}}
 - {{domxref("CSSUnparsedValue.length")}}
-- [Using the CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
-- [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
+- [استفاده از CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
+- [API مدل شیء تایپ‌شده CSS](/en-US/docs/Web/API/CSS_Typed_OM_API)
