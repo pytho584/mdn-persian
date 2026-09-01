@@ -1,11 +1,5 @@
 ---
 title: "HIDDevice: sendReport() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/sendReport"
-status: "needs-translation"
----
-
----
-title: "HIDDevice: sendReport() method"
 short-title: sendReport()
 slug: Web/API/HIDDevice/sendReport
 page-type: web-api-instance-method
@@ -16,35 +10,35 @@ browser-compat: api.HIDDevice.sendReport
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`sendReport()`** method of the {{domxref("HIDDevice")}} interface sends an output report to the HID device.
+متد **`sendReport()`** از رابط {{domxref("HIDDevice")}} یک گزارش خروجی به دستگاه HID ارسال می‌کند.
 
-The `reportId` for each of the report formats that this device supports can be retrieved from {{domxref("HIDDevice.collections")}}.
+مقدار `reportId` برای هر یک از قالب‌های گزارشی که این دستگاه پشتیبانی می‌کند را می‌توانید از {{domxref("HIDDevice.collections")}} دریافت کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 sendReport(reportId, data)
 ```
 
-### Parameters
+### پارامترها
 
 - `reportId`
-  - : An 8-bit report ID. If the HID device does not use report IDs, send `0`.
+  - : یک شناسهٔ گزارش ۸ بیتی. اگر دستگاه HID از شناسه‌های گزارش استفاده نمی‌کند، مقدار `0` را ارسال کنید.
 - `data`
-  - : Bytes as an {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, or a {{jsxref("DataView")}}.
+  - : بایت‌ها به‌صورت یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}}.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with `undefined` once the report has been sent.
+یک {{jsxref("Promise")}} که پس از ارسال گزارش با مقدار `undefined` حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if sending the report fails for any reason.
+  - : اگر ارسال گزارش به هر دلیلی ناموفق باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The example below shows how to make a Joy-Con device rumble using output reports. You can see more examples, and live demos in the article [Connecting to uncommon HID devices](https://developer.chrome.com/docs/capabilities/hid).
+مثال زیر نشان می‌دهد که چگونه می‌توانید با استفاده از گزارش‌های خروجی، دستگاه Joy-Con را به لرزش درآورید. می‌توانید مثال‌های بیشتر و دموهای زنده را در مقالهٔ [اتصال به دستگاه‌های HID غیرمعمول](https://developer.chrome.com/docs/capabilities/hid) ببینید.
 
 ```js
 // First, send a command to enable vibration.
@@ -58,10 +52,10 @@ const rumbleData = [/* … */];
 await device.sendReport(0x10, new Uint8Array(rumbleData));
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
