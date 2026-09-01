@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: ended event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/ended_event"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: ended event"
 short-title: ended
 slug: Web/API/HTMLMediaElement/ended_event
 page-type: web-api-event
@@ -14,18 +8,18 @@ browser-compat: api.HTMLMediaElement.ended_event
 
 {{APIRef("HTMLMediaElement")}}
 
-The `ended` event is fired when playback or streaming has stopped because the end of the media was reached or because no further data is available.
+رویداد `ended` زمانی رخ می‌دهد که پخش یا جریان (streaming) به دلیل رسیدن به انتهای رسانه یا در دسترس نبودن داده‌ی بیشتر متوقف شود.
 
-This event occurs based upon {{domxref("HTMLMediaElement")}} ({{HTMLElement("audio")}} and {{HTMLElement("video")}}) fire `ended` when playback reaches the end of the media.
+این رویداد بر اساس {{domxref("HTMLMediaElement")}} ({{HTMLElement("audio")}} و {{HTMLElement("video")}}) هنگامی رخ می‌دهد که پخش به انتهای رسانه می‌رسد.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو (cancelable) نیست و رویداد حباب‌دار (bubbling) نیز نیست.
 
 > [!NOTE]
-> The `ended` event doesn't fire if the [`loop`](/en-US/docs/Web/API/HTMLMediaElement/loop) property is `true` and [`playbackRate`](/en-US/docs/Web/API/HTMLMediaElement/playbackRate) is non-negative.
+> رویداد `ended` هنگامی رخ نمی‌دهد که ویژگی [`loop`](/en-US/docs/Web/API/HTMLMediaElement/loop) برابر `true` باشد و [`playbackRate`](/en-US/docs/Web/API/HTMLMediaElement/playbackRate) غیرمنفی باشد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} وارد کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("ended", (event) => { })
@@ -33,15 +27,15 @@ addEventListener("ended", (event) => { })
 onended = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-These examples add an event listener for the HTMLMediaElement's `ended` event, then post a message when that event handler has reacted to the event firing.
+این مثال‌ها یک شنونده رویداد برای رویداد `ended` عنصر HTMLMediaElement اضافه می‌کنند و سپس زمانی که آن کنترل‌کننده به رخ دادن رویداد واکنش نشان داد، یک پیام ثبت می‌کنند.
 
-Using `addEventListener()`:
+استفاده با `addEventListener()`:
 
 ```js
 const video = document.querySelector("video");
@@ -53,7 +47,7 @@ video.addEventListener("ended", (event) => {
 });
 ```
 
-Using the `onended` event handler property:
+استفاده با ویژگی کنترل‌کننده رویداد `onended`:
 
 ```js
 const video = document.querySelector("video");
@@ -65,42 +59,42 @@ video.onended = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## Related Events
+## رویدادهای مرتبط
 
-- The HTMLMediaElement {{domxref("HTMLMediaElement.playing_event", 'playing')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.canplaythrough_event", 'canplaythrough')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.timeupdate_event", 'timeupdate')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.play_event", 'play')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.pause_event", 'pause')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.stalled_event", 'stalled')}} event
+- رویداد {{domxref("HTMLMediaElement.playing_event", 'playing')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.canplaythrough_event", 'canplaythrough')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.timeupdate_event", 'timeupdate')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.play_event", 'play')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.pause_event", 'pause')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.stalled_event", 'stalled')}} در HTMLMediaElement
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAudioElement")}}
 - {{domxref("HTMLVideoElement")}}
 - {{HTMLElement("audio")}}
 - {{HTMLElement("video")}}
 - [Media Capture and Streams](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-  - [`MediaStreamTrack`: `ended` event](/en-US/docs/Web/API/MediaStreamTrack/ended_event)
+  - رویداد `ended` در [`MediaStreamTrack`](/en-US/docs/Web/API/MediaStreamTrack/ended_event)
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-  - [Web audio API: ended event](/en-US/docs/Web/API/AudioScheduledSourceNode/ended_event)
+  - [رویداد ended در Web audio API](/en-US/docs/Web/API/AudioScheduledSourceNode/ended_event)
