@@ -1,7 +1,5 @@
 ---
 title: "Element: dblclick event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.Element.dblclick_event
 
 {{APIRef("UI Events")}}
 
-The **`dblclick`** event fires when a pointing device button (such as a mouse's primary button) is double-clicked; that is, when it's rapidly clicked twice on a single element within a very short span of time.
+رویداد **`dblclick`** زمانی رخ می‌دهد که دکمه‌ای از دستگاه اشاره‌گر (مانند دکمه اصلی ماوس) دوبار کلیک شود؛ یعنی دو بار پشت سر هم و در بازه زمانی بسیار کوتاه روی یک عنصر کلیک شود.
 
-`dblclick` fires after two {{domxref("Element/click_event", "click")}} events (and by extension, after two pairs of {{domxref("Element.mousedown_event", "mousedown")}} and {{domxref("Element.mouseup_event", "mouseup")}} events).
+رویداد `dblclick` پس از دو رویداد {{domxref("Element/click_event", "click")}} فعال می‌شود (و به‌تبع آن، پس از دو جفت رویداد {{domxref("Element.mousedown_event", "mousedown")}} و {{domxref("Element.mouseup_event", "mouseup")}}).
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler) تنظیم کنید.
 
 ```js-nolint
 addEventListener("dblclick", (event) => { })
@@ -28,15 +26,15 @@ addEventListener("dblclick", (event) => { })
 ondblclick = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MouseEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("MouseEvent")}} است. از {{domxref("UIEvent")}} و {{domxref("Event")}} ارث می‌برد.
 
 {{InheritanceDiagram("MouseEvent")}}
 
-## Examples
+## مثال‌ها
 
-This example toggles the size of a card when you double click on it.
+در این مثال، اندازه یک کارت با دوبار کلیک کردن روی آن تغییر می‌کند (بین دو حالت جابه‌جا می‌شود).
 
 ### JavaScript
 
@@ -76,19 +74,19 @@ aside {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", 700, 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Learn: Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
 - {{domxref("Element/auxclick_event", "auxclick")}}
