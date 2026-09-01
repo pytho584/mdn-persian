@@ -1,11 +1,5 @@
 ---
 title: "Document: open() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/open"
-status: "needs-translation"
----
-
----
-title: "Document: open() method"
 short-title: open()
 slug: Web/API/Document/open
 page-type: web-api-instance-method
@@ -14,33 +8,30 @@ browser-compat: api.Document.open
 
 {{APIRef("DOM")}}
 
-The **`Document.open()`** method opens a document for
-{{domxref("Document.write", "writing", "", "1")}}.
+متد **`Document.open()`** یک سند را برای {{domxref("Document.write", "نوشتن", "", "1")}} باز می‌کند.
 
-This does come with some side effects. For example:
+این کار عوارض جانبی خود را دارد. برای مثال:
 
-- All event listeners currently registered on the document, nodes inside the document,
-  or the document's window are removed.
-- All existing nodes are removed from the document.
+- همهٔ شنونده‌های رویداد (event listeners) که در حال حاضر روی سند، گره‌های داخل سند، یا پنجرهٔ سند ثبت شده‌اند، حذف می‌شوند.
+- همهٔ گره‌های موجود از سند حذف می‌شوند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 open()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A `Document` object instance.
+یک شیء نمونه از `Document`.
 
-## Examples
+## مثال‌ها
 
-The following simple code opens the document and replaces its content with a number of
-different HTML fragments, before closing it again.
+کد سادهٔ زیر سند را باز می‌کند و محتوای آن را با چند قطعه HTML متفاوت جایگزین می‌کند و سپس دوباره آن را می‌بندد.
 
 ```js
 document.open();
@@ -50,55 +41,45 @@ document.write("<p>The number is 42</p>");
 document.close();
 ```
 
-## Notes
+## نکات
 
-An automatic `document.open()` call happens when
-{{domxref("document.write()")}} is called after the page has loaded.
+یک فراخوانی خودکار `document.open()` زمانی رخ می‌دهد که {{domxref("document.write()")}} پس از بارگذاری صفحه فراخوانی شود.
 
-### Content Security
+### امنیت محتوا
 
-This method is subject to the same [same-origin policy](/en-US/docs/Web/Security/Defenses/Same-origin_policy) as other properties, and does not work if doing so would change the document's origin.
+این متد تابع همان [خط‌مشی مبدأ یکسان](/en-US/docs/Web/Security/Defenses/Same-origin_policy) است که سایر ویژگی‌ها از آن پیروی می‌کنند و اگر انجام این کار مبدأ سند را تغییر دهد، کار نخواهد کرد.
 
-## Three-argument document.open()
+## نسخهٔ سه‌پارامتری document.open()
 
-There is a lesser-known and little-used three-argument version of
-`document.open()`, which is an alias of {{domxref("Window.open()")}} (see
-its page for full details).
+یک نسخهٔ سه‌پارامتری `document.open()` با کاربرد کمتر و ناشناخته‌تر وجود دارد که نام مستعار {{domxref("Window.open()")}} است (برای جزئیات کامل به صفحهٔ آن مراجعه کنید).
 
-This call, for example opens github.com in a new window, with its opener set to
-`null`:
+برای مثال، این فراخوانی github.com را در یک پنجرهٔ جدید باز می‌کند، در حالی که opener آن روی `null` تنظیم شده است:
 
 ```js
 document.open("https://www.github.com", "", "noopener=true");
 ```
 
-## Two-argument document.open()
+## نسخهٔ دوپارامتری document.open()
 
-Browsers used to support a two-argument `document.open()`, with the
-following signature:
+مرورگرها قبلاً از نسخهٔ دوپارامتری `document.open()` با امضای زیر پشتیبانی می‌کردند:
 
 ```js
 document.open(type, replace);
 ```
 
-Where `type` specified the MIME type of the data you are writing (e.g.
-`text/html`) and replace if set (i.e., a string of `"replace"`)
-specified that the history entry for the new document would replace the current history
-entry of the document being written to.
+که در آن `type` نوع MIME داده‌هایی را که می‌نویسید مشخص می‌کرد (مثلاً `text/html`) و `replace` اگر تنظیم می‌شد (یعنی یک رشتهٔ `"replace"`) مشخص می‌کرد که ورودی تاریخچه (history entry) برای سند جدید، ورودی تاریخچهٔ فعلی سندی که در حال نوشتن در آن هستیم را جایگزین کند.
 
-This form is now obsolete; it won't throw an error, but instead just forwards to
-`document.open()` (i.e., is the equivalent of just running it with no
-arguments). The history-replacement behavior now always happens.
+این شکل اکنون منسوخ شده است؛ خطا ایجاد نمی‌کند، بلکه فقط به `document.open()` ارجاع می‌دهد (یعنی معادل فراخوانی آن بدون آرگومان است). رفتار جایگزینی تاریخچه اکنون همیشه انجام می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document")}}
 - {{domxref("Window.open()")}}
