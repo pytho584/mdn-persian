@@ -1,11 +1,5 @@
 ---
 title: "HTMLAllCollection: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAllCollection/length"
-status: "needs-translation"
----
-
----
-title: "HTMLAllCollection: length property"
 short-title: length
 slug: Web/API/HTMLAllCollection/length
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.HTMLAllCollection.length
 
 {{APIRef("DOM")}}
 
-The **`HTMLAllCollection.length`** property returns the number of items in this {{domxref("HTMLAllCollection")}}.
+خاصیت **`HTMLAllCollection.length`** تعداد آیتم‌های موجود در این {{domxref("HTMLAllCollection")}} را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer value representing the number of items in this `HTMLAllCollection`.
+یک عدد صحیح که تعداد آیتم‌های این `HTMLAllCollection` را نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLCollection.length")}}
