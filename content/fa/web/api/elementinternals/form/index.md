@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: form property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/form"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: form property"
 short-title: form
 slug: Web/API/ElementInternals/form
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.ElementInternals.form
 
 {{APIRef("Web Components")}}
 
-The **`form`** read-only property of the {{domxref("ElementInternals")}} interface returns the {{domxref("HTMLFormElement")}} associated with this element.
+ویژگی فقط خواندنی **`form`** از رابط {{domxref("ElementInternals")}}، {{domxref("HTMLFormElement")}} مرتبط با این عنصر را باز می‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLFormElement")}}.
+یک {{domxref("HTMLFormElement")}}.
 
-## Examples
+## مثال‌ها
 
-The following example shows a custom checkbox component inside a form with an ID of `myForm`.
-Printing `form.length` to the console, gives us the value of {{domxref("HTMLFormElement.length")}}.
+مثال زیر یک کامپوننت چک‌باکس سفارشی را درون یک فرم با شناسه `myForm` نشان می‌دهد. چاپ `form.length` در کنسول، مقدار {{domxref("HTMLFormElement.length")}} را به ما می‌دهد.
 
 ```html
 <form id="myForm">
@@ -50,10 +43,10 @@ class CustomCheckbox extends HTMLElement {
 window.customElements.define("custom-checkbox", CustomCheckbox);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
