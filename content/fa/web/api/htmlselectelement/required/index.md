@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: required property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/required"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: required property"
 short-title: required
 slug: Web/API/HTMLSelectElement/required
 page-type: web-api-instance-property
@@ -14,29 +8,29 @@ browser-compat: api.HTMLSelectElement.required
 
 {{ APIRef("HTML DOM") }}
 
-The **`required`** property of the {{DOMxRef("HTMLSelectElement")}} interface specifies that the user must select an option with a non-empty string value before submitting a form. It reflects the {{htmlelement("select")}} element's [`required`](/en-US/docs/Web/HTML/Reference/Elements/select#required) attribute.
+ویژگی **`required`** در رابط {{DOMxRef("HTMLSelectElement"}} مشخص می‌کند که کاربر باید قبل از ارسال فرم، گزینه‌ای با مقدار رشته‌ای غیرخالی انتخاب کند. این ویژگی بازتاب‌دهنده ویژگی [`required`](/en-US/docs/Web/HTML/Reference/Elements/select#required) عنصر {{htmlelement("select")}} است.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی (boolean).
 
-## Examples
+## مثال‌ها
 
 ```js
 const selectElement = document.getElementById("fruits");
 console.log(selectElement.required);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{HTMLElement("select")}}
 - {{DOMXref("HTMLSelectElement.validity")}}
-- {{cssxref(":required")}} pseudo-class
+- شبه‌کلاس {{cssxref(":required")}}
