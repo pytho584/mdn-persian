@@ -1,10 +1,4 @@
 ---
-title: "CSSNestedDeclarations"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNestedDeclarations"
-status: "needs-translation"
----
-
----
 title: CSSNestedDeclarations
 slug: Web/API/CSSNestedDeclarations
 page-type: web-api-interface
@@ -13,32 +7,32 @@ browser-compat: api.CSSNestedDeclarations
 
 {{APIRef("CSSOM")}}
 
-The **`CSSNestedDeclarations`** interface of the [CSS Rule API](/en-US/docs/Web/API/CSSRule) is used to group nested {{domxref("CSSRule")}}s.
+رابطهٔ **`CSSNestedDeclarations`** در [CSS Rule API](/en-US/docs/Web/API/CSSRule) برای گروه‌بندی {{domxref("CSSRule")}}های تو در تو به کار می‌رود.
 
-The interface allows the [CSS Object Model (CSSOM](/en-US/docs/Web/API/CSS_Object_Model) to mirror the structure of CSS documents with nested CSS rules, and ensure that rules are parsed and evaluated in the order that they are declared.
+این رابط به [CSS Object Model (CSSOM)](/en-US/docs/Web/API/CSS_Object_Model) اجازه می‌دهد ساختار اسناد CSS با قواعد تو در تو را بازتاب دهد و اطمینان حاصل کند که قواعد به ترتیب اعلام‌شده تجزیه و ارزیابی می‌شوند.
 
 > [!NOTE]
-> Implementations that do not support this interface may parse nested rules in the wrong order.
-> See [Browser compatibility](#browser_compatibility) for more information.
+> پیاده‌سازی‌هایی که از این رابط پشتیبانی نمی‌کنند ممکن است قواعد تو در تو را به ترتیب اشتباه تجزیه کنند.
+> برای اطلاعات بیشتر به [سازگاری مرورگرها](#browser_compatibility) مراجعه کنید.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestor {{domxref("CSSRule")}}._
+_ویژگی‌ها را از جد خود {{domxref("CSSRule")}} به ارث می‌برد._
 
 - {{domxref("CSSNestedDeclarations.style")}} {{ReadOnlyInline}}
-  - : Returns the values of the nested rules.
+  - : مقادیر قواعد تو در تو را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific methods; inherits methods from its ancestor {{domxref("CSSRule")}}._
+_روش خاصی ندارد؛ روش‌ها را از جد خود {{domxref("CSSRule")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
 ### CSS
 
-The CSS below includes a selector `.foo` that contains two declarations and a media query.
+CSS زیر شامل یک انتخاب‌گر `.foo` است که دو اعلان و یک media query دارد.
 
 ```css
 .foo {
@@ -50,19 +44,19 @@ The CSS below includes a selector `.foo` that contains two declarations and a me
 }
 ```
 
-This is represented by a number of JavaScript objects in the [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model):
+این ساختار توسط چند شیء جاوااسکریپت در [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model) نمایش داده می‌شود:
 
-- A {{domxref("CSSStyleRule")}} object that represents the `background-color: silver` rule.
-  This can be returned via `document.styleSheets[0].cssRules[0]`.
-- A {{domxref("CSSMediaRule")}} object that represents the `@media screen` rule, and which can be returned via `document.styleSheets[0].cssRules[0].cssRules[0]`.
-  - The `CSSMediaRule` object contains a `CSSNestedDeclaration` object which represents the `color: tomato` rule nested by the `@media screen` rule.
-    This can be returned via `document.styleSheets[0].cssRules[0].cssRules[0].cssRules[0]`.
-- The final rule is a `CSSNestedDeclaration` object that represents the `color: black` rule in the stylesheet, and which can be returned via `document.styleSheets[0].cssRules[0].cssRules[1]`.
+- یک شیء {{domxref("CSSStyleRule")}} که قاعدهٔ `background-color: silver` را نشان می‌دهد.
+  این شیء را می‌توان از طریق `document.styleSheets[0].cssRules[0]` دریافت کرد.
+- یک شیء {{domxref("CSSMediaRule")}} که قاعدهٔ `@media screen` را نشان می‌دهد و از طریق `document.styleSheets[0].cssRules[0].cssRules[0]` قابل دریافت است.
+  - شیء `CSSMediaRule` شامل یک شیء `CSSNestedDeclaration` است که قاعدهٔ `color: tomato` را نشان می‌دهد و توسط قاعدهٔ `@media screen` تو در تو قرار گرفته است.
+    این شیء را می‌توان از طریق `document.styleSheets[0].cssRules[0].cssRules[0].cssRules[0]` دریافت کرد.
+- آخرین قاعده یک شیء `CSSNestedDeclaration` است که قاعدهٔ `color: black` را در شیوه‌نامه نشان می‌دهد و از طریق `document.styleSheets[0].cssRules[0].cssRules[1]` قابل دریافت است.
 
 > [!NOTE]
-> All top-level styles after the first `CSSNestedDeclaration` must also be represented as `CSSNestedDeclaration` objects in order to follow the [CSS nested declarations rule](/en-US/docs/Web/CSS/Guides/Nesting/Using#nested_declarations_rule)
+> تمام styleهای سطح بالای بعد از اولین `CSSNestedDeclaration` نیز باید به‌عنوان اشیاء `CSSNestedDeclaration` نمایش داده شوند تا با [قاعدهٔ اعلان‌های تو در تو در CSS](/en-US/docs/Web/CSS/Guides/Nesting/Using#nested_declarations_rule) مطابقت داشته باشند.
 
-### CSSOM (CSS Object Model)
+### CSSOM (مدل شیء CSS)
 
 ```plain
 ↳ CSSStyleRule
@@ -77,15 +71,15 @@ This is represented by a number of JavaScript objects in the [CSS Object Model](
       - color: black
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See Also
+## جستارهای وابسته
 
 - {{domxref("CSSNestedDeclarations.style")}}
-- [The Nested Declarations Rule](/en-US/docs/Web/CSS/Guides/Nesting/Using#nested_declarations_rule)
+- [قاعدهٔ اعلان‌های تو در تو](/en-US/docs/Web/CSS/Guides/Nesting/Using#nested_declarations_rule)
