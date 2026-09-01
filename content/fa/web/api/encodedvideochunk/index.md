@@ -1,7 +1,6 @@
 ---
 title: "EncodedVideoChunk"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk"
-status: "needs-translation"
 ---
 
 ---
@@ -13,33 +12,33 @@ browser-compat: api.EncodedVideoChunk
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`EncodedVideoChunk`** interface of the {{domxref('WebCodecs API','','',' ')}} represents a chunk of encoded video data.
+رابط **`EncodedVideoChunk`** در {{domxref('WebCodecs API','','',' ')}} یک تکه از داده‌های ویدیویی کدگذاری‌شده را نمایش می‌دهد.
 
-## Constructor
+## سازنده
 
 - {{domxref("EncodedVideoChunk.EncodedVideoChunk", "EncodedVideoChunk()")}}
-  - : Creates a new `EncodedVideoChunk` object.
+  - : یک شیء `EncodedVideoChunk` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("EncodedVideoChunk.type")}} {{ReadOnlyInline}}
-  - : Returns a string indicating whether this chunk of data is a key chunk.
+  - : رشته‌ای را برمی‌گرداند که نشان می‌دهد آیا این تکه داده یک تکه کلیدی (key chunk) است یا خیر.
 - {{domxref("EncodedVideoChunk.timestamp")}} {{ReadOnlyInline}}
-  - : Returns an integer representing the timestamp of the video in microseconds.
+  - : یک عدد صحیح را برمی‌گرداند که برچسب زمانی ویدیو را بر حسب میکروثانیه نشان می‌دهد.
 - {{domxref("EncodedVideoChunk.duration")}} {{ReadOnlyInline}}
-  - : Returns an integer representing the duration of the video in microseconds.
+  - : یک عدد صحیح را برمی‌گرداند که مدت‌زمان ویدیو را بر حسب میکروثانیه نشان می‌دهد.
 - {{domxref("EncodedVideoChunk.byteLength")}} {{ReadOnlyInline}}
-  - : Returns an integer representing the length of the video in bytes.
+  - : یک عدد صحیح را برمی‌گرداند که طول ویدیو را بر حسب بایت نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("EncodedVideoChunk.copyTo()")}}
-  - : Copies the encoded video data.
+  - : داده‌های ویدیویی کدگذاری‌شده را کپی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
