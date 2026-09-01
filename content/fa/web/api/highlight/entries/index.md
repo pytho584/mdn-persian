@@ -1,11 +1,5 @@
 ---
 title: "Highlight: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Highlight/entries"
-status: "needs-translation"
----
-
----
-title: "Highlight: entries() method"
 short-title: entries()
 slug: Web/API/Highlight/entries
 page-type: web-api-instance-method
@@ -15,27 +9,27 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`entries()`** method of the {{domxref("Highlight")}} interface returns a new [Iterator](/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators) object that contains an array of `[range, range]` for each {{domxref("AbstractRange")}} object in the `Highlight` object, in insertion order.
+متد **`entries()`** از واسط {{domxref("Highlight")}} یک شیء [Iterator](/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators) جدید برمی‌گرداند که شامل یک آرایه از `[range, range]` برای هر شیء {{domxref("AbstractRange")}} در شیء `Highlight` به ترتیب درج است.
 
-`Highlight` is a {{jsxref("Set")}}-like object, so this is similar to using {{jsxref("Set.entries()")}}.
+`Highlight` یک شیء شبیه به {{jsxref("Set")}} است، بنابراین این متد مشابه استفاده از {{jsxref("Set.entries()")}} می‌باشد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 entries()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار برگشتی
 
-A new iterator object that contains an array of `[range, range]` for each `AbstractRange` object in the given `Highlight`, in insertion order.
+یک شیء مکرر (iterator) جدید که شامل آرایه‌ای از `[range, range]` برای هر شیء `AbstractRange` در `Highlight` داده شده، به ترتیب درج است.
 
-## Examples
+## مثال‌ها
 
-The code snippet below shows how create a new highlight with two ranges, and then log the ranges by using the iterator returned by the `entries()` method:
+قطعه کد زیر نحوه ایجاد یک هایلایت جدید با دو محدوده (range) و سپس لاگ کردن محدوده‌ها با استفاده از مکرر (iterator) برگردانده شده توسط متد `entries()` را نشان می‌دهد:
 
 ```js
 const text = new Text("Time is an illusion. Lunchtime doubly so.");
@@ -58,7 +52,7 @@ console.log(iter.next().value); // [Range, Range]
 console.log(iter.next().value); // [Range, Range]
 ```
 
-The following code example shows how to iterate over the ranges in a highlight by using a [`for...of`](/en-US/docs/Web/JavaScript/Reference/Statements/for...of) loop:
+مثال کد زیر نحوه پیمایش محدوده‌ها در یک هایلایت با استفاده از حلقه [`for...of`](/en-US/docs/Web/JavaScript/Reference/Statements/for...of) را نشان می‌دهد:
 
 ```js
 const text = new Text("Time is an illusion. Lunchtime doubly so.");
@@ -82,15 +76,15 @@ for (const [range] of highlight.entries()) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
-- [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
+- [CSS Custom Highlight API: آینده هایلایت کردن محدوده‌های متن در وب](https://css-tricks.com/css-custom-highlight-api-early-look/)
