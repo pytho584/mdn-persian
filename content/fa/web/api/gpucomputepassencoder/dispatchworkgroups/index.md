@@ -1,9 +1,4 @@
----
-title: "GPUComputePassEncoder: dispatchWorkgroups() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/dispatchWorkgroups"
-status: "needs-translation"
----
-
+```
 ---
 title: "GPUComputePassEncoder: dispatchWorkgroups() method"
 short-title: dispatchWorkgroups()
@@ -14,10 +9,9 @@ browser-compat: api.GPUComputePassEncoder.dispatchWorkgroups
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`dispatchWorkgroups()`** method of the
-{{domxref("GPUComputePassEncoder")}} interface dispatches a specific grid of workgroups to perform the work being done by the current {{domxref("GPUComputePipeline")}} (i.e., set via {{domxref("GPUComputePassEncoder.setPipeline()")}}).
+**`dispatchWorkgroups()`** 方法属于 {{domxref("GPUComputePassEncoder")}} 接口，用于调度一个特定的工作组网格，以执行当前 {{domxref("GPUComputePipeline")}}（即通过 {{domxref("GPUComputePassEncoder.setPipeline()")}} 设置）所定义的工作。
 
-## Syntax
+## 语法
 
 ```js-nolint
 dispatchWorkgroups(workgroupCountX)
@@ -25,33 +19,33 @@ dispatchWorkgroups(workgroupCountX, workgroupCountY)
 dispatchWorkgroups(workgroupCountX, workgroupCountY, workgroupCountZ)
 ```
 
-### Parameters
+### 参数
 
 - `workgroupCountX`
-  - : The X dimension of the grid of workgroups to dispatch.
+  - ：要调度的工作组网格的 X 维度。
 - `workgroupCountY` {{optional_inline}}
-  - : The Y dimension of the grid of workgroups to dispatch. If omitted, `workgroupCountY` defaults to 1.
+  - ：要调度的工作组网格的 Y 维度。如果省略，`workgroupCountY` 默认为 1。
 - `workgroupCountZ` {{optional_inline}}
-  - : The Z dimension of the grid of workgroups to dispatch. If omitted, `workgroupCountZ` defaults to 1.
+  - ：要调度的工作组网格的 Z 维度。如果省略，`workgroupCountZ` 默认为 1。
 
 > [!NOTE]
-> The X, Y, and Z dimension values passed to `dispatchWorkgroups()` and {{domxref("GPUComputePassEncoder.dispatchWorkgroupsIndirect()")}} are the number of workgroups to dispatch for each dimension, not the number of shader invocations to perform across each dimension. This matches the behavior of modern native GPU APIs, but differs from the behavior of OpenCL. This means that if a {{domxref("GPUShaderModule")}} defines an entry point with `@workgroup_size(4, 4)`, and work is dispatched to it with the call `passEncoder.dispatchWorkgroups(8, 8);`, the entry point will be invoked 1024 times total — Dispatching a 4 x 4 workgroup 8 times along both the X and Y axes. `4 * 4 * 8 * 8 = 1024`.
+> 传给 `dispatchWorkgroups()` 和 {{domxref("GPUComputePassEncoder.dispatchWorkgroupsIndirect()")}} 的 X、Y、Z 维度值，是每个维度上要调度的**工作组数量**，而不是每个维度上要执行的着色器调用次数。这与现代原生 GPU API 的行为一致，但与 OpenCL 的行为不同。这意味着，如果一个 {{domxref("GPUShaderModule")}} 定义了一个带有 `@workgroup_size(4, 4)` 的入口点，并通过 `passEncoder.dispatchWorkgroups(8, 8);` 调用进行调度，那么该入口点总共会被调用 1024 次——即在 X 和 Y 两个方向上各调度 8 次 4×4 的工作组。`4 * 4 * 8 * 8 = 1024`。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-### Validation
+### 验证
 
-The following criteria must be met when calling **`dispatchWorkgroups()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUComputePassEncoder")}} becomes invalid:
+调用 **`dispatchWorkgroups()`** 时必须满足以下条件，否则会生成一个 {{domxref("GPUValidationError")}}，并且该 {{domxref("GPUComputePassEncoder")}} 将变为无效：
 
-- `workgroupCountX`, `workgroupCountY`, and `workgroupCountZ` are all less than or equal to the {{domxref("GPUDevice")}}'s `maxComputeWorkgroupsPerDimension` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
+- `workgroupCountX`、`workgroupCountY` 和 `workgroupCountZ` 都小于或等于 {{domxref("GPUDevice")}} 的 `maxComputeWorkgroupsPerDimension` {{domxref("GPUSupportedLimits", "限制", "", "nocode")}}。
 
-## Examples
+## 示例
 
-In our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/), several commands are recorded via a {{domxref("GPUCommandEncoder")}}. Most of these commands originate from the {{domxref("GPUComputePassEncoder")}} created via `beginComputePass()`.
+在 [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/) 中，通过 {{domxref("GPUCommandEncoder")}} 记录了几条命令。这些命令大部分来自通过 `beginComputePass()` 创建的 {{domxref("GPUComputePassEncoder")}}。
 
-At the start of the code, we set a global buffer size of 1000. Also, note that the workgroup size in the shader is set to 64.
+在代码开头，我们设置了一个全局缓冲区大小为 1000。另外请注意，着色器中的工作组大小设置为 64。
 
 ```js
 const BUFFER_SIZE = 1000;
@@ -68,7 +62,7 @@ var<storage, read_write> output: array<f32>;
 `;
 ```
 
-Later in the code, the `dispatchWorkgroups()` `workgroupCountX` parameter is set based on the global buffer size and the shader workgroup count.
+在后面的代码中，`dispatchWorkgroups()` 的 `workgroupCountX` 参数根据全局缓冲区大小和着色器工作组数量来设置。
 
 ```js
 // …
@@ -102,14 +96,15 @@ device.queue.submit([commandEncoder.finish()]);
 // …
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+```
