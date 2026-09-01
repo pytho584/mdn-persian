@@ -1,11 +1,5 @@
 ---
 title: "HTMLCanvasElement: webglcontextlost event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/webglcontextlost_event"
-status: "needs-translation"
----
-
----
-title: "HTMLCanvasElement: webglcontextlost event"
 short-title: webglcontextlost
 slug: Web/API/HTMLCanvasElement/webglcontextlost_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLCanvasElement.webglcontextlost_event
 
 {{APIRef("WebGL API")}}
 
-The **`webglcontextlost`** event of the [WebGL API](/en-US/docs/Web/API/WebGL_API) is fired if the user agent detects that the drawing buffer associated with a {{domxref("WebGLRenderingContext")}} object has been lost.
+رویداد **`webglcontextlost`** از [WebGL API](/en-US/docs/Web/API/WebGL_API) زمانی رخ می‌دهد که عامل کاربر تشخیص دهد بافر ترسیم مرتبط با یک شیء {{domxref("WebGLRenderingContext")}} از دست رفته است.
 
-This event does not bubble.
+این رویداد به بالا انتشار نمی‌یابد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی handler رویداد تنظیم نمایید.
 
 ```js-nolint
 addEventListener("webglcontextlost", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("webglcontextlost", (event) => { })
 onwebglcontextlost = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("WebGLContextEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("WebGLContextEvent")}} که از {{domxref("Event")}} ارث می‌برد.
 
 {{InheritanceDiagram("WebGLContextEvent")}}
 
-## Example
+## مثال
 
-With the help of the {{domxref("WEBGL_lose_context")}} extension, you can simulate the `webglcontextlost` event:
+با کمک افزونه {{domxref("WEBGL_lose_context")}} می‌توانید رویداد `webglcontextlost` را شبیه‌سازی کنید:
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -48,19 +42,19 @@ canvas.addEventListener("webglcontextlost", (event) => {
 
 gl.getExtension("WEBGL_lose_context").loseContext();
 
-// "webglcontextlost" event is logged.
+// رویداد "webglcontextlost" ثبت می‌شود.
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLContextEvent")}}
 - {{domxref("WebGLRenderingContext.isContextLost()")}}
-- {{domxref("WEBGL_lose_context")}}, {{domxref("WEBGL_lose_context.loseContext()")}}, {{domxref("WEBGL_lose_context.restoreContext()")}}
+- {{domxref("WEBGL_lose_context")}}، {{domxref("WEBGL_lose_context.loseContext()")}}، {{domxref("WEBGL_lose_context.restoreContext()")}}
