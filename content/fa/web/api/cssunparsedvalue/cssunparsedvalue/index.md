@@ -1,11 +1,5 @@
 ---
 title: "CSSUnparsedValue: CSSUnparsedValue() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSUnparsedValue/CSSUnparsedValue"
-status: "needs-translation"
----
-
----
-title: "CSSUnparsedValue: CSSUnparsedValue() constructor"
 short-title: CSSUnparsedValue()
 slug: Web/API/CSSUnparsedValue/CSSUnparsedValue
 page-type: web-api-constructor
@@ -14,7 +8,7 @@ browser-compat: api.CSSUnparsedValue.CSSUnparsedValue
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSUnparsedValue()`** constructor creates a new {{domxref("CSSUnparsedValue")}} object which represents property values that reference custom properties.
+سازنده‌ی **`CSSUnparsedValue()`** یک شیء {{domxref("CSSUnparsedValue")}} جدید ایجاد می‌کند که مقادیر ویژگی‌هایی را نشان می‌دهد که به ویژگی‌های سفارشی (custom properties) ارجاع می‌دهند.
 
 ## Syntax
 
@@ -25,11 +19,11 @@ new CSSUnparsedValue(members)
 ### Parameters
 
 - `members`
-  - : An array whose values must be either a string or a {{domxref('CSSVariableReferenceValue')}}.
+  - : آرایه‌ای که مقادیر آن باید یا یک رشته (string) باشند یا یک {{domxref('CSSVariableReferenceValue')}}.
 
 ## Examples
 
-### Basic usage
+### استفاده‌ی پایه
 
 ```js
 const value = new CSSUnparsedValue(["4deg"]);
