@@ -1,9 +1,4 @@
----
-title: "DeviceMotionEventRotationRate"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventRotationRate"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: DeviceMotionEventRotationRate
 slug: Web/API/DeviceMotionEventRotationRate
@@ -13,21 +8,22 @@ browser-compat: api.DeviceMotionEventRotationRate
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-A **`DeviceMotionEventRotationRate`** interface of the {{domxref("Device Orientation Events", "", "", "nocode")}} provides information about the rate at which the device is rotating around all three axes.
+رابط **`DeviceMotionEventRotationRate`** از {{domxref("Device Orientation Events", "", "", "nocode")}} اطلاعاتی درباره نرخ چرخش دستگاه حول هر سه محور ارائه می‌دهد.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
 - {{ domxref("DeviceMotionEventRotationRate.alpha") }} {{ReadOnlyInline}}
-  - : The amount of rotation around the Z axis, in degrees per second.
+  - : میزان چرخش حول محور Z، بر حسب درجه در ثانیه.
 - {{ domxref("DeviceMotionEventRotationRate.beta") }} {{ReadOnlyInline}}
-  - : The amount of rotation around the X axis, in degrees per second.
+  - : میزان چرخش حول محور X، بر حسب درجه در ثانیه.
 - {{ domxref("DeviceMotionEventRotationRate.gamma") }} {{ReadOnlyInline}}
-  - : The amount of rotation around the Y axis, in degrees per second.
+  - : میزان چرخش حول محور Y، بر حسب درجه در ثانیه.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
+```
