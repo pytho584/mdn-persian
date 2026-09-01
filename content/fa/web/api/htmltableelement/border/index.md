@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableElement: border property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/border"
-status: "needs-translation"
----
-
----
-title: "HTMLTableElement: border property"
 short-title: border
 slug: Web/API/HTMLTableElement/border
 page-type: web-api-instance-property
@@ -16,14 +10,13 @@ browser-compat: api.HTMLTableElement.border
 
 {{APIRef("HTML DOM")}}{{Deprecated_Header}}
 
-The **`HTMLTableElement.border`** property represents the
-border width of the {{HtmlElement("table")}} element.
+خاصیت **`HTMLTableElement.border`** نشان‌دهنده‌ی عرض حاشیه عنصر {{HtmlElement("table")}} است.
 
-## Value
+## مقدار
 
-A string representing the width of the border in pixels.
+یک رشته که عرض حاشیه را بر حسب پیکسل نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Set the width of a table border to 2 pixels
@@ -31,10 +24,10 @@ const t = document.getElementById("TableA");
 t.border = "2";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
