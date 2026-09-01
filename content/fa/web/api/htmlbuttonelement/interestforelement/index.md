@@ -1,48 +1,39 @@
 ---
 title: "HTMLButtonElement: interestForElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/interestForElement"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: interestForElement property"
 short-title: interestForElement
 slug: Web/API/HTMLButtonElement/interestForElement
 page-type: web-api-instance-property
-status:
-  - experimental
-  - non-standard
 browser-compat: api.HTMLButtonElement.interestForElement
 ---
 
 {{ApiRef("HTML DOM")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`interestForElement`** property of the {{domxref("HTMLButtonElement")}} interface gets or sets the target element of an interest invoker, in cases where the associated {{htmlelement("button")}} element is specified as an interest invoker.
+ویژگی **`interestForElement`** در رابط {{domxref("HTMLButtonElement")}}، عنصر هدفِ یک interest invoker را دریافت یا تنظیم می‌کند؛ در حالتی که عنصر {{htmlelement("button")}} مرتبط، به‌عنوان interest invoker تعیین شده باشد.
 
-See [Creating an interest invoker](/en-US/docs/Web/API/Popover_API/Using_interest_invokers#creating_an_interest_invoker) for more details.
+برای جزئیات بیشتر، به [ایجاد یک interest invoker](/en-US/docs/Web/API/Popover_API/Using_interest_invokers#creating_an_interest_invoker) مراجعه کنید.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} object instance, or `null` if the associated `<button>` element does not have a target element set.
+یک نمونه از شیء {{domxref("Element")}}، یا `null` اگر عنصر `<button>` مرتبط عنصر هدف مشخصی نداشته باشد.
 
-## Examples
+## مثال‌ها
 
-### Basic `interestForElement` usage
+### استفاده پایه از `interestForElement`
 
-In this example, we use a `<button>` element's `interestForElement` property to set its target element and then retrieve the target element's `tagName`. The `tagName` is then printed in the `<button>` element's text content.
+در این مثال، از ویژگی `interestForElement` عنصر `<button>` استفاده می‌کنیم تا عنصر هدف آن را تنظیم و سپس `tagName` عنصر هدف را بازیابی کنیم. پس از آن، `tagName` در محتوای متنی عنصر `<button>` نمایش داده می‌شود.
 
 #### HTML
 
-We include a `<button>` element and a `<div>` element. We turn the `<div>` element into a popover by setting a `popover` attribute on it.
+یک عنصر `<button>` و یک عنصر `<div>` قرار داده‌ایم. عنصر `<div>` را با افزودن ویژگی `popover` به آن، به یک popover تبدیل می‌کنیم.
 
 ```html live-sample___basic-interest-invoker
 <button href="#">a button</button>
 <div id="mypopover" popover>I am a <code>&lt;div&gt;</code> element.</div>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-We get references to the `<button>` and `<div>` elements in script, then declare an interest invoker-target relationship between the `<button>` and the `<div>` by setting the `<button>` element's `interestForElement` property equal to a reference to the `<div>`. We then set the button's text content equal to a string containing the target element's `tagName`, retrieved via `invoker.interestForElement.tagName`.
+در اسکریپت، ارجاعاتی به عناصر `<button>` و `<div>` می‌گیریم، سپس با قرار دادن ویژگی `interestForElement` عنصر `<button>` برابر با ارجاعی به `<div>`، رابطهٔ میان interest invoker و عنصر هدف را بین آن‌ها برقرار می‌کنیم. سپس محتوای متنی دکمه را برابر رشته‌ای قرار می‌دهیم که حاوی `tagName` عنصر هدف است و از طریق `invoker.interestForElement.tagName` بازیابی شده است.
 
 ```js live-sample___basic-interest-invoker
 const invoker = document.querySelector("button");
@@ -53,23 +44,23 @@ invoker.interestForElement = popover;
 invoker.textContent = `My target is a ${invoker.interestForElement.tagName} element`;
 ```
 
-#### Result
+#### نتیجه
 
-The example renders like this:
+نتیجهٔ این مثال به شکل زیر نمایش داده می‌شود:
 
 {{embedlivesample("basic-interest-invoker", "100%", "100")}}
 
-Try showing interest in the button (for example, by hovering or focusing it) to make the `<div>` appear.
+برای نمایش عنصر `<div>`، علاقهٔ خود را به دکمه نشان دهید (مثلاً با نگه‌داشتن نشانگر ماوس روی آن یا دادن فوکوس به آن).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
-- [The Popover API](/en-US/docs/Web/API/Popover_API)
+- [استفاده از interest invokerها](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
+- [API Popover](/en-US/docs/Web/API/Popover_API)
