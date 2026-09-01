@@ -1,11 +1,5 @@
 ---
 title: "Document: queryCommandState() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/queryCommandState"
-status: "needs-translation"
----
-
----
-title: "Document: queryCommandState() method"
 short-title: queryCommandState()
 slug: Web/API/Document/queryCommandState
 page-type: web-api-instance-method
@@ -18,26 +12,26 @@ browser-compat: api.Document.queryCommandState
 {{ApiRef("DOM")}}{{deprecated_header}}{{Non-standard_header}}
 
 > [!NOTE]
-> Although the {{domxref("Document/execCommand", "execCommand()")}} method is deprecated, there are still some valid use cases that do not yet have viable alternatives, as mentioned in the `execCommand()` article. In these cases, you may find this method useful to implement a complete user experience, but test to ensure cross-browser compatibility.
+> اگرچه متد {{domxref("Document/execCommand", "execCommand()")}} منسوخ شده است، اما هنوز موارد استفاده‌ی معتبری وجود دارد که جایگزین مناسبی برای آن‌ها در دسترس نیست، همانطور که در مقاله‌ی `execCommand()` اشاره شده است. در این موارد، ممکن است این متد برای پیاده‌سازی یک تجربه‌ی کاربری کامل مفید واقع شود، اما حتماً سازگاری بین مرورگرها را آزمایش کنید.
 
-The **`queryCommandState()`** method will tell you if the current selection has a certain {{domxref("Document.execCommand()")}} command applied.
+متد **`queryCommandState()`** به شما می‌گوید که آیا یک فرمان خاص از {{domxref("Document.execCommand()")}} روی انتخاب فعلی اعمال شده است یا نه.
 
-## Syntax
+## نحو
 
 ```js-nolint
 queryCommandState(command)
 ```
 
-### Parameters
+### پارامترها
 
 - `command`
-  - : A command from {{domxref("Document.execCommand()")}}
+  - : یک فرمان از {{domxref("Document.execCommand()")}}
 
-### Return value
+### مقدار بازگشتی
 
-`queryCommandState()` can return a boolean value or `null` if the state is unknown.
+`queryCommandState()` می‌تواند یک مقدار بولی (boolean) یا `null` را در صورت نامشخص بودن وضعیت بازگرداند.
 
-## Example
+## مثال
 
 ### HTML
 
@@ -79,21 +73,21 @@ function makeBold() {
 document.querySelector("button").addEventListener("click", makeBold);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Example', '100', '180')}}
 
-## Specifications
+## مشخصات
 
-This feature is not part of any current specification. It is no longer on track to become a standard. There is an unofficial [W3C execCommand spec draft](https://w3c.github.io/editing/docs/execCommand/).
+این ویژگی بخشی از هیچ مشخصات فعلی نیست. دیگر در مسیر تبدیل شدن به یک استاندارد قرار ندارد. یک پیش‌نویس غیررسمی از [W3C execCommand spec draft](https://w3c.github.io/editing/docs/execCommand/) وجود دارد.
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLElement.contentEditable")}}
 - {{domxref("document.designMode")}}
 - {{domxref("document.execCommand()")}}
-- Browser bugs related to `queryCommandState()`: [Scribe's "Browser Inconsistencies" documentation](https://github.com/guardian/scribe/blob/master/BROWSERINCONSISTENCIES.md#documentquerycommandstate)
+- اشکالات مرورگر مرتبط با `queryCommandState()`: [Scribe's "Browser Inconsistencies" documentation](https://github.com/guardian/scribe/blob/master/BROWSERINCONSISTENCIES.md#documentquerycommandstate)
