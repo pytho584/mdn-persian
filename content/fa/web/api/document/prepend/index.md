@@ -1,9 +1,4 @@
----
-title: "Document: prepend() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/prepend"
-status: "needs-translation"
----
-
+```
 ---
 title: "Document: prepend() method"
 short-title: prepend()
@@ -14,12 +9,9 @@ browser-compat: api.Document.prepend
 
 {{APIRef("DOM")}}
 
-The **`Document.prepend()`** method
-inserts a set of {{domxref("Node")}} objects or strings before
-the first child of the document. Strings
-are inserted as equivalent {{domxref("Text")}} nodes.
+متد **`Document.prepend()`** مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را قبل از اولین فرزند سند درج می‌کند. رشته‌ها به عنوان گره‌های {{domxref("Text")}} معادل درج می‌شوند.
 
-This method prepends a child to a `Document`. To prepend to an arbitrary element in the tree, see {{domxref("Element.prepend()")}}.
+این متد یک فرزند را به ابتدای یک `Document` اضافه می‌کند. برای prepend کردن به یک عنصر دلخواه در درخت، به {{domxref("Element.prepend()")}} مراجعه کنید.
 
 ## Syntax
 
@@ -29,26 +21,25 @@ prepend(param1, param2)
 prepend(param1, param2, /* …, */ paramN)
 ```
 
-### Parameters
+### پارامترها
 
 - `param1`, …, `paramN`
-  - : A set of {{domxref("Node")}} objects or strings to insert.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها برای درج.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the node cannot be inserted at the specified point in the hierarchy.
+  - : زمانی پرتاب می‌شود که گره در نقطه مشخص‌شده در سلسله‌مراتب قابل درج نباشد.
 
-## Examples
+## مثال‌ها
 
-### Prepending a root element to a document
+### افزودن یک عنصر ریشه به ابتدای یک سند (prepend)
 
-If you try to prepend an element to an existing HTML document,
-it might throw a `HierarchyRequestError` {{domxref("DOMException")}} given a {{HTMLElement("html")}} element already exists.
+اگر تلاش کنید یک عنصر را به یک سند HTML موجود prepend کنید، ممکن است یک `HierarchyRequestError` {{domxref("DOMException")}} پرتاب شود زیرا یک عنصر {{HTMLElement("html")}} از قبل وجود دارد.
 
 ```js
 let html = document.createElement("html");
@@ -56,7 +47,7 @@ document.prepend(html);
 // HierarchyRequestError: The operation would yield an incorrect node tree.
 ```
 
-If you are creating a new document without any existing element, you can prepend a root HTML element (or a root SVG element):
+اگر یک سند جدید بدون هیچ عنصر موجودی ایجاد می‌کنید، می‌توانید یک عنصر ریشه HTML (یا یک عنصر ریشه SVG) را prepend کنید:
 
 ```js
 let doc = new Document();
@@ -66,15 +57,16 @@ doc.prepend(html);
 doc.children; // HTMLCollection [<html>]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.append()")}}
 - {{domxref("Element.prepend()")}}
+```
