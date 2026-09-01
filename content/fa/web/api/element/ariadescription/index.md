@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaDescription property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaDescription"
-status: "needs-translation"
----
-
----
-title: "Element: ariaDescription property"
 short-title: ariaDescription
 slug: Web/API/Element/ariaDescription
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Element.ariaDescription
 
 {{APIRef("DOM")}}
 
-The **`ariaDescription`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-description`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-description) attribute, which defines a string value that describes or annotates the current element.
+ویژگی **`ariaDescription`** از رابط {{domxref("Element")}} منعکس‌کننده مقدار صفت [`aria-description`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-description) است که یک مقدار رشته‌ای را تعریف می‌کند که عنصر جاری را توصیف یا حاشیه‌نویسی می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-description` attribute on the element with an ID of `close-button` is set to the string "A longer description of the function of this element". Using `ariaDescription` we can update the value.
+در این مثال، صفت `aria-description` روی عنصری با شناسه `close-button` به رشته "A longer description of the function of this element" تنظیم شده است. با استفاده از `ariaDescription` می‌توانیم مقدار را به‌روزرسانی کنیم.
 
 ```html
 <button
@@ -40,10 +34,10 @@ el.ariaDescription = "A different description";
 console.log(el.ariaDescription); // "A different description"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
