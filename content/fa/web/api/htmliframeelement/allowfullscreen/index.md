@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: allowFullscreen property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/allowFullscreen"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: allowFullscreen property"
 short-title: allowFullscreen
 slug: Web/API/HTMLIFrameElement/allowFullscreen
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.HTMLIFrameElement.allowFullscreen
 
 {{APIRef("HTML DOM")}}
 
-The **`allowFullscreen`** property of the {{domxref("HTMLIFrameElement")}} interface is a boolean value that reflects the `allowfullscreen` attribute of the {{HTMLElement("iframe")}} element, indicating whether to allow the iframe's contents to use {{domxref("Element.requestFullscreen", "requestFullscreen()")}}.
+خاصیت **`allowFullscreen`** در رابط {{domxref("HTMLIFrameElement")}} یک مقدار بولی است که ویژگی `allowfullscreen` عنصر {{HTMLElement("iframe")}} را منعکس می‌کند و مشخص می‌کند که آیا محتوای iframe مجاز است از {{domxref("Element.requestFullscreen", "requestFullscreen()")}} استفاده کند یا نه.
 
 > [!NOTE]
-> This property is considered a legacy property. Use `allow="fullscreen"` and {{domxref("HTMLIFrameElement.allow")}} instead.
+> این خاصیت یک ویژگی قدیمی (legacy) محسوب می‌شود. به جای آن از `allow="fullscreen"` و {{domxref("HTMLIFrameElement.allow")}} استفاده کنید.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Examples
+## نمونه‌ها
 
 ```html
 <iframe id="el" allowfullscreen></iframe>
@@ -34,17 +28,17 @@ const el = document.getElementById("el");
 console.log(el.allowFullscreen); // Output: true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Fullscreen API](/en-US/docs/Web/API/Fullscreen_API)
 - {{domxref("Element.requestFullscreen()")}}
 - [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy)
-- {{httpheader("Permissions-Policy/fullscreen", "fullscreen")}} Permissions Policy directive
+- دستورالعمل {{httpheader("Permissions-Policy/fullscreen", "fullscreen")}} در Permissions Policy
