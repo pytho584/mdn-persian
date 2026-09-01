@@ -1,9 +1,4 @@
----
-title: "GeolocationCoordinates: accuracy property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates/accuracy"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "GeolocationCoordinates: accuracy property"
 short-title: accuracy
@@ -14,23 +9,22 @@ browser-compat: api.GeolocationCoordinates.accuracy
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`accuracy`** read-only property of the {{domxref("GeolocationCoordinates")}} interface is a strictly positive `double` representing the accuracy, with a 95% confidence level, of the {{domxref("GeolocationCoordinates.latitude")}} and {{domxref("GeolocationCoordinates.longitude")}} properties expressed in meters.
+ویژگی فقط‌خواندنی **`accuracy`** از رابط {{domxref("GeolocationCoordinates")}} یک عدد اعشاری `double` کاملاً مثبت است که دقت (با سطح اطمینان ۹۵٪) ویژگی‌های {{domxref("GeolocationCoordinates.latitude")}} و {{domxref("GeolocationCoordinates.longitude")}} را بر حسب متر نشان می‌دهد.
 
-## Value
+## مقدار
 
-A positive `double` representing the accuracy, with a 95% confidence level,
-of the {{domxref("GeolocationCoordinates.latitude")}} and
-{{domxref("GeolocationCoordinates.longitude")}} properties expressed in meters.
+یک عدد اعشاری `double` مثبت که دقت (با سطح اطمینان ۹۵٪) ویژگی‌های {{domxref("GeolocationCoordinates.latitude")}} و {{domxref("GeolocationCoordinates.longitude")}} را بر حسب متر نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [استفاده از API موقعیت‌یابی](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
 - {{domxref("GeolocationCoordinates")}}
+```
