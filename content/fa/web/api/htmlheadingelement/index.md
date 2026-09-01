@@ -1,10 +1,4 @@
 ---
-title: "HTMLHeadingElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLHeadingElement"
-status: "needs-translation"
----
-
----
 title: HTMLHeadingElement
 slug: Web/API/HTMLHeadingElement
 page-type: web-api-interface
@@ -13,29 +7,29 @@ browser-compat: api.HTMLHeadingElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLHeadingElement`** interface represents the different heading elements, [`<h1>` through `<h6>`](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements). It inherits methods and properties from the {{domxref("HTMLElement")}} interface.
+**`HTMLHeadingElement`** インターフェースは、さまざまな見出し要素、つまり [`<h1>` から `<h6>`](/ja/docs/Web/HTML/Reference/Elements/Heading_Elements) を表します。このインターフェースは {{domxref("HTMLElement")}} インターフェースからメソッドとプロパティを継承します。
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## インスタンスプロパティ
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_親である {{domxref("HTMLElement")}} からプロパティを継承します。_
 
 - {{domxref("HTMLHeadingElement.align")}} {{deprecated_inline}}
-  - : A string representing an enumerated attribute indicating alignment of the heading with respect to the surrounding context. The possible values are `"left"`, `"right"`, `"justify"`, and `"center"`.
+  - : 周囲のコンテキストに対する見出しの配置を示す列挙属性を表す文字列です。指定可能な値は `"left"`、`"right"`、`"justify"`、`"center"` です。
 
-## Instance methods
+## インスタンスメソッド
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_固有のメソッドはありません。親である {{domxref("HTMLElement")}} からメソッドを継承します。_
 
-## Specifications
+## 仕様書
 
 {{Specifications}}
 
-## Browser compatibility
+## ブラウザー互換性
 
 {{Compat}}
 
-## See also
+## 関連情報
 
-- The {{HTMLElement("Heading_Elements", "HTML heading elements")}}, `<h1>` to `<h6>`, which correspond to this interface.
+- このインターフェースに対応する HTML 見出し要素 [`<h1>` から `<h6>`](/ja/docs/Web/HTML/Reference/Elements/Heading_Elements)（HTML 見出し要素）
