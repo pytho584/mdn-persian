@@ -1,11 +1,5 @@
 ---
 title: "GPURenderBundleEncoder: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/label"
-status: "needs-translation"
----
-
----
-title: "GPURenderBundleEncoder: label property"
 short-title: label
 slug: Web/API/GPURenderBundleEncoder/label
 page-type: web-api-instance-property
@@ -14,21 +8,20 @@ browser-compat: api.GPURenderBundleEncoder.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** read-only property of the
-{{domxref("GPURenderBundleEncoder")}} interface is a string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی فقط‌خواندنی **`label`** از رابط {{domxref("GPURenderBundleEncoder")}} یک رشته (string) است که برچسبی را برای شناسایی شیء فراهم می‌کند، مثلاً در پیام‌های {{domxref("GPUError")}} یا اخطارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUDevice.createRenderBundleEncoder()")}} call, or you can get and set it directly on the `GPURenderBundleEncoder` object.
+این برچسب را می‌توان با ارائه یک ویژگی `label` در شیء توصیف‌کننده‌ای که به فراخوانی مبدأ {{domxref("GPUDevice.createRenderBundleEncoder()")}} داده می‌شود تنظیم کرد، یا می‌توانید آن را مستقیماً روی شیء `GPURenderBundleEncoder` دریافت و تنظیم کنید.
 
 > [!NOTE]
-> This property is functionally identical to its equivalent on {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.label", "label")}}.
+> این ویژگی از نظر عملکردی با معادل خود در {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.label", "label")}} یکسان است.
 
-## Value
+## مقدار
 
-A string. If no label value has previously been set, getting the label returns an empty string.
+یک رشته. اگر قبلاً هیچ مقدار برچسبی تنظیم نشده باشد، دریافت برچسب یک رشته خالی برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPURenderBundleEncoder.label`:
+تنظیم و دریافت یک برچسب از طریق `GPURenderBundleEncoder.label`:
 
 ```js
 const renderBundleEncoder = device.createRenderBundleEncoder({
@@ -39,7 +32,7 @@ renderBundleEncoder.label = "my_render_bundle_encoder";
 console.log(renderBundleEncoder.label); // "my_render_bundle_encoder"
 ```
 
-Setting a label via the originating {{domxref("GPUDevice.createRenderBundleEncoder()")}} call, and then getting it via `GPURenderBundleEncoder.label`:
+تنظیم یک برچسب از طریق فراخوانی مبدأ {{domxref("GPUDevice.createRenderBundleEncoder()")}} و سپس دریافت آن از طریق `GPURenderBundleEncoder.label`:
 
 ```js
 const renderBundleEncoder = device.createRenderBundleEncoder({
@@ -50,14 +43,14 @@ const renderBundleEncoder = device.createRenderBundleEncoder({
 console.log(renderBundleEncoder.label); // "my_render_bundle_encoder"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
