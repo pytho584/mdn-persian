@@ -1,11 +1,5 @@
 ---
 title: "DelegatedInkTrailPresenter: presentationArea property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DelegatedInkTrailPresenter/presentationArea"
-status: "needs-translation"
----
-
----
-title: "DelegatedInkTrailPresenter: presentationArea property"
 short-title: presentationArea
 slug: Web/API/DelegatedInkTrailPresenter/presentationArea
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.DelegatedInkTrailPresenter.presentationArea
 
 {{APIRef("Ink API")}}{{SeeCompatTable}}
 
-The **`presentationArea`** read-only property of the {{domxref("DelegatedInkTrailPresenter")}} interface returns the {{domxref("Element")}} inside which rendering of ink strokes is confined.
+**`presentationArea`** 只读属性，属于 {{domxref("DelegatedInkTrailPresenter")}} 接口，返回渲染墨迹笔画时被限制在其内部的 {{domxref("Element")}}（元素）。
 
-If the preceding {{domxref("Ink.requestPresenter", "Ink.requestPresenter()")}} method call included a specific `presentationArea` element definition, then that will be the element returned. Otherwise, the default is returned, which is the containing viewport.
+如果之前的 {{domxref("Ink.requestPresenter", "Ink.requestPresenter()")}} 方法调用中包含了具体的 `presentationArea` 元素定义，那么返回的就是该元素。否则，返回默认值，即包含该元素的视口（viewport）。
 
-This area is always the client coordinates for the element's border box, so moving the element or scrolling the element requires no recalculation on the developer's part.
+这个区域始终是元素边框盒（border box）的客户端坐标，因此移动元素或滚动元素不需要开发者重新计算。
 
-## Value
+## 值
 
-An {{domxref("Element")}}.
+一个 {{domxref("Element")}}。
 
-## Example
+## 示例
 
 ```js
 async function inkInit() {
@@ -38,10 +32,10 @@ async function inkInit() {
 }
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
