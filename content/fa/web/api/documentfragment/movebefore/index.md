@@ -1,7 +1,5 @@
 ---
 title: "DocumentFragment: moveBefore() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/moveBefore"
-status: "needs-translation"
 ---
 
 ---
@@ -14,7 +12,7 @@ browser-compat: api.DocumentFragment.moveBefore
 
 {{APIRef("DOM")}}
 
-The **`moveBefore()`** method of the {{domxref("DocumentFragment")}} interface moves a given {{domxref("Node")}} inside the invoking `DocumentFragment` as a direct child, before a given reference node.
+متد **`moveBefore()`** در رابط {{domxref("DocumentFragment")}} یک {{domxref("Node")}} داده‌شده را به‌عنوان فرزند مستقیم، قبل از گره مرجع داده‌شده، داخل `DocumentFragment` فراخواننده جابه‌جا می‌کند.
 
 ## Syntax
 
@@ -25,59 +23,59 @@ moveBefore(movedNode, referenceNode)
 ### Parameters
 
 - `movedNode`
-  - : A {{domxref("Node")}} representing the node to be moved. Note that this must be an {{domxref("Element")}} or a {{domxref("CharacterData")}} node.
+  - : یک {{domxref("Node")}} که نشان‌دهندهٔ گره‌ای است که قرار است جابه‌جا شود. توجه داشته باشید که این گره باید یک {{domxref("Element")}} یا یک گره {{domxref("CharacterData")}} باشد.
 - `referenceNode`
-  - : A {{domxref("Node")}} that `movedNode` will be moved before, or `null`. If the value is `null`, `movedNode` is inserted at the end of the invoking `DocumentFragment`'s child nodes.
+  - : یک {{domxref("Node")}} که `movedNode` قبل از آن جابه‌جا خواهد شد، یا `null`. اگر مقدار `null` باشد، `movedNode` در انتهای گره‌های فرزندِ `DocumentFragment` فراخواننده درج می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{jsxref("TypeError")}}
-  - : Thrown in any of the following situations:
-    - The specified `movedNode` is already added to the DOM, and you are trying to move it inside a `DocumentFragment`.
-    - You are trying to move `movedNode` between two different document fragments.
-    - The specified `movedNode` is not an {{domxref("Element")}} or {{domxref("CharacterData")}} node.
+  - : در هر یک از شرایط زیر پرتاب می‌شود:
+    - `movedNode` مشخص‌شده قبلاً به DOM اضافه شده است و شما در حال تلاش برای جابه‌جایی آن درون یک `DocumentFragment` هستید.
+    - شما در حال تلاش برای جابه‌جایی `movedNode` بین دو `DocumentFragment` متفاوت هستید.
+    - `movedNode` مشخص‌شده یک گره {{domxref("Element")}} یا {{domxref("CharacterData")}} نیست.
 - `NotFoundError` {{jsxref("TypeError")}}
-  - : The specified `referenceNode` is not a child of the `DocumentFragment` you are calling `moveBefore()` on, that is, the fragment you are trying to move `movedNode` inside.
+  - : `referenceNode` مشخص‌شده فرزندِ `DocumentFragment`ای نیست که روی آن `moveBefore()` را صدا می‌زنید؛ یعنی قطعه‌ای که می‌خواهید `movedNode` را داخل آن جابه‌جا کنید.
 - `TypeError` {{jsxref("TypeError")}}
-  - : The second argument was not supplied.
+  - : آرگومان دوم ارائه نشده است.
 
-## Description
+## توضیحات
 
-The `moveBefore()` method moves a given node to a new place in the `DocumentFragment`. It provides similar functionality to the {{domxref("Node.insertBefore()")}} method, except that it doesn't remove and then reinsert the node. This means that the state of the node (which would be reset if moving it with `insertBefore()` and similar mechanisms) is preserved after the move. This includes:
+متد `moveBefore()` یک گره مشخص را به مکان جدیدی در `DocumentFragment` منتقل می‌کند. این متد عملکردی مشابه متد {{domxref("Node.insertBefore()")}} ارائه می‌دهد، با این تفاوت که گره را حذف و سپس دوباره درج نمی‌کند. این بدان معناست که وضعیت گره (که اگر با `insertBefore()` و سازوکارهای مشابه جابه‌جا می‌شد، بازنشانی می‌شد) پس از جابه‌جایی حفظ می‌شود. این موارد شامل:
 
-- [Animation](/en-US/docs/Web/CSS/Guides/Animations) and [transition](/en-US/docs/Web/CSS/Guides/Transitions) state.
-- {{htmlelement("iframe")}} loading state.
-- Interactivity states (for example, {{cssxref(":focus")}} and {{cssxref(":active")}}).
-- [Fullscreen](/en-US/docs/Web/API/Fullscreen_API) element state.
-- Open/close state of [popovers](/en-US/docs/Web/API/Popover_API).
-- Modal state of {{htmlelement("dialog")}} elements (modal dialogs will not be closed).
+- وضعیت [انیمیشن](/en-US/docs/Web/CSS/Guides/Animations) و [ترنزیشن](/en-US/docs/Web/CSS/Guides/Transitions).
+- وضعیت بارگذاری {{htmlelement("iframe")}}.
+- وضعیت‌های تعاملی (برای مثال {{cssxref(":focus")}} و {{cssxref(":active")}}).
+- وضعیت عنصر [تمام‌صفحه](/en-US/docs/Web/API/Fullscreen_API).
+- وضعیت باز/بسته بودن [پاپ‌اورها](/en-US/docs/Web/API/Popover_API).
+- وضعیت مودال عناصر {{htmlelement("dialog")}} (دیالوگ‌های مودال بسته نخواهند شد).
 
-The play state of {{htmlelement("video")}} and {{htmlelement("audio")}} elements is not included in the above list, as these elements retain their state when removed and reinserted, regardless of the mechanism used.
+وضعیت پخش عناصر {{htmlelement("video")}} و {{htmlelement("audio")}} در فهرست بالا گنجانده نشده است، زیرا این عناصر بدون توجه به سازوکار مورد استفاده، هنگام حذف و درج مجدد، وضعیت خود را حفظ می‌کنند.
 
-When observing changes to the DOM using a {{domxref("MutationObserver")}}, nodes moved with `moveBefore()` will be recorded with a [removed node](/en-US/docs/Web/API/MutationRecord/removedNodes) and an [added node](/en-US/docs/Web/API/MutationRecord/addedNodes).
+هنگامی که تغییرات DOM را با استفاده از {{domxref("MutationObserver")}} مشاهده می‌کنید، گره‌هایی که با `moveBefore()` جابه‌جا شده‌اند، به‌صورت یک [گره حذف‌شده](/en-US/docs/Web/API/MutationRecord/removedNodes) و یک [گره افزوده‌شده](/en-US/docs/Web/API/MutationRecord/addedNodes) ثبت خواهند شد.
 
-### `moveBefore()` constraints
+### محدودیت‌های `moveBefore()`
 
-There are some constraints to be aware of when using `moveBefore()`:
+هنگام استفاده از `moveBefore()` باید از چند محدودیت آگاه باشید:
 
-- It can only work when moving a node within the same document fragment.
-- It won't work if you try to move a node that is already added to the DOM inside a `DocumentFragment`.
+- این متد فقط زمانی کار می‌کند که گره را در همان `DocumentFragment` جابه‌جا کنید.
+- اگر بخواهید گره‌ای را که قبلاً به DOM اضافه شده است، داخل یک `DocumentFragment` جابه‌جا کنید، کار نخواهد کرد.
 
-In such cases, `moveBefore()` will fail with a `HierarchyRequestError` exception. If the above constraints are requirements for your particular use case, you should use {{domxref("Node.insertBefore()")}} instead, or use [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) to handle the errors that arise from such cases.
+در چنین مواردی، `moveBefore()` با استثنای `HierarchyRequestError` شکست می‌خورد. اگر محدودیت‌های بالا برای مورد استفاده خاص شما الزامی هستند، به‌جای آن از {{domxref("Node.insertBefore()")}} استفاده کنید، یا برای مدیریت خطاهای ناشی از چنین مواردی از [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) استفاده کنید.
 
-## Examples
+## مثال‌ها
 
-### Basic `moveBefore()` usage
+### استفادهٔ پایه از `moveBefore()`
 
-In this demo we illustrate basic usage of `moveBefore()`.
+در این نمایش، کاربرد پایهٔ `moveBefore()` را نشان می‌دهیم.
 
 #### HTML
 
-The HTML features three {{htmlelement("button")}} elements, and an {{htmlelement("article")}} element. We will use the buttons to control inserting `DocumentFragment` instances into the `<article>` and emptying it.
+بخش HTML شامل سه عنصر {{htmlelement("button")}} و یک عنصر {{htmlelement("article")}} است. ما از دکمه‌ها برای کنترل درج نمونه‌های `DocumentFragment` درون `<article>` و خالی‌کردن آن استفاده خواهیم کرد.
 
 ```html live-sample___movebefore-basic
 <button id="insert1">Insert fragment</button>
@@ -88,7 +86,7 @@ The HTML features three {{htmlelement("button")}} elements, and an {{htmlelement
 
 #### CSS
 
-We provide some rudimentary styling for the look and feel and spacing of elements that will later be inserted into the page as children of JavaScript-generated `DocumentFragment`s.
+ما استایل ابتدایی برای ظاهر و فاصله‌گذاری عناصری فراهم می‌کنیم که بعداً به‌عنوان فرزندان `DocumentFragment`های تولیدشده با جاوااسکریپت در صفحه درج خواهند شد.
 
 ```css live-sample___movebefore-basic
 #section1,
@@ -113,13 +111,13 @@ We provide some rudimentary styling for the look and feel and spacing of element
 
 #### JavaScript
 
-In our script, we define a function, `createFragment()`, which creates a `DocumentFragment` containing a {{htmlelement("div")}} element and two {{htmlelement("section")}} elements as immediate children.
+در اسکریپت خود، تابعی به نام `createFragment()` تعریف می‌کنیم که یک `DocumentFragment` حاوی یک عنصر {{htmlelement("div")}} و دو عنصر {{htmlelement("section")}} به‌عنوان فرزندان مستقیم ایجاد می‌کند.
 
-We then attach a click event listener to each `<button>` via {{domxref("EventTarget.addEventListener", "addEventListener()")}}:
+سپس با استفاده از {{domxref("EventTarget.addEventListener", "addEventListener()")}} یک شنونده رویداد کلیک به هر `<button>` متصل می‌کنیم:
 
-- The first button appends the `DocumentFragment` to the `#wrapper` `<article>` element, unmodified.
-- The second button appends the `DocumentFragment` to the `#wrapper` `<article>` element, but first uses `moveBefore()` to move the `<div>` to be the second child of the `DocumentFragment` rather than the first.
-- The third button empties the `#wrapper` `<article>` element using {{domxref("Element.innerHTML", "innerHTML")}}.
+- دکمهٔ اول، `DocumentFragment` را بدون تغییر به عنصر `<article>` با شناسهٔ `#wrapper` اضافه می‌کند.
+- دکمهٔ دوم، `DocumentFragment` را به عنصر `<article>` با شناسهٔ `#wrapper` اضافه می‌کند، اما ابتدا از `moveBefore()` استفاده می‌کند تا `<div>` را به‌جای فرزند اول، به‌عنوان فرزند دوم `DocumentFragment` قرار دهد.
+- دکمهٔ سوم، عنصر `<article>` با شناسهٔ `#wrapper` را با استفاده از {{domxref("Element.innerHTML", "innerHTML")}} خالی می‌کند.
 
 ```js live-sample___movebefore-basic
 const wrapper = document.getElementById("wrapper");
@@ -162,23 +160,23 @@ clearBtn.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-The rendered example looks like this:
+نمونهٔ رندر شده به این شکل است:
 
 {{EmbedLiveSample("movebefore-basic", "100%", "300px")}}
 
-Try clicking the first two buttons a few times and note how the `DocumentFragment` structure is modified by the second button.
+چند بار روی دو دکمهٔ اول کلیک کنید و توجه کنید که چگونه ساختار `DocumentFragment` توسط دکمهٔ دوم تغییر می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.moveBefore()")}}
 - {{domxref("Element.moveBefore()")}}
