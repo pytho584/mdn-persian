@@ -1,11 +1,5 @@
 ---
 title: "HighlightRegistry: size property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry/size"
-status: "needs-translation"
----
-
----
-title: "HighlightRegistry: size property"
 short-title: size
 slug: Web/API/HighlightRegistry/size
 page-type: web-api-instance-property
@@ -15,15 +9,15 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-get-map.
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`size`** property returns the number of {{domxref("Highlight")}} objects in the {{domxref("HighlightRegistry")}}.
+ویژگی **`size`** تعداد اشیاء {{domxref("Highlight")}} را در {{domxref("HighlightRegistry")}} برمی‌گرداند.
 
-## Value
+## مقدار
 
-A read-only integer indicating how many `Highlight` objects the registry contains.
+یک عدد صحیح فقط‌خواندنی که نشان می‌دهد چند شیء `Highlight` در این رجیستری وجود دارد.
 
-## Examples
+## مثال‌ها
 
-### Using size
+### استفاده از size
 
 ```js
 const highlight1 = new Highlight();
@@ -35,15 +29,15 @@ CSS.highlights.set("highlight-2", highlight2);
 console.log(CSS.highlights.size); // 2
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
-- [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
+- [CSS Custom Highlight API: آینده هایلایت کردن بازه‌های متن در وب](https://css-tricks.com/css-custom-highlight-api-early-look/)
