@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: outerText property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/outerText"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: outerText property"
 short-title: outerText
 slug: Web/API/HTMLElement/outerText
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.HTMLElement.outerText
 
 {{APIRef("DOM")}}
 
-The **`outerText`** property of the {{domxref("HTMLElement")}} interface returns the same value as {{domxref("HTMLElement.innerText")}}.
-When used as a setter it replaces the whole current node with the given text (this differs from `innerText`, which replaces the content _inside_ the current node).
+خاصیت **`outerText`** از رابط {{domxref("HTMLElement")}} همان مقداری را برمی‌گرداند که {{domxref("HTMLElement.innerText")}} برمی‌گرداند.
+وقتی به‌عنوان setter استفاده شود، کل گره فعلی را با متن داده‌شده جایگزین می‌کند (این تفاوت با `innerText` دارد که محتوای _داخل_ گره فعلی را جایگزین می‌کند).
 
-See {{domxref("HTMLElement.innerText")}} for more information and examples showing how both properties are used as getters.
+برای اطلاعات بیشتر و مثال‌هایی که نحوه استفاده از هر دو خاصیت را به‌عنوان getter نشان می‌دهند، به {{domxref("HTMLElement.innerText")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string representing the rendered text content of an element and its descendants.
+یک رشته (string) که محتوای متنی رندر شده یک عنصر و عناصر فرزند آن را نشان می‌دهد.
 
-If the element itself is not [being rendered](https://html.spec.whatwg.org/multipage/rendering.html#being-rendered) (for example, is detached from the document or is hidden from view), the returned value is the same as the {{domxref("Node.textContent")}} property.
+اگر خود عنصر [در حال رندر شدن](https://html.spec.whatwg.org/multipage/rendering.html#being-rendered) نباشد (مثلاً از سند جدا شده باشد یا از دید پنهان باشد)، مقدار برگردانده‌شده همانند خاصیت {{domxref("Node.textContent")}} خواهد بود.
 
-When used as a setter it replaces the current node with the given text, converting any line breaks into {{HTMLElement("br")}} elements.
+وقتی به‌عنوان setter استفاده شود، گره فعلی را با متن داده‌شده جایگزین می‌کند و هر خط جدید را به عنصر {{HTMLElement("br")}} تبدیل می‌کند.
 
-## Examples
+## مثال‌ها
 
-This example highlights the fundamental difference between `outerText` and `innerText` when used as setters (they are the same when used by getters).
+این مثال تفاوت اساسی بین `outerText` و `innerText` را هنگام استفاده به‌عنوان setter نشان می‌دهد (هنگام استفاده به‌عنوان getter آن‌ها یکسان هستند).
 
 > [!NOTE]
-> The example is a modified version of [What is the difference between innerText and outerText?](https://stackoverflow.com/questions/18481382/what-is-the-difference-between-innertext-and-outertext/18481435#18481435) (Stack overflow) by [codingintrigue](https://stackoverflow.com/users/571194/codingintrigue), is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+> این مثال نسخه‌ای تغییر یافته از [What is the difference between innerText and outerText?](https://stackoverflow.com/questions/18481382/what-is-the-difference-between-innertext-and-outertext/18481435#18481435) (استک‌اورفلو) نوشته [codingintrigue](https://stackoverflow.com/users/571194/codingintrigue) است که تحت مجوز [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) منتشر شده است.
 
-Consider a page that contains the following HTML:
+صفحه‌ای را در نظر بگیرید که HTML زیر را دارد:
 
 ```html
 <div>
@@ -42,13 +36,13 @@ Consider a page that contains the following HTML:
 </div>
 ```
 
-`outerText` replaces the whole selected element, so the JavaScript `p.outerText = "Whole element replaced"` replaces the whole selected `p` element:
+`outerText` کل عنصر انتخاب‌شده را جایگزین می‌کند، بنابراین کد جاوااسکریپت `p.outerText = "Whole element replaced"` کل عنصر `p` انتخاب‌شده را جایگزین می‌کند:
 
 ```html
 <div>Whole element replaced</div>
 ```
 
-By contrast, `p.innerText = "Content inside element replaced"` replaces the content _inside_ the selected `p` element:
+در مقابل، `p.innerText = "Content inside element replaced"` محتوای _داخل_ عنصر `p` انتخاب‌شده را جایگزین می‌کند:
 
 ```html
 <div>
@@ -56,15 +50,15 @@ By contrast, `p.innerText = "Content inside element replaced"` replaces the cont
 </div>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLElement.innerText")}}
 - {{domxref("Element.outerHTML")}}
