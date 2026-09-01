@@ -1,11 +1,5 @@
 ---
 title: "DeviceMotionEventRotationRate: gamma property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventRotationRate/gamma"
-status: "needs-translation"
----
-
----
-title: "DeviceMotionEventRotationRate: gamma property"
 short-title: gamma
 slug: Web/API/DeviceMotionEventRotationRate/gamma
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.DeviceMotionEventRotationRate.gamma
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`gamma`** read-only property of the {{domxref("DeviceMotionEventRotationRate")}} interface indicates the rate of rotation around the Y axis, in degrees per second.
+ویژگی فقط‌خواندنی **`gamma`** از رابط {{domxref("DeviceMotionEventRotationRate")}} نرخ چرخش حول محور Y را بر حسب درجه بر ثانیه نشان می‌دهد.
 
-## Value
+## مقدار
 
-A `double` indicating the rate of rotation around the Y axis, in degrees per second.
-See [Orientation and motion data explained](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained) for details.
+یک `double` که نرخ چرخش حول محور Y را بر حسب درجه بر ثانیه نشان می‌دهد.
+برای جزئیات بیشتر، به [توضیح داده‌های جهت‌گیری و حرکت](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
