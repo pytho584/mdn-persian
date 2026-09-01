@@ -1,11 +1,5 @@
 ---
 title: "CSSMathNegate: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathNegate/value"
-status: "needs-translation"
----
-
----
-title: "CSSMathNegate: value property"
 short-title: value
 slug: Web/API/CSSMathNegate/value
 page-type: web-api-instance-property
@@ -14,23 +8,21 @@ browser-compat: api.CSSMathNegate.value
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`value`** read-only property of the {{domxref("CSSMathNegate")}} interface returns the {{domxref("CSSNumericValue")}} that is being negated.
+خاصیتِ فقط‌خواندنی **`value`** در رابط {{domxref("CSSMathNegate")}}، مقدار {{domxref("CSSNumericValue")}}ای را که نفی (negate) شده است بازمی‌گرداند.
 
-This is the value passed to the constructor, rectified to a {{domxref("CSSNumericValue")}} (if it isn't one already).
-If a plain number was passed to the constructor the value returned by this property is the passed value wrapped in a {{domxref("CSSUnitValue")}} with `unit: "number"`.
+این همان مقداری است که به سازنده (constructor) ارسال شده و به یک {{domxref("CSSNumericValue")}} تبدیل شده است (اگر از قبل چنین نبوده باشد). اگر یک عدد ساده به سازنده ارسال شده باشد، مقداری که این خاصیت بازمی‌گرداند، همان مقدار ورودی است که در یک {{domxref("CSSUnitValue")}} با `unit: "number"` قرار گرفته است.
 
-## Value
+## مقدار
 
-A {{domxref("CSSNumericValue")}} or one of its derived types.
+یک {{domxref("CSSNumericValue")}} یا یکی از انواع مشتق‌شده از آن.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following code creates a `CSSMathNegate` object, then reads its `value`.
+کد زیر یک شیء `CSSMathNegate` می‌سازد و سپس `value` آن را می‌خواند.
 
-In this case, we passed `CSS.px(10)`, so `value` is a {{domxref("CSSUnitValue")}}.
-Passing a composite expression such as `CSS.px(10).add(CSS.percent(5))` would result in `value` returning a {{domxref("CSSMathSum")}}.
+در این حالت، `CSS.px(10)` را ارسال کرده‌ایم، بنابراین `value` یک {{domxref("CSSUnitValue")}} است. ارسال یک عبارت ترکیبی مانند `CSS.px(10).add(CSS.percent(5))` باعث می‌شود `value` یک {{domxref("CSSMathSum")}} بازگرداند.
 
 ```js
 const negated = new CSSMathNegate(CSS.px(10));
@@ -38,14 +30,14 @@ const negated = new CSSMathNegate(CSS.px(10));
 console.log(negated.value); // CSSUnitValue {value: 10, unit: "px"}
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSMathInvert.value")}}
