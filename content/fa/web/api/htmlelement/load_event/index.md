@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: load event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/load_event"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: load event"
 short-title: load
 slug: Web/API/HTMLElement/load_event
 page-type: web-api-event
@@ -14,16 +8,16 @@ browser-compat: api.HTMLElement.load_event
 
 {{APIRef("HTML DOM")}}
 
-The **`load`** event fires for elements containing a resource when the resource has successfully loaded. Currently, the list of supported HTML elements are: {{HTMLElement("body")}}, {{HTMLElement("embed")}}, {{HTMLElement("iframe")}}, {{HTMLElement("img")}}, {{HTMLElement("link")}}, {{HTMLElement("object")}}, {{HTMLElement("script")}}, {{HTMLElement("style")}}, and {{HTMLElement("track")}}.
+وقتی منبع یک عنصر با موفقیت بارگذاری میشود، رویداد **`load`** برای آن عنصر فعال میشود. در حال حاضر، عناصر HTML پشتیبانیشده عبارتاند از: {{HTMLElement("body")}}، {{HTMLElement("embed")}}، {{HTMLElement("iframe")}}، {{HTMLElement("img")}}، {{HTMLElement("link")}}، {{HTMLElement("object")}}، {{HTMLElement("script")}}، {{HTMLElement("style")}} و {{HTMLElement("track")}}.
 
 > [!NOTE]
-> The `load` event on {{domxref("HTMLBodyElement#event_handlers", "HTMLBodyElement")}} is actually an alias for the {{domxref("Window/load_event", "window.onload")}} event. Therefore, the `load` event will only fire on the `<body>` element once all of the document's resources have loaded or errored. However, for the sake of clarity, it is recommended that the event handler is attached to the `window` object directly rather than on `HTMLBodyElement`.
+> رویداد `load` روی {{domxref("HTMLBodyElement#event_handlers", "HTMLBodyElement")}} در واقع نام مستعار رویداد {{domxref("Window/load_event", "window.onload")}} است. بنابراین، رویداد `load` تنها زمانی روی عنصر `<body>` فعال میشود که تمام منابع سند بارگذاری شده یا با خطا مواجه شده باشند. با این حال، برای وضوح بیشتر، توصیه میشود که مدیریتکننده رویداد مستقیماً به شیء `window` متصل شود، نه به `HTMLBodyElement`.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و رویداد حبابی (bubble) ندارد.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روشهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریتکننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("load", (event) => { })
@@ -33,11 +27,11 @@ onload = (event) => { }
 
 ## Event type
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
 ## Examples
 
-This example prints to the screen whenever the {{HtmlElement("img")}} element successfully loads its resource.
+این مثال هر بار که عنصر {{HtmlElement("img")}} منبع خود را با موفقیت بارگذاری میکند، پیامی را روی صفحه نمایش میدهد.
 
 ### HTML
 
@@ -80,6 +74,6 @@ function reload() {
 
 ## See also
 
-- Related events
-  - Window: {{domxref("Window/load_event", "load")}} event
-  - Window: {{domxref("Window/error_event", "error")}} event
+- رویدادهای مرتبط
+  - Window: رویداد {{domxref("Window/load_event", "load")}}
+  - Window: رویداد {{domxref("Window/error_event", "error")}}
