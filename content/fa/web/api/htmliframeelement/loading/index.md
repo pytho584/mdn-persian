@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: loading property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/loading"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: loading property"
 short-title: loading
 slug: Web/API/HTMLIFrameElement/loading
 page-type: web-api-instance-property
@@ -14,43 +8,43 @@ browser-compat: api.HTMLIFrameElement.loading
 
 {{APIRef("HTML DOM")}}
 
-The **`loading`** property of the {{domxref("HTMLIFrameElement")}} interface is a string that provides a hint to the browser indicating whether the [iframe](/en-US/docs/Web/HTML/Reference/Elements/iframe) should be loaded immediately on page load, or only when it is needed.
+ویژگی **`loading`** از رابط {{domxref("HTMLIFrameElement")}} یک رشته است که به مرورگر راهنمایی می‌کند که آیا [iframe](/en-US/docs/Web/HTML/Reference/Elements/iframe) باید بلافاصله هنگام بارگذاری صفحه بارگذاری شود یا فقط زمانی که به آن نیاز است.
 
-This can be used to optimize the loading of the document's contents.
-Iframes that are visible when the page loads can be downloaded immediately (eagerly), while iframes that are likely to be offscreen on initial page load can be downloaded lazily — just before they will appear in the window's {{Glossary("visual viewport")}}.
+از این ویژگی می‌توان برای بهینه‌سازی بارگذاری محتویات سند استفاده کرد.
+iframeهایی که هنگام بارگذاری صفحه دیده می‌شوند می‌توانند فوراً (به‌صورت eager) دانلود شوند، در حالی که iframeهایی که احتمالاً در بارگذاری اولیه صفحه خارج از دید هستند می‌توانند به‌صورت تنبل (lazy) دانلود شوند — درست قبل از اینکه در {{Glossary("visual viewport")}} پنجره ظاهر شوند.
 
-## Value
+## مقدار
 
-A string providing a hint to the user agent as to how to best schedule the loading of the iframe.
-The possible values are:
+رشته‌ای که به عامل کاربر راهنمایی می‌کند که چگونه بارگذاری iframe را به بهترین شکل زمان‌بندی کند.
+مقادیر ممکن عبارت‌اند از:
 
 - `eager`
-  - : Load the iframe as soon as the element is processed.
-    This is the default.
+  - : به محض پردازش عنصر، iframe را بارگذاری کن.
+    این مقدار پیش‌فرض است.
 - `lazy`
-  - : Load the iframe when the browser believes that it is likely to be need in the near future.
+  - : وقتی مرورگر تشخیص دهد که احتمالاً در آینده نزدیک به iframe نیاز خواهد بود، آن را بارگذاری کن.
 
-## Usage notes
+## نکات استفاده
 
-### JavaScript must be enabled
+### جاوااسکریپت باید فعال باشد
 
-Loading is only deferred when JavaScript is enabled, irrespective of the value of this property.
+بارگذاری فقط زمانی به تأخیر می‌افتد که جاوااسکریپت فعال باشد، صرف‌نظر از مقدار این ویژگی.
 
-This is an anti-tracking measure, because if a user agent supported lazy loading when scripting is disabled, it would still be possible for a site to track a user's approximate scroll position throughout a session, by strategically placing iframes in a page's markup such that a server can track how many are requested and when.
+این یک اقدام ضد ردیابی است، زیرا اگر عامل کاربر در حالی که اسکریپت‌ها غیرفعال هستند از بارگذاری تنبل پشتیبانی کند، همچنان ممکن است سایتی بتواند موقعیت تقریبی اسکرول کاربر را در طول یک نشست ردیابی کند؛ با قرار دادن استراتژیک iframeها در نشانه‌گذاری صفحه به‌گونه‌ای که سرور بتواند تعداد و زمان درخواست‌های آن‌ها را پیگیری کند.
 
-### Timing of the load event
+### زمان‌بندی رویداد load
 
-The {{domxref("Window.load_event", "load")}} event is fired when the document has been fully processed.
+رویداد {{domxref("Window.load_event", "load")}} هنگامی رخ می‌دهد که سند به‌طور کامل پردازش شده باشد.
 
-Lazily loaded iframes do not affect the timing of the `load` event even if the iframe is in the visual viewport and is therefore fetched on page load.
-All eagerly loaded iframes in the document must be fetched before the `load` event can fire.
+iframeهای بارگذاری‌شده به‌صورت تنبل، حتی اگر در دیدگاه بصری (visual viewport) باشند و بنابراین هنگام بارگذاری صفحه واکشی شوند، بر زمان‌بندی رویداد `load` تأثیری ندارند.
+همه iframeهای بارگذاری‌شده به‌صورت eager در سند باید قبل از اینکه رویداد `load` رخ دهد واکشی شده باشند.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The example below shows how you might define a lazy-loaded iframe and then append it to a `<div>` in the document.
-The frame would then only be loaded when the frame about to become visible.
+مثال زیر نشان می‌دهد که چگونه می‌توانید یک iframe با بارگذاری تنبل تعریف کنید و سپس آن را به یک `<div>` در سند اضافه کنید.
+این قاب فقط زمانی بارگذاری می‌شود که در شرف ظاهر شدن باشد.
 
 ```js
 // Define iframe with lazy loading
@@ -65,17 +59,17 @@ const frameDiv = document.querySelector("div.frameDiv");
 frameDiv.appendChild(iframe);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement("iframe")}} element
-- [Learn: Web performance](/en-US/docs/Learn_web_development/Extensions/Performance)
-- [Lazy loading](/en-US/docs/Web/Performance/Guides/Lazy_loading) in the MDN web performance guide
-- [It's time to lazy-load offscreen iframes!](https://web.dev/articles/iframe-lazy-loading) on web.dev
+- عنصر {{HTMLElement("iframe")}}
+- [یادگیری: کارایی وب](/en-US/docs/Learn_web_development/Extensions/Performance)
+- [بارگذاری تنبل](/en-US/docs/Web/Performance/Guides/Lazy_loading) در راهنمای کارایی وب MDN
+- [وقت آن رسیده که iframeهای خارج از صفحه را با بارگذاری تنبل بارگذاری کنیم!](https://web.dev/articles/iframe-lazy-loading) در web.dev
