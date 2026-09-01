@@ -1,11 +1,5 @@
 ---
 title: "Event: srcElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/srcElement"
-status: "needs-translation"
----
-
----
-title: "Event: srcElement property"
 short-title: srcElement
 slug: Web/API/Event/srcElement
 page-type: web-api-instance-property
@@ -16,16 +10,16 @@ browser-compat: api.Event.srcElement
 
 {{APIRef("DOM")}}{{deprecated_header}}{{AvailableInWorkers}}
 
-The deprecated **`Event.srcElement`** is an alias for the {{domxref("Event.target")}} property. Use {{domxref("Event.target")}} instead.
+ویژگی منسوخ‌شدهٔ **`Event.srcElement`** نام مستعاری برای ویژگی {{domxref("Event.target")}} است. به‌جای آن از {{domxref("Event.target")}} استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Window.event")}}
