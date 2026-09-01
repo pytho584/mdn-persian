@@ -1,11 +1,5 @@
 ---
 title: "History: forward() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/History/forward"
-status: "needs-translation"
----
-
----
-title: "History: forward() method"
 short-title: forward()
 slug: Web/API/History/forward
 page-type: web-api-instance-method
@@ -14,11 +8,9 @@ browser-compat: api.History.forward
 
 {{APIRef("History API")}}
 
-The **`forward()`** method of the {{domxref("History")}} interface causes the browser to move
-forward one page in the session history. It has the same effect as calling
-{{domxref("History.go", "history.go(1)")}}.
+متد **`forward()`** در رابط {{domxref("History")}} باعث می‌شود مرورگر یک صفحه به جلو در تاریخچه جلسه حرکت کند. این متد همان اثر فراخوانی {{domxref("History.go", "history.go(1)")}} را دارد.
 
-This method is {{glossary("asynchronous")}}. Add a listener for the {{domxref("Window/popstate_event", "popstate")}} event in order to determine when the navigation has completed.
+این متد {{glossary("asynchronous", "ناهمگام")}} است. برای تعیین زمان تکمیل پیمایش، یک شنونده برای رویداد {{domxref("Window/popstate_event", "popstate")}} اضافه کنید.
 
 ## Syntax
 
@@ -28,21 +20,20 @@ forward()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ### Exceptions
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the associated document is not fully active. Browsers also throttle navigations and may throw this error, generate a warning, or ignore the call if it's called too frequently.
+  - : اگر سند مرتبط کاملاً فعال نباشد، این خطا پرتاب می‌شود. مرورگرها همچنین پیمایش‌ها را محدود می‌کنند و ممکن است در صورت فراخوانی بیش از حد مکرر، این خطا را پرتاب کنند، هشدار تولید کنند، یا فراخوانی را نادیده بگیرند.
 
 ## Examples
 
-The following examples create a button that moves forward one step in the session
-history.
+مثال‌های زیر دکمه‌ای ایجاد می‌کنند که یک قدم به جلو در تاریخچه جلسه حرکت می‌کند.
 
 ### HTML
 
@@ -70,4 +61,4 @@ document.getElementById("go-forward").addEventListener("click", (e) => {
 
 - {{domxref("History")}}
 - {{domxref("Window/popstate_event", "popstate")}}
-- [Working with the History API](/en-US/docs/Web/API/History_API/Working_with_the_History_API)
+- [کار با History API](/en-US/docs/Web/API/History_API/Working_with_the_History_API)
