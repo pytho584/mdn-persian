@@ -1,11 +1,5 @@
 ---
 title: "HTMLScriptElement: defer property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/defer"
-status: "needs-translation"
----
-
----
-title: "HTMLScriptElement: defer property"
 short-title: defer
 slug: Web/API/HTMLScriptElement/defer
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLScriptElement.defer
 
 {{APIRef("HTML DOM")}}
 
-The **`defer`** property of the {{domxref("HTMLScriptElement")}} interface is a boolean value that controls how the script should be executed. For classic scripts, if the `defer` property is set to `true`, the external script will be executed after the document has been parsed, but before firing {{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}} event. For [module scripts](/en-US/docs/Web/JavaScript/Guide/Modules), the `defer` property has no effect.
+ویژگی **`defer`** در رابط {{domxref("HTMLScriptElement")}} یک مقدار بولی است که نحوه اجرای اسکریپت را کنترل می‌کند. برای اسکریپت‌های کلاسیک، اگر ویژگی `defer` روی `true` تنظیم شود، اسکریپت خارجی پس از تجزیه (parse) سند اجرا می‌شود، اما قبل از رویداد {{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}}. برای [اسکریپت‌های ماژول](/en-US/docs/Web/JavaScript/Guide/Modules)، ویژگی `defer` هیچ اثری ندارد.
 
-It reflects the `defer` attribute of the {{HTMLElement("script")}} element.
+این ویژگی منعکس‌کننده ویژگی `defer` عنصر {{HTMLElement("script")}} است.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```html
 <script id="el" src="/example.js" defer></script>
@@ -33,14 +27,14 @@ const el = document.getElementById("el");
 console.log(el.defer); // Output: true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLScriptElement.async")}}
