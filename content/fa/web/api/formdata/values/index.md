@@ -1,11 +1,5 @@
 ---
 title: "FormData: values() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormData/values"
-status: "needs-translation"
----
-
----
-title: "FormData: values() method"
 short-title: values()
 slug: Web/API/FormData/values
 page-type: web-api-instance-method
@@ -14,23 +8,23 @@ browser-compat: api.FormData.values
 
 {{APIRef("XMLHttpRequest API")}} {{AvailableInWorkers}}
 
-The **`FormData.values()`** method returns an [iterator](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) which iterates through all values contained in the {{domxref("FormData")}}. The values are strings or {{domxref("Blob")}} objects.
+روش **`FormData.values()`** یک [تکرارگر](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) بازمی‌گرداند که بر روی تمام مقادیر موجود در {{domxref("FormData")}} تکرار می‌کند. مقادیر، رشته‌ها یا اشیاء {{domxref("Blob")}} هستند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 values()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-An [`iterator`](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) of {{domxref("FormData")}}'s values.
+یک [`تکرارگر`](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) از مقادیر {{domxref("FormData")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const formData = new FormData();
@@ -43,22 +37,22 @@ for (const value of formData.values()) {
 }
 ```
 
-The result is:
+نتیجه به صورت زیر است:
 
 ```plain
 value1
 value2
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using FormData objects](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
+- [استفاده از اشیاء FormData](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
 - {{HTMLElement("Form")}}
