@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/height"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: height property"
 short-title: height
 slug: Web/API/HTMLIFrameElement/height
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLIFrameElement.height
 
 {{APIRef("HTML DOM")}}
 
-The **`height`** property of the {{domxref("HTMLIFrameElement")}} interface returns a string that reflects the `height` attribute of the {{HTMLElement("iframe")}} element, indicating the height of the frame in CSS pixels.
+خاصیت **`height`** از رابط {{domxref("HTMLIFrameElement")}} یک رشته را برمی‌گرداند که منعکس‌کنندهٔ ویژگی `height` عنصر {{HTMLElement("iframe")}} است و ارتفاع فریم را بر حسب پیکسل‌های CSS نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string indicating the height of the frame in CSS pixels.
+یک رشته که ارتفاع فریم را بر حسب پیکسل‌های CSS نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <iframe id="el" width="800" height="600"></iframe>
@@ -31,15 +25,15 @@ const el = document.getElementById("el");
 console.log(el.height); // Output: '600'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLCanvasElement.height")}}
 - {{domxref("HTMLEmbedElement.height")}}
