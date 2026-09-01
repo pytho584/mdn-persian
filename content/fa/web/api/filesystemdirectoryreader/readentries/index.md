@@ -1,11 +1,5 @@
 ---
 title: "FileSystemDirectoryReader: readEntries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryReader/readEntries"
-status: "needs-translation"
----
-
----
-title: "FileSystemDirectoryReader: readEntries() method"
 short-title: readEntries()
 slug: Web/API/FileSystemDirectoryReader/readEntries
 page-type: web-api-instance-method
@@ -14,54 +8,43 @@ browser-compat: api.FileSystemDirectoryReader.readEntries
 
 {{APIRef("File and Directory Entries API")}}
 
-The {{domxref("FileSystemDirectoryReader")}} interface's **`readEntries()`** method retrieves the directory entries
-within the directory being read and delivers them in an array to a provided callback function.
+متد **`readEntries()`** از رابط {{domxref("FileSystemDirectoryReader")}} ورودی‌های دایرکتوریِ در حال خواندن را بازیابی می‌کند و آن‌ها را در قالب یک آرایه به تابع بازگشتیِ داده‌شده تحویل می‌دهد.
 
-The objects in the array are all based upon {{domxref("FileSystemEntry")}}.
-Generally, they are either {{domxref("FileSystemFileEntry")}} objects, which represent standard files, or {{domxref("FileSystemDirectoryEntry")}} objects, which represent directories.
+اشیاء موجود در آرایه همگی بر پایه {{domxref("FileSystemEntry")}} هستند. به‌طور کلی، آن‌ها یا آبجکت‌های {{domxref("FileSystemFileEntry")}} هستند که فایل‌های استاندارد را نشان می‌دهند، یا آبجکت‌های {{domxref("FileSystemDirectoryEntry")}} که دایرکتوری‌ها را نشان می‌دهند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 readEntries(successCallback)
 readEntries(successCallback, errorCallback)
 ```
 
-### Parameters
+### پارامترها
 
 - `successCallback`
-  - : A function which is called when the directory's contents have been retrieved. The
-    function receives a single input parameter: an array of file system entry objects,
-    each based on {{domxref("FileSystemEntry")}}. Generally, they are either
-    {{domxref("FileSystemFileEntry")}} objects, which represent standard files, or
-    {{domxref("FileSystemDirectoryEntry")}} objects, which represent directories. If there
-    are no files left, or you've already called `readEntries()` on this
-    {{domxref("FileSystemDirectoryReader")}}, the array is empty.
+  - : تابعی که هنگام بازیابی محتویات دایرکتوری فراخوانی می‌شود. این تابع یک پارامتر ورودی دریافت می‌کند: آرایه‌ای از اشیاء ورودیِ سیستم فایل که هر کدام بر پایه {{domxref("FileSystemEntry")}} هستند. به‌طور کلی، آن‌ها یا آبجکت‌های {{domxref("FileSystemFileEntry")}} هستند که فایل‌های استاندارد را نشان می‌دهند، یا آبجکت‌های {{domxref("FileSystemDirectoryEntry")}} که دایرکتوری‌ها را نشان می‌دهند. اگر فایل دیگری باقی نمانده باشد یا قبلاً `readEntries()` را روی این {{domxref("FileSystemDirectoryReader")}} فراخوانی کرده باشید، آرایه خالی خواهد بود.
 - `errorCallback` {{optional_inline}}
-  - : A callback function which is called if an error occurs while reading from the
-    directory. It receives one input parameter: a {{domxref("DOMException")}} object
-    describing the error which occurred.
+  - : تابع بازگشتی که در صورت بروز خطا هنگام خواندن از دایرکتوری فراخوانی می‌شود. این تابع یک پارامتر ورودی دریافت می‌کند: یک آبجکت {{domxref("DOMException")}} که خطای رخ‌داده را توصیف می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-See [`DataTransferItem.webkitGetAsEntry()`](/en-US/docs/Web/API/DataTransferItem/webkitGetAsEntry#examples) for example code that uses this method.
+برای نمونه‌کدهای استفاده از این متد، [`DataTransferItem.webkitGetAsEntry()`](/en-US/docs/Web/API/DataTransferItem/webkitGetAsEntry#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-In Chromium-based browsers, `readEntries()` will only return the first 100 `FileSystemEntry` instances. In order to obtain all of the
-instances, `readEntries()` must be called multiple times.
+در مرورگرهای مبتنی بر Chromium، `readEntries()` تنها اولین ۱۰۰ نمونه `FileSystemEntry` را برمی‌گرداند. برای دریافت همه نمونه‌ها، باید `readEntries()` چندین بار فراخوانی شود.
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("FileSystemDirectoryEntry")}}
