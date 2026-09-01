@@ -1,10 +1,4 @@
 ---
-title: "GPUTextureView"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTextureView"
-status: "needs-translation"
----
-
----
 title: GPUTextureView
 slug: Web/API/GPUTextureView
 page-type: web-api-interface
@@ -13,20 +7,20 @@ browser-compat: api.GPUTextureView
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUTextureView`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents a view into a subset of the texture resources defined by a particular {{domxref("GPUTexture")}}.
+رابط **`GPUTextureView`** از {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} نمایانگر یک View (نمای) درون زیرمجموعه‌ای از منابع بافت (texture) است که توسط یک {{domxref("GPUTexture")}} خاص تعریف شده‌اند.
 
-A `GPUTextureView` object instance is created using the {{domxref("GPUTexture.createView()")}} method.
+یک نمونه از شیء `GPUTextureView` با استفاده از متد {{domxref("GPUTexture.createView()")}} ساخته می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPUTextureView.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : یک رشته که برچسبی را ارائه می‌دهد که می‌تواند برای شناسایی شیء استفاده شود، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Examples
+## مثال‌ها
 
-In the WebGPU Samples [Cubemap demo](https://webgpu.github.io/webgpu-samples/samples/cubemap/), you will see multiple examples of how `GPUTextureView`s (created by {{domxref("GPUTexture.createView()")}} calls) are used, both as a `resource` in a {{domxref("GPUDevice.createBindGroup()")}} call, and as a provided `view` in the `depthStencilAttachment` object of a {{domxref("GPUCommandEncoder.beginRenderPass()")}} descriptor.
+در [نمونه Cubemap](https://webgpu.github.io/webgpu-samples/samples/cubemap/) از WebGPU Samples، نمونه‌های متعددی از نحوه استفاده از `GPUTextureView` ها (که با فراخوانی‌های {{domxref("GPUTexture.createView()")}} ساخته شده‌اند) را مشاهده خواهید کرد، هم به عنوان `resource` در یک فراخوانی {{domxref("GPUDevice.createBindGroup()")}} و هم به عنوان `view` ارائه‌شده در شیء `depthStencilAttachment` یک توصیف‌گر {{domxref("GPUCommandEncoder.beginRenderPass()")}}.
 
 ```js
 const uniformBindGroup = device.createBindGroup({
@@ -77,14 +71,14 @@ const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
