@@ -1,11 +1,5 @@
 ---
 title: "HTMLOptionElement: form property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement/form"
-status: "needs-translation"
----
-
----
-title: "HTMLOptionElement: form property"
 short-title: form
 slug: Web/API/HTMLOptionElement/form
 page-type: web-api-instance-property
@@ -14,24 +8,24 @@ browser-compat: api.HTMLOptionElement.form
 
 {{APIRef("HTML DOM")}}
 
-The **`form`** read-only property of the {{domxref("HTMLOptionElement")}} interface returns an {{domxref("HTMLFormElement")}} object that owns the {{domxref("HTMLSelectElement")}} associated with this {{htmlelement("option")}}, or `null` if this option is not associated with a {{htmlelement("select")}} owned by a form.
+ویژگی فقط‌خواندنی **`form`** از رابط {{domxref("HTMLOptionElement")}} یک شیء {{domxref("HTMLFormElement")}} را برمی‌گرداند که مالک {{domxref("HTMLSelectElement")}} مرتبط با این {{htmlelement("option")}} است، یا اگر این گزینه با یک {{htmlelement("select")}} متعلق به یک فرم ارتباط نداشته باشد، `null` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLFormElement")}} or `null`.
+یک {{domxref("HTMLFormElement")}} یا `null`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLOptionElement")}}
 - {{domxref("HTMLSelectElement.form")}}
 - {{domxref("HTMLFormElement")}}
 - {{HTMLElement("option")}}
-- [HTML forms guide](/en-US/docs/Learn_web_development/Extensions/Forms)
+- [راهنمای فرم‌های HTML](/en-US/docs/Learn_web_development/Extensions/Forms)
