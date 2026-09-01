@@ -1,7 +1,5 @@
 ---
 title: "DataTransferItem: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/type"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,17 @@ browser-compat: api.DataTransferItem.type
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The read-only **`DataTransferItem.type`** property returns the type (format) of the {{domxref("DataTransferItem")}} object representing the drag data item.
-The `type` is a Unicode string generally given by a MIME type, although a MIME type is not required.
+ویژگی فقط‌خواندنی **`DataTransferItem.type`** نوع (فرمت) شیء {{domxref("DataTransferItem")}} را که نمایان‌گر آیتم دادهٔ کشیدن است، برمی‌گرداند. `type` یک رشتهٔ یونیکد است که معمولاً توسط یک نوع MIME داده می‌شود، هرچند که یک نوع MIME الزامی نیست.
 
-Some example types are: `text/plain` and `text/html`.
+برخی از انواع نمونه عبارتند از: `text/plain` و `text/html`.
 
 ## Value
 
-A string representing the drag data item's type.
+رشته‌ای که نوع آیتم دادهٔ کشیدن را نشان می‌دهد.
 
 ## Examples
 
-This example shows the use of the `type` property.
+این مثال استفاده از ویژگی `type` را نشان می‌دهد.
 
 ```js
 function dropHandler(ev) {
