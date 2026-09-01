@@ -1,11 +1,5 @@
 ---
 title: "GamepadHapticActuator: pulse() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator/pulse"
-status: "needs-translation"
----
-
----
-title: "GamepadHapticActuator: pulse() method"
 short-title: pulse()
 slug: Web/API/GamepadHapticActuator/pulse
 page-type: web-api-instance-method
@@ -14,29 +8,29 @@ browser-compat: api.GamepadHapticActuator.pulse
 
 {{APIRef("Gamepad API")}}
 
-The **`pulse()`** method of the {{domxref("GamepadHapticActuator")}} interface makes the hardware pulse at a certain intensity for a specified duration.
+متد **`pulse()`** از رابط {{domxref("GamepadHapticActuator")}} باعث می‌شود سخت‌افزار با شدت مشخصی برای مدت زمان معینی لرزش (pulse) ایجاد کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 pulse(value, duration)
 ```
 
-### Parameters
+### پارامترها
 
 - `value`
-  - : A double representing the intensity of the pulse. This can vary depending on the hardware type, but generally takes a value between 0.0 (no intensity) and 1.0 (full intensity).
+  - : یک عدد اعشاری (double) که شدت لرزش را مشخص می‌کند. این مقدار بسته به نوع سخت‌افزار می‌تواند متفاوت باشد، اما معمولاً مقداری بین ۰.۰ (بدون شدت) و ۱.۰ (حداکثر شدت) می‌گیرد.
 - `duration`
-  - : A double representing the duration of the pulse, in milliseconds.
+  - : یک عدد اعشاری (double) که مدت زمان لرزش را بر حسب میلی‌ثانیه مشخص می‌کند.
 
 > [!NOTE]
-> Repeated calls to `pulse()` override the previous calls if they are still ongoing.
+> تماس‌های مکرر با `pulse()` اگر هنوز در حال اجرا باشند، تماس‌های قبلی را لغو می‌کنند.
 
-### Return value
+### مقدار بازگشتی
 
-A promise that resolves with a value of `true` when the pulse has successfully completed.
+یک promise که زمانی که لرزش با موفقیت به پایان رسید، با مقدار `true` resolve می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const gamepad = navigator.getGamepads()[0];
@@ -44,14 +38,14 @@ const gamepad = navigator.getGamepads()[0];
 gamepad.hapticActuators[0].pulse(1.0, 200);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
