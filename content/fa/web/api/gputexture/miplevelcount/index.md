@@ -1,11 +1,5 @@
 ---
 title: "GPUTexture: mipLevelCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/mipLevelCount"
-status: "needs-translation"
----
-
----
-title: "GPUTexture: mipLevelCount property"
 short-title: mipLevelCount
 slug: Web/API/GPUTexture/mipLevelCount
 page-type: web-api-instance-property
@@ -14,20 +8,18 @@ browser-compat: api.GPUTexture.mipLevelCount
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`mipLevelCount`** read-only property of the
-{{domxref("GPUTexture")}} interface represents the number of mip levels of the `GPUTexture`.
+ویژگی فقط‑خواندنی **`mipLevelCount`** از رابط {{domxref("GPUTexture")}} تعداد سطوح mip (`mip level`) را در `GPUTexture` نشان می‌دهد.
 
-This is set via the `mipLevelCount` property in the descriptor object passed into the originating {{domxref("GPUDevice.createTexture()")}} call. If omitted, this defaults to 1.
+این مقدار از طریق ویژگی `mipLevelCount` در شیء توصیف‌کننده‌ای که به فراخوانی {{domxref("GPUDevice.createTexture()")}} اصلی داده می‌شود تنظیم می‌گردد. در صورت حذف، مقدار پیش‌فرض آن `1` است.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
-
 const depthTexture = device.createTexture({
   size: [canvas.width, canvas.height],
   format: "depth24plus",
@@ -37,14 +29,14 @@ const depthTexture = device.createTexture({
 console.log(depthTexture.mipLevelCount); // 1
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
