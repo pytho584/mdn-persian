@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaOrientation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaOrientation"
-status: "needs-translation"
----
-
----
-title: "Element: ariaOrientation property"
 short-title: ariaOrientation
 slug: Web/API/Element/ariaOrientation
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.Element.ariaOrientation
 
 {{APIRef("DOM")}}
 
-The **`ariaOrientation`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) attribute, which indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.
+ویژگی **`ariaOrientation`** از رابط {{domxref("Element")}} نشان‌دهنده‌ی مقدار ویژگی [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) است که مشخص می‌کند جهت‌گیری عنصر افقی، عمودی، یا نامشخص/مبهم است.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"horizontal"`
-  - : The element is horizontal.
+  - : عنصر افقی است.
 - `"vertical"`
-  - : The element is vertical.
+  - : عنصر عمودی است.
 - `"undefined"`
-  - : The element's orientation is unknown.
+  - : جهت‌گیری عنصر نامشخص است.
 
-## Examples
+## مثال‌ها
 
-In this example the [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) attribute on the element with an ID of `handle_zoomSlider` is set to `"vertical"`. Using `ariaOrientation` we update the value to `"horizontal"`.
+در این مثال، ویژگی [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) روی عنصری با شناسه `handle_zoomSlider` به `"vertical"` تنظیم شده است. با استفاده از `ariaOrientation` مقدار آن را به `"horizontal"` تغییر می‌دهیم.
 
 ```html
 <div
@@ -51,10 +45,10 @@ el.ariaOrientation = "horizontal";
 console.log(el.ariaOrientation); // "horizontal"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
