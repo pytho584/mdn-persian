@@ -1,9 +1,4 @@
----
-title: "FontData: style property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontData/style"
-status: "needs-translation"
----
-
+```
 ---
 title: "FontData: style property"
 short-title: style
@@ -16,11 +11,11 @@ browser-compat: api.FontData.style
 
 {{APIRef("Local Font Access API")}}{{SeeCompatTable}}
 
-The **`style`** read-only property of the {{domxref("FontData")}} interface returns the style of the font face.
+ویژگی فقط‌خواندنی **`style`** در رابط {{domxref("FontData")}}، سبک قلم را برمی‌گرداند.
 
-This is the value used to select the style of the font you want to use, for example inside the {{cssxref("font-style")}} property.
+این مقداری است که برای انتخاب سبک قلم مورد نظر خود استفاده می‌کنید، برای مثال در ویژگی {{cssxref("font-style")}}.
 
-Examples include:
+نمونه‌ها عبارتند از:
 
 - UltraLight
 - Regular
@@ -28,13 +23,13 @@ Examples include:
 - Medium Italic
 - Extrabold
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-The following snippet will query for all available fonts, and log metadata. This could be used, for example, to populate a font-picker control.
+قطعه کد زیر همه قلم‌های موجود را جستجو می‌کند و فراداده‌های آن را در کنسول ثبت می‌کند. برای مثال، می‌توان از آن برای پر کردن یک کنترل انتخاب قلم استفاده کرد.
 
 ```js
 async function logFontData() {
@@ -52,15 +47,16 @@ async function logFontData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Use advanced typography with local fonts](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
+- [استفاده از تایپوگرافی پیشرفته با قلم‌های محلی](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
 - {{cssxref("@font-face")}}
+```
