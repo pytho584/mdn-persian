@@ -1,11 +1,5 @@
 ---
 title: "DOMTokenList: item() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/item"
-status: "needs-translation"
----
-
----
-title: "DOMTokenList: item() method"
 short-title: item()
 slug: Web/API/DOMTokenList/item
 page-type: web-api-instance-method
@@ -14,49 +8,42 @@ browser-compat: api.DOMTokenList.item
 
 {{APIRef("DOM")}}
 
-The **`item()`** method of the {{domxref("DOMTokenList")}} interface returns an item in the list,
-determined by its position in the list, its index.
+متد **`item()`** در رابط {{domxref("DOMTokenList")}} آیتمی از فهرست را بر اساس موقعیت آن در فهرست، یعنی اندیس آن، برمی‌گرداند.
 
 > [!NOTE]
-> This method is equivalent as the [bracket notation](/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors#bracket_notation).
-> So `list.item(i)` is the same as `list[i]`.
+> این متد معادل [نشانه‌گذاری براکت](/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors#bracket_notation) است. بنابراین `list.item(i)` با `list[i]` یکسان است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 item(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : A number representing the index of the item you want to return. If it isn't an integer, only the integer part is considered.
+  - : عددی است که اندیس آیتم موردنظر برای بازگرداندن را مشخص می‌کند. اگر این عدد صحیح نباشد، فقط بخش صحیحِ آن در نظر گرفته می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A string representing the returned item,
-or `null` if the number is greater than or equal to the `length` of the list.
+یک رشته که آیتم بازگشتی را نشان می‌دهد، یا اگر عدد بزرگ‌تر یا مساوی با `length` فهرست باشد، `null` برگردانده می‌شود.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the `index` cannot be converted to an integer.
+  - : اگر نتوان `index` را به یک عدد صحیح تبدیل کرد، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example we retrieve the list of classes set on a
-{{htmlelement("span")}} element as a `DOMTokenList` using
-{{domxref("Element.classList")}}. We then retrieve the last item in the list using
-`item(tokenList.length - 1)`, and write it into the
-`<span>`'s {{domxref("Node.textContent")}}.
+در مثال زیر، فهرست کلاس‌های یک عنصر {{htmlelement("span")}} را به‌صورت یک `DOMTokenList` با استفاده از {{domxref("Element.classList")}} دریافت می‌کنیم. سپس آخرین آیتم فهرست را با `item(tokenList.length - 1)` برمی‌گردانیم و آن را در {{domxref("Node.textContent")}} عنصر `<span>` می‌نویسیم.
 
-First, the HTML:
+ابتدا HTML:
 
 ```html
 <span class="a b c"></span>
 ```
 
-Now the JavaScript:
+حالا جاوااسکریپت:
 
 ```js
 const span = document.querySelector("span");
@@ -65,14 +52,14 @@ const item = classes.item(classes.length - 1);
 span.textContent = item;
 ```
 
-The output looks like this:
+خروجی به این صورت است:
 
 {{ EmbedLiveSample('Examples', '100%', 60) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
