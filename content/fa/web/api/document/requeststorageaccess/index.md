@@ -1,11 +1,5 @@
 ---
 title: "Document: requestStorageAccess() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/requestStorageAccess"
-status: "needs-translation"
----
-
----
-title: "Document: requestStorageAccess() method"
 short-title: requestStorageAccess()
 slug: Web/API/Document/requestStorageAccess
 page-type: web-api-instance-method
@@ -14,90 +8,83 @@ browser-compat: api.Document.requestStorageAccess
 
 {{APIRef("Storage Access API")}}
 
-The **`requestStorageAccess()`** method of the {{domxref("Document")}} interface allows content loaded in a third-party context (i.e., embedded in an {{htmlelement("iframe")}}) to request access to [third-party cookies](/en-US/docs/Web/Privacy/Guides/Third-party_cookies) and [unpartitioned state](/en-US/docs/Web/Privacy/Guides/State_Partitioning#state_partitioning).
-This is relevant to user agents that, by default, block access to third-party, [unpartitioned](/en-US/docs/Web/API/Storage_Access_API#unpartitioned_versus_partitioned_cookies) cookies to improve privacy (e.g., to prevent tracking), and is part of the [Storage Access API](/en-US/docs/Web/API/Storage_Access_API).
+متد **`requestStorageAccess()`** از رابط {{domxref("Document")}} به محتوایی که درون یک زمینه شخص ثالث (third-party context) بارگذاری شده است (یعنی درون یک {{htmlelement("iframe")}}) اجازه می‌دهد تا دسترسی به [کوئکی‌های شخص ثالث (third-party cookies)](/en-US/docs/Web/Privacy/Guides/Third-party_cookies) و [وضعیت تفکیک‌نشده (unpartitioned state)](/en-US/docs/Web/Privacy/Guides/State_Partitioning#state_partitioning) را درخواست کند. این موضوع برای عامل‌های کاربری (user agents) که به‌طور پیش‌فرض دسترسی به کوئکی‌های شخص ثالث و تفکیک‌نشده را برای بهبود حریم خصوصی (مثلاً جلوگیری از ردیابی) مسدود می‌کنند، مرتبط است و بخشی از [Storage Access API](/en-US/docs/Web/API/Storage_Access_API) محسوب می‌شود.
 
-To check whether permission to access third-party cookies has already been granted, you can call {{domxref("Permissions.query()")}}, specifying the feature name `"storage-access"`.
+برای بررسی اینکه آیا مجوز دسترسی به کوئکی‌های شخص ثالث قبلاً اعطا شده است، می‌توانید با مشخص کردن نام ویژگی `"storage-access"`، متد {{domxref("Permissions.query()")}} را فراخوانی کنید.
 
-After an embed has activated `storage-access` permission via `requestStorageAccess()`, it should reload itself.
-The browser will re-request the resource with third-party unpartitioned cookies included, and make them available to the embedded resource once it has loaded.
+پس از اینکه یک عنصر جاسازی‌شده (embed) مجوز `storage-access` را از طریق `requestStorageAccess()` فعال کرد، باید خود را دوباره بارگذاری کند. مرورگر منبع را با کوئکی‌های شخص ثالث تفکیک‌نشده دوباره درخواست کرده و پس از بارگذاری، آن‌ها را در دسترس منبع جاسازی‌شده قرار می‌دهد.
 
-Third-party cookies are sent only with requests to the embedded resource's exact origin.
-Other origins within the same site that wish to access their third-party cookies will need to _activate_ the granted storage-access permission.
-The [storage access headers](/en-US/docs/Web/API/Storage_Access_API#storage_access_headers) should be used for activating a granted `storage-access` permission.
-Note that the headers can activate a granted permission for any embedded resource, such as credentialed images, not just code embedded in an {{htmlelement("iframe")}}.
+کوئکی‌های شخص ثالث فقط با درخواست‌هایی به مبدأ دقیق (exact origin) منبع جاسازی‌شده ارسال می‌شوند. سایر مبدأهای داخل همان سایت که می‌خواهند به کوئکی‌های شخص ثالث خود دسترسی داشته باشند، باید مجوز اعطاشده `storage-access` را _فعال_ کنند. برای فعال‌سازی یک مجوز `storage-access` اعطاشده باید از [هدرهای دسترسی به ذخیره‌سازی (storage access headers)](/en-US/docs/Web/API/Storage_Access_API#storage_access_headers) استفاده کرد. توجه داشته باشید که این هدرها می‌توانند یک مجوز اعطاشده را برای هر منبع جاسازی‌شده، مانند تصاویر دارای اعتبار (credentialed images)، فعال کنند، نه فقط کدهای جاسازی‌شده درون یک {{htmlelement("iframe")}}.
 
-It is also possible to activate a granted permission for a cross-origin, same-site endpoint by calling `requestStorageAccess()` (this time without the requirement for transient activation).
-However, this only works to activate permission for embedded code.
-It is also less efficient than using the headers, because the resource needs to be loaded in order to activate the permission.
+همچنین امکان فعال‌سازی یک مجوز اعطاشده برای یک نقطه پایانی (endpoint) با مبدأ متفاوت اما همان سایت (cross-origin, same-site) با فراخوانی `requestStorageAccess()` وجود دارد (این بار بدون نیاز به فعال‌سازی موقت - transient activation). با این حال، این روش فقط برای فعال‌سازی مجوز برای کدهای جاسازی‌شده کار می‌کند. همچنین نسبت به استفاده از هدرها کارایی کمتری دارد، زیرا برای فعال‌سازی مجوز باید منبع بارگذاری شود.
 
 > [!NOTE]
-> Usage of this feature may be blocked by a {{httpheader("Permissions-Policy/storage-access", "storage-access")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) set on your server. In addition, the document must pass additional browser-specific checks such as allowlists, blocklists, on-device classification, user settings, anti-[clickjacking](/en-US/docs/Web/Security/Attacks/Clickjacking) heuristics, or prompting the user for explicit permission.
+> استفاده از این ویژگی ممکن است توسط یک {{httpheader("Permissions-Policy/storage-access", "storage-access")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) که روی سرور شما تنظیم شده است مسدود شود. علاوه بر این، سند باید بررسی‌های خاص مرورگر دیگری مانند لیست‌های مجاز (allowlists)، لیست‌های مسدود (blocklists)، طبقه‌بندی روی دستگاه (on-device classification)، تنظیمات کاربر، اکتشافات ضد [کلیک‌جکینگ (clickjacking)](/en-US/docs/Web/Security/Attacks/Clickjacking) یا درخواست مجوز صریح از کاربر را پشت سر بگذارد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 requestStorageAccess()
 requestStorageAccess(types)
 ```
 
-### Parameters
+### پارامترها
 
 - `types` {{optional_inline}}
-  - : An object containing properties that control what unpartitioned state is made accessible. If not specified, the default value of the property is `false`. Available properties are as follows:
+  - : یک شی حاوی ویژگی‌هایی که مشخص می‌کند چه وضعیت تفکیک‌نشده‌ای قابل دسترسی شود. اگر مشخص نشود، مقدار پیش‌فرض ویژگی `false` است. ویژگی‌های موجود به شرح زیر هستند:
     - `all`
-      - : A boolean specifying all possible unpartitioned states should be made accessible.
+      - : یک بولی (boolean) که مشخص می‌کند همه وضعیت‌های تفکیک‌نشده ممکن باید قابل دسترسی شوند.
     - `cookies`
-      - : A boolean specifying third-party cookies should be made accessible.
+      - : یک بولی که مشخص می‌کند کوئکی‌های شخص ثالث باید قابل دسترسی شوند.
     - `sessionStorage`
-      - : A boolean specifying {{domxref("StorageAccessHandle.sessionStorage")}} should be made accessible.
+      - : یک بولی که مشخص می‌کند {{domxref("StorageAccessHandle.sessionStorage")}} باید قابل دسترسی شود.
     - `localStorage`
-      - : A boolean specifying {{domxref("StorageAccessHandle.localStorage")}} should be made accessible.
+      - : یک بولی که مشخص می‌کند {{domxref("StorageAccessHandle.localStorage")}} باید قابل دسترسی شود.
     - `indexedDB`
-      - : A boolean specifying {{domxref("StorageAccessHandle.indexedDB")}} should be made accessible.
+      - : یک بولی که مشخص می‌کند {{domxref("StorageAccessHandle.indexedDB")}} باید قابل دسترسی شود.
     - `locks`
-      - : A boolean specifying {{domxref("StorageAccessHandle.locks")}} should be made accessible.
+      - : یک بولی که مشخص می‌کند {{domxref("StorageAccessHandle.locks")}} باید قابل دسترسی شود.
     - `caches`
-      - : A boolean specifying {{domxref("StorageAccessHandle.caches")}} should be made accessible.
+      - : یک بولی که مشخص می‌کند {{domxref("StorageAccessHandle.caches")}} باید قابل دسترسی شود.
     - `getDirectory`
-      - : A boolean specifying {{domxref("StorageAccessHandle.getDirectory()")}} should be made accessible.
+      - : یک بولی که مشخص می‌کند {{domxref("StorageAccessHandle.getDirectory()")}} باید قابل دسترسی شود.
     - `estimate`
-      - : A boolean specifying {{domxref("StorageAccessHandle.estimate()")}} should be made accessible.
+      - : یک بولی که مشخص می‌کند {{domxref("StorageAccessHandle.estimate()")}} باید قابل دسترسی شود.
     - `createObjectURL`
-      - : A boolean specifying {{domxref("StorageAccessHandle.createObjectURL()")}} should be made accessible.
+      - : یک بولی که مشخص می‌کند {{domxref("StorageAccessHandle.createObjectURL()")}} باید قابل دسترسی شود.
     - `revokeObjectURL`
-      - : A boolean specifying {{domxref("StorageAccessHandle.revokeObjectURL()")}} should be made accessible.
+      - : یک بولی که مشخص می‌کند {{domxref("StorageAccessHandle.revokeObjectURL()")}} باید قابل دسترسی شود.
     - `BroadcastChannel`
-      - : A boolean specifying {{domxref("StorageAccessHandle.BroadcastChannel()")}} should be made accessible.
+      - : یک بولی که مشخص می‌کند {{domxref("StorageAccessHandle.BroadcastChannel()")}} باید قابل دسترسی شود.
     - `SharedWorker`
-      - : A boolean specifying {{domxref("StorageAccessHandle.SharedWorker()")}} should be made accessible.
+      - : یک بولی که مشخص می‌کند {{domxref("StorageAccessHandle.SharedWorker()")}} باید قابل دسترسی شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with `undefined` if the access to third-party cookies was granted and no `types` parameter was provided, fulfills with {{domxref("StorageAccessHandle")}} if the access to unpartitioned state requested by the `types` parameter was provided, and rejects if access was denied.
+یک {{jsxref("Promise")}} که در صورت اعطای دسترسی به کوئکی‌های شخص ثالث و عدم ارائه پارامتر `types`، با `undefined` fulfilled می‌شود، در صورت ارائه پارامتر `types` و اعطای دسترسی به وضعیت تفکیک‌نشده درخواست‌شده، با {{domxref("StorageAccessHandle")}} fulfilled می‌شود، و در صورت رد دسترسی rejected می‌شود.
 
-`requestStorageAccess()` requests are automatically denied unless the embedded content is currently processing a user gesture such as a tap or click ({{Glossary("transient activation")}}), or unless permission was already granted previously. If permission was not previously granted, they need to be run inside a user gesture-based event handler. The user gesture behavior depends on the state of the promise:
+درخواست‌های `requestStorageAccess()` به‌طور خودکار رد می‌شوند مگر اینکه محتوای جاسازی‌شده در حال پردازش یک ژست کاربری (user gesture) مانند ضربه زدن یا کلیک کردن ({{Glossary("transient activation")}}) باشد، یا اینکه مجوز قبلاً اعطا شده باشد. اگر مجوز قبلاً اعطا نشده باشد، باید درون یک مدیریت‌کننده رویداد مبتنی بر ژست کاربری اجرا شوند. رفتار ژست کاربری به وضعیت promise بستگی دارد:
 
-- If the promise resolves (i.e., if permission was granted), then the user gesture has not been consumed, so the script can subsequently call APIs that require a user gesture.
-- If the promise rejects (i.e., permission was not granted), then the user gesture has been consumed, so the script can't do anything that requires a gesture. This is intentional protection against abuse — it prevents scripts from calling `requestStorageAccess()` in a loop until the user accepts the prompt.
+- اگر promise resolve شود (یعنی مجوز اعطا شد)، ژست کاربری مصرف نشده است، بنابراین اسکریپت می‌تواند بعداً APIهایی را که نیاز به ژست کاربری دارند فراخوانی کند.
+- اگر promise reject شود (یعنی مجوز اعطا نشد)، ژست کاربری مصرف شده است، بنابراین اسکریپت نمی‌تواند کاری را که نیاز به ژست دارد انجام دهد. این یک محافظت عمدی در برابر سوءاستفاده است – از فراخوانی مکرر `requestStorageAccess()` در یک حلقه تا زمانی که کاربر اعلان را بپذیرد جلوگیری می‌کند.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The current {{domxref("Document")}} is not yet active.
-    - The `types` parameter is provided and all of its properties are `false`.
+  - : در موارد زیر پرتاب می‌شود:
+    - {{domxref("Document")}} فعلی هنوز فعال نیست.
+    - پارامتر `types` ارائه شده است و همه ویژگی‌های آن `false` هستند.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The document's window is not a [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
-    - Usage is blocked by a {{httpheader("Permissions-Policy/storage-access", "storage-access")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
-    - The document or the top-level document has a `null` origin.
-    - The embedding {{htmlelement("iframe")}} is sandboxed, and the `allow-storage-access-by-user-activation` token is not set.
-    - Usage is denied by the user agent's permission request to use the API.
+  - : در موارد زیر پرتاب می‌شود:
+    - پنجره سند یک [زمینه امن (secure context)](/en-US/docs/Web/Security/Defenses/Secure_Contexts) نیست.
+    - استفاده توسط یک {{httpheader("Permissions-Policy/storage-access", "storage-access")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مسدود شده است.
+    - سند یا سند سطح بالا دارای مبدأ `null` است.
+    - {{htmlelement("iframe")}} جاساز sandbox شده است و توکن `allow-storage-access-by-user-activation` تنظیم نشده است.
+    - استفاده توسط درخواست مجوز عامل کاربر برای استفاده از API رد شده است.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 document.requestStorageAccess().then(
@@ -121,18 +108,18 @@ document.requestStorageAccess({ localStorage: true }).then(
 ```
 
 > [!NOTE]
-> See [Using the Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using) for a more complete example.
+> برای یک مثال کامل‌تر به [استفاده از Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using) مراجعه کنید.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.hasStorageAccess()")}}, {{domxref("Document.hasUnpartitionedCookieAccess()")}}, {{domxref("Document.requestStorageAccessFor()")}}
-- [Using the Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using)
-- [Introducing Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/) (WebKit blog)
+- [استفاده از Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using)
+- [معرفی Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/) (وبلاگ WebKit)
