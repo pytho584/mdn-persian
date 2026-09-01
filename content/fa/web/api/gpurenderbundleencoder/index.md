@@ -1,10 +1,4 @@
 ---
-title: "GPURenderBundleEncoder"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder"
-status: "needs-translation"
----
-
----
 title: GPURenderBundleEncoder
 slug: Web/API/GPURenderBundleEncoder
 page-type: web-api-interface
@@ -13,64 +7,64 @@ browser-compat: api.GPURenderBundleEncoder
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPURenderBundleEncoder`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} is used to pre-record bundles of commands.
+رابط **`GPURenderBundleEncoder`** در {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} برای از پیش ضبط کردن دسته‌ای از دستورات (bundles of commands) استفاده می‌شود.
 
-The command bundles are encoded by calling the methods of `GPURenderBundleEncoder`; once the desired commands have been encoded, they are recorded into a {{domxref("GPURenderBundle")}} object instance using the {{domxref("GPURenderBundleEncoder.finish()")}} method. These render bundles can then be reused across multiple render passes by passing the `GPURenderBundle` objects into {{domxref("GPURenderPassEncoder.executeBundles()")}} calls.
+دسته‌های فرمان با فراخوانی متدهای `GPURenderBundleEncoder` کدگذاری می‌شوند؛ پس از کدگذاری دستورات مورد نظر، آن‌ها با استفاده از متد {{domxref("GPURenderBundleEncoder.finish()")}} در یک نمونه از شیء {{domporf("GPURenderBundle")}} ثبت می‌شوند. این دسته‌های رندر (render bundles) سپس می‌توانند در چندین رندر پاس (render pass) با ارسال اشیاء `GPURenderBundle` به فراخوانی‌های {{domxref("GPURenderPassEncoder.executeBundles()")}} مورد استفاده مجدد قرار گیرند.
 
-In effect, this is like a partial render pass — `GPURenderBundleEncoder`s have all the same functionality available as {{domxref("GPURenderPassEncoder")}}s, except that they can't begin and end occlusion queries, and can't set the scissor rect, viewport, blend constant, and stencil reference. The `GPURenderBundle` will inherit all these values from the {{domxref("GPURenderPassEncoder")}} that executes it.
-
-> [!NOTE]
-> Currently set vertex buffers, index buffers, bind groups, and pipeline are all cleared prior to executing a render bundle, and once the render bundle has finished executing.
-
-Reusing pre-recoded commands can significantly improve app performance in situations where JavaScript draw call overhead is a bottleneck. Render bundles are most effective in situations where a batch of objects will be drawn the same way across multiple views or frames, with the only differences being the buffer content being used (such as updated matrix uniforms). A good example is VR rendering. Recording the rendering as a render bundle and then tweaking the view matrix and replaying it for each eye is a more efficient way to issue draw calls for both renderings of the scene.
-
-A `GPURenderBundleEncoder` object instance is created via the {{domxref("GPUDevice.createRenderBundleEncoder()")}} property.
+در واقع، این مانند یک رندر پاس جزئی است — `GPURenderBundleEncoder`ها تمام عملکردهای مشابه {{domxref("GPURenderPassEncoder")}} را دارند، با این تفاوت که نمی‌توانند کوئری‌های انسداد (occlusion queries) را شروع یا پایان دهند و نمی‌توانند مستطیل برش (scissor rect)، نمای دید (viewport)، ثابت ترکیب (blend constant) و مرجع استنسیل (stencil reference) را تنظیم کنند. `GPURenderBundle` همه این مقادیر را از {{domxref("GPURenderPassEncoder")}} که آن را اجرا می‌کند به ارث می‌برد.
 
 > [!NOTE]
-> The methods of `GPURenderBundleEncoder` are functionally identical to their equivalents available on {{domxref("GPURenderPassEncoder")}}, except for {{domxref("GPURenderBundleEncoder.finish()")}}, which is similar in purpose to {{domxref("GPUCommandEncoder.finish()")}}.
+> بافرهای رأس (vertex buffers)، بافرهای ایندکس (index buffers)، گروه‌های اتصال (bind groups) و پایپ‌لاین (pipeline) که در حال حاضر تنظیم شده‌اند، قبل از اجرای یک رندر باندل و پس از پایان اجرای آن، همگی پاک می‌شوند.
+
+استفاده مجدد از دستورات از پیش ضبط‌شده می‌تواند عملکرد برنامه را در شرایطی که سربار فراخوانی‌های رسم جاوااسکریپت (JavaScript draw call overhead) یک گلوگاه است، به‌طور قابل توجهی بهبود بخشد. رندر باندل‌ها در شرایطی بیشترین کارایی را دارند که یک دسته از اشیاء به همان روش در چندین دید یا فریم رسم می‌شوند و تنها تفاوت‌ها در محتوای بافر مورد استفاده است (مانند ماتریس‌های یکنواخت به‌روزرسانی‌شده). یک مثال خوب، رندرینگ واقعیت مجازی (VR) است. ضبط رندر به‌عنوان یک رندر باندل و سپس تنظیم ماتریس دید و پخش مجدد آن برای هر چشم، روشی کارآمدتر برای صدور فراخوانی‌های رسم برای هر دو رندر از صحنه است.
+
+یک نمونه شیء `GPURenderBundleEncoder` از طریق ویژگی {{domxref("GPUDevice.createRenderBundleEncoder()")}} ایجاد می‌شود.
+
+> [!NOTE]
+> متدهای `GPURenderBundleEncoder` از نظر عملکردی با معادل‌های موجود در {{domxref("GPURenderPassEncoder")}} یکسان هستند، به جز {{domxref("GPURenderBundleEncoder.finish()")}} که از نظر هدف مشابه {{domxref("GPUCommandEncoder.finish()")}} است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPURenderBundleEncoder.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : یک رشته که برچسبی را ارائه می‌دهد که می‌تواند برای شناسایی شیء استفاده شود، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("GPURenderBundleEncoder.draw", "draw()")}}
-  - : Draw primitives based on the vertex buffers provided by {{domxref("GPURenderBundleEncoder.setVertexBuffer", "setVertexBuffer()")}}.
+  - : رسم اولیه‌ها (primitives) بر اساس بافرهای رأس ارائه‌شده توسط {{domxref("GPURenderBundleEncoder.setVertexBuffer", "setVertexBuffer()")}}.
 - {{domxref("GPURenderBundleEncoder.drawIndexed", "drawIndexed()")}}
-  - : Draw indexed primitives based on the vertex and index buffers provided by {{domxref("GPURenderBundleEncoder.setVertexBuffer", "setVertexBuffer()")}} and {{domxref("GPURenderBundleEncoder.setIndexBuffer", "setIndexBuffer()")}}
+  - : رسم اولیه‌های ایندکس‌دار بر اساس بافرهای رأس و ایندکس ارائه‌شده توسط {{domxref("GPURenderBundleEncoder.setVertexBuffer", "setVertexBuffer()")}} و {{domxref("GPURenderBundleEncoder.setIndexBuffer", "setIndexBuffer()")}}.
 - {{domxref("GPURenderBundleEncoder.drawIndirect", "drawIndirect()")}}
-  - : Draw primitives using parameters read from a {{domxref("GPUBuffer")}}.
+  - : رسم اولیه‌ها با استفاده از پارامترهایی که از یک {{domxref("GPUBuffer")}} خوانده می‌شوند.
 - {{domxref("GPURenderBundleEncoder.drawIndexedIndirect", "drawIndexedIndirect()")}}
-  - : Draw indexed primitives using parameters read from a {{domxref("GPUBuffer")}}.
+  - : رسم اولیه‌های ایندکس‌دار با استفاده از پارامترهایی که از یک {{domxref("GPUBuffer")}} خوانده می‌شوند.
 
 - {{domxref("GPURenderBundleEncoder.finish", "finish()")}}
-  - : Completes recording of the current render pass command sequence.
+  - : ضبط توالی دستورات فعلی رندر پاس را تکمیل می‌کند.
 
 - {{domxref("GPURenderBundleEncoder.insertDebugMarker", "insertDebugMarker()")}}
-  - : Marks a specific point in a series of encoded commands with a label.
+  - : نقطه خاصی را در یک سری از دستورات کدگذاری‌شده با یک برچسب علامت‌گذاری می‌کند.
 - {{domxref("GPURenderBundleEncoder.popDebugGroup", "popDebugGroup()")}}
-  - : Ends a debug group, which is begun with a {{domxref("GPURenderBundleEncoder.pushDebugGroup", "pushDebugGroup()")}} call.
+  - : یک گروه اشکال‌زدایی را پایان می‌دهد که با یک فراخوانی {{domxref("GPURenderBundleEncoder.pushDebugGroup", "pushDebugGroup()")}} شروع شده است.
 - {{domxref("GPURenderBundleEncoder.pushDebugGroup", "pushDebugGroup()")}}
-  - : Begins a debug group, which is marked with a specified label, and will contain all subsequent encoded commands up until a {{domxref("GPURenderBundleEncoder.popDebugGroup", "popDebugGroup()")}} method is invoked.
+  - : یک گروه اشکال‌زدایی را شروع می‌کند که با یک برچسب مشخص علامت‌گذاری می‌شود و شامل تمام دستورات کدگذاری‌شده بعدی تا زمانی که متد {{domxref("GPURenderBundleEncoder.popDebugGroup", "popDebugGroup()")}} فراخوانی شود، خواهد بود.
 - {{domxref("GPURenderBundleEncoder.setBindGroup", "setBindGroup()")}}
-  - : Sets the {{domxref("GPUBindGroup")}} to use for subsequent render bundle commands, for a given index.
+  - : {{domxref("GPUBindGroup")}} را که برای دستورات بعدی رندر باندل استفاده می‌شود، برای یک ایندکس معین تنظیم می‌کند.
 
 - {{domxref("GPURenderBundleEncoder.setIndexBuffer", "setIndexBuffer()")}}
-  - : Sets the current {{domxref("GPUBuffer")}} that will provide index data for subsequent drawing commands.
+  - : {{domxref("GPUBuffer")}} فعلی را که داده‌های ایندکس را برای دستورات رسم بعدی فراهم می‌کند، تنظیم می‌کند.
 
 - {{domxref("GPURenderBundleEncoder.setPipeline", "setPipeline()")}}
-  - : Sets the {{domxref("GPURenderPipeline")}} to use for this render bundle.
+  - : {{domxref("GPURenderPipeline")}} را که برای این رندر باندل استفاده می‌شود تنظیم می‌کند.
 
 - {{domxref("GPURenderBundleEncoder.setVertexBuffer", "setVertexBuffer()")}}
-  - : Sets or unsets the current {{domxref("GPUBuffer")}} that will provide vertex data for subsequent drawing commands.
+  - : {{domxref("GPUBuffer")}} فعلی را که داده‌های رأس را برای دستورات رسم بعدی فراهم می‌کند، تنظیم یا لغو تنظیم می‌کند.
 
-## Examples
+## مثال‌ها
 
-In the WebGPU Samples [Animometer example](https://webgpu.github.io/webgpu-samples/samples/animometer/), a lot of like operations are done on many different objects simultaneously. A bundle of commands is encoded using the following function:
+در نمونه‌های WebGPU، [مثال Animometer](https://webgpu.github.io/webgpu-samples/samples/animometer/)، تعداد زیادی عملیات مشابه به طور همزمان روی اشیاء مختلف انجام می‌شود. یک دسته از دستورات با استفاده از تابع زیر کدگذاری می‌شود:
 
 ```js
 function recordRenderPass(
@@ -96,7 +90,7 @@ function recordRenderPass(
 }
 ```
 
-Later on, a `GPURenderBundleEncoder` is created, the function is invoked, and the command bundle is recorded into a {{domxref("GPURenderBundle")}} using {{domxref("GPURenderBundleEncoder.finish()")}}:
+بعداً، یک `GPURenderBundleEncoder` ایجاد می‌شود، تابع فراخوانی می‌شود و دسته فرمان با استفاده از {{domxref("GPURenderBundleEncoder.finish()")}} در یک {{domxref("GPURenderBundle")}} ثبت می‌شود:
 
 ```js
 const renderBundleEncoder = device.createRenderBundleEncoder({
@@ -106,7 +100,7 @@ recordRenderPass(renderBundleEncoder);
 const renderBundle = renderBundleEncoder.finish();
 ```
 
-{{domxref("GPURenderPassEncoder.executeBundles()")}} is then used to reuse the work across multiple render passes to improve performance. Study the example code listing for the full context.
+سپس از {{domxref("GPURenderPassEncoder.executeBundles()")}} برای استفاده مجدد از کار در چندین رندر پاس جهت بهبود عملکرد استفاده می‌شود. برای دریافت متن کامل، به فهرست کد مثال مراجعه کنید.
 
 ```js
 // …
@@ -138,14 +132,14 @@ return function doDraw(timestamp) {
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
