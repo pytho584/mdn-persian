@@ -1,10 +1,4 @@
 ---
-title: "HTMLStyleElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLStyleElement"
-status: "needs-translation"
----
-
----
 title: HTMLStyleElement
 slug: Web/API/HTMLStyleElement
 page-type: web-api-interface
@@ -13,40 +7,40 @@ browser-compat: api.HTMLStyleElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLStyleElement`** interface represents a {{HTMLElement("style")}} element. It inherits properties and methods from its parent, {{domxref("HTMLElement")}}.
+رابطهٔ **`HTMLStyleElement`** یک عنصر {{HTMLElement("style")}} را نمایش می‌دهد. این رابط، ویژگی‌ها و روش‌ها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد.
 
-This interface doesn't allow to manipulate the CSS it contains (in most case). To manipulate CSS, see [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information) for an overview of the objects used to manipulate specified CSS properties using the DOM.
+این رابط در بیشتر موارد اجازهٔ دستکاری CSS موجود در عنصر را نمی‌دهد. برای دستکاری CSS، نمای کلی اشیاء مورد استفاده برای دستکاری ویژگی‌های CSS مشخص‌شده با استفاده از DOM را در [استفاده از اطلاعات استایل‌دهی پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information) ببینید.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref("HTMLStyleElement.blocking")}}
-  - : A string indicating that certain operations should be blocked on the fetching of critical subresources. It reflects the `blocking` attribute of the {{HTMLElement("style")}} element.
+  - : رشته‌ای که نشان می‌دهد برخی عملیات‌ها باید تا زمان دریافت زیرمنابع بحرانی مسدود شوند. این ویژگی، صفت `blocking` عنصر {{HTMLElement("style")}} را منعکس می‌کند.
 - {{domxref("HTMLStyleElement.media")}}
-  - : A string reflecting the HTML attribute representing the intended destination medium for style information.
+  - : رشته‌ای که صفت HTML مربوط به رسانهٔ مقصد مورد نظر برای اطلاعات سبک را منعکس می‌کند.
 - {{domxref("HTMLStyleElement.type")}} {{deprecated_inline}}
-  - : A string reflecting the HTML attribute representing the type of style being applied by this statement.
+  - : رشته‌ای که صفت HTML مربوط به نوع سبک اعمال‌شده توسط این دستور را منعکس می‌کند.
 - {{domxref("HTMLStyleElement.disabled")}}
-  - : A boolean value indicating whether or not the associated stylesheet is disabled.
+  - : یک مقدار بولی که نشان می‌دهد آیا stylesheet مرتبط غیرفعال است یا خیر.
 - {{domxref("HTMLStyleElement.sheet")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("CSSStyleSheet")}} object associated with the given element, or `null` if there is none.
+  - : شیء {{domxref("CSSStyleSheet")}} مرتبط با عنصر داده‌شده را برمی‌گرداند، یا اگر وجود نداشته باشد `null` را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش خاصی ندارد؛ روش‌ها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The HTML element implementing this interface: {{HTMLElement("style")}}.
-- [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information) to see how to manipulate CSS.
+- عنصر HTML پیاده‌ساز این رابط: {{HTMLElement("style")}}.
+- [استفاده از اطلاعات استایل‌دهی پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information) برای مشاهدهٔ نحوهٔ دستکاری CSS.
