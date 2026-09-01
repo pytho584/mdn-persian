@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: accessKey property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKey"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: accessKey property"
 short-title: accessKey
 slug: Web/API/HTMLElement/accessKey
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.HTMLElement.accessKey
 
 {{APIRef("DOM")}}
 
-The **`HTMLElement.accessKey`** property sets the keystroke which a user can press to jump to a given element.
+خاصیت **`HTMLElement.accessKey`** میانبر صفحه‌کلیدی را تنظیم می‌کند که کاربر می‌تواند برای پرش به یک عنصر مشخص، آن را فشار دهد.
 
 > [!NOTE]
-> The `HTMLElement.accessKey` property is seldom used because of its multiple conflicts with already present key bindings in browsers. To work around this, browsers implement accesskey behavior if the keys are pressed with other "qualifying" keys (such as <kbd>Alt</kbd> + accesskey).
+> خاصیت `HTMLElement.accessKey` به دلیل تداخل‌های متعدد با میانبرهای کلیدی موجود در مرورگرها، به ندرت استفاده می‌شود. برای رفع این مشکل، مرورگرها رفتار accesskey را زمانی پیاده‌سازی می‌کنند که کلیدها همراه با کلیدهای «تکمیل‌کننده» دیگری (مانند <kbd>Alt</kbd> + accesskey) فشرده شوند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [HTML global attribute: accesskey](/en-US/docs/Web/HTML/Reference/Global_attributes/accesskey)
+- [صفت سراسری HTML: accesskey](/en-US/docs/Web/HTML/Reference/Global_attributes/accesskey)
