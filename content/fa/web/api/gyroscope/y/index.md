@@ -1,11 +1,5 @@
 ---
 title: "Gyroscope: y property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope/y"
-status: "needs-translation"
----
-
----
-title: "Gyroscope: y property"
 short-title: y
 slug: Web/API/Gyroscope/y
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.Gyroscope.y
 
 {{securecontext_header}}{{APIRef("Sensor API")}}
 
-The **`y`** read-only property of the {{domxref("Gyroscope")}} interface returns a number specifying the angular velocity of the device along its y-axis.
+**`y`** 只读属性属于 {{domxref("Gyroscope")}} 接口，返回一个数字，表示设备沿其 y 轴的角速度。
 
-## Value
+## 值
 
-A {{jsxref('Number')}}.
+一个 {{jsxref('Number')}}。
 
-## Examples
+## 示例
 
-The gyroscope is typically read in the {{domxref('Sensor.reading_event', 'reading')}} event callback.
-In the example below this occurs sixty times a second.
+陀螺仪通常在 {{domxref('Sensor.reading_event', 'reading')}} 事件的回调中读取。在下面的示例中，每秒读取六十次。
 
 ```js
 let gyroscope = new Gyroscope({ frequency: 60 });
@@ -36,10 +29,10 @@ gyroscope.addEventListener("reading", (e) => {
 gyroscope.start();
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
