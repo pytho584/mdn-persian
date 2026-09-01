@@ -1,11 +1,5 @@
 ---
 title: "FileReader: readAsBinaryString() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsBinaryString"
-status: "needs-translation"
----
-
----
-title: "FileReader: readAsBinaryString() method"
 short-title: readAsBinaryString()
 slug: Web/API/FileReader/readAsBinaryString
 page-type: web-api-instance-method
@@ -17,35 +11,28 @@ browser-compat: api.FileReader.readAsBinaryString
 {{APIRef("File API")}}{{AvailableInWorkers}}{{Deprecated_Header}}
 
 > [!NOTE]
-> This method is deprecated in favor of {{DOMxRef("FileReader.readAsArrayBuffer","readAsArrayBuffer()")}}.
+> این متد به نفع {{DOMxRef("FileReader.readAsArrayBuffer","readAsArrayBuffer()")}} منسوخ شده است.
 
-The **`readAsBinaryString()`** method of the {{domxref("FileReader")}} interface is used to start reading the contents of the
-specified {{domxref("Blob")}} or {{domxref("File")}}. When the read operation is
-finished, the {{domxref("FileReader.readyState","readyState")}} property becomes
-`DONE`, and the {{domxref("FileReader/loadend_event", "loadend")}} event is triggered. At that time, the
-{{domxref("FileReader.result","result")}} property contains the raw binary data from
-the file.
+متد **`readAsBinaryString()`** از رابط {{domxref("FileReader")}} برای شروع خواندن محتویات {{domxref("Blob")}} یا {{domxref("File")}} مشخص‌شده استفاده می‌شود. وقتی عملیات خواندن به پایان برسد، خاصیت {{domxref("FileReader.readyState","readyState")}} برابر با `DONE` می‌شود و رویداد {{domxref("FileReader/loadend_event", "loadend")}} فعال می‌گردد. در آن زمان، خاصیت {{domxref("FileReader.result","result")}} شامل داده‌های خام دودوییِ خوانده‌شده از فایل است.
 
-Note that this method was once removed from the File API specification, but
-re-introduced for backward compatibility.
-Using {{domxref("FileReader.readAsArrayBuffer()")}} is recommended.
+توجه داشته باشید که این متد زمانی از مشخصات File API حذف شده بود، اما برای سازگاری با نسخه‌های قبلی دوباره معرفی شد. استفاده از {{domxref("FileReader.readAsArrayBuffer()")}} توصیه می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 readAsBinaryString(blob)
 ```
 
-### Parameters
+### پارامترها
 
 - `blob`
-  - : The {{domxref("Blob")}} or {{domxref("File")}} from which to read.
+  - : {{domxref("Blob")}} یا {{domxref("File")}}ای که قرار است از آن خوانده شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const canvas = document.createElement("canvas");
@@ -73,14 +60,14 @@ canvas.toBlob((blob) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("FileReader")}}
