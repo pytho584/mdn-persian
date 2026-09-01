@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaCurrent property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaCurrent"
-status: "needs-translation"
----
-
----
-title: "Element: ariaCurrent property"
 short-title: ariaCurrent
 slug: Web/API/Element/ariaCurrent
 page-type: web-api-instance-property
@@ -14,37 +8,37 @@ browser-compat: api.Element.ariaCurrent
 
 {{APIRef("DOM")}}
 
-The **`ariaCurrent`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-current`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current) attribute, which indicates the element that represents the current item within a container or set of related elements.
+خاصیت **`ariaCurrent`** از رابط {{domxref("Element")}} مقدار ویژگی [`aria-current`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current) را منعکس می‌کند. این ویژگی نشان‌دهنده عنصری است که آیتم جاری را درون یک ظرف یا مجموعه‌ای از عناصر مرتبط مشخص می‌کند.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته (string) با یکی از مقادیر زیر:
 
 - `"page"`
-  - : Represents the current page within a set of pages.
+  - : نمایانگر صفحه جاری درون مجموعه‌ای از صفحات است.
 - `"step"`
-  - : Represents the current step within a process.
+  - : نمایانگر گام جاری درون یک فرایند است.
 - `"location"`
-  - : Represents the current location, for example the current page in a breadcrumbs hierarchy.
+  - : نمایانگر مکان جاری است، برای مثال صفحه جاری در سلسله‌مراتب خرده‌نان (breadcrumbs).
 - `"date"`
-  - : Represents the current date within a collection of dates.
+  - : نمایانگر تاریخ جاری درون مجموعه‌ای از تاریخ‌ها است.
 - `"time"`
-  - : Represents the current time within a set of times.
+  - : نمایانگر زمان جاری درون مجموعه‌ای از زمان‌ها است.
 - `"true"`
-  - : Represents the current item within a set.
+  - : نمایانگر آیتم جاری درون یک مجموعه است.
 - `"false"`
-  - : Does not represent the current item within a set.
+  - : نمایانگر آیتم جاری درون یک مجموعه نیست.
 
-## Examples
+## مثال‌ها
 
-In this example a set of links are used for site navigation. The `aria-current` attribute indicates the current page. The value `page` is incorporated into the screen reader announcement. Using `ariaCurrent` we can update that value.
+در این مثال، مجموعه‌ای از پیوندها برای پیمایش سایت استفاده شده‌اند. ویژگی `aria-current` صفحه جاری را مشخص می‌کند. مقدار `page` در اعلام screen reader گنجانده می‌شود. با استفاده از `ariaCurrent` می‌توانیم آن مقدار را به‌روز کنیم.
 
 ```html
 <nav>
   <ul>
-    <li><a id="link-home" href="/" aria-current="page">Home</a></li>
-    <li><a href="/">About</a></li>
-    <li><a href="/">Contact</a></li>
+    <li><a id="link-home" href="/" aria-current="page">خانه</a></li>
+    <li><a href="/">درباره</a></li>
+    <li><a href="/">تماس</a></li>
   </ul>
 </nav>
 ```
@@ -56,14 +50,14 @@ el.ariaCurrent = "tab";
 console.log(el.ariaCurrent); // "tab"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the aria-current attribute](https://tink.uk/using-the-aria-current-attribute/)
+- [استفاده از ویژگی aria-current](https://tink.uk/using-the-aria-current-attribute/)
