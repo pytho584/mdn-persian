@@ -1,7 +1,6 @@
 ---
 title: "HTMLSourceElement: height property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSourceElement/height"
-status: "needs-translation"
 ---
 
 ---
@@ -14,17 +13,17 @@ browser-compat: api.HTMLSourceElement.height
 
 {{APIRef("HTML DOM")}}
 
-The **`height`** property of the {{domxref("HTMLSourceElement")}} interface is a non-negative number indicating the height of the image resource in CSS pixels.
+ویژگی **`height`** در رابط {{domxref("HTMLSourceElement")}} یک عدد نامنفی است که ارتفاع منبع تصویر را بر حسب پیکسل CSS نشان می‌دهد.
 
-The property has an effect only if the parent of the current {{HTMLElement("source")}} element is a {{HTMLElement("picture")}} element.
+این ویژگی فقط زمانی اثر دارد که والد عنصر فعلی {{HTMLElement("source")}} یک عنصر {{HTMLElement("picture")}} باشد.
 
-It reflects the `height` attribute of the {{HTMLElement("source")}} element.
+این ویژگی منعکس‌کنندهٔ ویژگی `height` عنصر {{HTMLElement("source")}} است.
 
-## Value
+## مقدار
 
-A non-negative number indicating the height of the image resource in CSS pixels.
+یک عدد نامنفی که ارتفاع منبع تصویر را بر حسب پیکسل CSS نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <picture id="img">
@@ -57,15 +56,15 @@ const sources = img.querySelectorAll("source");
 console.log(Array.from(sources).map((el) => el.height)); // Output: [400, 800, 800]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLCanvasElement.height")}}
 - {{domxref("HTMLEmbedElement.height")}}
