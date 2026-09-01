@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaRowSpan property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaRowSpan"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaRowSpan property"
 short-title: ariaRowSpan
 slug: Web/API/ElementInternals/ariaRowSpan
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.ElementInternals.ariaRowSpan
 
 {{APIRef("Web Components")}}
 
-The **`ariaRowSpan`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan) attribute, which defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid.
+ویژگی **`ariaRowSpan`** از رابط {{domxref("ElementInternals")}} مقدار [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan) را منعکس می‌کند؛ این ویژگی تعیین می‌کند که یک سلول یا gridcell در یک جدول، grid یا treegrid چند ردیف را پوشش می‌دهد.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را روی یک عنصر سفارشی (custom element) فراهم می‌کند. ممکن است این مقادیر توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما این کار تضمین می‌کند که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آن‌ها را اضافه نکند، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیحات مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string which contains an integer.
+رشته‌ای (string) شامل یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaRowSpan` is set to "2".
+در این مثال، مقدار `ariaRowSpan` روی "2" تنظیم شده است.
 
 ```js
 class CustomEl extends HTMLElement {
@@ -38,14 +32,14 @@ class CustomEl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
+- [نقش table در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
