@@ -1,7 +1,5 @@
 ---
 title: "GPUDevice: popErrorScope() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/popErrorScope"
-status: "needs-translation"
 ---
 
 ---
@@ -14,32 +12,31 @@ browser-compat: api.GPUDevice.popErrorScope
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`popErrorScope()`** method of the
-{{domxref("GPUDevice")}} interface pops an existing GPU error scope from the error scope stack (originally pushed using {{domxref("GPUDevice.pushErrorScope()")}}) and returns a {{jsxref("Promise")}} that resolves to an object describing the first error captured in the scope, or `null` if no error occurred.
+متد **`popErrorScope()`** از رابط {{domxref("GPUDevice")}} یک خطایابی (error scope) موجود GPU را از پشته خطایابی (که ابتدا با استفاده از {{domxref("GPUDevice.pushErrorScope()")}} به پشته اضافه شده بود) بیرون می‌کشد و یک {{jsxref("Promise")}} برمی‌گرداند. این Promise به یک شیء حاوی اولین خطای ثبت‌شده در آن خطایابی، یا در صورت عدم وقوع خطا، به `null` تبدیل می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 popErrorScope()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to an object describing the first error captured in the scope. This can be of type:
+یک {{jsxref("Promise")}} که به یک شیء حاوی اولین خطای ثبت‌شده در خطایابی تبدیل می‌شود. این شیء می‌تواند از انواع زیر باشد:
 
 - {{domxref("GPUInternalError")}}
 - {{domxref("GPUOutOfMemoryError")}}
 - {{domxref("GPUValidationError")}}
 
-If no error occurred, it resolves to `null`.
+اگر خطایی رخ نداده باشد، به `null` تبدیل می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example uses an error scope to capture a suspected validation error, logging it to the console.
+مثال زیر از یک خطایابی برای ثبت یک خطای اعتبارسنجی احتمالی استفاده می‌کند و آن را در کنسول ثبت می‌کند.
 
 ```js
 device.pushErrorScope("validation");
@@ -56,16 +53,16 @@ device.popErrorScope().then((error) => {
 });
 ```
 
-See [WebGPU Error Handling best practices](https://toji.dev/webgpu-best-practices/error-handling) for a lot more examples and information.
+برای مثال‌ها و اطلاعات بیشتر به [بهترین شیوه‌های مدیریت خطای WebGPU](https://toji.dev/webgpu-best-practices/error-handling) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
