@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: form property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/form"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: form property"
 short-title: form
 slug: Web/API/HTMLInputElement/form
 page-type: web-api-instance-property
@@ -14,24 +8,24 @@ browser-compat: api.HTMLInputElement.form
 
 {{APIRef("HTML DOM")}}
 
-The **`form`** read-only property of the {{domxref("HTMLInputElement")}} interface returns an {{domxref("HTMLFormElement")}} object that owns this {{HTMLElement("input")}}, or `null` if this input is not owned by any form.
+ویژگی فقط‌خواندنی **`form`** از رابط {{domxref("HTMLInputElement")}} یک شیء {{domxref("HTMLFormElement")}} را برمی‌گرداند که مالک این {{HTMLElement("input")}} است، یا اگر این ورودی به هیچ فرمی تعلق نداشته باشد، `null` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLFormElement")}} or `null`.
+یک {{domxref("HTMLFormElement")}} یا `null`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLInputElement")}}
 - {{domxref("HTMLFormElement")}}
 - {{HTMLElement("input")}}
-- HTML [`form`](/en-US/docs/Web/HTML/Reference/Attributes/form) attribute
-- [HTML forms guide](/en-US/docs/Learn_web_development/Extensions/Forms)
+- ویژگی HTML [`form`](/en-US/docs/Web/HTML/Reference/Attributes/form)
+- [راهنمای فرم‌های HTML](/en-US/docs/Learn_web_development/Extensions/Forms)
