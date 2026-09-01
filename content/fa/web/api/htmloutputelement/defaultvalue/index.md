@@ -1,11 +1,5 @@
 ---
 title: "HTMLOutputElement: defaultValue property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement/defaultValue"
-status: "needs-translation"
----
-
----
-title: "HTMLOutputElement: defaultValue property"
 short-title: defaultValue
 slug: Web/API/HTMLOutputElement/defaultValue
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLOutputElement.defaultValue
 
 {{ APIRef("HTML DOM") }}
 
-The **`defaultValue`** property of the {{DOMxRef("HTMLOutputElement")}} interface represents the default text content of this {{htmlelement("output")}} element. Getting and setting this value is equivalent to getting and setting {{domxref("Node.textContent", "textContent")}} on the {{htmlelement("output")}}.
+ویژگی **`defaultValue`** در رابط {{DOMxRef("HTMLOutputElement")}}، محتوای متنی پیش‌فرض این عنصر {{htmlelement("output")}} را نشان می‌دهد. خواندن و نوشتن این مقدار معادل خواندن و نوشتن {{domxref("Node.textContent", "textContent")}} روی همان عنصر {{htmlelement("output")}} است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-In the example below, the `defaultValue` still returns the value originally written in the HTML. Changes to {{domxref("HTMLOutputElement.value", "value")}} will not affect the `defaultValue` or its `textContent` in the DOM.
+در مثال زیر، `defaultValue` همچنان مقداری را برمی‌گرداند که در ابتدا در HTML نوشته شده است. تغییرات {{domxref("HTMLOutputElement.value", "value")}} تأثیری بر `defaultValue` یا `textContent` آن در DOM ندارد.
 
 ```html
 <fieldset>
@@ -62,15 +56,15 @@ updateResult();
 
 {{EmbedLiveSample("examples", "", "150")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("output")}}
 - {{DOMXref("HTMLOutputElement.value")}}
