@@ -1,11 +1,5 @@
 ---
 title: "Element: hasAttributes() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttributes"
-status: "needs-translation"
----
-
----
-title: "Element: hasAttributes() method"
 short-title: hasAttributes()
 slug: Web/API/Element/hasAttributes
 page-type: web-api-instance-method
@@ -14,25 +8,23 @@ browser-compat: api.Element.hasAttributes
 
 {{ApiRef("DOM")}}
 
-The **`hasAttributes()`** method of the {{domxref("Element")}}
-interface returns a boolean value indicating whether the current element has any
-attributes or not.
+متد **`hasAttributes()`** در رابط {{domxref("Element")}} یک مقدار بولین (boolean) برمی‌گرداند که نشان می‌دهد آیا عنصر جاری ویژگی (attribute) دارد یا نه.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 hasAttributes()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean.
+یک مقدار بولین.
 
-## Examples
+## مثال‌ها
 
 ```js
 let foo = document.getElementById("foo");
@@ -41,15 +33,15 @@ if (foo.hasAttributes()) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.attributes")}}
 - {{domxref("Element.hasAttribute()")}}
