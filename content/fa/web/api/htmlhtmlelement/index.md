@@ -1,7 +1,5 @@
 ---
 title: "HTMLHtmlElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLHtmlElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,31 +11,31 @@ browser-compat: api.HTMLHtmlElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLHtmlElement`** interface serves as the root node for a given HTML document. This object inherits the properties and methods described in the {{domxref("HTMLElement")}} interface.
+رابط **`HTMLHtmlElement`** به عنوان گره ریشه (root node) برای یک سند HTML معین عمل می‌کند. این شیء ویژگی‌ها و روش‌های شرح‌داده‌شده در رابط {{domxref("HTMLElement")}} را به ارث می‌برد.
 
-You can retrieve the `HTMLHtmlElement` object for a given document by reading the value of the {{domxref("document.documentElement")}} property.
+می‌توانید شیء `HTMLHtmlElement` را برای یک سند معین با خواندن مقدار ویژگی {{domxref("document.documentElement")}} دریافت کنید.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLHtmlElement.version")}} {{deprecated_inline}}
-  - : A string representing the version of the HTML Document Type Definition (DTD) that governs this document. This property should not be used any more as it is non-conforming. Omit it.
+  - : یک رشته که نسخه تعریف نوع سند (DTD) HTML حاکم بر این سند را نشان می‌دهد. این ویژگی دیگر نباید استفاده شود زیرا منطبق با استاندارد نیست. آن را حذف کنید.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش خاصی ندارد؛ روش‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML element implementing this interface: {{HTMLElement("html")}}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("html")}}.
