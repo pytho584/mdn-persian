@@ -1,11 +1,5 @@
 ---
 title: "DOMRectReadOnly: fromRect() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/fromRect_static"
-status: "needs-translation"
----
-
----
-title: "DOMRectReadOnly: fromRect() static method"
 short-title: fromRect()
 slug: Web/API/DOMRectReadOnly/fromRect_static
 page-type: web-api-static-method
@@ -14,35 +8,32 @@ browser-compat: api.DOMRectReadOnly.fromRect_static
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`fromRect()`** static method of the
-{{domxref("DOMRectReadOnly")}} object creates a new `DOMRectReadOnly`
-object with a given location and dimensions.
+متد استاتیک **`fromRect()`** در شیء {{domxref("DOMRectReadOnly")}} یک شیء `DOMRectReadOnly` جدید با مکان و ابعاد مشخص‌شده ایجاد می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 DOMRectReadOnly.fromRect()
 DOMRectReadOnly.fromRect(rectangle)
 ```
 
-### Parameters
+### پارامترها
 
 - `rectangle` {{optional_inline}}
-  - : An object specifying the location and dimensions of a rectangle. All properties
-    default to `0`. The properties are:
-    - `x`: The coordinate of the left side of the rectangle.
-    - `y`: The coordinate of the top side of the rectangle.
-    - `width`: The width of the rectangle.
-    - `height`: The height of the rectangle.
+  - : شیئی که مکان و ابعاد یک مستطیل را مشخص می‌کند. همه ویژگی‌ها به‌صورت پیش‌فرض `0` هستند. ویژگی‌ها عبارت‌اند از:
+    - `x`: مختصات سمت چپ مستطیل.
+    - `y`: مختصات سمت بالای مستطیل.
+    - `width`: عرض مستطیل.
+    - `height`: ارتفاع مستطیل.
 
-### Return value
+### مقدار بازگشتی
 
-An instance of {{domxref("DOMRectReadOnly")}}.
+یک نمونه از {{domxref("DOMRectReadOnly")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
