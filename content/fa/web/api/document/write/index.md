@@ -1,11 +1,5 @@
 ---
 title: "Document: write() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/write"
-status: "needs-translation"
----
-
----
-title: "Document: write() method"
 short-title: write()
 slug: Web/API/Document/write
 page-type: web-api-instance-method
@@ -17,28 +11,28 @@ browser-compat: api.Document.write
 {{ApiRef("DOM")}}{{deprecated_header}}
 
 > [!WARNING]
-> Use of the `document.write()` method is strongly discouraged.
-> Avoid using it, and where possible replace it in existing code.
+> استفاده از متد `document.write()` به‌شدت توصیه نمی‌شود.
+> از به‌کارگیری آن خودداری کنید و در صورت امکان، در کدهای موجود آن را جایگزین کنید.
 >
-> As [the HTML spec itself warns](<https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()>):
+> همانطور که [خود مشخصات HTML هشدار می‌دهد](<https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()>):
 >
-> > This method has very idiosyncratic behavior.
-> > In some cases, this method can affect the state of the [HTML parser](https://html.spec.whatwg.org/multipage/parsing.html#html-parser) while the parser is running, resulting in a DOM that does not correspond to the source of the document (e.g., if the string written is the string "`<plaintext>`" or "`<!--`").
-> > In other cases, the call can clear the current page first, as if {{domxref("document.open()")}} had been called.
-> > In yet more cases, the method is simply ignored, or throws an exception. Users agents are [explicitly allowed to avoid executing `script` elements inserted via this method](https://html.spec.whatwg.org/multipage/parsing.html#document-written-scripts-intervention).
-> > And to make matters even worse, the exact behavior of this method can in some cases be dependent on network latency, which can lead to failures that are very hard to debug.
-> > For all these reasons, use of this method is strongly discouraged.
+> > این متد رفتار بسیار خاص و غیرعادی دارد.
+> > در برخی موارد، این متد می‌تواند بر وضعیت [تجزیه‌گر HTML](https://html.spec.whatwg.org/multipage/parsing.html#html-parser) در حالی که تجزیه‌گر در حال اجراست تأثیر بگذارد و در نتیجه DOMی ایجاد شود که با منبع سند مطابقت ندارد (مثلاً اگر رشته نوشته‌شده رشته «`<plaintext>`» یا «`<!--`» باشد).
+> > در موارد دیگر، این فراخوانی می‌تواند ابتدا صفحه فعلی را پاک کند، همان‌طور که گویی {{domxref("document.open()")}} فراخوانی شده باشد.
+> > در مواردی دیگر، این متد به سادگی نادیده گرفته می‌شود یا استثنا پرتاب می‌کند. به عوامل کاربر به‌صراحت [اجازه داده شده است که از اجرای عناصر `script` درج‌شده از طریق این متد خودداری کنند](https://html.spec.whatwg.org/multipage/parsing.html#document-written-scripts-intervention).
+> > و برای بدتر کردن اوضاع، رفتار دقیق این متد در برخی موارد می‌تواند به تأخیر شبکه بستگی داشته باشد که می‌تواند به خطاهایی منجر شود که اشکال‌زدایی آن‌ها بسیار دشوار است.
+> > به تمام این دلایل، استفاده از این متد به‌شدت توصیه نمی‌شود.
 
 > [!WARNING]
-> This method parses its input as HTML, writing the result into the DOM.
-> APIs like this are known as [injection sinks](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage), and are potentially a vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks, if the input originally came from an attacker.
+> این متد ورودی خود را به‌عنوان HTML تجزیه می‌کند و نتیجه را در DOM می‌نویسد.
+> APIهایی مانند این به‌عنوان [سینک‌های تزریق](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage) شناخته می‌شوند و اگر ورودی در ابتدا از طرف مهاجم باشد، به‌طور بالقوه بردار حمله‌ای برای [اسکریپت‌نویسی بین‌سایتی (XSS)](/en-US/docs/Web/Security/Attacks/XSS) هستند.
 >
-> You can mitigate this risk by always passing `TrustedHTML` objects instead of strings and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types).
-> See [Security considerations](#security_considerations) for more information.
+> می‌توانید این خطر را با همیشه ارسال اشیاء `TrustedHTML` به‌جای رشته‌ها و [اجباری کردن انواع مورد اعتماد](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) کاهش دهید.
+> برای اطلاعات بیشتر، [ملاحظات امنیتی](#security_considerations) را ببینید.
 
-The **`write()`** method of the {{domxref("Document")}} interface writes text in one or more {{domxref("TrustedHTML")}} or string parameters to a document stream opened by {{domxref("document.open()")}}.
+متد **`write()`** از رابط {{domxref("Document")}} متن را در یک یا چند پارامتر {{domxref("TrustedHTML")}} یا رشته به جریان سندی می‌نویسد که توسط {{domxref("document.open()")}} باز شده است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 write(markup)
@@ -46,29 +40,29 @@ write(markup, markup2)
 write(markup, markup2, /* …, */ markupN)
 ```
 
-### Parameters
+### پارامترها
 
 - `markup`, …, `markupN`
-  - : {{domxref("TrustedHTML")}} objects or strings containing the markup to be written to the document.
+  - : اشیاء {{domxref("TrustedHTML")}} یا رشته‌های حاوی نشانه‌گذاری (markup) که باید در سند نوشته شوند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : The method was called on an XML document, or called when the parser is currently executing a custom element constructor.
+  - : متد روی یک سند XML فراخوانی شده باشد، یا در حالی فراخوانی شود که تجزیه‌گر در حال اجرای سازنده یک عنصر سفارشی (custom element) است.
 - `TypeError`
-  - : A string is passed as one of the parameters when [Trusted Types are enforced](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) and [no default policy has been defined](/en-US/docs/Web/API/TrustedTypePolicyFactory/createPolicy#creating_a_default_policy) for creating {{domxref("TrustedHTML")}} objects.
+  - : یک رشته به‌عنوان یکی از پارامترها زمانی ارسال شود که [انواع مورد اعتماد اجباری هستند](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) و [هیچ خط‌مشی پیش‌فرضی برای ایجاد اشیاء {{domxref("TrustedHTML")}} تعریف نشده است](/en-US/docs/Web/API/TrustedTypePolicyFactory/createPolicy#creating_a_default_policy).
 
-## Description
+## توضیحات
 
-`document.write()` parses the markup text in the objects passed as parameters into the open document's object model (DOM), in the order that the parameters are specified.
+`document.write()` متن نشانه‌گذاری موجود در اشیاء ارسال‌شده به‌عنوان پارامتر را به مدل شیء سند (DOM) سند باز، به ترتیبی که پارامترها مشخص شده‌اند، تجزیه می‌کند.
 
-Because `document.write()` writes to the document **stream**, calling `document.write()` on a closed (loaded) document (without first calling {{domxref("document.open()")}}) automatically calls {{domxref("document.open()")}}, which will clear the document.
+از آنجا که `document.write()` به **جریان** سند می‌نویسد، فراخوانی `document.write()` روی یک سند بسته (بارگذاری‌شده) (بدون فراخوانی قبلی {{domxref("document.open()")}}) به‌طور خودکار {{domxref("document.open()")}} را فراخوانی می‌کند که سند را پاک می‌کند.
 
-The exception is that if the `document.write()` call is embedded within an inline HTML `<script>` tag, then it will not automatically call `document.open()`:
+استثنا این است که اگر فراخوانی `document.write()` درون یک تگ `<script>` درون‌خطی HTML تعبیه شده باشد، به‌طور خودکار `document.open()` را فراخوانی نمی‌کند:
 
 ```html
 <script>
@@ -76,31 +70,31 @@ The exception is that if the `document.write()` call is embedded within an inlin
 </script>
 ```
 
-`document.write()` (and {{domxref("document.writeln")}}) cannot be used with XML or XHTML, and attempting to do so will throw an `InvalidStateError` exception.
-This is the case if opening a local file with a .xhtml file extension or for any document served with an `application/xhtml+xml` MIME type.
-More information is available in the [W3C XHTML FAQ](https://www.w3.org/MarkUp/2004/xhtml-faq#docwrite).
+`document.write()` (و {{domxref("document.writeln")}}) را نمی‌توان با XML یا XHTML استفاده کرد و تلاش برای انجام این کار یک استثنای `InvalidStateError` پرتاب می‌کند.
+این مورد در صورت باز کردن یک فایل محلی با پسوند .xhtml یا برای هر سندی که با نوع MIME `application/xhtml+xml` سرو می‌شود، صادق است.
+اطلاعات بیشتر در [پرسش‌های متداول XHTML کنسرسیوم وب (W3C)](https://www.w3.org/MarkUp/2004/xhtml-faq#docwrite) موجود است.
 
-Using `document.write()` in [deferred](/en-US/docs/Web/HTML/Reference/Elements/script#defer) or [asynchronous](/en-US/docs/Web/HTML/Reference/Elements/script#async) scripts will be ignored and you'll get a message like "A call to `document.write()` from an asynchronously-loaded external script was ignored" in the error console.
+استفاده از `document.write()` در اسکریپت‌های [تأخیری (deferred)](/en-US/docs/Web/HTML/Reference/Elements/script#defer) یا [ناهمگام (asynchronous)](/en-US/docs/Web/HTML/Reference/Elements/script#async) نادیده گرفته می‌شود و پیامی مانند «A call to `document.write()` from an asynchronously-loaded external script was ignored» در کنسول خطا دریافت خواهید کرد.
 
-In Edge only, calling `document.write()` more than once in an {{HTMLElement("iframe")}} causes the error "SCRIPT70: Permission denied".
+فقط در مرورگر Edge، فراخوانی `document.write()` بیش از یک بار در یک {{HTMLElement("iframe")}} باعث خطای «SCRIPT70: Permission denied» می‌شود.
 
-### Security considerations
+### ملاحظات امنیتی
 
-The method is a possible vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks, where potentially unsafe strings provided by a user are injected into the DOM without first being sanitized.
-While the method may block {{HTMLElement("script")}} elements from executing when they are injected in some browsers (see [Intervening against document.write()](https://developer.chrome.com/blog/removing-document-write/) for Chrome), it is susceptible to many other ways that attackers can craft HTML to run malicious JavaScript.
+این متد یک بردار احتمالی برای حملات [اسکریپت‌نویسی بین‌سایتی (XSS)](/en-US/docs/Web/Security/Attacks/XSS) است، جایی که رشته‌های بالقوه ناامن ارائه‌شده توسط کاربر بدون پاک‌سازی قبلی به DOM تزریق می‌شوند.
+اگرچه این متد ممکن است در برخی مرورگرها از اجرای عناصر {{HTMLElement("script")}} در هنگام تزریق جلوگیری کند (برای کروم به [مداخله در برابر document.write()](https://developer.chrome.com/blog/removing-document-write/) مراجعه کنید)، اما در برابر بسیاری از روش‌های دیگری که مهاجمان می‌توانند HTML را برای اجرای جاوااسکریپت مخرب قالب‌بندی کنند، آسیب‌پذیر است.
 
-You can mitigate these issues by always passing {{domxref("TrustedHTML")}} objects instead of strings, and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) using the [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) CSP directive.
-This ensures that the input is passed through a transformation function, which has the chance to [sanitize](/en-US/docs/Web/Security/Attacks/XSS#sanitization) the input to remove potentially dangerous markup (such as {{htmlelement("script")}} elements and event handler attributes), before it is injected.
+می‌توانید این مسائل را با همیشه ارسال اشیاء {{domxref("TrustedHTML")}} به‌جای رشته‌ها و [اجباری کردن انواع مورد اعتماد](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) با استفاده از دستور CSP [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) کاهش دهید.
+این اطمینان می‌دهد که ورودی از یک تابع تبدیل عبور می‌کند که این فرصت را دارد تا ورودی را [پاک‌سازی](/en-US/docs/Web/Security/Attacks/XSS#sanitization) کند و نشانه‌گذاری بالقوه خطرناک (مانند عناصر {{htmlelement("script")}} و ویژگی‌های کنترل‌کننده رویداد) را قبل از تزریق حذف کند.
 
-## Examples
+## مثال‌ها
 
-### Writing TrustedHTML
+### نوشتن TrustedHTML
 
-This example uses the [Trusted Types API](/en-US/docs/Web/API/Trusted_Types_API) to sanitize HTML strings of {{htmlelement("script")}} elements before they are written to a document.
+این مثال از [API انواع مورد اعتماد (Trusted Types API)](/en-US/docs/Web/API/Trusted_Types_API) برای پاک‌سازی رشته‌های HTML از عناصر {{htmlelement("script")}} قبل از نوشتن در سند استفاده می‌کند.
 
-The example initially displays some default text and a button.
-When the button is clicked, the current document is opened, three strings of HTML are converted to {{domxref("TrustedHTML")}} instances and written into the document, and the document is then closed.
-This replaces the document in the example frame, including the original HTML for the button and the JavaScript that made the update!
+مثال در ابتدا مقداری متن پیش‌فرض و یک دکمه نمایش می‌دهد.
+هنگامی که دکمه کلیک می‌شود، سند فعلی باز می‌شود، سه رشته HTML به نمونه‌های {{domxref("TrustedHTML")}} تبدیل شده و در سند نوشته می‌شوند و سپس سند بسته می‌شود.
+این کار سند موجود در قاب مثال، از جمله HTML اصلی دکمه و جاوااسکریپتی که به‌روزرسانی را انجام داده است، جایگزین می‌کند!
 
 #### HTML
 
@@ -109,17 +103,17 @@ This replaces the document in the example frame, including the original HTML for
 <button id="replace" type="button">Replace document content</button>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-First we use the {{domxref("Window.trustedTypes")}} property to access the global {{domxref("TrustedTypePolicyFactory")}}, and use its {{domxref("TrustedTypePolicyFactory/createPolicy","createPolicy()")}} method to define a policy called `"docPolicy"`.
+ابتدا از ویژگی {{domxref("Window.trustedTypes")}} برای دسترسی به {{domxref("TrustedTypePolicyFactory")}} سراسری استفاده می‌کنیم و از روش {{domxref("TrustedTypePolicyFactory/createPolicy","createPolicy()")}} آن برای تعریف خط‌مشی‌ای به نام `"docPolicy"` استفاده می‌کنیم.
 
-The new policy defines a transformation function `createHTML()` for creating the {{domxref("TrustedHTML")}} objects that we will pass to the `write()` method.
-This method can do anything it likes with the input string: the trusted types API just requires that you pass the input through a policy transformation function, not that the transformation function does anything in particular.
+خط‌مشی جدید یک تابع تبدیل `createHTML()` برای ایجاد اشیاء {{domxref("TrustedHTML")}} تعریف می‌کند که به متد `write()` ارسال خواهیم کرد.
+این روش می‌تواند هر کاری که بخواهد با رشته ورودی انجام دهد: API انواع مورد اعتماد فقط از شما می‌خواهد که ورودی را از یک تابع تبدیل خط‌مشی عبور دهید، نه اینکه تابع تبدیل کار خاصی انجام دهد.
 
-You'd use the method to [sanitize](/en-US/docs/Web/Security/Attacks/XSS#sanitization) the input by removing potentially unsafe features such as {{htmlelement("script")}} tags or event handler attributes.
-Sanitization is hard to get right, so this process typically uses a reputable third-party library such as [DOMPurify](https://github.com/cure53/DOMPurify).
+از این روش برای [پاک‌سازی](/en-US/docs/Web/Security/Attacks/XSS#sanitization) ورودی با حذف ویژگی‌های بالقوه ناامن مانند تگ‌های {{htmlelement("script")}} یا ویژگی‌های کنترل‌کننده رویداد استفاده می‌کنید.
+پاک‌سازی درست انجام دادن آن دشوار است، بنابراین این فرآیند معمولاً از یک کتابخانه شخص ثالث معتبر مانند [DOMPurify](https://github.com/cure53/DOMPurify) استفاده می‌کند.
 
-For the purposes of demonstration, here we implement a rudimentary "sanitizer" that replaces `<` symbols in script opening and closing tags with the `&lt;` character.
+برای اهداف نمایش، در اینجا یک «پاک‌ساز» ابتدایی پیاده‌سازی می‌کنیم که نماد `<` را در تگ‌های باز و بسته اسکریپت با کاراکتر `&lt;` جایگزین می‌کند.
 
 ```js
 const policy = trustedTypes.createPolicy("docPolicy", {
@@ -131,8 +125,8 @@ const policy = trustedTypes.createPolicy("docPolicy", {
 });
 ```
 
-We can then use the {{domxref("TrustedTypePolicy.createHTML()")}} method on the returned policy to create {{domxref("TrustedHTML")}} objects from our original input strings.
-These are then passed to the `write()` function when the user clicks the button.
+سپس می‌توانیم از روش {{domxref("TrustedTypePolicy.createHTML()")}} روی خط‌مشی بازگشتی برای ایجاد اشیاء {{domxref("TrustedHTML")}} از رشته‌های ورودی اصلی خود استفاده کنیم.
+این اشیاء زمانی که کاربر دکمه را کلیک می‌کند به تابع `write()` ارسال می‌شوند.
 
 ```js
 const oneInput = "<h1>Out with the old</h1>";
@@ -151,20 +145,20 @@ replace.addEventListener("click", () => {
 });
 ```
 
-#### Results
+#### نتیجه
 
-Press the button and note that the HTML elements that we trust (in this example) are injected, but the untrusted {{htmlelement("script")}} element is now rendered as plain text.
+دکمه را فشار دهید و توجه کنید که عناصر HTML که به آن‌ها اعتماد داریم (در این مثال) تزریق می‌شوند، اما عنصر ناامن {{htmlelement("script")}} به‌صورت متن ساده نمایش داده می‌شود.
 
 {{EmbedLiveSample("Writing TrustedHTML")}}
 
-### Writing strings
+### نوشتن رشته‌ها
 
-This is the same as the preceding example, except that trusted types are not used or enforced.
-We're writing unsanitized strings, which may provide a path for [XSS attacks](/en-US/docs/Web/Security/Attacks/XSS).
+این مثال همانند مثال قبلی است، با این تفاوت که انواع مورد اعتماد استفاده یا اعمال نمی‌شوند.
+ما رشته‌های پاک‌سازی‌نشده می‌نویسیم که ممکن است مسیری برای [حملات XSS](/en-US/docs/Web/Security/Attacks/XSS) فراهم کنند.
 
-The example initially displays some default text and a button.
-When the button is clicked, the current document is opened, three strings of HTML are written into the document, and the document is then closed.
-This replaces the document in the example frame, including the original HTML for the button and the JavaScript that made the update.
+مثال در ابتدا مقداری متن پیش‌فرض و یک دکمه نمایش می‌دهد.
+هنگامی که دکمه کلیک می‌شود، سند فعلی باز می‌شود، سه رشته HTML در سند نوشته می‌شوند و سپس سند بسته می‌شود.
+این کار سند موجود در قاب مثال، از جمله HTML اصلی دکمه و جاوااسکریپتی که به‌روزرسانی را انجام داده است، جایگزین می‌کند.
 
 #### HTML
 
@@ -173,7 +167,7 @@ This replaces the document in the example frame, including the original HTML for
 <button id="replace" type="button">Replace document content</button>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 const replace = document.querySelector("#replace");
@@ -189,25 +183,25 @@ replace.addEventListener("click", () => {
 });
 ```
 
-#### Results
+#### نتیجه
 
-Press the button and note that all the HTML elements are injected.
-This includes the {{htmlelement("script")}} element, which in a real application might have executed harmful code.
+دکمه را فشار دهید و توجه کنید که همه عناصر HTML تزریق می‌شوند.
+این شامل عنصر {{htmlelement("script")}} نیز می‌شود که در یک برنامه واقعی ممکن است کدهای مخرب را اجرا کرده باشد.
 
 {{EmbedLiveSample("Writing strings")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("document.writeln()")}}
 - {{domxref("element.innerHTML")}}
 - {{domxref("document.createElement()")}}
-- [Trusted Types API](/en-US/docs/Web/API/Trusted_Types_API)
-- [Cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS)
+- [API انواع مورد اعتماد (Trusted Types API)](/en-US/docs/Web/API/Trusted_Types_API)
+- [اسکریپت‌نویسی بین‌سایتی (XSS)](/en-US/docs/Web/Security/Attacks/XSS)
