@@ -1,11 +1,5 @@
 ---
 title: "HIDDevice: productName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/productName"
-status: "needs-translation"
----
-
----
-title: "HIDDevice: productName property"
 short-title: productName
 slug: Web/API/HIDDevice/productName
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.HIDDevice.productName
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`productName`** read-only property of the {{domxref("HIDDevice")}} interface returns the product name of the connected HID device.
+{{domxref("HIDDevice")}} 接口的 **`productName`** 只读属性返回已连接 HID 设备的产品名称。
 
-## Value
+## 值
 
-A string.
+一个字符串。
 
-## Examples
+## 示例
 
-The following example retrieves devices with {{domxref("HID.getDevices()")}} and logs the value of `productName` to the console.
+以下示例通过 {{domxref("HID.getDevices()")}} 获取设备，并将 `productName` 的值记录到控制台。
 
 ```js
 let devices = await navigator.hid.getDevices();
@@ -33,10 +27,10 @@ devices.forEach((device) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
