@@ -1,11 +1,5 @@
 ---
 title: "Document: scrollingElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/scrollingElement"
-status: "needs-translation"
----
-
----
-title: "Document: scrollingElement property"
 short-title: scrollingElement
 slug: Web/API/Document/scrollingElement
 page-type: web-api-instance-property
@@ -14,29 +8,25 @@ browser-compat: api.Document.scrollingElement
 
 {{APIRef("DOM")}}
 
-The **`scrollingElement`** read-only property of the
-{{domxref("Document")}} interface returns a reference to the {{domxref("Element")}} that
-scrolls the document. In standards mode, this is the root element of the
-document, {{domxref("document.documentElement")}}.
+خاصیت فقط‌خواندنی **`scrollingElement`** در رابط {{domxref("Document")}} ارجاعی به عنصر {{domxref("Element")}} می‌دهد که سند را اسکرول می‌کند. در حالت استاندارد، این عنصر، عنصر ریشهٔ سند یعنی {{domxref("document.documentElement")}} است.
 
-When in quirks mode, the `scrollingElement` attribute returns the HTML
-`body` element if it exists and is _not_ [potentially scrollable](https://drafts.csswg.org/cssom-view/#potentially-scrollable), otherwise it returns `null`. This may look surprising but is true according to both the specification and browsers.
+در حالت quirks، خاصیت `scrollingElement` عنصر `body` اچ‌تی‌ام‌ال را برمی‌گرداند، اگر وجود داشته باشد و [بالقوه قابل اسکرول](https://drafts.csswg.org/cssom-view/#potentially-scrollable) _نباشد_؛ در غیر این صورت مقدار `null` برمی‌گردد. این موضوع ممکن است شگفت‌آور به نظر برسد، اما طبق مشخصات و مرورگرها درست است.
 
-## Value
+## مقدار
 
-The {{domxref("Element")}} that scrolls the document, usually the root element (unless not in standard mode).
+عنصر {{domxref("Element")}} که سند را اسکرول می‌کند؛ معمولاً عنصر ریشه (مگر در حالتی که استاندارد نباشد).
 
-## Examples
+## مثال‌ها
 
 ```js
 const scrollElm = document.scrollingElement;
 scrollElm.scrollTop = 0;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
