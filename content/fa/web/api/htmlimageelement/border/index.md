@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: border property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/border"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: border property"
 short-title: border
 slug: Web/API/HTMLImageElement/border
 page-type: web-api-instance-property
@@ -16,19 +10,19 @@ browser-compat: api.HTMLImageElement.border
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The _deprecated_ **`border`** property of the {{domxref("HTMLImageElement")}} interface specifies the number of pixels thick the border surrounding the image should be. A value of 0, the default, indicates that no border should be drawn. It reflects the `<img>` element's [`border`](/en-US/docs/Web/HTML/Reference/Elements/img#border) content attribute.
+ویژگی _منسوخ‌شده_ **`border`** از رابط {{domxref("HTMLImageElement")}} ضخامت حاشیه‌ای را که باید دور تصویر کشیده شود، بر حسب پیکسل مشخص می‌کند. مقدار 0 (پیش‌فرض) نشان می‌دهد که هیچ حاشیه‌ای رسم نشود. این ویژگی منعکس‌کنندهٔ ویژگی محتوایی [`border`](/en-US/docs/Web/HTML/Reference/Elements/img#border) عنصر `<img>` است.
 
-You should instead use the CSS property {{cssxref("border")}} or its longhand properties to not only set the thickness of the border but also to potentially apply a wide variety of other styling options to it.
+بهتر است به جای آن از ویژگی CSS {{cssxref("border")}} یا ویژگی‌های جزء آن استفاده کنید تا نه تنها ضخامت حاشیه، بلکه گزینه‌های سبک‌دهی متنوع دیگری را نیز اعمال کنید.
 
-## Value
+## مقدار
 
-A string containing an integer value specifying the thickness of the border that should surround the image, in CSS pixels. A value of `0`, or an empty string, indicates that there should be no border drawn. The default value of `border` is `0`.
+یک رشته (string) حاوی یک مقدار صحیح که ضخامت حاشیهٔ دور تصویر را بر حسب پیکسل‌های CSS مشخص می‌کند. مقدار `0` یا یک رشتهٔ خالی نشان می‌دهد که هیچ حاشیه‌ای رسم نشود. مقدار پیش‌فرض `border` برابر `0` است.
 
-When set to the `null` value, that `null` value is converted to the empty string (`""`), so `elt.border = null` is equivalent to `elt.border = ""`.
+وقتی مقدار `null` به آن اختصاص داده شود، آن مقدار `null` به رشتهٔ خالی (`""`) تبدیل می‌شود، بنابراین `elt.border = null` معادل `elt.border = ""` است.
 
-## Examples
+## مثال‌ها
 
-### Setting the border attribute
+### تنظیم ویژگی border
 
 ```js example-bad
 const img = new Image();
@@ -36,7 +30,7 @@ img.src = "example.png";
 img.border = "1";
 ```
 
-Instead of using the deprecated `border` property, consider setting the CSS `border` property instead:
+به جای استفاده از ویژگی منسوخ‌شدهٔ `border`، از تنظیم ویژگی CSS `border` استفاده کنید:
 
 ```js example-good
 const img = new Image();
@@ -44,10 +38,10 @@ img.src = "example.png";
 img.style.border = "1px solid black";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
