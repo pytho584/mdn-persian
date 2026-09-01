@@ -1,11 +1,5 @@
 ---
 title: "HTMLLinkElement: imageSizes property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/imageSizes"
-status: "needs-translation"
----
-
----
-title: "HTMLLinkElement: imageSizes property"
 short-title: imageSizes
 slug: Web/API/HTMLLinkElement/imageSizes
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.HTMLLinkElement.imageSizes
 
 {{APIRef("HTML DOM")}}
 
-The **`imageSizes`** property of the {{domxref("HTMLLinkElement")}} interface indicates the size and conditions for the preloaded images defined by the {{domxref("HTMLLinkElement.imageSrcset", "imageSrcset")}} property. It reflects the value of the {{htmlelement("link")}} element's [`imagesizes`](/en-US/docs/Web/HTML/Reference/Elements/link#imagesizes) attribute. This property can retrieve or set the `imagesizes` attribute value.
+ویژگی **`imageSizes`** در رابط {{domxref("HTMLLinkElement")}} اندازه و شرایط تصاویر پیش‌بارگذاری‌شده را که توسط ویژگی {{domxref("HTMLLinkElement.imageSrcset", "imageSrcset")}} تعریف شده‌اند، مشخص می‌کند. این ویژگی مقدار صفت [`imagesizes`](/en-US/docs/Web/HTML/Reference/Elements/link#imagesizes) عنصر {{htmlelement("link")}} را منعکس می‌کند. این ویژگی می‌تواند مقدار صفت `imagesizes` را بازیابی یا تنظیم کند.
 
-The `<link>` element's `imagesizes` attribute is the same as the {{htmlelement("img")}} element's `sizes` attribute: a comma-separated **source size** list. Each source size includes a [media condition](/en-US/docs/Web/CSS/Guides/Media_queries), the size of the image as a {{cssxref("length")}}, or the keyword `auto`, which must come first. For more information about the syntax of the `sizes` attribute, see [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#sizes).
+صفت `imagesizes` عنصر `<link>` همان صفت `sizes` عنصر {{htmlelement("img")}} است: یک لیست **منبع اندازه** (source size) که با کاما جدا شده است. هر منبع اندازه شامل یک [شرط رسانه‌ای](/en-US/docs/Web/CSS/Guides/Media_queries)، اندازه تصویر به عنوان یک {{cssxref("length")}}، یا کلمه کلیدی `auto` (که باید اول بیاید) می‌باشد. برای اطلاعات بیشتر درباره نحو صفت `sizes`، به [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#sizes) مراجعه کنید.
 
-The `imagesrcset` and `imagesizes` attributes are only relevant on `<link>` elements that have both a `rel` attribute set to `preload` and the `as` attribute set to `image`.
+صفت‌های `imagesrcset` و `imagesizes` فقط در عناصر `<link>` معنا دارند که هم صفت `rel` آن‌ها روی `preload` تنظیم شده باشد و هم صفت `as` روی `image`.
 
-## Value
+## مقدار
 
-A string composed of comma-separated source sizes, or the empty string `""` if unspecified.
+یک رشته متشکل از اندازه‌های منبع جدا شده با کاما، یا رشته خالی `""` در صورت عدم تعیین.
 
-## Examples
+## مثال‌ها
 
-Given the following `<link>` element:
+با توجه به عنصر `<link>` زیر:
 
 ```html
 <link
@@ -56,30 +50,30 @@ function log(text) {
 }
 ```
 
-…we can retrieve and update the `imagesizes` attribute value with the `imageSizes` property:
+…می‌توانیم مقدار صفت `imagesizes` را با استفاده از ویژگی `imageSizes` بازیابی و به‌روزرسانی کنیم:
 
 ```js
 const link = document.querySelector("link");
 log(`Original: ${link.imageSizes}`);
 
-// Change the value
+// تغییر مقدار
 link.imageSizes = "50vw";
 log(`Updated: ${link.imageSizes}`);
 ```
 
 {{EmbedLiveSample('Examples',"","80")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLLinkElement.imageSrcset")}}
 - {{domxref("HTMLImageElement.sizes")}}
-- [Media queries](/en-US/docs/Web/CSS/Guides/Media_queries)
-- [Using the `srcset` and `sizes` attributes](/en-US/docs/Web/HTML/Reference/Elements/img#using_the_srcset_and_sizes_attributes)
+- [پرسش‌های رسانه‌ای](/en-US/docs/Web/CSS/Guides/Media_queries)
+- [استفاده از صفت‌های `srcset` و `sizes`](/en-US/docs/Web/HTML/Reference/Elements/img#using_the_srcset_and_sizes_attributes)
