@@ -1,10 +1,4 @@
 ---
-title: "CSSStartingStyleRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStartingStyleRule"
-status: "needs-translation"
----
-
----
 title: CSSStartingStyleRule
 slug: Web/API/CSSStartingStyleRule
 page-type: web-api-interface
@@ -13,28 +7,28 @@ browser-compat: api.CSSStartingStyleRule
 
 {{ APIRef("CSSOM") }}
 
-The **`CSSStartingStyleRule`** interface of the [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model) represents a CSS {{CSSxRef("@starting-style")}} at-rule.
+رابط **`CSSStartingStyleRule`** از [مدل شیء CSS](/en-US/docs/Web/API/CSS_Object_Model) نشان‌دهندهٔ یک قاعدهٔ @-rule CSS به نام {{CSSxRef("@starting-style")}} است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestors {{domxref("CSSGroupingRule")}} and {{domxref("CSSRule")}}._
+_ویژگی‌هایی را از اجداد خود {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its ancestors {{domxref("CSSGroupingRule")}} and {{domxref("CSSRule")}}._
+_روش‌هایی را از اجداد خود {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{CSSxRef("@starting-style")}}
-- [CSS transitions](/en-US/docs/Web/CSS/Guides/Transitions) module
-- [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
+- [گذارهای CSS](/en-US/docs/Web/CSS/Guides/Transitions)
+- [استفاده از اطلاعات استایل‌دهی پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
