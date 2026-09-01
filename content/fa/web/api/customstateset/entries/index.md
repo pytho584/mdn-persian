@@ -1,9 +1,4 @@
----
-title: "CustomStateSet: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomStateSet/entries"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "CustomStateSet: entries() method"
 short-title: entries()
@@ -14,26 +9,27 @@ browser-compat: api.CustomStateSet.entries
 
 {{APIRef("Web Components")}}
 
-The **`entries`** method of the {{domxref("CustomStateSet")}} interface returns a new [iterator](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) object, containing an array of `[value,value]` for each element in the `CustomStateSet`.
+متد **`entries`** در رابط {{domxref("CustomStateSet")}} یک شیء [تکرارگر](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) جدید برمی‌گرداند که شامل آرایه‌ای از `[value,value]` برای هر عنصر در `CustomStateSet` است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 entries()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A new iterator object that contains an array of `[value, value]` for each element in the `CustomStateSet`, in insertion order.
+یک شیء تکرارگر جدید که شامل آرایه‌ای از `[value, value]` برای هر عنصر در `CustomStateSet`، به ترتیب درج، است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
+```
