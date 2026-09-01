@@ -1,7 +1,5 @@
 ---
 title: "DOMRectReadOnly"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly"
-status: "needs-translation"
 ---
 
 ---
@@ -13,50 +11,50 @@ browser-compat: api.DOMRectReadOnly
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMRectReadOnly`** interface specifies the standard properties (also used by {{domxref("DOMRect")}}) to define a rectangle whose properties are immutable.
+اینترفیس **`DOMRectReadOnly`** ویژگی‌های استانداردی را مشخص می‌کند (که توسط {{domxref("DOMRect")}} نیز استفاده می‌شود) برای تعریف یک مستطیل که ویژگی‌های آن تغییرناپذیر هستند.
 
-## Constructor
+## سازنده
 
 - {{domxref("DOMRectReadOnly.DOMRectReadOnly","DOMRectReadOnly()")}}
-  - : Defined to create a new `DOMRectReadOnly` object.
+  - : برای ایجاد یک شیء جدید `DOMRectReadOnly` تعریف شده است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("DOMRectReadOnly.x")}} {{ReadOnlyInline}}
-  - : Returns the x coordinate of the `DOMRectReadOnly`'s origin.
+  - : مختصات x مبدأ `DOMRectReadOnly` را برمی‌گرداند.
 - {{domxref("DOMRectReadOnly.y")}} {{ReadOnlyInline}}
-  - : Returns the y coordinate of the `DOMRectReadOnly`'s origin.
+  - : مختصات y مبدأ `DOMRectReadOnly` را برمی‌گرداند.
 - {{domxref("DOMRectReadOnly.width")}} {{ReadOnlyInline}}
-  - : Returns the width of the `DOMRectReadOnly`.
+  - : عرض `DOMRectReadOnly` را برمی‌گرداند.
 - {{domxref("DOMRectReadOnly.height")}} {{ReadOnlyInline}}
-  - : Returns the height of the `DOMRectReadOnly`.
+  - : ارتفاع `DOMRectReadOnly` را برمی‌گرداند.
 - {{domxref("DOMRectReadOnly.top")}} {{ReadOnlyInline}}
-  - : Returns the top coordinate value of the `DOMRectReadOnly` (usually the same as `y`).
+  - : مقدار مختصات بالای `DOMRectReadOnly` را برمی‌گرداند (معمولاً همان `y` است).
 - {{domxref("DOMRectReadOnly.right")}} {{ReadOnlyInline}}
-  - : Returns the right coordinate value of the `DOMRectReadOnly` (usually the same as `x + width`).
+  - : مقدار مختصات راست `DOMRectReadOnly` را برمی‌گرداند (معمولاً همان `x + width` است).
 - {{domxref("DOMRectReadOnly.bottom")}} {{ReadOnlyInline}}
-  - : Returns the bottom coordinate value of the `DOMRectReadOnly` (usually the same as `y + height`).
+  - : مقدار مختصات پایین `DOMRectReadOnly` را برمی‌گرداند (معمولاً همان `y + height` است).
 - {{domxref("DOMRectReadOnly.left")}} {{ReadOnlyInline}}
-  - : Returns the left coordinate value of the `DOMRectReadOnly` (usually the same as `x`).
+  - : مقدار مختصات چپ `DOMRectReadOnly` را برمی‌گرداند (معمولاً همان `x` است).
 
-## Static methods
+## روش‌های ایستا
 
 - {{domxref("DOMRectReadOnly/fromRect_static", "DOMRectReadOnly.fromRect()")}}
-  - : Creates a new `DOMRectReadOnly` object with a given location and dimensions.
+  - : یک شیء جدید `DOMRectReadOnly` با موقعیت و ابعاد مشخص ایجاد می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("DOMRectReadOnly.toJSON()")}}
-  - : Returns a JSON representation of the `DOMRectReadOnly` object.
+  - : یک نمایش JSON از شیء `DOMRectReadOnly` برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMPoint")}}
