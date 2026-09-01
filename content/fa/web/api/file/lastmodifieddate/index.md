@@ -1,11 +1,5 @@
 ---
 title: "File: lastModifiedDate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/File/lastModifiedDate"
-status: "needs-translation"
----
-
----
-title: "File: lastModifiedDate property"
 short-title: lastModifiedDate
 slug: Web/API/File/lastModifiedDate
 page-type: web-api-instance-property
@@ -17,13 +11,13 @@ browser-compat: api.File.lastModifiedDate
 
 {{APIRef("File API")}}{{AvailableInWorkers}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`lastModifiedDate`** read-only property of the {{domxref("File")}} interface returns the last modified date of the file. Files without a known last modified date return the current date.
+خاصیت فقط‌خواندنی **`lastModifiedDate`** در رابط {{domxref("File")}}، تاریخ آخرین تغییر فایل را برمی‌گرداند. فایل‌هایی که تاریخ آخرین تغییر مشخصی ندارند، تاریخ جاری را برمی‌گردانند.
 
-## Value
+## مقدار
 
-A {{JSXRef("Global_Objects/Date", "Date")}} object indicating the date and time at which the file was last modified.
+یک شیء {{JSXRef("Global_Objects/Date", "Date")}} که تاریخ و زمان آخرین تغییر فایل را نشان می‌دهد.
 
-## Examples
+## نمونه‌ها
 
 ```js
 // fileInput is a HTMLInputElement: <input type="file" multiple id="my-file-input">
@@ -36,11 +30,11 @@ for (const file of fileInput.files) {
 }
 ```
 
-## Reduced time precision
+## دقت زمانی کاهش‌یافته
 
-To offer protection against timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting), the precision of `someFile.lastModifiedDate` might get rounded depending on browser settings. In Firefox, the `privacy.reduceTimerPrecision` preference is enabled by default and defaults to 2ms. You can also enable `privacy.resistFingerprinting`, in which case the precision will be 100ms or the value of `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`, whichever is larger.
+برای محافظت در برابر حملات زمان‌بندی و [اثر انگشت دیجیتال](/en-US/docs/Glossary/Fingerprinting)، ممکن است دقت `someFile.lastModifiedDate` بسته به تنظیمات مرورگر گرد شود. در فایرفاکس، ترجیح `privacy.reduceTimerPrecision` به‌طور پیش‌فرض فعال است و مقدار آن به‌طور پیش‌فرض ۲ میلی‌ثانیه است. همچنین می‌توانید `privacy.resistFingerprinting` را فعال کنید که در این صورت دقت، ۱۰۰ میلی‌ثانیه یا مقدار `privacy.resistFingerprinting.reduceTimerPrecision.microseconds` (هرکدام بزرگ‌تر باشد) خواهد بود.
 
-For example, with reduced time precision, the result of `someFile.lastModifiedDate.getTime()` will always be a multiple of 2, or a multiple of 100 (or `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) with `privacy.resistFingerprinting` enabled.
+برای مثال، با دقت زمانی کاهش‌یافته، نتیجه `someFile.lastModifiedDate.getTime()` همیشه مضربی از ۲، یا با فعال بودن `privacy.resistFingerprinting` مضربی از ۱۰۰ (یا `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) خواهد بود.
 
 ```js
 // reduced time precision (2ms) in Firefox 60
@@ -60,14 +54,14 @@ someFile.lastModifiedDate.getTime();
 // …
 ```
 
-## Specifications
+## مشخصات
 
-_Though present in early draft of the File API spec, this property has been removed from it and is now non-standard. Use {{domxref("File.lastModified")}} instead._
+_اگرچه این خاصیت در پیش‌نویس اولیه مشخصات File API وجود داشت، از آن حذف شده و اکنون غیراستاندارد است. به جای آن از {{domxref("File.lastModified")}} استفاده کنید._
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("File")}}
