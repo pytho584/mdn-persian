@@ -1,11 +1,5 @@
 ---
 title: "Element: mouseout event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseout_event"
-status: "needs-translation"
----
-
----
-title: "Element: mouseout event"
 short-title: mouseout
 slug: Web/API/Element/mouseout_event
 page-type: web-api-event
@@ -14,15 +8,15 @@ browser-compat: api.Element.mouseout_event
 
 {{APIRef("UI Events")}}
 
-The **`mouseout`** event is fired at an {{domxref("Element")}} when a pointing device (usually a mouse) is used to move the cursor so that it is no longer contained within the element or one of its children.
+رویداد **`mouseout`** روی یک {{domxref("Element")}} زمانی شلیک می‌شود که یک دستگاه اشاره‌گر (معمولاً ماوس) برای حرکت مکان‌نما به‌کار گرفته شود به‌طوری که دیگر درون آن عنصر یا یکی از فرزندانش قرار نگیرد.
 
-`mouseout` is also delivered to an element if the cursor enters a child element, because the child element obscures the visible area of the element.
+`mouseout` همچنین به یک عنصر تحویل داده می‌شود اگر مکان‌نما وارد یک عنصر فرزند شود، زیرا عنصر فرزند ناحیه قابل مشاهدهٔ عنصر را می‌پوشاند.
 
-If the target element has child elements, `mouseout` and `mouseover` events fire as the mouse moves over the boundaries of these elements too, not just the target element itself. Usually, {{domxref("Element/mouseenter_event", "mouseenter")}} and {{domxref("Element/mouseleave_event", "mouseleave")}} events' behavior is more sensible, because they are not affected by moving into child elements.
+اگر عنصر هدف دارای عناصر فرزند باشد، رویدادهای `mouseout` و `mouseover` هنگام حرکت ماوس روی مرزهای این عناصر نیز شلیک می‌شوند، نه فقط روی خود عنصر هدف. معمولاً رفتار رویدادهای {{domxref("Element/mouseenter_event", "mouseenter")}} و {{domxref("Element/mouseleave_event", "mouseleave")}} منطقی‌تر است، زیرا تحت تأثیر ورود به عناصر فرزند قرار نمی‌گیرند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("mouseout", (event) => { })
@@ -30,21 +24,21 @@ addEventListener("mouseout", (event) => { })
 onmouseout = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MouseEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("MouseEvent")}}. از {{domxref("UIEvent")}} و {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("MouseEvent")}}
 
-## Examples
+## مثال‌ها
 
-The following examples show the use of the `mouseout` event.
+مثال‌های زیر استفاده از رویداد `mouseout` را نشان می‌دهند.
 
-### mouseout and mouseleave
+### mouseout و mouseleave
 
-The following example illustrates the difference between `mouseout` and {{domxref("Element/mouseleave_event", "mouseleave")}} events. The `mouseleave` event is added to the {{HTMLElement("ul")}} to color the list purple whenever the mouse exits the `<ul>`. `mouseout` is added to the list to color the targeted element orange when the mouse exits it.
+مثال زیر تفاوت بین رویدادهای `mouseout` و {{domxref("Element/mouseleave_event", "mouseleave")}} را نشان می‌دهد. رویداد `mouseleave` به {{HTMLElement("ul")}} اضافه می‌شود تا هرگاه ماوس از `<ul>` خارج شود، لیست به رنگ بنفش درآید. `mouseout` به لیست اضافه می‌شود تا عنصر هدف را هنگام خروج ماوس از آن به رنگ نارنجی درآورد.
 
-When you try this out, you'll find that `mouseout` is delivered to the individual list items, while `mouseleave` goes to the overall list, courtesy of the hierarchy of the items and the fact that list items obscure the underlying `<ul>`.
+وقتی این را امتحان کنید، متوجه خواهید شد که `mouseout` به تک‌تک موارد لیست تحویل داده می‌شود، در حالی که `mouseleave` به کل لیست می‌رود، به دلیل سلسله‌مراتب موارد و این واقعیت که موارد لیست `<ul>` زیرین را می‌پوشانند.
 
 #### HTML
 
@@ -85,21 +79,21 @@ test.addEventListener("mouseout", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("mouseout_and_mouseleave", 640, 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Learn: Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
+- [آموزش: مقدمه‌ای بر رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events)
 - {{domxref("Element/mousedown_event", "mousedown")}}
 - {{domxref("Element/mouseup_event", "mouseup")}}
 - {{domxref("Element/mousemove_event", "mousemove")}}
