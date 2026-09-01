@@ -1,11 +1,5 @@
 ---
 title: "Document: createTouchList() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createTouchList"
-status: "needs-translation"
----
-
----
-title: "Document: createTouchList() method"
 short-title: createTouchList()
 slug: Web/API/Document/createTouchList
 page-type: web-api-instance-method
@@ -17,9 +11,9 @@ browser-compat: api.Document.createTouchList
 
 {{APIRef("DOM")}}{{Deprecated_Header}}{{Non-standard_header}}
 
-The **`Document.createTouchList()`** method creates and returns a new {{DOMxRef("TouchList")}} object.
+متد **`Document.createTouchList()`** یک شیء {{DOMxRef("TouchList")}} جدید ایجاد کرده و آن را بازمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 createTouchList(touch1)
@@ -27,54 +21,49 @@ createTouchList(touch1, touch2)
 createTouchList(touch1, touch2, /* …, */ touchN)
 ```
 
-### Parameters
+### پارامترها
 
-- `touch1`, …, `touchN`
-  - : Zero or more {{DOMxRef("Touch")}} objects. Firefox also
-    accepts an [array](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) of
-    {{DOMxRef("Touch")}} objects.
+- `touch1`، …، `touchN`
+  - : صفر یا چند شیء {{DOMxRef("Touch")}}. فایرفاکس همچنین یک [آرایه](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) از اشیاء {{DOMxRef("Touch")}} را می‌پذیرد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{DOMxRef("TouchList")}} object containing the {{DOMxRef("Touch")}} objects specified by the `touches` parameter.
+یک شیء {{DOMxRef("TouchList")}} شامل اشیاء {{DOMxRef("Touch")}} که توسط پارامتر `touches` مشخص شده‌اند.
 
-## Examples
+## مثال‌ها
 
-This example illustrates using the `Document.createTouchList()` method to
-create {{DOMxRef("TouchList")}} objects.
+این مثال استفاده از متد `Document.createTouchList()` را برای ایجاد اشیاء {{DOMxRef("TouchList")}} نشان می‌دهد.
 
-In following code snippet, some {{DOMxRef("Touch")}} objects are created for the
-`target` element and those touch points are then used to create some
-{{DOMxRef("TouchList")}} objects.
+در قطعه کد زیر، چند شیء {{DOMxRef("Touch")}} برای عنصر `target` ایجاد شده و سپس از آن نقاط لمسی برای ایجاد چند شیء {{DOMxRef("TouchList")}} استفاده می‌شود.
 
 ```js
 const target = document.getElementById("target");
 
-// Create some touch points
+// ایجاد چند نقطه لمسی
 const touch1 = document.createTouch(window, target, 1, 15, 20, 35, 40);
 const touch2 = document.createTouch(window, target, 2, 25, 30, 45, 50);
 
-// Create an empty TouchList objects
+// ایجاد یک شیء TouchList خالی
 const list0 = document.createTouchList();
 
-// Create a TouchList with only one Touch object
+// ایجاد یک TouchList با فقط یک شیء Touch
 const list1 = document.createTouchList(touch1);
 
-// Create a list with two Touch objects
+// ایجاد یک لیست با دو شیء Touch
 const list2 = document.createTouchList(touch1, touch2);
 ```
 
-## Specifications
+## مشخصات
 
-This feature is not part of any current specification. It is no longer on track to become a standard.
+این ویژگی بخشی از هیچ مشخصات فعلی نیست و دیگر در مسیر تبدیل شدن به استاندارد قرار ندارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Touch events](/en-US/docs/Web/API/Touch_events)
+- [رویدادهای لمسی](/en-US/docs/Web/API/Touch_events)
 - {{DOMxRef("Touch")}}
 - {{DOMxRef("TouchEvent")}}
 - {{DOMxRef("TouchList")}}
