@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaBrailleLabel property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaBrailleLabel"
-status: "needs-translation"
----
-
----
-title: "Element: ariaBrailleLabel property"
 short-title: ariaBrailleLabel
 slug: Web/API/Element/ariaBrailleLabel
 page-type: web-api-instance-property
@@ -14,26 +8,24 @@ browser-compat: api.Element.ariaBrailleLabel
 
 {{APIRef("DOM")}}
 
-The **`ariaBrailleLabel`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-braillelabel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-braillelabel) attribute, which defines the ARIA braille label of the element.
+ویژگی **`ariaBrailleLabel`** از رابط {{domxref("Element")}} مقدار ویژگی [`aria-braillelabel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-braillelabel) را منعکس می‌کند که برچسب بریل ARIA عنصر را تعریف می‌کند.
 
-This element label may be used by assistive technologies that can present content in braille, but should only be set if a braille-specific label would improve the user experience.
-The [`aria-braillelabel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-braillelabel) contains additional information about when the property should be set.
+این برچسب عنصر ممکن است توسط فناوری‌های کمکی که می‌توانند محتوا را به خط بریل ارائه دهند استفاده شود، اما تنها زمانی باید تنظیم شود که برچسب مخصوص بریل تجربه کاربری را بهبود بخشد. ویژگی [`aria-braillelabel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-braillelabel) حاوی اطلاعات بیشتری درباره زمان تنظیم این ویژگی است.
 
 ## Value
 
 - `<string>`
-  - : The value is a string, an unconstrained value type, that is intended to be converted into braille.
+  - مقدار یک رشته است؛ نوع مقداری بدون محدودیت که قرار است به خط بریل تبدیل شود.
 
 ## Examples
 
 ### Getting and setting ariaBrailleLabel
 
-This example shows how to get and set the `ariaBrailleLabel` property.
+این مثال نحوه دریافت و تنظیم ویژگی `ariaBrailleLabel` را نشان می‌دهد.
 
 #### HTML
 
-First we define a button with label text "3 out of 5 stars" and an `aria-braillelabel` attribute with a value of `"\*\*\*"`.
-This allows a braille display to show "btn \*\*\*" in braille rather than the more verbose "btn gra 3 out of 5 stars".
+ابتدا یک دکمه با متن برچسب «3 out of 5 stars» و یک ویژگی `aria-braillelabel` با مقدار `"\*\*\*"` تعریف می‌کنیم. این کار به نمایشگر بریل اجازه می‌دهد تا «btn \*\*\*» را به جای عبارت مفصّل‌تر «btn gra 3 out of 5 stars» نمایش دهد.
 
 ```html
 <button id="button" aria-braillelabel="\*\*\*">3 out of 5 stars</button>
@@ -62,8 +54,7 @@ function log(text) {
 }
 ```
 
-The code then uses the button's `ariaBrailleLabel` property to first get and log the braille label.
-It then sets the braille label to "3\*" and logs the value again.
+سپس کد از ویژگی `ariaBrailleLabel` دکمه استفاده می‌کند تا ابتدا برچسب بریل را دریافت و ثبت کند. سپس برچسب بریل را به «3\*» تنظیم و مقدار را دوباره ثبت می‌کند.
 
 ```js
 const button = document.getElementById("button");
