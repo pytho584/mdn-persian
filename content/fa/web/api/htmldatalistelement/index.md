@@ -1,10 +1,4 @@
 ---
-title: "HTMLDataListElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDataListElement"
-status: "needs-translation"
----
-
----
 title: HTMLDataListElement
 slug: Web/API/HTMLDataListElement
 page-type: web-api-interface
@@ -13,29 +7,29 @@ browser-compat: api.HTMLDataListElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLDataListElement`** interface provides special properties (beyond the {{domxref("HTMLElement")}} object interface it also has available to it by inheritance) to manipulate {{ HTMLElement("datalist") }} elements and their content.
+رابط **`HTMLDataListElement`** ویژگی‌های خاصی (فراتر از رابط شیء {{domxref("HTMLElement")}} که به صورت وراثت نیز در دسترس است) را برای دستکاری عناصر {{ HTMLElement("datalist") }} و محتوای آن‌ها فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}_.
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLDataListElement.options")}} {{ReadOnlyInline}}
-  - : A {{domxref("HTMLCollection")}} representing a collection of the contained option elements.
+  - یک {{domxref("HTMLCollection")}} که مجموعه‌ای از عناصر گزینه‌های موجود را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش خاصی ندارد؛ روش‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{ HTMLElement("datalist") }}
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{ HTMLElement("datalist") }}
