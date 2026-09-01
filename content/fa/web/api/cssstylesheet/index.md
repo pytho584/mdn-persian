@@ -1,10 +1,4 @@
 ---
-title: "CSSStyleSheet"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet"
-status: "needs-translation"
----
-
----
 title: CSSStyleSheet
 slug: Web/API/CSSStyleSheet
 page-type: web-api-interface
@@ -13,13 +7,13 @@ browser-compat: api.CSSStyleSheet
 
 {{APIRef("CSSOM")}}
 
-The **`CSSStyleSheet`** interface represents a single [CSS](/en-US/docs/Web/CSS) stylesheet, and lets you inspect and modify the list of rules contained in the stylesheet. It inherits properties and methods from its parent, {{domxref("StyleSheet")}}.
+رابط **`CSSStyleSheet`** یک برگه‌ی استایل CSS را نمایش می‌دهد و به شما امکان می‌دهد فهرست قوانین موجود در برگه‌ی استایل را بررسی و تغییر دهید. این رابط ویژگی‌ها و روش‌ها را از والد خود، {{domxref("StyleSheet")}} به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-A stylesheet consists of a collection of {{domxref("CSSRule")}} objects representing each of the rules in the stylesheet. The rules are contained in a {{domxref("CSSRuleList")}}, which can be obtained from the stylesheet's {{domxref("CSSStyleSheet.cssRules", "cssRules")}} property.
+یک برگه‌ی استایل از مجموعه‌ای از اشیاء {{domxref("CSSRule")}} تشکیل شده است که هر کدام نمایانگر یک قانون در برگه‌ی استایل هستند. این قوانین در یک {{domxref("CSSRuleList")}} قرار دارند که می‌توان آن را از طریق ویژگی {{domxref("CSSStyleSheet.cssRules", "cssRules")}} برگه‌ی استایل به دست آورد.
 
-For example, one rule might be a {{domxref("CSSStyleRule")}} object containing a style such as:
+برای مثال، یک قانون ممکن است یک شیء {{domxref("CSSStyleRule")}} باشد که استایلی مانند زیر را در بر دارد:
 
 ```css
 h1,
@@ -28,164 +22,135 @@ h2 {
 }
 ```
 
-Another rule might be an _at-rule_ such as {{cssxref("@import")}} or {{cssxref("@media")}}, and so forth.
+قانون دیگر ممکن است یک _at-rule_ مانند {{cssxref("@import")}} یا {{cssxref("@media")}} باشد و غیره.
 
-See the [Obtaining a StyleSheet](#obtaining_a_stylesheet) section for the various ways a `CSSStyleSheet` object can be obtained. A `CSSStyleSheet` object can also be directly constructed. The constructor, and the {{domxref("CSSStyleSheet.replace()")}}, and {{domxref("CSSStyleSheet.replaceSync()")}} methods are newer additions to the specification, enabling _Constructable Stylesheets_.
+بخش [دریافت یک برگه‌ی استایل](#obtaining_a_stylesheet) را برای روش‌های مختلف به‌دست آوردن یک شیء `CSSStyleSheet` ببینید. یک شیء `CSSStyleSheet` همچنین می‌تواند مستقیماً ساخته شود. سازنده و روش‌های {{domxref("CSSStyleSheet.replace()")}} و {{domxref("CSSStyleSheet.replaceSync()")}} افزوده‌های جدیدتری به مشخصات هستند که امکان _برگه‌های استایل قابل ساخت_ را فراهم می‌کنند.
 
-To apply a `CSSStyleSheet` to a document or shadow root, assign it to the {{domxref("Document.adoptedStyleSheets")}} or {{domxref("ShadowRoot.adoptedStyleSheets")}} property, respectively.
+برای اعمال یک `CSSStyleSheet` به یک سند یا ریشه‌ی سایه، آن را به ترتیب به ویژگی {{domxref("Document.adoptedStyleSheets")}} یا {{domxref("ShadowRoot.adoptedStyleSheets")}} اختصاص دهید.
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSStyleSheet.CSSStyleSheet()", "CSSStyleSheet()")}}
-  - : Creates a new `CSSStyleSheet` object.
+  - : یک شیء جدید `CSSStyleSheet` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("StyleSheet")}}._
+_ویژگی‌ها را از والد خود، {{domxref("StyleSheet")}} به ارث می‌برد._
 
 - {{domxref("CSSStyleSheet.cssRules")}} {{ReadOnlyInline}}
-  - : Returns a live {{domxref("CSSRuleList")}} which maintains an up-to-date list of the {{domxref("CSSRule")}} objects that comprise the stylesheet.
+  - : یک {{domxref("CSSRuleList")}} زنده برمی‌گرداند که فهرست به‌روز اشیاء {{domxref("CSSRule")}} تشکیل‌دهنده‌ی برگه‌ی استایل را نگه می‌دارد.
 
     > [!NOTE]
-    > In some browsers, if a stylesheet is loaded from a different domain, accessing `cssRules` results in a `SecurityError`.
+    > در برخی مرورگرها، اگر برگه‌ی استایل از یک دامنه‌ی متفاوت بارگذاری شود، دسترسی به `cssRules` باعث ایجاد یک `SecurityError` می‌شود.
 
 - {{domxref("CSSStyleSheet.ownerRule")}} {{ReadOnlyInline}}
-  - : If this stylesheet is imported into the document using an {{cssxref("@import")}} rule, the `ownerRule` property returns the corresponding {{domxref("CSSImportRule")}}; otherwise, this property's value is `null`.
+  - : اگر این برگه‌ی استایل با استفاده از یک قانون {{cssxref("@import")}} به سند وارد شده باشد، ویژگی `ownerRule` شیء {{domxref("CSSImportRule")}} متناظر را برمی‌گرداند؛ در غیر این صورت، مقدار این ویژگی `null` است.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("StyleSheet")}}._
+_روش‌ها را از والد خود، {{domxref("StyleSheet")}} به ارث می‌برد._
 
 - {{domxref("CSSStyleSheet.deleteRule()")}}
-  - : Deletes the rule at the specified index into the stylesheet's rule list.
+  - : قانون موجود در شاخص مشخص‌شده در فهرست قوانین برگه‌ی استایل را حذف می‌کند.
 - {{domxref("CSSStyleSheet.insertRule()")}}
-  - : Inserts a new rule at the specified position in the stylesheet, given the textual representation of the rule.
+  - : یک قانون جدید را با توجه به نمایش متنی قانون، در موقعیت مشخص‌شده در برگه‌ی استایل درج می‌کند.
 - {{domxref("CSSStyleSheet.replace()")}}
-  - : Asynchronously replaces the content of the stylesheet and returns a {{jsxref("Promise")}} that resolves with the updated `CSSStyleSheet`.
+  - : محتوای برگه‌ی استایل را به صورت ناهمگام جایگزین می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند که با `CSSStyleSheet` به‌روز شده حل می‌شود.
 - {{domxref("CSSStyleSheet.replaceSync()")}}
-  - : Synchronously replaces the content of the stylesheet.
+  - : محتوای برگه‌ی استایل را به صورت همگام جایگزین می‌کند.
 
-## Legacy properties
+## ویژگی‌های قدیمی
 
-_These properties are legacy properties as introduced by Microsoft; these are maintained for compatibility with existing sites._
+_این ویژگی‌ها قدیمی هستند و توسط مایکروسافت معرفی شده‌اند؛ برای سازگاری با سایت‌های موجود حفظ شده‌اند._
 
 - {{domxref("CSSStyleSheet.rules", "rules")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : The `rules` property is functionally identical to the standard {{domxref("CSSStyleSheet.cssRules", "cssRules")}} property; it returns a live {{domxref("CSSRuleList")}} which maintains an up-to-date list of all of the rules in the style sheet.
+  - : ویژگی `rules` از نظر عملکردی با ویژگی استاندارد {{domxref("CSSStyleSheet.cssRules", "cssRules")}} یکسان است؛ یک {{domxref("CSSRuleList")}} زنده برمی‌گرداند که فهرست به‌روز همه‌ی قوانین موجود در برگه‌ی استایل را نگه می‌دارد.
 
-## Legacy methods
+## روش‌های قدیمی
 
-_These methods are legacy methods as introduced by Microsoft; these are maintained for compatibility with existing sites._
+_این روش‌ها قدیمی هستند و توسط مایکروسافت معرفی شده‌اند؛ برای سازگاری با سایت‌های موجود حفظ شده‌اند._
 
 - {{domxref("CSSStyleSheet.addRule", "addRule()")}} {{Deprecated_Inline}}
-  - : Adds a new rule to the stylesheet given the selector to which the style applies and the style block to apply to the matching elements.
+  - : یک قانون جدید به برگه‌ی استایل اضافه می‌کند، با توجه به انتخاب‌گری که استایل به آن اعمال می‌شود و بلوک استایلی که به عناصر مطابق اعمال می‌شود.
 
-    This differs from {{domxref("CSSStyleSheet.insertRule", "insertRule()")}}, which takes the textual representation of the entire rule as a single string.
+    این روش با {{domxref("CSSStyleSheet.insertRule", "insertRule()")}} تفاوت دارد، که نمایش متنی کل قانون را به عنوان یک رشته‌ی واحد دریافت می‌کند.
 
 - {{domxref("CSSStyleSheet.removeRule", "removeRule()")}} {{Deprecated_Inline}}
-  - : Functionally identical to {{domxref("CSSStyleSheet.deleteRule", "deleteRule()")}}; removes the rule at the specified index from the stylesheet's rule list.
+  - : از نظر عملکردی با {{domxref("CSSStyleSheet.deleteRule", "deleteRule()")}} یکسان است؛ قانون موجود در شاخص مشخص‌شده را از فهرست قوانین برگه‌ی استایل حذف می‌کند.
 
-## Obtaining a StyleSheet
+## دریافت یک برگه‌ی استایل
 
-A stylesheet is associated with at most one {{domxref("Document")}}, which it applies to (unless {{domxref("StyleSheet.disabled", "disabled", "", 1)}}). A list of `CSSStyleSheet` objects for a given document can be obtained using the {{domxref("Document.styleSheets")}} property. A specific style sheet can also be accessed from its _owner_ object (`Node` or `CSSImportRule`), if any.
+یک برگه‌ی استایل حداکثر با یک {{domxref("Document")}} مرتبط است که به آن اعمال می‌شود (مگر اینکه {{domxref("StyleSheet.disabled", "disabled", "", 1)}} باشد). فهرستی از اشیاء `CSSStyleSheet` برای یک سند مشخص را می‌توان با استفاده از ویژگی {{domxref("Document.styleSheets")}} به دست آورد. یک برگه‌ی استایل خاص همچنین می‌تواند از شیء _مالک_ آن (Node یا `CSSImportRule`)، در صورت وجود، دسترسی پیدا کند.
 
-A `CSSStyleSheet` object is created and inserted into the document's {{domxref("Document.styleSheets")}} list automatically by the browser, when a stylesheet is loaded for a document.
+یک شیء `CSSStyleSheet` زمانی که یک برگه‌ی استایل برای یک سند بارگذاری می‌شود، به طور خودکار توسط مرورگر ایجاد و در فهرست {{domxref("Document.styleSheets")}} سند درج می‌شود.
 
-A (possibly incomplete) list of ways a stylesheet can be associated with a document follows:
+فهرست (احتمالاً ناقص) از روش‌هایی که یک برگه‌ی استایل می‌تواند با یک سند مرتبط شود، در ادامه آمده است:
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th scope="col">
-        Reason for the style sheet to be associated with the document
-      </th>
-      <th scope="col">
-        Appears in <code>document.<br />styleSheets</code> list
-      </th>
-      <th scope="col">
-        Getting the owner element/rule given the style sheet object
-      </th>
-      <th scope="col">The interface for the owner object</th>
-      <th scope="col">Getting the CSSStyleSheet object from the owner</th>
+      <th scope="col">دلیل ارتباط برگه‌ی استایل با سند</th>
+      <th scope="col">در فهرست <code>document.<br />styleSheets</code> ظاهر می‌شود</th>
+      <th scope="col">دریافت عنصر/قانون مالک با توجه به شیء برگه‌ی استایل</th>
+      <th scope="col">رابط برای شیء مالک</th>
+      <th scope="col">دریافت شیء CSSStyleSheet از مالک</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>
-        {{HTMLElement("style")}} and {{HTMLElement("link")}}
-        elements in the document
-      </td>
-      <td>Yes</td>
+      <td>عناصر {{HTMLElement("style")}} و {{HTMLElement("link")}} در سند</td>
+      <td>بله</td>
       <td>{{domxref("StyleSheet.ownerNode", ".ownerNode")}}</td>
-      <td>
-        {{domxref("HTMLLinkElement")}},<br />{{domxref("HTMLStyleElement")}},<br />or
-        {{domxref("SVGStyleElement")}}
-      </td>
-      <td>
-        {{domxref("HTMLLinkElement.sheet")}},<br />{{domxref("HTMLStyleElement.sheet")}},<br />or
-        {{domxref("SVGStyleElement.sheet")}}
-      </td>
+      <td>{{domxref("HTMLLinkElement")}}،<br />{{domxref("HTMLStyleElement")}}،<br />یا {{domxref("SVGStyleElement")}}</td>
+      <td>{{domxref("HTMLLinkElement.sheet")}}،<br />{{domxref("HTMLStyleElement.sheet")}}،<br />یا {{domxref("SVGStyleElement.sheet")}}</td>
     </tr>
     <tr>
-      <td>
-        CSS {{cssxref("@import")}} rule in other style sheets applied to
-        the document
-      </td>
-      <td>Yes</td>
-      <td>
-        {{domxref("CSSStyleSheet.ownerRule", ".ownerRule")}}
-      </td>
+      <td>قانون CSS {{cssxref("@import")}} در سایر برگه‌های استایل اعمال‌شده به سند</td>
+      <td>بله</td>
+      <td>{{domxref("CSSStyleSheet.ownerRule", ".ownerRule")}}</td>
       <td>{{domxref("CSSImportRule")}}</td>
-      <td>
-        {{domxref("CSSImportRule.styleSheet", ".styleSheet")}}
-      </td>
+      <td>{{domxref("CSSImportRule.styleSheet", ".styleSheet")}}</td>
     </tr>
     <tr>
-      <td>
-        <code>&#x3C;?xml-stylesheet ?></code> processing instruction in the
-        (non-HTML) document
-      </td>
-      <td>Yes</td>
+      <td>دستورالعمل پردازش <code>&#x3C;?xml-stylesheet ?></code> در سند (غیر HTML)</td>
+      <td>بله</td>
       <td>{{domxref("StyleSheet.ownerNode", ".ownerNode")}}</td>
       <td>{{domxref("ProcessingInstruction")}}</td>
-      <td>
-        {{domxref("ProcessingInstruction.sheet", ".sheet")}}
-      </td>
+      <td>{{domxref("ProcessingInstruction.sheet", ".sheet")}}</td>
     </tr>
     <tr>
-      <td>
-        JavaScript <a href="/en-US/docs/Web/JavaScript/Reference/Statements/import/with"><code>import ... with { type: "css" }</code></a>
-      </td>
-      <td>No</td>
-      <td>N/A</td>
-      <td>N/A</td>
-      <td>N/A</td>
+      <td>جاوا اسکریپت <a href="/en-US/docs/Web/JavaScript/Reference/Statements/import/with"><code>import ... with { type: "css" }</code></a></td>
+      <td>خیر</td>
+      <td>نامعتبر</td>
+      <td>نامعتبر</td>
+      <td>نامعتبر</td>
     </tr>
     <tr>
-      <td>HTTP Link Header</td>
-      <td>Yes</td>
-      <td><em>N/A</em></td>
-      <td>N/A</td>
-      <td>N/A</td>
+      <td>هدر پیوند HTTP</td>
+      <td>بله</td>
+      <td><em>نامعتبر</em></td>
+      <td>نامعتبر</td>
+      <td>نامعتبر</td>
     </tr>
     <tr>
-      <td>User agent (default) style sheets</td>
-      <td>No</td>
-      <td>N/A</td>
-      <td>N/A</td>
-      <td>N/A</td>
+      <td>برگه‌های استایل پیش‌فرض (User agent)</td>
+      <td>خیر</td>
+      <td>نامعتبر</td>
+      <td>نامعتبر</td>
+      <td>نامعتبر</td>
     </tr>
   </tbody>
 </table>
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model)
-- [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
+- [مدل شیء CSS](/en-US/docs/Web/API/CSS_Object_Model)
+- [استفاده از اطلاعات استایل‌دهی پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
