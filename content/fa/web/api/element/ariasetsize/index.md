@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaSetSize property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaSetSize"
-status: "needs-translation"
----
-
----
-title: "Element: ariaSetSize property"
 short-title: ariaSetSize
 slug: Web/API/Element/ariaSetSize
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Element.ariaSetSize
 
 {{APIRef("DOM")}}
 
-The **`ariaSetSize`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) attribute, which defines the number of items in the current set of listitems or treeitems.
+ویژگی **`ariaSetSize`** از رابط {{domxref("Element")}} مقدار مشخصهٔ [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) را بازتاب می‌دهد؛ این مشخصه، تعداد آیتم‌ها را در مجموعهٔ فعلی از آیتم‌های فهرست (listitems) یا آیتم‌های درخت (treeitems) تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string containing an integer.
+یک رشته حاوی یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-setsize` attribute on the element with an ID of `tab-id` is set to "3", to inform a device that there are currently 3 tabs in the group. Using `ariaSetSize` we update the value to "4".
+در این مثال، مشخصهٔ `aria-setsize` روی عنصری با شناسهٔ `tab-id` به "3" تنظیم شده است تا به دستگاه اطلاع دهد که در حال حاضر ۳ تب در گروه وجود دارد. با استفاده از `ariaSetSize`، مقدار را به "4" به‌روزرسانی می‌کنیم.
 
 ```html
 <button
@@ -42,14 +36,14 @@ el.ariaSetSize = "4";
 console.log(el.ariaSetSize); // 4
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [ARIA: tab role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role)
