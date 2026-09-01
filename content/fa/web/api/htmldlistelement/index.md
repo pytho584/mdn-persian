@@ -1,7 +1,5 @@
 ---
 title: "HTMLDListElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDListElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,29 +11,29 @@ browser-compat: api.HTMLDListElement
 
 {{ApiRef("HTML DOM")}}
 
-The **`HTMLDListElement`** interface provides special properties (beyond those of the regular {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating definition list ({{HtmlElement("dl")}}) elements.
+رابط **`HTMLDListElement`** ویژگی‌های ویژه‌ای را برای کار با عناصر فهرست تعریفی ({{HtmlElement("dl")}}) فراهم می‌کند؛ این ویژگی‌ها علاوه بر ویژگی‌هایی هستند که این رابط به‌صورت ارثی از رابط معمولی {{domxref("HTMLElement")}} در اختیار دارد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}}، را به ارث می‌برد._
 
 - {{domxref("HTMLDListElement.compact")}} {{deprecated_inline}}
-  - : A boolean value indicating that spacing between list items should be reduced.
+  - : یک مقدار بولین که نشان می‌دهد باید فاصله‌گذاری بین آیتم‌های فهرست کاهش یابد.
 
-## Instance methods
+## متدهای نمونه
 
-_No specific methods; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_متد خاصی ندارد؛ متدهای والد خود، {{domxref("HTMLElement")}}، را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{ HTMLElement("dl") }}
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{ HTMLElement("dl") }}
