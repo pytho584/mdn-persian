@@ -1,11 +1,5 @@
 ---
 title: "CSSMatrixComponent: matrix property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMatrixComponent/matrix"
-status: "needs-translation"
----
-
----
-title: "CSSMatrixComponent: matrix property"
 short-title: matrix
 slug: Web/API/CSSMatrixComponent/matrix
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.CSSMatrixComponent.matrix
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`matrix`** property of the {{domxref("CSSMatrixComponent")}} interface represents a {{domxref("DOMMatrix")}} object containing a 2D or 3D matrix.
+خاصیت **`matrix`** از رابط {{domxref("CSSMatrixComponent")}} یک شیء {{domxref("DOMMatrix")}} را نشان می‌دهد که شامل یک ماتریس دو بعدی یا سه بعدی است.
 
-See the {{cssxref("transform-function/matrix", "matrix()")}} and {{cssxref("transform-function/matrix3d", "matrix3d()")}} pages for examples.
+برای مثال‌ها به صفحات {{cssxref("transform-function/matrix", "matrix()")}} و {{cssxref("transform-function/matrix3d", "matrix3d()")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A {{domxref("DOMMatrix")}}.
+یک {{domxref("DOMMatrix")}}.
 
-## Examples
+## مثال‌ها
 
-To do.
+در دست انجام.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
