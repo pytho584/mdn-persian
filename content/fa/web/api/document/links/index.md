@@ -1,11 +1,5 @@
 ---
 title: "Document: links property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/links"
-status: "needs-translation"
----
-
----
-title: "Document: links property"
 short-title: links
 slug: Web/API/Document/links
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.Document.links
 
 {{ APIRef("DOM") }}
 
-The **`links`** read-only property of the {{domxref("Document")}} interface returns a collection of all {{HTMLElement("area")}} elements and {{HTMLElement("a")}} elements in a document with a value for the [href](/en-US/docs/Web/HTML/Reference/Elements/a#href) attribute.
+خاصیت فقط-خواندنی **`links`** در واسط {{domxref("Document")}} مجموعه‌ای از تمام عناصر {{HTMLElement("area")}} و {{HTMLElement("a")}} در سند را برمی‌گرداند که دارای مقدار برای ویژگی [href](/en-US/docs/Web/HTML/Reference/Elements/a#href) هستند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLCollection")}}.
+یک {{domxref("HTMLCollection")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 for (const link of document.links) {
@@ -31,10 +25,10 @@ for (const link of document.links) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
