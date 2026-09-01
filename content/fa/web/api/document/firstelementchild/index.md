@@ -1,7 +1,6 @@
 ---
 title: "Document: firstElementChild property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/firstElementChild"
-status: "needs-translation"
 ---
 
 ---
@@ -14,33 +13,31 @@ browser-compat: api.Document.firstElementChild
 
 {{ APIRef("DOM") }}
 
-The **`Document.firstElementChild`** read-only property
-returns the document's first child {{domxref("Element")}}, or `null` if there
-are no child elements.
+خاصیت فقط‌خواندنی **`Document.firstElementChild`** اولین عنصر فرزند سند را برمی‌گرداند، یا اگر هیچ عنصر فرزندی وجود نداشته باشد، `null` را برمی‌گرداند.
 
-For HTML documents, this is usually the only child, the root `<html>` element.
+برای اسناد HTML، این معمولاً تنها فرزند است، یعنی عنصر ریشه `<html>`.
 
-See {{domxref("Element.firstElementChild")}} for the first child element of specific elements within a document.
+برای دسترسی به اولین عنصر فرزند عناصر خاص درون یک سند، به {{domxref("Element.firstElementChild")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} object, or `null`.
+یک شیء {{domxref("Element")}}، یا `null`.
 
-## Examples
+## مثال‌ها
 
 ```js
 document.firstElementChild;
 // returns the root <html> element, the only child of the document
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.firstElementChild")}}
