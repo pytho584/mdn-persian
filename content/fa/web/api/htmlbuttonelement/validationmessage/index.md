@@ -1,11 +1,5 @@
 ---
 title: "HTMLButtonElement: validationMessage property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/validationMessage"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: validationMessage property"
 short-title: validationMessage
 slug: Web/API/HTMLButtonElement/validationMessage
 page-type: web-api-instance-property
@@ -14,31 +8,31 @@ browser-compat: api.HTMLButtonElement.validationMessage
 
 {{APIRef("HTML DOM")}}
 
-The **`validationMessage`** read-only property of the {{domxref("HTMLButtonElement")}} interface returns a string representing a localized message that describes the validation constraints that the {{htmlelement("button")}} control does not satisfy (if any). This is the empty string if the control is not a candidate for constraint validation (the `<button>`'s [`type`](/en-US/docs/Web/HTML/Reference/Elements/button#type) is `button` or `reset`), or it satisfies its constraints.
+ویژگی فقط‌خواندنی **`validationMessage`** متعلق به رابط {{domxref("HTMLButtonElement")}} یک رشته را برمی‌گرداند که یک پیام محلی‌سازی‌شده را توصیف می‌کند که نشان‌دهندهٔ محدودیت‌های اعتبارسنجی (constraint validation) است که کنترل {{htmlelement("button")}} آن‌ها را برآورده نمی‌کند (در صورت وجود). اگر کنترل نامزد اعتبارسنجی محدودیت نباشد (نوع `type` عنصر `<button>` برابر با `button` یا `reset` باشد) یا محدودیت‌های خود را برآورده کند، این رشته خالی خواهد بود.
 
-If the `<button>` is a candidate for constraint validation (the `type` is set or defaults to `submit` and {{domxref("HTMLButtonElement.willValidate")}} is `true`) and the constraints are not met (there is a non-null {{domxref("ValidityState.customError")}}), the value is the error message that would be shown to the user during element validation.
+اگر `<button>` نامزد اعتبارسنجی محدودیت باشد (نوع `type` روی `submit` تنظیم شده باشد یا به‌طور پیش‌فرض `submit` باشد و {{domxref("HTMLButtonElement.willValidate")}} برابر `true` باشد) و محدودیت‌ها برآورده نشوند (یک {{domxref("ValidityState.customError")}} غیر null وجود داشته باشد)، مقدار این ویژگی همان پیام خطایی است که در طول اعتبارسنجی عنصر به کاربر نشان داده می‌شود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{HTMLelement("button")}}
+- {{HTMLElement("button")}}
 - {{domxref("HTMLButtonElement")}}
 - {{domxref("HTMLButtonElement.willValidate")}}
 - {{domxref("HTMLButtonElement.validity")}}
 - {{domxref("HTMLButtonElement.checkValidity()")}}
 - {{domxref("HTMLButtonElement.reportValidity()")}}
 - {{domxref("HTMLButtonElement.setCustomValidity()")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
-- CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+- [یادگیری: اعتبارسنجی فرم سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}}
