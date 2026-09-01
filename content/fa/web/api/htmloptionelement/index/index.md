@@ -1,11 +1,5 @@
 ---
 title: "HTMLOptionElement: index property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement/index"
-status: "needs-translation"
----
-
----
-title: "HTMLOptionElement: index property"
 short-title: index
 slug: Web/API/HTMLOptionElement/index
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.HTMLOptionElement.index
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`index`** property of the {{DOMxRef("HTMLOptionElement")}} interface specifies the 0-based index of the element; that is, the position of the {{HTMLElement("option")}} within the list of options it belongs to, in tree-order, as an integer. If the `<option>` is not part of an option-list, the value is `0`.
+ویژگی فقط‌خواندنی **`index`** از رابط {{DOMxRef("HTMLOptionElement")}}، ایندکس (شاخص) مبتنی بر صفر عنصر را مشخص می‌کند؛ یعنی موقعیت {{HTMLElement("option")}} درون فهرست گزینه‌هایی که به آن تعلق دارد، به ترتیب درخت، به صورت یک عدد صحیح. اگر `<option>` بخشی از یک فهرست گزینه نباشد، مقدار `0` است.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const optionElement = document.getElementById("myOption");
 console.log(optionElement.index);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("option")}}
 - {{HTMLElement("select")}}
