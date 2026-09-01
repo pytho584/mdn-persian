@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaMultiLine property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaMultiLine"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaMultiLine property"
 short-title: ariaMultiLine
 slug: Web/API/ElementInternals/ariaMultiLine
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.ElementInternals.ariaMultiLine
 
 {{APIRef("Web Components")}}
 
-The **`ariaMultiLine`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-multiline`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiline) attribute, which indicates whether a text box accepts multiple lines of input or only a single line.
+ویژگی **`ariaMultiLine`** در رابط {{domxref("ElementInternals")}} منعکس‌کنندهٔ مقدار صفت [`aria-multiline`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiline) است که مشخص می‌کند یک جعبهٔ متن چند خط ورودی می‌پذیرد یا فقط یک خط.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم صفت‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. این مقادیر ممکن است توسط صفت‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که در صورت حذف آن صفت‌ها توسط نویسنده یا عدم افزودن آن‌ها، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+رشته‌ای با یکی از مقادیر زیر:
 
 - `"true"`
-  - : This is a multi-line text box.
+  - : این یک جعبهٔ متن چندخطی است.
 - `"false"`
-  - : This is a single-line text box.
+  - : این یک جعبهٔ متن تک‌خطی است.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaMultiLine` is set to "true".
+در این مثال مقدار `ariaMultiLine` روی «true» تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -43,14 +37,14 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [ARIA: textbox role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
+- [ARIA: نقش textbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
