@@ -1,11 +1,5 @@
 ---
 title: "HTMLDialogElement: closedBy property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/closedBy"
-status: "needs-translation"
----
-
----
-title: "HTMLDialogElement: closedBy property"
 short-title: closedBy
 slug: Web/API/HTMLDialogElement/closedBy
 page-type: web-api-instance-property
@@ -14,30 +8,29 @@ browser-compat: api.HTMLDialogElement.closedBy
 
 {{ APIRef("HTML DOM") }}
 
-The **`closedBy`** property of the
-{{domxref("HTMLDialogElement")}} interface indicates the types of user actions that can be used to close the associated {{htmlelement("dialog")}} element. It sets or returns the dialog's [`closedby`](/en-US/docs/Web/HTML/Reference/Elements/dialog#closedby) attribute value.
+ویژگی **`closedBy`** از رابط {{domxref("HTMLDialogElement")}} مشخص می‌کند که چه نوع اقداماتی از سوی کاربر می‌تواند برای بستن عنصر مربوطه {{htmlelement("dialog")}} استفاده شود. این ویژگی مقدار attribute [`closedby`](/en-US/docs/Web/HTML/Reference/Elements/dialog#closedby) دیالوگ را تنظیم یا بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A string; possible values are:
+یک رشته (string)؛ مقادیر ممکن عبارتند از:
 
 - `any`
-  - : The dialog can be dismissed with a light dismiss user action, a platform-specific user action, or a developer-specified mechanism.
+  - : دیالوگ می‌تواند با یک اقدام کاربری dismiss سبک (light dismiss)، یک اقدام کاربری خاص پلتفرم، یا یک مکانیسم تعریف‌شده توسط توسعه‌دهنده بسته شود.
 - `closerequest`
-  - : The dialog can be dismissed with a platform-specific user action or a developer-specified mechanism.
+  - : دیالوگ می‌تواند با یک اقدام کاربری خاص پلتفرم یا یک مکانیسم تعریف‌شده توسط توسعه‌دهنده بسته شود.
 - `none`
-  - : The dialog can only be dismissed with a developer-specified mechanism.
+  - : دیالوگ فقط با یک مکانیسم تعریف‌شده توسط توسعه‌دهنده قابل بستن است.
 
-### Default behavior
+### رفتار پیش‌فرض
 
-If the `closedby` attribute is absent or invalid, it falls back to the **Auto** state. In the **Auto** state:
+اگر attribute `closedby` وجود نداشته باشد یا نامعتبر باشد، به حالت **خودکار (Auto)** بازمی‌گردد. در حالت **خودکار**:
 
-- when the `<dialog>` is opened with `showModal()`, it behaves as if: `closedby="closerequest"`
-- when the `<dialog>` is opened by any other means, it behaves as if: `closedby="none"`
+- زمانی که `<dialog>` با `showModal()` باز شود، طوری رفتار می‌کند که گویی `closedby="closerequest"` تنظیم شده است.
+- زمانی که `<dialog>` با هر روش دیگری باز شود، طوری رفتار می‌کند که گویی `closedby="none"` تنظیم شده است.
 
-## Examples
+## مثال‌ها
 
-### Basic `closedBy` usage
+### استفادهٔ پایه از `closedBy`
 
 ```html
 <dialog closedby="any">
@@ -66,18 +59,18 @@ dialog.showModal();
 log(`closedBy: ${dialog.closedBy}`);
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Basic `closedBy` usage', '100%', '250px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{htmlelement("dialog")}} element
+- عنصر HTML {{htmlelement("dialog")}}
