@@ -1,11 +1,5 @@
 ---
 title: "DedicatedWorkerGlobalScope: message event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/message_event"
-status: "needs-translation"
----
-
----
-title: "DedicatedWorkerGlobalScope: message event"
 short-title: message
 slug: Web/API/DedicatedWorkerGlobalScope/message_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.DedicatedWorkerGlobalScope.message_event
 
 {{APIRef("Web Workers API")}}{{AvailableInWorkers("dedicated")}}
 
-The `message` event is fired on a {{domxref('DedicatedWorkerGlobalScope')}} object when the worker receives a message from its parent (i.e., when the parent sends a message using [`Worker.postMessage()`](/en-US/docs/Web/API/Worker/postMessage)).
+رویداد `message` روی یک شیء {{domxref('DedicatedWorkerGlobalScope')}} شلیک می‌شود وقتی worker پیامی را از والد خود دریافت می‌کند (یعنی وقتی والد پیامی را با استفاده از [`Worker.postMessage()`](/en-US/docs/Web/API/Worker/postMessage) ارسال می‌کند).
 
-This event is not cancellable and does not bubble.
+این رویداد قابل لغو (cancellable) نیست و در DOM انتشار نمی‌یابد (bubble نمی‌کند).
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("message", (event) => { })
@@ -30,13 +24,13 @@ onmessage = (event) => { }
 
 ## Event type
 
-A {{domxref("MessageEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("MessageEvent")}}. از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("MessageEvent")}}
 
 ## Example
 
-The following code snippet shows creation of a {{domxref("Worker")}} object using the {{domxref("Worker.Worker", "Worker()")}} constructor. Messages are passed to the worker when the value inside the form input `first` changes. An {{domxref("Worker.message_event", "onmessage")}} handler is also present, to deal with messages are passed back from the worker.
+قطعه کد زیر ایجاد یک شیء {{domxref("Worker")}} را با استفاده از سازنده {{domxref("Worker.Worker", "Worker()")}} نشان می‌دهد. وقتی مقدار موجود در ورودی فرم `first` تغییر کند، پیام‌هایی به worker ارسال می‌شوند. یک کنترل‌کننده {{domxref("Worker.message_event", "onmessage")}} نیز وجود دارد که پیام‌های بازگشتی از worker را مدیریت می‌کند.
 
 ```js
 // main.js
@@ -58,7 +52,7 @@ self.onmessage = (e) => {
 };
 ```
 
-In the `main.js` script, an `onmessage` handler is used to handle messages from the worker script:
+در اسکریپت `main.js`، از یک کنترل‌کننده `onmessage` برای مدیریت پیام‌های دریافتی از اسکریپت worker استفاده می‌شود:
 
 ```js
 // main.js
@@ -69,7 +63,7 @@ myWorker.onmessage = (e) => {
 };
 ```
 
-Alternatively, the script can listen for the message using [`addEventListener()`](/en-US/docs/Web/API/EventTarget/addEventListener):
+به‌عنوان جایگزین، اسکریپت می‌تواند با استفاده از [`addEventListener()`](/en-US/docs/Web/API/EventTarget/addEventListener) به رویداد `message` گوش دهد:
 
 ```js
 // worker.js
@@ -80,9 +74,9 @@ self.addEventListener("message", (e) => {
 });
 ```
 
-Notice how in the main script, `onmessage` has to be called on `myWorker`, whereas inside the worker script you just need `onmessage` because the worker is effectively the global scope ({{domxref("DedicatedWorkerGlobalScope")}}).
+توجه کنید که در اسکریپت اصلی، `onmessage` باید روی `myWorker` فراخوانی شود، در حالی که در داخل اسکریپت worker فقط به `onmessage` نیاز دارید، زیرا worker عملاً همان حوزه سراسری ({{domxref("DedicatedWorkerGlobalScope")}}) است.
 
-For a full example, see our [Basic dedicated worker example](https://github.com/mdn/dom-examples/tree/main/web-workers/simple-web-worker) ([run dedicated worker](https://mdn.github.io/dom-examples/web-workers/simple-web-worker/)).
+برای یک مثال کامل، به [Basic dedicated worker example](https://github.com/mdn/dom-examples/tree/main/web-workers/simple-web-worker) مراجعه کنید ([run dedicated worker](https://mdn.github.io/dom-examples/web-workers/simple-web-worker/)).
 
 ## Specifications
 
@@ -96,6 +90,6 @@ For a full example, see our [Basic dedicated worker example](https://github.com/
 
 - {{domxref("DedicatedWorkerGlobalScope")}}
 - {{domxref("WorkerGlobalScope")}}
-- Related events: [`messageerror`](/en-US/docs/Web/API/DedicatedWorkerGlobalScope/messageerror_event)
+- رویدادهای مرتبط: [`messageerror`](/en-US/docs/Web/API/DedicatedWorkerGlobalScope/messageerror_event)
 - [`Worker.postMessage()`](/en-US/docs/Web/API/Worker/postMessage)
-- [Using channel messaging](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
+- [استفاده از پیام‌رسانی کانالی](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
