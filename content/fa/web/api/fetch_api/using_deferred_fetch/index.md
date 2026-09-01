@@ -1,10 +1,4 @@
 ---
-title: "Using Deferred Fetch"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Deferred_Fetch"
-status: "needs-translation"
----
-
----
 title: Using Deferred Fetch
 slug: Web/API/Fetch_API/Using_Deferred_Fetch
 page-type: guide
@@ -12,186 +6,186 @@ page-type: guide
 
 {{DefaultAPISidebar("Fetch API")}}
 
-The **`fetchLater()` API** provides an interface to request a deferred fetch that can be sent after a specified period of time, or when the page is closed or navigated away from.
+**API فراخوانی `fetchLater()`** یک رابط برای درخواستِ یک واکشیِ تأخیری (deferred fetch) فراهم می‌کند که می‌تواند پس از یک بازه زمانی مشخص، یا هنگام بسته‌شدن صفحه یا ترک آن ارسال شود.
 
-## Overview
+## نمای کلی
 
-Developers often need to send (or beacon) data back to the server, particularly at the end of a user's visit to a page — for example, for analytics services. There are several ways to do this: from adding 1 pixel {{HTMLElement("img")}} elements to the page, to {{domxref("XMLHttpRequest")}}, to the dedicated {{domxref("Beacon API", "Beacon API", "", "nocode")}}, and the {{domxref("Fetch API", "Fetch API", "", "nocode")}} itself.
+توسعه‌دهندگان اغلب نیاز دارند داده‌ها را به سرور ارسال کنند (یا «بیکن» بزنند)، به‌ویژه در پایان بازدید کاربر از یک صفحه — مثلاً برای سرویس‌های تحلیل. راه‌های مختلفی برای این کار وجود دارد: از افزودن عناصر {{HTMLElement("img")}} با اندازه ۱ پیکسل به صفحه، تا {{domxref("XMLHttpRequest")}}، تا {{domxref("Beacon API", "Beacon API", "", "nocode")}} اختصاصی، و خود {{domxref("Fetch API", "Fetch API", "", "nocode")}}.
 
-The issue is that all of these methods suffer from reliability problems for end-of-visit beaconing. While the Beacon API and the {{domxref("Request.keepalive", "keepalive")}} property of the Fetch API will send data, even if the document is destroyed (to the best efforts that can be made in this scenario), this only solves part of the problem.
+مشکل این است که همه این روش‌ها برای بیکن‌کردن در پایان بازدید، مشکلات قابلیت اطمینان دارند. اگرچه API بیکن (Beacon API) و ویژگی {{domxref("Request.keepalive", "keepalive")}} در Fetch API داده‌ها را حتی اگر سند از بین برود ارسال می‌کنند (تا حدی که در این سناریو ممکن است)، این فقط بخشی از مشکل را حل می‌کند.
 
-The other — more difficult — part to solve concerns deciding _when_ to send the data, since there is not an ideal time in a page's lifecycle to make the JavaScript call to send out the beacon:
+بخش دیگر — که دشوارتر است — به تصمیم‌گیری درباره _چه زمانی_ ارسال داده مربوط می‌شود، چون در چرخهٔ حیات صفحه زمان ایده‌آلی برای فراخوانی جاوااسکریپت و ارسال بیکن وجود ندارد:
 
-- The {{domxref("Window.unload_event", "unload")}} and {{domxref("Window.beforeunload_event", "beforeunload")}} events are unreliable, and outright ignored by several major browsers.
-- The {{domxref("Window.pagehide_event", "pagehide")}} and {{domxref("document.visibilitychange_event", "visibilitychange")}} events are more reliable, but still have issues on mobile platforms.
+- رویدادهای {{domxref("Window.unload_event", "unload")}} و {{domxref("Window.beforeunload_event", "beforeunload")}} قابل اعتماد نیستند و چند مرورگر بزرگ اصلاً آن‌ها را نادیده می‌گیرند.
+- رویدادهای {{domxref("Window.pagehide_event", "pagehide")}} و {{domxref("document.visibilitychange_event", "visibilitychange")}} قابل اتکا‌ترند، اما همچنان در پلتفرم‌های موبایل مشکل دارند.
 
-This means developers looking to reliably send out data via a beacon need to do so more frequently than is ideal. For example, they may send a beacon on each change, even if the final value for the page has not yet been reached. This has costs in network usage, server processing, and merging or discarding outdated beacons on the server.
+این بدان معناست که توسعه‌دهندگانی که می‌خواهند داده‌ها را به‌صورت قابل اعتماد از طریق بیکن ارسال کنند، باید این کار را بیشتر از حد ایده‌آل انجام دهند. مثلاً ممکن است در هر تغییر یک بیکن بفرستند، حتی اگر مقدار نهایی مربوط به صفحه هنوز به دست نیامده باشد. این کار هزینه‌هایی به همراه دارد: مصرف شبکه، پردازش سرور، و نیاز به ادغام یا کنار گذاشتن بیکن‌های قدیمی در سمت سرور.
 
-Alternatively, developers can choose to accept some level of missing data — either by:
+از طرف دیگر، توسعه‌دهندگان می‌توانند بپذیرند که بخشی از داده از دست برود — یا با:
 
-- Beaconing after a designated cut-off time and not collecting later data.
-- Beaconing at the end of the page lifecycle but accepting that sometimes this will not be reliable.
+- بیکن‌زدن پس از یک زمانِ قطعِ مشخص و جمع‌آوری نکردن داده‌های بعدی.
+- بیکن‌زدن در پایان چرخهٔ حیات صفحه، اما پذیرش اینکه گاهی این کار قابل اعتماد نیست.
 
-The `fetchLater()` API extends the {{domxref("Fetch API", "Fetch API", "", "nocode")}} to allow setting fetch requests up in advance. These deferred fetches can be updated before they have been sent, allowing the payload to reflect the latest data to be beaconed.
+API فراخوانی `fetchLater()` با گسترش {{domxref("Fetch API", "Fetch API", "", "nocode")}} امکان تنظیم از پیش درخواست‌های واکشی را فراهم می‌کند. این واکشی‌های تأخیری را می‌توان پیش از ارسال به‌روزرسانی کرد تا بارِ ارسالی (payload) منعکس‌کننده آخرین داده‌هایی باشد که قرار است بیکن شوند.
 
-The browser then sends the beacon when the tab is closed or navigated away from, or after a set time if specified. This avoids sending multiple beacons but still ensures a reliable beacon within reasonable expectations (i.e., excluding when the browser process shuts down unexpectedly during a crash).
+مرورگر سپس بیکن را هنگام بسته‌شدن تب یا ترک آن، یا پس از زمان مشخصی (اگر تعیین شده باشد) ارسال می‌کند. این کار از ارسال بیکن‌های متعدد جلوگیری می‌کند و همچنان در محدوده انتظارات منطقی، ارسالِ بیکنِ قابل اعتماد را تضمین می‌نماید (یعنی به‌جز زمانی که فرایند مرورگر به‌صورت غیرمنتظره در جریان کرش متوقف شود).
 
-Deferred fetches can also be aborted using an {{domxref("AbortController")}} if they are no longer required, avoiding further unnecessary costs.
+درخواست‌های واکشی تأخیری را نیز می‌توان در صورت نبود نیاز با استفاده از {{domxref("AbortController")}} لغو کرد تا از هزینه‌های غیرضروری بعدی جلوگیری شود.
 
-## Quotas
+## سهمیه‌ها
 
-Deferred fetches are batched and sent once the tab is closed; at this point, there is no way for the user to abort them. To avoid situations where documents abuse this bandwidth to send unlimited amounts of data over the network, the overall quota for a top-level document is capped at 640KiB.
+واکشی‌های تأخیری دسته‌بندی شده و هنگام بسته‌شدن تب ارسال می‌شوند؛ در این مرحله کاربر هیچ راهی برای لغو آن‌ها ندارد. برای جلوگیری از سوءاستفاده اسناد از این پهنای باند برای ارسال حجم نامحدودی داده روی شبکه، سهمیه کلی برای یک سند سطح بالا به 640KiB محدود شده است.
 
-Callers of `fetchLater()` should be defensive and catch `QuotaExceededError` errors in almost all cases, especially if they embed third-party JavaScript.
+فراخوانان `fetchLater()` باید محتاط باشند و در تقریباً همه موارد خطاهای `QuotaExceededError` را بگیرند، به‌ویژه اگر جاوااسکریپت شخص ثالث را در صفحه جاسازی کرده باشند.
 
-Since this cap makes deferred fetch bandwidth a scarce resource, which needs to be shared between multiple reporting origins (for example, several RUM libraries) and subframes from multiple origins, the platform provides a reasonable default division of this quota. In addition, it provides {{HTTPHeader("Permissions-Policy/deferred-fetch", "deferred-fetch")}} and {{HTTPHeader("Permissions-Policy/deferred-fetch-minimal", "deferred-fetch-minimal")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) directives to allow dividing it differently when desired.
+از آنجا که این سقف، پهنای باند واکشی تأخیری را به منبعی کمیاب تبدیل می‌کند که باید بین چندین origin گزارش‌دهنده (مثلاً چند کتابخانه RUM) و زیرفریم‌هایی با originهای مختلف به اشتراک گذاشته شود، پلتفرم تقسیم‌بندی پیش‌فرض منطقی برای این سهمیه ارائه می‌دهد. علاوه بر این، دستورهای [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) یعنی {{HTTPHeader("Permissions-Policy/deferred-fetch", "deferred-fetch")}} و {{HTTPHeader("Permissions-Policy/deferred-fetch-minimal", "deferred-fetch-minimal")}} را فراهم می‌کند تا در صورت تمایل بتوان آن را به شکل دیگری تقسیم کرد.
 
-The overall quota for `fetchLater()` is 640KiB per document. By default, this is divided into a 512KiB top-level quota and a 128KiB shared quota:
+سهمیه کلی برای `fetchLater()` برابر با 640KiB برای هر سند است. در حالت پیش‌فرض، این مقدار به یک سهمیه سطح بالای 512KiB و یک سهمیه مشترک 128KiB تقسیم می‌شود:
 
-- The 512KiB top-level quota by default is for any `fetchLater()` requests made from the top-level document and direct subframes using that origin.
-- The 128KiB shared quota by default is for any `fetchLater()` requests made in cross-origin subframes (for example, `<iframe>`, `<object>`, `<embed>`, and `<frame>` elements).
+- سهمیه سطح بالای 512KiB به‌طور پیش‌فرض برای هر درخواست `fetchLater()` است که از سند سطح بالا و زیرفریم‌های مستقیم با همان origin انجام می‌شود.
+- سهمیه مشترک 128KiB به‌طور پیش‌فرض برای هر درخواست `fetchLater()` است که در زیرفریم‌های cross-origin انجام می‌شود (مثلاً عناصر `<iframe>`، `<object>`، `<embed>` و `<frame>`).
 
-`fetchLater()` requests can be made to any URL and are not restricted to the same origin as the document or the subframe, so it's important to differentiate between requests made in the top-level document content (whether to first-party or third-party origins) and those made in subframes.
+درخواست‌های `fetchLater()` می‌توانند به هر URL ارسال شوند و محدود به همان origin سند یا زیرفریم نیستند؛ بنابراین مهم است بین درخواست‌هایی که در محتوای سند سطح بالا انجام می‌شوند (چه به originهای first-party یا third-party) و درخواست‌هایی که در زیرفریم‌ها انجام می‌شوند، تمایز قائل شویم.
 
-For example, if a top-level `a.com` document includes a `<script>` that makes a `fetchLater()` request to `analytics.example.com`, this request would be bound by the top-level 512KiB limit. Alternatively, if the top-level document embeds an `<iframe>` with a source of `analytics.example.com` that makes a `fetchLater()` request, that request would be bound by the 128KiB limit.
+برای مثال، اگر یک سند سطح بالای `a.com` شامل `<script>` باشد که درخواست `fetchLater()` به `analytics.example.com` می‌فرستد، این درخواست تحت محدودیت سطح بالای 512KiB قرار می‌گیرد. از طرف دیگر، اگر سند سطح بالا یک `<iframe>` با آدرس `analytics.example.com` جاسازی کند که درخواست `fetchLater()` می‌فرستد، آن درخواست تحت محدودیت 128KiB قرار می‌گیرد.
 
-### Quota limits by reporting origin and subframe
+### محدودیت‌های سهمیه بر اساس origin گزارش‌دهنده و زیرفریم
 
-Only 64KiB of the top-level 512KiB quota can be used concurrently for the same reporting origin (the request URL's origin). This prevents third-party libraries from reserving quota opportunistically before they have data to send.
+تنها 64KiB از سهمیه سطح‌بالای 512KiB می‌تواند به‌طور همزمان برای همان origin گزارش‌دهنده (origin در URL درخواست) استفاده شود. این کار مانع از آن می‌شود که کتابخانه‌های شخص ثالث پیش از آن‌که داده‌ای برای ارسال داشته باشند، به‌طور فرصت‌طلبانه سهمیه را رزرو کنند.
 
-Each cross-origin subframe gets an 8KiB quota out of the shared 128KiB quota by default, allocated when the subframe is added to the DOM (whether `fetchLater()` will be used in that subframe or not). This means that, in general, only the first 16 cross-origin subframes added to a page can use `fetchLater()` as they will use up the 128KiB quota.
+هر زیرفریم cross-origin در حالت پیش‌فرض 8KiB از سهمیه مشترک 128KiB دریافت می‌کند که هنگام افزوده‌شدن زیرفریم به DOM اختصاص می‌یابد (چه `fetchLater()` در آن زیرفریم استفاده شود یا نه). این یعنی در حالت کلی، فقط ۱۶ زیرفریم cross-origin اولی که به یک صفحه افزوده می‌شوند می‌توانند از `fetchLater()` استفاده کنند، زیرا سهمیه 128KiB را مصرف خواهند کرد.
 
-### Increasing subframe quotas by sharing the top-level quota
+### افزایش سهمیه زیرفریم‌ها با به اشتراک گذاشتن سهمیه سطح بالا
 
-The top-level origin can give selected cross-origin subframes an increased quota of 64KiB, taking it out of the larger top-level 512KiB limit. It does this by listing those origins in the {{HTTPHeader("Permissions-Policy/deferred-fetch", "deferred-fetch")}} Permissions Policy directive. This is allocated when the subframe is added to the DOM, leaving less quota for the top-level document and direct same-origin subframes. Multiple same-origin subdomains can each get a 64KiB quota.
+origin سطح بالا می‌تواند به زیرفریم‌های cross-origin منتخب، سهمیه افزایش‌یافته 64KiB بدهد و آن را از محدودیت بزرگ‌تر سطح‌بالای 512KiB برداشت کند. این کار با فهرست‌کردن آن originها در دستور `deferred-fetch` در Permissions Policy انجام می‌شود. این سهمیه هنگام افزوده‌شدن زیرفریم به DOM اختصاص می‌یابد و سهمیه کمتری برای سند سطح بالا و زیرفریم‌های مستقیم same-origin باقی می‌گذارد. چند زیردامنه هم‌خاستگاه می‌توانند هرکدام 64KiB سهمیه بگیرند.
 
-### Restricting the shared quota
+### محدود کردن سهمیه مشترک
 
-The top-level origin can also restrict the 128KiB shared quota to named cross-origin subframes by listing those origins in the {{HTTPHeader("Permissions-Policy/deferred-fetch-minimal", "deferred-fetch-minimal")}} Permissions Policy. It can also revoke the entire 128KiB default subframe quota and instead keep the full 640KiB quota for itself and any named `deferred-fetch` cross-origins by setting the {{HTTPHeader("Permissions-Policy/deferred-fetch-minimal", "deferred-fetch-minimal")}} Permissions Policy to `()`.
+origin سطح بالا همچنین می‌تواند سهمیه مشترک 128KiB را تنها به زیرفریم‌های cross-origin مشخص‌شده محدود کند؛ با فهرست‌کردن آن originها در Permissions Policy با نام {{HTTPHeader("Permissions-Policy/deferred-fetch-minimal", "deferred-fetch-minimal")}}. همچنین می‌تواند کل سهمیه پیش‌فرض 128KiB زیرفریم‌ها را لغو کند و به‌جای آن کل سهمیه 640KiB را برای خود و هر origin متقاطع نام‌برده در `deferred-fetch` نگه دارد، با تنظیم Permissions Policy با نام {{HTTPHeader("Permissions-Policy/deferred-fetch-minimal", "deferred-fetch-minimal")}} روی `()`.
 
-### Delegating quotas to subframes of subframes
+### واگذاری سهمیه به زیرفریم‌های زیرفریم‌ها
 
-By default, subframes of subframes are not allocated a quota and so cannot use `fetchLater()`. Subframes allocated the increased 64KiB quota can delegate the full 64KiB quota to further subframes and allow them to use `fetchLater()` by setting their own `deferred-fetch` Permissions Policy. They can only delegate their full quota to further subframes, not parts of it, and cannot specify new quotas. Subframes using the minimal 8KiB quota cannot delegate quotas to subframes. To be delegated quota, sub-subframes must be included in both the top-level and the subframe `deferred-fetch` {{httpheader('Permissions-Policy')}} directives.
+به‌طور پیش‌فرض، به زیرفریم‌های زیرفریم‌ها سهمیه‌ای تعلق نمی‌گیرد و بنابراین نمی‌توانند از `fetchLater()` استفاده کنند. زیرفریم‌هایی که سهمیه افزایش‌یافته 64KiB دریافت کرده‌اند می‌توانند کل سهمیه 64KiB را به زیرفریم‌های بعدی واگذار کنند و با تنظیم Permissions Policy مربوط به `deferred-fetch` خودشان، به آن‌ها اجازه استفاده از `fetchLater()` بدهند. آن‌ها فقط می‌توانند کل سهمیه خود را به زیرفریم‌های بعدی واگذار کنند، نه بخشی از آن را، و نمی‌توانند سهمیه‌های جدیدی تعیین کنند. زیرفریم‌هایی که از سهمیه حداقلی 8KiB استفاده می‌کنند نمی‌توانند سهمیه را به زیرفریم‌ها واگذار کنند. برای دریافت سهمیه واگذارشده، زیرزیرفریم‌ها باید هم در دستورهای `deferred-fetch` سطح بالا و هم در دستورهای `deferred-fetch` زیرفریم {{httpheader('Permissions-Policy')}} فهرست شده باشند.
 
-### When quotas are exceeded
+### هنگام فراتر رفتن از سهمیه‌ها
 
-When quotas are exceeded, a `QuotaExceededError` is thrown when the {{domxref('Window.fetchLater()','fetchLater()')}} method is called to initiate the deferred request.
+وقتی سهمیه‌ها فراتر روند، هنگام فراخوانی متد {{domxref('Window.fetchLater()','fetchLater()')}} برای شروع درخواست تأخیری، یک خطای `QuotaExceededError` پرتاب می‌شود.
 
-Permissions Policy checks are not discernible from quota checks. Calling `fetchLater()` will throw a `QuotaExceededError` both if the quota is actually exceeded and if the quota was restricted for that origin via a Permissions Policy.
+بررسی‌های Permissions Policy از بررسی‌های سهمیه قابل تشخیص نیستند. فراخوانی `fetchLater()` در دو حالت خطای `QuotaExceededError` پرتاب می‌کند: هم وقتی سهمیه واقعاً رد شده باشد و هم وقتی سهمیه برای آن origin از طریق Permissions Policy محدود شده باشد.
 
-Callers of `fetchLater()` should be defensive and catch `QuotaExceededError` errors in almost all cases, especially if they embed third-party JavaScript.
+فراخوانان `fetchLater()` باید محتاط باشند و تقریباً در همه موارد خطاهای `QuotaExceededError` را بگیرند (catch کنند)، به‌ویژه اگر جاوااسکریپت شخص ثالثی را جاسازی کرده باشند.
 
-## Quota examples
+## مثال‌های سهمیه
 
-### Using up the minimal quota
+### مصرف کامل سهمیه حداقلی
 
 ```http
 Permissions-Policy: deferred-fetch=(self "https://b.com")
 ```
 
-1. A `<iframe src="https://b.com/page">` receives 64KiB upon being added to the top-level document, from the top-level's 512KiB limit.
-2. A `<iframe src="https://c.com/page">` is not listed and so receives 8KiB upon being added to the top-level document from the 128KiB shared limit.
-3. 15 more cross-origin iframes would each receive 8KiB upon being added to the top-level document (similar to `c.com`).
-4. The next cross-origin iframe would not be granted any quota.
-5. If one of the cross-origin iframes is removed, its deferred fetches will be sent.
-6. The next cross-origin iframe _would_ receive an 8KiB quota, as there is quota available again.
+1. `<iframe src="https://b.com/page">` هنگام افزوده‌شدن به سند سطح بالا، 64KiB از محدودیت 512KiB سطح بالا دریافت می‌کند.
+2. یک `<iframe src="https://c.com/page">` فهرست نشده است و بنابراین هنگام افزوده‌شدن به سند سطح بالا، 8KiB از سهمیه مشترک 128KiB دریافت می‌کند.
+3. ۱۵ iframe متقاطع دیگر نیز هرکدام هنگام افزوده‌شدن به سند سطح بالا 8KiB دریافت می‌کنند (مشابه `c.com`).
+4. iframe متقاطع بعدی هیچ سهمیه‌ای دریافت نخواهد کرد.
+5. اگر یکی از iframeهای متقاطع حذف شود، واکشی‌های تأخیری‌اش ارسال می‌شود.
+6. iframe متقاطع بعدی _می‌تواند_ 8KiB سهمیه دریافت کند، زیرا دوباره سهمیه موجود است.
 
-### Revoke Restricting the minimal quota to named origins
+### محدود کردن سهمیه حداقلی به originهای نام‌برده
 
 ```http
 Permissions-Policy: deferred-fetch-minimal=("https://b.com")
 ```
 
-1. `<iframe src="https://b.com/page">` receives 8KiB upon being added to the top-level document.
-2. `<iframe src="https://c.com/page">` receives no quota upon being added to the top-level document.
-3. The top-level document and its same-origin descendants can use up to 512KiB.
+1. `<iframe src="https://b.com/page">` هنگام افزوده‌شدن به سند سطح بالا 8KiB دریافت می‌کند.
+2. `<iframe src="https://c.com/page">` هنگام افزوده‌شدن به سند سطح بالا هیچ سهمیه‌ای دریافت نمی‌کند.
+3. سند سطح بالا و زیرشاخه‌های هم‌خاستگاهِ آن می‌توانند تا 512KiB استفاده کنند.
 
-### Revoking the minimal quota altogether with top-level exceptions
+### لغو کامل سهمیه حداقلی با استثناهای سطح بالا
 
 ```http
 Permissions-Policy: deferred-fetch=(self "https://b.com")
 Permissions-Policy: deferred-fetch-minimal=()
 ```
 
-1. `<iframe src="https://b.com/page">` receives 64KiB upon being added to the top-level document.
-2. `<iframe src="https://c.com/page">` receives no quota upon being added to the top-level document.
-3. The top-level document and its same-origin descendants can use up to the full 640KiB but that is reduced to 574KiB if a `b.com` subframe is created (or even less if multiple `b.com` subframes are created, each of which will be allocated a 64KiB quota).
+1. `<iframe src="https://b.com/page">` هنگام افزوده‌شدن به سند سطح بالا 64KiB دریافت می‌کند.
+2. `<iframe src="https://c.com/page">` هنگام افزوده‌شدن به سند سطح بالا هیچ سهمیه‌ای دریافت نمی‌کند.
+3. سند سطح بالا و زیرشاخه‌های هم‌خاستگاه آن می‌توانند از کل 640KiB استفاده کنند، اما اگر یک زیرفریم `b.com` ایجاد شود این مقدار به 574KiB کاهش می‌یابد (یا حتی کمتر اگر چند زیرفریم `b.com` ایجاد شوند، چون به هرکدام 64KiB سهمیه تعلق می‌گیرد).
 
-### Revoking the minimal quota altogether with no exceptions
+### لغو کامل سهمیه حداقلی بدون هیچ استثنا
 
 ```http
 Permissions-Policy: deferred-fetch-minimal=()
 ```
 
-1. The top-level document and its same-origin descendants can use up the full 640KiB.
-2. Subframes are not allocated any quota and cannot use `fetchLater()`.
+1. سند سطح بالا و زیرشاخه‌های هم‌خاستگاه آن می‌توانند از کل 640KiB استفاده کنند.
+2. به زیرفریم‌ها هیچ سهمیه‌ای تعلق نمی‌گیرد و نمی‌توانند از `fetchLater()` استفاده کنند.
 
-### Same-origin subframes share quota with the top-level and can delegate to subframes
+### زیرفریم‌های same-origin سهمیه را با سطح بالا به اشتراک می‌گذارند و می‌توانند آن را به زیرفریم‌ها واگذار کنند
 
-Assuming a top-level document on `a.com`, which embeds a subframe of `a.com`, which embeds a subframe of `b.com`, and no explicit Permission Policies.
+فرض کنید یک سند سطح بالا روی `a.com` داریم که یک زیرفریم از `a.com` را جاسازی کرده و آن زیرفریم نیز یک زیرفریم از `b.com` را جاسازی کرده است، و هیچ Permissions Policy صریحی وجود ندارد.
 
-1. The top-level document of `a.com` has the default 512KiB quota.
-2. `<iframe src="https://a.com/embed">` shares the 512KiB quota upon being added to the top-level document.
-3. `<iframe src="https://b.com/embed">` receives an 8KiB quota upon being added to the top-level document.
+1. سند سطح بالای `a.com` سهمیه پیش‌فرض 512KiB را دارد.
+2. `<iframe src="https://a.com/embed">` هنگام افزوده‌شدن به سند سطح بالا، سهمیه 512KiB را به اشتراک می‌گذارد.
+3. `<iframe src="https://b.com/embed">` هنگام افزوده‌شدن به سند سطح بالا، 8KiB سهمیه دریافت می‌کند.
 
-### Same-origin subframes can not share quota with the top-level when separated by a cross-origin subframe
+### زیرفریم‌های same-origin وقتی با یک زیرفریم cross-origin جدا شده باشند نمی‌توانند سهمیه را با سطح بالا به اشتراک بگذارند
 
-Assuming a top-level document on `a.com`, which embeds a `<iframe src="https://b.com/">`, which embeds a subframe of `<iframe src="https://a.com/embed">`, and no explicit Permission Policies.
+فرض کنید سند سطح بالای `a.com` یک `<iframe src="https://b.com/">` را جاسازی کرده و آن، یک زیرفریم `<iframe src="https://a.com/embed">` را جاسازی کرده است، و هیچ Permissions Policy صریحی وجود ندارد.
 
-1. The top-level document of `a.com` has the default 512KiB quota.
-2. `<iframe src="https://b.com/">` shares the 8KiB quota.
-3. `<iframe src="https://a.com/embed">` receives no quota; even though this is same-origin with the top origin, it is separated by a cross-origin.
+1. سند سطح بالای `a.com` سهمیه پیش‌فرض 512KiB را دارد.
+2. `<iframe src="https://b.com/">` سهمیه 8KiB را به اشتراک می‌گذارد.
+3. `<iframe src="https://a.com/embed">` هیچ سهمیه‌ای دریافت نمی‌کند؛ حتی اگر با origin سطح بالا هم‌خاستگاه باشد، توسط یک زیرفریم cross-origin جدا شده است.
 
-### Secondary subframes of subframes do not get quota by default
+### زیرفریم‌های ثانویه زیرفریم‌ها به‌طور پیش‌فرض سهمیه نمی‌گیرند
 
-Assuming a top-level document on `a.com`, which embeds a `<iframe src="https://b.com/">`, which embeds a `<iframe src="https://c.com/">`, and no explicit Permission Policies.
+فرض کنید سند سطح بالای `a.com` یک `<iframe src="https://b.com/">` را جاسازی کرده و آن، یک `<iframe src="https://c.com/">` را جاسازی کرده است، و هیچ Permissions Policy صریحی وجود ندارد.
 
-1. The top-level frame of `a.com` has the default 512KiB quota.
-2. `<iframe src="https://b.com/">` receives 8KiB of the default shared quota.
-3. `<iframe src="https://c.com/">` receives no quota.
+1. فریم سطح بالای `a.com` سهمیه پیش‌فرض 512KiB را دارد.
+2. `<iframe src="https://b.com/">` 8KiB از سهمیه مشترک پیش‌فرض دریافت می‌کند.
+3. `<iframe src="https://c.com/">` هیچ سهمیه‌ای دریافت نمی‌کند.
 
-### Granting the full quota to a further subframe
+### واگذاری سهمیه کامل به یک زیرفریم بعدی
 
-Assuming a top-level document on `a.com`, which embeds a `<iframe src="https://b.com/">`, which embeds a `<iframe src="https://c.com/">`.
+فرض کنید سند سطح بالای `a.com` یک `<iframe src="https://b.com/">` را جاسازی کرده و آن، یک `<iframe src="https://c.com/">` را جاسازی کرده است.
 
-Assuming that `a.com` has the following Permissions Policy:
+همچنین فرض کنید `a.com` Permissions Policy زیر را دارد:
 
 ```http
 Permissions-Policy: deferred-fetch=("https://c.com" "https://c.com")
 ```
 
-And, assuming that `b.com` has the following Permissions Policy:
+و فرض کنید `b.com` Permissions Policy زیر را دارد:
 
 ```http
 Permissions-Policy: deferred-fetch=("https://c.com")
 ```
 
-1. The top-level frame of `a.com` has the default 512KiB quota.
-2. `<iframe src="https://b.com/">` receives 64KiB of the default quota.
-3. `<iframe src="https://b.com/">` delegates its full quota of 8KiB to `c.com`. `b.com` cannot use `fetchLater()`.
-4. `<iframe src="https://c.com/">` receives 8KiB of quota.
+1. فریم سطح بالای `a.com` سهمیه پیش‌فرض 512KiB را دارد.
+2. `<iframe src="https://b.com/">` 64KiB از سهمیه پیش‌فرض دریافت می‌کند.
+3. `<iframe src="https://b.com/">` کل سهمیه 8KiB خود را به `c.com` واگذار می‌کند. `b.com` نمی‌تواند از `fetchLater()` استفاده کند.
+4. `<iframe src="https://c.com/">` 8KiB سهمیه دریافت می‌کند.
 
-### Redirects do not transfer quota
+### بازهدایت‌ها سهمیه را منتقل نمی‌کنند
 
-Assuming a top-level document on `a.com`, which embeds a `<iframe src="https://b.com/">`, which redirects to `c.com`, and no explicit top-level Permission Policies.
+فرض کنید سند سطح بالای `a.com` یک `<iframe src="https://b.com/">` را جاسازی کرده که به `c.com` بازهدایت می‌شود، و هیچ Permissions Policy صریحی در سطح بالا وجود ندارد.
 
-1. The top-level frame of `a.com` has the default 512KiB quota.
-2. `<iframe src="https://b.com/">` receives 8KiB of the default shared quota.
-3. The 8KiB is not transferred to `c.com` when `<iframe src="https://b.com/">` redirects to there, but the 8KiB is not released.
+1. فریم سطح بالای `a.com` سهمیه پیش‌فرض 512KiB را دارد.
+2. `<iframe src="https://b.com/">` 8KiB از سهمیه مشترک پیش‌فرض دریافت می‌کند.
+3. این 8KiB وقتی `<iframe src="https://b.com/">` به `c.com` بازهدایت می‌شود به `c.com` منتقل نمی‌گردد، اما آزاد هم نمی‌شود.
 
-### Sandboxed same-origin iframes are effectively separate origins
+### iframeهای same-origin در حالت sandbox عملاً originهای جداگانه‌ای هستند
 
-As an example, if the following `<iframe>` is embedded on `https://www.example.com`:
+به عنوان مثال، اگر `<iframe>` زیر در `https://www.example.com` جاسازی شده باشد:
 
 ```html
 <iframe src="https://www.example.com/iframe" sandbox="allow-scripts"></iframe>
 ```
 
-This would not be considered "same-origin", despite being hosted on the same origin as the top-level document, as the `<iframe>` is in a sandboxed environment. Therefore, by default, it should be allocated an 8KiB quota from the total shared 128KiB quota.
+این iframe با وجود اینکه روی همان origin سند سطح بالا میزبانی می‌شود، «same-origin» در نظر گرفته نمی‌شود، زیرا در محیط sandbox قرار دارد. بنابراین، به‌طور پیش‌فرض باید 8KiB از کل سهمیه مشترک 128KiB به آن اختصاص یابد.
 
-### Disallowing `fetchLater()` from iframes
+### جلوگیری از استفاده `fetchLater()` در iframeها
 
-You can use the `<iframe>` [`allow`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allow) attribute to prevent `fetchLater()` quota from being allocated to the `<iframe>`:
+می‌توانید از ویژگی [`allow`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allow) در `<iframe>` استفاده کنید تا سهمیه `fetchLater()` به `<iframe>` اختصاص نیابد:
 
 ```html
 <iframe
@@ -199,9 +193,9 @@ You can use the `<iframe>` [`allow`](/en-US/docs/Web/HTML/Reference/Elements/ifr
   allow="deferred-fetch;deferred-fetch-minimal;"></iframe>
 ```
 
-The `allow="deferred-fetch"` directive is needed to prevent same-origin iframes from using up the 512KiB quota, and the `allow="deferred-fetch-minimal"` directive is needed to prevent cross-origin iframes from using up the 128KiB quota. Including both directives will prevent both quotas from being used, regardless of the `src` value.
+دستور `allow="deferred-fetch"` برای جلوگیری از مصرف سهمیه 512KiB توسط iframeهای same-origin لازم است، و دستور `allow="deferred-fetch-minimal"` برای جلوگیری از مصرف سهمیه 128KiB توسط iframeهای cross-origin لازم است. قرار دادن هر دو دستور باعث می‌شود هر دو سهمیه قابل استفاده نباشند، صرف‌نظر از مقدار `src`.
 
-### Examples which throw a `QuotaExceededError`
+### مثال‌هایی که `QuotaExceededError` پرتاب می‌کنند
 
 ```js
 // Maximum of 64KiB per origin
@@ -224,9 +218,9 @@ fetchLater("https://origin.example.com", {
 fetchLater("<62KiB of characters>" /* with a 3kb referrer */);
 ```
 
-### Examples which eventually throw a `QuotaExceededError`
+### مثال‌هایی که در نهایت `QuotaExceededError` پرتاب می‌کنند
 
-In the following sequence, contained in the top-level document, the first two requests would succeed, but the third would throw. That's because, even though the overall 640KiB quota was not exceeded, the third request exceeds the reporting-origin quota for `https://a.example.com` and would throw.
+در دنباله زیر که در سند سطح بالا قرار دارد، دو درخواست اول موفق خواهند بود، اما درخواست سوم خطا پرتاب می‌کند. دلیلش این است که اگرچه سهمیه کلی 640KiB رد نشده است، درخواست سوم از سهمیه origin گزارش‌دهنده برای `https://a.example.com` فراتر می‌رود و خطا پرتاب می‌کند.
 
 ```js
 fetchLater("https://a.example.com", { method: "POST", body: a40KiBBody });
@@ -234,10 +228,10 @@ fetchLater("https://b.example.com", { method: "POST", body: a40KiBBody });
 fetchLater("https://a.example.com", { method: "POST", body: a40KiBBody });
 ```
 
-### Redirects of subframes back to the top-level origin allow use of the top-level quota
+### بازهدایت زیرفریم‌ها به origin سطح بالا امکان استفاده از سهمیه سطح بالا را می‌دهد
 
-Assuming a top-level document at `a.com`, which embeds `<iframe src="https://b.com/">`, which redirects to `a.com`, and no explicit top-level Permission Policies:
+فرض کنید سند سطح بالایی در `a.com` داریم که `<iframe src="https://b.com/">` را جاسازی کرده و آن به `a.com` بازهدایت می‌شود، و هیچ Permissions Policy صریحی در سطح بالا وجود ندارد:
 
-1. The top-level frame of `a.com` has the default 512KiB quota.
-2. `<iframe src="https://b.com/">` receives 8KiB of the default shared quota of 128KiB.
-3. The 8KiB is not transferred to `a.com` when `<iframe src="https://b.com/">` redirects there, but it can share the full top-level quota again, and the previously-allocated 8KiB quota is released.
+1. فریم سطح بالای `a.com` سهمیه پیش‌فرض 512KiB را دارد.
+2. `<iframe src="https://b.com/">` 8KiB از سهمیه مشترک پیش‌فرض 128KiB دریافت می‌کند.
+3. وقتی `<iframe src="https://b.com/">` به `a.com` بازهدایت می‌شود، این 8KiB به `a.com` منتقل نمی‌شود، اما این زیرفریم دوباره می‌تواند از کل سهمیه سطح بالا استفاده کند و سهمیه 8KiB قبلاً تخصیص‌یافته آزاد می‌شود.
