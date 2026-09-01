@@ -1,11 +1,5 @@
 ---
 title: "HTMLFencedFrameElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement"
-status: "needs-translation"
----
-
----
-title: HTMLFencedFrameElement
 slug: Web/API/HTMLFencedFrameElement
 page-type: web-api-interface
 status:
@@ -15,32 +9,32 @@ browser-compat: api.HTMLFencedFrameElement
 
 {{SeeCompatTable}}{{APIRef("Fenced Frame API")}}
 
-The **`HTMLFencedFrameElement`** interface represents a {{htmlelement("fencedframe")}} element in JavaScript and provides configuration properties.
+رابطِ **`HTMLFencedFrameElement`** عنصرِ {{htmlelement("fencedframe")}} را در جاوااسکریپت نمایش می‌دهد و ویژگی‌های پیکربندی آن را فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLFencedFrameElement.allow")}} {{experimental_inline}}
-  - : Gets and sets the value of the corresponding `<fencedframe>` `allow` attribute, which represents a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) applied to the content when it is first embedded.
+  - : مقدارِ ویژگی `allow` مربوط به `<fencedframe>` را دریافت و تنظیم می‌کند. این ویژگی نمایانگر یک [سیاست مجوزها](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) است که هنگام اولین جاسازی بر محتوا اعمال می‌شود.
 - {{domxref("HTMLFencedFrameElement.config")}} {{experimental_inline}}
-  - : a {{domxref("FencedFrameConfig")}} object, which represents the navigation of a {{htmlelement("fencedframe")}}, i.e., what content will be displayed in it. A `FencedFrameConfig` is returned from a source such as the [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience).
+  - : یک شیء {{domxref("FencedFrameConfig")}} که ناوبری یک {{htmlelement("fencedframe")}} را نشان می‌دهد؛ یعنی اینکه چه محتوایی در آن نمایش داده خواهد شد. یک `FencedFrameConfig` از منبعی مانند [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience) بازگردانده می‌شود.
 - {{domxref("HTMLFencedFrameElement.height")}} {{experimental_inline}}
-  - : Gets and sets the value of the corresponding `<fencedframe>` `height` attribute, which specifies the height of the element.
+  - : مقدارِ ویژگی `height` مربوط به `<fencedframe>` را دریافت و تنظیم می‌کند که ارتفاع عنصر را مشخص می‌کند.
 - {{domxref("HTMLFencedFrameElement.width")}} {{experimental_inline}}
-  - : Gets and sets the value of the corresponding `<fencedframe>` `width` attribute, which specifies the width of the element.
+  - : مقدارِ ویژگی `width` مربوط به `<fencedframe>` را دریافت و تنظیم می‌کند که عرض عنصر را مشخص می‌کند.
 
-## Examples
+## مثال‌ها
 
-To set what content will be shown in a `<fencedframe>`, a utilizing API (such as [Protected Audience](https://privacysandbox.google.com/private-advertising/protected-audience) or [Shared Storage](https://privacysandbox.google.com/private-advertising/shared-storage)) generates a {{domxref("FencedFrameConfig")}} object, which is then set as the value of the `<fencedframe>`'s `config` property.
+برای تنظیم محتوایی که در یک `<fencedframe>` نمایش داده می‌شود، یک API استفاده‌کننده (مانند [Protected Audience](https://privacysandbox.google.com/private-advertising/protected-audience) یا [Shared Storage](https://privacysandbox.google.com/private-advertising/shared-storage)) یک شیء {{domxref("FencedFrameConfig")}} تولید می‌کند که سپس به عنوان مقدارِ ویژگی `config` عنصر `<fencedframe>` تنظیم می‌شود.
 
-The following example gets a `FencedFrameConfig` from a Protected Audience API's ad auction, which is then used to display the winning ad in a `<fencedframe>`:
+مثال زیر یک `FencedFrameConfig` را از یک حراجی آگهی در Protected Audience API دریافت می‌کند و سپس از آن برای نمایش آگهی برنده در یک `<fencedframe>` استفاده می‌شود:
 
 ```js
 const frameConfig = await navigator.runAdAuction({
-  // … auction configuration
+  // … پیکربندی حراجی
   resolveToConfig: true,
 });
 
@@ -49,17 +43,17 @@ frame.config = frameConfig;
 ```
 
 > [!NOTE]
-> `resolveToConfig: true` must be passed in to the `runAdAuction()` call to obtain a `FencedFrameConfig` object. If it is not set, the resulting {{jsxref("Promise")}} will resolve to a URN that can only be used in an {{htmlelement("iframe")}}.
+> برای دریافت شیء `FencedFrameConfig`، باید `resolveToConfig: true` را در فراخوانی `runAdAuction()` ارسال کنید. اگر تنظیم نشود، {{jsxref("Promise")}} حاصل به یک URN حل می‌شود که فقط می‌تواند در یک {{htmlelement("iframe")}} استفاده شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Fenced frames](https://privacysandbox.google.com/private-advertising/fenced-frame) on privacysandbox.google.com
-- [The Privacy Sandbox](https://privacysandbox.google.com/) on privacysandbox.google.com
+- [Fenced frames](https://privacysandbox.google.com/private-advertising/fenced-frame) در privacysandbox.google.com
+- [The Privacy Sandbox](https://privacysandbox.google.com/) در privacysandbox.google.com
