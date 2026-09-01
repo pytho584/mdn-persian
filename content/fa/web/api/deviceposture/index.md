@@ -1,11 +1,5 @@
 ---
 title: "DevicePosture"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DevicePosture"
-status: "needs-translation"
----
-
----
-title: DevicePosture
 slug: Web/API/DevicePosture
 page-type: web-api-interface
 status:
@@ -15,45 +9,45 @@ browser-compat: api.DevicePosture
 
 {{APIRef("Device Posture API")}}{{SeeCompatTable}}
 
-The **`DevicePosture`** interface of the {{domxref("Device Posture API", "Device Posture API", "", "nocode")}} represents the device's posture, that is, whether the viewport is in a flat or folded state.
+**`DevicePosture`** 接口，属于 {{domxref("Device Posture API", "Device Posture API", "", "nocode")}}，表示设备的姿态，即视口处于平放状态还是折叠状态。
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## 实例属性
 
-_Inherits properties from its parent, {{DOMxRef("EventTarget")}}._
+_继承自其父接口 {{DOMxRef("EventTarget")}} 的属性。_
 
 - {{domxref("DevicePosture.type", "type")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the device's current posture.
+  - : 返回设备当前的姿态。
 
-## Events
+## 事件
 
 - {{domxref("DevicePosture.change_event", "change")}} {{Experimental_Inline}}
-  - : Fires when the device's posture changes.
+  - : 当设备姿态发生变化时触发。
 
-## Examples
+## 示例
 
 ```js
 const postureOutput = document.getElementById("currentPosture");
 
 function reportPostureOutput() {
-  // type property returns "continuous" or "folded"
+  // type 属性返回 "continuous" 或 "folded"
   postureOutput.textContent = `Device posture: ${navigator.devicePosture.type}`;
 }
 
 navigator.devicePosture.addEventListener("change", reportPostureOutput);
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- CSS {{cssxref("@media/device-posture", "device-posture")}} `@media` feature
+- CSS {{cssxref("@media/device-posture", "device-posture")}} `@media` 特性
 - [Device Posture API](/en-US/docs/Web/API/Device_Posture_API)
-- [Origin trial for Foldable APIs](https://developer.chrome.com/blog/foldable-apis-ot) on developer.chrome.com (2024)
+- [可折叠 API 的源试用](https://developer.chrome.com/blog/foldable-apis-ot)（developer.chrome.com，2024）
