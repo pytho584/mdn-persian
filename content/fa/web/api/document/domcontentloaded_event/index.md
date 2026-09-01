@@ -1,7 +1,5 @@
 ---
 title: "Document: DOMContentLoaded event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,34 +12,34 @@ browser-compat: api.Document.DOMContentLoaded_event
 
 {{APIRef("DOM")}}
 
-The **`DOMContentLoaded`** event fires when the HTML document has been completely parsed, and all deferred scripts ([`<script defer src="…">`](/en-US/docs/Web/HTML/Reference/Elements/script#defer) and [`<script type="module">`](/en-US/docs/Web/HTML/Reference/Elements/script#module)) have downloaded and executed. It doesn't wait for other things like images, subframes, and async scripts to finish loading.
+رویداد **`DOMContentLoaded`** زمانی رخ می‌دهد که سند HTML به‌طور کامل تجزیه شده باشد و همهٔ اسکریپت‌های معوق ([`<script defer src="…">`](/en-US/docs/Web/HTML/Reference/Elements/script#defer) و [`<script type="module">`](/en-US/docs/Web/HTML/Reference/Elements/script#module)) دانلود و اجرا شده باشند. این رویداد منتظر پایان بارگذاری چیزهای دیگری مانند تصاویر، زیرفریم‌ها و اسکریپت‌های ناهمگام (async) نمی‌ماند.
 
-`DOMContentLoaded` does not wait for stylesheets to load, however deferred scripts _do_ wait for stylesheets, and the `DOMContentLoaded` event is queued after deferred scripts. Also, scripts which aren't deferred or async (e.g., `<script>`) will wait for already-parsed stylesheets to load.
+`DOMContentLoaded` منتظر بارگذاری برگه‌های سبک (stylesheet) نمی‌ماند؛ با این حال، اسکریپت‌های معوق _منتظر_ برگه‌های سبک می‌مانند و رویداد `DOMContentLoaded` پس از اسکریپت‌های معوق در صف قرار می‌گیرد. همچنین، اسکریپت‌هایی که معوق یا ناهمگام نیستند (مثلاً `<script>`) منتظر می‌مانند تا برگه‌های سبکی که قبلاً تجزیه شده‌اند بارگذاری شوند.
 
-A different event, {{domxref("Window/load_event", "load")}}, should be used only to detect a fully-loaded page. It is a common mistake to use `load` where `DOMContentLoaded` would be more appropriate.
+رویداد دیگری به نام {{domxref("Window/load_event", "load")}} باید فقط برای تشخیص بارگذاری کامل صفحه استفاده شود. استفاده از `load` در جایی که `DOMContentLoaded` مناسب‌تر است، اشتباهی رایج است.
 
-Usually, to avoid running a script before the DOM it manipulates has been fully constructed, you can simply place the script at the end of the document body, immediately before the closing `</body>` tag, without wrapping it in an event listener.
+معمولاً برای جلوگیری از اجرای اسکریپت پیش از آنکه DOM موردنظر آن به‌طور کامل ساخته شود، می‌توانید اسکریپت را در انتهای بدنهٔ سند، بلافاصله پیش از تگ پایانی `</body>` قرار دهید، بدون اینکه آن را در یک شنوندهٔ رویداد (event listener) بپیچید.
 
-This event is not cancelable.
+این رویداد قابل‌لغو نیست.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید.
 
 ```js-nolint
 addEventListener("DOMContentLoaded", (event) => { })
 ```
 
 > [!NOTE]
-> There is no `onDOMContentLoaded` event handler property for this event.
+> برای این رویداد هیچ ویژگی کنترل‌کنندهٔ رویداد (event handler) به نام `onDOMContentLoaded` وجود ندارد.
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
 ```js
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -49,7 +47,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 ```
 
-### Delaying DOMContentLoaded
+### به تأخیر انداختن DOMContentLoaded
 
 ```html
 <script>
@@ -63,18 +61,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
 </script>
 ```
 
-### Checking whether loading is already complete
+### بررسی اینکه آیا بارگذاری از قبل کامل شده است
 
-Sometimes your script may run after the `DOMContentLoaded` event has already fired. This typically happens when the script runs asynchronously. Common scenarios include:
+گاهی ممکن است اسکریپت شما پس از آن اجرا شود که رویداد `DOMContentLoaded` قبلاً رخ داده است. این معمولاً زمانی اتفاق می‌افتد که اسکریپت به‌صورت ناهمگام اجرا شود. سناریوهای رایج عبارت‌اند از:
 
-- A module that is dynamically imported after the document is already loaded.
-- A script that is included via `<script async>`.
-- A script that is dynamically injected into the page.
-- Code that resumes after an asynchronous operation, such as `await fetch(...)`, including after a top-level await in a module.
+- ماژولی که پس از بارگذاری سند، به‌صورت پویا (dynamically) وارد شده است.
+- اسکریپتی که از طریق `<script async>` گنجانده شده است.
+- اسکریپتی که به‌صورت پویا به صفحه تزریق می‌شود.
+- کدی که پس از یک عملیات ناهمگام، مانند `await fetch(...)`، از سر گرفته می‌شود، از جمله پس از یک `await` سطح بالا در یک ماژول.
 
-In these cases, you should check the document's `readyState` before adding a `DOMContentLoaded` listener, or your setup logic may not execute at all. For synchronous scripts (without `async`) that are already present in the initial markup, this situation does not occur. The document waits for the script to execute before firing `DOMContentLoaded`, so you are always sure that setup logic in the listener will be executed.
+در این موارد، پیش از افزودن شنوندهٔ `DOMContentLoaded` باید `readyState` سند را بررسی کنید؛ در غیر این صورت ممکن است منطق راه‌اندازی (setup) شما اصلاً اجرا نشود. برای اسکریپت‌های همگام (بدون `async`) که از قبل در نشانه‌گذاری اولیه (initial markup) وجود دارند، این وضعیت رخ نمی‌دهد؛ سند پیش از فعال کردن `DOMContentLoaded` منتظر اجرای اسکریپت می‌ماند، بنابراین همیشه مطمئن هستید که منطق راه‌اندازیِ داخل شنونده اجرا خواهد شد.
 
-Consider the following script file in isolation:
+اسکریپت زیر را به‌تنهایی در نظر بگیرید:
 
 ```js
 function doSomething() {
@@ -90,15 +88,15 @@ if (document.readyState === "loading") {
 }
 ```
 
-The script can't enforce how it's included by the HTML. If it's included via `<script async>`, or it's dynamically injected, then by the time it executes, `DOMContentLoaded` has already fired. To ensure that `doSomething()` always runs when the script loads, we need to have two paths, one that immediately runs `doSomething` if the document is already loaded, and another that runs `doSomething` once the document is loaded.
+اسکریپت نمی‌تواند روش گنجانده‌شدن خود در HTML را تعیین کند. اگر از طریق `<script async>` گنجانده شده باشد یا به‌صورت پویا تزریق شود، تا زمانی که اجرا شود، رویداد `DOMContentLoaded` قبلاً رخ داده است. برای اطمینان از اینکه `doSomething()` همیشه هنگام بارگذاری اسکریپت اجرا می‌شود، به دو مسیر نیاز داریم: یکی که اگر سند از قبل بارگذاری شده است، بلافاصله `doSomething` را اجرا کند، و دیگری که پس از بارگذاری سند، `doSomething` را اجرا کند.
 
 > [!NOTE]
-> There's no race condition here — it's not possible for the document to be loaded between the `if` check and the `addEventListener()` call. JavaScript has run-to-completion semantics, which means if the document is loading at one particular tick of the event loop, it can't become loaded until the next cycle, at which time the `doSomething` handler is already attached and will be fired.
+> در اینجا هیچ شرایط رقابتی (race condition) وجود ندارد — ممکن نیست سند بین بررسی `if` و فراخوانی `addEventListener()` بارگذاری شود. جاوااسکریپت از معناشناسی «اجرا تا پایان» (run-to-completion) پیروی می‌کند؛ یعنی اگر سند در یک تیک مشخص از حلقهٔ رویداد (event loop) در حال بارگذاری باشد، تا چرخهٔ بعدی نمی‌تواند بارگذاری‌شده شود، و در آن زمان هندلر `doSomething` از قبل متصل شده و فعال خواهد شد.
 
 > [!NOTE]
-> `document.readyState` is set to `"interactive"` after the completion of the HTML parser but before the execution of scripts with `defer` or `type="module"`. `DOMContentLoaded` is fired after the execution of these scripts, but before the execution of scripts with `async`. `document.readyState` is set to `"complete"` after the execution of async scripts. This means that during the execution of deferred and module scripts, `document.readyState` is `"interactive"` but it's still possible to attach `DOMContentLoaded` listeners and make them fire as usual. In practice, executing `doSomething()` a little earlier is fine unless it relies on some global state set up by other deferred/module scripts.
+> `document.readyState` پس از اتمام کار تجزیه‌گر HTML و پیش از اجرای اسکریپت‌های دارای `defer` یا `type="module"` روی `"interactive"` تنظیم می‌شود. رویداد `DOMContentLoaded` پس از اجرای این اسکریپت‌ها، اما پیش از اجرای اسکریپت‌های دارای `async` فعال می‌شود. `document.readyState` پس از اجرای اسکریپت‌های ناهمگام روی `"complete"` تنظیم می‌شود. این بدان معناست که در طول اجرای اسکریپت‌های معوق و ماژولی، `document.readyState` برابر `"interactive"` است، اما همچنان می‌توان شنونده‌های `DOMContentLoaded` را متصل کرد و آن‌ها طبق روال عادی فعال خواهند شد. در عمل، اجرای کمی زودترِ `doSomething()` اشکالی ندارد، مگر اینکه به وضعیت سراسری (global state)ای وابسته باشد که توسط سایر اسکریپت‌های معوق/ماژولی راه‌اندازی شده است.
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -175,18 +173,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '160px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: {{domxref("Window/load_event", "load")}}, {{domxref("Document/readystatechange_event", "readystatechange")}}, {{domxref("Window/beforeunload_event", "beforeunload")}}, {{domxref("Window/unload_event", "unload")}}
+- رویدادهای مرتبط: {{domxref("Window/load_event", "load")}}، {{domxref("Document/readystatechange_event", "readystatechange")}}، {{domxref("Window/beforeunload_event", "beforeunload")}}، {{domxref("Window/unload_event", "unload")}}
