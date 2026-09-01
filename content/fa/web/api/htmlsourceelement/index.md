@@ -1,10 +1,4 @@
 ---
-title: "HTMLSourceElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSourceElement"
-status: "needs-translation"
----
-
----
 title: HTMLSourceElement
 slug: Web/API/HTMLSourceElement
 page-type: web-api-interface
@@ -13,46 +7,46 @@ browser-compat: api.HTMLSourceElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLSourceElement`** interface provides special properties (beyond the regular {{domxref("HTMLElement")}} object interface it also has available to it by inheritance) for manipulating {{htmlelement("source")}} elements.
+رابط **`HTMLSourceElement`** ویژگی‌های ویژه‌ای (فراتر از رابط شیء معمولی {{domxref("HTMLElement")}} که به‌صورت ارث‌بری نیز در دسترس آن است) را برای کار با عناصر {{htmlelement("source")}} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}}، را به ارث می‌برد._
 
 - {{domxref("HTMLSourceElement.height")}}
-  - : A number that reflects the [`height`](/en-US/docs/Web/HTML/Reference/Elements/source#height) HTML attribute, indicating the height of the image resource in CSS pixels. The property has a meaning only if the parent of the current {{HTMLElement("source")}} element is a {{HTMLElement("picture")}} element.
+  - : عددی که ویژگی HTML [`height`](/en-US/docs/Web/HTML/Reference/Elements/source#height) را بازتاب می‌کند و ارتفاع منبع تصویر را بر حسب پیکسل‌های CSS نشان می‌دهد. این ویژگی تنها زمانی معنا دارد که والد عنصر فعلی {{HTMLElement("source")}} یک عنصر {{HTMLElement("picture")}} باشد.
 - {{domxref("HTMLSourceElement.media")}}
-  - : A string reflecting the [`media`](/en-US/docs/Web/HTML/Reference/Elements/source#media) HTML attribute, containing the intended type of the media resource.
+  - : رشته‌ای که ویژگی HTML [`media`](/en-US/docs/Web/HTML/Reference/Elements/source#media) را بازتاب می‌کند و شامل نوع موردنظر منبع رسانه‌ای است.
 - {{domxref("HTMLSourceElement.sizes")}}
-  - : A string representing image sizes between breakpoints
+  - : رشته‌ای که اندازه‌های تصویر را بین نقاط شکست (breakpoint) نشان می‌دهد.
 - {{domxref("HTMLSourceElement.src")}}
-  - : A string reflecting the [`src`](/en-US/docs/Web/HTML/Reference/Elements/source#src) HTML attribute, containing the URL for the media resource. The {{domxref("HTMLSourceElement.src")}} property has a meaning only when the associated {{HTMLElement("source")}} element is nested in a media element that is a {{htmlelement("video")}} or an {{htmlelement("audio")}} element. It has no meaning and is ignored when it is nested in a {{HTMLElement("picture")}} element.
+  - : رشته‌ای که ویژگی HTML [`src`](/en-US/docs/Web/HTML/Reference/Elements/source#src) را بازتاب می‌کند و شامل URL منبع رسانه‌ای است. ویژگی {{domxref("HTMLSourceElement.src")}} تنها زمانی معنا دارد که عنصر {{HTMLElement("source")}} مرتبط در یک عنصر رسانه‌ای مانند {{htmlelement("video")}} یا {{htmlelement("audio")}} قرار گرفته باشد. اگر این عنصر در یک {{HTMLElement("picture")}} قرار گرفته باشد، این ویژگی هیچ معنایی ندارد و نادیده گرفته می‌شود.
 
     > [!NOTE]
-    > If the `src` property is updated (along with any siblings), the parent {{domxref("HTMLMediaElement")}}'s `load` method should be called when done, since `<source>` elements are not re-scanned automatically.
+    > اگر ویژگی `src` (به‌همراه هر عنصر هم‌سطح دیگری) به‌روزرسانی شد، پس از اتمام باید متد `load` والد {{domxref("HTMLMediaElement")}} فراخوانی شود، زیرا عناصر `<source>` به‌صورت خودکار دوباره پویش نمی‌شوند.
 
 - {{domxref("HTMLSourceElement.srcset")}}
-  - : A string reflecting the [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/source#srcset) HTML attribute, containing a list of candidate images, separated by a comma (`',', U+002C COMMA`). A candidate image is a URL followed by a `'w'` with the width of the images, or an `'x'` followed by the pixel density.
+  - : رشته‌ای که ویژگی HTML [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/source#srcset) را بازتاب می‌کند و شامل فهرستی از تصاویر نامزد است که با یک کاما (`',', U+002C COMMA`) از هم جدا شده‌اند. یک تصویر نامزد، یک URL و سپس یک `'w'` به‌همراه عرض تصاویر، یا یک `'x'` به‌همراه تراکم پیکسلی است.
 - {{domxref("HTMLSourceElement.type")}}
-  - : A string reflecting the [`type`](/en-US/docs/Web/HTML/Reference/Elements/source#type) HTML attribute, containing the type of the media resource.
+  - : رشته‌ای که ویژگی HTML [`type`](/en-US/docs/Web/HTML/Reference/Elements/source#type) را بازتاب می‌کند و شامل نوع منبع رسانه‌ای است.
 - {{domxref("HTMLSourceElement.width")}}
-  - : A number that reflects the [`width`](/en-US/docs/Web/HTML/Reference/Elements/source#width) HTML attribute, indicating the width of the image resource in CSS pixels. The property has a meaning only if the parent of the current {{HTMLElement("source")}} element is a {{HTMLElement("picture")}} element.
+  - : عددی که ویژگی HTML [`width`](/en-US/docs/Web/HTML/Reference/Elements/source#width) را بازتاب می‌کند و عرض منبع تصویر را بر حسب پیکسل‌های CSS نشان می‌دهد. این ویژگی تنها زمانی معنا دارد که والد عنصر فعلی {{HTMLElement("source")}} یک عنصر {{HTMLElement("picture")}} باشد.
 
-## Instance methods
+## متدهای نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_هیچ متد خاصی ندارد؛ متدهای والد خود، {{domxref("HTMLElement")}}، را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{ HTMLElement("source") }}.
-- The HTML DOM APIs of the elements that can contain a {{HTMLElement("source")}} element: {{domxref("HTMLVideoElement")}}, {{domxref("HTMLAudioElement")}}, {{domxref("HTMLPictureElement")}}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{ HTMLElement("source") }}.
+- رابط‌های DOM عناصر HTML که می‌توانند حاوی یک عنصر {{HTMLElement("source")}} باشند: {{domxref("HTMLVideoElement")}}، {{domxref("HTMLAudioElement")}}، {{domxref("HTMLPictureElement")}}.
