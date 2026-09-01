@@ -1,11 +1,5 @@
 ---
 title: "Document: lastStyleSheetSet property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/lastStyleSheetSet"
-status: "needs-translation"
----
-
----
-title: "Document: lastStyleSheetSet property"
 short-title: lastStyleSheetSet
 slug: Web/API/Document/lastStyleSheetSet
 page-type: web-api-instance-property
@@ -17,19 +11,16 @@ browser-compat: api.Document.lastStyleSheetSet
 
 {{APIRef("DOM")}}{{deprecated_header}}{{Non-standard_header}}
 
-The **`Document.lastStyleSheetSet`** property returns the last enabled style sheet set. This property's
-value changes whenever the {{domxref("document.selectedStyleSheetSet")}} property is
-changed.
+ویژگی **`Document.lastStyleSheetSet`** آخرین مجموعه‌ی استایل‌شیت فعال را برمی‌گرداند. مقدار این ویژگی هرگاه که ویژگی {{domxref("document.selectedStyleSheetSet")}} تغییر کند، تغییر می‌کند.
 
-## Value
+## مقدار
 
-The style sheet set that was most recently set. If the current style sheet set has not been changed by setting {{domxref("document.selectedStyleSheetSet")}}, the returned value is `null`.
+مجموعه‌ی استایل‌شیتی که اخیراً تنظیم شده است. اگر مجموعه‌ی استایل‌شیت جاری با تنظیم {{domxref("document.selectedStyleSheetSet")}} تغییر نکرده باشد، مقدار بازگشتی `null` است.
 
 > [!NOTE]
-> This value doesn't change when
-> {{domxref("document.enableStyleSheetsForSet()")}} is called.
+> این مقدار هنگام فراخوانی {{domxref("document.enableStyleSheetsForSet()")}} تغییر نمی‌کند.
 
-## Examples
+## مثال‌ها
 
 ```js
 let lastSheetSet = document.lastStyleSheetSet;
@@ -41,11 +32,11 @@ if (!lastSheetSet) {
 }
 ```
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("document.preferredStyleSheetSet")}}
 - {{domxref("document.selectedStyleSheetSet")}}
