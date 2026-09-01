@@ -1,7 +1,5 @@
 ---
 title: "HTMLSelectElement: selectedIndex property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedIndex"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.HTMLSelectElement.selectedIndex
 
 {{APIRef("HTML DOM")}}
 
-The **`selectedIndex`** property of the {{DOMxRef("HTMLSelectElement")}} interface is the numeric index of the first selected {{HTMLElement("option")}} element in a {{HTMLElement("select")}} element, if any, or `−1` if no `<option>` is selected. Setting this property selects the option at that index and deselects all other options, while setting it to `-1` deselects any currently selected options.
+ویژگی **`selectedIndex`** در رابط {{DOMxRef("HTMLSelectElement")}}، اندیس عددی نخستین عنصر {{HTMLElement("option")}}ِ انتخاب‌شده در یک عنصر {{HTMLElement("select")}} است؛ اگر هیچ گزینه‌ای انتخاب نشده باشد، مقدار `−1` برمی‌گرداند. تنظیم این ویژگی، گزینهٔ واقع در آن اندیس را انتخاب می‌کند و همهٔ گزینه‌های دیگر را از حالت انتخاب خارج می‌سازد؛ همچنین تنظیم آن به `-1`، هر گزینهٔ انتخاب‌شدهٔ فعلی را از حالت انتخاب خارج می‌کند.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -52,15 +50,15 @@ selectElem.addEventListener("change", () => {
 
 {{EmbedLiveSample("Examples", "200px", "120px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("HTMLSelectElement")}}
 - {{DOMxRef("HTMLOptionElement")}}
