@@ -1,7 +1,5 @@
 ---
 title: "HTMLMediaElement: audioTracks property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/audioTracks"
-status: "needs-translation"
 ---
 
 ---
@@ -14,36 +12,25 @@ browser-compat: api.HTMLMediaElement.audioTracks
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`audioTracks`**
-property on {{domxref("HTMLMediaElement")}} objects returns
-an {{domxref("AudioTrackList")}} object listing all of the {{domxref("AudioTrack")}}
-objects representing the media element's audio tracks.
+ویژگی فقط خواندنی **`audioTracks`** در اشیاء {{domxref("HTMLMediaElement")}} یک شیء {{domxref("AudioTrackList")}} را برمی‌گرداند که تمام اشیاء {{domxref("AudioTrack")}} نمایانگر آهنگ‌های صوتی عنصر رسانه را فهرست می‌کند.
 
-The media element may be
-either an {{HTMLElement("audio")}} element or a {{HTMLElement("video")}} element.
+عنصر رسانه می‌تواند یک عنصر {{HTMLElement("audio")}} یا یک عنصر {{HTMLElement("video")}} باشد.
 
-The returned list is _live_; that is, as tracks are added to and removed from
-the media element, the list's contents change dynamically. Once you have a reference to
-the list, you can monitor it for changes to detect when new audio tracks are added or
-existing ones removed. See [AudioTrackList events](/en-US/docs/Web/API/AudioTrackList#events)
-to learn more about watching for changes to a media element's track list.
+لیست بازگشتی _زنده_ است؛ یعنی با افزوده شدن یا حذف شدن آهنگ‌ها به عنصر رسانه، محتویات لیست به صورت پویا تغییر می‌کند. هنگامی که یک مرجع به لیست دارید، می‌توانید آن را برای تغییرات زیر نظر بگیرید تا زمانی که آهنگ‌های صوتی جدید اضافه می‌شوند یا آهنگ‌های موجود حذف می‌شوند، تشخیص دهید. برای آشنایی بیشتر با نظارت بر تغییرات لیست آهنگ یک عنصر رسانه، به [رویدادهای AudioTrackList](/en-US/docs/Web/API/AudioTrackList#events) مراجعه کنید.
 
-## Value
+## مقدار
 
-An {{domxref("AudioTrackList")}} object representing the list of audio tracks included
-in the media element. The list of tracks can be accessed using array notation, or using
-the object's {{domxref("AudioTrackList.getTrackById", "getTrackById()")}} method.
+یک شیء {{domxref("AudioTrackList")}} که نمایانگر لیست آهنگ‌های صوتی موجود در عنصر رسانه است. می‌توان به لیست آهنگ‌ها با استفاده از نماد آرایه‌ای یا با استفاده از روش {{domxref("AudioTrackList.getTrackById", "getTrackById()")}} شیء دسترسی پیدا کرد.
 
-Each track is represented by an {{domxref("AudioTrack")}} object which provides
-information about the track.
+هر آهنگ توسط یک شیء {{domxref("AudioTrack")}} نمایش داده می‌شود که اطلاعاتی درباره آهنگ ارائه می‌دهد.
 
-## Examples
+## مثال‌ها
 
-In this example, all of the audio tracks on a given element are muted.
+در این مثال، تمام آهنگ‌های صوتی روی یک عنصر مشخص خاموش می‌شوند.
 
 ### HTML
 
-The HTML establishes the element itself.
+HTML خود عنصر را ایجاد می‌کند.
 
 ```html
 <video id="video" src="somevideo.mp4"></video>
@@ -51,7 +38,7 @@ The HTML establishes the element itself.
 
 ### JavaScript
 
-The JavaScript code handles muting the video element's audio tracks.
+کد JavaScript خاموش کردن آهنگ‌های صوتی عنصر ویدیو را انجام می‌دهد.
 
 ```js
 const video = document.getElementById("video");
@@ -61,16 +48,16 @@ for (const track of video.audioTracks) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.audioTracks` property
+- {{domxref("HTMLMediaElement")}}: رابطی که برای تعریف ویژگی `HTMLMediaElement.audioTracks` استفاده می‌شود.
 - {{HTMLElement("audio")}}, {{HTMLElement("video")}}
 - {{domxref("AudioTrack")}}, {{domxref("AudioTrackList")}}
