@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: target property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/target"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: target property"
 short-title: target
 slug: Web/API/HTMLAnchorElement/target
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.HTMLAnchorElement.target
 
 {{ApiRef("HTML DOM")}}
 
-The **`target`** property of the {{domxref("HTMLAnchorElement")}} interface is a string that indicates where to display the linked resource.
+ویژگی **`target`** در رابط {{domxref("HTMLAnchorElement")}} یک رشته (string) است که مشخص می‌کند منبعِ پیوند‌شده در کجا نمایش داده شود.
 
-It reflects the [`target`](/en-US/docs/Web/HTML/Reference/Elements/a#target) attribute of the {{HTMLElement("a")}} element.
+این ویژگی منعکس‌کنندهٔ attribute [`target`](/en-US/docs/Web/HTML/Reference/Elements/a#target) عنصر {{HTMLElement("a")}} است.
 
-## Value
+## مقدار
 
-A string representing the target. Its value can be:
+یک رشته که نمایانگر هدف است. مقدار آن می‌تواند:
 
-- The name of a {{HTMLElement("frame")}}.
-- One of the [keyword with specific values](/en-US/docs/Web/HTML/Reference/Elements/a#target): `_blank`, `_self`, `_parent`, or `_top`.
+- نام یک {{HTMLElement("frame")}} باشد.
+- یکی از [کلیدواژه‌های با مقادیر خاص](/en-US/docs/Web/HTML/Reference/Elements/a#target) باشد: `_blank`، `_self`، `_parent` یا `_top`.
 
-## Example
+## مثال
 
 ```html
 <a href="www.example1.com" class="link1" target="_blank">example1</a>
@@ -36,16 +30,16 @@ const link = document.querySelector(".link1");
 console.log(link.target); // output: "_blank"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLBaseElement.target")}} property
-- {{domxref("HTMLFormElement.target")}} property
-- {{domxref("HTMLAreaElement.target")}} property
+- ویژگی {{domxref("HTMLBaseElement.target")}}
+- ویژگی {{domxref("HTMLFormElement.target")}}
+- ویژگی {{domxref("HTMLAreaElement.target")}}
