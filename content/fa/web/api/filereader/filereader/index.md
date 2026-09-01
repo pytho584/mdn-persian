@@ -1,11 +1,5 @@
 ---
 title: "FileReader: FileReader() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReader/FileReader"
-status: "needs-translation"
----
-
----
-title: "FileReader: FileReader() constructor"
 short-title: FileReader()
 slug: Web/API/FileReader/FileReader
 page-type: web-api-constructor
@@ -14,23 +8,23 @@ browser-compat: api.FileReader.FileReader
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`FileReader()`** constructor creates a new `FileReader`.
+سازندهٔ **`FileReader()`** یک شیء `FileReader` جدید ایجاد می‌کند.
 
-For details about how to use `FileReader`, see [Using files from web applications](/en-US/docs/Web/API/File_API/Using_files_from_web_applications).
+برای جزئیات بیشتر دربارهٔ نحوهٔ استفاده از `FileReader`، [استفاده از فایل‌ها در برنامه‌های وب](/en-US/docs/Web/API/File_API/Using_files_from_web_applications) را ببینید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new FileReader()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-## Examples
+## مثال‌ها
 
-The following code snippet shows creation of a {{domxref("FileReader")}} object using the `FileReader()` constructor and subsequent usage of the object:
+قطعه‌کد زیر، ایجاد یک شیء {{domxref("FileReader")}} را با استفاده از سازندهٔ `FileReader()` و سپس استفاده از آن شیء را نشان می‌دهد:
 
 ```js
 function printFile(file) {
@@ -42,14 +36,14 @@ function printFile(file) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using files from web applications](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
+- [استفاده از فایل‌ها در برنامه‌های وب](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
