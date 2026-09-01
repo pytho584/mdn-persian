@@ -1,11 +1,5 @@
 ---
 title: "DOMRect: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/width"
-status: "needs-translation"
----
-
----
-title: "DOMRect: width property"
 short-title: width
 slug: Web/API/DOMRect/width
 page-type: web-api-instance-property
@@ -14,11 +8,11 @@ browser-compat: api.DOMRect.width
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`width`** property of the {{domxref("DOMRect")}} interface represents the width of the rectangle. The value can be negative.
+ویژگی **`width`** از رابط {{domxref("DOMRect")}} نشان‌دهنده‌ی عرض مستطیل است. این مقدار می‌تواند منفی باشد.
 
 ## Value
 
-A double.
+یک عدد double.
 
 ## Specifications
 
