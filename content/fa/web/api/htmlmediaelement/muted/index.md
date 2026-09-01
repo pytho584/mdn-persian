@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: muted property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/muted"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: muted property"
 short-title: muted
 slug: Web/API/HTMLMediaElement/muted
 page-type: web-api-instance-property
@@ -14,31 +8,29 @@ browser-compat: api.HTMLMediaElement.muted
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.muted`** property indicates whether the media
-element is muted.
+ویژگی **`HTMLMediaElement.muted`** نشان می‌دهد که آیا عنصر رسانه‌ای بی‌صدا است یا خیر.
 
-## Value
+## مقدار
 
-A boolean value. `true` means muted and `false` means
-not muted.
+یک مقدار بولین. `true` به معنای بی‌صدا بودن و `false` به معنای بی‌صدا نبودن است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const obj = document.createElement("video");
 console.log(obj.muted); // false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.muted` property
+- {{domxref("HTMLMediaElement")}}: رابطی که برای تعریف ویژگی `HTMLMediaElement.muted` استفاده شده است
 - {{domxref("HTMLMediaElement.defaultMuted")}}
 - {{domxref("HTMLMediaElement.volume")}}
