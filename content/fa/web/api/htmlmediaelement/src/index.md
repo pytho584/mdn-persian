@@ -1,7 +1,5 @@
 ---
 title: "HTMLMediaElement: src property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/src"
-status: "needs-translation"
 ---
 
 ---
@@ -14,39 +12,30 @@ browser-compat: api.HTMLMediaElement.src
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.src`** property reflects the value of
-the HTML media element's `src` attribute, which indicates the URL of a media
-resource to use in the element.
+ویژگی **`HTMLMediaElement.src`** مقدارِ صفت (attribute) `src` عنصر رسانهٔ HTML را بازتاب می‌دهد؛ این صفت، URL منبع رسانه‌ای را که باید در عنصر استفاده شود مشخص می‌کند.
 
 > [!NOTE]
-> The best way to know the URL of the media resource currently
-> in active use in this element is to look at the value of the
-> {{domxref("HTMLMediaElement.currentSrc", "currentSrc")}} attribute, which also takes
-> into account selection of a best or preferred media resource from a list provided in
-> an {{domxref("HTMLSourceElement")}} (which represents a {{HTMLElement("source")}}
-> element).
+> بهترین راه برای دانستن URL منبع رسانه‌ای که در حال حاضر در این عنصر استفاده می‌شود، نگاه کردن به مقدارِ ویژگی {{domxref("HTMLMediaElement.currentSrc", "currentSrc")}} است؛ این ویژگی، انتخاب بهترین یا ترجیحی‌ترین منبع رسانه از فهرستی را که در یک {{domxref("HTMLSourceElement")}} (که نمایانگر عنصر {{HTMLElement("source")}} است) ارائه شده، نیز در نظر می‌گیرد.
 
-## Value
+## مقدار
 
-A string containing the URL of a media resource to use in the
-element; this property reflects the value of the HTML element's `src`
-attribute.
+یک رشته (string) شامل URL منبع رسانه‌ای برای استفاده در عنصر؛ این ویژگی مقدارِ صفت `src` عنصر HTML را بازتاب می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const obj = document.createElement("video");
 console.log(obj.src); // ""
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.src` property
+- {{domxref("HTMLMediaElement")}}: اینترفیسی که برای تعریف ویژگی `HTMLMediaElement.src` استفاده می‌شود.
