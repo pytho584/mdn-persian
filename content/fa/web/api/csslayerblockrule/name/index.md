@@ -1,11 +1,5 @@
 ---
 title: "CSSLayerBlockRule: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSLayerBlockRule/name"
-status: "needs-translation"
----
-
----
-title: "CSSLayerBlockRule: name property"
 short-title: name
 slug: Web/API/CSSLayerBlockRule/name
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.CSSLayerBlockRule.name
 
 {{APIRef("CSSOM")}}
 
-The read-only **`name`** property of the {{domxref("CSSLayerBlockRule")}} interface represents the name of the associated cascade layer.
+ویژگی فقط‌خواندنی **`name`** در رابط {{domxref("CSSLayerBlockRule")}} نمایانگر نام لایهٔ آبشاریِ مرتبط است.
 
-## Value
+## مقدار
 
-A string containing the name of the layer, or `""` if the layer is anonymous.
+مقدار آن یک رشته شامل نام لایه است، یا اگر لایه بی‌نام (anonymous) باشد، `""` است.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -62,19 +56,19 @@ item1.textContent = `The first CSSLayerBlockRule defines the "${layer.name}" lay
 item2.textContent = `A second CSSLayerBlockRule defines a layer with the following name: "${anonymous.name}".`;
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The statement declaration of an {{cssxref("@layer")}} is represented by a {{domxref("CSSLayerStatementRule")}}.
-- How to [create named cascade layers](/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers#creating_cascade_layers) in CSS.
+- شکل بیانیه‌ای (statement) قانون {{cssxref("@layer")}} توسط رابط {{domxref("CSSLayerStatementRule")}} بازنمایی می‌شود.
+- [ساخت لایه‌های آبشاری نام‌دار](/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers#creating_cascade_layers) در CSS.
