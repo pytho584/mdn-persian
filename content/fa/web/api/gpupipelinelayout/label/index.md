@@ -1,11 +1,5 @@
 ---
 title: "GPUPipelineLayout: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineLayout/label"
-status: "needs-translation"
----
-
----
-title: "GPUPipelineLayout: label property"
 short-title: label
 slug: Web/API/GPUPipelineLayout/label
 page-type: web-api-instance-property
@@ -14,18 +8,17 @@ browser-compat: api.GPUPipelineLayout.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** property of the
-{{domxref("GPUPipelineLayout")}} interface provides a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی **`label`** در رابط {{domxref("GPUPipelineLayout")}} برچسبی را در اختیار شما قرار می‌دهد که می‌تواند برای شناسایی آن شیء استفاده شود؛ برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUDevice.createPipelineLayout()")}} call, or you can get and set it directly on the `GPUPipelineLayout` object.
+این برچسب را می‌توان با افزودن یک ویژگی `label` به آبجکت توصیف‌گر (descriptor) که در فراخوانی {{domxref("GPUDevice.createPipelineLayout()")}} ارسال می‌شود، تنظیم کرد. همچنین می‌توانید آن را مستقیماً روی خودِ آبجکت `GPUPipelineLayout` بخوانید یا تنظیم کنید.
 
-## Value
+## مقدار
 
-A string. If this has not been previously set as described above, it will be an empty string.
+یک رشته. اگر این مقدار قبلاً به شکلی که در بالا توضیح داده شد تنظیم نشده باشد، یک رشتهٔ خالی خواهد بود.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUPipelineLayout.label`:
+تنظیم و خواندن برچسب با استفاده از `GPUPipelineLayout.label`:
 
 ```js
 // …
@@ -39,7 +32,7 @@ pipelineLayout.label = "my_pipeline_layout";
 console.log(pipelineLayout.label); // "my_pipeline_layout"
 ```
 
-Setting a label via the originating {{domxref("GPUDevice.createPipelineLayout()")}} call, and then getting it via `GPUPipelineLayout.label`:
+تنظیم برچسب از طریق فراخوانی {{domxref("GPUDevice.createPipelineLayout()")}} و سپس خواندن آن با استفاده از `GPUPipelineLayout.label`:
 
 ```js
 // …
@@ -52,14 +45,14 @@ const pipelineLayout = device.createPipelineLayout({
 console.log(pipelineLayout.label); // "my_pipeline_layout"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
