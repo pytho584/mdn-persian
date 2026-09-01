@@ -1,7 +1,5 @@
 ---
 title: "FileReader: error property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReader/error"
-status: "needs-translation"
 ---
 
 ---
@@ -14,21 +12,20 @@ browser-compat: api.FileReader.error
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`error`** read-only property of the {{domxref("FileReader")}} interface returns the
-error that occurred while reading the file.
+ویژگی فقط‌خواندنی **`error`** در رابط {{domxref("FileReader")}} خطایی را که هنگام خواندن فایل رخ داده است، بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("DOMException")}} containing the relevant error.
+یک {{domxref("DOMException")}} حاوی خطای مربوطه.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("FileReader")}}
