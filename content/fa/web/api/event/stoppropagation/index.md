@@ -1,11 +1,6 @@
+```markdown
 ---
-title: "Event: stopPropagation() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation"
-status: "needs-translation"
----
-
----
-title: "Event: stopPropagation() method"
+title: "Event: stopPropagation() 方法"
 short-title: stopPropagation()
 slug: Web/API/Event/stopPropagation
 page-type: web-api-instance-method
@@ -14,37 +9,32 @@ browser-compat: api.Event.stopPropagation
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`stopPropagation()`** method of the {{domxref("Event")}}
-interface prevents further propagation of the current event in the capturing and
-bubbling phases. It does not, however, prevent any default behaviors from occurring; for
-instance, clicks on links are still processed. If you want to stop those behaviors, see
-the {{domxref("Event.preventDefault", "preventDefault()")}} method. It also does not
-prevent propagation to other event-handlers of the current element. If you want to stop those,
-see {{domxref("Event.stopImmediatePropagation", "stopImmediatePropagation()")}}.
+**`stopPropagation()`** 方法属于 {{domxref("Event")}} 接口，用于阻止当前事件在捕获和冒泡阶段的进一步传播。但它并不会阻止任何默认行为的发生；例如，链接上的点击仍会被处理。如果您想阻止这些默认行为，请参见 {{domxref("Event.preventDefault", "preventDefault()")}} 方法。此外，它也不会阻止事件传播到当前元素的其他事件处理函数。如果您想阻止这些，请参见 {{domxref("Event.stopImmediatePropagation", "stopImmediatePropagation()")}}。
 
-## Syntax
+## 语法
 
 ```js-nolint
 stopPropagation()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None.
+无。
 
-## Examples
+## 示例
 
-See [Event Propagation](/en-US/docs/Web/API/Document_Object_Model#event_propagation).
-Also see the example at {{domxref("Event.stopImmediatePropagation", "stopImmediatePropagation()")}}
+参见 [事件传播](/en-US/docs/Web/API/Document_Object_Model#event_propagation)。
+另请参阅 {{domxref("Event.stopImmediatePropagation", "stopImmediatePropagation()")}} 中的示例。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
+```
