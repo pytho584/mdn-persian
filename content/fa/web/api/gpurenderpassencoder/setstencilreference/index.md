@@ -1,7 +1,5 @@
 ---
 title: "GPURenderPassEncoder: setStencilReference() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setStencilReference"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +12,27 @@ browser-compat: api.GPURenderPassEncoder.setStencilReference
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`setStencilReference()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface sets the stencil reference value using during stencil tests with the `"replace"` stencil operation (as set in the descriptor of the {{domxref("GPUDevice.createRenderPipeline()")}} method, in the properties defining the various stencil operations).
+متد **`setStencilReference()`** از رابط {{domxref("GPURenderPassEncoder")}} مقدار مرجع استنسیل را تنظیم می‌کند که در طول آزمایش‌های استنسیل با عملیات استنسیل `"replace"` (همان‌طور که در توصیف‌گر متد {{domxref("GPUDevice.createRenderPipeline()")}}، در ویژگی‌های تعریف‌کننده عملیات‌های مختلف استنسیل تنظیم شده است) استفاده می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setStencilReference(reference)
 ```
 
-### Parameters
+### پارامترها
 
 - `reference`
-  - : A number representing the new stencil reference value to set for the render pass.
+  - : عددی که مقدار مرجع استنسیل جدید را برای تنظیم در رندرپاس مشخص می‌کند.
 
 > [!NOTE]
-> If a `setStencilReference()` call is not made, the stencil reference value defaults to 0 for each render pass.
+> اگر فراخوانی `setStencilReference()` انجام نشود، مقدار مرجع استنسیل برای هر رندرپاس به‌طور پیش‌فرض 0 است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -52,14 +49,14 @@ passEncoder.end();
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
