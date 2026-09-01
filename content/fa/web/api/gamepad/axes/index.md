@@ -1,11 +1,5 @@
 ---
 title: "Gamepad: axes property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/axes"
-status: "needs-translation"
----
-
----
-title: "Gamepad: axes property"
 short-title: axes
 slug: Web/API/Gamepad/axes
 page-type: web-api-instance-property
@@ -14,18 +8,15 @@ browser-compat: api.Gamepad.axes
 
 {{APIRef("Gamepad API")}}
 
-The **`Gamepad.axes`** property of the {{domxref("Gamepad") }}
-interface returns an array representing the controls with axes present on the device
-(e.g., analog thumb sticks).
+ویژگی **`Gamepad.axes`** در رابط {{domxref("Gamepad")}} آرایه‌ای را برمی‌گرداند که کنترل‌های دارای محور روی دستگاه را نشان می‌دهد (برای مثال، استیک‌های آنالوگ).
 
-Each entry in the array is a floating point value in the range -1.0 – 1.0, representing
-the axis position from the lowest value (-1.0) to the highest value (1.0).
+هر عضو این آرایه یک عدد ممیز شناور در بازهٔ ۱.۰- تا ۱.۰ است که موقعیت محور را از کمترین مقدار (۱.۰-) تا بیشترین مقدار (۱.۰) نشان می‌دهد.
 
-## Value
+## مقدار
 
-An array of numbers.
+آرایه‌ای از اعداد.
 
-## Examples
+## مثال‌ها
 
 ```js
 function gameLoop() {
@@ -50,14 +41,14 @@ function gameLoop() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-[Using the Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
+[استفاده از Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
