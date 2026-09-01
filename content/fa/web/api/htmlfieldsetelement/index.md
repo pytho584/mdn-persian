@@ -1,10 +1,4 @@
 ---
-title: "HTMLFieldSetElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFieldSetElement"
-status: "needs-translation"
----
-
----
 title: HTMLFieldSetElement
 slug: Web/API/HTMLFieldSetElement
 page-type: web-api-interface
@@ -13,51 +7,51 @@ browser-compat: api.HTMLFieldSetElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLFieldSetElement`** interface provides special properties and methods (beyond the regular {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating the layout and presentation of {{ HTMLElement("fieldset") }} elements.
+رابطِ **`HTMLFieldSetElement`** ویژگی‌ها و روش‌های خاصی (علاوه بر رابطِ معمول {{domxref("HTMLElement")}} که به‌صورت ارث‌بری نیز در دسترس دارد) برای دستکاری چیدمان و نمایش عناصرِ {{ HTMLElement("fieldset") }} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌ها را از والدِ خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref("HTMLFieldSetElement.disabled")}}
-  - : A boolean value reflecting the [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/fieldset#disabled) HTML attribute, indicating whether the user can interact with the control.
+  - : یک مقدار بولین که ویژگیِ HTML [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/fieldset#disabled) را بازتاب می‌دهد و نشان می‌دهد که آیا کاربر می‌تواند با کنترل تعامل داشته باشد یا نه.
 - {{domxref("HTMLFieldSetElement.elements")}} {{ReadOnlyInline}}
-  - : The elements belonging to this field set. The type of this property depends on the version of the spec that is implemented by the browser.
+  - : عناصر متعلق به این مجموعه‌فیلد. نوع این ویژگی بستگی به نسخه‌ای از مشخصات (spec) دارد که توسط مرورگر پیاده‌سازی شده است.
 - {{domxref("HTMLFieldSetElement.form")}} {{ReadOnlyInline}}
-  - : An {{domxref("HTMLFormControlsCollection")}} or {{domxref("HTMLCollection")}} referencing the containing form element, if this element is in a form.
-    If the field set is not a descendant of a form element, then the attribute can be the ID of any form element in the same document it is related to, or the `null` value if none matches.
+  - : یک {{domxref("HTMLFormControlsCollection")}} یا {{domxref("HTMLCollection")}} که به عنصرِ فرمِ شامل اشاره می‌کند، اگر این عنصر در یک فرم باشد.
+    اگر مجموعه‌فیلد از نوادگانِ یک عنصرِ فرم نباشد، آنگاه این ویژگی می‌تواند شناسه (ID) هر عنصرِ فرمی در همان سند باشد که با آن مرتبط است، یا اگر هیچ‌کدام مطابقت نداشت، مقدار `null` باشد.
 - {{domxref("HTMLFieldSetElement.name")}}
-  - : A string reflecting the [`name`](/en-US/docs/Web/HTML/Reference/Elements/fieldset#name) HTML attribute, containing the name of the field set. This can be used when accessing the field set in JavaScript. It is _not_ part of the data which is sent to the server.
+  - : یک رشته که ویژگیِ HTML [`name`](/en-US/docs/Web/HTML/Reference/Elements/fieldset#name) را بازتاب می‌دهد و شامل نام مجموعه‌فیلد است. این مقدار می‌تواند هنگام دسترسی به مجموعه‌فیلد در جاوااسکریپت استفاده شود. این ویژگی _بخشی_ از داده‌هایی که به سرور ارسال می‌شوند نیست.
 - {{domxref("HTMLFieldSetElement.type")}} {{ReadOnlyInline}}
-  - : The string `"fieldset"`.
+  - : رشته‌ی `"fieldset"`.
 - {{domxref("HTMLFieldSetElement.validationMessage")}} {{ReadOnlyInline}}
-  - : A string representing a localized message that describes the validation constraints that the element does not satisfy (if any). This is the empty string if the element is not a candidate for constraint validation (`willValidate` is `false`), or it satisfies its constraints.
+  - : یک رشته که یک پیام بومی‌سازی‌شده را نشان می‌دهد و محدودیت‌های اعتبارسنجی که عنصر آن‌ها را برآورده نمی‌کند (در صورت وجود) توصیف می‌کند. اگر عنصر کاندیدی برای اعتبارسنجی محدودیت‌ها نباشد (`willValidate` برابر `false` باشد) یا محدودیت‌های خود را برآورده کند، این رشته خالی است.
 - {{domxref("HTMLFieldSetElement.validity")}} {{ReadOnlyInline}}
-  - : A {{domxref("ValidityState")}} representing the validity states that this element is in.
+  - : یک {{domxref("ValidityState")}} که حالت‌های اعتبارسنجی‌ای که این عنصر در آن قرار دارد را نشان می‌دهد.
 - {{domxref("HTMLFieldSetElement.willValidate")}} {{ReadOnlyInline}}
-  - : A boolean value `false`, because {{HTMLElement("fieldset")}} objects are never candidates for constraint validation.
+  - : یک مقدار بولین `false`، زیرا اشیاء {{HTMLElement("fieldset")}} هرگز کاندیدای اعتبارسنجی محدودیت‌ها نیستند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش‌ها را از والدِ خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref("HTMLFieldSetElement.checkValidity()")}}
-  - : Always returns `true` because {{HTMLElement("fieldset")}} objects are never candidates for constraint validation.
+  - : همیشه `true` برمی‌گرداند، زیرا اشیاء {{HTMLElement("fieldset")}} هرگز کاندیدای اعتبارسنجی محدودیت‌ها نیستند.
 - {{domxref("HTMLFieldSetElement.reportValidity()")}}
-  - : Always returns `true` because {{HTMLElement("fieldset")}} objects are never candidates for constraint validation.
+  - : همیشه `true` برمی‌گرداند، زیرا اشیاء {{HTMLElement("fieldset")}} هرگز کاندیدای اعتبارسنجی محدودیت‌ها نیستند.
 - {{domxref("HTMLFieldSetElement.setCustomValidity()")}}
-  - : Sets a custom validity message for the field set. If this message is not the empty string, then the field set is suffering from a custom validity error, and does not validate.
+  - : یک پیام اعتبارسنجی سفارشی برای مجموعه‌فیلد تنظیم می‌کند. اگر این پیام رشته‌ی خالی نباشد، مجموعه‌فیلد دچار خطای اعتبارسنجی سفارشی است و اعتبارسنجی را رد می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{ HTMLElement("fieldset") }}.
+- عنصرِ HTML که این رابط را پیاده‌سازی می‌کند: {{ HTMLElement("fieldset") }}.
