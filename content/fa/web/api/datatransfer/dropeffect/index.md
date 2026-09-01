@@ -1,11 +1,5 @@
 ---
 title: "DataTransfer: dropEffect property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/dropEffect"
-status: "needs-translation"
----
-
----
-title: "DataTransfer: dropEffect property"
 short-title: dropEffect
 slug: Web/API/DataTransfer/dropEffect
 page-type: web-api-instance-property
@@ -14,52 +8,32 @@ browser-compat: api.DataTransfer.dropEffect
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DataTransfer.dropEffect`** property controls the
-feedback (typically visual) the user is given during a drag and drop operation. It will
-affect which cursor is displayed while dragging. For example, when the user hovers over
-a target drop element, the browser's cursor may indicate which type of operation will
-occur.
+ویژگی **`DataTransfer.dropEffect`** بازخوردی (معمولاً بصری) را که کاربر در جریان عملیات کشیدن و رها کردن (drag and drop) دریافت می‌کند، کنترل می‌کند. این ویژگی بر نشانگر ماوسی که هنگام کشیدن نمایش داده می‌شود تأثیر می‌گذارد. برای مثال، وقتی کاربر روی عنصر مقصدِ رها کردن قرار می‌گیرد، نشانگر مرورگر ممکن است نشان دهد که چه نوع عملیاتی قرار است انجام شود.
 
-When the {{domxref("DataTransfer")}} object is created, `dropEffect` is set
-to a string value. On getting, it returns its current value. On setting, if the new
-value is one of the values listed below, then the property's current value will be set
-to the new value and other values will be ignored.
+هنگامی که شیء {{domxref("DataTransfer")}} ساخته می‌شود، `dropEffect` روی یک مقدار رشته‌ای تنظیم می‌شود. با خواندن (get) این ویژگی، مقدار فعلی آن بازگردانده می‌شود. هنگام تنظیم (set)، اگر مقدار جدید یکی از مقادیر فهرست‌شده در ادامه باشد، مقدار فعلی ویژگی به مقدار جدید تغییر می‌کند و سایر مقادیر نادیده گرفته می‌شوند.
 
-For the {{domxref("HTMLElement/dragenter_event", "dragenter")}} and {{domxref("HTMLElement/dragover_event", "dragover")}} events,
-`dropEffect` will be initialized based on what action the user is requesting.
-How this is determined is platform specific, but typically the user can press modifier
-keys such as the alt key to adjust the desired action. Within event handlers for
-{{domxref("HTMLElement/dragenter_event", "dragenter")}} and {{domxref("HTMLElement/dragover_event", "dragover")}} events, `dropEffect` should
-be modified if a different action is desired than the action that the user is
-requesting.
+برای رویدادهای {{domxref("HTMLElement/dragenter_event", "dragenter")}} و {{domxref("HTMLElement/dragover_event", "dragover")}}، `dropEffect` بر اساس عملی که کاربر درخواست می‌کند مقداردهی اولیه می‌شود. نحوه تعیین این مقدار به پلتفرم بستگی دارد، اما معمولاً کاربر می‌تواند با فشردن کلیدهای اصلاح‌گر (modifier keys) مانند کلید alt، عملیات موردنظر را تنظیم کند. در کنترل‌کننده‌های رویداد {{domxref("HTMLElement/dragenter_event", "dragenter")}} و {{domxref("HTMLElement/dragover_event", "dragover")}}، اگر عملی غیر از آنچه کاربر درخواست کرده موردنظر باشد، باید `dropEffect` تغییر کند.
 
-For the {{domxref("HTMLElement/drop_event", "drop")}} and {{domxref("HTMLElement/dragend_event", "dragend")}} events, `dropEffect` will
-be set to the action that was desired, which will be the value `dropEffect`
-had after the last {{domxref("HTMLElement/dragenter_event", "dragenter")}} or {{domxref("HTMLElement/dragover_event", "dragover")}} event. In a
-{{domxref("HTMLElement/dragend_event", "dragend")}} event, for instance, if the desired dropEffect is "move", then the
-data being dragged should be removed from the source.
+برای رویدادهای {{domxref("HTMLElement/drop_event", "drop")}} و {{domxref("HTMLElement/dragend_event", "dragend")}}، `dropEffect` روی عملیاتی که موردنظر بوده است تنظیم می‌شود؛ که همان مقدار `dropEffect` بعد از آخرین رویداد {{domxref("HTMLElement/dragenter_event", "dragenter")}} یا {{domxref("HTMLElement/dragover_event", "dragover")}} است. برای مثال، در رویداد {{domxref("HTMLElement/dragend_event", "dragend")}}، اگر dropEffect موردنظر «move» باشد، داده‌های کشیده‌شده باید از مبدأ حذف شوند.
 
 ## Value
 
-A string representing the drag operation effect. The possible values
-are:
+یک رشته که اثر عملیات کشیدن را نشان می‌دهد. مقادیر ممکن عبارت‌اند از:
 
 - `copy`
-  - : A copy of the source item is made at the new location.
+  - : یک کپی از آیتم مبدأ در مکان جدید ساخته می‌شود.
 - `move`
-  - : An item is moved to a new location.
+  - : یک آیتم به مکان جدید منتقل می‌شود.
 - `link`
-  - : A link is established to the source at the new location.
+  - : یک پیوند به مبدأ در مکان جدید برقرار می‌شود.
 - `none`
-  - : The item may not be dropped.
+  - : آیتم را نمی‌توان رها کرد.
 
-Assigning any other value to `dropEffect` has no effect and the old value is
-retained.
+اختصاص دادن هر مقدار دیگری به `dropEffect` تأثیری ندارد و مقدار قبلی حفظ می‌شود.
 
 ## Example
 
-This example shows the use of the `dropEffect` and
-{{domxref("DataTransfer.effectAllowed","effectAllowed")}} properties.
+این مثال کاربرد ویژگی‌های `dropEffect` و {{domxref("DataTransfer.effectAllowed","effectAllowed")}} را نشان می‌دهد.
 
 ### HTML
 
