@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: offsetTop property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: offsetTop property"
 short-title: offsetTop
 slug: Web/API/HTMLElement/offsetTop
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLElement.offsetTop
 
 {{ APIRef("HTML DOM") }}
 
-The **`offsetTop`** read-only property of the {{domxref("HTMLElement")}} interface returns the distance from the outer border of the current element (including its margin) to the top padding edge of the {{domxref("HTMLelement.offsetParent","offsetParent")}}, the _closest positioned_ ancestor element.
+خاصیت فقط‌خواندنی **`offsetTop`** از رابط {{domxref("HTMLElement")}}، فاصله از حاشیه بیرونی عنصر جاری (شامل margin آن) تا لبه بالایی padding عنصر {{domxref("HTMLelement.offsetParent","offsetParent")}} (نزدیک‌ترین جد دارای موقعیت‌یابی) را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const d = document.getElementById("div1");
@@ -32,17 +26,17 @@ if (topPos > 10) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Determining the dimensions of elements](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
+- [تعیین ابعاد عناصر](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
 - {{domxref("Element.clientTop")}}
 - {{domxref("Element.scrollTop")}}
 - {{domxref("HTMLElement.offsetHeight")}}
