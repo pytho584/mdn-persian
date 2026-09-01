@@ -1,11 +1,5 @@
 ---
 title: "GPUComputePassEncoder: pushDebugGroup() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/pushDebugGroup"
-status: "needs-translation"
----
-
----
-title: "GPUComputePassEncoder: pushDebugGroup() method"
 short-title: pushDebugGroup()
 slug: Web/API/GPUComputePassEncoder/pushDebugGroup
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.GPUComputePassEncoder.pushDebugGroup
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`pushDebugGroup()`** method of the
-{{domxref("GPUComputePassEncoder")}} interface begins a compute pass debug group, which is marked with a specified label, and will contain all subsequent encoded commands up until a {{domxref("GPUComputePassEncoder.popDebugGroup", "popDebugGroup()")}} method is invoked.
+متد **`pushDebugGroup()`** از رابط {{domxref("GPUComputePassEncoder")}} یک گروه اشکال‌زدایی (debug group) برای عبور محاسباتی (compute pass) آغاز می‌کند که با یک برچسب مشخص مشخص می‌شود و تمام دستورات رمزگذاری شده بعدی را تا زمانی که متد {{domxref("GPUComputePassEncoder.popDebugGroup", "popDebugGroup()")}} فراخوانی شود، در خود جای می‌دهد.
 
-This could be used for telemetry, or may be utilized in {{domxref("GPUError")}} messages, browser dev tools, or other services in the future to help with debugging.
+این می‌تواند برای تله‌متری (telemetry) استفاده شود، یا ممکن است در پیام‌های {{domxref("GPUError")}}، ابزارهای توسعه‌دهنده مرورگر، یا سایر سرویس‌ها در آینده برای کمک به اشکال‌زدایی به کار گرفته شود.
 
 ## Syntax
 
@@ -28,11 +21,11 @@ pushDebugGroup(groupLabel)
 ### Parameters
 
 - `groupLabel`
-  - : A string representing the label for the debug group.
+  - : یک رشته که برچسب گروه اشکال‌زدایی را مشخص می‌کند.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Examples
 
