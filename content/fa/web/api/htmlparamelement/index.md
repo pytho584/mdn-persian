@@ -1,10 +1,4 @@
 ---
-title: "HTMLParamElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLParamElement"
-status: "needs-translation"
----
-
----
 title: HTMLParamElement
 slug: Web/API/HTMLParamElement
 page-type: web-api-interface
@@ -15,35 +9,35 @@ browser-compat: api.HTMLParamElement
 
 {{APIRef("HTML DOM")}}{{Deprecated_Header}}
 
-The **`HTMLParamElement`** interface provides special properties (beyond those of the regular {{domxref("HTMLElement")}} object interface it inherits) for manipulating {{HTMLElement("param")}} elements, representing a pair of a key and a value that acts as a parameter for an {{HTMLElement("object")}} element.
+رابط **`HTMLParamElement`** ویژگی‌های خاصی (فراتر از ویژگی‌های رابط معمول {{domxref("HTMLElement")}} که از آن به ارث می‌برد) برای دستکاری عناصر {{HTMLElement("param")}} فراهم می‌کند. این عناصر یک جفت کلید و مقدار را نشان می‌دهند که به عنوان پارامتری برای یک عنصر {{HTMLElement("object")}} عمل می‌کنند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLParamElement.name")}} {{Deprecated_Inline}}
-  - : A string representing the name of the parameter. It reflects the [`name`](/en-US/docs/Web/HTML/Reference/Elements/param#name) attribute.
+  - : یک رشته که نام پارامتر را نشان می‌دهد. این ویژگی منعکس‌کنندهٔ ویژگی [`name`](/en-US/docs/Web/HTML/Reference/Elements/param#name) است.
 - {{domxref("HTMLParamElement.value")}} {{Deprecated_Inline}}
-  - : A string representing the value associated to the parameter. It reflects the [`value`](/en-US/docs/Web/HTML/Reference/Elements/param#value) attribute.
+  - : یک رشته که مقدار مرتبط با پارامتر را نشان می‌دهد. این ویژگی منعکس‌کنندهٔ ویژگی [`value`](/en-US/docs/Web/HTML/Reference/Elements/param#value) است.
 - {{domxref("HTMLParamElement.type")}} {{Deprecated_Inline}}
-  - : A string containing the type of the parameter when `valueType` has the `"ref"` value. It reflects the [`type`](/en-US/docs/Web/HTML/Reference/Elements/param#type) attribute.
+  - : یک رشته شامل نوع پارامتر زمانی که `valueType` مقدار `"ref"` را داشته باشد. این ویژگی منعکس‌کنندهٔ ویژگی [`type`](/en-US/docs/Web/HTML/Reference/Elements/param#type) است.
 - {{domxref("HTMLParamElement.valueType")}} {{Deprecated_Inline}}
-  - : A string containing the type of the `value`. It reflects the [valuetype](/en-US/docs/Web/HTML/Reference/Elements/param#valuetype) attribute and has one of the values: `"data"`, `"ref"`, or `"object"`.
+  - : یک رشته شامل نوع `value`. این ویژگی منعکس‌کنندهٔ ویژگی [`valuetype`](/en-US/docs/Web/HTML/Reference/Elements/param#valuetype) است و یکی از مقادیر `"data"`، `"ref"` یا `"object"` را دارد.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific methods, inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش خاصی ندارد، روش‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{ HTMLElement("param") }}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{ HTMLElement("param") }}.
