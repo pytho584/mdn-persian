@@ -1,7 +1,5 @@
 ---
 title: "FileSystemWritableFileStream"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemWritableFileStream"
-status: "needs-translation"
 ---
 
 ---
@@ -13,30 +11,30 @@ browser-compat: api.FileSystemWritableFileStream
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`FileSystemWritableFileStream`** interface of the {{domxref("File System API", "File System API", "", "nocode")}} is a {{domxref('WritableStream')}} object with additional convenience methods, which operates on a single file on disk. The interface is accessed through the {{domxref('FileSystemFileHandle.createWritable()')}} method.
+رابط **`FileSystemWritableFileStream`** در {{domxref("File System API", "File System API", "", "nocode")}} یک شیء {{domxref('WritableStream')}} با متدهای کمکی اضافی است که روی یک فایل مشخص روی دیسک کار می‌کند. این رابط از طریق متد {{domxref('FileSystemFileHandle.createWritable()')}} قابل دسترسی است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## خصوصیات نمونه
 
-_Inherits properties from its parent, {{DOMxRef("WritableStream")}}._
+_خصوصیات والد خود، {{DOMxRef("WritableStream")}} را به ارث می‌برد._
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{DOMxRef("WritableStream")}}._
+_متدهای والد خود، {{DOMxRef("WritableStream")}} را به ارث می‌برد._
 
 - {{domxref('FileSystemWritableFileStream.write()')}}
-  - : Writes content into the file the method is called on, at the current file cursor offset.
+  - : محتوا را در فایلی که این متد روی آن فراخوانی شده است، در آفست فعلی نشانگر فایل می‌نویسد.
 - {{domxref('FileSystemWritableFileStream.seek()')}}
-  - : Updates the current file cursor offset to the position (in bytes) specified.
+  - : آفست فعلی نشانگر فایل را به موقعیت (به بایت) مشخص‌شده به‌روزرسانی می‌کند.
 - {{domxref('FileSystemWritableFileStream.truncate()')}}
-  - : Resizes the file associated with the stream to be the specified size in bytes.
+  - : فایل مرتبط با جریان را به اندازهٔ مشخص‌شده (به بایت) تغییر اندازه می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The following asynchronous function opens the 'Save File' picker, which returns a {{domxref('FileSystemFileHandle')}} once a file is selected. From this, a writable stream is created using the {{domxref('FileSystemFileHandle.createWritable()')}} method.
+تابع ناهمگام زیر، انتخابگر «ذخیره فایل» (Save File) را باز می‌کند که پس از انتخاب یک فایل، یک {{domxref('FileSystemFileHandle')}} برمی‌گرداند. سپس با استفاده از متد {{domxref('FileSystemFileHandle.createWritable()')}}، یک جریان نوشتنی از روی این هندل ساخته می‌شود.
 
-A text string is then written to the stream, which is subsequently closed.
+سپس یک رشته متنی در جریان نوشته می‌شود و جریان متعاقباً بسته می‌شود.
 
 ```js
 async function saveFile() {
@@ -54,7 +52,7 @@ async function saveFile() {
 }
 ```
 
-The following examples show different options that can be passed into the `write()` method.
+مثال‌های زیر گزینه‌های مختلفی را نشان می‌دهند که می‌توان به متد `write()` ارسال کرد.
 
 ```js
 // just pass in the data (no options)
@@ -70,15 +68,15 @@ writableStream.write({ type: "seek", position });
 writableStream.write({ type: "truncate", size });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
