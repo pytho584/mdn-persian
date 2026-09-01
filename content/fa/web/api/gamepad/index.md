@@ -1,10 +1,4 @@
 ---
-title: "Gamepad"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad"
-status: "needs-translation"
----
-
----
 title: Gamepad
 slug: Web/API/Gamepad
 page-type: web-api-interface
@@ -13,41 +7,41 @@ browser-compat: api.Gamepad
 
 {{APIRef("Gamepad API")}}
 
-The **`Gamepad`** interface of the [Gamepad API](/en-US/docs/Web/API/Gamepad_API) defines an individual gamepad or other controller, allowing access to information such as button presses, axis positions, and id.
+رابط `Gamepad` از [Gamepad API](/en-US/docs/Web/API/Gamepad_API) یک گیم‌پد یا کنترل‌کنندهٔ منفرد را تعریف می‌کند و امکان دسترسی به اطلاعاتی مانند فشردن دکمه‌ها، موقعیت محورها و شناسه (id) را فراهم می‌سازد.
 
-A Gamepad object can be returned in one of two ways: via the `gamepad` property of the {{domxref("Window.gamepadconnected_event", "gamepadconnected")}} and {{domxref("Window.gamepaddisconnected_event", "gamepaddisconnected")}} events, or by grabbing any position in the array returned by the {{domxref("Navigator.getGamepads()")}} method.
+یک شیء `Gamepad` می‌تواند به یکی از دو روش بازگردانده شود: از طریق ویژگی `gamepad` در رویدادهای {{domxref("Window.gamepadconnected_event", "gamepadconnected")}} و {{domxref("Window.gamepaddisconnected_event", "gamepaddisconnected")}}، یا با گرفتن هر جایگاهی از آرایه‌ای که توسط متد {{domxref("Navigator.getGamepads()")}} بازگردانده می‌شود.
 
 > [!NOTE]
-> The support of gamepad features varies across different combinations of platforms and controllers. Even if the controller supports a certain feature (for example, haptic feedback), the platform may not support it for that controller.
+> پشتیبانی از ویژگی‌های گیم‌پد بسته به ترکیب‌های مختلف سیستم‌عامل‌ها و کنترل‌کننده‌ها متفاوت است. حتی اگر کنترل‌کننده از قابلیت خاصی (مثلاً بازخورد لمسی) پشتیبانی کند، ممکن است سیستم‌عامل از آن قابلیت برای آن کنترل‌کننده پشتیبانی نکند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("Gamepad.axes")}} {{ReadOnlyInline}}
-  - : An array representing the controls with axes present on the device (e.g., analog thumb sticks).
+  - : آرایه‌ای که نشان‌دهندهٔ کنترل‌های دارای محور روی دستگاه است (مثلاً استیک‌های آنالوگ).
 - {{domxref("Gamepad.buttons")}} {{ReadOnlyInline}}
-  - : An array of {{domxref("gamepadButton")}} objects representing the buttons present on the device.
+  - : آرایه‌ای از اشیاء {{domxref("gamepadButton")}} که دکمه‌های موجود روی دستگاه را نشان می‌دهند.
 - {{domxref("Gamepad.connected")}} {{ReadOnlyInline}}
-  - : A boolean indicating whether the gamepad is still connected to the system.
+  - : یک مقدار بولی که نشان می‌دهد آیا گیم‌پد همچنان به سیستم متصل است یا خیر.
 - {{domxref("Gamepad.displayId")}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Returns the {{domxref("VRDisplay.displayId")}} of an associated {{domxref("VRDisplay")}} (if relevant) — the `VRDisplay` that the gamepad is controlling the displayed scene of.
+  - : مقدار {{domxref("VRDisplay.displayId")}} یک {{domxref("VRDisplay")}} مرتبط را برمی‌گرداند (در صورت وجود) — `VRDisplay` که گیم‌پد صحنهٔ نمایش‌داده‌شده توسط آن را کنترل می‌کند.
 - {{domxref("Gamepad.hand")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : An enum defining what hand the controller is being held in, or is most likely to be held in.
+  - : یک enum که تعیین می‌کند کنترل‌کننده در کدام دست گرفته شده است یا به احتمال زیاد گرفته خواهد شد.
 - {{domxref("Gamepad.hapticActuators")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : An array containing {{domxref("GamepadHapticActuator")}} objects, each of which represents haptic feedback hardware available on the controller.
+  - : آرایه‌ای شامل اشیاء {{domxref("GamepadHapticActuator")}} که هر یک نشان‌دهندهٔ سخت‌افزار بازخورد لمسی موجود روی کنترل‌کننده است.
 - {{domxref("Gamepad.vibrationActuator")}} {{ReadOnlyInline}}
-  - : A {{domxref("GamepadHapticActuator")}} object, which represents haptic feedback hardware available on the controller.
+  - : یک شیء {{domxref("GamepadHapticActuator")}} که سخت‌افزار بازخورد لمسی موجود روی کنترل‌کننده را نشان می‌دهد.
 - {{domxref("Gamepad.id")}} {{ReadOnlyInline}}
-  - : A string containing identifying information about the controller.
+  - : رشته‌ای حاوی اطلاعات شناسایی دربارهٔ کنترل‌کننده.
 - {{domxref("Gamepad.index")}} {{ReadOnlyInline}}
-  - : An integer that is auto-incremented to be unique for each device currently connected to the system.
+  - : یک عدد صحیح که به‌صورت خودکار افزایش می‌یابد تا برای هر دستگاه متصل به سیستم یکتا باشد.
 - {{domxref("Gamepad.mapping")}} {{ReadOnlyInline}}
-  - : A string indicating whether the browser has remapped the controls on the device to a known layout.
+  - : رشته‌ای که نشان می‌دهد آیا مرورگر کنترل‌ها روی دستگاه را به چیدمانی شناخته‌شده نگاشت مجدد کرده است یا خیر.
 - {{domxref("Gamepad.pose")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{domxref("GamepadPose")}} object representing the pose information associated with a WebVR controller (e.g., its position and orientation in 3D space).
+  - : یک شیء {{domxref("GamepadPose")}} که اطلاعات ژست مرتبط با یک کنترل‌کنندهٔ WebVR را نشان می‌دهد (مثلاً موقعیت و جهت آن در فضای سه‌بعدی).
 - {{domxref("Gamepad.timestamp")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} representing the last time the data for this gamepad was updated.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که آخرین زمان به‌روزرسانی داده‌های این گیم‌پد را نشان می‌دهد.
 
-## Example
+## مثال
 
 ```js
 window.addEventListener("gamepadconnected", (e) => {
@@ -61,15 +55,15 @@ window.addEventListener("gamepadconnected", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
+- [استفاده از Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
