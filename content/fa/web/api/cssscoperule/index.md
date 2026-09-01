@@ -1,10 +1,4 @@
 ---
-title: "CSSScopeRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSScopeRule"
-status: "needs-translation"
----
-
----
 title: CSSScopeRule
 slug: Web/API/CSSScopeRule
 page-type: web-api-interface
@@ -13,28 +7,28 @@ browser-compat: api.CSSScopeRule
 
 {{ APIRef("CSSOM") }}
 
-The **`CSSScopeRule`** interface of the [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model) represents a CSS {{CSSxRef("@scope")}} at-rule.
+رابطه‌ی **`CSSScopeRule`** در [مدل شیء CSS](/en-US/docs/Web/API/CSS_Object_Model) نمایانگر یک قاعده‌ی at-rule در CSS، یعنی {{CSSxRef("@scope")}} است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestors {{domxref("CSSGroupingRule")}} and {{domxref("CSSRule")}}._
+_ویژگی‌ها را از اجداد خود، یعنی {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} به ارث می‌برد._
 
 - {{domxref("CSSScopeRule.end", "end")}}
-  - : Returns a string containing the value of the `@scope` at-rule's scope limit.
+  - : رشته‌ای برمی‌گرداند که مقدار محدودیت scope در قاعده‌ی `@scope` را شامل می‌شود.
 - {{domxref("CSSScopeRule.start", "start")}}
-  - : Returns a string containing the value of the `@scope` at-rule's scope root.
+  - : رشته‌ای برمی‌گرداند که مقدار ریشه‌ی scope در قاعده‌ی `@scope` را شامل می‌شود.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its ancestors {{domxref("CSSGroupingRule")}} and {{domxref("CSSRule")}}._
+_روش‌ها را از اجداد خود، یعنی {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Accessing @scope information in JavaScript
+### دسترسی به اطلاعات @scope در جاوااسکریپت
 
-Assuming the following is the only stylesheet attached to a document:
+با فرض اینکه تنها stylesheet متصل به سند به صورت زیر باشد:
 
 ```css
 @scope (.outer) to (.inner) {
@@ -44,7 +38,7 @@ Assuming the following is the only stylesheet attached to a document:
 }
 ```
 
-The following JavaScript could be used to access information about the contained `@scope` block:
+جاوااسکریپت زیر می‌تواند برای دسترسی به اطلاعات بلوک `@scope` استفاده شود:
 
 ```js
 const scopeBlock = document.styleSheets[0].cssRules[0];
@@ -53,15 +47,15 @@ console.log(scopeBlock.start); // Returns ".outer"
 console.log(scopeBlock.end); // Returns ".inner"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{CSSxRef("@scope")}}
 - {{CSSxRef(":scope")}}
