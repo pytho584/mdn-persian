@@ -1,10 +1,4 @@
 ---
-title: "GPUComputePassEncoder"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder"
-status: "needs-translation"
----
-
----
 title: GPUComputePassEncoder
 slug: Web/API/GPUComputePassEncoder
 page-type: web-api-interface
@@ -13,41 +7,41 @@ browser-compat: api.GPUComputePassEncoder
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUComputePassEncoder`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} encodes commands related to controlling the compute shader stage, as issued by a {{domxref("GPUComputePipeline")}}. It forms part of the overall encoding activity of a {{domxref("GPUCommandEncoder")}}.
+**`GPUComputePassEncoder`** واسطهای از {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} است که دستورات مربوط به کنترل مرحلهٔ سایهزن محاسباتی (compute shader stage) را که توسط {{domxref("GPUComputePipeline")}} صادر میشوند، رمزگذاری میکند. این واسط بخشی از فعالیت کلی رمزگذاری یک {{domxref("GPUCommandEncoder")}} است.
 
-A compute pipeline contains a single compute stage in which a compute shader takes general data, processes it in parallel across a specified number of workgroups, then returns the result in one or more buffers.
+یک خط لولهٔ محاسباتی (compute pipeline) شامل یک مرحلهٔ محاسباتی واحد است که در آن یک سایهزن محاسباتی دادههای عمومی را میگیرد، آنها را به صورت موازی در تعداد مشخصی از گروههای کاری (workgroups) پردازش میکند و سپس نتیجه را در یک یا چند بافر برمیگرداند.
 
-A `GPUComputePassEncoder` object instance is created via the {{domxref("GPUCommandEncoder.beginComputePass()")}} property.
+یک نمونه از شیء `GPUComputePassEncoder` از طریق ویژگی {{domxref("GPUCommandEncoder.beginComputePass()")}} ایجاد میشود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگیهای نمونه
 
 - {{domxref("GPUComputePassEncoder.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : یک رشته که برچسبی برای شناسایی شیء فراهم میکند، برای مثال در پیامهای {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Instance methods
+## روشهای نمونه
 
 - {{domxref("GPUComputePassEncoder.dispatchWorkgroups", "dispatchWorkgroups()")}}
-  - : Dispatches a specific grid of workgroups to perform the work being done by the current {{domxref("GPUComputePipeline")}}.
+  - : یک شبکهٔ مشخص از گروههای کاری را برای انجام کار جاری {{domxref("GPUComputePipeline")}} توزیع میکند.
 - {{domxref("GPUComputePassEncoder.dispatchWorkgroupsIndirect", "dispatchWorkgroupsIndirect()")}}
-  - : Dispatches a grid of workgroups, defined by the parameters of a {{domxref("GPUBuffer")}}, to perform the work being done by the current {{domxref("GPUComputePipeline")}}.
+  - : یک شبکهٔ از گروههای کاری را که توسط پارامترهای یک {{domxref("GPUBuffer")}} تعریف شدهاند، برای انجام کار جاری {{domxref("GPUComputePipeline")}} توزیع میکند.
 - {{domxref("GPUComputePassEncoder.end", "end()")}}
-  - : Completes recording of the current compute pass command sequence.
+  - : ضبط دنبالهٔ دستورات پاس محاسباتی جاری را تکمیل میکند.
 - {{domxref("GPUComputePassEncoder.insertDebugMarker", "insertDebugMarker()")}}
-  - : Marks a specific point in a series of encoded commands with a label.
+  - : نقطهٔ خاصی را در یک سری از دستورات رمزگذاریشده با یک برچسب علامتگذاری میکند.
 - {{domxref("GPUComputePassEncoder.popDebugGroup", "popDebugGroup()")}}
-  - : Ends a debug group, which is begun with a {{domxref("GPUComputePassEncoder.pushDebugGroup", "pushDebugGroup()")}} call.
+  - : یک گروه اشکالزدایی را پایان میدهد که با فراخوانی {{domxref("GPUComputePassEncoder.pushDebugGroup", "pushDebugGroup()")}} شروع شده است.
 - {{domxref("GPUComputePassEncoder.pushDebugGroup", "pushDebugGroup()")}}
-  - : Begins a debug group, which is marked with a specified label, and will contain all subsequent encoded commands up until a {{domxref("GPUComputePassEncoder.popDebugGroup", "popDebugGroup()")}} method is invoked.
+  - : یک گروه اشکالزدایی را آغاز میکند که با برچسب مشخصی علامتگذاری شده و شامل تمام دستورات رمزگذاریشدهٔ بعدی تا زمان فراخوانی روش {{domxref("GPUComputePassEncoder.popDebugGroup", "popDebugGroup()")}} خواهد بود.
 - {{domxref("GPUComputePassEncoder.setBindGroup", "setBindGroup()")}}
-  - : Sets the {{domxref("GPUBindGroup")}} to use for subsequent compute commands, for a given index.
+  - : {{domxref("GPUBindGroup")}} مورد استفاده برای دستورات محاسباتی بعدی را برای یک شاخص معین تنظیم میکند.
 - {{domxref("GPUComputePassEncoder.setPipeline", "setPipeline()")}}
-  - : Sets the {{domxref("GPUComputePipeline")}} to use for this compute pass.
+  - : {{domxref("GPUComputePipeline")}} مورد استفاده برای این پاس محاسباتی را تنظیم میکند.
 
-## Examples
+## مثالها
 
-In our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/), several commands are recorded via a {{domxref("GPUCommandEncoder")}}. Most of these commands originate from the `GPUComputePassEncoder` created via {{domxref("GPUCommandEncoder.beginComputePass()")}}.
+در [نمونهٔ محاسبات پایه](https://mdn.github.io/dom-examples/webgpu-compute-demo/)، چندین دستور از طریق یک {{domxref("GPUCommandEncoder")}} رمزگذاری میشوند. بیشتر این دستورات از `GPUComputePassEncoder` ایجادشده از طریق {{domxref("GPUCommandEncoder.beginComputePass()")}} سرچشمه میگیرند.
 
 ```js
 // …
@@ -81,14 +75,14 @@ device.queue.submit([commandEncoder.finish()]);
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
