@@ -1,11 +1,5 @@
 ---
 title: "CustomElementRegistry: initialize() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/initialize"
-status: "needs-translation"
----
-
----
-title: "CustomElementRegistry: initialize() method"
 short-title: initialize()
 slug: Web/API/CustomElementRegistry/initialize
 page-type: web-api-instance-method
@@ -14,45 +8,45 @@ browser-compat: api.CustomElementRegistry.initialize
 
 {{APIRef("Web Components")}}
 
-The **`initialize()`** method of the {{domxref("CustomElementRegistry")}} interface associates this registry with a DOM subtree, setting the {{domxref("Element.customElementRegistry", "customElementRegistry")}} of each inclusive descendant that doesn't already have one, and attempting to upgrade any [custom elements](/en-US/docs/Web/API/Web_components/Using_custom_elements) found.
+متد **`initialize()`** در رابط {{domxref("CustomElementRegistry")}} این رجیستری را با یک زیردرخت DOM مرتبط می‌کند، ویژگی {{domxref("Element.customElementRegistry", "customElementRegistry")}} را برای هر نواده‌ای که هنوز آن را ندارد (شامل خود `root`) تنظیم می‌کند، و سعی می‌کند هر [عنصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements) یافت‌شده را ارتقا دهد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 initialize(root)
 ```
 
-### Parameters
+### پارامترها
 
 - `root`
-  - : A {{domxref("Node")}} object (typically a {{domxref("Document")}}, {{domxref("ShadowRoot")}}, or {{domxref("Element")}}) whose inclusive descendants will be associated with this registry.
+  - : یک شیء {{domxref("Node")}} (معمولاً یک {{domxref("Document")}}، {{domxref("ShadowRoot")}} یا {{domxref("Element")}}) که نوادگانِ شاملِ آن با این رجیستری مرتبط خواهند شد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if this `CustomElementRegistry` is not scoped (i.e., not created with `new CustomElementRegistry()`) and either `root` is a {{domxref("Document")}} node or `root`'s node document's {{domxref("Document.customElementRegistry", "customElementRegistry")}} is not this `CustomElementRegistry`.
+  - : اگر این `CustomElementRegistry` حوزه‌بندی‌شده نباشد (یعنی با `new CustomElementRegistry()` ساخته نشده باشد) و یا `root` یک گره {{domxref("Document")}} باشد یا {{domxref("Document.customElementRegistry", "customElementRegistry")}} سندِ گرهِ ریشه (node document) این `CustomElementRegistry` نباشد، پرتاب می‌شود.
 
-## Description
+## توضیحات
 
-When `initialize()` is called, it walks through the inclusive descendants of `root` in tree order. For each element (or `Document`/`ShadowRoot` at the root) that has a `null` {{domxref("Element.customElementRegistry", "customElementRegistry")}}, it sets that registry to this `CustomElementRegistry`. It then attempts to [upgrade](/en-US/docs/Web/API/CustomElementRegistry/upgrade) each element whose `customElementRegistry` matches this registry.
+هنگامی که `initialize()` فراخوانی می‌شود، نوادگانِ شاملِ `root` را به ترتیب درخت پیمایش می‌کند. برای هر عنصر (یا خودِ ریشه اگر `Document`/`ShadowRoot` باشد) که {{domxref("Element.customElementRegistry", "customElementRegistry")}} آن `null` باشد، آن را روی این `CustomElementRegistry` تنظیم می‌کند. سپس سعی می‌کند هر عنصری را که `customElementRegistry` آن با این رجیستری مطابقت دارد [ارتقا](/en-US/docs/Web/API/CustomElementRegistry/upgrade) دهد.
 
-Once a node's `customElementRegistry` is set to a `CustomElementRegistry` object, it cannot be changed. This means `initialize()` can only set the registry on nodes where it is still `null`. However, it will still attempt to [upgrade](/en-US/docs/Web/API/CustomElementRegistry/upgrade) any element whose `customElementRegistry` already matches this registry, not just elements that were freshly assigned.
+پس از اینکه `customElementRegistry` یک گره روی یک شیء `CustomElementRegistry` تنظیم شد، دیگر قابل تغییر نیست. این بدان معناست که `initialize()` فقط می‌تواند رجیستری را روی گره‌هایی تنظیم کند که همچنان `null` هستند. با این حال، همچنان سعی می‌کند هر عنصری را که `customElementRegistry` آن از قبل با این رجیستری مطابقت دارد ارتقا دهد، نه فقط عناصری که تازه اختصاص داده شده‌اند.
 
-Nodes have a `null` custom element registry in several situations, including:
+گره‌ها در چندین وضعیت دارای رجیستری عنصر سفارشی `null` هستند، از جمله:
 
-- Documents created by {{domxref("DOMImplementation.createHTMLDocument()")}}, whose custom element registry is `null` by default. Elements created within such documents also have `null` registries.
-- Shadow roots created with `customElementRegistry` set to `null` via {{domxref("Element.attachShadow()")}}.
-- Declarative shadow roots created from a {{HTMLElement("template")}} element with the `shadowrootcustomelementregistry` attribute, which instructs the HTML parser to leave the shadow root's custom element registry as `null`.
+- سندهایی که توسط {{domxref("DOMImplementation.createHTMLDocument()")}} ایجاد شده‌اند، که رجیستری عنصر سفارشی آن‌ها به‌طور پیش‌فرض `null` است. عناصر ایجادشده در چنین سندهایی نیز رجیستری `null` دارند.
+- ریشه‌های سایه (Shadow roots) که با `customElementRegistry` تنظیم‌شده روی `null` از طریق {{domxref("Element.attachShadow()")}} ایجاد شده‌اند.
+- ریشه‌های سایه اعلانی (Declarative shadow roots) که از یک عنصر {{HTMLElement("template")}} با ویژگی `shadowrootcustomelementregistry` ایجاد شده‌اند، که به تجزیه‌گر HTML دستور می‌دهد رجیستری عنصر سفارشی ریشه سایه را به‌صورت `null` نگه دارد.
 
-## Examples
+## مثال‌ها
 
-### Initializing a shadow root with a scoped registry
+### مقداردهی یک ریشه سایه با رجیستری حوزه‌بندی‌شده
 
-This example creates a shadow root without a custom element registry, adds HTML containing a custom element, and then calls `initialize()` to associate a scoped registry. The `<my-element>` element is upgraded when `initialize()` sets the registry on the shadow root and its descendants.
+این مثال یک ریشه سایه بدون رجیستری عنصر سفارشی ایجاد می‌کند، HTML حاوی یک عنصر سفارشی اضافه می‌کند، و سپس `initialize()` را برای مرتبط کردن یک رجیستری حوزه‌بندی‌شده فراخوانی می‌کند. عنصر `<my-element>` زمانی ارتقا می‌یابد که `initialize()` رجیستری را روی ریشه سایه و نوادگان آن تنظیم کند.
 
 ```js
 const myRegistry = new CustomElementRegistry();
@@ -82,17 +76,17 @@ console.log(shadow.querySelector("my-element").textContent);
 // "Hello from scoped registry!"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using custom elements](/en-US/docs/Web/API/Web_components/Using_custom_elements)
-- {{domxref("CustomElementRegistry.CustomElementRegistry()", "CustomElementRegistry()")}} constructor
+- [استفاده از عناصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements)
+- سازنده {{domxref("CustomElementRegistry.CustomElementRegistry()", "CustomElementRegistry()")}}
 - {{domxref("CustomElementRegistry.define()")}}
 - {{domxref("CustomElementRegistry.upgrade()")}}
