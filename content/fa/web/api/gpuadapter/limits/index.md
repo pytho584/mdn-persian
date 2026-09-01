@@ -1,11 +1,5 @@
 ---
 title: "GPUAdapter: limits property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/limits"
-status: "needs-translation"
----
-
----
-title: "GPUAdapter: limits property"
 short-title: limits
 slug: Web/API/GPUAdapter/limits
 page-type: web-api-instance-property
@@ -14,20 +8,19 @@ browser-compat: api.GPUAdapter.limits
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`limits`** read-only property of the
-{{domxref("GPUAdapter")}} interface returns a {{domxref("GPUSupportedLimits")}} object that describes the limits supported by the adapter.
+ویژگی فقط خواندنی **`limits`** از رابط {{domxref("GPUAdapter")}} یک شیء {{domxref("GPUSupportedLimits")}} برمی‌گرداند که محدودیت‌های پشتیبانی‌شده توسط آداپتور را توصیف می‌کند.
 
-You should note that, rather than reporting the exact limits of each GPU, browsers will likely report different tier values of different limits to reduce the unique information available to drive-by fingerprinting. For example, the tiers of a certain limit might be 2048, 8192, and 32768. If your GPU's actual limit is 16384, the browser will still report 8192.
+توجه داشته باشید که مرورگرها به جای گزارش محدودیت‌های دقیق هر GPU، احتمالاً مقادیر رتبه‌بندی (tier) متفاوتی از محدودیت‌های مختلف را گزارش می‌کنند تا اطلاعات منحصربه‌فرد در دسترس برای اثرانگشت‌گیری (fingerprinting) از طریق مرور کاهش یابد. به عنوان مثال، رتبه‌های یک محدودیت خاص ممکن است 2048، 8192 و 32768 باشند. اگر محدودیت واقعی GPU شما 16384 باشد، مرورگر همچنان 8192 را گزارش خواهد داد.
 
-Given that different browsers will handle this differently and the tier values may change over time, it is hard to provide an accurate account of what limit values to expect — thorough testing is advised.
+با توجه به اینکه مرورگرهای مختلف این موضوع را به طور متفاوتی مدیریت می‌کنند و مقادیر رتبه‌بندی ممکن است در طول زمان تغییر کنند، ارائه یک گزارش دقیق از مقادیر محدودیت مورد انتظار دشوار است – توصیه می‌شود آزمایش جامعی انجام دهید.
 
-## Value
+## مقدار
 
-A {{domxref("GPUSupportedLimits")}} object instance.
+یک نمونه از شیء {{domxref("GPUSupportedLimits")}}.
 
-## Examples
+## مثال‌ها
 
-In the following code we query the `GPUAdapter.limits` value of `maxBindGroups` to see if it is equal to or greater than 6. Our theoretical example app ideally needs 6 bind groups, so if the returned value is >= 6, we add a maximum limit of 6 to the `requiredLimits` object, and request a device with that limit requirement using {{domxref("GPUAdapter.requestDevice()")}}:
+در کد زیر، ما مقدار `GPUAdapter.limits` از `maxBindGroups` را پرس‌وجو می‌کنیم تا ببینیم آیا برابر یا بزرگتر از 6 است. برنامه نمونه تئوری ما به طور ایده‌آل به 6 گروه اتصال (bind group) نیاز دارد، بنابراین اگر مقدار برگشتی >= 6 باشد، یک محدودیت حداکثر 6 را به شیء `requiredLimits` اضافه می‌کنیم و با استفاده از {{domxref("GPUAdapter.requestDevice()")}} یک دستگاه با آن نیازمندی محدودیت درخواست می‌کنیم.
 
 ```js
 async function init() {
@@ -55,14 +48,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
