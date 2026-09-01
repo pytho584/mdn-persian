@@ -1,11 +1,5 @@
 ---
 title: "HIDDevice: receiveFeatureReport() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/receiveFeatureReport"
-status: "needs-translation"
----
-
----
-title: "HIDDevice: receiveFeatureReport() method"
 short-title: receiveFeatureReport()
 slug: Web/API/HIDDevice/receiveFeatureReport
 page-type: web-api-instance-method
@@ -16,42 +10,42 @@ browser-compat: api.HIDDevice.receiveFeatureReport
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`receiveFeatureReport()`** method of the {{domxref("HIDDevice")}} interface receives a feature report from the HID device. Feature reports are a way for HID devices and applications to exchange non-standardized HID data.
+متد **`receiveFeatureReport()`** از رابط {{domxref("HIDDevice")}} یک گزارش ویژگی (feature report) را از دستگاه HID دریافت می‌کند. گزارش‌های ویژگی راهی برای تبادل داده‌های HID غیراستاندارد بین دستگاه‌های HID و برنامه‌ها هستند.
 
-The `reportId` for each of the report formats that this device supports can be retrieved from {{domxref("HIDDevice.collections")}}.
+`reportId` مربوط به هر یک از قالب‌های گزارشی که این دستگاه از آن‌ها پشتیبانی می‌کند، از طریق {{domxref("HIDDevice.collections")}} قابل بازیابی است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 receiveFeatureReport(reportId)
 ```
 
-### Parameters
+### پارامترها
 
 - `reportId`
-  - : An 8-bit report ID. If the HID device does not use report IDs, send `0`.
+  - : یک شناسهٔ گزارش ۸ بیتی. اگر دستگاه HID از شناسه‌های گزارش استفاده نمی‌کند، مقدار `0` را ارسال کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} which resolves with a {{jsxref("DataView")}} object containing the feature report.
+یک {{jsxref("Promise")}} که با یک شیء {{jsxref("DataView")}} حاوی گزارش ویژگی حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if receiving the report fails for any reason.
+  - : در صورت شکست دریافت گزارش به هر دلیلی، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example a report is received from a device using a `reportId` of `1`.
+در مثال زیر، یک گزارش از دستگاهی با `reportId` برابر با `1` دریافت می‌شود.
 
 ```js
 const dataView = await device.receiveFeatureReport(1);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
