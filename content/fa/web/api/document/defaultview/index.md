@@ -1,11 +1,5 @@
 ---
 title: "Document: defaultView property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/defaultView"
-status: "needs-translation"
----
-
----
-title: "Document: defaultView property"
 short-title: defaultView
 slug: Web/API/Document/defaultView
 page-type: web-api-instance-property
@@ -14,19 +8,18 @@ browser-compat: api.Document.defaultView
 
 {{APIRef("DOM")}}
 
-In browsers, **`document.defaultView`** returns the
-{{domxref("Window", "window")}} object associated with {{Glossary("Browsing_context", "a document")}}, or `null` if none is available.
+در مرورگرها، **`document.defaultView`** شیء {{domxref("Window", "window")}} مرتبط با {{Glossary("Browsing_context", "یک سند")}} را بازمی‌گرداند، یا اگر در دسترس نباشد، `null` را برمی‌گرداند.
 
-This property is read-only.
+این ویژگی فقط‌خواندنی است.
 
-## Value
+## مقدار
 
-The {{domxref("Window", "window")}} object.
+شیء {{domxref("Window", "window")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
