@@ -1,11 +1,5 @@
 ---
 title: "Event: initEvent() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/initEvent"
-status: "needs-translation"
----
-
----
-title: "Event: initEvent() method"
 short-title: initEvent()
 slug: Web/API/Event/initEvent
 page-type: web-api-instance-method
@@ -16,19 +10,13 @@ browser-compat: api.Event.initEvent
 
 {{APIRef("DOM")}}{{deprecated_header}}{{AvailableInWorkers}}
 
-The **`Event.initEvent()`** method is used to initialize the
-value of an {{ domxref("event") }} created using {{domxref("Document.createEvent()")}}.
+متد **`Event.initEvent()`** برای مقداردهی اولیه به رویدادی استفاده می‌شود که با استفاده از {{domxref("Document.createEvent()")}} ساخته شده است.
 
-Events initialized in this way must have been created with the
-{{domxref("Document.createEvent()") }} method.
-This method must be called to set the event
-before it is dispatched, using {{ domxref("EventTarget.dispatchEvent()") }}.
-Once dispatched, it doesn't do anything anymore.
+رویدادهایی که به این روش مقداردهی می‌شوند باید با متد {{domxref("Document.createEvent()")}} ایجاد شده باشند. این متد باید قبل از ارسال رویداد، برای تنظیم آن فراخوانی شود و ارسال با استفاده از {{domxref("EventTarget.dispatchEvent()")}} انجام می‌شود. پس از ارسال، این متد دیگر هیچ کاری انجام نمی‌دهد.
 
 > [!NOTE]
-> _Do not use this method anymore as it is deprecated._
-> Instead use specific event constructors, like {{domxref("Event.Event", "Event()")}}.
-> The section on [Creating and dispatching events](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) gives more information about the way to use these.
+> _دیگر از این متد استفاده نکنید، زیرا منسوخ شده است._
+> در عوض از سازنده‌های اختصاصی رویداد، مانند {{domxref("Event.Event", "Event()")}} استفاده کنید. بخش [ایجاد و ارسال رویدادها](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) اطلاعات بیشتری درباره نحوه استفاده از این سازنده‌ها ارائه می‌دهد.
 
 ## Syntax
 
@@ -36,23 +24,20 @@ Once dispatched, it doesn't do anything anymore.
 initEvent(type, bubbles, cancelable)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string defining the type of event.
+  - : یک رشته که نوع رویداد را مشخص می‌کند.
 - `bubbles`
-  - : A boolean value deciding whether the event should bubble up through the
-    event chain or not. Once set, the read-only property {{ domxref("Event.bubbles") }}
-    will give its value.
+  - : یک مقدار بولی که تعیین می‌کند آیا رویداد باید در زنجیره رویداد به سمت بالا منتشر شود یا نه. پس از تنظیم، ویژگی فقط‌خواندنی {{ domxref("Event.bubbles") }} مقدار آن را نشان می‌دهد.
 - `cancelable`
-  - : A boolean value defining whether the event can be canceled. Once set, the
-    read-only property {{ domxref("Event.cancelable") }} will give its value.
+  - : یک مقدار بولی که تعیین می‌کند آیا رویداد قابل لغو است یا نه. پس از تنظیم، ویژگی فقط‌خواندنی {{ domxref("Event.cancelable") }} مقدار آن را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None.
+هیچ‌کدام.
 
-## Example
+## مثال
 
 ```js
 // Create the event.
@@ -70,15 +55,15 @@ elem.addEventListener("click", (e) => {
 elem.dispatchEvent(event);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The constructor to use instead of this deprecated method:
-  {{domxref("Event.Event", "Event()")}}. To create more specific event interfaces than `Event`, use the constructor defined for the desired event interface.
+- سازنده‌ای که باید به جای این متد منسوخ استفاده شود:
+  {{domxref("Event.Event", "Event()")}}. برای ساخت اینترفیس‌های رویداد خاص‌تر از `Event`، از سازنده تعریف‌شده برای اینترفیس رویداد موردنظر استفاده کنید.
