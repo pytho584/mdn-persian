@@ -1,11 +1,5 @@
 ---
 title: "FetchEvent: clientId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/clientId"
-status: "needs-translation"
----
-
----
-title: "FetchEvent: clientId property"
 short-title: clientId
 slug: Web/API/FetchEvent/clientId
 page-type: web-api-instance-property
@@ -14,18 +8,15 @@ browser-compat: api.FetchEvent.clientId
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`clientId`** read-only property of the
-{{domxref("FetchEvent")}} interface returns the id of the {{domxref("Client")}} that the
-current service worker is controlling.
+ویژگی فقط‌خواندنی **`clientId`** در رابط {{domxref("FetchEvent")}}، شناسهٔ {{domxref("Client")}}ای را برمی‌گرداند که سرویس‌ورکر فعلی آن را کنترل می‌کند.
 
-The {{domxref("Clients.get()")}} method could then be passed this ID to retrieve the
-associated client.
+سپس می‌توان این شناسه را به متد {{domxref("Clients.get()")}} داد تا کلاینت مرتبط بازیابی شود.
 
-## Value
+## مقدار
 
-A string that represents the client ID.
+یک رشته که نمایندهٔ شناسهٔ کلاینت است.
 
-## Examples
+## مثال‌ها
 
 ```js
 self.addEventListener("fetch", (event) => {
@@ -33,16 +24,16 @@ self.addEventListener("fetch", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-- [Service workers basic code example](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
-- [Using web workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [نمونه کد پایه سرویس‌ورکرها](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
+- [استفاده از web workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
