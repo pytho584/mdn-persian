@@ -1,11 +1,5 @@
 ---
 title: "Geolocation: clearWatch() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/clearWatch"
-status: "needs-translation"
----
-
----
-title: "Geolocation: clearWatch() method"
 short-title: clearWatch()
 slug: Web/API/Geolocation/clearWatch
 page-type: web-api-instance-method
@@ -14,25 +8,24 @@ browser-compat: api.Geolocation.clearWatch
 
 {{securecontext_header}}{{ APIref("Geolocation API") }}
 
-The **`clearWatch()`** method of the {{domxref("Geolocation")}} interface is used to unregister location/error monitoring handlers previously installed using {{domxref("Geolocation.watchPosition()")}}.
+متد **`clearWatch()`** در رابط {{domxref("Geolocation")}} برای لغو نظارت‌هایی که قبلاً با استفاده از {{domxref("Geolocation.watchPosition()")}} برای موقعیت/خطا ثبت شده‌اند، به کار می‌رود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 clearWatch(id)
 ```
 
-### Parameters
+### پارامترها
 
 - `id`
-  - : The ID number returned by the {{domxref("Geolocation.watchPosition()")}} method when
-    installing the handler you wish to remove.
+  - : شماره شناسایی که توسط متد {{domxref("Geolocation.watchPosition()")}} هنگام نصبِ نظارت‌کننده‌ای که می‌خواهید حذف کنید، بازگردانده شده است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 let id;
@@ -66,17 +59,17 @@ options = {
 id = navigator.geolocation.watchPosition(success, error, options);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using geolocation](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [استفاده از موقعیت‌یابی جغرافیایی](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
 - {{domxref("Geolocation")}}
 - {{domxref("Geolocation.watchPosition()")}}
 - {{domxref("Geolocation.getCurrentPosition()")}}
