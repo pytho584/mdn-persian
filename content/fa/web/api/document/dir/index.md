@@ -1,11 +1,5 @@
 ---
 title: "Document: dir property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/dir"
-status: "needs-translation"
----
-
----
-title: "Document: dir property"
 short-title: dir
 slug: Web/API/Document/dir
 page-type: web-api-instance-property
@@ -14,24 +8,20 @@ browser-compat: api.Document.dir
 
 {{ApiRef("HTML DOM")}}
 
-The **`Document.dir`** property is a string
-representing the directionality of the text of the document, whether left to right
-(default) or right to left. Possible values are `'rtl'`, right to left, and
-`'ltr'`, left to right.
+ویژگی **`Document.dir`** یک رشته است که جهت‌گیری متن سند را نشان می‌دهد، خواه چپ‌به‌راست (پیش‌فرض) یا راست‌به‌چپ. مقادیر ممکن عبارتند از `'rtl'` (راست‌به‌چپ) و `'ltr'` (چپ‌به‌راست).
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir) global
-  attribute
+- ویژگی سراسری [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir)
