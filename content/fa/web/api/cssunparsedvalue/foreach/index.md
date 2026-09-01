@@ -1,7 +1,5 @@
 ---
 title: "CSSUnparsedValue: forEach() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSUnparsedValue/forEach"
-status: "needs-translation"
 ---
 
 ---
@@ -14,48 +12,47 @@ browser-compat: api.CSSUnparsedValue.forEach
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSUnparsedValue.forEach()`** method executes a provided function once for each element of the {{domxref('CSSUnparsedValue')}}.
+متد **`CSSUnparsedValue.forEach()`** برای هر عنصر از {{domxref('CSSUnparsedValue')}}، تابع ارائه‌شده را یک‌بار اجرا می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 forEach(callbackFn)
 forEach(callbackFn, thisArg)
 ```
 
-### Parameters
+### پارامترها
 
 - `callbackFn`
-  - : The function to execute for each element, taking three arguments:
+  - : تابعی که باید برای هر عنصر اجرا شود و سه آرگومان می‌گیرد:
     - `currentValue`
-      - : The value of the current element being processed.
+      - : مقدار عنصر فعلی در حال پردازش.
     - `index` {{optional_inline}}
-      - : The index of the current element being processed.
+      - : ایندکس عنصر فعلی در حال پردازش.
     - `array` {{optional_inline}}
-      - : The `CSSUnparsedValue` that `forEach()` is being called on.
+      - : شیء `CSSUnparsedValue` که متد `forEach()` روی آن فراخوانی شده است.
 
 - `thisArg` {{Optional_inline}}
-  - : Value to use as **`this`** (i.e., the reference
-    `Object`) when executing `callback`.
+  - : مقداری که هنگام اجرای `callback` به‌عنوان **`this`** (یعنی همان شیء مرجع `Object`) استفاده می‌شود.
 
-### Return value
+### مقدار برگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSUnparsedValue.CSSUnparsedValue", "CSSUnparsedValue()")}}
 - {{domxref("CSSUnparsedValue.entries")}}
 - {{domxref("CSSUnparsedValue.keys")}}
 - {{domxref("CSSUnparsedValue.length")}}
 - {{domxref("CSSUnparsedValue.values")}}
-- [Using the CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
+- [استفاده از CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
 - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
