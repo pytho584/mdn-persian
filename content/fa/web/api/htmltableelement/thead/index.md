@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableElement: tHead property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/tHead"
-status: "needs-translation"
----
-
----
-title: "HTMLTableElement: tHead property"
 short-title: tHead
 slug: Web/API/HTMLTableElement/tHead
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.HTMLTableElement.tHead
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLTableElement.tHead`** represents the
-{{HTMLElement("thead")}} element of a {{HTMLElement("table")}}. Its value will be
-`null` if there is no such element.
+خاصیت **`HTMLTableElement.tHead`** عنصر {{HTMLElement("thead")}} یک جدول {{HTMLElement("table")}} را نشان می‌دهد. اگر چنین عنصری وجود نداشته باشد، مقدار آن `null` خواهد بود.
 
-## Value
+## مقدار
 
-A {{domxref("HTMLTableSectionElement")}}.
+یک {{domxref("HTMLTableSectionElement")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 if (table.tHead === myHeadEl) {
@@ -30,14 +22,14 @@ if (table.tHead === myHeadEl) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The interface implementing this property: {{domxref("HTMLTableElement")}}.
+- رابط پیاده‌سازی‌کننده این خاصیت: {{domxref("HTMLTableElement")}}.
