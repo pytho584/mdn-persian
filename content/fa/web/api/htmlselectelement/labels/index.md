@@ -1,7 +1,5 @@
 ---
 title: "HTMLSelectElement: labels property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/labels"
-status: "needs-translation"
 ---
 
 ---
@@ -14,16 +12,13 @@ browser-compat: api.HTMLSelectElement.labels
 
 {{APIRef("DOM")}}
 
-The **`HTMLSelectElement.labels`** read-only property returns a
-{{domxref("NodeList")}} of the {{HTMLElement("label")}} elements associated with the
-{{HTMLElement("select")}} element.
+ویژگی فقطخواندنی **`HTMLSelectElement.labels`** یک {{domxref("NodeList")}} از عناصر {{HTMLElement("label")}} مرتبط با عنصر {{HTMLElement("select")}} را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("NodeList")}} containing the `<label>` elements associated
-with the `<select>` element.
+یک {{domxref("NodeList")}} شامل عناصر `<label>` مرتبط با عنصر `<select>`.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -47,10 +42,10 @@ for (const label of select.labels) {
 
 {{EmbedLiveSample("Examples", "100%", 30)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
