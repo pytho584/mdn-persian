@@ -1,11 +1,5 @@
 ---
 title: "CSSKeyframesRule: findRule() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/findRule"
-status: "needs-translation"
----
-
----
-title: "CSSKeyframesRule: findRule() method"
 short-title: findRule()
 slug: Web/API/CSSKeyframesRule/findRule
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.CSSKeyframesRule.findRule
 
 {{APIRef("CSSOM") }}
 
-The **`findRule()`** method of the {{domxref("CSSKeyframeRule")}} interface finds the {{domxref("CSSKeyFrameRule")}} that matches the specified keyframe selector.
+متد **`findRule()`** از رابط {{domxref("CSSKeyframeRule")}}، قاعده‌ی {{domxref("CSSKeyFrameRule")}} را می‌یابد که با انتخابگر keyframe مشخص‌شده مطابقت دارد.
 
 ## Syntax
 
@@ -22,23 +16,23 @@ The **`findRule()`** method of the {{domxref("CSSKeyframeRule")}} interface find
 findRule(select)
 ```
 
-### Parameters
+### پارامترها
 
 - `select`
-  - : A string which contains the [keyframe selector](/en-US/docs/Web/CSS/Reference/Selectors/Keyframe_selectors) of the rule to be found, which must be:
-    - a comma-separated list of percentage values between 0% and 100%;
-    - or, the keywords `from` or `to`
+  - : رشته‌ای که شامل [انتخابگر keyframe](/en-US/docs/Web/CSS/Reference/Selectors/Keyframe_selectors) قاعده‌ی موردنظر برای یافتن است. این رشته باید یکی از موارد زیر باشد:
+    - فهرستی از مقادیر درصدی بین 0٪ و 100٪ که با کاما از هم جدا شده‌اند؛
+    - یا کلیدواژه‌های `from` یا `to`
 
-    Note that the number and order of the values in the specified keyframe selector must match those of the targeted keyframe rule(s). White-space is disregarded.
+    توجه داشته باشید که تعداد و ترتیب مقادیر در انتخابگر keyframe مشخص‌شده باید با قاعده(های) keyframe هدف مطابقت داشته باشد. فاصله‌های خالی نادیده گرفته می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("CSSKeyframeRule")}} which is the last matching rule. If no rules are found, nothing is returned.
+یک {{domxref("CSSKeyframeRule")}} که آخرین قاعده‌ی منطبق است. اگر هیچ قاعده‌ای یافت نشود، چیزی بازگردانده نمی‌شود.
 
-## Examples
+## مثال‌ها
 
-The CSS includes a keyframes at-rule. This will be the first {{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`.
-`myRules[0]` returns a {{domxref("CSSKeyframesRule")}} object. Calling findRule("to") returns a {{domxref("CSSKeyframeRule")}} representing the second rule.
+CSS شامل یک at-rule از نوع keyframes است. این قاعده، اولین {{domxref("CSSRule")}} خواهد بود که توسط `document.styleSheets[0].cssRules` بازگردانده می‌شود.
+`myRules[0]` یک شیء {{domxref("CSSKeyframesRule")}} برمی‌گرداند. فراخوانی `findRule("to")` یک {{domxref("CSSKeyframeRule")}} بازمی‌گرداند که نمایانگر قاعده‌ی دوم است.
 
 ```css
 @keyframes slide-in {
@@ -54,14 +48,14 @@ The CSS includes a keyframes at-rule. This will be the first {{domxref("CSSRule"
 
 ```js
 let myRules = document.styleSheets[0].cssRules;
-let keyframes = myRules[0]; // a CSSKeyframesRule
-console.log(keyframes.findRule("to")); // a CSSKeyframeRule object
+let keyframes = myRules[0]; // یک CSSKeyframesRule
+console.log(keyframes.findRule("to")); // یک شیء CSSKeyframeRule
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
