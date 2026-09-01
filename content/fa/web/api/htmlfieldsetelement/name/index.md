@@ -1,11 +1,5 @@
 ---
 title: "HTMLFieldSetElement: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFieldSetElement/name"
-status: "needs-translation"
----
-
----
-title: "HTMLFieldSetElement: name property"
 short-title: name
 slug: Web/API/HTMLFieldSetElement/name
 page-type: web-api-instance-property
@@ -14,11 +8,11 @@ browser-compat: api.HTMLFieldSetElement.name
 
 {{ApiRef("HTML DOM")}}
 
-The **`name`** property of the {{domxref("HTMLFieldSetElement")}} interface indicates the name of the {{HTMLElement("fieldset")}} element. It reflects the element's [`name`](/en-US/docs/Web/HTML/Reference/Elements/fieldset#name) attribute.
+ویژگی **`name`** در رابط {{domxref("HTMLFieldSetElement")}} نشان‌دهنده نام عنصر {{HTMLElement("fieldset")}} است. این ویژگی، صفت [`name`](/en-US/docs/Web/HTML/Reference/Elements/fieldset#name) عنصر را منعکس می‌کند.
 
 ## Value
 
-A string representing the element's name.
+یک رشته که نام عنصر را نشان می‌دهد.
 
 ## Example
 
