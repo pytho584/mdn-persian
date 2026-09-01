@@ -1,9 +1,4 @@
----
-title: "Document: getElementsByTagNameNS() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByTagNameNS"
-status: "needs-translation"
----
-
+```
 ---
 title: "Document: getElementsByTagNameNS() method"
 short-title: getElementsByTagNameNS()
@@ -14,41 +9,35 @@ browser-compat: api.Document.getElementsByTagNameNS
 
 {{APIRef("DOM")}}
 
-Returns a list of elements with the given tag name belonging to the given namespace.
-The complete document is searched, including the root node.
+فهرستی از عناصر با نام تگ داده‌شده که به فضای نام (namespace) داده‌شده تعلق دارند را برمی‌گرداند. کل سند، از جمله گره ریشه، جستجو می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getElementsByTagNameNS(namespace, name)
 ```
 
-### Parameters
+### پارامترها
 
 - `namespace`
-  - : The namespace URI of elements to look for (see {{domxref("Element.namespaceURI", "element.namespaceURI")}}).
+  - : URI فضای نام عناصری که به دنبال آنها هستید (به {{domxref("Element.namespaceURI", "element.namespaceURI")}} مراجعه کنید).
 - `name`
-  - : Either the local name of elements to look for or the special value `*`, which matches all elements (see {{domxref("Element.localName", "element.localName")}}).
+  - : یا نام محلی (local name) عناصری که به دنبال آنها هستید، یا مقدار ویژهٔ `*` که با همه عناصر مطابقت دارد (به {{domxref("Element.localName", "element.localName")}} مراجعه کنید).
 
     > [!NOTE]
-    > Unlike {{domxref("document.getElementsByTagName()")}}, the parameters for `getElementsByTagNameNS()` are case-sensitive.
+    > برخلاف {{domxref("document.getElementsByTagName()")}}، پارامترهای `getElementsByTagNameNS()` به بزرگی/کوچکی حروف حساس هستند.
 
-### Return value
+### مقدار بازگشتی
 
-A live {{DOMxRef("HTMLCollection")}} of found elements in the order they appear in the tree.
+یک {{DOMxRef("HTMLCollection")}} زنده از عناصر یافت‌شده، به ترتیبی که در درخت DOM ظاهر می‌شوند.
 
-## Examples
+## مثال‌ها
 
-In the following example `getElementsByTagNameNS` starts from a particular
-parent element, and searches top-down recursively through the DOM from that parent
-element, looking for child elements matching the tag `name` parameter.
+در مثال زیر، `getElementsByTagNameNS` از یک عنصر والد مشخص شروع می‌کند و از آن عنصر والد به‌صورت بازگشتی و از بالا به پایین در DOM جستجو می‌کند و به دنبال عناصر فرزندی می‌گردد که با پارامتر تگ `name` مطابقت دارند.
 
-Note that when the node on which `getElementsByTagName` is invoked is not
-the `document` node, in fact the
-{{domxref("element.getElementsByTagNameNS")}} method is used.
+توجه داشته باشید که وقتی گره‌ای که `getElementsByTagName` روی آن فراخوانی می‌شود، گرهٔ `document` نباشد، در واقع از متد {{domxref("element.getElementsByTagNameNS")}} استفاده می‌شود.
 
-To use the following example, just copy/paste it into a new file saved with the .xhtml
-extension.
+برای استفاده از مثال زیر، کافی است آن را در یک فایل جدید با پسوند `.xhtml` کپی و جای‌گذاری کنید.
 
 ```html
 <p>Some outer text</p>
@@ -124,14 +113,15 @@ document.getElementById("btn2").addEventListener("click", div1ParaElems);
 document.getElementById("btn3").addEventListener("click", div2ParaElems);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("Element.getElementsByTagNameNS()")}}
+```
