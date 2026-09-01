@@ -1,11 +1,5 @@
 ---
 title: "Document: styleSheets property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/styleSheets"
-status: "needs-translation"
----
-
----
-title: "Document: styleSheets property"
 short-title: styleSheets
 slug: Web/API/Document/styleSheets
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.Document.styleSheets
 
 {{APIRef("CSSOM")}}
 
-The **`styleSheets`** read-only property of the {{domxref("Document")}} interface returns a {{domxref('StyleSheetList')}} of {{domxref('CSSStyleSheet')}} objects, for stylesheets explicitly linked into or embedded in a document.
+ویژگی فقط‌خواندنی **`styleSheets`** در رابط {{domxref("Document")}}، یک {{domxref('StyleSheetList')}} از اشیاء {{domxref('CSSStyleSheet')}} را برای برگه‌های سبکی که به‌طور صریح در یک سند لینک شده یا جاسازی شده‌اند، برمی‌گرداند.
 
-## Value
+## مقدار
 
-The returned list is ordered as follows:
+فهرست بازگشتی به ترتیب زیر مرتب می‌شود:
 
-- StyleSheets retrieved from {{HTTPHeader("Link")}} headers are placed first, sorted in header order.
-- StyleSheets retrieved from the DOM are placed after, sorted in [tree order](https://dom.spec.whatwg.org/#concept-tree-order).
+- برگه‌های سبکی دریافت‌شده از سرآیندهای {{HTTPHeader("Link")}} ابتدا قرار می‌گیرند و بر اساس ترتیب سرآیند مرتب می‌شوند.
+- برگه‌های سبکی دریافت‌شده از DOM پس از آن‌ها قرار می‌گیرند و بر اساس [ترتیب درخت](https://dom.spec.whatwg.org/#concept-tree-order) مرتب می‌شوند.
 
-## Examples
+## مثال‌ها
 
-### Retrieving a specific stylesheet by its title
+### بازیابی یک برگه سبک خاص با عنوان آن
 
 ```js
 function getStyleSheet(uniqueTitle) {
@@ -37,9 +31,9 @@ function getStyleSheet(uniqueTitle) {
 }
 ```
 
-### Accessing rules in the stylesheet
+### دسترسی به قوانین درون برگه سبک
 
-You can access these stylesheets and their rules individually using the stylesheet, style, and {{domxref("CSSRule")}} objects, as demonstrated in this example, which prints out all of the style rule selectors to the console.
+با استفاده از اشیاء stylesheet، style و {{domxref("CSSRule")}} می‌توانید به این برگه‌های سبک و قوانین آن‌ها به‌صورت جداگانه دسترسی پیدا کنید؛ همان‌طور که در این مثال نشان داده شده است که همهٔ انتخاب‌گرهای قوانین سبک را در کنسول چاپ می‌کند.
 
 ```js
 for (const styleSheet of document.styleSheets) {
@@ -49,7 +43,7 @@ for (const styleSheet of document.styleSheets) {
 }
 ```
 
-For a document with a single stylesheet in which the following three rules are defined:
+برای سندی که فقط یک برگه سبک دارد و سه قانون زیر در آن تعریف شده است:
 
 ```css
 body {
@@ -65,7 +59,7 @@ p {
 }
 ```
 
-This script outputs the following:
+این اسکریپت خروجی زیر را تولید می‌کند:
 
 ```plain
 BODY
@@ -73,10 +67,10 @@ P
 #LUMPY
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
