@@ -1,11 +1,5 @@
 ---
 title: "FontFace: load() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/load"
-status: "needs-translation"
----
-
----
-title: "FontFace: load() method"
 short-title: load()
 slug: Web/API/FontFace/load
 page-type: web-api-instance-method
@@ -14,32 +8,32 @@ browser-compat: api.FontFace.load
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`load()`** method of the {{domxref("FontFace")}} interface requests and loads a font whose `source` was specified as a URL. It returns a {{jsxref('Promise')}} that resolves with the current `FontFace` object.
+متد **`load()`** از رابط {{domxref("FontFace")}} درخواست بارگذاری قلمی را می‌دهد که `source` آن به‌صورت URL مشخص شده است. این متد یک {{jsxref('Promise')}} برمی‌گرداند که با شیء فعلی `FontFace` حل می‌شود.
 
-If the `source` for the font face was specified as binary data, or the font {{domxref("FontFace/status", "status")}} property of the font face is anything other than `unloaded`, then this method does nothing.
+اگر `source` قلم به‌صورت داده دودویی مشخص شده باشد، یا ویژگی {{domxref("FontFace/status", "status")}} قلم چیزی غیر از `unloaded` باشد، این متد هیچ کاری انجام نمی‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 load()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} that resolves with a reference to the current `FontFace` object when the font loads or rejects with a `NetworkError` {{domxref("DOMException")}} if the loading process fails.
+یک {{jsxref('Promise')}} که وقتی قلم بارگذاری می‌شود با ارجاعی به شیء فعلی `FontFace` حل می‌شود، یا اگر فرآیند بارگذاری شکست بخورد، با یک {{domxref("DOMException")}} از نوع `NetworkError` رد می‌شود.
 
-### Exceptions
+### استثناها
 
 - `NetworkError` {{domxref("DOMException")}}
-  - : Indicates that the attempt to load the font failed.
+  - : نشان می‌دهد که تلاش برای بارگذاری قلم ناموفق بوده است.
 
-## Examples
+## مثال‌ها
 
-This simple example loads a font and uses it to display some text in a canvas element (with an id of `js-canvas`).
+این مثال ساده یک قلم را بارگذاری می‌کند و از آن برای نمایش متنی در یک عنصر canvas (با شناسه `js-canvas`) استفاده می‌کند.
 
 ```html hidden
 <canvas id="js-canvas"></canvas>
@@ -73,10 +67,10 @@ fontFile.load().then(
 
 {{EmbedLiveSample('Examples')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
