@@ -1,11 +1,5 @@
 ---
 title: "CSSRule: parentRule property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSRule/parentRule"
-status: "needs-translation"
----
-
----
-title: "CSSRule: parentRule property"
 short-title: parentRule
 slug: Web/API/CSSRule/parentRule
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.CSSRule.parentRule
 
 {{ APIRef("CSSOM") }}
 
-The **`parentRule`** property of the {{domxref("CSSRule")}}
-interface returns the containing rule of the current rule if this exists, or otherwise
-returns null.
+خاصیت **`parentRule`** از رابط {{domxref("CSSRule")}}، در صورت وجود، قاعدهٔ شاملِ قاعدهٔ فعلی را بازمیگرداند؛ در غیر این صورت `null` برمیگرداند.
 
-## Value
+## مقدار
 
-A {{domxref("CSSRule")}} which is the type of the containing rules. If the current rule is inside a media query, this would return {{domxref("CSSMediaRule")}}. Otherwise it returns null.
+یک {{domxref("CSSRule")}} که نوع قاعدهٔ شامل است. اگر قاعدهٔ فعلی داخل یک media query باشد، این خاصیت یک {{domxref("CSSMediaRule")}} برمیگرداند. در غیر این صورت `null` برمیگرداند.
 
-## Examples
+## مثال‌ها
 
 ```css
 @media (width >= 500px) {
@@ -44,10 +36,10 @@ let childRules = myRules[0].cssRules;
 console.log(childRules[0].parentRule); // a CSSMediaRule
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
