@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaColSpan property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaColSpan"
-status: "needs-translation"
----
-
----
-title: "Element: ariaColSpan property"
 short-title: ariaColSpan
 slug: Web/API/Element/ariaColSpan
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Element.ariaColSpan
 
 {{APIRef("DOM")}}
 
-The **`ariaColSpan`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan) attribute, which defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid.
+ویژگی **`ariaColSpan`** از رابط {{domxref("Element")}}، مقدار ویژگی [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan) را منعکس می‌کند؛ ویژگی‌ای که تعداد ستون‌های پوشش‌داده‌شده توسط یک سلول (cell) یا سلول شبکه‌ای (gridcell) را در یک جدول (table)، شبکه (grid) یا درخت‌شبکه (treegrid) تعیین می‌کند.
 
-## Value
+## مقدار
 
-A string which contains an integer.
+یک رشته (string) که یک عدد صحیح (integer) را شامل می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-colspan` attribute on the element with an ID of `spanning-heading` is set to "2". Using `ariaColSpan` we update the value to "3".
+در این مثال، ویژگی `aria-colspan` روی عنصری با شناسه‌ی `spanning-heading` برابر «2» تنظیم شده است. با استفاده از `ariaColSpan` مقدار آن را به «3» به‌روزرسانی می‌کنیم.
 
 ```html
 <table>
@@ -49,14 +43,14 @@ el.ariaColSpan = "3";
 console.log(el.ariaColSpan);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
+- [نقش جدول (table) در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
