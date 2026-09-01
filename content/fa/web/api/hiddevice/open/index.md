@@ -1,11 +1,5 @@
 ---
 title: "HIDDevice: open() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/open"
-status: "needs-translation"
----
-
----
-title: "HIDDevice: open() method"
 short-title: open()
 slug: Web/API/HIDDevice/open
 page-type: web-api-instance-method
@@ -16,44 +10,44 @@ browser-compat: api.HIDDevice.open
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`open()`** method of the {{domxref("HIDDevice")}} interface requests that the operating system opens the HID device.
+متد **`open()`** در رابط {{domxref("HIDDevice")}} از سیستمعامل درخواست میکند که دستگاه HID را باز کند.
 
 > [!NOTE]
-> HID devices are not opened automatically. Therefore, a {{domxref("HIDDevice")}} returned by {{domxref("HID.requestDevice()")}} must be opened with this method before it is available to transfer data.
+> دستگاه‌های HID به‌صورت خودکار باز نمی‌شوند. بنابراین، یک {{domxref("HIDDevice")}} که توسط {{domxref("HID.requestDevice()")}} بازگردانده شده است، باید پیش از آنکه برای انتقال داده در دسترس قرار گیرد، با این متد باز شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 open()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with `undefined` once the connection is opened.
+یک {{jsxref("Promise")}} که پس از باز شدن اتصال، با مقدار `undefined` حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the connection is already open.
+  - : اگر اتصال از قبل باز شده باشد پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the attempt to open the connection fails for any reason.
+  - : اگر تلاش برای باز کردن اتصال به هر دلیلی ناموفق باشد پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example, we wait for the HID connection to open before attempting to send or receive data.
+در مثال زیر، قبل از تلاش برای ارسال یا دریافت داده، منتظر باز شدن اتصال HID می‌مانیم.
 
 ```js
 await device.open();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
