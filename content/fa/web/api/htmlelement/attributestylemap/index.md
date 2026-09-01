@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: attributeStyleMap property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/attributeStyleMap"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: attributeStyleMap property"
 short-title: attributeStyleMap
 slug: Web/API/HTMLElement/attributeStyleMap
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.HTMLElement.attributeStyleMap
 
 {{APIRef("CSSOM")}}
 
-The **`attributeStyleMap`** read-only property of the {{domxref("HTMLElement")}} interface returns a live {{domxref("StylePropertyMap")}} object that contains a list of style properties of the element that are defined in the element's inline `style` attribute, or assigned using the {{domxref("HTMLElement.style", "style")}} property of the {{domxref("HTMLElement")}} interface via script.
+**`attributeStyleMap`** 是 {{domxref("HTMLElement")}} 接口的只读属性，返回一个实时的 {{domxref("StylePropertyMap")}} 对象，其中包含元素内联 `style` 属性中定义的样式属性列表，或通过脚本使用 {{domxref("HTMLElement")}} 接口的 {{domxref("HTMLElement.style", "style")}} 属性赋值的样式属性。
 
-Shorthand properties are expanded. If you set `border-top: 1px solid black`, the longhand properties ({{cssxref("border-top-color")}}, {{cssxref("border-top-style")}}, and {{cssxref("border-top-width")}}) are set instead.
+简写属性会被展开。例如，如果你设置 `border-top: 1px solid black`，实际设置的是对应的详细属性：{{cssxref("border-top-color")}}、{{cssxref("border-top-style")}} 和 {{cssxref("border-top-width")}}。
 
-The main difference between {{domxref("HTMLElement.style", "style")}} property and `attributeStyleMap` property is that, the `style` property will return a {{domxref("CSSStyleDeclaration")}} object, while the `attributeStyleMap` property will return a {{domxref("StylePropertyMap")}} object.
+{{domxref("HTMLElement.style", "style")}} 属性与 `attributeStyleMap` 属性的主要区别在于：`style` 属性返回 {{domxref("CSSStyleDeclaration")}} 对象，而 `attributeStyleMap` 属性返回 {{domxref("StylePropertyMap")}} 对象。
 
-Though the property itself is not writable, you could read and write inline styles through the {{domxref("StylePropertyMap")}} object that it returns, just like through the {{domxref("CSSStyleDeclaration")}} object that returns via the `style` property.
+虽然该属性本身不可写，但你可以通过它返回的 {{domxref("StylePropertyMap")}} 对象来读写内联样式，就像通过 `style` 属性返回的 {{domxref("CSSStyleDeclaration")}} 对象一样。
 
-## Value
+## 值
 
-A live {{domxref("StylePropertyMap")}} object.
+一个实时的 {{domxref("StylePropertyMap")}} 对象。
 
-## Examples
+## 示例
 
-The following code snippet shows the relationship between the `style` attribute and the `attributeStyleMap` property:
+以下代码片段展示了 `style` 属性与 `attributeStyleMap` 属性之间的关系：
 
 ```html
 <div id="el" style="border-top: 1px solid blue; color: red;">
@@ -58,15 +52,15 @@ for (const property of element.attributeStyleMap) {
 
 {{EmbedLiveSample("Examples", "200", "200")}}
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{domxref("HTMLElement.style")}}
 - {{domxref("SVGElement.attributeStyleMap")}}
