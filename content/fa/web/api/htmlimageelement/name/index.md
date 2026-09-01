@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/name"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: name property"
 short-title: name
 slug: Web/API/HTMLImageElement/name
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.HTMLImageElement.name
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The _deprecated_ **`name`** property of the {{domxref("HTMLImageElement")}} interface specifies a name for the element. It reflects the `<img>` element's [`name`](/en-US/docs/Web/HTML/Reference/Elements/img#name) content attribute. It has been replaced by the {{domxref("Element.id", "id")}} property available on all elements, and is kept only for compatibility reasons.
+ویژگی «منسوخ‌شده» **`name`** در رابط {{domxref("HTMLImageElement")}} نامی برای عنصر تعیین می‌کند. این ویژگی، ویژگی محتوایی [`name`](/en-US/docs/Web/HTML/Reference/Elements/img#name) عنصر `<img>` را منعکس می‌کند. این ویژگی با ویژگی {{domxref("Element.id", "id")}} که روی همه عناصر موجود است جایگزین شده و فقط به دلایل سازگاری نگه داشته شده است.
 
-## Value
+## مقدار
 
-A string providing a name by which the image can be referenced.
+یک رشته (string) که نامی برای ارجاع به تصویر فراهم می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Setting the name attribute
+### تنظیم ویژگی name
 
 ```js
 const img = new Image();
@@ -33,16 +27,16 @@ img.alt = "An example picture";
 img.name = "example-img";
 ```
 
-Instead of doing this, set the `id` property instead:
+به جای این کار، ویژگی `id` را تنظیم کنید:
 
 ```js
 img.id = "example-img";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
