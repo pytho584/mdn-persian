@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: y property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/y"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: y property"
 short-title: y
 slug: Web/API/HTMLImageElement/y
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.HTMLImageElement.y
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`y`** property of the {{domxref("HTMLImageElement")}} interface indicates the y-coordinate of the {{HTMLElement("img")}} element's top border edge relative to the root element's origin.
+ویژگی فقط‌خواندنی **`y`** از رابط {{domxref("HTMLImageElement")}}، مختصات y لبه بالایی حاشیه عنصر {{HTMLElement("img")}} را نسبت به مبدأ عنصر ریشه نشان می‌دهد.
 
-## Value
+## مقدار
 
-An integer value indicating the distance in pixels from the top edge of the element's nearest root element to the top edge of the {{HTMLElement("img")}} element's border box. The nearest root element is the outermost {{HTMLElement("html")}} element that contains the image. If the image is in an {{HTMLElement("iframe")}}, its `y` is relative to that frame.
+یک مقدار صحیح که فاصله را بر حسب پیکسل از لبه بالایی نزدیک‌ترین عنصر ریشه عنصر تا لبه بالایی جعبه مرزی (border box) عنصر {{HTMLElement("img")}} نشان می‌دهد. نزدیک‌ترین عنصر ریشه، بیرونی‌ترین عنصر {{HTMLElement("html")}} است که تصویر را در بر می‌گیرد. اگر تصویر در یک {{HTMLElement("iframe")}} قرار داشته باشد، مقدار `y` نسبت به همان قاب محاسبه می‌شود.
 
-In the diagram below, the top border edge is the top edge of the blue padding area. So the value returned by `y` would be the distance from that point to the top edge of the content area.
+در نمودار زیر، لبه بالایی حاشیه، لبه بالایی ناحیه آبی padding است. بنابراین مقدار بازگشتی `y` فاصله از آن نقطه تا لبه بالایی ناحیه محتوا خواهد بود.
 
-![Diagram showing the relationships between the various boxes associated with an element](boxmodel-3.png)
+![نموداری که رابطه بین جعبه‌های مختلف مرتبط با یک عنصر را نشان می‌دهد](boxmodel-3.png)
 
-## Examples
+## مثال‌ها
 
-For examples, see the {{domxref("HTMLImageElement.x", "x")}} property page.
+برای مثال‌ها، صفحه ویژگی {{domxref("HTMLImageElement.x", "x")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLImageElement.x")}}
