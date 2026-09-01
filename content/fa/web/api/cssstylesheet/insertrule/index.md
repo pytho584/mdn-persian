@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleSheet: insertRule() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/insertRule"
-status: "needs-translation"
----
-
----
-title: "CSSStyleSheet: insertRule() method"
 short-title: insertRule()
 slug: Web/API/CSSStyleSheet/insertRule
 page-type: web-api-instance-method
@@ -14,65 +8,53 @@ browser-compat: api.CSSStyleSheet.insertRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSStyleSheet.insertRule()`**
-method inserts a new [CSS rule](/en-US/docs/Web/API/CSSRule) into the [current style sheet](/en-US/docs/Web/API/CSSStyleSheet).
+متد **`CSSStyleSheet.insertRule()`** یک [قاعده CSS](/en-US/docs/Web/API/CSSRule) جدید را در [شیوه‌نامه جاری](/en-US/docs/Web/API/CSSStyleSheet) درج می‌کند.
 
 > [!NOTE]
-> Although `insertRule()` is exclusively a method of
-> {{domxref("CSSStyleSheet")}}, it actually inserts the rule into
-> `{{domxref("CSSStyleSheet", "", "", "1")}}.cssRules` — its internal
-> {{domxref("CSSRuleList")}}.
+> اگرچه `insertRule()` منحصراً یک متد از {{domxref("CSSStyleSheet")}} است، اما در واقع قاعده را درون `{{domxref("CSSStyleSheet", "", "", "1")}}.cssRules` — یعنی {{domxref("CSSRuleList")}} داخلی آن — درج می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 insertRule(rule)
 insertRule(rule, index)
 ```
 
-### Parameters
+### پارامترها
 
 - `rule`
-  - : A string containing the rule to be inserted. What the inserted
-    rule must contain depends on its type:
-    - **For [rule-sets](/en-US/docs/Web/CSS/Guides/Syntax/Introduction#css_statements)**, both
-      a [selector](/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors) and a
-      style declaration.
-    - **For [at-rules](/en-US/docs/Web/CSS/Guides/Syntax/At-rules)**, both an
-      at-identifier and the rule content.
-
+  - : یک رشته شامل قاعده‌ای که باید درج شود. محتوای لازم برای قاعده درج‌شده به نوع آن بستگی دارد:
+    - **برای [مجموعه‌قاعده‌ها](/en-US/docs/Web/CSS/Guides/Syntax/Introduction#css_statements)**، هم یک [انتخاب‌گر](/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors) و هم یک اعلان سبک.
+    - **برای [قواعد at](/en-US/docs/Web/CSS/Guides/Syntax/At-rules)**، هم یک شناسه at و هم محتوای قاعده.
 - `index` {{optional_inline}}
-  - : A positive integer less than or equal to `stylesheet.cssRules.length`,
-    representing the newly inserted rule's position in
-    `{{domxref("CSSStyleSheet", "", "", "1")}}.cssRules`. The default is
-    `0`. (In older implementations, this was required. See [Browser compatibility](#browser_compatibility) for details.)
+  - : یک عدد صحیح مثبت کوچک‌تر یا مساوی با `stylesheet.cssRules.length` که موقعیت قاعده تازه درج‌شده را درون `{{domxref("CSSStyleSheet", "", "", "1")}}.cssRules` نشان می‌دهد. مقدار پیش‌فرض `0` است. (در پیاده‌سازی‌های قدیمی‌تر، این پارامتر اجباری بود. برای جزئیات به [سازگاری مرورگر](#browser_compatibility) مراجعه کنید.)
 
-### Return value
+### مقدار بازگشتی
 
-The newly inserted rule's index within the stylesheet's rule-list.
+شاخص قاعده تازه درج‌شده در فهرست قواعد شیوه‌نامه.
 
-### Exceptions
+### استثناها
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if `index` > `{{domxref("CSSRuleList", "", "", "1")}}.length`.
+  - : اگر `index` > `{{domxref("CSSRuleList", "", "", "1")}}.length` باشد، پرتاب می‌شود.
 - `HierarchyRequestError` {{domxref("DOMException")}}
-  - : Thrown if `rule` cannot be inserted at the specified index due to some CSS constraint; for instance: trying to insert an {{cssxref("@import")}} at-rule after a style rule.
+  - : اگر `rule` به دلیل محدودیت CSS در شاخص مشخص‌شده قابل درج نباشد، پرتاب می‌شود؛ برای مثال: تلاش برای درج یک قاعده at {{cssxref("@import")}} پس از یک قاعده سبک.
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if more than one rule is given in the `rule` parameter.
+  - : اگر بیش از یک قاعده در پارامتر `rule` داده شود، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if `rule` is {{cssxref("@namespace")}} and the [rule-list](/en-US/docs/Web/CSS/Reference/Values/rule-list) contains at-rules other than `@import` and `@namespace` at-rules.
+  - : اگر `rule` برابر با {{cssxref("@namespace")}} باشد و [فهرست قواعد](/en-US/docs/Web/CSS/Reference/Values/rule-list) شامل قواعد at غیر از `@import` و `@namespace` باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Inserting a new rule
+### درج یک قاعده جدید
 
-This snippet pushes a new rule onto the top of my stylesheet.
+این قطعه کد یک قاعده جدید را به بالای شیوه‌نامه من اضافه می‌کند.
 
 ```js
 myStyle.insertRule("#blanc { color: white }", 0);
 ```
 
-### Function to add a stylesheet rule
+### تابعی برای افزودن یک قاعده شیوه‌نامه
 
 ```js
 /**
@@ -127,15 +109,15 @@ function addStylesheetRules(rules) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSStyleSheet.deleteRule")}}
-- [Constructable Stylesheets](https://web.dev/articles/constructable-stylesheets) (web.dev)
+- [شیوه‌نامه‌های قابل ساخت](https://web.dev/articles/constructable-stylesheets) (web.dev)
