@@ -1,7 +1,5 @@
 ---
 title: "GPUValidationError: GPUValidationError() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUValidationError/GPUValidationError"
-status: "needs-translation"
 ---
 
 ---
@@ -14,35 +12,34 @@ browser-compat: api.GPUValidationError.GPUValidationError
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUValidationError()`** constructor creates a new
-{{domxref("GPUValidationError")}} object instance.
+سازندهٔ **`GPUValidationError()`** یک نمونهٔ جدید از شیء {{domxref("GPUValidationError")}} ایجاد می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new GPUValidationError(message)
 ```
 
-### Parameters
+### پارامترها
 
 - `message`
-  - : A string providing a human-readable message that explains why the error occurred.
+  - : رشته‌ای که پیامی قابل‌خواندن برای انسان فراهم می‌کند و دلیل رخ دادن خطا را توضیح می‌دهد.
 
-## Examples
+## مثال‌ها
 
-A developer would not manually use the constructor to create a `GPUValidationError` object. The user agent uses this constructor to create an appropriate object when a validation error is surfaced by {{domxref("GPUDevice.popErrorScope")}} or the {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} event.
+یک توسعه‌دهنده به‌صورت دستی از این سازنده برای ایجاد یک شیء `GPUValidationError` استفاده نمی‌کند. عامل کاربر (user agent) هنگام بروز خطای اعتبارسنجی، از این سازنده برای ایجاد شیء مناسب استفاده می‌کند؛ این خطا از طریق {{domxref("GPUDevice.popErrorScope")}} یا رویداد {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} نمایان می‌شود.
 
-See the main [`GPUValidationError`](/en-US/docs/Web/API/GPUValidationError#examples) page for a specific example involving a `GPUValidationError` object instance.
+برای نمونه‌ای خاص که شامل یک نمونهٔ شیء `GPUValidationError` است، به صفحهٔ اصلی [`GPUValidationError`](/en-US/docs/Web/API/GPUValidationError#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
-- [WebGPU Error Handling best practices](https://toji.dev/webgpu-best-practices/error-handling)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [بهترین روش‌های مدیریت خطا در WebGPU](https://toji.dev/webgpu-best-practices/error-handling)
