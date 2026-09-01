@@ -1,11 +1,5 @@
 ---
 title: "GPUCommandEncoder: finish() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/finish"
-status: "needs-translation"
----
-
----
-title: "GPUCommandEncoder: finish() method"
 short-title: finish()
 slug: Web/API/GPUCommandEncoder/finish
 page-type: web-api-instance-method
@@ -14,37 +8,36 @@ browser-compat: api.GPUCommandEncoder.finish
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`finish()`** method of the
-{{domxref("GPUCommandEncoder")}} interface completes recording of the command sequence encoded on this `GPUCommandEncoder`, returning a corresponding {{domxref("GPUCommandBuffer")}}.
+**`finish()`** 方法属于 {{domxref("GPUCommandEncoder")}} 接口，用于完成在此 `GPUCommandEncoder` 上编码的命令序列的记录，并返回对应的 {{domxref("GPUCommandBuffer")}}。
 
-## Syntax
+## 语法
 
 ```js-nolint
 finish()
 finish(descriptor)
 ```
 
-### Parameters
+### 参数
 
 - `descriptor` {{optional_inline}}
-  - : An object that can contain the following properties:
+  - : 一个对象，可以包含以下属性：
     - `label` {{optional_inline}}
-      - : A string providing a label for the returned {{domxref("GPUCommandBuffer")}} that can be used to identify it, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : 一个字符串，为返回的 {{domxref("GPUCommandBuffer")}} 提供标签，可用于标识它，例如在 {{domxref("GPUError")}} 消息或控制台警告中。
 
-### Return value
+### 返回值
 
-A {{domxref("GPUCommandBuffer")}} object instance.
+一个 {{domxref("GPUCommandBuffer")}} 对象实例。
 
-### Validation
+### 验证
 
-The following criteria must be met when calling **`finish()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUCommandEncoder")}} becomes invalid:
+调用 **`finish()`** 时必须满足以下条件，否则会生成 {{domxref("GPUValidationError")}}，并且该 {{domxref("GPUCommandEncoder")}} 将变为无效：
 
-- There are no active debug groups (i.e., started via {{domxref("GPUCommandEncoder.pushDebugGroup", "pushDebugGroup()")}}).
-- The {{domxref("GPUCommandEncoder")}} is in an open state — this means that:
-  - There are no child {{domxref("GPUComputePassEncoder")}} or {{domxref("GPURenderPassEncoder")}}s active that have not been ended (by calling `end()`).
-  - The {{domxref("GPUCommandEncoder")}} has not already had `finish()` called on it (in which case it cannot be used to encode any more commands).
+- 没有活动的调试组（即通过 {{domxref("GPUCommandEncoder.pushDebugGroup", "pushDebugGroup()")}} 启动的调试组）。
+- {{domxref("GPUCommandEncoder")}} 处于打开状态——这意味着：
+  - 没有尚未结束（通过调用 `end()`）的子级 {{domxref("GPUComputePassEncoder")}} 或 {{domxref("GPURenderPassEncoder")}} 处于活动状态。
+  - 尚未在该 {{domxref("GPUCommandEncoder")}} 上调用过 `finish()`（如果已经调用过，则不能再用于编码任何命令）。
 
-## Examples
+## 示例
 
 ```js
 // …
@@ -55,14 +48,14 @@ device.queue.submit([commandBuffer]);
 // …
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
