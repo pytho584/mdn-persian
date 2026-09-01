@@ -1,11 +1,5 @@
 ---
 title: "Gamepad: timestamp property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/timestamp"
-status: "needs-translation"
----
-
----
-title: "Gamepad: timestamp property"
 short-title: timestamp
 slug: Web/API/Gamepad/timestamp
 page-type: web-api-instance-property
@@ -14,39 +8,32 @@ browser-compat: api.Gamepad.timestamp
 
 {{APIRef("Gamepad API")}}
 
-The **`Gamepad.timestamp`** property of the
-{{domxref("Gamepad")}} interface returns a {{domxref("DOMHighResTimeStamp")}}
-representing the last time the data for this gamepad was updated.
+ویژگی **`Gamepad.timestamp`** در رابط {{domxref("Gamepad")}} یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که آخرین زمان به‌روزرسانی داده‌های این گیم‌پد را نشان می‌دهد.
 
-The idea behind this is to allow developers to determine if the `axes` and
-`button` data have been updated from the hardware. The value must be
-relative to the `navigationStart` attribute of the
-{{domxref("PerformanceTiming")}} interface. Values are monotonically
-increasing, meaning that they can be compared to determine the ordering of updates, as
-newer values will always be greater than or equal to older values.
+هدف از این ویژگی این است که به توسعه‌دهندگان امکان دهد تشخیص دهند که آیا داده‌های `axes` و `button` از سخت‌افزار به‌روزرسانی شده‌اند یا خیر. این مقدار باید نسبت به ویژگی `navigationStart` در رابط {{domxref("PerformanceTiming")}} سنجیده شود. مقادیر به‌صورت یکنواخت افزایشی هستند؛ به این معنی که می‌توان آنها را مقایسه کرد تا ترتیب به‌روزرسانی‌ها مشخص شود، زیرا مقادیر جدیدتر همیشه بزرگ‌تر یا مساوی مقادیر قدیمی‌تر هستند.
 
 > [!NOTE]
-> This property is not currently supported anywhere.
+> این ویژگی در حال حاضر در هیچ مرورگری پشتیبانی نمی‌شود.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} object.
+یک شیء {{domxref("DOMHighResTimeStamp")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const gp = navigator.getGamepads()[0];
 console.log(gp.timestamp);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-[Using the Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
+[استفاده از API گیم‌پد](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
