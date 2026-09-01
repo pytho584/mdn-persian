@@ -1,11 +1,5 @@
 ---
 title: "HTMLCanvasElement: toDataURL() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL"
-status: "needs-translation"
----
-
----
-title: "HTMLCanvasElement: toDataURL() method"
 short-title: toDataURL()
 slug: Web/API/HTMLCanvasElement/toDataURL
 page-type: web-api-instance-method
@@ -14,20 +8,18 @@ browser-compat: api.HTMLCanvasElement.toDataURL
 
 {{APIRef("Canvas API")}}
 
-The **`HTMLCanvasElement.toDataURL()`** method returns a [data URL](/en-US/docs/Web/URI/Reference/Schemes/data) containing a representation of the image in the format specified by the `type` parameter.
+متد **`HTMLCanvasElement.toDataURL()`** یک [نشانی اینترنتی داده (data URL)](/en-US/docs/Web/URI/Reference/Schemes/data) برمی‌گرداند که نمایندهٔ تصویر در قالبی است که توسط پارامتر `type` مشخص می‌شود.
 
-The desired file format and image quality may be specified.
-If the file format is not specified, or if the given format is not supported, then the data will be exported as `image/png`.
-In other words, if the returned value starts with `data:image/png` for any other requested `type`, then that format is not supported.
+قالب فایل دلخواه و کیفیت تصویر را می‌توان تعیین کرد. اگر قالب فایل مشخص نشود، یا اگر قالب داده‌شده پشتیبانی نشود، داده‌ها به‌صورت `image/png` خروجی گرفته می‌شوند. به عبارت دیگر، اگر مقدار برگشتی برای هر `type` درخواستی دیگری با `data:image/png` شروع شود، یعنی آن قالب پشتیبانی نمی‌شود.
 
-Browsers are required to support `image/png`; many will support additional formats including `image/jpeg` and `image/webp`.
+مرورگرها موظف به پشتیبانی از `image/png` هستند؛ بسیاری از آن‌ها فرمت‌های دیگری از جمله `image/jpeg` و `image/webp` را نیز پشتیبانی می‌کنند.
 
-The created image data will have a resolution of 96dpi for file formats that support encoding resolution metadata.
+داده‌های تصویر ایجادشده برای فرمت‌های فایلی که از فرادادهٔ وضوح پشتیبانی می‌کنند، وضوح ۹۶dpi خواهند داشت.
 
 > [!WARNING]
-> `toDataURL()` encodes the whole image in an in-memory string. For larger images, this can have performance implications, and may even overflow browsers' URL length limit when assigned to {{domxref("HTMLImageElement.src")}}. You should generally prefer [`toBlob()`](/en-US/docs/Web/API/HTMLCanvasElement/toBlob) instead, in combination with {{domxref("URL/createObjectURL_static", "URL.createObjectURL()")}}.
+> متد `toDataURL()` کل تصویر را در یک رشتهٔ درون‌حافظه‌ای کدگذاری می‌کند. برای تصاویر بزرگ‌تر، این کار می‌تواند پیامدهای عملکردی داشته باشد و حتی وقتی به {{domxref("HTMLImageElement.src")}} اختصاص داده شود، ممکن است از محدودیت طول نشانی مرورگرها فراتر رود. به‌طور کلی بهتر است به‌جای آن از [`toBlob()`](/en-US/docs/Web/API/HTMLCanvasElement/toBlob) در ترکیب با {{domxref("URL/createObjectURL_static", "URL.createObjectURL()")}} استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 toDataURL()
@@ -35,36 +27,33 @@ toDataURL(type)
 toDataURL(type, quality)
 ```
 
-### Parameters
+### پارامترها
 
 - `type` {{optional_inline}}
-  - : A string indicating the image format.
-    The default type is `image/png`; this image format will be also used if the specified type is not supported.
+  - : رشته‌ای که قالب تصویر را مشخص می‌کند. نوع پیش‌فرض `image/png` است؛ اگر نوع مشخص‌شده پشتیبانی نشود نیز از همین قالب تصویر استفاده خواهد شد.
 - `quality` {{optional_inline}}
-  - : A {{jsxref("Number")}} between `0` and `1` indicating the image quality to be used when creating images using file formats that support lossy compression (such as `image/jpeg` or `image/webp`).
-    A user agent will use its default quality value if this option is not specified, or if the number is outside the allowed range.
+  - : یک {{jsxref("Number")}} بین `0` و `1` که کیفیت تصویر را هنگام ایجاد تصاویر با استفاده از فرمت‌های فایلی که فشرده‌سازی اتلافی را پشتیبانی می‌کنند (مانند `image/jpeg` یا `image/webp`) مشخص می‌کند. اگر این گزینه مشخص نشود، یا اگر عدد خارج از بازهٔ مجاز باشد، عامل کاربر (user agent) از مقدار کیفیت پیش‌فرض خود استفاده خواهد کرد.
 
-### Return value
+### مقدار برگشتی
 
-A string containing the requested [data URL](/en-US/docs/Web/URI/Reference/Schemes/data).
+رشته‌ای شامل [نشانی اینترنتی داده (data URL)](/en-US/docs/Web/URI/Reference/Schemes/data) درخواستی.
 
-If the height or width of the canvas is `0` or larger than the [maximum canvas size](/en-US/docs/Web/HTML/Reference/Elements/canvas#maximum_canvas_size), the string `"data:,"` is returned.
+اگر ارتفاع یا عرض بوم (canvas) برابر با `0` یا بزرگ‌تر از [حداکثر اندازهٔ بوم](/en-US/docs/Web/HTML/Reference/Elements/canvas#maximum_canvas_size) باشد، رشتهٔ `"data:,"` برگردانده می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `SecurityError`
-  - : The canvas's bitmap is not origin clean;
-    at least some of its contents have or may have been loaded from a site other than the one from which the document itself was loaded.
+  - : بیت‌نگاشت بوم از نظر مبدأ پاک (origin clean) نیست؛ دست‌کم بخشی از محتوای آن از سایتی غیر از سایتی که خود سند از آن بارگذاری شده، بارگذاری شده است یا ممکن است بارگذاری شده باشد.
 
-## Examples
+## مثال‌ها
 
-Given this {{HTMLElement("canvas")}} element:
+با توجه به این عنصر {{HTMLElement("canvas")}}:
 
 ```html
 <canvas id="canvas" width="5" height="5"></canvas>
 ```
 
-You can get a data-URL of the canvas with the following lines:
+می‌توانید با خطوط زیر یک data-URL از بوم دریافت کنید:
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -74,7 +63,7 @@ console.log(dataURL);
 // blAAAADElEQVQImWNgoBMAAABpAAFEI8ARAAAAAElFTkSuQmCC"
 ```
 
-### Setting image quality with jpegs
+### تنظیم کیفیت تصویر با jpeg
 
 ```js
 const fullQuality = canvas.toDataURL("image/jpeg", 1.0);
@@ -83,9 +72,9 @@ const mediumQuality = canvas.toDataURL("image/jpeg", 0.5);
 const lowQuality = canvas.toDataURL("image/jpeg", 0.1);
 ```
 
-### Example: Dynamically change images
+### مثال: تغییر پویای تصاویر
 
-You can use this technique in coordination with mouse events in order to dynamically change images (gray-scale vs. color in this example):
+می‌توانید از این تکنیک در هماهنگی با رویدادهای ماوس برای تغییر پویای تصاویر استفاده کنید (در این مثال، مقیاس خاکستری در برابر رنگی):
 
 #### HTML
 
@@ -93,7 +82,7 @@ You can use this technique in coordination with mouse events in order to dynamic
 <img class="grayscale" src="myPicture.png" alt="Description of my picture" />
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 function showColorImg() {
@@ -140,14 +129,14 @@ function removeColors() {
 removeColors();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Data URLs](/en-US/docs/Web/URI/Reference/Schemes/data) in the [HTTP](/en-US/docs/Web/HTTP) reference.
+- [نشانی‌های اینترنتی داده (Data URLs)](/en-US/docs/Web/URI/Reference/Schemes/data) در مرجع [HTTP](/en-US/docs/Web/HTTP).
