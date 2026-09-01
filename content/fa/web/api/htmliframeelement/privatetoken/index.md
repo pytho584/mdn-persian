@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: privateToken property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/privateToken"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: privateToken property"
 short-title: privateToken
 slug: Web/API/HTMLIFrameElement/privateToken
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.HTMLIFrameElement.privateToken
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}
 
-The **`privateToken`** property of the {{domxref("HTMLIFrameElement")}} interface returns a string representation of an options object representing a [private state token](/en-US/docs/Web/API/Private_State_Token_API/Using) operation; this object has the same structure as the `RequestInit` dictionary's [`privateToken`](/en-US/docs/Web/API/RequestInit#privatetoken) property.
+خاصیت **`privateToken`** از رابط {{domxref("HTMLIFrameElement")}} یک رشته (string) است که شیء گزینه‌های یک عملیات [private state token](/en-US/docs/Web/API/Private_State_Token_API/Using) را نشان می‌دهد؛ این شیء همان ساختار خاصیت [`privateToken`](/en-US/docs/Web/API/RequestInit#privatetoken) در دیکشنری `RequestInit` را دارد.
 
-This attribute mirrors the content of the associated `<iframe>` element's [`privateToken`](/en-US/docs/Web/HTML/Reference/Elements/iframe#privatetoken) attribute.
+این ویژگی محتوای ویژگی [`privateToken`](/en-US/docs/Web/HTML/Reference/Elements/iframe#privatetoken) عنصر `<iframe>` مرتبط را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```html
 <iframe id="el" privateToken="{version: 1,operation: 'token-request'}">
@@ -37,14 +31,14 @@ console.log(el.privateToken);
 // Logs "{version: 1,operation: 'token-request'}"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Private State Token API](/en-US/docs/Web/API/Private_State_Token_API)
