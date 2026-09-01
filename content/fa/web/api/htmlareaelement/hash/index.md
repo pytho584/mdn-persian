@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: hash property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/hash"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: hash property"
 short-title: hash
 slug: Web/API/HTMLAreaElement/hash
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.HTMLAreaElement.hash
 
 {{ APIRef("HTML DOM") }}
 
-The **`hash`** property of the {{domxref("HTMLAreaElement")}} interface is a string containing a `"#"` followed by the fragment identifier of the `<area>` element's `href`. If the URL does not have a fragment identifier, this property contains an empty string, `""`.
+**`hash`** 属性属于 {{domxref("HTMLAreaElement")}} 接口，是一个字符串，包含 `"#"` 后跟 `<area>` 元素的 `href` 中的片段标识符。如果 URL 中没有片段标识符，则该属性包含空字符串 `""`。
 
-See {{domxref("URL.hash")}} for more information.
+更多信息请参见 {{domxref("URL.hash")}}。
 
-## Value
+## 值
 
-A string.
+一个字符串。
 
-## Examples
+## 示例
 
-### Getting the hash from an area link
+### 从 area 链接中获取 hash
 
-Given this HTML
+给定以下 HTML：
 
 ```html
 <map name="infographic">
@@ -44,21 +38,21 @@ Given this HTML
   alt="MDN infographic" />
 ```
 
-you can get the hash of the area link like this:
+你可以这样获取 area 链接的 hash：
 
 ```js
 const area = document.getElementById("mdn-circle");
 area.hash; // '#ExampleSection'
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The {{domxref("HTMLAreaElement")}} interface it belongs to.
+- 其所属的 {{domxref("HTMLAreaElement")}} 接口。
