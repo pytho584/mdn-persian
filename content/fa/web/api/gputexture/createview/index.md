@@ -1,11 +1,5 @@
 ---
 title: "GPUTexture: createView() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/createView"
-status: "needs-translation"
----
-
----
-title: "GPUTexture: createView() method"
 short-title: createView()
 slug: Web/API/GPUTexture/createView
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.GPUTexture.createView
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`createView()`** method of the
-{{domxref("GPUTexture")}} interface creates a {{domxref("GPUTextureView")}} representing a specific view of the `GPUTexture`.
+متد **`createView()`** از رابط {{domxref("GPUTexture")}} یک {{domxref("GPUTextureView")}} ایجاد می‌کند که نمای خاصی از `GPUTexture` را نشان می‌دهد.
 
 ## Syntax
 
@@ -27,126 +20,126 @@ createView(descriptor)
 ### Parameters
 
 - `descriptor` {{optional_inline}}
-  - : An object containing the following properties:
+  - : یک شیء حاوی ویژگی‌های زیر:
     - `arrayLayerCount` {{optional_inline}}
-      - : A number defining how many array layers are accessible to the view, starting with the `baseArrayLayer` value.
+      - : عددی که مشخص می‌کند چند لایه آرایه (array layer) برای نمای بافت قابل دسترسی است، که از مقدار `baseArrayLayer` شروع می‌شود.
 
-        If `arrayLayerCount` is omitted, it is given a value as follows:
-        - If `dimension` is `"1d"`, `"2d"`, or `"3d"`, `arrayLayerCount` is 1.
-        - If `dimension` is `"cube"`, `arrayLayerCount` is 6.
-        - If `dimension` is `"2d-array"`, or `"cube-array"`, `arrayLayerCount` is {{domxref("GPUTexture.depthOrArrayLayers")}} - `baseArrayLayer`.
+        اگر `arrayLayerCount` حذف شود، مقدار آن به صورت زیر تعیین می‌گردد:
+        - اگر `dimension` برابر `"1d"`، `"2d"` یا `"3d"` باشد، `arrayLayerCount` برابر 1 است.
+        - اگر `dimension` برابر `"cube"` باشد، `arrayLayerCount` برابر 6 است.
+        - اگر `dimension` برابر `"2d-array"` یا `"cube-array"` باشد، `arrayLayerCount` برابر {{domxref("GPUTexture.depthOrArrayLayers")}} - `baseArrayLayer` است.
 
     - `aspect` {{optional_inline}}
-      - : An enumerated value specifying which aspect(s) of the texture are accessible to the texture view. Possible values are:
+      - : یک مقدار شمارشی که مشخص می‌کند کدام جنبه(های) از بافت برای نمای بافت قابل دسترسی است. مقادیر ممکن:
         - `"all"`
-          - : All available aspects of the texture format will be accessible to the view, which can mean all or any of color, depth, and stencil, depending on what kind of format you are dealing with.
+          - : تمام جنبه‌های موجود از قالب بافت برای نمای بافت قابل دسترسی خواهد بود، که می‌تواند به معنای همه یا هر یک از جنبه‌های رنگ، عمق و استنسیل باشد، بسته به نوع قالبی که با آن کار می‌کنید.
         - `"depth-only"`
-          - : Only the depth aspect of a [depth-or-stencil format](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) will be accessible to the view.
+          - : فقط جنبه عمق یک [قالب عمق-یا-استنسیل](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) برای نمای بافت قابل دسترسی خواهد بود.
         - `"stencil-only"`
-          - : Only the stencil aspect of a depth-or-stencil format will be accessible to the view.
+          - : فقط جنبه استنسیل یک قالب عمق-یا-استنسیل برای نمای بافت قابل دسترسی خواهد بود.
 
-        If omitted, `aspect` takes a value of `"all"`.
+        اگر حذف شود، `aspect` مقدار `"all"` را می‌گیرد.
 
     - `baseArrayLayer` {{optional_inline}}
-      - : A number defining the index of the first array layer accessible to the view. If omitted, `baseArrayLayer` takes a value of 0.
+      - : عددی که ایندکس اولین لایه آرایه قابل دسترسی در نمای بافت را مشخص می‌کند. اگر حذف شود، `baseArrayLayer` مقدار 0 را می‌گیرد.
     - `baseMipLevel` {{optional_inline}}
-      - : A number representing the first (most detailed) mipmap level accessible to the view. If omitted, `baseMipLevel` takes a value of 0.
+      - : عددی که اولین (با بیشترین جزئیات) سطح mipmap قابل دسترسی در نمای بافت را نشان می‌دهد. اگر حذف شود، `baseMipLevel` مقدار 0 را می‌گیرد.
     - `dimension` {{optional_inline}}
-      - : An enumerated value specifying the format to view the texture as. Possible values are:
-        - `"1d"`: The texture is viewed as a one-dimensional image.
-        - `"2d"`: The texture is viewed as a single two-dimensional image.
-        - `"2d-array"`: The texture is viewed as an array of two-dimensional images.
-        - `"cube"`: The texture is viewed as a cubemap. The view has 6 array layers, corresponding to the `[+X, -X, +Y, -Y, +Z, -Z]` faces of the cube. Sampling is done seamlessly across the faces of the cubemap.
-        - `"cube-array"`: The texture is viewed as a packed array of N cubemaps, each with 6 array layers corresponding to the `[+X, -X, +Y, -Y, +Z, -Z]` faces of the cube. Sampling is done seamlessly across the faces of the cubemaps.
-        - `"3d"`: The texture is viewed as a three-dimensional image.
+      - : یک مقدار شمارشی که قالب مشاهده بافت را مشخص می‌کند. مقادیر ممکن:
+        - `"1d"`: بافت به صورت یک تصویر یک‌بعدی مشاهده می‌شود.
+        - `"2d"`: بافت به صورت یک تصویر دو‌بعدی تکی مشاهده می‌شود.
+        - `"2d-array"`: بافت به صورت آرایه‌ای از تصاویر دو‌بعدی مشاهده می‌شود.
+        - `"cube"`: بافت به صورت یک نقشه مکعبی (cubemap) مشاهده می‌شود. نمای بافت دارای 6 لایه آرایه است که متناظر با وجه‌های `[+X, -X, +Y, -Y, +Z, -Z]` مکعب هستند. نمونه‌برداری به صورت یکپارچه در سراسر وجه‌های نقشه مکعبی انجام می‌شود.
+        - `"cube-array"`: بافت به صورت آرایه‌ای فشرده از N نقشه مکعبی مشاهده می‌شود، که هر کدام 6 لایه آرایه متناظر با وجه‌های `[+X, -X, +Y, -Y, +Z, -Z]` مکعب دارند. نمونه‌برداری به صورت یکپارچه در سراسر وجه‌های نقشه‌های مکعبی انجام می‌شود.
+        - `"3d"`: بافت به صورت یک تصویر سه‌بعدی مشاهده می‌شود.
 
-        If `dimension` is omitted, it is given a value as follows:
-        - If {{domxref("GPUTexture.dimension")}} is `"1d"`, `dimension` is `"1d"`.
-        - If {{domxref("GPUTexture.dimension")}} is `"2d"` and {{domxref("GPUTexture.depthOrArrayLayers")}} is 1, `dimension` is `"2d"`.
-        - If {{domxref("GPUTexture.dimension")}} is `"2d"` and {{domxref("GPUTexture.depthOrArrayLayers")}} is more than 1, `dimension` is `"2d-array"`.
-        - If {{domxref("GPUTexture.dimension")}} is `"3d"`, `dimension` is `"3d"`.
+        اگر `dimension` حذف شود، مقدار آن به صورت زیر تعیین می‌گردد:
+        - اگر {{domxref("GPUTexture.dimension")}} برابر `"1d"` باشد، `dimension` برابر `"1d"` است.
+        - اگر {{domxref("GPUTexture.dimension")}} برابر `"2d"` و {{domxref("GPUTexture.depthOrArrayLayers")}} برابر 1 باشد، `dimension` برابر `"2d"` است.
+        - اگر {{domxref("GPUTexture.dimension")}} برابر `"2d"` و {{domxref("GPUTexture.depthOrArrayLayers")}} بیشتر از 1 باشد، `dimension` برابر `"2d-array"` است.
+        - اگر {{domxref("GPUTexture.dimension")}} برابر `"3d"` باشد، `dimension` برابر `"3d"` است.
 
     - `format` {{optional_inline}}
-      - : An enumerated value specifying the format of the texture view. See the [Texture formats](https://gpuweb.github.io/gpuweb/#enumdef-gputextureformat) section of the specification for all the possible values.
+      - : یک مقدار شمارشی که قالب نمای بافت را مشخص می‌کند. بخش [Texture formats](https://gpuweb.github.io/gpuweb/#enumdef-gputextureformat) از مشخصات فنی را برای همه مقادیر ممکن مشاهده کنید.
 
-        If `format` is omitted, it will be given a value as follows:
-        - If `aspect` is `"depth-only"` or `"stencil-only"`, and {{domxref("GPUTexture.format")}} is a [depth-or-stencil format](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format), `format` will be set equal to the appropriate [aspect-specific format](https://gpuweb.github.io/gpuweb/#aspect-specific-format).
-        - Otherwise it will be set equal to {{domxref("GPUTexture.format")}}.
+        اگر `format` حذف شود، مقدار آن به صورت زیر تعیین می‌گردد:
+        - اگر `aspect` برابر `"depth-only"` یا `"stencil-only"` باشد، و {{domxref("GPUTexture.format")}} یک [قالب عمق-یا-استنسیل](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) باشد، `format` برابر [قالب مختص جنبه](https://gpuweb.github.io/gpuweb/#aspect-specific-format) مناسب تنظیم می‌شود.
+        - در غیر این صورت برابر {{domxref("GPUTexture.format")}} تنظیم می‌شود.
 
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : یک رشته که برچسبی برای شناسایی شیء فراهم می‌کند، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
     - `mipLevelCount` {{optional_inline}}
-      - : A number defining how many mipmap levels are accessible to the view, starting with the `baseMipLevel` value.
+      - : عددی که مشخص می‌کند چند سطح mipmap برای نمای بافت قابل دسترسی است، که از مقدار `baseMipLevel` شروع می‌شود.
 
-        If `mipLevelCount` is omitted, it will be given a value of {{domxref("GPUTexture.mipLevelCount")}} - `baseMipLevel`.
+        اگر `mipLevelCount` حذف شود، مقدار آن برابر {{domxref("GPUTexture.mipLevelCount")}} - `baseMipLevel` خواهد بود.
 
     - `swizzle` {{optional_inline}}
-      - : A string containing four characters. The position of each character maps to the texture view's red, green, blue, and alpha channel values, respectively. The value of each character specifies the value each of those channels will take when the view is accessed by a shader. Possible values are:
+      - : رشته‌ای شامل چهار کاراکتر. موقعیت هر کاراکتر به ترتیب به مقادیر کانال قرمز، سبز، آبی و آلفای نمای بافت نگاشت می‌شود. مقدار هر کاراکتر مشخص می‌کند که هر یک از آن کانال‌ها هنگام دسترسی shader به نمای بافت چه مقداری خواهند داشت. مقادیر ممکن:
         - `r`
-          - : The texture's red channel value.
+          - : مقدار کانال قرمز بافت.
         - `g`
-          - : The texture's green channel value.
+          - : مقدار کانال سبز بافت.
         - `b`
-          - : The texture's blue channel value.
+          - : مقدار کانال آبی بافت.
         - `a`
-          - : The texture's alpha channel value.
+          - : مقدار کانال آلفای بافت.
         - `0`
-          - : Enforces a value of `0`.
+          - : مقدار `0` را اعمال می‌کند.
         - `1`
-          - : Enforces a value of `1`.
+          - : مقدار `1` را اعمال می‌کند.
 
-        For example, `swizzle: "grba"` would result in the texture's red and green channel values being swapped when a shader accesses the view. Texture component swizzle allows developers to optimize performance, correct component ordering mismatches, and reuse shader code across various texture formats when sampling textures.
+        به عنوان مثال، `swizzle: "grba"` باعث می‌شود مقادیر کانال قرمز و سبز بافت هنگام دسترسی shader به نمای بافت جابجا شوند. دگرگونی مؤلفه‌های بافت (texture component swizzle) به توسعه‌دهندگان اجازه می‌دهد عملکرد را بهینه کنند، عدم تطابق ترتیب مؤلفه‌ها را اصلاح کنند، و کد shader را در قالب‌های مختلف بافت هنگام نمونه‌برداری مجدداً استفاده کنند.
 
         > [!NOTE]
-        > To use the `swizzle` property, you must enable the `texture-component-swizzle` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) in your {{domxref("GPUDevice")}} by specifying it in the `requiredFeatures` array of the {{domxref("GPUAdapter.requestDevice()")}} descriptor. If this feature is not enabled, the `swizzle` property will have no effect.
+        > برای استفاده از ویژگی `swizzle`، باید [قابلیت](/en-US/docs/Web/API/GPUSupportedFeatures) `texture-component-swizzle` را در {{domxref("GPUDevice")}} خود با مشخص کردن آن در آرایه `requiredFeatures` توصیف‌گر {{domxref("GPUAdapter.requestDevice()")}} فعال کنید. اگر این قابلیت فعال نباشد، ویژگی `swizzle` هیچ تأثیری نخواهد داشت.
 
     - `usage` {{optional_inline}}
-      - : A set of {{glossary("bitwise flags")}} representing a subset of the source texture's usage flags (available in the {{domxref("GPUTexture.usage")}} property) that are compatible with the chosen view format. This can be used to restrict the allowed view usage in cases where the view format is incompatible with certain usages. The available usage flags are listed in the [`GPUTexture.usage` value table](/en-US/docs/Web/API/GPUTexture/usage#value).
+      - : مجموعه‌ای از {{glossary("bitwise flags", "پرچم‌های بیتی")}} که زیرمجموعه‌ای از پرچم‌های استفاده بافت مبدأ (موجود در ویژگی {{domxref("GPUTexture.usage")}}) را نشان می‌دهد که با قالب نمای انتخاب‌شده سازگار هستند. این می‌تواند برای محدود کردن استفاده مجاز نمای بافت در مواردی که قالب نمای بافت با برخی کاربردها ناسازگار است، استفاده شود. پرچم‌های استفاده موجود در [جدول مقدار `GPUTexture.usage`](/en-US/docs/Web/API/GPUTexture/usage#value) فهرست شده‌اند.
 
-        The default value is `0`, which represents the source texture's full set of usage flags. If the view's [`format`](#format) doesn't support all of the texture's usages, the default will fail, and the view's usage must be specified explicitly.
+        مقدار پیش‌فرض `0` است که مجموعه کامل پرچم‌های استفاده بافت مبدأ را نشان می‌دهد. اگر [`format`](#format) نمای بافت از همه کاربردهای بافت پشتیبانی نکند، مقدار پیش‌فرض ناموفق خواهد بود و باید `usage` نمای بافت به صراحت مشخص شود.
 
 ### Return value
 
-A {{domxref("GPUTextureView")}} object instance.
+یک نمونه شیء از {{domxref("GPUTextureView")}}.
 
 ### Validation
 
-The following criteria must be met when calling **`createView()`**, otherwise a {{domxref("GPUValidationError")}} is generated and an invalid {{domxref("GPUTextureView")}} object is returned:
+معیارهای زیر باید هنگام فراخوانی **`createView()`** برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و یک شیء {{domutex("GPUTextureView")}} نامعتبر بازگردانده می‌شود:
 
-- If `aspect` is `"all"`, `format` is equal to {{domxref("GPUTexture.format")}}, or one of the `viewFormats` specified in the originating {{domxref("GPUDevice.createTexture()")}} call's descriptor object.
-- If `aspect` is `"depth-only"` or `"stencil-only"`, `format` is equal to the appropriate [aspect-specific format](https://gpuweb.github.io/gpuweb/#aspect-specific-format) of the [depth-or-stencil format](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format).
-- `mipLevelCount` is greater than 0.
-- `mipLevelCount` + `baseMipLevel` is less than or equal to {{domxref("GPUTexture.mipLevelCount")}}.
-- `arrayLayerCount` is greater than 0.
-- `arrayLayerCount` + `baseArrayLayer` is less than or equal to {{domxref("GPUTexture.depthOrArrayLayers")}} if {{domxref("GPUTexture.dimension")}} is `"2d"`, or less than or equal to 1 if {{domxref("GPUTexture.dimension")}} is `"1d"` or `"3d"`.
-- If `sampleCount` is greater than 1, `dimension` is `"2d"`.
-- If `dimension` is:
-  - `"1d"`
-    - {{domxref("GPUTexture.dimension")}} is `"1d"`
-    - `arrayLayerCount` is 1
-  - `"2d"`
-    - {{domxref("GPUTexture.dimension")}} is `"2d"`
-    - `arrayLayerCount` is 1
-  - `"2d-array"`
-    - {{domxref("GPUTexture.dimension")}} is `"2d"`
-  - `"cube"`
-    - {{domxref("GPUTexture.dimension")}} is `"2d"`
-    - `arrayLayerCount` is 6
-    - {{domxref("GPUTexture.width")}} is equal to {{domxref("GPUTexture.height")}}
-  - `"cube-array"`
-    - {{domxref("GPUTexture.dimension")}} is `"2d"`
-    - `arrayLayerCount` is a multiple of 6
-    - {{domxref("GPUTexture.width")}} is equal to {{domxref("GPUTexture.height")}}
-  - `"3d"`
-    - {{domxref("GPUTexture.dimension")}} is `"3d"`
-    - `arrayLayerCount` is 1
-- The view's [`format`](#format) supports all of the usages specified in the [`usage`](#usage) property.
+- اگر `aspect` برابر `"all"` باشد، `format` برابر {{domxref("GPUTexture.format")}} یا یکی از `viewFormats` مشخص‌شده در شیء توصیف‌گر فراخوانی {{domxref("GPUDevice.createTexture()")}} مبدأ است.
+- اگر `aspect` برابر `"depth-only"` یا `"stencil-only"` باشد، `format` برابر [قالب مختص جنبه](https://gpuweb.github.io/gpuweb/#aspect-specific-format) مناسب از [قالب عمق-یا-استنسیل](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) است.
+- `mipLevelCount` بزرگتر از 0 است.
+- `mipLevelCount` + `baseMipLevel` کمتر یا مساوی {{domxref("GPUTexture.mipLevelCount")}} است.
+- `arrayLayerCount` بزرگتر از 0 است.
+- `arrayLayerCount` + `baseArrayLayer` اگر {{domxref("GPUTexture.dimension")}} برابر `"2d"` باشد، کمتر یا مساوی {{domxref("GPUTexture.depthOrArrayLayers")}} است، و اگر {{domxref("GPUTexture.dimension")}} برابر `"1d"` یا `"3d"` باشد، کمتر یا مساوی 1 است.
+- اگر `sampleCount` بزرگتر از 1 باشد، `dimension` برابر `"2d"` است.
+- اگر `dimension` برابر:
+  - `"1d"` باشد:
+    - {{domxref("GPUTexture.dimension")}} برابر `"1d"` است.
+    - `arrayLayerCount` برابر 1 است.
+  - `"2d"` باشد:
+    - {{domxref("GPUTexture.dimension")}} برابر `"2d"` است.
+    - `arrayLayerCount` برابر 1 است.
+  - `"2d-array"` باشد:
+    - {{domxref("GPUTexture.dimension")}} برابر `"2d"` است.
+  - `"cube"` باشد:
+    - {{domxref("GPUTexture.dimension")}} برابر `"2d"` است.
+    - `arrayLayerCount` برابر 6 است.
+    - {{domxref("GPUTexture.width")}} برابر {{domxref("GPUTexture.height")}} است.
+  - `"cube-array"` باشد:
+    - {{domxref("GPUTexture.dimension")}} برابر `"2d"` است.
+    - `arrayLayerCount` مضربی از 6 است.
+    - {{domxref("GPUTexture.width")}} برابر {{domxref("GPUTexture.height")}} است.
+  - `"3d"` باشد:
+    - {{domxref("GPUTexture.dimension")}} برابر `"3d"` است.
+    - `arrayLayerCount` برابر 1 است.
+- [`format`](#format) نمای بافت از همه کاربردهای مشخص‌شده در ویژگی [`usage`](#usage) پشتیبانی می‌کند.
 
 ## Examples
 
-### Typical `createView()` usage
+### استفاده معمول از `createView()`
 
-In the WebGPU Samples [Cubemap demo](https://webgpu.github.io/webgpu-samples/samples/cubemap/), you will see multiple examples of how `createView()` is used, both as to create a view `resource` for a {{domxref("GPUDevice.createBindGroup()")}} call, and to provide a `view` in the `depthStencilAttachment` object of a {{domxref("GPUCommandEncoder.beginRenderPass()")}} descriptor.
+در نمونه WebGPU Samples [Cubemap demo](https://webgpu.github.io/webgpu-samples/samples/cubemap/)، چندین مثال از نحوه استفاده `createView()` مشاهده خواهید کرد، هم برای ایجاد یک `resource` نمای بافت برای فراخوانی {{domxref("GPUDevice.createBindGroup()")}} و هم برای ارائه یک `view` در شیء `depthStencilAttachment` توصیف‌گر {{domxref("GPUCommandEncoder.beginRenderPass()")}}.
 
 ```js
 const uniformBindGroup = device.createBindGroup({
@@ -198,9 +191,9 @@ const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);
 // …
 ```
 
-### `createView()` with usage restriction
+### `createView()` با محدودیت استفاده
 
-In this snippet, we create a texture and then create a view that has its usage restricted via the `usage` property.
+در این قطعه، یک بافت ایجاد می‌کنیم و سپس نمایی ایجاد می‌کنیم که استفاده آن از طریق ویژگی `usage` محدود شده است.
 
 ```js
 const texture = myDevice.createTexture({
@@ -229,4 +222,4 @@ const view = texture.createView({
 
 ## See also
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
