@@ -1,11 +1,5 @@
 ---
 title: "ErrorEvent: error property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/error"
-status: "needs-translation"
----
-
----
-title: "ErrorEvent: error property"
 short-title: error
 slug: Web/API/ErrorEvent/error
 page-type: web-api-instance-property
@@ -14,24 +8,24 @@ browser-compat: api.ErrorEvent.error
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`error`** read-only property of the {{domxref("ErrorEvent")}} interface returns a JavaScript value, such as an {{jsxref("Error")}} or {{domxref("DOMException")}}, representing the error associated with this event.
+ویژگی فقط خواندنی **`error`** در رابط {{domxref("ErrorEvent")}} یک مقدار جاوااسکریپتی، مانند {{jsxref("Error")}} یا {{domxref("DOMException")}} برمی‌گرداند که نشان‌دهندهٔ خطای مرتبط با این رویداد است.
 
-## Value
+## مقدار
 
-Any valid JavaScript value.
+هر مقدار معتبر جاوااسکریپتی.
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("error", (ev) => {
-  console.log(`The error instance: ${ev.error}`);
+  console.log(`نمونهٔ خطا: ${ev.error}`);
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
