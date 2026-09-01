@@ -1,7 +1,5 @@
 ---
 title: "HTMLMediaElement: stalled event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/stalled_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.HTMLMediaElement.stalled_event
 
 {{APIRef("HTMLMediaElement")}}
 
-The `stalled` event is fired when the user agent is trying to fetch media data, but data is unexpectedly not forthcoming.
+رویداد `stalled` زمانی رخ می‌دهد که عامل کاربر (user agent) در حال تلاش برای دریافت داده‌های رسانه‌ای است، اما داده‌ها به‌طور غیرمنتظره در دسترس قرار نمی‌گیرند.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و حباب نمی‌زند.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام این رویداد در روش‌هایی مانند `addEventListener()` استفاده کنید، یا یک ویژگیِ کنترل‌کنندهٔ رویداد را تنظیم کنید.
 
 ```js-nolint
 addEventListener("stalled", (event) => { })
@@ -28,15 +26,15 @@ addEventListener("stalled", (event) => { })
 onstalled = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-These examples add an event listener for the HTMLMediaElement's `stalled` event, then post a message when that event handler has reacted to the event firing.
+این مثال‌ها یک شنوندهٔ رویداد برای رویداد `stalled` عنصر HTMLMediaElement اضافه می‌کنند و سپس وقتی آن کنترل‌کنندهٔ رویداد به فعال‌شدن رویداد واکنش نشان داد، پیامی را چاپ می‌کنند.
 
-Using `addEventListener()`:
+با استفاده از `addEventListener()`:
 
 ```js
 const video = document.querySelector("video");
@@ -46,7 +44,7 @@ video.addEventListener("stalled", (event) => {
 });
 ```
 
-Using the `onstalled` event handler property:
+با استفاده از ویژگی کنترل‌کنندهٔ رویداد `onstalled`:
 
 ```js
 const video = document.querySelector("video");
@@ -56,35 +54,35 @@ video.onstalled = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## Related Events
+## رویدادهای مرتبط
 
-- The HTMLMediaElement {{domxref("HTMLMediaElement.playing_event", 'playing')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ended_event", 'ended')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.canplaythrough_event", 'canplaythrough')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.timeupdate_event", 'timeupdate')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.play_event", 'play')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.pause_event", 'pause')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} event
+- رویداد {{domxref("HTMLMediaElement.playing_event", 'playing')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.ended_event", 'ended')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.canplaythrough_event", 'canplaythrough')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.timeupdate_event", 'timeupdate')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.play_event", 'play')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.pause_event", 'pause')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} در HTMLMediaElement
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAudioElement")}}
 - {{domxref("HTMLVideoElement")}}
