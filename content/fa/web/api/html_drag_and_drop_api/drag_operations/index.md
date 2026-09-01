@@ -1,7 +1,6 @@
 ---
-title: "Drag operations"
+title: "عملیات کشیدن"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations"
-status: "needs-translation"
 ---
 
 ---
@@ -12,48 +11,48 @@ page-type: guide
 
 {{DefaultAPISidebar("HTML Drag and Drop API")}}
 
-Central to the Drag and Drop API are the various [drag events](/en-US/docs/Web/API/HTML_Drag_and_Drop_API#drag_events) that fire in a specific order and are expected to be handled in a specific way. This document describes the steps that occur during a drag and drop operation, and what the application is supposed to do within each handler.
+محوریت API کشیدن و رها کردن (Drag and Drop) بر رویدادهای مختلف [کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API#drag_events) است که به ترتیب مشخصی رخ می‌دهند و انتظار می‌رود به روش خاصی مدیریت شوند. این سند مراحل انجام یک عملیات کشیدن و رها کردن و وظایف برنامه در هر handler را شرح می‌دهد.
 
-At a high level, here are the possible steps in a drag and drop operation:
+در سطح بالا، مراحل احتمالی یک عملیات کشیدن و رها کردن به شرح زیر است:
 
-- The user [starts the drag](#starting_a_drag) on a source node; the {{domxref("HTMLElement/dragstart_event", "dragstart")}} event is fired on the source node. Within this event, the source node prepares the context for the drag operation, including the drag data, feedback image, and allowed drop effects.
-- The user [drags the item around](#dragging_over_elements_and_specifying_drop_targets): every time a new element is entered, the {{domxref("HTMLElement/dragenter_event", "dragenter")}} event is fired on that element, and the {{domxref("HTMLElement/dragleave_event", "dragleave")}} event is fired on the previous element. Every few hundred milliseconds, a {{domxref("HTMLElement/dragover_event", "dragover")}} event is fired on the element the drag is currently inside, and the {{domxref("HTMLElement/drag_event", "drag")}} event is fired on the source node.
-- The drag enters a valid drop target: the drop target cancels its `dragover` event to indicate that it is a valid drop target. Some form of [drop feedback](#drop_feedback) indicates the expected drop effect to the user.
-- The user [performs the drop](#performing_a_drop): the {{domxref("HTMLElement/drop_event", "drop")}} event is fired on the drop target. Within this event, the target node reads the drag data.
-- The [drag operation ends](#finishing_the_drag): the {{domxref("HTMLElement/dragend_event", "dragend")}} event is fired on the source node. This event is fired regardless of whether the drop was successful or not.
+- کاربر [کشیدن را آغاز می‌کند](#starting_a_drag) روی یک گره مبدأ؛ رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} روی گره مبدأ شلیک می‌شود. در این رویداد، گره مبدأ بستر عملیات کشیدن را آماده می‌کند، از جمله داده‌های کشیدن، تصویر بازخورد، و اثرات رها کردن مجاز.
+- کاربر [مورد را به اطراف می‌کشد](#dragging_over_elements_and_specifying_drop_targets): هر بار که یک عنصر جدید وارد می‌شود، رویداد {{domxref("HTMLElement/dragenter_event", "dragenter")}} روی آن عنصر شلیک می‌شود، و رویداد {{domxref("HTMLElement/dragleave_event", "dragleave")}} روی عنصر قبلی شلیک می‌شود. هر چند صد میلی‌ثانیه، یک رویداد {{domxref("HTMLElement/dragover_event", "dragover")}} روی عنصری که کشیدن در حال حاضر درون آن است شلیک می‌شود، و رویداد {{domxref("HTMLElement/drag_event", "drag")}} روی گره مبدأ شلیک می‌شود.
+- کشیدن وارد یک هدف رها کردن معتبر می‌شود: هدف رها کردن رویداد `dragover` خود را لغو (cancel) می‌کند تا نشان دهد که یک هدف رها کردن معتبر است. نوعی [بازخورد رها کردن](#drop_feedback) اثر رها کردن مورد انتظار را به کاربر نشان می‌دهد.
+- کاربر [رها کردن را انجام می‌دهد](#performing_a_drop): رویداد {{domxref("HTMLElement/drop_event", "drop")}} روی هدف رها کردن شلیک می‌شود. در این رویداد، گره هدف داده‌های کشیدن را می‌خواند.
+- [عملیات کشیدن به پایان می‌رسد](#finishing_the_drag): رویداد {{domxref("HTMLElement/dragend_event", "dragend")}} روی گره مبدأ شلیک می‌شود. این رویداد صرف‌نظر از موفقیت یا عدم موفقیت رها کردن شلیک می‌شود.
 
-## Starting a drag
+## شروع کشیدن
 
-The drag starts on a [draggable item](/en-US/docs/Web/API/HTML_Drag_and_Drop_API#draggable_items), which can be a selection, a draggable element (including links, images, and any element with `draggable="true"`), a file from the operating system's file explorer, etc. First, the {{domxref("HTMLElement/dragstart_event", "dragstart")}} event is fired on the _source node_, which is the draggable element or, for selections, the text node that the drag started on. If this event is cancelled, then the drag operation is aborted. Otherwise, the {{domxref("Element/pointercancel_event", "pointercancel")}} event is also fired on the source node.
+کشیدن روی یک [مورد قابل کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API#draggable_items) شروع می‌شود، که می‌تواند یک انتخاب، یک عنصر قابل کشیدن (شامل لینک‌ها، تصاویر، و هر عنصری با `draggable="true"`)، یک فایل از مرورگر فایل سیستم عامل، و غیره باشد. ابتدا، رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} روی _گره مبدأ_ شلیک می‌شود، که همان عنصر قابل کشیدن یا، برای انتخاب‌ها، گره متنی است که کشیدن از آن شروع شده است. اگر این رویداد لغو شود، عملیات کشیدن متوقف می‌شود. در غیر این صورت، رویداد {{domxref("Element/pointercancel_event", "pointercancel")}} نیز روی گره مبدأ شلیک می‌شود.
 
-The `dragstart` event is the only time you can modify the {{domxref("DragEvent.dataTransfer", "dataTransfer")}}. For a custom draggable element, you almost always want to modify the drag data, which is covered in detail in [Modifying the drag data store](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store#modifying_the_drag_data_store). There are two other things you can change: the [feedback image](#setting_the_drag_feedback_image) and the [allowed drop effects](#drop_effects).
+رویداد `dragstart` تنها زمانی است که می‌توانید {{domxref("DragEvent.dataTransfer", "dataTransfer")}} را تغییر دهید. برای یک عنصر قابل کشیدن سفارشی، تقریباً همیشه می‌خواهید داده‌های کشیدن را تغییر دهید، که به طور مفصل در [تغییر ذخیره‌گاه داده‌های کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store#modifying_the_drag_data_store) پوشش داده شده است. دو چیز دیگر وجود دارد که می‌توانید تغییر دهید: [تصویر بازخورد](#setting_the_drag_feedback_image) و [اثرات رها کردن مجاز](#drop_effects).
 
-In this example, we add a listener for the {{domxref("HTMLElement/dragstart_event", "dragstart")}} event by using the `addEventListener()` method.
+در این مثال، یک شنونده برای رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} با استفاده از متد `addEventListener()` اضافه می‌کنیم.
 
 ```html
-<p draggable="true">This text <strong>may</strong> be dragged.</p>
+<p draggable="true">این متن <strong>ممکن است</strong> کشیده شود.</p>
 ```
 
 ```js
 const draggableElement = document.querySelector('p[draggable="true"]');
 draggableElement.addEventListener("dragstart", (event) => {
-  event.dataTransfer.setData("text/plain", "This text may be dragged");
+  event.dataTransfer.setData("text/plain", "این متن ممکن است کشیده شود");
 });
 ```
 
-You could also listen to a higher ancestor as drag events bubble up as most other events do. For this reason, it is common to also check the event's target, so that dragging a selection contained within this element does not trigger the `setData` (although selecting text within the element is hard, it is not impossible):
+همچنین می‌توانید به یک ancestor بالاتر گوش دهید زیرا رویدادهای کشیدن مانند بسیاری از رویدادهای دیگر به سمت بالا حباب می‌شوند (bubble up). به همین دلیل، معمول است که target رویداد را نیز بررسی کنید، تا کشیدن یک انتخاب درون این عنصر باعث فعال شدن `setData` نشود (اگرچه انتخاب متن درون عنصر دشوار است، اما غیرممکن نیست):
 
 ```js
 draggableElement.addEventListener("dragstart", (event) => {
   if (event.target === draggableElement) {
-    event.dataTransfer.setData("text/plain", "This text may be dragged");
+    event.dataTransfer.setData("text/plain", "این متن ممکن است کشیده شود");
   }
 });
 ```
 
-### Setting the drag feedback image
+### تنظیم تصویر بازخورد کشیدن
 
-When a drag occurs, a translucent image is generated from the source node, and follows the user's pointer during the drag. This image is created automatically, so you do not need to create it yourself. However, you can use {{domxref("DataTransfer.setDragImage","setDragImage()")}} to specify a custom drag feedback image.
+هنگامی که یک کشیدن رخ می‌دهد، یک تصویر نیمه‌شفاف از گره مبدأ تولید می‌شود و در طول کشیدن دنبال pointer کاربر می‌رود. این تصویر به طور خودکار ایجاد می‌شود، بنابراین نیازی به ایجاد آن ندارید. با این حال، می‌توانید از {{domxref("DataTransfer.setDragImage","setDragImage()")}} برای مشخص کردن یک تصویر بازخورد سفارشی استفاده کنید.
 
 ```js
 draggableElement.addEventListener("dragstart", (event) => {
@@ -61,9 +60,9 @@ draggableElement.addEventListener("dragstart", (event) => {
 });
 ```
 
-Three arguments are necessary. The first is a reference to an image. This reference will typically be to an `<img>` element, but it can also be to a `<canvas>` or any other element. The feedback image will be generated from whatever the image looks like on screen, although for images, they will be drawn at their original size. The second and third arguments to the {{domxref("DataTransfer.setDragImage","setDragImage()")}} method are offsets where the image should appear relative to the mouse pointer.
+سه آرگومان لازم است. اولین آرگومان یک ارجاع به یک تصویر است. این ارجاع معمولاً به یک عنصر `<img>` است، اما می‌تواند به یک `<canvas>` یا هر عنصر دیگری نیز باشد. تصویر بازخورد از آنچه که تصویر روی صفحه نمایش داده می‌شود تولید می‌شود، اگرچه برای تصاویر، آنها در اندازه اصلی خود رسم می‌شوند. آرگومان دوم و سوم متد {{domxref("DataTransfer.setDragImage","setDragImage()")}} offsetهایی هستند که نشان می‌دهند تصویر نسبت به pointer ماوس در کجا ظاهر شود.
 
-You can also use images and canvases that are not in a document. This technique is useful when drawing custom drag images using the canvas element, as in the following example:
+همچنین می‌توانید از تصاویر و canvasهایی که در سند نیستند استفاده کنید. این تکنیک زمانی مفید است که می‌خواهید با استفاده از عنصر canvas تصاویر کشیدن سفارشی رسم کنید، مانند مثال زیر:
 
 ```js
 draggableElement.addEventListener("dragstart", (event) => {
@@ -82,19 +81,19 @@ draggableElement.addEventListener("dragstart", (event) => {
 });
 ```
 
-In this example, we make one canvas the drag image. As the canvas is 50×50 pixels, we use offsets of half of this (`25`) so that the image appears centered on the mouse pointer.
+در این مثال، یک canvas را به عنوان تصویر کشیدن قرار می‌دهیم. از آنجایی که canvas 50×50 پیکسل است، از offsetهای نصف این مقدار (`25`) استفاده می‌کنیم تا تصویر در مرکز pointer ماوس ظاهر شود.
 
-## Dragging over elements and specifying drop targets
+## کشیدن روی عناصر و مشخص کردن اهداف رها کردن
 
-For the entire course of the drag operation, all device input events (such as mouse or keyboard) are suppressed. The dragged data can be moved over various elements in the document, or even elements in other documents. Whenever a new element is entered, a {{domxref("HTMLElement/dragenter_event", "dragenter")}} event is fired on that element, and a {{domxref("HTMLElement/dragleave_event", "dragleave")}} event is fired on the previous element.
+در طول کل عملیات کشیدن، تمام رویدادهای ورودی دستگاه (مانند ماوس یا صفحه کلید) سرکوب می‌شوند. داده‌های کشیده شده می‌توانند روی عناصر مختلف در سند، یا حتی عناصر در سندهای دیگر حرکت کنند. هر بار که یک عنصر جدید وارد می‌شود، یک رویداد {{domxref("HTMLElement/dragenter_event", "dragenter")}} روی آن عنصر شلیک می‌شود، و یک رویداد {{domxref("HTMLElement/dragleave_event", "dragleave")}} روی عنصر قبلی شلیک می‌شود.
 
 > [!NOTE]
-> `dragleave` always fires _after_ `dragenter`, so conceptually, in between these two events, the target has entered a new element but has not exited the previous one yet.
+> `dragleave` همیشه _بعد از_ `dragenter` شلیک می‌شود، بنابراین از نظر مفهومی، بین این دو رویداد، هدف وارد یک عنصر جدید شده است اما هنوز از عنصر قبلی خارج نشده است.
 
-Every few hundred milliseconds, two events fire: a {{domxref("HTMLElement/drag_event", "drag")}} event at the source node, and a {{domxref("HTMLElement/dragover_event", "dragover")}} event at the element the drag is currently inside. Most areas of a web page or application are not valid places to drop data, so elements by default ignore any drop that happened on it. The element can elect itself to be a valid drop target by cancelling the `dragover` event. If the element is an editable text field, such as a {{HTMLElement("textarea")}} or [`<input type="text">`](/en-US/docs/Web/HTML/Reference/Elements/input/text), and the data store contains one `text/plain` item, then the element is a valid drop target by default without cancelling `dragover`.
+هر چند صد میلی‌ثانیه، دو رویداد شلیک می‌شوند: یک رویداد {{domxref("HTMLElement/drag_event", "drag")}} در گره مبدأ، و یک رویداد {{domxref("HTMLElement/dragover_event", "dragover")}} در عنصری که کشیدن در حال حاضر درون آن است. بیشتر نواحی یک صفحه وب یا برنامه مکان‌های معتبری برای رها کردن داده نیستند، بنابراین عناصر به طور پیش‌فرض هر رها کردنی را که روی آنها اتفاق بیفتد نادیده می‌گیرند. عنصر می‌تواند با لغو رویداد `dragover` خود را به عنوان یک هدف رها کردن معتبر معرفی کند. اگر عنصر یک فیلد متنی قابل ویرایش باشد، مانند {{HTMLElement("textarea")}} یا [`<input type="text">`](/en-US/docs/Web/HTML/Reference/Elements/input/text)، و ذخیره‌گاه داده حاوی یک مورد `text/plain` باشد، آنگاه عنصر به طور پیش‌فرض بدون لغو `dragover` یک هدف رها کردن معتبر است.
 
 ```html
-<div id="drop-target">You can drag and then drop a draggable item here</div>
+<div id="drop-target">می‌توانید یک مورد قابل کشیدن را اینجا بکشید و رها کنید</div>
 ```
 
 ```js
@@ -106,15 +105,15 @@ dropElement.addEventListener("dragover", (event) => {
 ```
 
 > [!NOTE]
-> The spec requires the `dragenter` event to be cancelled too for a drop target, otherwise the `dragover` or `dragleave` events won't even start firing on this element; in practice no browser implements this, and the "current element" changes every time a new element is entered.
+> مشخصات (spec) ایجاب می‌کند که رویداد `dragenter` نیز برای یک هدف رها کردن لغو شود، در غیر این صورت رویدادهای `dragover` یا `dragleave` حتی روی این عنصر شروع به شلیک نخواهند کرد. در عمل هیچ مرورگری این را پیاده‌سازی نمی‌کند، و "عنصر فعلی" هر بار که یک عنصر جدید وارد می‌شود تغییر می‌کند.
 
 > [!NOTE]
-> The spec requires that cancelling the `drag` event [aborts](#a_failed_drop) the drag; in practice no browser implements this. See example below:
+> مشخصات ایجاب می‌کند که لغو رویداد `drag` باعث [متوقف شدن](#a_failed_drop) کشیدن شود. در عمل هیچ مرورگری این را پیاده‌سازی نمی‌کند. مثال زیر را ببینید:
 >
 > {{EmbedLiveSample("cancel_drag", "", 100)}}
 
 ```html hidden live-sample___cancel_drag
-<p draggable="true" id="draggable">Drag me for 1 second!</p>
+<p draggable="true" id="draggable">من را به مدت ۱ ثانیه بکشید!</p>
 <p id="output"></p>
 ```
 
@@ -130,15 +129,15 @@ draggableElement.addEventListener("drag", (event) => {
   if (time !== null && Date.now() - time > 1000) {
     event.preventDefault();
     output.textContent =
-      "Drag operation cancelled; if you are still dragging the node, then your browser does not support cancelling the drag programmatically.";
+      "عملیات کشیدن لغو شد؛ اگر هنوز گره را می‌کشید، مرورگر شما از لغو برنامه‌ریزی شده کشیدن پشتیبانی نمی‌کند.";
     time = null;
   }
 });
 ```
 
-### Conditional drop targets
+### اهداف رها کردن شرطی
 
-You usually only want the drop target to accept drops in certain situations (for example, only if a link is being dragged). To do this, check a condition and only cancel the event when the condition is met. For example, you can check if the dragged data contains links:
+معمولاً می‌خواهید هدف رها کردن فقط در شرایط خاصی رها کردن را بپذیرد (مثلاً فقط اگر یک لینک در حال کشیده شدن است). برای انجام این کار، یک شرط را بررسی کنید و فقط زمانی که شرط برآورده شد رویداد را لغو کنید. به عنوان مثال، می‌توانید بررسی کنید که داده‌های کشیده شده حاوی لینک هستند:
 
 ```js
 dropElement.addEventListener("dragover", (event) => {
@@ -149,28 +148,28 @@ dropElement.addEventListener("dragover", (event) => {
 });
 ```
 
-In this example, we use the `includes` method to check if the type [`text/uri-list`](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store#dragging_links) is present in the list of types. If it is, we will cancel the event so that a drop may be allowed. If the drag data does not contain a link, the event will not be cancelled, and a drop cannot occur at that location.
+در این مثال، از متد `includes` برای بررسی اینکه آیا نوع [`text/uri-list`](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store#dragging_links) در لیست انواع وجود دارد استفاده می‌کنیم. اگر وجود داشته باشد، رویداد را لغو می‌کنیم تا رها کردن مجاز شود. اگر داده‌های کشیدن حاوی لینک نباشند، رویداد لغو نمی‌شود و رها کردن نمی‌تواند در آن مکان رخ دهد.
 
-## Drop feedback
+## بازخورد رها کردن
 
-Now the user is dragging into a valid drop target. There are several ways in which you can indicate to the user that a drop is allowed at this location, and what might happen if the drop happens. Usually, the mouse pointer will update as necessary depending on the value of the {{domxref("DataTransfer.dropEffect", "dropEffect")}} property. Although the exact appearance depends on the user's platform, typically a plus sign icon will appear for a `copy` for example, and a "cannot drop here" icon will appear when a drop is not allowed. This mouse pointer feedback is sufficient in many cases.
+اکنون کاربر در حال کشیدن به یک هدف رها کردن معتبر است. چندین راه برای نشان دادن به کاربر وجود دارد که رها کردن در این مکان مجاز است و اگر رها کردن اتفاق بیفتد چه اتفاقی می‌افتد. معمولاً، pointer ماوس بسته به مقدار ویژگی {{domxref("DataTransfer.dropEffect", "dropEffect")}} به‌روز می‌شود. اگرچه ظاهر دقیق به پلتفرم کاربر بستگی دارد، معمولاً یک نماد علامت بعلاوه برای `copy` ظاهر می‌شود، و یک نماد "نمی‌توان اینجا رها کرد" زمانی که رها کردن مجاز نیست ظاهر می‌شود. این بازخورد pointer ماوس در بسیاری موارد کافی است.
 
-### Drop effects
+### اثرات رها کردن
 
-When dropping, there are several operations that may be performed:
+هنگام رها کردن، چندین عملیات ممکن است انجام شود:
 
 - `copy`
-  - : The data will be simultaneously present at the source and target locations after dropping.
+  - : داده پس از رها کردن به طور همزمان در مکان مبدأ و هدف وجود خواهد داشت.
 - `move`
-  - : The data will only be present at the target location, and will be removed from the source location.
+  - : داده فقط در مکان هدف وجود خواهد داشت و از مکان مبدأ حذف می‌شود.
 - `link`
-  - : Some form of linking will be created between the source and drop locations; there is only one instance of the data at the source location.
+  - : نوعی پیوند بین مکان مبدأ و رها کردن ایجاد می‌شود. تنها یک نمونه از داده در مکان مبدأ وجود دارد.
 - `none`
-  - : Nothing happens; the drop failed.
+  - : هیچ اتفاقی نمی‌افتد؛ رها کردن ناموفق بود.
 
-With the {{domxref("HTMLElement/dragenter_event", "dragenter")}} and {{domxref("HTMLElement/dragover_event", "dragover")}} events, the {{domxref("DataTransfer.dropEffect","dropEffect")}} property is initialized to the effect that the user is requesting. The user can modify the desired effect by pressing modifier keys. Although the exact keys used vary by platform, typically the <kbd>Shift</kbd> and <kbd>Control</kbd> keys would be used to switch between copying, moving, and linking. The mouse pointer will change to indicate which operation is desired. For instance, for a `copy`, the cursor might appear with a plus sign next to it.
+با رویدادهای {{domxref("HTMLElement/dragenter_event", "dragenter")}} و {{domxref("HTMLElement/dragover_event", "dragover")}}، ویژگی {{domxref("DataTransfer.dropEffect","dropEffect")}} به اثری که کاربر درخواست می‌کند مقداردهی اولیه می‌شود. کاربر می‌تواند با فشار دادن کلیدهای modifier اثر مورد نظر را تغییر دهد. اگرچه کلیدهای دقیق بسته به پلتفرم متفاوت است، معمولاً از کلیدهای <kbd>Shift</kbd> و <kbd>Control</kbd> برای جابجایی بین کپی، انتقال و پیوند استفاده می‌شود. pointer ماوس تغییر می‌کند تا نشان دهد کدام عملیات مورد نظر است. به عنوان مثال، برای `copy`، مکان‌نما ممکن است با یک علامت بعلاوه در کنار آن ظاهر شود.
 
-You can modify the {{domxref("DataTransfer.dropEffect","dropEffect")}} property during the {{domxref("HTMLElement/dragenter_event", "dragenter")}} or {{domxref("HTMLElement/dragover_event", "dragover")}} events, if for example, a particular drop target only supports certain operations. You can modify the {{domxref("DataTransfer.dropEffect","dropEffect")}} property to override the user effect, and enforce a specific drop operation to occur.
+می‌توانید ویژگی {{domxref("DataTransfer.dropEffect","dropEffect")}} را در طول رویدادهای {{domxref("HTMLElement/dragenter_event", "dragenter")}} یا {{domxref("HTMLElement/dragover_event", "dragover")}} تغییر دهید، برای مثال اگر یک هدف رها کردن خاص فقط از عملیات خاصی پشتیبانی می‌کند. می‌توانید ویژگی {{domxref("DataTransfer.dropEffect","dropEffect")}} را تغییر دهید تا اثر کاربر را نادیده بگیرید و یک عملیات رها کردن خاص را اعمال کنید.
 
 ```js
 target.addEventListener("dragover", (event) => {
@@ -178,13 +177,13 @@ target.addEventListener("dragover", (event) => {
 });
 ```
 
-In this example, move is the effect that is performed.
+در این مثال، `move` اثری است که انجام می‌شود.
 
-You can use the value `none` to indicate that no drop is allowed at this location. You should usually do this if the element is only temporarily not accepting drops; if it's not intended to be a drop target, you should just not cancel the event.
+می‌توانید از مقدار `none` برای نشان دادن اینکه هیچ رها کردنی در این مکان مجاز نیست استفاده کنید. معمولاً باید این کار را انجام دهید اگر عنصر به طور موقت رها کردن را نمی‌پذیرد. اگر قرار نیست یک هدف رها کردن باشد، فقط نباید رویداد را لغو کنید.
 
-Note that setting `dropEffect` only indicates the desired effect _at this particular instant_; a later `dragover` dispatch may change it. To persist the choice, you must set it in every `dragover` event. Also, this effect is only _informational_, and what effects ends up being implemented depends on both the source and the target nodes (for example, if the source node cannot be modified, then even if a "move" effect is requested, it may not be possible).
+توجه داشته باشید که تنظیم `dropEffect` فقط اثر مورد نظر _در این لحظه خاص_ را نشان می‌دهد. یک ارسال `dragover` بعدی ممکن است آن را تغییر دهد. برای تداوم انتخاب، باید آن را در هر رویداد `dragover` تنظیم کنید. همچنین، این اثر فقط _اطلاع‌رسانی_ است، و اینکه چه اثری در نهایت پیاده‌سازی می‌شود به هر دو گره مبدأ و هدف بستگی دارد (مثلاً اگر گره مبدأ قابل تغییر نباشد، حتی اگر یک اثر "move" درخواست شود، ممکن است امکان‌پذیر نباشد).
 
-For both user gestures and programmatically setting `dropEffect`, by default, all three drop effects are available. The draggable element can restrict itself to only allow certain effects by setting the {{domxref("DataTransfer.effectAllowed","effectAllowed")}} property within a {{domxref("HTMLElement/dragstart_event", "dragstart")}} event listener.
+برای هر دو حرکت کاربر و تنظیم برنامه‌ریزی شده `dropEffect`، به طور پیش‌فرض، هر سه اثر رها کردن در دسترس هستند. عنصر قابل کشیدن می‌تواند با تنظیم ویژگی {{domxref("DataTransfer.effectAllowed","effectAllowed")}} درون یک شنونده رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} خود را محدود کند که فقط اثرات خاصی را مجاز کند.
 
 ```js
 draggableElement.addEventListener("dragstart", (event) => {
@@ -192,31 +191,31 @@ draggableElement.addEventListener("dragstart", (event) => {
 });
 ```
 
-In this example, only a copy or link operation is allowed, but a move operation is not possible to be selected either via script or via user gestures.
+در این مثال، فقط عملیات کپی یا پیوند مجاز است، اما عملیات انتقال نه از طریق اسکریپت و نه از طریق حرکت‌های کاربر قابل انتخاب نیست.
 
-The values of `effectAllowed` are combinations of `dropEffect`:
+مقادیر `effectAllowed` ترکیبی از `dropEffect` هستند:
 
-| Value           | Description                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `none`          | No operation is permitted                                                                                                                    |
-| `copy`          | `copy` only                                                                                                                                  |
-| `move`          | `move` only                                                                                                                                  |
-| `link`          | `link` only                                                                                                                                  |
-| `copyMove`      | `copy` or `move` only                                                                                                                        |
-| `copyLink`      | `copy` or `link` only                                                                                                                        |
-| `linkMove`      | `link` or `move` only                                                                                                                        |
-| `all`           | `copy`, `move`, or `link`                                                                                                                    |
-| `uninitialized` | The default value when the effect has not been set; generally equivalent to `all`, except the default `dropEffect` may not always be `copy`. |
+| مقدار            | توضیحات                                                                                                            |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `none`           | هیچ عملیاتی مجاز نیست                                                                                             |
+| `copy`           | فقط `copy`                                                                                                        |
+| `move`           | فقط `move`                                                                                                        |
+| `link`           | فقط `link`                                                                                                        |
+| `copyMove`       | فقط `copy` یا `move`                                                                                              |
+| `copyLink`       | فقط `copy` یا `link`                                                                                              |
+| `linkMove`       | فقط `link` یا `move`                                                                                              |
+| `all`            | `copy`، `move`، یا `link`                                                                                         |
+| `uninitialized`  | مقدار پیش‌فرض وقتی اثر تنظیم نشده است؛ معمولاً معادل `all` است، به جز اینکه `dropEffect` پیش‌فرض ممکن است همیشه `copy` نباشد. |
 
-By default, the `dropEffect` is initialized based on `effectAllowed`, in the order of `copy`, `link`, `move`, selecting the first one that is allowed. The unselected but allowed effects may also be selected as default if appropriate; for example, on Windows, holding the <kbd>Alt</kbd> key causes `link` to be used in priority. If `effectAllowed` is `uninitialized` and the dragged element is an `<a>` link, the default `dropEffect` is `link`; if `effectAllowed` is `uninitialized` and the dragged element is a selection from an editable text field, the default `dropEffect` is `move`.
+به طور پیش‌فرض، `dropEffect` بر اساس `effectAllowed` به ترتیب `copy`، `link`، `move` مقداردهی اولیه می‌شود و اولین موردی را که مجاز است انتخاب می‌کند. اثرات مجاز اما انتخاب نشده نیز ممکن است در صورت مناسب به عنوان پیش‌فرض انتخاب شوند. به عنوان مثال، در ویندوز، نگه داشتن کلید <kbd>Alt</kbd> باعث می‌شود `link` در اولویت استفاده شود. اگر `effectAllowed` برابر `uninitialized` باشد و عنصر کشیده شده یک لینک `<a>` باشد، `dropEffect` پیش‌فرض `link` است. اگر `effectAllowed` برابر `uninitialized` باشد و عنصر کشیده شده یک انتخاب از یک فیلد متنی قابل ویرایش باشد، `dropEffect` پیش‌فرض `move` است.
 
 ```html hidden live-sample___drop_effects
 <div class="sources-container">
-  These are the sources with different <code>allowedEffect</code>
+  اینها منابع با <code>allowedEffect</code> متفاوت هستند
   <div id="sources"></div>
 </div>
 <div class="targets-container">
-  These are the targets with different <code>dropEffect</code>
+  اینها اهداف با <code>dropEffect</code> متفاوت هستند
   <div id="targets"></div>
 </div>
 ```
@@ -297,25 +296,25 @@ for (const dropEffect of ["none", "copy", "move", "link"]) {
 
 {{EmbedLiveSample("drop_effects", "", 500)}}
 
-### Custom drop feedback
+### بازخورد رها کردن سفارشی
 
-For more complex visual effects, you can perform other operations during the {{domxref("HTMLElement/dragenter_event", "dragenter")}} event, for example, by inserting an element at the location where the drop will occur. This might be an insertion marker or an element that represents the dragged element in its new location. To do this, you could create an [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img) element and insert it into the document during the {{domxref("HTMLElement/dragenter_event", "dragenter")}} event.
+برای جلوه‌های بصری پیچیده‌تر، می‌توانید عملیات دیگری را در طول رویداد {{domxref("HTMLElement/dragenter_event", "dragenter")}} انجام دهید، برای مثال با درج یک عنصر در مکان‌ی که رها کردن اتفاق می‌افتد. این می‌تواند یک نشانگر درج یا یک عنصر باشد که عنصر کشیده شده را در مکان جدید خود نشان می‌دهد. برای انجام این کار، می‌توانید یک عنصر [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img) ایجاد کنید و آن را در طول رویداد {{domxref("HTMLElement/dragenter_event", "dragenter")}} در سند وارد کنید.
 
-The {{domxref("HTMLElement/dragover_event", "dragover")}} event will fire at the element the mouse is pointing at. Naturally, you may need to move the insertion marker around inside the {{domxref("HTMLElement/dragover_event", "dragover")}} event handler as well. You can use the event's {{domxref("MouseEvent.clientX","clientX")}} and {{domxref("MouseEvent.clientY","clientY")}} properties as with other mouse events to determine the location of the mouse pointer.
+رویداد {{domxref("HTMLElement/dragover_event", "dragover")}} روی عنصری که ماوس به آن اشاره می‌کند شلیک می‌شود. طبیعتاً، ممکن است نیاز داشته باشید نشانگر درج را درون handler رویداد {{domxref("HTMLElement/dragover_event", "dragover")}} نیز جابجا کنید. می‌توانید از ویژگی‌های {{domxref("MouseEvent.clientX","clientX")}} و {{domxref("MouseEvent.clientY","clientY")}} رویداد مانند سایر رویدادهای ماوس برای تعیین مکان pointer ماوس استفاده کنید.
 
-Finally, the {{domxref("HTMLElement/dragleave_event", "dragleave")}} event will fire at an element when the drag leaves the element. This is the time when you should remove any insertion markers or highlighting. You do not need to cancel this event. The {{domxref("HTMLElement/dragleave_event", "dragleave")}} event will always fire, even if the drag is cancelled, so you can always ensure that any insertion point cleanup can be done during this event.
+در نهایت، رویداد {{domxref("HTMLElement/dragleave_event", "dragleave")}} روی یک عنصر زمانی شلیک می‌شود که کشیدن از عنصر خارج می‌شود. این زمانی است که باید هر نشانگر درج یا برجسته‌سازی را حذف کنید. نیازی به لغو این رویداد نیست. رویداد {{domxref("HTMLElement/dragleave_event", "dragleave")}} همیشه شلیک می‌شود، حتی اگر کشیدن لغو شود، بنابراین می‌توانید همیشه مطمئن شوید که هر پاکسازی نقطه درج می‌تواند در طول این رویداد انجام شود.
 
-For a practical example of using these events, see our [Kanban board example](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Kanban_board#inserting_at_a_particular_location).
+برای یک مثال عملی از استفاده از این رویدادها، به [مثال تخته کانبان](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Kanban_board#inserting_at_a_particular_location) ما مراجعه کنید.
 
-## Performing a drop
+## انجام رها کردن
 
-When the user releases the mouse, the drag and drop operation ends.
+هنگامی که کاربر ماوس را رها می‌کند، عملیات کشیدن و رها کردن به پایان می‌رسد.
 
-In order for the drop to be _potentially successful_, the drop must happen over a valid [drop target](#dragging_over_elements_and_specifying_drop_targets), and the `dropEffect` must not be `none` at the time of mouse release. Otherwise, the drop operation is considered [failed](#a_failed_drop).
+برای اینکه رها کردن _احتمالاً موفق_ باشد، رها کردن باید روی یک [هدف رها کردن معتبر](#dragging_over_elements_and_specifying_drop_targets) اتفاق بیفتد، و `dropEffect` در زمان رها کردن ماوس نباید `none` باشد. در غیر این صورت، عملیات رها کردن [ناموفق](#a_failed_drop) در نظر گرفته می‌شود.
 
-If the drop is potentially successful, a {{domxref("HTMLElement/drop_event", "drop")}} event is fired on the drop target. You need to cancel this event using `preventDefault()` in order for the drop to be considered actually successful. Otherwise, the drop is also considered successful if the drop was dropping text (the data contains a `text/plain` item) into an editable text field. In this case, the text is inserted into the field (either at the cursor position or at the end, depending on platform conventions) and, if the `dropEffect` is `move` while the source is a selection within an editable region, the source is removed. Otherwise, for all other drag data and drop targets, the drop is considered failed.
+اگر رها کردن احتمالاً موفق باشد، یک رویداد {{domxref("HTMLElement/drop_event", "drop")}} روی هدف رها کردن شلیک می‌شود. باید این رویداد را با استفاده از `preventDefault()` لغو کنید تا رها کردن واقعاً موفق در نظر گرفته شود. در غیر این صورت، رها کردن نیز در صورتی موفق در نظر گرفته می‌شود که رها کردن متن (داده حاوی یک مورد `text/plain`) در یک فیلد متنی قابل ویرایش باشد. در این حالت، متن در فیلد درج می‌شود (یا در موقعیت مکان‌نما یا در انتها، بسته به قراردادهای پلتفرم) و اگر `dropEffect` برابر `move` باشد در حالی که مبدأ یک انتخاب درون یک ناحیه قابل ویرایش است، مبدأ حذف می‌شود. در غیر این صورت، برای سایر داده‌های کشیدن و اهداف رها کردن، رها کردن ناموفق در نظر گرفته می‌شود.
 
-During the {{domxref("HTMLElement/drop_event", "drop")}} event, you should retrieve the desired data from the drag data store using {{domxref("DataTransfer.getData()")}}, and insert it at the drop location. You can use the {{domxref("DataTransfer.dropEffect","dropEffect")}} property to determine which drag operation was desired. The `drop` event is the only time when you can read the drag data store, other than `dragstart`.
+در طول رویداد {{domxref("HTMLElement/drop_event", "drop")}}، باید داده‌های مورد نظر را از ذخیره‌گاه داده‌های کشیدن با استفاده از {{domxref("DataTransfer.getData()")}} بازیابی کنید و آن را در مکان رها کردن وارد کنید. می‌توانید از ویژگی {{domxref("DataTransfer.dropEffect","dropEffect")}} برای تعیین اینکه کدام عملیات کشیدن مورد نظر بود استفاده کنید. رویداد `drop` تنها زمانی است که می‌توانید ذخیره‌گاه داده‌های کشیدن را بخوانید، به غیر از `dragstart`.
 
 ```js
 target.addEventListener("drop", (event) => {
@@ -325,11 +324,11 @@ target.addEventListener("drop", (event) => {
 });
 ```
 
-In the example here, once the data has been retrieved, we insert the string as the textual content of the target. This has the effect of inserting the dragged text where it was dropped, assuming that the drop target is an area of text such as a `p` or `div` element.
+در مثال اینجا، پس از بازیابی داده، رشته را به عنوان محتوای متنی هدف وارد می‌کنیم. این اثر درج متن کشیده شده در جایی که رها شده است را دارد، با فرض اینکه هدف رها کردن یک ناحیه متنی مانند یک عنصر `p` یا `div` باشد.
 
-The `getData()` method returns an empty string if the data store does not contain data of the specified type. If you implemented [conditional drop targets](#conditional_drop_targets), this situation should not occur, because the drop target should only accept drops when the desired data is present.
+متد `getData()` اگر ذخیره‌گاه داده حاوی داده‌ای از نوع مشخص شده نباشد، یک رشته خالی برمی‌گرداند. اگر [اهداف رها کردن شرطی](#conditional_drop_targets) را پیاده‌سازی کرده باشید، این وضعیت نباید رخ دهد، زیرا هدف رها کردن فقط زمانی باید رها کردن را بپذیرد که داده مورد نظر وجود داشته باشد.
 
-You can retrieve other types of data as well. If the data is a link, it should have the type [`text/uri-list`](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store#dragging_links). You could then insert a link into the content.
+همچنین می‌توانید انواع دیگری از داده را بازیابی کنید. اگر داده یک لینک باشد، باید نوع [`text/uri-list`](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store#dragging_links) را داشته باشد. سپس می‌توانید یک لینک را در محتوا وارد کنید.
 
 ```js
 target.addEventListener("drop", (event) => {
@@ -346,36 +345,36 @@ target.addEventListener("drop", (event) => {
 });
 ```
 
-For more information about how to read drag data, see [Working with the drag data store](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store#reading_the_drag_data_store).
+برای اطلاعات بیشتر در مورد نحوه خواندن داده‌های کشیدن، به [کار با ذخیره‌گاه داده‌های کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store#reading_the_drag_data_store) مراجعه کنید.
 
-It is also the source and the target elements' responsibility to collaborate to implement the `dropEffect`—the source listens for the `dragend` event and the target listens for the `drop` event. For example, if the `dropEffect` is `move`, then one of these elements must remove the dragged item from its old location (usually the source element itself, because the target element doesn't necessarily know or have control over the source).
+همچنین مسئولیت عناصر مبدأ و هدف است که برای پیاده‌سازی `dropEffect` همکاری کنند—مبدأ به رویداد `dragend` گوش می‌دهد و هدف به رویداد `drop` گوش می‌دهد. به عنوان مثال، اگر `dropEffect` برابر `move` باشد، یکی از این عناصر باید مورد کشیده شده را از مکان قدیمی خود حذف کند (معمولاً خود عنصر مبدأ، زیرا عنصر هدف لزوماً مبدأ را نمی‌شناسد یا بر آن کنترل ندارد).
 
 <!-- TODO: default action of dropping files/links into browsers -->
 
-## A failed drop
+## رها کردن ناموفق
 
-The drag-and-drop operation is considered failed if one of the following is true:
+عملیات کشیدن و رها کردن در صورتی ناموفق در نظر گرفته می‌شود که یکی از موارد زیر صادق باشد:
 
-1. The user pressed the <kbd>Escape</kbd> key
-2. The drop happened outside of a valid [drop target](#dragging_over_elements_and_specifying_drop_targets)
-3. The drop effect was `none` at the time of mouse release
-4. The `drop` event was not cancelled and the drop was not dropping text (containing a `text/plain` data) into an editable text field (see [performing a drop](#performing_a_drop))
+1. کاربر کلید <kbd>Escape</kbd> را فشار داد
+2. رها کردن خارج از یک [هدف رها کردن معتبر](#dragging_over_elements_and_specifying_drop_targets) اتفاق افتاد
+3. اثر رها کردن در زمان رها کردن ماوس `none` بود
+4. رویداد `drop` لغو نشد و رها کردن متن (حاوی داده `text/plain`) در یک فیلد متنی قابل ویرایش نبود (به [انجام رها کردن](#performing_a_drop) مراجعه کنید)
 
-For cases 1 and 3, if the abortion happens while hovering over a valid drop target, the drop target receives a {{domxref("HTMLElement/dragleave_event", "dragleave")}} event, as if the drop no longer happens over it, so that it can clean up any [drop feedback](#custom_drop_feedback). In all cases, the `dropEffect` is set to `none` for subsequent events.
+برای موارد 1 و 3، اگر لغو شدن در حالی که روی یک هدف رها کردن معتبر معلق است اتفاق بیفتد، هدف رها کردن یک رویداد {{domxref("HTMLElement/dragleave_event", "dragleave")}} دریافت می‌کند، گویی که رها کردن دیگر روی آن اتفاق نمی‌افتد، تا بتواند هر [بازخورد رها کردن](#custom_drop_feedback) را پاک کند. در همه موارد، `dropEffect` برای رویدادهای بعدی روی `none` تنظیم می‌شود.
 
-Afterwards, a {{domxref("HTMLElement/dragend_event", "dragend")}} event is fired at the source node. The browser may display an animation of the dragged selection going back to the source of the drag-and-drop operation.
+پس از آن، یک رویداد {{domxref("HTMLElement/dragend_event", "dragend")}} در گره مبدأ شلیک می‌شود. مرورگر ممکن است یک انیمیشن از بازگشت انتخاب کشیده شده به مبدأ عملیات کشیدن و رها کردن نمایش دهد.
 
-## Finishing the drag
+## پایان کشیدن
 
-Once the drag is complete, a {{domxref("HTMLElement/dragend_event", "dragend")}} event is fired at the source of the drag (the same element that received the {{domxref("HTMLElement/dragstart_event", "dragstart")}} event). This event will fire regardless of whether the drag succeeded.
+پس از اتمام کشیدن، یک رویداد {{domxref("HTMLElement/dragend_event", "dragend")}} در مبدأ کشیدن (همان عنصری که رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} را دریافت کرد) شلیک می‌شود. این رویداد صرف‌نظر از موفقیت یا عدم موفقیت کشیدن شلیک می‌شود.
 
-If the {{domxref("DataTransfer.dropEffect","dropEffect")}} property has the value `none` during a {{domxref("HTMLElement/dragend_event", "dragend")}}, then the drag was cancelled. Otherwise, the effect specifies which operation was performed. The source can use this information after a `move` operation to remove the dragged item from the old location.
+اگر ویژگی {{domxref("DataTransfer.dropEffect","dropEffect")}} در طول یک {{domxref("HTMLElement/dragend_event", "dragend")}} مقدار `none` داشته باشد، آنگاه کشیدن لغو شده است. در غیر این صورت، اثر مشخص می‌کند که کدام عملیات انجام شده است. مبدأ می‌تواند از این اطلاعات پس از یک عملیات `move` برای حذف مورد کشیده شده از مکان قدیمی استفاده کند.
 
-A drop can occur inside the same window or over another application. The {{domxref("HTMLElement/dragend_event", "dragend")}} event will always fire regardless. The event's {{domxref("MouseEvent.screenX","screenX")}} and {{domxref("MouseEvent.screenY","screenY")}} properties will be set to the screen coordinates where the drop occurred.
+یک رها کردن می‌تواند در همان پنجره یا در یک برنامه دیگر اتفاق بیفتد. رویداد {{domxref("HTMLElement/dragend_event", "dragend")}} همیشه صرف‌نظر از این شلیک می‌شود. ویژگی‌های {{domxref("MouseEvent.screenX","screenX")}} و {{domxref("MouseEvent.screenY","screenY")}} رویداد روی مختصات صفحه‌ای که رها کردن در آن اتفاق افتاد تنظیم می‌شوند.
 
-After the {{domxref("HTMLElement/dragend_event", "dragend")}} event has finished propagating, the drag and drop operation is complete.
+پس از پایان انتشار رویداد {{domxref("HTMLElement/dragend_event", "dragend")}}، عملیات کشیدن و رها کردن کامل می‌شود.
 
-## See also
+## همچنین ببینید
 
-- [HTML Drag and Drop API (Overview)](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
-- [Working with the drag data store](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
+- [HTML Drag and Drop API (بررسی کلی)](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+- [کار با ذخیره‌گاه داده‌های کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
