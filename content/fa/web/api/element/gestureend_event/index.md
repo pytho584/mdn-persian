@@ -1,11 +1,5 @@
 ---
 title: "Element: gestureend event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/gestureend_event"
-status: "needs-translation"
----
-
----
-title: "Element: gestureend event"
 short-title: gestureend
 slug: Web/API/Element/gestureend_event
 page-type: web-api-event
@@ -16,13 +10,13 @@ browser-compat: api.Element.gestureend_event
 
 {{APIRef}}{{Non-standard_header}}
 
-The **`gestureend`** event is fired when there are no longer multiple fingers contacting the touch surface, thus ending the gesture.
+رویداد **`gestureend`** زمانی فعال می‌شود که دیگر چند انگشت با سطح لمسی در تماس نباشند و بدین ترتیب ژست (gesture) پایان می‌یابد.
 
-It is a proprietary event specific to WebKit.
+این یک رویداد اختصاصی مخصوص WebKit است.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler) را تنظیم کنید.
 
 ```js-nolint
 addEventListener("gestureend", (event) => { })
@@ -30,20 +24,20 @@ addEventListener("gestureend", (event) => { })
 ongestureend = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("GestureEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("GestureEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("GestureEvent")}}
 
-## Specifications
+## مشخصات
 
-Not part of any specification.
+این رویداد بخشی از هیچ مشخصاتی نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [GestureEventClassReference at the Safari Developer Library](https://developer.apple.com/documentation/webkitjs/gestureevent)
