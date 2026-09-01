@@ -1,11 +1,5 @@
 ---
 title: "CustomElementRegistry: whenDefined() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/whenDefined"
-status: "needs-translation"
----
-
----
-title: "CustomElementRegistry: whenDefined() method"
 short-title: whenDefined()
 slug: Web/API/CustomElementRegistry/whenDefined
 page-type: web-api-instance-method
@@ -14,44 +8,43 @@ browser-compat: api.CustomElementRegistry.whenDefined
 
 {{APIRef("Web Components")}}
 
-The **`whenDefined()`** method of the {{domxref("CustomElementRegistry")}} interface returns a {{jsxref("Promise")}} that resolves when the named element is defined.
+متد **`whenDefined()`** از رابط {{domxref("CustomElementRegistry")}} یک {{jsxref("Promise")}} برمی‌گرداند که وقتی عنصر با نام مشخص شده تعریف شود، resolve می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 whenDefined(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the custom element.
+  - : نام عنصر سفارشی.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with the [custom element's](/en-US/docs/Web/API/Web_components/Using_custom_elements) constructor when a custom element becomes defined with the given name.
-If a custom element has already been defined with the name, the promise will immediately fulfill.
+یک {{jsxref("Promise")}} که با سازنده (constructor) [عنصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements) هنگامی که یک عنصر سفارشی با نام داده شده تعریف شود، fulfilled می‌شود.
+اگر یک عنصر سفارشی قبلاً با این نام تعریف شده باشد، promise بلافاصله fulfilled می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : The provided [name](#name) is not a [valid custom element name](/en-US/docs/Web/API/CustomElementRegistry/define#valid_custom_element_names).
+  - : [نام](#name) ارائه‌شده یک [نام عنصر سفارشی معتبر](/en-US/docs/Web/API/CustomElementRegistry/define#valid_custom_element_names) نیست.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-This example uses `whenDefined()` to detect when the custom elements that make up a menu are defined.
-The menu displays placeholder content until the actual menu content is ready to display.
+این مثال از `whenDefined()` برای تشخیص زمان تعریف شدن عناصر سفارشی که یک منو را تشکیل می‌دهند استفاده می‌کند. منو تا زمانی که محتوای واقعی منو آماده نمایش نشده است، محتوای placeholder را نشان می‌دهد.
 
 ```html
 <nav id="menu-container">
-  <div class="menu-placeholder">Loading…</div>
+  <div class="menu-placeholder">در حال بارگذاری…</div>
   <nav-menu>
-    <menu-item>Item 1</menu-item>
-    <menu-item>Item 2</menu-item>
+    <menu-item>آیتم ۱</menu-item>
+    <menu-item>آیتم ۲</menu-item>
     …
-    <menu-item>Item N</menu-item>
+    <menu-item>آیتم N</menu-item>
   </nav-menu>
 </nav>
 ```
@@ -59,29 +52,29 @@ The menu displays placeholder content until the actual menu content is ready to 
 ```js
 const container = document.getElementById("menu-container");
 const placeholder = container.querySelector(".menu-placeholder");
-// Fetch all the children of menu that are not yet defined.
+// همه فرزندان منو که هنوز تعریف نشده‌اند را دریافت کنید.
 const undefinedElements = container.querySelectorAll(":not(:defined)");
 
 async function removePlaceholder() {
-  // Filter the elements down to unique localNames
+  // عناصر را بر اساس localNameهای یکتا فیلتر کنید
   const tags = new Set(
     [...undefinedElements].map((button) => button.localName),
   );
   const promises = [...tags].map((tag) => customElements.whenDefined(tag));
 
-  // Wait for all the children to be upgraded
+  // منتظر بمانید تا همه فرزندان ارتقا یابند (upgraded)
   await Promise.all(promises);
-  // then remove the placeholder
+  // سپس placeholder را حذف کنید
   container.removeChild(placeholder);
 }
 
 removePlaceholder();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
