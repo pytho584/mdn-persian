@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: toString() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/toString"
-status: "needs-translation"
----
-
----
-title: "DOMMatrixReadOnly: toString() method"
 short-title: toString()
 slug: Web/API/DOMMatrixReadOnly/toString
 page-type: web-api-instance-method
@@ -14,11 +8,11 @@ browser-compat: api.DOMMatrixReadOnly.toString
 
 {{APIRef("DOM")}}
 
-The **`toString()`** {{Glossary("stringifier")}} of the {{domxref("DOMMatrixReadOnly")}} interface returns the value of the matrix as a string in the form of a `matrix()` or `matrix3d()` CSS [transform function](/en-US/docs/Web/CSS/Reference/Values/transform-function); comma-separated lists of 6 or 16 coordinate values, prepended by `"matrix(` or `"matrix3d(` respectively, appended by `)"`.
+متد **`toString()`** به عنوان {{Glossary("stringifier")}} در رابط {{domxref("DOMMatrixReadOnly")}} مقدار ماتریس را به صورت یک رشته در قالب تابع تبدیل `matrix()` یا `matrix3d()` از [توابع تبدیل CSS](/en-US/docs/Web/CSS/Reference/Values/transform-function) برمی‌گرداند؛ یعنی فهرستی از مقادیر مختصات که با کاما جدا شده‌اند و به ترتیب با `"matrix(` یا `"matrix3d(` شروع و با `)"` پایان می‌یابند.
 
-For a 2D matrix, the elements [`a` through `f`](/en-US/docs/Web/API/DOMMatrix#a) are listed, for a total of six values and the form `matrix(a, b, c, d, e, f)`. See the {{cssxref("transform-function/matrix", "matrix()")}} CSS function for details on this syntax.
+برای ماتریس دو بعدی، عناصر [`a` تا `f`](/en-US/docs/Web/API/DOMMatrix#a) فهرست می‌شوند؛ در مجموع شش مقدار به شکل `matrix(a, b, c, d, e, f)`. برای جزئیات این نحو، به تابع CSS {{cssxref("transform-function/matrix", "matrix()")}} مراجعه کنید.
 
-For a 3D matrix, the returned string contains all [16 elements](/en-US/docs/Web/API/DOMMatrix#m11) and takes the form `matrix3d(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44)`. See the CSS {{cssxref("transform-function/matrix3d", "matrix3d()")}} function for details on the 3D notation's syntax.
+برای ماتریس سه بعدی، رشته برگشتی شامل هر [۱۶ عنصر](/en-US/docs/Web/API/DOMMatrix#m11) است و به شکل `matrix3d(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44)` است. برای جزئیات نحو نمادگذاری سه بعدی، به تابع CSS {{cssxref("transform-function/matrix3d", "matrix3d()")}} مراجعه کنید.
 
 ## Syntax
 
@@ -28,11 +22,11 @@ toString()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-A string; the values of the list separated by commas, within `matrix()` or `matrix3d()` function syntax.
+یک رشته؛ مقادیر فهرست که با کاما جدا شده‌اند و در قالب تابع `matrix()` یا `matrix3d()` قرار دارند.
 
 ## Examples
 
