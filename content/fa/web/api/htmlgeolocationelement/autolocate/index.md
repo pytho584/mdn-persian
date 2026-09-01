@@ -1,11 +1,5 @@
 ---
 title: "HTMLGeolocationElement: autolocate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLGeolocationElement/autolocate"
-status: "needs-translation"
----
-
----
-title: "HTMLGeolocationElement: autolocate property"
 short-title: autolocate
 slug: Web/API/HTMLGeolocationElement/autolocate
 page-type: web-api-instance-property
@@ -16,24 +10,24 @@ browser-compat: api.HTMLGeolocationElement.autolocate
 
 {{APIRef("Navigation API")}}{{SeeCompatTable}}
 
-The **`autolocate`** property of the {{domxref("HTMLGeolocationElement")}} interface gets and sets a boolean value indicating whether the browser should immediately request location data when the {{htmlelement("geolocation")}} element is rendered, provided permission to use the `geolocation` feature is already granted.
+ویژگی **`autolocate`** از رابط {{domxref("HTMLGeolocationElement")}} یک مقدار بولین را دریافت و تنظیم می‌کند که نشان می‌دهد آیا مرورگر باید به‌محض رندر شدن عنصر {{htmlelement("geolocation")}} داده‌های موقعیت مکانی را درخواست کند یا خیر، به شرطی که مجوز استفاده از قابلیت `geolocation` از قبل صادر شده باشد.
 
-It reflects the value of the `<geolocation>` [`autolocate`](/en-US/docs/Web/HTML/Reference/Elements/geolocation#autolocate) attribute.
+این ویژگی، مقدار ویژگی [`autolocate`](/en-US/docs/Web/HTML/Reference/Elements/geolocation#autolocate) عنصر `<geolocation>` را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A boolean value:
+یک مقدار بولین:
 
-- If `true`, location data is requested as soon as the `<geolocation>` element is rendered, provided permission to use the `geolocation` feature was previously granted.
-- If `false`, location data is only requested when the user presses the `<geolocation>` button.
+- اگر `true` باشد، داده‌های موقعیت مکانی به‌محض رندر شدن عنصر `<geolocation>` درخواست می‌شوند، به شرطی که مجوز استفاده از قابلیت `geolocation` قبلاً صادر شده باشد.
+- اگر `false` باشد، داده‌های موقعیت مکانی فقط زمانی درخواست می‌شوند که کاربر دکمه‌ی `<geolocation>` را فشار دهد.
 
-Defaults to `false`.
+مقدار پیش‌فرض `false` است.
 
-If permission to use the `geolocation` feature was not previously granted, the `autolocate` property is ignored.
+اگر مجوز استفاده از قابلیت `geolocation` قبلاً صادر نشده باشد، ویژگی `autolocate` نادیده گرفته می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده‌ی پایه
 
 ```html
 <geolocation autolocate></geolocation>
@@ -44,16 +38,16 @@ const geo = document.querySelector("geolocation");
 console.log(geo.autolocate); // true
 ```
 
-See our [Embedded map example walkthrough](/en-US/docs/Web/API/HTMLGeolocationElement#embedded_map_example) for a real-world example that includes `autolocate`.
+برای یک مثال واقعی که شامل `autolocate` است، [شرح گام‌به‌گام مثال نقشه‌ی جاسازی‌شده](/en-US/docs/Web/API/HTMLGeolocationElement#embedded_map_example) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{htmlelement("geolocation")}} element
+- عنصر {{htmlelement("geolocation")}}
