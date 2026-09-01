@@ -1,11 +1,5 @@
 ---
 title: "DOMRectList: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRectList/length"
-status: "needs-translation"
----
-
----
-title: "DOMRectList: length property"
 short-title: length
 slug: Web/API/DOMRectList/length
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.DOMRectList.length
 
 {{APIRef("Geometry Interfaces")}}
 
-The read-only **`length`** property of the {{domxref("DOMRectList")}} interface returns the number of {{domxref("DOMRect")}} objects in the list.
+ویژگی فقط‌خواندنی **`length`** در رابط {{domxref("DOMRectList")}} تعداد اشیای {{domxref("DOMRect")}} موجود در فهرست را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A positive integer representing the count of `DOMRect` objects in the `DOMRectList`. If there are no rectangles in the list, `length` is `0`.
+یک عدد صحیح مثبت که تعداد اشیای `DOMRect` را در `DOMRectList` نشان می‌دهد. اگر هیچ مستطیلی در فهرست نباشد، `length` برابر `0` است.
 
-## Examples
+## مثال‌ها
 
-In the following example, we retrieve the list of rectangles for a {{htmlelement("div")}} element using {{domxref("Element.getClientRects()")}}. We then display the number of rectangles in the list within another `<div>` element on the page.
+در مثال زیر، فهرست مستطیل‌های یک عنصر {{htmlelement("div")}} را با استفاده از {{domxref("Element.getClientRects()")}} دریافت می‌کنیم. سپس تعداد مستطیل‌های موجود در فهرست را در یک عنصر `<div>` دیگر در صفحه نمایش می‌دهیم.
 
-First, the HTML:
+ابتدا، HTML:
 
 ```html
 <div id="box"></div>
@@ -39,7 +33,7 @@ First, the HTML:
 }
 ```
 
-Now the JavaScript:
+حالا JavaScript:
 
 ```js
 const box = document.getElementById("box");
@@ -49,14 +43,14 @@ const output = document.getElementById("output");
 output.textContent = `Number of rectangles: ${rects.length}`;
 ```
 
-The output looks like this:
+خروجی به این شکل است:
 
 {{ EmbedLiveSample('Examples', '100%', 60) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
