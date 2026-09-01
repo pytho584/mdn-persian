@@ -1,10 +1,4 @@
 ---
-title: "DeferredRequestInit"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeferredRequestInit"
-status: "needs-translation"
----
-
----
 title: DeferredRequestInit
 slug: Web/API/DeferredRequestInit
 page-type: web-api-interface
@@ -15,58 +9,58 @@ browser-compat: api.Window.fetchLater
 
 {{DefaultAPISidebar("Fetch API")}}{{SeeCompatTable}}
 
-The **`DeferredRequestInit`** dictionary of the [Fetch API](/en-US/docs/Web/API/Fetch_API) represents the set of options that can be used to configure a deferred fetch request.
+واژه‌نامه **`DeferredRequestInit`** از [Fetch API](/en-US/docs/Web/API/Fetch_API) مجموعه‌ای از گزینه‌هایی است که می‌توان برای پیکربندی یک درخواست fetch تأخیری استفاده کرد.
 
-The `DeferredRequestInit` object is passed directly into the {{domxref("window.fetchLater()")}} function call as the second argument.
+شیء `DeferredRequestInit` مستقیماً به عنوان آرگومان دوم به تابع {{domxref("window.fetchLater()")}} ارسال می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-This dictionary extends the {{domxref("RequestInit")}} dictionary with the addition of the following properties:
+این واژه‌نامه، واژه‌نامه {{domxref("RequestInit")}} را با افزودن ویژگی‌های زیر گسترش می‌دهد:
 
 - `activateAfter` {{optional_inline}}
-  - : A {{ domxref("DOMHighResTimeStamp") }} indicating a timeout in milliseconds after which the fetch request should be sent. The fetch can be sent earlier on navigating away. The _actual_ sending time is unknown, as the browser may wait for a longer or shorter time, for example, to optimize the batching of deferred fetches. If the `activateAfter` property is not provided, the deferred fetch waits until the end of the page visit (including entering the [bfcache](/en-US/docs/Glossary/bfcache)).
+  - : یک {{ domxref("DOMHighResTimeStamp") }} که یک مهلت زمانی (بر حسب میلی‌ثانیه) را مشخص می‌کند که پس از آن درخواست fetch باید ارسال شود. در صورت خروج از صفحه، fetch می‌تواند زودتر ارسال شود. زمان _واقعی_ ارسال مشخص نیست، زیرا مرورگر ممکن است مدت زمان بیشتری یا کمتری صبر کند، مثلاً برای بهینه‌سازی دسته‌بندی fetchهای تأخیری. اگر ویژگی `activateAfter` ارائه نشود، fetch تأخیری تا پایان بازدید از صفحه (از جمله ورود به [bfcache](/en-US/docs/Glossary/bfcache)) صبر می‌کند.
 
-### Exceptions
+### استثناها
 
 - `RangeError` {{domxref("DOMException")}}
-  - : Raised when a negative `activateAfter` is provided.
+  - : زمانی رخ می‌دهد که یک `activateAfter` منفی ارائه شود.
 
-## Examples
+## مثال‌ها
 
-### Defer a `GET` request until the page is destroyed or enters the bfcache
+### تأخیر در یک درخواست `GET` تا زمانی که صفحه نابود شود یا وارد bfcache شود
 
-In this example, no `DeferredRequestInit` object is provided and no timeout is used:
+در این مثال، هیچ شیء `DeferredRequestInit` ارائه نشده و از هیچ مهلت زمانی استفاده نشده است:
 
 ```js
 fetchLater("/send_beacon");
 ```
 
-### Defer a `POST` request for around 1 minute
+### تأخیر در یک درخواست `POST` به مدت حدود ۱ دقیقه
 
-In this example we create a {{domxref("Request")}}, and provide an `activateAfter` value to delay sending the request for 60,000 milliseconds (or one minute):
+در این مثال، یک {{domxref("Request")}} ایجاد می‌کنیم و یک مقدار `activateAfter` برای تأخیر در ارسال درخواست به مدت ۶۰۰۰۰ میلی‌ثانیه (یا یک دقیقه) ارائه می‌دهیم:
 
 ```js
 fetchLater("/send_beacon", {
   method: "POST",
   body: getBeaconData(),
-  activateAfter: 60000, // 1 minute
+  activateAfter: 60000, // 1 دقیقه
 });
 ```
 
 > [!NOTE]
-> The actual sending time is unknown, as the browser may wait for a longer or shorter period of time, for example to optimize batching of deferred fetches.
+> زمان واقعی ارسال مشخص نیست، زیرا مرورگر ممکن است مدت زمان بیشتری یا کمتری صبر کند، مثلاً برای بهینه‌سازی دسته‌بندی fetchهای تأخیری.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Deferred Fetch](/en-US/docs/Web/API/Fetch_API/Using_Deferred_Fetch)
-- [ServiceWorker API](/en-US/docs/Web/API/Service_Worker_API)
-- [HTTP access control (CORS)](/en-US/docs/Web/HTTP/Guides/CORS)
+- [استفاده از Fetch تأخیری](/en-US/docs/Web/API/Fetch_API/Using_Deferred_Fetch)
+- [API ServiceWorker](/en-US/docs/Web/API/Service_Worker_API)
+- [کنترل دسترسی HTTP (CORS)](/en-US/docs/Web/HTTP/Guides/CORS)
 - [HTTP](/en-US/docs/Web/HTTP)
