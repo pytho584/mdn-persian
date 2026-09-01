@@ -1,31 +1,20 @@
 ---
 title: "GPURenderPassEncoder: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/label"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: label property"
-short-title: label
-slug: Web/API/GPURenderPassEncoder/label
-page-type: web-api-instance-property
-browser-compat: api.GPURenderPassEncoder.label
 ---
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** read-only property of the
-{{domxref("GPURenderPassEncoder")}} interface is a string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+خاصیت **`label`** (فقط خواندنی) از رابط {{domxref("GPURenderPassEncoder")}} یک رشته است که برچسبی را فراهم می‌کند که می‌توان از آن برای شناسایی شیء استفاده کرد، برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUCommandEncoder.beginRenderPass()")}} call, or you can get and set it directly on the `GPURenderPassEncoder` object.
+این مقدار می‌تواند با ارائه یک خاصیت `label` در شیء توصیف‌کننده‌ای که به فراخوانی مبدأ {{domxref("GPUCommandEncoder.beginRenderPass()")}} داده می‌شود، تنظیم گردد، یا می‌توانید آن را مستقیماً روی شیء `GPURenderPassEncoder` دریافت و تنظیم کنید.
 
-## Value
+## مقدار
 
-A string. If no label value has previously been set, getting the label returns an empty string.
+یک رشته. اگر قبلاً هیچ مقدار برچسبی تنظیم نشده باشد، دریافت برچسب یک رشته خالی برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPURenderPassEncoder.label`:
+تنظیم و دریافت یک برچسب از طریق `GPURenderPassEncoder.label`:
 
 ```js
 const commandEncoder = device.createCommandEncoder();
@@ -47,7 +36,7 @@ passEncoder.label = "my_render_pass_encoder";
 console.log(passEncoder.label); // "my_render_pass_encoder"
 ```
 
-Setting a label via the originating {{domxref("GPUCommandEncoder.beginRenderPass()")}} call, and then getting it via `GPURenderPassEncoder.label`:
+تنظیم یک برچسب از طریق فراخوانی مبدأ {{domxref("GPUCommandEncoder.beginRenderPass()")}} و سپس دریافت آن از طریق `GPURenderPassEncoder.label`:
 
 ```js
 const commandEncoder = device.createCommandEncoder();
@@ -69,14 +58,14 @@ const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);
 console.log(passEncoder.label); // "my_render_pass_encoder"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
