@@ -1,11 +1,5 @@
 ---
 title: "HTMLOptionElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement"
-status: "needs-translation"
----
-
----
-title: HTMLOptionElement
 slug: Web/API/HTMLOptionElement
 page-type: web-api-interface
 browser-compat: api.HTMLOptionElement
@@ -13,49 +7,49 @@ browser-compat: api.HTMLOptionElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLOptionElement`** interface represents {{HTMLElement("option")}} elements and inherits all properties and methods of the {{domxref("HTMLElement")}} interface.
+رابط **`HTMLOptionElement`** عناصر {{HTMLElement("option")}} را نمایش می‌دهد و تمام ویژگی‌ها و متدهای رابط {{domxref("HTMLElement")}} را به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("HTMLOptionElement.Option", "Option()")}}
-  - : Returns a newly created `HTMLOptionElement` object. It has four parameters: the text to display, `text`, the value associated, `value`, the value of `defaultSelected`, and the value of `selected`. The last three parameters are optional.
+  - : یک شیء جدید `HTMLOptionElement` می‌سازد. این سازنده چهار پارامتر دارد: متنی که نمایش داده می‌شود (`text`)، مقدار مرتبط (`value`)، مقدار `defaultSelected` و مقدار `selected`. سه پارامتر آخر اختیاری هستند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref("HTMLOptionElement.defaultSelected")}}
-  - : Has a value of either `true` or `false` that shows the initial value of the [`selected`](/en-US/docs/Web/HTML/Reference/Elements/option#selected) HTML attribute, indicating whether the option is selected by default or not.
+  - : مقدار آن `true` یا `false` است و مقدار اولیهٔ ویژگی HTML [`selected`](/en-US/docs/Web/HTML/Reference/Elements/option#selected) را نشان می‌دهد؛ یعنی مشخص می‌کند که گزینه به‌صورت پیش‌فرض انتخاب شده است یا نه.
 - {{domxref("HTMLOptionElement.disabled")}}
-  - : Has a value of either `true` or `false` representing the value of the [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/option#disabled) HTML attribute, which indicates that the option is unavailable to be selected.
+  - : مقدار آن `true` یا `false` است و بیانگر مقدار ویژگی HTML [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/option#disabled) است؛ این ویژگی نشان می‌دهد که گزینه برای انتخاب در دسترس نیست.
 - {{domxref("HTMLOptionElement.form")}} {{ReadOnlyInline}}
-  - : A {{domxref("HTMLFormElement")}} representing the same value as the `form` of the corresponding {{HTMLElement("select")}} element, if the option is a descendant of a {{HTMLElement("select")}} element, or null if none is found.
+  - : یک {{domxref("HTMLFormElement")}} که همان مقدار `form` عنصر {{HTMLElement("select")}} متناظر را نمایش می‌دهد، در صورتی که گزینه از نسل یک عنصر {{HTMLElement("select")}} باشد؛ در غیر این صورت مقدار `null` را برمی‌گرداند.
 - {{domxref("HTMLOptionElement.index")}} {{ReadOnlyInline}}
-  - : A `long` representing the position of the option within the list of options it belongs to, in tree-order. If the option is not part of a list of options, like when it is part of the {{HTMLElement("datalist")}} element, the value is `0`.
+  - : یک `long` که جایگاه گزینه را در فهرست گزینه‌هایی که به آن تعلق دارد، به ترتیب درخت (tree-order) نشان می‌دهد. اگر گزینه بخشی از فهرست گزینه‌ها نباشد، مثلاً وقتی بخشی از عنصر {{HTMLElement("datalist")}} باشد، مقدار آن `0` است.
 - {{domxref("HTMLOptionElement.label")}}
-  - : A string that reflects the value of the [`label`](/en-US/docs/Web/HTML/Reference/Elements/option#label) HTML attribute, which provides a label for the option. If this attribute isn't specifically set, reading it returns the element's {{domxref("HTMLOptionElement.text", "text")}} content.
+  - : یک رشته (string) که منعکس‌کنندهٔ مقدار ویژگی HTML [`label`](/en-US/docs/Web/HTML/Reference/Elements/option#label) است و برچسبی برای گزینه فراهم می‌کند. اگر این ویژگی به‌طور خاص تنظیم نشده باشد، خواندن آن محتوای {{domxref("HTMLOptionElement.text", "text")}} عنصر را برمی‌گرداند.
 - {{domxref("HTMLOptionElement.selected")}}
-  - : Has a value of either `true` or `false` that indicates whether the option is currently selected.
+  - : مقدار آن `true` یا `false` است و نشان می‌دهد که آیا گزینه در حال حاضر انتخاب شده است.
 - {{domxref("HTMLOptionElement.text")}}
-  - : A string that contains the text content of the element.
+  - : یک رشته که محتوای متنی عنصر را در بر می‌گیرد.
 - {{domxref("HTMLOptionElement.value")}}
-  - : A string that reflects the value of the [`value`](/en-US/docs/Web/HTML/Reference/Elements/option#value) HTML attribute, if it exists; otherwise reflects value of the {{domxref("Node.textContent")}} property.
+  - : یک رشته که در صورت وجود، مقدار ویژگی HTML [`value`](/en-US/docs/Web/HTML/Reference/Elements/option#value) را منعکس می‌کند؛ در غیر این صورت مقدار ویژگی {{domxref("Node.textContent")}} را منعکس می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Doesn't implement any specific method, but inherits methods from its parent, {{domxref("HTMLElement")}}._
+_هیچ روش خاصی را پیاده‌سازی نمی‌کند، اما روش‌ها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{HTMLElement("option")}}
 - {{HTMLElement("select")}}
