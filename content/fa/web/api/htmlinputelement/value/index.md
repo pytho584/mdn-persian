@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/value"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: value property"
 short-title: value
 slug: Web/API/HTMLInputElement/value
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.HTMLInputElement.value
 
 {{ APIRef("HTML DOM") }}
 
-The **`value`** property of the {{DOMxRef("HTMLInputElement")}} interface represents the current value of the {{htmlelement("input")}} element as a string.
+ویژگی **`value`** در رابط {{DOMxRef("HTMLInputElement")}} مقدار کنونی عنصر {{htmlelement("input")}} را به‌صورت یک رشته نمایش می‌دهد.
 
-This property can also be set directly, for example to set a default value based on some condition.
+این ویژگی را می‌توان به‌طور مستقیم نیز تنظیم کرد، برای مثال برای تعیین یک مقدار پیش‌فرض بر اساس یک شرط.
 
 ## Value
 
-A string specifying the default value of the {{htmlelement("input")}} element.
+یک رشته که مقدار پیش‌فرض عنصر {{htmlelement("input")}} را مشخص می‌کند.
 
 ## Examples
 
-### Retrieving a text input's value
+### بازیابی مقدار یک ورودی متنی
 
-In this example, the log displays the current value as the user enters data into the input.
+در این مثال، لاگ مقدار کنونی را هنگام وارد کردن داده توسط کاربر در ورودی نمایش می‌دهد.
 
 #### HTML
 
-We include an {{htmlelement("input")}} and an associated {{htmlelement("label")}}, with a {{htmlelement("pre")}} container for our output.
+ما یک {{htmlelement("input")}} و یک {{htmlelement("label")}} مرتبط را همراه با یک ظرف {{htmlelement("pre")}} برای خروجی قرار داده‌ایم.
 
 ```html
 <label for="given-name">Your name:</label>
@@ -42,7 +36,7 @@ We include an {{htmlelement("input")}} and an associated {{htmlelement("label")}
 
 #### JavaScript
 
-The `<pre>` element's {{domxref("HTMLElement.innerText", "innerText")}} is updated to the current value of the `<input>` every time a {{domxref("Element/keyup_event", "keyup")}} event is fired.
+مقدار {{domxref("HTMLElement.innerText", "innerText")}} عنصر `<pre>` به مقدار کنونی `<input>` به‌روزرسانی می‌شود هر زمان که رویداد {{domxref("Element/keyup_event", "keyup")}} رخ دهد.
 
 ```js
 const logElement = document.getElementById("log");
@@ -61,17 +55,17 @@ inputElement.addEventListener("keyup", () => {
 }
 ```
 
-#### Results
+#### نتایج
 
 {{EmbedLiveSample("Retrieving a text input's value", "", 100)}}
 
-### Retrieving a color value
+### بازیابی مقدار رنگ
 
-This example demonstrates that the `value` property with an `<input>` of type {{HTMLElement("input/color", "color")}}.
+این مثال نشان می‌دهد که ویژگی `value` با یک `<input>` از نوع {{HTMLElement("input/color", "color")}} چگونه کار می‌کند.
 
 #### HTML
 
-We include an `<input>` of type `color`:
+ما یک `<input>` از نوع `color` قرار داده‌ایم:
 
 ```html
 <label for="color">Pick a color:</label>
@@ -83,7 +77,7 @@ We include an `<input>` of type `color`:
 
 #### JavaScript
 
-The `<pre>` element's {{domxref("HTMLElement.innerText", "innerText")}} is updated with the default color value (`#000000`) and then updated every time a {{domxref("HTMLElement/change_event", "change")}} event is fired.
+مقدار {{domxref("HTMLElement.innerText", "innerText")}} عنصر `<pre>` با مقدار رنگ پیش‌فرض (`#000000`) به‌روزرسانی می‌شود و سپس هر بار که رویداد {{domxref("HTMLElement/change_event", "change")}} رخ دهد، دوباره به‌روزرسانی می‌شود.
 
 ```js
 const logElement = document.getElementById("log");
@@ -104,7 +98,7 @@ inputElement.addEventListener("change", () => {
 }
 ```
 
-#### Results
+#### نتایج
 
 {{EmbedLiveSample("Retrieving a color value", "", 100)}}
 
@@ -116,7 +110,7 @@ inputElement.addEventListener("change", () => {
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{HTMLElement("input")}}
 - {{DOMXref("HTMLInputElement.valueAsDate")}}
