@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaBusy property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaBusy"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaBusy property"
 short-title: ariaBusy
 slug: Web/API/ElementInternals/ariaBusy
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.ElementInternals.ariaBusy
 
 {{APIRef("Web Components")}}
 
-The **`ariaBusy`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) attribute, which indicates whether an element is being modified, as assistive technologies may want to wait until the modifications are complete before exposing them to the user.
+ویژگی **`ariaBusy`** از رابط {{domxref("ElementInternals")}}، مقدار [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) را بازتاب می‌دهد؛ این ویژگی مشخص می‌کند که آیا یک عنصر در حال تغییر است، زیرا فناوری‌های کمکی ممکن است بخواهند تا تکمیل تغییرات صبر کنند و سپس آن‌ها را در اختیار کاربر قرار دهند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. این معناشناسی‌های پیش‌فرض ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً اضافه نکند، معناشناسی پیش‌فرض حفظ می‌شود. برای اطلاعات بیشتر به [توضیح‌دهنده مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The element is being updated.
+  - : عنصر در حال به‌روزرسانی است.
 - `"false"`
-  - : There are no expected updates for the element.
+  - : هیچ به‌روزرسانی مورد انتظاری برای عنصر وجود ندارد.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaBusy` is set to "true".
+در این مثال، مقدار `ariaBusy` روی «true» تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -43,10 +37,10 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
