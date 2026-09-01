@@ -1,11 +1,5 @@
 ---
 title: "CustomElementRegistry: getName() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/getName"
-status: "needs-translation"
----
-
----
-title: "CustomElementRegistry: getName() method"
 short-title: getName()
 slug: Web/API/CustomElementRegistry/getName
 page-type: web-api-instance-method
@@ -14,26 +8,24 @@ browser-compat: api.CustomElementRegistry.getName
 
 {{APIRef("Web Components")}}
 
-The **`getName()`** method of the
-{{domxref("CustomElementRegistry")}} interface returns the name for a
-previously-defined custom element.
+متد **`getName()`** از رابط {{domxref("CustomElementRegistry")}} نام یک عنصر سفارشی که قبلاً تعریف شده است را بازمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getName(constructor)
 ```
 
-### Parameters
+### پارامترها
 
 - `constructor`
-  - : Constructor for the custom element.
+  - سازنده (constructor) عنصر سفارشی.
 
-### Return value
+### مقدار بازگشتی
 
-The name for the previously defined custom element, or `null` if there is no custom element defined with the constructor.
+نام عنصر سفارشی که قبلاً تعریف شده است، یا `null` اگر هیچ عنصر سفارشی با این سازنده تعریف نشده باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 class MyParagraph extends HTMLElement {
@@ -51,10 +43,10 @@ customElements.define("my-paragraph", MyParagraph);
 customElements.getName(MyParagraph) === "my-paragraph";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
