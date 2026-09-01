@@ -1,11 +1,5 @@
 ---
 title: "Event: eventPhase property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/eventPhase"
-status: "needs-translation"
----
-
----
-title: "Event: eventPhase property"
 short-title: eventPhase
 slug: Web/API/Event/eventPhase
 page-type: web-api-instance-property
@@ -14,38 +8,22 @@ browser-compat: api.Event.eventPhase
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`eventPhase`** read-only property of the
-{{domxref("Event")}} interface indicates which phase of the event flow is currently
-being evaluated.
+خاصیت فقط خواندنی **`eventPhase`** از رابط {{domxref("Event")}} نشان می‌دهد که در حال حاضر کدام فاز از جریان رویداد در حال ارزیابی است.
 
-## Value
+## مقدار
 
-Returns an integer value which specifies the current evaluation phase of the event
-flow. Possible values are:
+یک مقدار عدد صحیح برمی‌گرداند که فاز ارزیابی فعلی جریان رویداد را مشخص می‌کند. مقادیر ممکن عبارتند از:
 
 - `Event.NONE` (0)
-  - : The event is not being processed at this time.
+  - : رویداد در این لحظه در حال پردازش نیست.
 - `Event.CAPTURING_PHASE` (1)
-  - : The event is being propagated through the target's ancestor objects.
-    This process starts with the {{domxref("Window")}}, then {{domxref("Document")}},
-    then the {{domxref("HTMLHtmlElement")}}, and so on through the elements
-    until the target's parent is reached.
-    {{domxref("EventTarget/addEventListener", "Event listeners", "", 1)}}
-    registered for capture mode when {{domxref("EventTarget.addEventListener()")}} was
-    called are triggered during this phase.
+  - : رویداد در حال انتشار از طریق اشیاء ancestor (اجداد) هدف است. این فرآیند با {{domxref("Window")}} شروع می‌شود، سپس {{domxref("Document")}}، سپس {{domxref("HTMLHtmlElement")}}، و به همین ترتیب از طریق عناصر ادامه می‌یابد تا به والد هدف برسد. {{domxref("EventTarget/addEventListener", "شنوندگان رویداد", "", 1)}} که برای حالت capture (گرفتن) هنگام فراخوانی {{domxref("EventTarget.addEventListener()")}} ثبت شده‌اند، در این فاز فراخوانی می‌شوند.
 - `Event.AT_TARGET` (2)
-  - : The event has arrived at
-    {{domxref("EventTarget", "the event's target", "", 1)}}.
-    Event listeners registered for this phase are called at this time. If
-    {{domxref("Event.bubbles")}} is `false`, processing
-    the event is finished after this phase is complete.
+  - : رویداد به {{domxref("EventTarget", "هدف رویداد", "", 1)}} رسیده است. شنوندگان رویداد ثبت‌شده برای این فاز در این زمان فراخوانی می‌شوند. اگر {{domxref("Event.bubbles")}} `false` باشد، پس از اتمام این فاز، پردازش رویداد به پایان می‌رسد.
 - `Event.BUBBLING_PHASE` (3)
-  - : The event is propagating back up through the target's ancestors in reverse order,
-    starting with the parent, and eventually reaching the containing {{domxref("Window")}}.
-    This is known as _bubbling_, and occurs only if {{domxref("Event.bubbles")}} is
-    `true`. {{domxref("EventTarget/addEventListener", "Event listeners", "", 1)}} registered for this phase are triggered during this process.
+  - : رویداد در حال انتشار به سمت بالا از طریق ancestors (اجداد) هدف به ترتیب معکوس است، از والد شروع می‌شود و در نهایت به {{domxref("Window")}} محتوی می‌رسد. این به عنوان _bubbling_ (حباب‌زنی) شناخته می‌شود و تنها زمانی رخ می‌دهد که {{domxref("Event.bubbles")}} `true` باشد. {{domxref("EventTarget/addEventListener", "شنوندگان رویداد", "", 1)}} ثبت‌شده برای این فاز در طول این فرآیند فراخوانی می‌شوند.
 
-## Example
+## مثال
 
 ### HTML
 
@@ -155,14 +133,14 @@ function clearDivs() {
 }
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Example', '', '700') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
