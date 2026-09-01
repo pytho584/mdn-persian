@@ -1,11 +1,5 @@
 ---
 title: "Element: contextmenu event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event"
-status: "needs-translation"
----
-
----
-title: "Element: contextmenu event"
 short-title: contextmenu
 slug: Web/API/Element/contextmenu_event
 page-type: web-api-event
@@ -14,18 +8,18 @@ browser-compat: api.Element.contextmenu_event
 
 {{APIRef("Pointer Events")}}
 
-The **`contextmenu`** event fires when the user attempts to open a context menu. This event is typically triggered by clicking the right mouse button, or by pressing the context menu key.
+رویداد **`contextmenu`** زمانی فعال می‌شود که کاربر تلاش کند یک منوی زمینه (context menu) را باز کند. این رویداد معمولاً با کلیک روی دکمه راست ماوس یا با فشار دادن کلید منوی زمینه (context menu key) ایجاد می‌شود.
 
-In the latter case, the context menu is displayed at the bottom left of the focused element, unless the element is a tree, in which case the context menu is displayed at the bottom left of the current row.
+در حالت دوم، منوی زمینه در پایین سمت چپ عنصر دارای فوکوس نمایش داده می‌شود، مگر اینکه عنصر یک درخت (tree) باشد، که در این صورت منوی زمینه در پایین سمت چپ ردیف جاری نمایش داده می‌شود.
 
-Any right-click event that is not disabled (by calling the click event's {{domxref("Event.preventDefault", "preventDefault()")}} method) will result in a `contextmenu` event being fired at the targeted element.
+هر رویداد کلیک راست که غیرفعال نشده باشد (با فراخوانی متد {{domxref("Event.preventDefault", "preventDefault()")}} رویداد کلیک)، باعث می‌شود یک رویداد `contextmenu` در عنصر هدف فعال شود.
 
 > [!NOTE]
-> An exception to this in Firefox: if the user holds down the <kbd>Shift</kbd> key while right-clicking, then the context menu will be shown without a `contextmenu` event being fired.
+> یک استثنا در Firefox: اگر کاربر در حین کلیک راست، کلید <kbd>Shift</kbd> را نگه دارد، منوی زمینه بدون فعال شدن رویداد `contextmenu` نمایش داده می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("contextmenu", (event) => { })
@@ -33,29 +27,29 @@ addEventListener("contextmenu", (event) => { })
 oncontextmenu = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PointerEvent")}}. Inherits from {{domxref("MouseEvent")}}.
+یک {{domxref("PointerEvent")}}. از {{domxref("MouseEvent")}} به ارث برده شده است.
 
 {{InheritanceDiagram("PointerEvent")}}
 
 > [!NOTE]
-> In earlier versions of the specification, the event type for this event was a {{domxref("MouseEvent")}}. Check [browser compatibility](#browser_compatibility) for more information.
+> در نسخه‌های قدیمی‌تر مشخصات، نوع رویداد برای این رویداد یک {{domxref("MouseEvent")}} بود. برای اطلاعات بیشتر به [سازگاری مرورگر](#browser_compatibility) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-### Canceling the `contextmenu` event
+### لغو رویداد `contextmenu`
 
-In this example, the default action of the `contextmenu` event is canceled using `preventDefault()` when the `contextmenu` event is fired at the first paragraph. As a result, the first paragraph will do nothing when right-clicked, while the second paragraph will show the standard context menu offered by your browser.
+در این مثال، عملکرد پیش‌فرض رویداد `contextmenu` با استفاده از `preventDefault()` در هنگام فعال شدن رویداد `contextmenu` در پاراگراف اول لغو می‌شود. در نتیجه، پاراگراف اول هنگام کلیک راست هیچ کاری انجام نمی‌دهد، در حالی که پاراگراف دوم منوی زمینه استاندارد ارائه شده توسط مرورگر شما را نمایش می‌دهد.
 
 > [!NOTE]
-> In Firefox, if you hold down the <kbd>Shift</kbd> key while right-clicking, then the context menu is shown without the `contextmenu` event being fired. Therefore, canceling the event does not stop the context menu from being shown.
+> در Firefox، اگر در حین کلیک راست کلید <kbd>Shift</kbd> را نگه دارید، منوی زمینه بدون فعال شدن رویداد `contextmenu` نمایش داده می‌شود. بنابراین، لغو رویداد مانع از نمایش منوی زمینه نمی‌شود.
 
 #### HTML
 
 ```html
-<p id="noContextMenu">The context menu has been disabled on this paragraph.</p>
-<p>But it has not been disabled on this one.</p>
+<p id="noContextMenu">منوی زمینه در این پاراگراف غیرفعال شده است.</p>
+<p>اما در این یکی غیرفعال نشده است.</p>
 ```
 
 #### JavaScript
@@ -68,21 +62,21 @@ noContext.addEventListener("contextmenu", (e) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Canceling the contextmenu event")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Learn: Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
+- [یادگیری: مقدمه‌ای بر رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events)
 - {{domxref("Element/auxclick_event", "auxclick")}}
 - {{domxref("Element/click_event", "click")}}
 - {{domxref("Element/dblclick_event", "dblclick")}}
