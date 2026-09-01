@@ -1,10 +1,4 @@
 ---
-title: "Headers"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Headers"
-status: "needs-translation"
----
-
----
 title: Headers
 slug: Web/API/Headers
 page-type: web-api-interface
@@ -13,70 +7,70 @@ browser-compat: api.Headers
 
 {{APIRef("Fetch API")}} {{AvailableInWorkers}}
 
-The **`Headers`** interface of the [Fetch API](/en-US/docs/Web/API/Fetch_API) allows you to perform various actions on [HTTP request and response headers](/en-US/docs/Web/HTTP/Reference/Headers). These actions include retrieving, setting, adding to, and removing headers from the list of the request's headers.
+رابط‌های **`Headers`** در [API Fetch](/en-US/docs/Web/API/Fetch_API) به شما امکان می‌دهد تا عملیات مختلفی روی [سرآیندهای درخواست و پاسخ HTTP](/en-US/docs/Web/HTTP/Reference/Headers) انجام دهید. این عملیات شامل بازیابی، تنظیم، افزودن و حذف سرآیندها از فهرست سرآیندهای درخواست می‌شود.
 
-You can retrieve a `Headers` object via the {{domxref("Request.headers")}} and {{domxref("Response.headers")}} properties, and create a new `Headers` object using the {{domxref("Headers.Headers", "Headers()")}} constructor. Compared to using plain objects, using `Headers` objects to send requests provides some additional input sanitization. For example, it normalizes header names to lowercase, strips leading and trailing whitespace from header values, and prevents certain headers from being set.
+می‌توانید یک شیء `Headers` را از طریق ویژگی‌های {{domxref("Request.headers")}} و {{domxref("Response.headers")}} دریافت کنید و با استفاده از سازنده {{domxref("Headers.Headers", "Headers()")}} یک شیء `Headers` جدید ایجاد کنید. در مقایسه با استفاده از اشیاء ساده، استفاده از اشیاء `Headers` برای ارسال درخواست‌ها، پالایش ورودی بیشتری را فراهم می‌کند. به عنوان مثال، نام سرآیندها را به حروف کوچک تبدیل می‌کند، فاصله‌های ابتدا و انتهای مقادیر سرآیند را حذف می‌کند و از تنظیم برخی سرآیندهای خاص جلوگیری می‌کند.
 
 > [!NOTE]
-> You can find out more about the available headers by reading our [HTTP headers](/en-US/docs/Web/HTTP/Reference/Headers) reference.
+> می‌توانید اطلاعات بیشتری درباره سرآیندهای موجود با مطالعه مرجع [HTTP headers](/en-US/docs/Web/HTTP/Reference/Headers) ما به دست آورید.
 
-## Description
+## توضیحات
 
-A `Headers` object has an associated header list, which is initially empty and consists of zero or more name and value pairs. You can add to this using methods like {{domxref("Headers.append","append()")}} (see [Examples](#examples).) In all methods of this interface, header names are matched by case-insensitive byte sequence.
+یک شیء `Headers` دارای یک لیست سرآیند مرتبط است که در ابتدا خالی بوده و از صفر یا چند جفت نام و مقدار تشکیل شده است. می‌توانید با استفاده از روش‌هایی مانند {{domxref("Headers.append","append()")}} (به [نمونه‌ها](#examples) مراجعه کنید) به آن اضافه کنید. در تمام روش‌های این رابط، نام سرآیندها با تطابق نادیده‌گیرنده حروف بزرگ/کوچک (case-insensitive) مقایسه می‌شوند.
 
-An object implementing `Headers` can directly be used in a {{jsxref("Statements/for...of", "for...of")}} structure, instead of {{domxref('Headers.entries()', 'entries()')}}: `for (const p of myHeaders)` is equivalent to `for (const p of myHeaders.entries())`.
+یک شیء که `Headers` را پیاده‌سازی می‌کند، می‌تواند مستقیماً در ساختار {{jsxref("Statements/for...of", "for...of")}} به جای {{domxref('Headers.entries()', 'entries()')}} استفاده شود: `for (const p of myHeaders)` معادل است با `for (const p of myHeaders.entries())`.
 
-### Modification restrictions
+### محدودیت‌های تغییر
 
-Some `Headers` objects have restrictions on whether the {{domxref("Headers.set","set()")}}, {{domxref("Headers.delete","delete()")}}, and {{domxref("Headers.append","append()")}} methods can mutate the header. The modification restrictions are set depending on how the `Headers` object is created.
+برخی از اشیاء `Headers` در مورد اینکه آیا روش‌های {{domxref("Headers.set","set()")}}، {{domxref("Headers.delete","delete()")}} و {{domxref("Headers.append","append()")}} می‌توانند سرآیند را تغییر دهند، محدودیت دارند. این محدودیت‌ها بسته به نحوه ایجاد شیء `Headers` تعیین می‌شوند.
 
-- For headers created with {{domxref("Headers.Headers","Headers()")}} constructor, there are no modification restrictions.
-- For headers of {{domxref("Request")}} objects:
-  - If the request's {{domxref("Request.mode","mode")}} is `no-cors`, you can modify any {{Glossary("CORS-safelisted request header")}} name/value.
-  - Otherwise, you can modify any {{Glossary("forbidden request header", "non-forbidden request header")}} name/value.
-- For headers of {{domxref("Response")}} objects:
-  - If the response is created using {{domxref("Response.error_static", "Response.error()")}} or {{domxref("Response.redirect_static", "Response.redirect()")}}, or received from a {{domxref("Window/fetch", "fetch()")}} call, the headers are immutable and cannot be modified.
-  - Otherwise, if the response is created using {{domxref("Response.Response","Response()")}} or {{domxref("Response.json_static","Response.json()")}}, you can modify any {{Glossary("forbidden response header name", "non-forbidden response header")}} name/value.
+- برای سرآیندهای ایجاد شده با سازنده {{domxref("Headers.Headers","Headers()")}}، هیچ محدودیت تغییری وجود ندارد.
+- برای سرآیندهای اشیاء {{domxref("Request")}}:
+  - اگر {{domxref("Request.mode","mode")}} درخواست `no-cors` باشد، می‌توانید هر نام/مقدار {{Glossary("CORS-safelisted request header")}} را تغییر دهید.
+  - در غیر این صورت، می‌توانید هر نام/مقدار {{Glossary("forbidden request header", "non-forbidden request header")}} را تغییر دهید.
+- برای سرآیندهای اشیاء {{domxref("Response")}}:
+  - اگر پاسخ با استفاده از {{domxref("Response.error_static", "Response.error()")}} یا {{domxref("Response.redirect_static", "Response.redirect()")}} ایجاد شده باشد، یا از فراخوانی {{domxref("Window/fetch", "fetch()")}} دریافت شده باشد، سرآیندها غیرقابل تغییر (immutable) بوده و نمی‌توان آنها را تغییر داد.
+  - در غیر این صورت، اگر پاسخ با استفاده از {{domxref("Response.Response","Response()")}} یا {{domxref("Response.json_static","Response.json()")}} ایجاد شده باشد، می‌توانید هر نام/مقدار {{Glossary("forbidden response header name", "non-forbidden response header")}} را تغییر دهید.
 
-All of the Headers methods will throw a {{jsxref("TypeError")}} if you try to pass in a reference to a name that isn't a [valid HTTP Header name](https://fetch.spec.whatwg.org/#concept-header-name). The mutation operations will throw a `TypeError` if the header is immutable. In any other failure case they fail silently.
+همه روش‌های Headers اگر سعی کنید به نامی که [یک نام سرآیند HTTP معتبر](https://fetch.spec.whatwg.org/#concept-header-name) نیست، ارجاع دهید، یک {{jsxref("TypeError")}} پرتاب می‌کنند. اگر سرآیند غیرقابل تغییر باشد، عملیات تغییر یک `TypeError` پرتاب می‌کند. در هر مورد دیگر شکست، آنها بی‌صدا شکست می‌خورند.
 
-## Constructor
+## سازنده
 
 - {{domxref("Headers.Headers()", "Headers()")}}
-  - : Creates a new `Headers` object.
+  - : یک شیء `Headers` جدید ایجاد می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("Headers.append()")}}
-  - : Appends a new value onto an existing header inside a `Headers` object, or adds the header if it does not already exist.
+  - : یک مقدار جدید به یک سرآیند موجود در یک شیء `Headers` اضافه می‌کند، یا اگر سرآیند وجود نداشته باشد، آن را اضافه می‌کند.
 - {{domxref("Headers.delete()")}}
-  - : Deletes a header from a `Headers` object.
+  - : یک سرآیند را از یک شیء `Headers` حذف می‌کند.
 - {{domxref("Headers.entries()")}}
-  - : Returns an {{jsxref("Iteration_protocols","iterator")}} allowing to go through all key/value pairs contained in this object.
+  - : یک {{jsxref("Iteration_protocols","iterator")}} برمی‌گرداند که امکان پیمایش تمام جفت‌های کلید/مقدار موجود در این شیء را فراهم می‌کند.
 - {{domxref("Headers.forEach()")}}
-  - : Executes a provided function once for each key/value pair in this `Headers` object.
+  - : یک تابع ارائه شده را یک بار برای هر جفت کلید/مقدار در این شیء `Headers` اجرا می‌کند.
 - {{domxref("Headers.get()")}}
-  - : Returns a {{jsxref("String")}} sequence of all the values of a header within a `Headers` object with a given name.
+  - : یک دنباله {{jsxref("String")}} از تمام مقادیر یک سرآیند در یک شیء `Headers` با یک نام مشخص برمی‌گرداند.
 - {{domxref("Headers.getSetCookie()")}}
-  - : Returns an array containing the values of all {{httpheader("Set-Cookie")}} headers associated with a response.
+  - : یک آرایه حاوی مقادیر تمام سرآیندهای {{httpheader("Set-Cookie")}} مرتبط با یک پاسخ برمی‌گرداند.
 - {{domxref("Headers.has()")}}
-  - : Returns a boolean stating whether a `Headers` object contains a certain header.
+  - : یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا یک شیء `Headers` حاوی یک سرآیند خاص است یا خیر.
 - {{domxref("Headers.keys()")}}
-  - : Returns an {{jsxref("Iteration_protocols", "iterator")}} allowing you to go through all keys of the key/value pairs contained in this object.
+  - : یک {{jsxref("Iteration_protocols", "iterator")}} برمی‌گرداند که به شما امکان می‌دهد تمام کلیدهای جفت‌های کلید/مقدار موجود در این شیء را پیمایش کنید.
 - {{domxref("Headers.set()")}}
-  - : Sets a new value for an existing header inside a `Headers` object, or adds the header if it does not already exist.
+  - : یک مقدار جدید برای یک سرآیند موجود در یک شیء `Headers` تنظیم می‌کند، یا اگر سرآیند وجود نداشته باشد، آن را اضافه می‌کند.
 - {{domxref("Headers.values()")}}
-  - : Returns an {{jsxref("Iteration_protocols", "iterator")}} allowing you to go through all values of the key/value pairs contained in this object.
+  - : یک {{jsxref("Iteration_protocols", "iterator")}} برمی‌گرداند که به شما امکان می‌دهد تمام مقادیر جفت‌های کلید/مقدار موجود در این شیء را پیمایش کنید.
 
 > [!NOTE]
-> To be clear, the difference between {{domxref("Headers.set()")}} and {{domxref("Headers.append()")}} is that if the specified header does already exist and does accept multiple values, {{domxref("Headers.set()")}} will overwrite the existing value with the new one, whereas {{domxref("Headers.append()")}} will append the new value onto the end of the set of values. See their dedicated pages for example code.
+> برای روشن شدن، تفاوت بین {{domxref("Headers.set()")}} و {{domxref("Headers.append()")}} این است که اگر سرآیند مشخص شده از قبل وجود داشته باشد و مقادیر متعدد را بپذیرد، {{domxref("Headers.set()")}} مقدار موجود را با مقدار جدید بازنویسی می‌کند، در حالی که {{domxref("Headers.append()")}} مقدار جدید را به انتهای مجموعه مقادیر اضافه می‌کند. برای کد نمونه به صفحات اختصاصی آنها مراجعه کنید.
 
 > [!NOTE]
-> When Header values are iterated over, they are automatically sorted in lexicographical order, and values from duplicate header names are combined.
+> هنگامی که مقادیر سرآیند پیمایش می‌شوند، به طور خودکار به ترتیب لغت‌نامه‌ای (lexicographical) مرتب می‌شوند و مقادیر نام‌های سرآیند تکراری با هم ترکیب می‌شوند.
 
-## Examples
+## نمونه‌ها
 
-In the following snippet, we create a new header using the `Headers()` constructor, add a new header to it using `append()`, then return that header value using `get()`:
+در قطعه کد زیر، ما یک سرآیند جدید با استفاده از سازنده `Headers()` ایجاد می‌کنیم، یک سرآیند جدید با استفاده از `append()` به آن اضافه می‌کنیم، و سپس آن مقدار سرآیند را با استفاده از `get()` برمی‌گردانیم:
 
 ```js
 const myHeaders = new Headers();
@@ -85,7 +79,7 @@ myHeaders.append("Content-Type", "text/xml");
 myHeaders.get("Content-Type"); // should return 'text/xml'
 ```
 
-The same can be achieved by passing an array of arrays or an object literal to the constructor:
+همین کار را می‌توان با ارسال یک آرایه از آرایه‌ها یا یک شیء literal به سازنده انجام داد:
 
 ```js
 let myHeaders = new Headers({
@@ -98,16 +92,16 @@ myHeaders = new Headers([["Content-Type", "text/xml"]]);
 myHeaders.get("Content-Type"); // should return 'text/xml'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ServiceWorker API](/en-US/docs/Web/API/Service_Worker_API)
-- [HTTP access control (CORS)](/en-US/docs/Web/HTTP/Guides/CORS)
+- [API Service Worker](/en-US/docs/Web/API/Service_Worker_API)
+- [کنترل دسترسی HTTP (CORS)](/en-US/docs/Web/HTTP/Guides/CORS)
 - [HTTP](/en-US/docs/Web/HTTP)
