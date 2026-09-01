@@ -1,9 +1,4 @@
----
-title: "DragEvent: DragEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/DragEvent"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "DragEvent: DragEvent() constructor"
 short-title: DragEvent()
@@ -14,15 +9,11 @@ browser-compat: api.DragEvent.DragEvent
 
 {{APIRef("HTML Drag and Drop API")}}
 
-This constructor is used to create a synthetic {{domxref("DragEvent")}} object.
+این سازنده برای ایجاد یک شیء {{domxref("DragEvent")}} مصنوعی (synthetic) استفاده می‌شود.
 
-Although this interface has a constructor, it is not possible to create a
-useful {{domxref("DataTransfer")}} object from script, since {{domxref("DataTransfer")}}
-objects have a processing and security model that is coordinated by the browser during
-drag-and-drops.
+اگرچه این رابط یک سازنده دارد، اما نمی‌توان از طریق اسکریپت یک شیء {{domxref("DataTransfer")}} مفید ایجاد کرد، زیرا اشیاء {{domxref("DataTransfer")}} دارای یک مدل پردازش و امنیت هستند که توسط مرورگر در طول عملیات کشیدن و رها کردن (drag-and-drop) هماهنگ می‌شود.
 
-This interface inherits properties from {{domxref("MouseEvent")}} and
-{{domxref("Event")}}.
+این رابط ویژگی‌هایی را از {{domxref("MouseEvent")}} و {{domxref("Event")}} به ارث می‌برد.
 
 ## Syntax
 
@@ -34,12 +25,12 @@ new DragEvent(type, dragEventInit)
 ### Parameters
 
 - `type`
-  - : A string representing the name of the event (see [DragEvent event types](/en-US/docs/Web/API/DragEvent#event_types)).
+  - : یک رشته که نام رویداد را نشان می‌دهد (به [انواع رویداد DragEvent](/en-US/docs/Web/API/DragEvent#event_types) مراجعه کنید).
 
 - `eventInitDict` {{optional_inline}}
-  - : An object containing the following properties:
+  - : یک شیء شامل ویژگی‌های زیر:
     - `dataTransfer` {{optional_inline}}
-      - : A {{domxref("DataTransfer")}}. Defaults to `null`.
+      - : یک {{domxref("DataTransfer")}}. پیش‌فرض `null` است.
 
 ## Specifications
 
@@ -48,3 +39,4 @@ new DragEvent(type, dragEventInit)
 ## Browser compatibility
 
 {{Compat}}
+```
