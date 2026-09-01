@@ -1,9 +1,4 @@
----
-title: "DOMMatrix: multiplySelf() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/multiplySelf"
-status: "needs-translation"
----
-
+```
 ---
 title: "DOMMatrix: multiplySelf() method"
 short-title: multiplySelf()
@@ -14,27 +9,27 @@ browser-compat: api.DOMMatrix.multiplySelf
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`multiplySelf()`** method of the {{domxref("DOMMatrix")}} interface multiplies a matrix by the `otherMatrix` parameter, computing the dot product of the original matrix and the specified matrix: `A⋅B`. If no matrix is specified as the multiplier, the matrix is multiplied by a matrix in which every element is `0` _except_ the bottom-right corner and the element immediately above and to its left: `m33` and `m34`. These have the default value of `1`.
+متد **`multiplySelf()`** از رابط {{domxref("DOMMatrix")}}، ماتریس جاری را در پارامتر `otherMatrix` ضرب می‌کند و ضرب داخلی ماتریس اصلی و ماتریس داده‌شده را محاسبه می‌نماید: `A⋅B`. اگر ماتریسی به‌عنوان ضریب مشخص نشود، ماتریس در ماتریسی ضرب خواهد شد که تمام عناصر آن `0` هستند، _به‌جز_ گوشه‌ی پایین‌راست و عنصری که بلافاصله بالای آن و سمت چپ آن قرار دارد: `m33` و `m34`. این دو عنصر به‌طور پیش‌فرض مقدار `1` دارند.
 
-To multiply a matrix without mutating it, see {{domxref("DOMMatrixReadOnly.multiply()")}}.
+برای ضرب یک ماتریس بدون تغییر دادن آن، به {{domxref("DOMMatrixReadOnly.multiply()")}} مراجعه کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 multiplySelf()
 multiplySelf(otherMatrix)
 ```
 
-### Parameters
+### پارامترها
 
 - `otherMatrix` {{optional_inline}}
-  - : The [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) multiplier.
+  - یک [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) به‌عنوان ضریب.
 
-### Return value
+### مقدار بازگشتی
 
-Returns itself; the [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) updated to the results of the applied multiplications.
+خود ماتریس را برمی‌گرداند؛ یعنی همان [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) که با نتایج ضرب‌های اعمال‌شده به‌روزرسانی شده است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const matrix = new DOMMatrix().rotate(30);
@@ -48,17 +43,18 @@ console.log(matrix.toString());
 // output: matrix(0.5, 0.866, -0.866, 0.5, 0, 0) (a 60deg rotation)
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrixReadOnly.multiply()")}}
 - {{domxref("DOMMatrix.preMultiplySelf()")}}
-- CSS {{CSSxRef("transform-function/matrix", "matrix()")}} function
-- CSS {{CSSxRef("transform-function/matrix3d", "matrix3d()")}} function
+- تابع CSS {{CSSxRef("transform-function/matrix", "matrix()")}}
+- تابع CSS {{CSSxRef("transform-function/matrix3d", "matrix3d()")}}
+```
