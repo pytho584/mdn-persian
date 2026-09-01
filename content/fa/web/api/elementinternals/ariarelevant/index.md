@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaRelevant property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaRelevant"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaRelevant property"
 short-title: ariaRelevant
 slug: Web/API/ElementInternals/ariaRelevant
 page-type: web-api-instance-property
@@ -16,27 +10,27 @@ browser-compat: api.ElementInternals.ariaRelevant
 
 {{APIRef("Web Components")}}{{Non-standard_header}}
 
-The **`ariaRelevant`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) attribute, which indicates what notifications the user agent will trigger when the accessibility tree within a live region is modified. This is used to describe what changes in an `aria-live` region are relevant and should be announced.
+ویژگی **`ariaRelevant`** در رابط {{domxref("ElementInternals")}} مقدار ویژگی [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) را منعکس می‌کند؛ این ویژگی مشخص می‌کند که عامل کاربر با تغییر درخت دسترس‌پذیری درون یک منطقهٔ زنده (live region)، چه اعلان‌هایی را فعال کند. از این ویژگی برای توصیف این استفاده می‌شود که کدام تغییرات در یک منطقهٔ `aria-live` مرتبط هستند و باید اعلام شوند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض برای یک عنصر سفارشی را فراهم می‌کند. این مقادیر ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آن‌ها را اضافه نکند، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح‌دهنده مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string containing one or more of the following values, space separated:
+یک رشته شامل یک یا چند مورد از مقادیر زیر، که با فاصله جدا شده‌اند:
 
 - "additions"
-  - : Additions of Element Nodes within the live region should be considered relevant.
+  - : افزودن گره‌های عنصر (Element Nodes) درون منطقهٔ زنده باید مرتبط در نظر گرفته شود.
 - "removals"
-  - : Deletion of Nodes from the live region should be considered relevant.
+  - : حذف گره‌ها از منطقهٔ زنده باید مرتبط در نظر گرفته شود.
 - "text"
-  - : Changes to the textual content of existing nodes should be considered relevant.
+  - : تغییرات در محتوای متنی گره‌های موجود باید مرتبط در نظر گرفته شود.
 - "all"
-  - : Equivalent to `"additions removals text"`.
+  - : معادل `"additions removals text"` است.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaRelevant` is set to "all".
+در این مثال، مقدار `ariaRelevant` روی «all» تنظیم شده است.
 
 ```js
 class CustomEl extends HTMLElement {
@@ -49,6 +43,6 @@ class CustomEl extends HTMLElement {
 }
 ```
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
