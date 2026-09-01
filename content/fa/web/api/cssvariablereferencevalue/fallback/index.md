@@ -1,11 +1,5 @@
 ---
 title: "CSSVariableReferenceValue: fallback property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSVariableReferenceValue/fallback"
-status: "needs-translation"
----
-
----
-title: "CSSVariableReferenceValue: fallback property"
 short-title: fallback
 slug: Web/API/CSSVariableReferenceValue/fallback
 page-type: web-api-instance-property
@@ -14,17 +8,16 @@ browser-compat: api.CSSVariableReferenceValue.fallback
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`fallback`** read-only property of the
-{{domxref("CSSVariableReferenceValue")}} interface returns the [custom property fallback value](/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties#custom_property_fallback_values) of the {{domxref("CSSVariableReferenceValue")}}.
+ویژگی فقط‑خواندنی **`fallback`** از رابط {{domxref("CSSVariableReferenceValue")}}، مقدار [پشتیبان (fallback) ویژگی سفارشی](/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties#custom_property_fallback_values) مربوط به {{domxref("CSSVariableReferenceValue")}} را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref('CSSUnparsedValue')}}.
+یک {{domxref('CSSUnparsedValue')}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
