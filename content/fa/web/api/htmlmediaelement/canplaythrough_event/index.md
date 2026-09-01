@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: canplaythrough event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canplaythrough_event"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: canplaythrough event"
 short-title: canplaythrough
 slug: Web/API/HTMLMediaElement/canplaythrough_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLMediaElement.canplaythrough_event
 
 {{APIRef("HTMLMediaElement")}}
 
-The `canplaythrough` event is fired when the user agent can play the media, and estimates that enough data has been loaded to play the media up to its end without having to stop for further buffering of content.
+رویداد `canplaythrough` زمانی رخ می‌دهد که عامل کاربر بتواند رسانه را پخش کند و تخمین بزند که داده کافی برای پخش رسانه تا انتهای آن بارگیری شده است، بدون اینکه نیاز به توقف برای بافر کردن بیشتر محتوا باشد.
 
-This event is not cancelable and does not bubble.
+این رویداد لغوپذیر نیست و حباب نمی‌شود.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("canplaythrough", (event) => { })
@@ -30,13 +24,13 @@ oncanplaythrough = (event) => { }
 
 ## Event type
 
-A generic {{domxref("Event")}}.
+یک رویداد عمومی از نوع {{domxref("Event")}}.
 
 ## Examples
 
-These examples add an event listener for the HTMLMediaElement's `canplaythrough` event, then post a message when that event handler has reacted to the event firing.
+این مثال‌ها یک شنونده رویداد برای رویداد `canplaythrough` عنصر HTMLMediaElement اضافه می‌کنند و سپس هنگامی که آن مدیریت رویداد به رخ دادن رویداد واکنش نشان می‌دهد، یک پیام را ثبت می‌کنند.
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const video = document.querySelector("video");
@@ -48,7 +42,7 @@ video.addEventListener("canplaythrough", (event) => {
 });
 ```
 
-Using the `oncanplaythrough` event handler property:
+استفاده از ویژگی مدیریت رویداد `oncanplaythrough`:
 
 ```js
 const video = document.querySelector("video");
@@ -70,23 +64,23 @@ video.oncanplaythrough = (event) => {
 
 ## Related Events
 
-- The HTMLMediaElement {{domxref("HTMLMediaElement.playing_event", 'playing')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ended_event", 'ended')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.timeupdate_event", 'timeupdate')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.play_event", 'play')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.pause_event", 'pause')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.stalled_event", 'stalled')}} event
+- رویداد {{domxref("HTMLMediaElement.playing_event", 'playing')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.ended_event", 'ended')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.timeupdate_event", 'timeupdate')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.play_event", 'play')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.pause_event", 'pause')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.stalled_event", 'stalled')}} در HTMLMediaElement
 
 ## See also
 
