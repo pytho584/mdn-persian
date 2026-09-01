@@ -1,11 +1,5 @@
 ---
 title: "FetchEvent: replacesClientId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/replacesClientId"
-status: "needs-translation"
----
-
----
-title: "FetchEvent: replacesClientId property"
 short-title: replacesClientId
 slug: Web/API/FetchEvent/replacesClientId
 page-type: web-api-instance-property
@@ -14,24 +8,17 @@ browser-compat: api.FetchEvent.replacesClientId
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`replacesClientId`** read-only property of the
-{{domxref("FetchEvent")}} interface is the {{domxref("Client.id", "id")}} of the
-{{domxref("Client", "client")}} that is being replaced during a page navigation.
+ویژگی فقط‌خواندنی **`replacesClientId`** در رابط {{domxref("FetchEvent")}}، شامل {{domxref("Client.id", "id")}} آن {{domxref("Client", "client")}}ی است که هنگام پیمایش صفحه (navigation) جایگزین می‌شود.
 
-For example, when navigating from page A to page B `replacesClientId` is the
-ID of the client associated with page A. It can be an empty string when navigating from
-`about:blank` to another page, as `about:blank`'s client will be
-reused, rather than be replaced.
+برای مثال، هنگام پیمایش از صفحه A به صفحه B، `replacesClientId` شناسهٔ کلاینتی است که با صفحه A مرتبط است. اگر از `about:blank` به صفحه دیگری پیمایش کنید، این مقدار می‌تواند یک رشتهٔ خالی باشد؛ زیرا کلاینت مربوط به `about:blank` دوباره استفاده می‌شود، نه اینکه جایگزین گردد.
 
-Additionally, if the fetch isn't a navigation, `replacesClientId` will be an
-empty string. This could be used to access/communicate with a client that will
-imminently be replaced, right before a navigation.
+علاوه بر این، اگر درخواست fetch یک پیمایش نباشد، `replacesClientId` یک رشتهٔ خالی خواهد بود. از این ویژگی می‌توان برای دسترسی/ارتباط با کلاینتی استفاده کرد که درست قبل از پیمایش، به‌زودی جایگزین خواهد شد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```js
 self.addEventListener("fetch", (event) => {
@@ -39,16 +26,16 @@ self.addEventListener("fetch", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-- [Service workers basic code example](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
-- [Using web workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [مثال کد پایهٔ Service workers](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
+- [استفاده از Web Workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
