@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleDeclaration: cssFloat property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/cssFloat"
-status: "needs-translation"
----
-
----
-title: "CSSStyleDeclaration: cssFloat property"
 short-title: cssFloat
 slug: Web/API/CSSStyleDeclaration/cssFloat
 page-type: web-api-instance-property
@@ -16,19 +10,19 @@ browser-compat: api.CSSStyleDeclaration.cssFloat
 
 {{APIRef("CSSOM")}}{{deprecated_header}}
 
-The **`cssFloat`** property of the {{domxref("CSSStyleDeclaration")}} interface returns the result of invoking {{DOMxRef("CSSStyleDeclaration.getPropertyValue()")}} with `float` as an argument.
+ویژگی **`cssFloat`** از رابط {{domxref("CSSStyleDeclaration")}} نتیجهٔ فراخوانی {{DOMxRef("CSSStyleDeclaration.getPropertyValue()")}} با آرگومان `float` را بازمی‌گرداند.
 
-When setting, it invokes {{DOMxRef("CSSStyleDeclaration.setProperty()")}} with `float` as the first argument, and the given value as the second argument. The given value must be a valid value for the {{cssxref("float")}} property.
+هنگام تنظیم، این ویژگی {{DOMxRef("CSSStyleDeclaration.setProperty()")}} را با `float` به عنوان آرگومان اول و مقدار داده‌شده به عنوان آرگومان دوم فراخوانی می‌کند. مقدار داده‌شده باید یک مقدار معتبر برای ویژگی {{cssxref("float")}} باشد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-When set to the `null` value, that `null` value is converted to the empty string (`""`), so `csd.cssFloat = null` is equivalent to `csd.cssFloat = ""`.
+هنگام تنظیم به مقدار `null`، آن مقدار `null` به رشتهٔ خالی (`""`) تبدیل می‌شود، بنابراین `csd.cssFloat = null` معادل `csd.cssFloat = ""` است.
 
-## Example
+## مثال
 
-In the below example, the stylesheet contains a single rule for `.box`, which has the {{cssxref("float")}} property with a value of `left`. This value will be returned by `cssFloat`. We then set the value to "right" using `cssFloat`, and return the new value.
+در مثال زیر، شیوه‌نامه شامل یک قاعده برای `.box` است که ویژگی {{cssxref("float")}} را با مقدار `left` دارد. این مقدار توسط `cssFloat` بازگردانده می‌شود. سپس مقدار را با استفاده از `cssFloat` به `"right"` تنظیم می‌کنیم و مقدار جدید را بازمی‌گردانیم.
 
 ```css
 .box {
@@ -45,10 +39,10 @@ rule.style.cssFloat = "right";
 console.log(rule.style.cssFloat); // "right"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
