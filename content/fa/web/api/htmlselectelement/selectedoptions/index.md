@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: selectedOptions property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedOptions"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: selectedOptions property"
 short-title: selectedOptions
 slug: Web/API/HTMLSelectElement/selectedOptions
 page-type: web-api-instance-property
@@ -14,37 +8,25 @@ browser-compat: api.HTMLSelectElement.selectedOptions
 
 {{APIRef("HTML DOM")}}
 
-The **read-only** {{domxref("HTMLSelectElement")}} property
-**`selectedOptions`** contains a list of the
-{{HTMLElement("option")}} elements contained within the {{HTMLElement("select")}}
-element that are currently selected. The list of selected options is an
-{{domxref("HTMLCollection")}} object with one entry per currently selected option.
+ویژگی **`selectedOptions`** از {{domxref("HTMLSelectElement")}} (که **فقط خواندنی** است) شامل لیستی از عناصر {{HTMLElement("option")}} موجود در عنصر {{HTMLElement("select")}} است که در حال حاضر انتخاب شده‌اند. لیست گزینه‌های انتخاب شده یک شیء {{domxref("HTMLCollection")}} است که برای هر گزینه انتخاب شده یک ورودی دارد.
 
-An option is considered selected if it has an {{domxref("HTMLOptionElement.selected")}}
-attribute.
+یک گزینه در صورتی انتخاب شده در نظر گرفته می‌شود که دارای ویژگی {{domxref("HTMLOptionElement.selected")}} باشد.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLCollection")}} which lists every currently selected
-{{domxref("HTMLOptionElement")}} which is either a child of the
-{{domxref("HTMLSelectElement")}} or of an {{domxref("HTMLOptGroupElement")}} within the
-`<select>` element.
+یک {{domxref("HTMLCollection")}} که هر {{domxref("HTMLOptionElement")}} انتخاب شده را فهرست می‌کند که یا فرزند مستقیم {{domxref("HTMLSelectElement")}} باشد یا فرزند یک {{domxref("HTMLOptGroupElement")}} درون عنصر `<select>`.
 
-In other words, any option contained within the `<select>` element may
-be part of the results, but option groups are not included in the list.
+به عبارت دیگر، هر گزینه‌ای که درون عنصر `<select>` قرار دارد ممکن است بخشی از نتایج باشد، اما گروه‌های گزینه (option groups) در لیست گنجانده نمی‌شوند.
 
-If no options are currently selected, the collection is empty and returns a
-{{domxref("HTMLCollection.length", "length")}} of 0.
+اگر هیچ گزینه‌ای در حال حاضر انتخاب نشده باشد، مجموعه خالی است و یک {{domxref("HTMLCollection.length", "length")}} برابر ۰ برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-In this example, a {{HTMLElement("select")}} element with a number of options is used
-to let the user order various food items.
+در این مثال، از یک عنصر {{HTMLElement("select")}} با تعدادی گزینه استفاده شده است تا کاربر بتواند اقلام غذایی مختلفی را سفارش دهد.
 
 ### HTML
 
-The HTML that creates the selection box and the {{HTMLElement("option")}} elements
-representing each of the food choices looks like this:
+HTML که جعبه انتخاب و عناصر {{HTMLElement("option")}} نماینده هر یک از انتخاب‌های غذایی را ایجاد می‌کند به صورت زیر است:
 
 ```html
 <label for="foods">What do you want to eat?</label><br />
@@ -60,15 +42,11 @@ representing each of the food choices looks like this:
 <p id="output"></p>
 ```
 
-The `<select>` element is set to allow multiple items to be selected,
-and it is 7 rows tall. Note also the {{HTMLElement("button")}}, whose role it is to
-trigger fetching the {{domxref("HTMLCollection")}} of selected elements using the
-`selected` property.
+عنصر `<select>` به گونه‌ای تنظیم شده است که امکان انتخاب چندین آیتم را فراهم کند و ۷ ردیف ارتفاع دارد. همچنین به {{HTMLElement("button")}} توجه کنید که نقش آن فعال‌سازی دریافت {{domxref("HTMLCollection")}} از عناصر انتخاب شده با استفاده از ویژگی `selectedOptions` است.
 
 ### JavaScript
 
-The JavaScript code that establishes the event handler for the button, as well as the
-event handler itself, looks like this:
+کد JavaScript که رویدادگردان (event handler) دکمه را تنظیم می‌کند و همچنین خود رویدادگردان به صورت زیر است:
 
 ```js
 let orderButton = document.getElementById("order");
@@ -102,26 +80,22 @@ orderButton.addEventListener("click", () => {
 });
 ```
 
-This script sets up a {{domxref("Element/click_event", "click")}} event listener on the "Order Now" button. When
-clicked, the event handler fetches the list of selected options using
-`selectedOptions`, then iterates over the options in the list. A string is
-constructed to list the ordered items, with logic to build the list using proper English
-grammar rules (including a [serial comma](https://en.wikipedia.org/wiki/Serial_comma)).
+این اسکریپت یک شنونده رویداد {{domxref("Element/click_event", "click")}} روی دکمه «Order Now» تنظیم می‌کند. هنگام کلیک، رویدادگردان لیست گزینه‌های انتخاب شده را با استفاده از `selectedOptions` دریافت می‌کند، سپس روی گزینه‌های موجود در لیست پیمایش می‌کند. یک رشته برای فهرست کردن اقلام سفارش داده شده ساخته می‌شود، با منطقی برای ساخت لیست با استفاده از قواعد گرامر صحیح انگلیسی (شامل [کاما سریال](https://en.wikipedia.org/wiki/Serial_comma)).
 
-### Result
+### نتیجه
 
-The resulting content looks like this in action:
+محتوای حاصل در عمل به این صورت است:
 
 {{EmbedLiveSample("Examples", 600, 250)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Drop-down controls](/en-US/docs/Learn_web_development/Extensions/Forms/Other_form_controls#drop-down_controls)
+- [کنترل‌های کشویی (Drop-down controls)](/en-US/docs/Learn_web_development/Extensions/Forms/Other_form_controls#drop-down_controls)
