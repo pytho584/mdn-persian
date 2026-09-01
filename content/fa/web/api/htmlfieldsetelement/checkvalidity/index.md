@@ -1,7 +1,5 @@
 ---
 title: "HTMLFieldSetElement: checkValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFieldSetElement/checkValidity"
-status: "needs-translation"
 ---
 
 ---
@@ -14,46 +12,46 @@ browser-compat: api.HTMLFieldSetElement.checkValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`checkValidity()`** method of the {{domxref("HTMLFieldSetElement")}} interface checks if the element is valid, but always returns true because {{HTMLElement("fieldset")}} elements are never candidates for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+متد **`checkValidity()`** از رابط {{domxref("HTMLFieldSetElement")}} بررسی می‌کند که آیا عنصر معتبر است، اما همیشه `true` برمی‌گرداند، زیرا عناصر {{HTMLElement("fieldset")}} هرگز کاندیدای [اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation) نیستند.
 
 > [!NOTE]
-> The {{cssxref(":valid")}} and {{cssxref(":invalid")}} CSS pseudo-classes are applied to `<fieldset>` elements based on the validity of its descendant form controls, not the fieldset itself.
+> شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}} به عناصر `<fieldset>` بر اساس اعتبار کنترل‌های فرمِ فرزندِ آن اعمال می‌شوند، نه خودِ عنصر `<fieldset>`.
 
-## Syntax
+## نحو
 
 ```js-nolint
 checkValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value, `true`.
+یک مقدار بولین، `true`.
 
-## Examples
+## مثال‌ها
 
-In the following example, calling `checkValidity()` returns `true`.
+در مثال زیر، فراخوانی `checkValidity()` مقدار `true` را برمی‌گرداند.
 
 ```js
 const element = document.getElementById("myFieldSet");
 console.log(element.checkValidity());
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLFieldSetElement.reportValidity()")}}
 - {{HTMLElement("fieldset")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation)
