@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: isContentEditable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/isContentEditable"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: isContentEditable property"
 short-title: isContentEditable
 slug: Web/API/HTMLElement/isContentEditable
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.HTMLElement.isContentEditable
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLElement.isContentEditable`** read-only property
-returns a boolean value that is `true` if the contents of the element
-are editable; otherwise it returns `false`.
+ویژگی فقط‌خواندنی **`HTMLElement.isContentEditable`** یک مقدار بولی برمی‌گرداند که اگر محتویات عنصر قابل ویرایش باشند، `true` است؛ در غیر این صورت `false` برمی‌گرداند.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -47,19 +39,19 @@ infoText1.textContent += ` ${firstParagraph.isContentEditable}`;
 infoText2.textContent += ` ${secondParagraph.isContentEditable}`;
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', '100%', 160) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLElement/contentEditable")}}
-- The [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) global attribute.
+- ویژگی سراسری [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable)
