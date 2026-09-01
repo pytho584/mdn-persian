@@ -1,11 +1,5 @@
 ---
 title: "GPURenderPassEncoder: setVertexBuffer() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setVertexBuffer"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: setVertexBuffer() method"
 short-title: setVertexBuffer()
 slug: Web/API/GPURenderPassEncoder/setVertexBuffer
 page-type: web-api-instance-method
@@ -14,55 +8,54 @@ browser-compat: api.GPURenderPassEncoder.setVertexBuffer
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`setVertexBuffer()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface sets or unsets the current {{domxref("GPUBuffer")}} for the given slot that will provide vertex data for subsequent drawing commands.
+متد **`setVertexBuffer()`** از رابط {{domxref("GPURenderPassEncoder")}}، {{domxref("GPUBuffer")}} فعلی را برای اسلات (slot) مشخص‌شده تنظیم یا لغو می‌کند. این بافر داده‌های رأس (vertex data) را برای دستورات ترسیم بعدی فراهم می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setVertexBuffer(slot, buffer, offset, size)
 ```
 
-### Parameters
+### پارامترها
 
 - `slot`
-  - : A number referencing the vertex buffer slot to set the vertex buffer for.
+  - : عددی که اسلات بافر رأس را مشخص می‌کند تا بافر رأس برای آن تنظیم شود.
 - `buffer`
-  - : A {{domxref("GPUBuffer")}} representing the buffer containing the vertex data to use for subsequent drawing commands, or `null`, in which case any previously-set buffer in the given slot is unset.
+  - : یک {{domxref("GPUBuffer")}} که نشان‌دهندهٔ بافر حاوی داده‌های رأس برای استفاده در دستورات ترسیم بعدی است، یا `null` که در این صورت هر بافر قبلاً تنظیم‌شده در اسلات داده‌شده لغو می‌شود.
 - `offset` {{optional_inline}}
-  - : A number representing the offset, in bytes, into `buffer` where the vertex data begins. If omitted, `offset` defaults to 0.
+  - : عددی که افست (offset) را بر حسب بایت، درون `buffer` مشخص می‌کند که داده‌های رأس از آنجا شروع می‌شوند. اگر حذف شود، `offset` به طور پیش‌فرض ۰ است.
 - `size` {{optional_inline}}
-  - : A number representing the size, in bytes, of the vertex data contained in `buffer`. If omitted, `size` defaults to the `buffer`'s {{domxref("GPUBuffer.size")}} - `offset`.
+  - : عددی که اندازهٔ داده‌های رأس موجود در `buffer` را بر حسب بایت مشخص می‌کند. اگر حذف شود، `size` به طور پیش‌فرض برابر با `buffer`'s {{domxref("GPUBuffer.size")}} - `offset` است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی (Validation)
 
-The following criteria must be met when calling **`setVertexBuffer()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderPassEncoder")}} becomes invalid:
+هنگام فراخوانی **`setVertexBuffer()`** معیارهای زیر باید برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} ایجاد می‌شود و {{domxref("GPURenderPassEncoder")}} نامعتبر می‌شود:
 
-- `buffer`'s {{domxref("GPUBuffer.usage")}} contains the `GPUBufferUsage.VERTEX` flag.
-- `slot` is less than the {{domxref("GPUDevice")}}'s `maxVertexBuffers` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- `offset` + `size` is less than or equal to the `buffer`'s {{domxref("GPUBuffer.size")}}.
-- `offset` is a multiple of 4.
+- `buffer`'s {{domxref("GPUBuffer.usage")}} شامل پرچم `GPUBufferUsage.VERTEX` باشد.
+- `slot` کمتر از `maxVertexBuffers` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}} دستگاه {{domxref("GPUDevice")}} باشد.
+- `offset` + `size` کمتر یا مساوی `buffer`'s {{domxref("GPUBuffer.size")}} باشد.
+- `offset` مضرب ۴ باشد.
 
-## Examples
+## مثال‌ها
 
-### Set vertex buffer
+### تنظیم بافر رأس
 
-In our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/), several commands are recorded via a {{domxref("GPUCommandEncoder")}}. Most of these commands originate from the `GPURenderPassEncoder` created via {{domxref("GPUCommandEncoder.beginRenderPass()")}}. `setVertexBuffer()` is used as appropriate to set the source of vertex data.
+در [نمایش رندر پایه](https://mdn.github.io/dom-examples/webgpu-render-demo/) ما، چندین دستور از طریق یک {{domxref("GPUCommandEncoder")}} ثبت می‌شوند. بیشتر این دستورات از `GPURenderPassEncoder` که از طریق {{domxref("GPUCommandEncoder.beginRenderPass()")}} ایجاد شده است، می‌آیند. `setVertexBuffer()` به‌طور مناسب برای تنظیم منبع داده‌های رأس استفاده می‌شود.
 
 ```js
 // …
 
 const renderPipeline = device.createRenderPipeline(pipelineDescriptor);
 
-// Create GPUCommandEncoder to issue commands to the GPU
-// Note: render pass descriptor, command encoder, etc. are destroyed after use, fresh one needed for each frame.
+// ایجاد GPUCommandEncoder برای ارسال دستورات به GPU
+// توجه: توصیف‌کنندهٔ رندر پاس، encoder دستورات و غیره پس از استفاده نابود می‌شوند، برای هر فریم به یک نمونهٔ جدید نیاز است.
 const commandEncoder = device.createCommandEncoder();
 
-// Create GPURenderPassDescriptor to tell WebGPU which texture to draw into, then initiate render pass
+// ایجاد GPURenderPassDescriptor برای گفتن به WebGPU که به کدام بافت (texture) ترسیم کند، سپس شروع رندر پاس
 const renderPassDescriptor = {
   colorAttachments: [
     {
@@ -76,38 +69,38 @@ const renderPassDescriptor = {
 
 const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);
 
-// Draw the triangle
+// ترسیم مثلث
 passEncoder.setPipeline(renderPipeline);
 passEncoder.setVertexBuffer(0, vertexBuffer);
 passEncoder.draw(3);
 
-// End the render pass
+// پایان رندر پاس
 passEncoder.end();
 
-// End frame by passing array of command buffers to command queue for execution
+// پایان فریم با ارسال آرایه‌ای از command bufferها به صف فرمان برای اجرا
 device.queue.submit([commandEncoder.finish()]);
 
 // …
 ```
 
-### Unset vertex buffer
+### لغو تنظیم بافر رأس
 
 ```js
-// Set vertex buffer in slot 0
+// تنظیم بافر رأس در اسلات ۰
 passEncoder.setVertexBuffer(0, vertexBuffer);
 
-// Later, unset vertex buffer in slot 0
+// بعداً، لغو تنظیم بافر رأس در اسلات ۰
 passEncoder.setVertexBuffer(0, null);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
