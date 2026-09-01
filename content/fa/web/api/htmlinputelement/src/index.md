@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: src property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/src"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: src property"
 short-title: src
 slug: Web/API/HTMLInputElement/src
 page-type: web-api-instance-property
@@ -14,30 +8,30 @@ browser-compat: api.HTMLInputElement.src
 
 {{APIRef("HTML DOM")}}
 
-The **`src`** property of the {{DOMxRef("HTMLInputElement")}} interface specifies the source of an image to display as the graphical submit button. It reflects the {{htmlelement("input")}} element's [`src`](/en-US/docs/Web/HTML/Reference/Elements/input#src) attribute.
+ویژگی **`src`** در رابط {{DOMxRef("HTMLInputElement")}}، منبع تصویری را مشخص می‌کند که به‌عنوان دکمه ارسال گرافیکی نمایش داده می‌شود. این ویژگی، صفت [`src`](/en-US/docs/Web/HTML/Reference/Elements/input#src) عنصر {{htmlelement("input")}} را منعکس می‌کند.
 
-The `src` property is valid for the [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) type only.
+ویژگی `src` فقط برای نوع [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) معتبر است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```js
 const inputElement = document.getElementById("imageButton");
 console.log(input.src);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMXref("HTMLButtonElement")}}
 - {{HTMLElement("button")}}
