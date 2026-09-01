@@ -1,11 +1,5 @@
 ---
 title: "DOMQuad: fromQuad() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/fromQuad_static"
-status: "needs-translation"
----
-
----
-title: "DOMQuad: fromQuad() static method"
 short-title: fromQuad()
 slug: Web/API/DOMQuad/fromQuad_static
 page-type: web-api-static-method
@@ -14,33 +8,33 @@ browser-compat: api.DOMQuad.fromQuad_static
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`fromQuad()`** static method of the {{domxref("DOMQuad")}} interface returns a new `DOMQuad` object based on the provided set of coordinates in the shape of another `DOMQuad` object.
+متد ایستای **`fromQuad()`** در رابط {{domxref("DOMQuad")}} یک شیء `DOMQuad` جدید بر اساس مجموعه‌ای از مختصات که به شکل شیء `DOMQuad` دیگری ارائه شده‌اند، برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 DOMQuad.fromQuad()
 DOMQuad.fromQuad(quad)
 ```
 
-### Parameters
+### پارامترها
 
 - `quad` {{optional_inline}}
-  - : A {{domxref("DOMQuad")}} or an object with the same properties. All properties default to `(0, 0, 0, 1)`. The properties are:
-    - {{domxref("DOMQuad/p1", "p1")}} {{optional_inline}}, {{domxref("DOMQuad/p2", "p2")}} {{optional_inline}}, {{domxref("DOMQuad/p3", "p3")}} {{optional_inline}}, {{domxref("DOMQuad/p4", "p4")}} {{optional_inline}}
-      - : Each a {{domxref("DOMPoint")}} or an object with the same properties representing one corner of the quad.
+  - : یک {{domxref("DOMQuad")}} یا یک شیء با ویژگی‌های مشابه. تمام ویژگی‌ها به صورت پیش‌فرض `(0, 0, 0, 1)` هستند. ویژگی‌ها عبارت‌اند از:
+    - {{domxref("DOMQuad/p1", "p1")}} {{optional_inline}}، {{domxref("DOMQuad/p2", "p2")}} {{optional_inline}}، {{domxref("DOMQuad/p3", "p3")}} {{optional_inline}}، {{domxref("DOMQuad/p4", "p4")}} {{optional_inline}}
+      - : هر یک یک {{domxref("DOMPoint")}} یا یک شیء با ویژگی‌های مشابه است که یک گوشه از چهارضلعی را نشان می‌دهد.
 
-    This object should usually be another {{domxref("DOMQuad")}} instance, or an existing object retrieved from some data storage. If you are creating this object from scratch, you should use the {{domxref("DOMQuad.DOMQuad", "DOMQuad()")}} constructor, which accepts the four points separately, avoiding creating the intermediate object.
+    این شیء معمولاً باید یک نمونهٔ دیگر از {{domxref("DOMQuad")}} باشد، یا یک شیء موجود که از جایی بازیابی شده است. اگر این شیء را از ابتدا می‌سازید، بهتر است از سازندهٔ {{domxref("DOMQuad.DOMQuad", "DOMQuad()")}} استفاده کنید که چهار نقطه را جداگانه می‌پذیرد و از ایجاد شیء میانی جلوگیری می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("DOMQuad")}} object.
+یک شیء {{domxref("DOMQuad")}}.
 
-## Examples
+## مثال‌ها
 
-### Creating a quad from an existing DOMQuad
+### ایجاد یک چهارضلعی از یک DOMQuad موجود
 
-This example shows how to create a new `DOMQuad` from an existing one.
+این مثال نشان می‌دهد که چگونه یک `DOMQuad` جدید از یک `DOMQuad` موجود بسازید.
 
 ```js
 const originalQuad = new DOMQuad(
@@ -56,16 +50,16 @@ console.log(newQuad.p1.x, newQuad.p1.y); // 0 0
 console.log(newQuad.p2.x, newQuad.p2.y); // 50 0
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("DOMQuad.DOMQuad", "DOMQuad()")}} constructor
+- سازندهٔ {{domxref("DOMQuad.DOMQuad", "DOMQuad()")}}
 - {{domxref("DOMPoint")}}
 - {{domxref("DOMRect")}}
