@@ -1,11 +1,5 @@
 ---
 title: "File and Directory Entries API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API"
-status: "needs-translation"
----
-
----
-title: File and Directory Entries API
 slug: Web/API/File_and_Directory_Entries_API
 page-type: web-api-overview
 browser-compat: api.FileSystem
@@ -13,58 +7,58 @@ browser-compat: api.FileSystem
 
 {{DefaultAPISidebar("File and Directory Entries API")}}
 
-The File and Directory Entries API provides a way to process directories and file lists provided by the user via a form input or a drag-and-drop operation. It is a more advanced version of the [File API](/en-US/docs/Web/API/File), which allows you to work with a single file. It was originally intended to support a full virtual file system, but now only supports read operations on user-provided data.
+File and Directory Entries API روشی را برای پردازش پوشه‌ها و فهرست‌های فایلی فراهم می‌کند که کاربر از طریق یک ورودی فرم یا عملیات کشیدن‑و‑رها کردن ارائه می‌دهد. این API نسخه‌ی پیشرفته‌تری از [File API](/en-US/docs/Web/API/File) است که به شما امکان می‌دهد با یک فایل واحد کار کنید. در ابتدا قرار بود از یک سیستم فایل مجازی کامل پشتیبانی کند، اما اکنون فقط از عملیات خواندن روی داده‌های ارائه‌شده توسط کاربر پشتیبانی می‌کند.
 
-See [Relationship to other file-related APIs](/en-US/docs/Web/API/File_API#relationship_to_other_file-related_apis) for a comparison between this API, the [File System API](/en-US/docs/Web/API/File_System_API), and the [File API](/en-US/docs/Web/API/File_API).
+برای مقایسه‌ی این API با [File System API](/en-US/docs/Web/API/File_System_API) و [File API](/en-US/docs/Web/API/File_API)، به [رابطه با سایر APIهای مرتبط با فایل](/en-US/docs/Web/API/File_API#relationship_to_other_file-related_apis) مراجعه کنید.
 
-## Getting access to a file system
+## دسترسی به یک سیستم فایل
 
-There are two ways to get access to file systems defined in the current specification draft:
+دو راه برای دسترسی به سیستم‌های فایل تعریف‌شده در پیش‌نویس فعلی مشخصات وجود دارد:
 
-- When handling a {{domxref("HTMLElement/drop_event", "drop")}} event for drag and drop, you can call {{domxref("DataTransferItem.webkitGetAsEntry()")}} to get the {{domxref("FileSystemEntry")}} for a dropped item. If the result isn't `null`, then it's a dropped file or directory, and you can use file system calls to work with it.
-- The {{domxref("HTMLInputElement.webkitEntries")}} property lets you access the {{domxref("FileSystemFileEntry")}} objects for the currently selected files, but only if they are dragged-and-dropped onto the file chooser ([Firefox bug 1326031](https://bugzil.la/1326031)). If {{domxref("HTMLInputElement.webkitdirectory")}} is `true`, the {{HTMLElement("input")}} element is instead a directory picker, and you get {{domxref("FileSystemDirectoryEntry")}} objects for each selected directory.
+- هنگام مدیریت رویداد {{domxref("HTMLElement/drop_event", "drop")}} برای کشیدن‑و‑رها کردن، می‌توانید {{domxref("DataTransferItem.webkitGetAsEntry()")}} را فراخوانی کنید تا {{domxref("FileSystemEntry")}} مربوط به آیتم رهاشده را دریافت کنید. اگر نتیجه `null` نباشد، آن آیتم یک فایل یا پوشه‌ی رهاشده است و می‌توانید از فراخوانی‌های سیستم فایل برای کار با آن استفاده کنید.
+- ویژگی {{domxref("HTMLInputElement.webkitEntries")}} به شما امکان می‌دهد به اشیاء {{domxref("FileSystemFileEntry")}} مربوط به فایل‌های انتخاب‌شده‌ی فعلی دسترسی پیدا کنید، اما فقط در صورتی که آن فایل‌ها با کشیدن‑و‑رها کردن روی انتخاب‌گر فایل رها شده باشند ([باگ 1326031 فایرفاکس](https://bugzil.la/1326031)). اگر {{domxref("HTMLInputElement.webkitdirectory")}} برابر با `true` باشد، عنصر {{HTMLElement("input")}} به جای آن یک انتخاب‌گر پوشه است و برای هر پوشه‌ی انتخاب‌شده، اشیاء {{domxref("FileSystemDirectoryEntry")}} دریافت می‌کنید.
 
-## History
+## تاریخچه
 
-The original File System API was created to let browsers implement support for accessing a sandboxed virtual file system on the user's storage device. Work to standardize the specification was abandoned back in 2012, but by that point, Google Chrome included its own implementation of the API. Over time, a number of popular sites and Web applications came to use it, often without providing any means of falling back to standard APIs or even checking to be sure the API is available before using it. Mozilla instead opted to implement other APIs which can be used to solve many of the same problems, such as [IndexedDB](/en-US/docs/Web/API/IndexedDB_API); see the blog post [Why no FileSystem API in Firefox?](https://hacks.mozilla.org/2012/07/why-no-filesystem-api-in-firefox/) for more insights.
+API سیستم فایل اصلی برای این ایجاد شد که مرورگرها بتوانند از دسترسی به یک سیستم فایل مجازی sandbox شده روی حافظه‌ی کاربر پشتیبانی کنند. کار بر روی استانداردسازی این مشخصات در سال ۲۰۱۲ متوقف شد، اما در آن زمان، گوگل کروم پیاده‌سازی مخصوص خودش از این API را داشت. با گذشت زمان، تعدادی از وب‌سایت‌ها و برنامه‌های وب محبوب شروع به استفاده از آن کردند، اغلب بدون ارائه‌ی هیچ راهکاری برای بازگشت به APIهای استاندارد یا حتی بررسی اینکه API قبل از استفاده در دسترس است. موزیلا در عوض تصمیم گرفت APIهای دیگری را پیاده‌سازی کند که می‌توانند بسیاری از همان مشکلات را حل کنند، مانند [IndexedDB](/en-US/docs/Web/API/IndexedDB_API)؛ برای اطلاعات بیشتر به پست وبلاگ [چرا Firefox فاقد FileSystem API است؟](https://hacks.mozilla.org/2012/07/why-no-filesystem-api-in-firefox/) مراجعه کنید.
 
-As a result, a number of popular websites did not work properly on browsers other than Chrome. To resolve that, the features of Google's API for which consensus could be reached were standardized as the File and Directory Entries API, and this was then implemented in other browsers.
+در نتیجه، تعدادی از وب‌سایت‌های محبوب در مرورگرهایی غیر از کروم به درستی کار نمی‌کردند. برای حل این مشکل، ویژگی‌هایی از API گوگل که درباره‌ی آنها اجماع حاصل شده بود به عنوان File and Directory Entries API استاندارد شد و سپس در سایر مرورگرها پیاده‌سازی گردید.
 
-## Interfaces
+## رابط‌ها
 
-The File and Directory Entries API includes the following interfaces:
+File and Directory Entries API شامل رابط‌های زیر است:
 
 - {{domxref("FileSystem")}}
-  - : Represents a file system.
+  - : یک سیستم فایل را نمایش می‌دهد.
 - {{domxref("FileSystemEntry")}}
-  - : The basic interface representing a single entry in a file system. This is implemented by other interfaces which represent files or directories.
+  - : رابط پایه‌ای که یک ورودی واحد در یک سیستم فایل را نمایش می‌دهد. این رابط توسط رابط‌های دیگری که فایل‌ها یا پوشه‌ها را نشان می‌دهند پیاده‌سازی می‌شود.
 - {{domxref("FileSystemFileEntry")}}
-  - : Represents a single file in a file system.
+  - : یک فایل واحد را در یک سیستم فایل نمایش می‌دهد.
 - {{domxref("FileSystemDirectoryEntry")}}
-  - : Represents a single directory in a file system.
+  - : یک پوشه‌ی واحد را در یک سیستم فایل نمایش می‌دهد.
 - {{domxref("FileSystemDirectoryReader")}}
-  - : Created by calling {{domxref("FileSystemDirectoryEntry.createReader()")}}, this interface provides the functionality which lets you read the contents of a directory.
+  - : با فراخوانی {{domxref("FileSystemDirectoryEntry.createReader()")}} ایجاد می‌شود. این رابط قابلیت خواندن محتویات یک پوشه را فراهم می‌کند.
 
-### Extensions to other interfaces
+### افزونه‌های مربوط به سایر رابط‌ها
 
 - {{domxref("DataTransferItem.webkitGetAsEntry()")}}
-  - : Returns an object based on {{domxref("FileSystemEntry")}} representing the selected file's entry in its file system. This will generally be either a {{domxref("FileSystemFileEntry")}} or {{domxref("FileSystemDirectoryEntry")}} object.
+  - : یک شیء مبتنی بر {{domxref("FileSystemEntry")}} برمی‌گرداند که ورودی فایل انتخاب‌شده را در سیستم فایل خودش نمایش می‌دهد. این شیء معمولاً یک {{domxref("FileSystemFileEntry")}} یا {{domxref("FileSystemDirectoryEntry")}} خواهد بود.
 - {{domxref("File.webkitRelativePath")}}
-  - : Returns the path the URL of the `File` is relative to.
+  - : مسیری را برمی‌گرداند که URL فایل نسبت به آن قرار دارد.
 - {{domxref("HTMLInputElement.webkitdirectory")}}
-  - : A boolean that represents the [`webkitdirectory`](/en-US/docs/Web/HTML/Reference/Elements/input#webkitdirectory) attribute. If `true`, the file-system-picker interface only accepts directories instead of files.
+  - : یک مقدار بولی که ویژگی [`webkitdirectory`](/en-US/docs/Web/HTML/Reference/Elements/input#webkitdirectory) را نشان می‌دهد. اگر `true` باشد، رابط انتخاب‌گر سیستم فایل فقط پوشه‌ها را می‌پذیرد، نه فایل‌ها را.
 - {{domxref("HTMLInputElement.webkitEntries")}}
-  - : Describes the currently selected files or directories.
+  - : فایل‌ها یا پوشه‌های انتخاب‌شده‌ی فعلی را توصیف می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File API](/en-US/docs/Web/API/File_API)
 - [File System API](/en-US/docs/Web/API/File_System_API)
