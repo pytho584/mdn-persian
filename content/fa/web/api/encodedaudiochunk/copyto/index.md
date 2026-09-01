@@ -1,11 +1,5 @@
 ---
 title: "EncodedAudioChunk: copyTo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedAudioChunk/copyTo"
-status: "needs-translation"
----
-
----
-title: "EncodedAudioChunk: copyTo() method"
 short-title: copyTo()
 slug: Web/API/EncodedAudioChunk/copyTo
 page-type: web-api-instance-method
@@ -14,26 +8,26 @@ browser-compat: api.EncodedAudioChunk.copyTo
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`copyTo()`** method of the {{domxref("EncodedAudioChunk")}} interface copies the encoded chunk of audio data.
+متد **`copyTo()`** در رابط {{domxref("EncodedAudioChunk")}}، داده‌های صوتی رمزگذاری‌شدهٔ این قطعه را کپی می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 copyTo(destination)
 ```
 
-### Parameters
+### پارامترها
 
 - `destination`
-  - : An {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, or a {{jsxref("DataView")}} that the data can be copied to.
+  - : یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}} که داده‌ها می‌توانند در آن کپی شوند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-In the following example an {{domxref("EncodedAudioChunk")}} is created then copied.
+در مثال زیر، یک {{domxref("EncodedAudioChunk")}} ساخته شده و سپس کپی می‌شود.
 
 ```js
 const init = {
@@ -47,10 +41,11 @@ const chunk = new EncodedAudioChunk(init);
 chunk.copyTo(newBuffer);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
