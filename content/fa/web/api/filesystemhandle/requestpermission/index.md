@@ -1,7 +1,5 @@
 ---
 title: "FileSystemHandle: requestPermission() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemHandle/requestPermission"
-status: "needs-translation"
 ---
 
 ---
@@ -16,44 +14,41 @@ browser-compat: api.FileSystemHandle.requestPermission
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`requestPermission()`** method of the
-{{domxref("FileSystemHandle")}} interface requests read or readwrite permissions for the
-file handle.
+متد **`requestPermission()`** از رابط {{domxref("FileSystemHandle")}} برای دسته (handle) فایل، مجوز خواندن یا خواندن/نوشتن درخواست می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 requestPermission(descriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `descriptor` {{optional_inline}}
-  - : An object which specifies the permission mode to query for. Options are as follows:
+  - : شیئی که حالت مجوزی که باید پرس‌وجو شود را مشخص می‌کند. گزینه‌ها به شرح زیر هستند:
     - `'mode'` {{optional_inline}}
-      - : Can be either `'read'`, `'write'`, or `'readwrite'`.
+      - : می‌تواند یکی از `'read'`، `'write'` یا `'readwrite'` باشد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with {{domxref('PermissionStatus.state')}} which is one of `'granted'`, `'denied'` or `'prompt'`. It may also reject with one of the exceptions below.
+یک {{jsxref("Promise")}} که با {{domxref('PermissionStatus.state')}} (وضعیت مجوز) حل می‌شود که یکی از مقادیر `'granted'`، `'denied'` یا `'prompt'` است. همچنین ممکن است با یکی از استثناهای زیر رد (reject) شود.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if no parameter is specified or the `mode` is not that of
-    `'read'`, `'write'`, or `'readwrite'`
+  - : اگر پارامتری مشخص نشود یا `mode` یکی از مقادیر `'read'`، `'write'` یا `'readwrite'` نباشد، پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown in one of the following cases:
-    - The method was called in a context that's not [same-origin](/en-US/docs/Web/Security/Defenses/Same-origin_policy) as the top-level context (i.e., a cross-origin iframe).
-    - There was no transient user activation such as a button press. This includes when the handle is in a non-Window context which cannot consume user activation, such as a worker.
+  - : در یکی از موارد زیر پرتاب می‌شود:
+    - متد در زمینه‌ای فراخوانی شود که [هم‌ریشه](/en-US/docs/Web/Security/Defenses/Same-origin_policy) با زمینه سطح بالا نیست (مثلاً iframeهای متقاطع‌ریشه (cross-origin)).
+    - فعال‌سازی کاربر گذرا (transient user activation) مانند فشردن دکمه وجود نداشته باشد. این شامل حالتی است که دسته در زمینه‌ای غیر از Window قرار دارد که نمی‌تواند فعال‌سازی کاربر را مصرف کند، مانند یک worker.
 
-## Security
+## امنیت
 
-[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required. The user has to interact with the page or a UI element in order for this feature to work.
+[فعال‌سازی کاربر گذرا](/en-US/docs/Web/Security/Defenses/User_activation) الزامی است. برای کارکرد این ویژگی، کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل کند.
 
-## Examples
+## مثال‌ها
 
-The following asynchronous function requests permissions if they have not been granted.
+تابع ناهمگام (async) زیر در صورت عدم اعطای مجوز، آن را درخواست می‌کند.
 
 ```js
 // fileHandle is a FileSystemFileHandle
@@ -80,15 +75,15 @@ async function verifyPermission(fileHandle, withWrite) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
-- [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
+- [File System Access API: ساده‌سازی دسترسی به فایل‌های محلی](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
