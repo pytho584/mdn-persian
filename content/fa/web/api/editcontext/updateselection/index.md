@@ -1,11 +1,5 @@
 ---
 title: "EditContext: updateSelection() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/updateSelection"
-status: "needs-translation"
----
-
----
-title: "EditContext: updateSelection() method"
 short-title: updateSelection()
 slug: Web/API/EditContext/updateSelection
 page-type: web-api-instance-method
@@ -16,35 +10,35 @@ browser-compat: api.EditContext.updateSelection
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`updateSelection()`** method of the {{domxref("EditContext")}} interface updates the internal state of the selection within the editable text context. This method is used to update the selection state when the user interacts with the text rendering in the `EditContext`'s associated element, such as by clicking or dragging the mouse, or by using the keyboard.
+متد **`updateSelection()`** از رابط {{domxref("EditContext")}}، وضعیت داخلی انتخاب (selection) را در بافت متنی قابل ویرایش به‌روزرسانی می‌کند. این متد برای به‌روزرسانی وضعیت انتخاب زمانی استفاده می‌شود که کاربر با متن رندر شده در عنصر مرتبط با `EditContext` تعامل برقرار می‌کند؛ مثلاً با کلیک کردن، کشیدن ماوس یا استفاده از صفحه‌کلید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 updateSelection(start, end)
 ```
 
-### Parameters
+### پارامترها
 
 - `start`
-  - : A number representing the new selection start.
+  - : عددی که نقطه شروع جدید انتخاب را نشان می‌دهد.
 - `end`
-  - : A number representing the new selection end. If the `start` and `end` values are the same, the selection is equivalent to a caret.
+  - : عددی که نقطه پایان جدید انتخاب را نشان می‌دهد. اگر مقادیر `start` و `end` یکسان باشند، انتخاب معادل یک مکان‌نما (caret) خواهد بود.
 
-### Return value
+### مقدار بازگشتی
 
-None (`undefined`).
+هیچ (`undefined`).
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the method is called with fewer than two arguments, or if either argument is not a non-negative number.
+  - : اگر متد با کمتر از دو آرگومان فراخوانی شود، یا هر یک از آرگومان‌ها یک عدد غیرمنفی نباشد، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Updating the selection when the user interacts with the text
+### به‌روزرسانی انتخاب هنگام تعامل کاربر با متن
 
-This example shows how to use the `updateSelection` method to update the selection in the `EditContext` of a `canvas` element when the arrow keys are used to move the caret or select text in the editable region.
+این مثال نشان می‌دهد که چگونه می‌توان از متد `updateSelection` برای به‌روزرسانی انتخاب در `EditContext` یک عنصر `canvas` استفاده کرد، زمانی که از کلیدهای جهت‌نما برای حرکت مکان‌نما یا انتخاب متن در ناحیه قابل ویرایش استفاده می‌شود.
 
 ```html
 <canvas id="editor-canvas"></canvas>
@@ -83,14 +77,14 @@ canvas.addEventListener("keydown", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{DOMxRef("EditContext")}} interface it belongs to.
+- رابط {{DOMxRef("EditContext")}} که این متد به آن تعلق دارد.
