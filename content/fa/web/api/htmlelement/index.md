@@ -1,7 +1,5 @@
 ---
 title: "HTMLElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,161 +11,139 @@ browser-compat: api.HTMLElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLElement`** interface represents any [HTML](/en-US/docs/Web/HTML) element. Some elements directly implement this interface, while others implement it via an interface that inherits it.
+رابط **`HTMLElement`** نمایانگر هر المان [HTML](/en-US/docs/Web/HTML) است. برخی المان‌ها مستقیماً این رابط را پیاده‌سازی می‌کنند و برخی دیگر از طریق رابطی که از آن ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent, {{DOMxRef("Element")}}._
+_همچنین ویژگی‌های والد خود، {{DOMxRef("Element")}} را به ارث می‌برد._
 
 - {{DOMxRef("HTMLElement.accessKey")}}
-  - : A string representing the access key assigned to the element.
+  - : رشته‌ای که کلید دسترسی اختصاص‌یافته به المان را نشان می‌دهد.
 - {{DOMxRef("HTMLElement.accessKeyLabel")}} {{ReadOnlyInline}}
-  - : Returns a string containing the element's assigned access key.
+  - : رشته‌ای حاوی کلید دسترسی اختصاص‌یافته به المان را برمی‌گرداند.
 - {{DOMxRef("HTMLElement.anchorElement")}} {{ReadOnlyInline}}&nbsp;{{non-standard_inline}} {{experimental_inline}}
-  - : Returns a reference to the element's anchor element, or `null` if it doesn't have one.
+  - : ارجاعی به المان لنگر (anchor) را برمی‌گرداند؛ یا اگر المان لنگر نداشته باشد، `null` را برمی‌گرداند.
 - {{DOMxRef("HTMLElement.attributeStyleMap")}} {{ReadOnlyInline}}
-  - : A {{DOMxRef("StylePropertyMap")}} representing the declarations of the element's [`style`](/en-US/docs/Web/HTML/Reference/Global_attributes/style) attribute.
+  - : یک {{DOMxRef("StylePropertyMap")}} که اعلان‌های (declarations) ویژگی [`style`](/en-US/docs/Web/HTML/Reference/Global_attributes/style) المان را نشان می‌دهد.
 - {{domxref("HTMLElement.autocapitalize")}}
-  - : A string that represents the element's capitalization behavior for user input. Valid values are: `none`, `off`, `on`, `characters`, `words`, `sentences`.
+  - : رشته‌ای که رفتار حروف بزرگ (capitalization) المان را برای ورودی کاربر نشان می‌دهد. مقادیر معتبر عبارت‌اند از: `none`، `off`، `on`، `characters`، `words`، `sentences`.
 - {{domxref("HTMLElement.autofocus")}}
-  - : A boolean value reflecting the [`autofocus`](/en-US/docs/Web/HTML/Reference/Elements/select#autofocus) HTML global attribute, which indicates whether the control should be focused when the page loads, or when dialog or popover become shown if specified in an element inside {{htmlelement("dialog")}} elements or elements whose popover attribute is set.
+  - : مقدار بولی که ویژگی سراسری HTML [`autofocus`](/en-US/docs/Web/HTML/Reference/Elements/select#autofocus) را منعکس می‌کند؛ این ویژگی مشخص می‌کند که آیا کنترل باید هنگام بارگذاری صفحه فوکوس بگیرد یا، اگر روی المانی داخل عناصر {{htmlelement("dialog")}} یا عناصری که ویژگی popover آن‌ها تنظیم شده است تعیین شده باشد، هنگام نمایش dialog یا popover فوکوس بگیرد.
 - {{domxref("HTMLElement.autocorrect")}}
-  - : A boolean that represents whether or not text input by a user should be automatically corrected.
-    This reflects the [`autocorrect`](/en-US/docs/Web/HTML/Reference/Global_attributes/autocorrect) HTML global attribute.
+  - : یک مقدار بولی که نشان می‌دهد آیا متنی که کاربر وارد می‌کند باید به‌صورت خودکار تصحیح شود یا نه. این ویژگی، ویژگی سراسری HTML [`autocorrect`](/en-US/docs/Web/HTML/Reference/Global_attributes/autocorrect) را منعکس می‌کند.
 - {{DOMxRef("HTMLElement.contentEditable")}}
-  - : A string, where a value of `true` means the element is editable and a value of `false` means it isn't.
+  - : رشته‌ای که مقدار `true` به این معناست که المان قابل ویرایش است و مقدار `false` به این معناست که قابل ویرایش نیست.
 - {{DOMxRef("HTMLElement.dataset")}} {{ReadOnlyInline}}
-  - : Returns a {{DOMxRef("DOMStringMap")}} with which script can read and write the element's [custom data attributes](/en-US/docs/Web/HTML/How_to/Use_data_attributes) (`data-*`).
+  - : یک {{DOMxRef("DOMStringMap")}} برمی‌گرداند که اسکریپت می‌تواند با آن [ویژگی‌های داده سفارشی](/en-US/docs/Web/HTML/How_to/Use_data_attributes) (`data-*`) المان را بخواند و بنویسد.
 - {{DOMxRef("HTMLElement.dir")}}
-  - : A string, reflecting the `dir` global attribute, representing the directionality of the element. Possible values are `"ltr"`, `"rtl"`, and `"auto"`.
+  - : رشته‌ای که ویژگی سراسری `dir` را منعکس می‌کند و جهت (directionality) المان را نشان می‌دهد. مقادیر ممکن عبارت‌اند از `"ltr"`، `"rtl"` و `"auto"`.
 - {{DOMxRef("HTMLElement.draggable")}}
-  - : A boolean value indicating if the element can be dragged.
+  - : مقدار بولی که نشان می‌دهد آیا المان قابل کشیدن (drag) است یا نه.
 - {{DOMxRef("HTMLElement.editContext")}} {{experimental_inline}}
-  - : Returns the {{DOMxRef("EditContext")}} associated with the element, or `null` if there isn't one.
+  - : {{DOMxRef("EditContext")}} مرتبط با المان را برمی‌گرداند، یا اگر وجود نداشته باشد `null` را برمی‌گرداند.
 - {{DOMxRef("HTMLElement.enterKeyHint")}}
-  - : A string defining what action label (or icon) to present for the enter key on virtual keyboards.
+  - : رشته‌ای که تعیین می‌کند برای کلید Enter در صفحه‌کلیدهای مجازی چه برچسب عملی (یا آیکنی) نمایش داده شود.
 - {{DOMxRef("HTMLElement.hidden")}}
-  - : A string or boolean value reflecting the value of the element's [`hidden`](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) attribute.
+  - : مقدار رشته‌ای یا بولی که مقدار ویژگی [`hidden`](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) المان را منعکس می‌کند.
 - {{DOMxRef("HTMLElement.inert")}}
-  - : A boolean value indicating whether the user agent must act as though the given node is absent for the purposes of user interaction events, in-page text searches ("find in page"), and text selection.
+  - : مقدار بولی که نشان می‌دهد آیا عامل کاربر (user agent) باید برای رویدادهای تعامل کاربر، جست‌وجوی متن در صفحه («یافتن در صفحه») و انتخاب متن، طوری رفتار کند که گویی گره مورد نظر وجود ندارد.
 - {{DOMxRef("HTMLElement.innerText")}}
-  - : Represents the rendered text content of a node and its descendants.
-    As a getter, it approximates the text the user would get if they highlighted the contents of the element with the cursor and then copied it to the clipboard.
-    As a setter, it replaces the content inside the selected element, converting any line breaks into {{HTMLElement("br")}} elements.
+  - : محتوای متنی رندر شدهٔ یک گره و فرزندان آن را نشان می‌دهد.
+    به‌عنوان getter، متنی را تقریب می‌زند که کاربر اگر محتویات المان را با نشانگر انتخاب کند و سپس در کلیپ‌بورد کپی کند، دریافت می‌کند.
+    به‌عنوان setter، محتوای داخل المان انتخاب‌شده را با مقدار داده‌شده جایگزین می‌کند و هر شکست خط را به عناصر {{HTMLElement("br")}} تبدیل می‌کند.
 - {{DOMxRef("HTMLElement.inputMode")}}
-  - : A string value reflecting the value of the element's [`inputmode`](/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode) attribute.
+  - : مقدار رشته‌ای که مقدار ویژگی [`inputmode`](/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode) المان را منعکس می‌کند.
 - {{DOMxRef("HTMLElement.isContentEditable")}} {{ReadOnlyInline}}
-  - : Returns a boolean value indicating whether or not the content of the element can be edited.
+  - : مقدار بولی برمی‌گرداند که نشان می‌دهد آیا محتوای المان قابل ویرایش است یا نه.
 - {{DOMxRef("HTMLElement.lang")}}
-  - : A string representing the language of an element's attributes, text, and element contents.
+  - : رشته‌ای که زبان ویژگی‌ها، متن و محتویات یک المان را نشان می‌دهد.
 - {{DOMxRef("HTMLElement.nonce")}}
-  - : Returns the cryptographic number used once that is used by Content Security Policy to determine whether a given fetch will be allowed to proceed.
+  - : عدد رمزنگاری یکبارمصرف (nonce) را برمی‌گرداند که Content Security Policy از آن استفاده می‌کند تا تعیین کند آیا یک واکشی (fetch) مشخص مجاز به انجام است یا خیر.
 - {{DOMxRef("HTMLElement.offsetHeight")}} {{ReadOnlyInline}}
-  - : Returns a `double` containing the height of an element, relative to the layout.
+  - : یک `double` شامل ارتفاع یک المان، نسبت به چیدمان (layout) را برمی‌گرداند.
 - {{DOMxRef("HTMLElement.offsetLeft")}} {{ReadOnlyInline}}
-  - : Returns a `double`, the distance from this element's left border to its `offsetParent`'s left border.
+  - : یک `double` برمی‌گرداند: فاصله از حاشیه چپ این المان تا حاشیه چپ `offsetParent` آن.
 - {{DOMxRef("HTMLElement.offsetParent")}} {{ReadOnlyInline}}
-  - : An {{DOMxRef("Element")}} that is the element from which all offset calculations are currently computed.
+  - : یک {{DOMxRef("Element")}} که المانی است که تمام محاسبات offset در حال حاضر بر اساس آن انجام می‌شود.
 - {{DOMxRef("HTMLElement.offsetTop")}} {{ReadOnlyInline}}
-  - : Returns a `double`, the distance from this element's top border to its `offsetParent`'s top border.
+  - : یک `double` برمی‌گرداند: فاصله از حاشیه بالای این المان تا حاشیه بالای `offsetParent` آن.
 - {{DOMxRef("HTMLElement.offsetWidth")}} {{ReadOnlyInline}}
-  - : Returns a `double` containing the width of an element, relative to the layout.
+  - : یک `double` شامل عرض یک المان، نسبت به چیدمان، برمی‌گرداند.
 - {{DOMxRef("HTMLElement.outerText")}}
-  - : Represents the rendered text content of a node and its descendants.
-    As a getter, it is the same as {{DOMxRef("HTMLElement.innerText")}} (it represents the rendered text content of an element and its descendants).
-    As a setter, it replaces the selected node and its contents with the given value, converting any line breaks into {{HTMLElement("br")}} elements.
+  - : محتوای متنی رندر شدهٔ یک گره و فرزندان آن را نشان می‌دهد.
+    به‌عنوان getter، همانند {{DOMxRef("HTMLElement.innerText")}} است (محتوای متنی رندر شدهٔ یک المان و فرزندان آن را نشان می‌دهد).
+    به‌عنوان setter، گره انتخاب‌شده و محتویات آن را با مقدار داده‌شده جایگزین می‌کند و هر شکست خط را به عناصر {{HTMLElement("br")}} تبدیل می‌کند.
 - {{domxref("HTMLElement.popover")}}
-  - : Gets and sets an element's popover state via JavaScript (`"auto"`, `"hint"`, or `"manual"`), and can be used for feature detection. Reflects the value of the [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) global HTML attribute.
+  - : وضعیت popover یک المان را از طریق JavaScript (`"auto"`، `"hint"` یا `"manual"`) می‌خواند و تنظیم می‌کند و می‌تواند برای تشخیص قابلیت (feature detection) استفاده شود. مقدار ویژگی سراسری HTML [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) را منعکس می‌کند.
 - {{DOMxRef("HTMLElement.spellcheck")}}
-  - : A boolean value that controls the [spell-checking](/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) hint. It is available on all HTML elements, though it doesn't affect all of them.
+  - : مقدار بولی که راهنمای [غلط‌یاب املایی](/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) را کنترل می‌کند. این ویژگی روی همه المان‌های HTML در دسترس است، هرچند روی همه آن‌ها تأثیر نمی‌گذارد.
 - {{DOMxRef("HTMLElement.style")}}
-  - : A {{DOMxRef("CSSStyleDeclaration")}} representing the declarations of the element's [`style`](/en-US/docs/Web/HTML/Reference/Global_attributes/style) attribute.
+  - : یک {{DOMxRef("CSSStyleDeclaration")}} که اعلان‌های ویژگی [`style`](/en-US/docs/Web/HTML/Reference/Global_attributes/style) المان را نشان می‌دهد.
 - {{DOMxRef("HTMLElement.tabIndex")}}
-  - : A `long` representing the position of the element in the tabbing order.
+  - : یک `long` که موقعیت المان در ترتیب پیمایش با Tab را نشان می‌دهد.
 - {{DOMxRef("HTMLElement.title")}}
-  - : A string containing the text that appears in a popup box when mouse is over the element.
+  - : رشته‌ای شامل متنی که وقتی نشانگر ماوس روی المان است در جعبه بازشو (popup) ظاهر می‌شود.
 - {{DOMxRef("HTMLElement.translate")}}
-  - : A boolean value representing the translation.
+  - : مقدار بولی که وضعیت ترجمه را نشان می‌دهد.
 - {{DOMxRef("HTMLElement.virtualKeyboardPolicy")}} {{Experimental_Inline}}
-  - : A string indicating the on-screen virtual keyboard behavior on devices such as tablets, mobile phones, or other devices where a hardware keyboard may not be available, if the element's content is editable (for example, it is an {{htmlelement("input")}} or {{htmlelement("textarea")}} element, or an element with the [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) attribute set).
+  - : رشته‌ای که رفتار صفحه‌کلید مجازی روی صفحه را در دستگاه‌هایی مانند تبلت‌ها، تلفن‌های همراه یا سایر دستگاه‌هایی که ممکن است صفحه‌کلید فیزیکی در دسترس نباشد، نشان می‌دهد، اگر محتوای المان قابل ویرایش باشد (مثلاً یک المان {{htmlelement("input")}} یا {{htmlelement("textarea")}} باشد، یا المانی که ویژگی [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) آن تنظیم شده است).
 - {{DOMxRef("HTMLElement.writingSuggestions")}}
-  - : A string indicating if browser-provided writing suggestions should be enabled under the scope of the element or not.
+  - : رشته‌ای که نشان می‌دهد آیا پیشنهادهای نوشتاری ارائه‌شده توسط مرورگر باید در محدوده (scope) المان فعال باشند یا نه.
 
-## Instance methods
+## متدهای نمونه
 
-_Also inherits methods from its parent, {{DOMxRef("Element")}}._
+_همچنین متدهای والد خود، {{DOMxRef("Element")}} را به ارث می‌برد._
 
 - {{DOMxRef("HTMLElement.attachInternals()")}}
-  - : Returns an {{DOMxRef("ElementInternals")}} object, and enables a custom element to participate in HTML forms.
+  - : یک شیء {{DOMxRef("ElementInternals")}} برمی‌گرداند و به یک المان سفارشی امکان مشارکت در فرم‌های HTML را می‌دهد.
 - {{DOMxRef("HTMLElement.blur()")}}
-  - : Removes keyboard focus from the currently focused element.
+  - : فوکوس صفحه‌کلید را از المان فوکوشدهٔ فعلی حذف می‌کند.
 - {{DOMxRef("HTMLElement.click()")}}
-  - : Sends a mouse click event to the element.
+  - : یک رویداد کلیک ماوس به المان ارسال می‌کند.
 - {{DOMxRef("HTMLElement.focus()")}}
-  - : Makes the element the current keyboard focus.
+  - : المان را به فوکوس فعلی صفحه‌کلید تبدیل می‌کند.
 - {{DOMxRef("HTMLElement.hidePopover()")}}
-  - : Hides a popover element by removing it from the {{glossary("top layer")}} and styling it with `display: none`.
+  - : یک المان popover را با حذف آن از {{glossary("top layer")}} و اعمال استایل `display: none` پنهان می‌کند.
 - {{DOMxRef("HTMLElement.showPopover()")}}
-  - : Shows a popover element by adding it to the {{glossary("top layer")}} and removing `display: none;` from its styles.
+  - : یک المان popover را با افزودن آن به {{glossary("top layer")}} و حذف `display: none;` از استایل‌هایش نمایش می‌دهد.
 - {{DOMxRef("HTMLElement.togglePopover()")}}
-  - : Toggles a popover element between the hidden and showing states.
+  - : یک المان popover را بین حالت پنهان و حالت نمایش‌داده‌شده تغییر وضعیت می‌دهد.
 
-## Events
+## رویدادها
 
-Listen to these events using {{domxref("EventTarget.addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface.
+به این رویدادها با استفاده از {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا با تخصیص یک شنونده رویداد به ویژگی `oneventname` این رابط گوش دهید.
 
-_Also, inherits events from its parent, {{DOMxRef("Element")}}._
+_همچنین، رویدادهای والد خود، {{DOMxRef("Element")}} را به ارث می‌برد._
 
 - {{DOMxRef("HTMLElement/change_event", "change")}}
-  - : Fired when the `value` of an {{HTMLElement("input")}}, {{HTMLElement("select")}}, or {{HTMLElement("textarea")}} element has been changed and committed by the user. Unlike the {{domxref("Element/input_event", "input")}} event, the `change` event is not necessarily fired for each alteration to an element's `value`.
+  - : زمانی رخ می‌دهد که `value` یک المان {{HTMLElement("input")}}، {{HTMLElement("select")}} یا {{HTMLElement("textarea")}} توسط کاربر تغییر کرده و تأیید (commit) شده باشد. برخلاف رویداد {{domxref("Element/input_event", "input")}}، رویداد `change` لزوماً برای هر تغییر در `value` یک المان رخ نمی‌دهد.
 - {{domxref("HTMLElement/command_event", "command")}}
-  - : Fires on an element that is controlled via a {{domxref("HTMLButtonElement", "button")}} with valid {{domxref("HTMLButtonElement.commandForElement", "commandForElement")}} and {{domxref("HTMLButtonElement.command", "command")}} values, whenever the button is interacted with (e.g., it is clicked).
+  - : روی المانی رخ می‌دهد که از طریق یک {{domxref("HTMLButtonElement", "button")}} با مقادیر معتبر {{domxref("HTMLButtonElement.commandForElement", "commandForElement")}} و {{domxref("HTMLButtonElement.command", "command")}} کنترل می‌شود، هر زمان که با دکمه تعامل شود (مثلاً روی آن کلیک شود).
 - {{DOMxRef("HTMLElement/error_event", "error")}}
-  - : Fired when a resource failed to load, or can't be used.
+  - : زمانی رخ می‌دهد که یک منبع (resource) نتواند بارگذاری شود یا قابل استفاده نباشد.
 - {{DOMxRef("HTMLElement/load_event", "load")}}
-  - : Fires for elements containing a resource when the resource has successfully loaded.
+  - : برای المان‌های حاوی یک منبع، زمانی که منبع با موفقیت بارگذاری شود، رخ می‌دهد.
 
-### Drag & drop events
+### رویدادهای کشیدن و رها کردن
 
 - {{DOMxRef("HTMLElement/drag_event", "drag")}}
-  - : This event is fired when an element or text selection is being dragged.
+  - : این رویداد زمانی رخ می‌دهد که یک المان یا انتخاب متنی در حال کشیده شدن است.
 - {{DOMxRef("HTMLElement/dragend_event", "dragend")}}
-  - : This event is fired when a drag operation is being ended (by releasing a mouse button or hitting the escape key).
+  - : این رویداد زمانی رخ می‌دهد که عملیات کشیدن در حال پایان یافتن است (با رها کردن دکمه ماوس یا فشردن کلید Escape).
 - {{DOMxRef("HTMLElement/dragenter_event", "dragenter")}}
-  - : This event is fired when a dragged element or text selection enters a valid drop target.
+  - : این رویداد زمانی رخ می‌دهد که یک المان کشیده‌شده یا انتخاب متنی وارد یک هدف رهاسازی معتبر می‌شود.
 - {{DOMxRef("HTMLElement/dragleave_event", "dragleave")}}
-  - : This event is fired when a dragged element or text selection leaves a valid drop target.
+  - : این رویداد زمانی رخ می‌دهد که یک المان کشیده‌شده یا انتخاب متنی از یک هدف رهاسازی معتبر خارج می‌شود.
 - {{DOMxRef("HTMLElement/dragover_event", "dragover")}}
-  - : This event is fired continuously when an element or text selection is being dragged and the mouse pointer is over a valid drop target (every 50 ms WHEN mouse is not moving ELSE much faster between 5 ms (slow movement) and 1ms (fast movement) approximately. This firing pattern is different than {{domxref("Element/mouseover_event", "mouseover")}} ).
+  - : این رویداد به‌طور مداوم زمانی رخ می‌دهد که یک المان یا انتخاب متنی در حال کشیده شدن است و نشانگر ماوس روی یک هدف رهاسازی معتبر قرار دارد (هر ۵۰ میلی‌ثانیه وقتی ماوس حرکت نمی‌کند، و در غیر این صورت بسیار سریع‌تر، بین حدوداً ۵ میلی‌ثانیه (حرکت آهسته) و ۱ میلی‌ثانیه (حرکت سریع). این الگوی رخ‌دادن با رویداد {{domxref("Element/mouseover_event", "mouseover")}} متفاوت است).
 - {{DOMxRef("HTMLElement/dragstart_event", "dragstart")}}
-  - : This event is fired when the user starts dragging an element or text selection.
+  - : این رویداد زمانی رخ می‌دهد که کاربر شروع به کشیدن یک المان یا انتخاب متنی می‌کند.
 - {{DOMxRef("HTMLElement/drop_event", "drop")}}
-  - : This event is fired when an element or text selection is dropped on a valid drop target.
+  - : این رویداد زمانی رخ می‌دهد که یک المان یا انتخاب متنی روی یک هدف رهاسازی معتبر رها می‌شود.
 
-### Interest invoker events
+### رویدادهای فراخوانندهٔ علاقه‌مندی (interest invoker)
 
 - {{domxref("HTMLElement.interest_event", "interest")}} {{experimental_inline}} {{non-standard_inline}}
-  - : Fired on the target element of an [interest invoker](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) when interest is shown, allowing code to be run in response.
-- {{domxref("HTMLElement.loseinterest_event", "loseinterest")}} {{experimental_inline}} {{non-standard_inline}}
-  - : Fired on the target element of an interest invoker when interest is lost, allowing code to be run in response.
-
-### Toggle events
-
-- {{DOMxRef("HTMLElement/beforetoggle_event", "beforetoggle")}}
-  - : Fired when the element is a [popover](/en-US/docs/Web/API/Popover_API) or {{htmlelement("dialog")}}, before it is hidden or shown.
-- {{DOMxRef("HTMLElement/toggle_event", "toggle")}}
-  - : Fired when the element is a [popover](/en-US/docs/Web/API/Popover_API), {{htmlelement("dialog")}}, or {{htmlelement("details")}} element, just after it is hidden or shown.
-
-## Specifications
-
-{{Specifications}}
-
-## Browser compatibility
-
-{{Compat}}
-
-## See also
-
-- {{DOMxRef("Element")}}
+  - : روی المان هدف یک [فراخ
