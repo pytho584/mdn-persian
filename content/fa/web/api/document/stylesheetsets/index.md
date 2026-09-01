@@ -1,7 +1,5 @@
 ---
 title: "Document: styleSheetSets property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/styleSheetSets"
-status: "needs-translation"
 ---
 
 ---
@@ -17,16 +15,15 @@ browser-compat: api.Document.styleSheetSets
 
 {{APIRef("DOM")}}{{deprecated_header}}{{Non-standard_header}}
 
-The **`styleSheetSets`** read-only property returns a live list of all of the currently-available style sheet sets.
+ویژگی فقط‌خواندنی **`styleSheetSets`** فهرستی زنده از تمام مجموعه‌های استایل‌شیتِ موجود در حال حاضر را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A list of style sheet sets that are available.
+فهرستی از مجموعه‌های استایل‌شیت که در دسترس هستند.
 
-## Examples
+## مثال‌ها
 
-Given an {{HTMLElement("ul")}} (list) element with the ID "sheetList", you can populate
-it with the names of all the available style sheet sets with code like this:
+با در نظر گرفتن یک عنصر {{HTMLElement("ul")}} (فهرست) با شناسه «sheetList»، می‌توانید آن را با نام همهٔ مجموعه‌های استایل‌شیتِ موجود با کدی مانند زیر پر کنید:
 
 ```js
 const list = document.getElementById("sheetList");
@@ -41,19 +38,15 @@ for (const sheet of sheets) {
 }
 ```
 
-## Notes
+## نکات
 
-The list of available style sheet sets is constructed by enumerating all the style
-sheets available for the document, in the order in which they're listed in the
-{{domxref("Document.styleSheets")}} attribute, adding the `title` of each
-style sheet that has a title to the list. Duplicates are dropped from the list (using a
-case-sensitive comparison).
+فهرست مجموعه‌های استایل‌شیت موجود با شمارش همهٔ استایل‌شیت‌های در دسترس برای سند، به ترتیبی که در ویژگی {{domxref("Document.styleSheets")}} فهرست شده‌اند، ساخته می‌شود و `title` هر استایل‌شیتی که دارای عنوان است به فهرست اضافه می‌شود. موارد تکراری (با مقایسهٔ حساس به بزرگی/کوچکی حروف) از فهرست حذف می‌شوند.
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Stylesheet")}}
 - {{domxref("Document.styleSheets")}}
