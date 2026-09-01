@@ -1,7 +1,5 @@
 ---
 title: "Element: wheel event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,23 @@ browser-compat: api.Element.wheel_event
 
 {{APIRef("UI Events")}}
 
-The **`wheel`** event fires when the user rotates a wheel button on a pointing device (typically a mouse). It is also fired for related devices that simulate wheel actions, such as trackpads and mouse balls.
+رویداد **`wheel`** زمانی رخ می‌دهد که کاربر چرخ دکمه‌ی یک دستگاه اشاره‌گر (معمولاً ماوس) را می‌چرخاند. این رویداد همچنین برای دستگاه‌های مرتبطی که عملکرد چرخ را شبیه‌سازی می‌کنند، مانند ترک‌پدها و گوی‌های ماوس، ارسال می‌شود.
 
-This event replaces the non-standard deprecated {{domxref("Element/mousewheel_event", "mousewheel")}} event.
+این رویداد جایگزین رویداد غیراستاندارد و منسوخ‌شدهٔ {{domxref("Element/mousewheel_event", "mousewheel")}} می‌شود.
 
-Don't confuse the `wheel` event with the {{domxref("Element/scroll_event", "scroll")}} event:
+رویداد `wheel` را با رویداد {{domxref("Element/scroll_event", "scroll")}} اشتباه نگیرید:
 
-- A `wheel` event doesn't necessarily dispatch a `scroll` event. For example, the element may be unscrollable at all. Zooming actions using the wheel or trackpad also fire `wheel` events (with {{domxref("MouseEvent/ctrlKey", "ctrlKey")}} set to true).
-- A `scroll` event isn't necessarily triggered by a `wheel` event. Elements can also be scrolled by using the keyboard, dragging a scrollbar, or using JavaScript.
-- Even when the `wheel` event does trigger scrolling, the `delta*` values in the `wheel` event don't necessarily reflect the content's scrolling direction.
+- یک رویداد `wheel` لزوماً یک رویداد `scroll` ارسال نمی‌کند. به‌عنوان مثال، ممکن است عنصر اصلاً قابل پیمایش نباشد. عمل‌های بزرگ‌نمایی با استفاده از چرخ یا ترک‌پد نیز رویدادهای `wheel` را فعال می‌کنند (با {{domxref("MouseEvent/ctrlKey", "ctrlKey")}} برابر با true).
+- یک رویداد `scroll` لزوماً توسط یک رویداد `wheel` ایجاد نمی‌شود. عناصر همچنین می‌توانند با استفاده از صفحه‌کلید، کشیدن نوار پیمایش (scrollbar) یا استفاده از جاوااسکریپت پیمایش شوند.
+- حتی زمانی که رویداد `wheel` پیمایش را فعال می‌کند، مقادیر `delta*` در رویداد `wheel` لزوماً جهت پیمایش محتوا را منعکس نمی‌کنند.
 
-Therefore, do not rely on the `wheel` event's `delta*` properties to get the scrolling direction. Instead, detect value changes of {{domxref("Element.scrollLeft", "scrollLeft")}} and {{domxref("Element.scrollTop", "scrollTop")}} of the target in the `scroll` event.
+بنابراین، برای به دست آوردن جهت پیمایش به ویژگی‌های `delta*` رویداد `wheel` تکیه نکنید. در عوض، تغییرات مقادیر {{domxref("Element.scrollLeft", "scrollLeft")}} و {{domxref("Element.scrollTop", "scrollTop")}} عنصر هدف را در رویداد `scroll` شناسایی کنید.
 
-The `wheel` event is cancelable. In some browsers, only the first `wheel` event in a sequence is cancelable, and later events are non-cancelable. If the event is canceled, no scrolling or zooming is performed. This may cause performance issues as the browser has to wait for every wheel event to be processed before actually scrolling the content. You can avoid this by setting `passive: true` when calling {{domxref("EventTarget.addEventListener", "addEventListener()")}}, which may cause the browser to generate non-cancelable `wheel` events.
+رویداد `wheel` قابل لغو (cancelable) است. در برخی مرورگرها، تنها اولین رویداد `wheel` در یک دنباله قابل لغو است و رویدادهای بعدی غیرقابل‌لغو هستند. اگر رویداد لغو شود، هیچ پیمایش یا بزرگ‌نمایی انجام نمی‌شود. این ممکن است مشکلات عملکردی ایجاد کند، زیرا مرورگر باید قبل از پیمایش واقعی محتوا، منتظر پردازش هر رویداد `wheel` بماند. می‌توانید با تنظیم `passive: true` هنگام فراخوانی {{domxref("EventTarget.addEventListener", "addEventListener()")}} از این مشکل جلوگیری کنید؛ این کار ممکن است باعث شود مرورگر رویدادهای `wheel` غیرقابل‌لغو تولید کند.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد (event handler) تنظیم کنید.
 
 ```js-nolint
 addEventListener("wheel", (event) => { })
@@ -40,7 +38,7 @@ onwheel = (event) => { }
 
 ## Event type
 
-A {{domxref("WheelEvent")}}. Inherits from {{domxref("MouseEvent")}}, {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("WheelEvent")}}. از {{domxref("MouseEvent")}}، {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("WheelEvent")}}
 
@@ -48,7 +46,7 @@ A {{domxref("WheelEvent")}}. Inherits from {{domxref("MouseEvent")}}, {{domxref(
 
 ### Scaling an element via the wheel
 
-This example shows how to scale an element using the mouse (or other pointing device) wheel.
+این مثال نشان می‌دهد که چگونه می‌توان یک عنصر را با استفاده از چرخ ماوس (یا سایر دستگاه‌های اشاره‌گر) مقیاس‌بندی (scale) کرد.
 
 ```html
 <div>Scale me with your mouse wheel.</div>
@@ -94,7 +92,7 @@ el.onwheel = zoom;
 
 ### addEventListener equivalent
 
-The event handler can also be set up using the {{domxref("EventTarget/addEventListener", "addEventListener()")}} method:
+مدیر رویداد را می‌توان با استفاده از روش {{domxref("EventTarget/addEventListener", "addEventListener()")}} نیز تنظیم کرد:
 
 ```js
 el.addEventListener("wheel", zoom, { passive: false });
