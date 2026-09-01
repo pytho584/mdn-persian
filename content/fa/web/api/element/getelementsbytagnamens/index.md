@@ -1,11 +1,5 @@
 ---
 title: "Element: getElementsByTagNameNS() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagNameNS"
-status: "needs-translation"
----
-
----
-title: "Element: getElementsByTagNameNS() method"
 short-title: getElementsByTagNameNS()
 slug: Web/API/Element/getElementsByTagNameNS
 page-type: web-api-instance-method
@@ -14,34 +8,26 @@ browser-compat: api.Element.getElementsByTagNameNS
 
 {{APIRef("DOM")}}
 
-The **`Element.getElementsByTagNameNS()`** method returns a
-live {{domxref("HTMLCollection")}} of elements with the given tag name belonging to the
-given namespace. It is similar to {{Domxref("Document.getElementsByTagNameNS")}}, except
-that its search is restricted to descendants of the specified element.
+روش **`Element.getElementsByTagNameNS()`** یک {{domxref("HTMLCollection")}} زنده از عناصری را بازمی‌گرداند که دارای نام تگ داده شده و متعلق به فضای نام داده شده هستند. این روش مشابه {{Domxref("Document.getElementsByTagNameNS")}} است، با این تفاوت که جستجوی آن به فرزندان عنصر مشخص شده محدود می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getElementsByTagNameNS(namespaceURI, localName)
 ```
 
-### Parameters
+### پارامترها
 
 - `namespaceURI`
-  - : The namespace URI of elements to look for (see
-    {{domxref("Element.namespaceURI")}} and {{domxref("Attr.namespaceURI")}}). For
-    example, if you need to look for XHTML elements, use the XHTML namespace URI,
-    `http://www.w3.org/1999/xhtml`.
+  - : URI فضای نام عناصری که باید جستجو شوند (به {{domxref("Element.namespaceURI")}} و {{domxref("Attr.namespaceURI")}} مراجعه کنید). برای مثال، اگر نیاز به جستجوی عناصر XHTML دارید، از URI فضای نام XHTML یعنی `http://www.w3.org/1999/xhtml` استفاده کنید.
 - `localName`
-  - : Either the local name of elements to look for or the
-    special value `"*"`, which matches all elements (see
-    {{domxref("Element.localName")}} and {{domxref("Attr.localName")}}).
+  - : یا نام محلی عناصری که باید جستجو شوند، یا مقدار ویژه `"*"` که با همه عناصر مطابقت دارد (به {{domxref("Element.localName")}} و {{domxref("Attr.localName")}} مراجعه کنید).
 
-### Return value
+### مقدار بازگشتی
 
-A live {{domxref("HTMLCollection")}} of found elements in the order they appear in the tree.
+یک {{domxref("HTMLCollection")}} زنده از عناصر یافت شده به ترتیبی که در درخت ظاهر می‌شوند.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Check the alignment on a number of cells in a table in an XHTML document.
@@ -59,10 +45,10 @@ for (const cell of cells) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
