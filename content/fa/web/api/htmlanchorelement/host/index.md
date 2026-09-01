@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: host property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/host"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: host property"
 short-title: host
 slug: Web/API/HTMLAnchorElement/host
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLAnchorElement.host
 
 {{ApiRef("HTML DOM")}}
 
-The **`host`** property of the {{domxref("HTMLAnchorElement")}} interface is a string containing the host, which is the {{domxref("HTMLAnchorElement.hostname", "hostname")}}, and then, if the {{glossary("port")}} of the URL is nonempty, a `":"`, followed by the {{domxref("HTMLAnchorElement.port", "port")}} of the URL. If the URL does not have a `hostname`, this property contains an empty string, `""`.
+ویژگی **`host`** در رابط {{domxref("HTMLAnchorElement")}} یک رشته است که میزبان (host) را شامل می‌شود؛ این مقدار شامل {{domxref("HTMLAnchorElement.hostname", "hostname")}} و سپس، اگر {{glossary("port")}} در URL غیرخالی باشد، یک `":"` و به‌دنبال آن {{domxref("HTMLAnchorElement.port", "port")}} از URL است. اگر URL شامل `hostname` نباشد، این ویژگی حاوی رشتهٔ خالی `""` است.
 
-See {{domxref("URL.host")}} for more information.
+برای اطلاعات بیشتر، {{domxref("URL.host")}} را ببینید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const anchor = document.createElement("a");
@@ -38,14 +32,14 @@ anchor.href = "https://developer.mozilla.org:4097/en-US/HTMLAnchorElement";
 anchor.host === "developer.mozilla.org:4097";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAnchorElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAnchorElement")}} که این ویژگی متعلق به آن است.
