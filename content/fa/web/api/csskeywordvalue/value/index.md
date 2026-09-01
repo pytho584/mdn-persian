@@ -1,11 +1,5 @@
 ---
 title: "CSSKeywordValue: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSKeywordValue/value"
-status: "needs-translation"
----
-
----
-title: "CSSKeywordValue: value property"
 short-title: value
 slug: Web/API/CSSKeywordValue/value
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.CSSKeywordValue.value
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`value`** property of the {{domxref("CSSKeywordValue")}} interface represents the keyword as a string.
+ویژگی **`value`** از رابط {{domxref("CSSKeywordValue")}}، کلمهٔ کلیدی را به‌صورت یک رشته نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the `value` property is set to an empty {{jsxref('String')}}.
+  - : اگر ویژگی `value` روی یک {{jsxref('String')}} خالی تنظیم شود، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-The following example resets the CSS {{cssxref('display')}} property to its defaults.
+مثال زیر، ویژگی CSS {{cssxref('display')}} را به مقدار پیش‌فرض خود بازنشانی می‌کند.
 
 ```js
 let indicator = document.getElementById("indicator");
@@ -37,10 +31,10 @@ indicator.attributeStyleMap.set("display", new CSSKeywordValue("initial"));
 indicator.attributeStyleMap.get("display").value; // 'initial'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
