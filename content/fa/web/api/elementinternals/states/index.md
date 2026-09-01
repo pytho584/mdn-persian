@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: states property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/states"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: states property"
 short-title: states
 slug: Web/API/ElementInternals/states
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.ElementInternals.states
 
 {{APIRef("Web Components")}}
 
-The **`states`** read-only property of the {{domxref("ElementInternals")}} interface returns a {{domxref("CustomStateSet")}} representing the possible states of the custom element.
+ویژگی فقط‌خواندنی **`states`** از رابط {{domxref("ElementInternals")}} یک {{domxref("CustomStateSet")}} برمی‌گرداند که وضعیت‌های ممکن عنصر سفارشی را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("CustomStateSet")}} which is a {{jsxref("Set")}} of strings.
+یک {{domxref("CustomStateSet")}} که یک {{jsxref("Set")}} از رشته‌هاست.
 
-## Examples
+## نمونه‌ها
 
-The following function adds and removes the state `--checked` to a `CustomStateSet`, then prints to the console `true` or `false` as the custom checkbox is checked or unchecked.
+تابع زیر وضعیت `--checked` را به یک `CustomStateSet` اضافه و حذف می‌کند، و سپس با علامت‌زدن یا برداشتن علامت چک‌باکس سفارشی، `true` یا `false` را در کنسول چاپ می‌کند.
 
 ```js
 class MyElement extends HTMLElement {
@@ -38,10 +32,10 @@ class MyElement extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
