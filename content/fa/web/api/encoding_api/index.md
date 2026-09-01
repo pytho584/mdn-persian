@@ -1,10 +1,4 @@
 ---
-title: "Encoding API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Encoding_API"
-status: "needs-translation"
----
-
----
 title: Encoding API
 slug: Web/API/Encoding_API
 page-type: web-api-overview
@@ -18,36 +12,36 @@ spec-urls: https://encoding.spec.whatwg.org/
 
 {{DefaultAPISidebar("Encoding API")}}{{AvailableInWorkers}}
 
-The **Encoding API** enables web developers to work with text that is represented in {{Glossary("character encoding", "character encodings")}} systems other than the encoding used internally by JavaScript strings. In particular, it enables developers to convert text between JavaScript strings and the {{glossary("UTF-8")}} encoding that is used for most documents on the web.
+**Encoding API** به توسعه‌دهندگان وب این امکان را می‌دهد که با متنی کار کنند که در سامانه‌های {{Glossary("character encoding", "character encodings")}} غیر از رمزگذاریِ داخلیِ رشته‌های جاوااسکریپت نمایش داده شده است. به‌ویژه، این API توسعه‌دهندگان را قادر می‌سازد متن را بین رشته‌های جاوااسکریپت و رمزگذاری {{glossary("UTF-8")}} که برای بیشتر اسناد وب استفاده می‌شود، تبدیل کنند.
 
-It provides two mechanisms:
+این API دو سازوکار فراهم می‌کند:
 
-- **Encoding**: taking a JavaScript string and converting it into an array of bytes representing the {{glossary("UTF-8")}} encoding of the string.
-- **Decoding**: taking an array of bytes representing a particular character encoding of some text, and converting it into a JavaScript string.
+- **رمزگذاری**: گرفتن یک رشتهٔ جاوااسکریپت و تبدیل آن به آرایه‌ای از بایت‌ها که نشان‌دهندهٔ رمزگذاری {{glossary("UTF-8")}} آن رشته است.
+- **رمزگشایی**: گرفتن آرایه‌ای از بایت‌ها که نشان‌دهندهٔ یک رمزگذاری نویسهٔ خاص از متن است و تبدیل آن به یک رشتهٔ جاوااسکریپت.
 
-Note that these operations are asymmetrical: encoding only encodes to UTF-8, while decoding can decode UTF-8 but also [many legacy encoding systems](/en-US/docs/Web/API/Encoding_API/Encodings).
+توجه کنید که این عملیات نامتقارن هستند: رمزگذاری فقط به UTF-8 رمزگذاری می‌کند، در حالی که رمزگشایی می‌تواند UTF-8 و همچنین [بسیاری از سامانه‌های رمزگذاری قدیمی](/en-US/docs/Web/API/Encoding_API/Encodings) را رمزگشایی کند.
 
-The API provides synchronous interfaces for encoding and decoding, and also [stream-based](/en-US/docs/Web/API/Streams_API) encoders and decoders, which could be used to, for example, decode text as it arrives over a network connection.
+این API رابط‌های همزمان برای رمزگذاری و رمزگشایی و همچنین رمزگذارها و رمزگشاهای [مبتنی بر جریان](/en-US/docs/Web/API/Streams_API) فراهم می‌کند که می‌توانند برای مثال برای رمزگشایی متن هنگام دریافت از طریق اتصال شبکه‌ای استفاده شوند.
 
-## Interfaces
+## رابط‌ها
 
 - {{DOMxRef("TextDecoder")}}
-  - : A decoder to convert a byte array containing a particular encoding into a JavaScript string.
+  - : رمزگشایی برای تبدیل آرایه‌ای از بایت‌ها حاوی یک رمزگذاری خاص به یک رشتهٔ جاوااسکریپت.
 - {{DOMxRef("TextDecoderStream")}}
-  - : A decoder to convert a byte stream containing a particular encoding into a stream of JavaScript strings.
+  - : رمزگشایی برای تبدیل یک جریان بایتی حاوی یک رمزگذاری خاص به جریانی از رشته‌های جاوااسکریپت.
 - {{DOMxRef("TextEncoder")}}
-  - : An encoder to convert a JavaScript string into an array of bytes representing the UTF-8 encoding of the string.
+  - : رمزگذاری برای تبدیل یک رشتهٔ جاوااسکریپت به آرایه‌ای از بایت‌ها که نشان‌دهندهٔ رمزگذاری UTF-8 آن رشته است.
 - {{DOMxRef("TextEncoderStream")}}
-  - : An encoder to convert a stream of JavaScript strings into a stream of bytes representing the UTF-8 encoding of the strings.
+  - : رمزگذاری برای تبدیل جریانی از رشته‌های جاوااسکریپت به جریانی از بایت‌ها که نشان‌دهندهٔ رمزگذاری UTF-8 آن رشته‌ها است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Encoding API Encodings](/en-US/docs/Web/API/Encoding_API/Encodings) - Encodings that must be supported for decoding text.
+- [رمزگذاری‌های Encoding API](/en-US/docs/Web/API/Encoding_API/Encodings) - رمزگذاری‌هایی که برای رمزگشایی متن باید پشتیبانی شوند.
