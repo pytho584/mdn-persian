@@ -1,7 +1,5 @@
 ---
 title: "HTMLDListElement: compact property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDListElement/compact"
-status: "needs-translation"
 ---
 
 ---
@@ -16,18 +14,18 @@ browser-compat: api.HTMLDListElement.compact
 
 {{ApiRef("HTML DOM")}}{{Deprecated_Header}}
 
-The **`compact`** property of the {{domxref("HTMLDListElement")}} interface indicates that spacing between list items should be reduced. The exact handling of the `compact` attribute is browser-specific. Instead of using this property, consider using CSS {{cssxref("line-height")}} instead.
+ویژگی **`compact`** در رابط {{domxref("HTMLDListElement")}} نشان می‌دهد که فاصله‌گذاری بین آیتم‌های فهرست باید کاهش یابد. نحوه دقیق مدیریت ویژگی `compact` به مرورگر بستگی دارد. به‌جای استفاده از این ویژگی، بهتر است از CSS {{cssxref("line-height")}} استفاده کنید.
 
-It reflects the [`compact`](/en-US/docs/Web/HTML/Reference/Elements/dl#compact) attribute of the {{HTMLElement("dl")}} element.
+این ویژگی بازتاب‌دهنده ویژگی [`compact`](/en-US/docs/Web/HTML/Reference/Elements/dl#compact) عنصر {{HTMLElement("dl")}} است.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
