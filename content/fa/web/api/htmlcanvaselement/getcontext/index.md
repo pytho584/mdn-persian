@@ -1,9 +1,4 @@
----
-title: "HTMLCanvasElement: getContext() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext"
-status: "needs-translation"
----
-
+```
 ---
 title: "HTMLCanvasElement: getContext() method"
 short-title: getContext()
@@ -14,41 +9,37 @@ browser-compat: api.HTMLCanvasElement.getContext
 
 {{APIRef("Canvas API")}}
 
-The **`HTMLCanvasElement.getContext()`** method returns a drawing context on the canvas, or [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) if the context identifier is not supported, or the canvas has already been set to a different context mode.
+متد **`HTMLCanvasElement.getContext()`** یک بافت ترسیمی (drawing context) روی بوم برمی‌گرداند؛ یا اگر شناسهٔ بافت پشتیبانی نشود یا بوم از قبل در حالت بافت دیگری قرار گرفته باشد، مقدار [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) برمی‌گرداند.
 
-Later calls to this method on the same canvas element, with the same `contextType` argument, will always return the same drawing context instance as was returned the first time the method was invoked. It is not possible to get a different drawing context object on a given canvas element.
+فراخوانی‌های بعدی این متد روی همان عنصر بوم، با آرگومان `contextType` یکسان، همیشه همان نمونهٔ بافت ترسیمی را برمی‌گردانند که در نخستین فراخوانی بازگردانده شده است. به‌دست آوردن یک شیء بافت ترسیمی متفاوت روی یک عنصر بوم مشخص امکان‌پذیر نیست.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getContext(contextType)
 getContext(contextType, contextAttributes)
 ```
 
-### Parameters
+### پارامترها
 
 - `contextType`
-  - : A string containing the context identifier defining the drawing context associated to the canvas. Possible values are:
+  - : رشته‌ای شامل شناسهٔ بافت که بافت ترسیمی مرتبط با بوم را تعریف می‌کند. مقادیر ممکن عبارت‌اند از:
     - `"2d"`
-      - : Creates a {{domxref("CanvasRenderingContext2D")}} object representing a two-dimensional rendering context.
-    - `"webgl"` (or `"experimental-webgl"`)
-      - : Creates a {{domxref("WebGLRenderingContext")}} object representing a three-dimensional rendering context. This context is only available on browsers that implement [WebGL](/en-US/docs/Web/API/WebGL_API) version 1 (OpenGL ES 2.0).
+      - : یک شیء {{domxref("CanvasRenderingContext2D")}} ایجاد می‌کند که یک بافت رندر دوبعدی را نشان می‌دهد.
+    - `"webgl"` (یا `"experimental-webgl"`)
+      - : یک شیء {{domxref("WebGLRenderingContext")}} ایجاد می‌کند که یک بافت رندر سه‌بعدی را نشان می‌دهد. این بافت فقط در مرورگرهایی در دسترس است که [WebGL](/en-US/docs/Web/API/WebGL_API) نسخهٔ ۱ (OpenGL ES 2.0) را پیاده‌سازی کرده باشند.
     - `"webgl2"`
-      - : Creates a {{domxref("WebGL2RenderingContext")}} object representing a three-dimensional rendering context. This context is only available on browsers that implement [WebGL](/en-US/docs/Web/API/WebGL_API) version 2 (OpenGL ES 3.0).
+      - : یک شیء {{domxref("WebGL2RenderingContext")}} ایجاد می‌کند که یک بافت رندر سه‌بعدی را نشان می‌دهد. این بافت فقط در مرورگرهایی در دسترس است که [WebGL](/en-US/docs/Web/API/WebGL_API) نسخهٔ ۲ (OpenGL ES 3.0) را پیاده‌سازی کرده باشند.
     - `"webgpu"`
-      - : Creates a {{domxref("GPUCanvasContext")}} object representing a three-dimensional rendering context for WebGPU render pipelines. This context is only available on browsers that implement [The WebGPU API](/en-US/docs/Web/API/WebGPU_API).
+      - : یک شیء {{domxref("GPUCanvasContext")}} ایجاد می‌کند که یک بافت رندر سه‌بعدی برای خط لوله‌های رندر WebGPU را نشان می‌دهد. این بافت فقط در مرورگرهایی در دسترس است که [The WebGPU API](/en-US/docs/Web/API/WebGPU_API) را پیاده‌سازی کرده باشند.
     - `"bitmaprenderer"`
-      - : Creates an {{domxref("ImageBitmapRenderingContext")}} which only provides functionality to replace the content of the canvas with a given {{domxref("ImageBitmap")}}.
+      - : یک {{domxref("ImageBitmapRenderingContext")}} ایجاد می‌کند که فقط قابلیت جایگزینی محتوای بوم با یک {{domxref("ImageBitmap")}} داده‌شده را فراهم می‌کند.
 
     > [!NOTE]
-    > The identifier `"experimental-webgl"` is used
-    > in new implementations of WebGL. These implementations have either not reached
-    > test suite conformance, or the graphics drivers on the platform are not yet
-    > stable. The [Khronos Group](https://www.khronos.org/) certifies WebGL
-    > implementations under certain [conformance rules](https://registry.khronos.org/webgl/sdk/tests/CONFORMANCE_RULES.txt).
+    > شناسهٔ `"experimental-webgl"` در پیاده‌سازی‌های جدیدِ WebGL استفاده می‌شود. این پیاده‌سازی‌ها یا به هم‌خوانی با مجموعه‌آزمون (test suite conformance) نرسیده‌اند، یا درایورهای گرافیکی روی سکو هنوز پایدار نیستند. گروه [Khronos Group](https://www.khronos.org/) پیاده‌سازی‌های WebGL را تحت [قوانین هم‌خوانی](https://registry.khronos.org/webgl/sdk/tests/CONFORMANCE_RULES.txt) خاصی گواهی می‌کند.
 
 - `contextAttributes` {{optional_inline}}
-  - : You can use several context attributes when creating your rendering context, for example:
+  - : هنگام ایجاد بافت رندر خود می‌توانید چندین ویژگی بافت (context attribute) استفاده کنید، برای مثال:
 
     ```js
     const gl = canvas.getContext("webgl", {
@@ -57,80 +48,80 @@ getContext(contextType, contextAttributes)
     });
     ```
 
-    2d context attributes:
+    ویژگی‌های بافت 2d:
     - `alpha`
-      - : A boolean value that indicates if the canvas contains an alpha channel. If set to `false`, the browser now knows that the backdrop is always opaque, which can speed up drawing of transparent content and images.
+      - : یک مقدار بولی که نشان می‌دهد آیا بوم دارای کانال آلفا است یا خیر. اگر روی `false` تنظیم شود، مرورگر می‌داند که پس‌زمینه همیشه مات است، که می‌تواند ترسیم محتواها و تصاویر شفاف را سرعت بخشد.
     - `colorSpace` {{optional_inline}}
-      - : Specifies the color space of the rendering context. Possible values are:
-        - `"srgb"` selects the [sRGB color space](https://en.wikipedia.org/wiki/SRGB). This is the default value.
-        - `"display-p3"` selects the [display-p3 color space](https://en.wikipedia.org/wiki/DCI-P3).
+      - : فضای رنگی بافت رندر را مشخص می‌کند. مقادیر ممکن عبارت‌اند از:
+        - `"srgb"` فضای رنگی [sRGB](https://en.wikipedia.org/wiki/SRGB) را انتخاب می‌کند. این مقدار پیش‌فرض است.
+        - `"display-p3"` فضای رنگی [display-p3](https://en.wikipedia.org/wiki/DCI-P3) را انتخاب می‌کند.
     - `colorType` {{optional_inline}}
-      - : Specifies the color type of the rendering context. Possible values are:
-        - `"unorm8"` sets the color channels to 8 bit unsigned values. This is the default value.
-        - `"float16"` sets the color channels to 16-bit floating-point values.
+      - : نوع رنگ بافت رندر را مشخص می‌کند. مقادیر ممکن عبارت‌اند از:
+        - `"unorm8"` کانال‌های رنگ را به مقادیر بدون علامت ۸ بیتی تنظیم می‌کند. این مقدار پیش‌فرض است.
+        - `"float16"` کانال‌های رنگ را به مقادیر اعشار شناور ۱۶ بیتی تنظیم می‌کند.
     - `desynchronized`
-      - : A boolean value that hints the user agent to reduce the latency by desynchronizing the canvas paint cycle from the event loop.
+      - : یک مقدار بولی که به عامل کاربر (user agent) راهنمایی می‌دهد تا با خارج کردن چرخهٔ ترسیم بوم از هم‌گامی با حلقهٔ رویداد (event loop)، تأخیر را کاهش دهد.
     - `willReadFrequently`
-      - : A boolean value that indicates whether or not a lot of read-back operations are planned. This will force the use of a software (instead of hardware accelerated) 2D canvas and can save memory when calling {{domxref("CanvasRenderingContext2D.getImageData", "getImageData()")}} frequently.
+      - : یک مقدار بولی که نشان می‌دهد آیا عملیات خواندن مجدد زیادی برنامه‌ریزی شده است یا خیر. این کار استفاده از بوم دوبعدی نرم‌افزاری (به‌جای شتاب‌دهی‌شده با سخت‌افزار) را اجباری می‌کند و هنگام فراخوانی مکرر {{domxref("CanvasRenderingContext2D.getImageData", "getImageData()")}} می‌تواند حافظه را ذخیره کند.
 
-    WebGL context attributes:
+    ویژگی‌های بافت WebGL:
     - `alpha`
-      - : A boolean value that indicates if the canvas contains an alpha buffer.
+      - : یک مقدار بولی که نشان می‌دهد آیا بوم دارای بافر آلفا است یا خیر.
     - `depth`
-      - : A boolean value that indicates that the drawing buffer is requested to have a depth buffer of at least 16 bits.
+      - : یک مقدار بولی که نشان می‌دهد درخواست می‌شود بافر ترسیم دارای بافر عمق حداقل ۱۶ بیتی باشد.
     - `stencil`
-      - : A boolean value that indicates that the drawing buffer is requested to have a stencil buffer of at least 8 bits.
+      - : یک مقدار بولی که نشان می‌دهد درخواست می‌شود بافر ترسیم دارای بافر استنسیل حداقل ۸ بیتی باشد.
     - `desynchronized`
-      - : A boolean value that hints the user agent to reduce the latency by desynchronizing the canvas paint cycle from the event loop.
+      - : یک مقدار بولی که به عامل کاربر راهنمایی می‌دهد تا با خارج کردن چرخهٔ ترسیم بوم از هم‌گامی با حلقهٔ رویداد، تأخیر را کاهش دهد.
     - `antialias`
-      - : A boolean value that indicates whether or not to perform anti-aliasing if possible.
+      - : یک مقدار بولی که نشان می‌دهد در صورت امکان ضدآلیاسینگ (anti-aliasing) انجام شود یا نه.
     - `failIfMajorPerformanceCaveat`
-      - : A boolean value that indicates if a context will be created if the system performance is low or if no hardware GPU is available.
+      - : یک مقدار بولی که نشان می‌دهد آیا اگر کارایی سیستم پایین باشد یا GPU سخت‌افزاری در دسترس نباشد، بافتی ایجاد خواهد شد یا خیر.
     - `powerPreference`
-      - : A hint to the user agent indicating what configuration of GPU is suitable for the WebGL context. Possible values are:
+      - : یک راهنمایی به عامل کاربر که نشان می‌دهد چه پیکربندی از GPU برای بافت WebGL مناسب است. مقادیر ممکن عبارت‌اند از:
         - `"default"`
-          - : Let the user agent decide which GPU configuration is most suitable. This is the default value.
+          - : به عامل کاربر اجازه می‌دهد تا تصمیم بگیرد کدام پیکربندی GPU مناسب‌ترین است. این مقدار پیش‌فرض است.
         - `"high-performance"`
-          - : Prioritizes rendering performance over power consumption.
+          - : کارایی رندر را بر مصرف انرژی اولویت می‌دهد.
         - `"low-power"`
-          - : Prioritizes power saving over rendering performance.
+          - : صرفه‌جویی در مصرف انرژی را بر کارایی رندر اولویت می‌دهد.
 
     - `premultipliedAlpha`
-      - : A boolean value that indicates that the page compositor will assume the drawing buffer contains colors with pre-multiplied alpha.
+      - : یک مقدار بولی که نشان می‌دهد ترکیب‌کنندهٔ صفحه (page compositor) فرض خواهد کرد بافر ترسیم شامل رنگ‌هایی با آلفای پیش‌ضرب (pre-multiplied alpha) است.
     - `preserveDrawingBuffer`
-      - : If the value is true the buffers will not be cleared and will preserve their values until cleared or overwritten by the author.
+      - : اگر مقدار درست (true) باشد، بافرها پاک نمی‌شوند و مقادیر خود را حفظ می‌کنند تا زمانی که توسط توسعه‌دهنده پاک یا بازنویسی شوند.
     - `xrCompatible`
-      - : A boolean value that hints to the user agent to use a compatible graphics adapter for an [immersive XR device](/en-US/docs/Web/API/WebXR_Device_API). Setting this synchronous flag at context creation is discouraged; rather call the asynchronous {{domxref("WebGLRenderingContext.makeXRCompatible()")}} method the moment you intend to start an XR session.
+      - : یک مقدار بولی که به عامل کاربر راهنمایی می‌دهد برای یک [دستگاه XR فراگیر](/en-US/docs/Web/API/WebXR_Device_API) از آداپتور گرافیکی سازگار استفاده کند. تنظیم این پرچم هم‌زمان هنگام ایجاد بافت توصیه نمی‌شود؛ در عوض، به محض اینکه قصد شروع یک نشست XR را داشتید، متد ناهم‌زمان {{domxref("WebGLRenderingContext.makeXRCompatible()")}} را فراخوانی کنید.
 
     > [!NOTE]
-    > The WebGPU specification does not define any specific context attributes for `getContext()`. Instead, it provides configuration options via the {{domxref("GPUCanvasContext.configure()")}} method.
+    > مشخصات WebGPU هیچ ویژگی بافت خاصی برای `getContext()` تعریف نمی‌کند. در عوض، گزینه‌های پیکربندی را از طریق متد {{domxref("GPUCanvasContext.configure()")}} فراهم می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A rendering context which is either a
+یک بافت رندر که یکی از این موارد است:
 
-- {{domxref("CanvasRenderingContext2D")}} for `"2d"`,
-- {{domxref("WebGLRenderingContext")}} for `"webgl"` and `"experimental-webgl"`,
-- {{domxref("WebGL2RenderingContext")}} for `"webgl2"`,
-- {{domxref("GPUCanvasContext")}} for `"webgpu"`,
-- {{domxref("ImageBitmapRenderingContext")}} for `"bitmaprenderer"`.
+- {{domxref("CanvasRenderingContext2D")}} برای `"2d"`،
+- {{domxref("WebGLRenderingContext")}} برای `"webgl"` و `"experimental-webgl"`،
+- {{domxref("WebGL2RenderingContext")}} برای `"webgl2"`،
+- {{domxref("GPUCanvasContext")}} برای `"webgpu"`،
+- {{domxref("ImageBitmapRenderingContext")}} برای `"bitmaprenderer"`.
 
-If the context identifier is not supported, or the canvas has already been set to a different context mode, `null` is returned.
+اگر شناسهٔ بافت پشتیبانی نشود، یا بوم از قبل در حالت بافت دیگری قرار گرفته باشد، `null` برگردانده می‌شود.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Throws if the canvas has transferred its control to offscreen by calling {{domxref("HTMLCanvasElement.transferControlToOffscreen()")}}.
+  - : این خطا پرتاب می‌شود اگر بوم کنترل خود را با فراخوانی {{domxref("HTMLCanvasElement.transferControlToOffscreen()")}} به حالت برون‌صفحه‌ای (offscreen) منتقل کرده باشد.
 
-## Examples
+## مثال‌ها
 
-Given this {{HTMLElement("canvas")}} element:
+با توجه به این عنصر {{HTMLElement("canvas")}}:
 
 ```html
 <canvas id="canvas" width="300" height="300"></canvas>
 ```
 
-You can get a `2d` context of the canvas with the following code:
+می‌توانید بافت `2d` بوم را با کد زیر دریافت کنید:
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -138,22 +129,22 @@ const ctx = canvas.getContext("2d");
 console.log(ctx); // CanvasRenderingContext2D { /* … */ }
 ```
 
-Now you have the [2D rendering context](/en-US/docs/Web/API/CanvasRenderingContext2D) for a canvas and you can draw within it.
+اکنون [بافت رندر دوبعدی](/en-US/docs/Web/API/CanvasRenderingContext2D) را برای بوم دارید و می‌توانید درون آن ترسیم کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLCanvasElement")}}: Interface used to define the `HTMLCanvasElement.getContext()` method
+- {{domxref("HTMLCanvasElement")}}: واسطی که برای تعریف متد `HTMLCanvasElement.getContext()` استفاده می‌شود.
 - {{domxref("OffscreenCanvas.getContext()")}}
 - {{domxref("CanvasRenderingContext2D.getContextAttributes()")}}, {{domxref("WebGLRenderingContext.getContextAttributes()")}}
-- {{domxref("CanvasRenderingContext2D")}}, {{domxref("ImageBitmapRenderingContext")}},
-  {{domxref("WebGLRenderingContext")}}, {{domxref("WebGL2RenderingContext")}}, {{domxref("GPUCanvasContext")}}: Available rendering contexts
-- [DCI-P3 color space](https://en.wikipedia.org/wiki/DCI-P3) on Wikipedia
-- [sRGB color space](https://en.wikipedia.org/wiki/SRGB) on Wikipedia
+- {{domxref("CanvasRenderingContext2D")}}، {{domxref("ImageBitmapRenderingContext")}}، {{domxref("WebGLRenderingContext")}}، {{domxref("WebGL2RenderingContext")}}، {{domxref("GPUCanvasContext")}}: بافت‌های رندر موجود
+- [فضای رنگی DCI-P3](https://en.wikipedia.org/wiki/DCI-P3) در ویکی‌پدیا
+- [فضای رنگی sRGB](https://en.wikipedia.org/wiki/SRGB) در ویکی‌پدیا
+```
