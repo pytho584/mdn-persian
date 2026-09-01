@@ -1,9 +1,4 @@
----
-title: "Element: querySelector() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector"
-status: "needs-translation"
----
-
+```
 ---
 title: "Element: querySelector() method"
 short-title: querySelector()
@@ -14,9 +9,7 @@ browser-compat: api.Element.querySelector
 
 {{APIRef("DOM")}}
 
-The **`querySelector()`** method of the {{domxref("Element")}}
-interface returns the first element that is a descendant of the element on which it is
-invoked that matches the specified group of selectors.
+متد **`querySelector()`** در رابط {{domxref("Element")}}، اولین عنصری را برمی‌گرداند که از نوادگان (descendant) عنصری است که این متد روی آن فراخوانی شده و با گروه انتخابگرهای (selectors) مشخص‌شده مطابقت داشته باشد.
 
 ## Syntax
 
@@ -27,38 +20,28 @@ querySelector(selectors)
 ### Parameters
 
 - `selectors`
-  - : A string containing one or more selectors to match. This string
-    must be a valid CSS selector string; if it isn't, a `SyntaxError` exception
-    is thrown.
+  - : یک رشته (string) شامل یک یا چند انتخابگر برای مطابقت. این رشته باید یک رشته انتخابگر CSS معتبر باشد؛ در غیر این صورت، یک استثنای `SyntaxError` پرتاب می‌شود.
 
-    Note that the HTML specification does not require attribute values to be valid CSS identifiers. If a [`class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) or [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute value is not a valid CSS identifier, then you must escape it before using it in a selector, either by calling {{domxref("CSS.escape_static", "CSS.escape()")}} on the value, or using one of the techniques described in [Escaping characters](/en-US/docs/Web/CSS/Reference/Values/ident#escaping_characters). See [Escaping attribute values](#escaping_attribute_values) for an example.
+    توجه داشته باشید که مشخصات HTML الزام نمی‌کند که مقادیر ویژگی‌ها (attribute values) شناسه‌های CSS معتبری باشند. اگر مقدار ویژگی [`class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) یا [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) یک شناسه CSS معتبر نباشد، باید قبل از استفاده از آن در یک انتخابگر، آن را escape کنید، یا با فراخوانی {{domxref("CSS.escape_static", "CSS.escape()")}} روی مقدار، یا با استفاده از یکی از تکنیک‌های شرح‌داده‌شده در [Escape کردن کاراکترها](/en-US/docs/Web/CSS/Reference/Values/ident#escaping_characters). برای مثال، [Escape کردن مقادیر ویژگی‌ها](#escaping_attribute_values) را ببینید.
 
 ### Return value
 
-The first descendant element of `baseElement` which matches the specified
-group of `selectors`. The entire hierarchy of elements is considered when
-matching, including those outside the set of elements including `baseElement`
-and its descendants; in other words, `selectors` is first applied to the
-whole document, not the `baseElement`, to generate an initial list of
-potential elements. The resulting elements are then examined to see if they are
-descendants of `baseElement`. The first match of those remaining elements is
-returned by the `querySelector()` method.
+اولین عنصر نسل (descendant) از `baseElement` که با گروه مشخص‌شده از `selectors` مطابقت دارد. هنگام تطبیق، کل سلسله‌مراتب عناصر در نظر گرفته می‌شود، از جمله عناصری که خارج از مجموعه عناصر شامل `baseElement` و نوادگان آن هستند؛ به عبارت دیگر، `selectors` ابتدا به کل سند اعمال می‌شود، نه به `baseElement`، تا یک لیست اولیه از عناصر بالقوه تولید شود. سپس عناصر حاصل بررسی می‌شوند تا ببینیم آیا از نوادگان `baseElement` هستند یا خیر. اولین تطابق از آن عناصر باقی‌مانده توسط متد `querySelector()` بازگردانده می‌شود.
 
-If no matches are found, the returned value is `null`.
+اگر هیچ تطبیقی یافت نشود، مقدار بازگشتی `null` است.
 
 ### Exceptions
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if the specified `selectors` are invalid.
+  - : در صورتی که `selectors` مشخص‌شده نامعتبر باشند، پرتاب می‌شود.
 
 ## Examples
 
-Let's consider a few examples.
+بیایید چند مثال را بررسی کنیم.
 
-### Find a specific element with specific values of an attribute
+### یافتن یک عنصر خاص با مقادیر مشخص از یک ویژگی
 
-In this first example, the first {{HTMLElement("style")}} element which either has no
-type or has type "text/css" in the HTML document body is returned:
+در این مثال اول، اولین عنصر {{HTMLElement("style")}} که یا هیچ نوع (type) ندارد یا نوع آن "text/css" است در بدنه سند HTML بازگردانده می‌شود:
 
 ```js
 const el = document.body.querySelector(
@@ -66,9 +49,9 @@ const el = document.body.querySelector(
 );
 ```
 
-### Get direct descendants using the :scope pseudo-class
+### دریافت نوادگان مستقیم با استفاده از شبه‌کلاس :scope
 
-This example uses the {{cssxref(":scope")}} pseudo-class to retrieve direct children of the `parentElement` element.
+این مثال از شبه‌کلاس {{cssxref(":scope")}} برای بازیابی فرزندان مستقیم عنصر `parentElement` استفاده می‌کند.
 
 #### HTML
 
@@ -112,11 +95,9 @@ allChildren.forEach((item) => item.classList.add("red"));
 
 {{ EmbedLiveSample('Get_direct_descendants_using_the_scope_pseudo-class', 600, 160) }}
 
-### The entire hierarchy counts
+### کل سلسله‌مراتب اهمیت دارد
 
-This example demonstrates that the hierarchy of the entire document is considered when
-applying `selectors`, so that levels outside the specified
-`baseElement` are still considered when locating matches.
+این مثال نشان می‌دهد که هنگام اعمال `selectors`، سلسله‌مراتب کل سند در نظر گرفته می‌شود، به طوری که سطوح خارج از `baseElement` مشخص‌شده همچنان هنگام مکان‌یابی تطابق‌ها در نظر گرفته می‌شوند.
 
 #### HTML
 
@@ -145,24 +126,21 @@ document.getElementById("output").textContent =
 
 #### Result
 
-The result looks like this:
+نتیجه به این شکل است:
 
 {{ EmbedLiveSample('The_entire_hierarchy_counts', 600, 160) }}
 
-Notice how the `"div span"` selector still successfully matches the
-{{HTMLElement("span")}} element, even though the `baseElement`'s child nodes
-do not include the {{HTMLElement("div")}} element (it is still part of the specified
-selector).
+توجه کنید که انتخابگر `"div span"` چگونه همچنان با موفقیت با عنصر {{HTMLElement("span")}} مطابقت پیدا می‌کند، حتی اگر گره‌های فرزند `baseElement` شامل عنصر {{HTMLElement("div")}} نباشند (این عنصر همچنان بخشی از انتخابگر مشخص‌شده است).
 
-### Escaping attribute values
+### Escape کردن مقادیر ویژگی‌ها
 
-This example shows that if an HTML document contains an [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) which is not a valid [CSS identifier](/en-US/docs/Web/CSS/Reference/Values/ident), then we must escape the attribute value before using it in `querySelector()`.
+این مثال نشان می‌دهد که اگر یک سند HTML شامل یک [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) باشد که یک [شناسه CSS](/en-US/docs/Web/CSS/Reference/Values/ident) معتبر نیست، باید مقدار ویژگی را قبل از استفاده از آن در `querySelector()` escape کنیم.
 
 #### HTML
 
-In the following code, a {{htmlelement("div")}} element has an `id` of `"this?element"`, which is not a valid CSS identifier, because the `"?"` character is not allowed in CSS identifiers.
+در کد زیر، یک عنصر {{htmlelement("div")}} دارای `id` برابر با `"this?element"` است که یک شناسه CSS معتبر نیست، زیرا کاراکتر `"?"` در شناسه‌های CSS مجاز نیست.
 
-We also have three buttons, and a {{htmlelement("pre")}} element for logging errors.
+ما همچنین سه دکمه و یک عنصر {{htmlelement("pre")}} برای ثبت خطاها داریم.
 
 ```html
 <div id="container">
@@ -189,11 +167,11 @@ div {
 
 #### JavaScript
 
-All three buttons, when clicked, try to select the `<div>`, and then set its background color to a random value.
+هر سه دکمه، هنگامی که کلیک می‌شوند، سعی می‌کنند `<div>` را انتخاب کرده و سپس رنگ پس‌زمینه آن را به یک مقدار تصادفی تغییر دهند.
 
-- The first button uses the `"this?element"` value directly.
-- The second button escapes the value using {{domxref("CSS.escape_static", "CSS.escape()")}}.
-- The third button explicitly escapes the `"?"` character using a backslash. Note that we must also escape the backslash itself, using another backslash, like: `"\\?"`.
+- دکمه اول مستقیماً از مقدار `"this?element"` استفاده می‌کند.
+- دکمه دوم مقدار را با استفاده از {{domxref("CSS.escape_static", "CSS.escape()")}} escape می‌کند.
+- دکمه سوم به طور صریح کاراکتر `"?""` را با استفاده از یک بک‌اسلش escape می‌کند. توجه داشته باشید که ما همچنین باید خود بک‌اسلش را با استفاده از یک بک‌اسلش دیگر escape کنیم، به این صورت: `"\\?"`.
 
 ```js
 const container = document.querySelector("#container");
@@ -230,14 +208,13 @@ document.querySelector("#manual-escape").addEventListener("click", () => {
 
 #### Result
 
-Clicking the first button gives an error, while the second and third buttons work properly.
+با کلیک بر روی دکمه اول یک خطا دریافت می‌کنید، در حالی که دکمه‌های دوم و سوم به درستی کار می‌کنند.
 
 {{embedlivesample("escaping_attribute_values", "", 200)}}
 
-### More examples
+### مثال‌های بیشتر
 
-See {{domxref("Document.querySelector()")}} for additional examples of the proper
-format for the `selectors`.
+برای مثال‌های بیشتر در مورد فرمت صحیح `selectors`، به {{domxref("Document.querySelector()")}} مراجعه کنید.
 
 ## Specifications
 
@@ -250,13 +227,10 @@ format for the `selectors`.
 ## See also
 
 - [Selection and traversal on the DOM tree](/en-US/docs/Web/API/Document_Object_Model/Selection_and_traversal_on_the_DOM_tree)
-- [Attribute selectors](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) in the CSS
-  Guide
-- [Attribute selectors](/en-US/docs/Learn_web_development/Core/Styling_basics/Attribute_selectors) in the MDN Learning Area
+- [Attribute selectors](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) در راهنمای CSS
+- [Attribute selectors](/en-US/docs/Learn_web_development/Core/Styling_basics/Attribute_selectors) در بخش آموزش MDN
 - {{domxref("Element.querySelectorAll()")}}
-- {{domxref("Document.querySelector()")}} and
-  {{domxref("Document.querySelectorAll()")}}
-- {{domxref("DocumentFragment.querySelector()")}} and
-  {{domxref("DocumentFragment.querySelectorAll()")}}
-- Other methods that take selectors: {{domxref("element.closest()")}} and
-  {{domxref("element.matches()")}}.
+- {{domxref("Document.querySelector()")}} و {{domxref("Document.querySelectorAll()")}}
+- {{domxref("DocumentFragment.querySelector()")}} و {{domxref("DocumentFragment.querySelectorAll()")}}
+- متدهای دیگری که انتخابگر می‌گیرند: {{domxref("element.closest()")}} و {{domxref("element.matches()")}}.
+```
