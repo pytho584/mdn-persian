@@ -1,11 +1,5 @@
 ---
 title: "CSSSkewY: CSSSkewY() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSSkewY/CSSSkewY"
-status: "needs-translation"
----
-
----
-title: "CSSSkewY: CSSSkewY() constructor"
 short-title: CSSSkewY()
 slug: Web/API/CSSSkewY/CSSSkewY
 page-type: web-api-constructor
@@ -14,28 +8,28 @@ browser-compat: api.CSSSkewY.CSSSkewY
 
 {{APIRef("CSS Typed Object Model API")}}{{AvailableInWorkers}}
 
-The **`CSSSkewY()`** constructor creates a new {{domxref("CSSSkewY")}} object that represents the {{cssxref("transform-function/skewY", "skewY()")}} value of the individual {{CSSXRef('transform')}} property in CSS.
+**`CSSSkewY()`** 构造函数创建一个新的 {{domxref("CSSSkewY")}} 对象，该对象表示 CSS 中单个 {{CSSXRef('transform')}} 属性的 {{cssxref("transform-function/skewY", "skewY()")}} 值。
 
-## Syntax
+## 语法
 
 ```js-nolint
 new CSSSkewY(ay)
 ```
 
-### Parameters
+### 参数
 
 - {{domxref('CSSSkewY.ay','ay')}}
-  - : A value for the `ay` angle of the {{domxref('CSSSkewY')}} object to be constructed.
-    This must be a {{domxref('CSSNumericValue')}}.
+  - : 要构造的 {{domxref('CSSSkewY')}} 对象的 `ay` 角度值。
+    该值必须是一个 {{domxref('CSSNumericValue')}}。
 
-## Examples
+## 示例
 
-To do
+待完成
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
