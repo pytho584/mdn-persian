@@ -1,53 +1,44 @@
----
-title: "HTMLButtonElement: labels property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/labels"
-status: "needs-translation"
----
+---  
+title: "HTMLButtonElement: labels property"  
+short-title: labels  
+slug: Web/API/HTMLButtonElement/labels  
+page-type: web-api-instance-property  
+browser-compat: api.HTMLButtonElement.labels  
+---  
 
----
-title: "HTMLButtonElement: labels property"
-short-title: labels
-slug: Web/API/HTMLButtonElement/labels
-page-type: web-api-instance-property
-browser-compat: api.HTMLButtonElement.labels
----
+{{APIRef("DOM")}}  
 
-{{APIRef("DOM")}}
+خاصیت فقط خواندنی **`HTMLButtonElement.labels`** یک {{domxref("NodeList")}} از عناصر {{HTMLElement("label")}} مرتبط با عنصر {{HTMLElement("button")}} را برمی‌گرداند.  
 
-The **`HTMLButtonElement.labels`** read-only property returns a
-{{domxref("NodeList")}} of the {{HTMLElement("label")}} elements associated with the
-{{HTMLElement("button")}} element.
+## مقدار  
 
-## Value
+یک {{domxref("NodeList")}} شامل عناصر `<label>` مرتبط با عنصر `<button>`.  
 
-A {{domxref("NodeList")}} containing the `<label>` elements associated
-with the `<button>` element.
+## مثال‌ها  
 
-## Examples
+### HTML  
 
-### HTML
+```html  
+<label id="label1" for="test">Label 1</label>  
+<button id="test">Button</button>  
+<label id="label2" for="test">Label 2</label>  
+```  
 
-```html
-<label id="label1" for="test">Label 1</label>
-<button id="test">Button</button>
-<label id="label2" for="test">Label 2</label>
-```
+### JavaScript  
 
-### JavaScript
+```js  
+const button = document.getElementById("test");  
+for (const label of button.labels) {  
+  console.log(label.textContent); // "Label 1" and "Label 2"  
+}  
+```  
 
-```js
-const button = document.getElementById("test");
-for (const label of button.labels) {
-  console.log(label.textContent); // "Label 1" and "Label 2"
-}
-```
+{{EmbedLiveSample("Examples", "100%", 30)}}  
 
-{{EmbedLiveSample("Examples", "100%", 30)}}
+## Specifications  
 
-## Specifications
+{{Specifications}}  
 
-{{Specifications}}
-
-## Browser compatibility
+## Browser compatibility  
 
 {{Compat}}
