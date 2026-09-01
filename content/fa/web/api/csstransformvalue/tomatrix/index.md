@@ -1,11 +1,5 @@
 ---
 title: "CSSTransformValue: toMatrix() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue/toMatrix"
-status: "needs-translation"
----
-
----
-title: "CSSTransformValue: toMatrix() method"
 short-title: toMatrix()
 slug: Web/API/CSSTransformValue/toMatrix
 page-type: web-api-instance-method
@@ -14,35 +8,35 @@ browser-compat: api.CSSTransformValue.toMatrix
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`toMatrix()`** method of the {{domxref("CSSTransformValue")}} interface returns a {{domxref('DOMMatrix')}} object.
+متد **`toMatrix()`** از رابط {{domxref("CSSTransformValue")}} یک شیء {{domxref('DOMMatrix')}} را برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toMatrix()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref('DOMMatrix')}} object.
+یک شیء {{domxref('DOMMatrix')}}.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Raised if any lengths involved in generating the matrix are not compatible units with px (such as relative lengths or percentages).
+  - : اگر هر یک از طول‌های دخیل در تولید ماتریس با واحد px سازگار نباشند (مانند طول‌های نسبی یا درصدها) این خطا رخ می‌دهد.
 
-## Examples
+## مثال‌ها
 
-To Do
+در دست نگارش
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
