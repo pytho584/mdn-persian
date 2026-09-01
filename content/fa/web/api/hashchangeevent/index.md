@@ -1,10 +1,4 @@
 ---
-title: "HashChangeEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HashChangeEvent"
-status: "needs-translation"
----
-
----
 title: HashChangeEvent
 slug: Web/API/HashChangeEvent
 page-type: web-api-interface
@@ -13,33 +7,33 @@ browser-compat: api.HashChangeEvent
 
 {{APIRef("HTML DOM")}}
 
-The **`HashChangeEvent`** interface represents events that fire when the fragment identifier of the URL has changed.
+رابطه‌ی **`HashChangeEvent`** رویدادهایی را نشان می‌دهد که وقتی شناسه‌ی قطعه (fragment identifier) از URL تغییر می‌کند، رخ می‌دهند.
 
-The fragment identifier is the part of the URL that follows (and includes) the `#` symbol.
+شناسه‌ی قطعه بخشی از URL است که بعد از نماد `#` می‌آید و آن را نیز شامل می‌شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("HashChangeEvent.HashChangeEvent", "HashChangeEvent()")}}
-  - : Creates a new `HashChangeEvent` object.
+  - : یک شیء جدید `HashChangeEvent` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits the properties of its parent, {{domxref("Event")}}._
+_این رابط همچنین ویژگی‌های والد خود، {{domxref("Event")}} را به ارث می‌برد._
 
 - {{domxref("HashChangeEvent.newURL")}} {{ReadOnlyInline}}
-  - : The new URL to which the window is navigating.
+  - : URL جدیدی که پنجره به سمت آن در حال ناوبری است.
 - {{domxref("HashChangeEvent.oldURL")}} {{ReadOnlyInline}}
-  - : The previous URL from which the window was navigated.
+  - : URL قبلی که پنجره از آن ناوبری شده بود.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface has no methods of its own, but inherits the methods of its parent, {{domxref("Event")}}._
+_این رابط روش خاص خود را ندارد، اما روش‌های والد خود، {{domxref("Event")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Basic example
+### مثال پایه
 
 ```js
 function locationHashChanged() {
@@ -51,15 +45,15 @@ function locationHashChanged() {
 window.addEventListener("hashchange", locationHashChanged);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## Related events
+## رویدادهای مرتبط
 
 - {{domxref("window.hashchange_event", "hashchange")}}
 - {{domxref("window.popstate_event", "popstate")}}
