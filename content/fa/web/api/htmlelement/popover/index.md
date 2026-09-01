@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: popover property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/popover"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: popover property"
 short-title: popover
 slug: Web/API/HTMLElement/popover
 page-type: web-api-instance-property
@@ -14,34 +8,30 @@ browser-compat: api.HTMLElement.popover
 
 {{APIRef("Popover API")}}
 
-The **`popover`** property of the {{domxref("HTMLElement")}} interface gets and sets an element's popover state via JavaScript (`"auto"`, `"hint"`, or `"manual"`), and can be used for feature detection.
+خاصیت **`popover`** در رابط {{domxref("HTMLElement")}}، وضعیت پاپ‌آور یک عنصر را از طریق JavaScript (با مقادیر `"auto"`، `"hint"` یا `"manual"`) دریافت و تنظیم می‌کند و می‌توان از آن برای تشخیص ویژگی (feature detection) استفاده کرد.
 
-It reflects the value of the [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) global HTML attribute.
+این خاصیت منعکس‌کنندهٔ مقدار ویژگی سراسری HTML [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) است.
 
 ## Value
 
-An enumerated value; possible values are:
+یک مقدار شمارشی (enumerated)؛ مقادیر ممکن عبارتند از:
 
 - `"auto"`
-  - : [`auto`](/en-US/docs/Web/API/Popover_API/Using#auto_state_and_light_dismiss) popovers can be "light dismissed" — this means that you can hide the popover by clicking outside it or pressing the <kbd>Esc</kbd> key.
+  - پاپ‌آورهای `auto` را می‌توان با «بستن سبک» (light dismiss) پنهان کرد — یعنی با کلیک کردن در خارج از آن یا فشردن کلید <kbd>Esc</kbd> می‌توان پاپ‌آور را مخفی کرد.
 
-    Usually, only one `auto` popover can be shown at a time — showing a second popover when one is already shown will hide the first one. The exception to this rule is when you have nested auto popovers. See [Nested popovers](/en-US/docs/Web/API/Popover_API/Using#nested_popovers) for more details.
+    معمولاً فقط یک پاپ‌آور `auto` در یک زمان می‌تواند نمایش داده شود — نمایش یک پاپ‌آور دوم در حالی که یک پاپ‌آور قبلاً نمایش داده شده است، باعث پنهان شدن پاپ‌آور اول می‌شود. استثنای این قاعده زمانی است که پاپ‌آورهای `auto` تو در تو داشته باشید. برای جزئیات بیشتر به [پاپ‌آورهای تو در تو](/en-US/docs/Web/API/Popover_API/Using#nested_popovers) مراجعه کنید.
 
 - `"hint"`
-  - : [`hint`](/en-US/docs/Web/API/Popover_API/Using#using_hint_popover_state) popovers do not close `auto` popovers when they are displayed, but will close other hint popovers.
-    They can be light dismissed and will respond to close requests.
-
-    Usually they are shown and hidden in response to non-click JavaScript events such as [`mouseover`](/en-US/docs/Web/API/Element/mouseover_event)/[`mouseout`](/en-US/docs/Web/API/Element/mouseout_event) and [`focus`](/en-US/docs/Web/API/Element/focus_event)/[`blur`](/en-US/docs/Web/API/Element/blur_event).
-    Clicking a button to open a `hint` popover would cause an open `auto` popover to light-dismiss.
+  - پاپ‌آورهای `hint` هنگام نمایش، پاپ‌آورهای `auto` را نمی‌بندند، اما سایر پاپ‌آورهای `hint` را می‌بندند. این پاپ‌آورها را می‌توان با بستن سبک پنهان کرد و به درخواست‌های بستن پاسخ می‌دهند. معمولاً در پاسخ به رویدادهای JavaScript غیر کلیکی مانند [`mouseover`](/en-US/docs/Web/API/Element/mouseover_event)/[`mouseout`](/en-US/docs/Web/API/Element/mouseout_event) و [`focus`](/en-US/docs/Web/API/Element/focus_event)/[`blur`](/en-US/docs/Web/API/Element/blur_event) نمایش داده یا پنهان می‌شوند. کلیک کردن روی یک دکمه برای باز کردن یک پاپ‌آور `hint` باعث می‌شود که یک پاپ‌آور `auto` باز شده با بستن سبک پنهان شود.
 
 - `"manual"`
-  - : [`manual`](/en-US/docs/Web/API/Popover_API/Using#using_manual_popover_state) popovers cannot be "light dismissed" and are not automatically closed. Popovers must explicitly be displayed and closed using declarative show/hide/toggle buttons or JavaScript. Multiple independent `manual` popovers can be shown simultaneously.
+  - پاپ‌آورهای `manual` را نمی‌توان با «بستن سبک» پنهان کرد و به‌طور خودکار بسته نمی‌شوند. پاپ‌آورها باید به‌صراحت با استفاده از دکمه‌های اعلانی نمایش/پنهان/تغییر وضعیت (declarative show/hide/toggle buttons) یا JavaScript نمایش داده و بسته شوند. چندین پاپ‌آور `manual` مستقل می‌توانند هم‌زمان نمایش داده شوند.
 
 ## Examples
 
-### Feature detection
+### تشخیص ویژگی (Feature detection)
 
-You can use the `popover` attribute to feature detect the [Popover API](/en-US/docs/Web/API/Popover_API):
+می‌توانید از ویژگی `popover` برای تشخیص ویژگی (feature detection) [Popover API](/en-US/docs/Web/API/Popover_API) استفاده کنید:
 
 ```js
 function supportsPopover() {
@@ -49,7 +39,7 @@ function supportsPopover() {
 }
 ```
 
-### Setting up a popover programmatically
+### راه‌اندازی برنامه‌نویسی یک پاپ‌آور
 
 ```js
 const popover = document.getElementById("mypopover");
