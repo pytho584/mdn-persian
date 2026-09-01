@@ -1,10 +1,4 @@
 ---
-title: "HTMLLinkElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement"
-status: "needs-translation"
----
-
----
 title: HTMLLinkElement
 slug: Web/API/HTMLLinkElement
 page-type: web-api-interface
@@ -13,74 +7,74 @@ browser-compat: api.HTMLLinkElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLLinkElement`** interface represents reference information for external resources and the relationship of those resources to a document and vice versa (corresponds to [`<link>`](/en-US/docs/Web/HTML/Reference/Elements/link) element; not to be confused with [`<a>`](/en-US/docs/Web/HTML/Reference/Elements/a), which is represented by [`HTMLAnchorElement`](/en-US/docs/Web/API/HTMLAnchorElement)). This object inherits all of the properties and methods of the {{domxref("HTMLElement")}} interface.
+رابطِ **`HTMLLinkElement`** اطلاعات مرجعِ منابع خارجی و رابطه‌ی آن منابع با یک سند و بالعکس را نشان می‌دهد (مربوط به عنصر [`<link>`](/en-US/docs/Web/HTML/Reference/Elements/link) است؛ با [`<a>`](/en-US/docs/Web/HTML/Reference/Elements/a) که توسط [`HTMLAnchorElement`](/en-US/docs/Web/API/HTMLAnchorElement) نمایش داده می‌شود اشتباه نشود). این شیء تمام ویژگی‌ها و متدهای رابط {{domxref("HTMLElement")}} را به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLLinkElement.as")}}
-  - : A string representing the type of content being loaded by the HTML link when [`rel="preload"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/preload) or [`rel="modulepreload"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/modulepreload).
+  - : رشته‌ای که نوع محتوای بارگذاری‌شده توسط لینک HTML را هنگام [`rel="preload"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/preload) یا [`rel="modulepreload"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/modulepreload) نشان می‌دهد.
 - {{domxref("HTMLLinkElement.blocking")}}
-  - : A string indicating that certain operations should be blocked on the fetching of an external resource. It reflects the `blocking` attribute of the {{HTMLElement("link")}} element.
+  - : رشته‌ای که نشان می‌دهد برخی عملیات‌ها باید در هنگام واکشی یک منبع خارجی مسدود شوند. این ویژگی، صفت `blocking` عنصر {{HTMLElement("link")}} را بازتاب می‌دهد.
 - {{domxref("HTMLLinkElement.crossOrigin")}}
-  - : A string that corresponds to the CORS setting for this link element. See [CORS settings attributes](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin) for details.
+  - : رشته‌ای که با تنظیمات CORS برای این عنصر لینک مطابقت دارد. برای جزئیات، [ویژگی‌های تنظیمات CORS](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin) را ببینید.
 - {{domxref("HTMLLinkElement.disabled")}}
-  - : A boolean value which represents whether the link is disabled; currently only used with style sheet links.
+  - : یک مقدار بولی که نشان می‌دهد آیا لینک غیرفعال است یا خیر؛ در حال حاضر فقط برای پیوندهای استایل‌شیت استفاده می‌شود.
 - {{domxref("HTMLLinkElement.fetchPriority")}}
-  - : An optional string representing a hint given to the browser on how it should prioritize fetching of a preload relative to other resources of the same type. If this value is provided, it must be one of the possible permitted values: `high` to fetch at a higher priority, `low` to fetch at a lower priority, or `auto` to indicate no preference (which is the default).
+  - : یک رشته‌ی اختیاری که نشانه‌ای به مرورگر می‌دهد که چگونه باید واکشیِ یک پیش‌بارگذاری را نسبت به سایر منابع از همان نوع اولویت‌بندی کند. اگر این مقدار ارائه شود، باید یکی از مقادیر مجاز باشد: `high` برای واکشی با اولویت بالاتر، `low` برای واکشی با اولویت پایین‌تر، یا `auto` برای نشان دادن عدم ترجیح (که پیش‌فرض است).
 - {{domxref("HTMLLinkElement.href")}}
-  - : A string representing the URI for the target resource.
+  - : رشته‌ای که URI منبع هدف را نشان می‌دهد.
 - {{domxref("HTMLLinkElement.hreflang")}}
-  - : A string representing the language code for the linked resource.
+  - : رشته‌ای که کد زبان منبع مرتبط را نشان می‌دهد.
 - {{domxref("HTMLLinkElement.imageSizes")}}
-  - : A string reflecting the [`imagesizes`](/en-US/docs/Web/HTML/Reference/Elements/link#imagesizes) HTML attribute; a list of comma-separated image conditions and sizes.
+  - : رشته‌ای که صفت HTML [`imagesizes`](/en-US/docs/Web/HTML/Reference/Elements/link#imagesizes) را بازتاب می‌دهد؛ فهرستی از شرایط و اندازه‌های تصویر که با ویرگول جدا شده‌اند.
 - {{domxref("HTMLLinkElement.imageSrcset")}}
-  - : A string reflecting the [`imagesrcset`](/en-US/docs/Web/HTML/Reference/Elements/link#imagesrcset) HTML attribute; a comma-separated list of image candidate strings.
+  - : رشته‌ای که صفت HTML [`imagesrcset`](/en-US/docs/Web/HTML/Reference/Elements/link#imagesrcset) را بازتاب می‌دهد؛ فهرستی از رشته‌های کاندیدای تصویر که با ویرگول جدا شده‌اند.
 - {{domxref("HTMLLinkElement.integrity")}}
-  - : A string that contains inline metadata that a browser can use to verify that a fetched resource has been delivered without unexpected manipulation. It reflects the `integrity` attribute of the {{HTMLElement("link")}} element.
+  - : رشته‌ای که فراداده‌ی درون‌خطی را شامل می‌شود که مرورگر می‌تواند از آن برای تأیید اینکه منبع واکشی‌شده بدون دستکاری غیرمنتظره تحویل داده شده است استفاده کند. این ویژگی، صفت `integrity` عنصر {{HTMLElement("link")}} را بازتاب می‌دهد.
 - {{domxref("HTMLLinkElement.media")}}
-  - : A string representing a list of one or more media formats to which the resource applies. It reflects the `media` attribute of the {{HTMLElement("link")}} element.
+  - : رشته‌ای که فهرستی از یک یا چند قالب رسانه‌ای را نشان می‌دهد که منبع برای آن‌ها اعمال می‌شود. این ویژگی، صفت `media` عنصر {{HTMLElement("link")}} را بازتاب می‌دهد.
 - {{domxref("HTMLLinkElement.referrerPolicy")}}
-  - : A string that reflects the [`referrerpolicy`](/en-US/docs/Web/HTML/Reference/Elements/link#referrerpolicy) HTML attribute indicating which referrer to use.
+  - : رشته‌ای که صفت HTML [`referrerpolicy`](/en-US/docs/Web/HTML/Reference/Elements/link#referrerpolicy) را بازتاب می‌دهد و نشان می‌دهد کدام مرجع (referrer) استفاده شود.
 - {{domxref("HTMLLinkElement.rel")}}
-  - : A string representing the forward relationship of the linked resource from the document to the resource.
+  - : رشته‌ای که رابطه‌ی رو به جلوی منبع مرتبط را از سند به منبع نشان می‌دهد.
 - {{domxref("HTMLLinkElement.relList")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMTokenList")}} that reflects the [`rel`](/en-US/docs/Web/HTML/Reference/Elements/link#rel) HTML attribute, as a list of tokens.
+  - : یک {{domxref("DOMTokenList")}} که صفت HTML [`rel`](/en-US/docs/Web/HTML/Reference/Elements/link#rel) را به صورت فهرستی از توکن‌ها بازتاب می‌دهد.
 - {{domxref("HTMLLinkElement.sizes")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMTokenList")}} that reflects the [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/link#sizes) HTML attribute, as a list of tokens.
+  - : یک {{domxref("DOMTokenList")}} که صفت HTML [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/link#sizes) را به صورت فهرستی از توکن‌ها بازتاب می‌دهد.
 - {{domxref("HTMLLinkElement.sheet")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("StyleSheet")}} object associated with the given element, or `null` if there is none.
+  - : شیء {{domxref("StyleSheet")}} مرتبط با عنصر داده‌شده را بازمی‌گرداند، یا اگر وجود نداشته باشد `null` را برمی‌گرداند.
 - {{domxref("HTMLLinkElement.type")}}
-  - : A string representing the MIME type of the linked resource.
+  - : رشته‌ای که نوع MIME منبع مرتبط را نشان می‌دهد.
 
-### Obsolete properties
+### ویژگی‌های منسوخ
 
 - {{domxref("HTMLLinkElement.charset")}} {{deprecated_inline}}
-  - : A string representing the character encoding for the target resource.
+  - : رشته‌ای که编码 نویسه‌های منبع هدف را نشان می‌دهد.
 - {{domxref("HTMLLinkElement.rev")}} {{deprecated_inline}}
-  - : A string representing the reverse relationship of the linked resource from the resource to the document.
+  - : رشته‌ای که رابطه‌ی معکوس منبع مرتبط را از منبع به سند نشان می‌دهد.
 
     > [!NOTE]
-    > Currently the W3C HTML 5.2 spec states that `rev` is no longer obsolete, whereas the WHATWG living standard still has it labeled obsolete. Until this discrepancy is resolved, you should still assume it is obsolete.
+    > در حال حاضر مشخصات W3C HTML 5.2 بیان می‌کند که `rev` دیگر منسوخ نیست، در حالی که استاندارد زنده‌ی WHATWG همچنان آن را منسوخ برچسب‌گذاری کرده است. تا زمانی که این اختلاف حل نشود، همچنان باید آن را منسوخ فرض کنید.
 
 - {{domxref("HTMLLinkElement.target")}} {{deprecated_inline}}
-  - : A string representing the name of the target frame to which the resource applies.
+  - : رشته‌ای که نام فریم هدفی را نشان می‌دهد که منبع برای آن اعمال می‌شود.
 
-## Instance methods
+## متدهای نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_متد خاصی ندارد؛ متدها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("link")}}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("link")}}.
