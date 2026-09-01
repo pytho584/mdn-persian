@@ -1,11 +1,5 @@
 ---
 title: "FileReader: readAsDataURL() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL"
-status: "needs-translation"
----
-
----
-title: "FileReader: readAsDataURL() method"
 short-title: readAsDataURL()
 slug: Web/API/FileReader/readAsDataURL
 page-type: web-api-instance-method
@@ -14,18 +8,10 @@ browser-compat: api.FileReader.readAsDataURL
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`readAsDataURL()`** method of the {{domxref("FileReader")}} interface is used to read the contents of the specified
-{{domxref("Blob")}} or {{domxref("File")}}. When the read operation is finished, the
-{{domxref("FileReader.readyState","readyState")}} property becomes `DONE`, and the
-{{domxref("FileReader/loadend_event", "loadend")}} event is triggered. At that time, the
-{{domxref("FileReader.result","result")}} attribute contains the data as a [data: URL](/en-US/docs/Web/URI/Reference/Schemes/data) representing the
-file's data as a base64 encoded string.
+از متد **`readAsDataURL()`** در رابط {{domxref("FileReader")}} برای خواندن محتوای {{domxref("Blob")}} یا {{domxref("File")}} مشخص شده استفاده می‌شود. وقتی عملیات خواندن به پایان می‌رسد، ویژگی {{domxref("FileReader.readyState","readyState")}} به `DONE` تغییر می‌کند و رویداد {{domxref("FileReader/loadend_event", "loadend")}} راه‌اندازی می‌شود. در آن زمان، ویژگی {{domxref("FileReader.result","result")}} حاوی داده‌ها به صورت یک [data: URL](/en-US/docs/Web/URI/Reference/Schemes/data) است که داده‌های فایل را به صورت یک رشته کدگذاری شده base64 نمایش می‌دهد.
 
 > [!NOTE]
-> The blob's {{domxref("FileReader.result","result")}} cannot be
-> directly decoded as Base64 without first removing the Data-URL declaration preceding
-> the Base64-encoded data. To retrieve only the Base64 encoded string, first
-> remove `data:*/*;base64,` from the result.
+> نمی‌توان {{domxref("FileReader.result","result")}} مربوط به blob را مستقیماً به صورت Base64 رمزگشایی کرد بدون اینکه ابتدا اعلان Data-URL که قبل از داده‌های کدگذاری شده Base64 قرار دارد حذف شود. برای دریافت تنها رشته کدگذاری شده Base64، ابتدا `data:*/*;base64,` را از نتیجه حذف کنید.
 
 ## Syntax
 
@@ -33,24 +19,24 @@ file's data as a base64 encoded string.
 readAsDataURL(blob)
 ```
 
-### Parameters
+### پارامترها
 
 - `blob`
-  - : The {{domxref("Blob")}} or {{domxref("File")}} from which to read.
+  - : {{domxref("Blob")}} یا {{domxref("File")}} که باید از آن خوانده شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Reading a single file
+### خواندن یک فایل
 
 #### HTML
 
 ```html
 <input type="file" /><br />
-<img src="" height="200" alt="Image preview" />
+<img src="" height="200" alt="پیش‌نمایش تصویر" />
 ```
 
 #### JavaScript
@@ -66,7 +52,7 @@ function previewFile() {
   const reader = new FileReader();
 
   reader.addEventListener("load", () => {
-    // convert image file to base64 string
+    // تبدیل فایل تصویر به رشته base64
     preview.src = reader.result;
   });
 
@@ -76,11 +62,11 @@ function previewFile() {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Reading a single file", "100%", 240)}}
 
-### Reading multiple files
+### خواندن چندین فایل
 
 #### HTML
 
@@ -97,7 +83,7 @@ function previewFiles() {
   const files = document.querySelector("input[type=file]").files;
 
   function readAndPreview(file) {
-    // Make sure `file.name` matches our extensions criteria
+    // اطمینان از اینکه `file.name` با معیارهای پسوند ما مطابقت دارد
     if (/\.(?:jpe?g|png|gif)$/i.test(file.name)) {
       const reader = new FileReader();
 
@@ -122,19 +108,19 @@ const picker = document.querySelector("#browse");
 picker.addEventListener("change", previewFiles);
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Reading multiple files", "100%", 240)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("FileReader")}}
 - {{domxref("URL.createObjectURL_static", "URL.createObjectURL()")}}
