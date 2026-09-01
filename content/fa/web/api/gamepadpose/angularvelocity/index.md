@@ -1,7 +1,5 @@
 ---
 title: "GamepadPose: angularVelocity property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/angularVelocity"
-status: "needs-translation"
 ---
 
 ---
@@ -16,27 +14,27 @@ browser-compat: api.GamepadPose.angularVelocity
 
 {{APIRef("WebVR API")}}{{SeeCompatTable}}
 
-The **`angularVelocity`** read-only property of the {{domxref("GamepadPose")}} interface returns an array representing the angular velocity vector of the {{domxref("Gamepad")}}, in radians per second.
+ویژگی فقطخواندنی **`angularVelocity`** در رابط {{domxref("GamepadPose")}}، آرایه‌ای را برمی‌گرداند که بردار سرعت زاویه‌ای {{domxref("Gamepad")}} را بر حسب رادیان بر ثانیه نشان می‌دهد.
 
-In other words, the current velocity at which the sensor is rotating around the `x`, `y`, and `z` axes.
+به عبارت دیگر، این آرایه سرعت فعلی چرخش حسگر را حول محورهای `x`، `y` و `z` نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{jsxref("Float32Array")}}, or `null` if the gamepad is not able to provide angular velocity information.
+یک {{jsxref("Float32Array")}}، یا در صورتی که گیمپد قادر به ارائه اطلاعات سرعت زاویه‌ای نباشد، `null`.
 
-## Examples
+## مثال‌ها
 
-TBD
+متعاقباً تعیین می‌شود
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebVR API](/en-US/docs/Web/API/WebVR_API)
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
