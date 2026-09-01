@@ -1,11 +1,5 @@
 ---
 title: "HTMLOutputElement: HTMLOutputElement() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement/HTMLOutputElement"
-status: "needs-translation"
----
-
----
-title: "HTMLOutputElement: HTMLOutputElement() constructor"
 short-title: HTMLOutputElement()
 slug: Web/API/HTMLOutputElement/HTMLOutputElement
 page-type: web-api-constructor
@@ -16,10 +10,10 @@ browser-compat: api.HTMLOutputElement.HTMLOutputElement
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}
 
-The **`HTMLOutputElement()`** constructor creates a new {{domxref("HTMLOutputElement")}} object.
+سازندهٔ **`HTMLOutputElement()`** یک شیء جدید {{domxref("HTMLOutputElement")}} ایجاد می‌کند.
 
 > [!NOTE]
-> Currently only Safari implements this constructor, so using {{domxref("Document.createElement()")}} is recommended for broader compatibility — see the [example below](#creating_an_output_element_programmatically).
+> در حال حاضر فقط سافاری این سازنده را پیاده‌سازی کرده است، بنابراین برای سازگاری بیشتر توصیه می‌شود از {{domxref("Document.createElement()")}} استفاده کنید — به [مثال زیر](#creating_an_output_element_programmatically) مراجعه کنید.
 
 ## Syntax
 
@@ -27,27 +21,27 @@ The **`HTMLOutputElement()`** constructor creates a new {{domxref("HTMLOutputEle
 new HTMLOutputElement()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("HTMLOutputElement")}} object.
+یک شیء جدید {{domxref("HTMLOutputElement")}}.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown with the message `"Illegal constructor"` in browsers that do not support this constructor.
+  - : در مرورگرهایی که از این سازنده پشتیبانی نمی‌کنند، با پیغام `"Illegal constructor"` پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Creating an output element programmatically
+### ایجاد یک عنصر output به صورت برنامه‌نویسی
 
 > [!NOTE]
-> In practice, you would usually create {{htmlelement("output")}} elements using {{domxref("Document.createElement()")}} instead of this constructor, since `createElement()` is supported across all browsers.
+> در عمل، معمولاً عناصر {{htmlelement("output")}} را با استفاده از {{domxref("Document.createElement()")}} ایجاد می‌کنید تا این سازنده، زیرا `createElement()` در همه مرورگرها پشتیبانی می‌شود.
 
-This example creates an {{htmlelement("output")}} element using the `HTMLOutputElement()` constructor and inserts it into a form that adds two numbers together.
+این مثال یک عنصر {{htmlelement("output")}} را با استفاده از سازندهٔ `HTMLOutputElement()` ایجاد می‌کند و آن را در فرمی که دو عدد را با هم جمع می‌کند، قرار می‌دهد.
 
 ```html
 <form id="my-form">
@@ -109,15 +103,15 @@ updateResult();
 
 {{EmbedLiveSample("creating_an_output_element_programmatically", "", "150")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLOutputElement")}}
 - {{HTMLElement("output")}}
