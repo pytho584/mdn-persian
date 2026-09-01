@@ -1,11 +1,5 @@
 ---
 title: "GPUQuerySet: count property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySet/count"
-status: "needs-translation"
----
-
----
-title: "GPUQuerySet: count property"
 short-title: count
 slug: Web/API/GPUQuerySet/count
 page-type: web-api-instance-property
@@ -14,25 +8,24 @@ browser-compat: api.GPUQuerySet.count
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`count`** read-only property of the
-{{domxref("GPUQuerySet")}} interface is a number specifying the number of queries managed by the `GPUQuerySet`.
+ویژگی فقط‑خواندنی **`count`** در رابط {{domxref("GPUQuerySet")}} یک عدد است که تعداد پرس‌وجوهای مدیریت‌شده توسط `GPUQuerySet` را مشخص می‌کند.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
-See the main [`GPUQuerySet`](/en-US/docs/Web/API/GPUQuerySet#examples) page for an example.
+برای مشاهدهٔ مثال، صفحهٔ اصلی [`GPUQuerySet`](/en-US/docs/Web/API/GPUQuerySet#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [رابط برنامه‌نویسی WebGPU](/en-US/docs/Web/API/WebGPU_API)
