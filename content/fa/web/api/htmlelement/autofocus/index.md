@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: autofocus property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/autofocus"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: autofocus property"
 short-title: autofocus
 slug: Web/API/HTMLElement/autofocus
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.HTMLElement.autofocus
 
 {{APIRef("HTML DOM")}}
 
-The **`autofocus`** property of the {{domxref("HTMLElement")}} interface represents a boolean value reflecting the [`autofocus`](/en-US/docs/Web/HTML/Reference/Global_attributes/autofocus) HTML global attribute. This indicates whether the element should be focused on page load or, if it is nested inside a {{htmlelement("dialog")}} or [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) element, when the `<dialog>` or popover is shown.
+ویژگی **`autofocus`** در رابط {{domxref("HTMLElement")}} یک مقدار بولی است که ویژگی سراسری HTML [`autofocus`](/en-US/docs/Web/HTML/Reference/Global_attributes/autofocus) را بازتاب می‌دهد. این ویژگی مشخص می‌کند که آیا عنصر باید هنگام بارگذاری صفحه فوکوس بگیرد یا اگر درون یک عنصر {{htmlelement("dialog")}} یا [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) تو در تو قرار گرفته باشد، وقتی آن `<dialog>` یا popover نمایش داده می‌شود فوکوس بگیرد.
 
-Only one element inside a document, `<dialog>` element, or popover may have this attribute specified. If applied to multiple elements, the first focusable one will receive focus.
+فقط یک عنصر در یک سند، عنصر `<dialog>` یا popover می‌تواند این ویژگی را داشته باشد. اگر روی چند عنصر اعمال شود، اولین عنصر قابل فوکوس، فوکوس را دریافت می‌کند.
 
 > [!NOTE]
-> Setting this property doesn't set the focus to the associated element: it merely tells the browser to focus to it when _the element is inserted_ in the document. Setting it after the insertion, that is most of the time after the document load, has no visible effect.
+> تنظیم این ویژگی باعث نمی‌شود که فوکوس روی عنصر مرتبط قرار گیرد؛ فقط به مرورگر می‌گوید که وقتی _عنصر در سند درج می‌شود_ آن را فوکوس کند. تنظیم آن پس از درج، یعنی معمولاً پس از بارگذاری سند، هیچ اثر قابل مشاهده‌ای ندارد.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
