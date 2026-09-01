@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: destroy() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/destroy"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: destroy() method"
 short-title: destroy()
 slug: Web/API/GPUDevice/destroy
 page-type: web-api-instance-method
@@ -14,30 +8,29 @@ browser-compat: api.GPUDevice.destroy
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`destroy()`** method of the
-{{domxref("GPUDevice")}} interface destroys the device, preventing further operations on it.
+**`destroy()`** 方法是 {{domxref("GPUDevice")}} 接口的一个方法，用于销毁设备，阻止在其上执行进一步的操作。
 
-Note that:
+请注意：
 
-- Any commands currently enqueued on the device's {{domxref("GPUQueue")}} will be executed before the device is destroyed.
-- Any WebGPU resources created using the device (buffers, textures, etc.) are also destroyed.
-- Any mapped buffers created using the device will be unmapped.
+- 当前已排入设备 {{domxref("GPUQueue")}} 队列的所有命令都将在设备销毁之前执行。
+- 使用该设备创建的所有 WebGPU 资源（如缓冲区、纹理等）也将被销毁。
+- 使用该设备创建的任何已映射缓冲区都将被取消映射。
 
-## Syntax
+## 语法
 
 ```js-nolint
 destroy()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-## Examples
+## 示例
 
 ```js
 async function init() {
@@ -58,14 +51,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
