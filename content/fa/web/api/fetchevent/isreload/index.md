@@ -1,11 +1,5 @@
 ---
 title: "FetchEvent: isReload property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/isReload"
-status: "needs-translation"
----
-
----
-title: "FetchEvent: isReload property"
 short-title: isReload
 slug: Web/API/FetchEvent/isReload
 page-type: web-api-instance-property
@@ -17,17 +11,13 @@ browser-compat: api.FetchEvent.isReload
 
 {{APIRef("Service Workers API")}}{{deprecated_header}}{{Non-standard_header}}{{AvailableInWorkers("service")}}
 
-The **`isReload`** read-only property of the
-{{domxref("FetchEvent")}} interface returns `true` if the event was
-dispatched by the user attempting to reload the page, and `false` otherwise.
-Pressing the refresh button is a reload while clicking a link and pressing the back
-button is not.
+ویژگی فقط‌خواندنی **`isReload`** در رابط {{domxref("FetchEvent")}} اگر رویداد توسط تلاش کاربر برای بارگذاری مجدد صفحه ایجاد شده باشد، مقدار `true` و در غیر این صورت `false` برمی‌گرداند. فشردن دکمهٔ بازنشانی (refresh) یک بارگذاری مجدد محسوب می‌شود، در حالی که کلیک روی یک پیوند یا فشردن دکمهٔ بازگشت چنین نیست.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولین.
 
-## Examples
+## مثال‌ها
 
 ```js
 self.addEventListener("fetch", (event) => {
@@ -41,12 +31,12 @@ self.addEventListener("fetch", (event) => {
 });
 ```
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-- [Service workers basic code example](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
-- [Using web workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [مثال کد پایهٔ Service workers](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
+- [استفاده از web workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
