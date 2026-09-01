@@ -1,11 +1,5 @@
 ---
 title: "HTMLGeolocationElement: promptaction event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLGeolocationElement/promptaction_event"
-status: "needs-translation"
----
-
----
-title: "HTMLGeolocationElement: promptaction event"
 short-title: promptaction
 slug: Web/API/HTMLGeolocationElement/promptaction_event
 page-type: web-api-event
@@ -16,11 +10,11 @@ browser-compat: api.HTMLGeolocationElement.promptaction_event
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}
 
-The **`promptaction`** event of the {{domxref("HTMLGeolocationElement")}} interface is fired whenever the user activates the `<geolocation>` element and selects an option from the resulting dialog, either to grant or deny `geolocation` permission.
+رویداد **`promptaction`** از رابط {{domxref("HTMLGeolocationElement")}} هر زمان که کاربر عنصر `<geolocation>` را فعال کند و گزینه‌ای را از دیالوگ حاصل انتخاب کند، چه برای اعطای مجوز `geolocation` و چه برای رد آن، رخ می‌دهد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("promptaction", (event) => { })
@@ -28,21 +22,21 @@ addEventListener("promptaction", (event) => { })
 onpromptaction = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("Event")}}.
+یک {{domxref("Event")}}.
 
-## Examples
+## مثال‌ها
 
-### Using `promptaction` to respond to user permission choices
+### استفاده از `promptaction` برای پاسخ به انتخاب‌های مجوز کاربر
 
-In our [Embedded map demo](https://mdn.github.io/dom-examples/geolocation-element/embedded-map/) ([source code](https://github.com/mdn/dom-examples/tree/main/geolocation-element/embedded-map)), we use a `promptaction` event handler to respond to the user making a choice in the `<geolocation>` permission prompt:
+در [نمایش نقشه تعبیه‌شده](https://mdn.github.io/dom-examples/geolocation-element/embedded-map/) ما ([کد منبع](https://github.com/mdn/dom-examples/tree/main/geolocation-element/embedded-map))، از یک کنترل‌کننده رویداد `promptaction` برای پاسخ به انتخاب کاربر در اعلان مجوز `<geolocation>` استفاده می‌کنیم:
 
 ```js
 geo.addEventListener("promptaction", notifyUserGrantPermission);
 ```
 
-In the `notifyUserGrantPermission()` function, we use the {{domxref("HTMLGeolocationElement.permissionStatus")}} property to check whether the permission status is `denied` or `prompt` and if so, we ask the user to press the button again and allow location. We don't need to ask this if they already granted permission.
+در تابع `notifyUserGrantPermission()`، از ویژگی {{domxref("HTMLGeolocationElement.permissionStatus")}} استفاده می‌کنیم تا بررسی کنیم که وضعیت مجوز `denied` (رد شده) یا `prompt` (درخواست) است و اگر چنین بود، از کاربر می‌خواهیم دوباره دکمه را فشار دهد و مکان را مجاز کند. اگر قبلاً مجوز داده‌اند، نیازی به این پرسش نداریم.
 
 ```js
 function notifyUserGrantPermission() {
@@ -53,16 +47,16 @@ function notifyUserGrantPermission() {
 }
 ```
 
-See the main {{domxref("HTMLGeolocationElement")}} page for a full walkthrough of this example.
+برای راهنمای کامل این مثال، صفحه اصلی {{domxref("HTMLGeolocationElement")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{htmlelement("geolocation")}} element
+- عنصر {{htmlelement("geolocation")}}
