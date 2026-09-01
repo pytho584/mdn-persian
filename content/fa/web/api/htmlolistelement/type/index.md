@@ -1,11 +1,5 @@
 ---
 title: "HTMLOListElement: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement/type"
-status: "needs-translation"
----
-
----
-title: "HTMLOListElement: type property"
 short-title: type
 slug: Web/API/HTMLOListElement/type
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.HTMLOListElement.type
 
 {{ApiRef("HTML DOM")}}
 
-The **`type`** property of the {{domxref("HTMLOListElement")}} interface indicates the kind of marker to be used to display ordered list.
+ویژگی **`type`** در رابط {{domxref("HTMLOListElement")}} نوع نشانگری را که برای نمایش فهرست مرتب استفاده می‌شود مشخص می‌کند.
 
-It reflects the [`type`](/en-US/docs/Web/HTML/Reference/Elements/ol#type) attribute of the {{HTMLElement("ol")}} element.
+این ویژگی بازتاب‌دهندهٔ ویژگی [`type`](/en-US/docs/Web/HTML/Reference/Elements/ol#type) عنصر {{HTMLElement("ol")}} است.
 
 > [!NOTE]
-> The `type` can be defined in CSS with the {{CSSxRef("list-style-type")}} property. The `list-style-type` property provides many more values.
+> مقدار `type` را می‌توان با ویژگی CSS {{CSSxRef("list-style-type")}} تعریف کرد. ویژگی `list-style-type` مقادیر بسیار بیشتری در اختیار قرار می‌دهد.
 
-## Value
+## مقدار
 
-A string representing the type.
+یک رشته (string) که نوع را مشخص می‌کند.
 
-Its possible values are listed in the attribute [marker types](/en-US/docs/Web/HTML/Reference/Elements/ol#type) section.
+مقادیر ممکن آن در بخش [انواع نشانگر](/en-US/docs/Web/HTML/Reference/Elements/ol#type) از ویژگی `type` فهرست شده‌اند.
 
 ## Examples
 
@@ -50,14 +44,14 @@ olElement.type = "i"; // Using roman numeral type
 console.log(olElement.type); // Output: "i"
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", 400, 100)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
