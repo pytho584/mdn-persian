@@ -1,11 +1,5 @@
 ---
 title: "Element: clientHeight property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight"
-status: "needs-translation"
----
-
----
-title: "Element: clientHeight property"
 short-title: clientHeight
 slug: Web/API/Element/clientHeight
 page-type: web-api-instance-property
@@ -14,31 +8,31 @@ browser-compat: api.Element.clientHeight
 
 {{APIRef("DOM")}}
 
-The **`clientHeight`** read-only property of the {{domxref("Element")}} interface is zero for elements with no CSS or inline layout boxes; otherwise, it's the inner height of an element in pixels. It includes padding but excludes borders, margins, and horizontal scrollbars (if present).
+ویژگی فقط‌خواندنی **`clientHeight``** در رابط {{domxref("Element")}} برای عناصری که جعبه‌ی چیدمان CSS یا درون‌خطی (inline) ندارند، صفر است؛ در غیر این صورت، ارتفاع داخلی عنصر را بر حسب پیکسل برمی‌گرداند. این مقدار شامل padding می‌شود اما borderها، marginها و نوار اسکرroll افقی (در صورت وجود) را شامل نمی‌شود.
 
-`clientHeight` can be calculated as: CSS `height` + CSS `padding` - height of horizontal scrollbar (if present).
+`clientHeight` را می‌توان این‌گونه محاسبه کرد: `height` + `padding` در CSS - ارتفاع نوار اسکرroll افقی (در صورت وجود).
 
-When `clientHeight` is used on the root element (the `<html>` element), (or on `<body>` if the document is in quirks mode), the viewport's height (excluding any scrollbar) is returned.
+وقتی `clientHeight` روی عنصر ریشه (عنصر `<html>`) استفاده شود (یا روی `<body>` اگر سند در حالت quirks باشد)، ارتفاع viewport (بدون احتساب هر نوار اسکرroll) برگردانده می‌شود.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-![How clientHeight property determines the inner height of an element considering the height and padding](dimensions-client.png)
+![چگونه ویژگی clientHeight ارتفاع داخلی یک عنصر را با در نظر گرفتن height و padding تعیین می‌کند](dimensions-client.png)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Determining the dimensions of elements](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
+- [تعیین ابعاد عناصر](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
 - {{domxref("HTMLElement.offsetHeight")}}
 - {{domxref("Element.scrollHeight")}}
 - {{domxref("Element.clientWidth")}}
