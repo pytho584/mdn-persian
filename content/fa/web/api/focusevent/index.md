@@ -1,10 +1,4 @@
 ---
-title: "FocusEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent"
-status: "needs-translation"
----
-
----
 title: FocusEvent
 slug: Web/API/FocusEvent
 page-type: web-api-interface
@@ -13,43 +7,43 @@ browser-compat: api.FocusEvent
 
 {{APIRef("UI Events")}}
 
-The **`FocusEvent`** interface represents focus-related events, including {{domxref("Element/focus_event", "focus")}}, {{domxref("Element/blur_event", "blur")}}, {{domxref("Element/focusin_event", "focusin")}}, and {{domxref("Element/focusout_event", "focusout")}}.
+رابط **`FocusEvent`** رویدادهای مرتبط با تمرکز (focus) را نشان می‌دهد، از جمله {{domxref("Element/focus_event", "focus")}}، {{domxref("Element/blur_event", "blur")}}، {{domxref("Element/focusin_event", "focusin")}} و {{domxref("Element/focusout_event", "focusout")}}.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("FocusEvent.FocusEvent", "FocusEvent()")}}
-  - : Creates a `FocusEvent` event with the given parameters.
+  - : یک رویداد `FocusEvent` با پارامترهای داده شده ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-_This interface also inherits properties from its parent {{domxref("UIEvent")}}, and indirectly from {{domxref("Event")}}_.
+_این رابط همچنین ویژگی‌های والد خود {{domxref("UIEvent")}} و به طور غیرمستقیم {{domxref("Event")}} را به ارث می‌برد._
 
 - {{domxref("FocusEvent.relatedTarget")}}
-  - : An {{domxref("EventTarget")}} representing a secondary target for this event. In some cases (such as when tabbing in or out a page), this property may be set to `null` for security reasons.
+  - : یک {{domxref("EventTarget")}} که هدف ثانویه این رویداد را نشان می‌دهد. در برخی موارد (مانند زمانی که با کلید Tab وارد صفحه می‌شوید یا از آن خارج می‌شوید)، این ویژگی ممکن است به دلایل امنیتی `null` باشد.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-_This interface has no specific methods. It inherits methods from its parent {{domxref("UIEvent")}}, and indirectly from {{domxref("Event")}}._
+_این رابط روش خاصی ندارد. روش‌های والد خود {{domxref("UIEvent")}} و به طور غیرمستقیم {{domxref("Event")}} را به ارث می‌برد._
 
-## Order of events
+## ترتیب رویدادها
 
-When focus is shifted from element A to element B, focus events are dispatched in the following order:
+هنگامی که تمرکز از عنصر A به عنصر B منتقل می‌شود، رویدادهای تمرکز به ترتیب زیر صادر می‌شوند:
 
-1. `blur`: sent after element A loses focus.
-2. `focusout`: sent after the `blur` event.
-3. `focus`: sent after element B receives focus.
-4. `focusin`: sent after the `focus` event.
+1. `blur`: پس از اینکه عنصر A تمرکز خود را از دست می‌دهد، ارسال می‌شود.
+2. `focusout`: پس از رویداد `blur` ارسال می‌شود.
+3. `focus`: پس از اینکه عنصر B تمرکز دریافت می‌کند، ارسال می‌شود.
+4. `focusin`: پس از رویداد `focus` ارسال می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("Event")}} base interface
+- رابط پایه {{domxref("Event")}}
