@@ -1,9 +1,4 @@
----
-title: "HTMLMediaElement: controls property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/controls"
-status: "needs-translation"
----
-
+```
 ---
 title: "HTMLMediaElement: controls property"
 short-title: controls
@@ -14,30 +9,29 @@ browser-compat: api.HTMLMediaElement.controls
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.controls`** property reflects the
-[`controls`](/en-US/docs/Web/HTML/Reference/Elements/video#controls) HTML attribute, which controls whether user
-interface controls for playing the media item will be displayed.
+خصوصیت **`HTMLMediaElement.controls`** بیانگر ویژگی HTML
+[`controls`](/en-US/docs/Web/HTML/Reference/Elements/video#controls) است که تعیین می‌کند آیا کنترل‌های رابط کاربری برای پخش رسانه نمایش داده شوند یا خیر.
 
-## Value
+## مقدار
 
-A boolean value. A value of `true` means controls will be
-displayed.
+یک مقدار بولین است. مقدار `true` به این معناست که کنترل‌ها نمایش داده خواهند شد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const obj = document.createElement("video");
 obj.controls = true;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.controls` property
+- {{domxref("HTMLMediaElement")}}: رابطی که برای تعریف خصوصیت `HTMLMediaElement.controls` استفاده می‌شود.
+```
