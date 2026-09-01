@@ -1,9 +1,4 @@
----
-title: "FontFace: variationSettings property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/variationSettings"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "FontFace: variationSettings property"
 short-title: variationSettings
@@ -14,18 +9,19 @@ browser-compat: api.FontFace.variationSettings
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`variationSettings`** property of the {{domxref("FontFace")}} interface retrieves or sets low-level OpenType or TrueType font variations.
+ویژگی **`variationSettings`** از رابط {{domxref("FontFace")}}، تنظیمات سطح پایین تغییرات فونت OpenType یا TrueType را بازیابی یا تنظیم می‌کند.
 
-This property is equivalent to the {{cssxref("@font-face/font-variation-settings", "font-variation-settings")}} descriptor.
+این ویژگی معادل توصیفگر {{cssxref("@font-face/font-variation-settings", "font-variation-settings")}} است.
 
-## Value
+## مقدار
 
-A string containing a descriptor.
+رشته‌ای شامل یک توصیفگر.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
