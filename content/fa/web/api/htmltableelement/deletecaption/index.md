@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableElement: deleteCaption() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/deleteCaption"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +12,25 @@ browser-compat: api.HTMLTableElement.deleteCaption
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLTableElement.deleteCaption()`** method removes the
-{{HtmlElement("caption")}} element from a given {{HtmlElement("table")}}. If there is no
-`<caption>` element associated with the table, this method does
-nothing.
+متد **`HTMLTableElement.deleteCaption()`** عنصر {{HtmlElement("caption")}} را از یک {{HtmlElement("table")}} حذف می‌کند. اگر عنصر `<caption>` مرتبطی با جدول وجود نداشته باشد، این متد هیچ کاری انجام نمی‌دهد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 deleteCaption()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-This example uses JavaScript to delete a table's caption.
+این مثال از جاوااسکریپت برای حذف عنوان (caption) یک جدول استفاده می‌کند.
 
 ### HTML
 
@@ -64,14 +59,14 @@ let table = document.querySelector("table");
 table.deleteCaption();
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
