@@ -1,7 +1,5 @@
 ---
 title: "CSSRotate: CSSRotate() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSRotate/CSSRotate"
-status: "needs-translation"
 ---
 
 ---
@@ -14,49 +12,41 @@ browser-compat: api.CSSRotate.CSSRotate
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSRotate()`** constructor creates a new {{domxref("CSSRotate")}} object representing the {{cssxref("transform-function/rotate", "rotate()")}} value of the individual {{CSSXref('transform')}} property in CSS.
+سازندهٔ **`CSSRotate()`** یک شیء جدید {{domxref("CSSRotate")}} می‌سازد که مقدار {{cssxref("transform-function/rotate", "rotate()")}} ویژگیِ منفردِ {{CSSXref('transform')}} را در CSS نمایش می‌دهد.
 
-This can be specified as either a 2D rotation by a particular angle, or as a 3D rotation by an angle around a particular axis.
+این سازنده می‌تواند به‌صورت یک چرخش دوبعدی با زاویه‌ای مشخص یا یک چرخش سه‌بعدی با زاویه‌ای حول یک محور مشخص تعریف شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new CSSRotate(angle)
 new CSSRotate(x, y, z, angle)
 ```
 
-### Parameters
+### پارامترها
 
 - {{domxref('CSSRotate.angle','angle')}}
-  - : A value for the angle of the {{domxref('CSSRotate')}} object to be constructed.
-    This must be a {{domxref('CSSNumericValue')}}.
+  - : مقداری برای زاویهٔ شیء {{domxref('CSSRotate')}} که قرار است ساخته شود. این مقدار باید یک {{domxref('CSSNumericValue')}} باشد.
 - {{domxref('CSSRotate.x','x')}} {{optional_inline}}
-  - : A value for the x-axis of the {{domxref('CSSRotate')}} object to be constructed.
-    This must either be a number (which is wrapped into a {{domxref("CSSUnitValue")}} of `unit: "number"`) or a {{domxref("CSSNumericValue")}}.
-    Only used, and required, when constructing a 3D rotation.
+  - : مقداری برای محور x شیء {{domxref('CSSRotate')}} که قرار است ساخته شود. این مقدار باید یا یک عدد باشد (که در یک {{domxref("CSSUnitValue")}} با `unit: "number"` قرار می‌گیرد) یا یک {{domxref("CSSNumericValue")}}. این پارامتر فقط هنگام ساخت چرخش سه‌بعدی استفاده می‌شود و در آن صورت الزامی است.
 - {{domxref('CSSRotate.y','y')}} {{optional_inline}}
-  - : A value for the y-axis of the {{domxref('CSSRotate')}} object to be constructed.
-    This must either be a number (which is wrapped into a {{domxref("CSSUnitValue")}} of `unit: "number"`) or a {{domxref("CSSNumericValue")}}.
-    Only used, and required, when constructing a 3D rotation.
+  - : مقداری برای محور y شیء {{domxref('CSSRotate')}} که قرار است ساخته شود. این مقدار باید یا یک عدد باشد (که در یک {{domxref("CSSUnitValue")}} با `unit: "number"` قرار می‌گیرد) یا یک {{domxref("CSSNumericValue")}}. این پارامتر فقط هنگام ساخت چرخش سه‌بعدی استفاده می‌شود و در آن صورت الزامی است.
 - {{domxref('CSSRotate.z','z')}} {{optional_inline}}
-  - : A value for the z-axis of the {{domxref('CSSRotate')}} object to be constructed.
-    This must either be a number (which is wrapped into a {{domxref("CSSUnitValue")}} of `unit: "number"`) or a {{domxref("CSSNumericValue")}}.
-    Only used, and required, when constructing a 3D rotation.
+  - : مقداری برای محور z شیء {{domxref('CSSRotate')}} که قرار است ساخته شود. این مقدار باید یا یک عدد باشد (که در یک {{domxref("CSSUnitValue")}} با `unit: "number"` قرار می‌گیرد) یا یک {{domxref("CSSNumericValue")}}. این پارامتر فقط هنگام ساخت چرخش سه‌بعدی استفاده می‌شود و در آن صورت الزامی است.
 
-### Exceptions
+### استثناها
 
 - [`TypeError`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError)
-  - : Raised if the value of `CSSRotate.angle` is not an [\<angle>](/en-US/docs/Web/CSS/Reference/Values/angle) value or `CSSRotate.x`, `CSSRotate.y`, `CSSRotate.z` are
-    not [\<number>](/en-US/docs/Web/CSS/Reference/Values/number) values.
+  - : اگر مقدار `CSSRotate.angle` یک مقدار [\<angle>](/en-US/docs/Web/CSS/Reference/Values/angle) نباشد یا `CSSRotate.x`، `CSSRotate.y`، `CSSRotate.z` مقادیر [\<number>](/en-US/docs/Web/CSS/Reference/Values/number) نباشند، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-To do
+در دست انجام.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
