@@ -1,7 +1,6 @@
 ---
 title: "HTMLTableCellElement: scope property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/scope"
-status: "needs-translation"
 ---
 
 ---
@@ -14,32 +13,31 @@ browser-compat: api.HTMLTableCellElement.scope
 
 {{ APIRef("HTML DOM") }}
 
-The **`scope`** property of the {{domxref("HTMLTableCellElement")}} interface
-indicates the scope of a {{HTMLElement("th")}} cell.
+ویژگی **`scope`** در رابط {{domxref("HTMLTableCellElement")}} دامنهٔ یک سلول {{HTMLElement("th")}} را مشخص می‌کند.
 
-Header cells can be configured, using the `scope` attribute, to apply to a specified row or column, or to the not-yet-scoped cells within the current row group (that is, the same ancestor {{HTMLElement("thead")}}, {{HTMLElement("tbody")}}, or {{HTMLElement("tfoot")}} element). If no value is specified for `scope`, the header is not associated directly with cells in this way. Permitted values for `scope` are:
+سلول‌های سربرگ را می‌توان با استفاده از ویژگی `scope` طوری پیکربندی کرد که شامل یک ردیف یا ستون مشخص، یا شامل سلول‌هایی در گروه ردیفی فعلی باشند که هنوز دامنه‌ای برایشان تعیین نشده است (یعنی همان عنصر والد {{HTMLElement("thead")}}، {{HTMLElement("tbody")}} یا {{HTMLElement("tfoot")}}). اگر مقدار مشخصی برای `scope` در نظر گرفته نشود، سربرگ به‌طور مستقیم با سلول‌ها در این قالب مرتبط نمی‌شود. مقادیر مجاز برای `scope` عبارت‌اند از:
 
 > [!NOTE]
-> This property doesn't have a visual effect in browsers. It adds semantic information to help assistive technology like screen readers to present the table in a more coherent way.
+> این ویژگی در مرورگرها اثر بصری ندارد؛ بلکه اطلاعات معنایی را اضافه می‌کند تا فناوری‌های کمکی مانند صفحه‌خوان‌ها بتوانند جدول را به شکلی منسجم‌تر ارائه کنند.
 
-## Value
+## مقدار
 
-One of the following values:
+یکی از مقادیر زیر:
 
 - `col`
-  - : The header cell applies to the following cells in the same column (or columns, if `colspan` is used as well), until either the end of the column or another `<th>` in the column establishes a new scope.
+  - : سلول سربرگ برای سلول‌های بعدی در همان ستون (یا ستون‌ها، اگر `colspan` نیز استفاده شده باشد) اعمال می‌شود، تا پایان ستون یا تا زمانی که یک `<th>` دیگر در همان ستون دامنهٔ جدیدی ایجاد کند.
 - `colgroup`
-  - : The header cell applies to all cells in the current column group that do not already have a scope applied to them. This value is only allowed if the cell is in a column group.
+  - : سلول سربرگ برای همهٔ سلول‌های موجود در گروه ستونی فعلی که دامنه‌ای برایشان اعمال نشده باشد، اعمال می‌شود. این مقدار فقط زمانی مجاز است که سلول در یک گروه ستونی قرار داشته باشد.
 - `row`
-  - : The header cell applies to the following cells in the same row (or rows, if `rowspan` is used as well), until either the end of the row or another `<th>` in the same row establishes a new scope.
+  - : سلول سربرگ برای سلول‌های بعدی در همان ردیف (یا ردیف‌ها، اگر `rowspan` نیز استفاده شده باشد) اعمال می‌شود، تا پایان ردیف یا تا زمانی که یک `<th>` دیگر در همان ردیف دامنهٔ جدیدی ایجاد کند.
 - `rowgroup`
-  - : The header cell applies to all cells in the current row group that do not already have a scope applied to them. This value is only allowed if the cell is in a row group.
-- The empty string (`""`)
-  - : The header cell has no predefined scope; the user agent will establish the scope based on contextual clues.
+  - : سلول سربرگ برای همهٔ سلول‌های موجود در گروه ردیفی فعلی که دامنه‌ای برایشان اعمال نشده باشد، اعمال می‌شود. این مقدار فقط زمانی مجاز است که سلول در یک گروه ردیفی قرار داشته باشد.
+- رشتهٔ خالی (`""`)
+  - : سلول سربرگ دامنهٔ از پیش تعیین شده‌ای ندارد و عامل کاربر (user agent) بر اساس نشانه‌های زمینه‌ای (contextual clues) دامنه را تعیین خواهد کرد.
 
-## Examples
+## مثال‌ها
 
-This example adds a scope label to all the `th` numbers of the `thead`.
+این مثال یک برچسب دامنه به همهٔ عناصر `th` درون `thead` اضافه می‌کند.
 
 ### HTML
 
@@ -112,14 +110,14 @@ thElements.forEach((th) => {
 });
 ```
 
-### Results
+### نتیجه
 
 {{EmbedLiveSample("Examples", "100%", 220)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
