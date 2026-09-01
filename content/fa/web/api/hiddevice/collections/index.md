@@ -1,7 +1,5 @@
 ---
 title: "HIDDevice: collections property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/collections"
-status: "needs-translation"
 ---
 
 ---
@@ -16,54 +14,54 @@ browser-compat: api.HIDDevice.collections
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`collections`** read-only property of the {{domxref("HIDDevice")}} interface returns an array of report formats
+ویژگی فقط‌خواندنی **`collections`** در رابط {{domxref("HIDDevice")}} آرایه‌ای از قالب‌های گزارش را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An array of report formats. Each entry contains the following:
+آرایه‌ای از قالب‌های گزارش. هر ورودی شامل موارد زیر است:
 
 - `usagePage`
-  - : An integer representing the usage page component of the HID usage associated with this collection. The usage for a top level collection is used to identify the device type.
+  - : یک عدد صحیح که مؤلفهٔ Usage Page از کاربرد HID مرتبط با این مجموعه را نشان می‌دهد. کاربرد (Usage) برای یک مجموعهٔ سطح بالا برای شناسایی نوع دستگاه استفاده می‌شود.
 
-    Standard HID usage values can be found in the [HID Usage Tables](https://usb.org/document-library/hid-usage-tables-17) document
+    مقادیر استاندارد کاربرد HID را می‌توانید در سند [HID Usage Tables](https://usb.org/document-library/hid-usage-tables-17) بیابید.
 
 - `usage`
-  - : An integer representing the usage ID component of the HID usage associated with this collection.
+  - : عددی صحیح که مؤلفهٔ Usage ID از کاربرد HID مرتبط با این مجموعه را نشان می‌دهد.
 - `type`
-  - : An 8-bit value representing the collection type, which describes a different relationship between the grouped items. One of:
+  - : یک مقدار ۸ بیتی که نوع مجموعه را نشان می‌دهد و رابطهٔ متفاوتی را بین موارد گروه‌بندی‌شده توصیف می‌کند. یکی از مقادیر زیر:
     - `0x00`
-      - : Physical (group of axes)
+      - : فیزیکی (گروه محورها)
     - `0x01`
-      - : Application (mouse, keyboard)
+      - : کاربردی (ماوس، صفحه‌کلید)
     - `0x02`
-      - : Logical (interrelated data)
+      - : منطقی (داده‌های مرتبط با یکدیگر)
     - `0x03`
-      - : Report
+      - : گزارش (Report)
     - `0x04`
-      - : Named array
+      - : آرایهٔ نام‌گذاری‌شده (Named array)
     - `0x05`
-      - : Usage switch
+      - : تغییردهندهٔ کاربرد (Usage switch)
     - `0x06`
-      - : Usage modified
-    - `0x07` to `0x7F`
-      - : Reserved for future use
-    - `0x80` to `0xFF`
-      - : Vendor-defined
+      - : کاربرد اصلاح‌شده (Usage modified)
+    - `0x07` تا `0x7F`
+      - : برای استفاده در آینده رزرو شده است
+    - `0x80` تا `0xFF`
+      - : تعریف‌شده توسط فروشنده
 
-    More information on these types can be found in the [Device Class Definition](https://www.usb.org/document-library/device-class-definition-hid-111) document.
+    اطلاعات بیشتر دربارهٔ این انواع را می‌توانید در سند [Device Class Definition](https://www.usb.org/document-library/device-class-definition-hid-111) بیابید.
 
 - `children`
-  - : An array of sub-collections which takes the same format as a top-level collection.
+  - : آرایه‌ای از زیرمجموعه‌ها که همان قالب یک مجموعهٔ سطح بالا را دارد.
 - `inputReports`
-  - : An array of `inputReport` items which represent individual input reports described in this collection.
+  - : آرایه‌ای از موارد `inputReport` که نشان‌دهندهٔ گزارش‌های ورودی جداگانه توصیف‌شده در این مجموعه هستند.
 - `outputReports`
-  - : An array of `outputReport` items which represent individual output reports described in this collection.
+  - : آرایه‌ای از موارد `outputReport` که نشان‌دهندهٔ گزارش‌های خروجی جداگانه توصیف‌شده در این مجموعه هستند.
 - `featureReports`
-  - : An array of `featureReport` items which represent individual feature reports described in this collection.
+  - : آرایه‌ای از موارد `featureReport` که نشان‌دهندهٔ گزارش‌های ویژگی جداگانه توصیف‌شده در این مجموعه هستند.
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates how to access the various elements once the `collections` property has been returned. You can see more examples, and live demos in the article [Connecting to uncommon HID devices](https://developer.chrome.com/docs/capabilities/hid).
+مثال زیر نحوهٔ دسترسی به عناصر مختلف را پس از برگردانده‌شدن ویژگی `collections` نشان می‌دهد. مثال‌های بیشتر و نمایش‌های زنده را می‌توانید در مقالهٔ [Connecting to uncommon HID devices](https://developer.chrome.com/docs/capabilities/hid) ببینید.
 
 ```js
 for (const collection of device.collections) {
@@ -90,10 +88,10 @@ for (const collection of device.collections) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
