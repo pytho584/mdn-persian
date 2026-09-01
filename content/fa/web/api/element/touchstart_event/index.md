@@ -1,11 +1,5 @@
 ---
 title: "Element: touchstart event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event"
-status: "needs-translation"
----
-
----
-title: "Element: touchstart event"
 short-title: touchstart
 slug: Web/API/Element/touchstart_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.Element.touchstart_event
 
 {{APIRef("Touch Events")}}
 
-The `touchstart` event is fired when one or more touch points are placed on the touch surface.
+رویداد `touchstart` زمانی فعال می‌شود که یک یا چند نقطهٔ لمسی روی سطح لمسی قرار می‌گیرند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("touchstart", (event) => { })
@@ -26,24 +20,24 @@ addEventListener("touchstart", (event) => { })
 ontouchstart = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("TouchEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("TouchEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("TouchEvent")}}
 
-## Examples
+## مثال‌ها
 
-Code samples for those events are available on the dedicated page: [Touch events](/en-US/docs/Web/API/Touch_events).
+نمونه‌کدهای مربوط به این رویدادها در صفحهٔ اختصاصی [Touch events](/en-US/docs/Web/API/Touch_events) موجود است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Touch events](/en-US/docs/Web/API/Touch_events)
+- [Touch events](/en-US/docs/Web/API/Touch_events) (رویدادهای لمسی)
