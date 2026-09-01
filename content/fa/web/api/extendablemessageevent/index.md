@@ -1,11 +1,5 @@
 ---
 title: "ExtendableMessageEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent"
-status: "needs-translation"
----
-
----
-title: ExtendableMessageEvent
 slug: Web/API/ExtendableMessageEvent
 page-type: web-api-interface
 browser-compat: api.ExtendableMessageEvent
@@ -13,78 +7,78 @@ browser-compat: api.ExtendableMessageEvent
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`ExtendableMessageEvent`** interface of the [Service Worker API](/en-US/docs/Web/API/Service_Worker_API) represents the event object of a {{domxref("ServiceWorkerGlobalScope/message_event", "message")}} event fired on a service worker (when a message is received on the {{domxref("ServiceWorkerGlobalScope")}} from another context) — extends the lifetime of such events.
+رابط **`ExtendableMessageEvent`** از [API Service Worker](/en-US/docs/Web/API/Service_Worker_API) نشان‌دهندهٔ شیء رویداد یک رویداد {{domxref("ServiceWorkerGlobalScope/message_event", "message")}} است که روی یک سرویس‌ورکر (وقتی پیامی روی {{domxref("ServiceWorkerGlobalScope")}} از زمینه‌ای دیگر دریافت می‌شود) فعال می‌شود — طول عمر چنین رویدادهایی را افزایش می‌دهد.
 
-This interface inherits from the {{domxref("ExtendableEvent")}} interface.
+این رابط از رابط {{domxref("ExtendableEvent")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("ExtendableMessageEvent.ExtendableMessageEvent","ExtendableMessageEvent()")}}
-  - : Creates a new `ExtendableMessageEvent` object instance.
+  - : یک نمونهٔ جدید از شیء `ExtendableMessageEvent` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("ExtendableEvent")}}_.
+_ویژگی‌ها را از والد خود {{domxref("ExtendableEvent")}} به ارث می‌برد._
 
 - {{domxref("ExtendableMessageEvent.data")}} {{ReadOnlyInline}}
-  - : Returns the event's data. It can be any data type. If dispatched in `messageerror` event, the property will be `null`.
+  - : داده‌های رویداد را برمی‌گرداند. می‌تواند از هر نوع داده‌ای باشد. اگر در رویداد `messageerror` ارسال شود، این ویژگی `null` خواهد بود.
 - {{domxref("ExtendableMessageEvent.origin")}} {{ReadOnlyInline}}
-  - : Returns the origin of the {{domxref("Client")}} that sent the message.
+  - : origin (مبدأ) {{domxref("Client")}}ای را که پیام را فرستاده برمی‌گرداند.
 - {{domxref("ExtendableMessageEvent.lastEventId")}} {{ReadOnlyInline}}
-  - : Represents, in [server-sent events](/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events), the last event ID of the event source.
+  - : در [رویدادهای ارسال‌شده از سرور (server-sent events)](/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)، آخرین شناسهٔ رویداد منبع رویداد را نشان می‌دهد.
 - {{domxref("ExtendableMessageEvent.source")}} {{ReadOnlyInline}}
-  - : Returns a reference to the {{domxref("Client")}} object that sent the message.
+  - : یک ارجاع به شیء {{domxref("Client")}}ای که پیام را فرستاده برمی‌گرداند.
 - {{domxref("ExtendableMessageEvent.ports")}} {{ReadOnlyInline}}
-  - : Returns the array containing the {{domxref("MessagePort")}} objects representing the ports of the associated message channel.
+  - : آرایه‌ای حاوی اشیاء {{domxref("MessagePort")}} که درگاه‌های کانال پیام مرتبط را نشان می‌دهند برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("ExtendableEvent")}}_.
+_روش‌ها را از والد خود {{domxref("ExtendableEvent")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-In the below example a page gets a handle to the {{domxref("ServiceWorker")}} object via {{domxref("ServiceWorkerRegistration.active")}}, and then calls its `postMessage()` function.
+در مثال زیر، یک صفحه از طریق {{domxref("ServiceWorkerRegistration.active")}} یک دستگیره (handle) به شیء {{domxref("ServiceWorker")}} می‌گیرد و سپس تابع `postMessage()` آن را فراخوانی می‌کند.
 
 ```js
-// in the page being controlled
+// در صفحه‌ای که تحت کنترل است
 if (navigator.serviceWorker) {
   navigator.serviceWorker.register("service-worker.js");
 
   navigator.serviceWorker.addEventListener("message", (event) => {
-    // event is a MessageEvent object
-    console.log(`The service worker sent me a message: ${event.data}`);
+    // event یک شیء MessageEvent است
+    console.log(`سرویس‌ورکر برای من پیامی فرستاد: ${event.data}`);
   });
 
   navigator.serviceWorker.ready.then((registration) => {
-    registration.active.postMessage("Hi service worker");
+    registration.active.postMessage("سلام سرویس‌ورکر");
   });
 }
 ```
 
-The service worker can receive the message by listening to the `message` event:
+سرویس‌ورکر می‌تواند با گوش دادن به رویداد `message` پیام را دریافت کند:
 
 ```js
-// in the service worker
+// در سرویس‌ورکر
 addEventListener("message", (event) => {
-  // event is an ExtendableMessageEvent object
-  console.log(`The client sent me a message: ${event.data}`);
+  // event یک شیء ExtendableMessageEvent است
+  console.log(`کارخواه برای من پیامی فرستاد: ${event.data}`);
 
-  event.source.postMessage("Hi client");
+  event.source.postMessage("سلام کارخواه");
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-- [Service workers basic code example](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [مثال کد ابتدایی Service Workers](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
 - [Channel Messaging](/en-US/docs/Web/API/Channel_Messaging_API)
