@@ -1,11 +1,5 @@
 ---
 title: "Document: characterSet property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/characterSet"
-status: "needs-translation"
----
-
----
-title: "Document: characterSet property"
 short-title: characterSet
 slug: Web/API/Document/characterSet
 page-type: web-api-instance-property
@@ -14,29 +8,26 @@ browser-compat: api.Document.characterSet
 
 {{ ApiRef("DOM") }}
 
-The **`Document.characterSet`**
-read-only property returns the [character encoding](/en-US/docs/Glossary/Character_encoding) of the
-document that it's currently rendered with.
+ویژگی فقط‌خواندنی **`Document.characterSet`**، [رمزگذاری نویسه‌ها](/en-US/docs/Glossary/Character_encoding) سندی را که در حال حاضر با آن رندر می‌شود، برمی‌گرداند.
 
 > [!NOTE]
-> A "character set" and a "character encoding" are related, but different. Despite the
-> name of this property, it returns the _encoding_.
+> «مجموعه نویسه‌ها» (character set) و «رمزگذاری نویسه‌ها» (character encoding) مفاهیمی مرتبط اما متفاوت هستند. با وجود نام این ویژگی، مقدار بازگشتی آن _رمزگذاری_ است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```js
 console.log(document.characterSet);
-// document's character encoding, such as "ISO-8859-1" or "UTF-8"
+// رمزگذاری نویسه‌های سند، مانند "ISO-8859-1" یا "UTF-8"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
