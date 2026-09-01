@@ -1,11 +1,5 @@
 ---
 title: "Element: scrollBy() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollBy"
-status: "needs-translation"
----
-
----
-title: "Element: scrollBy() method"
 short-title: scrollBy()
 slug: Web/API/Element/scrollBy
 page-type: web-api-instance-method
@@ -14,52 +8,52 @@ browser-compat: api.Element.scrollBy
 
 {{APIRef("CSSOM view API")}}
 
-The **`scrollBy()`** method of the {{domxref("Element")}} interface scrolls an element by the given amount.
+متد **`scrollBy()`** از رابط {{domxref("Element")}}، عنصر را به میزان معین پیمایش می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 scrollBy(xCoord, yCoord)
 scrollBy(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `xCoord`
-  - : The horizontal pixel value that you want to scroll by.
+  - : مقدار پیکسل افقی که می‌خواهید به آن میزان پیمایش انجام شود.
 - `yCoord`
-  - : The vertical pixel value that you want to scroll by.
+  - : مقدار پیکسل عمودی که می‌خواهید به آن میزان پیمایش انجام شود.
 - `options`
-  - : An object containing the following properties:
+  - : یک شیء شامل خصوصیات زیر:
     - `top` {{optional_inline}}
-      - : Specifies the number of pixels along the Y axis to scroll the window or element.
+      - : تعداد پیکسل‌ها در امتداد محور Y را برای پیمایش پنجره یا عنصر مشخص می‌کند.
     - `left` {{optional_inline}}
-      - : Specifies the number of pixels along the X axis to scroll the window or element.
+      - : تعداد پیکسل‌ها در امتداد محور X را برای پیمایش پنجره یا عنصر مشخص می‌کند.
     - `behavior` {{optional_inline}}
-      - : Determines whether scrolling is instant or animates smoothly. This option is a string that must take one of the following values:
-        - `smooth`: The scrolling animates smoothly.
-        - `instant`: The scrolling happens instantly in a single jump.
-        - `auto`: The scroll behavior is determined by the computed value of the {{cssxref("scroll-behavior")}} CSS property on the element.
+      - : تعیین می‌کند که پیمایش فوری است یا به‌صورت نرم و روان انیمیشن شود. این گزینه یک رشته است که باید یکی از مقادیر زیر را بگیرد:
+        - `smooth`: پیمایش به‌صورت نرم انیمیشن می‌شود.
+        - `instant`: پیمایش بلافاصله و در یک پرش انجام می‌شود.
+        - `auto`: رفتار پیمایش توسط مقدار محاسبه‌شده ویژگی CSS {{cssxref("scroll-behavior")}} روی عنصر تعیین می‌شود.
 
-        If omitted, `behavior` defaults to `auto`.
+        اگر حذف شود، `behavior` به‌طور پیش‌فرض `auto` خواهد بود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with an object containing the following property:
+یک {{jsxref("Promise")}} که با یک شیء شامل خصوصیت زیر تکمیل می‌شود:
 
 - `interrupted`
-  - : A boolean value indicating whether the scrolling operation was interrupted (`true`) or not (`false`). Such an interruption typically happens when a programmatic scroll is ongoing, and another programmatic scroll is initiated on the same element before the first one finishes.
+  - : یک مقدار بولی که نشان می‌دهد آیا عملیات پیمایش قطع شده است (`true`) یا نه (`false`). چنین قطعی معمولاً زمانی رخ می‌دهد که یک پیمایش برنامه‌ای در حال انجام است و پیمایش برنامه‌ای دیگری روی همان عنصر قبل از پایان پیمایش اول شروع می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 // scroll an element
 element.scrollBy(300, 300);
 ```
 
-Using `options`:
+استفاده از `options`:
 
 ```js
 element.scrollBy({
@@ -69,13 +63,13 @@ element.scrollBy({
 });
 ```
 
-### Responding to the end of the scroll
+### پاسخ به پایان پیمایش
 
-Our [element methods demo](https://mdn.github.io/dom-examples/scroll-promises/element-methods/) ([see source code](https://github.com/mdn/dom-examples/tree/main/scroll-promises/element-methods)) demonstrates how the promise return value of `scrollBy()` can be used to respond to the end of a scrolling operation. This technique is mostly useful in cases where the scrolling occurs smoothly over time (achieved by setting the [`behavior`](#behavior) option to `smooth`, or by setting the scrolling element's {{cssxref("scroll-behavior")}} property to `smooth`).
+دموی [متدهای عنصر](https://mdn.github.io/dom-examples/scroll-promises/element-methods/) ما ([مشاهده سورس کد](https://github.com/mdn/dom-examples/tree/main/scroll-promises/element-methods)) نشان می‌دهد که چگونه می‌توان از مقدار بازگشتی promise از `scrollBy()` برای پاسخ به پایان یک عملیات پیمایش استفاده کرد. این تکنیک بیشتر در مواردی مفید است که پیمایش به‌صورت نرم و در طول زمان انجام می‌شود (با قرار دادن گزینه [`behavior`](#behavior) روی `smooth` یا با تنظیم ویژگی {{cssxref("scroll-behavior")}} عنصر پیمایش‌شونده روی `smooth`).
 
 #### HTML
 
-Our HTML includes a {{htmlelement("section")}} element containing several paragraphs of content and a {{htmlelement("div")}} element toolbar containing {{htmlelement("button")}} elements that trigger various scrolling operations on the `<section>`.
+HTML ما شامل یک عنصر {{htmlelement("section")}} است که چند پاراگراف محتوا و یک نوار ابزار از عنصر {{htmlelement("div")}} شامل عناصر {{htmlelement("button")}} که عملیات پیمایش مختلفی را روی `<section>` فعال می‌کنند، دارد.
 
 ```html
 <div>
@@ -90,7 +84,7 @@ Our HTML includes a {{htmlelement("section")}} element containing several paragr
 
 #### CSS
 
-We give the `<section>` element a fixed {{cssxref("height")}} and an {{cssxref("overflow-y")}} value of `scroll` so that it scrolls vertically, and set its {{cssxref("scroll-behavior")}} property to `smooth` so that any scroll operations are animated smoothly over time rather than instantly.
+ما به عنصر `<section>` یک {{cssxref("height")}} ثابت و مقدار {{cssxref("overflow-y")}} برابر با `scroll` می‌دهیم تا به‌صورت عمودی پیمایش شود، و ویژگی {{cssxref("scroll-behavior")}} آن را روی `smooth` تنظیم می‌کنیم تا هر عملیات پیمایش به‌جای انجام فوری، به‌صورت نرم و در طول زمان انیمیشن شود.
 
 ```css
 section {
@@ -103,7 +97,7 @@ section {
 }
 ```
 
-We also create two class selectors; when a `fade-out` or `fade-in` class is applied to an element, an {{cssxref("animation")}} is applied so that it smoothly fades out or in, respectively. We also define {{cssxref("@keyframes")}} blocks to define the required {{cssxref("opacity")}} changes for those animations.
+همچنین دو انتخاب‌گر کلاس ایجاد می‌کنیم؛ هنگامی که یک کلاس `fade-out` یا `fade-in` روی یک عنصر اعمال می‌شود، یک {{cssxref("animation")}} اعمال می‌شود تا به‌ترتیب به‌صورت نرم محو یا ظاهر شود. ما همچنین بلوک‌های {{cssxref("@keyframes")}} را برای تعریف تغییرات {{cssxref("opacity")}} موردنیاز برای آن انیمیشن‌ها تعریف می‌کنیم.
 
 ```css
 .fade-out {
@@ -135,11 +129,11 @@ We also create two class selectors; when a `fade-out` or `fade-in` class is appl
 }
 ```
 
-The rest of the CSS is not shown, for brevity.
+بقیه CSS برای اختصار نشان داده نشده است.
 
 #### JavaScript
 
-We start by grabbing references to the `<button>` that runs the `scrollBy()` operation, the toolbar `<div>`, and the scrolling `<section>`:
+ما با دریافت ارجاع به `<button>` که عملیات `scrollBy()` را اجرا می‌کند، `<div>` نوار ابزار، و `<section>` در حال پیمایش شروع می‌کنیم:
 
 ```js
 const scrollByBtn = document.querySelector(".scroll-by");
@@ -147,7 +141,7 @@ const toolbar = document.querySelector("div");
 const section = document.querySelector("section");
 ```
 
-Next, we define a function called `isInterrupted()`, designed to run in response to a scroll operation finishing, which takes a boolean `interrupted` value as a parameter. It logs a message to the console to say that scrolling is finished and indicate whether the operation was interrupted (`interrupted` is `true`) or not. In addition, if `interrupted` is `true`, it calls an `alert()` to clearly indicate the interruption.
+در ادامه، تابعی به نام `isInterrupted()` تعریف می‌کنیم که برای اجرا در پاسخ به پایان یک عملیات پیمایش طراحی شده است و یک مقدار بولی `interrupted` را به‌عنوان پارامتر می‌گیرد. این تابع یک پیام در کنسول ثبت می‌کند تا بگوید پیمایش تمام شده و مشخص کند آیا عملیات قطع شده است (`interrupted` برابر با `true`) یا نه. علاوه بر این، اگر `interrupted` برابر با `true` باشد، یک `alert()` فراخوانی می‌کند تا قطع شدن را به‌وضوح نشان دهد.
 
 ```js
 function isInterrupted(interrupted) {
@@ -158,7 +152,7 @@ function isInterrupted(interrupted) {
 }
 ```
 
-When the button is clicked, we immediately apply the `fade-out` class to the toolbar, causing it to fade out. We then run `scrollBy(0, 200)` on the `<section>` to scroll its content down by 200 pixels, awaiting its promise resolution as we do so and storing the `result` in a constant. When the promise has resolved, we call `isInterrupted()` to report that the scroll operation has finished and whether it was interrupted. Finally, we apply the `fade-in` class to the toolbar, causing it to fade back in again.
+وقتی دکمه کلیک می‌شود، بلافاصله کلاس `fade-out` را روی نوار ابزار اعمال می‌کنیم تا محو شود. سپس `scrollBy(0, 200)` را روی `<section>` اجرا می‌کنیم تا محتوای آن ۲۰۰ پیکسل به پایین پیمایش شود، در حالی که منتظر resolve شدن promise آن هستیم و `result` را در یک ثابت ذخیره می‌کنیم. وقتی promise resolve شد، `isInterrupted()` را فراخوانی می‌کنیم تا گزارش دهد عملیات پیمایش تمام شده است و آیا قطع شده یا نه. در نهایت، کلاس `fade-in` را روی نوار ابزار اعمال می‌کنیم تا دوباره ظاهر شود.
 
 ```js
 scrollByBtn.addEventListener("click", async () => {
@@ -169,19 +163,19 @@ scrollByBtn.addEventListener("click", async () => {
 });
 ```
 
-The code not relevant to `scrollBy()` is not shown, for brevity.
+کدهای نامرتبط با `scrollBy()` برای اختصار نشان داده نشده‌اند.
 
-#### Result
+#### نتیجه
 
-Click the buttons to see the scrolling behavior. Note how the toolbar fades out when a button is pressed, and fades in again once the smooth scrolling is finished. Also try pressing one button and then quickly pressing another button before the first scrolling operation has finished. Note how, in these cases, the scrolling is reported as interrupted.
+برای مشاهده رفتار پیمایش، دکمه‌ها را کلیک کنید. توجه کنید که با فشردن یک دکمه، نوار ابزار محو می‌شود و پس از پایان پیمایش نرم دوباره ظاهر می‌شود. همچنین سعی کنید یک دکمه را فشار دهید و سپس قبل از پایان اولین عملیات پیمایش، دکمه دیگری را سریع فشار دهید. توجه کنید که در این موارد، پیمایش به‌عنوان قطع‌شده گزارش می‌شود.
 
 {{EmbedGHLiveSample("dom-examples/scroll-promises/element-methods/", "100%", 620)}}
 
-You can also [load the demo in a separate tab](https://mdn.github.io/dom-examples/scroll-promises/element-methods/) and view the [source code](https://github.com/mdn/dom-examples/tree/main/scroll-promises/element-methods).
+همچنین می‌توانید [دمو را در برگه‌ای جداگانه بارگذاری کنید](https://mdn.github.io/dom-examples/scroll-promises/element-methods/) و [کد منبع](https://github.com/mdn/dom-examples/tree/main/scroll-promises/element-methods) را مشاهده کنید.
 
-#### Aside on feature detection
+#### نکته‌ای درباره تشخیص ویژگی
 
-If you run this example in a browser that doesn't support promise-returning scroll operations, the scroll operations are still smooth, but the toolbar doesn't fade out and then fade back in once the operation is finished. The feature detection is handled by a function called `supportsScrollPromises()`, which runs a scroll operation and tests whether its return value is a promise:
+اگر این مثال را در مرورگری اجرا کنید که از عملیات پیمایش بازگشت‌دهنده promise پشتیبانی نمی‌کند، عملیات پیمایش همچنان نرم خواهد بود، اما نوار ابزار پس از پایان عملیات محو و دوباره ظاهر نمی‌شود. تشخیص ویژگی توسط تابعی به نام `supportsScrollPromises()` انجام می‌شود که یک عملیات پیمایش اجرا می‌کند و بررسی می‌کند که آیا مقدار بازگشتی آن یک promise است یا نه:
 
 ```js
 function supportsScrollPromises() {
@@ -190,12 +184,12 @@ function supportsScrollPromises() {
 }
 ```
 
-Check out the [source code](https://github.com/mdn/dom-examples/blob/main/scroll-promises/element-methods/index.js) to see how the feature detection is used.
+برای مشاهده نحوه استفاده از تشخیص ویژگی، به [کد منبع](https://github.com/mdn/dom-examples/blob/main/scroll-promises/element-methods/index.js) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
