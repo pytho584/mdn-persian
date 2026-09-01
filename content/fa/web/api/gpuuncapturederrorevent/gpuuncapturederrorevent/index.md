@@ -1,11 +1,5 @@
 ---
-title: "GPUUncapturedErrorEvent: GPUUncapturedErrorEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUUncapturedErrorEvent/GPUUncapturedErrorEvent"
-status: "needs-translation"
----
-
----
-title: "GPUUncapturedErrorEvent: GPUUncapturedErrorEvent() constructor"
+title: "GPUUncapturedErrorEvent: GPUUncapturedErrorEvent() سازنده"
 short-title: GPUUncapturedErrorEvent()
 slug: Web/API/GPUUncapturedErrorEvent/GPUUncapturedErrorEvent
 page-type: web-api-constructor
@@ -14,45 +8,44 @@ browser-compat: api.GPUUncapturedErrorEvent.GPUUncapturedErrorEvent
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUUncapturedErrorEvent()`** constructor creates a new
-{{domxref("GPUUncapturedErrorEvent")}} object instance.
+سازنده **`GPUUncapturedErrorEvent()`** یک نمونه جدید از شیء {{domxref("GPUUncapturedErrorEvent")}} ایجاد می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new GPUUncapturedErrorEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : An enumerated value specifying the type of error. Possible values are:
+  - : یک مقدار شمارشی که نوع خطا را مشخص می‌کند. مقادیر ممکن عبارتند از:
     - `"internal"`
-      - : The error is a {{domxref("GPUInternalError")}}.
+      - : خطا از نوع {{domxref("GPUInternalError")}} است.
     - `"out-of-memory"`
-      - : The error is a {{domxref("GPUOutOfMemoryError")}}.
+      - : خطا از نوع {{domxref("GPUOutOfMemoryError")}} است.
     - `"validation"`
-      - : The error is a {{domxref("GPUValidationError")}}.
+      - : خطا از نوع {{domxref("GPUValidationError")}} است.
 - `options`
-  - : An object, which can contain the following properties:
+  - : یک شیء که می‌تواند شامل ویژگی‌های زیر باشد:
     - `error`
-      - : A {{domxref("GPUError")}} object instance providing access to the details of the error.
+      - : یک نمونه از شیء {{domxref("GPUError")}} که دسترسی به جزئیات خطا را فراهم می‌کند.
 
-## Examples
+## مثال‌ها
 
-A developer would not manually use the constructor to create a `GPUUncapturedErrorEvent` object. The user agent uses this constructor to create an appropriate object when the {{domxref("GPUDevice")}} {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} event fires to allow capturing of an unexpected error.
+یک توسعه‌دهنده به‌صورت دستی از سازنده برای ایجاد یک شیء `GPUUncapturedErrorEvent` استفاده نمی‌کند. عامل کاربر (user agent) از این سازنده برای ایجاد یک شیء مناسب زمانی که رویداد {{domxref("GPUDevice")}} {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} فعال می‌شود استفاده می‌کند تا امکان ضبط یک خطای غیرمنتظره فراهم شود.
 
-See the main [`GPUUncapturedErrorEvent`](/en-US/docs/Web/API/GPUUncapturedErrorEvent#examples) page for an example.
+برای یک مثال به صفحه اصلی [`GPUUncapturedErrorEvent`](/en-US/docs/Web/API/GPUUncapturedErrorEvent#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
-- [WebGPU Error Handling best practices](https://toji.dev/webgpu-best-practices/error-handling)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [بهترین روش‌های مدیریت خطا در WebGPU](https://toji.dev/webgpu-best-practices/error-handling)
