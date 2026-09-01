@@ -1,10 +1,4 @@
 ---
-title: "CSSTransformValue"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue"
-status: "needs-translation"
----
-
----
 title: CSSTransformValue
 slug: Web/API/CSSTransformValue
 page-type: web-api-interface
@@ -13,38 +7,38 @@ browser-compat: api.CSSTransformValue
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSTransformValue`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents `transform-list` values as used by the CSS {{CSSxref('transform')}} property.
+رابط **`CSSTransformValue`** در [API مدل شیء تایپ‌شده CSS](/en-US/docs/Web/API/CSS_Object_Model) مقادیر `transform-list` را که توسط ویژگی CSS {{CSSxref('transform')}} استفاده می‌شوند، نمایش می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSTransformValue.CSSTransformValue", "CSSTransformValue()")}}
-  - : Creates a new `CSSTransformValue` object.
+  - : یک شیء جدید `CSSTransformValue` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("CSSTransformValue.length")}} {{ReadOnlyInline}}
-  - : Returns how many transform components are contained within the `CSSTransformValue`.
+  - : تعداد مؤلفه‌های تبدیل موجود در `CSSTransformValue` را برمی‌گرداند.
 - {{domxref("CSSTransformValue.is2D")}} {{ReadOnlyInline}}
-  - : Returns a boolean indicating whether the transform is 2D or 3D.
+  - : یک مقدار بولی (boolean) برمی‌گرداند که نشان می‌دهد تبدیل دو بعدی است یا سه بعدی.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSStyleValue")}}._
+_همچنین روش‌هایی را از رابط والد خود، {{DOMxRef("CSSStyleValue")}}، به ارث می‌برد._
 
 - {{domxref("CSSTransformValue.toMatrix()")}}
-  - : Returns a new {{domxref('DOMMatrix')}} object.
+  - : یک شیء جدید {{domxref('DOMMatrix')}} برمی‌گرداند.
 - {{domxref('CSSTransformValue.entries()')}}
-  - : Returns an array of a given object's own enumerable property `[key, value]` pairs in the same order as that provided by a {{jsxref("Statements/for...in", "for...in")}} loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).
+  - : یک آرایه از جفت‌های `[key, value]` ویژگی‌های قابل شمارش خود شیء را به همان ترتیبی که توسط حلقه {{jsxref("Statements/for...in", "for...in")}} ارائه می‌شود، برمی‌گرداند (تفاوت در این است که حلقه for-in ویژگی‌های زنجیره پروتوتایپ را نیز شمارش می‌کند).
 - {{domxref('CSSTransformValue.forEach()')}}
-  - : Executes a provided function once for each element of the `CSSTransformValue` object.
+  - : یک تابع داده شده را یک بار برای هر عنصر از شیء `CSSTransformValue` اجرا می‌کند.
 - {{domxref('CSSTransformValue.keys()')}}
-  - : Returns a new _array iterator_ object that contains the keys for each index in the `CSSTransformValue` object.
+  - : یک شیء _تکرارگر آرایه_ جدید برمی‌گرداند که حاوی کلیدهای هر شاخص در شیء `CSSTransformValue` است.
 - {{domxref('CSSTransformValue.values()')}}
-  - : Returns a new _array iterator_ object that contains the values for each index in the `CSSTransformValue` object.
+  - : یک شیء _تکرارگر آرایه_ جدید برمی‌گرداند که حاوی مقادیر هر شاخص در شیء `CSSTransformValue` است.
 
-## Interfaces based on CSSTransformValue
+## رابط‌های مبتنی بر CSSTransformValue
 
 - {{domxref('CSSTranslate')}}
 - {{domxref('CSSRotate')}}
@@ -55,14 +49,14 @@ _Also inherits methods from its parent interface, {{DOMxRef("CSSStyleValue")}}._
 - {{domxref('CSSPerspective')}}
 - {{domxref('CSSMatrixComponent')}}
 
-## Examples
+## مثال‌ها
 
-To Do.
+برای انجام.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
