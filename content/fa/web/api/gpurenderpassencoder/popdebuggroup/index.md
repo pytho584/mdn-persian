@@ -1,11 +1,5 @@
 ---
 title: "GPURenderPassEncoder: popDebugGroup() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/popDebugGroup"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: popDebugGroup() method"
 short-title: popDebugGroup()
 slug: Web/API/GPURenderPassEncoder/popDebugGroup
 page-type: web-api-instance-method
@@ -14,39 +8,38 @@ browser-compat: api.GPURenderPassEncoder.popDebugGroup
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`popDebugGroup()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface ends a render pass debug group, which is begun with a {{domxref("GPURenderPassEncoder.pushDebugGroup", "pushDebugGroup()")}} call.
+متد **`popDebugGroup()`** از رابط {{domxref("GPURenderPassEncoder")}} یک گروه اشکال‌زدایی رندر پاس را پایان می‌دهد که با فراخوانی {{domxref("GPURenderPassEncoder.pushDebugGroup", "pushDebugGroup()")}} آغاز شده است.
 
-This could be used for telemetry, or may be utilized in {{domxref("GPUError")}} messages, browser dev tools, or other services in the future to help with debugging.
+این قابلیت می‌تواند برای تله‌متری (دورسنجی) استفاده شود، یا ممکن است در پیام‌های {{domxref("GPUError")}}، ابزارهای توسعه‌دهنده مرورگر، یا سایر سرویس‌ها در آینده برای کمک به اشکال‌زدایی به کار رود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 popDebugGroup()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`popDebugGroup()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderPassEncoder")}} becomes invalid:
+هنگام فراخوانی **`popDebugGroup()`** معیارهای زیر باید برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPURenderPassEncoder")}} نامعتبر می‌شود:
 
-- The render pass encoder's debug stack is not empty (i.e., at least one render pass debug group was previously started with {{domxref("GPURenderPassEncoder.pushDebugGroup", "pushDebugGroup()")}}).
+- پشته اشکال‌زدایی رمزگذار رندر پاس خالی نباشد (یعنی حداقل یک گروه اشکال‌زدایی رندر پاس قبلاً با {{domxref("GPURenderPassEncoder.pushDebugGroup", "pushDebugGroup()")}} شروع شده باشد).
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
 
 const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);
 
-passEncoder.pushDebugGroup("my_group_marker"); // Start labeled debug group
+passEncoder.pushDebugGroup("my_group_marker"); // شروع گروه اشکال‌زدایی برچسب‌دار
 
 passEncoder.setPipeline(renderPipeline);
 passEncoder.setVertexBuffer(0, vertexBuffer);
@@ -57,14 +50,14 @@ passEncoder.popDebugGroup();
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
