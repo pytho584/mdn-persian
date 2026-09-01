@@ -1,7 +1,5 @@
 ---
 title: "EditContext: updateText() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/updateText"
-status: "needs-translation"
 ---
 
 ---
@@ -16,43 +14,43 @@ browser-compat: api.EditContext.updateText
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`updateText()`** method of the {{domxref("EditContext")}} interface updates the internal text content of an `EditContext` object.
+متد **`updateText()`** از رابط {{domxref("EditContext")}}، محتوای متنی داخلی یک شیء `EditContext` را به‌روزرسانی می‌کند.
 
-This method doesn't need to be used when the user types text in the associated element. The `EditContext` object will automatically update its internal text content, and will fire {{domxref("EditContext.textupdate_event", "textupdate")}} events as needed.
+هنگامی که کاربر متنی را در عنصر مرتبط تایپ می‌کند، نیازی به استفاده از این متد نیست. شیء `EditContext` به‌طور خودکار محتوای متنی داخلی خود را به‌روزرسانی کرده و در صورت نیاز رویدادهای {{domxref("EditContext.textupdate_event", "textupdate")}} را فعال می‌کند.
 
-This method can, however, be used when the user interacts with the text content in other ways, such as when pasting text from the clipboard.
+با این حال، زمانی که کاربر به روش‌های دیگری با محتوای متنی تعامل دارد، مانند چسباندن متن از کلیپ‌بورد، می‌توان از این متد استفاده کرد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 updateText(rangeStart, rangeEnd, text)
 ```
 
-### Parameters
+### پارامترها
 
 - `rangeStart`
-  - : A number representing the start of the range of text to replace.
+  - : عددی که شروع محدوده متنی را که باید جایگزین شود، نشان می‌دهد.
 - `rangeEnd`
-  - : A number representing the end of the range of text to replace.
+  - : عددی که پایان محدوده متنی را که باید جایگزین شود، نشان می‌دهد.
 - `text`
-  - : A string representing the new text content.
+  - : رشته‌ای که محتوای متنی جدید را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None (`undefined`).
+هیچ مقدار (`undefined`).
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the method is called with less than three arguments.
+  - : اگر متد با کمتر از سه آرگومان فراخوانده شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Updating the editor when the user pastes text in it
+### به‌روزرسانی ویرایشگر هنگام چسباندن متن توسط کاربر
 
-This example shows how to use the `updateText` method to update the text content in the `EditContext` of a `<canvas>` element when the user presses the <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>V</kbd> shortcut to paste some text.
+این مثال نشان می‌دهد که چگونه می‌توان از متد `updateText` برای به‌روزرسانی محتوای متنی در `EditContext` یک عنصر `<canvas>` استفاده کرد، زمانی که کاربر میان‌بر <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>V</kbd> را برای چسباندن متن فشار می‌دهد.
 
-The example also uses the {{domxref("Clipboard.readText()")}} method to read the text from the clipboard.
+این مثال همچنین از متد {{domxref("Clipboard.readText()")}} برای خواندن متن از کلیپ‌بورد استفاده می‌کند.
 
 ```html
 <canvas id="editor-canvas"></canvas>
@@ -97,14 +95,14 @@ canvas.addEventListener("keydown", async (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{DOMxRef("EditContext")}} interface it belongs to.
+- رابط {{DOMxRef("EditContext")}} که این متد به آن تعلق دارد.
