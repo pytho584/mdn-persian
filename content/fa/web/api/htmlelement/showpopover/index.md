@@ -1,7 +1,5 @@
 ---
 title: "HTMLElement: showPopover() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/showPopover"
-status: "needs-translation"
 ---
 
 ---
@@ -14,40 +12,40 @@ browser-compat: api.HTMLElement.showPopover
 
 {{APIRef("Popover API")}}
 
-The **`showPopover()`** method of the {{domxref("HTMLElement")}} interface shows a {{domxref("Popover_API", "popover", "", "nocode")}} element (i.e., one that has a valid [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) attribute) by adding it to the {{glossary("top layer")}}.
+متد **`showPopover()`** از رابط {{domxref("HTMLElement")}} یک عنصر popover (یعنی عنصری که ویژگی [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) معتبر دارد) را با افزودن آن به {{glossary("top layer", "لایه بالایی")}} نمایش می‌دهد.
 
-When `showPopover()` is called on an element with the [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) attribute that is currently hidden, a {{domxref("HTMLElement/beforetoggle_event", "beforetoggle")}} event will be fired, followed by the popover showing, and then the {{domxref("HTMLElement/toggle_event", "toggle")}} event firing.
+هنگامی که `showPopover()` روی عنصری با ویژگی [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) که در حال حاضر پنهان است فراخوانی شود، رویداد {{domxref("HTMLElement/beforetoggle_event", "beforetoggle")}} به راه می‌افتد، سپس popover نمایش داده می‌شود و در ادامه رویداد {{domxref("HTMLElement/toggle_event", "toggle")}} رخ می‌دهد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 showPopover()
 showPopover(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object that can contain the following properties:
+  - : یک شیء که می‌تواند ویژگی‌های زیر را شامل شود:
     - `source` {{optional_inline}}
-      - : An {{domxref("HTMLElement")}} reference; programmatically defines the invoker of the popover associated with the show action, that is, its control element. Establishing a relationship between a popover and its invoker using the `source` option has two useful effects:
-        - The browser places the popover in a logical position in the keyboard focus navigation order when shown. This makes the popover more accessible to keyboard users (see also [Popover accessibility features](/en-US/docs/Web/API/Popover_API/Using#popover_accessibility_features)).
-        - The browser creates an implicit anchor reference between the two, making it very convenient to position popovers relative to their controls using [CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning). See [Popover anchor positioning](/en-US/docs/Web/API/Popover_API/Using#popover_anchor_positioning) for more details.
+      - : یک ارجاع به {{domxref("HTMLElement")}}؛ به صورت برنامه‌نویسی عنصر فراخواننده popover مرتبط با عمل نمایش را تعریف می‌کند، یعنی عنصر کنترل آن. برقراری ارتباط بین یک popover و فراخواننده آن با استفاده از گزینه `source` دو اثر مفید دارد:
+        - مرورگر هنگام نمایش، popover را در موقعیتی منطقی در ترتیب پیمایش فوکوس صفحه‌کلید قرار می‌دهد. این کار دسترسی کاربران صفحه‌کلید را به popover بهبود می‌بخشد (همچنین به [ویژگی‌های دسترسی Popover](/en-US/docs/Web/API/Popover_API/Using#popover_accessibility_features) مراجعه کنید).
+        - مرورگر یک ارجاع anchor ضمنی بین این دو ایجاد می‌کند که موقعیت‌دهی popoverها را نسبت به عناصر کنترلی آن‌ها با استفاده از [موقعیت‌دهی anchor در CSS](/en-US/docs/Web/CSS/Guides/Anchor_positioning) بسیار راحت می‌سازد. برای جزئیات بیشتر به [موقعیت‌دهی anchor در Popover](/en-US/docs/Web/API/Popover_API/Using#popover_anchor_positioning) مراجعه کنید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if this method is called while another popover is already in the process of being shown or hidden (e.g., within a `beforetoggle` event listener).
+  - : اگر این متد در حالی فراخوانی شود که یک popover دیگر در حال نمایش یا پنهان شدن است (مثلاً در داخل یک شنونده رویداد `beforetoggle`) این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example provides functionality to show a popover by pressing a particular key on the keyboard.
+مثال زیر قابلیتی را فراهم می‌کند که با فشردن یک کلید خاص روی صفحه‌کلید، یک popover نمایش داده شود.
 
-First, some HTML:
+ابتدا کمی HTML:
 
 ```html
 <div id="mypopover" popover>
@@ -68,7 +66,7 @@ First, some HTML:
 </div>
 ```
 
-And now the JavaScript to wire up the functionality:
+و حالا جاوااسکریپت برای اتصال این قابلیت:
 
 ```js
 const popover = document.getElementById("mypopover");
@@ -80,14 +78,14 @@ document.addEventListener("keydown", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Popover API](/en-US/docs/Web/API/Popover_API)
