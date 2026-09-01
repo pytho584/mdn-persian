@@ -1,11 +1,5 @@
 ---
 title: "Document: querySelector() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"
-status: "needs-translation"
----
-
----
-title: "Document: querySelector() method"
 short-title: querySelector()
 slug: Web/API/Document/querySelector
 page-type: web-api-instance-method
@@ -14,71 +8,59 @@ browser-compat: api.Document.querySelector
 
 {{ApiRef("DOM")}}
 
-The {{domxref("Document")}} method **`querySelector()`**
-returns the first {{domxref("Element")}} within the document that matches the specified
-[CSS selector](/en-US/docs/Web/CSS/Guides/Selectors), or group of CSS selectors. If no matches are found, `null` is returned.
+متد **`querySelector()`** از {{domxref("Document")}}، نخستین {{domxref("Element")}} درون سند را بازمی‌گرداند که با [سلکتور CSS](/en-US/docs/Web/CSS/Guides/Selectors) یا گروهی از سلکتورهای CSS مشخص‌شده مطابقت دارد. اگر هیچ موردی یافت نشود، مقدار `null` بازگردانده می‌شود.
 
-The matching is done using depth-first pre-order traversal of the document's nodes starting with the first element in the document's markup and iterating through sequential nodes by order of the number of child nodes.
+تطبیق با استفاده از پیمایش پیش‌ترتیبِ عمق-اول روی گره‌های سند انجام می‌شود؛ به این ترتیب که از نخستین عنصر در نشانه‌گذاری سند شروع شده و گره‌های متوالی به‌ترتیب تعداد گره‌های فرزند پیمایش می‌شوند.
 
-If the specified selector matches an ID that is incorrectly used more than once in the
-document, the first element with that ID is returned.
+اگر سلکتور مشخص‌شده با یک ID مطابقت داشته باشد که به‌طور نادرست بیش از یک بار در سند استفاده شده است، نخستین عنصر دارای آن ID بازگردانده می‌شود.
 
-[CSS pseudo-elements](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) will never return any elements.
+شبه‌عنصرهای CSS هرگز هیچ عنصری را بازنمی‌گردانند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 querySelector(selectors)
 ```
 
-### Parameters
+### پارامترها
 
 - `selectors`
-  - : A string containing one or more selectors to match. This string
-    must be a valid CSS selector string; if it isn't, a `SyntaxError` exception
-    is thrown.
+  - : رشته‌ای شامل یک یا چند سلکتور برای تطبیق. این رشته باید یک رشتهٔ سلکتور CSS معتبر باشد؛ در غیر این صورت، استثنای `SyntaxError` پرتاب می‌شود.
 
-    Note that the HTML specification does not require attribute values to be valid CSS identifiers. If a [`class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) or [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute value is not a valid CSS identifier, then you must escape it before using it in a selector, either by calling {{domxref("CSS.escape_static", "CSS.escape()")}} on the value, or using one of the techniques described in [Escaping characters](/en-US/docs/Web/CSS/Reference/Values/ident#escaping_characters). See [Escaping attribute values](#escaping_attribute_values) for an example.
+    توجه داشته باشید که استاندارد HTML الزامی نمی‌کند که مقادیر ویژگی‌ها شناسه‌های معتبر CSS باشند. اگر مقدار ویژگی [`class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) یا [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) یک شناسهٔ معتبر CSS نباشد، باید قبل از استفاده در سلکتور، آن را escape کنید؛ یا با فراخوانی {{domxref("CSS.escape_static", "CSS.escape()")}} روی مقدار، یا با استفاده از یکی از تکنیک‌های توصیف‌شده در [گریز از کاراکترها](/en-US/docs/Web/CSS/Reference/Values/ident#escaping_characters). برای مثال به [گریز از مقادیر ویژگی](#escaping_attribute_values) مراجعه کنید.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("Element")}} object representing the first element in the document
-that matches the specified set of [CSS selectors](/en-US/docs/Web/CSS/Guides/Selectors), or `null` if there are no matches.
+یک شیء {{domxref("Element")}} که نشان‌دهندهٔ نخستین عنصر در سند است و با مجموعهٔ مشخص‌شده از [سلکتورهای CSS](/en-US/docs/Web/CSS/Guides/Selectors) مطابقت دارد، یا اگر هیچ موردی یافت نشود، `null`.
 
-If you need a list of all elements matching the specified selectors, you should use
-{{domxref("Document.querySelectorAll", "querySelectorAll()")}} instead.
+اگر به فهرستی از همهٔ عناصر منطبق با سلکتورهای مشخص‌شده نیاز دارید، باید از {{domxref("Document.querySelectorAll", "querySelectorAll()")}} استفاده کنید.
 
-### Exceptions
+### استثناها
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if the syntax of the specified _selectors_ is invalid.
+  - : اگر نحو (syntax) سلکتورهای مشخص‌شده نامعتبر باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Finding the first element matching a class
+### یافتن نخستین عنصر منطبق با یک کلاس
 
-In this example, the first element in the document with the class
-`myclass` is returned:
+در این مثال، نخستین عنصر در سند که دارای کلاس `myclass` است بازگردانده می‌شود:
 
 ```js
 const el = document.querySelector(".myclass");
 ```
 
-### Complex selectors
+### سلکتورهای پیچیده
 
-Selectors can also be really powerful, as demonstrated in the following example. Here,
-the first {{HTMLElement("input")}} element with the name "login"
-(`<input name="login"/>`) located inside a {{HTMLElement("div")}} whose
-class is "user-panel main" (`<div class="user-panel main">`) in the
-document is returned:
+سلکتورها می‌توانند واقعاً قدرتمند باشند، همان‌طور که در مثال زیر نشان داده شده است. در این‌جا، نخستین عنصر {{HTMLElement("input")}} با نام «login» (`<input name="login"/>`) که در داخل یک {{HTMLElement("div")}} با کلاس «user-panel main» (`<div class="user-panel main">`) در سند قرار دارد، بازگردانده می‌شود:
 
 ```js
 const el = document.querySelector("div.user-panel.main input[name='login']");
 ```
 
-### Negation
+### نفی
 
-As all CSS selector strings are valid, you can also negate selectors:
+چون همهٔ رشته‌های سلکتور CSS معتبر هستند، می‌توانید سلکتورها را نیز نفی کنید:
 
 ```js
 const el = document.querySelector(
@@ -86,18 +68,17 @@ const el = document.querySelector(
 );
 ```
 
-This will select an input with a parent div with the `user-panel` class but
-not the `main` class.
+این کار یک input را انتخاب می‌کند که والد آن یک div با کلاس `user-panel` است اما کلاس `main` را ندارد.
 
-### Escaping attribute values
+### گریز از مقادیر ویژگی
 
-This example shows that if an HTML document contains an [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) which is not a valid [CSS identifier](/en-US/docs/Web/CSS/Reference/Values/ident), then we must escape the attribute value before using it in `querySelector()`.
+این مثال نشان می‌دهد که اگر یک سند HTML شامل [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) باشد که یک شناسهٔ معتبر CSS نیست، باید مقدار ویژگی را قبل از استفاده در `querySelector()` escape کنیم.
 
 #### HTML
 
-In the following code, a {{htmlelement("div")}} element has an `id` of `"this?element"`, which is not a valid CSS identifier, because the `"?"` character is not allowed in CSS identifiers.
+در کد زیر، یک عنصر {{htmlelement("div")}} دارای `id` برابر با `"this?element"` است که یک شناسهٔ معتبر CSS نیست، زیرا کاراکتر `"?"` در شناسه‌های CSS مجاز نیست.
 
-We also have three buttons, and a {{htmlelement("pre")}} element for logging errors.
+همچنین سه دکمه و یک عنصر {{htmlelement("pre")}} برای ثبت خطاها داریم.
 
 ```html
 <div id="this?element"></div>
@@ -122,11 +103,11 @@ div {
 
 #### JavaScript
 
-All three buttons, when clicked, try to select the `<div>`, and then set its background color to a random value.
+هر سه دکمه، هنگام کلیک، سعی می‌کنند `<div>` را انتخاب کرده و سپس رنگ پس‌زمینهٔ آن را به یک مقدار تصادفی تغییر دهند.
 
-- The first button uses the `"this?element"` value directly.
-- The second button escapes the value using {{domxref("CSS.escape_static", "CSS.escape()")}}.
-- The third button explicitly escapes the `"?"` character using a backslash. Note that we must also escape the backslash itself, using another backslash, like: `"\\?"`.
+- دکمهٔ اول مستقیماً از مقدار `"this?element"` استفاده می‌کند.
+- دکمهٔ دوم مقدار را با استفاده از {{domxref("CSS.escape_static", "CSS.escape()")}} escape می‌کند.
+- دکمهٔ سوم به‌طور صریح کاراکتر `"?"` را با استفاده از بک‌اسلش escape می‌کند. توجه داشته باشید که باید خود بک‌اسلش را نیز با یک بک‌اسلش دیگر escape کنیم، مانند: `"\\?"`.
 
 ```js
 const log = document.querySelector("#log");
@@ -160,23 +141,23 @@ document.querySelector("#manual-escape").addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-Clicking the first button gives an error, while the second and third buttons work properly.
+کلیک روی دکمهٔ اول یک خطا ایجاد می‌کند، در حالی که دکمه‌های دوم و سوم به‌درستی کار می‌کنند.
 
 {{embedlivesample("escaping_attribute_values", "", 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Selection and traversal on the DOM tree](/en-US/docs/Web/API/Document_Object_Model/Selection_and_traversal_on_the_DOM_tree)
+- [انتخاب و پیمایش در درخت DOM](/en-US/docs/Web/API/Document_Object_Model/Selection_and_traversal_on_the_DOM_tree)
 - {{domxref("Element.querySelector()")}}
 - {{domxref("Document.querySelectorAll()")}}
 - {{domxref("Element.querySelectorAll()")}}
