@@ -1,11 +1,5 @@
 ---
 title: "Origin private file system"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system"
-status: "needs-translation"
----
-
----
-title: Origin private file system
 slug: Web/API/File_System_API/Origin_private_file_system
 page-type: guide
 browser-compat: api.StorageManager.getDirectory
@@ -13,45 +7,45 @@ browser-compat: api.StorageManager.getDirectory
 
 {{securecontext_header}}{{DefaultAPISidebar("File System API")}}{{AvailableInWorkers}}
 
-The **origin private file system** (OPFS) is a storage endpoint provided as part of the [File System API](/en-US/docs/Web/API/File_System_API), which is private to the origin of the page and not visible to the user like the regular file system. It provides access to a special kind of file that is highly optimized for performance and offers in-place write access to its content.
+**سیستم فایل خصوصی مبدأ** (OPFS) یک نقطه پایانی ذخیره‌سازی است که به عنوان بخشی از [File System API](/en-US/docs/Web/API/File_System_API) ارائه می‌شود و نسبت به مبدأ صفحه خصوصی است و مانند سیستم فایل معمولی برای کاربر قابل مشاهده نیست. این سیستم دسترسی به نوع خاصی از فایل را فراهم می‌کند که برای کارایی بهینه‌سازی شده و امکان نوشتن در محل (in-place) در محتوای آن را می‌دهد.
 
-## Working with files using the File System Access API
+## کار با فایل‌ها با استفاده از File System Access API
 
-The [File System Access API](https://wicg.github.io/file-system-access/), which extends the [File System API](/en-US/docs/Web/API/File_System_API), provides access to files using picker methods. For example:
+[File System Access API](https://wicg.github.io/file-system-access/) که [File System API](/en-US/docs/Web/API/File_System_API) را گسترش می‌دهد، با استفاده از روش‌های انتخاب فایل (picker)، دسترسی به فایل‌ها را فراهم می‌کند. برای مثال:
 
-1. {{domxref("Window.showOpenFilePicker()")}} allows the user to choose a file to access, which results in a {{domxref("FileSystemFileHandle")}} object being returned.
-2. {{domxref("FileSystemFileHandle.getFile()")}} is called to get access to the file's contents, the content is modified using {{domxref("FileSystemFileHandle.createWritable()")}} / {{domxref("FileSystemWritableFileStream.write()")}}.
-3. {{domxref("FileSystemHandle.requestPermission()", "FileSystemHandle.requestPermission({mode: 'readwrite'})")}} is used to request the user's permission to save the changes.
-4. If the user accepts the permission request, the changes are saved back to the original file.
+1. متد {{domxref("Window.showOpenFilePicker()")}} به کاربر امکان می‌دهد فایلی را برای دسترسی انتخاب کند که در نتیجه یک شیء {{domxref("FileSystemFileHandle")}} بازگردانده می‌شود.
+2. متد {{domxref("FileSystemFileHandle.getFile()")}} برای دسترسی به محتویات فایل فراخوانی می‌شود و محتوا با استفاده از {{domxref("FileSystemFileHandle.createWritable()")}} / {{domxref("FileSystemWritableFileStream.write()")}} تغییر می‌کند.
+3. از {{domxref("FileSystemHandle.requestPermission()", "FileSystemHandle.requestPermission({mode: 'readwrite'})")}} برای درخواست مجوز کاربر جهت ذخیره تغییرات استفاده می‌شود.
+4. اگر کاربر درخواست مجوز را بپذیرد، تغییرات در فایل اصلی ذخیره می‌شوند.
 
-This works, but it has some restrictions. These changes are being made to the user-visible file system, so there are a lot of security checks in place (for example, [safe browsing](https://developers.google.com/safe-browsing) in Chrome) to guard against malicious content being written to that file system. These writes are not in-place, and instead use a temporary file. The original is not modified unless it passes all the security checks.
+این روش کار می‌کند، اما محدودیت‌هایی دارد. این تغییرات روی سیستم فایل قابل مشاهده توسط کاربر اعمال می‌شوند، بنابراین بررسی‌های امنیتی زیادی (به عنوان مثال، [مرور امن](https://developers.google.com/safe-browsing) در کروم) برای محافظت در برابر نوشتن محتوای مخرب در آن سیستم فایل وجود دارد. این نوشتن‌ها در محل انجام نمی‌شوند و در عوض از یک فایل موقت استفاده می‌کنند. فایل اصلی تغییر نمی‌کند مگر اینکه همه بررسی‌های امنیتی را پشت سر بگذارد.
 
-As a result, these operations are fairly slow. It is not so noticeable when you are making small text updates, but the performance suffers when making more significant, large-scale file updates such as [SQLite](https://sqlite.org/wasm) database modifications.
+در نتیجه، این عملیات نسبتاً کند هستند. زمانی که به‌روزرسانی‌های متنی کوچک انجام می‌دهید، این کندی چندان محسوس نیست، اما هنگام انجام تغییرات فایل بزرگ‌تر و در مقیاس وسیع مانند تغییرات پایگاه داده [SQLite](https://sqlite.org/wasm)، کارایی آسیب می‌بیند.
 
-## How does the OPFS solve such problems?
+## OPFS چگونه چنین مشکلاتی را حل می‌کند؟
 
-The OPFS offers low-level, byte-by-byte file access, which is private to the origin of the page and not visible to the user. As a result, it doesn't require the same series of security checks and permission grants and is therefore faster than File System Access API calls. It also has a set of synchronous calls available (other File System API calls are asynchronous) that can be run inside web workers only so as not to block the main thread.
+OPFS دسترسی سطح پایین و بایت‌به‌بایت به فایل‌ها ارائه می‌دهد که نسبت به مبدأ صفحه خصوصی است و برای کاربر قابل مشاهده نیست. در نتیجه، به همان مجموعه بررسی‌های امنیتی و اعطای مجوزها نیازی ندارد و بنابراین از فراخوانی‌های File System Access API سریع‌تر است. همچنین مجموعه‌ای از فراخوانی‌های همزمان (synchronous) در دسترس دارد (سایر فراخوانی‌های File System API ناهمزمان هستند) که فقط می‌توانند در web workerها اجرا شوند تا نخ اصلی مسدود نشود.
 
-To summarize how the OPFS differs from the user-visible file system:
+به طور خلاصه، تفاوت OPFS با سیستم فایل قابل مشاهده توسط کاربر به این صورت است:
 
-- The OPFS is subject to [browser storage quota restrictions](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria), just like any other origin-partitioned storage mechanism (for example {{domxref("IndexedDB API", "IndexedDB API", "", "nocode")}}). You can access the amount of storage space the OPFS is using via {{domxref("StorageManager.estimate()", "navigator.storage.estimate()")}}.
-- Clearing storage data for the site deletes the OPFS.
-- Permission prompts and security checks are not required to access files in the OPFS.
-- Browsers persist the contents of the OPFS to disk somewhere, but you cannot expect to find the created files matched one-to-one. The OPFS is not intended to be visible to the user.
+- OPFS مشمول [محدودیت‌های سهمیه ذخیره‌سازی مرورگر](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria) است، دقیقاً مانند هر مکانیزم ذخیره‌سازی تقسیم‌بندی‌شده بر اساس مبدأ (مثلاً {{domxref("IndexedDB API", "IndexedDB API", "", "nocode")}}). می‌توانید میزان فضای ذخیره‌سازی استفاده‌شده توسط OPFS را از طریق {{domxref("StorageManager.estimate()", "navigator.storage.estimate()")}} مشاهده کنید.
+- پاک کردن داده‌های ذخیره‌سازی سایت، OPFS را حذف می‌کند.
+- برای دسترسی به فایل‌ها در OPFS، درخواست مجوز و بررسی‌های امنیتی لازم نیست.
+- مرورگرها محتویات OPFS را در جایی روی دیسک نگه می‌دارند، اما نباید انتظار داشته باشید که فایل‌های ایجاد شده را یک‌به‌یک مطابقت دهید. OPFS برای نمایش به کاربر طراحی نشده است.
 
-## How do you access the OPFS?
+## چگونه به OPFS دسترسی پیدا می‌کنید؟
 
-To access the OPFS in the first place, you call the {{domxref("StorageManager.getDirectory()", "navigator.storage.getDirectory()")}} method. This returns a reference to a {{domxref("FileSystemDirectoryHandle")}} object that represents the root of the OPFS.
+برای دسترسی به OPFS، ابتدا متد {{domxref("StorageManager.getDirectory()", "navigator.storage.getDirectory()")}} را فراخوانی می‌کنید. این متد یک ارجاع به یک شیء {{domxref("FileSystemDirectoryHandle")}} برمی‌گرداند که ریشه OPFS را نشان می‌دهد.
 
-## Manipulating the OPFS from the main thread
+## دستکاری OPFS از نخ اصلی
 
-When accessing the OPFS from the main thread, you will use asynchronous, {{jsxref("Promise")}}-based APIs. You can access file ({{domxref("FileSystemFileHandle")}}) and directory ({{domxref("FileSystemDirectoryHandle")}}) handles by calling {{domxref("FileSystemDirectoryHandle.getFileHandle()")}} and {{domxref("FileSystemDirectoryHandle.getDirectoryHandle()")}} respectively on the {{domxref("FileSystemDirectoryHandle")}} object representing the OPFS root (and child directories, as they are created).
+هنگام دسترسی به OPFS از نخ اصلی، از APIهای ناهمزمان مبتنی بر {{jsxref("Promise")}} استفاده می‌کنید. می‌توانید با فراخوانی {{domxref("FileSystemDirectoryHandle.getFileHandle()")}} و {{domxref("FileSystemDirectoryHandle.getDirectoryHandle()")}} به ترتیب روی شیء {{domxref("FileSystemDirectoryHandle")}} که نمایانگر ریشه OPFS است (و دایرکتوری‌های فرزند، در صورت ایجاد)، به دسته‌های فایل ({{domxref("FileSystemFileHandle")}}) و دایرکتوری ({{domxref("FileSystemDirectoryHandle")}}) دسترسی پیدا کنید.
 
 > [!NOTE]
-> Passing `{ create: true }` into the above methods causes the file or folder to be created if it doesn't exist.
+> ارسال `{ create: true }` به روش‌های بالا باعث می‌شود فایل یا پوشه در صورت وجود نداشتن ایجاد شود.
 
 ```js
-// Create a hierarchy of files and folders
+// یک سلسله‌مراتب از فایل‌ها و پوشه‌ها ایجاد کنید
 const fileHandle = await opfsRoot.getFileHandle("my first file", {
   create: true,
 });
@@ -67,50 +61,50 @@ const nestedDirectoryHandle = await directoryHandle.getDirectoryHandle(
   { create: true },
 );
 
-// Access existing files and folders via their names
+// دسترسی به فایل‌ها و پوشه‌های موجود از طریق نام آن‌ها
 const existingFileHandle = await opfsRoot.getFileHandle("my first file");
 const existingDirectoryHandle =
   await opfsRoot.getDirectoryHandle("my first folder");
 ```
 
-### Reading a file
+### خواندن یک فایل
 
-1. Make a {{domxref("FileSystemDirectoryHandle.getFileHandle()")}} call to return a {{domxref("FileSystemFileHandle")}} object.
-2. Call the {{domxref("FileSystemFileHandle.getFile()")}} object to return a {{domxref("File")}} object. This is a specialized type of {{domxref("Blob")}}, and as such can be manipulated just like any other `Blob`. For example, you could access the text content directly via {{domxref("Blob.text()")}}.
+1. یک فراخوانی {{domxref("FileSystemDirectoryHandle.getFileHandle()")}} انجام دهید تا یک شیء {{domxref("FileSystemFileHandle")}} بازگردانده شود.
+2. متد {{domxref("FileSystemFileHandle.getFile()")}} را فراخوانی کنید تا یک شیء {{domxref("File")}} بازگردانده شود. این یک نوع تخصصی از {{domxref("Blob")}} است و بنابراین می‌توان آن را مانند هر `Blob` دیگری دستکاری کرد. برای مثال، می‌توانید مستقیماً از طریق {{domxref("Blob.text()")}} به محتوای متنی دسترسی پیدا کنید.
 
-### Writing a file
+### نوشتن یک فایل
 
-1. Make a {{domxref("FileSystemDirectoryHandle.getFileHandle()")}} call to return a {{domxref("FileSystemFileHandle")}} object.
-2. Call {{domxref("FileSystemFileHandle.createWritable()")}} to return a {{domxref("FileSystemWritableFileStream")}} object, which is a specialized type of {{domxref("WritableStream")}}.
-3. Write contents to it using a {{domxref("FileSystemWritableFileStream.write()")}} call.
-4. Close the stream using {{domxref("WritableStream.close()")}}.
+1. یک فراخوانی {{domxref("FileSystemDirectoryHandle.getFileHandle()")}} انجام دهید تا یک شیء {{domxref("FileSystemFileHandle")}} بازگردانده شود.
+2. متد {{domxref("FileSystemFileHandle.createWritable()")}} را فراخوانی کنید تا یک شیء {{domxref("FileSystemWritableFileStream")}} بازگردانده شود که نوع تخصصی {{domxref("WritableStream")}} است.
+3. محتوا را با استفاده از یک فراخوانی {{domxref("FileSystemWritableFileStream.write()")}} در آن بنویسید.
+4. جریان را با استفاده از {{domxref("WritableStream.close()")}} ببندید.
 
-### Deleting a file or folder
+### حذف یک فایل یا پوشه
 
-You can call {{domxref("FileSystemDirectoryHandle.removeEntry()")}} on the parent directory, passing it the name of the item you want to remove:
+می‌توانید {{domxref("FileSystemDirectoryHandle.removeEntry()")}} را روی دایرکتوری والد فراخوانی کنید و نام موردی را که می‌خواهید حذف کنید به آن بدهید:
 
 ```js
 directoryHandle.removeEntry("my first nested file");
 ```
 
-You can also call {{domxref("FileSystemHandle.remove()")}} on the {{domxref("FileSystemFileHandle")}} or {{domxref("FileSystemDirectoryHandle")}} representing the item you want to remove. To delete a folder including all subfolders, pass the `{ recursive: true }` option.
+همچنین می‌توانید {{domxref("FileSystemHandle.remove()")}} را روی {{domxref("FileSystemFileHandle")}} یا {{domxref("FileSystemDirectoryHandle")}} که نمایانگر مورد موردنظر برای حذف است فراخوانی کنید. برای حذف یک پوشه شامل همه زیرپوشه‌ها، گزینه `{ recursive: true }` را ارسال کنید.
 
 ```js
 await fileHandle.remove();
 await directoryHandle.remove({ recursive: true });
 ```
 
-The following provides a quick way to clear the entire OPFS:
+روش زیر یک راه سریع برای پاک کردن کل OPFS ارائه می‌دهد:
 
 ```js
 await (await navigator.storage.getDirectory()).remove({ recursive: true });
 ```
 
-### Listing the contents of a folder
+### فهرست کردن محتویات یک پوشه
 
-{{domxref("FileSystemDirectoryHandle")}} is an [asynchronous iterator](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols). As such, you can iterate over it with a [`for await...of`](/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) loop and standard methods such as [`entries()`](/en-US/docs/Web/API/FileSystemDirectoryHandle/entries), [`values()`](/en-US/docs/Web/API/FileSystemDirectoryHandle/entries), and [`keys()`](/en-US/docs/Web/API/FileSystemDirectoryHandle/entries).
+{{domdomain("FileSystemDirectoryHandle")}} یک [تکرارگر ناهمزمان](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols) است. بنابراین می‌توانید با یک حلقه [`for await...of`](/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) و روش‌های استانداردی مانند [`entries()`](/en-US/docs/Web/API/FileSystemDirectoryHandle/entries)، [`values()`](/en-US/docs/Web/API/FileSystemDirectoryHandle/entries) و [`keys()`](/en-US/docs/Web/API/FileSystemDirectoryHandle/entries) روی آن تکرار کنید.
 
-For example:
+برای مثال:
 
 ```js
 for await (let [name, handle] of directoryHandle) {
@@ -123,14 +117,14 @@ for await (let name of directoryHandle.keys()) {
 }
 ```
 
-## Manipulating the OPFS from a web worker
+## دستکاری OPFS از یک web worker
 
-Web Workers don't block the main thread, which means you can use the synchronous file access APIs in this context. Synchronous APIs are faster as they avoid having to deal with promises.
+web workerها نخ اصلی را مسدود نمی‌کنند، بنابراین می‌توانید از APIهای دسترسی همزمان به فایل در این زمینه استفاده کنید. APIهای همزمان سریع‌تر هستند، زیرا نیازی به کار با قول‌ها (promise) ندارند.
 
-You can synchronously access a file by calling {{domxref("FileSystemFileHandle.createSyncAccessHandle()")}} on a regular {{domxref("FileSystemFileHandle")}}:
+می‌توانید با فراخوانی {{domdomain("FileSystemFileHandle.createSyncAccessHandle()")}} روی یک {{domdomain("FileSystemFileHandle")}} معمولی به صورت همزمان به یک فایل دسترسی پیدا کنید:
 
 > [!NOTE]
-> Despite having "Sync" in its name, the `createSyncAccessHandle()` method itself is asynchronous.
+> با وجود اینکه «Sync» در نام آن وجود دارد، خود متد `createSyncAccessHandle()` ناهمزمان است.
 
 ```js
 const opfsRoot = await navigator.storage.getDirectory();
@@ -140,16 +134,16 @@ const fileHandle = await opfsRoot.getFileHandle("my-high-speed-file.txt", {
 const syncAccessHandle = await fileHandle.createSyncAccessHandle();
 ```
 
-There are a number of _synchronous_ methods available on the returned {{domxref("FileSystemSyncAccessHandle")}}:
+روش‌های _همزمان_ متعددی روی {{domdomain("FileSystemSyncAccessHandle")}} برگشتی موجود است:
 
-- {{domxref("FileSystemSyncAccessHandle.getSize", "getSize()")}}: Returns the size of the file in bytes.
-- {{domxref("FileSystemSyncAccessHandle.write", "write()")}}: Writes the content of a buffer into the file, optionally at a given offset, and returns the number of written bytes. Checking the returned number of written bytes allows callers to detect and handle errors and partial writes.
-- {{domxref("FileSystemSyncAccessHandle.read", "read()")}}: Reads the contents of the file into a buffer, optionally at a given offset.
-- {{domxref("FileSystemSyncAccessHandle.truncate", "truncate()")}}: Resizes the file to the given size.
-- {{domxref("FileSystemSyncAccessHandle.flush", "flush()")}}: Ensures that the file contents contain all the modifications done through `write()`.
-- {{domxref("FileSystemSyncAccessHandle.close", "close()")}}: Closes the access handle.
+- {{domdomain("FileSystemSyncAccessHandle.getSize", "getSize()")}}: اندازه فایل را بر حسب بایت برمی‌گرداند.
+- {{domdomain("FileSystemSyncAccessHandle.write", "write()")}}: محتوای یک بافر را در فایل می‌نویسد، در صورت تمایل در یک آفست مشخص، و تعداد بایت‌های نوشته‌شده را برمی‌گرداند. بررسی تعداد بایت‌های نوشته‌شده به فراخواننده امکان می‌دهد خطاها و نوشتن‌های جزئی را تشخیص داده و مدیریت کند.
+- {{domdomain("FileSystemSyncAccessHandle.read", "read()")}}: محتویات فایل را در یک بافر می‌خواند، در صورت تمایل در یک آفست مشخص.
+- {{domdomain("FileSystemSyncAccessHandle.truncate", "truncate()")}}: اندازه فایل را به اندازه داده‌شده تغییر می‌دهد.
+- {{domdomain("FileSystemSyncAccessHandle.flush", "flush()")}}: اطمینان حاصل می‌کند که محتویات فایل شامل تمام تغییرات انجام‌شده از طریق `write()` است.
+- {{domdomain("FileSystemSyncAccessHandle.close", "close()")}}: دسته دسترسی را می‌بندد.
 
-Here is an example that uses all the methods mentioned above:
+در اینجا مثالی آورده شده است که از همه روش‌های ذکر شده در بالا استفاده می‌کند:
 
 ```js
 const opfsRoot = await navigator.storage.getDirectory();
@@ -199,10 +193,10 @@ console.log(textDecoder.decode(dataView));
 accessHandle.truncate(4);
 ```
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [The origin private file system](https://web.dev/articles/origin-private-file-system) on web.dev
+- [سیستم فایل خصوصی مبدأ](https://web.dev/articles/origin-private-file-system) در web.dev
