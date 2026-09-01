@@ -1,11 +1,5 @@
 ---
 title: "Document: adoptedStyleSheets property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/adoptedStyleSheets"
-status: "needs-translation"
----
-
----
-title: "Document: adoptedStyleSheets property"
 short-title: adoptedStyleSheets
 slug: Web/API/Document/adoptedStyleSheets
 page-type: web-api-instance-property
@@ -14,38 +8,38 @@ browser-compat: api.Document.adoptedStyleSheets
 
 {{APIRef("CSSOM")}}
 
-The **`adoptedStyleSheets`** property of the {{domxref("Document")}} interface is used for setting an array of constructed stylesheets to be used by the document.
+ویژگی **`adoptedStyleSheets`** در رابط {{domxref("Document")}} برای تنظیم آرایه‌ای از استایل‌شیت‌های ساخته‌شده (constructed stylesheets) استفاده می‌شود که قرار است توسط سند به کار گرفته شوند.
 
 > [!NOTE]
-> A constructed stylesheet is a stylesheet created programmatically using the [`CSSStyleSheet()` constructor](/en-US/docs/Web/API/CSSStyleSheet/CSSStyleSheet) (as compared to one created by a user-agent when importing a stylesheet from a script, imported using {{HTMLElement('style')}} and {{CSSXref('@import')}}, or linked to via {{HTMLElement('link')}}).
+> استایل‌شیت ساخته‌شده (constructed stylesheet) یک استایل‌شیت است که به‌صورت برنامه‌نویسی و با استفاده از [سازندهٔ `CSSStyleSheet()`](/en-US/docs/Web/API/CSSStyleSheet/CSSStyleSheet) ایجاد می‌شود (در مقایسه با استایل‌شیتی که توسط عامل کاربر هنگام وارد کردن یک استایل‌شیت از یک اسکریپت ایجاد می‌شود، یا استایل‌شیتی که با استفاده از {{HTMLElement('style')}} و {{CSSXref('@import')}} وارد می‌شود، یا از طریق {{HTMLElement('link')}} پیوند داده می‌شود).
 
-The same constructed stylesheets can also be shared with one or more {{domxref("ShadowRoot")}} instances using the [`ShadowRoot.adoptedStyleSheets`](/en-US/docs/Web/API/ShadowRoot/adoptedStyleSheets) property.
-Changing an adopted stylesheet will affect all the objects that adopt it.
+همچنین می‌توان همان استایل‌شیت‌های ساخته‌شده را با استفاده از ویژگی [`ShadowRoot.adoptedStyleSheets`](/en-US/docs/Web/API/ShadowRoot/adoptedStyleSheets) با یک یا چند نمونهٔ {{domxref("ShadowRoot")}} به اشتراک گذاشت.
+تغییر در یک استایل‌شیت پذیرفته‌شده (adopted) بر تمام اشیایی که آن را پذیرفته‌اند تأثیر می‌گذارد.
 
-Stylesheets in the property are evaluated along with the document's other stylesheets using the [CSS cascade algorithm](/en-US/docs/Web/CSS/Guides/Cascade/Introduction).
-Where the resolution of rules considers stylesheet order, `adoptedStyleSheets` are assumed to be ordered after those in [`Document.styleSheets`](/en-US/docs/Web/API/Document/styleSheets).
+استایل‌شیت‌های موجود در این ویژگی همراه با سایر استایل‌شیت‌های سند و با استفاده از [الگوریتم آبشاری CSS](/en-US/docs/Web/CSS/Guides/Cascade/Introduction) ارزیابی می‌شوند.
+در مواردی که ترتیب استایل‌شیت‌ها در تعیین قواعد مورد توجه قرار می‌گیرد، فرض بر این است که `adoptedStyleSheets` پس از استایل‌شیت‌های موجود در [`Document.styleSheets`](/en-US/docs/Web/API/Document/styleSheets) مرتب می‌شوند.
 
-Only stylesheets created using the [`CSSStyleSheet()` constructor](/en-US/docs/Web/API/CSSStyleSheet/CSSStyleSheet) within the context of the current {{domxref("Document")}} may be adopted.
+فقط استایل‌شیت‌هایی را می‌توان پذیرفت که با استفاده از [سازندهٔ `CSSStyleSheet()`](/en-US/docs/Web/API/CSSStyleSheet/CSSStyleSheet) در بافت (context) {{domxref("Document")}} جاری ساخته شده باشند.
 
 ## Value
 
-The value is an array of {{domxref("CSSStyleSheet")}} instances that must have been created using the {{domxref("CSSStyleSheet.CSSStyleSheet()", "CSSStyleSheet()")}} constructor within the context of the same {{domxref("Document")}}.
+مقدار (Value) یک آرایه از نمونه‌های {{domxref("CSSStyleSheet")}} است که باید با استفاده از سازندهٔ {{domxref("CSSStyleSheet.CSSStyleSheet()", "CSSStyleSheet()")}} در بافت همان {{domxref("Document")}} ساخته شده باشند.
 
-If the array needs to be modified, use in-place mutations like `push()`. The {{domxref("CSSStyleSheet")}} instances themselves can also be modified, and these changes will apply wherever the stylesheet is adopted.
+اگر نیاز به تغییر آرایه بود، از تغییرات درجا (in-place) مانند `push()` استفاده کنید. خود نمونه‌های {{domxref("CSSStyleSheet")}} نیز قابل تغییر هستند و این تغییرات در هر جایی که استایل‌شیت پذیرفته شده باشد اعمال می‌شوند.
 
-In an earlier version of the specification, the array was not modifiable, so the only way to add new stylesheets was to assign a new array to `adoptedStyleSheets`.
+در نسخهٔ قبلی مشخصات، آرایه قابل تغییر نبود؛ بنابراین تنها راه افزودن استایل‌شیت‌های جدید، تخصیص یک آرایهٔ جدید به `adoptedStyleSheets` بود.
 
 ### Exceptions
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : One of the {{domxref("CSSStyleSheet")}} instances in the array was not created using the [`CSSStyleSheet()` constructor](/en-US/docs/Web/API/CSSStyleSheet/CSSStyleSheet) or was constructed in a different document than the current document, such as one in a frame.
+  - : یکی از نمونه‌های {{domxref("CSSStyleSheet")}} در آرایه با استفاده از [سازندهٔ `CSSStyleSheet()`](/en-US/docs/Web/API/CSSStyleSheet/CSSStyleSheet) ساخته نشده بود، یا در سندی غیر از سند جاری (مانند سندی در یک frame) ایجاد شده بود.
 
 ## Examples
 
-### Adopting a stylesheet
+### پذیرش یک استایل‌شیت
 
-The code below shows a stylesheet being constructed, and then {{domxref("CSSStyleSheet.replaceSync()")}} is called to add a rule to the sheet.
-The stylesheet is then added to an array and assigned to the `adoptedStyleSheets` property.
+کد زیر ساخت یک استایل‌شیت را نشان می‌دهد و سپس {{domxref("CSSStyleSheet.replaceSync()")}} را برای افزودن یک قانون به آن فراخوانی می‌کند.
+سپس استایل‌شیت به یک آرایه اضافه شده و به ویژگی `adoptedStyleSheets` اختصاص داده می‌شود.
 
 ```js
 // Create an empty "constructed" stylesheet
@@ -57,16 +51,16 @@ sheet.replaceSync("a { color: red; }");
 document.adoptedStyleSheets.push(sheet);
 ```
 
-We can append a new rule to the stylesheet using {{domxref("CSSStyleSheet.insertRule()")}}.
+می‌توانیم با استفاده از {{domxref("CSSStyleSheet.insertRule()")}} قانون جدیدی به استایل‌شیت اضافه کنیم.
 
 ```js
 sheet.insertRule("* { background-color: blue; }");
 // The document will now have blue background.
 ```
 
-## Sharing a stylesheet with a shadow DOM
+### اشتراک‌گذاری یک استایل‌شیت با shadow DOM
 
-We can share a stylesheet to a shadow root in a similar way.
+می‌توانیم یک استایل‌شیت را به روشی مشابه با یک shadow root به اشتراک بگذاریم.
 
 ```js
 // Create an element in the document and then create a shadow root:
@@ -85,7 +79,7 @@ shadow.adoptedStyleSheets = [sheet];
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Constructable Stylesheets](https://web.dev/articles/constructable-stylesheets) (web.dev)
 - [Using the Shadow DOM](/en-US/docs/Web/API/Web_components/Using_shadow_DOM)
