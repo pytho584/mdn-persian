@@ -1,11 +1,5 @@
 ---
 title: "DOMException: DOMException() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMException/DOMException"
-status: "needs-translation"
----
-
----
-title: "DOMException: DOMException() constructor"
 short-title: DOMException()
 slug: Web/API/DOMException/DOMException
 page-type: web-api-constructor
@@ -14,10 +8,9 @@ browser-compat: api.DOMException.DOMException
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`DOMException()`** constructor returns a
-{{domxref("DOMException")}} object with a specified message and name.
+سازنده‌ی **`DOMException()`** یک شیء {{domxref("DOMException")}} با پیام و نام مشخص شده بازمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new DOMException()
@@ -25,20 +18,20 @@ new DOMException(message)
 new DOMException(message, name)
 ```
 
-### Parameters
+### پارامترها
 
 - `message` {{optional_inline}}
-  - : A description of the exception. If not present, the empty string `''` is used.
+  - : توضیحی از استثنا. اگر وجود نداشته باشد، رشته‌ی خالی `''` استفاده می‌شود.
 - `name` {{optional_inline}}
-  - : A string. If the specified name is a [standard error name](/en-US/docs/Web/API/DOMException#error_names), then getting the [`code`](/en-US/docs/Web/API/DOMException/code) property of the `DOMException` object will return the code number corresponding to the specified name. If not present, the string `'Error'` is used.
+  - : یک رشته. اگر نام مشخص شده یک [نام خطای استاندارد](/en-US/docs/Web/API/DOMException#error_names) باشد، دریافت ویژگی [`code`](/en-US/docs/Web/API/DOMException/code) شیء `DOMException` کد عددی متناظر با آن نام را برمی‌گرداند. اگر وجود نداشته باشد، رشته‌ی `'Error'` استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A newly created {{domxref("DOMException")}} object.
+یک شیء {{domxref("DOMException")}} تازه ایجاد شده.
 
-## Examples
+## مثال‌ها
 
-In this example, pressing the button causes a custom `DOMException` to be thrown, which is then caught and the custom error message shown in an alert.
+در این مثال، فشار دادن دکمه باعث پرتاب یک `DOMException` سفارشی می‌شود که سپس گرفته شده و پیام خطای سفارشی در یک هشدار نمایش داده می‌شود.
 
 ### HTML
 
@@ -62,18 +55,18 @@ button.onclick = () => {
 };
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', '100%', 100) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [A polyfill of `DOMException` constructor](https://github.com/zloirock/core-js#domexception) is available in [`core-js`](https://github.com/zloirock/core-js)
+- [یک polyfill از سازنده‌ی `DOMException`](https://github.com/zloirock/core-js#domexception) در [`core-js`](https://github.com/zloirock/core-js) موجود است.
