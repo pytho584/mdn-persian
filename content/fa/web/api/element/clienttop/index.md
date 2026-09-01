@@ -1,11 +1,5 @@
 ---
 title: "Element: clientTop property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/clientTop"
-status: "needs-translation"
----
-
----
-title: "Element: clientTop property"
 short-title: clientTop
 slug: Web/API/Element/clientTop
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.Element.clientTop
 
 {{ APIRef("DOM") }}
 
-The **`clientTop`** read-only property of the {{domxref("Element")}} interface returns the width of the top border of an element in pixels.
+ویژگی فقط‌خواندنی **`clientTop`** از رابط {{domxref("Element")}}، عرض حاشیهٔ بالایی یک عنصر را بر حسب پیکسل برمی‌گرداند.
 
-All that lies between the `offsetTop` and `clientTop` is the element's border. This is because the `offsetTop` indicates the location of the top of the border (not the margin) while the client area starts immediately below the border, including padding. Therefore, the `clientTop` value is always equal to the `border-top-width`, rounded to integer. For example, if the computed `border-top-width` is zero, then `clientTop` is also zero.
+هر آنچه بین `offsetTop` و `clientTop` قرار دارد، فقط border عنصر است. دلیلش این است که `offsetTop` محل شروع بالای border (نه margin) را نشان می‌دهد، در حالی که ناحیهٔ کلاینت بلافاصله بعد از border شروع می‌شود و شامل padding نیز هست. بنابراین مقدار `clientTop` همیشه با `border-top-width` گردشده به عدد صحیح برابر است. به‌عنوان مثال، اگر `border-top-width` محاسبه‌شده صفر باشد، `clientTop` نیز صفر است.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In the following example, the client area has a white background and a 24px black `border-top`. The `clientTop` value is the distance from where the margin (yellow) area ends and the padding and content areas (white) begin: that is, 24px.
+در مثال زیر، ناحیهٔ کلاینت پس‌زمینهٔ سفید و یک `border-top` سیاه به ضخامت ۲۴px دارد. مقدار `clientTop` فاصله‌ای است از جایی که ناحیهٔ margin (زرد) تمام می‌شود تا جایی که نواحی padding و content (سفید) شروع می‌شوند؛ یعنی ۲۴px.
 
 ### HTML
 
@@ -59,21 +53,21 @@ In the following example, the client area has a white background and a 24px blac
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", 400, 350)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Determining the dimensions of elements](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
+- [تعیین ابعاد عناصر](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
 - {{domxref("HTMLElement.offsetTop")}}
 - {{domxref("Element.scrollTop")}}
 - {{domxref("Element.clientHeight")}}
