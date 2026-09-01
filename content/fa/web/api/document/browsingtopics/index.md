@@ -1,11 +1,5 @@
 ---
 title: "Document: browsingTopics() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/browsingTopics"
-status: "needs-translation"
----
-
----
-title: "Document: browsingTopics() method"
 short-title: browsingTopics()
 slug: Web/API/Document/browsingTopics
 page-type: web-api-instance-method
@@ -18,46 +12,46 @@ browser-compat: api.Document.browsingTopics
 {{APIRef("Topics API")}}{{non-standard_header}}{{deprecated_header}}
 
 > [!WARNING]
-> This feature is currently opposed by two browser vendors. See the [Standards positions](/en-US/docs/Web/API/Topics_API#standards_positions) section below for details of opposition.
+> این ویژگی در حال حاضر مورد مخالفت دو فروشنده‌ی مرورگر قرار گرفته است. برای جزئیات این مخالفت‌ها، به بخش [مواضع استانداردها](/en-US/docs/Web/API/Topics_API#standards_positions) در پایین مراجعه کنید.
 
 > [!NOTE]
-> An [Enrollment process](/en-US/docs/Web/Privacy/Guides/Privacy_sandbox#enrollment) is required to use this feature in your applications.
+> برای استفاده از این ویژگی در برنامه‌های خود، یک [فرایند ثبت‌نام](/en-US/docs/Web/Privacy/Guides/Privacy_sandbox#enrollment) الزامی است.
 
-The `browsingTopics()` method of the {{domxref("Document")}} interface returns a promise that fulfills with an array of objects representing the top topics for the user, one from each of the last three epochs. These topics could then be returned to the ad tech platform in a subsequent fetch request. By default, the method also causes the browser to record the current page visit as observed by the caller, so the page's hostname can later be used in topics calculation.
+متد `browsingTopics()` از رابط {{domxref("Document")}} یک {{jsxref("Promise")}} برمی‌گرداند که با آرایه‌ای از اشیاء نمایانگر موضوعات برتر برای کاربر، یکی از هر یک از سه دوره‌ی زمانی اخیر، تکمیل می‌شود. این موضوعات سپس می‌توانند در یک درخواست fetch بعدی به پلتفرم فناوری تبلیغات بازگردانده شوند. به‌طور پیش‌فرض، این متد همچنین باعث می‌شود که مرورگر بازدید فعلی صفحه را به‌عنوان مشاهده‌شده توسط فراخواننده ثبت کند، تا نام میزبان صفحه بعداً در محاسبه‌ی موضوعات قابل استفاده باشد.
 
 > [!NOTE]
-> `browsingTopics()` does not rely on HTTP headers to send topics and mark topics as observed like the other Topics API enabling features, but it is somewhat less performant. You are advised to use one of the HTTP header-using features, falling back to `browsingTopics()` only in situations where the headers cannot be modified.
+> برخلاف سایر ویژگی‌های فعال‌کننده‌ی Topics API، متد `browsingTopics()` برای ارسال موضوعات و علامت‌گذاری موضوعات به‌عنوان مشاهده‌شده، به هدرهای HTTP وابسته نیست، اما عملکرد آن تا حدودی کمتر است. توصیه می‌شود از یکی از ویژگی‌های مبتنی بر هدر HTTP استفاده کنید و تنها در شرایطی که امکان تغییر هدرها وجود ندارد به `browsingTopics()` بازگشت کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 browsingTopics()
 browsingTopics(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An options object, which can contain the following properties:
+  - : یک شیء گزینه‌ها که می‌تواند حاوی ویژگی‌های زیر باشد:
     - `skipObservation`
-      - : A boolean value that, if set to `true`, causes the browser to _not_ observe topics when `browsingTopics()` is invoked. The default is `false`, which causes topics to be observed.
+      - : یک مقدار بولی که اگر روی `true` تنظیم شود، باعث می‌شود مرورگر هنگام فراخوانی `browsingTopics()` موضوعات را _مشاهده نکند_. مقدار پیش‌فرض `false` است که باعث مشاهده‌ی موضوعات می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with an array of up to three objects representing the current user's selected topics for the last three epochs. Each object contains the following properties:
+یک {{jsxref("Promise")}} که با آرایه‌ای از حداکثر سه شیء نمایانگر موضوعات انتخاب‌شده‌ی کاربر فعلی برای سه دوره‌ی زمانی اخیر تکمیل می‌شود. هر شیء دارای ویژگی‌های زیر است:
 
 - `configVersion`
-  - : A string identifying the algorithm (other than the model part) used to calculate the topic.
+  - : رشته‌ای که الگوریتم (به‌جز بخش مدل) مورد استفاده برای محاسبه‌ی موضوع را شناسایی می‌کند.
 - `modelVersion`
-  - : A string representing the model used to classify a string (such as a web page's hostname) into topic IDs.
+  - : رشته‌ای نمایانگر مدلی است که برای طبقه‌بندی یک رشته (مانند نام میزبان یک صفحه‌ی وب) به شناسه‌های موضوع استفاده می‌شود.
 - `taxonomyVersion`
-  - : A string representing the taxonomy version used.
+  - : رشته‌ای نمایانگر نسخه‌ی طبقه‌بندی (taxonomy) مورد استفاده است.
 - `topic`
-  - : A number representing the ID of the topic, which can be used by the browser to retrieve the topic from the taxonomy (see an example [taxonomy of interests](https://github.com/patcg-individual-drafts/topics/blob/main/taxonomy_v1.md)).
+  - : عددی نمایش‌دهنده‌ی شناسه‌ی موضوع است که مرورگر می‌تواند از آن برای بازیابی موضوع از طبقه‌بندی استفاده کند (نمونه‌ای از [طبقه‌بندی علایق](https://github.com/patcg-individual-drafts/topics/blob/main/taxonomy_v1.md) را ببینید).
 - `version`
-  - : The `configVersion`, `modelVersion`, and `taxonomyVersion`, concatenated with colons (`:`) between each.
+  - : مقادیر `configVersion`، `modelVersion` و `taxonomyVersion` که با دو نقطه (`:`) بین هر کدام به هم متصل شده‌اند.
 
-The exact property values may vary by browser implementation. An example object from Chrome might look as follows:
+مقادیر دقیق ویژگی‌ها ممکن است بسته به پیاده‌سازی مرورگر متفاوت باشد. یک شیء نمونه از Chrome ممکن است به شکل زیر باشد:
 
 ```json
 {
@@ -69,14 +63,14 @@ The exact property values may vary by browser implementation. An example object 
 }
 ```
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - Usage of the [Topics API](/en-US/docs/Web/API/Topics_API) is disallowed by a {{httpheader('Permissions-Policy/browsing-topics','browsing-topics')}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
-    - The calling site does not have the Topics API included in a successful [privacy sandbox enrollment process](/en-US/docs/Web/Privacy/Guides/Privacy_sandbox#enrollment).
+  - : در صورت بروز هر یک از موارد زیر ایجاد می‌شود:
+    - استفاده از [Topics API](/en-US/docs/Web/API/Topics_API) توسط یک [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) با هدر {{httpheader('Permissions-Policy/browsing-topics','browsing-topics')}} ممنوع شده باشد.
+    - سایت فراخواننده، Topics API را در یک [فرایند ثبت‌نام sandbox حریم خصوصی](/en-US/docs/Web/Privacy/Guides/Privacy_sandbox#enrollment) موفق شامل نشده باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Get an array of top topics for this user
@@ -97,14 +91,14 @@ const creative = await response.json();
 // Display ad
 ```
 
-## Specifications
+## مشخصات
 
-This feature is not part of an official standard, although it is specified in the [Topics API Unofficial Proposal Draft](https://patcg-individual-drafts.github.io/topics/).
+این ویژگی بخشی از یک استاندارد رسمی نیست، اگرچه در [پیش‌نویس پیشنهاد غیررسمی Topics API](https://patcg-individual-drafts.github.io/topics/) مشخص شده است.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Topics API](/en-US/docs/Web/API/Topics_API)
