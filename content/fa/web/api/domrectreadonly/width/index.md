@@ -1,11 +1,5 @@
 ---
 title: "DOMRectReadOnly: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/width"
-status: "needs-translation"
----
-
----
-title: "DOMRectReadOnly: width property"
 short-title: width
 slug: Web/API/DOMRectReadOnly/width
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.DOMRectReadOnly.width
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`width`** read-only property of the **`DOMRectReadOnly`** interface represents the width of the `DOMRect`.
+ویژگی فقط خواندنی **`width`** از رابط **`DOMRectReadOnly`**، عرض `DOMRect` را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A double.
+یک عدد دابل (double).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMRect")}}
