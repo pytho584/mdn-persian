@@ -1,11 +1,5 @@
 ---
 title: "Element: replaceWith() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceWith"
-status: "needs-translation"
----
-
----
-title: "Element: replaceWith() method"
 short-title: replaceWith()
 slug: Web/API/Element/replaceWith
 page-type: web-api-instance-method
@@ -14,11 +8,9 @@ browser-compat: api.Element.replaceWith
 
 {{APIRef("DOM")}}
 
-The **`Element.replaceWith()`** method replaces this
-`Element` in the children list of its parent with a set of
-{{domxref("Node")}} objects or strings. Strings are inserted as equivalent {{domxref("Text")}} nodes.
+متد **`Element.replaceWith()`** این `Element` را در لیست فرزندان والد خود با مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها جایگزین می‌کند. رشته‌ها به‌عنوان گره‌های {{domxref("Text")}} معادل درج می‌شوند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 replaceWith(param1)
@@ -26,23 +18,23 @@ replaceWith(param1, param2)
 replaceWith(param1, param2, /* …, */ paramN)
 ```
 
-### Parameters
+### پارامترها
 
-- `param1`, …, `paramN`
-  - : A set of {{domxref("Node")}} objects or strings to replace.
+- `param1`، …، `paramN`
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها برای جایگزینی.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the node cannot be inserted at the specified point in the hierarchy.
+  - : زمانی پرتاب می‌شود که گره در نقطه مشخص‌شده در سلسله‌مراتب قابل درج نباشد.
 
-## Examples
+## مثال‌ها
 
-### Using `replaceWith()`
+### استفاده از `replaceWith()`
 
 ```js
 const div = document.createElement("div");
@@ -56,10 +48,9 @@ console.log(div.outerHTML);
 // "<div><span></span></div>"
 ```
 
-### `replaceWith()` is unscopable
+### `replaceWith()` غیرقابل دسترسی در `with`
 
-The `replaceWith()` method is not scoped into the `with`
-statement. See {{jsxref("Symbol.unscopables")}} for more information.
+متد `replaceWith()` در محدوده دستور `with` قرار ندارد. برای اطلاعات بیشتر به {{jsxref("Symbol.unscopables")}} مراجعه کنید.
 
 ```js
 with (node) {
@@ -68,15 +59,15 @@ with (node) {
 // ReferenceError: replaceWith is not defined
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node.replaceChild()")}}
 - {{domxref("NodeList")}}
