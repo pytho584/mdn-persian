@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: toggle event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/toggle_event"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: toggle event"
 slug: Web/API/HTMLElement/toggle_event
 page-type: web-api-event
 browser-compat: api.HTMLElement.toggle_event
@@ -13,16 +7,16 @@ browser-compat: api.HTMLElement.toggle_event
 
 {{APIRef("HTML DOM")}}
 
-The **`toggle`** event of the {{domxref("HTMLElement")}} interface fires on a {{domxref("Popover_API", "popover", "", "nocode")}} element, {{htmlelement("dialog")}} element, or {{htmlelement("details")}} element just after it is shown or hidden.
+رویداد **`toggle`** در رابط {{domxref("HTMLElement")}} دقیقاً پس از نمایش یا پنهان‌شدن یک عنصر {{domxref("Popover_API", "popover", "", "nocode")}}، عنصر {{htmlelement("dialog")}} یا عنصر {{htmlelement("details")}} رخ می‌دهد.
 
-- If the element is transitioning from hidden to showing, the [`event.oldState`](/en-US/docs/Web/API/ToggleEvent/oldState) property will be set to `closed` and the [`event.newState`](/en-US/docs/Web/API/ToggleEvent/newState) property will be set to `open`.
-- If the element is transitioning from showing to hidden, then `event.oldState` will be `open` and `event.newState` will be `closed`.
+- اگر عنصر از حالت پنهان به حالت نمایش در حال تغییر باشد، ویژگی [`event.oldState`](/en-US/docs/Web/API/ToggleEvent/oldState) روی `closed` تنظیم می‌شود و ویژگی [`event.newState`](/en-US/docs/Web/API/ToggleEvent/newState) روی `open` تنظیم می‌شود.
+- اگر عنصر از حالت نمایش به حالت پنهان در حال تغییر باشد، `event.oldState` برابر `open` و `event.newState` برابر `closed` خواهد بود.
 
-This event is not [cancelable](/en-US/docs/Web/API/Event/cancelable).
+این رویداد [cancelable](/en-US/docs/Web/API/Event/cancelable) نیست.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد، می‌توانید آن را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید یا یک ویژگی کنترل‌کنندهٔ رویداد (event handler) تنظیم کنید.
 
 ```js-nolint
 addEventListener("toggle", (event) => { })
@@ -30,24 +24,23 @@ addEventListener("toggle", (event) => { })
 ontoggle = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("ToggleEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("ToggleEvent")}} که از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("ToggleEvent")}}
 
-## Examples
+## مثال‌ها
 
-The example code below demonstrates how the `toggle` event might be used for {{domxref("Popover_API", "popover", "", "nocode")}}.
-The same code is might be used for a {{htmlelement("dialog")}} or {{htmlelement("details")}} elements in the same way.
+کد مثال زیر نشان می‌دهد که چگونه می‌توان از رویداد `toggle` برای {{domxref("Popover_API", "popover", "", "nocode")}} استفاده کرد. از همین کد می‌توان به همین شکل برای عناصر {{htmlelement("dialog")}} یا {{htmlelement("details")}} نیز استفاده کرد.
 
-### Basic example
+### مثال پایه
 
-This example shows how to listen for the `toggle` event and log the result.
+این مثال نشان می‌دهد که چگونه به رویداد `toggle` گوش دهید و نتیجه را ثبت (log) کنید.
 
 #### HTML
 
-The HTML consists of a popover and a button for toggling it open and closed.
+HTML شامل یک popover و یک دکمه برای باز و بسته‌کردن آن است.
 
 ```html
 <button popovertarget="mypopover">Toggle the popover</button>
@@ -75,9 +68,9 @@ function log(text) {
 }
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-The code adds an event listener for the `toggle` event and logs the state.
+کد، یک شنوندهٔ رویداد (event listener) برای رویداد `toggle` اضافه می‌کند و وضعیت را ثبت می‌کند.
 
 ```js
 const popover = document.getElementById("mypopover");
@@ -91,16 +84,15 @@ popover.addEventListener("toggle", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Basic example", '100%', "250px")}}
 
-### A note on toggle event coalescing
+### نکته‌ای دربارهٔ ادغام رویداد toggle
 
-If multiple `toggle` events are fired before the event loop has a chance to cycle, only a single event will be fired.
-This is referred to as "event coalescing".
+اگر چند رویداد `toggle` پیش از آن‌که حلقهٔ رویداد (event loop) فرصت چرخه‌زدن پیدا کند رخ دهند، تنها یک رویداد صادر می‌شود. به این رفتار «ادغام رویداد» (event coalescing) گفته می‌شود.
 
-For example:
+برای مثال:
 
 ```js
 popover.addEventListener("toggle", () => {
@@ -112,20 +104,20 @@ popover.hidePopover();
 // `toggle` only fires once
 ```
 
-### Other examples
+### سایر مثال‌ها
 
-- [Opening a modal dialog](/en-US/docs/Web/API/HTMLDialogElement#open_close_a_modal_dialog) example in `HTMLDialogElement`
+- مثال [باز کردن یک دیالوگ modal](/en-US/docs/Web/API/HTMLDialogElement#open_close_a_modal_dialog) در `HTMLDialogElement`
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) HTML global attribute
+- [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) ویژگی سراسری HTML
 - [Popover API](/en-US/docs/Web/API/Popover_API)
-- Related event: [`beforetoggle`](/en-US/docs/Web/API/HTMLElement/beforetoggle_event)
+- رویداد مرتبط: [`beforetoggle`](/en-US/docs/Web/API/HTMLElement/beforetoggle_event)
