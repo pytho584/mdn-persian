@@ -1,11 +1,5 @@
 ---
 title: "Headers: set() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Headers/set"
-status: "needs-translation"
----
-
----
-title: "Headers: set() method"
 short-title: set()
 slug: Web/API/Headers/set
 page-type: web-api-instance-method
@@ -14,57 +8,45 @@ browser-compat: api.Headers.set
 
 {{APIRef("Fetch API")}} {{AvailableInWorkers}}
 
-The **`set()`** method of the {{domxref("Headers")}} interface
-sets a new value for an existing header inside a `Headers` object, or adds
-the header if it does not already exist.
+متد **`set()`** از رابط {{domxref("Headers")}} یک مقدار جدید برای یک هدر موجود در یک شیء `Headers` تنظیم می‌کند، یا اگر هدر از قبل وجود نداشته باشد، آن را اضافه می‌کند.
 
-The difference between `set()` and {{domxref("Headers.append")}} is that if
-the specified header already exists and accepts multiple values, `set()`
-overwrites the existing value with the new one, whereas {{domxref("Headers.append")}}
-appends the new value to the end of the set of values.
+تفاوت بین `set()` و {{domxref("Headers.append")}} این است که اگر هدر مشخص شده از قبل وجود داشته باشد و مقادیر متعدد را بپذیرد، `set()` مقدار موجود را با مقدار جدید بازنویسی می‌کند، در حالی که {{domxref("Headers.append")}} مقدار جدید را به انتهای مجموعه مقادیر اضافه می‌کند.
 
-For security reasons, some headers can only be controlled by the user agent. These
-headers include the {{Glossary("Forbidden_request_header", "forbidden request headers")}}
-and {{Glossary("Forbidden_response_header_name", "forbidden response header names")}}.
+به دلایل امنیتی، برخی از هدرها فقط توسط عامل کاربر (user agent) قابل کنترل هستند. این هدرها شامل {{Glossary("Forbidden_request_header", "هدرهای درخواست ممنوع")}} و {{Glossary("Forbidden_response_header_name", "نام‌های هدر پاسخ ممنوع")}} می‌شوند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 set(name, value)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the HTTP header you want to set to a new value. If the given name is not
-    the name of an HTTP header, this method throws a {{jsxref("TypeError")}}.
+  - : نام هدر HTTP که می‌خواهید آن را به یک مقدار جدید تنظیم کنید. اگر نام داده شده نام یک هدر HTTP نباشد، این متد یک {{jsxref("TypeError")}} پرتاب می‌کند.
 - `value`
-  - : The new value you want to set.
+  - : مقدار جدیدی که می‌خواهید تنظیم کنید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-Creating an empty `Headers` object is simple:
+ایجاد یک شیء خالی `Headers` ساده است:
 
 ```js
 const myHeaders = new Headers(); // Currently empty
 ```
 
-You could add a header to this using {{domxref("Headers.append")}}, then set a new
-value for this header using `set()`:
+می‌توانید با استفاده از {{domxref("Headers.append")}} یک هدر به آن اضافه کنید، سپس با استفاده از `set()` یک مقدار جدید برای این هدر تنظیم کنید:
 
 ```js
 myHeaders.append("Content-Type", "image/jpeg");
 myHeaders.set("Content-Type", "text/html");
 ```
 
-If the specified header does not already exist, `set()` will create it and
-set its value to the specified value. If the specified header does already exist and
-does accept multiple values, `set()` will overwrite the existing value with
-the new one:
+اگر هدر مشخص شده از قبل وجود نداشته باشد، `set()` آن را ایجاد کرده و مقدار آن را به مقدار مشخص شده تنظیم می‌کند. اگر هدر مشخص شده از قبل وجود داشته باشد و مقادیر متعدد را بپذیرد، `set()` مقدار موجود را با مقدار جدید بازنویسی می‌کند:
 
 ```js
 myHeaders.set("Accept-Encoding", "deflate");
@@ -72,18 +54,17 @@ myHeaders.set("Accept-Encoding", "gzip");
 myHeaders.get("Accept-Encoding"); // Returns 'gzip'
 ```
 
-You'd need {{domxref("Headers.append")}} to append the new value onto the values, not
-overwrite it.
+برای افزودن مقدار جدید به مجموعه مقادیر (بدون بازنویسی) باید از {{domxref("Headers.append")}} استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [ServiceWorker API](/en-US/docs/Web/API/Service_Worker_API)
 - [HTTP access control (CORS)](/en-US/docs/Web/HTTP/Guides/CORS)
