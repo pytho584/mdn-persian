@@ -1,11 +1,5 @@
 ---
 title: "HTMLOutputElement: willValidate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement/willValidate"
-status: "needs-translation"
----
-
----
-title: "HTMLOutputElement: willValidate property"
 short-title: willValidate
 slug: Web/API/HTMLOutputElement/willValidate
 page-type: web-api-instance-property
@@ -14,24 +8,24 @@ browser-compat: api.HTMLOutputElement.willValidate
 
 {{APIRef("HTML DOM")}}
 
-The **`willValidate`** read-only property of the {{domxref("HTMLOutputElement")}} interface returns `false`, because {{HTMLElement("output")}} elements are not candidates for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+ویژگی فقط‌خواندنی **`willValidate`** در رابط {{domxref("HTMLOutputElement")}} مقدار `false` را برمی‌گرداند، زیرا عناصر {{HTMLElement("output")}} کاندیدایی برای [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) نیستند.
 
-## Value
+## مقدار
 
-The boolean value `false`.
+مقدار بولی `false`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLOutputElement.checkValidity()")}}
 - {{HTMLElement("output")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
