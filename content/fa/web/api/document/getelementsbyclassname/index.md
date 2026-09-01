@@ -1,11 +1,5 @@
 ---
 title: "Document: getElementsByClassName() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName"
-status: "needs-translation"
----
-
----
-title: "Document: getElementsByClassName() method"
 short-title: getElementsByClassName()
 slug: Web/API/Document/getElementsByClassName
 page-type: web-api-instance-method
@@ -14,66 +8,55 @@ browser-compat: api.Document.getElementsByClassName
 
 {{APIRef("DOM")}}
 
-The **`getElementsByClassName`** method of
-{{domxref("Document")}} interface returns an array-like object
-of all child elements which have all of the given class name(s).
+متد **`getElementsByClassName`** از رابط {{domxref("Document")}} یک شیء شبیه به آرایه از تمام عناصر فرزندی برمی‌گرداند که همهٔ نام کلاس(های) داده‌شده را داشته باشند.
 
-When called on
-the {{domxref("document")}} object, the complete document is searched, including the
-root node. You may also call {{domxref("Element.getElementsByClassName", "getElementsByClassName()")}} on any element; it will return only elements which are descendants of the specified root element with the given class name(s).
+وقتی روی شیء {{domxref("document")}} فراخوانی شود، کل سند جستجو می‌شود، از جمله گره ریشه. همچنین می‌توانید {{domxref("Element.getElementsByClassName", "getElementsByClassName()")}} را روی هر عنصری فراخوانی کنید؛ در این صورت فقط عناصری برگردانده می‌شوند که از نوادگان عنصر ریشهٔ مشخص‌شده باشند و نام کلاس(های) داده‌شده را داشته باشند.
 
 > [!WARNING]
-> This is a live {{domxref("HTMLCollection")}}. Changes in the DOM will
-> reflect in the array as the changes occur. If an element selected by this array no
-> longer qualifies for the selector, it will automatically be removed. Be aware of this
-> for iteration purposes.
+> این یک {{domxref("HTMLCollection")}} زنده است. تغییرات در DOM همان‌طور که رخ می‌دهند در آرایه منعکس می‌شوند. اگر عنصری که توسط این آرایه انتخاب شده دیگر شرایط انتخاب‌گر را نداشته باشد، به‌طور خودکار حذف می‌شود. هنگام پیمایش این نکته را در نظر داشته باشید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getElementsByClassName(names)
 ```
 
-### Parameters
+### پارامترها
 
 - `names`
-  - : A string representing the class name(s) to match; multiple class names are separated by whitespace.
+  - : رشته‌ای که نام کلاس(های) موردنظر برای تطبیق را نشان می‌دهد؛ چند نام کلاس با فاصله (whitespace) از هم جدا می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-A live {{domxref("HTMLCollection")}} of found elements.
+یک {{domxref("HTMLCollection")}} زنده از عناصر یافت‌شده.
 
-## Examples
+## مثال‌ها
 
-Get all elements that have a class of 'test':
+دریافت همهٔ عناصری که کلاس «test» را دارند:
 
 ```js
 document.getElementsByClassName("test");
 ```
 
-Get all elements that have both the 'red' and 'test' classes:
+دریافت همهٔ عناصری که هر دو کلاس «red» و «test» را دارند:
 
 ```js
 document.getElementsByClassName("red test");
 ```
 
-Get all elements that have a class of 'test', inside of an element that has the ID of
-'main':
+دریافت همهٔ عناصری که کلاس «test» را دارند، داخل عنصری که شناسهٔ «main» دارد:
 
 ```js
 document.getElementById("main").getElementsByClassName("test");
 ```
 
-Get the first element with a class of 'test', or `undefined` if there is no
-matching element:
+دریافت اولین عنصر با کلاس «test»، یا `undefined` اگر هیچ عنصر منطبقی وجود نداشته باشد:
 
 ```js
 document.getElementsByClassName("test")[0];
 ```
 
-We can also use methods of Array.prototype on any {{domxref("HTMLCollection")}} by
-passing the `HTMLCollection` as the method's _this_ value. Here
-we'll find all div elements that have a class of 'test':
+ما همچنین می‌توانیم از متدهای Array.prototype روی هر {{domxref("HTMLCollection")}} استفاده کنیم، با ارسال `HTMLCollection` به‌عنوان مقدار _this_ متد. در اینجا همهٔ عناصر div را می‌یابیم که کلاس «test» را دارند:
 
 ```js
 const testElements = document.getElementsByClassName("test");
@@ -83,9 +66,9 @@ const testDivs = Array.prototype.filter.call(
 );
 ```
 
-### Get the first element whose class is 'test'
+### دریافت اولین عنصری که کلاس آن «test» است
 
-This is the most commonly used method of operation.
+این رایج‌ترین روش استفاده است.
 
 ```html
 <div id="parent-id">
@@ -99,18 +82,16 @@ This is the most commonly used method of operation.
 ```js
 const parentDOM = document.getElementById("parent-id");
 
-const test = parentDOM.getElementsByClassName("test"); // a list of matching elements, *not* the element itself
+const test = parentDOM.getElementsByClassName("test"); // فهرستی از عناصر منطبق، *نه* خود عنصر
 console.log(test); // HTMLCollection[1]
 
-const testTarget = parentDOM.getElementsByClassName("test")[0]; // the first element, as we wanted
+const testTarget = parentDOM.getElementsByClassName("test")[0]; // اولین عنصر، همان‌طور که می‌خواستیم
 console.log(testTarget); // <p class="test">hello world 2</p>
 ```
 
-### Multiple Classes Example
+### مثال چند کلاسه
 
-`document.getElementsByClassName` works very similarly to
-`document.querySelector` and `document.querySelectorAll`. Only
-elements with ALL of the classNames specified are selected.
+`document.getElementsByClassName` بسیار شبیه به `document.querySelector` و `document.querySelectorAll` عمل می‌کند. فقط عناصری انتخاب می‌شوند که همهٔ نام کلاس‌های مشخص‌شده را داشته باشند.
 
 #### HTML
 
@@ -132,14 +113,14 @@ elements with ALL of the classNames specified are selected.
 #### JavaScript
 
 ```js
-// getElementsByClassName only selects elements that have both given classes
+// getElementsByClassName فقط عناصری را انتخاب می‌کند که هر دو کلاس داده‌شده را داشته باشند
 const allOrangeJuiceByClass = document.getElementsByClassName("orange juice");
 let result = "document.getElementsByClassName('orange juice')";
 for (const el of allOrangeJuiceByClass) {
   result += `\n  ${el.textContent}`;
 }
 
-// querySelector only selects full complete matches
+// querySelector فقط تطابق‌های کامل را انتخاب می‌کند
 const allOrangeJuiceQuery = document.querySelectorAll(".orange.juice");
 result += "\n\ndocument.querySelectorAll('.orange.juice')";
 for (const el of allOrangeJuiceQuery) {
@@ -149,14 +130,14 @@ for (const el of allOrangeJuiceQuery) {
 document.getElementById("resultArea").value = result;
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('Multiple_Classes_Example', '100%', 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
