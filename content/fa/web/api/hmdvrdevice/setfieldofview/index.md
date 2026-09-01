@@ -1,11 +1,5 @@
 ---
 title: "HMDVRDevice: setFieldOfView() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HMDVRDevice/setFieldOfView"
-status: "needs-translation"
----
-
----
-title: "HMDVRDevice: setFieldOfView() method"
 short-title: setFieldOfView()
 slug: Web/API/HMDVRDevice/setFieldOfView
 page-type: web-api-instance-method
@@ -17,32 +11,32 @@ browser-compat: api.HMDVRDevice.setFieldOfView
 
 {{deprecated_header}}{{APIRef("WebVR API")}}{{Non-standard_header}}
 
-The **`setFieldOfView()`** method of the {{domxref("HMDVRDevice")}} interface can be used to set the field of view for one eye, or both eyes simultaneously.
+متد **`setFieldOfView()`** در رابط {{domxref("HMDVRDevice")}} برای تنظیم میدان دید برای یک چشم یا هر دو چشم به‌طور همزمان به کار می‌رود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 setFieldOfView(leftFOV, rightFOV, zNear, zFar)
 ```
 
-### Parameters
+### پارامترها
 
 - `leftFOV` {{optional_inline}}
-  - : A {{domxref("VRFieldOfView")}} object that defines the new field of view for the left eye. If not specified, the left eye field of view does not change.
+  - : یک شیء {{domxref("VRFieldOfView")}} که میدان دید جدید را برای چشم چپ تعریف می‌کند. اگر مشخص نشود، میدان دید چشم چپ تغییری نخواهد کرد.
 - `rightFOV` {{optional_inline}}
-  - : A {{domxref("VRFieldOfView")}} object that defines the new field of view for the right eye. If not specified, the right eye field of view does not change.
+  - : یک شیء {{domxref("VRFieldOfView")}} که میدان دید جدید را برای چشم راست تعریف می‌کند. اگر مشخص نشود، میدان دید چشم راست تغییری نخواهد کرد.
 - `zNear` {{optional_inline}}
-  - : The distance from the eyes of the nearest point of the view. The closest things can be and still be in the view. If not specified, the default is used — `0.01`.
+  - : فاصله از چشم‌ها تا نزدیک‌ترین نقطهٔ دید. اشیا می‌توانند تا این فاصله نزدیک شوند و همچنان در دید قرار بگیرند. اگر مشخص نشود، مقدار پیش‌فرض استفاده می‌شود — `0.01`.
 - `zFar` {{optional_inline}}
-  - : The distance from the eyes of the farthest point of the view. The furthest away things can be and still be in the view. If not specified, the default is used — `10000.0`.
+  - : فاصله از چشم‌ها تا دورترین نقطهٔ دید. اشیا می‌توانند تا این فاصله دور شوند و همچنان در دید قرار بگیرند. اگر مشخص نشود، مقدار پیش‌فرض استفاده می‌شود — `10000.0`.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-The following simple example shows a function that can be used to set a custom field of view with four specified degree values for up, right, down and left. The `VRFieldOfView()` constructor is used to create a {{domxref("VRFieldOfView")}} object from the supplied values, which is then fed into the `setFieldOfView()` method (the default `zNear` and `zFar` values are always used, in this case.)
+مثال سادهٔ زیر تابعی را نشان می‌دهد که می‌توان از آن برای تنظیم یک میدان دید سفارشی با چهار مقدار درجهٔ مشخص برای بالا، راست، پایین و چپ استفاده کرد. سازندهٔ `VRFieldOfView()` برای ایجاد یک شیء {{domxref("VRFieldOfView")}} از مقادیر ارائه‌شده استفاده می‌شود و سپس این شیء به متد `setFieldOfView()` داده می‌شود (در این حالت همیشه از مقادیر پیش‌فرض `zNear` و `zFar` استفاده می‌شود).
 
 ```js
 function setCustomFOV(up, right, down, left) {
@@ -58,12 +52,12 @@ function setCustomFOV(up, right, down, left) {
 ```
 
 > [!NOTE]
-> When testing, setting a weird/tiny field of view can really mess up your view. It is a good idea to grab the current field of view first (using {{domxref("VREyeParameters.fieldOfView")}}) before making any drastic changes, so you can reset it afterwards if needed.
+> هنگام آزمایش، تنظیم یک میدان دید غیرعادی/بسیار کوچک می‌تواند دید شما را به‌هم بریزد. بهتر است ابتدا میدان دید فعلی را (با استفاده از {{domxref("VREyeParameters.fieldOfView")}}) بگیرید و سپس تغییرات اساسی اعمال کنید تا در صورت نیاز بتوانید بعداً آن را بازنشانی کنید.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebVR API](/en-US/docs/Web/API/WebVR_API)
