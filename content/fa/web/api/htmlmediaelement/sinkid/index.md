@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: sinkId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/sinkId"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: sinkId property"
 short-title: sinkId
 slug: Web/API/HTMLMediaElement/sinkId
 page-type: web-api-instance-property
@@ -14,30 +8,29 @@ browser-compat: api.HTMLMediaElement.sinkId
 
 {{APIRef("Audio Output Devices API")}}{{securecontext_header}}
 
-The **`sinkId`** read-only property of the {{domxref("HTMLMediaElement")}} interface returns a string that is the unique ID of the device to be used for playing audio output.
+ویژگی فقط‌خواندنی **`sinkId`** در رابط {{domxref("HTMLMediaElement")}} رشته‌ای را برمی‌گرداند که شناسهٔ یکتای دستگاهی است که برای پخش خروجی صوتی استفاده می‌شود.
 
-This ID should be one of the {{domxref("MediaDeviceInfo.deviceId")}} values returned from {{domxref("MediaDevices.enumerateDevices()")}}.
-If the user agent default device is being used, it returns an empty string.
+این شناسه باید یکی از مقادیر {{domxref("MediaDeviceInfo.deviceId")}} باشد که از {{domxref("MediaDevices.enumerateDevices()")}} بازگردانده می‌شود. اگر دستگاه پیش‌فرض عامل کاربر استفاده شود، این ویژگی رشتهٔ خالی برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string indicating the current audio output device, or the empty string if the default user agent output device is being used.
+رشته‌ای که دستگاه فعلی خروجی صوتی را نشان می‌دهد؛ یا رشتهٔ خالی، اگر دستگاه خروجی پیش‌فرض عامل کاربر استفاده شود.
 
-## Security requirements
+## الزامات امنیتی
 
-Access to the property is subject to the following constraints:
+دسترسی به این ویژگی تابع محدودیت‌های زیر است:
 
-- The property must be called in a [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
+- این ویژگی باید در یک [زمینهٔ امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts) فراخوانی شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Audio Output Devices API](/en-US/docs/Web/API/Audio_Output_Devices_API)
 - {{domxref("MediaDevices.selectAudioOutput()")}}
