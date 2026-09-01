@@ -1,11 +1,5 @@
 ---
 title: "GPUAdapterInfo: subgroupMinSize property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapterInfo/subgroupMinSize"
-status: "needs-translation"
----
-
----
-title: "GPUAdapterInfo: subgroupMinSize property"
 short-title: subgroupMinSize
 slug: Web/API/GPUAdapterInfo/subgroupMinSize
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.GPUAdapterInfo.subgroupMinSize
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`subgroupMinSize`** read-only property of the {{domxref("GPUAdapterInfo")}} interface returns the minimum supported [subgroup size](https://gpuweb.github.io/gpuweb/wgsl/#subgroup-size) for the {{domxref("GPUAdapter")}}. This can be used along with the `subgroups` [feature](/en-US/docs/Web/API/GPUSupportedFeatures).
+خاصیت فقط‌خواندنی **`subgroupMinSize`** در رابط {{domxref("GPUAdapterInfo")}}، حداقل [اندازه زیرگروه](https://gpuweb.github.io/gpuweb/wgsl/#subgroup-size) پشتیبانی‌شده را برای {{domxref("GPUAdapter")}} برمی‌گرداند. می‌توان از آن همراه با [ویژگی](/en-US/docs/Web/API/GPUSupportedFeatures) `subgroups` استفاده کرد.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const adapter = await navigator.gpu.requestAdapter();
@@ -32,14 +26,14 @@ const adapterInfo = adapter.info;
 console.log(adapterInfo.subgroupMinSize);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
