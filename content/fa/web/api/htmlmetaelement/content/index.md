@@ -1,11 +1,5 @@
 ---
 title: "HTMLMetaElement: content property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMetaElement/content"
-status: "needs-translation"
----
-
----
-title: "HTMLMetaElement: content property"
 short-title: content
 slug: Web/API/HTMLMetaElement/content
 page-type: web-api-instance-property
@@ -14,19 +8,17 @@ browser-compat: api.HTMLMetaElement.content
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMetaElement.content`** property gets or sets the `content` attribute of pragma directives and named {{htmlelement("meta")}} data in conjunction with {{domxref("HTMLMetaElement.name")}} or {{domxref("HTMLMetaElement.httpEquiv")}}.
-For more information, see the [content](/en-US/docs/Web/HTML/Reference/Elements/meta#content) attribute.
+خاصیت **`HTMLMetaElement.content`** مقدار ویژگی `content` را در دستورالعمل‌های pragma و داده‌های نام‌گذاری شده {{htmlelement("meta")}} به همراه {{domxref("HTMLMetaElement.name")}} یا {{domxref("HTMLMetaElement.httpEquiv")}} دریافت یا تنظیم می‌کند. برای اطلاعات بیشتر، به ویژگی [content](/en-US/docs/Web/HTML/Reference/Elements/meta#content) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Reading meta element content
+### خواندن محتوای عنصر meta
 
-The following example queries a `<meta>` element that contains a `name` attribute with the value of `keywords`.
-The `content` value is logged to the console to display the [keywords](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification) of the document:
+مثال زیر یک عنصر `<meta>` را که دارای ویژگی `name` با مقدار `keywords` است، جستجو می‌کند. مقدار `content` در کنسول ثبت می‌شود تا [کلمات کلیدی](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification) سند نمایش داده شود:
 
 ```js
 // given <meta name="keywords" content="documentation, HTML, web">
@@ -35,10 +27,9 @@ console.log(meta.content);
 // "documentation, HTML, web"
 ```
 
-### Creating a meta element with content
+### ایجاد یک عنصر meta با محتوا
 
-The following example creates a new `<meta>` element with a `name` attribute set to [`description`](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification).
-The `content` attribute sets a description of the document and is appended to the document `<head>`:
+مثال زیر یک عنصر `<meta>` جدید با ویژگی `name` برابر با [`description`](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification) ایجاد می‌کند. ویژگی `content` توضیحی از سند را تنظیم می‌کند و به عنصر `<head>` سند اضافه می‌شود:
 
 ```js
 const meta = document.createElement("meta");
@@ -48,17 +39,17 @@ meta.content =
 document.head.appendChild(meta);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("meta")}}
 - {{domxref("HTMLMetaElement.name")}}
 - {{domxref("HTMLMetaElement.httpEquiv")}}
-- [Learn: Metadata in HTML](/en-US/docs/Learn_web_development/Core/Structuring_content/Webpage_metadata#metadata_the_meta_element)
+- [یادگیری: ابرداده در HTML](/en-US/docs/Learn_web_development/Core/Structuring_content/Webpage_metadata#metadata_the_meta_element)
