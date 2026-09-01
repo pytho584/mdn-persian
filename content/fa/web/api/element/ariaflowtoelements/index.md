@@ -1,7 +1,5 @@
 ---
 title: "Element: ariaFlowToElements property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaFlowToElements"
-status: "needs-translation"
 ---
 
 ---
@@ -14,40 +12,31 @@ browser-compat: api.Element.ariaFlowToElements
 
 {{APIRef("DOM")}}
 
-The **`ariaFlowToElements`** property of the {{domxref("Element")}} interface is an array containing the element (or elements) that provide an alternate reading order of content, overriding the general default reading order at the user's discretion.
-If just one element is provided this is the next element in the reading order.
-If multiple elements are provided, then each element represents a possible path that should be offered to the user for selection.
+خاصیت **`ariaFlowToElements`** از رابط {{domxref("Element")}} آرایه‌ای شامل عنصر (یا عناصر) است که ترتیب خواندن جایگزینی برای محتوا فراهم می‌کنند و به صلاحدید کاربر، ترتیب خواندن پیش‌فرض عمومی را نادیده می‌گیرند. اگر فقط یک عنصر ارائه شده باشد، آن عنصر، عنصر بعدی در ترتیب خواندن است. اگر چند عنصر ارائه شده باشد، هر عنصر نشان‌دهنده یک مسیر ممکن است که باید برای انتخاب به کاربر ارائه شود.
 
-The [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) topic contains additional information about how the attribute and property should be used.
+مبحث [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) حاوی اطلاعات بیشتری درباره نحوه استفاده از ویژگی و خاصیت مذکور است.
 
-## Value
+## مقدار
 
-An array of subclasses of {{domxref("HTMLElement")}}.
+یک آرایه از زیرکلاس‌های {{domxref("HTMLElement")}}.
 
-When read, the returned array is a static and read-only.
-When written, the assigned array is copied: subsequent changes to the array do not affect the value of the property.
+هنگام خواندن، آرایه بازگردانده‌شده ایستا و فقط‌خواندنی است. هنگام نوشتن، آرایه تخصیص‌داده‌شده کپی می‌شود: تغییرات بعدی در آرایه، بر مقدار خاصیت تأثیری ندارند.
 
-## Description
+## توضیحات
 
-The property is a flexible alternative to using the [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) attribute to set an alternative reading order.
-Unlike `aria-flowto`, the elements assigned to this property do not have to have an [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute.
+این خاصیت جایگزینی انعطاف‌پذیر برای استفاده از ویژگی [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) به‌منظور تنظیم ترتیب خواندن جایگزین است. برخلاف `aria-flowto`، عناصری که به این خاصیت تخصیص داده می‌شوند لزومی ندارد ویژگی [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) داشته باشند.
 
-The property reflects the element's [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) attribute when it is defined, but only for listed reference `id` values that match valid in-scope elements.
-If the property is set, then the corresponding attribute is cleared.
-For more information about reflected element references and scope see [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Reflected attributes_ guide.
+این خاصیت، ویژگی [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) عنصر را در صورت تعریف‌شدن بازتاب می‌دهد، اما فقط برای مقادیر `id` مرجعِ فهرست‌شده‌ای که با عناصر معتبر در محدوده (in-scope) مطابقت دارند. اگر این خاصیت تنظیم شود، ویژگی متناظر پاک می‌شود. برای اطلاعات بیشتر درباره ارجاع‌های عنصرِ بازتاب‌یافته و محدوده، به [ارجاع‌های عنصر بازتاب‌یافته](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _Reflected attributes_ مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
 ### Get the flow-to element
 
-This example demonstrates the normal flow through three elements `section1`, `section2`, `section3` in order, and an alternative order that jumps from `section1` to `section3`, and back again.
-Note that the example is illustrative unless you have accessibility tools running: we don't actually follow this alternate path.
+این مثال جریان عادی را از میان سه عنصر `section1`، `section2` و `section3` به ترتیب نشان می‌دهد و نیز ترتیبی جایگزین که از `section1` به `section3` می‌پرد و دوباره به عقب برمی‌گردد. توجه داشته باشید که این مثال صرفاً جنبه نمایشی دارد، مگر اینکه ابزارهای دسترس‌پذیری در حال اجرا داشته باشید: ما در واقع این مسیر جایگزین را دنبال نمی‌کنیم.
 
 #### HTML
 
-The HTML defines three {{htmlelement("div")}} elements that define sections, with a class `"section"`, and `id` values: `section1`, `section2`, and `section3`.
-Each section has a normal flow defined by it's order, starting from `section1` and ending at `section3`.
-An alternative flow is defined in sections 1 and 3 using the `aria-flowto` attribute.
+HTML سه عنصر {{htmlelement("div")}} تعریف می‌کند که بخش‌ها را مشخص می‌کنند، با کلاس `"section"` و مقادیر `id` زیر: `section1`، `section2` و `section3`. هر بخش یک جریان عادی دارد که با ترتیب آن تعریف می‌شود و از `section1` شروع شده و به `section3` ختم می‌شود. یک جریان جایگزین در بخش‌های ۱ و ۳ با استفاده از ویژگی `aria-flowto` تعریف شده است.
 
 ```html hidden
 <pre id="log"></pre>
@@ -86,8 +75,7 @@ An alternative flow is defined in sections 1 and 3 using the `aria-flowto` attri
 
 #### JavaScript
 
-The code first checks whether the `ariaFlowToElements` is supported, and if so, logs its value.
-It then iterates through the sections, logging the section `id`, `aria-flowto` attribute value, and `ariaFlowToElements` property value.
+کد ابتدا بررسی می‌کند که آیا `ariaFlowToElements` پشتیبانی می‌شود و اگر پشتیبانی شود، مقدار آن را ثبت می‌کند. سپس روی بخش‌ها تکرار می‌کند و `id` بخش، مقدار ویژگی `aria-flowto` و مقدار خاصیت `ariaFlowToElements` را ثبت می‌کند.
 
 ```js hidden
 const logElement = document.querySelector("#log");
@@ -115,23 +103,22 @@ if ("ariaFlowToElements" in Element.prototype) {
 }
 ```
 
-#### Result
+#### نتیجه
 
-The log below shows each of the sections (identified by `id`) and the corresponding flow-to element ids that might be selected by accessibility tools.
-We note here that the attribute and property identify the same flow-to elements.
+گزارش زیر هر یک از بخش‌ها (شناسایی‌شده با `id`) و شناسه‌های عنصرِ flow-to متناظر را نشان می‌دهد که ممکن است توسط ابزارهای دسترس‌پذیری انتخاب شوند. در اینجا خاطرنشان می‌کنیم که ویژگی و خاصیت، عناصر flow-to یکسانی را شناسایی می‌کنند.
 
 {{EmbedLiveSample("Get the flow-to element","100%","570px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) attribute
+- ویژگی [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto)
 - {{domxref("ElementInternals.ariaFlowToElements")}}
-- [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Attribute reflection_ guide.
+- [ارجاع‌های عنصر بازتاب‌یافته](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _Attribute reflection_
