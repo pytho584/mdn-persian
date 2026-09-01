@@ -1,11 +1,5 @@
 ---
 title: "FileSystemEntry: filesystem property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/filesystem"
-status: "needs-translation"
----
-
----
-title: "FileSystemEntry: filesystem property"
 short-title: filesystem
 slug: Web/API/FileSystemEntry/filesystem
 page-type: web-api-instance-property
@@ -14,35 +8,30 @@ browser-compat: api.FileSystemEntry.filesystem
 
 {{APIRef("File and Directory Entries API")}}
 
-The read-only **`filesystem`**
-property of the {{domxref("FileSystemEntry")}} interface contains a
-{{domxref("FileSystem")}} object that represents the file system on which the entry
-resides.
+ویژگی فقط خواندنی **`filesystem`** در رابط {{domxref("FileSystemEntry")}} یک شیء {{domxref("FileSystem")}} را در بر می‌گیرد که نمایانگر سیستم فایلی است که این ورودی (entry) در آن قرار دارد.
 
-## Value
+## مقدار
 
-A {{domxref("FileSystem")}} representing the file system on which the file or directory
-described by the `FileSystemEntry` is located.
+یک {{domxref("FileSystem")}} که سیستم فایل حاوی فایل یا دایرکتوری توصیف‌شده توسط `FileSystemEntry` را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-This example obtains a {{domxref("FileSystemDirectoryEntry")}} for the root directory
-of the file system containing a file.
+این مثال یک {{domxref("FileSystemDirectoryEntry")}} برای دایرکتوری ریشه سیستم فایل حاوی یک فایل به دست می‌آورد.
 
 ```js
 let rootDirEntry = fileEntry.filesystem.root;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
+- [API ورودی‌های فایل و دایرکتوری](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("FileSystemEntry")}}
 - {{domxref("FileSystem")}}
