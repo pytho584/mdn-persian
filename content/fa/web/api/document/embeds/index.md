@@ -1,7 +1,5 @@
 ---
 title: "Document: embeds property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/embeds"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,16 @@ browser-compat: api.Document.embeds
 
 {{APIRef("DOM")}}
 
-The **`embeds`** read-only property of the
-{{domxref("Document")}} interface returns a list of the embedded
-{{htmlelement("embed")}} elements within the current document.
+ویژگی فقطخواندنی **`embeds`** در رابط {{domxref("Document")}}، فهرستی از عناصر جاسازیشدهٔ {{htmlelement("embed")}} را در سند فعلی بازمیگرداند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLCollection")}}.
+یک {{domxref("HTMLCollection")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
