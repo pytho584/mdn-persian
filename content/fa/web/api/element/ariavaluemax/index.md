@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaValueMax property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaValueMax"
-status: "needs-translation"
----
-
----
-title: "Element: ariaValueMax property"
 short-title: ariaValueMax
 slug: Web/API/Element/ariaValueMax
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Element.ariaValueMax
 
 {{APIRef("DOM")}}
 
-The **`ariaValueMax`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) attribute, which defines the maximum allowed value for a range widget.
+ویژگی **`ariaValueMax`** از رابط {{domxref("Element")}} مقدار ویژگی [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) را منعکس می‌کند که حداکثر مقدار مجاز را برای یک ویجت محدوده (range widget) تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string which contains a number.
+رشته‌ای (string) که شامل یک عدد است.
 
-## Examples
+## مثال‌ها
 
-In this example the [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) attribute on the element with an ID of `slider` is set to "7". Using `ariaValueMax` we update the value to "6".
+در این مثال، ویژگی [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) روی عنصری با شناسه `slider` برابر با «7» تنظیم شده است. با استفاده از `ariaValueMax` مقدار آن را به «6» تغییر می‌دهیم.
 
 ```html
 <div
@@ -40,10 +34,10 @@ el.ariaValueMax = "6";
 console.log(el.ariaValueMax); // 6
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
