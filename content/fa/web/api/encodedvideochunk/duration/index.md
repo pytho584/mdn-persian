@@ -1,28 +1,19 @@
+```
 ---
 title: "EncodedVideoChunk: duration property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/duration"
-status: "needs-translation"
----
-
----
-title: "EncodedVideoChunk: duration property"
-short-title: duration
-slug: Web/API/EncodedVideoChunk/duration
-page-type: web-api-instance-property
-browser-compat: api.EncodedVideoChunk.duration
 ---
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`duration`** read-only property of the {{domxref("EncodedVideoChunk")}} interface returns an integer indicating the duration of the video in microseconds.
+ویژگی **`duration`** (فقطخواندنی) از رابط {{domxref("EncodedVideoChunk")}} یک عدد صحیح برمیگرداند که مدتزمان ویدیو را بر حسب میکروثانیه نشان میدهد.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثالها
 
-In the following example the `duration` is printed to the console.
+در مثال زیر، مقدار `duration` در کنسول چاپ میشود.
 
 ```js
 const init = {
@@ -36,10 +27,11 @@ const chunk = new EncodedVideoChunk(init);
 console.log(chunk.duration); // 2000000
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
