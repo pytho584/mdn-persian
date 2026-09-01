@@ -1,11 +1,5 @@
 ---
 title: "HTMLButtonElement: formMethod property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/formMethod"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: formMethod property"
 short-title: formMethod
 slug: Web/API/HTMLButtonElement/formMethod
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLButtonElement.formMethod
 
 {{APIRef("HTML DOM")}}
 
-The **`formMethod`** property of the {{domxref("HTMLButtonElement")}} interface is the {{Glossary("HTTP")}} method used to submit the {{HtmlElement("form")}} if the {{HTMLElement("button")}} element is the control that submits the form. It reflects the value of the `<button>`'s [`formmethod`](/en-US/docs/Web/HTML/Reference/Elements/button#formmethod) attribute.
+ویژگی **`formMethod`** در رابط {{domxref("HTMLButtonElement")}}، متد {{Glossary("HTTP")}} است که برای ارسال {{HtmlElement("form")}} استفاده می‌شود، در صورتی که عنصر {{HTMLElement("button")}} کنترل ارسال فرم باشد. این ویژگی مقدار صفت [`formmethod`](/en-US/docs/Web/HTML/Reference/Elements/button#formmethod) عنصر `<button>` را بازتاب می‌دهد.
 
-The value overrides the {{domxref("HTMLFormElement.method", "method")}} property of the {{domxref("HTMLFormElement")}} interface if the form is submitted via the button. This property can be retrieved or set. If set with an empty or invalid value, the invalid default value is `"get"`. If not set at all, the value is the empty string (`""`).
+در صورت ارسال فرم از طریق دکمه، این مقدار ویژگی {{domxref("HTMLFormElement.method", "method")}} رابط {{domxref("HTMLFormElement")}} را بازنویسی می‌کند. این ویژگی قابل خواندن یا تنظیم شدن است. اگر با مقدار خالی یا نامعتبر تنظیم شود، مقدار پیش‌فرضِ مربوط به حالت نامعتبر `"get"` است. اگر اصلاً تنظیم نشده باشد، مقدار آن رشتهٔ خالی (`""`) است.
 
 ## Value
 
-A string; `"post"`, `"get"`, `"dialog"`, or `""`.
+یک رشته؛ `"post"`، `"get"`، `"dialog"` یا `""`.
 
 ## Examples
 
