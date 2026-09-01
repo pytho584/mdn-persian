@@ -1,7 +1,5 @@
 ---
 title: "Document: Document() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/Document"
-status: "needs-translation"
 ---
 
 ---
@@ -14,24 +12,22 @@ browser-compat: api.Document.Document
 
 {{APIRef("DOM")}}
 
-The **`Document`** constructor creates a new
-{{domxref("Document")}} object that is a web page loaded in the browser and serving as
-an entry point into the page's content.
+سازندهٔ **`Document`** یک شیء {{domxref("Document")}} جدید می‌سازد که یک صفحهٔ وب بارگذاری‌شده در مرورگر است و به‌عنوان نقطهٔ ورود به محتوای صفحه عمل می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new Document()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
