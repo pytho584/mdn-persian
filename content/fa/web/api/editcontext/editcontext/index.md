@@ -1,11 +1,5 @@
 ---
 title: "EditContext: EditContext() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/EditContext"
-status: "needs-translation"
----
-
----
-title: "EditContext: EditContext() constructor"
 short-title: EditContext()
 slug: Web/API/EditContext/EditContext
 page-type: web-api-constructor
@@ -16,31 +10,31 @@ browser-compat: api.EditContext.EditContext
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`EditContext()`** constructor returns a new {{DOMxRef("EditContext")}} object.
+سازندهی **`EditContext()`** یک شیء جدید {{DOMxRef("EditContext")}} می‌سازد و برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new EditContext()
 new EditContext(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An optional object with the following properties:
+  - : یک شیء اختیاری با ویژگی‌های زیر:
     - `text`
-      - : A string to set the initial text of the `EditContext`.
+      - : یک رشته (string) که متن اولیه‌ی `EditContext` را تنظیم می‌کند.
     - `selectionStart`
-      - : A number to set the initial selection start of the `EditContext`.
+      - : یک عدد که نقطه‌ی شروع انتخاب اولیه‌ی `EditContext` را تنظیم می‌کند.
     - `selectionEnd`
-      - : A number to set the initial selection end of the `EditContext`.
+      - : یک عدد که نقطه‌ی پایان انتخاب اولیه‌ی `EditContext` را تنظیم می‌کند.
 
-## Examples
+## نمونه‌ها
 
-### Instantiating an `EditContext` object
+### ایجاد یک شیء `EditContext`
 
-The following example creates a new `EditContext` object with the initial text "Hello world!" and the initial selection covering the entire text.
+مثال زیر یک شیء `EditContext` جدید با متن اولیه‌ی «Hello world!» و انتخاب اولیه‌ای که کل متن را پوشش می‌دهد ایجاد می‌کند.
 
 ```html
 <div id="editor"></div>
@@ -63,14 +57,14 @@ console.log(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{DOMxRef("EditContext")}} interface it belongs to.
+- رابط {{DOMxRef("EditContext")}} که این سازنده به آن تعلق دارد.
