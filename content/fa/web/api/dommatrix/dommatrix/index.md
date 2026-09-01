@@ -1,11 +1,5 @@
 ---
-title: "DOMMatrix: DOMMatrix() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/DOMMatrix"
-status: "needs-translation"
----
-
----
-title: "DOMMatrix: DOMMatrix() constructor"
+title: "DOMMatrix: سازنده DOMMatrix()"
 short-title: DOMMatrix()
 slug: Web/API/DOMMatrix/DOMMatrix
 page-type: web-api-constructor
@@ -14,9 +8,9 @@ browser-compat: api.DOMMatrix.DOMMatrix
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMMatrix()`** constructor creates a new {{domxref("DOMMatrix")}} object which represents a 4x4 matrix, suitable for 2D and 3D operations.
+سازنده **`DOMMatrix()`** یک شیء {{domxref("DOMMatrix")}} جدید ایجاد می‌کند که یک ماتریس ۴×۴ را نمایش می‌دهد و برای عملیات دو بعدی و سه بعدی مناسب است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new DOMMatrix()
@@ -24,33 +18,33 @@ new DOMMatrix(initString)
 new DOMMatrix(initArray)
 ```
 
-### Parameters
+### پارامترها
 
 - `initString` {{optional_inline}}
-  - : A string representing a 2D or 3D matrix in CSS {{cssxref("transform-function/matrix", "matrix()")}} or {{cssxref("transform-function/matrix3d", "matrix3d()")}} format.
+  - : یک رشته که یک ماتریس دو بعدی یا سه بعدی را در قالب CSS {{cssxref("transform-function/matrix", "matrix()")}} یا {{cssxref("transform-function/matrix3d", "matrix3d()")}} نمایش می‌دهد.
 - `initArray` {{optional_inline}}
-  - : An array containing either 6 or 16 numbers in column-major order. Other array lengths throw a {{jsxref("TypeError")}}.
-    - A 6-element array is interpreted as the matrix components `[m11, m12, m21, m22, m41, m42]`, creating a 2D matrix.
-    - A 16-element array is interpreted as the matrix components `[m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44]`, creating a 3D matrix.
+  - : یک آرایه شامل ۶ یا ۱۶ عدد به ترتیب ستون‌محور (column-major). طول‌های دیگر آرایه باعث بروز {{jsxref("TypeError")}} می‌شوند.
+    - یک آرایه ۶ عنصری به عنوان مؤلفه‌های ماتریس `[m11, m12, m21, m22, m41, m42]` تفسیر می‌شود که یک ماتریس دو بعدی ایجاد می‌کند.
+    - یک آرایه ۱۶ عنصری به عنوان مؤلفه‌های ماتریس `[m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44]` تفسیر می‌شود که یک ماتریس سه بعدی ایجاد می‌کند.
 
-    If this argument is omitted, an identity matrix is created, i.e., equivalent to `[1, 0, 0, 1, 0, 0]`.
+    اگر این آرگومان حذف شود، یک ماتریس همانندی (identity matrix) ایجاد می‌شود، یعنی معادل `[1, 0, 0, 1, 0, 0]`.
 
-    If this argument is provided as a {{jsxref("Float32Array")}} or {{jsxref("Float64Array")}}, consider using the more performant static methods {{domxref("DOMMatrix.fromFloat32Array_static", "DOMMatrix.fromFloat32Array()")}} or {{domxref("DOMMatrix.fromFloat64Array_static", "DOMMatrix.fromFloat64Array()")}} instead.
+    اگر این آرگومان به صورت {{jsxref("Float32Array")}} یا {{jsxref("Float64Array")}} ارائه شود، توصیه می‌شود از روش‌های ایستای (static) کارآمدتر {{domxref("DOMMatrix.fromFloat32Array_static", "DOMMatrix.fromFloat32Array()")}} یا {{domxref("DOMMatrix.fromFloat64Array_static", "DOMMatrix.fromFloat64Array()")}} استفاده کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("DOMMatrix")}} object.
+یک شیء {{domxref("DOMMatrix")}} جدید.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the argument is not a string or an array with a length other than 6 or 16.
+  - : اگر آرگومان یک رشته نباشد یا یک آرایه با طولی غیر از ۶ یا ۱۶ باشد، پرتاب می‌شود.
 - {{jsxref("SyntaxError")}}
-  - : Thrown if the string argument is not in a valid CSS {{cssxref("transform-function/matrix", "matrix()")}} or {{cssxref("transform-function/matrix3d", "matrix3d()")}} format.
+  - : اگر آرگومان رشته‌ای در قالب معتبر CSS {{cssxref("transform-function/matrix", "matrix()")}} یا {{cssxref("transform-function/matrix3d", "matrix3d()")}} نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example creates a DOMMatrix to use as an argument for calling {{domxref("DOMPointReadOnly.matrixTransform()")}}.
+این مثال یک DOMMatrix ایجاد می‌کند تا به عنوان آرگومان برای فراخوانی {{domxref("DOMPointReadOnly.matrixTransform()")}} استفاده شود.
 
 ```js
 const point = new DOMPoint(5, 4);
@@ -70,15 +64,15 @@ const matrix = new DOMMatrix([
 const transformedPoint = point.matrixTransform(matrix);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrix.fromFloat32Array_static", "DOMMatrix.fromFloat32Array()")}}
 - {{domxref("DOMMatrix.fromFloat64Array_static", "DOMMatrix.fromFloat64Array()")}}
