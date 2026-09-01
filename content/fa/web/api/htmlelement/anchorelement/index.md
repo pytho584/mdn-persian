@@ -1,7 +1,5 @@
 ---
 title: "HTMLElement: anchorElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/anchorElement"
-status: "needs-translation"
 ---
 
 ---
@@ -17,23 +15,23 @@ browser-compat: api.HTMLElement.anchorElement
 
 {{APIRef("HTML DOM")}}{{Non-standard_Header}}{{SeeCompatTable}}
 
-The **`anchorElement`** property of the {{domxref("HTMLElement")}} interface returns a reference to the element's anchor element. This works only in the case of elements associated with their anchors via the [`anchor`](/en-US/docs/Web/HTML/Reference/Global_attributes/anchor) HTML attribute, not elements associated with their anchors via the CSS {{cssxref("anchor-name")}} and {{cssxref("position-anchor")}} properties.
+ویژگی **`anchorElement`** از رابط {{domxref("HTMLElement")}} مرجعی به عنصر لنگرِ آن عنصر برمی‌گرداند. این ویژگی فقط در مورد عناصری کار می‌کند که از طریق صفت HTML [`anchor`](/en-US/docs/Web/HTML/Reference/Global_attributes/anchor) به لنگر خود مرتبط شده‌اند، نه عناصری که از طریق ویژگی‌های CSS {{cssxref("anchor-name")}} و {{cssxref("position-anchor")}} به لنگر خود مرتبط شده‌اند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLElement")}} instance representing the element's anchor element, or `null` if it doesn't have one.
+یک نمونه از {{domxref("HTMLElement")}} که عنصر لنگرِ عنصر را نمایش می‌دهد؛ یا اگر عنصر لنگری نداشته باشد، مقدار `null` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-This example associates an element with an anchor in HTML, and uses JavaScript to retrieve a reference to the anchor element.
+این مثال یک عنصر را در HTML به یک لنگر مرتبط می‌کند و با استفاده از جاوااسکریپت، مرجعی به عنصر لنگر را بازیابی می‌کند.
 
 #### HTML
 
-In the HTML, we create a {{htmlelement("div")}} element with an [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) of `example-anchor`. This will be our anchor element. We then include another `<div>` with a class of `infobox` and an [`anchor`](/en-US/docs/Web/HTML/Reference/Global_attributes/anchor) attribute set to `example-anchor`. This designates the first `<div>` as the anchor of the second `<div>`, associating the two together.
+در کد HTML، یک عنصر {{htmlelement("div")}} با [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) برابر با `example-anchor` می‌سازیم. این عنصر، عنصر لنگر ما خواهد بود. سپس یک `<div>` دیگر با کلاس `infobox` و صفت [`anchor`](/en-US/docs/Web/HTML/Reference/Global_attributes/anchor) که روی `example-anchor` تنظیم شده است اضافه می‌کنیم. این کار، `<div>` اول را به‌عنوان لنگرِ `<div>` دوم تعیین می‌کند و آن دو را به یکدیگر مرتبط می‌سازد.
 
-We also include a {{htmlelement("p")}} element to output some results into.
+همچنین یک عنصر {{htmlelement("p")}} برای نمایش نتایج اضافه می‌کنیم.
 
 ```html
 <div class="anchor" id="example-anchor">⚓︎</div>
@@ -45,9 +43,9 @@ We also include a {{htmlelement("p")}} element to output some results into.
 <p class="output"></p>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-We use JavaScript to get references to the positioned element and the output element, and then print the value of the positioned element's `anchorElement` property's associated `id` to the output, showing that the anchor element is the positioned element's `anchorElement`.
+با استفاده از جاوااسکریپت، ارجاع‌هایی به عنصر موقعیت‌داده‌شده (positioned element) و عنصر خروجی می‌گیریم و سپس مقدارِ `id` مرتبط با ویژگی `anchorElement` عنصر موقعیت‌داده‌شده را در خروجی چاپ می‌کنیم تا نشان دهیم عنصر لنگر، همان `anchorElement` عنصر موقعیت‌داده‌شده است.
 
 ```js
 const posElem = document.querySelector(".infobox");
@@ -60,22 +58,22 @@ try {
 }
 ```
 
-#### Result
+#### نتیجه
 
-The result is as follows.
+نتیجه به این صورت است.
 
 {{EmbedLiveSample("Basic usage", "100%", 110)}}
 
-## Specifications
+## مشخصات
 
-This attribute is not currently part of the HTML specification. Read the discussion about adding the `anchorElement` property at [https://github.com/whatwg/html/pull/9144](https://github.com/whatwg/html/pull/9144).
+این ویژگی در حال حاضر بخشی از مشخصات HTML نیست. بحث مربوط به افزودن ویژگی `anchorElement` را در [https://github.com/whatwg/html/pull/9144](https://github.com/whatwg/html/pull/9144) بخوانید.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML [`anchor`](/en-US/docs/Web/HTML/Reference/Global_attributes/anchor) attribute
-- CSS {{cssxref("anchor-name")}} and {{cssxref("position-anchor")}} properties
-- [CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning) module
+- صفت HTML [`anchor`](/en-US/docs/Web/HTML/Reference/Global_attributes/anchor)
+- ویژگی‌های CSS {{cssxref("anchor-name")}} و {{cssxref("position-anchor")}}
+- ماژول [CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning)
