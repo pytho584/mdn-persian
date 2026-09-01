@@ -1,32 +1,26 @@
 ---
 title: "CSSKeyframesRule: cssRules property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/cssRules"
-status: "needs-translation"
----
-
----
-title: "CSSKeyframesRule: cssRules property"
 short-title: cssRules
 slug: Web/API/CSSKeyframesRule/cssRules
 page-type: web-api-instance-property
 browser-compat: api.CSSKeyframesRule.cssRules
 ---
 
-{{APIRef("CSSOM") }}
+{{APIRef("CSSOM")}}
 
-The read-only **`cssRules`** property of the {{domxref("CSSKeyframeRule")}} interface returns a {{domxref("CSSRuleList")}} containing the rules in the keyframes [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+ویژگی فقط‌خواندنی **`cssRules`** در رابط {{domxref("CSSKeyframeRule")}} یک {{domxref("CSSRuleList")}} شامل قواعد موجود در [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) کادر‌های کلیدی (keyframes) را بازمی‌گرداند.
 
 > [!NOTE]
-> The `CSSKeyframeRule` itself is indexable like an array, and functions similarly to its `cssRules` property.
+> خود شیء `CSSKeyframeRule` مانند یک آرایه قابل ایندکس‌گذاری است و رفتاری مشابه ویژگی `cssRules` آن دارد.
 
-## Value
+## مقدار
 
-A {{domxref('CSSRuleList')}}.
+یک {{domxref('CSSRuleList')}}.
 
-## Examples
+## مثال‌ها
 
-The CSS includes a keyframes at-rule. This will be the first {{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`.
-`myRules[0]` returns a {{domxref("CSSKeyframesRule")}} object. The `cssRules` property returns a {{domxref("CSSRuleList")}} containing two rules.
+CSS شامل یک at-rule کادر‌های کلیدی است. این at-rule، اولین {{domxref("CSSRule")}} خواهد بود که توسط `document.styleSheets[0].cssRules` برگردانده می‌شود.
+`myRules[0]` یک شیء {{domxref("CSSKeyframesRule")}} را برمی‌گرداند. ویژگی `cssRules` یک {{domxref("CSSRuleList")}} شامل دو قاعده را برمی‌گرداند.
 
 ```css
 @keyframes slide-in {
@@ -46,10 +40,10 @@ let keyframes = myRules[0]; // a CSSKeyframesRule
 console.log(keyframes.cssRules); // a CSSRuleList object with two rules
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
