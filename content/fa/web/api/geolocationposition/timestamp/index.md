@@ -1,7 +1,5 @@
 ---
 title: "GeolocationPosition: timestamp property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPosition/timestamp"
-status: "needs-translation"
 ---
 
 ---
@@ -14,21 +12,21 @@ browser-compat: api.GeolocationPosition.timestamp
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`timestamp`** read-only property of the {{domxref("GeolocationPosition")}} interface represents the date and time that the position was acquired by the device.
+ویژگی فقط‌خواندنی **`timestamp`** در رابط {{domxref("GeolocationPosition")}} نشان‌دهندهٔ تاریخ و زمانی است که موقعیت توسط دستگاه به دست آمده است.
 
-## Value
+## مقدار
 
-A number containing a timestamp, given as {{Glossary("Unix time")}} in milliseconds.
+عددی شامل یک برچسب زمانی (timestamp) که به‌صورت {{Glossary("Unix time")}} بر حسب میلی‌ثانیه بیان می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [استفاده از API موقعیت جغرافیایی](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
 - {{domxref("GeolocationPosition")}}
