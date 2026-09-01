@@ -1,11 +1,5 @@
 ---
 title: "CSSKeyframesRule: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/length"
-status: "needs-translation"
----
-
----
-title: "CSSKeyframesRule: length property"
 short-title: length
 slug: Web/API/CSSKeyframesRule/length
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.CSSKeyframesRule.length
 
 {{APIRef("CSSOM") }}
 
-The read-only **`length`** property of the {{domxref("CSSKeyframesRule")}} interface returns the number of {{domxref("CSSKeyframeRule")}} objects in its list. You can then access each keyframe rule by its index directly on the `CSSKeyframeRule` object.
+ویژگی فقط‌خواندنی **`length`** از رابط {{domxref("CSSKeyframesRule")}} تعداد اشیاء {{domxref("CSSKeyframeRule")}} را در فهرست آن بازمی‌گرداند. سپس می‌توانید هر قانون keyframe را با شاخص (index) آن مستقیماً روی شیء `CSSKeyframeRule` دسترسی پیدا کنید.
 
-## Value
+## مقدار
 
-A non-negative integer. It should have the same value as the `length` of the {{domxref("CSSKeyframesRule.cssRules", "cssRules")}} property.
+یک عدد صحیح غیرمنفی. این مقدار باید برابر با `length` ویژگی {{domxref("CSSKeyframesRule.cssRules", "cssRules")}} باشد.
 
-## Examples
+## مثال‌ها
 
-The CSS includes a keyframes at-rule. This will be the first {{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`.
-`myRules[0]` returns a {{domxref("CSSKeyframesRule")}} object. The `cssRules` property returns a {{domxref("CSSRuleList")}} containing two rules.
+CSS شامل یک at-rule keyframes است. این اولین {{domxref("CSSRule")}} خواهد بود که توسط `document.styleSheets[0].cssRules` بازگردانده می‌شود.
+`myRules[0]` یک شیء {{domxref("CSSKeyframesRule")}} بازمی‌گرداند. ویژگی `cssRules` یک {{domxref("CSSRuleList")}} شامل دو قانون بازمی‌گرداند.
 
 ```css
 @keyframes slide-in {
@@ -43,10 +37,10 @@ const keyframes = myRules[0]; // a CSSKeyframesRule
 console.log(keyframes.length); // 2
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
