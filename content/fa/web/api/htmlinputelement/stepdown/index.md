@@ -1,7 +1,6 @@
 ---
 title: "HTMLInputElement: stepDown() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/stepDown"
-status: "needs-translation"
 ---
 
 ---
@@ -14,43 +13,26 @@ browser-compat: api.HTMLInputElement.stepDown
 
 {{APIRef("HTML DOM")}}
 
-The
-**`HTMLInputElement.stepDown()`** method decrements the
-value of a numeric type of {{HTMLElement("input")}} element by the value of the
-[`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) attribute or up
-to `n` multiples of the step attribute if a number is passed as the
-parameter.
+متد **`HTMLInputElement.stepDown()`** مقدار عنصر {{HTMLElement("input")}} از نوع عددی را به اندازه‌ی مقدار ویژگی [`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) کاهش می‌دهد، یا اگر عددی به‌عنوان پارامتر ارسال شود، آن را تا `n` برابرِ مقدار `step` کاهش می‌دهد.
 
-The method, when invoked, decrements the
-[`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) by ([`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) \* n), where n
-defaults to 1 if not specified, and
-[`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) defaults to the
-default value for `step` if not specified.
+این متد هنگام فراخوانی، مقدار [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) را به اندازه‌ی ([`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) × n) کاهش می‌دهد؛ در این‌جا اگر n مشخص نشده باشد، پیش‌فرض آن `1` است و اگر [`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) مشخص نشده باشد، پیش‌فرض آن مقدارِ پیش‌فرضِ `step` خواهد بود.
 
-Valid on all numeric, date, and time input types that support the step attribute,
-including {{HTMLElement("input/date", "date")}}, {{HTMLElement("input/month", "month")}},
-{{HTMLElement("input/week", "week")}}, {{HTMLElement("input/time", "time")}},
-{{HTMLElement("input/datetime-local", "datetime-local")}},
-{{HTMLElement("input/number", "number")}}, and {{HTMLElement("input/range", "range")}}.
+این متد برای همه‌ی انواع ورودیِ عددی، تاریخ و زمان که از ویژگی step پشتیبانی می‌کنند معتبر است، از جمله {{HTMLElement("input/date", "date")}}، {{HTMLElement("input/month", "month")}}، {{HTMLElement("input/week", "week")}}، {{HTMLElement("input/time", "time")}}، {{HTMLElement("input/datetime-local", "datetime-local")}}، {{HTMLElement("input/number", "number")}} و {{HTMLElement("input/range", "range")}}.
 
-Given `<input id="myTime" type="time" max="17:00" step="900" value="17:00">`,
-invoking `myTime.stepDown(3)` will change the value to 16:15, decrementing the
-time by `3 * 900`, or 45 minutes. `myTime.stepDown()`, with no
-parameter, would have resulted in `16:45`, as `n` defaults to
-`1`.
+با در نظر گرفتن `<input id="myTime" type="time" max="17:00" step="900" value="17:00">`، فراخوانیِ `myTime.stepDown(3)` مقدار را به 16:15 تغییر می‌دهد؛ یعنی زمان به اندازه‌ی `3 × 900` یا ۴۵ دقیقه کاهش می‌یابد. همچنین `myTime.stepDown()` بدون پارامتر، چون `n` پیش‌فرض `1` دارد، نتیجه‌ی `16:45` را به همراه خواهد داشت.
 
 ```html
-<!-- decrements by intervals of 900 seconds (15 minute) -->
+<!-- کاهش با بازه‌های ۹۰۰ ثانیه‌ای (۱۵ دقیقه) -->
 <input type="time" max="17:00" step="900" />
 
-<!-- decrements by intervals of 7 days (one week) -->
+<!-- کاهش با بازه‌های ۷ روزه (یک هفته) -->
 <input type="date" max="2019-12-25" step="7" />
 
-<!-- decrements by intervals of 12 months (one year) -->
+<!-- کاهش با بازه‌های ۱۲ ماهه (یک سال) -->
 <input type="month" max="2019-12" step="12" />
 ```
 
-However, calling `stepDown` on `<input type="time" max="17:00" step="900">` would not set the value to `17:00`, as one would expect — and as it does for `stepUp` when the input is `<input type="time" min="17:00" step="900">`. Instead, the first call to `stepDown` will set the initial value to `23:45` even though the `max` attribute is set. The second call will set the value to `17:00`. And the third call to will set the value to `16:45`.
+با این حال، فراخوانیِ `stepDown` روی `<input type="time" max="17:00" step="900">` مقدار را آن‌طور که انتظار می‌رود روی `17:00` قرار نمی‌دهد — برخلاف `stepUp` وقتی ورودی `<input type="time" min="17:00" step="900">` باشد. در عوض، اولین فراخوانیِ `stepDown` مقدار اولیه را روی `23:45` قرار می‌دهد، حتی با وجود اینکه ویژگی `max` تنظیم شده است. دومین فراخوانی مقدار را روی `17:00` و سومین فراخوانی نیز مقدار را روی `16:45` قرار می‌دهد.
 
 ```js
 let input1 = document.createElement("input");
@@ -60,7 +42,7 @@ input1.setAttribute("step", 900);
 console.log(input1.value); // ""
 input1.stepUp();
 console.log(input1.value); // "17:00"
-// However
+// اما
 let input2 = document.createElement("input");
 input2.setAttribute("type", "time");
 input2.setAttribute("max", "17:00");
@@ -74,24 +56,11 @@ input2.stepDown();
 console.log(input2.value); // "16:45"
 ```
 
-The method, when invoked, changes the form control's value by the value given in the
-`step` attribute, multiplied by the parameter, within the constraints set
-within the form control. The default value for the parameter, if not is passed, is 1.
-The method will not cause the value to go below the
-[`min`](/en-US/docs/Web/HTML/Reference/Attributes/min) value set or defy the
-constraints set by the
-[`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) attribute. A
-negative value for `n` will increment the value, but will not increment
-beyond the [`max`](/en-US/docs/Web/HTML/Reference/Attributes/max) value.
+این متد هنگام فراخوانی، مقدار کنترل فرم را به اندازه‌ی مقدارِ مشخص‌شده در ویژگی `step` ضرب‌در پارامتر، و در چارچوب محدودیت‌های تعیین‌شده در کنترل فرم تغییر می‌دهد. مقدار پیش‌فرض پارامتر، اگر ارسال نشود، ۱ است. این متد باعث نمی‌شود مقدار از [`min`](/en-US/docs/Web/HTML/Reference/Attributes/min) تعیین‌شده پایین‌تر برود یا محدودیت‌های اعمال‌شده توسط ویژگی [`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) نقض شود. مقدار منفی برای `n` مقدار را افزایش می‌دهد، اما از مقدار [`max`](/en-US/docs/Web/HTML/Reference/Attributes/max) فراتر نمی‌رود.
 
-If the value before invoking the `stepDown()` method is invalid, for
-example, if it doesn't match the constraints set by the `step` attribute,
-invoking the `stepDown()` method will return a value that does match the form
-controls constraints.
+اگر مقدار قبل از فراخوانی متد `stepDown()` نامعتبر باشد، مثلاً با محدودیت‌های ویژگی `step` مطابقت نداشته باشد، فراخوانی متد `stepDown()` مقداری برمی‌گرداند که با محدودیت‌های کنترل فرم مطابقت دارد.
 
-If the form control is non time, date, or numeric in nature, and therefore does not
-support the `step` attribute (see the list of supported input types above), or if the `step` value is set to `any`, an
-`InvalidStateError` exception is thrown.
+اگر کنترل فرم از نوع غیر زمانی، تاریخ یا عددی باشد و بنابراین از ویژگی `step` پشتیبانی نکند (فهرست انواع ورودی‌های پشتیبانی‌شده را در بالا ببینید)، یا اگر مقدار `step` برابر با `any` تنظیم شده باشد، استثنای `InvalidStateError` پرتاب می‌شود.
 
 ## Syntax
 
@@ -103,45 +72,39 @@ stepDown(stepDecrement)
 ### Parameters
 
 - `stepDecrement` {{optional_inline}}
-  - : A numeric value. If no parameter is passed, _stepDecrement_ defaults to 1.
+  - : یک مقدار عددی. اگر پارامتری ارسال نشود، _stepDecrement_ به‌صورت پیش‌فرض ۱ است.
 
-    If the value is a float, the value will decrement as if
-    [`Math.floor(stepDecrement)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor)
-    was passed. If the value is negative, the value will be incremented instead of
-    decremented.
+    اگر مقدار اعشاری (float) باشد، مقدار به گونه‌ای کاهش می‌یابد که گویی [`Math.floor(stepDecrement)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor) ارسال شده است. اگر مقدار منفی باشد، مقدار به‌جای کاهش، افزایش می‌یابد.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown in one of the following cases:
-    - if the method is not applicable to for the current
-      [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) value,
-    - if the element has no [`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) value,
-    - if the [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) cannot be converted to a number,
-    - if the resulting value is above the [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) or below the
-      [`min`](/en-US/docs/Web/HTML/Reference/Elements/input#min).
+  - : در یکی از موارد زیر پرتاب می‌شود:
+    - اگر متد برای مقدار فعلی [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) قابل استفاده نباشد،
+    - اگر عنصر هیچ مقدار [`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) نداشته باشد،
+    - اگر [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) نتواند به عدد تبدیل شود،
+    - اگر مقدار حاصل بالاتر از [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) یا پایین‌تر از [`min`](/en-US/docs/Web/HTML/Reference/Elements/input#min) باشد.
 
 ## Examples
 
-Click the button in this example to decrement the {{HTMLElement("input/number", "number")}} input type:
+در این مثال، روی دکمه کلیک کنید تا مقدار ورودی از نوع {{HTMLElement("input/number", "number")}} کاهش یابد:
 
 ### HTML
 
 ```html
 <p>
   <label for="theNumber">
-    Enter a number between 0 and 400 that is divisible by 5:
+    عددی بین 0 تا 400 وارد کنید که بر 5 بخش‌پذیر باشد:
   </label>
   <input type="number" step="5" id="theNumber" min="0" max="400" />
 </p>
 <p>
   <label for="decrementButton">
-    Enter how many values of step you would like to decrement by or leave it
-    blank:
+    مشخص کنید مقدار step چند بار کاهش یابد یا آن را خالی بگذارید:
   </label>
   <input type="number" step="1" id="decrementInput" min="-2" max="15" />
 </p>
@@ -151,7 +114,7 @@ Click the button in this example to decrement the {{HTMLElement("input/number", 
 ### JavaScript
 
 ```js
-/* make the button call the function */
+/* فراخوانی تابع با کلیک روی دکمه */
 let button = document.getElementById("theButton");
 button.addEventListener("click", () => {
   stepOnDown();
@@ -162,10 +125,10 @@ function stepOnDown() {
   let val = document.getElementById("decrementInput").value;
 
   if (val) {
-    // decrement with a parameter
+    // کاهش با پارامتر
     input.stepDown(val);
   } else {
-    // or without a parameter. Try it with 0, 5, -2, etc.
+    // یا بدون پارامتر. با مقادیری مانند 0، 5، 2- و غیره آزمایش کنید.
     input.stepDown();
   }
 }
@@ -183,19 +146,11 @@ input:invalid {
 
 {{EmbedLiveSample("Examples")}}
 
-Note if you don't pass a parameter to the `stepDown()` method, it defaults
-to 1. Any other value is a multiplier of the `step` attribute value, which in
-this case is 5. If we pass `4` as the `stepDecrement`, the input will `stepDown` by
-`4 * 5`, or `20`. If the parameter is `0`, the number will not be
-decremented. The `stepDown()` method will not allow the input to go out of range, in this
-case stopping when it reaches 0 and rounding down and floats that are passed as a
-parameter.
+توجه داشته باشید که اگر پارامتری به متد `stepDown()` ارسال نکنید، به‌صورت پیش‌فرض ۱ در نظر گرفته می‌شود. هر مقدار دیگر، ضریبی از مقدار ویژگی `step` است که در این‌جا ۵ است. اگر مقدار `4` را به‌عنوان `stepDecrement` ارسال کنیم، ورودی به اندازه‌ی `4 × 5` یعنی ۲۰ کاهش می‌یابد. اگر پارامتر `0` باشد، عدد کاهش نمی‌یابد. متد `stepDown()` اجازه نمی‌دهد مقدار ورودی از محدوده خارج شود؛ در این‌جا وقتی به ۰ برسد متوقف می‌شود و هر عدد اعشاری که به‌عنوان پارامتر ارسال شود به پایین گرد می‌شود.
 
-Try setting the step decrement input to `1.2`. What happens when you invoke the
-method?
+سعی کنید مقدار ورودیِ decrement را روی `1.2` تنظیم کنید. هنگام فراخوانی متد چه اتفاقی می‌افتد؟
 
-Try setting the value to `44`, which is not valid. What happens when you
-invoke the method?
+مقدار را روی `44` تنظیم کنید که نامعتبر است. هنگام فراخوانی متد چه اتفاقی می‌افتد؟
 
 ## Specifications
 
@@ -210,6 +165,4 @@ invoke the method?
 - {{HTMLElement("input")}}
 - {{domxref("HTMLInputElement")}}
 - {{domxref("HTMLInputElement.stepUp", "HTMLInputElement.stepUp()")}}
-- [`step`](/en-US/docs/Web/HTML/Reference/Attributes/step),
-  [`min`](/en-US/docs/Web/HTML/Reference/Attributes/min) and
-  [`max`](/en-US/docs/Web/HTML/Reference/Attributes/max) attributes
+- ویژگی‌های [`step`](/en-US/docs/Web/HTML/Reference/Attributes/step)، [`min`](/en-US/docs/Web/HTML/Reference/Attributes/min) و [`max`](/en-US/docs/Web/HTML/Reference/Attributes/max)
