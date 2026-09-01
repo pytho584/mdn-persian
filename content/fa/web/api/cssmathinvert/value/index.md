@@ -1,7 +1,5 @@
 ---
 title: "CSSMathInvert: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathInvert/value"
-status: "needs-translation"
 ---
 
 ---
@@ -14,19 +12,19 @@ browser-compat: api.CSSMathInvert.value
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`value`** read-only property of the {{domxref("CSSMathInvert")}} interface returns the {{domxref("CSSNumericValue")}} that is being inverted.
+**`value`** یک خاصیت فقطخواندنی در رابط {{domxref("CSSMathInvert")}} است که مقدار {{domxref("CSSNumericValue")}} در حال معکوس شدن را برمیگرداند.
 
-This is the parameter that was passed to the constructor when this object was created.
+این همان پارامتری است که هنگام ایجاد این شیء به سازنده (constructor) داده شده بود.
 
 ## Value
 
-A {{domxref('CSSNumericValue')}} or one of its derived types.
+یک {{domxref('CSSNumericValue')}} یا یکی از انواع مشتق‌شده از آن.
 
 ## Examples
 
-### Basic usage
+### استفاده پایه
 
-The following code creates a `CSSMathInvert` object, then reads its `value`.
+کد زیر یک شیء `CSSMathInvert` می‌سازد و سپس `value` آن را می‌خواند.
 
 ```js
 const inverted = new CSSMathInvert(CSS.percent(4));
@@ -34,9 +32,7 @@ const inverted = new CSSMathInvert(CSS.percent(4));
 console.log(inverted.value); // CSSUnitValue {value: 4, unit: "percent"}
 ```
 
-`value` returns whatever was passed to `arg` in the constructor.
-In this case, we passed `CSS.percent(4)`, so `value` is a {{domxref('CSSUnitValue')}}.
-Passing an expression such as `CSS.percent(4).add(CSS.em(2))` would result in `value` returning a {{domxref('CSSMathSum')}}.
+`value` دقیقاً همان چیزی را برمی‌گرداند که در سازنده به `arg` داده شده است. در این حالت، ما `CSS.percent(4)` را داده‌ایم، بنابراین `value` یک {{domxref('CSSUnitValue')}} است. اگر عبارتی مانند `CSS.percent(4).add(CSS.em(2))` ارسال کنید، `value` یک {{domxref('CSSMathSum')}} برمی‌گرداند.
 
 ## Specifications
 
