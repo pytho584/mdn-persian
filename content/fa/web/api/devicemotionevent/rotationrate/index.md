@@ -1,7 +1,5 @@
 ---
 title: "DeviceMotionEvent: rotationRate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/rotationRate"
-status: "needs-translation"
 ---
 
 ---
@@ -14,35 +12,31 @@ browser-compat: api.DeviceMotionEvent.rotationRate
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`rotationRate`** read-only property of the {{domxref("DeviceMotionEvent")}} interface returns the rate at which the device is rotating around each of its axes in degrees per
-second.
+ویژگی فقط‌خواندنی **`rotationRate`** در رابط {{domxref("DeviceMotionEvent")}} نرخ چرخش دستگاه به دور هر یک از محورهای آن را بر حسب درجه بر ثانیه برمی‌گرداند.
 
 > [!NOTE]
-> If the hardware isn't capable of providing this
-> information, this property returns `null`.
+> اگر سخت‌افزار قادر به ارائه این اطلاعات نباشد، این ویژگی مقدار `null` برمی‌گرداند.
 
 ## Value
 
-The `rotationRate` property is a read only object describing the rotation
-rates of the device around each of its axes:
+ویژگی `rotationRate` یک شیء فقط‌خواندنی است که نرخ چرخش دستگاه به دور هر یک از محورهای آن را توصیف می‌کند:
 
 - `alpha`
-  - : The rate at which the device is rotating about its X axis; that is, front to back.
+  - : نرخی که دستگاه به دور محور X خود می‌چرخد؛ یعنی از جلو به عقب.
 - `beta`
-  - : The rate at which the device is rotating about its Y axis; that is, side to side.
+  - : نرخی که دستگاه به دور محور Y خود می‌چرخد؛ یعنی از یک سمت به سمت دیگر.
 - `gamma`
-  - : The rate at which the device is rotating about its Z axis; that is, being twisted
-    about a line perpendicular to the screen.
+  - : نرخی که دستگاه به دور محور Z خود می‌چرخد؛ یعنی چرخش حول خطی عمود بر صفحه نمایش.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Device orientation events/Detecting device orientation", "Detecting device orientation", "", "nocode")}}
 - {{domxref("Device orientation events/Orientation and motion data explained", "Orientation and motion data explained", "", "nocode")}}
