@@ -1,7 +1,5 @@
 ---
 title: "CSSSkew: ax property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSSkew/ax"
-status: "needs-translation"
 ---
 
 ---
@@ -14,20 +12,20 @@ browser-compat: api.CSSSkew.ax
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`ax`** property of the {{domxref("CSSSkew")}} interface gets and sets the angle used to distort the element along the x-axis (or abscissa).
+ویژگی **`ax`** در رابط {{domxref("CSSSkew")}} زاویه‌ای را که برای انحراف (کج‌کردن) عنصر در امتداد محور ایکس (یا محور افقی) استفاده می‌شود، می‌خواند و تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref("CSSNumericValue")}}.
+یک {{domxref("CSSNumericValue")}}.
 
-## Examples
+## مثال‌ها
 
-To do
+در دست تهیه.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
