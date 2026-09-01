@@ -1,11 +1,5 @@
 ---
 title: "Gamepad: buttons property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/buttons"
-status: "needs-translation"
----
-
----
-title: "Gamepad: buttons property"
 short-title: buttons
 slug: Web/API/Gamepad/buttons
 page-type: web-api-instance-property
@@ -14,18 +8,17 @@ browser-compat: api.Gamepad.buttons
 
 {{APIRef("Gamepad API")}}
 
-The **`buttons`** property of the {{domxref("Gamepad")}} interface returns an array of {{domxref("GamepadButton")}} objects representing the buttons present on the device.
+ویژگی **`buttons`** از رابط {{domxref("Gamepad")}} یک آرایه از اشیاء {{domxref("GamepadButton")}} را برمی‌گرداند که نشان‌دهنده دکمه‌های موجود روی دستگاه است.
 
-Each entry in the array is `0` if the button is not pressed, and non-zero (typically `1.0`) if the button is pressed.
+هر ورودی در آرایه در صورت فشرده نبودن دکمه `0` و در صورت فشرده بودن مقداری غیر از صفر (معمولاً `1.0`) است.
 
-## Value
+## مقدار
 
-An array of {{domxref("GamepadButton")}} objects.
+یک آرایه از اشیاء {{domxref("GamepadButton")}}.
 
-## Examples
+## مثال‌ها
 
-Depending on the type of button, we need to access the {{domxref("GamepadButton.value")}} or {{domxref("GamepadButton.pressed")}} properties. This
-example supports both:
+بسته به نوع دکمه، باید به ویژگی‌های {{domxref("GamepadButton.value")}} یا {{domxref("GamepadButton.pressed")}} دسترسی داشته باشیم. این مثال از هر دو پشتیبانی می‌کند:
 
 ```js
 function gameLoop() {
@@ -48,14 +41,14 @@ function gameLoop() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-[Using the Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
+[استفاده از Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
