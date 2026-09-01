@@ -1,7 +1,5 @@
 ---
 title: "ElementInternals: ariaOwnsElements property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaOwnsElements"
-status: "needs-translation"
 ---
 
 ---
@@ -14,44 +12,43 @@ browser-compat: api.ElementInternals.ariaOwnsElements
 
 {{APIRef("DOM")}}
 
-The **`ariaOwnsElements`** property of the {{domxref("ElementInternals")}} interface is an array containing the element (or elements) that define a visual, functional, or contextual relationship between a parent element that it is applied to, and its child elements.
-This is used when the shadow DOM hierarchy cannot be used to represent the relationship, and it would not otherwise be available to assistive technology,
+ویژگی **`ariaOwnsElements`** در رابط {{domxref("ElementInternals")}} آرایه‌ای شامل عنصر (یا عناصر) است که رابطهٔ بصری، عملکردی یا زمینه‌ای بین یک عنصر والد که این ویژگی روی آن اعمال می‌شود و عناصر فرزند آن را تعریف می‌کنند. این ویژگی زمانی استفاده می‌شود که سلسله‌مراتب DOM سایه‌ای (shadow DOM) نتواند این رابطه را نشان دهد و در غیر این صورت در دسترس فناوری کمکی قرار نخواهد گرفت.
 
-The [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) topic contains additional information about how the attribute and property should be used.
+موضوع [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) اطلاعات بیشتری درباره نحوه استفاده از این صفت و ویژگی ارائه می‌دهد.
 
-## Value
+## مقدار
 
-An array of subclasses of {{domxref("HTMLElement")}}.
+آرایه‌ای از زیرکلاس‌های {{domxref("HTMLElement")}}.
 
-When read, the returned array is a static and read-only.
-When written, the assigned array is copied: subsequent changes to the array do not affect the value of the property.
+هنگام خواندن، آرایه بازگشتی ثابت و فقط‌خواندنی است.
+هنگام نوشتن، آرایه اختصاص‌داده‌شده کپی می‌شود: تغییرات بعدی در آرایه مقدار ویژگی را تحت تأثیر قرار نمی‌دهد.
 
-## Description
+## توضیحات
 
-The property is a flexible alternative to using the [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) attribute to indicate ownership of an element.
-Unlike `aria-owns`, the elements assigned to this property do not have to have an [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute.
+این ویژگی یک جایگزین انعطاف‌پذیر برای استفاده از صفت [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) جهت نشان دادن مالکیت یک عنصر است.
+برخلاف `aria-owns`، عناصر اختصاص‌داده‌شده به این ویژگی نیازی به داشتن صفت [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) ندارند.
 
-The property reflects the element's [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) attribute when it is defined, but only for listed reference `id` values that match valid in-scope elements.
-If the property is set, then the corresponding attribute is cleared.
-For more information about reflected element references and scope see [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Reflected attributes_ guide.
+ویژگی، صفت [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) عنصر را وقتی تعریف شده باشد منعکس می‌کند، اما فقط برای مقادیر مرجع `id` فهرست‌شده که با عناصر معتبر درون‌قلمرو مطابقت دارند.
+اگر ویژگی تنظیم شود، صفت مربوطه پاک می‌شود.
+برای اطلاعات بیشتر درباره بازتاب مراجع عناصر (reflected element references) و قلمرو، به [بازتاب مراجع عناصر](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _صفت‌های بازتاب‌شده_ مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-The examples in the following documents are relevant:
+مثال‌های موجود در اسناد زیر مرتبط هستند:
 
-- {{domxref("Element.ariaOwnsElements")}} is the DOM equivalent of this property.
-  It is used in the same way, but within the DOM instead of a shadow DOM and/or custom element.
+- {{domxref("Element.ariaOwnsElements")}} معادل DOM این ویژگی است.
+  به همین صورت استفاده می‌شود، اما در DOM به جای DOM سایه‌ای و/یا عنصر سفارشی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) attribute
+- صفت [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns)
 - {{domxref("Element.ariaOwnsElements")}}
-- [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Attribute reflection_ guide.
+- [بازتاب مراجع عناصر](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _بازتاب صفت‌ها_.
