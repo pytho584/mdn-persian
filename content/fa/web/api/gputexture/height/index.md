@@ -1,11 +1,5 @@
 ---
 title: "GPUTexture: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/height"
-status: "needs-translation"
----
-
----
-title: "GPUTexture: height property"
 short-title: height
 slug: Web/API/GPUTexture/height
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.GPUTexture.height
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`height`** read-only property of the
-{{domxref("GPUTexture")}} interface represents the height of the `GPUTexture`.
+خاصیت فقط‑خواندنی **`height`** از رابط {{domxref("GPUTexture")}}، ارتفاع `GPUTexture` را نشان می‌دهد.
 
-This is set based on the value of the `size` property in the descriptor object passed into the originating {{domxref("GPUDevice.createTexture()")}} call.
+این مقدار بر اساس مقدار ویژگی `size` در شیء توصیف‌کننده‌ای که به فراخوانی {{domxref("GPUDevice.createTexture()")}} مبدأ داده شده است، تعیین می‌شود.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -37,14 +30,14 @@ const depthTexture = device.createTexture({
 console.log(depthTexture.height); // 480
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
