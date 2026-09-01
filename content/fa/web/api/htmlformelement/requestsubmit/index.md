@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement: requestSubmit() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/requestSubmit"
-status: "needs-translation"
----
-
----
-title: "HTMLFormElement: requestSubmit() method"
 short-title: requestSubmit()
 slug: Web/API/HTMLFormElement/requestSubmit
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.HTMLFormElement.requestSubmit
 
 {{APIRef("HTML DOM")}}
 
-The {{domxref("HTMLFormElement")}} method **`requestSubmit()`** requests
-that the form be submitted using a specific submit button.
+متد **`requestSubmit()`** از {{domxref("HTMLFormElement")}} درخواست می‌کند که فرم با استفاده از یک دکمه ارسال مشخص، ارسال شود.
 
 ## Syntax
 
@@ -24,53 +17,39 @@ requestSubmit()
 requestSubmit(submitter)
 ```
 
-### Parameters
+### پارامترها
 
 - `submitter` {{optional_inline}}
-  - : A {{Glossary("submit button")}} that is a member of the form.
+  - : یک {{Glossary("submit button")}} که عضوی از فرم است.
 
-    If the `submitter` specifies `form*` attributes, they [will override](/en-US/docs/Glossary/Submit_button#overriding_the_forms_behavior) the form's submission behavior (e.g., `formmethod="POST"`).
+    اگر `submitter` ویژگی‌های `form*` را مشخص کند، آن‌ها [رفتار ارسال فرم را لغو می‌کنند](/en-US/docs/Glossary/Submit_button#overriding_the_forms_behavior) (مثلاً `formmethod="POST"`).
 
-    If the `submitter` has a `name` attribute or is an `{{HtmlElement('input/image', '&lt;input type="image"&gt;')}}`, its data [will be included](/en-US/docs/Glossary/Submit_button#form_data_entries) in the form submission (e.g., `btnName=btnValue`).
+    اگر `submitter` دارای ویژگی `name` باشد یا یک `{{HtmlElement('input/image', '&lt;input type="image"&gt;')}}` باشد، داده‌های آن [در ارسال فرم گنجانده می‌شود](/en-US/docs/Glossary/Submit_button#form_data_entries) (مثلاً `btnName=btnValue`).
 
-    If you omit the `submitter` parameter, the form element itself is used as the submitter.
+    اگر پارامتر `submitter` را حذف کنید، خود عنصر فرم به عنوان فرستنده استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the specified `submitter` is not a {{Glossary("submit button")}}.
+  - : اگر `submitter` مشخص‌شده یک {{Glossary("submit button")}} نباشد، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the specified `submitter` isn't a member of the form on
-    which `requestSubmit()` was called. The submitter must be either a
-    descendant of the form element or must have a [`form`](/en-US/docs/Web/HTML/Reference/Elements/input#form)
-    attribute referring to the form.
+  - : اگر `submitter` مشخص‌شده عضوی از فرمی نباشد که `requestSubmit()` روی آن فراخوانی شده است، پرتاب می‌شود. فرستنده باید یا از فرزندان عنصر فرم باشد یا ویژگی [`form`](/en-US/docs/Web/HTML/Reference/Elements/input#form) داشته باشد که به آن فرم اشاره کند.
 
-## Usage notes
+## نکات استفاده
 
-The obvious question is: Why does this method exist, when we've had the
-{{domxref("HTMLFormElement.submit", "submit()")}} method since the dawn of time?
+سؤال واضح این است: چرا این متد وجود دارد، در حالی که از قدیم‌الایام متد {{domxref("HTMLFormElement.submit", "submit()")}} را داشته‌ایم؟
 
-The answer is simple. `submit()` submits the form, but that's all it
-does. `requestSubmit()`, on the other hand, acts as if a submit button were
-clicked. The form's content is validated, and the form is submitted only if validation
-succeeds. Once the form has been submitted, the
-{{domxref("HTMLFormElement.submit_event", "submit")}} event is sent back to the form
-object.
+پاسخ ساده است. `submit()` فرم را ارسال می‌کند، اما تمام کاری که انجام می‌دهد همین است. از سوی دیگر، `requestSubmit()` طوری عمل می‌کند که گویی یک دکمه ارسال کلیک شده است. محتوای فرم اعتبارسنجی می‌شود و فرم تنها در صورت موفقیت‌آمیز بودن اعتبارسنجی ارسال می‌شود. پس از ارسال فرم، رویداد {{domxref("HTMLFormElement.submit_event", "submit")}} به شیء فرم بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the example below, the form is submitted by attempting to send the request using
-`requestSubmit()` if it's available. If a submit button with the
-ID `main-submit` is found, that's used to submit the form. Otherwise, the
-form is submitted with no `submitter` parameter, so it's submitted directly
-by the form itself.
+در مثال زیر، فرم با تلاش برای ارسال درخواست با استفاده از `requestSubmit()` در صورت موجود بودن، ارسال می‌شود. اگر دکمه ارسالی با شناسه `main-submit` پیدا شود، برای ارسال فرم استفاده می‌شود. در غیر این صورت، فرم بدون پارامتر `submitter` ارسال می‌شود، بنابراین مستقیماً توسط خود فرم ارسال می‌شود.
 
-If, on the other hand, `requestSubmit()` isn't available, this code falls
-back to calling the form's {{domxref("HTMLFormElement.submit", "submit()")}} method.
+اگر از طرف دیگر، `requestSubmit()` در دسترس نباشد، این کد به فراخوانی متد {{domxref("HTMLFormElement.submit", "submit()")}} فرم برمی‌گردد.
 
 ```js
 let myForm = document.querySelector("form");
@@ -87,10 +66,10 @@ if (myForm.requestSubmit) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
