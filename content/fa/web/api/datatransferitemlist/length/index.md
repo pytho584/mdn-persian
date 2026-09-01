@@ -1,11 +1,5 @@
 ---
 title: "DataTransferItemList: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList/length"
-status: "needs-translation"
----
-
----
-title: "DataTransferItemList: length property"
 short-title: length
 slug: Web/API/DataTransferItemList/length
 page-type: web-api-instance-property
@@ -14,19 +8,15 @@ browser-compat: api.DataTransferItemList.length
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The read-only **`length`** property of the
-{{domxref("DataTransferItemList")}} interface returns the number of items currently in
-the drag item list.
+ویژگی فقط‑خواندنی **`length`** از رابط {{domxref("DataTransferItemList")}} تعداد آیتم‌های موجود در لیست آیتم‌های کشیدن (drag) را برمی‌گرداند.
 
-## Value
+## مقدار
 
-The number of drag data items in the list, or 0 if the list is empty or disabled. The
-drag item list is considered to be disabled if the item list's
-{{domxref("DataTransfer")}} object is not associated with a drag data store.
+تعداد آیتم‌های داده‌ی کشیدن (drag data items) در لیست، یا 0 اگر لیست خالی یا غیرفعال باشد. لیست آیتم‌های کشیدن زمانی غیرفعال در نظر گرفته می‌شود که شیء {{domxref("DataTransfer")}} لیست آیتم با یک ذخیره‌گاه داده‌ی کشیدن (drag data store) مرتبط نباشد.
 
-## Examples
+## مثال‌ها
 
-This example shows the use of the `length` property.
+این مثال استفاده از ویژگی `length` را نشان می‌دهد.
 
 ### HTML
 
@@ -118,14 +108,14 @@ target.addEventListener("dragover", (ev) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Examples', 100, 250)}}
 
-## Specifications
+## مشخصات‌نامه‌ها
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
