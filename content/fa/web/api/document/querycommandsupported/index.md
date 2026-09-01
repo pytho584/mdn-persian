@@ -1,11 +1,5 @@
 ---
 title: "Document: queryCommandSupported() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/queryCommandSupported"
-status: "needs-translation"
----
-
----
-title: "Document: queryCommandSupported() method"
 short-title: queryCommandSupported()
 slug: Web/API/Document/queryCommandSupported
 page-type: web-api-instance-method
@@ -18,34 +12,30 @@ browser-compat: api.Document.queryCommandSupported
 {{ApiRef("DOM")}}{{deprecated_header}}{{Non-standard_header}}
 
 > [!NOTE]
-> Although the {{domxref("Document/execCommand", "execCommand()")}} method is deprecated, if you do decide to use it for reasons given on that page, you should consider checking the command's availability using `queryCommandSupported()` to ensure compatibility.
+> اگرچه متد {{domxref("Document/execCommand", "execCommand()")}} منسوخ شده است، اما اگر به دلایلی که در آن صفحه ذکر شده تصمیم به استفاده از آن دارید، بهتر است با استفاده از `queryCommandSupported()` از در دسترس بودن دستور اطمینان حاصل کنید.
 
-The **`Document.queryCommandSupported()`** method reports
-whether or not the specified editor command is supported by the browser.
+متد **`Document.queryCommandSupported()`** گزارش می‌دهد که آیا دستور ویرایشگر مشخص شده توسط مرورگر پشتیبانی می‌شود یا خیر.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 queryCommandSupported(command)
 ```
 
-### Parameters
+### پارامترها
 
 - `command`
-  - : The command for which to determine support.
+  - : دستوری که باید مشخص شود آیا پشتیبانی می‌شود یا خیر.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a boolean value which is `true` if the command is supported
-and `false` if the command isn't.
+یک مقدار بولی برمی‌گرداند که اگر دستور پشتیبانی شود `true` و در غیر این صورت `false` است.
 
-## Notes
+## نکات
 
-The `'paste'` command return `false` not only if the feature is
-unavailable, but also if the script calling it has insufficient privileges to perform
-the action.
+دستور `'paste'` نه تنها در صورت عدم دسترسی به ویژگی، بلکه در صورتی که اسکریپت فراخوانی‌کننده آن مجوز کافی برای انجام عمل را نداشته باشد، `false` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const flg = document.queryCommandSupported("SelectAll");
@@ -55,15 +45,15 @@ if (flg) {
 }
 ```
 
-## Specifications
+## مشخصات
 
-This feature is not part of any current specification. It is no longer on track to become a standard. There is an unofficial [W3C execCommand spec draft](https://w3c.github.io/editing/docs/execCommand/).
+این ویژگی بخشی از هیچ مشخصات فعلی نیست. دیگر در مسیر تبدیل شدن به یک استاندارد نیست. یک پیش‌نویس غیررسمی از [مشخصات execCommand در W3C](https://w3c.github.io/editing/docs/execCommand/) وجود دارد.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("document.execCommand()")}}
 - {{domxref("document.queryCommandEnabled()")}}
