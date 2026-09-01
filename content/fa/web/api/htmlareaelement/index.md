@@ -1,10 +1,4 @@
 ---
-title: "HTMLAreaElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement"
-status: "needs-translation"
----
-
----
 title: HTMLAreaElement
 slug: Web/API/HTMLAreaElement
 page-type: web-api-interface
@@ -13,74 +7,74 @@ browser-compat: api.HTMLAreaElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLAreaElement`** interface provides special properties and methods (beyond those of the regular object {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating the layout and presentation of {{HtmlElement("area")}} elements.
+رابط **`HTMLAreaElement`** ویژگی‌ها و متدهای خاصی (فراتر از آنچه از رابط معمول {{domxref("HTMLElement")}} که به صورت ارث‌بری در دسترس دارد) برای دستکاری چیدمان و نمایش عناصر {{HtmlElement("area")}} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent {{domxref("HTMLElement")}}._
+ویژگی‌های والد خود {{domxref("HTMLElement")}} را به ارث می‌برد.
 
 - {{domxref("HTMLAreaElement.alt")}}
-  - : A string that reflects the [`alt`](/en-US/docs/Web/HTML/Reference/Elements/area#alt) HTML attribute, containing alternative text for the element.
+  - : یک رشته که منعکس‌کننده ویژگی HTML [`alt`](/en-US/docs/Web/HTML/Reference/Elements/area#alt) است، حاوی متن جایگزین برای عنصر.
 - {{domxref("HTMLAreaElement.coords")}}
-  - : A string that reflects the [`coords`](/en-US/docs/Web/HTML/Reference/Elements/area#coords) HTML attribute, containing coordinates to define the hot-spot region.
+  - : یک رشته که منعکس‌کننده ویژگی HTML [`coords`](/en-US/docs/Web/HTML/Reference/Elements/area#coords) است، حاوی مختصات برای تعریف ناحیه داغ (hot-spot).
 - {{domxref("HTMLAreaElement.download")}}
-  - : A string indicating that the linked resource is intended to be downloaded rather than displayed in the browser. The value represent the proposed name of the file. If the name is not a valid filename of the underlying OS, browser will adjust it accordingly.
+  - : یک رشته نشان‌دهنده این که منبع پیوند شده قرار است دانلود شود نه این که در مرورگر نمایش داده شود. مقدار نشان‌دهنده نام پیشنهادی فایل است. اگر نام معتبر برای سیستم‌عامل زیرین نباشد، مرورگر آن را تنظیم می‌کند.
 - {{domxref("HTMLAreaElement.hash")}}
-  - : A string containing the fragment identifier (including the leading hash mark (#)), if any, in the referenced URL.
+  - : یک رشته حاوی شناسه قطعه (شامل علامت هش پیشرو #)، در صورت وجود، در URL ارجاع‌شده.
 - {{domxref("HTMLAreaElement.host")}}
-  - : A string containing the hostname and port (if it's not the default port) in the referenced URL.
+  - : یک رشته حاوی نام میزبان و پورت (اگر پورت پیش‌فرض نباشد) در URL ارجاع‌شده.
 - {{domxref("HTMLAreaElement.hostname")}}
-  - : A string containing the hostname in the referenced URL.
+  - : یک رشته حاوی نام میزبان در URL ارجاع‌شده.
 - {{domxref("HTMLAreaElement.href")}}
-  - : A string containing that reflects the [`href`](/en-US/docs/Web/HTML/Reference/Elements/area#href) HTML attribute, containing a valid URL of a linked resource.
+  - : یک رشته که منعکس‌کننده ویژگی HTML [`href`](/en-US/docs/Web/HTML/Reference/Elements/area#href) است، حاوی یک URL معتبر از یک منبع پیوند شده.
 - {{domxref("HTMLAreaElement.interestForElement")}} {{experimental_inline}} {{non-standard_inline}}
-  - : Gets or sets the target element of an interest invoker, in cases where the associated {{htmlelement("area")}} element is specified as an [interest invoker](/en-US/docs/Web/API/Popover_API/Using_interest_invokers#creating_an_interest_invoker).
+  - : عنصر هدف یک فراخواننده علاقه (interest invoker) را تنظیم یا دریافت می‌کند، در مواردی که عنصر {{htmlelement("area")}} مرتبط به عنوان یک [فراخواننده علاقه](/en-US/docs/Web/API/Popover_API/Using_interest_invokers#creating_an_interest_invoker) مشخص شده است.
 - {{domxref("HTMLAreaElement.noHref")}} {{deprecated_inline}}
-  - : A boolean flag indicating if the area is inactive (`true`) or active (`false`).
+  - : یک پرچم بولی نشان‌دهنده غیرفعال بودن (`true`) یا فعال بودن (`false`) ناحیه.
 - {{domxref("HTMLAreaElement.origin")}} {{ReadOnlyInline}}
-  - : Returns a string containing the origin of the URL, that is its scheme, its domain and its port.
+  - : یک رشته شامل خاستگاه URL، یعنی طرح (scheme)، دامنه و پورت آن را برمی‌گرداند.
 - {{domxref("HTMLAreaElement.password")}}
-  - : A string containing the password specified before the domain name.
+  - : یک رشته حاوی رمز عبور مشخص‌شده قبل از نام دامنه.
 - {{domxref("HTMLAreaElement.pathname")}}
-  - : A string containing the path name component, if any, of the referenced URL.
+  - : یک رشته حاوی جزء مسیر (path name) در صورت وجود، از URL ارجاع‌شده.
 - {{domxref("HTMLAreaElement.ping")}}
-  - : A space-separated list of URLs. When the link is followed, the browser will send {{HTTPMethod("POST")}} requests with the body PING to the URLs.
+  - : یک لیست از URLها که با فاصله جدا شده‌اند. وقتی پیوند دنبال شود، مرورگر درخواست‌های {{HTTPMethod("POST")}} با بدنه PING به آن URLها ارسال می‌کند.
 - {{domxref("HTMLAreaElement.port")}}
-  - : A string containing the port component, if any, of the referenced URL.
+  - : یک رشته حاوی جزء پورت در صورت وجود، از URL ارجاع‌شده.
 - {{domxref("HTMLAreaElement.protocol")}}
-  - : A string containing the protocol component (including trailing colon `':'`), of the referenced URL.
+  - : یک رشته حاوی جزء پروتکل (شامل دو نقطه انتهایی `':'`)، از URL ارجاع‌شده.
 - {{domxref("HTMLAreaElement.referrerPolicy")}}
-  - : A string that reflects the [`referrerpolicy`](/en-US/docs/Web/HTML/Reference/Elements/area#referrerpolicy) HTML attribute indicating which referrer to use when fetching the linked resource.
+  - : یک رشته که منعکس‌کننده ویژگی HTML [`referrerpolicy`](/en-US/docs/Web/HTML/Reference/Elements/area#referrerpolicy) است، نشان‌دهنده این که هنگام واکشی منبع پیوند شده از کدام ارجاع‌دهنده (referrer) استفاده شود.
 - {{domxref("HTMLAreaElement.rel")}}
-  - : A string that reflects the [`rel`](/en-US/docs/Web/HTML/Reference/Elements/area#rel) HTML attribute, indicating relationships of the current document to the linked resource.
+  - : یک رشته که منعکس‌کننده ویژگی HTML [`rel`](/en-US/docs/Web/HTML/Reference/Elements/area#rel) است، نشان‌دهنده روابط سند فعلی با منبع پیوند شده.
 - {{domxref("HTMLAreaElement.relList")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("DOMTokenList")}} that reflects the [`rel`](/en-US/docs/Web/HTML/Reference/Elements/area#rel) HTML attribute, indicating relationships of the current document to the linked resource, as a list of tokens.
+  - : یک {{domxref("DOMTokenList")}} که منعکس‌کننده ویژگی HTML [`rel`](/en-US/docs/Web/HTML/Reference/Elements/area#rel) است، روابط سند فعلی با منبع پیوند شده را به عنوان یک لیست از توکن‌ها نشان می‌دهد.
 - {{domxref("HTMLAreaElement.search")}}
-  - : A string containing the search element (including leading question mark `'?'`), if any, of the referenced URL.
+  - : یک رشته حاوی عنصر جستجو (شامل علامت سوال پیشرو `'?'`)، در صورت وجود، از URL ارجاع‌شده.
 - {{domxref("HTMLAreaElement.shape")}}
-  - : A string that reflects the [`shape`](/en-US/docs/Web/HTML/Reference/Elements/area#shape) HTML attribute, indicating the shape of the hot-spot, limited to known values.
+  - : یک رشته که منعکس‌کننده ویژگی HTML [`shape`](/en-US/docs/Web/HTML/Reference/Elements/area#shape) است، شکل ناحیه داغ را نشان می‌دهد، محدود به مقادیر شناخته شده.
 - {{domxref("HTMLAreaElement.target")}}
-  - : A string that reflects the [`target`](/en-US/docs/Web/HTML/Reference/Elements/area#target) HTML attribute, indicating the browsing context in which to open the linked resource.
+  - : یک رشته که منعکس‌کننده ویژگی HTML [`target`](/en-US/docs/Web/HTML/Reference/Elements/area#target) است، زمینه مرور (browsing context) برای باز کردن منبع پیوند شده را نشان می‌دهد.
 - {{domxref("HTMLAreaElement.username")}}
-  - : A string containing the username specified before the domain name.
+  - : یک رشته حاوی نام کاربری مشخص‌شده قبل از نام دامنه.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{domxref("HTMLElement")}}._
+متدهای والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد.
 
 - {{domxref("HTMLAreaElement.toString()")}}
-  - : Returns a string containing the whole URL. It is a synonym for {{domxref("HTMLAreaElement.href")}}.
+  - : یک رشته شامل کل URL برمی‌گرداند. این یک مترادف برای {{domxref("HTMLAreaElement.href")}} است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML element implementing this interface: {{ HTMLElement("area") }}
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{ HTMLElement("area") }}
