@@ -1,7 +1,5 @@
 ---
 title: "Document: xmlVersion property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/xmlVersion"
-status: "needs-translation"
 ---
 
 ---
@@ -16,9 +14,9 @@ browser-compat: api.Document.xmlVersion
 
 {{APIRef("DOM")}}{{deprecated_header}}
 
-Returns the version number as specified in the XML declaration (e.g., `<?xml version="1.0"?>`) or "1.0" if the declaration is absent.
+شماره نسخه را طبق آنچه در اعلامیه XML مشخص شده است (مثلاً `<?xml version="1.0"?>`) برمی‌گرداند، یا اگر این اعلامیه وجود نداشته باشد، «1.0» را برمی‌گرداند.
 
-This attribute was never really useful, since it always returned 1.0, and has been removed in DOM Level 4. As such, Firefox 10 no longer implements it. Its primary use in the past was to detect whether or not the document was being rendered as XML rather than HTML. To detect this, you can create an element with its name in lower case, then check to see if it gets converted into all upper case (in which case the document is in the non-XML HTML mode):
+این ویژگی هرگز واقعاً مفید نبود، زیرا همیشه مقدار 1.0 را برمی‌گرداند و در DOM Level 4 حذف شده است. به همین دلیل، فایرفاکس ۱۰ دیگر آن را پیاده‌سازی نمی‌کند. کاربرد اصلی آن در گذشته، تشخیص این بود که آیا سند به‌صورت XML رندر می‌شود یا HTML. برای تشخیص این موضوع، می‌توانید یک عنصر با نام کوچک (lowercase) بسازید و بررسی کنید که آیا به حروف بزرگ (uppercase) تبدیل می‌شود؛ در این صورت، سند در حالت غیر-XML و HTML قرار دارد:
 
 ```js
 if (document.createElement("foo").tagName === "FOO") {
