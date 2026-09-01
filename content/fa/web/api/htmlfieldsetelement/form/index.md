@@ -1,9 +1,4 @@
----
-title: "HTMLFieldSetElement: form property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFieldSetElement/form"
-status: "needs-translation"
----
-
+```
 ---
 title: "HTMLFieldSetElement: form property"
 short-title: form
@@ -14,24 +9,25 @@ browser-compat: api.HTMLFieldSetElement.form
 
 {{APIRef("HTML DOM")}}
 
-The **`form`** read-only property of the {{domxref("HTMLFieldSetElement")}} interface returns an {{domxref("HTMLFormElement")}} object that owns this {{htmlelement("fieldset")}}, or `null` if this fieldset is not owned by any form.
+ویژگی فقط‌خواندنی **`form`** از رابط {{domxref("HTMLFieldSetElement")}} یک شیء {{domxref("HTMLFormElement")}} برمی‌گرداند که مالک این {{htmlelement("fieldset")}} است، یا اگر این fieldset متعلق به هیچ فرمی نباشد، `null` برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLFormElement")}} or `null`.
+یک {{domxref("HTMLFormElement")}} یا `null`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLFieldSetElement")}}
 - {{domxref("HTMLFormElement")}}
 - {{HTMLElement("fieldset")}}
-- HTML [`form`](/en-US/docs/Web/HTML/Reference/Attributes/form) attribute
-- [HTML forms guide](/en-US/docs/Learn_web_development/Extensions/Forms)
+- ویژگی HTML [`form`](/en-US/docs/Web/HTML/Reference/Attributes/form)
+- [راهنمای فرم‌های HTML](/en-US/docs/Learn_web_development/Extensions/Forms)
+```
