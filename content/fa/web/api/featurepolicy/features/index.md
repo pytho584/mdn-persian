@@ -1,11 +1,5 @@
 ---
 title: "FeaturePolicy: features() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FeaturePolicy/features"
-status: "needs-translation"
----
-
----
-title: "FeaturePolicy: features() method"
 short-title: features()
 slug: Web/API/FeaturePolicy/features
 page-type: web-api-instance-method
@@ -17,13 +11,9 @@ browser-compat: api.FeaturePolicy.features
 
 {{APIRef("Feature Policy API")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`features()`** method of the
-{{DOMxRef("FeaturePolicy")}} interface returns a list of names of all features
-supported by the User Agent. Feature whose name appears on the list might not be
-allowed by the [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) of the current execution context and/or might not be
-accessible because of user's permissions.
+متد **`features()`** در رابط {{DOMxRef("FeaturePolicy")}} فهرستی از نام تمام ویژگی‌های پشتیبانی‌شده توسط عامل کاربر (User Agent) را برمی‌گرداند. ویژگی‌ای که نامش در این فهرست دیده می‌شود ممکن است توسط [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) بافتار اجرای فعلی مجاز نباشد و/یا به دلیل مجوزهای کاربر در دسترس نباشد.
 
-## Syntax
+### Syntax
 
 ```js-nolint
 features()
@@ -31,16 +21,15 @@ features()
 
 ### Parameters
 
-None.
+هیچ‌کدام.
 
 ### Return value
 
-A list of strings that represent names of all Permissions Policy directives supported by
-the user agent.
+فهرستی از رشته‌ها که نام تمام دایرکتیوهای Permissions Policy پشتیبانی‌شده توسط عامل کاربر را نشان می‌دهند.
 
 ## Example
 
-The following example logs all the supported directives in the console.
+مثال زیر تمام دستورالعمل‌های پشتیبانی‌شده را در کنسول ثبت می‌کند.
 
 ```js
 // Get the FeaturePolicy object
