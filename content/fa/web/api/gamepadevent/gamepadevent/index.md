@@ -1,7 +1,5 @@
 ---
 title: "GamepadEvent: GamepadEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadEvent/GamepadEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -14,32 +12,31 @@ browser-compat: api.GamepadEvent.GamepadEvent
 
 {{APIRef("Gamepad API")}}{{SecureContext_Header}}
 
-The **`GamepadEvent()`** constructor creates a new {{domxref("GamepadEvent")}} object.
+سازندهٔ **`GamepadEvent()`** یک شیء جدید {{domxref("GamepadEvent")}} ایجاد می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new GamepadEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `gamepadconnected` or `gamepaddisconnected`.
+  - : رشته‌ای است با نام رویداد. این رشته به بزرگی و کوچکی حروف حساس است و مرورگرها آن را روی `gamepadconnected` یا `gamepaddisconnected` قرار می‌دهند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : شیئی که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `gamepad`
-      - : A {{domxref("Gamepad")}} object describing the gamepad associated with the event.
+      - : یک شیء {{domxref("Gamepad")}} که گیم‌پد مرتبط با رویداد را توصیف می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("GamepadEvent")}} object.
+یک شیء جدید {{domxref("GamepadEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
