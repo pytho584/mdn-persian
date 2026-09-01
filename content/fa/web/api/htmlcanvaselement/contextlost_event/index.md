@@ -1,11 +1,5 @@
 ---
 title: "HTMLCanvasElement: contextlost event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/contextlost_event"
-status: "needs-translation"
----
-
----
-title: "HTMLCanvasElement: contextlost event"
 short-title: contextlost
 slug: Web/API/HTMLCanvasElement/contextlost_event
 page-type: web-api-event
@@ -14,15 +8,15 @@ browser-compat: api.HTMLCanvasElement.contextlost_event
 
 {{APIRef("Canvas API")}}
 
-The **`contextlost`** event of the [Canvas API](/en-US/docs/Web/API/Canvas_API) is fired if the user agent detects that the backing storage associated with a [`CanvasRenderingContext2D`](/en-US/docs/Web/API/CanvasRenderingContext2D) context is lost.
-Contexts can be lost for several reasons like driver crashes or the application runs out of memory, etc.
+رویداد **`contextlost`** از [Canvas API](/en-US/docs/Web/API/Canvas_API) زمانی شلیک می‌شود که عامل کاربر تشخیص دهد فضای ذخیره‌سازی پشتیبان مرتبط با یک بافت [`CanvasRenderingContext2D`](/en-US/docs/Web/API/CanvasRenderingContext2D) از دست رفته است.
+بافت‌ها ممکن است به دلایل مختلفی مانند خراب شدن درایور یا تمام شدن حافظه برنامه از دست بروند.
 
-By default the user agent will attempt to restore the context and then fire the [`contextrestored` event](/en-US/docs/Web/API/HTMLCanvasElement/contextrestored_event).
-User code can prevent the context from being restored by calling [`Event.preventDefault()`](/en-US/docs/Web/API/Event/preventDefault) during event handling.
+به طور پیش‌فرض، عامل کاربر سعی در بازگردانی بافت خواهد کرد و سپس رویداد [`contextrestored`](/en-US/docs/Web/API/HTMLCanvasElement/contextrestored_event) را شلیک می‌کند.
+کد کاربر می‌تواند با فراخوانی [`Event.preventDefault()`](/en-US/docs/Web/API/Event/preventDefault) در طول مدیریت رویداد، از بازگردانی بافت جلوگیری کند.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("contextlost", (event) => { })
@@ -30,13 +24,13 @@ addEventListener("contextlost", (event) => { })
 oncontextlost = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Example
+## مثال
 
-The code fragment below detects the `contextlost` event.
+قطعه کد زیر رویداد `contextlost` را تشخیص می‌دهد.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -46,7 +40,7 @@ canvas.addEventListener("contextlost", (event) => {
 });
 ```
 
-To prevent the context from being restored the code might instead look like this:
+برای جلوگیری از بازگردانی بافت، کد می‌تواند به این شکل باشد:
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -56,15 +50,15 @@ canvas.addEventListener("contextlost", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [`HTMLCanvasElement: contextrestored` event](/en-US/docs/Web/API/HTMLCanvasElement/contextrestored_event)
 - [`CanvasRenderingContext2D.isContextLost()`](/en-US/docs/Web/API/CanvasRenderingContext2D/isContextLost)
