@@ -1,10 +1,4 @@
 ---
-title: "CSSTransition"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTransition"
-status: "needs-translation"
----
-
----
 title: CSSTransition
 slug: Web/API/CSSTransition
 page-type: web-api-interface
@@ -13,28 +7,28 @@ browser-compat: api.CSSTransition
 
 {{APIRef("Web Animations")}}
 
-The **`CSSTransition`** interface of the {{domxref('Web Animations API','','',' ')}} represents an {{domxref("Animation")}} object used for a [CSS Transition](/en-US/docs/Web/CSS/Guides/Transitions).
+رابط **`CSSTransition`** از {{domxref('Web Animations API','','',' ')}} یک شی {{domxref("Animation")}} را نشان می‌دهد که برای یک [CSS Transition](/en-US/docs/Web/CSS/Guides/Transitions) استفاده می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface inherits properties from its parent, {{domxref("Animation")}}._
+_این رابط ویژگی‌هایی را از والد خود، {{domxref("Animation")}} به ارث می‌برد._
 
 - {{domxref("CSSTransition.transitionProperty")}} {{ReadOnlyInline}}
-  - : Returns the transition CSS property name as a string.
+  - : نام خاصیت CSS انتقال را به صورت یک رشته برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface inherits methods from its parent, {{domxref("Animation")}}._
+_این رابط روش‌هایی را از والد خود، {{domxref("Animation")}} به ارث می‌برد._
 
-No specific methods.
+هیچ روش خاصی ندارد.
 
-## Examples
+## مثال‌ها
 
-### Inspecting the returned CSSTransition
+### بررسی CSSTransition برگشتی
 
-The transition in the following example changes the width of the box on hover. Calling {{domxref("Element.getAnimations()")}} returns an array of all {{domxref("Animation")}} objects. In our case this returns a `CSSTransition` object, representing the animation created.
+انتقال در مثال زیر عرض جعبه را هنگام هاور تغییر می‌دهد. فراخوانی {{domxref("Element.getAnimations()")}} یک آرایه از تمام اشیاء {{domxref("Animation")}} بازمی‌گرداند. در مورد ما این یک شیء `CSSTransition` را بازمی‌گرداند که نشان‌دهنده انیمیشن ایجاد شده است.
 
 ```css
 .box {
@@ -58,10 +52,10 @@ item.addEventListener("transitionrun", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
