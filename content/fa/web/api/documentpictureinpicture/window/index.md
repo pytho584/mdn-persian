@@ -1,11 +1,5 @@
 ---
 title: "DocumentPictureInPicture: window property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/window"
-status: "needs-translation"
----
-
----
-title: "DocumentPictureInPicture: window property"
 short-title: window
 slug: Web/API/DocumentPictureInPicture/window
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.DocumentPictureInPicture.window
 
 {{APIRef("Document Picture-in-Picture API")}}{{SecureContext_Header}}
 
-The **`window`** read-only property of the
-{{domxref("DocumentPictureInPicture")}} interface returns a {{domxref("Window")}} instance representing the browsing context inside the Picture-in-Picture window.
+خاصیت فقط‑خواندنی **`window`** در رابط {{domxref("DocumentPictureInPicture")}} یک نمونه از {{domxref("Window")}} را برمی‌گرداند که نمایانگر زمینهٔ مرور درون پنجرهٔ تصویر‑در‑تصویر است.
 
-## Value
+## مقدار
 
-A {{domxref("Window")}} object instance if the Picture-in-Picture window has already been opened using {{domxref("DocumentPictureInPicture.requestWindow()")}}, or `null` otherwise.
+یک نمونه از شیء {{domxref("Window")}} اگر پنجرهٔ تصویر‑در‑تصویر قبلاً با استفاده از {{domxref("DocumentPictureInPicture.requestWindow()")}} باز شده باشد، در غیر این صورت `null`.
 
-## Examples
+## مثال‌ها
 
 ```js
 const videoPlayer = document.getElementById("player");
@@ -43,15 +36,15 @@ if (pipWindow) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document Picture-in-Picture API", "Document Picture-in-Picture API", "", "nocode")}}
-- [Using the Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using)
+- [استفاده از Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using)
