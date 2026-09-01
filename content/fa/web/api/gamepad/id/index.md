@@ -1,7 +1,5 @@
 ---
 title: "Gamepad: id property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/id"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +12,22 @@ browser-compat: api.Gamepad.id
 
 {{APIRef("Gamepad API")}}
 
-The **`Gamepad.id`** property of the {{domxref("Gamepad") }}
-interface returns a string containing some information about the controller.
+ویژگی **`Gamepad.id`** در رابط {{domxref("Gamepad") }} یک رشته شامل اطلاعاتی دربارهٔ کنترلر برمی‌گرداند.
 
-The exact syntax is not strictly specified, but in Firefox it will contain three pieces
-of information separated by dashes (`-`):
+قالب دقیق آن به‌طور قطعی مشخص نشده است، اما در فایرفاکس، این رشته شامل سه بخش اطلاعات است که با خط تیره (`-`) از هم جدا شده‌اند:
 
-- Two 4-digit hexadecimal strings containing the USB vendor and product id of the
-  controller
-- The name of the controller as provided by the driver.
+- دو رشتهٔ هگزادسیمال چهاررقمی که شناسهٔ فروشنده و شناسهٔ محصول USB کنترلر را دربر دارند
+- نام کنترلر مطابق آنچه توسط درایور ارائه شده است.
 
-For example, a PS2 controller returned **810-3-USB Gamepad**.
+برای مثال، یک کنترلر PS2 مقدار **810-3-USB Gamepad** را برمی‌گرداند.
 
-This information is intended to allow you to find a mapping for the controls on the
-device as well as display useful feedback to the user.
+این اطلاعات به شما امکان می‌دهد تا نگاشت مناسبی برای کنترل‌های دستگاه پیدا کنید و همچنین بازخورد مفیدی به کاربر نمایش دهید.
 
-## Value
+## مقدار
 
-A string primitive.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("gamepadconnected", () => {
@@ -42,14 +36,14 @@ window.addEventListener("gamepadconnected", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-[Using the Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
+- [استفاده از Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
