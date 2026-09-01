@@ -1,11 +1,5 @@
 ---
 title: "Element: fullscreenchange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/fullscreenchange_event"
-status: "needs-translation"
----
-
----
-title: "Element: fullscreenchange event"
 short-title: fullscreenchange
 slug: Web/API/Element/fullscreenchange_event
 page-type: web-api-event
@@ -14,17 +8,17 @@ browser-compat: api.Element.fullscreenchange_event
 
 {{APIRef("Fullscreen API")}}
 
-The **`fullscreenchange`** event is fired immediately after an {{domxref("Element")}} switches into or out of fullscreen mode.
+رویداد **`fullscreenchange`** بلافاصله پس از اینکه یک {{domxref("Element")}} به حالت تمام‌صفحه وارد یا از آن خارج می‌شود، فعال می‌گردد.
 
-This event is sent to the `Element` which is transitioning into or out of fullscreen mode.
+این رویداد به همان `Element` که در حال ورود به حالت تمام‌صفحه یا خروج از آن است ارسال می‌شود.
 
-To find out whether the `Element` is entering or exiting fullscreen mode, check the value of {{domxref("Document.fullscreenElement")}}: if this value is `null` then the element is exiting fullscreen mode, otherwise it is entering fullscreen mode.
+برای اینکه بفهمید `Element` در حال ورود به حالت تمام‌صفحه است یا خروج از آن، مقدار {{domxref("Document.fullscreenElement")}} را بررسی کنید: اگر این مقدار `null` باشد، عنصر در حال خروج از حالت تمام‌صفحه است و در غیر این صورت، در حال ورود به حالت تمام‌صفحه می‌باشد.
 
-This event is not cancelable.
+این رویداد قابل لغو (cancelable) نیست.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی handler رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("fullscreenchange", (event) => { })
@@ -34,17 +28,17 @@ onfullscreenchange = (event) => { }
 
 ## Event type
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
 ## Examples
 
-In this example, a handler for the `fullscreenchange` event is added to the element whose ID is `fullscreen-div`.
+در این مثال، یک handler برای رویداد `fullscreenchange` به عنصری که `id` آن `fullscreen-div` است اضافه شده است.
 
-If the user clicks on the "Toggle Fullscreen Mode" button, the `click` handler will toggle fullscreen mode for the `div`. If `document.fullscreenElement` has a value it will exit fullscreen mode. If not, the div will be placed into fullscreen mode.
+اگر کاربر روی دکمه «Toggle Fullscreen Mode» کلیک کند، handler مربوط به `click` حالت تمام‌صفحه را برای آن `div` تغییر می‌دهد. اگر `document.fullscreenElement` مقداری داشته باشد، از حالت تمام‌صفحه خارج می‌شود. در غیر این صورت، `div` به حالت تمام‌صفحه وارد می‌شود.
 
-Remember that by the time the `fullscreenchange` event is handled, the status of the element has already changed. So if the change is to fullscreen mode, `document.fullscreenElement` will point to the element that is now in fullscreen mode. On the other hand, if `document.fullscreenElement` is `null`, fullscreen mode has been canceled.
+به خاطر داشته باشید که تا زمانی که رویداد `fullscreenchange` مدیریت می‌شود، وضعیت عنصر قبلاً تغییر کرده است. بنابراین اگر تغییر به سمت حالت تمام‌صفحه باشد، `document.fullscreenElement` به عنصری اشاره می‌کند که اکنون در حالت تمام‌صفحه است. از سوی دیگر، اگر `document.fullscreenElement` برابر با `null` باشد، حالت تمام‌صفحه لغو شده است.
 
-What that means to the example code is that, if an element is currently in fullscreen mode, the `fullscreenchange` handler logs the `id` of the fullscreen element to the console. If `document.fullscreenElement` is `null`, the code logs a message that the change is to leave fullscreen mode.
+این یعنی در کد مثال، اگر عنصری در حال حاضر در حالت تمام‌صفحه باشد، handler رویداد `fullscreenchange` مقدار `id` عنصر تمام‌صفحه را در کنسول ثبت می‌کند. اگر `document.fullscreenElement` برابر `null` باشد، کد پیامی ثبت می‌کند که تغییر به سمت خروج از حالت تمام‌صفحه است.
 
 ### HTML
 
