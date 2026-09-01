@@ -1,11 +1,5 @@
 ---
 title: "GPURenderBundle: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundle/label"
-status: "needs-translation"
----
-
----
-title: "GPURenderBundle: label property"
 short-title: label
 slug: Web/API/GPURenderBundle/label
 page-type: web-api-instance-property
@@ -14,18 +8,17 @@ browser-compat: api.GPURenderBundle.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** read-only property of the
-{{domxref("GPURenderBundle")}} interface is a string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی فقط‌خواندنی **`label`** از رابط {{domxref("GPURenderBundle")}} یک رشته است که برچسبی را ارائه می‌دهد که می‌توان از آن برای شناسایی شیء استفاده کرد، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPURenderBundleEncoder.finish()")}} call, or you can get and set it directly on the `GPURenderBundle` object.
+این مقدار می‌تواند با ارائه یک ویژگی `label` در شیء توصیف‌کننده‌ای که به فراخوانی {{domxref("GPURenderBundleEncoder.finish()")}} اولیه ارسال می‌شود، تنظیم گردد، یا می‌توانید آن را مستقیماً روی شیء `GPURenderBundle` دریافت و تنظیم کنید.
 
-## Value
+## مقدار
 
-A string. If no label value has previously been set, getting the label returns an empty string.
+یک رشته. اگر قبلاً مقداری برای برچسب تنظیم نشده باشد، دریافت برچسب یک رشته خالی برمی‌گرداند.
 
-## Examples
+## نمونه‌ها
 
-Setting and getting a label via `GPURenderBundle.label`:
+تنظیم و دریافت یک برچسب از طریق `GPURenderBundle.label`:
 
 ```js
 const renderBundle = renderBundleEncoder.finish();
@@ -34,7 +27,7 @@ renderBundle.label = "my_render_bundle";
 console.log(renderBundle.label); // "my_render_bundle"
 ```
 
-Setting a label via the originating {{domxref("GPURenderBundleEncoder.finish()")}} call, and then getting it via `GPURenderBundle.label`:
+تنظیم یک برچسب از طریق فراخوانی {{domxref("GPURenderBundleEncoder.finish()")}} اولیه، و سپس دریافت آن از طریق `GPURenderBundle.label`:
 
 ```js
 const renderBundle = renderBundleEncoder.finish({
@@ -44,14 +37,14 @@ const renderBundle = renderBundleEncoder.finish({
 console.log(renderBundle.label); // "my_render_bundle"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [رابط WebGPU API](/en-US/docs/Web/API/WebGPU_API)
