@@ -1,11 +1,5 @@
 ---
 title: "GamepadButton: touched property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/touched"
-status: "needs-translation"
----
-
----
-title: "GamepadButton: touched property"
 short-title: touched
 slug: Web/API/GamepadButton/touched
 page-type: web-api-instance-property
@@ -14,17 +8,15 @@ browser-compat: api.GamepadButton.touched
 
 {{APIRef("Gamepad API")}}{{SecureContext_Header}}
 
-The **`touched`** property of the
-{{domxref("GamepadButton")}} interface returns a `boolean` indicating whether
-a button capable of detecting touch is currently touched (`true`) or not touched (`false`).
+ویژگی **`touched`** از رابط {{domxref("GamepadButton")}} یک مقدار بولی برمی‌گرداند که نشان می‌دهد دکمه‌ای که قادر به تشخیص لمس است در حال حاضر لمس شده (`true`) یا نشده (`false`) است.
 
-If the button is not capable of detecting touch but can return an analog value, the property will be `true` if the value is greater than `0`, and `false` otherwise. If the button is not capable of detecting touch and can only report a digital value, then it should mirror the {{domxref("GamepadButton.pressed")}} property.
+اگر دکمه قادر به تشخیص لمس نباشد اما بتواند مقدار آنالوگ ارائه دهد، این ویژگی `true` خواهد بود اگر مقدار بزرگ‌تر از `0` باشد، و در غیر این صورت `false`. اگر دکمه قادر به تشخیص لمس نباشد و فقط بتواند مقدار دیجیتال گزارش دهد، آنگاه باید ویژگی {{domxref("GamepadButton.pressed")}} را منعکس کند.
 
-## Value
+## مقدار
 
-A {{jsxref("Boolean")}}. True if touched.
+یک {{jsxref("Boolean")}}. اگر لمس شده باشد `true` است.
 
-## Examples
+## نمونه‌ها
 
 ```js
 let gp = navigator.getGamepads()[0]; // Get the first gamepad object
@@ -34,14 +26,14 @@ if (gp.buttons[0].touched) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
+- [استفاده از API گیم‌پد](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
