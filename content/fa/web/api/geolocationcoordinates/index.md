@@ -1,7 +1,5 @@
 ---
 title: "GeolocationCoordinates"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates"
-status: "needs-translation"
 ---
 
 ---
@@ -13,44 +11,43 @@ browser-compat: api.GeolocationCoordinates
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`GeolocationCoordinates`** interface represents the position and altitude of the device on Earth, as well as the accuracy with which these properties are calculated.
-The geographic position information is provided in terms of World Geodetic System coordinates (WGS84).
+واسط **`GeolocationCoordinates`** موقعیت و ارتفاع دستگاه روی زمین را به همراه دقت محاسبه این ویژگی‌ها نشان می‌دهد. اطلاعات موقعیت جغرافیایی بر اساس مختصات سیستم ژئودتیک جهانی (WGS84) ارائه می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_The `GeolocationCoordinates` interface doesn't inherit any properties._
+_واسط `GeolocationCoordinates` هیچ ویژگی‌ای را به ارث نمی‌برد._
 
 - {{domxref("GeolocationCoordinates.latitude")}} {{ReadOnlyInline}}
-  - : Returns a `double` representing the position's latitude in decimal degrees.
+  - : یک `double` برمی‌گرداند که عرض جغرافیایی موقعیت را بر حسب درجه اعشاری نشان می‌دهد.
 - {{domxref("GeolocationCoordinates.longitude")}} {{ReadOnlyInline}}
-  - : Returns a `double` representing the position's longitude in decimal degrees.
+  - : یک `double` برمی‌گرداند که طول جغرافیایی موقعیت را بر حسب درجه اعشاری نشان می‌دهد.
 - {{domxref("GeolocationCoordinates.altitude")}} {{ReadOnlyInline}}
-  - : Returns a `double` representing the position's altitude in meters, relative to nominal sea level. This value can be `null` if the implementation cannot provide the data.
+  - : یک `double` برمی‌گرداند که ارتفاع موقعیت را بر حسب متر، نسبت به سطح متوسط آب‌های آزاد نشان می‌دهد. اگر پیاده‌سازی نتواند این داده را فراهم کند، مقدار آن می‌تواند `null` باشد.
 - {{domxref("GeolocationCoordinates.accuracy")}} {{ReadOnlyInline}}
-  - : Returns a `double` representing the accuracy of the `latitude` and `longitude` properties, expressed in meters.
+  - : یک `double` برمی‌گرداند که دقت ویژگی‌های `latitude` و `longitude` را بر حسب متر نشان می‌دهد.
 - {{domxref("GeolocationCoordinates.altitudeAccuracy")}} {{ReadOnlyInline}}
-  - : Returns a `double` representing the accuracy of the `altitude` expressed in meters. This value can be `null` if the implementation cannot provide the data.
+  - : یک `double` برمی‌گرداند که دقت مقدار `altitude` را بر حسب متر نشان می‌دهد. اگر پیاده‌سازی نتواند این داده را فراهم کند، مقدار آن می‌تواند `null` باشد.
 - {{domxref("GeolocationCoordinates.heading")}} {{ReadOnlyInline}}
-  - : Returns a `double` representing the direction towards which the device is facing. This value, specified in degrees, indicates how far off from heading true north the device is. `0` degrees represents true north, and the direction is determined clockwise (which means that east is `90` degrees and west is `270` degrees). If `speed` is `0` or the device is unable to provide `heading` information, `heading` is `null`.
+  - : یک `double` برمی‌گرداند که جهت رو به روی دستگاه را نشان می‌دهد. این مقدار که بر حسب درجه مشخص می‌شود، میزان انحراف دستگاه از شمال حقیقی را نشان می‌دهد. `0` درجه به معنای شمال حقیقی است و جهت به صورت ساعتگرد تعیین می‌شود (یعنی شرق `90` درجه و غرب `270` درجه است). اگر مقدار `speed` صفر باشد یا دستگاه نتواند اطلاعات `heading` را ارائه دهد، مقدار `heading` برابر `null` خواهد بود.
 - {{domxref("GeolocationCoordinates.speed")}} {{ReadOnlyInline}}
-  - : Returns a `double` representing the velocity of the device in meters per second. This value can be `null`.
+  - : یک `double` برمی‌گرداند که سرعت دستگاه را بر حسب متر بر ثانیه نشان می‌دهد. این مقدار می‌تواند `null` باشد.
 
-## Instance methods
+## روش‌های نمونه
 
-_The `GeolocationCoordinates` interface doesn't inherit any methods._
+_واسط `GeolocationCoordinates` هیچ روشی را به ارث نمی‌برد._
 
 - {{domxref("GeolocationCoordinates.toJSON()")}}
-  - : Returns a JSON representation of the `GeolocationCoordinates` object and enables serialization with {{jsxref("JSON.stringify()")}}.
+  - : یک نمایش JSON از شیء `GeolocationCoordinates` برمی‌گرداند و سریال‌سازی را با {{jsxref("JSON.stringify()")}} فعال می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [استفاده از API موقعیت‌یابی](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
 - {{domxref("Geolocation")}}
