@@ -1,7 +1,5 @@
 ---
 title: "Document: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/close"
-status: "needs-translation"
 ---
 
 ---
@@ -14,24 +12,23 @@ browser-compat: api.Document.close
 
 {{APIRef("DOM")}}
 
-The **`Document.close()`** method finishes writing to a
-document, opened with {{domxref("Document.open()")}}.
+متد **`Document.close()`** نوشتن در سندی را که با {{domxref("Document.open()")}} باز شده است، به پایان می‌رساند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچکدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 // Open a document to write to it
@@ -44,10 +41,10 @@ document.write("<p>The one and only content.</p>");
 document.close();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
