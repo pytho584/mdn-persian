@@ -1,10 +1,4 @@
 ---
-title: "DataCue"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataCue"
-status: "needs-translation"
----
-
----
 title: DataCue
 slug: Web/API/DataCue
 page-type: web-api-interface
@@ -15,37 +9,37 @@ browser-compat: api.DataCue
 
 {{APIRef("WebVTT")}}{{SeeCompatTable}}
 
-The **`DataCue`** interface represents a cue that associates arbitrary timed data with an audio or video media resource, or exposes timed data from a media resource to web pages. It extends the {{domxref("TextTrackCue")}} interface with a {{domxref("DataCue.value", "value")}} property that can hold any data type, and a {{domxref("DataCue.type", "type")}} property that identifies the kind of data.
+رابط **`DataCue`** نماینگر یک نشانه (cue) است که داده‌های زمان‌بندی‌شدهٔ دلخواه را با یک منبع رسانه‌ای صوتی یا تصویری مرتبط می‌سازد، یا داده‌های زمان‌بندی‌شده را از یک منبع رسانه‌ای در اختیار صفحات وب قرار می‌دهد. این رابط، رابط {{domxref("TextTrackCue")}} را با یک ویژگی {{domxref("DataCue.value", "value")}} که می‌تواند هر نوع داده‌ای را در خود نگه دارد، و یک ویژگی {{domxref("DataCue.type", "type")}} که نوع داده را مشخص می‌کند، گسترش می‌دهد.
 
-Unlike {{domxref("VTTCue")}}, which is designed for displaying subtitle and caption text, `DataCue` is intended for non-rendered timed metadata. Use cases include dynamic content replacement, ad insertion, presentation of supplemental content alongside audio or video, or more generally, triggering application logic at specific points on the media timeline.
+بر خلاف {{domxref("VTTCue")}} که برای نمایش متن زیرنویس و عنوان‌ها طراحی شده است، `DataCue` برای فراداده‌های زمان‌بندی‌شدهٔ غیرقابل نمایش در نظر گرفته شده است. موارد استفاده شامل جایگزینی پویای محتوا، درج تبلیغ، ارائهٔ محتوای تکمیلی در کنار صدا یا تصویر، یا به طور کلی، راه‌اندازی منطق برنامه در نقاط مشخصی از خط زمانی رسانه است.
 
-Some user agents may also automatically generate `DataCue` objects for in-band timed metadata carried within media streams, such as ID3 tags in [HTTP Live Streaming (HLS)](/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Setting_up_adaptive_streaming_media_sources#hls_encoding).
+برخی از عامل‌های کاربری ممکن است به طور خودکار اشیاء `DataCue` را برای فراداده‌های زمان‌بندی‌شدهٔ درون‌باند که در جریان‌های رسانه‌ای حمل می‌شوند، مانند برچسب‌های ID3 در [پخش زنده HTTP (HLS)](/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/Setting_up_adaptive_streaming_media_sources#hls_encoding)، تولید کنند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("DataCue.DataCue", "DataCue()")}} {{experimental_inline}}
-  - : Creates a new `DataCue` object.
+  - : یک شیء `DataCue` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from {{domxref("TextTrackCue")}}._
+_این رابط همچنین ویژگی‌هایی را از {{domxref("TextTrackCue")}} به ارث می‌برد._
 
 - {{domxref("DataCue.type")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A string identifying the type of the cue's {{domxref("DataCue.value", "value")}}, typically using reverse-domain notation (e.g., `"org.mp4ra"`, `"org.id3"`).
+  - : یک رشته که نوع {{domxref("DataCue.value", "value")}} نشانه را مشخص می‌کند، معمولاً با استفاده از نماد دامنه معکوس (reverse-domain notation) (مثلاً `"org.mp4ra"`، `"org.id3"`).
 - {{domxref("DataCue.value")}} {{experimental_inline}}
-  - : The data payload associated with the cue. Can be any type.
+  - : بار داده‌ای (payload) مرتبط با نشانه. می‌تواند هر نوعی باشد.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface has no methods of its own but inherits methods from {{domxref("TextTrackCue")}}._
+_این رابط هیچ متد خاص خود را ندارد اما متدهایی را از {{domxref("TextTrackCue")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Associating timed metadata with a video
+### ارتباط دادن فراداده‌های زمان‌بندی‌شده با یک ویدئو
 
-The following example creates a metadata {{domxref("TextTrack")}} on a video element and adds `DataCue` objects containing geolocation coordinates. When each cue becomes active during playback, its {{domxref("TextTrackCue/enter_event", "enter")}} event fires, allowing the page to react — for example, by updating a map view.
+مثال زیر یک {{domxref("TextTrack")}} فراداده‌ای روی یک عنصر ویدئو ایجاد می‌کند و اشیاء `DataCue` حاوی مختصات جغرافیایی را به آن اضافه می‌کند. هنگامی که هر نشانه در حین پخش فعال می‌شود، رویداد {{domxref("TextTrackCue/enter_event", "enter")}} آن فعال می‌شود و به صفحه اجازه می‌دهد واکنش نشان دهد — برای مثال، با به‌روزرسانی نمای نقشه.
 
 ```html
 <video controls src="video.mp4"></video>
@@ -81,18 +75,18 @@ for (const point of points) {
 // At 20s: "Map pan to: 40.4168, -3.7038"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("TextTrackCue")}}
 - {{domxref("VTTCue")}}
 - {{domxref("TextTrack")}}
-- {{domxref("TextTrackCue/enter_event", "enter")}} event
-- {{domxref("TextTrackCue/exit_event", "exit")}} event
+- رویداد {{domxref("TextTrackCue/enter_event", "enter")}}
+- رویداد {{domxref("TextTrackCue/exit_event", "exit")}}
