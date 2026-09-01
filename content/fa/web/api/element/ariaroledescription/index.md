@@ -1,7 +1,5 @@
 ---
 title: "Element: ariaRoleDescription property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaRoleDescription"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.Element.ariaRoleDescription
 
 {{APIRef("DOM")}}
 
-The **`ariaRoleDescription`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) attribute, which defines a human-readable, author-localized description for the role of an element.
+ویژگی **`ariaRoleDescription`** در رابط {{domxref("Element")}} مقدار ویژگی [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) را منعکس می‌کند؛ ویژگی‌ای که توصیفی قابل‌خواندن برای انسان و بومی‌شده توسط نویسنده را برای نقش یک عنصر تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-roledescription` attribute on the element with an ID of `myApplication` has been set. Using `ariaRoleDescription` we can update the value.
+در این مثال، ویژگی `aria-roledescription` روی عنصری با شناسه (ID) «myApplication» تنظیم شده است. با استفاده از `ariaRoleDescription` می‌توانیم مقدار آن را به‌روزرسانی کنیم.
 
 ```html
 <div
@@ -40,14 +38,14 @@ el.ariaRoleDescription = "an updated description of this widget";
 console.log(el.ariaRoleDescription); // "an updated description of this widget"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [ARIA: application role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role)
