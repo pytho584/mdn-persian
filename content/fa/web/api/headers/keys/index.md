@@ -1,7 +1,5 @@
 ---
 title: "Headers: keys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Headers/keys"
-status: "needs-translation"
 ---
 
 ---
@@ -14,25 +12,23 @@ browser-compat: api.Headers.keys
 
 {{APIRef("Fetch API")}} {{AvailableInWorkers}}
 
-The **`Headers.keys()`** method returns an
-{{jsxref("Iteration_protocols",'iterator')}} allowing to go through all keys contained
-in this object. The keys are {{jsxref("String")}} objects.
+متد **`Headers.keys()`** یک {{jsxref("Iteration_protocols",'iterator')}} برمی‌گرداند که می‌توان برای گذر از تمام کلیدهای موجود در این شیء از آن استفاده کرد. کلیدها اشیاء {{jsxref("String")}} هستند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 keys()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-Returns an {{jsxref("Iteration_protocols","iterator")}}.
+یک {{jsxref("Iteration_protocols","iterator")}} برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Create a test Headers object
@@ -46,22 +42,22 @@ for (const key of myHeaders.keys()) {
 }
 ```
 
-The result is:
+نتیجه به این صورت است:
 
 ```plain
 content-type
 vary
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [ServiceWorker API](/en-US/docs/Web/API/Service_Worker_API)
 - [HTTP access control (CORS)](/en-US/docs/Web/HTTP/Guides/CORS)
