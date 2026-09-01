@@ -1,11 +1,5 @@
 ---
 title: "FileSystemDirectoryHandle: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/entries"
-status: "needs-translation"
----
-
----
-title: "FileSystemDirectoryHandle: entries() method"
 short-title: entries()
 slug: Web/API/FileSystemDirectoryHandle/entries
 page-type: web-api-instance-method
@@ -14,36 +8,32 @@ browser-compat: api.FileSystemDirectoryHandle.entries
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`entries()`** method of the
-{{domxref("FileSystemDirectoryHandle")}} interface returns a new asynchronous iterator
-for the iteration of the key-value pairs of the entries within the `FileSystemDirectoryHandle`
-on which this method is called. The key-value pairs are
-in the form of an array like `[key, value]`.
+متد **`entries()`** در رابط {{domxref("FileSystemDirectoryHandle")}} یک تکرارکننده‌ی ناهمگام جدید برای پیمایش جفت‌های کلید-مقدار ورودی‌های درون `FileSystemDirectoryHandle` که این متد روی آن فراخوانی شده است، برمی‌گرداند. این جفت‌های کلید-مقدار به شکل آرایه‌ای مانند `[key, value]` هستند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 entries()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new asynchronous iterator containing the key-value pairs of each entry within the `FileSystemDirectoryHandle`.
+یک تکرارکننده‌ی ناهمگام جدید که شامل جفت‌های کلید-مقدار هر ورودی درون `FileSystemDirectoryHandle` است.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref('PermissionStatus.state')}} for the handle is not `'granted'` in `read` mode.
+  - : اگر {{domxref('PermissionStatus.state')}} برای هندل در حالت `'granted'` نباشد، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the current entry is not found.
+  - : اگر ورودی فعلی یافت نشود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-Use the `for await...of` loop can simplify the iteration process.
+استفاده از حلقه‌ی `for await...of` می‌تواند فرآیند پیمایش را ساده‌تر کند.
 
 ```js
 const dirHandle = await window.showDirectoryPicker();
@@ -53,15 +43,15 @@ for await (const [key, value] of dirHandle.entries()) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
