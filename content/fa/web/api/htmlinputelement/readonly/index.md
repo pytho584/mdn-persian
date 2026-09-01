@@ -8,17 +8,17 @@ browser-compat: api.HTMLInputElement.readOnly
 
 {{ APIRef("HTML DOM") }}
 
-خاصیت **`readOnly`** در واسط {{DOMxRef("HTMLInputElement")}} نشان می‌دهد که کاربر نمی‌تواند مقدار {{htmlelement("input")}} را تغییر دهد. این خاصیت منعکس‌کنندهٔ ویژگی بولی [`readonly`](/en-US/docs/Web/HTML/Reference/Elements/input#readonly) عنصر {{htmlelement("input")}} است؛ در صورت وجود ویژگی، `true` و در صورت عدم وجود، `false` برمی‌گرداند.
+ویژگی **`readOnly`** در رابط {{DOMxRef("HTMLInputElement")}} نشان می‌دهد که کاربر نمی‌تواند مقدار عنصر {{htmlelement("input")}} را تغییر دهد. این ویژگی، صفت بولی [`readonly`](/en-US/docs/Web/HTML/Reference/Elements/input#readonly) عنصر {{htmlelement("input")}} را منعکس می‌کند؛ اگر صفت وجود داشته باشد `true` و در غیر این صورت `false` برمی‌گرداند.
 
-برخلاف یک کنترل فرم با خاصیت {{domxref("HTMLInputElement.disabled", "disabled")}} برابر با `true`، مقدار `true` برای خاصیت `readOnly` از کلیک یا انتخاب کاربر در کنترل جلوگیری نمی‌کند.
+برخلاف یک کنترل فرم با ویژگی {{domxref("HTMLInputElement.disabled", "disabled")}} برابر `true`، مقدار `true` برای ویژگی `readOnly` مانع از کلیک یا انتخاب کاربر در کنترل نمی‌شود.
 
-اگرچه ویژگی HTML `readonly` برای انواع `hidden`، `range`، `color`، `checkbox`، `radio`، `file`، `submit`، `reset`، `button` و `image` نادیده گرفته می‌شود، خاصیت `readOnly` برای این انواع ورودی در صورت وجود ویژگی `true` و در غیر این صورت `false` است.
+در حالی که صفت HTML `readonly` برای انواع `hidden`، `range`، `color`، `checkbox`، `radio`، `file`، `submit`، `reset`، `button` و `image` نادیده گرفته می‌شود، ویژگی `readOnly` برای این نوع ورودی‌ها در صورت وجود صفت `true` و در غیر این صورت `false` است.
 
 ## مقدار
 
-یک بولی.
+یک مقدار بولی (boolean).
 
-## نمونه‌ها
+## مثال
 
 ```js
 const inputElement = document.getElementById("total");
@@ -30,7 +30,7 @@ inputElement.readOnly = true;
 
 {{Specifications}}
 
-## سازگاری با مرورگرها
+## سازگاری با مرورگر
 
 {{Compat}}
 
@@ -38,4 +38,4 @@ inputElement.readOnly = true;
 
 - {{HTMLElement("input")}}
 - {{DOMXref("HTMLInputElement.disabled")}}
-- شبه‌کلاس {{cssxref(":read-only")}}
+- شبه-کلاس {{cssxref(":read-only")}}
