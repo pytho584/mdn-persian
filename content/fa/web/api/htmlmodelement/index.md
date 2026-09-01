@@ -1,10 +1,4 @@
 ---
-title: "HTMLModElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLModElement"
-status: "needs-translation"
----
-
----
 title: HTMLModElement
 slug: Web/API/HTMLModElement
 page-type: web-api-interface
@@ -13,27 +7,27 @@ browser-compat: api.HTMLModElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLModElement`** interface provides special properties (beyond the regular methods and properties available through the {{domxref("HTMLElement")}} interface they also have available to them by inheritance) for manipulating modification elements, that is {{HTMLElement("del")}} and {{HTMLElement("ins")}}.
+رابط **`HTMLModElement`** ویژگی‌های خاصی را فراهم می‌کند (علاوه بر روش‌ها و ویژگی‌های معمولی که از طریق رابط {{domxref("HTMLElement")}} به ارث می‌برد) برای کار با عناصرِ تغییر، یعنی {{HTMLElement("del")}} و {{HTMLElement("ins")}}.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}}، را به ارث می‌برد._
 
 - {{domxref("HTMLModElement.cite")}}
-  - : A string reflecting the [`cite`](/en-US/docs/Web/HTML/Reference/Elements/del#cite) HTML attribute, containing a URI of a resource explaining the change.
+  - : رشته‌ای که ویژگی HTML [`cite`](/en-US/docs/Web/HTML/Reference/Elements/del#cite) را منعکس می‌کند و حاوی URI منبعی است که تغییر را توضیح می‌دهد.
 - {{domxref("HTMLModElement.dateTime")}}
-  - : A string reflecting the [`datetime`](/en-US/docs/Web/HTML/Reference/Elements/del#datetime) HTML attribute, containing a date-and-time string representing a timestamp for the change.
+  - : رشته‌ای که ویژگی HTML [`datetime`](/en-US/docs/Web/HTML/Reference/Elements/del#datetime) را منعکس می‌کند و شامل یک رشتهٔ تاریخ و زمان است که برچسب زمانی تغییر را نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML elements implementing this interface: {{HTMLElement("ins")}}, {{HTMLElement("del")}}.
+- عناصر HTML که این رابط را پیاده‌سازی می‌کنند: {{HTMLElement("ins")}}، {{HTMLElement("del")}}.
