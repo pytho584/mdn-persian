@@ -1,11 +1,5 @@
 ---
 title: "HTMLEmbedElement: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLEmbedElement/height"
-status: "needs-translation"
----
-
----
-title: "HTMLEmbedElement: height property"
 short-title: height
 slug: Web/API/HTMLEmbedElement/height
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLEmbedElement.height
 
 {{APIRef("HTML DOM")}}
 
-The **`height`** property of the {{domxref("HTMLEmbedElement")}} interface returns a string that reflects the `height` attribute of the {{HTMLElement("embed")}} element, indicating the displayed height of the resource in CSS pixels.
+ویژگی **`height`** در رابط {{domxref("HTMLEmbedElement")}} رشته‌ای را برمی‌گرداند که منعکس‌کنندهٔ ویژگی `height` عنصر {{HTMLElement("embed")}} است و ارتفاع نمایش‌داده‌شدهٔ منبع را بر حسب پیکسل CSS نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string indicating the displayed height of the resource in CSS pixels.
+رشته‌ای که ارتفاع نمایش‌داده‌شدهٔ منبع را بر حسب پیکسل CSS نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <embed id="el" width="800" height="600" src="https://example.com" />
@@ -28,18 +22,18 @@ A string indicating the displayed height of the resource in CSS pixels.
 
 ```js
 const el = document.getElementById("el");
-console.log(el.height); // Output: '600'
+console.log(el.height); // خروجی: '600'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLCanvasElement.height")}}
 - {{domxref("HTMLIFrameElement.height")}}
