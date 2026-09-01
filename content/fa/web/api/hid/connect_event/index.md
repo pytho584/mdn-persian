@@ -1,7 +1,5 @@
 ---
 title: "HID: connect event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HID/connect_event"
-status: "needs-translation"
 ---
 
 ---
@@ -16,11 +14,11 @@ browser-compat: api.HID.connect_event
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`connect`** event of the {{domxref("HID")}} interface fires when the user agent connects to a HID device.
+رویداد **`connect`** از رابط {{domxref("HID")}} زمانی رخ می‌دهد که عامل کاربر به یک دستگاه HID متصل می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("connect", (event) => { })
@@ -28,15 +26,15 @@ addEventListener("connect", (event) => { })
 onconnect = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("HIDConnectionEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("HIDConnectionEvent")}} که از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("HIDConnectionEvent")}}
 
-## Examples
+## مثال‌ها
 
-In the following example an event listener is registered to listen for the connection of a device. The name of the device is then printed to the console using {{domxref("HIDDevice.productName")}}.
+در مثال زیر، یک شنونده رویداد برای گوش دادن به اتصال یک دستگاه ثبت شده است. سپس نام دستگاه با استفاده از {{domxref("HIDDevice.productName")}} در کنسول چاپ می‌شود.
 
 ```js
 navigator.hid.addEventListener("connect", ({ device }) => {
@@ -44,10 +42,10 @@ navigator.hid.addEventListener("connect", ({ device }) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
