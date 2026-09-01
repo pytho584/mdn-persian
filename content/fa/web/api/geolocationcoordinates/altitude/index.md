@@ -1,11 +1,5 @@
 ---
 title: "GeolocationCoordinates: altitude property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates/altitude"
-status: "needs-translation"
----
-
----
-title: "GeolocationCoordinates: altitude property"
 short-title: altitude
 slug: Web/API/GeolocationCoordinates/altitude
 page-type: web-api-instance-property
@@ -14,23 +8,22 @@ browser-compat: api.GeolocationCoordinates.altitude
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`altitude`** read-only property of the {{domxref("GeolocationCoordinates")}} interface is a `double` representing the altitude of the position in meters above the [WGS84](https://gis-lab.info/docs/nima-tr8350.2-wgs84fin.pdf) ellipsoid (which defines the nominal sea level surface). This value is `null` if the implementation cannot provide this data.
+ویژگی فقط‌خواندنی **`altitude`** در رابط {{domxref("GeolocationCoordinates")}} یک عدد اعشاری (`double`) است که ارتفاع موقعیت را بر حسب متر بالای بیضوی [WGS84](https://gis-lab.info/docs/nima-tr8350.2-wgs84fin.pdf) (که سطح اسمی دریا را تعریف می‌کند) نشان می‌دهد. اگر پیاده‌سازی نتواند این داده را فراهم کند، مقدار آن `null` است.
 
-## Value
+## مقدار
 
-A `double` representing the altitude of the position in meters above the [WGS84](https://gis-lab.info/docs/nima-tr8350.2-wgs84fin.pdf)
-ellipsoid.
+یک عدد اعشاری (`double`) که ارتفاع موقعیت را بر حسب متر بالای بیضوی [WGS84](https://gis-lab.info/docs/nima-tr8350.2-wgs84fin.pdf) نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
-- The {{domxref("GeolocationCoordinates")}} interface it belongs to.
-- [National Imagery and Mapping Agency Technical Report 8350.2, Third Edition (WGS84)](https://gis-lab.info/docs/nima-tr8350.2-wgs84fin.pdf)
+- [استفاده از API جغرافیایی](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- رابط {{domxref("GeolocationCoordinates")}} که این ویژگی به آن تعلق دارد.
+- [گزارش فنی 8350.2 آژانس ملی تصویربرداری و نقشه‌برداری، ویرایش سوم (WGS84)](https://gis-lab.info/docs/nima-tr8350.2-wgs84fin.pdf)
