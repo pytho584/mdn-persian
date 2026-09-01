@@ -1,57 +1,44 @@
 ---
 title: "Element: getAttributeNames() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttributeNames"
-status: "needs-translation"
----
-
----
-title: "Element: getAttributeNames() method"
 short-title: getAttributeNames()
 slug: Web/API/Element/getAttributeNames
 page-type: web-api-instance-method
 browser-compat: api.Element.getAttributeNames
 ---
 
-{{APIRef("DOM")}}
+متد **`getAttributeNames()`** در رابط {{domxref("Element")}} نام ویژگی‌های عنصر را به‌صورت یک {{jsxref("Array")}} از رشته‌ها برمی‌گرداند. اگر عنصر هیچ ویژگی‌ای نداشته باشد، یک آرایهٔ خالی برمی‌گرداند.
 
-The **`getAttributeNames()`** method of the
-{{domxref("Element")}} interface returns the attribute names of the element as an
-{{jsxref("Array")}} of strings. If the element has no attributes it returns an empty
-array.
+استفاده از `getAttributeNames()` در کنار {{domxref("Element.getAttribute","getAttribute()")}} جایگزینی کارآمد از نظر حافظه و با کارایی بالا برای دسترسی به {{domxref("Element.attributes")}} است.
 
-Using `getAttributeNames()` along with
-{{domxref("Element.getAttribute","getAttribute()")}}, is a memory-efficient and
-performant alternative to accessing {{domxref("Element.attributes")}}.
+نام‌هایی که توسط `getAttributeNames()` بازگردانده می‌شوند، _نام‌های ویژگی واجد شرایط_ هستند؛ یعنی ویژگی‌هایی که پیشوند فضای نام دارند، نامشان با همان پیشوند فضای نام (و نه خود فضای نام) و به دنبال آن دونقطه و سپس نام ویژگی بازگردانده می‌شود (مثلاً **`xlink:href`**)؛ در حالی که ویژگی‌هایی که پیشوند فضای نام ندارند، نامشان بدون تغییر بازگردانده می‌شود (مثلاً **`href`**).
 
-The names returned by **`getAttributeNames()`** are _qualified_ attribute names, meaning that attributes with a namespace prefix have their names returned with that namespace prefix (_not_ the actual namespace), followed by a colon, followed by the attribute name (for example, **`xlink:href`**), while any attributes which have no namespace prefix have their names returned as-is (for example, **`href`**).
-
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getAttributeNames()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An ({{jsxref("Array")}}) of strings.
+یک ({{jsxref("Array")}}) از رشته‌ها.
 
-## Examples
+## مثال‌ها
 
-The following example shows how:
+مثال زیر نشان می‌دهد که:
 
-- For an attribute which has a namespace prefix, `getAttributeNames()` returns that namespace prefix along with the attribute name.
-- For an attribute which has no namespace prefix, `getAttributeNames()` returns just the attribute name, as-is.
+- برای ویژگی‌ای که پیشوند فضای نام دارد، `getAttributeNames()` آن پیشوند را همراه با نام ویژگی برمی‌گرداند.
+- برای ویژگی‌ای که پیشوند فضای نام ندارد، `getAttributeNames()` فقط نام ویژگی را بدون تغییر برمی‌گرداند.
 
-It's important to understand that:
+درک این نکات مهم است:
 
-1. An attribute can be present in the DOM with a namespace but lacking a namespace prefix.
-2. For an attribute in the DOM that has a namespace but lacks a namespace prefix, `getAttributeNames()` will return just the attribute name, with no indication that the attribute is in a namespace.
+1. یک ویژگی می‌تواند در DOM با فضای نام حضور داشته باشد اما پیشوند فضای نام نداشته باشد.
+2. برای ویژگی‌ای در DOM که فضای نام دارد اما پیشوند فضای نام ندارد، `getAttributeNames()` فقط نام ویژگی را برمی‌گرداند و هیچ اشاره‌ای به این نمی‌کند که ویژگی در یک فضای نام قرار دارد.
 
-The example below includes such a "namespaced but without a namespace prefix" case.
+مثال زیر شامل چنین حالتی است که «دارای فضای نام اما بدون پیشوند فضای نام» است.
 
 ```js
 const element = document.createElement("a");
@@ -79,10 +66,10 @@ for (const name of element.getAttributeNames()) {
 // show new
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
