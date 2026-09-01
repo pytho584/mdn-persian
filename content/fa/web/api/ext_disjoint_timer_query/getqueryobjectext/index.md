@@ -1,11 +1,5 @@
 ---
 title: "EXT_disjoint_timer_query: getQueryObjectEXT() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/getQueryObjectEXT"
-status: "needs-translation"
----
-
----
-title: "EXT_disjoint_timer_query: getQueryObjectEXT() method"
 short-title: getQueryObjectEXT()
 slug: Web/API/EXT_disjoint_timer_query/getQueryObjectEXT
 page-type: webgl-extension-method
@@ -14,9 +8,7 @@ browser-compat: api.EXT_disjoint_timer_query.getQueryObjectEXT
 
 {{APIRef("WebGL")}}
 
-The **`EXT_disjoint_timer_query.getQueryObjectEXT()`** method
-of the [WebGL API](/en-US/docs/Web/API/WebGL_API) returns the state of a
-query object.
+متد **`EXT_disjoint_timer_query.getQueryObjectEXT()`** در [WebGL API](/en-US/docs/Web/API/WebGL_API) وضعیت یک شیء پرس‌وجو (query object) را برمی‌گرداند.
 
 ## Syntax
 
@@ -24,52 +16,49 @@ query object.
 getQueryObjectEXT(query, pname)
 ```
 
-### Parameters
+### پارامترها
 
 - `query`
-  - : A {{domxref("WebGLQuery")}} object from which to return information.
+  - : یک شیء {{domxref("WebGLQuery")}} که اطلاعات از آن گرفته می‌شود.
 - `pname`
-  - : A {{domxref("WebGL_API/Types", "GLenum")}} specifying which information to return. Must be
-    `ext.QUERY_RESULT_EXT` or `ext.QUERY_RESULT_AVAILABLE_EXT`.
+  - : یک {{domxref("WebGL_API/Types", "GLenum")}} که مشخص می‌کند کدام اطلاعات برگردانده شود. باید یکی از مقادیر `ext.QUERY_RESULT_EXT` یا `ext.QUERY_RESULT_AVAILABLE_EXT` باشد.
 
-### Return value
+### مقدار بازگشتی
 
-Depends on `pname`:
+بستگی به `pname` دارد:
 
-- If `pname` is `ext.QUERY_RESULT_EXT`: A
-  {{domxref("WebGL_API/Types", "GLuint64EXT")}} containing the query result.
-- If `pname` is `ext.QUERY_RESULT_AVAILABLE_EXT`: A
-  {{domxref("WebGL_API/Types", "GLboolean")}} indicating whether or not a query result is available.
+- اگر `pname` برابر `ext.QUERY_RESULT_EXT` باشد: یک {{domxref("WebGL_API/Types", "GLuint64EXT")}} حاوی نتیجه پرس‌وجو.
+- اگر `pname` برابر `ext.QUERY_RESULT_AVAILABLE_EXT` باشد: یک {{domxref("WebGL_API/Types", "GLboolean")}} که نشان می‌دهد آیا نتیجه پرس‌وجو در دسترس است یا خیر.
 
-## Examples
+## مثال‌ها
 
 ```js
 const ext = gl.getExtension("EXT_disjoint_timer_query");
 const query = ext.createQueryEXT();
 ext.beginQueryEXT(ext.TIME_ELAPSED_EXT, query);
 
-// Draw
+// رسم
 ext.endQueryEXT(ext.TIME_ELAPSED_EXT);
 
-// At some point in the future, after returning control to the browser
+// در آینده و پس از بازگشت کنترل به مرورگر
 const available = ext.getQueryObjectEXT(query, ext.QUERY_RESULT_AVAILABLE_EXT);
 const disjoint = gl.getParameter(ext.GPU_DISJOINT_EXT);
 
 if (available && !disjoint) {
-  // See how much time the rendering of the object took in nanoseconds.
+  // مشاهده مدت زمان رندر شدن شیء بر حسب نانوثانیه
   const timeElapsed = ext.getQueryObjectEXT(query, ext.QUERY_RESULT_EXT);
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLQuery")}}
