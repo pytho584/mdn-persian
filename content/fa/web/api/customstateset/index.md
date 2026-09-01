@@ -1,10 +1,4 @@
 ---
-title: "CustomStateSet"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomStateSet"
-status: "needs-translation"
----
-
----
 title: CustomStateSet
 slug: Web/API/CustomStateSet
 page-type: web-api-interface
@@ -13,65 +7,55 @@ browser-compat: api.CustomStateSet
 
 {{APIRef("Web Components")}}
 
-The **`CustomStateSet`** interface of the [Document Object Model](/en-US/docs/Web/API/Document_Object_Model) stores a list of states for an [autonomous custom element](/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element), and allows states to be added and removed from the set.
+رابط **`CustomStateSet`** از [مدل شیء سند (Document Object Model)](/en-US/docs/Web/API/Document_Object_Model) فهرستی از حالت‌ها را برای یک [عنصر سفارشی خودکار (autonomous custom element)](/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element) ذخیره می‌کند و امکان افزودن و حذف حالت‌ها را از مجموعه فراهم می‌آورد.
 
-The interface can be used to expose the internal states of a custom element, allowing them to be used in CSS selectors by code that uses the element.
+از این رابط می‌توان برای نمایش حالت‌های داخلی یک عنصر سفارشی استفاده کرد و به کدی که از عنصر استفاده می‌کند اجازه داد تا آن حالت‌ها را در انتخاب‌گرهای CSS به کار گیرد.
 
-## Instance properties
+## خصوصیات نمونه
 
 - {{domxref("CustomStateSet.size")}}
-  - : Returns the number of values in the `CustomStateSet`.
+  - : تعداد مقادیر موجود در `CustomStateSet` را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("CustomStateSet.add()")}}
-  - : Adds a value to the set.
+  - : یک مقدار به مجموعه اضافه می‌کند.
 - {{domxref("CustomStateSet.clear()")}}
-  - : Removes all elements from the `CustomStateSet` object.
+  - : همه عناصر را از شیء `CustomStateSet` حذف می‌کند.
 - {{domxref("CustomStateSet.delete()")}}
-  - : Removes one value from the `CustomStateSet` object.
+  - : یک مقدار را از شیء `CustomStateSet` حذف می‌کند.
 - {{domxref("CustomStateSet.entries()")}}
-  - : Returns a new iterator with the values for each element in the `CustomStateSet` in insertion order.
+  - : یک iterator جدید با مقادیر هر عنصر در `CustomStateSet` به ترتیب درج برمی‌گرداند.
 - {{domxref("CustomStateSet.forEach()")}}
-  - : Executes a provided function for each value in the `CustomStateSet` object.
+  - : یک تابع ارائه‌شده را برای هر مقدار در شیء `CustomStateSet` اجرا می‌کند.
 - {{domxref("CustomStateSet.has()")}}
-  - : Returns a {{jsxref("Boolean")}} asserting whether an element is present with the given value.
+  - : یک {{jsxref("Boolean")}} برمی‌گرداند که مشخص می‌کند آیا عنصری با مقدار داده شده وجود دارد یا خیر.
 - {{domxref("CustomStateSet.keys()")}}
-  - : An alias for {{domxref("CustomStateSet.values()")}}.
+  - : یک نام مستعار برای {{domxref("CustomStateSet.values()")}}.
 - {{domxref("CustomStateSet.values()")}}
-  - : Returns a new iterator object that yields the values for each element in the `CustomStateSet` object in insertion order.
+  - : یک شیء iterator جدید برمی‌گرداند که مقادیر هر عنصر در شیء `CustomStateSet` را به ترتیب درج تولید می‌کند.
 
-## Description
+## توضیحات
 
-Built in HTML elements can have different _states_, such as "enabled" and "disabled, "checked" and "unchecked", "initial", "loading" and "ready".
-Some of these states are public and can be set or queried using properties/attributes, while others are effectively internal, and cannot be directly set.
-Whether external or internal, element states can generally be selected and styled using [CSS pseudo-classes](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes) as selectors.
+عناصر HTML داخلی می‌توانند _حالت‌های_ متفاوتی داشته باشند، مانند «فعال» و «غیرفعال»، «علامت‌خورده» و «علامت‌نخورده»، «اولیه»، «در حال بارگیری» و «آماده». برخی از این حالت‌ها عمومی هستند و می‌توان با استفاده از خصوصیات/ویژگی‌ها (properties/attributes) آن‌ها را تنظیم یا پرس‌وجو کرد، در حالی که برخی دیگر عملاً داخلی هستند و نمی‌توان مستقیماً آن‌ها را تنظیم کرد. صرف‌نظر از خارجی یا داخلی بودن، معمولاً می‌توان حالت‌های یک عنصر را با استفاده از [شبه‌کلاس‌های CSS](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes) به عنوان انتخاب‌گر انتخاب و استایل‌دهی کرد.
 
-The `CustomStateSet` allows developers to add and delete states for autonomous custom elements (but not elements derived from built-in elements).
-These states can then be used as custom state pseudo-class selectors in a similar way to the pseudo-classes for built-in elements.
+`CustomStateSet` به توسعه‌دهندگان اجازه می‌دهد تا حالت‌هایی را برای عناصر سفارشی خودکار (اما نه عناصر مشتق‌شده از عناصر داخلی) اضافه و حذف کنند. سپس این حالت‌ها را می‌توان به عنوان انتخاب‌گرهای شبه‌کلاس حالت سفارشی (custom state pseudo-classes) به شکلی مشابه شبه‌کلاس‌های عناصر داخلی به کار برد.
 
-### Setting custom element states
+### تنظیم حالت‌های عنصر سفارشی
 
-To make the `CustomStateSet` available, a custom element must first call {{domxref("HTMLElement.attachInternals()")}} in order to attach an {{domxref("ElementInternals")}} object.
-`CustomStateSet` is then returned by {{domxref("ElementInternals.states")}}.
-Note that `ElementInternals` cannot be attached to a custom element based on a built-in element, so this feature only works for autonomous custom elements (see [github.com/whatwg/html/issues/5166](https://github.com/whatwg/html/issues/5166)).
+برای در دسترس قرار دادن `CustomStateSet`، یک عنصر سفارشی ابتدا باید {{domxref("HTMLElement.attachInternals()")}} را فراخوانی کند تا یک شیء {{domxref("ElementInternals")}} به آن متصل شود. سپس `CustomStateSet` توسط {{domxref("ElementInternals.states")}} بازگردانده می‌شود. توجه داشته باشید که `ElementInternals` را نمی‌توان به یک عنصر سفارشی مبتنی بر یک عنصر داخلی متصل کرد، بنابراین این ویژگی فقط برای عناصر سفارشی خودکار کار می‌کند (به [github.com/whatwg/html/issues/5166](https://github.com/whatwg/html/issues/5166) مراجعه کنید).
 
-The `CustomStateSet` instance is a [`Set`-like object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#set-like_browser_apis) that can hold an ordered set of state values.
-Each value is a custom identifier.
-Identifiers can be added to the set or deleted.
-If an identifier is present in the set the particular state is `true`, while if it is removed the state is `false`.
+نمونه `CustomStateSet` یک [شیء شبیه به `Set`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#set-like_browser_apis) است که می‌تواند یک مجموعه مرتب از مقادیر حالت را نگه دارد. هر مقدار یک شناسه سفارشی است. شناسه‌ها را می‌توان به مجموعه اضافه یا از آن حذف کرد. اگر یک شناسه در مجموعه وجود داشته باشد، حالت خاص `true` است، و اگر حذف شود، حالت `false` است.
 
-Custom elements that have states with more than two values can represent them with multiple boolean states, only one of which is `true` (present in the `CustomStateSet`) at a time.
+عناصر سفارشی که حالت‌هایی با بیش از دو مقدار دارند، می‌توانند آن‌ها را با چندین حالت بولی نشان دهند که در هر لحظه فقط یکی از آن‌ها `true` (در `CustomStateSet` وجود دارد) است.
 
-The states can be used within the custom element but are not directly accessible outside of the custom component.
+حالت‌ها را می‌توان در داخل عنصر سفارشی استفاده کرد، اما از خارج از مؤلفه سفارشی مستقیماً قابل دسترسی نیستند.
 
-### Interaction with CSS
+### تعامل با CSS
 
-You can select a custom element that is in a specific state using the {{cssxref(":state()")}} _custom state pseudo-class_.
-The format of this pseudo-class is `:state(my-state-name)`, where `my-state-name` is the state as defined in the element.
-The custom state pseudo-class matches the custom element only if the state is `true` (i.e., if `my-state-name` is present in the `CustomStateSet`).
+می‌توانید یک عنصر سفارشی را که در یک حالت خاص قرار دارد با استفاده از شبه‌کلاس حالت سفارشی {{cssxref(":state()")}} انتخاب کنید. قالب این شبه‌کلاس `:state(my-state-name)` است که `my-state-name` همان حالتی است که در عنصر تعریف شده است. شبه‌کلاس حالت سفارشی فقط در صورتی با عنصر سفارشی مطابقت دارد که حالت `true` باشد (یعنی `my-state-name` در `CustomStateSet` وجود داشته باشد).
 
-For example, the following CSS matches a `labeled-checkbox` custom element when the element's `CustomStateSet` contains the `checked` state, and applies a `solid` border to the checkbox:
+برای مثال، CSS زیر یک عنصر سفارشی `labeled-checkbox` را هنگامی که `CustomStateSet` عنصر شامل حالت `checked` است، مطابقت می‌دهد و یک حاشیه `solid` به جعبه علامت (checkbox) اعمال می‌کند:
 
 ```css
 labeled-checkbox:state(checked) {
@@ -79,30 +63,24 @@ labeled-checkbox:state(checked) {
 }
 ```
 
-CSS can also be used to match a custom state [within a custom element's shadow DOM](/en-US/docs/Web/CSS/Reference/Selectors/:state#matching_a_custom_state_in_a_custom_elements_shadow_dom) by specifying `:state()` within the {{cssxref(":host()")}} pseudo-class function.
+همچنین می‌توان از CSS برای مطابقت یک حالت سفارشی [درون DOM سایه‌ای یک عنصر سفارشی](/en-US/docs/Web/CSS/Reference/Selectors/:state#matching_a_custom_state_in_a_custom_elements_shadow_dom) با مشخص کردن `:state()` درون تابع شبه‌کلاس {{cssxref(":host()")}} استفاده کرد.
 
-Additionally, the `:state()` pseudo-class can be used after the {{cssxref("::part()")}} pseudo-element to match the [shadow parts](/en-US/docs/Web/CSS/Guides/Shadow_parts) of a custom element that are in a particular state.
+علاوه بر این، می‌توان از شبه‌کلاس `:state()` پس از شبه‌عنصر {{cssxref("::part()")}} برای مطابقت [بخش‌های سایه‌ای](/en-US/docs/Web/CSS/Guides/Shadow_parts) یک عنصر سفارشی که در یک حالت خاص هستند، استفاده کرد.
 
 > [!WARNING]
-> Browsers that do not yet support {{cssxref(":state()")}} will use a CSS `<dashed-ident>` for selecting custom states, which is now deprecated.
-> For information about how to support both approaches see the [Compatibility with `<dashed-ident>` syntax](#compatibility_with_dashed-ident_syntax) section below.
+> مرورگرهایی که هنوز از {{cssxref(":state()")}} پشتیبانی نمی‌کنند، از یک `<dashed-ident>` برای انتخاب حالت‌های سفارشی استفاده می‌کنند که اکنون منسوخ شده است. برای اطلاع از نحوه پشتیبانی از هر دو رویکرد، به بخش [سازگاری با نحو `<dashed-ident>`](#compatibility_with_dashed-ident_syntax) در زیر مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-### Matching the custom state of a custom checkbox element
+### مطابقت حالت سفارشی یک عنصر جعبه علامت سفارشی
 
-This example, which is adapted from the specification, demonstrates a custom checkbox element that has an internal "checked" state.
-This is mapped to the `checked` custom state, allowing styling to be applied using the `:state(checked)` custom state pseudo class.
+این مثال که از مشخصات اقتباس شده است، یک عنصر جعبه علامت سفارشی را نشان می‌دهد که دارای یک حالت داخلی «checked» است. این حالت به حالت سفارشی `checked` نگاشت می‌شود و امکان اعمال استایل با استفاده از شبه‌کلاس حالت سفارشی `:state(checked)` فراهم می‌شود.
 
 #### JavaScript
 
-First we define our class `LabeledCheckbox` which extends from `HTMLElement`.
-In the constructor we call the `super()` method, add a listener for the click event, and call {{domxref("HTMLElement.attachInternals()", "this.attachInternals()")}} to attach an {{domxref("ElementInternals", "ElementInternals")}} object.
+ابتدا کلاس `LabeledCheckbox` خود را که از `HTMLElement` ارث‌بری می‌کند تعریف می‌کنیم. در سازنده (constructor) متد `super()` را فراخوانی می‌کنیم، یک شنونده برای رویداد کلیک اضافه می‌کنیم و {{domxref("HTMLElement.attachInternals()", "this.attachInternals()")}} را فراخوانی می‌کنیم تا یک شیء {{domxref("ElementInternals", "ElementInternals")}} متصل شود.
 
-Most of the rest of the "work" is then left to `connectedCallback()`, which is invoked when a custom element is added to the page.
-The content of the element is defined using a `<style>` element to be the text `[]` or `[x]` followed by a label.
-What's noteworthy here is that the custom state pseudo class is used to select the text to display: `:host(:state(checked))`.
-After the example below, we'll cover what's happening in the snippet in more detail.
+بیشتر «کار» باقی‌مانده به `connectedCallback()` سپرده می‌شود که زمانی که یک عنصر سفارشی به صفحه اضافه می‌شود فراخوانی می‌شود. محتوای عنصر با استفاده از یک عنصر `<style>` به صورت متن `[]` یا `[x]` به همراه یک برچسب تعریف می‌شود. نکته قابل توجه این است که از شبه‌کلاس حالت سفارشی برای انتخاب متن نمایش داده شده استفاده می‌شود: `:host(:state(checked))`. پس از مثال زیر، جزئیات بیشتری درباره آنچه در قطعه کد رخ می‌دهد توضیح خواهیم داد.
 
 ```js
 class LabeledCheckbox extends HTMLElement {
@@ -170,14 +148,14 @@ if (!LabeledCheckbox.isStateSyntaxSupported()) {
 }
 ```
 
-In the `LabeledCheckbox` class:
+در کلاس `LabeledCheckbox`:
 
-- In the `get checked()` and `set checked()` we use `ElementInternals.states` to get the `CustomStateSet`.
-- The `set checked(flag)` method adds the `"checked"` identifier to the `CustomStateSet` if the flag is set and delete the identifier if the flag is `false`.
-- The `get checked()` method just checks whether the `checked` property is defined in the set.
-- The property value is toggled when the element is clicked.
+- در `get checked()` و `set checked()` از `ElementInternals.states` برای دریافت `CustomStateSet` استفاده می‌کنیم.
+- متد `set checked(flag)` اگر پرچم تنظیم شده باشد، شناسه `"checked"` را به `CustomStateSet` اضافه می‌کند و اگر پرچم `false` باشد، شناسه را حذف می‌کند.
+- متد `get checked()` فقط بررسی می‌کند که آیا خصوصیت `checked` در مجموعه تعریف شده است یا خیر.
+- مقدار خصوصیت زمانی که عنصر کلیک می‌شود، تغییر می‌کند (toggle).
 
-We then call the {{domxref("CustomElementRegistry/define", "define()")}} method on the object returned by {{domxref("Window.customElements")}} in order to register the custom element:
+سپس متد {{domxref("CustomElementRegistry/define", "define()")}} را روی شیء بازگردانده شده توسط {{domxref("Window.customElements")}} فراخوانی می‌کنیم تا عنصر سفارشی را ثبت کنیم:
 
 ```js
 customElements.define("labeled-checkbox", LabeledCheckbox);
@@ -185,7 +163,7 @@ customElements.define("labeled-checkbox", LabeledCheckbox);
 
 #### HTML
 
-After registering the custom element we can use the element in HTML as shown:
+پس از ثبت عنصر سفارشی، می‌توانیم از عنصر در HTML به صورت زیر استفاده کنیم:
 
 ```html
 <labeled-checkbox>You need to check this</labeled-checkbox>
@@ -193,7 +171,7 @@ After registering the custom element we can use the element in HTML as shown:
 
 #### CSS
 
-Finally we use the `:state(checked)` custom state pseudo class to select CSS for when the box is checked.
+در نهایت از شبه‌کلاس حالت سفارشی `:state(checked)` برای انتخاب CSS مربوط به زمانی که جعبه علامت خورده است استفاده می‌کنیم.
 
 ```css
 labeled-checkbox {
@@ -204,19 +182,17 @@ labeled-checkbox:state(checked) {
 }
 ```
 
-#### Result
+#### نتیجه
 
-Click the element to see a different border being applied as the checkbox `checked` state is toggled.
+روی عنصر کلیک کنید تا با تغییر حالت `checked` جعبه علامت، حاشیه متفاوتی اعمال شود.
 
 {{EmbedLiveSample("Labeled Checkbox", "100%", 50)}}
 
-### Matching a custom state in a shadow part of a custom element
+### مطابقت یک حالت سفارشی در یک بخش سایه‌ای از یک عنصر سفارشی
 
-This example, which is adapted from the specification, demonstrates that custom states can be used to target the [shadow parts](/en-US/docs/Web/CSS/Guides/Shadow_parts) of a custom element for styling.
-Shadow parts are sections of the shadow tree that are intentionally exposed to pages that use the custom element.
+این مثال که از مشخصات اقتباس شده است، نشان می‌دهد که می‌توان از حالت‌های سفارشی برای هدف‌گیری [بخش‌های سایه‌ای (shadow parts)](/en-US/docs/Web/CSS/Guides/Shadow_parts) یک عنصر سفارشی برای استایل‌دهی استفاده کرد. بخش‌های سایه‌ای بخش‌هایی از درخت سایه هستند که عمداً در معرض صفحاتی که از عنصر سفارشی استفاده می‌کنند قرار می‌گیرند.
 
-The example creates a `<question-box>` custom element that displays a question prompt along with a checkbox labeled "Yes".
-The element uses the `<labeled-checkbox>` defined in the [previous example](#matching_the_custom_state_of_a_custom_checkbox_element) for the checkbox.
+این مثال یک عنصر سفارشی `<question-box>` ایجاد می‌کند که یک اعلان سؤال را به همراه یک جعبه علامت با برچسب «بله» نمایش می‌دهد. این عنصر از `<labeled-checkbox>` تعریف شده در [مثال قبلی](#matching_the_custom_state_of_a_custom_checkbox_element) برای جعبه علامت استفاده می‌کند.
 
 #### JavaScript
 
@@ -285,9 +261,7 @@ if (!LabeledCheckbox.isStateSyntaxSupported()) {
 }
 ```
 
-First, we define the custom element class `QuestionBox`, which extends `HTMLElement`.
-As always, the constructor first calls the `super()` method.
-Next, we attach a shadow DOM tree to the custom element by calling [`attachShadow()`](/en-US/docs/Web/API/Element/attachShadow).
+ابتدا کلاس عنصر سفارشی `QuestionBox` را تعریف می‌کنیم که از `HTMLElement` ارث‌بری می‌کند. طبق معمول، سازنده ابتدا متد `super()` را فراخوانی می‌کند. سپس با فراخوانی [`attachShadow()`](/en-US/docs/Web/API/Element/attachShadow) یک درخت DOM سایه‌ای به عنصر سفارشی متصل می‌کنیم.
 
 ```js
 class QuestionBox extends HTMLElement {
@@ -301,14 +275,11 @@ class QuestionBox extends HTMLElement {
 }
 ```
 
-The content of the shadow root is set using [`innerHTML`](/en-US/docs/Web/API/ShadowRoot/innerHTML).
-This defines a {{HTMLElement("slot")}} element that contains the default prompt text "Question" for the element.
-We then define a `<labeled-checkbox>` custom element with the default text `"Yes"`.
-This checkbox is exposed as a shadow part of the question box with the name `checkbox` using the [`part`](/en-US/docs/Web/HTML/Reference/Global_attributes/part) attribute.
+محتوای ریشه سایه با استفاده از [`innerHTML`](/en-US/docs/Web/API/ShadowRoot/innerHTML) تنظیم می‌شود. این یک عنصر {{HTMLElement("slot")}} تعریف می‌کند که حاوی متن پیش‌فرض اعلان «Question» برای عنصر است. سپس یک عنصر سفارشی `<labeled-checkbox>` با متن پیش‌فرض `"Yes"` تعریف می‌کنیم. این جعبه علامت با استفاده از ویژگی [`part`](/en-US/docs/Web/HTML/Reference/Global_attributes/part) به عنوان یک بخش سایه‌ای از جعبه سؤال با نام `checkbox` در معرض دید قرار می‌گیرد.
 
-Note that the code and styling for the `<labeled-checkbox>` element are exactly the same as in the [previous example](#matching_the_custom_state_of_a_custom_checkbox_element), and are therefore not repeated here.
+توجه داشته باشید که کد و استایل عنصر `<labeled-checkbox>` دقیقاً مشابه [مثال قبلی](#matching_the_custom_state_of_a_custom_checkbox_element) است و بنابراین در اینجا تکرار نمی‌شود.
 
-Next, we call the {{domxref("CustomElementRegistry/define", "define()")}} method on the object returned by {{domxref("Window.customElements")}} to register the custom element with the name `question-box`:
+سپس متد {{domxref("CustomElementRegistry/define", "define()")}} را روی شیء بازگردانده شده توسط {{domxref("Window.customElements")}} فراخوانی می‌کنیم تا عنصر سفارشی را با نام `question-box` ثبت کنیم:
 
 ```js
 customElements.define("question-box", QuestionBox);
@@ -316,7 +287,7 @@ customElements.define("question-box", QuestionBox);
 
 #### HTML
 
-After registering the custom element, we can use the element in HTML as shown below.
+پس از ثبت عنصر سفارشی، می‌توانیم از عنصر در HTML به صورت زیر استفاده کنیم.
 
 ```html
 <!-- Question box with default prompt "Question" -->
@@ -328,7 +299,7 @@ After registering the custom element, we can use the element in HTML as shown be
 
 #### CSS
 
-The first block of CSS matches the exposed shadow part named `checkbox` using the {{cssxref("::part()")}} selector, styling it to be `red` by default.
+بلوک اول CSS بخش سایه‌ای در معرض دید به نام `checkbox` را با استفاده از انتخاب‌گر {{cssxref("::part()")}} مطابقت می‌دهد و آن را به طور پیش‌فرض به رنگ `red` استایل می‌دهد.
 
 ```css
 question-box::part(checkbox) {
@@ -336,7 +307,7 @@ question-box::part(checkbox) {
 }
 ```
 
-The second block follows `::part()` with `:state()`, in order to match `checkbox` parts that are in the `checked` state:
+بلوک دوم پس از `::part()` از `:state()` برای مطابقت بخش‌های `checkbox` که در حالت `checked` هستند استفاده می‌کند:
 
 ```css
 question-box::part(checkbox):state(checked) {
@@ -345,21 +316,19 @@ question-box::part(checkbox):state(checked) {
 }
 ```
 
-#### Result
+#### نتیجه
 
-Click either of the checkboxes to see the color change from `red` to `green` with an outline when the `checked` state toggles.
+روی هر یک از جعبه‌های علامت کلیک کنید تا با تغییر حالت `checked`، رنگ از `red` به `green` با یک خط حاشیه تغییر کند.
 
 {{EmbedLiveSample("Question box", "100%", 100)}}
 
-### Non-boolean internal states
+### حالت‌های داخلی غیربولی
 
-This example shows how to handle the case where the custom element has an internal property with multiple possible value.
+این مثال نحوه مدیریت موردی را نشان می‌دهد که عنصر سفارشی دارای یک خصوصیت داخلی با چندین مقدار ممکن است.
 
-The custom element in this case has a `state` property with allowed values: "loading", "interactive" and "complete".
-To make this work, we map each value to its custom state and create code to ensure that only the identifier corresponding to the internal state is set.
-You can see this in the implementation of the `set state()` method: we set the internal state, add the identifier for the matching custom state to `CustomStateSet`, and remove the identifiers associated with all the other values.
+عنصر سفارشی در این مورد یک خصوصیت `state` با مقادیر مجاز: "loading"، "interactive" و "complete" دارد. برای عملی کردن این کار، هر مقدار را به حالت سفارشی خود نگاشت می‌کنیم و کدی ایجاد می‌کنیم تا اطمینان حاصل شود که فقط شناسه متناظر با حالت داخلی تنظیم شده است. این را در پیاده‌سازی متد `set state()` می‌بینید: حالت داخلی را تنظیم می‌کنیم، شناسه مربوط به حالت سفارشی منطبق را به `CustomStateSet` اضافه می‌کنیم و شناسه‌های مرتبط با سایر مقادیر را حذف می‌کنیم.
 
-Most of the remaining code is similar to the example that demonstrates a single boolean state (we show different text for each state as the user toggles through them).
+بیشتر کد باقی‌مانده مشابه مثالی است که یک حالت بولی واحد را نشان می‌دهد (ما برای هر حالت متن متفاوتی را با کلیک کاربر برای جابجایی بین حالت‌ها نمایش می‌دهیم).
 
 #### JavaScript
 
@@ -456,8 +425,7 @@ if (!LabeledCheckbox.isStateSyntaxSupported()) {
 
 #### HTML
 
-After registering the new element we add it to the HTML.
-This is similar to the example that demonstrates a single boolean state, except we don't specify a value and use the default value from the slot (`<slot>Click me</slot>`).
+پس از ثبت عنصر جدید، آن را به HTML اضافه می‌کنیم. این مشابه مثالی است که یک حالت بولی واحد را نشان می‌دهد، با این تفاوت که مقداری مشخص نمی‌کنیم و از مقدار پیش‌فرض slot (`<slot>Click me</slot>`) استفاده می‌کنیم.
 
 ```html
 <many-state-element></many-state-element>
@@ -465,8 +433,7 @@ This is similar to the example that demonstrates a single boolean state, except 
 
 #### CSS
 
-In the CSS we use the three custom state pseudo classes to select CSS for each of the internal state values: `:state(loading)`, `:state(interactive)`, `:state(complete)`.
-Note that the custom element code ensures that only one of these custom states can be defined at a time.
+در CSS از سه شبه‌کلاس حالت سفارشی برای انتخاب CSS مربوط به هر یک از مقادیر حالت داخلی استفاده می‌کنیم: `:state(loading)`، `:state(interactive)`، `:state(complete)`. توجه داشته باشید که کد عنصر سفارشی تضمین می‌کند که فقط یکی از این حالت‌های سفارشی در یک زمان می‌تواند تعریف شود.
 
 ```css
 many-state-element:state(loading) {
@@ -480,21 +447,19 @@ many-state-element:state(complete) {
 }
 ```
 
-#### Results
+#### نتایج
 
-Click the element to see a different border being applied as the state changes.
+روی عنصر کلیک کنید تا با تغییر حالت، حاشیه متفاوتی اعمال شود.
 
 {{EmbedLiveSample("Non-boolean internal states", "100%", 50)}}
 
-## Compatibility with `<dashed-ident>` syntax
+## سازگاری با نحو `<dashed-ident>`
 
-Previously custom elements with custom states were selected using a `<dashed-ident>` instead of the {{cssxref(":state()")}} function.
-Browser versions that don't support `:state()` will throw an error when supplied with an ident that is not prefixed with the double dash.
-If support for these browsers is required, either use a [try...catch](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) block to support both syntaxes, or use a `<dashed-ident>` as the state's value and select it with both the `:--my-state` and `:state(--my-state)` CSS selector.
+پیش از این، عناصر سفارشی با حالت‌های سفارشی با استفاده از یک `<dashed-ident>` به جای تابع {{cssxref(":state()")}} انتخاب می‌شدند. نسخه‌های مرورگر که از `:state()` پشتیبانی نمی‌کنند، در صورت ارائه یک ident که با دو خط تیره پیشوند نشده باشد، خطا می‌دهند. اگر نیاز به پشتیبانی از این مرورگرها دارید، یا از یک بلوک [try...catch](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) برای پشتیبانی از هر دو نحو استفاده کنید، یا از یک `<dashed-ident>` به عنوان مقدار حالت استفاده کرده و آن را با هر دو انتخاب‌گر CSS `:--my-state` و `:state(--my-state)` انتخاب کنید.
 
-### Using a try...catch block
+### استفاده از یک بلوک try...catch
 
-This code shows how you can use `try...catch` to attempt adding a state identifier that does not use a `<dashed-ident>`, and fall back to `<dashed-ident>` if an error is thrown.
+این کد نحوه استفاده از `try...catch` را برای تلاش برای افزودن یک شناسه حالت که از `<dashed-ident>` استفاده نمی‌کند، و در صورت بروز خطا، بازگشت به `<dashed-ident>` را نشان می‌دهد.
 
 #### JavaScript
 
@@ -525,10 +490,9 @@ compatible-state-element:is(:--loaded, :state(loaded)) {
 }
 ```
 
-### Using double dash prefixed idents
+### استفاده از identهای پیشوند با دو خط تیره
 
-An alternative solution can be to use the `<dashed-ident>` within JavaScript.
-The downside to this approach is that the dashes must be included when using the CSS `:state()` syntax.
+یک راه حل جایگزین می‌تواند استفاده از `<dashed-ident>` درون JavaScript باشد. نقطه ضعف این رویکرد این است که خط تیره‌ها باید در هنگام استفاده از نحو `:state()` در CSS گنجانده شوند.
 
 #### JavaScript
 
@@ -554,14 +518,14 @@ compatible-state-element:is(:--loaded, :state(--loaded)) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-[Using custom elements](/en-US/docs/Web/API/Web_components/Using_custom_elements)
+[استفاده از عناصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements)
