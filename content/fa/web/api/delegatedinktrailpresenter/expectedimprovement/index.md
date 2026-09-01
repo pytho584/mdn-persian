@@ -1,7 +1,5 @@
 ---
 title: "DelegatedInkTrailPresenter: expectedImprovement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DelegatedInkTrailPresenter/expectedImprovement"
-status: "needs-translation"
 ---
 
 ---
@@ -17,13 +15,13 @@ browser-compat: api.DelegatedInkTrailPresenter.expectedImprovement
 
 {{APIRef("Ink API")}}{{Deprecated_header}}{{Non-Standard_Header}}
 
-The **`expectedImprovement`** read-only property of the {{domxref("DelegatedInkTrailPresenter")}} interface returns a value, in milliseconds, indicating the latency improvement that can be expected using this presenter.
+ویژگی فقط‌خواندنی **`expectedImprovement`** در رابط {{domxref("DelegatedInkTrailPresenter")}} مقداری را بر حسب میلی‌ثانیه بازمی‌گرداند که نشان‌دهندهٔ بهبود تأخیری است که با استفاده از این ارائه‌دهنده می‌توان انتظار داشت.
 
-## Value
+مقدار
 
-A number.
+یک عدد.
 
-## Example
+مثال
 
 ```js
 async function inkInit() {
@@ -35,10 +33,10 @@ async function inkInit() {
 }
 ```
 
-## Specifications
+مشخصات
 
-The feature is no longer a part of the specification.
+این ویژگی دیگر بخشی از مشخصات نیست.
 
-## Browser compatibility
+سازگاری مرورگر
 
 {{Compat}}
