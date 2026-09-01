@@ -1,7 +1,5 @@
 ---
 title: "HTMLSelectElement: willValidate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/willValidate"
-status: "needs-translation"
 ---
 
 ---
@@ -14,24 +12,24 @@ browser-compat: api.HTMLSelectElement.willValidate
 
 {{APIRef("HTML DOM")}}
 
-The **`willValidate`** read-only property of the {{domxref("HTMLSelectElement")}} interface indicates whether the {{htmlelement("select")}} element is a candidate for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation). It is `false` if any conditions bar it from constraint validation, such as when its {{domxref("HTMLSelectElement.disabled", "disabled")}} property is `true`.
+ویژگی فقط‌خواندنی **`willValidate`** در رابط {{domxref("HTMLSelectElement")}} مشخص می‌کند که آیا عنصر {{htmlelement("select")}} کاندیدی برای [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) است یا خیر. اگر هر شرطی مانع اعتبارسنجی محدودیت‌های آن شود، مانند زمانی که ویژگی {{domxref("HTMLSelectElement.disabled", "disabled")}} آن `true` باشد، مقدار آن `false` خواهد بود.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولین.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLSelectElement.checkValidity()")}}
 - {{HTMLElement("select")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [آموزش: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation)
