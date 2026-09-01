@@ -1,11 +1,5 @@
 ---
 title: "DocumentPictureInPicture: requestWindow() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/requestWindow"
-status: "needs-translation"
----
-
----
-title: "DocumentPictureInPicture: requestWindow() method"
 short-title: requestWindow()
 slug: Web/API/DocumentPictureInPicture/requestWindow
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.DocumentPictureInPicture.requestWindow
 
 {{APIRef("Document Picture-in-Picture API")}}{{SecureContext_Header}}
 
-The **`requestWindow()`** method of the
-{{domxref("DocumentPictureInPicture")}} interface opens the Picture-in-Picture window for the current main browsing context. It returns a {{jsxref("Promise")}} that fulfills with a {{domxref("Window")}} instance representing the browsing context inside the Picture-in-Picture window.
+متد **`requestWindow()`** از رابط {{domxref("DocumentPictureInPicture")}} پنجرهٔ Picture-in-Picture را برای بافت مرور اصلی (main browsing context) فعلی باز می‌کند. این متد یک {{jsxref("Promise")}} برمی‌گرداند که با یک نمونهٔ {{domxref("Window")}} که نمایانگر بافت مرور داخل پنجرهٔ Picture-in-Picture است، برآورده می‌شود.
 
-The `requestWindow()` method requires [transient activation](/en-US/docs/Glossary/Transient_activation), i.e., it must be invoked in response to a user action such as a mouse click or button press.
+متد `requestWindow()` به [فعال‌سازی گذرا](/en-US/docs/Glossary/Transient_activation) نیاز دارد؛ یعنی باید در پاسخ به یک اقدام کاربر مانند کلیک ماوس یا فشردن دکمه فراخوانی شود.
 
 ## Syntax
 
@@ -29,40 +22,40 @@ requestWindow(options)
 ### Parameters
 
 - `options` {{optional_inline}}
-  - : An options object containing the following properties:
+  - : یک شیء گزینه‌ها که شامل ویژگی‌های زیر است:
     - `disallowReturnToOpener` {{optional_inline}}
-      - : A boolean value. When set to `true`, this option hints to the browser that it should not display a UI control that enables the user to return to the originating tab and close the Picture-in-Picture window. Defaults to `false`.
+      - : یک مقدار بولی. وقتی روی `true` تنظیم شود، این گزینه به مرورگر اشاره می‌کند که نباید کنترل رابط کاربری‌ای را نمایش دهد که به کاربر امکان بازگشت به تب مبدأ و بستن پنجرهٔ Picture-in-Picture را بدهد. پیش‌فرض `false` است.
 
-        For example, in Chrome's implementation of this feature, the provided UI control is a "back to tab" button in the Picture-in-Picture window's top bar:
+        برای مثال، در پیاده‌سازی کروم از این قابلیت، کنترل رابط کاربری ارائه‌شده یک دکمهٔ «بازگشت به تب» در نوار بالای پنجرهٔ Picture-in-Picture است:
 
-        ![browser window containing an embedded video player and multiple control buttons, with a back to tab button in the top bar, highlighted with a red box](back-to-tab-button.png)
+        ![پنجرهٔ مرورگر حاوی یک پخش‌کنندهٔ ویدیوی تعبیه‌شده و چند دکمهٔ کنترل، که دکمهٔ «بازگشت به تب» در نوار بالا با یک کادر قرمز مشخص شده است](back-to-tab-button.png)
 
     - `height` {{optional_inline}}
-      - : A non-negative number representing the height to set for the Picture-in-Picture window's viewport, in pixels. Defaults to `0`.
+      - : یک عدد نامنفی که ارتفاع viewport پنجرهٔ Picture-in-Picture را بر حسب پیکسل تعیین می‌کند. پیش‌فرض `0` است.
     - `preferInitialWindowPlacement` {{optional_inline}}
-      - : A boolean value, which defaults to `false`. When set to `true`, it causes the Picture-in-Picture window to always appear back at the position and size it initially opened at, when it is closed and then reopened. By contrast, if `preferInitialWindowPlacement` is `false` the Picture-in-Picture window's size and position will be remembered when closed and reopened — it will reopen at its previous position and size, for example as set by the user.
+      - : یک مقدار بولی که پیش‌فرض آن `false` است. وقتی روی `true` تنظیم شود، باعث می‌شود پنجرهٔ Picture-in-Picture همیشه زمانی که بسته و دوباره باز می‌شود، در همان موقعیت و اندازه‌ای ظاهر شود که ابتدا باز شده بود. در مقابل، اگر `preferInitialWindowPlacement` برابر `false` باشد، اندازه و موقعیت پنجرهٔ Picture-in-Picture هنگام بستن و بازگشایی به خاطر سپرده می‌شود — مثلاً در همان موقعیت و اندازهٔ قبلی که کاربر تنظیم کرده است، دوباره باز می‌شود.
 
     - `width` {{optional_inline}}
-      - : A non-negative number representing the width to set for the Picture-in-Picture window's viewport, in pixels. Defaults to `0`.
+      - : یک عدد نامنفی که عرض viewport پنجرهٔ Picture-in-Picture را بر حسب پیکسل تعیین می‌کند. پیش‌فرض `0` است.
 
 > [!NOTE]
-> If one of `height` or `width` is specified, the other one must be too, otherwise an error is thrown. If both values are not specified, specified as 0, or set too large, the browser will clamp or ignore the values as appropriate to provide a reasonable user experience. The clamped size will vary depending on implementation, display size, and other factors.
+> اگر یکی از `height` یا `width` مشخص شده باشد، دیگری نیز باید مشخص شود، در غیر این صورت خطا پرتاب می‌شود. اگر هر دو مقدار مشخص نشده باشند، صفر تعیین شده باشند، یا بیش از حد بزرگ تنظیم شده باشند، مرورگر مقادیر را برای ارائهٔ تجربهٔ کاربری معقول، به‌طور مناسب محدود (clamp) یا نادیده می‌گیرد. اندازهٔ نهایی محدودشده به پیاده‌سازی، اندازهٔ نمایشگر و عوامل دیگر بستگی دارد.
 
 ### Return value
 
-A {{jsxref("Promise")}} that fulfills with a {{domxref("Window")}} object instance representing the browsing context inside the Picture-in-Picture window.
+یک {{jsxref("Promise")}} که با یک نمونهٔ شیء {{domxref("Window")}} برآورده می‌شود؛ این شیء نمایانگر بافت مرور داخل پنجرهٔ Picture-in-Picture است.
 
 ### Exceptions
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the API has been explicitly disabled (for example via browser settings).
+  - : اگر API به‌طور صریح غیرفعال شده باشد (مثلاً از طریق تنظیمات مرورگر) پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - `requestWindow()` is not called from a top-level `window` object.
-    - `requestWindow()` is called from the `window` object of the Picture-in-Picture window (i.e., {{domxref("DocumentPictureInPicture.window")}}).
-    - `requestWindow()` is called without {{Glossary("Transient_activation", "transient activation")}}.
+  - : در موارد زیر پرتاب می‌شود:
+    - `requestWindow()` از یک شیء `window` سطح بالا (top-level) فراخوانی نشود.
+    - `requestWindow()` از شیء `window` پنجرهٔ Picture-in-Picture فراخوانی شود (یعنی {{domxref("DocumentPictureInPicture.window")}}).
+    - `requestWindow()` بدون {{Glossary("Transient_activation", "transient activation")}} فراخوانی شود.
 - `RangeError` {{domxref("DOMException")}}
-  - : Thrown if only one of `height` and `width` are set, or if `height` and `width` are set with negative values.
+  - : اگر فقط یکی از `height` و `width` تنظیم شود، یا اگر `height` و `width` با مقادیر منفی تنظیم شوند، پرتاب می‌شود.
 
 ## Examples
 
@@ -93,4 +86,4 @@ const pipWindow = await window.documentPictureInPicture.requestWindow({
 ## See also
 
 - {{domxref("Document Picture-in-Picture API", "Document Picture-in-Picture API", "", "nocode")}}
-- [Using the Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using)
+- [استفاده از Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using)
