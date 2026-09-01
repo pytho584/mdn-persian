@@ -1,10 +1,4 @@
 ---
-title: "FileSystemDirectoryEntry"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry"
-status: "needs-translation"
----
-
----
 title: FileSystemDirectoryEntry
 slug: Web/API/FileSystemDirectoryEntry
 page-type: web-api-interface
@@ -13,17 +7,17 @@ browser-compat: api.FileSystemDirectoryEntry
 
 {{APIRef("File and Directory Entries API")}}
 
-The **`FileSystemDirectoryEntry`** interface of the [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API) represents a directory in a file system. It provides methods which make it possible to access and manipulate the files in a directory, as well as to access the entries within the directory.
+رابطهٔ **`FileSystemDirectoryEntry`** در [API ورودیهای فایل و دایرکتوری](/en-US/docs/Web/API/File_and_Directory_Entries_API) نمایانگر یک دایرکتوری در سیستم فایل است. این رابط روشهایی را فراهم میکند که دسترسی و مدیریت فایلهای داخل یک دایرکتوری و همچنین دسترسی به ورودیهای درون آن دایرکتوری را ممکن میسازد.
 
 {{InheritanceDiagram}}
 
-## Basic concepts
+## مفاهیم پایه
 
-You can create a new directory by calling {{domxref("FileSystemDirectoryEntry.getDirectory", "getDirectory()")}}. If you want to create subdirectories, create each child directory in sequence. If you try creating a directory using a full path that includes parent directories that do not exist yet, an error is returned. So create the hierarchy by recursively adding a new path after creating the parent directory.
+شما میتوانید با فراخوانی {{domxref("FileSystemDirectoryEntry.getDirectory", "getDirectory()")}} یک دایرکتوری جدید بسازید. اگر میخواهید زیردایرکتوریها ایجاد کنید، هر زیردایرکتوری فرزند را به ترتیب بسازید. اگر بخواهید با استفاده از یک مسیر کامل که شامل دایرکتوریهای والد است که هنوز وجود ندارند، دایرکتوری ایجاد کنید، خطا برگردانده میشود. بنابراین سلسلهمراتب را با افزودن بازگشتی یک مسیر جدید پس از ایجاد دایرکتوری والد بسازید.
 
-### Example
+### مثال
 
-In the following code snippet, we create a directory called "Documents."
+در قطعهکد زیر، دایرکتوریای به نام «Documents» ایجاد میکنیم.
 
 ```js
 // Taking care of the browser-specific prefixes.
@@ -51,34 +45,34 @@ function onFs(fs) {
 window.requestFileSystem(TEMPORARY, 1024 * 1024 /* 1MB */, onFs, onError);
 ```
 
-## Instance properties
+## ویژگیهای نمونه
 
-_This interface has no properties of its own, but inherits properties from its parent interface, {{domxref("FileSystemEntry")}}._
+_این رابط ویژگی خاص خود را ندارد، اما ویژگیهای رابط والد خود، یعنی {{domxref("FileSystemEntry")}} را به ارث میبرد._
 
-## Instance methods
+## روشهای نمونه
 
-_This interface inherits methods from its parent interface, {{domxref("FileSystemEntry")}}._
+_این رابط روشهای رابط والد خود، یعنی {{domxref("FileSystemEntry")}} را به ارث میبرد._
 
 - {{domxref("FileSystemDirectoryEntry.createReader", "createReader()")}}
-  - : Creates a {{domxref("FileSystemDirectoryReader")}} object which can be used to read the entries in this directory.
+  - : یک شیء {{domxref("FileSystemDirectoryReader")}} میسازد که میتوان از آن برای خواندن ورودیهای این دایرکتوری استفاده کرد.
 - {{domxref("FileSystemDirectoryEntry.getDirectory", "getDirectory()")}}
-  - : Returns a `FileSystemDirectoryEntry` object representing a directory located at a given path, relative to the directory on which the method is called.
+  - : یک شیء `FileSystemDirectoryEntry` برمیگرداند که نمایانگر دایرکتوریای است که در مسیر معین، نسبت به دایرکتوری که روش روی آن فراخوانی شده، قرار دارد.
 - {{domxref("FileSystemDirectoryEntry.getFile", "getFile()")}}
-  - : Returns a {{domxref("FileSystemFileEntry")}} object representing a file located within the directory's hierarchy, given a path relative to the directory on which the method is called.
+  - : یک شیء {{domxref("FileSystemFileEntry")}} برمیگرداند که نمایانگر فایلی در سلسلهمراتب دایرکتوری است، با توجه به مسیری نسبی نسبت به دایرکتوری که روش روی آن فراخوانی شده است.
 - {{domxref("FileSystemDirectoryEntry.removeRecursively", "removeRecursively()")}} {{Deprecated_inline}} {{Non-standard_inline}}
-  - : Removes the directory as well as all of its content, hierarchically iterating over its entire subtree of descendant files and directories.
+  - : دایرکتوری و همچنین تمام محتوای آن را حذف میکند، بهصورت سلسلهمراتبی در تمام زیردرخت فرزندان، فایلها و دایرکتوریها حرکت میکند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
+- [API ورودیهای فایل و دایرکتوری](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("FileSystemDirectoryReader")}}
 - {{domxref("FileSystemEntry")}}
 - {{domxref("FileSystemFileEntry")}}
