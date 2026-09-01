@@ -1,31 +1,21 @@
 ---
 title: "FontFace: weight property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/weight"
-status: "needs-translation"
----
-
----
-title: "FontFace: weight property"
-short-title: weight
-slug: Web/API/FontFace/weight
-page-type: web-api-instance-property
-browser-compat: api.FontFace.weight
 ---
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`weight`** property of the {{domxref("FontFace")}} interface retrieves or sets the weight of the font.
+ویژگی **`weight`** در رابط {{domxref("FontFace")}} وزن فونت را بازیابی یا تنظیم می‌کند.
 
-This property is equivalent to the {{cssxref("@font-face/font-weight", "font-weight")}} descriptor.
+این ویژگی معادل توصیفگر {{cssxref("@font-face/font-weight", "font-weight")}} است.
 
-## Value
+## مقدار
 
-A string containing a descriptor as it would be defined in a style sheet's `@font-face` rule.
+یک رشته شامل توصیفگری که همان‌گونه که در قاعده `@font-face` یک شیوه‌نامه تعریف می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
