@@ -1,11 +1,5 @@
 ---
 title: "DOMImplementation: createDocumentType() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMImplementation/createDocumentType"
-status: "needs-translation"
----
-
----
-title: "DOMImplementation: createDocumentType() method"
 short-title: createDocumentType()
 slug: Web/API/DOMImplementation/createDocumentType
 page-type: web-api-instance-method
@@ -14,32 +8,28 @@ browser-compat: api.DOMImplementation.createDocumentType
 
 {{ ApiRef("DOM")}}
 
-The **`DOMImplementation.createDocumentType()`** method returns
-a {{domxref("DocumentType")}} object which can either be used with
-{{domxref("DOMImplementation.createDocument")}} upon document creation or can be put
-into the document via methods like {{domxref("Node.insertBefore()")}} or
-{{domxref("Node.replaceChild()")}}.
+متد **`DOMImplementation.createDocumentType()`** یک شیء {{domxref("DocumentType")}} بازمی‌گرداند که می‌تواند در زمان ایجاد سند با {{domxref("DOMImplementation.createDocument")}} استفاده شود یا از طریق روش‌هایی مانند {{domxref("Node.insertBefore()")}} یا {{domxref("Node.replaceChild()")}} در سند قرار گیرد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createDocumentType(name, publicId, systemId)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : A string containing the name of the doctype, like `html`. Corresponds to the {{domxref("DocumentType.name")}} property.
+  - : یک رشته شامل نام نوع سند (doctype)، مانند `html`. معادل ویژگی {{domxref("DocumentType.name")}} است.
 - `publicId`
-  - : A string containing the `PUBLIC` identifier. Corresponds to the {{domxref("DocumentType.publicId")}} property.
+  - : یک رشته شامل شناسه `PUBLIC`. معادل ویژگی {{domxref("DocumentType.publicId")}} است.
 - `systemId`
-  - : A string containing the `SYSTEM` identifiers. Corresponds to the {{domxref("DocumentType.systemId")}} property.
+  - : یک رشته شامل شناسه `SYSTEM`. معادل ویژگی {{domxref("DocumentType.systemId")}} است.
 
-### Return value
+### مقدار بازگشتی
 
-A [`DocumentType`](/en-US/docs/Web/API/DocumentType).
+یک [`DocumentType`](/en-US/docs/Web/API/DocumentType).
 
-## Examples
+## مثال‌ها
 
 ```js
 const dt = document.implementation.createDocumentType(
@@ -55,14 +45,14 @@ const d = document.implementation.createDocument(
 console.log(d.doctype.publicId); // -//W3C//DTD SVG 1.1//EN
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("DOMImplementation")}} interface it belongs to.
+- رَابط {{domxref("DOMImplementation")}} که این متد به آن تعلق دارد.
