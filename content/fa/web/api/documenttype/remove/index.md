@@ -1,11 +1,5 @@
 ---
 title: "DocumentType: remove() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/remove"
-status: "needs-translation"
----
-
----
-title: "DocumentType: remove() method"
 short-title: remove()
 slug: Web/API/DocumentType/remove
 page-type: web-api-instance-method
@@ -14,26 +8,26 @@ browser-compat: api.DocumentType.remove
 
 {{APIRef("DOM")}}
 
-The **`DocumentType.remove()`** method removes a document's `doctype`.
-If it is already detached from the document, calling `remove()` does nothing.
+متد **`DocumentType.remove()`** مقدار `doctype` یک سند را حذف می‌کند.
+اگر این `doctype` از قبل از سند جدا شده باشد، فراخوانی `remove()` هیچ اثری ندارد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 remove()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Using `remove()`
+### استفاده از `remove()`
 
 ```js
 document.doctype; // "<!doctype html>'
@@ -41,15 +35,15 @@ document.doctype.remove();
 document.doctype; // null
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Document.doctype")}}
 - {{domxref("CharacterData.remove()")}}
