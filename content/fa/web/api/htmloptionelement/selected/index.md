@@ -1,7 +1,6 @@
 ---
 title: "HTMLOptionElement: selected property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement/selected"
-status: "needs-translation"
 ---
 
 ---
@@ -14,30 +13,30 @@ browser-compat: api.HTMLOptionElement.selected
 
 {{ APIRef("HTML DOM") }}
 
-The **`selected`** property of the {{DOMxRef("HTMLOptionElement")}} interface specifies the current selectedness of the element; that is, whether the {{HTMLElement("option")}} is selected or not.
+ویژگی **`selected`** در رابط {{DOMxRef("HTMLOptionElement")}} وضعیت انتخاب‌شدگی فعلی عنصر را مشخص می‌کند؛ یعنی اینکه آیا {{HTMLElement("option")}} انتخاب شده است یا نه.
 
-The presence of the HTML [`selected`](/en-US/docs/Web/HTML/Reference/Elements/option#selected) attribute indicates the option is selected by default. It does not indicate whether this option is currently selected: if the option's state changes, the `selected` content attribute does not reflect the change; only the `HTMLOptionElement`'s `selected` IDL property is updated. The `selected` attribute is reflected by the {{domxref("HTMLOptionElement.defaultSelected", "defaultSelected")}} property.
+وجود ویژگی HTML [`selected`](/en-US/docs/Web/HTML/Reference/Elements/option#selected) نشان می‌دهد که گزینه به‌طور پیش‌فرض انتخاب شده است. اما این ویژگی نشان نمی‌دهد که آیا این گزینه در حال حاضر انتخاب شده است یا نه: اگر وضعیت گزینه تغییر کند، ویژگی محتوایی `selected` این تغییر را منعکس نمی‌کند؛ فقط ویژگی IDL به نام `selected` در `HTMLOptionElement` به‌روزرسانی می‌شود. ویژگی `selected` توسط ویژگی {{domxref("HTMLOptionElement.defaultSelected", "defaultSelected")}} بازتاب می‌شود.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی (boolean).
 
-## Examples
+## مثال‌ها
 
 ```js
 const optionElement = document.getElementById("water");
 console.log(optionElement.selected);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("option")}}
 - {{HTMLElement("select")}}
