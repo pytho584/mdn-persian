@@ -1,7 +1,5 @@
 ---
 title: "HTMLElement: accessKeyLabel property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKeyLabel"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,9 @@ browser-compat: api.HTMLElement.accessKeyLabel
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLElement.accessKeyLabel`**
-read-only property returns a string containing the element's
-browser-assigned access key (if any); otherwise it returns an empty string.
+ویژگی فقط‌خواندنی **`HTMLElement.accessKeyLabel`** رشته‌ای شامل کلید دسترسی تخصیص‌یافته توسط مرورگر به عنصر را برمی‌گرداند (در صورت وجود)؛ در غیر این صورت، رشته‌ای خالی برمی‌گرداند.
 
-## Example
+## مثال
 
 ### JavaScript
 
@@ -40,20 +36,19 @@ btn.onclick = () => {
 <button accesskey="h" title="Caption" id="btn1">Hover me</button>
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Example') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLElement.accessKey")}}
-- The [accesskey](/en-US/docs/Web/HTML/Reference/Global_attributes/accesskey) global
-  attribute.
+- ویژگی سراسری [accesskey](/en-US/docs/Web/HTML/Reference/Global_attributes/accesskey).
