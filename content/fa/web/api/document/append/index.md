@@ -1,11 +1,5 @@
 ---
 title: "Document: append() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/append"
-status: "needs-translation"
----
-
----
-title: "Document: append() method"
 short-title: append()
 slug: Web/API/Document/append
 page-type: web-api-instance-method
@@ -14,12 +8,9 @@ browser-compat: api.Document.append
 
 {{APIRef("DOM")}}
 
-The **`Document.append()`** method
-inserts a set of {{domxref("Node")}} objects or strings after
-the last child of the document. Strings
-are inserted as equivalent {{domxref("Text")}} nodes.
+متد **`Document.append()`** مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را بعد از آخرین فرزند سند درج می‌کند. رشته‌ها به‌صورت گره‌های {{domxref("Text")}} معادل درج می‌شوند.
 
-This method appends a child to a `Document`. To append to an arbitrary element in the tree, see {{domxref("Element.append()")}}.
+این متد یک فرزند به `Document` اضافه می‌کند. برای افزودن به یک عنصر دلخواه در درخت، به {{domxref("Element.append()")}} مراجعه کنید.
 
 ## Syntax
 
@@ -32,23 +23,22 @@ append(param1, param2, /* …, */ paramN)
 ### Parameters
 
 - `param1`, …, `paramN`
-  - : A set of {{domxref("Node")}} objects or strings to insert.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها برای درج.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ### Exceptions
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the node cannot be inserted at the specified point in the hierarchy.
+  - : زمانی پرتاب می‌شود که گره نتواند در نقطه مشخص‌شده در سلسله‌مراتب درج شود.
 
 ## Examples
 
-### Appending a root element to a document
+### افزودن یک عنصر ریشه به سند
 
-If you try to append an element to an existing HTML document,
-it might throw a `HierarchyRequestError` {{domxref("DOMException")}} given a {{HTMLElement("html")}} element already exists.
+اگر بخواهید یک عنصر به یک سند HTML موجود اضافه کنید، ممکن است با توجه به وجود عنصر {{HTMLElement("html")}}، خطای `HierarchyRequestError` {{domxref("DOMException")}} پرتاب شود.
 
 ```js
 let html = document.createElement("html");
@@ -56,7 +46,7 @@ document.append(html);
 // HierarchyRequestError: The operation would yield an incorrect node tree.
 ```
 
-If you are creating a new document without any existing element, you can append a root HTML element (or a root SVG element):
+اگر در حال ایجاد یک سند جدید بدون هیچ عنصر موجودی هستید، می‌توانید یک عنصر ریشه HTML (یا یک عنصر ریشه SVG) اضافه کنید:
 
 ```js
 let doc = new Document();
