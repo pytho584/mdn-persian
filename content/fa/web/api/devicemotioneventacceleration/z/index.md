@@ -1,7 +1,5 @@
 ---
 title: "DeviceMotionEventAcceleration: z property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventAcceleration/z"
-status: "needs-translation"
 ---
 
 ---
@@ -14,19 +12,17 @@ browser-compat: api.DeviceMotionEventAcceleration.z
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`z`** read-only property of the {{domxref("DeviceMotionEventAcceleration")}} interface indicates the amount of acceleration that occurred along the Z
-axis in a [`DeviceMotionEventAcceleration`](/en-US/docs/Web/API/DeviceMotionEventAcceleration)
-object.
+ویژگی فقط‌خواندنی **`z`** در رابط {{domxref("DeviceMotionEventAcceleration")}}، میزان شتاب رخ‌داده را در امتداد محور Z در یک شیء [`DeviceMotionEventAcceleration`](/en-US/docs/Web/API/DeviceMotionEventAcceleration) نشان می‌دهد.
 
-## Value
+## مقدار
 
-A `double` indicating the amount of acceleration along the Z axis.
-See [Accelerometer values explained](/en-US/docs/Web/API/Device_orientation_events/Detecting_device_orientation) for details.
+یک `double` که میزان شتاب را در امتداد محور Z نشان می‌دهد.
+برای جزئیات بیشتر، [توضیح مقادیر شتاب‌سنج](/en-US/docs/Web/API/Device_orientation_events/Detecting_device_orientation) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
