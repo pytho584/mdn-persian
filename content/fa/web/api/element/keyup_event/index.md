@@ -1,11 +1,5 @@
 ---
 title: "Element: keyup event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event"
-status: "needs-translation"
----
-
----
-title: "Element: keyup event"
 short-title: keyup
 slug: Web/API/Element/keyup_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Element.keyup_event
 
 {{APIRef("UI Events")}}
 
-The **`keyup`** event is fired when a key is released.
+رویداد **`keyup`** زمانی رخ می‌دهد که کلیدی رها می‌شود.
 
-The [`keydown`](/en-US/docs/Web/API/Element/keydown_event) and `keyup` events provide a code indicating which key is pressed, while `keypress` indicates which character was entered. For example, a lowercase "a" will be reported as 65 by `keydown` and `keyup`, but as 97 by `keypress`. An uppercase "A" is reported as 65 by all events.
+رویدادهای [`keydown`](/en-US/docs/Web/API/Element/keydown_event) و `keyup` کدی را ارائه می‌کنند که نشان می‌دهد کدام کلید فشرده شده است، در حالی که `keypress` نشان می‌دهد کدام نویسه وارد شده است. برای مثال، یک حرف کوچک «a» توسط `keydown` و `keyup` به صورت 65 و توسط `keypress` به صورت 97 گزارش می‌شود. حرف بزرگ «A» در همهٔ رویدادها به صورت 65 گزارش می‌شود.
 
-The event target of a key event is the currently focused element which is processing the keyboard activity. This includes: {{HTMLElement("input")}}, {{HTMLElement("textarea")}}, anything that is [`contentEditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable), and anything else that can be interacted with the keyboard, such as {{HTMLElement("a")}}, {{HTMLElement("button")}}, and {{HTMLElement("summary")}}. If no suitable element is in focus, the event target will be the {{HTMLElement("body")}} or the root. The event [bubbles](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling). It can reach {{domxref("Document")}} and {{domxref("Window")}}.
+هدف رویداد یک رویداد کلید، عنصری است که در حال حاضر فوکوس دارد و فعالیت صفحه‌کلید را پردازش می‌کند. این شامل {{HTMLElement("input")}}، {{HTMLElement("textarea")}}، هر چیزی که [`contentEditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) است، و هر چیز دیگری که بتوان با صفحه‌کلید با آن تعامل کرد، مانند {{HTMLElement("a")}}، {{HTMLElement("button")}} و {{HTMLElement("summary")}} می‌شود. اگر هیچ عنصر مناسبی در فوکوس نباشد، هدف رویداد {{HTMLElement("body")}} یا ریشه خواهد بود. این رویداد [حباب‌زنی](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) می‌کند و می‌تواند به {{domxref("Document")}} و {{domxref("Window")}} برسد.
 
-The event target might change between different key events. For example, the `keydown` target for pressing the <kbd>Tab</kbd> key would be different from the `keyup` target, because the focus has changed.
+ممکن است هدف رویداد بین رویدادهای کلیدی مختلف تغییر کند. برای مثال، هدف رویداد `keydown` برای فشردن کلید <kbd>Tab</kbd> با هدف رویداد `keyup` متفاوت خواهد بود، زیرا فوکوس تغییر کرده است.
 
 ## Syntax
 
