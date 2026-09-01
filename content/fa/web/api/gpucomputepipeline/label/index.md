@@ -1,7 +1,6 @@
 ---
 title: "GPUComputePipeline: label property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePipeline/label"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +13,17 @@ browser-compat: api.GPUComputePipeline.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** property of the
-{{domxref("GPUComputePipeline")}} interface provides a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی **`label`** در رابط {{domxref("GPUComputePipeline")}} برچسبی را فراهم می‌کند که می‌توان از آن برای شناسایی شیء استفاده کرد، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUDevice.createComputePipeline()")}} or {{domxref("GPUDevice.createComputePipelineAsync()")}} call, or you can get and set it directly on the `GPUComputePipeline` object.
+این مقدار را می‌توان با ارائه دادن یک ویژگی `label` در شیء توصیفی که به فراخوانی {{domxref("GPUDevice.createComputePipeline()")}} یا {{domxref("GPUDevice.createComputePipelineAsync()")}} منبع ارسال می‌شود، تنظیم کرد؛ همچنین می‌توانید آن را مستقیماً روی شیء `GPUComputePipeline` بخوانید یا بنویسید.
 
-## Value
+## مقدار
 
-A string. If this has not been previously set as described above, it will be an empty string.
+یک رشته. اگر قبلاً به شکلی که در بالا توضیح داده شد تنظیم نشده باشد، یک رشته خالی خواهد بود.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUComputePipeline.label`:
+تنظیم و خواندن یک برچسب از طریق `GPUComputePipeline.label`:
 
 ```js
 // …
@@ -45,7 +43,7 @@ computePipeline.label = "my_compute_pipeline";
 console.log(computePipeline.label); // "my_compute_pipeline"
 ```
 
-Setting a label via a {{domxref("GPUDevice.createComputePipeline()")}} call, and then getting it via `GPUComputePipeline.label`:
+تنظیم یک برچسب از طریق فراخوانی {{domxref("GPUDevice.createComputePipeline()")}} و سپس خواندن آن از طریق `GPUComputePipeline.label`:
 
 ```js
 // …
@@ -64,14 +62,14 @@ const computePipeline = device.createComputePipeline({
 console.log(computePipeline.label); // "my_compute_pipeline"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
