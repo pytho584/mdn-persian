@@ -1,11 +1,5 @@
 ---
 title: "GPUTexture: usage property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/usage"
-status: "needs-translation"
----
-
----
-title: "GPUTexture: usage property"
 short-title: usage
 slug: Web/API/GPUTexture/usage
 page-type: web-api-instance-property
@@ -14,25 +8,24 @@ browser-compat: api.GPUTexture.usage
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`usage`** read-only property of the
-{{domxref("GPUTexture")}} interface is the {{glossary("bitwise flags")}} representing the allowed usages of the `GPUTexture`.
+خاصیت فقط‌خواندنی **`usage`** در رابط {{domxref("GPUTexture")}}، نشانگرهای بیتی ({{glossary("bitwise flags")}}) است که کاربردهای مجاز `GPUTexture` را مشخص می‌کند.
 
-This is set via the `usage` property in the descriptor object passed into the originating {{domxref("GPUDevice.createTexture()")}} call.
+این مقدار از طریق خاصیت `usage` در شیء توصیفگری که به فراخوانی {{domxref("GPUDevice.createTexture()")}} ارسال می‌شود، تنظیم می‌گردد.
 
-## Value
+## مقدار
 
-The bitwise flags representing the original usages set when the `GPUTexture` was first created. The returned number is the sum of decimal values representing the different flags, as seen in the table below.
+نشانگرهای بیتی که کاربردهای اولیه تنظیم‌شده هنگام ایجاد `GPUTexture` را نشان می‌دهند. عدد بازگشتی، مجموع مقادیر اعشاری متناظر با هر پرچم است، همان‌طور که در جدول زیر مشاهده می‌کنید.
 
-| Usage flag                             | Usage description                                                                                                                                                                                                                                                                                                                               | Hex equiv. | Decimal equiv. |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------------- |
-| `GPUTextureUsage.COPY_SRC`             | The texture can be used as the source of a copy operation, for example the source argument of a {{domxref("GPUCommandEncoder.copyTextureToBuffer", "copyTextureToBuffer()")}} call.                                                                                                                                                             | 0x01       | 1              |
-| `GPUTextureUsage.COPY_DST`             | The texture can be used as the destination of a copy/write operation, for example the destination argument of a {{domxref("GPUCommandEncoder.copyBufferToTexture", "copyBufferToTexture()")}} call.                                                                                                                                             | 0x02       | 2              |
-| `GPUTextureUsage.RENDER_ATTACHMENT`    | The texture can be used as a color or depth/stencil attachment in a render pass, for example as the `view` property of the descriptor object in a {{domxref("GPUCommandEncoder.beginRenderPass", "beginRenderPass()")}} call.                                                                                                                   | 0x10       | 16             |
-| `GPUTextureUsage.STORAGE_BINDING`      | The texture can be bound for use as a storage texture in a shader, for example as a resource in a bind group entry when creating a {{domxref("GPUBindGroup")}} (via {{domxref("GPUDevice.createBindGroup", "createBindGroup()")}}), which adheres to a {{domxref("GPUBindGroupLayout")}} entry with a specified storage texture binding layout. | 0x08       | 8              |
-| `GPUTextureUsage.TEXTURE_BINDING`      | The texture can be bound for use as a sampled texture in a shader, for example as a resource in a bind group entry when creating a {{domxref("GPUBindGroup")}} (via {{domxref("GPUDevice.createBindGroup", "createBindGroup()")}}), which adheres to a {{domxref("GPUBindGroupLayout")}} entry with a specified texture binding layout.         | 0x04       | 4              |
-| `GPUTextureUsage.TRANSIENT_ATTACHMENT` | The texture is intended to be a temporary optimization hint, creating memory-efficient attachments that are only used within the current render pass. Related render pass operations stay in tile memory, which avoids VRAM traffic and can avoid VRAM allocation for the textures.                                                             | 0x20       | 32             |
+| نشانگر کاربرد                          | توضیح کاربرد                                                                                                                                                                                                                                                                                                                                                                                                                                            | معادل هگز | معادل اعشاری |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------------- |
+| `GPUTextureUsage.COPY_SRC`             | از این بافت می‌توان به‌عنوان منبع یک عملیات کپی استفاده کرد، برای مثال آرگومان `source` در فراخوانی {{domxref("GPUCommandEncoder.copyTextureToBuffer", "copyTextureToBuffer()")}}.                                                                                                                                                                                                      | 0x01       | 1              |
+| `GPUTextureUsage.COPY_DST`             | از این بافت می‌توان به‌عنوان مقصد یک عملیات کپی/نوشتن استفاده کرد، برای مثال آرگومان `destination` در فراخوانی {{domxref("GPUCommandEncoder.copyBufferToTexture", "copyBufferToTexture()")}}.                                                                                                                                                                                          | 0x02       | 2              |
+| `GPUTextureUsage.RENDER_ATTACHMENT`    | از این بافت می‌توان به‌عنوان پیوست (attachment) رنگ یا عمق/استنسیل در یک رندر پاس استفاده کرد، برای مثال به‌عنوان خاصیت `view` شیء توصیفگر در فراخوانی {{domxref("GPUCommandEncoder.beginRenderPass", "beginRenderPass()")}}.                                                                                                                                                          | 0x10       | 16             |
+| `GPUTextureUsage.STORAGE_BINDING`      | این بافت می‌تواند برای استفاده به‌عنوان بافت ذخیره‌سازی (storage texture) در یک شیدر متصل شود، برای مثال به‌عنوان یک منبع در یک ورودی بایند گروپ هنگام ایجاد {{domxref("GPUBindGroup")}} (از طریق {{domxref("GPUDevice.createBindGroup", "createBindGroup()")}})، که با یک ورودی {{domxref("GPUBindGroupLayout")}} با چیدمان بافت ذخیره‌سازی مشخص مطابقت دارد.                        | 0x08       | 8              |
+| `GPUTextureUsage.TEXTURE_BINDING`      | این بافت می‌تواند برای استفاده به‌عنوان بافت نمونه‌برداری‌شده (sampled texture) در یک شیدر متصل شود، برای مثال به‌عنوان یک منبع در یک ورودی بایند گروپ هنگام ایجاد {{domxref("GPUBindGroup")}} (از طریق {{domxref("GPUDevice.createBindGroup", "createBindGroup()")}})، که با یک ورودی {{domxref("GPUBindGroupLayout")}} با چیدمان بافت مشخص مطابقت دارد.                          | 0x04       | 4              |
+| `GPUTextureUsage.TRANSIENT_ATTACHMENT` | این بافت به‌عنوان یک راهنمای بهینه‌سازی موقت در نظر گرفته شده است؛ به‌طوری‌که پیوست‌های کارآمد از نظر حافظه ایجاد می‌کند که فقط در رندر پاس جاری استفاده می‌شوند. عملیات‌های رندر پاس مرتبط در حافظه‌ی tile باقی می‌مانند که از ترافیک VRAM جلوگیری کرده و می‌تواند از تخصیص VRAM برای این بافت‌ها جلوگیری کند.                                                                                        | 0x20       | 32             |
 
-## Examples
+## مثال
 
 ```js
 // …
@@ -46,14 +39,14 @@ const depthTexture = device.createTexture({
 console.log(depthTexture.usage); // 16
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
