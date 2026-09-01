@@ -1,7 +1,5 @@
 ---
 title: "GPU: requestAdapter() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPU/requestAdapter"
-status: "needs-translation"
 ---
 
 ---
@@ -14,73 +12,73 @@ browser-compat: api.GPU.requestAdapter
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`requestAdapter()`** method of the {{domxref("GPU")}} interface returns a {{jsxref("Promise")}} that fulfills with a {{domxref("GPUAdapter")}} object instance. From this you can request a {{domxref("GPUDevice")}}, adapter info, features, and limits.
+متد **`requestAdapter()`** در رابط {{domxref("GPU")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک نمونه از شیء {{domxref("GPUAdapter")}} تکمیل می‌شود. از این طریق می‌توانید یک {{domxref("GPUDevice")}}، اطلاعات آداپتور، ویژگی‌ها و محدودیت‌ها را درخواست کنید.
 
-Note that the user agent chooses whether to return an adapter. If so, it chooses according to the provided options. If no options are provided, the device will provide access to the default adapter, which is usually good enough for most purposes.
+توجه داشته باشید که عامل کاربر (user agent) تصمیم می‌گیرد که آیا آداپتوری را برگرداند یا نه. در صورت بازگشت، بر اساس گزینه‌های ارائه شده انتخاب می‌کند. اگر هیچ گزینه‌ای ارائه نشود، دستگاه به آداپتور پیش‌فرض دسترسی خواهد داد که معمولاً برای بیشتر موارد کافی است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 requestAdapter()
 requestAdapter(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object that can contain the following properties:
+  - : یک شیء که می‌تواند حاوی ویژگی‌های زیر باشد:
     - `featureLevel` {{optional_inline}}
-      - : An enumerated value that specifies the set of features the returned adapter will support. Available values are:
+      - : یک مقدار شمارشی که مجموعه ویژگی‌های پشتیبانی‌شده توسط آداپتور بازگشتی را مشخص می‌کند. مقادیر موجود عبارتند از:
         - `core`
-          - : The default value. Specifies that the `GPUAdapter` supports all core WebGPU features and limits, which allows applications to support devices with modern platform graphics APIs. This is referred to as "core" WebGPU. Adapters that support core WebGPU will have the `core-features-and-limits` feature available (see {{domxref("GPUSupportedFeatures")}}).
+          - : مقدار پیش‌فرض. مشخص می‌کند که `GPUAdapter` از تمام ویژگی‌ها و محدودیت‌های اصلی WebGPU پشتیبانی می‌کند، که به برنامه‌ها امکان پشتیبانی از دستگاه‌های دارای APIهای گرافیکی مدرن پلتفرم را می‌دهد. این "WebGPU اصلی" (core WebGPU) نامیده می‌شود. آداپتورهایی که از WebGPU اصلی پشتیبانی می‌کنند، ویژگی `core-features-and-limits` را در دسترس خواهند داشت (به {{domxref("GPUSupportedFeatures")}} مراجعه کنید).
         - `compatibility`
-          - : Specifies that the `GPUAdapter` supports a restricted subset of the WebGPU API capable of running in older graphics APIs such as OpenGL ES 3.1 and Direct3D 11. This setting opts WebGPU into [compatibility mode](/en-US/docs/Web/API/WebGPU_API#webgpu_compatibility_mode).
+          - : مشخص می‌کند که `GPUAdapter` از زیرمجموعه محدودی از API WebGPU پشتیبانی می‌کند که قادر به اجرا در APIهای گرافیکی قدیمی‌تر مانند OpenGL ES 3.1 و Direct3D 11 است. این تنظیم WebGPU را به [حالت سازگاری](/en-US/docs/Web/API/WebGPU_API#webgpu_compatibility_mode) وارد می‌کند.
     - `powerPreference` {{optional_inline}}
-      - : An enumerated value that can be used to provide a hint to the user agent indicating what class of adapter should be chosen from the system's available adapters. Available values are:
-        - `undefined` (or not specified)
-          - : Provides no hint.
+      - : یک مقدار شمارشی که می‌تواند برای ارائه یک راهنما به عامل کاربر استفاده شود و نشان می‌دهد کدام کلاس از آداپتور باید از میان آداپتورهای موجود در سیستم انتخاب شود. مقادیر موجود عبارتند از:
+        - `undefined` (یا مشخص نشده)
+          - : هیچ راهنمایی ارائه نمی‌کند.
         - `"low-power"`
-          - : Provides a hint to prioritize power savings over performance. If your app runs OK with this setting, it is recommended to use it, as it can significantly improve battery life on portable devices. This is usually the default if no options are provided.
+          - : راهنمایی برای اولویت دادن به صرفه‌جویی در مصرف انرژی نسبت به عملکرد. اگر برنامه شما با این تنظیمات به خوبی کار می‌کند، توصیه می‌شود از آن استفاده کنید، زیرا می‌تواند عمر باتری را در دستگاه‌های قابل حمل به طور قابل توجهی بهبود بخشد. این معمولاً در صورت عدم ارائه گزینه‌ها، مقدار پیش‌فرض است.
         - `"high-performance"`
-          - : Provides a hint to prioritize performance over power consumption. You are encouraged to only specify this value if absolutely necessary, since it may significantly decrease battery life on portable devices. It may also result in increased {{domxref("GPUDevice")}} loss — the system will sometimes elect to switch to a lower-power adapter to save power.
+          - : راهنمایی برای اولویت دادن به عملکرد نسبت به مصرف انرژی. توصیه می‌شود این مقدار را فقط در صورت لزوم مشخص کنید، زیرا ممکن است عمر باتری را در دستگاه‌های قابل حمل به طور قابل توجهی کاهش دهد. همچنین ممکن است منجر به افزایش از دست دادن {{domxref("GPUDevice")}} شود – سیستم گاهی برای صرفه‌جویی در انرژی، به یک آداپتور کم‌مصرف‌تر تغییر می‌کند.
 
-        This hint's primary purpose is to influence which GPU is used in a multi-GPU system. For instance, some laptops have a low-power integrated GPU and a high-performance discrete GPU. Different factors may affect which adapter is returned including battery status, attached displays, or removable GPUs.
+        هدف اصلی این راهنما تأثیرگذاری بر روی انتخاب GPU در سیستم‌های چند GPU است. برای مثال، برخی لپ‌تاپ‌ها دارای یک GPU مجتمع کم‌مصرف و یک GPU مجزای با کارایی بالا هستند. عوامل مختلفی ممکن است بر روی آداپتور بازگشتی تأثیر بگذارند، از جمله وضعیت باتری، نمایشگرهای متصل، یا GPUهای قابل جابجایی.
 
         > [!NOTE]
-        > On Chrome running on dual-GPU macOS devices, if `requestAdapter()` is called without a `powerPreference` option, the high-performance discrete GPU is returned when the user's device is on AC power. Otherwise, the low-power integrated GPU is returned.
+        > در کروم که روی دستگاه‌های macOS دو GPU اجرا می‌شود، اگر `requestAdapter()` بدون گزینه `powerPreference` فراخوانی شود، زمانی که دستگاه کاربر به برق AC متصل است، GPU مجزای با کارایی بالا بازگردانده می‌شود. در غیر این صورت، GPU مجتمع کم‌مصرف بازگردانده می‌شود.
 
-### Fallback adapters
+### آداپتورهای بازگشتی (Fallback adapters)
 
-The adapter provided by the user agent may be a **fallback adapter**, if it determines it to be the most appropriate option available. A fallback adapter generally has significant performance caveats in exchange for some combination of wider compatibility, more predictable behavior, or improved privacy. For example, some browsers may offer a software-based implementation of the API via a fallback adapter. A fallback adapter will not be available on every system.
+آداپتوری که توسط عامل کاربر ارائه می‌شود ممکن است یک **آداپتور بازگشتی** (fallback adapter) باشد، اگر عامل کاربر آن را مناسب‌ترین گزینه موجود تشخیص دهد. یک آداپتور بازگشتی معمولاً محدودیت‌های عملکردی قابل توجهی در ازای ترکیبی از سازگاری گسترده‌تر، رفتار قابل پیش‌بینی‌تر، یا حریم خصوصی بهبودیافته دارد. برای مثال، برخی مرورگرها ممکن است از طریق یک آداپتور بازگشتی، یک پیاده‌سازی مبتنی بر نرم‌افزار از API ارائه دهند. یک آداپتور بازگشتی در همه سیستم‌ها در دسترس نخواهد بود.
 
-If you wish to prevent your apps from running on fallback adapters, you should check the {{domxref("GPUAdapter.isFallbackAdapter")}} attribute prior to requesting a {{domxref("GPUDevice")}}.
+اگر مایلید از اجرای برنامه‌های خود روی آداپتورهای بازگشتی جلوگیری کنید، باید ویژگی {{domxref("GPUAdapter.isFallbackAdapter")}} را قبل از درخواست یک {{domxref("GPUDevice")}} بررسی کنید.
 
 > [!NOTE]
-> The specification includes a `forceFallbackAdapter` option for `requestAdapter()`. This is a boolean that, if set to `true`, forces the user agent to return a fallback adapter if one is available. This is not yet supported by any browser.
+> مشخصات شامل یک گزینه `forceFallbackAdapter` برای `requestAdapter()` است. این یک بولی است که اگر روی `true` تنظیم شود، عامل کاربر را مجبور می‌کند در صورت وجود، یک آداپتور بازگشتی را برگرداند. این ویژگی هنوز توسط هیچ مرورگری پشتیبانی نمی‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with a {{domxref("GPUAdapter")}} object instance if the request is successful.
+یک {{jsxref("Promise")}} که در صورت موفقیت‌آمیز بودن درخواست، با یک نمونه از شیء {{domxref("GPUAdapter")}} تکمیل می‌شود.
 
-`requestAdapter()` will resolve to `null` if an appropriate adapter is not available.
+اگر آداپتور مناسبی در دسترس نباشد، `requestAdapter()` به `null` تبدیل می‌شود (resolve می‌شود).
 
-### Exceptions
+### استثناها (Exceptions)
 
-None.
+هیچ‌کدام.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده اولیه
 
 ```js
 async function init() {
   if (!navigator.gpu) {
-    throw Error("WebGPU not supported.");
+    throw Error("WebGPU پشتیبانی نمی‌شود.");
   }
 
   const adapter = await navigator.gpu.requestAdapter();
   if (!adapter) {
-    throw Error("Couldn't request WebGPU adapter.");
+    throw Error("نمی‌توان آداپتور WebGPU را درخواست کرد.");
   }
 
   const device = await adapter.requestDevice();
@@ -89,11 +87,11 @@ async function init() {
 }
 ```
 
-### Using compatibility mode only if necessary
+### استفاده از حالت سازگاری فقط در صورت لزوم
 
-You can create an application that will use compatibility mode only if necessary, and upgrade to core WebGPU if the core feature set is available.
+می‌توانید برنامه‌ای ایجاد کنید که فقط در صورت لزوم از حالت سازگاری استفاده کند و در صورت در دسترس بودن مجموعه ویژگی‌های اصلی، به WebGPU اصلی ارتقا یابد.
 
-To do so, first request a compatibility mode adapter:
+برای این کار، ابتدا یک آداپتور حالت سازگاری درخواست کنید:
 
 ```js
 const adapter = await navigator.gpu.requestAdapter({
@@ -101,7 +99,7 @@ const adapter = await navigator.gpu.requestAdapter({
 });
 ```
 
-Next, check whether the `core-features-and-limits` feature is available when using the {{jsxref("Set.has", "has()")}} method available on the {{domxref("GPUSupportedFeatures")}} object. If it is, request a {{domxref("GPUDevice")}} with `core-features-and-limits` as a required feature. If not, don't specify that required feature.
+سپس، بررسی کنید که آیا ویژگی `core-features-and-limits` با استفاده از متد {{jsxref("Set.has", "has()")}} در دسترس است که روی شیء {{domxref("GPUSupportedFeatures")}} موجود است. اگر چنین است، یک {{domxref("GPUDevice")}} با `core-features-and-limits` به عنوان یک ویژگی مورد نیاز درخواست کنید. در غیر این صورت، آن ویژگی مورد نیاز را مشخص نکنید.
 
 ```js
 const hasCore = adapter.features.has("core-features-and-limits");
@@ -110,22 +108,22 @@ const device = await adapter.requestDevice({
 });
 ```
 
-Subsequent code that wants to check if the device is a core or compatibility device should check the device's features:
+کدهای بعدی که می‌خواهند بررسی کنند دستگاه هسته (core) است یا سازگاری (compatibility)، باید ویژگی‌های دستگاه را بررسی کنند:
 
 ```js
 const isCore = device.features.has("core-features-and-limits");
 ```
 
-The `isCore` value will always be `true` on a core device.
+مقدار `isCore` در یک دستگاه هسته همیشه `true` خواهد بود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [API WebGPU](/en-US/docs/Web/API/WebGPU_API)
