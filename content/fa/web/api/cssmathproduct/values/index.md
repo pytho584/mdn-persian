@@ -1,11 +1,5 @@
 ---
 title: "CSSMathProduct: values property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathProduct/values"
-status: "needs-translation"
----
-
----
-title: "CSSMathProduct: values property"
 short-title: values
 slug: Web/API/CSSMathProduct/values
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.CSSMathProduct.values
 
 {{APIRef("CSS Typed Object Model API")}}{{AvailableInWorkers}}
 
-The **`values`** read-only property of the {{domxref("CSSMathProduct")}} interface returns a {{domxref("CSSNumericArray")}} containing the {{domxref("CSSNumericValue")}} objects being multiplied together.
+**`values`** 是 {{domxref("CSSMathProduct")}} 接口的只读属性，返回一个 {{domxref("CSSNumericArray")}}，其中包含被相乘在一起的 {{domxref("CSSNumericValue")}} 对象。
 
-## Value
+## 值
 
-A {{domxref('CSSNumericArray')}}.
+一个 {{domxref('CSSNumericArray')}}。
 
-## Examples
+## 示例
 
-### Basic usage
+### 基本用法
 
-The following code creates a `CSSMathProduct` object and logs its `values` and length.
+以下代码创建了一个 `CSSMathProduct` 对象，并记录其 `values` 和长度。
 
 ```js
 const product = new CSSMathProduct(CSS.px(10), CSS.percent(50));
@@ -34,8 +28,7 @@ console.log(product.values);
 console.log(product.values.length); // 2
 ```
 
-We then iterate over the `values`, logging their type, value, unit, and stringified text.
-Each of these matches the {{domxref("CSSNumericValue")}} objects that were passed into the constructor (or the terms of the multiplication/division it represents), in the same order.
+然后我们遍历 `values`，记录它们的类型、值、单位以及字符串化后的文本。每一项都与传入构造函数的 {{domxref("CSSNumericValue")}} 对象（或其表示的乘法/除法运算的项）顺序一致。
 
 ```js
 for (const value of product.values) {
@@ -48,10 +41,10 @@ for (const value of product.values) {
 // CSSUnitValue: 50 percent (50%)
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
