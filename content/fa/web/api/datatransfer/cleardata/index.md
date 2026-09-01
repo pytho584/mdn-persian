@@ -1,11 +1,5 @@
 ---
 title: "DataTransfer: clearData() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/clearData"
-status: "needs-translation"
----
-
----
-title: "DataTransfer: clearData() method"
 short-title: clearData()
 slug: Web/API/DataTransfer/clearData
 page-type: web-api-instance-method
@@ -14,20 +8,14 @@ browser-compat: api.DataTransfer.clearData
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DataTransfer.clearData()`** method removes the drag
-operation's [drag data](/en-US/docs/Web/API/DataTransfer) for the given type. If data for the
-given type does not exist, this method does nothing.
+متد **`DataTransfer.clearData()`** داده‌های [drag data](/en-US/docs/Web/API/DataTransfer) عملیات کشیدن را برای نوع دادهٔ مشخص‌شده حذف می‌کند. اگر داده‌ای برای آن نوع وجود نداشته باشد، این متد هیچ کاری انجام نمی‌دهد.
 
-If this method is called with no arguments or the format is an empty
-string, the data of all types will be removed.
+اگر این متد بدون آرگومان فراخوانی شود یا قالب (format) یک رشتهٔ خالی باشد، داده‌های همهٔ انواع حذف می‌شوند.
 
-This method does _not_ remove files from the drag operation, so it's possible
-for there still to be an entry with the type `"Files"` left in the object's
-{{domxref("DataTransfer.types")}} list if there are any files included in the drag.
+این متد فایل‌ها را از عملیات کشیدن حذف _نمی‌کند_، بنابراین اگر در کشیدن، فایلی وجود داشته باشد، ممکن است همچنان یک ورودی با نوع `"Files"` در فهرست {{domxref("DataTransfer.types")}} باقی بماند.
 
 > [!NOTE]
-> This method can only be used in the handler for the {{domxref("HTMLElement/dragstart_event", "dragstart")}} event,
-> because that's the only time the drag operation's data store is writable.
+> این متد فقط می‌تواند در handler رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} استفاده شود، زیرا تنها در آن زمان است که مخزن داده‌های عملیات کشیدن قابل نوشتن است.
 
 ## Syntax
 
@@ -39,20 +27,15 @@ clearData(format)
 ### Parameters
 
 - `format` {{optional_inline}}
-  - : A string which specifies the type of data to remove. If
-    this parameter is an empty string or is not provided, the data for all types is
-    removed.
+  - : یک رشته که نوع داده‌ای را که باید حذف شود مشخص می‌کند. اگر این پارامتر یک رشتهٔ خالی باشد یا ارائه نشود، داده‌های همهٔ انواع حذف می‌شوند.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Examples
 
-This example shows the use of the {{domxref("DataTransfer")}} object's
-{{domxref("DataTransfer.getData()","getData()")}},
-{{domxref("DataTransfer.setData()","setData()")}} and
-`clearData()` methods.
+این مثال استفاده از متدهای {{domxref("DataTransfer.getData()","getData()")}}، {{domxref("DataTransfer.setData()","setData()")}} و `clearData()` مربوط به شیء {{domxref("DataTransfer")}} را نشان می‌دهد.
 
 ### HTML
 
