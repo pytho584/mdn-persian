@@ -1,11 +1,5 @@
 ---
 title: "CSSUnitValue: unit property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSUnitValue/unit"
-status: "needs-translation"
----
-
----
-title: "CSSUnitValue: unit property"
 short-title: unit
 slug: Web/API/CSSUnitValue/unit
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.CSSUnitValue.unit
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`unit`** read-only property of the {{domxref("CSSUnitValue")}} interface returns a string indicating the [unit type](/en-US/docs/Web/CSS/Guides/Values_and_units#units).
+ویژگی فقط-خواندنی **`unit`** از رابط {{domxref("CSSUnitValue")}} یک رشته بازمی‌گرداند که [نوع واحد](/en-US/docs/Web/CSS/Guides/Values_and_units#units) را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string indicating the unit type, such as `"em"`, `"px"`, `"%"`, etc.
+یک رشته که نوع واحد را نشان می‌دهد، مانند `"em"`، `"px"`، `"%"` و غیره.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following code creates a {{domxref('CSSPositionValue')}} from individual `CSSUnitValue` constructors, then queries the `CSSUnitValue.unit`.
+کد زیر یک {{domxref('CSSPositionValue')}} را از سازنده‌های جداگانه `CSSUnitValue` می‌سازد و سپس `CSSUnitValue.unit` را پرس‌وجو می‌کند.
 
 ```js
 const pos = new CSSPositionValue(
@@ -36,18 +30,18 @@ console.log(pos.x.unit); // "px"
 console.log(pos.y.unit); // "em"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref('CSSUnitValue.value')}}
-- [CSS numeric data types](/en-US/docs/Web/CSS/Guides/Values_and_units/Numeric_data_types)
-- [CSS values and units](/en-US/docs/Web/CSS/Guides/Values_and_units), a listing of all possible unit types
-- [Using the CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
+- [انواع داده‌های عددی CSS](/en-US/docs/Web/CSS/Guides/Values_and_units/Numeric_data_types)
+- [مقادیر و واحدهای CSS](/en-US/docs/Web/CSS/Guides/Values_and_units)، یک فهرست از تمام انواع واحدهای ممکن
+- [استفاده از CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
 - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
