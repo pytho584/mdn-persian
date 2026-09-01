@@ -1,11 +1,5 @@
 ---
 title: "Document: getAnimations() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/getAnimations"
-status: "needs-translation"
----
-
----
-title: "Document: getAnimations() method"
 short-title: getAnimations()
 slug: Web/API/Document/getAnimations
 page-type: web-api-instance-method
@@ -14,30 +8,25 @@ browser-compat: api.Document.getAnimations
 
 {{APIRef("Web Animations")}}
 
-The `getAnimations()` method of the {{domxref("Document")}} interface
-returns an array of all {{domxref("Animation")}} objects currently in effect whose
-target elements are descendants of the document. This array includes [CSS Animations](/en-US/docs/Web/CSS/Guides/Animations), [CSS Transitions](/en-US/docs/Web/CSS/Guides/Transitions), and [Web Animations](/en-US/docs/Web/API/Web_Animations_API).
+متد `getAnimations()` در رابط {{domxref("Document")}} آرایه‌ای از تمام اشیاء {{domxref("Animation")}} را برمی‌گرداند که در حال حاضر فعال هستند و عناصر هدف آن‌ها از نوادگان سند (document) هستند. این آرایه شامل [انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations)، [ترنزیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Transitions) و [انیمیشن‌های وب](/en-US/docs/Web/API/Web_Animations_API) می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getAnimations()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An {{jsxref("Array")}} of {{domxref("Animation")}} objects, each representing one
-animation currently associated with elements which are descendants of the
-{{domxref("Document")}} on which it's called.
+یک {{jsxref("Array")}} از اشیاء {{domxref("Animation")}} که هر کدام نشان‌دهنده یک انیمیشن است که در حال حاضر با عناصری مرتبط است که نوادگان همان {{domxref("Document")}} هستند که متد روی آن فراخوانی شده است.
 
-## Examples
+## مثال‌ها
 
-The following code snippet will slow down all animations on a page by halving their
-{{domxref("Animation.playbackRate")}}.
+قطعه کد زیر سرعت همه انیمیشن‌های یک صفحه را با نصف کردن {{domxref("Animation.playbackRate")}} کاهش می‌دهد.
 
 ```js
 document.getAnimations().forEach((animation) => {
@@ -45,19 +34,18 @@ document.getAnimations().forEach((animation) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
-- [CSS Animations](/en-US/docs/Web/CSS/Guides/Animations)
-- [CSS Transitions](/en-US/docs/Web/CSS/Guides/Transitions)
-- {{domxref("Element.getAnimations()")}} - Fetch only the animations on a single
-  {{domxref("Element")}} and its descendants.
+- [انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations)
+- [ترنزیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Transitions)
+- {{domxref("Element.getAnimations()")}} — دریافت فقط انیمیشن‌های مربوط به یک {{domxref("Element")}} و نوادگان آن.
 - {{domxref("Animation")}}
