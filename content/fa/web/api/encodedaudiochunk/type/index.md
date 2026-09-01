@@ -1,11 +1,5 @@
 ---
 title: "EncodedAudioChunk: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedAudioChunk/type"
-status: "needs-translation"
----
-
----
-title: "EncodedAudioChunk: type property"
 short-title: type
 slug: Web/API/EncodedAudioChunk/type
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.EncodedAudioChunk.type
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`type`** read-only property of the {{domxref("EncodedAudioChunk")}} interface returns a value indicating whether the audio chunk is a key chunk, which does not relying on other frames for decoding.
+ویژگی فقط‑خواندنی **`type`** در رابط {{domxref("EncodedAudioChunk")}} مقداری را برمی‌گرداند که نشان می‌دهد آیا تکهٔ صوتی یک تکهٔ کلیدی است که برای رمزگشایی به فریم‌های دیگر وابسته نیست.
 
-## Value
+## مقدار
 
-A string, one of:
+یک رشته، یکی از موارد زیر:
 
 - `"key"`
-  - : The data is a key chunk.
+  - : داده یک تکهٔ کلیدی است.
 - `"delta"`
-  - : The data is not a key chunk.
+  - : داده یک تکهٔ کلیدی نیست.
 
-## Examples
+## مثال‌ها
 
-In the following example the `type` is printed to the console.
+در مثال زیر، `type` در کنسول چاپ می‌شود.
 
 ```js
 const init = {
@@ -41,10 +35,10 @@ const chunk = new EncodedAudioChunk(init);
 console.log(chunk.type); // "key"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
