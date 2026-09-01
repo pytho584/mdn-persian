@@ -1,11 +1,5 @@
 ---
 title: "CSSSkewX: CSSSkewX() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSSkewX/CSSSkewX"
-status: "needs-translation"
----
-
----
-title: "CSSSkewX: CSSSkewX() constructor"
 short-title: CSSSkewX()
 slug: Web/API/CSSSkewX/CSSSkewX
 page-type: web-api-constructor
@@ -14,7 +8,7 @@ browser-compat: api.CSSSkewX.CSSSkewX
 
 {{APIRef("CSS Typed Object Model API")}}{{AvailableInWorkers}}
 
-The **`CSSSkewX()`** constructor creates a new {{domxref("CSSSkewX")}} object that represents the {{cssxref("transform-function/skewX", "skewX()")}} value of the individual {{CSSXRef('transform')}} property in CSS.
+سازندهی **`CSSSkewX()`** یک شیء جدید {{domxref("CSSSkewX")}} می‌سازد که مقدار {{cssxref("transform-function/skewX", "skewX()")}} از ویژگی {{CSSXRef('transform')}} را در CSS نشان می‌دهد.
 
 ## Syntax
 
@@ -25,12 +19,11 @@ new CSSSkewX(ax)
 ### Parameters
 
 - {{domxref('CSSSkewx.ax','ax')}}
-  - : A value for the `ax` angle of the {{domxref('CSSSkewX')}} object to be constructed.
-    This must be a {{domxref('CSSNumericValue')}}.
+  - : مقداری برای زاویه‌ی `ax` شیء {{domxref('CSSSkewX')}} که قرار است ساخته شود. این مقدار باید یک {{domxref('CSSNumericValue')}} باشد.
 
 ## Examples
 
-To do
+در دست تدوین
 
 ## Specifications
 
