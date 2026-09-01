@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaSetSize property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaSetSize"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaSetSize property"
 short-title: ariaSetSize
 slug: Web/API/ElementInternals/ariaSetSize
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.ElementInternals.ariaSetSize
 
 {{APIRef("Web Components")}}
 
-The **`ariaSetSize`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) attribute, which defines the number of items in the current set of listitems or treeitems.
+خاصیت **`ariaSetSize`** از رابط {{domxref("ElementInternals")}} منعکس‌کننده مقدار ویژگی [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) است که تعداد موارد موجود در مجموعه جاری از موارد لیست یا درخت را تعریف می‌کند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را روی یک عنصر سفارشی فراهم می‌کند. این ویژگی‌ها ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که در صورت حذف آن ویژگی‌ها توسط نویسنده یا عدم افزودن آن‌ها، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح‌دهنده مدل دسترسی‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string containing an integer.
+یک رشته حاوی یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaSetSize` is set to "4".
+در این مثال مقدار `ariaSetSize` به "4" تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -38,14 +32,14 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: tab role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role)
+- [نقش tab در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role)
