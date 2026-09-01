@@ -1,11 +1,5 @@
 ---
 title: "GPUComputePassEncoder: setBindGroup() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/setBindGroup"
-status: "needs-translation"
----
-
----
-title: "GPUComputePassEncoder: setBindGroup() method"
 short-title: setBindGroup()
 slug: Web/API/GPUComputePassEncoder/setBindGroup
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.GPUComputePassEncoder.setBindGroup
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`setBindGroup()`** method of the
-{{domxref("GPUComputePassEncoder")}} interface sets the {{domxref("GPUBindGroup")}} to use for subsequent compute commands, for a given index.
+متد **`setBindGroup()`** از رابط {{domxref("GPUComputePassEncoder")}}، گروه اتصال ({{domxref("GPUBindGroup")}}) مورد استفاده برای دستورهای محاسباتی بعدی را برای یک شاخص معین تنظیم می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setBindGroup(index, bindGroup)
@@ -26,103 +19,103 @@ setBindGroup(index, bindGroup, dynamicOffsets, dynamicOffsetsStart,
              dynamicOffsetsLength)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : The index to set the bind group at. This matches the `n` index value of the corresponding [`@group(n)`](https://gpuweb.github.io/gpuweb/wgsl/#attribute-group) attribute in the shader code ({{domxref("GPUShaderModule")}}) used in the related pipeline.
+  - : شاخصی که گروه اتصال در آن قرار می‌گیرد. این مقدار با مقدار شاخص `n` در ویژگی [`@group(n)`](https://gpuweb.github.io/gpuweb/wgsl/#attribute-group) در کد شیدر ({{domxref("GPUShaderModule")}}) که در پایپ‌لاین مربوطه استفاده شده است، مطابقت دارد.
 - `bindGroup`
-  - : The {{domxref("GPUBindGroup")}} to use for subsequent compute commands, or `null`, in which case any previously-set bind group in the given slot is unset.
+  - : شیء {{domxref("GPUBindGroup")}} که برای دستورهای محاسباتی بعدی استفاده می‌شود، یا `null`. در صورت `null`، هر گروه اتصال قبلی که در آن اسلات تنظیم شده بود، حذف می‌شود.
 - `dynamicOffsets` {{optional_inline}}
-  - : A value specifying the offset, in bytes, for each entry in `bindGroup` with `hasDynamicOffset: true` set (i.e., in the descriptor of the {{domxref("GPUDevice.createBindGroupLayout()")}} call that created the {{domxref("GPUBindGroupLayout")}} object that the `bindGroup` is based on). This value can be:
-    - An array of numbers specifying the different offsets.
-    - A {{jsxref("Uint32Array")}} containing numbers specifying the offsets.
+  - : مقداری که افست (به بایت) را برای هر ورودی در `bindGroup` که `hasDynamicOffset: true` دارد مشخص می‌کند (یعنی در توصیفگر فراخوانی {{domxref("GPUDevice.createBindGroupLayout()")}} که شیء {{domxref("GPUBindGroupLayout")}} مبنای `bindGroup` را ایجاد کرده است). این مقدار می‌تواند:
+    - آرایه‌ای از اعداد که افست‌های مختلف را مشخص می‌کند.
+    - یک {{jsxref("Uint32Array")}} حاوی اعدادی که افست‌ها را مشخص می‌کنند.
 
-If a {{jsxref("Uint32Array")}} value is specified for `dynamicOffsets`, both of the following parameters are also required:
+اگر مقدار {{jsxref("Uint32Array")}} برای `dynamicOffsets` مشخص شود، هر دو پارامتر زیر نیز الزامی هستند:
 
 - `dynamicOffsetsStart`
-  - : A number specifying the offset, in array elements, into `dynamicOffsetsData`, where the dynamic offset data begins.
+  - : عددی که افست شروع داده‌های افست پویا را در `dynamicOffsetsData` بر حسب عناصر آرایه مشخص می‌کند.
 - `dynamicOffsetsLength`
-  - : A number specifying the number of dynamic offset values to be read from in `dynamicOffsetsData`.
+  - : عددی که تعداد مقادیر افست پویا را که باید از `dynamicOffsetsData` خوانده شوند، مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
-For `setBindGroup()` calls that use a {{jsxref("Uint32Array")}} value for `dynamicOffsets`, the call will throw with a `RangeError` {{domxref("DOMException")}} if:
+برای فراخوانی‌های `setBindGroup()` که از مقدار {{jsxref("Uint32Array")}} برای `dynamicOffsets` استفاده می‌کنند، اگر شرایط زیر برقرار باشد، فراخوانی یک `RangeError` از نوع {{domxref("DOMException")}} پرتاب می‌کند:
 
-- `dynamicOffsetsStart` is less than 0.
-- `dynamicOffsetsStart` + `dynamicOffsetsLength` is greater than `dynamicOffsets.length`.
+- `dynamicOffsetsStart` کمتر از 0 باشد.
+- `dynamicOffsetsStart` + `dynamicOffsetsLength` بزرگ‌تر از `dynamicOffsets.length` باشد.
 
-### Validation
+### اعتبارسنجی (Validation)
 
-The following criteria must be met when calling **`dispatchWorkgroups()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUComputePassEncoder")}} becomes invalid:
+هنگام فراخوانی **`dispatchWorkgroups()`**، معیارهای زیر باید برآورده شوند؛ در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPUComputePassEncoder")}} نامعتبر می‌شود:
 
-- `index` is less than or equal to the {{domxref("GPUDevice")}}'s `maxBindGroups` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- `dynamicOffsets.length` is the same as the number of entries in `bindGroup` with `hasDynamicOffset: true` set.
-- For `bindGroup` entries where the bound `buffer`'s `type` is `"uniform"` (see {{domxref("GPUDevice.createBindGroupLayout()")}}), each number in `dynamicOffsets` is a multiple of the {{domxref("GPUDevice")}}'s `minUniformBufferOffsetAlignment` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- For `bindGroup` entries where the bound `buffer`'s `type` is `"storage"` or `"read-only-storage"` (see {{domxref("GPUDevice.createBindGroupLayout()")}}), each number in `dynamicOffsets` is a multiple of the {{domxref("GPUDevice")}}'s `minStorageBufferOffsetAlignment` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- For each `bindGroup` entry, the bound `buffer`'s `offset`, plus the corresponding layout entry's `minBindingSize`, plus the corresponding dynamic offset specified in `dynamicOffsets`, is less than or equal to the bound `buffer`'s `size`.
+- `index` کمتر یا مساوی با `maxBindGroups` از {{domxref("GPUDevice")}} (محدودیت {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}) باشد.
+- `dynamicOffsets.length` با تعداد ورودی‌های `bindGroup` که `hasDynamicOffset: true` دارند برابر باشد.
+- برای ورودی‌های `bindGroup` که `type` بافر متصل شده `"uniform"` است (به {{domxref("GPUDevice.createBindGroupLayout()")}} مراجعه کنید)، هر عدد در `dynamicOffsets` مضربی از `minUniformBufferOffsetAlignment` از {{domxref("GPUDevice")}} (محدودیت {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}) باشد.
+- برای ورودی‌های `bindGroup` که `type` بافر متصل شده `"storage"` یا `"read-only-storage"` است (به {{domxref("GPUDevice.createBindGroupLayout()")}} مراجعه کنید)، هر عدد در `dynamicOffsets` مضربی از `minStorageBufferOffsetAlignment` از {{domxref("GPUDevice")}} (محدودیت {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}) باشد.
+- برای هر ورودی `bindGroup`، مقدار `offset` بافر متصل شده، به اضافه `minBindingSize` مربوطه در ورودی layout، به اضافه افست پویای مشخص‌شده در `dynamicOffsets`، کمتر یا مساوی `size` بافر متصل شده باشد.
 
-## Examples
+## مثال‌ها
 
-### Set bind group
+### تنظیم گروه اتصال
 
-In our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/), several commands are recorded via a {{domxref("GPUCommandEncoder")}}. Most of these commands originate from the {{domxref("GPUComputePassEncoder")}} created via `beginComputePass()`. The `setBindGroup()` call used here is the simplest form, just specifying index and bind group.
+در [نمونه محاسبات پایه](https://mdn.github.io/dom-examples/webgpu-compute-demo/) ما، چندین دستور از طریق یک {{domxref("GPUCommandEncoder")}} ضبط می‌شوند. بیشتر این دستورها از {{domxref("GPUComputePassEncoder")}} که با `beginComputePass()` ایجاد شده، سرچشمه می‌گیرند. فراخوانی `setBindGroup()` که در اینجا استفاده شده، ساده‌ترین شکل است و فقط شاخص و گروه اتصال را مشخص می‌کند.
 
 ```js
 const BUFFER_SIZE = 1000;
 
 // …
 
-// Create GPUCommandEncoder to encode commands to issue to the GPU
+// ایجاد GPUCommandEncoder برای رمزگذاری دستورها و ارسال به GPU
 const commandEncoder = device.createCommandEncoder();
 
-// Initiate compute pass
+// شروع پاس محاسباتی
 const passEncoder = commandEncoder.beginComputePass();
 
-// Issue commands
+// ارسال دستورها
 passEncoder.setPipeline(computePipeline);
 passEncoder.setBindGroup(0, bindGroup);
 passEncoder.dispatchWorkgroups(Math.ceil(BUFFER_SIZE / 64));
 
-// End the render pass
+// پایان پاس رندر
 passEncoder.end();
 
-// Copy output buffer to staging buffer
+// کپی بافر خروجی به بافر موقت
 commandEncoder.copyBufferToBuffer(
   output,
-  0, // Source offset
+  0, // افست مبدأ
   stagingBuffer,
-  0, // Destination offset
+  0, // افست مقصد
   BUFFER_SIZE,
 );
 
-// End frame by passing array of command buffers to command queue for execution
+// پایان فریم با ارسال آرایه‌ای از بافرهای دستور به صف اجرا
 device.queue.submit([commandEncoder.finish()]);
 
 // …
 ```
 
-### Unset bind group
+### حذف گروه اتصال
 
 ```js
-// Set bind group in slot 0
+// تنظیم گروه اتصال در اسلات 0
 passEncoder.setBindGroup(0, bindGroup);
 
-// Later, unset bind group in slot 0
+// بعداً، حذف گروه اتصال از اسلات 0
 passEncoder.setBindGroup(0, null);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
