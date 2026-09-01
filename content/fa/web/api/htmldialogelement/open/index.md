@@ -1,7 +1,5 @@
 ---
 title: "HTMLDialogElement: open property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/open"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +12,24 @@ browser-compat: api.HTMLDialogElement.open
 
 {{ APIRef("HTML DOM") }}
 
-The **`open`** property of the
-{{domxref("HTMLDialogElement")}} interface is a boolean value reflecting the
-[`open`](/en-US/docs/Web/HTML/Reference/Elements/dialog#open) HTML attribute, indicating whether the {{htmlelement("dialog")}} is
-available for interaction.
+ویژگی **`open`** در رابط {{domxref("HTMLDialogElement")}} یک مقدار بولی است که ویژگی HTML [`open`](/en-US/docs/Web/HTML/Reference/Elements/dialog#open) را منعکس می‌کند و نشان می‌دهد که آیا {{htmlelement("dialog")}} برای تعامل در دسترس است یا نه.
 
-## Value
+## مقدار
 
-A boolean value representing the state of the [`open`](/en-US/docs/Web/HTML/Reference/Elements/dialog#open) HTML attribute. A value of `true` means that the dialog is showing, while `false` means it's not showing.
+یک مقدار بولی که وضعیت ویژگی HTML [`open`](/en-US/docs/Web/HTML/Reference/Elements/dialog#open) را نشان می‌دهد. مقدار `true` یعنی گفتگو نمایش داده می‌شود، در حالی که مقدار `false` یعنی نمایش داده نمی‌شود.
 
 > [!WARNING]
-> While the `open` property is technically not read-only and can be set directly, doing so is strongly discouraged by [the HTML specification](https://html.spec.whatwg.org/multipage/interactive-elements.html#note-dialog-remove-open-attribute), as it can break normal dialog interactions in unexpected ways.
-> For example, the [`close`](/en-US/docs/Web/API/HTMLDialogElement/close_event) event won't fire when programmatically setting `open` to `false`, and subsequent calls to the [`close()`](/en-US/docs/Web/API/HTMLDialogElement/close) and [`requestClose()`](/en-US/docs/Web/API/HTMLDialogElement/requestClose) methods will have no effect.
-> Instead, it's better to use methods such as [`show()`](/en-US/docs/Web/API/HTMLDialogElement/show), [`showModal()`](/en-US/docs/Web/API/HTMLDialogElement/showModal), `close()`, and `requestClose()` to change the value of the `open` attribute.
+> اگرچه ویژگی `open` از نظر فنی فقط‌خواندنی نیست و می‌توان آن را مستقیماً تنظیم کرد، اما [مشخصات HTML](https://html.spec.whatwg.org/multipage/interactive-elements.html#note-dialog-remove-open-attribute) به‌شدت این کار را منع می‌کند، زیرا می‌تواند تعاملات عادی گفتگو را به روش‌های غیرمنتظره‌ای مختل کند.
+> برای مثال، رویداد [`close`](/en-US/docs/Web/API/HTMLDialogElement/close_event) وقتی `open` به صورت برنامه‌نویسی روی `false` تنظیم شود، رخ نمی‌دهد و فراخوانی‌های بعدی متدهای [`close()`](/en-US/docs/Web/API/HTMLDialogElement/close) و [`requestClose()`](/en-US/docs/Web/API/HTMLDialogElement/requestClose) نیز بی‌اثر خواهند بود.
+> در عوض، بهتر است برای تغییر مقدار ویژگی `open` از متدهایی مانند [`show()`](/en-US/docs/Web/API/HTMLDialogElement/show)، [`showModal()`](/en-US/docs/Web/API/HTMLDialogElement/showModal)، `close()` و `requestClose()` استفاده کنید.
 
-## Examples
+## مثال‌ها
 
-### Opening a dialog
+### باز کردن یک گفتگو
 
-The following example shows a simple button that, when clicked, opens a {{htmlelement("dialog")}} containing a form via the `showModal()` method.
-From there you can click the _Cancel_ button to close the dialog (via the {{domxref("HTMLDialogElement.close()")}} method), or submit the form via the submit button.
+مثال زیر یک دکمهٔ ساده را نشان می‌دهد که هنگام کلیک، یک {{htmlelement("dialog")}} شامل یک فرم را از طریق متد `showModal()` باز می‌کند. سپس می‌توانید برای بستن گفتگو (از طریق متد {{domxref("HTMLDialogElement.close()")}}) روی دکمهٔ _انصراف_ کلیک کنید، یا فرم را از طریق دکمهٔ ارسال (submit) ارسال کنید.
 
-The code logs the value of `open` when the dialog state changes.
+کد، مقدار `open` را هنگام تغییر وضعیت گفتگو در لاگ ثبت می‌کند.
 
 #### HTML
 
@@ -91,18 +85,18 @@ dialog.addEventListener("close", () => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Opening a dialog', '100%', '250px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{htmlelement("dialog")}} element
+- عنصر HTML {{htmlelement("dialog")}}
