@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableElement: createTFoot() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/createTFoot"
-status: "needs-translation"
----
-
----
-title: "HTMLTableElement: createTFoot() method"
 short-title: createTFoot()
 slug: Web/API/HTMLTableElement/createTFoot
 page-type: web-api-instance-method
@@ -14,42 +8,35 @@ browser-compat: api.HTMLTableElement.createTFoot
 
 {{APIRef("HTML DOM")}}
 
-The **`createTFoot()`** method of
-{{domxref("HTMLTableElement")}} objects returns the {{HTMLElement("tfoot")}} element
-associated with a given {{HtmlElement("table")}}. If no footer exists in the table, this
-method creates it, and then returns it.
+متد **`createTFoot()`** از شیء {{domxref("HTMLTableElement")}}، عنصر {{HTMLElement("tfoot")}} مرتبط با یک {{HtmlElement("table")}} داده شده را بازمی‌گرداند. اگر هیچ پاورقی (footer) در جدول وجود نداشته باشد، این متد آن را ایجاد کرده و سپس بازمی‌گرداند.
 
-> [!NOTE]
-> If no footer exists, `createTFoot()` inserts a new
-> footer directly into the table. The footer does not need to be added separately as
-> would be the case if {{domxref("Document.createElement()")}} had been used to create
-> the new `<tfoot>` element.
+> **نکته:** اگر پاورقی وجود نداشته باشد، `createTFoot()` یک پاورقی جدید مستقیماً درون جدول درج می‌کند. نیازی به افزودن جداگانه پاورقی نیست، برخلاف حالتی که از {{domxref("Document.createElement()")}} برای ایجاد عنصر جدید `<tfoot>` استفاده شده باشد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 createTFoot()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
 {{domxref("HTMLTableSectionElement")}}
 
-## Examples
+## مثال
 
 ```js
 let myFoot = myTable.createTFoot();
-// Now this should be true: myFoot === myTable.tFoot
+// اکنون این باید true باشد: myFoot === myTable.tFoot
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
