@@ -1,44 +1,34 @@
 ---
 title: "HTMLTableRowElement: align property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/align"
-status: "needs-translation"
----
-
----
-title: "HTMLTableRowElement: align property"
-short-title: align
-slug: Web/API/HTMLTableRowElement/align
-page-type: web-api-instance-property
-status:
-  - deprecated
-browser-compat: api.HTMLTableRowElement.align
 ---
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The **`align`** property of the {{domxref("HTMLTableRowElement")}} interface is a string indicating how to horizontally align text in the {{htmlelement("tr")}} table row. Individual cells can override it.
+## HTMLTableRowElement: align property
+
+خاصیت **`align`** در رابط {{domxref("HTMLTableRowElement")}} یک رشته (string) است که نحوهٔ تراز افقی متن در ردیف جدول `<tr>` را مشخص می‌کند. سلول‌های جداگانه می‌توانند آن را بازنویسی (override) کنند.
 
 > [!NOTE]
-> This property is deprecated, and CSS should be used to align text horizontally in a cell. Use the CSS {{cssxref("text-align")}} property, which takes precedence, to horizontally align text in a row instead.
+> این خاصیت منسوخ شده است (deprecated) و برای تراز افقی متن در یک سلول باید از CSS استفاده شود. به جای آن، از خاصیت CSS `text-align` که اولویت دارد، برای تراز افقی متن در یک ردیف استفاده کنید.
 
 ## Value
 
-The possible values are:
+مقادیر ممکن عبارتند از:
 
 - `left`
-  - : Align the text to the left. Use `text-align: left` instead.
+  - متن را به سمت چپ تراز می‌کند. به جای آن از `text-align: left` استفاده کنید.
 - `right`
-  - : Align the text to the right. Use `text-align: right` instead.
+  - متن را به سمت راست تراز می‌کند. به جای آن از `text-align: right` استفاده کنید.
 - `center`
-  - : Center the text in the cell. Use `text-align: center` instead.
+  - متن را در سلول وسط می‌چیند. به جای آن از `text-align: center` استفاده کنید.
 - `justify`
-  - : Spread the text across the cell. Use `text-align: justify` instead.
+  - متن را در عرض سلول پخش می‌کند. به جای آن از `text-align: justify` استفاده کنید.
 - `char`
-  - : Never fully supported, align text to a specified character. Use `text-align: <string>`, where the string is a single character, when supported.
+  - هرگز به طور کامل پشتیبانی نشد، متن را به یک کاراکتر مشخص تراز می‌کند. در صورت پشتیبانی، از `text-align: <string>` استفاده کنید که در آن رشته یک کاراکتر است.
 
 ## Examples
 
-Use CSS `text-align` instead. An [example](/en-US/docs/Web/CSS/Reference/Properties/text-align#table_alignment) is available on the {{cssxref("text-align")}} page.
+به جای آن از CSS `text-align` استفاده کنید. یک [مثال](/en-US/docs/Web/CSS/Reference/Properties/text-align#table_alignment) در صفحهٔ `text-align` موجود است.
 
 ## Specifications
 
@@ -51,4 +41,4 @@ Use CSS `text-align` instead. An [example](/en-US/docs/Web/CSS/Reference/Propert
 ## See also
 
 - {{cssxref("text-align")}}
-- [Learn: Styling tables](/en-US/docs/Learn_web_development/Core/Styling_basics/Tables)
+- [یادگیری: استایل‌دهی به جداول](/en-US/docs/Learn_web_development/Core/Styling_basics/Tables)
