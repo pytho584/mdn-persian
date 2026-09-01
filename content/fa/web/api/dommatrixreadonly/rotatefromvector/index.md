@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: rotateFromVector() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/rotateFromVector"
-status: "needs-translation"
----
-
----
-title: "DOMMatrixReadOnly: rotateFromVector() method"
 short-title: rotateFromVector()
 slug: Web/API/DOMMatrixReadOnly/rotateFromVector
 page-type: web-api-instance-method
@@ -14,11 +8,11 @@ browser-compat: api.DOMMatrixReadOnly.rotateFromVector
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The `rotateFromVector()` method of the {{domxref("DOMMatrixReadOnly")}} interface is returns a new {{domxref("DOMMatrix")}} created by rotating the source matrix by the angle between the specified vector and `(1, 0)`. The rotation angle is determined by the angle between the vector `(1,0)T` and `(x,y)T` in the clockwise direction, or `(+/-)arctan(y/x)`. If `x` and `y` are both `0`, the angle is specified as `0`. The original matrix is not altered.
+متد `rotateFromVector()` از رابط {{domxref("DOMMatrixReadOnly")}} یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با چرخش ماتریس مبدأ به اندازه زاویه بین بردار مشخص‌شده و `(1, 0)` ایجاد شده است. زاویه چرخش با زاویه بین بردار `(1,0)T` و `(x,y)T` در جهت عقربه‌های ساعت، یا `(+/-)arctan(y/x)` تعیین می‌شود. اگر `x` و `y` هر دو `0` باشند، زاویه `0` در نظر گرفته می‌شود. ماتریس اصلی تغییری نمی‌کند.
 
-To mutate the matrix as you rotate it by the angle between the specified vector and `(1, 0)`, see {{domxref("DOMMatrix.rotateFromVectorSelf()")}}.
+برای تغییر ماتریس در حین چرخاندن آن به اندازه زاویه بین بردار مشخص‌شده و `(1, 0)`، به {{domxref("DOMMatrix.rotateFromVectorSelf()")}} مراجعه کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 rotateFromVector()
@@ -26,18 +20,18 @@ rotateFromVector(rotX)
 rotateFromVector(rotX, rotY)
 ```
 
-### Parameters
+### پارامترها
 
 - `rotX` {{optional_inline}}
-  - : A number; the x-coordinate of the x,y vector that determines the rotation angle. If undefined, `0` is used.
+  - : یک عدد؛ مختصات x بردار (x,y) که زاویه چرخش را تعیین می‌کند. اگر تعریف نشده باشد، `0` استفاده می‌شود.
 - `rotY` {{optional_inline}}
-  - : A number; the y-coordinate of the x,y vector that determines the rotation angle. If undefined, `0` is used.
+  - : یک عدد؛ مختصات y بردار (x,y) که زاویه چرخش را تعیین می‌کند. اگر تعریف نشده باشد، `0` استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix).
+یک [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix).
 
-## Examples
+## مثال‌ها
 
 ```js
 const matrix = new DOMMatrix(); // create a matrix
@@ -57,21 +51,21 @@ console.log(matrix.toString()); // matrix remains unchanged
 // output: "matrix(1, 0, 0, 1, 0, 0)"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrix.rotateFromVectorSelf()")}}
 - {{domxref("DOMMatrixReadOnly.rotate()")}}
 - {{domxref("DOMMatrixReadOnly.rotateAxisAngle()")}}
-- CSS {{cssxref("transform")}} property and {{cssxref("transform-function/rotate3d", "rotate3d()")}} function
-- CSS {{cssxref("rotate")}} property
-- [CSS transforms](/en-US/docs/Web/CSS/Guides/Transforms) module
-- SVG [`transform`](/en-US/docs/Web/SVG/Reference/Attribute/transform) attribute
-- {{domxref("CanvasRenderingContext2D")}} interface and {{domxref("CanvasRenderingContext2D.rotate()", "rotate()")}} method
+- ویژگی {{cssxref("transform")}} در CSS و تابع {{cssxref("transform-function/rotate3d", "rotate3d()")}}
+- ویژگی {{cssxref("rotate")}} در CSS
+- ماژول [تبدیل‌های CSS](/en-US/docs/Web/CSS/Guides/Transforms)
+- ویژگی `[transform](/en-US/docs/Web/SVG/Reference/Attribute/transform)` در SVG
+- رابط {{domxref("CanvasRenderingContext2D")}} و متد {{domxref("CanvasRenderingContext2D.rotate()", "rotate()")}}
