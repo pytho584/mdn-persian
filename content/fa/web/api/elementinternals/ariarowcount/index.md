@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaRowCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaRowCount"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaRowCount property"
 short-title: ariaRowCount
 slug: Web/API/ElementInternals/ariaRowCount
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.ElementInternals.ariaRowCount
 
 {{APIRef("Web Components")}}
 
-The **`ariaRowCount`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) attribute, which defines the total number of rows in a table, grid, or treegrid.
+ویژگی **`ariaRowCount`** از رابط {{domxref("ElementInternals")}}، مقدار ویژگی [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) را منعکس می‌کند که تعداد کل ردیف‌ها را در یک جدول، grid یا treegrid تعریف می‌کند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را روی یک عنصر سفارشی فراهم می‌کند. این معناشناسی‌ها ممکن است توسط ویژگی‌های تعریف‌شدهٔ نویسنده بازنویسی شوند، اما در صورت حذف آن ویژگی‌ها توسط نویسنده یا عدم افزودن آن‌ها، معناشناسی پیش‌فرض حفظ می‌شود. برای اطلاعات بیشتر به [توضیح‌دهنده مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string which contains an integer.
+رشته‌ای شامل یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaRowCount` is set to "100".
+در این مثال، مقدار `ariaRowCount` روی «100» تنظیم شده است.
 
 ```js
 class CustomEl extends HTMLElement {
@@ -38,14 +32,14 @@ class CustomEl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
+- [ARIA: نقش table](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
