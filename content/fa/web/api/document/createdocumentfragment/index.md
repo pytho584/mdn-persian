@@ -1,11 +1,5 @@
 ---
 title: "Document: createDocumentFragment() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createDocumentFragment"
-status: "needs-translation"
----
-
----
-title: "Document: createDocumentFragment() method"
 short-title: createDocumentFragment()
 slug: Web/API/Document/createDocumentFragment
 page-type: web-api-instance-method
@@ -14,8 +8,8 @@ browser-compat: api.Document.createDocumentFragment
 
 {{APIRef("DOM WHATWG")}}
 
-Creates a new empty {{domxref("DocumentFragment")}} into which
-DOM nodes can be added to build an offscreen DOM tree.
+یک {{domxref("DocumentFragment")}} خالی جدید ایجاد می‌کند که
+می‌توان گره‌های DOM را به آن اضافه کرد تا یک درخت DOM خارج از صفحه (offscreen) بسازیم.
 
 ## Syntax
 
@@ -25,26 +19,25 @@ createDocumentFragment()
 
 ### Parameters
 
-None.
+هیچ‌کدام.
 
 ### Return value
 
-A newly created, empty, {{domxref("DocumentFragment")}} object, which is ready to have
-nodes inserted into it.
+یک شیء {{domxref("DocumentFragment")}} تازه ایجاد شده و خالی که آماده است
+گره‌ها در آن درج شوند.
 
 ## Usage notes
 
-`DocumentFragment`s are DOM {{domxref("Node")}} objects which are never part
-of the main DOM tree. The usual use case is to create the document fragment, append
-elements to the document fragment and then append the document fragment to the DOM tree.
-In the DOM tree, the document fragment is replaced by all its children.
+اشیاء `DocumentFragment` از نوع {{domxref("Node")}} در DOM هستند که هرگز بخشی
+از درخت اصلی DOM نیستند. کاربرد معمول این است که یک document fragment ایجاد کنید،
+عناصر را به آن اضافه کنید و سپس document fragment را به درخت DOM اضافه کنید.
+در درخت DOM، document fragment با تمام فرزندانش جایگزین می‌شود.
 
-Since the document fragment is _in memory_ and not part of the main DOM tree,
-using document fragments could result in [better performance](https://johnresig.com/blog/dom-documentfragments/)
-in some older engines.
+از آنجا که document fragment در _حافظه_ است و بخشی از درخت اصلی DOM نیست،
+استفاده از document fragmentها می‌تواند در برخی موتورهای قدیمی‌تر
+[عملکرد بهتری](https://johnresig.com/blog/dom-documentfragments/) به همراه داشته باشد.
 
-You can also use the `DocumentFragment` constructor to create a new
-fragment:
+همچنین می‌توانید از سازنده `DocumentFragment` برای ایجاد یک fragment جدید استفاده کنید:
 
 ```js
 const fragment = new DocumentFragment();
@@ -52,8 +45,8 @@ const fragment = new DocumentFragment();
 
 ## Examples
 
-This example creates a list of major web browsers in a `DocumentFragment`,
-then adds the new DOM subtree to the document to be displayed.
+این مثال فهرستی از مرورگرهای اصلی وب را در یک `DocumentFragment` ایجاد می‌کند،
+سپس زیردرخت DOM جدید را برای نمایش به سند اضافه می‌کند.
 
 ### HTML
 
@@ -64,7 +57,7 @@ then adds the new DOM subtree to the document to be displayed.
 ### JavaScript
 
 ```js
-const element = document.getElementById("ul"); // assuming ul exists
+const element = document.getElementById("ul"); // فرض بر این است که ul وجود دارد
 const fragment = document.createDocumentFragment();
 const browsers = ["Firefox", "Chrome", "Opera", "Safari"];
 
