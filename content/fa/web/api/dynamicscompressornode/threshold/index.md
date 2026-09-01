@@ -1,11 +1,5 @@
 ---
 title: "DynamicsCompressorNode: threshold property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/threshold"
-status: "needs-translation"
----
-
----
-title: "DynamicsCompressorNode: threshold property"
 short-title: threshold
 slug: Web/API/DynamicsCompressorNode/threshold
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.DynamicsCompressorNode.threshold
 
 {{ APIRef("Web Audio API") }}
 
-The `threshold` property of the {{ domxref("DynamicsCompressorNode") }} interface is a [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}} representing the decibel value above which the compression will start taking effect.
+ویژگی `threshold` در رابط {{ domxref("DynamicsCompressorNode") }} یک {{domxref("AudioParam")}} از نوع [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) است که مقدار دسیبلی را مشخص می‌کند که اگر سیگنال از آن بالاتر برود، فشرده‌سازی شروع به اثرگذاری می‌کند.
 
-The `threshold` property's default value is `-24` and it can be set between `-100` and `0`.
+مقدار پیش‌فرض ویژگی `threshold`، `24-` است و می‌توان آن را بین `100-` و `0` تنظیم کرد.
 
 ![The threshold attribute has no effect on signals lowers than its value, but induce volume reduction on signal stronger than its value.](webaudiothreshold.png)
 
-## Value
+## مقدار
 
-An {{domxref("AudioParam")}}.
+یک {{domxref("AudioParam")}}.
 
 > [!NOTE]
-> Though the {{domxref("AudioParam")}} returned is read-only, the value it represents is not.
+> اگرچه {{domxref("AudioParam")}} بازگردانده‌شده فقط‌خواندنی است، مقداری که نشان می‌دهد فقط‌خواندنی نیست.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new AudioContext();
@@ -35,16 +29,16 @@ const compressor = audioCtx.createDynamicsCompressor();
 compressor.threshold.value = -50;
 ```
 
-See [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) for more complete example code.
+برای کد مثال کامل‌تر به [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
