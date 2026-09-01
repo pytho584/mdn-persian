@@ -1,9 +1,4 @@
----
-title: "DOMRectReadOnly: top property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/top"
-status: "needs-translation"
----
-
+```
 ---
 title: "DOMRectReadOnly: top property"
 short-title: top
@@ -14,20 +9,21 @@ browser-compat: api.DOMRectReadOnly.top
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`top`** read-only property of the **`DOMRectReadOnly`** interface returns the top coordinate value of the `DOMRect`. (Has the same value as `y`, or `y + height` if `height` is negative.)
+ویژگی فقط‌خواندنی **`top`** در رابط **`DOMRectReadOnly`** مقدار مختصات بالایی `DOMRect` را باز می‌گرداند. (همان مقدار `y` است، یا `y + height` اگر `height` منفی باشد.)
 
-## Value
+## مقدار
 
-A double.
+یک double.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("DOMRect")}}
+```
