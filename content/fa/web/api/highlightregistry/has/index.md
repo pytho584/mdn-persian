@@ -1,11 +1,5 @@
 ---
 title: "HighlightRegistry: has() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry/has"
-status: "needs-translation"
----
-
----
-title: "HighlightRegistry: has() method"
 short-title: has()
 slug: Web/API/HighlightRegistry/has
 page-type: web-api-instance-method
@@ -15,26 +9,26 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`has()`** method of the {{domxref("HighlightRegistry")}} interface returns a boolean indicating whether or not a {{domxref("Highlight")}} object with the specified name exists in the registry.
+متد **`has()`** در رابط {{domxref("HighlightRegistry")}} یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا یک شیء {{domxref("Highlight")}} با نام مشخص‌شده در رجیستری وجود دارد یا خیر.
 
-`HighlightRegistry` is a {{jsxref("Map")}}-like object, so this is similar to using {{jsxref("Map.has()")}}.
+`HighlightRegistry` یک شیء شبیه به {{jsxref("Map")}} است، بنابراین این متد مشابه استفاده از {{jsxref("Map.has()")}} عمل می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 has(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the `Highlight` object to test for presence in the registry.
+  - : نام شیء `Highlight` که باید برای بررسی وجود آن در رجیستری آزموده شود.
 
-### Return value
+### مقدار بازگشتی
 
-Returns `true` if a highlight with the specified name exists in the registry; otherwise `false`.
+اگر هایلایتی با نام مشخص‌شده در رجیستری وجود داشته باشد، `true` و در غیر این صورت `false` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const fooHighlight = new Highlight();
@@ -44,15 +38,15 @@ myHighlight.has("foo"); // true
 myHighlight.has("bar"); // false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
 - [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
