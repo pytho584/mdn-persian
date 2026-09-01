@@ -1,11 +1,5 @@
 ---
 title: "CSSPrimitiveValue: primitiveType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPrimitiveValue/primitiveType"
-status: "needs-translation"
----
-
----
-title: "CSSPrimitiveValue: primitiveType property"
 short-title: primitiveType
 slug: Web/API/CSSPrimitiveValue/primitiveType
 page-type: web-api-instance-property
@@ -17,226 +11,221 @@ browser-compat: api.CSSPrimitiveValue.primitiveType
 
 {{APIRef("CSSOM")}}{{deprecated_header}}{{non-standard_header}}
 
-The **`primitiveType`** read-only property of the
-{{domxref("CSSPrimitiveValue")}} interface represents the type of a CSS value.
+ویژگی فقط‌خواندنی **`primitiveType`** در رابط {{domxref("CSSPrimitiveValue")}} نوع یک مقدار CSS را نشان می‌دهد.
 
 > [!NOTE]
-> This property was part of an attempt to create a typed CSS Object Model. This attempt has been abandoned, and most browsers do
-> not implement it.
+> این ویژگی بخشی از تلاش برای ایجاد یک مدل شیءِ CSS تایپ‌شده (typed CSS Object Model) بود. این تلاش کنار گذاشته شده است و بیشتر مرورگرها آن را پیاده‌سازی نمی‌کنند.
 >
-> To achieve your purpose, you can use:
+> برای رسیدن به هدف خود می‌توانید از این‌ها استفاده کنید:
 >
-> - the untyped [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model), widely supported, or
-> - the modern [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API), less supported and considered experimental.
+> - [مدل شیءِ CSS](/en-US/docs/Web/API/CSS_Object_Model) بدون تایپ (untyped) که به‌طور گسترده پشتیبانی می‌شود، یا
+> - [API مدل شیءِ CSS تایپ‌شده](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن که پشتیبانی کمتری دارد و آزمایشی در نظر گرفته می‌شود.
 
-## Value
+## مقدار
 
-An `unsigned short` representing the type of the value. Possible values are:
+یک `unsigned short` که نوع مقدار را نشان می‌دهد. مقادیر ممکن عبارت‌اند از:
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th>Constant</th>
-      <th>Description</th>
+      <th>ثابت</th>
+      <th>توضیحات</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code>CSS_ATTR</code></td>
       <td>
-        The value is an {{cssxref("attr", "attr()")}} function. The value can be
-        obtained by using the <code>getStringValue()</code> method.
+        مقدار یک تابع {{cssxref("attr", "attr()")}} است. این مقدار را می‌توان با استفاده از روش <code>getStringValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_CM</code></td>
       <td>
-        The value is a {{cssxref("&lt;length&gt;")}} in centimeters.
-        The value can be obtained by using the
-        <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب سانتی‌متر است.
+        این مقدار را می‌توان با استفاده از روش
+        <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_COUNTER</code></td>
       <td>
-        The value is a
+        مقدار یک تابع
         <a href="/en-US/docs/Web/CSS/Guides/Counter_styles/Using_counters"
-          >counter or counters</a
+          >counter یا counters</a
         >
-        function. The value can be obtained by using the
-        <code>getCounterValue()</code> method.
+        است. این مقدار را می‌توان با استفاده از روش
+        <code>getCounterValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_DEG</code></td>
       <td>
-        The value is an {{cssxref("&lt;angle&gt;")}} in degrees. The
-        value can be obtained by using the <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;angle&gt;")}} بر حسب درجه است. این
+        مقدار را می‌توان با استفاده از روش <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_DIMENSION</code></td>
       <td>
-        The value is a {{cssxref("&lt;number&gt;")}} with an unknown
-        dimension. The value can be obtained by using the
-        <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;number&gt;")}} با بُعدی نامشخص است. این مقدار را می‌توان با استفاده از روش
+        <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_EMS</code></td>
       <td>
-        The value is a {{cssxref("&lt;length&gt;")}} in em units. The
-        value can be obtained by using the <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب واحد em است. این
+        مقدار را می‌توان با استفاده از روش <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_EXS</code></td>
       <td>
-        The value is a {{cssxref("&lt;length&gt;")}} in ex units. The
-        value can be obtained by using the <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب واحد ex است. این
+        مقدار را می‌توان با استفاده از روش <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_GRAD</code></td>
       <td>
-        The value is an {{cssxref("&lt;angle&gt;")}} in grads. The value
-        can be obtained by using the <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;angle&gt;")}} بر حسب گراد (grad) است. این مقدار
+        را می‌توان با استفاده از روش <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_HZ</code></td>
       <td>
-        The value is a {{cssxref("&lt;frequency&gt;")}} in Hertz.
-        The value can be obtained by using the getFloatValue method.
+        مقدار یک {{cssxref("&lt;frequency&gt;")}} بر حسب هرتز است.
+        این مقدار را می‌توان با استفاده از روش getFloatValue به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_IDENT</code></td>
       <td>
-        The value is an identifier. The value can be obtained by using the
-        <code>getStringValue()</code> method.
+        مقدار یک شناسه (identifier) است. این مقدار را می‌توان با استفاده از روش
+        <code>getStringValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_IN</code></td>
       <td>
-        The value is a {{cssxref("&lt;length&gt;")}} in inches. The
-        value can be obtained by using the <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب اینچ است. این
+        مقدار را می‌توان با استفاده از روش <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_KHZ</code></td>
       <td>
-        The value is a {{cssxref("&lt;frequency&gt;")}} in
-        Kilohertz. The value can be obtained by using the
-        <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;frequency&gt;")}} بر حسب
+        کیلوهرتز است. این مقدار را می‌توان با استفاده از روش
+        <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_MM</code></td>
       <td>
-        The value is a {{cssxref("&lt;length&gt;")}} in millimeters.
-        The value can be obtained by using the
-        <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب میلی‌متر است.
+        این مقدار را می‌توان با استفاده از روش
+        <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_MS</code></td>
       <td>
-        The value is a {{cssxref("&lt;time&gt;")}} in milliseconds. The
-        value can be obtained by using the <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;time&gt;")}} بر حسب میلی‌ثانیه است. این
+        مقدار را می‌توان با استفاده از روش <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_NUMBER</code></td>
       <td>
-        The value is a simple {{cssxref("&lt;number&gt;")}}. The
-        value can be obtained by using the <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;number&gt;")}} ساده است. این
+        مقدار را می‌توان با استفاده از روش <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_PC</code></td>
       <td>
-        The value is a {{cssxref("&lt;length&gt;")}} in picas. The
-        value can be obtained by using the <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب پیکا (pica) است. این
+        مقدار را می‌توان با استفاده از روش <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_PERCENTAGE</code></td>
       <td>
-        The value is a {{cssxref("&lt;percentage&gt;")}}. The value
-        can be obtained by using the <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;percentage&gt;")}} است. این مقدار
+        را می‌توان با استفاده از روش <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_PT</code></td>
       <td>
-        The value is a {{cssxref("&lt;length&gt;")}} in points. The
-        value can be obtained by using the <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب پوینت است. این
+        مقدار را می‌توان با استفاده از روش <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_PX</code></td>
       <td>
-        The value is a {{cssxref("&lt;length&gt;")}} in pixels. The
-        value can be obtained by using the <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب پیکسل است. این
+        مقدار را می‌توان با استفاده از روش <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_RAD</code></td>
       <td>
-        The value is an {{cssxref("&lt;angle&gt;")}} in radians. The
-        value can be obtained by using the <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;angle&gt;")}} بر حسب رادیان است. این
+        مقدار را می‌توان با استفاده از روش <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_RECT</code></td>
       <td>
-        The value is a {{cssxref("shape", "rect()", "#Syntax")}}
-        function. The value can be obtained by using the
-        <code>getRectValue()</code> method.
+        مقدار یک تابع {{cssxref("shape", "rect()", "#Syntax")}}
+        است. این مقدار را می‌توان با استفاده از روش
+        <code>getRectValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_RGBCOLOR</code></td>
       <td>
-        The value is an {{cssxref("&lt;color&gt;")}}. The value can be
-        obtained by using the <code>getRGBColorValue()</code> method.
+        مقدار یک {{cssxref("&lt;color&gt;")}} است. این مقدار را می‌توان
+        با استفاده از روش <code>getRGBColorValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_S</code></td>
       <td>
-        The value is a {{cssxref("&lt;time&gt;")}} in seconds. The
-        value can be obtained by using the <code>getFloatValue()</code> method.
+        مقدار یک {{cssxref("&lt;time&gt;")}} بر حسب ثانیه است. این
+        مقدار را می‌توان با استفاده از روش <code>getFloatValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_STRING</code></td>
       <td>
-        The value is a {{cssxref("&lt;string&gt;")}}. The value can
-        be obtained by using the <code>getStringValue()</code> method.
+        مقدار یک {{cssxref("&lt;string&gt;")}} است. این مقدار را می‌توان
+        با استفاده از روش <code>getStringValue()</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_UNKNOWN</code></td>
       <td>
-        The value is not a recognized CSS2 value. The value can only be obtained
-        by using the {{domxref("CSSValue.cssText", "cssText")}}
-        attribute.
+        مقدار، یک مقدار CSS2 شناخته‌شده نیست. این مقدار فقط با استفاده از ویژگی {{domxref("CSSValue.cssText", "cssText")}}
+        قابل دریافت است.
       </td>
     </tr>
     <tr>
       <td><code>CSS_URI</code></td>
       <td>
-        The value is a {{cssxref("url_value", "&lt;url&gt;")}}. The value can be obtained
-        by using the <code>getStringValue()</code> method.
+        مقدار یک {{cssxref("url_value", "&lt;url&gt;")}} است. این مقدار را می‌توان
+        با استفاده از روش <code>getStringValue()</code> به دست آورد.
       </td>
     </tr>
   </tbody>
 </table>
 
-## Examples
+## مثال‌ها
 
 ```js
 const cs = window.getComputedStyle(document.body);
@@ -244,17 +233,16 @@ const cssValue = cs.getPropertyCSSValue("color");
 console.log(cssValue.primitiveType);
 ```
 
-## Specifications
+## مشخصات
 
-This feature was originally defined in the [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) specification, but has been dropped from any
-standardization effort since then.
+این ویژگی در ابتدا در مشخصات [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) تعریف شده بود، اما از آن زمان از هرگونه تلاش برای استانداردسازی حذف شده است.
 
-It has been superseded by a modern, but incompatible, [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) that is now on the standard track.
+این ویژگی با [API مدل شیءِ CSS تایپ‌شده](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن، اما ناسازگار، جایگزین شده است که اکنون در مسیر استانداردسازی قرار دارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSStyleDeclaration.getPropertyCSSValue()")}}
