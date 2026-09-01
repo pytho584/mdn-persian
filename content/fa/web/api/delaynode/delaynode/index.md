@@ -1,11 +1,5 @@
 ---
 title: "DelayNode: DelayNode() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DelayNode/DelayNode"
-status: "needs-translation"
----
-
----
-title: "DelayNode: DelayNode() constructor"
 short-title: DelayNode()
 slug: Web/API/DelayNode/DelayNode
 page-type: web-api-constructor
@@ -14,11 +8,7 @@ browser-compat: api.DelayNode.DelayNode
 
 {{APIRef("Web Audio API")}}
 
-The **`DelayNode()`**
-constructor of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
-creates a new {{domxref("DelayNode")}} object with a delay-line; an AudioNode
-audio-processing module that causes a delay between the arrival of an input data, and
-its propagation to the output.
+سازنده‌ی **`DelayNode()`** از [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) یک شیء جدید {{domxref("DelayNode")}} با یک خط تأخیر (delay-line) ایجاد می‌کند؛ یک ماژول پردازش صوتی AudioNode که باعث ایجاد تأخیر بین رسیدن داده‌ی ورودی و انتشار آن به خروجی می‌شود.
 
 ## Syntax
 
@@ -30,33 +20,23 @@ new DelayNode(context, options)
 ### Parameters
 
 - `context`
-  - : A reference to an {{domxref("AudioContext")}} or {{domxref("OfflineAudioContext")}}.
+  - : یک ارجاع به یک {{domxref("AudioContext")}} یا {{domxref("OfflineAudioContext")}}.
 - `options` {{optional_inline}}
-  - : An object specifying the delay node options. Can contain the following members:
+  - : یک شیء که گزینه‌های گره تأخیر را مشخص می‌کند. می‌تواند شامل اعضای زیر باشد:
     - `delayTime`
-      - : The initial delay time for the node, in seconds. The
-        default is `0`.
+      - : زمان تأخیر اولیه برای گره، بر حسب ثانیه. پیش‌فرض `0` است.
     - `maxDelayTime`
-      - : The maximum delay time for the node, in seconds.
-        Defaults to `1`.
+      - : حداکثر زمان تأخیر برای گره، بر حسب ثانیه. پیش‌فرض `1` است.
     - `channelCount`
-      - : Represents an integer used to determine how many channels are used when [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) connections to any inputs to the node. (See
-        {{domxref("AudioNode.channelCount")}} for more information.) Its usage and precise
-        definition depend on the value of `channelCountMode`.
+      - : یک عدد صحیح که برای تعیین تعداد کانال‌های استفاده‌شده هنگام [بالا-آمیختن و پایین-آمیختن](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) اتصالات به هر ورودی گره به کار می‌رود. (برای اطلاعات بیشتر به {{domxref("AudioNode.channelCount")}} مراجعه کنید.) کاربرد و تعریف دقیق آن به مقدار `channelCountMode` بستگی دارد.
     - `channelCountMode`
-      - : Represents an enumerated value describing the way channels must be matched between
-        the node's inputs and outputs. (See {{domxref("AudioNode.channelCountMode")}} for more
-        information including default values.)
+      - : یک مقدار شمارشی که نحوه تطبیق کانال‌ها بین ورودی‌ها و خروجی‌های گره را توصیف می‌کند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
     - `channelInterpretation`
-      - : Represents an enumerated value describing the meaning of the channels. This
-        interpretation will define how audio [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) will happen.
-        The possible values are `"speakers"` or `"discrete"`. (See
-        {{domxref("AudioNode.channelCountMode")}} for more information including default
-        values.)
+      - : یک مقدار شمارشی که معنی کانال‌ها را توصیف می‌کند. این تفسیر مشخص می‌کند که [بالا-آمیختن و پایین-آمیختن](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) صدا چگونه انجام شود. مقادیر ممکن `"speakers"` یا `"discrete"` هستند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
 
 ### Return value
 
-A new {{domxref("DelayNode")}} object instance.
+یک نمونه شیء جدید {{domxref("DelayNode")}}.
 
 ## Examples
 
