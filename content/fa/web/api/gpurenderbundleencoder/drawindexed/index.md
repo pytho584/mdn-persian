@@ -1,11 +1,5 @@
 ---
 title: "GPURenderBundleEncoder: drawIndexed() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/drawIndexed"
-status: "needs-translation"
----
-
----
-title: "GPURenderBundleEncoder: drawIndexed() method"
 short-title: drawIndexed()
 slug: Web/API/GPURenderBundleEncoder/drawIndexed
 page-type: web-api-instance-method
@@ -14,13 +8,12 @@ browser-compat: api.GPURenderBundleEncoder.drawIndexed
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`drawIndexed()`** method of the
-{{domxref("GPURenderBundleEncoder")}} interface draws indexed primitives based on the vertex and index buffers provided by {{domxref("GPURenderBundleEncoder.setVertexBuffer", "setVertexBuffer()")}} and {{domxref("GPURenderBundleEncoder.setIndexBuffer", "setIndexBuffer()")}}.
+متد **`drawIndexed()`** از رابط {{domxref("GPURenderBundleEncoder")}}، primitiveهای نمایه‌دار را بر اساس بافرهای رأس و نمایه رسم می‌کند که توسط {{domxref("GPURenderBundleEncoder.setVertexBuffer", "setVertexBuffer()")}} و {{domxref("GPURenderBundleEncoder.setIndexBuffer", "setIndexBuffer()")}} فراهم شده‌اند.
 
 > [!NOTE]
-> This method is functionally identical to its equivalent on {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.drawIndexed", "drawIndexed()")}}.
+> این متد از نظر عملکردی با معادل خود در {{domxref("GPURenderPassEncoder")}} یعنی {{domxref("GPURenderPassEncoder.drawIndexed", "drawIndexed()")}} یکسان است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 drawIndexed(indexCount)
@@ -30,24 +23,24 @@ drawIndexed(indexCount, instanceCount, firstIndex, baseVertex)
 drawIndexed(indexCount, instanceCount, firstIndex, baseVertex, firstInstance)
 ```
 
-### Parameters
+### پارامترها
 
 - `indexCount`
-  - : A number defining the number of indices to draw.
+  - : عددی که تعداد نمایه‌های موردنظر برای رسم را مشخص می‌کند.
 - `instanceCount` {{optional_inline}}
-  - : A number defining the number of instances to draw. If omitted, `instanceCount` defaults to 1.
+  - : عددی که تعداد نمونه‌های موردنظر برای رسم را مشخص می‌کند. اگر حذف شود، `instanceCount` به‌صورت پیش‌فرض برابر با ۱ است.
 - `firstIndex` {{optional_inline}}
-  - : A number defining the offset into the index buffer, in indices, to begin drawing from. If omitted, `firstIndex` defaults to 0.
+  - : عددی که افست در بافر نمایه را بر حسب تعداد نمایه‌ها، برای شروع رسم مشخص می‌کند. اگر حذف شود، `firstIndex` به‌صورت پیش‌فرض برابر با ۰ است.
 - `baseVertex` {{optional_inline}}
-  - : A number added to each index value before indexing into the vertex buffers. If omitted, `baseVertex` defaults to 0.
+  - : عددی که پیش از نمایه‌گذاری در بافرهای رأس، به هر مقدار نمایه اضافه می‌شود. اگر حذف شود، `baseVertex` به‌صورت پیش‌فرض برابر با ۰ است.
 - `firstInstance` {{optional_inline}}
-  - : A number defining the first instance to draw. If omitted, `firstInstance` defaults to 0.
+  - : عددی که اولین نمونه‌ای را که باید رسم شود مشخص می‌کند. اگر حذف شود، `firstInstance` به‌صورت پیش‌فرض برابر با ۰ است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -66,14 +59,14 @@ const renderBundle = bundleEncoder.finish();
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- رابط [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
