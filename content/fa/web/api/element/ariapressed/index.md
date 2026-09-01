@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaPressed property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaPressed"
-status: "needs-translation"
----
-
----
-title: "Element: ariaPressed property"
 short-title: ariaPressed
 slug: Web/API/Element/ariaPressed
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.Element.ariaPressed
 
 {{APIRef("DOM")}}
 
-The **`ariaPressed`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) attribute, which indicates the current "pressed" state of toggle buttons.
+خاصیت **`ariaPressed`** از رابط {{domxref("Element")}} منعکس‌کننده مقدار صفت [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) است که وضعیت فعلی «فشرده» دکمه‌های تغییر وضعیت (toggle buttons) را نشان می‌دهد.
 
 > [!NOTE]
-> Where possible use an HTML {{htmlelement("input")}} element with `type="button"` or the {{htmlelement("button")}} element as these have built in semantics and do not require ARIA attributes.
+> در صورت امکان از عنصر HTML {{htmlelement("input")}} با `type="button"` یا عنصر {{htmlelement("button")}} استفاده کنید، زیرا اینها دارای معناشناسی داخلی هستند و نیازی به صفات ARIA ندارند.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The element is pressed.
+  - : عنصر فشرده شده است.
 - `"false"`
-  - : The element supports being pressed but is not currently pressed.
+  - : عنصر قابلیت فشرده شدن را دارد اما در حال حاظر فشرده نشده است.
 - `"mixed"`
-  - : Indicates a mixed mode value for a tri-state toggle button.
+  - : نشان‌دهنده یک مقدار حالت مختلط برای یک دکمه تغییر وضعیت سه‌حالته است.
 - `"undefined"`
-  - : The element does not support being pressed.
+  - : عنصر قابلیت فشرده شدن را ندارد.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-pressed` attribute on the element with an ID of `saveChanges` is set to "false" indicating that this input is currently not pressed. Using `ariaPressed` we update the value to "true".
+در این مثال، صفت `aria-pressed` روی عنصری با شناسه `saveChanges` روی "false" تنظیم شده است که نشان می‌دهد این ورودی در حال حاظر فشرده نشده است. با استفاده از `ariaPressed` مقدار را به "true" به‌روزرسانی می‌کنیم.
 
 ```html
 <div id="saveChanges" tabindex="0" role="button" aria-pressed="false">Save</div>
@@ -47,14 +41,14 @@ el.ariaPressed = "true";
 console.log(el.ariaPressed); // "true"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: button role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role)
+- [نقش دکمه در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role)
