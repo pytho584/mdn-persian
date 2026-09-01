@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableCellElement: colSpan property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/colSpan"
-status: "needs-translation"
----
-
----
-title: "HTMLTableCellElement: colSpan property"
 short-title: colSpan
 slug: Web/API/HTMLTableCellElement/colSpan
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.HTMLTableCellElement.colSpan
 
 {{ APIRef("HTML DOM") }}
 
-The **`colSpan`** property of the {{domxref("HTMLTableCellElement")}} interface represents the number of columns this cell must span; this lets the cell occupy space across multiple columns of the table. It reflects the [`colspan`](/en-US/docs/Web/HTML/Reference/Elements/td#colspan) attribute.
+ویژگی **`colSpan`** از رابط {{domxref("HTMLTableCellElement")}} نشان‌دهندهٔ تعداد ستون‌هایی است که این سلول باید گسترش یابد؛ این ویژگی به سلول اجازه می‌دهد فضای چندین ستون جدول را اشغال کند. این ویژگی منعکس‌کنندهٔ ویژگی [`colspan`](/en-US/docs/Web/HTML/Reference/Elements/td#colspan) است.
 
-## Value
+## مقدار
 
-A positive number representing the number of columns.
+یک عدد مثبت که تعداد ستون‌ها را نشان می‌دهد.
 
 > [!NOTE]
-> When setting a new value, the value is _clamped_ to the nearest strictly positive number.
+> هنگام تنظیم یک مقدار جدید، مقدار به نزدیک‌ترین عدد کاملاً مثبت _محدود_ می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example provides two buttons to modify the column span of the first cell of the body.
+این مثال دو دکمه برای تغییر گستردگی ستون (colspan) اولین سلول بدنهٔ جدول ارائه می‌دهد.
 
 ### HTML
 
@@ -33,32 +27,32 @@ This example provides two buttons to modify the column span of the first cell of
 <table>
   <thead>
     <tr>
-      <th>Col 1</th>
-      <th>Col 2</th>
-      <th>Col 3</th>
-      <th>Col 4</th>
-      <th>Col 5</th>
-      <th>Col 6</th>
-      <th>Col 7</th>
-      <th>Col 8</th>
+      <th>ستون ۱</th>
+      <th>ستون ۲</th>
+      <th>ستون ۳</th>
+      <th>ستون ۴</th>
+      <th>ستون ۵</th>
+      <th>ستون ۶</th>
+      <th>ستون ۷</th>
+      <th>ستون ۸</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td colspan="2">1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>5</td>
-      <td>6</td>
-      <td>7</td>
-      <td>8</td>
+      <td colspan="2">۱</td>
+      <td>۲</td>
+      <td>۳</td>
+      <td>۴</td>
+      <td>۵</td>
+      <td>۶</td>
+      <td>۷</td>
+      <td>۸</td>
     </tr>
   </tbody>
 </table>
-<button id="increase">Increase colspan</button>
-<button id="decrease">Decrease colspan</button>
-<div>The first cell spans <output>2</output> column(s).</div>
+<button id="increase">افزایش colspan</button>
+<button id="decrease">کاهش colspan</button>
+<div>اولین سلول <output>۲</output> ستون را پوشش می‌دهد.</div>
 ```
 
 ```css hidden
@@ -80,7 +74,7 @@ button {
 ### JavaScript
 
 ```js
-// Obtain relevant interface elements
+// دریافت عناصر رابط مورد نظر
 const cell = document.querySelectorAll("tbody tr td")[0];
 const output = document.querySelectorAll("output")[0];
 
@@ -90,31 +84,31 @@ const decreaseButton = document.getElementById("decrease");
 increaseButton.addEventListener("click", () => {
   cell.colSpan += 1;
 
-  // Update the display
+  // به‌روزرسانی نمایش
   output.textContent = cell.colSpan;
 });
 
 decreaseButton.addEventListener("click", () => {
   cell.colSpan -= 1;
 
-  // Update the display
+  // به‌روزرسانی نمایش
   output.textContent = cell.colSpan;
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", "100%", 175)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLTableCellElement.rowSpan")}}
 - {{domxref("HTMLTableColElement.span")}}
