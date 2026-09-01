@@ -1,11 +1,5 @@
 ---
 title: "File: webkitRelativePath property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/File/webkitRelativePath"
-status: "needs-translation"
----
-
----
-title: "File: webkitRelativePath property"
 short-title: webkitRelativePath
 slug: Web/API/File/webkitRelativePath
 page-type: web-api-instance-property
@@ -14,21 +8,16 @@ browser-compat: api.File.webkitRelativePath
 
 {{APIRef("File and Directory Entries API")}}{{AvailableInWorkers}}
 
-The **`webkitRelativePath`** read-only property of the {{domxref("File")}} interface
-contains a string which specifies the file's path relative to the
-directory selected by the user in an {{HTMLElement("input")}} element with its
-[`webkitdirectory`](/en-US/docs/Web/HTML/Reference/Elements/input#webkitdirectory) attribute set.
+ویژگی فقط‌خواندنی **`webkitRelativePath`** در واسط {{domxref("File")}} شامل رشته‌ای است که مسیر فایل را نسبت به پوشه‌ای که کاربر در یک عنصر {{HTMLElement("input")}} با ویژگی
+[`webkitdirectory`](/en-US/docs/Web/HTML/Reference/Elements/input#webkitdirectory) انتخاب کرده است، مشخص می‌کند.
 
-## Value
+## مقدار
 
-A string containing the path of the file relative to the ancestor
-directory the user selected.
+رشته‌ای شامل مسیر فایل نسبت به پوشهٔ والد (ancestor directory) که کاربر انتخاب کرده است.
 
-## Example
+## مثال
 
-In this example, a directory picker is presented which lets the user choose one or more
-directories. When the {{domxref("HTMLElement/change_event", "change")}} event occurs, a list of all files contained
-within the selected directory hierarchies is generated and displayed.
+در این مثال، یک انتخاب‌گر پوشه ارائه شده است که به کاربر امکان می‌دهد یک یا چند پوشه را انتخاب کند. وقتی رویداد {{domxref("HTMLElement/change_event", "change")}} رخ می‌دهد، فهرستی از همه فایل‌های موجود در سلسله‌مراتب پوشه‌های انتخاب‌شده تولید و نمایش داده می‌شود.
 
 ### HTML
 
@@ -59,19 +48,19 @@ filePicker.addEventListener("change", (event) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Example')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("HTMLInputElement.webkitEntries")}}
