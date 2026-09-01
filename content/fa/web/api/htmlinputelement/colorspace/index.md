@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: colorSpace property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/colorSpace"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: colorSpace property"
 short-title: colorSpace
 slug: Web/API/HTMLInputElement/colorSpace
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLInputElement.colorSpace
 
 {{APIRef("HTML DOM")}}
 
-The **`colorSpace`** property of the {{domxref("HTMLInputElement")}} interface reflects the {{HTMLElement("input")}} element's [`colorspace`](/en-US/docs/Web/HTML/Reference/Elements/input/color#colorspace) attribute, which indicates whether the {{glossary("color space")}} of the serialized CSS color is `sRGB` (the default) or `display-p3`. It is only relevant to [color](/en-US/docs/Web/HTML/Reference/Elements/input/color) controls.
+ویژگی **`colorSpace`** در رابط {{domxref("HTMLInputElement")}} منعکس‌کنندهٔ ویژگی [`colorspace`](/en-US/docs/Web/HTML/Reference/Elements/input/color#colorspace) عنصر {{HTMLElement("input")}} است، که مشخص می‌کند فضای رنگی ({{glossary("color space")}}) رنگِ CSSِ سریال‌سازی‌شده، `sRGB` (پیش‌فرض) است یا `display-p3`. این ویژگی فقط به کنترل‌های [color](/en-US/docs/Web/HTML/Reference/Elements/input/color) مربوط می‌شود.
 
-## Value
+## مقدار
 
-A string containing the value of the [`colorspace`](/en-US/docs/Web/HTML/Reference/Elements/input/color#colorspace) attribute.
+رشته‌ای که مقدار ویژگی [`colorspace`](/en-US/docs/Web/HTML/Reference/Elements/input/color#colorspace) را در بر می‌گیرد.
 
-## Examples
+## نمونه‌ها
 
-### Getting and setting color spaces
+### دریافت و تنظیم فضاهای رنگی
 
 ```html
 <input id="color-picker" type="color" colorspace="display-p3" alpha />
@@ -34,14 +28,14 @@ console.log(colorInput.colorSpace); // "display-p3"
 colorInput.colorSpace = "limited-srgb"; // convert to srgb
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [`<input type="color">`](/en-US/docs/Web/HTML/Reference/Elements/input/color)
