@@ -1,10 +1,4 @@
 ---
-title: "FileSystemSyncAccessHandle"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemSyncAccessHandle"
-status: "needs-translation"
----
-
----
 title: FileSystemSyncAccessHandle
 slug: Web/API/FileSystemSyncAccessHandle
 page-type: web-api-interface
@@ -13,45 +7,45 @@ browser-compat: api.FileSystemSyncAccessHandle
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers("dedicated")}}
 
-The **`FileSystemSyncAccessHandle`** interface of the {{domxref("File System API", "File System API", "", "nocode")}} represents a synchronous handle to a file system entry.
+رابط **`FileSystemSyncAccessHandle`** از {{domxref("File System API", "File System API", "", "nocode")}} یک هندل همزمان برای یک ورودی سیستم فایل را نشان می‌دهد.
 
-This class is only accessible inside dedicated [Web Workers](/en-US/docs/Web/API/Web_Workers_API) (so that its methods do not block execution on the main thread) for files within the [origin private file system](/en-US/docs/Web/API/File_System_API/Origin_private_file_system), which is not visible to end-users.
+این کلاس فقط درون [Web Worker](/en-US/docs/Web/API/Web_Workers_API)های اختصاصی قابل دسترسی است (تا متدهای آن اجرای ریسه اصلی را مسدود نکنند) برای فایل‌هایی در [سیستم فایل خصوصی مبدأ](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) که برای کاربران نهایی قابل مشاهده نیست.
 
-As a result, its methods are not subject to the same security checks as methods running on files within the user-visible file system, and so are much more performant. This makes them suitable for significant, large-scale file updates such as [SQLite](https://sqlite.org/wasm) database modifications.
+در نتیجه، متدهای آن مشمول همان بررسی‌های امنیتی که متدهای اجرا شده روی فایل‌های درون سیستم فایل قابل مشاهده برای کاربر هستند، نمی‌شوند و بنابراین عملکرد بسیار بالاتری دارند. این آنها را برای به‌روزرسانی‌های فایل بزرگ و قابل توجه مانند تغییرات پایگاه داده [SQLite](https://sqlite.org/wasm) مناسب می‌کند.
 
-The interface is accessed through the {{domxref('FileSystemFileHandle.createSyncAccessHandle()')}} method.
+به این رابط از طریق متد {{domxref('FileSystemFileHandle.createSyncAccessHandle()')}} دسترسی پیدا می‌شود.
 
 > [!NOTE]
-> In earlier versions of the spec, {{domxref("FileSystemSyncAccessHandle.close()", "close()")}}, {{domxref("FileSystemSyncAccessHandle.flush()", "flush()")}}, {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}}, and {{domxref("FileSystemSyncAccessHandle.truncate()", "truncate()")}} were wrongly specified as asynchronous methods, and older versions of some browsers implement them in this way. However, all current browsers that support these methods implement them as synchronous methods.
+> در نسخه‌های قبلی مشخصات، متدهای {{domxref("FileSystemSyncAccessHandle.close()", "close()")}}، {{domxref("FileSystemSyncAccessHandle.flush()", "flush()")}}، {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}} و {{domxref("FileSystemSyncAccessHandle.truncate()", "truncate()")}} به اشتباه به عنوان متدهای ناهمزمان مشخص شده بودند و نسخه‌های قدیمی برخی مرورگرها آنها را به این صورت پیاده‌سازی می‌کنند. با این حال، تمام مرورگرهای فعلی که از این متدها پشتیبانی می‌کنند، آنها را به عنوان متدهای همزمان پیاده‌سازی می‌کنند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-None.
+هیچکدام.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref('FileSystemSyncAccessHandle.close', 'close()')}}
-  - : Closes an open synchronous file handle, disabling any further operations on it and releasing the exclusive lock previously put on the file associated with the file handle.
+  - یک هندل فایل همزمان باز را می‌بندد، هرگونه عملیات بیشتر روی آن را غیرفعال می‌کند و قفل انحصاری که قبلاً روی فایل مرتبط با هندل فایل قرار داده شده بود را آزاد می‌کند.
 - {{domxref('FileSystemSyncAccessHandle.flush', 'flush()')}}
-  - : Persists any changes made to the file associated with the handle via the {{domxref('FileSystemSyncAccessHandle.write', 'write()')}} method to disk.
+  - هر تغییری که از طریق متد {{domxref('FileSystemSyncAccessHandle.write', 'write()')}} روی فایل مرتبط با هندل ایجاد شده است را روی دیسک ذخیره می‌کند.
 - {{domxref('FileSystemSyncAccessHandle.getSize', 'getSize()')}}
-  - : Returns the size of the file associated with the handle in bytes.
+  - اندازه فایل مرتبط با هندل را بر حسب بایت برمی‌گرداند.
 - {{domxref('FileSystemSyncAccessHandle.read', 'read()')}}
-  - : Reads the content of the file associated with the handle into a specified buffer, optionally at a given offset.
+  - محتوای فایل مرتبط با هندل را در یک بافر مشخص شده می‌خواند، به صورت اختیاری در یک آفست مشخص.
 - {{domxref('FileSystemSyncAccessHandle.truncate', 'truncate()')}}
-  - : Resizes the file associated with the handle to a specified number of bytes.
+  - اندازه فایل مرتبط با هندل را به تعداد بایت مشخص شده تغییر می‌دهد.
 - {{domxref('FileSystemSyncAccessHandle.write', 'write()')}}
-  - : Writes the content of a specified buffer to the file associated with the handle, optionally at a given offset.
+  - محتوای یک بافر مشخص شده را در فایل مرتبط با هندل می‌نویسد، به صورت اختیاری در یک آفست مشخص.
 
-## Examples
+## مثال‌ها
 
-The following asynchronous event handler function is contained inside a Web Worker. On receiving a message from the main thread it:
+تابع مدیریت رویداد ناهمزمان زیر درون یک Web Worker قرار دارد. هنگام دریافت پیام از ریسه اصلی:
 
-- Creates a synchronous file access handle.
-- Gets the size of the file and creates an {{jsxref("ArrayBuffer")}} to contain it.
-- Reads the file contents into the buffer.
-- Encodes the message and writes it to the end of the file.
-- Persists the changes to disk and closes the access handle.
+- یک هندل دسترسی همزمان فایل ایجاد می‌کند.
+- اندازه فایل را می‌گیرد و یک {{jsxref("ArrayBuffer")}} برای نگهداری آن ایجاد می‌کند.
+- محتوای فایل را در بافر می‌خواند.
+- پیام را رمزگذاری کرده و آن را به انتهای فایل می‌نویسد.
+- تغییرات را روی دیسک ذخیره کرده و هندل دسترسی را می‌بندد.
 
 ```js
 onmessage = async (e) => {
@@ -83,15 +77,15 @@ onmessage = async (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
