@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: createSampler() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createSampler"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: createSampler() method"
 short-title: createSampler()
 slug: Web/API/GPUDevice/createSampler
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.GPUDevice.createSampler
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`createSampler()`** method of the
-{{domxref("GPUDevice")}} interface creates a {{domxref("GPUSampler")}}, which controls how shaders transform and filter texture resource data.
+متد **`createSampler()`** در رابط {{domxref("GPUDevice")}} یک {{domxref("GPUSampler")}} ایجاد می‌کند که نحوه تبدیل و فیلتر کردن داده‌های منابع بافت توسط شیدرها را کنترل می‌کند.
 
 ## Syntax
 
@@ -24,80 +17,80 @@ createSampler()
 createSampler(descriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `descriptor` {{optional_inline}}
-  - : An object containing the following properties:
+  - : شیءای شامل ویژگی‌های زیر:
     - `addressModeU` {{optional_inline}}
-      - : An enumerated value specifying the behavior of the sampler when the sample footprint width extends beyond the width of the texture. Possible values are:
-        - `"clamp-to-edge"`: The texture coordinates are clamped between 0.0 and 1.0, inclusive.
-        - `"repeat"`: The texture coordinates wrap to the other side of the texture.
-        - `"mirror-repeat"`: The texture coordinates wrap to the other side of the texture, but the texture is flipped when the integer part of the coordinate is odd.
+      - : یک مقدار شمارشی که رفتار سمپلر را زمانی که عرض ردپای نمونه‌گیری از عرض بافت فراتر می‌رود مشخص می‌کند. مقادیر ممکن عبارتند از:
+        - `"clamp-to-edge"`: مختصات بافت بین 0.0 و 1.0 (هر دو شامل) محدود می‌شوند.
+        - `"repeat"`: مختصات بافت به سمت دیگر بافت می‌پیچد.
+        - `"mirror-repeat"`: مختصات بافت به سمت دیگر بافت می‌پیچد، اما وقتی قسمت صحیح مختصات فرد باشد، بافت برعکس می‌شود.
 
-        If omitted, `addressModeU` defaults to `"clamp-to-edge"`.
+        اگر حذف شود، `addressModeU` به‌صورت پیش‌فرض `"clamp-to-edge"` است.
 
     - `addressModeV` {{optional_inline}}
-      - : An enumerated value specifying the behavior of the sampler when the sample footprint height extends beyond the height of the texture. Possible and default values are the same as for `addressModeU`.
+      - : یک مقدار شمارشی که رفتار سمپلر را زمانی که ارتفاع ردپای نمونه‌گیری از ارتفاع بافت فراتر می‌رود مشخص می‌کند. مقادیر ممکن و پیش‌فرض مانند `addressModeU` است.
     - `addressModeW` {{optional_inline}}
-      - : An enumerated value specifying the behavior of the sampler when the sample footprint depth extends beyond the depth of the texture. Possible and default values are the same as for `addressModeU`.
+      - : یک مقدار شمارشی که رفتار سمپلر را زمانی که عمق ردپای نمونه‌گیری از عمق بافت فراتر می‌رود مشخص می‌کند. مقادیر ممکن و پیش‌فرض مانند `addressModeU` است.
 
     - `compare` {{optional_inline}}
-      - : If specified, the sampler will be a comparison sampler of the specified type. Possible (enumerated) values are:
-        - `"never"`: Comparison tests never pass.
-        - `"less"`: A provided value passes the comparison test if it is less than the sampled value.
-        - `"equal"`: A provided value passes the comparison test if it is equal to the sampled value.
-        - `"less-equal"`: A provided value passes the comparison test if it is less than or equal to the sampled value.
-        - `"greater"`: A provided value passes the comparison test if it is greater than the sampled value.
-        - `"not-equal"`: A provided value passes the comparison test if it is not equal to the sampled value.
-        - `"greater-equal"`: A provided value passes the comparison test if it is greater than or equal to the sampled value.
-        - `"always"`: Comparison tests always pass.
+      - : اگر مشخص شود، سمپلر یک سمپلر مقایسه‌ای از نوع مشخص‌شده خواهد بود. مقادیر (شمارشی) ممکن عبارتند از:
+        - `"never"`: تست‌های مقایسه هرگز موفق نمی‌شوند.
+        - `"less"`: یک مقدار داده‌شده اگر از مقدار نمونه‌گیری‌شده کمتر باشد، تست مقایسه را قبول می‌کند.
+        - `"equal"`: یک مقدار داده‌شده اگر با مقدار نمونه‌گیری‌شده برابر باشد، تست مقایسه را قبول می‌کند.
+        - `"less-equal"`: یک مقدار داده‌شده اگر از مقدار نمونه‌گیری‌شده کمتر یا مساوی باشد، تست مقایسه را قبول می‌کند.
+        - `"greater"`: یک مقدار داده‌شده اگر از مقدار نمونه‌گیری‌شده بزرگ‌تر باشد، تست مقایسه را قبول می‌کند.
+        - `"not-equal"`: یک مقدار داده‌شده اگر با مقدار نمونه‌گیری‌شده برابر نباشد، تست مقایسه را قبول می‌کند.
+        - `"greater-equal"`: یک مقدار داده‌شده اگر از مقدار نمونه‌گیری‌شده بزرگ‌تر یا مساوی باشد، تست مقایسه را قبول می‌کند.
+        - `"always"`: تست‌های مقایسه همیشه موفق می‌شوند.
 
-        Comparison samplers may use filtering, but the sampling results will be implementation-dependent and may differ from the normal filtering rules.
+        سمپلرهای مقایسه‌ای ممکن است از فیلتر کردن استفاده کنند، اما نتایج نمونه‌گیری به پیاده‌سازی وابسته خواهد بود و ممکن است با قوانین فیلتر معمولی متفاوت باشد.
 
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : رشته‌ای که برچسبی برای شناسایی شیء فراهم می‌کند، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
     - `lodMinClamp` {{optional_inline}}
-      - : A number specifying the minimum level of detail used internally when sampling a texture. If omitted, `lodMinClamp` defaults to 0.
+      - : عددی که حداقل سطح جزئیات (level of detail) مورد استفاده داخلی هنگام نمونه‌گیری از بافت را مشخص می‌کند. اگر حذف شود، `lodMinClamp` به‌صورت پیش‌فرض 0 است.
     - `lodMaxClamp` {{optional_inline}}
-      - : A number specifying the maximum level of detail used internally when sampling a texture. If omitted, `lodMaxClamp` defaults to 32.
+      - : عددی که حداکثر سطح جزئیات مورد استفاده داخلی هنگام نمونه‌گیری از بافت را مشخص می‌کند. اگر حذف شود، `lodMaxClamp` به‌صورت پیش‌فرض 32 است.
 
     - `maxAnisotropy` {{optional_inline}}
-      - : Specifies the maximum anisotropy value clamp used by the sampler. If omitted, `maxAnisotropy` defaults to 1.
+      - : حداکثر مقدار گیره (clamp) ناهمسانگردی که توسط سمپلر استفاده می‌شود را مشخص می‌کند. اگر حذف شود، `maxAnisotropy` به‌صورت پیش‌فرض 1 است.
 
-        Most implementations support `maxAnisotropy` values in a range between 1 and 16, inclusive. The value used will be clamped to the maximum value that the underlying platform supports.
+        بیشتر پیاده‌سازی‌ها از مقادیر `maxAnisotropy` در بازه بین 1 تا 16 (هر دو شامل) پشتیبانی می‌کنند. مقدار استفاده‌شده تا حداکثر مقداری که پلتفرم زیرین پشتیبانی می‌کند محدود (clamp) خواهد شد.
 
     - `magFilter` {{optional_inline}}
-      - : An enumerated value specifying the sampling behavior when the sample footprint is smaller than or equal to one texel. Possible values are:
-        - `"nearest"`: Return the value of the texel nearest to the texture coordinates.
-        - `"linear"`: Select two texels in each dimension and return a linear interpolation between their values.
+      - : یک مقدار شمارشی که رفتار نمونه‌گیری را زمانی که ردپای نمونه‌گیری کوچک‌تر یا مساوی یک تکسِل است مشخص می‌کند. مقادیر ممکن عبارتند از:
+        - `"nearest"`: مقدار نزدیک‌ترین تکسِل به مختصات بافت را برمی‌گرداند.
+        - `"linear"`: در هر بعد دو تکسِل انتخاب می‌کند و درون‌یابی خطی بین مقادیر آن‌ها را برمی‌گرداند.
 
-        If omitted, `magFilter` defaults to `"nearest"`.
+        اگر حذف شود، `magFilter` به‌صورت پیش‌فرض `"nearest"` است.
 
         > [!NOTE]
-        > The `float32-filterable` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) needs to be enabled for `r32float`-, `rg32float`-, and `rgba32float`-[`format`](/en-US/docs/Web/API/GPUDevice/createTexture#format) {{domxref("GPUTexture")}}s to be filterable.
+        > برای اینکه بافت‌های {{domxref("GPUTexture")}} با [`format`](/en-US/docs/Web/API/GPUDevice/createTexture#format) های `r32float`، `rg32float` و `rgba32float` قابل فیلتر باشند، [ویژگی](/en-US/docs/Web/API/GPUSupportedFeatures) `float32-filterable` باید فعال باشد.
 
     - `minFilter` {{optional_inline}}
-      - : An enumerated value specifying the sampling behavior when the sample footprint is larger than one texel. Possible and default values are the same as for `magFilter`.
+      - : یک مقدار شمارشی که رفتار نمونه‌گیری را زمانی که ردپای نمونه‌گیری بزرگ‌تر از یک تکسِل است مشخص می‌کند. مقادیر ممکن و پیش‌فرض مانند `magFilter` است.
     - `mipmapFilter` {{optional_inline}}
-      - : An enumerated value specifying the behavior when sampling between mipmap levels. Possible and default values are the same as for `magFilter`.
+      - : یک مقدار شمارشی که رفتار هنگام نمونه‌گیری بین سطوح mipmap را مشخص می‌کند. مقادیر ممکن و پیش‌فرض مانند `magFilter` است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("GPUSampler")}} object instance.
+یک نمونه شیء {{dompus()}}.
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`createSampler()`**, otherwise a {{domxref("GPUValidationError")}} is generated and an invalid {{domxref("GPUSampler")}} object is returned:
+هنگام فراخوانی **`createSampler()`** معیارهای زیر باید برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و یک شیء نامعتبر {{dompus()}} بازگردانده می‌شود:
 
-- `lodMinClamp` is equal to or more than 0.
-- `lodMaxClamp` is equal to or more than `lodMinClamp`.
-- `maxAnisotropy` is equal to or more than 1.
-- If `maxAnisotropy` is more than 1, `magFilter`, `minFilter`, and `mipmapFilter` are `"linear"`.
+- `lodMinClamp` بزرگ‌تر یا مساوی 0 باشد.
+- `lodMaxClamp` بزرگ‌تر یا مساوی `lodMinClamp` باشد.
+- `maxAnisotropy` بزرگ‌تر یا مساوی 1 باشد.
+- اگر `maxAnisotropy` بزرگ‌تر از 1 باشد، `magFilter`، `minFilter` و `mipmapFilter` برابر با `"linear"` باشند.
 
-## Examples
+## مثال‌ها
 
-The following snippet creates a `GPUSampler` that does trilinear filtering and repeats texture coordinates:
+قطعه کد زیر یک `GPUSampler` ایجاد می‌کند که فیلتر سه‌خطی (trilinear) انجام می‌دهد و مختصات بافت را تکرار می‌کند:
 
 ```js
 // …
@@ -111,16 +104,16 @@ const sampler = device.createSampler({
 });
 ```
 
-The WebGPU samples [Shadow Mapping sample](https://webgpu.github.io/webgpu-samples/samples/shadowMapping/) uses comparison samplers to sample from a depth texture to render shadows.
+نمونه [Shadow Mapping](https://webgpu.github.io/webgpu-samples/samples/shadowMapping/) از نمونه‌های WebGPU از سمپلرهای مقایسه‌ای برای نمونه‌گیری از بافت عمق جهت رندر سایه‌ها استفاده می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
