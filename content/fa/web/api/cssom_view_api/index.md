@@ -1,11 +1,5 @@
 ---
 title: "CSSOM view API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSOM_view_API"
-status: "needs-translation"
----
-
----
-title: CSSOM view API
 slug: Web/API/CSSOM_view_API
 page-type: web-api-overview
 spec-urls: https://drafts.csswg.org/cssom-view/
@@ -13,16 +7,16 @@ spec-urls: https://drafts.csswg.org/cssom-view/
 
 {{DefaultAPISidebar("CSSOM view API")}}
 
-The **CSSOM view API** lets you manipulate the visual view of a document, including getting the position of element layout boxes, obtaining the width or height of the viewport through script, and also scrolling an element.
+**CSSOM view API** به شما امکان می‌دهد نمای بصری یک سند را دستکاری کنید، از جمله به دست آوردن موقعیت جعبه‌های چیدمان عناصر، به دست آوردن عرض یا ارتفاع viewport از طریق اسکریپت، و همچنین اسکرول کردن یک عنصر.
 
-## Guides
+## راهنماها
 
-- [Coordinate systems](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
-  - : The coordinate systems used to specify a position in a display context such as a window on a monitor, a viewport on a mobile device, or a position on a sheet of paper when printing.
-- [Viewport concepts](/en-US/docs/Web/CSS/Guides/CSSOM_view/Viewport_concepts)
-  - : The concept of the viewport — what it is, its impact in terms of CSS, SVG, and mobile devices — and the difference between the visual viewport and the layout viewport.
+- [سیستم‌های مختصات](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
+  - : سیستم‌های مختصاتی که برای مشخص کردن یک موقعیت در یک زمینه نمایشی مانند یک پنجره روی مانیتور، یک viewport روی دستگاه همراه، یا یک موقعیت روی یک برگه کاغذ هنگام چاپ استفاده می‌شوند.
+- [مفاهیم Viewport](/en-US/docs/Web/CSS/Guides/CSSOM_view/Viewport_concepts)
+  - : مفهوم viewport — چیست، تأثیر آن از نظر CSS، SVG و دستگاه‌های همراه — و تفاوت بین visual viewport و layout viewport.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("MediaQueryList")}}
 - {{domxref("MediaQueryListEvent")}}
@@ -30,11 +24,11 @@ The **CSSOM view API** lets you manipulate the visual view of a document, includ
 - {{domxref("CaretPosition")}}
 - {{domxref("VisualViewport")}}
 
-## Extensions to other interfaces
+## توسعه‌های اعمال شده بر روی سایر رابط‌ها
 
-This module adds properties, methods, and events to interfaces defined in other specifications.
+این ماژول ویژگی‌ها، متدها و رویدادهایی را به رابط‌های تعریف‌شده در سایر مشخصات اضافه می‌کند.
 
-### Extensions to Window
+### توسعه‌های اعمال شده بر روی Window
 
 - {{domxref("Window.devicePixelRatio", "devicePixelRatio")}}
 - {{domxref("Window.innerHeight", "innerHeight")}}
@@ -44,8 +38,8 @@ This module adds properties, methods, and events to interfaces defined in other 
 - {{domxref("Window.moveTo", "moveTo()")}}
 - {{domxref("Window.outerHeight", "outerHeight")}}
 - {{domxref("Window.outerWidth", "outerWidth")}}
-- `pageXOffset` (see {{domxref("Window.scrollX", "scrollX")}})
-- `pageYOffset` (see {{domxref("Window.scrollY", "scrollY")}})
+- `pageXOffset` (مشاهده کنید {{domxref("Window.scrollX", "scrollX")}})
+- `pageYOffset` (مشاهده کنید {{domxref("Window.scrollY", "scrollY")}})
 - {{domxref("Window.resizeBy", "resizeBy()")}}
 - {{domxref("Window.resizeTo", "resizeTo()")}}
 - {{domxref("Window.screen", "screen")}}
@@ -59,17 +53,17 @@ This module adds properties, methods, and events to interfaces defined in other 
 - {{domxref("Window.scrollTo", "scrollTo()")}}
 - {{domxref("Window.scrollX", "scrollX")}}
 - {{domxref("Window.scrollY", "scrollY")}}
-- {{domxref("Window/resize_event", "resize")}} event
+- {{domxref("Window/resize_event", "resize")}} رویداد
 
-### Extensions to Document
+### توسعه‌های اعمال شده بر روی Document
 
 - {{domxref("Document.elementFromPoint", "elementFromPoint()")}}
 - {{domxref("Document.caretPositionFromPoint", "caretPositionFromPoint()")}}
 - {{domxref("Document.scrollingElement", "scrollingElement")}}
-- {{domxref("Document/scroll_event", "scroll")}} event
-- {{domxref("Document/scrollend_event", "scrollend")}} event
+- {{domxref("Document/scroll_event", "scroll")}} رویداد
+- {{domxref("Document/scrollend_event", "scrollend")}} رویداد
 
-### Extensions to Element
+### توسعه‌های اعمال شده بر روی Element
 
 - {{domxref("Element.checkVisibility", "checkVisibility()")}}
 - {{domxref("Element.clientHeight", "clientHeight")}}
@@ -87,10 +81,10 @@ This module adds properties, methods, and events to interfaces defined in other 
 - {{domxref("Element.scrollTo", "scrollTo()")}}
 - {{domxref("Element.scrollTop", "scrollTop")}}
 - {{domxref("Element.scrollWidth", "scrollWidth")}}
-- {{domxref("Element/scroll_event", "scroll")}} event
-- {{domxref("Element/scrollend_event", "scrollend")}} event
+- {{domxref("Element/scroll_event", "scroll")}} رویداد
+- {{domxref("Element/scrollend_event", "scrollend")}} رویداد
 
-### Extensions to HTMLElement
+### توسعه‌های اعمال شده بر روی HTMLElement
 
 - {{domxref("HTMLElement.offsetHeight", "offsetHeight")}}
 - {{domxref("HTMLElement.offsetLeft", "offsetLeft")}}
@@ -98,17 +92,17 @@ This module adds properties, methods, and events to interfaces defined in other 
 - {{domxref("HTMLElement.offsetTop", "offsetTop")}}
 - {{domxref("HTMLElement.offsetWidth", "offsetWidth")}}
 
-### Extensions to HTMLImageElement
+### توسعه‌های اعمال شده بر روی HTMLImageElement
 
 - {{domxref("HTMLImageElement.x", "x")}}
 - {{domxref("HTMLImageElement.y", "y")}}
 
-### Extensions to Range
+### توسعه‌های اعمال شده بر روی Range
 
 - {{domxref("Range.getBoundingClientRect", "getBoundingClientRect()")}}
 - {{domxref("Range.getClientRects", "getClientRects()")}}
 
-### Extensions to MouseEvent
+### توسعه‌های اعمال شده بر روی MouseEvent
 
 - {{domxref("MouseEvent.clientX", "clientX")}}
 - {{domxref("MouseEvent.clientY", "clientY")}}
@@ -120,19 +114,19 @@ This module adds properties, methods, and events to interfaces defined in other 
 - {{domxref("MouseEvent.x", "x")}}
 - {{domxref("MouseEvent.y", "y")}}
 
-This module defines geometric utility methods that apply to the {{domxref("Text")}}, {{domxref("Element")}}, {{domxref("CSSPseudoElement")}}, and {{domxref("Document")}} interfaces. These `GeometryUtils` features are not yet implemented in any browser.
+این ماژول متدهای کاربردی هندسی را تعریف می‌کند که بر روی رابط‌های {{domxref("Text")}}، {{domxref("Element")}}، {{domxref("CSSPseudoElement")}} و {{domxref("Document")}} اعمال می‌شوند. این ویژگی‌های `GeometryUtils` هنوز در هیچ مرورگری پیاده‌سازی نشده‌اند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [CSS Object Model (CSSOM)](/en-US/docs/Web/API/CSS_Object_Model) API
-- [CSSOM view](/en-US/docs/Web/CSS/Guides/CSSOM_view) module
-- [CSS overflow](/en-US/docs/Web/CSS/Guides/Overflow) module
-- [CSS overscroll behavior](/en-US/docs/Web/CSS/Guides/Overscroll_behavior) module
-- [CSS scroll snap](/en-US/docs/Web/CSS/Guides/Scroll_snap) module
+- [مدل شیء CSS (CSSOM)](/en-US/docs/Web/API/CSS_Object_Model) API
+- [نمای CSSOM](/en-US/docs/Web/CSS/Guides/CSSOM_view) ماژول
+- [سرریز CSS](/en-US/docs/Web/CSS/Guides/Overflow) ماژول
+- [رفتار overscroll CSS](/en-US/docs/Web/CSS/Guides/Overscroll_behavior) ماژول
+- [scroll snap CSS](/en-US/docs/Web/CSS/Guides/Scroll_snap) ماژول
 - {{glossary("Viewport")}}
 - {{glossary("Layout viewport")}}
 - {{glossary("Visual viewport")}}
