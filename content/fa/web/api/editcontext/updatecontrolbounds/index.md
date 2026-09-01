@@ -1,7 +1,5 @@
 ---
 title: "EditContext: updateControlBounds() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/updateControlBounds"
-status: "needs-translation"
 ---
 
 ---
@@ -16,35 +14,35 @@ browser-compat: api.EditContext.updateControlBounds
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`EditContext.updateControlBounds()`** method of the {{domxref("EditContext")}} interface is used to inform the operating system about the position and size of the editable text region of the `EditContext` object.
+متد **`EditContext.updateControlBounds()`** از رابط {{domxref("EditContext")}} برای اطلاع‌رسانی به سیستم‌عامل درباره موقعیت و اندازه ناحیه متنی قابل ویرایش آبجکت `EditContext` استفاده می‌شود.
 
-Call this method to tell the operating system the bounds of the current editable region. You should call it when initializing the EditContext, and whenever the editable region's bounds change such as when the webpage is resized. These bounds are used to position platform-specific editing-related UI surfaces such as an {{glossary("Input Method Editor")}} (IME) window.
+این متد را برای مشخص‌کردن مرزهای ناحیه قابل ویرایش فعلی به سیستم‌عامل صدا بزنید. باید هنگام مقداردهی اولیه `EditContext` و هر زمان که مرزهای ناحیه قابل ویرایش تغییر می‌کند (مثلاً وقتی صفحه وب تغییر اندازه می‌دهد) آن را فراخوانی کنید. این مرزها برای جای‌گذاری سطوح رابط کاربری مرتبط با ویرایش مخصوص پلتفرم، مانند پنجره {{glossary("Input Method Editor")}} (IME)، استفاده می‌شوند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 updateControlBounds(controlBounds)
 ```
 
-### Parameters
+### پارامترها
 
 - `controlBounds`
-  - : A {{domxref("DOMRect")}} object representing the new control bounds.
+  - : یک شیء {{domxref("DOMRect")}} که مرزهای کنترل جدید را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None (`undefined`).
+هیچ (`undefined`).
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the method is called with no arguments or if the provided argument is not a {{domxref("DOMRect")}} object.
+  - : اگر متد بدون آرگومان صدا زده شود یا آرگومان ارائه‌شده یک شیء {{domxref("DOMRect")}} نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Updating the control bounds when the editor is initialized and on window resize
+### به‌روزرسانی مرزهای کنترل هنگام مقداردهی اولیه ویرایشگر و تغییر اندازه پنجره
 
-This example shows how to use the `updateControlBounds()` method to tell the platform where the editable region is at all times.
+این مثال نشان می‌دهد که چگونه از متد `updateControlBounds()` برای اطلاع‌رسانی همیشگی به پلتفرم درباره مکان ناحیه قابل ویرایش استفاده کنید.
 
 ```css
 #editor {
@@ -77,14 +75,14 @@ updateControlBounds();
 window.addEventListener("resize", updateControlBounds);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{DOMxRef("EditContext")}} interface it belongs to.
+- رابط {{DOMxRef("EditContext")}} که این متد به آن تعلق دارد.
