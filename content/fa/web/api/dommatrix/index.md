@@ -1,10 +1,4 @@
 ---
-title: "DOMMatrix"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix"
-status: "needs-translation"
----
-
----
 title: DOMMatrix
 slug: Web/API/DOMMatrix
 page-type: web-api-interface
@@ -13,79 +7,110 @@ browser-compat: api.DOMMatrix
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMMatrix`** interface represents 4×4 matrices, suitable for 2D and 3D operations including rotation and translation. It is a mutable version of the {{domxref("DOMMatrixReadOnly")}} interface.
-The interface is available inside [web workers](/en-US/docs/Web/API/Web_Workers_API).
+رابط **`DOMMatrix`** ماتریس‌های 4×4 را نشان می‌دهد که برای عملیات دو بعدی و سه بعدی از جمله چرخش و انتقال مناسب هستند. این رابط نسخهٔ تغییرپذیر رابط {{domxref("DOMMatrixReadOnly")}} است.
 
-**`WebKitCSSMatrix`** and **`SVGMatrix`** are aliases to **`DOMMatrix`**.
+این رابط در [web workers](/en-US/docs/Web/API/Web_Workers_API) نیز در دسترس است.
+
+**`WebKitCSSMatrix`** و **`SVGMatrix`** نام‌های مستعار **`DOMMatrix`** هستند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("DOMMatrix.DOMMatrix","DOMMatrix()")}}
-  - : Creates and returns a new `DOMMatrix` object.
 
-## Instance properties
+  - : یک شیء `DOMMatrix` جدید ایجاد و بازمی‌گرداند.
 
-_This interface inherits properties from {{domxref("DOMMatrixReadOnly")}}, though some of these properties are altered to be mutable._
+## ویژگی‌های نمونه
+
+_این رابط ویژگی‌هایی را از {{domxref("DOMMatrixReadOnly")}} به ارث می‌برد، اگرچه برخی از این ویژگی‌ها برای تغییرپذیری تغییر یافته‌اند._
 
 - `m11`, `m12`, `m13`, `m14`, `m21`, `m22`, `m23`, `m24`, `m31`, `m32`, `m33`, `m34`, `m41`, `m42`, `m43`, `m44`
-  - : Double-precision floating-point values representing each component of a 4×4 matrix, where `m11` through `m14` are the first column, `m21` through `m24` are the second column, and so forth.
+
+  - : مقادیر ممیز شناور با دقت دوگانه که هر مؤلفه از یک ماتریس 4×4 را نشان می‌دهند؛ به‌طوری که `m11` تا `m14` ستون اول، `m21` تا `m24` ستون دوم و به همین ترتیب هستند.
+
 - `a`, `b`, `c`, `d`, `e`, `f`
-  - : Double-precision floating-point values representing the components of a 4×4 matrix which are required in order to perform 2D rotations and translations. These are aliases for specific components of a 4×4 matrix, as shown below.
 
-    | `2D` | `3D equivalent` |
-    | ---- | --------------- |
-    | `a`  | `m11`           |
-    | `b`  | `m12`           |
-    | `c`  | `m21`           |
-    | `d`  | `m22`           |
-    | `e`  | `m41`           |
-    | `f`  | `m42`           |
+  - : مقادیر ممیز شناور با دقت دوگانه که مؤلفه‌های لازم یک ماتریس 4×4 برای انجام چرخش و انتقال دوبعدی را نشان می‌دهند. این‌ها نام‌های مستعار برای مؤلفه‌های خاصی از یک ماتریس 4×4 هستند، همان‌طور که در زیر نشان داده شده است.
 
-## Instance methods
+    | دوبعدی | معادل سه‌بعدی |
+    | ------ | ------------ |
+    | `a`    | `m11`        |
+    | `b`    | `m12`        |
+    | `c`    | `m21`        |
+    | `d`    | `m22`        |
+    | `e`    | `m41`        |
+    | `f`    | `m42`        |
 
-_This interface includes the following methods, as well as the methods it inherits from {{domxref("DOMMatrixReadOnly")}}._
+## متدهای نمونه
+
+_این رابط شامل متدهای زیر و همچنین متدهایی است که از {{domxref("DOMMatrixReadOnly")}} به ارث می‌برد._
 
 - {{domxref("DOMMatrix.invertSelf()")}}
-  - : Modifies the matrix by inverting it. If the matrix can't be inverted, its components are all set to `NaN`, and [`is2D`](/en-US/docs/Web/API/DOMMatrixReadOnly/is2D) returns `false`.
-- {{domxref("DOMMatrix.multiplySelf()")}}
-  - : Modifies the matrix by post-multiplying it with the specified `DOMMatrix`. This is equivalent to the dot product `A⋅B`, where matrix `A` is the source matrix and `B` is the matrix given as an input to the method. Returns itself.
-- {{domxref("DOMMatrix.preMultiplySelf()")}}
-  - : Modifies the matrix by pre-multiplying it with the specified `DOMMatrix`. Returns itself.
-- {{domxref("DOMMatrix.translateSelf()")}}
-  - : Modifies the matrix by applying the specified vector. The default vector is `[0, 0, 0]`. Returns itself.
-- {{domxref("DOMMatrix.scaleSelf()")}}
-  - : Modifies the matrix by applying the specified scaling factors, with the center located at the specified origin. Also returns itself. By default, the scaling factor is `1` for all three axes, and the origin is `(0, 0, 0)`. Returns itself.
-- {{domxref("DOMMatrix.scale3dSelf()")}}
-  - : Modifies the matrix by applying the specified scaling factor to all three axes, centered on the given origin. Returns itself.
-- {{domxref("DOMMatrix.rotateSelf()")}}
-  - : Modifies the matrix by rotating itself around each axis by the specified number of degrees. Returns itself.
-- {{domxref("DOMMatrix.rotateAxisAngleSelf()")}}
-  - : Modifies the matrix by rotating it by the specified angle around the given vector. Returns itself.
-- {{domxref("DOMMatrix.rotateFromVectorSelf()")}}
-  - : Modifies the matrix by rotating it by the angle between the specified vector and `(1, 0)`. Returns itself.
-- {{domxref("DOMMatrix.setMatrixValue()")}}
-  - : Replaces the contents of the matrix with the matrix described by the specified transform or transforms. Returns itself.
-- {{domxref("DOMMatrix.skewXSelf()")}}
-  - : Modifies the matrix by applying the specified skew transformation along the X-axis. Returns itself.
-- {{domxref("DOMMatrix.skewYSelf()")}}
-  - : Modifies the matrix by applying the specified skew transformation along the Y-axis. Returns itself.
 
-## Static methods
+  - : ماتریس را با معکوس کردن آن تغییر می‌دهد. اگر ماتریس قابل معکوس شدن نباشد، همهٔ مؤلفه‌های آن روی `NaN` تنظیم می‌شوند و [`is2D`](/en-US/docs/Web/API/DOMMatrixReadOnly/is2D) مقدار `false` را برمی‌گرداند.
+
+- {{domxref("DOMMatrix.multiplySelf()")}}
+
+  - : ماتریس را با ضرب آن در `DOMMatrix` مشخص‌شده از سمت راست تغییر می‌دهد. این معادل ضرب نقطه‌ای `A⋅B` است، جایی که ماتریس `A` ماتریس مبدأ و `B` ماتریسی است که به‌عنوان ورودی به متد داده می‌شود. خود ماتریس را برمی‌گرداند.
+
+- {{domxref("DOMMatrix.preMultiplySelf()")}}
+
+  - : ماتریس را با ضرب آن در `DOMMatrix` مشخص‌شده از سمت چپ تغییر می‌دهد. خود ماتریس را برمی‌گرداند.
+
+- {{domxref("DOMMatrix.translateSelf()")}}
+
+  - : ماتریس را با اعمال بردار مشخص‌شده تغییر می‌دهد. بردار پیش‌فرض `[0, 0, 0]` است. خود ماتریس را برمی‌گرداند.
+
+- {{domxref("DOMMatrix.scaleSelf()")}}
+
+  - : ماتریس را با اعمال ضرایب مقیاس مشخص‌شده، با مرکزیت در مبدأ مشخص‌شده، تغییر می‌دهد. همچنین خود ماتریس را برمی‌گرداند. به‌طور پیش‌فرض، ضریب مقیاس برای هر سه محور `1` و مبدأ `(0, 0, 0)` است. خود ماتریس را برمی‌گرداند.
+
+- {{domxref("DOMMatrix.scale3dSelf()")}}
+
+  - : ماتریس را با اعمال ضریب مقیاس مشخص‌شده به هر سه محور، با مرکزیت مبدأ داده‌شده، تغییر می‌دهد. خود ماتریس را برمی‌گرداند.
+
+- {{domxref("DOMMatrix.rotateSelf()")}}
+
+  - : ماتریس را با چرخاندن آن به دور هر محور به اندازهٔ درجهٔ مشخص‌شده تغییر می‌دهد. خود ماتریس را برمی‌گرداند.
+
+- {{domxref("DOMMatrix.rotateAxisAngleSelf()")}}
+
+  - : ماتریس را با چرخاندن آن به اندازهٔ زاویهٔ مشخص‌شده حول بردار داده‌شده تغییر می‌دهد. خود ماتریس را برمی‌گرداند.
+
+- {{domxref("DOMMatrix.rotateFromVectorSelf()")}}
+
+  - : ماتریس را با چرخاندن آن به اندازهٔ زاویه بین بردار مشخص‌شده و `(1, 0)` تغییر می‌دهد. خود ماتریس را برمی‌گرداند.
+
+- {{domxref("DOMMatrix.setMatrixValue()")}}
+
+  - : محتویات ماتریس را با ماتریسی که توسط تبدیل یا تبدیل‌های مشخص‌شده توصیف می‌شود جایگزین می‌کند. خود ماتریس را برمی‌گرداند.
+
+- {{domxref("DOMMatrix.skewXSelf()")}}
+
+  - : ماتریس را با اعمال تبدیل برش (skew) مشخص‌شده در راستای محور X تغییر می‌دهد. خود ماتریس را برمی‌گرداند.
+
+- {{domxref("DOMMatrix.skewYSelf()")}}
+
+  - : ماتریس را با اعمال تبدیل برش مشخص‌شده در راستای محور Y تغییر می‌دهد. خود ماتریس را برمی‌گرداند.
+
+## متدهای ایستا
 
 - {{domxref("DOMMatrix.fromFloat32Array_static", "fromFloat32Array()")}}
-  - : Creates a new `DOMMatrix` object given a {{jsxref("Float32Array")}} of 6 or 16 single-precision (32-bit) floating-point values.
+
+  - : با دریافت یک {{jsxref("Float32Array")}} شامل ۶ یا ۱۶ مقدار ممیز شناور تک‌دقت (۳۲ بیتی)، یک شیء `DOMMatrix` جدید می‌سازد.
+
 - {{domxref("DOMMatrix.fromFloat64Array_static", "fromFloat64Array()")}}
-  - : Creates a new `DOMMatrix` object given a {{jsxref("Float64Array")}} of 6 or 16 double-precision (64-bit) floating-point values.
+
+  - : با دریافت یک {{jsxref("Float64Array")}} شامل ۶ یا ۱۶ مقدار ممیز شناور با دقت دوگانه (۶۴ بیتی)، یک شیء `DOMMatrix` جدید می‌سازد.
+
 - {{domxref("DOMMatrix.fromMatrix_static", "fromMatrix()")}}
-  - : Creates a new `DOMMatrix` object given an existing matrix or an object which provides the values for its properties.
 
-## Usage notes
+  - : با دریافت یک ماتریس موجود یا شیئی که مقادیر ویژگی‌های آن را فراهم می‌کند، یک شیء `DOMMatrix` جدید می‌سازد.
 
-The matrix defined by the `DOMMatrix` interface is comprised of four rows of four columns each. While it's beyond the scope of this article to explain the mathematics involved, this 4×4 size is enough to describe any transformation you might apply to either 2D or 3D geometries.
+## نکات استفاده
 
-Here are the positions of the 16 elements (m_11 through m_44) which comprise the 4×4 abstract matrix:
+ماتریس تعریف‌شده توسط رابط `DOMMatrix` از چهار ردیف و چهار ستون تشکیل شده است. اگرچه توضیح ریاضیات مربوطه خارج از حوصلهٔ این مقاله است، این اندازهٔ 4×4 برای توصیف هر تبدیلی که ممکن است روی هندسه‌های دوبعدی یا سه‌بعدی اعمال کنید کافی است.
 
 <!-- prettier-ignore-start -->
 <math display="block">
@@ -93,17 +118,17 @@ Here are the positions of the 16 elements (m_11 through m_44) which comprise the
 </math>
 <!-- prettier-ignore-end -->
 
-The `DOMMatrix` interface is designed with the intent that it will be used for all matrices within markup.
+رابط `DOMMatrix` با این هدف طراحی شده است که برای همهٔ ماتریس‌ها در نشانه‌گذاری (markup) استفاده شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrixReadOnly.is2D")}}
 - {{domxref("DOMMatrixReadOnly.isIdentity")}}
