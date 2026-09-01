@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: validationMessage property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/validationMessage"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: validationMessage property"
 short-title: validationMessage
 slug: Web/API/ElementInternals/validationMessage
 page-type: web-api-instance-property
@@ -14,25 +8,25 @@ browser-compat: api.ElementInternals.validationMessage
 
 {{APIRef("Web Components")}}
 
-The **`validationMessage`** read-only property of the {{domxref("ElementInternals")}} interface returns the validation message for the element.
+خاصیت فقطخواندنی **`validationMessage`** از رابط {{domxref("ElementInternals")}} پیام اعتبارسنجی عنصر را برمیگرداند.
 
-## Value
+## مقدار
 
-A string containing the validation message of this element.
+رشتهای که شامل پیام اعتبارسنجی این عنصر است.
 
-## Examples
+## مثالها
 
-In the following example the validation message is set with {{domxref("ElementInternals.setValidity()")}}, and then returned with `validationMessage`.
+در مثال زیر، پیام اعتبارسنجی با {{domxref("ElementInternals.setValidity()")}} تنظیم شده و سپس با `validationMessage` برگردانده میشود.
 
 ```js
 this.internals_.setValidity({ valueMissing: true }, "my message");
 console.log(this.internals_.validationMessage); // "my message"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
