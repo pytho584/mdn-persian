@@ -1,10 +1,4 @@
 ---
-title: "EXT_float_blend extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_float_blend"
-status: "needs-translation"
----
-
----
 title: EXT_float_blend extension
 short-title: EXT_float_blend
 slug: Web/API/EXT_float_blend
@@ -14,20 +8,20 @@ browser-compat: api.EXT_float_blend
 
 {{APIRef("WebGL")}}
 
-The [WebGL API](/en-US/docs/Web/API/WebGL_API)'s `EXT_float_blend` extension allows blending and draw buffers with 32-bit floating-point components.
+افزونهٔ `EXT_float_blend` در [WebGL API](/en-US/docs/Web/API/WebGL_API) امکان ترکیب (blending) و بافرهای ترسیم (draw buffers) با اجزای ممیز شناور ۳۲-بیتی را فراهم می‌کند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL با استفاده از متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، به [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) نیز مراجعه کنید.
 
 > [!NOTE]
-> This extension is available to both, {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} and {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}} contexts. However, to use it, you need to enable the use of 32-bit floating-point draw buffers by enabling the extension {{domxref("WEBGL_color_buffer_float")}} (for WebGL1) or {{domxref("EXT_color_buffer_float")}} (for WebGL2). Doing so automatically enables `EXT_float_blend` as well, if and only if `EXT_float_blend` is also supported. Support for `EXT_color_buffer_float` does not imply support for `EXT_float_blend`.
+> این افزونه برای هر دو زمینه {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} و {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}} در دسترس است. با این حال، برای استفاده از آن باید استفاده از بافرهای ترسیم با اجزای ممیز شناور ۳۲-بیتی را فعال کنید؛ این کار از طریق فعال‌کردن افزونهٔ {{domxref("WEBGL_color_buffer_float")}} (برای WebGL1) یا {{domxref("EXT_color_buffer_float")}} (برای WebGL2) انجام می‌شود. انجام این کار به‌طور خودکار `EXT_float_blend` را نیز فعال می‌کند، اگر و تنها اگر `EXT_float_blend` نیز پشتیبانی شود. پشتیبانی از `EXT_color_buffer_float` به معنای پشتیبانی از `EXT_float_blend` نیست.
 
-With this extension enabled, calling {{domxref("WebGLRenderingContext.drawArrays", "drawArrays()")}} or {{domxref("WebGLRenderingContext.drawElements", "drawElements()")}} with blending enabled and a draw buffer with 32-bit floating-point components will no longer result in an `INVALID_OPERATION` error.
+با فعال بودن این افزونه، فراخوانی {{domxref("WebGLRenderingContext.drawArrays", "drawArrays()")}} یا {{domxref("WebGLRenderingContext.drawElements", "drawElements()")}} با فعال بودن ترکیب و بافر ترسیم با اجزای ممیز شناور ۳۲-بیتی دیگر باعث ایجاد خطای `INVALID_OPERATION` نخواهد شد.
 
-## Usage notes
+## نکات استفاده
 
-On devices that support the `EXT_float_blend` extension, it is automatically, implicitly, enabled when any one or more of {{domxref("EXT_color_buffer_float")}}, {{domxref("OES_texture_float")}}, or {{domxref("WEBGL_color_buffer_float")}} are enabled. This ensures that content written before `EXT_float_blend` was exposed by WebGL will function as expected.
+در دستگاه‌هایی که از افزونهٔ `EXT_float_blend` پشتیبانی می‌کنند، این افزونه به‌طور خودکار و ضمنی فعال می‌شود وقتی یک یا چند مورد از {{domxref("EXT_color_buffer_float")}}، {{domxref("OES_texture_float")}} یا {{domxref("WEBGL_color_buffer_float")}} فعال شوند. این تضمین می‌کند محتوایی که پیش از ارائهٔ `EXT_float_blend` توسط WebGL نوشته شده است، همان‌طور که انتظار می‌رود عمل کند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const gl = canvas.getContext("webgl2");
@@ -59,19 +53,19 @@ gl.drawArrays(gl.POINTS, 0, 1);
 // won't throw gl.INVALID_OPERATION with the extension enabled
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebGL API](/en-US/docs/Web/API/WebGL_API)
-- [Using WebGL extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions)
-- [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial)
+- [استفاده از افزونه‌های WebGL](/en-US/docs/Web/API/WebGL_API/Using_Extensions)
+- [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial)
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("EXT_color_buffer_float")}}
 - {{domxref("WEBGL_color_buffer_float")}}
