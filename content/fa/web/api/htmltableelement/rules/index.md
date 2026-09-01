@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableElement: rules property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/rules"
-status: "needs-translation"
----
-
----
-title: "HTMLTableElement: rules property"
 short-title: rules
 slug: Web/API/HTMLTableElement/rules
 page-type: web-api-instance-property
@@ -16,36 +10,35 @@ browser-compat: api.HTMLTableElement.rules
 
 {{APIRef("HTML DOM")}} {{Deprecated_Header}}
 
-The **`HTMLTableElement.rules`** property indicates which cell
-borders to render in the table.
+ویژگی **`HTMLTableElement.rules`** مشخص می‌کند که کدام مرزهای سلول‌ها در جدول باید نمایش داده شوند.
 
-## Value
+## مقدار
 
-One of the following:
+یکی از موارد زیر:
 
 - `none`
-  - : No rules
+  - : بدون خط جداکننده
 - `groups`
-  - : Lines between groups only
+  - : فقط خطوط بین گروه‌ها
 - `rows`
-  - : Lines between rows
+  - : خطوط بین ردیف‌ها
 - `cols`
-  - : Lines between cols
+  - : خطوط بین ستون‌ها
 - `all`
-  - : Lines between all cells
+  - : خطوط بین همه سلول‌ها
 
-## Examples
+## مثال‌ها
 
 ```js
-// Turn on all the internal borders of a table
+// فعال کردن تمام مرزهای داخلی یک جدول
 const t = document.getElementById("TableID");
 t.rules = "all";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
