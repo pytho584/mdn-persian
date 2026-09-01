@@ -1,11 +1,5 @@
 ---
 title: "GPUAdapterInfo: vendor property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapterInfo/vendor"
-status: "needs-translation"
----
-
----
-title: "GPUAdapterInfo: vendor property"
 short-title: vendor
 slug: Web/API/GPUAdapterInfo/vendor
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.GPUAdapterInfo.vendor
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`vendor`** read-only property of the
-{{domxref("GPUAdapterInfo")}} interface returns the name of the adapter vendor, or an empty string if it is not available.
+ویژگی فقط-خواندنی **`vendor`** از رابط {{domxref("GPUAdapterInfo")}} نام تولیدکننده آداپتور را برمی‌گرداند، یا اگر در دسترس نباشد یک رشته خالی.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const adapter = await navigator.gpu.requestAdapter();
@@ -33,14 +26,14 @@ const adapterInfo = adapter.info;
 console.log(adapterInfo.vendor);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [The WebGPU API](/en-US/docs/Web/API/WebGPU_API)
