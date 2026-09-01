@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: interestForElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/interestForElement"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: interestForElement property"
 short-title: interestForElement
 slug: Web/API/HTMLAnchorElement/interestForElement
 page-type: web-api-instance-property
@@ -17,23 +11,21 @@ browser-compat: api.HTMLAnchorElement.interestForElement
 
 {{ApiRef("HTML DOM")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`interestForElement`** property of the {{domxref("HTMLAnchorElement")}} interface gets or sets the target element of an interest invoker, in cases where the associated {{htmlelement("a")}} element is specified as an interest invoker.
+ویژگی **`interestForElement`** از رابط {{domxref("HTMLAnchorElement")}}، عنصر هدف یک دعوت‌کنندهٔ علاقه (interest invoker) را دریافت یا تنظیم می‌کند، در مواردی که عنصر {{htmlelement("a")}} مرتبط به عنوان یک دعوت‌کنندهٔ علاقه مشخص شده است.
 
-See [Creating an interest invoker](/en-US/docs/Web/API/Popover_API/Using_interest_invokers#creating_an_interest_invoker) for more details.
+برای جزئیات بیشتر، به [ایجاد یک دعوت‌کنندهٔ علاقه](/en-US/docs/Web/API/Popover_API/Using_interest_invokers#creating_an_interest_invoker) مراجعه کنید.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} object instance, or `null` if the associated `<a>` element does not have a target element set.
+یک نمونه از شیء {{domxref("Element")}}، یا `null` اگر عنصر `<a>` مرتبط عنصر هدفی تنظیم نکرده باشد.
 
-## Examples
+## نمونه‌ها
 
-### Basic `interestForElement` usage
+### استفادهٔ پایه از `interestForElement`
 
-In this example, we use an `<a>` element's `interestForElement` property to set its target element and then retrieve that element's `tagName`. The `tagName` is then printed in the `<a>` element's text content.
+در این مثال، از ویژگی `interestForElement` یک عنصر `<a>` برای تنظیم عنصر هدف آن استفاده می‌کنیم و سپس `tagName` آن عنصر را بازیابی می‌کنیم. سپس `tagName` در محتوای متنی عنصر `<a>` چاپ می‌شود.
 
 #### HTML
-
-The markup includes an `<a>` element and a `<div>` element. We turn the `<div>` element into a popover by setting a `popover` attribute on it.
 
 ```html live-sample___basic-interest-invoker
 <a href="#">a link</a>
@@ -41,8 +33,6 @@ The markup includes an `<a>` element and a `<div>` element. We turn the `<div>` 
 ```
 
 #### JavaScript
-
-We get references to the `<a>` and `<div>` elements in script. We then create the interest invoker-target relationship between the `<a>` and the `<div>` by setting the `<a>` element's `interestForElement` property equal to a reference to the `<div>`. We then update the `<a>` element's text content to include a string containing the target element's `tagName`, retrieved via `invoker.interestForElement.tagName`.
 
 ```js live-sample___basic-interest-invoker
 const invoker = document.querySelector("a");
@@ -53,23 +43,23 @@ invoker.interestForElement = popover;
 invoker.textContent = `My target is a ${invoker.interestForElement.tagName} element`;
 ```
 
-#### Result
+#### نتیجه
 
-The example renders like this:
+نمونه به این صورت نمایش داده می‌شود:
 
 {{embedlivesample("basic-interest-invoker", "100%", "100")}}
 
-Try showing interest in the link (for example, by hovering or focusing it) to make the `<div>` appear.
+تلاش کنید به پیوند علاقه نشان دهید (مثلاً با قرار دادن نشانگر روی آن یا فوکوس کردن) تا `<div>` ظاهر شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
-- [The Popover API](/en-US/docs/Web/API/Popover_API)
+- [استفاده از دعوت‌کننده‌های علاقه](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
+- [API Popover](/en-US/docs/Web/API/Popover_API)
