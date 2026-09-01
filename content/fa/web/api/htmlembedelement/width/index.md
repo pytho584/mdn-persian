@@ -1,11 +1,5 @@
 ---
 title: "HTMLEmbedElement: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLEmbedElement/width"
-status: "needs-translation"
----
-
----
-title: "HTMLEmbedElement: width property"
 short-title: width
 slug: Web/API/HTMLEmbedElement/width
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLEmbedElement.width
 
 {{APIRef("HTML DOM")}}
 
-The **`width`** property of the {{domxref("HTMLEmbedElement")}} interface returns a string that reflects the `width` attribute of the {{HTMLElement("embed")}} element, indicating the displayed width of the resource in CSS pixels.
+ویژگی **`width`** در رابط {{domxref("HTMLEmbedElement")}} یک رشته برمی‌گرداند که منعکس‌کنندهٔ صفت `width` عنصر {{HTMLElement("embed")}} است و عرض نمایش‌داده‌شدهٔ منبع را برحسب پیکسل‌های CSS مشخص می‌کند.
 
-## Value
+## مقدار
 
-A string indicating the displayed width of the resource in CSS pixels.
+یک رشته که عرض نمایش‌داده‌شدهٔ منبع را در پیکسل‌های CSS نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <embed id="el" width="800" height="600" src="https://example.com" />
@@ -31,15 +25,15 @@ const el = document.getElementById("el");
 console.log(el.width); // Output: '800'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLCanvasElement.width")}}
 - {{domxref("HTMLIFrameElement.width")}}
