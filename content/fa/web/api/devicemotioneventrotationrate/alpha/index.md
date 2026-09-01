@@ -1,11 +1,5 @@
 ---
 title: "DeviceMotionEventRotationRate: alpha property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventRotationRate/alpha"
-status: "needs-translation"
----
-
----
-title: "DeviceMotionEventRotationRate: alpha property"
 short-title: alpha
 slug: Web/API/DeviceMotionEventRotationRate/alpha
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.DeviceMotionEventRotationRate.alpha
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`alpha`** read-only property of the {{domxref("DeviceMotionEventRotationRate")}} interface indicates the rate of rotation around the Z axis, in degrees per second.
+خاصیت **`alpha`** (فقط خواندنی) از رابط {{domxref("DeviceMotionEventRotationRate")}} نرخ چرخش حول محور Z را بر حسب درجه بر ثانیه نشان می‌دهد.
 
-## Value
+## مقدار
 
-A `double` indicating the rate of rotation around the Z axis, in degrees per second.
-See [Orientation and motion data explained](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained) for details.
+یک `double` که نرخ چرخش حول محور Z را بر حسب درجه بر ثانیه نشان می‌دهد.
+برای جزئیات بیشتر به [توضیح داده‌های جهت‌گیری و حرکت](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
