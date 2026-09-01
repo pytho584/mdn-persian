@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: pathname property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/pathname"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: pathname property"
 short-title: pathname
 slug: Web/API/HTMLAnchorElement/pathname
 page-type: web-api-instance-property
@@ -14,16 +8,13 @@ browser-compat: api.HTMLAnchorElement.pathname
 
 {{ApiRef("HTML DOM")}}
 
-The **`HTMLAnchorElement.pathname`** property is a
-string containing an initial `'/'` followed by the path of
-the URL not including the query string or fragment (or the empty string if there is no
-path).
+ویژگی **`HTMLAnchorElement.pathname`** رشته‌ای است که شامل یک `'/'` ابتدایی و به دنبال آن مسیر URL است، به‌جز رشته جستار (query string) یا fragment. (یا اگر مسیری وجود نداشته باشد، رشته خالی است.)
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 // An <a id="myAnchor" href="/en-US/docs/HTMLAnchorElement"> element is in the document
@@ -31,14 +22,14 @@ const anchor = document.getElementById("myAnchor");
 anchor.pathname; // returns '/en-US/docs/HTMLAnchorElement'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAnchorElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAnchorElement")}} که این ویژگی به آن تعلق دارد.
