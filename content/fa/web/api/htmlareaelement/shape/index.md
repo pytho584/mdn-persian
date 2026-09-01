@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: shape property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/shape"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: shape property"
 short-title: shape
 slug: Web/API/HTMLAreaElement/shape
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.HTMLAreaElement.shape
 
 {{APIRef("HTML DOM")}}
 
-The **`shape`** property of the {{DOMxRef("HTMLAreaElement")}} interface specifies the shape of an image map area. It reflects the {{htmlelement("area")}} element's [`shape`](/en-US/docs/Web/HTML/Reference/Elements/area#shape) attribute.
+خاصیت **`shape`** از رابط {{DOMxRef("HTMLAreaElement")}} شکل ناحیه را در یک نقشهٔ تصویری مشخص می‌کند. این خاصیت منعکس‌کنندهٔ صفت [`shape`](/en-US/docs/Web/HTML/Reference/Elements/area#shape) در عنصر {{htmlelement("area")}} است.
 
-## Value
+## مقدار
 
-A string; `rect`, `circle`, or `poly`.
+یک رشته؛ `rect`، `circle` یا `poly`.
 
-## Examples
+## مثال‌ها
 
 ```js
 const areaElement = document.getElementById("imageMapArea");
 console.log(areaElement.shape);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMXref("HTMLAreaElement.coords")}}
 - {{DOMXref("HTMLAreaElement.alt")}}
