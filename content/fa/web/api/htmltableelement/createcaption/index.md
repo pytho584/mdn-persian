@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableElement: createCaption() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/createCaption"
-status: "needs-translation"
 ---
 
 ---
@@ -14,34 +12,28 @@ browser-compat: api.HTMLTableElement.createCaption
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLTableElement.createCaption()`** method returns the
-{{HtmlElement("caption")}} element associated with a given {{HtmlElement("table")}}.
-If no `<caption>` element exists on the table, this method creates
-it, and then returns it.
+متد **`HTMLTableElement.createCaption()`** عنصر {{HtmlElement("caption")}} مرتبط با یک {{HtmlElement("table")}} مشخص را برمی‌گرداند. اگر هیچ عنصر `<caption>` روی جدول وجود نداشته باشد، این متد آن را ایجاد کرده و سپس برمی‌گرداند.
 
 > [!NOTE]
-> If no caption exists, `createCaption()` inserts a
-> new caption directly into the table. The caption does not need to be added
-> separately as would be the case if {{domxref("Document.createElement()")}} had
-> been used to create the new `<caption>` element.
+> اگر عنوان وجود نداشته باشد، `createCaption()` یک عنوان جدید را مستقیماً در جدول درج می‌کند. برخلاف حالتی که در آن برای ایجاد عنصر `<caption>` جدید از {{domxref("Document.createElement()")}} استفاده شود، در اینجا نیازی به افزودن جداگانه‌ی عنوان نیست.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 createCaption()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
 {{domxref("HTMLTableCaptionElement")}}
 
-## Examples
+## مثال‌ها
 
-This example uses JavaScript to add a caption to a table that initially lacks one.
+این مثال از JavaScript برای افزودن عنوان (Caption) به جدولی که در ابتدا عنوان ندارد، استفاده می‌کند.
 
 ### HTML
 
@@ -70,14 +62,14 @@ let caption = table.createCaption();
 caption.textContent = "This caption was created by JavaScript!";
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
