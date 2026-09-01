@@ -1,11 +1,5 @@
 ---
 title: "CSSPropertyRule: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPropertyRule/name"
-status: "needs-translation"
----
-
----
-title: "CSSPropertyRule: name property"
 short-title: name
 slug: Web/API/CSSPropertyRule/name
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CSSPropertyRule.name
 
 {{APIRef("CSS Properties and Values API")}}
 
-The read-only **`name`** property of the {{domxref("CSSPropertyRule")}} interface represents the property name, this being the serialization of the name given to the custom property in the {{cssxref("@property")}} rule's prelude.
+ویژگی فقط‌خواندنی **`name`** از رابط {{domxref("CSSPropertyRule")}} نمایانگر نام ویژگی (property) است؛ این نام همان نمایش رشته‌ای (serialization) از نامی است که به ویژگی سفارشی در مقدمه (prelude) قاعده {{cssxref("@property")}} داده شده است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-This stylesheet contains a single {{cssxref("@property")}} rule. The first {{domxref("CSSRule")}} returned will be a `CSSPropertyRule` representing this rule. The `name` property returns the string `"--property-name"`, which is the name given to the custom property in CSS.
+این شیوه‌نامه (stylesheet) شامل یک قاعده {{cssxref("@property")}} است. اولین {{domxref("CSSRule")}} بازگشتی یک `CSSPropertyRule` خواهد بود که این قاعده را نشان می‌دهد. ویژگی `name` رشته `"--property-name"` را برمی‌گرداند که همان نام داده شده به ویژگی سفارشی در CSS است.
 
 ```css
 @property --property-name {
@@ -37,10 +31,10 @@ const myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].name); // "--property-name"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
