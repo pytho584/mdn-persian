@@ -1,11 +1,5 @@
 ---
 title: "FontFace: style property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/style"
-status: "needs-translation"
----
-
----
-title: "FontFace: style property"
 short-title: style
 slug: Web/API/FontFace/style
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.FontFace.style
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`style`** property of the {{domxref("FontFace")}} interface retrieves or sets the font's style.
+خاصیت **`style`** از رابط {{domxref("FontFace")}}، سبک فونت را بازیابی یا تنظیم می‌کند.
 
-This property is equivalent to the {{cssxref("@font-face/font-style", "font-style")}} descriptor.
+این خاصیت معادل توصیف‌کننده {{cssxref("@font-face/font-style", "font-style")}} است.
 
-## Value
+## مقدار
 
-A string containing the descriptors defined in the style sheet's `@font-face` rule.
+یک رشته شامل توصیف‌کننده‌هایی که در قانون `@font-face` شیوه‌نامه تعریف شده‌اند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
