@@ -1,11 +1,5 @@
 ---
 title: "GPUAdapterInfo: isFallbackAdapter property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapterInfo/isFallbackAdapter"
-status: "needs-translation"
----
-
----
-title: "GPUAdapterInfo: isFallbackAdapter property"
 short-title: isFallbackAdapter
 slug: Web/API/GPUAdapterInfo/isFallbackAdapter
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.GPUAdapterInfo.isFallbackAdapter
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`isFallbackAdapter`** read-only property of the
-{{domxref("GPUAdapterInfo")}} interface returns `true` if the adapter is a [fallback adapter](/en-US/docs/Web/API/GPU/requestAdapter#fallback_adapters), and `false` if not.
+ویژگی فقط‌خواندنی **`isFallbackAdapter`** از رابط {{domxref("GPUAdapterInfo")}} مقدار `true` را برمی‌گرداند اگر آداپتور یک [آداپتور جایگزین (fallback)](/en-US/docs/Web/API/GPU/requestAdapter#fallback_adapters) باشد و در غیر این صورت مقدار `false` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولین.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function init() {
@@ -41,14 +34,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- رابط [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
