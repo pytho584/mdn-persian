@@ -1,11 +1,5 @@
 ---
 title: "HTMLCollection: namedItem() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection/namedItem"
-status: "needs-translation"
----
-
----
-title: "HTMLCollection: namedItem() method"
 short-title: namedItem()
 slug: Web/API/HTMLCollection/namedItem
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.HTMLCollection.namedItem
 
 {{APIRef("DOM")}}
 
-The **`namedItem()`** method of the {{domxref("HTMLCollection")}} interface returns
-the first {{domxref("Element")}} in the collection whose `id` or `name` attribute match the specified name, or `null` if no element matches.
+متد **`namedItem()`** در رابط {{domxref("HTMLCollection")}}، اولین {{domxref("Element")}} در مجموعه را برمی‌گرداند که ویژگی `id` یا `name` آن با نام مشخص‌شده مطابقت داشته باشد؛ اگر هیچ عنصری مطابقت نداشته باشد، `null` برگردانده می‌شود.
 
-In JavaScript, instead of calling `collection.namedItem("value")`, you can also directly access the name on the collection, like `collection["value"]`, unless the name collides with one of the existing `HTMLCollection` properties.
+در جاوااسکریپت، به جای فراخوانی `collection.namedItem("value")` می‌توانید مستقیماً به نام موردنظر روی مجموعه دسترسی داشته باشید، مانند `collection["value"]`، مگر اینکه آن نام با یکی از ویژگی‌های موجود `HTMLCollection` تداخل داشته باشد.
 
 ## Syntax
 
@@ -28,11 +21,11 @@ namedItem(key)
 ### Parameters
 
 - `key`
-  - : A string representing the value of the `id` or `name` attribute of the element we are looking for.
+  - : رشته‌ای که مقدار ویژگی `id` یا `name` عنصر موردنظر را نشان می‌دهد.
 
 ### Return value
 
-The first {{domxref("Element")}} in the {{domxref("HTMLCollection")}} matching the `key`, or [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) if there is none. Always returns `null` if `key` is the empty string.
+اولین {{domxref("Element")}} در {{domxref("HTMLCollection")}} که با `key` مطابقت دارد، یا [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) اگر چنین عنصری وجود نداشته باشد. اگر `key` رشته‌ی خالی باشد، همیشه `null` برمی‌گردد.
 
 ## Example
 
@@ -52,14 +45,14 @@ The first {{domxref("Element")}} in the {{domxref("HTMLCollection")}} matching t
 ```js
 const container = document.getElementById("personal");
 
-// Returns the HTMLSpanElement with the name "title" if no such element exists null is returned
+// عنصر HTMLSpanElement با name برابر "title" را برمی‌گرداند؛ اگر چنین عنصری وجود نداشته باشد null برمی‌گردد
 const titleSpan = container.children.namedItem("title");
 
-// The following variants return undefined instead of null if there's no element with a matching name or id
+// دو خط زیر در صورت نبود عنصر با نام یا id مطابق، به جای null مقدار undefined برمی‌گردانند
 const firstNameSpan = container.children["first-name"];
 const lastNameSpan = container.children["last-name"];
 
-// Returns the span element with the id "degree"
+// عنصر span با id برابر "degree" را برمی‌گرداند
 const degreeSpan = container.children.namedItem("degree");
 
 const output = document.createElement("div");
