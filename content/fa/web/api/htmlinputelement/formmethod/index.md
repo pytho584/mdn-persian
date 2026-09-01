@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: formMethod property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/formMethod"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: formMethod property"
 short-title: formMethod
 slug: Web/API/HTMLInputElement/formMethod
 page-type: web-api-instance-property
@@ -14,31 +8,31 @@ browser-compat: api.HTMLInputElement.formMethod
 
 {{APIRef("HTML DOM")}}
 
-The **`formMethod`** property of the {{domxref("HTMLInputElement")}} interface is the {{Glossary("HTTP")}} method used to submit the {{HtmlElement("form")}} if the {{HTMLElement("input")}} element is the control that submits the form. It reflects the value of the `<input>`'s [`formmethod`](/en-US/docs/Web/HTML/Reference/Elements/input#formmethod) attribute.
+خاصیت **`formMethod`** از رابط {{domxref("HTMLInputElement")}}، روش {{Glossary("HTTP")}} است که برای ارسال {{HtmlElement("form")}} استفاده می‌شود، در صورتی که عنصر {{HTMLElement("input")}} کنترلی باشد که فرم را ارسال می‌کند. این خاصیت مقدار ویژگی [`formmethod`](/en-US/docs/Web/HTML/Reference/Elements/input#formmethod) عنصر `<input>` را منعکس می‌کند.
 
-This property is valid only for [`submit`](/en-US/docs/Web/HTML/Reference/Elements/input/submit) and [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) `<input>` elements.
+این خاصیت فقط برای عناصر `<input>` از نوع [`submit`](/en-US/docs/Web/HTML/Reference/Elements/input/submit) و [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) معتبر است.
 
-The value overrides the {{domxref("HTMLFormElement.method", "method")}} property of the {{domxref("HTMLFormElement")}} interface if the form is submitted via the input. This property can be retrieved or set. If set with an empty or invalid value, the invalid default value is `"get"`. If not set at all, the value is the empty string (`""`).
+این مقدار، خاصیت {{domxref("HTMLFormElement.method", "method")}} از رابط {{domxref("HTMLFormElement")}} را در صورت ارسال فرم از طریق input جایگزین می‌کند. این خاصیت قابل دریافت یا تنظیم است. اگر با مقدار خالی یا نامعتبر تنظیم شود، مقدار پیش‌فرض نامعتبر `"get"` است. اگر اصلاً تنظیم نشود، مقدار آن رشته خالی (`""`) است.
 
-## Value
+## مقدار
 
-A string; `"post"`, `"get"`, `"dialog"`, or `""`.
+یک رشته؛ `"post"`، `"get"`، `"dialog"`، یا `""`.
 
-## Examples
+## مثال‌ها
 
 ```js
 inputElement.formMethod = "post";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLInputElement.formAction")}}
 - {{domxref("HTMLInputElement.formEnctype")}}
