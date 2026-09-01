@@ -1,11 +1,5 @@
 ---
 title: "DedicatedWorkerGlobalScope: cancelAnimationFrame() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/cancelAnimationFrame"
-status: "needs-translation"
----
-
----
-title: "DedicatedWorkerGlobalScope: cancelAnimationFrame() method"
 short-title: cancelAnimationFrame()
 slug: Web/API/DedicatedWorkerGlobalScope/cancelAnimationFrame
 page-type: web-api-instance-method
@@ -14,41 +8,41 @@ browser-compat: api.DedicatedWorkerGlobalScope.cancelAnimationFrame
 
 {{APIRef("Web Workers API")}}{{AvailableInWorkers("dedicated")}}
 
-The **`cancelAnimationFrame()`** method of the {{domxref("DedicatedWorkerGlobalScope")}} interface cancels an animation frame request previously scheduled through a call to {{domxref("DedicatedWorkerGlobalScope.requestAnimationFrame()", "requestAnimationFrame()")}}.
+متد **`cancelAnimationFrame()`** از رابط {{domxref("DedicatedWorkerGlobalScope")}} درخواست فریم انیمیشنی را که پیش‌تر از طریق فراخوانی {{domxref("DedicatedWorkerGlobalScope.requestAnimationFrame()", "requestAnimationFrame()")}} زمان‌بندی شده بود، لغو می‌کند.
 
-Calling the `cancelAnimationFrame()` method requires the current worker to have an associated owner {{domxref("Window", "window")}}. That means that the current worker must be created by {{domxref("Window", "window")}} or by a dedicated worker that also has an associated owner {{domxref("Window", "window")}}.
+فراخوانی متد `cancelAnimationFrame()` مستلزم آن است که worker کنونی یک {{domxref("Window", "window")}} مالک مرتبط داشته باشد. این بدان معناست که worker کنونی باید توسط {{domxref("Window", "window")}} یا توسط یک dedicated worker ساخته شده باشد که آن نیز یک {{domxref("Window", "window")}} مالک مرتبط دارد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 cancelAnimationFrame(handle)
 ```
 
-### Parameters
+### پارامترها
 
 - `handle`
-  - : The ID value returned by a call to {{domxref("DedicatedWorkerGlobalScope.requestAnimationFrame()", "requestAnimationFrame()")}}; the call must have been made in the same worker.
+  - : مقدار ID که توسط یک فراخوانی به {{domxref("DedicatedWorkerGlobalScope.requestAnimationFrame()", "requestAnimationFrame()")}} بازگردانده شده است؛ این فراخوانی باید در همان worker انجام شده باشد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the method is not supported by the current worker.
+  - : اگر این متد توسط worker کنونی پشتیبانی نشود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-Here's a complete example showing how to use `requestAnimationFrame()` in a dedicated worker with an `OffscreenCanvas`.
+در ادامه یک مثال کامل آورده شده است که نحوه استفاده از `requestAnimationFrame()` در یک dedicated worker با `OffscreenCanvas` را نشان می‌دهد.
 
-The HTML should contain:
+HTML باید شامل موارد زیر باشد:
 
 ```html
 <canvas width="100" height="100"></canvas>
 ```
 
-It should link to the following JavaScript:
+باید به جاوااسکریپت زیر متصل شود:
 
 ```js
 const worker = new Worker("worker.js");
@@ -120,21 +114,21 @@ self.addEventListener("message", (e) => {
 });
 ```
 
-On the main thread, we start by transferring the control of a {{HTMLElement("canvas")}} element to an {{domxref("OffscreenCanvas")}}, using {{domxref("HTMLCanvasElement.transferControlToOffscreen()")}} and send a message to `"start"` its work to the worker, with the offscreen canvas.
+در نخ اصلی، ابتدا کنترل یک عنصر {{HTMLElement("canvas")}} را با استفاده از {{domxref("HTMLCanvasElement.transferControlToOffscreen()")}} به یک {{domxref("OffscreenCanvas")}} منتقل می‌کنیم و پیامی با `"start"` و همراه با offscreen canvas برای شروع کار به worker ارسال می‌کنیم.
 
-In the worker file (`worker.js`), we handle the animation logic. When receiving the `"start"` message, the worker starts the animation, moving the rectangle from left to right. Upon reception of a `"stop"` message, it will stop the animation.
+در فایل worker (یعنی `worker.js`)، منطق انیمیشن را مدیریت می‌کنیم. هنگام دریافت پیام `"start"`، worker انیمیشن را شروع می‌کند و مستطیل را از چپ به راست حرکت می‌دهد. پس از دریافت پیام `"stop"`، انیمیشن متوقف می‌شود.
 
-Finally, the main thread can send a `"stop"` message to the worker to stop the animation after a delay, allowing the animation to be visible before stopping.
+در نهایت، نخ اصلی می‌تواند پس از یک تأخیر، پیام `"stop"` را به worker ارسال کند تا انیمیشن متوقف شود و این امکان فراهم شود که انیمیشن پیش از توقف دیده شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DedicatedWorkerGlobalScope.requestAnimationFrame()")}}
 - {{domxref("Window.cancelAnimationFrame()")}}
