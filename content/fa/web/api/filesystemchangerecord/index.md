@@ -1,10 +1,4 @@
 ---
-title: "FileSystemChangeRecord"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemChangeRecord"
-status: "needs-translation"
----
-
----
 title: FileSystemChangeRecord
 slug: Web/API/FileSystemChangeRecord
 page-type: web-api-interface
@@ -12,60 +6,63 @@ page-type: web-api-interface
 
 {{APIRef("File System API")}}
 
-The **`FileSystemChangeRecord`** dictionary of the {{domxref("File System API", "File System API", "", "nocode")}} contains details of a single change observed by a {{domxref("FileSystemObserver")}}.
+دیکشنری **`FileSystemChangeRecord`** از {{domxref("File System API", "File System API", "", "nocode")}} شامل جزئیات یک تغییر واحد است که توسط یک {{domxref("FileSystemObserver")}} مشاهده شده است.
 
-The `records` argument passed into the {{domxref("FileSystemObserver.FileSystemObserver", "FileSystemObserver()")}} constructor's callback function is an array of `FileSystemChangeRecord` objects.
+آرگومان `records` که به تابع callback سازندهٔ {{domxref("FileSystemObserver.FileSystemObserver", "FileSystemObserver()")}} ارسال می‌شود، آرایه‌ای از اشیاء `FileSystemChangeRecord` است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `changedHandle`
-  - : A reference to the file system handle that the change was observed on.
-    - For the user-observable file system, this can be a {{domxref("FileSystemFileHandle")}} or a {{domxref("FileSystemDirectoryHandle")}}.
-    - For the [Origin Private File System](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) (OPFS), it can be a {{domxref("FileSystemFileHandle")}}, a {{domxref("FileSystemDirectoryHandle")}}, or a {{domxref("FileSystemSyncAccessHandle")}}.
+  - : ارجاعی به هندل (handle) فایل‌سیستمی که تغییر روی آن مشاهده شده است.
+    - برای فایل‌سیستم قابل مشاهده توسط کاربر، این می‌تواند یک {{domxref("FileSystemFileHandle")}} یا {{domxref("FileSystemDirectoryHandle")}} باشد.
+    - برای [سیستم فایل خصوصی مبدأ (OPFS)](/en-US/docs/Web/API/File_System_API/Origin_private_file_system)، می‌تواند یک {{domxref("FileSystemFileHandle")}}، {{domxref("FileSystemDirectoryHandle")}} یا {{domxref("FileSystemSyncAccessHandle")}} باشد.
 
-    This property will be `null` for records with a `"disappeared"`, `"errored"`, or `"unknown"` type.
+    این ویژگی برای رکوردهایی با نوع `"disappeared"`، `"errored"` یا `"unknown"` برابر با `null` خواهد بود.
 
 - `relativePathComponents`
-  - : An array containing the path components that make up the relative file path from the `root` to the `changedHandle`, including the `changedHandle` filename.
+  - : آرایه‌ای شامل اجزای مسیر که مسیر نسبی فایل را از `root` به `changedHandle` تشکیل می‌دهند، به همراه نام فایل `changedHandle`.
+
 - `relativePathMovedFrom`
-  - : An array containing the path components that make up the relative file path from the `root` to the `changedHandle`'s former location, in the case of observations with a `"moved"` type. If the type is not `"moved"`, this property will be `null`.
+  - : آرایه‌ای شامل اجزای مسیر که مسیر نسبی فایل را از `root` به مکان قبلی `changedHandle` می‌سازند، در مورد مشاهدات با نوع `"moved"`. اگر نوع `"moved"` نباشد، این ویژگی برابر با `null` خواهد بود.
+
 - `root`
-  - : A reference to the root file system handle, that is, the one passed to the `observe()` call that started the observation. Again, this can be a {{domxref("FileSystemFileHandle")}}, {{domxref("FileSystemDirectoryHandle")}}, or {{domxref("FileSystemSyncAccessHandle")}}.
+  - : ارجاعی به هندل ریشهٔ فایل‌سیستم، یعنی همان هندلی که به فراخوانی `observe()` که مشاهده را شروع کرد، منتقل شده است. باز هم، این می‌تواند یک {{domxref("FileSystemFileHandle")}}، {{domxref("FileSystemDirectoryHandle")}} یا {{domxref("FileSystemSyncAccessHandle")}} باشد.
+
 - `type`
-  - : A string representing the type of change that was observed. Possible values are:
+  - : رشته‌ای (string) که نوع تغییر مشاهده‌شده را نشان می‌دهد. مقادیر ممکن عبارت‌اند از:
     - `appeared`
-      - : The file or directory was created or moved into the `root` file structure.
+      - : فایل یا دایرکتوری ایجاد شده یا به ساختار فایل `root` منتقل شده است.
     - `disappeared`
-      - : The file or directory was deleted or moved out of the `root` file structure. To find out which file or directory disappeared, you can query the `relativePathComponents` property.
+      - : فایل یا دایرکتوری حذف شده یا از ساختار فایل `root` خارج شده است. برای اینکه بفهمید کدام فایل یا دایرکتوری ناپدید شده، می‌توانید ویژگی `relativePathComponents` را پرس‌وجو کنید.
     - `errored`
-      - : An error state occurred in the observed directory. This can result when:
-        - The observation is no longer valid. This can occur when the observed handle (that is, the `root` of the observation) is deleted or moved. In this case, a `"disappeared"` observation will be recorded, followed by an `"errored"` observation. In such cases, you may wish to stop observing the file system using {{domxref("FileSystemObserver.disconnect()")}}.
-        - The maximum limit of per-origin observations is reached. This limit is dependent on the operating system and not known beforehand. If this happens, the site may decide to retry, though there's no guarantee that the operating system will have freed up enough resources.
-        - Permission to access the directory or file handle is removed.
+      - : یک وضعیت خطا در دایرکتوری مشاهده‌شده رخ داده است. این می‌تواند در موارد زیر رخ دهد:
+        - مشاهده دیگر معتبر نیست. این ممکن است زمانی رخ دهد که هندل مشاهده‌شده (یعنی `root` مشاهده) حذف یا منتقل شود. در این حالت، یک مشاهدهٔ `"disappeared"` و سپس یک مشاهدهٔ `"errored"` ثبت خواهد شد. در چنین مواردی، ممکن است بخواهید با استفاده از {{domxref("FileSystemObserver.disconnect()")}} مشاهدهٔ فایل‌سیستم را متوقف کنید.
+        - به حداکثر سقف مشاهدات برای هر مبدأ (origin) رسیده است. این سقف به سیستم‌عامل بستگی دارد و از قبل مشخص نیست. اگر این اتفاق بیفتد، سایت ممکن است تصمیم به تلاش مجدد بگیرد، هرچند تضمینی وجود ندارد که سیستم‌عامل منابع کافی را آزاد کرده باشد.
+        - مجوز دسترسی به دایرکتوری یا هندل فایل برداشته شده است.
     - `modified`
-      - : The file or directory was modified.
+      - : فایل یا دایرکتوری اصلاح شده است.
     - `moved`
-      - : The file or directory was moved within the root file structure.
+      - : فایل یا دایرکتوری در ساختار فایل ریشه منتقل شده است.
         > [!NOTE]
-        > On Windows, `"moved"` observations aren't supported between directories. They are reported as a `"disappeared"` observation in the source directory and an `"appeared"` observation in the destination directory.
+        > در ویندوز، مشاهدات `"moved"` بین دایرکتوری‌ها پشتیبانی نمی‌شوند. آن‌ها به صورت مشاهدهٔ `"disappeared"` در دایرکتوری مبدأ و مشاهدهٔ `"appeared"` در دایرکتوری مقصد گزارش می‌شوند.
     - `unknown`
-      - : Indicates that some observations were missed. If you wish to find out information on what changed in the missed observations, you could fall back to polling the observed directory.
+      - : نشان می‌دهد که برخی از مشاهدات از دست رفته‌اند. اگر می‌خواهید اطلاعاتی دربارهٔ اینکه در مشاهدات از دست رفته چه چیزی تغییر کرده است به دست آورید، می‌توانید به polling دایرکتوری مشاهده‌شده روی بیاورید.
 
-Depending on the operating system, not all observations will be reported with the same level of detail, for example, when the contents of a directory change recursively. At best, the website will receive a detailed change record containing the type of change and a handle to the affected path. At worst, the website will receive a more generic change record (that is, an `"unknown"` type) that still requires it to enumerate the directory to figure out which handle changed.
+بسته به سیستم‌عامل، همهٔ مشاهدات با همان سطح از جزئیات گزارش نمی‌شوند؛ برای مثال، زمانی که محتویات یک دایرکتوری به‌صورت بازگشتی تغییر می‌کنند. در بهترین حالت، وب‌سایت یک رکورد تغییر دقیق دریافت می‌کند که شامل نوع تغییر و یک هندل برای مسیر آسیب‌دیده است. در بدترین حالت، وب‌سایت یک رکورد تغییر عمومی‌تر (یعنی از نوع `"unknown"`) دریافت می‌کند که همچنان برای فهمیدن اینکه کدام هندل تغییر کرده، نیاز به پیمایش (enumerate) دایرکتوری دارد.
 
-This is still an improvement over polling, since the directory enumeration can be kicked off on-demand from the callback function, rather than needing to poll for changes periodically.
+این هنوز هم نسبت به polling یک بهبود است، زیرا پیمایش دایرکتوری می‌تواند به‌صورت درخواستی (on-demand) از تابع callback آغاز شود، به‌جای اینکه لازم باشد به‌صورت دوره‌ای برای تغییرات polling انجام شود.
 
-## Examples
+## مثال‌ها
 
-### Initialize a `FileSystemObserver`
+### مقداردهی اولیهٔ `FileSystemObserver`
 
-Before you can start observing file or directory changes, you need to initialize a `FileSystemObserver` to handle the observations. This is done using the {{domxref("FileSystemObserver.FileSystemObserver", "FileSystemObserver()")}} constructor, which takes a callback function as an argument:
+قبل از اینکه بتوانید مشاهدهٔ تغییرات فایل یا دایرکتوری را شروع کنید، باید یک `FileSystemObserver` را برای مدیریت مشاهدات مقداردهی اولیه کنید. این کار با استفاده از سازندهٔ {{domxref("FileSystemObserver.FileSystemObserver", "FileSystemObserver()")}} انجام می‌شود که یک تابع callback به عنوان آرگومان می‌گیرد:
 
 ```js
 const observer = new FileSystemObserver(callback);
 ```
 
-The [callback function](/en-US/docs/Web/API/FileSystemObserver/FileSystemObserver#callback) body can be specified to return and process file change observations in any way you want. Each object inside the `records` array is a `FileSystemChangeRecord` object:
+متن [تابع callback](/en-US/docs/Web/API/FileSystemObserver/FileSystemObserver#callback) را می‌توان طوری مشخص کرد که مشاهدات تغییرات فایل را به هر شکلی که می‌خواهید برگرداند و پردازش کند. هر شیء داخل آرایهٔ `records` یک شیء `FileSystemChangeRecord` است:
 
 ```js
 const callback = (records, observer) => {
@@ -79,12 +76,12 @@ const callback = (records, observer) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
-Not currently part of a specification. See [https://github.com/whatwg/fs/pull/165](https://github.com/whatwg/fs/pull/165) for the relevant specification PR.
+در حال حاضر بخشی از هیچ مشخصات (specification) نیست. برای PR مرتبط با مشخصات، به [https://github.com/whatwg/fs/pull/165](https://github.com/whatwg/fs/pull/165) مراجعه کنید.
 
-## See also
+## همچنین ببینید
 
-- {{domxref("FileSystemObserver.FileSystemObserver", "FileSystemObserver()")}} constructor
+- سازندهٔ {{domxref("FileSystemObserver.FileSystemObserver", "FileSystemObserver()")}}
 - [File System API](/en-US/docs/Web/API/File_System_API)
-- [The File System Observer API origin trial](https://developer.chrome.com/blog/file-system-observer#stop-observing-the-file-system) on developer.chrome.com (2024)
+- [آزمایش origin برای File System Observer API](https://developer.chrome.com/blog/file-system-observer#stop-observing-the-file-system) در developer.chrome.com (۲۰۲۴)
