@@ -1,11 +1,5 @@
 ---
 title: "HTMLMetaElement: scheme property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMetaElement/scheme"
-status: "needs-translation"
----
-
----
-title: "HTMLMetaElement: scheme property"
 short-title: scheme
 slug: Web/API/HTMLMetaElement/scheme
 page-type: web-api-instance-property
@@ -16,20 +10,19 @@ browser-compat: api.HTMLMetaElement.scheme
 
 {{APIRef("HTML DOM")}}{{Deprecated_Header}}
 
-The **`HTMLMetaElement.scheme`** property defines the scheme of the value in the {{domxref("HTMLMetaElement.content")}} attribute.
-The `scheme` property was created to enable providing additional information to be used to interpret the value of the `content` property. The `scheme` property takes as its value a scheme format (i.e., `YYYY-MM-DD`) or scheme format name (i.e., `ISBN`), or a URI providing more information regarding the scheme format. The scheme defines the format of the value of the `content` attribute.
-The `scheme` content is interpreted as an extension of the element's {{domxref("HTMLMetaElement.name")}} if a browser or user agent recognizes the scheme.
+ویژگی **`HTMLMetaElement.scheme`**، طرحواره‌ی مقدار موجود در ویژگی {{domxref("HTMLMetaElement.content")}} را تعریف می‌کند.
+ویژگی `scheme` برای فراهم کردن اطلاعات اضافی جهت تفسیر مقدار ویژگی `content` ایجاد شده است. این ویژگی یک قالب طرحواره (مانند `YYYY-MM-DD`) یا نام قالب طرحواره (مانند `ISBN`)، یا یک URI که اطلاعات بیشتری درباره‌ی قالب طرحواره فراهم می‌کند را به‌عنوان مقدار می‌پذیرد. طرحواره، قالب مقدار ویژگی `content` را مشخص می‌کند.
+اگر مرورگر یا عامل کاربر (user agent) طرحواره را بشناسد، محتوای `scheme` به‌عنوان توسعه‌ای از ویژگی {{domxref("HTMLMetaElement.name")}} عنصر تفسیر می‌شود.
 
-This property is deprecated and should not be used on new web pages.
+این ویژگی منسوخ (deprecated) شده است و نباید در صفحات وب جدید استفاده شود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-The following example queries a `<meta>` element that contains a `name` attribute with the value of `identifier`.
-The `scheme` value is logged to the console to display the scheme of the metadata content:
+مثال زیر یک عنصر `<meta>` را جستجو می‌کند که دارای ویژگی `name` با مقدار `identifier` است. مقدار `scheme` برای نمایش طرحواره‌ی محتوای فراداده در کنسول ثبت می‌شود:
 
 ```js
 // given <meta name="identifier" content="1580081754" scheme="ISBN">
@@ -38,14 +31,14 @@ console.log(meta.scheme);
 // "ISBN"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("meta")}}
