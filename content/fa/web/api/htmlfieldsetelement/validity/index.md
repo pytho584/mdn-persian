@@ -1,11 +1,5 @@
 ---
 title: "HTMLFieldSetElement: validity property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFieldSetElement/validity"
-status: "needs-translation"
----
-
----
-title: "HTMLFieldSetElement: validity property"
 short-title: validity
 slug: Web/API/HTMLFieldSetElement/validity
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.HTMLFieldSetElement.validity
 
 {{APIRef("HTML DOM")}}
 
-The **`validity`** read-only property of the {{domxref("HTMLFieldSetElement")}} interface returns a {{domxref("ValidityState")}} object that represents the validity states this element is in. Although {{HTMLElement("fieldset")}} elements are never candidates for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation), the validity state may still be invalid if a custom validity message has been set.
+خاصیت فقط‌خواندنی **`validity`** در رابط {{domxref("HTMLFieldSetElement")}} یک شیء {{domxref("ValidityState")}} برمی‌گرداند که وضعیت‌های اعتبار این عنصر را نشان می‌دهد. اگرچه عناصر {{HTMLElement("fieldset")}} هرگز کاندیدای [اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation) نیستند، اگر یک پیام اعتبار سفارشی تنظیم شده باشد، وضعیت اعتبار ممکن است همچنان نامعتبر باشد.
 
 > [!NOTE]
-> The {{cssxref(":valid")}} and {{cssxref(":invalid")}} CSS pseudo-classes are applied to `<fieldset>` elements based on the validity of its descendant form controls, not the fieldset itself.
+> شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}} بر اساس اعتبار کنترل‌های فرمِ فرزندِ عنصر `<fieldset>` روی آن اعمال می‌شوند، نه بر اساس خودِ fieldset.
 
-## Value
+## مقدار
 
-A {{domxref("ValidityState")}} object.
+یک شیء {{domxref("ValidityState")}}.
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates that a `<fieldset>` is in an invalid state when a {{domxref("ValidityState/customError", "customError")}} is set; in this state, {{domxref("HTMLFieldSetElement/checkValidity", "checkValidity()")}} returns `true` while the `validityState`'s `validity` property is `false`.
+مثال زیر نشان می‌دهد که یک `<fieldset>` زمانی که یک {{domxref("ValidityState/customError", "customError")}} تنظیم شده باشد در وضعیت نامعتبر قرار می‌گیرد؛ در این حالت، {{domxref("HTMLFieldSetElement/checkValidity", "checkValidity()")}} مقدار `true` برمی‌گرداند در حالی که ویژگی `validity` در `validityState` برابر `false` است.
 
 ```js
 const fieldSet = document.getElementById("myFieldSet");
@@ -37,20 +31,20 @@ console.log(fieldSet.checkValidity()); // true
 ```
 
 > [!NOTE]
-> The {{cssxref(":valid")}} and {{cssxref(":invalid")}} CSS pseudo-classes are applied to `<fieldset>` elements based on the validity of its descendant form controls, not the fieldset itself.
+> شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}} بر اساس اعتبار کنترل‌های فرمِ فرزندِ عنصر `<fieldset>` روی آن اعمال می‌شوند، نه بر اساس خودِ fieldset.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLFieldSetElement.checkValidity()")}}
 - {{HTMLElement("fieldset")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation)
