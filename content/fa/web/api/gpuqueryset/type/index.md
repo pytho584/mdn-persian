@@ -1,11 +1,5 @@
 ---
 title: "GPUQuerySet: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySet/type"
-status: "needs-translation"
----
-
----
-title: "GPUQuerySet: type property"
 short-title: type
 slug: Web/API/GPUQuerySet/type
 page-type: web-api-instance-property
@@ -14,33 +8,32 @@ browser-compat: api.GPUQuerySet.type
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`type`** read-only property of the
-{{domxref("GPUQuerySet")}} interface is an enumerated value specifying the type of queries managed by the `GPUQuerySet`.
+ویژگی فقط‌خواندنی **`type`** در رابط {{domxref("GPUQuerySet")}} یک مقدار شمارشی است که نوع پرس‌وجوهای مدیریت‌شده توسط `GPUQuerySet` را مشخص می‌کند.
 
-## Value
+## مقدار
 
-An enumerated value. Possible values are:
+یک مقدار شمارشی. مقادیر ممکن عبارتند از:
 
 - `"occlusion"`
-  - : The `GPUQuerySet` manages occlusion queries.
+  - : `GPUQuerySet` پرس‌وجوهای انسداد را مدیریت می‌کند.
 - `"timestamp"` {{experimental_inline}}
-  - : The `GPUQuerySet` manages timestamp queries.
+  - : `GPUQuerySet` پرس‌وجوهای زمانی را مدیریت می‌کند.
 
 > [!NOTE]
-> The `timestamp-query` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) needs to be enabled to use timestamp queries.
+> برای استفاده از پرس‌وجوهای زمانی، باید [ویژگی](/en-US/docs/Web/API/GPUSupportedFeatures) `timestamp-query` فعال باشد.
 
-## Examples
+## مثال‌ها
 
-See the main [`GPUQuerySet`](/en-US/docs/Web/API/GPUQuerySet#examples) page for an example.
+برای مثال، صفحهٔ اصلی [`GPUQuerySet`](/en-US/docs/Web/API/GPUQuerySet#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
