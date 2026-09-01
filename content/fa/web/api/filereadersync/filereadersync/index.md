@@ -1,11 +1,5 @@
 ---
 title: "FileReaderSync: FileReaderSync() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReaderSync/FileReaderSync"
-status: "needs-translation"
----
-
----
-title: "FileReaderSync: FileReaderSync() constructor"
 short-title: FileReaderSync()
 slug: Web/API/FileReaderSync/FileReaderSync
 page-type: web-api-constructor
@@ -14,21 +8,21 @@ browser-compat: api.FileReaderSync.FileReaderSync
 
 {{APIRef("File API")}} {{AvailableInWorkers("worker_except_service")}}
 
-The **`FileReaderSync()`** constructor creates a new {{domxref("FileReaderSync")}}.
+سازنده‌ی **`FileReaderSync()`** یک شیء جدید از {{domxref("FileReaderSync")}} ایجاد می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new FileReaderSync()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-## Examples
+## مثال‌ها
 
-The following code snippet shows creation of a [`FileReaderSync`](/en-US/docs/Web/API/FileReaderSync) object using the `FileReaderSync()` constructor and subsequent usage of the object:
+قطعه کد زیر نحوه ایجاد یک شیء [`FileReaderSync`](/en-US/docs/Web/API/FileReaderSync) با استفاده از سازنده‌ی `FileReaderSync()` و استفاده‌ی بعدی از آن را نشان می‌دهد:
 
 ```js
 function readFile(blob) {
@@ -38,12 +32,12 @@ function readFile(blob) {
 ```
 
 > [!NOTE]
-> This snippet must be used inside a {{domxref("Worker")}}, as synchronous interfaces can't be used on the main thread.
+> این قطعه کد باید درون یک {{domxref("Worker")}} استفاده شود، زیرا رابط‌های همزمان (synchronous) نمی‌توانند در نخ اصلی استفاده شوند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
