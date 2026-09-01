@@ -1,9 +1,4 @@
----
-title: "FileReaderSync"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReaderSync"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: FileReaderSync
 slug: Web/API/FileReaderSync
@@ -13,38 +8,39 @@ browser-compat: api.FileReaderSync
 
 {{APIRef("File API")}} {{AvailableInWorkers("worker_except_service")}}
 
-The **`FileReaderSync`** interface allows to read {{DOMxRef("File")}} or {{DOMxRef("Blob")}} objects synchronously. This interface is [only available](/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers) in [workers](/en-US/docs/Web/API/Worker) as it enables synchronous I/O that could potentially block.
+رابط **`FileReaderSync`** امکان خواندن همزمان (synchronous) اشیاء {{DOMxRef("File")}} یا {{DOMxRef("Blob")}} را فراهم می‌کند. این رابط [تنها در workerها](/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers) در دسترس است، زیرا I/O همزمان را ممکن می‌سازد که می‌تواند باعث مسدود شدن شود.
 
-## Constructor
+## سازنده
 
 - {{domxref("FileReaderSync.FileReaderSync", "FileReaderSync()")}}
-  - : Returns a new `FileReaderSync` object.
+  - : یک شیء جدید `FileReaderSync` برمی‌گرداند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-This interface does not have any properties.
+این رابط هیچ ویژگی ندارد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{DOMxRef("FileReaderSync.readAsArrayBuffer","FileReaderSync.readAsArrayBuffer()")}}
-  - : This method converts a specified {{DOMxRef("Blob")}} or a {{DOMxRef("File")}} into an {{jsxref("ArrayBuffer")}} representing the input data as a binary string.
+  - : این روش یک {{DOMxRef("Blob")}} یا {{DOMxRef("File")}} مشخص را به یک {{jsxref("ArrayBuffer")}} تبدیل می‌کند که داده‌های ورودی را به صورت یک رشته دودویی (binary string) نمایش می‌دهد.
 - {{DOMxRef("FileReaderSync.readAsBinaryString","FileReaderSync.readAsBinaryString()")}} {{deprecated_inline}}
-  - : This method converts a specified {{DOMxRef("Blob")}} or a {{DOMxRef("File")}} into a string representing the input data as a binary string. This method is deprecated, consider using `readAsArrayBuffer()` instead.
+  - : این روش یک {{DOMxRef("Blob")}} یا {{DOMxRef("File")}} مشخص را به یک رشته (string) تبدیل می‌کند که داده‌های ورودی را به صورت یک رشته دودویی نمایش می‌دهد. این روش منسوخ (deprecated) شده است؛ به جای آن از `readAsArrayBuffer()` استفاده کنید.
 - {{DOMxRef("FileReaderSync.readAsText","FileReaderSync.readAsText()")}}
-  - : This method converts a specified {{DOMxRef("Blob")}} or a {{DOMxRef("File")}} into a string representing the input data as a text string. The optional **`encoding`** parameter indicates the encoding to be used (e.g., iso-8859-1 or UTF-8). If not present, the method will apply a detection algorithm for it.
+  - : این روش یک {{DOMxRef("Blob")}} یا {{DOMxRef("File")}} مشخص را به یک رشته (string) تبدیل می‌کند که داده‌های ورودی را به صورت یک رشته متنی نمایش می‌دهد. پارامتر اختیاری **`encoding`** مشخص‌کننده رمزگذاری مورد استفاده است (مثلاً iso-8859-1 یا UTF-8). اگر وجود نداشته باشد، روش یک الگوریتم تشخیص برای آن اعمال خواهد کرد.
 - {{DOMxRef("FileReaderSync.readAsDataURL","FileReaderSync.readAsDataURL()")}}
-  - : This method converts a specified {{DOMxRef("Blob")}} or a {{DOMxRef("File")}} into a string representing the input data as a data URL.
+  - : این روش یک {{DOMxRef("Blob")}} یا {{DOMxRef("File")}} مشخص را به یک رشته (string) تبدیل می‌کند که داده‌های ورودی را به صورت یک URL داده (data URL) نمایش می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("FileReader")}}
 - {{DOMxRef("Blob")}}
 - {{DOMxRef("File")}}
+```
