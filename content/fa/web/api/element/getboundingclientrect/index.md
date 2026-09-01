@@ -1,11 +1,5 @@
 ---
 title: "Element: getBoundingClientRect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect"
-status: "needs-translation"
----
-
----
-title: "Element: getBoundingClientRect() method"
 short-title: getBoundingClientRect()
 slug: Web/API/Element/getBoundingClientRect
 page-type: web-api-instance-method
@@ -14,68 +8,39 @@ browser-compat: api.Element.getBoundingClientRect
 
 {{APIRef("DOM")}}
 
-The **`Element.getBoundingClientRect()`** method returns a
-{{domxref("DOMRect")}} object providing information about the size of an element and its
-position relative to the [viewport](/en-US/docs/Glossary/Viewport).
+متد **`Element.getBoundingClientRect()`** یک شیء {{domxref("DOMRect")}} برمی‌گرداند که اطلاعاتی درباره اندازه یک عنصر و موقعیت آن نسبت به [viewport](/en-US/docs/Glossary/Viewport) فراهم می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getBoundingClientRect()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-The returned value is a {{domxref("DOMRect")}} object which is the smallest rectangle
-which contains the entire element, including its padding and border-width. The
-`left`, `top`, `right`, `bottom`,
-`x`, `y`, `width`, and `height` properties
-describe the position and size of the overall rectangle in pixels. Properties other than
-`width` and `height` are relative to the top-left of the viewport.
+مقدار بازگشتی یک شیء {{domxref("DOMRect")}} است که کوچکترین مستطیل شامل کل عنصر، شامل padding و border-width آن را نشان می‌دهد. خصوصیات `left`، `top`، `right`، `bottom`، `x`، `y`، `width` و `height` موقعیت و اندازه مستطیل کلی را بر حسب پیکسل توصیف می‌کنند. خصوصیات غیر از `width` و `height` نسبت به گوشه بالا-چپ viewport هستند.
 
-![DOMRect object that is the smallest rectangle containing the entire element.](element-box-diagram.png)
+![شیء DOMRect که کوچکترین مستطیل حاوی کل عنصر است](element-box-diagram.png)
 
-The `width` and `height` properties of the {{domxref("DOMRect")}}
-object returned by the method include the `padding` and
-`border-width`, not only the content width/height. In the standard box model,
-this would be equal to the `width` or `height` property of the
-element + `padding` + `border-width`. But
-if [`box-sizing: border-box`](/en-US/docs/Web/CSS/Reference/Properties/box-sizing) is
-set for the element this would be directly equal to its `width` or
-`height`.
+خصوصیات `width` و `height` شیء {{domxref("DOMRect")}} بازگشتی از این متد، شامل `padding` و `border-width` می‌شوند، نه فقط عرض/ارتفاع محتوا. در مدل جعبه استاندارد، این مقدار برابر با `width` یا `height` عنصر + `padding` + `border-width` خواهد بود. اما اگر [`box-sizing: border-box`](/en-US/docs/Web/CSS/Reference/Properties/box-sizing) برای عنصر تنظیم شده باشد، این مقدار مستقیماً برابر با `width` یا `height` آن خواهد بود.
 
-The returned value can be thought of as the union of the rectangles returned by
-{{domxref("Element.getClientRects", "getClientRects()")}} for the element, i.e., the CSS
-border-boxes associated with the element.
+می‌توان مقدار بازگشتی را به عنوان اتحاد مستطیل‌های بازگشتی از {{domxref("Element.getClientRects", "getClientRects()")}} برای آن عنصر در نظر گرفت، یعنی جعبه‌های مرزی CSS مرتبط با عنصر.
 
-Empty border-boxes are completely ignored. If all the element's border-boxes are empty,
-then a rectangle is returned with a `width` and `height` of zero
-and where the `top` and `left` are the top-left of the border-box
-for the first CSS box (in content order) for the element.
+جعبه‌های مرزی خالی کاملاً نادیده گرفته می‌شوند. اگر تمام جعبه‌های مرزی عنصر خالی باشند، مستطیلی با `width` و `height` صفر بازگردانده می‌شود که در آن `top` و `left` برابر با گوشه بالا-چپ جعبه مرزی برای اولین جعبه CSS (به ترتیب محتوا) برای عنصر است.
 
-The amount of scrolling that has been done of the viewport area (or any other
-scrollable element) is taken into account when computing the bounding rectangle. This
-means that the rectangle's boundary edges (`top`, `right`,
-`bottom`, `left`) change their values every time the scrolling
-position changes (because their values are relative to the viewport and not absolute).
+میزان پیمایش انجام‌شده در ناحیه viewport (یا هر عنصر قابل پیمایش دیگری) هنگام محاسبه مستطیل مرزی در نظر گرفته می‌شود. این بدان معناست که لبه‌های مرزی مستطیل (`top`، `right`، `bottom`، `left`) هر بار که موقعیت پیمایش تغییر می‌کند، مقادیرشان تغییر می‌کند (زیرا مقادیر آنها نسبت به viewport است و مطلق نیستند).
 
-If you need the bounding rectangle relative to the top-left corner of the document,
-just add the current scrolling position to the `top` and `left`
-properties (these can be obtained using {{domxref("window.scrollY")}} and
-{{domxref("window.scrollX")}}) to get a bounding rectangle which is independent from the
-current scrolling position.
+اگر به مستطیل مرزی نسبت به گوشه بالا-چپ سند نیاز دارید، کافی است موقعیت پیمایش فعلی را به خصوصیات `top` و `left` اضافه کنید (این مقادیر را می‌توان با استفاده از {{domxref("window.scrollY")}} و {{domxref("window.scrollX")}} به دست آورد) تا مستطیل مرزی مستقل از موقعیت پیمایش فعلی به دست آید.
 
-## Examples
+## مثال‌ها
 
-### Basic
+### مثال پایه
 
-This simple example retrieves the `DOMRect` object representing the bounding
-client rect of a simple `<div>` element, and prints out its properties
-below it.
+این مثال ساده شیء `DOMRect` مربوط به مستطیل مرزی viewport یک عنصر `<div>` ساده را بازیابی کرده و خصوصیات آن را در زیر آن چاپ می‌کند.
 
 ```html
 <div></div>
@@ -105,17 +70,13 @@ for (const key in rect) {
 
 {{EmbedLiveSample('Basic', '100%', 640)}}
 
-Notice how the `width`/`height` are equal to its
-`width`/`height` + `padding`.
+توجه کنید که `width`/`height` برابر با `width`/`height` عنصر + `padding` آن است.
 
-Also note how the values of `x`/`left`,
-`y`/`top`, `right`, and `bottom` are equal
-to the absolute distance from the relevant edge of the viewport to that side of the
-element, in each case.
+همچنین توجه کنید که مقادیر `x`/`left`، `y`/`top`، `right` و `bottom` برابر با فاصله مطلق از لبه مربوطه viewport تا آن سمت عنصر هستند.
 
-### Scrolling
+### پیمایش
 
-This example demonstrates how bounding client rect is changing when document is scrolled.
+این مثال نشان می‌دهد که وقتی سند پیمایش می‌شود، مستطیل مرزی viewport چگونه تغییر می‌کند.
 
 ```html
 <div id="example"></div>
@@ -161,14 +122,14 @@ update();
 
 {{EmbedLiveSample('Scrolling', '100%', 640)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.getClientRects", "getClientRects()")}}
