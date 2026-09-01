@@ -1,11 +1,5 @@
 ---
 title: "EncodedVideoChunk: EncodedVideoChunk() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/EncodedVideoChunk"
-status: "needs-translation"
----
-
----
-title: "EncodedVideoChunk: EncodedVideoChunk() constructor"
 short-title: EncodedVideoChunk()
 slug: Web/API/EncodedVideoChunk/EncodedVideoChunk
 page-type: web-api-constructor
@@ -14,36 +8,36 @@ browser-compat: api.EncodedVideoChunk.EncodedVideoChunk
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`EncodedVideoChunk()`** constructor creates a new {{domxref("EncodedVideoChunk")}} object representing a chunk of encoded video.
+سازندهٔ **`EncodedVideoChunk()`** یک شیء {{domxref("EncodedVideoChunk")}} جدید می‌سازد که یک تکه ویدیوی کدگذاری‌شده را نمایش می‌دهد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new EncodedVideoChunk(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options`
-  - : An object containing the following members:
+  - : یک شیء شامل اعضای زیر:
     - `type`
-      - : Indicates if the chunk is a key chunk that does not rely on other frames for encoding. One of:
+      - : نشان می‌دهد که آیا این تکه، یک تکه کلیدی است که برای کدگذاری به فریم‌های دیگر وابسته نیست. یکی از موارد زیر:
         - `"key"`
-          - : The data is a key chunk.
+          - : داده یک تکه کلیدی است.
         - `"delta"`
-          - : The data is not a key chunk.
+          - : داده یک تکه کلیدی نیست.
     - `timestamp`
-      - : An integer representing the timestamp of the video in microseconds.
+      - : یک عدد صحیح که زمان‌نمای ویدیو را به میکروثانیه نشان می‌دهد.
     - `duration`
-      - : An integer representing the length of the video in microseconds.
+      - : یک عدد صحیح که طول ویدیو را به میکروثانیه نشان می‌دهد.
     - `data`
-      - : An {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, or a {{jsxref("DataView")}} containing the video data.
+      - : یک {{jsxref("ArrayBuffer")}}، یک {{jsxref("TypedArray")}} یا یک {{jsxref("DataView")}} حاوی داده ویدیو.
     - `transfer`
-      - : An array of {{jsxref("ArrayBuffer")}}s that `EncodedVideoChunk` will detach and take ownership of. If the array contains the {{jsxref("ArrayBuffer")}} backing `data`, `EncodedVideoChunk` will use that buffer directly instead of copying from it.
+      - : آرایه‌ای از {{jsxref("ArrayBuffer")}}ها که `EncodedVideoChunk` آن‌ها را جدا کرده و مالکیتشان را بر عهده می‌گیرد. اگر آرایه شامل {{jsxref("ArrayBuffer")}} پشتیبان `data` باشد، `EncodedVideoChunk` مستقیماً از آن بافر استفاده می‌کند و آن را کپی نمی‌کند.
 
-## Examples
+## مثال‌ها
 
-In the following example a new `EncodedVideoChunk` is created.
+در مثال زیر، یک `EncodedVideoChunk` جدید ساخته می‌شود.
 
 ```js
 const init = {
@@ -56,10 +50,10 @@ const init = {
 chunk = new EncodedVideoChunk(init);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
