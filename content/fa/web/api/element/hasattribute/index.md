@@ -1,11 +1,5 @@
 ---
 title: "Element: hasAttribute() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttribute"
-status: "needs-translation"
----
-
----
-title: "Element: hasAttribute() method"
 short-title: hasAttribute()
 slug: Web/API/Element/hasAttribute
 page-type: web-api-instance-method
@@ -14,9 +8,7 @@ browser-compat: api.Element.hasAttribute
 
 {{APIRef("DOM")}}
 
-The **`Element.hasAttribute()`** method returns a
-**Boolean** value indicating whether the specified element has the
-specified attribute or not.
+متد **`Element.hasAttribute()`** یک مقدار **Boolean** (منطقی) برمی‌گرداند که نشان می‌دهد آیا عنصر مشخص‌شده دارای ویژگی (attribute) مشخص‌شده هست یا نه.
 
 ## Syntax
 
@@ -24,16 +16,16 @@ specified attribute or not.
 hasAttribute(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : is a string representing the name of the attribute.
+  - : یک رشته (string) است که نام ویژگی را مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean.
+یک مقدار boolean.
 
-## Examples
+## مثال‌ها
 
 ```js
 const foo = document.getElementById("foo");
@@ -42,15 +34,15 @@ if (foo.hasAttribute("bar")) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Element.hasAttributes()")}}
 - {{domxref("Element.getAttribute()")}}
