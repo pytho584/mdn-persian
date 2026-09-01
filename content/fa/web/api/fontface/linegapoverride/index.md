@@ -1,11 +1,5 @@
 ---
 title: "FontFace: lineGapOverride property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/lineGapOverride"
-status: "needs-translation"
----
-
----
-title: "FontFace: lineGapOverride property"
 short-title: lineGapOverride
 slug: Web/API/FontFace/lineGapOverride
 page-type: web-api-instance-property
@@ -14,14 +8,14 @@ browser-compat: api.FontFace.lineGapOverride
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`lineGapOverride`** property of the {{domxref("FontFace")}} interface returns and sets the value of the {{cssxref("@font-face/line-gap-override")}} descriptor.
-The possible values are `normal`, indicating that the metric used should be obtained from the font file, or a percentage.
+ویژگی **`lineGapOverride`** از رابط {{domxref("FontFace")}} مقدار توصیف‌گر {{cssxref("@font-face/line-gap-override")}} را برمی‌گرداند و تنظیم می‌کند.
+مقادیر ممکن عبارت‌اند از `normal`، که نشان می‌دهد معیار استفاده‌شده باید از فایل فونت به دست آید، یا یک درصد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## نمونه‌ها
 
 ```js
 let fontFace = new FontFace(
@@ -34,10 +28,10 @@ fontFace.lineGapOverride = "normal";
 console.log(fontFace.lineGapOverride); // 'normal'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
