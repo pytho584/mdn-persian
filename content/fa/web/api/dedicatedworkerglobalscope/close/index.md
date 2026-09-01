@@ -1,11 +1,5 @@
 ---
 title: "DedicatedWorkerGlobalScope: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/close"
-status: "needs-translation"
----
-
----
-title: "DedicatedWorkerGlobalScope: close() method"
 short-title: close()
 slug: Web/API/DedicatedWorkerGlobalScope/close
 page-type: web-api-instance-method
@@ -14,43 +8,43 @@ browser-compat: api.DedicatedWorkerGlobalScope.close
 
 {{APIRef("Web Workers API")}}{{AvailableInWorkers("dedicated")}}
 
-The **`close()`** method of the {{domxref("DedicatedWorkerGlobalScope")}} interface discards any tasks queued in the `DedicatedWorkerGlobalScope`'s event loop, effectively closing this particular scope.
+متد **`close()`** در رابط {{domxref("DedicatedWorkerGlobalScope")}}، هر وظیفه‌ای را که در حلقه رویداد (event loop) `DedicatedWorkerGlobalScope` صف شده است دور می‌ریزد و عملاً این محدوده (scope) خاص را می‌بندد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچکدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-If you want to close your worker instance from inside the worker itself, you can call the following:
+اگر می‌خواهید نمونه worker خود را از داخل خود worker ببندید، می‌توانید کد زیر را فراخوانی کنید:
 
 ```js
 close();
 ```
 
-`close()` and `self.close()` are effectively equivalent — both represent `close()` being called from inside the worker's inner scope.
+`close()` و `self.close()` عملاً معادل هستند – هر دو نشان‌دهنده فراخوانی `close()` از داخل محدوده داخلی worker هستند.
 
 > [!NOTE]
-> There is also a way to stop the worker from the main thread: the {{domxref("Worker.terminate")}} method.
+> یک راه دیگر برای متوقف کردن worker از رشته اصلی (main thread) وجود دارد: متد {{domxref("Worker.terminate")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("DedicatedWorkerGlobalScope")}}
