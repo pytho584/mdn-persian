@@ -1,7 +1,5 @@
 ---
 title: "DataTransferItem: getAsFileSystemHandle() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/getAsFileSystemHandle"
-status: "needs-translation"
 ---
 
 ---
@@ -16,37 +14,36 @@ browser-compat: api.DataTransferItem.getAsFileSystemHandle
 
 {{securecontext_header}}{{APIRef("File System API")}}{{SeeCompatTable}}
 
-The **`getAsFileSystemHandle()`** method of the {{domxref("DataTransferItem")}} interface returns a {{jsxref('Promise')}} that fulfills with a {{domxref('FileSystemFileHandle')}} if the dragged item is a file, or fulfills with a {{domxref('FileSystemDirectoryHandle')}} if the dragged item is a directory.
+متد **`getAsFileSystemHandle()`** از رابط {{domxref("DataTransferItem")}} یک {{jsxref('Promise')}} برمی‌گرداند؛ اگر آیتمِ کشیده‌شده یک فایل باشد، این Promise با یک {{domxref('FileSystemFileHandle')}} برآورده می‌شود و اگر آیتمِ کشیده‌شده یک پوشه باشد، با یک {{domxref('FileSystemDirectoryHandle')}} برآورده می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getAsFileSystemHandle()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}}.
+یک {{jsxref('Promise')}}.
 
-If the item's {{domxref("DataTransferItem.kind", "kind")}} property is `"file"`, and this item is accessed in the {{domxref("HTMLElement/dragstart_event", "dragstart")}} or {{domxref("HTMLElement/drop_event", "drop")}} event handlers, then the returned promise is fulfilled with a {{domxref('FileSystemFileHandle')}} if the dragged item is a file or a {{domxref('FileSystemDirectoryHandle')}} if the dragged item is a directory.
+اگر ویژگی {{domxref("DataTransferItem.kind", "kind")}} آیتم برابر با `"file"` باشد و به این آیتم در هندلرهای رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} یا {{domxref("HTMLElement/drop_event", "drop")}} دسترسی داشته باشیم، آنگاه اگر آیتمِ کشیده‌شده یک فایل باشد، Promise بازگشت‌شده با یک {{domxref('FileSystemFileHandle')}} برآورده می‌شود و اگر آیتمِ کشیده‌شده یک پوشه باشد، با یک {{domxref('FileSystemDirectoryHandle')}} برآورده می‌شود.
 
-Otherwise, the promise fulfills with `null`.
+در غیر این صورت، Promise با `null` برآورده می‌شود.
 
-### Exceptions
+### استثناها
 
-None.
+هیچ‌کدام.
 
-## Examples
+## مثال‌ها
 
-This example uses the `getAsFileSystemHandle()` method to return
-{{domxref('FileSystemHandle', 'file handles', '', 'nocode')}} for dropped items.
+این مثال از متد `getAsFileSystemHandle()` برای بازگرداندن {{domxref('FileSystemHandle', 'file handles', '', 'nocode')}} مربوط به آیتم‌های رهاشده استفاده می‌کند.
 
 > [!NOTE]
-> Because `getAsFileSystemHandle()` can only retrieve the entry handle in the same tick as the `drop` event handler, there must be no `await` before it. This is why we synchronously invoke `getAsFileSystemHandle()` for all items first, and then wait for their results concurrently.
+> زیرا `getAsFileSystemHandle()` تنها در همان تیکی که هندلر رویداد `drop` اجرا می‌شود می‌تواند هندلِ آن ورودی را بازیابی کند، نباید هیچ `await`ای قبل از آن وجود داشته باشد. به همین دلیل است که ابتدا `getAsFileSystemHandle()` را برای همه آیتم‌ها به‌صورت همگام فراخوانی می‌کنیم و سپس به‌طور همزمان منتظر نتیجه‌های آن‌ها می‌مانیم.
 
 ```js
 elem.addEventListener("dragover", (e) => {
@@ -73,15 +70,15 @@ elem.addEventListener("drop", async (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
