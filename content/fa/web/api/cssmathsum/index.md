@@ -1,10 +1,4 @@
 ---
-title: "CSSMathSum"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathSum"
-status: "needs-translation"
----
-
----
 title: CSSMathSum
 slug: Web/API/CSSMathSum
 page-type: web-api-interface
@@ -13,21 +7,21 @@ browser-compat: api.CSSMathSum
 
 {{APIRef("CSS Typed Object Model API")}}{{AvailableInWorkers}}
 
-The **`CSSMathSum`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the sum of two or more {{domxref('CSSNumericValue')}} values — in cases where the result can't be represented as a single value.
+رابط **`CSSMathSum`** در [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) مجموع دو یا چند مقدار {{domxref('CSSNumericValue')}} را نشان می‌دهد — در مواردی که نتیجه را نمی‌توان به صورت یک مقدار واحد نمایش داد.
 
 {{InheritanceDiagram}}
 
 ## Constructor
 
 - {{domxref("CSSMathSum.CSSMathSum", "CSSMathSum()")}} {{Experimental_Inline}}
-  - : Creates a new `CSSMathSum` object.
+  - : یک شیء جدید `CSSMathSum` می‌سازد.
 
 ## Instance properties
 
 _Also inherits properties from its parent interface, {{DOMxRef("CSSMathValue")}}._
 
 - {{domxref('CSSMathSum.values')}} {{ReadOnlyInline}}
-  - : Returns a {{domxref('CSSNumericArray')}} object which contains one or more {{domxref('CSSNumericValue')}} objects.
+  - : یک شیء {{domxref('CSSNumericArray')}} برمی‌گرداند که شامل یک یا چند شیء {{domxref('CSSNumericValue')}} است.
 
 ## Static methods
 
@@ -39,21 +33,19 @@ _Also inherits methods from its parent interface, {{DOMxRef("CSSMathValue")}}._
 
 ## Description
 
-A `CSSMathSum` is produced whenever an addition or subtraction can't be resolved to a single value — for example, when the operands use different units, such as a length and a percentage.
+یک `CSSMathSum` هر زمان ساخته می‌شود که یک جمع یا تفریق نتواند به یک مقدار واحد تبدیل شود — برای مثال، وقتی عملوندها واحدهای متفاوتی دارند، مانند طول و درصد.
 
-Calling {{domxref('CSSNumericValue.add','add()')}} or {{domxref('CSSNumericValue.sub','sub()')}} on operands that can't be combined returns a `CSSMathSum`; if every operand shares the same unit, they resolve immediately to a single {{domxref('CSSUnitValue')}} instead.
-{{domxref('CSSNumericValue.toSum','toSum()')}}, by contrast, always returns a `CSSMathSum`, even when its terms could be combined into a single value.
+فراخوانی {{domxref('CSSNumericValue.add','add()')}} یا {{domxref('CSSNumericValue.sub','sub()')}} روی عملوندهایی که نمی‌توان آن‌ها را ترکیب کرد، یک `CSSMathSum` برمی‌گرداند؛ اگر همهٔ عملوندها واحد یکسانی داشته باشند، بلافاصله به یک {{domxref('CSSUnitValue')}} واحد تبدیل می‌شوند. در مقابل، {{domxref('CSSNumericValue.toSum','toSum()')}} همیشه یک `CSSMathSum` برمی‌گرداند، حتی وقتی بتوان عبارت‌های آن را در یک مقدار واحد ترکیب کرد.
 
-[`StylePropertyMapReadOnly.get()`](/en-US/docs/Web/API/StylePropertyMapReadOnly/get) returns a `CSSMathSum` the same way — for a {{cssxref("calc()")}} value that resolves to an addition or subtraction it can't combine into one value.
+[`StylePropertyMapReadOnly.get()`](/en-US/docs/Web/API/StylePropertyMapReadOnly/get) نیز به همین شکل یک `CSSMathSum` برمی‌گرداند — برای یک مقدار {{cssxref("calc()")}} که به جمع یا تفریقی تبدیل می‌شود که نمی‌توان آن را در یک مقدار واحد ترکیب کرد.
 
-`CSSMathSum` represents the sum expression itself, not a resolved value.
-To get the resolved value, use {{domxref("Window.getComputedStyle", "getComputedStyle()")}}.
+`CSSMathSum` خودِ عبارت جمع را نشان می‌دهد، نه مقدار نهایی (resolved). برای دریافت مقدار نهایی، از {{domxref("Window.getComputedStyle", "getComputedStyle()")}} استفاده کنید.
 
 ## Examples
 
 ### Basic usage
 
-The following code creates a `CSSMathSum` instance from three values, then reads back its `operator` and `values` properties.
+کد زیر یک نمونهٔ `CSSMathSum` از سه مقدار می‌سازد و سپس ویژگی‌های `operator` و `values` آن را بازخوانی می‌کند.
 
 ```js
 const sum = new CSSMathSum(CSS.px(10), CSS.em(5), CSS.percent(50));
@@ -67,7 +59,7 @@ console.log(sum.values[0]); // CSSUnitValue {value: 10, unit: "px"}
 
 ### `calc()` representations
 
-This example shows how a {{cssxref("calc()")}} addition is represented by a {{domxref("CSSUnitValue")}} or a `CSSMathSum`, depending on whether its terms share a unit.
+این مثال نشان می‌دهد که یک جمع {{cssxref("calc()")}} چگونه به صورت یک {{domxref("CSSUnitValue")}} یا یک `CSSMathSum` نمایش داده می‌شود، بسته به اینکه عبارت‌های آن واحد مشترکی داشته باشند یا نه.
 
 #### HTML
 
@@ -81,8 +73,7 @@ This example shows how a {{cssxref("calc()")}} addition is represented by a {{do
 
 #### CSS
 
-`width` is set using a `calc()` sum whose terms are both `px` lengths, so the browser can resolve it to a single fixed value immediately.
-`font-size` is set using a `calc()` sum that mixes `rem` and `vw`, so the browser can't combine the terms until layout (this will be represented by a `CSSMathSum`).
+مقدار `width` با یک جمع `calc()` تنظیم شده است که هر دو عبارت آن طول‌های `px` هستند، بنابراین مرورگر می‌تواند بلافاصله آن را به یک مقدار ثابت واحد تبدیل کند. مقدار `font-size` با یک جمع `calc()` تنظیم شده است که واحدهای `rem` و `vw` را ترکیب می‌کند، بنابراین مرورگر نمی‌تواند عبارت‌های آن را تا زمان چیدمان (layout) با هم ترکیب کند (این با یک `CSSMathSum` نمایش داده می‌شود).
 
 ```css
 #demoBox {
@@ -109,7 +100,7 @@ function log(text) {
 }
 ```
 
-First we find the demo box's style rule and read its `width` and `font-size` values using {{domxref("CSSStyleRule.styleMap", "styleMap")}}.
+ابتدا قانون سبکِ جعبهٔ نمونه را پیدا می‌کنیم و مقادیر `width` و `font-size` آن را با استفاده از {{domxref("CSSStyleRule.styleMap", "styleMap")}} می‌خوانیم.
 
 ```js
 const demoBox = document.querySelector("#demoBox");
@@ -121,7 +112,7 @@ const width = styleMap.get("width");
 const fontSize = styleMap.get("font-size");
 ```
 
-We then log the type and value of the CSS Typed OM representations, followed by the computed (resolved) values.
+سپس نوع و مقدارِ نمایش‌های CSS Typed OM را ثبت (log) می‌کنیم و پس از آن مقادیر محاسبه‌شده (resolved) را.
 
 ```js
 log("width");
@@ -137,8 +128,7 @@ log(` resolved: ${getComputedStyle(demoBox).fontSize}`);
 
 #### Result
 
-`width` is represented by a `CSSUnitValue` object, which has a value that matches the resolved width.
-`font-size` is represented by a `CSSMathSum` object that exposes the `calc()` sum's original terms.
+`width` با یک شیء `CSSUnitValue` نمایش داده می‌شود که مقدار آن با عرضِ نهایی (resolved) مطابقت دارد. `font-size` با یک شیء `CSSMathSum` نمایش داده می‌شود که عبارت‌های اصلی جمع `calc()` را آشکار می‌کند.
 
 {{EmbedLiveSample("`calc()` representations", 300, 300)}}
 
