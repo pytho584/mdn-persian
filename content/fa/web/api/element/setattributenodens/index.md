@@ -1,11 +1,5 @@
 ---
 title: "Element: setAttributeNodeNS() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNodeNS"
-status: "needs-translation"
----
-
----
-title: "Element: setAttributeNodeNS() method"
 short-title: setAttributeNodeNS()
 slug: Web/API/Element/setAttributeNodeNS
 page-type: web-api-instance-method
@@ -14,11 +8,11 @@ browser-compat: api.Element.setAttributeNodeNS
 
 {{ APIRef("DOM") }}
 
-The **`setAttributeNodeNS()`** method of the {{domxref("Element")}} interface adds a new namespaced {{domxref("Attr")}} node to an element.
+متد **`setAttributeNodeNS()`** در رابط {{domxref("Element")}} یک گره {{domxref("Attr")}} نام‌فضایی جدید به یک عنصر اضافه می‌کند.
 
-If you don't need to work with the attribute node (such as cloning from another element) before adding it, you can use the {{domxref("Element.setAttributeNS()", "setAttributeNS()")}} method instead.
+اگر قبل از اضافه کردن نیازی به کار با گره ویژگی (مثلاً برای شبیه‌سازی از یک عنصر دیگر) ندارید، می‌توانید از متد {{domxref("Element.setAttributeNS()", "setAttributeNS()")}} استفاده کنید.
 
-If you are working with HTML documents and you don't need to specify the requested attribute as being part of a specific namespace, use the {{domxref("Element.setAttribute()", "setAttribute()")}} method instead.
+اگر با اسناد HTML کار می‌کنید و نیازی به مشخص کردن ویژگی درخواستی به‌عنوان بخشی از یک نام‌فضای خاص ندارید، از متد {{domxref("Element.setAttribute()", "setAttribute()")}} استفاده کنید.
 
 ## Syntax
 
@@ -29,11 +23,11 @@ setAttributeNodeNS(attributeNode)
 ### Parameters
 
 - `attributeNode`
-  - : The {{domxref("Attr")}} node to add to the element.
+  - : گره {{domxref("Attr")}} که قرار است به عنصر اضافه شود.
 
 ### Return value
 
-The replaced attribute node, if any, returned by this function.
+گره ویژگی جایگزین‌شده، در صورت وجود، که توسط این تابع برگردانده می‌شود.
 
 ## Examples
 
@@ -52,9 +46,9 @@ alert(d2.attributes[1].value); // returns: `utterleft'
 
 ## Notes
 
-If the specified attribute already exists on the element, then that attribute is replaced with the new one and the replaced one is returned.
+اگر ویژگی مشخص‌شده از قبل روی عنصر وجود داشته باشد، آن ویژگی با ویژگی جدید جایگزین می‌شود و ویژگی جایگزین‌شده برگردانده می‌شود.
 
-Note that if you try to set without cloning the node, you may see `NS_ERROR_DOM_INUSE_ATTRIBUTE_ERR` "Attribute already in use" error, as the DOM requires cloning for {{domxref("Attr")}} to be reused (unlike other Nodes which can be moved).
+توجه داشته باشید که اگر بخواهید بدون شبیه‌سازی (clone) کردن گره، آن را تنظیم کنید، ممکن است خطای `NS_ERROR_DOM_INUSE_ATTRIBUTE_ERR` «ویژگی در حال استفاده است» را ببینید؛ زیرا DOM برای استفاده مجدد از {{domxref("Attr")}} نیاز به شبیه‌سازی دارد (برخلاف سایر گره‌ها که می‌توانند جابه‌جا شوند).
 
 ## Specifications
 
