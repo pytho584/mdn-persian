@@ -1,10 +1,4 @@
 ---
-title: "HTMLProgressElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement"
-status: "needs-translation"
----
-
----
 title: HTMLProgressElement
 slug: Web/API/HTMLProgressElement
 page-type: web-api-interface
@@ -13,35 +7,35 @@ browser-compat: api.HTMLProgressElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLProgressElement`** interface provides special properties and methods (beyond the regular {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating the layout and presentation of {{HTMLElement("progress")}} elements.
+رابط **`HTMLProgressElement`** ویژگی‌ها و متدهای خاصی (فراتر از رابط معمولی {{domxref("HTMLElement")}} که به‌صورت ارث‌بری در اختیار دارد) برای دستکاری چیدمان و نمایش عناصر {{HTMLElement("progress")}} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLProgressElement.max")}}
-  - : A `double` value reflecting the content attribute of the same name, limited to numbers greater than zero. Its default value is `1.0`.
+  - : یک مقدار `double` که منعکس‌کنندهٔ ویژگی محتوایی همنام است و به اعداد بزرگ‌تر از صفر محدود می‌شود. مقدار پیش‌فرض آن `1.0` است.
 - {{domxref("HTMLProgressElement.position")}} {{ReadOnlyInline}}
-  - : Returns a `double` value returning the result of dividing the current value (`value`) by the maximum value (`max`); if the progress bar is an indeterminate progress bar, it returns `-1`.
+  - : یک مقدار `double` برمی‌گرداند که حاصل تقسیم مقدار فعلی (`value`) بر حداکثر مقدار (`max`) است؛ اگر نوار پیشرفت نامعین (indeterminate) باشد، `1-` برمی‌گرداند.
 - {{domxref("HTMLProgressElement.value")}}
-  - : A `double` value that reflects the current value; if the progress bar is an indeterminate progress bar, it returns `0`.
+  - : یک مقدار `double` که مقدار فعلی را منعکس می‌کند؛ اگر نوار پیشرفت نامعین باشد، `0` برمی‌گرداند.
 - {{domxref("HTMLProgressElement.labels")}} {{ReadOnlyInline}}
-  - : Returns {{domxref("NodeList")}} containing the list of {{HTMLElement("label")}} elements that are labels for this element.
+  - : یک {{domxref("NodeList")}} حاوی فهرست عناصر {{HTMLElement("label")}} که برچسب‌های این عنصر هستند را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_متد خاصی وجود ندارد؛ متدهای والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("progress")}}
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("progress")}}
