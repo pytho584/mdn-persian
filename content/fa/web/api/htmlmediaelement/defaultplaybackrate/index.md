@@ -1,7 +1,5 @@
 ---
 title: "HTMLMediaElement: defaultPlaybackRate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/defaultPlaybackRate"
-status: "needs-translation"
 ---
 
 ---
@@ -14,32 +12,32 @@ browser-compat: api.HTMLMediaElement.defaultPlaybackRate
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.defaultPlaybackRate`** property indicates the default playback rate for the media.
+ویژگی **`HTMLMediaElement.defaultPlaybackRate`** نرخ پخش پیش‌فرض رسانه را مشخص می‌کند.
 
-## Value
+## مقدار
 
-A double. `1.0` is "normal speed," values lower than `1.0` make the media play slower than normal, higher values make it play faster.
+یک عدد اعشاری (double). مقدار `1.0` به معنای «سرعت عادی» است؛ مقادیر کمتر از `1.0` باعث پخش کندتر رسانه و مقادیر بیشتر باعث پخش سریع‌تر آن می‌شوند.
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the specified value is not supported.
+  - : اگر مقدار مشخص‌شده پشتیبانی نشود، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const obj = document.createElement("video");
 console.log(obj.defaultPlaybackRate); // 1
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.defaultPlaybackRate` property
+- {{domxref("HTMLMediaElement")}}: اینترفیسی که برای تعریف ویژگی `HTMLMediaElement.defaultPlaybackRate` استفاده می‌شود.
