@@ -1,7 +1,5 @@
 ---
 title: "Element: clientLeft property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/clientLeft"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,18 @@ browser-compat: api.Element.clientLeft
 
 {{ APIRef("DOM") }}
 
-The **`clientLeft`** read-only property of the {{domxref("Element")}} interface returns the width of the left border of an element in pixels. It includes the width of the vertical scrollbar if the text direction of the element is right-to-left and if there is an overflow causing a left vertical scrollbar to be rendered. `clientLeft` does not include the left margin or the left padding.
+ویژگی فقط‌خواندنی **`clientLeft`** در رابط {{domxref("Element")}} عرض حاشیه چپ یک عنصر را بر حسب پیکسل برمی‌گرداند. اگر جهت متن عنصر راست‌به‌چپ باشد و سرریزی (overflow) وجود داشته باشد که باعث رندر شدن اسکرول‌بار عمودی در سمت چپ شود، این مقدار شامل عرض آن اسکرول‌بار عمودی نیز می‌شود. `clientLeft` شامل حاشیه بیرونی چپ (margin) یا فاصله داخلی چپ (padding) نمی‌شود.
 
 > [!NOTE]
-> When an element has `display: inline`, `clientLeft` returns `0` regardless of the element's border.
+> وقتی عنصری دارای `display: inline` باشد، `clientLeft` بدون توجه به حاشیه عنصر مقدار `0` برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In the following example, the client area has a white background and a 24px black `border-left`. The `clientLeft` value is the distance from where the margin (yellow) area ends and the padding and content areas (white) begin: that is, 24px.
+در مثال زیر، ناحیه کلاینت دارای پس‌زمینه سفید و یک `border-left` به رنگ مشکی با ضخامت ۲۴ پیکسل است. مقدار `clientLeft` فاصله‌ای است که از انتهای ناحیه حاشیه بیرونی (زرد) شروع شده و به ابتدای ناحیه padding و محتوا (سفید) ختم می‌شود؛ یعنی ۲۴ پیکسل.
 
 ### HTML
 
@@ -60,21 +58,21 @@ In the following example, the client area has a white background and a 24px blac
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", 400, 350)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Determining the dimensions of elements](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
+- [تعیین ابعاد عناصر](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
 - {{domxref("HTMLElement.offsetLeft")}}
 - {{domxref("Element.scrollLeft")}}
 - {{domxref("Element.clientHeight")}}
