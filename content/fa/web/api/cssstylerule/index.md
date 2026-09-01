@@ -1,10 +1,4 @@
 ---
-title: "CSSStyleRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule"
-status: "needs-translation"
----
-
----
 title: CSSStyleRule
 slug: Web/API/CSSStyleRule
 page-type: web-api-interface
@@ -13,30 +7,30 @@ browser-compat: api.CSSStyleRule
 
 {{ APIRef("CSSOM") }}
 
-The **`CSSStyleRule`** interface represents a single CSS style rule.
+رابطِ **`CSSStyleRule`** یک قانون استایلِ تکیِ CSS را نمایش می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestors {{domxref("CSSGroupingRule")}} and {{domxref("CSSRule")}}._
+_ویژگی‌ها را از والدهای خود، یعنی {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} به ارث می‌برد._
 
 - {{domxref("CSSStyleRule.selectorText")}}
-  - : Returns the textual representation of the selector for this rule, e.g., `"h1, h2"`.
+  - : نمایش متنی انتخابگر (selector) این قانون را برمی‌گرداند؛ مثلاً `"h1, h2"`.
 - {{domxref("CSSStyleRule.style")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("CSSStyleProperties")}} object for the rule, which represents its styles.
+  - : شیء {{domxref("CSSStyleProperties")}} مربوط به این قانون را برمی‌گرداند که استایل‌های آن را نشان می‌دهد.
 - {{domxref("CSSStyleRule.styleMap")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref('StylePropertyMap')}} object which provides access to the rule's property-value pairs.
+  - : یک شیء {{domxref('StylePropertyMap')}} برمی‌گرداند که به جفت‌های ویژگی-مقدارِ این قانون دسترسی می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its ancestors {{domxref("CSSGroupingRule")}} and {{domxref("CSSRule")}}._
+_روش‌ها را از والدهای خود، یعنی {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Getting a style rule
+### دریافت یک قانون استایل
 
-The CSS below defines the style rule for the `h1` selector, which is represented in code by a `CSSStyleRule` instance.
+CSS زیر قانون استایل مربوط به انتخابگرِ `h1` را تعریف می‌کند که در کد با یک نمونه از `CSSStyleRule` نمایش داده می‌شود.
 
 ```css
 h1 {
@@ -44,18 +38,17 @@ h1 {
 }
 ```
 
-Assuming the above style rule is the first rule in the document, it will be the first {{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`.
-`myRules[0].style` returns a {{domxref("CSSStyleProperties")}} object representing the declarations defined for `h1`.
+با فرض اینکه قانون استایل بالا اولین قانون در سند باشد، اولین {{domxref("CSSRule")}} خواهد بود که توسط `document.styleSheets[0].cssRules` برگردانده می‌شود. عبارت `myRules[0].style` یک شیء {{domxref("CSSStyleProperties")}} برمی‌گرداند که اعلان‌های تعریف‌شده برای `h1` را نشان می‌دهد.
 
 ```js
 let myRules = document.styleSheets[0].cssRules;
-console.log(myRules[0]); // a CSSStyleRule representing the h1.
+console.log(myRules[0]); // یک CSSStyleRule که نمایانگر h1 است.
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
