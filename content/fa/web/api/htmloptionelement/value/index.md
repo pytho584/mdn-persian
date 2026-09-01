@@ -1,11 +1,5 @@
 ---
 title: "HTMLOptionElement: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement/value"
-status: "needs-translation"
----
-
----
-title: "HTMLOptionElement: value property"
 short-title: value
 slug: Web/API/HTMLOptionElement/value
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLOptionElement.value
 
 {{ APIRef("HTML DOM") }}
 
-The **`value`** property of the {{DOMxRef("HTMLOptionElement")}} interface represents the value of the {{htmlelement("option")}} element as a string, or the empty string if no value is set. It reflects the element's [`value`](/en-US/docs/Web/HTML/Reference/Elements/option#value) attribute, if present. Otherwise, it returns or sets the contents of the element, similar to the {{domxref("Node.textContent","textContent")}} property.
+ویژگی **`value`** در رابط {{DOMxRef("HTMLOptionElement")}} مقدار عنصر {{htmlelement("option")}} را به‌صورت یک رشته نمایش می‌دهد؛ یا اگر مقداری تنظیم نشده باشد، رشتهٔ خالی. این ویژگی، صفت [`value`](/en-US/docs/Web/HTML/Reference/Elements/option#value) عنصر را در صورت وجود منعکس می‌کند. در غیر این صورت، محتویات عنصر را برمی‌گرداند یا تنظیم می‌کند، مشابه ویژگی {{domxref("Node.textContent","textContent")}}.
 
-## Value
+## مقدار
 
-A string containing the `value` attribute value, if present, or the contents of the element.
+رشته‌ای شامل مقدار صفت `value` در صورت وجود، یا محتویات عنصر.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const optionElement = document.querySelector("datalist option:first-of-type");
@@ -28,15 +22,15 @@ const oldValue = optionElement.value;
 optionElement.value = oldValue.toUpperCase();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("option")}}
 - {{DOMXref("HTMLOptionElement.selected")}}
