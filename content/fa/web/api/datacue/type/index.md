@@ -1,9 +1,4 @@
----
-title: "DataCue: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataCue/type"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "DataCue: type property"
 short-title: type
@@ -16,25 +11,25 @@ browser-compat: api.DataCue.type
 
 {{APIRef("WebVTT")}}{{SeeCompatTable}}
 
-The **`type`** read-only property of the {{domxref("DataCue")}} interface returns a string identifying the type or schema of the data stored in the cue's {{domxref("DataCue.value", "value")}} property. This is typically a reverse-domain notation string (e.g., `"org.id3"`, `"com.apple.itunes"`) that allows applications to interpret the cue's data payload correctly.
+ویژگی فقط‌خواندنی **`type`** در رابط {{domxref("DataCue")}} رشته‌ای را برمی‌گرداند که نوع یا ساختار داده‌های ذخیره‌شده در ویژگی {{domxref("DataCue.value", "value")}} نشانه را مشخص می‌کند. این مقدار معمولاً رشته‌ای با نماد دامنهٔ معکوس است (مانند `"org.id3"`، `"com.apple.itunes"`) که به برنامه‌ها امکان می‌دهد بار دادهٔ نشانه را به درستی تفسیر کنند.
 
-When a user agent automatically generates `DataCue` objects for in-band timed metadata (for example, from an HTTP Live Streaming source), it sets this property to indicate the metadata format. When application code creates a `DataCue` using the {{domxref("DataCue.DataCue", "DataCue()")}} constructor, the `type` is set from the optional fourth argument and defaults to an empty string if omitted.
+وقتی عامل کاربر به‌صورت خودکار برای ابردادهٔ زمان‌دار درون‌باند (in-band) شیءهای `DataCue` می‌سازد (مثلاً از یک منبع HTTP Live Streaming)، این ویژگی را برای نشان دادن قالب ابرداده تنظیم می‌کند. وقتی کد برنامه با استفاده از سازندهٔ {{domxref("DataCue.DataCue", "DataCue()")}} یک `DataCue` ایجاد می‌کند، `type` از آرگومان اختیاری چهارم گرفته می‌شود و در صورت حذف شدن، به رشتهٔ خالی پیش‌فرض تنظیم می‌گردد.
 
-## Value
+## مقدار
 
-A string. Common values set by user agents for in-band metadata include:
+یک رشته. مقادیر رایجی که عامل‌های کاربر برای ابردادهٔ درون‌باند تنظیم می‌کنند عبارت‌اند از:
 
-- `"org.id3"` — ID3 metadata.
-- `"org.mp4ra"` — MPEG-4 metadata.
-- `"com.apple.quicktime.udta"` — QuickTime User Data.
-- `"com.apple.quicktime.mdta"` — QuickTime Metadata.
-- `"com.apple.itunes"` — iTunes metadata.
+- `"org.id3"` — ابردادهٔ ID3.
+- `"org.mp4ra"` — ابردادهٔ MPEG-4.
+- `"com.apple.quicktime.udta"` — دادهٔ کاربر QuickTime.
+- `"com.apple.quicktime.mdta"` — ابردادهٔ QuickTime.
+- `"com.apple.itunes"` — ابردادهٔ iTunes.
 
-Application-defined cues may use any string, but reverse-domain notation is recommended to avoid collisions.
+نشانه‌های تعریف‌شده توسط برنامه می‌توانند از هر رشته‌ای استفاده کنند، اما برای جلوگیری از تداخل، نماد دامنهٔ معکوس توصیه می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Reading the type of a DataCue
+### خواندن type یک DataCue
 
 ```html
 <video controls src="video.mp4"></video>
@@ -57,9 +52,9 @@ console.log(cue.type);
 // "org.example.geo"
 ```
 
-### Dispatching on type for in-band metadata
+### توزیع بر اساس type برای ابردادهٔ درون‌باند
 
-When a user agent generates `DataCue` objects from in-band timed metadata, the `type` property can be used to determine how to handle each cue.
+وقتی عامل کاربر شیءهای `DataCue` را از ابردادهٔ زمان‌دار درون‌باند می‌سازد، می‌توان از ویژگی `type` برای تعیین نحوهٔ مدیریت هر نشانه استفاده کرد.
 
 ```js
 track.addEventListener("cuechange", () => {
@@ -78,17 +73,18 @@ track.addEventListener("cuechange", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DataCue")}}
 - {{domxref("DataCue.value")}}
-- {{domxref("DataCue.DataCue", "DataCue()")}} constructor
+- سازندهٔ {{domxref("DataCue.DataCue", "DataCue()")}}
 - {{domxref("TextTrackCue")}}
+```
