@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: href property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/href"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: href property"
 short-title: href
 slug: Web/API/HTMLAreaElement/href
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.HTMLAreaElement.href
 
 {{ApiRef("HTML DOM")}}
 
-The **`HTMLAreaElement.href`** property is a
-{{Glossary("stringifier")}} that returns a string containing the whole URL, and allows
-the href to be updated.
+خاصیت **`HTMLAreaElement.href`** یک {{Glossary("stringifier")}} است که رشته‌ای شامل کل URL را بازمی‌گرداند و امکان به‌روزرسانی `href` را فراهم می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 // An <area id="myArea" href="https://developer.mozilla.org/en-US/HTMLAreaElement"> element is in the document
@@ -30,14 +22,14 @@ const area = document.getElementById("myArea");
 area.href; // returns 'https://developer.mozilla.org/en-US/HTMLAreaElement'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{domxref("HTMLAreaElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAreaElement")}} که این خاصیت به آن تعلق دارد.
