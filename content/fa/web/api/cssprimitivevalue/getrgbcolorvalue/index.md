@@ -1,11 +1,5 @@
 ---
 title: "CSSPrimitiveValue: getRGBColorValue() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPrimitiveValue/getRGBColorValue"
-status: "needs-translation"
----
-
----
-title: "CSSPrimitiveValue: getRGBColorValue() method"
 short-title: getRGBColorValue()
 slug: Web/API/CSSPrimitiveValue/getRGBColorValue
 page-type: web-api-instance-method
@@ -17,42 +11,37 @@ browser-compat: api.CSSPrimitiveValue.getRGBColorValue
 
 {{APIRef("CSSOM")}}{{deprecated_header}}{{non-standard_header}}
 
-The **`getRGBColorValue()`** method of the
-{{domxref("CSSPrimitiveValue")}} interface is used to get an RGB color value. If this
-CSS value doesn't contain a RGB color value, a {{domxref("DOMException")}} is raised.
-Modification to the corresponding style property can be achieved using the
-{{domxref("RGBColor")}} interface.
+متد **`getRGBColorValue()`** از رابط {{domxref("CSSPrimitiveValue")}} برای دریافت یک مقدار رنگ RGB استفاده می‌شود. اگر این مقدار CSS حاوی مقدار رنگ RGB نباشد، یک {{domxref("DOMException")}} پرتاب می‌شود. تغییر در ویژگی سبک متناظر را می‌توان با استفاده از رابط {{domxref("RGBColor")}} انجام داد.
 
 > [!NOTE]
-> This method was part of an attempt to create a typed CSS Object Model. This attempt has been abandoned, and most browsers do
-> not implement it.
+> این متد بخشی از تلاش برای ایجاد یک مدل شیء CSS تایپ‌شده بود. این تلاش رها شده است و بیشتر مرورگرها آن را پیاده‌سازی نمی‌کنند.
 >
-> To achieve your purpose, you can use:
+> برای دستیابی به هدف خود، می‌توانید از:
 >
-> - the untyped [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model), widely supported, or
-> - the modern [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API), less supported and considered experimental.
+> - مدل شیء CSS بدون تایپ (CSS Object Model) که به طور گسترده پشتیبانی می‌شود، یا
+> - API مدرن مدل شیء CSS تایپ‌شده (CSS Typed Object Model API) که کمتر پشتیبانی می‌شود و آزمایشی در نظر گرفته می‌شود، استفاده کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getRGBColorValue()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار برگشتی
 
-An {{domxref("RGBColor")}} object representing the color value.
+یک شیء {{domxref("RGBColor")}} که مقدار رنگ را نمایش می‌دهد.
 
-### Exceptions
+### استثناها
 
-| **Type**       | **Description**                                                                                                                |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `DOMException` | An `INVALID_ACCESS_ERR` is raised if the attached property can't return an RGB color value (i.e., this is not `CSS_RGBCOLOR`). |
+| نوع            | توضیحات                                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------------------- |
+| `DOMException` | یک خطای `INVALID_ACCESS_ERR` پرتاب می‌شود اگر ویژگی متصل نتواند مقدار رنگ RGB برگرداند (یعنی این `CSS_RGBCOLOR` نیست). |
 
-## Examples
+## مثال‌ها
 
 ```js
 const cs = window.getComputedStyle(document.body);
@@ -60,13 +49,12 @@ const cssValue = cs.getPropertyCSSValue("color");
 console.log(cssValue.getRGBColorValue());
 ```
 
-## Specifications
+## مشخصات
 
-This feature was originally defined in the [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) specification, but has been dropped from any
-standardization effort since then.
+این ویژگی در ابتدا در مشخصات [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) تعریف شده بود، اما از آن زمان به بعد از هرگونه تلاش استانداردسازی حذف شده است.
 
-It has been superseded by a modern, but incompatible, [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) that is now on the standard track.
+این ویژگی با یک API مدرن اما ناسازگار، یعنی [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) که اکنون در مسیر استاندارد قرار دارد، جایگزین شده است.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
