@@ -1,7 +1,6 @@
 ---
 title: "In depth: Microtasks and the JavaScript runtime environment"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth"
-status: "needs-translation"
 ---
 
 ---
@@ -12,26 +11,26 @@ page-type: guide
 
 {{DefaultAPISidebar("HTML DOM")}}
 
-When debugging or, possibly, when trying to decide upon the best approach to solving a problem around timing and scheduling of tasks and microtasks, there are things about how the JavaScript runtime operates under the hood that may be useful to understand.
+هنگام اشکال‌زدایی یا احتمالاً هنگام تلاش برای انتخاب بهترین رویکرد برای حل مسئله‌ای در مورد زمان‌بندی و برنامه‌ریزی وظایف (tasks) و ریزوظایف (microtasks)، دانستن چگونگی عملکرد زمان اجرای JavaScript در پس‌زمینه می‌تواند مفید باشد.
 
-JavaScript is an inherently single-threaded language. It was designed in an era in which this was a positive choice; there were few multi-processor computers available to the general public, and the expected amount of code that would be handled by JavaScript was relatively low at that time.
+JavaScript به طور ذاتی یک زبان تک‌رشته‌ای (single-threaded) است. در عصری طراحی شد که این انتخاب مثبتی بود؛ کامپیوترهای چندپردازنده‌ای کمی در دسترس عموم بود و میزان کدی که انتظار می‌رفت توسط JavaScript مدیریت شود در آن زمان نسبتاً کم بود.
 
-As time passed, of course, we know that computers have evolved into powerful multi-core systems, and JavaScript has become one of the most prolifically-used languages in the computing world. A vast number of the most popular applications are based at least in part on JavaScript code. To support this, it was necessary to find ways to allow for projects to escape the limitations of a single-threaded language.
+با گذشت زمان، البته، می‌دانیم که کامپیوترها به سیستم‌های چند هسته‌ای قدرتمند تبدیل شده‌اند و JavaScript به یکی از پرمصرف‌ترین زبان‌ها در دنیای محاسبات تبدیل شده است. تعداد زیادی از محبوب‌ترین برنامه‌ها حداقل تا حدی بر پایه کد JavaScript هستند. برای پشتیبانی از این امر، یافتن راه‌هایی برای فرار پروژه‌ها از محدودیت‌های یک زبان تک‌رشته‌ای ضروری بود.
 
-Starting with the addition of timeouts and intervals as part of the Web API ({{domxref("Window.setTimeout", "setTimeout()")}} and {{domxref("Window.setInterval", "setInterval()")}}), the JavaScript environment provided by Web browsers has gradually advanced to include powerful features that enable scheduling of tasks, multi-threaded application development, and so forth. To understand where {{domxref("Window.queueMicrotask()", "queueMicrotask()")}} comes into play here, it's helpful to understand how the JavaScript runtime operates when scheduling and running code.
+با افزودن timeout و interval به عنوان بخشی از Web API ({{domxref("Window.setTimeout", "setTimeout()")}} و {{domxref("Window.setInterval", "setInterval()")}})، محیط JavaScript ارائه‌شده توسط مرورگرهای وب به تدریج پیشرفت کرد تا ویژگی‌های قدرتمندی را شامل شود که امکان زمان‌بندی وظایف، توسعه برنامه‌های چندرشته‌ای و غیره را فراهم می‌کند. برای درک اینکه {{domxref("Window.queueMicrotask()", "queueMicrotask()")}} در اینجا چه نقشی دارد، دانستن نحوه عملکرد زمان اجرای JavaScript هنگام زمان‌بندی و اجرای کد مفید است.
 
-## JavaScript execution contexts
+## بافت‌های اجرای JavaScript
 
 > [!NOTE]
-> The details here are generally not important to most JavaScript programmers. This information is provided as a basis for why microtasks are useful and how they function; if you don't care, you can skip this and come back later if you find that you need to.
+> جزئیات اینجا معمولاً برای اکثر برنامه‌نویسان JavaScript مهم نیست. این اطلاعات به عنوان مبنایی برای فهم اینکه چرا ریزوظایف مفید هستند و چگونه کار می‌کنند ارائه شده است؛ اگر اهمیتی نمی‌دهید، می‌توانید از این بخش عبور کنید و بعداً اگر نیاز پیدا کردید بازگردید.
 
-When a fragment of JavaScript code runs, it runs inside an **execution context**. There are three types of code that create a new execution context:
+وقتی تکه‌ای از کد JavaScript اجرا می‌شود، درون یک **بافت اجرا (execution context)** اجرا می‌شود. سه نوع کد وجود دارد که یک بافت اجرای جدید ایجاد می‌کند:
 
-- The global context is the execution context created to run the main body of your code; that is, any code that exists outside of a JavaScript function.
-- Each function is run within its own execution context. This is frequently referred to as a "local context."
-- Using the ill-advised {{jsxref("Global_Objects/eval", "eval()")}} function also creates a new execution context.
+- بافت سراسری (global context) بافت اجرایی است که برای اجرای بدنه اصلی کد شما ایجاد می‌شود؛ یعنی هر کدی که خارج از یک تابع JavaScript وجود دارد.
+- هر تابع در بافت اجرای خاص خود اجرا می‌شود. این اغلب به عنوان "بافت محلی (local context)" نامیده می‌شود.
+- استفاده از تابع نامناسب {{jsxref("Global_Objects/eval", "eval()")}} نیز یک بافت اجرای جدید ایجاد می‌کند.
 
-Each context is, in essence, a level of scope within your code. As one of these code segments begins execution, a new context is constructed in which to run it; that context is then destroyed when the code exits. Consider the JavaScript program below:
+هر بافت در اصل یک سطح از دامنه (scope) درون کد شماست. با شروع اجرای یکی از این قطعات کد، یک بافت جدید برای اجرای آن ساخته می‌شود؛ سپس این بافت هنگام خروج کد از بین می‌رود. برنامه JavaScript زیر را در نظر بگیرید:
 
 ```js
 const outputElem = document.getElementById("output");
@@ -65,90 +64,90 @@ greetUser("Teresa");
 greetUser("Veronica");
 ```
 
-This short program contains three execution contexts, some of which are created and destroyed several times over the course of the program's execution. As each context is created, it is placed on the **execution context stack**. When it exits, the context is removed from the context stack.
+این برنامه کوتاه شامل سه بافت اجرا است که برخی از آنها در طول اجرای برنامه چندین بار ایجاد و از بین می‌روند. با ایجاد هر بافت، آن را روی **پشته بافت اجرا (execution context stack)** قرار می‌دهد. وقتی بافت خارج می‌شود، از پشته بافت حذف می‌شود.
 
-- Upon starting the program, the global context is created.
-  - When `greetUser("Mike")` is reached, a context is created for the `greetUser()` function; this execution context is pushed onto the execution context stack.
-    - When `greetUser()` calls `localGreeting()`, another context is created to run that function. When this function returns, the context for `localGreeting()` is removed from the execution stack and destroyed. Program execution resumes with the next context found on the stack, which is `greetUser()`; this function resumes execution where it left off.
-    - The `greetUser()` function returns and its context is removed from the stack and destroyed.
+- با شروع برنامه، بافت سراسری ایجاد می‌شود.
+  - وقتی به `greetUser("Mike")` می‌رسیم، یک بافت برای تابع `greetUser()` ایجاد می‌شود؛ این بافت اجرا به پشته بافت اجرا اضافه می‌شود.
+    - وقتی `greetUser()` تابع `localGreeting()` را فراخوانی می‌کند، بافت دیگری برای اجرای آن تابع ایجاد می‌شود. وقتی این تابع بازمی‌گردد، بافت `localGreeting()` از پشته اجرا حذف و از بین می‌رود. اجرای برنامه با بافت بعدی در پشته، یعنی `greetUser()` ادامه می‌یابد؛ این تابع اجرای خود را از جایی که متوقف شده بود از سر می‌گیرد.
+    - تابع `greetUser()` بازمی‌گردد و بافت آن از پشته حذف و از بین می‌رود.
 
-  - When `greetUser("Teresa")` is reached, a context is created for it and pushed onto the stack.
-    - When `greetUser()` calls `localGreeting()`, another context is created to run that function. When this function returns, the context for `localGreeting()` is removed from the execution stack and destroyed. `greetUser()` continues to execute where it left off.
-    - The `greetUser()` function returns and its context is removed from the stack and destroyed.
+  - وقتی به `greetUser("Teresa")` می‌رسیم، یک بافت برای آن ایجاد و به پشته اضافه می‌شود.
+    - وقتی `greetUser()` تابع `localGreeting()` را فراخوانی می‌کند، بافت دیگری برای اجرای آن تابع ایجاد می‌شود. وقتی این تابع بازمی‌گردد، بافت `localGreeting()` از پشته اجرا حذف و از بین می‌رود. `greetUser()` به اجرای خود از جایی که متوقف شده بود ادامه می‌دهد.
+    - تابع `greetUser()` بازمی‌گردد و بافت آن از پشته حذف و از بین می‌رود.
 
-  - When `greetUser("Veronica")` is reached, a context is created for it and pushed onto the stack.
-    - When `greetUser()` calls `localGreeting()`, another context is created to run that function. When this function returns, the context for `localGreeting()` is removed from the execution stack and destroyed.
-    - The `greetUser()` function returns and its context is removed from the stack and destroyed.
+  - وقتی به `greetUser("Veronica")` می‌رسیم، یک بافت برای آن ایجاد و به پشته اضافه می‌شود.
+    - وقتی `greetUser()` تابع `localGreeting()` را فراخوانی می‌کند، بافت دیگری برای اجرای آن تابع ایجاد می‌شود. وقتی این تابع بازمی‌گردد، بافت `localGreeting()` از پشته اجرا حذف و از بین می‌رود.
+    - تابع `greetUser()` بازمی‌گردد و بافت آن از پشته حذف و از بین می‌رود.
 
-- The main program exits and its execution context is removed from the execution stack; as there are no contexts remaining on the stack, program execution ends.
+- برنامه اصلی خارج می‌شود و بافت اجرای آن از پشته اجرا حذف می‌شود؛ از آنجایی که هیچ بافت دیگری در پشته باقی نمانده، اجرای برنامه پایان می‌یابد.
 
-Using execution contexts in this manner, each program and function is able to have its own set of variables and other objects. Each context additionally tracks the next line in the program that should be run and other information critical to that context's operation. By using the contexts and the context stack in this manner, many of the fundamentals of how a program operates can be managed, including local and global variables, function calls and returns, and so forth.
+با استفاده از بافت‌های اجرا به این روش، هر برنامه و تابع می‌تواند مجموعه متغیرها و اشیاء دیگر خود را داشته باشد. هر بافت همچنین خط بعدی برنامه را که باید اجرا شود و سایر اطلاعات حیاتی برای عملکرد آن بافت را ردیابی می‌کند. با استفاده از بافت‌ها و پشته بافت به این روش، بسیاری از مبانی نحوه عملکرد یک برنامه قابل مدیریت است، از جمله متغیرهای محلی و سراسری، فراخوانی و بازگشت توابع و غیره.
 
-A special note about recursive functions—that is, functions which call themselves, possibly over multiple levels of depth or recursion: each recursive call to the function creates a new execution context. This allows the JavaScript runtime to track the levels of recursion and the return of results through that recursion, but it also means that each time a function recurses, more memory is needed to create the new context.
+یک نکته ویژه در مورد توابع بازگشتی (recursive) - یعنی توابعی که خود را فراخوانی می‌کنند، احتمالاً در چندین سطح از عمق یا بازگشت: هر فراخوانی بازگشتی به تابع یک بافت اجرای جدید ایجاد می‌کند. این به runtime JavaScript اجازه می‌دهد سطوح بازگشت و بازگشت نتایج را از طریق آن بازگشت ردیابی کند، اما همچنین به این معنی است که هر بار که یک تابع بازگشت می‌کند، حافظه بیشتری برای ایجاد بافت جدید مورد نیاز است.
 
-## Run, JavaScript, run
+## اجرا، JavaScript، اجرا
 
-To run JavaScript code, the runtime engine maintains a set of **agents** in which to execute JavaScript code. Each agent is made up of a set of execution contexts, the execution context stack, a main thread, a set for any additional threads that may be created to handle workers, a task queue, and a microtask queue. Other than the main thread—which some browsers share across multiple agents—each component of an agent is unique to that agent.
+برای اجرای کد JavaScript، موتور runtime مجموعه‌ای از **عامل‌ها (agents)** را برای اجرای کد JavaScript حفظ می‌کند. هر عامل از مجموعه‌ای از بافت‌های اجرا، پشته بافت اجرا، یک رشته اصلی (main thread)، مجموعه‌ای برای هر رشته اضافی که ممکن است برای مدیریت کارگرها (workers) ایجاد شود، یک صف وظیفه (task queue) و یک صف ریزوظیفه (microtask queue) تشکیل شده است. به غیر از رشته اصلی - که برخی مرورگرها آن را بین چندین عامل به اشتراک می‌گذارند - هر مؤلفه یک عامل منحصر به آن عامل است.
 
-Here we look at how the runtime functions in slightly more detail.
+در اینجا نحوه عملکرد runtime را با جزئیات بیشتری بررسی می‌کنیم.
 
-### Event loops
+### حلقه‌های رویداد (Event loops)
 
-Each agent is driven by an [event loop](/en-US/docs/Web/JavaScript/Reference/Execution_model), which is repeatedly processed. During each iteration, it runs at most one pending JavaScript task, then any pending microtasks, then performs any needed rendering and painting before looping again.
+هر عامل توسط یک [حلقه رویداد](/en-US/docs/Web/JavaScript/Reference/Execution_model) هدایت می‌شود که به طور مکرر پردازش می‌شود. در هر تکرار، حداکثر یک وظیفه (task) معلق JavaScript، سپس هر ریزوظیفه (microtask) معلق را اجرا می‌کند، سپس هر رندر و نقاشی لازم را انجام می‌دهد و دوباره حلقه می‌زند.
 
-Your website or app's code runs in the same **{{Glossary("thread")}}**, sharing the same **event loop**, as the user interface of the web browser itself. This is the **{{Glossary("main thread")}}**, and in addition to running your site's main code body, it handles receiving and dispatching user and other events, rendering and painting web content, and so forth.
+کد وب‌سایت یا برنامه شما در همان **{{Glossary("thread", "رشته")}}**، با همان **حلقه رویداد**، که رابط کاربری خود مرورگر وب نیز در آن اجرا می‌شود، اجرا می‌شود. این **{{Glossary("main thread", "رشته اصلی")}}** است، و علاوه بر اجرای بدنه اصلی کد سایت شما، دریافت و ارسال رویدادهای کاربر و سایر رویدادها، رندر و نقاشی محتوای وب و غیره را نیز مدیریت می‌کند.
 
-The event loop, then, drives everything that happens in the browser as it pertains to the interaction with the user, but more importantly for our purposes here, it is responsible for the scheduling and execution of every piece of code that runs within its thread.
+بنابراین، حلقه رویداد همه چیز را در مرورگر که به تعامل با کاربر مربوط می‌شود هدایت می‌کند، اما مهم‌تر از آن برای اهداف ما در اینجا، مسئول زمان‌بندی و اجرای هر قطعه کدی است که درون رشته آن اجرا می‌شود.
 
-There are three types of event loop:
+سه نوع حلقه رویداد وجود دارد:
 
-- Window event loop
-  - : The window event loop is the one that drives all of the windows sharing a similar origin (though there are further limits to this, as described below).
-- Worker event loop
-  - : A worker event loop is one which drives a worker; this includes all forms of workers, including basic [web workers](/en-US/docs/Web/API/Web_Workers_API), [shared workers](/en-US/docs/Web/API/SharedWorker), and [service workers](/en-US/docs/Web/API/Service_Worker_API). Workers are kept in one or more agents that are separate from the "main" code; the browser may use a single event loop for all of the workers of a given type or may use multiple event loops to handle them.
-- Worklet event loop
-  - : A {{domxref("Worklet", "worklet", "", 1)}} event loop is the event loop used to drive agents which run the code for the worklets for a given agent. This includes worklets of type {{domxref("Worklet")}} and {{domxref("AudioWorklet")}}.
+- حلقه رویداد پنجره (Window event loop)
+  - : حلقه رویداد پنجره، حلقه‌ای است که تمام پنجره‌های اشتراک‌گذار یک مبدأ مشابه (origin) را هدایت می‌کند (اگرچه محدودیت‌های بیشتری برای این موضوع وجود دارد، همانطور که در زیر توضیح داده شده است).
+- حلقه رویداد کارگر (Worker event loop)
+  - : حلقه رویداد کارگر، حلقه‌ای است که یک کارگر را هدایت می‌کند؛ این شامل همه اشکال کارگرها، از جمله [web workers](/en-US/docs/Web/API/Web_Workers_API) پایه، [shared workers](/en-US/docs/Web/API/SharedWorker) و [service workers](/en-US/docs/Web/API/Service_Worker_API) می‌شود. کارگرها در یک یا چند عامل جدا از کد "اصلی" نگهداری می‌شوند؛ مرورگر ممکن است از یک حلقه رویداد واحد برای همه کارگرهای یک نوع مشخص استفاده کند یا از چندین حلقه رویداد برای مدیریت آنها استفاده کند.
+- حلقه رویداد ورک‌لت (Worklet event loop)
+  - : یک حلقه رویداد {{domxref("Worklet", "worklet", "", 1)}} حلقه رویدادی است که برای هدایت عامل‌هایی که کد مربوط به worklet‌ها را برای یک عامل خاص اجرا می‌کنند، استفاده می‌شود. این شامل worklet‌های از نوع {{domxref("Worklet")}} و {{domxref("AudioWorklet")}} می‌شود.
 
-Several windows loaded from the same {{Glossary("origin")}} may be running on the same event loop, each queueing tasks onto the event loop so that their tasks take turns with the processor, one after another. Keep in mind that in web parlance, the word "window" actually means "browser-level container that web content runs within," including an actual window, a tab, or a frame.
+چندین پنجره که از یک {{Glossary("origin", "مبدأ")}} یکسان بارگذاری شده‌اند ممکن است روی یک حلقه رویداد اجرا شوند، هر کدام وظایف خود را در صف حلقه رویداد قرار می‌دهند تا وظایف آنها به نوبت پردازنده را اشغال کنند، یکی پس از دیگری. به خاطر داشته باشید که در اصطلاح وب، کلمه "پنجره" در واقع به معنای "ظرف سطح مرورگر که محتوای وب در آن اجرا می‌شود" است، از جمله یک پنجره واقعی، یک تب یا یک قاب (frame).
 
-There are specific circumstances in which this sharing of an event loop among windows with a common origin is possible, such as:
+شرایط خاصی وجود دارد که در آنها این اشتراک‌گذاری حلقه رویداد بین پنجره‌های با مبدأ مشترک امکان‌پذیر است، مانند:
 
-- If one window opened the other window, they are likely to be sharing an event loop.
-- If a window is actually a container within an {{HTMLElement("iframe")}}, it likely shares an event loop with the window that contains it.
-- The windows happen to share the same process in a multi-process web browser implementation.
+- اگر یک پنجره پنجره دیگری را باز کرده باشد، احتمالاً حلقه رویداد مشترکی دارند.
+- اگر یک پنجره در واقع یک ظرف درون یک {{HTMLElement("iframe")}} باشد، احتمالاً حلقه رویداد را با پنجره‌ای که آن را در بر می‌گیرد به اشتراک می‌گذارد.
+- پنجره‌ها به طور تصادفی در یک فرآیند مشترک در پیاده‌سازی مرورگر چندفرآیندی قرار می‌گیرند.
 
-The specifics may vary from browser to browser, depending on how they're implemented.
+جزئیات ممکن است از مرورگری به مرورگر دیگر متفاوت باشد، بسته به نحوه پیاده‌سازی آنها.
 
-#### Tasks vs. microtasks
+#### وظایف (Tasks) در مقابل ریزوظایف (Microtasks)
 
-A **task** is anything scheduled to be run by the standard mechanisms such as initially starting to execute a script, asynchronously dispatching an event, and so forth. Other than by using events, you can enqueue a task by using {{domxref("Window.setTimeout", "setTimeout()")}} or {{domxref("Window.setInterval", "setInterval()")}}.
+یک **وظیفه (task)** هر چیزی است که توسط مکانیسم‌های استاندارد مانند شروع اولیه اجرای یک اسکریپت، ارسال ناهمزمان یک رویداد و غیره، برنامه‌ریزی می‌شود. علاوه بر استفاده از رویدادها، می‌توانید یک وظیفه را با استفاده از {{domxref("Window.setTimeout", "setTimeout()")}} یا {{domxref("Window.setInterval", "setInterval()")}} در صف قرار دهید.
 
-The difference between the task queue and the microtask queue is simple but very important:
+تفاوت بین صف وظیفه و صف ریزوظیفه ساده اما بسیار مهم است:
 
-- When a new iteration of the event loop begins, the runtime executes the next task from the task queue. Further tasks and tasks added to the queue after the start of the iteration _will not run until the next iteration_.
-- Whenever a task exits and the execution context stack is empty, all microtasks in the microtask queue are executed in turn. The difference is that execution of microtasks continues until the queue is empty—even if new ones are scheduled in the interim. In other words, microtasks can enqueue new microtasks and those new microtasks will execute before the next task begins to run, and before the end of the current event loop iteration.
+- هنگامی که یک تکرار جدید از حلقه رویداد شروع می‌شود، runtime وظیفه بعدی را از صف وظیفه اجرا می‌کند. وظایف بعدی و وظایفی که پس از شروع تکرار به صف اضافه می‌شوند _تا تکرار بعدی اجرا نخواهند شد_.
+- هرگاه یک وظیفه خارج شود و پشته بافت اجرا خالی باشد، تمام ریزوظایف موجود در صف ریزوظیفه به نوبت اجرا می‌شوند. تفاوت این است که اجرای ریزوظایف تا زمانی که صف خالی شود ادامه می‌یابد - حتی اگر در این بین موارد جدیدی برنامه‌ریزی شوند. به عبارت دیگر، ریزوظایف می‌توانند ریزوظایف جدیدی را در صف قرار دهند و آن ریزوظایف جدید قبل از شروع اجرای وظیفه بعدی و قبل از پایان تکرار فعلی حلقه رویداد اجرا خواهند شد.
 
-### Problems
+### مشکلات
 
-Because your code runs in the same thread, using the same event loop, as the browser's user interface, if your code blocks or enters an infinite loop, the browser itself will stall. Even sluggish performance, whether caused by a bug or because of complex work being done by your code, can cause the user to suffer a sluggish browser.
+از آنجایی که کد شما در همان رشته، با استفاده از همان حلقه رویداد، که رابط کاربری مرورگر نیز در آن اجرا می‌شود اجرا می‌شود، اگر کد شما مسدود شود یا وارد یک حلقه بی‌نهایت شود، خود مرورگر متوقف می‌شود. حتی عملکرد کند، چه ناشی از یک باگ باشد و چه به دلیل کار پیچیده‌ای که توسط کد شما انجام می‌شود، می‌تواند باعث شود کاربر از کندی مرورگر رنج ببرد.
 
-When multiple programs and multiple code objects within those programs start to try to work at once, alongside a browser which also needs processor time—let alone time to render and draw the site and its own UI, handle user events, and so forth—everything becomes clogged up far too easily nowadays.
+زمانی که چندین برنامه و چندین شیء کد درون آن برنامه‌ها شروع به تلاش برای کار همزمان می‌کنند، در کنار یک مرورگر که خود نیز به زمان پردازنده نیاز دارد - چه برسد به زمان رندر و کشیدن سایت و UI خود، مدیریت رویدادهای کاربر و غیره - همه چیز به راحتی در دنیای امروز مسدود می‌شود.
 
-### Solutions
+### راه‌حل‌ها
 
-The use of [web workers](/en-US/docs/Web/API/Web_Workers_API), which allow the main script to run other scripts in new threads, help to alleviate this problem. A well-designed website or app uses workers to perform any complex or lengthy operations, leaving the main thread to do as little work as possible beyond updating, laying out, and rendering the web page.
+استفاده از [web workers](/en-US/docs/Web/API/Web_Workers_API)، که به اسکریپت اصلی اجازه می‌دهد اسکریپت‌های دیگری را در رشته‌های جدید اجرا کند، به کاهش این مشکل کمک می‌کند. یک وب‌سایت یا برنامه خوب طراحی شده از کارگرها برای انجام هر عملیات پیچیده یا طولانی استفاده می‌کند و رشته اصلی را برای انجام کارهای کمتری فراتر از به‌روزرسانی، چیدمان و رندر کردن صفحه وب رها می‌کند.
 
-This is further alleviated by using [asynchronous JavaScript](/en-US/docs/Learn_web_development/Extensions/Async_JS) techniques such as {{jsxref("Global_Objects/Promise", "promises", "", 1)}} to allow the main code to continue to run while waiting for the results of a request. However, code running at a more fundamental level—such as code comprising a library or framework—may need a way to schedule code to be run at a safe time while still executing on the main thread, independent of the results of any single request or task.
+این موضوع با استفاده از تکنیک‌های [JavaScript ناهمزمان](/en-US/docs/Learn_web_development/Extensions/Async_JS) مانند {{jsxref("Global_Objects/Promise", "promises", "", 1)}} که به کد اصلی اجازه می‌دهد در حالی که منتظر نتایج یک درخواست است به اجرای خود ادامه دهد، بیشتر کاهش می‌یابد. با این حال، کدی که در سطح بنیادی‌تری اجرا می‌شود - مانند کدی که یک کتابخانه یا فریم‌ورک را تشکیل می‌دهد - ممکن است به راهی نیاز داشته باشد تا کد را در زمان امنی برنامه‌ریزی کند در حالی که همچنان روی رشته اصلی اجرا می‌شود و مستقل از نتایج هر درخواست یا وظیفه خاصی است.
 
-Microtasks are another solution to this problem, providing a finer degree of access by making it possible to schedule code to run before the next iteration of the event loop begins, instead of having to wait until the next one.
+ریز وظایف راه حل دیگری برای این مشکل هستند، با ارائه درجه دقیق‌تری از دسترسی با امکان برنامه‌ریزی کد برای اجرا قبل از شروع تکرار بعدی حلقه رویداد، به جای انتظار تا تکرار بعدی.
 
-The microtask queue has been around for a while, but it's historically been used only internally in order to drive things like promises. The addition of {{domxref("Window.queueMicrotask()", "queueMicrotask()")}}, exposing it to web developers, creates a unified queue for microtasks which is used wherever it's necessary to have the ability to schedule code to run safely when there are no execution contexts left on the JavaScript execution context stack. Across multiple instances and across all browsers and JavaScript runtimes, a standardized queue mechanism means these microtasks will operate reliably in the same order, thus avoiding potentially difficult to find bugs.
+صف ریزوظیفه مدتی است که وجود داشته است، اما از نظر تاریخی فقط به صورت داخلی برای هدایت چیزهایی مانند promises استفاده می‌شده است. افزودن {{domxref("Window.queueMicrotask()", "queueMicrotask()")}}، که آن را در اختیار توسعه‌دهندگان وب قرار می‌دهد، یک صف یکپارچه برای ریزوظایف ایجاد می‌کند که در هر جایی که نیاز به توانایی برنامه‌ریزی کد برای اجرای ایمن زمانی که هیچ بافت اجرایی روی پشته بافت اجرای JavaScript باقی نمانده است، استفاده می‌شود. در میان چندین نمونه و در تمام مرورگرها و runtimeهای JavaScript، یک مکانیسم صف استاندارد به این معنی است که این ریزوظایف به طور قابل اعتماد به همان ترتیب عمل می‌کنند، بنابراین از باگ‌هایی که ممکن است یافتن آنها دشوار باشد جلوگیری می‌کند.
 
-## See also
+## همچنین ببینید
 
-- [Microtask guide](/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide)
+- [راهنمای ریزوظایف](/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide)
 - {{domxref("Window.queueMicrotask()")}}
-- [The Event Loop](/en-US/docs/Web/JavaScript/Reference/Execution_model)
-- [Asynchronous JavaScript](/en-US/docs/Learn_web_development/Extensions/Async_JS)
-  - [Introducing asynchronous JavaScript](/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing)
-  - [Graceful asynchronous programming with Promises](/en-US/docs/Learn_web_development/Extensions/Async_JS/Promises)
+- [حلقه رویداد](/en-US/docs/Web/JavaScript/Reference/Execution_model)
+- [JavaScript ناهمزمان](/en-US/docs/Learn_web_development/Extensions/Async_JS)
+  - [معرفی JavaScript ناهمزمان](/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing)
+  - [برنامه‌نویسی ناهمزمان برازنده با Promises](/en-US/docs/Learn_web_development/Extensions/Async_JS/Promises)
