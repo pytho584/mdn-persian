@@ -1,7 +1,5 @@
 ---
 title: "HTMLOptionsCollection"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionsCollection"
-status: "needs-translation"
 ---
 
 ---
@@ -13,38 +11,38 @@ browser-compat: api.HTMLOptionsCollection
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLOptionsCollection`** interface represents a collection of [`<option>`](/en-US/docs/Web/HTML/Reference/Elements/option) HTML elements (in document order) and offers methods and properties for selecting from the list as well as optionally altering its items. This object is returned only by the `options` property of [select](/en-US/docs/Web/API/HTMLSelectElement).
+**`HTMLOptionsCollection`** یک رابط (interface) است که مجموعه‌ای از عناصر HTML [`<option>`](/en-US/docs/Web/HTML/Reference/Elements/option) را (به ترتیب سند) نشان می‌دهد و روش‌ها و ویژگی‌هایی برای انتخاب از فهرست و همچنین تغییر اختیاری موارد آن ارائه می‌دهد. این شیء فقط توسط ویژگی `options` در [select](/en-US/docs/Web/API/HTMLSelectElement) بازگردانده می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("HTMLOptionsCollection.length")}}
-  - : Returns or sets the number of options in the collection.
+  - : تعداد گزینه‌های موجود در مجموعه را برمی‌گرداند یا تنظیم می‌کند.
 - {{domxref("HTMLOptionsCollection.selectedIndex")}}
-  - : The index number of the first selected {{HTMLElement("option")}} element. The value `-1` indicates no element is selected.
+  - : شماره اندیس اولین عنصر {{HTMLElement("option")}} انتخاب‌شده. مقدار `1-` نشان می‌دهد که هیچ عنصری انتخاب نشده است.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface inherits the methods of its parent, [`HTMLCollection`](/en-US/docs/Web/API/HTMLCollection)._
+_این رابط، روش‌های والد خود، [`HTMLCollection`](/en-US/docs/Web/API/HTMLCollection) را به ارث می‌برد._
 
 - {{domxref("HTMLOptionsCollection.add()")}}
-  - : Appends an {{domxref("HTMLOptionElement")}} or {{domxref("HTMLOptGroupElement")}} element to the collection of `option` elements or adds it before a specified option.
+  - : یک عنصر {{domxref("HTMLOptionElement")}} یا {{domxref("HTMLOptGroupElement")}} را به مجموعه عناصر `option` اضافه می‌کند یا آن را قبل از یک گزینه مشخص می‌افزاید.
 - {{domxref("HTMLOptionsCollection.remove()")}}
-  - : Removes the element at the specified index from the options collection.
+  - : عنصر واقع در اندیس مشخص‌شده را از مجموعه گزینه‌ها حذف می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("HTMLOptionElement")}}
 - {{DOMxRef("HTMLCollection")}}
 - {{DOMxRef("HTMLOptGroupElement")}}
 - {{DOMxRef("HTMLSelectElement")}}
-- [Indexed collections guide](/en-US/docs/Web/JavaScript/Guide/Indexed_collections)
+- [راهنمای مجموعه‌های نمایه‌دار](/en-US/docs/Web/JavaScript/Guide/Indexed_collections)
