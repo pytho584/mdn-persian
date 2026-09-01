@@ -1,11 +1,5 @@
 ---
 title: "FileSystemObserver: FileSystemObserver() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemObserver/FileSystemObserver"
-status: "needs-translation"
----
-
----
-title: "FileSystemObserver: FileSystemObserver() constructor"
 short-title: FileSystemObserver()
 slug: Web/API/FileSystemObserver/FileSystemObserver
 page-type: web-api-constructor
@@ -17,7 +11,7 @@ browser-compat: api.FileSystemObserver.FileSystemObserver
 
 {{APIRef("File System API")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`FileSystemObserver()`** constructor creates a new {{domxref("FileSystemObserver")}} object instance.
+سازندهٔ **`FileSystemObserver()`** یک نمونهٔ جدید از شیء {{domxref("FileSystemObserver")}} ایجاد می‌کند.
 
 ## Syntax
 
@@ -28,30 +22,30 @@ new FileSystemObserver(callback)
 ### Parameters
 
 - `callback`
-  - : A user-defined callback function that will be called when the observer has observed a change in the file system entry it has been asked to observe (via {{domxref("FileSystemObserver.observe()")}}). The callback function will be passed the following two parameters:
+  - : یک تابع بازخورد (callback) تعریف‌شده توسط کاربر که زمانی فراخوانی می‌شود که ناظر (observer) تغییری را در ورودیِ سیستم فایلی که از آن خواسته شده مشاهده کند، شناسایی کند (از طریق {{domxref("FileSystemObserver.observe()")}}). این تابع بازخورد دو پارامتر زیر را دریافت می‌کند:
     - `records`
-      - : An array of {{domxref("FileSystemChangeRecord")}} objects that contain details of all the observed changes.
+      - : آرایه‌ای از اشیاء {{domxref("FileSystemChangeRecord")}} که حاوی جزئیات همهٔ تغییرات مشاهده‌شده است.
     - `observer`
-      - : A reference to the current `FileSystemObserver` object, which is made available in case, for example, you want to stop observations after the current records have been received using the {{domxref('FileSystemObserver.disconnect()')}} method.
+      - : ارجاعی به شیء فعلی `FileSystemObserver` که در دسترس قرار می‌گیرد تا مثلاً در صورت نیاز بتوانید پس از دریافت رکوردهای فعلی، مشاهده را با استفاده از متد {{domxref('FileSystemObserver.disconnect()')}} متوقف کنید.
 
 ### Return value
 
-A new {{domxref("FileSystemObserver")}} object.
+یک شیء جدید {{domxref("FileSystemObserver")}}.
 
 ## Examples
 
 > [!NOTE]
-> For a complete working example, check out [File System Observer Demo](https://mdn.github.io/dom-examples/file-system-api/filesystemobserver/) ([source code](https://github.com/mdn/dom-examples/tree/main/file-system-api/filesystemobserver)).
+> برای یک مثال کامل و قابل اجرا، به [File System Observer Demo](https://mdn.github.io/dom-examples/file-system-api/filesystemobserver/) مراجعه کنید ([source code](https://github.com/mdn/dom-examples/tree/main/file-system-api/filesystemobserver)).
 
-### Initializing a `FileSystemObserver`
+### مقداردهی اولیهٔ یک `FileSystemObserver`
 
-Before you can start observing file or directory changes, you need to initialize a `FileSystemObserver` to handle the observations:
+قبل از اینکه بتوانید مشاهدهٔ تغییرات فایل یا پوشه را شروع کنید، باید یک `FileSystemObserver` برای مدیریت مشاهدات مقداردهی کنید:
 
 ```js
 const observer = new FileSystemObserver(callback);
 ```
 
-The callback function body can be specified to return and process file change observations in any way you want:
+بدنهٔ تابع بازخورد را می‌توان به‌گونه‌ای تعریف کرد که مشاهدات تغییرات فایل را به هر شکلی که می‌خواهید برگرداند و پردازش کند:
 
 ```js
 const callback = (records, observer) => {
@@ -67,7 +61,7 @@ const callback = (records, observer) => {
 
 ## Specifications
 
-Not currently part of a specification. See [https://github.com/whatwg/fs/pull/165](https://github.com/whatwg/fs/pull/165) for the relevant specification PR.
+در حال حاضر بخشی از هیچ مشخصات رسمی نیست. برای PR مربوط به مشخصات، به [https://github.com/whatwg/fs/pull/165](https://github.com/whatwg/fs/pull/165) مراجعه کنید.
 
 ## Browser compatibility
 
@@ -76,4 +70,4 @@ Not currently part of a specification. See [https://github.com/whatwg/fs/pull/16
 ## See also
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
-- [The File System Observer API origin trial](https://developer.chrome.com/blog/file-system-observer#stop-observing-the-file-system) on developer.chrome.com (2024)
+- [The File System Observer API origin trial](https://developer.chrome.com/blog/file-system-observer#stop-observing-the-file-system) در developer.chrome.com (2024)
