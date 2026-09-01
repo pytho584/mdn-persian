@@ -1,7 +1,5 @@
 ---
 title: "DocumentPictureInPicture: enter event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture/enter_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,11 @@ browser-compat: api.DocumentPictureInPicture.enter_event
 
 {{APIRef("Document Picture-in-Picture API")}}{{SecureContext_Header}}
 
-The **`enter`** event of the {{domxref("DocumentPictureInPicture")}} interface is fired when the Picture-in-Picture window is successfully opened.
+رویداد **`enter`** از رابط {{domxref("DocumentPictureInPicture")}} هنگامی فعال می‌شود که پنجرهٔ تصویر‑در‑تصویر با موفقیت باز شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای دریافت این رویداد می‌توانید از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک خاصیت مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("enter", (event) => { })
@@ -26,11 +24,11 @@ addEventListener("enter", (event) => { })
 onenter = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("DocumentPictureInPictureEvent")}}.
+یک {{domxref("DocumentPictureInPictureEvent")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 documentPictureInPicture.addEventListener("enter", (event) => {
@@ -54,15 +52,15 @@ documentPictureInPicture.addEventListener("enter", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document Picture-in-Picture API", "Document Picture-in-Picture API", "", "nocode")}}
-- [Using the Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using)
+- [استفاده از API تصویر‑در‑تصویر سند](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using)
