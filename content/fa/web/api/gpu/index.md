@@ -1,39 +1,32 @@
 ---
 title: "GPU"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPU"
-status: "needs-translation"
----
-
----
-title: GPU
-slug: Web/API/GPU
 page-type: web-api-interface
 browser-compat: api.GPU
 ---
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPU`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} is the starting point for using WebGPU. It can be used to return a {{domxref("GPUAdapter")}} from which you can request devices, configure features and limits, and more.
+رابط **`GPU`** در {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} نقطه شروع استفاده از WebGPU است. از این رابط می‌توان برای برگرداندن یک {{domxref("GPUAdapter")}} استفاده کرد که از طریق آن می‌توانید دستگاه‌ها را درخواست کنید، ویژگی‌ها و محدودیت‌ها را پیکربندی کنید و موارد دیگر را انجام دهید.
 
-The `GPU` object for the current context is accessed via the {{domxref("Navigator.gpu")}} or {{domxref("WorkerNavigator.gpu")}} properties.
+شیء `GPU` برای زمینه جاری از طریق ویژگی‌های {{domxref("Navigator.gpu")}} یا {{domxref("WorkerNavigator.gpu")}} قابل دسترسی است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPU.wgslLanguageFeatures", "wgslLanguageFeatures")}} {{ReadOnlyInline}}
-  - : A {{domxref("WGSLLanguageFeatures")}} object that reports the [WGSL language extensions](https://gpuweb.github.io/gpuweb/wgsl/#language-extension) supported by the WebGPU implementation.
+  - : یک شیء {{domxref("WGSLLanguageFeatures")}} که [افزونه‌های زبان WGSL](https://gpuweb.github.io/gpuweb/wgsl/#language-extension) پشتیبانی‌شده توسط پیاده‌سازی WebGPU را گزارش می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("GPU.requestAdapter", "requestAdapter()")}}
-  - : Returns a {{jsxref("Promise")}} that fulfills with a {{domxref("GPUAdapter")}} object instance. From this you can request a {{domxref("GPUDevice")}}, which is the primary interface for using WebGPU functionality.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که با یک نمونه از شیء {{domxref("GPUAdapter")}} تکمیل می‌شود. از این طریق می‌توانید یک {{domxref("GPUDevice")}} درخواست کنید که رابط اصلی برای استفاده از قابلیت‌های WebGPU است.
 - {{domxref("GPU.getPreferredCanvasFormat", "getPreferredCanvasFormat()")}}
-  - : Returns the optimal canvas texture format for displaying 8-bit depth, standard dynamic range content on the current system.
+  - : فرمت بافت بهینه بوم را برای نمایش محتوای ۸‐بیتی با عمق رنگ استاندارد در سیستم جاری برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Requesting an adapter and a device
+### درخواست یک آداپتر و یک دستگاه
 
 ```js
 async function init() {
@@ -52,7 +45,7 @@ async function init() {
 }
 ```
 
-### Configuring a GPUCanvasContext with the optimal texture format
+### پیکربندی GPUCanvasContext با فرمت بافت بهینه
 
 ```js
 const canvas = document.querySelector("#gpuCanvas");
@@ -65,14 +58,14 @@ context.configure({
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
