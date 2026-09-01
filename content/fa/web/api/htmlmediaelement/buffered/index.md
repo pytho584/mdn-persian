@@ -1,7 +1,5 @@
 ---
 title: "HTMLMediaElement: buffered property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/buffered"
-status: "needs-translation"
 ---
 
 ---
@@ -14,27 +12,27 @@ browser-compat: api.HTMLMediaElement.buffered
 
 {{APIRef("HTML DOM")}}
 
-The **`buffered`** read-only property of {{domxref("HTMLMediaElement")}} objects returns a new static [normalized `TimeRanges` object](/en-US/docs/Web/API/TimeRanges#normalized_timeranges_objects) that represents the ranges of the media resource, if any, that the user agent has buffered at the moment the `buffered` property is accessed.
+ویژگی فقط‌خواندنی **`buffered`** از اشیاء {{domxref("HTMLMediaElement")}} یک [شیء `TimeRanges` نرمال‌سازی‌شده](/en-US/docs/Web/API/TimeRanges#normalized_timeranges_objects) جدید برمی‌گرداند که محدوده‌های منبع رسانه‌ای را که در لحظه دسترسی به ویژگی `buffered` توسط عامل کاربر بافر شده‌اند، در صورت وجود، نشان می‌دهد.
 
-## Value
+## مقدار
 
-A new static [normalized TimeRanges object](/en-US/docs/Web/API/TimeRanges#normalized_timeranges_objects) that represents the ranges of the media resource, if any, that the user agent has buffered at the moment the `buffered` property is accessed.
+یک [شیء `TimeRanges` نرمال‌سازی‌شده](/en-US/docs/Web/API/TimeRanges#normalized_timeranges_objects) جدید که محدوده‌های منبع رسانه‌ای را که در لحظه دسترسی به ویژگی `buffered` توسط عامل کاربر بافر شده‌اند، در صورت وجود، نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const obj = document.createElement("video");
 console.log(obj.buffered); // TimeRanges { length: 0 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.buffered` property
+- {{domxref("HTMLMediaElement")}}: واسطه‌ای که برای تعریف ویژگی `HTMLMediaElement.buffered` استفاده می‌شود.
