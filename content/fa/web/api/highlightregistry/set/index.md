@@ -1,11 +1,5 @@
 ---
 title: "HighlightRegistry: set() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry/set"
-status: "needs-translation"
----
-
----
-title: "HighlightRegistry: set() method"
 short-title: set()
 slug: Web/API/HighlightRegistry/set
 page-type: web-api-instance-method
@@ -15,39 +9,39 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`set()`** method of the {{domxref("HighlightRegistry")}} interface adds or updates a {{domxref("Highlight")}} object in the registry with the specified name.
+متد **`set()`** از رابط {{domxref("HighlightRegistry")}} یک شیء {{domxref("Highlight")}} را با نام مشخص‌شده به رجیستری اضافه یا آن را به‌روزرسانی می‌کند.
 
-`HighlightRegistry` is a {{jsxref("Map")}}-like object, so this is similar to using {{jsxref("Map.set()")}}.
+`HighlightRegistry` یک شیء شبیه به {{jsxref("Map")}} است، بنابراین این روش مشابه استفاده از {{jsxref("Map.set()")}} است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 set(name, highlight)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the `Highlight` object to add or update. The name must be a {{jsxref("String")}}.
+  - : نام شیء `Highlight` برای افزودن یا به‌روزرسانی. نام باید یک {{jsxref("String")}} باشد.
 - `highlight`
-  - : The `Highlight` object to add or update. This must be a {{domxref("Highlight")}} interface instance.
+  - : شیء `Highlight` برای افزودن یا به‌روزرسانی. این باید یک نمونه از رابط {{domxref("Highlight")}} باشد.
 
-### Return value
+### مقدار بازگشتی
 
-The `HighlightRegistry` object.
+شیء `HighlightRegistry`.
 
-## Examples
+## مثال‌ها
 
-### Using set()
+### استفاده از set()
 
 ```js
 const fooHighlight = new Highlight();
 CSS.highlights.set("foo", fooHighlight);
 ```
 
-### Using set() with chaining
+### استفاده از set() با زنجیره‌سازی
 
-Since the `set()` method returns back the registry, you can chain the method call like below:
+از آنجا که متد `set()` خودِ رجیستری را برمی‌گرداند، می‌توانید فراخوانی متد را مانند زیر زنجیره‌ای کنید:
 
 ```js
 const fooHighlight = new Highlight();
@@ -60,16 +54,16 @@ CSS.highlights
   .set("baz", bazHighlight);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
-- [CSS custom highlight API](/en-US/docs/Web/CSS/Guides/Custom_highlight_API) module
+- ماژول [CSS custom highlight API](/en-US/docs/Web/CSS/Guides/Custom_highlight_API)
 - [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
