@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: error event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/error_event"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: error event"
 short-title: error
 slug: Web/API/HTMLElement/error_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLElement.error_event
 
 {{APIRef("HTML DOM")}}
 
-The `error` event is fired on an element when a resource failed to load, or can't be used. For example, if a script has an execution error or an image can't be found or is invalid.
+رویداد `error` روی یک عنصر زمانی رخ می‌دهد که منبعی نتواند بارگذاری شود یا قابل استفاده نباشد. برای مثال، اگر یک اسکریپت خطای اجرا داشته باشد یا تصویری پیدا نشود یا نامعتبر باشد.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و حباب‌زنی (bubbling) ندارد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("error", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("error", (event) => { })
 onerror = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-The event object is a {{domxref("UIEvent")}} instance if it was generated from a user interface element, or an {{domxref("Event")}} instance otherwise.
+شیء رویداد، اگر از یک عنصر رابط کاربری تولید شده باشد، نمونه‌ای از {{domxref("UIEvent")}} و در غیر این صورت نمونه‌ای از {{domxref("Event")}} است.
 
 {{InheritanceDiagram("UIEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -111,20 +105,20 @@ imgError.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '150px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events
-  - Window: {{domxref("Window/error_event", "error")}} event
-  - HTMLElement: {{domxref("HTMLElement/load_event", "load")}} event
+- رویدادهای مرتبط
+  - Window: رویداد {{domxref("Window/error_event", "error")}}
+  - HTMLElement: رویداد {{domxref("HTMLElement/load_event", "load")}}
