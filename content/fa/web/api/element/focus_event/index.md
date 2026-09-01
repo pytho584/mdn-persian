@@ -1,11 +1,5 @@
 ---
 title: "Element: focus event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event"
-status: "needs-translation"
----
-
----
-title: "Element: focus event"
 short-title: focus
 slug: Web/API/Element/focus_event
 page-type: web-api-event
@@ -14,15 +8,15 @@ browser-compat: api.Element.focus_event
 
 {{APIRef("UI Events")}}
 
-The **`focus`** event fires when an element has received focus. The event does not bubble, but the related {{domxref("Element/focusin_event", "focusin")}} event that follows does bubble.
+رویداد **`focus`** زمانی رخ می‌دهد که یک عنصر (element) فوکوس (focus) دریافت کرده باشد. این رویداد به بالا انتشار نمی‌یابد (bubble)، اما رویداد مرتبط {{domxref("Element/focusin_event", "focusin")}} که پس از آن می‌آید، به بالا انتشار می‌یابد.
 
-The opposite of `focus` is the {{domxref("Element/blur_event", "blur")}} event, which fires when the element has _lost_ focus.
+مقابل رویداد `focus`، رویداد {{domxref("Element/blur_event", "blur")}} است که زمانی رخ می‌دهد که عنصر فوکوس خود را _از دست داده_ باشد.
 
-The `focus` event is not cancelable.
+رویداد `focus` قابل لغو (cancelable) نیست.
 
-## Syntax
+## دستور زبان
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("focus", (event) => { })
@@ -30,27 +24,27 @@ addEventListener("focus", (event) => { })
 onfocus = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("FocusEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("FocusEvent")}} که از {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث برده است.
 
 {{InheritanceDiagram("FocusEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Simple example
+### مثال ساده
 
 #### HTML
 
 ```html
 <form id="form">
   <label>
-    Some text:
-    <input type="text" placeholder="text input" />
+    مقداری متن:
+    <input type="text" placeholder="ورودی متن" />
   </label>
   <label>
-    Password:
-    <input type="password" placeholder="password" />
+    رمز عبور:
+    <input type="password" placeholder="رمز عبور" />
   </label>
 </form>
 ```
@@ -69,25 +63,25 @@ password.addEventListener("blur", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Simple_example", '100%', '50px')}}
 
-### Event delegation
+### واگذاری رویداد (Event delegation)
 
-There are two ways of implementing event delegation for this event: by using the {{domxref("Element/focusin_event", "focusin")}} event, or by setting the `useCapture` parameter of {{domxref("EventTarget.addEventListener()", "addEventListener()")}} to `true`.
+دو روش برای پیاده‌سازی واگذاری رویداد برای این رویداد وجود دارد: با استفاده از رویداد {{domxref("Element/focusin_event", "focusin")}}، یا با تنظیم پارامتر `useCapture` در {{domxref("EventTarget.addEventListener()", "addEventListener()")}} به `true`.
 
 #### HTML
 
 ```html
 <form id="form">
   <label>
-    Some text:
-    <input type="text" placeholder="text input" />
+    مقداری متن:
+    <input type="text" placeholder="ورودی متن" />
   </label>
   <label>
-    Password:
-    <input type="password" placeholder="password" />
+    رمز عبور:
+    <input type="password" placeholder="رمز عبور" />
   </label>
 </form>
 ```
@@ -114,21 +108,21 @@ form.addEventListener(
 );
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Event_delegation", '100%', '50px')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLElement.focus()")}} method
-- Related events: {{domxref("Element/blur_event", "blur")}}, {{domxref("Element/focusin_event", "focusin")}}, {{domxref("Element/focusout_event", "focusout")}}
-- This event on `Window` targets: {{domxref("Window/focus_event", "focus")}} event
-- [Focusing: focus/blur](https://javascript.info/focus-blur)
+- روش {{domxref("HTMLElement.focus()")}}
+- رویدادهای مرتبط: {{domxref("Element/blur_event", "blur")}}، {{domxref("Element/focusin_event", "focusin")}}، {{domxref("Element/focusout_event", "focusout")}}
+- این رویداد در اهداف `Window`: رویداد {{domxref("Window/focus_event", "focus")}}
+- [فوکوس کردن: focus/blur](https://javascript.info/focus-blur)
