@@ -1,9 +1,4 @@
----
-title: "GPUCanvasContext: unconfigure() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext/unconfigure"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "GPUCanvasContext: unconfigure() method"
 short-title: unconfigure()
@@ -14,8 +9,7 @@ browser-compat: api.GPUCanvasContext.unconfigure
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`unconfigure()`** method of the
-{{domxref("GPUCanvasContext")}} interface removes any previously-set context configuration, and destroys any textures returned via {{domxref("GPUCanvasContext.getCurrentTexture", "getCurrentTexture()")}} while the canvas context was configured.
+متد **`unconfigure()``** از رابط {{domxref("GPUCanvasContext")}} هر گونه پیکربندی زمینه‌ای که قبلاً تنظیم شده است را حذف کرده و تمام بافت‌هایی را که از طریق {{domxref("GPUCanvasContext.getCurrentTexture", "getCurrentTexture()")}} در حالی که زمینه بوم (canvas context) پیکربندی شده بود، بازگردانده شده‌اند، نابود می‌کند.
 
 ## Syntax
 
@@ -23,15 +17,15 @@ The **`unconfigure()`** method of the
 unconfigure()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-None (`undefined`).
+هیچ‌کدام (`undefined`).
 
-## Examples
+## مثال‌ها
 
 ```js
 const canvas = document.querySelector("#gpuCanvas");
@@ -43,18 +37,19 @@ context.configure({
   alphaMode: "premultiplied",
 });
 
-// Later on
+// بعداً
 context.unconfigure();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+```
