@@ -1,11 +1,5 @@
 ---
 title: "GPUTexture: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/width"
-status: "needs-translation"
----
-
----
-title: "GPUTexture: width property"
 short-title: width
 slug: Web/API/GPUTexture/width
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.GPUTexture.width
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`width`** read-only property of the
-{{domxref("GPUTexture")}} interface represents the width of the `GPUTexture`.
+ویژگی فقطخواندنی **`width`** در رابط {{domxref("GPUTexture")}} نشان‌دهندهٔ عرض آن `GPUTexture` است.
 
-This is set based on the value of the `size` property in the descriptor object passed into the originating {{domxref("GPUDevice.createTexture()")}} call.
+این مقدار بر اساس مقدار ویژگی `size` در شیء توصیفگر (descriptor) که به فراخوانی {{domxref("GPUDevice.createTexture()")}} مبدأ ارسال شده است، تنظیم می‌شود.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -37,14 +30,14 @@ const depthTexture = device.createTexture({
 console.log(depthTexture.width); // 640
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
