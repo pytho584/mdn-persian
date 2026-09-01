@@ -1,7 +1,6 @@
 ---
 title: "CSSTransformValue: CSSTransformValue() constructor"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue/CSSTransformValue"
-status: "needs-translation"
 ---
 
 ---
@@ -14,7 +13,7 @@ browser-compat: api.CSSTransformValue.CSSTransformValue
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSTransformValue()`** constructor creates a new {{domxref("CSSTransformValue")}} object which represents a list of individual transform objects.
+سازنده **`CSSTransformValue()`** یک شیء {{domxref("CSSTransformValue")}} جدید ایجاد می‌کند که فهرستی از اشیاء تبدیل (transform) مجزا را نشان می‌دهد.
 
 ## Syntax
 
@@ -25,16 +24,16 @@ new CSSTransformValue(transforms)
 ### Parameters
 
 - `transforms`
-  - : A list of {{domxref("CSSTransformComponent")}} objects to iterate over.
+  - : فهرستی از اشیاء {{domxref("CSSTransformComponent")}} که باید روی آن‌ها پیمایش شود.
 
 ### Return value
 
-A new {{domxref("CSSTransformValue")}}.
+یک {{domxref("CSSTransformValue")}} جدید.
 
 ### Exceptions
 
 - {{jsxref("TypeError")}}
-  - : Raised if transforms is empty.
+  - : اگر `transforms` خالی باشد پرتاب می‌شود.
 
 ## Examples
 
