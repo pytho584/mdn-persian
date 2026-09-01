@@ -1,11 +1,5 @@
 ---
 title: "Element: className property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/className"
-status: "needs-translation"
----
-
----
-title: "Element: className property"
 short-title: className
 slug: Web/API/Element/className
 page-type: web-api-instance-property
@@ -14,34 +8,24 @@ browser-compat: api.Element.className
 
 {{APIRef("DOM")}}
 
-The **`className`** property of the
-{{domxref("Element")}} interface gets and sets the value of the [`class` attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/class)
-of the specified element.
+ویژگی **`className`** در رابط {{domxref("Element")}}، مقدار [`ویژگی class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) عنصر مشخص‌شده را دریافت و تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A string variable representing the class or space-separated classes of the current element.
+یک متغیر رشته‌ای که کلاس یا کلاس‌های جدا شده با فاصله عنصر فعلی را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const el = document.getElementById("item");
 el.className = el.className === "active" ? "inactive" : "active";
 ```
 
-## Notes
+## نکات
 
-The name `className` is used for this property instead of `class`
-because of conflicts with the "class" keyword in many languages which are used to
-manipulate the DOM.
+نام `className` به‌جای `class` برای این ویژگی استفاده می‌شود، زیرا در بسیاری از زبان‌هایی که برای دستکاری DOM استفاده می‌شوند، با کلمه کلیدی «class» تداخل دارد.
 
-`className` can also be an instance of {{domxref("SVGAnimatedString")}} if
-the `element` is an {{domxref("SVGElement")}}. It is easier to get/set the
-`class` attribute of an element using {{domxref("Element.getAttribute")}} and
-{{domxref("Element.setAttribute")}} if you are dealing with SVG elements. However, take
-into account that {{domxref("Element.getAttribute")}} returns
-[`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null)
-instead of `""` if the `element` has an empty [`class` attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/class).
+اگر `element` یک {{domxref("SVGElement")}} باشد، `className` همچنین می‌تواند یک نمونه از {{domxref("SVGAnimatedString")}} باشد. اگر با عناصر SVG کار می‌کنید، تنظیم و دریافت ویژگی `class` عنصر با استفاده از {{domxref("Element.getAttribute")}} و {{domxref("Element.setAttribute")}} آسان‌تر است. با این حال، توجه داشته باشید که {{domxref("Element.getAttribute")}} اگر عنصر دارای [`ویژگی class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) خالی باشد، به‌جای `""` مقدار [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) برمی‌گرداند.
 
 ```js
 elm.setAttribute("class", "my-class");
@@ -49,17 +33,16 @@ const myClass = elm.getAttribute("class");
 ```
 
 > [!NOTE]
-> `class` is the name of an **HTML Attribute**, while
-> `className` is the name of a **DOM Property**.
+> `class` نام یک **ویژگی HTML (HTML Attribute)** است، در حالی که `className` نام یک **ویژگی DOM (DOM Property)** است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("element.classList")}}
