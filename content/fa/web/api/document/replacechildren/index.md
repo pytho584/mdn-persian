@@ -1,11 +1,5 @@
 ---
 title: "Document: replaceChildren() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/replaceChildren"
-status: "needs-translation"
----
-
----
-title: "Document: replaceChildren() method"
 short-title: replaceChildren()
 slug: Web/API/Document/replaceChildren
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.Document.replaceChildren
 
 {{APIRef("DOM")}}
 
-The **`Document.replaceChildren()`** method replaces the
-existing children of a `Document` with a specified new set of children.
+متد **`Document.replaceChildren()`** فرزندان موجود یک سند (`Document`) را با مجموعه‌ای مشخص از فرزندان جدید جایگزین می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 replaceChildren(param1)
@@ -25,43 +18,40 @@ replaceChildren(param1, param2)
 replaceChildren(param1, param2, /* …, */ paramN)
 ```
 
-### Parameters
+### پارامترها
 
 - `param1`, …, `paramN`
-  - : A set of {{domxref("Node")}} objects or strings to replace the
-    `Document`'s existing children with. If no replacement objects are
-    specified, then the `Document` is emptied of all child nodes.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها برای جایگزینی فرزندان موجود `Document`. اگر هیچ شیء جایگزینی مشخص نشود، تمام گره‌های فرزند از `Document` حذف می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown if the [constraints of the node tree](https://dom.spec.whatwg.org/#concept-node-tree) are violated.
+  - : اگر [محدودیت‌های درخت گره](https://dom.spec.whatwg.org/#concept-node-tree) نقض شوند، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Emptying a document
+### خالی کردن یک سند
 
-`replaceChildren()` provides a very convenient mechanism for emptying a document
-of all its children. You call it on the document without any argument specified:
+`replaceChildren()` سازوکاری بسیار راحت برای خالی کردن یک سند از همه فرزندانش فراهم می‌کند. کافی است آن را بدون هیچ آرگومانی روی سند صدا بزنید:
 
 ```js
 document.replaceChildren();
 document.children; // HTMLCollection []
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.prepend()")}}
 - {{domxref("Document.append()")}}
