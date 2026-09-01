@@ -1,11 +1,5 @@
 ---
 title: "CSSNumericValue: max() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/max"
-status: "needs-translation"
----
-
----
-title: "CSSNumericValue: max() method"
 short-title: max()
 slug: Web/API/CSSNumericValue/max
 page-type: web-api-instance-method
@@ -14,10 +8,10 @@ browser-compat: api.CSSNumericValue.max
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`max()`** method of the {{domxref("CSSNumericValue")}} interface returns the highest value from among the values passed.
-The passed values must be of the same type.
+متد **`max()`** در رابط {{domxref("CSSNumericValue")}}، بزرگترین مقدار را از میان مقادیر ارسال‌شده برمی‌گرداند.
+مقادیر ارسال‌شده باید از نوع یکسانی باشند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 max()
@@ -26,39 +20,39 @@ max(number1, number2)
 max(number1, number2, /* …, */ numberN)
 ```
 
-### Parameters
+### پارامترها
 
-- `number1`, …, `numberN` {{optional_inline}}
-  - : Either a number or a {{domxref('CSSNumericValue')}}.
+- `number1`، …، `numberN` {{optional_inline}}
+  - : یا یک عدد است یا یک {{domxref('CSSNumericValue')}}.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref('CSSUnitValue')}}.
+یک {{domxref('CSSUnitValue')}}.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if an invalid type was passed to the method.
+  - : زمانی پرتاب می‌شود که یک نوع نامعتبر به متد ارسال شده باشد.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-As stated earlier, all passed values must be of the same type and value.
-Some of the following examples illustrate what happens when they are not.
+همانطور که قبلاً گفته شد، همه مقادیر ارسال‌شده باید از نوع و مقدار یکسانی باشند.
+برخی از مثال‌های زیر نشان می‌دهند که وقتی اینطور نباشند چه اتفاقی می‌افتد.
 
 ```js
-// Prints "2cm"
+// چاپ می‌کند "2cm"
 console.log(CSS.cm("1").max(CSS.cm("2")).toString());
 
-// Prints "max(1cm, 0.393701in)"
+// چاپ می‌کند "max(1cm, 0.393701in)"
 console.log(CSS.cm("1").max(CSS.in("0.393701")).toString());
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
