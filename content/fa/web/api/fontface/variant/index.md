@@ -1,11 +1,5 @@
 ---
 title: "FontFace: variant property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/variant"
-status: "needs-translation"
----
-
----
-title: "FontFace: variant property"
 short-title: variant
 slug: Web/API/FontFace/variant
 page-type: web-api-instance-property
@@ -16,19 +10,16 @@ browser-compat: api.FontFace.variant
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}{{non-standard_header}}
 
-The **`variant`** property of the
-{{domxref("FontFace")}} interface programmatically retrieves or sets font variant
-values.
+ویژگی **`variant`** از رابط {{domxref("FontFace")}} به صورت برنامه‌نویسی مقادیر variant قلم را دریافت یا تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A string containing a descriptor as it would be defined in a style
-sheet's `@font-face` rule.
+یک رشته شامل یک توصیف‌گر (descriptor) همانطور که در قانون `@font-face` یک شیوه‌نامه (style sheet) تعریف می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
