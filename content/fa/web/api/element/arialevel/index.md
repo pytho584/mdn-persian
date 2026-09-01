@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaLevel property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaLevel"
-status: "needs-translation"
----
-
----
-title: "Element: ariaLevel property"
 short-title: ariaLevel
 slug: Web/API/Element/ariaLevel
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.Element.ariaLevel
 
 {{APIRef("DOM")}}
 
-The **`ariaLevel`** property of the {{domxref("Element")}} interface reflects the value of the `aria-level` attribute, which defines the hierarchical level of an element within a structure.
+ویژگی **`ariaLevel`** از رابط {{domxref("Element")}} نشان‌دهنده مقدار ویژگی `aria-level` است که سطح سلسله‌مراتبی یک عنصر را در یک ساختار تعریف می‌کند.
 
 > [!NOTE]
-> Where possible use an HTML {{htmlelement("Heading_Elements", "h1")}} or other correct heading level as these have built in semantics and do not require ARIA attributes.
+> تا حد امکان از یک HTML {{htmlelement("Heading_Elements", "h1")}} یا سایر سطح‌های عنوان صحیح استفاده کنید، زیرا این‌ها معناشناسی داخلی دارند و به ویژگی‌های ARIA نیاز ندارند.
 
-## Value
+## مقدار
 
-A string containing an integer.
+یک رشته شامل یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-level` attribute on the element with an ID of `main-heading` is set to "1". Using `ariaLevel` we update the value to "2".
+در این مثال، ویژگی `aria-level` روی عنصری با شناسه `main-heading` روی "1" تنظیم شده است. با استفاده از `ariaLevel` مقدار را به "2" به‌روز می‌کنیم.
 
 ```html
 <div role="heading" id="main-heading" aria-level="1">
@@ -40,14 +34,14 @@ el.ariaLevel = "2";
 console.log(el.ariaLevel); // "2"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: heading role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role)
+- [نقش heading در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role)
