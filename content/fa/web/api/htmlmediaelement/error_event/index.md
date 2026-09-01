@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: error event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/error_event"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: error event"
 short-title: error
 slug: Web/API/HTMLMediaElement/error_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLMediaElement.error_event
 
 {{APIRef("HTML DOM")}}
 
-The **`error`** event is fired when the resource could not be loaded due to an error (for example, a network connectivity problem).
+رویداد **`error`** زمانی رخ می‌دهد که منبع (resource) به دلیل یک خطا (مثلاً مشکل اتصال شبکه) بارگذاری نشود.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو (cancelable) نیست و bubble نمی‌کند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک خاصیت کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("error", (event) => { })
@@ -28,11 +22,11 @@ addEventListener("error", (event) => { })
 onerror = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const video = document.querySelector("video");
@@ -45,15 +39,15 @@ video.addEventListener("error", () => {
 video.setAttribute("src", videoSrc);
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAudioElement")}}
 - {{domxref("HTMLVideoElement")}}
