@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: dragover event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragover_event"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: dragover event"
 short-title: dragover
 slug: Web/API/HTMLElement/dragover_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLElement.dragover_event
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The `dragover` event is fired when an element or text selection is being dragged over a valid drop target (every few hundred milliseconds).
+رویداد `dragover` زمانی پرتاب می‌شود که یک عنصر یا متن انتخاب‌شده روی یک ناحیهٔ هدف معتبر برای رها کردن کشیده می‌شود (هر چند صد میلی‌ثانیه یک بار).
 
-This event is cancelable and may bubble up to the {{domxref("Document")}} and {{domxref("Window")}} objects.
+این رویداد قابل لغو (cancelable) است و می‌تواند به سمت بالا به اشیاء {{domxref("Document")}} و {{domxref("Window")}} منتشر شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی handler رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("dragover", (event) => { })
@@ -28,25 +22,25 @@ addEventListener("dragover", (event) => { })
 ondragover = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("DragEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("DragEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("DragEvent")}}
 
-## Examples
+## مثال‌ها
 
-### A minimal drag-and-drop example
+### یک مثال ساده از کشیدن و رها کردن
 
-In this example, we have a draggable element inside a container. Try grabbing the element, dragging it over the other container, and releasing it.
+در این مثال، یک عنصر قابل کشیدن داخل یک ظرف داریم. سعی کنید عنصر را بگیرید، آن را روی ظرف دیگر بکشید و رها کنید.
 
-We use three event handlers here:
+ما در اینجا از سه handler رویداد استفاده می‌کنیم:
 
-- in the `dragstart` event handler, we get a reference to the element that the user dragged
-- in the `dragover` event handler for the target container, we call `event.preventDefault()`, which enables it to receive `drop` events.
-- in the `drop` event handler for the drop zone, we handle moving the draggable element from the original container to the drop zone.
+- در handler رویداد `dragstart`، ارجاعی به عنصری که کاربر کشیده است به دست می‌آوریم.
+- در handler رویداد `dragover` برای ظرف هدف، با `event.preventDefault()` فراخوانی می‌کنیم که این امکان را می‌دهد تا رویدادهای `drop` دریافت شوند.
+- در handler رویداد `drop` برای ناحیهٔ رها کردن، جابجایی عنصر قابل کشیدن از ظرف اصلی به ناحیهٔ رها کردن را مدیریت می‌کنیم.
 
-For a complete example of drag and drop, see the page for the [`drag`](/en-US/docs/Web/API/HTMLElement/drag_event) event.
+برای یک مثال کامل از کشیدن و رها کردن، به صفحهٔ رویداد [`drag`](/en-US/docs/Web/API/HTMLElement/drag_event) مراجعه کنید.
 
 #### HTML
 
@@ -107,21 +101,21 @@ target.addEventListener("drop", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('A minimal drag and drop example')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Other drag and drop events:
+- سایر رویدادهای کشیدن و رها کردن:
   - {{domxref("HTMLElement/drag_event", "drag")}}
   - {{domxref("HTMLElement/dragstart_event", "dragstart")}}
   - {{domxref("HTMLElement/dragend_event", "dragend")}}
