@@ -1,7 +1,6 @@
 ---
 title: "DecompressionStream"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/DecompressionStream"
-status: "needs-translation"
 ---
 
 ---
@@ -13,38 +12,38 @@ browser-compat: api.DecompressionStream
 
 {{APIRef("Compression Streams API")}}{{AvailableInWorkers}}
 
-The **`DecompressionStream`** interface of the {{domxref('Compression Streams API','','',' ')}} decompresses a stream of data. It implements the same shape as a {{domxref("TransformStream")}}, allowing it to be used in {{domxref("ReadableStream.pipeThrough()")}} and similar methods.
+**`DecompressionStream`** که بخشی از {{domxref('Compression Streams API','','',' ')}} است، یک جریان داده را از حالت فشرده خارج می‌کند. این رابط همان ساختار {{domxref("TransformStream")}} را دارد و می‌توان آن را در {{domxref("ReadableStream.pipeThrough()")}} و روش‌های مشابه به کار برد.
 
-## Constructor
+## سازنده
 
 - {{domxref("DecompressionStream.DecompressionStream", "DecompressionStream()")}}
-  - : Creates a new `DecompressionStream`
+  - : یک نمونه جدید از `DecompressionStream` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("DecompressionStream.readable")}}
-  - : Returns the {{domxref("ReadableStream")}} instance controlled by this object.
+  - : نمونه {{domxref("ReadableStream")}} کنترل‌شده توسط این شیء را برمی‌گرداند.
 - {{domxref("DecompressionStream.writable")}}
-  - : Returns the {{domxref("WritableStream")}} instance controlled by this object.
+  - : نمونه {{domxref("WritableStream")}} کنترل‌شده توسط این شیء را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-In this example a blob is decompressed using gzip compression.
+در این مثال، یک blob با استفاده از فشرده‌سازی gzip از حالت فشرده خارج می‌شود.
 
 ```js
 const ds = new DecompressionStream("gzip");
 const decompressedStream = blob.stream().pipeThrough(ds);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CompressionStream")}}
 - {{domxref("TransformStream")}}
