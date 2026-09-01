@@ -1,7 +1,5 @@
 ---
 title: "HTMLHeadElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLHeadElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,26 +11,26 @@ browser-compat: api.HTMLHeadElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLHeadElement`** interface contains the descriptive information, or metadata, for a document. This object inherits all of the properties and methods described in the {{domxref("HTMLElement")}} interface.
+رابطِ **`HTMLHeadElement`** اطلاعات توصیفی یا فراداده‌ی یک سند را در بر می‌گیرد. این شیء همه‌ی ویژگی‌ها و روش‌های تعریف‌شده در رابط {{domxref("HTMLElement")}} را به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_No specific properties; inherits properties from its parent, {{domxref("HTMLElement")}}._
+_هیچ ویژگی خاصی ندارد؛ ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_هیچ روش خاصی ندارد؛ روش‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("head")}}
+- عنصر HTML پیاده‌ساز این رابط: {{HTMLElement("head")}}
