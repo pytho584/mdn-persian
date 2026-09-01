@@ -1,7 +1,6 @@
+```
 ---
 title: "EditContext"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext"
-status: "needs-translation"
 ---
 
 ---
@@ -15,62 +14,63 @@ browser-compat: api.EditContext
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`EditContext`** interface represents the text edit context of an element that was made editable by using the {{domxref("EditContext API", "", "", "nocode")}}.
+رابط **`EditContext`** زمینهٔ ویرایش متن عنصری را نشان می‌دهد که با استفاده از {{domxref("EditContext API", "", "", "nocode")}} قابل ویرایش شده است.
 
-The {{domxref("EditContext API", "", "", "nocode")}} can be used to build rich text editors on the web that support advanced text input experiences, such as {{glossary("Input Method Editor")}} (IME) composition, emoji picker, or any other platform-specific editing-related UI surfaces.
+از {{domxref("EditContext API", "", "", "nocode")}} می‌توان برای ساخت ویرایشگرهای متنی پیشرفته در وب استفاده کرد که تجربه‌های ورود متن پیچیده‌تری مانند ترکیب متن با {{glossary("Input Method Editor")}} (IME)، انتخاب‌گر ایموجی، یا هر رابط کاربری ویرایش وابسته به پلتفرم دیگری را پشتیبانی می‌کنند.
 
-## Constructor
+## سازنده
 
 - {{domxref("EditContext.EditContext", "EditContext()")}} {{experimental_inline}}
-  - : Returns a new `EditContext` instance.
+  - : یک نمونه جدید `EditContext` برمی‌گرداند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("EditContext.text")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : The editable content of the element.
+  - : محتوای قابل ویرایش عنصر.
 - {{domxref("EditContext.selectionStart")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : The offset, within the editable text content, of the start of the current selection.
+  - : آفست شروع انتخاب فعلی در محتوای متن قابل ویرایش.
 - {{domxref("EditContext.selectionEnd")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : The offset, within the editable text content, of the end of the current selection.
+  - : آفست پایان انتخاب فعلی در محتوای متن قابل ویرایش.
 - {{domxref("EditContext.characterBoundsRangeStart")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : The offset, within the editable text content, where the last IME composition started.
+  - : آفست محل شروع آخرین ترکیب IME در محتوای متن قابل ویرایش.
 
-## Instance methods
+## روش‌های نمونه
 
-_`EditContext` is based on the {{domxref("EventTarget")}} interface, and includes its methods._
+_`EditContext` بر پایهٔ رابط {{domxref("EventTarget")}} است و روش‌های آن را نیز شامل می‌شود._
 
 - {{domxref("EditContext.attachedElements()")}} {{experimental_inline}}
-  - : An {{jsxref("Array")}} containing one {{domxref("HTMLElement")}} object which is the element that's associated with the `EditContext` object.
+  - : یک {{jsxref("Array")}} شامل یک شیء {{domxref("HTMLElement")}} که عنصر مرتبط با شیء `EditContext` است.
 - {{domxref("EditContext.characterBounds()")}} {{experimental_inline}}
-  - : The list of bounding rectangles for the characters in the `EditContext` object.
+  - : فهرست مستطیل‌های محدودکننده برای کاراکترهای موجود در شیء `EditContext`.
 - {{domxref("EditContext.updateText()")}} {{experimental_inline}}
-  - : Updates the internal text content of the `EditContext` object.
+  - : محتوای متنی داخلی شیء `EditContext` را به‌روزرسانی می‌کند.
 - {{domxref("EditContext.updateSelection()")}} {{experimental_inline}}
-  - : Updates the internal state of the selection within the editable text context.
+  - : وضعیت داخلی انتخاب را در زمینهٔ متن قابل ویرایش به‌روزرسانی می‌کند.
 - {{domxref("EditContext.updateControlBounds()")}} {{experimental_inline}}
-  - : Informs the operating system about the position and size of the editable text region.
+  - : موقعیت و اندازهٔ ناحیهٔ متن قابل ویرایش را به سیستم‌عامل اطلاع می‌دهد.
 - {{domxref("EditContext.updateSelectionBounds()")}} {{experimental_inline}}
-  - : Informs the operating system about the position and size of the selection within the editable text region.
+  - : موقعیت و اندازهٔ انتخاب در ناحیهٔ متن قابل ویرایش را به سیستم‌عامل اطلاع می‌دهد.
 - {{domxref("EditContext.updateCharacterBounds()")}} {{experimental_inline}}
-  - : Informs the operating system about the position and size of the characters in the `EditContext` object.
+  - : موقعیت و اندازهٔ کاراکترهای موجود در شیء `EditContext` را به سیستم‌عامل اطلاع می‌دهد.
 
-## Events
+## رویدادها
 
 - {{domxref("EditContext.textupdate_event", "textupdate")}} {{experimental_inline}}
-  - : Fired when the user has made changes to the text or selection.
+  - : هنگامی که کاربر تغییراتی در متن یا انتخاب ایجاد کرده است، فعال می‌شود.
 - {{domxref("EditContext.textformatupdate_event", "textformatupdate")}} {{experimental_inline}}
-  - : Fired when composition using an {{glossary("Input Method Editor")}} (IME) window is happening and the IME decides that certain parts of the text being composed should be formatted differently to indicate the composition state.
+  - : زمانی که ترکیب متن با استفاده از پنجرهٔ {{glossary("Input Method Editor")}} (IME) در حال انجام است و IME تصمیم می‌گیرد بخش‌هایی از متن در حال ترکیب برای نشان‌دادن وضعیت ترکیب، قالب‌بندی متفاوتی داشته باشند، فعال می‌شود.
 - {{domxref("EditContext.characterboundsupdate_event", "characterboundsupdate")}} {{experimental_inline}}
-  - : Fired when the operating system needs to know the size and position of certain characters within the editable text region of the `EditContext` object, in order to display an IME window.
+  - : زمانی که سیستم‌عامل برای نمایش پنجرهٔ IME نیاز به دانستن اندازه و موقعیت برخی کاراکترها در ناحیهٔ متن قابل ویرایش شیء `EditContext` دارد، فعال می‌شود.
 - {{domxref("EditContext.compositionstart_event", "compositionstart")}} {{experimental_inline}}
-  - : Fired when composition using an IME window is starting.
+  - : هنگامی که ترکیب متن با استفاده از پنجرهٔ IME شروع می‌شود، فعال می‌شود.
 - {{domxref("EditContext.compositionend_event", "compositionend")}} {{experimental_inline}}
-  - : Fired when composition using an IME window is ending.
+  - : هنگامی که ترکیب متن با استفاده از پنجرهٔ IME پایان می‌یابد، فعال می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
