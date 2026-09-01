@@ -1,11 +1,5 @@
 ---
-title: "HTMLMediaElement: timeupdate event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/timeupdate_event"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: timeupdate event"
+title: "HTMLMediaElement: رویداد timeupdate"
 short-title: timeupdate
 slug: Web/API/HTMLMediaElement/timeupdate_event
 page-type: web-api-event
@@ -14,15 +8,15 @@ browser-compat: api.HTMLMediaElement.timeupdate_event
 
 {{APIRef("HTMLMediaElement")}}
 
-The `timeupdate` event is fired when the time indicated by the `currentTime` attribute has been updated.
+رویداد `timeupdate` زمانی شلیک می‌شود که زمان مشخص‌شده توسط ویژگی `currentTime` به‌روزرسانی شده باشد.
 
-The event frequency is dependent on the system load, but will be thrown between about 4Hz and 66Hz (assuming the event handlers don't take longer than 250ms to run). User agents are encouraged to vary the frequency of the event based on the system load and the average cost of processing the event each time, so that the UI updates are not any more frequent than the user agent can comfortably handle while decoding the video.
+فرکانس این رویداد به بار سیستم بستگی دارد، اما تقریباً بین ۴ هرتز تا ۶۶ هرتز پرتاب می‌شود (به شرطی که اجرای event handlerها بیش از ۲۵۰ میلی‌ثانیه طول نکشد). به عامل‌های کاربری توصیه می‌شود که فرکانس رویداد را بر اساس بار سیستم و هزینه متوسط پردازش رویداد در هر بار تغییر دهند، به طوری که به‌روزرسانی‌های رابط کاربری بیش از آنچه عامل کاربری در حین رمزگشایی ویدیو به راحتی می‌تواند مدیریت کند، نباشد.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو (cancelable) نیست و منتشر (bubble) نمی‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی event handler تنظیم کنید.
 
 ```js-nolint
 addEventListener("timeupdate", (event) => { })
@@ -30,63 +24,63 @@ addEventListener("timeupdate", (event) => { })
 ontimeupdate = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-These examples add an event listener for the HTMLMediaElement's `timeupdate` event, then post a message when that event handler has reacted to the event firing. Remember, the event frequency is dependent on the system load.
+این مثال‌ها یک شنونده رویداد برای رویداد `timeupdate` HTMLMediaElement اضافه می‌کنند و سپس هنگامی که آن event handler به شلیک رویداد واکنش نشان داد، یک پیام ارسال می‌کنند. به یاد داشته باشید که فرکانس رویداد به بار سیستم بستگی دارد.
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const video = document.querySelector("video");
 
 video.addEventListener("timeupdate", (event) => {
-  console.log("The currentTime attribute has been updated. Again.");
+  console.log("ویژگی currentTime به‌روزرسانی شده است. دوباره.");
 });
 ```
 
-Using the `ontimeupdate` event handler property:
+استفاده از ویژگی event handler `ontimeupdate`:
 
 ```js
 const video = document.querySelector("video");
 
 video.ontimeupdate = (event) => {
-  console.log("The currentTime attribute has been updated. Again.");
+  console.log("ویژگی currentTime به‌روزرسانی شده است. دوباره.");
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## Related Events
+## رویدادهای مرتبط
 
-- The HTMLMediaElement {{domxref("HTMLMediaElement.playing_event", 'playing')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ended_event", 'ended')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.canplaythrough_event", 'canplaythrough')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.play_event", 'play')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.pause_event", 'pause')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.stalled_event", 'stalled')}} event
+- رویداد {{domxref("HTMLMediaElement.playing_event", 'playing')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.ended_event", 'ended')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.canplaythrough_event", 'canplaythrough')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.play_event", 'play')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.pause_event", 'pause')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.stalled_event", 'stalled')}} در HTMLMediaElement
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAudioElement")}}
 - {{domxref("HTMLVideoElement")}}
