@@ -1,11 +1,5 @@
 ---
 title: "HTMLGeolocationElement: promptdismiss event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLGeolocationElement/promptdismiss_event"
-status: "needs-translation"
----
-
----
-title: "HTMLGeolocationElement: promptdismiss event"
 short-title: promptdismiss
 slug: Web/API/HTMLGeolocationElement/promptdismiss_event
 page-type: web-api-event
@@ -16,11 +10,11 @@ browser-compat: api.HTMLGeolocationElement.promptdismiss_event
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}
 
-The **`promptdismiss`** event of the {{domxref("HTMLGeolocationElement")}} interface is fired whenever the user activates the `<geolocation>` element and dismisses the resulting dialog, by pressing the "close" button or the <kbd>Esc</kbd> key.
+رویداد **`promptdismiss`** از رابط {{domxref("HTMLGeolocationElement")}} زمانی فعال می‌شود که کاربر عنصر `<geolocation>` را فعال کند و گفت‌وگوی حاصل را با فشار دادن دکمه «بستن» یا کلید <kbd>Esc</kbd> رد کند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم ویژگی handler رویداد می‌توانید به شکل زیر عمل کنید:
 
 ```js-nolint
 addEventListener("promptdismiss", (event) => { })
@@ -28,21 +22,21 @@ addEventListener("promptdismiss", (event) => { })
 onpromptdismiss = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("Event")}}.
+یک {{domxref("Event")}}.
 
-## Examples
+## مثال‌ها
 
-### Using `promptdismiss` to respond to user permission dismissal
+### استفاده از `promptdismiss` برای پاسخ به رد کردن مجوز توسط کاربر
 
-In our [Embedded map demo](https://mdn.github.io/dom-examples/geolocation-element/embedded-map/) ([source code](https://github.com/mdn/dom-examples/tree/main/geolocation-element/embedded-map)), we use a `promptdismiss` event handler to respond to the user dismissing the `<geolocation>` permission prompt:
+در [دموی نقشه جاسازی‌شده](https://mdn.github.io/dom-examples/geolocation-element/embedded-map/) ما ([کد منبع](https://github.com/mdn/dom-examples/tree/main/geolocation-element/embedded-map))، از handler رویداد `promptdismiss` برای پاسخ به رد کردن اعلان مجوز `<geolocation>` توسط کاربر استفاده کرده‌ایم:
 
 ```js
 geo.addEventListener("promptdismiss", notifyUserRetrySelection);
 ```
 
-In the `notifyUserRetrySelection()` function, we ask the user to press the button again and allow location.
+در تابع `notifyUserRetrySelection()`، از کاربر می‌خواهیم دوباره دکمه را فشار دهد و موقعیت مکانی را مجاز کند.
 
 ```js
 function notifyUserRetrySelection() {
@@ -51,16 +45,16 @@ function notifyUserRetrySelection() {
 }
 ```
 
-See the main {{domxref("HTMLGeolocationElement")}} page for a full walkthrough of this example.
+برای توضیح کامل این مثال، صفحه اصلی {{domxref("HTMLGeolocationElement")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{htmlelement("geolocation")}} element
+- عنصر {{htmlelement("geolocation")}}
