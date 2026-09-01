@@ -1,10 +1,4 @@
 ---
-title: "FileReader"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReader"
-status: "needs-translation"
----
-
----
 title: FileReader
 slug: Web/API/FileReader
 page-type: web-api-interface
@@ -13,70 +7,70 @@ browser-compat: api.FileReader
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`FileReader`** interface lets web applications asynchronously read the contents of files (or raw data buffers) stored on the user's computer, using {{domxref("File")}} or {{domxref("Blob")}} objects to specify the file or data to read.
+رابط **`FileReader`** به برنامه‌های وب اجازه می‌دهد تا محتویات فایل‌ها (یا بافرهای داده خام) ذخیره‌شده در رایانه کاربر را به‌صورت ناهمگام (asynchronous) بخوانند، با استفاده از اشیاء {{domxref("File")}} یا {{domxref("Blob")}} برای مشخص‌کردن فایل یا داده موردنظر برای خواندن.
 
-File objects may be obtained from a {{domxref("FileList")}} object returned as a result of a user selecting files using the `<input type="file">` element, or from a drag and drop operation's {{domxref("DataTransfer")}} object. `FileReader` can only access the contents of files that the user has explicitly selected; it cannot be used to read a file by pathname from the user's file system. To read files on the client's file system by pathname, use the [File System Access API](/en-US/docs/Web/API/File_System_API). To read server-side files, use {{domxref("Window/fetch", "fetch()")}}, with [CORS](/en-US/docs/Web/HTTP/Guides/CORS) permission if reading cross-origin.
+اشیاء File ممکن است از یک شیء {{domxref("FileList")}} به‌دست آیند که در نتیجه انتخاب فایل توسط کاربر از طریق عنصر `<input type="file">` بازگردانده می‌شود، یا از شیء {{domxref("DataTransfer")}} یک عملیات کشیدن و رها کردن (drag and drop). `FileReader` فقط می‌تواند به محتویات فایل‌هایی دسترسی پیدا کند که کاربر به‌صراحت انتخاب کرده است؛ نمی‌توان از آن برای خواندن یک فایل بر اساس مسیر (pathname) از سیستم فایل کاربر استفاده کرد. برای خواندن فایل‌ها در سیستم فایل سمت کلاینت بر اساس مسیر، از [File System Access API](/en-US/docs/Web/API/File_System_API) استفاده کنید. برای خواندن فایل‌های سمت سرور، از {{domxref("Window/fetch", "fetch()")}} استفاده کنید، در صورت خواندن از مبدأ دیگر (cross-origin) با مجوز [CORS](/en-US/docs/Web/HTTP/Guides/CORS).
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("FileReader.FileReader", "FileReader()")}}
-  - : Returns a new `FileReader` object.
+  - : یک شیء `FileReader` جدید بازمی‌گرداند.
 
-See [Using files from web applications](/en-US/docs/Web/API/File_API/Using_files_from_web_applications) for details and examples.
+برای جزئیات و مثال‌ها، [استفاده از فایل‌ها در برنامه‌های وب](/en-US/docs/Web/API/File_API/Using_files_from_web_applications) را ببینید.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
 - {{domxref("FileReader.error")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMException")}} representing the error that occurred while reading the file.
+  - : یک {{domxref("DOMException")}} که خطای رخ‌داده در هنگام خواندن فایل را نشان می‌دهد.
 - {{domxref("FileReader.readyState")}} {{ReadOnlyInline}}
-  - : A number indicating the state of the `FileReader`. This is one of the following:
+  - : عددی که وضعیت `FileReader` را نشان می‌دهد. یکی از مقادیر زیر است:
 
-    | Name      | Value | Description                                 |
-    | --------- | ----- | ------------------------------------------- |
-    | `EMPTY`   | `0`   | No data has been loaded yet.                |
-    | `LOADING` | `1`   | Data is currently being loaded.             |
-    | `DONE`    | `2`   | The entire read request has been completed. |
+    | نام        | مقدار | توضیح                                |
+    | ---------- | ----- | ------------------------------------ |
+    | `EMPTY`    | `0`   | هنوز داده‌ای بارگذاری نشده است.      |
+    | `LOADING`  | `1`   | در حال بارگذاری داده است.            |
+    | `DONE`     | `2`   | کل درخواست خواندن تکمیل شده است.     |
 
 - {{domxref("FileReader.result")}} {{ReadOnlyInline}}
-  - : The file's contents. This property is only valid after the read operation is complete, and the format of the data depends on which of the methods was used to initiate the read operation.
+  - : محتویات فایل. این ویژگی فقط پس از تکمیل عملیات خواندن معتبر است و قالب داده به روشی بستگی دارد که برای شروع عملیات خواندن استفاده شده است.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
 - {{domxref("FileReader.abort()")}}
-  - : Aborts the read operation. Upon return, the `readyState` will be `DONE`.
+  - : عملیات خواندن را لغو می‌کند. پس از بازگشت، `readyState` برابر با `DONE` خواهد بود.
 - {{domxref("FileReader.readAsArrayBuffer()")}}
-  - : Starts reading the contents of the specified {{domxref("Blob")}}, once finished, the `result` attribute contains an {{jsxref("ArrayBuffer")}} representing the file's data.
+  - : خواندن محتویات {{domxref("Blob")}} مشخص‌شده را آغاز می‌کند؛ پس از اتمام، ویژگی `result` حاوی یک {{jsxref("ArrayBuffer")}} است که داده‌های فایل را نشان می‌دهد.
 - {{domxref("FileReader.readAsBinaryString()")}} {{deprecated_inline}}
-  - : Starts reading the contents of the specified {{domxref("Blob")}}, once finished, the `result` attribute contains the raw binary data from the file as a string.
+  - : خواندن محتویات {{domxref("Blob")}} مشخص‌شده را آغاز می‌کند؛ پس از اتمام، ویژگی `result` حاوی داده‌های باینری خام فایل به‌صورت یک رشته (string) است.
 - {{domxref("FileReader.readAsDataURL()")}}
-  - : Starts reading the contents of the specified {{domxref("Blob")}}, once finished, the `result` attribute contains a `data:` URL representing the file's data.
+  - : خواندن محتویات {{domxref("Blob")}} مشخص‌شده را آغاز می‌کند؛ پس از اتمام، ویژگی `result` حاوی یک URL با طرح `data:` است که داده‌های فایل را نشان می‌دهد.
 - {{domxref("FileReader.readAsText()")}}
-  - : Starts reading the contents of the specified {{domxref("Blob")}}, once finished, the `result` attribute contains the contents of the file as a text string. An optional encoding name can be specified.
+  - : خواندن محتویات {{domxref("Blob")}} مشخص‌شده را آغاز می‌کند؛ پس از اتمام، ویژگی `result` حاوی محتویات فایل به‌صورت یک رشته متنی است. می‌توان یک نام encoding اختیاری نیز مشخص کرد.
 
-## Events
+## رویدادها (Events)
 
-Listen to these events using {{domxref("EventTarget/addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface. Remove the event listeners with {{domxref("EventTarget.removeEventListener", "removeEventListener()")}}, once `FileReader` is no longer used, to avoid memory leaks.
+به این رویدادها با استفاده از {{domxref("EventTarget/addEventListener", "addEventListener()")}} گوش دهید یا با اختصاص یک شنونده رویداد به ویژگی `oneventname` این رابط. پس از پایان استفاده از `FileReader`، شنونده‌های رویداد را با {{domxref("EventTarget.removeEventListener", "removeEventListener()")}} حذف کنید تا از نشت حافظه (memory leaks) جلوگیری شود.
 
 - {{domxref("FileReader/abort_event", "abort")}}
-  - : Fired when a read has been aborted, for example because the program called {{domxref("FileReader.abort()")}}.
+  - : زمانی رخ می‌دهد که یک خواندن لغو شده است، مثلاً به این دلیل که برنامه متد {{domxref("FileReader.abort()")}} را فراخوانی کرده است.
 - {{domxref("FileReader/error_event", "error")}}
-  - : Fired when the read failed due to an error.
+  - : زمانی رخ می‌دهد که خواندن به دلیل یک خطا ناموفق بوده است.
 - {{domxref("FileReader/load_event", "load")}}
-  - : Fired when a read has completed successfully.
+  - : زمانی رخ می‌دهد که یک خواندن با موفقیت کامل شده است.
 - {{domxref("FileReader/loadend_event", "loadend")}}
-  - : Fired when a read has completed, successfully or not.
+  - : زمانی رخ می‌دهد که یک خواندن کامل شده است، چه موفق و چه ناموفق.
 - {{domxref("FileReader/loadstart_event", "loadstart")}}
-  - : Fired when a read has started.
+  - : زمانی رخ می‌دهد که یک خواندن شروع شده است.
 - {{domxref("FileReader/progress_event", "progress")}}
-  - : Fired periodically as data is read.
+  - : به‌طور دوره‌ای در حین خواندن داده رخ می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Using FileReader
+### استفاده از FileReader
 
-This example reads and displays the contents of a text file directly in the browser.
+این مثال محتویات یک فایل متنی را مستقیماً در مرورگر می‌خواند و نمایش می‌دهد.
 
 #### HTML
 
@@ -130,21 +124,21 @@ function showMessage(message, type) {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Using FileReader", 640, 300)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using files from web applications](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
+- [استفاده از فایل‌ها در برنامه‌های وب](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
 - {{domxref("File")}}
 - {{domxref("Blob")}}
 - {{domxref("FileReaderSync")}}
