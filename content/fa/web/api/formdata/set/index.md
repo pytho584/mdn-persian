@@ -1,11 +1,5 @@
 ---
 title: "FormData: set() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormData/set"
-status: "needs-translation"
----
-
----
-title: "FormData: set() method"
 short-title: set()
 slug: Web/API/FormData/set
 page-type: web-api-instance-method
@@ -14,61 +8,61 @@ browser-compat: api.FormData.set
 
 {{APIRef("XMLHttpRequest API")}} {{AvailableInWorkers}}
 
-The **`set()`** method of the {{domxref("FormData")}} interface sets a new value for an existing key inside a `FormData` object, or adds the key/value if it does not already exist.
+متد **`set()`** در رابط {{domxref("FormData")}} مقدار جدیدی را برای یک کلید موجود در یک شیء `FormData` تنظیم می‌کند، یا اگر کلید از قبل وجود نداشته باشد، آن را به‌همراه مقدارش اضافه می‌کند.
 
-The difference between `set()` and {{domxref("FormData.append", "append()")}} is that if the specified key does already exist, `set()` will overwrite all existing values with the new one, whereas `append()` will append the new value onto the end of the existing set of values.
+تفاوت بین `set()` و {{domxref("FormData.append", "append()")}} این است که اگر کلید مشخص‌شده از قبل وجود داشته باشد، `set()` تمام مقادیر موجود را با مقدار جدید بازنویسی می‌کند، در حالی که `append()` مقدار جدید را به انتهای مجموعه مقادیر موجود اضافه می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 set(name, value)
 set(name, value, filename)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the field whose data is contained in `value`.
+  - : نام فیلدی که داده آن در `value` قرار دارد.
 - `value`
-  - : The field's value. This can be a string or {{domxref("Blob")}} (including subclasses such as {{domxref("File")}}). If none of these are specified the value is converted to a string.
+  - : مقدار فیلد. این مقدار می‌تواند یک رشته یا {{domxref("Blob")}} باشد (شامل زیرکلاس‌هایی مانند {{domxref("File")}}). اگر هیچ‌کدام از این‌ها مشخص نشده باشند، مقدار به رشته تبدیل می‌شود.
 - `filename` {{optional_inline}}
-  - : The filename reported to the server (a string), when a {{domxref("Blob")}} or {{domxref("File")}} is passed as the second parameter. The default filename for {{domxref("Blob")}} objects is "blob". The default filename for {{domxref("File")}} objects is the file's filename.
+  - : نام فایلی که به سرور گزارش می‌شود (یک رشته)، زمانی که یک {{domxref("Blob")}} یا {{domxref("File")}} به‌عنوان پارامتر دوم ارسال می‌شود. نام پیش‌فرض برای اشیاء {{domxref("Blob")}}، «blob» است. نام پیش‌فرض برای اشیاء {{domxref("File")}}، نام خود فایل است.
 
 > [!NOTE]
-> If you specify a {{domxref("Blob")}} as the data to append to the `FormData` object, the filename that will be reported to the server in the "Content-Disposition" header used to vary from browser to browser.
+> اگر یک {{domxref("Blob")}} را به‌عنوان داده برای افزودن به شیء `FormData` مشخص کنید، نام فایلی که در هدر «Content-Disposition» به سرور گزارش می‌شود، در مرورگرهای مختلف متفاوت بود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 formData.set("username", "Chris");
 ```
 
-When the value is a {{domxref("Blob")}} (or a {{domxref("File")}}), you can specify its name with the `filename` parameter:
+وقتی مقدار یک {{domxref("Blob")}} (یا یک {{domxref("File")}}) باشد، می‌توانید نام آن را با پارامتر `filename` مشخص کنید:
 
 ```js
 formData.set("user-pic", myFileInput.files[0], "chris.jpg");
 ```
 
-If the value is not a string or a `Blob`, `set()` will convert it to a string automatically:
+اگر مقدار یک رشته یا `Blob` نباشد، `set()` آن را به‌طور خودکار به رشته تبدیل می‌کند:
 
 ```js
 formData.set("name", 72);
 formData.get("name"); // "72"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using FormData objects](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
+- [استفاده از اشیاء FormData](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
 - {{HTMLElement("Form")}}
