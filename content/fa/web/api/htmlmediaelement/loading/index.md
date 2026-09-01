@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: loading property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loading"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: loading property"
 short-title: loading
 slug: Web/API/HTMLMediaElement/loading
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.HTMLMediaElement.loading
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}
 
-The **`loading`** property of the {{domxref("HTMLMediaElement")}} interface provides a hint to the browser on how to handle the loading of the media which is currently outside the window's {{Glossary("visual viewport")}}. This helps to optimize the loading of the document's contents by postponing loading the media until it's expected to be needed, rather than immediately during the initial page load. It reflects the `<audio>` element's [`loading`](/en-US/docs/Web/HTML/Reference/Elements/audio#loading) content attribute or the `<video>` element's [`loading`](/en-US/docs/Web/HTML/Reference/Elements/video#loading) content attribute.
+ویژگی **`loading`** در رابط {{domxref("HTMLMediaElement")}} راهنمایی به مرورگر می‌دهد که بارگذاری رسانه‌ای که در حال حاضر خارج از {{Glossary("visual viewport")}} پنجره است چگونه مدیریت شود. این کار با به تعویق انداختن بارگذاری رسانه تا زمانی که انتظار می‌رود به آن نیاز باشد، بارگذاری محتوای سند را بهینه می‌کند؛ به جای اینکه بلافاصله در بارگذاری اولیه صفحه انجام شود. این ویژگی، ویژگی محتوایی [`loading`](/en-US/docs/Web/HTML/Reference/Elements/audio#loading) عنصر `<audio>` یا ویژگی محتوایی [`loading`](/en-US/docs/Web/HTML/Reference/Elements/video#loading) عنصر `<video>` را بازتاب می‌دهد.
 
 ## Value
 
-A string whose value is one of `eager` or `lazy`. For their meanings, see the HTML [`<audio loading>`](/en-US/docs/Web/HTML/Reference/Elements/audio#loading) or [`<video loading>`](/en-US/docs/Web/HTML/Reference/Elements/video#loading) reference.
+یک رشته که مقدار آن یکی از `eager` یا `lazy` است. برای معانی هر یک، به مرجع HTML [`<audio loading>`](/en-US/docs/Web/HTML/Reference/Elements/audio#loading) یا [`<video loading>`](/en-US/docs/Web/HTML/Reference/Elements/video#loading) مراجعه کنید.
 
 ## Examples
 
-### Basic usage
+### استفادهٔ پایه
 
-The `addVideoToList()` function shown below adds a video thumbnail to a list of items, using lazy-loading to avoid loading the video from the network until it's actually needed.
+تابع `addVideoToList()` که در زیر نشان داده شده است، یک تصویر بندانگشتی ویدیو به فهرستی از موارد اضافه می‌کند و از بارگذاری تنبل (lazy-loading) استفاده می‌کند تا از بارگذاری ویدیو از شبکه تا زمانی که واقعاً به آن نیاز نیست جلوگیری کند.
 
 ```js
 function addVideoToList(url) {
@@ -64,7 +58,7 @@ function addVideoToList(url) {
 
 ## See also
 
-- The {{HTMLElement("audio")}} element
-- The {{HTMLElement("video")}} element
-- [Web performance](/en-US/docs/Learn_web_development/Extensions/Performance) in the MDN Learning Area
-- [Lazy loading](/en-US/docs/Web/Performance/Guides/Lazy_loading) in the MDN web performance guide
+- عنصر {{HTMLElement("audio")}}
+- عنصر {{HTMLElement("video")}}
+- [کارایی وب](/en-US/docs/Learn_web_development/Extensions/Performance) در بخش آموزش MDN
+- [بارگذاری تنبل](/en-US/docs/Web/Performance/Guides/Lazy_loading) در راهنمای کارایی وب MDN
