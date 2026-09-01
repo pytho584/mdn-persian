@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: multiple property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/multiple"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: multiple property"
 short-title: multiple
 slug: Web/API/HTMLSelectElement/multiple
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.HTMLSelectElement.multiple
 
 {{ APIRef("HTML DOM") }}
 
-The **`multiple`** property of the {{DOMxRef("HTMLSelectElement")}} interface specifies that the user may select more than one option from the list of options. It reflects the {{htmlelement("select")}} element's [`multiple`](/en-US/docs/Web/HTML/Reference/Elements/select#multiple) attribute.
+ویژگی **`multiple`** در رابط {{DOMxRef("HTMLSelectElement")}} مشخص میکند که کاربر میتواند بیش از یک گزینه را از فهرست گزینهها انتخاب کند. این ویژگی، صفت [`multiple`](/en-US/docs/Web/HTML/Reference/Elements/select#multiple) عنصر {{htmlelement("select")}} را بازتاب میدهد.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی.
 
-## Examples
+## مثالها
 
 ```js
 const selectElement = document.getElementById("comment");
 console.log(selectElement.multiple);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("select")}}
 - {{DOMXref("HTMLSelectElement.selectedOptions")}}
