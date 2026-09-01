@@ -1,11 +1,5 @@
 ---
 title: "FileSystemSyncAccessHandle: write() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemSyncAccessHandle/write"
-status: "needs-translation"
----
-
----
-title: "FileSystemSyncAccessHandle: write() method"
 short-title: write()
 slug: Web/API/FileSystemSyncAccessHandle/write
 page-type: web-api-instance-method
@@ -14,51 +8,50 @@ browser-compat: api.FileSystemSyncAccessHandle.write
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers("dedicated")}}
 
-The **`write()`** method of the
-{{domxref("FileSystemSyncAccessHandle")}} interface writes the content of a specified buffer to the file associated with the handle, optionally at a given offset.
+متد **`write()`** از رابط {{domxref("FileSystemSyncAccessHandle")}} محتوای یک بافر مشخص را در فایل مرتبط با دستگیره می‌نویسد، به‌صورت اختیاری در یک آفست مشخص.
 
-Files within the [origin private file system](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) are not visible to end-users, therefore are not subject to the same security checks as methods running on files within the user-visible file system. As a result, writes performed using `FileSystemSyncAccessHandle.write()` are much more performant. This makes them suitable for significant, large-scale file updates such as [SQLite](https://sqlite.org/wasm) database modifications.
+فایل‌های درون [سیستم فایل خصوصی مبدأ](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) برای کاربران نهایی قابل مشاهده نیستند؛ بنابراین مانند متدهایی که روی فایل‌های موجود در سیستم فایل قابل مشاهده برای کاربر اجرا می‌شوند، تحت همان بررسی‌های امنیتی قرار نمی‌گیرند. در نتیجه، نوشتن‌هایی که با استفاده از `FileSystemSyncAccessHandle.write()` انجام می‌شوند، عملکرد بسیار بالاتری دارند. این موضوع آن‌ها را برای به‌روزرسانی‌های وسیع و در مقیاس بزرگ فایل، مانند اصلاح پایگاه داده [SQLite](https://sqlite.org/wasm)، مناسب می‌سازد.
 
-## Syntax
+## دستور زبان
 
 ```js-nolint
 write(buffer, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `buffer`
-  - : An {{jsxref("ArrayBuffer")}} or `ArrayBufferView` (such as a {{jsxref("DataView")}}) representing the buffer to be written to the file.
+  - : یک {{jsxref("ArrayBuffer")}} یا `ArrayBufferView` (مانند یک {{jsxref("DataView")}}) که بافر مورد نظر برای نوشتن در فایل را نشان می‌دهد.
 - `options` {{optional_inline}}
-  - : An options object containing the following properties:
+  - : یک شیء گزینه‌ها شامل ویژگی‌های زیر:
     - `at`
-      - : A number representing the offset in bytes from the start of the file that the buffer should be written at.
+      - : عددی که آفست را بر حسب بایت از ابتدای فایل مشخص می‌کند و بافر باید در آن نقطه نوشته شود.
 
 > [!NOTE]
-> You cannot directly manipulate the contents of an `ArrayBuffer`. Instead, you create a typed array object like an {{jsxref("Int8Array")}} or a {{jsxref("DataView")}} object, which represents the buffer in a specific format, and use that to read and write the contents of the buffer.
+> شما نمی‌توانید به طور مستقیم محتویات یک `ArrayBuffer` را دستکاری کنید. در عوض، یک شیء آرایه تایپ‌شده مانند {{jsxref("Int8Array")}} یا {{jsxref("DataView")}} می‌سازید که بافر را در قالبی خاص نشان می‌دهد و از آن برای خواندن و نوشتن محتویات بافر استفاده می‌کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A number representing the number of bytes written to the file.
+عددی که تعداد بایت‌های نوشته‌شده در فایل را نشان می‌دهد.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the associated access handle is already closed, or if the modification of the file's binary data completely fails.
+  - : اگر دستگیره دسترسی مرتبط از قبل بسته شده باشد، یا اصلاح داده‌های دودویی فایل به طور کامل ناموفق باشد، پرتاب می‌شود.
 - {{domxref("QuotaExceededError")}}
-  - : Thrown if the increased data capacity exceeds the browser's [storage quota](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
+  - : اگر ظرفیت داده افزایش‌یافته از [سهمیه ذخیره‌سازی](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria) مرورگر فراتر رود، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if the underlying file system does not support writing the file from the specified file offset.
+  - : اگر سیستم فایل زیرین از نوشتن فایل از آفست مشخص‌شده پشتیبانی نکند، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following asynchronous event handler function is contained inside a Web Worker. On receiving a message from the main thread it:
+تابع کنترل‌کننده رویداد ناهمگام زیر درون یک Web Worker قرار دارد. پس از دریافت پیام از نخ اصلی، کارهای زیر را انجام می‌دهد:
 
-- Creates a synchronous file access handle.
-- Gets the size of the file and creates an {{jsxref("ArrayBuffer")}} to contain it.
-- Reads the file contents into the buffer.
-- Encodes the message and writes it to the end of the file.
-- Persists the changes to disk and closes the access handle.
+- یک دستگیره دسترسی همگام به فایل ایجاد می‌کند.
+- اندازه فایل را به دست می‌آورد و یک {{jsxref("ArrayBuffer")}} برای نگهداری آن می‌سازد.
+- محتویات فایل را در بافر می‌خواند.
+- پیام را کدگذاری می‌کند و آن را به انتهای فایل می‌نویسد.
+- تغییرات را روی دیسک ماندگار می‌کند و دستگیره دسترسی را می‌بندد.
 
 ```js
 onmessage = async (e) => {
@@ -91,17 +84,17 @@ onmessage = async (e) => {
 ```
 
 > [!NOTE]
-> In earlier versions of the spec, {{domxref("FileSystemSyncAccessHandle.close()", "close()")}}, {{domxref("FileSystemSyncAccessHandle.flush()", "flush()")}}, {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}}, and {{domxref("FileSystemSyncAccessHandle.truncate()", "truncate()")}} were wrongly specified as asynchronous methods, and older versions of some browsers implement them in this way. However, all current browsers that support these methods implement them as synchronous methods.
+> در نسخه‌های پیشین مشخصات، متدهای {{domxref("FileSystemSyncAccessHandle.close()", "close()")}}، {{domxref("FileSystemSyncAccessHandle.flush()", "flush()")}}، {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}} و {{domxref("FileSystemSyncAccessHandle.truncate()", "truncate()")}} به اشتباه به عنوان متدهای ناهمگام تعریف شده بودند و نسخه‌های قدیمی‌تر برخی مرورگرها آن‌ها را به این صورت پیاده‌سازی می‌کنند. با این حال، همه مرورگرهای فعلی که از این متدها پشتیبانی می‌کنند، آن‌ها را به عنوان متدهای همگام پیاده‌سازی می‌کنند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
-- [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
+- [The File System Access API: ساده‌سازی دسترسی به فایل‌های محلی](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
