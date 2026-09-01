@@ -1,11 +1,5 @@
 ---
 title: "GPUQueue: copyExternalImageToTexture() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/copyExternalImageToTexture"
-status: "needs-translation"
----
-
----
-title: "GPUQueue: copyExternalImageToTexture() method"
 short-title: copyExternalImageToTexture()
 slug: Web/API/GPUQueue/copyExternalImageToTexture
 page-type: web-api-instance-method
@@ -14,101 +8,100 @@ browser-compat: api.GPUQueue.copyExternalImageToTexture
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`copyExternalImageToTexture()`** method of the
-{{domxref("GPUQueue")}} interface copies a snapshot taken from a source image, video, or canvas into a given {{domxref("GPUTexture")}}.
+متد **`copyExternalImageToTexture()`** از رابط {{domxref("GPUQueue")}} یک عکس فوری گرفته‌شده از یک تصویر، ویدیو یا بوم (canvas) را در یک {{domxref("GPUTexture")}} مشخص کپی می‌کند.
 
-Using this function allows the user agent to determine the most efficient way to copy the data over for each source type.
+استفاده از این تابع به عامل کاربر (user agent) اجازه می‌دهد کارآمدترین روش کپی داده‌ها را برای هر نوع منبع تعیین کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 copyExternalImageToTexture(source, destination, copySize)
 ```
 
-### Parameters
+### پارامترها
 
 - `source`
-  - : An object representing the source to write to the destination, and its origin. This can take the following properties:
+  - : یک شیء که منبع داده‌ای که باید در مقصد نوشته شود و مبدأ آن را نشان می‌دهد. این شیء می‌تواند ویژگی‌های زیر را داشته باشد:
     - `source`
-      - : An object providing the source of the snapshot to copy. This can be an {{domxref("HTMLCanvasElement")}}, {{domxref("HTMLImageElement")}}, {{domxref("HTMLVideoElement")}}, {{domxref("ImageBitmap")}}, {{domxref("ImageData")}}, {{domxref("OffscreenCanvas")}}, or {{domxref("VideoFrame")}} object. The image source data is captured at the exact moment `copyExternalImageToTexture()` is invoked.
+      - : یک شیء که منبع عکس فوری را برای کپی فراهم می‌کند. این می‌تواند یک {{domxref("HTMLCanvasElement")}}، {{domxref("HTMLImageElement")}}، {{domxref("HTMLVideoElement")}}، {{domxref("ImageBitmap")}}، {{domxref("ImageData")}}، {{domxref("OffscreenCanvas")}} یا {{domxref("VideoFrame")}} باشد. داده‌های تصویر منبع دقیقاً در همان لحظه‌ای که `copyExternalImageToTexture()` فراخوانی می‌شود، ضبط می‌گردند.
     - `origin` {{optional_inline}}
-      - : An object or array specifying the origin of the copy — the top-left corner of the source sub-region to copy from. Together with `copySize`, this defines the full extent of the source sub-region. The `x` and `y` values default to 0 if any of all of `origin` is omitted.
+      - : یک شیء یا آرایه که مبدأ کپی را مشخص می‌کند — گوشه‌ی بالا-چپ زیرناحیه‌ی منبع که باید از آن کپی شود. این مقدار به همراه `copySize`، کل محدوده‌ی زیرناحیه‌ی منبع را تعیین می‌کند. اگر `origin` به طور کلی یا جزئی حذف شود، مقادیر `x` و `y` به‌صورت پیش‌فرض 0 خواهند بود.
 
-        For example, you can pass an array like `[0, 0]`, or its equivalent object `{ x: 0, y: 0 }`.
+        برای مثال، می‌توانید آرایه‌ای مانند `[0, 0]` یا شیء معادل آن `{ x: 0, y: 0 }` را منتقل کنید.
 
     - `flipY` {{optional_inline}}
-      - : A boolean. If set to `true`, the image capture is flipped vertically. If omitted, `flipY` defaults to `false`.
+      - : یک مقدار بولین. اگر `true` تنظیم شود، تصویر گرفته‌شده به صورت عمودی برعکس می‌شود. اگر حذف شود، `flipY` به‌صورت پیش‌فرض `false` است.
 
 - `destination`
-  - : An object defining the texture subresource and origin to write the captured image to, plus encoding metadata. This can take the following properties:
+  - : یک شیء که زیرمنبع بافت (texture subresource) و مبدأ نوشتن تصویر گرفته‌شده را تعریف می‌کند، به همراه فراداده‌ی رمزگذاری. این شیء می‌تواند ویژگی‌های زیر را داشته باشد:
     - `aspect` {{optional_inline}}
-      - : An enumerated value defining which aspects of the texture to write the image to. Possible values are:
+      - : یک مقدار شمارشی (enumerated value) که مشخص می‌کند کدام جنبه‌های بافت باید تصویر در آن‌ها نوشته شود. مقادیر ممکن عبارتند از:
         - `"all"`
-          - : All available aspects of the texture format will be written to, which can mean all or any of color, depth, and stencil, depending on what kind of format you are dealing with.
+          - : همه‌ی جنبه‌های موجود قالب بافت نوشته می‌شوند، که بسته به نوع قالبی که با آن سروکار دارید می‌تواند همه یا هر یک از جنبه‌های رنگ (color)، عمق (depth) و استنسیل (stencil) باشد.
         - `"depth-only"`
-          - : Only the depth aspect of a [depth-or-stencil format](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) will be written to.
+          - : فقط جنبه‌ی عمق یک [قالب عمق-یا-استنسیل](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) نوشته می‌شود.
         - `"stencil-only"`
-          - : Only the stencil aspect of a depth-or-stencil format will be written to.
+          - : فقط جنبه‌ی استنسیل یک قالب عمق-یا-استنسیل نوشته می‌شود.
 
-        If omitted, `aspect` takes a value of `"all"`.
+        اگر حذف شود، `aspect` مقدار `"all"` را می‌گیرد.
 
     - `colorSpace` {{optional_inline}}
-      - : An enumerated value describing the color space and encoding used to encode data into the destination texture. Possible values are `"srgb"` and `"display-p3"`. If omitted, `colorSpace` defaults to `"srgb"`.
+      - : یک مقدار شمارشی که فضای رنگی و رمزگذاری مورد استفاده برای رمزگذاری داده‌ها در بافت مقصد را توصیف می‌کند. مقادیر ممکن `"srgb"` و `"display-p3"` هستند. اگر حذف شود، `colorSpace` به‌صورت پیش‌فرض `"srgb"` است.
 
         > [!NOTE]
-        > The encoding may result in values outside of the range `[0, 1]` being written to the target texture, if its format can represent them. Otherwise, the results are clamped to the target texture format's range. Conversion may not be necessary if `colorSpace` matches the source image color space.
+        > رمزگذاری ممکن است منجر به نوشته‌شدن مقادیری خارج از بازه‌ی `[0, 1]` در بافت هدف شود، اگر قالب آن بتواند آن‌ها را نمایش دهد. در غیر این صورت، نتایج به محدوده‌ی قالب بافت هدف محدود (clamp) می‌شوند. اگر `colorSpace` با فضای رنگی تصویر منبع مطابقت داشته باشد، ممکن است تبدیل لازم نباشد.
 
     - `mipLevel` {{optional_inline}}
-      - : A number representing the mip-map level of the texture to write the image to. If omitted, `mipLevel` defaults to 0.
+      - : یک عدد که سطح mip-map بافتی را که تصویر باید در آن نوشته شود مشخص می‌کند. اگر حذف شود، `mipLevel` به‌صورت پیش‌فرض 0 است.
     - `origin` {{optional_inline}}
-      - : An object or array specifying the origin of the copy — the minimum corner of the texture region to write the image data to. Together with `copySize`, this defines the full extent of the region to copy to. The `x`, `y`, and `z` values default to 0 if any of all of `origin` is omitted.
+      - : یک شیء یا آرایه که مبدأ کپی را مشخص می‌کند — کمترین گوشه‌ی ناحیه‌ی بافت که داده‌های تصویر باید در آن نوشته شوند. این مقدار به همراه `copySize`، کل محدوده‌ی ناحیه‌ای که باید به آن کپی شود را تعریف می‌کند. اگر `origin` به طور کلی یا جزئی حذف شود، مقادیر `x`، `y` و `z` به‌صورت پیش‌فرض 0 خواهند بود.
 
-        For example, you can pass an array like `[0, 0, 0]`, or its equivalent object `{ x: 0, y: 0, z: 0 }`.
+        برای مثال، می‌توانید آرایه‌ای مانند `[0, 0, 0]` یا شیء معادل آن `{ x: 0, y: 0, z: 0 }` را منتقل کنید.
 
     - `premultipliedAlpha` {{optional_inline}}
-      - : A boolean. If set to `true`, the image data written into the texture will have its RGB channels premultiplied by the alpha channel. If omitted, `premultipliedAlpha` defaults to `false`.
+      - : یک مقدار بولین. اگر `true` تنظیم شود، داده‌های تصویر نوشته‌شده در بافت دارای کانال‌های RGB هستند که در کانال آلفا ضرب (premultiply) شده‌اند. اگر حذف شود، `premultipliedAlpha` به‌صورت پیش‌فرض `false` است.
 
         > [!NOTE]
-        > If this option is set to `true` and the `source` is also premultiplied, the source RGB values must be preserved even if they exceed their corresponding alpha values.
+        > اگر این گزینه `true` باشد و `source` نیز premultiplied باشد، مقادیر RGB منبع باید حفظ شوند حتی اگر از مقادیر آلفای مربوطه فراتر روند.
 
     - `texture`
-      - : A {{domxref("GPUTexture")}} object representing the texture to write the data to.
+      - : یک شیء {{domxref("GPUTexture")}} که بافتی را که داده‌ها باید در آن نوشته شوند نشان می‌دهد.
 
 - `copySize`
-  - : An object or array specifying `width`, `height`, and `depthOrArrayLayers` — of the region to copy from/to.
+  - : یک شیء یا آرایه که `width`، `height` و `depthOrArrayLayers` ناحیه‌ی مورد نظر برای کپی از/به را مشخص می‌کند.
 
-    For example, you can pass an array like `[16, 1, 1]`, or its equivalent object `{ width: 16, height: 1, depthOrArrayLayers: 1 }`.
+    برای مثال، می‌توانید آرایه‌ای مانند `[16, 1, 1]` یا شیء معادل آن `{ width: 16, height: 1, depthOrArrayLayers: 1 }` را منتقل کنید.
 
-    The `width` value has to be included. If the `height` or `depthOrArrayLayers` values are omitted, they default to 1.
+    مقدار `width` باید حتماً گنجانده شود. اگر مقادیر `height` یا `depthOrArrayLayers` حذف شوند، به‌صورت پیش‌فرض 1 هستند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `OperationError` {{domxref("DOMException")}}
-  - : The method throws an `OperationError` if the following criteria are not met:
-    - `source.origin.x` + the width of the region to copy to is less than or equal to the width of the source image.
-    - `source.origin.y` + the height of the region to copy to is less than or equal to the height of the source image.
-    - `source.origin.z` + the depthOrArrayLayers of the region to copy to is less than or equal to 1.
-    - `dataOffset` is equal to or smaller than the size of `data`.
-    - The size of `data` (when converted to bytes, in the case of `TypedArray`s) is a multiple of 4.
+  - : این متد یک `OperationError` پرتاب می‌کند اگر معیارهای زیر برآورده نشوند:
+    - `source.origin.x` + عرض ناحیه‌ی مورد نظر برای کپی، کمتر یا مساوی عرض تصویر منبع باشد.
+    - `source.origin.y` + ارتفاع ناحیه‌ی مورد نظر برای کپی، کمتر یا مساوی ارتفاع تصویر منبع باشد.
+    - `source.origin.z` + depthOrArrayLayers ناحیه‌ی مورد نظر برای کپی، کمتر یا مساوی 1 باشد.
+    - `dataOffset` کوچک‌تر یا مساوی اندازه‌ی `data` باشد.
+    - اندازه‌ی `data` (هنگامی که در مورد `TypedArray`ها به بایت تبدیل شود) مضربی از 4 باشد.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the image source data is cross-origin.
+  - : اگر داده‌های تصویر منبع دارای مبدأ متقاطع (cross-origin) باشند، پرتاب می‌شود.
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`writeTexture()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUQueue")}} becomes invalid:
+معیارهای زیر باید هنگام فراخوانی **`writeTexture()`** برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPUQueue")}} نامعتبر می‌شود:
 
-- `mipLevel` is less than the destination {{domxref("GPUTexture.mipLevelCount")}}.
-- `origin.x` is a multiple of the texel block width of the destination {{domxref("GPUTexture.format")}}.
-- `origin.y` is a multiple of the texel block height of the destination {{domxref("GPUTexture.format")}}.
-- If the destination {{domxref("GPUTexture.format")}} is a [depth-or-stencil format](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format), the image capture size is equal to `size`.
-- The destination {{domxref("GPUTexture.usage")}} includes the `GPUTextureUsage.COPY_DST` and `GPUTextureUsage.RENDER_ATTACHMENT` flags.
-- The destination {{domxref("GPUTexture.dimension")}} is `"2d"`.
-- The destination {{domxref("GPUTexture.sampleCount")}} is 1.
-- The destination {{domxref("GPUTexture.format")}} is one of the following (which support `GPUTextureUsage.RENDER_ATTACHMENT` usage):
+- `mipLevel` کمتر از {{domxref("GPUTexture.mipLevelCount")}} مقصد باشد.
+- `origin.x` مضربی از عرض بلوک تکسِل (texel block width) قالب {{domxref("GPUTexture.format")}} مقصد باشد.
+- `origin.y` مضربی از ارتفاع بلوک تکسِل قالب {{domxref("GPUTexture.format")}} مقصد باشد.
+- اگر قالب {{domxref("GPUTexture.format")}} مقصد یک [قالب عمق-یا-استنسیل](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) باشد، اندازه‌ی تصویر گرفته‌شده برابر با `size` باشد.
+- {{domxref("GPUTexture.usage")}} مقصد شامل پرچم‌های `GPUTextureUsage.COPY_DST` و `GPUTextureUsage.RENDER_ATTACHMENT` باشد.
+- {{domxref("GPUTexture.dimension")}} مقصد `"2d"` باشد.
+- {{domxref("GPUTexture.sampleCount")}} مقصد 1 باشد.
+- {{domxref("GPUTexture.format")}} مقصد یکی از موارد زیر باشد (که از کاربرد `GPUTextureUsage.RENDER_ATTACHMENT` پشتیبانی می‌کنند):
   - `"r8unorm"`
   - `"r16float"`
   - `"r32float"`
@@ -122,15 +115,15 @@ The following criteria must be met when calling **`writeTexture()`**, otherwise 
   - `"rgb10a2unorm"`
   - `"rgba16float"`
   - `"rgba32float"`
-- `destination.origin.x` + `copySize.width` is less than or equal to the `destination` {{domxref("GPUTexture")}} {{domxref("GPUTexture.width", "width")}}.
-- `destination.origin.y` + `copySize.height` is less than or equal to the `destination` {{domxref("GPUTexture")}} {{domxref("GPUTexture.height", "height")}}.
-- `destination.origin.z` + `copySize.depthOrArrayLayers` is less than or equal to the `destination` {{domxref("GPUTexture")}} {{domxref("GPUTexture.depthOrArrayLayers", "depthOrArrayLayers")}}.
-- The `destination` {{domxref("GPUTexture.width")}} is a multiple of the texel block width of the destination {{domxref("GPUTexture.format")}}.
-- The `destination` {{domxref("GPUTexture.height")}} is a multiple of the texel block height of the destination {{domxref("GPUTexture.format")}}.
+- `destination.origin.x` + `copySize.width` کمتر یا مساوی {{domxref("GPUTexture.width", "width")}} بافت {{domxref("GPUTexture")}} مقصد باشد.
+- `destination.origin.y` + `copySize.height` کمتر یا مساوی {{domxref("GPUTexture.height", "height")}} بافت {{domxref("GPUTexture")}} مقصد باشد.
+- `destination.origin.z` + `copySize.depthOrArrayLayers` کمتر یا مساوی {{domxref("GPUTexture.depthOrArrayLayers", "depthOrArrayLayers")}} بافت {{domxref("GPUTexture")}} مقصد باشد.
+- {{domxref("GPUTexture.width")}} مقصد مضربی از عرض بلوک تکسِل قالب {{domxref("GPUTexture.format")}} مقصد باشد.
+- {{domxref("GPUTexture.height")}} مقصد مضربی از ارتفاع بلوک تکسِل قالب {{domxref("GPUTexture.format")}} مقصد باشد.
 
-## Examples
+## مثال‌ها
 
-In the WebGPU Samples [Textured Cube example](https://webgpu.github.io/webgpu-samples/samples/texturedCube/), the following snippet is used to fetch an image and upload it into a {{domxref("GPUTexture")}}:
+در نمونه‌ی [Textured Cube](https://webgpu.github.io/webgpu-samples/samples/texturedCube/) از نمونه‌های WebGPU، از قطعه‌کد زیر برای دریافت یک تصویر و بارگذاری آن در یک {{domxref("GPUTexture")}} استفاده شده است:
 
 ```js
 let cubeTexture;
@@ -160,14 +153,14 @@ let cubeTexture;
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [API WebGPU](/en-US/docs/Web/API/WebGPU_API)
