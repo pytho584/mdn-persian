@@ -1,11 +1,5 @@
 ---
 title: "HTMLOptionElement: text property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement/text"
-status: "needs-translation"
----
-
----
-title: "HTMLOptionElement: text property"
 short-title: text
 slug: Web/API/HTMLOptionElement/text
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLOptionElement.text
 
 {{ApiRef("HTML DOM")}}
 
-The **`text`** property of the {{domxref("HTMLOptionElement")}} represents the text inside the {{htmlelement("option")}} element.
-This property represents the same information as {{domxref("Node.textContent")}}.
+ویژگی **`text`** از {{domxref("HTMLOptionElement")}} متنی را نشان می‌دهد که داخل عنصر {{htmlelement("option")}} قرار دارد.
+این ویژگی همان اطلاعاتی را ارائه می‌دهد که {{domxref("Node.textContent")}} ارائه می‌کند.
 
 > [!NOTE]
-> If the element has a `label`, the text inside the {{htmlelement("option")}} is not visually rendered. In this case, the `text` property can still be used to set the content, but it will have no visible effect.
+> اگر عنصر دارای ویژگی `label` باشد، متنی که داخل {{htmlelement("option")}} قرار دارد به صورت بصری نمایش داده نمی‌شود. در این حالت، همچنان می‌توان از ویژگی `text` برای تنظیم محتوا استفاده کرد، اما این کار هیچ اثر قابل مشاهده‌ای نخواهد داشت.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Example
+## مثال
 
 ```js
 const optionElement = document.getElementById("exampleOption");
@@ -32,15 +26,15 @@ console.log(`Text property: ${optionElement.text}`);
 optionElement.text = "Updated text";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("select")}}
 - {{HTMLElement("datalist")}}
