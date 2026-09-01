@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: longDesc property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/longDesc"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: longDesc property"
 short-title: longDesc
 slug: Web/API/HTMLImageElement/longDesc
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.HTMLImageElement.longDesc
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The _deprecated_ **`longDesc`** property of the {{domxref("HTMLImageElement")}} interface specifies the URL of a text or HTML file which contains a long-form description of the image. This can be used to provide optional added details beyond the short description provided in the [`title`](/en-US/docs/Web/HTML/Reference/Global_attributes/title) attribute. It reflects the `<img>` element's [`longdesc`](/en-US/docs/Web/HTML/Reference/Elements/img#longdesc) content attribute.
+ویژگی **منسوخ‌شده** `longDesc` در رابط {{domxref("HTMLImageElement")}}، نشانی (URL) یک فایل متنی یا HTML را مشخص می‌کند که حاوی توضیح بلند و مفصلی از تصویر است. این ویژگی می‌تواند برای ارائه جزئیات اضافی اختیاری فراتر از توضیح کوتاه ارائه‌شده در ویژگی [`title`](/en-US/docs/Web/HTML/Reference/Global_attributes/title) استفاده شود. این ویژگی منعکس‌کننده ویژگی محتوایی [`longdesc`](/en-US/docs/Web/HTML/Reference/Elements/img#longdesc) عنصر `<img>` است.
 
-This attribute is considered obsolete in the [HTML spec](https://html.spec.whatwg.org/multipage/obsolete.html#element-attrdef-img-longdesc). It has an uncertain future; authors should use a {{glossary("WAI")}}-{{glossary("ARIA")}} alternative such as [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) or [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details). You can also encapsulate the image within a link using the {{HTMLElement("a")}} element.
+این ویژگی در [مشخصات HTML](https://html.spec.whatwg.org/multipage/obsolete.html#element-attrdef-img-longdesc) منسوخ تلقی می‌شود و آینده نامشخصی دارد. نویسندگان باید از یک جایگزین {{glossary("WAI")}}-{{glossary("ARIA")}} مانند [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) یا [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) استفاده کنند. همچنین می‌توانید تصویر را درون یک پیوند با استفاده از عنصر {{HTMLElement("a")}} قرار دهید.
 
-## Value
+## مقدار
 
-A string which may be either an empty string (indicating that no long description is available) or the URL of a file containing a long form description of the image's contents.
+یک رشته که می‌تواند یک رشته خالی باشد (نشان‌دهنده عدم وجود توضیح بلند) یا نشانی یک فایل حاوی توضیح بلند از محتوای تصویر.
 
-## Examples
+## مثال‌ها
 
-Consider the following older HTML:
+HTML قدیمی زیر را در نظر بگیرید:
 
 ```html
 <img
@@ -35,9 +29,9 @@ Consider the following older HTML:
   longdesc="image-descriptions/taco-tuesday.html" />
 ```
 
-Here, the `longDesc` is used to indicate that the user should be able to access a detailed description of the image `taco-tuesday.jpg` in the HTML file `image-descriptions/taco-tuesday.html`.
+در اینجا، `longDesc` برای نشان دادن این استفاده می‌شود که کاربر باید بتواند به توضیح دقیق تصویر `taco-tuesday.jpg` در فایل HTML `image-descriptions/taco-tuesday.html` دسترسی داشته باشد.
 
-This should be converted into the following HTML:
+این کد باید به HTML زیر تبدیل شود:
 
 ```html
 <a href="image-descriptions/taco-tuesday.html">
@@ -45,16 +39,16 @@ This should be converted into the following HTML:
 </a>
 ```
 
-With that, the image is a link to the HTML file describing the image in more detail.
+با این کار، تصویر به یک پیوند به فایل HTML که تصویر را با جزئیات بیشتر توضیح می‌دهد، تبدیل می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details)
