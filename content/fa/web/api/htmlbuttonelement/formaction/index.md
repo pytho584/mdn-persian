@@ -1,11 +1,5 @@
 ---
 title: "HTMLButtonElement: formAction property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/formAction"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: formAction property"
 short-title: formAction
 slug: Web/API/HTMLButtonElement/formAction
 page-type: web-api-instance-property
@@ -14,29 +8,29 @@ browser-compat: api.HTMLButtonElement.formAction
 
 {{APIRef("HTML DOM")}}
 
-The **`formAction`** property of the {{domxref("HTMLButtonElement")}} interface is the URL of the program that is executed on the server when the form that owns this control is submitted. It reflects the value of the `<button>`'s [`formaction`](/en-US/docs/Web/HTML/Reference/Elements/button#formaction) attribute.
+ویژگی **`formAction`** در رابط {{domxref("HTMLButtonElement")}}، URL برنامه‌ای است که هنگام ارسال فرمِ متعلق به این کنترل، روی سرور اجرا می‌شود. این ویژگی منعکس‌کنندهٔ مقدار ویژگی [`formaction`](/en-US/docs/Web/HTML/Reference/Elements/button#formaction) عنصر `<button>` است.
 
-The value overrides the {{domxref("HTMLFormElement.action", "action")}} property of the {{domxref("HTMLFormElement")}} interface if the form is submitted via the button. This property can be retrieved or set.
+این مقدار، اگر فرم از طریق دکمه ارسال شود، ویژگی {{domxref("HTMLFormElement.action", "action")}} رابط {{domxref("HTMLFormElement")}} را بازنویسی می‌کند. این ویژگی قابل خواندن یا تنظیم است.
 
-## Value
+## مقدار
 
-A string. The URL for form submission.
+یک رشته (string). آدرس URL برای ارسال فرم.
 
-## Examples
+## مثال‌ها
 
 ```js
 btnEl.formAction = "/cgi-bin/publish";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLButtonElement.formEnctype")}}
 - {{domxref("HTMLButtonElement.formMethod")}}
