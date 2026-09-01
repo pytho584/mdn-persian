@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: src property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/src"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: src property"
 short-title: src
 slug: Web/API/HTMLImageElement/src
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLImageElement.src
 
 {{APIRef("HTML DOM")}}
 
-The **`src`** property of the {{domxref("HTMLImageElement")}} interface specifies the image to display in the {{HTMLElement("img")}} element. It reflects the `<img>` element's [`src`](/en-US/docs/Web/HTML/Reference/Elements/img#src) content attribute.
+ویژگی **`src`** در رابط {{domxref("HTMLImageElement")}} تصویری را که باید در عنصر {{HTMLElement("img")}} نمایش داده شود مشخص می‌کند. این ویژگی، ویژگی محتوایی [`src`](/en-US/docs/Web/HTML/Reference/Elements/img#src) عنصر `<img>` را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A string. For more information about the syntax of the `src` attribute, see the HTML [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#src) reference.
+یک رشته (string). برای اطلاعات بیشتر درباره نحو (syntax) ویژگی `src`، به مرجع HTML برای [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#src) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-### Setting the src attribute
+### تنظیم ویژگی src
 
 ```js
 const img = new Image();
@@ -30,15 +24,15 @@ img.src = "example.png";
 img.alt = "An example picture";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLImageElement.currentSrc")}}
 - {{domxref("HTMLImageElement.srcset")}}
