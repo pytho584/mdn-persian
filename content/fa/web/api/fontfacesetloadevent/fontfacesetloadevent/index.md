@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSetLoadEvent: FontFaceSetLoadEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSetLoadEvent/FontFaceSetLoadEvent"
-status: "needs-translation"
----
-
----
-title: "FontFaceSetLoadEvent: FontFaceSetLoadEvent() constructor"
 short-title: FontFaceSetLoadEvent()
 slug: Web/API/FontFaceSetLoadEvent/FontFaceSetLoadEvent
 page-type: web-api-constructor
@@ -14,9 +8,7 @@ browser-compat: api.FontFaceSetLoadEvent.FontFaceSetLoadEvent
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`FontFaceSetLoadEvent()`** constructor creates a new
-{{domxref("FontFaceSetLoadEvent")}} object which is fired whenever a
-{{domxref("FontFaceSet")}} loads.
+سازنده‌ی **`FontFaceSetLoadEvent()`** یک شیء جدید {{domxref("FontFaceSetLoadEvent")}} می‌سازد که هر زمان یک {{domxref("FontFaceSet")}} بارگذاری شود، فراخوانی می‌شود.
 
 ## Syntax
 
@@ -28,16 +20,15 @@ new FontFaceSetLoadEvent(type, options)
 ### Parameters
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `loading`, `loadingdone`, or `loadingerror`.
+  - : یک رشته حاوی نام رویداد. این رشته به بزرگی/کوچکی حروف حساس است و مرورگرها همیشه آن را روی `loading`، `loadingdone` یا `loadingerror` تنظیم می‌کنند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `fontfaces` {{optional_inline}}
-      - : An array of {{domxref("FontFace")}} instances. It defaults to the empty array.
+      - : آرایه‌ای از نمونه‌های {{domxref("FontFace")}}. پیش‌فرض آن آرایه‌ی خالی است.
 
 ### Return value
 
-A new {{domxref("FontFaceSetLoadEvent")}} object.
+یک شیء جدید {{domxref("FontFaceSetLoadEvent")}}.
 
 ## Specifications
 
