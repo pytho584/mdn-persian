@@ -1,7 +1,5 @@
 ---
 title: "Device orientation events"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Device_orientation_events"
-status: "needs-translation"
 ---
 
 ---
@@ -21,55 +19,53 @@ spec-urls: https://w3c.github.io/deviceorientation/
 
 {{DefaultAPISidebar("Device Orientation Events")}}{{securecontext_header}}
 
-Device orientation events are events that allow you to [detect a device's physical orientation](/en-US/docs/Web/API/Device_orientation_events/Detecting_device_orientation#processing_orientation_events), as well as allowing you to [detect the device's motion](/en-US/docs/Web/API/Device_orientation_events/Detecting_device_orientation#processing_motion_events).
+رویدادهای جهت‌گیری دستگاه، رویدادهایی هستند که به شما امکان می‌دهند [جهت فیزیکی دستگاه را تشخیص دهید](/en-US/docs/Web/API/Device_orientation_events/Detecting_device_orientation#processing_orientation_events) و همچنین [حرکت دستگاه را شناسایی کنید](/en-US/docs/Web/API/Device_orientation_events/Detecting_device_orientation#processing_motion_events).
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-Mobile devices commonly have sensors such as gyroscopes, compasses, and accelerometers that can enable applications running on the device to detect the device's orientation and motion.
+دستگاه‌های همراه معمولاً حسگرهایی مانند ژیروسکوپ، قطبنما و شتاب‌سنج دارند که می‌توانند به برنامه‌های در حال اجرا روی دستگاه امکان تشخیص جهت و حرکت دستگاه را بدهند.
 
-The device orientation events enable you to write web applications that can change their behavior based on the orientation of the user's device, and that can react when the user moves their device.
+رویدادهای جهت‌گیری دستگاه به شما این امکان را می‌دهند که برنامه‌های وب بنویسید که بتوانند رفتار خود را بر اساس جهت‌گیری دستگاه کاربر تغییر دهند و در هنگام حرکت دستگاه توسط کاربر واکنش نشان دهند.
 
-Some typical features for which you might want to use the device orientation events include:
+برخی از کاربردهای معمولی که ممکن است بخواهید از رویدادهای جهت‌گیری دستگاه استفاده کنید عبارت‌اند از:
 
-- in web-based games, to enable the user to control the motion of characters or objects in the game by tilting and moving the device
+- در بازی‌های مبتنی بر وب، برای اینکه کاربر بتواند با کج کردن و حرکت دادن دستگاه، حرکت شخصیت‌ها یا اشیاء بازی را کنترل کند.
+- در برنامه‌های نقشه، برای تغییر جهت نقشه بر اساس موقعیت دستگاه، یا ارائه مسیریابی گام‌به‌گام که با حرکات کاربر به‌روزرسانی می‌شود.
+- برای تشخیص ژست — برای مثال، تشخیص ژست «تکان دادن» و استفاده از آن برای انجام عملی مانند پاک کردن ناحیه ورودی وقتی کاربر دستگاه را تکان می‌دهد.
 
-- in mapping applications, to re-orient a map based on the device's position, or to provide turn-by-turn directions that update with the user's movements
-
-- for gesture recognition — for example, recognizing a "shake" gesture and using it to perform some action such as clearing an input area when the user shakes the device
-
-Some user agents require explicit permission before providing access to sensor data. In those environments, {{domxref("DeviceMotionEvent.requestPermission_static", "DeviceMotionEvent.requestPermission()")}} and {{domxref("DeviceOrientationEvent.requestPermission_static", "DeviceOrientationEvent.requestPermission()")}} can be used to request this permission from a {{Glossary("transient activation", "transient user activation")}} such as a button click. See [Requesting permission](/en-US/docs/Web/API/Device_orientation_events/Detecting_device_orientation#requesting_permission) for more details.
+برخی از عامل‌های کاربر (user agents) پیش از ارائه دسترسی به داده‌های حسگر، اجازه صریح درخواست می‌کنند. در آن محیط‌ها، می‌توان از {{domxref("DeviceMotionEvent.requestPermission_static", "DeviceMotionEvent.requestPermission()")}} و {{domxref("DeviceOrientationEvent.requestPermission_static", "DeviceOrientationEvent.requestPermission()")}} برای درخواست این مجوز از یک {{Glossary("transient activation", "فعال‌سازی گذرا")}} مانند کلیک دکمه استفاده کرد. برای جزئیات بیشتر به [درخواست مجوز](/en-US/docs/Web/API/Device_orientation_events/Detecting_device_orientation#requesting_permission) مراجعه کنید.
 
 > [!NOTE]
-> This API is widely supported on mobile browsers. While some desktop-only browsers may have limitations due to hardware differences, these constraints are rarely significant given the API's primary usage on sensor-equipped devices.
+> این API به‌طور گسترده‌ای در مرورگرهای موبایل پشتیبانی می‌شود. اگرچه برخی مرورگرهای مخصوص دسکتاپ ممکن است به دلیل تفاوت‌های سخت‌افزاری محدودیت‌هایی داشته باشند، این محدودیت‌ها با توجه به کاربرد اصلی این API در دستگاه‌های مجهز به حسگر، به‌ندرت قابل توجه هستند.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("DeviceMotionEvent")}}
-  - : Represents changes in the acceleration of a device, as well as the rotation rate.
+  - : تغییرات شتاب یک دستگاه و همچنین نرخ چرخش آن را نشان می‌دهد.
 - {{domxref("DeviceMotionEventAcceleration")}}
-  - : Represents the amount of acceleration the device is experiencing along all three axes
+  - : میزان شتابی را که دستگاه در طول هر سه محور تجربه می‌کند، نشان می‌دهد.
 - {{domxref("DeviceMotionEventRotationRate")}}
-  - : Represents the rate at which the device is rotating around all three axes.
+  - : نرخی را نشان می‌دهد که دستگاه به دور هر سه محور می‌چرخد.
 - {{domxref("DeviceOrientationEvent")}}
-  - : Represents changes in the physical orientation of a device.
+  - : تغییرات در جهت‌گیری فیزیکی دستگاه را نشان می‌دهد.
 
-### Extensions to other interfaces
+### افزونه‌هایی به دیگر رابط‌ها
 
-- {{domxref("Window.devicemotion_event", "devicemotion")}} event
-  - : Fired at a regular interval to indicate the amount of physical force of acceleration the device is receiving at that time, and the rate of rotation of the device.
-- {{domxref("Window.deviceorientation_event", "deviceorientation")}} event
-  - : Fired when fresh data is available from the device about the current orientation of the device as compared to the Earth coordinate frame.
-- {{domxref("Window.deviceorientationabsolute_event", "deviceorientationabsolute")}} event
-  - : Fired when absolute device orientation changes.
+- رویداد {{domxref("Window.devicemotion_event", "devicemotion")}}
+  - : در بازه‌های زمانی منظم رخ می‌دهد تا میزان نیروی فیزیکی شتابی را که دستگاه در آن زمان دریافت می‌کند و نرخ چرخش دستگاه را نشان دهد.
+- رویداد {{domxref("Window.deviceorientation_event", "deviceorientation")}}
+  - : زمانی رخ می‌دهد که داده‌های تازه‌ای از دستگاه درباره جهت‌گیری فعلی دستگاه نسبت به چارچوب مختصات زمین در دسترس باشد.
+- رویداد {{domxref("Window.deviceorientationabsolute_event", "deviceorientationabsolute")}}
+  - : زمانی رخ می‌دهد که جهت‌گیری مطلق دستگاه تغییر کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Device Orientation & Motion](https://web.dev/articles/device-orientation) at web.dev
+- [Device Orientation & Motion](https://web.dev/articles/device-orientation) در web.dev
