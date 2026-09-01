@@ -1,11 +1,5 @@
 ---
 title: "HTMLOptionElement: defaultSelected property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement/defaultSelected"
-status: "needs-translation"
----
-
----
-title: "HTMLOptionElement: defaultSelected property"
 short-title: defaultSelected
 slug: Web/API/HTMLOptionElement/defaultSelected
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.HTMLOptionElement.defaultSelected
 
 {{ APIRef("HTML DOM") }}
 
-The **`defaultSelected`** property of the {{DOMxRef("HTMLOptionElement")}} interface specifies the default selected state of the element. This property reflects the {{htmlelement("option")}} element's [`selected`](/en-US/docs/Web/HTML/Reference/Elements/option#selected) attribute. The presence of the `selected` attribute sets the `defaultSelected` property to `true`.
+خاصیت **`defaultSelected`** از رابط {{DOMxRef("HTMLOptionElement")}} وضعیت انتخاب‌شده پیش‌فرض عنصر را مشخص می‌کند. این خاصیت منعکس‌کنندهٔ ویژگی [`selected`](/en-US/docs/Web/HTML/Reference/Elements/option#selected) عنصر {{htmlelement("option")}} است. وجود ویژگی `selected`، خاصیت `defaultSelected` را به `true` تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی (Boolean).
 
-## Examples
+## مثال‌ها
 
 ```js
 const optionElement = document.getElementById("water");
 console.log(optionElement.defaultSelected);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{HTMLElement("option")}}
 - {{DOMxRef("HTMLOptionElement.selected")}}
