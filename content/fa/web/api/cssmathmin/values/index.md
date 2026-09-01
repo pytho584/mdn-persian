@@ -1,11 +1,5 @@
 ---
 title: "CSSMathMin: values property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathMin/values"
-status: "needs-translation"
----
-
----
-title: "CSSMathMin: values property"
 short-title: values
 slug: Web/API/CSSMathMin/values
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.CSSMathMin.values
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`values`** read-only property of the {{domxref("CSSMathMin")}} interface returns a {{domxref("CSSNumericArray")}} containing the {{domxref("CSSNumericValue")}} objects being compared to find the minimum.
+خاصیت فقط‌خواندنی **`values`** در رابط {{domxref("CSSMathMin")}} یک {{domxref("CSSNumericArray")}} برمی‌گرداند که شامل اشیاء {{domxref("CSSNumericValue")}} است که برای یافتن کمینه با هم مقایسه می‌شوند.
 
-## Value
+## مقدار
 
-A {{domxref('CSSNumericArray')}}.
+یک {{domxref('CSSNumericArray')}}.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-The following code creates a `CSSMathMin` object and logs its `values` and length.
+کد زیر یک شیء `CSSMathMin` می‌سازد و `values` و طول آن را در کنسول ثبت می‌کند.
 
 ```js
 const min = new CSSMathMin(CSS.px(10), CSS.em(5), CSS.percent(50));
@@ -34,8 +28,8 @@ console.log(min.values);
 console.log(min.values.length); // 3
 ```
 
-We then iterate over the `values`, logging their type, value, unit, and stringified text.
-Each of these matches the {{domxref("CSSNumericValue")}} objects that were passed into the constructor (or the operands of the CSS {{cssxref("min", "min()")}} function it represents), in the same order.
+سپس روی `values` پیمایش می‌کنیم و نوع، مقدار، واحد و متن تبدیل‌شدهٔ هر کدام را ثبت می‌کنیم.
+هر کدام از این‌ها با اشیاء {{domxref("CSSNumericValue")}} که به سازنده (یا عملوندهای تابع CSS {{cssxref("min", "min()")}} که نشان می‌دهد) ارسال شده‌اند، به همان ترتیب مطابقت دارند.
 
 ```js
 for (const value of min.values) {
@@ -49,10 +43,10 @@ for (const value of min.values) {
 // CSSUnitValue: 50 percent (50%)
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
