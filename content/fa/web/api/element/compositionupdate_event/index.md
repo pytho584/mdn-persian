@@ -1,11 +1,5 @@
 ---
 title: "Element: compositionupdate event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/compositionupdate_event"
-status: "needs-translation"
----
-
----
-title: "Element: compositionupdate event"
 short-title: compositionupdate
 slug: Web/API/Element/compositionupdate_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Element.compositionupdate_event
 
 {{APIRef("UI Events")}}
 
-The **`compositionupdate`** event is fired when a new character is received in the context of a text composition session controlled by a text composition system such as an {{glossary("input method editor")}}.
+رویداد **`compositionupdate`** زمانی رخ می‌دهد که یک نویسهٔ جدید در بافت یک نشستِ ترکیب متن (text composition) دریافت شود؛ نشستی که توسط یک سامانهٔ ترکیب متن، مانند {{glossary("input method editor")}} (ویرایشگر روش ورودی)، کنترل می‌شود.
 
-For example, this event could be fired while a user enters a Chinese character using a [Pinyin](https://en.wikipedia.org/wiki/Pinyin) {{glossary("Input method editor")}}.
+به‌عنوان مثال، این رویداد می‌تواند هنگام وارد کردن یک نویسهٔ چینی توسط کاربر با استفاده از یک {{glossary("Input method editor")}} مبتنی بر [پینیین](https://en.wikipedia.org/wiki/Pinyin) پرتاب شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به‌کار ببرید، یا یک ویژگی مدیریت‌کنندهٔ رویداد (event handler) تنظیم کنید.
 
 ```js-nolint
 addEventListener("compositionupdate", (event) => { })
@@ -28,13 +22,13 @@ addEventListener("compositionupdate", (event) => { })
 oncompositionupdate = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("CompositionEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("CompositionEvent")}} که از {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("CompositionEvent")}}
 
-## Examples
+## نمونه‌ها
 
 ```js
 const inputElement = document.querySelector('input[type="text"]');
@@ -44,7 +38,7 @@ inputElement.addEventListener("compositionupdate", (event) => {
 });
 ```
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -126,18 +120,18 @@ inputElement.addEventListener("compositionupdate", handleEvent);
 inputElement.addEventListener("compositionend", handleEvent);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '180px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: {{domxref("Element/compositionstart_event", "compositionstart")}}, {{domxref("Element/compositionend_event", "compositionend")}}.
+- رویدادهای مرتبط: {{domxref("Element/compositionstart_event", "compositionstart")}}, {{domxref("Element/compositionend_event", "compositionend")}}.
