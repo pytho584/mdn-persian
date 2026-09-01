@@ -1,11 +1,5 @@
 ---
 title: "Element: attributes property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes"
-status: "needs-translation"
----
-
----
-title: "Element: attributes property"
 short-title: attributes
 slug: Web/API/Element/attributes
 page-type: web-api-instance-property
@@ -14,32 +8,25 @@ browser-compat: api.Element.attributes
 
 {{ APIRef("DOM") }}
 
-The **`Element.attributes`** property returns a live collection
-of all attribute nodes registered to the specified node. It is a
-{{domxref("NamedNodeMap")}}, not an `Array`, so it has no {{jsxref("Array")}}
-methods and the {{domxref("Attr")}} nodes' indexes may differ among browsers. To be more
-specific, `attributes` is a key/value pair of strings that represents any
-information regarding that attribute.
+ویژگی **`Element.attributes`** یک مجموعهٔ زنده (live collection) از تمام گره‌های ویژگی (attribute nodes) ثبت‌شده روی گرهٔ مشخص‌شده را بازمی‌گرداند. این ویژگی یک {{domxref("NamedNodeMap")}} است، نه یک `Array`، بنابراین هیچ‌یک از متدهای {{jsxref("Array")}} را ندارد و ایندکس گره‌های {{domxref("Attr")}} ممکن است در مرورگرهای مختلف متفاوت باشد. به بیان دقیق‌تر، `attributes` یک جفت‌کلید/مقدار از رشته‌هاست که هر اطلاعات مربوط به آن ویژگی را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("NamedNodeMap")}} object.
+یک شیء {{domxref("NamedNodeMap")}}.
 
-## Examples
+## مثال‌ها
 
-### Basic examples
+### مثال‌های پایه
 
 ```js
-// Get the first <p> element in the document
+// دریافت اولین عنصر <p> در سند
 const paragraph = document.querySelector("p");
 const attributes = paragraph.attributes;
 ```
 
-### Enumerating elements attributes
+### شمارش ویژگی‌های عنصر
 
-You can enumerate through an element's attributes using [`for...of`](/en-US/docs/Web/JavaScript/Reference/Statements/for...of).
-The following example runs through the attribute nodes for the element in the document
-with id "paragraph", and prints each attribute's value.
+می‌توانید ویژگی‌های یک عنصر را با استفاده از [`for...of`](/en-US/docs/Web/JavaScript/Reference/Statements/for...of) شمارش کنید. مثال زیر گره‌های ویژگی عنصر را در سند با شناسه «paragraph» مرور می‌کند و مقدار هر ویژگی را چاپ می‌کند.
 
 ```html
 <p id="paragraph" class="green" contenteditable>Sample Paragraph</p>
@@ -74,15 +61,15 @@ btn.addEventListener("click", () => {
 
 {{EmbedLiveSample('enumerating_elements_attributes', 100, 300)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("NamedNodeMap")}}, the interface of the returned object
-- Cross-browser compatibility considerations: on [quirksmode](https://quirksmode.org/dom/core/#attributes)
+- {{domxref("NamedNodeMap")}}، رابط شیء بازگشتی
+- ملاحظات سازگاری بین مرورگرها: در [quirksmode](https://quirksmode.org/dom/core/#attributes)
