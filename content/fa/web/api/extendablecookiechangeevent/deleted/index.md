@@ -1,11 +1,5 @@
 ---
 title: "ExtendableCookieChangeEvent: deleted property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ExtendableCookieChangeEvent/deleted"
-status: "needs-translation"
----
-
----
-title: "ExtendableCookieChangeEvent: deleted property"
 short-title: deleted
 slug: Web/API/ExtendableCookieChangeEvent/deleted
 page-type: web-api-instance-property
@@ -14,39 +8,39 @@ browser-compat: api.ExtendableCookieChangeEvent.deleted
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}{{AvailableInWorkers("service")}}
 
-The **`deleted`** read-only property of the {{domxref("ExtendableCookieChangeEvent")}} interface returns any cookies that have been deleted by the given `ExtendableCookieChangeEvent` instance.
+ویژگی فقط‌خواندنی **`deleted`** از رابط {{domxref("ExtendableCookieChangeEvent")}}، هر کوکی‌ای را که توسط نمونه‌ی `ExtendableCookieChangeEvent` داده شده حذف شده است، بازمی‌گرداند.
 
-## Value
+## مقدار
 
-An array of objects containing the deleted cookie(s). Each object contains the following properties:
+یک آرایه از اشیاء که شامل کوکی(های) حذف شده است. هر شیء شامل ویژگی‌های زیر است:
 
 - `name`
-  - : A string containing the name of the cookie.
+  - : یک رشته که نام کوکی را شامل می‌شود.
 - `value`
-  - : A string containing the value of the cookie.
+  - : یک رشته که مقدار کوکی را شامل می‌شود.
 - `domain`
-  - : A string containing the domain of the cookie.
+  - : یک رشته که دامنه‌ی کوکی را شامل می‌شود.
 - `path`
-  - : A string containing the path of the cookie.
+  - : یک رشته که مسیر کوکی را شامل می‌شود.
 - `expires`
-  - : A timestamp, given as [Unix time](/en-US/docs/Glossary/Unix_time) in milliseconds, containing the expiration date of the cookie.
+  - : یک برچسب زمانی، بر حسب [زمان یونیکس](/en-US/docs/Glossary/Unix_time) به میلی‌ثانیه، که تاریخ انقضای کوکی را شامل می‌شود.
 - `secure`
-  - : A {{jsxref("Boolean")}} indicating whether the cookie is used only in a secure context (HTTPS rather than HTTP).
+  - : یک {{jsxref("Boolean")}} که نشان می‌دهد آیا کوکی فقط در یک بافت امن (HTTPS به جای HTTP) استفاده می‌شود یا خیر.
 - `sameSite`
-  - : One of the following [`SameSite`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#samesitesamesite-value) values:
+  - : یکی از مقادیر [`SameSite`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#samesitesamesite-value) زیر:
     - `"strict"`
-      - : Cookies will only be sent in a first-party context and not be sent with requests initiated by third party websites.
+      - : کوکی‌ها فقط در یک بافت اول-شخص ارسال می‌شوند و با درخواست‌های آغاز شده توسط وب‌سایت‌های شخص ثالث ارسال نمی‌شوند.
     - `"lax"`
-      - : Cookies are not sent on normal cross-site subrequests (for example to load images or frames into a third party site), but are sent when a user is navigating within the origin site (i.e., when following a link).
+      - : کوکی‌ها در درخواست‌های فرعی متقاطع (cross-site) معمولی (مثلاً برای بارگذاری تصاویر یا فریم‌ها در یک سایت شخص ثالث) ارسال نمی‌شوند، اما زمانی که کاربر در داخل سایت مبدأ در حال مرور است (یعنی پس از کلیک روی یک پیوند) ارسال می‌شوند.
     - `"none"`
-      - : Cookies will be sent in all contexts.
+      - : کوکی‌ها در همه‌ی بافت‌ها ارسال خواهند شد.
 
 - `partitioned`
-  - : A boolean indicating whether the cookie is a partitioned cookie (`true`) or not (`false`). See [Cookies Having Independent Partitioned State (CHIPS)](/en-US/docs/Web/Privacy/Guides/Third-party_cookies/Partitioned_cookies) for more information.
+  - : یک مقدار بولی (boolean) که نشان می‌دهد آیا کوکی یک کوکی پارتیشن‌بندی شده است (`true`) یا خیر (`false`). برای اطلاعات بیشتر به [کوکی‌های با وضعیت پارتیشن‌بندی مستقل (CHIPS)](/en-US/docs/Web/Privacy/Guides/Third-party_cookies/Partitioned_cookies) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-In this example when the cookie is deleted the event listener logs the first item in the `deleted` property to the console. It contains an object representing the cookie that has just been deleted.
+در این مثال، هنگامی که کوکی حذف می‌شود، شنونده‌ی رویداد اولین آیتم را در ویژگی `deleted` در کنسول ثبت می‌کند. این آیتم شامل یک شیء است که کوکی تازه حذف شده را نمایش می‌دهد.
 
 ```js
 self.addEventListener("cookiechange", (event) => {
@@ -54,10 +48,10 @@ self.addEventListener("cookiechange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
