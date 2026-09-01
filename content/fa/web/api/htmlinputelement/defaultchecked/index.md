@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: defaultChecked property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/defaultChecked"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: defaultChecked property"
 short-title: defaultChecked
 slug: Web/API/HTMLInputElement/defaultChecked
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLInputElement.defaultChecked
 
 {{ APIRef("HTML DOM") }}
 
-The **`defaultChecked`** property of the {{DOMxRef("HTMLInputElement")}} interface specifies the default checkedness state of the element. This property reflects the {{htmlelement("input")}} element's [`checked`](/en-US/docs/Web/HTML/Reference/Elements/input#checked) attribute.
+ویژگی **`defaultChecked`** از رابط {{DOMxRef("HTMLInputElement")}} وضعیت پیش‌فرض علامت‌خورده بودن عنصر را مشخص می‌کند. این ویژگی منعکس‌کننده ویژگی [`checked`](/en-US/docs/Web/HTML/Reference/Elements/input#checked) عنصر {{htmlelement("input")}} است.
 
-The boolean [`checked`](/en-US/docs/Web/HTML/Reference/Elements/input#checked) attribute is valid for the `radio` ([`<input type="radio">`](/en-US/docs/Web/HTML/Reference/Elements/input/radio)) and `checkbox` ([`<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox)) input types. The presence of the attribute sets the `defaultChecked` property to `true`.
+ویژگی بولی [`checked`](/en-US/docs/Web/HTML/Reference/Elements/input#checked) برای انواع ورودی `radio` ([`<input type="radio">`](/en-US/docs/Web/HTML/Reference/Elements/input/radio)) و `checkbox` ([`<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox)) معتبر است. وجود این ویژگی، ویژگی `defaultChecked` را به `true` تنظیم می‌کند.
 
 ## Value
 
-A boolean.
+یک مقدار بولی.
 
 ## Examples
 
