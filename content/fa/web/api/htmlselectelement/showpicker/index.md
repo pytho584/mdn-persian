@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: showPicker() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/showPicker"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: showPicker() method"
 short-title: showPicker()
 slug: Web/API/HTMLSelectElement/showPicker
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.HTMLSelectElement.showPicker
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLSelectElement.showPicker()`** method displays the browser picker for a `select` element.
+متد **`HTMLSelectElement.showPicker()`**، انتخاب‌گر (picker) مرورگر را برای یک عنصر `select` نمایش می‌دهد.
 
-This is the same picker that would normally be displayed when the element is selected, but can be triggered from a button press or other user interaction.
+این همان انتخاب‌گری است که معمولاً هنگام انتخاب عنصر نمایش داده می‌شود، اما می‌تواند با فشار دادن دکمه یا تعامل کاربر دیگر فعال شود.
 
 ## Syntax
 
@@ -26,35 +20,32 @@ showPicker()
 
 ### Parameters
 
-None.
+هیچکدام.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچکدام ({{jsxref("undefined")}}).
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the element is not mutable, meaning that the user cannot modify it and/or that it cannot be automatically prefilled.
+  - : اگر عنصر قابل تغییر نباشد، یعنی کاربر نتواند آن را تغییر دهد و/یا نتواند به صورت خودکار پیش‌پر شود، پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if not explicitly triggered by a user action such as a touch gesture or mouse click (the picker requires {{Glossary("Transient activation")}}).
+  - : اگر به طور صریح توسط یک اقدام کاربر مانند ژست لمسی یا کلیک ماوس فعال نشود (انتخاب‌گر نیاز به {{Glossary("Transient activation", "فعال‌سازی گذرا")}} دارد)، پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the element associated with the picker is not being rendered.
+  - : اگر عنصر مرتبط با انتخاب‌گر رندر نشود، پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if called in a cross-origin iframe.
+  - : اگر در یک iframe با منشأ متفاوت (cross-origin) فراخوانی شود، پرتاب می‌شود.
 
-## Security considerations
+## ملاحظات امنیتی
 
-[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required.
-The user has to interact with the page or a UI element in order for this feature to work.
+فعال‌سازی کاربر گذرا (Transient user activation) الزامی است. کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل کند تا این ویژگی کار کند. این متد فقط در iframeهای هم‌منشأ (same-origin) مجاز به فراخوانی است؛ اگر در یک iframe با منشأ متفاوت فراخوانی شود، یک استثنا پرتاب می‌شود.
 
-The method is only allowed to be called in same-origin iframes; an exception is thrown if this is called in a cross-origin iframe.
+## مثال‌ها
 
-## Examples
+### تشخیص ویژگی
 
-### Feature detection
-
-The code below shows how to check if `showPicker()` is supported:
+کد زیر نحوه بررسی پشتیبانی از `showPicker()` را نشان می‌دهد:
 
 ```js
 if ("showPicker" in HTMLSelectElement.prototype) {
@@ -62,9 +53,9 @@ if ("showPicker" in HTMLSelectElement.prototype) {
 }
 ```
 
-### Launching the picker
+### راه‌اندازی انتخاب‌گر
 
-This example shows how to use a button to launch the picker for a `<select>` element with two options.
+این مثال نشان می‌دهد که چگونه از یک دکمه برای راه‌اندازی انتخاب‌گر برای یک عنصر `<select>` با دو گزینه استفاده کنیم.
 
 #### HTML
 
@@ -80,8 +71,7 @@ This example shows how to use a button to launch the picker for a `<select>` ele
 
 #### JavaScript
 
-The code gets the `<button>` and adds a listener for its `click` event.
-The event handler gets the `<select>` element and calls `showPicker()` on it.
+کد عنصر `<button>` را دریافت می‌کند و یک شنونده برای رویداد `click` آن اضافه می‌کند. کنترل‌کننده رویداد، عنصر `<select>` را دریافت می‌کند و `showPicker()` را روی آن فراخوانی می‌کند.
 
 ```js
 const button = document.querySelector("button");
