@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: text property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/text"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: text property"
 short-title: text
 slug: Web/API/HTMLAnchorElement/text
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.HTMLAnchorElement.text
 
 {{ApiRef("HTML DOM")}}
 
-The **`text`** property of the {{domxref("HTMLAnchorElement")}} represents the text inside the element.
-This property represents the same information as {{domxref("Node.textContent")}}.
+ویژگی **`text`** در {{domxref("HTMLAnchorElement")}} متن داخل عنصر را نمایش می‌دهد. این ویژگی همان اطلاعاتی را ارائه می‌دهد که {{domxref("Node.textContent")}} ارائه می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Example
+## مثال
 
 ```html
 <a id="exampleLink" href="https://example.com">Example Link</a>
@@ -40,19 +33,19 @@ const pTag = document.querySelector(".text");
 pTag.textContent = `Text property: ${anchorElement.text}`;
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Example",100,100)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLScriptElement.text")}} property
-- {{domxref("HTMLOptionElement.text")}} property
+- ویژگی {{domxref("HTMLScriptElement.text")}}
+- ویژگی {{domxref("HTMLOptionElement.text")}}
