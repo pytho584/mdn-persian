@@ -1,11 +1,5 @@
 ---
 title: "Document: visibilityState property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilityState"
-status: "needs-translation"
----
-
----
-title: "Document: visibilityState property"
 short-title: visibilityState
 slug: Web/API/Document/visibilityState
 page-type: web-api-instance-property
@@ -14,26 +8,22 @@ browser-compat: api.Document.visibilityState
 
 {{ApiRef("DOM")}}
 
-The **`Document.visibilityState`**
-read-only property returns the visibility of the document. It can be used to check whether the document is in the background or in a minimized window, or is otherwise not visible to the user.
+خاصیت فقط خواندنی **`Document.visibilityState`** وضعیت نمایان بودن سند را برمی‌گرداند. می‌توان از آن برای بررسی اینکه آیا سند در پس‌زمینه یا در یک پنجره کمینه‌شده قرار دارد، یا به‌طور کلی برای کاربر قابل مشاهده نیست، استفاده کرد.
 
-When the value of this property changes, the {{domxref("Document/visibilitychange_event", "visibilitychange")}} event is sent to the {{domxref("Document")}}.
+زمانی که مقدار این خاصیت تغییر می‌کند، رویداد {{domxref("Document/visibilitychange_event", "visibilitychange")}} به {{domxref("Document")}} ارسال می‌شود.
 
-The {{domxref("Document.hidden")}} property provides an alternative way to determine whether the page is hidden.
+خاصیت {{domxref("Document.hidden")}} روش جایگزینی برای تعیین اینکه آیا صفحه پنهان است، ارائه می‌دهد.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `visible`
-  - : The page content may be at least partially visible. In practice this means that the
-    page is the foreground tab of a non-minimized window.
+  - : محتوای صفحه ممکن است حداقل تا حدی قابل مشاهده باشد. در عمل این به این معنی است که صفحه، زبانه پیش‌زمینه یک پنجره غیر کمینه‌شده است.
 - `hidden`
-  - : The page content is not visible to the user. In practice this means that the
-    document is either a background tab or part of a minimized window, or the OS screen
-    lock is active.
+  - : محتوای صفحه برای کاربر قابل مشاهده نیست. در عمل این به این معنی است که سند یا یک زبانه پس‌زمینه است یا بخشی از یک پنجره کمینه‌شده، یا قفل صفحه سیستم‌عامل فعال است.
 
-## Examples
+## مثال‌ها
 
 ```js
 document.addEventListener("visibilitychange", () => {
@@ -42,15 +32,15 @@ document.addEventListener("visibilitychange", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.hidden")}}
 - [Page Visibility API](/en-US/docs/Web/API/Page_Visibility_API)
