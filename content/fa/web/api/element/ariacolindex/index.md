@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaColIndex property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaColIndex"
-status: "needs-translation"
----
-
----
-title: "Element: ariaColIndex property"
 short-title: ariaColIndex
 slug: Web/API/Element/ariaColIndex
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Element.ariaColIndex
 
 {{APIRef("DOM")}}
 
-The **`ariaColIndex`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) attribute, which defines an element's column index or position with respect to the total number of columns within a table, grid, or treegrid.
+ویژگی **`ariaColIndex`** در رابط {{domxref("Element")}} مقدار ویژگی [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) را منعکس می‌کند؛ این ویژگی ایندکس یا موقعیت ستون یک عنصر را نسبت به تعداد کل ستون‌های موجود در یک جدول، شبکه (grid) یا شبکه درختی (treegrid) تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string which contains an integer.
+یک رشته (string) که شامل یک عدد صحیح است.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-colindex` attribute on the element with an ID of `role-heading` is set to "1". Using `ariaColIndex` we update the value to "2".
+در این مثال، ویژگی `aria-colindex` روی عنصری با شناسه (ID) «role-heading» به مقدار «1» تنظیم شده است. با استفاده از `ariaColIndex` مقدار آن را به «2» تغییر می‌دهیم.
 
 ```html
 <table
@@ -81,14 +75,14 @@ el.ariaColIndex = "2";
 console.log(el.ariaColIndex); // 2
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
