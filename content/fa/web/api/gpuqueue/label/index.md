@@ -1,7 +1,5 @@
 ---
 title: "GPUQueue: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/label"
-status: "needs-translation"
 ---
 
 ---
@@ -14,25 +12,24 @@ browser-compat: api.GPUQueue.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** read-only property of the
-{{domxref("GPUQueue")}} interface is a string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی فقط‌خواندنی **`label`** در رابط {{domxref("GPUQueue")}} یک رشته است که برای شناسایی شیء استفاده می‌شود؛ برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-You can get and set it directly on the `GPUQueue` object.
+می‌توانید آن را مستقیماً روی شیء `GPUQueue` بخوانید و تنظیم کنید.
 
-## Value
+## مقدار
 
-A string. If no label value has previously been set, getting the label returns an empty string.
+یک رشته. اگر قبلاً هیچ مقدار برچسبی تنظیم نشده باشد، خواندن `label` یک رشته خالی بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUQueue.label`:
+تنظیم و خواندن برچسب با استفاده از `GPUQueue.label`:
 
 ```js
 device.queue.label = "my_queue";
 console.log(device.queue.label); // "my_queue"
 ```
 
-You can also set the queue's label at the time you request the device, like this:
+همچنین می‌توانید برچسب صف را هنگام درخواست دستگاه به این شکل تنظیم کنید:
 
 ```js
 const device = adapter.requestDevice({
@@ -40,14 +37,14 @@ const device = adapter.requestDevice({
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
