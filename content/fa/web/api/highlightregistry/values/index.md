@@ -1,7 +1,5 @@
 ---
 title: "HighlightRegistry: values() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry/values"
-status: "needs-translation"
 ---
 
 ---
@@ -15,9 +13,9 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`values()`** method of the {{domxref("HighlightRegistry")}} interface returns a new [Iterator](/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators) object that contains the values for each `Highlight` object in the `HighlightRegistry` object in insertion order.
+متد **`values()`** از رابط {{domxref("HighlightRegistry")}} یک شیء [Iterator](/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators) جدید برمی‌گرداند که شامل مقادیر هر شیء `Highlight` در شیء `HighlightRegistry` به ترتیب درج است.
 
-`HighlightRegistry` is a {{jsxref("Map")}}-like object, so this is similar to using {{jsxref("Map.values()")}}.
+`HighlightRegistry` یک شیء شبیه به {{jsxref("Map")}} است، بنابراین این متد مشابه استفاده از {{jsxref("Map.values()")}} است.
 
 ## Syntax
 
@@ -25,17 +23,17 @@ The **`values()`** method of the {{domxref("HighlightRegistry")}} interface retu
 values()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A new iterator object containing each `Highlight` object in the registry, in insertion order.
+یک شیء iterator جدید که شامل هر شیء `Highlight` در ثبات، به ترتیب درج است.
 
-## Examples
+## مثال‌ها
 
-The following code snippet shows how to create and register three `Highlight` objects, and use the iterator returned by the `values()` method to log the highlights:
+قطعه کد زیر نحوه ایجاد و ثبت سه شیء `Highlight` و استفاده از iterator بازگشتی توسط متد `values()` برای لاگ کردن highlightها را نشان می‌دهد:
 
 ```js
 const fooHighlight = new Highlight();
@@ -53,7 +51,7 @@ console.log(iter.next().value); // Highlight
 console.log(iter.next().value); // Highlight
 ```
 
-The following code example shows how to iterate over the highlights in the registry by using a [`for...of`](/en-US/docs/Web/JavaScript/Reference/Statements/for...of) loop:
+مثال کد زیر نحوه پیمایش highlightها در ثبات با استفاده از حلقه [`for...of`](/en-US/docs/Web/JavaScript/Reference/Statements/for...of) را نشان می‌دهد:
 
 ```js
 const fooHighlight = new Highlight();
@@ -73,11 +71,11 @@ for (const highlight of CSS.highlights.values()) {
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
 - [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
