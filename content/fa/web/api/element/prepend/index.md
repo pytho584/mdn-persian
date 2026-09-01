@@ -1,11 +1,5 @@
 ---
 title: "Element: prepend() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/prepend"
-status: "needs-translation"
----
-
----
-title: "Element: prepend() method"
 short-title: prepend()
 slug: Web/API/Element/prepend
 page-type: web-api-instance-method
@@ -14,10 +8,7 @@ browser-compat: api.Element.prepend
 
 {{APIRef("DOM")}}
 
-The **`Element.prepend()`** method inserts a set of
-{{domxref("Node")}} objects or strings before the first child
-of the {{domxref("Element")}}. Strings are inserted as
-equivalent {{domxref("Text")}} nodes.
+متد **`Element.prepend()`** مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را قبل از اولین فرزند {{domxref("Element")}} درج می‌کند. رشته‌ها به صورت گره‌های {{domxref("Text")}} معادل درج می‌شوند.
 
 ## Syntax
 
@@ -30,20 +21,20 @@ prepend(param1, param2, /* …, */ paramN)
 ### Parameters
 
 - `param1`, …, `paramN`
-  - : A set of {{domxref("Node")}} objects or strings to insert.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها که باید درج شوند.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ### Exceptions
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the node cannot be inserted at the specified point in the hierarchy.
+  - : زمانی که گره نمی‌تواند در نقطه مشخص شده در سلسله‌مراتب درج شود، پرتاب می‌شود.
 
 ## Examples
 
-### Prepending an element
+### درج یک عنصر در ابتدا
 
 ```js
 let div = document.createElement("div");
@@ -55,7 +46,7 @@ div.prepend(span);
 console.log(div.childNodes); // NodeList [ <span>, <p> ]
 ```
 
-### Prepending text
+### درج متن در ابتدا
 
 ```js
 let div = document.createElement("div");
@@ -65,7 +56,7 @@ div.prepend("Headline: ");
 console.log(div.textContent); // "Headline: Some text"
 ```
 
-### Prepending an element and text
+### درج یک عنصر و متن در ابتدا
 
 ```js
 let div = document.createElement("div");
@@ -75,10 +66,9 @@ div.prepend("Some text", p);
 console.log(div.childNodes); // NodeList [ #text "Some text", <p> ]
 ```
 
-### The prepend method is unscopable
+### متد prepend قابل اسکوپ نیست
 
-The `prepend()` method is not scoped into the `with` statement.
-See {{jsxref("Symbol.unscopables")}} for more information.
+متد `prepend()` در محدوده دستور `with` قرار نمی‌گیرد. برای اطلاعات بیشتر به {{jsxref("Symbol.unscopables")}} مراجعه کنید.
 
 ```js
 let div = document.createElement("div");
