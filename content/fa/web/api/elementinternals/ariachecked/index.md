@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaChecked property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaChecked"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaChecked property"
 short-title: ariaChecked
 slug: Web/API/ElementInternals/ariaChecked
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.ElementInternals.ariaChecked
 
 {{APIRef("Web Components")}}
 
-The **`ariaChecked`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) attribute, which indicates the current "checked" state of checkboxes, radio buttons, and other widgets that have a checked state.
+ویژگی **`ariaChecked`** از رابط {{domxref("ElementInternals")}} منعکس‌کننده مقدار ویژگی [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) است که وضعیت «تیک‌خورده» فعلی چک‌باکس‌ها، دکمه‌های رادیویی و سایر ویجت‌هایی که حالت تیک‌خورده دارند را نشان می‌دهد.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. ممکن است این مقادیر توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که در صورت حذف آن ویژگی‌ها توسط نویسنده یا عدم افزودن آن‌ها، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+رشته‌ای با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The element is checked.
+  - : عنصر تیک خورده است.
 - `"mixed"`
-  - : Indicates a mixed mode value for a tri-state checkbox or menuitemcheckbox.
+  - : حالت ترکیبی را برای یک چک‌باکس یا منوی چک‌باکس (menuitemcheckbox) سه‌حالته نشان می‌دهد.
 - `"false"`
-  - : The element supports being checked but is not currently checked.
+  - : عنصر از تیک‌خوردن پشتیبانی می‌کند اما در حال حاضر تیک نخورده است.
 - `"undefined"`
-  - : The element does not support being checked.
+  - : عنصر از تیک‌خوردن پشتیبانی نمی‌کند.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaChecked` is set to "true".
+در این مثال مقدار `ariaChecked` روی «true» تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -47,14 +41,14 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: checkbox role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
+- [ARIA: نقش checkbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
