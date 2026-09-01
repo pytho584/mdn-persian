@@ -1,11 +1,5 @@
 ---
 title: "GeolocationCoordinates: speed property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates/speed"
-status: "needs-translation"
----
-
----
-title: "GeolocationCoordinates: speed property"
 short-title: speed
 slug: Web/API/GeolocationCoordinates/speed
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.GeolocationCoordinates.speed
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`speed`** read-only property of the {{domxref("GeolocationCoordinates")}} interface is a `double` representing the velocity of the device in meters per second. This value is `null` if the implementation is not able to measure it.
+ویژگی فقط‌خواندنی **`speed`** در رابط {{domxref("GeolocationCoordinates")}} یک `double` است که سرعت دستگاه را بر حسب متر بر ثانیه نشان می‌دهد. اگر پیاده‌سازی امکان اندازه‌گیری آن را نداشته باشد، مقدار این ویژگی `null` است.
 
-## Value
+## مقدار
 
-A `double` representing the velocity of the device in meters per second.
+یک `double` که سرعت دستگاه را بر حسب متر بر ثانیه نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [استفاده از Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
 - {{domxref("GeolocationCoordinates")}}
