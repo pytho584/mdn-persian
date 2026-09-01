@@ -1,11 +1,5 @@
 ---
 title: "HTMLLinkElement: as property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/as"
-status: "needs-translation"
----
-
----
-title: "HTMLLinkElement: as property"
 short-title: as
 slug: Web/API/HTMLLinkElement/as
 page-type: web-api-instance-property
@@ -14,22 +8,20 @@ browser-compat: api.HTMLLinkElement.as
 
 {{APIRef("HTML DOM")}}
 
-The **`as`** property of the {{domxref("HTMLLinkElement")}} interface returns a string representing the type of content to be preloaded by a link element.
+خاصیت **`as`** از رابط {{domxref("HTMLLinkElement")}} یک رشته را برمی‌گرداند که نشان‌دهنده نوع محتوایی است که توسط یک عنصر پیوند (link) از پیش بارگیری می‌شود (preload).
 
-The `as` property must have a value for link elements when [`rel="preload"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/preload), or the resource will not be fetched.
-It may also be applied to link elements where [`rel="modulepreload"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/modulepreload), but if omitted, will default to `script`.
-The property should not be set for other types of link elements, such as `rel="prefetch"`.
+خاصیت `as` برای عناصر پیوندی که [`rel="preload"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/preload) دارند باید مقدار داشته باشد، در غیر این صورت منبع واکشی نخواهد شد. همچنین می‌تواند برای عناصر پیوندی با [`rel="modulepreload"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/modulepreload) به کار رود، اما در صورت حذف، مقدار پیش‌فرض آن `script` خواهد بود. این خاصیت نباید برای انواع دیگر عناصر پیوند، مانند `rel="prefetch"` تنظیم شود.
 
-This property reflects the value of the [`as` attribute](/en-US/docs/Web/HTML/Reference/Elements/link#as) of the [`<link>`](/en-US/docs/Web/HTML/Reference/Elements/link) HTML element.
+این خاصیت منعکس‌کننده مقدار [`as` attribute](/en-US/docs/Web/HTML/Reference/Elements/link#as) المان HTML [`<link>`](/en-US/docs/Web/HTML/Reference/Elements/link) است.
 
-## Value
+## مقدار
 
-A string with the following allowed values: `"audio"`, `"document"`, `"embed"`, `"fetch"`, `"font"`, `"image"`, `"object"`, `"script"`, `"style"`, `"track"`, `"video"`, `"worker"`.
+یک رشته با مقادیر مجاز زیر: `"audio"`، `"document"`، `"embed"`، `"fetch"`، `"font"`، `"image"`، `"object"`، `"script"`، `"style"`، `"track"`، `"video"`، `"worker"`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
