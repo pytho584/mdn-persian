@@ -1,11 +1,5 @@
 ---
 title: "GPUComputePassEncoder: popDebugGroup() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/popDebugGroup"
-status: "needs-translation"
----
-
----
-title: "GPUComputePassEncoder: popDebugGroup() method"
 short-title: popDebugGroup()
 slug: Web/API/GPUComputePassEncoder/popDebugGroup
 page-type: web-api-instance-method
@@ -14,32 +8,31 @@ browser-compat: api.GPUComputePassEncoder.popDebugGroup
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`popDebugGroup()`** method of the
-{{domxref("GPUComputePassEncoder")}} interface ends a compute pass debug group, which is begun with a {{domxref("GPUComputePassEncoder.pushDebugGroup", "pushDebugGroup()")}} call.
+متد **`popDebugGroup()`** در رابط {{domxref("GPUComputePassEncoder")}} یک گروه اشکال‌زدایی پاس محاسباتی را پایان می‌دهد؛ گروهی که با یک فراخوانی {{domxref("GPUComputePassEncoder.pushDebugGroup", "pushDebugGroup()")}} آغاز شده است.
 
-This could be used for telemetry, or may be utilized in {{domxref("GPUError")}} messages, browser dev tools, or other services in the future to help with debugging.
+این می‌تواند برای تله‌متری استفاده شود، یا ممکن است در پیام‌های {{domxref("GPUError")}}، ابزارهای توسعه‌دهندگان مرورگر، یا سایر سرویس‌ها در آینده برای کمک به اشکال‌زدایی به کار رود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 popDebugGroup()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`popDebugGroup()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUComputePassEncoder")}} becomes invalid:
+هنگام فراخوانی **`popDebugGroup()`**، معیارهای زیر باید برقرار باشند؛ در غیر این صورت یک {{domxref("GPUValidationError")}} تولید می‌شود و {{domxref("GPUComputePassEncoder")}} نامعتبر می‌شود:
 
-- The compute pass encoder's debug stack is not empty (i.e., at least one compute pass debug group was previously started with {{domxref("GPUComputePassEncoder.pushDebugGroup", "pushDebugGroup()")}}).
+- پشته اشکال‌زدایی انکودر پاس محاسباتی خالی نباشد (یعنی حداقل یک گروه اشکال‌زدایی پاس محاسباتی قبلاً با {{domxref("GPUComputePassEncoder.pushDebugGroup", "pushDebugGroup()")}} شروع شده باشد).
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -57,14 +50,14 @@ passEncoder.popDebugGroup();
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
