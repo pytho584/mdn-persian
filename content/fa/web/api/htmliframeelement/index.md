@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement"
-status: "needs-translation"
----
-
----
-title: HTMLIFrameElement
 slug: Web/API/HTMLIFrameElement
 page-type: web-api-interface
 browser-compat: api.HTMLIFrameElement
@@ -13,79 +7,78 @@ browser-compat: api.HTMLIFrameElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLIFrameElement`** interface provides special properties and methods (beyond those of the {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating the layout and presentation of inline frame elements.
+رابط **`HTMLIFrameElement`** ویژگی‌ها و روش‌های خاصی (فراتر از آنچه از رابط {{domxref("HTMLElement")}} به ارث برده است) برای دستکاری طرح و ارائه عناصر فریم درون‌خطی فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}_.
+_ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLIFrameElement.align")}} {{Deprecated_Inline}}
-  - : A string that specifies the alignment of the frame with respect to the surrounding context.
+  - : رشته‌ای که تراز فریم را نسبت به زمینه اطراف مشخص می‌کند.
 - {{domxref("HTMLIFrameElement.allow")}}
-  - : A string that indicates the [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) specified for this `<iframe>`.
+  - : رشته‌ای که [سیاست مجوزها](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مشخص‌شده برای این `<iframe>` را نشان می‌دهد.
 - {{domxref("HTMLIFrameElement.allowFullscreen")}}
-  - : A boolean value indicating whether the inline frame is willing to be placed into full screen mode. See [Using fullscreen mode](/en-US/docs/Web/API/Fullscreen_API) for details.
+  - : یک مقدار بولی که نشان می‌دهد آیا فریم درون‌خطی مایل به قرار گرفتن در حالت تمام‌صفحه است. برای جزئیات به [استفاده از حالت تمام‌صفحه](/en-US/docs/Web/API/Fullscreen_API) مراجعه کنید.
 - {{domxref("HTMLIFrameElement.allowPaymentRequest")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : A boolean value indicating whether the [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) may be invoked inside a cross-origin iframe.
+  - : یک مقدار بولی که نشان می‌دهد آیا [API درخواست پرداخت](/en-US/docs/Web/API/Payment_Request_API) می‌تواند درون یک iframe با منشأ متفاوت فراخوانی شود.
 - {{domxref("HTMLIFrameElement.browsingTopics")}} {{non-standard_inline}} {{deprecated_inline}}
-  - : A boolean property specifying that the selected topics for the current user should be sent with the request for the associated {{htmlelement("iframe")}}'s source. This reflects the `browsingtopics` content attribute value.
+  - : یک ویژگی بولی که مشخص می‌کند موضوعات انتخاب‌شده برای کاربر فعلی باید با درخواست منبع {{htmlelement("iframe")}} مرتبط ارسال شود. این مقدار ویژگی محتوای `browsingtopics` را منعکس می‌کند.
 - {{domxref("HTMLIFrameElement.contentDocument")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("Document")}}, the active document in the inline frame's nested browsing context.
+  - : یک {{domxref("Document")}}، یعنی سند فعال در زمینه مرور تودرتو فریم درون‌خطی را برمی‌گرداند.
 - {{domxref("HTMLIFrameElement.contentWindow")}} {{ReadOnlyInline}}
-  - : Returns a {{glossary("WindowProxy")}}, the window proxy for the nested browsing context.
+  - : یک {{glossary("WindowProxy")}}، یعنی پروکسی پنجره برای زمینه مرور تودرتو را برمی‌گرداند.
 - {{domxref("HTMLIFrameElement.credentialless")}} {{Experimental_Inline}}
-  - : A boolean value indicating whether the `<iframe>` is credentialless, meaning that its content is loaded in a new, ephemeral context. This context does not have access to the parent context's shared storage and credentials. In return, the {{httpheader("Cross-Origin-Embedder-Policy")}} (COEP) embedding rules can be lifted, so documents with COEP set can embed third-party documents that do not. See [IFrame credentialless](/en-US/docs/Web/HTTP/Guides/IFrame_credentialless) for a deeper explanation.
+  - : یک مقدار بولی که نشان می‌دهد آیا `<iframe>` بدون اعتبار (credentialless) است، به این معنی که محتوای آن در یک زمینه جدید و موقت بارگذاری می‌شود. این زمینه به ذخیره‌سازی مشترک و اعتبارنامه‌های زمینه والد دسترسی ندارد. در عوض، قوانین جاسازی {{httpheader("Cross-Origin-Embedder-Policy")}} (COEP) می‌توانند لغو شوند، بنابراین اسنادی که COEP را تنظیم کرده‌اند می‌توانند اسناد شخص ثالثی را که این قوانین را ندارند جاسازی کنند. برای توضیح بیشتر [IFrame credentialless](/en-US/docs/Web/HTTP/Guides/IFrame_credentialless) را ببینید.
 - {{domxref("HTMLIFrameElement.csp")}} {{Experimental_Inline}}
-  - : Specifies the Content Security Policy that an embedded document must agree to enforce upon itself.
+  - : سیاست امنیت محتوا (Content Security Policy) را مشخص می‌کند که یک سند جاسازی‌شده باید موافقت کند آن را بر خود اعمال کند.
 - {{domxref("HTMLIFrameElement.featurePolicy")}} {{ReadOnlyInline}} {{Experimental_Inline}} {{non-standard_inline}}
-  - : Returns the {{domxref("FeaturePolicy")}} interface which provides a simple API for introspecting the [Permissions Policies](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) applied to a specific document.
+  - : رابط {{domxref("FeaturePolicy")}} را برمی‌گرداند که یک API ساده برای بازرسی [سیاست‌های مجوز](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) اعمال‌شده بر یک سند خاص فراهم می‌کند.
 - {{domxref("HTMLIFrameElement.frameBorder")}} {{Deprecated_Inline}}
-  - : A string that indicates whether to create borders between frames.
+  - : رشته‌ای که نشان می‌دهد آیا بین فریم‌ها حاشیه ایجاد شود.
 - {{domxref("HTMLIFrameElement.height")}}
-  - : A string that reflects the [`height`](/en-US/docs/Web/HTML/Reference/Elements/iframe#height) HTML attribute, indicating the height of the frame.
+  - : رشته‌ای که ویژگی HTML [`height`](/en-US/docs/Web/HTML/Reference/Elements/iframe#height) را منعکس می‌کند و ارتفاع فریم را نشان می‌دهد.
 - {{domxref("HTMLIFrameElement.loading")}}
-  - : A string providing a hint to the browser that the iframe should be loaded immediately (`eager`) or on an as-needed basis (`lazy`).
-    This reflects the [`loading`](/en-US/docs/Web/HTML/Reference/Elements/iframe#loading) HTML attribute.
+  - : رشته‌ای که به مرورگر راهنمایی می‌کند iframe باید فوراً (`eager`) یا بر اساس نیاز (`lazy`) بارگذاری شود. این ویژگی مقدار [`loading`](/en-US/docs/Web/HTML/Reference/Elements/iframe#loading) HTML را منعکس می‌کند.
 - {{domxref("HTMLIFrameElement.longDesc")}} {{Deprecated_Inline}}
-  - : A string that contains the URI of a long description of the frame.
+  - : رشته‌ای که URI یک توضیح طولانی از فریم را شامل می‌شود.
 - {{domxref("HTMLIFrameElement.marginHeight")}} {{Deprecated_Inline}}
-  - : A string being the height of the frame margin.
+  - : رشته‌ای که ارتفاع حاشیه فریم است.
 - {{domxref("HTMLIFrameElement.marginWidth")}} {{Deprecated_Inline}}
-  - : A string being the width of the frame margin.
+  - : رشته‌ای که عرض حاشیه فریم است.
 - {{domxref("HTMLIFrameElement.name")}}
-  - : A string that reflects the [`name`](/en-US/docs/Web/HTML/Reference/Elements/iframe#name) HTML attribute, containing a name by which to refer to the frame.
+  - : رشته‌ای که ویژگی HTML [`name`](/en-US/docs/Web/HTML/Reference/Elements/iframe#name) را منعکس می‌کند و شامل نامی است که با آن می‌توان به فریم ارجاع داد.
 - {{domxref("HTMLIFrameElement.privateToken")}} {{experimental_inline}}
-  - : A string representation of an options object representing a [private state token](/en-US/docs/Web/API/Private_State_Token_API/Using) operation; this object has the same structure as the `RequestInit` dictionary's [`privateToken`](/en-US/docs/Web/API/RequestInit#privatetoken) property. Mirrors the content of the associated `<iframe>` element's [`privateToken`](/en-US/docs/Web/HTML/Reference/Elements/iframe#privatetoken) attribute.
+  - : یک نمایش رشته‌ای از یک شیء گزینه‌ها که یک عملیات [نشانه وضعیت خصوصی](/en-US/docs/Web/API/Private_State_Token_API/Using) را نشان می‌دهد؛ این شیء همان ساختار ویژگی [`privateToken`](/en-US/docs/Web/API/RequestInit#privatetoken) در فرهنگ لغت `RequestInit` را دارد. محتوای ویژگی [`privateToken`](/en-US/docs/Web/HTML/Reference/Elements/iframe#privatetoken) عنصر `<iframe>` مرتبط را منعکس می‌کند.
 - {{domxref("HTMLIFrameElement.referrerPolicy")}}
-  - : A string that reflects the [`referrerPolicy`](/en-US/docs/Web/HTML/Reference/Elements/iframe#referrerpolicy) HTML attribute indicating which referrer to use when fetching the linked resource.
+  - : رشته‌ای که ویژگی HTML [`referrerPolicy`](/en-US/docs/Web/HTML/Reference/Elements/iframe#referrerpolicy) را منعکس می‌کند و نشان می‌دهد هنگام واکشی منبع پیوندداده‌شده از کدام ارجاع‌دهنده استفاده شود.
 - {{domxref("HTMLIFrameElement.sandbox")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("DOMTokenList")}} that reflects the [`sandbox`](/en-US/docs/Web/HTML/Reference/Elements/iframe#sandbox) HTML attribute, indicating extra restrictions on the behavior of the nested content.
+  - : یک {{domxref("DOMTokenList")}} برمی‌گرداند که ویژگی HTML [`sandbox`](/en-US/docs/Web/HTML/Reference/Elements/iframe#sandbox) را منعکس می‌کند و محدودیت‌های اضافی بر رفتار محتوای تودرتو نشان می‌دهد.
 - {{domxref("HTMLIFrameElement.scrolling")}} {{Deprecated_Inline}}
-  - : A string that indicates whether the browser should provide scrollbars for the frame.
+  - : رشته‌ای که نشان می‌دهد آیا مرورگر باید برای فریم نوارهای پیمایش ارائه دهد.
 - {{domxref("HTMLIFrameElement.src")}}
-  - : A string that reflects the [`src`](/en-US/docs/Web/HTML/Reference/Elements/iframe#src) HTML attribute, containing the address of the content to be embedded. Note that programmatically removing an `<iframe>`'s src attribute (e.g., via {{domxref("Element.removeAttribute()")}}) causes `about:blank` to be loaded in the frame in Firefox (from version 65), Chromium-based browsers, and Safari/iOS.
+  - : رشته‌ای که ویژگی HTML [`src`](/en-US/docs/Web/HTML/Reference/Elements/iframe#src) را منعکس می‌کند و شامل آدرس محتوایی است که باید جاسازی شود. توجه داشته باشید که حذف برنامه‌ریزی‌شده ویژگی src یک `<iframe>` (مثلاً از طریق {{domxref("Element.removeAttribute()")}}) باعث می‌شود `about:blank` در فریم در Firefox (از نسخه 65)، مرورگرهای مبتنی بر Chromium و Safari/iOS بارگذاری شود.
 - {{domxref("HTMLIFrameElement.srcdoc")}}
-  - : A {{domxref("TrustedHTML")}} or string that represents the HTML document loaded into the frame.
+  - : یک {{domxref("TrustedHTML")}} یا رشته که سند HTML بارگذاری‌شده در فریم را نمایش می‌دهد.
 - {{domxref("HTMLIFrameElement.width")}}
-  - : A string that reflects the [`width`](/en-US/docs/Web/HTML/Reference/Elements/iframe#width) HTML attribute, indicating the width of the frame.
+  - : رشته‌ای که ویژگی HTML [`width`](/en-US/docs/Web/HTML/Reference/Elements/iframe#width) را منعکس می‌کند و عرض فریم را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{domxref("HTMLElement")}}._
+_همچنین روش‌ها را از رابط والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLIFrameElement.getSVGDocument()")}}
-  - : Returns the embedded SVG as a {{domxref("Document")}}.
+  - : SVG جاسازی‌شده را به عنوان یک {{domxref("Document")}} برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("iframe")}}
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("iframe")}}
