@@ -1,11 +1,5 @@
 ---
 title: "FetchEvent: respondWith() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/respondWith"
-status: "needs-translation"
----
-
----
-title: "FetchEvent: respondWith() method"
 short-title: respondWith()
 slug: Web/API/FetchEvent/respondWith
 page-type: web-api-instance-method
@@ -14,24 +8,13 @@ browser-compat: api.FetchEvent.respondWith
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`respondWith()`** method of
-{{domxref("FetchEvent")}} prevents the browser's default fetch handling, and
-allows you to provide a promise for a {{domxref("Response")}} yourself.
+روش **`respondWith()`** از {{domxref("FetchEvent")}} از رفتار پیش‌فرض مرورگر در هنگام واکشی جلوگیری می‌کند و به شما اجازه می‌دهد خودتان یک promise برای یک {{domxref("Response")}} ارائه دهید.
 
-In most cases you can provide any response that the receiver understands. For example,
-if an {{HTMLElement('img')}} initiates the request, the response body needs to be
-image data. For security reasons, there are a few global rules:
+در بیشتر موارد، می‌توانید هر پاسخی که دریافت‌کننده آن را درک می‌کند ارائه دهید. برای مثال، اگر یک {{HTMLElement('img')}} درخواست را آغاز کند، بدنه پاسخ باید شامل داده‌های تصویری باشد. به دلایل امنیتی، چند قانون کلی وجود دارد:
 
-- You can only return {{domxref("Response")}} objects of {{domxref("Response.type", "type")}}
-  `"opaque"` if the {{domxref("fetchEvent.request")}} object's
-  {{domxref("request.mode", "mode")}} is `"no-cors"`. This prevents the
-  leaking of private data.
-- You can only return {{domxref("Response")}} objects of {{domxref("Response.type", "type")}}
-  `"opaqueredirect"` if the {{domxref("fetchEvent.request")}}
-  object's {{domxref("request.mode", "mode")}} is `"manual"`.
-- You cannot return {{domxref("Response")}} objects of {{domxref("Response.type", "type")}}
-  `"cors"` if the {{domxref("fetchEvent.request")}} object's
-  {{domxref("request.mode", "mode")}} is `"same-origin"`.
+- فقط زمانی می‌توانید اشیاء {{domxref("Response")}} از {{domxref("Response.type", "نوع")}} `"opaque"` برگردانید که {{domxref("request.mode", "mode")}} شیء {{domxref("fetchEvent.request")}} برابر `"no-cors"` باشد. این کار از نشت داده‌های خصوصی جلوگیری می‌کند.
+- فقط زمانی می‌توانید اشیاء {{domxref("Response")}} از {{domxref("Response.type", "نوع")}} `"opaqueredirect"` برگردانید که {{domxref("request.mode", "mode")}} شیء {{domxref("fetchEvent.request")}} برابر `"manual"` باشد.
+- نمی‌توانید اشیاء {{domxref("Response")}} از {{domxref("Response.type", "نوع")}} `"cors"` برگردانید اگر {{domxref("request.mode", "mode")}} شیء {{domxref("fetchEvent.request")}} برابر `"same-origin"` باشد.
 
 ## Syntax
 
@@ -39,69 +22,43 @@ image data. For security reasons, there are a few global rules:
 respondWith(response)
 ```
 
-### Parameters
+### پارامترها
 
 - `response`
-  - : A {{domxref("Response")}} or a {{jsxref("Promise")}} that resolves to a
-    `Response`. Otherwise, a network error is returned to Fetch.
+  - : یک {{domxref("Response")}} یا یک {{jsxref("Promise")}} که به یک `Response` تبدیل می‌شود. در غیر این صورت، یک خطای شبکه به Fetch برگردانده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `NetworkError` {{domxref("DOMException")}}
-  - : Returned if a network error is triggered on certain combinations of
-    {{domxref("Request.mode","FetchEvent.request.mode")}} and
-    {{domxref("Response.type")}} values, as hinted at in the "global rules"
-    listed above.
+  - : در صورت بروز خطای شبکه در ترکیب‌های خاصی از مقادیر {{domxref("Request.mode","FetchEvent.request.mode")}} و {{domxref("Response.type")}}، همانطور که در «قوانین کلی» بالا اشاره شد، برگردانده می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Returned if the event has not been dispatched or `respondWith()` has
-    already been invoked.
+  - : در صورت عدم ارسال رویداد یا فراخوانی قبلی `respondWith()` برگردانده می‌شود.
 
-## Description
+## توضیحات
 
-### Specifying the final URL of a resource
+### تعیین URL نهایی یک منبع
 
-From Firefox 59 onwards, when a service worker provides a {{domxref("Response")}} to
-`FetchEvent.respondWith()`, the {{domxref("Response.url")}} value will be
-propagated to the intercepted network request as the final resolved URL. If the
-{{domxref("Response.url")}} value is the empty string, then the
-{{domxref("Request.url","FetchEvent.request.url")}} is used as the final URL.
+از Firefox 59 به بعد، هنگامی که یک service worker یک {{domxref("Response")}} را به `FetchEvent.respondWith()` ارائه می‌دهد، مقدار {{domxref("Response.url")}} به عنوان URL نهایی تفکیک‌شده به درخواست شبکه رهگیری‌شده منتقل می‌شود. اگر مقدار {{domxref("Response.url")}} رشته خالی باشد، آنگاه {{domxref("Request.url","FetchEvent.request.url")}} به عنوان URL نهایی استفاده می‌شود.
 
-In the past the {{domxref("Request.url","FetchEvent.request.url")}} was used as the
-final URL in all cases. The provided {{domxref("Response.url")}} was effectively
-ignored.
+در گذشته، {{domxref("Request.url","FetchEvent.request.url")}} در همه موارد به عنوان URL نهایی استفاده می‌شد. {{domxref("Response.url")}} ارائه‌شده عملاً نادیده گرفته می‌شد.
 
-This means, for example, if a service worker intercepts a stylesheet or worker script,
-then the provided {{domxref("Response.url")}} will be used to resolve any relative
-{{cssxref("@import")}} or
-{{domxref("WorkerGlobalScope.importScripts()","importScripts()")}} subresource loads
-([Firefox bug 1222008](https://bugzil.la/1222008)).
+این بدان معناست که، برای مثال، اگر یک service worker یک stylesheet یا اسکریپت worker را رهگیری کند، آنگاه {{domxref("Response.url")}} ارائه‌شده برای تفکیک هر بارگذاری زیرمنبع نسبی {{cssxref("@import")}} یا {{domxref("WorkerGlobalScope.importScripts()","importScripts()")}} استفاده خواهد شد ([باگ Firefox 1222008](https://bugzil.la/1222008)).
 
-For most types of network request this change has no impact because you can't observe
-the final URL. There are a few, though, where it does matter:
+برای بیشتر انواع درخواست‌های شبکه، این تغییر تأثیری ندارد زیرا نمی‌توانید URL نهایی را مشاهده کنید. با این حال، مواردی وجود دارد که در آنها این تغییر مهم است:
 
-- If a {{domxref("Window/fetch", "fetch()")}} is intercepted,
-  then you can observe the final URL on the result's {{domxref("Response.url")}}.
-- If a [worker](/en-US/docs/Web/API/Web_Workers_API) script is
-  intercepted, then the final URL is used to set
-  [`self.location`](/en-US/docs/Web/API/WorkerGlobalScope/location)
-  and used as the base URL for relative URLs in the worker script.
-- If a stylesheet is intercepted, then the final URL is used as the base URL for
-  resolving relative {{cssxref("@import")}} loads.
+- اگر یک {{domxref("Window/fetch", "fetch()")}} رهگیری شود، می‌توانید URL نهایی را در {{domxref("Response.url")}} نتیجه مشاهده کنید.
+- اگر یک اسکریپت [worker](/en-US/docs/Web/API/Web_Workers_API) رهگیری شود، URL نهایی برای تنظیم [`self.location`](/en-US/docs/Web/API/WorkerGlobalScope/location) و به عنوان URL پایه برای URLهای نسبی در اسکریپت worker استفاده می‌شود.
+- اگر یک stylesheet رهگیری شود، URL نهایی به عنوان URL پایه برای تفکیک بارگذاری‌های نسبی {{cssxref("@import")}} استفاده می‌شود.
 
-Note that navigation requests for {{domxref("Window","Windows")}} and
-{{domxref("HTMLIFrameElement","iframes")}} do NOT use the final URL. The way the HTML
-specification handles redirects for navigations ends up using the request URL for the
-resulting {{domxref("Window.location")}}. This means sites can still provide an
-"alternate" view of a web page when offline without changing the user-visible URL.
+توجه داشته باشید که درخواست‌های ناوبری برای {{domxref("Window","Windows")}} و {{domxref("HTMLIFrameElement","iframes")}} از URL نهایی استفاده نمی‌کنند. روشی که مشخصات HTML برای مدیریت تغییرمسیرها در ناوبری استفاده می‌کند، در نهایت از URL درخواست برای {{domxref("Window.location")}} حاصل استفاده می‌کند. این بدان معناست که سایت‌ها می‌توانند در حالت آفلاین یک نمای «جایگزین» از یک صفحه وب ارائه دهند بدون اینکه URL قابل مشاهده برای کاربر تغییر کند.
 
-## Examples
+## مثال‌ها
 
-This fetch event tries to return a response from the cache API, falling back to the
-network otherwise.
+این رویداد fetch سعی می‌کند پاسخی را از API cache برگرداند و در غیر این صورت به شبکه بازمی‌گردد.
 
 ```js
 addEventListener("fetch", (event) => {
@@ -120,21 +77,17 @@ addEventListener("fetch", (event) => {
 ```
 
 > [!NOTE]
-> {{domxref("CacheStorage.match()", "caches.match()")}} is a
-> convenience method. Equivalent functionality is to call
-> {{domxref("cache.match()")}} on each cache (in the order returned by
-> {{domxref("CacheStorage.keys()", "caches.keys()")}}) until a
-> {{domxref("Response")}} is returned.
+> {{domxref("CacheStorage.match()", "caches.match()")}} یک روش راحت است. عملکرد معادل آن فراخوانی {{domxref("cache.match()")}} بر روی هر cache (به ترتیب برگردانده‌شده توسط {{domxref("CacheStorage.keys()", "caches.keys()")}}) تا زمانی است که یک {{domxref("Response")}} برگردانده شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 - [Fetch API](/en-US/docs/Web/API/Fetch_API)
