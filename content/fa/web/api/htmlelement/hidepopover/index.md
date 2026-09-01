@@ -1,7 +1,5 @@
 ---
 title: "HTMLElement: hidePopover() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/hidePopover"
-status: "needs-translation"
 ---
 
 ---
@@ -14,34 +12,34 @@ browser-compat: api.HTMLElement.hidePopover
 
 {{APIRef("Popover API")}}
 
-The **`hidePopover()`** method of the {{domxref("HTMLElement")}} interface hides a [popover](/en-US/docs/Web/API/Popover_API) element (i.e., one that has a valid [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) attribute) by removing it from the {{glossary("top layer")}} and styling it with `display: none`.
+`HTMLElement` 接口中的 **`hidePopover()`** 方法会将一个 [popover](/en-US/docs/Web/API/Popover_API) 元素（即带有有效 [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) 属性的元素）从 {{glossary("top layer")}} 中移除，并对其应用 `display: none` 样式，从而将其隐藏。
 
-When `hidePopover()` is called on a showing element with the [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) attribute, a {{domxref("HTMLElement/beforetoggle_event", "beforetoggle")}} event will be fired, followed by the popover being hidden, and then the {{domxref("HTMLElement/toggle_event", "toggle")}} event firing.
+当对一个正在显示且具有 [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) 属性的元素调用 `hidePopover()` 时，会先触发 {{domxref("HTMLElement/beforetoggle_event", "beforetoggle")}} 事件，接着 popover 被隐藏，随后触发 {{domxref("HTMLElement/toggle_event", "toggle")}} 事件。
 
-## Syntax
+## 语法
 
 ```js-nolint
 hidePopover()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-### Exceptions
+### 异常
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if this method is called while another popover is already in the process of being shown or hidden (e.g., within a `beforetoggle` event listener).
+  - : 如果在另一个 popover 已经在显示或隐藏过程中时调用此方法，则抛出该异常。
 
-## Examples
+## 示例
 
-### Hiding a popover
+### 隐藏一个 popover
 
-The following example provides functionality to hide a popover by pressing a particular key on the keyboard.
+以下示例实现了通过按下键盘上的特定按键来隐藏 popover 的功能。
 
 #### HTML
 
@@ -64,18 +62,18 @@ document.addEventListener("keydown", (event) => {
 });
 ```
 
-#### Result
+#### 结果
 
 {{EmbedLiveSample("Hiding a popover","100%",100)}}
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [Popover API](/en-US/docs/Web/API/Popover_API)
