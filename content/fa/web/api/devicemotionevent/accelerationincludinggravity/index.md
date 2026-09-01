@@ -1,11 +1,5 @@
 ---
 title: "DeviceMotionEvent: accelerationIncludingGravity property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/accelerationIncludingGravity"
-status: "needs-translation"
----
-
----
-title: "DeviceMotionEvent: accelerationIncludingGravity property"
 short-title: accelerationIncludingGravity
 slug: Web/API/DeviceMotionEvent/accelerationIncludingGravity
 page-type: web-api-instance-property
@@ -14,44 +8,34 @@ browser-compat: api.DeviceMotionEvent.accelerationIncludingGravity
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`accelerationIncludingGravity`** read-only property of the {{domxref("DeviceMotionEvent")}} interface returns the
-amount of acceleration recorded by the device, in [meters per second squared (m/s²)](https://en.wikipedia.org/wiki/Meter_per_second_squared). Unlike {{DOMxRef("DeviceMotionEvent.acceleration")}}
-which compensates for the influence of gravity, its value is the sum of the acceleration
-of the device as induced by the user and an acceleration equal and opposite to that
-caused by gravity. In other words, it measures the
-[g-force](https://en.wikipedia.org/wiki/G-Force). In practice, this value represents
-the raw data measured by an [accelerometer](https://en.wikipedia.org/wiki/Accelerometer).
+ویژگی فقط‌خواندنی **`accelerationIncludingGravity`** در رابط {{domxref("DeviceMotionEvent")}} مقدار شتاب ثبت‌شده توسط دستگاه را بر حسب [متر بر مجذور ثانیه (m/s²)](https://en.wikipedia.org/wiki/Meter_per_second_squared) برمی‌گرداند. برخلاف {{DOMxRef("DeviceMotionEvent.acceleration")}} که اثر گرانش را جبران می‌کند، مقدار این ویژگی مجموع شتاب ناشی از حرکت کاربر و شتابی برابر و مخالف با شتاب ناشی از گرانش است. به عبارت دیگر، این ویژگی [نیروی g](https://en.wikipedia.org/wiki/G-Force) را اندازه‌گیری می‌کند. در عمل، این مقدار نشان‌دهنده داده‌های خام اندازه‌گیری‌شده توسط [شتاب‌سنج](https://en.wikipedia.org/wiki/Accelerometer) است.
 
-This value is not typically as useful as {{DOMxRef("DeviceMotionEvent.acceleration")}},
-but may be the only value available on devices that aren't able to remove gravity from
-the acceleration data, such as on devices that don't have a gyroscope.
+این مقدار معمولاً به اندازه {{DOMxRef("DeviceMotionEvent.acceleration")}} مفید نیست، اما ممکن است تنها مقداری باشد که در دستگاه‌هایی که قادر به حذف گرانش از داده‌های شتاب نیستند (مانند دستگاه‌های بدون ژیروسکوپ) در دسترس باشد.
 
 > [!NOTE]
-> `accelerationIncludingGravity`'s name can be misleading. This property represents acceleration including _the effects of_ gravity. For example, if a device is lying flat on a horizontal surface with the screen pointing up, gravity would be -9.8 along the Z axis, while `acceleration.z` would be 0 and `accelerationIncludingGravity.z` would be 9.8. Similarly, if a device is in free fall with its screen horizontal and pointing up, gravity would be -9.8 along the Z axis, while `acceleration.z` would be -9.8 and `accelerationIncludingGravity.z` would be 0.
+> نام `accelerationIncludingGravity` ممکن است گمراه‌کننده باشد. این ویژگی شتاب _شامل اثرات_ گرانش را نشان می‌دهد. مثلاً اگر دستگاهی به صورت افقی روی یک سطح صاف قرار گرفته باشد و صفحه نمایش آن رو به بالا باشد، گرانش در امتداد محور Z برابر ۹٫۸- خواهد بود، در حالی که `acceleration.z` برابر ۰ و `accelerationIncludingGravity.z` برابر ۹٫۸ خواهد بود. به طور مشابه، اگر دستگاهی در حال سقوط آزاد با صفحه نمایش افقی و رو به بالا باشد، گرانش در امتداد محور Z برابر ۹٫۸- خواهد بود، در حالی که `acceleration.z` برابر ۹٫۸- و `accelerationIncludingGravity.z` برابر ۰ خواهد بود.
 
-## Value
+## مقدار
 
-The `accelerationIncludingGravity` property is an object providing
-information about acceleration on three axis. Each axis is represented with its own
-property:
+ویژگی `accelerationIncludingGravity` یک شیء حاوی اطلاعات شتاب در سه محور است. هر محور با یک ویژگی مجزا نشان داده می‌شود:
 
 - `x`
-  - : Represents the acceleration upon the x axis which is the west to east axis
+  - : نشان‌دهنده شتاب در امتداد محور x (محور غرب به شرق)
 - `y`
-  - : Represents the acceleration upon the y axis which is the south to north axis
+  - : نشان‌دهنده شتاب در امتداد محور y (محور جنوب به شمال)
 - `z`
-  - : Represents the acceleration upon the z axis which is the down to up axis
+  - : نشان‌دهنده شتاب در امتداد محور z (محور پایین به بالا)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Device orientation events/Detecting device orientation", "Detecting device orientation", "", "nocode")}}
-- {{domxref("Device orientation events/Orientation and motion data explained", "Orientation and motion data explained", "", "nocode")}}
-- {{DOMxRef("Window/devicemotion_event", "devicemotion")}} event
+- {{domxref("Device orientation events/Detecting device orientation", "تشخیص جهت‌گیری دستگاه", "", "nocode")}}
+- {{domxref("Device orientation events/Orientation and motion data explained", "توضیح داده‌های جهت‌گیری و حرکت", "", "nocode")}}
+- رویداد {{DOMxRef("Window/devicemotion_event", "devicemotion")}}
