@@ -1,11 +1,5 @@
 ---
 title: "Document: fullscreen property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreen"
-status: "needs-translation"
----
-
----
-title: "Document: fullscreen property"
 short-title: fullscreen
 slug: Web/API/Document/fullscreen
 page-type: web-api-instance-property
@@ -16,20 +10,20 @@ browser-compat: api.Document.fullscreen
 
 {{APIRef("Fullscreen API")}}{{Deprecated_Header}}
 
-The obsolete {{domxref("Document")}} interface's **`fullscreen`** read-only property reports whether or not the document is currently displaying content in fullscreen mode.
+ویژگی فقط‌خواندنی **`fullscreen`** در رابط منسوخ {{domxref("Document")}} گزارش می‌دهد که آیا سند در حال حاضر محتوایی را در حالت تمام‌صفحه نمایش می‌دهد یا خیر.
 
-Although this property is read-only, it will not throw if it is modified (even in strict mode); the setter is a no-operation and it will be ignored.
+اگرچه این ویژگی فقط‌خواندنی است، اما اگر تغییر داده شود (حتی در حالت سخت‌گیرانه) خطایی پرتاب نمی‌کند؛ setter آن یک عملیات بی‌اثر است و نادیده گرفته می‌شود.
 
 > [!NOTE]
-> Since this property is deprecated, you can determine if fullscreen mode is active on the document by checking to see if {{DOMxRef("Document.fullscreenElement")}} is not `null`.
+> از آنجا که این ویژگی منسوخ شده است، می‌توانید با بررسی اینکه {{DOMxRef("Document.fullscreenElement")}} برابر با `null` نیست، تعیین کنید که حالت تمام‌صفحه روی سند فعال است یا خیر.
 
-## Value
+## مقدار
 
-A Boolean value which is `true` if the document is currently displaying an element in fullscreen mode; otherwise, the value is `false`.
+یک مقدار بولی است که اگر سند در حال حاضر عنصری را در حالت تمام‌صفحه نمایش دهد، `true` است؛ در غیر این صورت، مقدار `false` است.
 
-## Examples
+## مثال‌ها
 
-This simple function reports whether or not fullscreen mode is currently active, using the obsolete `fullscreen` property.
+این تابع ساده با استفاده از ویژگی منسوخ `fullscreen` گزارش می‌دهد که آیا حالت تمام‌صفحه در حال حاضر فعال است یا خیر.
 
 ```js
 function isDocumentInFullScreenMode() {
@@ -37,7 +31,7 @@ function isDocumentInFullScreenMode() {
 }
 ```
 
-This next example, on the other hand, uses the current `fullscreenElement` property to determine the same thing:
+از سوی دیگر، این مثال بعدی از ویژگی فعلی `fullscreenElement` برای تعیین همین موضوع استفاده می‌کند:
 
 ```js
 function isDocumentInFullScreenMode() {
@@ -45,17 +39,17 @@ function isDocumentInFullScreenMode() {
 }
 ```
 
-If `fullscreenElement` isn't `null`, this returns `true`, indicating that fullscreen mode is in effect.
+اگر `fullscreenElement` برابر با `null` نباشد، این تابع `true` برمی‌گرداند که نشان می‌دهد حالت تمام‌صفحه فعال است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Fullscreen API](/en-US/docs/Web/API/Fullscreen_API)
 - [Guide to the Fullscreen API](/en-US/docs/Web/API/Fullscreen_API/Guide)
