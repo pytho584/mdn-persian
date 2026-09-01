@@ -1,11 +1,5 @@
 ---
 title: "ExtendableMessageEvent: ExtendableMessageEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/ExtendableMessageEvent"
-status: "needs-translation"
----
-
----
-title: "ExtendableMessageEvent: ExtendableMessageEvent() constructor"
 short-title: ExtendableMessageEvent()
 slug: Web/API/ExtendableMessageEvent/ExtendableMessageEvent
 page-type: web-api-constructor
@@ -14,7 +8,7 @@ browser-compat: api.ExtendableMessageEvent.ExtendableMessageEvent
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`ExtendableMessageEvent()`** constructor creates a new {{domxref("ExtendableMessageEvent")}} object.
+سازندهٔ **`ExtendableMessageEvent()`** یک شیء جدید {{domxref("ExtendableMessageEvent")}} ایجاد می‌کند.
 
 ## Syntax
 
@@ -26,27 +20,23 @@ new ExtendableMessageEvent(type, options)
 ### Parameters
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `messageerror` or `message`.
+  - : یک رشته (string) حاوی نام رویداد. این مقدار به حروف بزرگ و کوچک حساس است و مرورگرها آن را به `messageerror` یا `message` تنظیم می‌کنند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_، می‌تواند دارای ویژگی‌های زیر باشد:
     - `data` {{optional_inline}}
-      - : The event's data; this can be any data type. It defaults to `null`.
+      - : دادهٔ رویداد؛ این می‌تواند هر نوع داده‌ای باشد. مقدار پیش‌فرض `null` است.
     - `origin` {{optional_inline}}
-      - : A string that defines the origin of the corresponding service worker's environment settings object.
-        It defaults to `""`.
+      - : یک رشته که خاستگاه (origin) شیء تنظیمات محیط service worker متناظر را تعریف می‌کند. مقدار پیش‌فرض `""` است.
     - `lastEventId` {{optional_inline}}
-      - : A string that defines the last event ID of the event source. It defaults to `""`.
+      - : یک رشته که آخرین شناسه رویداد (last event ID) منبع رویداد را تعریف می‌کند. مقدار پیش‌فرض `""` است.
     - `source` {{optional_inline}}
-      - : The {{domxref("Client")}}, {{domxref("ServiceWorker")}} or {{domxref("MessagePort")}} that sent the message.
-        It defaults to `null`.
+      - : {{domxref("Client")}}، {{domxref("ServiceWorker")}} یا {{domxref("MessagePort")}} که پیام را ارسال کرده است. مقدار پیش‌فرض `null` است.
     - `ports` {{optional_inline}}
-      - : An array containing the {{domxref("MessagePort")}} objects connected to the channel sending the message.
-        It defaults to an empty array.
+      - : آرایه‌ای حاوی اشیاء {{domxref("MessagePort")}} متصل به کانال ارسال‌کنندهٔ پیام. مقدار پیش‌فرض یک آرایهٔ خالی است.
 
 ### Return value
 
-A new {{domxref("ExtendableMessageEvent")}} object.
+یک شیء جدید {{domxref("ExtendableMessageEvent")}}.
 
 ## Examples
 
@@ -70,6 +60,6 @@ const myEME = new ExtendableMessageEvent("message", init);
 
 ## See also
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-- [Service workers basic code example](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
-- [Channel Messaging](/en-US/docs/Web/API/Channel_Messaging_API)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [مثال کد پایه Service Workers](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
+- [پیام‌رسانی کانال (Channel Messaging)](/en-US/docs/Web/API/Channel_Messaging_API)
