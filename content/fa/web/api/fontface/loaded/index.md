@@ -1,11 +1,5 @@
 ---
 title: "FontFace: loaded property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/loaded"
-status: "needs-translation"
----
-
----
-title: "FontFace: loaded property"
 short-title: loaded
 slug: Web/API/FontFace/loaded
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.FontFace.loaded
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`loaded`** read-only property of the {{domxref("FontFace")}} interface returns a {{jsxref('Promise')}} that resolves with the current `FontFace` object when the font specified in the object's constructor is done loading or rejects with a `SyntaxError`.
+خاصیت‌ی فقط‌خواندنی **`loaded`** در رابط {{domxref("FontFace")}} یک {{jsxref('Promise')}} برمی‌گرداند که وقتی فونت مشخص‌شده در سازندهٔ شیء بارگذاری شود، با همان شیء `FontFace` فعلی resolve می‌شود، یا در صورت بروز خطا، با یک `SyntaxError` reject می‌شود.
 
-## Value
+## مقدار
 
-A {{jsxref('Promise')}} that resolves with the current `FontFace` object.
+یک {{jsxref('Promise')}} که با شیء `FontFace` فعلی resolve می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
