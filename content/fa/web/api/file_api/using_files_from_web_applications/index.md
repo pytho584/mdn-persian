@@ -1,95 +1,89 @@
 ---
-title: "Using files from web applications"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/File_API/Using_files_from_web_applications"
-status: "needs-translation"
----
-
----
-title: Using files from web applications
+title: "استفاده از فایل‌ها در برنامه‌های تحت وب"
 slug: Web/API/File_API/Using_files_from_web_applications
 page-type: guide
 ---
 
 {{DefaultAPISidebar("File API")}}{{AvailableInWorkers}}
 
-Using the File API, web content can ask the user to select local files and then read the contents of those files. This selection can be done by either using an HTML `{{HTMLElement("input/file", '&lt;input type="file"&gt;')}}` element or by drag and drop.
+با استفاده از File API، محتوای وب می‌تواند از کاربر بخواهد فایل‌های محلی را انتخاب کند و سپس محتوای آن فایل‌ها را بخواند. این انتخاب می‌تواند با استفاده از یک عنصر HTML `{{HTMLElement("input/file", '&lt;input type="file"&gt;')}}` یا با کشیدن و رها کردن (drag and drop) انجام شود.
 
-## Accessing selected file(s)
+## دسترسی به فایل(های) انتخاب شده
 
-Consider this HTML:
+این HTML را در نظر بگیرید:
 
 ```html
 <input type="file" id="input" multiple />
 ```
 
-The File API makes it possible to access a {{DOMxRef("FileList")}} containing {{DOMxRef("File")}} objects representing the files selected by the user.
+File API امکان دسترسی به یک {{DOMxRef("FileList")}} شامل اشیاء {{DOMxRef("File")}} را فراهم می‌کند که نشان‌دهنده فایل‌های انتخاب شده توسط کاربر هستند.
 
-The `multiple` attribute on the `input` element allows the user to select multiple files.
+ویژگی `multiple` در عنصر `input` به کاربر اجازه می‌دهد چندین فایل را انتخاب کند.
 
-Accessing the first selected file using a classical DOM selector:
+دسترسی به اولین فایل انتخاب شده با استفاده از یک انتخاب‌گر DOM کلاسیک:
 
 ```js
 const selectedFile = document.getElementById("input").files[0];
 ```
 
-### Accessing selected file(s) on a change event
+### دسترسی به فایل(های) انتخاب شده در رویداد change
 
-It is also possible (but not mandatory) to access the {{DOMxRef("FileList")}} through the `change` event. You need to use {{DOMxRef("EventTarget.addEventListener()")}} to add the `change` event listener, like this:
+همچنین امکان دسترسی به {{DOMxRef("FileList")}} از طریق رویداد `change` وجود دارد (اما اجباری نیست). باید از {{DOMxRef("EventTarget.addEventListener()")}} برای افزودن شنونده رویداد `change` استفاده کنید، مانند این:
 
 ```js
 const inputElement = document.getElementById("input");
 inputElement.addEventListener("change", handleFiles);
 function handleFiles() {
-  const fileList = this.files; /* now you can work with the file list */
+  const fileList = this.files; /* اکنون می‌توانید با لیست فایل‌ها کار کنید */
 }
 ```
 
-## Getting information about selected file(s)
+## دریافت اطلاعات درباره فایل(های) انتخاب شده
 
-The {{DOMxRef("FileList")}} object provided by the DOM lists all of the files selected by the user, each specified as a {{DOMxRef("File")}} object. You can determine how many files the user selected by checking the value of the file list's `length` attribute:
+شی {{DOMxRef("FileList")}} که توسط DOM ارائه می‌شود، تمام فایل‌های انتخاب شده توسط کاربر را فهرست می‌کند که هر کدام به عنوان یک شی {{DOMxRef("File")}} مشخص شده‌اند. می‌توانید با بررسی مقدار ویژگی `length` لیست فایل، تعداد فایل‌های انتخاب شده توسط کاربر را تعیین کنید:
 
 ```js
 const numFiles = fileList.length;
 ```
 
-Individual {{DOMxRef("File")}} objects can be retrieved by accessing the list as an array.
+اشیاء {{DOMxRef("File")}} را می‌توان با دسترسی به لیست به عنوان یک آرایه بازیابی کرد.
 
-There are three attributes provided by the {{DOMxRef("File")}} object that contain useful information about the file.
+سه ویژگی توسط شی {{DOMxRef("File")}} ارائه می‌شود که حاوی اطلاعات مفیدی درباره فایل هستند.
 
 - `name`
-  - : The file's name as a read-only string. This is just the file name, and does not include any path information.
+  - : نام فایل به صورت یک رشته فقط خواندنی. این فقط نام فایل است و شامل اطلاعات مسیر نمی‌شود.
 - `size`
-  - : The size of the file in bytes as a read-only 64-bit integer.
+  - : اندازه فایل بر حسب بایت به صورت یک عدد صحیح ۶۴ بیتی فقط خواندنی.
 - `type`
-  - : The MIME type of the file as a read-only string or `""` if the type couldn't be determined.
+  - : نوع MIME فایل به صورت یک رشته فقط خواندنی یا `""` اگر نوع قابل تعیین نباشد.
 
-### Example: Showing file(s) size
+### مثال: نمایش اندازه فایل(ها)
 
-The following example shows a possible use of the `size` property:
+مثال زیر یک استفاده احتمالی از ویژگی `size` را نشان می‌دهد:
 
 ```html
 <form name="uploadForm">
   <div>
     <input id="uploadInput" type="file" multiple />
-    <label for="fileNum">Selected files:</label>
+    <label for="fileNum">فایل‌های انتخاب شده:</label>
     <output id="fileNum">0</output>;
-    <label for="fileSize">Total size:</label>
+    <label for="fileSize">حجم کل:</label>
     <output id="fileSize">0</output>
   </div>
-  <div><input type="submit" value="Send file" /></div>
+  <div><input type="submit" value="ارسال فایل" /></div>
 </form>
 ```
 
 ```js
 const uploadInput = document.getElementById("uploadInput");
 uploadInput.addEventListener("change", () => {
-  // Calculate total size
+  // محاسبه حجم کل
   let numberOfBytes = 0;
   for (const file of uploadInput.files) {
     numberOfBytes += file.size;
   }
 
-  // Approximate to the closest prefixed unit
+  // تقریب به نزدیک‌ترین واحد پیشوندی
   const units = ["B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"];
   const exponent = Math.min(
     Math.floor(Math.log(numberOfBytes) / Math.log(1024)),
@@ -106,15 +100,15 @@ uploadInput.addEventListener("change", () => {
 });
 ```
 
-## Using hidden file input elements using the click() method
+## استفاده از عناصر ورودی فایل مخفی با روش click()
 
-You can hide the admittedly ugly file {{HTMLElement("input")}} element and present your own interface for opening the file picker and displaying which file or files the user has selected. You can do this by styling the input element with `display:none` and calling the {{DOMxRef("HTMLElement.click","click()")}} method on the {{HTMLElement("input")}} element.
+می‌توانید عنصر زشت فایل {{HTMLElement("input")}} را مخفی کنید و رابط کاربری خود را برای باز کردن انتخاب‌گر فایل و نمایش فایل(های) انتخاب شده توسط کاربر ارائه دهید. این کار را می‌توانید با استایل دادن به عنصر ورودی با `display:none` و فراخوانی متد {{DOMxRef("HTMLElement.click","click()")}} روی عنصر {{HTMLElement("input")}} انجام دهید.
 
-Consider this HTML:
+این HTML را در نظر بگیرید:
 
 ```html
 <input type="file" id="fileElem" multiple accept="image/*" />
-<button id="fileSelect" type="button">Select some files</button>
+<button id="fileSelect" type="button">انتخاب چند فایل</button>
 ```
 
 ```css
@@ -123,7 +117,7 @@ Consider this HTML:
 }
 ```
 
-The code that handles the `click` event can look like this:
+کدی که رویداد `click` را مدیریت می‌کند می‌تواند به این شکل باشد:
 
 ```js
 const fileSelect = document.getElementById("fileSelect");
@@ -136,13 +130,13 @@ fileSelect.addEventListener("click", (e) => {
 });
 ```
 
-You can style the {{HTMLElement("button")}} however you wish.
+می‌توانید {{HTMLElement("button")}} را هر طور که می‌خواهید استایل دهید.
 
-## Using a label element to trigger a hidden file input element
+## استفاده از عنصر label برای فعال کردن عنصر ورودی فایل مخفی
 
-To allow opening the file picker without using JavaScript (the click() method), a {{HTMLElement("label")}} element can be used. Note that in this case the input element must not be hidden using `display: none` (nor `visibility: hidden`), otherwise the label would not be keyboard-accessible. Use the [visually-hidden technique](https://www.a11yproject.com/posts/how-to-hide-content/) instead.
+برای باز کردن انتخاب‌گر فایل بدون استفاده از جاوااسکریپت (متد click())، می‌توان از یک عنصر {{HTMLElement("label")}} استفاده کرد. توجه داشته باشید که در این حالت عنصر ورودی نباید با `display: none` (یا `visibility: hidden`) مخفی شود، در غیر این صورت برچسب برای صفحه‌کلید قابل دسترس نخواهد بود. در عوض از [تکنیک visually-hidden](https://www.a11yproject.com/posts/how-to-hide-content/) استفاده کنید.
 
-Consider this HTML:
+این HTML را در نظر بگیرید:
 
 ```html
 <input
@@ -151,10 +145,10 @@ Consider this HTML:
   multiple
   accept="image/*"
   class="visually-hidden" />
-<label for="fileElem">Select some files</label>
+<label for="fileElem">انتخاب چند فایل</label>
 ```
 
-and this CSS:
+و این CSS:
 
 ```css
 .visually-hidden {
@@ -172,13 +166,13 @@ input.visually-hidden:is(:focus, :focus-within) + label {
 }
 ```
 
-There is no need to add JavaScript code to call `fileElem.click()`. Also in this case you can style the label element as you wish. You need to provide a visual cue for the focus status of the hidden input field on its label, be it an outline as shown above, or background-color or box-shadow. (As of time of writing, Firefox doesn't show this visual cue for `<input type="file">` elements.)
+نیازی به اضافه کردن کد جاوااسکریپت برای فراخوانی `fileElem.click()` نیست. همچنین در این حالت می‌توانید عنصر label را هر طور که می‌خواهید استایل دهید. باید یک نشانه بصری برای وضعیت فوکوس فیلد ورودی مخفی روی برچسب آن ارائه دهید، خواه یک outline مانند بالا، یا background-color یا box-shadow. (در زمان نگارش، فایرفاکس این نشانه بصری را برای عناصر `<input type="file">` نشان نمی‌دهد.)
 
-## Selecting files using drag and drop
+## انتخاب فایل‌ها با استفاده از کشیدن و رها کردن
 
-You can also let the user drag and drop files into your web application.
+همچنین می‌توانید به کاربر اجازه دهید فایل‌ها را به برنامه وب شما بکشد و رها کند.
 
-The first step is to establish a drop zone. Exactly what part of your content will accept drops may vary depending on the design of your application, but making an element receive drop events is easy:
+اولین قدم ایجاد یک منطقه رها (drop zone) است. اینکه دقیقاً کدام بخش از محتوای شما رها شدن را بپذیرد ممکن است بسته به طراحی برنامه شما متفاوت باشد، اما آسان است که یک عنصر رویدادهای drop را دریافت کند:
 
 ```js
 let dropbox;
@@ -189,9 +183,9 @@ dropbox.addEventListener("dragover", dragover);
 dropbox.addEventListener("drop", drop);
 ```
 
-In this example, we're turning the element with the ID `dropbox` into our drop zone. This is done by adding listeners for the {{domxref("HTMLElement/dragenter_event", "dragenter")}}, {{domxref("HTMLElement/dragover_event", "dragover")}}, and {{domxref("HTMLElement/drop_event", "drop")}} events.
+در این مثال، عنصر با شناسه `dropbox` را به منطقه رها خود تبدیل می‌کنیم. این کار با اضافه کردن شنونده‌هایی برای رویدادهای {{domxref("HTMLElement/dragenter_event", "dragenter")}}، {{domxref("HTMLElement/dragover_event", "dragover")}} و {{domxref("HTMLElement/drop_event", "drop")}} انجام می‌شود.
 
-We don't actually need to do anything with the `dragenter` and `dragover` events in our case, so these functions are both simple. They just stop propagation of the event and prevent the default action from occurring:
+در واقع نیازی به انجام کاری با رویدادهای `dragenter` و `dragover` در مورد ما نیست، بنابراین این توابع هر دو ساده هستند. آنها فقط انتشار رویداد را متوقف می‌کنند و از انجام عمل پیش‌فرض جلوگیری می‌کنند:
 
 ```js
 function dragenter(e) {
@@ -205,7 +199,7 @@ function dragover(e) {
 }
 ```
 
-The real magic happens in the `drop()` function:
+جادوی واقعی در تابع `drop()` اتفاق می‌افتد:
 
 ```js
 function drop(e) {
@@ -219,11 +213,11 @@ function drop(e) {
 }
 ```
 
-Here, we retrieve the `dataTransfer` field from the event, pull the file list out of it, and then pass that to `handleFiles()`. From this point on, handling the files is the same whether the user used the `input` element or drag and drop.
+در اینجا، فیلد `dataTransfer` را از رویداد دریافت می‌کنیم، لیست فایل‌ها را از آن استخراج می‌کنیم و سپس آن را به `handleFiles()` می‌دهیم. از این نقطه به بعد، مدیریت فایل‌ها چه کاربر از عنصر `input` استفاده کرده باشد و چه از کشیدن و رها کردن، یکسان است.
 
-## Example: Showing thumbnails of user-selected images
+## مثال: نمایش تصاویر بندانگشتی از تصاویر انتخاب شده توسط کاربر
 
-Let's say you're developing the next great photo-sharing website and want to use HTML to display thumbnail previews of images before the user actually uploads them. You can establish your input element or drop zone as discussed previously and have them call a function such as the `handleFiles()` function below.
+فرض کنید در حال توسعه سایت بزرگ بعدی اشتراک‌گذاری عکس هستید و می‌خواهید از HTML برای نمایش پیش‌نمایش‌های بندانگشتی تصاویر قبل از اینکه کاربر واقعاً آنها را آپلود کند استفاده کنید. می‌توانید عنصر ورودی یا منطقه رها خود را همانطور که قبلاً بحث شد ایجاد کنید و از آنها بخواهید تابعی مانند `handleFiles()` زیر را فراخوانی کنند.
 
 ```js
 function handleFiles(files) {
@@ -235,7 +229,7 @@ function handleFiles(files) {
     const img = document.createElement("img");
     img.classList.add("obj");
     img.file = file;
-    preview.appendChild(img); // Assuming that "preview" is the div output where the content will be displayed.
+    preview.appendChild(img); // فرض می‌کنیم "preview" همان div خروجی است که محتوا در آن نمایش داده می‌شود.
 
     const reader = new FileReader();
     reader.onload = (e) => {
@@ -246,39 +240,39 @@ function handleFiles(files) {
 }
 ```
 
-Here our loop handling the user-selected files looks at each file's `type` attribute to see if its MIME type begins with `image/`). For each file that is an image, we create a new `img` element. CSS can be used to establish any pretty borders or shadows and to specify the size of the image, so that doesn't need to be done here.
+در اینجا حلقه ما که فایل‌های انتخاب شده توسط کاربر را مدیریت می‌کند، ویژگی `type` هر فایل را بررسی می‌کند تا ببیند آیا نوع MIME آن با `image/` شروع می‌شود یا خیر. برای هر فایلی که تصویر است، یک عنصر `img` جدید ایجاد می‌کنیم. از CSS می‌توان برای ایجاد هر گونه حاشیه یا سایه زیبا و مشخص کردن اندازه تصویر استفاده کرد، بنابراین نیازی به انجام این کار در اینجا نیست.
 
-Each image has the CSS class `obj` added to it, making it easy to find in the DOM tree. We also add a `file` attribute to each image specifying the {{DOMxRef("File")}} for the image; this will let us fetch the images for actual upload later. We use {{DOMxRef("Node.appendChild()")}} to add the new thumbnail to the preview area of our document.
+هر تصویر دارای کلاس CSS `obj` است که به آن اضافه می‌شود و پیدا کردن آن را در درخت DOM آسان می‌کند. همچنین یک ویژگی `file` به هر تصویر اضافه می‌کنیم که {{DOMxRef("File")}} مربوط به تصویر را مشخص می‌کند؛ این به ما امکان می‌دهد بعداً تصاویر را برای آپلود واقعی بازیابی کنیم. از {{DOMxRef("Node.appendChild()")}} برای اضافه کردن بندانگشتی جدید به منطقه پیش‌نمایش سند خود استفاده می‌کنیم.
 
-Next, we establish the {{DOMxRef("FileReader")}} to handle asynchronously loading the image and attaching it to the `img` element. After creating the new `FileReader` object, we set up its `onload` function and then call `readAsDataURL()` to start the read operation in the background. When the entire contents of the image file are loaded, they are converted into a `data:` URL which is passed to the `onload` callback. Our implementation of this routine sets the `img` element's `src` attribute to the loaded image which results in the image appearing in the thumbnail on the user's screen.
+سپس، {{DOMxRef("FileReader")}} را برای مدیریت بارگیری ناهمزمان تصویر و پیوست کردن آن به عنصر `img` ایجاد می‌کنیم. پس از ایجاد شی جدید `FileReader`، تابع `onload` آن را تنظیم می‌کنیم و سپس `readAsDataURL()` را برای شروع عملیات خواندن در پس‌زمینه فراخوانی می‌کنیم. هنگامی که کل محتوای فایل تصویر بارگیری شد، به یک URL از نوع `data:` تبدیل می‌شود که به回调 `onload` ارسال می‌شود. پیاده‌سازی ما از این روال، ویژگی `src` عنصر `img` را به تصویر بارگیری شده تنظیم می‌کند که باعث می‌شود تصویر در بندانگشتی روی صفحه کاربر ظاهر شود.
 
-## Using object URLs
+## استفاده از URLهای شیء
 
-The DOM {{DOMxref("URL.createObjectURL_static", "URL.createObjectURL()")}} and {{DOMxref("URL.revokeObjectURL_static", "URL.revokeObjectURL()")}} methods let you create simple URL strings that can be used to reference any data that can be referred to using a DOM {{DOMxRef("File")}} object, including local files on the user's computer.
+متدهای {{DOMxref("URL.createObjectURL_static", "URL.createObjectURL()")}} و {{DOMxref("URL.revokeObjectURL_static", "URL.revokeObjectURL()")}} در DOM به شما اجازه می‌دهند رشته‌های URL ساده‌ای ایجاد کنید که می‌توان از آنها برای ارجاع به هر داده‌ای که می‌توان با استفاده از یک شی {{DOMxRef("File")}} DOM به آن اشاره کرد، از جمله فایل‌های محلی روی رایانه کاربر، استفاده کرد.
 
-When you have a {{DOMxRef("File")}} object you'd like to reference by URL from HTML, you can create an object URL for it like this:
+هنگامی که یک شی {{DOMxRef("File")}} دارید که می‌خواهید با URL از HTML به آن ارجاع دهید، می‌توانید یک URL شیء برای آن به این شکل ایجاد کنید:
 
 ```js
 const objectURL = window.URL.createObjectURL(fileObj);
 ```
 
-The object URL is a string identifying the {{DOMxRef("File")}} object. Each time you call {{DOMxref("URL.createObjectURL_static", "URL.createObjectURL()")}}, a unique object URL is created even if you've created an object URL for that file already. Each of these must be released. While they are released automatically when the document is unloaded, if your page uses them dynamically you should release them explicitly by calling {{DOMxref("URL.revokeObjectURL_static", "URL.revokeObjectURL()")}}:
+URL شیء یک رشته است که شی {{DOMxRef("File")}} را شناسایی می‌کند. هر بار که {{DOMxref("URL.createObjectURL_static", "URL.createObjectURL()")}} را فراخوانی می‌کنید، یک URL شیء منحصر به فرد ایجاد می‌شود، حتی اگر قبلاً برای آن فایل یک URL شیء ایجاد کرده باشید. هر یک از اینها باید آزاد شوند. در حالی که آنها به طور خودکار هنگام تخلیه سند آزاد می‌شوند، اگر صفحه شما به صورت پویا از آنها استفاده می‌کند، باید به صراحت با فراخوانی {{DOMxref("URL.revokeObjectURL_static", "URL.revokeObjectURL()")}} آنها را آزاد کنید:
 
 ```js
 URL.revokeObjectURL(objectURL);
 ```
 
-## Example: Using object URLs to display images
+## مثال: استفاده از URLهای شیء برای نمایش تصاویر
 
-This example uses object URLs to display image thumbnails. In addition, it displays other file information including their names and sizes.
+این مثال از URLهای شیء برای نمایش تصاویر بندانگشتی استفاده می‌کند. علاوه بر این، اطلاعات دیگر فایل از جمله نام و اندازه آنها را نمایش می‌دهد.
 
-The HTML that presents the interface looks like this:
+HTML که رابط را ارائه می‌دهد به این شکل است:
 
 ```html
 <input type="file" id="fileElem" multiple accept="image/*" />
-<a href="#" id="fileSelect">Select some files</a>
+<a href="#" id="fileSelect">انتخاب چند فایل</a>
 <div id="fileList">
-  <p>No files selected!</p>
+  <p>هیچ فایلی انتخاب نشده است!</p>
 </div>
 ```
 
@@ -288,9 +282,9 @@ The HTML that presents the interface looks like this:
 }
 ```
 
-This establishes our file {{HTMLElement("input")}} element as well as a link that invokes the file picker (since we keep the file input hidden to prevent that less-than-attractive user interface from being displayed). This is explained in the section [Using hidden file input elements using the click() method](#using_hidden_file_input_elements_using_the_click_method), as is the method that invokes the file picker.
+این کار عنصر {{HTMLElement("input")}} فایل ما و همچنین یک پیوند که انتخاب‌گر فایل را فراخوانی می‌کند (زیرا ورودی فایل را مخفی نگه می‌داریم تا از نمایش آن رابط کاربری نازیبا جلوگیری کنیم) ایجاد می‌کند. این موضوع در بخش [استفاده از عناصر ورودی فایل مخفی با روش click()](#using_hidden_file_input_elements_using_the_click_method) توضیح داده شده است، و همچنین روشی که انتخاب‌گر فایل را فراخوانی می‌کند.
 
-The `handleFiles()` method follows:
+متد `handleFiles()` به شرح زیر است:
 
 ```js
 const fileSelect = document.getElementById("fileSelect"),
@@ -301,7 +295,7 @@ fileSelect.addEventListener("click", (e) => {
   if (fileElem) {
     fileElem.click();
   }
-  e.preventDefault(); // prevent navigation to "#"
+  e.preventDefault(); // جلوگیری از پیمایش به "#"
 });
 
 fileElem.addEventListener("change", handleFiles);
@@ -310,7 +304,7 @@ function handleFiles() {
   fileList.textContent = "";
   if (!this.files.length) {
     const p = document.createElement("p");
-    p.textContent = "No files selected!";
+    p.textContent = "هیچ فایلی انتخاب نشده است!";
     fileList.appendChild(p);
   } else {
     const list = document.createElement("ul");
@@ -331,37 +325,37 @@ function handleFiles() {
 }
 ```
 
-This starts by fetching the URL of the {{HTMLElement("div")}} with the ID `fileList`. This is the block into which we'll insert our file list, including thumbnails.
+این کار با دریافت URL {{HTMLElement("div")}} با شناسه `fileList` شروع می‌شود. این بلوکی است که لیست فایل‌های خود را از جمله بندانگشتی‌ها در آن وارد می‌کنیم.
 
-If the {{DOMxRef("FileList")}} object passed to `handleFiles()` is empty, we set the inner HTML of the block to display "No files selected!". Otherwise, we start building our file list, as follows:
+اگر شی {{DOMxRef("FileList")}} که به `handleFiles()` ارسال شده خالی باشد، HTML داخلی بلوک را طوری تنظیم می‌کنیم که "هیچ فایلی انتخاب نشده است!" را نمایش دهد. در غیر این صورت، شروع به ساختن لیست فایل خود می‌کنیم، به شرح زیر:
 
-1. A new unordered list ({{HTMLElement("ul")}}) element is created.
-2. The new list element is inserted into the {{HTMLElement("div")}} block by calling its {{DOMxRef("Node.appendChild()")}} method.
-3. For each {{DOMxRef("File")}} in the {{DOMxRef("FileList")}} represented by `files`:
-   1. Create a new list item ({{HTMLElement("li")}}) element and insert it into the list.
-   2. Create a new image ({{HTMLElement("img")}}) element.
-   3. Set the image's source to a new object URL representing the file, using {{DOMxref("URL.createObjectURL_static", "URL.createObjectURL()")}} to create the blob URL.
-   4. Set the image's height to 60 pixels.
-   5. Append the new list item to the list.
+1. یک عنصر لیست نامرتب جدید ({{HTMLElement("ul")}}) ایجاد می‌شود.
+2. عنصر لیست جدید با فراخوانی متد {{DOMxRef("Node.appendChild()")}} آن در بلوک {{HTMLElement("div")}} قرار می‌گیرد.
+3. برای هر {{DOMxRef("File")}} در {{DOMxRef("FileList")}} که توسط `files` نشان داده می‌شود:
+   1. یک عنصر آیتم لیست جدید ({{HTMLElement("li")}}) ایجاد کنید و آن را در لیست قرار دهید.
+   2. یک عنصر تصویر جدید ({{HTMLElement("img")}}) ایجاد کنید.
+   3. منبع تصویر را به یک URL شیء جدید که نشان‌دهنده فایل است، با استفاده از {{DOMxref("URL.createObjectURL_static", "URL.createObjectURL()")}} برای ایجاد URL blob تنظیم کنید.
+   4. ارتفاع تصویر را به ۶۰ پیکسل تنظیم کنید.
+   5. آیتم لیست جدید را به لیست اضافه کنید.
 
-Here is a live demo of the code above:
+در اینجا یک نمایش زنده از کد بالا آمده است:
 
 {{EmbedLiveSample('Example_Using_object_URLs_to_display_images', '100%', '300px')}}
 
-Note that we don't immediately revoke the object URL after the image has loaded, because doing so would make the image unusable for user interactions (such as right-clicking to save the image or opening it in a new tab). For long-lived applications, you should revoke object URLs when they're no longer needed (such as when the image is removed from the DOM) to free up memory by calling the {{DOMxref("URL.revokeObjectURL_static", "URL.revokeObjectURL()")}} method and passing in the object URL string.
+توجه داشته باشید که بلافاصله پس از بارگیری تصویر، URL شیء را لغو نمی‌کنیم، زیرا این کار باعث می‌شود تصویر برای تعاملات کاربر (مانند کلیک راست برای ذخیره تصویر یا باز کردن آن در یک تب جدید) غیرقابل استفاده شود. برای برنامه‌های طولانی مدت، باید URLهای شیء را زمانی که دیگر مورد نیاز نیستند لغو کنید (مانند زمانی که تصویر از DOM حذف می‌شود) تا با فراخوانی متد {{DOMxref("URL.revokeObjectURL_static", "URL.revokeObjectURL()")}} و ارسال رشته URL شیء، حافظه آزاد شود.
 
-## Example: Uploading a user-selected file
+## مثال: آپلود یک فایل انتخاب شده توسط کاربر
 
-This example shows how to let the user upload files (such as the images selected using the previous example) to a server.
+این مثال نشان می‌دهد که چگونه به کاربر اجازه دهیم فایل‌ها (مانند تصاویر انتخاب شده با استفاده از مثال قبلی) را به یک سرور آپلود کند.
 
 > [!NOTE]
-> It's usually preferable to make HTTP requests using the [Fetch API](/en-US/docs/Web/API/Fetch_API) instead of {{domxref("XMLHttpRequest")}}. However, in this case we want to show the user the upload progress, and this feature is still not supported by the Fetch API, so the example uses `XMLHttpRequest`.
+> معمولاً ترجیح داده می‌شود درخواست‌های HTTP با استفاده از [Fetch API](/en-US/docs/Web/API/Fetch_API) به جای {{domxref("XMLHttpRequest")}} انجام شود. با این حال، در این مورد می‌خواهیم پیشرفت آپلود را به کاربر نشان دهیم و این ویژگی هنوز توسط Fetch API پشتیبانی نمی‌شود، بنابراین مثال از `XMLHttpRequest` استفاده می‌کند.
 >
-> Work to track standardization of progress notifications using the Fetch API is at <https://github.com/whatwg/fetch/issues/607>.
+> کار برای ردیابی استانداردسازی اعلان‌های پیشرفت با استفاده از Fetch API در <https://github.com/whatwg/fetch/issues/607> انجام می‌شود.
 
-### Creating the upload tasks
+### ایجاد وظایف آپلود
 
-Continuing with the code that built the thumbnails in the previous example, recall that every thumbnail image is in the CSS class `obj` with the corresponding {{DOMxRef("File")}} attached in a `file` attribute. This allows us to select all of the images the user has chosen for uploading using {{DOMxRef("Document.querySelectorAll()")}}, like this:
+با ادامه کدی که بندانگشتی‌ها را در مثال قبلی ساخت، به یاد بیاورید که هر تصویر بندانگشتی در کلاس CSS `obj` با {{DOMxRef("File")}} مربوطه که در یک ویژگی `file` ضمیمه شده است، قرار دارد. این به ما اجازه می‌دهد تمام تصاویری را که کاربر برای آپلود انتخاب کرده است با استفاده از {{DOMxRef("Document.querySelectorAll()")}} انتخاب کنیم، مانند این:
 
 ```js
 function sendFiles() {
@@ -373,11 +367,11 @@ function sendFiles() {
 }
 ```
 
-`document.querySelectorAll` fetches a {{DOMxRef("NodeList")}} of all the elements in the document with the CSS class `obj`. In our case, these will be all of the image thumbnails. Once we have that list, it's trivial to go through it and create a new `FileUpload` instance for each. Each of these handles uploading the corresponding file.
+`document.querySelectorAll` یک {{DOMxRef("NodeList")}} از تمام عناصر در سند با کلاس CSS `obj` را دریافت می‌کند. در مورد ما، اینها همه تصاویر بندانگشتی خواهند بود. هنگامی که آن لیست را داریم، به راحتی می‌توان از آن عبور کرد و برای هر کدام یک نمونه جدید `FileUpload` ایجاد کرد. هر یک از اینها آپلود فایل مربوطه را مدیریت می‌کند.
 
-### Handling the upload process for a file
+### مدیریت فرآیند آپلود برای یک فایل
 
-The `FileUpload` function accepts two inputs: an image element and a file from which to read the image data.
+تابع `FileUpload` دو ورودی دریافت می‌کند: یک عنصر تصویر و یک فایل که از آن داده‌های تصویر خوانده شود.
 
 ```js
 function FileUpload(img, file) {
@@ -435,25 +429,25 @@ function createThrobber(img) {
 }
 ```
 
-The `FileUpload()` function shown above creates a throbber, which is used to display progress information, and then creates an {{DOMxRef("XMLHttpRequest")}} to handle uploading the data.
+تابع `FileUpload()` که در بالا نشان داده شده است یک throber (نشان‌دهنده پیشرفت) ایجاد می‌کند که برای نمایش اطلاعات پیشرفت استفاده می‌شود و سپس یک {{DOMxRef("XMLHttpRequest")}} برای مدیریت آپلود داده‌ها ایجاد می‌کند.
 
-Before actually transferring the data, several preparatory steps are taken:
+قبل از انتقال واقعی داده‌ها، چندین مرحله مقدماتی انجام می‌شود:
 
-1. The `XMLHttpRequest`'s upload `progress` listener is set to update the throbber with new percentage information so that as the upload progresses the throbber will be updated based on the latest information.
-2. The `XMLHttpRequest`'s upload `load` event handler is set to update the throbber progress information to 100% to ensure the progress indicator actually reaches 100% (in case of granularity quirks during the process). It then removes the throbber since it's no longer needed. This causes the throbber to disappear once the upload is complete.
-3. The request to upload the image file is opened by calling `XMLHttpRequest`'s `open()` method to start generating a POST request.
-4. The MIME type for the upload is set by calling the `XMLHttpRequest` function `overrideMimeType()`. In this case, we're using a generic MIME type; you may or may not need to set the MIME type at all depending on your use case.
-5. The `FileReader` object is used to convert the file to a binary string.
-6. Finally, when the content is loaded the `XMLHttpRequest` function `send()` is called to upload the file's content.
+1. شنونده `progress` آپلود `XMLHttpRequest` تنظیم می‌شود تا throber را با اطلاعات درصد جدید به‌روز کند، به طوری که با پیشرفت آپلود، throber بر اساس آخرین اطلاعات به‌روز شود.
+2. کنترل‌کننده رویداد `load` آپلود `XMLHttpRequest` تنظیم می‌شود تا اطلاعات پیشرفت throber را به ۱۰۰٪ به‌روز کند تا اطمینان حاصل شود که نشان‌دهنده پیشرفت واقعاً به ۱۰۰٪ می‌رسد (در صورت وجود مشکلات دانه‌بندی در طول فرآیند). سپس throber را حذف می‌کند زیرا دیگر نیازی نیست. این باعث می‌شود throber پس از اتمام آپلود ناپدید شود.
+3. درخواست برای آپلود فایل تصویر با فراخوانی متد `open()` `XMLHttpRequest` برای شروع تولید یک درخواست POST باز می‌شود.
+4. نوع MIME برای آپلود با فراخوانی تابع `overrideMimeType()` `XMLHttpRequest` تنظیم می‌شود. در این مورد، ما از یک نوع MIME عمومی استفاده می‌کنیم؛ بسته به مورد استفاده شما ممکن است اصلاً نیازی به تنظیم نوع MIME نداشته باشید.
+5. از شی `FileReader` برای تبدیل فایل به یک رشته باینری استفاده می‌شود.
+6. در نهایت، هنگامی که محتوا بارگیری شد، تابع `send()` `XMLHttpRequest` برای آپلود محتوای فایل فراخوانی می‌شود.
 
-### Asynchronously handling the file upload process
+### مدیریت ناهمزمان فرآیند آپلود فایل
 
-This example, which uses PHP on the server side and JavaScript on the client side, demonstrates asynchronous uploading of a file.
+این مثال که از PHP در سمت سرور و جاوااسکریپت در سمت کلاینت استفاده می‌کند، آپلود ناهمزمان یک فایل را نشان می‌دهد.
 
 ```php
 <?php
 if (isset($_FILES["myFile"])) {
-  // Example:
+  // مثال:
   move_uploaded_file($_FILES["myFile"]["tmp_name"], "uploads/" . $_FILES["myFile"]["name"]);
   exit;
 }
@@ -468,7 +462,7 @@ if (isset($_FILES["myFile"])) {
       <div
         id="dropzone"
         style="margin:30px; width:500px; height:300px; border:1px dotted grey;">
-        Drag & drop your file here
+        فایل خود را اینجا بکشید و رها کنید
       </div>
     </div>
     <script>
@@ -480,11 +474,11 @@ if (isset($_FILES["myFile"])) {
         xhr.open("POST", uri, true);
         xhr.onreadystatechange = () => {
           if (xhr.readyState === 4 && xhr.status === 200) {
-            alert(xhr.responseText); // handle response.
+            alert(xhr.responseText); // مدیریت پاسخ.
           }
         };
         fd.append("myFile", file);
-        // Initiate a multipart/form-data upload
+        // شروع یک آپلود multipart/form-data
         xhr.send(fd);
       }
 
@@ -507,30 +501,30 @@ if (isset($_FILES["myFile"])) {
 </html>
 ```
 
-## Example: Using object URLs to display PDF
+## مثال: استفاده از URLهای شیء برای نمایش PDF
 
-Object URLs can be used for other things than just images! They can be used to display embedded PDF files or any other resources that can be displayed by the browser.
+URLهای شیء را می‌توان برای چیزهای دیگری غیر از تصاویر نیز استفاده کرد! آنها را می‌توان برای نمایش فایل‌های PDF جاسازی شده یا هر منبع دیگری که توسط مرورگر قابل نمایش است استفاده کرد.
 
-In Firefox, to have the PDF appear embedded in the iframe (rather than proposed as a downloaded file), the preference `pdfjs.disabled` must be set to `false`.
+در فایرفاکس، برای اینکه PDF به صورت جاسازی شده در iframe ظاهر شود (به جای اینکه به عنوان یک فایل دانلودی پیشنهاد شود)، باید تنظیمات `pdfjs.disabled` روی `false` تنظیم شود.
 
 ```html
 <iframe id="viewer"></iframe>
 ```
 
-And here is the change of the `src` attribute:
+و در اینجا تغییر ویژگی `src` آمده است:
 
 ```js
 const objURL = URL.createObjectURL(blob);
 const iframe = document.getElementById("viewer");
 iframe.setAttribute("src", objURL);
 
-// Later:
+// بعداً:
 URL.revokeObjectURL(objURL);
 ```
 
-## Example: Using object URLs with other file types
+## مثال: استفاده از URLهای شیء با انواع دیگر فایل‌ها
 
-You can manipulate files of other formats the same way. Here is how to preview uploaded video:
+می‌توانید فایل‌های با فرمت‌های دیگر را به همان روش دستکاری کنید. در اینجا نحوه پیش‌نمایش ویدیوی آپلود شده آمده است:
 
 ```js
 const video = document.getElementById("video");
@@ -538,15 +532,15 @@ const objURL = URL.createObjectURL(blob);
 video.src = objURL;
 video.play();
 
-// Later:
+// بعداً:
 URL.revokeObjectURL(objURL);
 ```
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("File")}}
 - {{DOMxRef("FileList")}}
 - {{DOMxRef("FileReader")}}
 - {{DOMxRef("URL")}}
 - {{DOMxRef("XMLHttpRequest")}}
-- [Using XMLHttpRequest](/en-US/docs/Web/API/XMLHttpRequest_API/Using_XMLHttpRequest)
+- [استفاده از XMLHttpRequest](/en-US/docs/Web/API/XMLHttpRequest_API/Using_XMLHttpRequest)
