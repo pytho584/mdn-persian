@@ -1,11 +1,5 @@
 ---
 title: "GPUAdapterInfo: description property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapterInfo/description"
-status: "needs-translation"
----
-
----
-title: "GPUAdapterInfo: description property"
 short-title: description
 slug: Web/API/GPUAdapterInfo/description
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.GPUAdapterInfo.description
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`description`** read-only property of the
-{{domxref("GPUAdapterInfo")}} interface returns a human-readable string describing the adapter, or an empty string if it is not available.
+ویژگی فقط‌خواندنی **`description`** در رابط {{domxref("GPUAdapterInfo")}} یک رشته قابل‌خواندن برای انسان برمی‌گرداند که آداپتور را توصیف می‌کند، یا اگر در دسترس نباشد، یک رشته خالی.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const adapter = await navigator.gpu.requestAdapter();
@@ -33,14 +26,14 @@ const adapterInfo = adapter.info;
 console.log(adapterInfo.description);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
