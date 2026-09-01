@@ -1,7 +1,5 @@
 ---
 title: "HashChangeEvent: newURL property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HashChangeEvent/newURL"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,13 @@ browser-compat: api.HashChangeEvent.newURL
 
 {{APIRef("HTML DOM")}}
 
-The **`newURL`** read-only property of the
-{{domxref("HashChangeEvent")}} interface returns the new URL to which the window is
-navigating.
+ویژگی فقط‌خواندنی **`newURL`** در رابط {{domxref("HashChangeEvent")}}، نشانی وب جدیدی را برمی‌گرداند که پنجره به آن هدایت می‌شود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("hashchange", (event) => {
@@ -30,10 +26,10 @@ window.addEventListener("hashchange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
