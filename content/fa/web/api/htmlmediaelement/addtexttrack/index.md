@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: addTextTrack() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/addTextTrack"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: addTextTrack() method"
 short-title: addTextTrack()
 slug: Web/API/HTMLMediaElement/addTextTrack
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.HTMLMediaElement.addTextTrack
 
 {{APIRef("HTML DOM")}}
 
-The **`addTextTrack()`** method of the {{domxref("HTMLMediaElement")}} interface creates a new {{domxref("TextTrack")}} object and adds it to the media element. It fires an {{domxref("TextTrackList/addtrack_event", "addtrack")}} event on this media element's {{domxref("HTMLMediaElement/textTracks", "textTracks")}}. This method can't be used on a {{domxref("TextTrackList")}} interface, only an {{domxref("HTMLMediaElement")}}.
+متد **`addTextTrack()`** از رابط {{domxref("HTMLMediaElement")}} یک شیء {{domxref("TextTrack")}} جدید ایجاد کرده و آن را به عنصر رسانه اضافه می‌کند. این متد یک رویداد {{domxref("TextTrackList/addtrack_event", "addtrack")}} در {{domxref("HTMLMediaElement/textTracks", "textTracks")}} این عنصر رسانه ایجاد می‌کند. این متد فقط روی یک {{domxref("HTMLMediaElement")}} قابل استفاده است و نه روی رابط {{domxref("TextTrackList")}}.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 addTextTrack(kind)
@@ -24,26 +18,26 @@ addTextTrack(kind, label)
 addTextTrack(kind, label, language)
 ```
 
-### Parameters
+### پارامترها
 
 - `kind`
-  - : A string representing the {{domxref("TextTrack.kind")}} property (`subtitles`, `captions`, `descriptions`, `chapters`, or `metadata`).
+  - : یک رشته که نمایانگر خصوصیت {{domxref("TextTrack.kind")}} است (`subtitles`, `captions`, `descriptions`, `chapters` یا `metadata`).
 - `label`
-  - : A string representing the {{domxref("TextTrack.label")}} property.
+  - : یک رشته که نمایانگر خصوصیت {{domxref("TextTrack.label")}} است.
 - `language`
-  - : A string representing the {{domxref("TextTrack.language")}} property.
+  - : یک رشته که نمایانگر خصوصیت {{domxref("TextTrack.language")}} است.
 
-### Return value
+### مقدار بازگشتی
 
-The newly created {{domxref("TextTrack")}} object.
+شیء {{domxref("TextTrack")}} جدید ایجاد شده.
 
-### Exceptions
+### استثناها (Exceptions)
 
-None.
+هیچ‌کدام.
 
-## Examples
+## مثال‌ها
 
-This example adds a new {{domxref("TextTrack")}} with the `kind` set to `"subtitles"`, and adds a new {{domxref("VTTCue")}} to that.
+این مثال یک {{domxref("TextTrack")}} جدید با `kind` تنظیم شده روی `"subtitles"` اضافه می‌کند و یک {{domxref("VTTCue")}} جدید به آن می‌افزاید.
 
 ```js
 const video = document.querySelector("video");
@@ -53,18 +47,18 @@ console.log(newTrack.cues[0].text);
 // "Hello world!"
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("TextTrack")}}
 - [WebVTT API](/en-US/docs/Web/API/WebVTT_API)
-- [Web media technologies](/en-US/docs/Web/Media)
-- Learning: [Video and audio content](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio)
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [فناوری‌های رسانه وب](/en-US/docs/Web/Media)
+- آموزش: [محتوای ویدیویی و صوتی](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
