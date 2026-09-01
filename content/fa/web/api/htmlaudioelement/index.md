@@ -1,10 +1,4 @@
 ---
-title: "HTMLAudioElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement"
-status: "needs-translation"
----
-
----
 title: HTMLAudioElement
 slug: Web/API/HTMLAudioElement
 page-type: web-api-interface
@@ -13,45 +7,45 @@ browser-compat: api.HTMLAudioElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLAudioElement`** interface provides access to the properties of {{HTMLElement("audio")}} elements, as well as methods to manipulate them.
+رابط **`HTMLAudioElement`** دسترسی به خصوصیات عناصر {{HTMLElement("audio")}} و همچنین روش‌هایی برای دستکاری آن‌ها فراهم می‌کند.
 
-This element is based on, and inherits properties and methods from, the {{domxref("HTMLMediaElement")}} interface.
+این عنصر بر پایه رابط {{domxref("HTMLMediaElement")}} است و خصوصیات و روش‌ها را از آن به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("HTMLAudioElement.Audio", "Audio()")}}
-  - : Creates and returns a new `HTMLAudioElement` object, optionally starting the process of loading an audio file into it if the file URL is given.
+  - : یک شیء `HTMLAudioElement` جدید ایجاد و بازمی‌گرداند. در صورت ارائه URL فایل، فرایند بارگذاری فایل صوتی را نیز آغاز می‌کند.
 
-## Instance properties
+## خصوصیات نمونه (Instance properties)
 
-_No specific properties; inherits properties from its parent, {{domxref("HTMLMediaElement")}}, and from {{domxref("HTMLElement")}}._
+_هیچ خصوصیت خاصی ندارد؛ خصوصیات را از والد خود {{domxref("HTMLMediaElement")}} و از {{domxref("HTMLElement")}} به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-_Inherits methods from its parent, {{domxref("HTMLMediaElement")}}, and from {{domxref("HTMLElement")}}. It offers no methods of its own._
+_روش‌ها را از والد خود {{domxref("HTMLMediaElement")}} و از {{domxref("HTMLElement")}} به ارث می‌برد. هیچ روش خاص خود را ارائه نمی‌دهد._
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-You can create a `HTMLAudioElement` entirely with JavaScript using the {{domxref("HTMLAudioElement.Audio", "Audio()")}} constructor:
+می‌توانید یک `HTMLAudioElement` را کاملاً با جاوااسکریپت با استفاده از سازنده {{domxref("HTMLAudioElement.Audio", "Audio()")}} ایجاد کنید:
 
 ```js
 const audioElement = new Audio("car_horn.wav");
 ```
 
-then you can invoke the `play()` method on the element
+سپس می‌توانید متد `play()` را روی عنصر فراخوانی کنید:
 
 ```js
 audioElement.play();
 ```
 
 > [!NOTE]
-> A common gotcha is trying to play an audio element immediately on page load. Modern browser's default autoplay policy will block that from happening. Refer to [Firefox](https://hacks.mozilla.org/2019/02/firefox-66-to-block-automatically-playing-audible-video-and-audio/) and [chrome](https://developer.chrome.com/blog/autoplay/) for best practices and workarounds.
+> یک مشکل رایج، تلاش برای پخش یک عنصر صوتی بلافاصله پس از بارگذاری صفحه است. سیاست پیش‌فرض پخش خودکار مرورگرهای مدرن از این کار جلوگیری می‌کند. برای بهترین روش‌ها و راه‌حل‌های جایگزین به [Firefox](https://hacks.mozilla.org/2019/02/firefox-66-to-block-automatically-playing-audible-video-and-audio/) و [Chrome](https://developer.chrome.com/blog/autoplay/) مراجعه کنید.
 
-Some of the more commonly used properties of the audio element include {{domxref("HTMLMediaElement.src", "src")}}, {{domxref("HTMLMediaElement.currentTime", "currentTime")}}, {{domxref("HTMLMediaElement.duration", "duration")}}, {{domxref("HTMLMediaElement.paused", "paused")}}, {{domxref("HTMLMediaElement.muted", "muted")}}, and {{domxref("HTMLMediaElement.volume", "volume")}}. This snippet copies the audio file's duration to a variable:
+برخی از پرکاربردترین خصوصیات عنصر صوتی عبارتند از {{domxref("HTMLMediaElement.src", "src")}}، {{domxref("HTMLMediaElement.currentTime", "currentTime")}}، {{domxref("HTMLMediaElement.duration", "duration")}}، {{domxref("HTMLMediaElement.paused", "paused")}}، {{domxref("HTMLMediaElement.muted", "muted")}} و {{domxref("HTMLMediaElement.volume", "volume")}}. این قطعه کد مدت زمان فایل صوتی را در یک متغیر کپی می‌کند:
 
 ```js
 const audioElement = new Audio("car_horn.wav");
@@ -61,20 +55,20 @@ audioElement.addEventListener("loadeddata", () => {
 });
 ```
 
-## Events
+## رویدادها
 
-_Inherits methods from its parent, {{domxref("HTMLMediaElement")}}, and from its ancestor {{domxref("HTMLElement")}}._ Listen to events using [`addEventListener()`](/en-US/docs/Web/API/EventTarget/addEventListener) or by assigning an event listener to the `oneventname` property of this interface.
+_رویدادها را با استفاده از [`addEventListener()`](/en-US/docs/Web/API/EventTarget/addEventListener) یا با انتساب یک شنونده رویداد به ویژگی `oneventname` این رابط گوش دهید._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Web media technologies](/en-US/docs/Web/Media)
-- [Audio and Video Delivery](/en-US/docs/Web/Media/Guides/Audio_and_video_delivery)
-- HTML element implementing this interface: {{HTMLElement("audio")}}.
+- [فناوری‌های رسانه وب](/en-US/docs/Web/Media)
+- [تحویل صدا و ویدئو](/en-US/docs/Web/Media/Guides/Audio_and_video_delivery)
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("audio")}}.
