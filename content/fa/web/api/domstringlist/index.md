@@ -1,11 +1,5 @@
 ---
 title: "DOMStringList"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMStringList"
-status: "needs-translation"
----
-
----
-title: DOMStringList
 slug: Web/API/DOMStringList
 page-type: web-api-interface
 browser-compat: api.DOMStringList
@@ -13,29 +7,29 @@ browser-compat: api.DOMStringList
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`DOMStringList`** interface is a legacy type returned by some APIs and represents a non-modifiable list of strings (`DOMString`).
+رابط **`DOMStringList`** یک نوع قدیمی (legacy) است که توسط برخی APIها بازگردانده می‌شود و یک لیست غیرقابل‌تغییر از رشته‌ها (`DOMString`) را نشان می‌دهد.
 
-This interface was an [attempt to create an unmodifiable list](https://stackoverflow.com/questions/74630989/why-use-domstringlist-rather-than-an-array/74641156#74641156) and only continues to be supported to not break code that's already using it. Modern APIs represent list structures using types based on JavaScript [arrays](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), thus making many array methods available, and at the same time imposing additional semantics on their usage (such as making their items read-only).
+این رابط تلاشی [برای ایجاد یک لیست غیرقابل‌تغییر](https://stackoverflow.com/questions/74630989/why-use-domstringlist-rather-than-an-array/74641156#74641156) بود و تنها برای اینکه کدهای موجود را نشکند همچنان پشتیبانی می‌شود. APIهای مدرن ساختارهای لیست را با استفاده از انواع مبتنی بر [آرایه‌های](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) جاوااسکریپت نمایش می‌دهند، بنابراین بسیاری از متدهای آرایه در دسترس هستند و در عین حال معناشناسی اضافی بر استفاده از آنها تحمیل می‌کنند (مانند readonly کردن آیتم‌ها).
 
-These historical reasons do not mean that you as a developer should avoid `DOMStringList`. You don't create `DOMStringList` objects yourself, but you get them from APIs such as `Location.ancestorOrigins`, and these APIs are not deprecated. However, be careful of the semantic differences from a real array.
+این دلایل تاریخی به این معنی نیست که شما به عنوان توسعه‌دهنده باید از `DOMStringList` اجتناب کنید. شما خودتان اشیاء `DOMStringList` را نمی‌سازید، بلکه آنها را از APIهایی مانند `Location.ancestorOrigins` دریافت می‌کنید و این APIها منسوخ نشده‌اند. با این حال، مراقب تفاوت‌های معنایی با یک آرایه واقعی باشید.
 
-This interface is used in [IndexedDB](/en-US/docs/Web/API/IndexedDB_API) and in the {{domxref("Location")}} API:
+این رابط در [IndexedDB](/en-US/docs/Web/API/IndexedDB_API) و در API {{domxref("Location")}} استفاده می‌شود:
 
 - {{domxref("IDBDatabase.objectStoreNames")}}
 - {{domxref("IDBObjectStore.indexNames")}}
 - {{domxref("Location.ancestorOrigins")}}
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
 - {{domxref("DOMStringList.length")}} {{ReadOnlyInline}}
-  - : Returns the size of the list.
+  - : طول لیست را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
 - {{domxref("DOMStringList.item()")}}
-  - : Returns a string from the list with the given index.
+  - : یک رشته از لیست با اندیس داده شده را برمی‌گرداند.
 - {{domxref("DOMStringList.contains()")}}
-  - : Returns a boolean indicating whether the given string is in the list.
+  - : یک مقدار بولی را برمی‌گرداند که نشان می‌دهد آیا رشته داده شده در لیست وجود دارد یا خیر.
 
 ## Specifications
 
