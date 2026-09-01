@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrix: invertSelf() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/invertSelf"
-status: "needs-translation"
----
-
----
-title: "DOMMatrix: invertSelf() method"
 short-title: invertSelf()
 slug: Web/API/DOMMatrix/invertSelf
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.DOMMatrix.invertSelf
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`invertSelf()`** method of the {{domxref("DOMMatrix")}} interface inverts the original matrix. If the matrix cannot be inverted, the new matrix's components are all set to `NaN` and its {{domxref("DOMMatrixReadOnly.is2D", "is2D")}} property is set to `false`.
+متد **`invertSelf()`** از رابط {{domxref("DOMMatrix")}} ماتریس اصلی را معکوس می‌کند. اگر ماتریس قابل معکوس‌شدن نباشد، تمام مؤلفه‌های ماتریس جدید به `NaN` تنظیم شده و ویژگی {{domxref("DOMMatrixReadOnly.is2D", "is2D")}} آن به `false` تغییر می‌کند.
 
-To invert a matrix without mutating it, see {{domxref("DOMMatrixReadOnly.inverse()")}}
+برای معکوس‌سازی یک ماتریس بدون تغییر آن، به {{domxref("DOMMatrixReadOnly.inverse()")}} مراجعه کنید.
 
 ## Syntax
 
@@ -24,37 +18,37 @@ To invert a matrix without mutating it, see {{domxref("DOMMatrixReadOnly.inverse
 invertSelf()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("DOMMatrix")}}.
+یک {{domxref("DOMMatrix")}}.
 
-## Examples
+## مثال‌ها
 
-In this example, we create a matrix with a rotation of 30deg. Then invert it, resulting in a rotation of -30deg.
+در این مثال، یک ماتریس با چرخش ۳۰ درجه ایجاد می‌کنیم. سپس آن را معکوس می‌کنیم که نتیجه‌ی آن یک چرخش ۳۰- درجه است.
 
 ```js
 const matrix = new DOMMatrix().rotate(30);
 console.log(matrix.toString());
-// output: matrix(0.866, 0.5, -0.5, 0.866, 0, 0)
+// خروجی: matrix(0.866, 0.5, -0.5, 0.866, 0, 0)
 matrix.invertSelf();
 console.log(matrix.toString());
-// output: matrix(0.866, -0.5, 0.5, 0.866, 0, 0)
+// خروجی: matrix(0.866, -0.5, 0.5, 0.866, 0, 0)
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrixReadOnly.inverse()")}}
-- CSS {{CSSxRef("transform-function/matrix", "matrix()")}} function
-- CSS {{CSSxRef("transform-function/matrix3d", "matrix3d()")}} function
+- تابع CSS {{CSSxRef("transform-function/matrix", "matrix()")}}
+- تابع CSS {{CSSxRef("transform-function/matrix3d", "matrix3d()")}}
