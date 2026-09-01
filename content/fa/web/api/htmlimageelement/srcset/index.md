@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: srcset property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: srcset property"
 short-title: srcset
 slug: Web/API/HTMLImageElement/srcset
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLImageElement.srcset
 
 {{APIRef("HTML DOM")}}
 
-The **`srcset`** property of the {{domxref("HTMLImageElement")}} interface identifies one or more _image candidate strings_, separated using commas (`,`), each specifying image resources to use under given circumstances. Each image candidate string contains an image URL and an optional width or pixel density descriptor that indicates the conditions under which that candidate should be used instead of the image specified by the {{domxref("HTMLImageElement.src", "src")}} property. It reflects the `<img>` element's [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) content attribute.
+**`srcset`** 属性属于 {{domxref("HTMLImageElement")}} 接口，它标识一个或多个 *图像候选字符串*，这些字符串以逗号（`,`）分隔，每个字符串指定在特定情况下要使用的图像资源。每个图像候选字符串包含一个图像 URL 以及一个可选的宽度或像素密度描述符，该描述符指示在何种情况下应使用该候选图像，而不是使用由 {{domxref("HTMLImageElement.src", "src")}} 属性指定的图像。它反映了 `<img>` 元素的 [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) 内容属性。
 
-The `srcset` property, along with the {{domxref("HTMLImageElement.sizes", "sizes")}} property, are a crucial component in designing responsive websites, as they can be used together to make pages that use appropriate images for the rendering situation.
+`srcset` 属性与 {{domxref("HTMLImageElement.sizes", "sizes")}} 属性一同构成了响应式网站设计的关键组成部分，因为它们可以结合使用，使页面根据渲染环境选择合适的图像。
 
-## Value
+## 值
 
-A string. For more information about the syntax of the `srcset` attribute, see the HTML [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) reference.
+一个字符串。关于 `srcset` 属性的语法，请参阅 HTML [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) 参考。
 
-## Examples
+## 示例
 
-### Setting the srcset attribute
+### 设置 srcset 属性
 
 ```js
 const img = new Image();
@@ -33,19 +27,19 @@ img.srcset =
 img.alt = "An example picture";
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [HTML images](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_images)
-- [Responsive images](/en-US/docs/Web/HTML/Guides/Responsive_images)
-- [Image file type and format guide](/en-US/docs/Web/Media/Guides/Formats/Image_types)
+- [HTML 图像](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_images)
+- [响应式图像](/en-US/docs/Web/HTML/Guides/Responsive_images)
+- [图像文件类型与格式指南](/en-US/docs/Web/Media/Guides/Formats/Image_types)
 - {{domxref("HTMLImageElement.currentSrc")}}
 - {{domxref("HTMLImageElement.sizes")}}
 - {{domxref("HTMLImageElement.src")}}
