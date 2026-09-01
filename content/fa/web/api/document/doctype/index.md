@@ -1,11 +1,5 @@
 ---
 title: "Document: doctype property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/doctype"
-status: "needs-translation"
----
-
----
-title: "Document: doctype property"
 short-title: doctype
 slug: Web/API/Document/doctype
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.Document.doctype
 
 {{ApiRef("DOM")}}
 
-The **`doctype`** read-only property of the {{domxref("Document")}} interface is a {{domxref("DocumentType")}} object representing the {{glossary("Doctype", "Document Type Declaration (DTD)")}} associated with the current document.
+ویژگی فقط‌خواندنی **`doctype`** در رابط {{domxref("Document")}} یک شیء {{domxref("DocumentType")}} است که {{glossary("Doctype", "Document Type Declaration (DTD)")}} مرتبط با سند کنونی را نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("DocumentType")}} object.
+یک شیء {{domxref("DocumentType")}}.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const doctypeObj = document.doctype;
@@ -31,17 +25,16 @@ console.log(`doctypeObj.publicId: ${doctypeObj.publicId}`);
 console.log(`doctypeObj.systemId: ${doctypeObj.systemId}`);
 ```
 
-## Notes
+## یادداشت‌ها
 
-The property returns `null` if there is no DTD associated with the current
-document.
+اگر هیچ DTD مرتبط با سند کنونی وجود نداشته باشد، این ویژگی `null` برمی‌گرداند.
 
-DOM level 2 doesn't support editing the document type declaration.
+DOM Level 2 از ویرایش اعلامیه نوع سند (Document Type Declaration) پشتیبانی نمی‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
