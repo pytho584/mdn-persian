@@ -1,11 +1,5 @@
 ---
 title: "GPUUncapturedErrorEvent: error property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUUncapturedErrorEvent/error"
-status: "needs-translation"
----
-
----
-title: "GPUUncapturedErrorEvent: error property"
 short-title: error
 slug: Web/API/GPUUncapturedErrorEvent/error
 page-type: web-api-instance-property
@@ -14,26 +8,25 @@ browser-compat: api.GPUUncapturedErrorEvent.error
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`error`** read-only property of the
-{{domxref("GPUUncapturedErrorEvent")}} interface is a {{domxref("GPUError")}} object instance providing access to the details of the error.
+ویژگی فقط‌خواندنی **`error`** در رابط {{domxref("GPUUncapturedErrorEvent")}} یک نمونه از شیء {{domacro("GPUError")}} است که دسترسی به جزئیات خطا را فراهم می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref("GPUError")}} object instance.
+یک نمونه از شیء {{domxref("GPUError")}}.
 
-## Examples
+## مثال‌ها
 
-See the main [`GPUUncapturedErrorEvent`](/en-US/docs/Web/API/GPUUncapturedErrorEvent#examples) page for an example.
+برای مشاهده مثال، به صفحه اصلی [`GPUUncapturedErrorEvent`](/en-US/docs/Web/API/GPUUncapturedErrorEvent#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
-- [WebGPU Error Handling best practices](https://toji.dev/webgpu-best-practices/error-handling)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [بهترین روش‌های مدیریت خطا در WebGPU](https://toji.dev/webgpu-best-practices/error-handling)
