@@ -1,11 +1,5 @@
 ---
 title: "CSSPositionTryRule: style property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionTryRule/style"
-status: "needs-translation"
----
-
----
-title: "CSSPositionTryRule: style property"
 short-title: style
 slug: Web/API/CSSPositionTryRule/style
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.CSSPositionTryRule.style
 
 {{ APIRef("CSSOM") }}
 
-The read-only **`style`** property of the {{domxref("CSSPositionTryRule")}} interface contains a {{domxref("CSSPositionTryDescriptors")}} object representing the descriptors available in the {{cssxref("@position-try")}} rule's body.
+ویژگی فقطخواندنی **`style`** در واسط {{domxref("CSSPositionTryRule")}} شامل یک شیء {{domxref("CSSPositionTryDescriptors")}} است که توصیفگرهای موجود در بدنهٔ قاعدهٔ {{cssxref("@position-try")}} را نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("CSSPositionTryDescriptors")}} object.
+یک شیء {{domxref("CSSPositionTryDescriptors")}}.
 
-Although the `style` property itself is read-only in the sense that you can't replace the `CSSPositionTryDescriptors` object, you can still assign to the `style` property directly, which is equivalent to assigning to its {{domxref("CSSStyleDeclaration/cssText", "cssText")}} property. You can also modify the `CSSPositionTryDescriptors` object using the {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} and {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} methods.
+اگرچه خود ویژگی `style` به این معنا فقط‌خواندنی است که نمی‌توانید شیء `CSSPositionTryDescriptors` را جایگزین کنید، باز هم می‌توانید مستقیماً به ویژگی `style` مقدار بدهید؛ این کار معادل مقداردهی به ویژگی {{domxref("CSSStyleDeclaration/cssText", "cssText")}} آن است. همچنین می‌توانید شیء `CSSPositionTryDescriptors` را با استفاده از متدهای {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} و {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
-The CSS includes a `@position-try` at-rule with a name of `--custom-right` and three descriptors.
+CSS شامل یک قاعدهٔ at-rule از نوع `@position-try` با نام `--custom-right` و سه توصیفگر است.
 
 ```css
 @position-try --custom-bottom {
@@ -42,19 +36,19 @@ console.log(tryOption.style["min-width"]); // "100px"
 console.log(tryOption.style.positionArea); // ""; no position-area specified
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("CSSPositionTryDescriptors")}}
 - {{cssxref("@position-try")}}
 - {{cssxref("position-try-fallbacks")}}
-- [CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning) module
-- [Using CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using)
-- [Handling overflow: try options and conditional hiding](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Try_options_hiding)
+- [موقعیت‌یابی لنگر CSS](/en-US/docs/Web/CSS/Guides/Anchor_positioning) ماژول
+- [استفاده از موقعیت‌یابی لنگر CSS](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using)
+- [مدیریت سرریز: گزینه‌های try و پنهان‌سازی شرطی](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Try_options_hiding)
