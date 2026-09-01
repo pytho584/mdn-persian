@@ -1,7 +1,5 @@
 ---
 title: "HIDDevice: opened property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/opened"
-status: "needs-translation"
 ---
 
 ---
@@ -16,15 +14,15 @@ browser-compat: api.HIDDevice.opened
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`opened`** read-only property of the {{domxref("HIDDevice")}} interface returns true if the connection to the {{domxref("HIDDevice")}} is open and ready to transfer data.
+خصوصیت فقطخواندنی **`opened`** در رابط {{domxref("HIDDevice")}} در صورتی که اتصال به {{domxref("HIDDevice")}} باز و برای انتقال داده آماده باشد، مقدار `true` را بازمیگرداند.
 
-## Value
+## مقدار
 
-A boolean value, true if the connection is open.
+یک مقدار بولین (Boolean)؛ اگر اتصال باز باشد، این مقدار `true` است.
 
-## Examples
+## مثالها
 
-The following example retrieves devices with {{domxref("HID.getDevices()")}} and logs the value of `opened` to the console.
+مثال زیر دستگاهها را با استفاده از {{domxref("HID.getDevices()")}} دریافت میکند و مقدار `opened` را در کنسول ثبت میکند.
 
 ```js
 let devices = await navigator.hid.getDevices();
@@ -33,10 +31,10 @@ devices.forEach((device) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
