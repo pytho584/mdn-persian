@@ -1,11 +1,5 @@
 ---
 title: "CustomStateSet: values() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomStateSet/values"
-status: "needs-translation"
----
-
----
-title: "CustomStateSet: values() method"
 short-title: values()
 slug: Web/API/CustomStateSet/values
 page-type: web-api-instance-method
@@ -14,26 +8,26 @@ browser-compat: api.CustomStateSet.values
 
 {{APIRef("Web Components")}}
 
-The **`values()`** method of the {{domxref("CustomStateSet")}} interface returns a new iterator object that yields the values for each element in the `CustomStateSet` object in insertion order.
+متد **`values()`** از رابط {{domxref("CustomStateSet")}} یک شیء پیمایشگر (iterator) جدید برمی‌گرداند که مقادیر هر عنصر را در شیء `CustomStateSet` به ترتیب درج فراهم می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 values()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new iterator object containing the values for each element in the given `CustomStateSet`, in insertion order.
+یک شیء پیمایشگر (iterator) جدید شامل مقادیر هر عنصر در `CustomStateSet` داده‌شده، به ترتیب درج.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
