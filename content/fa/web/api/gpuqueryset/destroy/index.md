@@ -1,11 +1,5 @@
 ---
 title: "GPUQuerySet: destroy() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySet/destroy"
-status: "needs-translation"
----
-
----
-title: "GPUQuerySet: destroy() method"
 short-title: destroy()
 slug: Web/API/GPUQuerySet/destroy
 page-type: web-api-instance-method
@@ -14,24 +8,23 @@ browser-compat: api.GPUQuerySet.destroy
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`destroy()`** method of the
-{{domxref("GPUQuerySet")}} interface destroys the `GPUQuerySet`.
+متد **`destroy()`** از رابط {{domxref("GPUQuerySet")}}، شیء `GPUQuerySet` را از بین می‌برد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 destroy()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const querySet = device.createQuerySet({
@@ -39,19 +32,19 @@ const querySet = device.createQuerySet({
   count: 32,
 });
 
-// Some time later
+// مدتی بعد
 
 querySet.destroy();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
