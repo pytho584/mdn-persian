@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaPlaceholder property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaPlaceholder"
-status: "needs-translation"
----
-
----
-title: "Element: ariaPlaceholder property"
 short-title: ariaPlaceholder
 slug: Web/API/Element/ariaPlaceholder
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.Element.ariaPlaceholder
 
 {{APIRef("DOM")}}
 
-The **`ariaPlaceholder`** property of the {{domxref("Element")}} interface reflects the value of the `aria-placeholder` attribute, which defines a short hint intended to aid the user with data entry when the control has no value.
+ویژگی **`ariaPlaceholder`** در رابط {{domxref("Element")}} منعکس‌کننده مقدار ویژگی `aria-placeholder` است که یک راهنمای کوتاه برای کمک به کاربر در هنگام ورود داده زمانی که کنترل مقداری ندارد، تعریف می‌کند.
 
 > [!NOTE]
-> Where possible use an HTML {{htmlelement("input")}} element with `type="text"` or a {{htmlelement("textarea")}} as these have built in semantics and do not require ARIA attributes.
+> در صورت امکان از عنصر HTML {{htmlelement("input")}} با `type="text"` یا {{htmlelement("textarea")}} استفاده کنید، زیرا این عناصر دارای معناشناسی داخلی هستند و به ویژگی‌های ARIA نیاز ندارند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-placeholder` attribute on the element with an ID of `txtBoxInput` has been set to a string. Using `ariaPlaceholder` we update the string to another value.
+در این مثال، ویژگی `aria-placeholder` روی عنصری با شناسه `txtBoxInput` به یک رشته تنظیم شده است. با استفاده از `ariaPlaceholder` مقدار رشته را به مقدار دیگری به‌روزرسانی می‌کنیم.
 
 ```html
 <div id="txtboxLabel">Enter your five-digit zip code</div>
@@ -44,14 +38,14 @@ el.ariaPlaceholder = "12345";
 console.log(el.ariaPlaceholder); // "12345"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: textbox role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
+- [ARIA: نقش textbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
