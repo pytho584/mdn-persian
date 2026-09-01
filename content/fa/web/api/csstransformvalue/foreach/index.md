@@ -1,11 +1,5 @@
 ---
 title: "CSSTransformValue: forEach() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue/forEach"
-status: "needs-translation"
----
-
----
-title: "CSSTransformValue: forEach() method"
 short-title: forEach()
 slug: Web/API/CSSTransformValue/forEach
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.CSSTransformValue.forEach
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSTransformValue.forEach()`** method executes a provided function once for each element of the `CSSTransformValue`.
+متد **`CSSTransformValue.forEach()`** یک تابع داده‌شده را یک‌بار برای هر عنصر از `CSSTransformValue` اجرا می‌کند.
 
 ## Syntax
 
@@ -26,20 +20,20 @@ forEach(callbackFn, thisArg)
 ### Parameters
 
 - `callbackFn`
-  - : The function to execute for each element, taking three arguments:
+  - : تابعی که برای هر عنصر اجرا می‌شود و سه آرگومان می‌گیرد:
     - `currentValue`
-      - : The value of the current element being processed.
+      - : مقدار عنصر فعلی در حال پردازش.
     - `index` {{optional_inline}}
-      - : The index of the current element being processed.
+      - : اندیس عنصر فعلی در حال پردازش.
     - `array` {{optional_inline}}
-      - : The `CSSTransformValue` that `forEach()` is being called on.
+      - : شیء `CSSTransformValue` که `forEach()` روی آن فراخوانی شده است.
 
 - `thisArg` {{Optional_inline}}
-  - : Value to use as **`this`** (i.e., the reference `Object`) when executing `callback`.
+  - : مقداری که هنگام اجرای `callback` به‌عنوان **`this`** (یعنی `Object` مرجع) استفاده می‌شود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
