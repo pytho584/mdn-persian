@@ -1,7 +1,5 @@
 ---
 title: "EncodedAudioChunk"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedAudioChunk"
-status: "needs-translation"
 ---
 
 ---
@@ -13,33 +11,33 @@ browser-compat: api.EncodedAudioChunk
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`EncodedAudioChunk`** interface of the {{domxref('WebCodecs API','','',' ')}} represents a chunk of encoded audio data.
+رابطِ **`EncodedAudioChunk`** از {{domxref('WebCodecs API','','',' ')}} یک قطعه از داده‌های صوتی رمزگذاری‌شده را نمایش می‌دهد.
 
-## Constructor
+## سازنده
 
 - {{domxref("EncodedAudioChunk.EncodedAudioChunk", "EncodedAudioChunk()")}}
-  - : Creates a new `EncodedAudioChunk` object.
+  - : یک شیء `EncodedAudioChunk` جدید می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("EncodedAudioChunk.type")}} {{ReadOnlyInline}}
-  - : Returns a string indicating whether this chunk of data is a key chunk.
+  - : یک رشته برمی‌گرداند که نشان می‌دهد این قطعه از داده، یک قطعه کلیدی (key chunk) است یا نه.
 - {{domxref("EncodedAudioChunk.timestamp")}} {{ReadOnlyInline}}
-  - : Returns an integer representing the timestamp of the audio in microseconds.
+  - : یک عدد صحیح برمی‌گرداند که برچسب زمانی (timestamp) صوت را بر حسب میکروثانیه نشان می‌دهد.
 - {{domxref("EncodedAudioChunk.duration")}} {{ReadOnlyInline}}
-  - : Returns an integer representing the duration of the audio in microseconds.
+  - : یک عدد صحیح برمی‌گرداند که مدت‌زمان صوت را بر حسب میکروثانیه نشان می‌دهد.
 - {{domxref("EncodedAudioChunk.byteLength")}} {{ReadOnlyInline}}
-  - : Returns an integer representing the length of the audio in bytes.
+  - : یک عدد صحیح برمی‌گرداند که طول صوت را بر حسب بایت نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("EncodedAudioChunk.copyTo()")}}
-  - : Copies the encoded audio data.
+  - : داده‌های صوتی رمزگذاری‌شده را کپی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
