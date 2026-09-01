@@ -1,11 +1,5 @@
 ---
 title: "FileReaderSync: readAsBinaryString() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReaderSync/readAsBinaryString"
-status: "needs-translation"
----
-
----
-title: "FileReaderSync: readAsBinaryString() method"
 short-title: readAsBinaryString()
 slug: Web/API/FileReaderSync/readAsBinaryString
 page-type: web-api-instance-method
@@ -17,48 +11,48 @@ browser-compat: api.FileReaderSync.readAsBinaryString
 {{APIRef("File API")}}{{deprecated_header}} {{AvailableInWorkers("worker_except_service")}}
 
 > [!NOTE]
-> This method is deprecated in favor of {{DOMxRef("FileReaderSync.readAsArrayBuffer","readAsArrayBuffer()")}}.
+> این روش به‌نفع {{DOMxRef("FileReaderSync.readAsArrayBuffer","readAsArrayBuffer()")}} منسوخ شده است.
 
-The **`readAsBinaryString()`** method of the {{DOMxRef("FileReaderSync")}} interface allows to read {{DOMxRef("File")}} or {{DOMxRef("Blob")}} objects in a synchronous way into a string. This interface is [only available](/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers) in [workers](/en-US/docs/Web/API/Worker) as it enables synchronous I/O that could potentially block.
+متد **`readAsBinaryString()`** از رابط {{DOMxRef("FileReaderSync")}} امکان خواندن همزمان اشیاء {{DOMxRef("File")}} یا {{DOMxRef("Blob")}} را به‌صورت یک رشته فراهم می‌کند. این رابط در [workerها](/en-US/docs/Web/API/Worker) [فقط در دسترس است](/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers)، زیرا ورودی/خروجی همزمان را فعال می‌کند که بالقوه می‌تواند مسدودکننده باشد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 readAsBinaryString(blob)
 ```
 
-### Parameters
+### پارامترها
 
 - `blob`
-  - : The {{DOMxRef("File")}} or {{DOMxRef("Blob")}} to read.
+  - : شیء {{DOMxRef("File")}} یا {{DOMxRef("Blob")}} برای خواندن.
 
-### Return value
+### مقدار بازگشتی
 
-A string representing the input data.
+یک رشته که نشان‌دهنده داده‌های ورودی است.
 
-### Exceptions
+### استثناها
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the resource represented by the DOM {{DOMxRef("File")}} or {{DOMxRef("Blob")}} cannot be found, e.g., because it has been erased.
+  - : اگر منبع نمایش‌داده‌شده توسط DOM {{DOMxRef("File")}} یا {{DOMxRef("Blob")}} پیدا نشود، مثلاً به دلیل پاک شدن، پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if one of the following problematic situation is detected:
-    - the resource has been modified by a third party;
-    - too many read are performed simultaneously;
-    - the file pointed by the resource is unsafe for a use from the Web (like it is a system file).
+  - : اگر یکی از شرایط مشکل‌ساز زیر تشخیص داده شود، پرتاب می‌شود:
+    - منبع توسط شخص ثالث تغییر کرده باشد؛
+    - بیش از حد مجاز خوانش همزمان انجام شده باشد؛
+    - فایلی که منبع به آن اشاره می‌کند برای استفاده در وب امن نباشد (مانند فایل سیستمی).
 - `NotReadableError` {{domxref("DOMException")}}
-  - : Thrown if the resource cannot be read due to a permission problem, like a concurrent lock.
+  - : اگر به دلیل مشکل مجوز، مانند قفل همزمان، امکان خواندن منبع وجود نداشته باشد، پرتاب می‌شود.
 - `EncodingError` {{domxref("DOMException")}}
-  - : Thrown if the resource is a data URL and exceed the limit length defined by each browser.
+  - : اگر منبع یک data URL باشد و از حداکثر طول تعیین‌شده توسط هر مرورگر فراتر رود، پرتاب می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File API](/en-US/docs/Web/API/File_API)
 - {{DOMxRef("File")}}
