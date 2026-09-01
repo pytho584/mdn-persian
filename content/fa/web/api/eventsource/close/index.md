@@ -1,11 +1,5 @@
 ---
 title: "EventSource: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EventSource/close"
-status: "needs-translation"
----
-
----
-title: "EventSource: close() method"
 short-title: close()
 slug: Web/API/EventSource/close
 page-type: web-api-instance-method
@@ -14,28 +8,26 @@ browser-compat: api.EventSource.close
 
 {{APIRef("Server Sent Events")}}{{AvailableInWorkers}}
 
-The **`close()`** method of the {{domxref("EventSource")}}
-interface closes the connection, if one is made, and sets the
-{{domxref("EventSource.readyState")}} attribute to `2` (closed).
+متد **`close()`** در رابط {{domxref("EventSource")}} اگر اتصالی برقرار شده باشد، آن را می‌بندد و ویژگی {{domxref("EventSource.readyState")}} را روی `2` (بسته) قرار می‌دهد.
 
 > [!NOTE]
-> If the connection is already closed, the method does nothing.
+> اگر اتصال از قبل بسته شده باشد، این متد هیچ کاری انجام نمی‌دهد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const button = document.querySelector("button");
@@ -48,16 +40,16 @@ button.onclick = () => {
 ```
 
 > [!NOTE]
-> You can find a full example on GitHub — see [Simple SSE demo using PHP](https://github.com/mdn/dom-examples/tree/main/server-sent-events).
+> می‌توانید مثال کامل این کار را در GitHub ببینید — به [Simple SSE demo using PHP](https://github.com/mdn/dom-examples/tree/main/server-sent-events) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("EventSource")}}
