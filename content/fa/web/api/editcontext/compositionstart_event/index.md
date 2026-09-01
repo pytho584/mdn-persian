@@ -1,11 +1,5 @@
 ---
 title: "EditContext: compositionstart event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/compositionstart_event"
-status: "needs-translation"
----
-
----
-title: "EditContext: compositionstart event"
 short-title: compositionstart
 slug: Web/API/EditContext/compositionstart_event
 page-type: web-api-event
@@ -16,11 +10,11 @@ browser-compat: api.EditContext.compositionstart_event
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The `compositionstart` event of the {{domxref("EditContext")}} interface fires when composition using an {{glossary("Input Method Editor")}} (IME) window starts.
+رویداد `compositionstart` از رابط {{domxref("EditContext")}} زمانی رخ می‌دهد که ترکیب متن با استفاده از پنجرهٔ {{glossary("Input Method Editor")}} (IME) آغاز می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی مدیریت‌کنندهٔ رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("compositionstart", (event) => { })
@@ -28,11 +22,11 @@ addEventListener("compositionstart", (event) => { })
 oncompositionstart = (event) => { }
 ```
 
-## Examples
+## مثال‌ها
 
-### Using `compositionstart` to change the editable region's border
+### استفاده از `compositionstart` برای تغییر حاشیهٔ ناحیهٔ قابل ویرایش
 
-In the following example, the editable region's border is set to red when the `compositionstart` event fires, and back to black when the `compositionend` event fires. Note that the event listener callbacks in this example are only called when using an IME window, or other platform-specific editing UI surfaces, to compose text.
+در مثال زیر، حاشیهٔ ناحیهٔ قابل ویرایش هنگام رخ دادن رویداد `compositionstart` قرمز می‌شود و هنگام رخ دادن رویداد `compositionend` به رنگ مشکی برمی‌گردد. توجه داشته باشید که فراخوانی‌های مدیریت‌کنندهٔ رویداد در این مثال فقط زمانی فراخوانی می‌شوند که از پنجرهٔ IME یا سایر رابط‌های ویرایش مختص پلتفرم برای ترکیب متن استفاده کنید.
 
 ```css
 #text-editor {
@@ -61,10 +55,10 @@ editContext.addEventListener("compositionend", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
