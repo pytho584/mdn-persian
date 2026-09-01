@@ -1,7 +1,5 @@
 ---
 title: "HashChangeEvent: HashChangeEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HashChangeEvent/HashChangeEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -14,41 +12,40 @@ browser-compat: api.HashChangeEvent.HashChangeEvent
 
 {{APIRef("HTML DOM")}}
 
-The **`HashChangeEvent()`** constructor creates a new {{domxref("HashChangeEvent")}} object, that is used by the {{domxref("Window/hashchange_event", "hashchange")}} event fired at the {{domxref("window")}} object when the fragment of the URL changes.
+سازندهٔ **`HashChangeEvent()`** یک شیء جدید {{domxref("HashChangeEvent")}} می‌سازد که توسط رویداد {{domxref("Window/hashchange_event", "hashchange")}} استفاده می‌شود. این رویداد روی شیء {{domxref("window")}} زمانی که بخشِ fragment (قطعه) از URL تغییر می‌کند، شلیک می‌شود.
 
 > [!NOTE]
-> A web developer doesn't typically need to call this constructor, as the browser creates these objects itself when firing {{domxref("Window/hashchange_event", "hashchange")}} events.
+> معمولاً توسعه‌دهندهٔ وب نیازی به فراخوانی این سازنده ندارد، زیرا مرورگر هنگام شلیک رویدادهای {{domxref("Window/hashchange_event", "hashchange")}} خودش این اشیاء را می‌سازد.
 
-## Syntax
+## دستور زبان
 
 ```js-nolint
 new HashChangeEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `hashchange`.
+  - : رشته‌ای شامل نام رویداد. این مقدار به بزرگی/کوچکی حروف حساس است و مرورگرها آن را روی `hashchange` تنظیم می‌کنند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition to the properties defined in {{domxref("Event/Event", "Event()")}}_, has the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، ویژگی‌های زیر را دارد:
     - `oldURL` {{optional_inline}}
-      - : A string containing the old URL. Its default value is the empty string (`""`).
+      - : رشته‌ای شامل URL قبلی. مقدار پیش‌فرض آن رشتهٔ خالی (`""`) است.
     - `newURL` {{optional_inline}}
-      - : A string containing the new URL. Its default value is the empty string (`""`).
+      - : رشته‌ای شامل URL جدید. مقدار پیش‌فرض آن رشتهٔ خالی (`""`) است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("HashChangeEvent")}} object.
+یک شیء جدید {{domxref("HashChangeEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Window/hashchange_event", "hashchange")}} event
+- رویداد {{domxref("Window/hashchange_event", "hashchange")}}
