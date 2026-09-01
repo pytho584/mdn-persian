@@ -1,7 +1,5 @@
 ---
 title: "EcdsaParams"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EcdsaParams"
-status: "needs-translation"
 ---
 
 ---
@@ -15,35 +13,35 @@ browser-compat:
 
 {{ APIRef("Web Crypto API") }}
 
-The **`EcdsaParams`** dictionary of the [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) represents the object that should be passed as the `algorithm` parameter into {{domxref("SubtleCrypto.sign()")}} or {{domxref("SubtleCrypto.verify()")}} when using the [ECDSA](/en-US/docs/Web/API/SubtleCrypto/sign#ecdsa) algorithm.
+دیکشنری **`EcdsaParams`** از [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) شیءای را نشان می‌دهد که هنگام استفاده از الگوریتم [ECDSA](/en-US/docs/Web/API/SubtleCrypto/sign#ecdsa) باید به‌عنوان پارامتر `algorithm` به {{domxref("SubtleCrypto.sign()")}} یا {{domxref("SubtleCrypto.verify()")}} ارسال شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `name`
-  - : A string. This should be set to `ECDSA`.
+  - : یک رشته (string). این مقدار باید روی `ECDSA` تنظیم شود.
 - `hash`
-  - : A string or an object containing a single property called `name` with a string value. It is an identifier for the [digest algorithm](/en-US/docs/Web/API/SubtleCrypto/digest) to use. This should be one of the following:
-    - `SHA-256`: selects the [SHA-256](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) algorithm.
-    - `SHA-384`: selects the [SHA-384](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) algorithm.
-    - `SHA-512`: selects the [SHA-512](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) algorithm.
+  - : یک رشته یا یک شیء شامل یک ویژگی واحد به نام `name` با مقدار رشته‌ای. این شناسه‌ای برای [digest algorithm](/en-US/docs/Web/API/SubtleCrypto/digest) مورد استفاده است. این باید یکی از موارد زیر باشد:
+    - `SHA-256`: الگوریتم [SHA-256](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) را انتخاب می‌کند.
+    - `SHA-384`: الگوریتم [SHA-384](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) را انتخاب می‌کند.
+    - `SHA-512`: الگوریتم [SHA-512](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) را انتخاب می‌کند.
 
     > [!WARNING]
-    > `SHA-1` is also supported here but the [SHA-1](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) algorithm is considered vulnerable and should no longer be used.
+    > `SHA-1` نیز در اینجا پشتیبانی می‌شود، اما الگوریتم [SHA-1](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) آسیب‌پذیر در نظر گرفته می‌شود و دیگر نباید استفاده شود.
 
-## Examples
+## مثال‌ها
 
-See the examples for {{domxref("SubtleCrypto.sign()")}} or {{domxref("SubtleCrypto.verify()")}}.
+برای مثال‌ها به {{domxref("SubtleCrypto.sign()")}} یا {{domxref("SubtleCrypto.verify()")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
-Browsers that support the "ECDSA" algorithm for the {{domxref("SubtleCrypto.sign()")}} and {{domxref("SubtleCrypto.verify()")}} methods will support this type.
+مرورگرهایی که از الگوریتم «ECDSA» برای روش‌های {{domxref("SubtleCrypto.sign()")}} و {{domxref("SubtleCrypto.verify()")}} پشتیبانی می‌کنند، از این نوع نیز پشتیبانی خواهند کرد.
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("SubtleCrypto.sign()")}} and {{domxref("SubtleCrypto.verify()")}}.
+- {{domxref("SubtleCrypto.sign()")}} و {{domxref("SubtleCrypto.verify()")}}.
