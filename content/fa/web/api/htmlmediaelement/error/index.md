@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: error property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/error"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: error property"
 short-title: error
 slug: Web/API/HTMLMediaElement/error
 page-type: web-api-instance-property
@@ -14,20 +8,15 @@ browser-compat: api.HTMLMediaElement.error
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.error`** property is the
-{{domxref("MediaError")}} object for the most recent error, or `null` if
-there has not been an error. When an {{domxref("HTMLMediaElement/error_event", "error")}} event is received by the
-element, you can determine details about what happened by examining this object.
+خصوصیت **`HTMLMediaElement.error`** یک شیء {{domxref("MediaError")}} برای آخرین خطای رخ‌داده است، یا اگر خطایی رخ نداده باشد، مقدار `null` دارد. وقتی عنصر یک رویداد {{domxref("HTMLMediaElement/error_event", "error")}} دریافت می‌کند، می‌توانید با بررسی این شیء، جزئیات رویداد رخ‌داده را تعیین کنید.
 
-## Value
+## مقدار
 
-A {{domxref("MediaError")}} object describing the most recent error to occur on the
-media element or `null` if no errors have occurred.
+یک شیء {{domxref("MediaError")}} که آخرین خطای رخ‌داده در عنصر رسانه‌ای را توصیف می‌کند، یا اگر خطایی رخ نداده باشد، `null`.
 
-## Examples
+## مثال‌ها
 
-This example establishes a video element and adds an error handler to it; the error
-handler logs the details to console.
+این مثال یک عنصر ویدیو ایجاد می‌کند و یک مدیریت‌کننده خطا به آن اضافه می‌کند؛ مدیریت‌کننده خطا جزئیات را در کنسول ثبت می‌کند.
 
 ```js
 const videoElement = document.createElement("video");
@@ -39,15 +28,15 @@ videoElement.onerror = () => {
 videoElement.src = "https://example.com/bogusvideo.mp4";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.error` property
-- {{HTMLElement("audio")}} and {{HTMLElement("video")}}
+- {{domxref("HTMLMediaElement")}}: واسطی که برای تعریف ویژگی `HTMLMediaElement.error` استفاده می‌شود
+- {{HTMLElement("audio")}} و {{HTMLElement("video")}}
