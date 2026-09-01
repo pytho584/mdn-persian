@@ -1,9 +1,4 @@
----
-title: "GPUDevice: adapterInfo property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/adapterInfo"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "GPUDevice: adapterInfo property"
 short-title: adapterInfo
@@ -14,16 +9,15 @@ browser-compat: api.GPUDevice.adapterInfo
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`adapterInfo`** read-only property of the
-{{domxref("GPUDevice")}} interface returns a {{domxref("GPUAdapterInfo")}} object containing identifying information about the device's originating adapter.
+ویژگی فقط-خواندنی **`adapterInfo`** از رابط {{domxref("GPUDevice")}} یک شیء {{domxref("GPUAdapterInfo")}} برمی‌گرداند که حاوی اطلاعات شناسایی مربوط به آداپتور مبدأ دستگاه است.
 
-## Value
+## مقدار
 
-A {{domxref("GPUAdapterInfo")}} object instance.
+یک نمونه از شیء {{domxref("GPUAdapterInfo")}}.
 
-## Examples
+## مثال‌ها
 
-### Basic adapterInfo usage
+### استفاده پایه از adapterInfo
 
 ```js
 const adapter = await navigator.gpu.requestAdapter();
@@ -44,14 +38,15 @@ function optimizeForGpuDevice(device) {
 optimizeForGpuDevice(myDevice);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+```
