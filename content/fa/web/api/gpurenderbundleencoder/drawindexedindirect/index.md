@@ -1,11 +1,5 @@
 ---
 title: "GPURenderBundleEncoder: drawIndexedIndirect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/drawIndexedIndirect"
-status: "needs-translation"
----
-
----
-title: "GPURenderBundleEncoder: drawIndexedIndirect() method"
 short-title: drawIndexedIndirect()
 slug: Web/API/GPURenderBundleEncoder/drawIndexedIndirect
 page-type: web-api-instance-method
@@ -14,22 +8,21 @@ browser-compat: api.GPURenderBundleEncoder.drawIndexedIndirect
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`drawIndexedIndirect()`** method of the
-{{domxref("GPURenderBundleEncoder")}} interface draws indexed primitives using parameters read from a {{domxref("GPUBuffer")}}.
+**`drawIndexedIndirect()`** 方法属于 {{domxref("GPURenderBundleEncoder")}} 接口，使用从 {{domxref("GPUBuffer")}} 读取的参数来绘制索引化图元。
 
 > [!NOTE]
-> This method is functionally identical to its equivalent on {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.drawIndexedIndirect", "drawIndexedIndirect()")}}.
+> 此方法在功能上与其在 {{domxref("GPURenderPassEncoder")}} 上的对应方法 {{domxref("GPURenderPassEncoder.drawIndexedIndirect", "drawIndexedIndirect()")}} 完全相同。
 
-## Syntax
+## 语法
 
 ```js-nolint
 drawIndexedIndirect(indirectBuffer, indirectOffset)
 ```
 
-### Parameters
+### 参数
 
 - `indirectBuffer`
-  - : A {{domxref("GPUBuffer")}} containing the `indexCount`, `instanceCount`, `firstIndex`, `baseVertex`, and `firstInstance` values needed to carry out the drawing operation. The buffer must contain a tightly packed block of five 32-bit unsigned integer values representing the values (20 bytes total), given in the same order as the arguments for {{domxref("GPURenderBundleEncoder.drawIndexed()")}}. So for example:
+  - : 一个 {{domxref("GPUBuffer")}}，包含执行绘制操作所需的 `indexCount`、`instanceCount`、`firstIndex`、`baseVertex` 和 `firstInstance` 值。该缓冲区必须包含五个紧密排列的 32 位无符号整数值（共 20 字节），其顺序与 {{domxref("GPURenderBundleEncoder.drawIndexed()")}} 的参数顺序一致。例如：
 
     ```js
     const uint32 = new Uint32Array(5);
@@ -44,24 +37,24 @@ drawIndexedIndirect(indirectBuffer, indirectOffset)
     ```
 
     > [!NOTE]
-    > The `indirect-first-instance` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) needs to be enabled for non-zero `firstInstance` values to be used. If the `indirect-first-instance` feature is not enabled and `firstInstance` is not zero, the `drawIndexedIndirect()` call will be treated as a no-op.
+    > 要使用非零的 `firstInstance` 值，需要启用 `indirect-first-instance` [特性](/en-US/docs/Web/API/GPUSupportedFeatures)。如果未启用 `indirect-first-instance` 特性且 `firstInstance` 不为零，则 `drawIndexedIndirect()` 调用将被视为空操作（no-op）。
 
 - `indirectOffset`
-  - : The offset, in bytes, into `indirectBuffer` where the value data begins.
+  - : `indirectBuffer` 中值数据开始处的偏移量，以字节为单位。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-### Validation
+### 验证
 
-The following criteria must be met when calling **`drawIndirect()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderBundleEncoder")}} becomes invalid:
+调用 **`drawIndirect()`** 时必须满足以下条件，否则会生成 {{domxref("GPUValidationError")}} 并使 {{domxref("GPURenderBundleEncoder")}} 变为无效：
 
-- `indirectBuffer`'s {{domxref("GPUBuffer.usage")}} contains the `GPUBufferUsage.INDIRECT` flag.
-- `indirectOffset` + the total size specified by the value parameters in the `indirectBuffer` is less than or equal to the `indirectBuffer`'s {{domxref("GPUBuffer.size")}}.
-- `indirectOffset` is a multiple of 4.
+- `indirectBuffer` 的 {{domxref("GPUBuffer.usage")}} 包含 `GPUBufferUsage.INDIRECT` 标志。
+- `indirectOffset` 加上 `indirectBuffer` 中由值参数指定的总大小小于或等于 `indirectBuffer` 的 {{domxref("GPUBuffer.size")}}。
+- `indirectOffset` 是 4 的倍数。
 
-## Examples
+## 示例
 
 ```js
 // …
@@ -98,14 +91,14 @@ const renderBundle = bundleEncoder.finish();
 // …
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
