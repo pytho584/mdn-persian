@@ -1,11 +1,5 @@
 ---
 title: "HTMLDivElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDivElement"
-status: "needs-translation"
----
-
----
-title: HTMLDivElement
 slug: Web/API/HTMLDivElement
 page-type: web-api-interface
 browser-compat: api.HTMLDivElement
@@ -13,29 +7,29 @@ browser-compat: api.HTMLDivElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLDivElement`** interface provides special properties (beyond the regular {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating {{HtmlElement("div")}} elements.
+رابط **`HTMLDivElement`** ویژگی‌های خاصی (فراتر از رابط معمولی {{domxref("HTMLElement")}} که به صورت ارث‌بری در دسترس است) برای دستکاری عناصر {{HtmlElement("div")}} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+ویژگی‌های خود را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد.
 
 - {{domxref("HTMLDivElement.align")}} {{deprecated_inline}}
-  - : A string representing an enumerated property indicating alignment of the element's contents with respect to the surrounding context. The possible values are `"left"`, `"right"`, `"justify"`, and `"center"`.
+  - : یک رشته که یک ویژگی شمارشی را نشان می‌دهد که تراز محتوای عنصر را نسبت به زمینه اطراف مشخص می‌کند. مقادیر ممکن عبارتند از `"left"`, `"right"`, `"justify"` و `"center"`.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+روش خاصی ندارد؛ روش‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{ HTMLElement("div") }}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{ HTMLElement("div") }}.
