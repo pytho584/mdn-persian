@@ -1,7 +1,5 @@
 ---
 title: "ElementInternals: ariaDetailsElements property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaDetailsElements"
-status: "needs-translation"
 ---
 
 ---
@@ -14,45 +12,44 @@ browser-compat: api.ElementInternals.ariaDetailsElements
 
 {{APIRef("DOM")}}
 
-The **`ariaDetailsElements`** property of the {{domxref("ElementInternals")}} interface is an array containing the element (or elements) that provide an accessible details for the element it is applied to.
-The accessible details are similar to the accessible description (see {{domxref("ElementInternals/ariaDescribedByElements","ariaDescribedByElements")}}), but provides more verbose information.
+ویژگی **`ariaDetailsElements`** از رابط {{domxref("ElementInternals")}} یک آرایه شامل عنصر (یا عناصری) است که جزئیات دسترس‌پذیر (accessible details) را برای عنصر موردنظر فراهم می‌کنند. جزئیات دسترس‌پذیر مشابه توضیح دسترس‌پذیر (به {{domxref("ElementInternals/ariaDescribedByElements","ariaDescribedByElements")}} مراجعه کنید) است، اما اطلاعات مفصل‌تری ارائه می‌دهد.
 
-The [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) topic contains additional information about how the attribute and property should be used.
+مبحث [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) شامل اطلاعات بیشتری در مورد نحوه استفاده از این صفت (attribute) و این ویژگی (property) است.
 
-## Value
+## مقدار
 
-An array of subclasses of {{domxref("HTMLElement")}}.
-The inner text of these elements can be joined with spaces to get the accessible details.
+یک آرایه از زیرکلاس‌های {{domxref("HTMLElement")}}.
+متن داخلی این عناصر را می‌توان با فاصله به هم متصل کرد تا جزئیات دسترس‌پذیر به دست آید.
 
-When read, the returned array is a static and read-only.
-When written, the assigned array is copied: subsequent changes to the array do not affect the value of the property.
+هنگام خواندن، آرایه بازگردانده‌شده ایستا و فقط‌خواندنی است.
+هنگام نوشتن، آرایه اختصاصداده‌شده کپی می‌شود: تغییرات بعدی در آرایه بر مقدار ویژگی تأثیر نمی‌گذارد.
 
-## Description
+## توضیحات
 
-The property is a flexible alternative to using the [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) attribute to set the accessible details information.
-Unlike `aria-details`, the elements assigned to this property do not have to have an [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute.
+این ویژگی یک جایگزین انعطاف‌پذیر برای استفاده از صفت [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) به‌منظور تنظیم اطلاعات جزئیات دسترس‌پذیر است.
+برخلاف `aria-details`، عناصری که به این ویژگی نسبت داده می‌شوند لزوماً نیازی به داشتن صفت [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) ندارند.
 
-The property reflects the element's [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) attribute when it is defined, but only for listed reference `id` values that match valid in-scope elements.
-If the property is set, then the corresponding attribute is cleared.
-For more information about reflected element references and scope see [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Reflected attributes_ guide.
+این ویژگی، صفت [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) عنصر را هنگام تعریف‌شدن بازتاب می‌دهد، اما فقط برای مقادیر `id` فهرست‌شده‌ای که با عناصر معتبر در محدوده (in-scope) تطابق دارند.
+اگر این ویژگی تنظیم شود، صفت متناظر پاک می‌شود.
+برای اطلاعات بیشتر در مورد ارجاع عناصر بازتاب‌شده و محدوده، به [ارجاع عناصر بازتاب‌شده](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _Reflected attributes_ مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-The examples in the following documents are relevant:
+مثال‌های موجود در اسناد زیر مرتبط هستند:
 
-- {{domxref("Element.ariaDetailsElements")}} is the DOM equivalent of this property.
-  It is used in the same way, but within the DOM instead of a shadow DOM and/or custom element.
+- {{domxref("Element.ariaDetailsElements")}} معادل DOM این ویژگی است.
+  به همان روش استفاده می‌شود، اما درون DOM به جای یک DOM سایه (shadow DOM) و/یا عنصر سفارشی (custom element).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) attribute
+- صفت [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details)
 - {{domxref("Element.ariaDetailsElements")}}
-- [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Attribute reflection_ guide.
+- [ارجاع عناصر بازتاب‌شده](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _Attribute reflection_.
