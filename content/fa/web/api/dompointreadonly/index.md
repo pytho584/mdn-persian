@@ -1,7 +1,6 @@
 ---
 title: "DOMPointReadOnly"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly"
-status: "needs-translation"
 ---
 
 ---
@@ -13,64 +12,64 @@ browser-compat: api.DOMPointReadOnly
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMPointReadOnly`** interface specifies the coordinate and perspective fields used by {{domxref("DOMPoint")}} to define a 2D or 3D point in a coordinate system.
+رابطهٔ **`DOMPointReadOnly`** فیلدهای مختصات و پرسپکتیو را مشخص می‌کند که توسط {{domxref("DOMPoint")}} برای تعریف یک نقطهٔ دو‌بعدی یا سه‌بعدی در یک دستگاه مختصات استفاده می‌شوند.
 
-There are two ways to create a new `DOMPointReadOnly` instance. First, you can use its constructor, passing in the values of the parameters for each dimension and, optionally, the perspective:
+دو راه برای ایجاد یک نمونهٔ جدید `DOMPointReadOnly` وجود دارد. نخست، می‌توانید از سازندهٔ آن استفاده کنید و مقادیر پارامترها را برای هر بعد و به‌صورت اختیاری، مقدار پرسپکتیو را وارد کنید:
 
 ```js
-/* 2D */
+/* دو‌بعدی */
 const point2D = new DOMPointReadOnly(50, 50);
 
-/* 3D */
+/* سه‌بعدی */
 const point3D = new DOMPointReadOnly(50, 50, 25);
 
-/* 3D with perspective */
+/* سه‌بعدی با پرسپکتیو */
 const point3DPerspective = new DOMPointReadOnly(100, 100, 100, 1.0);
 ```
 
-The other option is to use the static {{domxref("DOMPointReadOnly.fromPoint_static", "DOMPointReadOnly.fromPoint()")}} method:
+گزینهٔ دیگر استفاده از روش ایستای {{domxref("DOMPointReadOnly.fromPoint_static", "DOMPointReadOnly.fromPoint()")}} است:
 
 ```js
 const point = DOMPointReadOnly.fromPoint({ x: 100, y: 100, z: 50, w: 1.0 });
 ```
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("DOMPointReadOnly.DOMPointReadOnly","DOMPointReadOnly()")}}
-  - : Creates a new `DOMPointReadOnly` object given the values of its coordinates and perspective. To create a point using an object, you can instead use {{domxref("DOMPointReadOnly.fromPoint_static", "DOMPointReadOnly.fromPoint()")}}.
+  - : یک شیء `DOMPointReadOnly` جدید با توجه به مقادیر مختصات و پرسپکتیو آن ایجاد می‌کند. برای ایجاد یک نقطه با استفاده از یک شیء، می‌توانید به‌جای آن از {{domxref("DOMPointReadOnly.fromPoint_static", "DOMPointReadOnly.fromPoint()")}} استفاده کنید.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
 - {{domxref("DOMPointReadOnly.x")}} {{ReadOnlyInline}}
-  - : The point's horizontal coordinate, `x`.
+  - : مختصات افقی نقطه، یعنی `x`.
 - {{domxref("DOMPointReadOnly.y")}} {{ReadOnlyInline}}
-  - : The point's vertical coordinate, `y`.
+  - : مختصات عمودی نقطه، یعنی `y`.
 - {{domxref("DOMPointReadOnly.z")}} {{ReadOnlyInline}}
-  - : The point's depth coordinate, `z`.
+  - : مختصات عمق نقطه، یعنی `z`.
 - {{domxref("DOMPointReadOnly.w")}} {{ReadOnlyInline}}
-  - : The point's perspective value, `w`.
+  - : مقدار پرسپکتیو نقطه، یعنی `w`.
 
-## Static methods
+## روش‌های ایستا (Static methods)
 
 - {{domxref("DOMPointReadOnly.fromPoint_static", "DOMPointReadOnly.fromPoint()")}}
-  - : A static method that creates a new `DOMPointReadOnly` object given the coordinates provided in the specified object.
+  - : یک روش ایستا که یک شیء `DOMPointReadOnly` جدید با توجه به مختصات ارائه‌شده در شیء مشخص‌شده ایجاد می‌کند.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
 - {{domxref("DOMPointReadOnly.matrixTransform", "matrixTransform()")}}
-  - : Applies a matrix transform specified as an object to the `DOMPointReadOnly` object.
+  - : یک تبدیل ماتریسی که به‌صورت یک شیء مشخص شده است را روی شیء `DOMPointReadOnly` اعمال می‌کند.
 - {{domxref("DOMPointReadOnly.toJSON()", "toJSON()")}}
-  - : Returns a JSON representation of the `DOMPointReadOnly` object.
+  - : یک نمایش JSON از شیء `DOMPointReadOnly` برمی‌گرداند.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMPoint")}}
 - {{domxref("DOMRect")}}
