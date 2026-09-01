@@ -1,11 +1,5 @@
 ---
 title: "DOMQuad: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/toJSON"
-status: "needs-translation"
----
-
----
-title: "DOMQuad: toJSON() method"
 short-title: toJSON()
 slug: Web/API/DOMQuad/toJSON
 page-type: web-api-instance-method
@@ -14,28 +8,25 @@ browser-compat: api.DOMQuad.toJSON
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The {{domxref("DOMQuad")}} method
-`toJSON()` returns a
-{{Glossary("JSON")}} representation of the `DOMQuad` object.
+متد `toJSON()` از {{domxref("DOMQuad")}} یک نمایش {{Glossary("JSON")}} از شیء `DOMQuad` برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A new object whose properties are set to the values in the
-`DOMQuad` on which the method was called.
+یک شیء جدید که ویژگی‌های آن مطابق با مقادیر موجود در `DOMQuad` ای که متد روی آن فراخوانی شده است، تنظیم می‌شوند.
 
-## Examples
+## مثال‌ها
 
-This example creates a {{domxref("DOMQuad")}} with four {{domxref("DOMPoint")}} objects representing the corners of the current window, in screen coordinates, then converts that to JSON.
+این مثال یک {{domxref("DOMQuad")}} با چهار شیء {{domxref("DOMPoint")}} که گوشه‌های پنجره فعلی را با مختصات صفحه نمایش نشان می‌دهند، ایجاد می‌کند و سپس آن را به JSON تبدیل می‌کند.
 
 ```js
 const topLeft = new DOMPoint(window.screenX, window.screenY);
@@ -57,10 +48,10 @@ const quad = new DOMQuad(topLeft, topRight, bottomRight, bottomLeft);
 const quadJSON = quad.toJSON();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
