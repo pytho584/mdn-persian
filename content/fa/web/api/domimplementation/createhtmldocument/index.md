@@ -1,11 +1,5 @@
 ---
 title: "DOMImplementation: createHTMLDocument() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMImplementation/createHTMLDocument"
-status: "needs-translation"
----
-
----
-title: "DOMImplementation: createHTMLDocument() method"
 short-title: createHTMLDocument()
 slug: Web/API/DOMImplementation/createHTMLDocument
 page-type: web-api-instance-method
@@ -14,38 +8,36 @@ browser-compat: api.DOMImplementation.createHTMLDocument
 
 {{ApiRef("DOM")}}
 
-The
-**`DOMImplementation.createHTMLDocument()`** method creates a
-new HTML {{ domxref("Document") }}.
+متد **`DOMImplementation.createHTMLDocument()`** یک سند HTML جدید از نوع {{ domxref("Document") }} می‌سازد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 createHTMLDocument()
 createHTMLDocument(title)
 ```
 
-### Parameters
+### پارامترها
 
 - `title` {{optional_inline}}
-  - : A string containing the title to give the new HTML document.
+  - : رشته‌ای حاوی عنوانی که برای سند HTML جدید در نظر گرفته می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A new HTML {{domxref("Document")}} object.
+یک شیء جدید از نوع {{domxref("Document")}} (سند HTML).
 
-## Examples
+## مثال‌ها
 
-This example creates a new HTML document and inserts it into an {{HTMLElement("iframe")}} in the current document.
+این مثال یک سند HTML جدید ایجاد می‌کند و آن را در یک {{HTMLElement("iframe")}} در سند جاری قرار می‌دهد.
 
-Here's the HTML for this example:
+در اینجا HTML مربوط به این مثال آمده است:
 
 ```html live-sample___new-doc
 <button id="create-doc">Create new document</button>
 <iframe id="theFrame" src="about:blank"></iframe>
 ```
 
-The JavaScript implementation of `makeDocument()` follows:
+پیاده‌سازی جاوااسکریپت تابع `makeDocument()` به این صورت است:
 
 ```js live-sample___new-doc
 function makeDocument() {
@@ -73,20 +65,13 @@ function makeDocument() {
 document.getElementById("create-doc").addEventListener("click", makeDocument);
 ```
 
-The code handles creating the new HTML document and inserting some content
-into it. `createHTMLDocument()` constructs a new HTML document
-whose {{ HTMLElement("title") }} is `"New Document"`. Then we create a
-new paragraph element with some simple content, and then the new paragraph gets inserted
-into the new document.
+این کد ایجاد سند HTML جدید و درج محتوایی در آن را مدیریت می‌کند. `createHTMLDocument()` یک سند HTML جدید می‌سازد که {{ HTMLElement("title") }} آن برابر با `"New Document"` است. سپس یک عنصر پاراگراف جدید با محتوایی ساده می‌سازیم و آن را در سند جدید قرار می‌دهیم.
 
-`destDocument` stores the `contentDocument` of the frame; this is the document into
-which we'll be injecting the new content. The next two lines handle importing the
-contents of our new document into the new document's context. Finally, `destDocument.replaceChild` actually
-replaces the contents of the frame with the new document's contents.
+`destDocument` مقدار `contentDocument` فریم را ذخیره می‌کند؛ این همان سندی است که محتوای جدید را در آن تزریق می‌کنیم. دو خط بعدی محتوای سند جدید را به زمینهٔ سند مقصد وارد می‌کنند. در نهایت، `destDocument.replaceChild` محتوای فریم را با محتوای سند جدید جایگزین می‌کند.
 
 {{EmbedLiveSample("new-doc", "", 200)}}
 
-The returned document is pre-constructed with the following HTML:
+سند بازگردانده‌شده از قبل با HTML زیر ساخته شده است:
 
 ```html
 <!doctype html>
@@ -101,14 +86,14 @@ The returned document is pre-constructed with the following HTML:
 </html>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("DOMImplementation")}} interface it belongs to.
+- رابط {{domxref("DOMImplementation")}} که این متد به آن تعلق دارد.
