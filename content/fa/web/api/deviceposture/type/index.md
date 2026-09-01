@@ -1,11 +1,5 @@
 ---
 title: "DevicePosture: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DevicePosture/type"
-status: "needs-translation"
----
-
----
-title: "DevicePosture: type property"
 short-title: type
 slug: Web/API/DevicePosture/type
 page-type: web-api-instance-property
@@ -16,18 +10,18 @@ browser-compat: api.DevicePosture.type
 
 {{APIRef("Device Posture API")}}{{SeeCompatTable}}
 
-The **`type`** read-only property of the {{domxref("DevicePosture")}} interface returns the device's current posture.
+ویژگی فقط‌خواندنی **`type`** از رابط {{domxref("DevicePosture")}} وضعیت فعلی دستگاه را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string representing the device's current posture. The value can be one of:
+رشته‌ای که وضعیت فعلی دستگاه را نشان می‌دهد. مقدار می‌تواند یکی از موارد زیر باشد:
 
-- `continuous`
-  - : Indicates a flat screen posture — this can include a foldable device while it is being used flat, a seamless curved display, or a standard desktop, laptop, tablet or mobile screen.
-- `folded`
-  - : Indicates a folded screen posture — this can include a foldable device being used in a book or laptop posture.
+- `continuous` (پیوسته)
+  - : نشان‌دهنده وضعیت صفحه‌ی تخت است — این می‌تواند شامل یک دستگاه تاشو در حالی که به‌صورت تخت استفاده می‌شود، یک نمایشگر منحنی بدون درز، یا یک صفحه‌نمایش استاندارد رومیزی، لپ‌تاپ، تبلت یا موبایل باشد.
+- `folded` (تا خورده)
+  - : نشان‌دهنده وضعیت صفحه‌ی تا خورده است — این می‌تواند شامل یک دستگاه تاشو باشد که در حالت کتاب یا لپ‌تاپ استفاده می‌شود.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const postureOutput = document.getElementById("currentPosture");
@@ -40,16 +34,16 @@ function reportPostureOutput() {
 navigator.devicePosture.addEventListener("change", reportPostureOutput);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- CSS {{cssxref("@media/device-posture", "device-posture")}} `@media` feature
-- [Device Posture API](/en-US/docs/Web/API/Device_Posture_API)
-- [Origin trial for Foldable APIs](https://developer.chrome.com/blog/foldable-apis-ot) on developer.chrome.com (2024)
+- ویژگی CSS `@media` برای {{cssxref("@media/device-posture", "device-posture")}}
+- [رابط Device Posture API](/en-US/docs/Web/API/Device_Posture_API)
+- [آزمایش منبع برای APIهای تاشو (Foldable APIs)](https://developer.chrome.com/blog/foldable-apis-ot) در developer.chrome.com (2024)
