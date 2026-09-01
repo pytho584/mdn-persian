@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: contentEditable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contentEditable"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: contentEditable property"
 short-title: contentEditable
 slug: Web/API/HTMLElement/contentEditable
 page-type: web-api-instance-property
@@ -14,35 +8,31 @@ browser-compat: api.HTMLElement.contentEditable
 
 {{APIRef("HTML DOM")}}
 
-The **`contentEditable`** property of
-the {{domxref("HTMLElement")}} interface specifies whether or not the element is
-editable.
+ویژگی **`contentEditable`** در رابط {{domxref("HTMLElement")}} مشخص می‌کند که آیا عنصر قابل ویرایش است یا خیر.
 
-This enumerated attribute can have the following values:
+این ویژگی شمارشی (enumerated) می‌تواند مقادیر زیر را داشته باشد:
 
-- `"true"` indicates that the element is `contenteditable`.
-- `"false"` indicates that the element cannot be edited.
-- `"plaintext-only"` indicates that the element's raw text is editable, but rich text formatting is disabled.
+- `"true"` نشان می‌دهد که عنصر `contenteditable` است.
+- `"false"` نشان می‌دهد که عنصر قابل ویرایش نیست.
+- `"plaintext-only"` نشان می‌دهد که متن خام عنصر قابل ویرایش است، اما قالب‌بندی متن غنی (rich text) غیرفعال است.
 
-You can use the {{domxref("HTMLElement.isContentEditable")}} property to test the
-computed boolean value of this property.
+می‌توانید از ویژگی {{domxref("HTMLElement.isContentEditable")}} برای بررسی مقدار بولی محاسبه‌شده این ویژگی استفاده کنید.
 
-If the attribute is missing or its value is invalid, its value is inherited from its parent element: so the element
-is editable (or not) based on the parent element.
+اگر ویژگی وجود نداشته باشد یا مقدار آن نامعتبر باشد، مقدار آن از عنصر والد به ارث برده می‌شود؛ بنابراین عنصر بر اساس عنصر والد قابل ویرایش است (یا نیست).
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLElement.isContentEditable")}}
-- The [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) global attribute.
+- ویژگی سراسری [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable)
