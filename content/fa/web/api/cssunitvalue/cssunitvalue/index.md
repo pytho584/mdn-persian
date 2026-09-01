@@ -1,7 +1,5 @@
 ---
 title: "CSSUnitValue: CSSUnitValue() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSUnitValue/CSSUnitValue"
-status: "needs-translation"
 ---
 
 ---
@@ -14,8 +12,7 @@ browser-compat: api.CSSUnitValue.CSSUnitValue
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSUnitValue()`** constructor creates a new {{domxref("CSSUnitValue")}} object which returns a new {{domxref('CSSUnitValue')}} object which represents values that contain a single unit type.
-For example, "42px" would be represented by a `CSSNumericValue`.
+سازندهٔ **`CSSUnitValue()`** یک شیء جدید از نوع {{domxref("CSSUnitValue")}} می‌سازد که نمایانگر مقادیر دارای یک نوع واحد است. برای مثال، «42px» با یک `CSSNumericValue` نمایش داده می‌شود.
 
 ## Syntax
 
@@ -26,15 +23,15 @@ new CSSUnitValue(value, unit)
 ### Parameters
 
 - `value`
-  - : A number indicating the number of units.
+  - : عددی که تعداد واحدها را مشخص می‌کند.
 - `unit`
-  - : A string indicating the type of unit.
+  - : رشته‌ای که نوع واحد را مشخص می‌کند.
 
 ## Examples
 
 ### Basic usage
 
-The following shows a method of creating a {{domxref('CSSPositionValue')}} from individual `CSSUnitValue` constructors.
+مثال زیر روش ایجاد یک {{domxref('CSSPositionValue')}} را با استفاده از سازنده‌های جداگانهٔ `CSSUnitValue` نشان می‌دهد.
 
 ```js
 let pos = new CSSPositionValue(
