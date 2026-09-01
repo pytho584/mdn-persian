@@ -1,7 +1,5 @@
 ---
 title: "Highlight: values() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Highlight/values"
-status: "needs-translation"
 ---
 
 ---
@@ -15,30 +13,30 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`values()`** method of the {{domxref("Highlight")}} interface returns a new [Iterator](/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators) object that contains the values for each `AbstractRange` object in the `Highlight` object in insertion order.
+متد **`values()`** از رابط {{domxref("Highlight")}} یک شیء [Iterator](/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators) جدید برمی‌گرداند که شامل مقادیر هر شیء `AbstractRange` در شیء `Highlight` به ترتیب درج است.
 
 > [!NOTE]
-> The **`keys()`** method is an alias for this method. It behaves exactly the same and returns **values** of `Highlight` elements.
+> متد **`keys()`** یک نام مستعار برای این متد است. رفتار آن دقیقاً یکسان است و **مقادیر** عناصر `Highlight` را برمی‌گرداند.
 
-`Highlight` is a {{jsxref("Set")}}-like object, so this is similar to using {{jsxref("Set.values()")}}.
+`Highlight` یک شیء شبیه به {{jsxref("Set")}} است، بنابراین این کار مشابه استفاده از {{jsxref("Set.values()")}} است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 values()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new iterator object containing each `AbstractRange` object in the given `Highlight`, in insertion order.
+یک شیء تکرارگر جدید که هر شیء `AbstractRange` را در `Highlight` داده‌شده، به ترتیب درج، در بر می‌گیرد.
 
-## Examples
+## مثال‌ها
 
-The following code snippet shows how to create a new `Highlight` object with three `AbstractRange` objects, and use the iterator returned by the `values()` method to log the three ranges:
+قطعه کد زیر نحوه ایجاد یک شیء `Highlight` جدید با سه شیء `AbstractRange` و استفاده از تکرارگر برگشتی از متد `values()` برای ثبت کردن این سه محدوده را نشان می‌دهد:
 
 ```js
 const myHighlight = new Highlight();
@@ -53,15 +51,15 @@ for (value of iter) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
 - [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
