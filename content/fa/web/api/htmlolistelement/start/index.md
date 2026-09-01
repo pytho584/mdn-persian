@@ -1,11 +1,5 @@
 ---
 title: "HTMLOListElement: start property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement/start"
-status: "needs-translation"
----
-
----
-title: "HTMLOListElement: start property"
 short-title: start
 slug: Web/API/HTMLOListElement/start
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.HTMLOListElement.start
 
 {{ApiRef("HTML DOM")}}
 
-The **`start`** property of the {{domxref("HTMLOListElement")}} interface indicates starting value of the ordered list, with default value of 1.
+ویژگی **`start`** در رابط {{domxref("HTMLOListElement")}} مقدار شروع لیست مرتب را مشخص می‌کند. مقدار پیش‌فرض آن ۱ است.
 
-It reflects the [`start`](/en-US/docs/Web/HTML/Reference/Elements/ol#start) attribute of the {{HTMLElement("ol")}} element.
+این ویژگی منعکس‌کنندهٔ ویژگی [`start`](/en-US/docs/Web/HTML/Reference/Elements/ol#start) عنصر {{HTMLElement("ol")}} است.
 
 > [!NOTE]
-> The `start` property value is independent of the {{domxref("HTMLOListElement.type")}} property; it is always numeric, even when type is letters or Roman numerals.
+> مقدار ویژگی `start` مستقل از ویژگی {{domxref("HTMLOListElement.type")}} است؛ همیشه عددی است، حتی زمانی که نوع حروف یا اعداد رومی باشد.
 
-## Value
+## مقدار
 
-A `long` value.
+یک مقدار از نوع `long`.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -42,19 +36,19 @@ A `long` value.
 
 ```js
 const olElement = document.querySelector("#order-list");
-console.log(olElement.start); // Output: "1"
+console.log(olElement.start); // خروجی: "1"
 olElement.start = "11";
-console.log(olElement.start); // Output: "11"
+console.log(olElement.start); // خروجی: "11"
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", 400, 100)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
