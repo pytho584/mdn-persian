@@ -1,11 +1,5 @@
 ---
 title: "Highlight: Highlight() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Highlight/Highlight"
-status: "needs-translation"
----
-
----
-title: "Highlight: Highlight() constructor"
 short-title: Highlight()
 slug: Web/API/Highlight/Highlight
 page-type: web-api-constructor
@@ -14,8 +8,7 @@ browser-compat: api.Highlight.Highlight
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`Highlight()`** constructor returns a newly created
-{{domxref("Highlight")}} object which can hold a collection of {{domxref("AbstractRange")}} objects to be styled using the {{domxref("css_custom_highlight_api", "CSS Custom Highlight API", "", "nocode")}}.
+سازندهٔ **`Highlight()`** یک شیء {{domxref("Highlight")}} جدید ایجاد می‌کند که می‌تواند مجموعه‌ای از اشیاء {{domxref("AbstractRange")}} را در خود نگه دارد تا با استفاده از {{domxref("css_custom_highlight_api", "CSS Custom Highlight API", "", "nocode")}} style دهی شوند.
 
 ## Syntax
 
@@ -28,15 +21,15 @@ new Highlight(range1, range2, /* …, */ rangeN)
 ### Parameters
 
 - `range1`, …, `rangeN` {{optional_inline}}
-  - : One or more initial {{domxref("AbstractRange")}} objects to add in the new highlight.
+  - : یک یا چند شیء {{domxref("AbstractRange")}} اولیه که به هایلایت جدید اضافه می‌شوند.
 
 ### Return value
 
-A new `Highlight` object.
+یک شیء `Highlight` جدید.
 
 ## Examples
 
-The example code below demonstrates how to create an empty highlight object, and then add ranges to it:
+کد نمونهٔ زیر نحوهٔ ایجاد یک شیء هایلایت خالی و سپس افزودن rangeها به آن را نشان می‌دهد:
 
 ```js
 const highlight = new Highlight();
@@ -44,7 +37,7 @@ highlight.add(range1);
 highlight.add(range2);
 ```
 
-The example code below demonstrates how to create a new highlight object and add ranges to it during instantiation:
+کد نمونهٔ زیر نحوهٔ ایجاد یک شیء هایلایت جدید و افزودن rangeها به آن در هنگام نمونه‌سازی را نشان می‌دهد:
 
 ```js
 const highlight = new Highlight(range1, range2);
