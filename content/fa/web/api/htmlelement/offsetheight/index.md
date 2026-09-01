@@ -1,7 +1,6 @@
+```
 ---
 title: "HTMLElement: offsetHeight property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight"
-status: "needs-translation"
 ---
 
 ---
@@ -14,36 +13,37 @@ browser-compat: api.HTMLElement.offsetHeight
 
 {{ APIRef("HTML DOM") }}
 
-The **`offsetHeight`** read-only property of the {{domxref("HTMLElement")}} interface returns the height of an element, including vertical padding and borders, as an integer.
+ویژگی فقط‌خواندنی **`offsetHeight`** در رابط {{domxref("HTMLElement")}} ارتفاع یک عنصر را به‌صورت یک عدد صحیح، شامل padding عمودی و border ها، برمی‌گرداند.
 
-Typically, `offsetHeight` is a measurement in pixels of the element's CSS height, including any borders, padding, and horizontal scrollbars (if rendered). It does not include the height of pseudo-elements such as `::before` or `::after`. For the document body object, the measurement includes total linear content height instead of the element's CSS height. Floated elements extending below other linear content are ignored.
+به‌طور معمول، `offsetHeight` اندازه‌گیری ارتفاع CSS عنصر بر حسب پیکسل است، شامل هرگونه border، padding و نوار اسکرول افقی (در صورت رندر شدن). این ویژگی ارتفاع شبه‌عناصر (pseudo-elements) مانند `::before` یا `::after` را شامل نمی‌شود. برای شیء body سند، این اندازه‌گیری شامل ارتفاع کل محتوای خطی (linear content) است، نه ارتفاع CSS عنصر. عناصر شناور (floated) که پایین‌تر از سایر محتوای خطی گسترش می‌یابند نادیده گرفته می‌شوند.
 
-If the element is hidden (for example, by setting `style.display` on the element or one of its ancestors to `"none"`), then `0` is returned.
+اگر عنصر پنهان باشد (مثلاً با تنظیم `style.display` روی خود عنصر یا یکی از اجداد (ancestors) آن به `"none"`)، آنگاه `0` برگردانده می‌شود.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-![An example element with large padding, border and margin. `offsetHeight` is the layout height of the element including its padding and border, and excluding its margin.](dimensions-offset.png)
+![یک عنصر نمونه با padding، border و margin بزرگ. `offsetHeight` ارتفاع چیدمان عنصر است که شامل padding و border آن می‌شود و margin آن را شامل نمی‌شود.](dimensions-offset.png)
 
-The example image above shows a scrollbar and an `offsetHeight` which fits on the window. However, non-scrollable elements may have large `offsetHeight` values, much larger than the visible content. These elements are typically contained within scrollable elements; consequently, these non-scrollable elements may be completely or partly invisible, depending on the `scrollTop` setting of the scrollable container.
+تصویر مثال بالا یک نوار اسکرول و یک `offsetHeight` را نشان می‌دهد که در اندازه پنجره جای می‌گیرد. با این حال، عناصر غیرقابل‌اسکرول ممکن است مقادیر `offsetHeight` بزرگی داشته باشند، بسیار بزرگ‌تر از محتوای قابل مشاهده. این عناصر معمولاً درون عناصر قابل اسکرول قرار می‌گیرند؛ در نتیجه، بسته به تنظیم `scrollTop` ظرف قابل اسکرول، ممکن است به‌طور کامل یا جزئی نامرئی باشند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Determining the dimensions of elements](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
+- [تعیین ابعاد عناصر](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
 - {{domxref("Element.clientHeight")}}
 - {{domxref("Element.scrollHeight")}}
 - {{domxref("HTMLElement.offsetWidth")}}
 - {{domxref("HTMLElement.offsetLeft")}}
 - {{domxref("HTMLElement.offsetTop")}}
 - {{domxref("Element.getBoundingClientRect()")}}
+```
