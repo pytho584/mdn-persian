@@ -1,7 +1,5 @@
 ---
 title: "HIDConnectionEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDConnectionEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -15,25 +13,25 @@ browser-compat: api.HIDConnectionEvent
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`HIDConnectionEvent`** interface of the [WebHID API](/en-US/docs/Web/API/WebHID_API) represents HID connection events, and is the event type passed to {{domxref("HID/connect_event", "connect")}} and {{domxref("HID/disconnect_event", "disconnect")}} event handlers when a device's connection state changes.
+رابط **`HIDConnectionEvent`** در [WebHID API](/en-US/docs/Web/API/WebHID_API) رویدادهای اتصال HID را نشان می‌دهد و نوع رویدادی است که هنگام تغییر وضعیت اتصال یک دستگاه، به مدیریت‌کننده‌های رویداد {{domxref("HID/connect_event", "connect")}} و {{domxref("HID/disconnect_event", "disconnect")}} ارسال می‌شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("HIDConnectionEvent.HIDConnectionEvent", "HIDConnectionEvent()")}} {{Experimental_Inline}}
-  - : Returns a new `HIDConnectionEvent` object. Typically this constructor is not used as events are created when a device's connection state changes.
+  - : یک شیء `HIDConnectionEvent` جدید بازمی‌گرداند. معمولاً از این سازنده استفاده نمی‌شود؛ زیرا رویدادها هنگام تغییر وضعیت اتصال دستگاه ایجاد می‌شوند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from {{domxref("Event")}}._
+_این رابط همچنین ویژگی‌هایی را از {{domxref("Event")}} به ارث می‌برد._
 
 - {{domxref("HIDConnectionEvent.device")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the {{domxref("HIDDevice")}} instance representing the device associated with the connection event.
+  - : نمونه {{domxref("HIDDevice")}} دستگاه مرتبط با رویداد اتصال را بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The following example registers event listeners for `connect` and `disconnect` events, then prints the {{domxref("HIDDevice.productName")}} to the console.
+مثال زیر شنونده‌های رویدادهای `connect` و `disconnect` را ثبت می‌کند و سپس {{domxref("HIDDevice.productName")}} را در کنسول چاپ می‌کند.
 
 ```js
 navigator.hid.addEventListener("connect", ({ device }) => {
@@ -45,10 +43,10 @@ navigator.hid.addEventListener("disconnect", ({ device }) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
