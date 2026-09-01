@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleSheet: replace() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/replace"
-status: "needs-translation"
----
-
----
-title: "CSSStyleSheet: replace() method"
 short-title: replace()
 slug: Web/API/CSSStyleSheet/replace
 page-type: web-api-instance-method
@@ -14,38 +8,38 @@ browser-compat: api.CSSStyleSheet.replace
 
 {{APIRef("CSSOM")}}
 
-The **`replace()`** method of the {{domxref("CSSStyleSheet")}} interface asynchronously replaces the content of the stylesheet with the content passed into it. The method returns a promise that resolves with the `CSSStyleSheet` object.
+متد **`replace()`** از رابط {{domxref("CSSStyleSheet")}} به‌صورت ناهمگام (asynchronous) محتوای شیوه‌نامه را با محتوایی که به آن داده شده جایگزین می‌کند. این متد یک وعده (Promise) برمی‌گرداند که با شیء `CSSStyleSheet` حل می‌شود.
 
-The `replace()` and {{domxref("CSSStyleSheet.replaceSync()")}} methods can only be used on a stylesheet created with the {{domxref("CSSStyleSheet.CSSStyleSheet()","CSSStyleSheet()")}} constructor.
+متدهای `replace()` و {{domxref("CSSStyleSheet.replaceSync()")}} فقط روی شیوه‌نامه‌ای قابل استفاده هستند که با سازنده {{domxref("CSSStyleSheet.CSSStyleSheet()","CSSStyleSheet()")}} ایجاد شده باشد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 replace(text)
 ```
 
-### Parameters
+### پارامترها
 
 - `text`
-  - : A string containing the style rules to replace the content of the stylesheet. If the string does not contain a parsable list of rules, then the value will be set to an empty string.
+  - : یک رشته شامل قوانین سبک (style rules) که باید جایگزین محتوای شیوه‌نامه شود. اگر رشته شامل فهرست قابل تجزیه‌ای از قوانین نباشد، مقدار به یک رشته خالی تنظیم می‌شود.
 
     > [!NOTE]
-    > If any of the rules passed in `text` are an external stylesheet imported with the {{cssxref("@import")}} rule, those rules will be removed, and a warning printed to the console.
+    > اگر هر یک از قوانین ارسال‌شده در `text` یک شیوه‌نامه خارجی واردشده با قانون {{cssxref("@import")}} باشد، آن قوانین حذف شده و یک هشدار در کنسول چاپ می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with the {{domxref("CSSStyleSheet")}}.
+یک {{jsxref("Promise")}} که با {{domxref("CSSStyleSheet")}} حل می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if one of these two conditions is met:
-    - The stylesheet was not created using the {{domxref("CSSStyleSheet.CSSStyleSheet()","CSSStyleSheet()")}} constructor.
-    - The stylesheet is flagged as unmodifiable.
+  - : اگر یکی از این دو شرط برقرار باشد پرتاب می‌شود:
+    - شیوه‌نامه با استفاده از سازنده {{domxref("CSSStyleSheet.CSSStyleSheet()","CSSStyleSheet()")}} ایجاد نشده باشد.
+    - شیوه‌نامه به‌عنوان غیرقابل تغییر علامت‌گذاری شده باشد.
 
-## Examples
+## مثال‌ها
 
-In the following example a new stylesheet is created and two CSS rules are added using `replace()`. The first rule is then printed to the console, which will return: `body { font-size: 1.4em; }`
+در مثال زیر، یک شیوه‌نامه جدید ایجاد می‌شود و دو قانون CSS با استفاده از `replace()` اضافه می‌شود. سپس اولین قانون در کنسول چاپ می‌شود که نتیجه آن خواهد بود: `body { font-size: 1.4em; }`
 
 ```js
 const stylesheet = new CSSStyleSheet();
@@ -60,15 +54,15 @@ stylesheet
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Constructable Stylesheets](https://web.dev/articles/constructable-stylesheets) (web.dev)
-- [Using the Shadow DOM](/en-US/docs/Web/API/Web_components/Using_shadow_DOM)
+- [شیوه‌نامه‌های قابل ساخت (Constructable Stylesheets)](https://web.dev/articles/constructable-stylesheets) (web.dev)
+- [استفاده از Shadow DOM](/en-US/docs/Web/API/Web_components/Using_shadow_DOM)
