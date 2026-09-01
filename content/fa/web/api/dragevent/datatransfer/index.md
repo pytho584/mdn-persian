@@ -1,11 +1,5 @@
 ---
 title: "DragEvent: dataTransfer property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/dataTransfer"
-status: "needs-translation"
----
-
----
-title: "DragEvent: dataTransfer property"
 short-title: dataTransfer
 slug: Web/API/DragEvent/dataTransfer
 page-type: web-api-instance-property
@@ -14,35 +8,33 @@ browser-compat: api.DragEvent.dataTransfer
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DragEvent.dataTransfer`** read-only property holds the drag
-operation's data (as a {{domxref("DataTransfer")}} object).
+خاصیت فقط‑خواندنی **`DragEvent.dataTransfer`** داده‌های عملیات کشیدن و رها کردن (به صورت یک شیء {{domxref("DataTransfer")}}) را در خود نگه می‌دارد.
 
-## Value
+## مقدار
 
-A {{domxref("DataTransfer")}} object which contains the {{domxref("DragEvent","drag event's data", "", 1)}}.
+یک شیء {{domxref("DataTransfer")}} که حاوی {{domxref("DragEvent","داده‌های رویداد کشیدن", "", 1)}} است.
 
-The property can be `null` when the event is created using the constructor. It is never `null` when dispatched by the browser.
+این خاصیت زمانی که رویداد با استفاده از سازنده ایجاد شود، می‌تواند `null` باشد. اما زمانی که رویداد توسط مرورگر ارسال می‌شود، هرگز `null` نیست.
 
-## Examples
+## مثال‌ها
 
-This example illustrates accessing the drag and drop data within the
-{{domxref("HTMLElement/dragend_event", "dragend")}} event handler.
+این مثال نحوه دسترسی به داده‌های کشیدن و رها کردن را درون کنترل‌کننده رویداد {{domxref("HTMLElement/dragend_event", "dragend")}} نشان می‌دهد.
 
 ```js
 function processData(d) {
-  // Process the data …
+  // پردازش داده‌ها …
 }
 
 dragTarget.addEventListener("dragend", (ev) => {
-  // Call the drag and drop data processor
+  // فراخوانی پردازشگر داده‌های کشیدن و رها کردن
   if (ev.dataTransfer !== null) processData(ev.dataTransfer);
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
