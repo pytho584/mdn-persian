@@ -1,11 +1,5 @@
 ---
 title: "FontData: blob() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontData/blob"
-status: "needs-translation"
----
-
----
-title: "FontData: blob() method"
 short-title: blob()
 slug: Web/API/FontData/blob
 page-type: web-api-instance-method
@@ -16,25 +10,25 @@ browser-compat: api.FontData.blob
 
 {{APIRef("Local Font Access API")}}{{SeeCompatTable}}
 
-The **`blob()`** method of the {{domxref("FontData")}} interface returns a {{jsxref("Promise")}} that fulfills with a {{domxref("Blob")}} containing the raw bytes of the underlying font file.
+**`blob()`** 方法属于 {{domxref("FontData")}} 接口，返回一个 {{jsxref("Promise")}}，该 Promise 会兑现为一个包含底层字体文件原始字节的 {{domxref("Blob")}}。
 
-## Syntax
+## 语法
 
 ```js-nolint
 blob()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A {{jsxref("Promise")}} that fulfills with a {{domxref("Blob")}} containing the raw bytes of the underlying font file.
+一个 {{jsxref("Promise")}}，兑现为一个包含底层字体文件原始字节的 {{domxref("Blob")}}。
 
-## Examples
+## 示例
 
-The `blob()` method provides access to low-level [SFNT](https://en.wikipedia.org/wiki/SFNT) data — this is a font file format that can contain other font formats, such as PostScript, TrueType, OpenType, or Web Open Font Format (WOFF).
+`blob()` 方法提供对底层 [SFNT](https://en.wikipedia.org/wiki/SFNT) 数据的访问——这是一种字体文件格式，可以包含其他字体格式，如 PostScript、TrueType、OpenType 或 Web Open Font Format (WOFF)。
 
 ```js
 async function computeOutlineFormat() {
@@ -70,15 +64,15 @@ async function computeOutlineFormat() {
 }
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Use advanced typography with local fonts](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
+- [使用本地字体进行高级排版](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
 - {{cssxref("@font-face")}}
