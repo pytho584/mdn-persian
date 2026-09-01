@@ -1,11 +1,5 @@
 ---
 title: "DataCue: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataCue/value"
-status: "needs-translation"
----
-
----
-title: "DataCue: value property"
 short-title: value
 slug: Web/API/DataCue/value
 page-type: web-api-instance-property
@@ -16,19 +10,19 @@ browser-compat: api.DataCue.value
 
 {{APIRef("WebVTT")}}{{SeeCompatTable}}
 
-The **`value`** property of the {{domxref("DataCue")}} interface represents the data payload of the cue. Unlike {{domxref("VTTCue")}}, which carries text content, `DataCue` can hold any data type — such as a JavaScript object, a string, or an {{jsxref("ArrayBuffer")}} — making it suitable for timed metadata use cases where structured data needs to be synchronized with media playback.
+ویژگی **`value`** از رابط {{domxref("DataCue")}} دادهٔ اصلی (payload) این نشانه (cue) را نشان می‌دهد. برخلاف {{domxref("VTTCue")}} که محتوای متنی را حمل می‌کند، `DataCue` می‌تواند هر نوع داده‌ای را نگه دارد — مانند یک شیء جاوااسکریپتی، یک رشته یا یک {{jsxref("ArrayBuffer")}} — و این آن را برای موارد استفادهٔ فرادادهٔ زمان‌بندی‌شده (timed metadata) مناسب می‌سازد، جایی که داده‌های ساختار یافته باید با پخش رسانه همگام‌سازی شوند.
 
-The property is read-write for application-created cues, allowing the data to be updated after construction. For cues generated automatically by the user agent from in-band timed metadata (e.g., ID3 tags in an HTTP Live Streaming source), the value is set by the user agent and reflects the metadata payload.
+این ویژگی برای نشانه‌هایی که توسط برنامه ساخته می‌شوند خواندنی-نوشتنی است و امکان به‌روزرسانی داده‌ها را پس از ساخت فراهم می‌کند. برای نشانه‌هایی که به‌طور خودکار توسط عامل کاربر (user agent) از فرادادهٔ زمان‌بندی‌شدهٔ درون‌باند (مثل برچسب‌های ID3 در منبع HTTP Live Streaming) تولید می‌شوند، مقدار توسط عامل کاربر تنظیم می‌شود و محتوای فراداده را بازتاب می‌دهد.
 
-The {{domxref("DataCue.type", "type")}} property can be used alongside `value` to identify the format or schema of the data.
+ویژگی {{domxref("DataCue.type", "type")}} می‌تواند در کنار `value` برای شناسایی قالب یا طرح‌واره (schema) داده استفاده شود.
 
-## Value
+## مقدار
 
-Any type. The value is typically a string, a plain object, or an {{jsxref("ArrayBuffer")}}, depending on the source of the cue and the kind of timed metadata it represents.
+هر نوعی. مقدار معمولاً یک رشته، یک شیء ساده یا یک {{jsxref("ArrayBuffer")}} است، بسته به منبع نشانه و نوع فرادادهٔ زمان‌بندی‌شده‌ای که آن را نمایش می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Reading the value of a DataCue
+### خواندن مقدار ویژگی value در یک DataCue
 
 ```html
 <video controls src="video.mp4"></video>
@@ -51,9 +45,9 @@ console.log(cue.value);
 // { latitude: 51.5043, longitude: -0.0762 }
 ```
 
-### Reacting to cue data during playback
+### واکنش به داده‌های نشانه هنگام پخش
 
-This example adds several `DataCue` objects to a metadata track, then reads each cue's `value` as it becomes active during playback.
+این مثال چند شیء `DataCue` را به یک تراک فراداده (metadata track) اضافه می‌کند و سپس مقدار `value` هر نشانه را زمانی که در حین پخش فعال می‌شود می‌خواند.
 
 ```html
 <video controls src="video.mp4"></video>
@@ -81,9 +75,9 @@ track.addCue(cue1);
 track.addCue(cue2);
 ```
 
-### Updating the value of a DataCue
+### به‌روزرسانی مقدار یک DataCue
 
-The `value` property is writable, so it can be changed after the cue is created.
+ویژگی `value` قابل نوشتن است، بنابراین می‌توان آن را پس از ایجاد نشانه تغییر داد.
 
 ```js
 const cue = new DataCue(0, 5, "initial data");
@@ -92,15 +86,15 @@ console.log(cue.value);
 // { updated: true, score: 42 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DataCue")}}
 - {{domxref("DataCue.type")}}
