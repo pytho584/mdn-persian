@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: loadeddata event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loadeddata_event"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: loadeddata event"
 short-title: loadeddata
 slug: Web/API/HTMLMediaElement/loadeddata_event
 page-type: web-api-event
@@ -14,14 +8,14 @@ browser-compat: api.HTMLMediaElement.loadeddata_event
 
 {{APIRef("HTMLMediaElement")}}
 
-The **`loadeddata`** event is fired when the frame at the current playback position of the media has finished loading; often the first frame.
+رویداد **`loadeddata`** زمانی رخ می‌دهد که فریم مربوط به موقعیت پخش جاری رسانه بارگیری کامل شده باشد؛ معمولاً اولین فریم.
 
 > [!NOTE]
-> This event will not fire in mobile/tablet devices if data-saver is on in browser settings.
+> این رویداد در دستگاه‌های همراه/تبلت در صورتی که گزینه ذخیره‌سازی داده در تنظیمات مرورگر فعال باشد، رخ نخواهد داد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم نمایید.
 
 ```js-nolint
 addEventListener("loadeddata", (event) => { })
@@ -29,15 +23,15 @@ addEventListener("loadeddata", (event) => { })
 onloadeddata = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-These examples add an event listener for the HTMLMediaElement's `loadeddata` event, then post a message when that event handler has reacted to the event firing.
+این مثال‌ها یک شنونده رویداد برای رویداد `loadeddata` عنصر HTMLMediaElement اضافه می‌کنند و سپس هنگامی که کنترل‌کننده رویداد به وقوع رویداد واکنش نشان داد، یک پیام ارسال می‌کنند.
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const video = document.querySelector("video");
@@ -50,7 +44,7 @@ video.addEventListener("loadeddata", (event) => {
 });
 ```
 
-Using the `onloadeddata` event handler property:
+استفاده از ویژگی کنترل‌کننده رویداد `onloadeddata`:
 
 ```js
 const video = document.querySelector("video");
@@ -63,35 +57,35 @@ video.onloadeddata = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## Related Events
+## رویدادهای مرتبط
 
-- The HTMLMediaElement {{domxref("HTMLMediaElement.playing_event", 'playing')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ended_event", 'ended')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.canplaythrough_event", 'canplaythrough')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.timeupdate_event", 'timeupdate')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.play_event", 'play')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.pause_event", 'pause')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.stalled_event", 'stalled')}} event
+- رویداد {{domxref("HTMLMediaElement.playing_event", 'playing')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.ended_event", 'ended')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.canplaythrough_event", 'canplaythrough')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.timeupdate_event", 'timeupdate')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.play_event", 'play')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.pause_event", 'pause')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} از HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.stalled_event", 'stalled')}} از HTMLMediaElement
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAudioElement")}}
 - {{domxref("HTMLVideoElement")}}
