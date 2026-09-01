@@ -1,11 +1,5 @@
 ---
 title: "CustomEvent: detail property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail"
-status: "needs-translation"
----
-
----
-title: "CustomEvent: detail property"
 short-title: detail
 slug: Web/API/CustomEvent/detail
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.CustomEvent.detail
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The read-only **`detail`** property of the {{domxref("CustomEvent")}} interface returns any data passed when initializing the event.
+خاصیتِ **`detail`** (فقط‌خواندنی) در رابط {{domxref("CustomEvent")}} هر داده‌ای را که هنگام مقداردهی رویداد ارسال شده باشد، برمی‌گرداند.
 
-## Value
+## مقدار
 
-Whatever data the event was initialized with.
+هر داده‌ای که رویداد با آن مقداردهی شده است.
 
-## Example
+## مثال
 
 ```js
-// create custom events
+// ایجاد رویدادهای سفارشی
 const catFound = new CustomEvent("animalfound", {
   detail: {
     name: "cat",
@@ -35,26 +29,26 @@ const dogFound = new CustomEvent("animalfound", {
   },
 });
 
-const element = document.createElement("div"); // create a <div> element
+const element = document.createElement("div"); // ایجاد یک عنصر <div>
 
-// add an appropriate event listener
+// افزودن شنونده‌ی رویداد مناسب
 element.addEventListener("animalfound", (e) => console.log(e.detail.name));
 
-// dispatch the events
+// ارسال رویدادها
 element.dispatchEvent(catFound);
 element.dispatchEvent(dogFound);
 
-// "cat" and "dog" logged in the console
+// «cat» و «dog» در کنسول ثبت می‌شوند
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("CustomEvent")}}
