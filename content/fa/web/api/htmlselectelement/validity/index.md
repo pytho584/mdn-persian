@@ -1,28 +1,18 @@
 ---
 title: "HTMLSelectElement: validity property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/validity"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: validity property"
-short-title: validity
-slug: Web/API/HTMLSelectElement/validity
-page-type: web-api-instance-property
-browser-compat: api.HTMLSelectElement.validity
 ---
 
 {{APIRef("HTML DOM")}}
 
-The **`validity`** read-only property of the {{domxref("HTMLSelectElement")}} interface returns a {{domxref("ValidityState")}} object that represents the validity states this element is in.
+خاصیت فقط خواندنی **`validity`** (به معنی اعتبار) از رابط {{domxref("HTMLSelectElement")}} یک شیء {{domxref("ValidityState")}} بازمی‌گرداند که وضعیت‌های اعتبار این عنصر را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("ValidityState")}} object.
+یک شیء {{domxref("ValidityState")}}.
 
-## Example
+## مثال
 
-The following example gets the validity state of a select element and processes it if it is not valid:
+مثال زیر وضعیت اعتبار یک عنصر select را دریافت می‌کند و در صورت معتبر نبودن آن را پردازش می‌کند:
 
 ```js
 const select = document.getElementById("mySelect");
@@ -32,18 +22,18 @@ if (!validityState.valid) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLSelectElement.checkValidity()")}}
 - {{HTMLElement("select")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation)
