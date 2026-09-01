@@ -1,9 +1,4 @@
----
-title: "CSSSupportsRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSSupportsRule"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: CSSSupportsRule
 slug: Web/API/CSSSupportsRule
@@ -13,22 +8,21 @@ browser-compat: api.CSSSupportsRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSSupportsRule`** interface represents a single CSS {{cssxref("@supports")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+رابطهٔ **`CSSSupportsRule`** نمایانگر یک قانون‌های فرعی {{cssxref("@supports")}} در CSS است (یک [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules)).
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestors {{domxref("CSSConditionRule")}}, {{domxref("CSSGroupingRule")}}, and {{domxref("CSSRule")}}._
+_ویژگی‌ها را از اجداد خود {{domxref("CSSConditionRule")}}، {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its ancestors {{domxref("CSSConditionRule")}}, {{domxref("CSSGroupingRule")}}, and {{domxref("CSSRule")}}._
+_روش‌ها را از اجداد خود {{domxref("CSSConditionRule")}}، {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-The CSS includes a CSS feature query using the {{cssxref("@supports")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules), containing one style rule. This will be the first CSSRule returned by `document.styleSheets[0].cssRules`.
-`myRules[0]` therefore returns a `CSSSupportsRule` object.
+CSS شامل یک پرس‌وجوی ویژگی (feature query) با استفاده از قانون فرعی {{cssxref("@supports")}} است که یک قانون سبک را در خود دارد. این اولین `CSSRule` خواهد بود که توسط `document.styleSheets[0].cssRules` بازگردانده می‌شود. بنابراین `myRules[0]` یک شیء `CSSSupportsRule` را برمی‌گرداند.
 
 ```css
 @supports (display: grid) {
@@ -40,17 +34,18 @@ The CSS includes a CSS feature query using the {{cssxref("@supports")}} [at-rule
 
 ```js
 let myRules = document.styleSheets[0].cssRules;
-console.log(myRules[0]); // a CSSSupportsRule representing the feature query.
+console.log(myRules[0]); // یک CSSSupportsRule که نشان‌دهندهٔ پرس‌وجوی ویژگی است.
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@supports")}}
+```
