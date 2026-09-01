@@ -1,11 +1,5 @@
 ---
 title: "Element: after() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/after"
-status: "needs-translation"
----
-
----
-title: "Element: after() method"
 short-title: after()
 slug: Web/API/Element/after
 page-type: web-api-instance-method
@@ -14,12 +8,9 @@ browser-compat: api.Element.after
 
 {{APIRef("DOM")}}
 
-The **`Element.after()`** method inserts a set of
-{{domxref("Node")}} objects or strings in the children list of the
-`Element`'s parent, just after the `Element`.
-Strings are inserted as equivalent {{domxref("Text")}} nodes.
+متد **`Element.after()`** مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را در فهرست فرزندان والدِ `Element` درست بعد از خودِ `Element` درج می‌کند. رشته‌ها به صورت گره‌های متنی ({{domxref("Text")}}) معادل درج می‌شوند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 after(node1)
@@ -27,23 +18,23 @@ after(node1, node2)
 after(node1, node2, /* …, */ nodeN)
 ```
 
-### Parameters
+### پارامترها
 
-- `node1`, …, `nodeN`
-  - : A set of {{domxref("Node")}} objects or strings to insert.
+- `node1`، …, `nodeN`
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها برای درج.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the node cannot be inserted at the specified point in the hierarchy.
+  - : زمانی پرتاب می‌شود که گره در نقطه مشخص‌شده در سلسله‌مراتب قابل درج نباشد.
 
-## Examples
+## مثال‌ها
 
-### Inserting an element
+### درج یک عنصر
 
 ```js
 let container = document.createElement("div");
@@ -57,7 +48,7 @@ console.log(container.outerHTML);
 // "<div><p></p><span></span></div>"
 ```
 
-### Inserting text
+### درج متن
 
 ```js
 let container = document.createElement("div");
@@ -70,7 +61,7 @@ console.log(container.outerHTML);
 // "<div><p></p>Text</div>"
 ```
 
-### Inserting an element and text
+### درج یک عنصر و متن
 
 ```js
 let container = document.createElement("div");
@@ -84,15 +75,15 @@ console.log(container.outerHTML);
 // "<div><p></p><span></span>Text</div>"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.before()")}}
 - {{domxref("Element.append()")}}
