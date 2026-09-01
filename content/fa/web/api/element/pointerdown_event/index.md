@@ -1,11 +1,5 @@
 ---
 title: "Element: pointerdown event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerdown_event"
-status: "needs-translation"
----
-
----
-title: "Element: pointerdown event"
 short-title: pointerdown
 slug: Web/API/Element/pointerdown_event
 page-type: web-api-event
@@ -14,16 +8,16 @@ browser-compat: api.Element.pointerdown_event
 
 {{APIRef("Pointer Events")}}
 
-The `pointerdown` event is fired when a pointer becomes active. For mouse, it is fired when the device transitions from no buttons pressed to at least one button pressed. For touch, it is fired when physical contact is made with the digitizer. For pen, it is fired when the stylus makes physical contact with the digitizer.
+رویداد `pointerdown` زمانی پرتاب می‌شود که یک اشاره‌گر (pointer) فعال شود. برای ماوس، زمانی پرتاب می‌شود که دستگاه از حالتی که هیچ دکمه‌ای فشرده نیست به حالتی که حداقل یک دکمه فشرده شده است تغییر وضعیت دهد. برای لمس، زمانی پرتاب می‌شود که تماس فیزیکی با دیجیتایزر برقرار شود. برای قلم، زمانی پرتاب می‌شود که stylus با دیجیتایزر تماس فیزیکی برقرار کند.
 
-This behavior is different from {{domxref("Element/mousedown_event", "mousedown")}} events. When using a physical mouse, `mousedown` events fire whenever any button on a mouse is pressed down. `pointerdown` events fire only upon the first button press; subsequent button presses don't fire `pointerdown` events.
+این رفتار با رویدادهای {{domxref("Element/mousedown_event", "mousedown")}} متفاوت است. هنگام استفاده از ماوس فیزیکی، رویدادهای `mousedown` هر بار که هر دکمه‌ای روی ماوس فشرده شود پرتاب می‌شوند. رویدادهای `pointerdown` فقط با فشردن اولین دکمه پرتاب می‌شوند؛ فشردن دکمه‌های بعدی رویدادهای `pointerdown` را پرتاب نمی‌کنند.
 
 > [!NOTE]
-> For touchscreen browsers that allow [direct manipulation](https://w3c.github.io/pointerevents/#dfn-direct-manipulation), a `pointerdown` event triggers [implicit pointer capture](https://w3c.github.io/pointerevents/#dfn-implicit-pointer-capture), which causes the target to capture all subsequent pointer events as if they were occurring over the capturing target. Accordingly, `pointerover`, `pointerenter`, `pointerleave`, and `pointerout` **will not fire** as long as this capture is set. The capture can be released manually by calling {{domxref('element.releasePointerCapture')}} on the target element, or it will be implicitly released after a `pointerup` or `pointercancel` event.
+> برای مرورگرهای لمسی که [دستکاری مستقیم](https://w3c.github.io/pointerevents/#dfn-direct-manipulation) را مجاز می‌دانند، یک رویداد `pointerdown` [تسخیر ضمنی اشاره‌گر](https://w3c.github.io/pointerevents/#dfn-implicit-pointer-capture) را فعال می‌کند، که باعث می‌شود هدف، همه رویدادهای اشاره‌گر بعدی را طوری ضبط کند که گویی در بالای هدف تسخیرکننده رخ می‌دهند. بنابراین، تا زمانی که این تسخیر فعال باشد، `pointerover`، `pointerenter`، `pointerleave` و `pointerout` **پرتاب نخواهند شد**. این تسخیر می‌تواند به صورت دستی با فراخوانی {{domxref('element.releasePointerCapture')}} روی عنصر هدف آزاد شود، یا به صورت ضمنی پس از یک رویداد `pointerup` یا `pointercancel` آزاد خواهد شد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("pointerdown", (event) => { })
@@ -31,15 +25,15 @@ addEventListener("pointerdown", (event) => { })
 onpointerdown = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PointerEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PointerEvent")}}. از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("PointerEvent")}}
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const para = document.querySelector("p");
@@ -49,7 +43,7 @@ para.addEventListener("pointerdown", (event) => {
 });
 ```
 
-Using the `onpointerdown` event handler property:
+استفاده از ویژگی کنترل‌کننده رویداد `onpointerdown`:
 
 ```js
 const para = document.querySelector("p");
@@ -59,17 +53,17 @@ para.onpointerdown = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events
+- رویدادهای مرتبط
   - {{domxref('Element/gotpointercapture_event', 'gotpointercapture')}}
   - {{domxref('Element/lostpointercapture_event', 'lostpointercapture')}}
   - {{domxref('Element/pointerover_event', 'pointerover')}}
