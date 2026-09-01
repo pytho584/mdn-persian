@@ -1,11 +1,5 @@
 ---
 title: "HighlightRegistry: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry/entries"
-status: "needs-translation"
----
-
----
-title: "HighlightRegistry: entries() method"
 short-title: entries()
 slug: Web/API/HighlightRegistry/entries
 page-type: web-api-instance-method
@@ -15,27 +9,27 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`entries()`** method of the {{domxref("HighlightRegistry")}} interface returns a new [Iterator](/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators) object that contains the `[name, highlight]` pairs for each element in the `HighlightRegistry` object, in insertion order.
+متد **`entries()`** در رابط {{domxref("HighlightRegistry")}} یک شیء [Iterator](/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators) جدید برمی‌گرداند که شامل جفت‌های `[name, highlight]` برای هر عنصر در شیء `HighlightRegistry` به ترتیب درج است.
 
-`HighlightRegistry` is a {{jsxref("Map")}}-like object, so this is similar to using {{jsxref("Map.entries()")}}.
+`HighlightRegistry` یک شیء شبیه به {{jsxref("Map")}} است، بنابراین این کار مشابه استفاده از {{jsxref("Map.entries()")}} است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 entries()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new iterator object that contains an array of `[name, highlight]` for each `Highlight` object in the `HighlightRegistry`, in insertion order.
+یک شیء iterator جدید که شامل آرایه‌ای از `[name, highlight]` برای هر شیء `Highlight` در `HighlightRegistry` به ترتیب درج است.
 
-## Examples
+## مثال‌ها
 
-The code snippet below creates and registers two new highlights, and then logs the highlights and their names by using the iterator returned by the `entries()` method:
+قطعه کد زیر دو هایلایت جدید ایجاد و ثبت می‌کند و سپس با استفاده از iterator بازگشتی از متد `entries()`، هایلایت‌ها و نام‌های آن‌ها را ثبت (log) می‌کند:
 
 ```js
 const myHighlight1 = new Highlight();
@@ -50,7 +44,7 @@ console.log(iter.next().value); // ['first-highlight', Highlight]
 console.log(iter.next().value); // ['second-highlight', Highlight]
 ```
 
-The following code example shows how to iterate over the highlights in the registry by using a [`for...of`](/en-US/docs/Web/JavaScript/Reference/Statements/for...of) loop:
+مثال کد زیر نحوه پیمایش هایلایت‌ها در رجیستری را با استفاده از حلقه [`for...of`](/en-US/docs/Web/JavaScript/Reference/Statements/for...of) نشان می‌دهد:
 
 ```js
 const myHighlight1 = new Highlight();
@@ -64,15 +58,15 @@ for (const [name, highlight] of CSS.highlights.entries()) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
 - [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
