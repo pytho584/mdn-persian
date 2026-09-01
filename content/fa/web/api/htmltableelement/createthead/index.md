@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableElement: createTHead() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/createTHead"
-status: "needs-translation"
 ---
 
 ---
@@ -14,42 +12,36 @@ browser-compat: api.HTMLTableElement.createTHead
 
 {{APIRef("HTML DOM")}}
 
-The **`createTHead()`** method of
-{{domxref("HTMLTableElement")}} objects returns the {{HTMLElement("thead")}} element
-associated with a given {{HtmlElement("table")}}. If no header exists in the table, this
-method creates it, and then returns it.
+متد **`createTHead()`** از اشیاء {{domxref("HTMLTableElement")}}، عنصر {{HTMLElement("thead")}} مرتبط با یک {{HtmlElement("table")}} مشخص را بازمی‌گرداند. اگر هیچ سربرگی در جدول وجود نداشته باشد، این متد آن را ایجاد کرده و سپس بازمی‌گرداند.
 
 > [!NOTE]
-> If no header exists, `createTHead()` inserts a new
-> header directly into the table. The header does not need to be added separately as
-> would be the case if {{domxref("Document.createElement()")}} had been used to create
-> the new `<thead>` element.
+> اگر هیچ سربرگی وجود نداشته باشد، `createTHead()` یک سربرگ جدید را مستقیماً داخل جدول درج می‌کند. برخلاف حالتی که از {{domxref("Document.createElement()")}} برای ایجاد عنصر `<thead>` جدید استفاده می‌شود، در اینجا نیازی به افزودن جداگانهٔ سربرگ نیست.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 createTHead()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
 {{domxref("HTMLTableSectionElement")}}
 
-## Examples
+## مثال‌ها
 
 ```js
 let myHead = myTable.createTHead();
 // Now this should be true: myHead === myTable.tHead
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
