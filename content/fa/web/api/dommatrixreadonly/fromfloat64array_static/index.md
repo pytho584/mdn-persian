@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: fromFloat64Array() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/fromFloat64Array_static"
-status: "needs-translation"
----
-
----
-title: "DOMMatrixReadOnly: fromFloat64Array() static method"
 short-title: fromFloat64Array()
 slug: Web/API/DOMMatrixReadOnly/fromFloat64Array_static
 page-type: web-api-static-method
@@ -14,35 +8,35 @@ browser-compat: api.DOMMatrixReadOnly.fromFloat64Array_static
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`fromFloat64Array()`** static method of the {{domxref("DOMMatrixReadOnly")}} interface creates a new {{domxref("DOMMatrixReadOnly")}} object given an array of double-precision (64-bit) floating-point values.
+متد ایستای **`fromFloat64Array()`** در رابط {{domxref("DOMMatrixReadOnly")}} یک شیء جدید {{domxref("DOMMatrixReadOnly")}} از یک آرایه از اعداد اعشاری با دقت دوگانه (۶۴ بیتی) می‌سازد.
 
-If the array has 6 values, the result is a 2D matrix; if the array has 16 values, the result is a 3D matrix. Otherwise, a {{jsxref("TypeError")}} exception is thrown.
+اگر آرایه ۶ مقدار داشته باشد، نتیجه یک ماتریس دوبعدی است؛ اگر آرایه ۱۶ مقدار داشته باشد، نتیجه یک ماتریس سه‌بعدی است. در غیر این صورت، استثنای {{jsxref("TypeError")}} پرتاب می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 DOMMatrixReadOnly.fromFloat64Array(array)
 ```
 
-### Parameters
+### پارامترها
 
 - `array`
-  - : A {{jsxref("Float64Array")}} with 6 or 16 elements in column-major order.
+  - : یک {{jsxref("Float64Array")}} با ۶ یا ۱۶ عنصر به ترتیب ستون‌محور.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("DOMMatrixReadOnly")}} object.
+یک شیء {{domxref("DOMMatrixReadOnly")}}.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the length of the `array` parameter is not 6 or 16.
+  - : اگر طول پارامتر `array` برابر ۶ یا ۱۶ نباشد پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Creating a 2D matrix from a Float64Array
+### ساخت ماتریس دوبعدی از Float64Array
 
-This example creates a 2D matrix from a 6-element `Float64Array`.
+این مثال یک ماتریس دوبعدی از یک `Float64Array` با ۶ عنصر می‌سازد.
 
 ```js
 const float64Array = new Float64Array([1, 0, 0, 1, 10, 20]);
@@ -58,9 +52,9 @@ console.log(matrix2D.e, matrix2D.f);
 // Output: 10 20
 ```
 
-### Creating a 3D matrix from a Float64Array
+### ساخت ماتریس سه‌بعدی از Float64Array
 
-This example creates a 3D matrix from a 16-element `Float64Array`.
+این مثال یک ماتریس سه‌بعدی از یک `Float64Array` با ۱۶ عنصر می‌سازد.
 
 ```js
 const float64Array = new Float64Array([
@@ -75,15 +69,15 @@ console.log(matrix3D.m41, matrix3D.m42, matrix3D.m43);
 // Output: 10 20 30
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrixReadOnly/DOMMatrixReadOnly", "DOMMatrixReadOnly()")}}
 - {{domxref("DOMMatrixReadOnly.toFloat32Array()")}}
