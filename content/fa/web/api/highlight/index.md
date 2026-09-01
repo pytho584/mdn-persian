@@ -1,11 +1,5 @@
 ---
 title: "Highlight"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Highlight"
-status: "needs-translation"
----
-
----
-title: Highlight
 slug: Web/API/Highlight
 page-type: web-api-interface
 browser-compat: api.Highlight
@@ -13,54 +7,54 @@ browser-compat: api.Highlight
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`Highlight`** interface of the [CSS Custom Highlight API](/en-US/docs/Web/API/CSS_Custom_Highlight_API) is used to represent a collection of {{domxref("AbstractRange")}} instances to be styled using the API.
+رابط **`Highlight`** از [CSS Custom Highlight API](/en-US/docs/Web/API/CSS_Custom_Highlight_API) برای نمایش مجموعه‌ای از نمونه‌های {{domxref("AbstractRange")}} استفاده می‌شود که با استفاده از این API سبک‌دهی می‌شوند.
 
-To style arbitrary ranges in a page, instantiate a new `Highlight` object, add one or more `AbstractRange` objects to it, and register it using the {{domxref("HighlightRegistry")}}.
+برای سبک‌دهی به بازه‌های دلخواه در یک صفحه، یک شیء `Highlight` جدید ایجاد کنید، یک یا چند شیء `AbstractRange` به آن اضافه کنید، و آن را با استفاده از {{domxref("HighlightRegistry")}} ثبت کنید.
 
-A `Highlight` instance is a [`Set`-like object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#set-like_browser_apis) that can hold one or more `AbstractRange` objects.
+یک نمونه `Highlight` یک [شیء شبیه به `Set`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#set-like_browser_apis) است که می‌تواند یک یا چند شیء `AbstractRange` را نگه دارد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("Highlight.Highlight()", "Highlight()")}}
-  - : Returns a newly created `Highlight` object.
+  - : یک شیء `Highlight` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_The `Highlight` interface doesn't inherit any properties._
+_رابط `Highlight` هیچ ویژگی‌ای را به ارث نمی‌برد._
 
 - {{domxref("Highlight.priority")}}
-  - : A number that indicates the priority of this `Highlight` object. When multiple highlights overlap, the browser uses this priority to decide how to style the overlapping parts.
+  - : یک عدد که اولویت این شیء `Highlight` را نشان می‌دهد. هنگامی که چندین هایلایت با هم همپوشانی دارند، مرورگر از این اولویت برای تصمیم‌گیری در مورد نحوه سبک‌دهی به بخش‌های همپوشانی استفاده می‌کند.
 - {{domxref("Highlight.size")}} {{ReadOnlyInline}}
-  - : Returns the number of ranges in the `Highlight` object.
+  - : تعداد بازه‌های موجود در شیء `Highlight` را برمی‌گرداند.
 - {{domxref("Highlight.type")}}
-  - : An enumerated {{jsxref("String")}} used to specify the semantic meaning of the highlight. This allows assistive technologies to include this meaning when exposing the highlight to users.
+  - : یک {{jsxref("String")}} شمارشی که برای مشخص کردن معنای معنایی هایلایت استفاده می‌شود. این به فناوری‌های کمکی امکان می‌دهد تا این معنا را هنگام نمایش هایلایت به کاربران لحاظ کنند.
 
-## Instance methods
+## روش‌های نمونه
 
-_The `Highlight` interface doesn't inherit any methods_.
+_رابط `Highlight` هیچ روشی را به ارث نمی‌برد._
 
 - {{domxref("Highlight.add()")}}
-  - : Add a new range to this highlight.
+  - : یک بازه جدید به این هایلایت اضافه می‌کند.
 - {{domxref("Highlight.clear()")}}
-  - : Remove all ranges from this highlight.
+  - : تمام بازه‌ها را از این هایلایت حذف می‌کند.
 - {{domxref("Highlight.delete()")}}
-  - : Remove a range from this highlight.
+  - : یک بازه را از این هایلایت حذف می‌کند.
 - {{domxref("Highlight.entries()")}}
-  - : Returns a new iterator object that contains each range in the highlight object, in insertion order.
+  - : یک شیء پیمایش‌گر جدید برمی‌گرداند که شامل هر بازه در شیء هایلایت، به ترتیب درج است.
 - {{domxref("Highlight.forEach()")}}
-  - : Calls the given callback once for each range in the highlight object, in insertion order.
+  - : تابع callback داده شده را یک بار برای هر بازه در شیء هایلایت، به ترتیب درج، فراخوانی می‌کند.
 - {{domxref("Highlight.has()")}}
-  - : Returns a boolean asserting whether a range is present the highlight object or not.
+  - : یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا یک بازه در شیء هایلایت وجود دارد یا خیر.
 - {{domxref("Highlight.keys()")}}
-  - : An alias for {{domxref("Highlight.values()")}}.
+  - : یک نام مستعار برای {{domxref("Highlight.values()")}}.
 - {{domxref("Highlight.values()")}}
-  - : Returns a new iterator object that yields the ranges in the highlight object in insertion order.
+  - : یک شیء پیمایش‌گر جدید برمی‌گرداند که بازه‌های موجود در شیء هایلایت را به ترتیب درج تولید می‌کند.
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates how specific parts of a block of text can be highlighted.
+مثال زیر نحوه برجسته‌سازی بخش‌های خاصی از یک بلوک متنی را نشان می‌دهد.
 
 ```html-nolint
 <p class="foo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
@@ -68,7 +62,7 @@ The following example demonstrates how specific parts of a block of text can be 
   molestiae dolores vitae! Quo ex explicabo tempore? Tenetur.</p>
 ```
 
-This JavaScript code creates [ranges](/en-US/docs/Web/API/Range), instantiates a new `Highlight` object for them, and [registers it](/en-US/docs/Web/API/HighlightRegistry/set) to be styled on the page:
+این کد جاوااسکریپت [بازه‌هایی](/en-US/docs/Web/API/Range) ایجاد می‌کند، یک شیء `Highlight` جدید برای آن‌ها نمونه‌سازی می‌کند، و آن را برای سبک‌دهی در صفحه [ثبت می‌کند](/en-US/docs/Web/API/HighlightRegistry/set):
 
 ```js
 const parentNode = document.querySelector(".foo");
@@ -90,7 +84,7 @@ const highlight = new Highlight(range1, range2);
 CSS.highlights.set("my-custom-highlight", highlight);
 ```
 
-The following CSS code snippet demonstrates how to style the registered custom highlight by using the {{cssxref("::highlight")}} pseudo-element:
+قطعه کد CSS زیر نحوه سبک‌دهی به هایلایت سفارشی ثبت شده را با استفاده از شبه‌عنصر {{cssxref("::highlight")}} نشان می‌دهد:
 
 ```css
 ::highlight(my-custom-highlight) {
@@ -98,20 +92,20 @@ The following CSS code snippet demonstrates how to style the registered custom h
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("example", "100%", '100')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
-- [CSS custom highlight API](/en-US/docs/Web/CSS/Guides/Custom_highlight_API) module
-- [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
+- {{domxref("css_custom_highlight_api", "CSS Custom Highlight API", "", "nocode")}}
+- ماژول [CSS custom highlight API](/en-US/docs/Web/CSS/Guides/Custom_highlight_API)
+- [نگاهی اولیه به CSS Custom Highlight API: آینده برجسته‌سازی بازه‌های متنی در وب](https://css-tricks.com/css-custom-highlight-api-early-look/)
