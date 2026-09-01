@@ -1,7 +1,5 @@
 ---
 title: "ExtendableCookieChangeEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ExtendableCookieChangeEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,39 +11,37 @@ browser-compat: api.ExtendableCookieChangeEvent
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}{{AvailableInWorkers("service")}}
 
-The **`ExtendableCookieChangeEvent`** interface of the {{domxref("Cookie Store API", "", "", "nocode")}} is the event type passed to {{domxref("ServiceWorkerGlobalScope/cookiechange_event", "cookiechange")}} event fired at the {{domxref("ServiceWorkerGlobalScope")}} when any cookie changes occur which match the service worker's cookie change subscription list. A cookie change event consists of a cookie and a type (either "changed" or "deleted").
+رابط **`ExtendableCookieChangeEvent`** از {{domxref("Cookie Store API", "", "", "nocode")}} نوع رویدادی است که به رویداد {{domxref("ServiceWorkerGlobalScope/cookiechange_event", "cookiechange")}} ارسال می‌شود. این رویداد در {{domxref("ServiceWorkerGlobalScope")}} هنگام رخ دادن هر تغییر کوکی که با فهرست اشتراک تغییرات کوکیِ service worker (سرویس‌کارگر) مطابقت داشته باشد، ایجاد می‌شود. یک رویداد تغییر کوکی شامل یک کوکی و یک نوع (یا "changed" یا "deleted") است.
 
-Cookie changes that cause the `ExtendableCookieChangeEvent` to be dispatched are:
+تغییرات کوکی که موجب ارسال `ExtendableCookieChangeEvent` می‌شوند عبارتند از:
 
-- A cookie is newly created and not immediately removed, or if a cookies is replaced.
-  In this case `type` is "changed".
-- A cookie is newly created and immediately removed.
-  In this case `type` is "deleted"
-- A cookie is removed. In this case `type` is "deleted".
+- یک کوکی تازه ایجاد شود و بلافاصله حذف نشود، یا اگر یک کوکی جایگزین شود. در این حالت `type` برابر با "changed" است.
+- یک کوکی تازه ایجاد شود و بلافاصله حذف شود. در این حالت `type` برابر با "deleted" است.
+- یک کوکی حذف شود. در این حالت `type` برابر با "deleted" است.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("ExtendableCookieChangeEvent.ExtendableCookieChangeEvent", "ExtendableCookieChangeEvent()")}}
-  - : Creates a new `ExtendableCookieChangeEvent`.
+  - : یک `ExtendableCookieChangeEvent` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from {{domxref("ExtendableEvent")}}._
+_این رابط همچنین ویژگی‌هایی را از {{domxref("ExtendableEvent")}} به ارث می‌برد._
 
 - {{domxref("ExtendableCookieChangeEvent.changed")}} {{ReadOnlyInline}}
-  - : Returns an array containing the changed cookies.
+  - : یک آرایه شامل کوکی‌های تغییر یافته را بازمی‌گرداند.
 - {{domxref("ExtendableCookieChangeEvent.deleted")}} {{ReadOnlyInline}}
-  - : Returns an array containing the deleted cookies.
+  - : یک آرایه شامل کوکی‌های حذف‌شده را بازمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
-_This interface also inherits methods from {{domxref("ExtendableEvent")}}._
+_این رابط همچنین متدهایی را از {{domxref("ExtendableEvent")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-In the below example, we use {{domxref("CookieStoreManager.getSubscriptions()")}} to get a list of existing subscriptions. (In service workers, a subscription is required in order to listen for events.) We unsubscribe from existing subscriptions using {{domxref("CookieStoreManager.unsubscribe()")}}, then subscribe to the cookie with a name of 'COOKIE_NAME' using {{domxref("CookieStoreManager.subscribe()")}}. If that cookie is changed, the event listener logs the event to the console. This will be an `ExtendableCookieChangeEvent` object, with the {{domxref("ExtendableCookieChangeEvent.changed","changed")}} or {{domxref("ExtendableCookieChangeEvent.deleted","deleted")}} property containing the modified cookie.
+در مثال زیر، از {{domxref("CookieStoreManager.getSubscriptions()")}} برای دریافت فهرستی از اشتراک‌های موجود استفاده می‌کنیم. (در سرویس‌کارگرها، برای گوش دادن به رویدادها، اشتراک لازم است.) با استفاده از {{domxref("CookieStoreManager.unsubscribe()")}} اشتراک‌های موجود را لغو می‌کنیم و سپس با استفاده از {{domxref("CookieStoreManager.subscribe()")}} در کوکی با نام 'COOKIE_NAME' اشتراک می‌گیریم. اگر آن کوکی تغییر کند، شنوندهٔ رویداد، رویداد را در کنسول ثبت می‌کند. این یک شیء `ExtendableCookieChangeEvent` خواهد بود که ویژگی {{domxref("ExtendableCookieChangeEvent.changed","changed")}} یا {{domxref("ExtendableCookieChangeEvent.deleted","deleted")}} آن شامل کوکی تغییر یافته است.
 
 ```js
 self.addEventListener("activate", (event) => {
@@ -67,10 +63,10 @@ self.addEventListener("cookiechange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
