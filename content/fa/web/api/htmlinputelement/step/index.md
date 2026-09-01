@@ -1,7 +1,5 @@
 ---
 title: "HTMLInputElement: step property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/step"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.HTMLInputElement.step
 
 {{ApiRef("HTML DOM")}}
 
-The **`step`** property of the {{domxref("HTMLInputElement")}} interface indicates the step by which numeric or date-time {{HTMLElement("input")}} elements can change. It reflects the element's [`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) attribute. Valid values include the string `"any"` or a string containing a positive floating point number. If the attribute is not explicitly set, the `step` property is an empty string.
+ویژگی **`step`** در واسط {{domxref("HTMLInputElement")}} مشخص می‌کند که عناصر {{HTMLElement("input")}} عددی یا تاریخ-زمان با چه گامی می‌توانند تغییر کنند. این ویژگی منعکس‌کنندهٔ ویژگی [`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) عنصر است. مقادیر معتبر شامل رشتهٔ `"any"` یا رشته‌ای حاوی یک عدد ممیز شناور مثبت است. اگر ویژگی به صراحت تنظیم نشده باشد، ویژگی `step` یک رشتهٔ خالی است.
 
-## Value
+## مقدار
 
-A string representing the element's `step` value or an empty string if no step is explicitly set.
+یک رشته که نشان‌دهندهٔ مقدار `step` عنصر است، یا اگر هیچ گامی به صراحت تنظیم نشده باشد، یک رشتهٔ خالی.
 
-## Example
+## مثال
 
 ```js
 const inputElement = document.querySelector('[type="number"]');
@@ -29,16 +27,16 @@ inputElement.step = 0.1; // sets the step value to "0.1"
 inputElement.step = "any"; // sets the step to "any"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{HTMLElement("input")}} of type {{HTMLElement("input/range", "range")}}, {{HTMLElement("input/number", "number")}}, {{HTMLElement("input/date", "date")}}, {{HTMLElement("input/month", "month")}}, {{HTMLElement("input/week", "week")}}, and {{HTMLElement("input/time", "time")}}
+- {{HTMLElement("input")}} از نوع {{HTMLElement("input/range", "range")}}، {{HTMLElement("input/number", "number")}}، {{HTMLElement("input/date", "date")}}، {{HTMLElement("input/month", "month")}}، {{HTMLElement("input/week", "week")}} و {{HTMLElement("input/time", "time")}}
 - {{domxref("HTMLInputElement.value")}}
 - {{domxref("HTMLInputElement.type")}}
