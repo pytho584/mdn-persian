@@ -1,7 +1,5 @@
 ---
 title: "GamepadPose: linearVelocity property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/linearVelocity"
-status: "needs-translation"
 ---
 
 ---
@@ -16,27 +14,27 @@ browser-compat: api.GamepadPose.linearVelocity
 
 {{APIRef("WebVR API")}}{{SeeCompatTable}}
 
-The **`linearVelocity`** read-only property of the {{domxref("GamepadPose")}} interface returns an array representing the linear velocity vector of the {{domxref("Gamepad")}}, in meters per second.
+ویژگی فقط‌خواندنی **`linearVelocity`** از رابط {{domxref("GamepadPose")}} آرایه‌ای را برمی‌گرداند که بردار سرعت خطی {{domxref("Gamepad")}} را بر حسب متر بر ثانیه نشان می‌دهد.
 
-In other words, the current velocity at which the sensor is moving along the `x`, `y`, and `z` axes.
+به عبارت دیگر، سرعت فعلی حرکت حسگر در امتداد محورهای `x`، `y` و `z` است.
 
-## Value
+## مقدار
 
-A {{jsxref("Float32Array")}}, or `null` if the gamepad is not able to provide linear velocity data.
+یک {{jsxref("Float32Array")}} یا `null` در صورتی که گیم‌پد نتواند داده‌های سرعت خطی را ارائه دهد.
 
-## Examples
+## مثال‌ها
 
 TBD
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [WebVR API](/en-US/docs/Web/API/WebVR_API)
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
