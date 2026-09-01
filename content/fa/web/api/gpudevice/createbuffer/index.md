@@ -1,7 +1,5 @@
 ---
 title: "GPUDevice: createBuffer() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBuffer"
-status: "needs-translation"
 ---
 
 ---
@@ -14,56 +12,54 @@ browser-compat: api.GPUDevice.createBuffer
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`createBuffer()`** method of the
-{{domxref("GPUDevice")}} interface creates a {{domxref("GPUBuffer")}} in which to store raw data to use in GPU operations.
+متد **`createBuffer()`** از رابط {{domxref("GPUDevice")}} یک {{domxref("GPUBuffer")}} ایجاد می‌کند که داده‌های خام برای استفاده در عملیات‌های GPU در آن ذخیره می‌شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createBuffer(descriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `descriptor`
-  - : An object containing the following properties:
+  - : شیءای شامل ویژگی‌های زیر:
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : یک رشته که برچسبی برای شناسایی شیء فراهم می‌کند، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
     - `mappedAtCreation` {{optional_inline}}
-      - : A boolean. If set to `true`, the buffer will be mapped upon creation, meaning that you can set the values inside the buffer immediately by calling {{domxref("GPUBuffer.getMappedRange()")}}. The default value is `false`.
+      - : یک مقدار بولی. اگر روی `true` تنظیم شود، بافر در هنگام ایجاد نقشه‌برداری می‌شود؛ یعنی می‌توانید بلافاصله با فراخوانی {{domxref("GPUBuffer.getMappedRange()")}} مقادیر داخل بافر را تنظیم کنید. مقدار پیش‌فرض `false` است.
 
-        Note that it is valid to set `mappedAtCreation: true` so you can set the buffer's initial data, even if the `GPUBufferUsage.MAP_READ` or `GPUBufferUsage.MAP_WRITE` usage flags are not set.
-
+        توجه داشته باشید که تنظیم `mappedAtCreation: true` معتبر است تا بتوانید داده‌های اولیهٔ بافر را تنظیم کنید، حتی اگر پرچم‌های استفادهٔ `GPUBufferUsage.MAP_READ` یا `GPUBufferUsage.MAP_WRITE` تنظیم نشده باشند.
     - `size`
-      - : A number representing the size of the buffer, in bytes. If `mappedAtCreation` is set to `true`, this must be a multiple of `4`.
+      - : عددی که اندازهٔ بافر را بر حسب بایت نشان می‌دهد. اگر `mappedAtCreation` روی `true` تنظیم شده باشد، این عدد باید مضربی از `4` باشد.
     - `usage`
-      - : The {{glossary("Bitwise flags", "bitwise flags")}} representing the allowed usages for the `GPUBuffer`. The possible values are in the [`GPUBuffer.usage` value table](/en-US/docs/Web/API/GPUBuffer/usage#value).
+      - : {{glossary("Bitwise flags", "bitwise flags")}} نشان‌دهندهٔ استفاده‌های مجاز برای `GPUBuffer`. مقادیر ممکن در [جدول مقادیر `GPUBuffer.usage`](/en-US/docs/Web/API/GPUBuffer/usage#value) آمده است.
 
-        Note that multiple possible usages can be specified by separating values with [bitwise OR](/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_OR), for example: `GPUBufferUsage.COPY_SRC | GPUBufferUsage.MAP_WRITE`.
+        توجه داشته باشید که می‌توان چندین استفادهٔ ممکن را با جدا کردن مقادیر با [OR بیتی](/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_OR) مشخص کرد، برای مثال: `GPUBufferUsage.COPY_SRC | GPUBufferUsage.MAP_WRITE`.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("GPUBuffer")}} object instance.
+یک نمونهٔ شیء {{domxref("GPUBuffer")}}.
 
-### Exceptions
+### استثناها
 
 - `RangeError` {{domxref("DOMException")}}
-  - : Thrown if `mappedAtCreation` is set to `true`, and the specified `size` is not a multiple of `4`.
+  - : اگر `mappedAtCreation` روی `true` تنظیم شده باشد و `size` مشخص‌شده مضربی از `4` نباشد، این استثنا پرتاب می‌شود.
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`createBuffer()`**, otherwise a {{domxref("GPUValidationError")}} is generated and an invalid {{domxref("GPUBuffer")}} object is returned:
+هنگام فراخوانی **`createBuffer()`** معیارهای زیر باید برآورده شوند؛ در غیر این صورت یک {{domxref("GPUValidationError")}} تولید می‌شود و یک شیء نامعتبر {{domxref("GPUBuffer")}} بازگردانده می‌شود:
 
-- A valid `usage` is specified.
-- `GPUBufferUsage.MAP_READ` is specified, and no additional flags are specified other than `GPUBufferUsage.COPY_DST`.
-- `GPUBufferUsage.MAP_WRITE` is specified, and no additional flags are specified other than `GPUBufferUsage.COPY_SRC`.
+- یک `usage` معتبر مشخص شده باشد.
+- `GPUBufferUsage.MAP_READ` مشخص شده باشد و هیچ پرچم اضافی‌ای غیر از `GPUBufferUsage.COPY_DST` مشخص نشده باشد.
+- `GPUBufferUsage.MAP_WRITE` مشخص شده باشد و هیچ پرچم اضافی‌ای غیر از `GPUBufferUsage.COPY_SRC` مشخص نشده باشد.
 
 > [!NOTE]
-> If the buffer allocation fails without any specific side-effects, a {{domxref("GPUOutOfMemoryError")}} object is generated.
+> اگر تخصیص بافر بدون هیچ اثر جانبی خاصی شکست بخورد، یک شیء {{domxref("GPUOutOfMemoryError")}} تولید می‌شود.
 
-## Examples
+## مثال‌ها
 
-In our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/), we create an output buffer to read GPU calculations to, and a staging buffer to be mapped for JavaScript access.
+در [دموی محاسباتی پایه](https://mdn.github.io/dom-examples/webgpu-compute-demo/)، ما یک بافر خروجی برای خواندن محاسبات GPU و یک بافر میانی (staging buffer) ایجاد می‌کنیم که برای دسترسی جاوااسکریپت نقشه‌برداری شود.
 
 ```js
 const output = device.createBuffer({
@@ -77,14 +73,14 @@ const stagingBuffer = device.createBuffer({
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- رابط [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
