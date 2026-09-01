@@ -1,11 +1,5 @@
 ---
 title: "Document: scrollsnapchange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/scrollsnapchange_event"
-status: "needs-translation"
----
-
----
-title: "Document: scrollsnapchange event"
 short-title: scrollsnapchange
 slug: Web/API/Document/scrollsnapchange_event
 page-type: web-api-event
@@ -16,13 +10,13 @@ browser-compat: api.Document.scrollsnapchange_event
 
 {{APIRef}}{{SeeCompatTable}}
 
-The **`scrollsnapchange`** event of the {{domxref("Document")}} interface is fired on the document [scroll container](/en-US/docs/Glossary/Scroll_container) at the end of a scrolling operation when a new scroll snap target is selected.
+رویداد **`scrollsnapchange`** از رابط {{domxref("Document")}} در پایان یک عملیات پیمایش، زمانی که یک هدف جدید برای snap اسکرول انتخاب می‌شود، روی [ظرف اسکرول](/en-US/docs/Glossary/Scroll_container) سند (document) فعال می‌شود.
 
-This event works in much the same way as the {{domxref("Element")}} interface's [`scrollsnapchange`](/en-US/docs/Web/API/Element/scrollsnapchange_event) event, except that the overall HTML document has to be set as the scroll snap container (i.e., {{cssxref("scroll-snap-type")}} is set on the {{htmlelement("html")}} element).
+این رویداد دقیقاً به همان شیوه‌ای کار می‌کند که رویداد [`scrollsnapchange`](/en-US/docs/Web/API/Element/scrollsnapchange_event) در رابط {{domxref("Element")}} کار می‌کند، با این تفاوت که کل سند HTML باید به‌عنوان ظرف اسکرول‌شونده با snap تنظیم شده باشد (یعنی {{cssxref("scroll-snap-type")}} روی عنصر {{htmlelement("html")}} تنظیم شده باشد).
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی handler رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("scrollsnapchange", (event) => { })
@@ -30,23 +24,23 @@ addEventListener("scrollsnapchange", (event) => { })
 onscrollsnapchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("SnapEvent")}}, which inherits from the generic {{domxref("Event")}} type.
+یک {{domxref("SnapEvent")}} که از نوع عمومی {{domxref("Event")}} به ارث می‌برد.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-Let's say we have a {{htmlelement("main")}} element containing significant content that causes it to scroll:
+فرض کنید یک عنصر {{htmlelement("main")}} داریم که حاوی محتوای قابل‌توجهی است و باعث پیمایش آن می‌شود:
 
 ```html
 <main>
-  <!-- Significant content -->
+  <!-- محتوای قابل‌توجه -->
 </main>
 ```
 
-The `<main>` element can be turned into a scroll container using a combination of CSS properties, for example:
+عنصر `<main>` می‌تواند با ترکیبی از ویژگی‌های CSS به یک ظرف اسکرول تبدیل شود، برای مثال:
 
 ```css
 main {
@@ -56,7 +50,7 @@ main {
 }
 ```
 
-We can then implement scroll snapping behavior on the scrolling content by specifying the {{cssxref("scroll-snap-type")}} property on the {{htmlelement("html")}} element:
+سپس می‌توانیم با مشخص کردن ویژگی {{cssxref("scroll-snap-type")}} روی عنصر {{htmlelement("html")}}، رفتار snap اسکرول را روی محتوای در حال پیمایش پیاده‌سازی کنیم:
 
 ```css
 html {
@@ -64,7 +58,7 @@ html {
 }
 ```
 
-The following JavaScript snippet would cause the `scrollsnapchange` event to fire on the HTML document when a child of the `<main>` element becomes a newly-selected snap target. In the handler function, we set a `selected` class on the child referenced by the {{domxref("SnapEvent.snapTargetBlock")}}, which could be used to style it to look like it has been selected (for example, with an animation) when the event fires.
+قطعه کد جاوااسکریپت زیر باعث می‌شود رویداد `scrollsnapchange` روی سند HTML زمانی فعال شود که یک فرزند از عنصر `<main>` به‌عنوان هدف جدید انتخاب‌شده برای snap تعیین شود. در تابع handler، یک کلاس `selected` به فرزندی که توسط {{domxref("SnapEvent.snapTargetBlock")}} ارجاع داده شده است اضافه می‌کنیم؛ این کلاس می‌تواند برای استایل‌دهی به عنصر استفاده شود تا هنگام فعال شدن رویداد، ظاهری «انتخاب‌شده» داشته باشد (مثلاً با یک انیمیشن).
 
 ```js
 document.addEventListener("scrollsnapchange", (event) => {
@@ -72,20 +66,20 @@ document.addEventListener("scrollsnapchange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Document/scrollsnapchanging_event", "scrollsnapchanging")}} event
-- {{DOMxRef("Document/scrollend_event", "scrollend")}} event
+- رویداد {{domxref("Document/scrollsnapchanging_event", "scrollsnapchanging")}}
+- رویداد {{DOMxRef("Document/scrollend_event", "scrollend")}}
 - {{domxref("SnapEvent")}}
-- CSS {{cssxref("scroll-snap-type")}} property
-- [CSS scroll snap module](/en-US/docs/Web/CSS/Guides/Scroll_snap)
-- [Using scroll snap events](/en-US/docs/Web/CSS/Guides/Scroll_snap/Using_scroll_snap_events)
-- [Scroll Snap Events](https://developer.chrome.com/blog/scroll-snap-events) on developer.chrome.com (2024)
+- ویژگی CSS {{cssxref("scroll-snap-type")}}
+- [ماژول CSS scroll snap](/en-US/docs/Web/CSS/Guides/Scroll_snap)
+- [استفاده از رویدادهای scroll snap](/en-US/docs/Web/CSS/Guides/Scroll_snap/Using_scroll_snap_events)
+- [Scroll Snap Events](https://developer.chrome.com/blog/scroll-snap-events) در developer.chrome.com (2024)
