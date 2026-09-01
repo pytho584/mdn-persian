@@ -1,11 +1,5 @@
 ---
 title: "FormData: FormData() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData"
-status: "needs-translation"
----
-
----
-title: "FormData: FormData() constructor"
 short-title: FormData()
 slug: Web/API/FormData/FormData
 page-type: web-api-constructor
@@ -14,9 +8,9 @@ browser-compat: api.FormData.FormData
 
 {{APIRef("XMLHttpRequest API")}} {{AvailableInWorkers}}
 
-The **`FormData()`** constructor creates a new {{domxref("FormData")}} object.
+سازندهٔ **`FormData()`** یک شیء جدید {{domxref("FormData")}} می‌سازد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new FormData()
@@ -24,44 +18,42 @@ new FormData(form)
 new FormData(form, submitter)
 ```
 
-### Parameters
+### پارامترها
 
 - `form` {{optional_inline}}
-  - : An HTML {{HTMLElement("form")}} element — when specified, the {{domxref("FormData")}} object will be populated with the `form`'s current keys/values using the name property of each element for the keys and their submitted value for the values. It will also encode file input content. A {{domxref("HTMLFormElement/formdata_event", "formdata")}} event is fired on the form when the `FormData` object is created, allowing the form to modify the formdata if necessary.
+  - : یک عنصر HTML {{HTMLElement("form")}} — وقتی مشخص شود، شیء {{domxref("FormData")}} با کلیدها/مقادیر جاری `form` با استفاده از ویژگی name هر عنصر برای کلیدها و مقدار ارسالی آن‌ها برای مقادیر پر می‌شود. همچنین محتوای ورودی فایل را کدگذاری می‌کند. یک رویداد {{domxref("HTMLFormElement/formdata_event", "formdata")}} روی فرم هنگامی که شیء `FormData` ساخته می‌شود، شلیک می‌شود و به فرم اجازه می‌دهد در صورت نیاز داده‌های فرم را تغییر دهد.
 - `submitter` {{optional_inline}}
-  - : A {{Glossary("submit button")}} that is a member of the `form`. If the `submitter` has a `name` attribute or is an `{{HtmlElement('input/image', '&lt;input type="image"&gt;')}}`, its data [will be included](/en-US/docs/Glossary/Submit_button#form_data_entries) in the {{domxref("FormData")}} object (e.g., `btnName=btnValue`).
+  - : یک {{Glossary("submit button")}} که عضوی از `form` است. اگر `submitter` دارای ویژگی `name` باشد یا یک `{{HtmlElement('input/image', '&lt;input type="image"&gt;')}}` باشد، داده‌های آن [گنجانده می‌شود](/en-US/docs/Glossary/Submit_button#form_data_entries) در شیء {{domxref("FormData")}} (مثلاً `btnName=btnValue`).
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the specified `submitter` is not a {{Glossary("submit button")}}.
+  - : اگر `submitter` مشخص‌شده یک {{Glossary("submit button", "دکمه ارسال")}} نباشد، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the specified `submitter` isn't a member of the `form`. The `submitter` must be either a
-    descendant of the form element or must have a [`form`](/en-US/docs/Web/HTML/Reference/Elements/input#form)
-    attribute referring to the form.
+  - : اگر `submitter` مشخص‌شده عضوی از `form` نباشد، پرتاب می‌شود. `submitter` باید یا از نوادگان عنصر فرم باشد یا دارای ویژگی [`form`](/en-US/docs/Web/HTML/Reference/Elements/input#form) باشد که به فرم اشاره می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Creating an empty FormData
+### ایجاد یک FormData خالی
 
-The following line creates an empty {{domxref("FormData")}} object:
+خط زیر یک شیء {{domxref("FormData")}} خالی می‌سازد:
 
 ```js
 const formData = new FormData();
 ```
 
-You could add a key/value pair to this using {{domxref("FormData.append", "append()")}}:
+شما می‌توانید یک جفت کلید/مقدار با استفاده از {{domxref("FormData.append", "append()")}} به آن اضافه کنید:
 
 ```js
 formData.append("username", "Chris");
 ```
 
-### Prepopulating from an HTML form element
+### پیش‌پر کردن از یک عنصر فرم HTML
 
-You can specify the optional `form` and `submitter` arguments when creating the `FormData` object, to prepopulate it with values from the specified form.
+شما می‌توانید آرگومان‌های اختیاری `form` و `submitter` را هنگام ایجاد شیء `FormData` مشخص کنید تا آن را با مقادیر فرم مشخص‌شده پیش‌پر کنید.
 
 > [!NOTE]
-> Only successful form controls are included in a FormData object, i.e., those with a name and not in a disabled state.
+> فقط کنترل‌های موفق فرم در یک شیء FormData گنجانده می‌شوند، یعنی آن‌هایی که دارای name هستند و در حالت غیرفعال نیستند.
 
 #### HTML
 
@@ -103,21 +95,21 @@ for (const [key, value] of formData) {
 }
 ```
 
-#### Result
+#### نتیجه
 
-For brevity, the `<form>` element is hidden from view.
+برای اختصار، عنصر `<form>` از دید پنهان شده است.
 
 {{EmbedLiveSample("prepopulating_from_a_html_form_element", "", 150)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using FormData objects](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
+- [استفاده از اشیاء FormData](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
 - {{HTMLElement("Form")}}
