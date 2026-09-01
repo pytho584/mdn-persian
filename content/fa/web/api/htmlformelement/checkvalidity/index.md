@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement: checkValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/checkValidity"
-status: "needs-translation"
----
-
----
-title: "HTMLFormElement: checkValidity() method"
 short-title: checkValidity()
 slug: Web/API/HTMLFormElement/checkValidity
 page-type: web-api-instance-method
@@ -14,45 +8,45 @@ browser-compat: api.HTMLFormElement.checkValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`checkValidity()`** method of the {{domxref("HTMLFormElement")}} interface returns a boolean value which indicates if all associated controls meet any [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) rules applied to them. The method also fires an {{domxref("HTMLElement/invalid_event", "invalid")}} event on each invalid element, but not on the form element itself. Because there's no default browser behavior for `checkValidity()`, canceling this `invalid` event has no effect.
+متد **`checkValidity()`** از رابط {{domxref("HTMLFormElement")}} یک مقدار بولی (boolean) برمی‌گرداند که نشان می‌دهد آیا همهٔ کنترل‌های مرتبط، قوانین [اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation) اعمال‌شده بر آنها را رعایت می‌کنند یا خیر. این متد همچنین یک رویداد {{domxref("HTMLElement/invalid_event", "invalid")}} روی هر عنصر نامعتبر (invalid) فعال می‌کند، اما روی خود عنصر فرم این کار را انجام نمی‌دهد. از آنجا که هیچ رفتار پیش‌فرض مرورگر برای `checkValidity()` وجود ندارد، لغو (cancel) کردن این رویداد `invalid` هیچ تأثیری نخواهد داشت.
 
 > [!NOTE]
-> The {{cssxref(":valid")}} and {{cssxref(":invalid")}} CSS pseudo-classes are applied to `<form>` elements based on the validity of its owned form controls, not the validity of the `<form>` element itself.
+> شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}} بر اساس اعتبار کنترل‌های فرم متعلق به عنصر `<form>` روی آن اعمال می‌شوند، نه بر اساس اعتبار خود عنصر `<form>`.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 checkValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-Returns `true` if the associated controls' values have no validity problems; otherwise, returns `false`.
+اگر مقادیر کنترل‌های مرتبط هیچ مشکل اعتبارسنجی نداشته باشند `true` و در غیر این صورت `false` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-In the following example, calling `checkValidity()` would return `true` if or `false`.
+در مثال زیر، فراخوانی `checkValidity()` بسته به شرایط `true` یا `false` برمی‌گرداند.
 
 ```js
 const element = document.getElementById("myForm");
 console.log(element.checkValidity());
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLFormElement.reportValidity()")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation)
