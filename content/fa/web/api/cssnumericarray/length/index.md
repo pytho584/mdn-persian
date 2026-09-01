@@ -1,11 +1,5 @@
 ---
 title: "CSSNumericArray: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericArray/length"
-status: "needs-translation"
----
-
----
-title: "CSSNumericArray: length property"
 short-title: length
 slug: Web/API/CSSNumericArray/length
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.CSSNumericArray.length
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`length`** read-only property of the {{domxref("CSSNumericArray")}} interface returns the number of {{domxref("CSSNumericValue")}} objects in the list.
+خاصیت فقط‌خواندنی **`length`** در رابط {{domxref("CSSNumericArray")}} تعداد اشیاء {{domxref("CSSNumericValue")}} موجود در فهرست را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer representing the number of {{domxref("CSSNumericValue")}} objects in the list.
+یک عدد صحیح که تعداد اشیاء {{domxref("CSSNumericValue")}} در فهرست را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-To Do
+برای تکمیل
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
