@@ -1,11 +1,5 @@
 ---
 title: "ErrorEvent: ErrorEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/ErrorEvent"
-status: "needs-translation"
----
-
----
-title: "ErrorEvent: ErrorEvent() constructor"
 short-title: ErrorEvent()
 slug: Web/API/ErrorEvent/ErrorEvent
 page-type: web-api-constructor
@@ -14,40 +8,40 @@ browser-compat: api.ErrorEvent.ErrorEvent
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`ErrorEvent()`** constructor creates a new {{domxref("ErrorEvent")}} object.
+سازندهی **`ErrorEvent()`** یک شیء جدید {{domxref("ErrorEvent")}} می‌سازد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new ErrorEvent(type)
 new ErrorEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event. It is case-sensitive.
+  - : رشته‌ای شامل نام رویداد. این مقدار به بزرگی و کوچکی حروف حساس است.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `message` {{optional_inline}}
-      - : A string containing a human-readable error message describing the problem.
+      - : رشته‌ای شامل پیام خطای قابل‌خواندن برای انسان که مشکل را توصیف می‌کند.
     - `filename` {{optional_inline}}
-      - : A string containing the name of the script file in which the error occurred.
+      - : رشته‌ای شامل نام فایل اسکریپتی که خطا در آن رخ داده است.
     - `lineno` {{optional_inline}}
-      - : An integer containing the line number of the script file on which the error occurred.
+      - : یک عدد صحیح شامل شماره خط فایل اسکریپتی که خطا در آن رخ داده است.
     - `colno` {{optional_inline}}
-      - : An integer containing the column number of the script file on which the error occurred.
+      - : یک عدد صحیح شامل شماره ستون فایل اسکریپتی که خطا در آن رخ داده است.
     - `error` {{optional_inline}}
-      - : A JavaScript value, such as an {{jsxref("Error")}} or {{domxref("DOMException")}}, representing the error associated with this event.
+      - : یک مقدار جاوااسکریپت، مانند {{jsxref("Error")}} یا {{domxref("DOMException")}}، که خطای مرتبط با این رویداد را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("ErrorEvent")}} object.
+یک شیء جدید {{domxref("ErrorEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
