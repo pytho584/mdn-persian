@@ -1,11 +1,5 @@
 ---
 title: "Element: pointercancel event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/pointercancel_event"
-status: "needs-translation"
----
-
----
-title: "Element: pointercancel event"
 short-title: pointercancel
 slug: Web/API/Element/pointercancel_event
 page-type: web-api-event
@@ -14,22 +8,22 @@ browser-compat: api.Element.pointercancel_event
 
 {{APIRef("Pointer Events")}}
 
-The **`pointercancel`** event is fired when the browser determines that there are unlikely to be any more pointer events, or if after the {{domxref("Element/pointerdown_event", "pointerdown")}} event is fired, the pointer is then used to manipulate the viewport by panning, zooming, or scrolling.
+رویداد **`pointercancel`** زمانی به وقوع می‌پیوندد که مرورگر تشخیص دهد احتمالاً رویدادهای اشاره‌ای دیگری رخ نخواهند داد، یا اگر پس از رویداد {{domxref("Element/pointerdown_event", "pointerdown")}}، اشاره‌گر برای دستکاری نمای دید (viewport) از طریق پیمایش (panning)، بزرگ‌نمایی یا اسکرول استفاده شود.
 
-Some examples of situations that will trigger a `pointercancel` event:
+چند نمونه از موقعیت‌هایی که می‌توانند رویداد `pointercancel` را تحریک کنند:
 
-- A hardware event occurs that cancels the pointer activities. This may include, for example, the user switching applications using an application switcher interface or the "home" button on a mobile device.
-- The device's screen orientation is changed while the pointer is active.
-- The browser decides that the user started pointer input accidentally. This can happen if, for example, the hardware supports palm rejection to prevent a hand resting on the display while using a stylus from accidentally triggering events.
-- The {{cssxref("touch-action")}} CSS property prevents the input from continuing.
-- When the user interacts with too many simultaneous pointers, the browser can fire this event for all existing pointers (even if the user is still touching the screen).
+- رخ دادن یک رویداد سخت‌افزاری که فعالیت‌های اشاره‌گر را لغو می‌کند. این می‌تواند برای مثال شامل این باشد که کاربر با استفاده از رابط تعویض برنامه‌ها، برنامه را تغییر دهد یا دکمه «خانه» را در یک دستگاه همراه فشار دهد.
+- تغییر جهت صفحه‌نمایش دستگاه در حالی که اشاره‌گر فعال است.
+- مرورگر تصمیم بگیرد که کاربر ورودی اشاره را به‌طور تصادفی شروع کرده است. این می‌تواند برای مثال زمانی رخ دهد که سخت‌افزار از قابلیت رد کف دست پشتیبانی می‌کند تا از ایجاد رویدادهای تصادفی هنگام استراحت دست روی نمایشگر در زمان استفاده از قلم جلوگیری کند.
+- ویژگی CSS {{cssxref("touch-action")}} از ادامه یافتن ورودی جلوگیری کند.
+- وقتی کاربر همزمان با تعداد زیادی اشاره‌گر تعامل داشته باشد، مرورگر می‌تواند این رویداد را برای همه اشاره‌گرهای موجود شلیک کند (حتی اگر کاربر همچنان صفحه را لمس کرده باشد).
 
 > [!NOTE]
-> After the `pointercancel` event is fired, the browser will also send {{domxref("Element/pointerout_event", "pointerout")}} followed by {{domxref("Element/pointerleave_event", "pointerleave")}}.
+> پس از شلیک رویداد `pointercancel`، مرورگر همچنین {{domxref("Element/pointerout_event", "pointerout")}} و به دنبال آن {{domxref("Element/pointerleave_event", "pointerleave")}} را ارسال خواهد کرد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی پردازنده رویداد را تنظیم کنید.
 
 ```js-nolint
 addEventListener("pointercancel", (event) => { })
@@ -37,15 +31,15 @@ addEventListener("pointercancel", (event) => { })
 onpointercancel = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PointerEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PointerEvent")}}. به ارث‌برده از {{domxref("Event")}}.
 
 {{InheritanceDiagram("PointerEvent")}}
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const para = document.querySelector("p");
@@ -55,7 +49,7 @@ para.addEventListener("pointercancel", (event) => {
 });
 ```
 
-Using the `onpointercancel` event handler property:
+استفاده از ویژگی پردازنده رویداد `onpointercancel`:
 
 ```js
 const para = document.querySelector("p");
@@ -65,17 +59,17 @@ para.onpointercancel = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events
+- رویدادهای مرتبط
   - {{domxref('Element/gotpointercapture_event', 'gotpointercapture')}}
   - {{domxref('Element/lostpointercapture_event', 'lostpointercapture')}}
   - {{domxref('Element/pointerover_event', 'pointerover')}}
