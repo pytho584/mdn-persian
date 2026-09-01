@@ -1,11 +1,5 @@
 ---
 title: "HIDDevice: forget() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/forget"
-status: "needs-translation"
----
-
----
-title: "HIDDevice: forget() method"
 short-title: forget()
 slug: Web/API/HIDDevice/forget
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.HIDDevice.forget
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`forget()`** method of the {{domxref("HIDDevice")}} interface closes the connection to the HID device and forgets the device.
+متد **`forget()`** از رابط {{domxref("HIDDevice")}} اتصال به دستگاه HID را می‌بندد و دستگاه را فراموش می‌کند.
 
 ## Syntax
 
@@ -26,15 +20,15 @@ forget()
 
 ### Parameters
 
-None.
+هیچ‌کدام.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves with `undefined` once the connection is closed, the device is forgotten, and the permission is reset.
+یک {{jsxref("Promise")}} که پس از بسته‌شدن اتصال، فراموش‌شدن دستگاه و بازنشانی مجوز، با مقدار `undefined` حل می‌شود.
 
 ## Example
 
-In the following example we connect to a Nintendo Switch Joy-Con Right HID device, blink once, and disconnect from it.
+در مثال زیر به یک دستگاه HID Joy-Con راست نینتندو سوییچ متصل می‌شویم، یک بار چشمک می‌زنیم و از آن جدا می‌شویم.
 
 ```js
 async function blink() {
