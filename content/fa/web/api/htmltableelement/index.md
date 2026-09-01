@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement"
-status: "needs-translation"
----
-
----
-title: HTMLTableElement
 slug: Web/API/HTMLTableElement
 page-type: web-api-interface
 browser-compat: api.HTMLTableElement
@@ -13,86 +7,86 @@ browser-compat: api.HTMLTableElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLTableElement`** interface provides special properties and methods (beyond the regular {{DOMxRef("HTMLElement")}} object interface it also has available to it by inheritance) for manipulating the layout and presentation of tables in an HTML document.
+رابط **`HTMLTableElement`** ویژگی‌ها و روش‌های ویژه‌ای (فراتر از رابط شیء {{DOMxRef("HTMLElement")}} که به طور ارث‌بری در دسترس است) برای دستکاری طرح و نمایش جدول‌ها در یک سند HTML ارائه می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("HTMLElement")}}._
+_ویژگی‌های والد خود، {{DOMxRef("HTMLElement")}} را به ارث می‌برد._
 
 - {{DOMxRef("HTMLTableElement.caption")}}
-  - : A {{DOMxRef("HTMLTableCaptionElement")}} representing the first {{HTMLElement("caption")}} that is a child of the element, or `null` if none is found. When set, if the object doesn't represent a `<caption>`, a {{DOMxRef("DOMException")}} with the `HierarchyRequestError` name is thrown. If a correct object is given, it is inserted in the tree as the first child of this element and the first `<caption>` that is a child of this element is removed from the tree, if any.
+  - : یک {{DOMxRef("HTMLTableCaptionElement")}} که اولین {{HTMLElement("caption")}} فرزند این عنصر را نشان می‌دهد، یا اگر وجود نداشته باشد، `null` را برمی‌گرداند. هنگام تنظیم، اگر شیء یک `<caption>` را نشان ندهد، یک {{DOMxRef("DOMException")}} با نام `HierarchyRequestError` پرتاب می‌شود. اگر یک شیء صحیح داده شود، به عنوان اولین فرزند این عنصر در درخت درج می‌شود و اولین `<caption>` که فرزند این عنصر است (در صورت وجود) از درخت حذف می‌شود.
 - {{DOMxRef("HTMLTableElement.tHead")}}
-  - : A {{DOMxRef("HTMLTableSectionElement")}} representing the first {{HTMLElement("thead")}} that is a child of the element, or `null` if none is found. When set, if the object doesn't represent a `<thead>`, a {{DOMxRef("DOMException")}} with the `HierarchyRequestError` name is thrown. If a correct object is given, it is inserted in the tree immediately before the first element that is neither a {{HTMLElement("caption")}}, nor a {{HTMLElement("colgroup")}}, or as the last child if there is no such element, and the first `<thead>` that is a child of this element is removed from the tree, if any.
+  - : یک {{DOMxRef("HTMLTableSectionElement")}} که اولین {{HTMLElement("thead")}} فرزند این عنصر را نشان می‌دهد، یا اگر وجود نداشته باشد، `null` را برمی‌گرداند. هنگام تنظیم، اگر شیء یک `<thead>` را نشان ندهد، یک {{DOMxRef("DOMException")}} با نام `HierarchyRequestError` پرتاب می‌شود. اگر یک شیء صحیح داده شود، بلافاصله قبل از اولین عنصری که نه {{HTMLElement("caption")}} است و نه {{HTMLElement("colgroup")}} در درخت درج می‌شود، یا اگر چنین عنصری وجود نداشته باشد، به عنوان آخرین فرزند درج می‌شود، و اولین `<thead>` که فرزند این عنصر است (در صورت وجود) از درخت حذف می‌شود.
 - {{DOMxRef("HTMLTableElement.tFoot")}}
-  - : A {{DOMxRef("HTMLTableSectionElement")}} representing the first {{HTMLElement("tfoot")}} that is a child of the element, or `null` if none is found. When set, if the object doesn't represent a `<tfoot>`, a {{DOMxRef("DOMException")}} with the `HierarchyRequestError` name is thrown. If a correct object is given, it is inserted in the tree immediately before the first element that is neither a {{HTMLElement("caption")}}, a {{HTMLElement("colgroup")}}, nor a {{HTMLElement("thead")}}, or as the last child if there is no such element, and the first `<tfoot>` that is a child of this element is removed from the tree, if any.
+  - : یک {{DOMxRef("HTMLTableSectionElement")}} که اولین {{HTMLElement("tfoot")}} فرزند این عنصر را نشان می‌دهد، یا اگر وجود نداشته باشد، `null` را برمی‌گرداند. هنگام تنظیم، اگر شیء یک `<tfoot>` را نشان ندهد، یک {{DOMxRef("DOMException")}} با نام `HierarchyRequestError` پرتاب می‌شود. اگر یک شیء صحیح داده شود، بلافاصله قبل از اولین عنصری که نه {{HTMLElement("caption")}} است، نه {{HTMLElement("colgroup")}} و نه {{HTMLElement("thead")}} در درخت درج می‌شود، یا اگر چنین عنصری وجود نداشته باشد، به عنوان آخرین فرزند درج می‌شود، و اولین `<tfoot>` که فرزند این عنصر است (در صورت وجود) از درخت حذف می‌شود.
 - {{DOMxRef("HTMLTableElement.rows")}} {{ReadOnlyInline}}
-  - : Returns a live {{DOMxRef("HTMLCollection")}} containing all the rows of the element, that is all {{HTMLElement("tr")}} that are a child of the element, or a child of one of its {{HTMLElement("thead")}}, {{HTMLElement("tbody")}} and {{HTMLElement("tfoot")}} children. The rows members of a `<thead>` appear first, in tree order, and those members of a `<tbody>` last, also in tree order. The `HTMLCollection` is live and is automatically updated when the `HTMLTableElement` changes.
+  - : یک {{DOMxRef("HTMLCollection")}} زنده برمی‌گرداند که شامل تمام ردیف‌های این عنصر است، یعنی تمام {{HTMLElement("tr")}}هایی که فرزند این عنصر هستند یا فرزند یکی از فرزندان {{HTMLElement("thead")}}، {{HTMLElement("tbody")}} و {{HTMLElement("tfoot")}} آن هستند. اعضای ردیف یک `<thead>` ابتدا، به ترتیب درخت، و اعضای یک `<tbody>` در آخر، همچنین به ترتیب درخت ظاهر می‌شوند. `HTMLCollection` زنده است و هنگام تغییر `HTMLTableElement` به طور خودکار به‌روز می‌شود.
 - {{DOMxRef("HTMLTableElement.tBodies")}} {{ReadOnlyInline}}
-  - : Returns a live {{DOMxRef("HTMLCollection")}} containing all the {{HTMLElement("tbody")}} of the element. The `HTMLCollection` is live and is automatically updated when the `HTMLTableElement` changes.
+  - : یک {{DOMxRef("HTMLCollection")}} زنده برمی‌گرداند که شامل تمام {{HTMLElement("tbody")}}های این عنصر است. `HTMLCollection` زنده است و هنگام تغییر `HTMLTableElement` به طور خودکار به‌روز می‌شود.
 
-### Obsolete Properties
+### ویژگی‌های منسوخ
 
 > [!WARNING]
-> The following properties are obsolete. You should avoid using them.
+> ویژگی‌های زیر منسوخ شده‌اند. باید از استفاده از آن‌ها خودداری کنید.
 
 - {{DOMxRef("HTMLTableElement.align")}} {{deprecated_inline}}
-  - : A string containing an enumerated value reflecting the [`align`](/en-US/docs/Web/HTML/Reference/Elements/table#align) attribute. It indicates the alignment of the element's contents with respect to the surrounding context. The possible values are `"left"`, `"right"`, and `"center"`.
+  - : یک رشته حاوی یک مقدار شمارشی که منعکس‌کننده ویژگی [`align`](/en-US/docs/Web/HTML/Reference/Elements/table#align) است. تراز محتوای عنصر را نسبت به بافت اطراف نشان می‌دهد. مقادیر ممکن عبارتند از `"left"`, `"right"` و `"center"`.
 - {{DOMxRef("HTMLTableElement.bgColor")}} {{deprecated_inline}}
-  - : A string containing the background color of the cells. It reflects the obsolete [`bgColor`](/en-US/docs/Web/HTML/Reference/Elements/table#bgcolor) attribute.
+  - : یک رشته حاوی رنگ پس‌زمینه سلول‌ها. ویژگی منسوخ [`bgColor`](/en-US/docs/Web/HTML/Reference/Elements/table#bgcolor) را منعکس می‌کند.
 - {{DOMxRef("HTMLTableElement.border")}} {{deprecated_inline}}
-  - : A string containing the width in pixels of the border of the table. It reflects the obsolete [`border`](/en-US/docs/Web/HTML/Reference/Elements/table#border) attribute.
+  - : یک رشته حاوی عرض border جدول بر حسب پیکسل. ویژگی منسوخ [`border`](/en-US/docs/Web/HTML/Reference/Elements/table#border) را منعکس می‌کند.
 - {{DOMxRef("HTMLTableElement.cellPadding")}} {{deprecated_inline}}
-  - : A string containing the width in pixels of the horizontal and vertical space between cell content and cell borders. It reflects the obsolete [`cellpadding`](/en-US/docs/Web/HTML/Reference/Elements/table#cellpadding) attribute.
+  - : یک رشته حاوی عرض فضای افقی و عمودی بین محتوای سلول و borderهای سلول بر حسب پیکسل. ویژگی منسوخ [`cellpadding`](/en-US/docs/Web/HTML/Reference/Elements/table#cellpadding) را منعکس می‌کند.
 - {{DOMxRef("HTMLTableElement.cellSpacing")}} {{deprecated_inline}}
-  - : A string containing the width in pixels of the horizontal and vertical separation between cells. It reflects the obsolete [`cellspacing`](/en-US/docs/Web/HTML/Reference/Elements/table#cellspacing) attribute.
+  - : یک رشته حاوی عرض جداسازی افقی و عمودی بین سلول‌ها بر حسب پیکسل. ویژگی منسوخ [`cellspacing`](/en-US/docs/Web/HTML/Reference/Elements/table#cellspacing) را منعکس می‌کند.
 - {{DOMxRef("HTMLTableElement.frame")}} {{deprecated_inline}}
-  - : A string containing the type of the external borders of the table. It reflects the obsolete [`frame`](/en-US/docs/Web/HTML/Reference/Elements/table#frame) attribute and can take one of the following values: `"void"`, `"above"`, `"below"`, `"hsides"`, `"vsides"`, `"lhs"`, `"rhs"`, `"box"`, or `"border"`.
+  - : یک رشته حاوی نوع borderهای خارجی جدول. ویژگی منسوخ [`frame`](/en-US/docs/Web/HTML/Reference/Elements/table#frame) را منعکس می‌کند و می‌تواند یکی از مقادیر زیر را داشته باشد: `"void"`, `"above"`, `"below"`, `"hsides"`, `"vsides"`, `"lhs"`, `"rhs"`, `"box"` یا `"border"`.
 - {{DOMxRef("HTMLTableElement.rules")}} {{deprecated_inline}}
-  - : A string containing the type of the internal borders of the table. It reflects the obsolete [`rules`](/en-US/docs/Web/HTML/Reference/Elements/table#rules) attribute and can take one of the following values: `"none"`, `"groups"`, `"rows"`, `"cols"`, or `"all"`.
+  - : یک رشته حاوی نوع borderهای داخلی جدول. ویژگی منسوخ [`rules`](/en-US/docs/Web/HTML/Reference/Elements/table#rules) را منعکس می‌کند و می‌تواند یکی از مقادیر زیر را داشته باشد: `"none"`, `"groups"`, `"rows"`, `"cols"` یا `"all"`.
 - {{DOMxRef("HTMLTableElement.summary")}} {{deprecated_inline}}
-  - : A string containing a description of the purpose or the structure of the table. It reflects the obsolete [`summary`](/en-US/docs/Web/HTML/Reference/Elements/table#summary) attribute.
+  - : یک رشته حاوی توضیحی در مورد هدف یا ساختار جدول. ویژگی منسوخ [`summary`](/en-US/docs/Web/HTML/Reference/Elements/table#summary) را منعکس می‌کند.
 - {{DOMxRef("HTMLTableElement.width")}} {{deprecated_inline}}
-  - : A string containing the length in pixels or in percentage of the desired width of the entire table. It reflects the obsolete [`width`](/en-US/docs/Web/HTML/Reference/Elements/table#width) attribute.
+  - : یک رشته حاوی طول بر حسب پیکسل یا درصد از عرض مورد نظر کل جدول. ویژگی منسوخ [`width`](/en-US/docs/Web/HTML/Reference/Elements/table#width) را منعکس می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{DOMxRef("HTMLElement")}}_.
+_روش‌های والد خود، {{DOMxRef("HTMLElement")}} را به ارث می‌برد._
 
 - {{DOMxRef("HTMLTableElement.createTHead()")}}
-  - : Returns an {{DOMxRef("HTMLTableSectionElement")}} representing the first {{HTMLElement("thead")}} that is a child of the element. If none is found, a new one is created and inserted in the tree immediately before the first element that is neither a {{HTMLElement("caption")}}, nor a {{HTMLElement("colgroup")}}, or as the last child if there is no such element.
+  - : یک {{DOMxRef("HTMLTableSectionElement")}} برمی‌گرداند که اولین {{HTMLElement("thead")}} فرزند این عنصر را نشان می‌دهد. اگر هیچ‌کدام یافت نشود، یک مورد جدید ایجاد می‌شود و بلافاصله قبل از اولین عنصری که نه {{HTMLElement("caption")}} است و نه {{HTMLElement("colgroup")}} در درخت درج می‌شود، یا اگر چنین عنصری وجود نداشته باشد، به عنوان آخرین فرزند درج می‌شود.
 - {{DOMxRef("HTMLTableElement.deleteTHead()")}}
-  - : Removes the first {{HTMLElement("thead")}} that is a child of the element.
+  - : اولین {{HTMLElement("thead")}} که فرزند این عنصر است را حذف می‌کند.
 - {{DOMxRef("HTMLTableElement.createTFoot()")}}
-  - : Returns an {{DOMxRef("HTMLTableSectionElement")}} representing the first {{HTMLElement("tfoot")}} that is a child of the element. If none is found, a new one is created and inserted in the tree as the last child.
+  - : یک {{DOMxRef("HTMLTableSectionElement")}} برمی‌گرداند که اولین {{HTMLElement("tfoot")}} فرزند این عنصر را نشان می‌دهد. اگر هیچ‌کدام یافت نشود، یک مورد جدید ایجاد می‌شود و به عنوان آخرین فرزند در درخت درج می‌شود.
 - {{DOMxRef("HTMLTableElement.deleteTFoot()")}}
-  - : Removes the first {{HTMLElement("tfoot")}} that is a child of the element.
+  - : اولین {{HTMLElement("tfoot")}} که فرزند این عنصر است را حذف می‌کند.
 - {{DOMxRef("HTMLTableElement.createTBody()")}}
-  - : Returns a {{DOMxRef("HTMLTableSectionElement")}} representing a new {{HTMLElement("tbody")}} that is a child of the element. It is inserted in the tree after the last element that is a {{HTMLElement("tbody")}}, or as the last child if there is no such element.
+  - : یک {{DOMxRef("HTMLTableSectionElement")}} برمی‌گرداند که یک {{HTMLElement("tbody")}} جدید را نشان می‌دهد که فرزند این عنصر است. این عنصر بعد از آخرین عنصری که یک {{HTMLElement("tbody")}} است در درخت درج می‌شود، یا اگر چنین عنصری وجود نداشته باشد، به عنوان آخرین فرزند درج می‌شود.
 - {{DOMxRef("HTMLTableElement.createCaption()")}}
-  - : Returns an {{DOMxRef("HTMLElement")}} representing the first {{HTMLElement("caption")}} that is a child of the element. If none is found, a new one is created and inserted in the tree as the first child of the {{HTMLElement("table")}} element.
+  - : یک {{DOMxRef("HTMLElement")}} برمی‌گرداند که اولین {{HTMLElement("caption")}} فرزند این عنصر را نشان می‌دهد. اگر هیچ‌کدام یافت نشود، یک مورد جدید ایجاد می‌شود و به عنوان اولین فرزند عنصر {{HTMLElement("table")}} در درخت درج می‌شود.
 - {{DOMxRef("HTMLTableElement.deleteCaption()")}}
-  - : Removes the first {{HTMLElement("caption")}} that is a child of the element.
+  - : اولین {{HTMLElement("caption")}} که فرزند این عنصر است را حذف می‌کند.
 - {{DOMxRef("HTMLTableElement.insertRow()")}}
-  - : Returns an {{DOMxRef("HTMLTableRowElement")}} representing a new row of the table. It inserts it in the rows collection immediately before the {{HTMLElement("tr")}} element at the given `index` position. If necessary a {{HTMLElement("tbody")}} is created. If the `index` is `-1`, the new row is appended to the collection. If the `index` is smaller than `-1` or greater than the number of rows in the collection, a {{DOMxRef("DOMException")}} with the value `IndexSizeError` is raised.
+  - : یک {{DOMxRef("HTMLTableRowElement")}} برمی‌گرداند که یک ردیف جدید از جدول را نشان می‌دهد. آن را در مجموعه ردیف‌ها بلافاصله قبل از عنصر {{HTMLElement("tr")}} در موقعیت `index` داده شده درج می‌کند. در صورت لزوم یک {{HTMLElement("tbody")}} ایجاد می‌شود. اگر `index` برابر `-1` باشد، ردیف جدید به انتهای مجموعه اضافه می‌شود. اگر `index` کوچکتر از `-1` یا بزرگتر از تعداد ردیف‌های مجموعه باشد، یک {{DOMxRef("DOMException")}} با مقدار `IndexSizeError` پرتاب می‌شود.
 - {{DOMxRef("HTMLTableElement.deleteRow()")}}
-  - : Removes the row corresponding to the `index` given in parameter. If the `index` value is `-1` the last row is removed; if it is smaller than `-1` or greater than the amount of rows in the collection, a {{DOMxRef("DOMException")}} with the value `IndexSizeError` is raised.
+  - : ردیف مربوط به `index` داده شده در پارامتر را حذف می‌کند. اگر مقدار `index` برابر `-1` باشد، آخرین ردیف حذف می‌شود؛ اگر کوچکتر از `-1` یا بزرگتر از تعداد ردیف‌های مجموعه باشد، یک {{DOMxRef("DOMException")}} با مقدار `IndexSizeError` پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Using the DOM Table Interface
+### استفاده از رابط DOM جدول
 
-The `HTMLTableElement` interface provides some convenience methods for creating and manipulating tables. Two frequently used methods are {{domxref("HTMLTableElement.insertRow")}} and {{domxref("HTMLTableRowElement.insertCell")}}.
+رابط `HTMLTableElement` برخی روش‌های راحت برای ایجاد و دستکاری جدول‌ها فراهم می‌کند. دو روش پرکاربرد {{domxref("HTMLTableElement.insertRow")}} و {{domxref("HTMLTableRowElement.insertCell")}} هستند.
 
-To add a row and some cells to an existing table:
+برای افزودن یک ردیف و چند سلول به یک جدول موجود:
 
 ```html
 <table id="table0">
   <tbody>
     <tr>
-      <td>Row 0 Cell 0</td>
-      <td>Row 0 Cell 1</td>
+      <td>ردیف 0 سلول 0</td>
+      <td>ردیف 0 سلول 1</td>
     </tr>
   </tbody>
 </table>
@@ -104,21 +98,21 @@ const row = table.insertRow(-1);
 
 for (let i = 0; i < 2; i++) {
   const cell = row.insertCell(-1);
-  const text = `Row ${row.rowIndex} Cell ${i}`;
+  const text = `ردیف ${row.rowIndex} سلول ${i}`;
   cell.appendChild(document.createTextNode(text));
 }
 ```
 
 {{EmbedLiveSample("using_the_dom_table_interface", "", "300")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("table")}}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("table")}}.
