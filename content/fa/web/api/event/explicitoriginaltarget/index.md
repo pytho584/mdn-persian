@@ -1,7 +1,6 @@
 ---
 title: "Event: explicitOriginalTarget property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/explicitOriginalTarget"
-status: "needs-translation"
 ---
 
 ---
@@ -16,25 +15,25 @@ browser-compat: api.Event.explicitOriginalTarget
 
 {{APIRef("DOM")}}{{Non-standard_Header}}{{AvailableInWorkers}}
 
-The read-only **`explicitOriginalTarget`** property of the {{domxref("Event")}} interface returns the non-anonymous original target of the event.
+ویژگی فقط‌خواندنی **`explicitOriginalTarget`** از رابط {{domxref("Event")}}، هدف اصلیِ غیرمستعار (non-anonymous) رویداد را برمی‌گرداند.
 
-If the event was retargeted for some reason other than an anonymous boundary crossing, this will be set to the target before the retargeting occurs.
+اگر رویداد به دلایلی غیر از عبور از مرز ناشناس (anonymous boundary) تغییر هدف داده شده باشد (retargeted)، این ویژگی به هدفِ قبل از تغییر هدف اشاره می‌کند.
 
-For example, mouse events are retargeted to their parent node when they happen over text nodes (see [Firefox bug 185889](https://bugzil.la/185889)), and in that case [`currentTarget`](/en-US/docs/Web/API/Event/currentTarget) will show the parent while this property will show the text node.
+برای مثال، رویدادهای ماوس وقتی روی گره‌های متنی رخ می‌دهند به گرهٔ والدشان تغییر هدف می‌دهند (به [باگ فایرفاکس 185889](https://bugzil.la/185889) مراجعه کنید). در آن حالت، [`currentTarget`](/en-US/docs/Web/API/Event/currentTarget) والد را نشان می‌دهد، در حالی که این ویژگی گرهٔ متنی را نشان می‌دهد.
 
-This property also differs from [`originalTarget`](/en-US/docs/Web/API/Event/originalTarget) in that it will never contain anonymous content.
+این ویژگی همچنین با [`originalTarget`](/en-US/docs/Web/API/Event/originalTarget) تفاوت دارد، زیرا هرگز حاوی محتوای ناشناس (anonymous content) نخواهد بود.
 
-## Value
+## مقدار
 
-Returns the {{domxref("EventTarget")}} object, or null if there isn't one.
+شیء {{domxref("EventTarget")}} را برمی‌گرداند، یا اگر وجود نداشته باشد `null` برمی‌گرداند.
 
-## Example
+## مثال
 
-This property can be used with `<command>` to get the event details of the original object calling the command.
+می‌توان از این ویژگی همراه با `<command>` استفاده کرد تا جزئیات رویدادِ شیء اصلیِ صداکنندهٔ فرمان به دست آید.
 
 ```js
 function myCommand(ev) {
-  alert(ev.explicitOriginalTarget.nodeName); // returns 'menuitem'
+  alert(ev.explicitOriginalTarget.nodeName); // 'menuitem' را برمی‌گرداند
 }
 ```
 
@@ -48,10 +47,10 @@ function myCommand(ev) {
 </menulist>
 ```
 
-## Specifications
+## مشخصات
 
-_This is a Mozilla-specific property and is not part of any current specification. It is not on track to become a standard._
+_این یک ویژگی مخصوصِ موزیلا است و بخشی از هیچ مشخصات فعلی نیست. در مسیر استاندارد شدن نیز قرار ندارد._
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
