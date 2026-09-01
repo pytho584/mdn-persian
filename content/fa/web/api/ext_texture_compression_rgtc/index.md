@@ -1,10 +1,4 @@
 ---
-title: "EXT_texture_compression_rgtc extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_texture_compression_rgtc"
-status: "needs-translation"
----
-
----
 title: EXT_texture_compression_rgtc extension
 short-title: EXT_texture_compression_rgtc
 slug: Web/API/EXT_texture_compression_rgtc
@@ -14,29 +8,29 @@ browser-compat: api.EXT_texture_compression_rgtc
 
 {{APIRef("WebGL")}}
 
-The `EXT_texture_compression_rgtc` extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and exposes 4 RGTC compressed texture formats. RGTC is a block-based texture compression format suited for unsigned and signed red and red-green textures (**R**ed-**G**reen **T**exture **C**ompression).
+افزونه `EXT_texture_compression_rgtc` بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و ۴ فرمت فشرده‌سازی بافت RGTC را در دسترس قرار می‌دهد. RGTC یک فرمت فشرده‌سازی بافت مبتنی بر بلوک است که برای بافت‌های قرمز و قرمز-سبز بدون علامت و با علامت (**R**ed-**G**reen **T**exture **C**ompression) مناسب است.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL با استفاده از متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، به [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) مراجعه کنید.
 
 > [!NOTE]
-> Support depends on the system's graphics driver. There is no support on Windows.
+> پشتیبانی به درایور گرافیکی سیستم بستگی دارد. در ویندوز پشتیبانی نمی‌شود.
 >
-> This extension is available to both, {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} and {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}} contexts.
+> این افزونه برای هر دو زمینه {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} و {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}} در دسترس است.
 
-## Constants
+## ثابت‌ها
 
-The compressed texture formats are exposed by 4 constants and can be used in two functions: {{domxref("WebGLRenderingContext.compressedTexImage2D", "compressedTexImage2D()")}} and {{domxref("WebGLRenderingContext.compressedTexSubImage2D", "compressedTexSubImage2D()")}}.
+فرمت‌های فشرده‌سازی بافت توسط ۴ ثابت ارائه می‌شوند و می‌توان از آنها در دو تابع استفاده کرد: {{domxref("WebGLRenderingContext.compressedTexImage2D", "compressedTexImage2D()")}} و {{domxref("WebGLRenderingContext.compressedTexSubImage2D", "compressedTexSubImage2D()")}}.
 
 - `ext.COMPRESSED_RED_RGTC1_EXT`
-  - : Each 4x4 block of texels consists of 64 bits of unsigned red image data. See also [BC4 unsigned](https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression#bc4).
+  - : هر بلوک ۴×۴ از تکسِل‌ها از ۶۴ بیت داده تصویر قرمز بدون علامت تشکیل شده است. همچنین به [BC4 unsigned](https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression#bc4) مراجعه کنید.
 - `ext.COMPRESSED_SIGNED_RED_RGTC1_EXT`
-  - : Each 4x4 block of texels consists of 64 bits of signed red image data. See also [BC4 signed](https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression#bc4).
+  - : هر بلوک ۴×۴ از تکسِل‌ها از ۶۴ بیت داده تصویر قرمز با علامت تشکیل شده است. همچنین به [BC4 signed](https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression#bc4) مراجعه کنید.
 - `ext.COMPRESSED_RED_GREEN_RGTC2_EXT`
-  - : Each 4x4 block of texels consists of 64 bits of compressed unsigned red image data followed by 64 bits of compressed unsigned green image data. See also [BC5 unsigned](https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression#bc5).
+  - : هر بلوک ۴×۴ از تکسِل‌ها از ۶۴ بیت داده تصویر قرمز فشرده‌شده بدون علامت به همراه ۶۴ بیت داده تصویر سبز فشرده‌شده بدون علامت تشکیل شده است. همچنین به [BC5 unsigned](https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression#bc5) مراجعه کنید.
 - `ext.COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT`
-  - : Each 4x4 block of texels consists of 64 bits of compressed signed red image data followed by 64 bits of compressed signed green image data. See also [BC5 signed](https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression#bc5).
+  - : هر بلوک ۴×۴ از تکسِل‌ها از ۶۴ بیت داده تصویر قرمز فشرده‌شده با علامت به همراه ۶۴ بیت داده تصویر سبز فشرده‌شده با علامت تشکیل شده است. همچنین به [BC5 signed](https://learn.microsoft.com/en-us/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression#bc5) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
 ```js
 const ext = gl.getExtension("EXT_texture_compression_rgtc");
@@ -55,15 +49,15 @@ gl.compressedTexImage2D(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.compressedTexImage2D()")}}
