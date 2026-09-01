@@ -1,7 +1,5 @@
 ---
 title: "HTMLObjectElement: contentDocument property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/contentDocument"
-status: "needs-translation"
 ---
 
 ---
@@ -14,14 +12,11 @@ browser-compat: api.HTMLObjectElement.contentDocument
 
 {{APIRef("HTML DOM")}}
 
-The **`contentDocument`** read-only property of
-the {{domxref("HTMLObjectElement")}} interface Returns a {{domxref("Document")}}
-representing the active document of the object element's nested browsing context, if
-any; otherwise null.
+ویژگی فقطخواندنی **`contentDocument`** از رابط {{domxref("HTMLObjectElement")}} یک {{domxref("Document")}} برمی‌گرداند که در صورت وجود، سند فعالِ زمینهٔ مرور تودرتوی عنصر object را نشان می‌دهد؛ در غیر این صورت null.
 
 ## Value
 
-A {{domxref('Document')}}.
+یک {{domxref('Document')}}.
 
 ## Specifications
 
