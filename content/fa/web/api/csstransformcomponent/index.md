@@ -1,10 +1,4 @@
 ---
-title: "CSSTransformComponent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformComponent"
-status: "needs-translation"
----
-
----
 title: CSSTransformComponent
 slug: Web/API/CSSTransformComponent
 page-type: web-api-interface
@@ -13,23 +7,23 @@ browser-compat: api.CSSTransformComponent
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSTransformComponent`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) is part of the {{domxref('CSSTransformValue')}} interface.
+**`CSSTransformComponent`** متعلق به [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) است و بخشی از رابط {{domxref('CSSTransformValue')}} به شمار می‌رود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("CSSTransformComponent.is2D")}}
-  - : A boolean that represents whether the transform is 2D or 3D.
+  - : یک مقدار بولی که نشان می‌دهد تبدیل (transform) دو بعدی است یا سه بعدی.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("CSSTransformComponent.toMatrix()")}}
-  - : Returns a new {{domxref('DOMMatrix')}} object.
+  - : یک شیء جدید {{domxref('DOMMatrix')}} بازمی‌گرداند.
 - {{domxref("CSSTransformComponent.toString()")}}
-  - : A string in the form of a CSS [transform function](/en-US/docs/Web/CSS/Reference/Values/transform-function).
+  - : یک رشته به شکل یک [تابع تبدیل](/en-US/docs/Web/CSS/Reference/Values/transform-function) CSS.
 
-    This will use the value of `is2D` to return either a 2D or 3D transform. For example if the component represents {{domxref("CSSRotate")}} and `is2D` is false then the string returned will be in the form of the CSS transformation {{cssxref("transform-function/rotate3d", "rotate3d()")}} function. If true the string returned will be in the form of the 2-dimensional {{cssxref("transform-function/rotate", "rotate()")}} function.
+    این متد از مقدار `is2D` برای بازگرداندن یک تبدیل دو بعدی یا سه بعدی استفاده می‌کند. برای مثال، اگر مؤلفه نشان‌دهنده {{domxref("CSSRotate")}} باشد و `is2D` برابر `false` باشد، رشته بازگردانده‌شده به شکل تابع تبدیل CSS {{cssxref("transform-function/rotate3d", "rotate3d()")}} خواهد بود. اگر `true` باشد، رشته بازگردانده‌شده به شکل تابع دو بعدی {{cssxref("transform-function/rotate", "rotate()")}} خواهد بود.
 
-## Interfaces based on CSSTransformComponent
+## رابط‌های مبتنی بر CSSTransformComponent
 
 - {{domxref('CSSTranslate')}}
 - {{domxref('CSSRotate')}}
@@ -40,14 +34,14 @@ The **`CSSTransformComponent`** interface of the [CSS Typed Object Model API](/e
 - {{domxref('CSSPerspective')}}
 - {{domxref('CSSMatrixComponent')}}
 
-## Examples
+## مثال‌ها
 
-To do
+در دست اقدام
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
