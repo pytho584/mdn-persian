@@ -1,11 +1,5 @@
 ---
 title: "GPURenderBundleEncoder: setIndexBuffer() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/setIndexBuffer"
-status: "needs-translation"
----
-
----
-title: "GPURenderBundleEncoder: setIndexBuffer() method"
 short-title: setIndexBuffer()
 slug: Web/API/GPURenderBundleEncoder/setIndexBuffer
 page-type: web-api-instance-method
@@ -14,48 +8,47 @@ browser-compat: api.GPURenderBundleEncoder.setIndexBuffer
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`setIndexBuffer()`** method of the
-{{domxref("GPURenderBundleEncoder")}} interface sets the current {{domxref("GPUBuffer")}} that will provide index data for subsequent drawing commands.
+متد **`setIndexBuffer()`** از واسط {{domxref("GPURenderBundleEncoder")}}، بافر جاری {{domxref("GPUBuffer")}} را تنظیم می‌کند که داده‌های شاخص را برای دستورات ترسیم بعدی فراهم می‌کند.
 
 > [!NOTE]
-> This method is functionally identical to its equivalent on {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.setIndexBuffer", "setIndexBuffer()")}}.
+> این متد از نظر عملکردی با معادل خود در {{domxref("GPURenderPassEncoder")}} یعنی {{domxref("GPURenderPassEncoder.setIndexBuffer", "setIndexBuffer()")}} یکسان است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setIndexBuffer(buffer, indexFormat, offset, size)
 ```
 
-### Parameters
+### پارامترها
 
 - `buffer`
-  - : A {{domxref("GPUBuffer")}} representing the buffer containing the index data to use for subsequent drawing commands.
+  - : یک {{domxref("GPUBuffer")}} که بافر حاوی داده‌های شاخص برای استفاده در دستورات ترسیم بعدی را نشان می‌دهد.
 - `indexFormat`
-  - : An enumerated value that defines the format of the index data contained in `buffer`. Possible values are:
+  - : یک مقدار شمارشی که قالب داده‌های شاخص موجود در `buffer` را تعریف می‌کند. مقادیر ممکن عبارتند از:
     - `"uint16"`
     - `"uint32"`
 - `offset` {{optional_inline}}
-  - : A number representing the offset, in bytes, into `buffer` where the index data begins. If omitted, `offset` defaults to 0.
+  - : عددی که نشان‌دهنده افست (بر حسب بایت) درون `buffer` است که داده‌های شاخص از آنجا شروع می‌شود. اگر حذف شود، `offset` به طور پیش‌فرض 0 است.
 - `size` {{optional_inline}}
-  - : A number representing the size, in bytes, of the index data contained in `buffer`. If omitted, `size` defaults to the `buffer`'s {{domxref("GPUBuffer.size")}} - `offset`.
+  - : عددی که نشان‌دهنده اندازه (بر حسب بایت) داده‌های شاخص موجود در `buffer` است. اگر حذف شود، `size` به طور پیش‌فرض برابر با `buffer`'s {{domxref("GPUBuffer.size")}} - `offset` است.
 
-#### Note on indexFormat
+#### نکته‌ای در مورد indexFormat
 
-`indexFormat` determines both the data type of index values in a buffer and, when used with a pipeline that specifies a strip primitive topology (`"line-strip"` or `"triangle-strip"`), also determines the primitive restart value. The primitive restart value is an index value indicating that a new primitive should be started rather than continuing to construct the strip with the prior indexed vertices. The value is `0xFFFF` for `"uint16"`, or `0xFFFFFFFF` for `"uint32"`.
+`indexFormat` هم نوع داده مقادیر شاخص در یک بافر را تعیین می‌کند و هم، هنگامی که با یک پایپ‌لاین که توپولوژی اولیه نواری (مانند `"line-strip"` یا `"triangle-strip"`) را مشخص می‌کند استفاده شود، مقدار restart اولیه را نیز تعیین می‌کند. مقدار restart اولیه یک مقدار شاخص است که نشان می‌دهد یک اولیه جدید باید شروع شود، نه اینکه ساخت نوار با رئوس شاخص‌گذاری شده قبلی ادامه یابد. این مقدار برای `"uint16"` برابر با `0xFFFF` و برای `"uint32"` برابر با `0xFFFFFFFF` است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`setIndexBuffer()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderBundleEncoder")}} becomes invalid:
+معیارهای زیر باید هنگام فراخوانی **`setIndexBuffer()`** رعایت شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید می‌شود و {{domxref("GPURenderBundleEncoder")}} نامعتبر می‌شود:
 
-- `buffer`'s {{domxref("GPUBuffer.usage")}} contains the `GPUBufferUsage.INDEX` flag.
-- `offset` + `size` is less than or equal to the `buffer`'s {{domxref("GPUBuffer.size")}}.
-- `offset` is a multiple of `indexFormat`'s byte size (2 for `"uint16"`, 4 for `"uint32"`).
+- `buffer`'s {{domxref("GPUBuffer.usage")}} شامل پرچم `GPUBufferUsage.INDEX` باشد.
+- `offset` + `size` کمتر یا مساوی `buffer`'s {{domxref("GPUBuffer.size")}} باشد.
+- `offset` مضربی از اندازه بایت `indexFormat` باشد (2 برای `"uint16"`، 4 برای `"uint32"`).
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -74,14 +67,14 @@ const renderBundle = bundleEncoder.finish();
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
