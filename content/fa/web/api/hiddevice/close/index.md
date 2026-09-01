@@ -1,11 +1,5 @@
 ---
 title: "HIDDevice: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/close"
-status: "needs-translation"
----
-
----
-title: "HIDDevice: close() method"
 short-title: close()
 slug: Web/API/HIDDevice/close
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.HIDDevice.close
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`close()`** method of the {{domxref("HIDDevice")}} interface closes the connection to the HID device.
+متد **`close()`** از رابط {{domxref("HIDDevice")}} اتصال به دستگاه HID را می‌بندد.
 
 ## Syntax
 
@@ -24,26 +18,26 @@ The **`close()`** method of the {{domxref("HIDDevice")}} interface closes the co
 close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with `undefined` once the connection is closed.
+یک {{jsxref("Promise")}} که پس از بسته شدن اتصال با مقدار `undefined` حل می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example we close the HID device, once all data has been sent and received.
+در مثال زیر، پس از ارسال و دریافت تمام داده‌ها، دستگاه HID را می‌بندیم.
 
 ```js
 await device.close();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
