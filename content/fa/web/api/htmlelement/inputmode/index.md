@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: inputMode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inputMode"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: inputMode property"
 short-title: inputMode
 slug: Web/API/HTMLElement/inputMode
 page-type: web-api-instance-property
@@ -14,47 +8,47 @@ browser-compat: api.HTMLElement.inputMode
 
 {{ APIRef("HTML DOM") }}
 
-The {{domxref("HTMLElement")}} property **`inputMode`** reflects the value of the element's [`inputmode`](/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode) attribute.
+ویژگی **`inputMode`** در {{domxref("HTMLElement")}} مقدار ویژگی [`inputmode`](/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode) عنصر را بازتاب می‌دهد.
 
-It provides a hint about the type of data that might be entered by the user while editing the element or its contents. This allows the browser to display an appropriate virtual keyboard.
+این ویژگی راهنمایی درباره نوع داده‌ای است که کاربر هنگام ویرایش عنصر یا محتوای آن ممکن است وارد کند. این امر به مرورگر اجازه می‌دهد صفحه‌کلید مجازی مناسبی را نمایش دهد.
 
-It is used primarily on {{HTMLElement("input")}} elements, but is usable on any element in [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) mode.
+این ویژگی عمدتاً روی عناصر {{HTMLElement("input")}} استفاده می‌شود، اما روی هر عنصری که در حالت [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) باشد نیز قابل استفاده است.
 
-## Value
+## مقدار
 
-This attribute may have one of the following values:
+این ویژگی می‌تواند یکی از مقادیر زیر را داشته باشد:
 
 - `decimal`
-  - : Fractional numeric input keyboard that contains the digits and decimal separator for the user's locale (typically <kbd>.</kbd> or <kbd>,</kbd>).
+  - : صفحه‌کلید ورودی عددی کسری که شامل ارقام و جداکننده اعشار برای زبان/منطقه کاربر است (معمولاً <kbd>.</kbd> یا <kbd>,</kbd>).
 - `email`
-  - : A virtual keyboard optimized for entering email addresses.
-    Typically includes the <kbd>@</kbd>character as well as other optimizations.
+  - : صفحه‌کلید مجازی بهینه‌سازی‌شده برای وارد کردن آدرس ایمیل.
+    معمولاً شامل کاراکتر <kbd>@</kbd> و همچنین بهینه‌سازی‌های دیگر است.
 - `none`
-  - : No virtual keyboard. This is used when the page implements its own keyboard input control.
+  - : بدون صفحه‌کلید مجازی. زمانی استفاده می‌شود که صفحه کنترل ورودی صفحه‌کلید خود را پیاده‌سازی کند.
 - `numeric`
-  - : Numeric input keyboard that only requires the digits 0–9.
-    Devices may or may not show a minus key.
+  - : صفحه‌کلید ورودی عددی که فقط به ارقام ۰–۹ نیاز دارد.
+    دستگاه‌ها ممکن است کلید منفی را نشان دهند یا ندهند.
 - `search`
-  - : A virtual keyboard optimized for search input.
-    For instance, the [return/submit key](https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-enterkeyhint-attribute) may be labeled "Search".
+  - : صفحه‌کلید مجازی بهینه‌سازی‌شده برای ورودی جستجو.
+    برای مثال، [کلید بازگشت/ارسال](https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-enterkeyhint-attribute) ممکن است با برچسب «جستجو» نمایش داده شود.
 - `tel`
-  - : A telephone keypad input that includes the digits 0–9, the asterisk (<kbd>\*</kbd>), and the pound (<kbd>#</kbd>) key.
+  - : صفحه‌کلید تلفن که شامل ارقام ۰–۹، ستاره (<kbd>\*</kbd>) و مربع (<kbd>#</kbd>) است.
 - `text`
-  - : Standard input keyboard for the user's current locale.
+  - : صفحه‌کلید ورودی استاندارد برای زبان/منطقه فعلی کاربر.
 - `url`
-  - : A keypad optimized for entering URLs.
-    This may have the <kbd>/</kbd> key more prominent, for example.
+  - : صفحه‌کلید بهینه‌سازی‌شده برای وارد کردن آدرس‌های URL.
+    برای مثال، کلید <kbd>/</kbd> ممکن است برجسته‌تر باشد.
 
-For details on the usage of this attribute, see the page for the [`inputmode`](/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode) HTML attribute that this property reflects.
+برای جزئیات مربوط به استفاده از این ویژگی، به صفحه ویژگی HTML [`inputmode`](/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode) مراجعه کنید که این ویژگی منعکس‌کننده آن است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [inputmode](/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode) attribute
+- ویژگی [`inputmode`](/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode)
