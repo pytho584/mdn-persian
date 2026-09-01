@@ -1,11 +1,5 @@
 ---
 title: "HTMLCanvasElement: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/height"
-status: "needs-translation"
----
-
----
-title: "HTMLCanvasElement: height property"
 short-title: height
 slug: Web/API/HTMLCanvasElement/height
 page-type: web-api-instance-property
@@ -14,48 +8,43 @@ browser-compat: api.HTMLCanvasElement.height
 
 {{APIRef("Canvas API")}}
 
-The **`HTMLCanvasElement.height`** property is a
-positive `integer` reflecting the [`height`](/en-US/docs/Web/HTML/Reference/Elements/canvas#height) HTML
-attribute of the {{HTMLElement("canvas")}} element interpreted in CSS pixels. When the
-attribute is not specified, or if it is set to an invalid value, like a negative, the
-default value of `150` is used.
+خاصیت **`HTMLCanvasElement.height`** یک `integer` مثبت است که منعکس‌کنندهٔ ویژگی HTML [`height`](/en-US/docs/Web/HTML/Reference/Elements/canvas#height) عنصر {{HTMLElement("canvas")}} است که بر حسب پیکسل‌های CSS تفسیر می‌شود. وقتی این ویژگی مشخص نشده باشد، یا اگر مقدار نامعتبری مانند یک عدد منفی به آن داده شود، مقدار پیش‌فرض `150` استفاده می‌شود.
 
-Setting the `height` property resets the entire rendering context to its default state. This includes clearing the canvas (backing buffer), resetting the current path, and resetting _all_ properties like `fillStyle` and `globalCompositeOperation`. This reset occurs for all context types, and occurs even when setting `height` to its current value. To restore the previous content after changing the height, use {{domxref("CanvasRenderingContext2D.getImageData()")}} and {{domxref("CanvasRenderingContext2D.putImageData()")}}. Context properties must be separately tracked and restored.
+تنظیم خاصیت `height` کل بافت رندرینگ (rendering context) را به حالت پیش‌فرض خود بازنشانی می‌کند. این شامل پاک کردن بوم (بافر پشتیبان)، بازنشانی مسیر جاری (current path)، و بازنشانی _همه_ ویژگی‌هایی مانند `fillStyle` و `globalCompositeOperation` می‌شود. این بازنشانی برای همه انواع بافت رخ می‌دهد، و حتی زمانی که `height` را به مقدار فعلی خود تنظیم کنید نیز اتفاق می‌افتد. برای بازیابی محتوای قبلی پس از تغییر ارتفاع، از {{domxref("CanvasRenderingContext2D.getImageData()")}} و {{domxref("CanvasRenderingContext2D.putImageData()")}} استفاده کنید. ویژگی‌های بافت باید به‌طور جداگانه ردیابی و بازیابی شوند.
 
-This is one of the two properties, the other being
-{{domxref("HTMLCanvasElement.width")}}, that controls the size of the canvas.
+این یکی از دو خاصیتی است که دیگری {{domxref("HTMLCanvasElement.width")}} می‌باشد، و اندازهٔ بوم را کنترل می‌کنند.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
-Given this {{HTMLElement("canvas")}} element:
+با توجه به این عنصر {{HTMLElement("canvas")}}:
 
 ```html
 <canvas id="canvas" width="300" height="300"></canvas>
 ```
 
-You can get the height of the canvas with the following code:
+می‌توانید ارتفاع بوم را با کد زیر بدست آورید:
 
 ```js
 const canvas = document.getElementById("canvas");
 console.log(canvas.height); // 300
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLCanvasElement")}}: Interface used to define the `HTMLCanvasElement.height` property
-- {{domxref("HTMLCanvasElement.width")}}: Other property used to control the size of the canvas
+- {{domxref("HTMLCanvasElement")}}: رابط (interface) مورد استفاده برای تعریف خاصیت `HTMLCanvasElement.height`
+- {{domxref("HTMLCanvasElement.width")}}: خاصیت دیگر برای کنترل اندازهٔ بوم
 - {{domxref("HTMLEmbedElement.height")}}
 - {{domxref("HTMLIFrameElement.height")}}
 - {{domxref("HTMLImageElement.height")}}
