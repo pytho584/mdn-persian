@@ -1,11 +1,6 @@
 ---
 title: "Document: securitypolicyviolation event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/securitypolicyviolation_event"
-status: "needs-translation"
----
-
----
-title: "Document: securitypolicyviolation event"
 short-title: securitypolicyviolation
 slug: Web/API/Document/securitypolicyviolation_event
 page-type: web-api-event
@@ -14,19 +9,19 @@ browser-compat: api.Document.securitypolicyviolation_event
 
 {{APIRef("Reporting API")}}
 
-The **`securitypolicyviolation`** event is fired when a [Content Security Policy](/en-US/docs/Web/HTTP/Guides/CSP) is violated.
+رویداد **`securitypolicyviolation`** زمانی رخ می‌دهد که یک [سیاست امنیت محتوا (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) نقض شود.
 
-The event is fired on the document when there is a violation of the document CSP policy (and may also bubble from elements in the document).
+این رویداد زمانی روی سند (document) رخ می‌دهد که سیاست CSP مربوط به سند نقض شود (و ممکن است از عناصر داخل سند نیز به سمت بالا منتشر شود).
 
-This event [bubbles](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) to the {{domxref("Window")}} object, and is [composed](/en-US/docs/Web/API/Event/composed).
+این رویداد [انتشار می‌یابد](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) و به شیء {{domxref("Window")}} می‌رسد و [ترکیب‌پذیر (composed)](/en-US/docs/Web/API/Event/composed) است.
 
 > [!NOTE]
-> You should generally add the handler for this event to a top level object (i.e., {{domxref("Window")}} or {{domxref("Document")}}).
-> While HTML elements can technically be the target of the `securitypolicyviolation` event, in reality this event does not fire on them—for example, a blocked `<img>` source directly triggers this event on `document` as the target, instead of bubbling from the `<img>` element.
+> معمولاً باید کنترل‌کننده این رویداد را روی یک شیء سطح بالا (مانند {{domxref("Window")}} یا {{domxref("Document")}}) قرار دهید.
+> اگرچه عناصر HTML از نظر فنی می‌توانند هدف رویداد `securitypolicyviolation` باشند، اما در عمل این رویداد روی آن‌ها رخ نمی‌دهد؛ برای مثال، یک منبع `<img>` مسدودشده مستقیماً این رویداد را با هدف `document` فعال می‌کند، نه اینکه از عنصر `<img>` به سمت بالا منتشر شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("securitypolicyviolation", (event) => { })
@@ -34,36 +29,36 @@ addEventListener("securitypolicyviolation", (event) => { })
 onsecuritypolicyviolation = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("SecurityPolicyViolationEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("SecurityPolicyViolationEvent")}}. به ارث‌رسیده از {{domxref("Event")}}.
 
 {{InheritanceDiagram("SecurityPolicyViolationEvent")}}
 
-## Examples
+## مثال‌ها
 
-The code below shows how you might add an event handler function using the `onsecuritypolicyviolation` event handler property or `addEventListener()` on the `Document`.
+کد زیر نشان می‌دهد که چگونه می‌توانید یک تابع کنترل‌کننده رویداد را با استفاده از ویژگی `onsecuritypolicyviolation` یا `addEventListener()` روی `Document` اضافه کنید.
 
 ```js
 document.onsecuritypolicyviolation = (e) => {
-  // Handle SecurityPolicyViolationEvent e here
+  // مدیریت SecurityPolicyViolationEvent در اینجا
 };
 
 document.addEventListener("securitypolicyviolation", (e) => {
-  // Handle SecurityPolicyViolationEvent e here
+  // مدیریت SecurityPolicyViolationEvent در اینجا
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("Element/securitypolicyviolation_event", "securitypolicyviolation")}} event of the {{domxref("Element")}} interface
-- The {{domxref("WorkerGlobalScope/securitypolicyviolation_event", "securitypolicyviolation")}} event of the {{domxref("WorkerGlobalScope")}} interface
-- [HTTP > Content Security Policy](/en-US/docs/Web/HTTP/Guides/CSP)
+- رویداد {{domxref("Element/securitypolicyviolation_event", "securitypolicyviolation")}} در رابط {{domxref("Element")}}
+- رویداد {{domxref("WorkerGlobalScope/securitypolicyviolation_event", "securitypolicyviolation")}} در رابط {{domxref("WorkerGlobalScope")}}
+- [HTTP > سیاست امنیت محتوا](/en-US/docs/Web/HTTP/Guides/CSP)
