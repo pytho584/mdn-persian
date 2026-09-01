@@ -1,7 +1,6 @@
+```
 ---
 title: "FileSystemDirectoryHandle: getFileHandle() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/getFileHandle"
-status: "needs-translation"
 ---
 
 ---
@@ -14,51 +13,42 @@ browser-compat: api.FileSystemDirectoryHandle.getFileHandle
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`getFileHandle()`** method of the
-{{domxref("FileSystemDirectoryHandle")}} interface returns a
-{{domxref('FileSystemFileHandle')}} for a file with the specified name, within the
-directory the method is called.
+متد **`getFileHandle()`** از رابط {{domxref("FileSystemDirectoryHandle")}} یک {{domxref('FileSystemFileHandle')}} برای فایلی با نام مشخص‌شده، درون شاخه‌ای که متد روی آن فراخوانی می‌شود، برمی‌گرداند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getFileHandle(name)
 getFileHandle(name, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : A string representing the {{domxref('FileSystemHandle.name')}} of
-    the file you wish to retrieve.
+  - : یک رشته (string) که نمایانگر {{domxref('FileSystemHandle.name')}} فایلی است که می‌خواهید بازیابی کنید.
 - `options` {{optional_inline}}
-  - : An object with the following properties:
+  - : یک شیء (object) با ویژگی‌های زیر:
     - `create` {{optional_inline}}
-      - : A {{jsxref('Boolean')}}. Default `false`. When
-        set to `true` if the file is not found, one with the specified name
-        will be created and returned.
+      - : یک {{jsxref('Boolean')}}. پیش‌فرض `false`. وقتی روی `true` تنظیم شود، اگر فایل پیدا نشود، فایلی با نام مشخص‌شده ایجاد و بازگردانده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} which resolves with a {{domxref('FileSystemFileHandle')}}.
+یک {{jsxref('Promise')}} که با یک {{domxref('FileSystemFileHandle')}} resolve می‌شود.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref('PermissionStatus.state')}} for the handle is not `'granted'` in `readwrite` mode if the `create` option is set to `true` or in `read` mode if the `create` option is set to `false`.
+  - : اگر {{domxref('PermissionStatus.state')}} برای هندل (handle) در حالت `readwrite` (وقتی گزینه `create` روی `true` است) یا در حالت `read` (وقتی گزینه `create` روی `false` است) برابر با `'granted'` نباشد، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if the name specified is not a valid string or contains characters that would
-    interfere with the native file system.
+  - : اگر نام مشخص‌شده یک رشته معتبر نباشد یا شامل کاراکترهایی باشد که با سیستم فایل بومی تداخل ایجاد کنند، پرتاب می‌شود.
 - `TypeMismatchError` {{domxref("DOMException")}}
-  - : Thrown if the named entry is a directory and not a file.
+  - : اگر ورودی نام‌برده یک شاخه باشد نه یک فایل، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the current entry is not found or if the file doesn't exist and the `create` option is set to
-    `false`.
+  - : اگر ورودی جاری پیدا نشود یا اگر فایل وجود نداشته باشد و گزینه `create` روی `false` تنظیم شده باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example returns a file handle with the specified name, if the file does
-not exist it is created.
+مثال زیر یک هندل فایل را با نام مشخص‌شده برمی‌گرداند؛ اگر فایل وجود نداشته باشد، ایجاد می‌شود.
 
 ```js
 const fileName = "fileToGetName";
@@ -69,15 +59,16 @@ const fileHandle = await currentDirHandle.getFileHandle(fileName, {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
+```
