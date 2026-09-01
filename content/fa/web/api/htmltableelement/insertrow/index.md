@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableElement: insertRow() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/insertRow"
-status: "needs-translation"
----
-
----
-title: "HTMLTableElement: insertRow() method"
 short-title: insertRow()
 slug: Web/API/HTMLTableElement/insertRow
 page-type: web-api-instance-method
@@ -14,19 +8,11 @@ browser-compat: api.HTMLTableElement.insertRow
 
 {{APIRef("HTML DOM")}}
 
-The **`insertRow()`** method of the {{domxref("HTMLTableElement")}} interface inserts a new row
-({{HtmlElement("tr")}}) in a given {{HtmlElement("table")}}, and returns a reference to
-the new row.
+متد **`insertRow()`** از رابط {{domxref("HTMLTableElement")}} یک ردیف جدید ({{HtmlElement("tr")}}) را در یک {{HtmlElement("table")}} درج می‌کند و ارجاعی به ردیف جدید بازمی‌گرداند.
 
-If a table has multiple {{HtmlElement("tbody")}} elements, by default, the new row is
-inserted into the last `<tbody>`.
-To insert the row into a specific section, use {{domxref("HTMLTableSectionElement.insertRow()")}}
+اگر یک جدول چند عنصر {{HtmlElement("tbody")}} داشته باشد، به‌طور پیش‌فرض ردیف جدید در آخرین `<tbody>` درج می‌شود. برای درج ردیف در یک بخش خاص، از {{domxref("HTMLTableSectionElement.insertRow()")}} استفاده کنید.
 
-> [!NOTE]
-> `insertRow()` inserts the row directly into the
-> table. The row does not need to be appended separately as would be the case if
-> {{domxref("Document.createElement()")}} had been used to create the new
-> `<tr>` element.
+> **نکته:** `insertRow()` ردیف را مستقیماً در جدول درج می‌کند. نیازی به افزودن جداگانهٔ ردیف نیست؛ برخلاف حالتی که برای ایجاد عنصر `<tr>` جدید از {{domxref("Document.createElement()")}} استفاده شده باشد.
 
 ## Syntax
 
@@ -35,34 +21,27 @@ insertRow()
 insertRow(index)
 ```
 
-{{domxref("HTMLTableElement")}} is a reference to an HTML {{HtmlElement("table")}}
-element.
+{{domxref("HTMLTableElement")}} ارجاعی به یک عنصر HTML {{HtmlElement("table")}} است.
 
 ### Parameters
 
 - `index` {{optional_inline}}
-  - : The row index of the new row. If `index` is `-1` or equal to
-    the number of rows, the row is appended as the last row.
-    If `index` is omitted it defaults to `-1`.
+  - : شاخص (ایندکس) ردیف جدید. اگر `index` برابر با `-1` یا برابر با تعداد ردیف‌ها باشد، ردیف به‌عنوان آخرین ردیف اضافه می‌شود. اگر `index` حذف شود، مقدار پیش‌فرض آن `-1` است.
 
 ### Return value
 
-An {{domxref("HTMLTableRowElement")}} that references the new
-row.
+یک {{domxref("HTMLTableRowElement")}} که ارجاعی به ردیف جدید است.
 
 ### Exceptions
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if `index` is greater than the number of rows.
+  - : اگر `index` بزرگ‌تر از تعداد ردیف‌ها باشد پرتاب می‌شود.
 
 ## Examples
 
-This example uses `insertRow(-1)` to append a new row to a table.
+این مثال از `insertRow(-1)` برای افزودن یک ردیف جدید به جدول استفاده می‌کند.
 
-We then use {{domxref("HTMLTableRowElement.insertCell()")}} to insert a new cell in the
-new row. (To be valid HTML, a `<tr>` must have at least one
-`<td>` element.) Finally, we add some text to the cell using
-{{domxref("Document.createTextNode()")}} and {{domxref("Node.appendChild()")}}.
+سپس از {{domxref("HTMLTableRowElement.insertCell()")}} برای درج یک خانه (سلول) جدید در ردیف جدید استفاده می‌کنیم. (برای اینکه HTML معتبر باشد، یک `<tr>` باید حداقل یک عنصر `<td>` داشته باشد.) در پایان، با استفاده از {{domxref("Document.createTextNode()")}} و {{domxref("Node.appendChild()")}} متنی به خانه اضافه می‌کنیم.
 
 ### HTML
 
