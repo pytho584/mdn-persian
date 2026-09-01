@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement: method property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/method"
-status: "needs-translation"
----
-
----
-title: "HTMLFormElement: method property"
 short-title: method
 slug: Web/API/HTMLFormElement/method
 page-type: web-api-instance-property
@@ -14,29 +8,28 @@ browser-compat: api.HTMLFormElement.method
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLFormElement.method`** property represents the
-{{Glossary("HTTP")}} method used to submit the {{HtmlElement("form")}}.
+ویژگی **`HTMLFormElement.method`** نشان‌دهندهٔ متد {{Glossary("HTTP")}} مورد استفاده برای ارسال {{HtmlElement("form")}} است.
 
-Unless explicitly specified, the default method is 'get'.
+اگر به طور صریح مشخص نشده باشد، متد پیش‌فرض 'get' است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```js
 document.forms["my-form"].method = "post";
 
-const formElement = document.createElement("form"); // Create a form
+const formElement = document.createElement("form"); // ایجاد یک فرم
 document.body.appendChild(formElement);
 console.log(formElement.method); // 'get'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
