@@ -1,11 +1,5 @@
 ---
 title: "ExtendableEvent: ExtendableEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEvent/ExtendableEvent"
-status: "needs-translation"
----
-
----
-title: "ExtendableEvent: ExtendableEvent() constructor"
 short-title: ExtendableEvent()
 slug: Web/API/ExtendableEvent/ExtendableEvent
 page-type: web-api-constructor
@@ -14,7 +8,7 @@ browser-compat: api.ExtendableEvent.ExtendableEvent
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`ExtendableEvent()`** constructor creates a new {{domxref("ExtendableEvent")}} object.
+سازندهٔ **`ExtendableEvent()`** یک شیء جدید از نوع {{domxref("ExtendableEvent")}} می‌سازد.
 
 ## Syntax
 
@@ -23,30 +17,29 @@ new ExtendableEvent(type)
 new ExtendableEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event. It is case-sensitive.
+  - : رشته‌ای شامل نام رویداد. این نام به حروف بزرگ و کوچک حساس است.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can contain any custom settings
-    that you want to apply to the event object.
-    Currently no possible options are mandatory,
-    but this has been defined for forward compatibility across the different derived events.
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند هر تنظیمات سفارشی‌ای را که می‌خواهید روی شیء رویداد اعمال کنید، شامل شود.
+    در حال حاضر هیچ گزینهٔ اجباری‌ای وجود ندارد،
+    اما این امکان برای سازگاری با رویدادهای مشتق‌شدهٔ مختلف در آینده در نظر گرفته شده است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("ExtendableEvent")}} object.
+یک شیء جدید از نوع {{domxref("ExtendableEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-- [Service workers basic code example](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
-- [Using web workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+- [استفاده از Service Workerها](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [مثال کد پایهٔ Service workerها](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
+- [استفاده از web workerها](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
