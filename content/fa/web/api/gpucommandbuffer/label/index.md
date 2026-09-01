@@ -1,7 +1,5 @@
 ---
 title: "GPUCommandBuffer: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandBuffer/label"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,17 @@ browser-compat: api.GPUCommandBuffer.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** read-only property of the
-{{domxref("GPUCommandBuffer")}} interface is a string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی **`label`** از رابط {{domxref("GPUCommandBuffer")}} که فقط‌خواندنی است، رشته‌ای است که برچسبی را برای شناسایی شیء فراهم می‌کند؛ برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUCommandEncoder.finish()")}} call, or you can get and set it directly on the `GPUCommandBuffer` object.
+این برچسب را می‌توان با ارائه‌ی یک ویژگی `label` در شیء توصیفگری که به فراخوانی {{domxref("GPUCommandEncoder.finish()")}} اصلی ارسال می‌شود تنظیم کرد، یا می‌توانید آن را مستقیماً روی شیء `GPUCommandBuffer` دریافت و تنظیم کنید.
 
-## Value
+## مقدار
 
-A string. If no label value has previously been set, getting the label returns an empty string.
+یک رشته. اگر قبلاً هیچ مقدار برچسبی تنظیم نشده باشد، دریافت برچسب یک رشته‌ی خالی برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUCommandBuffer.label`:
+تنظیم و دریافت یک برچسب از طریق `GPUCommandBuffer.label`:
 
 ```js
 const commandBuffer = commandEncoder.finish();
@@ -33,7 +30,7 @@ commandBuffer.label = "my_command_buffer";
 console.log(commandBuffer.label); // "my_command_buffer"
 ```
 
-Setting a label via the originating {{domxref("GPUCommandEncoder.finish()")}} call, and then getting it via `GPUCommandBuffer.label`:
+تنظیم یک برچسب از طریق فراخوانی {{domxref("GPUCommandEncoder.finish()")}} اصلی و سپس دریافت آن از طریق `GPUCommandBuffer.label`:
 
 ```js
 const commandBuffer = commandEncoder.finish({
@@ -43,14 +40,14 @@ const commandBuffer = commandEncoder.finish({
 console.log(commandBuffer.label); // "my_command_buffer"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
