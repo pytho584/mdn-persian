@@ -1,11 +1,5 @@
 ---
 title: "HTMLScriptElement: integrity property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/integrity"
-status: "needs-translation"
----
-
----
-title: "HTMLScriptElement: integrity property"
 short-title: integrity
 slug: Web/API/HTMLScriptElement/integrity
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLScriptElement.integrity
 
 {{APIRef("HTML DOM")}}
 
-The **`integrity`** property of the {{domxref("HTMLScriptElement")}} interface is a string that contains inline metadata that a browser can use to verify that a fetched resource has been delivered without unexpected manipulation.
+ویژگی **`integrity`** از رابط {{domxref("HTMLScriptElement")}} یک رشته است که شامل فراداده‌های درون‌خطی می‌باشد که مرورگر می‌تواند از آن برای تأیید اینکه یک منبع واکشی‌شده بدون دستکاری غیرمنتظره تحویل داده شده است، استفاده کند.
 
-It reflects the `integrity` attribute of the {{HTMLElement("script")}} element.
+این ویژگی منعکس‌کنندهٔ ویژگی `integrity` عنصر {{HTMLElement("script")}} است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## نمونه‌ها
 
 ```html
 <script
@@ -37,15 +31,15 @@ const el = document.getElementById("el");
 console.log(el.integrity); // Output: "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLLinkElement.integrity")}}
 - [Subresource Integrity](/en-US/docs/Web/Security/Defenses/Subresource_Integrity)
