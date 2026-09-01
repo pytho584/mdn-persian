@@ -1,7 +1,5 @@
 ---
 title: "CSSStyleSheet: cssRules property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/cssRules"
-status: "needs-translation"
 ---
 
 ---
@@ -14,21 +12,15 @@ browser-compat: api.CSSStyleSheet.cssRules
 
 {{APIRef("CSSOM")}}
 
-The read-only {{domxref("CSSStyleSheet")}} property
-**`cssRules`** returns a live {{domxref("CSSRuleList")}} which
-provides a real-time, up-to-date list of every CSS rule which comprises the
-stylesheet. Each item in the list is a {{domxref("CSSRule")}} defining a single
-rule.
+خاصیت فقط‌خواندنی {{domxref("CSSStyleSheet")}} با نام **`cssRules`** یک {{domxref("CSSRuleList")}} زنده بازمی‌گرداند که فهرستی بی‌درنگ و به‌روز از تمام قواعد CSS تشکیل‌دهندهٔ شیوه‌نامه ارائه می‌دهد. هر آیتم در این فهرست یک {{domxref("CSSRule")}} است که یک قاعدهٔ واحد را تعریف می‌کند.
 
-## Value
+## مقدار
 
-A live-updating {{domxref("CSSRuleList")}} containing each of the CSS rules making up
-the stylesheet. Each entry in the rule list is a {{domxref("CSSRule")}} object
-describing one rule making up the stylesheet.
+یک {{domxref("CSSRuleList")}} که به‌صورت زنده به‌روز می‌شود و شامل تک‌تک قواعد CSS سازندهٔ شیوه‌نامه است. هر ورودی در فهرست قواعد، یک شیء {{domxref("CSSRule")}} است که یک قاعده از قواعد سازندهٔ شیوه‌نامه را توصیف می‌کند.
 
-## Examples
+## مثال‌ها
 
-Individual rules within the stylesheet can then be accessed by index:
+سپس می‌توان قواعد تکی داخل شیوه‌نامه را با ایندکس (اندیس) در دسترس قرار داد:
 
 ```js
 const ruleList = document.styleSheets[0].cssRules;
@@ -38,7 +30,7 @@ for (let i = 0; i < ruleList.length; i++) {
 }
 ```
 
-Rules can also be accessed using {{jsxref("Statements/for...of", "for...of")}}:
+قواعد را می‌توان با {{jsxref("Statements/for...of", "for...of")}} نیز در دسترس قرار داد:
 
 ```js
 const ruleList = document.styleSheets[0].cssRules;
@@ -48,18 +40,17 @@ for (const rule of ruleList) {
 }
 ```
 
-However, because `CSSRule` is not a proper array, you can't use
-{{jsxref("Array.forEach", "forEach()")}}.
+با این حال، چون `CSSRule` یک آرایهٔ واقعی نیست، نمی‌توانید از {{jsxref("Array.forEach", "forEach()")}} استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model)
 - [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
