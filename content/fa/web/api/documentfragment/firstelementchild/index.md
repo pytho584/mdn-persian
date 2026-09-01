@@ -1,7 +1,5 @@
 ---
 title: "DocumentFragment: firstElementChild property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/firstElementChild"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,13 @@ browser-compat: api.DocumentFragment.firstElementChild
 
 {{ APIRef("DOM") }}
 
-The **`DocumentFragment.firstElementChild`** read-only property
-returns the document fragment's first child {{domxref("Element")}}, or `null` if there
-are no child elements.
+ویژگی فقط‌خواندنی **`DocumentFragment.firstElementChild`** نخستین فرزندِ {{domxref("Element")}} متعلق به قطعه سند را برمی‌گرداند؛ یا اگر هیچ عنصر فرزندی وجود نداشته باشد، `null` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} that is the first child `Element` of the object, or `null` if there are none.
+یک {{domxref("Element")}} که نخستین فرزندِ `Element` آن شیء است، یا اگر هیچ‌کدام وجود نداشته باشد، `null`.
 
-## Examples
+## مثال‌ها
 
 ```js
 let fragment = new DocumentFragment();
@@ -34,14 +30,14 @@ fragment.appendChild(paragraph);
 fragment.firstElementChild; // <p>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.firstElementChild")}}
