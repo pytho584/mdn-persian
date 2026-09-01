@@ -1,7 +1,5 @@
 ---
 title: "HTMLIFrameElement: featurePolicy property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/featurePolicy"
-status: "needs-translation"
 ---
 
 ---
@@ -17,20 +15,16 @@ browser-compat: api.HTMLIFrameElement.featurePolicy
 
 {{APIRef("Feature Policy API")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`featurePolicy`** read-only
-property of the {{DOMxRef("HTMLIFrameElement")}} interface returns the
-{{DOMxRef("FeaturePolicy")}} interface which provides a simple API for introspecting
-the [Permissions Policies](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) applied to a specific frame.
+خاصیت فقط‌خواندنی **`featurePolicy`** در رابط {{DOMxRef("HTMLIFrameElement")}}، رابط {{DOMxRef("FeaturePolicy")}} را برمی‌گرداند که یک API ساده برای بررسی [سیاست‌های مجوز](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) اعمال‌شده بر یک فریم خاص فراهم می‌کند.
 
-## Value
+## مقدار
 
-A [`FeaturePolicy`](/en-US/docs/Web/API/FeaturePolicy) object
-that can be used to inspect the Permissions Policy settings applied to the frame.
+یک شیء [`FeaturePolicy`](/en-US/docs/Web/API/FeaturePolicy) که می‌تواند برای بازرسی تنظیمات Permissions Policy اعمال‌شده بر فریم استفاده شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
