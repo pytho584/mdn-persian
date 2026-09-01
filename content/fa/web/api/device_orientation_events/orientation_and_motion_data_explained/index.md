@@ -1,10 +1,4 @@
 ---
-title: "Orientation and motion data explained"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained"
-status: "needs-translation"
----
-
----
 title: Orientation and motion data explained
 slug: Web/API/Device_orientation_events/Orientation_and_motion_data_explained
 page-type: guide
@@ -12,57 +6,57 @@ page-type: guide
 
 {{DefaultAPISidebar("Device Orientation Events")}}
 
-When using orientation and motion events, it's important to understand what the values you're given by the browser mean. This article provides details about the coordinate systems at play and how you use them.
+هنگام استفاده از رویدادهای جهت‌گیری و حرکت، درک معنای مقادیری که مرورگر در اختیار شما قرار می‌دهد اهمیت زیادی دارد. این مقاله جزئیات مربوط به دستگاه‌های مختصات (coordinate frames) مورد استفاده و نحوهٔ به‌کارگیری آن‌ها را شرح می‌دهد.
 
-## About coordinate frames
+## دربارهٔ چارچوب‌های مختصات
 
-A **coordinate frame** is a system whereby the orientation of the three axes (X, Y, and Z) are defined in reference to an object. There are two coordinate frames to consider when using orientation and motion events:
+**چارچوب مختصات** سیستمی است که در آن جهت‌گیری سه محور (X، Y و Z) نسبت به یک شیء تعریف می‌شود. هنگام استفاده از رویدادهای جهت‌گیری و حرکت، دو چارچوب مختصات را باید در نظر گرفت:
 
-### Earth coordinate frame
+### چارچوب مختصات زمین
 
-The Earth coordinate frame is the coordinate frame fixed on the center of the Earth; that is, the axes are aligned based on the pull of gravity and the standard magnetic north orientation. We use upper-case letters ("X", "Y", and "Z") to describe the axes of the Earth coordinate frame.
+چارچوب مختصات زمین، چارچوب مختصاتی است که در مرکز زمین ثابت شده است؛ یعنی محورها بر اساس گرانش زمین و جهت شمال مغناطیسی استاندارد تراز می‌شوند. برای توصیف محورهای این چارچوب از حروف بزرگ («X»، «Y» و «Z») استفاده می‌کنیم.
 
-- The **X** axis follows along the ground plane, perpendicular to the Y axis and positive toward the east (and therefore negative toward the west).
-- The **Y** axis follows along the ground plane, and is positive toward true north (that is, the North Pole, not magnetic north) and negative toward true south.
-- The **Z** axis is perpendicular to the ground plane; think of it as a line drawn between the device and the center of the Earth. The value of the Z coordinate is positive upward (away from the center of the Earth) and negative downward (toward the center of the Earth).
+- محور **X** در امتداد سطح زمین، عمود بر محور Y قرار دارد و سمت مثبت آن به سمت شرق (و در نتیجه سمت منفی آن به سمت غرب) است.
+- محور **Y** در امتداد سطح زمین قرار دارد؛ سمت مثبت آن به سمت شمال حقیقی (یعنی قطب شمال، نه شمال مغناطیسی) و سمت منفی آن به سمت جنوب حقیقی است.
+- محور **Z** عمود بر سطح زمین است؛ آن را مانند خطی در نظر بگیرید که میان دستگاه و مرکز زمین کشیده شده است. مقدار مختصهٔ Z در جهت بالا مثبت (دور از مرکز زمین) و در جهت پایین منفی (به سمت مرکز زمین) است.
 
-### Device coordinate frame
+### چارچوب مختصات دستگاه
 
-The device coordinate frame is the coordination frame fixed on the center of the device. We use lower-case letters ("x", "y", and "z") to describe the axes of the device coordinate frame.
+چارچوب مختصات دستگاه، چارچوب مختصاتی است که در مرکز دستگاه ثابت شده است. برای توصیف محورهای این چارچوب از حروف کوچک («x»، «y» و «z») استفاده می‌کنیم.
 
-![Drawing representing three axes of a mobile device](axes.png)
+![نقاشی‌ای که سه محور یک دستگاه تلفن همراه را نشان می‌دهد](axes.png)
 
-- The **x** axis is in the plane of the screen and is positive toward the right and negative toward the left.
-- The **y** axis is in the plane of the screen and is positive toward the top and negative toward the bottom.
-- The **z** axis is perpendicular to the screen or keyboard, and is positive extending outward from the screen.
+- محور **x** در صفحهٔ نمایش قرار دارد و سمت مثبت آن به سمت راست و سمت منفی آن به سمت چپ است.
+- محور **y** در صفحهٔ نمایش قرار دارد و سمت مثبت آن به سمت بالا و سمت منفی آن به سمت پایین است.
+- محور **z** عمود بر صفحهٔ نمایش یا صفحه‌کلید است و سمت مثبت آن به سمت بیرون از صفحه است.
 
 > [!NOTE]
-> On a phone or tablet, the orientation of the device is always considered in relation to the standard orientation of the screen; this is the "portrait" orientation on most devices. On a laptop computer, the orientation is considered in relation to the keyboard. If you want to detect changes in device orientation in order to compensate, you can use the [`change`](/en-US/docs/Web/API/ScreenOrientation/change_event) event.
+> در تلفن همراه یا رایانهٔ لوحی، جهت‌گیری دستگاه همواره نسبت به جهت استاندارد صفحهٔ نمایش در نظر گرفته می‌شود؛ در بیشتر دستگاه‌ها این جهت «حالت عمودی» (portrait) است. در رایانهٔ کیفی (لپ‌تاپ)، جهت‌گیری نسبت به صفحه‌کلید سنجیده می‌شود. اگر می‌خواهید تغییرات جهت‌گیری دستگاه را برای جبران این موارد تشخیص دهید، می‌توانید از رویداد [`change`](/en-US/docs/Web/API/ScreenOrientation/change_event) استفاده کنید.
 
-## About rotation
+## دربارهٔ چرخش
 
-Rotation is described about any given axis in terms of the number of degrees of difference between the device's coordinate frame and the Earth coordinate frame, and is measured in degrees.
+چرخش حول هر یک از محورها بر حسب تعداد درجه‌های اختلاف بین چارچوب مختصات دستگاه و چارچوب مختصات زمین توصیف می‌شود و بر حسب درجه اندازه‌گیری می‌شود.
 
 ### Alpha
 
-Rotation around the z axis — that is, twisting the device — causes the **alpha** rotation angle to change:
+چرخش حول محور z — یعنی پیچاندن دستگاه — باعث تغییر زاویهٔ چرخش **آلفا** (alpha) می‌شود:
 
-![Positive alpha rotates the device counter-clockwise.](alpha.png)
+![چرخش مثبت آلفا، دستگاه را در خلاف جهت عقربه‌های ساعت می‌چرخاند.](alpha.png)
 
-The alpha angle is 0° when top of the device is pointed directly toward the Earth's north pole, and increases as the device is rotated counterclockwise. As such, 90° corresponds with pointing west, 180° with south, and 270° with east.
+زاویهٔ آلفا وقتی ۰° است که بالای دستگاه مستقیماً به سمت قطب شمال زمین نشانه رفته باشد؛ این زاویه با چرخش دستگاه در خلاف جهت عقربه‌های ساعت افزایش می‌یابد. بر این اساس، ۹۰° یعنی رو به غرب، ۱۸۰° یعنی رو به جنوب و ۲۷۰° یعنی رو به شرق.
 
 ### Beta
 
-Rotation around the x axis — that is, tipping the device away from or toward the user — causes the **beta** rotation angle to change:
+چرخش حول محور x — یعنی متمایل کردن دستگاه به سمت کاربر یا دور از او — باعث تغییر زاویهٔ چرخش **بتا** (beta) می‌شود:
 
-![Positive beta pitches the device forward toward the user.](beta2.png)
+![بتای مثبت، دستگاه را به سمت جلو و به طرف کاربر می‌چرخاند.](beta2.png)
 
-The beta angle is 0° when the device's top and bottom are the same distance from the Earth's surface; it increases toward 180° as the device is tipped forward toward the user, and it decreases toward -180° as the device is tipped backward away from the user.
+زاویهٔ بتا وقتی ۰° است که فاصلهٔ بالا و پایین دستگاه از سطح زمین یکسان باشد؛ با متمایل شدن دستگاه به سمت جلو (به طرف کاربر)، این زاویه تا ۱۸۰° افزایش می‌یابد و با متمایل شدن دستگاه به سمت عقب (دور از کاربر)، تا ۱۸۰- درجه کاهش می‌یابد.
 
 ### Gamma
 
-Rotation around the y axis — that is, tilting the device toward the left or right — causes the **gamma** rotation angle to change:
+چرخش حول محور y — یعنی کج کردن دستگاه به چپ یا راست — باعث تغییر زاویهٔ چرخش **گاما** (gamma) می‌شود:
 
-![Positive gamma tilts the devices toward the right.](gamma.png)
+![گامای مثبت، دستگاه را به سمت راست کج می‌کند.](gamma.png)
 
-The gamma angle is 0° when the device's left and right sides are the same distance from the surface of the Earth, and increases toward 90° as the device is tipped toward the right, and toward -90° as the device is tipped toward the left.
+زاویهٔ گاما وقتی ۰° است که فاصلهٔ طرف چپ و راست دستگاه از سطح زمین یکسان باشد؛ با کج شدن دستگاه به سمت راست، این زاویه تا ۹۰° افزایش می‌یابد و با کج شدن به سمت چپ، تا ۹۰- درجه کاهش می‌یابد.
