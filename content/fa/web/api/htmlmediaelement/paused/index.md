@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: paused property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/paused"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: paused property"
 short-title: paused
 slug: Web/API/HTMLMediaElement/paused
 page-type: web-api-instance-property
@@ -14,29 +8,27 @@ browser-compat: api.HTMLMediaElement.paused
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`HTMLMediaElement.paused`** property
-tells whether the media element is paused.
+خاصیت فقط خواندنی **`HTMLMediaElement.paused`** مشخص می‌کند که آیا عنصر رسانه در حالت توقف (pause) است یا خیر.
 
-## Value
+## مقدار
 
-A boolean value. `true` is paused and `false` is not
-paused.
+یک مقدار بولی (Boolean). `true` به معنی توقف و `false` به معنی عدم توقف است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const obj = document.createElement("video");
 console.log(obj.paused); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.paused` property
+- {{domxref("HTMLMediaElement")}}: واسطی که برای تعریف خاصیت `HTMLMediaElement.paused` استفاده شده است.
