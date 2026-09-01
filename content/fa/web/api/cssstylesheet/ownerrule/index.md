@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleSheet: ownerRule property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/ownerRule"
-status: "needs-translation"
----
-
----
-title: "CSSStyleSheet: ownerRule property"
 short-title: ownerRule
 slug: Web/API/CSSStyleSheet/ownerRule
 page-type: web-api-instance-property
@@ -14,35 +8,27 @@ browser-compat: api.CSSStyleSheet.ownerRule
 
 {{APIRef("CSSOM")}}
 
-The read-only {{domxref("CSSStyleSheet")}} property
-**`ownerRule`** returns the {{domxref("CSSImportRule")}}
-corresponding to the {{cssxref("@import")}} at-rule which imported the stylesheet into
-the document. If the stylesheet wasn't imported into the document using
-`@import`, the returned value is `null`.
+ویژگی فقط‌خواندنی **`ownerRule`** از رابط {{domxref("CSSStyleSheet")}}، شیء {{domxref("CSSImportRule")}} متناظر با قاعده at-rule مربوط به {{cssxref("@import")}} را برمی‌گرداند که برگه سبک را به سند وارد کرده است. اگر برگه سبک با استفاده از `@import` وارد سند نشده باشد، مقدار بازگشتی `null` است.
 
-## Value
+## مقدار
 
-A {{domxref("CSSImportRule")}} corresponding to the {{cssxref("@import")}} rule which
-imported the stylesheet into the document. If the stylesheet wasn't imported into the
-document using `@import`, the returned value is `null`.
+یک {{domxref("CSSImportRule")}} متناظر با قاعده {{cssxref("@import")}} که برگه سبک را به سند وارد کرده است. اگر برگه سبک با استفاده از `@import` وارد سند نشده باشد، مقدار بازگشتی `null` است.
 
-## Examples
+## مثال‌ها
 
-This snippet of code looks for rules which were not imported into the document using an
-`@import` at-rule.
+این قطعه کد به دنبال قواعدی می‌گردد که با استفاده از قاعده at-rule مربوط به `@import` وارد سند نشده‌اند.
 
 ```js
 const ruleList = document.styleSheets[0].cssRules;
 
 for (const rule of ruleList) {
   if (!rule.ownerRule) {
-    /* rule is not imported */
+    /* قاعده وارد نشده است */
   }
 }
 ```
 
-This snippet obtains a reference to the stylesheet associated with the
-`@import` and processes it in some manner:
+این قطعه مرجعی از برگه سبک مرتبط با `@import` به دست می‌آورد و آن را به‌نحوی پردازش می‌کند:
 
 ```js
 const ruleList = document.styleSheets[0].cssRules;
@@ -54,15 +40,16 @@ for (const rule of ruleList) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model)
-- [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
+- [مدل شیء CSS](/en-US/docs/Web/API/CSS_Object_Model)
+- [استفاده از اطلاعات سبک‌دهی پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
+```
