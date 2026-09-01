@@ -1,10 +1,4 @@
 ---
-title: "Houdini APIs"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Houdini_APIs"
-status: "needs-translation"
----
-
----
 title: Houdini APIs
 slug: Web/API/Houdini_APIs
 page-type: guide
@@ -12,46 +6,25 @@ page-type: guide
 
 {{DefaultAPISidebar("Houdini API")}}
 
-Houdini is a set of low-level APIs that exposes parts of the CSS engine,
-giving developers the power to extend CSS by hooking into the styling and layout process of a browser's rendering engine.
-Houdini is a group of APIs that give developers direct access to the [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model) (CSSOM),
-enabling developers to write code the browser can parse as CSS,
-thereby creating new CSS features without waiting for them to be implemented natively in browsers.
+Houdini مجموعه‌ای از APIهای سطح پایین است که بخش‌هایی از موتور CSS را نمایان می‌کند و به توسعه‌دهندگان قدرت می‌دهد تا با اتصال به فرایند استایل‌دهی و چیدمان موتور رندر مرورگر، CSS را گسترش دهند. Houdini گروهی از APIهاست که دسترسی مستقیم به [مدل شیء CSS](/en-US/docs/Web/API/CSS_Object_Model) (CSSOM) را فراهم می‌کند و توسعه‌دهندگان را قادر می‌سازد کدی بنویسند که مرورگر بتواند آن را به‌عنوان CSS تجزیه کند، بدین ترتیب ویژگی‌های جدید CSS را بدون انتظار برای پیاده‌سازی بومی آن‌ها در مرورگرها ایجاد کنند.
 
-## Advantages of Houdini
+## مزایای Houdini
 
-Houdini enables faster parse times than using JavaScript {{domxref("HTMLElement.style")}} for style changes.
-Browsers parse the CSSOM — including layout, paint, and composite processes —
-before applying any style updates found in scripts.
-In addition, layout, paint, and composite processes are repeated for JavaScript style updates.
-Houdini code doesn't wait for that first rendering cycle to be complete.
-Rather, it is included in that first cycle — creating renderable, understandable styles.
-Houdini provides an object-based API for working with CSS values in JavaScript.
+Houdini زمان تجزیه سریع‌تری نسبت به استفاده از JavaScript {{domxref("HTMLElement.style")}} برای تغییرات استایل فراهم می‌کند. مرورگرها CSSOM — شامل فرایندهای چیدمان، نقاشی و ترکیب — را قبل از اعمال هرگونه به‌روزرسانی استایل موجود در اسکریپت‌ها تجزیه می‌کنند. علاوه بر این، فرایندهای چیدمان، نقاشی و ترکیب برای به‌روزرسانی‌های استایل جاوااسکریپتی تکرار می‌شوند. کد Houdini منتظر تکمیل چرخه رندر اول نمی‌ماند. بلکه در همان چرخه اول گنجانده می‌شود — استایل‌های قابل رندر و قابل فهم ایجاد می‌کند. Houdini یک API مبتنی بر شیء برای کار با مقادیر CSS در جاوااسکریپت فراهم می‌کند.
 
-Houdini's [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) is a CSS Object Model with types and methods,
-exposing values as JavaScript objects
-making for more intuitive CSS manipulation than previous string based {{domxref("HTMLElement.style")}} manipulations.
-Every element and style sheet rule has a style map which is accessible via its {{domxref("StylePropertyMap")}}.
+[API مدل شیء تایپ‌شده CSS](/en-US/docs/Web/API/CSS_Typed_OM_API) (CSS Typed Object Model API) یک مدل شیء CSS با انواع و متدهاست که مقادیر را به‌عنوان اشیاء جاوااسکریپتی نمایان می‌کند و دستکاری شهودی‌تری نسبت به دستکاری‌های قبلی مبتنی بر رشته {{domxref("HTMLElement.style")}} فراهم می‌کند. هر عنصر و قانون استایل‌شیت دارای یک نقشه استایل است که از طریق {{domxref("StylePropertyMap")}} آن قابل دسترسی است.
 
-A feature of CSS Houdini is the {{domxref("Worklet")}}.
-With worklets, you can create modular CSS,
-requiring a single line of JavaScript to import configurable components:
-no pre-processors, post-processors or JavaScript frameworks needed.
+یکی از ویژگی‌های CSS Houdini {{domxref("Worklet")}} است. با ورکلت‌ها می‌توانید CSS مدولار ایجاد کنید که تنها با یک خط کد جاوااسکریپت برای وارد کردن کامپوننت‌های قابل پیکربندی نیاز دارد: بدون نیاز به پیش‌پردازنده، پس‌پردازنده یا فریم‌ورک جاوااسکریپت.
 
 ```js
 CSS.paintWorklet.addModule("css-component.js");
 ```
 
-This added module contains {{domxref("PaintWorkletGlobalScope.registerPaint")}} functions,
-which register completely configurable worklets.
+این ماژول اضافه‌شده شامل توابع {{domxref("PaintWorkletGlobalScope.registerPaint")}} است که ورکلت‌های کاملاً قابل پیکربندی را ثبت می‌کنند.
 
-The CSS `paint()` function is an additional function supported by the {{cssxref("image")}} type.
-It takes parameters that include the name of the worklet,
-plus additional parameters needed by the worklet.
-The worklet also has access to the element's custom properties:
-they don't need to be passed as function arguments.
+تابع `paint()` CSS یک تابع اضافی است که توسط نوع {{cssxref("image")}} پشتیبانی می‌شود. این تابع پارامترهایی شامل نام ورکلت و همچنین پارامترهای اضافی مورد نیاز ورکلت را می‌گیرد. ورکلت همچنین به ویژگی‌های سفارشی عنصر دسترسی دارد: نیازی به ارسال آن‌ها به‌عنوان آرگومان تابع نیست.
 
-In the following example the `paint()` function is passed a worklet called `my-component`.
+در مثال زیر تابع `paint()` یک ورکلت به نام `my-component` را دریافت می‌کند.
 
 ```css
 li {
@@ -62,46 +35,34 @@ li {
 ```
 
 > [!NOTE]
-> With great power comes great responsibility!
-> With Houdini you _could_ invent your own masonry, grid, or regions implementation,
-> but doing so is not necessarily the best idea.
-> The CSS Working group does a lot of work to ensure every feature is performant,
-> handles all edge cases, and considers security, privacy, and accessibility.
-> As you extend CSS with Houdini, make sure to keep these considerations in mind,
-> and start small before moving on to more ambitious projects.
+> با قدرت زیاد، مسئولیت زیادی نیز همراه است! با Houdini می‌توانید پیاده‌سازی مخصوص خود را برای masonry، grid یا regions ابداع کنید، اما انجام این کار لزوماً بهترین ایده نیست. گروه کاری CSS کار زیادی برای اطمینان از عملکرد، مدیریت تمام موارد لبه، و در نظر گرفتن امنیت، حریم شخصی و دسترسی‌پذیری انجام می‌دهد. هنگام گسترش CSS با Houdini، حتماً این ملاحظات را در نظر داشته باشید و قبل از حرکت به پروژه‌های بلندپروازانه‌تر، با پروژه‌های کوچک شروع کنید.
 
-## The Houdini APIs
+## APIهای Houdini
 
-Below you can find links to the main reference pages covering the APIs that fall under the Houdini umbrella,
-along with links to guides to help you if you need guidance in learning how to use them.
+در زیر می‌توانید پیوندهایی به صفحات مرجع اصلی پوشش‌دهنده APIهایی که در چتر Houdini قرار می‌گیرند، همراه با پیوندهایی به راهنماهایی که در یادگیری نحوه استفاده از آن‌ها کمک می‌کنند، پیدا کنید.
 
-### CSS Properties and Values API
+### API ویژگی‌ها و مقادیر CSS (CSS Properties and Values API)
 
-Defines an API for registering new CSS properties.
-Properties registered using this API are provided with a parse syntax that defines a type,
-inheritance behavior, and an initial value.
+APIای برای ثبت ویژگی‌های جدید CSS تعریف می‌کند. ویژگی‌های ثبت‌شده با استفاده از این API دارای یک نحو تجزیه هستند که یک نوع، رفتار وراثت و یک مقدار اولیه را تعریف می‌کند.
 
-- [CSS Properties and Values API reference](/en-US/docs/Web/API/CSS_Properties_and_Values_API)
-- [CSS Properties and Values API guide](/en-US/docs/Web/API/CSS_Properties_and_Values_API/guide)
+- [مرجع API ویژگی‌ها و مقادیر CSS](/en-US/docs/Web/API/CSS_Properties_and_Values_API)
+- [راهنمای API ویژگی‌ها و مقادیر CSS](/en-US/docs/Web/API/CSS_Properties_and_Values_API/guide)
 - [Smarter custom properties with Houdini's new API](https://web.dev/articles/css-props-and-vals)
 
 ### CSS Typed OM
 
-Converting CSSOM value strings into meaningfully typed JavaScript representations and back can incur a significant performance overhead.
-The CSS Typed OM exposes CSS values as typed JavaScript objects to allow their performant manipulation.
+تبدیل رشته‌های مقدار CSSOM به نمایش‌های جاوااسکریپتی تایپ‌شده و بالعکس می‌تواند هزینه عملکرد قابل توجهی داشته باشد. CSS Typed OM مقادیر CSS را به‌عنوان اشیاء جاوااسکریپتی تایپ‌شده نمایان می‌کند تا امکان دستکاری کارآمد آن‌ها فراهم شود.
 
-- [CSS Typed OM reference](/en-US/docs/Web/API/CSS_Typed_OM_API)
-- [CSS Typed OM guide](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
+- [مرجع CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API)
+- [راهنمای CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
 - [Working with the new CSS Typed Object Model](https://developer.chrome.com/docs/css-ui/cssom)
 
-### CSS Painting API
+### API نقاشی CSS (CSS Painting API)
 
-Developed to improve the extensibility of CSS,
-the Painting API allows developers to write JavaScript functions that can draw directly into an element's background,
-border, or content via the `paint()` CSS function.
+API نقاشی که برای بهبود قابلیت گسترش CSS توسعه یافته است، به توسعه‌دهندگان اجازه می‌دهد توابع جاوااسکریپتی بنویسند که می‌توانند مستقیماً روی پس‌زمینه، حاشیه یا محتوای یک عنصر از طریق تابع `paint()` CSS رسم کنند.
 
-- [CSS Painting API reference](/en-US/docs/Web/API/CSS_Painting_API)
-- [CSS Painting API guide](/en-US/docs/Web/API/CSS_Painting_API/Guide)
+- [مرجع API نقاشی CSS](/en-US/docs/Web/API/CSS_Painting_API)
+- [راهنمای API نقاشی CSS](/en-US/docs/Web/API/CSS_Painting_API/Guide)
 - [CSS Paint API](https://developer.chrome.com/blog/paintapi/)
 - [The CSS Paint API](https://css-tricks.com/the-css-paint-api/)
 - [Simulating Drop Shadows with the CSS Paint API](https://css-tricks.com/simulating-drop-shadows-with-the-css-paint-api/)
@@ -109,37 +70,33 @@ border, or content via the `paint()` CSS function.
 
 ### Worklets
 
-An API for running scripts in various stages of the rendering pipeline independent of the main JavaScript execution environment.
-Worklets are conceptually similar to [Web Workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers),
-and are called by and extend the rendering engine.
+APIای برای اجرای اسکریپت‌ها در مراحل مختلف خط لوله رندرگیری مستقل از محیط اصلی اجرای جاوااسکریپت. Worklets از نظر مفهومی مشابه [Web Workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) هستند و توسط موتور رندر فراخوانی شده و آن را گسترش می‌دهند.
 
-- [Worklets reference](/en-US/docs/Web/API/Worklet)
+- [مرجع Worklets](/en-US/docs/Web/API/Worklet)
 
-### CSS Layout API
+### API چیدمان CSS (CSS Layout API)
 
-Designed to improve the extensibility of CSS,
-this API enables developers to write their own layout algorithms,
-like masonry or line snapping.
+این API که برای بهبود قابلیت گسترش CSS طراحی شده است، توسعه‌دهندگان را قادر می‌سازد الگوریتم‌های چیدمان خود را بنویسند، مانند masonry یا line snapping.
 
-_This API has some partial support in Chrome Canary. It is not yet documented on MDN._
+_این API تا حدی در Chrome Canary پشتیبانی می‌شود. هنوز در MDN مستند نشده است._
 
-### CSS Parser API
+### API تجزیه‌گر CSS (CSS Parser API)
 
-An API exposing the CSS parser more directly, for parsing arbitrary CSS-like languages into a mildly typed representation.
+APIای که تجزیه‌گر CSS را مستقیم‌تر نمایان می‌کند، برای تجزیه زبان‌های شبه CSS دلخواه به یک نمایش با تایپ ضعیف.
 
-_This API is currently a proposal, and has no browser implementations or documentation on MDN._
+_این API در حال حاضر یک پیشنهاد است و پیاده‌سازی مرورگری یا مستندی در MDN ندارد._
 
-- [Proposal](https://github.com/WICG/css-parser-api)
+- [پیشنهاد](https://github.com/WICG/css-parser-api)
 
-### Font Metrics API
+### API معیارهای فونت (Font Metrics API)
 
-An API exposing font metrics, giving access to typographic layout results.
+APIای که معیارهای فونت را نمایان می‌کند و دسترسی به نتایج چیدمان تایپوگرافی را فراهم می‌کند.
 
-_This API is currently a proposal, and has no browser implementations or documentation on MDN._
+_این API در حال حاضر یک پیشنهاد است و پیاده‌سازی مرورگری یا مستندی در MDN ندارد._
 
-- [Proposal](https://github.com/w3c/css-houdini-drafts/blob/main/font-metrics-api/README.md)
+- [پیشنهاد](https://github.com/w3c/css-houdini-drafts/blob/main/font-metrics-api/README.md)
 
-## See also
+## همچنین ببینید
 
 - [A Practical Overview of CSS Houdini](https://www.smashingmagazine.com/2020/03/practical-overview-css-houdini/)
 - [Smarter custom properties with Houdini's new API](https://web.dev/articles/css-props-and-vals)
