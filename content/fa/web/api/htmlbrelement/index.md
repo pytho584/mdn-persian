@@ -1,10 +1,4 @@
 ---
-title: "HTMLBRElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLBRElement"
-status: "needs-translation"
----
-
----
 title: HTMLBRElement
 slug: Web/API/HTMLBRElement
 page-type: web-api-interface
@@ -13,29 +7,29 @@ browser-compat: api.HTMLBRElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLBRElement`** interface represents an HTML line break element ({{htmlelement("br")}}). It inherits from {{domxref("HTMLElement")}}.
+رابط **`HTMLBRElement`** نمایانگر یک عنصر شکست خط (خط جدید) در HTML است ({{htmlelement("br")}}). این رابط از {{domxref("HTMLElement")}} به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## خصوصیات نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_خصوصیات را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLBRElement.clear")}} {{deprecated_inline}}
-  - : A string indicating the flow of text around floating objects.
+  - : یک رشته (string) که جریان متن را در اطراف اشیاء شناور نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}_.
+_روش خاصی ندارد؛ روش‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML element implementing this interface: {{HTMLElement("br")}}
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("br")}}
