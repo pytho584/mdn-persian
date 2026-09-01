@@ -1,11 +1,5 @@
 ---
 title: "Headers: forEach() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Headers/forEach"
-status: "needs-translation"
----
-
----
-title: "Headers: forEach() method"
 short-title: forEach()
 slug: Web/API/Headers/forEach
 page-type: web-api-instance-method
@@ -14,41 +8,41 @@ browser-compat: api.Headers.forEach
 
 {{APIRef("Fetch API")}} {{AvailableInWorkers}}
 
-The **`Headers.forEach()`** method executes a callback function once per each key/value pair in the [`Headers`](/en-US/docs/Web/API/Headers) object.
+متد **`Headers.forEach()`** یک تابع بازگشتی (callback) را برای هر جفت کلید/مقدار در شیء [`Headers`](/en-US/docs/Web/API/Headers) اجرا می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 forEach(callbackFn)
 forEach(callbackFn, thisArg)
 ```
 
-### Parameters
+### پارامترها
 
 - `callbackFn`
-  - : Function to execute for each entry in the map. It takes the following arguments:
+  - تابعی که برای هر ورودی در این نگاشت (map) اجرا می‌شود. این تابع آرگومان‌های زیر را دریافت می‌کند:
     - `value`
-      - : Value of the currently visited header entry.
+      - مقدارِ ورودی هدرِ جاری.
     - `key`
-      - : Name of the currently visited header entry.
+      - نامِ ورودی هدرِ جاری.
     - `object`
-      - : The Headers object being iterated.
+      - شیء `Headers` که در حال تکرار است.
 - `thisArg` {{Optional_Inline}}
-  - : Value to use as `this` when executing `callback`.
+  - مقداری که هنگام اجرای `callback` به‌عنوان `this` استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
 {{jsxref("undefined")}}.
 
-## Description
+## توضیحات
 
-The `Headers.forEach()` method executes the provided callback once for each key of the Headers which actually exist. It is not invoked for keys which have been deleted. However, it is executed for keys which are present but have the value undefined.
+متد `Headers.forEach()` تابع بازگشتی داده‌شده را یک‌بار برای هر کلیدی از `Headers` که واقعاً وجود دارد اجرا می‌کند. این متد برای کلیدهایی که حذف شده‌اند فراخوانی نمی‌شود؛ با این حال، برای کلیدهایی که وجود دارند اما مقدارشان undefined است، اجرا می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Printing the contents of Headers object
+### چاپ محتویات شیء Headers
 
-The following code logs a line for each key/value in the `myHeaders` object.
+کد زیر برای هر جفت کلید/مقدار در شیء `myHeaders` یک خط در خروجی ثبت می‌کند.
 
 ```js
 // Create a new test Headers object
@@ -63,7 +57,7 @@ myHeaders.forEach((value, key) => {
 });
 ```
 
-The result is:
+نتیجه به صورت زیر است:
 
 ```plain
 compression ==> gzip
@@ -71,15 +65,15 @@ content-type ==> application/json
 cookie ==> This is a demo cookie
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [`Map.prototype.forEach()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach)
 - [ServiceWorker API](/en-US/docs/Web/API/Service_Worker_API)
