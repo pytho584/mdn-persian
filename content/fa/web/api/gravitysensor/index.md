@@ -1,10 +1,4 @@
 ---
-title: "GravitySensor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GravitySensor"
-status: "needs-translation"
----
-
----
 title: GravitySensor
 slug: Web/API/GravitySensor
 page-type: web-api-interface
@@ -13,32 +7,32 @@ browser-compat: api.GravitySensor
 
 {{securecontext_header}}{{APIRef("Sensor API")}}
 
-The **`GravitySensor`** interface of the [Sensor APIs](/en-US/docs/Web/API/Sensor_APIs) provides on each reading the gravity applied to the device along all three axes.
+رابط **`GravitySensor`** از [APIهای حسگر](/en-US/docs/Web/API/Sensor_APIs) در هر بار خوانش، گرانش اعمال‌شده به دستگاه را در امتداد هر سه محور ارائه می‌دهد.
 
-To use this sensor, the user must grant permission to the `'accelerometer'` device sensor through the [Permissions API](/en-US/docs/Web/API/Permissions_API). In addition, this feature may be blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) set on your server.
+برای استفاده از این حسگر، کاربر باید از طریق [API مجوزها](/en-US/docs/Web/API/Permissions_API) به حسگر دستگاه `'accelerometer'` مجوز دهد. همچنین، ممکن است این ویژگی توسط [سیاست مجوزها](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) تنظیم‌شده روی سرور شما مسدود شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("GravitySensor.GravitySensor", "GravitySensor()")}}
-  - : Creates a new `GravitySensor` object.
+  - : یک شیء جدید `GravitySensor` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-_Inherits properties from its ancestors, {{domxref('Accelerometer')}}, {{domxref('Sensor')}}, and {{domxref('EventTarget')}}._
+_ویژگی‌ها را از اجداد خود، یعنی {{domxref('Accelerometer')}}، {{domxref('Sensor')}} و {{domxref('EventTarget')}}، به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-_`GravitySensor` doesn't have own methods. However, it inherits methods from its parent interfaces, {{domxref("Sensor")}} and {{domxref("EventTarget")}}._
+_`GravitySensor` روش‌های خاص خود را ندارد. با این حال، روش‌ها را از رابط‌های والد خود، یعنی {{domxref("Sensor")}} و {{domxref("EventTarget")}}، به ارث می‌برد._
 
-## Events
+## رویدادها (Events)
 
-_`GravitySensor` doesn't have own events. However, it inherits events from its parent interface, {{domxref('Sensor')}}._
+_`GravitySensor` رویدادهای خاص خود را ندارد. با این حال، رویدادها را از رابط والد خود، یعنی {{domxref('Sensor')}}، به ارث می‌برد._
 
-## Example
+## مثال
 
-Gravity is typically read in the {{domxref('Sensor.reading_event', 'reading')}} event callback. In the example below this occurs sixty times a second.
+گرانش معمولاً در callback رویداد {{domxref('Sensor.reading_event', 'reading')}} خوانده می‌شود. در مثال زیر، این کار شصت بار در ثانیه انجام می‌شود.
 
 ```js
 let gravitySensor = new GravitySensor({ frequency: 60 });
@@ -52,10 +46,10 @@ gravitySensor.addEventListener("reading", (e) => {
 gravitySensor.start();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
