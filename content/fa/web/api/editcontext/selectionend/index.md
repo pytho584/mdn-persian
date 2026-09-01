@@ -1,11 +1,5 @@
 ---
 title: "EditContext: selectionEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/selectionEnd"
-status: "needs-translation"
----
-
----
-title: "EditContext: selectionEnd property"
 short-title: selectionEnd
 slug: Web/API/EditContext/selectionEnd
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.EditContext.selectionEnd
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`selectionEnd`** read-only property of the {{domxref("EditContext")}} refers to the offset, within the editable text content, of the end of the current selection.
+ویژگی فقط‌خواندنی **`selectionEnd`** در رابط {{domxref("EditContext")}} به آفست (موقعیت) پایان انتخاب فعلی، درون متن قابل ویرایش اشاره می‌کند.
 
-## Value
+## مقدار
 
-A {{jsxref("Number")}}
+یک {{jsxref("Number")}}
 
-## Examples
+## مثال‌ها
 
-### Using `selectionEnd` to render the user selection in an editable canvas
+### استفاده از `selectionEnd` برای نمایش انتخاب کاربر در یک canvas قابل ویرایش
 
-This example shows how to use the `selectionStart` and `selectionEnd` properties to draw the current selection in a `<canvas>` element that's associated to an `EditContext`.
+این مثال نحوه استفاده از ویژگی‌های `selectionStart` و `selectionEnd` را برای رسم انتخاب فعلی در یک عنصر `<canvas>` که به یک `EditContext` متصل شده است، نشان می‌دهد.
 
 ```html
 <canvas id="editor-canvas"></canvas>
@@ -51,16 +45,16 @@ canvas.editContext = editContext;
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // Render the entire text content first.
+  // ابتدا کل محتوای متن را رسم کنید.
   ctx.fillStyle = "black";
   ctx.fillText(editContext.text, ANCHOR_X, ANCHOR_Y);
 
-  // Get the width from the start of the text to the start of the selection.
+  // عرض را از ابتدای متن تا ابتدای انتخاب به دست آورید.
   const selectionStartX = ctx.measureText(
     editContext.text.substring(0, editContext.selectionStart),
   );
 
-  // Get the width of the selection.
+  // عرض انتخاب را به دست آورید.
   const selectionWidth = ctx.measureText(
     editContext.text.substring(
       editContext.selectionStart,
@@ -68,7 +62,7 @@ function render() {
     ),
   );
 
-  // Draw a rectangle on top of the text to represent the selection.
+  // یک مستطیل روی متن رسم کنید تا انتخاب را نشان دهد.
   ctx.fillStyle = "blue";
   ctx.fillRect(
     selectionStartX.width + ANCHOR_X,
@@ -77,7 +71,7 @@ function render() {
     FONT_SIZE,
   );
 
-  // Re-render just the selected text in white, over the rectangle.
+  // فقط متن انتخاب‌شده را با رنگ سفید، روی مستطیل دوباره رسم کنید.
   ctx.fillStyle = "white";
   ctx.fillText(
     editContext.text.substring(
@@ -92,10 +86,10 @@ function render() {
 render();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
