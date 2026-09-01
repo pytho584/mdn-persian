@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSet: forEach() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/forEach"
-status: "needs-translation"
----
-
----
-title: "FontFaceSet: forEach() method"
 short-title: forEach()
 slug: Web/API/FontFaceSet/forEach
 page-type: web-api-instance-method
@@ -14,34 +8,34 @@ browser-compat: api.FontFaceSet.forEach
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`forEach()`** method of the {{domxref("FontFaceSet")}} interface executes a provided function for each value in the `FontFaceSet` object.
+متد **`forEach()`** از رابط {{domxref("FontFaceSet")}} یک تابع ارائه‌شده را برای هر مقدار در شیء `FontFaceSet` اجرا می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 forEach(callbackFn)
 forEach(callbackFn, thisArg)
 ```
 
-### Parameters
+### پارامترها
 
 - `callbackFn`
-  - : Function to execute for each element, taking three arguments:
+  - : تابعی که برای هر عنصر اجرا می‌شود و سه آرگومان می‌گیرد:
     - `value`, `key`
-      - : The current element being processed in the `FontFaceSet`. As there are no keys in a `FontFaceSet`, the value is passed for both arguments.
+      - : عنصر جاری که در `FontFaceSet` پردازش می‌شود. از آنجا که در `FontFaceSet` کلیدی وجود ندارد، مقدار برای هر دو آرگومان ارسال می‌شود.
     - `set`
-      - : The `FontFaceSet` which `forEach()` was called on.
+      - : شیء `FontFaceSet` که `forEach()` روی آن فراخوانی شده است.
 - `thisArg` {{optional_inline}}
-  - : Value to use as [`this`](/en-US/docs/Web/JavaScript/Reference/Operators/this) when executing `callbackFn`. Defaults to `undefined`.
+  - : مقداری که هنگام اجرای `callbackFn` به عنوان [`this`](/en-US/docs/Web/JavaScript/Reference/Operators/this) استفاده می‌شود. پیش‌فرض `undefined` است.
 
-### Return value
+### مقدار بازگشتی
 
 {{jsxref("undefined")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
