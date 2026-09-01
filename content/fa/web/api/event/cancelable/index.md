@@ -1,11 +1,5 @@
 ---
 title: "Event: cancelable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/cancelable"
-status: "needs-translation"
----
-
----
-title: "Event: cancelable property"
 short-title: cancelable
 slug: Web/API/Event/cancelable
 page-type: web-api-instance-property
@@ -14,47 +8,34 @@ browser-compat: api.Event.cancelable
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`cancelable`** read-only property of the {{domxref("Event")}} interface indicates whether the event
-can be canceled, and therefore prevented as if the event never happened.
+ویژگی فقط‌خواندنی **`cancelable`** در رابط {{domxref("Event")}} نشان می‌دهد که آیا رویداد قابل لغو است یا نه؛ به این معنا که می‌توان از وقوع آن جلوگیری کرد، گویی هرگز رخ نداده است.
 
-If the event is _not_ cancelable, then its `cancelable` property will be
-`false` and the event listener cannot stop the event from occurring.
+اگر رویداد قابل لغو _نباشد_، مقدار ویژگی `cancelable` آن `false` خواهد بود و شنونده رویداد نمی‌تواند از وقوع آن جلوگیری کند.
 
-Most browser-native events that can be canceled are the ones that result from the user
-interacting with the page. Canceling the {{domxref("Element/click_event", "click")}},
-{{domxref("Element/wheel_event", "wheel")}}, or
-{{domxref("Window/beforeunload_event", "beforeunload")}} events would prevent the user
-from clicking on something, scrolling the page with the mouse wheel, or
-navigating away from the page, respectively.
+بیشتر رویدادهای بومی مرورگر که قابل لغو هستند، آن‌هایی هستند که در نتیجه تعامل کاربر با صفحه رخ می‌دهند. لغو رویدادهای {{domxref("Element/click_event", "click")}}، {{domxref("Element/wheel_event", "wheel")}} یا {{domxref("Window/beforeunload_event", "beforeunload")}} به ترتیب از کلیک کردن کاربر روی چیزی، اسکرول کردن صفحه با چرخ ماوس، یا خروج از صفحه جلوگیری می‌کند.
 
-[Synthetic events](/en-US/docs/Web/API/Event/Event) created by other JavaScript
-code define if they can be canceled when they are created.
+[رویدادهای مصنوعی](/en-US/docs/Web/API/Event/Event) ساخته‌شده توسط کد جاوااسکریپت دیگر، هنگام ساخت مشخص می‌کنند که آیا قابل لغو هستند یا نه.
 
-To cancel an event, call the {{domxref("event.preventDefault", "preventDefault()")}}
-method on the event. This keeps the implementation from executing the default action
-that is associated with the event.
+برای لغو یک رویداد، متد {{domxref("event.preventDefault", "preventDefault()")}} را روی آن رویداد فراخوانی کنید. این کار از اجرای اقدام پیش‌فرض مرتبط با رویداد توسط پیاده‌سازی جلوگیری می‌کند.
 
-Event listeners that handle multiple kinds of events may want to check
-`cancelable` before invoking their {{domxref("event.preventDefault", "preventDefault()")}} methods.
+شنونده‌های رویدادی که با انواع مختلفی از رویدادها سروکار دارند ممکن است بخواهند قبل از فراخوانی متدهای {{domxref("event.preventDefault", "preventDefault()")}} خود، مقدار `cancelable` را بررسی کنند.
 
-## Value
+## مقدار
 
-A boolean value, which is `true` if the event can be
-canceled.
+یک مقدار بولی که اگر رویداد قابل لغو باشد، `true` است.
 
-## Example
+## مثال
 
-For example, browser vendors are proposing that the {{domxref("Element/wheel_event", "wheel")}} event can only be canceled [the first time the listener is called](https://github.com/WICG/interventions/issues/33) — any following `wheel` events cannot be canceled.
+برای مثال، تولیدکنندگان مرورگر پیشنهاد کرده‌اند که رویداد {{domxref("Element/wheel_event", "wheel")}} فقط [در اولین باری که شنونده فراخوانی می‌شود](https://github.com/WICG/interventions/issues/33) قابل لغو باشد — هر رویداد `wheel` بعدی قابل لغو نیست.
 
 ```js
 function preventScrollWheel(event) {
   if (typeof event.cancelable !== "boolean" || event.cancelable) {
-    // The event can be canceled, so we do so.
+    // رویداد قابل لغو است، پس آن را لغو می‌کنیم.
     event.preventDefault();
   } else {
-    // The event cannot be canceled, so it is not safe
-    // to call preventDefault() on it.
-    console.warn(`The following event couldn't be canceled:`);
+    // رویداد قابل لغو نیست، بنابراین فراخوانی preventDefault() روی آن ایمن نیست.
+    console.warn(`رویداد زیر قابل لغو نبود:`);
     console.dir(event);
   }
 }
@@ -62,10 +43,10 @@ function preventScrollWheel(event) {
 document.addEventListener("wheel", preventScrollWheel);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
