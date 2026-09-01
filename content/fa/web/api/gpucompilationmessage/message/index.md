@@ -1,9 +1,4 @@
----
-title: "GPUCompilationMessage: message property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/message"
-status: "needs-translation"
----
-
+```
 ---
 title: "GPUCompilationMessage: message property"
 short-title: message
@@ -14,14 +9,13 @@ browser-compat: api.GPUCompilationMessage.message
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`message`** read-only property of the
-{{domxref("GPUCompilationMessage")}} interface is a string representing human-readable message text.
+ویژگی فقطخواندنی **`message`** در رابط {{domxref("GPUCompilationMessage")}}، رشته‌ای است که متن پیام قابل‌خواندن برای انسان را نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const shaderModule = device.createShaderModule({
@@ -33,16 +27,17 @@ const firstMessage = shaderInfo.messages[0];
 console.log(firstMessage.message);
 ```
 
-See the main [`GPUCompilationInfo` page](/en-US/docs/Web/API/GPUCompilationInfo#examples) for a more detailed example.
+برای مثال دقیق‌تر، صفحهٔ اصلی [`GPUCompilationInfo`](/en-US/docs/Web/API/GPUCompilationInfo#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+```
