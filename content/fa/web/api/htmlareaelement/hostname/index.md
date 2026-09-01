@@ -1,29 +1,18 @@
 ---
 title: "HTMLAreaElement: hostname property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/hostname"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: hostname property"
-short-title: hostname
-slug: Web/API/HTMLAreaElement/hostname
-page-type: web-api-instance-property
-browser-compat: api.HTMLAreaElement.hostname
 ---
 
 {{ApiRef("HTML DOM")}}
 
-The **`hostname`** property of the {{domxref("HTMLAreaElement")}} interface is a string containing either the {{glossary("domain name")}} or {{glossary("IP address")}} of the `<area>` element's URL. If the URL does not have a hostname, this property contains an empty string, `""`. IPv4 and IPv6 addresses are normalized, such as stripping leading zeros, and domain names are converted to [IDN](https://en.wikipedia.org/wiki/Internationalized_domain_name).
+ویژگی **`hostname`** از رابط {{domxref("HTMLAreaElement")}} یک رشته است که شامل {{glossary("domain name")}} یا {{glossary("IP address")}} از URL عنصر `<area>` می‌باشد. اگر URL میزبان (hostname) نداشته باشد، این ویژگی حاوی یک رشته خالی `""` خواهد بود. آدرس‌های IPv4 و IPv6 عادی‌سازی می‌شوند، مانند حذف صفرهای پیشرو، و نام‌های دامنه به [IDN](https://en.wikipedia.org/wiki/Internationalized_domain_name) تبدیل می‌شوند.
 
-See {{domxref("URL.hostname")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.hostname")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string containing the domain of the URL associated with the `area` element.
-It can be used as both a setter and getter.
+یک رشته شامل دامنه URL مرتبط با عنصر `area`. می‌توان از آن هم به عنوان setter و هم getter استفاده کرد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <textarea id="log" rows="4" cols="100"></textarea>
@@ -57,14 +46,14 @@ log.textContent += `area2 hostname: ${area2.hostname}`; // 'coolexample.com'
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAreaElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAreaElement")}} که این ویژگی به آن تعلق دارد.
