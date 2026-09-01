@@ -1,10 +1,4 @@
 ---
-title: "DeviceOrientationEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent"
-status: "needs-translation"
----
-
----
 title: DeviceOrientationEvent
 slug: Web/API/DeviceOrientationEvent
 page-type: web-api-interface
@@ -13,36 +7,36 @@ browser-compat: api.DeviceOrientationEvent
 
 {{apiref("Device Orientation Events")}}{{securecontext_header}}
 
-The **`DeviceOrientationEvent`** interface of the {{domxref("Device Orientation Events", "", "", "nocode")}} provides web developers with information from the physical orientation of the device running the web page.
+رابط **`DeviceOrientationEvent`** از {{domxref("Device Orientation Events", "رویدادهای جهت‌گیری دستگاه", "", "nocode")}} اطلاعات مربوط به جهت‌گیری فیزیکی دستگاه در حال اجرای صفحه وب را در اختیار توسعه‌دهندگان وب قرار می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("DeviceOrientationEvent.DeviceOrientationEvent","DeviceOrientationEvent.DeviceOrientationEvent()")}}
-  - : Creates a new `DeviceOrientationEvent`.
+  - : یک `DeviceOrientationEvent` جدید ایجاد می‌کند.
 
-## Static methods
+## روش‌های ایستا
 
 - {{domxref("DeviceOrientationEvent.requestPermission_static", "DeviceOrientationEvent.requestPermission()")}}
-  - : Requests the user's permission to access device orientation data. Returns a {{jsxref("Promise")}} that resolves with a string of `"granted"` or `"denied"`.
+  - : درخواست اجازه دسترسی به داده‌های جهت‌گیری دستگاه را از کاربر می‌کند. یک {{jsxref("Promise")}} برمی‌گرداند که با رشته `"granted"` یا `"denied"` حل می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("DeviceOrientationEvent.absolute")}} {{ReadOnlyInline}}
-  - : A boolean that indicates whether or not the device is providing orientation data absolutely.
+  - : یک مقدار بولی که نشان می‌دهد آیا دستگاه داده‌های جهت‌گیری را به صورت مطلق ارائه می‌دهد یا نه.
 - {{domxref("DeviceOrientationEvent.alpha")}} {{ReadOnlyInline}}
-  - : A number representing the motion of the device around the z axis, express in degrees with values ranging from 0 (inclusive) to 360 (exclusive).
+  - : عددی که چرخش دستگاه حول محور z را نشان می‌دهد و بر حسب درجه با مقادیری از ۰ (شامل) تا ۳۶۰ (غیرشامل) بیان می‌شود.
 - {{domxref("DeviceOrientationEvent.beta")}} {{ReadOnlyInline}}
-  - : A number representing the motion of the device around the x axis, express in degrees with values ranging from -180 (inclusive) to 180 (exclusive). This represents a front to back motion of the device.
+  - : عددی که چرخش دستگاه حول محور x را نشان می‌دهد و بر حسب درجه با مقادیری از ۱۸۰- (شامل) تا ۱۸۰ (غیرشامل) بیان می‌شود. این حرکت دستگاه از جلو به عقب را نشان می‌دهد.
 - {{domxref("DeviceOrientationEvent.gamma")}} {{ReadOnlyInline}}
-  - : A number representing the motion of the device around the y axis, express in degrees with values ranging from -90 (inclusive) to 90 (exclusive). This represents a left to right motion of the device.
+  - : عددی که چرخش دستگاه حول محور y را نشان می‌دهد و بر حسب درجه با مقادیری از ۹۰- (شامل) تا ۹۰ (غیرشامل) بیان می‌شود. این حرکت دستگاه از چپ به راست را نشان می‌دهد.
 - `DeviceOrientationEvent.webkitCompassHeading` {{Non-Standard_Inline}} {{ReadOnlyInline}}
-  - : A number represents the difference between the motion of the device around the z axis of the world system and the direction of the north, express in degrees with values ranging from 0 to 360.
+  - : عددی که تفاوت بین چرخش دستگاه حول محور z سیستم جهانی و جهت شمال را نشان می‌دهد و بر حسب درجه با مقادیری از ۰ تا ۳۶۰ بیان می‌شود.
 - `DeviceOrientationEvent.webkitCompassAccuracy` {{Non-Standard_Inline}} {{ReadOnlyInline}}
-  - : The accuracy of the compass means that the deviation is positive or negative. It's usually 10.
+  - : دقت قطبنما است، به این معنی که انحراف مثبت یا منفی است. معمولاً ۱۰ است.
 
-## Example
+## مثال
 
 ```js
 window.addEventListener("deviceorientation", (event) => {
@@ -50,19 +44,19 @@ window.addEventListener("deviceorientation", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("Device orientation events/Detecting device orientation", "Detecting device orientation", "", "nocode")}}
-- {{domxref("Device orientation events/Orientation and motion data explained", "Orientation and motion data explained", "", "nocode")}}
+- {{domxref("Device orientation events/Detecting device orientation", "تشخیص جهتگیری دستگاه", "", "nocode")}}
+- {{domxref("Device orientation events/Orientation and motion data explained", "توضیح دادههای جهتگیری و حرکت", "", "nocode")}}
 - {{domxref("DeviceMotionEvent")}}
-- {{domxref("Window.devicemotion_event", "devicemotion")}} event
-- {{domxref("Window.deviceorientation_event", "deviceorientation")}} event
-- {{domxref("Window.deviceorientationabsolute_event", "deviceorientationabsolute")}} event
+- رویداد {{domxref("Window.devicemotion_event", "devicemotion")}}
+- رویداد {{domxref("Window.deviceorientation_event", "deviceorientation")}}
+- رویداد {{domxref("Window.deviceorientationabsolute_event", "deviceorientationabsolute")}}
