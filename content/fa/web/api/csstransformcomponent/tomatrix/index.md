@@ -1,11 +1,5 @@
 ---
 title: "CSSTransformComponent: toMatrix() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformComponent/toMatrix"
-status: "needs-translation"
----
-
----
-title: "CSSTransformComponent: toMatrix() method"
 short-title: toMatrix()
 slug: Web/API/CSSTransformComponent/toMatrix
 page-type: web-api-instance-method
@@ -14,42 +8,42 @@ browser-compat: api.CSSTransformComponent.toMatrix
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`toMatrix()`** method of the {{domxref("CSSTransformComponent")}} interface returns a {{domxref('DOMMatrix')}} object.
+متد **`toMatrix()`** از رابط {{domxref("CSSTransformComponent")}} یک شیء {{domxref('DOMMatrix')}} را برمی‌گرداند.
 
-All transform functions can be represented mathematically as a 4x4 transformation matrix.
+همه توابع تبدیل را می‌توان از نظر ریاضیاتی به صورت یک ماتریس تبدیل ۴×۴ نمایش داد.
 
 > [!NOTE]
-> The `is2D` property affects what transform, and therefore type of matrix that will be returned.
-> CSS 2D and 3D transforms are different for legacy reasons.
-> A brief explanation of 2D vs. 3D transforms can be found in [Using CSS transforms](/en-US/docs/Web/CSS/Guides/Transforms/Using).
+> ویژگی `is2D` بر این تأثیر می‌گذارد که کدام تبدیل و در نتیجه چه نوع ماتریسی بازگردانده می‌شود.
+> تبدیل‌های دوبعدی و سه‌بعدی CSS به دلایل سازگاری با گذشته با یکدیگر تفاوت دارند.
+> توضیح کوتاهی دربارهٔ تفاوت تبدیل‌های دوبعدی و سه‌بعدی را می‌توانید در [استفاده از تبدیل‌های CSS](/en-US/docs/Web/CSS/Guides/Transforms/Using) ببینید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toMatrix()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref('DOMMatrix')}} object
+یک شیء {{domxref('DOMMatrix')}}
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Raised if any lengths involved in generating the matrix are not compatible units with px (such as relative lengths or percentages).
+  - : اگر هر یک از طول‌های مورد استفاده در تولید ماتریس با واحد px سازگار نباشند (مانند طول‌های نسبی یا درصدها)، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-To Do
+برای انجام
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
