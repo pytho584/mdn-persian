@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: setSinkId() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/setSinkId"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: setSinkId() method"
 short-title: setSinkId()
 slug: Web/API/HTMLMediaElement/setSinkId
 page-type: web-api-instance-method
@@ -14,48 +8,45 @@ browser-compat: api.HTMLMediaElement.setSinkId
 
 {{APIRef("Audio Output Devices API")}}{{securecontext_header}}
 
-The **`setSinkId()`** method of the {{domxref("HTMLMediaElement")}} interface sets the ID of the audio device to use for output and returns a {{jsxref("Promise")}}.
+متد **`setSinkId()`** در واسط {{domxref("HTMLMediaElement")}} شناسهٔ دستگاه صوتی مورد استفاده برای خروجی را تنظیم می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند.
 
-This only works when the application is permitted to use the specified device.
-For more information see the [security requirements](#security_requirements) below.
+این کار تنها زمانی کار می‌کند که به برنامه اجازه داده شده باشد از دستگاه مشخص‌شده استفاده کند. برای اطلاعات بیشتر به [نیازمندی‌های امنیتی](#security_requirements) در زیر مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setSinkId(sinkId)
 ```
 
-### Parameters
+### پارامترها
 
 - `sinkId`
-  - : The {{domxref("MediaDeviceInfo.deviceId")}} of the audio output device.
+  - : {{domxref("MediaDeviceInfo.deviceId")}} دستگاه خروجی صوتی.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که به {{jsxref("undefined")}} تحقق می‌یابد.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Returned if a [`speaker-selection`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/speaker-selection) [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) is used to block use of audio outputs.
+  - : اگر یک [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) با [`speaker-selection`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/speaker-selection) برای مسدود کردن استفاده از خروجی‌های صوتی استفاده شود، بازگردانده می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Returned if the `deviceId` does not match any audio output device.
+  - : اگر `deviceId` با هیچ دستگاه خروجی صوتی مطابقت نداشته باشد، بازگردانده می‌شود.
 - `AbortError` {{domxref("DOMException")}}
-  - : Returned if switching the audio output device to the new audio device failed.
+  - : اگر تعویض دستگاه خروجی صوتی به دستگاه جدید ناموفق باشد، بازگردانده می‌شود.
 
-## Security requirements
+## نیازمندی‌های امنیتی
 
-Access to the API is subject to the following constraints:
+دسترسی به این API مشروط به محدودیت‌های زیر است:
 
-- The method must be called in a [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
-- Access may be gated by the [`speaker-selection`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/speaker-selection) HTTP [Permission Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
-- User permission is required to access a non-default device.
-  The user grants permission by selecting the device associated with the ID in the prompt displayed by {{domxref("MediaDevices.selectAudioOutput()")}}.
+- متد باید در یک [بافت امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts) فراخوانی شود.
+- دسترسی ممکن است توسط [Permission Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) HTTP با [`speaker-selection`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/speaker-selection) محدود شود.
+- برای دسترسی به دستگاهی غیر از دستگاه پیش‌فرض، اجازهٔ کاربر لازم است. کاربر با انتخاب دستگاهی که شناسهٔ آن در اعلان نمایش‌داده‌شده توسط {{domxref("MediaDevices.selectAudioOutput()")}} مرتبط است، اجازه می‌دهد.
 
-## Examples
+## مثال‌ها
 
-This example shows how to select an audio output device from the array returned by {{domxref("MediaDevices.enumerateDevices()")}}, and set it as the sink for audio.
-Note that the result of `enumerateDevices()` only includes devices for which user permission is not required or has already been granted.
+این مثال نشان می‌دهد که چگونه یک دستگاه خروجی صوتی را از آرایهٔ بازگردانده‌شده توسط {{domxref("MediaDevices.enumerateDevices()")}} انتخاب کرده و آن را به عنوان خروجی صدا تنظیم کنید. توجه داشته باشید که نتیجهٔ `enumerateDevices()` فقط شامل دستگاه‌هایی می‌شود که اجازهٔ کاربر برای آن‌ها لازم نیست یا قبلاً داده شده است.
 
 ```js
 const devices = await navigator.mediaDevices.enumerateDevices();
@@ -65,15 +56,15 @@ await audio.setSinkId(audioDevice.deviceId);
 console.log(`Audio is being output on ${audio.sinkId}`);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Audio Output Devices API](/en-US/docs/Web/API/Audio_Output_Devices_API)
 - {{domxref("MediaDevices.selectAudioOutput()")}}
