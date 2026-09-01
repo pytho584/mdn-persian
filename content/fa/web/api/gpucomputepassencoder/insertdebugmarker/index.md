@@ -1,7 +1,5 @@
 ---
 title: "GPUComputePassEncoder: insertDebugMarker() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/insertDebugMarker"
-status: "needs-translation"
 ---
 
 ---
@@ -14,27 +12,26 @@ browser-compat: api.GPUComputePassEncoder.insertDebugMarker
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`insertDebugMarker()`** method of the
-{{domxref("GPUComputePassEncoder")}} interface marks a specific point in a series of encoded compute pass commands with a label.
+متد **`insertDebugMarker()`** از رابط {{domxref("GPUComputePassEncoder")}} یک نقطهٔ مشخص را در مجموعه‌ای از دستورات کدگذاری‌شدهٔ پاس محاسباتی با یک برچسب علامت‌گذاری می‌کند.
 
-This could be used for telemetry, or may be utilized in {{domxref("GPUError")}} messages, browser dev tools, or other services in the future to help with debugging.
+این کار می‌تواند برای دورسنجی (تله‌متری) استفاده شود، یا در پیام‌های {{domxref("GPUError")}}، ابزارهای توسعه‌دهندهٔ مرورگر، یا سایر سرویس‌ها در آینده برای کمک به اشکال‌زدایی به کار گرفته شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 insertDebugMarker(markerLabel)
 ```
 
-### Parameters
+### پارامترها
 
 - `markerLabel`
-  - : A string representing the label to insert.
+  - : رشته‌ای است که برچسب موردنظر برای درج را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -44,14 +41,14 @@ passEncoder.insertDebugMarker("my_marker");
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [رابط برنامه‌نویسی WebGPU](/en-US/docs/Web/API/WebGPU_API)
