@@ -1,7 +1,5 @@
 ---
 title: "Element: namespaceURI property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/namespaceURI"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.Element.namespaceURI
 
 {{APIRef("DOM")}}
 
-The **`Element.namespaceURI`** read-only property returns the namespace URI of the element, or `null` if the element is not in a namespace.
+ویژگی فقط‌خواندنی **`Element.namespaceURI`**، URI فضای نام عنصر را برمی‌گرداند؛ یا اگر عنصر در هیچ فضای نامی نباشد، `null` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string, or `null`.
+یک رشته، یا `null`.
 
-## Examples
+## مثال‌ها
 
-In this snippet, an element is being examined for its {{domxref("Element.localName", "localName")}} and its `namespaceURI`. If the `namespaceURI` returns the XUL namespace and the `localName` returns "browser", then the node is understood to be a XUL `<browser/>`.
+در این قطعه‌کد، یک عنصر از نظر {{domxref("Element.localName", "localName")}} و `namespaceURI` بررسی می‌شود. اگر `namespaceURI` فضای نام XUL را برگرداند و `localName` مقدار «browser» را برگرداند، آن گره به عنوان یک `<browser/>` XUL شناخته می‌شود.
 
 ```js
 if (
@@ -34,25 +32,25 @@ if (
 }
 ```
 
-## Notes
+## یادداشت‌ها
 
-This is not a computed value that is the result of a namespace lookup based on an examination of the namespace declarations in scope. The namespace URI of a node is frozen at the node creation time.
+این یک مقدار محاسبه‌شده نیست که از جست‌وجوی فضای نام بر اساس بررسی اعلان‌های فضای نام در حوزه (scope) به دست آمده باشد. URI فضای نام یک گره در زمان ایجاد آن گره ثابت می‌شود.
 
-The namespace URI for HTML elements in HTML documents is [`http://www.w3.org/1999/xhtml`](https://www.w3.org/1999/xhtml/) as in XHTML.
+URI فضای نام برای عناصر HTML در اسناد HTML، مانند XHTML، [`http://www.w3.org/1999/xhtml`](https://www.w3.org/1999/xhtml/) است.
 
-You can create an element with the specified `namespaceURI` using the [`document.createElementNS()`](/en-US/docs/Web/API/Document/createElementNS) method.
+می‌توانید با استفاده از متد [`document.createElementNS()`](/en-US/docs/Web/API/Document/createElementNS) عنصری با `namespaceURI` مشخص ایجاد کنید.
 
-The DOM does not handle or enforce namespace validation per se. It is up to the DOM application to do any validation necessary. Also note that the namespace prefix, once it is associated with a particular element, cannot be changed.
+DOM به خودی خود اعتبارسنجی فضای نام را مدیریت یا اعمال نمی‌کند. انجام هرگونه اعتبارسنجی لازم بر عهده برنامه‌ای است که از DOM استفاده می‌کند. همچنین توجه داشته باشید که پیشوند فضای نام، پس از اینکه به یک عنصر خاص مرتبط شد، قابل تغییر نیست.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.localName")}}
 - {{domxref("Element.prefix")}}
