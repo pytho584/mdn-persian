@@ -1,11 +1,5 @@
 ---
 title: "HTMLProgressElement: max property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement/max"
-status: "needs-translation"
----
-
----
-title: "HTMLProgressElement: max property"
 short-title: max
 slug: Web/API/HTMLProgressElement/max
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLProgressElement.max
 
 {{APIRef("HTML DOM")}}
 
-The **`max`** property of the {{DOMxRef("HTMLProgressElement")}} interface represents the upper bound of the {{HTMLElement("progress")}} element's range.
+ویژگی **`max`** در رابط {{DOMxRef("HTMLProgressElement")}} نشان‌دهندهٔ کران بالای محدودهٔ عنصر {{HTMLElement("progress")}} است.
 
-## Value
+## مقدار
 
-A floating point number that is greater than zero. The default value is 1.0.
+یک عدد اعشاری (floating point) که بزرگ‌تر از صفر است. مقدار پیش‌فرض ۱٫۰ است.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -48,10 +42,10 @@ setInterval(() => {
 
 {{EmbedLiveSample("Examples", "100%", 30)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
