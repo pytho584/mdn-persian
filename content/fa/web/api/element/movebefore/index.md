@@ -1,11 +1,5 @@
 ---
 title: "Element: moveBefore() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/moveBefore"
-status: "needs-translation"
----
-
----
-title: "Element: moveBefore() method"
 short-title: moveBefore()
 slug: Web/API/Element/moveBefore
 page-type: web-api-instance-method
@@ -14,79 +8,79 @@ browser-compat: api.Element.moveBefore
 
 {{APIRef("DOM")}}
 
-The **`moveBefore()`** method of the {{domxref("Element")}} interface moves a given {{domxref("Node")}} inside the invoking node as a direct child, before a given reference node.
+متد **`moveBefore()`** در رابط {{domxref("Element")}} یک {{domxref("Node")}} مشخص را به‌عنوان فرزند مستقیم، قبل از یک گره مرجع مشخص، درون گره فراخوانی‌کننده جابه‌جا می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 moveBefore(movedNode, referenceNode)
 ```
 
-### Parameters
+### پارامترها
 
 - `movedNode`
-  - : A {{domxref("Node")}} representing the node to be moved. Note that this must be an {{domxref("Element")}} or a {{domxref("CharacterData")}} node.
+  - : یک {{domxref("Node")}} که نمایانگر گره موردنظر برای جابه‌جایی است. توجه داشته باشید که این گره باید یک {{domxref("Element")}} یا یک گره {{domxref("CharacterData")}} باشد.
 - `referenceNode`
-  - : A {{domxref("Node")}} that `movedNode` will be moved before, or `null`. If the value is `null`, `movedNode` is inserted at the end of the invoking node's child nodes.
+  - : یک {{domxref("Node")}} که `movedNode` قبل از آن جابه‌جا می‌شود، یا `null`. اگر مقدار `null` باشد، `movedNode` در انتهای گره‌های فرزند گره فراخوان درج می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{jsxref("TypeError")}}
-  - : Thrown in any of the following situations:
-    - The specified `movedNode` is not part of the DOM, and you are trying to move it inside a node that is part of the DOM, or vice versa.
-    - The specified `movedNode` is an ancestor of the Element `moveBefore()` is being called on.
-    - You are trying to move `movedNode` between two different documents.
-    - The specified `movedNode` is not an {{domxref("Element")}} or {{domxref("CharacterData")}} node.
+  - : در هر یک از شرایط زیر پرتاب می‌شود:
+    - `movedNode` مشخص‌شده بخشی از DOM نیست و شما در حال جابه‌جایی آن به داخل گره‌ای هستید که بخشی از DOM است، یا برعکس.
+    - `movedNode` مشخص‌شده یک جد (ancestor) برای عنصری است که `moveBefore()` روی آن فراخوانی می‌شود.
+    - شما در حال جابه‌جایی `movedNode` بین دو سند متفاوت هستید.
+    - `movedNode` مشخص‌شده یک گره {{domxref("Element")}} یا {{domxref("CharacterData")}} نیست.
 - `NotFoundError` {{jsxref("TypeError")}}
-  - : The specified `referenceNode` is not a child of the node you are calling `moveBefore()` on, that is, the node you are trying to move `movedNode` inside.
+  - : `referenceNode` مشخص‌شده فرزند گرهی نیست که روی آن `moveBefore()` را فراخوانی می‌کنید؛ یعنی همان گره‌ای که قصد دارید `movedNode` را به داخل آن منتقل کنید.
 - `TypeError` {{jsxref("TypeError")}}
-  - : The second argument was not supplied.
+  - : آرگومان دوم ارائه نشده است.
 
-## Description
+## توضیحات
 
-The `moveBefore()` method moves a given node to a new place in the DOM. It provides similar functionality to the {{domxref("Node.insertBefore()")}} method, except that it doesn't remove and then reinsert the node. This means that the state of the node (which would be reset if moving it with `insertBefore()` and similar mechanisms) is preserved after the move. This includes:
+متد `moveBefore()` یک گره مشخص را به جایگاه جدیدی در DOM منتقل می‌کند. این متد عملکردی مشابه متد {{domxref("Node.insertBefore()")}} ارائه می‌دهد، با این تفاوت که گره را حذف و دوباره درج نمی‌کند. این بدان معناست که وضعیت (state) گره — که اگر با `insertBefore()` و سازوکارهای مشابه جابه‌جا می‌شد بازنشانی می‌گردید — پس از جابه‌جایی حفظ می‌شود. این موارد شامل:
 
-- [Animation](/en-US/docs/Web/CSS/Guides/Animations) and [transition](/en-US/docs/Web/CSS/Guides/Transitions) state.
-- {{htmlelement("iframe")}} loading state.
-- Interactivity states (for example, {{cssxref(":focus")}} and {{cssxref(":active")}}).
-- [Fullscreen](/en-US/docs/Web/API/Fullscreen_API) element state.
-- Open/close state of [popovers](/en-US/docs/Web/API/Popover_API).
-- Modal state of {{htmlelement("dialog")}} elements (modal dialogs will not be closed).
+- وضعیت [انیمیشن](/en-US/docs/Web/CSS/Guides/Animations) و [transition](/en-US/docs/Web/CSS/Guides/Transitions).
+- وضعیت بارگذاری {{htmlelement("iframe")}}.
+- وضعیت‌های تعاملی (برای مثال {{cssxref(":focus")}} و {{cssxref(":active")}}).
+- وضعیت عنصر [تمام‌صفحه](/en-US/docs/Web/API/Fullscreen_API).
+- وضعیت باز/بسته شدن [popover](/en-US/docs/Web/API/Popover_API)ها.
+- وضعیت modal عناصر {{htmlelement("dialog")}} (دیالوگ‌های modal بسته نخواهند شد).
 
-The play state of {{htmlelement("video")}} and {{htmlelement("audio")}} elements is not included in the above list, as these elements retain their state when removed and reinserted, regardless of the mechanism used.
+وضعیت پخش عناصر {{htmlelement("video")}} و {{htmlelement("audio")}} در فهرست بالا گنجانده نشده است، زیرا این عناصر فارغ از سازوکار مورد استفاده، هنگام حذف و درج مجدد وضعیت خود را حفظ می‌کنند.
 
-When observing changes to the DOM using a {{domxref("MutationObserver")}}, nodes moved with `moveBefore()` will be recorded with a [removed node](/en-US/docs/Web/API/MutationRecord/removedNodes) and an [added node](/en-US/docs/Web/API/MutationRecord/addedNodes).
+هنگامی که تغییرات DOM را با استفاده از {{domxref("MutationObserver")}} مشاهده می‌کنید، گره‌هایی که با `moveBefore()` جابه‌جا شده‌اند به صورت یک [گره حذف‌شده](/en-US/docs/Web/API/MutationRecord/removedNodes) و یک [گره افزوده‌شده](/en-US/docs/Web/API/MutationRecord/addedNodes) ثبت خواهند شد.
 
-### `moveBefore()` constraints
+### محدودیت‌های `moveBefore()`
 
-There are some constraints to be aware of when using `moveBefore()`:
+هنگام استفاده از `moveBefore()` باید از چند محدودیت آگاه باشید:
 
-- It can only work when moving a node within the same document.
-- It won't work if you try to move a node that is not connected to the DOM to an already connected parent, or vice versa.
+- این متد تنها زمانی کار می‌کند که گره را در همان سند (document) جابه‌جا کنید.
+- اگر بخواهید گره‌ای را که به DOM متصل نیست به والدِ متصل به DOM منتقل کنید، یا برعکس، کار نخواهد کرد.
 
-In such cases, `moveBefore()` will fail with a `HierarchyRequestError` exception. If the above constraints are requirements for your particular use case, you should use {{domxref("Node.insertBefore()")}} instead, or use [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) to handle the errors that arise from such cases.
+در چنین مواردی، `moveBefore()` با یک استثنا از نوع `HierarchyRequestError` شکست می‌خورد. اگر محدودیت‌های بالا برای مورد استفاده خاص شما الزامی هستند، بهتر است به جای آن از {{domxref("Node.insertBefore()")}} استفاده کنید، یا از [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) برای مدیریت خطاهای ناشی از چنین مواردی بهره ببرید.
 
-### Moving custom elements while preserving state
+### جابه‌جایی عناصر سفارشی همراه با حفظ وضعیت
 
-Each time a [custom element's](/en-US/docs/Web/API/Web_components/Using_custom_elements) position in the DOM is updated via `Element.moveBefore()`, or similar methods such as {{domxref("Node.insertBefore()")}}, its `disconnectedCallback()` and `connectedCallback()` lifecycle callbacks are fired. Since these callbacks are typically used to implement any required initialization or cleanup code to run at the start or end of the element's lifecycle, running them when the element is moved (rather than removed or inserted) may cause problems with its state.
+هر بار که جایگاه یک [عنصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements) در DOM از طریق `Element.moveBefore()` یا روش‌های مشابهی مانند {{domxref("Node.insertBefore()")}} به‌روزرسانی می‌شود، فراخوان‌های چرخه حیات `disconnectedCallback()` و `connectedCallback()` آن اجرا می‌شوند. از آنجا که این فراخوان‌ها معمولاً برای اجرای هرگونه کد مقداردهی اولیه یا پاک‌سازی لازم در آغاز یا پایان چرخه حیات عنصر استفاده می‌شوند، اجرای آن‌ها هنگام جابه‌جایی عنصر (به جای حذف یا درج) ممکن است باعث بروز مشکل در وضعیت آن شود.
 
-You can use the `connectedMoveCallback()` callback to preserve a custom element's state. When using `moveBefore()` to move a custom element, `connectedMoveCallback()` is run instead of `connectedCallback()` and `disconnectedCallback()`.
+می‌توانید از فراخوان `connectedMoveCallback()` برای حفظ وضعیت عنصر سفارشی استفاده کنید. هنگام استفاده از `moveBefore()` برای جابه‌جایی یک عنصر سفارشی، به جای `connectedCallback()` و `disconnectedCallback()`، فراخوان `connectedMoveCallback()` اجرا می‌شود.
 
-See [Moving custom elements](/en-US/docs/Web/API/Web_components/Using_custom_elements#lifecycle_callbacks_and_state-preserving_moves) for further information.
+برای اطلاعات بیشتر، [جابه‌جایی عناصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements#lifecycle_callbacks_and_state-preserving_moves) را ببینید.
 
-## Examples
+## نمونه‌ها
 
-### Basic `moveBefore()` usage
+### کاربرد پایه `moveBefore()`
 
-In this demo we illustrate basic usage of `moveBefore()`.
+در این نمایش، کاربرد پایه `moveBefore()` را نشان می‌دهیم.
 
 #### HTML
 
-The HTML features an {{htmlelement("article")}} element containing a {{htmlelement("div")}} element and two {{htmlelement("section")}} elements. The `<div>` contains a {{htmlelement("button")}}, which we later use to move it.
+HTML شامل یک عنصر {{htmlelement("article")}} است که درون خود یک عنصر {{htmlelement("div")}} و دو عنصر {{htmlelement("section")}} دارد. داخل `<div>` یک {{htmlelement("button")}} قرار دارد که بعداً برای جابه‌جایی آن استفاده می‌کنیم.
 
 ```html live-sample___movebefore-basic
 <article id="wrapper">
@@ -104,7 +98,7 @@ The HTML features an {{htmlelement("article")}} element containing a {{htmleleme
 
 #### CSS
 
-We provide some rudimentary styling for the look and feel and spacing of the boxes, and use [flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) to center their content.
+ما برای ظاهر، حس و فاصله‌گذاری جعبه‌ها استایل‌هایی ابتدایی فراهم کرده‌ایم و از [flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) برای وسط‌چین کردن محتوای آن‌ها استفاده می‌کنیم.
 
 ```css live-sample___movebefore-basic
 #section1,
@@ -131,7 +125,7 @@ We provide some rudimentary styling for the look and feel and spacing of the box
 
 #### JavaScript
 
-In our script, we attach a click event listener to the `<button>` via {{domxref("EventTarget.addEventListener", "addEventListener()")}}. When the button is clicked, we check whether the {{domxref("Element.nextElementSibling", "nextElementSibling")}} of our `mover` `<div>` is the first `<section>` element. If so, we invoke `moveBefore()` on the `wrapper` `<article>` and specify to move the `<div>` before the second `<section>`. If not, we use `moveBefore()` to move the `<div>` before the first `<section>`.
+در اسکریپت خود، یک شنونده رویداد کلیک را از طریق {{domxref("EventTarget.addEventListener", "addEventListener()")}} به `<button>` متصل می‌کنیم. وقتی دکمه کلیک می‌شود، بررسی می‌کنیم که آیا {{domxref("Element.nextElementSibling", "nextElementSibling")}} مربوط به `<div>` با شناسه `mover`، اولین عنصر `<section>` است یا نه. اگر باشد، `moveBefore()` را روی `<article>` با شناسه `wrapper` فراخوانی کرده و مشخص می‌کنیم که `<div>` قبل از `<section>` دوم منتقل شود. اگر نباشد، از `moveBefore()` برای انتقال `<div>` به قبل از `<section>` اول استفاده می‌کنیم.
 
 ```js live-sample___movebefore-basic
 const wrapper = document.getElementById("wrapper");
@@ -149,21 +143,21 @@ moveBtn.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-The rendered example looks like this:
+نمونه رندر شده به این شکل است:
 
 {{EmbedLiveSample("movebefore-basic", "100%", "300px")}}
 
-Try clicking the `<button>` a few times and note how it toggles between the two positions.
+چند بار روی `<button>` کلیک کنید و توجه کنید که چگونه بین دو موقعیت جابه‌جا می‌شود.
 
-### Demonstrating state preservation
+### نمایش حفظ وضعیت
 
-In this demo we provide multiple mechanisms to move a `<div>` element containing a YouTube embed between two different containers, demonstrating how `moveBefore()` preserves the play state of the embed, but the other mechanisms do not.
+در این نمایش، سازوکارهای متعددی برای جابه‌جایی یک عنصر `<div>` حاوی ویدیوی جاسازی‌شده YouTube بین دو ظرف متفاوت ارائه می‌دهیم و نشان می‌دهیم که چگونه `moveBefore()` وضعیت پخش ویدیو را حفظ می‌کند، در حالی که سازوکارهای دیگر چنین نمی‌کنند.
 
 #### HTML
 
-The HTML features an {{htmlelement("article")}} element containing two {{htmlelement("section")}} elements. The first `<section>` element contains a {{htmlelement("div")}} element containing the YouTube embed code. We also have a {{htmlelement("div")}} element containing three {{htmlelement("button")}} elements, to which we will add functionality to move the embed `<div>` between sections via JavaScript later on.
+HTML شامل یک عنصر {{htmlelement("article")}} است که دو عنصر {{htmlelement("section")}} را در بر می‌گیرد. عنصر `<section>` اول شامل یک عنصر {{htmlelement("div")}} است که کد جاسازی YouTube در آن قرار دارد. همچنین یک عنصر {{htmlelement("div")}} داریم که سه عنصر {{htmlelement("button")}} را در خود جای داده است؛ بعداً از طریق JavaScript به این دکمه‌ها قابلیت جابه‌جایی `<div>` حاوی ویدیو را بین بخش‌ها اضافه خواهیم کرد.
 
 ```html live-sample___movebefore-state
 <article id="wrapper">
@@ -190,7 +184,7 @@ The HTML features an {{htmlelement("article")}} element containing two {{htmlele
 
 #### CSS
 
-We use [flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) for the layout to make the two `<section>` elements sit side-by-side, and space the buttons evenly inside the `controls` `<div>`.
+برای چیدمان از [flexbox](/en-US/docs/Web/CSS/Guides/Flexible_box_layout) استفاده می‌کنیم تا دو عنصر `<section>` کنار هم قرار بگیرند و دکمه‌ها نیز به‌طور یکنواخت درون `<div>` با شناسه `controls` فاصله‌گذاری شوند.
 
 ```css live-sample___movebefore-state
 #wrapper,
@@ -233,7 +227,7 @@ section {
 
 #### JavaScript
 
-In our script, we attach `click` event listeners to each `<button>` via {{domxref("EventTarget.addEventListener", "addEventListener()")}}. When the buttons are clicked, we check which `<section>` element is the {{domxref("Node.parentElement", "parentElement")}} of our embed `<div>`, and then use the relevant function (`moveBefore()`, {{domxref("Node.insertBefore", "insertBefore()")}}, or {{domxref("Element.prepend", "prepend()")}}) to move it inside the _other_ `<section>` element.
+در اسکریپت خود، شنونده‌های رویداد `click` را از طریق {{domxref("EventTarget.addEventListener", "addEventListener()")}} به هر `<button>` متصل می‌کنیم. وقتی دکمه‌ها کلیک می‌شوند، بررسی می‌کنیم که کدام عنصر `<section>`، {{domxref("Node.parentElement", "parentElement")}} برای `<div>` حاوی ویدیو است و سپس از تابع مربوطه (`moveBefore()`، {{domxref("Node.insertBefore", "insertBefore()")}} یا {{domxref("Element.prepend", "prepend()")}}) استفاده می‌کنیم تا آن را به داخل عنصر `<section>` _دیگر_ منتقل کنیم.
 
 ```js live-sample___movebefore-state
 const section1 = document.getElementById("section1");
@@ -268,23 +262,23 @@ prependBtn.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-The rendered example looks like this:
+نمونه رندر شده به این شکل است:
 
 {{EmbedLiveSample("movebefore-state", "100%", "260px")}}
 
-Try playing the YouTube embed and then clicking each `<button>` a couple of times to toggle the `<div>` element screen position from left to right. Note how, in the case of `insertBefore()` and `prepend()`, the embed state is reset after each move so it needs to be restarted. However, in the case of `moveBefore()`, the state is preserved after each move.
+ویدیوی جاسازی‌شده YouTube را پخش کنید و سپس چند بار روی هر `<button>` کلیک کنید تا موقعیت عنصر `<div>` روی صفحه از چپ به راست جابه‌جا شود. توجه کنید که در مورد `insertBefore()` و `prepend()`، وضعیت ویدیو پس از هر جابه‌جایی بازنشانی می‌شود و باید دوباره پخش شود. اما در مورد `moveBefore()`، وضعیت پس از هر جابه‌جایی حفظ می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.moveBefore()")}}
 - {{domxref("DocumentFragment.moveBefore()")}}
