@@ -1,10 +1,4 @@
 ---
-title: "CSSMathMax"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathMax"
-status: "needs-translation"
----
-
----
 title: CSSMathMax
 slug: Web/API/CSSMathMax
 page-type: web-api-interface
@@ -13,45 +7,44 @@ browser-compat: api.CSSMathMax
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSMathMax`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the CSS {{CSSXref('max','max()')}} function.
+رابط **`CSSMathMax`** در [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) نشان‌دهنده تابع {{CSSXref('max','max()')}} در CSS است.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSMathMax.CSSMathMax", "CSSMathMax()")}} {{Experimental_Inline}}
-  - : Creates a new `CSSMathMax` object.
+  - : یک شیء `CSSMathMax` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین ویژگی‌هایی را از رابط والد خود، {{DOMxRef("CSSMathValue")}}، به ارث می‌برد._
 
 - {{domxref('CSSMathMax.values')}} {{ReadOnlyInline}}
-  - : Returns a {{domxref('CSSNumericArray')}} object which contains one or more {{domxref('CSSNumericValue')}} objects.
+  - : یک شیء {{domxref('CSSNumericArray')}} برمی‌گرداند که شامل یک یا چند شیء {{domxref('CSSNumericValue')}} است.
 
-## Static methods
+## روش‌های ایستا
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین روش‌هایی را از رابط والد خود، {{DOMxRef("CSSMathValue")}}، به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین روش‌هایی را از رابط والد خود، {{DOMxRef("CSSMathValue")}}، به ارث می‌برد._
 
-## Description
+## توضیحات
 
-The CSS {{cssxref("max", "max()")}} function takes one or more comma-separated values as arguments and returns the largest of them.
+تابع {{cssxref("max", "max()")}} در CSS یک یا چند مقدار جدا شده با کاما را به عنوان آرگومان می‌گیرد و بزرگترین آن‌ها را برمی‌گرداند.
 
-If all arguments are absolute values, such as pixel lengths, `max()` is resolved to a single value at parse time, represented by the CSS Typed Object Model as a {{domxref("CSSUnitValue")}}.
-If the `max()` expression can't be resolved to a single value at parse time (say, because one of its arguments uses a relative unit like `vw` or `%`), the function is represented as a `CSSMathMax` object, and the arguments passed to `max()` (or to the `CSSMathMax()` constructor) are exposed as the `values` property.
+اگر همه آرگومان‌ها مقادیر مطلق (مانند طول‌های پیکسلی) باشند، `max()` در زمان تجزیه به یک مقدار واحد تبدیل می‌شود که توسط CSS Typed Object Model به صورت یک {{domxref("CSSUnitValue")}} نمایش داده می‌شود.
+اگر عبارت `max()` نتواند در زمان تجزیه به یک مقدار واحد تبدیل شود (مثلاً به دلیل استفاده از یک واحد نسبی مانند `vw` یا `%` در یکی از آرگومان‌ها)، تابع به صورت یک شیء `CSSMathMax` نمایش داده می‌شود و آرگومان‌های ارسال‌شده به `max()` (یا به سازنده `CSSMathMax()`) به عنوان ویژگی `values` در دسترس قرار می‌گیرند.
 
-Note that `CSSMathMax` represents the `max()` function, not its resolved value.
-In order to determine the value of a property using `max()`, you need to read its computed style (for example with {{domxref("Window.getComputedStyle", "getComputedStyle()")}}).
+توجه داشته باشید که `CSSMathMax` نشان‌دهنده خود تابع `max()` است، نه مقدار حل‌شده آن. برای تعیین مقدار یک ویژگی با استفاده از `max()`، باید سبک محاسبه‌شده آن را بخوانید (مثلاً با {{domxref("Window.getComputedStyle", "getComputedStyle()")}}).
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following code creates a `CSSMathMax` instance from three values, then reads back its `operator` and `values` properties.
+کد زیر یک نمونه `CSSMathMax` از سه مقدار ایجاد می‌کند و سپس ویژگی‌های `operator` و `values` آن را می‌خواند.
 
 ```js
 const max = new CSSMathMax(CSS.px(10), CSS.em(5), CSS.percent(50));
@@ -62,9 +55,9 @@ console.log(max.values); // CSSNumericArray {0: CSSUnitValue, 1: CSSUnitValue, 2
 console.log(max.values[0]); // CSSUnitValue {value: 10, unit: "px"}
 ```
 
-### `max()` representations
+### نمایش‌های `max()`
 
-This example shows how {{cssxref("max", "max()")}} is represented by a {{domxref("CSSUnitValue")}} or a `CSSMathMax`, depending on whether all of its arguments are absolute values.
+این مثال نشان می‌دهد که چگونه {{cssxref("max", "max()")}} بسته به اینکه همه آرگومان‌های آن مقادیر مطلق باشند یا نه، توسط یک {{domxref("CSSUnitValue")}} یا یک `CSSMathMax` نمایش داده می‌شود.
 
 #### HTML
 
@@ -78,8 +71,8 @@ This example shows how {{cssxref("max", "max()")}} is represented by a {{domxref
 
 #### CSS
 
-`width` is set using a `max()` whose arguments are all absolute lengths, so the browser can resolve it to a single fixed value immediately.
-`font-size` is set using a `max()` where one argument uses the relative unit `vw`, so the browser can't resolve it until layout (this will be represented by a `CSSMathMax`).
+`width` با استفاده از یک `max()` تنظیم شده است که آرگومان‌های آن همه طول‌های مطلق هستند، بنابراین مرورگر می‌تواند بلافاصله آن را به یک مقدار ثابت واحد تبدیل کند.
+`font-size` با استفاده از یک `max()` تنظیم شده است که در آن یکی از آرگومان‌ها از واحد نسبی `vw` استفاده می‌کند، بنابراین مرورگر نمی‌تواند آن را تا زمان چیدمان حل کند (این مورد با یک `CSSMathMax` نمایش داده می‌شود).
 
 ```css
 #demoBox {
@@ -106,7 +99,7 @@ function log(text) {
 }
 ```
 
-First we find the demo box's style rule and read its `width` and `font-size` values using {{domxref("CSSStyleRule.styleMap", "styleMap")}}.
+ابتدا قاعده سبک جعبه دمو را پیدا کرده و مقادیر `width` و `font-size` آن را با استفاده از {{domxref("CSSStyleRule.styleMap", "styleMap")}} می‌خوانیم.
 
 ```js
 const demoBox = document.querySelector("#demoBox");
@@ -118,7 +111,7 @@ const width = styleMap.get("width");
 const fontSize = styleMap.get("font-size");
 ```
 
-We then log the type and value of the CSS Typed OM representations, followed by the computed (resolved) values.
+سپس نوع و مقدار نمایش‌های CSS Typed OM را به همراه مقادیر محاسبه‌شده (حل‌شده) ثبت می‌کنیم.
 
 ```js
 log("width");
@@ -132,17 +125,17 @@ log(` values: [${[...fontSize.values].join(", ")}]`);
 log(` resolved: ${getComputedStyle(demoBox).fontSize}`);
 ```
 
-#### Result
+#### نتیجه
 
-`width` is represented by a `CSSUnitValue` object, which has a value that matches the resolved width.
-`font-size` is represented by a `CSSMathMax` object that exposes the `max()` function's original operands.
+`width` توسط یک شیء `CSSUnitValue` نمایش داده می‌شود که مقداری برابر با عرض حل‌شده دارد.
+`font-size` توسط یک شیء `CSSMathMax` نمایش داده می‌شود که عملوندهای اصلی تابع `max()` را در معرض دید قرار می‌دهد.
 
 {{EmbedLiveSample("`max()` representations", 300, 300)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
