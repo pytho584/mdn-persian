@@ -1,10 +1,4 @@
 ---
-title: "DocumentFragment"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment"
-status: "needs-translation"
----
-
----
 title: DocumentFragment
 slug: Web/API/DocumentFragment
 page-type: web-api-interface
@@ -13,62 +7,62 @@ browser-compat: api.DocumentFragment
 
 {{ APIRef("DOM") }}
 
-The **`DocumentFragment`** interface represents a minimal document object that has no parent.
+رابط **`DocumentFragment`** یک شیء سند حداقلی و بدون والد را نمایش می‌دهد.
 
-It is used as a lightweight version of {{domxref("Document")}} that stores a segment of a document structure comprised of nodes just like a standard document. The key difference is due to the fact that the document fragment isn't part of the active document tree structure. Changes made to the fragment don't affect the document.
+این رابط به عنوان یک نسخه سبک‌وزن از {{domxref("Document")}} استفاده می‌شود که بخشی از ساختار یک سند را شامل گره‌ها (nodes) ذخیره می‌کند، درست مانند یک سند استاندارد. تفاوت اصلی در این است که قطعه سند (document fragment) بخشی از ساختار درخت فعال سند نیست. تغییراتی که در قطعه ایجاد می‌شود بر سند تأثیر نمی‌گذارد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{ domxref("DocumentFragment.DocumentFragment()", "DocumentFragment()") }}
-  - : Creates and returns a new `DocumentFragment` object.
+  - : یک شیء `DocumentFragment` جدید ایجاد و بازمی‌گرداند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface has no specific properties, but inherits those of its parent, {{domxref("Node")}}._
+_این رابط ویژگی خاصی ندارد، اما ویژگی‌های والد خود، {{domxref("Node")}} را به ارث می‌برد._
 
 - {{ domxref("DocumentFragment.childElementCount") }} {{ReadOnlyInline}}
-  - : Returns the amount of child {{domxref("Element","elements")}} the `DocumentFragment` has.
+  - : تعداد {{domxref("Element","عناصر")}} فرزند `DocumentFragment` را برمی‌گرداند.
 - {{ domxref("DocumentFragment.children") }} {{ReadOnlyInline}}
-  - : Returns a live {{domxref("HTMLCollection")}} containing all objects of type {{domxref("Element")}} that are children of the `DocumentFragment` object.
+  - : یک {{domxref("HTMLCollection")}} زنده شامل تمام اشیاء از نوع {{domxref("Element")}} که فرزندان شیء `DocumentFragment` هستند را برمی‌گرداند.
 - {{ domxref("DocumentFragment.firstElementChild") }} {{ReadOnlyInline}}
-  - : Returns the {{domxref("Element")}} that is the first child of the `DocumentFragment` object, or `null` if there is none.
+  - : اولین {{domxref("Element")}} فرزند شیء `DocumentFragment` را برمی‌گرداند، یا اگر وجود نداشته باشد `null` را برمی‌گرداند.
 - {{ domxref("DocumentFragment.lastElementChild") }} {{ReadOnlyInline}}
-  - : Returns the {{domxref("Element")}} that is the last child of the `DocumentFragment` object, or `null` if there is none.
+  - : آخرین {{domxref("Element")}} فرزند شیء `DocumentFragment` را برمی‌گرداند، یا اگر وجود نداشته باشد `null` را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface inherits the methods of its parent, {{domxref("Node")}}._
+_این رابط روش‌های والد خود، {{domxref("Node")}} را به ارث می‌برد._
 
 - {{DOMxRef("DocumentFragment.append()")}}
-  - : Inserts a set of {{domxref("Node")}} objects or strings after the last child of the document fragment.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را بعد از آخرین فرزند قطعه سند درج می‌کند.
 - {{DOMxRef("DocumentFragment.prepend()")}}
-  - : Inserts a set of {{domxref("Node")}} objects or strings before the first child of the document fragment.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را قبل از اولین فرزند قطعه سند درج می‌کند.
 - {{domxref("DocumentFragment.querySelector()")}}
-  - : Returns the first {{domxref("Element")}} node within the `DocumentFragment`, in document order, that matches the specified selectors.
+  - : اولین گره {{domxref("Element")}} را درون `DocumentFragment`، به ترتیب سند، که با انتخاب‌گرهای مشخص شده مطابقت دارد، برمی‌گرداند.
 - {{domxref("DocumentFragment.querySelectorAll()")}}
-  - : Returns a {{domxref("NodeList")}} of all the {{domxref("Element")}} nodes within the `DocumentFragment` that match the specified selectors.
+  - : یک {{domxref("NodeList")}} از تمام گره‌های {{domxref("Element")}} درون `DocumentFragment` که با انتخاب‌گرهای مشخص شده مطابقت دارند، برمی‌گرداند.
 - {{DOMxRef("DocumentFragment.moveBefore()")}}
-  - : Moves a given {{domxref("Node")}} inside the invoking `DocumentFragment` as a direct child, before a given reference node, without removing and then inserting the node.
+  - : یک {{domxref("Node")}} داده شده را درون `DocumentFragment` فراخواننده به عنوان یک فرزند مستقیم، قبل از یک گره مرجع معین، بدون حذف و سپس درج کردن گره، جابه‌جا می‌کند.
 - {{DOMxRef("DocumentFragment.replaceChildren()")}}
-  - : Replaces the existing children of a `DocumentFragment` with a specified new set of children.
+  - : فرزندان موجود یک `DocumentFragment` را با مجموعه جدید مشخصی از فرزندان جایگزین می‌کند.
 - {{domxref("DocumentFragment.getElementById()")}}
-  - : Returns the first {{domxref("Element")}} node within the `DocumentFragment`, in document order, that matches the specified ID. Functionally equivalent to {{domxref("Document.getElementById()")}}.
+  - : اولین گره {{domxref("Element")}} را درون `DocumentFragment`، به ترتیب سند، که با شناسه مشخص شده مطابقت دارد، برمی‌گرداند. از نظر عملکردی معادل {{domxref("Document.getElementById()")}} است.
 
-## Usage notes
+## نکات استفاده
 
-A common use for `DocumentFragment` is to create one, assemble a DOM subtree within it, then append or insert the fragment into the DOM using {{domxref("Node")}} interface methods such as {{domxref("Node.appendChild", "appendChild()")}}, {{domxref("Element.append", "append()")}}, or {{domxref("Node.insertBefore", "insertBefore()")}}. Doing this moves the fragment's nodes into the DOM, leaving behind an empty `DocumentFragment`.
+یک کاربرد رایج `DocumentFragment` این است که یک نمونه از آن ایجاد کنید، یک زیردرخت DOM درون آن بسازید، سپس قطعه را با استفاده از روش‌های رابط {{domxref("Node")}} مانند {{domxref("Node.appendChild", "appendChild()")}}، {{domxref("Element.append", "append()")}} یا {{domxref("Node.insertBefore", "insertBefore()")}} به DOM اضافه یا درون آن درج کنید. با این کار، گره‌های قطعه به DOM منتقل می‌شوند و یک `DocumentFragment` خالی باقی می‌ماند.
 
-This interface is also of great use with Web components: {{HTMLElement("template")}} elements contain a `DocumentFragment` in their {{domxref("HTMLTemplateElement.content")}} property.
+این رابط همچنین در کامپوننت‌های وب (Web components) بسیار مفید است: عناصر {{HTMLElement("template")}} یک `DocumentFragment` را در ویژگی {{domxref("HTMLTemplateElement.content")}} خود دارند.
 
-An empty `DocumentFragment` can be created using the {{domxref("document.createDocumentFragment()")}} method or the constructor.
+یک `DocumentFragment` خالی را می‌توان با استفاده از روش {{domxref("document.createDocumentFragment()")}} یا سازنده ایجاد کرد.
 
-## Performance
+## عملکرد
 
-The performance benefit of `DocumentFragment` is often overstated. In fact, in some engines, using a `DocumentFragment` is slower than appending to the document in a loop as demonstrated in [this benchmark](https://jsbench.me/02l63eic9j/1). However, the difference between these examples is so marginal that it's better to optimize for readability than performance.
+مزیت عملکردی `DocumentFragment` اغلب بیش از حد برآورد می‌شود. در واقع، در برخی موتورها، استفاده از `DocumentFragment` کندتر از افزودن مستقیم به سند در یک حلقه است، همانطور که در [این بنچمارک](https://jsbench.me/02l63eic9j/1) نشان داده شده است. با این حال، تفاوت بین این مثال‌ها به قدری ناچیز است که بهتر است به جای عملکرد، روی خوانایی بهینه‌سازی کنید.
 
-## Example
+## مثال
 
 ### HTML
 
@@ -93,14 +87,14 @@ for (const fruit of fruits) {
 ul.append(fragment);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Example')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
