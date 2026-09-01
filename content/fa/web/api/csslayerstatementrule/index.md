@@ -1,10 +1,4 @@
 ---
-title: "CSSLayerStatementRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSLayerStatementRule"
-status: "needs-translation"
----
-
----
 title: CSSLayerStatementRule
 slug: Web/API/CSSLayerStatementRule
 page-type: web-api-interface
@@ -13,20 +7,20 @@ browser-compat: api.CSSLayerStatementRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSLayerStatementRule`** represents a {{cssxref("@layer")}} statement rule. Unlike {{domxref("CSSLayerBlockRule")}}, it doesn't contain other rules and merely defines one or several layers by providing their names.
+**`CSSLayerStatementRule`** نمایانگر یک قانون اعلان {{cssxref("@layer")}} است. برخلاف {{domxref("CSSLayerBlockRule")}}، این قانون شامل قوانین دیگری نیست و صرفاً یک یا چند لایه را با ارائه نام‌های آن‌ها تعریف می‌کند.
 
-This rule allows to explicitly declare the ordering layer that is in an apparent way at the beginning of a CSS file: the layer order is defined by the order of first occurrence of each layer name. Declaring them with a statement allows the reader to understand the layer order. It also allows inline and imported layers to be interleaved, which is not possible when using the `CSSLayerBlockRule` syntax.
+این قانون امکان اعلام صریح ترتیب لایه‌ها را به شکلی آشکار در ابتدای یک فایل CSS فراهم می‌کند: ترتیب لایه‌ها بر اساس ترتیب اولین ظهور هر نام لایه تعریف می‌شود. اعلام آن‌ها با یک دستور به خواننده امکان می‌دهد ترتیب لایه‌ها را درک کند. همچنین امکان درهم‌آمیختن لایه‌های درون‌خطی و واردشده را فراهم می‌کند، که با استفاده از نحو `CSSLayerBlockRule` ممکن نیست.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSRule")}}._
+_همچنین ویژگی‌های رابط والد خود، {{DOMxRef("CSSRule")}} را به ارث می‌برد._
 
 - {{DOMxRef("CSSLayerStatementRule.nameList")}} {{ReadOnlyInline}}
-  - An array of strings, that represent the name of each cascade layer by the rule
+  - آرایه‌ای از رشته‌ها که نام هر لایه آبشاری تعریف‌شده توسط قانون را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -46,27 +40,27 @@ _Also inherits properties from its parent interface, {{DOMxRef("CSSRule")}}._
 const item = document.getElementsByTagName("p")[0];
 const rules = document.getElementById("css-output").sheet.cssRules;
 
-const layer = rules[0]; // A CSSLayerStatementRule
+const layer = rules[0]; // یک CSSLayerStatementRule
 
-item.textContent = `The CSS @layer statement declares the following layers: ${layer.nameList.join(
+item.textContent = `قانون @layer در CSS لایه‌های زیر را اعلام می‌کند: ${layer.nameList.join(
   ", ",
 )}.`;
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@layer")}}
-- [The `@layer` statement at-rule for named layers](/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers#the_layer_statement_at-rule_for_named_layers)
+- [قانون اعلان `@layer` برای لایه‌های نام‌دار](/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers#the_layer_statement_at-rule_for_named_layers)
 - {{DOMxRef("CSSLayerBlockRule")}}
