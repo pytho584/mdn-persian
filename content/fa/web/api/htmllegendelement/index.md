@@ -1,7 +1,5 @@
 ---
 title: "HTMLLegendElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLegendElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,31 +11,31 @@ browser-compat: api.HTMLLegendElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLLegendElement`** is an interface allowing to access properties of the {{HTMLElement("legend")}} elements. It inherits properties and methods from the {{domxref("HTMLElement")}} interface.
+رابط **`HTMLLegendElement`** امکان دسترسی به ویژگی‌های عناصر {{HTMLElement("legend")}} را فراهم می‌کند. این رابط، ویژگی‌ها و روش‌ها را از {{domxref("HTMLElement")}} به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLLegendElement.align")}} {{deprecated_inline}}
-  - : A string representing the alignment relative to the form set.
+  - : رشته‌ای که ترازبندی را نسبت به فرم مشخص می‌کند.
 - {{domxref("HTMLLegendElement.form")}} {{ReadOnlyInline}}
-  - : A {{domxref("HTMLFormElement")}} representing the form that this legend belongs to. If the legend has a fieldset element as its parent, then this attribute returns the same value as the **form** attribute on the parent fieldset element. Otherwise, it returns `null`.
+  - : یک {{domxref("HTMLFormElement")}} که فرم متعلق به این legend را نشان می‌دهد. اگر legend دارای عنصر fieldset به عنوان والد باشد، این ویژگی همان مقدار ویژگی **form** را در عنصر fieldset والد برمی‌گرداند. در غیر این صورت، `null` برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش خاصی ندارد؛ روش‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("legend")}}
+- عنصر HTML پیاده‌ساز این رابط: {{HTMLElement("legend")}}
