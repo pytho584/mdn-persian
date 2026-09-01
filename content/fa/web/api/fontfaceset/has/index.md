@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSet: has() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/has"
-status: "needs-translation"
----
-
----
-title: "FontFaceSet: has() method"
 short-title: has()
 slug: Web/API/FontFaceSet/has
 page-type: web-api-instance-method
@@ -14,27 +8,27 @@ browser-compat: api.FontFaceSet.has
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`has()`** method of the {{domxref("FontFaceSet")}} interface returns a {{jsxref("Boolean")}} asserting whether an element is present with the given value.
+متد **`has()`** از رابط {{domxref("FontFaceSet")}} یک {{jsxref("Boolean")}} برمی‌گرداند که مشخص می‌کند آیا عنصری با مقدار داده شده وجود دارد یا خیر.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 has(value)
 ```
 
-### Parameters
+### پارامترها
 
 - `value`
-  - : The value to test for in the `FontFaceSet` object.
+  - : مقداری که باید در شیء `FontFaceSet` برای وجود آن آزمایش شود.
 
-### Return value
+### مقدار برگشتی
 
-A {{jsxref("Boolean")}}, `true` if `value` exists in the `FontFaceSet`.
+یک {{jsxref("Boolean")}}، که اگر `value` در `FontFaceSet` وجود داشته باشد، `true` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
