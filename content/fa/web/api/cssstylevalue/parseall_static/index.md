@@ -1,7 +1,5 @@
 ---
 title: "CSSStyleValue: parseAll() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleValue/parseAll_static"
-status: "needs-translation"
 ---
 
 ---
@@ -14,40 +12,39 @@ browser-compat: api.CSSStyleValue.parseAll_static
 
 {{APIRef("CSS Typed Object Model API")}}
 
-The **`parseAll()`** static method of the {{domxref("CSSStyleValue")}} interface sets all occurrences of a specific CSS property to the specified value and returns an array of {{domxref('CSSStyleValue')}} objects, each containing one of the supplied values.
+متد ایستای **`parseAll()`** از رابط {{domxref("CSSStyleValue")}} تمامی موارد یک ویژگی CSS خاص را به مقدار مشخص‌شده تنظیم می‌کند و آرایه‌ای از اشیاء {{domxref('CSSStyleValue')}} برمی‌گرداند که هر یک شامل یکی از مقادیر ارائه‌شده است.
 
 > [!NOTE]
-> This method cannot be called in {{domxref("Worker")}} or {{domxref("Worklet")}} contexts.
-> The rest of the `CSSStyleValue` interface remains available in workers and worklets.
+> این متد در بافت‌های {{domxref("Worker")}} یا {{domxref("Worklet")}} قابل فراخوانی نیست.
+> بقیهٔ رابط `CSSStyleValue` همچنان در workerها و workletها در دسترس است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 CSSStyleValue.parseAll(property, value)
 ```
 
-### Parameters
+### پارامترها
 
 - `property`
-  - : A CSS property to set.
+  - : یک ویژگی CSS که باید تنظیم شود.
 - `value`
-  - : A comma-separated string containing one or more values that apply to the provided property.
+  - : یک رشتهٔ جدا شده با کاما که شامل یک یا چند مقدار است و روی ویژگی ارائه‌شده اعمال می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-An array of `CSSStyleValue` objects, each containing one of the supplied
-values.
+آرایه‌ای از اشیاء `CSSStyleValue` که هر یک شامل یکی از مقادیر ارائه‌شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [`CSSStyleValue.parse()`](/en-US/docs/Web/API/CSSStyleValue/parse_static)
-- [Using the CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
+- [استفاده از CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
 - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
