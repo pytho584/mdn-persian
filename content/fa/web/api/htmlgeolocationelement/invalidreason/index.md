@@ -1,11 +1,5 @@
 ---
 title: "HTMLGeolocationElement: invalidReason property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLGeolocationElement/invalidReason"
-status: "needs-translation"
----
-
----
-title: "HTMLGeolocationElement: invalidReason property"
 short-title: invalidReason
 slug: Web/API/HTMLGeolocationElement/invalidReason
 page-type: web-api-instance-property
@@ -16,66 +10,66 @@ browser-compat: api.HTMLGeolocationElement.invalidReason
 
 {{APIRef("Navigation API")}}{{SeeCompatTable}}
 
-The **`invalidReason`** read-only property of the {{domxref("HTMLGeolocationElement")}} interface returns an enumerated value representing the reason why the associated {{htmlelement("geolocation")}} element is invalid (blocked), if that is the case.
+ویژگی فقط‌خواندنی **`invalidReason`** در رابط {{domxref("HTMLGeolocationElement")}}، یک مقدار شمارشی برمی‌گرداند که نشان می‌دهد چرا عنصر مرتبط {{htmlelement("geolocation")}} نامعتبر است (مسدود شده)، در صورتی که چنین باشد.
 
-When a [blocker](/en-US/docs/Web/HTML/Reference/Elements/geolocation#geolocation_blocking) is active on a `<geolocation>` element, it is invalid: This means that it is prevented from functioning, either temporarily or permanently, depending on the reason.
+هنگامی که یک [مسدودکننده](/en-US/docs/Web/HTML/Reference/Elements/geolocation#geolocation_blocking) بر روی یک عنصر `<geolocation>` فعال باشد، آن عنصر نامعتبر است؛ یعنی از کار کردن بازمانده است، خواه به‌صورت موقت یا دائمی، بسته به دلیل.
 
-You can query the {{domxref("HTMLGeolocationElement.isValid")}} property to check whether the `<geolocation>` element is valid or not.
+می‌توانید خاصیت {{domxref("HTMLGeolocationElement.isValid")}} را بررسی کنید تا ببینید آیا عنصر `<geolocation>` معتبر است یا خیر.
 
-## Value
+## مقدار
 
-The empty string (`""`) if the element does not have an active blocker, or one of the following values (in priority order):
+رشته خالی (`""`) اگر عنصر مسدودکننده فعالی نداشته باشد، یا یکی از مقادیر زیر (به ترتیب اولویت):
 
 - `illegal_subframe`
-  - : The `<geolocation>` element is nested inside a {{htmlelement("fencedframe")}} element.
+  - : عنصر `<geolocation>` داخل یک عنصر {{htmlelement("fencedframe")}} قرار گرفته است.
 
-    Permanent blocker.
+    مسدودکننده دائمی.
 
 - `unsuccessful_registration`
-  - : More than three `<geolocation>` elements have been inserted into the same document.
+  - : بیش از سه عنصر `<geolocation>` در همان سند درج شده است.
 
-    Temporary blocker.
+    مسدودکننده موقت.
 
 - `recently_attached`
-  - : The `<geolocation>` element has only recently been attached to the DOM.
+  - : عنصر `<geolocation>` به‌تازگی به DOM متصل شده است.
 
-    Expiring blocker.
+    مسدودکننده در حال انقضا.
 
 - `intersection_changed`
-  - : The `<geolocation>` element is being moved.
+  - : عنصر `<geolocation>` در حال جابه‌جایی است.
 
-    Expiring blocker.
+    مسدودکننده در حال انقضا.
 
 - `intersection_out_of_viewport_or_clipped`
-  - : The `<geolocation>` element is rendered outside or partially inside the viewport.
+  - : عنصر `<geolocation>` در خارج یا به‌صورت جزئی در داخل نمای دید (viewport) رندر شده است.
 
-    Temporary blocker.
+    مسدودکننده موقت.
 
 - `intersection_occluded_or_distorted`
-  - : The `<geolocation>` element is rendered completely inside the viewport, but it is obscured in some way, for example rendered behind other content.
+  - : عنصر `<geolocation>` کاملاً در داخل نمای دید رندر شده است، اما به نحوی پوشیده شده یا تحریف شده است، مثلاً پشت محتوای دیگر قرار دارد.
 
-    Temporary blocker.
+    مسدودکننده موقت.
 
 - `style_invalid`
-  - : The `<geolocation>` element has some restricted styles applied to it (see [Styling restrictions](/en-US/docs/Web/HTML/Reference/Elements/geolocation#styling_restrictions)).
+  - : سبک‌های محدودکننده‌ای روی عنصر `<geolocation>` اعمال شده است (به [محدودیت‌های سبک‌دهی](/en-US/docs/Web/HTML/Reference/Elements/geolocation#styling_restrictions) مراجعه کنید).
 
-    Temporary blocker.
+    مسدودکننده موقت.
 
-These invalid reasons are listed in priority order, from highest to lowest.
-If multiple blockers are active, the `invalidReason` value returned will be the value representing the highest-priority active blocker.
+این دلایل نامعتبری به ترتیب اولویت، از بالاترین به پایین‌ترین فهرست شده‌اند.
+اگر چند مسدودکننده فعال باشند، مقدار `invalidReason` برگشتی، مقداری خواهد بود که بالاترین اولویت مسدودکننده فعال را نشان می‌دهد.
 
-Also note that the descriptions above include a "blocker type" for each invalid reason, which is one of the following:
+همچنین توجه کنید که توضیحات بالا شامل یک «نوع مسدودکننده» برای هر دلیل نامعتبری است که یکی از موارد زیر است:
 
-- Permanent
-  - : The `<geolocation>` element is permanently invalid until the developer updates the code to stop the blocker occurring.
-- Temporary
-  - : The `<geolocation>` element is invalid until the blocking condition no longer occurs. After that, the temporary blocker will turn into an expiring blocker.
-- Expiring
-  - : The `<geolocation>` element is invalid for a short period of time, after which it becomes valid again.
+- دائمی
+  - : عنصر `<geolocation>` به‌طور دائمی نامعتبر است تا زمانی که توسعه‌دهنده کد را به‌روزرسانی کند تا مسدودکننده رخ ندهد.
+- موقت
+  - : عنصر `<geolocation>` نامعتبر است تا زمانی که شرط مسدودکننده دیگر رخ ندهد. پس از آن، مسدودکننده موقت به یک مسدودکننده در حال انقضا تبدیل می‌شود.
+- در حال انقضا
+  - : عنصر `<geolocation>` برای مدت کوتاهی نامعتبر است و پس از آن دوباره معتبر می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```html
 <geolocation></geolocation>
@@ -84,50 +78,50 @@ Also note that the descriptions above include a "blocker type" for each invalid 
 ```js
 const geo = document.querySelector("geolocation");
 console.log(geo.invalidReason);
-// "", provided the `<geolocation>` element is not blocked in some way
+// ""، به شرطی که عنصر `<geolocation>` به نحوی مسدود نشده باشد
 ```
 
-### Exploring invalid reasons
+### بررسی دلایل نامعتبری
 
-In this example, we provide a form control to apply different styles to a `<geolocation>` element that make it invalid. When each set of styles is applied, we report the `invalidReason` provided by the browser.
+در این مثال، یک کنترل فرم برای اعمال سبک‌های مختلف روی عنصر `<geolocation>` فراهم می‌کنیم که آن را نامعتبر می‌کند. وقتی هر مجموعه سبک اعمال می‌شود، `invalidReason` ارائه‌شده توسط مرورگر را گزارش می‌کنیم.
 
 #### HTML
 
-We start by including a `<geolocation>` element and a {{htmlelement("div")}} element that we will later allow to be rendered on top of the `<geolocation>` element.
+با قرار دادن یک عنصر `<geolocation>` و یک عنصر {{htmlelement("div")}} شروع می‌کنیم که بعداً اجازه می‌دهیم روی عنصر `<geolocation>` رندر شود.
 
 ```html
 <geolocation>
-  Your browser doesn't support the <code>&lt;geolocation&gt;</code> element.
+  مرورگر شما از عنصر <code>&lt;geolocation&gt;</code> پشتیبانی نمی‌کند.
 </geolocation>
-<div id="cover">Cover element</div>
+<div id="cover">عنصر پوشاننده</div>
 ```
 
-Next, we provide a {{htmlelement("p")}} element that we will print the `invalidReason` generated by each set of styles.
+سپس یک عنصر {{htmlelement("p")}} قرار می‌دهیم که `invalidReason` تولیدشده توسط هر مجموعه سبک را در آن چاپ می‌کنیم.
 
 ```html
 <p id="reason"></p>
 ```
 
-Finally, we provide a {{htmlelement("select")}} element to enable the user to choose different styling effects that invalidate the `<geolocation>` element.
+در نهایت، یک عنصر {{htmlelement("select")}} قرار می‌دهیم تا کاربر بتواند افکت‌های سبک‌دهی مختلفی را انتخاب کند که عنصر `<geolocation>` را نامعتبر می‌کنند.
 
 ```html
 <form>
   <label for="invalidate"
-    >Choose a way to invalidate the
-    <code>&lt;geolocation&gt;</code> element:</label
+    >راهی برای نامعتبر کردن عنصر
+    <code>&lt;geolocation&gt;</code> انتخاب کنید:</label
   >
   <select id="invalidate">
-    <option value="">None</option>
-    <option value="move-behind">Move behind element</option>
-    <option value="move-out">Move outside viewport</option>
-    <option value="bad-contrast">Bad contrast</option>
+    <option value="">هیچ‌کدام</option>
+    <option value="move-behind">انتقال به پشت عنصر</option>
+    <option value="move-out">انتقال به خارج از نمای دید</option>
+    <option value="bad-contrast">کنتراست نامناسب</option>
   </select>
 </form>
 ```
 
 #### CSS
 
-In our styles, we start off by giving the `<geolocation>` element a {{cssxref("position")}} value of `relative` so that it can be positioned, and a {{cssxref("z-index")}} value of `1`.
+در سبک‌ها، ابتدا به عنصر `<geolocation>` یک {{cssxref("position")}} با مقدار `relative` می‌دهیم تا قابل مکان‌دهی باشد و یک {{cssxref("z-index")}} با مقدار `1`.
 
 ```css hidden
 * {
@@ -162,7 +156,7 @@ geolocation {
 }
 ```
 
-Next, we style our `#cover` `<div>` with `position: absolute` and use {{glossary("inset properties")}} to place it to the right of the `<geolocation>` element. We also give it a `z-index` value of `2` so that, if our `<div>` is placed in the same area as the `<geolocation>` element, the `<div>` will be placed on top.
+سپس، `#cover` خود را که یک `<div>` است با `position: absolute` استایل می‌دهیم و از {{glossary("inset properties")}} برای قرار دادن آن در سمت راست عنصر `<geolocation>` استفاده می‌کنیم. همچنین به آن مقدار `z-index` برابر `2` می‌دهیم تا اگر `<div>` ما در همان ناحیه عنصر `<geolocation>` قرار گیرد، `<div>` در بالا قرار گیرد.
 
 ```css
 #cover {
@@ -173,7 +167,7 @@ Next, we style our `#cover` `<div>` with `position: absolute` and use {{glossary
 }
 ```
 
-Now we define three class styles that will be applied to the `<geolocation>` element when the different `<select>` choices are selected by the user. `.move-behind` moves it behind the `#cover` `<div>`, `.move-out` moves it off-screen, and `.bad-contrast` gives it a bad [color contrast](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast). All three of these styles cause the `<geolocation>` element to become invalid.
+حالا سه کلاس استایل تعریف می‌کنیم که وقتی کاربر گزینه‌های مختلف `<select>` را انتخاب می‌کند، روی عنصر `<geolocation>` اعمال می‌شوند. `.move-behind` آن را پشت `<div>` با شناسه `#cover` منتقل می‌کند، `.move-out` آن را از صفحه خارج می‌کند، و `.bad-contrast` به آن [کنتراست رنگی](/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast) نامناسبی می‌دهد. هر سه این سبک‌ها باعث می‌شوند عنصر `<geolocation>` نامعتبر شود.
 
 ```css
 .move-behind {
@@ -192,7 +186,7 @@ Now we define three class styles that will be applied to the `<geolocation>` ele
 
 #### JavaScript
 
-In our script, we begin by grabbing references to the `<geolocation>`, `<div>`, `<p>`, and `<select>` elements.
+در اسکریپت، ابتدا ارجاع‌هایی به عناصر `<geolocation>`، `<div>`، `<p>` و `<select>` می‌گیریم.
 
 ```js
 const geo = document.querySelector("geolocation");
@@ -201,7 +195,7 @@ const reasonElem = document.querySelector("#reason");
 const selectElem = document.querySelector("select");
 ```
 
-Next, we add an `input` event listener to the `<select>` element. When a new select value is chosen, we set a `class` attribute on the `<geolocation>` element equal to the chosen select value, which applies one of the invalidating class styles. After a 4-second timeout, we set the `class` back to `""`, to return the `<geolocation>` element back to its valid state.
+سپس، یک شنونده رویداد `input` به عنصر `<select>` اضافه می‌کنیم. وقتی مقدار جدیدی انتخاب شود، یک ویژگی `class` روی عنصر `<geolocation>` برابر با مقدار انتخاب‌شده تنظیم می‌کنیم که یکی از کلاس‌های نامعتبرکننده را اعمال می‌کند. پس از یک تأخیر ۴ ثانیه‌ای، `class` را دوباره به `""` تنظیم می‌کنیم تا عنصر `<geolocation>` به حالت معتبر خود بازگردد.
 
 ```js
 selectElem.addEventListener("input", () => {
@@ -212,32 +206,32 @@ selectElem.addEventListener("input", () => {
 });
 ```
 
-Finally, we include code to report the validation status changes that occur when different select values are chosen. We start by setting the `<p>` text content to include the `invalidReason` active when the page first loads. We then add a {{domxref("HTMLGeolocationElement.validationstatuschange_event", "validationstatuschange")}} event listener to the `<geolocation>` element. Whenever the validation status changes, we check whether the `<geolocation>` element is valid using {{domxref("HTMLGeolocationElement.isValid")}}, and if so, print a message confirming this to the `<p>` element text content. If the `<geolocation>` element is invalid, we print the `invalidReason` to the `<p>` element text content.
+در نهایت، کدی برای گزارش تغییرات وضعیت اعتبار که هنگام انتخاب مقادیر مختلف رخ می‌دهند اضافه می‌کنیم. با تنظیم متن `<p>` شروع می‌کنیم تا `invalidReason` فعال هنگام بارگذاری اولیه صفحه را شامل شود. سپس یک شنونده رویداد {{domxref("HTMLGeolocationElement.validationstatuschange_event", "validationstatuschange")}} به عنصر `<geolocation>` اضافه می‌کنیم. هر زمان که وضعیت اعتبار تغییر کند، بررسی می‌کنیم که آیا عنصر `<geolocation>` با استفاده از {{domxref("HTMLGeolocationElement.isValid")}} معتبر است یا خیر، و اگر معتبر بود، پیامی تأییدی در متن `<p>` چاپ می‌کنیم. اگر عنصر `<geolocation>` نامعتبر باشد، `invalidReason` را در متن `<p>` چاپ می‌کنیم.
 
 ```js
-reasonElem.textContent = `Invalid reason: ${geo.invalidReason}`;
+reasonElem.textContent = `دلیل نامعتبری: ${geo.invalidReason}`;
 
 geo.addEventListener("validationstatuschange", () => {
   if (geo.isValid) {
-    reasonElem.textContent = `<geolocation> is valid`;
+    reasonElem.textContent = `<geolocation> معتبر است`;
   } else {
-    reasonElem.textContent = `Invalid reason: ${geo.invalidReason}`;
+    reasonElem.textContent = `دلیل نامعتبری: ${geo.invalidReason}`;
   }
 });
 ```
 
-#### Result
+#### نتیجه
 
-See this code [running live](https://mdn.github.io/dom-examples/geolocation-element/exploring-invalid-reasons/) (also see the full [source code](https://github.com/mdn/dom-examples/tree/main/geolocation-element/exploring-invalid-reasons)). Try choosing the different invalidation options to see which invalidation reasons are reported in each case.
+این کد را [به‌صورت زنده اجرا کنید](https://mdn.github.io/dom-examples/geolocation-element/exploring-invalid-reasons/) (همچنین [کد منبع کامل](https://github.com/mdn/dom-examples/tree/main/geolocation-element/exploring-invalid-reasons) را ببینید). گزینه‌های مختلف نامعتبرسازی را امتحان کنید تا ببینید در هر مورد کدام دلایل نامعتبری گزارش می‌شوند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{htmlelement("geolocation")}} element
+- عنصر {{htmlelement("geolocation")}}
