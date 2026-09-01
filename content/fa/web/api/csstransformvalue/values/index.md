@@ -1,11 +1,5 @@
 ---
 title: "CSSTransformValue: values() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue/values"
-status: "needs-translation"
----
-
----
-title: "CSSTransformValue: values() method"
 short-title: values()
 slug: Web/API/CSSTransformValue/values
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.CSSTransformValue.values
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSTransformValue.values()`** returns a new _array iterator_ object that contains the values for each index in the `CSSTransformValue` object.
+متد **`CSSTransformValue.values()`** یک _تکرارگر آرایه_ جدید برمی‌گرداند که حاوی مقادیر مربوط به هر اندیس در شیء `CSSTransformValue` است.
 
 ## Syntax
 
@@ -22,22 +16,22 @@ The **`CSSTransformValue.values()`** returns a new _array iterator_ object that 
 values()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{jsxref("Array")}}.
+یک {{jsxref("Array")}} جدید.
 
-## Examples
+## مثال‌ها
 
-To Do
+در انتظار تکمیل
 
 ## Specifications
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
