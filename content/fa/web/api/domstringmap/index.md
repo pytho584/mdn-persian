@@ -1,10 +1,4 @@
 ---
-title: "DOMStringMap"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMStringMap"
-status: "needs-translation"
----
-
----
 title: DOMStringMap
 slug: Web/API/DOMStringMap
 page-type: web-api-interface
@@ -13,17 +7,17 @@ browser-compat: api.DOMStringMap
 
 {{ APIRef("HTML DOM") }}
 
-The **`DOMStringMap`** interface is used for the {{domxref("HTMLElement.dataset")}} attribute, to represent data for custom attributes added to elements.
+**`DOMStringMap`** برای ویژگی {{domxref("HTMLElement.dataset")}} استفاده می‌شود و داده‌های مربوط به ویژگی‌های سفارشی افزوده‌شده به عناصر را نمایش می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLElement.dataset")}}
-- [Global attributes - `data-*`](/en-US/docs/Web/HTML/Reference/Global_attributes/data-*)
+- [ویژگی‌های سراسری — `data-*`](/en-US/docs/Web/HTML/Reference/Global_attributes/data-*)
