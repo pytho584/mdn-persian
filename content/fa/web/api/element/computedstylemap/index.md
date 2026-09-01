@@ -1,11 +1,5 @@
 ---
 title: "Element: computedStyleMap() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/computedStyleMap"
-status: "needs-translation"
----
-
----
-title: "Element: computedStyleMap() method"
 short-title: computedStyleMap()
 slug: Web/API/Element/computedStyleMap
 page-type: web-api-instance-method
@@ -14,31 +8,29 @@ browser-compat: api.Element.computedStyleMap
 
 {{APIRef("CSS Typed Object Model API")}}
 
-The **`computedStyleMap()`** method of the {{domxref("Element")}} interface returns a {{domxref("StylePropertyMapReadOnly")}} interface which provides a read-only representation of a CSS declaration block that is an alternative to {{domxref("CSSStyleDeclaration")}}.
+متد **`computedStyleMap()`** در رابط {{domxref("Element")}} یک {{domxref("StylePropertyMapReadOnly")}} برمی‌گرداند که بازنمایی فقط‌خواندنی از یک بلوک اعلان CSS ارائه می‌دهد و جایگزینی برای {{domxref("CSSStyleDeclaration")}} است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 computedStyleMap()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("StylePropertyMapReadOnly")}} object.
+یک شیء {{domxref("StylePropertyMapReadOnly")}}.
 
-Unlike {{domxref("Window.getComputedStyle")}}, the return value contains [computed values](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#computed_value), not [resolved values](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#resolved_value).
-For most properties, they are the same, except a few layout-related properties, where the resolved value is the [used value](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value) instead of the computed value.
-See the [comparison with `getComputedStyle()`](#comparison_with_getcomputedstyle) example for details.
+برخلاف {{domxref("Window.getComputedStyle")}}، مقدار بازگشتی شامل [مقدار محاسبه‌شده](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#computed_value) است، نه [مقدار حل‌شده](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#resolved_value). برای بیشتر ویژگی‌ها این دو یکسان هستند، به‌جز چند ویژگی مرتبط با چیدمان که در آن‌ها مقدار حل‌شده به جای مقدار محاسبه‌شده، [مقدار استفاده‌شده](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value) است. برای جزئیات بیشتر به مثال [مقایسه با `getComputedStyle()`](#comparison_with_getcomputedstyle) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-### Getting default styles
+### دریافت سبک‌های پیش‌فرض
 
-We start with some simple HTML: a paragraph with a link, and a definition list to which we will add all the CSS Property / Value pairs.
+ما با کمی HTML ساده شروع می‌کنیم: یک پاراگراف حاوی یک پیوند، و یک فهرست تعریف که همهٔ جفت‌های ویژگی/مقدار CSS را به آن اضافه خواهیم کرد.
 
 ```html
 <p>
@@ -47,7 +39,7 @@ We start with some simple HTML: a paragraph with a link, and a definition list t
 <dl id="regurgitation"></dl>
 ```
 
-We add a little bit of CSS
+کمی CSS اضافه می‌کنیم:
 
 ```css
 a {
@@ -56,7 +48,7 @@ a {
 }
 ```
 
-We add JavaScript to grab our link and return back a definition list of all the CSS property values using `computedStyleMap()`.
+جاوااسکریپتی اضافه می‌کنیم تا پیوند را بگیرد و با استفاده از `computedStyleMap()` فهرستی از همهٔ مقادیر ویژگی‌های CSS را به‌صورت یک فهرست تعریف برگرداند.
 
 ```js
 // get the element
@@ -82,24 +74,19 @@ for (const [prop, val] of allComputedStyles) {
 }
 ```
 
-In [browsers that support `computedStyleMap()`](#browser_compatibility), you'll see a list of all the CSS properties and values.
-In other browsers you'll just see a link.
+در [مرورگرهایی که از `computedStyleMap()` پشتیبانی می‌کنند](#browser_compatibility)، فهرستی از همهٔ ویژگی‌ها و مقادیر CSS خواهید دید. در سایر مرورگرها فقط یک پیوند می‌بینید.
 
 {{EmbedLiveSample("getting_default_styles", 300, 300)}}
 
-Did you realize how many default CSS properties a link had? Update the `document.querySelector("a")` to `document.querySelector("p")`, and you'll notice a difference in the `margin-top` and `margin-bottom` default computed values.
+آیا تا به حال متوجه شده‌اید که یک پیوند چند ویژگی پیش‌فرض CSS دارد؟ عبارت `document.querySelector("a")` را به `document.querySelector("p")` تغییر دهید و متوجه تفاوت در مقادیر محاسبه‌شدهٔ پیش‌فرض `margin-top` و `margin-bottom` خواهید شد.
 
-### Comparison with getComputedStyle()
+### مقایسه با getComputedStyle()
 
-{{domxref("Window.getComputedStyle()")}} returns [resolved values](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#resolved_value), while `computedStyleMap()` returns [computed values](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#computed_value).
-These are usually the same, but for some properties, the resolved value is the [used value](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value) instead of the computed value.
-For example, percentage values for widths are resolved to pixel values _post-layout_, so the used values are in pixels, while the computed values are still in percentages.
+{{domxref("Window.getComputedStyle()")}} [مقدار حل‌شده](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#resolved_value) را برمی‌گرداند، در حالی که `computedStyleMap()` [مقدار محاسبه‌شده](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#computed_value) را برمی‌گرداند. این دو معمولاً یکسان هستند، اما برای برخی ویژگی‌ها، مقدار حل‌شده به جای مقدار محاسبه‌شده، [مقدار استفاده‌شده](/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value) است. برای مثال، مقادیر درصدی عرض‌ها پس از چیدمان به مقادیر پیکسلی تبدیل می‌شوند، بنابراین مقدار استفاده‌شده بر حسب پیکسل است، در حالی که مقدار محاسبه‌شده همچنان درصدی است.
 
-Note that the way we present it makes the two APIs seem more similar than they are. `computedStyleMap()` contains [CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API) objects, while `getComputedStyle()` contains strings.
-The former presents the same information in a more structured and processable way.
+توجه داشته باشید که شیوهٔ ارائهٔ ما باعث می‌شود این دو API شبیه‌تر از آنچه هستند به نظر برسند. `computedStyleMap()` شامل اشیاء [CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API) است، در حالی که `getComputedStyle()` شامل رشته‌هاست. اولی اطلاعات یکسان را به شکلی ساختاریافته‌تر و قابل پردازش‌تر ارائه می‌دهد.
 
-In this example, the `width` property is specified as a percentage, so the computed value is given as a percentage, but the resolved value is given in pixels.
-The `height` is always in pixels. The `background-color` is a named color, but it is computed to an RGB value.
+در این مثال، ویژگی `width` به‌صورت درصد مشخص شده است، بنابراین مقدار محاسبه‌شده به‌صورت درصد داده می‌شود، اما مقدار حل‌شده بر حسب پیکسل داده می‌شود. `height` همواره بر حسب پیکسل است. `background-color` یک رنگ نام‌گذاری‌شده است، اما به یک مقدار RGB محاسبه می‌شود.
 
 ```html
 <div class="container">
@@ -141,14 +128,14 @@ computedValues.get("background-color") = ${computedValues.get(
 
 {{EmbedLiveSample("comparison_with_getcomputedstyle", "", 350)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Window.getComputedStyle()")}}
