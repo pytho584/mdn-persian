@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: loseinterest event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/loseinterest_event"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: loseinterest event"
 slug: Web/API/HTMLElement/loseinterest_event
 page-type: web-api-event
 status:
@@ -16,13 +10,13 @@ browser-compat: api.HTMLElement.loseinterest_event
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`loseinterest`** event of the {{domxref("HTMLElement")}} interface is fired on the target element of an [interest invoker](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) when interest is lost, allowing code to be run in response.
+رویداد **`loseinterest`** در رابط {{domxref("HTMLElement")}} روی عنصر هدف یک [فراخوان علاقه](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) (interest invoker) صادر می‌شود وقتی علاقه از دست برود؛ این امکان را می‌دهد تا در پاسخ، کد اجرا شود.
 
-This event is normally [cancelable](/en-US/docs/Web/API/Event/cancelable), except when the user hits the <kbd>Esc</kbd> key to lose interest in all interest invokers contained in the document.
+این رویداد معمولاً [قابل لغو](/en-US/docs/Web/API/Event/cancelable) است، به‌جز زمانی که کاربر کلید <kbd>Esc</kbd> را فشار می‌دهد تا علاقه را از همه‌ی فراخوان‌های علاقه موجود در سند از دست بدهد.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا برای تنظیم یک ویژگی مدیریت رویداد (event handler property)، از سینتکس زیر استفاده کنید:
 
 ```js-nolint
 addEventListener("loseinterest", (event) => { })
@@ -30,21 +24,21 @@ addEventListener("loseinterest", (event) => { })
 onloseinterest = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("InterestEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("InterestEvent")}} که از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("InterestEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Basic interest invoker event usage
+### استفاده‌ی پایه از رویداد فراخوان علاقه
 
-In this example, we use the `interest` and `loseinterest` events to report when interest is shown and lost on a {{htmlelement("button")}} element that acts as an interest invoker. We do this by printing messages into the target {{htmlelement("p")}} element's text content.
+در این مثال، از رویدادهای `interest` و `loseinterest` استفاده می‌کنیم تا زمانی را گزارش کنیم که به یک عنصر {{htmlelement("button")}} که به‌عنوان فراخوان علاقه عمل می‌کند، علاقه نشان داده می‌شود یا از دست می‌رود. این کار را با نوشتن پیام در محتوای متنی عنصر هدف {{htmlelement("p")}} انجام می‌دهیم.
 
 #### HTML
 
-We set up the relationship between the `<button>` element interest invoker and its target `<p>` element by setting the value of the `<button>` element's `interestfor` attribute equal to the `<p>` element's `id`.
+رابطه‌ی بین عنصر `<button>` به‌عنوان فراخوان علاقه و عنصر هدف `<p>` را با قرار دادن مقدار ویژگی `interestfor` عنصر `<button>` برابر با `id` عنصر `<p>` برقرار می‌کنیم.
 
 ```html live-sample___basic-interest-invoker
 <button href="#" interestfor="mytarget">Interest invoker</button>
@@ -53,46 +47,36 @@ We set up the relationship between the `<button>` element interest invoker and i
 
 #### JavaScript
 
-We get a reference to the `<button>` element and its target element via the {{domxref("HTMLButtonElement.interestForElement", "interestForElement")}} property.
+ارجاعی به عنصر `<button>` و عنصر هدف آن را از طریق ویژگی {{domxref("HTMLButtonElement.interestForElement", "interestForElement")}} به دست می‌آوریم.
 
 ```js live-sample___basic-interest-invoker
 const invoker = document.querySelector("[interestfor]");
 const target = invoker.interestForElement;
 ```
 
-We then set two event listeners on the target element, for the `interest` and `loseinterest` events.
+سپس دو شنونده‌ی رویداد روی عنصر هدف تنظیم می‌کنیم؛ یکی برای رویداد `interest` و دیگری برای رویداد `loseinterest`.
 
-- When interest is shown, we update the target `<p>` element's text content to report the event and include the element that triggered it; in this example, that's the `<button>` element. Note how you can get a reference to the interest invoker via the event object's {{domxref("InterestEvent.source", "source")}} property.
-- When interest is lost, we update the paragraph text to report that interest is no longer being shown.
+- وقتی علاقه نشان داده می‌شود، محتوای متنی عنصر هدف `<p>` را به‌روزرسانی می‌کنیم تا رویداد و عنصر محرک آن را گزارش دهد؛ در این مثال، آن عنصر `<button>` است. توجه کنید که می‌توانید ارجاعی به فراخوان علاقه را از طریق ویژگی {{domxref("InterestEvent.source", "source")}} آبجکت رویداد به دست آورید.
+- وقتی علاقه از دست می‌رود، متن پاراگراف را به‌روزرسانی می‌کنیم تا گزارش دهد که دیگر علاقه نشان داده نمی‌شود.
 
-```js live-sample___basic-interest-invoker
-target.addEventListener("interest", (e) => {
-  target.textContent = `Interest being shown via the ${e.source.tagName} element.`;
-});
+#### نتیجه
 
-target.addEventListener("loseinterest", () => {
-  target.textContent = `Interest lost.`;
-});
-```
-
-#### Result
-
-The example renders like this:
+این مثال به این شکل نمایش داده می‌شود:
 
 {{embedlivesample("basic-interest-invoker", "100%", "100")}}
 
-Try showing and losing interest in the button (for example, by hovering or focusing it) to see how the `<p>` text changes.
+سعی کنید به دکمه علاقه نشان دهید و آن را از دست بدهید (مثلاً با قرار دادن نشانگر روی آن یا فوکوس کردن به آن) تا ببینید متن `<p>` چگونه تغییر می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLElement.interest_event", "interest")}} event
+- رویداد {{domxref("HTMLElement.interest_event", "interest")}}
 - [Popover API](/en-US/docs/Web/API/Popover_API)
-- [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
+- [استفاده از فراخوان‌های علاقه](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
