@@ -1,7 +1,5 @@
 ---
 title: "GPUBuffer: destroy() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/destroy"
-status: "needs-translation"
 ---
 
 ---
@@ -14,24 +12,23 @@ browser-compat: api.GPUBuffer.destroy
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`destroy()`** method of the
-{{domxref("GPUBuffer")}} interface destroys the `GPUBuffer`.
+متد **`destroy()`** از رابط {{domxref("GPUBuffer")}}، شیء `GPUBuffer` را از بین می‌برد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 destroy()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ پارامتری.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const output = device.createBuffer({
@@ -44,14 +41,14 @@ const output = device.createBuffer({
 output.destroy();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
