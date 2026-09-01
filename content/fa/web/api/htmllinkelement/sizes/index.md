@@ -1,7 +1,5 @@
 ---
 title: "HTMLLinkElement: sizes property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/sizes"
-status: "needs-translation"
 ---
 
 ---
@@ -14,17 +12,17 @@ browser-compat: api.HTMLLinkElement.sizes
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`sizes`** property of the {{domxref("HTMLLinkElement")}} interface defines the sizes of the icons for visual media contained in the resource. It reflects the {{HTMLElement("link")}} element's [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/link#sizes) attribute, which takes a list of space-separated sizes, each in the format `<width in pixels>x<height in pixels>`, or the keyword `any`.
+ویژگی فقط‌خواندنی **`sizes`** در رابط {{domxref("HTMLLinkElement")}} اندازه‌های آیکون‌های رسانه‌های تصویری موجود در منبع را تعریف می‌کند. این ویژگی منعکس‌کنندهٔ صفت [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/link#sizes) عنصر {{HTMLElement("link")}} است؛ صفتی که فهرستی از اندازه‌های جدا شده با فاصله را می‌گیرد، هر یک در قالب `<عرض بر حسب پیکسل>x<ارتفاع بر حسب پیکسل>` یا کلیدواژهٔ `any`.
 
-It is only relevant if the {{domxref("HTMLLinkElement.rel", "rel")}} is `icon` or a non-standard type like `apple-touch-icon`.
+این ویژگی تنها زمانی مرتبط است که {{domxref("HTMLLinkElement.rel", "rel")}} برابر با `icon` یا نوعی غیراستاندارد مانند `apple-touch-icon` باشد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMTokenList")}} object.
+یک شیء {{domxref("DOMTokenList")}}.
 
-Although the `sizes` property itself is read-only in the sense that you can't replace the `DOMTokenList` object, you can still assign to the `sizes` property directly, which is equivalent to assigning to its {{domxref("DOMTokenList/value", "value")}} property. You can also modify the `DOMTokenList` object using the {{domxref("DOMTokenList/add", "add()")}}, {{domxref("DOMTokenList/remove", "remove()")}}, {{domxref("DOMTokenList/replace", "replace()")}}, and {{domxref("DOMTokenList/toggle", "toggle()")}} methods.
+اگرچه خود ویژگی `sizes` از این نظر فقط‌خواندنی است که نمی‌توانید شیء `DOMTokenList` را جایگزین کنید، همچنان می‌توانید مستقیماً به ویژگی `sizes` مقدار بدهید؛ این کار معادل مقداردهی به ویژگی {{domxref("DOMTokenList/value", "value")}} آن است. همچنین می‌توانید شیء `DOMTokenList` را با استفاده از روش‌های {{domxref("DOMTokenList/add", "add()")}}، {{domxref("DOMTokenList/remove", "remove()")}}، {{domxref("DOMTokenList/replace", "replace()")}} و {{domxref("DOMTokenList/toggle", "toggle()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
 ```html
 <link rel="icon" sizes="72x72 114x114" href="smallish.ico" />
@@ -45,19 +43,19 @@ console.log(link.sizes[0]); // output: '72x72'
 console.log(link.sizes[1]); // output: '114x114'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLLinkElement.rel")}}
 - {{domxref("HTMLLinkElement.relList")}}
 - {{domxref("HTMLLinkElement.type")}}
 - {{domxref("HTMLLinkElement.href")}}
 - {{HTMLElement("link")}}
-- [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) attribute
+- صفت [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel)
