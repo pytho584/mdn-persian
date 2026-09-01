@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: formNoValidate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/formNoValidate"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: formNoValidate property"
 short-title: formNoValidate
 slug: Web/API/HTMLInputElement/formNoValidate
 page-type: web-api-instance-property
@@ -14,32 +8,32 @@ browser-compat: api.HTMLInputElement.formNoValidate
 
 {{APIRef("HTML DOM")}}
 
-The **`formNoValidate`** property of the {{domxref("HTMLInputElement")}} interface is a boolean value indicating if the {{htmlelement("form")}} will bypass [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) when submitted via the {{htmlelement("input")}}. It reflects the `<input>` element's [`formnovalidate`](/en-US/docs/Web/HTML/Reference/Elements/input#formnovalidate) attribute.
+ویژگی **`formNoValidate`** در رابط {{domxref("HTMLInputElement")}} یک مقدار بولین است که نشان می‌دهد آیا {{htmlelement("form")}} هنگام ارسال از طریق {{htmlelement("input")}}، [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) را نادیده می‌گیرد یا خیر. این ویژگی، صفت [`formnovalidate`](/en-US/docs/Web/HTML/Reference/Elements/input#formnovalidate) عنصر `<input>` را بازتاب می‌دهد.
 
-This property is valid only for [`submit`](/en-US/docs/Web/HTML/Reference/Elements/input/submit) and [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) `<input>` elements.
+این ویژگی فقط برای عناصر `<input>` از نوع [`submit`](/en-US/docs/Web/HTML/Reference/Elements/input/submit) و [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) معتبر است.
 
-Its value overrides the {{domxref("HTMLFormElement.noValidate", "noValidate")}} property of the {{domxref("HTMLFormElement")}} interface if the form is submitted via the input. This property can be retrieved or set.
+اگر فرم از طریق این ورودی ارسال شود، مقدار این ویژگی، ویژگی {{domxref("HTMLFormElement.noValidate", "noValidate")}} در رابط {{domxref("HTMLFormElement")}} را نادیده می‌گیرد. این ویژگی قابل خواندن و تنظیم است.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولین.
 
-## Examples
+## مثال‌ها
 
 ```js
 const inputElement = document.getElementById("myInput");
 console.log(inputElement.formNoValidate);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLInputElement.reportValidity()")}}
 - {{domxref("HTMLInputElement.checkValidity()")}}
@@ -52,5 +46,5 @@ console.log(inputElement.formNoValidate);
 - {{HTMLElement("form")}}
 - {{domxref("HTMLFormElement.noValidate")}}
 - {{domxref("HTMLButtonElement.formNoValidate")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
