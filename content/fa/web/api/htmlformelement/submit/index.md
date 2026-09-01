@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement: submit() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit"
-status: "needs-translation"
----
-
----
-title: "HTMLFormElement: submit() method"
 short-title: submit()
 slug: Web/API/HTMLFormElement/submit
 page-type: web-api-instance-method
@@ -14,23 +8,18 @@ browser-compat: api.HTMLFormElement.submit
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLFormElement.submit()`** method submits a given
-{{HtmlElement("form")}}.
+متد **`HTMLFormElement.submit()`** یک {{HtmlElement("form")}} مشخص را ارسال می‌کند.
 
-This method is similar, but not identical to, activating a form's submit
-{{HtmlElement("button")}}. When invoking this method directly, however:
+این متد مشابه فعال‌سازی دکمه ارسال ({{HtmlElement("button")}}) فرم است، اما یکسان با آن نیست. با این حال، هنگام فراخوانی مستقیم این متد:
 
-- No {{domxref("HTMLFormElement/submit_event", "submit")}} event is raised. In particular, the form's `onsubmit` event handler is not run.
-- [Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) is not triggered.
+- رویدادی به نام {{domxref("HTMLFormElement/submit_event", "submit")}} برانگیخته نمی‌شود. به‌طور خاص، کنترل‌کننده رویداد `onsubmit` فرم اجرا نمی‌شود.
+- [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) فعال نمی‌شود.
 
-The {{domxref("HTMLFormElement.requestSubmit()")}} method is identical to activating a
-form's submit {{HtmlElement("button")}} and does not have these differences.
+متد {{domxref("HTMLFormElement.requestSubmit()")}} با فعال‌سازی دکمه ارسال {{HtmlElement("button")}} فرم یکسان است و این تفاوت‌ها را ندارد.
 
-A form control (such as a submit button) with a `name` or `id` of `submit` will mask the form's `submit` method. Trying to call `myForm.submit();` throws an error "submit is not a function" because in this case `submit` refers to the form control which has a `name` or `id` of `submit`.
+یک کنترل فرم (مانند دکمه ارسال) با `name` یا `id` برابر با `submit`، متد `submit` فرم را می‌پوشاند. تلاش برای فراخوانی `myForm.submit();` خطای «submit is not a function» ایجاد می‌کند، زیرا در این حالت `submit` به کنترل فرمی اشاره دارد که `name` یا `id` آن `submit` است.
 
-{{HtmlElement("input")}} with attribute type="submit" will not be submitted with the
-form when using **`HTMLFormElement.submit()`**, but it would be
-submitted when you do it with original HTML form submit.
+یک {{HtmlElement("input")}} با ویژگی type="submit" هنگام استفاده از **`HTMLFormElement.submit()`** همراه با فرم ارسال نمی‌شود، اما اگر با ارسال اصلی HTML فرم انجام دهید، ارسال می‌شود.
 
 ## Syntax
 
@@ -40,11 +29,11 @@ submit()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
