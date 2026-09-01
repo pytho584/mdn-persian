@@ -1,10 +1,4 @@
 ---
-title: "DeviceMotionEventAcceleration"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventAcceleration"
-status: "needs-translation"
----
-
----
 title: DeviceMotionEventAcceleration
 slug: Web/API/DeviceMotionEventAcceleration
 page-type: web-api-interface
@@ -13,21 +7,21 @@ browser-compat: api.DeviceMotionEventAcceleration
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`DeviceMotionEventAcceleration`** interface of the {{domxref("Device Orientation Events", "", "", "nocode")}} provides information about the amount of acceleration the device is experiencing along all three axes.
+درون‌مایه (interface) **`DeviceMotionEventAcceleration`** در {{domxref("Device Orientation Events", "", "", "nocode")}} اطلاعاتی دربارهٔ میزان شتابی که دستگاه در امتداد هر سه محور تجربه می‌کند در اختیار شما قرار می‌دهد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("DeviceMotionEventAcceleration.x")}} {{ReadOnlyInline}}
-  - : The amount of acceleration along the X axis.
+  - : میزان شتاب در امتداد محور X.
 - {{domxref("DeviceMotionEventAcceleration.y")}} {{ReadOnlyInline}}
-  - : The amount of acceleration along the Y axis.
+  - : میزان شتاب در امتداد محور Y.
 - {{domxref("DeviceMotionEventAcceleration.z")}} {{ReadOnlyInline}}
-  - : The amount of acceleration along the Z axis.
+  - : میزان شتاب در امتداد محور Z.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
