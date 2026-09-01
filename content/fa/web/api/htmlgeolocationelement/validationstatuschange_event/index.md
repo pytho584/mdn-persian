@@ -1,11 +1,5 @@
 ---
 title: "HTMLGeolocationElement: validationstatuschange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLGeolocationElement/validationstatuschange_event"
-status: "needs-translation"
----
-
----
-title: "HTMLGeolocationElement: validationstatuschange event"
 short-title: validationstatuschange
 slug: Web/API/HTMLGeolocationElement/validationstatuschange_event
 page-type: web-api-event
@@ -16,13 +10,13 @@ browser-compat: api.HTMLGeolocationElement.validationstatuschange_event
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}
 
-The **`validationstatuschange`** event of the {{domxref("HTMLGeolocationElement")}} interface is fired whenever the {{htmlelement("geolocation")}} element's {{domxref("HTMLGeolocationElement.isValid", "isValid")}} value changes.
+رویداد **`validationstatuschange`** از رابط {{domxref("HTMLGeolocationElement")}} هر زمان که مقدار {{domxref("HTMLGeolocationElement.isValid", "isValid")}} عنصر {{htmlelement("geolocation")}} تغییر کند صادر می‌شود.
 
-This occurs as a result of a [blocker](/en-US/docs/Web/HTML/Reference/Elements/geolocation#geolocation_blocking) being added to or removed from a `<geolocation>` element.
+این اتفاق در نتیجهٔ افزودن یا حذف یک [مسدودکننده](/en-US/docs/Web/HTML/Reference/Elements/geolocation#geolocation_blocking) به/از یک عنصر `<geolocation>` رخ می‌دهد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کنندهٔ رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("validationstatuschange", (event) => { })
@@ -30,15 +24,15 @@ addEventListener("validationstatuschange", (event) => { })
 onvalidationstatuschange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("Event")}}.
+یک {{domxref("Event")}}.
 
-## Examples
+## مثال‌ها
 
-### Using `validationstatuschange` to report invalid reasons
+### استفاده از `validationstatuschange` برای گزارش دلایل نامعتبر
 
-In our [Exploring invalid reasons demo](https://mdn.github.io/dom-examples/geolocation-element/exploring-invalid-reasons/) ([source code](https://github.com/mdn/dom-examples/tree/main/geolocation-element/exploring-invalid-reasons)), we use a `validationstatuschange` event handler to report when a `<geolocation>` element becomes valid, and report the invalid reason when it becomes invalid:
+در [نمایش زندهٔ بررسی دلایل نامعتبر](https://mdn.github.io/dom-examples/geolocation-element/exploring-invalid-reasons/) ([کد منبع](https://github.com/mdn/dom-examples/tree/main/geolocation-element/exploring-invalid-reasons))، از یک کنترل‌کنندهٔ رویداد `validationstatuschange` استفاده می‌کنیم تا زمان معتبر شدن یک عنصر `<geolocation>` را گزارش دهیم و وقتی نامعتبر می‌شود، دلیل نامعتبر بودن را گزارش کنیم:
 
 ```js
 geo.addEventListener("validationstatuschange", () => {
@@ -50,18 +44,18 @@ geo.addEventListener("validationstatuschange", () => {
 });
 ```
 
-Whenever the validation status changes, we check whether the `<geolocation>` element is valid using {{domxref("HTMLGeolocationElement.isValid")}}, and if so, print a message confirming this to the `<p>` element text content. If the `<geolocation>` element is invalid, we print the {{domxref("HTMLGeolocationElement.invalidReason")}} to the `<p>` element text content.
+هر بار که وضعیت اعتبارسنجی تغییر می‌کند، با استفاده از {{domxref("HTMLGeolocationElement.isValid")}} بررسی می‌کنیم که آیا عنصر `<geolocation>` معتبر است یا نه. اگر معتبر بود، پیامی تأییدکننده در محتوای متنی عنصر `<p>` می‌نویسیم. اگر عنصر `<geolocation>` نامعتبر باشد، مقدار {{domxref("HTMLGeolocationElement.invalidReason")}} را در محتوای متنی عنصر `<p>` می‌نویسیم.
 
-See the {{domxref("HTMLGeolocationElement.invalidReason")}} page for a full walkthrough of this example.
+برای شرح کامل این مثال، صفحهٔ {{domxref("HTMLGeolocationElement.invalidReason")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{htmlelement("geolocation")}} element
+- عنصر {{htmlelement("geolocation")}}
