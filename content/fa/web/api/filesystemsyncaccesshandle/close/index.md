@@ -1,11 +1,5 @@
 ---
 title: "FileSystemSyncAccessHandle: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemSyncAccessHandle/close"
-status: "needs-translation"
----
-
----
-title: "FileSystemSyncAccessHandle: close() method"
 short-title: close()
 slug: Web/API/FileSystemSyncAccessHandle/close
 page-type: web-api-instance-method
@@ -14,39 +8,38 @@ browser-compat: api.FileSystemSyncAccessHandle.close
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers("dedicated")}}
 
-The **`close()`** method of the
-{{domxref("FileSystemSyncAccessHandle")}} interface closes an open synchronous file handle, disabling any further operations on it and releasing the exclusive lock previously put on the file associated with the file handle.
+**`close()`** 属于 {{domxref("FileSystemSyncAccessHandle")}} 接口的方法，用于关闭一个已打开的同步文件句柄，使其无法再执行任何后续操作，并释放与该文件句柄相关联的文件上的独占锁。
 
 > [!NOTE]
-> In earlier versions of the spec, `close()`, {{domxref("FileSystemSyncAccessHandle.flush()", "flush()")}}, {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}}, and {{domxref("FileSystemSyncAccessHandle.truncate()", "truncate()")}} were wrongly specified as asynchronous methods, and older versions of some browsers implement them in this way. However, all current browsers that support these methods implement them as synchronous methods.
+> 在早期版本的规范中，`close()`、{{domxref("FileSystemSyncAccessHandle.flush()", "flush()")}}、{{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}} 和 {{domxref("FileSystemSyncAccessHandle.truncate()", "truncate()")}} 被错误地规定为异步方法；一些旧版本浏览器也正是以异步方式实现它们的。不过，目前所有支持这些方法的浏览器都将它们实现为同步方法。
 
-## Syntax
+## 语法
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None ({{jsxref('undefined')}}).
+无（{{jsxref('undefined')}}）。
 
-### Exceptions
+### 异常
 
-None.
+无。
 
-## Examples
+## 示例
 
-The following asynchronous event handler function is contained inside a Web Worker. On receiving a message from the main thread it:
+以下异步事件处理函数位于 Web Worker 内部。当收到来自主线程的消息时，它会执行以下操作：
 
-- Creates a synchronous file access handle.
-- Gets the size of the file and creates an {{jsxref("ArrayBuffer")}} to contain it.
-- Reads the file contents into the buffer.
-- Encodes the message and writes it to the end of the file.
-- Persists the changes to disk and closes the access handle.
+- 创建一个同步文件访问句柄。
+- 获取文件大小并创建一个 {{jsxref("ArrayBuffer")}} 来容纳文件内容。
+- 将文件内容读入缓冲区。
+- 对消息进行编码并写入文件末尾。
+- 将更改持久化到磁盘，并关闭访问句柄。
 
 ```js
 onmessage = async (e) => {
@@ -78,15 +71,15 @@ onmessage = async (e) => {
 };
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
