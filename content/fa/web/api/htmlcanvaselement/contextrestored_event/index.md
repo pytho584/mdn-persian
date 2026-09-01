@@ -1,11 +1,5 @@
 ---
 title: "HTMLCanvasElement: contextrestored event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/contextrestored_event"
-status: "needs-translation"
----
-
----
-title: "HTMLCanvasElement: contextrestored event"
 short-title: contextrestored
 slug: Web/API/HTMLCanvasElement/contextrestored_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLCanvasElement.contextrestored_event
 
 {{APIRef("Canvas API")}}
 
-The **`contextrestored`** event of the [Canvas API](/en-US/docs/Web/API/Canvas_API) is fired if the user agent restores the backing storage for a [`CanvasRenderingContext2D`](/en-US/docs/Web/API/CanvasRenderingContext2D).
+رویداد **`contextrestored`** از [Canvas API](/en-US/docs/Web/API/Canvas_API) زمانی شلیک می‌شود که عامل کاربر فضای ذخیره‌سازی پشتیبان یک [`CanvasRenderingContext2D`](/en-US/docs/Web/API/CanvasRenderingContext2D) را بازیابی کند.
 
-You can redraw, re-retrieve resources, and reinitialize the state of your context after receiving this event.
+پس از دریافت این رویداد می‌توانید دوباره نقاشی کنید، منابع را مجدداً دریافت کنید و وضعیت زمینه خود را بازنشانی کنید.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا با تنظیم یک ویژگی کنترل‌کننده رویداد استفاده کنید.
 
 ```js-nolint
 addEventListener("contextrestored", (event) => { })
@@ -28,33 +22,33 @@ addEventListener("contextrestored", (event) => { })
 oncontextrestored = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Example
+## مثال
 
-The code fragment below detects the context restored event.
+قطعه کد زیر رویداد بازیابی زمینه را شناسایی می‌کند.
 
 ```js
 const canvas = document.getElementById("canvas");
 
 canvas.addEventListener("contextrestored", (e) => {
   console.log(e);
-  // call to redrawCanvas() or similar
+  // فراخوانی تابع redrawCanvas() یا مشابه آن
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`HTMLCanvasElement`: `contextlost` event](/en-US/docs/Web/API/HTMLCanvasElement/contextlost_event)
+- [`HTMLCanvasElement`: رویداد `contextlost`](/en-US/docs/Web/API/HTMLCanvasElement/contextlost_event)
 - [`CanvasRenderingContext2D.isContextLost()`](/en-US/docs/Web/API/CanvasRenderingContext2D/isContextLost)
-- [`OffscreenCanvas`: `contextlost` event](/en-US/docs/Web/API/OffscreenCanvas/contextlost_event)
+- [`OffscreenCanvas`: رویداد `contextlost`](/en-US/docs/Web/API/OffscreenCanvas/contextlost_event)
