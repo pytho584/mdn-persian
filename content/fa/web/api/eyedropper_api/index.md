@@ -1,10 +1,4 @@
 ---
-title: "EyeDropper API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API"
-status: "needs-translation"
----
-
----
 title: EyeDropper API
 slug: Web/API/EyeDropper_API
 page-type: web-api-overview
@@ -15,37 +9,37 @@ browser-compat: api.EyeDropper
 
 {{securecontext_header}}{{DefaultAPISidebar("EyeDropper API")}}{{SeeCompatTable}}
 
-The **EyeDropper API** provides a mechanism for creating an eyedropper tool. Using this tool, users can sample colors from their screens, including outside of the browser window.
+**EyeDropper API** سازوکاری برای ایجاد ابزار قطره‌چکان فراهم می‌کند. کاربر با استفاده از این ابزار می‌تواند رنگ‌ها را از صفحه‌نمایش خود، از جمله خارج از پنجره مرورگر، نمونه‌برداری کند.
 
-## Concept
+## مفهوم
 
-Creative applications often allow users to sample colors from drawings or shapes in the application to reuse. Web applications can use the **EyeDropper API** to provide a similar eyedropper mode, provided by the browser.
+برنامه‌های خلاقانه اغلب به کاربران اجازه می‌دهند تا رنگ‌هایی را از نقاشی‌ها یا شکل‌های درون برنامه نمونه‌برداری کرده و دوباره از آن‌ها استفاده کنند. برنامه‌های وب می‌توانند با استفاده از **EyeDropper API** حالتی مشابه قطره‌چکان را که توسط مرورگر ارائه می‌شود، در اختیار کاربران بگذارند.
 
-Using the API, a web application can start the eyedropper mode. Once started, the cursor changes to indicate to the user that the mode is active. The user can then either select a color from anywhere on the screen, or dismiss the eyedropper mode by pressing <kbd>Escape</kbd>.
+با استفاده از این API، یک برنامه وب می‌تواند حالت قطره‌چکان را شروع کند. پس از شروع، مکان‌نما تغییر می‌کند تا به کاربر نشان دهد که حالت فعال است. سپس کاربر می‌تواند یا رنگی را از هر نقطه از صفحه‌نمایش انتخاب کند، یا با فشردن کلید <kbd>Escape</kbd> حالت قطره‌چکان را لغو کند.
 
-## Security and privacy measures
+## اقدامات امنیتی و حریم خصوصی
 
-To prevent malicious websites from getting pixel data from a user's screen without them realizing, the **EyeDropper API** implements the following measures:
+برای جلوگیری از دریافت داده‌های پیکسل از صفحه‌نمایش کاربر توسط وب‌سایت‌های مخرب بدون آگاهی او، **EyeDropper API** اقدامات زیر را اجرا می‌کند:
 
-- The API doesn't let the eyedropper mode start without user intent. The {{domxref("EyeDropper.open()")}} method can only be called in response to a user action (such as a button click).
-- No pixel information can be retrieved without user intent. The promise returned by {{domxref("EyeDropper.open()")}} only resolves to a color value in response to a user action (clicking on a pixel). So the eyedropper cannot be used in the background without the user noticing it.
-- To help users notice the eyedropper mode more easily, it is made obvious by browsers. The normal mouse cursor disappears after a short delay and a magnifying glass appears instead. There is also a delay between when the eyedropper mode starts and when the user can select a pixel to ensure the user has had time to see the magnifying glass.
-- Users are also able to cancel the eyedropper mode at any time (by pressing the <kbd>Escape</kbd> key).
+- این API اجازه نمی‌دهد حالت قطره‌چکان بدون قصد کاربر شروع شود. متد {{domxref("EyeDropper.open()")}} فقط در پاسخ به یک اقدام کاربر (مانند کلیک روی دکمه) قابل فراخوانی است.
+- بدون قصد کاربر هیچ اطلاعات پیکسلی قابل دریافت نیست. وعده‌ای که توسط {{domxref("EyeDropper.open()")}} بازگردانده می‌شود فقط در پاسخ به یک اقدام کاربر (کلیک روی یک پیکسل) به یک مقدار رنگ تبدیل می‌شود. بنابراین قطره‌چکان نمی‌تواند در پس‌زمینه بدون آنکه کاربر متوجه شود استفاده شود.
+- برای اینکه کاربران راحت‌تر متوجه حالت قطره‌چکان شوند، مرورگرها آن را کاملاً آشکار می‌کنند. مکان‌نمای معمولی پس از مدتی کوتاه ناپدید می‌شود و به جای آن یک ذره‌بین ظاهر می‌شود. همچنین بین شروع حالت قطره‌چکان و زمانی که کاربر می‌تواند یک پیکسل را انتخاب کند، تأخیری وجود دارد تا اطمینان حاصل شود کاربر زمان کافی برای دیدن ذره‌بین داشته است.
+- کاربران همچنین می‌توانند در هر زمان با فشردن کلید <kbd>Escape</kbd> حالت قطره‌چکان را لغو کنند.
 
-## Interfaces
+## رابط‌ها
 
 - {{DOMxRef("EyeDropper")}} {{Experimental_Inline}}
-  - : The **`EyeDropper`** interface represents an instance of an eyedropper tool that can be opened and used by the user to select colors from the screen.
+  - : رابط **`EyeDropper`** یک نمونه از ابزار قطره‌چکان را نشان می‌دهد که می‌تواند باز شود و توسط کاربر برای انتخاب رنگ‌ها از صفحه‌نمایش استفاده شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Picking colors of any pixel on the screen with the EyeDropper API](https://developer.chrome.com/docs/capabilities/web-apis/eyedropper)
-- [The EyeDropper API W3C/SMPTE Joint Workshop](https://www.w3.org/2021/03/media-production-workshop/talks/patrick-brosset-eyedropper-api.html)
+- [انتخاب رنگ هر پیکسل از صفحه‌نمایش با EyeDropper API](https://developer.chrome.com/docs/capabilities/web-apis/eyedropper)
+- [وبینار مشترک W3C/SMPTE درباره EyeDropper API](https://www.w3.org/2021/03/media-production-workshop/talks/patrick-brosset-eyedropper-api.html)
