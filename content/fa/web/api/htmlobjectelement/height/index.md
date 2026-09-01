@@ -1,11 +1,5 @@
 ---
 title: "HTMLObjectElement: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/height"
-status: "needs-translation"
----
-
----
-title: "HTMLObjectElement: height property"
 short-title: height
 slug: Web/API/HTMLObjectElement/height
 page-type: web-api-instance-property
@@ -14,24 +8,21 @@ browser-compat: api.HTMLObjectElement.height
 
 {{APIRef("HTML DOM")}}
 
-The **`height`** property of the
-{{domxref("HTMLObjectElement")}} interface Returns a string that
-reflects the [`height`](/en-US/docs/Web/HTML/Reference/Elements/object#height) HTML attribute, specifying the
-displayed height of the resource in CSS pixels.
+ویژگی **`height`** در رابط {{domxref("HTMLObjectElement")}} یک رشته برمی‌گرداند که بازتابی از ویژگی HTML [`height`](/en-US/docs/Web/HTML/Reference/Elements/object#height) است و ارتفاع نمایش داده‌شدهٔ منبع را بر حسب پیکسل‌های CSS مشخص می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLCanvasElement.height")}}
 - {{domxref("HTMLEmbedElement.height")}}
