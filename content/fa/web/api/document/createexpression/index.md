@@ -1,11 +1,5 @@
 ---
 title: "Document: createExpression() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createExpression"
-status: "needs-translation"
----
-
----
-title: "Document: createExpression() method"
 short-title: createExpression()
 slug: Web/API/Document/createExpression
 page-type: web-api-instance-method
@@ -14,29 +8,28 @@ browser-compat: api.Document.createExpression
 
 {{APIRef("DOM")}}
 
-This method compiles an {{DOMxRef("XPathExpression")}} which can then be used for (repeated) evaluations.
+این متد یک {{DOMxRef("XPathExpression")}} را کامپایل می‌کند که می‌تواند برای ارزیابی‌های (تکراری) استفاده شود.
 
-You must call this method on the same document that you run the expression against.
+شما باید این متد را روی همان سندی فراخوانی کنید که عبارت را روی آن اجرا می‌کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 createExpression(xpathText, namespaceURLMapper)
 ```
 
-### Parameters
+### پارامترها
 
 - `xpathText`
-  - : A string which is the XPath expression to be compiled.
+  - : یک رشته که عبارت XPath برای کامپایل شدن است.
 - `namespaceURLMapper`
-  - : A function which maps a namespace prefix to a
-    namespace URL (or null if none needed).
+  - : یک تابع که پیشوند فضای نام را به یک URL فضای نام (یا اگر نیازی نباشد `null`) نگاشت می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
 {{DOMxRef("XPathExpression")}}
 
-## Examples
+## مثال‌ها
 
 ```js
 const xpathExpr = document.createExpression("//div");
@@ -46,15 +39,15 @@ const nodeContext = document.querySelector("nav");
 const otherResult = xpathExpr.evaluate(nodeContext); // returns an XPathResult object
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("Document.evaluate()")}}
 - {{DOMxRef("XPathExpression")}}
