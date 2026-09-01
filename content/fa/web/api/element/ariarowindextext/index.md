@@ -1,7 +1,5 @@
 ---
 title: "Element.ariaRowIndexText"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaRowIndexText"
-status: "needs-translation"
 ---
 
 ---
@@ -13,15 +11,15 @@ browser-compat: api.Element.ariaRowIndexText
 
 {{APIRef("DOM")}}
 
-The **`ariaRowIndexText`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-rowindextext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindextext) attribute, which defines a human readable text alternative of aria-rowindex.
+ویژگی **`ariaRowIndexText`** از رابط {{domxref("Element")}} مقدار ویژگی [`aria-rowindextext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindextext) را منعکس می‌کند که جایگزین متنی قابل‌خواندن برای انسان به‌جای `aria-rowindex` تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-rowindextext` attribute on the element with an ID of `role-heading` is set to "Heading row". Using `ariaRowIndexText` we update the value to "Updated heading row".
+در این مثال، ویژگی `aria-rowindextext` روی عنصری با شناسهٔ `role-heading` روی «Heading row» تنظیم شده است. با استفاده از `ariaRowIndexText` مقدار را به «Updated heading row» به‌روزرسانی می‌کنیم.
 
 ```html
 <table
@@ -80,14 +78,14 @@ el.ariaRowIndexText = "Updated heading row";
 console.log(el.ariaRowIndexText); // "Updated heading row"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
+- [نقش جدول ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
