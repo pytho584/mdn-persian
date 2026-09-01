@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: disabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/disabled"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: disabled property"
 short-title: disabled
 slug: Web/API/HTMLSelectElement/disabled
 page-type: web-api-instance-property
@@ -14,31 +8,30 @@ browser-compat: api.HTMLSelectElement.disabled
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLSelectElement.disabled`** property is a boolean value that reflects the
+ویژگی **`HTMLSelectElement.disabled`** یک مقدار بولی (boolean) است که ویژگی HTML
 [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/select#disabled)
-HTML attribute, which indicates whether the control is disabled. If it is disabled, it
-does not accept clicks. A disabled element is unusable and un-clickable.
+را منعکس می‌کند. این ویژگی نشان می‌دهد که آیا کنترل غیرفعال است یا خیر. اگر غیرفعال باشد، کلیک‌ها را نمی‌پذیرد. یک عنصر غیرفعال قابل استفاده و کلیک نیست.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
 ```html
 <label>
-  Allow drinks?
+  اجازه نوشیدنی؟
   <input id="allow-drinks" type="checkbox" />
 </label>
 
-<label for="drink-select">Drink selection:</label>
+<label for="drink-select">انتخاب نوشیدنی:</label>
 <select id="drink-select" disabled>
-  <option value="1">Water</option>
-  <option value="2">Beer</option>
-  <option value="3">Pepsi</option>
-  <option value="4">Whisky</option>
+  <option value="1">آب</option>
+  <option value="2">آبجو</option>
+  <option value="3">پپسی</option>
+  <option value="4">ویسکی</option>
 </select>
 ```
 
@@ -53,14 +46,14 @@ allowDrinksCheckbox.addEventListener("change", (event) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Examples')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
