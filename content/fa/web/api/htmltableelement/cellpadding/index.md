@@ -1,9 +1,4 @@
----
-title: "HTMLTableElement: cellPadding property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/cellPadding"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "HTMLTableElement: cellPadding property"
 short-title: cellPadding
@@ -16,27 +11,27 @@ browser-compat: api.HTMLTableElement.cellPadding
 
 {{APIRef("HTML DOM")}} {{Deprecated_Header}}
 
-The **`HTMLTableElement.cellPadding`** property represents the
-padding around the individual cells of the table.
+ویژگی **`HTMLTableElement.cellPadding`** نشان‌دهنده فاصله داخلی (padding) پیرامون سلول‌های جدول است.
 
-## Value
+## مقدار
 
-A string representing pixels (e.g., `"10"`) or a percentage value (e.g., `"10%"`).
+یک رشته (string) که پیکسل‌ها (مانند `"10"`) یا یک مقدار درصدی (مانند `"10%"`) را نشان می‌دهد.
 
-When set to the `null` value, that `null` value is converted to the empty string (`""`), so `elt.cellPadding = null` is equivalent to `elt.cellPadding = ""`.
+وقتی این ویژگی روی مقدار `null` تنظیم شود، مقدار `null` به رشته خالی (`""`) تبدیل می‌شود؛ بنابراین `elt.cellPadding = null` معادل `elt.cellPadding = ""` است.
 
-## Examples
+## نمونه‌ها
 
 ```js
-// Set cell padding to 10 pixels
+// تنظیم فاصله داخلی سلول‌ها روی ۱۰ پیکسل
 let t = document.getElementById("TableA");
 t.cellPadding = "10";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
