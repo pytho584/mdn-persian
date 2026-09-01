@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: editContext property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/editContext"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: editContext property"
 short-title: editContext
 slug: Web/API/HTMLElement/editContext
 page-type: web-api-instance-property
@@ -16,50 +10,50 @@ browser-compat: api.HTMLElement.editContext
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`editContext`** property of the {{domxref("HTMLElement")}} interface gets and sets an element's associated {{domxref("EditContext")}} object.
+ویژگی **`editContext`** از رابط {{domxref("HTMLElement")}}، شیء {{domxref("EditContext")}} مرتبط با یک عنصر را دریافت و تنظیم می‌کند.
 
-The {{domxref("EditContext API", "", "", "nocode")}} can be used to build rich text editors on the web that support advanced text input experiences, such as {{glossary("Input Method Editor")}} (IME) composition, emoji picker, or any other platform-specific editing-related UI surfaces.
+از {{domxref("EditContext API", "", "", "nocode")}} می‌توان برای ساخت ویرایشگرهای متن غنی در وب استفاده کرد که از تجربه‌های پیشرفته ورود متن پشتیبانی می‌کنند؛ مانند ترکیب {{glossary("Input Method Editor")}} (IME)، انتخاب‌گر ایموجی، یا هر رابط کاربری مرتبط با ویرایش که مختص پلتفرم خاصی است.
 
-## Value
+## مقدار
 
-An {{domxref("EditContext")}} object or `null`.
+یک شیء {{domxref("EditContext")}} یا `null`.
 
-### Possible elements
+### عناصر مجاز
 
-Setting the `editContext` property only works on certain types of elements:
+تنظیم ویژگی `editContext` فقط روی انواع خاصی از عناصر کار می‌کند:
 
-- One of these HTML elements: [`<article>`](/en-US/docs/Web/HTML/Reference/Elements/article), [`<aside>`](/en-US/docs/Web/HTML/Reference/Elements/aside), [`<blockquote>`](/en-US/docs/Web/HTML/Reference/Elements/blockquote), [`<body>`](/en-US/docs/Web/HTML/Reference/Elements/body), [`<div>`](/en-US/docs/Web/HTML/Reference/Elements/div), [`<footer>`](/en-US/docs/Web/HTML/Reference/Elements/footer), [`<h1>`](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements), [`<h2>`](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements), [`<h3>`](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements), [`<h4>`](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements), [`<h5>`](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements), [`<h6>`](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements), [`<header>`](/en-US/docs/Web/HTML/Reference/Elements/header), [`<main>`](/en-US/docs/Web/HTML/Reference/Elements/main), [`<nav>`](/en-US/docs/Web/HTML/Reference/Elements/nav), [`<p>`](/en-US/docs/Web/HTML/Reference/Elements/p), [`<section>`](/en-US/docs/Web/HTML/Reference/Elements/section), or [`<span>`](/en-US/docs/Web/HTML/Reference/Elements/span).
-- A valid [custom element](/en-US/docs/Web/API/Web_components/Using_custom_elements).
-- A [`<canvas>`](/en-US/docs/Web/HTML/Reference/Elements/canvas) element.
+- یکی از این عناصر HTML: [`<article>`](/en-US/docs/Web/HTML/Reference/Elements/article)، [`<aside>`](/en-US/docs/Web/HTML/Reference/Elements/aside)، [`<blockquote>`](/en-US/docs/Web/HTML/Reference/Elements/blockquote)، [`<body>`](/en-US/docs/Web/HTML/Reference/Elements/body)، [`<div>`](/en-US/docs/Web/HTML/Reference/Elements/div)، [`<footer>`](/en-US/docs/Web/HTML/Reference/Elements/footer)، [`<h1>`](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)، [`<h2>`](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)، [`<h3>`](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)، [`<h4>`](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)، [`<h5>`](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)، [`<h6>`](/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements)، [`<header>`](/en-US/docs/Web/HTML/Reference/Elements/header)، [`<main>`](/en-US/docs/Web/HTML/Reference/Elements/main)، [`<nav>`](/en-US/docs/Web/HTML/Reference/Elements/nav)، [`<p>`](/en-US/docs/Web/HTML/Reference/Elements/p)، [`<section>`](/en-US/docs/Web/HTML/Reference/Elements/section)، یا [`<span>`](/en-US/docs/Web/HTML/Reference/Elements/span).
+- یک [عنصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements) معتبر.
+- یک عنصر [`<canvas>`](/en-US/docs/Web/HTML/Reference/Elements/canvas).
 
-If you try to set the `editContext` property on an element that is not one of the above, a `NotSupportedError` {{domxref("DOMException")}} is thrown.
+اگر بخواهید ویژگی `editContext` را روی عنصری که در فهرست بالا نیست تنظیم کنید، یک {{domxref("DOMException")}} از نوع `NotSupportedError` پرتاب می‌شود.
 
-### Element association
+### ارتباط عنصر
 
-Setting the `editContext` property of an element to an {{domxref("EditContext")}} instance associates that element with the `EditContext` instance.
+تنظیم ویژگی `editContext` یک عنصر به یک نمونه {{domxref("EditContext")}}، آن عنصر را با آن نمونه `EditContext` مرتبط می‌کند.
 
-The association is one-to-one:
+این ارتباط یک‌به‌یک است:
 
-- An element can only be associated to one `EditContext` instance.
-- An `EditContext` instance can only be associated to one element.
+- هر عنصر فقط می‌تواند با یک نمونه `EditContext` مرتبط شود.
+- هر نمونه `EditContext` فقط می‌تواند با یک عنصر مرتبط شود.
 
-If you try to associate an already associated `EditContext` instance to a different element, a {{domxref("DOMException")}} is thrown.
+اگر بخواهید یک نمونه `EditContext` که قبلاً با عنصری مرتبط شده را به عنصر دیگری متصل کنید، یک {{domxref("DOMException")}} پرتاب می‌شود.
 
-If you try to associate an other `EditContext` instance to an element that's already associated, a {{domxref("DOMException")}} is also thrown.
+همچنین اگر بخواهید یک نمونه `EditContext` دیگر را به عنصری که قبلاً با نمونه‌ای مرتبط شده متصل کنید، یک {{domxref("DOMException")}} پرتاب می‌شود.
 
-To check whether an element is associated with an `EditContext` instance already, use the {{domxref("EditContext.attachedElements()")}} method.
+برای بررسی اینکه آیا عنصری قبلاً با یک نمونه `EditContext` مرتبط شده است یا نه، از روش {{domxref("EditContext.attachedElements()")}} استفاده کنید.
 
-### Garbage collection
+### جمع‌آوری زباله
 
-An `EditContext` instance will keep its associated element alive if it has other live references, even if the associated element is removed from the DOM.
+یک نمونه `EditContext` عنصر مرتبط خود را زنده نگه می‌دارد اگر ارجاعات زنده دیگری به آن وجود داشته باشد، حتی اگر عنصر مرتبط از DOM حذف شده باشد.
 
-If you want to make sure the element is garbage collected, clear the `editContext` property of the element.
+اگر می‌خواهید مطمئن شوید که عنصر توسط جمع‌آوری زباله آزاد می‌شود، ویژگی `editContext` عنصر را پاک کنید.
 
-## Examples
+## مثال‌ها
 
-### Setting an element's `editContext` property
+### تنظیم ویژگی `editContext` یک عنصر
 
-This example shows how to set the `editContext` property of a `<canvas>` element to a new `EditContext` instance in order to make the element editable.
+این مثال نشان می‌دهد که چگونه ویژگی `editContext` یک عنصر `<canvas>` را روی یک نمونه جدید `EditContext` تنظیم کنید تا آن عنصر قابل ویرایش شود.
 
 ```html
 <canvas id="editor-canvas"></canvas>
@@ -71,33 +65,33 @@ const editContext = new EditContext();
 canvas.editContext = editContext;
 ```
 
-### Clearing an element's `editContext` property
+### پاک کردن ویژگی `editContext` یک عنصر
 
-This example shows how to clear the `editContext` property of an editable `<canvas>` element in order to safely remove the element from the DOM.
+این مثال نشان می‌دهد که چگونه ویژگی `editContext` یک عنصر `<canvas>` قابل ویرایش را پاک کنید تا عنصر به‌طور امن از DOM حذف شود.
 
 ```html
 <canvas id="editor-canvas"></canvas>
 ```
 
 ```js
-// Create the EditContext and associate it with the canvas element.
+// ایجاد EditContext و ارتباط آن با عنصر canvas.
 const canvas = document.getElementById("editor-canvas");
 const editContext = new EditContext();
 canvas.editContext = editContext;
 
-// Later, clear the editContext property, and remove the element.
+// بعداً، ویژگی editContext را پاک کرده و عنصر را حذف کنید.
 canvas.editContext = null;
 canvas.remove();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{DOMxRef("EditContext")}} interface.
+- رابط {{DOMxRef("EditContext")}}.
