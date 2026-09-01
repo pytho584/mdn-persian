@@ -1,11 +1,5 @@
 ---
 title: "HTMLMeterElement: max property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/max"
-status: "needs-translation"
----
-
----
-title: "HTMLMeterElement: max property"
 short-title: max
 slug: Web/API/HTMLMeterElement/max
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLMeterElement.max
 
 {{ APIRef("HTML DOM") }}
 
-The **`max`** property of the {{DOMxRef("HTMLMeterElement")}} interface represents the maximum value of the {{htmlelement("meter")}} element as a floating-point number. It reflects the element's [`max`](/en-US/docs/Web/HTML/Reference/Elements/meter#max) attribute, or the `min` value if no `max` is set, or `1` if neither the `min` or the `max` is defined.
+خاصیت **`max`** از رابط {{DOMxRef("HTMLMeterElement")}} مقدار حداکثر (max) عنصر {{htmlelement("meter")}} را به صورت یک عدد اعشاری (floating-point) نمایش می‌دهد. این خاصیت منعکس‌کنندهٔ ویژگی [`max`](/en-US/docs/Web/HTML/Reference/Elements/meter#max) عنصر است، یا اگر `max` تنظیم نشده باشد مقدار `min`، و اگر نه `min` و نه `max` تعریف نشده باشند مقدار `1` را برمی‌گرداند.
 
-This property can also be set directly, for example to set a default value based on some condition.
+این خاصیت را می‌توان مستقیماً نیز مقداردهی کرد، مثلاً برای تنظیم یک مقدار پیش‌فرض بر اساس یک شرط.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <label for="fuel">Current fuel level:</label>
@@ -43,15 +37,15 @@ console.log(meterElement.max); // 100
 console.log(meterElement.max); // 99
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("meter")}}
 - {{DOMXref("HTMLMeterElement.value")}}
