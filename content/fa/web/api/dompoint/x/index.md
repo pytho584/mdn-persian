@@ -1,7 +1,5 @@
 ---
 title: "DOMPoint: x property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/x"
-status: "needs-translation"
 ---
 
 ---
@@ -14,29 +12,23 @@ browser-compat: api.DOMPoint.x
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMPoint`** interface's
-**`x`** property holds the horizontal coordinate, x, for a
-point in space.
+ویژگی **`x`** در رابط **`DOMPoint`** مختصات افقی (x) یک نقطه در فضا را نگهداری می‌کند.
 
-In general, positive values `x` mean to the right,
-and negative values of `x` means to the left, barring any transforms that may
-have altered the orientation of the axes.
+به‌طور کلی، مقادیر مثبت `x` به معنای حرکت به راست و مقادیر منفی `x` به معنای حرکت به چپ هستند، مگر اینکه تبدیل‌هایی (transforms) اعمال شده باشند که جهت محورها را تغییر داده باشند.
 
-## Value
+## مقدار
 
-A double-precision floating-point value indicating the x coordinate's value for the
-point. This value is **unrestricted**, meaning that it is allowed to be
-infinite or invalid (that is, its value may be {{jsxref("NaN")}} or {{jsxref("Infinity", "±Infinity")}}).
+یک عدد اعشاری با دقت دوگانه (double-precision floating-point) که مقدار مختصات x را برای نقطه نشان می‌دهد. این مقدار **محدودیت ندارد**، به این معنی که می‌تواند بی‌نهایت یا نامعتبر باشد (یعنی مقدار آن ممکن است {{jsxref("NaN")}} یا {{jsxref("Infinity", "±Infinity")}} باشد).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The other coordinate properties: {{domxref("DOMPoint.y", "y")}},
-  {{domxref("DOMPoint.z", "z")}}, and the perspective value, {{domxref("DOMPoint.w", "w")}}.
+- سایر ویژگی‌های مختصات: {{domxref("DOMPoint.y", "y")}}،
+  {{domxref("DOMPoint.z", "z")}} و مقدار پرسپکتیو، {{domxref("DOMPoint.w", "w")}}.
