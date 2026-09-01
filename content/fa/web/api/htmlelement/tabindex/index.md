@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: tabIndex property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: tabIndex property"
 short-title: tabIndex
 slug: Web/API/HTMLElement/tabIndex
 page-type: web-api-instance-property
@@ -14,27 +8,22 @@ browser-compat: api.HTMLElement.tabIndex
 
 {{APIRef("HTML DOM")}}
 
-The **`tabIndex`** property of the
-{{DOMxRef("HTMLElement")}} interface represents the tab order of the current element.
+ویژگی **`tabIndex`** از رابط {{DOMxRef("HTMLElement")}}، ترتیب پیمایش با کلید Tab را برای عنصر فعلی مشخص می‌کند.
 
-Tab order is as follows:
+ترتیب پیمایش با Tab به این صورت است:
 
-1. Elements with a positive `tabIndex`. Elements that have identical
-   `tabIndex` values should be navigated in the order they appear. Navigation
-   proceeds from the lowest `tabIndex` to the highest `tabIndex`.
-2. Elements that do not support the `tabIndex` attribute or support it and
-   assign `tabIndex` to `0`, in the order they appear.
+1. عناصر با `tabIndex` مثبت. عناصری که مقدار `tabIndex` یکسانی دارند باید به ترتیب ظاهر شدن در صفحه پیمایش شوند. پیمایش از کمترین `tabIndex` به بیشترین آن انجام می‌شود.
+2. عناصری که از ویژگی `tabIndex` پشتیبانی نمی‌کنند، یا آن را پشتیبانی کرده و `tabIndex` را برابر `0` قرار می‌دهند، به ترتیب ظاهر شدن پیمایش می‌شوند.
 
-Elements that are disabled do not participate in the tabbing order.
+عناصر غیرفعال در ترتیب پیمایش با Tab شرکت نمی‌کنند.
 
-Values don't need to be sequential, nor must they begin with any particular value. They
-may even be negative, though each browser trims very large values.
+مقادیر نیازی به متوالی بودن ندارند و نه لزوماً باید با مقدار خاصی شروع شوند. حتی می‌توانند منفی باشند؛ البته هر مرورگری مقادیر بسیار بزرگ را محدود می‌کند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
 ```js
 const b1 = document.getElementById("button1");
@@ -42,17 +31,15 @@ const b1 = document.getElementById("button1");
 b1.tabIndex = 1;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Accessibility of keyboard-navigable JavaScript widgets](/en-US/docs/Web/Accessibility/Guides/Keyboard-navigable_JavaScript_widgets)
-- The HTML
-  [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex)
-  global attribute.
+- [دسترس‌پذیری ویجت‌های جاوااسکریپتی قابل پیمایش با صفحه‌کلید](/en-US/docs/Web/Accessibility/Guides/Keyboard-navigable_JavaScript_widgets)
+- ویژگی سراسری [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) در HTML
