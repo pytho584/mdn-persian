@@ -1,11 +1,5 @@
 ---
 title: "HTMLObjectElement: validationMessage property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/validationMessage"
-status: "needs-translation"
----
-
----
-title: "HTMLObjectElement: validationMessage property"
 short-title: validationMessage
 slug: Web/API/HTMLObjectElement/validationMessage
 page-type: web-api-instance-property
@@ -14,21 +8,16 @@ browser-compat: api.HTMLObjectElement.validationMessage
 
 {{APIRef("HTML DOM")}}
 
-The **`validationMessage`** read-only property
-of the {{domxref("HTMLObjectElement")}} interface returns a string
-representing a localized message that describes the validation constraints that the
-control does not satisfy (if any). This is the empty string if the control is not a
-candidate for constraint validation (willValidate is false), or it satisfies its
-constraints.
+ویژگی فقط-خواندنی **`validationMessage`** از رابط {{domxref("HTMLObjectElement")}} یک رشته را برمی‌گرداند که یک پیام بومی‌سازی‌شده را توصیف می‌کند که محدودیت‌های اعتبارسنجی (در صورت وجود) را که کنترل ارضا نمی‌کند، نشان می‌دهد. اگر کنترل کاندیدای اعتبارسنجی محدودیت‌ها نباشد (willValidate نادرست است) یا محدودیت‌های خود را ارضا کند، این رشته خالی است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
