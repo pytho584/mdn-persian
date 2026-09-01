@@ -1,11 +1,5 @@
 ---
 title: "HTMLScriptElement: referrerPolicy property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/referrerPolicy"
-status: "needs-translation"
----
-
----
-title: "HTMLScriptElement: referrerPolicy property"
 short-title: referrerPolicy
 slug: Web/API/HTMLScriptElement/referrerPolicy
 page-type: web-api-instance-property
@@ -14,54 +8,33 @@ browser-compat: api.HTMLScriptElement.referrerPolicy
 
 {{APIRef("HTML DOM")}}
 
-The **`referrerPolicy`** property of the
-{{domxref("HTMLScriptElement")}} interface reflects the HTML
-[`referrerpolicy`](/en-US/docs/Web/HTML/Reference/Elements/script#referrerpolicy) of the {{HTMLElement("script")}} element, which defines how the referrer is set when fetching the script and any scripts it imports.
+ویژگی **`referrerPolicy`** در رابط {{domxref("HTMLScriptElement")}} بازتاب‌دهندهٔ [`referrerpolicy`](/en-US/docs/Web/HTML/Reference/Elements/script#referrerpolicy) عنصر {{HTMLElement("script")}} است که مشخص می‌کند هنگام واکشی اسکریپت و هر اسکریپتی که وارد می‌کند، مرجع (referrer) چگونه تنظیم شود.
 
-## Value
+## مقدار
 
-A string; one of the following:
+یک رشته؛ یکی از موارد زیر:
 
 - `no-referrer`
-  - : The {{HTTPHeader("Referer")}} header will be omitted entirely. No referrer
-    information is sent along with requests.
+  - : هدر {{HTTPHeader("Referer")}} به‌طور کامل حذف می‌شود. هیچ اطلاعات مرجعی همراه با درخواست‌ها ارسال نمی‌شود.
 - `no-referrer-when-downgrade`
-  - : The URL is sent
-    as a referrer when the protocol security level stays the same (e.g.HTTP→HTTP,
-    HTTPS→HTTPS), but isn't sent to a less secure destination (e.g., HTTPS→HTTP).
+  - : وقتی سطح امنیتی پروتکل یکسان می‌ماند (مثلاً HTTP→HTTP، HTTPS→HTTPS)، URL به‌عنوان مرجع ارسال می‌شود، اما به مقصدی با امنیت پایین‌تر (مثلاً HTTPS→HTTP) ارسال نمی‌شود.
 - `origin`
-  - : Only send the origin of the document as the referrer in all cases.
-    The document `https://example.com/page.html` will send the referrer
-    `https://example.com/`.
+  - : فقط مبدأ (origin) سند را در همه موارد به‌عنوان مرجع ارسال کن. سند `https://example.com/page.html` مرجع `https://example.com/` را ارسال خواهد کرد.
 - `origin-when-cross-origin`
-  - : Send a full URL when performing a same-origin request, but only send the origin of
-    the document for other cases.
+  - : برای درخواست‌های هم‌مبدأ، URL کامل ارسال می‌شود، اما برای سایر موارد فقط مبدأ سند ارسال می‌شود.
 - `same-origin`
-  - : A referrer will be sent for [same-site origins](/en-US/docs/Web/Security/Defenses/Same-origin_policy), but
-    cross-origin requests will contain no referrer information.
+  - : برای [مبدأهای هم‌سایت](/en-US/docs/Web/Security/Defenses/Same-origin_policy) یک مرجع ارسال می‌شود، اما درخواست‌های متقاطع (cross-origin) هیچ اطلاعات مرجعی ندارند.
 - `strict-origin`
-  - : Only send the origin of the document as the referrer when the protocol security
-    level stays the same (e.g., HTTPS→HTTPS), but don't send it to a less secure
-    destination (e.g., HTTPS→HTTP).
-- `strict-origin-when-cross-origin` (default)
-  - : This is the user agent's default behavior if no policy is specified. Send a full URL when performing a same-origin request, only send the origin when the
-    protocol security level stays the same (e.g., HTTPS→HTTPS), and send no header to a
-    less secure destination (e.g., HTTPS→HTTP).
+  - : فقط وقتی سطح امنیتی پروتکل یکسان می‌ماند (مثلاً HTTPS→HTTPS)، مبدأ سند به‌عنوان مرجع ارسال می‌شود، اما به مقصد کم‌امنیت‌تر (مثلاً HTTPS→HTTP) ارسال نمی‌شود.
+- `strict-origin-when-cross-origin` (پیش‌فرض)
+  - : این رفتار پیش‌فرض عامل کاربر (user agent) است، اگر خط‌مشی‌ای مشخص نشده باشد. هنگام انجام درخواست هم‌مبدأ، URL کامل ارسال می‌شود؛ وقتی سطح امنیتی پروتکل یکسان است (مثلاً HTTPS→HTTPS) فقط مبدأ ارسال می‌شود؛ و به مقصد کم‌امنیت‌تر (مثلاً HTTPS→HTTP) هیچ هدری ارسال نمی‌شود.
 - `unsafe-url`
-  - : Send a full URL when performing a same-origin or cross-origin request. This policy
-    will leak origins and paths from TLS-protected resources to insecure origins.
-    Carefully consider the impact of this setting.
+  - : هنگام انجام درخواست هم‌مبدأ یا متقاطع، URL کامل ارسال می‌شود. این خط‌مشی مبدأها و مسیرهای منابع محافظت‌شده با TLS را به مبدأهای ناامن درز می‌دهد. تأثیر این تنظیم را به‌دقت در نظر بگیرید.
 
 > [!NOTE]
-> An empty string value (`""`) is both the default
-> value, and a fallback value if `referrerpolicy` is not supported. If
-> `referrerpolicy` is not explicitly specified on the
-> `<script>` element, it will adopt a higher-level referrer policy,
-> i.e., one set on the whole document or domain. If a higher-level policy is not
-> available, the empty string is treated as being equivalent to
-> `no-referrer-when-downgrade`.
+> مقدار رشتهٔ خالی (`""`) هم مقدار پیش‌فرض است و هم مقدار جایگزین (fallback) در صورتی که `referrerpolicy` پشتیبانی نشود. اگر `referrerpolicy` به‌طور صریح روی عنصر `<script>` مشخص نشده باشد، یک خط‌مشی مرجع سطح‌بالاتر را به کار می‌گیرد؛ یعنی خط‌مشی‌ای که روی کل سند یا دامنه تنظیم شده است. اگر خط‌مشی سطح‌بالاتری در دسترس نباشد، رشتهٔ خالی معادل `no-referrer-when-downgrade` در نظر گرفته می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const scriptElem = document.createElement("script");
@@ -70,14 +43,14 @@ scriptElem.referrerPolicy = "unsafe-url";
 document.body.appendChild(scriptElem);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLIFrameElement.referrerPolicy")}}
