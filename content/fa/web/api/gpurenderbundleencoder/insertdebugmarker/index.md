@@ -1,11 +1,5 @@
 ---
 title: "GPURenderBundleEncoder: insertDebugMarker() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/insertDebugMarker"
-status: "needs-translation"
----
-
----
-title: "GPURenderBundleEncoder: insertDebugMarker() method"
 short-title: insertDebugMarker()
 slug: Web/API/GPURenderBundleEncoder/insertDebugMarker
 page-type: web-api-instance-method
@@ -14,13 +8,12 @@ browser-compat: api.GPURenderBundleEncoder.insertDebugMarker
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`insertDebugMarker()`** method of the
-{{domxref("GPURenderBundleEncoder")}} interface marks a specific point in a series of encoded render bundle pass commands with a label.
+متد **`insertDebugMarker()`** از رابط {{domxref("GPURenderBundleEncoder")}} نقطهٔ مشخصی را در مجموعه‌ای از دستورات رمزگذاری‌شدهٔ پاس رندر باند (render bundle pass) با یک برچسب علامت‌گذاری می‌کند.
 
-This could be used for telemetry, or may be utilized in {{domxref("GPUError")}} messages, browser dev tools, or other services in the future to help with debugging.
+این می‌تواند برای تله‌متری (telemetry) استفاده شود، یا ممکن است در پیام‌های {{domxref("GPUError")}}، ابزارهای توسعه‌دهندهٔ مرورگر، یا سایر سرویس‌ها در آینده برای کمک به اشکال‌زدایی به کار رود.
 
 > [!NOTE]
-> This method is functionally identical to its equivalent on {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.InsertDebugMarker", "InsertDebugMarker()")}}.
+> این روش از نظر عملکردی با معادل آن در {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.InsertDebugMarker", "InsertDebugMarker()")}} یکسان است.
 
 ## Syntax
 
@@ -31,11 +24,11 @@ insertDebugMarker(markerLabel)
 ### Parameters
 
 - `markerLabel`
-  - : A string representing the label to insert.
+  - : رشته‌ای که برچسب مورد نظر برای درج را نشان می‌دهد.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
