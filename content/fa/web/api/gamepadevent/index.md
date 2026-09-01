@@ -1,10 +1,4 @@
 ---
-title: "GamepadEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadEvent"
-status: "needs-translation"
----
-
----
 title: GamepadEvent
 slug: Web/API/GamepadEvent
 page-type: web-api-interface
@@ -13,23 +7,23 @@ browser-compat: api.GamepadEvent
 
 {{APIRef("Gamepad API")}}
 
-The GamepadEvent interface of the Gamepad API contains references to gamepads connected to the system, which is what the gamepad events {{domxref("Window.gamepadconnected_event", "gamepadconnected")}} and {{domxref("Window.gamepaddisconnected_event", "gamepaddisconnected")}} are fired in response to.
+رابط `GamepadEvent` در API گیم‌پد، شامل ارجاعاتی به گیم‌پدهای متصل به سیستم است. رویدادهای گیم‌پد یعنی {{domxref("Window.gamepadconnected_event", "gamepadconnected")}} و {{domxref("Window.gamepaddisconnected_event", "gamepaddisconnected")}} در پاسخ به این رابط فعال می‌شوند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("GamepadEvent.GamepadEvent","GamepadEvent()")}}
-  - : Returns a new `GamepadEvent` object.
+  - : یک شیء جدید از نوع `GamepadEvent` برمی‌گرداند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{ domxref("GamepadEvent.gamepad") }} {{ReadOnlyInline}}
-  - : Returns a {{ domxref("Gamepad") }} object, providing access to the associated gamepad data for the event fired.
+  - : یک شیء {{ domxref("Gamepad") }} برمی‌گرداند که دسترسی به داده‌های گیم‌پد مرتبط با رویداد فعال‌شده را فراهم می‌کند.
 
-## Examples
+## مثال‌ها
 
-The gamepad property being called on a fired {{domxref("Window.gamepadconnected_event", "gamepadconnected")}} event.
+فراخوانی ویژگی `gamepad` روی یک رویداد {{domxref("Window.gamepadconnected_event", "gamepadconnected")}} فعال‌شده:
 
 ```js
 window.addEventListener("gamepadconnected", (e) => {
@@ -43,7 +37,7 @@ window.addEventListener("gamepadconnected", (e) => {
 });
 ```
 
-And on a {{domxref("Window.gamepaddisconnected_event", "gamepaddisconnected")}} event.
+و روی یک رویداد {{domxref("Window.gamepaddisconnected_event", "gamepaddisconnected")}}:
 
 ```js
 window.addEventListener("gamepaddisconnected", (e) => {
@@ -55,14 +49,14 @@ window.addEventListener("gamepaddisconnected", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-[Using the Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
+[استفاده از API گیم‌پد](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
