@@ -1,10 +1,4 @@
 ---
-title: "CSSNumericArray"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericArray"
-status: "needs-translation"
----
-
----
 title: CSSNumericArray
 slug: Web/API/CSSNumericArray
 page-type: web-api-interface
@@ -13,21 +7,21 @@ browser-compat: api.CSSNumericArray
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSNumericArray`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) contains a list of {{domxref("CSSNumericValue")}} objects.
+رابط **`CSSNumericArray`** از [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) شامل فهرستی از اشیاء {{domxref("CSSNumericValue")}} است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("CSSNumericArray.length")}} {{ReadOnlyInline}}
-  - : Returns how many {{domxref("CSSNumericValue")}} objects are contained within the `CSSNumericArray`.
+  - : تعداد اشیاء {{domxref("CSSNumericValue")}} موجود در `CSSNumericArray` را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-To do.
+در دست انجام.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
