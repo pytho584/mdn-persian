@@ -1,11 +1,5 @@
 ---
 title: "DelayNode: delayTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DelayNode/delayTime"
-status: "needs-translation"
----
-
----
-title: "DelayNode: delayTime property"
 short-title: delayTime
 slug: Web/API/DelayNode/delayTime
 page-type: web-api-instance-property
@@ -14,29 +8,29 @@ browser-compat: api.DelayNode.delayTime
 
 {{ APIRef("Web Audio API") }}
 
-The `delayTime` property of the {{ domxref("DelayNode") }} interface is an [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}} representing the amount of delay to apply.
+خاصیت `delayTime` از رابط {{ domxref("DelayNode") }} یک [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) از نوع {{domxref("AudioParam")}} است که میزان تأخیری را که باید اعمال شود، مشخص می‌کند.
 
-`delayTime` is expressed in seconds, its minimal value is `0`, and its maximum value is defined by the `maxDelayTime` argument of the {{domxref("BaseAudioContext.createDelay")}} method that created it.
+`delayTime` بر حسب ثانیه بیان می‌شود، کمینه‌ی آن `0` است و بیشینه‌ی آن توسط آرگومان `maxDelayTime` متد {{domxref("BaseAudioContext.createDelay")}} که آن را ایجاد کرده، تعیین می‌شود.
 
 > [!NOTE]
-> Though the {{domxref("AudioParam")}} returned is read-only, the value it represents is not.
+> اگرچه {{domxref("AudioParam")}} برگشتی فقط‌خواندنی است، اما مقداری که نشان می‌دهد فقط‌خواندنی نیست.
 
-## Value
+## مقدار
 
-An {{domxref("AudioParam")}}.
+یک {{domxref("AudioParam")}}.
 
-## Examples
+## مثال‌ها
 
-See [`BaseAudioContext.createDelay()`](/en-US/docs/Web/API/BaseAudioContext/createDelay#examples) for example code.
+برای کد مثال، [`BaseAudioContext.createDelay()`](/en-US/docs/Web/API/BaseAudioContext/createDelay#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
