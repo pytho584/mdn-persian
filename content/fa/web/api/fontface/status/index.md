@@ -1,11 +1,5 @@
 ---
 title: "FontFace: status property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/status"
-status: "needs-translation"
----
-
----
-title: "FontFace: status property"
 short-title: status
 slug: Web/API/FontFace/status
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.FontFace.status
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`status`** read-only property of the {{domxref("FontFace")}} interface returns an enumerated value indicating the status of the font, one of `"unloaded"`, `"loading"`, `"loaded"`, or `"error"`.
+ویژگی فقط‌خواندنی **`status`** در رابط {{domxref("FontFace")}} مقداری شمارشی برمی‌گرداند که وضعیت قلم را نشان می‌دهد؛ یکی از مقادیر `"unloaded"`، `"loading"`، `"loaded"` یا `"error"`.
 
-## Value
+## مقدار
 
-One of `"unloaded"`, `"loading"`, `"loaded"`, or `"error"`.
+یکی از مقادیر `"unloaded"`، `"loading"`، `"loaded"` یا `"error"`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
