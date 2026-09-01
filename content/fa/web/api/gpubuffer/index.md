@@ -1,10 +1,4 @@
 ---
-title: "GPUBuffer"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer"
-status: "needs-translation"
----
-
----
 title: GPUBuffer
 slug: Web/API/GPUBuffer
 page-type: web-api-interface
@@ -13,38 +7,37 @@ browser-compat: api.GPUBuffer
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUBuffer`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents a block of memory that can be used to store raw data to use in GPU operations.
+**`GPUBuffer`** 接口属于 {{domxref("WebGPU API", "WebGPU API", "", "nocode")}}، نشان‌دهنده یک بلوک حافظه است که می‌توان از آن برای ذخیره‌سازی داده‌های خام جهت استفاده در عملیات‌های GPU بهره برد.
 
-A `GPUBuffer` object instance is created using the {{domxref("GPUDevice.createBuffer()")}} method.
+یک نمونه از شیء `GPUBuffer` با استفاده از روش {{domxref("GPUDevice.createBuffer()")}} ساخته می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPUBuffer.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in
-    {{domxref("GPUError")}} messages or console warnings.
+  - : یک رشته که برچسبی برای شناسایی شیء فراهم می‌کند، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 - {{domxref("GPUBuffer.mapState", "mapState")}} {{ReadOnlyInline}}
-  - : An enumerated value representing the mapped state of the `GPUBuffer`.
+  - : یک مقدار شمارشی که وضعیت نگاشت‌شده `GPUBuffer` را نشان می‌دهد.
 - {{domxref("GPUBuffer.size", "size")}} {{ReadOnlyInline}}
-  - : A number representing the length of the `GPUBuffer`'s memory allocation, in bytes.
+  - : عددی که طول تخصیص حافظه `GPUBuffer` را بر حسب بایت نشان می‌دهد.
 - {{domxref("GPUBuffer.usage", "usage")}} {{ReadOnlyInline}}
-  - : The {{glossary("bitwise flags")}} representing the allowed usages of the `GPUBuffer`.
+  - : {{glossary("bitwise flags")}} که کاربردهای مجاز `GPUBuffer` را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("GPUBuffer.destroy", "destroy()")}}
-  - : Destroys the `GPUBuffer`.
+  - : `GPUBuffer` را از بین می‌برد.
 - {{domxref("GPUBuffer.getMappedRange", "getMappedRange()")}}
-  - : Returns an {{jsxref("ArrayBuffer")}} containing the mapped contents of the `GPUBuffer` in the specified range.
+  - : یک {{jsxref("ArrayBuffer")}} شامل محتویات نگاشت‌شده `GPUBuffer` در محدوده مشخص‌شده بازمی‌گرداند.
 - {{domxref("GPUBuffer.mapAsync", "mapAsync()")}}
-  - : Maps the specified range of the `GPUBuffer`. Returns a {{jsxref("Promise")}} that resolves when the `GPUBuffer`'s content is ready to be accessed with {{domxref("GPUBuffer.getMappedRange()")}}.
+  - : محدوده مشخص‌شده از `GPUBuffer` را نگاشت می‌کند. یک {{jsxref("Promise")}} بازمی‌گرداند که وقتی محتوای `GPUBuffer` آماده دسترسی از طریق {{domxref("GPUBuffer.getMappedRange()")}} شد، حل می‌شود.
 - {{domxref("GPUBuffer.unmap", "unmap()")}}
-  - : Unmaps the mapped range of the `GPUBuffer`, making its contents available for use by the GPU again.
+  - : محدوده نگاشت‌شده `GPUBuffer` را از حالت نگاشت خارج می‌کند و محتویات آن را دوباره برای استفاده GPU در دسترس قرار می‌دهد.
 
-## Examples
+## مثال‌ها
 
-In our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/), we create an output buffer to read GPU calculations to, and a staging buffer to be mapped for JavaScript access.
+در [نمونه محاسبات پایه](https://mdn.github.io/dom-examples/webgpu-compute-demo/) ما، یک بافر خروجی برای خواندن محاسبات GPU و یک بافر میانی (staging buffer) برای نگاشت و دسترسی جاوااسکریپت ایجاد می‌کنیم.
 
 ```js
 const output = device.createBuffer({
@@ -58,14 +51,14 @@ const stagingBuffer = device.createBuffer({
 });
 ```
 
-Later on, once the `stagingBuffer` contains the results of the GPU computation, a combination of `GPUBuffer` methods are used to read the data back to JavaScript so that it can then be logged to the console:
+بعداً، وقتی `stagingBuffer` حاوی نتایج محاسبات GPU شد، ترکیبی از روش‌های `GPUBuffer` برای خواندن داده‌ها به جاوااسکریپت و سپس ثبت آن در کنسول استفاده می‌شود:
 
-- {{domxref("GPUBuffer.mapAsync()")}} is used to map the `GPUBuffer` for reading.
-- {{domxref("GPUBuffer.getMappedRange()")}} is used to return an {{jsxref("ArrayBuffer")}} containing the `GPUBuffer`'s contents.
-- {{domxref("GPUBuffer.unmap()")}} is used to unmap the `GPUBuffer` again, once we have read the content into JavaScript as needed.
+- {{domxref("GPUBuffer.mapAsync()")}} برای نگاشت `GPUBuffer` جهت خواندن استفاده می‌شود.
+- {{domxref("GPUBuffer.getMappedRange()")}} برای بازگرداندن یک {{jsxref("ArrayBuffer")}} شامل محتویات `GPUBuffer` استفاده می‌شود.
+- {{domxref("GPUBuffer.unmap()")}} برای خارج کردن `GPUBuffer` از حالت نگاشت، پس از خواندن محتوا در جاوااسکریپت، استفاده می‌شود.
 
 ```js
-// map staging buffer to read results back to JS
+// نگاشت بافر میانی برای خواندن نتایج به جاوااسکریپت
 await stagingBuffer.mapAsync(
   GPUMapMode.READ,
   0, // Offset
@@ -78,14 +71,14 @@ stagingBuffer.unmap();
 console.log(new Float32Array(data));
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
