@@ -1,9 +1,4 @@
----
-title: "Document: pictureInPictureElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/pictureInPictureElement"
-status: "needs-translation"
----
-
+```
 ---
 title: "Document: pictureInPictureElement property"
 short-title: pictureInPictureElement
@@ -14,27 +9,19 @@ browser-compat: api.Document.pictureInPictureElement
 
 {{APIRef("Picture-in-Picture API")}}
 
-The read-only **`pictureInPictureElement`** property of the {{domxref("Document")}}
-interface returns the {{ domxref("Element") }} that is currently being
-presented in picture-in-picture mode in this document, or `null` if
-picture-in-picture mode is not currently in use.
+ویژگی فقط‑خواندنی **`pictureInPictureElement`** از رابط {{domxref("Document")}}، عنصر {{domxref("Element")}}ای را برمی‌گرداند که در حال حاضر در این سند در حالت تصویر در تصویر (picture-in-picture) نمایش داده می‌شود، یا اگر حالت تصویر در تصویر فعال نباشد `null` را برمی‌گرداند.
 
-Although this property is read-only, it will not throw if it is modified (even in
-strict mode); the setter is a no-operation and will be ignored.
+اگرچه این ویژگی فقط‑خواندنی است، اما در صورت تغییر (حتی در حالت strict) خطا پرتاب نمی‌کند؛ setter آن یک عملیات بی‌اثر است و نادیده گرفته می‌شود.
 
-## Value
+## مقدار
 
-A reference to the {{domxref("Element")}} object that's currently in picture-in-picture mode.
+یک ارجاع به شیء {{domxref("Element")}} که در حال حاضر در حالت تصویر در تصویر است.
 
-Returns `null` if the document has no associated element in picture-in-picture mode. For example, there's no picture-in-picture element, or the element is from an iframe.
+اگر سند هیچ عنصر مرتبطی در حالت تصویر در تصویر نداشته باشد `null` را برمی‌گرداند. برای مثال، هیچ عنصر تصویر در تصویری وجود ندارد، یا عنصر از یک iframe است.
 
-## Examples
+## مثال‌ها
 
-This example presents a function, `exitPictureInPicture()`,
-which tests the value returned by `pictureInPictureElement`. If the document
-is in picture-in-picture mode (`pictureInPictureElement` isn't
-`null`), [`Document.exitPictureInPicture()`](/en-US/docs/Web/API/Document/exitPictureInPicture) is run to exit
-picture-in-picture mode.
+این مثال یک تابع به نام `exitPictureInPicture()` را ارائه می‌دهد که مقدار بازگشتی از `pictureInPictureElement` را بررسی می‌کند. اگر سند در حالت تصویر در تصویر باشد (`pictureInPictureElement` برابر `null` نباشد)، [`Document.exitPictureInPicture()`](/en-US/docs/Web/API/Document/exitPictureInPicture) برای خروج از حالت تصویر در تصویر اجرا می‌شود.
 
 ```js
 function exitPictureInPicture() {
@@ -44,18 +31,19 @@ function exitPictureInPicture() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("HTMLVideoElement.requestPictureInPicture()")}}
 - {{DOMxRef("HTMLVideoElement.disablePictureInPicture")}}
 - {{DOMxRef("Document.pictureInPictureEnabled")}}
 - {{DOMxRef("Document.exitPictureInPicture()")}}
 - {{CSSxRef(":picture-in-picture")}}
+```
