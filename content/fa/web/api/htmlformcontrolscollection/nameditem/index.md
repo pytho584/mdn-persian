@@ -1,7 +1,5 @@
 ---
 title: "HTMLFormControlsCollection: namedItem() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormControlsCollection/namedItem"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,9 @@ browser-compat: api.HTMLFormControlsCollection.namedItem
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLFormControlsCollection.namedItem()`** method returns
-the {{domxref("RadioNodeList")}} or the {{domxref("Element")}} in the collection whose
-`name` or `id` match the specified name, or `null` if
-no node matches.
+متد **`HTMLFormControlsCollection.namedItem()`** یک {{domxref("RadioNodeList")}} یا {{domxref("Element")}} را در مجموعه بازمی‌گرداند که `name` یا `id` آن با نام مشخص‌شده مطابقت داشته باشد؛ اگر هیچ گره‌ای مطابقت نداشته باشد، `null` برمی‌گرداند.
 
-Note that this version of `namedItem()` hides the one inherited from
-{{domxref("HTMLCollection")}}. Like that one, in JavaScript, using the array bracket
-syntax with a {{jsxref("String")}}, like `collection["value"]` is
-equivalent to `collection.namedItem("value")`.
+توجه داشته باشید که این نسخه از `namedItem()` نسخهٔ به‌ارث‌برده‌شده از {{domxref("HTMLCollection")}} را پنهان می‌کند. مانند آن نسخه، در جاوااسکریپت، استفاده از نحو براکت آرایه با یک {{jsxref("String")}} مانند `collection["value"]` معادل `collection.namedItem("value")` است.
 
 ## Syntax
 
@@ -34,16 +26,16 @@ namedItem(name)
 ### Parameters
 
 - `name`
-  - : A string which will be used to match against the `name` or `id` attributes of the controls in this `HTMLFormControlsCollection` object.
+  - : رشته‌ای که برای تطبیق با ویژگی‌های `name` یا `id` کنترلها در این شیء `HTMLFormControlsCollection` استفاده می‌شود.
 
 ### Return value
 
-- A {{domxref("RadioNodeList")}} if there are multiple elements with the given `name` or `id`,
-- An {{domxref("Element")}} if there is exactly one element with the given `name` or `id`, or
-- [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) if no element has the given `name` or `id`.
+- اگر چندین عنصر دارای `name` یا `id` داده‌شده باشند، یک {{domxref("RadioNodeList")}}؛
+- اگر دقیقاً یک عنصر دارای `name` یا `id` داده‌شده باشد، یک {{domxref("Element")}}؛ یا
+- اگر هیچ عنصری دارای `name` یا `id` داده‌شده نباشد، [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) برگردانده می‌شود.
 
 > [!NOTE]
-> The returned {{domxref("RadioNodeList")}} is live, meaning that its contents automatically update if elements that match the given name are added to or removed from the collection. Furthermore, it may contain non-radio input elements despite the collection's name.
+> {{domxref("RadioNodeList")}} بازگشتی زنده (live) است؛ یعنی اگر عناصری که با نام داده‌شده مطابقت دارند به مجموعه اضافه یا از آن حذف شوند، محتوای آن به‌طور خودکار به‌روزرسانی می‌شود. علاوه بر این، با وجود نام مجموعه، ممکن است شامل عناصر ورودی غیررادیویی (non-radio) نیز باشد.
 
 ## Examples
 
@@ -103,4 +95,4 @@ My single item: "${item2.id}"`;
 
 ## See also
 
-- {{domxref("HTMLCollection.namedItem")}} that it replaces
+- {{domxref("HTMLCollection.namedItem")}} که این متد جایگزین آن شده است.
