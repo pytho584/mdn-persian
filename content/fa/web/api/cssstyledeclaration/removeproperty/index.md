@@ -1,7 +1,5 @@
 ---
 title: "CSSStyleDeclaration: removeProperty() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/removeProperty"
-status: "needs-translation"
 ---
 
 ---
@@ -14,43 +12,41 @@ browser-compat: api.CSSStyleDeclaration.removeProperty
 
 {{ APIRef("CSSOM") }}
 
-The **`CSSStyleDeclaration.removeProperty()`** method interface
-removes a property from a CSS style declaration object.
+متد **`CSSStyleDeclaration.removeProperty()`** یک ویژگی را از شیء اعلان سبک CSS حذف می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 removeProperty(property)
 ```
 
-### Parameters
+### پارامترها
 
 - `property`
-  - : A string representing the property name to be removed. Multi-word property names are hyphenated ({{Glossary("kebab_case", "kebab-case")}}) and not {{Glossary("camel_case", "camel-cased")}}.
+  - : رشته‌ای است که نام ویژگی موردنظر برای حذف را نشان می‌دهد. نام ویژگی‌های چندکلمه‌ای به صورت خط تیره‌دار ({{Glossary("kebab_case", "kebab-case")}}) هستند و نه به صورت {{Glossary("camel_case", "camel-cased")}}.
 
-### Return value
+### مقدار بازگشتی
 
-A string equal to the value of the CSS property before it was removed.
+رشته‌ای برابر با مقدار ویژگی CSS قبل از حذف شدن.
 
-### Exceptions
+### استثناها
 
 - `NoModificationAllowedError` {{domxref('DOMException')}}
-  - : Thrown when the property or declaration block is read-only.
+  - : زمانی پرتاب می‌شود که ویژگی یا بلوک اعلان فقط‌خواندنی باشد.
 
-## Examples
+## مثال‌ها
 
-The following JavaScript code removes the `background-color` CSS property
-from a selector rule:
+کد جاوااسکریپت زیر ویژگی CSS به نام `background-color` را از یک قانون انتخابگر حذف می‌کند:
 
 ```js
 const declaration = document.styleSheets[0].rules[0].style;
 const oldValue = declaration.removeProperty("background-color");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
