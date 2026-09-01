@@ -1,11 +1,5 @@
 ---
 title: "Element: currentCSSZoom property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/currentCSSZoom"
-status: "needs-translation"
----
-
----
-title: "Element: currentCSSZoom property"
 short-title: currentCSSZoom
 slug: Web/API/Element/currentCSSZoom
 page-type: web-api-instance-property
@@ -14,27 +8,21 @@ browser-compat: api.Element.currentCSSZoom
 
 {{APIRef("DOM")}}
 
-The **`currentCSSZoom`** read-only property of the {{domxref("Element")}} interface provides the "effective" [CSS `zoom`](/en-US/docs/Web/CSS/Reference/Properties/zoom) of an element, taking into account the zoom applied to the element and all its parent elements.
+ویژگی فقط‌خواندنی **`currentCSSZoom`** در رابط {{domxref("Element")}}، زومِ «موثر» [خاصیت CSS `zoom`](/en-US/docs/Web/CSS/Reference/Properties/zoom) یک عنصر را با در نظر گرفتن زوم اعمال‌شده روی آن عنصر و تمام عناصر والد آن ارائه می‌دهد.
 
-The value calculated by multiplying the CSS `zoom` values of the element and all of its parents.
-For example, if three elements with zoom values of 2, 1.5, and 3, are nested within each other, the most deeply nested element will have a `currentCSSZoom` value of 9.
-If the element doesn't have a CSS box, for example because `display: none` is set on the element or one of its parents, then the `currentCSSZoom` is set to 1.
+این مقدار با ضرب کردن مقادیر CSS `zoom` عنصر و همهٔ والدهایش به دست می‌آید. برای مثال، اگر سه عنصر با مقادیر زوم ۲، ۱٫۵ و ۳ به‌صورت تو در تو قرار گرفته باشند، عمیق‌ترین عنصر مقدار `currentCSSZoom` برابر ۹ خواهد داشت. اگر عنصر جعبهٔ CSS نداشته باشد، مثلاً به این دلیل که `display: none` روی خود عنصر یا یکی از والدهایش تنظیم شده باشد، مقدار `currentCSSZoom` برابر ۱ قرار می‌گیرد.
 
-Note that some methods, such as {{domxref("Element.getBoundingClientRect()")}}, return dimensions and position that are relative to the viewport, and hence include the effects of CSS `zoom`.
-Other properties and methods return values that are relative to the element itself, and do not include the effects of zooming.
-These include, for example, `client*` properties such as {{domxref("Element.clientHeight")}}, `scroll*()` methods like {{domxref("Element.scroll()")}}, and `offset*` properties such as {{domxref("HTMLElement.offsetHeight")}}.
-The `currentCSSZoom` property can be used to scale these values to adjust for the effects of zooming.
+توجه داشته باشید که برخی روش‌ها مانند {{domxref("Element.getBoundingClientRect()")}} ابعاد و موقعیت را نسبت به viewport برمی‌گردانند و بنابراین آثار CSS `zoom` را شامل می‌شوند. سایر ویژگی‌ها و روش‌ها مقادیری را برمی‌گردانند که نسبت به خود عنصر هستند و آثار زوم را شامل نمی‌شوند. از جملهٔ این موارد می‌توان به ویژگی‌های `client*` مانند {{domxref("Element.clientHeight")}}، روش‌های `scroll*()` مانند {{domxref("Element.scroll()")}} و ویژگی‌های `offset*` مانند {{domxref("HTMLElement.offsetHeight")}} اشاره کرد. از ویژگی `currentCSSZoom` می‌توان برای مقیاس‌بندی این مقادیر و تنظیم آثار زوم استفاده کرد.
 
-## Value
+## مقدار
 
-A number indicating the effective CSS zoom on the element, or 1 if the element is not rendered.
+عددی که زوم موثر CSS روی عنصر را نشان می‌دهد، یا ۱ اگر عنصر رندر نشده باشد.
 
-## Examples
+## مثال‌ها
 
-This example demonstrates how the `currentCSSZoom` is calculated.
+این مثال نشان می‌دهد که `currentCSSZoom` چگونه محاسبه می‌شود.
 
-First we define a nested structure of `<div>` elements where the "parent" is unzoomed and contains a nested element "child1" that has `zoom: 2` applied, which in turn contains a nested element "child2" with `zoom: 3` applied.
-The "child2" element contains two nested elements, one of which is not rendered, and neither of which have the zoom property applied.
+ابتدا ساختاری تو در تو از عناصر `<div>` تعریف می‌کنیم که در آن «parent» بدون زوم است و شامل عنصر تو در توی «child1» با اعمال `zoom: 2` است. این عنصر نیز به نوبهٔ خود شامل عنصر تو در توی «child2» با اعمال `zoom: 3` است. عنصر «child2» شامل دو عنصر تو در تو است که یکی از آن‌ها رندر نمی‌شود و هیچ‌کدام ویژگی `zoom` رویشان اعمال نشده است.
 
 ```html
 <div id="parent">
@@ -73,7 +61,7 @@ function log(text) {
 }
 ```
 
-The JavaScript code logs the zoom value applied at each level along with its `currentCSSZoom` value.
+کد جاوااسکریپت مقدار زوم اعمال‌شده در هر سطح را همراه با مقدار `currentCSSZoom` آن ثبت می‌کند.
 
 ```js
 if ("currentCSSZoom" in Element.prototype) {
@@ -96,23 +84,20 @@ if ("currentCSSZoom" in Element.prototype) {
 }
 ```
 
-The resulting rendered `<div>` structure and log are shown below.
-First note that the parent, child1 and child2 have zoom levels 1, 2, and 3, respectively, and render at 1, 2 and 6 times the size of the parent text.
-This is reflected by the logged `currentCSSZoom` values.
+ساختار رندر شدهٔ `<div>` و لاگ حاصل در زیر نشان داده شده است. ابتدا توجه کنید که parent، child1 و child2 به ترتیب سطوح زوم ۱، ۲ و ۳ دارند و با اندازه‌های ۱، ۲ و ۶ برابر متن parent رندر می‌شوند. این موضوع در مقادیر ثبت‌شدهٔ `currentCSSZoom` بازتاب یافته است.
 
-The `<div>` with id `child3-rendered` does not have `zoom` set but inherits the `currentCSSZoom` value of 6 as shown in the log.
-The final `<div>` is not rendered and therefore has a `currentCSSZoom` value of 1.
+عنصر `<div>` با شناسهٔ `child3-rendered` ویژگی `zoom` را تنظیم‌شده ندارد، اما مقدار `currentCSSZoom` برابر ۶ را به ارث می‌برد، همان‌طور که در لاگ دیده می‌شود. عنصر `<div>` آخر رندر نمی‌شود و بنابراین مقدار `currentCSSZoom` آن برابر ۱ است.
 
 {{EmbedLiveSample('Examples', '100%', "400px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [CSS `zoom`](/en-US/docs/Web/CSS/Reference/Properties/zoom)
