@@ -1,11 +1,6 @@
+```
 ---
 title: "GPUShaderModule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUShaderModule"
-status: "needs-translation"
----
-
----
-title: GPUShaderModule
 slug: Web/API/GPUShaderModule
 page-type: web-api-interface
 browser-compat: api.GPUShaderModule
@@ -13,25 +8,25 @@ browser-compat: api.GPUShaderModule
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUShaderModule`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents an internal shader module object, a container for [WGSL](https://gpuweb.github.io/gpuweb/wgsl/) shader code that can be submitted to the GPU for execution by a pipeline.
+رابطِ **`GPUShaderModule`** در {{domxref("WebGPU API", "WebGPU API", "", "nocode")}}، یک شیءِ ماژول سایه‌زن داخلی را نشان می‌دهد؛ محفظه‌ای برای کد سایه‌زن [WGSL](https://gpuweb.github.io/gpuweb/wgsl/) که می‌تواند برای اجرا توسط یک پایپ‌لاین به GPU ارسال شود.
 
-A `GPUShaderModule` object instance is created using {{domxref("GPUDevice.createShaderModule()")}}.
+یک نمونه از شیءِ `GPUShaderModule` با استفاده از {{domxref("GPUDevice.createShaderModule()")}} ساخته می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPUShaderModule.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : رشته‌ای که برچسبی برای شناسایی شیء فراهم می‌کند؛ مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("GPUShaderModule.getCompilationInfo", "getCompilationInfo()")}}
-  - : Returns a {{jsxref("Promise")}} that fulfills with a {{domxref("GPUCompilationInfo")}} object containing messages generated during the `GPUShaderModule`'s compilation.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء {{domxref("GPUCompilationInfo")}} شامل پیام‌های تولیدشده در طول کامپایلِ `GPUShaderModule` تکمیل می‌شود.
 
-## Examples
+## مثال‌ها
 
-In our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/), our shader module is created using the following code:
+در [نمونه‌ی رندر پایه](https://mdn.github.io/dom-examples/webgpu-render-demo/) ما، ماژول سایه‌زن با استفاده از کد زیر ساخته می‌شود:
 
 ```js
 const shaders = `
@@ -81,14 +76,15 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+```
