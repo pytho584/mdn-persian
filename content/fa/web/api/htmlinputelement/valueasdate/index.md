@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: valueAsDate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/valueAsDate"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: valueAsDate property"
 short-title: valueAsDate
 slug: Web/API/HTMLInputElement/valueAsDate
 page-type: web-api-instance-property
@@ -14,32 +8,32 @@ browser-compat: api.HTMLInputElement.valueAsDate
 
 {{ APIRef("HTML DOM") }}
 
-The **`valueAsDate`** property of the {{DOMxRef("HTMLInputElement")}} interface represents the current value of the {{htmlelement("input")}} element as a {{jsxref("Date")}}, or `null` if conversion is not possible.
+ویژگی **`valueAsDate`** از رابط {{DOMxRef("HTMLInputElement")}}، مقدار فعلی عنصر {{htmlelement("input")}} را به صورت یک {{jsxref("Date")}} نمایش می‌دهد، یا اگر تبدیل امکان‌پذیر نباشد، مقدار `null` را برمی‌گرداند.
 
-This property can also be set directly, for example to set a default date based on some condition. If the provided value is neither `null` nor a `Date` object, a {{jsxref("TypeError")}} is thrown. If the provided value is `null` or an [invalid date](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date), the input value is set to the empty string.
+این ویژگی را می‌توان به‌طور مستقیم نیز تنظیم کرد، مثلاً برای تعیین یک تاریخ پیش‌فرض بر اساس یک شرط. اگر مقدار ارائه‌شده نه `null` باشد و نه یک شیء `Date`، یک {{jsxref("TypeError")}} پرتاب می‌شود. اگر مقدار ارائه‌شده `null` یا یک [تاریخ نامعتبر](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date) باشد، مقدار ورودی به رشته خالی تنظیم می‌شود.
 
-This property always returns `null` when accessed on an input that isn't date- or time-based. When setting this property on such an input, an `InvalidStateError` {{domxref("DOMException")}} is thrown.
+این ویژگی همیشه وقتی که روی یک ورودی که بر پایه تاریخ یا زمان نیست فراخوانی شود، `null` برمی‌گرداند. هنگام تنظیم این ویژگی روی چنین ورودی، یک `InvalidStateError` از نوع {{domxref("DOMException")}} پرتاب می‌شود.
 
-## Value
+## مقدار
 
-A {{jsxref("Date")}} object or `null` if a conversion is impossible. The date returned should always be interpreted as a UTC time—for example, using methods like `getUTCDate()` instead of `getDate()`. If you are not careful, the result may be off by 1—for example, if the user lives in a negative UTC offset (the US, for example), then interpreting the date as a local date will result in the previous day from what the user selected.
+یک شیء {{jsxref("Date")}} یا اگر تبدیل غیرممکن باشد، `null`. تاریخی که برگردانده می‌شود همیشه باید به‌عنوان زمان UTC تفسیر شود — مثلاً با استفاده از روش‌هایی مانند `getUTCDate()` به‌جای `getDate()`. اگر دقت نکنید، نتیجه ممکن است یک روز اختلاف داشته باشد — مثلاً اگر کاربر در یک منطقه زمانی با آفست منفی UTC (مثلاً ایالات متحده) زندگی کند، تفسیر تاریخ به‌عنوان تاریخ محلی، روز قبل از آنچه کاربر انتخاب کرده را نشان می‌دهد.
 
-The [`month`](/en-US/docs/Web/HTML/Reference/Elements/input/month), [`date`](/en-US/docs/Web/HTML/Reference/Elements/input/date), and [`week`](/en-US/docs/Web/HTML/Reference/Elements/input/week) input types return a UTC date that represents the first instant of the inputted time span—that is, they are always midnight in UTC. For `month`, the date is the first day of the month. For `week`, the date is the Monday of the week. The [`time`](/en-US/docs/Web/HTML/Reference/Elements/input/time) input type always has the date set to `1970-01-01`.
+انواع ورودی [`month`](/en-US/docs/Web/HTML/Reference/Elements/input/month)، [`date`](/en-US/docs/Web/HTML/Reference/Elements/input/date) و [`week`](/en-US/docs/Web/HTML/Reference/Elements/input/week) یک تاریخ UTC برمی‌گردانند که نشان‌دهنده اولین لحظه از بازه زمانی واردشده است — یعنی همیشه نیمه‌شب به وقت UTC هستند. برای `month`، تاریخ اولین روز ماه است. برای `week`، تاریخ دوشنبه همان هفته است. نوع ورودی [`time`](/en-US/docs/Web/HTML/Reference/Elements/input/time) همیشه تاریخ را `1970-01-01` تنظیم می‌کند.
 
-The [`datetime-local`](/en-US/docs/Web/HTML/Reference/Elements/input/datetime-local) input type does not support the `valueAsDate` property, because it represents a date and time in the local time zone (a [wall clock time](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal/PlainDateTime)), but `Date` objects represent an absolute point in time. However, some browsers may provide a non-standard implementation. [WHATWG is working on integrating](https://github.com/whatwg/html/issues/10882) the {{jsxref("Temporal")}} API with the date/time inputs to account for this use case.
+نوع ورودی [`datetime-local`](/en-US/docs/Web/HTML/Reference/Elements/input/datetime-local) از ویژگی `valueAsDate` پشتیبانی نمی‌کند، زیرا این نوع ورودی یک تاریخ و زمان را در منطقه زمانی محلی (یک [زمان ساعت‌دیواری](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal/PlainDateTime)) نشان می‌دهد، در حالی که اشیاء `Date` یک نقطه مطلق در زمان را نشان می‌دهند. با این حال، برخی مرورگرها ممکن است یک پیاده‌سازی غیراستاندارد ارائه دهند. [WHATWG در حال کار روی یکپارچه‌سازی](https://github.com/whatwg/html/issues/10882) API مربوط به {{jsxref("Temporal")}} با ورودی‌های تاریخ/زمان برای پوشش این مورد استفاده است.
 
-## Examples
+## مثال‌ها
 
-### Retrieving a date value
+### دریافت مقدار تاریخ
 
-This example demonstrates accessing the `valueAsDate` property on an `<input>` of type {{HTMLElement("input/week", "week")}}.
+این مثال دسترسی به ویژگی `valueAsDate` را روی یک `<input>` از نوع {{HTMLElement("input/week", "week")}} نشان می‌دهد.
 
 #### HTML
 
-We include an `<input>` of type `week`:
+ما یک `<input>` از نوع `week` قرار می‌دهیم:
 
 ```html
-<label for="date">Pick a date and time:</label>
+<label for="date">یک تاریخ و زمان انتخاب کنید:</label>
 
 <input name="date" id="date" type="week" />
 
@@ -48,16 +42,16 @@ We include an `<input>` of type `week`:
 
 #### JavaScript
 
-When no date or time is selected, the empty input resolves to `null`. Each time a selection is made, a {{domxref("HTMLElement/change_event", "change")}} event is fired, updating the `<pre>` content showing the {{DOMXref("HTMLInputElement.value")}} of the form control compared to that value as a date.
+وقتی هیچ تاریخ یا زمانی انتخاب نشده باشد، ورودی خالی به `null` تبدیل می‌شود. هر بار که انتخابی انجام شود، یک رویداد {{domxref("HTMLElement/change_event", "change")}} فعال می‌شود و محتوای `<pre>` به‌روزرسانی می‌شود که {{DOMXref("HTMLInputElement.value")}} کنترل فرم را در مقایسه با آن مقدار به‌صورت تاریخ نشان می‌دهد.
 
 ```js
 const logElement = document.getElementById("log");
 const inputElement = document.getElementById("date");
 
-logElement.innerText = `Initial value: ${inputElement.valueAsDate}`;
+logElement.innerText = `مقدار اولیه: ${inputElement.valueAsDate}`;
 
 inputElement.addEventListener("change", () => {
-  logElement.innerText = `${inputElement.value} resolves to ${inputElement.valueAsDate}`;
+  logElement.innerText = `${inputElement.value} به ${inputElement.valueAsDate} تبدیل می‌شود`;
 });
 ```
 
@@ -69,20 +63,20 @@ inputElement.addEventListener("change", () => {
 }
 ```
 
-#### Results
+#### نتایج
 
 {{EmbedLiveSample("Retrieving a date value", "", 100)}}
 
-### Using Date methods
+### استفاده از روش‌های Date
 
-This example demonstrates applying {{jsxref("Date")}} methods directly to the `valueAsDate` property of an `<input>` of type {{HTMLElement("input/date", "date")}}.
+این مثال استفاده مستقیم از روش‌های {{jsxref("Date")}} روی ویژگی `valueAsDate` یک `<input>` از نوع {{HTMLElement("input/date", "date")}} را نشان می‌دهد.
 
 #### HTML
 
-We include an `<input>` of type `date`:
+ما یک `<input>` از نوع `date` قرار می‌دهیم:
 
 ```html
-<label for="date2">Pick a date:</label>
+<label for="date2">یک تاریخ انتخاب کنید:</label>
 
 <input name="date2" id="date2" type="date" />
 
@@ -91,7 +85,7 @@ We include an `<input>` of type `date`:
 
 #### JavaScript
 
-When no date is selected, the empty string resolves to `null`. Each time a selection is made, a {{domxref("HTMLElement/change_event", "change")}} event is fired. We then populate the log with the date selected, formatted using the `Date` object's {{jsxref("Date.prototype.toLocaleDateString()", "toLocaleDateString()")}} method.
+وقتی هیچ تاریخی انتخاب نشده باشد، رشته خالی به `null` تبدیل می‌شود. هر بار که انتخابی انجام شود، یک رویداد {{domxref("HTMLElement/change_event", "change")}} فعال می‌شود. سپس لاگ را با تاریخ انتخاب‌شده پر می‌کنیم که با استفاده از روش {{jsxref("Date.prototype.toLocaleDateString()", "toLocaleDateString()")}} شیء `Date` قالب‌بندی شده است.
 
 ```js
 const logElement = document.getElementById("log");
@@ -103,13 +97,13 @@ const options = {
   day: "numeric",
 };
 
-logElement.innerText = `Initial value: ${inputElement.valueAsDate}`;
+logElement.innerText = `مقدار اولیه: ${inputElement.valueAsDate}`;
 
 inputElement.addEventListener("change", () => {
   if (inputElement.valueAsDate !== null) {
-    logElement.innerText = `You selected ${inputElement.valueAsDate.toLocaleDateString("en-US", options)}`;
+    logElement.innerText = `شما انتخاب کردید ${inputElement.valueAsDate.toLocaleDateString("en-US", options)}`;
   } else {
-    logElement.innerText = `${inputElement.value} resolves to ${inputElement.valueAsDate}`;
+    logElement.innerText = `${inputElement.value} به ${inputElement.valueAsDate} تبدیل می‌شود`;
   }
 });
 ```
@@ -122,21 +116,21 @@ inputElement.addEventListener("change", () => {
 }
 ```
 
-#### Results
+#### نتایج
 
 {{EmbedLiveSample("Using Date methods", "", 100)}}
 
-The date may be a day off due to your local timezone.
+تاریخ ممکن است به دلیل منطقه زمانی محلی شما یک روز اختلاف داشته باشد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("input")}}
 - {{DOMXref("HTMLInputElement.value")}}
