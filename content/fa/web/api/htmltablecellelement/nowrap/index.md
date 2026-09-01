@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableCellElement: noWrap property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/noWrap"
-status: "needs-translation"
----
-
----
-title: "HTMLTableCellElement: noWrap property"
 short-title: noWrap
 slug: Web/API/HTMLTableCellElement/noWrap
 page-type: web-api-instance-property
@@ -16,23 +10,23 @@ browser-compat: api.HTMLTableCellElement.noWrap
 
 {{APIRef("HTML DOM API")}}{{deprecated_header}}
 
-The **`noWrap`** property of the {{domxref("HTMLTableCellElement")}} interface returns a Boolean value indicating if the text of the cell may be wrapped on several lines or not.
+خاصیت **`noWrap`** از رابط {{domxref("HTMLTableCellElement")}} یک مقدار بولی (Boolean) برمی‌گرداند که نشان می‌دهد آیا متن سلول می‌تواند در چند خط شکسته شود یا خیر.
 
 > [!NOTE]
-> This property is deprecated and you should use the CSS {{cssxref("white-space")}} property with the value `nowrap` instead.
+> این خاصیت منسوخ شده است و باید از خاصیت CSS {{cssxref("white-space")}} با مقدار `nowrap` استفاده کنید.
 
-## Value
+## مقدار
 
-A Boolean value.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
-Use CSS `white-space` instead. An [example](/en-US/docs/Web/CSS/Reference/Properties/white-space#controlling_line_wrapping_in_tables) is available on the {{cssxref("white-space")}} page.
+به جای آن از `white-space` در CSS استفاده کنید. یک [مثال](/en-US/docs/Web/CSS/Reference/Properties/white-space#controlling_line_wrapping_in_tables) در صفحه {{cssxref("white-space")}} موجود است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
