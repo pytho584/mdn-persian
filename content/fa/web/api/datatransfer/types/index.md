@@ -1,11 +1,5 @@
 ---
 title: "DataTransfer: types property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/types"
-status: "needs-translation"
----
-
----
-title: "DataTransfer: types property"
 short-title: types
 slug: Web/API/DataTransfer/types
 page-type: web-api-instance-property
@@ -14,19 +8,15 @@ browser-compat: api.DataTransfer.types
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DataTransfer.types`** read-only property returns the available types that exist in the {{domxref("DataTransfer.items","items")}}.
+خاصیت فقط-خواندنی **`DataTransfer.types`** انواع موجود در {{domxref("DataTransfer.items","items")}} را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An array of the data formats. Each format is a string
-which is generally a MIME type such as `text/plain` or `text/html`. If the drag
-operation included no data, this list will be empty. If any files are included in
-the drag operation, then one of the types will be the string `Files`.
+یک آرایه از قالب‌های داده. هر قالب یک رشته است که معمولاً یک نوع MIME مانند `text/plain` یا `text/html` است. اگر عملیات کشیدن شامل هیچ داده‌ای نباشد، این فهرست خالی خواهد بود. اگر هر فایلی در عملیات کشیدن گنجانده شده باشد، آنگاه یکی از انواع، رشته `Files` خواهد بود.
 
-## Examples
+## مثال‌ها
 
-This example shows the use of the `types` and
-{{domxref("DataTransfer.items","items")}} properties.
+این مثال استفاده از خاصیت‌های `types` و {{domxref("DataTransfer.items","items")}} را نشان می‌دهد.
 
 ```html
 <ul>
@@ -97,16 +87,16 @@ target.addEventListener("dragover", (ev) => {
 
 {{EmbedLiveSample("examples", "", 400)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Drag and drop](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
-- [Drag Operations](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
-- [Working with the drag data store](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
+- [کشیدن و رها کردن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+- [عملیات کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
+- [کار با ذخیره‌گاه داده‌ی کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
