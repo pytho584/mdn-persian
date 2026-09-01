@@ -1,9 +1,4 @@
----
-title: "HTMLFencedFrameElement: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/width"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "HTMLFencedFrameElement: width property"
 short-title: width
@@ -16,30 +11,31 @@ browser-compat: api.HTMLFencedFrameElement.width
 
 {{SeeCompatTable}}{{APIRef("Fenced Frame API")}}
 
-The **`width`** property of the {{domxref("HTMLFencedFrameElement")}} gets and sets the value of the corresponding {{htmlelement("fencedframe")}} `width` attribute, which specifies the width of the element.
+ویژگی **`width`** از {{domxref("HTMLFencedFrameElement")}} مقدار متناظر با ویژگی `width` عنصر {{htmlelement("fencedframe")}} را دریافت و تنظیم می‌کند که عرض عنصر را مشخص می‌کند.
 
-The size of the embedded content may be set by internal `contentWidth` and `contentHeight` properties of the `<fencedframe>`'s {{domxref("HTMLFencedFrameElement.config", "config")}} object. In such cases, changing the `width` or {{domxref("HTMLFencedFrameElement.height", "height")}} of the `<fencedframe>` will change the size of the embedded container on the page, but the document inside the container will be visually scaled to fit. The reported width and height of the embedded document (i.e., {{domxref("Window.innerWidth")}} and {{domxref("Window.innerHeight")}}) will be unchanged.
+اندازه محتوای جاسازی‌شده می‌تواند توسط ویژگی‌های داخلی `contentWidth` و `contentHeight` شیء {{domxref("HTMLFencedFrameElement.config", "config")}} درون `<fencedframe>` تنظیم شود. در چنین مواردی، تغییر `width` یا {{domxref("HTMLFencedFrameElement.height", "height")}} درون `<fencedframe>` اندازه ظرف جاسازی‌شده در صفحه را تغییر می‌دهد، اما سند داخل ظرف به صورت بصری مقیاس‌بندی می‌شود تا درون آن جا شود. عرض و ارتفاع گزارش‌شده سند جاسازی‌شده (یعنی {{domxref("Window.innerWidth")}} و {{domxref("Window.innerHeight")}}) بدون تغییر خواهند ماند.
 
-## Value
+## مقدار
 
-A string representing the width of the element in CSS pixels. The default value is `300`.
+یک رشته که عرض عنصر را بر حسب پیکسل‌های CSS نشان می‌دهد. مقدار پیش‌فرض `300` است.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const frame = document.createElement("fencedframe");
 frame.width = "480";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Fenced frames](https://privacysandbox.google.com/private-advertising/fenced-frame) on privacysandbox.google.com
-- [The Privacy Sandbox](https://privacysandbox.google.com/) on privacysandbox.google.com
+- [Fenced frames](https://privacysandbox.google.com/private-advertising/fenced-frame) در privacysandbox.google.com
+- [The Privacy Sandbox](https://privacysandbox.google.com/) در privacysandbox.google.com
+```
