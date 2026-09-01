@@ -1,10 +1,4 @@
 ---
-title: "HTMLLabelElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement"
-status: "needs-translation"
----
-
----
 title: HTMLLabelElement
 slug: Web/API/HTMLLabelElement
 page-type: web-api-interface
@@ -13,38 +7,38 @@ browser-compat: api.HTMLLabelElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLLabelElement`** interface gives access to properties specific to {{HTMLElement("label")}} elements. It inherits methods and properties from the base {{domxref("HTMLElement")}} interface.
+رابط **`HTMLLabelElement`** به ویژگی‌های خاص عناصر {{HTMLElement("label")}} دسترسی می‌دهد. این رابط متدها و ویژگی‌های خود را از رابط پایه {{domxref("HTMLElement")}} به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌هایی را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref("HTMLLabelElement.control")}} {{ReadOnlyInline}}
-  - : A {{domxref("HTMLElement")}} representing the control with which the label is associated.
+  - : یک {{domxref("HTMLElement")}} که نشان‌دهنده کنترلی است که برچسب با آن مرتبط است.
 - {{domxref("HTMLLabelElement.form")}} {{ReadOnlyInline}}
-  - : A {{domxref("HTMLFormElement")}} object representing the form with which the labeled control is associated, or `null` if there is no associated control, or if that control isn't associated with a form. In other words, this is just a shortcut for `HTMLLabelElement.control.form`.
+  - : یک شیء {{domxref("HTMLFormElement")}} که فرم مرتبط با کنترل برچسب‌گذاری شده را نشان می‌دهد، یا `null` اگر هیچ کنترلی مرتبط نباشد، یا اگر آن کنترل با فرمی مرتبط نباشد. به عبارت دیگر، این یک میان‌بر برای `HTMLLabelElement.control.form` است.
 - {{domxref("HTMLLabelElement.htmlFor")}}
-  - : A string containing the ID of the labeled control. This reflects the [`for`](/en-US/docs/Web/HTML/Reference/Elements/label#for) attribute.
+  - : یک رشته شامل شناسه (ID) کنترل برچسب‌گذاری شده. این ویژگی منعکس‌کننده ویژگی [`for`](/en-US/docs/Web/HTML/Reference/Elements/label#for) است.
 
 > [!NOTE]
-> To programmatically set the `for` attribute, use [`htmlFor`](/en-US/docs/Web/API/HTMLLabelElement/htmlFor).
+> برای تنظیم برنامه‌نویسی ویژگی `for`، از [`htmlFor`](/en-US/docs/Web/API/HTMLLabelElement/htmlFor) استفاده کنید.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific methods; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_متد خاصی ندارد؛ متدها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("label")}}
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("label")}}
 - {{HTMLElement("form")}}
 - {{domxref("HTMLFormElement")}}
