@@ -1,28 +1,18 @@
 ---
 title: "HTMLScriptElement: async property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/async"
-status: "needs-translation"
----
-
----
-title: "HTMLScriptElement: async property"
-short-title: async
-slug: Web/API/HTMLScriptElement/async
-page-type: web-api-instance-property
-browser-compat: api.HTMLScriptElement.async
 ---
 
 {{APIRef("HTML DOM")}}
 
-The **`async`** property of the {{domxref("HTMLScriptElement")}} interface is a boolean value that controls how the script should be executed. For classic scripts, if the `async` property is set to `true`, the external script will be fetched in parallel to parsing and evaluated as soon as it is available. For [module scripts](/en-US/docs/Web/JavaScript/Guide/Modules), if the `async` property is set to `true`, the script and all their dependencies will be fetched in parallel to parsing and evaluated as soon as they are available.
+ویژگی **`async``** از رابط {{domxref("HTMLScriptElement")}} یک مقدار بولین است که نحوه اجرای اسکریپت را کنترل می‌کند. برای اسکریپت‌های کلاسیک، اگر این ویژگی روی `true` تنظیم شود، اسکریپت خارجی همزمان با تجزیه (parsing) واکشی شده و به محض در دسترس بودن ارزیابی می‌شود. برای [اسکریپت‌های ماژول](/en-US/docs/Web/JavaScript/Guide/Modules)، اگر `async` روی `true` تنظیم شود، اسکریپت و تمام وابستگی‌های آن همزمان با تجزیه واکشی شده و به محض در دسترس بودن ارزیابی می‌شوند.
 
-It reflects the `async` attribute of the {{HTMLElement("script")}} element.
+این ویژگی منعکس‌کننده ویژگی `async` عنصر {{HTMLElement("script")}} است.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولین.
 
-## Examples
+## مثال‌ها
 
 ```html
 <script id="el" src="/example.js" async></script>
@@ -33,14 +23,14 @@ const el = document.getElementById("el");
 console.log(el.async); // Output: true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLScriptElement.defer")}}
