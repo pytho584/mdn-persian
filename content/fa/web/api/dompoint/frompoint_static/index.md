@@ -1,11 +1,5 @@
 ---
 title: "DOMPoint: fromPoint() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/fromPoint_static"
-status: "needs-translation"
----
-
----
-title: "DOMPoint: fromPoint() static method"
 short-title: fromPoint()
 slug: Web/API/DOMPoint/fromPoint_static
 page-type: web-api-static-method
@@ -14,65 +8,57 @@ browser-compat: api.DOMPoint.fromPoint_static
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`fromPoint()`** static method of the {{domxref("DOMPoint")}} interface creates and returns a new mutable `DOMPoint` object given a source point.
+متد ایستای **`fromPoint()`** از رابط {{domxref("DOMPoint")}} یک شیء `DOMPoint` قابل تغییر جدید را با توجه به یک نقطه منبع (source point) ایجاد و بازمی‌گرداند.
 
-You can also create a new `DOMPoint` object using the
-{{domxref("DOMPoint.DOMPoint", "DOMPoint()")}} constructor.
+همچنین می‌توانید یک شیء `DOMPoint` جدید را با استفاده از سازنده {{domxref("DOMPoint.DOMPoint", "DOMPoint()")}} ایجاد کنید.
 
-Although this interface is based on `DOMPointReadOnly`, it is not read-only;
-the properties within may be changed at will.
+اگرچه این رابط بر پایه `DOMPointReadOnly` است، اما فقط‌خواندنی نیست؛ ویژگی‌های درون آن می‌توانند هر زمان که بخواهید تغییر داده شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 DOMPoint.fromPoint(sourcePoint)
 ```
 
-### Parameters
+### پارامترها
 
 - `sourcePoint`
-  - : A {{domxref("DOMPoint")}} or {{domxref("DOMPointReadOnly")}} instance, or an object containing the following properties, from which to take the
-    values of the new point's properties:
+  - : یک نمونه از {{domxref("DOMPoint")}} یا {{domxref("DOMPointReadOnly")}}، یا یک شیء حاوی ویژگی‌های زیر که مقادیر ویژگی‌های نقطه جدید از آن گرفته می‌شود:
     - `x`
-      - : An unrestricted floating-point value indicating the `x`-coordinate of the point in space. This is generally the horizontal coordinate, with positive values being to the right and negative values to the left. The default value is `0`.
+      - : یک عدد اعشاری نامحدود که مختصات `x` نقطه در فضا را نشان می‌دهد. این معمولاً مختصات افقی است، با مقادیر مثبت به سمت راست و مقادیر منفی به سمت چپ. مقدار پیش‌فرض `0` است.
     - `y`
-      - : An unrestricted floating-point number providing the point's `y`-coordinate. This is the vertical coordinate, and barring any transforms applied to the coordinate system, positive values are downward and negative values upward toward the top of the screen. The default is `0`.
+      - : یک عدد اعشاری نامحدود که مختصات `y` نقطه را ارائه می‌دهد. این مختصات عمودی است و تا زمانی که هیچ تبدیلی بر روی سیستم مختصات اعمال نشود، مقادیر مثبت به سمت پایین و مقادیر منفی به سمت بالای صفحه هستند. مقدار پیش‌فرض `0` است.
     - `z`
-      - : An unrestricted floating-point value which gives the point's `z`-coordinate, which is (assuming no transformations that alter the situation) the depth coordinate; positive values are closer to the user and negative values retreat back into the screen. The default value is `0`.
+      - : یک عدد اعشاری نامحدود که مختصات `z` نقطه را می‌دهد. با فرض عدم وجود تبدیل‌هایی که وضعیت را تغییر دهند، این مختصات عمق است؛ مقادیر مثبت به کاربر نزدیک‌تر و مقادیر منفی به سمت داخل صفحه عقب‌تر می‌روند. مقدار پیش‌فرض `0` است.
     - `w`
-      - : The point's `w` perspective value, given as an unrestricted floating-point number. The default is `1`.
+      - : مقدار پرسپکتیو `w` نقطه، که به عنوان یک عدد اعشاری نامحدود داده می‌شود. مقدار پیش‌فرض `1` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("DOMPoint")}} object whose coordinate and perspective values are
-identical to those in the source point. The point's properties are mutable and may be
-changed at any time.
+یک شیء جدید {{domxref("DOMPoint")}} که مقادیر مختصات و پرسپکتیو آن دقیقاً مشابه مقادیر موجود در نقطه منبع است. ویژگی‌های نقطه قابل تغییر هستند و می‌توانند در هر زمانی تغییر داده شوند.
 
-## Examples
+## مثال‌ها
 
-### Creating a mutable point from a read-only point
+### ایجاد یک نقطه قابل تغییر از یک نقطه فقط‌خواندنی
 
-If you have a {{domxref("DOMPointReadOnly")}} object, you can easily create a mutable
-copy of that point:
+اگر یک شیء {{domxref("DOMPointReadOnly")}} دارید، می‌توانید به راحتی یک کپی قابل تغییر از آن نقطه ایجاد کنید:
 
 ```js
 const mutablePoint = DOMPoint.fromPoint(readOnlyPoint);
 ```
 
-### Creating a 2D point
+### ایجاد یک نقطه دو بعدی
 
-This sample creates a 2D point, specifying an inline object that includes the values to
-use for {{domxref("DOMPointReadOnly.x", "x")}} and {{domxref("DOMPointReadOnly.y", "y")}}.
-The _z_ and _w_ properties are allowed to keep their default values (0 and 1 respectively).
+این نمونه یک نقطه دو بعدی ایجاد می‌کند و یک شیء خطی (inline object) را مشخص می‌کند که شامل مقادیر مورد استفاده برای {{domxref("DOMPointReadOnly.x", "x")}} و {{domxref("DOMPointReadOnly.y", "y")}} است. ویژگی‌های _z_ و _w_ مجاز هستند که مقادیر پیش‌فرض خود را حفظ کنند (به ترتیب 0 و 1).
 
 ```js
 const center = DOMPoint.fromPoint({ x: 75, y: -50 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
