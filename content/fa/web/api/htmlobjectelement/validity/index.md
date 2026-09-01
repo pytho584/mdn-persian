@@ -1,11 +1,5 @@
 ---
 title: "HTMLObjectElement: validity property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/validity"
-status: "needs-translation"
----
-
----
-title: "HTMLObjectElement: validity property"
 short-title: validity
 slug: Web/API/HTMLObjectElement/validity
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLObjectElement.validity
 
 {{APIRef("HTML DOM")}}
 
-The **`validity`** read-only property of the {{domxref("HTMLObjectElement")}} interface returns a {{domxref("ValidityState")}} object that represents the validity states this element is in. Although {{HTMLElement("object")}} elements are never candidates for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation), the validity state may still be invalid if a custom validity message has been set.
+ویژگی فقط‌خواندنی **`validity`** در رابط {{domxref("HTMLObjectElement")}} یک شیء {{domxref("ValidityState")}} برمی‌گرداند که وضعیت‌های اعتبار این عنصر را نشان می‌دهد. اگرچه عناصر {{HTMLElement("object")}} هرگز کاندیدای [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) نیستند، اما اگر پیام اعتبار سفارشی تنظیم شده باشد، وضعیت اعتبار ممکن است همچنان نامعتبر باشد.
 
-## Value
+## مقدار
 
-A {{domxref("ValidityState")}} object.
+یک شیء {{domxref("ValidityState")}}.
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates that an `<object>` is in an invalid state when a {{domxref("ValidityState/customError", "customError")}} is set; in this state, {{domxref("HTMLObjectElement/checkValidity", "checkValidity()")}} returns `true` while the `validityState`'s `validity` property is `false`.
+مثال زیر نشان می‌دهد که وقتی یک {{domxref("ValidityState/customError", "customError")}} تنظیم شود، یک `<object>` در وضعیت نامعتبر قرار دارد؛ در این وضعیت، {{domxref("HTMLObjectElement/checkValidity", "checkValidity()")}} مقدار `true` را برمی‌گرداند، در حالی که ویژگی `validity` متعلق به `validityState` برابر با `false` است.
 
 ```js
 const objectElem = document.getElementById("myObjectElm");
@@ -33,18 +27,18 @@ console.log(validityState.customError); // true
 console.log(objectElem.checkValidity()); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLObjectElement.checkValidity()")}}
 - {{HTMLElement("object")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
