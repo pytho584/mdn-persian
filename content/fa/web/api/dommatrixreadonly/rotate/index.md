@@ -1,9 +1,4 @@
----
-title: "DOMMatrixReadOnly: rotate() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/rotate"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "DOMMatrixReadOnly: rotate() method"
 short-title: rotate()
@@ -14,11 +9,11 @@ browser-compat: api.DOMMatrixReadOnly.rotate
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The `rotate()` method of the {{domxref("DOMMatrixReadOnly")}} interface returns a new {{domxref("DOMMatrix")}} created by rotating the source matrix around each of its axes by the specified number of degrees. The original matrix is not altered.
+متد `rotate()` در رابط {{domxref("DOMMatrixReadOnly")}} یک شیء {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با چرخاندن ماتریس مبدأ حول هر یک از محورهای آن به اندازه درجه‌های مشخص‌شده ایجاد می‌شود. ماتریس اصلی تغییری نمی‌کند.
 
-To mutate the matrix as you rotate it, see {{domxref("DOMMatrix.rotateSelf()")}}.
+برای تغییر ماتریس هنگام چرخاندن آن، به {{domxref("DOMMatrix.rotateSelf()")}} مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 rotate()
@@ -27,22 +22,22 @@ rotate(rotX, rotY)
 rotate(rotX, rotY, rotZ)
 ```
 
-### Parameters
+### پارامترها
 
 - `rotX`
-  - : A number; the x-coordinate of the vector denoting the axis of rotation. If non-zero, [`is2D`](/en-US/docs/Web/API/DOMMatrixReadOnly/is2D) is false.
+  - : یک عدد؛ مختصه x بردار جهت‌دهنده محور چرخش. اگر غیرصفر باشد، [`is2D`](/en-US/docs/Web/API/DOMMatrixReadOnly/is2D) برابر `false` است.
 - `rotY` {{optional_inline}}
-  - : A number; the y-coordinate of the vector denoting the axis of rotation. If non-zero, [`is2D`](/en-US/docs/Web/API/DOMMatrixReadOnly/is2D) is false.
+  - : یک عدد؛ مختصه y بردار جهت‌دهنده محور چرخش. اگر غیرصفر باشد، [`is2D`](/en-US/docs/Web/API/DOMMatrixReadOnly/is2D) برابر `false` است.
 - `rotZ` {{optional_inline}}
-  - : A number; the z-coordinate of the vector denoting the axis of rotation.
+  - : یک عدد؛ مختصه z بردار جهت‌دهنده محور چرخش.
 
-If only `rotX` is passed, then `rotX` is used as the value for the z-coordinate, and the x- and -y-coordinates are both set to zero.
+اگر فقط `rotX` ارسال شود، مقدار `rotX` به‌عنوان مختصه z در نظر گرفته می‌شود و هر دو مختصه x و y صفر تنظیم می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-A [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix).
+یک [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix).
 
-## Examples
+## مثال‌ها
 
 ```js
 const matrix = new DOMMatrix(); // create a matrix
@@ -56,21 +51,22 @@ console.log(rotated.toString());
 // output: "matrix(0.866, 0.5, -0.5, 0.866, 0, 0)"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrix.rotateSelf()")}}
 - {{domxref("DOMMatrixReadOnly.rotateAxisAngle()")}}
 - {{domxref("DOMMatrixReadOnly.rotateFromVector()")}}
-- CSS {{cssxref("transform")}} property and {{cssxref("transform-function/rotate3d", "rotate3d()")}} function
-- CSS {{cssxref("rotate")}} property
-- [CSS transforms](/en-US/docs/Web/CSS/Guides/Transforms) module
-- SVG [`transform`](/en-US/docs/Web/SVG/Reference/Attribute/transform) attribute
-- {{domxref("CanvasRenderingContext2D")}} interface and {{domxref("CanvasRenderingContext2D.rotate()", "rotate()")}} method
+- ویژگی CSS {{cssxref("transform")}} و تابع {{cssxref("transform-function/rotate3d", "rotate3d()")}}
+- ویژگی CSS {{cssxref("rotate")}}
+- ماژول [تبدیل‌های CSS](/en-US/docs/Web/CSS/Guides/Transforms)
+- ویژگی [`transform`](/en-US/docs/Web/SVG/Reference/Attribute/transform) در SVG
+- رابط {{domxref("CanvasRenderingContext2D")}} و متد {{domxref("CanvasRenderingContext2D.rotate()", "rotate()")}}
+```
