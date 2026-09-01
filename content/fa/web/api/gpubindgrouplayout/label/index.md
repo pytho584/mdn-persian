@@ -1,11 +1,5 @@
 ---
 title: "GPUBindGroupLayout: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUBindGroupLayout/label"
-status: "needs-translation"
----
-
----
-title: "GPUBindGroupLayout: label property"
 short-title: label
 slug: Web/API/GPUBindGroupLayout/label
 page-type: web-api-instance-property
@@ -14,18 +8,17 @@ browser-compat: api.GPUBindGroupLayout.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** property of the
-{{domxref("GPUBindGroupLayout")}} interface provides a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی **`label`** در رابط {{domxref("GPUBindGroupLayout")}} برچسبی را فراهم می‌کند که می‌توان از آن برای شناسایی شیء استفاده کرد، برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUDevice.createBindGroupLayout()")}} call, or you can get and set it directly on the `GPUBindGroupLayout` object.
+این مقدار را می‌توان با ارائه‌ی یک ویژگی `label` در شیء توصیف‌کننده‌ای که به فراخوانیِ {{domxref("GPUDevice.createBindGroupLayout()")}} ارسال می‌شود تنظیم کرد، یا می‌توانید آن را مستقیماً روی شیء `GPUBindGroupLayout` دریافت و تنظیم کنید.
 
-## Value
+## مقدار
 
-A string. If this has not been previously set as described above, it will be an empty string.
+یک رشته. اگر این ویژگی قبلاً به شکلی که در بالا توضیح داده شد تنظیم نشده باشد، یک رشته‌ی خالی خواهد بود.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUBindGroupLayout.label`:
+تنظیم و دریافت برچسب از طریق `GPUBindGroupLayout.label`:
 
 ```js
 // …
@@ -47,7 +40,7 @@ bindGroupLayout.label = "my_bind_group_layout";
 console.log(bindGroupLayout.label); // "my_bind_group_layout"
 ```
 
-Setting a label via the originating {{domxref("GPUDevice.createBindGroupLayout()")}} call, and then getting it via `GPUBindGroupLayout.label`:
+تنظیم برچسب از طریق فراخوانیِ {{domxref("GPUDevice.createBindGroupLayout()")}} و سپس دریافت آن از طریق `GPUBindGroupLayout.label`:
 
 ```js
 // …
@@ -68,14 +61,14 @@ const bindGroupLayout = device.createBindGroupLayout({
 console.log(bindGroupLayout.label); // "my_bind_group_layout"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
