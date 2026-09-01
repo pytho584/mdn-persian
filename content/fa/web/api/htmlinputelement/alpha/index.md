@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: alpha property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/alpha"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: alpha property"
 short-title: alpha
 slug: Web/API/HTMLInputElement/alpha
 page-type: web-api-instance-property
@@ -16,13 +10,13 @@ browser-compat: api.HTMLInputElement.alpha
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}
 
-The **`alpha`** property of the {{domxref("HTMLInputElement")}} interface reflects the {{htmlelement("input")}} element's [`alpha`](/en-US/docs/Web/HTML/Reference/Elements/input/color#alpha) attribute, which indicates whether the CSS color's alpha component can be manipulated by the end user and does not have to be fully opaque. It is only relevant to [color](/en-US/docs/Web/HTML/Reference/Elements/input/color) controls.
+ویژگی **`alpha`** در رابط {{domxref("HTMLInputElement")}} بازتاب‌دهندهٔ صفت [`alpha`](/en-US/docs/Web/HTML/Reference/Elements/input/color#alpha) عنصر {{htmlelement("input")}} است که نشان می‌دهد آیا مؤلفهٔ آلفای رنگ CSS توسط کاربر نهایی قابل تغییر است و آیا لازم است کاملاً مات باشد یا خیر. این ویژگی فقط برای کنترل‌های [color](/en-US/docs/Web/HTML/Reference/Elements/input/color) کاربرد دارد.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```html
 <input id="color-picker" type="color" alpha />
@@ -38,14 +32,14 @@ if (colorInput.alpha) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [`<input type="color">`](/en-US/docs/Web/HTML/Reference/Elements/input/color)
