@@ -1,7 +1,5 @@
 ---
 title: "Element: removeAttribute() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute"
-status: "needs-translation"
 ---
 
 ---
@@ -14,33 +12,28 @@ browser-compat: api.Element.removeAttribute
 
 {{ APIRef("DOM") }}
 
-The {{domxref("Element")}} method
-**`removeAttribute()`** removes the attribute with the
-specified name from the element.
+متد **`removeAttribute()`** در {{domxref("Element")}} ویژگی‌ای با نام مشخص‌شده را از عنصر حذف می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 removeAttribute(attrName)
 ```
 
-### Parameters
+### پارامترها
 
 - `attrName`
-  - : A string specifying the name of the attribute to remove from the
-    element. If the specified attribute does not exist, `removeAttribute()`
-    returns without generating an error.
+  - : رشته‌ای که نام ویژگی‌ای را که باید از عنصر حذف شود مشخص می‌کند. اگر ویژگی موردنظر وجود نداشته باشد، `removeAttribute()` بدون ایجاد خطا بازمی‌گردد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Usage notes
+## نکات استفاده
 
-You should use `removeAttribute()` instead of setting the attribute value to `null` either directly or using {{domxref("Element.setAttribute", "setAttribute()")}}.
-Many attributes will not behave as expected if you set them to `null`.
+بهتر است به‌جای تنظیم مقدار ویژگی روی `null`، چه به‌طور مستقیم و چه با استفاده از {{domxref("Element.setAttribute", "setAttribute()")}}، از `removeAttribute()` استفاده کنید. بسیاری از ویژگی‌ها اگر روی `null` تنظیم شوند، آن‌طور که انتظار می‌رود رفتار نخواهند کرد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Given: <div id="div1" disabled width="200px">
@@ -48,15 +41,15 @@ document.getElementById("div1").removeAttribute("disabled");
 // Now: <div id="div1" width="200px">
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.hasAttribute()")}}
 - {{domxref("Element.getAttribute()")}}
