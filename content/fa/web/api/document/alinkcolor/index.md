@@ -1,11 +1,5 @@
 ---
 title: "Document: alinkColor property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/alinkColor"
-status: "needs-translation"
----
-
----
-title: "Document: alinkColor property"
 short-title: alinkColor
 slug: Web/API/Document/alinkColor
 page-type: web-api-instance-property
@@ -16,28 +10,26 @@ browser-compat: api.Document.alinkColor
 
 {{APIRef("DOM")}}{{Deprecated_header}}
 
-Returns or sets the color of an active link in the document body. A link is active
-during the time between `mousedown` and `mouseup` events.
+رنگ یک پیوند فعال در بدنه سند را برمی‌گرداند یا تنظیم می‌کند. یک پیوند در فاصله زمانی بین رویدادهای `mousedown` و `mouseup` فعال است.
 
-## Value
+## مقدار
 
-A string containing the name of the color (e.g., `blue`, `darkblue`, etc.) or the hexadecimal value of the color (e.g., `#0000FF`).
+یک رشته شامل نام رنگ (مانند `blue`، `darkblue` و غیره) یا مقدار هگزادسیمال رنگ (مانند `#0000FF`).
 
-When set to the `null` value, that `null` value is converted to the empty string (`""`), so `document.alinkColor = null` is equivalent to `document.alinkColor = ""`.
+وقتی روی مقدار `null` تنظیم شود، آن مقدار `null` به رشته خالی (`""`) تبدیل می‌شود، بنابراین `document.alinkColor = null` معادل `document.alinkColor = ""` است.
 
-## Notes
+## نکات
 
-The default value for this property in Mozilla Firefox is red (`#ee0000` in
-hexadecimal).
+مقدار پیش‌فرض این ویژگی در Mozilla Firefox قرمز است (در هگزادسیمال `#ee0000`).
 
-`document.alinkColor` is deprecated in [the HTML specification](https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-alinkcolor). One alternative is the CSS selector {{Cssxref(":active")}}.
+`document.alinkColor` در [مشخصات HTML](https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-alinkcolor) منسوخ شده است. یک جایگزین، انتخابگر CSS {{Cssxref(":active")}} است.
 
-Firefox supports both `alinkColor`/`:active` and {{Cssxref(":focus")}}.
+Firefox هر دو `alinkColor`/`:active` و {{Cssxref(":focus")}} را پشتیبانی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
