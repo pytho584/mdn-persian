@@ -1,11 +1,5 @@
 ---
 title: "Element: setAttributeNode() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNode"
-status: "needs-translation"
----
-
----
-title: "Element: setAttributeNode() method"
 short-title: setAttributeNode()
 slug: Web/API/Element/setAttributeNode
 page-type: web-api-instance-method
@@ -14,28 +8,28 @@ browser-compat: api.Element.setAttributeNode
 
 {{ APIRef("DOM") }}
 
-The **`setAttributeNode()`** method of the {{domxref("Element")}} interface adds a new {{domxref("Attr")}} node to the specified element.
+متد **`setAttributeNode()`** از رابط {{domxref("Element")}} یک گره {{domxref("Attr")}} جدید به عنصر مشخص‌شده اضافه می‌کند.
 
-If you don't need to work with the attribute node (such as cloning from another element) before adding it, you can use the {{domxref("Element.setAttribute()", "setAttribute()")}} method instead.
+اگر نیازی به کار با گره ویژگی (مثلاً شبیه‌سازی آن از یک عنصر دیگر) قبل از افزودن ندارید، می‌توانید به‌جای آن از متد {{domxref("Element.setAttribute()", "setAttribute()")}} استفاده کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setAttributeNode(attribute)
 ```
 
-### Parameters
+### پارامترها
 
 - `attribute`
-  - : The {{domxref("Attr")}} node to add to the element.
+  - : گره {{domxref("Attr")}} که باید به عنصر اضافه شود.
 
-### Return value
+### مقدار بازگشتی
 
-The replaced attribute node, if any, returned by this function.
+گره ویژگی جایگزین‌شده، در صورت وجود، توسط این تابع بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example copies the `lang` attribute from one element to another.
+این مثال ویژگی `lang` را از یک عنصر به عنصر دیگر کپی می‌کند.
 
 ### HTML
 
@@ -57,20 +51,19 @@ d2.setAttributeNode(a.cloneNode(true));
 console.log(d2.attributes[1].value);
 ```
 
-## Notes
+## یادداشت‌ها
 
-If the attribute named already exists on the element, that attribute is replaced with
-the new one and the replaced one is returned.
+اگر ویژگی‌ای با همان نام قبلاً روی عنصر وجود داشته باشد، آن ویژگی با ویژگی جدید جایگزین می‌شود و ویژگی جایگزین‌شده بازگردانده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.createAttribute()")}}
 - {{domxref("Element.getAttributeNode()")}}
