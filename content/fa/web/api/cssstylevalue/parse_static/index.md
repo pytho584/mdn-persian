@@ -1,7 +1,5 @@
 ---
 title: "CSSStyleValue: parse() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleValue/parse_static"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,11 @@ browser-compat: api.CSSStyleValue.parse_static
 
 {{APIRef("CSS Typed Object Model API")}}
 
-The **`parse()`** static method of the {{domxref("CSSStyleValue")}} interface sets a specific CSS property to the specified values and returns the first value as a {{domxref('CSSStyleValue')}} object.
+متد ایستای **`parse()`** از رابط {{domxref("CSSStyleValue")}}، یک ویژگی مشخص CSS را به مقادیر داده‌شده تنظیم می‌کند و اولین مقدار را به‌صورت یک شیء {{domxref('CSSStyleValue')}} برمی‌گرداند.
 
 > [!NOTE]
-> This method cannot be called in {{domxref("Worker")}} or {{domxref("Worklet")}} contexts.
-> The rest of the `CSSStyleValue` interface remains available in workers and worklets.
+> این متد در زمینه‌های {{domxref("Worker")}} یا {{domxref("Worklet")}} قابل فراخوانی نیست.
+> بقیهٔ رابط `CSSStyleValue` همچنان در workerها و workletها در دسترس است.
 
 ## Syntax
 
@@ -29,21 +27,19 @@ CSSStyleValue.parse(property, cssText)
 ### Parameters
 
 - `property`
-  - : A CSS property to set.
+  - : ویژگی CSS که قرار است تنظیم شود.
 - `cssText`
-  - : A comma-separated string containing one or more values to apply to the provided
-    property.
+  - : رشتهٔ جداشده با کاما که شامل یک یا چند مقدار برای اعمال به ویژگی داده‌شده است.
 
 ### Return value
 
-A `CSSStyleValue` object containing the first supplied value.
+یک شیء `CSSStyleValue` شامل اولین مقدار ارائه‌شده.
 
 ## Examples
 
-### Basic usage
+### استفادهٔ پایه
 
-The code below parses a set of declarations for the `transform` property.
-The second code block shows the structure of the returned object as it would be rendered in a developer tools console.
+کد زیر مجموعه‌ای از اعلان‌ها را برای ویژگی `transform` تجزیه می‌کند. بلوک کد دوم، ساختار شیء بازگشت‌داده‌شده را همان‌طور که در کنسول ابزارهای توسعه‌دهنده نمایش داده می‌شود، نشان می‌دهد.
 
 ```js
 const css = CSSStyleValue.parse(
@@ -68,5 +64,5 @@ CSSTransformValue {0: CSSTranslate, 1: CSSScale, length: 2, is2D: false}
 
 - [`CSSStyleValue.parseAll()`](/en-US/docs/Web/API/CSSStyleValue/parseAll_static)
 
-- [Using the CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
-- [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
+- [استفاده از CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
+- [API مدل شیء تایپ‌شدهٔ CSS](/en-US/docs/Web/API/CSS_Typed_OM_API)
