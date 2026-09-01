@@ -1,11 +1,5 @@
 ---
 title: "FederatedCredential: provider property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FederatedCredential/provider"
-status: "needs-translation"
----
-
----
-title: "FederatedCredential: provider property"
 short-title: provider
 slug: Web/API/FederatedCredential/provider
 page-type: web-api-instance-property
@@ -16,24 +10,22 @@ browser-compat: api.FederatedCredential.provider
 
 {{SeeCompatTable}}{{APIRef("Credential Management API")}}{{SecureContext_Header}}
 
-The **`provider`** property of the
-{{domxref("FederatedCredential")}} interface returns a string
-containing a credential's federated identity provider.
+خاصیت **`provider`** از رابط {{domxref("FederatedCredential")}} یک رشته را برمی‌گرداند که شامل ارائه‌دهنده هویت فدرال (federated identity provider) آن اعتبارنامه است.
 
-## Value
+## مقدار
 
-A string containing a credential's federated identity provider.
+یک رشته که شامل ارائه‌دهنده هویت فدرال آن اعتبارنامه است.
 
-## Examples
+## مثال‌ها
 
 ```js
 // TBD
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
