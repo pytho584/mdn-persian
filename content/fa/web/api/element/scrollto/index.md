@@ -1,11 +1,5 @@
 ---
 title: "Element: scrollTo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo"
-status: "needs-translation"
----
-
----
-title: "Element: scrollTo() method"
 short-title: scrollTo()
 slug: Web/API/Element/scrollTo
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.Element.scrollTo
 
 {{APIRef("CSSOM view API")}}
 
-The **`scrollTo()`** method of the {{domxref("Element")}} interface scrolls to a particular set of coordinates inside a given element.
+متد **`scrollTo()`** در رابط {{domxref("Element")}} به مجموعه‌ای از مختصات مشخص در داخل یک عنصر معین پیمایش می‌کند.
 
-This method is an alias for {{domxref("Element.scroll()")}}.
+این متد نام مستعاری برای {{domxref("Element.scroll()")}} است.
 
 ## Syntax
 
@@ -28,29 +22,29 @@ scrollTo(options)
 ### Parameters
 
 - `xCoord`
-  - : The x-coordinate of the element's scrollable content that you want the left edge of the element's scrollport to scroll to.
+  - : مختصات x از محتوای قابل‌پیمایش عنصر، که می‌خواهید لبه چپ درگاه پیمایش (scrollport) عنصر به آن نقطه پیمایش شود.
 - `yCoord`
-  - : The y-coordinate of the element's scrollable content that you want the top edge of the element's scrollport to scroll to.
+  - : مختصات y از محتوای قابل‌پیمایش عنصر، که می‌خواهید لبه بالای درگاه پیمایش عنصر به آن نقطه پیمایش شود.
 - `options`
-  - : An object containing the following properties:
+  - : یک شیء شامل ویژگی‌های زیر:
     - `top` {{optional_inline}}
-      - : The y-coordinate of the element's scrollable content that you want the top edge of the element's scrollport to scroll to. This is the same as the `yCoord` parameter.
+      - : مختصات y محتوای قابل‌پیمایش عنصر که می‌خواهید لبه بالای درگاه پیمایش عنصر به آن پیمایش شود. این همان پارامتر `yCoord` است.
     - `left` {{optional_inline}}
-      - : The x-coordinate of the element's scrollable content that you want the left edge of the element's scrollport to scroll to. This is the same as the `xCoord` parameter.
+      - : مختصات x محتوای قابل‌پیمایش عنصر که می‌خواهید لبه چپ درگاه پیمایش عنصر به آن پیمایش شود. این همان پارامتر `xCoord` است.
     - `behavior` {{optional_inline}}
-      - : Determines whether scrolling is instant or animates smoothly. This option is a string that must take one of the following values:
-        - `smooth`: The scrolling animates smoothly.
-        - `instant`: The scrolling happens instantly in a single jump.
-        - `auto`: The scroll behavior is determined by the computed value of the {{cssxref("scroll-behavior")}} CSS property on the element.
+      - : تعیین می‌کند که پیمایش فوری انجام شود یا نرم و متحرک. این گزینه یک رشته است و باید یکی از مقادیر زیر را داشته باشد:
+        - `smooth`: پیمایش به‌صورت نرم و با انیمیشن انجام می‌شود.
+        - `instant`: پیمایش بلافاصله و در یک پرش انجام می‌شود.
+        - `auto`: رفتار پیمایش با توجه به مقدار محاسبه‌شدهٔ ویژگی CSS {{cssxref("scroll-behavior")}} روی عنصر تعیین می‌شود.
 
-        If omitted, `behavior` defaults to `auto`.
+        اگر این گزینه حذف شود، `behavior` به‌صورت پیش‌فرض روی `auto` قرار می‌گیرد.
 
 ### Return value
 
-A {{jsxref("Promise")}} that fulfills with an object containing the following property:
+یک {{jsxref("Promise")}} که با شیئی شامل ویژگی زیر resolve می‌شود:
 
 - `interrupted`
-  - : A boolean value indicating whether the scrolling operation was interrupted (`true`) or not (`false`). Such an interruption typically happens when a programmatic scroll is ongoing, and another programmatic scroll is initiated on the same element before the first one finishes.
+  - : یک مقدار بولی که نشان می‌دهد عملیات پیمایش قطع شده است (`true`) یا نه (`false`). چنین قطعی معمولاً زمانی رخ می‌دهد که یک پیمایش برنامه‌ای در حال انجام است و پیمایش برنامه‌ای دیگری روی همان عنصر، قبل از پایان یافتن پیمایش اول آغاز می‌شود.
 
 ## Examples
 
@@ -60,7 +54,7 @@ A {{jsxref("Promise")}} that fulfills with an object containing the following pr
 element.scrollTo(0, 1000);
 ```
 
-Using `options`:
+استفاده از `options`:
 
 ```js
 element.scrollTo({
@@ -72,11 +66,11 @@ element.scrollTo({
 
 ### Responding to the end of the scroll
 
-Our [element methods demo](https://mdn.github.io/dom-examples/scroll-promises/element-methods/) ([see source code](https://github.com/mdn/dom-examples/tree/main/scroll-promises/element-methods)) demonstrates how the promise return value of `scrollTo()` can be used to respond to the end of a scrolling operation. This technique is mostly useful in cases where the scrolling occurs smoothly over time (achieved by setting the [`behavior`](#behavior) option to `smooth`, or by setting the scrolling element's {{cssxref("scroll-behavior")}} property to `smooth`).
+در [نمونه روش‌های عنصر](https://mdn.github.io/dom-examples/scroll-promises/element-methods/) ([مشاهده کد منبع](https://github.com/mdn/dom-examples/tree/main/scroll-promises/element-methods)) نشان داده می‌شود که چگونه می‌توان از مقدار بازگشتی Promise متد `scrollTo()` برای واکنش به پایان یک عملیات پیمایش استفاده کرد. این روش بیشتر در مواردی مفید است که پیمایش به‌مرور زمان و به‌صورت نرم انجام می‌شود (با قرار دادن گزینه [`behavior`](#behavior) روی `smooth`، یا با تنظیم ویژگی {{cssxref("scroll-behavior")}} عنصر پیمایش‌شونده روی `smooth`).
 
 #### HTML
 
-Our HTML includes a {{htmlelement("section")}} element containing several paragraphs of content and a {{htmlelement("div")}} element toolbar containing {{htmlelement("button")}} elements that trigger various scrolling operations on the `<section>`.
+HTML ما شامل یک عنصر {{htmlelement("section")}} با چند پاراگراف محتوا و یک نوار ابزار از نوع {{htmlelement("div")}} است که شامل عناصر {{htmlelement("button")}} می‌شود و عملیات‌های مختلف پیمایش را روی `<section>` فعال می‌کنند.
 
 ```html
 <div>
@@ -91,7 +85,7 @@ Our HTML includes a {{htmlelement("section")}} element containing several paragr
 
 #### CSS
 
-We give the `<section>` element a fixed {{cssxref("height")}} and an {{cssxref("overflow-y")}} value of `scroll` so that it scrolls vertically, and set its {{cssxref("scroll-behavior")}} property to `smooth` so that any scroll operations are animated smoothly over time rather than instantly.
+به عنصر `<section>` یک {{cssxref("height")}} ثابت و مقدار {{cssxref("overflow-y")}} برابر با `scroll` می‌دهیم تا به‌صورت عمودی پیمایش شود؛ همچنین ویژگی {{cssxref("scroll-behavior")}} آن را روی `smooth` تنظیم می‌کنیم تا همه عملیات‌های پیمایش به‌صورت نرم و در طول زمان انجام شوند، نه به‌طور آنی.
 
 ```css
 section {
@@ -104,7 +98,7 @@ section {
 }
 ```
 
-We also create two class selectors; when a `fade-out` or `fade-in` class is applied to an element, an {{cssxref("animation")}} is applied so that it smoothly fades out or in, respectively. We also define {{cssxref("@keyframes")}} blocks to define the required {{cssxref("opacity")}} changes for those animations.
+همچنین دو انتخابگر کلاس (class selector) ایجاد می‌کنیم؛ هرگاه کلاس `fade-out` یا `fade-in` به عنصری اعمال شود، یک {{cssxref("animation")}} اعمال می‌شود تا بهترتیب به‌آرامی محو شود یا ظاهر گردد. علاوه بر این، بلوک‌های {{cssxref("@keyframes")}} را تعریف می‌کنیم تا تغییرات موردنیاز {{cssxref("opacity")}} برای آن انیمیشن‌ها مشخص شود.
 
 ```css
 .fade-out {
@@ -136,11 +130,11 @@ We also create two class selectors; when a `fade-out` or `fade-in` class is appl
 }
 ```
 
-The rest of the CSS is not shown, for brevity.
+باقی CSS برای اختصار نمایش داده نشده است.
 
 #### JavaScript
 
-We start by grabbing references to the `<button>` that runs the `scrollTo()` operation, the toolbar `<div>`, and the scrolling `<section>`:
+ابتدا با گرفتن ارجاع به دکمه‌ای که عملیات `scrollTo()` را اجرا می‌کند، نوار ابزار `<div>` و بخش پیمایش‌شونده `<section>` شروع می‌کنیم:
 
 ```js
 const scrollToBtn = document.querySelector(".scroll-to");
@@ -148,7 +142,7 @@ const toolbar = document.querySelector("div");
 const section = document.querySelector("section");
 ```
 
-Next, we define a function called `isInterrupted()`, designed to run in response to a scroll operation finishing, which takes a boolean `interrupted` value as a parameter. It logs a message to the console to say that scrolling is finished and indicate whether the operation was interrupted (`interrupted` is `true`) or not. In addition, if `interrupted` is `true`, it calls an `alert()` to clearly indicate the interruption.
+سپس تابعی به نام `isInterrupted()` تعریف می‌کنیم که برای اجرا در پاسخ به پایان یک عملیات پیمایش طراحی شده است و یک مقدار بولی `interrupted` را به‌عنوان پارامتر می‌گیرد. این تابع پیامی را در کنسول ثبت می‌کند تا بگوید پیمایش تمام شده است و مشخص کند که آیا عملیات قطع شده است (`interrupted` برابر `true`) یا نه. علاوه بر این، اگر `interrupted` برابر `true` باشد، یک `alert()` فراخوانی می‌شود تا قطع شدن را به‌وضوح نشان دهد.
 
 ```js
 function isInterrupted(interrupted) {
@@ -159,7 +153,7 @@ function isInterrupted(interrupted) {
 }
 ```
 
-When the button is clicked, we immediately apply the `fade-out` class to the toolbar, causing it to fade out. We then run `scrollTo(0, 0)` on the `<section>` to scroll its content to the top, awaiting its promise resolution as we do so and storing the `result` in a constant. When the promise has resolved, we call `isInterrupted()` to report that the scroll operation has finished and whether it was interrupted. Finally, we apply the `fade-in` class to the toolbar, causing it to fade back in again.
+هنگامی که دکمه کلیک می‌شود، بلافاصله کلاس `fade-out` را روی نوار ابزار اعمال می‌کنیم تا محو شود. سپس `scrollTo(0, 0)` را روی `<section>` اجرا می‌کنیم تا محتوای آن به بالا پیمایش شود؛ هم‌زمان منتظر resolve شدن Promise می‌مانیم و `result` را در یک ثابت ذخیره می‌کنیم. وقتی Promise resolve شد، `isInterrupted()` را فراخوانی می‌کنیم تا گزارش دهد عملیات پیمایش پایان یافته است و آیا قطع شده است. در پایان، کلاس `fade-in` را روی نوار ابزار اعمال می‌کنیم تا دوباره ظاهر شود.
 
 ```js
 scrollToBtn.addEventListener("click", async () => {
@@ -170,19 +164,19 @@ scrollToBtn.addEventListener("click", async () => {
 });
 ```
 
-The code not relevant to `scrollTo()` is not shown, for brevity.
+کدهای نامرتبط با `scrollTo()` برای اختصار نمایش داده نشده‌اند.
 
 #### Result
 
-Click the buttons to see the scrolling behavior. Note how the toolbar fades out when a button is pressed, and fades in again once the smooth scrolling is finished. Also try pressing one button and then quickly pressing another button before the first scrolling operation has finished. Note how, in these cases, the scrolling is reported as interrupted.
+برای دیدن رفتار پیمایش، روی دکمه‌ها کلیک کنید. توجه کنید که با فشردن دکمه، نوار ابزار محو می‌شود و پس از پایان یافتن پیمایش نرم، دوباره ظاهر می‌شود. همچنین دکمه‌ای را فشار دهید و سپس قبل از پایان یافتن عملیات پیمایش اول، دکمه دیگری را سریع فشار دهید. توجه کنید که در این حالت‌ها پیمایش به‌عنوان قطع‌شده گزارش می‌شود.
 
 {{EmbedGHLiveSample("dom-examples/scroll-promises/element-methods/", "100%", 620)}}
 
-You can also [load the demo in a separate tab](https://mdn.github.io/dom-examples/scroll-promises/element-methods/) and view the [source code](https://github.com/mdn/dom-examples/tree/main/scroll-promises/element-methods).
+همچنین می‌توانید [نمونه را در یک تب جداگانه بارگذاری کنید](https://mdn.github.io/dom-examples/scroll-promises/element-methods/) و [کد منبع را مشاهده کنید](https://github.com/mdn/dom-examples/tree/main/scroll-promises/element-methods).
 
-#### Aside on feature detection
+#### نکته: تشخیص ویژگی
 
-If you run this example in a browser that doesn't support promise-returning scroll operations, the scroll operations are still smooth, but the toolbar doesn't fade out and then fade back in once the operation is finished. The feature detection is handled by a function called `supportsScrollPromises()`, which runs a scroll operation and tests whether its return value is a promise:
+اگر این مثال را در مرورگری اجرا کنید که از عملیات‌های پیمایش بازگشت‌دهنده Promise پشتیبانی نمی‌کند، پیمایش همچنان نرم انجام می‌شود، اما نوار ابزار پس از پایان عملیات، محو و دوباره ظاهر نمی‌شود. تشخیص ویژگی (feature detection) توسط تابعی به نام `supportsScrollPromises()` انجام می‌شود که یک عملیات پیمایش را اجرا می‌کند و بررسی می‌کند که آیا مقدار بازگشتی آن یک Promise است:
 
 ```js
 function supportsScrollPromises() {
@@ -191,7 +185,7 @@ function supportsScrollPromises() {
 }
 ```
 
-Check out the [source code](https://github.com/mdn/dom-examples/blob/main/scroll-promises/element-methods/index.js) to see how the feature detection is used.
+برای دیدن نحوه استفاده از تشخیص ویژگی، [کد منبع](https://github.com/mdn/dom-examples/blob/main/scroll-promises/element-methods/index.js) را بررسی کنید.
 
 ## Specifications
 
