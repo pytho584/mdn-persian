@@ -1,11 +1,5 @@
 ---
 title: "HTMLObjectElement: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/width"
-status: "needs-translation"
----
-
----
-title: "HTMLObjectElement: width property"
 short-title: width
 slug: Web/API/HTMLObjectElement/width
 page-type: web-api-instance-property
@@ -14,24 +8,21 @@ browser-compat: api.HTMLObjectElement.width
 
 {{APIRef("HTML DOM")}}
 
-The **`width`** property of the
-{{domxref("HTMLObjectElement")}} interface returns a string that
-reflects the [`width`](/en-US/docs/Web/HTML/Reference/Elements/object#width) HTML attribute, specifying the
-displayed width of the resource in CSS pixels.
+ویژگی **`width`** از رابط {{domxref("HTMLObjectElement")}} یک رشته برمی‌گرداند که منعکس‌کنندهٔ ویژگی HTML [`width`](/en-US/docs/Web/HTML/Reference/Elements/object#width) است و عرض نمایش‌داده‌شدهٔ منبع را بر حسب پیکسل‌های CSS مشخص می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLCanvasElement.width")}}
 - {{domxref("HTMLEmbedElement.width")}}
