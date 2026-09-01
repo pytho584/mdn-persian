@@ -1,11 +1,5 @@
 ---
 title: "HTMLGeolocationElement: error property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLGeolocationElement/error"
-status: "needs-translation"
----
-
----
-title: "HTMLGeolocationElement: error property"
 short-title: error
 slug: Web/API/HTMLGeolocationElement/error
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.HTMLGeolocationElement.error
 
 {{APIRef("Navigation API")}}{{SeeCompatTable}}
 
-The **`error`** read-only property of the {{domxref("HTMLGeolocationElement")}} interface returns a {{domxref("GeolocationPositionError")}} object representing error information, in the event of a failure to retrieve location data.
+{{domxref("HTMLGeolocationElement")}} 接口的只读属性 **`error`** 返回一个 {{domxref("GeolocationPositionError")}} 对象，用于在位置数据获取失败时表示错误信息。
 
-If location data retrieval is successful, the data is available in the {{domxref("HTMLGeolocationElement.position")}} property.
+如果位置数据获取成功，数据可通过 {{domxref("HTMLGeolocationElement.position")}} 属性获取。
 
-## Value
+## 值
 
-A {{domxref("GeolocationPositionError")}} object, or `null` if location data was successfully retrieved.
+一个 {{domxref("GeolocationPositionError")}} 对象；如果位置数据成功获取，则为 `null`。
 
-## Examples
+## 示例
 
-### Basic usage
+### 基本用法
 
 ```html
 <geolocation autolocate></geolocation>
@@ -45,16 +39,16 @@ geo.addEventListener("location", () => {
 });
 ```
 
-See our [Embedded map example walkthrough](/en-US/docs/Web/API/HTMLGeolocationElement#embedded_map_example) for a real-world example that includes `error`.
+有关包含 `error` 的真实示例，请参阅我们的 [嵌入式地图示例演练](/en-US/docs/Web/API/HTMLGeolocationElement#embedded_map_example)。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- {{htmlelement("geolocation")}} element
+- {{htmlelement("geolocation")}} 元素
