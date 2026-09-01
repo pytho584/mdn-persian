@@ -1,11 +1,5 @@
 ---
 title: "Document: referrer property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/referrer"
-status: "needs-translation"
----
-
----
-title: "Document: referrer property"
 short-title: referrer
 slug: Web/API/Document/referrer
 page-type: web-api-instance-property
@@ -14,35 +8,28 @@ browser-compat: api.Document.referrer
 
 {{APIRef("DOM")}}
 
-The **`Document.referrer`** property returns the [URI](https://www.w3.org/Addressing/#background) of the page that linked to
-this page.
+ویژگی **`Document.referrer`**، [URI](https://www.w3.org/Addressing/#background) صفحه‌ای را که به این صفحه لینک داده است، برمی‌گرداند.
 
-## Value
+## مقدار
 
-The value is an empty string if the user navigated to the page directly (not through a
-link, but, for example, by using a bookmark). Because this property returns only a
-string, it doesn't give you document object model (DOM) access to the referring page.
+اگر کاربر مستقیماً به صفحه رفته باشد (نه از طریق یک لینک، بلکه مثلاً با استفاده از یک نشانک)، مقدار یک رشته خالی است. از آنجا که این ویژگی فقط یک رشته برمی‌گرداند، به شما دسترسی به مدل شیء سند (DOM) صفحه مرجع نمی‌دهد.
 
-Inside an {{HTMLElement("iframe")}}, the `Document.referrer` will initially
-be set to the {{domxref("HTMLAnchorElement/href", "href")}} of the parent's
-{{domxref("Window/location", "Window.location")}} in same-origin requests.
-In cross-origin requests, it's the {{domxref("HTMLAnchorElement/origin", "origin")}} of the parent's `Window.location` by default.
-For more information, see the [Referrer-Policy: strict-origin-when-cross-origin](/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy#strict-origin-when-cross-origin) documentation.
+درون یک {{HTMLElement("iframe")}}، `Document.referrer` در ابتدا در درخواست‌های هم‌ریشه (same-origin) به {{domxref("HTMLAnchorElement/href", "href")}} از {{domxref("Window/location", "Window.location")}} والد تنظیم می‌شود. در درخواست‌های بین‌ریشه (cross-origin)، به‌طور پیش‌فرض {{domxref("HTMLAnchorElement/origin", "origin")}} از `Window.location` والد است. برای اطلاعات بیشتر، به مستندات [Referrer-Policy: strict-origin-when-cross-origin](/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy#strict-origin-when-cross-origin) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-The following will log a string containing the document's referrer.
+مثال زیر یک رشته شامل مرجع سند را ثبت می‌کند.
 
 ```js
 console.log(document.referrer);
 ```
 
-If the user navigated to the page via a link like `<a href="https://www.w3.org/">W3</a>`, then it will output the previous domain like `developer.mozilla.org`. If the user navigated to the page directly, it will output an empty string.
+اگر کاربر از طریق یک لینک مانند `<a href="https://www.w3.org/">W3</a>` به صفحه رفته باشد، دامنه قبلی مانند `developer.mozilla.org` را خروجی می‌دهد. اگر کاربر مستقیماً به صفحه رفته باشد، یک رشته خالی خروجی می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
