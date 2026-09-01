@@ -1,11 +1,5 @@
 ---
 title: "Element: scrollHeight property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight"
-status: "needs-translation"
----
-
----
-title: "Element: scrollHeight property"
 short-title: scrollHeight
 slug: Web/API/Element/scrollHeight
 page-type: web-api-instance-property
@@ -14,35 +8,35 @@ browser-compat: api.Element.scrollHeight
 
 {{APIRef("DOM")}}
 
-The **`scrollHeight`** read-only property of the {{domxref("Element")}} interface is a measurement of the height of an element's content, including content not visible on the screen due to overflow.
+ویژگی فقط‌خواندنی **`scrollHeight`** در رابط {{domxref("Element")}} اندازه‌گیری ارتفاع محتوای یک عنصر است؛ از جمله محتوایی که به دلیل سرریز (overflow) در صفحه نمایش قابل مشاهده نیست.
 
-![The user's viewport is an element with four regions labeled padding-top, border-top, border-bottom, padding-bottom. The scroll height goes from the container's padding top to the end of the padding bottom, well beyond the top and bottom of the viewport.](scrollheight.png)
+![نمای دید کاربر یک عنصر است با چهار ناحیه مشخص‌شده به نام‌های padding-top، border-top، border-bottom، padding-bottom. ارتفاع اسکرول از padding بالای ظرف (container) تا انتهای padding پایین می‌رود، بسیار فراتر از بالا و پایین نمای دید.](scrollheight.png)
 
-The `scrollHeight` value is equal to the minimum height the element would require in order to fit all the content in the viewport without using a vertical scrollbar. The height is measured in the same way as {{domxref("Element.clientHeight", "clientHeight")}}: it includes the element's padding, but not its border, margin or horizontal scrollbar (if present). It can also include the height of pseudo-elements such as {{cssxref("::before")}} or {{cssxref("::after")}}. If the element's content can fit without a need for vertical scrollbar, its `scrollHeight` is equal to {{domxref("Element.clientHeight", "clientHeight")}}.
+مقدار `scrollHeight` برابر است با حداقل ارتفاعی که عنصر برای جا دادن تمام محتوا در نمای دید بدون استفاده از نوار پیمایش عمودی لازم دارد. ارتفاع به همان روش {{domxref("Element.clientHeight", "clientHeight")}} اندازه‌گیری می‌شود: شامل `padding` عنصر است، اما `border`، `margin` یا نوار پیمایش افقی (در صورت وجود) را شامل نمی‌شود. همچنین ممکن است ارتفاع شبه‌عنصرهایی مانند {{cssxref("::before")}} یا {{cssxref("::after")}} را نیز شامل شود. اگر محتوای عنصر بدون نیاز به نوار پیمایش عمودی جا شود، `scrollHeight` آن برابر با {{domxref("Element.clientHeight", "clientHeight")}} است.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Problems and solutions
+## مسائل و راه‌حل‌ها
 
-### Determine if an element has been totally scrolled
+### تعیین اینکه آیا یک عنصر به‌طور کامل پیمایش شده است
 
-`scrollTop` is a non-rounded number, while `scrollHeight` and `clientHeight` are rounded — so the only way to determine if the scroll area is scrolled to the bottom is by seeing if the scroll amount is close enough to some threshold (in this example `1`):
+`scrollTop` عددی است که می‌تواند اعشار داشته باشد، در حالی که `scrollHeight` و `clientHeight` اعداد گردشده (صحیح) هستند — بنابراین تنها راه تعیین اینکه ناحیه پیمایش به پایین رسیده است، بررسی نزدیکی مقدار پیمایش به یک آستانه مشخص (در این مثال `1`) است:
 
 ```js
 Math.abs(element.scrollHeight - element.clientHeight - element.scrollTop) <= 1;
 ```
 
-The following will _not_ work all the time because `scrollTop` can contain decimals:
+کد زیر همیشه کار نخواهد کرد، زیرا `scrollTop` ممکن است اعشار داشته باشد:
 
 ```js
 element.scrollHeight - Math.abs(element.scrollTop) === element.clientHeight;
 ```
 
-### Determine if the content of an element is overflowing
+### تعیین اینکه آیا محتوای یک عنصر سرریز می‌کند
 
-This function returns a boolean value indicating if the content of an element is overflowing its bounds:
+این تابع یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا محتوای یک عنصر از مرزهای خود سرریز می‌کند یا خیر:
 
 ```js
 function isOverflowing(element) {
@@ -50,7 +44,7 @@ function isOverflowing(element) {
 }
 ```
 
-Then, you may want to check if it's scrollable in this case:
+سپس، ممکن است بخواهید بررسی کنید که آیا عنصر در این حالت قابل پیمایش است:
 
 ```js
 function isScrollable(element) {
@@ -61,13 +55,13 @@ function isScrollable(element) {
 }
 ```
 
-## Examples
+## مثال‌ها
 
-### Checking that the user has read a text
+### بررسی اینکه کاربر متنی را خوانده است
 
-Associated with the {{domxref("Element.scroll_event", "scroll")}} event, this equivalence can be useful to determine whether a user has read a text or not (see also the {{domxref("element.scrollTop")}} and {{domxref("element.clientHeight")}} properties).
+این تساوی، همراه با رویداد {{domxref("Element.scroll_event", "scroll")}}، می‌تواند برای تعیین اینکه آیا کاربر متنی را خوانده است مفید باشد (همچنین به ویژگی‌های {{domxref("element.scrollTop")}} و {{domxref("element.clientHeight")}} مراجعه کنید).
 
-The checkbox in the demo below is disabled, and so cannot be checked to show agreement until the content of the paragraph has been scrolled through. Once checked, the "Next" button can be clicked to continue.
+چک‌باکس در نسخه نمایشی زیر غیرفعال است و تا زمانی که محتوای پاراگراف پیمایش نشده باشد، نمی‌توان آن را برای اعلام موافقت علامت زد. پس از علامت زدن، دکمه «بعدی» برای ادامه قابل کلیک می‌شود.
 
 #### HTML
 
@@ -191,21 +185,21 @@ toNextStep.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('Checking_that_the_user_has_read_a_text', 640, 250)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Determining the dimensions of elements](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
+- [تعیین ابعاد عناصر](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
 - {{domxref("HTMLElement.offsetHeight")}}
 - {{domxref("Element.clientHeight")}}
 - {{domxref("Element.scrollWidth")}}
