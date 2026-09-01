@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: formEnctype property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/formEnctype"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: formEnctype property"
 short-title: formEnctype
 slug: Web/API/HTMLInputElement/formEnctype
 page-type: web-api-instance-property
@@ -14,31 +8,31 @@ browser-compat: api.HTMLInputElement.formEnctype
 
 {{APIRef("HTML DOM")}}
 
-The **`formEnctype`** property of the {{domxref("HTMLInputElement")}} interface is the {{Glossary("MIME_type", "MIME type")}} of the content sent to the server when the `<input>` with the `formEnctype` is the method of form submission. It reflects the value of the `<input>`'s [`formenctype`](/en-US/docs/Web/HTML/Reference/Elements/input#formenctype) attribute.
+خاصیت **`formEnctype`** در رابط {{domxref("HTMLInputElement")}}، نوع {{Glossary("MIME_type", "MIME")}} محتوایی است که هنگام ارسال فرم با استفاده از `<input>` دارای ویژگی `formEnctype` به سرور فرستاده می‌شود. این خاصیت مقدار ویژگی [`formenctype`](/en-US/docs/Web/HTML/Reference/Elements/input#formenctype) عنصر `<input>` را منعکس می‌کند.
 
-This property is valid only for [`submit`](/en-US/docs/Web/HTML/Reference/Elements/input/submit) and [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) `<input>` elements.
+این خاصیت فقط برای عناصر `<input>` از نوع [`submit`](/en-US/docs/Web/HTML/Reference/Elements/input/submit) و [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) معتبر است.
 
-Its value overrides the {{domxref("HTMLFormElement.enctype", "enctype")}} property of the {{domxref("HTMLFormElement")}} interface if the form is submitted via the input. This property can be retrieved or set. If not set, the value is the empty string (`""`).
+اگر فرم از طریق این input ارسال شود، مقدار این خاصیت، خاصیت {{domxref("HTMLFormElement.enctype", "enctype")}} را در رابط {{domxref("HTMLFormElement")}} بازنویسی می‌کند. این خاصیت قابل خواندن و نوشتن است. اگر تنظیم نشده باشد، مقدار آن رشتهٔ خالی (`""`) خواهد بود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```js
 inputElement.formEnctype = "application/x-www-form-urlencoded";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLInputElement.formAction")}}
 - {{domxref("HTMLInputElement.formMethod")}}
@@ -47,4 +41,4 @@ inputElement.formEnctype = "application/x-www-form-urlencoded";
 - {{domxref("HTMLFormElement.enctype")}}
 - [`<input type="submit">`](/en-US/docs/Web/HTML/Reference/Elements/input/submit)
 - [`<input type="image">`](/en-US/docs/Web/HTML/Reference/Elements/input/image)
-- [Sending form data](/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data)
+- [ارسال داده‌های فرم](/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data)
