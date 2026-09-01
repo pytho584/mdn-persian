@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: captureStream() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/captureStream"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: captureStream() method"
 short-title: captureStream()
 slug: Web/API/HTMLMediaElement/captureStream
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.HTMLMediaElement.captureStream
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`captureStream()`** method of the {{domxref("HTMLMediaElement")}} interface returns a {{domxref('MediaStream')}} object that streams a real-time capture of the content being rendered in the media element.
+متد **`captureStream()`** از رابط {{domxref("HTMLMediaElement")}} یک شیء {{domxref('MediaStream')}} برمی‌گرداند که محتوای در حال نمایش در عنصر رسانه را به‌صورت زنده ضبط (stream) می‌کند.
 
-This can be used, for example, as a source for a [WebRTC](/en-US/docs/Web/API/WebRTC_API) {{domxref("RTCPeerConnection")}}.
+برای مثال، می‌توان از این متد به‌عنوان منبعی برای یک {{domxref("RTCPeerConnection")}} در [WebRTC](/en-US/docs/Web/API/WebRTC_API) استفاده کرد.
 
 ## Syntax
 
@@ -24,20 +18,20 @@ This can be used, for example, as a source for a [WebRTC](/en-US/docs/Web/API/We
 captureStream()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار برگشتی
 
-A {{domxref('MediaStream')}} object which can be used as a source for audio and/or video data by other media processing code, or as a source for [WebRTC](/en-US/docs/Glossary/WebRTC).
+یک شیء {{domxref('MediaStream')}} که می‌تواند توسط سایر کدهای پردازش رسانه به‌عنوان منبع داده‌های صوتی و/یا تصویری استفاده شود، یا به‌عنوان منبعی برای [WebRTC](/en-US/docs/Glossary/WebRTC) به کار رود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-In this example, an event handler is established so that clicking a button starts capturing the contents of a media element with the ID `"playback"` into a {{domxref("MediaStream")}}.
-The stream can then be used for other purposes, such as a WebRTC stream to share prerecorded videos with another person during a video call.
+در این مثال، یک مدیریت‌کننده رویداد تنظیم شده است که با کلیک روی دکمه، محتویات یک عنصر رسانه با شناسه `"playback"` در یک {{domxref("MediaStream")}} ضبط می‌شود.
+سپس می‌توان از این استریم برای اهداف دیگر استفاده کرد، مانند یک استریم WebRTC برای به اشتراک‌گذاری ویدیوهای از پیش ضبط‌شده با شخص دیگری در طول تماس ویدیویی.
 
 ```js
 document.querySelector(".playAndRecord").addEventListener("click", () => {
@@ -47,20 +41,20 @@ document.querySelector(".playAndRecord").addEventListener("click", () => {
 });
 ```
 
-See [Recording a media element](/en-US/docs/Web/API/MediaStream_Recording_API/Recording_a_media_element) for a longer and more intricate example and explanation.
+برای یک مثال و توضیح طولانی‌تر و پیچیده‌تر، به [ضبط یک عنصر رسانه](/en-US/docs/Web/API/MediaStream_Recording_API/Recording_a_media_element) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Recording a media element](/en-US/docs/Web/API/MediaStream_Recording_API/Recording_a_media_element)
-- [MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API)
+- [ضبط یک عنصر رسانه](/en-US/docs/Web/API/MediaStream_Recording_API/Recording_a_media_element)
+- [API ضبط MediaStream](/en-US/docs/Web/API/MediaStream_Recording_API)
 - {{domxref("HTMLCanvasElement.captureStream()")}}
 - {{domxref("MediaStream")}}
-- [WebRTC API](/en-US/docs/Web/API/WebRTC_API)
+- [API WebRTC](/en-US/docs/Web/API/WebRTC_API)
