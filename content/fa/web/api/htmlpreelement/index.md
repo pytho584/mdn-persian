@@ -1,11 +1,5 @@
 ---
 title: "HTMLPreElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLPreElement"
-status: "needs-translation"
----
-
----
-title: HTMLPreElement
 slug: Web/API/HTMLPreElement
 page-type: web-api-interface
 browser-compat: api.HTMLPreElement
@@ -13,29 +7,29 @@ browser-compat: api.HTMLPreElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLPreElement`** interface exposes specific properties and methods (beyond those of the {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating a block of preformatted text ({{HtmlElement("pre")}}).
+واسط (interface) **`HTMLPreElement`** ویژگی‌ها و روش‌های خاصی (علاوه بر آن‌هایی که از واسط {{domxref("HTMLElement")}} به ارث می‌برد) را برای دستکاری یک بلوک از متن از پیش قالب‌بندی‌شده ({{HtmlElement("pre")}}) در معرض دید قرار می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLPreElement.width")}} {{deprecated_inline}}
-  - : A `long` value reflecting the obsolete [`width`](/en-US/docs/Web/HTML/Reference/Elements/pre#width) attribute, containing a fixed-size length for the {{HTMLElement("pre")}} element.
+  - : یک مقدار `long` که منعکس‌کنندهٔ ویژگی منسوخ‌شده [`width`](/en-US/docs/Web/HTML/Reference/Elements/pre#width) است و یک طول با اندازه ثابت برای عنصر {{HTMLElement("pre")}} نگه می‌دارد.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش خاصی ندارد؛ روش‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("pre")}}
+- عنصر HTML که این واسط را پیاده‌سازی می‌کند: {{HTMLElement("pre")}}
