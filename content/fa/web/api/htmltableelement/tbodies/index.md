@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableElement: tBodies property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/tBodies"
-status: "needs-translation"
----
-
----
-title: "HTMLTableElement: tBodies property"
 short-title: tBodies
 slug: Web/API/HTMLTableElement/tBodies
 page-type: web-api-instance-property
@@ -14,14 +8,11 @@ browser-compat: api.HTMLTableElement.tBodies
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLTableElement.tBodies`** read-only property returns a
-live {{domxref("HTMLCollection")}} of the bodies in a {{htmlElement("table")}}.
+ویژگی فقط‌خواندنی **`HTMLTableElement.tBodies`** یک {{domxref("HTMLCollection")}} زنده از بدنه‌های یک {{htmlElement("table")}} را برمی‌گرداند.
 
-Although the property is read-only, the returned object is live and allows the
-modification of its content.
+اگرچه این ویژگی فقط‌خواندنی است، اما شیء بازگشتی زنده بوده و امکان تغییر محتوای آن وجود دارد.
 
-The collection returned includes implicit {{HTMLElement("tbody")}} elements. For
-example:
+مجموعه‌ی بازگشتی شامل عناصر {{HTMLElement("tbody")}} ضمنی نیز می‌شود. برای مثال:
 
 ```html
 <table>
@@ -31,30 +22,29 @@ example:
 </table>
 ```
 
-The HTML DOM generated from the above HTML will have a {{HTMLElement("tbody")}} element
-even though the tags are not included in the source HTML.
+DOM تولیدشده از HTML فوق شامل یک عنصر {{HTMLElement("tbody")}} خواهد بود، حتی اگر این تگ‌ها در HTML منبع وجود نداشته باشند.
 
-## Value
+## مقدار
 
-A live {{domxref("HTMLCollection")}}.
+یک {{domxref("HTMLCollection")}} زنده.
 
-## Examples
+## مثال‌ها
 
-This snippet gets the number of bodies in a table.
+این قطعه‌کد تعداد بدنه‌های یک جدول را به دست می‌آورد.
 
 ```js
 myTable.tBodies.length;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLCollection")}}
 - {{HTMLElement("tbody")}}
