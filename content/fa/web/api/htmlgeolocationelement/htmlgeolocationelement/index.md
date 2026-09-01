@@ -1,11 +1,5 @@
 ---
 title: "HTMLGeolocationElement: HTMLGeolocationElement() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLGeolocationElement/HTMLGeolocationElement"
-status: "needs-translation"
----
-
----
-title: "HTMLGeolocationElement: HTMLGeolocationElement() constructor"
 short-title: HTMLGeolocationElement()
 slug: Web/API/HTMLGeolocationElement/HTMLGeolocationElement
 page-type: web-api-constructor
@@ -16,48 +10,48 @@ browser-compat: api.HTMLGeolocationElement.HTMLGeolocationElement
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}
 
-The **`HTMLGeolocationElement()`** constructor creates a new {{domxref("HTMLGeolocationElement")}} object instance.
+سازندهٔ **`HTMLGeolocationElement()`** یک نمونهٔ جدید از شیء {{domxref("HTMLGeolocationElement")}} می‌سازد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new HTMLGeolocationElement()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("HTMLGeolocationElement")}} object instance, if used internally by the browser.
+یک نمونهٔ جدید از شیء {{domxref("HTMLGeolocationElement")}}، اگر به‌صورت داخلی توسط مرورگر استفاده شود.
 
-Developers cannot use the `HTMLGeolocationElement()` constructor directly to create a new `HTMLGeolocationElement` instance: attempting to do so results in an "illegal constructor" error.
+توسعه‌دهندگان نمی‌توانند مستقیماً از سازندهٔ `HTMLGeolocationElement()` برای ایجاد یک نمونهٔ جدید از `HTMLGeolocationElement` استفاده کنند: تلاش برای انجام این کار منجر به خطای «illegal constructor» می‌شود.
 
-### Examples
+### مثال‌ها
 
-#### Creating a new `HTMLGeolocationElement` instance programmatically
+#### ایجاد یک نمونهٔ جدید از `HTMLGeolocationElement` به‌صورت برنامه‌نویسی‌شده
 
-To programmatically create a new `HTMLGeolocationElement` instance, instead of trying to use the constructor directly, you would create a new {{htmlelement("geolocation")}} element instance using {{domxref("Document.createElement()")}}:
+برای ایجاد برنامه‌نویسی‌شدهٔ یک نمونهٔ جدید از `HTMLGeolocationElement`، به‌جای تلاش برای استفادهٔ مستقیم از سازنده، یک نمونهٔ جدید از عنصر {{htmlelement("geolocation")}} را با استفاده از {{domxref("Document.createElement()")}} ایجاد می‌کنید:
 
 ```js
 const geo = document.createElement("geolocation");
 ```
 
-You can then use it by appending it to the DOM:
+سپس می‌توانید با افزودن آن به DOM از آن استفاده کنید:
 
 ```js
 document.body.append(geo);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{htmlelement("geolocation")}} element
+- عنصر {{htmlelement("geolocation")}}
