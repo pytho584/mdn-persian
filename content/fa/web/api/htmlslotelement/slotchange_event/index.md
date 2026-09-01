@@ -1,9 +1,4 @@
----
-title: "HTMLSlotElement: slotchange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement/slotchange_event"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "HTMLSlotElement: slotchange event"
 short-title: slotchange
@@ -14,18 +9,18 @@ browser-compat: api.HTMLSlotElement.slotchange_event
 
 {{APIRef("Web Components")}}
 
-The **`slotchange`** event is fired on an {{DOMxRef("HTMLSlotElement")}} instance ({{HTMLElement("slot")}} element) when the node(s) contained in that slot change.
+رویداد **`slotchange`** روی یک نمونه از {{DOMxRef("HTMLSlotElement")}} (عنصر {{HTMLElement("slot")}}) هنگامی که گره(های) موجود در آن حفره (slot) تغییر می‌کند، منتشر می‌شود.
 
 > [!NOTE]
-> The `slotchange` event doesn't fire if the children of a slotted node change — only if you change (e.g., add or delete) the actual nodes themselves.
+> رویداد `slotchange` زمانی که فرزندان یک گره‌ی حفره‌شده (slotted node) تغییر می‌کنند، فعال نمی‌شود — تنها زمانی که خود گره‌ها را تغییر دهید (مثلاً اضافه یا حذف کنید) این رویداد رخ می‌دهد.
 
-In order to trigger a **slotchange** event, one has to set or remove the `slot` attribute.
+برای فعال کردن رویداد **slotchange**، باید صفت `slot` را تنظیم یا حذف کنید.
 
-This event is not cancelable.
+این رویداد قابل لغو (cancelable) نیست.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم یک ویژگی مدیریت رویداد (event handler property) به کار می‌رود.
 
 ```js-nolint
 addEventListener("slotchange", (event) => { })
@@ -33,11 +28,11 @@ addEventListener("slotchange", (event) => { })
 onslotchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
 ```js
 element.setAttribute("slot", slotName);
@@ -46,7 +41,7 @@ element.removeAttribute("slot");
 // element.assignedSlot = null
 ```
 
-The following snippet is taken from our [slotchange example](https://github.com/mdn/web-components-examples/tree/main/slotchange) ([see it live also](https://mdn.github.io/web-components-examples/slotchange/)).
+قطعه کد زیر از [مثال slotchange](https://github.com/mdn/web-components-examples/tree/main/slotchange) ما گرفته شده است ([همچنین به صورت زنده مشاهده کنید](https://mdn.github.io/web-components-examples/slotchange/)).
 
 ```js
 let slots = this.shadowRoot.querySelectorAll("slot");
@@ -58,18 +53,19 @@ slots[1].addEventListener("slotchange", (e) => {
 });
 ```
 
-Here we grab references to all the `<slot>`s, then add a `slotchange` event listener to the template's second slot — which is the one which has its contents changed in the example.
+در اینجا به تمام عناصر `<slot>` ارجاع می‌دهیم، سپس یک شنونده رویداد `slotchange` به دومین حفره (slot) الگو اضافه می‌کنیم — حفره‌ای که محتوایش در مثال تغییر می‌کند.
 
-Every time the element inserted in the slot changes, we log a report to the console saying which slot has changed, and what the new node inside the slot is.
+هر بار که عنصر درون حفره تغییر می‌کند، گزارشی در کنسول ثبت می‌شود که نشان می‌دهد کدام حفره تغییر کرده و گره جدید درون حفره چیست.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLSlotElement")}}
+```
