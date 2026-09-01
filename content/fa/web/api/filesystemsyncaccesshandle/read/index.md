@@ -1,11 +1,5 @@
 ---
 title: "FileSystemSyncAccessHandle: read() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemSyncAccessHandle/read"
-status: "needs-translation"
----
-
----
-title: "FileSystemSyncAccessHandle: read() method"
 short-title: read()
 slug: Web/API/FileSystemSyncAccessHandle/read
 page-type: web-api-instance-method
@@ -14,87 +8,86 @@ browser-compat: api.FileSystemSyncAccessHandle.read
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers("dedicated")}}
 
-The **`read()`** method of the
-{{domxref("FileSystemSyncAccessHandle")}} interface reads the content of the file associated with the handle into a specified buffer, optionally at a given offset.
+متد **`read()``** از رابط {{domxref("FileSystemSyncAccessHandle")}} محتوای فایل مرتبط با دسته را در یک بافر مشخص شده، به‌صورت اختیاری در یک آفست معین، می‌خواند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 read(buffer, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `buffer`
-  - : An {{jsxref("ArrayBuffer")}} or `ArrayBufferView` (such as a {{jsxref("DataView")}}) representing the buffer that the file content should be read into. Note that you cannot directly manipulate the contents of an `ArrayBuffer`. Instead, you create one of the typed array objects like an {{jsxref("Int8Array")}} or a {{jsxref("DataView")}} object which represents the buffer in a specific format, and use that to read and write the contents of the buffer.
+  - : یک {{jsxref("ArrayBuffer")}} یا `ArrayBufferView` (مانند {{jsxref("DataView")}}) که نشان‌دهنده بافری است که محتوای فایل باید در آن خوانده شود. توجه داشته باشید که نمی‌توانید مستقیماً محتویات یک `ArrayBuffer` را دستکاری کنید. در عوض، یکی از اشیاء آرایه تایپ‌شده مانند {{jsxref("Int8Array")}} یا یک شیء {{jsxref("DataView")}} ایجاد می‌کنید که بافر را در قالبی خاص نمایش می‌دهد و از آن برای خواندن و نوشتن محتویات بافر استفاده می‌کنید.
 - `options` {{optional_inline}}
-  - : An options object containing the following properties:
+  - : یک شیء گزینه‌ها که شامل ویژگی‌های زیر است:
     - `at`
-      - : A number representing the offset in bytes that the file should be read from.
+      - : یک عدد که نشان‌دهنده آفست (بر حسب بایت) است که فایل باید از آن位置 خوانده شود.
 
-### Return value
+### مقدار بازگشتی
 
-A number representing the number of bytes read from the file.
+یک عدد که تعداد بایت‌های خوانده‌شده از فایل را نشان می‌دهد.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the associated access handle is already closed.
+  - : اگر دسته دسترسی مرتبط قبلاً بسته شده باشد، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if the underlying file system does not support reading the file from the specified file offset.
+  - : اگر سیستم فایل زیرین از خواندن فایل از آفست مشخص‌شده پشتیبانی نکند، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following asynchronous event handler function is contained inside a Web Worker. On receiving a message from the main thread it:
+تابع کنترل‌کننده رویداد ناهمگام زیر درون یک Web Worker قرار دارد. پس از دریافت پیام از رشته اصلی، موارد زیر را انجام می‌دهد:
 
-- Creates a synchronous file access handle.
-- Gets the size of the file and creates an {{jsxref("ArrayBuffer")}} to contain it.
-- Reads the file contents into the buffer.
-- Encodes the message and writes it to the end of the file.
-- Persists the changes to disk and closes the access handle.
+- یک دسته دسترسی همگام به فایل ایجاد می‌کند.
+- اندازه فایل را دریافت می‌کند و یک {{jsxref("ArrayBuffer")}} برای نگهداری آن ایجاد می‌کند.
+- محتویات فایل را درون بافر می‌خواند.
+- پیام را رمزگذاری می‌کند و آن را به انتهای فایل می‌نویسد.
+- تغییرات را روی دیسک ذخیره می‌کند و دسته دسترسی را می‌بندد.
 
 ```js
 onmessage = async (e) => {
-  // Retrieve message sent to work from main script
+  // دریافت پیام ارسال‌شده به worker از اسکریپت اصلی
   const message = e.data;
 
-  // Get handle to draft file
+  // دریافت دسته فایل پیش‌نویس
   const root = await navigator.storage.getDirectory();
   const draftHandle = await root.getFileHandle("draft.txt", { create: true });
-  // Get sync access handle
+  // دریافت دسته دسترسی همگام
   const accessHandle = await draftHandle.createSyncAccessHandle();
 
-  // Get size of the file.
+  // دریافت اندازه فایل
   const fileSize = accessHandle.getSize();
-  // Read file content to a buffer.
+  // خواندن محتوای فایل در یک بافر
   const buffer = new DataView(new ArrayBuffer(fileSize));
   const readBuffer = accessHandle.read(buffer, { at: 0 });
 
-  // Write the message to the end of the file.
+  // نوشتن پیام در انتهای فایل
   const encoder = new TextEncoder();
   const encodedMessage = encoder.encode(message);
   const writeBuffer = accessHandle.write(encodedMessage, { at: readBuffer });
 
-  // Persist changes to disk.
+  // ذخیره تغییرات روی دیسک
   accessHandle.flush();
 
-  // Always close FileSystemSyncAccessHandle if done.
+  // همیشه FileSystemSyncAccessHandle را در صورت اتمام کار ببندید
   accessHandle.close();
 };
 ```
 
 > [!NOTE]
-> In earlier versions of the spec, {{domxref("FileSystemSyncAccessHandle.close()", "close()")}}, {{domxref("FileSystemSyncAccessHandle.flush()", "flush()")}}, {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}}, and {{domxref("FileSystemSyncAccessHandle.truncate()", "truncate()")}} were wrongly specified as asynchronous methods, and older versions of some browsers implement them in this way. However, all current browsers that support these methods implement them as synchronous methods.
+> در نسخه‌های قدیمی‌تر مشخصات، متدهای {{domxref("FileSystemSyncAccessHandle.close()", "close()")}}، {{domxref("FileSystemSyncAccessHandle.flush()", "flush()")}}، {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}} و {{domxref("FileSystemSyncAccessHandle.truncate()", "truncate()")}} به اشتباه به‌عنوان متدهای ناهمگام مشخص شده بودند و نسخه‌های قدیمی‌تر برخی مرورگرها آن‌ها را به این صورت پیاده‌سازی می‌کنند. با این حال، تمام مرورگرهای فعلی که از این متدها پشتیبانی می‌کنند، آن‌ها را به‌عنوان متدهای همگام پیاده‌سازی می‌کنند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
