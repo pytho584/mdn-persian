@@ -1,11 +1,5 @@
 ---
 title: "DelegatedInkTrailPresenter: updateInkTrailStartPoint() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DelegatedInkTrailPresenter/updateInkTrailStartPoint"
-status: "needs-translation"
----
-
----
-title: "DelegatedInkTrailPresenter: updateInkTrailStartPoint() method"
 short-title: updateInkTrailStartPoint()
 slug: Web/API/DelegatedInkTrailPresenter/updateInkTrailStartPoint
 page-type: web-api-instance-method
@@ -16,55 +10,55 @@ browser-compat: api.DelegatedInkTrailPresenter.updateInkTrailStartPoint
 
 {{APIRef("Ink API")}}{{SeeCompatTable}}
 
-The **`updateInkTrailStartPoint()`** method of the {{domxref("DelegatedInkTrailPresenter")}} interface indicates which {{domxref("PointerEvent")}} was used as the last rendering point for the current frame, allowing the OS-level compositor to render a delegated ink trail ahead of the next pointer event being dispatched.
+**`updateInkTrailStartPoint()`** 方法属于 {{domxref("DelegatedInkTrailPresenter")}} 接口，用于指明哪个 {{domxref("PointerEvent")}} 被用作当前帧的最后渲染点，从而允许操作系统级别的合成器在下一次指针事件派发之前，渲染一段委派（delegated）的墨迹轨迹（ink trail）。
 
-## Syntax
+## 语法
 
 ```js-nolint
 updateInkTrailStartPoint(event, style)
 ```
 
-### Parameters
+### 参数
 
 - `event` {{optional_inline}}
-  - : A {{domxref("PointerEvent")}}.
+  - : 一个 {{domxref("PointerEvent")}}。
 - `style`
-  - : An object defining the trail style, which contains the following properties:
+  - : 一个定义轨迹样式的对象，包含以下属性：
     - `color`
-      - : A {{jsxref("String")}} containing a valid CSS color code, indicating the color the presenter will use when rendering the ink trail.
+      - : 一个 {{jsxref("String")}}，包含有效的 CSS 颜色代码，表示呈现器在渲染墨迹轨迹时使用的颜色。
     - `diameter`
-      - : A number representing the diameter the presenter will use when rendering the ink trail.
+      - : 一个数字，表示呈现器在渲染墨迹轨迹时使用的直径。
 
-### Return value
+### 返回值
 
-`undefined`.
+`undefined`。
 
-### Exceptions
+### 异常
 
 - `Error` {{domxref("DOMException")}}
-  - : An error is thrown and the operation is aborted if the:
-    - `color` property does not contain a valid CSS color code.
-    - `diameter` property is not a number or less than 1.
-    - {{domxref("DelegatedInkTrailPresenter.presentationArea", "presentationArea")}} element is removed from the document before or during rendering.
+  - : 在以下情况下会抛出错误并中止操作：
+    - `color` 属性不包含有效的 CSS 颜色代码。
+    - `diameter` 属性不是数字或小于 1。
+    - {{domxref("DelegatedInkTrailPresenter.presentationArea", "presentationArea")}} 元素在渲染之前或渲染期间被从文档中移除。
 
-## Examples
+## 示例
 
-### Drawing an ink trail
+### 绘制墨迹轨迹
 
-In this example, we draw a trail onto a 2D canvas. Near the start of the code, we call {{domxref("Ink.requestPresenter()")}}, passing it the canvas as the presentation area for it to take care of and storing the promise it returns in the `presenter` variable.
+在此示例中，我们在一个 2D 画布上绘制轨迹。在代码开头，我们调用 {{domxref("Ink.requestPresenter()")}}，将画布作为呈现区域交由它处理，并将返回的 promise 存储在 `presenter` 变量中。
 
-Later on, in the `pointermove` event listener, the new position of the trailhead is drawn onto the canvas each time the event fires. In addition, the {{domxref("DelegatedInkTrailPresenter")}} object returned when the `presenter` promise fulfills has its `updateInkTrailStartPoint()` method invoked; this is passed:
+随后，在 `pointermove` 事件监听器中，每次事件触发时，轨迹起点的新位置都会被绘制到画布上。此外，当 `presenter` promise 兑现时返回的 {{domxref("DelegatedInkTrailPresenter")}} 对象会调用其 `updateInkTrailStartPoint()` 方法；该方法接收：
 
-- The last trusted pointer event representing the rendering point for the current frame.
-- A `style` object containing color and diameter settings.
+- 最后一个受信任的指针事件，表示当前帧的渲染点。
+- 一个包含颜色和直径设置的 `style` 对象。
 
-The result is that a delegated ink trail is drawn ahead of the default browser rendering on the app's behalf, in the specified style, until the next time it receives a `pointermove` event.
+结果是，在浏览器默认渲染之前，会以指定的样式代表应用绘制一条委派的墨迹轨迹，直到下次收到 `pointermove` 事件为止。
 
 #### HTML
 
 ```html
 <canvas id="canvas"></canvas>
-<div id="div">Delegated ink trail should match the color of this div.</div>
+<div id="div">委派墨迹轨迹的颜色应与此 div 的颜色匹配。</div>
 ```
 
 #### CSS
@@ -118,14 +112,14 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 ```
 
-#### Result
+#### 结果
 
 {{EmbedLiveSample("Drawing an ink trail")}}
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
