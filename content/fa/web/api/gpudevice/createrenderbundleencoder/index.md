@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: createRenderBundleEncoder() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createRenderBundleEncoder"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: createRenderBundleEncoder() method"
 short-title: createRenderBundleEncoder()
 slug: Web/API/GPUDevice/createRenderBundleEncoder
 page-type: web-api-instance-method
@@ -14,39 +8,38 @@ browser-compat: api.GPUDevice.createRenderBundleEncoder
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`createRenderBundleEncoder()`** method of the
-{{domxref("GPUDevice")}} interface creates a {{domxref("GPURenderBundleEncoder")}} that can be used to pre-record bundles of commands. These can be reused in {{domxref("GPURenderPassEncoder")}}s via the {{domxref("GPURenderPassEncoder.executeBundles", "executeBundles()")}} method, as many times as required.
+متد **`createRenderBundleEncoder()`** از رابط {{domxref("GPUDevice")}} یک {{domxref("GPURenderBundleEncoder")}} ایجاد می‌کند که می‌توان از آن برای ضبط از پیشِ دسته‌ای از دستورات استفاده کرد. این دسته‌ها را می‌توان در {{domxref("GPURenderPassEncoder")}}ها با استفاده از متد {{domxref("GPURenderPassEncoder.executeBundles", "executeBundles()")}}، به تعداد دلخواه، دوباره استفاده کرد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 createRenderBundleEncoder(descriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `descriptor`
-  - : An object containing the following properties:
+  - : یک شیء حاوی ویژگی‌های زیر:
     - `colorFormats`
-      - : An array of enumerated values specifying the expected color formats for render targets. For possible values, see the [`GPUTextureFormat` definition](https://gpuweb.github.io/gpuweb/#depth-or-stencil-format) in the spec.
+      - : آرایه‌ای از مقادیر شمارشی که فرمت‌های رنگی مورد انتظار برای اهداف رندر (render targets) را مشخص می‌کند. برای مقادیر ممکن، به تعریف [`GPUTextureFormat`](https://gpuweb.github.io/gpuweb/#depth-or-stencil-format) در مشخصات فنی مراجعه کنید.
     - `depthReadOnly` {{optional_inline}}
-      - : A boolean. If `true`, specifies that executing any {{domxref("GPURenderBundle")}} created by the {{domxref("GPURenderBundleEncoder")}} will not modify the depth component of the `depthStencilFormat` when executed. If omitted, `depthReadOnly` will default to `false`.
+      - : یک مقدار بولی. اگر `true` باشد، مشخص می‌کند که اجرای هر {{domputed("GPURenderBundle")}} ایجاد شده توسط {{domxref("GPURenderBundleEncoder")}}، مؤلفه عمق (depth) `depthStencilFormat` را هنگام اجرا تغییر نخواهد داد. اگر حذف شود، `depthReadOnly` به طور پیش‌فرض `false` خواهد بود.
     - `depthStencilFormat` {{optional_inline}}
-      - : An enumerated value that specifies the expected depth-or-stencil format for render targets. For possible values, see the [Depth-stencil formats](https://gpuweb.github.io/gpuweb/#depth-or-stencil-format) section of the spec.
+      - : یک مقدار شمارشی که فرمت عمق-یا-استنسیل (depth-or-stencil) مورد انتظار برای اهداف رندر را مشخص می‌کند. برای مقادیر ممکن، بخش [فرمت‌های عمق-استنسیل](https://gpuweb.github.io/gpuweb/#depth-or-stencil-format) در مشخصات فنی را ببینید.
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : رشته‌ای که برچسبی برای شناسایی شیء فراهم می‌کند، برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
     - `sampleCount` {{optional_inline}}
-      - : A number representing the expected sample count for render targets.
+      - : عددی که تعداد نمونه‌های (sample count) مورد انتظار برای اهداف رندر را مشخص می‌کند.
     - `stencilReadOnly` {{optional_inline}}
-      - : A boolean. If `true`, specifies that executing any {{domxref("GPURenderBundle")}} created by the {{domxref("GPURenderBundleEncoder")}} will not modify the stencil component of the `depthStencilFormat` when executed. If omitted, `stencilReadOnly` will default to `false`.
+      - : یک مقدار بولی. اگر `true` باشد، مشخص می‌کند که اجرای هر {{domputed("GPURenderBundle")}} ایجاد شده توسط {{domxref("GPURenderBundleEncoder")}}، مؤلفه استنسیل (stencil) `depthStencilFormat` را هنگام اجرا تغییر نخواهد داد. اگر حذف شود، `stencilReadOnly` به طور پیش‌فرض `false` خواهد بود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("GPURenderBundleEncoder")}} object instance.
+یک نمونه از شیء {{domxref("GPURenderBundleEncoder")}}.
 
-## Examples
+## مثال‌ها
 
-In the WebGPU Samples [Animometer example](https://webgpu.github.io/webgpu-samples/samples/animometer/), numerous similar operations are done on many different objects simultaneously. A bundle of commands is encoded using the following function:
+در نمونه WebGPU با نام [Animometer](https://webgpu.github.io/webgpu-samples/samples/animometer/)، عملیات مشابه متعددی به طور همزمان روی اشیاء مختلف انجام می‌شود. یک دسته از دستورات با استفاده از تابع زیر کدگذاری می‌شود:
 
 ```js
 function recordRenderPass(
@@ -72,7 +65,7 @@ function recordRenderPass(
 }
 ```
 
-Later on, a {{domxref("GPURenderBundleEncoder")}} is created using `createRenderBundleEncoder()`, the function is invoked, and the command bundle is recorded into a {{domxref("GPURenderBundle")}} using {{domxref("GPURenderBundleEncoder.finish()")}}:
+سپس، یک {{domxref("GPURenderBundleEncoder")}} با استفاده از `createRenderBundleEncoder()` ایجاد می‌شود، تابع فراخوانی می‌شود، و دسته دستورات با استفاده از {{domxref("GPURenderBundleEncoder.finish()")}} در یک {{domxref("GPURenderBundle")}} ضبط می‌شود:
 
 ```js
 const renderBundleEncoder = device.createRenderBundleEncoder({
@@ -82,7 +75,7 @@ recordRenderPass(renderBundleEncoder);
 const renderBundle = renderBundleEncoder.finish();
 ```
 
-{{domxref("GPURenderPassEncoder.executeBundles()")}} is then used to reuse the work across multiple render passes to improve performance. Study the example code listing for the full context.
+سپس از {{domxref("GPURenderPassEncoder.executeBundles()")}} برای استفاده مجدد از کار در چندین پاس رندر (render pass) برای بهبود کارایی استفاده می‌شود. برای زمینه کامل، فهرست کد مثال را مطالعه کنید.
 
 ```js
 // …
@@ -114,14 +107,14 @@ return function doDraw(timestamp) {
 // …
 ```
 
-## Specifications
+## مشخصات فنی
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
