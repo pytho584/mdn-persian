@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: port property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/port"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: port property"
 short-title: port
 slug: Web/API/HTMLAnchorElement/port
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.HTMLAnchorElement.port
 
 {{ApiRef("HTML DOM")}}
 
-The **`port`** property of the {{domxref("HTMLAnchorElement")}} interface is a string containing the port number of the `<a>` element's `href`. If the port is the default for the protocol (`80` for `ws:` and `http:`, `443` for `wss:` and `https:`, and `21` for `ftp:`), this property contains an empty string, `""`.
+ویژگی **`port`** از رابط {{domxref("HTMLAnchorElement")}} یک رشته است که شامل شماره پورتِ `href` عنصر `<a>` می‌شود. اگر پورت، مقدار پیش‌فرضِ پروتکل باشد (`80` برای `ws:` و `http:`، `443` برای `wss:` و `https:`، و `21` برای `ftp:`)، این ویژگی یک رشتهٔ خالی (`""`) را در بر می‌گیرد.
 
-This property can be set to change the port of the URL. If the URL has no {{domxref("HTMLAnchorElement.host", "host")}} or its scheme is `file:`, then setting this property has no effect. It also silently ignores invalid port numbers.
+این ویژگی را می‌توان برای تغییر پورت URL تنظیم کرد. اگر URL میزبان ({{domxref("HTMLAnchorElement.host", "host")}}) نداشته باشد یا طرح (scheme) آن `file:` باشد، تنظیم این ویژگی هیچ تأثیری نخواهد داشت. همچنین شماره پورت‌های نامعتبر را بی‌صدا نادیده می‌گیرد.
 
-See {{domxref("URL.port")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.port")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Getting the port from an anchor link
+### دریافت پورت از یک پیوند anchor
 
 ```js
 // An <a id="myAnchor" href="https://developer.mozilla.org:443/en-US/docs/HTMLAnchorElement"> element is in the document
@@ -40,14 +34,14 @@ const anchor = document.getElementByID("myAnchor");
 anchor.port; // Returns:'8888'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAnchorElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAnchorElement")}} که این ویژگی به آن تعلق دارد.
