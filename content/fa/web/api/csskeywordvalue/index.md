@@ -1,10 +1,4 @@
 ---
-title: "CSSKeywordValue"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSKeywordValue"
-status: "needs-translation"
----
-
----
 title: CSSKeywordValue
 slug: Web/API/CSSKeywordValue
 page-type: web-api-interface
@@ -13,35 +7,35 @@ browser-compat: api.CSSKeywordValue
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSKeywordValue`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) represents the value of a CSS keyword or other identifier.
+رابط **`CSSKeywordValue`** از [API مدل شیء تایپ‌شده CSS](/en-US/docs/Web/API/CSS_Typed_OM_API) نشان‌دهندهٔ مقدار یک کلمه کلیدی یا شناسهٔ دیگر CSS است.
 
-The interface instance name is a {{Glossary("stringifier")}}, so when used anywhere a string is expected it will return the value of `CSSKeyword.value`.
+نام نمونهٔ این رابط یک {{Glossary("stringifier")}} (رشته‌ساز) است، بنابراین وقتی در هر جایی که یک رشته انتظار می‌رود استفاده شود، مقدار `CSSKeyword.value` را برمی‌گرداند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSKeywordValue.CSSKeywordValue", "CSSKeywordValue()")}}
-  - : Creates a new `CSSKeywordValue` object.
+  - : یک شیء `CSSKeywordValue` جدید می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('CSSKeywordValue.value')}}
-  - : A string that represents the value of the `CSSKeywordValue`.
+  - : یک رشته که مقدار `CSSKeywordValue` را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSStyleValue")}}._
+_همچنین روش‌هایی را از رابط والد خود، {{DOMxRef("CSSStyleValue")}}، به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### کاربرد پایه
 
-This example sets the CSS {{cssxref('display')}} property to `initial`, using `CSSKeywordValue` to define the value.
+این مثال ویژگی CSS {{cssxref('display')}} را با استفاده از `CSSKeywordValue` برای تعریف مقدار، روی `initial` تنظیم می‌کند.
 
 #### HTML
 
-The HTML defines an element on which we'll set the value of the `display` keyword, an {{htmlelement("hr")}} element, a button that will be used to set the value of the `display` keyword, and a "Reset" button to reset the example.
+HTML یک عنصر تعریف می‌کند که مقدار کلمه کلیدی `display` را روی آن تنظیم می‌کنیم، یک عنصر {{htmlelement("hr")}}، یک دکمه که برای تنظیم مقدار کلمه کلیدی `display` استفاده می‌شود، و یک دکمه «بازنشانی» برای بازنشانی مثال.
 
 ```html
 <div id="myElement">
@@ -55,7 +49,7 @@ The HTML defines an element on which we'll set the value of the `display` keywor
 
 #### CSS
 
-The CSS initially sets the element to `flex`, which forces it to display full-width, and gives it a solid border with padding and margins.
+CSS ابتدا عنصر را روی `flex` تنظیم می‌کند که آن را مجبور به نمایش تمام‌عرض می‌کند، و یک حاشیه توپر با padding و margin به آن می‌دهد.
 
 ```css
 #myElement {
@@ -68,10 +62,9 @@ The CSS initially sets the element to `flex`, which forces it to display full-wi
 
 #### JavaScript
 
-The code first gets a handle to the "Set initial" button and adds a listener to handle the click event when it is pressed.
+کد ابتدا یک اشاره‌گر به دکمه «تنظیم initial» می‌گیرد و یک شنونده برای مدیریت رویداد کلیک هنگام فشار دادن آن اضافه می‌کند.
 
-The listener then gets the element's inline styles using {{domxref(Element.attributeStyleMap)}}, and sets the `display` attribute with a newly constructed `CSSKeywordValue`.
-It then logs the value of that keyword to the console.
+شنونده سپس استایل‌های درون‌خطی عنصر را با استفاده از {{domxref(Element.attributeStyleMap)}} می‌گیرد و ویژگی `display` را با یک `CSSKeywordValue` تازه ساخته شده تنظیم می‌کند. سپس مقدار آن کلمه کلیدی را در کنسول ثبت می‌کند.
 
 ```js
 const setInitialButton = document.querySelector("#set-initial");
@@ -84,7 +77,7 @@ setInitialButton.addEventListener("click", () => {
 });
 ```
 
-Note that we can't log the value of the inline styles before pressing the button, because there aren't any.
+توجه داشته باشید که نمی‌توانیم مقدار استایل‌های درون‌خطی را قبل از فشار دادن دکمه ثبت کنیم، زیرا هیچ استایلی وجود ندارد.
 
 ```js hidden
 const resetButton = document.querySelector("#reset");
@@ -93,24 +86,21 @@ resetButton.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-Right click on the element and open the [developer tools inspector](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/select_an_element/index.html) to inspect its styles.
-You should see that `display: flex` is set on `#myElement`.
-Press "Set initial" to make set the inline style of `display` to `"initial"`.
-You should see the styles change in the inspector, and the element will also shrink slightly as the `flex` is disabled.
+روی عنصر کلیک راست کنید و [بازرس ابزار توسعه‌دهنده](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/select_an_element/index.html) را برای بازرسی استایل‌های آن باز کنید. باید ببینید که `display: flex` روی `#myElement` تنظیم شده است. دکمه «تنظیم initial» را فشار دهید تا استایل درون‌خطی `display` را روی `"initial"` تنظیم کنید. باید تغییر استایل‌ها را در بازرس ببینید، و عنصر نیز کمی کوچک می‌شود زیرا `flex` غیرفعال می‌شود.
 
 {{EmbedLiveSample("Basic usage", 120, 150)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref('CSSImageValue')}}
 - {{domxref('CSSNumericValue')}}
