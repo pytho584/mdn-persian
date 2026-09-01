@@ -1,7 +1,5 @@
 ---
 title: "CSSPseudoElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement"
-status: "needs-translation"
 ---
 
 ---
@@ -15,63 +13,63 @@ browser-compat: api.CSSPseudoElement
 
 {{APIRef}}{{SeeCompatTable}}
 
-The **`CSSPseudoElement`** interface represents a [pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements).
+رابطهٔ **`CSSPseudoElement`** یک [شبه‌عنصر (pseudo-element)](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) را نمایش می‌دهد.
 
-Instances of this interface may be obtained by calling {{DOMxRef("Element.pseudo()")}} or {{DOMxRef("CSSPseudoElement.pseudo()")}}.
+نمونه‌های این رابط را می‌توان با فراخوانی {{DOMxRef("Element.pseudo()")}} یا {{DOMxRef("CSSPseudoElement.pseudo()")}} به دست آورد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{DOMxRef("CSSPseudoElement.element")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : Returns the ultimate originating {{DOMxRef("Element")}} of the pseudo-element.
+  - : عنصر مبدأ نهایی (ultimate originating) شبه‌عنصر را به‌صورت {{DOMxRef("Element")}} برمی‌گرداند.
 - {{DOMxRef("CSSPseudoElement.parent")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : Returns the immediate originating element of the pseudo-element.
+  - : عنصر مبدأ بلافصل شبه‌عنصر را برمی‌گرداند.
 - {{DOMxRef("CSSPseudoElement.type")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : Returns the pseudo-element selector as a string.
+  - : انتخابگر شبه‌عنصر را به‌صورت رشته برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{DOMxRef("CSSPseudoElement.pseudo()")}} {{experimental_inline}}
-  - : Returns a `CSSPseudoElement` instance representing a specific [nested pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements#nesting_pseudo-elements)
+  - : یک نمونه `CSSPseudoElement` برمی‌گرداند که یک [شبه‌عنصر تودرتو](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements#nesting_pseudo-elements) خاص را نمایش می‌دهد.
 
-## Description
+## توصیف
 
-The **`CSSPseudoElement`** interface represents a [pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements). You can retrieve a representation of a pseudo-element attached to a DOM element using the {{DOMxRef("Element.pseudo()")}} method, or a representation of a [nested pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements#nesting_pseudo-elements) (for example, the `::marker` in `::before::marker`) using the {{DOMxRef("CSSPseudoElement.pseudo()")}} method.
+رابطهٔ **`CSSPseudoElement`** یک [شبه‌عنصر](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) را نمایش می‌دهد. می‌توانید با استفاده از روش {{DOMxRef("Element.pseudo()")}} نمایشی از یک شبه‌عنصر متصل به یک عنصر DOM، یا با استفاده از روش {{DOMxRef("CSSPseudoElement.pseudo()")}} نمایشی از یک [شبه‌عنصر تودرتو](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements#nesting_pseudo-elements) (مثلاً `::marker` در `::before::marker`) به دست آورید.
 
-The {{DOMxRef("CSSPseudoElement.type")}} property returns a string representing the type of the pseudo-element. Supported types are:
+ویژگی {{DOMxRef("CSSPseudoElement.type")}} رشته‌ای را برمی‌گرداند که نوع شبه‌عنصر را مشخص می‌کند. انواع پشتیبانی‌شده عبارت‌اند از:
 
 - {{cssxref("::after")}}
 - {{cssxref("::before")}}
 - {{cssxref("::marker")}}
 
-The {{DOMxRef("CSSPseudoElement.element")}} and {{DOMxRef("CSSPseudoElement.parent")}} properties sound similar, but they have a difference in functionality:
+ویژگی‌های {{DOMxRef("CSSPseudoElement.element")}} و {{DOMxRef("CSSPseudoElement.parent")}} شبیه به نظر می‌رسند، اما از نظر عملکرد تفاوت دارند:
 
-- The `element` property always returns an {{domxref("Element")}}: A reference to the ultimate originating element of the pseudo-element or nested pseudo-element.
-- The `parent` property returns a reference to the pseudo-element's _immediate_ originating element: This can be either an {{DOMxRef("Element")}}, or a `CSSPseudoElement` in the case of a [nested pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements#nesting_pseudo-elements).
+- ویژگی `element` همیشه یک {{domxref("Element")}} برمی‌گرداند: ارجاعی به عنصر مبدأ نهایی شبه‌عنصر یا شبه‌عنصر تودرتو.
+- ویژگی `parent` ارجاعی به عنصر مبدأ _بلافصل_ شبه‌عنصر برمی‌گرداند: این می‌تواند یک {{DOMxRef("Element")}} باشد یا در مورد [شبه‌عنصر تودرتو](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements#nesting_pseudo-elements)، یک `CSSPseudoElement`.
 
-## Examples
+## مثال‌ها
 
-### Basic example using Element.pseudo
+### مثال پایه با استفاده از Element.pseudo
 
-Using pseudo-elements, most modern browsers will automatically add quotation marks around text inside a {{HTMLElement('q')}} element. (A style rule may be needed to add quotation marks in older browsers.) The example below demonstrates the basic properties of the `CSSPseudoElement` object representing the opening quotation mark.
+با استفاده از شبه‌عنصرها، بیشتر مرورگرهای مدرن به‌طور خودکار علامت‌های نقل‌قول را دور متن داخل یک عنصر {{HTMLElement('q')}} اضافه می‌کنند. (ممکن است برای افزودن علامت‌های نقل‌قول در مرورگرهای قدیمی‌تر به یک قانون استایل نیاز باشد.) مثال زیر ویژگی‌های پایهٔ شیء `CSSPseudoElement` را نشان می‌دهد که علامت نقل‌قول آغازین را نمایش می‌دهد.
 
 ```js
 const element = document.querySelector("q");
 const cssPseudoElement = element.pseudo("::before");
-console.log(cssPseudoElement.element); // Outputs [object HTMLQuoteElement]
-console.log(cssPseudoElement.type); // Outputs '::before'
+console.log(cssPseudoElement.element); // خروجی: [object HTMLQuoteElement]
+console.log(cssPseudoElement.type); // خروجی: '::before'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{DOMxRef("Element.pseudo()")}}
 - {{DOMxRef("Web Animations API", "", "", "true")}}
 - {{DOMxRef("Element.animate()")}}
-- [CSS pseudo-elements](/en-US/docs/Web/CSS/Guides/Pseudo-elements) module
+- [ماژول شبه‌عنصرهای CSS](/en-US/docs/Web/CSS/Guides/Pseudo-elements)
