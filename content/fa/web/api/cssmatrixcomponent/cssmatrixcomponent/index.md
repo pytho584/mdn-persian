@@ -1,11 +1,5 @@
 ---
 title: "CSSMatrixComponent: CSSMatrixComponent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMatrixComponent/CSSMatrixComponent"
-status: "needs-translation"
----
-
----
-title: "CSSMatrixComponent: CSSMatrixComponent() constructor"
 short-title: CSSMatrixComponent()
 slug: Web/API/CSSMatrixComponent/CSSMatrixComponent
 page-type: web-api-constructor
@@ -14,7 +8,7 @@ browser-compat: api.CSSMatrixComponent.CSSMatrixComponent
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSMatrixComponent()`** constructor creates a new {{domxref("CSSMatrixComponent")}} object representing the {{cssxref("transform-function/matrix", "matrix()")}} and {{cssxref("transform-function/matrix3d", "matrix3d()")}} values of the individual {{CSSXRef('transform')}} property in CSS.
+سازنده **`CSSMatrixComponent()`** یک شیء جدید از نوع {{domxref("CSSMatrixComponent")}} می‌سازد که مقادیر {{cssxref("transform-function/matrix", "matrix()")}} و {{cssxref("transform-function/matrix3d", "matrix3d()")}} ویژگی {{CSSXRef('transform')}} در CSS را نمایش می‌دهد.
 
 ## Syntax
 
@@ -26,15 +20,15 @@ new CSSMatrixComponent(matrix, options)
 ### Parameters
 
 - {{domxref('CSSMatrixComponent.matrix','matrix')}}
-  - : A 2d or 3d matrix.
+  - : یک ماتریس دو بعدی یا سه بعدی.
 - `options` {{optional_inline}}
-  - : An object with the following property:
+  - : یک شیء با ویژگی زیر:
     - `is2D`
-      - : A boolean indicating whether the constructed `CSSMatrixComponent` should be treated as a 2D matrix. If omitted, this defaults to the value of `matrix`'s own {{domxref("DOMMatrixReadOnly.is2D", "is2D")}} property.
+      - : یک مقدار بولین که مشخص می‌کند آیا `CSSMatrixComponent` ساخته شده باید به عنوان یک ماتریس دو بعدی در نظر گرفته شود. اگر حذف شود، این مقدار به طور پیش‌فرض برابر با ویژگی {{domxref("DOMMatrixReadOnly.is2D", "is2D")}} خود `matrix` خواهد بود.
 
 ## Examples
 
-To do
+در دست تهیه
 
 ## Specifications
 
