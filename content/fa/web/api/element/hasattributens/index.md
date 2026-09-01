@@ -1,11 +1,5 @@
 ---
 title: "Element: hasAttributeNS() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttributeNS"
-status: "needs-translation"
----
-
----
-title: "Element: hasAttributeNS() method"
 short-title: hasAttributeNS()
 slug: Web/API/Element/hasAttributeNS
 page-type: web-api-instance-method
@@ -14,28 +8,28 @@ browser-compat: api.Element.hasAttributeNS
 
 {{ APIRef("DOM") }}
 
-The **`hasAttributeNS()`** method of the {{domxref("Element")}} interface returns a boolean value indicating whether the current element has the specified attribute with the specified namespace.
+متد **`hasAttributeNS()`** از رابط {{domxref("Element")}} یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا عنصر جاری دارای ویژگی مشخص‌شده با فضای نام مشخص است یا خیر.
 
-If you are working with HTML documents and you don't need to specify the requested attribute as being part of a specific namespace, use the {{domxref("Element.hasAttribute()", "hasAttribute()")}} method instead.
+اگر با اسناد HTML کار می‌کنید و نیازی به تعیین این ندارید که ویژگی درخواستی بخشی از یک فضای نام خاص باشد، به‌جای آن از متد {{domxref("Element.hasAttribute()", "hasAttribute()")}} استفاده کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 hasAttributeNS(namespace,localName)
 ```
 
-### Parameters
+### پارامترها
 
 - `namespace`
-  - : A string specifying the namespace of the attribute.
+  - : رشته‌ای که فضای نام ویژگی را مشخص می‌کند.
 - `localName`
-  - : The name of the attribute.
+  - : نام ویژگی.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Check that the attribute exists before you set a value
@@ -47,15 +41,15 @@ if (
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Element.getAttributeNS()")}}
 - {{domxref("Element.setAttributeNS()")}}
