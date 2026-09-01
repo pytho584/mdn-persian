@@ -1,10 +1,4 @@
 ---
-title: "ElementInternals.ariaRowIndexText"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaRowIndexText"
-status: "needs-translation"
----
-
----
 title: ElementInternals.ariaRowIndexText
 slug: Web/API/ElementInternals/ariaRowIndexText
 page-type: web-api-instance-property
@@ -13,18 +7,18 @@ browser-compat: api.ElementInternals.ariaRowIndexText
 
 {{APIRef("Web Components")}}
 
-The **`ariaRowIndexText`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-rowindextext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindextext) attribute, which defines a human readable text alternative of aria-rowindex.
+ویژگی **`ariaRowIndexText`** از رابط {{domxref("ElementInternals")}}، مقدار ویژگی [`aria-rowindextext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindextext) را منعکس می‌کند؛ ویژگی‌ای که یک جایگزین متنیِ قابل‌خواندن برای انسان برای `aria-rowindex` تعریف می‌کند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را روی یک عنصر سفارشی فراهم می‌کند. ممکن است این مقادیر توسط ویژگی‌های تعریف‌شدهٔ نویسنده بازنویسی شوند، اما تضمین می‌کنند که در صورت حذف آن ویژگی‌ها توسط نویسنده، یا عدم افزودن آن‌ها، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح‌دهندهٔ مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## نمونه
 
-In this example the value of `ariaRowIndexText` is set to "Heading row".
+در این مثال، مقدار `ariaRowIndexText` روی «Heading row» تنظیم شده است.
 
 ```js
 class CustomEl extends HTMLElement {
@@ -37,14 +31,14 @@ class CustomEl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
+- [نقش جدول ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
