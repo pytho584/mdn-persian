@@ -1,7 +1,5 @@
 ---
 title: "FontData: family property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontData/family"
-status: "needs-translation"
 ---
 
 ---
@@ -16,11 +14,11 @@ browser-compat: api.FontData.family
 
 {{APIRef("Local Font Access API")}}{{SeeCompatTable}}
 
-The **`family`** read-only property of the {{domxref("FontData")}} interface returns the family of the font face.
+ویژگیِ فقط‌خواندنی **`family`** در رابط {{domxref("FontData")}} خانوادهٔ فونت را برمی‌گرداند.
 
-This is the name used when referring to the font family from code, for example, in the {{cssxref("font-family")}} property or in places within the {{cssxref("@font-face")}} at-rule such as the `local()` function.
+این نامی است که هنگام ارجاع به خانوادهٔ فونت از کد استفاده می‌شود؛ برای مثال در ویژگی {{cssxref("font-family")}} یا در بخش‌هایی از قاعدهٔ {{cssxref("@font-face")}} مانند تابع `local()`.
 
-Examples include:
+برای مثال:
 
 - Apple SD Gothic Neo
 - Arial Black
@@ -28,13 +26,13 @@ Examples include:
 - Katari
 - YuMincho +36p Kana
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-The following snippet will query for all available fonts, and log metadata. This could be used, for example, to populate a font-picker control.
+قطعه‌کد زیر همهٔ فونت‌های موجود را پرس‌وجو کرده و فراداده‌های آن‌ها را در لاگ ثبت می‌کند. این کار برای نمونه می‌تواند برای پر کردن یک کنترل انتخاب فونت به کار رود.
 
 ```js
 async function logFontData() {
@@ -52,15 +50,15 @@ async function logFontData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Use advanced typography with local fonts](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
+- [استفاده از تایپوگرافی پیشرفته با فونت‌های محلی](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
 - {{cssxref("@font-face")}}
