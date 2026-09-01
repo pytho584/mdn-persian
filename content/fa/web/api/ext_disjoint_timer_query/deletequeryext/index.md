@@ -1,11 +1,5 @@
 ---
 title: "EXT_disjoint_timer_query: deleteQueryEXT() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/deleteQueryEXT"
-status: "needs-translation"
----
-
----
-title: "EXT_disjoint_timer_query: deleteQueryEXT() method"
 short-title: deleteQueryEXT()
 slug: Web/API/EXT_disjoint_timer_query/deleteQueryEXT
 page-type: webgl-extension-method
@@ -14,9 +8,7 @@ browser-compat: api.EXT_disjoint_timer_query.deleteQueryEXT
 
 {{APIRef("WebGL")}}
 
-The **`EXT_disjoint_timer_query.deleteQueryEXT()`** method of
-the [WebGL API](/en-US/docs/Web/API/WebGL_API) deletes a given
-{{domxref("WebGLQuery")}} object.
+متد **`EXT_disjoint_timer_query.deleteQueryEXT()`** در [WebGL API](/en-US/docs/Web/API/WebGL_API)، یک شیء {{domxref("WebGLQuery")}} مشخص را حذف می‌کند.
 
 ## Syntax
 
@@ -24,16 +16,16 @@ the [WebGL API](/en-US/docs/Web/API/WebGL_API) deletes a given
 deleteQueryEXT(query)
 ```
 
-### Parameters
+### پارامترها
 
 - `query`
-  - : A {{domxref("WebGLQuery")}} object to delete.
+  - : یک شیء {{domxref("WebGLQuery")}} که باید حذف شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const ext = gl.getExtension("EXT_disjoint_timer_query");
@@ -44,15 +36,15 @@ const query = ext.createQueryEXT();
 ext.deleteQueryEXT(query);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLQuery")}}
