@@ -1,9 +1,4 @@
----
-title: "HTMLElement: interest event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/interest_event"
-status: "needs-translation"
----
-
+```
 ---
 title: "HTMLElement: interest event"
 slug: Web/API/HTMLElement/interest_event
@@ -16,11 +11,11 @@ browser-compat: api.HTMLElement.interest_event
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`interest`** event of the {{domxref("HTMLElement")}} interface is fired on an [interest invoker](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)'s target element when interest is shown, allowing code to be run in response.
+رویداد **`interest`** از رابط {{domxref("HTMLElement")}}، زمانی که علاقه به عنصر هدف یک [فراخوان علاقه (interest invoker)](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) نشان داده می‌شود، روی آن عنصر رخ می‌دهد و امکان اجرای کد را در پاسخ فراهم می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("interest", (event) => { })
@@ -28,40 +23,40 @@ addEventListener("interest", (event) => { })
 oninterest = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("InterestEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("InterestEvent")}} که از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("InterestEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Basic interest invoker event usage
+### استفاده پایه از رویداد interest invoker
 
-In this example, we use the `interest` and `loseinterest` events to report when interest is shown and lost on a {{htmlelement("button")}} element that acts as an interest invoker. We do this by printing messages into the target {{htmlelement("p")}} element's text content.
+در این مثال، از رویدادهای `interest` و `loseinterest` استفاده می‌کنیم تا مشخص شود چه زمانی روی یک عنصر {{htmlelement("button")}} که به‌عنوان فراخوان علاقه عمل می‌کند، علاقه نشان داده می‌شود و چه زمانی از بین می‌رود. این کار را با نوشتن پیام‌هایی در محتوای متنی عنصر هدف {{htmlelement("p")}} انجام می‌دهیم.
 
 #### HTML
 
-We set up the relationship between the `<button>` element interest invoker and its target `<p>` element by setting the value of the `<button>` element's `interestfor` attribute equal to the `<p>` element's `id`.
+رابطه بین عنصر `<button>` به‌عنوان فراخوان علاقه و عنصر هدف `<p>` را با تنظیم مقدار ویژگی `interestfor` عنصر `<button>` برای برابر بودن با `id` عنصر `<p>` برقرار می‌کنیم.
 
 ```html live-sample___basic-interest-invoker
 <button href="#" interestfor="mytarget">Interest invoker</button>
 <p id="mytarget">No interest being shown currently.</p>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-We get a reference to the `<button>` element and its target element via the {{domxref("HTMLButtonElement.interestForElement", "interestForElement")}} property.
+یک ارجاع به عنصر `<button>` و عنصر هدفش را از طریق ویژگی {{domxref("HTMLButtonElement.interestForElement", "interestForElement")}} دریافت می‌کنیم.
 
 ```js live-sample___basic-interest-invoker
 const invoker = document.querySelector("[interestfor]");
 const target = invoker.interestForElement;
 ```
 
-We then set two event listeners on the target element, for the `interest` and `loseinterest` events.
+سپس دو شنونده رویداد روی عنصر هدف، یکی برای رویداد `interest` و یکی برای رویداد `loseinterest` تنظیم می‌کنیم.
 
-- When interest is shown, we update the target `<p>` element's text content to report the event and include the element that triggered it; in this example, that's the `<button>` element. Note how you can get a reference to the interest invoker via the event object's {{domxref("InterestEvent.source", "source")}} property.
-- When interest is lost, we update the paragraph text to report that interest is no longer being shown.
+- وقتی علاقه نشان داده می‌شود، محتوای متنی عنصر هدف `<p>` را به‌روزرسانی می‌کنیم تا رویداد و عنصری که آن را فعال کرده را گزارش دهد؛ در این مثال، آن عنصر `<button>` است. توجه کنید که می‌توانید از طریق ویژگی {{domxref("InterestEvent.source", "source")}} شیء رویداد، به فراخوان علاقه دسترسی پیدا کنید.
+- وقتی علاقه از بین می‌رود، متن پاراگراف را به‌روزرسانی می‌کنیم تا نشان دهد دیگر علاقه‌ای نشان داده نمی‌شود.
 
 ```js live-sample___basic-interest-invoker
 target.addEventListener("interest", (e) => {
@@ -73,24 +68,25 @@ target.addEventListener("loseinterest", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-The example renders like this:
+نمونه این‌گونه نمایش داده می‌شود:
 
 {{embedlivesample("basic-interest-invoker", "100%", "100")}}
 
-Try showing and losing interest in the button (for example, by hovering or focusing it) to see how the `<p>` text changes.
+سعی کنید به دکمه علاقه نشان دهید و آن را از دست بدهید (مثلاً با قرار دادن نشانگر روی آن یا فوکوس کردن آن) تا ببینید متن `<p>` چگونه تغییر می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLElement.loseinterest_event", "loseinterest")}} event
+- رویداد {{domxref("HTMLElement.loseinterest_event", "loseinterest")}}
 - [Popover API](/en-US/docs/Web/API/Popover_API)
-- [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
+- [استفاده از interest invokerها](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
+```
