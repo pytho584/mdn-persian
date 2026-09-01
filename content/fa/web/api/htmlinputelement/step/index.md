@@ -1,5 +1,6 @@
 ---
 title: "HTMLInputElement: step property"
+source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/step"
 ---
 
 ---
@@ -12,11 +13,11 @@ browser-compat: api.HTMLInputElement.step
 
 {{ApiRef("HTML DOM")}}
 
-ویژگی **`step`** در واسط {{domxref("HTMLInputElement")}} مشخص می‌کند که عناصر {{HTMLElement("input")}} عددی یا تاریخ-زمان با چه گامی می‌توانند تغییر کنند. این ویژگی منعکس‌کنندهٔ ویژگی [`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) عنصر است. مقادیر معتبر شامل رشتهٔ `"any"` یا رشته‌ای حاوی یک عدد ممیز شناور مثبت است. اگر ویژگی به صراحت تنظیم نشده باشد، ویژگی `step` یک رشتهٔ خالی است.
+ویژگی **`step`** در رابط {{domxref("HTMLInputElement")}} مقدار گامی را مشخص می‌کند که عناصر عددی یا تاریخ-زمانی {{HTMLElement("input")}} می‌توانند با آن تغییر کنند. این ویژگی بازتابی از ویژگی [`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) عنصر است. مقادیر معتبر شامل رشته `"any"` یا رشته‌ای حاوی یک عدد اعشاری مثبت است. اگر ویژگی به صراحت تنظیم نشده باشد، مقدار `step` یک رشته خالی خواهد بود.
 
 ## مقدار
 
-یک رشته که نشان‌دهندهٔ مقدار `step` عنصر است، یا اگر هیچ گامی به صراحت تنظیم نشده باشد، یک رشتهٔ خالی.
+رشته‌ای که مقدار `step` عنصر را نشان می‌دهد، یا اگر گامی به صراحت تنظیم نشده باشد، یک رشته خالی.
 
 ## مثال
 
