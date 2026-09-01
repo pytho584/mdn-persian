@@ -1,11 +1,5 @@
 ---
 title: "Element: setHTML() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/setHTML"
-status: "needs-translation"
----
-
----
-title: "Element: setHTML() method"
 short-title: setHTML()
 slug: Web/API/Element/setHTML
 page-type: web-api-instance-method
@@ -14,12 +8,12 @@ browser-compat: api.Element.setHTML
 
 {{APIRef("HTML Sanitizer API")}}
 
-The **`setHTML()`** method of the {{domxref("Element")}} interface provides an XSS-safe method to parse and sanitize a string of HTML and insert it into the DOM as a subtree of the element.
+متد **`setHTML()`** در رابط {{domxref("Element")}} روشی امن در برابر XSS ارائه می‌دهد که یک رشته HTML را تجزیه و پاک‌سازی (sanitize) کرده و آن را به‌صورت زیردرختی از عنصر، در DOM وارد می‌کند.
 
-The method removes any elements and attributes that are considered XSS-unsafe, even if allowed by a passed sanitizer.
-Notably, the following elements are always removed: {{HTMLElement("script")}}, {{HTMLElement("frame")}}, {{HTMLElement("iframe")}}, {{HTMLElement("embed")}}, {{HTMLElement("object")}}, {{SVGElement("use")}}, and event handler attributes.
+این متد هر عنصر و ویژگی‌ای را که ناامن در برابر XSS تلقی می‌شود حذف می‌کند، حتی اگر توسط یک پاک‌ساز (sanitizer) عبوری مجاز شده باشد.
+به‌طور قابل توجه، عناصر زیر همیشه حذف می‌شوند: {{HTMLElement("script")}}، {{HTMLElement("frame")}}، {{HTMLElement("iframe")}}، {{HTMLElement("embed")}}، {{HTMLElement("object")}}، {{SVGElement("use")}} و ویژگی‌های مدیریت رویداد (event handler attributes).
 
-It is recommended (if supported) as a drop-in replacement for {{domxref("Element.innerHTML")}} when setting a user-provided string of HTML.
+توصیه می‌شود (در صورت پشتیبانی) به‌عنوان جایگزینی مستقیم برای {{domxref("Element.innerHTML")}} هنگام تنظیم رشته HTML ارائه‌شده توسط کاربر استفاده شود.
 
 ## Syntax
 
@@ -28,114 +22,114 @@ setHTML(input)
 setHTML(input, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `input`
-  - : A string defining HTML to be sanitized and injected into the element.
+  - : رشته‌ای که HTML مورد نظر برای پاک‌سازی و تزریق به عنصر را تعریف می‌کند.
 - `options` {{optional_inline}}
-  - : An options object with the following optional parameters:
+  - : یک شیء گزینه‌ها با پارامترهای اختیاری زیر:
     - `sanitizer`
-      - : A {{domxref("Sanitizer")}} or {{domxref("SanitizerConfig")}} object which defines what elements of the input will be allowed or removed, or the string `"default"` for the default configuration.
-        The method will remove any XSS-unsafe elements and attributes, even if allowed by the sanitizer.
-        If not specified, the [default sanitizer configuration](/en-US/docs/Web/API/HTML_Sanitizer_API/Default_sanitizer_configuration) is used.
+      - : یک شیء {{domxref("Sanitizer")}} یا {{domxref("SanitizerConfig")}} که مشخص می‌کند کدام عناصر ورودی مجاز یا حذف شوند، یا رشته `"default"` برای پیکربندی پیش‌فرض.
+        این متد هر عنصر و ویژگی ناامن در برابر XSS را حذف می‌کند، حتی اگر توسط پاک‌ساز مجاز شده باشد.
+        اگر مشخص نشود، از [پیکربندی پیش‌فرض پاک‌ساز](/en-US/docs/Web/API/HTML_Sanitizer_API/Default_sanitizer_configuration) استفاده می‌شود.
 
-        Note that if you're using the same configuration multiple times, it's expected to be more efficient to use a `Sanitizer` and modify it when you need to.
+        توجه داشته باشید که اگر از همان پیکربندی چندین بار استفاده می‌کنید، انتظار می‌رود استفاده از یک شیء `Sanitizer` و تغییر آن در صورت نیاز، کارآمدتر باشد.
 
-### Return value
+### مقدار بازگشتی
 
-None (`undefined`).
+هیچ (`undefined`).
 
-### Exceptions
+### استثناها
 
 - `TypeError`
-  - : This is thrown if `options.sanitizer` is passed a:
-    - {{domxref("SanitizerConfig")}} that isn't [valid](/en-US/docs/Web/API/SanitizerConfig#valid_configuration).
-      For example, a configuration that includes both "allowed" and "removed" configuration settings.
-    - string that does not have the value `"default"`.
-    - value that is not a {{domxref("Sanitizer")}}, {{domxref("SanitizerConfig")}}, or string.
+  - : اگر `options.sanitizer` یکی از موارد زیر باشد پرتاب می‌شود:
+    - یک {{domxref("SanitizerConfig")}} که [معتبر](/en-US/docs/Web/API/SanitizerConfig#valid_configuration) نیست.
+      برای مثال، پیکربندی که شامل هر دو تنظیمات «مجاز» (allowed) و «حذف‌شده» (removed) باشد.
+    - رشته‌ای که مقدار آن `"default"` نباشد.
+    - مقداری که نه {{domxref("Sanitizer")}} باشد، نه {{domxref("SanitizerConfig")}} و نه رشته.
 
-## Description
+## توضیحات
 
-The **`setHTML()`** method provides an XSS-safe method to parse and sanitize a string of HTML into a {{domxref("DocumentFragment")}}, and then insert it into the DOM as a subtree of the element.
+متد **`setHTML()`** یک روش امن در برابر XSS برای تجزیه و پاک‌سازی یک رشته HTML به یک {{domxref("DocumentFragment")}} ارائه می‌دهد و سپس آن را به‌صورت زیردرختی از عنصر، در DOM وارد می‌کند.
 
-`setHTML()` drops any elements in the HTML input string that are invalid in the context of the current element, such as a {{htmlelement("col")}} element outside of a {{htmlelement("table")}}.
-It then removes any HTML entities that aren't allowed by the sanitizer configuration, and further removes any XSS-unsafe elements or attributes — whether or not they are allowed by the sanitizer.
+`setHTML()` هر عنصری را در رشته HTML ورودی که در بافت عنصر جاری نامعتبر است، مانند یک عنصر {{htmlelement("col")}} خارج از {{htmlelement("table")}}، حذف می‌کند.
+سپس هر موجودیت HTML که توسط پیکربندی پاک‌ساز مجاز نیست را حذف می‌کند و علاوه بر آن، هر عنصر یا ویژگی ناامن در برابر XSS را — صرف‌نظر از اینکه توسط پاک‌ساز مجاز شده باشند یا نه — حذف می‌کند.
 
-If no sanitizer is specified in the `options.sanitizer` parameter, `setHTML()` is used with the [default sanitizer configuration](/en-US/docs/Web/API/HTML_Sanitizer_API/Default_sanitizer_configuration).
-This configuration is suitable for the majority of use cases as it prevents XSS attacks, as well as other attacks like clickjacking or spoofing.
+اگر در پارامتر `options.sanitizer` پاک‌سازی مشخص نشود، `setHTML()` با [پیکربندی پیش‌فرض پاک‌ساز](/en-US/docs/Web/API/HTML_Sanitizer_API/Default_sanitizer_configuration) استفاده می‌شود.
+این پیکربندی برای اکثر موارد استفاده مناسب است، زیرا از حملات XSS و همچنین حملات دیگری مانند clickjacking یا جعل (spoofing) جلوگیری می‌کند.
 
-A custom `Sanitizer` or `SanitizerConfig` can be specified to choose which elements, attributes, and comments are allowed or removed.
-Note that even if unsafe options are allowed by the sanitizer, they will still be removed when using this method (it removes the same elements as a sanitizer on which {{domxref('Sanitizer.removeUnsafe()')}} has been called).
+می‌توان یک `Sanitizer` یا `SanitizerConfig` سفارشی مشخص کرد تا تعیین شود کدام عناصر، ویژگی‌ها و دیدگاه‌ها (comments) مجاز یا حذف شوند.
+توجه داشته باشید که حتی اگر گزینه‌های ناامن توسط پاک‌ساز مجاز شوند، هنگام استفاده از این متد همچنان حذف خواهند شد (همان عناصری را حذف می‌کند که یک پاک‌ساز که روی آن {{domxref('Sanitizer.removeUnsafe()')}} فراخوانی شده است).
 
-`setHTML()` should be used instead of {{domxref("Element.innerHTML")}} for inserting untrusted strings of HTML into an element.
-It should also be used instead of {{domxref("Element.setHTMLUnsafe()")}}, unless there is a specific need to allow unsafe elements and attributes.
+`setHTML()` باید به‌جای {{domxref("Element.innerHTML")}} برای درج رشته‌های HTML غیرقابل اعتماد در یک عنصر استفاده شود.
+همچنین باید به‌جای {{domxref("Element.setHTMLUnsafe()")}} استفاده شود، مگر اینکه نیاز خاصی به مجاز دانستن عناصر و ویژگی‌های ناامن وجود داشته باشد.
 
-Note that since this method always sanitizes input strings of XSS-unsafe entities, it is not secured or validated using the [Trusted Types API](/en-US/docs/Web/API/Trusted_Types_API).
+توجه داشته باشید که از آنجا که این متد همیشه رشته‌های ورودی را از موجودیت‌های ناامن در برابر XSS پاک‌سازی می‌کند، با استفاده از [Trusted Types API](/en-US/docs/Web/API/Trusted_Types_API) امن یا اعتبارسنجی نمی‌شود.
 
-### Re-parsing and mutated XSS (mXSS)
+### تجزیه مجدد و XSS جهش‌یافته (mXSS)
 
-Even after sanitizing HTML input with `setHTML()`, it is still not safe to serialize the HTML and re-parse it using `innerHTML`.
-For example, the following code is unsafe.
+حتی پس از پاک‌سازی ورودی HTML با `setHTML()`، باز هم безопасن نیست که HTML را سریال‌سازی کرده و با `innerHTML` دوباره تجزیه کنید.
+برای مثال، کد زیر ناامن است.
 
 ```js example-bad
-div.setHTML(unsafeString); // Safe
-const serializedHTML = div.innerHTML; // No longer sanitized!
+div.setHTML(unsafeString); // امن
+const serializedHTML = div.innerHTML; // دیگر پاک‌سازی نشده است!
 otherElement.innerHTML = serializedHTML;
 ```
 
-The reason for this is that sanitization is context-aware.
-When you call `setHTML()` on a particular element, the unsafe elements and attributes for that context are removed.
-If you serialize the HTML and use it directly in another element, it may still contain elements that are unsafe in that element.
+دلیل این امر آن است که پاک‌سازی به بافت (context) وابسته است.
+وقتی `setHTML()` را روی یک عنصر خاص فراخوانی می‌کنید، عناصر و ویژگی‌های ناامن برای آن بافت حذف می‌شوند.
+اگر HTML را سریال‌سازی کرده و مستقیماً در عنصر دیگری استفاده کنید، ممکن است همچنان حاوی عناصری باشد که در آن عنصر ناامن هستند.
 
-This would be safe (if pointless):
+این کار امن است (هرچند بی‌فایده):
 
 ```js example-good
-div.setHTML(unsafeString); // Safe
-const serializedHTML = div.innerHTML; // Serialized as a plain string
-otherDiv.setHTML(serializedHTML); // Safe — re-sanitized by setHTML()
+div.setHTML(unsafeString); // امن
+const serializedHTML = div.innerHTML; // به‌صورت یک رشته ساده سریال‌سازی شد
+otherDiv.setHTML(serializedHTML); // امن — دوباره توسط setHTML() پاک‌سازی شد
 ```
 
-There is a class of attacks that take advantage of this flaw, referred to as [mutation XSS](https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#sanitizer-security-mxss).
-The simple rule to avoid this problem is to only ever inject HTML strings using safe methods such as `setHTML()`.
+دسته‌ای از حملات وجود دارند که از این نقص بهره می‌برند و به آنها [mutation XSS](https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#sanitizer-security-mxss) گفته می‌شود.
+قانون ساده برای جلوگیری از این مشکل این است که فقط و فقط رشته‌های HTML را با روش‌های امن مانند `setHTML()` تزریق کنید.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-This example shows some of the ways you can use `setHTML()` to sanitize and inject a string of HTML.
+این مثال برخی از روش‌های استفاده از `setHTML()` برای پاک‌سازی و تزریق یک رشته HTML را نشان می‌دهد.
 
 ```js
-// Define unsanitized string of HTML
+// تعریف رشته HTML پاک‌سازی‌نشده
 const unsanitizedString = "abc <script>alert(1)<" + "/script> def";
-// Get the target Element with id "target"
+// دریافت عنصر هدف با شناسه "target"
 const target = document.getElementById("target");
 
-// setHTML() with default sanitizer
+// setHTML() با پاک‌ساز پیش‌فرض
 target.setHTML(unsanitizedString);
 
-// Define custom Sanitizer and use in setHTML()
-// This allows only elements: div, p, button (script is unsafe and will be removed)
+// تعریف Sanitizer سفارشی و استفاده در setHTML()
+// این فقط عناصر div، p، button را مجاز می‌کند (script ناامن است و حذف می‌شود)
 const sanitizer1 = new Sanitizer({
   elements: ["div", "p", "button", "script"],
 });
 target.setHTML(unsanitizedString, { sanitizer: sanitizer1 });
 
-// Define custom SanitizerConfig within setHTML()
-// This removes elements div, p, button, script, and any other unsafe elements/attributes
+// تعریف SanitizerConfig سفارشی درون setHTML()
+// این عناصر div، p، button، script و هر عنصر/ویژگی ناامن دیگر را حذف می‌کند
 target.setHTML(unsanitizedString, {
   sanitizer: { removeElements: ["div", "p", "button", "script"] },
 });
 ```
 
-### `setHTML()` live example
+### مثال زنده `setHTML()`
 
-This example provides a "live" demonstration of the method when called with different sanitizers.
-The code defines buttons that you can click to sanitize and inject a string of HTML using a default and a custom sanitizer, respectively.
-The original string and sanitized HTML are logged so you can inspect the results in each case.
+این مثال یک نمایش «زنده» از این متد را زمانی که با پاک‌سازهای مختلف فراخوانی می‌شود ارائه می‌دهد.
+کد دکمه‌هایی را تعریف می‌کند که با کلیک روی آنها می‌توان یک رشته HTML را با استفاده از پاک‌ساز پیش‌فرض و یک پاک‌ساز سفارشی پاک‌سازی و تزریق کرد.
+رشته اصلی و HTML پاک‌سازی‌شده ثبت (log) می‌شوند تا بتوانید نتایج را در هر مورد بررسی کنید.
 
 #### HTML
 
-The HTML defines two {{htmlelement("button")}} elements for applying different sanitizers, another button to reset the example, and a {{htmlelement("div")}} element to inject the string into.
+HTML شامل دو عنصر {{htmlelement("button")}} برای اعمال پاک‌سازهای مختلف، یک دکمه دیگر برای بازنشانی مثال، و یک عنصر {{htmlelement("div")}} برای تزریق رشته به داخل آن است.
 
 ```html
 <button id="buttonDefault" type="button">Default</button>
@@ -172,12 +166,12 @@ function log(text) {
 if ("Sanitizer" in window) {
 ```
 
-First we define the string to sanitize, which will be the same for all cases.
-This contains the {{htmlelement("script")}} element and the `onclick` handler, both of which are considered XSS-unsafe.
-We also define the handler for the reload button.
+ابتدا رشته‌ای را که باید پاک‌سازی شود تعریف می‌کنیم؛ این رشته برای همه موارد یکسان خواهد بود.
+این رشته شامل عنصر {{htmlelement("script")}} و مدیریت‌کننده `onclick` است که هر دو ناامن در برابر XSS تلقی می‌شوند.
+همچنین مدیریت‌کننده رویداد برای دکمه بازنشانی را تعریف می‌کنیم.
 
 ```js
-// Define unsafe string of HTML
+// تعریف رشته HTML ناامن
 const unsanitizedString = `
   <div>
     <p>Paragraph to inject into shadow DOM.
@@ -192,17 +186,17 @@ const reload = document.querySelector("#reload");
 reload.addEventListener("click", () => document.location.reload());
 ```
 
-Next we define the click handler for the button that sets the HTML with the default sanitizer.
-This should strip out all unsafe entities before inserting the string of HTML.
-Note that you can see exactly which elements are removed in the [`Sanitizer()` constructor examples](/en-US/docs/Web/API/Sanitizer/Sanitizer#creating_the_default_sanitizer).
+سپس مدیریت‌کننده کلیک برای دکمه‌ای که HTML را با پاک‌ساز پیش‌فرض تنظیم می‌کند تعریف می‌کنیم.
+این کار باید همه موجودیت‌های ناامن را قبل از درج رشته HTML حذف کند.
+توجه داشته باشید که می‌توانید دقیقاً ببینید کدام عناصر در [مثال‌های سازنده `Sanitizer()`](/en-US/docs/Web/API/Sanitizer/Sanitizer#creating_the_default_sanitizer) حذف می‌شوند.
 
 ```js
 const defaultSanitizerButton = document.querySelector("#buttonDefault");
 defaultSanitizerButton.addEventListener("click", () => {
-  // Set the content of the element using the default sanitizer
+  // تنظیم محتوای عنصر با استفاده از پاک‌ساز پیش‌فرض
   target.setHTML(unsanitizedString);
 
-  // Log HTML before sanitization and after being injected
+  // ثبت HTML قبل از پاک‌سازی و پس از تزریق
   logElement.textContent =
     "Default sanitizer: remove script element, onclick attribute, data- attribute\n\n";
   log(`\nunsanitized: ${unsanitizedString}`);
@@ -210,19 +204,19 @@ defaultSanitizerButton.addEventListener("click", () => {
 });
 ```
 
-The next click handler sets the target HTML using a custom sanitizer that allows only {{htmlelement("div")}}, {{htmlelement("p")}}, and {{htmlelement("script")}} elements.
-Note that because we're using the `setHTML` method, `<script>` will also be removed!
+مدیریت‌کننده کلیک بعدی، HTML هدف را با استفاده از یک پاک‌ساز سفارشی که فقط عناصر {{htmlelement("div")}}، {{htmlelement("p")}} و {{htmlelement("script")}} را مجاز می‌کند تنظیم می‌کند.
+توجه داشته باشید که چون از متد `setHTML` استفاده می‌کنیم، `<script>` نیز حذف خواهد شد!
 
 ```js
 const allowScriptButton = document.querySelector("#buttonAllowScript");
 allowScriptButton.addEventListener("click", () => {
-  // Set the content of the element using a custom sanitizer
+  // تنظیم محتوای عنصر با استفاده از یک پاک‌ساز سفارشی
   const sanitizer1 = new Sanitizer({
     elements: ["div", "p", "script"],
   });
   target.setHTML(unsanitizedString, { sanitizer: sanitizer1 });
 
-  // Log HTML before sanitization and after being injected
+  // ثبت HTML قبل از پاک‌سازی و پس از تزریق
   logElement.textContent =
     "Sanitizer: {elements: ['div', 'p', 'script']}\n Script removed even though allowed\n";
   log(`\nunsanitized: ${unsanitizedString}`);
@@ -233,30 +227,30 @@ allowScriptButton.addEventListener("click", () => {
 ```js hidden
 } else {
   log("The HTML Sanitizer API is NOT supported in this browser.");
-  // Provide fallback or alternative behavior
+  // ارائه رفتار جایگزین یا بازگشتی
 }
 ```
 
-#### Results
+#### نتایج
 
-Click the "Default" and "allowScript" buttons to see the effects of the default and custom sanitizer, respectively.
+روی دکمه‌های «Default» و «allowScript» کلیک کنید تا اثرات پاک‌ساز پیش‌فرض و سفارشی را به‌ترتیب مشاهده کنید.
 
-Note that because we are using a safe sanitization method, in both cases the `<script>` element and `onclick` handler are removed, even if explicitly allowed by the sanitizer.
-However while the `data-` attribute is removed with the default sanitizer, it is allowed when we pass a sanitizer.
+توجه داشته باشید که چون از یک روش پاک‌سازی امن استفاده می‌کنیم، در هر دو حالت عنصر `<script>` و مدیریت‌کننده `onclick` حذف می‌شوند، حتی اگر به‌صراحت توسط پاک‌ساز مجاز شده باشند.
+با این حال، در حالی که ویژگی `data-` با پاک‌ساز پیش‌فرض حذف می‌شود، زمانی که یک پاک‌ساز سفارشی ارسال می‌کنیم مجاز است.
 
 {{EmbedLiveSample("setHTML() live example","100","450px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.setHTMLUnsafe()")}}
-- {{domxref("ShadowRoot.setHTML()")}} and {{domxref("ShadowRoot.setHTMLUnsafe()")}}
-- {{domxref("Document.parseHTML_static", "Document.parseHTML()")}} and {{domxref("Document.parseHTMLUnsafe_static", "Document.parseHTMLUnsafe()")}}
+- {{domxref("ShadowRoot.setHTML()")}} و {{domxref("ShadowRoot.setHTMLUnsafe()")}}
+- {{domxref("Document.parseHTML_static", "Document.parseHTML()")}} و {{domxref("Document.parseHTMLUnsafe_static", "Document.parseHTMLUnsafe()")}}
 - [HTML Sanitizer API](/en-US/docs/Web/API/HTML_Sanitizer_API)
