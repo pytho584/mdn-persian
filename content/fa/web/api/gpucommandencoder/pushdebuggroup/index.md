@@ -1,11 +1,5 @@
 ---
 title: "GPUCommandEncoder: pushDebugGroup() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/pushDebugGroup"
-status: "needs-translation"
----
-
----
-title: "GPUCommandEncoder: pushDebugGroup() method"
 short-title: pushDebugGroup()
 slug: Web/API/GPUCommandEncoder/pushDebugGroup
 page-type: web-api-instance-method
@@ -14,32 +8,31 @@ browser-compat: api.GPUCommandEncoder.pushDebugGroup
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`pushDebugGroup()`** method of the
-{{domxref("GPUCommandEncoder")}} interface begins a debug group, which is marked with a specified label, and will contain all subsequent encoded commands up until a {{domxref("GPUCommandEncoder.popDebugGroup", "popDebugGroup()")}} method is invoked.
+متد **`pushDebugGroup()`** از رابط {{domxref("GPUCommandEncoder")}} یک گروه اشکال‌زدایی را شروع می‌کند که با یک برچسب مشخص علامت‌گذاری می‌شود و تمام دستورات رمزگذاری‌شدهٔ بعدی را تا زمانی که متد {{domxref("GPUCommandEncoder.popDebugGroup", "popDebugGroup()")}} فراخوانی شود، در بر می‌گیرد.
 
-This could be used for telemetry, or may be utilized in {{domxref("GPUError")}} messages, browser dev tools, or other services in the future to help with debugging.
+این می‌تواند برای تله‌متری استفاده شود، یا ممکن است در پیام‌های {{domxref("GPUError")}}، ابزارهای توسعه‌دهندهٔ مرورگر، یا سایر سرویس‌ها در آینده برای کمک به اشکال‌زدایی به کار رود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 pushDebugGroup(groupLabel)
 ```
 
-### Parameters
+### پارامترها
 
 - `groupLabel`
-  - : A string representing the label for the debug group.
+  - : یک رشته که برچسب گروه اشکال‌زدایی را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
 
-commandEncoder.pushDebugGroup("my_group_marker"); // Start labeled debug group
+commandEncoder.pushDebugGroup("my_group_marker"); // شروع گروه اشکال‌زدایی برچسب‌دار
 
 const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);
 
@@ -49,19 +42,19 @@ passEncoder.draw(3);
 
 passEncoder.end();
 
-commandEncoder.popDebugGroup(); // End labeled debug group
+commandEncoder.popDebugGroup(); // پایان گروه اشکال‌زدایی برچسب‌دار
 
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
