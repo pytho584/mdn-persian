@@ -1,11 +1,5 @@
 ---
 title: "GPUCommandEncoder: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/label"
-status: "needs-translation"
----
-
----
-title: "GPUCommandEncoder: label property"
 short-title: label
 slug: Web/API/GPUCommandEncoder/label
 page-type: web-api-instance-property
@@ -14,18 +8,17 @@ browser-compat: api.GPUCommandEncoder.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** read-only property of the
-{{domxref("GPUCommandEncoder")}} interface is a string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی فقط خواندنی **`label`** در رابط {{domxref("GPUCommandEncoder")}} یک رشته است که برچسبی را برای شناسایی شیء فراهم می‌کند؛ برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUDevice.createCommandEncoder()")}} call, or you can get and set it directly on the `GPUCommandEncoder` object.
+این برچسب می‌تواند با قرار دادن یک ویژگی `label` در شیء توصیف‌کننده‌ای که به فراخوانی اصلی {{domxref("GPUDevice.createCommandEncoder()")}} ارسال می‌شود، تنظیم گردد، یا می‌توانید آن را مستقیماً روی شیء `GPUCommandEncoder` دریافت و تنظیم کنید.
 
-## Value
+## مقدار
 
-A string. If no label value has previously been set, getting the label returns an empty string.
+یک رشته. اگر قبلاً هیچ مقداری برای برچسب تنظیم نشده باشد، دریافت برچسب یک رشتهٔ خالی بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUCommandEncoder.label`:
+تنظیم و دریافت یک برچسب از طریق `GPUCommandEncoder.label`:
 
 ```js
 const commandEncoder = device.createCommandEncoder();
@@ -33,7 +26,7 @@ commandEncoder.label = "my_command_encoder";
 console.log(commandEncoder.label); // "my_command_encoder"
 ```
 
-Setting a label via the originating {{domxref("GPUDevice.createCommandEncoder()")}} call, and then getting it via `GPUCommandEncoder.label`:
+تنظیم برچسب از طریق فراخوانی اصلی {{domxref("GPUDevice.createCommandEncoder()")}} و سپس دریافت آن از طریق `GPUCommandEncoder.label`:
 
 ```js
 const commandEncoder = device.createCommandEncoder({
@@ -43,14 +36,14 @@ const commandEncoder = device.createCommandEncoder({
 console.log(commandEncoder.label); // "my_command_encoder"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
