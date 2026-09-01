@@ -1,11 +1,5 @@
 ---
 title: "EventSource: url property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EventSource/url"
-status: "needs-translation"
----
-
----
-title: "EventSource: url property"
 short-title: url
 slug: Web/API/EventSource/url
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.EventSource.url
 
 {{APIRef("Server Sent Events")}}{{AvailableInWorkers}}
 
-The **`url`** read-only property of the
-{{domxref("EventSource")}} interface returns a string representing the
-URL of the source.
+ویژگی فقط‌خواندنی **`url`** از رابط {{domxref("EventSource")}} یک رشته را برمی‌گرداند که نشانی URL منبع را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string representing the URL of the source.
+رشته‌ای که نشانی URL منبع را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const evtSource = new EventSource("sse.php");
@@ -30,16 +22,16 @@ console.log(evtSource.url);
 ```
 
 > [!NOTE]
-> You can find a full example on GitHub — see [Simple SSE demo using PHP](https://github.com/mdn/dom-examples/tree/main/server-sent-events).
+> می‌توانید یک مثال کامل را در گیت‌هاب ببینید — [Simple SSE demo using PHP](https://github.com/mdn/dom-examples/tree/main/server-sent-events).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("EventSource")}}
