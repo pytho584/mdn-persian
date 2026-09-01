@@ -1,11 +1,5 @@
 ---
 title: "Document: applets property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/applets"
-status: "needs-translation"
----
-
----
-title: "Document: applets property"
 short-title: applets
 slug: Web/API/Document/applets
 page-type: web-api-instance-property
@@ -16,20 +10,19 @@ browser-compat: api.Document.applets
 
 {{APIRef("DOM")}} {{Deprecated_Header}}
 
-The **`applets`** property of the {{domxref("Document")}} returns an empty {{domxref("HTMLCollection")}}. This property is kept only for compatibility reasons; in older versions of browsers, it returned a list of the applets within a document.
+ویژگی **`applets`** از {{domxref("Document")}} یک {{domxref("HTMLCollection")}} خالی برمی‌گرداند. این ویژگی فقط به دلایل سازگاری نگه داشته شده است؛ در نسخه‌های قدیمی‌تر مرورگرها، فهرستی از اپلت‌های درون یک سند را برمی‌گرداند.
 
 > [!NOTE]
-> Support for the `<applet>` element has been removed by all browsers. Therefore, calling `document.applets` always
-> returns an empty collection.
+> پشتیبانی از عنصر `<applet>` توسط تمام مرورگرها حذف شده است. بنابراین، فراخوانی `document.applets` همیشه یک مجموعه خالی برمی‌گرداند.
 
-## Value
+## مقدار
 
-An empty {{domxref("HTMLCollection")}}.
+یک {{domxref("HTMLCollection")}} خالی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
