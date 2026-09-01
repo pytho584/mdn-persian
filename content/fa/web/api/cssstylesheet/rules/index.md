@@ -1,7 +1,6 @@
 ---
 title: "CSSStyleSheet: rules property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/rules"
-status: "needs-translation"
 ---
 
 ---
@@ -16,33 +15,24 @@ browser-compat: api.CSSStyleSheet.rules
 
 {{APIRef("CSSOM")}}{{deprecated_header}}
 
-**`rules`** is a _deprecated_
-_legacy property_ of the {{domxref("CSSStyleSheet")}} interface. Functionally
-identical to the preferred {{domxref("CSSStyleSheet.cssRules", "cssRules")}} property,
-it provides access to a live-updating list of the CSS rules comprising the
-stylesheet.
+**`rules`** یک _ویژگی قدیمی_ و _منسوخشده_ در رابط {{domxref("CSSStyleSheet")}} است. این ویژگی از نظر عملکردی با ویژگی ترجیحی {{domxref("CSSStyleSheet.cssRules", "cssRules")}} یکسان است و دسترسی به فهرستی را فراهم میکند که بهصورت زنده بهروزرسانی میشود و شامل قوانین CSS تشکیلدهندهٔ شیوهنامه (stylesheet) است.
 
 > [!NOTE]
-> As a legacy property, you should not use `rules` and
-> should instead use the preferred {{domxref("CSSStyleSheet.cssRules", "cssRules")}}.
-> While `rules` is unlikely to be removed soon, its availability is not as
-> widespread and using it will result in compatibility problems for your site or app.
+> بهعنوان یک ویژگی قدیمی، نباید از `rules` استفاده کنید و بهجای آن باید از ویژگی ترجیحی {{domxref("CSSStyleSheet.cssRules", "cssRules")}} بهره ببرید. اگرچه بعید است که `rules` بهزودی حذف شود، اما پشتیبانی از آن بهاندازهٔ کافی گسترده نیست و استفاده از آن میتواند مشکلات سازگاری برای سایت یا برنامهٔ شما ایجاد کند.
 
-## Value
+## مقدار
 
-A live-updating {{domxref("CSSRuleList")}} containing each of the CSS rules making up
-the stylesheet. Each entry in the rule list is a {{domxref("CSSRule")}} object
-describing one rule making up the stylesheet.
+یک {{domxref("CSSRuleList")}} با بهروزرسانی زنده که شامل هر یک از قوانین CSS تشکیلدهندهٔ شیوهنامه است. هر ورودی در این فهرست قوانین، یک شیء {{domxref("CSSRule")}} است که یک قانون از قوانین سازندهٔ شیوهنامه را توصیف میکند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model)
-- [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
+- [مدل شیء CSS](/en-US/docs/Web/API/CSS_Object_Model)
+- [استفاده از اطلاعات استایلدهی پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
