@@ -1,36 +1,22 @@
 ---
 title: "Document: contentType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/contentType"
-status: "needs-translation"
----
-
----
-title: "Document: contentType property"
-short-title: contentType
-slug: Web/API/Document/contentType
-page-type: web-api-instance-property
-browser-compat: api.Document.contentType
 ---
 
 {{APIRef("DOM")}}
 
-The **`Document.contentType`** read-only property returns the
-MIME type that the document is being rendered as. This may come from HTTP headers or
-other sources of MIME information, and might be affected by automatic type conversions
-performed by either the browser or extensions.
+خاصیت فقط-خواندنی **`Document.contentType`** نوع MIME را که سند به عنوان آن در حال نمایش است، برمی‌گرداند. این مقدار ممکن است از هدرهای HTTP یا سایر منابع اطلاعات MIME بیاید و ممکن است تحت تأثیر تبدیل‌های خودکار نوع انجام‌شده توسط مرورگر یا افزونه‌ها قرار گیرد.
 
 > [!NOTE]
-> This property is unaffected by {{HTMLElement("meta")}}
-> elements.
+> این ویژگی تحت تأثیر عناصر {{HTMLElement("meta")}} قرار نمی‌گیرد.
 
-## Value
+## مقدار
 
-`contentType` is a read-only property.
+`contentType` یک ویژگی فقط-خواندنی است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
