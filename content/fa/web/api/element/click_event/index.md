@@ -1,11 +1,5 @@
 ---
 title: "Element: click event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event"
-status: "needs-translation"
----
-
----
-title: "Element: click event"
 short-title: click
 slug: Web/API/Element/click_event
 page-type: web-api-event
@@ -14,21 +8,21 @@ browser-compat: api.Element.click_event
 
 {{APIRef("UI Events")}}
 
-An element receives a **`click`** event when any of the following occurs:
+یک عنصر زمانی رویداد **`click`** را دریافت می‌کند که هر یک از موارد زیر رخ دهد:
 
-- A pointing-device button (such as a mouse's primary button) is both pressed and released while the pointer is located inside the element.
-- A touch gesture is performed on the element.
-- Any user interaction that is equivalent to a click, such as pressing the <kbd>Space</kbd> key or <kbd>Enter</kbd> key while the element is focused. Note that this only applies to elements with a default key event handler, and therefore, excludes other elements that have been made focusable by setting the [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) attribute.
+- دکمه دستگاه نشانگر (مانند دکمه اصلی ماوس) در حالی که اشاره‌گر داخل عنصر قرار دارد، هم فشرده و هم رها شود.
+- یک حرکت لمسی (touch) روی عنصر انجام شود.
+- هر تعامل کاربر که معادل کلیک باشد، مانند فشردن کلید <kbd>Space</kbd> یا <kbd>Enter</kbd> در حالی که عنصر فوکوس دارد. توجه داشته باشید که این فقط برای عناصری اعمال می‌شود که دارای کنترل‌کننده پیش‌فرض رویداد صفحه‌کلید هستند و بنابراین، عناصر دیگری را که با تنظیم ویژگی [`tabindex`](/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex) قابل فوکوس شده‌اند، شامل نمی‌شود.
 
-If the button is pressed on one element and the pointer is moved outside the element before the button is released, the event is fired on the most specific ancestor element that contained both elements.
+اگر دکمه روی یک عنصر فشرده شود و قبل از رها شدن دکمه، اشاره‌گر به خارج از عنصر منتقل شود، رویداد روی نزدیک‌ترین عنصر جد مشترکی که هر دو عنصر را در بر می‌گیرد، فعال می‌شود.
 
-`click` fires after both the {{domxref("Element/mousedown_event", "mousedown")}} and {{domxref("Element/mouseup_event", "mouseup")}} events have fired, in that order.
+رویداد `click` پس از فعال شدن هر دو رویداد {{domxref("Element/mousedown_event", "mousedown")}} و {{domxref("Element/mouseup_event", "mouseup")}}، به همین ترتیب، فعال می‌شود.
 
-The event is a device-independent event — meaning it can be activated by touch, keyboard, mouse, and any other mechanism provided by assistive technology.
+این رویداد یک رویداد مستقل از دستگاه است — به این معنی که می‌تواند توسط لمس، صفحه‌کلید، ماوس و هر مکانیزم دیگری که توسط فناوری کمکی فراهم می‌شود، فعال شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("click", (event) => { })
@@ -36,22 +30,22 @@ addEventListener("click", (event) => { })
 onclick = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PointerEvent")}}. Inherits from {{domxref("MouseEvent")}}.
+یک {{domxref("PointerEvent")}}. از {{domxref("MouseEvent")}} به ارث می‌برد.
 
 {{InheritanceDiagram("PointerEvent")}}
 
 > [!NOTE]
-> In earlier versions of the specification, the event type for this event was a {{domxref("MouseEvent")}}. Check [browser compatibility](#browser_compatibility) for more information.
+> در نسخه‌های قبلی مشخصات، نوع رویداد برای این رویداد یک {{domxref("MouseEvent")}} بود. برای اطلاعات بیشتر به [سازگاری مرورگر](#browser_compatibility) مراجعه کنید.
 
-## Usage notes
+## نکات استفاده
 
-The {{domxref("PointerEvent")}} object passed into the event handler for `click` has its {{domxref("UIEvent/detail", "detail")}} property set to the number of times the {{domxref("Event.target", "target")}} was clicked. In other words, `detail` will be 2 for a double-click, 3 for triple-click, and so forth. This counter resets after a short interval without any clicks occurring; the specifics of how long that interval is may vary from browser to browser and across platforms. The interval is also likely to be affected by user preferences; for example, accessibility options may extend this interval to make it easier to perform multiple clicks with adaptive interfaces.
+شیء {{domxref("PointerEvent")}} که به کنترل‌کننده رویداد برای `click` ارسال می‌شود، ویژگی {{domxref("UIEvent/detail", "detail")}} آن برابر با تعداد دفعاتی است که {{domxref("Event.target", "target")}} کلیک شده است. به عبارت دیگر، `detail` برای دابل‌کلیک عدد ۲، برای تریپل‌کلیک عدد ۳ و غیره خواهد بود. این شمارنده پس از یک فاصله زمانی کوتاه بدون هیچ کلیکی بازنشانی می‌شود؛ مدت زمان دقیق این فاصله ممکن است در مرورگرهای مختلف و پلتفرم‌های مختلف متفاوت باشد. این فاصله همچنین احتمالاً تحت تأثیر تنظیمات کاربر قرار می‌گیرد؛ به عنوان مثال، گزینه‌های دسترس‌پذیری ممکن است این فاصله را افزایش دهند تا انجام چندین کلیک با رابط‌های تطبیقی آسان‌تر شود.
 
-## Examples
+## مثال‌ها
 
-This example displays the number of consecutive clicks on a {{HtmlElement("button")}}.
+این مثال تعداد کلیک‌های متوالی روی یک {{HtmlElement("button")}} را نمایش می‌دهد.
 
 ### HTML
 
@@ -69,23 +63,23 @@ button.addEventListener("click", (event) => {
 });
 ```
 
-### Result
+### نتیجه
 
-Try making rapid, repeated clicks on the button to increase the click count. If you take a break between clicks, the count will reset.
+سعی کنید کلیک‌های سریع و مکرر روی دکمه انجام دهید تا تعداد کلیک افزایش یابد. اگر بین کلیک‌ها مکث کنید، شمارنده بازنشانی می‌شود.
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Learn: Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
+- [یادگیری: مقدمه‌ای بر رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events)
 - {{domxref("Element/auxclick_event", "auxclick")}}
 - {{domxref("Element/contextmenu_event", "contextmenu")}}
 - {{domxref("Element/dblclick_event", "dblclick")}}
