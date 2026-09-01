@@ -1,11 +1,5 @@
 ---
 title: "DocumentPictureInPictureEvent: DocumentPictureInPictureEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPictureEvent/DocumentPictureInPictureEvent"
-status: "needs-translation"
----
-
----
-title: "DocumentPictureInPictureEvent: DocumentPictureInPictureEvent() constructor"
 short-title: DocumentPictureInPictureEvent()
 slug: Web/API/DocumentPictureInPictureEvent/DocumentPictureInPictureEvent
 page-type: web-api-constructor
@@ -14,27 +8,26 @@ browser-compat: api.DocumentPictureInPictureEvent.DocumentPictureInPictureEvent
 
 {{APIRef("Document Picture-in-Picture API")}}{{SecureContext_Header}}
 
-The **`DocumentPictureInPictureEvent()`** constructor creates a new
-{{domxref("DocumentPictureInPictureEvent")}} object instance.
+سازنده‌ی **`DocumentPictureInPictureEvent()`** یک نمونه‌ی جدید از شیء {{domxref("DocumentPictureInPictureEvent")}} ایجاد می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new DocumentPictureInPictureEvent(type, init)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the type of event. In the case of `DocumentPictureInPictureEvent` this is always `enter`.
+  - : یک رشته (string) که نشان‌دهنده‌ی نوع رویداد است. در مورد `DocumentPictureInPictureEvent` این همیشه `enter` است.
 - `init`
-  - : An object containing the following properties:
+  - : یک شیء شامل ویژگی‌های زیر:
     - `window`
-      - : A {{domxref("Window")}} instance representing the browsing context inside the `DocumentPictureInPicture` window the event was fired on.
+      - : یک نمونه از {{domxref("Window")}} که نمایانگر زمینه‌ی مرور (browsing context) درون پنجره‌ی `DocumentPictureInPicture` است که رویداد روی آن فعال شده است.
 
-## Examples
+## مثال‌ها
 
-A developer would not use this constructor manually. A new `DocumentPictureInPictureEvent` object is constructed when a handler is invoked as a result of the {{domxref("DocumentPictureInPicture.enter_event", "enter")}} event firing.
+توسعه‌دهنده معمولاً از این سازنده به صورت دستی استفاده نمی‌کند. یک شیء جدید `DocumentPictureInPictureEvent` زمانی ساخته می‌شود که یک handler در نتیجه‌ی فعال شدن رویداد {{domxref("DocumentPictureInPicture.enter_event", "enter")}} فراخوانی شود.
 
 ```js
 documentPictureInPicture.addEventListener("enter", (event) => {
@@ -58,15 +51,15 @@ documentPictureInPicture.addEventListener("enter", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document Picture-in-Picture API", "Document Picture-in-Picture API", "", "nocode")}}
-- [Using the Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using)
+- [استفاده از Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using)
