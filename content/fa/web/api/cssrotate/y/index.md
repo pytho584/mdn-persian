@@ -1,11 +1,5 @@
 ---
 title: "CSSRotate: y property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSRotate/y"
-status: "needs-translation"
----
-
----
-title: "CSSRotate: y property"
 short-title: y
 slug: Web/API/CSSRotate/y
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.CSSRotate.y
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`y`** property of the {{domxref("CSSRotate")}} interface gets and sets the ordinate or y-axis of the translating vector.
+ویژگی **`y`** از رابط {{domxref("CSSRotate")}} مقدار مختصات y (یا محور y) بردار انتقال را دریافت و تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref("CSSNumericValue")}}. Can be set to a number, which is wrapped in a {{domxref("CSSUnitValue")}} of `unit: "number"`.
+یک {{domxref("CSSNumericValue")}}. می‌توان آن را به یک عدد تنظیم کرد که در یک {{domxref("CSSUnitValue")}} با `unit: "number"` قرار می‌گیرد.
 
-## Examples
+## مثال‌ها
 
 To Do
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
