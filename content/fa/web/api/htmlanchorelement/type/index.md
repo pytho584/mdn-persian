@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/type"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: type property"
 short-title: type
 slug: Web/API/HTMLAnchorElement/type
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLAnchorElement.type
 
 {{ApiRef("HTML DOM")}}
 
-The **`type`** property of the {{domxref("HTMLAnchorElement")}} interface is a string that indicates the MIME type of the linked resource.
+خاصیت **`type`** در رابط {{domxref("HTMLAnchorElement")}} یک رشته است که نوع MIME منبع پیوندشده را نشان می‌دهد.
 
-It reflects the `type` attribute of the {{HTMLElement("a")}} element.
+این خاصیت، صفت `type` عنصر {{HTMLElement("a")}} را منعکس می‌کند.
 
 ## Value
 
-A string.
+یک رشته.
 
 ## Example
 
