@@ -1,28 +1,18 @@
 ---
 title: "HTMLMeterElement: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/value"
-status: "needs-translation"
----
-
----
-title: "HTMLMeterElement: value property"
-short-title: value
-slug: Web/API/HTMLMeterElement/value
-page-type: web-api-instance-property
-browser-compat: api.HTMLMeterElement.value
 ---
 
 {{ APIRef("HTML DOM") }}
 
-The **`value`** property of the {{DOMxRef("HTMLMeterElement")}} interface represents the current value of the {{htmlelement("meter")}} element as a floating-point number. It reflects the element's [`value`](/en-US/docs/Web/HTML/Reference/Elements/meter#value) attribute. If no `value` is set, it is the {{DOMxRef("HTMLMeterElement.min")}} value or `0`, whichever is greater.
+خاصیت **`value`** از رابط {{DOMxRef("HTMLMeterElement")}} مقدار فعلی عنصر {{htmlelement("meter")}} را به صورت یک عدد اعشاری نمایش می‌دهد. این خاصیت منعکس‌کنندهٔ ویژگی [`value`](/en-US/docs/Web/HTML/Reference/Elements/meter#value) عنصر است. اگر هیچ `value`ای تنظیم نشده باشد، مقدار {{DOMxRef("HTMLMeterElement.min")}} یا `0` (هر کدام بزرگتر است) خواهد بود.
 
-This property can also be set directly, for example to set a default value based on some condition.
+این خاصیت را می‌توان مستقیماً نیز تنظیم کرد، مثلاً برای تعیین یک مقدار پیش‌فرض بر اساس یک شرط.
 
-## Value
+## مقدار
 
-A number. Defaults to either {{DOMxRef("HTMLMeterElement.min")}} or `0`, whichever if greater, if not defined.
+یک عدد. به طور پیش‌فرض، اگر تعریف نشده باشد، برابر با {{DOMxRef("HTMLMeterElement.min")}} یا `0` (هر کدام بزرگتر است) خواهد بود.
 
-## Examples
+## مثال‌ها
 
 ```html
 <label for="fuel">Current fuel level:</label>
@@ -43,15 +33,15 @@ console.log(meterElement.value); // 50
 console.log(meterElement.value); // 49
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("meter")}}
 - {{DOMXref("HTMLMeterElement.min")}}
