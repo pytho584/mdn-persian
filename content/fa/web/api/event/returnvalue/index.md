@@ -1,7 +1,6 @@
 ---
 title: "Event: returnValue property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/returnValue"
-status: "needs-translation"
 ---
 
 ---
@@ -16,38 +15,27 @@ browser-compat: api.Event.returnValue
 
 {{APIRef("DOM")}}{{Deprecated_Header}}{{AvailableInWorkers}}
 
-The {{domxref("Event")}} property
-**`returnValue`** indicates whether the default action for
-this event has been prevented or not.
+ویژگی **`returnValue`** از {{domxref("Event")}}، نشان می‌دهد که آیا اقدام پیش‌فرض برای این رویداد جلوگیری شده است یا خیر.
 
-It is set to `true` by
-default, allowing the default action to occur. Setting this property to
-`false` prevents the default action.
+این ویژگی به طور پیش‌فرض `true` است و امکان انجام اقدام پیش‌فرض را فراهم می‌کند. تنظیم این ویژگی به `false` از اقدام پیش‌فرض جلوگیری می‌کند.
 
 > [!NOTE]
-> While `returnValue` has been adopted into the DOM
-> standard, it is present primarily to support existing code. Use
-> {{DOMxRef("Event.preventDefault", "preventDefault()")}}, and
-> {{domxref("Event.defaultPrevented", "defaultPrevented")}} instead of this historical
-> property.
+> اگرچه `returnValue` در استاندارد DOM گنجانده شده است، اما عمدتاً برای پشتیبانی از کدهای موجود ارائه شده است. به جای این ویژگی قدیمی، از {{DOMxRef("Event.preventDefault", "preventDefault()")}} و {{domxref("Event.defaultPrevented", "defaultPrevented")}} استفاده کنید.
 
-## Value
+## مقدار
 
-A boolean value which is `true` if the event has not been
-canceled; otherwise, if the event has been canceled or the default has been prevented,
-the value is `false`.
+یک مقدار بولی است که اگر رویداد لغو نشده باشد `true` است؛ در غیر این صورت، اگر رویداد لغو شده یا اقدام پیش‌فرض جلوگیری شده باشد، مقدار `false` خواهد بود.
 
-The value of `returnValue` is the opposite of the value returned by
-{{domxref("Event.defaultPrevented", "defaultPrevented")}}.
+مقدار `returnValue` برعکس مقداری است که توسط {{domxref("Event.defaultPrevented", "defaultPrevented")}} بازگردانده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLDialogElement.returnValue")}}: the return value for the {{HTMLElement("dialog")}}.
+- {{domxref("HTMLDialogElement.returnValue")}}: مقدار بازگشتی برای {{HTMLElement("dialog")}}.
