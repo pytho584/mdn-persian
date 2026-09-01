@@ -1,11 +1,5 @@
 ---
 title: "CSSNumericValue: add() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/add"
-status: "needs-translation"
----
-
----
-title: "CSSNumericValue: add() method"
 short-title: add()
 slug: Web/API/CSSNumericValue/add
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.CSSNumericValue.add
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`add()`** method of the {{domxref("CSSNumericValue")}} interface adds a supplied number to the `CSSNumericValue`.
+متد **`add()`** از رابط {{domxref("CSSNumericValue")}} یک عدد داده شده را به `CSSNumericValue` اضافه می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 add()
@@ -25,34 +19,34 @@ add(number1, number2)
 add(number1, number2, /* …, */ numberN)
 ```
 
-### Parameters
+### پارامترها
 
-- `number1`, …, `numberN` {{optional_inline}}
-  - : Either a number or a {{domxref('CSSNumericValue')}}.
+- `number1`، …، `numberN` {{optional_inline}}
+  - : یک عدد یا یک {{domxref('CSSNumericValue')}}.
 
-### Return value
+### مقدار برگشتی
 
-A {{domxref('CSSMathSum')}}, or a {{domxref('CSSUnitValue')}} if `this` and every argument share the same unit.
+یک {{domxref('CSSMathSum')}}، یا یک {{domxref('CSSUnitValue')}} اگر `this` و همه آرگومان‌ها واحد یکسانی داشته باشند.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if an invalid type was passed to the method.
+  - : اگر نوع نامعتبری به متد ارسال شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 let mathSum = CSS.px(23).add(CSS.percent(4)).add(CSS.cm(3)).add(CSS.in(9));
-// Prints "calc(23px + 4% + 3cm + 9in)"
+// چاپ می‌کند "calc(23px + 4% + 3cm + 9in)"
 console.log(mathSum.toString());
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
