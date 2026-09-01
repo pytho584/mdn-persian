@@ -1,11 +1,5 @@
 ---
 title: "DOMRectList: item() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRectList/item"
-status: "needs-translation"
----
-
----
-title: "DOMRectList: item() method"
 short-title: item()
 slug: Web/API/DOMRectList/item
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.DOMRectList.item
 
 {{APIRef("Geometry Interfaces")}}
 
-The {{domxref("DOMRectList")}} method
-`item()` returns the {{domxref("DOMRect")}} at the specified index within the list, or `null` if the index is out of range.
+متد `item()` در {{domxref("DOMRectList")}}، {{domxref("DOMRect")}} را در ایندکس مشخص‌شده درون لیست بازمی‌گرداند، یا اگر ایندکس خارج از محدوده باشد `null` را بازمی‌گرداند.
 
 ## Syntax
 
@@ -26,11 +19,11 @@ item(index)
 ### Parameters
 
 - `index`
-  - : A zero-based integer representing the position of the `DOMRect` in the `DOMRectList` to retrieve.
+  - : یک عدد صحیح مبتنی بر صفر که موقعیت `DOMRect` را در `DOMRectList` برای بازیابی مشخص می‌کند.
 
 ### Return value
 
-A {{domxref("DOMRect")}} object at the specified index in the `DOMRectList`, or null if index is greater than or equal to the number of rectangles in the list.
+یک شیء {{domxref("DOMRect")}} در ایندکس مشخص‌شده در `DOMRectList`، یا `null` اگر ایندکس بزرگتر یا مساوی تعداد مستطیل‌های موجود در لیست باشد.
 
 ## Example
 
