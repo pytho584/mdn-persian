@@ -1,7 +1,5 @@
 ---
 title: "GPUCompilationMessage: linePos property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/linePos"
-status: "needs-translation"
 ---
 
 ---
@@ -14,22 +12,21 @@ browser-compat: api.GPUCompilationMessage.linePos
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`linePos`** read-only property of the
-{{domxref("GPUCompilationMessage")}} interface is a number representing the position in the code line that the message corresponds to. This could be an exact point, or the start of the relevant substring.
+ویژگی فقط‌خواندنی **`linePos`** از رابط {{domxref("GPUCompilationMessage")}} عددی است که موقعیت را در خط کد نشان می‌دهد؛ موقعیتی که پیام به آن مربوط می‌شود. این موقعیت می‌تواند یک نقطهٔ دقیق یا شروع زیررشتهٔ مرتبط باشد.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-To be precise, `linePos` is the number of {{glossary("UTF-16", "UTF-16 code units")}} from the beginning of the line to the exact point or start of the relevant substring that the message corresponds to.
+به بیان دقیق‌تر، `linePos` تعداد {{glossary("UTF-16", "واحدهای کد UTF-16")}} از ابتدای خط تا نقطهٔ دقیق یا شروع زیررشتهٔ مرتبط با پیام است.
 
-Note that:
+توجه داشته باشید که:
 
-- If the message corresponds to a substring, `linePos` refers to the first UTF-16 code unit of the substring.
-- If the message does not correspond to a specific code position (perhaps it refers to the whole of the shader code), `linePos` will be 0.
-- Values are one-based — a value of 1 refers to the first code unit of the line.
+- اگر پیام به یک زیررشته مربوط باشد، `linePos` به اولین واحد کد UTF-16 آن زیررشته اشاره می‌کند.
+- اگر پیام به موقعیت کد خاصی مربوط نباشد (مثلاً به کل کد شیدر اشاره کند)، `linePos` برابر 0 خواهد بود.
+- مقادیر یک‌پایه هستند — مقدار 1 به اولین واحد کد خط اشاره می‌کند.
 
-## Examples
+## مثال
 
 ```js
 const shaderModule = device.createShaderModule({
@@ -41,16 +38,16 @@ const firstMessage = shaderInfo.messages[0];
 console.log(firstMessage.linePos);
 ```
 
-See the main [`GPUCompilationInfo` page](/en-US/docs/Web/API/GPUCompilationInfo#examples) for a more detailed example.
+برای یک مثال دقیق‌تر، صفحهٔ اصلی [`GPUCompilationInfo` page](/en-US/docs/Web/API/GPUCompilationInfo#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
