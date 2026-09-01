@@ -1,11 +1,5 @@
 ---
 title: "DataTransferItem: kind property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/kind"
-status: "needs-translation"
----
-
----
-title: "DataTransferItem: kind property"
 short-title: kind
 slug: Web/API/DataTransferItem/kind
 page-type: web-api-instance-property
@@ -14,21 +8,20 @@ browser-compat: api.DataTransferItem.kind
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The read-only **`DataTransferItem.kind`** property returns the kind–a string or a file–of the {{domxref("DataTransferItem")}} object representing the _drag data item_.
+ویژگی فقط خواندنی **`DataTransferItem.kind`** نوع — یک رشته یا یک فایل — از شیء {{domxref("DataTransferItem")}} را که نمایانگر _مورد داده‌ی کشیدن_ است، بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A string representing the drag data item's kind.
-It must be one of the following values:
+یک رشته که نوع مورد داده‌ی کشیدن را نشان می‌دهد. باید یکی از مقادیر زیر باشد:
 
 - `'file'`
-  - : If the drag data item is a file.
+  - : اگر مورد داده‌ی کشیدن یک فایل باشد.
 - `'string'`
-  - : If the kind of drag data item is a _plain Unicode string_.
+  - : اگر نوع مورد داده‌ی کشیدن یک _رشته‌ی ساده‌ی یونیکد_ باشد.
 
-## Examples
+## مثال‌ها
 
-This example shows the use of the `kind` property.
+این مثال استفاده از ویژگی `kind` را نشان می‌دهد.
 
 ```js
 function dropHandler(ev) {
@@ -52,16 +45,16 @@ function dropHandler(ev) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Drag and drop](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
-- [Drag Operations](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
-- [Working with the drag data store](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
+- [کشیدن و رها کردن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+- [عملیات‌های کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
+- [کار با ذخیره‌گاه داده‌ی کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
