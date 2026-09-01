@@ -1,11 +1,5 @@
 ---
 title: "Element: requestFullscreen() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullscreen"
-status: "needs-translation"
----
-
----
-title: "Element: requestFullscreen() method"
 short-title: requestFullscreen()
 slug: Web/API/Element/requestFullscreen
 page-type: web-api-instance-method
@@ -14,161 +8,161 @@ browser-compat: api.Element.requestFullscreen
 
 {{APIRef("Fullscreen API")}}
 
-The **`requestFullscreen()`** method of the {{domxref("Element")}} interface issues an asynchronous request to display the element in fullscreen mode.
+متد **`requestFullscreen()`** از رابط {{domxref("Element")}} یک درخواست ناهمگام (asynchronous) برای نمایش عنصر در حالت تمام‌صفحه (fullscreen) صادر می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 requestFullscreen()
 requestFullscreen(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object that controls the behavior of the transition to fullscreen mode.
-    The available options are:
+  - : یک شیء (object) که رفتار انتقال به حالت تمام‌صفحه را کنترل می‌کند.
+    گزینه‌های موجود عبارتند از:
     - `keyboardLock` {{optional_inline}}
-      - : Controls the selected keyboard lock mode.
+      - : حالت قفل صفحه‌کلید (keyboard lock) را کنترل می‌کند.
         - `"none"`
-          - : No keyboard lock is applied.
-            This is the default mode.
+          - : هیچ قفل صفحه‌کلیدی اعمال نمی‌شود.
+            این حالت پیش‌فرض است.
         - `"browser"`
-          - : Browser keyboard lock mode is applied.
-            In this mode, the browser forwards keyboard events to the application that would normally be handled by browser or system code.
-            Applications should intercept events for the keys and key combinations they want to use, and call [`preventDefault()`](/en-US/docs/Web/API/Event/preventDefault) to cancel any default actions.
+          - : حالت قفل صفحه‌کلید مرورگر اعمال می‌شود.
+            در این حالت، مرورگر رویدادهای صفحه‌کلید را به برنامه‌ای که معمولاً توسط کدهای مرورگر یا سیستم مدیریت می‌شود، ارسال می‌کند.
+            برنامه‌ها باید رویدادهای کلیدها و ترکیب‌کلیدهایی را که می‌خواهند استفاده کنند، رهگیری (intercept) کرده و با فراخوانی [`preventDefault()`](/en-US/docs/Web/API/Event/preventDefault) هر اقدام پیش‌فرضی را لغو کنند.
 
-            Note that some browsers may disable the default action for some keys, such as the key that is normally used to exit fullscreen mode; this is not guaranteed, so you should always call `preventDefault()`.
-            Browsers are also encouraged to provide a mechanism to exit fullscreen mode with keyboard lock.
+            توجه داشته باشید که برخی مرورگرها ممکن است اقدام پیش‌فرض برای برخی کلیدها مانند کلیدی که معمولاً برای خروج از حالت تمام‌صفحه استفاده می‌شود را غیرفعال کنند؛ این تضمین شده نیست، بنابراین همیشه باید `preventDefault()` را فراخوانی کنید.
+            همچنین تشویق می‌شود که مرورگرها مکانیزمی برای خروج از حالت تمام‌صفحه با قفل صفحه‌کلید ارائه دهند.
 
-            For more information see the [Keyboard locking](#keyboard_locking) section below.
+            برای اطلاعات بیشتر به بخش [قفل صفحه‌کلید](#keyboard_locking) در زیر مراجعه کنید.
 
     - `navigationUI` {{optional_inline}}
-      - : Controls whether or not to show navigation UI while the element is in fullscreen mode.
-        The default value is `"auto"`, which indicates that the browser should decide what to do.
+      - : مشخص می‌کند که آیا هنگام تمام‌صفحه بودن عنصر، رابط ناوبری (navigation UI) نشان داده شود یا خیر.
+        مقدار پیش‌فرض `"auto"` است که نشان می‌دهد مرورگر باید تصمیم بگیرد.
         - `"hide"`
-          - : The browser's navigation interface will be hidden and the entire dimensions of the screen will be allocated to the display of the element.
+          - : رابط ناوبری مرورگر پنهان می‌شود و تمام ابعاد صفحه به نمایش عنصر اختصاص می‌یابد.
         - `"show"`
-          - : The browser will present page navigation controls and possibly other user interface; the dimensions of the element (and the perceived size of the screen) will be clamped to leave room for this user interface.
+          - : مرورگر کنترل‌های ناوبری صفحه و احتمالاً سایر رابط‌های کاربری را نمایش می‌دهد؛ ابعاد عنصر (و اندازه درک‌شده صفحه) برای جا دادن به این رابط کاربری محدود می‌شود.
         - `"auto"`
-          - : The browser will choose which of the above settings to apply.
-            This is the default value.
+          - : مرورگر انتخاب می‌کند کدام یک از تنظیمات بالا اعمال شود.
+            این مقدار پیش‌فرض است.
     - `screen` {{optional_inline}} {{experimental_inline}}
-      - : Specifies on which screen you want to put the element in fullscreen mode.
-        This takes a {{domxref("ScreenDetailed")}} object as a value, representing the chosen screen.
+      - : صفحه‌ای را مشخص می‌کند که می‌خواهید عنصر را در آن به حالت تمام‌صفحه درآورید.
+        این یک شیء {{domxref("ScreenDetailed")}} را به عنوان مقدار می‌پذیرد که نمایانگر صفحه انتخاب‌شده است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{JSxRef("Promise")}} which is resolved with a value of `undefined` when the transition to full screen is complete, or rejects with an exception.
+یک {{JSxRef("Promise")}} که با مقدار `undefined` زمانی که انتقال به حالت تمام‌صفحه کامل شود، حل (resolve) می‌شود، یا با یک استثنا (exception) رد (reject) می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
-On error the returned `Promise` rejects with one of the following values:
+در صورت خطا، `Promise` بازگشتی با یکی از مقادیر زیر رد می‌شود:
 
 - {{jsxref("TypeError")}}
-  - : The `TypeError` exception may be delivered in any of the following situations:
-    - The document containing the element isn't fully active; that is, it's not the current active document.
-    - The element is not contained by a document.
-    - The element is not permitted to use the `fullscreen` feature, either because of [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) configuration or other access control features.
-    - The element and its document are the same node.
-    - The element is a [popover](/en-US/docs/Web/API/Popover_API) that is already being shown via {{domxref("HTMLElement.showPopover()")}}.
+  - : استثنای `TypeError` ممکن است در هر یک از شرایط زیر رخ دهد:
+    - سند (document) حاوی عنصر کاملاً فعال نیست؛ یعنی سند جاری فعال نیست.
+    - عنصر درون یک سند قرار ندارد.
+    - عنصر مجاز به استفاده از ویژگی `fullscreen` نیست، چه به دلیل تنظیمات [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) یا سایر ویژگی‌های کنترل دسترسی.
+    - عنصر و سند آن یک گره (node) واحد هستند.
+    - عنصر یک [پاپ‌اور (popover)](/en-US/docs/Web/API/Popover_API) است که قبلاً از طریق {{domxref("HTMLElement.showPopover()")}} نمایش داده شده است.
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : The passed `options.keyboardLock` parameter is not supported by the browser.
+  - : پارامتر `options.keyboardLock` ارسال‌شده توسط مرورگر پشتیبانی نمی‌شود.
 
-## Description
+## توضیحات (Description)
 
-The **`requestFullscreen()`** method issues an asynchronous request to display the element in fullscreen mode.
+متد **`requestFullscreen()`** یک درخواست ناهمگام برای نمایش عنصر در حالت تمام‌صفحه صادر می‌کند.
 
-The method requires permission.
+این متد نیاز به مجوز (permission) دارد.
 
-- If permission to enter full screen mode is granted, the returned {{JSxRef("Promise")}} will resolve and the element will receive a {{domxref("Element/fullscreenchange_event", "fullscreenchange")}} event to let it know that it's now in full screen mode.
-- If permission is denied, the promise is rejected and the element receives a {{domxref("Element/fullscreenerror_event", "fullscreenerror")}} event instead.
+- اگر مجوز ورود به حالت تمام‌صفحه اعطا شود، {{JSxRef("Promise")}} بازگشتی حل می‌شود و عنصر یک رویداد {{domxref("Element/fullscreenchange_event", "fullscreenchange")}} دریافت می‌کند تا از قرار گرفتن در حالت تمام‌صفحه مطلع شود.
+- اگر مجوز رد شود، promise رد می‌شود و عنصر به جای آن یک رویداد {{domxref("Element/fullscreenerror_event", "fullscreenerror")}} دریافت می‌کند.
 
-If the element has been detached from the original document, then the document receives these events instead.
+اگر عنصر از سند اصلی جدا شده باشد، سند این رویدادها را دریافت می‌کند.
 
-### Compatible elements
+### عناصر سازگار (Compatible elements)
 
-An element that you wish to place into fullscreen mode has to meet a small number of simple requirements:
+عنصری که می‌خواهید در حالت تمام‌صفحه قرار دهید باید چند الزام ساده را برآورده کند:
 
-- It must be one of the standard HTML elements or {{SVGElement("svg")}} or {{MathMLElement("math")}}.
-- It is _not_ a {{HTMLElement("dialog")}} element.
-- It must either be located within the top-level document or in an {{HTMLElement("iframe")}} which has the [`allowfullscreen`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allowfullscreen) attribute applied to it.
+- باید یکی از عناصر HTML استاندارد یا {{SVGElement("svg")}} یا {{MathMLElement("math")}} باشد.
+- یک عنصر {{HTMLElement("dialog")}} _نباشد_.
+- باید یا درون سند سطح بالا (top-level document) قرار داشته باشد یا در یک {{HTMLElement("iframe")}} که ویژگی [`allowfullscreen`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allowfullscreen) به آن اعمال شده است.
 
-Additionally, any set {{httpheader("Permissions-Policy")}} must allow the use of the `fullscreen` feature.
+علاوه بر این، هر {{httpheader("Permissions-Policy")}} تنظیم‌شده باید استفاده از ویژگی `fullscreen` را مجاز کند.
 
-### Detecting fullscreen activation
+### تشخیص فعال‌سازی تمام‌صفحه
 
-You can determine whether or not your attempt to switch to fullscreen mode is successful by using the {{jsxref("Promise")}} returned by `requestFullscreen()`, as seen in the [examples](#examples) below.
+می‌توانید با استفاده از {{jsxref("Promise")}} بازگشتی از `requestFullscreen()` تشخیص دهید که آیا تلاش شما برای تغییر به حالت تمام‌صفحه موفق بوده است یا خیر، همانطور که در [مثال‌ها](#examples) در زیر مشاهده می‌کنید.
 
-To learn when other code has toggled fullscreen mode on and off, you should establish listeners for the {{domxref("Document/fullscreenchange_event", "fullscreenchange")}} event on the {{domxref("Document")}}.
-It's also important to listen for `fullscreenchange` to be aware when, for example, the user manually toggles fullscreen mode, or when the user switches applications, causing your application to temporarily exit fullscreen mode.
+برای اطلاع از زمانی که کد دیگری حالت تمام‌صفحه را روشن یا خاموش می‌کند، باید شنونده‌هایی (listeners) برای رویداد {{domxref("Document/fullscreenchange_event", "fullscreenchange")}} روی {{domxref("Document")}} تنظیم کنید.
+همچنین مهم است که به `fullscreenchange` گوش دهید تا از زمانی که مثلاً کاربر به صورت دستی حالت تمام‌صفحه را تغییر می‌دهد یا زمانی که کاربر برنامه‌ها را جابجا می‌کند و باعث خروج موقت برنامه شما از حالت تمام‌صفحه می‌شود، مطلع شوید.
 
-### Keyboard locking
+### قفل صفحه‌کلید (Keyboard locking)
 
-Keyboard locking allows a fullscreen application to intercept and handle some keys and key combinations that would otherwise be exclusively handled by the browser or the underlying OS.
-This can improve the user experience for games, for example, by allowing the <kbd>Esc</kbd> key to be used as a menu key instead of exiting fullscreen mode.
-It can also be useful for applications such as remote desktop control, where you want almost all key events to be forwarded to the remote computer.
+قفل صفحه‌کلید به یک برنامه تمام‌صفحه اجازه می‌دهد برخی کلیدها و ترکیب‌کلیدهایی را که در غیر این صورت منحصراً توسط مرورگر یا سیستم‌عامل مدیریت می‌شوند، رهگیری و مدیریت کند.
+این می‌تواند تجربه کاربری را برای بازی‌ها بهبود بخشد، مثلاً با اجازه دادن به استفاده از کلید <kbd>Esc</kbd> به عنوان کلید منو به جای خروج از حالت تمام‌صفحه.
+همچنین می‌تواند برای برنامه‌هایی مانند کنترل از راه دور دسکتاپ مفید باشد، جایی که می‌خواهید تقریباً تمام رویدادهای کلید به رایانه راه دور ارسال شوند.
 
-The keyboard lock is activated by passing a keyboard lock mode value of `"browser"` to the [`options.keyboardLock`](#keyboardlock) parameter when activating fullscreen mode.
-When keyboard lock is active in fullscreen mode the browser will redirect "many more" keyboard events to the application — the precise set of keys is browser dependent.
-The web application should handle the event by first calling [`preventDefault()`](/en-US/docs/Web/API/Event/preventDefault) to cancel its default action.
-Some key combinations are used for system control or have privacy risks, and hence cannot be intercepted and disabled using this mechanism (for example, <kbd>Ctrl+Alt+Delete</kbd> on Windows).
+قفل صفحه‌کلید با ارسال یک مقدار حالت قفل صفحه‌کلید `"browser"` به پارامتر [`options.keyboardLock`](#keyboardlock) هنگام فعال‌سازی حالت تمام‌صفحه فعال می‌شود.
+هنگامی که قفل صفحه‌کلید در حالت تمام‌صفحه فعال است، مرورگر «بسیاری بیشتر» از رویدادهای صفحه‌کلید را به برنامه هدایت می‌کند — مجموعه دقیق کلیدها به مرورگر بستگی دارد.
+برنامه وب باید رویداد را با فراخوانی [`preventDefault()`](/en-US/docs/Web/API/Event/preventDefault) برای لغو اقدام پیش‌فرض آن مدیریت کند.
+برخی ترکیب‌کلیدها برای کنترل سیستم یا دارای ریسک حریم خصوصی هستند و بنابراین نمی‌توان با این مکانیزم رهگیری و غیرفعال کرد (مثلاً <kbd>Ctrl+Alt+Delete</kbd> در ویندوز).
 
-Note that some browsers always disable the default action for the <kbd>Esc</kbd> key when in keyboard lock, so that pressing it doesn't automatically exit fullscreen mode.
-However, as this is not guaranteed, you will still need to call `preventDefault()` to stop <kbd>Esc</kbd> key presses from exiting fullscreen mode.
-More generally, you can't assume that the default action for any keyboard event is disabled by default.
+توجه داشته باشید که برخی مرورگرها همیشه اقدام پیش‌فرض کلید <kbd>Esc</kbd> را در هنگام قفل صفحه‌کلید غیرفعال می‌کنند، به طوری که فشار دادن آن به طور خودکار از حالت تمام‌صفحه خارج نمی‌شود.
+با این حال، از آنجایی که این تضمین نشده است، همچنان باید `preventDefault()` را فراخوانی کنید تا از خروج از حالت تمام‌صفحه با فشار دادن <kbd>Esc</kbd> جلوگیری کنید.
+به طور کلی، نمی‌توانید فرض کنید که اقدام پیش‌فرض برای هر رویداد صفحه‌کلید به طور پیش‌فرض غیرفعال است.
 
-Browsers are expected to provide an alternative mechanism for exiting fullscreen mode when keyboard lock is enabled.
-Most browsers use the <kbd>Esc</kbd> key to exit normal fullscreen mode, and a long-press <kbd>Esc</kbd> key to exit keyboard lock.
-The keyboard lock is disabled when the browser exits fullscreen mode.
+انتظار می‌رود مرورگرها یک مکانیزم جایگزین برای خروج از حالت تمام‌صفحه در زمانی که قفل صفحه‌کلید فعال است، ارائه دهند.
+اکثر مرورگرها از کلید <kbd>Esc</kbd> برای خروج از حالت تمام‌صفحه معمولی و از فشار طولانی <kbd>Esc</kbd> برای خروج از قفل صفحه‌کلید استفاده می‌کنند.
+قفل صفحه‌کلید زمانی که مرورگر از حالت تمام‌صفحه خارج می‌شود، غیرفعال می‌شود.
 
-### Security considerations
+### ملاحظات امنیتی (Security considerations)
 
-[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required.
-The user has to interact with the page or a UI element in order for this feature to work.
+[فعال‌سازی موقت کاربر (Transient user activation)](/en-US/docs/Web/Security/Defenses/User_activation) مورد نیاز است.
+کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل کند تا این ویژگی کار کند.
 
-Fullscreen mode is controlled by the [Permissions-Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) directive {{HTTPHeader("Permissions-Policy/fullscreen","fullscreen")}}.
+حالت تمام‌صفحه توسط دستورالعمل [Permissions-Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) {{HTTPHeader("Permissions-Policy/fullscreen","fullscreen")}} کنترل می‌شود.
 
-The default allowlist for `screen-wake-lock` is `self`.
-This allows fullscreen usage in same-origin nested frames but prevents them in third-party content.
-Third party usage can be enabled by the server first setting the `Permissions-Policy` header to grant permission a particular third party origin.
+لیست سفید پیش‌فرض برای `screen-wake-lock` مقدار `self` است.
+این اجازه استفاده از تمام‌صفحه را در فریم‌های تو در تو با همان منبع (same-origin) می‌دهد اما از آن در محتوای شخص ثالث جلوگیری می‌کند.
+استفاده شخص ثالث را می‌توان با تنظیم سربرگ `Permissions-Policy` برای اعطای مجوز به یک منبع خاص شخص ثالث فعال کرد.
 
 ```http
 Permissions-Policy: fullscreen=(self b.example.com)
 ```
 
-Then the `allow="fullscreen"` attribute must be added to the frame container element for sources from that origin:
+سپس ویژگی `allow="fullscreen"` باید به عنصر کانتینر فریم برای منابع آن منبع اضافه شود:
 
 ```html
 <iframe src="https://b.example.com" allow="fullscreen"></iframe>
 ```
 
-The [Permissions API](/en-US/docs/Web/API/Permissions_API) `fullscreen` permission can be used to test whether access to use the mode is `granted`, `denied` or `prompt` (requires user acknowledgement of a prompt).
+می‌توان از مجوز `fullscreen` [Permissions API](/en-US/docs/Web/API/Permissions_API) برای آزمایش اینکه آیا دسترسی به استفاده از حالت `granted` (اعطا شده)، `denied` (رد شده) یا `prompt` (نیاز به تأیید کاربر با یک اعلان) است استفاده کرد.
 
-## Examples
+## مثال‌ها (Examples)
 
-### Requesting fullscreen mode
+### درخواست حالت تمام‌صفحه
 
-This example toggles the {{HTMLElement("video")}} element in and out of fullscreen mode when the <kbd>Enter</kbd> or <kbd>Shift</kbd> + <kbd>F</kbd> keys are pressed.
-The script checks whether the document is currently in fullscreen using {{domxref("document.fullscreenElement")}}.
-If the document is in fullscreen, it calls {{domxref("document.exitFullscreen()")}} to exit.
-Otherwise, it calls `requestFullscreen()` on the `<video>` element:
+این مثال عنصر {{HTMLElement("video")}} را با فشار دادن کلیدهای <kbd>Enter</kbd> یا <kbd>Shift</kbd> + <kbd>F</kbd> به حالت تمام‌صفحه و خارج از آن تغییر می‌دهد.
+اسکریپت با استفاده از {{domxref("document.fullscreenElement")}} بررسی می‌کند که آیا سند در حال حاضر در حالت تمام‌صفحه است یا خیر.
+اگر سند در حالت تمام‌صفحه است، {{domxref("document.exitFullscreen()")}} را فراخوانی می‌کند تا خارج شود.
+در غیر این صورت، `requestFullscreen()` را روی عنصر `<video>` فراخوانی می‌کند:
 
 ```js
 const video = document.querySelector("video");
 
 document.addEventListener("keydown", (event) => {
-  // Note that "F" is case-sensitive (uppercase):
+  // توجه کنید که "F" به حروف بزرگ و کوچک حساس است (بزرگ):
   if (event.key === "Enter" || event.key === "F") {
-    // Check if we're in fullscreen mode
+    // بررسی کنید که آیا در حالت تمام‌صفحه هستیم
     if (document.fullscreenElement) {
       document.exitFullscreen();
       return;
     }
-    // Otherwise enter fullscreen mode
+    // در غیر این صورت وارد حالت تمام‌صفحه شوید
     video.requestFullscreen().catch((err) => {
-      console.error(`Error enabling fullscreen: ${err.message}`);
+      console.error(`خطا در فعال‌سازی تمام‌صفحه: ${err.message}`);
     });
   }
 });
@@ -176,14 +170,13 @@ document.addEventListener("keydown", (event) => {
 
 ```html
 <p>
-  The video element below shows a time-lapse of a flower blooming. You can
-  toggle fullscreen on and off using <kbd>Enter</kbd> or <kbd>Shift</kbd> +
-  <kbd>F</kbd> (uppercase "F"). The embedded document needs to have
-  <a
-    href="https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event">
+  عنصر ویدیوی زیر یک تایم‌لپس از شکوفه‌زدن یک گل را نشان می‌دهد. می‌توانید با
+  <kbd>Enter</kbd> یا <kbd>Shift</kbd> + <kbd>F</kbd> ("F" بزرگ) حالت تمام‌صفحه
+  را روشن و خاموش کنید. سند جاسازی‌شده باید
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event">
     focus
   </a>
-  for the example to work.
+  داشته باشد تا مثال کار کند.
 </p>
 
 <video controls loop src="/shared-assets/videos/flower.mp4" width="420"></video>
@@ -213,9 +206,9 @@ kbd {
 
 {{embedlivesample("requesting_fullscreen_mode", , "400", "", "", "", "fullscreen")}}
 
-### Using keyboard lock
+### استفاده از قفل صفحه‌کلید
 
-This example is almost the same as the previous example, except that we request that fullscreen is opened with keyboard lock.
+این مثال تقریباً مشابه مثال قبلی است، با این تفاوت که درخواست می‌دهیم تمام‌صفحه با قفل صفحه‌کلید باز شود.
 
 #### JavaScript
 
@@ -223,27 +216,27 @@ This example is almost the same as the previous example, except that we request 
 const video = document.querySelector("video");
 ```
 
-The modified key event listener code is shown below.
+کد تغییر یافته شنونده رویداد کلید در زیر نشان داده شده است.
 
-The first difference is that we handle the event for the <kbd>Esc</kbd> key in fullscreen mode, calling `event.preventDefault()` to disable the default action (which would be to exit fullscreen mode).
+تفاوت اول این است که ما رویداد کلید <kbd>Esc</kbd> را در حالت تمام‌صفحه مدیریت می‌کنیم، با فراخوانی `event.preventDefault()` برای غیرفعال کردن اقدام پیش‌فرض (که خروج از حالت تمام‌صفحه است).
 
-As before we call `requestFullscreen()` if <kbd>Enter</kbd> or <kbd>Shift+F</kbd> are pressed when not in fullscreen mode.
-However in this case we pass the `keyboardLock` option with the value `"browser"`.
+مانند قبل، اگر <kbd>Enter</kbd> یا <kbd>Shift+F</kbd> در زمانی که در حالت تمام‌صفحه نیستیم فشار داده شود، `requestFullscreen()` را فراخوانی می‌کنیم.
+با این حال در این مورد گزینه `keyboardLock` را با مقدار `"browser"` ارسال می‌کنیم.
 
 ```js
 document.addEventListener("keydown", (event) => {
-  // Check if we're in fullscreen mode
+  // بررسی کنید که آیا در حالت تمام‌صفحه هستیم
   if (document.fullscreenElement) {
-    // Cancel exiting via the Escape key
+    // لغو خروج از طریق کلید Escape
     if (event.key === "Escape") {
       event.preventDefault();
-      // Do whatever else you might want to do when escape is pressed
+      // هر کار دیگری که ممکن است بخواهید هنگام فشار دادن escape انجام دهید
     }
   } else if (event.key === "Enter" || event.key === "F") {
-    // Open full screen if Enter or F is pressed and not already fullscreen.
-    // Note that "F" is case-sensitive (uppercase).
+    // اگر Enter یا F فشار داده شده و در حالت تمام‌صفحه نیستیم، تمام‌صفحه را باز کنید.
+    // توجه کنید که "F" به حروف بزرگ و کوچک حساس است (بزرگ).
     video.requestFullscreen({ keyboardLock: "browser" }).catch((err) => {
-      console.error(`Error enabling fullscreen: ${err.message}`);
+      console.error(`خطا در فعال‌سازی تمام‌صفحه: ${err.message}`);
     });
   }
 });
@@ -251,14 +244,13 @@ document.addEventListener("keydown", (event) => {
 
 ```html hidden
 <p>
-  The video element below shows a time-lapse of a flower blooming. You can
-  toggle fullscreen on and off using <kbd>Enter</kbd> or
-  <kbd>Shift+F</kbd> (uppercase "F"). The embedded document needs to have
-  <a
-    href="https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event">
+  عنصر ویدیوی زیر یک تایم‌لپس از شکوفه‌زدن یک گل را نشان می‌دهد. می‌توانید با
+  <kbd>Enter</kbd> یا <kbd>Shift+F</kbd> ("F" بزرگ) حالت تمام‌صفحه را روشن و
+  خاموش کنید. سند جاسازی‌شده باید
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event">
     focus
   </a>
-  for the example to work.
+  داشته باشد تا مثال کار کند.
 </p>
 
 <video controls loop src="/shared-assets/videos/flower.mp4" width="420"></video>
@@ -286,16 +278,16 @@ kbd {
 }
 ```
 
-#### Results
+#### نتایج
 
-Select the frame and press <kbd>Shift+F</kbd>.
-When the page displays full frame, note the temporary notification at the top of the page that explains how to exit full screen mode.
+فریم را انتخاب کنید و <kbd>Shift+F</kbd> را فشار دهید.
+هنگامی که صفحه به صورت تمام‌فریم نمایش داده می‌شود، به اعلان موقت در بالای صفحه که نحوه خروج از حالت تمام‌صفحه را توضیح می‌دهد توجه کنید.
 
 {{embedlivesample("Using keyboard lock", , "400", "", "", "", "fullscreen")}}
 
-### Using navigationUI
+### استفاده از navigationUI
 
-In this example, the entire document is placed into fullscreen mode by calling `requestFullscreen()` on the document's {{DOMxRef("Document.documentElement")}}, which is the document's root {{HTMLElement("html")}} element.
+در این مثال، کل سند با فراخوانی `requestFullscreen()` روی {{DOMxRef("Document.documentElement")}} که عنصر ریشه {{HTMLElement("html")}} سند است، در حالت تمام‌صفحه قرار می‌گیرد.
 
 ```js
 let elem = document.documentElement;
@@ -305,16 +297,16 @@ elem
   .then(() => {})
   .catch((err) => {
     alert(
-      `An error occurred while trying to switch into fullscreen mode: ${err.message} (${err.name})`,
+      `خطایی در تلاش برای تغییر به حالت تمام‌صفحه رخ داد: ${err.message} (${err.name})`,
     );
   });
 ```
 
-The promise's resolve handler does nothing, but if the promise is rejected, an error message is displayed by calling {{DOMxRef("Window.alert", "alert()")}}.
+مدیریت حل promise هیچ کاری انجام نمی‌دهد، اما اگر promise رد شود، یک پیام خطا با فراخوانی {{DOMxRef("Window.alert", "alert()")}} نمایش داده می‌شود.
 
-### Using the screen option
+### استفاده از گزینه screen
 
-If you wanted to make the element fullscreen on the primary OS screen, you could use code like the following:
+اگر می‌خواهید عنصر را در صفحه اصلی سیستم‌عامل به حالت تمام‌صفحه درآورید، می‌توانید از کدی مانند زیر استفاده کنید:
 
 ```js
 try {
@@ -327,17 +319,17 @@ try {
 }
 ```
 
-The {{domxref("Window.getScreenDetails()")}} method is used to retrieve the {{domxref("ScreenDetails")}} object for the current device, which contains {{domxref("ScreenDetailed")}} objects representing the different available screens.
+متد {{domxref("Window.getScreenDetails()")}} برای بازیابی شیء {{domxref("ScreenDetails")}} برای دستگاه جاری استفاده می‌شود که شامل اشیاء {{domxref("ScreenDetailed")}} نمایانگر صفحه‌های مختلف موجود است.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید (See also)
 
 - [Fullscreen API](/en-US/docs/Web/API/Fullscreen_API)
 - {{DOMxRef("Document.exitFullscreen()")}}
