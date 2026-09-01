@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: pause() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: pause() method"
 short-title: pause()
 slug: Web/API/HTMLMediaElement/pause
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.HTMLMediaElement.pause
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.pause()`** method will pause playback
-of the media, if the media is already in a paused state this method will have no effect.
+متد **`HTMLMediaElement.pause()`** پخش رسانه را متوقف می‌کند. اگر رسانه از قبل در حالت توقف (paused) باشد، این متد هیچ تأثیری نخواهد داشت.
 
 ## Syntax
 
@@ -23,22 +16,22 @@ of the media, if the media is already in a paused state this method will have no
 pause()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
-None.
+هیچ‌کدام.
 
 ## Specifications
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
