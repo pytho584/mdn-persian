@@ -1,11 +1,5 @@
 ---
 title: "Element: tagName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName"
-status: "needs-translation"
----
-
----
-title: "Element: tagName property"
 short-title: tagName
 slug: Web/API/Element/tagName
 page-type: web-api-instance-property
@@ -14,33 +8,20 @@ browser-compat: api.Element.tagName
 
 {{ApiRef("DOM")}}
 
-The **`tagName`** read-only property
-of the {{domxref("Element")}} interface returns the tag name of the element on which
-it's called.
+ویژگی فقط‌خواندنی **`tagName`** از رابط {{domxref("Element")}} نام تگ عنصری را که روی آن فراخوانی می‌شود برمی‌گرداند.
 
-For example, if the element is an {{HTMLElement("img")}}, its
-`tagName` property is `IMG` (for HTML documents; it may be cased
-differently for XML/XHTML documents). Note: You can use the {{domxref("Element.localName", "localName")}} property
-to access the Element's local name — which for the case in the example is `img` (lowercase).
+به‌عنوان مثال، اگر عنصر یک {{HTMLElement("img")}} باشد، ویژگی `tagName` آن `IMG` است (برای اسناد HTML؛ ممکن است برای اسناد XML/XHTML حروف بزرگ و کوچک متفاوت باشد). نکته: می‌توانید از ویژگی {{domxref("Element.localName", "localName")}} برای دسترسی به نام محلی عنصر استفاده کنید — که در مثال بالا `img` (با حروف کوچک) است.
 
-## Value
+## مقدار
 
-A string indicating the element's tag name. This string's capitalization depends on the
-document type:
+رشته‌ای که نام تگ عنصر را نشان می‌دهد. حروف بزرگ/کوچک این رشته به نوع سند بستگی دارد:
 
-- For DOM trees which represent HTML documents, the returned tag name is always in the
-  canonical upper-case form. For example, `tagName` called on a
-  {{HTMLElement("div")}} element returns `"DIV"`.
-- The tag names of elements in an XML DOM tree are returned in the same case in which
-  they're written in the original XML file. If an XML document includes a tag
-  `"<SomeTag>"`, then the `tagName` property's value is
-  `"SomeTag"`.
+- برای درخت‌های DOM که اسناد HTML را نمایش می‌دهند، نام تگ برگردانده‌شده همیشه به شکل متعارف با حروف بزرگ است. برای مثال، `tagName` روی یک عنصر {{HTMLElement("div")}} مقدار `"DIV"` را برمی‌گرداند.
+- نام تگ عناصر در درخت DOM نوع XML در همان حروفی که در فایل XML اصلی نوشته شده‌اند برگردانده می‌شود. اگر یک سند XML شامل تگ `"<SomeTag>"` باشد، مقدار ویژگی `tagName` برابر `"SomeTag"` خواهد بود.
 
-For {{domxref("Element")}} objects, the value of `tagName` is the same as
-the value of the {{domxref("Node.nodeName", "nodeName")}} property the element object
-inherits from {{domxref("Node")}}.
+برای اشیاء {{domxref("Element")}}، مقدار `tagName` همان مقدار ویژگی {{domxref("Node.nodeName", "nodeName")}} است که شیء عنصر از {{domxref("Node")}} به ارث می‌برد.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -55,19 +36,16 @@ const span = document.getElementById("born");
 console.log(span.tagName);
 ```
 
-In XHTML (or any other XML format), the original case will be maintained, so
-`"span"` would be output in case the original tag name was created lowercase.
-In HTML, `"SPAN"` would be output instead regardless of the case used while
-creating the original document.
+در XHTML (یا هر قالب XML دیگری)، حروف اصلی حفظ می‌شود، بنابراین اگر نام تگ اصلی با حروف کوچک ساخته شده باشد، `"span"` خروجی داده می‌شود. در HTML، بدون توجه به حروفی که هنگام ایجاد سند اصلی استفاده شده، `"SPAN"` خروجی داده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.localName")}}
