@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: ping property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/ping"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: ping property"
 short-title: ping
 slug: Web/API/HTMLAreaElement/ping
 page-type: web-api-instance-property
@@ -14,14 +8,14 @@ browser-compat: api.HTMLAreaElement.ping
 
 {{ApiRef("HTML DOM")}}
 
-The **`ping`** property of the {{domxref("HTMLAreaElement")}} interface is a space-separated list of URLs. When the link is followed, the browser will send {{HTTPMethod("POST")}} requests with the body PING to the URLs.
+ویژگی **`ping`** در رابط {{domxref("HTMLAreaElement")}} یک لیست جدا شده با فاصله از URLها است. هنگامی که پیوند دنبال می‌شود، مرورگر درخواست‌های {{HTTPMethod("POST")}} با بدنه‌ی PING به آن URLها ارسال می‌کند.
 
-It reflects the `ping` attribute of the {{HTMLElement("area")}} element.
+این ویژگی منعکس‌کننده‌ی ویژگی `ping` عنصر {{HTMLElement("area")}} است.
 
 > [!NOTE]
-> This property is not effective in Firefox and its usage may be limited due to privacy and security concerns.
+> این ویژگی در فایرفاکس کارایی ندارد و ممکن است استفاده از آن به دلیل نگرانی‌های حریم خصوصی و امنیتی محدود شود.
 
-## Example
+## مثال
 
 ```html
 <map name="example-map" id="example-map">
@@ -34,17 +28,17 @@ It reflects the `ping` attribute of the {{HTMLElement("area")}} element.
 
 ```js
 const areaCollection = document.getElementById("example-map").areas;
-console.log(areaCollection[0].ping); // Output: "https://example-tracking.com https://example-analytics.com"
+console.log(areaCollection[0].ping); // خروجی: "https://example-tracking.com https://example-analytics.com"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLAnchorElement.ping")}} property
+- ویژگی {{domxref("HTMLAnchorElement.ping")}}
