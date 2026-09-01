@@ -1,11 +1,5 @@
 ---
 title: "Event: cancelBubble property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/cancelBubble"
-status: "needs-translation"
----
-
----
-title: "Event: cancelBubble property"
 short-title: cancelBubble
 slug: Web/API/Event/cancelBubble
 page-type: web-api-instance-property
@@ -16,17 +10,13 @@ browser-compat: api.Event.cancelBubble
 
 {{APIRef("DOM")}}{{Deprecated_Header}}{{AvailableInWorkers}}
 
-The **`cancelBubble`** property of the {{domxref("Event")}}
-interface is deprecated. Use {{domxref("Event.stopPropagation()")}} instead.
-Setting its value to `true` before returning from an event handler prevents propagation
-of the event. In later implementations, setting this to `false` does nothing.
-See [Browser compatibility](#browser_compatibility) for details.
+ویژگی **`cancelBubble`** از رابط {{domxref("Event")}} منسوخ شده است. به‌جای آن از {{domxref("Event.stopPropagation()")}} استفاده کنید. تنظیم مقدار آن به `true` قبل از بازگشت از یک هندلر رویداد، از انتشار رویداد جلوگیری می‌کند. در پیاده‌سازی‌های جدیدتر، تنظیم آن به `false` هیچ اثری ندارد. برای جزئیات به [سازگاری مرورگر](#browser_compatibility) مراجعه کنید.
 
-## Value
+## مقدار
 
-A boolean value. The value `true` means that the event must not be propagated further.
+یک مقدار بولی. مقدار `true` به این معناست که رویداد نباید بیشتر منتشر شود.
 
-## Example
+## مثال
 
 ```js
 elem.onclick = (event) => {
@@ -35,10 +25,10 @@ elem.onclick = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
