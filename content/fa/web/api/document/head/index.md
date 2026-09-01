@@ -1,11 +1,5 @@
 ---
 title: "Document: head property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/head"
-status: "needs-translation"
----
-
----
-title: "Document: head property"
 short-title: head
 slug: Web/API/Document/head
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.Document.head
 
 {{APIRef("DOM")}}
 
-The **`head`** read-only property of
-the {{domxref("Document")}} interface returns the {{HTMLElement("head")}} element of
-the current document.
+ویژگی فقط‌خواندنی **`head`** در رابط {{domxref("Document")}}، عنصر {{HTMLElement("head")}} سند جاری را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLHeadElement")}}.
+یک {{domxref("HTMLHeadElement")}}.
 
-## Examples
+## مثال‌ها
 
 ```html
 <!doctype html>
@@ -38,19 +30,18 @@ console.log(theHead.id); // "my-document-head";
 console.log(theHead === document.querySelector("head")); // true
 ```
 
-## Notes
+## نکات
 
-`document.head` is read-only. Trying to assign a value to this property will
-fail silently or, in [Strict Mode](/en-US/docs/Web/JavaScript/Reference/Strict_mode), throws a {{jsxref("TypeError")}}.
+`document.head` فقط‌خواندنی است. تلاش برای مقداردهی به این ویژگی یا بی‌صدا شکست می‌خورد یا در [حالت سختگیرانه](/en-US/docs/Web/JavaScript/Reference/Strict_mode) یک {{jsxref("TypeError")}} پرتاب می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("document.body")}}
