@@ -1,7 +1,5 @@
 ---
 title: "Geometry interfaces"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Geometry_interfaces"
-status: "needs-translation"
 ---
 
 ---
@@ -20,40 +18,40 @@ browser-compat:
 
 {{DefaultAPISidebar("Geometry Interfaces")}}
 
-**Geometry interfaces** is a CSS module that provides interfaces for working with 3D and 2D graphics — in particular, for working with points, rectangles, quadrilaterals and [transformation matrices](/en-US/docs/Web/API/WebGL_API/Matrix_math_for_the_web#transformation_matrices) (for operations that translate/move, scale, rotate, skew/shear/slant, and flip graphics, as well as for multiplying/chaining and inverting/undoing those operations).
+**رابط‌های هندسی** یک ماژول CSS است که رابط‌هایی را برای کار با گرافیک سه‌بعدی و دوبعدی فراهم می‌کند — به‌ویژه برای کار با نقاط، مستطیل‌ها، چهارضلعی‌ها و [ماتریس‌های تبدیل](/en-US/docs/Web/API/WebGL_API/Matrix_math_for_the_web#transformation_matrices) (برای عملیات انتقال/جابجایی، تغییر مقیاس، چرخش، اریب‌کردن/کج‌کردن/مورب‌کردن و برگرداندن گرافیک، و همچنین برای ضرب/زنجیره‌کردن و معکوس‌کردن/برگرداندن آن عملیات).
 
-As a web developer, you don't always use the geometry interfaces directly, but instead use other features that rely on them behind the scenes: parts of [CSS Transforms](/en-US/docs/Web/CSS/Guides/Transforms), the [Canvas API](/en-US/docs/Web/API/Canvas_API), the [WebXR Device API](/en-US/docs/Web/API/WebXR_Device_API), and (more directly) {{domxref('VideoFrame.visibleRect')}}, {{domxref('Element.getClientRects()')}}, and {{domxref('Element.getBoundingClientRect()')}}.
+به‌عنوان یک توسعه‌دهنده وب، همیشه مستقیماً از رابط‌های هندسی استفاده نمی‌کنید، بلکه از ویژگی‌های دیگری استفاده می‌کنید که در پس‌زمینه به آن‌ها متکی هستند: بخش‌هایی از [تبدیل‌های CSS](/en-US/docs/Web/CSS/Guides/Transforms)، [رابط Canvas](/en-US/docs/Web/API/Canvas_API)، [رابط WebXR Device](/en-US/docs/Web/API/WebXR_Device_API)، و (به‌طور مستقیم‌تر) {{domxref('VideoFrame.visibleRect')}}، {{domxref('Element.getClientRects()')}} و {{domxref('Element.getBoundingClientRect()')}}.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref('DOMMatrix')}}
-  - : Represents a [transformation matrix](/en-US/docs/Web/API/WebGL_API/Matrix_math_for_the_web#transformation_matrices), for operations that translate/move, scale, rotate, skew/shear/slant, and flip graphics, as well as for multiplying/chaining and inverting/undoing those operations.
+  - : یک [ماتریس تبدیل](/en-US/docs/Web/API/WebGL_API/Matrix_math_for_the_web#transformation_matrices) را نشان می‌دهد، برای عملیات انتقال/جابجایی، تغییر مقیاس، چرخش، اریب‌کردن/کج‌کردن/مورب‌کردن و برگرداندن گرافیک، و همچنین برای ضرب/زنجیره‌کردن و معکوس‌کردن/برگرداندن آن عملیات.
 - {{domxref('DOMMatrixReadOnly')}}
-  - : Read-only version of {{domxref('DOMMatrix')}}.
+  - : نسخهٔ فقط‌خواندنی {{domxref('DOMMatrix')}}.
 - {{domxref('DOMPoint')}}
-  - : Represents a 2D or 3D point in a coordinate system; it includes values for the coordinates in up to three dimensions, as well as an optional perspective value.
+  - : یک نقطهٔ دوبعدی یا سه‌بعدی را در یک دستگاه مختصات نشان می‌دهد؛ شامل مقادیری برای مختصات در حداکثر سه بُعد و همچنین یک مقدار پرسپکتیو اختیاری است.
 - {{domxref('DOMPointReadOnly')}}
-  - : Read-only version of {{domxref('DOMPoint')}}.
+  - : نسخهٔ فقط‌خواندنی {{domxref('DOMPoint')}}.
 - {{domxref('DOMQuad')}}
-  - : Represents a collection of four {{domxref('DOMPoint')}} objects defining the corners of a [quadrilateral](https://en.wikipedia.org/wiki/Quadrilateral).
+  - : مجموعه‌ای از چهار شیء {{domxref('DOMPoint')}} را نشان می‌دهد که گوشه‌های یک [چهارضلعی](https://en.wikipedia.org/wiki/Quadrilateral) را تعریف می‌کنند.
 - {{domxref('DOMRect')}}
-  - : Represents the size and position of a rectangle.
+  - : اندازه و موقعیت یک مستطیل را نشان می‌دهد.
 - {{domxref('DOMRectReadOnly')}}
-  - : Read-only version of {{domxref('DOMRect')}}.
+  - : نسخهٔ فقط‌خواندنی {{domxref('DOMRect')}}.
 
-## Examples
+## مثال‌ها
 
-The {{domxref('Path2D.addPath()')}} and {{domxref('CanvasPattern.setTransform()')}} articles have examples that use some of the geometry interfaces.
+مقالات {{domxref('Path2D.addPath()')}} و {{domxref('CanvasPattern.setTransform()')}} دارای مثال‌هایی هستند که از برخی از رابط‌های هندسی استفاده می‌کنند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref('Path2D.addPath()')}}
 - {{domxref('CanvasPattern.setTransform()')}}
