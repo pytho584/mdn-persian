@@ -1,11 +1,5 @@
 ---
 title: "CSSViewTransitionRule: navigation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSViewTransitionRule/navigation"
-status: "needs-translation"
----
-
----
-title: "CSSViewTransitionRule: navigation property"
 short-title: navigation
 slug: Web/API/CSSViewTransitionRule/navigation
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.CSSViewTransitionRule.navigation
 
 {{APIRef("CSSOM")}}
 
-The **`navigation`** read-only property of the {{domxref("CSSViewTransitionRule")}} interface returns the associated {{cssxref("@view-transition")}} at-rule's `navigation` descriptor value.
+ویژگی فقط‌خواندنیِ **`navigation`** از رابط {{domxref("CSSViewTransitionRule")}} مقدار توصیف‌گرِ `navigation` در at-rule مربوط به {{cssxref("@view-transition")}} را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-If no `navigation` descriptor is set on the `@view-transition` at-rule, the `navigation` property is equal to an empty string.
+اگر هیچ توصیف‌گرِ `navigation` روی at-rule مربوط به `@view-transition` تنظیم نشده باشد، ویژگی `navigation` برابر با رشتهٔ خالی است.
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("CSSViewTransitionRule")}} page for example usage.
+برای نمونهٔ استفاده، صفحهٔ اصلیِ {{domxref("CSSViewTransitionRule")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@view-transition")}}
 - [View Transition API](/en-US/docs/Web/API/View_Transition_API)
