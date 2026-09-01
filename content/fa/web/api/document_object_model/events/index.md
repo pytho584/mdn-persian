@@ -1,9 +1,4 @@
----
-title: "DOM events"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: DOM events
 short-title: Working with events
@@ -16,201 +11,189 @@ spec-urls:
 
 {{DefaultAPISidebar("DOM")}}
 
-[Events](/en-US/docs/Learn_web_development/Core/Scripting/Events) are fired to notify code of "interesting changes" that may affect code execution. These can arise from user interactions such as using a mouse or resizing a window, changes in the state of the underlying environment (e.g., low battery or media events from the operating system), and other causes.
+[رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events) برای اطلاع‌رسانی به کد در مورد «تغییرات جالب» که ممکن است بر اجرای کد تأثیر بگذارد، فراخوانی می‌شوند. این تغییرات می‌توانند ناشی از تعاملات کاربر مانند استفاده از ماوس یا تغییر اندازه پنجره، تغییرات در وضعیت محیط زیرساخت (مانند باتری کم یا رویدادهای رسانه‌ای از سیستم‌عامل) و دلایل دیگر باشند.
 
-Each event is represented by an object that is based on the {{domxref("Event")}} interface, and may have additional custom fields and/or functions to provide information about what happened. The documentation for every event has a table (near the top) that includes a link to the associated event interface, and other relevant information. A full list of the different event types is given in [Event > Interfaces based on Event](/en-US/docs/Web/API/Event#interfaces_based_on_event).
+هر رویداد توسط یک شیء که بر اساس رابط {{domxref("Event")}} است، نمایش داده می‌شود و ممکن است فیلدها و/یا توابع سفارشی اضافی برای ارائه اطلاعات درباره آنچه رخ داده است، داشته باشد. مستندات هر رویداد دارای یک جدول (در نزدیکی بالای صفحه) است که شامل پیوندی به رابط رویداد مرتبط و سایر اطلاعات مربوطه می‌باشد. فهرست کاملی از انواع مختلف رویدادها در [Event > Interfaces based on Event](/en-US/docs/Web/API/Event#interfaces_based_on_event) ارائه شده است.
 
-This topic provides an index to the main _sorts_ of events you might be interested in (animation, clipboard, workers etc.) along with the main classes that implement those sorts of events.
+این مبحث یک نمایه از انواع اصلی رویدادهایی که ممکن است به آنها علاقه‌مند باشید (انیمیشن، کلیپ‌بورد، workerها و غیره) به همراه کلاس‌های اصلی که آن انواع رویدادها را پیاده‌سازی می‌کنند، ارائه می‌دهد.
 
-## Event index
+## فهرست رویدادها
 
 <table class="standard-table">
   <tbody>
     <tr>
-      <th>Event type</th>
-      <th style="width: 50%">Description</th>
-      <th>Documentation</th>
+      <th>نوع رویداد</th>
+      <th style="width: 50%">توضیحات</th>
+      <th>مستندات</th>
     </tr>
     <tr>
-      <td>Animation</td>
+      <td>انیمیشن</td>
       <td>
         <p>
-          Events related to the
-          <a href="/en-US/docs/Web/API/Web_Animations_API">Web Animation API</a
-          >.
+          رویدادهای مربوط به
+          <a href="/en-US/docs/Web/API/Web_Animations_API">Web Animation API</a>.
         </p>
         <p>
-          Used to respond to changes in animation status (e.g., when an animation
-          starts or ends).
+          برای پاسخ به تغییرات وضعیت انیمیشن (مثلاً زمانی که یک انیمیشن شروع یا پایان می‌یابد) استفاده می‌شود.
         </p>
       </td>
       <td>
-        Animation events fired on
+        رویدادهای انیمیشن روی
         <a href="/en-US/docs/Web/API/Document#animation_events"
           ><code>Document</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/Window#animation_events"
           ><code>Window</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/HTMLElement#animation_events"
           ><code>HTMLElement</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Asynchronous data fetching</td>
-      <td><p>Events related to the fetching data.</p></td>
+      <td>واکشی ناهمگام داده</td>
+      <td><p>رویدادهای مربوط به واکشی داده.</p></td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/AbortSignal#events"
           ><code>AbortSignal</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/XMLHttpRequest#events"
           ><code>XMLHttpRequest</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/FileReader#events"
           ><code>FileReader</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Clipboard</td>
+      <td>کلیپ‌بورد</td>
       <td>
         <p>
-          Events related to the
+          رویدادهای مربوط به
           <a href="/en-US/docs/Web/API/Clipboard_API">Clipboard API</a>.
         </p>
-        <p>Used to notify when content is cut, copied, or pasted.</p>
+        <p>برای اطلاع از زمانی که محتوا برش، کپی یا چسبانده می‌شود استفاده می‌شود.</p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Document#clipboard_events"
           ><code>Document</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/Element#clipboard_events"
           ><code>Element</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/Window#clipboard_events"
           ><code>Window</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Composition</td>
+      <td>ترکیب</td>
       <td>
         <p>
-          Events related to composition; entering text "indirectly" (rather than
-          using normal keyboard presses).
+          رویدادهای مربوط به ترکیب (composition)؛ ورود متن «به صورت غیرمستقیم» (به جای استفاده از فشار دادن عادی کلیدهای صفحه کلید).
         </p>
         <p>
-          For example, text entered via a speech to text engine, or using
-          special key combinations that modify keyboard presses to represent new
-          characters in another language.
+          به عنوان مثال، متنی که از طریق موتور گفتار به متن وارد می‌شود، یا استفاده از ترکیب‌های کلید ویژه که فشار دادن کلیدها را برای نمایش نویسه‌های جدید در زبانی دیگر تغییر می‌دهد.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Element#composition_events"
           ><code>Element</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>CSS transition</td>
+      <td>گذار CSS</td>
       <td>
         <p>
-          Events related to
-          <a href="/en-US/docs/Web/CSS/Guides/Transitions">CSS Transitions</a>.
+          رویدادهای مربوط به
+          <a href="/en-US/docs/Web/CSS/Guides/Transitions">گذارهای CSS</a>.
         </p>
         <p>
-          Provides notification events when CSS transitions start, stop, are
-          cancelled, etc.
+          رویدادهای اطلاع‌رسانی را زمانی که گذارهای CSS شروع، متوقف، لغو و غیره می‌شوند، فراهم می‌کند.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Document#transition_events"
           ><code>Document</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/HTMLElement#transition_events"
           ><code>HTMLElement</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/Window#transition_events"
           ><code>Window</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Database</td>
+      <td>پایگاه داده</td>
       <td>
         <p>
-          Events related to database operations: opening, closing, transactions,
-          errors, etc.
+          رویدادهای مربوط به عملیات پایگاه داده: باز کردن، بستن، تراکنش‌ها، خطاها و غیره.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/IDBDatabase#events"
           ><code>IDBDatabase</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/IDBOpenDBRequest#events"
           ><code>IDBOpenDBRequest</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/IDBRequest#events"
           ><code>IDBRequest</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/IDBTransaction#events"
           ><code>IDBTransaction</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>DOM mutation</td>
+      <td>جهش DOM</td>
       <td>
         <p>
-          Events related to modifications to the Document Object Model (DOM)
-          hierarchy and nodes.
+          رویدادهای مربوط به تغییرات در سلسله‌مراتب و گره‌های مدل شیء سند (DOM).
         </p>
       </td>
       <td>
         <div class="notecard warning">
           <p>
-            <strong>Warning:</strong>
-            <a href="/en-US/docs/Web/API/MutationEvent">Mutation Events</a> are
-            deprecated.
-            <a href="/en-US/docs/Web/API/MutationObserver"
-              >Mutation Observers</a
-            >
-            should be used instead.
+            <strong>هشدار:</strong>
+            <a href="/en-US/docs/Web/API/MutationEvent">رویدادهای جهش</a> منسوخ شده‌اند.
+            به جای آنها باید از
+            <a href="/en-US/docs/Web/API/MutationObserver">نظارت‌کننده‌های جهش</a>
+            استفاده کرد.
           </p>
         </div>
       </td>
     </tr>
     <tr>
-      <td>Drag'n'drop, Wheel</td>
+      <td>کشیدن و رها کردن، چرخ</td>
       <td>
         <p>
-          Events related to using the
+          رویدادهای مربوط به استفاده از
           <a href="/en-US/docs/Web/API/HTML_Drag_and_Drop_API"
             >HTML Drag and Drop API</a
           >
-          and <a href="/en-US/docs/Web/API/WheelEvent">wheel events</a>.
+          و <a href="/en-US/docs/Web/API/WheelEvent">رویدادهای چرخ</a>.
         </p>
         <p>
-          Drag and Wheel events are derived from mouse events. While they are
-          fired when using mouse wheel or drag/drop, they may also be used with
-          other appropriate hardware.
+          رویدادهای کشیدن و چرخ از رویدادهای ماوس مشتق شده‌اند. اگرچه هنگام استفاده از چرخ ماوس یا کشیدن/رها کردن فراخوانی می‌شوند، ممکن است با سخت‌افزارهای مناسب دیگر نیز استفاده شوند.
         </p>
       </td>
       <td>
         <p>
-          Drag events fired on
+          رویدادهای کشیدن روی
           <a href="/en-US/docs/Web/API/Document#drag_drop_events"
             ><code>Document</code></a
           >
         </p>
         <p>
-          Wheel events fired on
+          رویدادهای چرخ روی
           <a href="/en-US/docs/Web/API/Element/wheel_event"
             ><code>Element</code></a
           >
@@ -218,187 +201,185 @@ This topic provides an index to the main _sorts_ of events you might be interest
       </td>
     </tr>
     <tr>
-      <td>Focus</td>
-      <td><p>Events related to elements gaining and losing focus.</p></td>
+      <td>فوکوس</td>
+      <td><p>رویدادهای مربوط به دریافت و از دست دادن فوکوس توسط عناصر.</p></td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Element#focus_events"
           ><code>Element</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/Window#focus_events"><code>Window</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Form</td>
+      <td>فرم</td>
       <td>
-        <p>Events related to forms being constructed, reset and submitted.</p>
+        <p>رویدادهای مربوط به ساخته شدن، بازنشانی و ارسال فرم‌ها.</p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/HTMLFormElement#events"
           ><code>HTMLFormElement</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Fullscreen</td>
+      <td>تمام صفحه</td>
       <td>
         <p>
-          Events related to the
+          رویدادهای مربوط به
           <a href="/en-US/docs/Web/API/Fullscreen_API">Fullscreen API</a>.
         </p>
         <p>
-          Used to notify when the transitioning between full screen and windowed
-          modes, and also of errors occurring during this transition.
+          برای اطلاع از زمان انتقال بین حالت تمام صفحه و پنجره‌ای، و همچنین خطاهای رخ داده در طول این انتقال استفاده می‌شود.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Document#fullscreen_events"
           ><code>Document</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/Element#fullscreen_events"
           ><code>Element</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Gamepad</td>
+      <td>گیم‌پد</td>
       <td>
         <p>
-          Events related to the
+          رویدادهای مربوط به
           <a href="/en-US/docs/Web/API/Gamepad_API">Gamepad API</a>.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Window#gamepad_events"
           ><code>Window</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Gestures</td>
+      <td>حرکات (ژست‌ها)</td>
       <td>
         <p>
-          <a href="/en-US/docs/Web/API/Touch_events">Touch events</a> are
-          recommended for implementing gestures.
+          <a href="/en-US/docs/Web/API/Touch_events">رویدادهای لمسی</a> برای پیاده‌سازی حرکات توصیه می‌شوند.
         </p>
       </td>
       <td>
         <p>
-          Events fired on
+          رویدادهای روی
           <a href="/en-US/docs/Web/API/Document#touch_events"
             ><code>Document</code></a
-          >,
+          >،
           <a href="/en-US/docs/Web/API/Element#touch_events"
             ><code>Element</code></a
           >.
         </p>
-        <p>In addition there are a number of non-standard gesture events:</p>
+        <p>علاوه بر این، تعدادی رویداد حرکتی غیراستاندارد وجود دارد:</p>
         <ul>
           <li>
-            Non-standard WebKit specific events on
+            رویدادهای غیراستاندارد مخصوص WebKit روی
             <a href="/en-US/docs/Web/API/Element#touch_events"
               ><code>Element</code></a
             >:
             <a href="/en-US/docs/Web/API/Element/gesturestart_event"
-              ><code>gesturestart</code> event</a
-            >,
+              ><code>gesturestart</code></a
+            >،
             <a href="/en-US/docs/Web/API/Element/gesturechange_event"
-              ><code>gesturechange</code> event</a
-            >,
+              ><code>gesturechange</code></a
+            >،
             <a href="/en-US/docs/Web/API/Element/gestureend_event"
-              ><code>gestureend</code> event</a
+              ><code>gestureend</code></a
             >.
           </li>
         </ul>
       </td>
     </tr>
     <tr>
-      <td>History</td>
+      <td>تاریخچه</td>
       <td>
         <p>
-          Events related to the
+          رویدادهای مربوط به
           <a href="/en-US/docs/Web/API/History_API">History API</a>.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Window#history_events"
           ><code>Window</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>HTML element content display management</td>
+      <td>مدیریت نمایش محتوای عنصر HTML</td>
       <td>
         <p>
-          Events related to changing the state of a display or textual element.
+          رویدادهای مربوط به تغییر وضعیت یک عنصر نمایشی یا متنی.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/HTMLDetailsElement#events"
           ><code>HTMLDetailsElement</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/HTMLDialogElement#events"
           ><code>HTMLDialogElement</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/HTMLSlotElement#events"
           ><code>HTMLSlotElement</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Inputs</td>
+      <td>ورودی‌ها</td>
       <td>
         <p>
-          Events related to HTML input elements e.g.
-          {{HTMLElement("input")}}, {{HTMLElement("select")}}, or
+          رویدادهای مربوط به عناصر ورودی HTML مانند
+          {{HTMLElement("input")}}، {{HTMLElement("select")}} یا
           {{HTMLElement("textarea")}}.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/HTMLElement#input_events"
           ><code>HTMLElement</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/HTMLInputElement#events"
           ><code>HTMLInputElement</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Keyboard</td>
+      <td>صفحه کلید</td>
       <td>
         <p>
-          Events related to using a
-          <a href="/en-US/docs/Web/API/KeyboardEvent">keyboard</a>.
+          رویدادهای مربوط به استفاده از
+          <a href="/en-US/docs/Web/API/KeyboardEvent">صفحه کلید</a>.
         </p>
-        <p>Used to notify when keys are moved up, down, or just pressed.</p>
+        <p>برای اطلاع از زمانی که کلیدها بالا، پایین یا فقط فشرده می‌شوند استفاده می‌شود.</p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Document#keyboard_events"
           ><code>Document</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/Element#keyboard_events"
           ><code>Element</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Loading/unloading documents</td>
-      <td><p>Events related to loading and unloading documents.</p></td>
+      <td>بارگذاری/بارگیری اسناد</td>
+      <td><p>رویدادهای مربوط به بارگذاری و بارگیری اسناد.</p></td>
       <td>
         <p>
-          Events fired on
+          رویدادهای روی
           <a href="/en-US/docs/Web/API/Document#load_unload_events"
             ><code>Document</code></a
           >
-          and
+          و
           <a href="/en-US/docs/Web/API/Window#load_unload_events"
             ><code>Window</code></a
           >.
@@ -406,126 +387,122 @@ This topic provides an index to the main _sorts_ of events you might be interest
       </td>
     </tr>
     <tr>
-      <td>Manifests</td>
+      <td>Manifestها</td>
       <td>
         <p>
-          Events related to installation of
-          <a href="/en-US/docs/Web/Progressive_web_apps/Manifest">progressive web app manifests</a>.
+          رویدادهای مربوط به نصب
+          <a href="/en-US/docs/Web/Progressive_web_apps/Manifest">manifestهای برنامه‌های وب پیشرو</a>.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Window#manifest_events"
           ><code>Window</code></a
         >.
       </td>
     </tr>
     <tr id="media">
-      <td>Media</td>
+      <td>رسانه</td>
       <td>
         <p>
-          Events related to media usage (including the
+          رویدادهای مربوط به استفاده از رسانه (شامل
           <a href="/en-US/docs/Web/API/Media_Capture_and_Streams_API#events"
             >Media Capture and Streams API</a
-          >,
-          <a href="/en-US/docs/Web/API/Web_Audio_API#events">Web Audio API</a>,
+          >،
+          <a href="/en-US/docs/Web/API/Web_Audio_API#events">Web Audio API</a>،
           <a href="/en-US/docs/Web/API/Picture-in-Picture_API#events"
             >Picture-in-Picture API</a
-          >, etc.).
+          > و غیره).
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/ScriptProcessorNode#events"
           ><code>ScriptProcessorNode</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/HTMLMediaElement#events"
           ><code>HTMLMediaElement</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/AudioTrackList#events"
           ><code>AudioTrackList</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/AudioScheduledSourceNode#events"
           ><code>AudioScheduledSourceNode</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/MediaRecorder#events"
           ><code>MediaRecorder</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/MediaStream#events"
           ><code>MediaStream</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/MediaStreamTrack"
           ><code>MediaStreamTrack</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/VideoTrackList#events"
           ><code>VideoTrackList</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/HTMLTrackElement#events"
           ><code>HTMLTrackElement</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/OfflineAudioContext#events"
           ><code>OfflineAudioContext</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/TextTrack#events"><code>TextTrack</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/TextTrackList#events"
           ><code>TextTrackList</code></a
-        >,
-        <a href="/en-US/docs/Web/HTML/Reference/Elements/audio#events">Element/audio</a>,
+        >،
+        <a href="/en-US/docs/Web/HTML/Reference/Elements/audio#events">Element/audio</a>،
         <a href="/en-US/docs/Web/HTML/Reference/Elements/video#events">Element/video</a>.
       </td>
     </tr>
     <tr>
-      <td>Messaging</td>
+      <td>پیام‌رسانی</td>
       <td>
         <p>
-          Events related to a window receiving a message from another browsing
-          context.
+          رویدادهای مربوط به دریافت پیام توسط یک پنجره از یک زمینه مرور دیگر.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Window#messaging_events"
           ><code>Window</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Mouse</td>
+      <td>ماوس</td>
       <td>
         <p>
-          Events related to using a
-          <a href="/en-US/docs/Web/API/MouseEvent">computer mouse</a>.
+          رویدادهای مربوط به استفاده از
+          <a href="/en-US/docs/Web/API/MouseEvent">ماوس کامپیوتر</a>.
         </p>
         <p>
-          Used to notify when the mouse is clicked, double-clicked, up and down
-          events, right-click, movement in and out of an element, text
-          selection, etc.
+          برای اطلاع از زمانی که ماوس کلیک، دوبار کلیک، رویدادهای بالا و پایین، کلیک راست، حرکت به داخل و خارج از یک عنصر، انتخاب متن و غیره می‌شود استفاده می‌شود.
         </p>
         <p>
-          Pointer events provide a hardware-agnostic alternative to mouse
-          events. Drag and Wheel events are derived from mouse events.
+          رویدادهای اشاره‌گر (Pointer events) یک جایگزین مستقل از سخت‌افزار برای رویدادهای ماوس ارائه می‌دهند. رویدادهای کشیدن و چرخ از رویدادهای ماوس مشتق شده‌اند.
         </p>
       </td>
       <td>
-        Mouse events fired on
+        رویدادهای ماوس روی
         <a href="/en-US/docs/Web/API/Element#mouse_events"
           ><code>Element</code></a
         >
       </td>
     </tr>
     <tr>
-      <td>Network/Connection</td>
-      <td><p>Events related to gaining and losing network connection.</p></td>
+      <td>شبکه/اتصال</td>
+      <td><p>رویدادهای مربوط به برقراری و از دست دادن اتصال شبکه.</p></td>
       <td>
         <p>
-          Events fired on
+          رویدادهای روی
           <a href="/en-US/docs/Web/API/Window#connection_events"
             ><code>Window</code></a
           >.
         </p>
         <p>
-          Events fired on
+          رویدادهای روی
           <a href="/en-US/docs/Web/API/NetworkInformation#event_handler"
             ><code>NetworkInformation</code></a
           >
@@ -536,10 +513,10 @@ This topic provides an index to the main _sorts_ of events you might be interest
       </td>
     </tr>
     <tr>
-      <td>Payments</td>
+      <td>پرداخت‌ها</td>
       <td>
         <p>
-          Events related to the
+          رویدادهای مربوط به
           <a href="/en-US/docs/Web/API/Payment_Request_API"
             >Payment Request API</a
           >.
@@ -547,10 +524,10 @@ This topic provides an index to the main _sorts_ of events you might be interest
       </td>
       <td>
         <p>
-          Events fired on
+          رویدادهای روی
           <a href="/en-US/docs/Web/API/PaymentRequest#events"
             ><code>PaymentRequest</code></a
-          >,
+          >،
           <a href="/en-US/docs/Web/API/PaymentResponse#events"
             ><code>PaymentResponse</code></a
           >.
@@ -558,18 +535,18 @@ This topic provides an index to the main _sorts_ of events you might be interest
       </td>
     </tr>
     <tr>
-      <td>Performance</td>
+      <td>عملکرد</td>
       <td>
         <p>
-          Events related to any performance-related spec grouped into
+          رویدادهای مربوط به هر مشخصه مرتبط با عملکرد که در
           <a href="/en-US/docs/Web/API/Performance_API"
             >Performance APIs</a
-          >.
+          > گروه‌بندی شده‌اند.
         </p>
       </td>
       <td>
         <p>
-          Events fired on
+          رویدادهای روی
           <a href="/en-US/docs/Web/API/Performance#events"
             ><code>Performance</code></a
           >.
@@ -577,77 +554,75 @@ This topic provides an index to the main _sorts_ of events you might be interest
       </td>
     </tr>
     <tr>
-      <td>Pointer</td>
+      <td>اشاره‌گر</td>
       <td>
         <p>
-          Events related to the
+          رویدادهای مربوط به
           <a href="/en-US/docs/Web/API/Pointer_events">Pointer Events API</a>.
         </p>
         <p>
-          Provides hardware-agnostic notification from pointing devices
-          including Mouse, Touch, pen/stylus.
+          اطلاع‌رسانی مستقل از سخت‌افزار از دستگاه‌های اشاره‌گر شامل ماوس، لمسی، قلم/استایلوس را فراهم می‌کند.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Document#pointer_events"
           ><code>Document</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/HTMLElement#pointer_events"
           ><code>HTMLElement</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Print</td>
-      <td><p>Events related to printing.</p></td>
+      <td>چاپ</td>
+      <td><p>رویدادهای مربوط به چاپ.</p></td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Window#print_events"><code>Window</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Promise rejection</td>
+      <td>رد شدن Promise</td>
       <td>
         <p>
-          Events sent to the global script context when any JavaScript promise
-          is rejected.
+          رویدادهایی که به زمینه اسکریپت سراسری ارسال می‌شوند وقتی هر promise جاوااسکریپتی رد می‌شود.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Window#promise_rejection_events"
           ><code>Window</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Sockets</td>
+      <td>Socketها</td>
       <td>
         <p>
-          Events related to the
+          رویدادهای مربوط به
           <a href="/en-US/docs/Web/API/WebSockets_API">WebSockets API</a>.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/WebSocket#events"><code>WebSocket</code></a
         >.
       </td>
     </tr>
     <tr>
       <td>SVG</td>
-      <td><p>Events related to SVG images.</p></td>
+      <td><p>رویدادهای مربوط به تصاویر SVG.</p></td>
       <td>
         <p>
-          Events fired on
+          رویدادهای روی
           <a href="/en-US/docs/Web/API/SVGElement#events"
             ><code>SVGElement</code></a
-          >,
+          >،
           <a href="/en-US/docs/Web/API/SVGAnimationElement#events"
             ><code>SVGAnimationElement</code></a
-          >,
+          >،
           <a href="/en-US/docs/Web/API/SVGGraphicsElement#events"
             ><code>SVGGraphicsElement</code></a
           >.
@@ -655,174 +630,167 @@ This topic provides an index to the main _sorts_ of events you might be interest
       </td>
     </tr>
     <tr>
-      <td>Text selection</td>
+      <td>انتخاب متن</td>
       <td>
         <p>
-          <a href="/en-US/docs/Web/API/Selection">Selection API</a> events
-          related to selecting text.
+          رویدادهای <a href="/en-US/docs/Web/API/Selection">Selection API</a> مربوط به انتخاب متن.
         </p>
       </td>
       <td>
         <p>
-          Event (<code>selectionchange</code>) fired on
-          {{domxref("HTMLTextAreaElement/selectionchange_event", "HTMLTextAreaElement")}},
+          رویداد (<code>selectionchange</code>) روی
+          {{domxref("HTMLTextAreaElement/selectionchange_event", "HTMLTextAreaElement")}}،
           {{domxref("HTMLInputElement/selectionchange_event", "HTMLInputElement")}}.
         </p>
       </td>
     </tr>
     <tr>
-      <td>Touch</td>
+      <td>لمسی</td>
       <td>
         <p>
-          Events related to the
+          رویدادهای مربوط به
           <a href="/en-US/docs/Web/API/Touch_events">Touch Events API</a>.
         </p>
         <p>
-          Provides notification events from interacting with a touch sensitive
-          screen (i.e., using a finger or stylus). Not related to the
+          رویدادهای اطلاع‌رسانی از تعامل با صفحه لمسی (یعنی با استفاده از انگشت یا قلم) را فراهم می‌کند. مربوط به
           <a href="/en-US/docs/Web/API/Force_Touch_events#events"
             >Force Touch API</a
-          >.
+          > نیست.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/Document#touch_events"
           ><code>Document</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/Element#touch_events"
           ><code>Element</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Virtual reality</td>
+      <td>واقعیت مجازی</td>
       <td>
         <p>
-          Events related to the
+          رویدادهای مربوط به
           <a href="/en-US/docs/Web/API/WebXR_Device_API">WebXR Device API</a>.
         </p>
         <div class="notecard warning">
           <p>
-            <strong>Warning:</strong> The
-            <a href="/en-US/docs/Web/API/WebVR_API">WebVR API</a> (and
-            associated
+            <strong>هشدار:</strong>
+            <a href="/en-US/docs/Web/API/WebVR_API">WebVR API</a> (و
             <a href="/en-US/docs/Web/API/WebVR_API#window_events"
-              ><code>Window</code> events</a
-            >) are deprecated.
+              >رویدادهای <code>Window</code> مرتبط</a
+            >) منسوخ شده‌اند.
           </p>
         </div>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/XRSystem#events"><code>XRSystem</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/XRSession#events"><code>XRSession</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/XRReferenceSpace#events"
           ><code>XRReferenceSpace</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>RTC (real time communication)</td>
+      <td>RTC (ارتباط بلادرنگ)</td>
       <td>
         <p>
-          Events related to the
+          رویدادهای مربوط به
           <a href="/en-US/docs/Web/API/WebRTC_API">WebRTC API</a>.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/RTCDataChannel#events"
           ><code>RTCDataChannel</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/RTCDTMFSender#events"
           ><code>RTCDTMFSender</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/RTCIceTransport#events"
           ><code>RTCIceTransport</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/RTCPeerConnection#events"
           ><code>RTCPeerConnection</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Server-sent events</td>
+      <td>رویدادهای ارسالی از سرور</td>
       <td>
         <p>
-          Events related to the
+          رویدادهای مربوط به
           <a href="/en-US/docs/Web/API/Server-sent_events"
             >server sent events API</a
           >.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/EventSource#events"
           ><code>EventSource</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Speech</td>
+      <td>گفتار</td>
       <td>
         <p>
-          Events related to the
+          رویدادهای مربوط به
           <a href="/en-US/docs/Web/API/Web_Speech_API">Web Speech API</a>.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/SpeechSynthesisUtterance#events"
           ><code>SpeechSynthesisUtterance</code></a
         >.
       </td>
     </tr>
     <tr>
-      <td>Workers</td>
+      <td>Workerها</td>
       <td>
         <p>
-          Events related to the
-          <a href="/en-US/docs/Web/API/Web_Workers_API">Web Workers API</a>,
+          رویدادهای مربوط به
+          <a href="/en-US/docs/Web/API/Web_Workers_API">Web Workers API</a>،
           <a href="/en-US/docs/Web/API/Service_Worker_API">Service Worker API</a
-          >,
+          >،
           <a href="/en-US/docs/Web/API/Broadcast_Channel_API"
             >Broadcast Channel API</a
-          >, and
+          >، و
           <a href="/en-US/docs/Web/API/Channel_Messaging_API"
             >Channel Messaging API</a
           >.
         </p>
         <p>
-          Used to respond to new messages and message sending errors. Service
-          workers can also be notified of other events, including push
-          notifications, users clicking on displayed notifications, that push
-          subscription has been invalidated, deletion of items from the content
-          index, etc.
+          برای پاسخ به پیام‌های جدید و خطاهای ارسال پیام استفاده می‌شود. Service workerها همچنین می‌توانند از رویدادهای دیگر، از جمله اعلان‌های فشاری، کلیک کاربر روی اعلان‌های نمایش داده شده، باطل شدن اشتراک فشاری، حذف موارد از فهرست محتوا و غیره مطلع شوند.
         </p>
       </td>
       <td>
-        Events fired on
+        رویدادهای روی
         <a href="/en-US/docs/Web/API/ServiceWorkerGlobalScope#events"
           ><code>ServiceWorkerGlobalScope</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/DedicatedWorkerGlobalScope#events"
           ><code>DedicatedWorkerGlobalScope</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/SharedWorkerGlobalScope#events"
           ><code>SharedWorkerGlobalScope</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/WorkerGlobalScope#events"
           ><code>WorkerGlobalScope</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/Worker#events"
           ><code>Worker</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/BroadcastChannel#events"
           ><code>BroadcastChannel</code></a
-        >,
+        >،
         <a href="/en-US/docs/Web/API/MessagePort#events"
           ><code>MessagePort</code></a
         >.
@@ -831,48 +799,48 @@ This topic provides an index to the main _sorts_ of events you might be interest
   </tbody>
 </table>
 
-## Creating and dispatching events
+## ایجاد و ارسال رویدادها
 
-In addition to the events fired by built-in interfaces, you can create and dispatch DOM events yourself. Such events are commonly called _synthetic events_, as opposed to the events fired by the browser.
+علاوه بر رویدادهایی که توسط رابط‌های داخلی فراخوانی می‌شوند، می‌توانید خودتان رویدادهای DOM ایجاد و ارسال کنید. این رویدادها معمولاً _رویدادهای مصنوعی_ نامیده می‌شوند، در مقابل رویدادهایی که توسط مرورگر فراخوانی می‌شوند.
 
-### Creating custom events
+### ایجاد رویدادهای سفارشی
 
-Events can be created with the [`Event`](/en-US/docs/Web/API/Event) constructor as follows:
+رویدادها را می‌توان با سازنده [`Event`](/en-US/docs/Web/API/Event) به صورت زیر ایجاد کرد:
 
 ```js
 const event = new Event("build");
 
-// Listen for the event.
+// گوش دادن به رویداد
 elem.addEventListener("build", (e) => {
   /* … */
 });
 
-// Dispatch the event.
+// ارسال رویداد
 elem.dispatchEvent(event);
 ```
 
-This code example uses the [EventTarget.dispatchEvent()](/en-US/docs/Web/API/EventTarget/dispatchEvent) method.
+این مثال کد از متد [EventTarget.dispatchEvent()](/en-US/docs/Web/API/EventTarget/dispatchEvent) استفاده می‌کند.
 
-### Adding custom data – CustomEvent()
+### افزودن داده سفارشی – CustomEvent()
 
-To add more data to the event object, the [CustomEvent](/en-US/docs/Web/API/CustomEvent) interface exists and the **detail** property can be used to pass custom data.
-For example, the event could be created as follows:
+برای افزودن داده بیشتر به شیء رویداد، رابط [CustomEvent](/en-US/docs/Web/API/CustomEvent) وجود دارد و از ویژگی **detail** می‌توان برای ارسال داده سفارشی استفاده کرد.
+به عنوان مثال، رویداد می‌تواند به صورت زیر ایجاد شود:
 
 ```js
 const event = new CustomEvent("build", { detail: elem.dataset.time });
 ```
 
-This will then allow you to access the additional data in the event listener:
+این کار سپس به شما امکان می‌دهد به داده اضافی در شنونده رویداد دسترسی داشته باشید:
 
 ```js
 function eventHandler(e) {
-  console.log(`The time is: ${e.detail}`);
+  console.log(`زمان: ${e.detail}`);
 }
 ```
 
-### Adding custom data – subclassing Event
+### افزودن داده سفارشی – زیرکلاس‌سازی Event
 
-The [`Event`](/en-US/docs/Web/API/Event) interface can also be subclassed. This is particularly useful for reuse, or for more complex custom data, or even adding methods to the event.
+رابط [`Event`](/en-US/docs/Web/API/Event) همچنین می‌تواند زیرکلاس‌سازی شود. این کار به ویژه برای استفاده مجدد، یا برای داده سفارشی پیچیده‌تر، یا حتی افزودن متد به رویداد مفید است.
 
 ```js
 class BuildEvent extends Event {
@@ -889,25 +857,25 @@ class BuildEvent extends Event {
 }
 ```
 
-This code example defines a `BuildEvent` class with a read-only property and a fixed event type.
+این مثال کد یک کلاس `BuildEvent` با یک ویژگی فقط خواندنی و یک نوع رویداد ثابت تعریف می‌کند.
 
-The event could then be created as follows:
+سپس رویداد می‌تواند به صورت زیر ایجاد شود:
 
 ```js
 const event = new BuildEvent(elem.dataset.time);
 ```
 
-The additional data can then be accessed in the event listeners using the custom properties:
+سپس می‌توان به داده اضافی در شنونده‌های رویداد با استفاده از ویژگی‌های سفارشی دسترسی داشت:
 
 ```js
 function eventHandler(e) {
-  console.log(`The time is: ${e.buildTime}`);
+  console.log(`زمان: ${e.buildTime}`);
 }
 ```
 
-### Event bubbling
+### حباب زدن رویداد
 
-It is often desirable to trigger an event from a child element and have an ancestor catch it; optionally, you can include data with the event:
+اغلب مطلوب است که یک رویداد از یک عنصر فرزند تحریک شود و یک عنصر ancestor آن را دریافت کند. به صورت اختیاری، می‌توانید داده را با رویداد همراه کنید:
 
 ```html
 <form>
@@ -919,22 +887,22 @@ It is often desirable to trigger an event from a child element and have an ances
 const form = document.querySelector("form");
 const textarea = document.querySelector("textarea");
 
-// Create a new event, allow bubbling, and provide any data you want to pass to the "detail" property
+// یک رویداد جدید ایجاد کنید، اجازه حباب زدن بدهید، و هر داده‌ای را که می‌خواهید به ویژگی "detail" ارسال کنید، ارائه دهید
 const eventAwesome = new CustomEvent("awesome", {
   bubbles: true,
   detail: { text: () => textarea.value },
 });
 
-// The form element listens for the custom "awesome" event and then consoles the output of the passed text() method
+// عنصر فرم به رویداد سفارشی "awesome" گوش می‌دهد و سپس خروجی متد text() ارسال شده را در کنسول چاپ می‌کند
 form.addEventListener("awesome", (e) => console.log(e.detail.text()));
 
-// As the user types, the textarea inside the form dispatches/triggers the event to fire, using itself as the starting point
+// با تایپ کاربر، textarea داخل فرم رویداد را برای فراخوانی، با استفاده از خودش به عنوان نقطه شروع، ارسال/تحریک می‌کند
 textarea.addEventListener("input", (e) => e.target.dispatchEvent(eventAwesome));
 ```
 
-### Creating and dispatching events dynamically
+### ایجاد و ارسال رویدادها به صورت پویا
 
-Elements can listen for events that haven't been created yet:
+عناصر می‌توانند به رویدادهایی که هنوز ایجاد نشده‌اند گوش دهند:
 
 ```html
 <form>
@@ -949,8 +917,8 @@ const textarea = document.querySelector("textarea");
 form.addEventListener("awesome", (e) => console.log(e.detail.text()));
 
 textarea.addEventListener("input", function () {
-  // Create and dispatch/trigger an event on the fly
-  // Note: Optionally, we've also leveraged the "function expression" (instead of the "arrow function expression") so "this" will represent the element
+  // ایجاد و ارسال/تحریک یک رویداد در لحظه
+  // توجه: به صورت اختیاری، ما از "عبارت تابع" (به جای "عبارت تابع پیکانی") استفاده کرده‌ایم تا "this" نشان‌دهنده عنصر باشد
   this.dispatchEvent(
     new CustomEvent("awesome", {
       bubbles: true,
@@ -960,9 +928,9 @@ textarea.addEventListener("input", function () {
 });
 ```
 
-## Triggering built-in events
+## تحریک رویدادهای داخلی
 
-This example demonstrates simulating a click (that is programmatically generating a click event) on a checkbox using DOM methods. [View the example in action.](https://mdn.dev/archives/media/samples/domref/dispatchEvent.html)
+این مثال شبیه‌سازی یک کلیک (یعنی تولید برنامه‌نویسی یک رویداد کلیک) روی یک چک‌باکس با استفاده از روش‌های DOM را نشان می‌دهد. [نمونه را در عمل مشاهده کنید.](https://mdn.dev/archives/media/samples/domref/dispatchEvent.html)
 
 ```js
 function simulateClick() {
@@ -975,29 +943,29 @@ function simulateClick() {
   const cancelled = !cb.dispatchEvent(event);
 
   if (cancelled) {
-    // A handler called preventDefault.
-    alert("cancelled");
+    // یک هندلر preventDefault را فراخوانی کرد.
+    alert("لغو شد");
   } else {
-    // None of the handlers called preventDefault.
-    alert("not cancelled");
+    // هیچ یک از هندلرها preventDefault را فراخوانی نکردند.
+    alert("لغو نشد");
   }
 }
 ```
 
-## Registering event handlers
+## ثبت هندلرهای رویداد
 
-There are two recommended approaches for registering handlers. Event handler code can be made to run when an event is triggered either by assigning it to the target element's corresponding _onevent_ property or by registering the handler as a listener for the element using the {{domxref("EventTarget.addEventListener", "addEventListener()")}} method. In either case, the handler will receive an object that conforms to the [`Event` interface](/en-US/docs/Web/API/Event) (or a [derived interface](/en-US/docs/Web/API/Event#interfaces_based_on_event)). The main difference is that multiple event handlers can be added (or removed) using the event listener methods.
+دو رویکرد توصیه شده برای ثبت هندلرها وجود دارد. کد هندلر رویداد می‌تواند با اختصاص آن به ویژگی _onevent_ متناظر عنصر هدف یا با ثبت هندلر به عنوان یک شنونده برای عنصر با استفاده از متد {{domxref("EventTarget.addEventListener", "addEventListener()")}}، به گونه‌ای عمل کند که با تحریک رویداد اجرا شود. در هر دو حالت، هندلر یک شیء دریافت می‌کند که با [رابط `Event`](/en-US/docs/Web/API/Event) (یا یک [رابط مشتق شده](/en-US/docs/Web/API/Event#interfaces_based_on_event)) مطابقت دارد. تفاوت اصلی این است که می‌توان چندین هندلر رویداد را با استفاده از روش‌های شنونده رویداد اضافه (یا حذف) کرد.
 
 > [!WARNING]
-> A third approach for setting event handlers using HTML onevent attributes is not recommended! They inflate the markup and make it less readable and harder to debug. For more information, see [Inline event handlers](/en-US/docs/Learn_web_development/Core/Scripting/Events#inline_event_handlers_—_dont_use_these).
+> رویکرد سوم برای تنظیم هندلرهای رویداد با استفاده از ویژگی‌های HTML onevent توصیه نمی‌شود! آنها نشانه‌گذاری را حجیم می‌کنند و آن را کم‌خواناتر و دشوارتر برای اشکال‌زدایی می‌سازند. برای اطلاعات بیشتر، به [هندلرهای رویداد درون‌خطی](/en-US/docs/Learn_web_development/Core/Scripting/Events#inline_event_handlers_—_dont_use_these) مراجعه کنید.
 
-### Using onevent properties
+### استفاده از ویژگی‌های onevent
 
-By convention, JavaScript objects that fire events have corresponding "onevent" properties (named by prefixing "on" to the name of the event). These properties are called to run associated handler code when the event is fired, and may also be called directly by your own code.
+طبق قرارداد، اشیاء جاوااسکریپتی که رویدادها را فراخوانی می‌کنند، ویژگی‌های "onevent" متناظر دارند (با پیشوند "on" به نام رویداد نامگذاری می‌شوند). این ویژگی‌ها برای اجرای کد هندلر مرتبط در هنگام فراخوانی رویداد فراخوانی می‌شوند و همچنین ممکن است مستقیماً توسط کد شما فراخوانی شوند.
 
-To set event handler code, you can just assign it to the appropriate onevent property. Only one event handler can be assigned for every event in an element. If needed, the handler can be replaced by assigning another function to the same property.
+برای تنظیم کد هندلر رویداد، می‌توانید آن را به ویژگی onevent مناسب اختصاص دهید. فقط یک هندلر رویداد می‌تواند برای هر رویداد در یک عنصر اختصاص داده شود. در صورت نیاز، می‌توان هندلر را با اختصاص یک تابع دیگر به همان ویژگی جایگزین کرد.
 
-The following example shows how to set a `greet()` function for the `click` event using the `onclick` property.
+مثال زیر نحوه تنظیم یک تابع `greet()` برای رویداد `click` با استفاده از ویژگی `onclick` را نشان می‌دهد.
 
 ```js
 const btn = document.querySelector("button");
@@ -1009,16 +977,16 @@ function greet(event) {
 btn.onclick = greet;
 ```
 
-Note that an object representing the event is passed as the first argument to the event handler. This event object either implements or is derived from the {{domxref("Event")}} interface.
+توجه داشته باشید که یک شیء نشان‌دهنده رویداد به عنوان اولین آرگومان به هندلر رویداد ارسال می‌شود. این شیء رویداد یا رابط {{domxref("Event")}} را پیاده‌سازی می‌کند یا از آن مشتق شده است.
 
 ### EventTarget.addEventListener
 
-The most flexible way to set an event handler on an element is to use the {{domxref("EventTarget.addEventListener")}} method. This approach allows multiple listeners to be assigned to an element and enables listeners to be _removed_, if needed, using {{domxref("EventTarget.removeEventListener")}}.
+منعطف‌ترین راه برای تنظیم یک هندلر رویداد روی یک عنصر، استفاده از متد {{domxref("EventTarget.addEventListener")}} است. این رویکرد امکان اختصاص چندین شنونده به یک عنصر را فراهم می‌کند و در صورت نیاز، امکان _حذف_ شنونده‌ها را با استفاده از {{domxref("EventTarget.removeEventListener")}} فراهم می‌کند.
 
 > [!NOTE]
-> The ability to add and remove event handlers allows you to, for example, have the same button performing different actions in different circumstances. In addition, in more complex programs, cleaning up old/unused event handlers can improve efficiency.
+> توانایی افزودن و حذف هندلرهای رویداد به شما این امکان را می‌دهد که مثلاً یک دکمه در شرایط مختلف اقدامات متفاوتی انجام دهد. علاوه بر این، در برنامه‌های پیچیده‌تر، پاکسازی هندلرهای رویداد قدیمی/استفاده نشده می‌تواند کارایی را بهبود بخشد.
 
-The following example shows how a `greet()` function can be set as a listener/event handler for the `click` event (you could use an anonymous function expression instead of a named function if desired). Note again that the event is passed as the first argument to the event handler.
+مثال زیر نحوه تنظیم یک تابع `greet()` به عنوان شنونده/هندلر رویداد برای رویداد `click` را نشان می‌دهد (در صورت تمایل می‌توانید به جای یک تابع نام‌دار از یک عبارت تابع ناشناس استفاده کنید). دوباره توجه کنید که رویداد به عنوان اولین آرگومان به هندلر رویداد ارسال می‌شود.
 
 ```js
 const btn = document.querySelector("button");
@@ -1030,13 +998,13 @@ function greet(event) {
 btn.addEventListener("click", greet);
 ```
 
-The method can also take additional arguments/options to control aspects of how the events are captured and removed. More information can be found on the {{domxref("EventTarget.addEventListener")}} reference page.
+این متد همچنین می‌تواند آرگومان‌ها/گزینه‌های اضافی برای کنترل جنبه‌های نحوه ضبط و حذف رویدادها دریافت کند. اطلاعات بیشتر در صفحه مرجع {{domxref("EventTarget.addEventListener")}} یافت می‌شود.
 
-#### Using AbortSignal
+#### استفاده از AbortSignal
 
-A notable event listener feature is the ability to use an abort signal to clean up multiple event handlers at the same time.
+یک ویژگی قابل توجه شنونده رویداد، توانایی استفاده از یک سیگنال قطع (abort signal) برای پاکسازی همزمان چندین هندلر رویداد است.
 
-This is done by passing the same {{domxref("AbortSignal")}} to the {{domxref("EventTarget/addEventListener()", "addEventListener()")}} call for all the event handlers that you want to be able to remove together. You can then call {{domxref("AbortController/abort()", "abort()")}} on the controller owning the `AbortSignal`, and it will remove all event handlers that were added with that signal. For example, to add an event handler that we can remove with an `AbortSignal`:
+این کار با ارسال همان {{domxref("AbortSignal")}} به فراخوانی {{domxref("EventTarget/addEventListener()", "addEventListener()")}} برای همه هندلرهای رویدادی که می‌خواهید بتوانید با هم حذف کنید، انجام می‌شود. سپس می‌توانید {{domxref("AbortController/abort()", "abort()")}} را روی کنترل‌کننده‌ای که مالک `AbortSignal` است فراخوانی کنید، و تمام هندلرهای رویدادی که با آن سیگنال اضافه شده‌اند را حذف خواهد کرد. به عنوان مثال، برای افزودن یک هندلر رویداد که می‌توانیم با یک `AbortSignal` حذف کنیم:
 
 ```js
 const controller = new AbortController();
@@ -1047,28 +1015,29 @@ btn.addEventListener(
     console.log("greet:", event);
   },
   { signal: controller.signal },
-); // pass an AbortSignal to this handler
+); // یک AbortSignal به این هندلر ارسال کنید
 ```
 
-This event handler can then be removed like this:
+سپس این هندلر رویداد می‌تواند به این صورت حذف شود:
 
 ```js
-controller.abort(); // removes any/all event handlers associated with this controller
+controller.abort(); // هر/همه هندلرهای رویداد مرتبط با این کنترل‌کننده را حذف می‌کند
 ```
 
-### Interaction of multiple event handlers
+### تعامل چندین هندلر رویداد
 
-The `onevent` IDL property (for example, `element.onclick = ...`) and the HTML `onevent` content attribute (for example, `<button onclick="...">`) both target the same single handler slot. HTML loads before JavaScript could access the same element, so usually JavaScript replaces what's specified in HTML. Handlers added with {{domxref("EventTarget.addEventListener", "addEventListener()")}} are independent. Using `onevent` does not remove or replace listeners added with `addEventListener()`, and vice versa.
+ویژگی IDL `onevent` (مثلاً `element.onclick = ...`) و ویژگی محتوای HTML `onevent` (مثلاً `<button onclick="...">`) هر دو یک شکاف هندلر واحد را هدف قرار می‌دهند. HTML قبل از اینکه جاوااسکریپت بتواند به همان عنصر دسترسی پیدا کند، بارگذاری می‌شود، بنابراین معمولاً جاوااسکریپت آنچه را که در HTML مشخص شده است جایگزین می‌کند. هندلرهای اضافه شده با {{domxref("EventTarget.addEventListener", "addEventListener()")}} مستقل هستند. استفاده از `onevent` شنونده‌های اضافه شده با `addEventListener()` را حذف یا جایگزین نمی‌کند، و بالعکس.
 
-When an event is dispatched, listeners are called in phases. There are two phases: _capture_ and _bubble_. In the capture phase, the event starts from the highest ancestor element and moves down the DOM tree until it reaches the target. In the bubble phase, the event moves in the opposite direction. Event listeners by default listen in the bubble phase, and they can listen in the capturing phase by specifying `capture: true` with `addEventListener()`. Within a phase, listeners run in the order they were registered. The `onevent` handler is registered the first time it becomes non-null; later reassignments change only its callback, not its position in the order.
+هنگامی که یک رویداد ارسال می‌شود، شنونده‌ها در فازها فراخوانی می‌شوند. دو فاز وجود دارد: _ضبط (capture)_ و _حباب (bubble)_. در فاز ضبط، رویداد از بالاترین عنصر ancestor شروع می‌شود و درخت DOM را به سمت پایین حرکت می‌کند تا به هدف برسد. در فاز حباب، رویداد در جهت مخالف حرکت می‌کند. شنونده‌های رویداد به طور پیش‌فرض در فاز حباب گوش می‌دهند و می‌توانند با مشخص کردن `capture: true` با `addEventListener()` در فاز ضبط گوش دهند. در یک فاز، شنونده‌ها به ترتیب ثبت خود اجرا می‌شوند. هندلر `onevent` اولین باری که غیر null می‌شود ثبت می‌شود؛ اختصاص‌های بعدی فقط callback آن را تغییر می‌دهند، نه موقعیت آن را در ترتیب.
 
-Calling {{domxref("Event.stopPropagation()")}} prevents calling listeners on other elements later in the propagation chain. {{domxref("Event.stopImmediatePropagation()")}} also prevents calling remaining listeners on the same element.
+فراخوانی {{domxref("Event.stopPropagation()")}} از فراخوانی شنونده‌ها روی عناصر دیگر در ادامه زنجیره انتشار جلوگیری می‌کند. {{domxref("Event.stopImmediatePropagation()")}} همچنین از فراخوانی شنونده‌های باقی‌مانده روی همان عنصر جلوگیری می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
-- [Event bubbling](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling)
+- [مقدمه‌ای بر رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events)
+- [حباب زدن رویداد](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling)
+```
