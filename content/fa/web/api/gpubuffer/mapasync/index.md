@@ -1,7 +1,5 @@
 ---
 title: "GPUBuffer: mapAsync() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/mapAsync"
-status: "needs-translation"
 ---
 
 ---
@@ -14,12 +12,11 @@ browser-compat: api.GPUBuffer.mapAsync
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`mapAsync()`** method of the
-{{domxref("GPUBuffer")}} interface maps the specified range of the `GPUBuffer`. It returns a {{jsxref("Promise")}} that resolves when the `GPUBuffer`'s content is ready to be accessed. While the `GPUBuffer` is mapped it cannot be used in any GPU commands.
+متد **`mapAsync()`** از رابط {{domxref("GPUBuffer")}} محدوده مشخص‌شده از `GPUBuffer` را نگاشت می‌کند. این متد یک {{jsxref("Promise")}} برمی‌گرداند که وقتی محتوای `GPUBuffer` آماده دسترسی شد، حل می‌شود. تا زمانی که `GPUBuffer` نگاشت شده است، نمی‌توان از آن در هیچ دستور GPU استفاده کرد.
 
-Once the buffer is successfully mapped (which can be checked via {{domxref("GPUBuffer.mapState")}}), calls to {{domxref("GPUBuffer.getMappedRange()")}} will return an {{jsxref("ArrayBuffer")}} containing the `GPUBuffer`'s current values, to be read and updated by JavaScript as required.
+پس از اینکه بافر با موفقیت نگاشت شد (که می‌توانید با {{domxref("GPUBuffer.mapState")}} بررسی کنید)، فراخوانی‌های {{domxref("GPUBuffer.getMappedRange()")}} یک {{jsxref("ArrayBuffer")}} شامل مقادیر فعلی `GPUBuffer` برمی‌گردانند تا در صورت نیاز توسط جاوااسکریپت خوانده و به‌روزرسانی شوند.
 
-When you have finished working with the `GPUBuffer` values, call {{domxref("GPUBuffer.unmap()")}} to unmap it, making it accessible to the GPU again.
+وقتی کارتان با مقادیر `GPUBuffer` تمام شد، متد {{domxref("GPUBuffer.unmap()")}} را فراخوانی کنید تا نگاشت آن لغو شود و دوباره برای GPU در دسترس باشد.
 
 ## Syntax
 
@@ -31,39 +28,39 @@ mapAsync(mode, offset, size)
 ### Parameters
 
 - `mode`
-  - : A {{glossary("bitwise flags", "bitwise flag")}} that specifies whether the `GPUBuffer` is mapped for reading or writing. Possible values are:
+  - : یک {{glossary("bitwise flags", "bitwise flag")}} که مشخص می‌کند `GPUBuffer` برای خواندن نگاشت شده است یا برای نوشتن. مقادیر ممکن عبارت‌اند از:
     - `GPUMapMode.READ`
-      - : The `GPUBuffer` is mapped for reading. Values can be read, but any changes made to the {{jsxref("ArrayBuffer")}} returned by {{domxref("GPUBuffer.getMappedRange()")}} will be discarded once {{domxref("GPUBuffer.unmap()")}} is called.
+      - : `GPUBuffer` برای خواندن نگاشت شده است. مقادیر قابل خواندن هستند، اما هر تغییری که در {{jsxref("ArrayBuffer")}} برگشتی از {{domxref("GPUBuffer.getMappedRange()")}} ایجاد شود، پس از فراخوانی {{domxref("GPUBuffer.unmap()")}} کنار گذاشته خواهد شد.
 
-        Read-mode mapping can only be used on `GPUBuffer`s that have a usage of `GPUBufferUsage.MAP_READ` set on them (i.e., when created with {{domxref("GPUDevice.createBuffer()")}}).
+        نگاشت در حالت خواندن فقط روی `GPUBuffer`هایی قابل استفاده است که usage آن‌ها روی `GPUBufferUsage.MAP_READ` تنظیم شده باشد (یعنی هنگام ایجاد با {{domxref("GPUDevice.createBuffer()")}}).
 
     - `GPUMapMode.WRITE`
-      - : The `GPUBuffer` is mapped for writing. Values can be read and updated — any changes made to the {{jsxref("ArrayBuffer")}} returned by {{domxref("GPUBuffer.getMappedRange()")}} will be saved to the `GPUBuffer` once {{domxref("GPUBuffer.unmap()")}} is called.
+      - : `GPUBuffer` برای نوشتن نگاشت شده است. مقادیر قابل خواندن و به‌روزرسانی هستند — هر تغییری که در {{jsxref("ArrayBuffer")}} برگشتی از {{domxref("GPUBuffer.getMappedRange()")}} ایجاد شود، پس از فراخوانی {{domxref("GPUBuffer.unmap()")}} در `GPUBuffer` ذخیره خواهد شد.
 
-        Write-mode mapping can only be used on `GPUBuffer`s that have a usage of `GPUBufferUsage.MAP_WRITE` set on them (i.e., when created with {{domxref("GPUDevice.createBuffer()")}}).
+        نگاشت در حالت نوشتن فقط روی `GPUBuffer`هایی قابل استفاده است که usage آن‌ها روی `GPUBufferUsage.MAP_WRITE` تنظیم شده باشد (یعنی هنگام ایجاد با {{domxref("GPUDevice.createBuffer()")}}).
 
 - `offset` {{optional_inline}}
-  - : A number representing the offset, in bytes, from the start of the buffer to the start of the range to be mapped. If `offset` is omitted, it defaults to 0.
+  - : عددی که فاصله را بر حسب بایت از ابتدای بافر تا شروع محدوده مورد نظر برای نگاشت نشان می‌دهد. اگر `offset` حذف شود، پیش‌فرض آن ۰ است.
 - `size` {{optional_inline}}
-  - : A number representing the size, in bytes, of the range to be mapped. If `size` is omitted, the range mapped extends to the end of the `GPUBuffer`.
+  - : عددی که اندازه محدوده مورد نظر برای نگاشت را بر حسب بایت نشان می‌دهد. اگر `size` حذف شود، محدوده نگاشت شده تا انتهای `GPUBuffer` ادامه می‌یابد.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves to {{jsxref("undefined")}} when the `GPUBuffer`'s content is ready to be accessed.
+یک {{jsxref("Promise")}} که وقتی محتوای `GPUBuffer` آماده دسترسی شد، به {{jsxref("undefined")}} حل می‌شود.
 
 ### Validation
 
-The following criteria must be met when calling **`mapAsync()`**, otherwise an `OperationError` {{domxref("DOMException")}} is thrown, the promise is rejected, and a {{domxref("GPUValidationError")}} is generated:
+هنگام فراخوانی **`mapAsync()`** باید معیارهای زیر برقرار باشند؛ در غیر این صورت یک `OperationError` {{domxref("DOMException")}} پرتاب می‌شود، پرامیس رد می‌شود و یک {{domxref("GPUValidationError")}} تولید می‌شود:
 
-- `offset` is a multiple of 8.
-- The total range to be mapped (`size` if specified, or {{domxref("GPUBuffer.size")}} - `offset` if not) is a multiple of 4.
-- The total range to be mapped is inside the bounds of the `GPUBuffer`.
-- If mode is `GPUMapMode.READ`, the `GPUBuffer` has a usage of `GPUBufferUsage.MAP_READ`.
-- If mode is `GPUMapMode.WRITE`, the `GPUBuffer` has a usage of `GPUBufferUsage.MAP_WRITE`.
+- `offset` مضربی از ۸ است.
+- کل محدوده‌ای که قرار است نگاشت شود (`size` اگر مشخص شده باشد، یا در غیر این صورت {{domxref("GPUBuffer.size")}} - `offset`) مضربی از ۴ است.
+- کل محدوده مورد نظر برای نگاشت درون مرزهای `GPUBuffer` قرار دارد.
+- اگر حالت `GPUMapMode.READ` باشد، `GPUBuffer` دارای usage با مقدار `GPUBufferUsage.MAP_READ` است.
+- اگر حالت `GPUMapMode.WRITE` باشد، `GPUBuffer` دارای usage با مقدار `GPUBufferUsage.MAP_WRITE` است.
 
 ## Examples
 
-See the [main `GPUBuffer` page](/en-US/docs/Web/API/GPUBuffer#examples) for an example.
+برای مثال، به [صفحه اصلی `GPUBuffer`](/en-US/docs/Web/API/GPUBuffer#examples) مراجعه کنید.
 
 ## Specifications
 
@@ -75,4 +72,4 @@ See the [main `GPUBuffer` page](/en-US/docs/Web/API/GPUBuffer#examples) for an e
 
 ## See also
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
