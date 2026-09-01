@@ -1,7 +1,6 @@
 ---
 title: "Element: ariaBrailleRoleDescription property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaBrailleRoleDescription"
-status: "needs-translation"
 ---
 
 ---
@@ -14,27 +13,27 @@ browser-compat: api.Element.ariaBrailleRoleDescription
 
 {{APIRef("DOM")}}
 
-The **`ariaBrailleRoleDescription`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-brailleroledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-brailleroledescription) attribute, which defines the ARIA braille role description of the element.
+ویژگی **`ariaBrailleRoleDescription`** در رابط {{domxref("Element")}} مقدار صفت [`aria-brailleroledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-brailleroledescription) را بازتاب می‌دهد؛ این صفت، توصیف نقش بریل ARIA عنصر را تعریف می‌کند.
 
-This property may be used to provide an abbreviated version of the [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) value.
-It should only be used if `aria-roledescription` is present and in the rare case where it is too verbose for braille.
-The [`aria-brailleroledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-brailleroledescription) contains additional information about when the property should be set.
+از این ویژگی می‌توان برای ارائه نسخه‌ای خلاصه‌شده از مقدار [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) استفاده کرد.
+این ویژگی فقط زمانی باید استفاده شود که `aria-roledescription` وجود داشته باشد و در موارد نادری که مقدار آن برای بریل بیش از حد طولانی است.
+صفت [`aria-brailleroledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-brailleroledescription) حاوی اطلاعات بیشتری درباره زمان تنظیم این ویژگی است.
 
-## Value
+## مقدار
 
 - `<string>`
-  - : The value is a string, an unconstrained value type, that is intended to be converted into braille.
+  - : مقدار یک رشته است، یک نوع مقدار بدون محدودیت، که قرار است به بریل تبدیل شود.
 
-## Examples
+## مثال‌ها
 
-### Getting and setting ariaBrailleRoleDescription
+### دریافت و تنظیم ariaBrailleRoleDescription
 
-This example shows how you can get and set the `ariaBrailleRoleDescription` property.
+این مثال نحوه دریافت و تنظیم ویژگی `ariaBrailleRoleDescription` را نشان می‌دهد.
 
 #### HTML
 
-First we define an `<article>` element that would be use as a slide in a slideshow.
-We set the `aria-roledescription` attribute to "slide", and its braille contraction in `aria-brailleroledescription` to "sld".
+ابتدا یک عنصر `<article>` تعریف می‌کنیم که به عنوان اسلاید در یک نمایش اسلاید استفاده می‌شود.
+صفت `aria-roledescription` را روی «slide» و شکل خلاصه بریل آن را در `aria-brailleroledescription` روی «sld» تنظیم می‌کنیم.
 
 ```html
 <article
@@ -69,9 +68,9 @@ function log(text) {
 }
 ```
 
-To get the element's role description we use the `ariaBrailleRoleDescription` property.
-The code below first gets and then logs the value.
-It then sets the braille role description to "sd" and logs the value again (for illustration only — in production code you would not set this value).
+برای دریافت توصیف نقش عنصر، از ویژگی `ariaBrailleRoleDescription` استفاده می‌کنیم.
+کد زیر ابتدا مقدار را دریافت کرده و آن را ثبت می‌کند.
+سپس توصیف نقش بریل را به «sd» تغییر می‌دهد و دوباره مقدار را ثبت می‌کند (فقط برای نمایش — در کد تولیدی این مقدار را تنظیم نمی‌کنید).
 
 ```js
 const article = document.getElementById("article");
@@ -80,14 +79,14 @@ article.ariaBrailleRoleDescription = "sd";
 log(article.ariaBrailleRoleDescription);
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Getting and setting ariaBrailleRoleDescription")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
