@@ -1,11 +1,5 @@
 ---
 title: "Document: forms property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/forms"
-status: "needs-translation"
----
-
----
-title: "Document: forms property"
 short-title: forms
 slug: Web/API/Document/forms
 page-type: web-api-instance-property
@@ -14,29 +8,25 @@ browser-compat: api.Document.forms
 
 {{APIRef("DOM")}}
 
-The **`forms`** read-only property of the {{domxref("Document")}} interface returns an {{domxref("HTMLCollection")}} listing all the {{HTMLElement("form")}} elements contained in the document.
+خاصیت فقط‌خواندنی **`forms`** در رابط {{domxref("Document")}} یک {{domxref("HTMLCollection")}} برمی‌گرداند که تمام عناصر {{HTMLElement("form")}} موجود در سند را فهرست می‌کند.
 
 > [!NOTE]
-> Similarly, you can access a list of a form's component user input elements using the {{domxref("HTMLFormElement.elements")}} property.
+> به همین ترتیب، می‌توانید با استفاده از خاصیت {{domxref("HTMLFormElement.elements")}} به فهرست عناصر ورودی کاربر یک فرم دسترسی پیدا کنید.
 
-You can also access named `<form>` elements as properties of the `document` object.
-For example, `document["login-form"]` and `document.forms["login-form"]` can both be used to access the form named `login-form`.
+همچنین می‌توانید عناصر `<form>` نام‌گذاری‌شده را به عنوان خاصیت‌های شیء `document` فراخوانی کنید. برای مثال، `document["login-form"]` و `document.forms["login-form"]` هر دو می‌توانند برای دسترسی به فرمی با نام `login-form` استفاده شوند.
 
 > [!WARNING]
-> Relying on the `document["form-name"]` pattern is dangerous and discouraged because it can lead to unexpected conflicts with existing or future APIs in the browser.
-> For example, if a browser introduces a built-in `document["login-form"]` property in the future, your code may no longer be able to access the form element.
-> To avoid such conflicts, always use `document.forms` to access named forms.
+> اتکا به الگوی `document["form-name"]` خطرناک و ناامیدکننده است، زیرا می‌تواند منجر به تداخل‌های غیرمنتظره با APIهای موجود یا آینده در مرورگر شود. برای مثال، اگر در آینده مرورگر یک خاصیت داخلی `document["login-form"]` معرفی کند، کد شما ممکن است دیگر نتواند به عنصر فرم دسترسی پیدا کند. برای جلوگیری از چنین تداخل‌هایی، همیشه از `document.forms` برای دسترسی به فرم‌های نام‌گذاری‌شده استفاده کنید.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLCollection")}} object listing all of the document's forms.
-Each item in the collection is a {{domxref("HTMLFormElement")}} representing a single `<form>` element.
+یک شیء {{domxref("HTMLCollection")}} که تمام فرم‌های سند را فهرست می‌کند. هر آیتم در این مجموعه یک {{domxref("HTMLFormElement")}} است که یک عنصر `<form>` را نمایش می‌دهد.
 
-If the document has no forms, the returned collection is empty, with a length of zero.
+اگر سند هیچ فرمی نداشته باشد، مجموعه برگشتی خالی بوده و طول آن صفر است.
 
-## Examples
+## مثال‌ها
 
-### Getting form information
+### دریافت اطلاعات فرم
 
 ```html
 <form id="robby">
@@ -60,14 +50,14 @@ document.querySelectorAll("input[type=button]").forEach((button, i) => {
 });
 ```
 
-### Getting an element from within a form
+### دریافت یک عنصر از داخل یک فرم
 
 ```js
 const selectForm = document.forms[index];
 const selectFormElement = document.forms[index].elements[index];
 ```
 
-### Named form access
+### دسترسی به فرم‌های نام‌گذاری‌شده
 
 ```html
 <form name="login">
@@ -83,15 +73,15 @@ loginForm.elements.email.placeholder = "test@example.com";
 loginForm.elements.password.placeholder = "password";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [HTML forms](/en-US/docs/Learn_web_development/Extensions/Forms)
-- {{HTMLElement("form")}} and the {{domxref("HTMLFormElement")}} interface
+- {{HTMLElement("form")}} و رابط {{domxref("HTMLFormElement")}}
