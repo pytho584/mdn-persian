@@ -1,11 +1,5 @@
 ---
 title: "GPURenderBundleEncoder: setPipeline() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/setPipeline"
-status: "needs-translation"
----
-
----
-title: "GPURenderBundleEncoder: setPipeline() method"
 short-title: setPipeline()
 slug: Web/API/GPURenderBundleEncoder/setPipeline
 page-type: web-api-instance-method
@@ -14,35 +8,34 @@ browser-compat: api.GPURenderBundleEncoder.setPipeline
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`setPipeline()`** method of the
-{{domxref("GPURenderBundleEncoder")}} interface sets the {{domxref("GPURenderPipeline")}} to use for subsequent render bundle commands.
+متد **`setPipeline()`** در رابط {{domxref("GPURenderBundleEncoder")}}، {{domxref("GPURenderPipeline")}} را برای استفاده در دستورات بعدی رندر باندل تنظیم می‌کند.
 
 > [!NOTE]
-> This method is functionally identical to its equivalent on {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.setPipeline", "setPipeline()")}}.
+> این متد از نظر عملکردی با معادل خود در {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.setPipeline", "setPipeline()")}} — یکسان است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setPipeline(pipeline)
 ```
 
-### Parameters
+### پارامترها
 
 - `pipeline`
-  - : The {{domxref("GPURenderPipeline")}} to use for subsequent render bundle commands.
+  - : {{domxref("GPURenderPipeline")}} که برای دستورات بعدی رندر باندل استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`setPipeline()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderBundleEncoder")}} becomes invalid:
+هنگام فراخوانی `setPipeline()`، معیارهای زیر باید برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPURenderBundleEncoder")}} نامعتبر می‌شود:
 
-- If the {{domxref("GPURenderPipeline")}} writes to the depth component of the depth/stencil attachment, `depthReadOnly` (as specified in the descriptor of the originating {{domxref("GPUCommandEncoder.beginRenderPass()")}} call) is `true`.
-- If the {{domxref("GPURenderPipeline")}} writes to the stencil component of the depth/stencil attachment, `stencilReadOnly` (as specified in the descriptor of the originating {{domxref("GPUCommandEncoder.beginRenderPass()")}} call) is `true`.
+- اگر {{domxref("GPURenderPipeline")}} در مؤلفه عمق پیوست depth/stencil بنویسد، `depthReadOnly` (که در توصیف‌گر فراخوانی اصلی {{domxref("GPUCommandEncoder.beginRenderPass()")}} مشخص شده است) باید `true` باشد.
+- اگر {{domxref("GPURenderPipeline")}} در مؤلفه استنسیل پیوست depth/stencil بنویسد، `stencilReadOnly` (که در توصیف‌گر فراخوانی اصلی {{domxref("GPUCommandEncoder.beginRenderPass()")}} مشخص شده است) باید `true` باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 function recordRenderPass(passEncoder) {
@@ -66,16 +59,16 @@ function recordRenderPass(passEncoder) {
 }
 ```
 
-The above snippet is taken from the WebGPU Samples [Animometer example](https://webgpu.github.io/webgpu-samples/samples/animometer/).
+قطعه کد بالا از [مثال Animometer](https://webgpu.github.io/webgpu-samples/samples/animometer/) در نمونه‌های WebGPU گرفته شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [API WebGPU](/en-US/docs/Web/API/WebGPU_API)
