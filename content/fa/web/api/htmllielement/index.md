@@ -1,10 +1,4 @@
 ---
-title: "HTMLLIElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLIElement"
-status: "needs-translation"
----
-
----
 title: HTMLLIElement
 slug: Web/API/HTMLLIElement
 page-type: web-api-interface
@@ -13,31 +7,31 @@ browser-compat: api.HTMLLIElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLLIElement`** interface exposes specific properties and methods (beyond those defined by regular {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating list elements.
+رابطِ **`HTMLLIElement`** ویژگی‌ها و روش‌های خاصی را برای کار با المان‌های فهرست در دسترس قرار می‌دهد (علاوه بر آن‌هایی که از رابط معمول {{domxref("HTMLElement")}} به ارث برده است).
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLLIElement.type")}} {{deprecated_inline}}
-  - : A string representing the type of the bullets, `"disc"`, `"square"` or `"circle"`. As the standard way of defining the list type is via the CSS {{cssxref("list-style-type")}} property, use the CSSOM methods to set it via a script.
+  - : رشته‌ای که نوع نشانگر (bullet) را مشخص می‌کند: `"disc"`، `"square"` یا `"circle"`. از آنجا که روش استاندارد برای تعیین نوع فهرست، استفاده از ویژگی CSS {{cssxref("list-style-type")}} است، برای تنظیم آن با اسکریپت باید از متدهای CSSOM استفاده کنید.
 - {{domxref("HTMLLIElement.value")}}
-  - : An integer indicating the ordinal position of the _list element_ inside a given {{HTMLElement("ol")}}. It reflects the `value` attribute of the HTML {{HTMLElement("li")}} element, and can be smaller than `0`. If the {{HTMLElement("li")}} element is not a child of an {{HTMLElement("ol")}} element, the property has no meaning.
+  - : یک عدد صحیح که موقعیت ترتیبیِ _المان فهرست_ را در یک {{HTMLElement("ol")}} نشان می‌دهد. این ویژگی، منعکس‌کنندهٔ ویژگی `value` المان HTML {{HTMLElement("li")}} است و می‌تواند کمتر از `0` باشد. اگر المان {{HTMLElement("li")}} فرزند یک المان {{HTMLElement("ol")}} نباشد، این ویژگی معنایی ندارد.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش خاصی وجود ندارد؛ روش‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("li")}}
+- المان HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("li")}}
