@@ -1,11 +1,5 @@
 ---
 title: "Document: lastModified property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/lastModified"
-status: "needs-translation"
----
-
----
-title: "Document: lastModified property"
 short-title: lastModified
 slug: Web/API/Document/lastModified
 page-type: web-api-instance-property
@@ -14,47 +8,42 @@ browser-compat: api.Document.lastModified
 
 {{APIRef("DOM")}}
 
-The **`lastModified`** property of the {{domxref("Document")}}
-interface returns a string containing the date and local time on which the current document
-was last modified.
+ویژگی **`lastModified`** از رابط {{domxref("Document")}}، رشتهای شامل تاریخ و زمان محلی آخرین تغییری که روی سند فعلی انجام شده است را برمیگرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثالها
 
-### Simple usage
+### استفاده ساده
 
-This example alerts the value of `lastModified`.
+این مثال مقدار `lastModified` را در یک پنجره هشدار نشان میدهد.
 
 ```js
 alert(document.lastModified);
 // returns: Tuesday, December 16, 2017 11:09:42
 ```
 
-### Transforming lastModified into a Date object
+### تبدیل lastModified به یک شیء Date
 
-This example transforms `lastModified` into a {{jsxref("Date")}} object.
+این مثال `lastModified` را به یک شیء {{jsxref("Date")}} تبدیل میکند.
 
 ```js
 let oLastModif = new Date(document.lastModified);
 ```
 
-### Transforming lastModified into milliseconds
+### تبدیل lastModified به میلیثانیه
 
-This example transforms `lastModified` into the number of milliseconds since
-January 1, 1970, 00:00:00, local time.
+این مثال `lastModified` را به تعداد میلیثانیههای سپریشده از ۱ ژانویه ۱۹۷۰، ساعت ۰۰:۰۰:۰۰ به وقت محلی تبدیل میکند.
 
 ```js
 let nLastModif = Date.parse(document.lastModified);
 ```
 
-## Notes
+## نکات
 
-Note that as a string, `lastModified` cannot _easily_ be used for
-comparing the modification dates of documents. Here is a possible example of how to show
-an alert message when the page changes (see also: [JavaScript cookies API](/en-US/docs/Web/API/Document/cookie)):
+توجه داشته باشید که `lastModified` بهصورت یک رشته است و بهسادگی نمیتوان از آن برای مقایسه تاریخ تغییر اسناد استفاده کرد. در ادامه نمونهای از یک روش احتمالی برای نمایش پیام هشدار هنگام تغییر صفحه آورده شده است (همچنین ببینید: [JavaScript cookies API](/en-US/docs/Web/API/Document/cookie)):
 
 ```js
 // Match 'timestamp' in 'last_modif=timestamp'
@@ -72,7 +61,7 @@ if (
 }
 ```
 
-…the same example, but skipping the first visit:
+…همان مثال، اما با رد شدن از اولین بازدید:
 
 ```js
 const pattern = /last_modif\s*=\s*([^;]*)/;
@@ -91,12 +80,12 @@ if (Number.isNaN(lastVisit) || lastModif > lastVisit) {
 }
 ```
 
-If you want to know whether an _external_ page has changed, you can make a {{HTTPMethod("HEAD")}} request using the {{domxref("Window/fetch", "fetch()")}} API, and examine the {{HTTPHeader("Last-Modified")}} response header.
+اگر میخواهید بدانید که آیا یک صفحه _خارجی_ تغییر کرده است، میتوانید با استفاده از API {{domxref("Window/fetch", "fetch()")}} یک درخواست {{HTTPMethod("HEAD")}} ارسال کنید و هدر پاسخ {{HTTPHeader("Last-Modified")}} را بررسی کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
