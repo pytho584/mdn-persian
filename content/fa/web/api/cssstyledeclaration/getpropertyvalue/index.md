@@ -1,7 +1,5 @@
 ---
 title: "CSSStyleDeclaration: getPropertyValue() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue"
-status: "needs-translation"
 ---
 
 ---
@@ -14,7 +12,7 @@ browser-compat: api.CSSStyleDeclaration.getPropertyValue
 
 {{ APIRef("CSSOM") }}
 
-The **CSSStyleDeclaration.getPropertyValue()** method interface returns a string containing the value of a specified CSS property.
+متد **CSSStyleDeclaration.getPropertyValue()** رشته‌ای شامل مقدار یک ویژگی CSS مشخص را برمی‌گرداند.
 
 ## Syntax
 
@@ -25,30 +23,29 @@ getPropertyValue(property)
 ### Parameters
 
 - `property`
-  - : A string representing the property name (in hyphen case) to be checked.
+  - : رشته‌ای است که نام ویژگی مورد بررسی (به صورت hyphen case) را نشان می‌دهد.
 
 ### Return value
 
-A string containing the value of the property. If not set, returns the empty string.
+رشته‌ای شامل مقدار ویژگی. اگر تنظیم نشده باشد، رشته خالی بازگردانده می‌شود.
 
-The property value is dynamically computed, not what was originally specified in the declaration. The serialization happens in the following way:
+مقدار ویژگی به‌صورت پویا محاسبه می‌شود، نه مقداری که در ابتدا در اعلان (declaration) ذکر شده بود. سریال‌سازی به شکل زیر انجام می‌شود:
 
-- If `property` is a shorthand property, then get all longhand properties it corresponds to. Note that shorthand properties specified in the original stylesheet were already expanded during parse time. If at least one of those longhand properties is undeclared, or their `!important` statuses differ, then the result is the empty string. Otherwise, a property value that expands to the same list of longhand property values is returned, and this shorthand value will omit as many components as possible, and reordered to match the canonical order in the formal definition if possible. If either of the above syntactic translations would be less backwards-compatible, do not perform them.
-- Otherwise, the property is serialized according to its data type. Each data type has one canonical representation; for example, `<color>` values always use `rgb(R, G, B)` or `rgba(R, G, B, A)`.
+- اگر `property` یک ویژگی کوتاه‌نویس (shorthand property) باشد، همه ویژگی‌های بلندنویس (longhand properties) متناظر با آن در نظر گرفته می‌شوند. توجه داشته باشید که ویژگی‌های کوتاه‌نویسی که در برگه سبک اصلی مشخص شده بودند، هنگام تجزیه (parse) از قبل به ویژگی‌های بلندنویس بسط داده شده‌اند. اگر دست‌کم یکی از آن ویژگی‌های بلندنویس اعلام‌نشده باشد یا وضعیت `!important` آن‌ها با هم متفاوت باشد، نتیجه رشته خالی خواهد بود. در غیر این صورت، یک مقدار ویژگی که به همان فهرست مقادیر ویژگی‌های بلندنویس بسط می‌یابد بازگردانده می‌شود و این مقدار کوتاه‌نویس تا حد امکان مؤلفه‌های کمتری را شامل می‌شود و در صورت امکان به ترتیبی بازچینی می‌شود که با ترتیب متعارف در تعریف رسمی مطابقت داشته باشد. اگر هر یک از تبدیل‌های نحوی بالا سازگاری با عقب (backwards-compatible) را کاهش دهد، آن‌ها را انجام ندهید.
+- در غیر این صورت، ویژگی بر اساس نوع داده‌اش سریال‌سازی می‌شود. هر نوع داده یک نمایش متعارف دارد؛ برای مثال، مقادیر `<color>` همیشه از `rgb(R, G, B)` یا `rgba(R, G, B, A)` استفاده می‌کنند.
 
-In essence, the property value is _canonicalized_, ensuring that two property values with the same rendering effect compare equal even when they are declared differently.
+در اصل، مقدار ویژگی _متعارف‌شده (canonicalized)_ می‌شود و این تضمین را ایجاد می‌کند که دو مقدار ویژگی با اثر رندر یکسان، حتی اگر به شکل متفاوتی اعلام شده باشند، به صورت رشته‌ای با هم برابر مقایسه شوند.
 
 ## Examples
 
-The following JavaScript code queries the value of the `margin` property in
-a CSS selector rule:
+کد جاوااسکریپت زیر مقدار ویژگی `margin` را در یک قانون انتخابگر CSS پرس‌وجو می‌کند:
 
 ```js
 const declaration = document.styleSheets[0].cssRules[0].style;
 const value = declaration.getPropertyValue("margin"); // "1px 2px"
 ```
 
-The returned string might differ from the value specified in the style specification of the element. For instance this styling:
+رشته بازگردانده‌شده ممکن است با مقداری که در مشخصات استایل عنصر ذکر شده تفاوت داشته باشد. برای مثال این استایل‌دهی:
 
 ```css
 p#blueish {
@@ -61,7 +58,7 @@ const declaration = document.styleSheets[0].cssRules[0].style;
 const value = declaration.getPropertyValue("color");
 ```
 
-Will set a value `rgb(51, 13, 242);`. This is important when comparing styles by string.
+یک مقدار `rgb(51, 13, 242);` را تنظیم می‌کند. این موضوع هنگام مقایسه استایل‌ها به صورت رشته‌ای اهمیت دارد.
 
 ## Specifications
 
