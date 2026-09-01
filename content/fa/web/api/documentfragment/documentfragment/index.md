@@ -1,11 +1,5 @@
 ---
 title: "DocumentFragment: DocumentFragment() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/DocumentFragment"
-status: "needs-translation"
----
-
----
-title: "DocumentFragment: DocumentFragment() constructor"
 short-title: DocumentFragment()
 slug: Web/API/DocumentFragment/DocumentFragment
 page-type: web-api-constructor
@@ -14,27 +8,26 @@ browser-compat: api.DocumentFragment.DocumentFragment
 
 {{ApiRef("DOM")}}
 
-The **`DocumentFragment()`** constructor returns a new, empty
-{{domxref("DocumentFragment")}} object.
+سازندهٔ **`DocumentFragment()`** یک شیء جدید و خالی از {{domxref("DocumentFragment")}} می‌سازد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new DocumentFragment()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("DocumentFragment")}} object.
+یک شیء جدید {{domxref("DocumentFragment")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
