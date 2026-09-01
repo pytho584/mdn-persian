@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: fastSeek() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/fastSeek"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: fastSeek() method"
 short-title: fastSeek()
 slug: Web/API/HTMLMediaElement/fastSeek
 page-type: web-api-instance-method
@@ -14,12 +8,11 @@ browser-compat: api.HTMLMediaElement.fastSeek
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.fastSeek()`** method quickly seeks the
-media to the new time with precision tradeoff.
+متد **`HTMLMediaElement.fastSeek()`** به‌سرعت رسانه را به زمان جدید می‌برد و در این مسیر دقت را قربانی می‌کند.
 
 > [!NOTE]
-> If you need to seek with precision, you should set [`HTMLMediaElement.currentTime`](/en-US/docs/Web/API/HTMLMediaElement/currentTime)
-> instead.
+> اگر به پیمایش با دقت نیاز دارید، باید [`HTMLMediaElement.currentTime`](/en-US/docs/Web/API/HTMLMediaElement/currentTime)
+> را تنظیم کنید.
 
 ## Syntax
 
@@ -30,15 +23,15 @@ fastSeek(time)
 ### Parameters
 
 - `time`
-  - : A double.
+  - : یک عدد اعشاری (double).
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
-This example quickly seeks to 20-second position of the video element.
+این مثال، ویدیو را به‌سرعت به موقعیت ۲۰ ثانیه‌ای می‌برد:
 
 ```js
 let myVideo = document.getElementById("myVideoElement");
@@ -56,5 +49,4 @@ myVideo.fastSeek(20);
 
 ## See also
 
-- [HTMLMediaElement.currentTime](/en-US/docs/Web/API/HTMLMediaElement/currentTime)
-  for seeking without precision tradeoff
+- [HTMLMediaElement.currentTime](/en-US/docs/Web/API/HTMLMediaElement/currentTime) برای پیمایش بدون کاهش دقت
