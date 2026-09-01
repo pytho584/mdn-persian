@@ -1,11 +1,5 @@
 ---
 title: "Document: compatMode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/compatMode"
-status: "needs-translation"
----
-
----
-title: "Document: compatMode property"
 short-title: compatMode
 slug: Web/API/Document/compatMode
 page-type: web-api-instance-property
@@ -14,34 +8,30 @@ browser-compat: api.Document.compatMode
 
 {{ ApiRef("DOM") }}
 
-The **`Document.compatMode`** read-only property indicates
-whether the document is rendered in [Quirks mode](/en-US/docs/Web/HTML/Guides/Quirks_mode_and_standards_mode) or
-Standards mode.
+ویژگی فقط‌خواندنی **`Document.compatMode`** نشان می‌دهد که سند در [حالت Quirks](/en-US/docs/Web/HTML/Guides/Quirks_mode_and_standards_mode) رندر می‌شود یا در حالت استاندارد (Standards mode).
 
-## Value
+## مقدار
 
-A string that is one of the following:
+یک رشته که یکی از مقادیر زیر است:
 
-- `"BackCompat"` if the document is in quirks mode.
-- `"CSS1Compat"` if the document is in no-quirks (also known as
-  "standards") mode or limited-quirks (also known as "almost standards") mode.
+- `"BackCompat"` اگر سند در حالت quirks باشد.
+- `"CSS1Compat"` اگر سند در حالت بدون quirks (که به آن حالت «استاندارد» نیز گفته می‌شود) یا حالت quirks محدود (که به آن «تقریباً استاندارد» نیز گفته می‌شود) باشد.
 
 > [!NOTE]
-> All these modes are now standardized, so the older "standards"
-> and "almost standards" names are nonsensical and no longer used in standards.
+> همه این حالت‌ها اکنون استاندارد شده‌اند، بنابراین نام‌های قدیمی «استاندارد» و «تقریباً استاندارد» بی‌معنی هستند و دیگر در استانداردها استفاده نمی‌شوند.
 
-## Examples
+## مثال‌ها
 
 ```js
 if (document.compatMode === "BackCompat") {
-  // in Quirks mode
+  // در حالت Quirks
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
