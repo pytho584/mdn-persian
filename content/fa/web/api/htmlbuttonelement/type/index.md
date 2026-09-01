@@ -1,7 +1,5 @@
 ---
 title: "HTMLButtonElement: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/type"
-status: "needs-translation"
 ---
 
 ---
@@ -14,17 +12,17 @@ browser-compat: api.HTMLButtonElement.type
 
 {{ApiRef("HTML DOM")}}
 
-The **`type`** property of the {{domxref("HTMLButtonElement")}} interface is a string that indicates the behavior type of the {{HTMLElement("button")}} element.
+ویژگی **`type`** از رابط {{domxref("HTMLButtonElement")}} یک رشته است که نوع رفتار عنصر {{HTMLElement("button")}} را مشخص می‌کند.
 
-It reflects the [`type`](/en-US/docs/Web/HTML/Reference/Elements/button#type) attribute of the {{HTMLElement("button")}} element.
+این ویژگی، ویژگی [`type`](/en-US/docs/Web/HTML/Reference/Elements/button#type) عنصر {{HTMLElement("button")}} را بازتاب می‌دهد.
 
-## Value
+## مقدار
 
-A string representing the type.
+رشته‌ای که نوع را نشان می‌دهد.
 
-Its possible values are listed in the attribute's [button types](/en-US/docs/Web/HTML/Reference/Elements/button#type) section.
+مقادیر ممکن آن در بخشِ [انواع دکمه](/en-US/docs/Web/HTML/Reference/Elements/button#type) فهرست شده‌اند.
 
-## Example
+## مثال
 
 ### HTML
 
@@ -39,15 +37,15 @@ const buttonElement = document.querySelector("#button");
 console.log(buttonElement.type); // "reset"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLTextAreaElement.type")}} property
-- {{domxref("HTMLInputElement.type")}} property
+- ویژگیِ {{domxref("HTMLTextAreaElement.type")}}
+- ویژگیِ {{domxref("HTMLInputElement.type")}}
