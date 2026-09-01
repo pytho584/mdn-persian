@@ -1,11 +1,5 @@
 ---
 title: "HTMLScriptElement: textContent property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/textContent"
-status: "needs-translation"
----
-
----
-title: "HTMLScriptElement: textContent property"
 short-title: textContent
 slug: Web/API/HTMLScriptElement/textContent
 page-type: web-api-instance-property
@@ -15,116 +9,105 @@ browser-compat: api.HTMLScriptElement.textContent
 {{APIRef("DOM")}}
 
 > [!WARNING]
-> This property represents the text content of a script element, which may be executable depending on the script type.
-> APIs like this are known as [injection sinks](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage), and are potentially a vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks.
+> این ویژگی محتوای متنی یک عنصر اسکریپت را نشان می‌دهد که ممکن است بسته به نوع اسکریپت قابل اجرا باشد. APIهایی مانند این به عنوان [حفره‌های تزریق](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage) شناخته می‌شوند و به طور بالقوه بردار حمله‌های [کراس‌سایت اسکریپتینگ (XSS)](/en-US/docs/Web/Security/Attacks/XSS) هستند.
 >
-> You can mitigate this risk by always assigning {{domxref("TrustedScript")}} objects instead of strings and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types).
-> See [Security considerations](#security_considerations) for more information.
+> می‌توانید این خطر را با اختصاص دادن همیشه اشیاء {{domxref("TrustedScript")}} به جای رشته‌ها و [اجباری کردن انواع قابل اعتماد](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) کاهش دهید. برای اطلاعات بیشتر به [ملاحظات امنیتی](#security_considerations) مراجعه کنید.
 
-The **`textContent`** property of the {{domxref("HTMLScriptElement")}} interface represents the inline text content of the {{HTMLElement("script")}} element.
-It behaves in the same way as the {{domxref("HTMLScriptElement.text","text")}} and {{domxref("HTMLScriptElement.innerText","innerText")}} properties.
+ویژگی **`textContent`** از رابط {{domxref("HTMLScriptElement")}} محتوای متنی درون‌خطی عنصر {{HTMLElement("script")}} را نشان می‌دهد. این ویژگی مشابه ویژگی‌های {{domxref("HTMLScriptElement.text","text")}} و {{domxref("HTMLScriptElement.innerText","innerText")}} عمل می‌کند.
 
-## Value
+## مقدار
 
-Getting the property returns a string containing the script's text.
+دریافت ویژگی یک رشته حاوی متن اسکریپت را برمی‌گرداند.
 
-Setting the property accepts either a {{domxref("TrustedScript")}} object or a string.
+تنظیم ویژگی یک شیء {{domxref("TrustedScript")}} یا یک رشته را می‌پذیرد.
 
-### Exceptions
+### استثناها
 
 - `TypeError`
-  - : Thrown if the property is set to a string when [Trusted Types](/en-US/docs/Web/API/Trusted_Types_API) are [enforced by a CSP](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) and no default policy is defined.
+  - : زمانی پرتاب می‌شود که ویژگی با یک رشته تنظیم شود در حالی که [انواع قابل اعتماد](/en-US/docs/Web/API/Trusted_Types_API) توسط [CSP اجباری شده‌اند](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) و هیچ سیاست پیش‌فرضی تعریف نشده باشد.
 
-## Description
+## توضیحات
 
-The **`textContent`** property of the {{domxref("HTMLScriptElement")}} interface represents the text content inside the {{HTMLElement("script")}} element.
+ویژگی **`textContent`** از رابط {{domxref("HTMLScriptElement")}} محتوای متنی داخل عنصر {{HTMLElement("script")}} را نشان می‌دهد.
 
-For an executable script (that is, a script whose {{domxref('HTMLScriptElement/type','type')}} indicates that it is a module or classic script), this text is inline executable code.
-For other types it might represent an import map, speculation rules, or some other kind of data block.
+برای یک اسکریپت قابل اجرا (یعنی اسکریپتی که {{domxref('HTMLScriptElement/type','type')}} آن نشان می‌دهد که یک اسکریپت ماژول یا کلاسیک است)، این متن یک کد قابل اجرای درون‌خطی است. برای انواع دیگر، ممکن است یک نقشه واردات، قوانین حدس و گمان، یا نوع دیگری از بلوک داده را نشان دهد.
 
-Note that if the {{domxref('HTMLScriptElement/src','src')}} property is set the content of the `textContent` property is ignored.
+توجه داشته باشید که اگر ویژگی {{domxref('HTMLScriptElement/src','src')}} تنظیم شود، محتوای ویژگی `textContent` نادیده گرفته می‌شود.
 
-The `textContent` property is also defined on {{domxref("Node.textContent","Node")}} and can hence be used with other nodes (and elements).
-When used with other elements it does not expect or enforce the assignment of a {{domxref("TrustedScript")}}.
+ویژگی `textContent` همچنین روی {{domxref("Node.textContent","Node")}} تعریف شده است و بنابراین می‌تواند با گره‌ها (و عناصر) دیگر استفاده شود. هنگامی که با عناصر دیگر استفاده می‌شود، انتظار یا اجبار اختصاص یک {{domxref("TrustedScript")}} را ندارد.
 
-### Security considerations
+### ملاحظات امنیتی
 
-The `textContent` property — and identical `text` and `innerText` properties — are a possible vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks, where potentially unsafe strings provided by a user are executed.
-For example, the following example assumes the `scriptElement` is an executable `<script>` element, and that `untrustedCode` was provided by a user:
+ویژگی `textContent` — و ویژگی‌های مشابه `text` و `innerText` — یک بردار احتمالی برای حملات [کراس‌سایت اسکریپتینگ (XSS)](/en-US/docs/Web/Security/Attacks/XSS) هستند، جایی که رشته‌های بالقوه ناایمن ارائه شده توسط کاربر اجرا می‌شوند. به عنوان مثال، مثال زیر فرض می‌کند که `scriptElement` یک عنصر `<script>` قابل اجرا است و `untrustedCode` توسط یک کاربر ارائه شده است:
 
 ```js
 const untrustedCode = "alert('Potentially evil code!');";
-scriptElement.textContent = untrustedCode; // shows the alert
+scriptElement.textContent = untrustedCode; // هشدار را نشان می‌دهد
 ```
 
-You can mitigate these issues by always assigning {{domxref("TrustedScript")}} objects instead of strings, and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) using the [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) CSP directive.
-This ensures that the input is passed through a transformation function, which has the chance to [sanitize](/en-US/docs/Web/Security/Attacks/XSS#sanitization) or reject the text before it is injected.
+می‌توانید این مشکلات را با اختصاص دادن همیشه اشیاء {{domxref("TrustedScript")}} به جای رشته‌ها و [اجباری کردن انواع قابل اعتماد](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) با استفاده از دستورالعمل CSP [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) کاهش دهید. این اطمینان می‌دهد که ورودی از یک تابع تبدیل عبور می‌کند، که شانس [پالایش](/en-US/docs/Web/Security/Attacks/XSS#sanitization) یا رد متن قبل از تزریق را دارد.
 
-The behavior of the transformation function will depend on the specific use case that requires a user provided script.
-If possible you should lock the allowed scripts to exactly the code that you trust to run.
-If that is not possible, you might allow or block the use of certain functions within the provided string.
+رفتار تابع تبدیل به مورد استفاده خاصی که نیاز به یک اسکریپت ارائه شده توسط کاربر دارد بستگی دارد. در صورت امکان، باید اسکریپت‌های مجاز را دقیقاً به کدی که به اجرای آن اعتماد دارید محدود کنید. اگر این امکان‌پذیر نیست، می‌توانید استفاده از توابع خاصی را درون رشته ارائه شده مجاز یا مسدود کنید.
 
-## Examples
+## مثال‌ها
 
-### Using TrustedScript
+### استفاده از TrustedScript
 
-To mitigate the risk of XSS, we should always assign `TrustedScript` instances to the `textContent` property.
+برای کاهش خطر XSS، باید همیشه نمونه‌های `TrustedScript` را به ویژگی `textContent` اختصاص دهیم.
 
-Trusted types are not yet supported on all browsers, so first we define the [trusted types tinyfill](/en-US/docs/Web/API/Trusted_Types_API#trusted_types_tinyfill).
-This acts as a transparent replacement for the Trusted Types JavaScript API:
+انواع قابل اعتماد هنوز در همه مرورگرها پشتیبانی نمی‌شوند، بنابراین ابتدا [tinyfill انواع قابل اعتماد](/en-US/docs/Web/API/Trusted_Types_API#trusted_types_tinyfill) را تعریف می‌کنیم. این به عنوان یک جایگزین شفاف برای API جاوااسکریپت انواع قابل اعتماد عمل می‌کند:
 
 ```js
 if (typeof trustedTypes === "undefined")
   trustedTypes = { createPolicy: (n, rules) => rules };
 ```
 
-Next we create a {{domxref("TrustedTypePolicy")}} that defines a {{domxref("TrustedTypePolicy/createScript", "createScript()")}} method for transforming input strings into {{domxref("TrustedScript")}} instances.
-For the purpose of this example we'll allow just exactly the script that we need.
+سپس یک {{domxref("TrustedTypePolicy")}} ایجاد می‌کنیم که یک متد {{domxref("TrustedTypePolicy/createScript", "createScript()")}} برای تبدیل رشته‌های ورودی به نمونه‌های {{domxref("TrustedScript")}} تعریف می‌کند. برای هدف این مثال، دقیقاً همان اسکریپتی را که نیاز داریم مجاز می‌کنیم.
 
 ```js
 const policy = trustedTypes.createPolicy("inline-script-policy", {
   createScript(input) {
-    // Here specify what scripts are safe to allow
+    // در اینجا مشخص کنید کدام اسکریپت‌ها ایمن هستند
     if (input === "const num = 10;\nconsole.log(num)") {
-      return input; // allow this exact script
+      return input; // این اسکریپت دقیق را مجاز کن
     }
-    throw new TypeError(`Untrusted script blocked: ${input}`);
+    throw new TypeError(`اسکریپت غیرقابل اعتماد مسدود شد: ${input}`);
   },
 });
 ```
 
-Next we'll create the script element to which we will assign the value and get a handle to the element.
+سپس عنصر اسکریپتی را که مقدار را به آن اختصاص می‌دهیم ایجاد می‌کنیم و یک دستگیره به عنصر می‌گیریم.
 
 ```html
 <script id="el"></script>
 ```
 
 ```js
-// Get the script element we're injecting the code into
+// عنصر اسکریپتی را که کد را به آن تزریق می‌کنیم دریافت کنید
 const el = document.getElementById("el");
 ```
 
-Then we use the `policy` object to create a `trustedScript` object from the potentially unsafe input string, and assign the result to the element:
+سپس از شیء `policy` برای ایجاد یک شیء `trustedScript` از رشته ورودی بالقوه ناایمن استفاده می‌کنیم و نتیجه را به عنصر اختصاص می‌دهیم:
 
 ```js
-// The potentially malicious string
+// رشته بالقوه مخرب
 const untrustedScriptOne = "const num = 10;\nconsole.log(num)";
 
-// Create a TrustedScript instance using the policy
+// ایجاد یک نمونه TrustedScript با استفاده از سیاست
 const trustedScript = policy.createScript(untrustedScriptOne);
 
-// Inject the TrustedScript (which contains a trusted string)
+// تزریق TrustedScript (که حاوی یک رشته قابل اعتماد است)
 el.textContent = trustedScript;
 ```
 
-### Comparing `textContent`, `text` and `innerText`
+### مقایسه `textContent`، `text` و `innerText`
 
-This example demonstrates that assigning a script to each of the text properties, such as `textContent`, results in the same value being read from all of the text properties.
+این مثال نشان می‌دهد که اختصاص یک اسکریپت به هر یک از ویژگی‌های متنی، مانند `textContent`، منجر به خواندن همان مقدار از همه ویژگی‌های متنی می‌شود.
 
-Note that in this case we're not using the policy to create trusted scripts (for brevity we'll assume that the provided strings are trusted).
+توجه داشته باشید که در این مورد از سیاست برای ایجاد اسکریپت‌های قابل اعتماد استفاده نمی‌کنیم (برای اختصار فرض می‌کنیم که رشته‌های ارائه شده قابل اعتماد هستند).
 
 ```js
-// Set the textContent property
+// تنظیم ویژگی textContent
 el.textContent = "console.log(10);";
 
 console.log(`textContent: ${el.textContent}`);
@@ -136,7 +119,7 @@ console.log(`text: ${el.text}`);
 console.log(`innerText: ${el.innerText}`);
 // "innerText: console.log(10);"
 
-// Set the text property
+// تنظیم ویژگی text
 el.text = "const num = 10;\nconsole.log(num)";
 
 console.log(`textContent: ${el.textContent}`);
@@ -148,7 +131,7 @@ console.log(`text: ${el.text}`);
 console.log(`innerText: ${el.innerText}`);
 // "innerText: const num = 10; console.log(num)"
 
-// Set the innerText property
+// تنظیم ویژگی innerText
 el.innerText = "const num = 10;alert('Help')";
 
 console.log(`textContent: ${el.textContent}`);
@@ -161,15 +144,15 @@ console.log(`innerText: ${el.innerText}`);
 // "innerText: const num = 10;alert('Help')"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLScriptElement.text","text")}}
 - {{domxref("HTMLScriptElement.innerText","innerText")}}
