@@ -1,7 +1,5 @@
 ---
 title: "HTMLMeterElement: labels property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/labels"
-status: "needs-translation"
 ---
 
 ---
@@ -14,16 +12,13 @@ browser-compat: api.HTMLMeterElement.labels
 
 {{APIRef("DOM")}}
 
-The **`HTMLMeterElement.labels`** read-only property returns a
-{{domxref("NodeList")}} of the {{HTMLElement("label")}} elements associated with the
-{{HTMLElement("meter")}} element.
+ویژگی فقط‌خواندنی **`HTMLMeterElement.labels`** یک {{domxref("NodeList")}} از عناصر {{HTMLElement("label")}} مرتبط با عنصر {{HTMLElement("meter")}} را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("NodeList")}} containing the `<label>` elements associated
-with the `<meter>` element.
+یک {{domxref("NodeList")}} شامل عناصر `<label>` مرتبط با عنصر `<meter>`.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -44,10 +39,10 @@ for (const label of meter.labels) {
 
 {{EmbedLiveSample("Examples", "100%", 30)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
