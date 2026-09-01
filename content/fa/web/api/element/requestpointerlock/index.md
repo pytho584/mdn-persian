@@ -1,11 +1,5 @@
 ---
 title: "Element: requestPointerLock() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/requestPointerLock"
-status: "needs-translation"
----
-
----
-title: "Element: requestPointerLock() method"
 short-title: requestPointerLock()
 slug: Web/API/Element/requestPointerLock
 page-type: web-api-instance-method
@@ -14,46 +8,46 @@ browser-compat: api.Element.requestPointerLock
 
 {{APIRef("Pointer Lock API")}}
 
-The **`requestPointerLock()`** method of the {{domxref("Element")}} interface lets you asynchronously ask for the pointer to be locked on the given element.
+متد **`requestPointerLock()`** از رابط {{domxref("Element")}} به شما اجازه می‌دهد تا به‌صورت ناهمزمان (asynchronous) درخواست قفل شدن اشاره‌گر (pointer) روی عنصر مشخص‌شده را بدهید.
 
-To track the success or failure of the request, it is necessary to listen for the {{domxref("Document/pointerlockchange_event", "pointerlockchange")}} and {{domxref("Document/pointerlockerror_event", "pointerlockerror")}} events at the {{domxref("Document")}} level.
+برای پیگیری موفقیت یا شکست درخواست، لازم است به رویدادهای {{domxref("Document/pointerlockchange_event", "pointerlockchange")}} و {{domxref("Document/pointerlockerror_event", "pointerlockerror")}} در سطح {{domxref("Document")}} گوش دهید.
 
 > [!NOTE]
-> In the current specification, `requestPointerLock()` only communicates the success or failure of the request by firing {{domxref("Document/pointerlockchange_event", "pointerlockchange")}} or {{domxref("Document/pointerlockerror_event", "pointerlockerror")}} events. [A proposed update to the specification](https://github.com/w3c/pointerlock/pull/49) updates `requestPointerLock()` to return a {{jsxref("Promise")}} which communicates success or failure. This page documents the version that returns a {{jsxref("Promise")}}. However, note that this version is not yet a standard and is not implemented by all browsers. See [Browser compatibility](#browser_compatibility) for more information.
+> در مشخصات فعلی، `requestPointerLock()` موفقیت یا شکست درخواست را فقط با فرستادن رویدادهای {{domxref("Document/pointerlockchange_event", "pointerlockchange")}} یا {{domxref("Document/pointerlockerror_event", "pointerlockerror")}} اعلام می‌کند. [یک به‌روزرسانی پیشنهادی برای مشخصات](https://github.com/w3c/pointerlock/pull/49) `requestPointerLock()` را طوری تغییر می‌دهد که یک {{jsxref("Promise")}} برگرداند که موفقیت یا شکست را اعلام کند. این صفحه نسخه‌ای را مستند می‌کند که {{jsxref("Promise")}} برمی‌گرداند. اما توجه داشته باشید که این نسخه هنوز استاندارد نیست و در همه مرورگرها پیاده‌سازی نشده است. برای اطلاعات بیشتر به بخش [سازگاری با مرورگرها](#browser_compatibility) مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 requestPointerLock()
 requestPointerLock(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An options object that can contain the following properties:
+  - : یک شیء گزینه‌ها که می‌تواند شامل ویژگی‌های زیر باشد:
     - `unadjustedMovement` {{optional_inline}}
-      - : Disables OS-level adjustment for mouse acceleration, and accesses raw mouse input instead. The default value is `false`; setting it to `true` will disable mouse acceleration.
+      - : تنظیمات سطح سیستم‌عامل برای شتاب موس (mouse acceleration) را غیرفعال کرده و به‌جای آن از ورودی خام موس استفاده می‌کند. مقدار پیش‌فرض `false` است؛ تنظیم آن به `true` شتاب موس را غیرفعال می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} حل می‌شود.
 
-## Security
+## امنیت
 
-{{Glossary("Transient activation")}} is required when calling `requestPointerLock()`. The user has to interact with the page or a UI element in order for this feature to work. Also, the target element's associated document must be in the active state.
+{{Glossary("Transient activation", "فعال‌سازی موقت (Transient activation)")}} هنگام فراخوانی `requestPointerLock()` الزامی است. کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل داشته باشد تا این ویژگی کار کند. همچنین، سند مرتبط با عنصر هدف باید در حالت فعال (active state) باشد.
 
-If calling `requestPointerLock()` immediately after releasing the pointer lock via the default unlock gesture (instead of through an `exitPointerLock()` call), the call will fail, even if a {{Glossary("transient activation")}} is available.
+اگر `requestPointerLock()` بلافاصله پس از آزاد کردن قفل اشاره‌گر از طریق ژست پیش‌فرض باز کردن قفل (به‌جای فراخوانی `exitPointerLock()`) فراخوانی شود، این فراخوانی حتی اگر {{Glossary("transient activation")}} در دسترس باشد، با شکست مواجه خواهد شد.
 
-If calling `requestPointerLock()` with {{domxref("Element.requestFullscreen()", "requestFullscreen()")}}, the `requestPointerLock()` must be called first, because the {{domxref("Element.requestFullscreen()", "requestFullscreen()")}} will consume the state of {{Glossary("Transient activation", "transient activation")}}.
+اگر `requestPointerLock()` همراه با {{domxref("Element.requestFullscreen()", "requestFullscreen()")}} فراخوانی شود، ابتدا باید `requestPointerLock()` را فراخوانی کنید، زیرا {{domxref("Element.requestFullscreen()", "requestFullscreen()")}} وضعیت {{Glossary("Transient activation", "فعال‌سازی موقت")}} را مصرف می‌کند.
 
-The `allow-pointer-lock` [sandbox token](/en-US/docs/Web/HTML/Reference/Elements/iframe#sandbox) must be added when calling `requestPointerLock()` in an {{htmlelement("iframe")}} element. Also, no other elements in other {{htmlelement("iframe")}} elements may be in pointer lock mode.
+هنگام فراخوانی `requestPointerLock()` در یک عنصر {{htmlelement("iframe")}}، باید توکن [sandbox](/en-US/docs/Web/HTML/Reference/Elements/iframe#sandbox) `allow-pointer-lock` اضافه شود. همچنین، هیچ عنصر دیگری در عناصر {{htmlelement("iframe")}} دیگر نباید در حالت قفل اشاره‌گر باشد.
 
-## Examples
+## مثال‌ها
 
-Pointer lock is often used in online games, when you want your mouse movement to be focused on controlling the game, without the distraction of the mouse pointer moving around, going outside the game area, or reaching the edge of the window.
+قفل اشاره‌گر اغلب در بازی‌های آنلاین استفاده می‌شود، زمانی که می‌خواهید حرکت موس شما روی کنترل بازی متمرکز باشد، بدون اینکه اشاره‌گر موس در اطراف حرکت کند، از ناحیه بازی خارج شود یا به لبه پنجره برسد.
 
-To enable pointer lock, you would get the user to interact with the UI in some way, perhaps by pressing a button, or the game canvas itself.
+برای فعال کردن قفل اشاره‌گر، باید کاربر را به نحوی با رابط کاربری تعامل دهد، مثلاً با فشار دادن یک دکمه یا خود بوم (canvas) بازی.
 
 ```js
 canvas.addEventListener("click", async () => {
@@ -61,9 +55,9 @@ canvas.addEventListener("click", async () => {
 });
 ```
 
-Operating systems enable mouse acceleration by default, which is useful when you sometimes want slow precise movement (think about you might use a graphics package), but also want to move great distances with a faster mouse movement (think about scrolling, and selecting several files). For some first-person perspective games however, raw mouse input data is preferred for controlling camera rotation — where the same distance movement, fast or slow, results in the same rotation. This results in a better gaming experience and higher accuracy, according to professional gamers.
+سیستم‌عامل‌ها به‌طور پیش‌فرض شتاب موس را فعال می‌کنند که در مواقعی که حرکت دقیق و آهسته می‌خواهید (مثلاً در نرم‌افزارهای گرافیکی) و همچنین حرکت سریع برای مسافت‌های طولانی (مثل اسکرول کردن یا انتخاب چندین فایل) مفید است. اما برای برخی بازی‌های اول شخص، داده‌های خام موس برای کنترل چرخش دوربین ترجیح داده می‌شود؛ جایی که حرکت با فاصله یکسان، چه سریع و چه آهسته، باعث چرخش یکسان می‌شود. این کار طبق نظر گیمرهای حرفه‌ای تجربه بازی بهتری و دقت بالاتری را به همراه دارد.
 
-To disable OS-level mouse acceleration and access raw mouse input, you can set the `unadjustedMovement` to `true`:
+برای غیرفعال کردن شتاب موس در سطح سیستم‌عامل و دسترسی به ورودی خام موس، می‌توانید `unadjustedMovement` را روی `true` تنظیم کنید:
 
 ```js
 canvas.addEventListener("click", async () => {
@@ -73,22 +67,22 @@ canvas.addEventListener("click", async () => {
 });
 ```
 
-For more example code, see:
+برای مثال‌های کد بیشتر، به موارد زیر مراجعه کنید:
 
-- [pointer lock demo](https://mdn.github.io/dom-examples/pointer-lock/) ([see source code](https://github.com/mdn/dom-examples/tree/main/pointer-lock))
+- [نمونه قفل اشاره‌گر](https://mdn.github.io/dom-examples/pointer-lock/) ([مشاهده کد منبع](https://github.com/mdn/dom-examples/tree/main/pointer-lock))
 - {{domxref("Pointer Lock API", "Pointer Lock API", "", "nocode")}}
-- [Disable mouse acceleration to provide a better FPS gaming experience](https://web.dev/articles/disable-mouse-acceleration)
+- [غیرفعال کردن شتاب موس برای تجربه بهتر بازی FPS](https://web.dev/articles/disable-mouse-acceleration)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("Document.pointerLockElement") }}
 - {{ domxref("Document.exitPointerLock()") }}
-- [Pointer Lock](/en-US/docs/Web/API/Pointer_Lock_API)
+- [قفل اشاره‌گر (Pointer Lock)](/en-US/docs/Web/API/Pointer_Lock_API)
