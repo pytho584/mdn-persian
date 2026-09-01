@@ -1,7 +1,5 @@
 ---
 title: "HTMLSelectElement: size property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/size"
-status: "needs-translation"
 ---
 
 ---
@@ -14,14 +12,14 @@ browser-compat: api.HTMLSelectElement.size
 
 {{ APIRef("HTML DOM") }}
 
-The **`size`** property of the {{DOMxRef("HTMLSelectElement")}} interface specifies the number of options, or rows, that should be visible at one time. It reflects the {{htmlelement("select")}} element's [`size`](/en-US/docs/Web/HTML/Reference/Elements/select#size) attribute. If omitted, the value is `0`.
+خاصیت **`size`** در رابط {{DOMxRef("HTMLSelectElement")}} تعداد گزینه‌ها یا ردیف‌هایی را که باید در یک زمان قابل مشاهده باشند مشخص می‌کند. این خاصیت بازتاب‌دهندهٔ ویژگی [`size`](/en-US/docs/Web/HTML/Reference/Elements/select#size) عنصر {{htmlelement("select")}} است. اگر این ویژگی تنظیم نشده باشد، مقدار آن `0` است.
 
 > [!NOTE]
-> While by default a `<select>` displays a single row unless {{DOMxRef("HTMLSelectElement.multiple", "multiple")}} is true, in which case four rows are displayed, the default value for the `size` property is `0`.
+> به‌طور پیش‌فرض، یک `<select>` تنها یک ردیف را نمایش می‌دهد، مگر اینکه {{DOMXref("HTMLSelectElement.multiple", "multiple")}} برابر با `true` باشد که در آن صورت چهار ردیف نمایش داده می‌شود؛ با این حال، مقدار پیش‌فرض خاصیت `size` برابر با `0` است.
 
 ## Value
 
-A number.
+یک عدد.
 
 ## Examples
 
