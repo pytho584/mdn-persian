@@ -1,11 +1,5 @@
 ---
 title: "HTMLButtonElement: popoverTargetElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/popoverTargetElement"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: popoverTargetElement property"
 short-title: popoverTargetElement
 slug: Web/API/HTMLButtonElement/popoverTargetElement
 page-type: web-api-instance-property
@@ -14,36 +8,33 @@ browser-compat: api.HTMLButtonElement.popoverTargetElement
 
 {{APIRef("Popover API")}}
 
-The **`popoverTargetElement`** property of the {{domxref("HTMLButtonElement")}} interface gets and sets the popover element to control via a button.
+ویژگی **`popoverTargetElement`** در رابط {{domxref("HTMLButtonElement")}}، عنصر popover ای را که قرار است توسط یک دکمه کنترل شود، دریافت و تنظیم می‌کند.
 
-It is the JavaScript equivalent of the [`popovertarget`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget) HTML attribute.
+این ویژگی معادل جاوااسکریپتی ویژگی HTML [`popovertarget`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget) است.
 
-Establishing a relationship between a popover and its invoker button using the `popoverTargetElement` property has two additional useful effects:
+برقراری ارتباط بین یک popover و دکمه‌ی فراخوان آن با استفاده از ویژگی `popoverTargetElement` دو اثر مفید دیگر نیز دارد:
 
-- The browser creates an implicit [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) and [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) relationship between popover and invoker, and places the popover in a logical position in the keyboard focus navigation order when shown. This makes the popover more accessible to keyboard and assistive technology (AT) users (see also [Popover accessibility features](/en-US/docs/Web/API/Popover_API/Using#popover_accessibility_features)).
-- The browser creates an implicit anchor reference between the two, making it very convenient to position popovers relative to their controls using [CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning). See [Popover anchor positioning](/en-US/docs/Web/API/Popover_API/Using#popover_anchor_positioning) for more details.
+- مرورگر یک رابطه‌ی ضمنی [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) و [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) بین popover و فراخوان ایجاد می‌کند و هنگام نمایش، popover را در جایگاه منطقی در ترتیب پیمایش با صفحه‌کلید قرار می‌دهد. این کار باعث می‌شود popover برای کاربران صفحه‌کلید و فناوری کمکی (AT) در دسترس‌تر باشد (همچنین ببینید: [ویژگی‌های دسترس‌پذیری Popover](/en-US/docs/Web/API/Popover_API/Using#popover_accessibility_features)).
+- مرورگر یک مرجع لنگر ضمنی بین این دو ایجاد می‌کند و بدین ترتیب، قرار دادن popover در کنار کنترل‌های مربوطه با استفاده از [قرارگیری لنگر CSS](/en-US/docs/Web/CSS/Guides/Anchor_positioning) بسیار آسان می‌شود. برای جزئیات بیشتر، به [قرارگیری لنگر Popover](/en-US/docs/Web/API/Popover_API/Using#popover_anchor_positioning) مراجعه کنید.
 
-## Value
+## مقدار
 
-A reference to a popover element in the DOM.
+یک ارجاع به یک عنصر popover در DOM.
 
-## Examples
+## مثال‌ها
 
-### Toggle popover action with an auto popover
+### عملکرد تغییر وضعیت popover با popover خودکار
 
-This example shows the basic use of the popover API, setting a `<div>` element as a popover, and then setting it as the `popoverTargetElement` of a `<button>`.
-The `popover` attribute is set to [`"manual"`](/en-US/docs/Web/API/Popover_API/Using#using_manual_popover_state), so the popover must be closed using a button, and not "light dismissed" by selecting outside the popover area.
+این مثال کاربرد اصلی API Popover را نشان می‌دهد: یک عنصر `<div>` به عنوان popover تنظیم می‌شود و سپس به عنوان `popoverTargetElement` یک دکمه `<button>` قرار می‌گیرد. ویژگی `popover` روی [`"manual"`](/en-US/docs/Web/API/Popover_API/Using#using_manual_popover_state) تنظیم شده است، بنابراین popover باید با یک دکمه بسته شود و با انتخاب خارج از ناحیه popover به‌صورت «نور» بسته نمی‌شود.
 
-First we define an HTML `<button>` element that we will use to show and hide the popover, and a `<div>` that will be the popover.
-In this case we don't set the [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction) HTML attribute on the `<button>` or the [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) attribute on the `<div>`, as we will be doing so programmatically.
+ابتدا یک عنصر `<button>` تعریف می‌کنیم که برای نمایش و مخفی‌کردن popover استفاده می‌شود و یک `<div>` که همان popover خواهد بود. در این حالت، ویژگی HTML [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction) را روی `<button>` یا ویژگی [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) را روی `<div>` تنظیم نمی‌کنیم، زیرا این کار را به‌صورت برنامه‌نویسی انجام خواهیم داد.
 
 ```html
 <button id="toggleBtn">Toggle popover</button>
 <div id="mypopover">This is popover content!</div>
 ```
 
-The JavaScript code first gets a handle to the `<div>` and `<button>` elements.
-It then defines a function to check for popover support.
+کد جاوااسکریپت ابتدا به عناصر `<div>` و `<button>` دسترسی پیدا می‌کند. سپس تابعی تعریف می‌کند که پشتیبانی از popover را بررسی کند.
 
 ```js
 const popover = document.getElementById("mypopover");
@@ -55,9 +46,7 @@ function supportsPopover() {
 }
 ```
 
-If the popover API is supported the code sets the `<div>` element's `popover` attribute to `"auto"` and makes it the popover target of the toggle button.
-We then set the `popoverTargetAction` of the `<button>` to `"toggle"`.
-If the popover API is not supported we change the text content of the `<div>` element to state this, and hide the toggle button.
+اگر API popover پشتیبانی شود، کد ویژگی `popover` عنصر `<div>` را روی `"auto"` تنظیم می‌کند و آن را هدف popover دکمه تغییر وضعیت قرار می‌دهد. سپس `popoverTargetAction` دکمه `<button>` را روی `"toggle"` قرار می‌دهیم. اگر API popover پشتیبانی نشود، متن داخل عنصر `<div>` را تغییر می‌دهیم تا این موضوع را اعلام کند و دکمه تغییر وضعیت را مخفی می‌کنیم.
 
 ```js
 if (supportsPopover()) {
@@ -76,22 +65,20 @@ if (supportsPopover()) {
 ```
 
 > [!NOTE]
-> A popover element is hidden by default, but if the API is not supported your element will display "as usual".
+> یک عنصر popover به‌طور پیش‌فرض مخفی است، اما اگر API پشتیبانی نشود، عنصر شما «به‌شکل معمول» نمایش داده می‌شود.
 
-You can try out the example below.
-Show and hide the popover by toggling the button.
-The "auto" popover can also be dismissed by selecting outside the bounds of the popover text.
+می‌توانید مثال زیر را امتحان کنید. با تغییر وضعیت دکمه، popover را نمایش داده و مخفی کنید. popover «خودکار» (auto) را می‌توان با انتخاب خارج از محدوده متن popover نیز بست.
 
 {{EmbedLiveSample("Toggle popover action with an auto popover", "100%")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Popover API](/en-US/docs/Web/API/Popover_API)
+- [API Popover](/en-US/docs/Web/API/Popover_API)
