@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaFlowToElements property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaFlowToElements"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaFlowToElements property"
 short-title: ariaFlowToElements
 slug: Web/API/ElementInternals/ariaFlowToElements
 page-type: web-api-instance-property
@@ -14,45 +8,38 @@ browser-compat: api.ElementInternals.ariaFlowToElements
 
 {{APIRef("DOM")}}
 
-The **`ariaFlowToElements`** property of the {{domxref("ElementInternals")}} interface is an array containing the element (or elements) that provide an alternate reading order of content, overriding the general default reading order at the user's discretion.
-If just one element is provided this is the next element in the reading order.
-If multiple elements are provided, then each element represents a possible path that should be offered to the user for selection.
+ویژگی **`ariaFlowToElements`** در رابط {{domxref("ElementInternals")}} آرایه‌ای شامل عنصر (یا عناصری) است که ترتیب خواندن جایگزینی برای محتوا فراهم می‌کنند و ترتیب خواندن پیش‌فرض عمومی را به صلاح‌دید کاربر لغو می‌کنند. اگر تنها یک عنصر ارائه شود، این عنصر، عنصر بعدی در ترتیب خواندن است. اگر چندین عنصر ارائه شوند، هر عنصر نشان‌دهنده یک مسیر احتمالی است که باید برای انتخاب به کاربر ارائه شود.
 
-The [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) topic contains additional information about how the attribute and property should be used.
+مبحث [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) اطلاعات بیشتری درباره نحوه استفاده از این ویژگی و صفت ارائه می‌دهد.
 
-## Value
+## مقدار
 
-An array of subclasses of {{domxref("HTMLElement")}}.
+آرایه‌ای از زیرکلاس‌های {{domxref("HTMLElement")}}.
 
-When read, the returned array is a static and read-only.
-When written, the assigned array is copied: subsequent changes to the array do not affect the value of the property.
+هنگام خواندن، آرایه بازگردانده‌شده ایستا و فقط‌خواندنی است. هنگام نوشتن، آرایه اختصاص‌داده‌شده کپی می‌شود: تغییرات بعدی در آرایه بر مقدار ویژگی تأثیری نمی‌گذارد.
 
-## Description
+## توضیحات
 
-The property is a flexible alternative to using the [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) attribute to set an alternative reading order.
-Unlike `aria-flowto`, the elements assigned to this property do not have to have an [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute.
+این ویژگی جایگزینی انعطاف‌پذیر برای استفاده از صفت [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) برای تنظیم ترتیب خواندن جایگزین است. برخلاف `aria-flowto`، عناصری که به این ویژگی اختصاص داده می‌شوند لزومی ندارد دارای ویژگی [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) باشند.
 
-The property reflects the element's [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) attribute when it is defined, but only for listed reference `id` values that match valid in-scope elements.
-If the property is set, then the corresponding attribute is cleared.
-For more information about reflected element references and scope see [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Reflected attributes_ guide.
+این ویژگی صفت [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) عنصر را وقتی تعریف شده باشد بازتاب می‌دهد، اما فقط برای مقادیر مرجع `id` فهرست‌شده که با عناصر معتبر در دامنه مطابقت دارند. اگر این ویژگی تنظیم شود، صفت مربوطه پاک می‌شود. برای اطلاعات بیشتر درباره ارجاع‌های بازتاب‌شده به عناصر و دامنه، به [ارجاع‌های بازتاب‌شده به عناصر](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _Reflected attributes_ مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-The examples in the following documents are relevant:
+مثال‌های موجود در اسناد زیر مرتبط هستند:
 
-- {{domxref("Element.ariaFlowToElements")}} is the DOM equivalent of this property.
-  It is used in the same way, but within the DOM instead of a shadow DOM and/or custom element.
+- {{domxref("Element.ariaFlowToElements")}} معادل DOM این ویژگی است. به همان شکل استفاده می‌شود، اما در DOM به جای shadow DOM و/یا عنصر سفارشی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) attribute
+- صفت [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto)
 - {{domxref("Element.ariaFlowToElements")}}
-- [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Attribute reflection_ guide.
+- [ارجاع‌های بازتاب‌شده به عناصر](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _Attribute reflection_.
