@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: dragend event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragend_event"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: dragend event"
 short-title: dragend
 slug: Web/API/HTMLElement/dragend_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLElement.dragend_event
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The `dragend` event is fired when a drag operation ends (by releasing a mouse button or hitting the escape key).
+رویداد `dragend` زمانی فعال می‌شود که یک عملیات کشیدن (drag) پایان می‌یابد (با رها کردن دکمه ماوس یا فشار دادن کلید Escape).
 
-This event is cancelable and may bubble up to the {{domxref("Document")}} and {{domxref("Window")}} objects.
+این رویداد قابل لغو (cancelable) است و ممکن است تا اشیاء {{domxref("Document")}} و {{domxref("Window")}} بالا بیاید.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("dragend", (event) => { })
@@ -28,21 +22,21 @@ addEventListener("dragend", (event) => { })
 ondragend = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("DragEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("DragEvent")}}. از {{domxref("Event")}} به ارث برده است.
 
 {{InheritanceDiagram("DragEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Resetting opacity on dragend
+### بازنشانی شفافیت در پایان کشیدن (dragend)
 
-In this example, we have a draggable element inside a container. Try grabbing the element, dragging it, and then releasing it.
+در این مثال، یک عنصر قابل کشیدن داخل یک ظرف داریم. سعی کنید عنصر را بگیرید، بکشید و سپس رها کنید.
 
-We make the element half-transparent while it is dragged, and listen for the `dragend` event to reset the element's opacity when it is released.
+ما عنصر را در حین کشیدن نیمه‌شفاف می‌کنیم و به رویداد `dragend` گوش می‌دهیم تا شفافیت آن را هنگام رها شدن بازنشانی کنیم.
 
-For a complete example of drag and drop, see the page for the [`drag`](/en-US/docs/Web/API/HTMLElement/drag_event) event.
+برای یک مثال کامل از کشیدن و رها کردن (drag and drop)، به صفحه رویداد [`drag`](/en-US/docs/Web/API/HTMLElement/drag_event) مراجعه کنید.
 
 #### HTML
 
@@ -93,21 +87,21 @@ source.addEventListener("dragend", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('Resetting opacity on drag end')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Other drag and drop events:
+- سایر رویدادهای کشیدن و رها کردن:
   - {{domxref("HTMLElement/drag_event", "drag")}}
   - {{domxref("HTMLElement/dragstart_event", "dragstart")}}
   - {{domxref("HTMLElement/dragover_event", "dragover")}}
