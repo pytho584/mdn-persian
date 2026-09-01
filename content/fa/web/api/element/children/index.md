@@ -1,11 +1,5 @@
 ---
 title: "Element: children property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/children"
-status: "needs-translation"
----
-
----
-title: "Element: children property"
 short-title: children
 slug: Web/API/Element/children
 page-type: web-api-instance-property
@@ -14,23 +8,17 @@ browser-compat: api.Element.children
 
 {{ APIRef("DOM") }}
 
-The read-only **`children`** property returns a live {{domxref("HTMLCollection")}}
-which contains all of the child {{domxref("Element", "elements")}} of the element upon which it was called.
+ویژگی‌ی فقط‌خواندنی **`children`** یک {{domxref("HTMLCollection")}} زنده را بازمی‌گرداند که شامل تمام عناصر فرزند ({{domxref("Element", "elements")}}) عنصری است که روی آن فراخوانی شده است.
 
-`Element.children` includes only element nodes. To get all child nodes, including non-element nodes like text and comment nodes, use {{domxref("Node.childNodes")}}.
+`Element.children` فقط گره‌های عنصر را شامل می‌شود. برای دریافت همه گره‌های فرزند، از جمله گره‌های غیرعنصری مانند گره‌های متنی و دیدگاه (comment)، از {{domxref("Node.childNodes")}} استفاده کنید.
 
-## Value
+## مقدار
 
-An {{ domxref("HTMLCollection") }} which is a live, ordered collection of the DOM
-elements which are children of `node`. You can access the
-individual child nodes in the collection by using either the
-{{domxref("HTMLCollection.item()", "item()")}} method on the collection, or by using
-JavaScript array-style notation.
+یک {{ domxref("HTMLCollection") }} که مجموعه‌ای زنده و مرتب از عناصر DOM است که فرزندان `node` هستند. می‌توانید گره‌های فرزند جداگانه را در این مجموعه با استفاده از روش {{domxref("HTMLCollection.item()", "item()")}} یا با استفاده از نماد آرایه‌ای جاوااسکریپت دسترسی پیدا کنید.
 
-If the element has no element children, then `children` is an empty list with a
-`length` of `0`.
+اگر عنصر هیچ فرزند عنصری نداشته باشد، `children` یک فهرست خالی با `length` برابر با `0` است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const myElement = document.getElementById("foo");
@@ -39,14 +27,14 @@ for (const child of myElement.children) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node.childNodes")}}
