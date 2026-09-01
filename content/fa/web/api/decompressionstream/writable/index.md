@@ -1,11 +1,5 @@
 ---
 title: "DecompressionStream: writable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DecompressionStream/writable"
-status: "needs-translation"
----
-
----
-title: "DecompressionStream: writable property"
 short-title: writable
 slug: Web/API/DecompressionStream/writable
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.DecompressionStream.writable
 
 {{APIRef("Compression Streams API")}}{{AvailableInWorkers}}
 
-The **`writable`** read-only property of the {{domxref("DecompressionStream")}} interface returns a {{domxref("WritableStream")}} that accepts compressed data to be decompressed, in the form of {{jsxref("ArrayBuffer")}}, {{jsxref("TypedArray")}}, or {{jsxref("DataView")}} chunks.
+ویژگی فقط خواندنی **`writable`** از رابط {{domxref("DecompressionStream")}} یک {{domxref("WritableStream")}} را برمی‌گرداند که داده‌های فشرده‌شده را برای فشرده‌گشایی (decompression) به صورت تکه‌های {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}} می‌پذیرد.
 
-## Value
+## مقدار
 
-A {{domxref("WritableStream")}}.
+یک {{domxref("WritableStream")}}.
 
-## Examples
+## مثال‌ها
 
-This example creates a `DecompressionStream` that performs gzip decompression. It writes some compressed binary data to the `writable` stream, then reads the decompressed data from the `readable` stream, decoding it as UTF-8 text.
+این مثال یک `DecompressionStream` ایجاد می‌کند که فشرده‌گشایی gzip را انجام می‌دهد. مقداری داده‌ی باینری فشرده را به جریان `writable` می‌نویسد، سپس داده‌های فشرده‌گشایی‌شده را از جریان `readable` می‌خواند و به صورت متن UTF-8 رمزگشایی می‌کند.
 
 ```js
 const stream = new DecompressionStream("gzip");
@@ -49,14 +43,14 @@ while (!done) {
 console.log(new TextDecoder().decode(new Uint8Array(output))); // Hello, world!
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("TransformStream.writable")}}
