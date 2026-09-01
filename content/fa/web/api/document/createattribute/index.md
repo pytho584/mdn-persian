@@ -1,11 +1,5 @@
 ---
 title: "Document: createAttribute() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createAttribute"
-status: "needs-translation"
----
-
----
-title: "Document: createAttribute() method"
 short-title: createAttribute()
 slug: Web/API/Document/createAttribute
 page-type: web-api-instance-method
@@ -14,42 +8,42 @@ browser-compat: api.Document.createAttribute
 
 {{ ApiRef("DOM") }}
 
-The **`createAttribute()`** method of the {{domxref("Document")}} interface creates a new attribute node.
+روش **`createAttribute()`** از رابط {{domxref("Document")}} یک گره صفت جدید ایجاد می‌کند.
 
-The object created is a node implementing the {{domxref("Attr")}} interface.
-The DOM does not enforce what sort of attributes can be added to a particular element in this manner.
+شیء ایجاد شده یک گره است که رابط {{domxref("Attr")}} را پیاده‌سازی می‌کند.
+DOM محدودیتی برای نوع صفاتی که می‌توان به این روش به یک عنصر خاص اضافه کرد، اعمال نمی‌کند.
 
 > [!NOTE]
-> The string given in parameter is converted to lowercase.
+> رشته‌ای که به عنوان پارامتر داده می‌شود به حروف کوچک تبدیل می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createAttribute(localName)
 ```
 
-### Parameters
+### پارامترها
 
 - `localName`
-  - : A string containing the name of the attribute.
-    The value is used to initialize the new attribute's {{DOMxRef("Attr.localName", "localName")}} property.
+  - : یک رشته حاوی نام صفت.
+    این مقدار برای مقداردهی اولیه ویژگی {{DOMxRef("Attr.localName", "localName")}} صفت جدید استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("Attr")}} node.
+یک گره {{domxref("Attr")}}.
 
-### Exceptions
+### استثناها
 
 - `InvalidCharacterError` {{domxref("DOMException")}}
-  - : Thrown if the [`localName`](#localname) value is not a valid attribute name.
-    It must have at least one character, and may not contain ASCII whitespace, `NULL`, `/`, `=` or `>` (U+0000, U+002F, U+003D, or U+003E, respectively).
+  - : اگر مقدار [`localName`](#localname) یک نام صفت معتبر نباشد، پرتاب می‌شود.
+    باید حداقل یک کاراکتر داشته باشد و نمی‌تواند شامل فاصله‌های خالی ASCII، `NULL`، `/`، `=` یا `>` (به ترتیب U+0000، U+002F، U+003D، یا U+003E) باشد.
 
     > [!NOTE]
-    > Earlier versions of the specification were more restrictive, requiring that the `localName` be a valid [XML name](https://www.w3.org/TR/xml/#dt-name).
+    > نسخه‌های قبلی مشخصات محدودتر بودند و نیاز داشتند که `localName` یک [نام XML](https://www.w3.org/TR/xml/#dt-name) معتبر باشد.
 
-## Examples
+## مثال‌ها
 
-### Basic example
+### مثال پایه
 
 ```js
 const node = document.getElementById("div1");
@@ -59,15 +53,15 @@ node.setAttributeNode(a);
 console.log(node.getAttribute("my_attrib")); // "newVal"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.createAttributeNS()")}}
 - {{domxref("Document.createElement()")}}
