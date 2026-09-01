@@ -1,11 +1,5 @@
 ---
 title: "CustomStateSet: keys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomStateSet/keys"
-status: "needs-translation"
----
-
----
-title: "CustomStateSet: keys() method"
 short-title: keys()
 slug: Web/API/CustomStateSet/keys
 page-type: web-api-instance-method
@@ -14,26 +8,26 @@ browser-compat: api.CustomStateSet.keys
 
 {{APIRef("Web Components")}}
 
-The **`keys()`** method of the {{domxref("CustomStateSet")}} interface is an alias for {{domxref("CustomStateSet.values")}}.
+**`keys()`** 方法属于 {{domxref("CustomStateSet")}} 接口，是 {{domxref("CustomStateSet.values")}} 的别名。
 
-## Syntax
+## 语法
 
 ```js-nolint
 keys()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A new iterator object containing the values for each element in the given `CustomStateSet`, in insertion order.
+一个新的迭代器对象，包含给定 `CustomStateSet` 中每个元素的值，按插入顺序排列。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
