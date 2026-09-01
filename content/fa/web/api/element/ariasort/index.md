@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaSort property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaSort"
-status: "needs-translation"
----
-
----
-title: "Element: ariaSort property"
 short-title: ariaSort
 slug: Web/API/Element/ariaSort
 page-type: web-api-instance-property
@@ -14,24 +8,24 @@ browser-compat: api.Element.ariaSort
 
 {{APIRef("DOM")}}
 
-The **`ariaSort`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-sort`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-sort) attribute, which indicates if items in a table or grid are sorted in ascending or descending order.
+ویژگی **`ariaSort`** در رابط {{domxref("Element")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-sort`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-sort) است که نشان می‌دهد آیا آیتم‌های یک جدول یا شبکه به‌ترتیب صعودی یا نزولی مرتب شده‌اند.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته (string) با یکی از مقادیر زیر:
 
 - `"ascending"`
-  - : Items are sorted in ascending order by this column.
+  - : آیتم‌ها بر اساس این ستون به‌ترتیب صعودی مرتب شده‌اند.
 - `"descending"`
-  - : Items are sorted in descending order by this column.
+  - : آیتم‌ها بر اساس این ستون به‌ترتیب نزولی مرتب شده‌اند.
 - `"none"`
-  - : There is no defined sort applied to the column.
+  - : هیچ ترتیب مرتب‌سازی مشخصی برای این ستون اعمال نشده است.
 - `"other"`
-  - : A sort algorithm other than ascending or descending has been applied.
+  - : الگوریتم مرتب‌سازی دیگری به‌جز صعودی یا نزولی اعمال شده است.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-sort` attribute on the element with an ID of `role-heading` is set to "none". Using `ariaSort` we update the value to "ascending".
+در این مثال، ویژگی `aria-sort` روی عنصری که شناسهٔ آن `role-heading` است، روی «none» تنظیم شده است. با استفاده از `ariaSort` مقدار آن را به «ascending» به‌روزرسانی می‌کنیم.
 
 ```html
 <table
@@ -90,14 +84,14 @@ el.ariaSort = "ascending";
 console.log(el.ariaSort); // ascending
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
+- [نقش table در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
