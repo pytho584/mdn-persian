@@ -1,7 +1,5 @@
 ---
 title: "HTMLInputElement: popoverTargetAction property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/popoverTargetAction"
-status: "needs-translation"
 ---
 
 ---
@@ -14,38 +12,35 @@ browser-compat: api.HTMLInputElement.popoverTargetAction
 
 {{APIRef("Popover API")}}
 
-The **`popoverTargetAction`** property of the {{domxref("HTMLInputElement")}} interface gets and sets the action to be performed (`"hide"`, `"show"`, or `"toggle"`) on a popover element being controlled by an {{htmlelement("input")}} element of `type="button"`.
+ویژگی **`popoverTargetAction`** در رابط {{domxref("HTMLInputElement")}}، عملیاتی که باید روی یک عنصر پاپاور انجام شود (`"hide"`، `"show"` یا `"toggle"`) را دریافت و تنظیم می‌کند؛ پاپاوری که توسط یک عنصر {{htmlelement("input")}} با `type="button"` کنترل می‌شود.
 
-It reflects the value of the [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction) HTML attribute.
+این ویژگی، مقدار صفت HTML [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction) را منعکس می‌کند.
 
-## Value
+## مقدار
 
-An enumerated value. Possible values are:
+یک مقدار شمارشی. مقادیر ممکن عبارت‌اند از:
 
 - `"hide"`
-  - : The button will hide a shown popover. If you try to hide an already hidden popover, no action will be taken.
+  - دکمه یک پاپاورِ نمایش‌داده‌شده را پنهان می‌کند. اگر تلاش کنید پاپاوری را که از قبل پنهان است پنهان کنید، هیچ اقدامی انجام نمی‌شود.
 - `"show"`
-  - : The button will show a hidden popover. If you try to show an already showing popover, no action will be taken.
+  - دکمه یک پاپاورِ پنهان را نمایش می‌دهد. اگر تلاش کنید پاپاوری را که از قبل در حال نمایش است نمایش دهید، هیچ اقدامی انجام نمی‌شود.
 - `"toggle"`
-  - : The button will toggle a popover between showing and hidden. If the popover is hidden, it will be shown; if the popover is showing, it will be hidden. If `popoverTargetAction` is not set, `"toggle"` is the default action that will be performed by the control button.
+  - دکمه وضعیت نمایش یک پاپاور را بین نمایش و پنهان‌بودن تغییر می‌دهد. اگر پاپاور پنهان باشد، نمایش داده می‌شود؛ اگر در حال نمایش باشد، پنهان می‌شود. اگر `popoverTargetAction` تنظیم نشده باشد، `"toggle"` اقدام پیش‌فرضی است که توسط دکمه کنترل‌کننده انجام می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Toggle popover action with an auto popover
+### تغییر وضعیت پاپاور با یک پاپاور auto
 
-This example shows the basic use of the popover API with a "toggle" value set for the `popoverTargetAction` property.
-The `popover` attribute is set to [`"auto"`](/en-US/docs/Web/API/Popover_API/Using#auto_state_and_light_dismiss), so the popover can be closed ("light-dismissed") by clicking outside the popover area.
+این مثال کاربرد پایه API پاپاور را با مقدار «toggle» برای ویژگی `popoverTargetAction` نشان می‌دهد. صفت `popover` روی [`"auto"`](/en-US/docs/Web/API/Popover_API/Using#auto_state_and_light_dismiss) تنظیم شده است، بنابراین پاپاور را می‌توان با کلیک کردن در بیرون از ناحیه پاپاور بست («light dismiss»).
 
-First we define an [`<input>`](/en-US/docs/Web/HTML/Reference/Elements/input/button) of `type="button"` that we will use to show and hide the popover, and a `<div>` that will be the popover.
-In this case we don't set the [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction) HTML attribute on the button or the [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) attribute on the `<div>`, as we will be doing so programmatically.
+ابتدا یک [`<input>`](/en-US/docs/Web/HTML/Reference/Elements/input/button) با `type="button"` تعریف می‌کنیم که از آن برای نمایش و پنهان کردن پاپاور استفاده خواهیم کرد، و یک `<div>` که پاپاور خواهد بود. در این حالت، صفت HTML [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction) را روی دکمه و صفت [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) را روی `<div>` تنظیم نمی‌کنیم، چون این کار را به‌صورت برنامه‌نویسی انجام خواهیم داد.
 
 ```html
 <input id="toggleBtn" type="button" value="Toggle popover" />
 <div id="mypopover">This is popover content!</div>
 ```
 
-The JavaScript code first gets a handle to the `<div>` and `<input>` elements.
-It then defines a function to check for popover support.
+کد جاوااسکریپت ابتدا ارجاعی به عناصر `<div>` و `<input>` می‌گیرد. سپس تابعی برای بررسی پشتیبانی از پاپاور تعریف می‌کند.
 
 ```js
 const popover = document.getElementById("mypopover");
@@ -57,9 +52,7 @@ function supportsPopover() {
 }
 ```
 
-If the popover API is supported the code sets the `<div>` element's `popover` attribute to `"auto"` and makes it the popover target of the toggle button.
-We then set the `popoverTargetAction` of the button to `"toggle"`.
-If the popover API is not supported we change the text content of the `<div>` element to state this, and hide the toggle button.
+اگر API پاپاور پشتیبانی شود، کد صفت `popover` عنصر `<div>` را روی `"auto"` تنظیم می‌کند و آن را به هدف پاپاور دکمه تغییر وضعیت تبدیل می‌کند. سپس `popoverTargetAction` دکمه را روی `"toggle"` تنظیم می‌کنیم. اگر API پاپاور پشتیبانی نشود، محتوای متنی عنصر `<div>` را برای بیان این موضوع تغییر می‌دهیم و دکمه تغییر وضعیت را پنهان می‌کنیم.
 
 ```js
 if (supportsPopover()) {
@@ -77,20 +70,17 @@ if (supportsPopover()) {
 ```
 
 > [!NOTE]
-> A popover element is hidden by default, but if the API is not supported your element will display "as usual".
+> یک عنصر پاپاور به‌صورت پیش‌فرض پنهان است، اما اگر API پشتیبانی نشود، عنصر شما به شکل معمول نمایش داده می‌شود.
 
-You can try out the example below.
-Show and hide the popover by toggling the button.
-The "auto" popover can also be dismissed by selecting outside the bounds of the popover text.
+می‌توانید مثال زیر را امتحان کنید. با تغییر وضعیت دکمه، پاپاور را نمایش دهید و پنهان کنید. پاپاور «auto» را می‌توان با کلیک کردن در بیرون از محدوده متن پاپاور نیز بست.
 
 {{EmbedLiveSample("Toggle popover action with an auto popover", "100%")}}
 
-### Show/hide popover action with a manual popover
+### اقدام نمایش/پنهان‌کردن پاپاور با یک پاپاور manual
 
-This example shows how to use the `"show"` and `"hide"` values of the `popoverTargetAction` attribute.
+این مثال نحوه استفاده از مقادیر `"show"` و `"hide"` ویژگی `popoverTargetAction` را نشان می‌دهد.
 
-The code is near identical to the previous example, except that there are two `<button>` elements, and the popover is set to [`"manual"`](/en-US/docs/Web/API/Popover_API/Using#using_manual_popover_state).
-A `manual` popover must be closed explicitly, and not "light dismissed" by selecting outside the popover area.
+کد تقریباً مشابه مثال قبلی است، با این تفاوت که دو عنصر `<button>` وجود دارد و پاپاور روی [`"manual"`](/en-US/docs/Web/API/Popover_API/Using#using_manual_popover_state) تنظیم شده است. یک پاپاور `manual` باید به‌صورت صریح بسته شود و با کلیک کردن در بیرون از ناحیه پاپاور بسته نمی‌شود («light dismiss» نمی‌شود).
 
 ```html
 <input id="showBtn" type="button" value="Show popover" />
@@ -127,19 +117,19 @@ if (supportsPopover()) {
 }
 ```
 
-The popover can be displayed by selecting the "Show popover" button, and dismissed using the "Hide popover" button.
+پاپاور را می‌توان با کلیک روی دکمه «Show popover» نمایش داد و با استفاده از دکمه «Hide popover» بست.
 
 {{EmbedLiveSample("Show/hide popover action with a manual popover", "100%")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) HTML global attribute
+- صفت سراسری HTML [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover)
 - [Popover API](/en-US/docs/Web/API/Popover_API)
