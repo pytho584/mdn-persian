@@ -1,7 +1,5 @@
 ---
 title: "DOMHighResTimeStamp"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp"
-status: "needs-translation"
 ---
 
 ---
@@ -13,39 +11,36 @@ spec-urls: https://w3c.github.io/hr-time/#dom-domhighrestimestamp
 
 {{APIRef("Performance API")}}
 
-The **`DOMHighResTimeStamp`** type is a `double` and is used to store a time value in milliseconds.
+**`DOMHighResTimeStamp`** یک نوع `double` است و برای ذخیره‌سازی یک مقدار زمانی بر حسب میلی‌ثانیه استفاده می‌شود.
 
-This type can be used to describe a discrete point in time or a time interval (the difference in time between two discrete points in time). The starting time can be either a specific time determined by the script for a site or app, or the [time origin](/en-US/docs/Web/API/Performance/timeOrigin).
+این نوع می‌تواند برای توصیف یک نقطه زمانی مشخص یا یک بازه زمانی (تفاوت زمانی بین دو نقطه مشخص) به کار رود. زمان شروع می‌تواند یا یک زمان خاص باشد که توسط اسکریپت برای یک سایت یا برنامه تعیین شده است، یا [مبدأ زمان](/en-US/docs/Web/API/Performance/timeOrigin).
 
-The time, given in milliseconds, should be accurate to 5 µs (microseconds), with the fractional part of the number indicating fractions of a millisecond. However, if the browser is unable to provide a time value accurate to 5 µs (due, for example, to hardware or software constraints), the browser can represent the value as a time in milliseconds accurate to a millisecond. Also note the section below on reduced time precision controlled by browser preferences to avoid timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting).
+زمان بر حسب میلی‌ثانیه باید با دقت ۵ میکروثانیه (µs) باشد و بخش کسری عدد، کسری از میلی‌ثانیه را نشان دهد. با این حال، اگر مرورگر نتواند مقداری با دقت ۵ میکروثانیه ارائه دهد (مثلاً به دلیل محدودیت‌های سخت‌افزاری یا نرم‌افزاری)، می‌تواند مقدار را به‌صورت میلی‌ثانیه با دقت یک میلی‌ثانیه نمایش دهد. همچنین به بخش پایین‌تر درباره کاهش دقت زمان که توسط تنظیمات مرورگر کنترل می‌شود توجه کنید تا از حملات زمان‌بندی و [اثر انگشت دیجیتال](/en-US/docs/Glossary/Fingerprinting) جلوگیری شود.
 
-Further, if the device or operating system the user agent is running on doesn't have a clock accurate to the microsecond level, they may only be accurate to the millisecond.
+علاوه بر این، اگر دستگاه یا سیستم عاملی که عامل کاربر روی آن اجرا می‌شود ساعتی با دقت میکروثانیه نداشته باشد، ممکن است دقت فقط در حد میلی‌ثانیه باشد.
 
-## Security requirements
+## الزامات امنیتی
 
-To offer protection against timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting), `DOMHighResTimeStamp` types are coarsened based on site isolation status.
+برای محافظت در برابر حملات زمان‌بندی و [اثر انگشت دیجیتال](/en-US/docs/Glossary/Fingerprinting)، انواع `DOMHighResTimeStamp` بر اساس وضعیت ایزوله‌سازی سایت، درشت‌دانه‌تر می‌شوند.
 
-- Resolution in isolated contexts: 5 microseconds
-- Resolution in non-isolated contexts: 100 microseconds
+- دقت در زمینه‌های ایزوله: ۵ میکروثانیه
+- دقت در زمینه‌های غیرایزوله: ۱۰۰ میکروثانیه
 
-Cross-origin isolate your site using the {{HTTPHeader("Cross-Origin-Opener-Policy")}} and
-{{HTTPHeader("Cross-Origin-Embedder-Policy")}} headers:
+سایت خود را با استفاده از هدرهای {{HTTPHeader("Cross-Origin-Opener-Policy")}} و
+{{HTTPHeader("Cross-Origin-Embedder-Policy")}} به‌صورت cross-origin ایزوله کنید:
 
 ```http
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: require-corp
 ```
 
-These headers ensure a top-level document does not share a browsing context group with
-cross-origin documents. COOP process-isolates your document and potential attackers
-can't access to your global object if they were opening it in a popup, preventing a set
-of cross-origin attacks dubbed [XS-Leaks](https://github.com/xsleaks/xsleaks).
+این هدرها تضمین می‌کنند که یک سند سطح بالا گروه زمینه مرورگری را با اسناد cross-origin به اشتراک نمی‌گذارد. COOP سند شما را از نظر فرآیندی ایزوله می‌کند و مهاجمان احتمالی اگر سند شما را در یک پنجره بازشو باز کنند، به شیء سراسری شما دسترسی نخواهند داشت و از مجموعه‌ای از حملات cross-origin به نام [XS-Leaks](https://github.com/xsleaks/xsleaks) جلوگیری می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [`performance.now()`](/en-US/docs/Web/API/Performance/now)
 - [`performance.timeOrigin`](/en-US/docs/Web/API/Performance/timeOrigin)
