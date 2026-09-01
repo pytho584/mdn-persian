@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaKeyShortcuts property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaKeyShortcuts"
-status: "needs-translation"
----
-
----
-title: "Element: ariaKeyShortcuts property"
 short-title: ariaKeyShortcuts
 slug: Web/API/Element/ariaKeyShortcuts
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Element.ariaKeyShortcuts
 
 {{APIRef("DOM")}}
 
-The **`ariaKeyShortcuts`** property of the {{domxref("Element")}} interface reflects the value of the `aria-keyshortcuts` attribute, which indicates keyboard shortcuts that an author has implemented to activate or give focus to an element.
+ویژگی **`ariaKeyShortcuts`** از رابط {{domxref("Element")}} منعکس‌کنندهٔ مقدار ویژگی `aria-keyshortcuts` است. این ویژگی میانبرهای صفحه‌کلیدی را نشان می‌دهد که نویسنده برای فعال‌سازی یا دادن فوکوس به یک عنصر پیاده‌سازی کرده است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-keyshortcuts` attribute on the element with an ID of `skip-link` is set to "Alt+Shift+A". Using `ariaKeyShortcuts` we update the value to "Alt+Shift+M".
+در این مثال، ویژگی `aria-keyshortcuts` روی عنصری با شناسهٔ `skip-link` به "Alt+Shift+A" تنظیم شده است. با استفاده از `ariaKeyShortcuts` مقدار را به "Alt+Shift+M" به‌روز می‌کنیم.
 
 ```html
 <a id="skip-link" href="#content" aria-keyshortcuts="Alt+Shift+A">
@@ -37,10 +31,10 @@ el.ariaKeyShortcuts = "Alt+Shift+M";
 console.log(el.ariaKeyShortcuts); // "Alt+Shift+M"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
