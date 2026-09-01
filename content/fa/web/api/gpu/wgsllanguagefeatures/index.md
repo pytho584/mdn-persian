@@ -1,11 +1,5 @@
 ---
 title: "GPU: wgslLanguageFeatures property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPU/wgslLanguageFeatures"
-status: "needs-translation"
----
-
----
-title: "GPU: wgslLanguageFeatures property"
 short-title: wgslLanguageFeatures
 slug: Web/API/GPU/wgslLanguageFeatures
 page-type: web-api-instance-property
@@ -14,17 +8,16 @@ browser-compat: api.GPU.wgslLanguageFeatures
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`wgslLanguageFeatures`** read-only property of the
-{{domxref("GPU")}} interface returns a {{domxref("WGSLLanguageFeatures")}} object that reports the [WGSL language extensions](https://gpuweb.github.io/gpuweb/wgsl/#language-extension) supported by the WebGPU implementation.
+ویژگی فقط‑خواندنی **`wgslLanguageFeatures`** از رابط {{domxref("GPU")}} یک شیء {{domxref("WGSLLanguageFeatures")}} برمی‌گرداند که [افزونه‌های زبان WGSL](https://gpuweb.github.io/gpuweb/wgsl/#language-extension) پشتیبانی‌شده توسط پیاده‌سازی WebGPU را گزارش می‌دهد.
 
 > [!NOTE]
-> Not all WGSL language extensions are available to WebGPU in all browsers that support the API. We recommend you thoroughly test any extensions you choose to use.
+> همه افزونه‌های زبان WGSL در همه مرورگرهایی که از این API پشتیبانی می‌کنند در دسترس نیستند. توصیه می‌کنیم هر افزونه‌ای که تصمیم به استفاده از آن دارید را به دقت آزمایش کنید.
 
-## Value
+## مقدار
 
-A {{domxref("WGSLLanguageFeatures")}} object instance. This is a [setlike](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) object.
+یک نمونه از شیء {{domxref("WGSLLanguageFeatures")}}. این یک شیء [شبه‌مجموعه](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) است.
 
-## Examples
+## مثال‌ها
 
 ```js
 if (!navigator.gpu) {
@@ -45,14 +38,14 @@ for (const value of valueIterator) {
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
