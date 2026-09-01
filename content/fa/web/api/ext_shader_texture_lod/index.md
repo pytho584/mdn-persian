@@ -1,11 +1,5 @@
 ---
 title: "EXT_shader_texture_lod extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_shader_texture_lod"
-status: "needs-translation"
----
-
----
-title: EXT_shader_texture_lod extension
 short-title: EXT_shader_texture_lod
 slug: Web/API/EXT_shader_texture_lod
 page-type: webgl-extension
@@ -14,16 +8,16 @@ browser-compat: api.EXT_shader_texture_lod
 
 {{APIRef("WebGL")}}
 
-The **`EXT_shader_texture_lod`** extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and adds additional texture functions to the OpenGL ES Shading Language which provide the shader writer with explicit control of LOD ([Level of detail](https://en.wikipedia.org/wiki/Level_of_detail)).
+افزونهٔ **`EXT_shader_texture_lod`** بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و توابع بافت اضافی‌ای را به زبان سایه‌زن OpenGL ES می‌افزاید که به نویسندهٔ سایه‌زن کنترل صریح بر LOD ([جزئیات سطح](https://en.wikipedia.org/wiki/Level_of_detail)) می‌دهد.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL از طریق متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، همچنین به [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) مراجعه کنید.
 
 > [!NOTE]
-> This extension is only available to {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} contexts. In {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}, the functionality of this extension is available on the WebGL2 context by default. It requires GLSL `#version 300 es`.
+> این افزونه فقط برای زمینه‌های (context) {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} در دسترس است. در {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}، عملکرد این افزونه به‌طور پیش‌فرض در زمینهٔ WebGL2 موجود است. این افزونه به GLSL `#version 300 es` نیاز دارد.
 
-## GLSL built-in functions
+## توابع داخلی GLSL
 
-The following new functions can be used in GLSL shader code, if this extension is enabled:
+اگر این افزونه فعال باشد، توابع جدید زیر را می‌توان در کد سایه‌زن GLSL استفاده کرد:
 
 ```c
 vec4 texture2DLodEXT(sampler2D sampler, vec2 coord, float lod)
@@ -36,15 +30,15 @@ vec4 texture2DProjGradEXT(sampler2D sampler, vec4 P, vec2 dPdx, vec2 dPdy)
 vec4 textureCubeGradEXT(samplerCube sampler, vec3 P, vec3 dPdx, vec3 dPdy)
 ```
 
-## Examples
+## مثال‌ها
 
-Enabling the extensions:
+فعال‌سازی افزونه:
 
 ```js
 gl.getExtension("EXT_shader_texture_lod");
 ```
 
-Shader code that avoids artifacts when wrapping texture coordinates:
+کد سایه‌زنی که هنگام پیچیدن مختصات بافت از ایجاد مصنوعات (artifacts) جلوگیری می‌کند:
 
 ```html
 <script type="x-shader/x-fragment">
@@ -61,15 +55,15 @@ Shader code that avoids artifacts when wrapping texture coordinates:
 </script>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("OES_standard_derivatives")}}
