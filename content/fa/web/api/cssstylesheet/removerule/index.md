@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleSheet: removeRule() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/removeRule"
-status: "needs-translation"
----
-
----
-title: "CSSStyleSheet: removeRule() method"
 short-title: removeRule()
 slug: Web/API/CSSStyleSheet/removeRule
 page-type: web-api-instance-method
@@ -16,56 +10,50 @@ browser-compat: api.CSSStyleSheet.removeRule
 
 {{APIRef("CSSOM")}}{{deprecated_header}}
 
-The obsolete {{domxref("CSSStyleSheet")}} method
-**`removeRule()`** removes a rule from the stylesheet
-object. It is functionally identical to the standard, preferred method
-{{domxref("CSSStyleSheet.deleteRule", "deleteRule()")}}.
+متد منسوخ‌شدهٔ {{domxref("CSSStyleSheet")}} با نام **`removeRule()`** یک قانون (rule) را از شیءِ استایل‌شیت حذف می‌کند. این متد از نظر عملکردی با متد استاندارد و ارجح {{domxref("CSSStyleSheet.deleteRule", "deleteRule()")}} یکسان است.
 
 > [!NOTE]
-> This is a _legacy method_ which has been replaced by
-> the standard method {{domxref("CSSStyleSheet.deleteRule", "deleteRule()")}}. You
-> should use that instead.
+> این یک _متد قدیمی_ است که با متد استاندارد {{domxref("CSSStyleSheet.deleteRule", "deleteRule()")}} جایگزین شده است. بهتر است به‌جای آن از همین متد استفاده کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 removeRule(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : The index into the stylesheet's {{domxref("CSSRuleList")}} indicating the rule to be
-    removed.
+  - شاخصی در {{domxref("CSSRuleList")}} استایل‌شیت که مشخص می‌کند کدام قانون حذف شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-This example removes the first rule from the stylesheet `myStyles`.
+این مثال اولین قانون را از استایل‌شیت `myStyles` حذف می‌کند.
 
 ```js
 myStyles.removeRule(0);
 ```
 
-You can rewrite this to use the standard `deleteRule()` method very easily:
+می‌توانید به‌سادگی این کد را برای استفاده از متد استاندارد `deleteRule()` بازنویسی کنید:
 
 ```js
 myStyles.deleteRule(0);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model)
-- [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
+- [استفاده از اطلاعات استایل‌دهی پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
 - {{domxref("CSSStyleSheet.insertRule", "insertRule()")}}
