@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: hostname property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/hostname"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: hostname property"
 short-title: hostname
 slug: Web/API/HTMLAnchorElement/hostname
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLAnchorElement.hostname
 
 {{ApiRef("HTML DOM")}}
 
-The **`hostname`** property of the {{domxref("HTMLAnchorElement")}} interface is a string containing either the {{glossary("domain name")}} or {{glossary("IP address")}} of the `<a>` element's `href`. If the URL does not have a hostname, this property contains an empty string, `""`. IPv4 and IPv6 addresses are normalized, such as stripping leading zeros, and domain names are converted to [IDN](https://en.wikipedia.org/wiki/Internationalized_domain_name).
+ویژگی **`hostname`** در رابط {{domxref("HTMLAnchorElement")}} یک رشته است که شامل {{glossary("domain name")}} یا {{glossary("IP address")}} موجود در `href` عنصر `<a>` می‌باشد. اگر URL نام میزبان نداشته باشد، این ویژگی شامل یک رشته خالی، `""`، است. آدرس‌های IPv4 و IPv6 نرمال‌سازی می‌شوند، مانند حذف صفرهای ابتدایی، و نام‌های دامنه به [IDN](https://en.wikipedia.org/wiki/Internationalized_domain_name) تبدیل می‌شوند.
 
-See {{domxref("URL.hostname")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.hostname")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 // An <a id="myAnchor" href="/en-US/docs/HTMLAnchorElement"> element is in the document
@@ -30,14 +24,14 @@ const anchor = document.getElementById("myAnchor");
 anchor.hostname; // returns 'developer.mozilla.org'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAnchorElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAnchorElement")}} که این ویژگی به آن تعلق دارد.
