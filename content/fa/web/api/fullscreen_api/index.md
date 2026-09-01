@@ -1,11 +1,5 @@
 ---
 title: "Fullscreen API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API"
-status: "needs-translation"
----
-
----
-title: Fullscreen API
 slug: Web/API/Fullscreen_API
 page-type: web-api-overview
 browser-compat:
@@ -17,77 +11,77 @@ browser-compat:
 
 {{DefaultAPISidebar("Fullscreen API")}}
 
-The **Fullscreen API** adds methods to present a specific {{DOMxRef("Element")}} (and its descendants) in fullscreen mode, and to exit fullscreen mode once it is no longer needed. This makes it possible to present desired content—such as an online game—using the user's entire screen, removing all browser user interface elements and other applications from the screen until fullscreen mode is shut off.
+**Fullscreen API** روشهایی را ارائه میکند تا بتوان یک {{DOMxRef("Element")}} خاص (و زیرمجموعههای آن) را در حالت تمامصفحه (fullscreen) نمایش داد و پس از اتمام کار، از حالت تمامصفحه خارج شد. این امکان، ارائهی محتوای موردنظر—مانند یک بازی آنلاین—را با استفاده از کل صفحهی کاربر ممکن میسازد و تمام عناصر واسط کاربری مرورگر و سایر برنامهها را تا زمانی که حالت تمامصفحه خاموش نشده است، از صفحه حذف میکند.
 
-See the article [Guide to the Fullscreen API](/en-US/docs/Web/API/Fullscreen_API/Guide) for details on how to use the API.
+برای جزئیات نحوهی استفاده از این API، مقالهی [راهنمای Fullscreen API](/en-US/docs/Web/API/Fullscreen_API/Guide) را ببینید.
 
-## Interfaces
+## رابطها (Interfaces)
 
-_The Fullscreen API has no interfaces of its own. Instead, it augments several other interfaces to add the methods, properties, and event handlers needed to provide fullscreen functionality. These are listed in the following sections._
+_Fullscreen API هیچ رابط اختصاصی خود را ندارد. در عوض، چند رابط دیگر را برای افزودن روشها، ویژگیها و مدیریتکنندههای رویداد لازم برای ارائهی قابلیت تمامصفحه، توسعه میدهد. این موارد در بخشهای زیر فهرست شدهاند._
 
-## Instance methods
+## روشهای نمونه (Instance methods)
 
-The Fullscreen API adds methods to the {{DOMxRef("Document")}} and {{DOMxRef("Element")}} interfaces to allow turning off and on fullscreen mode.
+Fullscreen API روشهایی را به رابطهای {{DOMxRef("Document")}} و {{DOMxRef("Element")}} اضافه میکند تا امکان خاموش و روشن کردن حالت تمامصفحه فراهم شود.
 
-### Instance methods on the Document interface
+### روشهای نمونه در رابط Document
 
 - {{DOMxRef("Document.exitFullscreen()")}}
-  - : Requests that the {{Glossary("user agent")}} switch from fullscreen mode back to windowed mode. Returns a {{jsxref("Promise")}} which is resolved once fullscreen mode has been completely shut off.
+  - : درخواست میدهد که {{Glossary("user agent")}} از حالت تمامصفحه به حالت پنجره بازگردد. یک {{jsxref("Promise")}} برمیگرداند که پس از خاموش شدن کامل حالت تمامصفحه، حل میشود.
 
-### Instance methods on the Element interface
+### روشهای نمونه در رابط Element
 
 - {{DOMxRef("Element.requestFullscreen()")}}
-  - : Asks the user agent to place the specified element (and, by extension, its descendants) into fullscreen mode, removing all of the browser's UI elements as well as all other applications from the screen. Returns a {{jsxref("Promise")}} which is resolved once fullscreen mode has been activated.
+  - : از عامل کاربر میخواهد که عنصر مشخصشده (و به تبع آن، زیرمجموعههای آن) را در حالت تمامصفحه قرار دهد و تمام عناصر UI مرورگر و همچنین همهی برنامههای دیگر را از صفحه حذف کند. یک {{jsxref("Promise")}} برمیگرداند که پس از فعال شدن حالت تمامصفحه، حل میشود.
 
-## Instance properties
+## ویژگیهای نمونه (Instance properties)
 
 - {{DOMxRef("Document.fullscreenElement")}} / {{DOMxRef("ShadowRoot.fullscreenElement")}}
-  - : The `fullscreenElement` property tells you the {{DOMxRef("Element")}} that's currently being displayed in fullscreen mode on the DOM (or shadow DOM). If this is `null`, the document (or shadow DOM) is not in fullscreen mode.
+  - : ویژگی `fullscreenElement` به شما میگوید که کدام {{DOMxRef("Element")}} در حال حاضر در حالت تمامصفحه در DOM (یا shadow DOM) نمایش داده میشود. اگر این مقدار `null` باشد، سند (یا shadow DOM) در حالت تمامصفحه نیست.
 - {{DOMxRef("Document.fullscreenEnabled")}}
-  - : The `fullscreenEnabled` property tells you whether or not it is possible to engage fullscreen mode. This is `false` if fullscreen mode is not available for any reason (such as the `"fullscreen"` feature not being allowed, or fullscreen mode not being supported).
+  - : ویژگی `fullscreenEnabled` به شما میگوید که آیا امکان فعال کردن حالت تمامصفحه وجود دارد یا خیر. اگر حالت تمامصفحه به هر دلیلی در دسترس نباشد (مانند مجاز نبودن ویژگی `"fullscreen"` یا پشتیبانی نشدن حالت تمامصفحه)، این مقدار `false` است.
 
-### Obsolete properties
+### ویژگیهای منسوخ
 
 - {{DOMxRef("Document.fullscreen")}} {{Deprecated_Inline}}
-  - : A Boolean value which is `true` if the document has an element currently being displayed in fullscreen mode; otherwise, this returns `false`.
+  - : یک مقدار بولی که اگر سند دارای عنصری باشد که در حال حاضر در حالت تمامصفحه نمایش داده میشود، `true` است؛ در غیر این صورت، `false` برمیگرداند.
 
-    > [!NOTE]
-    > Use the {{DOMxRef("Document.fullscreenElement", "fullscreenElement")}} property on the {{DOMxRef("Document")}} or {{DOMxRef("ShadowRoot")}} instead; if it's not `null`, then it's an {{DOMxRef("Element")}} currently being displayed in fullscreen mode.
+  > [!NOTE]
+  > به جای آن از ویژگی {{DOMxRef("Document.fullscreenElement", "fullscreenElement")}} در {{DOMxRef("Document")}} یا {{DOMxRef("ShadowRoot")}} استفاده کنید؛ اگر `null` نباشد، یک {{DOMxRef("Element")}} است که در حال حاضر در حالت تمامصفحه نمایش داده میشود.
 
-## Events
+## رویدادها (Events)
 
 - {{domxref("Element/fullscreenchange_event", "fullscreenchange")}}
-  - : Sent to an {{DOMxRef("Element")}} when it transitions into or out of fullscreen mode.
+  - : به یک {{DOMxRef("Element")}} هنگام ورود یا خروج از حالت تمامصفحه ارسال میشود.
 - {{domxref("Element/fullscreenerror_event", "fullscreenerror")}}
-  - : Sent to an `Element` if an error occurs while attempting to switch it into or out of fullscreen mode.
+  - : اگر هنگام تلاش برای تغییر حالت یک `Element` به تمامصفحه یا خروج از آن خطایی رخ دهد، به آن ارسال میشود.
 
-## Controlling access
+## کنترل دسترسی
 
-The availability of fullscreen mode can be controlled using a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy). The fullscreen mode feature is identified by the string `"fullscreen"`, with a default allowlist value of `"self"`, meaning that fullscreen mode is permitted in top-level document contexts, as well as to nested browsing contexts loaded from the same origin as the top-most document.
+دسترسی به حالت تمامصفحه را میتوان با استفاده از [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) کنترل کرد. ویژگی حالت تمامصفحه با رشتهی `"fullscreen"` شناسایی میشود و مقدار پیشفرض مجاز (allowlist) آن `"self"` است. این بدان معناست که حالت تمامصفحه در زمینههای سند سطح بالا و همچنین در زمینههای مرور تودرتو (nested browsing contexts) که از همان مبدأ سند بالایی بارگذاری شدهاند، مجاز است.
 
-## Usage notes
+## نکات استفاده
 
-Users can choose to exit fullscreen mode by pressing the <kbd>ESC</kbd> (or <kbd>F11</kbd>) key, rather than waiting for the site or app to programmatically do so. Make sure you provide, somewhere in your user interface, appropriate user interface elements that inform the user that this option is available to them.
+کاربران میتوانند با فشردن کلید <kbd>ESC</kbd> (یا <kbd>F11</kbd>) از حالت تمامصفحه خارج شوند، بدون اینکه منتظر خروج برنامهریزیشدهی سایت یا برنامه باشند. مطمئن شوید که در جای مناسب از رابط کاربری خود، عناصر مناسبی قرار دادهاید که به کاربر اطلاع میدهد این گزینه در دسترس اوست.
 
 > [!NOTE]
-> Navigating to another page, changing tabs, or switching to another application using any application switcher (or <kbd>Alt</kbd>-<kbd>Tab</kbd>) will likewise exit fullscreen mode.
+> پیمایش به صفحهی دیگر، تغییر تب، یا جابهجایی به برنامهی دیگر با استفاده از هر سوئیچکنندهی برنامه (یا <kbd>Alt</kbd>-<kbd>Tab</kbd>) نیز به ترک حالت تمامصفحه منجر میشود.
 
-## Examples
+## مثالها
 
-### Simple fullscreen usage
+### استفادهی ساده از تمامصفحه
 
-In this example, a video is presented in a web page. Pressing the <kbd>Enter</kbd> key lets the user toggle between windowed and fullscreen presentation of the video.
+در این مثال، یک ویدیو در یک صفحهی وب نمایش داده میشود. فشردن کلید <kbd>Enter</kbd> به کاربر امکان میدهد بین نمایش پنجرهای و تمامصفحهی ویدیو جابهجا شود.
 
-[View Live Example](https://mdn.github.io/dom-examples/fullscreen-api/index.html)
+[مشاهدهی مثال زنده](https://mdn.github.io/dom-examples/fullscreen-api/index.html)
 
-#### Watching for the Enter key
+#### گوش دادن به کلید Enter
 
-When the page is loaded, this code is run to set up an event listener to watch for the <kbd>Enter</kbd> key.
+هنگام بارگذاری صفحه، این کد اجرا میشود تا یک شنوندهی رویداد برای نظارت بر کلید <kbd>Enter</kbd> تنظیم کند.
 
 ```js
 const video = document.getElementById("video");
 
-// On pressing ENTER call toggleFullScreen method
+// با فشردن Enter، متد toggleFullScreen فراخوانی میشود
 document.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     toggleFullScreen(video);
@@ -95,36 +89,36 @@ document.addEventListener("keydown", (e) => {
 });
 ```
 
-#### Toggling fullscreen mode
+#### تغییر وضعیت تمامصفحه
 
-This code is called by the event handler above when the user hits the <kbd>Enter</kbd> key.
+این کد توسط مدیریتکنندهی رویداد بالا، زمانی که کاربر کلید <kbd>Enter</kbd> را فشار میدهد، فراخوانی میشود.
 
 ```js
 function toggleFullScreen(video) {
   if (!document.fullscreenElement) {
-    // If the document is not in full screen mode
-    // make the video full screen
+    // اگر سند در حالت تمامصفحه نیست
+    // ویدیو را تمامصفحه کن
     video.requestFullscreen();
   } else {
-    // Otherwise exit the full screen
+    // در غیر این صورت، از حالت تمامصفحه خارج شو
     document.exitFullscreen?.();
   }
 }
 ```
 
-This starts by looking at the value of the {{DOMxRef("Document", "document")}}'s `fullscreenElement` attribute. If the value is `null`, the document is currently in windowed mode, so we need to switch to fullscreen mode; otherwise, it's the element that's currently in fullscreen mode. Switching to fullscreen mode is done by calling {{DOMxRef("Element.requestFullscreen()")}} on the {{HTMLElement("video")}} element.
+این کار با بررسی مقدار ویژگی `fullscreenElement` در {{DOMxRef("Document", "document")}} شروع میشود. اگر مقدار `null` باشد، سند در حالت پنجره است، بنابراین باید به حالت تمامصفحه سوئیچ کنیم؛ در غیر این صورت، عنصر جاری در حالت تمامصفحه همان عنصر است. سوئیچ به حالت تمامصفحه با فراخوانی {{DOMxRef("Element.requestFullscreen()")}} روی عنصر {{HTMLElement("video")}} انجام میشود.
 
-If fullscreen mode is already active (`fullscreenElement` is not `null`), we call {{DOMxRef("Document.exitFullscreen", "exitFullscreen()")}} on the `document` to shut off fullscreen mode.
+اگر حالت تمامصفحه از قبل فعال است (`fullscreenElement` برابر `null` نیست)، {{DOMxRef("Document.exitFullscreen", "exitFullscreen()")}} را روی `document` فراخوانی میکنیم تا حالت تمامصفحه خاموش شود.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{DOMxRef("Element.requestFullscreen()")}}
 - {{DOMxRef("Document.exitFullscreen()")}}
