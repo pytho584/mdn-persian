@@ -1,11 +1,5 @@
 ---
 title: "Document: customElementRegistry property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/customElementRegistry"
-status: "needs-translation"
----
-
----
-title: "Document: customElementRegistry property"
 short-title: customElementRegistry
 slug: Web/API/Document/customElementRegistry
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.Document.customElementRegistry
 
 {{APIRef("Web Components")}}
 
-The **`customElementRegistry`** read-only property of the {{domxref("Document")}} interface returns the {{domxref("CustomElementRegistry")}} object associated with this document, or `null` if one has not been set.
+ویژگی فقط‌خواندنی **`customElementRegistry`** در رابط {{domxref("Document")}}، شیء {{domxref("CustomElementRegistry")}} مرتبط با این سند را بازمی‌گرداند؛ یا اگر تنظیم نشده باشد، `null` را بازمی‌گرداند.
 
-For documents associated with a {{domxref("Window")}} (such as the main document of a page), this is the global `CustomElementRegistry` that is also accessible through the {{domxref("window.customElements")}} property. Documents created programmatically (for example, via {{domxref("DOMImplementation.createHTMLDocument()")}}) have a `null` custom element registry by default.
+برای اسنادی که با یک {{domxref("Window")}} مرتبط هستند (مانند سند اصلی یک صفحه)، این همان `CustomElementRegistry` سراسری است که از طریق ویژگی {{domxref("window.customElements")}} نیز قابل دسترسی است. اسنادی که به‌صورت برنامه‌نویسی ایجاد می‌شوند (مثلاً از طریق {{domxref("DOMImplementation.createHTMLDocument()")}})، به‌طور پیش‌فرض رجیستری عناصر سفارشی `null` دارند.
 
-This property is also available on {{domxref("ShadowRoot")}} objects via the same {{domxref("ShadowRoot/customElementRegistry","customElementRegistry")}} property name.
+این ویژگی در اشیاء {{domxref("ShadowRoot")}} نیز با همان نام ویژگی {{domxref("ShadowRoot/customElementRegistry","customElementRegistry")}} در دسترس است.
 
-## Value
+## مقدار
 
-A {{domxref("CustomElementRegistry")}} object, or `null`.
+یک شیء {{domxref("CustomElementRegistry")}}، یا `null`.
 
-## Examples
+## مثال‌ها
 
-### Accessing a document's custom element registry
+### دسترسی به رجیستری عناصر سفارشی یک سند
 
-This example shows that the main document's `customElementRegistry` is the same global registry available through {{domxref("window.customElements")}}, while documents created programmatically via {{domxref("DOMImplementation.createHTMLDocument()")}} have a `null` registry by default.
+این مثال نشان می‌دهد که `customElementRegistry` سند اصلی همان رجیستری سراسری است که از طریق {{domxref("window.customElements")}} در دسترس است، در حالی که اسنادی که به‌صورت برنامه‌نویسی از طریق {{domxref("DOMImplementation.createHTMLDocument()")}} ایجاد می‌شوند، به‌طور پیش‌فرض رجیستری `null` دارند.
 
 ```js
 // The main document's registry is the global one:
@@ -39,15 +33,15 @@ const newDoc = document.implementation.createHTMLDocument("New document");
 console.log(newDoc.customElementRegistry); // null
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ShadowRoot.customElementRegistry")}}
 - {{domxref("Element.customElementRegistry")}}
