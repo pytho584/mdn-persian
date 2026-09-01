@@ -1,11 +1,5 @@
 ---
 title: "Element: getElementsByTagName() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName"
-status: "needs-translation"
----
-
----
-title: "Element: getElementsByTagName() method"
 short-title: getElementsByTagName()
 slug: Web/API/Element/getElementsByTagName
 page-type: web-api-instance-method
@@ -14,45 +8,30 @@ browser-compat: api.Element.getElementsByTagName
 
 {{ APIRef("DOM") }}
 
-The
-**`Element.getElementsByTagName()`** method returns a live
-{{domxref("HTMLCollection")}} of elements with the given [tag name](/en-US/docs/Web/API/Element/tagName).
+متد **`Element.getElementsByTagName()`** یک {{domxref("HTMLCollection")}} زنده از عناصری را بازمی‌گرداند که [نام تگ](/en-US/docs/Web/API/Element/tagName) مشخصی دارند.
 
-All descendants of the
-specified element are searched, but not the element itself. The returned list is
-_live_, which means it updates itself with the DOM tree automatically.
-Therefore, there is no need to call `Element.getElementsByTagName()` with
-the same element and arguments repeatedly if the DOM changes in between calls.
+همهٔ نوادگان عنصر مشخص‌شده جست‌وجو می‌شوند، اما خودِ عنصر جست‌وجو نمی‌شود. فهرست بازگشتی _زنده_ است و به‌طور خودکار با درخت DOM به‌روز می‌شود. بنابراین، اگر DOM در فاصلهٔ بین فراخوانی‌ها تغییر کند، نیازی به فراخوانی دوبارهٔ `Element.getElementsByTagName()` با همان عنصر و همان آرگومان‌ها نیست.
 
-When called on an HTML element in an HTML document, `getElementsByTagName`
-lower-cases the argument before searching for it. This is undesirable when trying to
-match {{Glossary("camel_case", "camel-cased")}} SVG elements (such as
-[`<linearGradient>`](/en-US/docs/Web/SVG/Reference/Element/linearGradient))
-in an HTML document. Instead, use {{ domxref("Element.getElementsByTagNameNS()") }},
-which preserves the capitalization of the tag name.
+وقتی `getElementsByTagName` روی یک عنصر HTML در یک سند HTML فراخوانی می‌شود، پیش از جست‌وجو، آرگومان را به حروف کوچک تبدیل می‌کند. این رفتار هنگام تلاش برای یافتن عناصر SVG با نام {{Glossary("camel_case", "camel-cased")}} (مانند [`<linearGradient>`](/en-US/docs/Web/SVG/Reference/Element/linearGradient)) در یک سند HTML نامطلوب است. در عوض، از {{ domxref("Element.getElementsByTagNameNS()") }} استفاده کنید، زیرا حروف بزرگ و کوچک نام تگ را حفظ می‌کند.
 
-`Element.getElementsByTagName` is similar to
-{{domxref("Document.getElementsByTagName()")}}, except that it only searches for
-elements that are descendants of the specified element.
+`Element.getElementsByTagName` مشابه {{domxref("Document.getElementsByTagName()")}} است، با این تفاوت که فقط عناصری را جست‌وجو می‌کند که از نوادگان عنصر مشخص‌شده هستند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getElementsByTagName(tagName)
 ```
 
-### Parameters
+### پارامترها
 
 - `tagName`
-  - : The qualified name to look for. The special string
-    `"*"` represents all elements. For compatibility with XHTML, lower-case
-    should be used.
+  - : نام واجد شرایط (qualified name) که باید جست‌وجو شود. رشتهٔ ویژهٔ `"*"` نمایانگر همهٔ عناصر است. برای سازگاری با XHTML باید از حروف کوچک استفاده شود.
 
-### Return value
+### مقدار بازگشتی
 
-A _live_ {{domxref("HTMLCollection")}} of elements with a matching tag name, in the order they appear. If no elements are found, the `HTMLCollection` is empty.
+یک {{domxref("HTMLCollection")}} _زنده_ از عناصر با نام تگ منطبق، به ترتیبی که ظاهر می‌شوند. اگر هیچ عنصری یافت نشود، `HTMLCollection` خالی است.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Check the status of each data cell in a table
@@ -67,10 +46,10 @@ for (const cell of cells) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
