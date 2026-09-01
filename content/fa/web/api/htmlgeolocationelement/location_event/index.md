@@ -1,11 +1,5 @@
 ---
 title: "HTMLGeolocationElement: location event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLGeolocationElement/location_event"
-status: "needs-translation"
----
-
----
-title: "HTMLGeolocationElement: location event"
 short-title: location
 slug: Web/API/HTMLGeolocationElement/location_event
 page-type: web-api-event
@@ -16,11 +10,11 @@ browser-compat: api.HTMLGeolocationElement.location_event
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}
 
-The **`location`** event of the {{domxref("HTMLGeolocationElement")}} interface is fired whenever the browser receives location data, or error information when a location data request was unsuccessful.
+رویداد **`location`** از رابط {{domxref("HTMLGeolocationElement")}} هر زمان که مرورگر داده‌های موقعیت مکانی را دریافت کند، یا زمانی که درخواست داده موقعیت مکانی ناموفق باشد و اطلاعات خطا دریافت شود، فعال می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("location", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("location", (event) => { })
 onlocation = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("Event")}}.
+یک {{domxref("Event")}}.
 
-## Examples
+## مثال‌ها
 
-### Using `location` to respond to location data and errors
+### استفاده از `location` برای پاسخ به داده‌های موقعیت و خطاها
 
-In our [Embedded map demo](https://mdn.github.io/dom-examples/geolocation-element/embedded-map/) ([source code](https://github.com/mdn/dom-examples/tree/main/geolocation-element/embedded-map)), we use a `location` event handler to respond to location data and errors being received:
+در [نمایش نقشه جاسازی‌شده](https://mdn.github.io/dom-examples/geolocation-element/embedded-map/) ما ([کد منبع](https://github.com/mdn/dom-examples/tree/main/geolocation-element/embedded-map))، از یک کنترل‌کننده رویداد `location` برای پاسخ به داده‌های موقعیت مکانی و خطاهای دریافتی استفاده کرده‌ایم:
 
 ```js
 geo.addEventListener("location", () => {
@@ -51,18 +45,18 @@ geo.addEventListener("location", () => {
 });
 ```
 
-If location data is returned successfully, we access it via the {{domxref("HTMLGeolocationElement.position")}} property, and retrieve the latitude and longitude values. We log those to the console, then plot them on a map by passing them into the `drawMap()` function along with a reference to the `HTMLGeolocationElement` object. If the data request fails, we access the error via the {{domxref("HTMLGeolocationElement.error")}} property and log the error message to the console.
+اگر داده‌های موقعیت با موفقیت بازگردانده شوند، از طریق ویژگی {{domxref("HTMLGeolocationElement.position")}} به آن‌ها دسترسی پیدا می‌کنیم و مقادیر عرض جغرافیایی (latitude) و طول جغرافیایی (longitude) را بازیابی می‌کنیم. این مقادیر را در کنسول ثبت می‌کنیم و سپس با ارسال آن‌ها به تابع `drawMap()` همراه با یک ارجاع به شیء `HTMLGeolocationElement`، آن‌ها را روی نقشه رسم می‌کنیم. اگر درخواست داده ناموفق باشد، از طریق ویژگی {{domxref("HTMLGeolocationElement.error")}} به خطا دسترسی پیدا کرده و پیام خطا را در کنسول ثبت می‌کنیم.
 
-See the main {{domxref("HTMLGeolocationElement")}} page for a full walkthrough of this example.
+برای توضیح کامل این مثال، به صفحه اصلی {{domxref("HTMLGeolocationElement")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{htmlelement("geolocation")}} element
+- عنصر {{htmlelement("geolocation")}}
