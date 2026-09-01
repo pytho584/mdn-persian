@@ -1,9 +1,4 @@
----
-title: "DeviceMotionEvent: interval property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/interval"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "DeviceMotionEvent: interval property"
 short-title: interval
@@ -14,23 +9,23 @@ browser-compat: api.DeviceMotionEvent.interval
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`interval`** read-only property of the {{domxref("DeviceMotionEvent")}} interface returns the interval, in milliseconds, at which data is obtained from the underlying
-hardware. You can use this to determine the granularity of motion events.
+ویژگی فقط خواندنی **`interval`** از رابط {{domxref("DeviceMotionEvent")}}، فاصله زمانی (بر حسب میلی‌ثانیه) را که داده‌ها از سخت‌افزار زیرین دریافت می‌شوند، بازمی‌گرداند. می‌توانید از این ویژگی برای تعیین دقت (گرانولاریته) رویدادهای حرکتی استفاده کنید.
 
-## Value
+## مقدار
 
-A number representing the interval of time, in milliseconds.
+یک عدد که فاصله زمانی را بر حسب میلی‌ثانیه نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Device orientation events/Detecting device orientation", "Detecting device orientation", "", "nocode")}}
-- {{domxref("Device orientation events/Orientation and motion data explained", "Orientation and motion data explained", "", "nocode")}}
-- {{DOMxRef("Window/devicemotion_event", "devicemotion")}} event
+- {{domxref("Device orientation events/Detecting device orientation", "تشخیص جهت‌گیری دستگاه", "", "nocode")}}
+- {{domxref("Device orientation events/Orientation and motion data explained", "توضیح داده‌های جهت‌گیری و حرکت", "", "nocode")}}
+- {{DOMxRef("Window/devicemotion_event", "devicemotion")}} رویداد
+```
