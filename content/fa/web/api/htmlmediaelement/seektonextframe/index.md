@@ -1,7 +1,5 @@
 ---
 title: "HTMLMediaElement: seekToNextFrame() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/seekToNextFrame"
-status: "needs-translation"
 ---
 
 ---
@@ -17,48 +15,35 @@ browser-compat: api.HTMLMediaElement.seekToNextFrame
 
 {{APIRef("HTML DOM")}}{{Deprecated_Header}}{{non-standard_header}}
 
-The **`HTMLMediaElement.seekToNextFrame()`** method
-asynchronously advances the current play position to the next frame in the media.
+متد **`HTMLMediaElement.seekToNextFrame()`** به‌صورت ناهمزمان، موقعیت پخش فعلی را به فریم بعدی در رسانه پیش می‌برد.
 
 > [!WARNING]
-> This non-standard method is part of an experimentation process around support for
-> non-real-time access to media for tasks including filtering, editing, and so forth.
-> You should _not_ use this method in production code, because its implementation
-> may change—or be removed outright—without notice. You are, however, invited to
-> experiment with it.
+> این متد غیراستاندارد بخشی از فرایند آزمایشی برای پشتیبانی از دسترسی غیربلادرنگ به رسانه برای کارهایی مانند فیلتر کردن، ویرایش و غیره است. شما _نباید_ از این متد در کد تولیدی استفاده کنید، زیرا ممکن است پیاده‌سازی آن بدون اطلاع‌رسانی تغییر کند — یا به‌کلی حذف شود. با این حال، از شما دعوت می‌شود با آن آزمایش کنید.
 
-This method lets you access frames of video media without the media being performed in
-real time. This also lets you access media using frames as a seek unit rather than
-timecodes (albeit only by seeking one frame at a time until you get to the frame you
-want). Possible uses for this method include filtering and editing of video content.
+این متد به شما امکان می‌دهد بدون نیاز به پخش بلادرنگ رسانه، به فریم‌های ویدیو دسترسی داشته باشید. همچنین می‌توانید با استفاده از فریم به‌عنوان واحد پرش (seek) به رسانه دسترسی پیدا کنید، نه با کدهای زمانی (البته فقط با پرش یک‌فریم‌یک‌بار تا رسیدن به فریم موردنظر). از کاربردهای احتمالی این متد می‌توان به فیلتر کردن و ویرایش محتوای ویدیویی اشاره کرد.
 
-This method returns immediately, returning a {{jsxref("Promise")}}, whose fulfillment
-handler is called when the seek operation is complete. In addition, a
-{{domxref("HTMLMediaElement/seeked_event", "seeked")}} event is sent to let interested parties know that a seek has taken
-place. If the seek fails because the media is already at the last frame, a
-{{domxref("HTMLMediaElement/seeked_event", "seeked")}} event occurs, followed immediately by an {{domxref("HTMLMediaElement/ended_event", "ended")}} event.
+این متد بلافاصله بازمی‌گردد و یک {{jsxref("Promise")}} برمی‌گرداند که هنگام تکمیل عملیات پرش، هندلر برآورده‌شدنِ آن فراخوانی می‌شود. علاوه بر این، یک رویداد {{domxref("HTMLMediaElement/seeked_event", "seeked")}} ارسال می‌شود تا به طرف‌های علاقه‌مند اطلاع دهد که پرش انجام شده است. اگر رسانه در آخرین فریم باشد و عملیات پرش با شکست مواجه شود، رویداد {{domxref("HTMLMediaElement/seeked_event", "seeked")}} رخ می‌دهد و بلافاصله پس از آن رویداد {{domxref("HTMLMediaElement/ended_event", "ended")}} رخ می‌دهد.
 
-If there is no video on the media element, or the media isn't seekable, nothing
-happens.
+اگر روی عنصر رسانه ویدیویی وجود نداشته باشد، یا رسانه قابل پرش (seekable) نباشد، هیچ اتفاقی رخ نمی‌دهد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 seekToNextFrame()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ پارامتری ندارد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} which is fulfilled once the seek operation has completed.
+یک {{jsxref("Promise")}} که پس از تکمیل عملیات پرش برآورده می‌شود.
 
-## Specifications
+## مشخصات
 
-Not part of any specification.
+این متد بخشی از هیچ مشخصات استانداردی نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
