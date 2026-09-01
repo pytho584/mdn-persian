@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableRowElement: bgColor property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/bgColor"
-status: "needs-translation"
----
-
----
-title: "HTMLTableRowElement: bgColor property"
 short-title: bgColor
 slug: Web/API/HTMLTableRowElement/bgColor
 page-type: web-api-instance-property
@@ -16,33 +10,33 @@ browser-compat: api.HTMLTableRowElement.bgColor
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The **`HTMLTableRowElement.bgColor`** property is used to set the background color of a row or retrieve the value of the obsolete [`bgColor`](/en-US/docs/Web/HTML/Reference/Elements/tr#bgcolor) attribute, if present.
+خاصیت **`HTMLTableRowElement.bgColor`** برای تنظیم رنگ پس‌زمینهٔ یک ردیف یا دریافت مقدار ویژگی منسوخ [`bgColor`](/en-US/docs/Web/HTML/Reference/Elements/tr#bgcolor) (در صورت وجود) استفاده می‌شود.
 
 > [!NOTE]
-> This property is deprecated and CSS should be used to set the background color. Use the {{cssxref("background-color")}} property instead.
+> این خاصیت منسوخ شده است و برای تنظیم رنگ پس‌زمینه باید از CSS استفاده شود. به جای آن از خاصیت {{cssxref("background-color")}} استفاده کنید.
 
-## Value
+## مقدار
 
-One of the following value types can be used:
+یکی از انواع مقدار زیر قابل استفاده است:
 
-- a named color, like `red` or `blue`
-- a hex code, like `#0000dd`
+- یک رنگ با نام، مانند `red` یا `blue`
+- یک کد هگزادسیمال، مانند `#0000dd`
 
 > [!NOTE]
-> The values accepted here are a subset of the CSS color values. You can reuse HTML color values in CSS, but not in the other direction: the unknown colors would appear differently than expected.
+> مقادیر پذیرفته‌شده در اینجا زیرمجموعه‌ای از مقادیر رنگ CSS هستند. می‌توانید مقادیر رنگ HTML را در CSS استفاده کنید، اما نه برعکس: رنگ‌های ناشناخته به شکلی متفاوت از انتظار نمایش داده می‌شوند.
 
-## Examples
+## مثال‌ها
 
-Use CSS `background-color` instead. An [example](/en-US/docs/Web/CSS/Reference/Properties/background-color#colorized_tables) is available on the {{cssxref("background-color")}} page.
+به جای آن از `background-color` در CSS استفاده کنید. یک [مثال](/en-US/docs/Web/CSS/Reference/Properties/background-color#colorized_tables) در صفحهٔ {{cssxref("background-color")}} موجود است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTableCellElement.bgColor")}}
