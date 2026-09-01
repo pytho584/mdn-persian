@@ -1,10 +1,4 @@
 ---
-title: "DragEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DragEvent"
-status: "needs-translation"
----
-
----
 title: DragEvent
 slug: Web/API/DragEvent
 page-type: web-api-interface
@@ -13,55 +7,55 @@ browser-compat: api.DragEvent
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DragEvent`** interface is a [DOM event](/en-US/docs/Web/API/Event) that represents a drag and drop interaction. The user initiates a drag by placing a pointer device (such as a mouse) on the touch surface and then dragging the pointer to a new location (such as another DOM element). Applications are free to interpret a drag and drop interaction in an application-specific way.
+رابط **`DragEvent`** یک [رویداد DOM](/en-US/docs/Web/API/Event) است که تعامل کشیدن و رها کردن را نشان می‌دهد. کاربر با قرار دادن یک دستگاه اشاره‌گر (مانند ماوس) روی سطح لمسی و سپس کشیدن اشاره‌گر به مکان جدید (مثلاً یک عنصر DOM دیگر)، کشیدن را آغاز می‌کند. برنامه‌ها مختارند که تعامل کشیدن و رها کردن را به شکلی خاصِ برنامه تفسیر کنند.
 
-This interface inherits properties from {{domxref("MouseEvent")}} and {{domxref("Event")}}.
+این رابط ویژگی‌های خود را از {{domxref("MouseEvent")}} و {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('DragEvent.dataTransfer')}} {{ReadOnlyInline}}
-  - : The data that is transferred during a drag and drop interaction.
+  - : داده‌ای که در طول تعامل کشیدن و رها کردن منتقل می‌شود.
 
-## Constructors
+## سازنده‌ها
 
-Although this interface has a constructor, it is not possible to create a useful DataTransfer object from script, since {{domxref("DataTransfer")}} objects have a processing and security model that is coordinated by the browser during drag-and-drops.
+اگرچه این رابط دارای سازنده است، اما نمی‌توان از طریق اسکریپت یک شیء DataTransfer کاربردی ایجاد کرد، زیرا اشیاء {{domxref("DataTransfer")}} دارای مدل پردازش و امنیتی هستند که توسط مرورگر در طول عملیات کشیدن و رها کردن هماهنگ می‌شوند.
 
 - {{domxref("DragEvent.DragEvent", "DragEvent()")}}
-  - : Creates a synthetic and untrusted DragEvent.
+  - : یک DragEvent ساختگی و غیرقابل‌اعتماد ایجاد می‌کند.
 
-## Event types
+## انواع رویداد
 
 - {{domxref("HTMLElement/drag_event", "drag")}}
-  - : This event is fired when an element or text selection is being dragged.
+  - : این رویداد زمانی رخ می‌دهد که یک عنصر یا انتخاب متن در حال کشیده شدن است.
 - {{domxref("HTMLElement/dragend_event", "dragend")}}
-  - : This event is fired when a drag operation is being ended (by releasing a mouse button or hitting the escape key).
+  - : این رویداد زمانی رخ می‌دهد که یک عملیات کشیدن به پایان می‌رسد (با رها کردن دکمه ماوس یا فشردن کلید Escape).
 - {{domxref("HTMLElement/dragenter_event", "dragenter")}}
-  - : This event is fired when a dragged element or text selection enters a valid drop target.
+  - : این رویداد زمانی رخ می‌دهد که یک عنصر یا انتخاب متنِ در حال کشیده شدن وارد یک هدف رها کردن معتبر می‌شود.
 - {{domxref("HTMLElement/dragleave_event", "dragleave")}}
-  - : This event is fired when a dragged element or text selection leaves a valid drop target.
+  - : این رویداد زمانی رخ می‌دهد که یک عنصر یا انتخاب متنِ در حال کشیده شدن از یک هدف رها کردن معتبر خارج می‌شود.
 - {{domxref("HTMLElement/dragover_event", "dragover")}}
-  - : This event is fired continuously when an element or text selection is being dragged and the mouse pointer is over a valid drop target (every 50 ms WHEN mouse is not moving ELSE much faster between 5 ms (slow movement) and 1ms (fast movement) approximately. This firing pattern is different than {{domxref("Element/mouseover_event", "mouseover")}} ).
+  - : این رویداد به‌طور پیوسته زمانی رخ می‌دهد که یک عنصر یا انتخاب متن در حال کشیدن است و نشانگر ماوس روی یک هدف رها کردن معتبر قرار دارد (هر ۵۰ میلی‌ثانیه وقتی ماوس حرکت نمی‌کند، و در غیر این صورت بسیار سریع‌تر و تقریباً بین ۵ میلی‌ثانیه (حرکت آهسته) تا ۱ میلی‌ثانیه (حرکت سریع). این الگوی رخ دادن با {{domxref("Element/mouseover_event", "mouseover")}} متفاوت است.)
 - {{domxref("HTMLElement/dragstart_event", "dragstart")}}
-  - : This event is fired when the user starts dragging an element or text selection.
+  - : این رویداد زمانی رخ می‌دهد که کاربر کشیدن یک عنصر یا انتخاب متن را آغاز می‌کند.
 - {{domxref("HTMLElement/drop_event", "drop")}}
-  - : This event is fired when an element or text selection is dropped on a valid drop target.
+  - : این رویداد زمانی رخ می‌دهد که یک عنصر یا انتخاب متن روی یک هدف رها کردن معتبر رها می‌شود.
 
-## Example
+## مثال
 
-An Example of each property, constructor, event type and global event handlers is included in their respective reference page.
+نمونه‌ای از هر ویژگی، سازنده، نوع رویداد و مدیران رویداد سراسری در صفحه مرجع مربوط به هر یک ارائه شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Drag and drop](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
-- [Drag Operations](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
-- [Working with the drag data store](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
+- [کشیدن و رها کردن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+- [عملیات کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
+- [کار با مخزن دادهٔ کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
