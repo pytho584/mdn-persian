@@ -1,11 +1,5 @@
 ---
 title: "FileReader: abort() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReader/abort"
-status: "needs-translation"
----
-
----
-title: "FileReader: abort() method"
 short-title: abort()
 slug: Web/API/FileReader/abort
 page-type: web-api-instance-method
@@ -14,31 +8,30 @@ browser-compat: api.FileReader.abort
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`abort()`** method of the {{domxref("FileReader")}} interface aborts the read operation. Upon return,
-the {{domxref("FileReader.readyState","readyState")}} will be `DONE`.
+متد **`abort()`** از رابط {{domxref("FileReader")}} عملیات خواندن را لغو می‌کند. پس از بازگشت این متد، {{domxref("FileReader.readyState","readyState")}} برابر با `DONE` خواهد بود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 abort()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ پارامتری.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("FileReader")}}
