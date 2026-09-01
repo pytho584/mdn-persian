@@ -1,11 +1,5 @@
 ---
 title: "HTMLMetaElement: media property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMetaElement/media"
-status: "needs-translation"
----
-
----
-title: "HTMLMetaElement: media property"
 short-title: media
 slug: Web/API/HTMLMetaElement/media
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.HTMLMetaElement.media
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMetaElement.media`** property enables specifying the media for `theme-color` metadata.
+ویژگی **`HTMLMetaElement.media`** امکان تعیین رسانه (media) برای فرادادهٔ `theme-color` را فراهم می‌کند.
 
-The `theme-color` property enables setting the color of the browser's toolbar or UI in browsers and operating systems that support this property.
-The `media` property enables setting different theme colors for different `media` values.
+ویژگی `theme-color` امکان تعیین رنگ نوار ابزار یا رابط کاربری مرورگر را در مرورگرها و سیستم‌عامل‌هایی که از این ویژگی پشتیبانی می‌کنند، می‌دهد.
+ویژگی `media` امکان تعیین رنگ‌های تم متفاوت برای مقادیر مختلف `media` را فراهم می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (String).
 
-## Examples
+## مثال‌ها
 
-### Setting the theme color for dark mode
+### تنظیم رنگ تم برای حالت تیره
 
-The following example creates a new `<meta>` element with a `name` attribute set to [`theme-color`](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification).
-The `content` attribute is set to `#3c790a`, the `media` attribute is set to `prefers-color-scheme: dark`, and the element is appended to the document `<head>`.
-When a user has specified a dark mode in their operating system, the `media` property can be used to set a different `theme-color`:
+مثال زیر یک عنصر جدید `<meta>` با ویژگی `name` تنظیم‌شده روی [`theme-color`](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification) ایجاد می‌کند.
+ویژگی `content` روی `#3c790a`، ویژگی `media` روی `prefers-color-scheme: dark` تنظیم می‌شود و عنصر به `<head>` سند اضافه می‌گردد.
+وقتی کاربر حالت تیره را در سیستم‌عامل خود مشخص کرده باشد، می‌توان از ویژگی `media` برای تعیین یک `theme-color` متفاوت استفاده کرد:
 
 ```js
 const meta = document.createElement("meta");
@@ -39,21 +33,21 @@ meta.media = "(prefers-color-scheme: dark)";
 document.head.appendChild(meta);
 ```
 
-### Setting theme colors by device size
+### تنظیم رنگ‌های تم بر اساس اندازه دستگاه
 
-Most meta properties can be used only once. However, `theme-color` can be used multiple times if unique `media` values are provided.
+بیشتر ویژگی‌های متا فقط یک‌بار قابل استفاده هستند. با این حال، `theme-color` را می‌توان چندین بار استفاده کرد، به شرط آنکه مقادیر `media` منحصربه‌فرد ارائه شوند.
 
-This example adds two meta elements with a `theme-color`; one for all devices and another for small screens.
-The order of matching the `media` query matters, so the more specific query should be added later in the document, as shown below:
+این مثال دو عنصر متا با `theme-color` اضافه می‌کند؛ یکی برای همه دستگاه‌ها و دیگری برای صفحه‌نمایش‌های کوچک.
+ترتیب تطبیق Media Query مهم است، بنابراین کوئری خاص‌تر باید دیرتر در سند اضافه شود، همان‌طور که در زیر نشان داده شده است:
 
 ```js
-// Add a theme-color for all devices
+// افزودن رنگ تم برای همه دستگاه‌ها
 const meta1 = document.createElement("meta");
 meta1.name = "theme-color";
 meta1.content = "white";
 document.head.appendChild(meta1);
 
-// Add a theme-color for small devices
+// افزودن رنگ تم برای دستگاه‌های کوچک
 const meta2 = document.createElement("meta");
 meta2.name = "theme-color";
 meta2.media = "(width <= 600px)";
@@ -61,15 +55,15 @@ meta2.content = "black";
 document.head.appendChild(meta2);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("meta")}}
-- [Possible values for media queries](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
+- [مقادیر ممکن برای Media Queryها](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
