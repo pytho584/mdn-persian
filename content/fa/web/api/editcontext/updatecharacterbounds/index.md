@@ -1,11 +1,5 @@
 ---
 title: "EditContext: updateCharacterBounds() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/updateCharacterBounds"
-status: "needs-translation"
----
-
----
-title: "EditContext: updateCharacterBounds() method"
 short-title: updateCharacterBounds()
 slug: Web/API/EditContext/updateCharacterBounds
 page-type: web-api-instance-method
@@ -16,51 +10,51 @@ browser-compat: api.EditContext.updateCharacterBounds
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`EditContext.updateCharacterBounds()`** method of the {{domxref("EditContext")}} interface should be called as response to a {{domxref("EditContext.characterboundsupdate_event", "characterboundsupdate")}} event to inform the operating system about the position and size of the characters in the `EditContext` object.
+متد **`EditContext.updateCharacterBounds()`** از رابط {{domxref("EditContext")}} باید به‌عنوان پاسخی به رویداد {{domxref("EditContext.characterboundsupdate_event", "characterboundsupdate")}} فراخوانی شود تا موقعیت و اندازه کاراکترهای موجود در شیء `EditContext` را به سیستم‌عامل اطلاع دهد.
 
-The `characterboundsupdate` event is the only time you need to call the `updateCharacterBounds()` method.
+رویداد `characterboundsupdate` تنها زمانی است که باید متد `updateCharacterBounds()` را فراخوانی کنید.
 
-The character bounds information is then used by the operating system to correctly position the {{glossary("Input Method Editor")}} (IME) window when needed. This is especially important in situations where the operating system can't automatically detect the position and size of the characters, such as when rendering text in a `<canvas>` element.
+اطلاعات مرزهای کاراکتر سپس توسط سیستم‌عامل برای موقعیت‌دهی صحیح پنجره {{glossary("Input Method Editor")}} (IME) در صورت نیاز استفاده می‌شود. این موضوع به‌ویژه در شرایطی اهمیت دارد که سیستم‌عامل قادر به تشخیص خودکار موقعیت و اندازه کاراکترها نیست، مانند زمانی که متن در یک عنصر `<canvas>` رندر می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 updateCharacterBounds(rangeStart, characterBounds)
 ```
 
-### Parameters
+### پارامترها
 
 - `rangeStart`
-  - : A number representing the start of the range of text for which character bounds are provided.
+  - : عددی که شروع محدوده متنی را که مرزهای کاراکتر برای آن ارائه شده است، مشخص می‌کند.
 - `characterBounds`
-  - : An {{jsxref("Array")}} containing {{domxref("DOMRect")}} objects representing the character bounds.
+  - : یک {{jsxref("Array")}} شامل اشیاء {{domxref("DOMRect")}} که مرزهای کاراکتر را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None (`undefined`).
+هیچ (`undefined`).
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the method is called with less than two arguments, or if the first argument is not a number or the second argument is not an iterable (like an array).
+  - : اگر متد با کمتر از دو آرگومان فراخوانی شود، یا اگر آرگومان اول عدد نباشد یا آرگومان دوم یک تکرارپذیر (مانند آرایه) نباشد، پرتاب می‌شود.
 
-## Usage notes
+## نکات استفاده
 
-### Avoid sudden jumps in the IME window position
+### جلوگیری از پرش‌های ناگهانی در موقعیت پنجره IME
 
-Calculating the character bounds and calling `updateCharacterBounds` synchronously, within the `characterboundsupdate` event ensures that the operating system has the information it needs when it displays the IME window. If you don't call `updateCharacterBounds()` synchronously within the event handler, users may observe the IME window being displayed in the wrong position before being moved to the correct position.
+محاسبه مرزهای کاراکتر و فراخوانی `updateCharacterBounds` به‌صورت همزمان، درون رویداد `characterboundsupdate` تضمین می‌کند که سیستم‌عامل هنگام نمایش پنجره IME اطلاعات لازم را در اختیار دارد. اگر `updateCharacterBounds()` را به‌صورت همزمان درون کنترل‌کننده رویداد فراخوانی نکنید، کاربران ممکن است مشاهده کنند که پنجره IME ابتدا در موقعیت اشتباه نمایش داده می‌شود و سپس به موقعیت صحیح منتقل می‌شود.
 
-### Which characters to include
+### کدام کاراکترها را شامل شود
 
-The `updateCharacterBounds()` method should only be called when the operating system indicates that it requires the information, and only for the characters that are included in the current IME composition.
+متد `updateCharacterBounds()` فقط زمانی باید فراخوانی شود که سیستم‌عامل نشان دهد به این اطلاعات نیاز دارد، و تنها برای کاراکترهایی که در ترکیب IME فعلی قرار دارند.
 
-The event object passed to the `characterboundsupdate` event handler contains a `rangeStart` and `rangeEnd` properties that indicate the range of characters that are currently being composed. The `updateCharacterBounds()` method should only be called for the characters in this range.
+شیء رویداد ارسالی به کنترل‌کننده رویداد `characterboundsupdate` شامل ویژگی‌های `rangeStart` و `rangeEnd` است که محدوده کاراکترهای در حال ترکیب را نشان می‌دهد. متد `updateCharacterBounds()` فقط باید برای کاراکترهای این محدوده فراخوانی شود.
 
-## Examples
+## مثال‌ها
 
-### Updating the character bounds when needed
+### به‌روزرسانی مرزهای کاراکتر در صورت نیاز
 
-This example shows how to use the `updateCharacterBounds` method to update the character bounds in the `EditContext` of a `<canvas>` element when the operating system indicates that it requires the information. Note that the `characterboundsupdate` event listener callback in this example is only called when using an IME window, or other platform-specific editing UI surfaces, to compose text.
+این مثال نشان می‌دهد چگونه از متد `updateCharacterBounds` برای به‌روزرسانی مرزهای کاراکتر در `EditContext` یک عنصر `<canvas>` استفاده کنید، زمانی که سیستم‌عامل نشان دهد به این اطلاعات نیاز دارد. توجه داشته باشید که فراخوانی تابع کنترل‌کننده رویداد `characterboundsupdate` در این مثال فقط زمانی انجام می‌شود که از یک پنجره IME یا سایر سطوح ویرایشی مخصوص پلتفرم برای ترکیب متن استفاده می‌شود.
 
 ```html
 <canvas id="editor-canvas"></canvas>
@@ -108,14 +102,14 @@ editContext.addEventListener("characterboundsupdate", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{DOMxRef("EditContext")}} interface it belongs to.
+- رابط {{DOMxRef("EditContext")}} که این متد به آن تعلق دارد.
