@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: networkState property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/networkState"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: networkState property"
 short-title: networkState
 slug: Web/API/HTMLMediaElement/networkState
 page-type: web-api-instance-property
@@ -14,25 +8,22 @@ browser-compat: api.HTMLMediaElement.networkState
 
 {{APIRef("HTML DOM")}}
 
-The
-**`HTMLMediaElement.networkState`** property indicates the
-current state of the fetching of media over the network.
+ویژگی **`HTMLMediaElement.networkState`** وضعیت فعلی دریافت رسانه از طریق شبکه را نشان می‌دهد.
 
-## Value
+## مقدار
 
-An `unsigned short`. Possible values are:
+یک `unsigned short`. مقادیر ممکن به صورت زیر هستند:
 
 | Constant            | Value | Description                                                                           |
 | ------------------- | ----- | ------------------------------------------------------------------------------------- |
-| `NETWORK_EMPTY`     | 0     | There is no data yet. Also, `readyState` is `HAVE_NOTHING`.                           |
-| `NETWORK_IDLE`      | 1     | HTMLMediaElement is active and has selected a resource, but is not using the network. |
-| `NETWORK_LOADING`   | 2     | The browser is downloading HTMLMediaElement data.                                     |
-| `NETWORK_NO_SOURCE` | 3     | No HTMLMediaElement src found.                                                        |
+| `NETWORK_EMPTY`     | 0     | هنوز داده‌ای وجود ندارد. همچنین `readyState` برابر با `HAVE_NOTHING` است.             |
+| `NETWORK_IDLE`      | 1     | `HTMLMediaElement` فعال است و یک منبع انتخاب کرده است، اما از شبکه استفاده نمی‌کند. |
+| `NETWORK_LOADING`   | 2     | مرورگر در حال دانلود داده‌های `HTMLMediaElement` است.                                 |
+| `NETWORK_NO_SOURCE` | 3     | هیچ `src` برای `HTMLMediaElement` یافت نشد.                                           |
 
-## Examples
+## مثال
 
-This example will listen for the audio element to begin playing and then check if it is
-still loading data.
+این مثال به عنصر صوتی گوش می‌دهد تا پخش شروع شود و سپس بررسی می‌کند که آیا هنوز در حال بارگذاری داده است یا خیر.
 
 ```html
 <audio id="example" preload="auto">
@@ -50,14 +41,14 @@ obj.addEventListener("playing", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.networkState` property
+- {{domxref("HTMLMediaElement")}}: رابطی که ویژگی `HTMLMediaElement.networkState` را تعریف می‌کند.
