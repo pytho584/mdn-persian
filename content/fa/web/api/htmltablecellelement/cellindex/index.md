@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableCellElement: cellIndex property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/cellIndex"
-status: "needs-translation"
----
-
----
-title: "HTMLTableCellElement: cellIndex property"
 short-title: cellIndex
 slug: Web/API/HTMLTableCellElement/cellIndex
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.HTMLTableCellElement.cellIndex
 
 {{ APIRef("HTML DOM") }}
 
-The **`cellIndex`** read-only property of the {{domxref("HTMLTableCellElement")}} interface
-represents the position of a cell within its row ({{htmlelement("tr")}}). The first cell has an index of `0`.
+خاصیتِ فقط‌خواندنی **`cellIndex`** در رابط {{domxref("HTMLTableCellElement")}}، موقعیت یک سلول را درون ردیف ({{htmlelement("tr")}}) خود نشان می‌دهد. اولین سلول ایندکس `0` دارد.
 
-## Value
+## مقدار
 
-Returns the index of the cell, or `-1` if the cell is not part of any row.
+ایندکس سلول را برمی‌گرداند، یا اگر سلول متعلق به هیچ ردیفی نباشد، مقدار `1-` را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-This example adds a label to all the cell numbers of the first row of the `tbody`.
+این مثال یک برچسب به شماره‌ی همه سلول‌های ردیف اول `tbody` اضافه می‌کند.
 
 ### HTML
 
@@ -75,14 +68,14 @@ for (const cell of cells) {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
