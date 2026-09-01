@@ -1,11 +1,5 @@
 ---
 title: "EncodedVideoChunk: copyTo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/copyTo"
-status: "needs-translation"
----
-
----
-title: "EncodedVideoChunk: copyTo() method"
 short-title: copyTo()
 slug: Web/API/EncodedVideoChunk/copyTo
 page-type: web-api-instance-method
@@ -14,26 +8,26 @@ browser-compat: api.EncodedVideoChunk.copyTo
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`copyTo()`** method of the {{domxref("EncodedVideoChunk")}} interface copies the encoded chunk of video data.
+متد **`copyTo()`** از رابط {{domxref("EncodedVideoChunk")}} یک قطعه از داده‌های ویدیوی کدگذاری شده را کپی می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 copyTo(destination)
 ```
 
-### Parameters
+### پارامترها
 
 - `destination`
-  - : An {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, or a {{jsxref("DataView")}} that the data can be copied to.
+  - : یک {{jsxref("ArrayBuffer")}}، یک {{jsxref("TypedArray")}} یا یک {{jsxref("DataView")}} که داده‌ها می‌توانند در آن کپی شوند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-In the following example an {{domxref("EncodedVideoChunk")}} is created then copied.
+در مثال زیر، یک {{domxref("EncodedVideoChunk")}} ساخته شده و سپس کپی می‌شود.
 
 ```js
 const init = {
@@ -47,10 +41,10 @@ const chunk = new EncodedVideoChunk(init);
 chunk.copyTo(newBuffer);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
