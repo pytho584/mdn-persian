@@ -1,7 +1,5 @@
 ---
 title: "CSSVariableReferenceValue"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSVariableReferenceValue"
-status: "needs-translation"
 ---
 
 ---
@@ -13,28 +11,28 @@ browser-compat: api.CSSVariableReferenceValue
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSVariableReferenceValue`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) allows you to create a custom name for a built-in CSS value. This object functionality is sometimes called a "CSS variable" and serves the same purpose as the {{cssxref("var", "var()")}} function. The custom name must begin with two dashes.
+رابط **`CSSVariableReferenceValue`** در [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) به شما امکان می‌دهد یک نام سفارشی برای یک مقدار CSS داخلی ایجاد کنید. این قابلیت شیء گاهی «متغیر CSS» نامیده می‌شود و همان هدف تابع {{cssxref("var", "var()")}} را دنبال می‌کند. نام سفارشی باید با دو خط تیره شروع شود.
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSVariableReferenceValue.CSSVariableReferenceValue", "CSSVariableReferenceValue()")}}
-  - : Creates a new `CSSVariableReferenceValue` object.
+  - : یک شیء `CSSVariableReferenceValue` جدید می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('CSSVariableReferenceValue.variable')}}
-  - : Returns the custom name passed to the constructor.
+  - : نام سفارشی گذر داده شده به سازنده را برمی‌گرداند.
 - {{domxref('CSSVariableReferenceValue.fallback')}} {{ReadOnlyInline}}
-  - : Returns the built-in CSS value for the custom name.
+  - : مقدار CSS داخلی برای نام سفارشی را برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
-None.
+هیچ‌کدام.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
