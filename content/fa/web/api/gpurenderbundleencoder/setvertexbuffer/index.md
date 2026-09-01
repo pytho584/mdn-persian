@@ -1,9 +1,4 @@
----
-title: "GPURenderBundleEncoder: setVertexBuffer() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/setVertexBuffer"
-status: "needs-translation"
----
-
+```
 ---
 title: "GPURenderBundleEncoder: setVertexBuffer() method"
 short-title: setVertexBuffer()
@@ -14,45 +9,44 @@ browser-compat: api.GPURenderBundleEncoder.setVertexBuffer
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`setVertexBuffer()`** method of the
-{{domxref("GPURenderBundleEncoder")}} interface sets or unsets the current {{domxref("GPUBuffer")}} for the given slot that will provide vertex data for subsequent drawing commands.
+متد **`setVertexBuffer()`** از رابط {{domxref("GPURenderBundleEncoder")}}، بافر رأس فعلی ({{domxref("GPUBuffer")}}) را برای اسلات داده‌شده تنظیم یا لغو تنظیم می‌کند که داده‌های رأس را برای دستورات ترسیم بعدی فراهم می‌کند.
 
 > [!NOTE]
-> This method is functionally identical to its equivalent on {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.setVertexBuffer", "setVertexBuffer()")}}.
+> این متد از نظر عملکردی با معادل خود در {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.setVertexBuffer", "setVertexBuffer()")}} یکسان است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 setVertexBuffer(slot, buffer, offset, size)
 ```
 
-### Parameters
+### پارامترها
 
 - `slot`
-  - : A number referencing the vertex buffer slot to set the vertex buffer for.
+  - : عددی که به اسلات بافر رأس اشاره می‌کند تا بافر رأس برای آن تنظیم شود.
 - `buffer`
-  - : A {{domxref("GPUBuffer")}} representing the buffer containing the vertex data to use for subsequent drawing commands, or `null`, in which case any previously-set buffer in the given slot is unset.
+  - : یک {{domxref("GPUBuffer")}} که نشان‌دهنده بافر حاوی داده‌های رأس برای استفاده در دستورات ترسیم بعدی است، یا `null`، که در این صورت هر بافر تنظیم‌شدهٔ قبلی در اسلات داده‌شده، لغو تنظیم می‌شود.
 - `offset` {{optional_inline}}
-  - : A number representing the offset, in bytes, into `buffer` where the vertex data begins. If omitted, `offset` defaults to 0.
+  - : عددی که نشان‌دهنده آفست (offset) بر حسب بایت در `buffer` است که داده‌های رأس از آنجا آغاز می‌شوند. اگر حذف شود، `offset` به‌صورت پیش‌فرض 0 است.
 - `size` {{optional_inline}}
-  - : A number representing the size, in bytes, of the vertex data contained in `buffer`. If omitted, `size` defaults to the `buffer`'s {{domxref("GPUBuffer.size")}} - `offset`.
+  - : عددی که نشان‌دهنده اندازه داده‌های رأس موجود در `buffer` بر حسب بایت است. اگر حذف شود، `size` به‌صورت پیش‌فرض برابر با {{domxref("GPUBuffer.size")}} بافر منهای `offset` است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`setVertexBuffer()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderBundleEncoder")}} becomes invalid:
+هنگام فراخوانی **`setVertexBuffer()`** معیارهای زیر باید برقرار باشند؛ در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPURenderBundleEncoder")}} نامعتبر می‌شود:
 
-- `buffer`'s {{domxref("GPUBuffer.usage")}} contains the `GPUBufferUsage.VERTEX` flag.
-- `slot` is less than the {{domxref("GPUDevice")}}'s `maxVertexBuffers` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- `offset` + `size` is less than or equal to the `buffer`'s {{domxref("GPUBuffer.size")}}.
-- `offset` is a multiple of 4.
+- ویژگی {{domxref("GPUBuffer.usage")}} در `buffer` شامل پرچم `GPUBufferUsage.VERTEX` باشد.
+- `slot` کمتر از مقدار `maxVertexBuffers` تعیین‌شده در محدودیت‌های {{domxref("GPUDevice")}} ({{domxref("GPUSupportedLimits", "limit", "", "nocode")}}) باشد.
+- `offset` + `size` کمتر یا مساوی با {{domxref("GPUBuffer.size")}} مربوط به `buffer` باشد.
+- `offset` مضربی از 4 باشد.
 
-## Examples
+## مثال‌ها
 
-### Set vertex buffer
+### تنظیم بافر رأس
 
 ```js
 function recordRenderPass(passEncoder) {
@@ -76,9 +70,9 @@ function recordRenderPass(passEncoder) {
 }
 ```
 
-The above snippet is taken from the WebGPU Samples [Animometer example](https://webgpu.github.io/webgpu-samples/samples/animometer/).
+قطعه کد بالا از [مثال Animometer](https://webgpu.github.io/webgpu-samples/samples/animometer/) در نمونه‌های WebGPU گرفته شده است.
 
-### Unset vertex buffer
+### لغو تنظیم بافر رأس
 
 ```js
 // Set vertex buffer in slot 0
@@ -88,14 +82,15 @@ passEncoder.setVertexBuffer(0, vertexBuffer);
 passEncoder.setVertexBuffer(0, null);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+```
