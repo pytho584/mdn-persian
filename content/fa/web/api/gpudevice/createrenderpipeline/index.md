@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: createRenderPipeline() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createRenderPipeline"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: createRenderPipeline() method"
 short-title: createRenderPipeline()
 slug: Web/API/GPUDevice/createRenderPipeline
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.GPUDevice.createRenderPipeline
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`createRenderPipeline()`** method of the
-{{domxref("GPUDevice")}} interface creates a {{domxref("GPURenderPipeline")}} that can control the vertex and fragment shader stages and be used in a {{domxref("GPURenderPassEncoder")}} or {{domxref("GPURenderBundleEncoder")}}.
+متد **`createRenderPipeline()`** از رابط {{domxref("GPUDevice")}} یک {{domxref("GPURenderPipeline")}} ایجاد می‌کند که می‌تواند مراحل shading رأس (vertex) و پیکسل (fragment) را کنترل کرده و در یک {{domxref("GPURenderPassEncoder")}} یا {{domxref("GPURenderBundleEncoder")}} استفاده شود.
 
 ## Syntax
 
@@ -26,101 +19,101 @@ createRenderPipeline(descriptor)
 ### Parameters
 
 - `descriptor`
-  - : An object containing the following properties:
+  - : یک شیء شامل ویژگی‌های زیر:
     - `depthStencil` {{optional_inline}}
-      - : An object (see [`depthStencil` object structure](#depthstencil_object_structure)) describing depth-stencil properties including testing, operations, and bias.
+      - : یک شیء (به [ساختار شیء `depthStencil`](#depthstencil_object_structure) مراجعه کنید) که ویژگی‌های depth-stencil از جمله آزمایش، عملیات و بایاس را توصیف می‌کند.
     - `fragment` {{optional_inline}}
-      - : An object (see [`fragment` object structure](#fragment_object_structure)) describing the fragment shader entry point of the pipeline and its output colors. If no fragment shader entry point is defined, the pipeline will not produce any color attachment outputs, but it still performs rasterization and produces depth values based on the vertex position output. Depth testing and stencil operations can still be used.
+      - : یک شیء (به [ساختار شیء `fragment`](#fragment_object_structure) مراجعه کنید) که نقطه ورود shader پیکسل (fragment) خط لوله و رنگ‌های خروجی آن را توصیف می‌کند. اگر هیچ نقطه ورود shader پیکسلی تعریف نشود، خط لوله هیچ خروجی attachment رنگی تولید نمی‌کند، اما همچنان رسترایزاسیون (rasterization) انجام می‌دهد و بر اساس خروجی موقعیت رأس، مقادیر depth تولید می‌کند. آزمایش عمق و عملیات stencil همچنان قابل استفاده هستند.
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : یک رشته که برچسبی برای شناسایی شیء فراهم می‌کند، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
     - `layout`
-      - : Defines the layout (structure, purpose, and type) of all the GPU resources (buffers, textures, etc.) used during the execution of the pipeline. Possible values are:
-        - A {{domxref("GPUPipelineLayout")}} object, created using {{domxref("GPUDevice.createPipelineLayout()")}}, which allows the GPU to figure out how to run the pipeline most efficiently ahead of time.
-        - A string of `"auto"`, which causes the pipeline to generate an implicit bind group layout based on any bindings defined in the shader code. If `"auto"` is used, the generated bind group layouts may only be used with the current pipeline.
+      - : چیدمان (ساختار، هدف و نوع) تمام منابع GPU (بافرها، بافت‌ها و غیره) که در حین اجرای خط لوله استفاده می‌شوند را تعریف می‌کند. مقادیر ممکن عبارتند از:
+        - یک شیء {{domxref("GPUPipelineLayout")}} که با استفاده از {{domxref("GPUDevice.createPipelineLayout()")}} ایجاد شده است و به GPU اجازه می‌دهد از قبل بفهمد چگونه خط لوله را به بهترین شکل اجرا کند.
+        - رشته `"auto"` که باعث می‌شود خط لوله بر اساس هر binding تعریف‌شده در کد shader، یک چیدمان گروه binding ضمنی (implicit bind group layout) تولید کند. اگر از `"auto"` استفاده شود، چیدمان‌های گروه binding تولیدشده فقط با خط لوله فعلی قابل استفاده هستند.
     - `multisample` {{optional_inline}}
-      - : An object (see [`multisample` object structure](#multisample_object_structure)) describing how the pipeline interacts with a render pass's multisampled attachments.
+      - : یک شیء (به [ساختار شیء `multisample`](#multisample_object_structure) مراجعه کنید) که نحوه تعامل خط لوله با attachment های چندنمونه‌ای (multisampled) یک render pass را توصیف می‌کند.
     - `primitive` {{optional_inline}}
-      - : An object (see [`primitive` object structure](#primitive_object_structure)) describing how a pipeline constructs and rasterizes primitives from its vertex inputs.
+      - : یک شیء (به [ساختار شیء `primitive`](#primitive_object_structure) مراجعه کنید) که نحوه ساخت و رسترایزاسیون primitives توسط خط لوله از ورودی‌های رأس آن را توصیف می‌کند.
     - `vertex`
-      - : An object (see [`vertex` object structure](#vertex_object_structure)) describing the vertex shader entry point of the pipeline and its input buffer layouts.
+      - : یک شیء (به [ساختار شیء `vertex`](#vertex_object_structure) مراجعه کنید) که نقطه ورود shader رأس خط لوله و چیدمان بافرهای ورودی آن را توصیف می‌کند.
 
-### `depthStencil` object structure
+### ساختار شیء `depthStencil`
 
-The `depthStencil` object can contain the following properties:
+شیء `depthStencil` می‌تواند شامل ویژگی‌های زیر باشد:
 
 - `depthBias` {{optional_inline}}
-  - : A number representing a constant depth bias that is added to each fragment. If omitted, `depthBias` defaults to 0.
+  - : عددی که یک بایاس عمق ثابت را نشان می‌دهد که به هر fragment اضافه می‌شود. اگر حذف شود، `depthBias` پیش‌فرض 0 است.
     > [!NOTE]
-    > The `depthBias`, `depthBiasClamp`, and `depthBiasSlopeScale` properties must be set to `0` for line and point topologies, i.e., if [`topology`](#topology) is set to `"line-list"`, `"line-strip"`, or `"point-list"`. If not, a {{domxref("GPUValidationError")}} will be generated and the returned {{domxref("GPURenderPipeline")}} will be invalid.
+    > ویژگی‌های `depthBias`، `depthBiasClamp` و `depthBiasSlopeScale` باید برای توپولوژی‌های خط و نقطه روی `0` تنظیم شوند، یعنی اگر [`topology`](#topology) روی `"line-list"`، `"line-strip"` یا `"point-list"` تنظیم شده باشد. در غیر این صورت، یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPURenderPipeline")}} برگشتی نامعتبر خواهد بود.
 - `depthBiasClamp` {{optional_inline}}
-  - : A number representing the maximum depth bias of a fragment. If omitted, `depthBiasClamp` defaults to 0.
+  - : عددی که حداکثر بایاس عمق یک fragment را نشان می‌دهد. اگر حذف شود، `depthBiasClamp` پیش‌فرض 0 است.
 - `depthBiasSlopeScale` {{optional_inline}}
-  - : A number representing a depth bias that scales with the fragment's slope. If omitted, `depthBiasSlopeScale` defaults to 0.
+  - : عددی که بایاس عمقی را نشان می‌دهد که با شیب fragment مقیاس می‌شود. اگر حذف شود، `depthBiasSlopeScale` پیش‌فرض 0 است.
 - `depthCompare` {{optional_inline}}
-  - : An enumerated value specifying the comparison operation used to test fragment depths against `depthStencilAttachment` depth values. Possible values are:
-    - `"never"`: Comparison tests never pass.
-    - `"less"`: A provided value passes the comparison test if it is less than the sampled value.
-    - `"equal"`: A provided value passes the comparison test if it is equal to the sampled value.
-    - `"less-equal"`: A provided value passes the comparison test if it is less than or equal to the sampled value.
-    - `"greater"`: A provided value passes the comparison test if it is greater than the sampled value.
-    - `"not-equal"`: A provided value passes the comparison test if it is not equal to the sampled value.
-    - `"greater-equal"`: A provided value passes the comparison test if it is greater than or equal to the sampled value.
-    - `"always"`: Comparison tests always pass.
+  - : یک مقدار شمارشی (enumerated) که عملیات مقایسه مورد استفاده برای آزمایش عمق fragment ها در برابر مقادیر depth `depthStencilAttachment` را مشخص می‌کند. مقادیر ممکن عبارتند از:
+    - `"never"`: آزمایش‌های مقایسه هرگز موفق نمی‌شوند.
+    - `"less"`: یک مقدار ارائه‌شده اگر از مقدار نمونه‌برداری‌شده کمتر باشد، آزمایش مقایسه را قبول می‌کند.
+    - `"equal"`: یک مقدار ارائه‌شده اگر با مقدار نمونه‌برداری‌شده برابر باشد، آزمایش مقایسه را قبول می‌کند.
+    - `"less-equal"`: یک مقدار ارائه‌شده اگر از مقدار نمونه‌برداری‌شده کمتر یا برابر باشد، آزمایش مقایسه را قبول می‌کند.
+    - `"greater"`: یک مقدار ارائه‌شده اگر از مقدار نمونه‌برداری‌شده بیشتر باشد، آزمایش مقایسه را قبول می‌کند.
+    - `"not-equal"`: یک مقدار ارائه‌شده اگر با مقدار نمونه‌برداری‌شده برابر نباشد، آزمایش مقایسه را قبول می‌کند.
+    - `"greater-equal"`: یک مقدار ارائه‌شده اگر از مقدار نمونه‌برداری‌شده بیشتر یا برابر باشد، آزمایش مقایسه را قبول می‌کند.
+    - `"always"`: آزمایش‌های مقایسه همیشه موفق می‌شوند.
 
-    `depthCompare` is not required if the specified `format` does not have a depth component, or if the comparison operation is not used.
+    `depthCompare` اگر `format` مشخص‌شده دارای مؤلفه depth نباشد، یا اگر عملیات مقایسه استفاده نشود، الزامی نیست.
 
 - `depthWriteEnabled` {{optional_inline}}
-  - : A boolean. A value of `true` specifies that the {{domxref("GPURenderPipeline")}} can modify `depthStencilAttachment` depth values after creation. Setting it to `false` means it cannot.
+  - : یک مقدار بولی. مقدار `true` مشخص می‌کند که {{domxref("GPURenderPipeline")}} می‌تواند مقادیر depth `depthStencilAttachment` را پس از ایجاد تغییر دهد. تنظیم آن روی `false` به این معنی است که نمی‌تواند.
 
-    `depthWriteEnabled` is not required if the specified `format` does not have a depth component.
+    `depthWriteEnabled` اگر `format` مشخص‌شده دارای مؤلفه depth نباشد، الزامی نیست.
 
 - `format`
-  - : An enumerated value specifying the `depthStencilAttachment` format that the {{domxref("GPURenderPipeline")}} will be compatible with. See the specification's [Texture Formats](https://gpuweb.github.io/gpuweb/#enumdef-gputextureformat) section for all the available `format` values.
+  - : یک مقدار شمارشی که فرمت `depthStencilAttachment` را که {{domxref("GPURenderPipeline")}} با آن سازگار خواهد بود مشخص می‌کند. برای همه مقادیر `format` موجود، به بخش [Texture Formats](https://gpuweb.github.io/gpuweb/#enumdef-gputextureformat) در مشخصات مراجعه کنید.
 - `stencilBack` {{optional_inline}}
-  - : An object that defines how stencil comparisons and operations are performed for back-facing primitives. Its properties can include:
+  - : یک شیء که نحوه انجام مقایسه‌ها و عملیات stencil برای primitives رو به عقب (back-facing) را تعریف می‌کند. ویژگی‌های آن می‌توانند شامل موارد زیر باشند:
     - `compare` {{optional_inline}}
-      - : An enumerated value specifying the comparison operation used when testing fragments against `depthStencilAttachment` stencil values. Possible values are the same as for the `depthCompare` property; see above. If omitted, `compare` defaults to `"always"`.
+      - : یک مقدار شمارشی که عملیات مقایسه مورد استفاده هنگام آزمایش fragment ها در برابر مقادیر stencil `depthStencilAttachment` را مشخص می‌کند. مقادیر ممکن همانند مقادیر ویژگی `depthCompare` هستند؛ به بالا مراجعه کنید. اگر حذف شود، `compare` پیش‌فرض `"always"` است.
     - `depthFailOp` {{optional_inline}}
-      - : An enumerated value specifying the stencil operation performed if the fragment depth comparison described by `depthCompare` fails. Possible values are:
-        - `"decrement-clamp"`: Decrement the current render state stencil value, clamping it to 0.
-        - `"decrement-wrap"`: Decrement the current render state stencil value, wrapping it to the maximum representable value of the `depthStencilAttachment`'s stencil aspect if the value goes below 0.
-        - `"invert"`: Bitwise-invert the current render state stencil value.
-        - `"increment-clamp"`: Increments the current render state stencil value, clamping it to the maximum representable value of the `depthStencilAttachment`'s stencil aspect.
-        - `"increment-wrap"`: Increments the current render state stencil value, wrapping it to zero if the value exceeds the maximum representable value of the `depthStencilAttachment`'s stencil aspect.
-        - `"keep"`: Keep the current stencil value.
-        - `"replace"`: Set the stencil value to the current render state stencil value.
-        - `"zero"`: Set the stencil value to 0.
+      - : یک مقدار شمارشی که عملیات stencil انجام‌شده در صورت شکست مقایسه عمق fragment که توسط `depthCompare` توصیف شده را مشخص می‌کند. مقادیر ممکن عبارتند از:
+        - `"decrement-clamp"`: مقدار stencil حالت رندر فعلی را کاهش می‌دهد و آن را روی 0 قفل می‌کند.
+        - `"decrement-wrap"`: مقدار stencil حالت رندر فعلی را کاهش می‌دهد و اگر مقدار به زیر 0 برود، آن را به حداکثر مقدار قابل نمایش جنبه stencil مربوط به `depthStencilAttachment` می‌پیچاند.
+        - `"invert"`: مقدار stencil حالت رندر فعلی را به صورت بیتی معکوس می‌کند.
+        - `"increment-clamp"`: مقدار stencil حالت رندر فعلی را افزایش می‌دهد و آن را به حداکثر مقدار قابل نمایش جنبه stencil مربوط به `depthStencilAttachment` قفل می‌کند.
+        - `"increment-wrap"`: مقدار stencil حالت رندر فعلی را افزایش می‌دهد و اگر مقدار از حداکثر مقدار قابل نمایش جنبه stencil مربوط به `depthStencilAttachment` بیشتر شود، آن را به صفر می‌پیچاند.
+        - `"keep"`: مقدار stencil فعلی را حفظ می‌کند.
+        - `"replace"`: مقدار stencil را به مقدار stencil حالت رندر فعلی تنظیم می‌کند.
+        - `"zero"`: مقدار stencil را روی 0 تنظیم می‌کند.
 
-        If omitted, `depthFailOp` defaults to `"keep"`.
+        اگر حذف شود، `depthFailOp` پیش‌فرض `"keep"` است.
 
         > [!NOTE]
-        > The render state stencil value is initialized to 0 at the start of a render pass.
+        > مقدار stencil حالت رندر در شروع یک render pass روی 0 مقداردهی اولیه می‌شود.
 
     - `failOp` {{optional_inline}}
-      - : An enumerated value specifying the stencil operation performed if the fragment stencil comparison test described by `compare` fails. Possible and default values are the same as for `depthFailOp`.
+      - : یک مقدار شمارشی که عملیات stencil انجام‌شده در صورت شکست آزمایش مقایسه stencil fragment که توسط `compare` توصیف شده را مشخص می‌کند. مقادیر ممکن و پیش‌فرض همانند `depthFailOp` هستند.
     - `passOp` {{optional_inline}}
-      - : An enumerated value specifying the stencil operation performed if the fragment stencil comparison test described by `compare` passes. Possible and default values are the same as for `depthFailOp`.
+      - : یک مقدار شمارشی که عملیات stencil انجام‌شده در صورت موفقیت آزمایش مقایسه stencil fragment که توسط `compare` توصیف شده را مشخص می‌کند. مقادیر ممکن و پیش‌فرض همانند `depthFailOp` هستند.
 
 - `stencilFront` {{optional_inline}}
-  - : An object that defines how stencil comparisons and operations are performed for front-facing primitives. Its properties are the same as for `stencilBack`.
+  - : یک شیء که نحوه انجام مقایسه‌ها و عملیات stencil برای primitives رو به جلو (front-facing) را تعریف می‌کند. ویژگی‌های آن همانند `stencilBack` هستند.
 - `stencilReadMask` {{optional_inline}}
-  - : A bitmask controlling which `depthStencilAttachment` stencil value bits are read when performing stencil comparison tests. If omitted, `stencilReadMask` defaults to `0xFFFFFFFF`.
+  - : یک bitmask که کنترل می‌کند کدام بیت‌های مقدار stencil `depthStencilAttachment` هنگام انجام آزمایش‌های مقایسه stencil خوانده شوند. اگر حذف شود، `stencilReadMask` پیش‌فرض `0xFFFFFFFF` است.
 - `stencilWriteMask` {{optional_inline}}
-  - : A bitmask controlling which `depthStencilAttachment` stencil value bits are written to when performing stencil operations. If omitted, `stencilWriteMask` defaults to `0xFFFFFFFF`.
+  - : یک bitmask که کنترل می‌کند کدام بیت‌های مقدار stencil `depthStencilAttachment` هنگام انجام عملیات stencil نوشته شوند. اگر حذف شود، `stencilWriteMask` پیش‌فرض `0xFFFFFFFF` است.
 
 > [!NOTE]
-> `depthStencilAttachment` values are specified during {{domxref("GPUCommandEncoder.beginRenderPass()")}} calls, when the {{domxref("GPURenderPipeline")}} is actually used to perform a render pass.
+> مقادیر `depthStencilAttachment` در طول فراخوانی‌های {{domxref("GPUCommandEncoder.beginRenderPass()")}}، زمانی که {{domxref("GPURenderPipeline")}} واقعاً برای اجرای یک render pass استفاده می‌شود، مشخص می‌شوند.
 
-### `fragment` object structure
+### ساختار شیء `fragment`
 
-The `fragment` object contains an array of objects, each of which can contain the following properties:
+شیء `fragment` شامل یک آرایه از اشیاء است که هر کدام می‌توانند ویژگی‌های زیر را داشته باشند:
 
 - `constants` {{optional_inline}}
-  - : A sequence of record types, with the structure `(id, value)`, representing override values for [WGSL constants that can be overridden in the pipeline](https://gpuweb.github.io/gpuweb/#typedefdef-gpupipelineconstantvalue). These behave like [ordered maps](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map). In each case, the `id` is a key used to identify or select the record, and the `constant` is an enumerated value representing a WGSL.
+  - : یک دنباله از انواع رکورد، با ساختار `(id, value)`، که مقادیر override برای [WGSL constant های قابل override در خط لوله](https://gpuweb.github.io/gpuweb/#typedefdef-gpupipelineconstantvalue) را نشان می‌دهند. اینها مانند [نقشه‌های مرتب](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) رفتار می‌کنند. در هر مورد، `id` کلیدی است که برای شناسایی یا انتخاب رکورد استفاده می‌شود و `constant` یک مقدار شمارشی است که یک WGSL را نشان می‌دهد.
 
-    Depending on which constant you want to override, the `id` may take the form of the numeric ID of the constant, if one is specified, or otherwise the constant's identifier name.
+    بسته به اینکه کدام constant را می‌خواهید override کنید، `id` ممکن است به صورت شناسه عددی constant (اگر مشخص شده باشد) یا در غیر این صورت نام شناسه constant باشد.
 
-    A code snippet providing override values for several overridable constants might look like this:
+    یک قطعه کد که مقادیر override را برای چند constant قابل override فراهم می‌کند ممکن است به این شکل باشد:
 
     ```js
     ({
@@ -137,24 +130,24 @@ The `fragment` object contains an array of objects, each of which can contain th
     ```
 
 - `entryPoint` {{optional_inline}}
-  - : The name of the function in the `module` that this stage will use to perform its work. The corresponding shader function must have the `@fragment` attribute to be identified as this entry point. See [Entry Point Declaration](https://gpuweb.github.io/gpuweb/wgsl/#entry-point-decl) for more information.
+  - : نام تابع در `module` که این مرحله برای انجام کار خود از آن استفاده خواهد کرد. تابع shader مربوطه باید ویژگی `@fragment` را داشته باشد تا به عنوان این نقطه ورود شناسایی شود. برای اطلاعات بیشتر به [Entry Point Declaration](https://gpuweb.github.io/gpuweb/wgsl/#entry-point-decl) مراجعه کنید.
 
-    You can omit the `entryPoint` property if your shader code contains a single function with the `@fragment` attribute set — the browser will use this as the default entry point. If `entryPoint` is omitted and the browser cannot determine a default entry point, a {{domxref("GPUValidationError")}} is generated and the resulting {{domxref("GPURenderPipeline")}} will be invalid.
+    اگر کد shader شما فقط یک تابع با ویژگی `@fragment` داشته باشد، می‌توانید ویژگی `entryPoint` را حذف کنید — مرورگر از آن به عنوان نقطه ورود پیش‌فرض استفاده خواهد کرد. اگر `entryPoint` حذف شود و مرورگر نتواند نقطه ورود پیش‌فرض را تعیین کند، یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPURenderPipeline")}} حاصل نامعتبر خواهد بود.
 
 - `module`
-  - : A {{domxref("GPUShaderModule")}} object containing the [WGSL](https://gpuweb.github.io/gpuweb/wgsl/) code that this programmable stage will execute.
+  - : یک شیء {{domxref("GPUShaderModule")}} حاوی کد [WGSL](https://gpuweb.github.io/gpuweb/wgsl/) که این مرحله قابل برنامه‌ریزی اجرا خواهد کرد.
 - `targets`
-  - : an array of objects representing color states that represent configuration details for the colors output by the fragment shader stage. These objects can include the following properties:
+  - : آرایه‌ای از اشیاء که حالت‌های رنگی را نشان می‌دهند و جزئیات پیکربندی رنگ‌های خروجی مرحله shader پیکسل را فراهم می‌کنند. این اشیاء می‌توانند شامل ویژگی‌های زیر باشند:
     - `blend` {{optional_inline}}
-      - : An object that describes a blend mode to be applied to the output color. `blend` has two properties:
+      - : یک شیء که حالت ترکیب (blend mode) را که باید روی رنگ خروجی اعمال شود توصیف می‌کند. `blend` دو ویژگی دارد:
         - `alpha`
-          - : Describes the alpha channel value.
+          - : مقدار کانال آلفا را توصیف می‌کند.
         - `color`
-          - : Describes the color value.
+          - : مقدار رنگ را توصیف می‌کند.
 
-        `alpha` and `color` both take an object as a value that can include the following properties:
+        هر دو `alpha` و `color` یک شیء را به عنوان مقدار می‌پذیرند که می‌تواند شامل ویژگی‌های زیر باشد:
         - `dstFactor` {{optional_inline}}
-          - : An enumerated value that defines the blend factor operation to be performed on values from the target attachment. Possible values are:
+          - : یک مقدار شمارشی که عملیات factor ترکیب را که باید روی مقادیر attachment هدف انجام شود تعریف می‌کند. مقادیر ممکن عبارتند از:
             - `"constant"`
             - `"dst"`
             - `"dst-alpha"`
@@ -173,247 +166,10 @@ The `fragment` object contains an array of objects, each of which can contain th
             - `"src-alpha-saturated"`
             - `"zero"`
 
-            If omitted, `dstFactor` defaults to `"zero"`.
+            اگر حذف شود، `dstFactor` پیش‌فرض `"zero"` است.
 
             > [!NOTE]
-            > The `dual-source-blending` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) needs to be enabled for the `src1`, `one-minus-src1`, `src1-alpha`, and `one-minus-src1-alpha` blend factor operations to be used successfully. If not, a {{domxref("GPUValidationError")}} is generated.
+            > برای استفاده موفقیت‌آمیز از عملیات factor ترکیب `src1`، `one-minus-src1`، `src1-alpha` و `one-minus-src1-alpha`، باید [feature](/en-US/docs/Web/API/GPUSupportedFeatures) `dual-source-blending` فعال باشد. در غیر این صورت، یک {{domxref("GPUValidationError")}} تولید می‌شود.
 
         - `operation` {{optional_inline}}
-          - : An enumerated value that defines the algorithm used to combine source and destination blend factors, to calculate the final values written to the target attachment components. Possible values are:
-            - `"add"`
-            - `"max"`
-            - `"min"`
-            - `"reverse-subtract"`
-            - `"subtract"`
-
-            If omitted, `operation` defaults to `"add"`.
-
-        - `srcFactor` {{optional_inline}}
-          - : An enumerated value that defines the blend factor operation to be performed on values from the fragment shader. Possible values are the same as for `dstFactor`. If omitted, `srcFactor` defaults to `"one"`.
-
-        > [!NOTE]
-        > For a detailed explanation of the algorithms defined by each `dstFactor`/`srcFactor` and `operation` enumerated value, see the [Blend State](https://gpuweb.github.io/gpuweb/#blend-state) section of the specification.
-
-    - `format`
-      - : An enumerated value specifying the required format for output colors. See the specification's [Texture Formats](https://gpuweb.github.io/gpuweb/#enumdef-gputextureformat) section for all the available `format` values.
-
-        > [!NOTE]
-        > For the `r32float`, `rg32float`, and `rgba32float` formats to be used with [blending](#blend), the `float32-blendable` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) must be available in the device.
-
-    - `writeMask` {{optional_inline}}
-      - : One or more {{glossary("bitwise flags")}} defining the write mask to apply to the color target state. Possible flag values are:
-        - `GPUColorWrite.RED`
-        - `GPUColorWrite.GREEN`
-        - `GPUColorWrite.BLUE`
-        - `GPUColorWrite.ALPHA`
-        - `GPUColorWrite.ALL`
-
-        If omitted, `writeMask` defaults to `GPUColorWrite.ALL`.
-
-        Note that multiple flags can be specified by separating values with [bitwise OR](/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_OR), for example: `GPUColorWrite.RED | GPUColorWrite.ALPHA`.
-
-### `multisample` object structure
-
-The `multisample` object can contain the following properties:
-
-- `alphaToCoverageEnabled` {{optional_inline}}
-  - : A boolean. A value of `true` indicates that a fragment's alpha channel should be used to generate a sample coverage mask. If omitted, `alphaToCoverageEnabled` defaults to `false`.
-- `count` {{optional_inline}}
-  - : A number that defines the number of samples per pixel. The pipeline will be compatible only with attachment textures (`colorAttachment`s and `depthStencilAttachment`s) with matching `sampleCounts` (see {{domxref("GPUTexture")}}).
-
-    If omitted, `count` defaults to 1.
-
-- `mask` {{optional_inline}}
-  - : A bitmask that determines which samples are written to. If omitted, `mask` defaults to `0xFFFFFFFF`.
-
-> [!NOTE]
-> `colorAttachment` and `depthStencilAttachment` values are specified during {{domxref("GPUCommandEncoder.beginRenderPass()")}} calls, when the {{domxref("GPURenderPipeline")}} is actually used to perform a render pass.
-
-### `primitive` object structure
-
-The `primitive` object can contain the following properties:
-
-- `cullMode` {{optional_inline}}
-  - : An enumerated value that defines which polygon orientation will be culled, if any. Possible values are:
-    - `"back"`: Back-facing polygons are culled.
-    - `"front"`: Front-facing polygons are culled.
-    - `"none"`: No polygons are culled.
-
-    If omitted, `cullMode` defaults to `"none"`.
-
-- `frontFace` {{optional_inline}}
-  - : An enumerated value that defines which polygons are considered front-facing. Possible values are:
-    - `"ccw"`: Polygons with vertices whose framebuffer coordinates are given in counter-clockwise order.
-    - `"cw"`: Polygons with vertices whose framebuffer coordinates are given in clockwise order.
-
-    If omitted, `frontFace` defaults to `"ccw"`.
-
-    > [!NOTE]
-    > The `frontFace` and `cullMode` values have no effect on the `"point-list"`, `"line-list"`, or `"line-strip"` topologies.
-
-- `stripIndexFormat` {{optional_inline}}
-  - : An enumerated value that determines the index buffer format and primitive restart value in the case of pipelines with strip topologies (`"line-strip"` or `"triangle-strip"`). The primitive restart value specifies which index value indicates that a new primitive should be started rather than continuing to construct the strip with the prior indexed vertices. Possible values are:
-    - `"uint16"`: Indicates a byte size of 2 and a primitive restart value of `0xFFFF`.
-    - `"uint32"`: Indicates a byte size of 4 and a primitive restart value of `0xFFFFFFFF`.
-
-    GPU primitive states that specify a strip primitive topology must specify a strip index format if they are used for indexed draws (for example, via {{domxref("GPURenderPassEncoder.drawIndexed()")}}) so that the primitive restart value that will be used is known at pipeline creation time. Pipelines with list primitive topologies (`"line-list"`, `"point-list"`, or `"triangle-list"`) should not specify a `stripIndexFormat` value. They will instead use the index format passed to, for example, {{domxref("GPURenderPassEncoder.setIndexBuffer()")}} when doing indexed rendering.
-
-- `topology` {{optional_inline}}
-  - : An enumerated value that defines the type of primitive to be constructed from the specified `vertex` inputs. Possible values are:
-    - `"line-list"`: Each consecutive pair of two vertices defines a line primitive.
-    - `"line-strip"`: Each vertex after the first defines a line primitive between it and the previous vertex.
-    - `"point-list"`: Each vertex defines a point primitive.
-    - `"triangle-list"`: Each consecutive triplet of three vertices defines a triangle primitive.
-    - `"triangle-strip"`: Each vertex after the first two defines a triangle primitive between it and the previous two vertices.
-
-    If omitted, `topology` defaults to `"triangle-list"`.
-
-- `unclippedDepth` {{optional_inline}}
-  - : A boolean. A value of `true` indicates that depth clipping is disabled. If omitted, `unclippedDepth` defaults to `false`. Note that to control depth clipping, the `depth-clip-control` {{domxref("GPUSupportedFeatures", "feature", "", "nocode")}} must be enabled in the {{domxref("GPUDevice")}}.
-
-    > [!NOTE]
-    > The `depth-clip-control` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) needs to be enabled for the `unclippedDepth` property to be used successfully. If not, a {{domxref("GPUValidationError")}} is generated.
-
-### `vertex` object structure
-
-The `vertex` object can contain the following properties:
-
-- `constants` {{optional_inline}}
-  - : A sequence of record types, with the structure `(id, value)`, representing override values for [WGSL constants that can be overridden in the pipeline](https://gpuweb.github.io/gpuweb/#typedefdef-gpupipelineconstantvalue). These behave like [ordered maps](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map). In each case, the `id` is a key used to identify or select the record, and the `constant` is an enumerated value representing a WGSL.
-
-    Depending on which constant you want to override, the `id` may take the form of the numeric ID of the constant, if one is specified, or otherwise the constant's identifier name.
-
-    A code snippet providing override values for several overridable constants might look like this:
-
-    ```js
-    ({
-      // …
-      constants: {
-        0: false,
-        1200: 3.0,
-        1300: 2.0,
-        width: 20,
-        depth: -1,
-        height: 15,
-      },
-    });
-    ```
-
-- `entryPoint` {{optional_inline}}
-  - : The name of the function in the `module` that this stage will use to perform its work. The corresponding shader function must have the `@vertex` attribute to be identified as this entry point. See [Entry Point Declaration](https://gpuweb.github.io/gpuweb/wgsl/#entry-point-decl) for more information.
-
-    You can omit the `entryPoint` property if your shader code contains a single function with the `@vertex` attribute set — the browser will use this as the default entry point. If `entryPoint` is omitted and the browser cannot determine a default entry point, a {{domxref("GPUValidationError")}} is generated and the resulting {{domxref("GPURenderPipeline")}} will be invalid.
-
-- `module`
-  - : A {{domxref("GPUShaderModule")}} object containing the [WGSL](https://gpuweb.github.io/gpuweb/wgsl/) code that this programmable stage will execute.
-- `buffers` {{optional_inline}}
-  - : An array of objects, each representing the expected layout of a vertex buffer used in the pipeline. Each object can contain the following properties:
-    - `arrayStride`
-      - : A number representing the stride, in bytes, between the different structures (e.g., vertices) inside the buffer.
-    - `attributes`
-      - : An array of objects defining the layout of the vertex attributes within each structure. Each object has the following properties:
-        - `format`
-          - : An enumerated value that specifies the format of the vertex. For all the available values, see the [`GPUVertexFormat`](https://gpuweb.github.io/gpuweb/#enumdef-gpuvertexformat) definition in the specification.
-        - `offset`
-          - : A number specifying the offset, in bytes, from the beginning of the structure to the data for the attribute.
-        - `shaderLocation`
-          - : The numeric location associated with this attribute, which will correspond with a [`@location`](https://gpuweb.github.io/gpuweb/wgsl/#input-output-locations) attribute declared in the WGSL code of the associated {{domxref("GPUShaderModule")}} referenced in the `vertex` object's `module` property.
-    - `stepMode` {{optional_inline}}
-      - : An enumerated value that defines whether the separate structures inside the buffer represent vertices or instances. Possible values are:
-        - `"instance"`: Each structure is an instance — the address is advanced by `arrayStride` for each instance.
-        - `"vertex"`: Each structure is a vertex — the address is advanced by `arrayStride` for each vertex, and reset between instances.
-
-        If omitted, `stepMode` defaults to `"vertex"`.
-
-### Return value
-
-A {{domxref("GPURenderPipeline")}} object instance.
-
-### Validation
-
-The following criteria must be met when calling **`createRenderPipeline()`**, otherwise a {{domxref("GPUValidationError")}} is generated and an invalid {{domxref("GPURenderPipeline")}} object is returned:
-
-- For `depthStencil` objects:
-  - `format` is a [`depth-or-stencil`](https://gpuweb.github.io/gpuweb/#depth-or-stencil-format) format.
-  - The [`depthBias`](#depthbias), [`depthBiasClamp`](#depthbiasclamp), and [`depthBiasSlopeScale`](#depthbiasslopescale) properties are set to <code>0</code> for line and point topologies, i.e., if [`topology`](#topology) is set to `"line-list"`, `"line-strip"`, or `"point-list"`.
-  - If `depthWriteEnabled` is `true` or `depthCompare` is not `"always"`, `format` has a depth component.
-  - If `stencilFront` or `stencilBack`'s properties are not at their default values, `format` has a stencil component.
-- For `fragment` objects:
-  - `targets.length` is less than or equal to the {{domxref("GPUDevice")}}'s `maxColorAttachments` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-  - For each `target`, `writeMask`'s numeric equivalent is less than 16.
-  - If any of the used blend factor operations use the source alpha channel (for example `"src-alpha-saturated"`), the output has an alpha channel (that is, it must be a `vec4`).
-  - If the `src1`, `one-minus-src1`, `src1-alpha`, or `one-minus-src1-alpha` blend factor operations are used, the `dual-source-blending` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) is enabled.
-  - If the `entryPoint` property is omitted, the shader code contains a single fragment shader entry point function for the browser to use as the default entry point.
-- For `primitive` objects:
-  - If the `unclippedDepth` property is used, the `depth-clip-control` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) is enabled.
-- For `vertex` objects:
-  - If the `entryPoint` property is omitted, the shader code contains a single vertex shader entry point function for the browser to use as the default entry point.
-
-## Examples
-
-> [!NOTE]
-> The [WebGPU samples](https://webgpu.github.io/webgpu-samples/) feature many more examples.
-
-### Basic example
-
-Our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/) provides an example of the construction of a valid render pipeline descriptor object, which is then used to create a {{domxref("GPURenderPipeline")}} via a `createRenderPipeline()` call.
-
-```js
-// …
-
-const vertexBuffers = [
-  {
-    attributes: [
-      {
-        shaderLocation: 0, // position
-        offset: 0,
-        format: "float32x4",
-      },
-      {
-        shaderLocation: 1, // color
-        offset: 16,
-        format: "float32x4",
-      },
-    ],
-    arrayStride: 32,
-    stepMode: "vertex",
-  },
-];
-
-const pipelineDescriptor = {
-  vertex: {
-    module: shaderModule,
-    entryPoint: "vertex_main",
-    buffers: vertexBuffers,
-  },
-  fragment: {
-    module: shaderModule,
-    entryPoint: "fragment_main",
-    targets: [
-      {
-        format: navigator.gpu.getPreferredCanvasFormat(),
-      },
-    ],
-  },
-  primitive: {
-    topology: "triangle-list",
-  },
-  layout: "auto",
-};
-
-const renderPipeline = device.createRenderPipeline(pipelineDescriptor);
-
-// …
-```
-
-## Specifications
-
-{{Specifications}}
-
-## Browser compatibility
-
-{{Compat}}
-
-## See also
-
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+          - : یک مقدار شمار
