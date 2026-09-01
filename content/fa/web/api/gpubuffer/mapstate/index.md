@@ -1,11 +1,5 @@
 ---
 title: "GPUBuffer: mapState property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/mapState"
-status: "needs-translation"
----
-
----
-title: "GPUBuffer: mapState property"
 short-title: mapState
 slug: Web/API/GPUBuffer/mapState
 page-type: web-api-instance-property
@@ -14,23 +8,22 @@ browser-compat: api.GPUBuffer.mapState
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`mapState`** read-only property of the
-{{domxref("GPUBuffer")}} interface represents the mapped state of the `GPUBuffer`.
+ویژگی فقط‌خواندنی **`mapState`** در رابط {{domxref("GPUBuffer")}}، حالت نگاشت‌شده‌ی `GPUBuffer` را نشان می‌دهد.
 
-## Value
+## مقدار
 
-An enumerated value. Possible values are:
+یک مقدار شمارشی (enumerated). مقادیر ممکن عبارت‌اند از:
 
 - `unmapped`
-  - : The buffer is not mapped. {{domxref("GPUBuffer.getMappedRange()")}} cannot be used to access the contents of the `GPUBuffer` in JavaScript. This could be because:
-    - {{domxref("GPUBuffer.mapAsync()")}} has not yet been called.
-    - The `GPUBuffer` was previously mapped, and then unmapped again with {{domxref("GPUBuffer.unmap()")}}.
+  - : بافر نگاشت نشده است. نمی‌توان از {{domxref("GPUBuffer.getMappedRange()")}} برای دسترسی به محتویات `GPUBuffer` در جاوااسکریپت استفاده کرد. این حالت می‌تواند به دلایل زیر باشد:
+    - {{domxref("GPUBuffer.mapAsync()")}} هنوز فراخوانی نشده است.
+    - `GPUBuffer` قبلاً نگاشت شده بود و سپس با {{domxref("GPUBuffer.unmap()")}} از حالت نگاشت خارج شده است.
 - `pending`
-  - : The buffer is not yet mapped. {{domxref("GPUBuffer.mapAsync()")}} has been called, but its {{jsxref("Promise")}} is currently pending. {{domxref("GPUBuffer.getMappedRange()")}} cannot currently be used to access the contents of the `GPUBuffer` in JavaScript.
+  - : بافر هنوز نگاشت نشده است. {{domxref("GPUBuffer.mapAsync()")}} فراخوانی شده، اما {{jsxref("Promise")}} مربوط به آن در حال انتظار است. در حال حاضر نمی‌توان از {{domxref("GPUBuffer.getMappedRange()")}} برای دسترسی به محتویات `GPUBuffer` در جاوااسکریپت استفاده کرد.
 - `mapped`
-  - : The buffer is mapped. The {{domxref("GPUBuffer.mapAsync()")}} {{jsxref("Promise")}} has fulfilled, and {{domxref("GPUBuffer.getMappedRange()")}} can now be used to access the contents of the `GPUBuffer` in JavaScript.
+  - : بافر نگاشت شده است. {{jsxref("Promise")}} مربوط به {{domxref("GPUBuffer.mapAsync()")}} با موفقیت انجام شده و اکنون می‌توان از {{domxref("GPUBuffer.getMappedRange()")}} برای دسترسی به محتویات `GPUBuffer` در جاوااسکریپت استفاده کرد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const stagingBuffer = device.createBuffer({
@@ -51,14 +44,14 @@ await stagingBuffer.mapAsync(
 console.log(stagingBuffer.mapState); // "mapped"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
