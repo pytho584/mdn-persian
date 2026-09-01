@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaRelevant property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaRelevant"
-status: "needs-translation"
----
-
----
-title: "Element: ariaRelevant property"
 short-title: ariaRelevant
 slug: Web/API/Element/ariaRelevant
 page-type: web-api-instance-property
@@ -16,24 +10,24 @@ browser-compat: api.Element.ariaRelevant
 
 {{APIRef("DOM")}}{{Non-standard_Header}}
 
-The **`ariaRelevant`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) attribute, which indicates what notifications the user agent will trigger when the accessibility tree within a live region is modified. This is used to describe what changes in an `aria-live` region are relevant and should be announced.
+خاصیت **`ariaRelevant`** از رابط {{domxref("Element")}} منعکس‌کنندهٔ مقدار صفت [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) است که مشخص می‌کند وقتی درخت دسترسی‌پذیری درون یک ناحیهٔ زنده (live region) تغییر می‌کند، عامل کاربر چه اعلان‌هایی را ایجاد کند. این ویژگی برای توصیف این استفاده می‌شود که کدام تغییرات در یک ناحیهٔ `aria-live` مرتبط هستند و باید اعلام شوند.
 
-## Value
+## مقدار
 
-A string containing one or more of the following values, space separated:
+یک رشته شامل یک یا چند مقدار از مقادیر زیر که با فاصله جدا شده‌اند:
 
 - `"additions"`
-  - : Additions of Element Nodes within the live region should be considered relevant.
+  - : افزودن گره‌های عنصر (Element Nodes) درون ناحیهٔ زنده باید مرتبط در نظر گرفته شوند.
 - `"removals"`
-  - : Deletion of Nodes from the live region should be considered relevant.
+  - : حذف گره‌ها از ناحیهٔ زنده باید مرتبط در نظر گرفته شوند.
 - `"text"`
-  - : Changes to the textual content of existing nodes should be considered relevant.
+  - : تغییرات در محتوای متنی گره‌های موجود باید مرتبط در نظر گرفته شوند.
 - `"all"`
-  - : Equivalent to `"additions removals text"`.
+  - : معادل `"additions removals text"`.
 
-## Examples
+## مثال‌ها
 
-In this example the [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) attribute on the element with an ID of `text` is set to "all". Using `ariaRelevant` we update the value to "text".
+در این مثال، صفت [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) روی عنصری با شناسهٔ `text` به `"all"` تنظیم شده است. با استفاده از `ariaRelevant` مقدار را به `"text"` به‌روزرسانی می‌کنیم.
 
 ```html
 <div
@@ -51,6 +45,6 @@ el.ariaRelevant = "text";
 console.log(el.ariaRelevant); // text
 ```
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
