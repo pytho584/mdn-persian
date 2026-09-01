@@ -1,7 +1,5 @@
 ---
 title: "FileEntrySync"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileEntrySync"
-status: "needs-translation"
 ---
 
 ---
@@ -16,17 +14,17 @@ browser-compat: api.FileEntrySync
 
 {{APIRef("File and Directory Entries API")}} {{Non-standard_header}}{{Deprecated_Header}}
 
-The `FileEntrySync` interface represents a file in a file system. It lets you write content to a file.
+رابط `FileEntrySync` یک فایل را در سیستم فایل نمایش می‌دهد و به شما امکان می‌دهد محتوایی را در یک فایل بنویسید.
 
 > [!WARNING]
-> This interface is deprecated and is no more on the standard track.
-> _Do not use it anymore._ Use the [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API) instead.
+> این رابط منسوخ شده است و دیگر در مسیر استاندارد قرار ندارد.
+> _دیگر از آن استفاده نکنید._ در عوض از [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API) استفاده کنید.
 
-## Basic concepts
+## مفاهیم پایه
 
-To write content to file, create a FileWriter object by calling [`createWriter()`](#createwriter).
+برای نوشتن محتوا در فایل، با فراخوانی [`createWriter()`](#createwriter) یک شیء `FileWriter` بسازید.
 
-## Method overview
+## نمای کلی متدها
 
 <table class="standard-table">
   <tbody>
@@ -43,66 +41,66 @@ To write content to file, create a FileWriter object by calling [`createWriter()
   </tbody>
 </table>
 
-## Instance methods
+## متدهای نمونه
 
 ### createWriter()
 
-Creates a new `FileWriter` associated with the file that the `FileEntry` represents.
+یک `FileWriter` جدید مرتبط با فایلِ متناظر با این `FileEntry` می‌سازد.
 
 ```js-nolint
 createWriter()
 ```
 
-#### Parameters
+#### پارامترها
 
-None.
+هیچ.
 
-#### Return value
+#### مقدار بازگشتی
 
-A `FileWriterSync` object.
+یک شیء `FileWriterSync`.
 
-#### Exceptions
+#### استثناها
 
-This method can raise a [DOMException](/en-US/docs/Web/API/DOMException) with the following codes:
+این متد می‌تواند یک [DOMException](/en-US/docs/Web/API/DOMException) با کدهای زیر ایجاد کند:
 
-| Exception           | Description                                                                    |
+| Exception           | توضیحات                                                                    |
 | ------------------- | ------------------------------------------------------------------------------ |
-| `NOT_FOUND_ERR`     | The file does not exist.                                                       |
-| `INVALID_STATE_ERR` | The file is no longer valid for some reason other than it having been deleted. |
+| `NOT_FOUND_ERR`     | فایل وجود ندارد.                                                       |
+| `INVALID_STATE_ERR` | فایل به دلایلی غیر از حذف‌شدن، دیگر معتبر نیست. |
 
 ### file()
 
-Returns a File that represents the current state of the file that this `FileEntry` represents.
+یک `File` برمی‌گرداند که وضعیت فعلی فایلِ متناظر با این `FileEntry` را نشان می‌دهد.
 
 ```js-nolint
 file()
 ```
 
-#### Parameters
+#### پارامترها
 
-None.
+هیچ.
 
-#### Return value
+#### مقدار بازگشتی
 
-A `File` object.
+یک شیء `File`.
 
-#### Exceptions
+#### استثناها
 
-This method can raise a [DOMException](/en-US/docs/Web/API/DOMException) with the following codes:
+این متد می‌تواند یک [DOMException](/en-US/docs/Web/API/DOMException) با کدهای زیر ایجاد کند:
 
-| Exception           | Description                                                                    |
+| Exception           | توضیحات                                                                    |
 | ------------------- | ------------------------------------------------------------------------------ |
-| `NOT_FOUND_ERR`     | The file does not exist.                                                       |
-| `INVALID_STATE_ERR` | The file is no longer valid for some reason other than it having been deleted. |
+| `NOT_FOUND_ERR`     | فایل وجود ندارد.                                                       |
+| `INVALID_STATE_ERR` | فایل به دلایلی غیر از حذف‌شدن، دیگر معتبر نیست. |
 
-## Specifications
+## مشخصات
 
-This feature is not part of any specification anymore. It is no longer on track to become a standard.
+این ویژگی دیگر بخشی از هیچ مشخصاتی نیست و دیگر در مسیر استاندارد شدن قرار ندارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
