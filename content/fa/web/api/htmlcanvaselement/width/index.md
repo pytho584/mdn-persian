@@ -1,11 +1,5 @@
 ---
 title: "HTMLCanvasElement: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/width"
-status: "needs-translation"
----
-
----
-title: "HTMLCanvasElement: width property"
 short-title: width
 slug: Web/API/HTMLCanvasElement/width
 page-type: web-api-instance-property
@@ -14,48 +8,43 @@ browser-compat: api.HTMLCanvasElement.width
 
 {{APIRef("Canvas API")}}
 
-The **`HTMLCanvasElement.width`** property is a
-positive `integer` reflecting the [`width`](/en-US/docs/Web/HTML/Reference/Elements/canvas#width) HTML
-attribute of the {{HTMLElement("canvas")}} element interpreted in CSS pixels. When the
-attribute is not specified, or if it is set to an invalid value, like a negative, the
-default value of `300` is used.
+خاصیت **`HTMLCanvasElement.width`** یک `integer` مثبت است که منعکس‌کنندهٔ ویژگی HTML [`width`](/en-US/docs/Web/HTML/Reference/Elements/canvas#width) عنصر {{HTMLElement("canvas")}} است که به پیکسل‌های CSS تفسیر می‌شود. وقتی ویژگی مشخص نشده باشد یا به مقدار نامعتبری (مانند منفی) تنظیم شود، مقدار پیش‌فرض `300` استفاده می‌شود.
 
-Setting the `width` property resets the entire rendering context to its default state. This includes clearing the canvas (backing buffer), resetting the current path, and resetting _all_ properties like `fillStyle` and `globalCompositeOperation`. This reset occurs for all context types, and occurs even when setting `width` to its current value. To restore the previous content after changing the width, use {{domxref("CanvasRenderingContext2D.getImageData()")}} and {{domxref("CanvasRenderingContext2D.putImageData()")}}. Context properties must be separately tracked and restored.
+تنظیم خاصیت `width` کل بافت رندرینگ را به حالت پیش‌فرض خود بازنشانی می‌کند. این شامل پاک کردن بوم (بافر پشتیبان)، بازنشانی مسیر فعلی، و بازنشانی _همه_ خصوصیات مانند `fillStyle` و `globalCompositeOperation` می‌شود. این بازنشانی برای همه انواع بافت رخ می‌دهد، و حتی زمانی که `width` را به مقدار فعلی آن تنظیم کنید نیز اتفاق می‌افتد. برای بازیابی محتوای قبلی پس از تغییر عرض، از {{domxref("CanvasRenderingContext2D.getImageData()")}} و {{domxref("CanvasRenderingContext2D.putImageData()")}} استفاده کنید. خصوصیات بافت باید جداگانه ردیابی و بازیابی شوند.
 
-This is one of the two properties, the other being
-{{domxref("HTMLCanvasElement.height")}}, that controls the size of the canvas.
+این یکی از دو خاصیتی است که دیگری {{domxref("HTMLCanvasElement.height")}} می‌باشد و اندازهٔ بوم را کنترل می‌کنند.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
-Given this {{HTMLElement("canvas")}} element:
+با توجه به این عنصر {{HTMLElement("canvas")}}:
 
 ```html
 <canvas id="canvas" width="300" height="300"></canvas>
 ```
 
-You can get the width of the canvas with the following code:
+می‌توانید عرض بوم را با کد زیر بدست آورید:
 
 ```js
 const canvas = document.getElementById("canvas");
 console.log(canvas.width); // 300
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("HTMLCanvasElement")}}: Interface used to define the `HTMLCanvasElement.width` property
-- {{domxref("HTMLCanvasElement.height")}}: Other property used to control the size of the canvas
+- {{domxref("HTMLCanvasElement")}}: رابطی که برای تعریف خاصیت `HTMLCanvasElement.width` استفاده می‌شود
+- {{domxref("HTMLCanvasElement.height")}}: خاصیت دیگر برای کنترل اندازهٔ بوم
 - {{domxref("HTMLEmbedElement.width")}}
 - {{domxref("HTMLIFrameElement.width")}}
 - {{domxref("HTMLImageElement.width")}}
