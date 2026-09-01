@@ -1,9 +1,6 @@
 ---
 title: "DOMTokenList: toString() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toString"
-status: "needs-translation"
 ---
-
 ---
 title: "DOMTokenList: toString() method"
 short-title: toString()
@@ -14,23 +11,23 @@ browser-compat: api.DOMTokenList.toString
 
 {{APIRef("DOM")}}
 
-The **`toString()`** {{Glossary("stringifier")}} method of the {{domxref("DOMTokenList")}} interface returns the values of the token list serialized as a string. The return value is a space-separated list of tokens equal to the {{domxref("DOMTokenList.value")}} property.
+میان‌بر **`toString()`** (تبدیل‌کننده به رشته) از رابط {{domxref("DOMTokenList")}} مقادیر فهرست نشانه‌ها را به صورت یک رشته بازمی‌گرداند. مقدار بازگشتی، فهرستی از نشانه‌ها با جداکننده فاصله است که با ویژگی {{domxref("DOMTokenList.value")}} برابر است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toString()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const element = document.createElement("div");
@@ -43,15 +40,15 @@ console.log(classes.toString());
 // "shop empty-cart logged-in dark-mode"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.classList")}}
 - {{domxref("DOMTokenList.add()")}}
