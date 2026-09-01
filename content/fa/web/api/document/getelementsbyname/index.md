@@ -1,11 +1,5 @@
 ---
 title: "Document: getElementsByName() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByName"
-status: "needs-translation"
----
-
----
-title: "Document: getElementsByName() method"
 short-title: getElementsByName()
 slug: Web/API/Document/getElementsByName
 page-type: web-api-instance-method
@@ -14,26 +8,24 @@ browser-compat: api.Document.getElementsByName
 
 {{APIRef("DOM")}}
 
-The **`getElementsByName()`** method
-of the {{domxref("Document")}} object returns a {{domxref("NodeList")}} Collection of
-elements with a given `name` attribute in the document.
+متد **`getElementsByName()`** از شیء {{domxref("Document")}} یک مجموعه {{domxref("NodeList")}} از عناصری را برمی‌گرداند که دارای ویژگی `name` مشخصی در سند هستند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getElementsByName(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The value of the `name` attribute of the element(s) we are looking for.
+  - : مقدار ویژگی `name` عنصر(هایی) که به دنبال آن هستیم.
 
-### Return value
+### مقدار بازگشتی
 
-A live {{domxref("NodeList")}} collection, meaning it automatically updates as new elements with the same `name` are added to, or removed from, the document.
+یک مجموعه زنده (live) از نوع {{domxref("NodeList")}}، به این معنی که به‌طور خودکار به‌روزرسانی می‌شود زمانی که عناصر جدید با همان `name` به سند اضافه یا از آن حذف می‌شوند.
 
-## Examples
+## مثال‌ها
 
 ```html
 <!doctype html>
@@ -53,28 +45,22 @@ const upNames = document.getElementsByName("up");
 console.log(upNames[0].tagName); // displays "INPUT"
 ```
 
-## Notes
+## نکات
 
-The `name` attribute can only be applied in (X)HTML
-documents.
+ویژگی `name` فقط در اسناد (X)HTML قابل استفاده است.
 
-The returned {{domxref("NodeList")}} Collection contains _all_ elements with the
-given `name`, such as {{htmlelement("meta")}}, {{htmlelement("object")}}, and
-even elements which do not support the `name` attribute at all.
+مجموعه {{domxref("NodeList")}} بازگشتی شامل _همه_ عناصر با `name` داده شده است، مانند {{htmlelement("meta")}}، {{htmlelement("object")}} و حتی عناصری که اصلاً از ویژگی `name` پشتیبانی نمی‌کنند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("document.getElementById()")}} to return a reference to an element by its
-  unique `id`
-- {{domxref("document.getElementsByTagName()")}} to return references to elements with
-  the same [tag name](/en-US/docs/Web/API/Element/tagName)
-- {{domxref("document.querySelector()")}} to return references to elements via CSS
-  selectors like `'div.myclass'`
+- {{domxref("document.getElementById()")}} برای بازگرداندن ارجاع به یک عنصر با `id` منحصربه‌فرد آن
+- {{domxref("document.getElementsByTagName()")}} برای بازگرداندن ارجاع به عناصر با [نام تگ](/en-US/docs/Web/API/Element/tagName) یکسان
+- {{domxref("document.querySelector()")}} برای بازگرداندن ارجاع به عناصر با استفاده از انتخاب‌گرهای CSS مانند `'div.myclass'`
