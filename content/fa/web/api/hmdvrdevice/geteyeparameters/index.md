@@ -1,11 +1,5 @@
 ---
 title: "HMDVRDevice: getEyeParameters() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HMDVRDevice/getEyeParameters"
-status: "needs-translation"
----
-
----
-title: "HMDVRDevice: getEyeParameters() method"
 short-title: getEyeParameters()
 slug: Web/API/HMDVRDevice/getEyeParameters
 page-type: web-api-instance-method
@@ -17,28 +11,28 @@ browser-compat: api.HMDVRDevice.getEyeParameters
 
 {{deprecated_header}}{{APIRef("WebVR API")}}{{Non-standard_header}}
 
-The **`getEyeParameters()`** method of the {{domxref("HMDVRDevice")}} interface returns current parameters for the eye specified as its argument ("left" or "right") — stored in a {{domxref("VREyeParameters")}} object.
+**`getEyeParameters()`** 方法属于 {{domxref("HMDVRDevice")}} 接口，用于返回以参数形式指定的眼睛（`"left"` 或 `"right"`）的当前参数——这些参数存储在一个 {{domxref("VREyeParameters")}} 对象中。
 
-This includes field of view information, and more.
+其中包含视场角信息等。
 
-## Syntax
+## 语法
 
 ```js-nolint
 getEyeParameters(whichEye)
 ```
 
-### Parameters
+### 参数
 
 - `whichEye`
-  - : A string representing the eye you want to return information about. The value can be `left` or `right`.
+  - : 一个字符串，表示您想要获取其信息的眼睛。该值可以是 `left` 或 `right`。
 
-### Return value
+### 返回值
 
-A {{domxref("VREyeParameters")}} object.
+一个 {{domxref("VREyeParameters")}} 对象。
 
-## Examples
+## 示例
 
-The following example is taken from the Mozilla VR Team's [threejs-vr-boilerplate](https://github.com/MozillaReality/vr-web-examples/tree/master/threejs-vr-boilerplate) code — to be precise, the [VREffect.js file](https://github.com/MozillaReality/vr-web-examples/blob/master/threejs-vr-boilerplate/js/VREffect.js). Early on in the code the `getEyeParameters()` method is used to access information about each eye, which is then used for rendering calculations later on.
+以下示例取自 Mozilla VR 团队的 [threejs-vr-boilerplate](https://github.com/MozillaReality/vr-web-examples/tree/master/threejs-vr-boilerplate) 代码——更准确地说是其中的 [VREffect.js 文件](https://github.com/MozillaReality/vr-web-examples/blob/master/threejs-vr-boilerplate/js/VREffect.js)。在代码早期，使用 `getEyeParameters()` 方法来获取每只眼睛的信息，这些信息随后会用于渲染计算。
 
 ```js
 if (vrHMD.getEyeParameters !== undefined) {
@@ -54,10 +48,10 @@ if (vrHMD.getEyeParameters !== undefined) {
 }
 ```
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [WebVR API](/en-US/docs/Web/API/WebVR_API)
