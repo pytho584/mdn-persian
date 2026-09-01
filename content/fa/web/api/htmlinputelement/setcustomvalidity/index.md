@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: setCustomValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setCustomValidity"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: setCustomValidity() method"
 short-title: setCustomValidity()
 slug: Web/API/HTMLInputElement/setCustomValidity
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.HTMLInputElement.setCustomValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLInputElement.setCustomValidity()`** method sets a custom validity message for the element.
+متد **`HTMLInputElement.setCustomValidity()`** یک پیام اعتبارسنجی سفارشی برای عنصر تنظیم می‌کند.
 
 ## Syntax
 
@@ -25,24 +19,19 @@ setCustomValidity(message)
 ### Parameters
 
 - `message`
-  - : The message to use for validity errors.
+  - : پیامی که برای خطاهای اعتبارسنجی استفاده می‌شود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ### Exceptions
 
-None.
+هیچ.
 
 ## Examples
 
-In this example, we pass the ID of an input element and set different error
-messages depending on whether the value is missing, too low, or too high. Note
-that the message will not be displayed immediately. Attempting to submit the
-form will display the message, or you can call the
-[`reportValidity()`](/en-US/docs/Web/API/HTMLInputElement/reportValidity) method
-on the element.
+در این مثال، شناسه (ID) یک عنصر ورودی را پاس می‌دهیم و بسته به اینکه مقدار وجود نداشته باشد، خیلی کم باشد یا خیلی زیاد باشد، پیام‌های خطای متفاوتی تنظیم می‌کنیم. توجه داشته باشید که پیام بلافاصله نمایش داده نمی‌شود. با تلاش برای ارسال فرم، پیام نمایش داده می‌شود، یا می‌توانید متد [`reportValidity()`](/en-US/docs/Web/API/HTMLInputElement/reportValidity) را روی عنصر فراخوانی کنید.
 
 ```js
 function validate(inputID) {
@@ -63,9 +52,7 @@ function validate(inputID) {
 }
 ```
 
-It's vital to set the message to an empty string if there are no errors. As long as the
-error message is not empty, the form will not pass validation and will not be
-submitted.
+بسیار مهم است که اگر خطایی وجود نداشته باشد، پیام را روی یک رشته خالی تنظیم کنید. تا زمانی که پیام خطا خالی نباشد، فرم از اعتبارسنجی عبور نمی‌کند و ارسال نخواهد شد.
 
 ## Specifications
 
