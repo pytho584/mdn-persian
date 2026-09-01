@@ -1,10 +1,4 @@
 ---
-title: "DOMPoint"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint"
-status: "needs-translation"
----
-
----
 title: DOMPoint
 slug: Web/API/DOMPoint
 page-type: web-api-interface
@@ -13,44 +7,44 @@ browser-compat: api.DOMPoint
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-A **`DOMPoint`** object represents a 2D or 3D point in a coordinate system; it includes values for the coordinates in up to three dimensions, as well as an optional perspective value. `DOMPoint` is based on {{domxref("DOMPointReadOnly")}} but allows its properties' values to be changed.
+یک شیء **`DOMPoint`** یک نقطه دوبعدی یا سه‌بعدی را در یک دستگاه مختصات نشان می‌دهد؛ این شیء شامل مقادیری برای مختصات در حداکثر سه بعد، به همراه یک مقدار پرسپکتیو اختیاری است. `DOMPoint` بر پایه {{domxref("DOMPointReadOnly")}} ساخته شده است اما اجازه می‌دهد مقادیر ویژگی‌های آن تغییر کنند.
 
-In general, a positive `x` component represents a position to the right of the origin, a positive `y` component is downward from the origin, and a positive `z` component extends outward from the screen (in other words, toward the user).
+به طور کلی، مؤلفه `x` مثبت نشان‌دهنده موقعیتی در سمت راست مبدأ، مؤلفه `y` مثبت به سمت پایین از مبدأ، و مؤلفه `z` مثبت به سمت بیرون از صفحه (به عبارت دیگر، به سمت کاربر) گسترش می‌یابد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("DOMPoint.DOMPoint","DOMPoint()")}}
-  - : Creates and returns a new `DOMPoint` object given the values of zero or more of its coordinate components and optionally the `w` perspective value. You can also use an existing `DOMPoint` or `DOMPointReadOnly` or an object to create a new point by calling the {{domxref("DOMPoint.fromPoint_static", "DOMPoint.fromPoint()")}} static method.
+  - : یک شیء `DOMPoint` جدید با توجه به مقادیر صفر یا چند مؤلفه مختصاتی آن و به صورت اختیاری مقدار پرسپکتیو `w` ایجاد و برمی‌گرداند. همچنین می‌توانید با فراخوانی متد استاتیک {{domxref("DOMPoint.fromPoint_static", "DOMPoint.fromPoint()")}}، از یک `DOMPoint` یا `DOMPointReadOnly` موجود یا یک شیء برای ایجاد یک نقطه جدید استفاده کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_`DOMPoint` may also inherit properties from its parent, {{domxref("DOMPointReadOnly")}}._
+_`DOMPoint` ممکن است ویژگی‌هایی را نیز از والد خود، {{domxref("DOMPointReadOnly")}}، به ارث ببرد._
 
 - {{domxref("DOMPoint.x")}}
-  - : The `x` coordinate of the `DOMPoint`.
+  - : مختصات `x` از `DOMPoint`.
 - {{domxref("DOMPoint.y")}}
-  - : The `y` coordinate of the `DOMPoint`.
+  - : مختصات `y` از `DOMPoint`.
 - {{domxref("DOMPoint.z")}}
-  - : The `z` coordinate of the `DOMPoint`.
+  - : مختصات `z` از `DOMPoint`.
 - {{domxref("DOMPoint.w")}}
-  - : The perspective value of the `DOMPoint`.
+  - : مقدار پرسپکتیو از `DOMPoint`.
 
-## Instance methods
+## روش‌های نمونه
 
-_`DOMPoint` inherits instance methods from its parent, {{domxref("DOMPointReadOnly")}}._
+_`DOMPoint` روش‌های نمونه را از والد خود، {{domxref("DOMPointReadOnly")}}، به ارث می‌برد._
 
-## Static methods
+## روش‌های استاتیک
 
-_`DOMPoint` may also inherit static methods from its parent, {{domxref("DOMPointReadOnly")}}._
+_`DOMPoint` ممکن است روش‌های استاتیک را نیز از والد خود، {{domxref("DOMPointReadOnly")}}، به ارث ببرد._
 
 - {{domxref("DOMPoint/fromPoint_static", "DOMPoint.fromPoint()")}}
-  - : Creates a new mutable `DOMPoint` object given an existing point (or an object containing matching properties), which provides the values for its properties.
+  - : یک شیء `DOMPoint` قابل تغییر جدید با توجه به یک نقطه موجود (یا یک شیء حاوی ویژگی‌های منطبق) ایجاد می‌کند که مقادیر ویژگی‌های آن را فراهم می‌کند.
 
-## Examples
+## مثال‌ها
 
-In the [WebXR Device API](/en-US/docs/Web/API/WebXR_Device_API), `DOMPointReadOnly` values represent positions and orientations. In the following snippet, the pose of the XR device (such as a VR headset or phone with AR capabilities) can be retrieved by calling using {{domxref("XRFrame.getViewerPose()")}} during an {{domxref("XRSession")}} animation frame, then accessing the resulting {{domxref("XRPose")}}'s {{domxref("XRPose.transform","transform")}} property, which contains two `DOMPointReadOnly` attributes: {{domxref("XRRigidTransform.position","position")}} as a vector and {{domxref("XRRigidTransform.orientation","orientation")}} as a quaternion.
+در [WebXR Device API](/en-US/docs/Web/API/WebXR_Device_API)، مقادیر `DOMPointReadOnly` موقعیت‌ها و جهت‌گیری‌ها را نشان می‌دهند. در قطعه کد زیر، حالت دستگاه XR (مانند هدست واقعیت مجازی یا تلفن دارای قابلیت واقعیت افزوده) را می‌توان با فراخوانی {{domxref("XRFrame.getViewerPose()")}} در طول یک فریم انیمیشن {{domxref("XRSession")}} بازیابی کرد و سپس به ویژگی {{domxref("XRPose.transform","transform")}} از {{domxref("XRPose")}} حاصله دسترسی یافت که شامل دو ویژگی `DOMPointReadOnly` است: {{domxref("XRRigidTransform.position","position")}} به عنوان یک بردار و {{domxref("XRRigidTransform.orientation","orientation")}} به عنوان یک چهارتایی.
 
 ```js
 function onXRFrame(time, xrFrame) {
@@ -75,15 +69,15 @@ function onXRFrame(time, xrFrame) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMRect")}}
 - {{domxref("DOMMatrix")}}
