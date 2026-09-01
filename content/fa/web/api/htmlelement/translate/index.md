@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: translate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/translate"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: translate property"
 short-title: translate
 slug: Web/API/HTMLElement/translate
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLElement.translate
 
 {{APIRef("HTML DOM")}}
 
-The **`translate`** property of the {{domxref("HTMLElement")}} interface indicates whether an element's attribute values and the values of its {{domxref("Text")}} node children are to be translated when the page is localized, or whether to leave them unchanged.
+ویژگی **`translate`** در رابط {{domxref("HTMLElement")}} مشخص می‌کند که آیا مقادیر ویژگی‌های یک عنصر و مقادیر گره‌های فرزند {{domxref("Text")}} آن هنگام بومی‌سازی صفحه ترجمه شوند یا خیر.
 
-It reflects the value of the [`translate`](/en-US/docs/Web/HTML/Reference/Global_attributes/translate) HTML global attribute.
+این ویژگی منعکس‌کننده‌ی مقدار ویژگی سراسری HTML [`translate`](/en-US/docs/Web/HTML/Reference/Global_attributes/translate) است.
 
-## Value
+## مقدار
 
-A boolean value that is `true` if an element's attribute values and the values of its {{domxref("Text")}} node children are to be translated when the page is localized, `false` otherwise.
+یک مقدار بولی که اگر مقادیر ویژگی‌های یک عنصر و مقادیر گره‌های فرزند {{domxref("Text")}} آن هنگام بومی‌سازی صفحه ترجمه شوند، `true` و در غیر این صورت `false` است.
 
-## Examples
+## مثال‌ها
 
-The following example shows how to enable or disable translation via script:
+مثال زیر نحوه فعال یا غیرفعال کردن ترجمه را از طریق اسکریپت نشان می‌دهد:
 
 ```html
 <div>
@@ -58,14 +52,14 @@ controller.addEventListener("change", (e) => {
 
 {{EmbedLiveSample('Examples', 600, 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`translate`](/en-US/docs/Web/HTML/Reference/Global_attributes/translate) HTML global attribute
+- ویژگی سراسری HTML [`translate`](/en-US/docs/Web/HTML/Reference/Global_attributes/translate)
