@@ -1,43 +1,24 @@
 ---
 title: "Element: shadowRoot property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot"
-status: "needs-translation"
----
-
----
-title: "Element: shadowRoot property"
-short-title: shadowRoot
-slug: Web/API/Element/shadowRoot
-page-type: web-api-instance-property
-browser-compat: api.Element.shadowRoot
 ---
 
 {{APIRef("Shadow DOM")}}
 
-The `Element.shadowRoot` read-only property
-represents the shadow root hosted by the element.
+خاصیت فقط خواندنی `Element.shadowRoot` نشان‌دهنده shadow root (ریشه سایه) میزبانی شده توسط عنصر است.
 
-Use {{DOMxRef("Element.attachShadow()")}} to add a shadow root to an existing element.
+برای افزودن یک shadow root به یک عنصر موجود از {{DOMxRef("Element.attachShadow()")}} استفاده کنید.
 
-## Value
+## مقدار
 
-A {{DOMxRef("ShadowRoot")}} object instance, or `null` if the associated
-shadow root was attached with its {{DOMxRef("ShadowRoot.mode", "mode")}} set to
-`closed`. (See {{DOMxRef("Element.attachShadow()")}} for further details).
+یک نمونه از شیء {{DOMxRef("ShadowRoot")}}، یا `null` اگر shadow root مرتبط با {{DOMxRef("ShadowRoot.mode", "mode")}} آن برابر با `closed` متصل شده باشد. (برای جزئیات بیشتر به {{DOMxRef("Element.attachShadow()")}} مراجعه کنید).
 
-Some built-in elements, such as {{HTMLElement("input")}} and {{HTMLElement("img")}}, have user-agent shadow roots that are closed to script. Therefore, their `shadowRoot` property is always `null`.
+برخی عناصر داخلی، مانند {{HTMLElement("input")}} و {{HTMLElement("img")}}، دارای shadow roots عامل کاربر (user-agent) هستند که برای اسکریپت بسته هستند. بنابراین، خاصیت `shadowRoot` آن‌ها همیشه `null` است.
 
-## Examples
+## مثال‌ها
 
-The following snippets are taken from our [life-cycle-callbacks](https://github.com/mdn/web-components-examples/tree/main/life-cycle-callbacks)
-example ([see it live also](https://mdn.github.io/web-components-examples/life-cycle-callbacks/)), which creates an element that displays a square of a size and color
-specified in the element's attributes.
+قطعه کدهای زیر از مثال [life-cycle-callbacks](https://github.com/mdn/web-components-examples/tree/main/life-cycle-callbacks) گرفته شده‌اند ([همچنین به صورت زنده ببینید](https://mdn.github.io/web-components-examples/life-cycle-callbacks/))، که یک عنصر ایجاد می‌کند یک مربع با اندازه و رنگی که در ویژگی‌های عنصر مشخص شده است نمایش می‌دهد.
 
-Inside the `<custom-square>` element's class definition we include
-some life cycle callbacks that make a call to an external function,
-`updateStyle()`, which actually applies the size and color to the element.
-You'll see that we are passing it `this` (the custom element itself) as a
-parameter.
+درون تعریف کلاس عنصر `<custom-square>`، ما چندین فراخوان چرخه عمر (life cycle callbacks) قرار می‌دهیم که یک تابع خارجی به نام `updateStyle()` را فراخوانی می‌کنند، که در واقع اندازه و رنگ را به عنصر اعمال می‌کند. مشاهده می‌کنید که ما `this` (خود عنصر سفارشی) را به عنوان پارامتر به آن ارسال می‌کنیم.
 
 ```js
 class Square extends HTMLElement {
@@ -53,10 +34,7 @@ class Square extends HTMLElement {
 }
 ```
 
-In the `updateStyle()` function itself, we get a reference to the shadow DOM
-using `Element.shadowRoot`. From here we use standard DOM traversal
-techniques to find the {{htmlelement("style")}} element inside the shadow DOM and then
-update the CSS found inside it:
+در خود تابع `updateStyle()`، ما با استفاده از `Element.shadowRoot` یک ارجاع به shadow DOM دریافت می‌کنیم. از اینجا از تکنیک‌های استاندارد پیمایش DOM برای یافتن عنصر {{htmlelement("style")}} درون shadow DOM و سپس به‌روزرسانی CSS درون آن استفاده می‌کنیم:
 
 ```js
 function updateStyle(elem) {
@@ -77,10 +55,10 @@ function updateStyle(elem) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
