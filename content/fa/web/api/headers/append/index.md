@@ -1,11 +1,5 @@
 ---
 title: "Headers: append() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Headers/append"
-status: "needs-translation"
----
-
----
-title: "Headers: append() method"
 short-title: append()
 slug: Web/API/Headers/append
 page-type: web-api-instance-method
@@ -14,54 +8,45 @@ browser-compat: api.Headers.append
 
 {{APIRef("Fetch API")}} {{AvailableInWorkers}}
 
-The **`append()`** method of the {{domxref("Headers")}}
-interface appends a new value onto an existing header inside a `Headers`
-object, or adds the header if it does not already exist.
+متد **`append()`** در رابط {{domxref("Headers")}} یک مقدار جدید را به هدر موجود در یک شیء `Headers` اضافه می‌کند، یا اگر آن هدر از قبل وجود نداشته باشد، آن را اضافه می‌کند.
 
-The difference between {{domxref("Headers.set", "set()")}} and `append()` is
-that if the specified header already exists and accepts multiple values,
-`set()` will overwrite the existing value with the new one, whereas
-`append()` will append the new value onto the end of the set of values.
+تفاوت بین {{domxref("Headers.set", "set()")}} و `append()` این است که اگر هدر مشخص‌شده از قبل وجود داشته باشد و چند مقدار را بپذیرد، `set()` مقدار موجود را با مقدار جدید بازنویسی می‌کند، در حالی که `append()` مقدار جدید را به انتهای مجموعه مقادیر اضافه می‌کند.
 
-For security reasons, some headers can only be controlled by the user agent. These
-headers include the {{Glossary("Forbidden_request_header", "forbidden request headers")}}
-and {{Glossary("Forbidden_response_header_name", "forbidden response header names")}}.
+به دلایل امنیتی، برخی هدرها فقط توسط عامل کاربر قابل کنترل هستند. این هدرها شامل {{Glossary("Forbidden_request_header", "forbidden request headers")}} و {{Glossary("Forbidden_response_header_name", "forbidden response header names")}} می‌شوند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 append(name, value)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the HTTP header you want to add to the `Headers` object.
+  - : نام هدر HTTP که می‌خواهید به شیء `Headers` اضافه کنید.
 - `value`
-  - : The value of the HTTP header you want to add.
+  - : مقدار هدر HTTP که می‌خواهید اضافه کنید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-Creating an empty `Headers` object is simple:
+ساخت یک شیء `Headers` خالی ساده است:
 
 ```js
 const myHeaders = new Headers(); // Currently empty
 ```
 
-You could add a header to this using `append()`:
+می‌توانید با استفاده از `append()` یک هدر به این شیء اضافه کنید:
 
 ```js
 myHeaders.append("Content-Type", "image/jpeg");
 myHeaders.get("Content-Type"); // Returns 'image/jpeg'
 ```
 
-If the specified header already exists, `append()` will change its value to
-the specified value. If the specified header already exists and accepts multiple values,
-`append()` will append the new value to the end of the value set:
+اگر هدر مشخص‌شده از قبل وجود داشته باشد، `append()` مقدار آن را به مقدار مشخص‌شده تغییر می‌دهد. اگر هدر مشخص‌شده از قبل وجود داشته باشد و چند مقدار را بپذیرد، `append()` مقدار جدید را به انتهای مجموعه مقادیر اضافه می‌کند:
 
 ```js
 myHeaders.append("Accept-Encoding", "deflate");
@@ -69,17 +54,17 @@ myHeaders.append("Accept-Encoding", "gzip");
 myHeaders.get("Accept-Encoding"); // Returns 'deflate, gzip'
 ```
 
-To overwrite the old value with a new one, use {{domxref("Headers.set")}}.
+برای بازنویسی مقدار قدیمی با مقدار جدید، از {{domxref("Headers.set")}} استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [ServiceWorker API](/en-US/docs/Web/API/Service_Worker_API)
 - [HTTP access control (CORS)](/en-US/docs/Web/HTTP/Guides/CORS)
