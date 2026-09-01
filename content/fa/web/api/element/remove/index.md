@@ -1,11 +1,5 @@
 ---
 title: "Element: remove() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/remove"
-status: "needs-translation"
----
-
----
-title: "Element: remove() method"
 short-title: remove()
 slug: Web/API/Element/remove
 page-type: web-api-instance-method
@@ -14,26 +8,26 @@ browser-compat: api.Element.remove
 
 {{APIRef("DOM")}}
 
-The **`Element.remove()`** method removes the element from its parent node.
-If it has no parent node, calling `remove()` does nothing.
+متد **`Element.remove()`** عنصر را از گرهٔ والد خود حذف می‌کند.
+اگر عنصر گرهٔ والدی نداشته باشد، فراخوانی `remove()` هیچ کاری انجام نمی‌دهد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 remove()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Using `remove()`
+### استفاده از `remove()`
 
 ```html
 <div id="div-01">Here is div-01</div>
@@ -46,10 +40,10 @@ const element = document.getElementById("div-02");
 element.remove(); // Removes the div with the 'div-02' id
 ```
 
-### `Element.remove()` is unscopable
+### `Element.remove()` بدون دامنه است
 
-The `remove()` method is not scoped into the `with` statement.
-See {{jsxref("Symbol.unscopables")}} for more information.
+متد `remove()` در محدودهٔ دستور `with` قرار نمی‌گیرد.
+برای اطلاعات بیشتر به {{jsxref("Symbol.unscopables")}} مراجعه کنید.
 
 ```js
 with (node) {
@@ -58,15 +52,15 @@ with (node) {
 // ReferenceError: remove is not defined
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CharacterData.remove()")}}
 - {{domxref("DocumentType.remove()")}}
