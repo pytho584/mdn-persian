@@ -1,9 +1,6 @@
 ---
 title: "GPUDevice: features property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/features"
-status: "needs-translation"
 ---
-
 ---
 title: "GPUDevice: features property"
 short-title: features
@@ -14,21 +11,20 @@ browser-compat: api.GPUDevice.features
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`features`** read-only property of the
-{{domxref("GPUDevice")}} interface returns a {{domxref("GPUSupportedFeatures")}} object that describes additional functionality supported by the device. Only features requested during the creation of the device (i.e., when {{domxref("GPUAdapter.requestDevice()")}} is called) are included.
+خاصیت فقط خواندنی **`features`** از رابط {{domxref("GPUDevice")}} یک شیء {{domxref("GPUSupportedFeatures")}} را برمی‌گرداند که قابلیت‌های اضافی پشتیبانی‌شده توسط دستگاه را توصیف می‌کند. تنها ویژگی‌هایی که در هنگام ایجاد دستگاه درخواست شده‌اند (یعنی زمانی که {{domxref("GPUAdapter.requestDevice()")}} فراخوانی می‌شود) شامل می‌شوند.
 
 > [!NOTE]
-> Not all features will be available to WebGPU in all browsers that support it, even if the features are supported by the underlying hardware. See {{domxref("GPUAdapter.features")}} for more details.
+> همه ویژگی‌ها در همه مرورگرهایی که از WebGPU پشتیبانی می‌کنند در دسترس نخواهند بود، حتی اگر آن ویژگی‌ها توسط سخت‌افزار زیرین پشتیبانی شوند. برای جزئیات بیشتر به {{domxref("GPUAdapter.features")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A {{domxref("GPUSupportedFeatures")}} object instance. This is a [setlike](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) object.
+یک نمونه از شیء {{domxref("GPUSupportedFeatures")}}. این یک شیء [setlike](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) است.
 
-## Examples
+## نمونه‌ها
 
-In the following code we check whether a {{domxref("GPUAdapter")}} has the `texture-compression-astc` feature available. If so, we push it into the array of `requiredFeatures`, and request a device with that feature requirement using {{domxref("GPUAdapter.requestDevice()")}}.
+در کد زیر بررسی می‌کنیم که آیا یک {{domxref("GPUAdapter")}} ویژگی `texture-compression-astc` را در دسترس دارد یا خیر. اگر دارد، آن را به آرایه `requiredFeatures` اضافه می‌کنیم و با استفاده از {{domxref("GPUAdapter.requestDevice()")}} دستگاهی با آن ویژگی مورد نیاز درخواست می‌کنیم.
 
-We then log all items in the `GPUDevice.features` set to the console. This set should only contain a single item — `texture-compression-astc` — as that was the only feature requested when the device was created.
+سپس تمام موارد موجود در مجموعه `GPUDevice.features` را در کنسول ثبت می‌کنیم. این مجموعه باید فقط یک مورد داشته باشد — `texture-compression-astc` — زیرا این تنها ویژگی‌ای بود که هنگام ایجاد دستگاه درخواست شده بود.
 
 ```js
 async function init() {
@@ -59,14 +55,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
