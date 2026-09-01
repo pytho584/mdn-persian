@@ -1,7 +1,5 @@
 ---
 title: "GPUTexture: sampleCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/sampleCount"
-status: "needs-translation"
 ---
 
 ---
@@ -14,19 +12,18 @@ browser-compat: api.GPUTexture.sampleCount
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`sampleCount`** read-only property of the
-{{domxref("GPUTexture")}} interface represents the sample count of the `GPUTexture`.
+ویژگی فقط‌خواندنی **`sampleCount`** در رابط {{domxref("GPUTexture")}}، تعداد نمونه (sample count) آن `GPUTexture` را نشان می‌دهد.
 
-This is set via the `sampleCount` property in the descriptor object passed into the originating {{domxref("GPUDevice.createTexture()")}} call. If omitted, this defaults to 1.
+این مقدار از طریق ویژگی `sampleCount` در شیء توصیف‌گر (descriptor) که به فراخوانی متناظر {{domxref("GPUDevice.createTexture()")}} ارسال می‌شود، تنظیم می‌گردد. اگر این ویژگی حذف شود، مقدار پیش‌فرض آن ۱ است.
 
-## Value
+## مقدار
 
-A number. Possible values are:
+یک عدد. مقادیر ممکن عبارت‌اند از:
 
-- 1
-- 4, which indicates a multi-sampled texture.
+- ۱
+- ۴، که نشان‌دهندهٔ یک بافت چندنمونه‌ای (multi-sampled texture) است.
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -40,14 +37,14 @@ const depthTexture = device.createTexture({
 console.log(depthTexture.sampleCount); // 1
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
