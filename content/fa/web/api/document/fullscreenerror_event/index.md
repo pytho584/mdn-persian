@@ -1,11 +1,5 @@
 ---
 title: "Document: fullscreenerror event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenerror_event"
-status: "needs-translation"
----
-
----
-title: "Document: fullscreenerror event"
 short-title: fullscreenerror
 slug: Web/API/Document/fullscreenerror_event
 page-type: web-api-event
@@ -14,17 +8,17 @@ browser-compat: api.Document.fullscreenerror_event
 
 {{APIRef("Fullscreen API")}}
 
-The **`fullscreenerror`** event is fired when the browser cannot switch to fullscreen mode.
+رویداد **`fullscreenerror`** زمانی به وجود می‌آید که مرورگر نتواند به حالت تمام‌صفحه (fullscreen) برود.
 
-As with the [`fullscreenchange` event](/en-US/docs/Web/API/Document/fullscreenchange_event), two `fullscreenerror` events are fired; the first is sent to the {{domxref("Element")}} which failed to change modes, and the second is sent to the {{domxref("Document")}} which owns that element.
+همانند رویداد [`fullscreenchange`](/en-US/docs/Web/API/Document/fullscreenchange_event)، دو رویداد `fullscreenerror` ارسال می‌شود؛ اولی به {{domxref("Element")}} که نتوانسته وضعیت خود را تغییر دهد ارسال می‌شود و دومی به {{domxref("Document")}} که مالک آن عنصر است.
 
-For some reasons that switching into fullscreen mode might fail, see [the guide to the Fullscreen API](/en-US/docs/Web/API/Fullscreen_API/Guide).
+برای آگاهی از برخی دلایلی که ممکن است باعث شکست تغییر به حالت تمام‌صفحه شوند، به [راهنمای Fullscreen API](/en-US/docs/Web/API/Fullscreen_API/Guide) مراجعه کنید.
 
-This event is not cancelable.
+این رویداد قابل ابطال (cancelable) نیست.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید یا یک ویژگی handler رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("fullscreenerror", (event) => { })
@@ -32,11 +26,11 @@ addEventListener("fullscreenerror", (event) => { })
 onfullscreenerror = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const requestor = document.querySelector("div");
@@ -53,17 +47,17 @@ document.onfullscreenerror = handleError;
 requestor.requestFullscreen();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document/fullscreenchange_event", "fullscreenchange")}}
-- {{domxref("Element")}}: {{domxref("Element/fullscreenerror_event", "fullscreenerror")}} event
+- {{domxref("Element")}}: رویداد {{domxref("Element/fullscreenerror_event", "fullscreenerror")}}
 - [Fullscreen API](/en-US/docs/Web/API/Fullscreen_API)
-- [Guide to the Fullscreen API](/en-US/docs/Web/API/Fullscreen_API/Guide)
+- [راهنمای Fullscreen API](/en-US/docs/Web/API/Fullscreen_API/Guide)
