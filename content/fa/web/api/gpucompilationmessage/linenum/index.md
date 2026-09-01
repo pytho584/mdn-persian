@@ -1,7 +1,5 @@
 ---
 title: "GPUCompilationMessage: lineNum property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/lineNum"
-status: "needs-translation"
 ---
 
 ---
@@ -14,21 +12,20 @@ browser-compat: api.GPUCompilationMessage.lineNum
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`lineNum`** read-only property of the
-{{domxref("GPUCompilationMessage")}} interface is a number representing the line number in the shader code that the message corresponds to.
+خاصیت فقط‌خواندنی **`lineNum`** از رابط {{domxref("GPUCompilationMessage")}} عددی است که شماره خط در کد شیدر را نشان می‌دهد که پیام به آن مربوط می‌شود.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-Note that:
+توجه داشته باشید که:
 
-- If the message corresponds to a substring, `lineNum` refers to the line number that the substring begins on.
-- If the message does not correspond to a specific line of code (perhaps it refers to the whole of the shader code), `lineNum` will be 0.
-- Values are one-based — a value of 1 refers to the first line of code.
-- Lines are delimited by line breaks. In WGSL, a [specific list of characters](https://gpuweb.github.io/gpuweb/wgsl/#line-break) is defined as line breaks.
+- اگر پیام به یک زیررشته مربوط باشد، `lineNum` به شماره خطی اشاره می‌کند که زیررشته از آنجا شروع می‌شود.
+- اگر پیام به خط مشخصی از کد مربوط نباشد (مثلاً به کل کد شیدر اشاره داشته باشد)، `lineNum` برابر با ۰ خواهد بود.
+- مقادیر یک‌پایه هستند — مقدار ۱ به اولین خط کد اشاره دارد.
+- خط‌ها با شکست خط از هم جدا می‌شوند. در WGSL، [فهرست خاصی از کاراکترها](https://gpuweb.github.io/gpuweb/wgsl/#line-break) به‌عنوان شکست خط تعریف شده است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const shaderModule = device.createShaderModule({
@@ -40,16 +37,16 @@ const firstMessage = shaderInfo.messages[0];
 console.log(firstMessage.lineNum);
 ```
 
-See the main [`GPUCompilationInfo` page](/en-US/docs/Web/API/GPUCompilationInfo#examples) for a more detailed example.
+برای مثال دقیق‌تر، به صفحهٔ اصلی [`GPUCompilationInfo`](/en-US/docs/Web/API/GPUCompilationInfo#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
