@@ -1,7 +1,5 @@
 ---
 title: "DynamicsCompressorNode: attack property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/attack"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,18 @@ browser-compat: api.DynamicsCompressorNode.attack
 
 {{ APIRef("Web Audio API") }}
 
-The `attack` property of the {{ domxref("DynamicsCompressorNode") }} interface is a [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}} representing the amount of time, in seconds, required to reduce the gain by 10 dB. It defines how quickly the signal is adapted when its volume is increased.
+ویژگی `attack` در رابط {{ domxref("DynamicsCompressorNode") }} یک {{domxref("AudioParam")}} از نوع [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) است که مدت زمان لازم (به ثانیه) برای کاهش بهره به اندازه ۱۰ دسیبل را نشان می‌دهد. این ویژگی مشخص می‌کند که با افزایش حجم سیگنال، سیگنال با چه سرعتی تطبیق داده شود.
 
-The `attack` property's default value is `0.003` and it can be set between `0` and `1`.
+مقدار پیش‌فرض ویژگی `attack` برابر با `0.003` است و می‌توان آن را بین `0` و `1` تنظیم کرد.
 
-## Value
+## مقدار
 
-An {{domxref("AudioParam")}}.
+یک {{domxref("AudioParam")}}.
 
 > [!NOTE]
-> Though the {{domxref("AudioParam")}} returned is read-only, the value it represents is not.
+> اگرچه {{domxref("AudioParam")}} بازگردانده‌شده فقط‌خواندنی است، مقداری که نشان می‌دهد فقط‌خواندنی نیست.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new AudioContext();
@@ -33,16 +31,16 @@ const compressor = audioCtx.createDynamicsCompressor();
 compressor.attack.value = 0;
 ```
 
-See [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) for more complete example code.
+برای نمونه‌کدهای کامل‌تر، [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
