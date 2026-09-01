@@ -1,10 +1,4 @@
 ---
-title: "GPUCanvasContext"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext"
-status: "needs-translation"
----
-
----
 title: GPUCanvasContext
 slug: Web/API/GPUCanvasContext
 page-type: web-api-interface
@@ -13,27 +7,27 @@ browser-compat: api.GPUCanvasContext
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUCanvasContext`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents the WebGPU rendering context of a {{htmlelement("canvas")}} element, returned via an {{domxref("HTMLCanvasElement.getContext()")}} call with a `contextType` of `"webgpu"`.
+رابط **`GPUCanvasContext`** از {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} نمایانگر زمینه‌ی رندر WebGPU یک عنصر {{htmlelement("canvas")}} است که از طریق فراخوانی {{domxref("HTMLCanvasElement.getContext()")}} با `contextType` برابر با `"webgpu"` بازگردانده می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPUCanvasContext.canvas", "canvas")}} {{ReadOnlyInline}}
-  - : Returns a reference to the canvas that the context was created from.
+  - : یک ارجاع به بوم‌رنگی (canvas) که زمینه از آن ایجاد شده است را بازمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("GPUCanvasContext.configure", "configure()")}}
-  - : Configures the context to use for rendering with a given {{domxref("GPUDevice")}} and clears the canvas to transparent black.
+  - : زمینه را برای استفاده در رندرگیری با یک {{domxref("GPUDevice")}} مشخص پیکربندی می‌کند و بوم‌رنگ را به رنگ سیاه شفاف پاک می‌کند.
 - {{domxref("GPUCanvasContext.getConfiguration", "getConfiguration()")}}
-  - : Returns the current configuration set for the context.
+  - : پیکربندی جاری تنظیم‌شده برای زمینه را بازمی‌گرداند.
 - {{domxref("GPUCanvasContext.getCurrentTexture", "getCurrentTexture()")}}
-  - : Returns the next {{domxref("GPUTexture")}} to be composited to the document by the canvas context.
+  - : {{domxref("GPUTexture")}} بعدی را که توسط زمینه‌ی بوم‌رنگ به سند ترکیب (composite) خواهد شد، بازمی‌گرداند.
 - {{domxref("GPUCanvasContext.unconfigure", "unconfigure()")}}
-  - : Removes any previously-set context configuration, and destroys any textures produced while the canvas context was configured.
+  - : هر پیکربندی زمینه‌ای که پیشتر تنظیم شده است را حذف می‌کند و تمام بافت‌هایی (textures) را که در هنگام پیکربندی زمینه‌ی بوم‌رنگ تولید شده‌اند، نابود می‌کند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const canvas = document.querySelector("#gpuCanvas");
@@ -46,14 +40,14 @@ context.configure({
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
