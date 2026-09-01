@@ -1,11 +1,5 @@
 ---
 title: "EXT_sRGB extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_sRGB"
-status: "needs-translation"
----
-
----
-title: EXT_sRGB extension
 short-title: EXT_sRGB
 slug: Web/API/EXT_sRGB
 page-type: webgl-extension
@@ -14,27 +8,27 @@ browser-compat: api.EXT_sRGB
 
 {{APIRef("WebGL")}}
 
-The **`EXT_sRGB`** extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and adds sRGB support to textures and framebuffer objects.
+افزونه **`EXT_sRGB`** بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و پشتیبانی از sRGB را به بافت‌ها و اشیاء فریم‌بافر اضافه می‌کند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL با استفاده از متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، به [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) مراجعه کنید.
 
 > [!NOTE]
-> This extension is only available to {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} contexts. In {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}, the functionality of this extension is available on the WebGL2 context by default. The constants in WebGL2 are: `gl.SRGB`, `gl.SRGB8`, `gl.SRGB8_ALPHA8` and `gl.FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING`.
+> این افزونه فقط برای زمینه‌های {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} در دسترس است. در {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}، عملکرد این افزونه به طور پیش‌فرض در زمینه WebGL2 موجود است. ثابت‌های WebGL2 عبارتند از: `gl.SRGB`، `gl.SRGB8`، `gl.SRGB8_ALPHA8` و `gl.FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING`.
 
-## Constants
+## ثابت‌ها
 
-This extension exposes the following constants, which can be used in the {{domxref("WebGLRenderingContext.texImage2D()", "texImage2D()")}}, {{domxref("WebGLRenderingContext.texSubImage2D()", "texSubImage2D()")}}, {{domxref("WebGLRenderingContext.renderbufferStorage()", "renderbufferStorage()")}} and {{domxref("WebGLRenderingContext.getFramebufferAttachmentParameter()", "getFramebufferAttachmentParameter()")}} methods.
+این افزونه ثابت‌های زیر را ارائه می‌دهد که می‌توان در متدهای {{domxref("WebGLRenderingContext.texImage2D()", "texImage2D()")}}، {{domxref("WebGLRenderingContext.texSubImage2D()", "texSubImage2D()")}}، {{domxref("WebGLRenderingContext.renderbufferStorage()", "renderbufferStorage()")}} و {{domxref("WebGLRenderingContext.getFramebufferAttachmentParameter()", "getFramebufferAttachmentParameter()")}} استفاده کرد.
 
 - `ext.SRGB_EXT`
-  - : Unsized sRGB format that leaves the precision up to the driver.
+  - فرمت sRGB بدون اندازه‌گذاری که دقت را به درایور واگذار می‌کند.
 - `ext.SRGB_ALPHA_EXT`
-  - : Unsized sRGB format with unsized alpha component.
+  - فرمت sRGB بدون اندازه‌گذاری با مؤلفه آلفای بدون اندازه‌گذاری.
 - `ext.SRGB8_ALPHA8_EXT`
-  - : Sized (8-bit) sRGB and alpha formats.
+  - فرمت‌های sRGB و آلفای دارای اندازه (8-بیت).
 - `ext.FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT`
-  - : Returns the framebuffer color encoding (`gl.LINEAR` or `ext.SRGB_EXT`).
+  - کدگذاری رنگ فریم‌بافر را برمی‌گرداند (`gl.LINEAR` یا `ext.SRGB_EXT`).
 
-## Examples
+## مثال‌ها
 
 ```js
 const ext = gl.getExtension("EXT_sRGB");
@@ -55,15 +49,15 @@ gl.texImage2D(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.texImage2D()")}}
