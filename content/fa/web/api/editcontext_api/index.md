@@ -1,10 +1,4 @@
 ---
-title: "EditContext API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext_API"
-status: "needs-translation"
----
-
----
 title: EditContext API
 slug: Web/API/EditContext_API
 page-type: web-api-overview
@@ -15,56 +9,56 @@ browser-compat: api.EditContext
 
 {{DefaultAPISidebar("EditContext API")}}{{SeeCompatTable}}
 
-The **EditContext API** can be used to build rich text editors on the web that support advanced text input experiences, such as {{glossary("Input Method Editor")}} (IME) composition, emoji picker, or any other platform-specific editing-related UI surfaces.
+از **EditContext API** می‌توان برای ساخت ویرایشگرهای متن غنی در وب استفاده کرد که از تجربه‌های پیشرفته ورود متن پشتیبانی می‌کنند؛ مانند ترکیب {{glossary("Input Method Editor")}} (IME)، انتخاب‌گر ایموجی، یا هر رابط کاربری مرتبط با ویرایش خاص پلتفرم.
 
-With the EditContext API, you get the flexibility to render your own editable text region using any technology you want.
+با EditContext API، این انعطاف را دارید که ناحیه متنی قابل ویرایش خودتان را با هر فناوری که می‌خواهید رندر کنید.
 
-## Concept
+## مفهوم
 
-Multiple actors are involved when entering text in an editable region of an application:
+چندین بازیگر در وارد کردن متن در یک ناحیه قابل ویرایش یک برنامه دخیل هستند:
 
-- **User**
-  - : The user provides the text by means of an input method: a keyboard, mouse, voice, or other input method.
-- **Input method software**
-  - : The input method software converts the user's input into text. For example, this could be an {{glossary("Input Method Editor")}} (IME) that converts keystrokes from a standard keyboard into Japanese, Chinese, or Korean characters.
-- **OS text input service**
-  - : The text input service of the operating system acts as a link between the input method software and the application.
-- **Application text edit context**
-  - : The application text edit context provides a state of the text being edited. The state contains information such as the text itself, the current selection, the location of the text in the app's UI.
-- **Application editable region**
-  - : The application editable region is the UI element of the application that displays the text.
+- **کاربر**
+  - : کاربر متن را از طریق یک روش ورود فراهم می‌کند: صفحه‌کلید، ماوس، صدا یا سایر روش‌های ورود.
+- **نرم‌افزار روش ورود**
+  - : نرم‌افزار روش ورود، ورودی کاربر را به متن تبدیل می‌کند. برای مثال، این می‌تواند یک {{glossary("Input Method Editor")}} (IME) باشد که ضربه‌های کلید یک صفحه‌کلید استاندارد را به نویسه‌های ژاپنی، چینی یا کره‌ای تبدیل می‌کند.
+- **سرویس ورود متن سیستمعامل**
+  - : سرویس ورود متن سیستمعامل به‌عنوان پل ارتباطی بین نرم‌افزار روش ورود و برنامه عمل می‌کند.
+- **زمینه ویرایش متن برنامه**
+  - : زمینه ویرایش متن برنامه، وضعیت متنِ در حال ویرایش را فراهم می‌کند. این وضعیت شامل اطلاعاتی مانند خود متن، انتخاب فعلی و مکان متن در رابط کاربری برنامه است.
+- **ناحیه قابل ویرایش برنامه**
+  - : ناحیه قابل ویرایش برنامه، عنصر رابط کاربری برنامه‌ای است که متن را نمایش می‌دهد.
 
-While the three first actors are provided by the operating system, the application is responsible for providing the editable region and the text edit context.
+در حالی که سه بازیگر اول توسط سیستمعامل تأمین می‌شوند، برنامه مسئول فراهم کردن ناحیه قابل ویرایش و زمینه ویرایش متن است.
 
-On the web, editable regions are often [`<textarea>`](/en-US/docs/Web/HTML/Reference/Elements/textarea) elements, [`<input>`](/en-US/docs/Web/HTML/Reference/Elements/input) elements, or elements with the [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) attribute set to `true`. For these elements, the browser automatically provides the text edit context, and web authors are not required to write any code to support text input.
+در وب، نواحی قابل ویرایش اغلب عناصر [`<textarea>`](/en-US/docs/Web/HTML/Reference/Elements/textarea)، عناصر [`<input>`](/en-US/docs/Web/HTML/Reference/Elements/input) یا عناصری هستند که ویژگی [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) آن‌ها روی `true` تنظیم شده است. برای این عناصر، مرورگر به‌صورت خودکار زمینه ویرایش متن را فراهم می‌کند و توسعه‌دهندگان وب ملزم به نوشتن هیچ کدی برای پشتیبانی از ورود متن نیستند.
 
-### Creating custom editable regions
+### ایجاد نواحی قابل ویرایش سفارشی
 
-Web authors can also create custom editable regions using the EditContext API. For example, a web author could create a rich text editor using a [`<canvas>`](/en-US/docs/Web/HTML/Reference/Elements/canvas) element to render the text. In this case, the web author needs to write code to support text input.
+توسعه‌دهندگان وب همچنین می‌توانند با استفاده از EditContext API نواحی قابل ویرایش سفارشی ایجاد کنند. برای مثال، یک توسعه‌دهنده وب می‌تواند یک ویرایشگر متن غنی با استفاده از عنصر [`<canvas>`](/en-US/docs/Web/HTML/Reference/Elements/canvas) برای رندر کردن متن بسازد. در این حالت، توسعه‌دهنده وب برای پشتیبانی از ورود متن باید کد بنویسد.
 
-### Author's responsibilities
+### مسئولیت‌های توسعه‌دهنده
 
-If you decide to implement your own editable region, whether it draws text into a `<canvas>` or renders it into a series of DOM elements, you are responsible for providing the things that the browser would normally provide for you if you were using a `<textarea>` instead. This includes:
+اگر تصمیم دارید ناحیه قابل ویرایش خودتان را پیاده‌سازی کنید، چه متن را داخل یک `<canvas>` رسم کند چه آن را به‌صورت مجموعه‌ای از عناصر DOM رندر کند، مسئول فراهم کردن چیزهایی هستید که مرورگر معمولاً اگر به‌جایش از `<textarea>` استفاده می‌کردید برای شما فراهم می‌کرد. این موارد عبارت‌اند از:
 
-- Rendering the text.
-- Rendering the selection (if you build your editable region with DOM elements instead of a `<canvas>`, the browser does render the selection for you).
-- Letting the OS text input service know when the selection changes.
-- Letting the OS text input service know where the text is located in the UI, so the input method software can display the IME composition window in the correct location.
-- Applying certain text formats when the user is composing text within the IME composition window.
+- رندر کردن متن.
+- رندر کردن انتخاب (اگر ناحیه قابل ویرایش خود را با عناصر DOM به‌جای `<canvas>` بسازید، مرورگر انتخاب را برای شما رندر می‌کند).
+- اطلاع دادن به سرویس ورود متن سیستمعامل هنگام تغییر انتخاب.
+- اطلاع دادن به سرویس ورود متن سیستمعامل درباره مکان متن در رابط کاربری، تا نرم‌افزار روش ورود بتواند پنجره ترکیب IME را در مکان صحیح نمایش دهد.
+- اعمال برخی قالب‌های متن وقتی کاربر در حال ترکیب متن در پنجره ترکیب IME است.
 
-In return, the EditContext API makes the DOM element you choose editable and part of the document's focus order. In addition, the EditContext API also provides information about the state of the text being edited, which allows you to render it in a custom way. The information provided to you includes:
+در عوض، EditContext API عنصر DOM انتخابی شما را قابل ویرایش و بخشی از ترتیب فوکوس سند می‌کند. علاوه بر این، EditContext API اطلاعاتی درباره وضعیت متن در حال ویرایش نیز فراهم می‌کند که به شما امکان می‌دهد آن را به روشی سفارشی رندر کنید. اطلاعاتی که به شما ارائه می‌شود شامل این موارد است:
 
-- The current text content.
-- The current selection.
-- Whether IME composition is in progress, and whether text formats need to be applied.
+- محتوای متنی فعلی.
+- انتخاب فعلی.
+- اینکه آیا ترکیب IME در جریان است و آیا لازم است قالب‌های متن اعمال شوند.
 
-### Accessibility
+### دسترس‌پذیری
 
-If you use the EditContext API with a `<canvas>` element, make sure to also make the text accessible to assistive technology. Screen readers can't read the text in a `<canvas>` element. For example, you could maintain a separate view of the text in an offscreen DOM element that's presented to screen readers.
+اگر از EditContext API با عنصر `<canvas>` استفاده می‌کنید، مطمئن شوید که متن را برای فناوری کمکی نیز در دسترس قرار می‌دهید. صفحه‌خوان‌ها نمی‌توانند متن داخل یک عنصر `<canvas>` را بخوانند. برای مثال، می‌توانید نمای جداگانه‌ای از متن را در یک عنصر DOM خارج از صفحه نگهداری کنید که در اختیار صفحه‌خوان‌ها قرار می‌گیرد.
 
-### Basic usage
+### کاربرد پایه
 
-To use the EditContext API, you need to create an instance of the {{domxref("EditContext")}} interface, and then attach it to the DOM element you want to make editable by using the {{domxref("HTMLElement/editContext", "editContext")}} property. The DOM element can be any element, including a `<div>` or a `<canvas>` element.
+برای استفاده از EditContext API، باید نمونه‌ای از رابط {{domxref("EditContext")}} ایجاد کنید و سپس با استفاده از ویژگی {{domxref("HTMLElement/editContext", "editContext")}} آن را به عنصر DOM که می‌خواهید قابل ویرایش شود متصل کنید. عنصر DOM می‌تواند هر عنصری باشد، از جمله یک عنصر `<div>` یا `<canvas>`.
 
 ```html
 <canvas id="editor-canvas"></canvas>
@@ -76,44 +70,44 @@ const editContext = new EditContext();
 canvas.editContext = editContext;
 ```
 
-An `EditContext` instance can only be attached to one DOM element at a time.
+یک نمونه `EditContext` فقط می‌تواند در هر زمان به یک عنصر DOM متصل شود.
 
-Attaching an `EditContext` instance to a DOM element makes the element focusable, as part of the document's focus order. The user can enter text into the element using the input method of their choice, and you can use event fired by the `EditContext` instance to render the text and selection.
+اتصال یک نمونه `EditContext` به یک عنصر DOM، آن عنصر را به‌عنوان بخشی از ترتیب فوکوس سند قابل فوکوس می‌کند. کاربر می‌تواند با روش ورود دلخواه خود در عنصر متن وارد کند و شما می‌توانید از رویدادهای صادرشده توسط نمونه `EditContext` برای رندر کردن متن و انتخاب استفاده کنید.
 
-### Model and view architecture
+### معماری مدل و نما
 
-When using the EditContext API, it helps to build your editing experience as a model and view architecture.
+هنگام استفاده از EditContext API، مفید است که تجربه ویرایش خود را به‌صورت معماری مدل و نما طراحی کنید.
 
-The `EditContext` instance represents the model of your editable region. Its internal state gets updated when text input is received, and when the selection changes.
+نمونه `EditContext` نمایانگر مدل ناحیه قابل ویرایش شماست. وضعیت داخلی آن هنگام دریافت ورودی متن و زمانی که انتخاب تغییر می‌کند، به‌روزرسانی می‌شود.
 
-You can then render the text and selection in the view, using the information provided by the `EditContext` instance, however your view doesn't need to match the model exactly. You're free to render the text in any way you want.
+سپس می‌توانید متن و انتخاب را با استفاده از اطلاعات ارائه‌شده توسط نمونه `EditContext` در نما رندر کنید؛ با این حال، نمای شما لزومی ندارد دقیقاً با مدل مطابقت داشته باشد. آزاد هستید متن را به هر شکلی که می‌خواهید رندر کنید.
 
-## Interfaces
+## رابط‌ها
 
 - {{DOMxRef("EditContext")}} {{experimental_inline}}
-  - : The `EditContext` interface is a JavaScript reflection of the text edit context that's normally provided transparently by the browser when using standard editable regions such as `textarea`. `EditContext` provides the state of the text being edited, with information such as the text itself, the current selection, or the location of the text in the app's UI.
+  - : رابط `EditContext` بازتاب جاوااسکریپتی زمینه ویرایش متنی است که معمولاً توسط مرورگر هنگام استفاده از نواحی قابل ویرایش استانداردی مانند `textarea` به‌صورت شفاف فراهم می‌شود. `EditContext` وضعیت متن در حال ویرایش را با اطلاعاتی مانند خود متن، انتخاب فعلی یا مکان متن در رابط کاربری برنامه فراهم می‌کند.
 - {{DOMxRef("TextFormat")}} {{experimental_inline}}
-  - : The `TextFormat` interface is used to represent certain formats that should be applied to text ranges when the user is composing text within the IME composition window.
+  - : رابط `TextFormat` برای نمایش قالب‌های خاصی استفاده می‌شود که باید هنگام ترکیب متن توسط کاربر در پنجره ترکیب IME روی بازه‌های متنی اعمال شوند.
 - {{domxref("TextUpdateEvent")}} {{experimental_inline}}
-  - : The `TextUpdateEvent` interface is a [DOM event](/en-US/docs/Web/API/Event) that represents a text or selection update in an editable text region that's attached to an {{domxref("EditContext")}} instance.
+  - : رابط `TextUpdateEvent` یک [رویداد DOM](/en-US/docs/Web/API/Event) است که به‌روزرسانی متن یا انتخاب را در ناحیه متن قابل ویرایشی که به یک نمونه {{domxref("EditContext")}} متصل است، نمایش می‌دهد.
 - {{domxref("TextFormatUpdateEvent")}} {{experimental_inline}}
-  - : The `TextFormatUpdateEvent` interface is a [DOM event](/en-US/docs/Web/API/Event) that represents a list of text formats that an {{glossary("Input Method Editor")}} (IME) window wants to apply to the text being composed in an editable region that's attached to an {{domxref("EditContext")}} instance.
+  - : رابط `TextFormatUpdateEvent` یک [رویداد DOM](/en-US/docs/Web/API/Event) است که فهرستی از قالب‌های متنی را نمایش می‌دهد که یک پنجره {{glossary("Input Method Editor")}} (IME) می‌خواهد روی متن در حال ترکیب در ناحیه قابل ویرایش متصل به یک نمونه {{domxref("EditContext")}} اعمال کند.
 - {{domxref("CharacterBoundsUpdateEvent")}} {{experimental_inline}}
-  - : The `CharacterBoundsUpdateEvent` interface is a [DOM event](/en-US/docs/Web/API/Event) that represents a request from the operating system to know the bounds of certain characters within an editable region that's attached to an {{domxref("EditContext")}} instance.
+  - : رابط `CharacterBoundsUpdateEvent` یک [رویداد DOM](/en-US/docs/Web/API/Event) است که درخواستی از سیستمعامل را برای دانستن مرزهای نویسه‌های خاص در ناحیه قابل ویرایش متصل به یک نمونه {{domxref("EditContext")}} نمایش می‌دهد.
 
-## Extensions to other interfaces
+## افزونه‌های دیگر رابط‌ها
 
 - {{domxref("HTMLElement.editContext")}} {{experimental_inline}}
-  - : The `editContext` property of the {{domxref("HTMLElement")}} interface gets and sets an element's associated {{domxref("EditContext")}} object.
+  - : ویژگی `editContext` از رابط {{domxref("HTMLElement")}} شیء {{domxref("EditContext")}} مرتبط با یک عنصر را دریافت و تنظیم می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Using the EditContext API](/en-US/docs/Web/API/EditContext_API/Guide)
