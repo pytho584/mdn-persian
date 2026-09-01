@@ -1,10 +1,4 @@
 ---
-title: "DeviceMotionEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent"
-status: "needs-translation"
----
-
----
 title: DeviceMotionEvent
 slug: Web/API/DeviceMotionEvent
 page-type: web-api-interface
@@ -13,35 +7,35 @@ browser-compat: api.DeviceMotionEvent
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`DeviceMotionEvent`** interface of the {{domxref("Device Orientation Events", "", "", "nocode")}} provides web developers with information about the speed of changes for the device's position and orientation.
+رابط **`DeviceMotionEvent`** در {{domxref("Device Orientation Events", "", "", "nocode")}} اطلاعاتی دربارهٔ سرعت تغییرات موقعیت و جهت‌گیری دستگاه در اختیار توسعه‌دهندگان وب قرار می‌دهد.
 
 > [!WARNING]
-> Currently, Firefox and Chrome do not handle the coordinates the same way. Take care about this while using them.
+> در حال حاضر، فایرفاکس و کروم مختصات را به یک شکل پردازش نمی‌کنند. هنگام استفاده از آن‌ها به این نکته توجه کنید.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("DeviceMotionEvent.DeviceMotionEvent", "DeviceMotionEvent()")}}
-  - : Creates a new `DeviceMotionEvent`.
+  - : یک شیء `DeviceMotionEvent` جدید می‌سازد.
 
-## Static methods
+## روش‌های ایستا
 
 - {{DOMxRef("DeviceMotionEvent.requestPermission_static", "DeviceMotionEvent.requestPermission()")}}
-  - : Requests the user's permission to access device motion data from the accelerometer and gyroscope sensors. Returns a {{jsxref("Promise")}} that resolves with a string of `"granted"` or `"denied"`.
+  - : اجازهٔ کاربر را برای دسترسی به داده‌های حرکتی دستگاه از سنسورهای شتاب‌سنج و ژیروسکوپ درخواست می‌کند. یک {{jsxref("Promise")}} برمی‌گرداند که با رشته‌ای شامل `"granted"` یا `"denied"` حل می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{DOMxRef("DeviceMotionEvent.acceleration")}} {{ReadOnlyInline}}
-  - : An object giving the acceleration of the device on the three axis X, Y and Z. Acceleration is expressed in [m/s²](https://en.wikipedia.org/wiki/Meter_per_second_squared).
+  - : شیئی که شتاب دستگاه را در سه محور X، Y و Z ارائه می‌دهد. شتاب بر حسب [m/s²](https://en.wikipedia.org/wiki/Meter_per_second_squared) بیان می‌شود.
 - {{DOMxRef("DeviceMotionEvent.accelerationIncludingGravity")}} {{ReadOnlyInline}}
-  - : An object giving the acceleration of the device on the three axis X, Y and Z with the effect of gravity. Acceleration is expressed in [m/s²](https://en.wikipedia.org/wiki/Meter_per_second_squared).
+  - : شیئی که شتاب دستگاه را در سه محور X، Y و Z همراه با اثر گرانش ارائه می‌دهد. شتاب بر حسب [m/s²](https://en.wikipedia.org/wiki/Meter_per_second_squared) بیان می‌شود.
 - {{DOMxRef("DeviceMotionEvent.rotationRate")}} {{ReadOnlyInline}}
-  - : An object giving the rate of change of the device's orientation on the three orientation axis alpha, beta and gamma. Rotation rate is expressed in degrees per seconds.
+  - : شیئی که نرخ تغییر جهت‌گیری دستگاه را در سه محور جهت‌گیری آلفا، بتا و گاما ارائه می‌دهد. نرخ چرخش بر حسب درجه بر ثانیه بیان می‌شود.
 - {{DOMxRef("DeviceMotionEvent.interval")}} {{ReadOnlyInline}}
-  - : A number representing the interval of time, in milliseconds, at which data is obtained from the device.
+  - : عددی که بازهٔ زمانی دریافت داده از دستگاه را بر حسب میلی‌ثانیه نشان می‌دهد.
 
-## Example
+## مثال
 
 ```js
 window.addEventListener("devicemotion", (event) => {
@@ -49,21 +43,21 @@ window.addEventListener("devicemotion", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Device orientation events/Detecting device orientation", "Detecting device orientation", "", "nocode")}}
 - {{domxref("Device orientation events/Orientation and motion data explained", "Orientation and motion data explained", "", "nocode")}}
 - {{DOMxRef("DeviceOrientationEvent")}}
-- {{DOMxRef("Window.deviceorientation_event", "deviceorientation")}} event
-- {{DOMxRef("Window.deviceorientationabsolute_event", "deviceorientationabsolute")}} event
-- {{DOMxRef("Window/devicemotion_event", "devicemotion")}} event
+- {{DOMxRef("Window.deviceorientation_event", "deviceorientation")}} رویداد
+- {{DOMxRef("Window.deviceorientationabsolute_event", "deviceorientationabsolute")}} رویداد
+- {{DOMxRef("Window/devicemotion_event", "devicemotion")}} رویداد
 - {{DOMxRef("Accelerometer")}}
 - {{DOMxRef("LinearAccelerationSensor")}}
