@@ -1,10 +1,4 @@
 ---
-title: "Encrypted Media Extensions API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API"
-status: "needs-translation"
----
-
----
 title: Encrypted Media Extensions API
 slug: Web/API/Encrypted_Media_Extensions_API
 page-type: web-api-overview
@@ -13,47 +7,47 @@ browser-compat: api.Navigator.requestMediaKeySystemAccess
 
 {{DefaultAPISidebar("Encrypted Media Extensions")}} {{securecontext_header}}
 
-The **Encrypted Media Extensions API** provides interfaces for controlling the playback of content which is subject to a digital restrictions management scheme.
+**API افزونه‌های رسانه رمزنگاری‌شده** (Encrypted Media Extensions) رابط‌هایی را برای کنترل پخش محتوایی که تحت یک طرح مدیریت محدودیت‌های دیجیتال (DRM) قرار دارد، فراهم می‌کند.
 
-Access to this API is provided through {{domxref("Navigator.requestMediaKeySystemAccess()")}}.
+دسترسی به این API از طریق {{domxref("Navigator.requestMediaKeySystemAccess()")}} ارائه می‌شود.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("MediaEncryptedEvent")}}
-  - : Represents a specific {{domxref("HTMLMediaElement/encrypted_event", "encrypted")}} event thrown when a {{domxref('HTMLMediaElement')}} encounters some initialization data.
+  - : رویداد خاص {{domxref("HTMLMediaElement/encrypted_event", "encrypted")}} را نشان می‌دهد که زمانی رخ می‌دهد که یک {{domxref('HTMLMediaElement')}} با داده‌های مقداردهی اولیه مواجه می‌شود.
 - {{domxref("MediaKeyMessageEvent")}}
-  - : Contains the content and related data when the content decryption module (CDM) generates a message for the session.
+  - : محتوا و داده‌های مرتبط را در زمانی که ماژول رمزگشایی محتوا (CDM) یک پیام برای نشست (session) تولید می‌کند، شامل می‌شود.
 - {{domxref("MediaKeys")}}
-  - : Represents a set of keys that an associated {{domxref('HTMLMediaElement')}} can use for decryption of media data during playback.
+  - : مجموعه‌ای از کلیدها را نشان می‌دهد که یک {{domxref('HTMLMediaElement')}} مرتبط می‌تواند برای رمزگشایی داده‌های رسانه در حین پخش از آن‌ها استفاده کند.
 - {{domxref("MediaKeySession")}}
-  - : Represents a context for message exchange with a content decryption module (CDM).
+  - : یک زمینه (context) برای تبادل پیام با ماژول رمزگشایی محتوا (CDM) را نشان می‌دهد.
 - {{domxref("MediaKeyStatusMap")}}
-  - : A read-only map of media key statuses by key IDs.
+  - : یک نگاشت فقط‌خواندنی از وضعیت‌های کلید رسانه بر اساس شناسه‌های کلید.
 - {{domxref("MediaKeySystemAccess")}}
-  - : Provides access to a key system for decryption and/or a content protection provider.
+  - : دسترسی به یک سیستم کلید برای رمزگشایی و/یا یک ارائه‌دهنده حفاظت از محتوا را فراهم می‌کند.
 
-### Extensions to other interfaces
+### افزونه‌های سایر رابط‌ها
 
-The Encrypted Media Extensions API extends the following APIs, adding the listed features.
+API افزونه‌های رسانه رمزنگاری‌شده رابط‌های زیر را گسترش می‌دهد و ویژگی‌های ذکر شده را به آن‌ها اضافه می‌کند.
 
 #### HTMLMediaElement
 
 - {{domxref("HTMLMediaElement.mediaKeys")}} {{readonlyinline}}
-  - : Provides a {{domxref("MediaKeys")}} object that represents the set of keys that the element can use for decryption of media data during playback.
+  - : یک شی {{domxref("MediaKeys")}} را ارائه می‌دهد که مجموعه کلیدهایی را نشان می‌دهد که عنصر می‌تواند برای رمزگشایی داده‌های رسانه در حین پخش استفاده کند.
 - {{domxref("HTMLMediaElement.setMediaKeys()")}}
-  - : Sets the {{domxref("MediaKeys")}} that will be used to decrypt media during playback.
+  - : {{domxref("MediaKeys")}} ای را تنظیم می‌کند که برای رمزگشایی رسانه در حین پخش استفاده خواهد شد.
 - [`encrypted` event](/en-US/docs/Web/API/HTMLMediaElement/encrypted_event)
-  - : Event that is fired on a {{domxref("HTMLMediaElement")}} when initialization data is encountered in the media, indicating that it is encrypted.
+  - : رویدادی که روی یک {{domxref("HTMLMediaElement")}} هنگامی که داده‌های مقداردهی اولیه در رسانه یافت می‌شود و نشان می‌دهد که رسانه رمزنگاری شده است، رخ می‌دهد.
 
 #### Navigator
 
 - {{domxref("Navigator.requestMediaKeySystemAccess()")}}
-  - : Returns a {{jsxref('Promise')}} that fulfils to a {{domxref('MediaKeySystemAccess')}} object that can be used to access a particular media key system, which can in turn be used to create keys for decrypting a media stream.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که به یک شی {{domxref('MediaKeySystemAccess')}} منجر می‌شود که می‌تواند برای دسترسی به یک سیستم کلید رسانه خاص استفاده شود، و این سیستم نیز به نوبه خود برای ایجاد کلیدهای رمزگشایی یک جریان رسانه به کار می‌رود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
