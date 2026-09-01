@@ -1,11 +1,5 @@
 ---
 title: "Element: nextElementSibling property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/nextElementSibling"
-status: "needs-translation"
----
-
----
-title: "Element: nextElementSibling property"
 short-title: nextElementSibling
 slug: Web/API/Element/nextElementSibling
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.Element.nextElementSibling
 
 {{APIRef("DOM")}}
 
-The **`Element.nextElementSibling`** read-only
-property returns the element immediately following the specified one in its parent's
-{{domxref("Element.children", "children")}} list, or `null` if the specified element is the last one in the list.
+خاصیت فقط-خواندنی **`Element.nextElementSibling`**، عنصر بلافاصله بعد از عنصر مشخص‌شده را در فهرست {{domxref("Element.children", "children")}} (فرزندان) والد آن برمی‌گرداند، یا اگر عنصر مشخص‌شده آخرین عنصر در فهرست باشد، `null` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} object, or `null`.
+یک شیء {{domxref("Element")}}، یا `null`.
 
-## Examples
+## مثال‌ها
 
 ```html
 <div id="div-01">Here is div-01</div>
@@ -38,7 +30,7 @@ while (el) {
 }
 ```
 
-This example outputs the following into the console when it loads:
+این مثال پس از بارگیری، خروجی زیر را در کنسول نمایش می‌دهد:
 
 ```plain
 Siblings of div-01:
@@ -46,14 +38,14 @@ DIV
 SCRIPT
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.previousElementSibling")}}
