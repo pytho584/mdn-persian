@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaHasPopup property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaHasPopup"
-status: "needs-translation"
----
-
----
-title: "Element: ariaHasPopup property"
 short-title: ariaHasPopup
 slug: Web/API/Element/ariaHasPopup
 page-type: web-api-instance-property
@@ -14,33 +8,26 @@ browser-compat: api.Element.ariaHasPopup
 
 {{APIRef("DOM")}}
 
-The **`ariaHasPopup`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) attribute, which indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element.
+ویژگی **`ariaHasPopup`** از رابط {{domxref("Element")}} منعکس‌کنندهٔ مقدار صفت [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) است که در دسترس بودن و نوع عنصر پاپ‌آپ تعاملی، مانند منو یا دیالوگ، که می‌تواند توسط یک عنصر فعال شود را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
-- `"false"`
-  - : The element does not have a popup.
-- `"true"`
-  - : The element has a popup that is a menu.
-- `"menu"`
-  - : The element has a popup that is a menu.
-- `"listbox"`
-  - : The element has a popup that is a listbox.
-- `"tree"`
-  - : The element has a popup that is a tree.
-- `"grid"`
-  - : The element has a popup that is a grid.
-- `"dialog"`
-  - : The element has a popup that is a dialog.
+- `"false"` - عنصر پاپ‌آپ ندارد.
+- `"true"` - عنصر دارای پاپ‌آپی از نوع منو است.
+- `"menu"` - عنصر دارای پاپ‌آپی از نوع منو است.
+- `"listbox"` - عنصر دارای پاپ‌آپی از نوع لیست‌باکس است.
+- `"tree"` - عنصر دارای پاپ‌آپی از نوع درخت است.
+- `"grid"` - عنصر دارای پاپ‌آپی از نوع شبکه است.
+- `"dialog"` - عنصر دارای پاپ‌آپی از نوع دیالوگ است.
 
 > [!WARNING]
-> Be aware that support for the different `aria-haspopup` values can vary depending on the element to which the attribute is specified. Ensure that when using `aria-haspopup`, it is done in accordance to the ARIA specification, and that it behaves as expected when testing with necessary browsers and assistive technologies.
+> توجه داشته باشید که پشتیبانی از مقادیر مختلف `aria-haspopup` بسته به عنصری که صفت به آن اختصاص داده شده است می‌تواند متفاوت باشد. اطمینان حاصل کنید که هنگام استفاده از `aria-haspopup`، این کار مطابق با مشخصات ARIA انجام شود و در آزمایش با مرورگرها و فناوری‌های کمکی لازم، رفتار مورد انتظار را داشته باشد.
 
-## Examples
+## مثال‌ها
 
-In this example, the `aria-haspopup` attribute on the element with an ID of `animal` is set to `"true"`. Using `ariaHasPopup`, we update the value to `"listbox"`, which is the expected value for a combobox that invokes a `listbox` popup.
+در این مثال، صفت `aria-haspopup` روی عنصری با شناسهٔ `animal` به مقدار `"true"` تنظیم شده است. با استفاده از `ariaHasPopup`، مقدار را به `"listbox"` به‌روزرسانی می‌کنیم که مقدار مورد انتظار برای یک جعبه‌ترکیبی (combobox) است که یک پاپ‌آپ از نوع لیست‌باکس را فراخوانی می‌کند.
 
 ```html
 <div class="animals-combobox">
@@ -68,10 +55,10 @@ el.ariaHasPopup = "listbox";
 console.log(el.ariaHasPopup); // listbox
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
