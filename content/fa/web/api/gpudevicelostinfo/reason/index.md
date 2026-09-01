@@ -1,11 +1,5 @@
 ---
 title: "GPUDeviceLostInfo: reason property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDeviceLostInfo/reason"
-status: "needs-translation"
----
-
----
-title: "GPUDeviceLostInfo: reason property"
 short-title: reason
 slug: Web/API/GPUDeviceLostInfo/reason
 page-type: web-api-instance-property
@@ -14,27 +8,26 @@ browser-compat: api.GPUDeviceLostInfo.reason
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`reason`** read-only property of the
-{{domxref("GPUDeviceLostInfo")}} interface defines the reason the device was lost in a machine-readable way.
+خصوصیت **`reason`** فقط‌خواندنی در رابط {{domxref("GPUDeviceLostInfo")}} دلیلی را که دستگاه از بین رفته است به صورت قابل خواندن توسط ماشین تعریف می‌کند.
 
-## Value
+## مقدار
 
-An enumerated value. At the moment the only value defined in the spec is `"destroyed"`, which indicates that the device was destroyed by a call to {{domxref("GPUDevice.destroy()")}}.
+یک مقدار شمارشی (enumerated value). در حال حاضر تنها مقدار تعریف‌شده در مشخصات، `"destroyed"` است که نشان می‌دهد دستگاه با فراخوانی {{domxref("GPUDevice.destroy()")}} از بین رفته است.
 
-If the device was lost because of an unknown reason not covered in the available enumerated values, `reason` returns `undefined`.
+اگر دستگاه به دلیلی نامشخص که در مقادیر شمارشی موجود پوشش داده نشده است از بین برود، `reason` مقدار `undefined` را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See the main [`GPUDevice.lost` page](/en-US/docs/Web/API/GPUDevice/lost#examples) for an example.
+برای مشاهده مثال، به صفحه اصلی [`GPUDevice.lost`](/en-US/docs/Web/API/GPUDevice/lost#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
