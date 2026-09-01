@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableElement: caption property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/caption"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,13 @@ browser-compat: api.HTMLTableElement.caption
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLTableElement.caption`** property represents the
-table caption. If no caption element is associated with the table, this property is
-`null`.
+ویژگی **`HTMLTableElement.caption`** نمایانگر عنوان (caption) جدول است. اگر هیچ عنصر `caption` با جدول مرتبط نباشد، مقدار این ویژگی `null` است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 if (table.caption) {
@@ -30,14 +26,14 @@ if (table.caption) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface implementing this property: {{domxref("HTMLTableElement")}}.
+- رابط پیاده‌ساز این ویژگی: {{domxref("HTMLTableElement")}}.
