@@ -1,7 +1,6 @@
 ---
 title: "HTMLImageElement: width property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/width"
-status: "needs-translation"
 ---
 
 ---
@@ -14,22 +13,22 @@ browser-compat: api.HTMLImageElement.width
 
 {{APIRef("HTML DOM")}}
 
-The **`width`** property of the {{domxref("HTMLImageElement")}} interface indicates the width at which the image is drawn, in {{Glossary("CSS pixel", "CSS pixels")}}, if the image is being drawn or rendered to any visual medium such as a screen or printer. Otherwise, it's the natural, pixel density-corrected width of the image.
+**`width`** ویژگیِ رابط {{domxref("HTMLImageElement")}}، عرضی را نشان می‌دهد که تصویر با آن رسم می‌شود، بر حسب {{Glossary("CSS pixel", "پیکسلِ CSS")}}، در صورتی که تصویر در حال رسم یا رندر شدن به هر رسانهٔ تصویری مانند صفحهٔ نمایش یا چاپگر باشد. در غیر این صورت، این مقدار عرض طبیعیِ تصویر است که بر اساس تراکم پیکسلی تنظیم شده است.
 
-## Value
+## مقدار
 
-An integer value indicating the width of the image. The way the width is defined depends on whether the image is being rendered to a visual medium or not.
+مقداری از نوع عدد صحیح که عرض تصویر را نشان می‌دهد. نحوهٔ تعریف عرض بستگی به این دارد که آیا تصویر به یک رسانهٔ تصویری رندر می‌شود یا نه.
 
-- If the image is being rendered to a visual medium such as a screen or printer, the width is expressed in {{Glossary("CSS pixel", "CSS pixels")}}.
-- Otherwise, the image's width is represented using its natural (intrinsic) width, adjusted for the display density as indicated by {{domxref("HTMLImageElement.naturalWidth", "naturalWidth")}}.
+- اگر تصویر به یک رسانهٔ تصویری مانند صفحهٔ نمایش یا چاپگر رندر شود، عرض بر حسب {{Glossary("CSS pixel", "پیکسلِ CSS")}} بیان می‌شود.
+- در غیر این صورت، عرض تصویر با استفاده از عرض طبیعی (ذاتی) آن نمایش داده می‌شود که با تراکم نمایشگری که توسط {{domxref("HTMLImageElement.naturalWidth", "naturalWidth")}} مشخص شده است، تنظیم می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this example, two different sizes are provided for an image of a clock using the [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) attribute. One is 200px wide and the other is 400px wide. Further, the [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/img#sizes) attribute is provided to specify the width at which the image should be drawn given the viewport's width.
+در این مثال، دو اندازهٔ مختلف برای تصویری از یک ساعت با استفاده از ویژگی [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) فراهم شده است. یکی ۲۰۰ پیکسل عرض و دیگری ۴۰۰ پیکسل عرض دارد. علاوه بر این، ویژگی [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/img#sizes) نیز برای تعیین عرضی که تصویر باید با آن رسم شود، با توجه به عرض viewport، ارائه شده است.
 
 ### HTML
 
-For viewports up to 400px wide, the image is drawn at a width of 200px. Otherwise, it's drawn at 400px.
+برای viewportهایی با عرض حداکثر ۴۰۰ پیکسل، تصویر با عرض ۲۰۰ پیکسل رسم می‌شود. در غیر این صورت، با عرض ۴۰۰ پیکسل رسم می‌شود.
 
 ```html
 <p>Image width: <span class="size">?</span>px (resize to update)</p>
@@ -45,7 +44,7 @@ For viewports up to 400px wide, the image is drawn at a width of 200px. Otherwis
 
 ### JavaScript
 
-The JavaScript code looks at the `height` to determine the height of the image given the width at which it's currently drawn.
+کد جاوااسکریپت به `height` نگاه می‌کند تا ارتفاع تصویر را با توجه به عرضی که در حال حاضر با آن رسم شده است تعیین کند.
 
 ```js
 const clockImage = document.querySelector("img");
@@ -59,21 +58,21 @@ updateWidth();
 window.addEventListener("resize", updateWidth);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", 640, 450)}}
 
-This example may be easier to try out {{LiveSampleLink('Examples', 'in its own window')}}.
+ممکن است آزمایش این مثال در {{LiveSampleLink('Examples', 'پنجرهٔ خودش')}} آسان‌تر باشد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLImageElement.height")}}
 - {{domxref("HTMLImageElement.naturalWidth")}}
