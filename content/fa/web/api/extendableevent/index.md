@@ -1,10 +1,4 @@
 ---
-title: "ExtendableEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEvent"
-status: "needs-translation"
----
-
----
 title: ExtendableEvent
 slug: Web/API/ExtendableEvent
 page-type: web-api-interface
@@ -13,41 +7,41 @@ browser-compat: api.ExtendableEvent
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`ExtendableEvent`** interface extends the lifetime of the [`install`](/en-US/docs/Web/API/ServiceWorkerGlobalScope/install_event) and [`activate`](/en-US/docs/Web/API/ServiceWorkerGlobalScope/activate_event) events dispatched on the global scope as part of the service worker lifecycle. This ensures that any functional events (like {{domxref("FetchEvent")}}) are not dispatched until it upgrades database schemas and deletes the outdated cache entries.
+رابطهٔ **`ExtendableEvent`** طول عمر رویدادهای [`install`](/en-US/docs/Web/API/ServiceWorkerGlobalScope/install_event) و [`activate`](/en-US/docs/Web/API/ServiceWorkerGlobalScope/activate_event) را که به‌عنوان بخشی از چرخه‌ی حیات سرویس‌ورکر (service worker) در محدوده‌ی سراسری (global scope) ارسال می‌شوند، افزایش می‌دهد. این کار تضمین می‌کند که هیچ رویداد عملکردی (مانند {{domxref("FetchEvent")}}) تا زمانی که طرح‌های پایگاه داده ارتقا نیافته و ورودی‌های کش قدیمی حذف نشده‌اند، ارسال نشود.
 
-If {{domxref("ExtendableEvent.waitUntil","waitUntil()")}} is called outside of the `ExtendableEvent` handler, the browser should throw an `InvalidStateError`; note also that multiple calls will stack up, and the resulting promises will be added to the list of [extend lifetime promises](https://w3c.github.io/ServiceWorker/#extendableevent-extend-lifetime-promises).
+اگر {{domxref("ExtendableEvent.waitUntil","waitUntil()")}} خارج از کنترل‌کننده‌ی رویداد `ExtendableEvent` فراخوانی شود، مرورگر باید یک خطای `InvalidStateError` صادر کند؛ همچنین توجه داشته باشید که فراخوانی‌های متعدد روی هم جمع می‌شوند و پرامیس‌های حاصل به فهرست [پرامیس‌های افزایش طول عمر](https://w3c.github.io/ServiceWorker/#extendableevent-extend-lifetime-promises) اضافه می‌شوند.
 
-This interface inherits from the {{domxref("Event")}} interface.
+این رابط از رابط {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram}}
 
 > [!NOTE]
-> This interface is only available when the global scope is a {{domxref("ServiceWorkerGlobalScope")}}. It is not available when it is a {{domxref("Window")}}, or the scope of another kind of worker.
+> این رابط فقط زمانی در دسترس است که محدوده‌ی سراسری یک {{domxref("ServiceWorkerGlobalScope")}} باشد. زمانی که یک {{domxref("Window")}} یا محدوده‌ی نوع دیگری از worker باشد، در دسترس نیست.
 
-## Constructor
+## سازنده
 
 - {{domxref("ExtendableEvent.ExtendableEvent()", "ExtendableEvent()")}}
-  - : Creates a new `ExtendableEvent` object.
+  - : یک شیء جدید `ExtendableEvent` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Doesn't implement any specific properties, but inherits properties from its parent, {{domxref("Event")}}._
+_ویژگی خاصی را پیاده‌سازی نمی‌کند، اما ویژگی‌ها را از والد خود، {{domxref("Event")}}، به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("Event")}}_.
+_روش‌ها را از والد خود، {{domxref("Event")}}، به ارث می‌برد._
 
 - {{domxref("ExtendableEvent.waitUntil", "ExtendableEvent.waitUntil()")}}
-  - : Extends the lifetime of the event. It is intended to be called in the [`install`](/en-US/docs/Web/API/ServiceWorkerGlobalScope/install_event) [event handler](/en-US/docs/Web/API/Document_Object_Model/Events#registering_event_handlers) for the {{domxref("ServiceWorkerRegistration.installing", "installing")}} worker and on the [`activate`](/en-US/docs/Web/API/ServiceWorkerGlobalScope/activate_event) [event handler](/en-US/docs/Web/API/Document_Object_Model/Events#registering_event_handlers) for the {{domxref("ServiceWorkerRegistration.active", "active")}} worker.
+  - : طول عمر رویداد را افزایش می‌دهد. قرار است در [کنترل‌کننده‌ی رویداد](/en-US/docs/Web/API/Document_Object_Model/Events#registering_event_handlers) [`install`](/en-US/docs/Web/API/ServiceWorkerGlobalScope/install_event) برای worker در حال نصب ({{domxref("ServiceWorkerRegistration.installing", "installing")}}) و در [کنترل‌کننده‌ی رویداد](/en-US/docs/Web/API/Document_Object_Model/Events#registering_event_handlers) [`activate`](/en-US/docs/Web/API/ServiceWorkerGlobalScope/activate_event) برای worker فعال ({{domxref("ServiceWorkerRegistration.active", "active")}}) فراخوانی شود.
 
-## Examples
+## مثال‌ها
 
-This code snippet is from the [service worker prefetch sample](https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/prefetch/service-worker.js) (see [prefetch example live](https://googlechrome.github.io/samples/service-worker/prefetch/).) The code calls {{domxref("ExtendableEvent.waitUntil()")}} in {{domxref("ServiceWorkerGlobalScope.install_event", "oninstall")}}, delaying treating the {{domxref("ServiceWorkerRegistration.installing")}} worker as installed until the passed promise resolves successfully. The promise resolves when all resources have been fetched and cached, or else when any exception occurs.
+این قطعه‌کد از [نمونه‌ی پیش‌واکشی سرویس‌ورکر](https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/prefetch/service-worker.js) گرفته شده است (به [نمونه‌ی زنده‌ی پیش‌واکشی](https://googlechrome.github.io/samples/service-worker/prefetch/) مراجعه کنید). کد، {{domxref("ExtendableEvent.waitUntil()")}} را در {{domxref("ServiceWorkerGlobalScope.install_event", "oninstall")}} فراخوانی می‌کند و تا زمانی که پرامیس ارسال‌شده با موفقیت resolve شود، در نظر گرفتن worker در حال نصب ({{domxref("ServiceWorkerRegistration.installing")}}) را به تأخیر می‌اندازد. پرامیس زمانی resolve می‌شود که همه‌ی منابع واکشی و در کش ذخیره شده باشند، یا در صورت بروز هر استثنا رد شود.
 
-The code snippet also shows a best practice for versioning caches used by the service worker. Though there's only one cache in this example, the same approach can be used for multiple caches. It maps a shorthand identifier for a cache to a specific, versioned cache name.
+این قطعه‌کد همچنین یک روش خوب برای نسخه‌بندی کش‌های استفاده‌شده توسط سرویس‌ورکر نشان می‌دهد. اگرچه در این مثال فقط یک کش وجود دارد، اما همین رویکرد برای چندین کش نیز قابل استفاده است. یک شناسه‌ی کوتاه برای یک کش به یک نام کش خاص و نسخه‌بندی‌شده نگاشت می‌شود.
 
 > [!NOTE]
-> In Chrome, logging statements are visible via the "Inspect" interface for the relevant service worker accessed via chrome://serviceworker-internals.
+> در کروم، دستورات ثبت (logging) از طریق رابط «Inspect» برای سرویس‌ورکر مربوطه، که از طریق chrome://serviceworker-internals قابل دسترسی است، قابل مشاهده هستند.
 
 ```js
 const CACHE_VERSION = 1;
@@ -88,18 +82,18 @@ self.addEventListener("install", (event) => {
 ```
 
 > [!NOTE]
-> When fetching resources, it's very important to use `{mode: 'no-cors'}` if there is any chance that the resources are served off of a server that doesn't support {{glossary("CORS")}}. In this example, [www.chromium.org](https://www.chromium.org/) doesn't support CORS.
+> هنگام واکشی منابع، اگر احتمال دارد منابع از سروری سرو شوند که از {{glossary("CORS")}} پشتیبانی نمی‌کند، استفاده از `{mode: 'no-cors'}` بسیار مهم است. در این مثال، [www.chromium.org](https://www.chromium.org/) از CORS پشتیبانی نمی‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-- [Service workers basic code example](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
-- [Using web workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [مثال کد پایه‌ی سرویس‌ورکرها](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
+- [استفاده از web workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
