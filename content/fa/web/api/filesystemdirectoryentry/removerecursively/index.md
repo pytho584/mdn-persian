@@ -1,11 +1,5 @@
 ---
 title: "FileSystemDirectoryEntry: removeRecursively() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry/removeRecursively"
-status: "needs-translation"
----
-
----
-title: "FileSystemDirectoryEntry: removeRecursively() method"
 short-title: removeRecursively()
 slug: Web/API/FileSystemDirectoryEntry/removeRecursively
 page-type: web-api-instance-method
@@ -17,13 +11,9 @@ browser-compat: api.FileSystemDirectoryEntry.removeRecursively
 
 {{APIRef("File and Directory Entries API")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The {{domxref("FileSystemDirectoryEntry")}} interface's method
-**`removeRecursively()`** removes
-the directory as well as all of its content, hierarchically iterating over its entire
-subtree of descendant files and directories.
+متد **`removeRecursively()`** از رابط {{domxref("FileSystemDirectoryEntry")}} دایرکتوری (پوشه) و تمام محتوای آن را به صورت بازگشتی حذف می‌کند، با پیمایش سلسله‌مراتبی کل زیردرخت فایل‌ها و دایرکتوری‌های زیرمجموعه.
 
-To remove a single file, or an empty directory, you can also use
-{{domxref("FileSystemEntry.remove()")}}.
+برای حذف یک فایل یا یک دایرکتوری خالی، می‌توانید از {{domxref("FileSystemEntry.remove()")}} نیز استفاده کنید.
 
 ## Syntax
 
@@ -35,45 +25,34 @@ removeRecursively(successCallback, errorCallback)
 ### Parameters
 
 - `successCallback`
-  - : A function to call once the directory removal process has completed. The callback
-    has no parameters.
+  - : یک تابع که پس از اتمام فرآیند حذف دایرکتوری فراخوانی می‌شود. این تابع هیچ پارامتری ندارد.
 - `errorCallback` {{optional_inline}}
-  - : A function to be called if an error occurs while attempting to remove the directory
-    subtree. Receives a {{domxref("DOMException")}} describing the error which occurred as
-    input.
+  - : یک تابع که در صورت بروز خطا در حین تلاش برای حذف زیردرخت دایرکتوری فراخوانی می‌شود. یک {{domxref("DOMException")}} که خطای رخ داده را توصیف می‌کند به عنوان ورودی دریافت می‌کند.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ### Exceptions
 
-If an error occurs and an `errorCallback` was specified, it gets called with
-a single parameter: a {{domxref("DOMException")}} object describing the error. The
-{{domxref("DOMException.code")}} specifies what type of error occurred, as follows:
+اگر خطایی رخ دهد و `errorCallback` مشخص شده باشد، آن تابع با یک پارامتر فراخوانی می‌شود: یک شیء {{domxref("DOMException")}} که خطا را توصیف می‌کند. {{domxref("DOMException.code")}} مشخص می‌کند که چه نوع خطایی رخ داده است، به شرح زیر:
 
 - `DOMException.INVALID_MODIFICATION_ERR`
-  - : An attempt was made to remove the root directory; this is not permitted.
+  - : تلاش برای حذف دایرکتوری ریشه انجام شده است؛ این کار مجاز نیست.
 - `DOMException.NO_MODIFICATION_ALLOWED_ERR`
-  - : The file system's state doesn't permit modification.
+  - : وضعیت سیستم فایل اجازه تغییر را نمی‌دهد.
 - `DOMException.NOT_FOUND_ERR`
-  - : The directory represented by the {{domxref("FileSystemDirectoryEntry")}} no longer
-    exists.
+  - : دایرکتوری که توسط {{domxref("FileSystemDirectoryEntry")}} نمایش داده می‌شود دیگر وجود ندارد.
 - `DOMException.NOT_READABLE_ERR`
-  - : The directory is not accessible; perhaps it's in use by another application or is
-    locked at the operating system level.
+  - : دایرکتوری قابل دسترسی نیست؛ احتمالاً توسط برنامه دیگری در حال استفاده است یا در سطح سیستم عامل قفل شده است.
 - `DOMException.SECURITY_ERR`
-  - : The directory could not be removed for security reasons. Possible reasons include:
-    - The directory and/or its contents may not be safe to access from a Web
-      application.
-    - Too many file system calls are being made.
-    - Other security concerns as raised by the user agent or the operating system.
+  - : به دلایل امنیتی نمی‌توان دایرکتوری را حذف کرد. دلایل احتمالی عبارتند از:
+    - دایرکتوری و/یا محتویات آن ممکن است از طریق یک برنامه وب ایمن نباشند.
+    - تماس‌های زیادی با سیستم فایل در حال انجام است.
+    - سایر نگرانی‌های امنیتی که توسط عامل کاربر یا سیستم عامل مطرح شده است.
 
 > [!NOTE]
-> If you try to delete a directory which contains one or more files that can't be
-> removed, or if an error occurs while deletion of a number of files is underway, some
-> files may not be deleted. You should provide an `errorCallback` to watch
-> for and handle this, perhaps by trying again.
+> اگر تلاش کنید دایرکتوری را حذف کنید که شامل یک یا چند فایل غیرقابل حذف است، یا در حین حذف تعدادی از فایل‌ها خطایی رخ دهد، ممکن است برخی فایل‌ها حذف نشوند. باید یک `errorCallback` ارائه دهید تا این وضعیت را زیر نظر گرفته و مدیریت کنید، شاید با تلاش مجدد.
 
 ## Examples
 
