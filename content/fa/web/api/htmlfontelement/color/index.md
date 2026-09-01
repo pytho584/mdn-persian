@@ -1,7 +1,6 @@
 ---
 title: "HTMLFontElement: color property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFontElement/color"
-status: "needs-translation"
 ---
 
 ---
@@ -16,42 +15,45 @@ browser-compat: api.HTMLFontElement.color
 
 {{deprecated_header}}{{APIRef("HTML DOM")}}
 
-The obsolete
+ویژگی منسوخ‌شدهٔ
 **`HTMLFontElement.color`**
-property is a string that reflects the [`color`](/en-US/docs/Web/HTML/Reference/Elements/font#color) HTML attribute, containing either a named color or a color specified in the
-hexadecimal #RRGGBB format.
+یک رشته است که مشخصهٔ HTML
+[`color`](/en-US/docs/Web/HTML/Reference/Elements/font#color)
+را بازتاب می‌دهد؛ این رشته یا شامل یک نام رنگ است یا رنگی که در قالب هگزادسیمال
+#RRGGBB
+مشخص شده است.
 
-The format of the string must follow one of the following HTML microsyntaxes (see {{cssxref("&lt;color&gt;")}}):
+قالب این رشته باید مطابق یکی از Microsyntax های زیر در HTML باشد (به {{cssxref("&lt;color&gt;")}} مراجعه کنید):
 
-| Microsyntax              | Description                      | Examples                  |
+| Microsyntax              | توضیحات                         | مثال‌ها                  |
 | ------------------------ | -------------------------------- | ------------------------- |
-| Valid name color string  | _nameOfColor (case insensitive)_ | `Green`, `green`, `GREEN` |
-| Valid hex color string   | _#RRGGBB_                        | `#008000`                 |
-| RGB using decimal values | _rgb(x x x) (x in 0-255 range)_  | `rgb(0 128 0)`            |
+| رشتهٔ نام رنگ معتبر      | _نام رنگ (بدون حساسیت به بزرگی/کوچکی حروف)_ | `Green`، `green`، `GREEN` |
+| رشتهٔ هگزادسیمال معتبر   | _#RRGGBB_                        | `#008000`                 |
+| RGB با مقادیر اعشاری     | _rgb(x x x) (x در بازهٔ ۰ تا ۲۵۵-)_  | `rgb(0 128 0)`            |
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-When set to the `null` value, that `null` value is converted to the empty string (`""`), so `elt.color = null` is equivalent to `elt.color = ""`.
+وقتی مقدار `null` به آن اختصاص داده شود، آن مقدار `null` به رشتهٔ خالی (`""`) تبدیل می‌شود؛ بنابراین `elt.color = null` معادل `elt.color = ""` است.
 
-## Examples
+## مثال‌ها
 
 ```js
-// Assumes there is <font id="f"> element in the HTML
+// فرض بر این است که عنصر <font id="f"> در HTML وجود دارد
 
 const f = document.getElementById("f");
 f.color = "green";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{domxref("HTMLFontElement")}} interface it belongs to.
+- رابط {{domxref("HTMLFontElement")}} که این ویژگی به آن تعلق دارد.
