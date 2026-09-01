@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: currentSrc property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentSrc"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: currentSrc property"
 short-title: currentSrc
 slug: Web/API/HTMLMediaElement/currentSrc
 page-type: web-api-instance-property
@@ -14,34 +8,27 @@ browser-compat: api.HTMLMediaElement.currentSrc
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.currentSrc`** property contains the
-absolute URL of the chosen media resource. This could happen, for example, if the web
-server selects a media file based on the resolution of the user's display. The value
-is an empty string if the `networkState` property is `EMPTY`.
+ویژگی **`HTMLMediaElement.currentSrc`** شامل URL مطلق منبع رسانهای انتخاب‌شده است. این حالت می‌تواند برای مثال زمانی رخ دهد که وب‌سرور یک فایل رسانه‌ای را بر اساس وضوح نمایشگر کاربر انتخاب کند. اگر ویژگی `networkState` برابر با `EMPTY` باشد، مقدار این ویژگی یک رشتهٔ خالی است.
 
-## Value
+## مقدار
 
-A string containing the absolute URL of the chosen media
-source; this may be an empty string if `networkState` is `EMPTY`;
-otherwise, it will be one of the resources listed by the
-{{domxref("HTMLSourceElement")}} contained within the media element, or the value of {{domxref("HTMLMediaElement.src", "src")}}
-if no {{HTMLElement("source")}} element is provided.
+یک رشته که شامل URL مطلق منبع رسانه‌ای انتخاب‌شده است؛ اگر `networkState` برابر با `EMPTY` باشد، این مقدار می‌تواند یک رشتهٔ خالی باشد؛ در غیر این صورت، این مقدار یکی از منابع فهرست‌شده توسط {{domxref("HTMLSourceElement")}} موجود در داخل عنصر رسانه‌ای، یا مقدار {{domxref("HTMLMediaElement.src", "src")}} خواهد بود، در صورتی که هیچ عنصر {{HTMLElement("source")}} ارائه نشده باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const obj = document.createElement("video");
 console.log(obj.currentSrc); // ""
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.currentSrc` property
+- {{domxref("HTMLMediaElement")}}: رابطی که برای تعریف ویژگی `HTMLMediaElement.currentSrc` استفاده می‌شود.
