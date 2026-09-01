@@ -1,10 +1,4 @@
 ---
-title: "CSSLayerBlockRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSLayerBlockRule"
-status: "needs-translation"
----
-
----
 title: CSSLayerBlockRule
 slug: Web/API/CSSLayerBlockRule
 page-type: web-api-interface
@@ -13,22 +7,22 @@ browser-compat: api.CSSLayerBlockRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSLayerBlockRule`** represents a {{cssxref("@layer")}} block rule.
+**`CSSLayerBlockRule`** یک قاعده‌ی بلوک {{cssxref("@layer")}} را نشان می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestors {{domxref("CSSGroupingRule")}} and {{domxref("CSSRule")}}._
+_ویژگی‌های اجداد خود {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} را به ارث می‌برد._
 
 - {{DOMxRef("CSSLayerBlockRule.name")}} {{ReadOnlyInline}}
-  - : A string containing the name of the associated cascade layer.
+  - : یک رشته که نام لایه‌ی آبشاری مرتبط را شامل می‌شود.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its ancestors {{domxref("CSSGroupingRule")}} and {{domxref("CSSRule")}}._
+_روش‌های اجداد خود {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -57,20 +51,20 @@ const layer = rules[0]; // A CSSLayerBlockRule
 item.textContent = `The CSSLayerBlockRule is for the "${layer.name}" layer`;
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{cssxref("@layer")}}
 - {{DOMxRef("CSSLayerStatementRule")}}
-- [Learn CSS cascade layers](/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)
+- [آشنایی با لایه‌های آبشاری CSS](/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)
