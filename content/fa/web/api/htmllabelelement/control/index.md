@@ -1,11 +1,5 @@
 ---
 title: "HTMLLabelElement: control property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/control"
-status: "needs-translation"
----
-
----
-title: "HTMLLabelElement: control property"
 short-title: control
 slug: Web/API/HTMLLabelElement/control
 page-type: web-api-instance-property
@@ -14,31 +8,26 @@ browser-compat: api.HTMLLabelElement.control
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`HTMLLabelElement.control`** property returns a
-reference to the control (in the form of an object of type {{domxref("HTMLElement")}} or
-one of its derivatives) with which the {{HTMLElement("label")}} element is associated,
-or `null` if the label isn't associated with a control.
+ویژگی فقط‌خواندنی **`HTMLLabelElement.control`** ارجاعی به کنترل (در قالب یک شیء از نوع {{domxref("HTMLElement")}} یا یکی از مشتقات آن) که عنصر {{HTMLElement("label")}} با آن مرتبط است، برمی‌گرداند. اگر برچسب با هیچ کنترلی مرتبط نباشد، مقدار `null` برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLElement")}} derived object representing the control with which the
-{{HTMLElement("label")}} is associated, or `null` if the label stands alone.
+یک شیء مشتق‌شده از {{domxref("HTMLElement")}} که کنترلی را نشان می‌دهد که {{HTMLElement("label")}} با آن مرتبط است؛ یا اگر برچسب به تنهایی باشد، مقدار `null`.
 
 > [!NOTE]
-> If this property has a value and {{domxref("HTMLLabelElement.htmlFor")}} has a value,
-> the {{domxref("HTMLLabelElement.htmlFor")}} property must refer to the same control.
+> اگر این ویژگی مقداری داشته باشد و {{domxref("HTMLLabelElement.htmlFor")}} نیز مقداری داشته باشد، ویژگی {{domxref("HTMLLabelElement.htmlFor")}} باید به همان کنترل ارجاع دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLLabelElement")}}
 - {{domxref("HTMLElement")}}
 - {{HTMLElement("label")}}
-- [HTML forms guide](/en-US/docs/Learn_web_development/Extensions/Forms)
+- [راهنمای فرم‌های HTML](/en-US/docs/Learn_web_development/Extensions/Forms)
