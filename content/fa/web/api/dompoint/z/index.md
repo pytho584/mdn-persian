@@ -1,11 +1,5 @@
 ---
 title: "DOMPoint: z property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/z"
-status: "needs-translation"
----
-
----
-title: "DOMPoint: z property"
 short-title: z
 slug: Web/API/DOMPoint/z
 page-type: web-api-instance-property
@@ -14,30 +8,22 @@ browser-compat: api.DOMPoint.z
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMPoint`** interface's
-**`z`** property specifies the depth coordinate of a point in
-space.
+ویژگی **`z`** در رابط **`DOMPoint`** مختصات عمق یک نقطه در فضا را مشخص می‌کند.
 
-Unless transforms have changed the orientation, a `z` of 0 is
-the plane of the screen, with positive values extending outward toward the user from the
-screen, and negative values receding into the distance behind the screen.
+مگر اینکه تبدیل‌ها (transforms) جهت‌گیری را تغییر داده باشند، مقدار `z` برابر ۰، صفحه نمایش است؛ مقادیر مثبت از صفحه به سمت بیرون و رو به کاربر امتداد می‌یابند و مقادیر منفی در پشت صفحه به سمت دور دست می‌روند.
 
-## Value
+## مقدار
 
-A double-precision floating-point value indicating the _z_ coordinate's value
-for the point. This value is **unrestricted**, meaning that it is allowed
-to be infinite or invalid (that is, its value may be {{jsxref("NaN")}} or
-{{jsxref("Infinity", "±Infinity")}}).
+یک عدد اعشاری با دقت دوبرابر (double-precision floating-point) که مقدار مختصات _z_ نقطه را نشان می‌دهد. این مقدار **نامحدود** است؛ به این معنی که می‌تواند بی‌نهایت یا نامعتبر باشد (یعنی مقدار آن ممکن است {{jsxref("NaN")}} یا {{jsxref("Infinity", "±Infinity")}} باشد).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The other coordinate properties: {{domxref("DOMPoint.x", "x")}},
-  {{domxref("DOMPoint.y", "y")}}, and the perspective value, {{domxref("DOMPoint.w", "w")}}.
+- سایر ویژگی‌های مختصات: {{domxref("DOMPoint.x", "x")}}، {{domxref("DOMPoint.y", "y")}} و مقدار پرسپکتیو {{domxref("DOMPoint.w", "w")}}.
