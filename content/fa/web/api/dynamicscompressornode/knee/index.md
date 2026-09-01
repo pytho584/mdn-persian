@@ -1,11 +1,5 @@
 ---
 title: "DynamicsCompressorNode: knee property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/knee"
-status: "needs-translation"
----
-
----
-title: "DynamicsCompressorNode: knee property"
 short-title: knee
 slug: Web/API/DynamicsCompressorNode/knee
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.DynamicsCompressorNode.knee
 
 {{ APIRef("Web Audio API") }}
 
-The `knee` property of the {{ domxref("DynamicsCompressorNode") }} interface is a [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}} containing a decibel value representing the range above the threshold where the curve smoothly transitions to the compressed portion.
+ویژگی `knee` در رابط {{ domxref("DynamicsCompressorNode") }} یک {{domxref("AudioParam")}} از نوع [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) است که مقداری بر حسب دسیبل را در بر می‌گیرد؛ این مقدار نشان‌دهنده محدوده‌ای بالاتر از آستانه است که در آن منحنی به نرمی به بخش فشرده‌شده گذر می‌کند.
 
-The `knee` property's default value is `30` and it can be set between `0` and `40`.
+مقدار پیش‌فرض ویژگی `knee` برابر با `30` است و می‌توان آن را بین `0` و `40` تنظیم کرد.
 
-![Describes the effect of a knee, showing two curves one for a hard knee, the other for a soft knee.](webaudioknee.png)
+![اثر knee را توصیف می‌کند و دو منحنی را نشان می‌دهد: یکی برای knee سخت و دیگری برای knee نرم.](webaudioknee.png)
 
-## Value
+## مقدار
 
-An {{domxref("AudioParam")}}.
+یک {{domxref("AudioParam")}}.
 
 > [!NOTE]
-> Though the {{domxref("AudioParam")}} returned is read-only, the value it represents is not.
+> اگرچه {{domxref("AudioParam")}} بازگردانده‌شده فقط‌خواندنی است، مقداری که نشان می‌دهد چنین نیست.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new AudioContext();
@@ -35,16 +29,16 @@ const compressor = audioCtx.createDynamicsCompressor();
 compressor.knee.value = 40;
 ```
 
-See [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) for more complete example code.
+برای مثال کامل‌تر، به [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
