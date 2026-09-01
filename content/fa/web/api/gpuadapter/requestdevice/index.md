@@ -1,11 +1,5 @@
 ---
 title: "GPUAdapter: requestDevice() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/requestDevice"
-status: "needs-translation"
----
-
----
-title: "GPUAdapter: requestDevice() method"
 short-title: requestDevice()
 slug: Web/API/GPUAdapter/requestDevice
 page-type: web-api-instance-method
@@ -14,51 +8,50 @@ browser-compat: api.GPUAdapter.requestDevice
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`requestDevice()`** method of the
-{{domxref("GPUAdapter")}} interface returns a {{jsxref("Promise")}} that fulfills with a {{domxref("GPUDevice")}} object, which is the primary interface for communicating with the GPU.
+متد **`requestDevice()`** از رابط {{domxref("GPUAdapter")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء {{domxref("GPUDevice")}} تکمیل می‌شود. این شیء رابط اصلی برای ارتباط با GPU است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 requestDevice()
 requestDevice(descriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `descriptor` {{optional_inline}}
-  - : An object containing the following properties:
+  - : یک شیء حاوی ویژگی‌های زیر:
     - `defaultQueue` {{optional_inline}}
-      - : An object that provides information for the device's default {{domxref("GPUQueue")}} (as returned by {{domxref("GPUDevice.queue")}}). This object has a single property — `label` — which provides the default queue with a {{domxref("GPUQueue.label", "label")}} value. If no value is provided, this defaults to an empty object, and the default queue's label will be an empty string.
+      - : شیئی که اطلاعاتی درباره {{domxref("GPUQueue")}} پیش‌فرض دستگاه فراهم می‌کند (مطابق با آنچه توسط {{domxref("GPUDevice.queue")}} برگردانده می‌شود). این شیء یک ویژگی واحد به نام `label` دارد که یک مقدار {{domxref("GPUQueue.label", "label")}} برای صف پیش‌فرض تعیین می‌کند. اگر مقداری ارائه نشود، به طور پیش‌فرض یک شیء خالی خواهد بود و برچسب صف پیش‌فرض یک رشتهٔ خالی خواهد بود.
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the {{domxref("GPUDevice")}}, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : رشته‌ای که یک برچسب برای شناسایی {{domxref("GPUDevice")}} فراهم می‌کند، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
     - `requiredFeatures` {{optional_inline}}
-      - : An array of strings representing additional functionality that you want supported by the returned {{domxref("GPUDevice")}}. The `requestDevice()` call will fail if the `GPUAdapter` cannot provide these features. See {{domxref("GPUSupportedFeatures")}} for a full list of possible features. This defaults to an empty array if no value is provided.
+      - : آرایه‌ای از رشته‌ها که قابلیت‌های اضافی مورد نیاز برای پشتیبانی در {{domxref("GPUDevice")}} برگشتی را مشخص می‌کند. اگر `GPUAdapter` نتواند این قابلیت‌ها را فراهم کند، فراخوانی `requestDevice()` با شکست مواجه می‌شود. برای فهرست کامل قابلیت‌های ممکن، به {{domxref("GPUSupportedFeatures")}} مراجعه کنید. اگر مقداری ارائه نشود، این آرایه به طور پیش‌فرض خالی است.
     - `requiredLimits` {{optional_inline}}
-      - : An object containing properties representing the limits that you want supported by the returned {{domxref("GPUDevice")}}. The `requestDevice()` call will fail if the `GPUAdapter` cannot provide these limits. Each key with a non-`undefined` value must be the name of a member of {{domxref("GPUSupportedLimits")}}.
+      - : شیئی شامل ویژگی‌هایی که محدودیت‌های مورد نیاز برای پشتیبانی در {{domxref("GPUDevice")}} برگشتی را مشخص می‌کند. اگر `GPUAdapter` نتواند این محدودیت‌ها را فراهم کند، فراخوانی `requestDevice()` با شکست مواجه می‌شود. هر کلید با مقدار غیر `undefined` باید نام یکی از اعضای {{domxref("GPUSupportedLimits")}} باشد.
         > [!NOTE]
-        > You can request unknown limits when requesting a GPU device without causing an error. Such limits will be `undefined`. This is useful because it makes WebGPU code less brittle — a codebase won't stop working because a limit no longer exists in the adapter.
+        > می‌توانید هنگام درخواست یک دستگاه GPU محدودیت‌های ناشناخته را نیز درخواست کنید بدون اینکه خطایی ایجاد شود. چنین محدودیت‌هایی `undefined` خواهند بود. این ویژگی مفید است زیرا کد WebGPU را کمتر شکننده می‌کند – یک پایگاه کد به دلیل عدم وجود یک محدودیت در آداپتر از کار نخواهد افتاد.
 
-Not all features and limits will be available to WebGPU in all browsers that support it, even if they are supported by the underlying hardware. See the {{domxref("GPUAdapter.features", "features")}} and {{domxref("GPUAdapter.limits", "limits")}} pages for more information.
+همه ویژگی‌ها و محدودیت‌ها در همه مرورگرهایی که از WebGPU پشتیبانی می‌کنند در دسترس نخواهند بود، حتی اگر توسط سخت‌افزار زیرین پشتیبانی شوند. برای اطلاعات بیشتر به صفحات {{domxref("GPUAdapter.features", "features")}} و {{domxref("GPUAdapter.limits", "limits")}} مراجعه کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with a {{domxref("GPUDevice")}} object instance.
+یک {{jsxref("Promise")}} که با یک نمونه شیء {{domxref("GPUDevice")}} تکمیل می‌شود.
 
-If you make a duplicate call, i.e., call `requestDevice()` on a {{domxref("GPUAdapter")}} that `requestDevice()` was already called on, the promise rejects with an `OperationError` because the associated `GPUAdapter` is consumed when a `GPUDevice` is created.
+اگر یک فراخوانی تکراری انجام دهید، یعنی `requestDevice()` را روی یک {{domxref("GPUAdapter")}} که قبلاً `requestDevice()` روی آن فراخوانی شده بود صدا بزنید، آنگاه Promise با یک `OperationError` رد می‌شود زیرا `GPUAdapter` مرتبط هنگام ایجاد یک `GPUDevice` مصرف می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `OperationError` {{domxref("DOMException")}}
-  - : The promise rejects with an `OperationError` if either:
-    - The limits included in the `requiredLimits` property are not supported by the {{domxref("GPUAdapter")}}, either because they are not valid limits, or because their values are higher than the adapter's values for those limits.
-    - The `GPUAdapter` has been consumed by having `requestDevice()` called on it previously.
+  - : Promise با یک `OperationError` رد می‌شود اگر یکی از موارد زیر رخ دهد:
+    - محدودیت‌های موجود در ویژگی `requiredLimits` توسط {{domproxy("GPUAdapter")}} پشتیبانی نشوند، چه به دلیل معتبر نبودن محدودیت‌ها، یا به دلیل اینکه مقادیر آنها بیشتر از مقادیر آداپتر برای آن محدودیت‌ها باشد.
+    - `GPUAdapter` با فراخوانی قبلی `requestDevice()` روی آن مصرف شده باشد.
 - `TypeError` {{domxref("DOMException")}}
-  - : The promise rejects with a `TypeError` if the features included in the `requiredFeatures` property are not supported by the {{domxref("GPUAdapter")}}.
+  - : Promise با یک `TypeError` رد می‌شود اگر ویژگی‌های موجود در ویژگی `requiredFeatures` توسط {{domproxy("GPUAdapter")}} پشتیبانی نشوند.
 
-## Examples
+## مثال‌ها
 
-### Basic example
+### مثال پایه
 
 ```js
 async function init() {
@@ -77,13 +70,13 @@ async function init() {
 }
 ```
 
-### Requesting specific features and limits
+### درخواست ویژگی‌ها و محدودیت‌های خاص
 
-In the following code we:
+در کد زیر ما:
 
-1. Check whether a {{domxref("GPUAdapter")}} has the `texture-compression-astc` feature available. If so, we push it into the array of `requiredFeatures`.
-2. Query the `GPUAdapter.limits` value of `maxBindGroups` to see if it is equal to or greater than 6. Our theoretical example app ideally needs 6 bind groups, so if the returned value is >= 6, we add a maximum limit of 6 to the `requiredLimits` object.
-3. Request a device with those feature and limit requirements, plus a `defaultQueue` label.
+1. بررسی می‌کنیم که آیا {{domxref("GPUAdapter")}} قابلیت `texture-compression-astc` را دارد یا خیر. اگر دارد، آن را به آرایه `requiredFeatures` اضافه می‌کنیم.
+2. مقدار `GPUAdapter.limits` مربوط به `maxBindGroups` را پرس‌وجو می‌کنیم تا ببینیم آیا برابر یا بزرگتر از ۶ است. برنامهٔ تئوری ما به ۶ گروه اتصال نیاز دارد، بنابراین اگر مقدار برگشتی >= ۶ باشد، یک حداکثر محدودیت ۶ را به شیء `requiredLimits` اضافه می‌کنیم.
+3. یک دستگاه با آن نیازمندی‌های ویژگی و محدودیت، به همراه یک برچسب `defaultQueue` درخواست می‌کنیم.
 
 ```js
 async function init() {
@@ -121,14 +114,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
