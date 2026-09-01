@@ -1,11 +1,5 @@
 ---
 title: "GPURenderPassEncoder: setBlendConstant() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setBlendConstant"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: setBlendConstant() method"
 short-title: setBlendConstant()
 slug: Web/API/GPURenderPassEncoder/setBlendConstant
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.GPURenderPassEncoder.setBlendConstant
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`setBlendConstant()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface sets the constant blend color and alpha values used with `"constant"` and `"one-minus-constant"` blend factors (as set in the descriptor of the {{domxref("GPUDevice.createRenderPipeline()")}} method, in the `blend` property).
+متد **`setBlendConstant()`** در رابط {{domxref("GPURenderPassEncoder")}}، رنگ و مقدار آلفای ثابتِ مورد استفاده برای ترکیب (blend) را با فاکتورهای ترکیب `"constant"` و `"one-minus-constant"` تنظیم می‌کند (همان‌طور که در توصیفگر متد {{domxref("GPUDevice.createRenderPipeline()")}}، در ویژگی `blend` تنظیم شده است).
 
 ## Syntax
 
@@ -26,26 +19,26 @@ setBlendConstant(color)
 ### Parameters
 
 - `color`
-  - : An object or array representing the color to use when blending — the `r`, `g`, `b`, and `a` components are represented as floating point numbers between 0.0 and 1.0.
+  - : یک شیء یا آرایه که رنگ مورد استفاده برای ترکیب را نشان می‌دهد — مؤلفه‌های `r`، `g`، `b` و `a` به صورت اعداد اعشاری بین 0.0 و 1.0 نمایش داده می‌شوند.
 
-    What follows is an object example:
+    در ادامه یک مثال با شیء آورده شده است:
 
     ```js
     const color = { r: 0.0, g: 0.5, b: 1.0, a: 1.0 };
     ```
 
-    The array equivalent would look like this:
+    معادل آرایه‌ای آن به این صورت خواهد بود:
 
     ```js
     const color = [0.0, 0.5, 1.0, 1.0];
     ```
 
 > [!NOTE]
-> If a `setBlendConstant()` call is not made, the blend constant color value defaults to `(0, 0, 0, 0)` for each render pass.
+> اگر فراخوانی `setBlendConstant()` انجام نشود، مقدار رنگ ثابت ترکیب برای هر پاس رندر به صورت پیش‌فرض `(0, 0, 0, 0)` خواهد بود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
@@ -74,4 +67,4 @@ passEncoder.end();
 
 ## See also
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
