@@ -1,7 +1,6 @@
+```markdown
 ---
 title: "Element: pointerenter event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerenter_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +13,11 @@ browser-compat: api.Element.pointerenter_event
 
 {{APIRef("Pointer Events")}}
 
-The `pointerenter` event fires when a pointing device is moved into the hit test boundaries of an element or one of its descendants, including as a result of a {{domxref("Element/pointerdown_event", "pointerdown")}} event from a device that does not support hover (see {{domxref("Element/pointerdown_event", "pointerdown")}}). Otherwise, `pointerenter` works the same as {{domxref("Element/mouseenter_event", "mouseenter")}}, and are dispatched at the same time. They are also dispatched at the same time as {{domxref("Element/mouseover_event", "mouseover")}} and {{domxref("Element/pointerover_event", "pointerover")}} events, if appropriate.
+رویداد `pointerenter` زمانی شلیک می‌شود که یک دستگاه اشاره‌گر به داخل مرزهای برخوردیابی یک عنصر یا یکی از فرزندان آن حرکت کند، از جمله در نتیجهٔ یک رویداد {{domxref("Element/pointerdown_event", "pointerdown")}} از دستگاهی که از قابلیت hover پشتیبانی نمی‌کند (به {{domxref("Element/pointerdown_event", "pointerdown")}} مراجعه کنید). در غیر این صورت، `pointerenter` دقیقاً مانند {{domxref("Element/mouseenter_event", "mouseenter")}} عمل می‌کند و همزمان با آن ارسال می‌شود. همچنین این رویدادها در صورت لزوم همزمان با رویدادهای {{domxref("Element/mouseover_event", "mouseover")}} و {{domxref("Element/pointerover_event", "pointerover")}} ارسال می‌شوند.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("pointerenter", (event) => { })
@@ -26,15 +25,15 @@ addEventListener("pointerenter", (event) => { })
 onpointerenter = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PointerEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PointerEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("PointerEvent")}}
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const para = document.querySelector("p");
@@ -44,7 +43,7 @@ para.addEventListener("pointerenter", (event) => {
 });
 ```
 
-Using the `onpointerenter` event handler property:
+استفاده از ویژگی مدیریت‌کننده رویداد `onpointerenter`:
 
 ```js
 const para = document.querySelector("p");
@@ -54,17 +53,17 @@ para.onpointerenter = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events
+- رویدادهای مرتبط
   - {{domxref('Element/gotpointercapture_event', 'gotpointercapture')}}
   - {{domxref('Element/lostpointercapture_event', 'lostpointercapture')}}
   - {{domxref('Element/pointerover_event', 'pointerover')}}
@@ -76,3 +75,4 @@ para.onpointerenter = (event) => {
   - {{domxref('Element/pointerleave_event', 'pointerleave')}}
   - {{domxref('Element/pointerrawupdate_event', 'pointerrawupdate')}}
   - {{domxref("Element/mouseenter_event", "mouseenter")}}
+```
