@@ -1,11 +1,5 @@
 ---
 title: "HTMLDetailsElement: open property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement/open"
-status: "needs-translation"
----
-
----
-title: "HTMLDetailsElement: open property"
 short-title: open
 slug: Web/API/HTMLDetailsElement/open
 page-type: web-api-instance-property
@@ -14,24 +8,22 @@ browser-compat: api.HTMLDetailsElement.open
 
 {{ APIRef("HTML DOM") }}
 
-The **`open`** property of the
-{{domxref("HTMLDetailsElement")}} interface is a boolean value reflecting the
-[`open`](/en-US/docs/Web/HTML/Reference/Elements/details#open) HTML attribute, indicating whether the {{htmlelement("details")}}'s contents (not counting the {{htmlelement("summary")}}) is to be shown to the user.
+ویژگی **`open`** از رابط {{domxref("HTMLDetailsElement")}} یک مقدار بولی است که ویژگی HTML [`open`](/en-US/docs/Web/HTML/Reference/Elements/details#open) را منعکس می‌کند و نشان می‌دهد که آیا محتویات عنصر {{htmlelement("details")}} (بدون احتساب {{htmlelement("summary")}}) باید به کاربر نمایش داده شود یا خیر.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-The boolean value represents the state of the [`open`](/en-US/docs/Web/HTML/Reference/Elements/details#open) HTML attribute. The value of `true` means it is set with both the summary and the additional information shown to the user. The `false` value means it not set, with only the summary shown.
+این مقدار بولی وضعیت ویژگی HTML [`open`](/en-US/docs/Web/HTML/Reference/Elements/details#open) را نشان می‌دهد. مقدار `true` به این معنی است که ویژگی تنظیم شده و هم خلاصه و هم اطلاعات اضافی به کاربر نمایش داده می‌شود. مقدار `false` به این معنی است که ویژگی تنظیم نشده و فقط خلاصه نمایش داده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{htmlelement("details")}} and {{htmlelement("summary")}} elements
+- عناصر {{htmlelement("details")}} و {{htmlelement("summary")}}
