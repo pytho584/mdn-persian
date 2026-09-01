@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaAutoComplete property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaAutoComplete"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaAutoComplete property"
 short-title: ariaAutoComplete
 slug: Web/API/ElementInternals/ariaAutoComplete
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.ElementInternals.ariaAutoComplete
 
 {{APIRef("Web Components")}}
 
-The **`ariaAutoComplete`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete) attribute, which indicates whether inputting text could trigger display of one or more predictions of the user's intended value for a combobox, searchbox, or textbox and specifies how predictions would be presented if they were made.
+ویژگی **`ariaAutoComplete`** از رابط {{domxref("ElementInternals")}} منعکس‌کنندهٔ مقدار صفت [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete) است که نشان می‌دهد آیا وارد کردن متن می‌تواند باعث نمایش یک یا چند پیش‌بینی از مقدار مورد نظر کاربر برای یک جعبه‌ترکیب (combobox)، جعبه‌جستجو (searchbox) یا جعبه‌متن (textbox) شود و مشخص می‌کند که اگر پیش‌بینی‌ها انجام شوند، چگونه ارائه خواهند شد.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. این ویژگی‌ها ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً اضافه نکند، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح‌دهندهٔ مدل شیء دسترسی‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
 ## Value
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"inline"`
-  - : When a user is providing input, text suggesting one way to complete the provided input may be dynamically inserted after the caret.
+  - : هنگامی که کاربر متنی را وارد می‌کند، متنی که یک راه تکمیل ورودی ارائه‌شده را پیشنهاد می‌کند ممکن است به صورت پویا بعد از مکان‌نما درج شود.
 - `"list"`
-  - : When a user is providing input, an element containing a collection of values that could complete the provided input may be displayed.
+  - : هنگامی که کاربر متنی را وارد می‌کند، ممکن است عنصری حاوی مجموعه‌ای از مقادیر که می‌توانند ورودی ارائه‌شده را تکمیل کنند نمایش داده شود.
 - `"both"`
-  - : When a user is providing input, an element containing a collection of values that could complete the provided input may be displayed. If displayed, one value in the collection is automatically selected, and the text needed to complete the automatically selected value appears after the caret in the input.
+  - : هنگامی که کاربر متنی را وارد می‌کند، ممکن است عنصری حاوی مجموعه‌ای از مقادیر که می‌توانند ورودی ارائه‌شده را تکمیل کنند نمایش داده شود. اگر نمایش داده شود، یک مقدار در مجموعه به طور خودکار انتخاب می‌شود و متن لازم برای تکمیل مقدار انتخاب‌شدهٔ خودکار بعد از مکان‌نما در ورودی ظاهر می‌شود.
 - `"none"`
-  - : When a user is providing input, there is no display of an automatic suggestion that attempts to predict how the user intends to complete the input.
+  - : هنگامی که کاربر متنی را وارد می‌کند، هیچ پیشنهاد خودکاری که سعی در پیش‌بینی نحوهٔ تکمیل ورودی توسط کاربر داشته باشد نمایش داده نمی‌شود.
 
 ## Examples
 
-In this example the value of `ariaAutoComplete` is set to "inline".
+در این مثال، مقدار `ariaAutoComplete` به `"inline"` تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
