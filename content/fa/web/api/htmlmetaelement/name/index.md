@@ -1,11 +1,5 @@
 ---
 title: "HTMLMetaElement: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMetaElement/name"
-status: "needs-translation"
----
-
----
-title: "HTMLMetaElement: name property"
 short-title: name
 slug: Web/API/HTMLMetaElement/name
 page-type: web-api-instance-property
@@ -14,19 +8,17 @@ browser-compat: api.HTMLMetaElement.name
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMetaElement.name`** property is used in combination with {{domxref("HTMLMetaElement.content")}} to define the name-value pairs for the metadata of a document.
-The `name` attribute defines the metadata name and the `content` attribute defines the value.
+ویژگی **`HTMLMetaElement.name`** در ترکیب با {{domxref("HTMLMetaElement.content")}} برای تعریف جفت‌های نام-مقدار برای فراداده‌های یک سند استفاده می‌شود. صفت `name` نام فراداده و صفت `content` مقدار آن را تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Reading the metadata name of a meta element
+### خواندن نام فراداده یک عنصر meta
 
-The following example queries the first `<meta>` element in a document.
-The `name` value is logged to the console, showing that [keywords](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification) have been specified for the document:
+مثال زیر اولین عنصر `<meta>` را در یک سند جستجو می‌کند. مقدار `name` در کنسول ثبت می‌شود و نشان می‌دهد که [کلمات کلیدی](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification) برای سند مشخص شده‌اند:
 
 ```js
 // given <meta name="keywords" content="documentation, HTML, web technologies">
@@ -35,10 +27,9 @@ console.log(meta.name);
 // "keywords"
 ```
 
-### Creating a meta element with `author` metadata
+### ایجاد یک عنصر meta با فراداده `author`
 
-The following example creates a new `<meta>` element with a `name` attribute set to [`author`](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification).
-The `content` attribute sets the author of the document and the element is appended to the document `<head>`:
+مثال زیر یک عنصر `<meta>` جدید با صفت `name` تنظیم شده به [`author`](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification) ایجاد می‌کند. صفت `content` نویسنده سند را تنظیم می‌کند و عنصر به `<head>` سند اضافه می‌شود:
 
 ```js
 let meta = document.createElement("meta");
@@ -55,7 +46,7 @@ document.head.appendChild(meta);
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("meta")}}
-- [Possible values for the name attribute](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification)
+- [مقادیر ممکن برای صفت name](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification)
