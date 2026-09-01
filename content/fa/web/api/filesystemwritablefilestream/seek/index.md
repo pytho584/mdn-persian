@@ -1,11 +1,5 @@
 ---
 title: "FileSystemWritableFileStream: seek() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemWritableFileStream/seek"
-status: "needs-translation"
----
-
----
-title: "FileSystemWritableFileStream: seek() method"
 short-title: seek()
 slug: Web/API/FileSystemWritableFileStream/seek
 page-type: web-api-instance-method
@@ -14,41 +8,41 @@ browser-compat: api.FileSystemWritableFileStream.seek
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`seek()`** method of the {{domxref("FileSystemWritableFileStream")}} interface updates the current file cursor offset to the position (in bytes) specified when calling the method.
+متد **`seek()`** در رابط {{domxref("FileSystemWritableFileStream")}}، موقعیت فعلی نشانگر فایل را به بایتی که هنگام فراخوانی متد مشخص شده است، بهروزرسانی میکند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 seek(position)
 ```
 
-### Parameters
+### پارامترها
 
 - `position`
-  - : A number specifying the byte position from the beginning of the file.
+  - : عددی که موقعیت بایت را از ابتدای فایل مشخص میکند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} that returns `undefined`.
+یک {{jsxref('Promise')}} که مقدار `undefined` برمیگرداند.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if {{domxref('PermissionStatus.state')}} is not `granted`.
+  - : اگر {{domxref('PermissionStatus.state')}} برابر با `granted` نباشد، پرتاب میشود.
 - {{jsxref("TypeError")}}
-  - : Thrown if `position` is not a number or not defined.
+  - : اگر `position` یک عدد نباشد یا تعریف نشده باشد، پرتاب میشود.
 
-## Examples
+## مثالها
 
-The following asynchronous function opens the 'Save File' picker, which returns a {{domxref('FileSystemFileHandle')}} once a file is selected. From this, a writable stream is created using the {{domxref('FileSystemFileHandle.createWritable()')}} method.
+تابع ناهمگام زیر، انتخابگر «ذخیره فایل» را باز میکند که پس از انتخاب یک فایل، یک {{domxref('FileSystemFileHandle')}} برمیگرداند. با استفاده از متد {{domxref('FileSystemFileHandle.createWritable()')}}، یک جریان قابل نوشتن (writable stream) از این هندل ایجاد میشود.
 
-Next, we write to the stream:
+سپس، در جریان مینویسیم:
 
-1. A text string is written to the stream.
-2. The `seek()` method is used to put the cursor at the start of the stream.
-3. A second text string is written to the start of the stream, overwriting the first write.
+1. یک رشته متنی در جریان نوشته میشود.
+2. متد `seek()` برای قرار دادن نشانگر در ابتدای جریان استفاده میشود.
+3. یک رشته متنی دوم در ابتدای جریان نوشته میشود که نوشته اول را بازنویسی میکند.
 
-The stream is then closed.
+سپس جریان بسته میشود.
 
 ```js
 async function saveFile() {
@@ -72,17 +66,17 @@ async function saveFile() {
 }
 ```
 
-If you run the above function and then open the resulting file created on disk, you should see the text "My second file content".
+اگر تابع بالا را اجرا کنید و سپس فایل ایجادشده روی دیسک را باز کنید، باید متن «My second file content» را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
