@@ -1,11 +1,5 @@
 ---
 title: "DOMStringList: contains() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMStringList/contains"
-status: "needs-translation"
----
-
----
-title: "DOMStringList: contains() method"
 short-title: contains()
 slug: Web/API/DOMStringList/contains
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.DOMStringList.contains
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`contains()`** method returns a boolean indicating whether the given string is in the list.
+متد **`contains()`** یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا رشتهٔ داده‌شده در فهرست وجود دارد یا نه.
 
 ## Syntax
 
@@ -25,16 +19,16 @@ contains(string)
 ### Parameters
 
 - `string`
-  - : A string you want to check for the existence of in the list.
+  - : رشته‌ای که می‌خواهید وجود آن را در فهرست بررسی کنید.
 
 ### Return value
 
-A boolean indicating whether the given string is in the list.
+یک مقدار بولین که نشان می‌دهد آیا رشتهٔ داده‌شده در فهرست وجود دارد.
 
 ### Exceptions
 
 - {{jsxref("TypeError")}}
-  - : Thrown if no argument is provided.
+  - : اگر آرگومانی ارسال نشود، پرتاب می‌شود.
 
 ## Specifications
 
