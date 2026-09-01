@@ -8,15 +8,15 @@ browser-compat: api.HTMLInputElement.required
 
 {{ APIRef("HTML DOM") }}
 
-ویژگی **`required`** از رابط {{DOMxRef("HTMLInputElement")}} مشخص می‌کند که کاربر باید قبل از ارسال فرم، مقدار را پر کند. این ویژگی، منعکس‌کنندهٔ صفت [`required`](/en-US/docs/Web/HTML/Reference/Elements/input#required) عنصر {{htmlelement("input")}} است.
+ویژگی **`required`** از رابط {{DOMxRef("HTMLInputElement")}} مشخص می‌کند که کاربر باید قبل از ارسال فرم، مقداری را پر کند. این ویژگی منعکس‌کنندهٔ صفت [`required`](/en-US/docs/Web/HTML/Reference/Elements/input#required) عنصر {{htmlelement("input")}} است.
 
-هرچند صفت بولی `required` در HTML برای تایپ‌های ورودی `hidden`، `range`، `color`، `submit`، `reset`، `button` و `image` نادیده گرفته می‌شود، ویژگی `required` برای این تایپ‌ها در صورت وجود این صفت مقدار `true` و در غیر این صورت `false` است.
+در حالی که صفت بولی `required` در HTML اگر نوع `hidden`، `range`، `color`، `submit`، `reset`، `button` و `image` باشد نادیده گرفته می‌شود، ویژگی `required` برای این انواع ورودی در صورت وجود صفت `true` و در غیر این صورت `false` است.
 
-اگر یک ورودی الزامی مقدار نداشته باشد، ویژگی فقط‌خواندنی {{domxref('ValidityState.valueMissing','valueMissing')}} از شیء {{domxref('ValidityState')}} مقدار `true` خواهد بود.
+اگر یک ورودی اجباری (required) مقداری نداشته باشد، ویژگی فقط‌خواندنی {{domxref('ValidityState.valueMissing','valueMissing')}} از شیء {{domxref('ValidityState')}} برابر با `true` خواهد بود.
 
 ## مقدار
 
-یک بولی.
+یک مقدار بولی.
 
 ## مثال‌ها
 
@@ -30,7 +30,7 @@ inputElement.required = true;
 
 {{Specifications}}
 
-## سازگاری مرورگر
+## سازگاری با مرورگر
 
 {{Compat}}
 
@@ -38,4 +38,4 @@ inputElement.required = true;
 
 - {{HTMLElement("input")}}
 - {{DOMXref("HTMLInputElement.validity")}}
-- {{cssxref(":required")}} شبه‌کلاس
+- شبه‌کلاس {{cssxref(":required")}}
