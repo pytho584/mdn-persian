@@ -1,7 +1,5 @@
 ---
 title: "GamepadPose"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose"
-status: "needs-translation"
 ---
 
 ---
@@ -15,42 +13,42 @@ browser-compat: api.GamepadPose
 
 {{APIRef("Gamepad API")}}{{SeeCompatTable}}
 
-The **`GamepadPose`** interface of the [Gamepad API](/en-US/docs/Web/API/Gamepad_API) represents the pose of a [WebVR](/en-US/docs/Web/API/WebVR_API) controller at a given timestamp (which includes orientation, position, velocity, and acceleration information).
+رابط **`GamepadPose`** از [Gamepad API](/en-US/docs/Web/API/Gamepad_API) وضعیت یک کنترل‌کننده [WebVR](/en-US/docs/Web/API/WebVR_API) را در یک زمان مشخص (که شامل اطلاعات جهت‌گیری، موقعیت، سرعت و شتاب است) نمایش می‌دهد.
 
-This interface is accessible through the {{domxref("Gamepad.pose")}} property.
+این رابط از طریق ویژگی {{domxref("Gamepad.pose")}} قابل دسترسی است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GamepadPose.hasOrientation")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a boolean indicating whether the gamepad is capable of returning orientation information (`true`) or not (`false`).
+  - : یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا گیم‌پد قادر به بازگرداندن اطلاعات جهت‌گیری است (`true`) یا خیر (`false`).
 - {{domxref("GamepadPose.hasPosition")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a boolean indicating whether the gamepad is capable of returning position information (`true`) or not (`false`).
+  - : یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا گیم‌پد قادر به بازگرداندن اطلاعات موقعیت است (`true`) یا خیر (`false`).
 - {{domxref("GamepadPose.position")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the position of the {{domxref("Gamepad")}} as a 3D vector.
+  - : موقعیت {{domxref("Gamepad")}} را به صورت یک بردار سه‌بعدی برمی‌گرداند.
 - {{domxref("GamepadPose.linearVelocity")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the linear velocity of the {{domxref("Gamepad")}}, in meters per second.
+  - : سرعت خطی {{domxref("Gamepad")}} را بر حسب متر بر ثانیه برمی‌گرداند.
 - {{domxref("GamepadPose.linearAcceleration")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the linear acceleration of the {{domxref("Gamepad")}}, in meters per second per second.
+  - : شتاب خطی {{domxref("Gamepad")}} را بر حسب متر بر مجذور ثانیه برمی‌گرداند.
 - {{domxref("GamepadPose.orientation")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the orientation of the {{domxref("Gamepad")}}, as a quaternion value.
+  - : جهت‌گیری {{domxref("Gamepad")}} را به عنوان یک مقدار چهارتایی (quaternion) برمی‌گرداند.
 - {{domxref("GamepadPose.angularVelocity")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the angular velocity of the {{domxref("Gamepad")}}, in radians per second.
+  - : سرعت زاویه‌ای {{domxref("Gamepad")}} را بر حسب رادیان بر ثانیه برمی‌گرداند.
 - {{domxref("GamepadPose.angularAcceleration")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the angular acceleration of the {{domxref("Gamepad")}}, in meters per second per second.
+  - : شتاب زاویه‌ای {{domxref("Gamepad")}} را بر حسب متر بر مجذور ثانیه برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-TBD.
+در دست تکمیل.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebVR API](/en-US/docs/Web/API/WebVR_API)
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
