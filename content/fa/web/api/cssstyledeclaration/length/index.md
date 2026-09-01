@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleDeclaration: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/length"
-status: "needs-translation"
----
-
----
-title: "CSSStyleDeclaration: length property"
 short-title: length
 slug: Web/API/CSSStyleDeclaration/length
 page-type: web-api-instance-property
@@ -14,17 +8,15 @@ browser-compat: api.CSSStyleDeclaration.length
 
 {{ APIRef("CSSOM") }}
 
-The read-only property returns an integer that represents the
-number of style declarations in this CSS declaration block.
+این ویژگی فقط خواندنی یک عدد صحیح برمی‌گرداند که تعداد اعلان‌های سبک در این بلوک اعلان CSS را نشان می‌دهد.
 
-## Value
+## مقدار
 
-An integer that provides the number of styles explicitly set on the parent of
-the instance.
+یک عدد صحیح که تعداد سبک‌های تنظیم شده به صورت صریح بر روی والد نمونه را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The following gets the number of explicitly set styles on the following HTML element:
+کد زیر تعداد سبک‌های تنظیم شده به صورت صریح بر روی عنصر HTML زیر را به دست می‌آورد:
 
 ```html
 <div
@@ -32,7 +24,7 @@ The following gets the number of explicitly set styles on the following HTML ele
   style="margin: 0 10px; background-color: #ccaa11; font-family: monospace"></div>
 ```
 
-JavaScript code:
+کد JavaScript:
 
 ```js
 const myDiv = document.getElementById("div1");
@@ -40,10 +32,10 @@ const divStyle = myDiv.style;
 const len = divStyle.length; // 6
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
