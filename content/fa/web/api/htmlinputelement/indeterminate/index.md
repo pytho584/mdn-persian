@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: indeterminate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/indeterminate"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: indeterminate property"
 short-title: indeterminate
 slug: Web/API/HTMLInputElement/indeterminate
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLInputElement.indeterminate
 
 {{APIRef("HTML DOM")}}
 
-The **`indeterminate`** property of the {{domxref("HTMLInputElement")}} interface returns a boolean value that indicates whether the checkbox is in the _indeterminate_ state. For example, a "select all/deselect all" checkbox may be in the indeterminate state when some but not all of its sub-controls are checked. The `indeterminate` state can only be set via JavaScript and is only relevant to [`checkbox`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox) controls.
+خاصیت **`indeterminate`** از رابط {{domxref("HTMLInputElement")}} یک مقدار بولی (boolean) برمی‌گرداند که نشان می‌دهد آیا چک‌باکس در حالت _نامعین_ (indeterminate) است. برای مثال، یک چک‌باکس «انتخاب همه/لغو انتخاب همه» ممکن است زمانی که برخی از زیرکنترل‌های آن انتخاب شده‌اند اما نه همه، در حالت نامعین باشد. حالت `indeterminate` فقط از طریق جاوااسکریپت قابل تنظیم است و فقط برای کنترل‌های [`checkbox`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox) کاربرد دارد.
 
-It is unrelated to the {{domxref("HTMLInputElement.checked")}} property, and an indeterminate checkbox can be either checked or unchecked. Being indeterminate only affects the checkbox's appearance (see example below), not its presence when submitted (which is controlled by the checkedness).
+این خاصیت به خاصیت {{domxref("HTMLInputElement.checked")}} ارتباطی ندارد و یک چک‌باکس نامعین می‌تواند هم انتخاب‌شده (checked) و هم انتخاب‌نشده (unchecked) باشد. حالت نامعین فقط بر ظاهر چک‌باکس تأثیر می‌گذارد (مثال زیر را ببینید)، نه بر وجود آن هنگام ارسال (که توسط وضعیت انتخاب‌شدگی کنترل می‌شود).
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```html
 <input type="checkbox" id="indeterminate-checkbox" />
@@ -36,18 +30,18 @@ checkbox.indeterminate = true;
 
 {{EmbedLiveSample("examples", "", 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLInputElement")}}
 - {{domxref("HTMLInputElement.checked")}}
 - {{HTMLElement("input")}}
-- [Indeterminate state checkboxes](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox#indeterminate_state_checkboxes)
-- CSS {{cssxref(":indeterminate")}} property
+- [چک‌باکس‌های حالت نامعین](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox#indeterminate_state_checkboxes)
+- خاصیت CSS {{cssxref(":indeterminate")}}
