@@ -1,11 +1,5 @@
 ---
 title: "Element: setAttribute() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute"
-status: "needs-translation"
----
-
----
-title: "Element: setAttribute() method"
 short-title: setAttribute()
 slug: Web/API/Element/setAttribute
 page-type: web-api-instance-method
@@ -15,86 +9,86 @@ browser-compat: api.Element.setAttribute
 {{APIRef("DOM")}}
 
 > [!WARNING]
-> This method can take attribute values that are parsed as HTML, a script, or as a script URL, depending on the attribute.
-> APIs like this are known as [injection sinks](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage), and are potentially a vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks, if the value originally came from an attacker.
+> این متد می‌تواند مقادیر ویژگی‌هایی را بپذیرد که بسته به نوع ویژگی، به‌صورت HTML، اسکریپت یا URL اسکریپت تجزیه می‌شوند.
+> چنین APIهایی به‌عنوان [injection sinks](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage) شناخته می‌شوند و اگر مقدار در اصل از سوی یک مهاجم آمده باشد، می‌توانند بستری برای حملات [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) باشند.
 >
-> You can mitigate this risk by always passing the appropriate trusted type object ({{domxref("TrustedHTML")}}, {{domxref("TrustedScript")}}, or {{domxref("TrustedScriptURL")}}) instead of strings for those attributes that require them, and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types).
-> See [Security considerations](#security_considerations) for more information.
+> می‌توانید این خطر را با همیشه ارسال شیء نوع مورد اعتماد مناسب ({{domxref("TrustedHTML")}}، {{domxref("TrustedScript")}} یا {{domxref("TrustedScriptURL")}}) به‌جای رشته‌ها برای آن دسته از ویژگی‌هایی که به این نوع‌ها نیاز دارند، و با [اجبار کردن trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) کاهش دهید.
+> برای اطلاعات بیشتر به [ملاحظات امنیتی](#security_considerations) مراجعه کنید.
 
-The **`setAttribute()`** method of the {{domxref("Element")}} interface sets the value of an attribute on the specified element.
-If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.
+متد **`setAttribute()`** در رابط {{domxref("Element")}} مقدار یک ویژگی را روی عنصر مشخص‌شده تنظیم می‌کند.
+اگر ویژگی از قبل وجود داشته باشد، مقدار آن به‌روزرسانی می‌شود؛ در غیر این صورت، ویژگی جدیدی با نام و مقدار مشخص‌شده اضافه می‌شود.
 
-If you need to work with the {{domxref("Attr")}} node (such as cloning from another element) before adding it, you can use the {{domxref("Element.setAttributeNode()", "setAttributeNode()")}} method instead.
+اگر لازم است قبل از افزودن، با گره {{domxref("Attr")}} کار کنید (مثلاً آن را از عنصر دیگری کپی کنید)، می‌توانید به‌جای آن از متد {{domxref("Element.setAttributeNode()", "setAttributeNode()")}} استفاده کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 setAttribute(qualifiedName, value)
 ```
 
-### Parameters
+### پارامترها
 
 - `qualifiedName`
-  - : A string containing the qualified name of the attribute whose value is to be set.
-    The attribute name is automatically converted to all lower-case when `setAttribute()` is called on an HTML element in an HTML document.
+  - : رشته‌ای شامل نام کامل (qualified name) ویژگی‌ای که قرار است مقدار آن تنظیم شود.
+    وقتی `setAttribute()` روی یک عنصر HTML در یک سند HTML فراخوانی شود، نام ویژگی به‌طور خودکار به حروف کوچک تبدیل می‌شود.
 
-    The format of the qualified name is `prefix:localName` or `localName`, where the parts are defined as:
+    قالب نام کامل به‌صورت `prefix:localName` یا `localName` است که اجزای آن چنین تعریف می‌شوند:
     - `prefix` {{optional_inline}}
-      - : A "short alias" for the namespace, as returned by the {{DOMxRef("Attr.prefix", "prefix")}} property.
+      - : «نام مستعار کوتاه» برای فضای نام، همان‌طور که توسط ویژگی {{DOMxRef("Attr.prefix", "prefix")}} بازگردانده می‌شود.
     - `localName`
-      - : The local name of the attribute, as returned by the {{DOMxRef("Attr.localName", "localName")}} property.
+      - : نام محلی ویژگی، همان‌طور که توسط ویژگی {{DOMxRef("Attr.localName", "localName")}} بازگردانده می‌شود.
 
 - `value`
-  - : A trusted type or string containing the value to assign to the attribute.
+  - : یک نوع مورد اعتماد (trusted type) یا رشته‌ای حاوی مقداری که به ویژگی اختصاص داده می‌شود.
 
-    Trusted type instances must be passed for the following attributes when trusted types are enforced:
-    - Event handler content attributes, such as `onclick` and `onload`, require a {{domxref("TrustedScript")}}.
-    - {{domxref("HTMLIFrameElement.srcdoc")}} require a {{domxref("TrustedHTML")}} instance.
-    - {{domxref("HTMLScriptElement.src")}} require a {{domxref("TrustedScriptURL")}} instance.
-    - {{domxref("SVGScriptElement.href")}} require a {{domxref("TrustedScriptURL")}} instance.
+    وقتی trusted types اجباری شده باشند، برای ویژگی‌های زیر باید نمونه‌های نوع مورد اعتماد ارسال شود:
+    - ویژگی‌های محتوایی مدیریت رویداد (event handler)، مانند `onclick` و `onload`، به یک {{domxref("TrustedScript")}} نیاز دارند.
+    - {{domxref("HTMLIFrameElement.srcdoc")}} به یک نمونه {{domxref("TrustedHTML")}} نیاز دارد.
+    - {{domxref("HTMLScriptElement.src")}} به یک نمونه {{domxref("TrustedScriptURL")}} نیاز دارد.
+    - {{domxref("SVGScriptElement.href")}} به یک نمونه {{domxref("TrustedScriptURL")}} نیاز دارد.
 
-    Trusted types are not enforced for other attributes, so a string or any trusted type may be passed.
+    برای سایر ویژگی‌ها trusted types اجباری نیستند، بنابراین می‌توان یک رشته یا هر نوع مورد اعتمادی ارسال کرد.
 
-    A specified non-string value specified is converted automatically into a string.
+    اگر مقدار مشخص‌شده رشت‌ای نباشد، به‌طور خودکار به رشته تبدیل می‌شود.
 
-    Boolean attributes are considered to be `true` if they're present on the element at all.
-    You should set `value` to the empty string (`""`) or the attribute's name, with no leading or trailing whitespace.
-    See the [example](#examples) below for a practical demonstration.
+    ویژگی‌های بولی اگر در عنصر حضور داشته باشند، مقدار `true` در نظر گرفته می‌شوند.
+    باید `value` را به رشته خالی (`""`) یا نام ویژگی تنظیم کنید، بدون فاصله‌های ابتدایی یا انتهایی.
+    برای یک نمایش عملی، [نمونه](#examples) را در پایین ببینید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidCharacterError` {{domxref("DOMException")}}
-  - : Thrown if either the [`prefix`](#prefix) or [`localName`](#localname) is not valid:
-    - The `prefix` must have at least one character, and cannot contain ASCII whitespace, `NULL`, `/`, or `>` (U+0000, U+002F, or U+003E, respectively).
-    - The `localName` must have at least one character, and may not contain ASCII whitespace, `NULL`, `/`, `=` or `>` (U+0000, U+002F, U+003D, or U+003E, respectively).
+  - : اگر [`prefix`](#prefix) یا [`localName`](#localname) نامعتبر باشد پرتاب می‌شود:
+    - `prefix` باید حداقل یک نویسه داشته باشد و نمی‌تواند شامل فاصله‌های خالی ASCII، `NULL`، `/` یا `>` باشد (به‌ترتیب U+0000، U+002F یا U+003E).
+    - `localName` باید حداقل یک نویسه داشته باشد و نمی‌تواند شامل فاصله‌های خالی ASCII، `NULL`، `/`، `=` یا `>` باشد (به‌ترتیب U+0000، U+002F، U+003D یا U+003E).
 
     > [!NOTE]
-    > Earlier versions of the specification were more restrictive, requiring that the `qualifiedName` be a valid [XML name](https://www.w3.org/TR/xml/#dt-name).
+    > نسخه‌های قبلی مشخصات محدودکننده‌تر بودند و لازم داشتند که `qualifiedName` یک [نام XML](https://www.w3.org/TR/xml/#dt-name) معتبر باشد.
 
 - `TypeError`
-  - : Thrown if [`value`](#value) is passed a string instead of a trusted type object (for those attributes that require them) when [Trusted Types](/en-US/docs/Web/API/Trusted_Types_API) are [enforced by a CSP](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) and no default policy is defined.
+  - : اگر برای [`value`](#value) به‌جای شیء نوع مورد اعتماد (برای آن دسته از ویژگی‌هایی که به آن نیاز دارند) یک رشته ارسال شود، در حالی که [Trusted Types](/en-US/docs/Web/API/Trusted_Types_API) توسط [یک CSP اجباری شده](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) باشند و هیچ سیاست پیش‌فرضی تعریف نشده باشد، پرتاب می‌شود.
 
-## Description
+## توضیحات
 
-**`setAttribute()`** sets the value of an attribute on the specified element.
-If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.
+متد **`setAttribute()`** مقدار یک ویژگی را روی عنصر مشخص‌شده تنظیم می‌کند.
+اگر ویژگی از قبل وجود داشته باشد، مقدار آن به‌روزرسانی می‌شود؛ در غیر این صورت، ویژگی جدیدی با نام و مقدار مشخص‌شده اضافه می‌شود.
 
-To set the value of a Boolean attribute, such as `disabled`, you can specify any value.
-It doesn't matter what value you use; if the attribute is present, its value is considered to be `true`.
-By convention we enable boolean attributes by setting their value to either the name of the attribute or the empty string (`""`).
-The absence of a boolean attribute means its value is `false`; you must call {{domxref("Element.removeAttribute()")}} to "undo" the effect of enabling a boolean attribute
+برای تنظیم مقدار یک ویژگی بولی مانند `disabled`، می‌توانید هر مقداری را مشخص کنید.
+فرقی نمی‌کند از چه مقداری استفاده کنید؛ اگر ویژگی حضور داشته باشد، مقدار آن `true` در نظر گرفته می‌شود.
+طبق قرارداد، ویژگی‌های بولی را با تنظیم مقدارشان روی نام خود ویژگی یا رشته خالی (`""`) فعال می‌کنیم.
+نبودِ یک ویژگی بولی به این معنی است که مقدار آن `false` است؛ برای «خنثی کردن» اثر فعال‌سازی یک ویژگی بولی باید {{domxref("Element.removeAttribute()")}} را فراخوانی کنید.
 
-To get the current value of an attribute, use {{domxref("Element.getAttribute", "getAttribute()")}}; to remove an attribute, call {{domxref("Element.removeAttribute", "removeAttribute()")}}.
+برای دریافت مقدار فعلی یک ویژگی از {{domxref("Element.getAttribute", "getAttribute()")}} استفاده کنید؛ برای حذف یک ویژگی، {{domxref("Element.removeAttribute", "removeAttribute()")}} را فراخوانی کنید.
 
-### Security considerations
+### ملاحظات امنیتی
 
-[Some attributes](#value) can be used as a vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks, where potentially unsafe strings provided by a user are injected into the DOM without first being sanitized, or scripts are run that might contain malicious code.
+[برخی از ویژگی‌ها](#value) می‌توانند به‌عنوان بستری برای حملات [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) استفاده شوند؛ جایی که رشته‌های بالقوه ناامن ارائه‌شده توسط کاربر، بدون اینکه ابتدا پاک‌سازی شوند، به DOM تزریق می‌شوند، یا اسکریپت‌هایی اجرا می‌شوند که ممکن است حاوی کد مخرب باشند.
 
-For example, the following code shows how a potentially untrusted string provided by a user would be executed when the button is pressed.
+برای مثال، کد زیر نشان می‌دهد که چگونه یک رشته بالقوه غیرقابل اعتماد ارائه‌شده توسط کاربر، هنگام فشردن دکمه اجرا می‌شود.
 
 ```js
 const button = document.querySelector("button");
@@ -102,18 +96,18 @@ const potentiallyUnsafeString = "alert(1)";
 button.setAttribute("onclick", potentiallyUnsafeString);
 ```
 
-You might similarly inject untrusted HTML into the DOM by setting the {{domxref("HTMLIFrameElement.srcdoc")}} attribute, or by supplying an untrusted URL to the {{domxref("HTMLScriptElement.src")}} or {{domxref("SVGScriptElement.href")}} attributes.
+به‌طور مشابه، می‌توانید HTML غیرقابل اعتماد را با تنظیم ویژگی {{domxref("HTMLIFrameElement.srcdoc")}} به DOM تزریق کنید، یا یک URL غیرقابل اعتماد به ویژگی‌های {{domxref("HTMLScriptElement.src")}} یا {{domxref("SVGScriptElement.href")}} بدهید.
 
-You can mitigate these issues by always assigning the appropriate trusted type object ({{domxref("TrustedHTML")}}, {{domxref("TrustedScript")}}, or {{domxref("TrustedScriptURL")}}) for each property instead of strings, and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) using the [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) CSP directive.
-This ensures that the input is passed through a transformation function which might, for example, remove potentially dangerous markup from HTML before it is injected.
+می‌توانید این مشکلات را با همیشه اختصاص دادن شیء نوع مورد اعتماد مناسب ({{domxref("TrustedHTML")}}، {{domxref("TrustedScript")}} یا {{domxref("TrustedScriptURL")}}) به هر ویژگی به‌جای رشته‌ها، و با [اجبار کردن trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) با استفاده از دستور CSP [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) کاهش دهید.
+این کار تضمین می‌کند که ورودی از یک تابع تبدیل عبور کند که ممکن است برای مثال، قبل از تزریق، نشانه‌گذاری بالقوه خطرناک را از HTML حذف کند.
 
-## Examples
+## نمونه‌ها
 
-### Setting safe attributes
+### تنظیم ویژگی‌های امن
 
-This example uses `setAttribute()` to set the `name` and `disabled` attributes on a {{HTMLElement("button")}}.
-These attributes are both XSS-safe.
-Since their values are not executed or parsed as HTML into the DOM, we don't need to pass trusted types.
+این مثال از `setAttribute()` برای تنظیم ویژگی‌های `name` و `disabled` روی یک {{HTMLElement("button")}} استفاده می‌کند.
+هر دوی این ویژگی‌ها از نظر XSS امن هستند.
+از آنجا که مقادیر آن‌ها به‌عنوان HTML در DOM اجرا یا تجزیه نمی‌شوند، نیازی به ارسال trusted types نداریم.
 
 #### HTML
 
@@ -135,8 +129,8 @@ button {
 
 #### JavaScript
 
-First we get the button element and set its `name` attribute to "helloButton" using `setAttribute()`.
-To demonstrate that the attribute name did change, we then get the attribute text and display it on the button.
+ابتدا عنصر button را می‌گیریم و ویژگی `name` آن را با استفاده از `setAttribute()` روی `"helloButton"` تنظیم می‌کنیم.
+برای نشان دادن اینکه نام ویژگی تغییر کرده است، سپس متن ویژگی را می‌گیریم و روی دکمه نمایش می‌دهیم.
 
 ```js
 const helloButton = document.querySelector("#hello_button");
@@ -146,18 +140,18 @@ helloButton.setAttribute("name", "helloButton");
 helloButton.innerText = helloButton.getAttribute("name");
 ```
 
-This code is for the reset button.
-It simply reloads the frame.
+این کد مربوط به دکمه «Reset» است.
+این دکمه صرفاً صفحه را دوباره بارگذاری می‌کند.
 
 ```js
 const reloadButton = document.querySelector("#reset");
 reloadButton.addEventListener("click", () => document.location.reload());
 ```
 
-Next we show how to set and reset a boolean attribute.
-When the toggle button is clicked we check if the boolean `disabled` property is defined (this property reflects the `disabled` attribute, and is `true` if the button is disabled and `false` otherwise).
-If the button is disabled we call {{domxref("Element.removeAttribute()")}} to remove the attribute, which in turn enables the button.
-If the button is enabled, we disable the button by setting the `disabled` attribute to `"disabled"`.
+در ادامه نشان می‌دهیم که چگونه یک ویژگی بولی را تنظیم و بازنشانی کنیم.
+وقتی روی دکمه «Toggle» کلیک می‌شود، بررسی می‌کنیم که آیا خاصیت بولی `disabled` تعریف شده است (این خاصیت، ویژگی `disabled` را بازتاب می‌دهد و اگر دکمه غیرفعال باشد `true` و در غیر این صورت `false` است).
+اگر دکمه غیرفعال باشد، {{domxref("Element.removeAttribute()")}} را فراخوانی می‌کنیم تا ویژگی حذف شود و در نتیجه دکمه فعال شود.
+اگر دکمه فعال باشد، با تنظیم ویژگی `disabled` روی `"disabled"` آن را غیرفعال می‌کنیم.
 
 ```js
 const toggleDisabledButton = document.querySelector("#toggle_disabled");
@@ -174,31 +168,31 @@ toggleDisabledButton.addEventListener("click", () => {
 });
 ```
 
-#### Results
+#### نتایج
 
-The running example is shown below.
-You can see that the bottom button text is "helloButton", as we've set the name property and then it used it to set the button text.
-You can press the "Toggle" button to disable and enable the "helloButton".
+نمونه در حال اجرا در زیر نشان داده شده است.
+می‌بینید که متن دکمه پایینی «helloButton» است؛ زیرا خاصیت `name` را تنظیم کردیم و سپس از آن برای تنظیم متن دکمه استفاده شد.
+می‌توانید دکمه «Toggle» را فشار دهید تا «helloButton» غیرفعال یا فعال شود.
 
 {{ EmbedLiveSample('Setting safe attributes', '300', '150') }}
 
-### Setting unsafe attributes
+### تنظیم ویژگی‌های ناامن
 
-In this example we'll show how you might mitigate the risks of calling `setAttributes()` to set the {{domxref("HTMLIFrameElement.srcdoc", "srcdoc")}} attribute on an {{htmlelement("iframe")}}.
-This attribute sets the source HTML of a frame, and can hence inject potentially untrusted or unsafe code into the DOM.
+در این مثال نشان می‌دهیم که چگونه می‌توانید خطرات فراخوانی `setAttributes()` را برای تنظیم ویژگی {{domxref("HTMLIFrameElement.srcdoc", "srcdoc")}} روی یک {{htmlelement("iframe")}} کاهش دهید.
+این ویژگی، HTML منبع یک فریم را تنظیم می‌کند و بنابراین می‌تواند کد بالقوه غیرقابل اعتماد یا ناامن را به DOM تزریق کند.
 
-The approach would be similar for setting {{domxref("HTMLScriptElement.src","src")}} on HTML script elements, {{domxref("SVGScriptElement.href","href")}} on SVG script elements, and the `onXxxx` event handler attributes: the main difference is that you pass them different trusted type objects.
+روش کار برای تنظیم {{domxref("HTMLScriptElement.src","src")}} روی عناصر اسکریپت HTML، {{domxref("SVGScriptElement.href","href")}} روی عناصر اسکریپت SVG و ویژگی‌های مدیریت رویداد `onXxxx` مشابه خواهد بود؛ تفاوت اصلی این است که اشیاء نوع مورد اعتماد متفاوتی به آن‌ها ارسال می‌کنید.
 
-Trusted types are not yet supported on all browsers, so first we define the [trusted types tinyfill](/en-US/docs/Web/API/Trusted_Types_API#trusted_types_tinyfill).
-This acts as a transparent replacement for the Trusted Types JavaScript API:
+Trusted types هنوز در همه مرورگرها پشتیبانی نمی‌شوند، بنابراین ابتدا [trusted types tinyfill](/en-US/docs/Web/API/Trusted_Types_API#trusted_types_tinyfill) را تعریف می‌کنیم.
+این کد به‌عنوان جایگزینی شفاف برای API جاوااسکریپت Trusted Types عمل می‌کند:
 
 ```js
 if (typeof trustedTypes === "undefined")
   trustedTypes = { createPolicy: (n, rules) => rules };
 ```
 
-Next we create a {{domxref("TrustedTypePolicy")}} that defines a {{domxref("TrustedTypePolicy/createHTML", "createHTML()")}} for transforming an input string into {{domxref("TrustedHTML")}} instances.
-Commonly, implementations of `createHTML()` use a library such as [DOMPurify](https://github.com/cure53/DOMPurify) to sanitize the input, as shown below:
+سپس یک {{domxref("TrustedTypePolicy")}} ایجاد می‌کنیم که یک {{domxref("TrustedTypePolicy/createHTML", "createHTML()")}} برای تبدیل رشته ورودی به نمونه‌های {{domxref("TrustedHTML")}} تعریف می‌کند.
+معمولاً پیاده‌سازی‌های `createHTML()` از کتابخانه‌ای مانند [DOMPurify](https://github.com/cure53/DOMPurify) برای پاک‌سازی ورودی استفاده می‌کنند، همان‌طور که در زیر نشان داده شده است:
 
 ```js
 const policy = trustedTypes.createPolicy("my-policy", {
@@ -206,7 +200,7 @@ const policy = trustedTypes.createPolicy("my-policy", {
 });
 ```
 
-Then we use this `policy` object to create a `TrustedHTML` object from the potentially unsafe input string, and assign the result to the element:
+سپس از این شیء `policy` برای ایجاد یک شیء `TrustedHTML` از رشته ورودی بالقوه ناامن استفاده می‌کنیم و نتیجه را به عنصر اختصاص می‌دهیم:
 
 ```js
 // The potentially malicious string
@@ -220,15 +214,15 @@ const iframeElement = document.querySelector("#an_iframe");
 iframeElement.setAttribute("srcdoc", trustedHTML);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.hasAttribute()")}}
 - {{domxref("Element.getAttribute()")}}
