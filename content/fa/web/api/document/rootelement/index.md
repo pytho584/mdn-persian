@@ -1,11 +1,5 @@
 ---
 title: "Document: rootElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/rootElement"
-status: "needs-translation"
----
-
----
-title: "Document: rootElement property"
 short-title: rootElement
 slug: Web/API/Document/rootElement
 page-type: web-api-instance-property
@@ -16,23 +10,18 @@ browser-compat: api.Document.rootElement
 
 {{ApiRef("DOM")}}{{Deprecated_header}}
 
-**`Document.rootElement`** returns the {{domxref("Element")}}
-that is the root element of the {{domxref("document")}} if it is an
-{{SVGElement("svg")}} element, otherwise `null`. It is deprecated in favor of
-{{domxref("Document.documentElement")}}, which returns the root element for all
-documents.
+ویژگی **`Document.rootElement`**، عنصر ریشه ({{domxref("Element")}}) سند ({{domxref("document")}}) را برمی‌گرداند، اگر آن عنصر یک عنصر {{SVGElement("svg")}} باشد؛ در غیر این صورت `null` برمی‌گرداند. این ویژگی به نفع {{domxref("Document.documentElement")}} منسوخ (deprecated) شده است که عنصر ریشه را برای تمام اسناد برمی‌گرداند.
 
-## Value
+## مقدار
 
-For SVG elements, the {{domxref("Element")}} that is the root element of the {{domxref("document")}}; otherwise `null`.
+برای عناصر SVG، {{domxref("Element")}} ریشه سند {{domxref("document")}}؛ در غیر این صورت `null`.
 
-If the document is a non-empty SVG document, then the `rootElement` will be
-an {{domxref("SVGSVGElement")}}, identical to the `documentElement`.
+اگر سند یک سند SVG غیر خالی باشد، `rootElement` یک {{domxref("SVGSVGElement")}} خواهد بود که مشابه `documentElement` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
