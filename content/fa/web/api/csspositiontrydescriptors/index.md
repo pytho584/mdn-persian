@@ -1,10 +1,4 @@
 ---
-title: "CSSPositionTryDescriptors"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionTryDescriptors"
-status: "needs-translation"
----
-
----
 title: CSSPositionTryDescriptors
 slug: Web/API/CSSPositionTryDescriptors
 page-type: web-api-interface
@@ -13,109 +7,109 @@ browser-compat: api.CSSPositionTryDescriptors
 
 {{APIRef("CSSOM")}}
 
-The **`CSSPositionTryDescriptors`** interface defines properties that represent the list of CSS descriptors that can be set in the body of a {{cssxref("@position-try")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+رابطهٔ **`CSSPositionTryDescriptors`** ویژگی‌هایی را تعریف می‌کند که فهرست توصیفگرهای (descriptorهای) CSS قابل تنظیم در بدنهٔ یک [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) از نوع {{cssxref("@position-try")}} را نشان می‌دهند.
 
-Each descriptor in the body of the corresponding {{cssxref("@position-try")}} at-rule can be accessed using either its property name in [bracket notation](/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#bracket_notation) or the camel-case version of the property name "propertyName" in [dot notation](/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#dot_notation).
-For example, you can access the CSS property "property-name" as `style["property-name"]` or `style.propertyName`, where `style` is a `CSSPositionTryDescriptors` instance.
-A property with a single-word name like {{cssxref("height")}} can be accessed using either notation: `style["height"]` or `style.height`.
+هر توصیفگر در بدنهٔ at-rule مربوط به {{cssxref("@position-try")}} را می‌توان یا با نام ویژگی آن در [نشانه‌گذاری کروشه‌ای (bracket notation)](/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#bracket_notation) یا با نسخهٔ camel-case نام ویژگی «propertyName» در [نشانه‌گذاری نقطه‌ای (dot notation)](/en-US/docs/Learn_web_development/Core/Scripting/Object_basics#dot_notation) دسترسی پیدا کرد.
+برای مثال، می‌توانید به ویژگی CSS «property-name» به صورت `style["property-name"]` یا `style.propertyName` دسترسی داشته باشید، که در آن `style` یک نمونه از `CSSPositionTryDescriptors` است.
+ویژگی‌ای با نام تک‌کلمه‌ای مانند {{cssxref("height")}} را می‌توان با هر دو نشانه‌گذاری به کار برد: `style["height"]` یا `style.height`.
 
 > [!NOTE]
-> The {{domxref("CSSPositionTryRule")}} interface represents a {{cssxref("@position-try")}} at-rule, and the {{domxref("CSSPositionTryRule.style")}} property is an instance of this object.
+> رابط {{domxref("CSSPositionTryRule")}} یک at-rule از نوع {{cssxref("@position-try")}} را نشان می‌دهد و ویژگی {{domxref("CSSPositionTryRule.style")}} نمونه‌ای از این شیء است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestor {{domxref("CSSStyleDeclaration")}}._
+_ویژگی‌ها را از ancestor خود، یعنی {{domxref("CSSStyleDeclaration")}}، به ارث می‌برد._
 
-The following property names, in snake-case (accessed using bracket notation) and camel-case (accessed using dot notation), each represent the value of a descriptor in the corresponding `@position-try` at-rule:
+نام‌های ویژگی زیر، هم به صورت snake-case (دسترسی با نشانه‌گذاری کروشه‌ای) و هم به صورت camel-case (دسترسی با نشانه‌گذاری نقطه‌ای)، هر کدام مقدار یک توصیفگر را در at-rule مربوط به `@position-try` نشان می‌دهند:
 
-- `align-self` or `alignSelf`
-  - : A string representing the value of an {{cssxref("align-self")}} descriptor.
-- `block-size` or `blockSize`
-  - : A string representing the value of a {{cssxref("block-size")}} descriptor.
+- `align-self` یا `alignSelf`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("align-self")}} را نشان می‌دهد.
+- `block-size` یا `blockSize`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("block-size")}} را نشان می‌دهد.
 - `bottom`
-  - : A string representing the value of a {{cssxref("bottom")}} descriptor.
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("bottom")}} را نشان می‌دهد.
 - `height`
-  - : A string representing the value of a {{cssxref("height")}} descriptor.
-- `inline-size` or `inlineSize`
-  - : A string representing the value of an {{cssxref("inline-size")}} descriptor.
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("height")}} را نشان می‌دهد.
+- `inline-size` یا `inlineSize`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("inline-size")}} را نشان می‌دهد.
 - `inset`
-  - : A string representing the value of an {{cssxref("inset")}} descriptor.
-- `position-area` or `positionArea`
-  - : A string representing the value of a {{cssxref("position-area")}} descriptor.
-- `inset-block` or `insetBlock`
-  - : A string representing the value of an {{cssxref("inset-block")}} descriptor.
-- `inset-block-end` or `insetBlockEnd`
-  - : A string representing the value of an {{cssxref("inset-block-end")}} descriptor.
-- `inset-block-start` or `insetBlockStart`
-  - : A string representing the value of an {{cssxref("inset-block-start")}} descriptor.
-- `inset-inline` or `insetInline`
-  - : A string representing the value of an {{cssxref("inset-inline")}} descriptor.
-- `inset-inline-end` or `insetInlineEnd`
-  - : A string representing the value of an {{cssxref("inset-inline-end")}} descriptor.
-- `inset-inline-start` or `insetInlineStart`
-  - : A string representing the value of an {{cssxref("inset-inline-start")}} descriptor.
-- `justify-self` or `justifySelf`
-  - : A string representing the value of a {{cssxref("justify-self")}} descriptor.
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("inset")}} را نشان می‌دهد.
+- `position-area` یا `positionArea`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("position-area")}} را نشان می‌دهد.
+- `inset-block` یا `insetBlock`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("inset-block")}} را نشان می‌دهد.
+- `inset-block-end` یا `insetBlockEnd`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("inset-block-end")}} را نشان می‌دهد.
+- `inset-block-start` یا `insetBlockStart`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("inset-block-start")}} را نشان می‌دهد.
+- `inset-inline` یا `insetInline`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("inset-inline")}} را نشان می‌دهد.
+- `inset-inline-end` یا `insetInlineEnd`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("inset-inline-end")}} را نشان می‌دهد.
+- `inset-inline-start` یا `insetInlineStart`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("inset-inline-start")}} را نشان می‌دهد.
+- `justify-self` یا `justifySelf`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("justify-self")}} را نشان می‌دهد.
 - `left`
-  - : A string representing the value of a {{cssxref("left")}} descriptor.
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("left")}} را نشان می‌دهد.
 - `margin`
-  - : A string representing the value of a {{cssxref("margin")}} descriptor.
-- `margin-block` or `marginBlock`
-  - : A string representing the value of a {{cssxref("margin-block")}} descriptor.
-- `margin-block-end` or `marginBlockEnd`
-  - : A string representing the value of a {{cssxref("margin-block-end")}} descriptor.
-- `margin-block-start` or `marginBlockStart`
-  - : A string representing the value of a {{cssxref("margin-block-start")}} descriptor.
-- `margin-bottom` or `marginBottom`
-  - : A string representing the value of a {{cssxref("margin-bottom")}} descriptor.
-- `margin-inline` or `marginInline`
-  - : A string representing the value of a {{cssxref("margin-inline")}} descriptor.
-- `margin-inline-end` or `marginInlineEnd`
-  - : A string representing the value of a {{cssxref("margin-inline-end")}} descriptor.
-- `margin-inline-start` or `marginInlineStart`
-  - : A string representing the value of a {{cssxref("margin-inline-start")}} descriptor.
-- `margin-left` or `marginLeft`
-  - : A string representing the value of a {{cssxref("margin-left")}} descriptor.
-- `margin-right` or `marginRight`
-  - : A string representing the value of a {{cssxref("margin-right")}} descriptor.
-- `margin-top` or `marginTop`
-  - : A string representing the value of a {{cssxref("margin-top")}} descriptor.
-- `max-block-size` or `maxBlockSize`
-  - : A string representing the value of a {{cssxref("max-block-size")}} descriptor.
-- `max-height` or `maxHeight`
-  - : A string representing the value of a {{cssxref("max-height")}} descriptor.
-- `max-inline-size` or `maxInlineSize`
-  - : A string representing the value of a {{cssxref("max-inline-size")}} descriptor.
-- `max-width` or `maxWidth`
-  - : A string representing the value of a {{cssxref("max-width")}} descriptor.
-- `min-block-size` or `minBlockSize`
-  - : A string representing the value of a {{cssxref("min-block-size")}} descriptor.
-- `min-height` or `minHeight`
-  - : A string representing the value of a {{cssxref("min-height")}} descriptor.
-- `min-inline-size` or `minInlineSize`
-  - : A string representing the value of a {{cssxref("min-inline-size")}} descriptor.
-- `min-width` or `minWidth`
-  - : A string representing the value of a {{cssxref("min-width")}} descriptor.
-- `place-self` or `placeSelf`
-  - : A string representing the value of a {{cssxref("place-self")}} descriptor.
-- `position-anchor` or `positionAnchor`
-  - : A string representing the value of a {{cssxref("position-anchor")}} descriptor.
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("margin")}} را نشان می‌دهد.
+- `margin-block` یا `marginBlock`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("margin-block")}} را نشان می‌دهد.
+- `margin-block-end` یا `marginBlockEnd`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("margin-block-end")}} را نشان می‌دهد.
+- `margin-block-start` یا `marginBlockStart`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("margin-block-start")}} را نشان می‌دهد.
+- `margin-bottom` یا `marginBottom`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("margin-bottom")}} را نشان می‌دهد.
+- `margin-inline` یا `marginInline`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("margin-inline")}} را نشان می‌دهد.
+- `margin-inline-end` یا `marginInlineEnd`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("margin-inline-end")}} را نشان می‌دهد.
+- `margin-inline-start` یا `marginInlineStart`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("margin-inline-start")}} را نشان می‌دهد.
+- `margin-left` یا `marginLeft`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("margin-left")}} را نشان می‌دهد.
+- `margin-right` یا `marginRight`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("margin-right")}} را نشان می‌دهد.
+- `margin-top` یا `marginTop`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("margin-top")}} را نشان می‌دهد.
+- `max-block-size` یا `maxBlockSize`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("max-block-size")}} را نشان می‌دهد.
+- `max-height` یا `maxHeight`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("max-height")}} را نشان می‌دهد.
+- `max-inline-size` یا `maxInlineSize`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("max-inline-size")}} را نشان می‌دهد.
+- `max-width` یا `maxWidth`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("max-width")}} را نشان می‌دهد.
+- `min-block-size` یا `minBlockSize`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("min-block-size")}} را نشان می‌دهد.
+- `min-height` یا `minHeight`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("min-height")}} را نشان می‌دهد.
+- `min-inline-size` یا `minInlineSize`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("min-inline-size")}} را نشان می‌دهد.
+- `min-width` یا `minWidth`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("min-width")}} را نشان می‌دهد.
+- `place-self` یا `placeSelf`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("place-self")}} را نشان می‌دهد.
+- `position-anchor` یا `positionAnchor`
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("position-anchor")}} را نشان می‌دهد.
 - `right`
-  - : A string representing the value of a {{cssxref("right")}} descriptor.
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("right")}} را نشان می‌دهد.
 - `top`
-  - : A string representing the value of a {{cssxref("top")}} descriptor.
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("top")}} را نشان می‌دهد.
 - `width`
-  - : A string representing the value of a {{cssxref("width")}} descriptor.
+  - : رشته‌ای که مقدار توصیفگر {{cssxref("width")}} را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific methods; inherits methods from its ancestor {{domxref("CSSStyleDeclaration")}}._
+_روش خاصی ندارد؛ روش‌ها را از ancestor خود، یعنی {{domxref("CSSStyleDeclaration")}}، به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-The CSS includes a `@position-try` at-rule with a name of `--custom-right` and three descriptors.
+CSS شامل یک at-rule از نوع `@position-try` با نام `--custom-right` و سه توصیفگر است.
 
 ```css
 @position-try --custom-right {
@@ -133,19 +127,19 @@ console.log(tryOption.style.margin); // "0 0 0 10px"
 console.log(tryOption.style["position-area"]); // "right"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{DOMxRef("CSSPositionTryRule")}}
 - {{cssxref("@position-try")}}
 - {{cssxref("position-try-fallbacks")}}
-- [CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning) module
-- [Using CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using)
-- [Handling overflow: try options and conditional hiding](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Try_options_hiding)
+- [ماژول CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning)
+- [استفاده از CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using)
+- [مدیریت سرریز: گزینه‌های try و پنهان‌سازی شرطی](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Try_options_hiding)
