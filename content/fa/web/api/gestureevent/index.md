@@ -1,7 +1,5 @@
 ---
 title: "GestureEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GestureEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -15,36 +13,36 @@ browser-compat: api.GestureEvent
 
 {{APIRef("UI Events")}}{{Non-standard_header}}
 
-The **`GestureEvent`** is a proprietary interface specific to WebKit which gives information regarding multi-touch gestures. Events using this interface include {{domxref("Element/gesturestart_event", "gesturestart")}}, {{domxref("Element/gesturechange_event", "gesturechange")}}, and {{domxref("Element/gestureend_event", "gestureend")}}.
+**`GestureEvent`** یک رابط اختصاصی مخصوص WebKit است که اطلاعات مربوط به ژست‌های لمسی چندلمسی را فراهم می‌کند. رویدادهایی که از این رابط استفاده می‌کنند عبارت‌اند از {{domxref("Element/gesturestart_event", "gesturestart")}}، {{domxref("Element/gesturechange_event", "gesturechange")}} و {{domxref("Element/gestureend_event", "gestureend")}}.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties of its parents, {{domxref("UIEvent")}} and {{domxref("Event")}}._
+_این رابط همچنین ویژگی‌های والدهای خود، {{domxref("UIEvent")}} و {{domxref("Event")}}، را به ارث می‌برد._
 
 - {{domxref("GestureEvent.rotation")}} {{ReadOnlyInline}} {{Non-standard_Inline}}
-  - : Change in rotation (in degrees) since the event's beginning. Positive values indicate clockwise rotation; negative values indicate counterclockwise rotation. Initial value: `0.0`.
+  - : تغییر چرخش (بر حسب درجه) از آغاز رویداد. مقادیر مثبت نشان‌دهنده چرخش در جهت عقربه‌های ساعت و مقادیر منفی نشان‌دهنده چرخش در خلاف جهت عقربه‌های ساعت هستند. مقدار اولیه: `0.0`.
 - {{domxref("GestureEvent.scale")}} {{ReadOnlyInline}} {{Non-standard_Inline}}
-  - : Distance between two digits since the event's beginning. Expressed as a floating-point multiple of the initial distance between the digits at the beginning of the gesture. Values below 1.0 indicate an inward pinch (zoom out). Values above 1.0 indicate an outward unpinch (zoom in). Initial value: `1.0`.
+  - : فاصله بین دو انگشت از آغاز رویداد. این مقدار به‌صورت یک مضرب اعشاری از فاصله اولیه بین انگشت‌ها در آغاز ژست بیان می‌شود. مقادیر کمتر از `1.0` نشان‌دهنده نیشگون گرفتن به سمت داخل (کوچک‌نمایی) هستند. مقادیر بیشتر از `1.0` نشان‌دهنده باز کردن نیشگون به سمت خارج (بزرگ‌نمایی) هستند. مقدار اولیه: `1.0`.
 
-## Instance methods
+## متدهای نمونه
 
-_This interface also inherits methods of its parents, {{domxref("UIEvent")}} and {{domxref("Event")}}._
+_این رابط همچنین متدهای والدهای خود، {{domxref("UIEvent")}} و {{domxref("Event")}}، را به ارث می‌برد._
 
 - {{domxref("GestureEvent.initGestureEvent()")}} {{Non-standard_Inline}}
-  - : Initializes the value of a `GestureEvent`. If the event has already been dispatched, this method does nothing.
+  - : مقدار یک `GestureEvent` را مقداردهی اولیه می‌کند. اگر رویداد قبلاً ارسال شده باشد، این متد هیچ کاری انجام نمی‌دهد.
 
-## Gesture event types
+## انواع رویداد ژست
 
 - {{domxref("Element/gesturestart_event", "gesturestart")}}
 - {{domxref("Element/gesturechange_event", "gesturechange")}}
 - {{domxref("Element/gestureend_event", "gestureend")}}
 
-## Specifications
+## مشخصات
 
-_Not part of any specification._ Apple has [a description at the Safari Developer Library](https://developer.apple.com/documentation/webkitjs/gestureevent).
+_هیچ بخشی از هیچ مشخصه‌ای نیست._ اپل [توضیحی در کتابخانه توسعه‌دهندگان Safari](https://developer.apple.com/documentation/webkitjs/gestureevent) دارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
