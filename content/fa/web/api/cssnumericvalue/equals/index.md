@@ -1,11 +1,5 @@
 ---
 title: "CSSNumericValue: equals() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/equals"
-status: "needs-translation"
----
-
----
-title: "CSSNumericValue: equals() method"
 short-title: equals()
 slug: Web/API/CSSNumericValue/equals
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.CSSNumericValue.equals
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`equals()`** method of the {{domxref("CSSNumericValue")}} interface returns a boolean indicating whether the passed values are strictly equal.
-To return a value of `true`, all passed values must be of the same type and value and must be in the same order.
-This allows structural equality to be tested quickly.
+متد **`equals()`** در رابط {{domxref("CSSNumericValue")}} یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا مقادیر ارسال‌شده دقیقاً برابر هستند یا خیر.
+برای اینکه مقدار `true` برگردد، همهٔ مقادیر ارسال‌شده باید از نوع و مقدار یکسان باشند و به همان ترتیب باشند.
+این امکان را می‌دهد که برابری ساختاری به سرعت بررسی شود.
 
 ## Syntax
 
@@ -30,22 +24,22 @@ equals(number1, number2, /* …, */ numberN)
 ### Parameters
 
 - `number1`, …, `numberN` {{optional_inline}}
-  - : Either a number or a {{domxref('CSSNumericValue')}}.
+  - : یا یک عدد است یا یک {{domxref('CSSNumericValue')}}.
 
 ### Return value
 
-A boolean value.
+یک مقدار بولی.
 
 ### Exceptions
 
-None.
+هیچ‌کدام.
 
 ## Examples
 
 ### Basic usage
 
-As stated earlier, all passed values must be of the same type and value and must be in the same order.
-Some of the following examples illustrate what happens when they are not.
+همانطور که پیش‌تر گفته شد، همهٔ مقادیر ارسال‌شده باید از نوع و مقدار یکسان باشند و به همان ترتیب باشند.
+برخی از مثال‌های زیر نشان می‌دهند که وقتی این شرایط برقرار نباشند چه اتفاقی می‌افتد.
 
 ```js
 let cssMathSum = new CSSMathSum(CSS.px(1), CSS.px(2));
