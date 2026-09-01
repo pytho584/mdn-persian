@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement: formdata event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/formdata_event"
-status: "needs-translation"
----
-
----
-title: "HTMLFormElement: formdata event"
 short-title: formdata
 slug: Web/API/HTMLFormElement/formdata_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLFormElement.formdata_event
 
 {{APIRef("HTML DOM")}}
 
-The **`formdata`** event fires after the entry list representing the form's data is constructed. This happens when the form is submitted, but can also be triggered by the invocation of a {{domxref("FormData.FormData", "FormData()")}} constructor.
+رویداد **`formdata`** پس از ساختهشدن فهرست ورودیهایی که دادههای فرم را نشان میدهند، فعال میشود. این اتفاق هنگام ارسال فرم رخ میدهد، اما میتواند با فراخوانی سازندهی {{domxref("FormData.FormData", "FormData()")}} نیز ایجاد شود.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو (cancelable) نیست و حبابزدگی (bubble) ندارد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روشهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم خاصیت رویدادگردان (event handler property) میتوانید از آن استفاده کنید.
 
 ```js-nolint
 addEventListener("formdata", (event) => { })
@@ -28,13 +22,13 @@ addEventListener("formdata", (event) => { })
 onformdata = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("FormDataEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("FormDataEvent")}} که از {{domxref("Event")}} به ارث میرسد.
 
 {{InheritanceDiagram("FormDataEvent")}}
 
-## Examples
+## مثالها
 
 ```js
 // grab reference to form
@@ -70,7 +64,7 @@ formElem.addEventListener("formdata", (e) => {
 });
 ```
 
-The `onformdata` version would look like this:
+نسخهی `onformdata` به این شکل خواهد بود:
 
 ```js
 formElem.onformdata = (e) => {
@@ -83,15 +77,15 @@ formElem.onformdata = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{htmlElement("form")}} element
+- عنصر HTML {{htmlElement("form")}}
 - {{domxref("FormDataEvent")}}
