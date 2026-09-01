@@ -1,7 +1,5 @@
 ---
 title: "HTMLImageElement: attributionSrc property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/attributionSrc"
-status: "needs-translation"
 ---
 
 ---
@@ -17,17 +15,17 @@ browser-compat: api.HTMLImageElement.attributionSrc
 
 {{APIRef("Attribution Reporting API")}}{{securecontext_header}}{{deprecated_header}}{{non-standard_header}}
 
-The **`attributionSrc`** property of the {{domxref("HTMLImageElement")}} interface that you want the browser to send an {{httpheader("Attribution-Reporting-Eligible")}} header along with the image request. It reflects the `<img>` element's [`attributionsrc`](/en-US/docs/Web/HTML/Reference/Elements/img#attributionsrc) content attribute.
+ویژگی **`attributionSrc`** از رابط {{domxref("HTMLImageElement")}}، رشته‌ای را مشخص می‌کند که باعث می‌شود مرورگر یک هدر {{httpheader("Attribution-Reporting-Eligible")}} را همراه با درخواست تصویر ارسال کند. این ویژگی، ویژگی محتوایی [`attributionsrc`](/en-US/docs/Web/HTML/Reference/Elements/img#attributionsrc) عنصر `<img>` را بازتاب می‌دهد.
 
-See the [Attribution Reporting API](/en-US/docs/Web/API/Attribution_Reporting_API) for more details.
+برای جزئیات بیشتر، به [Attribution Reporting API](/en-US/docs/Web/API/Attribution_Reporting_API) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string that is either empty or a space-separated list of URLs. For the interpretation of this attribute, see the HTML [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#attributionsrc) reference.
+رشته‌ای که یا خالی است یا فهرستی از URLها که با فاصله از هم جدا شده‌اند. برای تفسیر این ویژگی، به مرجع [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#attributionsrc) در HTML مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-### Setting an empty attributionSrc
+### تنظیم یک attributionSrc خالی
 
 ```html
 <img src="advertising-image.png" />
@@ -38,7 +36,7 @@ const imgElem = document.querySelector("img");
 imgElem.attributionSrc = "";
 ```
 
-### Setting an attributionSrc containing URLs
+### تنظیم یک attributionSrc شامل URLها
 
 ```html
 <img src="advertising-image.png" />
@@ -54,14 +52,14 @@ const imgElem = document.querySelector("img");
 imgElem.attributionSrc = `${encodedUrlA} ${encodedUrlB}`;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Attribution Reporting API](/en-US/docs/Web/API/Attribution_Reporting_API).
