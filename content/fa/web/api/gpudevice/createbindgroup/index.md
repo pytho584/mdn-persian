@@ -1,7 +1,5 @@
 ---
 title: "GPUDevice: createBindGroup() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBindGroup"
-status: "needs-translation"
 ---
 
 ---
@@ -14,89 +12,88 @@ browser-compat: api.GPUDevice.createBindGroup
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`createBindGroup()`** method of the
-{{domxref("GPUDevice")}} interface creates a {{domxref("GPUBindGroup")}} based on a {{domxref("GPUBindGroupLayout")}} that defines a set of resources to be bound together in a group and how those resources are used in shader stages.
+متد **`createBindGroup()`** از رابط {{domxref("GPUDevice")}} یک {{domxref("GPUBindGroup")}} را بر اساس یک {{domxref("GPUBindGroupLayout")}} ایجاد می‌کند. این طرح‌بندی، مجموعه‌ای از منابع را تعریف می‌کند که قرار است به‌صورت گروهی به هم متصل شوند و نحوهٔ استفاده از آن‌ها را در مراحل سایه‌زن مشخص می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 createBindGroup(descriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `descriptor`
-  - : An object containing the following properties:
+  - : یک شیء حاوی ویژگی‌های زیر:
     - `entries`
-      - : An array of entry objects describing the resources to expose to the shader. There will be one for each corresponding entry described by the {{domxref("GPUBindGroupLayout")}} referenced in `layout`. Each entry object has the following properties:
+      - : آرایه‌ای از اشیاء ورودی که منابعی را که باید در معرض دید سایه‌زن قرار بگیرند توصیف می‌کنند. به‌ازای هر ورودی متناظر که توسط {{domxref("GPUBindGroupLayout")}} ارجاع‌شده در `layout` توصیف شده است، یک مورد وجود خواهد داشت. هر شیء ورودی دارای ویژگی‌های زیر است:
         - `binding`
-          - : A number representing a unique identifier for this resource binding, which matches the `binding` value of a corresponding {{domxref("GPUBindGroupLayout")}} entry. In addition, it matches the `n` index value of the corresponding [`@binding(n)`](https://gpuweb.github.io/gpuweb/wgsl/#attribute-binding) attribute in the shader ({{domxref("GPUShaderModule")}}) used in the related pipeline.
+          - : عددی که شناسهٔ یکتا برای این اتصال منبع است و با مقدار `binding` یک ورودی متناظر در {{domxref("GPUBindGroupLayout")}} مطابقت دارد. همچنین با مقدار اندیس `n` ویژگی [`@binding(n)`](https://gpuweb.github.io/gpuweb/wgsl/#attribute-binding) در سایه‌زن ({{domxref("GPUShaderModule")}}) که در خط لولهٔ مرتبط استفاده می‌شود، مطابقت دارد.
         - `resource`
-          - : The resource to bind. This can be one of the following:
-            - `GPUBufferBinding`: Wraps a {{domxref("GPUBuffer")}}; see [GPUBufferBinding objects](#gpubufferbinding_objects) for a definition.
-            - {{domxref("GPUBuffer")}}: Can be used directly rather than being wrapped in a `GPUBufferBinding`, provided the default [`offset`](#offset) and [`size`](#size) values are being used.
+          - : منبعی که باید متصل شود. این می‌تواند یکی از موارد زیر باشد:
+            - `GPUBufferBinding`: یک {{domxref("GPUBuffer")}} را در بر می‌گیرد؛ برای تعریف، [اشیاء GPUBufferBinding](#gpubufferbinding_objects) را ببینید.
+            - {{domxref("GPUBuffer")}}: می‌تواند مستقیماً استفاده شود به‌جای اینکه در یک `GPUBufferBinding` پیچیده شود، به شرط استفاده از مقادیر پیش‌فرض [`offset`](#offset) و [`size`](#size).
             - {{domxref("GPUExternalTexture")}}
-            - {{domxref("GPUTextureView")}}: Can be used in place of a `GPUExternalTexture` provided it is compatible (a 2D format with a single subresource, that is, [`dimension: "2d"`](/en-US/docs/Web/API/GPUTexture/createView#dimension)).
-            - {{domxref("GPUTexture")}}: Can be used in place of a `GPUTextureView`, provided a default view is desired. When used in this context, `GPUTexture` is equivalent to a `GPUTextureView` object created using a {{domxref("GPUTexture.createView()")}} call with no argument specified.
+            - {{domxref("GPUTextureView")}}: می‌تواند به‌جای یک `GPUExternalTexture` استفاده شود، به شرط آنکه سازگار باشد (فرمت دوبعدی با یک زیرمنبع واحد، یعنی [`dimension: "2d"`](/en-US/docs/Web/API/GPUTexture/createView#dimension)).
+            - {{domxref("GPUTexture")}}: می‌تواند به‌جای یک `GPUTextureView` استفاده شود، به شرط آنکه نمای پیش‌فرض مد نظر باشد. در این زمینه، `GPUTexture` معادل یک شیء `GPUTextureView` است که با فراخوانی {{domxref("GPUTexture.createView()")}} بدون مشخص‌کردن آرگومان ایجاد شده است.
             - {{domxref("GPUSampler")}}
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : رشته‌ای که برچسبی برای شناسایی شیء فراهم می‌کند؛ برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
     - `layout`
-      - : The {{domxref("GPUBindGroupLayout")}} that the `entries` of this bind group will conform to.
+      - : {{domxref("GPUBindGroupLayout")}}ای که `entries` این گروه اتصال باید با آن مطابقت داشته باشند.
 
-### GPUBufferBinding objects
+### اشیاء GPUBufferBinding
 
-A `GPUBufferBinding` object can contain the following properties:
+یک شیء `GPUBufferBinding` می‌تواند شامل ویژگی‌های زیر باشد:
 
 - `buffer`
-  - : The {{domxref("GPUBuffer")}} object you want to bind.
+  - : شیء {{domxref("GPUBuffer")}} که می‌خواهید متصل کنید.
 - `offset` {{optional_inline}}
-  - : The offset, in bytes, from the beginning of the `buffer` to the beginning of the range exposed to the shader by the buffer binding. If omitted, `offset` defaults to 0.
+  - : افست، بر حسب بایت، از ابتدای `buffer` تا ابتدای محدوده‌ای که توسط اتصال بافر در معرض دید سایه‌زن قرار می‌گیرد. اگر حذف شود، `offset` به‌طور پیش‌فرض ۰ است.
 - `size` {{optional_inline}}
-  - : The size, in bytes, of the buffer binding. If omitted, `size` will be the range starting at `offset` and ending at the end of the `buffer`. If both `offset` and `size` are omitted, the entire buffer is exposed to the shader.
+  - : اندازهٔ اتصال بافر، بر حسب بایت. اگر حذف شود، `size` محدوده‌ای خواهد بود که از `offset` شروع شده و به انتهای `buffer` ختم می‌شود. اگر هر دو `offset` و `size` حذف شوند، کل بافر در معرض دید سایه‌زن قرار می‌گیرد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("GPUBindGroup")}} object instance.
+یک نمونه از شیء {{domxref("GPUBindGroup")}}.
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`createBindGroup()`**, otherwise a {{domxref("GPUValidationError")}} is generated and an invalid {{domxref("GPUBindGroup")}} object is returned:
+هنگام فراخوانی **`createBindGroup()`** باید معیارهای زیر برقرار باشند؛ در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و یک شیء نامعتبر {{domxref("GPUBindGroup")}} بازگردانده می‌شود:
 
-- The number of entries in the `layout` {{domxref("GPUBindGroupLayout")}} equals the number of entry objects in `entries`.
-- For each entry in the `layout` {{domxref("GPUBindGroupLayout")}}, the corresponding entry object in `entries` binds the correct resource type. For example, a `buffer` resource layout object has a `GPUBufferBinding` object specified in the corresponding binding.
-- If the resource layout object is a `buffer`:
-  - The corresponding bound {{domxref("GPUBuffer")}}:
-    - Has its bound part (as specified by `offset` and `size`) contained inside it completely, with a non-zero size.
-    - Has a size bigger than the `buffer` resource layout's `minBindingSize`.
-  - If the resource layout object `type` is `"uniform"`:
-    - The bound {{domxref("GPUBuffer")}} has a `usage` that includes `GPUBufferUsage.UNIFORM`.
-    - The effective size of the bound buffer segment is less than or equal to the {{domxref("GPUDevice")}}'s `maxUniformBufferBindingSize` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-    - The specified `GPUBufferBinding` `offset` is a multiple of the {{domxref("GPUDevice")}}'s `minUniformBufferOffsetAlignment` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-  - If the resource layout object `type` is `"storage"` or `"read-only-storage"`:
-    - The bound {{domxref("GPUBuffer")}} has a `usage` that includes `GPUBufferUsage.STORAGE`.
-    - The effective size of the bound buffer segment is less than or equal to the {{domxref("GPUDevice")}}'s `maxStorageBufferBindingSize` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-    - The effective size of the bound buffer segment is a multiple of 4.
-    - The specified `GPUBufferBinding` `offset` is a multiple of the {{domxref("GPUDevice")}}'s `minStorageBufferOffsetAlignment` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- If the resource layout object is a `storageTexture`, the corresponding bound {{domxref("GPUTextureView")}}:
-  - Has a `dimension` equal to the resource layout object's `viewDimension` (see {{domxref("GPUTexture.createView()")}} for more details of a texture view's settings).
-  - Has a `format` equal to the resource layout object's `sampleType`.
-  - Has a `mipLevelCount` equal to 1.
-  - Is a view of a {{domxref("GPUTexture")}} with a `usage` that includes `GPUTextureUsage.STORAGE_BINDING`.
-- If the resource layout object is a `texture`, the corresponding bound {{domxref("GPUTextureView")}}:
-  - Has a `dimension` equal to the resource layout object's `viewDimension` (see {{domxref("GPUTexture.createView()")}} for more details of a texture view's settings).
-  - Has a `format` compatible with the resource layout object's `sampleType`.
-  - Is a view of a {{domxref("GPUTexture")}} with a `usage` that includes `GPUTextureUsage.TEXTURE_BINDING`.
-  - is a view of a {{domxref("GPUTexture")}} with a `sampleCount` greater than 1 if the resource layout object's `multisampled` property is `true`, or equal to 1 if it is `false`.
+- تعداد ورودی‌های موجود در {{domxref("GPUBindGroupLayout")}} (`layout`) با تعداد اشیاء ورودی در `entries` برابر باشد.
+- برای هر ورودی در {{domxref("GPUBindGroupLayout")}} (`layout`)، شیء ورودی متناظر در `entries` نوع منبع صحیح را متصل کند. برای مثال، یک شیء طرح‌بندی منبع از نوع `buffer` باید یک شیء `GPUBufferBinding` را در اتصال متناظر مشخص کرده باشد.
+- اگر شیء طرح‌بندی منبع از نوع `buffer` باشد:
+  - {{domxref("GPUBuffer")}} متصل‌شدهٔ متناظر:
+    - قسمت متصل آن (که توسط `offset` و `size` مشخص شده) به‌طور کامل در داخل آن قرار داشته باشد و اندازه‌اش غیرصفر باشد.
+    - اندازه‌ای بزرگ‌تر از `minBindingSize` در طرح‌بندی منبع `buffer` داشته باشد.
+  - اگر `type` شیء طرح‌بندی منبع `"uniform"` باشد:
+    - {{domxref("GPUBuffer")}} متصل‌شده دارای `usage` شامل `GPUBufferUsage.UNIFORM` باشد.
+    - اندازهٔ مؤثر بخش بافر متصل‌شده کمتر یا مساوی `maxUniformBufferBindingSize` ({{domxref("GPUSupportedLimits", "limit", "", "nocode")}}) در {{domxref("GPUDevice")}} باشد.
+    - `offset` مشخص‌شده در `GPUBufferBinding` مضربی از `minUniformBufferOffsetAlignment` ({{domxref("GPUSupportedLimits", "limit", "", "nocode")}}) در {{domxref("GPUDevice")}} باشد.
+  - اگر `type` شیء طرح‌بندی منبع `"storage"` یا `"read-only-storage"` باشد:
+    - {{domxref("GPUBuffer")}} متصل‌شده دارای `usage` شامل `GPUBufferUsage.STORAGE` باشد.
+    - اندازهٔ مؤثر بخش بافر متصل‌شده کمتر یا مساوی `maxStorageBufferBindingSize` ({{domxref("GPUSupportedLimits", "limit", "", "nocode")}}) در {{domxref("GPUDevice")}} باشد.
+    - اندازهٔ مؤثر بخش بافر متصل‌شده مضربی از ۴ باشد.
+    - `offset` مشخص‌شده در `GPUBufferBinding` مضربی از `minStorageBufferOffsetAlignment` ({{domxref("GPUSupportedLimits", "limit", "", "nocode")}}) در {{domxref("GPUDevice")}} باشد.
+- اگر شیء طرح‌بندی منبع از نوع `storageTexture` باشد، {{domxref("GPUTextureView")}} متصل‌شدهٔ متناظر:
+  - دارای `dimension` برابر با `viewDimension` شیء طرح‌بندی منبع باشد (برای جزئیات بیشتر دربارهٔ تنظیمات نمای بافت، به {{domxref("GPUTexture.createView()")}} مراجعه کنید).
+  - دارای `format` برابر با `sampleType` شیء طرح‌بندی منبع باشد.
+  - دارای `mipLevelCount` برابر با ۱ باشد.
+  - نمایی از یک {{domxref("GPUTexture")}} با `usage` شامل `GPUTextureUsage.STORAGE_BINDING` باشد.
+- اگر شیء طرح‌بندی منبع از نوع `texture` باشد، {{domxref("GPUTextureView")}} متصل‌شدهٔ متناظر:
+  - دارای `dimension` برابر با `viewDimension` شیء طرح‌بندی منبع باشد (برای جزئیات بیشتر دربارهٔ تنظیمات نمای بافت، به {{domxref("GPUTexture.createView()")}} مراجعه کنید).
+  - دارای `format` سازگار با `sampleType` شیء طرح‌بندی منبع باشد.
+  - نمایی از یک {{domxref("GPUTexture")}} با `usage` شامل `GPUTextureUsage.TEXTURE_BINDING` باشد.
+  - اگر ویژگی `multisampled` شیء طرح‌بندی منبع `true` باشد، نمایی از یک {{domxref("GPUTexture")}} با `sampleCount` بزرگ‌تر از ۱ باشد، و اگر `false` باشد، با `sampleCount` برابر با ۱ باشد.
 
-## Examples
+## مثال‌ها
 
 > [!NOTE]
-> The [WebGPU samples](https://webgpu.github.io/webgpu-samples/) feature many more examples.
+> [نمونه‌های WebGPU](https://webgpu.github.io/webgpu-samples/) شامل مثال‌های بسیار بیشتری هستند.
 
-### Basic example
+### مثال پایه
 
-Our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/) shows an example of creating a bind group layout and then using that as a template when creating a bind group.
+[دموی محاسبات پایه](https://mdn.github.io/dom-examples/webgpu-compute-demo/) ما، نمونه‌ای از ایجاد یک طرح‌بندی گروه اتصال و سپس استفاده از آن به‌عنوان قالب هنگام ایجاد یک گروه اتصال را نشان می‌دهد.
 
 ```js
 // …
@@ -128,14 +125,14 @@ const bindGroup = device.createBindGroup({
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
