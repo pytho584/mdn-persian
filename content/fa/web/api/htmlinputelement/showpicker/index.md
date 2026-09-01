@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: showPicker() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/showPicker"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: showPicker() method"
 short-title: showPicker()
 slug: Web/API/HTMLInputElement/showPicker
 page-type: web-api-instance-method
@@ -14,61 +8,61 @@ browser-compat: api.HTMLInputElement.showPicker
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLInputElement.showPicker()`** method displays the browser picker for an `input` element.
+متد **`HTMLInputElement.showPicker()`** انتخابگر (picker) مرورگر را برای یک عنصر `input` نمایش می‌دهد.
 
-This is the same picker that would normally be displayed when the element is selected, but can be triggered from a button press or other user interaction.
+این همان انتخابگری است که معمولاً هنگام انتخاب عنصر نمایش داده می‌شود، اما می‌تواند از طریق فشار دادن دکمه یا تعامل کاربری دیگر نیز فعال شود.
 
-Commonly browsers implement it for inputs of these types: `"date"`, `"month"`, `"week"`, `"time"`, `"datetime-local"`, `"color"`, or `"file"`.
-It can also be prepopulated with items from a {{htmlelement("datalist")}} element or [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) attribute.
+مرورگرها معمولاً این متد را برای ورودی‌های از انواع زیر پیاده‌سازی می‌کنند: `"date"`، `"month"`، `"week"`، `"time"`، `"datetime-local"`، `"color"` یا `"file"`.
+همچنین می‌توان آن را با مواردی از یک عنصر {{htmlelement("datalist")}} یا ویژگی [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) از پیش پر کرد.
 
-More generally, this method should ideally display the picker for any input element on the platform that has a picker.
+به‌طور کلی، این متد در حالت ایده‌آل باید انتخابگر را برای هر عنصر ورودی در پلتفرم که دارای انتخابگر است نمایش دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 showPicker()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the element is not mutable, meaning that the user cannot modify it and/or that it cannot be automatically prefilled.
+  - : اگر عنصر قابل تغییر نباشد پرتاب می‌شود، به این معنی که کاربر نمی‌تواند آن را تغییر دهد و/یا نمی‌تواند به‌طور خودکار از پیش پر شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if not explicitly triggered by a user action such as a touch gesture or mouse click (the picker requires {{Glossary("Transient activation")}}).
+  - : اگر به‌صراحت توسط یک اقدام کاربر مانند ژست لمسی یا کلیک ماوس فعال نشده باشد پرتاب می‌شود (انتخابگر به {{Glossary("Transient activation")}} نیاز دارد).
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if called in a cross-origin iframe, except for file and color pickers (exempt for historical reasons).
+  - : اگر در یک iframe با مبدأ متفاوت (cross-origin) فراخوانی شود پرتاب می‌شود، به‌جز انتخابگرهای فایل و رنگ (که به دلایل تاریخی معاف هستند).
 
-## Security
+## امنیت
 
-[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required. The user has to interact with the page or a UI element in order for this feature to work.
+[فعال‌سازی گذرای کاربر](/en-US/docs/Web/Security/Defenses/User_activation) الزامی است. کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل کند تا این ویژگی کار کند.
 
-## Examples
+## مثال‌ها
 
-### Feature Detection
+### تشخیص ویژگی (Feature Detection)
 
-The code below shows how to check if `showPicker()` is supported:
+کد زیر نحوه بررسی پشتیبانی از `showPicker()` را نشان می‌دهد:
 
 ```js
 if ("showPicker" in HTMLInputElement.prototype) {
-  // showPicker() is supported.
+  // showPicker() پشتیبانی می‌شود.
 }
 ```
 
-### Normal input pickers
+### انتخابگرهای ورودی معمولی
 
-This example shows how this feature can be used for `color` and `file` input pickers.
+این مثال نحوه استفاده از این ویژگی را برای انتخابگرهای ورودی `color` و `file` نشان می‌دهد.
 
 > [!NOTE]
-> Pickers for `date`, `datetime-local`, `month`, `time`, `week` are launched in the same way.
-> They cannot be shown here because live examples run in a cross-origin frame, and would cause a [`SecurityError`](#securityerror)
+> انتخابگرهای `date`، `datetime-local`، `month`، `time`، `week` به همین روش راه‌اندازی می‌شوند.
+> آن‌ها در اینجا قابل نمایش نیستند زیرا مثال‌های زنده در یک فریم با مبدأ متفاوت اجرا می‌شوند و باعث [`SecurityError`](#securityerror) می‌شوند.
 
 #### HTML
 
@@ -84,9 +78,9 @@ This example shows how this feature can be used for `color` and `file` input pic
 </p>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-The code simply gets the previous element of the selected button and calls `showPicker()` on it.
+کد به سادگی عنصر قبلی دکمه انتخاب‌شده را دریافت می‌کند و `showPicker()` را روی آن فراخوانی می‌کند.
 
 ```js
 document.querySelectorAll("button").forEach((button) => {
@@ -101,17 +95,17 @@ document.querySelectorAll("button").forEach((button) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-Click the button next to each input type to show its picker.
+برای نمایش انتخابگر، روی دکمه کنار هر نوع ورودی کلیک کنید.
 
 {{EmbedLiveSample("Normal input pickers", "100%", "140px")}}
 
-### showPicker() for a datalist input
+### showPicker() برای ورودی datalist
 
-`showPicker()` can launch the picker for a list of options defined in a [`<datalist>`](/en-US/docs/Web/HTML/Reference/Elements/datalist).
+`showPicker()` می‌تواند انتخابگر فهرستی از گزینه‌های تعریف‌شده در یک [`<datalist>`](/en-US/docs/Web/HTML/Reference/Elements/datalist) را راه‌اندازی کند.
 
-First we define a `<datalist>` in HTML consisting of a number of internet browsers, an input of type `text` that uses it, and a button.
+ابتدا یک `<datalist>` در HTML شامل تعدادی مرورگر اینترنتی، یک ورودی از نوع `text` که از آن استفاده می‌کند، و یک دکمه تعریف می‌کنیم.
 
 ```html
 <datalist id="browsers">
@@ -126,7 +120,7 @@ First we define a `<datalist>` in HTML consisting of a number of internet browse
 <button>Select browser</button>
 ```
 
-The code below adds an event listener that calls `showPicker()` when the button is clicked.
+کد زیر یک شنونده رویداد اضافه می‌کند که هنگام کلیک روی دکمه، `showPicker()` را فراخوانی می‌کند.
 
 ```js
 const button = document.querySelector("button");
@@ -141,19 +135,19 @@ button.addEventListener("click", () => {
 });
 ```
 
-As for the other pickers, we can't show this code running as a live example because it runs in a cross-origin frame, and would cause a [`SecurityError`](#securityerror).
+مانند سایر انتخابگرها، نمی‌توانیم این کد را به‌صورت مثال زنده اجرا شده نشان دهیم زیرا در یک فریم با مبدأ متفاوت اجرا می‌شود و باعث [`SecurityError`](#securityerror) می‌شود.
 
-### showPicker() for autocomplete
+### showPicker() برای autocomplete
 
-`showPicker()` can launch a picker for an [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) input.
+`showPicker()` می‌تواند انتخابگر را برای یک ورودی با ویژگی [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) راه‌اندازی کند.
 
-Here we define an input that takes an autocomplete option of "name".
+در اینجا ورودی‌ای تعریف می‌کنیم که گزینه autocomplete از نوع "name" را می‌گیرد.
 
 ```html
 <input autocomplete="name" /> <button>Show autocomplete options</button>
 ```
 
-The code below shows the picker for the input when the button is clicked.
+کد زیر هنگام کلیک روی دکمه، انتخابگر را برای ورودی نشان می‌دهد.
 
 ```js
 const button = document.querySelector("button");
@@ -168,15 +162,15 @@ button.addEventListener("click", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ HTMLElement("input") }}
 - {{ domxref("HTMLInputElement") }}
