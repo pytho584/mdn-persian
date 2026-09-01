@@ -1,11 +1,5 @@
 ---
 title: "FileSystemSyncAccessHandle: flush() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemSyncAccessHandle/flush"
-status: "needs-translation"
----
-
----
-title: "FileSystemSyncAccessHandle: flush() method"
 short-title: flush()
 slug: Web/API/FileSystemSyncAccessHandle/flush
 page-type: web-api-instance-method
@@ -14,13 +8,12 @@ browser-compat: api.FileSystemSyncAccessHandle.flush
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers("dedicated")}}
 
-The **`flush()`** method of the
-{{domxref("FileSystemSyncAccessHandle")}} interface persists any changes made to the file associated with the handle via the {{domxref('FileSystemSyncAccessHandle.write', 'write()')}} method to disk.
+متد **`flush()`** از رابط {{domxref("FileSystemSyncAccessHandle")}} هرگونه تغییری که از طریق متد {{domxref('FileSystemSyncAccessHandle.write', 'write()')}} روی فایل مرتبط با دسته‌ایجاد شده است را به دیسک ذخیره می‌کند.
 
-Bear in mind that you only need to call this method if you need the changes committed to disk at a specific time, otherwise you can leave the underlying operating system to handle this when it sees fit, which should be OK in most cases.
+به خاطر داشته باشید که فقط در صورتی نیاز به فراخوانی این متد دارید که بخواهید تغییرات در یک زمان مشخص روی دیسک اعمال شوند؛ در غیر این صورت می‌توانید اجازه دهید سیستم‌عامل زیرین در زمان مناسب خود این کار را انجام دهد، که در بیشتر موارد کافی است.
 
 > [!NOTE]
-> In earlier versions of the spec, {{domxref("FileSystemSyncAccessHandle.close()", "close()")}}, `flush()`, {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}}, and {{domxref("FileSystemSyncAccessHandle.truncate()", "truncate()")}} were wrongly specified as asynchronous methods, and older versions of some browsers implement them in this way. However, all current browsers that support these methods implement them as synchronous methods.
+> در نسخه‌های قدیمی‌تر مشخصات، {{domxref("FileSystemSyncAccessHandle.close()", "close()")}}، `flush()`، {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}} و {{domxref("FileSystemSyncAccessHandle.truncate()", "truncate()")}} به اشتباه به عنوان متدهای ناهمگام (async) تعریف شده بودند و نسخه‌های قدیمی‌تر برخی مرورگرها آن‌ها را به همین صورت پیاده‌سازی کرده‌اند. با این حال، تمام مرورگرهای فعلی که از این متدها پشتیبانی می‌کنند، آن‌ها را به صورت همگام (sync) پیاده‌سازی کرده‌اند.
 
 ## Syntax
 
@@ -30,26 +23,26 @@ flush()
 
 ### Parameters
 
-None.
+هیچکدام.
 
 ### Return value
 
-None ({{jsxref('undefined')}}).
+هیچکدام ({{jsxref('undefined')}}).
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the associated access handle is already closed.
+  - : اگر دسته‌دسترسی مرتبط از قبل بسته شده باشد، این خطا صادر می‌شود.
 
 ## Examples
 
-The following asynchronous event handler function is contained inside a Web Worker. On receiving a message from the main thread it:
+تابع رویدادگردان ناهمگام زیر درون یک Web Worker قرار دارد. پس از دریافت پیام از نخ اصلی، کارهای زیر را انجام می‌دهد:
 
-- Creates a synchronous file access handle.
-- Gets the size of the file and creates an {{jsxref("ArrayBuffer")}} to contain it.
-- Reads the file contents into the buffer.
-- Encodes the message and writes it to the end of the file.
-- Persists the changes to disk and closes the access handle.
+- یک دسته‌دسترسی همگام به فایل ایجاد می‌کند.
+- اندازه فایل را می‌گیرد و یک {{jsxref("ArrayBuffer")}} متناسب با آن ایجاد می‌کند.
+- محتوای فایل را در بافر می‌خواند.
+- پیام را کدگذاری کرده و به انتهای فایل می‌نویسد.
+- تغییرات را روی دیسک ذخیره کرده و دسته‌دسترسی را می‌بندد.
 
 ```js
 onmessage = async (e) => {
