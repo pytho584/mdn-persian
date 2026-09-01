@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: vspace property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/vspace"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: vspace property"
 short-title: vspace
 slug: Web/API/HTMLImageElement/vspace
 page-type: web-api-instance-property
@@ -16,23 +10,23 @@ browser-compat: api.HTMLImageElement.vspace
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The _deprecated_ **`vspace`** property of the {{domxref("HTMLImageElement")}} interface specifies the number of pixels of empty space to leave empty on the top and bottom sides of the {{HTMLElement("img")}} element when laying out the page. It reflects the `<img>` element's [`vspace`](/en-US/docs/Web/HTML/Reference/Elements/img#vspace) content attribute.
+ویژگی _منسوخ_ **`vspace`** از رابط {{domxref("HTMLImageElement")}} تعداد پیکسل‌های فضای خالی را مشخص می‌کند که در بالا و پایین عنصر {{HTMLElement("img")}} هنگام چیدمان صفحه خالی باقی بماند. این ویژگی منعکس‌کننده ویژگی محتوایی [`vspace`](/en-US/docs/Web/HTML/Reference/Elements/img#vspace) عنصر `<img>` است.
 
-You should instead use the CSS property {{cssxref("margin")}} or its longhand properties to establish margin space around an image.
+بهتر است به جای آن از ویژگی CSS {{cssxref("margin")}} یا ویژگی‌های جزئی آن برای تعیین حاشیه در اطراف تصویر استفاده کنید.
 
-## Value
+## مقدار
 
-An integer value specifying the height, in pixels, of the vertical margin to apply to the top and bottom sides of the image.
+یک مقدار عددی (integer) که ارتفاع حاشیه عمودی را بر حسب پیکسل مشخص می‌کند که به بالا و پایین تصویر اعمال می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("margin")}}
 - {{domxref("HTMLImageElement.hspace")}}
