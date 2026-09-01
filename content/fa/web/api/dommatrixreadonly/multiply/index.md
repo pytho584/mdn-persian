@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: multiply() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/multiply"
-status: "needs-translation"
----
-
----
-title: "DOMMatrixReadOnly: multiply() method"
 short-title: multiply()
 slug: Web/API/DOMMatrixReadOnly/multiply
 page-type: web-api-instance-method
@@ -14,27 +8,27 @@ browser-compat: api.DOMMatrixReadOnly.multiply
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`multiply()`** method of the {{domxref("DOMMatrixReadOnly")}} interface creates and returns a new matrix which is the dot product of the matrix and the `otherMatrix` parameter. If `otherMatrix` is omitted, the matrix is multiplied by a matrix in which every element is `0` _except_ the bottom-right corner and the element immediately above and to its left: `m33` and `m34`. These have the default value of `1`. The original matrix is not modified.
+متد **`multiply()`** از رابط {{domxref("DOMMatrixReadOnly")}} یک ماتریس جدید ایجاد و بازمی‌گرداند که حاصل ضرب نقطه‌ای (dot product) ماتریس اصلی و پارامتر `otherMatrix` است. اگر `otherMatrix` حذف شود، ماتریس در ماتریسی ضرب می‌شود که تمام عناصر آن `0` هستند _به جز_ گوشه پایین-راست و عنصر بلافاصله بالای آن و سمت چپ آن: `m33` و `m34`. این مقادیر پیش‌فرض `1` دارند. ماتریس اصلی تغییر نمی‌کند.
 
-To mutate the matrix as you multiply it, see {{domxref("DOMMatrix.multiplySelf()")}}.
+برای تغییر ماتریس در حین ضرب، به {{domxref("DOMMatrix.multiplySelf()")}} مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 multiply()
 multiply(otherMatrix)
 ```
 
-### Parameters
+### پارامترها
 
 - `otherMatrix` {{optional_inline}}
-  - : The [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) multiplier.
+  - : ضرب‌کننده [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix).
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("DOMMatrix")}}.
+یک {{domxref("DOMMatrix")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const matrix = new DOMMatrixReadOnly().translate(13, 21);
@@ -43,17 +37,17 @@ console.log(matrix.toString()); // output: matrix(1, 0, 0, 1, 13, 21)
 console.log(multipliedMatrix.toString()); // output: matrix(1, 0, 0, 1, 26, 42)
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrix.multiplySelf()")}}
 - {{domxref("DOMMatrix.preMultiplySelf()")}}
-- CSS {{CSSxRef("transform-function/matrix", "matrix()")}} function
-- CSS {{CSSxRef("transform-function/matrix3d", "matrix3d()")}} function
+- تابع CSS {{CSSxRef("transform-function/matrix", "matrix()")}}
+- تابع CSS {{CSSxRef("transform-function/matrix3d", "matrix3d()")}}
