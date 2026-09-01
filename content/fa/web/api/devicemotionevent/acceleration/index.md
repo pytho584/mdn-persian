@@ -1,7 +1,6 @@
 ---
 title: "DeviceMotionEvent: acceleration property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/acceleration"
-status: "needs-translation"
 ---
 
 ---
@@ -14,39 +13,32 @@ browser-compat: api.DeviceMotionEvent.acceleration
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`acceleration`** read-only property of the {{domxref("DeviceMotionEvent")}} interface returns the acceleration recorded by
-the device, in [meters per second squared (m/s²)](https://en.wikipedia.org/wiki/Meter_per_second_squared).
-This value does not include the effect of
-the gravitational force, in contrast to {{DOMxRef("DeviceMotionEvent.accelerationIncludingGravity")}}.
+ویژگی فقط‌خواندنی **`acceleration`** در رابط {{domxref("DeviceMotionEvent")}}، شتاب ثبت‌شده توسط دستگاه را بر حسب [متر بر مجذور ثانیه (m/s²)](https://en.wikipedia.org/wiki/Meter_per_second_squared) بازمی‌گرداند. این مقدار شامل اثر نیروی گرانش نمی‌شود، در مقابل {{DOMxRef("DeviceMotionEvent.accelerationIncludingGravity")}} که شامل آن است.
 
 > [!NOTE]
-> If the hardware does not know how to remove gravity from the
-> acceleration data, this value may not be present in the
-> {{DOMxRef("DeviceMotionEvent")}}. In this situation, you'll need to use
-> {{DOMxRef("DeviceMotionEvent.accelerationIncludingGravity")}} instead.
+> اگر سخت‌افزار نتواند گرانش را از داده‌های شتاب حذف کند، ممکن است این مقدار در {{DOMxRef("DeviceMotionEvent")}} وجود نداشته باشد. در این حالت، باید به جای آن از {{DOMxRef("DeviceMotionEvent.accelerationIncludingGravity")}} استفاده کنید.
 
-## Value
+## مقدار
 
-The `acceleration` property is an object providing information about
-acceleration on the three axes in the [Device coordinate frame](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained#device_coordinate_frame). Each axis is represented with its own property:
+ویژگی `acceleration` یک شیء است که اطلاعاتی درباره شتاب در سه محور در [چارچوب مختصات دستگاه](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained#device_coordinate_frame) ارائه می‌دهد. هر محور با یک ویژگی جداگانه نمایش داده می‌شود:
 
 - `x`
-  - : Represents the acceleration along the x axis
+  - : نشان‌دهنده شتاب در امتداد محور x
 - `y`
-  - : Represents the acceleration along the y axis
+  - : نشان‌دهنده شتاب در امتداد محور y
 - `z`
-  - : Represents the acceleration along the z axis
+  - : نشان‌دهنده شتاب در امتداد محور z
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Device orientation events/Detecting device orientation", "Detecting device orientation", "", "nocode")}}
-- {{domxref("Device orientation events/Orientation and motion data explained", "Orientation and motion data explained", "", "nocode")}}
-- {{DOMxRef("Window/devicemotion_event", "devicemotion")}} event
+- {{domxref("Device orientation events/Detecting device orientation", "تشخیص جهت‌گیری دستگاه", "", "nocode")}}
+- {{domxref("Device orientation events/Orientation and motion data explained", "توضیح داده‌های جهت‌گیری و حرکت", "", "nocode")}}
+- رویداد {{DOMxRef("Window/devicemotion_event", "devicemotion")}}
