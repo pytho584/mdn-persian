@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: username property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/username"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: username property"
 short-title: username
 slug: Web/API/HTMLAnchorElement/username
 page-type: web-api-instance-property
@@ -14,36 +8,36 @@ browser-compat: api.HTMLAnchorElement.username
 
 {{ApiRef("HTML DOM")}}
 
-The **`username`** property of the {{domxref("HTMLAnchorElement")}} interface is a string containing the username component of the `<a>` element's `href`. If the URL does not have a username, this property contains an empty string, `""`.
+ویژگی **`username`** در رابط {{domxref("HTMLAnchorElement")}} یک رشته است که جزء نام کاربری (username) از `href` عنصر `<a>` را شامل می‌شود. اگر URL نام کاربری نداشته باشد، این ویژگی شامل یک رشته خالی، `""` است.
 
-This property can be set to change the username of the URL. If the URL has no {{domxref("HTMLAnchorElement.host", "host")}} or its scheme is `file:`, then setting this property has no effect.
+این ویژگی را می‌توان برای تغییر نام کاربری URL تنظیم کرد. اگر URL فاقد {{domxref("HTMLAnchorElement.host", "host")}} باشد یا طرح آن `file:` باشد، تنظیم این ویژگی هیچ اثری ندارد.
 
-The username is {{Glossary("Percent-encoding", "percent-encoded")}} when setting but not percent-decoded when reading.
+نام کاربری هنگام تنظیم، {{Glossary("Percent-encoding", "درصد-کدگذاری")}} می‌شود اما هنگام خواندن، درصد-کدگشایی نمی‌شود.
 
-See {{domxref("URL.username")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.username")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Getting the username from an anchor link
+### دریافت نام کاربری از یک پیوند anchor
 
 ```js
-// An <a id="myAnchor" href="https://anonymous:flabada@developer.mozilla.org/en-US/docs/HTMLAnchorElement"> element is in the document
+// یک عنصر <a id="myAnchor" href="https://anonymous:flabada@developer.mozilla.org/en-US/docs/HTMLAnchorElement"> در سند وجود دارد
 const anchor = document.getElementByID("myAnchor");
-anchor.username; // returns 'anonymous'
+anchor.username; // 'anonymous' را برمی‌گرداند
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAnchorElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAnchorElement")}} که این ویژگی به آن تعلق دارد.
