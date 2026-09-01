@@ -1,11 +1,5 @@
 ---
 title: "DedicatedWorkerGlobalScope: requestAnimationFrame() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/requestAnimationFrame"
-status: "needs-translation"
----
-
----
-title: "DedicatedWorkerGlobalScope: requestAnimationFrame() method"
 short-title: requestAnimationFrame()
 slug: Web/API/DedicatedWorkerGlobalScope/requestAnimationFrame
 page-type: web-api-instance-method
@@ -14,16 +8,16 @@ browser-compat: api.DedicatedWorkerGlobalScope.requestAnimationFrame
 
 {{APIRef("Web Workers API")}}{{AvailableInWorkers("dedicated")}}
 
-The **`requestAnimationFrame()`** method of the {{domxref("DedicatedWorkerGlobalScope")}} interface tells the browser you wish to perform an animation frame request and call a user-supplied callback function before the next repaint.
+متد **`requestAnimationFrame()`** در رابط {{domxref("DedicatedWorkerGlobalScope")}} به مرورگر اعلام می‌کند که شما می‌خواهید یک درخواست فریم انیمیشن انجام دهید و یک تابع callback که توسط کاربر ارائه شده است را قبل از بازنقاشی بعدی فراخوانی کنید.
 
-The frequency of calls to the callback function will generally match the display refresh rate. The most common refresh rate is 60 Hz, (60 cycles/frames per second), though 75 Hz, 120 Hz, and 144 Hz are also widely used. `requestAnimationFrame()` calls are paused in most browsers when running in background tabs or hidden {{HTMLElement("iframe")}}s, to improve performance and battery life.
+فرکانس فراخوانی تابع callback معمولاً با نرخ تازه‌سازی نمایشگر مطابقت دارد. رایج‌ترین نرخ تازه‌سازی ۶۰ هرتز (۶۰ چرخه/فریم در ثانیه) است، اگرچه ۷۵ هرتز، ۱۲۰ هرتز و ۱۴۴ هرتز نیز به طور گسترده استفاده می‌شوند. فراخوانی‌های `requestAnimationFrame()` در بیشتر مرورگرها هنگام اجرا در برگه‌های پس‌زمینه یا {{HTMLElement("iframe")}}های مخفی متوقف می‌شوند تا عملکرد و عمر باتری بهبود یابد.
 
-A call to the `requestAnimationFrame()` method schedules only one single call to the callback function. If you want to animate another frame, your callback function must call `requestAnimationFrame()` again.
+یک فراخوانی به متد `requestAnimationFrame()` فقط یک فراخوانی واحد به تابع callback زمان‌بندی می‌کند. اگر می‌خواهید فریم دیگری را انیمیشن کنید، تابع callback شما باید دوباره `requestAnimationFrame()` را فراخوانی کند.
 
 > [!WARNING]
-> Be sure always to use the first argument (or some other method for getting the current time) to calculate how much the animation will progress in a frame — **otherwise, the animation will run faster on high refresh-rate screens**. For ways to do that, see the examples below.
+> حتماً همیشه از اولین آرگومان (یا روش دیگری برای دریافت زمان فعلی) برای محاسبه میزان پیشرفت انیمیشن در یک فریم استفاده کنید — **در غیر این صورت، انیمیشن در صفحه‌نمایش‌های با نرخ تازه‌سازی بالا سریع‌تر اجرا خواهد شد**. برای راه‌های انجام این کار، نمونه‌های زیر را ببینید.
 
-Calling the `requestAnimationFrame()` method requires the current worker to have an associated owner {{domxref("Window", "window")}}. That means that the current worker must be created by {{domxref("Window", "window")}} or by a dedicated worker that also has an associated owner {{domxref("Window", "window")}}.
+فراخوانی متد `requestAnimationFrame()` نیاز دارد که worker فعلی دارای یک {{domxref("Window", "window")}} مالک مرتبط باشد. یعنی worker فعلی باید توسط {{domxref("Window", "window")}} یا توسط یک dedicated worker که خود دارای یک {{domxref("Window", "window")}} مالک مرتبط است، ایجاد شده باشد.
 
 ## Syntax
 
@@ -34,35 +28,31 @@ requestAnimationFrame(callback)
 ### Parameters
 
 - `callback`
-  - : The function to call when it's time to update your animation for the next repaint. This callback function is passed a single argument:
+  - : تابعی که وقتی زمان به‌روزرسانی انیمیشن شما برای بازنقاشی بعدی فرا رسید، فراخوانی می‌شود. این تابع callback یک آرگومان دریافت می‌کند:
     - `timestamp`
-      - : A {{domxref("DOMHighResTimeStamp")}} indicating the end time of the previous frame's rendering (based on the number of milliseconds since [time origin](/en-US/docs/Web/API/Performance/timeOrigin)). The timestamp is a decimal number, in milliseconds, but with a minimal precision of 1 millisecond. The timestamp value is also similar to calling {{domxref('performance.now()')}} at the start of the callback function, but it is never the same value.
-
-        When multiple callbacks queued by `requestAnimationFrame()` begin to fire in a single frame, each receives the same timestamp even though time has passed during the computation of every previous callback's workload.
+      - : یک {{domxref("DOMHighResTimeStamp")}} که زمان پایان رندرینگ فریم قبلی را نشان می‌دهد (بر اساس تعداد میلی‌ثانیه از [مبدأ زمان](/en-US/docs/Web/API/Performance/timeOrigin)). این timestamp یک عدد اعشاری بر حسب میلی‌ثانیه است، اما با حداقل دقت ۱ میلی‌ثانیه. مقدار timestamp همچنین مشابه فراخوانی {{domxref('performance.now()')}} در شروع تابع callback است، اما هرگز مقدار یکسانی نیست.
+        وقتی چندین callback که توسط `requestAnimationFrame()` در صف قرار گرفته‌اند در یک فریم شروع به اجرا می‌کنند، هر کدام timestamp یکسانی دریافت می‌کنند، حتی اگر در حین محاسبه workload هر callback قبلی، زمان گذشته باشد.
 
 ### Return value
 
-A `long` integer value that is the request ID uniquely identifying the entry
-in the callback list. This is a non-zero value, but you may not make any other
-assumptions about it. You can pass this value to
-{{domxref("DedicatedWorkerGlobalScope.cancelAnimationFrame()", "cancelAnimationFrame()")}} to cancel the refresh callback request, the cancel action must have been made in the same worker.
+یک مقدار عدد صحیح `long` که شناسه درخواست است و به طور یکتا ورودی در لیست callback را مشخص می‌کند. این یک مقدار غیر صفر است، اما نمی‌توانید فرض دیگری درباره آن داشته باشید. می‌توانید این مقدار را به {{domxref("DedicatedWorkerGlobalScope.cancelAnimationFrame()", "cancelAnimationFrame()")}} ارسال کنید تا درخواست callback تازه‌سازی لغو شود، عمل لغو باید در همان worker انجام شده باشد.
 
 ### Exceptions
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the method is not supported by the current worker.
+  - : اگر متد توسط worker فعلی پشتیبانی نشود، پرتاب می‌شود.
 
 ## Examples
 
-Here's a complete example showing how to use `requestAnimationFrame()` in a dedicated worker with an `OffscreenCanvas`.
+در اینجا یک مثال کامل آورده شده است که نحوه استفاده از `requestAnimationFrame()` در یک dedicated worker با `OffscreenCanvas` را نشان می‌دهد.
 
-The HTML should contain:
+HTML باید شامل موارد زیر باشد:
 
 ```html
 <canvas width="100" height="100"></canvas>
 ```
 
-It should link to the following JavaScript:
+باید به JavaScript زیر متصل شود:
 
 ```js
 const worker = new Worker("worker.js");
@@ -134,11 +124,11 @@ self.addEventListener("message", (e) => {
 });
 ```
 
-On the main thread, we start by transferring the control of a {{HTMLElement("canvas")}} element to an {{domxref("OffscreenCanvas")}}, using {{domxref("HTMLCanvasElement.transferControlToOffscreen()")}} and send a message to `"start"` its work to the worker, with the offscreen canvas.
+در نخ اصلی، ما با انتقال کنترل یک عنصر {{HTMLElement("canvas")}} به یک {{domxref("OffscreenCanvas")}} با استفاده از {{domxref("HTMLCanvasElement.transferControlToOffscreen()")}} شروع می‌کنیم و یک پیام برای شروع کار به worker ارسال می‌کنیم، همراه با canvas offscreen.
 
-In the worker file (`worker.js`), we handle the animation logic. When receiving the `"start"` message, the worker starts the animation, moving the rectangle from left to right. Upon reception of a `"stop"` message, it will stop the animation.
+در فایل worker (`worker.js`)، منطق انیمیشن را مدیریت می‌کنیم. هنگام دریافت پیام `"start"`، worker انیمیشن را شروع می‌کند و مستطیل را از چپ به راست حرکت می‌دهد. هنگام دریافت پیام `"stop"`، انیمیشن را متوقف می‌کند.
 
-Finally, the main thread can send a `"stop"` message to the worker to stop the animation after a delay, allowing the animation to be visible before stopping.
+در نهایت، نخ اصلی می‌تواند یک پیام `"stop"` به worker ارسال کند تا پس از یک تأخیر انیمیشن متوقف شود و اجازه دهد انیمیشن قبل از توقف قابل مشاهده باشد.
 
 ## Specifications
 
