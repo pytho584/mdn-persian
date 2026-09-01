@@ -1,11 +1,5 @@
 ---
 title: "Element: checkVisibility() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/checkVisibility"
-status: "needs-translation"
----
-
----
-title: "Element: checkVisibility() method"
 short-title: checkVisibility()
 slug: Web/API/Element/checkVisibility
 page-type: web-api-instance-method
@@ -14,18 +8,16 @@ browser-compat: api.Element.checkVisibility
 
 {{APIRef("DOM")}}
 
-The **`checkVisibility()`** method of the {{domxref("Element")}} interface checks whether the element is potentially visible.
+متد **`checkVisibility()`** در رابط {{domxref("Element")}} بررسی می‌کند که آیا عنصر به‌طور بالقوه قابل مشاهده است یا خیر.
 
-The method returns `false` in either of the following situations:
+این متد در هر یک از شرایط زیر مقدار `false` برمی‌گرداند:
 
-- The element doesn't have an associated box, for example because the CSS {{cssxref("display")}} property is set to [`none`](/en-US/docs/Web/CSS/Reference/Properties/display#none) or [`contents`](/en-US/docs/Web/CSS/Reference/Properties/display#contents).
-- The element is not being rendered because the element or an ancestor element sets the {{cssxref("content-visibility")}} property to [`hidden`](/en-US/docs/Web/CSS/Reference/Properties/content-visibility#hidden).
+- عنصر جعبهٔ مرتبطی ندارد، مثلاً به این دلیل که ویژگی CSS {{cssxref("display")}} روی [`none`](/en-US/docs/Web/CSS/Reference/Properties/display#none) یا [`contents`](/en-US/docs/Web/CSS/Reference/Properties/display#contents) تنظیم شده باشد.
+- عنصر به این دلیل رندر نمی‌شود که عنصر یا یکی از عناصر بالادست (ancestor) ویژگی {{cssxref("content-visibility")}} را روی [`hidden`](/en-US/docs/Web/CSS/Reference/Properties/content-visibility#hidden) تنظیم کرده باشد.
 
-The optional parameter enables additional checks to test for other interpretations of what "visible" means.
-For example, you can further check whether an element has an opacity of `0`, if the value of the element {{cssxref("visibility")}} property makes it invisible, or if the element {{cssxref("content-visibility")}} property has a value of [`auto`](/en-US/docs/Web/CSS/Reference/Properties/content-visibility#auto) and its rendering is currently being skipped.
+پارامتر اختیاری، امکان انجام بررسی‌های اضافی برای آزمایش دیگر تفسیرهای «قابل مشاهده» را فراهم می‌کند. برای مثال، می‌توانید بیشتر بررسی کنید که آیا عنصر مقدار `opacity` برابر با `0` دارد، آیا مقدار ویژگی `visibility` عنصر آن را نامرئی می‌کند، یا آیا ویژگی `content-visibility` عنصر مقدار `auto` دارد و رندر آن در حال نادیده گرفته شدن است.
 
-Note that a return value of `true` does not guarantee the element is visible to the user, just that it may be visible.
-Elements outside the viewport or occluded by other content may still return `true`.
+توجه داشته باشید که مقدار بازگشتی `true` تضمین نمی‌کند که عنصر برای کاربر قابل مشاهده است، فقط ممکن است قابل مشاهده باشد. عناصری که خارج از viewport هستند یا توسط سایر محتوا پوشانده شده‌اند ممکن است همچنان `true` برگردانند.
 
 ## Syntax
 
@@ -36,46 +28,41 @@ checkVisibility(options)
 ### Parameters
 
 - `options` {{optional_inline}}
-  - : An object indicating additional checks to run.
-    The possible options are:
+  - : یک شیء که بررسی‌های اضافی را مشخص می‌کند. گزینه‌های ممکن عبارتند از:
     - `contentVisibilityAuto`
-      - : `true` to check if the element {{cssxref("content-visibility")}} property has (or inherits) the value [`auto`](/en-US/docs/Web/CSS/Reference/Properties/content-visibility#auto), and it is currently skipping its rendering.
-        `false` by default.
+      - `true` برای بررسی اینکه آیا ویژگی {{cssxref("content-visibility")}} عنصر مقدار [`auto`](/en-US/docs/Web/CSS/Reference/Properties/content-visibility#auto) را دارد (یا به ارث می‌برد) و آیا در حال حاضر رندر آن نادیده گرفته می‌شود. به‌طور پیش‌فرض `false` است.
     - `opacityProperty`
-      - : `true` to check if the element {{cssxref("opacity")}} property has (or inherits) a value of `0`.
-        `false` by default.
+      - `true` برای بررسی اینکه آیا ویژگی {{cssxref("opacity")}} عنصر مقدار `0` را دارد (یا به ارث می‌برد). به‌طور پیش‌فرض `false` است.
     - `visibilityProperty`
-      - : `true` to check if the element is invisible due to the value of its {{cssxref("visibility")}} property.
-        `false` by default.
+      - `true` برای بررسی اینکه آیا عنصر به دلیل مقدار ویژگی {{cssxref("visibility")}} خود نامرئی است. به‌طور پیش‌فرض `false` است.
 
         > [!NOTE]
-        > Invisible elements include those that have [`visibility: hidden`](/en-US/docs/Web/CSS/Reference/Properties/visibility#hidden), and some element types that have [`visibility: collapse`](/en-US/docs/Web/CSS/Reference/Properties/visibility#collapse).
+        > عناصر نامرئی شامل آن‌هایی هستند که [`visibility: hidden`](/en-US/docs/Web/CSS/Reference/Properties/visibility#hidden) دارند و برخی از انواع عناصر که [`visibility: collapse`](/en-US/docs/Web/CSS/Reference/Properties/visibility#collapse) دارند.
 
     - `checkOpacity`
-      - : A historic alias for [`opacityProperty`](#opacityproperty).
+      - : یک نام مستعار تاریخی برای [`opacityProperty`](#opacityproperty).
     - `checkVisibilityCSS`
-      - : A historic alias for [`visibilityProperty`](#visibilityproperty).
+      - : یک نام مستعار تاریخی برای [`visibilityProperty`](#visibilityproperty).
 
 ### Return value
 
-`false` if any of the following conditions are met, otherwise `true`:
+اگر هر یک از شرایط زیر برقرار باشد، `false` و در غیر این صورت `true` برمی‌گرداند:
 
-- The element doesn't have an associated box.
-- The element {{cssxref("content-visibility")}} property has (or inherits) a value of [`hidden`](/en-US/docs/Web/CSS/Reference/Properties/visibility#hidden).
-- `opacityProperty` (or `checkOpacity`) is `true` and the element {{cssxref("opacity")}} property has (or inherits) a value of `0`.
-- `visibilityProperty` (or `checkVisibilityCSS`) is `true` and the element is invisible due to the value of its {{cssxref("visibility")}} property.
-- `contentVisibilityAuto` is `true`, the {{cssxref("content-visibility")}} property has (or inherits) a value of [`auto`](/en-US/docs/Web/CSS/Reference/Properties/content-visibility#auto), and element rendering is being skipped.
+- عنصر جعبهٔ مرتبطی ندارد.
+- ویژگی {{cssxref("content-visibility")}} عنصر مقدار [`hidden`](/en-US/docs/Web/CSS/Reference/Properties/visibility#hidden) را دارد (یا به ارث می‌برد).
+- `opacityProperty` (یا `checkOpacity`) برابر با `true` است و ویژگی {{cssxref("opacity")}} عنصر مقدار `0` را دارد (یا به ارث می‌برد).
+- `visibilityProperty` (یا `checkVisibilityCSS`) برابر با `true` است و عنصر به دلیل مقدار ویژگی {{cssxref("visibility")}} خود نامرئی است.
+- `contentVisibilityAuto` برابر با `true` است، ویژگی {{cssxref("content-visibility")}} مقدار [`auto`](/en-US/docs/Web/CSS/Reference/Properties/content-visibility#auto) را دارد (یا به ارث می‌برد)، و رندر عنصر نادیده گرفته می‌شود.
 
 ## Examples
 
 ### Test checkVisibility() with varied CSS
 
-The following example allows you to test how the result of `checkVisibility()` might change with different values for `display`, `content-visibility`, `visibility`, and `opacity` CSS properties.
+مثال زیر به شما امکان می‌دهد بررسی کنید که نتیجهٔ `checkVisibility()` چگونه ممکن است با مقادیر مختلف ویژگی‌های CSS `display`، `content-visibility`، `visibility` و `opacity` تغییر کند.
 
 #### HTML
 
-The HTML defines a `<select>` element for the CSS properties that affect the results of `checkVisibility()`.
-The first (default selected) values should result in `checkVisibility()` returning `true` when applied to an element, while the other values affect the visibility.
+HTML یک عنصر `<select>` برای ویژگی‌های CSS که بر نتایج `checkVisibility()` تأثیر می‌گذارند تعریف می‌کند. مقادیر اول (پیش‌فرض انتخاب‌شده) باید هنگام اعمال بر روی یک عنصر باعث شوند `checkVisibility()` مقدار `true` برگرداند، در حالی که سایر مقادیر بر روی قابلیت مشاهده تأثیر می‌گذارند.
 
 ```html
 <select id="css_display" name="css_display">
@@ -102,8 +89,7 @@ The first (default selected) values should result in `checkVisibility()` returni
 </select>
 ```
 
-Next we have a `<pre>` that is used to output the result of the `checkVisibility()` check when no options are passed in the parameter, and for each separate option value.
-At the end we have the element that will be tested (to which we will apply the selected CSS property values).
+سپس یک عنصر `<pre>` داریم که برای نمایش نتیجهٔ بررسی `checkVisibility()` در زمانی که هیچ گزینه‌ای در پارامتر ارسال نمی‌شود و همچنین برای هر مقدار گزینهٔ جداگانه استفاده می‌شود. در پایان، عنصری داریم که قرار است آزمایش شود (مقادیر ویژگی CSS انتخاب‌شده را روی آن اعمال خواهیم کرد).
 
 ```html
 <pre id="output_result"></pre>
@@ -112,7 +98,7 @@ At the end we have the element that will be tested (to which we will apply the s
 
 #### CSS
 
-The CSS just highlights the element to be tested.
+CSS فقط عنصر مورد آزمایش را برجسته می‌کند.
 
 ```css
 #test_element {
@@ -123,8 +109,7 @@ The CSS just highlights the element to be tested.
 
 #### JavaScript
 
-The code below gets each of the `<select>` elements.
-The `updateCSS()` method is called on start and whenever the select elements change in order to apply the selected CSS to the target element,
+کد زیر هر یک از عناصر `<select>` را دریافت می‌کند. متد `updateCSS()` در شروع و هر بار که عناصر انتخاب تغییر می‌کنند فراخوانی می‌شود تا CSS انتخاب‌شده را روی عنصر هدف اعمال کند.
 
 ```js
 const displayCssSelect = document.getElementById("css_display");
@@ -174,12 +159,9 @@ function updateCSS() {
 }
 ```
 
-#### Result
+#### نتیجه
 
-The results are shown below.
-If you change the selection the results will be applied to the test element (blue outline) and the results of the `checkVisibility()` for each setting should be displayed.
-So for example, if you set the `opacity: 0` that test (only) should indicate `false`.
-However if you set `display: none` then all tests should return `false`.
+نتایج در زیر نمایش داده می‌شود. اگر انتخاب را تغییر دهید، نتایج روی عنصر آزمایش (با طرح آبی) اعمال می‌شود و نتایج `checkVisibility()` برای هر تنظیمات باید نمایش داده شود. به‌عنوان مثال، اگر `opacity: 0` را تنظیم کنید، آن آزمایش (فقط) باید `false` را نشان دهد. با این حال، اگر `display: none` را تنظیم کنید، همه آزمایش‌ها باید `false` برگردانند.
 
 {{ EmbedLiveSample('Test checkVisibility() with varied CSS', "100%", "200" ) }}
 
