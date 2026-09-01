@@ -1,11 +1,5 @@
 ---
 title: "HTMLDetailsElement: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDetailsElement/name"
-status: "needs-translation"
----
-
----
-title: "HTMLDetailsElement: name property"
 short-title: name
 slug: Web/API/HTMLDetailsElement/name
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.HTMLDetailsElement.name
 
 {{ APIRef("HTML DOM") }}
 
-The **`name`** property of the {{domxref("HTMLDetailsElement")}} interface reflects the [`name`](/en-US/docs/Web/HTML/Reference/Elements/details#name) attribute of {{htmlelement("details")}} elements. It enables multiple `<details>` elements to be connected together, where only one for the `<details>` elements can be open at once. This allows developers to easily create UI features such as accordions without scripting.
+خاصیت **`name`** از رابط {{domxref("HTMLDetailsElement")}} منعکس‌کنندهٔ ویژگی [`name`](/en-US/docs/Web/HTML/Reference/Elements/details#name) عناصر {{htmlelement("details")}} است. این امکان را فراهم می‌کند که چندین عنصر `<details>` به هم متصل شوند، به‌طوری‌که فقط یکی از عناصر `<details>` می‌تواند در یک زمان باز باشد. این به توسعه‌دهندگان اجازه می‌دهد تا به‌راحتی ویژگی‌های رابط کاربری مانند آکاردئون‌ها را بدون نیاز به اسکریپت‌نویسی ایجاد کنند.
 
-The name attribute specifies a group name — give multiple `<details>` elements the same name value to group them. Only one of the grouped `<details>` elements can be open at a time — opening one will cause another to close. If multiple grouped `<details>` elements are given the `open` attribute, only the first one in the source order will be rendered open.
+ویژگی `name` یک نام گروه را مشخص می‌کند — به چندین عنصر `<details>` مقدار `name` یکسان بدهید تا آن‌ها را گروه‌بندی کنید. فقط یکی از عناصر `<details>` گروه‌بندی‌شده می‌تواند در یک زمان باز باشد — باز کردن یکی باعث بسته شدن دیگری می‌شود. اگر به چندین عنصر `<details>` گروه‌بندی‌شده ویژگی `open` داده شود، تنها اولین عنصر در ترتیب منبع به‌صورت باز نمایش داده می‌شود.
 
-## Value
+## مقدار
 
-A string. The empty string if the element is not part of any group.
+یک رشته. اگر عنصر جزئی از هیچ گروهی نباشد، رشتهٔ خالی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{htmlelement("details")}} and {{htmlelement("summary")}} elements
+- عناصر {{htmlelement("details")}} و {{htmlelement("summary")}}
