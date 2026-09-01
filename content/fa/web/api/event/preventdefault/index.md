@@ -1,7 +1,5 @@
 ---
 title: "Event: preventDefault() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,16 @@ browser-compat: api.Event.preventDefault
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`preventDefault()`** method of the {{domxref("Event")}} interface tells the {{Glossary("user agent")}} that the event is being explicitly handled, so its default action, such as page scrolling, link navigation, or pasting text, should not be taken.
+متد **`preventDefault()`** در رابط {{domxref("Event")}} به {{Glossary("user agent")}} اعلام می‌کند که رویداد به‌طور صریح مدیریت شده است؛ بنابراین اقدام پیش‌فرض آن، مانند اسکرول صفحه، پیمایشِ لینک یا چسباندن متن، نباید انجام شود.
 
-The event continues to propagate as usual,
-unless one of its event listeners calls
-{{domxref("Event.stopPropagation", "stopPropagation()")}}
-or {{domxref("Event.stopImmediatePropagation", "stopImmediatePropagation()")}},
-either of which terminates propagation at once.
+رویداد مانند همیشه به انتشار ادامه می‌دهد، مگر اینکه یکی از شنوندگان رویداد (event listener) آن، متد {{domxref("Event.stopPropagation", "stopPropagation()")}} یا {{domxref("Event.stopImmediatePropagation", "stopImmediatePropagation()")}} را فراخوانی کند؛ هر یک از این دو روش، انتشار رویداد را بلافاصله متوقف می‌کنند.
 
-As noted below, calling **`preventDefault()`** for a
-non-cancelable event, such as one dispatched via
-{{domxref("EventTarget.dispatchEvent()")}}, without specifying
-`cancelable: true` has no effect.
+همان‌طور که در ادامه اشاره شد، فراخوانی **`preventDefault()`** برای یک رویداد غیرقابل‌لغو (non-cancelable)، مانند رویدادی که از طریق {{domxref("EventTarget.dispatchEvent()")}} و بدون تعیین `cancelable: true` ارسال شده باشد، هیچ اثری ندارد.
 
-If a passive listener calls `preventDefault()`, nothing will happen and a console warning may be generated.
+اگر یک شنوندهٔ غیرفعال (passive listener) `preventDefault()` را فراخوانی کند، هیچ اتفاقی رخ نمی‌دهد و ممکن است یک هشدار در کنسول نمایش داده شود.
 
 > [!NOTE]
-> Look for better alternatives than using `preventDefault()` to block default actions. For example, you can use the `disabled` or `readonly` attribute on a form control to prevent it from being interacted with, use [HTML constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) to reject invalid input, or use the {{cssxref("overflow")}} property to prevent scrolling.
+> به دنبال جایگزین‌های بهتری برای مسدود کردن اقدام‌های پیش‌فرض به‌جای استفاده از `preventDefault()` باشید. برای مثال، می‌توانید از ویژگی `disabled` یا `readonly` روی یک کنترل فرم برای جلوگیری از تعامل با آن استفاده کنید، از [اعتبارسنجی محدودیت‌های HTML](/en-US/docs/Web/HTML/Guides/Constraint_validation) برای رد کردن ورودی نامعتبر بهره ببرید، یا از ویژگی {{cssxref("overflow")}} برای جلوگیری از اسکرول استفاده کنید.
 
 ## Syntax
 
@@ -40,18 +31,17 @@ preventDefault()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
-### Blocking default click handling
+### جلوگیری از مدیریت پیش‌فرض کلیک
 
-Toggling a checkbox is the default action of clicking on a checkbox. This example
-demonstrates how to prevent that from happening:
+تغییر وضعیت یک چک‌باکس (checkbox) اقدام پیش‌فرضِ کلیک روی آن است. این مثال نشان می‌دهد که چگونه می‌توان از انجام این کار جلوگیری کرد:
 
 #### JavaScript
 
@@ -86,12 +76,9 @@ function checkboxClick(event) {
 
 ## Notes
 
-Calling `preventDefault()` during any stage of event flow cancels the event,
-meaning that any default action normally taken by the implementation as a result of the
-event will not occur.
+فراخوانی `preventDefault()` در هر مرحله از جریان رویداد (event flow) باعث لغو رویداد می‌شود؛ به این معنی که هیچ اقدام پیش‌فرضی که معمولاً در نتیجهٔ آن رویداد توسط پیاده‌سازی انجام می‌شود، رخ نخواهد داد.
 
-You can use {{domxref("Event.cancelable")}} to check if the event is cancelable.
-Calling `preventDefault()` for a non-cancelable event has no effect.
+می‌توانید از {{domxref("Event.cancelable")}} برای بررسی اینکه آیا رویداد قابل‌لغو است استفاده کنید. فراخوانی `preventDefault()` برای یک رویداد غیرقابل‌لغو هیچ اثری ندارد.
 
 ## Specifications
 
