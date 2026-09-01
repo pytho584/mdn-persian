@@ -1,11 +1,5 @@
 ---
 title: "HTMLScriptElement: text property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/text"
-status: "needs-translation"
----
-
----
-title: "HTMLScriptElement: text property"
 short-title: text
 slug: Web/API/HTMLScriptElement/text
 page-type: web-api-instance-property
@@ -15,52 +9,52 @@ browser-compat: api.HTMLScriptElement.text
 {{APIRef("HTML DOM")}}
 
 > [!WARNING]
-> This property represents the text content of a script element, which may be executable depending on the script type.
-> APIs like this are known as [injection sinks](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage), and are potentially a vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks.
+> این ویژگی محتوای متنی یک عنصر اسکریپت را نشان می‌دهد که بسته به نوع اسکریپت ممکن است قابل اجرا باشد.
+> چنین APIهایی به عنوان [سرچشمه‌های تزریق](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage) شناخته می‌شوند و به طور بالقوه بردار حمله‌ای برای [اسکریپت‌نویسی بین‌سایتی (XSS)](/en-US/docs/Web/Security/Attacks/XSS) هستند.
 >
-> You can mitigate this risk by always assigning {{domxref("TrustedScript")}} objects instead of strings and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types).
-> See [Security considerations](#security_considerations) for more information.
+> می‌توانید این ریسک را با اختصاص دادن همواره اشیاء {{domxref("TrustedScript")}} به جای رشته‌ها و [اجباری کردن انواع قابل اعتماد](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) کاهش دهید.
+> برای اطلاعات بیشتر به [ملاحظات امنیتی](#security_considerations) مراجعه کنید.
 
-The **`text`** property of the {{domxref("HTMLScriptElement")}} interface represents the inline text content of the {{HTMLElement("script")}} element.
-It behaves in the same way as the {{domxref("HTMLScriptElement.textContent","textContent")}} and {{domxref("HTMLScriptElement.innerText","innerText")}} property.
+ویژگی **`text`** در رابط {{domxref("HTMLScriptElement")}} محتوای متنی درون‌خطی عنصر {{HTMLElement("script")}} را نشان می‌دهد.
+این ویژگی دقیقاً مانند ویژگی‌های {{domxref("HTMLScriptElement.textContent","textContent")}} و {{domxref("HTMLScriptElement.innerText","innerText")}} رفتار می‌کند.
 
-## Value
+## مقدار
 
-Getting the property returns a string containing the script's text.
+دریافت این ویژگی یک رشته شامل متن اسکریپت را برمی‌گرداند.
 
-Setting the property accepts either a {{domxref("TrustedScript")}} object or a string.
+تنظیم این ویژگی یا یک شیء {{domxref("TrustedScript")}} یا یک رشته را می‌پذیرد.
 
-### Exceptions
+### استثناها
 
 - `TypeError`
-  - : Thrown if the property is set to a string when [Trusted Types](/en-US/docs/Web/API/Trusted_Types_API) are [enforced by a CSP](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) and no default policy is defined.
+  - : زمانی پرتاب می‌شود که ویژگی با یک رشته تنظیم شود در حالی که [انواع قابل اعتماد](/en-US/docs/Web/API/Trusted_Types_API) توسط [CSP اجباری شده‌اند](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) و هیچ خط‌مشی پیش‌فرضی تعریف نشده باشد.
 
-## Description
+## توضیحات
 
-The **`text`** property of the {{domxref("HTMLScriptElement")}} interface represents the text content inside the {{HTMLElement("script")}} element.
+ویژگی **`text`** در رابط {{domxref("HTMLScriptElement")}} محتوای متنی داخل عنصر {{HTMLElement("script")}} را نشان می‌دهد.
 
-For an executable script (that is, a script whose {{domxref('HTMLScriptElement/type','type')}} indicates that it is a module or classic script), this text is inline executable code.
-For other types it might represent an import map, speculation rules, or some other kind of data block.
+برای یک اسکریپت قابل اجرا (یعنی اسکریپتی که {{domxref('HTMLScriptElement/type','type')}} آن نشان می‌دهد که یک اسکریپت ماژول یا کلاسیک است)، این متن، کد قابل اجرای درون‌خطی است.
+برای انواع دیگر، ممکن است یک نقشه واردات، قوانین حدس‌زنی، یا نوع دیگری از بلوک داده را نشان دهد.
 
-Note that if the {{domxref('HTMLScriptElement/src','src')}} property is set the content of the `text` property is ignored.
+توجه داشته باشید که اگر ویژگی {{domxref('HTMLScriptElement/src','src')}} تنظیم شده باشد، محتوای ویژگی `text` نادیده گرفته می‌شود.
 
-### Security considerations
+### ملاحظات امنیتی
 
-See [security considerations](/en-US/docs/Web/API/HTMLScriptElement/textContent#security_considerations) in {{domxref("HTMLScriptElement.textContent")}} (the considerations are the same for `text`, `textContent` and `innerText` properties).
+به [ملاحظات امنیتی](/en-US/docs/Web/API/HTMLScriptElement/textContent#security_considerations) در {{domxref("HTMLScriptElement.textContent")}} مراجعه کنید (ملاحظات برای ویژگی‌های `text`، `textContent` و `innerText` یکسان هستند).
 
-## Examples
+## مثال‌ها
 
-See the [examples](/en-US/docs/Web/API/HTMLScriptElement/textContent#examples) in {{domxref("HTMLScriptElement.textContent")}}.
+به [مثال‌ها](/en-US/docs/Web/API/HTMLScriptElement/textContent#examples) در {{domxref("HTMLScriptElement.textContent")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLScriptElement.textContent")}}
 - {{domxref("HTMLScriptElement.innerText")}}
