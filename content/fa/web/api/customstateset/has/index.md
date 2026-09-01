@@ -1,11 +1,5 @@
 ---
 title: "CustomStateSet: has() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomStateSet/has"
-status: "needs-translation"
----
-
----
-title: "CustomStateSet: has() method"
 short-title: has()
 slug: Web/API/CustomStateSet/has
 page-type: web-api-instance-method
@@ -14,27 +8,27 @@ browser-compat: api.CustomStateSet.has
 
 {{APIRef("Web Components")}}
 
-The **`has()`** method of the {{domxref("CustomStateSet")}} interface returns a {{jsxref("Boolean")}} asserting whether an element is present with the given value.
+متد **`has()`** در رابط {{domxref("CustomStateSet")}} یک مقدار {{jsxref("Boolean")}} برمی‌گرداند که مشخص می‌کند آیا عضو با مقدار داده‌شده در مجموعه وجود دارد یا خیر.
 
-## Syntax
+## نحو
 
 ```js-nolint
 has(value)
 ```
 
-### Parameters
+### پارامترها
 
 - `value`
-  - : The value to test for in the `CustomStateSet` object.
+  - : مقداری که باید وجود آن در شیء `CustomStateSet` بررسی شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Boolean")}}, `true` if `value` exists in the `CustomStateSet`.
+یک {{jsxref("Boolean")}}؛ اگر `value` در `CustomStateSet` وجود داشته باشد، مقدار `true` برمی‌گردد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
