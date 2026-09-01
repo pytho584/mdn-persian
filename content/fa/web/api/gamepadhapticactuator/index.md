@@ -1,10 +1,4 @@
 ---
-title: "GamepadHapticActuator"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator"
-status: "needs-translation"
----
-
----
 title: GamepadHapticActuator
 slug: Web/API/GamepadHapticActuator
 page-type: web-api-interface
@@ -13,27 +7,27 @@ browser-compat: api.GamepadHapticActuator
 
 {{APIRef("Gamepad API")}}
 
-The **`GamepadHapticActuator`** interface of the [Gamepad API](/en-US/docs/Web/API/Gamepad_API) represents hardware in the controller designed to provide haptic feedback to the user (if available), most commonly vibration hardware.
+رابط `GamepadHapticActuator` در [Gamepad API](/en-US/docs/Web/API/Gamepad_API) نمایانگر سخت‌افزاری درونِ کنترل‌کننده است که برای ارائه بازخورد لمسی به کاربر (در صورت موجود بودن) طراحی شده است؛ معمولاً این سخت‌افزار، سخت‌افزار لرزشی است.
 
-This interface is accessible through the {{domxref("Gamepad.hapticActuators")}} property.
+این رابط از طریق ویژگی {{domxref("Gamepad.hapticActuators")}} در دسترس است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GamepadHapticActuator.effects")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : Returns an array of enumerated values representing the different haptic effects that the actuator supports.
+  - : یک آرایه از مقادیرِ شمارشی را بازمی‌گرداند که نشان‌دهنده اثرات لمسی متفاوتی است که عملگر (actuator) از آن‌ها پشتیبانی می‌کند.
 - {{domxref("GamepadHapticActuator.type")}} {{deprecated_inline}} {{ReadOnlyInline}} {{non-standard_inline}}
-  - : Returns an enumerated value representing the type of the haptic hardware. This property is deprecated: use `GamepadHapticActuator.effects` to detect effect support.
+  - : یک مقدار شمارشی را بازمی‌گرداند که نوع سخت‌افزار لمسی را نشان می‌دهد. این ویژگی منسوخ شده است؛ برای تشخیص پشتیبانی از اثرات، از `GamepadHapticActuator.effects` استفاده کنید.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("GamepadHapticActuator.playEffect()")}} {{ReadOnlyInline}}
-  - : Causes the hardware to play a specific vibration effect.
+  - : باعث می‌شود سخت‌افزار یک اثر لرزشی مشخص را اجرا کند.
 - {{domxref("GamepadHapticActuator.pulse()")}} {{ReadOnlyInline}}
-  - : Makes the hardware pulse at a certain intensity for a specified duration.
+  - : باعث می‌شود سخت‌افزار با شدت معیّن و برای مدت زمان مشخصی پالس (نبض) ایجاد کند.
 - {{domxref("GamepadHapticActuator.reset()")}} {{ReadOnlyInline}}
-  - : Stops the hardware from playing an active vibration effect.
+  - : اجرای یک اثر لرزشی فعال توسط سخت‌افزار را متوقف می‌کند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const gamepad = navigator.getGamepads()[0];
@@ -48,14 +42,14 @@ gamepad.vibrationActuator.playEffect("dual-rumble", {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
