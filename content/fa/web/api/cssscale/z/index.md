@@ -1,7 +1,5 @@
 ---
 title: "CSSScale: z property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSScale/z"
-status: "needs-translation"
 ---
 
 ---
@@ -14,24 +12,22 @@ browser-compat: api.CSSScale.z
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`z`** property of the {{domxref("CSSScale")}} interface represents the z-component of the translating vector.
-A positive value moves the element towards the viewer, and a negative value farther away.
+ویژگی **`z`** از رابط {{domxref("CSSScale")}} مؤلفه z بردار انتقال را نشان می‌دهد. مقدار مثبت، عنصر را به سمت بیننده حرکت می‌دهد و مقدار منفی، آن را از بیننده دورتر می‌کند.
 
-If this value is present, then the transform is a 3D transform and the `is2D` property will be set to false.
+اگر این مقدار وجود داشته باشد، تبدیل موردنظر یک تبدیل سه‌بعدی است و ویژگی `is2D` روی `false` تنظیم می‌شود.
 
-## Value
+## مقدار
 
-A {{domxref("CSSNumericValue")}}.
-Can be set to a number, which is wrapped in a {{domxref("CSSUnitValue")}} of `unit: "number"`.
+یک {{domxref("CSSNumericValue")}} است. می‌توان آن را روی یک عدد تنظیم کرد که در یک {{domxref("CSSUnitValue")}} با `unit: "number"` قرار می‌گیرد.
 
-## Examples
+## مثال‌ها
 
-To Do
+در دست انجام
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
