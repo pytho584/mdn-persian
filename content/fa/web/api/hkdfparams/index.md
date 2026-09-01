@@ -1,10 +1,4 @@
 ---
-title: "HkdfParams"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HkdfParams"
-status: "needs-translation"
----
-
----
 title: HkdfParams
 slug: Web/API/HkdfParams
 page-type: web-api-interface
@@ -13,38 +7,38 @@ spec-urls: https://w3c.github.io/webcrypto/#dfn-HkdfParams
 
 {{ APIRef("Web Crypto API") }}
 
-The **`HkdfParams`** dictionary of the [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) represents the object that should be passed as the `algorithm` parameter into {{domxref("SubtleCrypto.deriveKey()")}}, when using the [HKDF](/en-US/docs/Web/API/SubtleCrypto/deriveKey#hkdf) algorithm.
+دیکشنری `HkdfParams` از [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) نشان‌دهندهٔ شیئی است که باید به عنوان پارامتر `algorithm` در متد {{domxref("SubtleCrypto.deriveKey()")}} هنگام استفاده از الگوریتم [HKDF](/en-US/docs/Web/API/SubtleCrypto/deriveKey#hkdf) ارسال شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `name`
-  - : A string. This should be set to `HKDF`.
+  - : یک رشته. این باید روی `HKDF` تنظیم شود.
 - `hash`
-  - : A string or an object containing a single property called `name` with a string value. It is an identifier for the [digest algorithm](/en-US/docs/Web/API/SubtleCrypto/digest) to use. This should be one of the following:
-    - `SHA-256`: selects the [SHA-256](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) algorithm.
-    - `SHA-384`: selects the [SHA-384](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) algorithm.
-    - `SHA-512`: selects the [SHA-512](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) algorithm.
+  - : یک رشته یا یک شیء که دارای یک ویژگی به نام `name` با مقدار رشته‌ای است. این یک شناسه برای [الگوریتم چکیده](/en-US/docs/Web/API/SubtleCrypto/digest) مورد استفاده است. باید یکی از موارد زیر باشد:
+    - `SHA-256`: الگوریتم [SHA-256](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) را انتخاب می‌کند.
+    - `SHA-384`: الگوریتم [SHA-384](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) را انتخاب می‌کند.
+    - `SHA-512`: الگوریتم [SHA-512](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) را انتخاب می‌کند.
 
     > [!WARNING]
-    > `SHA-1` is also supported here but the [SHA-1](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) algorithm is considered vulnerable and should no longer be used.
+    > `SHA-1` نیز در اینجا پشتیبانی می‌شود، اما الگوریتم [SHA-1](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) آسیب‌پذیر در نظر گرفته می‌شود و دیگر نباید استفاده شود.
 
 - `salt`
-  - : An {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, or a {{jsxref("DataView")}}. The [HKDF specification](https://datatracker.ietf.org/doc/html/rfc5869) states that adding salt "adds significantly to the strength of HKDF". Ideally, the salt is a random or pseudo-random value with the same length as the output of the digest function. Unlike the input key material passed into `deriveKey()`, salt does not need to be kept secret.
+  - : یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}}. [مشخصات HKDF](https://datatracker.ietf.org/doc/html/rfc5869) بیان می‌کند که افزودن salt «به طور قابل توجهی به قدرت HKDF می‌افزاید». در حالت ایده‌آل، salt یک مقدار تصادفی یا شبه‌تصادفی با طول برابر با خروجی تابع چکیده است. برخلاف ماده کلید ورودی که به `deriveKey()` داده می‌شود، salt نیازی به مخفی ماندن ندارد.
 - `info`
-  - : An {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, or a {{jsxref("DataView")}} representing application-specific contextual information. This is used to bind the derived key to an application or context, and enables you to derive different keys for different contexts while using the same input key material. It's important that this should be independent of the input key material itself. This property is required but may be an empty buffer.
+  - : یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}} نشان‌دهندهٔ اطلاعات زمینه‌ای خاص برنامه. این برای اتصال کلید مشتق‌شده به یک برنامه یا زمینه استفاده می‌شود و به شما امکان می‌دهد کلیدهای متفاوتی برای زمینه‌های مختلف با استفاده از همان ماده کلید ورودی استخراج کنید. مهم است که این باید مستقل از خود ماده کلید ورودی باشد. این ویژگی الزامی است اما ممکن است یک بافر خالی باشد.
 
-## Examples
+## مثال‌ها
 
-See the examples for {{domxref("SubtleCrypto.deriveKey()")}}.
+مثال‌ها را در صفحهٔ {{domxref("SubtleCrypto.deriveKey()")}} ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
-Browsers that support the "HKDF" algorithm for the {{domxref("SubtleCrypto.deriveKey()")}} method will support this type.
+مرورگرهایی که از الگوریتم «HKDF» برای متد {{domxref("SubtleCrypto.deriveKey()")}} پشتیبانی می‌کنند، از این نوع پشتیبانی خواهند کرد.
 
-## See also
+## همچنین ببینید
 
-- {{domxref("SubtleCrypto.deriveKey()")}}.
+- {{domxref("SubtleCrypto.deriveKey()")}}
