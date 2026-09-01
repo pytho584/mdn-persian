@@ -1,11 +1,5 @@
 ---
 title: "HTMLQuoteElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLQuoteElement"
-status: "needs-translation"
----
-
----
-title: HTMLQuoteElement
 slug: Web/API/HTMLQuoteElement
 page-type: web-api-interface
 browser-compat: api.HTMLQuoteElement
@@ -13,29 +7,29 @@ browser-compat: api.HTMLQuoteElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLQuoteElement`** interface provides special properties and methods (beyond the regular {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating quoting elements, like {{HTMLElement("blockquote")}} and {{HTMLElement("q")}}, but not the {{HTMLElement("cite")}} element.
+رابطهٔ **`HTMLQuoteElement`** ویژگی‌ها و روش‌های خاصی (فراتر از رابطهٔ معمول {{domxref("HTMLElement")}} که به‌صورت ارث‌بری نیز در دسترس آن است) برای کار با عناصر نقل‌قول مانند {{HTMLElement("blockquote")}} و {{HTMLElement("q")}} فراهم می‌کند، اما نه عنصر {{HTMLElement("cite")}}.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLQuoteElement.cite")}}
-  - : A string reflecting the [`cite`](/en-US/docs/Web/HTML/Reference/Elements/blockquote#cite) HTML attribute, containing a URL for the source of the quotation.
+  - : یک رشته که ویژگی HTML [`cite`](/en-US/docs/Web/HTML/Reference/Elements/blockquote#cite) را بازتاب می‌دهد و شامل یک URL برای منبع نقل‌قول است.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش خاصی ندارد؛ روش‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The HTML elements implementing this interface: {{HTMLElement("blockquote")}} and {{HTMLElement("q")}}, but not {{HTMLElement("cite")}}.
+- عناصر HTML که این رابط را پیاده‌سازی می‌کنند: {{HTMLElement("blockquote")}} و {{HTMLElement("q")}}، اما نه {{HTMLElement("cite")}}.
