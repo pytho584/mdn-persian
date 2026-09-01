@@ -1,11 +1,5 @@
 ---
 title: "Element: beforexrselect event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/beforexrselect_event"
-status: "needs-translation"
----
-
----
-title: "Element: beforexrselect event"
 short-title: beforexrselect
 slug: Web/API/Element/beforexrselect_event
 page-type: web-api-event
@@ -16,13 +10,13 @@ browser-compat: api.Element.beforexrselect_event
 
 {{APIRef("WebXR Device API")}}{{SeeCompatTable}}
 
-The **`beforexrselect`** event is fired before WebXR select events ({{domxref("XRSession/select_event", "select")}}, {{domxref("XRSession/selectstart_event", "selectstart")}}, {{domxref("XRSession/selectend_event", "selectend")}}) are dispatched. It can be used to suppress XR world input events while the user is interacting with a DOM overlay UI.
+رویداد **`beforexrselect`** پیش از ارسال رویدادهای انتخاب WebXR ({{domxref("XRSession/select_event", "select")}}، {{domxref("XRSession/selectstart_event", "selectstart")}} و {{domxref("XRSession/selectend_event", "selectend")}}) پرتاب می‌شود. می‌توان از آن برای سرکوب رویدادهای ورودی دنیای XR در حالی که کاربر با یک رابط کاربری رویه‌ای (overlay) در DOM تعامل دارد، استفاده کرد.
 
-This event [bubbles](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling), is [cancelable](/en-US/docs/Web/API/Event/cancelable) and is [composed](/en-US/docs/Web/API/Event/composed).
+این رویداد [حباب می‌زند](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling)، [قابل لغو است](/en-US/docs/Web/API/Event/cancelable) و [ترکیب‌شده است](/en-US/docs/Web/API/Event/composed).
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("beforexrselect", (event) => { })
@@ -30,15 +24,15 @@ addEventListener("beforexrselect", (event) => { })
 onbeforexrselect = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("XRSessionEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("XRSessionEvent")}}. به ارث‌برده از {{domxref("Event")}}.
 
 {{InheritanceDiagram("XRSessionEvent")}}
 
-## Event availability
+## دسترس‌پذیری رویداد
 
-The **`beforexrselect`** event is a global event and available to the following interfaces:
+رویداد **`beforexrselect`** یک رویداد سراسری است و برای رابط‌های زیر در دسترس است:
 
 - {{domxref("Window")}}
 - {{domxref("Document")}}
@@ -46,9 +40,9 @@ The **`beforexrselect`** event is a global event and available to the following 
 - {{domxref("SVGElement")}}
 - {{domxref("MathMLElement")}}
 
-## Examples
+## مثال‌ها
 
-To suppress WebXR select events ({{domxref("XRSession/select_event", "select")}}, {{domxref("XRSession/selectstart_event", "selectstart")}}, {{domxref("XRSession/selectend_event", "selectend")}}), an application can listen for the `beforexrselect` event. The event bubbles, so a call to {{domxref("Event/preventDefault", "preventDefault()")}} on the DOM overlay element will prevent any WebXR select events within this container allowing interaction with the DOM element and avoiding duplicate event input to the XR world.
+برای سرکوب رویدادهای انتخاب WebXR ({{domxref("XRSession/select_event", "select")}}، {{domxref("XRSession/selectstart_event", "selectstart")}} و {{domxref("XRSession/selectend_event", "selectend")}})، یک برنامه می‌تواند به رویداد `beforexrselect` گوش دهد. این رویداد حباب می‌زند، بنابراین فراخوانی {{domxref("Event/preventDefault", "preventDefault()")}} روی عنصر رویه‌ای DOM باعث می‌شود هر رویداد انتخاب WebXR درون این ظرف جلوگیری شود و تعامل با عنصر DOM ممکن شود و از ورودی تکراری رویداد به دنیای XR جلوگیری کند.
 
 ```js
 document
@@ -56,17 +50,17 @@ document
   .addEventListener("beforexrselect", (ev) => ev.preventDefault());
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("XRSession/select_event", "select")}} event
-- {{domxref("XRSession/selectstart_event", "selectstart")}} event
-- {{domxref("XRSession/selectend_event", "selectend")}} event
-- {{cssxref(":xr-overlay")}} pseudo-class
+- رویداد {{domxref("XRSession/select_event", "select")}}
+- رویداد {{domxref("XRSession/selectstart_event", "selectstart")}}
+- رویداد {{domxref("XRSession/selectend_event", "selectend")}}
+- شبه‌کلاس {{cssxref(":xr-overlay")}}
