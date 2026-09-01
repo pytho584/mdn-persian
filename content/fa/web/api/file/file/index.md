@@ -1,11 +1,5 @@
 ---
 title: "File: File() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/File/File"
-status: "needs-translation"
----
-
----
-title: "File: File() constructor"
 short-title: File()
 slug: Web/API/File/File
 page-type: web-api-constructor
@@ -14,43 +8,31 @@ browser-compat: api.File.File
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`File()`** constructor creates a new {{domxref("File")}}
-object instance.
+سازنده **`File()`** یک شیء جدید از نوع {{domxref("File")}} ایجاد می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new File(fileBits, fileName)
 new File(fileBits, fileName, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `fileBits`
-  - : An [iterable](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol)
-    object such as an {{jsxref("Array")}}, having {{jsxref("ArrayBuffer")}}s,
-    {{jsxref("TypedArray")}}s, {{jsxref("DataView")}}s, {{domxref("Blob")}}s, strings,
-    or a mix of any of such elements, that will be put inside the {{domxref("File")}}.
-    Note that strings here are encoded as {{glossary("UTF-8")}}, unlike the usual JavaScript {{glossary("UTF-16")}} strings.
+  - : یک شیء تکرارپذیر (iterable) مانند {{jsxref("Array")}}، شامل {{jsxref("ArrayBuffer")}}ها، {{jsxref("TypedArray")}}ها، {{jsxref("DataView")}}ها، {{domxref("Blob")}}ها، رشته‌ها، یا ترکیبی از هر یک از این عناصر که درون {{domxref("File")}} قرار می‌گیرند. توجه داشته باشید که رشته‌ها در اینجا به صورت {{glossary("UTF-8")}} کدگذاری می‌شوند، برخلاف رشته‌های معمول جاوااسکریپت که {{glossary("UTF-16")}} هستند.
 - `fileName`
-  - : A string representing the file name or the path to the file.
+  - : یک رشته که نام فایل یا مسیر فایل را نشان می‌دهد.
 - `options` {{optional_inline}}
-  - : An options object containing optional attributes for the file. Available options are
-    as follows:
+  - : یک شیء گزینه‌ها که شامل ویژگی‌های اختیاری برای فایل است. گزینه‌های موجود به شرح زیر هستند:
     - `type` {{optional_inline}}
-      - : A string representing the MIME type of the
-        content that will be put into the file. Defaults to a value of `""`.
+      - : یک رشته که نوع MIME محتوایی را که در فایل قرار می‌گیرد مشخص می‌کند. مقدار پیش‌فرض `""` است.
     - `endings` {{optional_inline}}
-      - : How to interpret newline characters (`\n`) within the contents, if
-        the data is text. The default value, `transparent`, copies newline
-        characters into the blob without changing them. To convert newlines to the host
-        system's native convention, specify the value `native`.
+      - : نحوه تفسیر کاراکترهای خط جدید (`\n`) درون محتوا، در صورتی که داده‌ها متن باشند. مقدار پیش‌فرض `transparent` است که کاراکترهای خط جدید را بدون تغییر در blob کپی می‌کند. برای تبدیل خطوط جدید به قرارداد محلی سیستم میزبان، مقدار `native` را مشخص کنید.
     - `lastModified` {{optional_inline}}
-      - : A number representing the number of milliseconds
-        between the Unix time epoch and when the file was last modified. Defaults to a
-        value of {{jsxref("Date.now()")}}.
+      - : یک عدد که تعداد میلی‌ثانیه‌های بین مبدأ زمان یونیکس و آخرین زمان تغییر فایل را نشان می‌دهد. مقدار پیش‌فرض {{jsxref("Date.now()")}} است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const file = new File(["foo"], "foo.txt", {
@@ -58,15 +40,15 @@ const file = new File(["foo"], "foo.txt", {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("FileReader")}}
 - {{domxref("Blob")}}
