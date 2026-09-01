@@ -1,11 +1,5 @@
 ---
 title: "GPUCanvasContext: configure() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext/configure"
-status: "needs-translation"
----
-
----
-title: "GPUCanvasContext: configure() method"
 short-title: configure()
 slug: Web/API/GPUCanvasContext/configure
 page-type: web-api-instance-method
@@ -14,64 +8,60 @@ browser-compat: api.GPUCanvasContext.configure
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`configure()`** method of the
-{{domxref("GPUCanvasContext")}} interface configures the context to use for rendering with a given {{domxref("GPUDevice")}}. When called the canvas will initially be cleared to transparent black.
+متد **`configure()`** از رابط {{domxref("GPUCanvasContext")}}، بافت (context) را برای استفاده در رندرینگ با یک {{domxref("GPUDevice")}} مشخص پیکربندی می‌کند. هنگام فراخوانی، بوم (canvas) ابتدا به رنگ مشکی شفاف پاک می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 configure(configuration)
 ```
 
-### Parameters
+### پارامترها
 
 - `configuration`
-  - : An object containing the following properties:
+  - : یک شیء حاوی ویژگی‌های زیر:
     - `alphaMode` {{optional_inline}}
-      - : An enumerated value that specifies the effect that alpha values will have on the content of textures returned by {{domxref("GPUCanvasContext.getCurrentTexture()", "getCurrentTexture()")}} when read, displayed, or used as an image source. Possible values are:
-        - `opaque`: Alpha values are ignored — if a texture is not already opaque, the alpha channel is cleared to 1.0 when it is used as an image source or displayed to the screen. This is the default value.
-        - `premultiplied`: Color values are premultiplied by their alpha value. For example, 100% red at 50% alpha is `[0.5, 0, 0, 0.5]`.
+      - : یک مقدار شمارشی که تأثیر مقادیر آلفا را بر محتوای بافت‌های بازگردانده شده توسط {{domposxref("GPUCanvasContext.getCurrentTexture()", "getCurrentTexture()")}} هنگام خواندن، نمایش یا استفاده به عنوان منبع تصویر مشخص می‌کند. مقادیر ممکن عبارتند از:
+        - `opaque`: مقادیر آلفا نادیده گرفته می‌شوند – اگر بافت از قبل مات نباشد، کانال آلفا هنگام استفاده به عنوان منبع تصویر یا نمایش روی صفحه به ۱.۰ پاک می‌شود. این مقدار پیش‌فرض است.
+        - `premultiplied`: مقادیر رنگ در مقدار آلفا ضرب می‌شوند. برای مثال، قرمز ۱۰۰٪ با آلفای ۵۰٪ برابر است با `[0.5, 0, 0, 0.5]`.
     - `colorSpace` {{optional_inline}}
-      - : The color space that values written into textures returned by `getCurrentTexture()` should be displayed with. Possible values are `srgb` (the default) and `display-p3`.
+      - : فضای رنگی که مقادیر نوشته شده در بافت‌های بازگردانده شده توسط `getCurrentTexture()` باید با آن نمایش داده شوند. مقادیر ممکن عبارتند از `srgb` (پیش‌فرض) و `display-p3`.
     - `device`
-      - : The {{domxref("GPUDevice")}} that the rendering information for the context will come from.
+      - : {{domxref("GPUDevice")}}ای که اطلاعات رندرینگ مربوط به بافت از آن می‌آید.
     - `format`
-      - : The format that textures returned by `getCurrentTexture()` will have. This can be `bgra8unorm`, `rgba8unorm`, or `rgba16float`. The optimal canvas texture format for the current system can be returned by {{domxref("GPU.getPreferredCanvasFormat()")}}. Using this is recommended — if you don't use the preferred format when configuring the canvas context, you may incur additional overhead, such as additional texture copies, depending on the platform.
-
+      - : قالبی که بافت‌های بازگردانده شده توسط `getCurrentTexture()` خواهند داشت. این می‌تواند `bgra8unorm`، `rgba8unorm` یا `rgba16float` باشد. قالب بهینه بافت بوم برای سیستم فعلی را می‌توان با {{domxref("GPU.getPreferredCanvasFormat()")}} به دست آورد. استفاده از این توصیه می‌شود – اگر هنگام پیکربندی بافت بوم از قالب ترجیحی استفاده نکنید، ممکن است سربار اضافی مانند کپی بافت اضافی، بسته به پلتفرم، داشته باشید.
     - `toneMapping` {{optional_inline}}
-      - : An object specifying parameters that define the tone mapping for the context — how the content of associated textures are to be displayed. This allows WebGPU to draw colors brighter than `white` (`#FFFFFF`). Possible properties are:
+      - : یک شیء که پارامترهای تعریف‌کننده تن‌مپینگ (نقشه‌ی تن) برای بافت را مشخص می‌کند – نحوه نمایش محتوای بافت‌های مرتبط. این به WebGPU اجازه می‌دهد رنگ‌هایی روشن‌تر از `white` (`#FFFFFF`) را ترسیم کند. ویژگی‌های ممکن:
         - `mode` {{optional_inline}}
-          - : An enumerated value specifying the tone mapping mode for the canvas. Possible values include:
+          - : یک مقدار شمارشی که حالت تن‌مپینگ برای بوم را مشخص می‌کند. مقادیر ممکن عبارتند از:
             - `standard`
-              - : The default value. Restricts rendered content to the Standard Dynamic Range (SDR) of the display. This mode is accomplished by clamping all color values in the color space of the screen to the `[0, 1]` interval.
+              - : مقدار پیش‌فرض. محتوای رندر شده را به محدوده دینامیک استاندارد (SDR) نمایش محدود می‌کند. این حالت با محدود کردن تمام مقادیر رنگ در فضای رنگی صفحه به بازه `[0, 1]` انجام می‌شود.
             - `extended`
-              - : Allows content to be rendered in the full High Dynamic Range (HDR) of the display, where available. HDR mode allows a wider range of colors and brightness levels to be displayed, with more precise instructions as to what color should be displayed in each case. This mode matches `"standard"` in the `[0, 1]` range of the screen. Clamping or projection is done to the extended dynamic range of the screen but not `[0, 1]`.
-
+              - : اجازه می‌دهد محتوا در محدوده دینامیک بالا (HDR) کامل نمایش، در صورت موجود بودن، رندر شود. حالت HDR امکان نمایش طیف وسیع‌تری از رنگ‌ها و سطوح روشنایی را با دستورالعمل‌های دقیق‌تر در مورد رنگ مورد نمایش در هر مورد فراهم می‌کند. این حالت در بازه `[0, 1]` صفحه با حالت `"standard"` مطابقت دارد. برش یا طرح‌ریزی (clamping or projection) به محدوده دینامیک گسترده صفحه انجام می‌شود، نه `[0, 1]`.
     - `usage` {{optional_inline}}
-      - : {{glossary("Bitwise flags")}} specifying the allowed usage for textures returned by `getCurrentTexture()`. Possible values are:
-        - `GPUTextureUsage.COPY_SRC`: The texture can be used as the source of a copy operation, for example the source argument of a {{domxref("GPUCommandEncoder.copyTextureToBuffer()")}} call.
-        - `GPUTextureUsage.COPY_DST`: The texture can be used as the destination of a copy/write operation, for example the destination argument of a {{domxref("GPUCommandEncoder.copyTextureToTexture()")}} call.
-        - `GPUTextureUsage.RENDER_ATTACHMENT`: The texture can be used as a color attachment in a render pass, for example in a color attachment view in a {{domxref("GPUCommandEncoder.beginRenderPass()")}} call. `GPUTextureUsage.RENDER_ATTACHMENT` is the default `usage`, but note that it is not automatically included if a different value is explicitly set; in such cases you need to include it in addition.
-        - `GPUTextureUsage.TEXTURE_BINDING`: The texture can be bound for use as a sampled texture in a shader, for example in a bind group entry in a {{domxref("GPUDevice.createBindGroup()")}} call.
-        - `GPUTextureUsage.STORAGE_BINDING`: The texture can be bound for use as a storage texture in a shader, for example in a bind group entry in a {{domxref("GPUDevice.createBindGroup()")}} call.
+      - : {{glossary("Bitwise flags")}} که استفاده مجاز برای بافت‌های بازگردانده شده توسط `getCurrentTexture()` را مشخص می‌کند. مقادیر ممکن عبارتند از:
+        - `GPUTextureUsage.COPY_SRC`: بافت می‌تواند به عنوان منبع یک عملیات کپی استفاده شود، برای مثال آرگومان منبع یک فراخوانی {{domxref("GPUCommandEncoder.copyTextureToBuffer()")}}.
+        - `GPUTextureUsage.COPY_DST`: بافت می‌تواند به عنوان مقصد یک عملیات کپی/نوشتن استفاده شود، برای مثال آرگومان مقصد یک فراخوانی {{domxref("GPUCommandEncoder.copyTextureToTexture()")}}.
+        - `GPUTextureUsage.RENDER_ATTACHMENT`: بافت می‌تواند به عنوان پیوست رنگ (color attachment) در یک پاس رندر استفاده شود، برای مثال در نمای پیوست رنگ در یک فراخوانی {{domxref("GPUCommandEncoder.beginRenderPass()")}}. `GPUTextureUsage.RENDER_ATTACHMENT` مقدار پیش‌فرض `usage` است، اما توجه داشته باشید که اگر مقدار متفاوتی به صراحت تنظیم شود، به طور خودکار شامل نمی‌شود؛ در چنین مواردی باید آن را علاوه بر موارد دیگر اضافه کنید.
+        - `GPUTextureUsage.TEXTURE_BINDING`: بافت می‌تواند برای استفاده به عنوان بافت نمونه‌برداری شده (sampled texture) در یک شیدر متصل شود، برای مثال در یک ورودی گروه اتصال در یک فراخوانی {{domxref("GPUDevice.createBindGroup()")}}.
+        - `GPUTextureUsage.STORAGE_BINDING`: بافت می‌تواند برای استفاده به عنوان بافت ذخیره‌سازی (storage texture) در یک شیدر متصل شود، برای مثال در یک ورودی گروه اتصال در یک فراخوانی {{domxref("GPUDevice.createBindGroup()")}}.
 
-        Note that multiple possible usages can be specified using the [bitwise OR operator](/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_OR). For example, `usage: GPUTextureUsage.COPY_SRC | GPUTextureUsage.RENDER_ATTACHMENT`.
-
+        توجه داشته باشید که می‌توان چندین استفاده ممکن را با استفاده از [عملگر OR بیتی](/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_OR) مشخص کرد. برای مثال: `usage: GPUTextureUsage.COPY_SRC | GPUTextureUsage.RENDER_ATTACHMENT`.
     - `viewFormats` {{optional_inline}}
-      - : An array of formats that views created from textures returned by `getCurrentTexture()` may use. See [Texture Formats](https://gpuweb.github.io/gpuweb/#texture-formats) for all the possible values.
+      - : آرایه‌ای از قالب‌هایی که نماهای ایجاد شده از بافت‌های بازگردانده شده توسط `getCurrentTexture()` ممکن است استفاده کنند. برای همه مقادیر ممکن به [فرمت‌های بافت](https://gpuweb.github.io/gpuweb/#texture-formats) مراجعه کنید.
 
-### Return value
+### مقدار بازگشتی
 
-None (`undefined`).
+هیچ‌کدام (`undefined`).
 
-### Exceptions
+### استثناها
 
 - `TypeError` {{domxref("DOMException")}}
-  - : Thrown if `usage` includes the `TRANSIENT_ATTACHMENT` bit.
+  - : اگر `usage` شامل بیت `TRANSIENT_ATTACHMENT` باشد پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 const canvas = document.querySelector("#gpuCanvas");
@@ -84,18 +74,18 @@ context.configure({
 });
 ```
 
-### HDR `toneMapping` demos
+### نمایش‌های `toneMapping` HDR
 
-See the [Particles (HDR)](https://webgpu.github.io/webgpu-samples/?sample=particles) sample and [HDR support](https://ccameron-chromium.github.io/webgpu-hdr/example.html) test.
+نمونه [Particles (HDR)](https://webgpu.github.io/webgpu-samples/?sample=particles) و آزمایش [پشتیبانی HDR](https://ccameron-chromium.github.io/webgpu-hdr/example.html) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [API WebGPU](/en-US/docs/Web/API/WebGPU_API)
