@@ -1,9 +1,4 @@
----
-title: "CSSSkewY"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSSkewY"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: CSSSkewY
 slug: Web/API/CSSSkewY
@@ -13,34 +8,34 @@ browser-compat: api.CSSSkewY
 
 {{APIRef("CSS Typed Object Model API")}}{{AvailableInWorkers}}
 
-The **`CSSSkewY`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the {{cssxref("transform-function/skewY", "skewY()")}} value of the individual {{CSSXRef('transform')}} property in CSS.
+رابط **`CSSSkewY`** از [API مدل شیء تایپ‌شده CSS](/en-US/docs/Web/API/CSS_Object_Model) مقدار {{cssxref("transform-function/skewY", "skewY()")}} از ویژگی تکی {{CSSXref('transform')}} در CSS را نمایش می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSSkewY.CSSSkewY", "CSSSkewY()")}}
-  - : Creates a new `CSSSkewY` object.
+  - : یک شیء `CSSSkewY` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین ویژگی‌هایی را از رابط والد خود، {{DOMxRef("CSSTransformComponent")}}، به ارث می‌برد._
 
 - {{domxref('CSSSkewY.ay','ay')}}
-  - : Returns or sets the y-axis value.
+  - : مقدار محور Y را برمی‌گرداند یا تنظیم می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین روش‌هایی را از رابط والد خود، {{DOMxRef("CSSTransformComponent")}}، به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-To Do
+انجام نشده
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
