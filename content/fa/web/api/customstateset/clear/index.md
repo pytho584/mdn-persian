@@ -1,7 +1,5 @@
 ---
 title: "CustomStateSet: clear() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomStateSet/clear"
-status: "needs-translation"
 ---
 
 ---
@@ -14,7 +12,7 @@ browser-compat: api.CustomStateSet.clear
 
 {{APIRef("Web Components")}}
 
-The **`clear()`** method of the {{domxref("CustomStateSet")}} interface removes all elements from the `CustomStateSet` object.
+متد **`clear()`** از رابط {{domxref("CustomStateSet")}} همه عناصر را از شیء `CustomStateSet` حذف می‌کند.
 
 ## Syntax
 
@@ -24,11 +22,11 @@ clear()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-Undefined.
+تعریف‌نشده.
 
 ## Specifications
 
