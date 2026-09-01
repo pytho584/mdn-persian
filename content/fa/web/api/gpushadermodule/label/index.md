@@ -1,11 +1,5 @@
 ---
 title: "GPUShaderModule: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUShaderModule/label"
-status: "needs-translation"
----
-
----
-title: "GPUShaderModule: label property"
 short-title: label
 slug: Web/API/GPUShaderModule/label
 page-type: web-api-instance-property
@@ -14,21 +8,20 @@ browser-compat: api.GPUShaderModule.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** property of the
-{{domxref("GPUShaderModule")}} interface provides a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی **`label`** در رابط {{domxref("GPUShaderModule")}} یک برچسب (label) ارائه می‌دهد که می‌توان از آن برای شناسایی شیء استفاده کرد، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUDevice.createShaderModule()")}} call, or you can get and set it directly on the `GPUShaderModule` object.
+این مقدار را می‌توان با ارائه یک ویژگی `label` در شیء توصیف‌کننده (descriptor) که به فراخوانی اصلی {{domxref("GPUDevice.createShaderModule()")}} داده می‌شود، تنظیم کرد، یا می‌توانید آن را مستقیماً روی شیء `GPUShaderModule` دریافت و تنظیم کنید.
 
-## Value
+## مقدار
 
-A string. If this has not been previously set as described above, it will be an empty string.
+یک رشته (string). اگر قبلاً به‌صورت یادشده تنظیم نشده باشد، یک رشته خالی خواهد بود.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUShaderModule.label`:
+تنظیم و دریافت یک برچسب از طریق `GPUShaderModule.label`:
 
 ```js
-// …
+// ...
 
 const shaderModule = device.createShaderModule({
   code: shaders,
@@ -39,10 +32,10 @@ shaderModule.label = "my_shader";
 console.log(shaderModule.label); // "my_shader"
 ```
 
-Setting a label via the originating {{domxref("GPUDevice.createShaderModule()")}} call, and then getting it via `GPUShaderModule.label`:
+تنظیم یک برچسب از طریق فراخوانی اصلی {{domxref("GPUDevice.createShaderModule()")}} و سپس دریافت آن از طریق `GPUShaderModule.label`:
 
 ```js
-// …
+// ...
 
 const shaderModule = device.createShaderModule({
   code: shaders,
@@ -52,14 +45,14 @@ const shaderModule = device.createShaderModule({
 console.log(shaderModule.label); // "my_shader"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
