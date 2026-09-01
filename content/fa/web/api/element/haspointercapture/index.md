@@ -1,7 +1,5 @@
 ---
 title: "Element: hasPointerCapture() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/hasPointerCapture"
-status: "needs-translation"
 ---
 
 ---
@@ -14,27 +12,24 @@ browser-compat: api.Element.hasPointerCapture
 
 {{APIRef("DOM")}}
 
-The **`hasPointerCapture()`** method of the
-{{domxref("Element")}} interface checks whether the element on which it is invoked has
-[pointer capture](/en-US/docs/Web/API/Pointer_events#pointer_capture) for the pointer identified by the given pointer ID.
+**`hasPointerCapture()`** 是 {{domxref("Element")}} 接口的一个方法，用于检查调用该方法的元素是否对给定指针 ID 所标识的指针启用了[指针捕获](/en-US/docs/Web/API/Pointer_events#pointer_capture)。
 
-## Syntax
+## 语法
 
 ```js-nolint
 hasPointerCapture(pointerId)
 ```
 
-### Parameters
+### 参数
 
 - `pointerId`
-  - : The {{domxref("PointerEvent.pointerId", "pointerId")}} of a
-    {{domxref("PointerEvent")}} object.
+  - : {{domxref("PointerEvent")}} 对象的 {{domxref("PointerEvent.pointerId", "pointerId")}} 属性值。
 
-### Return value
+### 返回值
 
-A boolean value — `true` if the element does have pointer capture for the pointer identified by the given pointer ID, `false` if it doesn't.
+一个布尔值——如果该元素对给定指针 ID 标识的指针具有指针捕获，则为 `true`；否则为 `false`。
 
-## Examples
+## 示例
 
 ```html
 <div id="target">Touch this element with a pointer.</div>
@@ -58,15 +53,15 @@ el.addEventListener("pointerdown", (ev) => {
 });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{ domxref("Element.setPointerCapture()")}}
 - {{ domxref("Element.releasePointerCapture()")}}
