@@ -1,11 +1,5 @@
 ---
 title: "Document: startViewTransition() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition"
-status: "needs-translation"
----
-
----
-title: "Document: startViewTransition() method"
 short-title: startViewTransition()
 slug: Web/API/Document/startViewTransition
 page-type: web-api-instance-method
@@ -14,11 +8,11 @@ browser-compat: api.Document.startViewTransition
 
 {{APIRef("View Transition API")}}
 
-The **`startViewTransition()`** method of the {{domxref("Document")}} interface starts a new same-document ({{glossary("SPA")}}), document-scoped [view transition](/en-US/docs/Web/API/View_Transition_API) and returns a {{domxref("ViewTransition")}} object to represent it.
+**`startViewTransition()`** 方法属于 {{domxref("Document")}} 接口，用于启动一个新的同文档（{{glossary("SPA")}}）且作用域为文档的[视图转换](/en-US/docs/Web/API/View_Transition_API)，并返回一个表示该转换的 {{domxref("ViewTransition")}} 对象。
 
-The sequence of steps followed when `startViewTransition()` is invoked is explained in [the view transition process](/en-US/docs/Web/API/View_Transition_API/Using#the_view_transition_process) section.
+调用 `startViewTransition()` 后所执行的步骤序列，在[视图转换过程](/en-US/docs/Web/API/View_Transition_API/Using#the_view_transition_process)一节中有详细说明。
 
-## Syntax
+## 语法
 
 ```js-nolint
 startViewTransition()
@@ -26,30 +20,28 @@ startViewTransition(updateCallback)
 startViewTransition(options)
 ```
 
-### Parameters
+### 参数
 
 - `updateCallback` {{optional_inline}}
-  - : A callback function invoked to update the DOM during the SPA view transition process. It returns a {{jsxref("Promise")}}. The callback is invoked once the API has taken a snapshot of the current page. When the promise returned by the callback fulfills, the view transition begins in the next frame. If the promise returned by the callback rejects, the transition is abandoned.
+  - 一个在 SPA 视图转换过程中用于更新 DOM 的回调函数。它返回一个 {{jsxref("Promise")}}。当 API 已对当前页面拍摄快照后，该回调会被调用。当此回调返回的 Promise 兑现时，视图转换将在下一帧开始。如果该 Promise 被拒绝，则转换被放弃。
 - `options` {{optional_inline}}
-  - : An object containing options to configure the view transition. It can include the following properties:
+  - 一个包含配置视图转换选项的对象。它可以包含以下属性：
     - `update` {{optional_inline}}
-      - : The same `updateCallback` function described above. Defaults to `null`.
+      - 即上面描述的 `updateCallback` 函数。默认为 `null`。
     - `types` {{optional_inline}}
-      - : An array of strings representing the types applied to the view transition. [View transition types](/en-US/docs/Web/API/View_Transition_API/Using_types) enable selective application of CSS styles or JavaScript logic based on the type of transition occurring. Defaults to an empty array.
+      - 一个字符串数组，表示应用于视图转换的类型。[视图转换类型](/en-US/docs/Web/API/View_Transition_API/Using_types)使得可以根据正在发生的转换类型，有选择地应用 CSS 样式或 JavaScript 逻辑。默认为空数组。
 
-### Return value
+### 返回值
 
-A {{domxref("ViewTransition")}} object instance.
+一个 {{domxref("ViewTransition")}} 对象实例。
 
-## Examples
+## 示例
 
-See [View transition API > Examples](/en-US/docs/Web/API/View_Transition_API#examples) for a list of full examples.
+请参阅[视图转换 API > 示例](/en-US/docs/Web/API/View_Transition_API#examples)以获取完整示例列表。
 
-### Basic usage
+### 基本用法
 
-In this same-document view transition, we check if the browser supports view transitions.
-If there's no support, we set the background color using a fallback method which is applied immediately.
-Otherwise, we can safely call `document.startViewTransition()` with animation rules that we define in CSS.
+在这个同文档视图转换中，我们首先检查浏览器是否支持视图转换。如果不支持，我们使用一种立即生效的回退方法来设置背景颜色。否则，我们可以安全地调用 `document.startViewTransition()`，并结合我们在 CSS 中定义的动画规则。
 
 ```html
 <main>
@@ -58,7 +50,7 @@ Otherwise, we can safely call `document.startViewTransition()` with animation ru
 </main>
 ```
 
-We are setting the `animation-duration` to 2 seconds using the {{CSSXRef("::view-transition-group")}} pseudo-element.
+我们使用 {{CSSXRef("::view-transition-group")}} 伪元素将 `animation-duration` 设置为 2 秒。
 
 ```css
 html {
@@ -104,26 +96,25 @@ changeColorButton.addEventListener("click", changeColor);
 changeColorButton.addEventListener("keypress", changeColor);
 ```
 
-If view transitions are supported, clicking the button will transition the color from one to another over 2 seconds.
-Otherwise, the background color is set using a fallback method, without any animation.
+如果浏览器支持视图转换，点击按钮后，颜色将在 2 秒内从一种过渡到另一种。否则，背景颜色将使用回退方法立即设置，没有任何动画。
 
 {{EmbedLiveSample('color_change', '100%', '120')}}
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{domxref("Document.activeViewTransition")}}
 - {{domxref("Element.startViewTransition()")}}
-- {{CSSXRef(":active-view-transition")}} pseudo-class
-- {{cssxref(":active-view-transition-type", ":active-view-transition-type()")}} pseudo-class
-- [View Transition API](/en-US/docs/Web/API/View_Transition_API)
-- [Using the View Transition API](/en-US/docs/Web/API/View_Transition_API/Using)
-- [Using view transition types](/en-US/docs/Web/API/View_Transition_API/Using_types)
-- [Smooth transitions with the View Transition API](https://developer.chrome.com/docs/web-platform/view-transitions/)
+- {{CSSXRef(":active-view-transition")}} 伪类
+- {{cssxref(":active-view-transition-type", ":active-view-transition-type()")}} 伪类
+- [视图转换 API](/en-US/docs/Web/API/View_Transition_API)
+- [使用视图转换 API](/en-US/docs/Web/API/View_Transition_API/Using)
+- [使用视图转换类型](/en-US/docs/Web/API/View_Transition_API/Using_types)
+- [使用视图转换 API 实现平滑过渡](https://developer.chrome.com/docs/web-platform/view-transitions/)
