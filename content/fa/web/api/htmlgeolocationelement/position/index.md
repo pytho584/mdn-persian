@@ -1,11 +1,5 @@
 ---
 title: "HTMLGeolocationElement: position property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLGeolocationElement/position"
-status: "needs-translation"
----
-
----
-title: "HTMLGeolocationElement: position property"
 short-title: position
 slug: Web/API/HTMLGeolocationElement/position
 page-type: web-api-instance-property
@@ -16,19 +10,19 @@ browser-compat: api.HTMLGeolocationElement.position
 
 {{APIRef("Navigation API")}}{{SeeCompatTable}}
 
-The **`position`** read-only property of the {{domxref("HTMLGeolocationElement")}} interface returns a {{domxref("GeolocationPosition")}} object representing the user's position, in the event of successful location data retrieval.
+خاصیت **`position`** از نوع فقط خواندنی در رابط {{domxref("HTMLGeolocationElement")}} یک شیء {{domxref("GeolocationPosition")}} را برمی‌گرداند که موقعیت کاربر را در صورت دریافت موفقیت‌آمیز داده‌های موقعیت مکانی نشان می‌دهد.
 
-The retrieved position may or may not be up to date. The user's position will only be retrieved once when the `<geolocation>` element's button control is pressed, unless you set the [`watch`](/en-US/docs/Web/HTML/Reference/Elements/geolocation#watch) attribute to `true`, in which case a new position will be retrieved each time the user's device moves. To read the user's current position, you should read the `position` property in response to the {{domxref("HTMLGeolocationElement.location_event", "location")}} event firing.
+موقعیت دریافت‌شده ممکن است به‌روز باشد یا نباشد. موقعیت کاربر فقط یک بار هنگام فشار دادن دکمه کنترل عنصر `<geolocation>` دریافت می‌شود، مگر اینکه ویژگی [`watch`](/en-US/docs/Web/HTML/Reference/Elements/geolocation#watch) را روی `true` تنظیم کنید، که در این صورت هر بار که دستگاه کاربر جابه‌جا می‌شود یک موقعیت جدید دریافت می‌شود. برای خواندن موقعیت فعلی کاربر، باید خاصیت `position` را در پاسخ به رویداد {{domxref("HTMLGeolocationElement.location_event", "location")}} بخوانید.
 
-If location data retrieval fails, associated error information will be available in the {{domxref("HTMLGeolocationElement.error")}} property.
+اگر دریافت داده‌های موقعیت مکانی با شکست مواجه شود، اطلاعات خطای مربوطه در خاصیت {{domxref("HTMLGeolocationElement.error")}} در دسترس خواهد بود.
 
-## Value
+## مقدار
 
-A {{domxref("GeolocationPosition")}} object, or `null` if location data retrieval failed or data has not yet been retrieved.
+یک شیء {{domxref("GeolocationPosition")}}، یا `null` اگر دریافت داده‌های موقعیت مکانی شکست خورده باشد یا داده‌ها هنوز دریافت نشده باشند.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```html
 <geolocation autolocate></geolocation>
@@ -47,16 +41,16 @@ geo.addEventListener("location", () => {
 });
 ```
 
-See our [Embedded map example walkthrough](/en-US/docs/Web/API/HTMLGeolocationElement#embedded_map_example) for a real-world example that includes `position`.
+برای یک مثال واقعی که شامل `position` است، به [راهنمای مثال نقشه جاسازی‌شده](/en-US/docs/Web/API/HTMLGeolocationElement#embedded_map_example) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{htmlelement("geolocation")}} element
+- عنصر {{htmlelement("geolocation")}}
