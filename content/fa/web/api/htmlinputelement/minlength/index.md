@@ -1,9 +1,6 @@
 ---
 title: "HTMLInputElement: minLength property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/minLength"
-status: "needs-translation"
 ---
-
 ---
 title: "HTMLInputElement: minLength property"
 short-title: minLength
@@ -14,18 +11,18 @@ browser-compat: api.HTMLInputElement.minLength
 
 {{ApiRef("HTML DOM")}}
 
-The **`minLength`** property of the {{domxref("HTMLInputElement")}} interface indicates the minimum number of characters (in {{glossary("UTF-16", "UTF-16 code units")}}) required for the value of the {{HTMLElement("input")}} element to be valid. It reflects the element's [`minlength`](/en-US/docs/Web/HTML/Reference/Elements/input#minlength) attribute. `-1` means there is no minimum length requirement.
+خاصیت **`minLength`** از رابط {{domxref("HTMLInputElement")}} نشان‌دهندهٔ حداقل تعداد کاراکترها (بر حسب {{glossary("UTF-16", "واحدهای کد UTF-16")}}) است که برای معتبر بودن مقدار عنصر {{HTMLElement("input")}} لازم است. این خاصیت، ویژگی [`minlength`](/en-US/docs/Web/HTML/Reference/Elements/input#minlength) عنصر را منعکس می‌کند. مقدار `1-` به معنای عدم وجود شرط حداقل طول است.
 
 > [!NOTE]
-> If the input has a value, and that value has fewer characters than the `minlength` attribute requires, the element is considered invalid and the {{domxref("ValidityState")}} object's {{domxref("ValidityState.tooShort", "tooShort")}} property will be `true`.
+> اگر ورودی دارای مقدار باشد و آن مقدار کاراکترهای کمتری نسبت به ویژگی `minlength` داشته باشد، عنصر نامعتبر در نظر گرفته می‌شود و خاصیت {{domxref("ValidityState.tooShort", "tooShort")}} از شیء {{domxref("ValidityState")}} برابر `true` خواهد بود.
 
-## Value
+## مقدار
 
-A number representing the element's `minlength` if present or `-1`.
+یک عدد که مقدار `minlength` عنصر را در صورت وجود، یا `1-` را نشان می‌دهد.
 
-## Example
+## مثال
 
-Given the following HTML:
+با توجه به HTML زیر:
 
 ```html
 <p>
@@ -34,7 +31,7 @@ Given the following HTML:
 </p>
 ```
 
-You can use the `minLength` property to retrieve or set the `<input>`'s `minlength` attribute value:
+می‌توانید از خاصیت `minLength` برای دریافت یا تنظیم مقدار ویژگی `minlength` عنصر `<input>` استفاده کنید:
 
 ```js
 const inputElement = document.querySelector("#password");
@@ -42,15 +39,15 @@ console.log(`Element's minLength: ${inputElement.minLength}`); // "Element's min
 inputElement.minLength = 12; // updates the element's minlength attribute value
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLInputElement.value")}}
 - {{domxref("HTMLInputElement.maxLength")}}
