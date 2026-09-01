@@ -1,11 +1,5 @@
 ---
 title: "Document: hasFocus() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/hasFocus"
-status: "needs-translation"
----
-
----
-title: "Document: hasFocus() method"
 short-title: hasFocus()
 slug: Web/API/Document/hasFocus
 page-type: web-api-instance-method
@@ -14,35 +8,30 @@ browser-compat: api.Document.hasFocus
 
 {{APIRef("DOM")}}
 
-The **`hasFocus()`** method of the {{domxref("Document")}} interface returns a boolean value indicating whether the document or any element inside the document has focus.
-This method can be used to determine whether the active element in a document has focus.
+{{domxref("Document")}} 接口的 **`hasFocus()`** 方法返回一个布尔值，指示文档或文档内的任何元素是否具有焦点。此方法可用于确定文档中的活动元素是否具有焦点。
 
 > [!NOTE]
-> When viewing a document, an element with focus is always the [active element](/en-US/docs/Web/API/Document/activeElement) in the document, but an active element does not necessarily have focus.
-> For example, an active element within a popup window that is not the foreground doesn't have focus.
+> 查看文档时，具有焦点的元素始终是文档中的[活动元素](/en-US/docs/Web/API/Document/activeElement)，但活动元素不一定具有焦点。例如，非前台弹出窗口中的活动元素不具有焦点。
 
-## Syntax
+## 语法
 
 ```js-nolint
 hasFocus()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-`false` if the active element in the document has no focus;
-`true` if the active element in the document has focus.
+如果文档中的活动元素没有焦点，则返回 `false`；如果文档中的活动元素具有焦点，则返回 `true`。
 
-## Examples
+## 示例
 
-### Checking if the document has focus
+### 检查文档是否具有焦点
 
-The following example checks whether the document has focus or not.
-A function called `checkPageFocus()` updates a paragraph element depending on the result of `document.hasFocus()`.
-Opening a new window will cause the document to lose focus and switching back to the original window will cause the document to regain focus.
+以下示例检查文档是否具有焦点。名为 `checkPageFocus()` 的函数会根据 `document.hasFocus()` 的结果来更新一个段落元素。打开新窗口会导致文档失去焦点，而切换回原始窗口会使文档重新获得焦点。
 
 ```html live-sample___has-focus
 <p id="log">Focus check results are shown here.</p>
@@ -86,15 +75,15 @@ setInterval(checkDocumentFocus, 300);
 
 {{EmbedLiveSample('has-focus', , , , , , , 'allow-popups')}}
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{domxref("Document.activeElement")}}
-- [Using the Page Visibility API](/en-US/docs/Web/API/Page_Visibility_API)
+- [使用页面可见性 API](/en-US/docs/Web/API/Page_Visibility_API)
