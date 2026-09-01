@@ -1,11 +1,5 @@
 ---
 title: "Event: Event() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/Event"
-status: "needs-translation"
----
-
----
-title: "Event: Event() constructor"
 short-title: Event()
 slug: Web/API/Event/Event
 page-type: web-api-constructor
@@ -14,7 +8,7 @@ browser-compat: api.Event.Event
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`Event()`** constructor creates a new {{domxref("Event")}} object. An event created in this way is called a _synthetic event_, as opposed to an event fired by the browser, and can be [dispatched](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) by a script.
+سازندهٔ **`Event()`** یک شیء جدید {{domxref("Event")}} می‌سازد. به رخدادی که به این شکل ساخته می‌شود، _رخداد مصنوعی_ گفته می‌شود، در مقابل رخدادی که توسط مرورگر شلیک می‌شود، و می‌تواند توسط یک اسکریپت [توزیع](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) شود.
 
 ## Syntax
 
@@ -23,28 +17,27 @@ new Event(type)
 new Event(type, options)
 ```
 
-### Values
+### مقادیر
 
 - `type`
-  - : A string with the name of the event.
+  - : یک رشته (string) با نام رخداد.
 - `options` {{optional_inline}}
-  - : An object with the following properties:
+  - : یک شیء با ویژگی‌های زیر:
     - `bubbles` {{optional_inline}}
-      - : A boolean value indicating whether the event bubbles. The default is
-        `false`.
+      - : یک مقدار بولی (boolean) که نشان می‌دهد آیا رخداد حباب می‌زند (bubbles) یا خیر. پیش‌فرض
+        `false` است.
     - `cancelable` {{optional_inline}}
-      - : A boolean value indicating whether the event can be cancelled. The
-        default is `false`.
+      - : یک مقدار بولی که نشان می‌دهد آیا رخداد قابل لغو شدن است یا خیر. پیش‌فرض
+        `false` است.
     - `composed` {{optional_inline}}
-      - : A boolean value indicating whether the event will trigger listeners
-        outside of a shadow root (see {{domxref("Event.composed")}} for more details). The
-        default is `false`.
+      - : یک مقدار بولی که نشان می‌دهد آیا رخداد شنوندگان (listeners) خارج از ریشه سایه (shadow root) را فعال می‌کند یا خیر (برای جزئیات بیشتر به {{domxref("Event.composed")}} مراجعه کنید). پیش‌فرض
+        `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("Event")}} object.
+یک شیء جدید {{domxref("Event")}}.
 
-## Example
+## مثال
 
 ```js
 // create a look event that bubbles up and cannot be canceled
@@ -56,15 +49,15 @@ document.dispatchEvent(evt);
 myDiv.dispatchEvent(evt);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Event")}}
 - {{domxref("EventTarget.dispatchEvent()")}}
