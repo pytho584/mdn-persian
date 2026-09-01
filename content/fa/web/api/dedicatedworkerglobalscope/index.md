@@ -1,10 +1,4 @@
 ---
-title: "DedicatedWorkerGlobalScope"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope"
-status: "needs-translation"
----
-
----
 title: DedicatedWorkerGlobalScope
 slug: Web/API/DedicatedWorkerGlobalScope
 page-type: web-api-interface
@@ -13,52 +7,52 @@ browser-compat: api.DedicatedWorkerGlobalScope
 
 {{APIRef("Web Workers API")}}{{AvailableInWorkers("dedicated")}}
 
-The **`DedicatedWorkerGlobalScope`** object (the {{domxref("Worker")}} global scope) is accessible through the {{domxref("WorkerGlobalScope.self","self")}} keyword. Some additional global functions, namespaces objects, and constructors, not typically associated with the worker global scope, but available on it, are listed in the [JavaScript Reference](/en-US/docs/Web/JavaScript/Reference). See also: [Functions available to workers](/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers).
+شیء **`DedicatedWorkerGlobalScope`** (حوزهٔ سراسری {{domxref("Worker")}}) از طریق کلیدواژهٔ {{domxref("WorkerGlobalScope.self","self")}} در دسترس است. برخی توابع سراسری، اشیاء فضاهای نام، و سازنده‌های اضافی که معمولاً با حوزهٔ سراسری worker مرتبط نیستند، اما روی آن در دسترس هستند، در [مرجع جاوااسکریپت](/en-US/docs/Web/JavaScript/Reference) فهرست شده‌اند. همچنین ببینید: [توابع در دسترس برای workerها](/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers).
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface inherits properties from the {{domxref("WorkerGlobalScope")}} interface, and its parent {{domxref("EventTarget")}}._
+_این رابط ویژگی‌ها را از رابط {{domxref("WorkerGlobalScope")}} و والد آن {{domxref("EventTarget")}} به ارث می‌برد._
 
 - {{domxref("DedicatedWorkerGlobalScope.name")}} {{ReadOnlyInline}}
-  - : The name that the {{domxref("Worker")}} was (optionally) given when it was created using the {{domxref("Worker.Worker", "Worker()")}} constructor. This is mainly useful for debugging purposes.
+  - : نامی که به {{domxref("Worker")}} هنگام ایجاد با سازندهٔ {{domxref("Worker.Worker", "Worker()")}} (به‌صورت اختیاری) داده شده است. این مقدار عمدتاً برای اشکال‌زدایی مفید است.
 
-## Instance methods
+## متدهای نمونه
 
-_This interface inherits methods from the {{domxref("WorkerGlobalScope")}} interface, and its parent {{domxref("EventTarget")}}._
+_این رابط متدها را از رابط {{domxref("WorkerGlobalScope")}} و والد آن {{domxref("EventTarget")}} به ارث می‌برد._
 
 - {{domxref("DedicatedWorkerGlobalScope.close()")}}
-  - : Discards any tasks queued in the `WorkerGlobalScope`'s event loop, effectively closing this particular scope.
+  - : هر وظیفه‌ای که در صف حلقهٔ رویداد `WorkerGlobalScope` قرار دارد را کنار می‌گذارد و عملاً این حوزهٔ خاص را می‌بندد.
 - {{domxref("DedicatedWorkerGlobalScope.postMessage()")}}
-  - : Sends a message — which can consist of `any` JavaScript object — to the parent document that first spawned the worker.
+  - : یک پیام — که می‌تواند شامل `any` (هر) شیء جاوااسکریپتی باشد — به سند والد که ابتدا worker را ایجاد کرد ارسال می‌کند.
 - {{domxref("DedicatedWorkerGlobalScope.cancelAnimationFrame()")}}
-  - : Cancels an animation frame request previously scheduled through a call to {{domxref("DedicatedWorkerGlobalScope.requestAnimationFrame()", "requestAnimationFrame()")}}.
+  - : یک درخواست فریم انیمیشن را که قبلاً از طریق فراخوانی {{domxref("DedicatedWorkerGlobalScope.requestAnimationFrame()", "requestAnimationFrame()")}} زمان‌بندی شده بود، لغو می‌کند.
 - {{domxref("DedicatedWorkerGlobalScope.requestAnimationFrame()")}}
-  - : Perform an animation frame request and call a user-supplied callback function before the next repaint.
+  - : یک درخواست فریم انیمیشن انجام می‌دهد و قبل از بازکشی (repaint) بعدی، یک تابع callback که توسط کاربر ارائه شده را فراخوانی می‌کند.
 
-## Events
+## رویدادها
 
-Listen to this event using {{domxref("EventTarget/addEventListener()", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface.
+برای گوش‌دادن به این رویداد، از {{domxref("EventTarget/addEventListener()", "addEventListener()")}} استفاده کنید یا یک شنوندهٔ رویداد را به ویژگی `oneventname` این رابط نسبت دهید.
 
 - {{domxref("DedicatedWorkerGlobalScope/message_event", "message")}}
-  - : Fired when the worker receives a message from its parent.
+  - : زمانی که worker پیامی را از والد خود دریافت می‌کند، فعال می‌شود.
 - {{domxref("DedicatedWorkerGlobalScope/messageerror_event", "messageerror")}}
-  - : Fired when a worker receives a message that can't be deserialized.
+  - : زمانی که یک worker پیامی را دریافت می‌کند که نمی‌توان آن را از حالت سریال‌سازی خارج کرد (deserialize)، فعال می‌شود.
 - {{domxref("DedicatedWorkerGlobalScope/rtctransform_event", "rtctransform")}}
-  - : Fired when an encoded video or audio frame has been queued for processing by a {{domxref("WebRTC API/Using Encoded Transforms", "WebRTC Encoded Transform", "", "nocode")}}.
+  - : زمانی که یک فریم ویدیویی یا صوتی رمزگذاری‌شده برای پردازش توسط {{domxref("WebRTC API/Using Encoded Transforms", "WebRTC Encoded Transform", "", "nocode")}} در صف قرار می‌گیرد، فعال می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Worker")}}
 - {{domxref("WorkerGlobalScope")}}
-- [Using web workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
-- [Functions available to workers](/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers)
+- [استفاده از web workerها](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+- [توابع در دسترس برای workerها](/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers)
