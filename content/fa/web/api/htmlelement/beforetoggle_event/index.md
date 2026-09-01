@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: beforetoggle event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/beforetoggle_event"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: beforetoggle event"
 slug: Web/API/HTMLElement/beforetoggle_event
 page-type: web-api-event
 browser-compat: api.HTMLElement.beforetoggle_event
@@ -13,22 +7,22 @@ browser-compat: api.HTMLElement.beforetoggle_event
 
 {{APIRef("HTML DOM")}}
 
-The **`beforetoggle`** event of the {{domxref("HTMLElement")}} interface fires on a {{domxref("Popover_API", "popover", "", "nocode")}} or {{htmlelement("dialog")}} element just before it is shown or hidden.
+رویداد **`beforetoggle`** از رابط {{domxref("HTMLElement")}}، درست پیش از نمایش یا پنهان‌شدن یک عنصر {{domxref("Popover_API", "popover", "", "nocode")}} یا {{htmlelement("dialog")}} روی آن عنصر رخ می‌دهد.
 
-- If the element is transitioning from hidden to showing, the [`event.oldState`](/en-US/docs/Web/API/ToggleEvent/oldState) property will be set to `closed` and the [`event.newState`](/en-US/docs/Web/API/ToggleEvent/newState) property will be set to `open`.
-- If the element is transitioning from showing to hidden, then `event.oldState` will be `open` and `event.newState` will be `closed`.
+- اگر عنصر در حال گذار از حالت پنهان به نمایان باشد، خاصیت [`event.oldState`](/en-US/docs/Web/API/ToggleEvent/oldState) روی `closed` و خاصیت [`event.newState`](/en-US/docs/Web/API/ToggleEvent/newState) روی `open` تنظیم می‌شود.
+- اگر عنصر در حال گذار از حالت نمایان به پنهان باشد، آنگاه `event.oldState` برابر `open` و `event.newState` برابر `closed` خواهد بود.
 
-This event is [cancelable](/en-US/docs/Web/API/Event/cancelable) when an element is toggled to open ("show") but not when the element is closing.
+این رویداد زمانی که عنصر به حالت باز («نمایش») تغییر وضعیت می‌دهد [قابل‌لغو](/en-US/docs/Web/API/Event/cancelable) است، اما زمانی که عنصر در حال بسته‌شدن است قابل‌لغو نیست.
 
-Among other things, this event can be used to:
+از جمله کاربردهای این رویداد می‌توان به موارد زیر اشاره کرد:
 
-- prevent an element from being shown.
-- add or remove classes or properties from the element or associated elements, for example to control the animation behavior of a dialog as it is opened and closed.
-- clear the state of the element before it is opened or after it is hidden, for example to reset a dialog form and return value to an empty state, or hide any nested manual popovers when reopening a popup.
+- جلوگیری از نمایش یک عنصر.
+- افزودن یا حذف کلاس‌ها یا ویژگی‌ها به عنصر یا عناصر مرتبط، مثلاً برای کنترل رفتار انیمیشن یک دیالوگ هنگام باز و بسته شدن.
+- پاک‌سازی وضعیت عنصر پیش از باز شدن یا پس از پنهان شدن، مثلاً برای بازنشانی فرم یک دیالوگ و مقدار بازگشتی به حالت خالی، یا مخفی‌کردن هر popover دستی تو در تو هنگام باز کردن مجدد یک popup.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("beforetoggle", (event) => { })
@@ -36,24 +30,24 @@ addEventListener("beforetoggle", (event) => { })
 onbeforetoggle = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("ToggleEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("ToggleEvent")}}. به ارث‌برده از {{domxref("Event")}}.
 
 {{InheritanceDiagram("ToggleEvent")}}
 
-## Examples
+## مثال‌ها
 
-The examples below demonstrate how the `beforetoggle` event might be used for a {{domxref("Popover_API", "popover", "", "nocode")}} element.
-The same examples would work similarly on a {{htmlelement("dialog")}} element.
+مثال‌های زیر نشان می‌دهند که چگونه می‌توان از رویداد `beforetoggle` برای یک عنصر {{domxref("Popover_API", "popover", "", "nocode")}} استفاده کرد.
+همین مثال‌ها به شکل مشابهی روی عنصر {{htmlelement("dialog")}} نیز کار می‌کنند.
 
-### Basic example
+### مثال پایه
 
-This example shows how to listen for the `beforetoggle` event and log the result.
+این مثال نشان می‌دهد که چگونه به رویداد `beforetoggle` گوش دهید و نتیجه را ثبت کنید.
 
 #### HTML
 
-The HTML consists of a popover and a button for toggling it open and closed.
+HTML شامل یک popover و یک دکمه برای باز و بسته کردن آن است.
 
 ```html
 <button popovertarget="mypopover">Toggle the popover</button>
@@ -83,7 +77,7 @@ function log(text) {
 
 #### JavaScript
 
-The code adds an event listener for the `beforetoggle` event and logs the state.
+کد یک شنونده رویداد برای رویداد `beforetoggle` اضافه می‌کند و وضعیت را ثبت می‌کند.
 
 ```js
 const popover = document.getElementById("mypopover");
@@ -97,20 +91,20 @@ popover.addEventListener("beforetoggle", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Basic example", '100%', "250px")}}
 
-### Prevent a popover opening
+### جلوگیری از باز شدن popover
 
-The `beforetoggle` event is cancelable if fired when opening an element.
+رویداد `beforetoggle` زمانی که هنگام باز شدن یک عنصر رخ می‌دهد قابل‌لغو است.
 
-Below we show how a popover might first check if it is allowed to open, and if not, call {{domxref("Event.preventDefault()")}} to cancel the event.
-In this example we use a checkbox to set whether the popover can open or not: in a more "full featured" example this might depend on the application state, or the data in the popover being ready to display.
+در زیر نشان می‌دهیم که چگونه یک popover می‌تواند ابتدا بررسی کند که آیا اجازه باز شدن دارد یا خیر، و اگر نه، متد {{domxref("Event.preventDefault()")}} را فراخوانی کند تا رویداد لغو شود.
+در این مثال از یک چک‌باکس برای تعیین اینکه آیا popover می‌تواند باز شود یا نه استفاده می‌کنیم؛ در یک مثال «کامل‌تر» این ممکن است به وضعیت برنامه یا آماده بودن داده‌های داخل popover برای نمایش بستگی داشته باشد.
 
 #### HTML
 
-The HTML consists of a popover, a button for toggling it open and closed, and a checkbox for setting whether the popover can be opened.
+HTML شامل یک popover، یک دکمه برای باز و بسته کردن آن، و یک چک‌باکس برای تعیین اینکه آیا popover می‌تواند باز شود یا نه است.
 
 ```html
 <button popovertarget="mypopover">Toggle the popover</button>
@@ -143,8 +137,8 @@ function log(text) {
 
 #### JavaScript
 
-First we set up the code to simulate a state where we want to allow the popover to open.
-This is represented by the variable `allowOpen`, which is toggled when the associated checkbox is toggled.
+ابتدا کدی را برای شبیه‌سازی وضعیتی که می‌خواهیم اجازه باز شدن popover را بدهیم تنظیم می‌کنیم.
+این وضعیت با متغیر `allowOpen` نمایش داده می‌شود که با تغییر وضعیت چک‌باکس مرتبط، تغییر می‌کند.
 
 ```js
 const allowCheckbox = document.getElementById("allow-popover");
@@ -156,8 +150,8 @@ allowCheckbox.addEventListener("change", (event) => {
 });
 ```
 
-The code adds an event listener for the `beforetoggle` event.
-If `allowOpen` is false then `preventDefault()` is called, which stops the popup from opening.
+کد یک شنونده رویداد برای رویداد `beforetoggle` اضافه می‌کند.
+اگر `allowOpen` برابر `false` باشد، متد `preventDefault()` فراخوانی می‌شود که از باز شدن popup جلوگیری می‌کند.
 
 ```js
 const popover = document.getElementById("mypopover");
@@ -176,24 +170,24 @@ popover.addEventListener("beforetoggle", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Prevent a popover opening", '100%', "250px")}}
 
-### Other examples
+### سایر مثال‌ها
 
-- [Opening a modal dialog](/en-US/docs/Web/API/HTMLDialogElement#open_close_a_modal_dialog) example in `HTMLDialogElement`
+- مثال [باز کردن یک دیالوگ مودال](/en-US/docs/Web/API/HTMLDialogElement#open_close_a_modal_dialog) در `HTMLDialogElement`
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) HTML global attribute
+- ویژگی سراسری HTML [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover)
 - [Popover API](/en-US/docs/Web/API/Popover_API)
-- Related event: [`toggle`](/en-US/docs/Web/API/HTMLElement/toggle_event)
+- رویداد مرتبط: [`toggle`](/en-US/docs/Web/API/HTMLElement/toggle_event)
