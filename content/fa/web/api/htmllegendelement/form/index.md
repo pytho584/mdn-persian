@@ -1,11 +1,5 @@
 ---
 title: "HTMLLegendElement: form property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLegendElement/form"
-status: "needs-translation"
----
-
----
-title: "HTMLLegendElement: form property"
 short-title: form
 slug: Web/API/HTMLLegendElement/form
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.HTMLLegendElement.form
 
 {{APIRef("HTML DOM")}}
 
-The **`form`** read-only property of the {{domxref("HTMLLegendElement")}} interface returns an {{domxref("HTMLFormElement")}} object that owns the {{domxref("HTMLFieldSetElement")}} associated with this {{htmlelement("legend")}}, or `null` if this legend is not associated with a {{htmlelement("fieldset")}} owned by a form.
+ویژگی فقطخواندنی **`form`** در رابط {{domxref("HTMLLegendElement")}}، یک شیء {{domxref("HTMLFormElement")}} برمی‌گرداند که مالک {{domxref("HTMLFieldSetElement")}} مرتبط با این {{htmlelement("legend")}} است. اگر این legend با یک {{htmlelement("fieldset")}} متعلق به یک فرم مرتبط نباشد، این ویژگی `null` برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLFormElement")}} or `null`.
+یک {{domxref("HTMLFormElement")}} یا `null`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLLegendElement")}}
 - {{domxref("HTMLFieldSetElement.form")}}
