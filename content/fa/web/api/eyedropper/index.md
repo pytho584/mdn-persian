@@ -1,10 +1,4 @@
 ---
-title: "EyeDropper"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper"
-status: "needs-translation"
----
-
----
 title: EyeDropper
 slug: Web/API/EyeDropper
 page-type: web-api-interface
@@ -15,25 +9,25 @@ browser-compat: api.EyeDropper
 
 {{securecontext_header}}{{APIRef("EyeDropper API")}}{{SeeCompatTable}}
 
-The **`EyeDropper`** interface represents an instance of an eyedropper tool that can be opened and used by the user to select colors from the screen.
+رابط **`EyeDropper`** نمونه‌ای از ابزار قطره‌چکان را نشان می‌دهد که می‌توان آن را باز کرد و کاربر می‌تواند از آن برای انتخاب رنگ از روی صفحه استفاده کند.
 
-## Constructor
+## سازنده
 
 - {{DOMxRef("EyeDropper.EyeDropper", "EyeDropper()")}} {{Experimental_Inline}}
-  - : Returns a new `EyeDropper` instance.
+  - : یک نمونه جدید از `EyeDropper` را بازمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
-_The `EyeDropper` interface doesn't inherit any methods_.
+_رابط `EyeDropper` هیچ متدی را به ارث نمی‌برد._
 
 - {{DOMxRef("EyeDropper.open()")}} {{Experimental_Inline}}
-  - : Returns a promise that resolves to an object that gives access to the selected color.
+  - : یک Promise برمی‌گرداند که به شیئی که دسترسی به رنگ انتخاب‌شده را فراهم می‌کند، resolve می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Opening the eyedropper tool and sampling a color
+### باز کردن ابزار قطره‌چکان و نمونه‌برداری از یک رنگ
 
-This example shows how to open an eyedropper tool and wait for the user to either select a pixel from the screen, or press <kbd>Escape</kbd> to cancel the eyedropper mode.
+این مثال نشان می‌دهد که چگونه یک ابزار قطره‌چکان را باز کنید و منتظر بمانید تا کاربر یا یک پیکسل از صفحه را انتخاب کند یا کلید <kbd>Escape</kbd> را بفشارد تا حالت قطره‌چکان لغو شود.
 
 #### HTML
 
@@ -67,13 +61,13 @@ document.getElementById("start-button").addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Opening the eyedropper tool and sampling a color")}}
 
-### Aborting the eyedropper mode
+### لغو حالت قطره‌چکان
 
-This example shows that the eyedropper mode can also be aborted before the user has selected a color or pressed <kbd>Escape</kbd>.
+این مثال نشان می‌دهد که حالت قطره‌چکان را می‌توان پیش از انتخاب رنگ توسط کاربر یا فشار دادن <kbd>Escape</kbd> نیز لغو کرد.
 
 #### HTML
 
@@ -112,14 +106,14 @@ document.getElementById("start-button").addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Aborting the eyedropper mode")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
