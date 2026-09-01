@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableCellElement: align property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/align"
-status: "needs-translation"
----
-
----
-title: "HTMLTableCellElement: align property"
 short-title: align
 slug: Web/API/HTMLTableCellElement/align
 page-type: web-api-instance-property
@@ -16,35 +10,35 @@ browser-compat: api.HTMLTableCellElement.align
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The **`align`** property of the {{domxref("HTMLTableCellElement")}} interface is a string indicating how to horizontally align text in the {{htmlelement("th")}} or {{htmlelement("td")}} table cell.
+ویژگی **`align`** از رابط {{domxref("HTMLTableCellElement")}} یک رشته است که نحوه تراز افقی متن را در سلول جدول {{htmlelement("th")}} یا {{htmlelement("td")}} مشخص می‌کند.
 
 > [!NOTE]
-> This property is deprecated, and CSS should be used to align text horizontally in a cell. Use the CSS {{cssxref("text-align")}} property, which takes precedence, to horizontally align text in a cell instead.
+> این ویژگی منسوخ شده است و باید از CSS برای تراز افقی متن در یک سلول استفاده شود. به جای آن از ویژگی CSS {{cssxref("text-align")}} استفاده کنید که اولویت دارد.
 
-## Value
+## مقدار
 
-The possible values are:
+مقادیر ممکن عبارتند از:
 
 - `left`
-  - : Align the text to the left. Use `text-align: left` instead.
+  - : متن را به چپ تراز می‌کند. به جای آن از `text-align: left` استفاده کنید.
 - `right`
-  - : Align the text to the right. Use `text-align: right` instead.
+  - : متن را به راست تراز می‌کند. به جای آن از `text-align: right` استفاده کنید.
 - `center`
-  - : Center the text in the cell. Use `text-align: center` instead.
+  - : متن را در وسط سلول قرار می‌دهد. به جای آن از `text-align: center` استفاده کنید.
 
-## Examples
+## مثال‌ها
 
-Use CSS `text-align` instead. An [example](/en-US/docs/Web/CSS/Reference/Properties/text-align#table_alignment) is available on the {{cssxref("text-align")}} page.
+به جای این ویژگی از `text-align` CSS استفاده کنید. یک [example](/en-US/docs/Web/CSS/Reference/Properties/text-align#table_alignment) در صفحه {{cssxref("text-align")}} موجود است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("text-align")}}
 - [Learn: Styling tables](/en-US/docs/Learn_web_development/Core/Styling_basics/Tables)
