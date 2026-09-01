@@ -1,11 +1,5 @@
 ---
 title: "Gamepad: vibrationActuator property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/vibrationActuator"
-status: "needs-translation"
----
-
----
-title: "Gamepad: vibrationActuator property"
 short-title: vibrationActuator
 slug: Web/API/Gamepad/vibrationActuator
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.Gamepad.vibrationActuator
 
 {{APIRef("Gamepad")}}
 
-The **`vibrationActuator`** read-only property of the {{domxref("Gamepad")}} interface returns a {{domxref("GamepadHapticActuator")}} object, which represents haptic feedback hardware available on the controller.
+ویژگی فقط‌خواندنی **`vibrationActuator`** از رابط {{domxref("Gamepad")}} یک شیء {{domxref("GamepadHapticActuator")}} را برمی‌گرداند که نشان‌دهنده سخت‌افزار بازخورد لمسی (haptic feedback) موجود در کنترلر است.
 
 > [!NOTE]
-> Support for this property may vary across different combinations of platforms and controllers. Even if the controller supports haptic feedback, the platform may not support it.
+> پشتیبانی از این ویژگی ممکن است در ترکیب‌های مختلف پلتفرم‌ها و کنترلرها متفاوت باشد. حتی اگر کنترلر از بازخورد لمسی پشتیبانی کند، ممکن است پلتفرم از آن پشتیبانی نکند.
 
-## Value
+## مقدار
 
-A {{domxref("GamepadHapticActuator")}} object.
+یک شیء {{domxref("GamepadHapticActuator")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const gamepad = navigator.getGamepads()[0];
@@ -36,14 +30,14 @@ gamepad.vibrationActuator.playEffect("dual-rumble", {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
