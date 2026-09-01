@@ -1,7 +1,5 @@
 ---
 title: "HTMLElement: lang property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.HTMLElement.lang
 
 {{ APIRef("HTML DOM") }}
 
-The **`lang`** property of the {{domxref("HTMLElement")}} interface indicates the base language of an element's attribute values and text content, in the form of a {{glossary("BCP 47 language tag")}}. It reflects the element's [`lang`](/en-US/docs/Web/HTML/Reference/Global_attributes/lang) attribute; the `xml:lang` attribute does not affect this property.
+خاصیت **`lang`** در رابط {{domxref("HTMLElement")}} زبان پایهٔ مقادیر ویژگی‌ها و محتوای متنی یک عنصر را به شکل یک {{glossary("BCP 47 language tag")}} (برچسب زبان BCP 47) مشخص می‌کند. این خاصیت، ویژگی [`lang`](/en-US/docs/Web/HTML/Reference/Global_attributes/lang) عنصر را بازتاب می‌دهد؛ ویژگی `xml:lang` تأثیری بر این خاصیت ندارد.
 
-Note that if the `lang` attribute is unspecified, the element itself may still inherit the language from its parent. However, that inherited language is not reflected by this property's value.
+توجه داشته باشید که اگر ویژگی `lang` مشخص نشده باشد، خود عنصر ممکن است همچنان زبان را از والد خود به ارث ببرد؛ با این حال، این زبانِ به‌ارث‌برده در مقدار این خاصیت منعکس نمی‌شود.
 
-## Value
+## مقدار
 
-A string. Common examples include "en" for English, "ja" for Japanese, "es" for Spanish and so on. If unspecified, the value is an empty string.
+یک رشته است. مثال‌های رایج عبارت‌اند از `"en"` برای انگلیسی، `"ja"` برای ژاپنی، `"es"` برای اسپانیایی و غیره. اگر ویژگی `lang` تعیین نشده باشد، مقدار این خاصیت یک رشتهٔ خالی است.
 
-## Examples
+## مثال‌ها
 
 ```js
 // this snippet compares the base language and
@@ -34,10 +32,10 @@ if (document.documentElement.lang === "en") {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
