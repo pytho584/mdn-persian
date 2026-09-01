@@ -1,11 +1,5 @@
 ---
 title: "FileList: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileList/length"
-status: "needs-translation"
----
-
----
-title: "FileList: length property"
 short-title: length
 slug: Web/API/FileList/length
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.FileList.length
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`length`** read-only property of the {{domxref("FileList")}} interface returns the number of files in the `FileList`.
+خاصیت فقط‌خواندنی **`length`** در رابط {{domxref("FileList")}} تعداد فایل‌های موجود در `FileList` را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A number indicating the number of files in the list.
+یک عدد که تعداد فایل‌های موجود در لیست را نشان می‌دهد.
 
-## Examples
+## نمونه‌ها
 
-### Printing the number of files selected
+### چاپ تعداد فایل‌های انتخاب‌شده
 
-In this example, we use `length` to find the number of items in the `FileList`.
+در این مثال، از `length` برای یافتن تعداد آیتم‌های موجود در `FileList` استفاده می‌کنیم.
 
 #### HTML
 
@@ -45,14 +39,14 @@ fileInput.addEventListener("change", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Printing the number of files selected")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
