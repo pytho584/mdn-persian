@@ -1,71 +1,62 @@
 ---
 title: "FontFaceSet"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet"
-status: "needs-translation"
----
-
----
-title: FontFaceSet
-slug: Web/API/FontFaceSet
-page-type: web-api-interface
-browser-compat: api.FontFaceSet
 ---
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`FontFaceSet`** interface of the [CSS Font Loading API](/en-US/docs/Web/API/CSS_Font_Loading_API) manages the loading of font-faces and querying of their download status.
+رابط **`FontFaceSet`** از [CSS Font Loading API](/en-US/docs/Web/API/CSS_Font_Loading_API) بارگذاری فونت‌فیس‌ها و پرس‌وجوی وضعیت دانلود آنها را مدیریت می‌کند.
 
-A `FontFaceSet` instance is a [`Set`-like object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#set-like_browser_apis) that can hold an ordered set of {{domxref("FontFace")}} objects.
+یک نمونه از `FontFaceSet` یک [شیء شبیه به `Set`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set#set-like_browser_apis) است که می‌تواند یک مجموعه مرتب از اشیاء {{domxref("FontFace")}} را نگه دارد.
 
-This property is available as {{domxref("Document.fonts")}}, or `self.fonts` in [web workers](/en-US/docs/Web/API/Web_Workers_API).
+این ویژگی به صورت {{domxref("Document.fonts")}} یا `self.fonts` در [web workers](/en-US/docs/Web/API/Web_Workers_API) در دسترس است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## خصوصیات نمونه
 
 - {{domxref("FontFaceSet.status")}} {{ReadOnlyInline}}
-  - : Indicates the font-face's loading status. It will be one of `'loading'` or `'loaded'`.
+  - : وضعیت بارگذاری فونت‌فیس را نشان می‌دهد. یکی از مقادیر `'loading'` یا `'loaded'` خواهد بود.
 - {{domxref("FontFaceSet.ready")}} {{ReadOnlyInline}}
-  - : {{jsxref("Promise")}} which resolves once font loading and layout operations have completed.
+  - : یک {{jsxref("Promise")}} که پس از اتمام عملیات بارگذاری فونت و چیدمان (layout) resolve می‌شود.
 - {{domxref("FontFaceSet.size")}} {{ReadOnlyInline}}
-  - : Returns the number of values in the `FontFaceSet`.
+  - : تعداد مقادیر موجود در `FontFaceSet` را بازمی‌گرداند.
 
-### Events
+### رویدادها
 
 - {{domxref("FontFaceSet.loading_event", "loading")}}
-  - : Fires when a font-face set has started loading.
+  - : هنگامی که یک مجموعه فونت‌فیس شروع به بارگذاری می‌کند، فعال می‌شود.
 - {{domxref("FontFaceSet.loadingdone_event", "loadingdone")}}
-  - : Fires when a font face set has finished loading.
+  - : هنگامی که بارگذاری یک مجموعه فونت‌فیس به پایان می‌رسد، فعال می‌شود.
 - {{domxref("FontFaceSet.loadingerror_event", "loadingerror")}}
-  - : Fires when an error occurred while loading a font-face set.
+  - : هنگامی که در حین بارگذاری یک مجموعه فونت‌فیس خطایی رخ می‌دهد، فعال می‌شود.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("FontFaceSet.add","FontFaceSet.add()")}}
-  - : Adds a font to the font set.
+  - : یک فونت به مجموعه فونت اضافه می‌کند.
 - {{domxref("FontFaceSet.check","FontFaceSet.check()")}}
-  - : A boolean value that indicates whether a font is loaded, but doesn't initiate a load when it isn't.
+  - : یک مقدار بولی که نشان می‌دهد آیا یک فونت بارگذاری شده است، اما در صورت عدم بارگذاری، شروع به بارگذاری نمی‌کند.
 - {{domxref("FontFaceSet.clear", "FontFaceSet.clear()")}}
-  - : Removes all manually-added fonts from the font set. [CSS-connected](https://drafts.csswg.org/css-font-loading-3/#css-connected) fonts are unaffected.
+  - : تمام فونت‌های دستی اضافه شده را از مجموعه فونت حذف می‌کند. فونت‌های [متصل به CSS](https://drafts.csswg.org/css-font-loading-3/#css-connected) تحت تأثیر قرار نمی‌گیرند.
 - {{domxref("FontFaceSet.delete","FontFaceSet.delete()")}}
-  - : Removes a manually-added font from the font set. [CSS-connected](https://drafts.csswg.org/css-font-loading-3/#css-connected) fonts are unaffected.
+  - : یک فونت دستی اضافه شده را از مجموعه فونت حذف می‌کند. فونت‌های [متصل به CSS](https://drafts.csswg.org/css-font-loading-3/#css-connected) تحت تأثیر قرار نمی‌گیرند.
 - {{domxref("FontFaceSet.entries","FontFaceSet.entries()")}}
-  - : Returns a new iterator with the values for each element in the `FontFaceSet` in insertion order.
+  - : یک iterator جدید با مقادیر هر عنصر در `FontFaceSet` به ترتیب درج بازمی‌گرداند.
 - {{domxref("FontFaceSet.forEach","FontFaceSet.forEach()")}}
-  - : Executes a provided function for each value in the `FontFaceSet` object.
+  - : یک تابع ارائه شده را برای هر مقدار در شیء `FontFaceSet` اجرا می‌کند.
 - {{domxref("FontFaceSet.has","FontFaceSet.has()")}}
-  - : Returns a {{jsxref("Boolean")}} asserting whether an element is present with the given value.
+  - : یک {{jsxref("Boolean")}} بازمی‌گرداند که تأیید می‌کند آیا عنصری با مقدار داده شده وجود دارد یا خیر.
 - {{domxref("FontFaceSet.keys","FontFaceSet.keys()")}}
-  - : An alias for {{domxref("FontFaceSet.values()")}}.
+  - : یک نام مستعار برای {{domxref("FontFaceSet.values()")}}.
 - {{domxref("FontFaceSet.load","FontFaceSet.load()")}}
-  - : Returns a {{jsxref("Promise")}} which resolves to a list of font-faces for a requested font.
+  - : یک {{jsxref("Promise")}} بازمی‌گرداند که به یک لیست از فونت‌فیس‌ها برای یک فونت درخواستی resolve می‌شود.
 - {{domxref("FontFaceSet.values","FontFaceSet.values()")}}
-  - : Returns a new iterator object that yields the values for each element in the `FontFaceSet` object in insertion order.
+  - : یک شیء iterator جدید بازمی‌گرداند که مقادیر هر عنصر در شیء `FontFaceSet` را به ترتیب درج تولید می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
