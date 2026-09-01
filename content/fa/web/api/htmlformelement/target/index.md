@@ -1,7 +1,5 @@
 ---
 title: "HTMLFormElement: target property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/target"
-status: "needs-translation"
 ---
 
 ---
@@ -14,24 +12,22 @@ browser-compat: api.HTMLFormElement.target
 
 {{APIRef("HTML DOM")}}
 
-The **`target`** property of the {{domxref("HTMLFormElement")}}
-interface represents the target of the form's action (i.e., the frame in which to render
-its output).
+ویژگی **`target`** در رابط {{domxref("HTMLFormElement")}}، هدف اکشن فرم را مشخص می‌کند (یعنی فریمی که خروجیِ فرم در آن نمایش داده می‌شود).
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 myForm.target = frames[1].name;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
