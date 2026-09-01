@@ -1,11 +1,5 @@
 ---
 title: "FileReader: readAsText() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsText"
-status: "needs-translation"
----
-
----
-title: "FileReader: readAsText() method"
 short-title: readAsText()
 slug: Web/API/FileReader/readAsText
 page-type: web-api-instance-method
@@ -14,35 +8,35 @@ browser-compat: api.FileReader.readAsText
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`readAsText()`** method of the {{domxref("FileReader")}} interface is used to read the contents of the specified {{domxref("Blob")}} or {{domxref("File")}}.
-When the read operation is complete, the {{domxref("FileReader.readyState","readyState")}} property is changed to `DONE`,
-the {{domxref("FileReader/loadend_event", "loadend")}} event is triggered, and the {{domxref("FileReader.result","result")}} property contains the contents of the file as a text string.
+**`readAsText()`** متدی از رابط {{domxref("FileReader")}} است که برای خواندن محتوای {{domxref("Blob")}} یا {{domxref("File")}} مشخص‌شده استفاده می‌شود.
+هنگامی که عملیات خواندن کامل می‌شود، ویژگی {{domxref("FileReader.readyState","readyState")}} به `DONE` تغییر می‌کند،
+رویداد {{domxref("FileReader/loadend_event", "loadend")}} فعال می‌شود و ویژگی {{domxref("FileReader.result","result")}} حاوی محتوای فایل به‌صورت یک رشته متنی خواهد بود.
 
 > [!NOTE]
-> The {{domxref("Blob.text()")}} method is a newer promise-based API to read a file as text.
+> متد {{domxref("Blob.text()")}} یک API مبتنی بر Promise جدیدتر برای خواندن یک فایل به‌صورت متن است.
 
 > [!NOTE]
-> This method loads the entire file's content into memory and is not suitable for large files. Prefer {{domxref("FileReader.readAsArrayBuffer", "readAsArrayBuffer()")}} for large files.
+> این متد کل محتوای فایل را در حافظه بارگذاری می‌کند و برای فایل‌های بزرگ مناسب نیست. برای فایل‌های بزرگ، {{domxref("FileReader.readAsArrayBuffer", "readAsArrayBuffer()")}} را ترجیح دهید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 readAsText(blob)
 readAsText(blob, encoding)
 ```
 
-### Parameters
+### پارامترها
 
 - `blob`
-  - : The {{domxref("Blob")}} or {{domxref("File")}} from which to read.
+  - : {{domxref("Blob")}} یا {{domxref("File")}} که باید از آن خوانده شود.
 - `encoding` {{optional_inline}}
-  - : A string specifying the encoding to use for the returned data. By default, UTF-8 is assumed if this parameter is not specified.
+  - : رشته‌ای که مشخص می‌کند از چه رمزگذاری برای داده‌های برگشتی استفاده شود. به‌طور پیش‌فرض، اگر این پارامتر مشخص نشود، UTF-8 در نظر گرفته می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -74,18 +68,18 @@ function previewFile() {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", "100%", 240)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("FileReader")}}
