@@ -1,11 +1,5 @@
 ---
 title: "Document: hasUnpartitionedCookieAccess() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/hasUnpartitionedCookieAccess"
-status: "needs-translation"
----
-
----
-title: "Document: hasUnpartitionedCookieAccess() method"
 short-title: hasUnpartitionedCookieAccess()
 slug: Web/API/Document/hasUnpartitionedCookieAccess
 page-type: web-api-instance-method
@@ -14,34 +8,34 @@ browser-compat: api.Document.hasUnpartitionedCookieAccess
 
 {{APIRef("Storage Access API")}}
 
-The **`hasUnpartitionedCookieAccess()`** method of the {{domxref("Document")}} interface returns a {{jsxref("Promise")}} that resolves with a boolean value indicating whether the document has access to [third-party](/en-US/docs/Web/Privacy/Guides/Third-party_cookies), [unpartitioned](/en-US/docs/Web/API/Storage_Access_API#unpartitioned_versus_partitioned_cookies) cookies.
+متد **`hasUnpartitionedCookieAccess()`** از رابط {{domxref("Document")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک مقدار بولی resolve می‌شود و نشان می‌دهد آیا سند به کوکی‌های [شخص ثالث](/en-US/docs/Web/Privacy/Guides/Third-party_cookies) و [تقسیم‌نشده](/en-US/docs/Web/API/Storage_Access_API#unpartitioned_versus_partitioned_cookies) دسترسی دارد یا خیر.
 
-This method is part of the [Storage Access API](/en-US/docs/Web/API/Storage_Access_API).
+این متد بخشی از [Storage Access API](/en-US/docs/Web/API/Storage_Access_API) است.
 
-This method is a new name for {{DOMxRef("Document.hasStorageAccess()")}}.
+این متد نام جدیدی برای {{DOMxRef("Document.hasStorageAccess()")}} است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 hasUnpartitionedCookieAccess()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a boolean value indicating whether the document has access to third-party cookies — `true` if it does, and `false` if not.
+یک {{jsxref("Promise")}} که با یک مقدار بولی resolve می‌شود و نشان می‌دهد آیا سند به کوکی‌های شخص ثالث دسترسی دارد یا نه — اگر داشته باشد `true` و اگر نداشته باشد `false`.
 
-See {{DOMxRef("Document.hasStorageAccess()")}} for more details.
+برای جزئیات بیشتر به {{DOMxRef("Document.hasStorageAccess()")}} مراجعه کنید.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the current {{domxref("Document")}} is not yet active.
+  - : اگر {{domxref("Document")}} فعلی هنوز فعال نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 document.hasUnpartitionedCookieAccess().then((hasAccess) => {
@@ -57,18 +51,18 @@ document.hasUnpartitionedCookieAccess().then((hasAccess) => {
 ```
 
 > [!NOTE]
-> See [Using the Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using) for a more complete example.
+> برای یک مثال کامل‌تر، به [استفاده از Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Document.hasStorageAccess()")}}, {{domxref("Document.requestStorageAccess()")}}, {{domxref("Document.requestStorageAccessFor()")}}
-- [Using the Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using)
-- [Introducing Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/) (WebKit blog)
+- [استفاده از Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using)
+- [معرفی Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/) (وبلاگ WebKit)
