@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSet: loading event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/loading_event"
-status: "needs-translation"
----
-
----
-title: "FontFaceSet: loading event"
 short-title: loading
 slug: Web/API/FontFaceSet/loading_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.FontFaceSet.loading_event
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The `loading` event fires when the document begins loading fonts.
+رویداد `loading` زمانی رخ می‌دهد که سند شروع به بارگذاری فونت‌ها می‌کند.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("loading", (event) => { })
@@ -28,7 +22,7 @@ onloading = (event) => { }
 
 ## Example
 
-In the following example, when the font `Ephesis` starts to load, "Font is loading…" is printed to the console.
+در مثال زیر، هنگامی که فونت `Ephesis` شروع به بارگذاری می‌کند، عبارت «Font is loading…» در کنسول چاپ می‌شود.
 
 ```js
 document.fonts.onloading = () => {
