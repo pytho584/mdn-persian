@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleDeclaration: setProperty() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty"
-status: "needs-translation"
----
-
----
-title: "CSSStyleDeclaration: setProperty() method"
 short-title: setProperty()
 slug: Web/API/CSSStyleDeclaration/setProperty
 page-type: web-api-instance-method
@@ -14,9 +8,7 @@ browser-compat: api.CSSStyleDeclaration.setProperty
 
 {{ APIRef("CSSOM") }}
 
-The
-**`CSSStyleDeclaration.setProperty()`** method interface sets
-a new value for a property on a CSS style declaration object.
+متود **`CSSStyleDeclaration.setProperty()`** مقدار جدیدی را برای یک ویژگی در شیء اعلان سبک CSS تنظیم می‌کند.
 
 ## Syntax
 
@@ -25,54 +17,49 @@ setProperty(propertyName, value)
 setProperty(propertyName, value, priority)
 ```
 
-### Parameters
+### پارامترها
 
 - `propertyName`
-  - : A string representing the CSS property name (hyphen case) to be modified.
+  - : رشته‌ای که نام ویژگی CSS (با خط تیره) مورد نظر برای تغییر را مشخص می‌کند.
 - `value` {{optional_inline}}
-  - : A string containing the new property value. If not specified, treated
-    as the empty string. A [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) value is treated the same as the empty string (`""`).
+  - : رشته‌ای شامل مقدار جدید ویژگی. اگر مشخص نشود، به‌عنوان رشته خالی در نظر گرفته می‌شود. مقدار [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) نیز همانند رشته خالی (`""`) رفتار می‌کند.
     > [!NOTE]
-    > `value` must not contain `"!important"`, that should be set using the `priority` parameter.
+    > `value` نباید شامل `"!important"` باشد؛ این کار باید با استفاده از پارامتر `priority` انجام شود.
 - `priority` {{optional_inline}}
-  - : A string allowing the CSS priority to be set to important. Only the values listed below are accepted:
-    - `"important"` (case-insensitive) for setting the property as `!important`;
-    - `""`, `undefined`, or `null` for removing the `!important` flag if present.
+  - : رشته‌ای که به‌کمک آن می‌توان اولویت CSS را به حالت important تنظیم کرد. تنها مقادیر زیر پذیرفته می‌شوند:
+    - `"important"` (بدون حساسیت به بزرگی/کوچکی حروف) برای تنظیم ویژگی به‌صورت `!important`؛
+    - `""`، `undefined` یا `null` برای حذف پرچم `!important` در صورت وجود.
 
-    Anything else causes the method to return early and no change to happen (unless `value` is empty, in which case the property is removed regardless of the `priority` value). `false`, for example, is not a valid priority value.
+    هر مقدار دیگری باعث می‌شود متود زودتر بازگردد و هیچ تغییری اعمال نشود (مگر اینکه `value` خالی باشد، که در این صورت ویژگی بدون توجه به مقدار `priority` حذف می‌شود). برای مثال، `false` مقدار معتبری برای `priority` نیست.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `NoModificationAllowedError` {{domxref('DOMException')}}
-  - : Thrown if the property or declaration block is read only.
+  - : اگر ویژگی یا بلوک اعلان فقط‌خواندنی باشد، پرتاب می‌شود.
 
-## Alternative usage
+## کاربرد جایگزین
 
-If `priority` can be omitted, JavaScript has a special simpler
-syntax for setting a CSS property on a style declaration object:
+اگر بتوان `priority` را حذف کرد، جاوااسکریپت نحو ساده‌تری برای تنظیم یک ویژگی CSS روی شیء اعلان سبک دارد:
 
 ```js
 style.cssPropertyName = "value";
 ```
 
-## Examples
+## مثال‌ها
 
-### Setting the box properties
+### تنظیم ویژگی‌های جعبه
 
-In this example we have three buttons, which can be pressed to dynamically alter our box paragraph's border, background color, and text color to random values (see the live example at the end of this section).
+در این مثال سه دکمه داریم که با فشردن آن‌ها می‌توانیم به‌صورت پویا حاشیه، رنگ پس‌زمینه و رنگ متن پاراگراف داخل جعبه را به مقادیر تصادفی تغییر دهیم (مثال زنده را در انتهای این بخش ببینید).
 
-The MDN [live sample](/en-US/docs/MDN/Writing_guidelines/Page_structures/Live_samples) infrastructure combines all the CSS blocks in the example into a single inline style with the id `css-output`, so we first use {{domxref("document.getElementById()")}} to find that sheet.
+زیرساخت [نمونه زنده](/en-US/docs/MDN/Writing_guidelines/Page_structures/Live_samples) MDN تمام بلوک‌های CSS موجود در مثال را در یک سبک درون‌خطی واحد با شناسه `css-output` ترکیب می‌کند، بنابراین ابتدا با {{domxref("document.getElementById()")}} آن برگه سبک را پیدا می‌کنیم.
 
-We then loop through the different rules contained inside the stylesheet in the array found at [`stylesheet.cssRules`](/en-US/docs/Web/API/CSSStyleSheet/cssRules).
-For each rule we check whether its [`CSSStyleRule.selectorText`](/en-US/docs/Web/API/CSSStyleRule/selectorText) is equal to the selector `.box p`, which is the one we want.
+سپس روی قوانین مختلف موجود درون استایل‌شیت که در آرایه [`stylesheet.cssRules`](/en-US/docs/Web/API/CSSStyleSheet/cssRules) قرار دارند حلقه می‌زنیم. برای هر قانون بررسی می‌کنیم که آیا [`CSSStyleRule.selectorText`](/en-US/docs/Web/API/CSSStyleRule/selectorText) آن برابر با انتخابگر `.box p` است یا نه؛ زیرا این همان قانونی است که می‌خواهیم.
 
-If so, we store a reference to this `CSSStyleRule` object in a variable.
-We then use three functions to generate random values for the properties in question, and update the rule with these values.
-In each case, this is done with the `setProperty()` method, for example `boxParaRule.style.setProperty('border', newBorder);`.
+اگر برابر بود، ارجاعی از این شیء `CSSStyleRule` را در یک متغیر ذخیره می‌کنیم. سپس از سه تابع برای تولید مقادیر تصادفی برای ویژگی‌های موردنظر استفاده کرده و قانون را با این مقادیر به‌روزرسانی می‌کنیم. در هر مورد، این کار با متود `setProperty()` انجام می‌شود، مثلاً `boxParaRule.style.setProperty('border', newBorder);`.
 
 ### HTML
 
@@ -182,14 +169,14 @@ bgColorBtn.addEventListener("click", setRandomBgColor);
 colorBtn.addEventListener("click", setRandomColor);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Examples', '100%', 400)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
