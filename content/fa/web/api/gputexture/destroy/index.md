@@ -1,11 +1,5 @@
 ---
 title: "GPUTexture: destroy() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUTexture/destroy"
-status: "needs-translation"
----
-
----
-title: "GPUTexture: destroy() method"
 short-title: destroy()
 slug: Web/API/GPUTexture/destroy
 page-type: web-api-instance-method
@@ -14,24 +8,23 @@ browser-compat: api.GPUTexture.destroy
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`destroy()`** method of the
-{{domxref("GPUTexture")}} interface destroys the `GPUTexture`.
+متد **`destroy()`** در رابط {{domxref("GPUTexture")}}، شیء `GPUTexture` را از بین می‌برد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 destroy()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -42,19 +35,19 @@ const depthTexture = device.createTexture({
   usage: GPUTextureUsage.RENDER_ATTACHMENT,
 });
 
-// some time later
+// مدتی بعد
 
 depthTexture.destroy();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
