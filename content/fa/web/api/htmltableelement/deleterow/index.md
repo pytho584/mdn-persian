@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableElement: deleteRow() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/deleteRow"
-status: "needs-translation"
----
-
----
-title: "HTMLTableElement: deleteRow() method"
 short-title: deleteRow()
 slug: Web/API/HTMLTableElement/deleteRow
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.HTMLTableElement.deleteRow
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLTableElement.deleteRow()`** method removes a
-specific row ({{HtmlElement("tr")}}) from a given {{HtmlElement("table")}}.
+متد **`HTMLTableElement.deleteRow()`** یک ردیف مشخص ({{HtmlElement("tr")}}) را از یک {{HtmlElement("table")}} حذف می‌کند.
 
 ## Syntax
 
@@ -26,22 +19,20 @@ deleteRow(index)
 ### Parameters
 
 - `index`
-  - : `index` is an integer representing the row that should be deleted.
-    However, the special index `-1` can be used to remove the very last row of
-    a table.
+  - : `index` یک عدد صحیح است که نشان می‌دهد کدام ردیف باید حذف شود. با این حال، ایندکس ویژه `-1` را می‌توان برای حذف آخرین ردیف جدول استفاده کرد.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ### Exceptions
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if `index` is greater than or equal to the number of available rows or is a negative value other than `-1`.
+  - : اگر `index` بزرگ‌تر یا مساوی تعداد ردیف‌های موجود باشد یا یک مقدار منفی به غیر از `-1` باشد، پرتاب می‌شود.
 
 ## Examples
 
-This example uses JavaScript to delete a table's second row.
+این مثال از جاوااسکریپت برای حذف ردیف دوم یک جدول استفاده می‌کند.
 
 ### HTML
 
