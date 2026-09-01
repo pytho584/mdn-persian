@@ -1,11 +1,5 @@
 ---
 title: "DOMTokenList: add() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/add"
-status: "needs-translation"
----
-
----
-title: "DOMTokenList: add() method"
 short-title: add()
 slug: Web/API/DOMTokenList/add
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.DOMTokenList.add
 
 {{APIRef("DOM")}}
 
-The **`add()`** method of the {{domxref("DOMTokenList")}} interface adds the given tokens to the list, omitting any that are already present.
+روش **`add()`** از رابط {{domxref("DOMTokenList")}} توکن‌های داده شده را به لیست اضافه می‌کند و هر توکنی که از قبل وجود دارد را نادیده می‌گیرد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 add(token1)
@@ -24,34 +18,33 @@ add(token1, token2)
 add(token1, token2, /* …, */ tokenN)
 ```
 
-### Parameters
+### پارامترها
 
 - `tokenN`
-  - : A string representing a token (or tokens) to add to the `DOMTokenList`.
+  - : یک رشته که نشان‌دهنده یک توکن (یا توکن‌هایی) است که به `DOMTokenList` اضافه می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None.
+هیچ‌کدام.
 
-### Exceptions
+### استثناها
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if one of the arguments is an empty string
+  - : اگر یکی از آرگومان‌ها یک رشته خالی باشد، پرتاب می‌شود.
 - `InvalidCharacterError` {{domxref("DOMException")}}
-  - : Thrown if a token contains ASCII whitespace.
+  - : اگر یک توکن حاوی فضای خالی ASCII باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example, we retrieve the list of classes set on a {{htmlelement("span")}} element as a `DOMTokenList`, using {{domxref("Element.classList")}}.
-We then add a new token to the list, and write the list into the `<span>`'s {{domxref("Node.textContent")}}.
+در مثال زیر، لیست کلاس‌های تنظیم شده روی یک عنصر {{htmlelement("span")}} را به عنوان یک `DOMTokenList` با استفاده از {{domxref("Element.classList")}} بازیابی می‌کنیم. سپس یک توکن جدید به لیست اضافه می‌کنیم و لیست را در {{domxref("Node.textContent")}} عنصر `<span>` می‌نویسیم.
 
-First, the HTML:
+ابتدا، HTML:
 
 ```html
 <span class="a b c"></span>
 ```
 
-Now the JavaScript:
+حالا جاوااسکریپت:
 
 ```js
 const span = document.querySelector("span");
@@ -60,20 +53,20 @@ classes.add("d");
 span.textContent = classes;
 ```
 
-The output looks like this:
+خروجی به این شکل است:
 
 {{ EmbedLiveSample('Examples', '100%', 60) }}
 
-You can add multiple tokens as well:
+همچنین می‌توانید چندین توکن را اضافه کنید:
 
 ```js
 span.classList.add("d", "e", "f");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
