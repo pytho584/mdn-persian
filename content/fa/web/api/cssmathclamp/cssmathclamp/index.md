@@ -1,11 +1,5 @@
 ---
 title: "CSSMathClamp: CSSMathClamp() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathClamp/CSSMathClamp"
-status: "needs-translation"
----
-
----
-title: "CSSMathClamp: CSSMathClamp() constructor"
 short-title: CSSMathClamp()
 slug: Web/API/CSSMathClamp/CSSMathClamp
 page-type: web-api-constructor
@@ -14,34 +8,33 @@ browser-compat: api.CSSMathClamp.CSSMathClamp
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSMathClamp()`** constructor creates a new {{domxref("CSSMathClamp")}} object representing a CSS {{CSSXref("clamp", "clamp()")}} function.
+سازنده **`CSSMathClamp()`** یک شیء جدید از نوع {{domxref("CSSMathClamp")) می‌سازد که تابع `clamp()` در CSS را نمایش می‌دهد.
 
-## Syntax
+## Syntax (نحو)
 
 ```js-nolint
 new CSSMathClamp(lower, value, upper)
 ```
 
-### Parameters
+### پارامترها
 
 - `lower`
-  - : A number or {{domxref("CSSNumericValue")}} that represents the minimum value.
+  - : یک عدد یا {{domxref("CSSNumericValue")}} که حداقل مقدار را مشخص می‌کند.
 - `value`
-  - : A number or {{domxref("CSSNumericValue")}} that represents the preferred value.
+  - : یک عدد یا {{domxref("CSSNumericValue")}} که مقدار ترجیحی را مشخص می‌کند.
 - `upper`
-  - : A number or {{domxref("CSSNumericValue")}} that represents the maximum value.
+  - : یک عدد یا {{domxref("CSSNumericValue")}} که حداکثر مقدار را مشخص می‌کند.
 
-### Exceptions
+### استثناها
 
 - [`TypeError`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError)
-  - : Thrown if the parameters have conflicting unit types.
-    For example, mixing a length value with a time value.
+  - : در صورتی که پارامترها دارای واحدهای ناسازگار باشند، پرتاب می‌شود. به عنوان مثال، ترکیب یک مقدار طول با یک مقدار زمان.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following code creates a `CSSMathClamp` instance from three lengths, then reads back its `lower`, `value`, and `upper` properties.
+کد زیر یک نمونه از `CSSMathClamp` از سه طول می‌سازد و سپس ویژگی‌های `lower`، `value` و `upper` آن را بازخوانی می‌کند.
 
 ```js
 const clamp = new CSSMathClamp(CSS.px(10), CSS.percent(50), CSS.px(500));
@@ -52,14 +45,13 @@ console.log(clamp.value); // CSSUnitValue {value: 50, unit: "percent"}
 console.log(clamp.upper); // CSSUnitValue {value: 500, unit: "px"}
 ```
 
-### Handling incompatible types
+### مدیریت نوع‌های ناسازگار
 
-The constructor throws a `TypeError` if the three arguments don't resolve to a compatible type.
-In the following code we mix a length with a time, and log the error.
+سازنده در صورتی که سه آرگومان به یک نوع سازگار تبدیل نشوند، یک `TypeError` پرتاب می‌کند. در کد زیر یک طول را با یک زمان ترکیب کرده و خطا را ثبت می‌کنیم.
 
 ```js
 try {
-  // Mixes a length (px) with a time (s): incompatible types
+  // ترکیب طول (px) با زمان (s): انواع ناسازگار
   new CSSMathClamp(CSS.px(10), CSS.s(2), CSS.px(500));
 } catch (e) {
   console.log(e instanceof TypeError); // true
@@ -67,10 +59,10 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
