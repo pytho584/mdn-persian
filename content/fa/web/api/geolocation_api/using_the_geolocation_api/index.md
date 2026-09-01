@@ -1,10 +1,4 @@
 ---
-title: "Using the Geolocation API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API"
-status: "needs-translation"
----
-
----
 title: Using the Geolocation API
 slug: Web/API/Geolocation_API/Using_the_Geolocation_API
 page-type: guide
@@ -12,28 +6,28 @@ page-type: guide
 
 {{DefaultAPISidebar("Geolocation API")}}
 
-The Geolocation API is used to retrieve the user's location, so that it can for example be used to display their position using a mapping API. This article explains the basics of how to use it.
+از API موقعیت‌یابی (Geolocation API) برای به‌دست‌آوردن موقعیت کاربر استفاده می‌شود. به‌طور مثال می‌توان از آن برای نمایش موقعیت کاربر روی نقشه با کمک یک API نقشه‌برداری استفاده کرد. این مقاله اصول استفاده از آن را توضیح می‌دهد.
 
-## The geolocation object
+## شیء موقعیت‌یابی (geolocation object)
 
-The [Geolocation API](/en-US/docs/Web/API/Geolocation) is available through the {{domxref("navigator.geolocation")}} object.
+[API موقعیت‌یابی](/en-US/docs/Web/API/Geolocation) از طریق شیء {{domxref("navigator.geolocation")}} در دسترس است.
 
-If the object exists, geolocation services are available. You can test for the presence of geolocation thusly:
+اگر این شیء وجود داشته باشد، سرویس‌های موقعیت‌یابی در دسترس هستند. می‌توانید وجود موقعیت‌یابی را به این صورت بررسی کنید:
 
 ```js
 if ("geolocation" in navigator) {
-  /* geolocation is available */
+  /* geolocation در دسترس است */
 } else {
-  /* geolocation IS NOT available */
+  /* geolocation در دسترس نیست */
 }
 ```
 
-### Getting the current position
+### به‌دست‌آوردن موقعیت فعلی
 
-To obtain the user's current location, you can call the {{domxref("Geolocation.getCurrentPosition","getCurrentPosition()")}} method. This initiates an asynchronous request to detect the user's position, and queries the positioning hardware to get up-to-date information. When the position is determined, the defined callback function is executed. You can optionally provide a second callback function to be executed if an error occurs. A third, optional, parameter is an options object where you can set the maximum age of the position returned, the time to wait for a request, and if you want high accuracy for the position.
+برای به‌دست‌آوردن موقعیت فعلی کاربر، می‌توانید متد {{domxref("Geolocation.getCurrentPosition","getCurrentPosition()")}} را فراخوانی کنید. این کار یک درخواست ناهمگام (asynchronous) برای تشخیص موقعیت کاربر آغاز می‌کند و از سخت‌افزار موقعیت‌یابی برای دریافت اطلاعات به‌روز استفاده می‌کند. وقتی موقعیت مشخص شد، تابع callback تعریف‌شده اجرا می‌شود. می‌توانید به‌طور اختیاری یک تابع callback دوم برای اجرا در صورت بروز خطا ارائه دهید. پارامتر سوم اختیاری، یک شیء options است که می‌توانید در آن حداکثر عمر مجاز موقعیت بازگشتی، مدت زمان انتظار برای درخواست، و دقت بالای موقعیت را تنظیم کنید.
 
 > [!NOTE]
-> By default, {{domxref("Geolocation.getCurrentPosition","getCurrentPosition()")}} tries to answer as fast as possible with a low accuracy result. It is useful if you need a quick answer regardless of the accuracy. Devices with a GPS, for example, can take a minute or more to get a GPS fix, so less accurate data (IP location or Wi-Fi) may be returned to `getCurrentPosition()`.
+> به‌طور پیش‌فرض، {{domxref("Geolocation.getCurrentPosition","getCurrentPosition()")}} سعی می‌کند با یک نتیجه با دقت پایین، در سریع‌ترین زمان ممکن پاسخ دهد. اگر بدون توجه به دقت، به پاسخی سریع نیاز داشته باشید مفید است. دستگاه‌های دارای GPS، برای مثال، ممکن است یک دقیقه یا بیشتر طول بکشد تا موقعیت GPS را بگیرند، بنابراین داده‌های با دقت کمتر (موقعیت IP یا Wi-Fi) ممکن است به `getCurrentPosition()` بازگردانده شوند.
 
 ```js
 navigator.geolocation.getCurrentPosition((position) => {
@@ -41,14 +35,14 @@ navigator.geolocation.getCurrentPosition((position) => {
 });
 ```
 
-The above example will cause the `doSomething()` function to execute when the location is obtained.
+مثال بالا باعث می‌شود تابع `doSomething()` هنگام به‌دست‌آمدن موقعیت اجرا شود.
 
-### Watching the current position
+### نظارت بر موقعیت فعلی
 
-If the position data changes (either by device movement or if more accurate geo information arrives), you can set up a callback function that is called with that updated position information. This is done using the {{domxref("Geolocation.watchPosition","watchPosition()")}} function, which has the same input parameters as {{domxref("Geolocation.getCurrentPosition","getCurrentPosition()")}}. The callback function is called multiple times, allowing the browser to either update your location as you move, or provide a more accurate location as different techniques are used to geolocate you. The error callback function, which is optional just as it is for `getCurrentPosition()`, can be called repeatedly.
+اگر داده‌های موقعیت تغییر کند (چه با حرکت دستگاه یا با رسیدن اطلاعات جغرافیایی دقیق‌تر)، می‌توانید یک تابع callback تنظیم کنید که با آن اطلاعات موقعیت به‌روز فراخوانی شود. این کار با استفاده از تابع {{domxref("Geolocation.watchPosition","watchPosition()")}} انجام می‌شود که همان پارامترهای ورودی {{domxref("Geolocation.getCurrentPosition","getCurrentPosition()")}} را دارد. تابع callback چندین بار فراخوانی می‌شود و به مرورگر اجازه می‌دهد یا موقعیت شما را هنگام حرکت به‌روز کند، یا با استفاده از تکنیک‌های مختلف موقعیت‌یابی، موقعیت دقیق‌تری ارائه دهد. تابع callback خطا که مانند `getCurrentPosition()` اختیاری است، می‌تواند چندین بار فراخوانی شود.
 
 > [!NOTE]
-> You can use {{domxref("Geolocation.watchPosition","watchPosition()")}} without an initial {{domxref("Geolocation.getCurrentPosition","getCurrentPosition()")}} call.
+> می‌توانید از {{domxref("Geolocation.watchPosition","watchPosition()")}} بدون فراخوانی اولیه {{domxref("Geolocation.getCurrentPosition","getCurrentPosition()")}} استفاده کنید.
 
 ```js
 const watchID = navigator.geolocation.watchPosition((position) => {
@@ -56,19 +50,19 @@ const watchID = navigator.geolocation.watchPosition((position) => {
 });
 ```
 
-The {{domxref("Geolocation.watchPosition","watchPosition()")}} method returns an ID number that can be used to uniquely identify the requested position watcher; you use this value in tandem with the {{domxref("Geolocation.clearWatch","clearWatch()")}} method to stop watching the user's location.
+متد {{domxref("Geolocation.watchPosition","watchPosition()")}} یک شماره ID بازمی‌گرداند که می‌توان از آن برای شناسایی منحصربه‌فرد ناظر موقعیت درخواست‌شده استفاده کرد؛ این مقدار را در کنار متد {{domxref("Geolocation.clearWatch","clearWatch()")}} برای توقف نظارت بر موقعیت کاربر استفاده می‌کنید.
 
 ```js
 navigator.geolocation.clearWatch(watchID);
 ```
 
-### Fine tuning the response
+### تنظیم دقیق پاسخ
 
-Both {{domxref("Geolocation.getCurrentPosition","getCurrentPosition()")}} and {{domxref("Geolocation.watchPosition","watchPosition()")}} accept a success callback, an optional error callback, and an optional options object.
+هم {{domxref("Geolocation.getCurrentPosition","getCurrentPosition()")}} و هم {{domxref("Geolocation.watchPosition","watchPosition()")}} یک callback موفقیت، یک callback خطای اختیاری، و یک شیء options اختیاری می‌پذیرند.
 
-This object allows you to specify whether to enable high accuracy, a maximum age for the returned position value (up until this age it will be cached and reused if the same position is requested again; after this the browser will request fresh position data), and a timeout value that dictates how long the browser should attempt to get the position data for, before it times out.
+این شیء به شما امکان می‌دهد مشخص کنید که آیا دقت بالا فعال شود، حداکثر عمر برای مقدار موقعیت بازگشتی (تا این سن، مقدار در حافظه نهان ذخیره و در صورت درخواست مجدد همان موقعیت استفاده مجدد می‌شود؛ پس از آن مرورگر داده‌های موقعیت جدیدی درخواست می‌کند)، و یک مقدار timeout که تعیین می‌کند مرورگر چقدر باید برای دریافت داده‌های موقعیت تلاش کند، قبل از اینکه زمان آن تمام شود.
 
-A call to {{domxref("Geolocation.watchPosition","watchPosition")}} could look like:
+یک فراخوانی {{domxref("Geolocation.watchPosition","watchPosition")}} می‌تواند به این شکل باشد:
 
 ```js
 function success(position) {
@@ -76,7 +70,7 @@ function success(position) {
 }
 
 function error() {
-  alert("Sorry, no position available.");
+  alert("متأسفیم، موقعیتی در دسترس نیست.");
 }
 
 const options = {
@@ -88,30 +82,30 @@ const options = {
 const watchID = navigator.geolocation.watchPosition(success, error, options);
 ```
 
-## Describing a position
+## توصیف یک موقعیت
 
-The user's location is described using a {{domxref("GeolocationPosition")}} object instance, which itself contains a {{domxref("GeolocationCoordinates")}} object instance.
+موقعیت کاربر با استفاده از یک نمونه از شیء {{domxref("GeolocationPosition")}} توصیف می‌شود که خود شامل یک نمونه از شیء {{domxref("GeolocationCoordinates")}} است.
 
-The `GeolocationPosition` instance contains only two things, a `coords` property that contains the `GeolocationCoordinates` instance, and a `timestamp` property that contains a timestamp, given as {{Glossary("Unix time")}} in milliseconds, at which the position data was retrieved.
+نمونه `GeolocationPosition` فقط دو چیز دارد: یک ویژگی `coords` که شامل نمونه `GeolocationCoordinates` است، و یک ویژگی `timestamp` که شامل یک برچسب زمانی (timestamp) بر حسب میلی‌ثانیه از زمان یونیکس ({{Glossary("Unix time")}}) است که داده‌های موقعیت در آن زمان بازیابی شده‌اند.
 
-The `GeolocationCoordinates` instance contains a number of properties, but the two you'll use most commonly are `latitude` and `longitude`, which are what you need to draw your position on a map. Hence many Geolocation success callbacks look fairly simple:
+نمونه `GeolocationCoordinates` شامل تعدادی ویژگی است، اما دو موردی که بیشتر استفاده می‌کنید `latitude` و `longitude` هستند که برای رسم موقعیت روی نقشه نیاز دارید. بنابراین بسیاری از callbackهای موفقیت موقعیت‌یابی نسبتاً ساده به نظر می‌رسند:
 
 ```js
 function success(position) {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
 
-  // Do something with your latitude and longitude
+  // کار با طول و عرض جغرافیایی خود
 }
 ```
 
-You can however get a number of other bits of information from a `GeolocationCoordinates` object, including altitude, speed, what direction the device is facing, and an accuracy measure of the altitude, longitude, and latitude data.
+با این حال می‌توانید اطلاعات دیگری را نیز از یک شیء `GeolocationCoordinates` به‌دست آورید، از جمله ارتفاع، سرعت، جهت دستگاه، و اندازه‌گیری دقت داده‌های ارتفاع، طول و عرض جغرافیایی.
 
-## Handling errors
+## مدیریت خطاها
 
-The error callback function, if provided when calling `getCurrentPosition()` or `watchPosition()`, expects a [`GeolocationPositionError`](/en-US/docs/Web/API/GeolocationPositionError) object instance as its first parameter. This object type contains two properties, a `code` indicating what type of error has been returned, and a human-readable `message` that describes what the error code means.
+تابع callback خطا، در صورت ارائه هنگام فراخوانی `getCurrentPosition()` یا `watchPosition()`، انتظار دارد یک نمونه از شیء [`GeolocationPositionError`](/en-US/docs/Web/API/GeolocationPositionError) به عنوان اولین پارامتر خود دریافت کند. این نوع شیء شامل دو ویژگی است: یک `code` که نشان می‌دهد چه نوع خطایی بازگشته، و یک `message` قابل خواندن برای انسان که توضیح می‌دهد کد خطا به چه معناست.
 
-You could use it like so:
+می‌توانید از آن به این صورت استفاده کنید:
 
 ```js
 function errorCallback(error) {
@@ -119,9 +113,9 @@ function errorCallback(error) {
 }
 ```
 
-## Examples
+## مثال‌ها
 
-In the following example the Geolocation API is used to retrieve the user's latitude and longitude. If successful, the available hyperlink is populated with an `openstreetmap.org` URL that will show their location.
+در مثال زیر از API موقعیت‌یابی برای بازیابی طول و عرض جغرافیایی کاربر استفاده می‌شود. در صورت موفقیت، پیوند در دسترس با یک آدرس URL `openstreetmap.org` پر می‌شود که موقعیت کاربر را نشان می‌دهد.
 
 ```css hidden
 body {
@@ -137,9 +131,9 @@ button {
 ### HTML
 
 ```html
-<button id="find-me">Show my location</button><br />
+<button id="find-me">نمایش موقعیت من</button><br />
 <p id="status"></p>
-<a id="map-link" href="" target="_blank">Location unknown</a>
+<a id="map-link" href="" target="_blank">موقعیت نامشخص</a>
 ```
 
 ### JavaScript
@@ -158,17 +152,17 @@ function geoFindMe() {
 
     status.textContent = "";
     mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-    mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+    mapLink.textContent = `عرض جغرافیایی: ${latitude} °، طول جغرافیایی: ${longitude} °`;
   }
 
   function error() {
-    status.textContent = "Unable to retrieve your location";
+    status.textContent = "امکان بازیابی موقعیت شما وجود ندارد";
   }
 
   if (!navigator.geolocation) {
-    status.textContent = "Geolocation is not supported by your browser";
+    status.textContent = "مرورگر شما از موقعیت‌یابی پشتیبانی نمی‌کند";
   } else {
-    status.textContent = "Locating…";
+    status.textContent = "در حال مکان‌یابی…";
     navigator.geolocation.getCurrentPosition(success, error);
   }
 }
@@ -176,10 +170,10 @@ function geoFindMe() {
 document.querySelector("#find-me").addEventListener("click", geoFindMe);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Examples', 350, 150, "", "", "", "geolocation")}}
 
-## See also
+## همچنین ببینید
 
-- {{htmlelement("geolocation")}} element
+- عنصر {{htmlelement("geolocation")}}
