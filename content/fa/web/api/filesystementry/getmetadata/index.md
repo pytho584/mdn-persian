@@ -1,11 +1,5 @@
 ---
 title: "FileSystemEntry: getMetadata() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/getMetadata"
-status: "needs-translation"
----
-
----
-title: "FileSystemEntry: getMetadata() method"
 short-title: getMetadata()
 slug: Web/API/FileSystemEntry/getMetadata
 page-type: web-api-instance-method
@@ -17,44 +11,36 @@ browser-compat: api.FileSystemEntry.getMetadata
 
 {{APIRef("File and Directory Entries API")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The {{domxref("FileSystemEntry")}} interface's method
-**`getMetadata()`** obtains a
-{{domxref("Metadata")}} object with information about the file system entry, such as
-its modification date and time and its size.
+در رابط {{domxref("FileSystemEntry")}}، متد **`getMetadata()`** یک شیء {{domxref("Metadata")}} حاوی اطلاعاتی دربارهٔ ورودی سیستم فایل، مانند تاریخ و زمان آخرین تغییر و اندازهٔ آن، دریافت می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getMetadata(successCallback)
 getMetadata(successCallback, errorCallback)
 ```
 
-### Parameters
+### پارامترها
 
 - `successCallback`
-  - : A function which is called when the copy operation is successfully completed.
-    Receives a single input parameter: a {{domxref("Metadata")}} object with information
-    about the file.
+  - : تابعی که پس از اتمام موفقیت‌آمیز عملیات کپی فراخوانی می‌شود. این تابع یک پارامتر ورودی دریافت می‌کند: یک شیء {{domxref("Metadata")}} حاوی اطلاعات مربوط به فایل.
 - `errorCallback` {{optional_inline}}
-  - : An optional callback which is executed if an error occurs while looking up the
-    metadata. There's a single parameter: a {{domxref("DOMException")}} describing what went
-    wrong.
+  - : یک callback اختیاری که در صورت بروز خطا هنگام جستجوی فراداده (metadata) اجرا می‌شود. این تابع یک پارامتر دارد: یک {{domxref("DOMException")}} که نوع خطا را توصیف می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `DOMException.NOT_FOUND_ERR`
-  - : The {{domxref("FileSystemEntry")}} refers to an item which doesn't exist.
+  - : {{domxref("FileSystemEntry")}} به یک آیتم اشاره دارد که وجود ندارد.
 - `DOMException.SECURITY_ERR`
-  - : Security restrictions prohibit obtaining the requested metadata.
+  - : محدودیت‌های امنیتی از دریافت فرادادهٔ درخواست‌شده جلوگیری می‌کنند.
 
-## Examples
+## مثال
 
-This example checks the size of a log file in a temporary folder and, if it exceeds a
-megabyte, moves it into a different directory.
+این مثال اندازهٔ یک فایل لاگ را در یک پوشهٔ موقت بررسی می‌کند و اگر از یک مگابایت بزرگ‌تر باشد، آن را به پوشهٔ دیگری منتقل می‌کند.
 
 ```js
 workingDirectory.getFile(
@@ -78,10 +64,10 @@ workingDirectory.getFile(
 );
 ```
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
+- [API ورودی‌های فایل و دایرکتوری](/en-US/docs/Web/API/File_and_Directory_Entries_API)
