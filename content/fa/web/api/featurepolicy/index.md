@@ -1,10 +1,4 @@
 ---
-title: "FeaturePolicy"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FeaturePolicy"
-status: "needs-translation"
----
-
----
 title: FeaturePolicy
 slug: Web/API/FeaturePolicy
 page-type: web-api-interface
@@ -16,28 +10,28 @@ browser-compat: api.FeaturePolicy
 
 {{APIRef("Feature Policy")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The `FeaturePolicy` interface represents the set of [Permissions Policies](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) applied to the current execution context.
+رابط `FeaturePolicy` نشان‌دهنده مجموعه‌ای از [سیاست‌های مجوز (Permissions Policies)](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) است که در بستر اجرای فعلی اعمال می‌شوند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{DOMxRef("FeaturePolicy.allowsFeature")}} {{Experimental_Inline}} {{non-standard_inline}}
-  - : Returns a Boolean that indicates whether or not a particular feature is enabled in the specified context.
+  - : یک مقدار Boolean برمی‌گرداند که نشان می‌دهد آیا یک ویژگی خاص در بستر مشخص‌شده فعال است یا خیر.
 - {{DOMxRef("FeaturePolicy.features")}} {{Experimental_Inline}} {{non-standard_inline}}
-  - : Returns a list of names of all features supported by the User Agent. Features whose names appear on the list might not be allowed by the Permissions Policy of the current execution context and/or might be restricted by user-granted permissions.
+  - : فهرستی از نام‌های تمام ویژگی‌های پشتیبانی‌شده توسط عامل کاربر (User Agent) برمی‌گرداند. ویژگی‌هایی که نام آنها در این فهرست ظاهر می‌شود ممکن است توسط سیاست مجوز (Permissions Policy) بستر اجرای فعلی مجاز نباشند و/یا توسط مجوزهای اعطاشده توسط کاربر محدود شده باشند.
 - {{DOMxRef("FeaturePolicy.allowedFeatures")}} {{Experimental_Inline}} {{non-standard_inline}}
-  - : Returns a list of names of all features supported by the User Agent and allowed by the Permissions Policy. Note that features appearing on this list might still be behind a user permission.
+  - : فهرستی از نام‌های تمام ویژگی‌های پشتیبانی‌شده توسط عامل کاربر (User Agent) و مجاز توسط سیاست مجوز (Permissions Policy) برمی‌گرداند. توجه داشته باشید که ویژگی‌های ظاهر شده در این فهرست ممکن است همچنان نیازمند مجوز کاربر باشند.
 - {{DOMxRef("FeaturePolicy.getAllowlistForFeature")}} {{Experimental_Inline}} {{non-standard_inline}}
-  - : Returns the allow for the specified feature.
+  - : مجوز مجاز (allow) برای ویژگی مشخص‌شده را برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Permissions-Policy")}}
-- [Privacy, permissions, and information security](/en-US/docs/Web/Privacy)
+- [حریم خصوصی، مجوزها و امنیت اطلاعات](/en-US/docs/Web/Privacy)
