@@ -1,11 +1,5 @@
 ---
 title: "Event: currentTarget property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget"
-status: "needs-translation"
----
-
----
-title: "Event: currentTarget property"
 short-title: currentTarget
 slug: Web/API/Event/currentTarget
 page-type: web-api-instance-property
@@ -14,25 +8,25 @@ browser-compat: api.Event.currentTarget
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`currentTarget`** read-only property of the {{domxref("Event")}} interface identifies the element to which the event handler has been attached.
+ویژگی فقط‌خواندنی **`currentTarget`** از رابط {{domxref("Event")}}، عنصری را مشخص می‌کند که رویداد‌گردان (event handler) به آن متصل شده است.
 
-This will not always be the same as the element on which the event was fired, because the event may have fired on a descendant of the element with the handler, and then [bubbled](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) up to the element with the handler. The element on which the event was fired is given by {{domxref("Event.target")}}.
+این مقدار همیشه با عنصری که رویداد روی آن رخ داده یکسان نیست؛ زیرا ممکن است رویداد روی یک عنصر فرزند از عنصر دارای رویداد‌گردان رخ داده باشد و سپس به سمت بالا [حباب کند](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) و به عنصر دارای رویداد‌گردان برسد. عنصری که رویداد روی آن رخ داده است توسط {{domxref("Event.target")}} مشخص می‌شود.
 
-Note that the value of `currentTarget` is only available in a handler for the event. Outside an event handler it will be `null`. This means that, for example, if you take a reference to the `Event` object inside an event handler and then access its `currentTarget` property outside the event handler, its value will be `null`.
+توجه داشته باشید که مقدار `currentTarget` فقط در یک رویداد‌گردان برای آن رویداد در دسترس است. خارج از رویداد‌گردان، مقدار آن `null` خواهد بود. این بدان معناست که مثلاً اگر در داخل یک رویداد‌گردان مرجعی از شیء `Event` بگیرید و سپس به ویژگی `currentTarget` آن در خارج از رویداد‌گردان دسترسی پیدا کنید، مقدار آن `null` خواهد بود.
 
-## Value
+## مقدار
 
-An {{domxref("EventTarget")}} representing the object to which the current event handler is attached.
+یک {{domxref("EventTarget")}} که نشان‌دهنده شیئی است که رویداد‌گردان فعلی به آن متصل شده است.
 
-## Examples
+## مثال‌ها
 
-### currentTarget versus target
+### currentTarget در برابر target
 
-This example illustrates the difference between `currentTarget` and `target`.
+این مثال تفاوت بین `currentTarget` و `target` را نشان می‌دهد.
 
 #### HTML
 
-The page has a "parent" {{htmlelement("div")}} containing a "child" `<div>`.
+صفحه شامل یک {{htmlelement("div")}} «والد» است که یک `<div>` «فرزند» درون آن قرار دارد.
 
 ```html
 <div id="parent">
@@ -59,9 +53,9 @@ div {
 
 #### JavaScript
 
-The event handler is attached to the parent. It logs the value of `event.currentTarget` and `event.target`.
+رویداد‌گردان به عنصر والد متصل شده است. این رویداد‌گردان مقدار `event.currentTarget` و `event.target` را ثبت می‌کند.
 
-We also have a "Reset" button that just reloads the example.
+همچنین یک دکمه «Reset» داریم که فقط مثال را دوباره بارگذاری می‌کند.
 
 ```js
 const output = document.querySelector("#output");
@@ -77,22 +71,22 @@ const reset = document.querySelector("#reset");
 reset.addEventListener("click", () => document.location.reload());
 ```
 
-#### Result
+#### نتیجه
 
-If you click inside the child `<div>`, then `target` identifies the child. If you click inside the parent `<div>`, then `target` identifies the parent.
+اگر روی `<div>` فرزند کلیک کنید، `target` عنصر فرزند را مشخص می‌کند. اگر روی `<div>` والد کلیک کنید، `target` عنصر والد را مشخص می‌کند.
 
-In both cases, `currentTarget` identifies the parent, because that's the element that the handler is attached to.
+در هر دو حالت، `currentTarget` عنصر والد را مشخص می‌کند، زیرا این عنصری است که رویداد‌گردان به آن متصل شده است.
 
 {{EmbedLiveSample("currentTarget versus target", 100, 250)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Learn: Event bubbling](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling)
+- [یادگیری: حباب رویداد](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling)
