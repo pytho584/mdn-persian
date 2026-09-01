@@ -1,11 +1,5 @@
 ---
 title: "DOMRectReadOnly: right property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/right"
-status: "needs-translation"
----
-
----
-title: "DOMRectReadOnly: right property"
 short-title: right
 slug: Web/API/DOMRectReadOnly/right
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.DOMRectReadOnly.right
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`right`** read-only property of the **`DOMRectReadOnly`** interface returns the right coordinate value of the `DOMRect`. (Has the same value as `x + width`, or `x` if `width` is negative.)
+ویژگی‌ی فقط‌خواندنی **`right`** در رابط **`DOMRectReadOnly`** مقدار مختصات راستِ `DOMRect` را برمی‌گرداند. (این مقدار با `x + width` برابر است، یا اگر `width` منفی باشد، با `x`.)
 
-## Value
+## مقدار
 
-A double.
+یک عدد اعشاری (double).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMRect")}}
