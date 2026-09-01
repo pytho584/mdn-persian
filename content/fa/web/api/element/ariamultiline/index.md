@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaMultiLine property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaMultiLine"
-status: "needs-translation"
----
-
----
-title: "Element: ariaMultiLine property"
 short-title: ariaMultiLine
 slug: Web/API/Element/ariaMultiLine
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.Element.ariaMultiLine
 
 {{APIRef("DOM")}}
 
-The **`ariaMultiLine`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-multiline`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiline) attribute, which indicates whether a text box accepts multiple lines of input or only a single line.
+ویژگی **`ariaMultiLine`** از رابط {{domxref("Element")}} مقدار ویژگی [`aria-multiline`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiline) را منعکس می‌کند که مشخص می‌کند آیا یک جعبهٔ متن چند خط ورودی می‌پذیرد یا فقط یک خط.
 
 > [!NOTE]
-> Where possible use an HTML {{htmlelement("input")}} element with `type="text"` or a {{htmlelement("textarea")}} as these have built in semantics and do not require ARIA attributes.
+> در صورت امکان، از عنصر HTML {{htmlelement("input")}} با `type="text"` یا {{htmlelement("textarea")}} استفاده کنید؛ زیرا این عناصر به‌صورت داخلی معنادار هستند و به ویژگی‌های ARIA نیاز ندارند.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"true"`
-  - : This is a multi-line text box.
+  - : این یک جعبه متن چندخطی است.
 - `"false"`
-  - : This is a single-line text box.
+  - : این یک جعبه متن تک‌خطی است.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-multiline` attribute on the element with an ID of `txtBoxInput` is set to "true" indicating that this box allows for multiple lines of input. Using `ariaMultiLine` we update the value to "false".
+در این مثال، ویژگی `aria-multiline` روی عنصری با شناسه `txtBoxInput` روی «true» تنظیم شده است که نشان می‌دهد این جعبه امکان ورود چند خط را فراهم می‌کند. با استفاده از `ariaMultiLine` مقدار را به «false» به‌روزرسانی می‌کنیم.
 
 ```html
 <div id="txtboxMultilineLabel">Enter the tags for the article</div>
@@ -50,14 +44,14 @@ el.ariaMultiLine = "false";
 console.log(el.ariaMultiLine); // "false"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: textbox role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
+- [نقش textbox در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
