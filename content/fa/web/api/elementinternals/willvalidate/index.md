@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: willValidate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/willValidate"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: willValidate property"
 short-title: willValidate
 slug: Web/API/ElementInternals/willValidate
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.ElementInternals.willValidate
 
 {{APIRef("Web Components")}}
 
-The **`willValidate`** read-only property of the {{domxref("ElementInternals")}} interface returns `true` if the element is a submittable element that is a candidate for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+ویژگی فقط-خواندنی **`willValidate`** از رابط {{domxref("ElementInternals")}}، مقدار `true` را برمی‌گرداند اگر عنصر، یک عنصر قابل ارسال (submittable) باشد که کاندیدای [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) است.
 
-Elements that are barred from being candidates for constraint validation include those that have the attributes: `disabled`, `hidden` or `readonly`, input elements of `type=button` or `type=reset`, or any element that is a {{htmlelement("datalist")}} element or has a `<datalist>` element ancestor.
+عناصری که از کاندیدا بودن برای اعتبارسنجی محدودیت‌ها منع شده‌اند شامل آنهایی هستند که ویژگی‌های `disabled`، `hidden` یا `readonly` را دارند، عناصر ورودی از نوع `type=button` یا `type=reset`، یا هر عنصری که یک عنصر {{htmlelement("datalist")}} باشد یا دارای یک عنصر جد `<datalist>` باشد.
 
-## Value
+## مقدار
 
-`true` if the element is a candidate for constraint validation, otherwise `false`.
+اگر عنصر کاندیدای اعتبارسنجی محدودیت‌ها باشد `true`، در غیر این صورت `false`.
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the element does not have its `formAssociated` property set to `true`.
+  - اگر عنصر ویژگی `formAssociated` خود را برابر `true` تنظیم نکرده باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example shows a custom checkbox component with `formAssociated` set to `true`, the value of `willValidate` is logged to the console.
+مثال زیر یک مؤلفه چک‌باکس سفارشی را نشان می‌دهد که در آن `formAssociated` برابر `true` تنظیم شده است؛ مقدار `willValidate` در کنسول ثبت می‌شود.
 
 ```js
 class CustomCheckbox extends HTMLElement {
@@ -49,10 +43,10 @@ let element = document.getElementById("custom-checkbox");
 console.log(element.internals_.willValidate); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
