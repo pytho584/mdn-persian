@@ -1,11 +1,5 @@
 ---
 title: "HTMLOutputElement: validity property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement/validity"
-status: "needs-translation"
----
-
----
-title: "HTMLOutputElement: validity property"
 short-title: validity
 slug: Web/API/HTMLOutputElement/validity
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLOutputElement.validity
 
 {{APIRef("HTML DOM")}}
 
-The **`validity`** read-only property of the {{domxref("HTMLOutputElement")}} interface returns a {{domxref("ValidityState")}} object that represents the validity states this element is in. Although {{HTMLElement("output")}} elements are never candidates for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation), the validity state may still be invalid if a custom validity message has been set.
+ویژگی فقط‌خواندنی **`validity`** در رابط {{domxref("HTMLOutputElement")}} یک شیء {{domxref("ValidityState")}} برمی‌گرداند که وضعیت‌های اعتبار این عنصر را نشان می‌دهد. اگرچه عناصر {{HTMLElement("output")}} هرگز نامزد [اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation) نیستند، اما اگر پیام اعتبار سفارشی تنظیم شده باشد، وضعیت اعتبار همچنان ممکن است نامعتبر باشد.
 
-## Value
+## مقدار
 
-A {{domxref("ValidityState")}} object.
+یک شیء {{domxref("ValidityState")}}.
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates that an `<output>` is in an invalid state when a {{domxref("ValidityState/customError", "customError")}} is set; in this state, {{domxref("HTMLOutputElement/checkValidity", "checkValidity()")}} returns `true` while the `validityState`'s `validity` property is `false`.
+مثال زیر نشان می‌دهد که یک `<output>` زمانی در وضعیت نامعتبر قرار می‌گیرد که یک {{domxref("ValidityState/customError", "customError")}} تنظیم شده باشد؛ در این حالت، {{domxref("HTMLOutputElement/checkValidity", "checkValidity()")}} مقدار `true` برمی‌گرداند، در حالی که ویژگی `validity` در `validityState` برابر `false` است.
 
 ```js
 const output = document.getElementById("myOutput");
@@ -33,18 +27,18 @@ console.log(validityState.customError); // true
 console.log(output.checkValidity()); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLOutputElement.checkValidity()")}}
 - {{HTMLElement("output")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation)
