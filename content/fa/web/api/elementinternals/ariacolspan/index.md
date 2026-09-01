@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaColSpan property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaColSpan"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaColSpan property"
 short-title: ariaColSpan
 slug: Web/API/ElementInternals/ariaColSpan
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.ElementInternals.ariaColSpan
 
 {{APIRef("Web Components")}}
 
-The **`ariaColSpan`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan) attribute, which defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid.
+ویژگی **`ariaColSpan`** از رابط {{domxref("ElementInternals")}} مقدار ویژگی [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan) را بازتاب می‌دهد که تعداد ستون‌های پوشش‌داده‌شده توسط یک سلول یا سلول شبکه‌ای را در یک جدول، شبکه یا درخت‌شبکه تعریف می‌کند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. این ویژگی‌ها ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما در صورت حذف آن ویژگی‌ها توسط نویسنده یا عدم افزودن آن‌ها، اطمینان از حفظ معناشناسی پیش‌فرض می‌دهند. برای اطلاعات بیشتر، [توضیح مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) را ببینید.
 
-## Value
+## مقدار
 
-A string which contains an integer.
+رشته‌ای که شامل یک عدد صحیح است.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaColspan` is set to "2".
+در این مثال مقدار `ariaColspan` روی «2» تنظیم شده است.
 
 ```js
 class CustomEl extends HTMLElement {
@@ -38,14 +32,14 @@ class CustomEl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
+- [ARIA: نقش table](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
