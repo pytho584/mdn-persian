@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: queue property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/queue"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: queue property"
 short-title: queue
 slug: Web/API/GPUDevice/queue
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.GPUDevice.queue
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`queue`** read-only property of the
-{{domxref("GPUDevice")}} interface returns the primary {{domxref("GPUQueue")}} for the device.
+ویژصیت فقط‌خواندنی **`queue`** در رابط {{domxref("GPUDevice")}}، صف اصلی {{domxref("GPUQueue")}} مربوط به دستگاه را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("GPUQueue")}} object instance.
+یک نمونه از شیء {{domxref("GPUQueue")}}.
 
-## Examples
+## مثال‌ها
 
-Basic {{domxref("GPUQueue")}} access:
+دسترسی پایه به {{domxref("GPUQueue")}}:
 
 ```js
 async function init() {
@@ -50,16 +43,16 @@ async function init() {
 ```
 
 > [!NOTE]
-> For more queue examples, see the {{domxref("GPUQueue")}} reference pages.
+> برای مشاهده مثال‌های بیشتر درباره صف، به صفحات مرجع {{domxref("GPUQueue")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
