@@ -1,12 +1,5 @@
 ---
 title: "Element: mousedown event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event"
-status: "needs-translation"
----
-
----
-title: "Element: mousedown event"
-short-title: mousedown
 slug: Web/API/Element/mousedown_event
 page-type: web-api-event
 browser-compat: api.Element.mousedown_event
@@ -14,15 +7,15 @@ browser-compat: api.Element.mousedown_event
 
 {{APIRef("UI Events")}}
 
-The **`mousedown`** event is fired at an {{domxref("Element")}} when a pointing device button is pressed while the pointer is inside the element.
+رویداد **`mousedown`** زمانی روی یک {{domxref("Element")}} فعال می‌شود که دکمه‌ای از دستگاه اشاره‌گر (مانند ماوس) در حالی که نشانگر داخل آن عنصر قرار دارد، فشرده شود.
 
-This differs from the {{domxref("Element/click_event", "click")}} event in that `click` is fired after a full click action occurs; that is, the mouse button is pressed and released while the pointer remains inside the same element. `mousedown` is fired the moment the button is initially pressed.
+این رویداد با رویداد {{domxref("Element/click_event", "click")}} تفاوت دارد؛ زیرا `click` پس از انجام کامل یک کلیک فعال می‌شود؛ یعنی دکمه ماوس فشرده و رها می‌شود در حالی که نشانگر همچنان داخل همان عنصر باقی مانده است. اما `mousedown` در همان لحظه‌ای که دکمه ابتدا فشرده می‌شود، فعال می‌گردد.
 
-This behavior is different from {{domxref("Element/pointerdown_event", "pointerdown")}} events. When using a physical mouse, `mousedown` events fire whenever any button on a mouse is pressed down. `pointerdown` events fire only upon the first button press; subsequent button presses don't fire `pointerdown` events.
+این رفتار با رویدادهای {{domxref("Element/pointerdown_event", "pointerdown")}} نیز متفاوت است. هنگام استفاده از ماوس فیزیکی، رویدادهای `mousedown` هر بار که هر دکمه‌ای از ماوس فشرده شود، فعال می‌شوند. اما رویدادهای `pointerdown` فقط با فشردن اولین دکمه فعال می‌شوند؛ فشردن دکمه‌های بعدی رویداد `pointerdown` را فعال نمی‌کند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی مدیریت‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("mousedown", (event) => { })
@@ -30,27 +23,27 @@ addEventListener("mousedown", (event) => { })
 onmousedown = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MouseEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("MouseEvent")}}. از {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث برده است.
 
 {{InheritanceDiagram("MouseEvent")}}
 
-## Examples
+## مثال‌ها
 
-See [`mousemove` event](/en-US/docs/Web/API/Element/mousemove_event#examples) for example code.
+برای کدهای نمونه، به [رویداد `mousemove`](/en-US/docs/Web/API/Element/mousemove_event#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Learn: Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
+- [یادگیری: آشنایی با رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events)
 - {{domxref("Element/mouseup_event", "mouseup")}}
 - {{domxref("Element/mousemove_event", "mousemove")}}
 - {{domxref("Element/click_event", "click")}}
