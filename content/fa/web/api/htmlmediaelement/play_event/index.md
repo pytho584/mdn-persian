@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: play event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play_event"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: play event"
 short-title: play
 slug: Web/API/HTMLMediaElement/play_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLMediaElement.play_event
 
 {{APIRef("HTMLMediaElement")}}
 
-The `play` event is fired when the `paused` property is changed from `true` to `false`, as a result of the `play` method, or the `autoplay` attribute.
+رویداد `play` زمانی فعال میشود که خاصیت `paused` از `true` به `false` تغییر کند؛ این تغییر میتواند در نتیجهٔ فراخوانی متد `play` یا به دلیل ویژگی `autoplay` رخ دهد.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو (cancelable) نیست و در درخت DOM منتشر (bubble) نمیشود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای مدیریت این رویداد میتوانید نام رویداد را در روشهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید یا از ویژگیِ handler رویداد استفاده کنید.
 
 ```js-nolint
 addEventListener("play", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("play", (event) => { })
 onplay = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثالها
 
-These examples add an event listener for the HTMLMediaElement's `play` event, then post a message when that event handler has reacted to the event firing.
+در این مثالها، یک شنوندهٔ رویداد برای رویداد `play` عنصر HTMLMediaElement اضافه شده و سپس وقتی آن شنونده به فعال شدن رویداد واکنش نشان دهد، یک پیام ثبت میشود.
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const video = document.querySelector("video");
@@ -48,7 +42,7 @@ video.addEventListener("play", (event) => {
 });
 ```
 
-Using the `onplay` event handler property:
+استفاده از ویژگیِ handler رویداد `onplay`:
 
 ```js
 const video = document.querySelector("video");
@@ -60,35 +54,35 @@ video.onplay = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## Related Events
+## رویدادهای مرتبط
 
-- The HTMLMediaElement {{domxref("HTMLMediaElement.playing_event", 'playing')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ended_event", 'ended')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.canplaythrough_event", 'canplaythrough')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.timeupdate_event", 'timeupdate')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.pause_event", 'pause')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.stalled_event", 'stalled')}} event
+- رویداد {{domxref("HTMLMediaElement.playing_event", 'playing')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeked_event", 'seeked')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.ended_event", 'ended')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.canplay_event", 'canplay')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.canplaythrough_event", 'canplaythrough')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.timeupdate_event", 'timeupdate')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.pause_event", 'pause')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.suspend_event", 'suspend')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} عنصر HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.stalled_event", 'stalled')}} عنصر HTMLMediaElement
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAudioElement")}}
 - {{domxref("HTMLVideoElement")}}
