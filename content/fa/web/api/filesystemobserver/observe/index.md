@@ -1,11 +1,5 @@
 ---
 title: "FileSystemObserver: observe() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemObserver/observe"
-status: "needs-translation"
----
-
----
-title: "FileSystemObserver: observe() method"
 short-title: observe()
 slug: Web/API/FileSystemObserver/observe
 page-type: web-api-instance-method
@@ -17,56 +11,55 @@ browser-compat: api.FileSystemObserver.observe
 
 {{securecontext_header}}{{APIRef("File System API")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`observe()`** method of the
-{{domxref("FileSystemObserver")}} interface asks the observer to start observing changes to a given file or directory.
+متد **`observe()`** از رابط {{domxref("FileSystemObserver")}} از ناظر می‌خواهد که نظارت بر تغییرات یک فایل یا دایرکتوری مشخص را آغاز کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 observe(handle)
 observe(handle, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `handle`
-  - : The handle of the file system entry representing the file or directory to observe.
-    - For the user-observable file system, this can be a {{domxref("FileSystemFileHandle")}} or a {{domxref("FileSystemDirectoryHandle")}}.
-    - For the [Origin Private File System](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) (OPFS), it can be a {{domxref("FileSystemFileHandle")}}, a {{domxref("FileSystemDirectoryHandle")}}, or a {{domxref("FileSystemSyncAccessHandle")}}.
+  - : شناسه‌ی ورودی (handle) مربوط به درونداد سیستم فایل که فایل یا دایرکتوری مورد نظر برای نظارت را نمایش می‌دهد.
+    - برای سیستم فایل قابل مشاهده توسط کاربر (user-observable file system)، این می‌تواند یک {{domxref("FileSystemFileHandle")}} یا {{domxref("FileSystemDirectoryHandle")}} باشد.
+    - برای [سیستم فایل خصوصی مبدأ](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) (OPFS)، می‌تواند یک {{domxref("FileSystemFileHandle")}}، {{domxref("FileSystemDirectoryHandle")}}، یا {{domxref("FileSystemSyncAccessHandle")}} باشد.
 
 - `options` {{optional_inline}}
-  - : An object specifying options for the `observe()` call. This can contain the following properties:
+  - : یک شیء که گزینه‌های فراخوانی `observe()` را مشخص می‌کند. می‌تواند شامل ویژگی‌های زیر باشد:
     - `recursive`
-      - : A boolean specifying whether you want to observe changes to a directory recursively. If set to `true`, changes are observed in the directory itself and all contained subdirectories and files. If set to `false`, changes are only observed in the directory itself and directly contained files (that is, files in subdirectories are excluded). Defaults to `false`.
+      - : یک مقدار بولی که مشخص می‌کند آیا می‌خواهید تغییرات یک دایرکتوری را به صورت بازگشتی (recursive) نظارت کنید. اگر `true` باشد، تغییرات در خود دایرکتوری و تمام زیرشاخه‌ها و فایل‌های درون آن نظارت می‌شود. اگر `false` باشد، تنها تغییرات در خود دایرکتوری و فایل‌های مستقیم درون آن (یعنی فایل‌های داخل زیرشاخه‌ها مستثنی هستند) نظارت می‌شود. مقدار پیش‌فرض `false` است.
 
-        This property has no effect if `handle` represents a file.
+        این ویژگی اگر `handle` نمایانگر یک فایل باشد، تأثیری ندارد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to {{jsxref('undefined')}}.
+یک {{jsxref("Promise")}} که به {{jsxref('undefined')}} حل می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the file or directory represented by `handle` could not be found.
+  - : اگر فایل یا دایرکتوری که توسط `handle` نمایش داده شده پیدا نشود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Observe a file or directory
+### نظارت بر یک فایل یا دایرکتوری
 
-Assuming a `FileSystemObserver` instance is available, you can start observing changes to a file system entry by calling `observe()`.
+با فرض اینکه یک نمونه از `FileSystemObserver` در دسترس است، می‌توانید با فراخوانی `observe()` نظارت بر تغییرات یک درونداد سیستم فایل را آغاز کنید.
 
-You can observe a file or directory in the user-observable file system or the [Origin Private File System](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) (OPFS) by passing a {{domxref("FileSystemFileHandle")}} or {{domxref("FileSystemDirectoryHandle")}} to `observe()`. Instances of these objects can be returned, for example, when asking the user to select a file or directory using {{domxref("Window.showSaveFilePicker()")}} or {{domxref("Window.showDirectoryPicker()")}}:
+می‌توانید با ارسال یک {{domxref("FileSystemFileHandle")}} یا {{domxref("FileSystemDirectoryHandle")}} به `observe()`، یک فایل یا دایرکتوری در سیستم فایل قابل مشاهده توسط کاربر یا [سیستم فایل خصوصی مبدأ (OPFS)](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) را نظارت کنید. نمونه‌های این اشیاء می‌توانند مثلاً زمانی که کاربر با استفاده از {{domxref("Window.showSaveFilePicker()")}} یا {{domxref("Window.showDirectoryPicker()")}} یک فایل یا دایرکتوری را انتخاب می‌کند، بازگردانده شوند:
 
 ```js
-// Observe a file
+// نظارت بر یک فایل
 async function observeFile() {
   const fileHandle = await window.showSaveFilePicker();
 
   await observer.observe(fileHandle);
 }
 
-// Observe a directory
+// نظارت بر یک دایرکتوری
 async function observeDirectory() {
   const directoryHandle = await window.showDirectoryPicker();
 
@@ -74,10 +67,10 @@ async function observeDirectory() {
 }
 ```
 
-You can also observe changes to the OPFS by passing a {{domxref("FileSystemSyncAccessHandle")}} to `observe()`:
+همچنین می‌توانید با ارسال یک {{domxref("FileSystemSyncAccessHandle")}} به `observe()`، تغییرات در OPFS را نظارت کنید:
 
 ```js
-// Observe an OPFS file system entry
+// نظارت بر یک درونداد سیستم فایل OPFS
 async function observeOPFSFile() {
   const root = await navigator.storage.getDirectory();
   const draftHandle = await root.getFileHandle("draft.txt", { create: true });
@@ -87,12 +80,12 @@ async function observeOPFSFile() {
 }
 ```
 
-### Observe a directory recursively
+### نظارت بازگشتی بر یک دایرکتوری
 
-To observe a directory recursively, call `observe()` with the `recursive` option set to `true`:
+برای نظارت بازگشتی بر یک دایرکتوری، `observe()` را با گزینه‌ی `recursive` برابر با `true` فراخوانی کنید:
 
 ```js
-// Observe a directory recursively
+// نظارت بازگشتی بر یک دایرکتوری
 async function observeDirectory() {
   const directoryHandle = await window.showDirectoryPicker();
 
@@ -100,15 +93,15 @@ async function observeDirectory() {
 }
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
-Not currently part of a specification. See [https://github.com/whatwg/fs/pull/165](https://github.com/whatwg/fs/pull/165) for the relevant specification PR.
+در حال حاضر بخشی از یک مشخصات (specification) نیست. برای PR مربوط به مشخصات، به [https://github.com/whatwg/fs/pull/165](https://github.com/whatwg/fs/pull/165) مراجعه کنید.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
-- [The File System Observer API origin trial](https://developer.chrome.com/blog/file-system-observer#stop-observing-the-file-system) on developer.chrome.com (2024)
+- [آزمایش مبدأ (origin trial) API ناظر سیستم فایل](https://developer.chrome.com/blog/file-system-observer#stop-observing-the-file-system) در developer.chrome.com (2024)
