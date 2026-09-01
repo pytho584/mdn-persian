@@ -1,11 +1,5 @@
 ---
 title: "HTMLObjectElement: getSVGDocument() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/getSVGDocument"
-status: "needs-translation"
----
-
----
-title: "HTMLObjectElement: getSVGDocument() method"
 short-title: getSVGDocument()
 slug: Web/API/HTMLObjectElement/getSVGDocument
 page-type: web-api-instance-method
@@ -14,37 +8,37 @@ browser-compat: api.HTMLObjectElement.getSVGDocument
 
 {{APIRef("HTML DOM")}}
 
-The **`getSVGDocument()`** method of the {{domxref("HTMLObjectElement")}} interface returns the {{domxref("Document")}} object of the embedded SVG.
+متد **`getSVGDocument()`** از رابط {{domxref("HTMLObjectElement")}}، شیء {{domxref("Document")}} مربوط به SVG تعبیه‌شده را برمی‌گرداند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getSVGDocument()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("Document")}}.
+یک {{domxref("Document")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const svg = document.getElementById("el").getSVGDocument();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLIFrameElement.getSVGDocument")}}
 - {{domxref("HTMLEmbedElement.getSVGDocument")}}
