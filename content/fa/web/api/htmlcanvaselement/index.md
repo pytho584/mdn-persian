@@ -1,10 +1,4 @@
 ---
-title: "HTMLCanvasElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement"
-status: "needs-translation"
----
-
----
 title: HTMLCanvasElement
 slug: Web/API/HTMLCanvasElement
 page-type: web-api-interface
@@ -13,63 +7,63 @@ browser-compat: api.HTMLCanvasElement
 
 {{APIRef("Canvas API")}}
 
-The **`HTMLCanvasElement`** interface provides properties and methods for manipulating the layout and presentation of {{HtmlElement("canvas")}} elements. The `HTMLCanvasElement` interface also inherits the properties and methods of the {{domxref("HTMLElement")}} interface.
+رابطهٔ **`HTMLCanvasElement`** ویژگی‌ها و روش‌هایی را برای دستکاری چیدمان و نمایش عناصر {{HtmlElement("canvas")}} فراهم می‌کند. رابطهِٔ `HTMLCanvasElement` همچنین ویژگی‌ها و روش‌های رابطهِٔ {{domxref("HTMLElement")}} را به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLCanvasElement.height")}}
-  - : The [`height`](/en-US/docs/Web/HTML/Reference/Elements/canvas#height) HTML attribute of the {{HTMLElement("canvas")}} element is a non-negative `integer` reflecting the number of logical pixels (or RGBA values) going down one column of the canvas. When the attribute is not specified, or if it is set to an invalid value, like a negative, the default value of `150` is used. If no \[separate] CSS height is assigned to the {{HTMLElement("canvas")}}, then this value will also be used as the height of the canvas in the length-unit CSS Pixel.
+  - : ویژگی HTML [`height`](/en-US/docs/Web/HTML/Reference/Elements/canvas#height) عنصر {{HTMLElement("canvas")}} یک `integer` غیرمنفی است که تعداد پیکسل‌های منطقی (یا مقادیر RGBA) را در یک ستون از بوم نشان می‌دهد. وقتی این ویژگی مشخص نشده باشد، یا اگر روی مقدار نامعتبری مانند عدد منفی تنظیم شود، مقدار پیش‌فرض `150` استفاده می‌شود. اگر ارتفاع CSS جداگانه‌ای به {{HTMLElement("canvas")}} اختصاص داده نشود، این مقدار به‌عنوان ارتفاع بوم در واحد پیکسل CSS استفاده خواهد شد.
 - {{domxref("HTMLCanvasElement.width")}}
-  - : The [`width`](/en-US/docs/Web/HTML/Reference/Elements/canvas#width) HTML attribute of the {{HTMLElement("canvas")}} element is a non-negative `integer` reflecting the number of logical pixels (or RGBA values) going across one row of the canvas. When the attribute is not specified, or if it is set to an invalid value, like a negative, the default value of `300` is used. If no \[separate] CSS width is assigned to the {{HTMLElement("canvas")}}, then this value will also be used as the width of the canvas in the length-unit CSS Pixel.
+  - : ویژگی HTML [`width`](/en-US/docs/Web/HTML/Reference/Elements/canvas#width) عنصر {{HTMLElement("canvas")}} یک `integer` غیرمنفی است که تعداد پیکسل‌های منطقی (یا مقادیر RGBA) را در یک ردیف از بوم نشان می‌دهد. وقتی این ویژگی مشخص نشده باشد، یا اگر روی مقدار نامعتبری مانند عدد منفی تنظیم شود، مقدار پیش‌فرض `300` استفاده می‌شود. اگر عرض CSS جداگانه‌ای به {{HTMLElement("canvas")}} اختصاص داده نشود، این مقدار به‌عنوان عرض بوم در واحد پیکسل CSS استفاده خواهد شد.
 - {{domxref("HTMLCanvasElement.mozOpaque")}} {{non-standard_inline}} {{deprecated_inline}}
-  - : A boolean value reflecting the [`moz-opaque`](/en-US/docs/Web/HTML/Reference/Elements/canvas#moz-opaque) HTML attribute of the {{HTMLElement("canvas")}} element. It lets the canvas know whether or not translucency will be a factor. If the canvas knows there's no translucency, painting performance can be optimized. This is only supported in Mozilla-based browsers; use the standardized {{domxref("HTMLCanvasElement.getContext()", "canvas.getContext('2d', { alpha: false })")}} instead.
+  - : یک مقدار بولی که ویژگی HTML [`moz-opaque`](/en-US/docs/Web/HTML/Reference/Elements/canvas#moz-opaque) عنصر {{HTMLElement("canvas")}} را بازتاب می‌دهد. این ویژگی به بوم اعلام می‌کند که آیا شفافیت عاملی خواهد بود یا خیر. اگر بوم بداند که شفافیتی وجود ندارد، می‌توان عملکرد نقاشی را بهینه کرد. این ویژگی فقط در مرورگرهای مبتنی بر موزیلا پشتیبانی می‌شود؛ به‌جای آن از روش استاندارد {{domxref("HTMLCanvasElement.getContext()", "canvas.getContext('2d', { alpha: false })")}} استفاده کنید.
 - {{domxref("HTMLCanvasElement.mozPrintCallback")}} {{non-standard_inline}}
-  - : A `function` that is Initially null. Web content can set this to a JavaScript function that will be called when the canvas is to be redrawn while the page is being printed. When called, the callback is passed a "printState" object that implements the [MozCanvasPrintState](https://searchfox.org/firefox-main/search?q=interface%20MozCanvasPrintState&path=HTMLCanvasElement.webidl) interface. The callback can get the context to draw to from the printState object and must then call done() on it when finished. The purpose of `mozPrintCallback` is to obtain a higher resolution rendering of the canvas at the resolution of the printer being used. [See this blog post.](https://blog.mozilla.org/labs/2012/09/a-new-way-to-control-printing-output/)
+  - : یک `function` که در ابتدا `null` است. محتوای وب می‌تواند آن را به تابع جاوااسکریپتی تنظیم کند که هنگام چاپ صفحه، وقتی بوم باید دوباره ترسیم شود، فراخوانی می‌شود. هنگام فراخوانی، یک شیء «printState» به تابع برگشتی داده می‌شود که رابطهِٔ [MozCanvasPrintState](https://searchfox.org/firefox-main/search?q=interface%20MozCanvasPrintState&path=HTMLCanvasElement.webidl) را پیاده‌سازی می‌کند. تابع برگشتی می‌تواند از شیء printState بافت مورد نظر برای رسم را دریافت کند و پس از اتمام کار باید متد `done()` را روی آن صدا بزند. هدف `mozPrintCallback` به دست آوردن رندر با وضوح بالاتر از بوم با وضوح چاپگری است که در حال استفاده است. [این پست وبلاگ را ببینید.](https://blog.mozilla.org/labs/2012/09/a-new-way-to-control-printing-output/)
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLCanvasElement.captureStream()")}}
-  - : Returns a {{domxref("CanvasCaptureMediaStreamTrack")}} that is a real-time video capture of the surface of the canvas.
+  - : یک {{domxref("CanvasCaptureMediaStreamTrack")}} برمی‌گرداند که ویدیوی بلادرنگ از سطح بوم است.
 - {{domxref("HTMLCanvasElement.getContext()")}}
-  - : Returns a drawing context on the canvas, or [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) if the context identifier is not supported, or the canvas has already been set to a different context mode.
+  - : یک بافت رسم روی بوم برمی‌گرداند، یا اگر شناسهٔ بافت پشتیبانی نشود یا بوم قبلاً روی حالت بافت متفاوتی تنظیم شده باشد، [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) برمی‌گرداند.
 - {{domxref("HTMLCanvasElement.toDataURL()")}}
-  - : Returns a data-URL containing a representation of the image in the format specified by the `type` parameter (defaults to `png`). The returned image is in a resolution of 96dpi.
+  - : یک داده-URL شامل نمایشی از تصویر در قالبی که پارامتر `type` مشخص می‌کند (پیش‌فرض `png`) برمی‌گرداند. تصویر برگشتی دارای وضوح 96dpi است.
 - {{domxref("HTMLCanvasElement.toBlob()")}}
-  - : Creates a {{domxref("Blob")}} object representing the image contained in the canvas; this file may be cached on the disk or stored in memory at the discretion of the user agent.
+  - : یک شیء {{domxref("Blob")}} ایجاد می‌کند که تصویر موجود در بوم را نشان می‌دهد؛ این فایل ممکن است بنا به صلاحدید عامل کاربر روی دیسک ذخیره شود یا در حافظه نگهداری شود.
 - {{domxref("HTMLCanvasElement.transferControlToOffscreen()")}}
-  - : Transfers control to an {{domxref("OffscreenCanvas")}} object, either on the main thread or on a worker.
+  - : کنترل را به یک شیء {{domxref("OffscreenCanvas")}} منتقل می‌کند، چه در رشتهٔ اصلی (main thread) و چه در یک worker.
 
-## Events
+## رویدادها
 
-_Inherits events from its parent, {{domxref("HTMLElement")}}._
+_رویدادها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
-Listen to these events using {{DOMxRef("EventTarget.addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface.
+به این رویدادها با استفاده از {{DOMxRef("EventTarget.addEventListener", "addEventListener()")}} یا با انتساب یک شنوندهٔ رویداد به ویژگی `oneventname` این رابط گوش دهید.
 
 - [`contextlost`](/en-US/docs/Web/API/HTMLCanvasElement/contextlost_event)
-  - : Fired if the browser detects that the `CanvasRenderingContext2D` context has been lost.
+  - : اگر مرورگر تشخیص دهد که بافت `CanvasRenderingContext2D` از بین رفته است، فعال می‌شود.
 - [`contextrestored`](/en-US/docs/Web/API/HTMLCanvasElement/contextrestored_event)
-  - : Fired if the browser successfully restores a `CanvasRenderingContext2D` context
+  - : اگر مرورگر با موفقیت بافت `CanvasRenderingContext2D` را بازیابی کند، فعال می‌شود.
 - [`webglcontextcreationerror`](/en-US/docs/Web/API/HTMLCanvasElement/webglcontextcreationerror_event)
-  - : Fired if the user agent is unable to create a `WebGLRenderingContext` or `WebGL2RenderingContext` context.
+  - : اگر عامل کاربر نتواند بافت `WebGLRenderingContext` یا `WebGL2RenderingContext` ایجاد کند، فعال می‌شود.
 - [`webglcontextlost`](/en-US/docs/Web/API/HTMLCanvasElement/webglcontextlost_event)
-  - : Fired if the user agent detects that the drawing buffer associated with a `WebGLRenderingContext` or `WebGL2RenderingContext` object has been lost.
+  - : اگر عامل کاربر تشخیص دهد که بافر رسم مرتبط با یک شیء `WebGLRenderingContext` یا `WebGL2RenderingContext` از بین رفته است، فعال می‌شود.
 - [`webglcontextrestored`](/en-US/docs/Web/API/HTMLCanvasElement/webglcontextrestored_event)
-  - : Fired if the user agent restores the drawing buffer for a `WebGLRenderingContext` or `WebGL2RenderingContext` object.
+  - : اگر عامل کاربر بافر رسم را برای یک شیء `WebGLRenderingContext` یا `WebGL2RenderingContext` بازیابی کند، فعال می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- HTML element implementing this interface: {{HTMLElement("canvas")}}
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("canvas")}}
