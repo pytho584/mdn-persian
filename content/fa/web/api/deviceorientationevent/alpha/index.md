@@ -1,7 +1,5 @@
 ---
 title: "DeviceOrientationEvent: alpha property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/alpha"
-status: "needs-translation"
 ---
 
 ---
@@ -14,25 +12,23 @@ browser-compat: api.DeviceOrientationEvent.alpha
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`alpha`** read-only property of the {{domxref("DeviceOrientationEvent")}} interface returns the rotation of the device around the Z axis; that is, the number of degrees by
-which the device is being twisted around the center of the screen.
-See [Orientation and motion data explained](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained) for details.
+ویژگی فقط‌خواندنی **`alpha`** در رابط {{domxref("DeviceOrientationEvent")}} چرخش دستگاه را حول محور Z برمی‌گرداند؛ یعنی تعداد درجه‌هایی که دستگاه به دور مرکز صفحه می‌چرخد. برای جزئیات بیشتر، [Orientation and motion data explained](/en-US/docs/Web/API/Device_orientation_events/Orientation_and_motion_data_explained) را ببینید.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Device orientation events/Detecting device orientation", "Detecting device orientation", "", "nocode")}}
 - {{domxref("Device orientation events/Orientation and motion data explained", "Orientation and motion data explained", "", "nocode")}}
-- {{domxref("Window.deviceorientation_event", "deviceorientation")}} event
-- {{domxref("Window.deviceorientationabsolute_event", "deviceorientationabsolute")}} event
+- رویداد {{domxref("Window.deviceorientation_event", "deviceorientation")}}
+- رویداد {{domxref("Window.deviceorientationabsolute_event", "deviceorientationabsolute")}}
