@@ -1,11 +1,5 @@
 ---
 title: "Document: bgColor property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/bgColor"
-status: "needs-translation"
----
-
----
-title: "Document: bgColor property"
 short-title: bgColor
 slug: Web/API/Document/bgColor
 page-type: web-api-instance-property
@@ -16,34 +10,30 @@ browser-compat: api.Document.bgColor
 
 {{APIRef("DOM")}} {{Deprecated_Header}}
 
-The deprecated `bgColor` property gets or sets the background color of the
-current document.
+ویژگی منسوخ‌شدهٔ `bgColor`، رنگ پس‌زمینهٔ سند جاری را دریافت یا تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A string representing the color as a word (e.g., `"red"`) or hexadecimal value (e.g., `"#ff0000"`).
+یک رشته که رنگ را به‌صورت یک کلمه (مثلاً `"red"`) یا یک مقدار هگزادسیمال (مثلاً `"#ff0000"`) نمایش می‌دهد.
 
-When set to the `null` value, that `null` value is converted to the empty string (`""`), so `document.bgColor = null` is equivalent to `document.bgColor = ""`.
+وقتی این ویژگی روی مقدار `null` تنظیم شود، آن مقدار به رشتهٔ خالی (`""`) تبدیل می‌شود؛ بنابراین `document.bgColor = null` معادل `document.bgColor = ""` است.
 
-## Examples
+## مثال‌ها
 
 ```js
 document.bgColor = "darkblue";
 ```
 
-## Notes
+## نکات
 
-The default value for this property in Firefox is white (`#ffffff` in
-hexadecimal).
+مقدار پیش‌فرض این ویژگی در فایرفاکس سفید است (در نمایش هگزادسیمال `#ffffff`).
 
-`document.bgColor` is deprecated in [the HTML specification](https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-bgcolor). The recommended alternative is use of the CSS style
-{{Cssxref("background-color")}} which can be accessed through the DOM with
-`document.body.style.backgroundColor`.
+`document.bgColor` در [مشخصات HTML](https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-bgcolor) منسوخ اعلام شده است. جایگزین پیشنهادی استفاده از استایل CSS، یعنی {{Cssxref("background-color")}} است که از طریق DOM با `document.body.style.backgroundColor` قابل دسترسی است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
