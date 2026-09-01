@@ -1,11 +1,5 @@
 ---
 title: "CSSUnparsedValue: keys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSUnparsedValue/keys"
-status: "needs-translation"
----
-
----
-title: "CSSUnparsedValue: keys() method"
 short-title: keys()
 slug: Web/API/CSSUnparsedValue/keys
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.CSSUnparsedValue.keys
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSUnparsedValue.keys()`** method returns a new _array iterator_ object that contains the keys for each index in the array.
+متد **`CSSUnparsedValue.keys()`** یک شیء _iterator آرایه_ جدید برمی‌گرداند که کلیدهای هر اندیس در آرایه را شامل می‌شود.
 
 ## Syntax
 
@@ -24,11 +18,11 @@ keys()
 
 ### Parameters
 
-None.
+هیچ‌کدام.
 
 ### Return value
 
-A new {{jsxref("Array")}}.
+یک {{jsxref("Array")}} جدید.
 
 ## Specifications
 
@@ -45,5 +39,5 @@ A new {{jsxref("Array")}}.
 - {{domxref("CSSUnparsedValue.forEach")}}
 - {{domxref("CSSUnparsedValue.length")}}
 - {{domxref("CSSUnparsedValue.values")}}
-- [Using the CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
+- [استفاده از CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
 - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
