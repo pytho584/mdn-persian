@@ -1,11 +1,5 @@
 ---
 title: "Document: createComment() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createComment"
-status: "needs-translation"
----
-
----
-title: "Document: createComment() method"
 short-title: createComment()
 slug: Web/API/Document/createComment
 page-type: web-api-instance-method
@@ -14,25 +8,24 @@ browser-compat: api.Document.createComment
 
 {{APIRef("DOM")}}
 
-**`createComment()`** creates a new comment node, and returns
-it.
+**`createComment()`** یک گره دیدگاه (Comment) جدید می‌سازد و آن را برمی‌گرداند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 createComment(data)
 ```
 
-### Parameters
+### پارامترها
 
 - `data`
-  - : A string containing the data to be added to the Comment.
+  - : رشته‌ای حاوی داده‌ای که باید به Comment اضافه شود.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("Comment")}} object.
+یک شیء جدید {{domxref("Comment")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const doc = new DOMParser().parseFromString("<xml></xml>", "application/xml");
@@ -46,10 +39,10 @@ console.log(new XMLSerializer().serializeToString(doc));
 // Displays: <xml><!--This is a not-so-secret comment in your document--></xml>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
