@@ -1,7 +1,5 @@
 ---
 title: "FormDataEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormDataEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,29 +11,29 @@ browser-compat: api.FormDataEvent
 
 {{APIRef("DOM")}}
 
-The **`FormDataEvent`** interface represents a [`formdata` event](/en-US/docs/Web/API/HTMLFormElement/formdata_event) — such an event is fired on an {{domxref("HTMLFormElement")}} object after the entry list representing the form's data is constructed. This happens when the form is submitted, but can also be triggered by the invocation of a {{domxref("FormData.FormData", "FormData()")}} constructor.
+رابطهٔ **`FormDataEvent`** نمایانگر رویداد [`formdata`](/en-US/docs/Web/API/HTMLFormElement/formdata_event) است — چنین رویدادی پس از ساخته‌شدن فهرست آیتم‌های نمایانگر داده‌های فرم، بر روی یک شیء {{domxref("HTMLFormElement")}} شلیک می‌شود. این اتفاق هنگام ارسال فرم رخ می‌دهد، اما می‌تواند با فراخوانی سازندهٔ {{domxref("FormData.FormData", "FormData()")}} نیز ایجاد شود.
 
-This allows a {{domxref("FormData")}} object to be quickly obtained in response to a `formdata` event firing, rather than needing to put it together yourself when you wish to submit form data via a method like {{domxref("Window/fetch", "fetch()")}} (see [Using FormData objects](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)).
+این امکان به شما می‌دهد که در پاسخ به شلیک رویداد `formdata`، به‌سرعت یک شیء {{domxref("FormData")}} به‌دست آورید، به‌جای اینکه هنگام ارسال داده‌های فرم با روشی مانند {{domxref("Window/fetch", "fetch()")}} مجبور باشید خودتان آن را بسازید (به [استفاده از اشیاء FormData](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects) مراجعه کنید).
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("FormDataEvent.FormDataEvent","FormDataEvent()")}}
-  - : Creates a new `FormDataEvent` object instance.
+  - : یک نمونهٔ جدید از شیء `FormDataEvent` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent interface, {{domxref("Event")}}._
+_ویژگی‌های رابطهٔ والد خود، {{domxref("Event")}} را به ارث می‌برد._
 
 - {{domxref("FormDataEvent.formData")}}
-  - : Contains the {{domxref("FormData")}} object representing the data contained in the form when the event was fired.
+  - : شامل شیء {{domxref("FormData")}} است که داده‌های موجود در فرم را هنگام شلیک رویداد نمایان می‌کند.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent interface, {{domxref("Event")}}._
+_متدهای رابطهٔ والد خود، {{domxref("Event")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
 ```js
 // grab reference to form
@@ -70,17 +68,17 @@ formElem.addEventListener("formdata", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Window/fetch", "fetch()")}}
 - {{domxref("FormData")}}
-- [Using FormData objects](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
+- [استفاده از اشیاء FormData](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
 - {{HTMLElement("Form")}}
