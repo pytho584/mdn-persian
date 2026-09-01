@@ -1,11 +1,5 @@
 ---
 title: "Element: matches() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/matches"
-status: "needs-translation"
----
-
----
-title: "Element: matches() method"
 short-title: matches()
 slug: Web/API/Element/matches
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.Element.matches
 
 {{APIRef("DOM")}}
 
-The **`matches()`** method of the {{domxref("Element")}} interface tests whether the element would be selected by the specified [CSS selector](/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors).
+متد **`matches()`** از رابط {{domxref("Element")}} بررسی می‌کند که آیا عنصر توسط [CSS selector](/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors) مشخص‌شده انتخاب می‌شود یا خیر.
 
 ## Syntax
 
@@ -25,16 +19,16 @@ matches(selectors)
 ### Parameters
 
 - `selectors`
-  - : A string containing valid [CSS selectors](/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors) to test the {{domxref("Element")}} against.
+  - : یک رشته حاوی [CSS selectors](/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors) معتبر برای آزمایش {{domxref("Element")}} در برابر آن.
 
 ### Return value
 
-`true` if the {{domxref("Element")}} matches the `selectors`. Otherwise, `false`.
+`true` اگر {{domxref("Element")}} با `selectors` مطابقت داشته باشد. در غیر این صورت `false`.
 
 ### Exceptions
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if `selectors` cannot be parsed as a CSS selector list.
+  - : اگر `selectors` نتواند به عنوان یک لیست انتخاب‌گر CSS تجزیه شود، پرتاب می‌شود.
 
 ## Examples
 
@@ -60,8 +54,7 @@ for (const bird of birds) {
 }
 ```
 
-This will log "The Philippine eagle is endangered!" to the console, since the element
-has indeed a `class` attribute with value `endangered`.
+این کد عبارت "The Philippine eagle is endangered!" را در کنسول ثبت می‌کند، زیرا عنصر دارای یک ویژگی `class` با مقدار `endangered` است.
 
 ## Specifications
 
@@ -73,5 +66,5 @@ has indeed a `class` attribute with value `endangered`.
 
 ## See also
 
-- [CSS selectors](/en-US/docs/Web/CSS/Guides/Selectors) module
-- Other {{domxref("Element")}} methods that take selectors: {{domxref("Element.querySelector()")}}, {{domxref("Element.querySelectorAll()")}}, and {{domxref("element.closest()")}}.
+- ماژول [CSS selectors](/en-US/docs/Web/CSS/Guides/Selectors)
+- سایر متدهای {{domxref("Element")}} که انتخاب‌گر می‌گیرند: {{domxref("Element.querySelector()")}}, {{domxref("Element.querySelectorAll()")}}, و {{domxref("element.closest()")}}.
