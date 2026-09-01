@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableColElement: align property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableColElement/align"
-status: "needs-translation"
----
-
----
-title: "HTMLTableColElement: align property"
 short-title: align
 slug: Web/API/HTMLTableColElement/align
 page-type: web-api-instance-property
@@ -16,29 +10,29 @@ browser-compat: api.HTMLTableColElement.align
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The **`align`** property of the {{domxref("HTMLTableColElement")}} interface is a string indicating how to horizontally align text in a table {{htmlelement("col")}} column element.
+ویژگی **`align`** از رابط {{domxref("HTMLTableColElement")}} یک رشته است که نحوهٔ تراز افقی متن در یک عنصر ستون {{htmlelement("col")}} جدول را مشخص می‌کند.
 
 > [!NOTE]
-> This property is deprecated, and CSS should be used to align text horizontally in a column. Use the CSS {{cssxref("text-align")}} property, which takes precedence, to horizontally align text in a column instead.
+> این ویژگی منسوخ شده است و برای تراز افقی متن در یک ستون باید از CSS استفاده شود. به جای آن از ویژگی CSS {{cssxref("text-align")}} که اولویت دارد استفاده کنید.
 >
-> As {{htmlelement("td")}} are not children of {{htmlelement("col")}}, you can't set it directly on a {{HTMLElement("col")}} element, you need to select the cells of the column using a `td:nth-last-child(n)` or similar (`n` is the column number, counting from the end).
+> از آنجایی که عناصر {{htmlelement("td")}} فرزندان {{htmlelement("col")}} نیستند، نمی‌توانید آن را مستقیماً روی یک عنصر {{HTMLElement("col")}} تنظیم کنید. باید سلول‌های ستون را با استفاده از یک انتخابگر مانند `td:nth-last-child(n)` یا مشابه آن انتخاب کنید (`n` شماره ستون از انتها است).
 
 ## Value
 
-The possible values are:
+مقادیر ممکن عبارتند از:
 
 - `left`
-  - : Align the text to the left. Use `text-align: left` applied directly to the {{HTMLElement("td")}} or {{HTMLElement("th")}} instead.
+  - : متن را به سمت چپ تراز می‌کند. به جای آن از `text-align: left` که مستقیماً روی {{HTMLElement("td")}} یا {{HTMLElement("th")}} اعمال می‌شود استفاده کنید.
 - `right`
-  - : Align the text to the right. Use `text-align: right` applied directly to the `<td>` or `<th>` instead.
+  - : متن را به سمت راست تراز می‌کند. به جای آن از `text-align: right` که مستقیماً روی `<td>` یا `<th>` اعمال می‌شود استفاده کنید.
 - `center`
-  - : Center the text in the cell. Use `text-align: center` instead.
+  - : متن را در سلول وسط‌چین می‌کند. به جای آن از `text-align: center` استفاده کنید.
 
 ## Examples
 
-Use CSS `text-align` on the {{htmlelement("td")}} and {{htmlelement("th")}} elements. As {{htmlelement("td")}} elements of a column are not children of {{htmlelement("col")}}, setting the `align` attribute in HTML or `text-align` property in CSS on a {{HTMLElement("col")}} element will have no effect. Instead, select the cells of a column using a [`:is(td, tr):nth-child(n)`](/en-US/docs/Web/CSS/Reference/Selectors/:nth-child), where `n` is the column number, or similar.
+از ویژگی CSS `text-align` روی عناصر {{htmlelement("td")}} و {{htmlelement("th")}} استفاده کنید. از آنجایی که عناصر {{htmlelement("td")}} یک ستون فرزندان {{htmlelement("col")}} نیستند، تنظیم ویژگی `align` در HTML یا ویژگی `text-align` در CSS روی یک عنصر {{HTMLElement("col")}} تأثیری نخواهد داشت. در عوض، سلول‌های یک ستون را با استفاده از یک انتخابگر مانند [`:is(td, tr):nth-child(n)`](/en-US/docs/Web/CSS/Reference/Selectors/:nth-child) که در آن `n` شماره ستون است، یا مشابه آن انتخاب کنید.
 
-An [example](/en-US/docs/Web/CSS/Reference/Selectors/:nth-child#styling_a_table_column) is available on the {{cssxref(":nth-child()")}} page.
+یک [مثال](/en-US/docs/Web/CSS/Reference/Selectors/:nth-child#styling_a_table_column) در صفحهٔ {{cssxref(":nth-child()")}} موجود است.
 
 ## Specifications
 
