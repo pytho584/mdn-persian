@@ -1,34 +1,24 @@
 ---
 title: "CSSNumericValue: type() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/type"
-status: "needs-translation"
----
-
----
-title: "CSSNumericValue: type() method"
-short-title: type()
-slug: Web/API/CSSNumericValue/type
-page-type: web-api-instance-method
-browser-compat: api.CSSNumericValue.type
 ---
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`type()`** method of the {{domxref("CSSNumericValue")}} interface returns the type of `CSSNumericValue`, one of `angle`, `flex`, `frequency`, `length`, `resolution`, `percent`, `percentHint`, or `time`.
+متد **`type()`** از رابط {{domxref("CSSNumericValue")}} نوع `CSSNumericValue` را بازمی‌گرداند؛ این نوع یکی از موارد `angle`، `flex`، `frequency`، `length`، `resolution`، `percent`، `percentHint` یا `time` است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 type()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A `CSSNumericType` dictionary, which contains the following properties:
+یک دیکشنری `CSSNumericType` که شامل ویژگی‌های زیر است:
 
 - `length`
 - `angle`
@@ -39,17 +29,17 @@ A `CSSNumericType` dictionary, which contains the following properties:
 - `percent`
 - `percentHint`
 
-For each property except `percentHint`, the value is an integer representing the power of that unit. For example, a numeric value of `calc(1px * 1em)` will return `{ length: 2 }`.
+برای هر ویژگی به‌جز `percentHint`، مقدار یک عدد صحیح است که توان (power) آن واحد را نشان می‌دهد. برای مثال، یک مقدار عددی مانند `calc(1px * 1em)` خروجی `{ length: 2 }` را برمی‌گرداند.
 
-The `percentHint` property is a string that indicates the type of value that the percent is applied to. The string value is the same as the type properties: `"length"`, `"angle"`, `"time"`, `"frequency"`, `"resolution"`, `"flex"`, or `"percent"`. It indicates that the type actually holds a percentage, but that percentage will eventually resolve to the hinted base type, and so has been replaced with it in the type.
+ویژگی `percentHint` یک رشته است که نوع مقداری را که درصد به آن اعمال می‌شود را نشان می‌دهد. مقدار رشته‌ای آن همانند ویژگی‌های نوع است: `"length"`، `"angle"`، `"time"`، `"frequency"`، `"resolution"`، `"flex"` یا `"percent"`. این ویژگی نشان می‌دهد که نوع موردنظر در واقع یک درصد را نگه می‌دارد، اما آن درصد در نهایت به نوع پایهٔ اشاره‌شده (hinted base type) تبدیل می‌شود و بنابراین در نوع با آن جایگزین شده است.
 
-### Exceptions
+### استثناها
 
-None.
+هیچ.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 let mathSum = CSS.px("23")
@@ -60,10 +50,10 @@ let mathSum = CSS.px("23")
 let cssNumericType = mathSum.type();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
