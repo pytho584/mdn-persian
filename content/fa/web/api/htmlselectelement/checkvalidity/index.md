@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: checkValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/checkValidity"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: checkValidity() method"
 short-title: checkValidity()
 slug: Web/API/HTMLSelectElement/checkValidity
 page-type: web-api-instance-method
@@ -14,47 +8,47 @@ browser-compat: api.HTMLSelectElement.checkValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`checkValidity()`** method of the {{domxref("HTMLSelectElement")}} interface returns a boolean value which indicates if the element meets any [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) rules applied to it. If false, the method also fires an {{domxref("HTMLElement/invalid_event", "invalid")}} event on the element. Because there's no default browser behavior for `checkValidity()`, canceling this `invalid` event has no effect.
+متد **`checkValidity()`** از رابط {{domxref("HTMLSelectElement")}} یک مقدار بولی (boolean) برمی‌گرداند که نشان می‌دهد آیا عنصر مورد نظر با قوانین [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) اعمال شده بر روی آن مطابقت دارد یا خیر. اگر مقدار بازگشتی `false` باشد، این متد همچنین یک رویداد {{domxref("HTMLElement/invalid_event", "invalid")}} روی عنصر ایجاد می‌کند. از آنجایی که هیچ رفتار پیش‌فرض مرورگری برای `checkValidity()` وجود ندارد، لغو (cancel) این رویداد `invalid` تأثیری ندارد.
 
 > [!NOTE]
-> An HTML {{htmlelement("select")}} element with a non-null {{domxref("HTMLSelectElement.validationMessage", "validationMessage")}} is considered invalid, will match the CSS {{cssxref(":invalid")}} pseudo-class, and will cause `checkValidity()` to return false. Use the {{domxref("HTMLSelectElement.setCustomValidity()")}} method to set the {{domxref("HTMLSelectElement.validationMessage")}} to the empty string to set the {{domxref("HTMLSelectElement.validity", "validity")}} state to be valid.
+> یک عنصر HTML {{htmlelement("select")}} که {{domxref("HTMLSelectElement.validationMessage", "validationMessage")}} آن غیر null باشد، نامعتبر در نظر گرفته می‌شود، با شبه‌کلاس CSS {{cssxref(":invalid")}} مطابقت می‌کند، و باعث می‌شود `checkValidity()` مقدار `false` برگرداند. از متد {{domxref("HTMLSelectElement.setCustomValidity()")}} برای تنظیم {{domxref("HTMLSelectElement.validationMessage")}} روی رشته خالی استفاده کنید تا وضعیت {{domxref("HTMLSelectElement.validity", "validity")}} به معتبر تنظیم شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 checkValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-Returns `true` if the element's value has no validity problems; otherwise, returns `false`.
+اگر مقدار عنصر هیچ مشکل اعتباری نداشته باشد `true` و در غیر این صورت `false` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-In the following example, calling `checkValidity()` returns either `true` or `false`.
+در مثال زیر، فراخوانی `checkValidity()` یا `true` یا `false` را برمی‌گرداند.
 
 ```js
 const element = document.getElementById("mySelect");
 console.log(element.checkValidity());
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLSelectElement.reportValidity()")}}
 - {{HTMLElement("textarea")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
-- CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}}
