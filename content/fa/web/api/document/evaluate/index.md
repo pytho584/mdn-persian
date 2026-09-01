@@ -1,11 +1,5 @@
 ---
 title: "Document: evaluate() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/evaluate"
-status: "needs-translation"
----
-
----
-title: "Document: evaluate() method"
 short-title: evaluate()
 slug: Web/API/Document/evaluate
 page-type: web-api-instance-method
@@ -14,99 +8,65 @@ browser-compat: api.Document.evaluate
 
 {{ ApiRef("DOM") }}
 
-The **`evaluate()`** method of the {{domxref("Document")}} interface selects elements based on the [XPath](/en-US/docs/Web/XML/XPath)
-expression given in parameters.
+متد **`evaluate()`** در رابط {{domxref("Document")}} عنصرها را بر اساس عبارت [XPath](/en-US/docs/Web/XML/XPath) که در پارامترها داده شده است انتخاب می‌کند.
 
-XPath expressions can be evaluated on both HTML and XML documents.
+عبارات XPath را می‌توان هم روی اسناد HTML و هم روی اسناد XML ارزیابی کرد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 evaluate(xpathExpression, contextNode, namespaceResolver, resultType, result)
 ```
 
-### Parameters
+### پارامترها
 
 - `xpathExpression`
-  - : A string representing the _xpath_ to be evaluated.
+  - : رشته‌ای که نمایانگر `_xpath_` برای ارزیابی است.
 - `contextNode`
-  - : The _context node_ for the query.
-    It's common to pass `document` as the context node.
+  - : _گره زمینه_ (context node) برای پرس‌وجو. معمولاً `document` به‌عنوان گره زمینه ارسال می‌شود.
 - `namespaceResolver` {{optional_inline}}
-  - : A function that will be passed any namespace prefixes
-    and should return a string representing the namespace URI associated with that prefix.
-    It will be used to resolve prefixes within the _xpath_ itself,
-    so that they can be matched with the document.
-    The value `null` is common for HTML documents or when no namespace prefixes are used.
-    If omitted, it defaults to `null`.
+  - : تابعی که هر پیشوند نامفضا (namespace prefix) به آن داده می‌شود و باید رشته‌ای برگرداند که URI نامفضای مرتبط با آن پیشوند را نشان دهد. از این تابع برای شناسایی پیشوندها در خودِ `_xpath_` استفاده می‌شود تا بتوان آن‌ها را با سند تطبیق داد. مقدار `null` برای اسناد HTML یا زمانی که هیچ پیشوند نامفضایی استفاده نمی‌شود رایج است. اگر حذف شود، پیش‌فرض `null` است.
 - `resultType` {{optional_inline}}
-  - : An integer that corresponds to the type of `XPathResult` to return.
-    If omitted, it defaults to `ANY_TYPE` (`0`).
-    The following values are possible:
+  - : یک عدد صحیح که با نوع `XPathResult` مورد نظر برای بازگرداندن متناظر است. اگر حذف شود، پیش‌فرض `ANY_TYPE` (`0`) است. مقادیر زیر امکان‌پذیر هستند:
     - `ANY_TYPE` (`0`)
-      - : Whatever type naturally results from the given expression.
+      - : هر نوعی که به‌طور طبیعی از عبارت داده‌شده به دست آید.
     - `NUMBER_TYPE` (`1`)
-      - : A result set containing a single number. Useful, for example, in an
-        _xpath_ expression using the `count()` function.
+      - : مجموعه نتیجه‌ای شامل یک عدد. برای مثال در عبارت `_xpath_` که از تابع `count()` استفاده می‌کند مفید است.
     - `STRING_TYPE` (`2`)
-      - : A result set containing a single string.
+      - : مجموعه نتیجه‌ای شامل یک رشته.
     - `BOOLEAN_TYPE` (`3`)
-      - : A result set containing a single boolean value. Useful, for example, an
-        _xpath_ expression using the `not()` function.
+      - : مجموعه نتیجه‌ای شامل یک مقدار بولی. برای مثال در عبارت `_xpath_` که از تابع `not()` استفاده می‌کند مفید است.
     - `UNORDERED_NODE_ITERATOR_TYPE` (`4`)
-      - : A result set containing all the nodes matching the expression. The nodes
-        in the result set are not necessarily in the same order they appear in
-        the document.
+      - : مجموعه نتیجه‌ای شامل همه گره‌های منطبق با عبارت. گره‌های موجود در مجموعه نتیجه لزوماً به همان ترتیبی که در سند ظاهر می‌شوند نیستند.
         > [!NOTE]
-        > Results of this type contain references to nodes in the document.
-        > Modifying a node will invalidate the iterator.
-        > After modifying a node, attempting to iterate through the results will result in an error.
+        > نتایج این نوع شامل ارجاع‌هایی به گره‌های سند هستند. تغییر دادن یک گره، تکرارگر (iterator) را نامعتبر می‌کند. پس از تغییر یک گره، تلاش برای تکرار روی نتایج باعث بروز خطا می‌شود.
     - `ORDERED_NODE_ITERATOR_TYPE` (`5`)
-      - : A result set containing all the nodes matching the expression. The nodes
-        in the result set are in the same order they appear in the document.
+      - : مجموعه نتیجه‌ای شامل همه گره‌های منطبق با عبارت. گره‌های موجود در مجموعه نتیجه به همان ترتیبی که در سند ظاهر می‌شوند هستند.
         > [!NOTE]
-        > Results of this type contain references to nodes in the document.
-        > Modifying a node will invalidate the iterator.
-        > After modifying a node, attempting to iterate through the results will result in an error.
+        > نتایج این نوع شامل ارجاع‌هایی به گره‌های سند هستند. تغییر دادن یک گره، تکرارگر را نامعتبر می‌کند. پس از تغییر یک گره، تلاش برای تکرار روی نتایج باعث بروز خطا می‌شود.
     - `UNORDERED_NODE_SNAPSHOT_TYPE` (`6`)
-      - : A result set containing snapshots of all the nodes matching the
-        expression. The nodes in the result set are not necessarily in the same
-        order they appear in the document.
+      - : مجموعه نتیجه‌ای شامل snapshotهایی از همه گره‌های منطبق با عبارت. گره‌های موجود در مجموعه نتیجه لزوماً به همان ترتیبی که در سند ظاهر می‌شوند نیستند.
         > [!NOTE]
-        > Results of this type are snapshots, which are essentially lists of matched nodes.
-        > You can make changes to the document by altering snapshot nodes.
-        > Modifying the document doesn't invalidate the snapshot;
-        > however, if the document is changed, the snapshot may not correspond to the current state of the document,
-        > since nodes may have moved, been changed, added, or removed.
+        > نتایج این نوع، snapshot (عکس فوری) هستند که اساساً فهرست‌هایی از گره‌های منطبق‌اند. می‌توانید با تغییر دادن گره‌های snapshot، در سند تغییر ایجاد کنید. تغییر دادن سند، snapshot را نامعتبر نمی‌کند؛ با این حال، اگر سند تغییر کند، snapshot ممکن است با وضعیت فعلی سند مطابقت نداشته باشد، زیرا گره‌ها ممکن است جابه‌جا شده، تغییر کرده، اضافه یا حذف شده باشند.
     - `ORDERED_NODE_SNAPSHOT_TYPE` (`7`)
-      - : A result set containing snapshots of all the nodes matching the
-        expression. The nodes in the result set are in the same order they
-        appear in the document.
+      - : مجموعه نتیجه‌ای شامل snapshotهایی از همه گره‌های منطبق با عبارت. گره‌های موجود در مجموعه نتیجه به همان ترتیبی که در سند ظاهر می‌شوند هستند.
         > [!NOTE]
-        > Results of this type are snapshots, which are essentially lists of matched nodes.
-        > You can make changes to the document by altering snapshot nodes.
-        > Modifying the document doesn't invalidate the snapshot;
-        > however, if the document is changed, the snapshot may not correspond to the current state of the document,
-        > since nodes may have moved, been changed, added, or removed.
+        > نتایج این نوع، snapshot (عکس فوری) هستند که اساساً فهرست‌هایی از گره‌های منطبق‌اند. می‌توانید با تغییر دادن گره‌های snapshot، در سند تغییر ایجاد کنید. تغییر دادن سند، snapshot را نامعتبر نمی‌کند؛ با این حال، اگر سند تغییر کند، snapshot ممکن است با وضعیت فعلی سند مطابقت نداشته باشد، زیرا گره‌ها ممکن است جابه‌جا شده، تغییر کرده، اضافه یا حذف شده باشند.
     - `ANY_UNORDERED_NODE_TYPE` (`8`)
-      - : A result set containing any single node that matches the expression. The
-        node is not necessarily the first node in the document that matches the
-        expression.
+      - : مجموعه نتیجه‌ای شامل یک گره منفرد که با عبارت منطبق است. این گره لزوماً اولین گره در سند نیست که با عبارت منطبق می‌شود.
     - `FIRST_ORDERED_NODE_TYPE` (`9`)
-      - : A result set containing the first node in the document that matches the
-        expression.
+      - : مجموعه نتیجه‌ای شامل اولین گره در سند که با عبارت منطبق است.
 
 - `result` {{optional_inline}}
-  - : An existing `XPathResult` to use for the results. If set to `null` or omitted, the method will create and return a new `XPathResult`.
+  - : یک `XPathResult` موجود برای استفاده در نتایج. اگر `null` تنظیم شود یا حذف شود، متد یک `XPathResult` جدید می‌سازد و برمی‌گرداند.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("XPathResult")}} linking to the selected nodes. If `result` was `null`, it is a new object,
-if not, it is the same object as the one passed as the `result` parameter.
+یک {{domxref("XPathResult")}} که به گره‌های انتخاب‌شده مرتبط است. اگر `result` برابر `null` بود، یک شیء جدید است؛ در غیر این صورت همان شیءای است که به‌عنوان پارامتر `result` ارسال شده است.
 
-## Examples
+## مثال‌ها
 
-### Finding all H2 headings by XPath
+### پیدا کردن همه عنوان‌های H2 با XPath
 
 ```js
 const headings = document.evaluate(
@@ -127,33 +87,21 @@ while (thisHeading) {
 alert(alertText); // Alerts the text of all h2 elements
 ```
 
-Note, in the above example, a more verbose _xpath_ is preferred over common shortcuts
-such as `//h2`. Generally, more specific _xpath_ selectors, as in the above
-example, usually give a significant performance improvement, especially on very large
-documents. This is because the evaluation of the query does not waste time
-visiting unnecessary nodes. Using // is generally slow as it visits _every_
-node from the root and all subnodes looking for possible matches.
+توجه کنید در مثال بالا، یک `_xpath_` مفصل‌تر به میانبرهای رایج مانند `//h2` ترجیح داده می‌شود. به‌طور کلی، انتخابگرهای `_xpath_` خاص‌تر، مانند مثال بالا، معمولاً بهبود چشمگیری در کارایی ایجاد می‌کنند، به‌ویژه در اسناد بسیار بزرگ. دلیل این است که ارزیابی پرس‌وجو زمان را برای مراجعه به گره‌های غیرضروری هدر نمی‌دهد. استفاده از `//` معمولاً کند است، زیرا برای یافتن تطابق‌های احتمالی، _هر_ گره را از ریشه و همه زیرگره‌ها بررسی می‌کند.
 
-Further optimization can be achieved by careful use of the context parameter. For
-example, if you know the content you are looking for is somewhere inside the body tag,
-you can use this:
+بهینه‌سازی بیشتر را می‌توان با استفاده دقیق از پارامتر context به دست آورد. برای مثال، اگر می‌دانید محتوای مورد نظر شما جایی درون تگ body است، می‌توانید از این استفاده کنید:
 
 ```js
 document.evaluate(".//h2", document.body, null, XPathResult.ANY_TYPE, null);
 ```
 
-Notice in the above `document.body` has been used as the context instead of
-`document` so the _xpath_ starts from the body element. (In this example, the
-`"."` is important to indicate that the querying should start from the
-context node, document.body. If the "." was left out (leaving `//h2`) the
-query would start from the root node (`html`) which would be more
-wasteful.)
+توجه کنید در مثال بالا از `document.body` به‌عنوان context به‌جای `document` استفاده شده است تا `_xpath_` از عنصر body شروع شود. (در این مثال، `"."` اهمیت دارد تا مشخص کند جست‌وجو باید از گره زمینه یعنی document.body شروع شود. اگر `"."` حذف می‌شد (و `//h2` باقی می‌ماند)، پرس‌وجو از گره ریشه (`html`) شروع می‌شد که پرهزینه‌تر است.)
 
-See [Introduction to using XPath in JavaScript](/en-US/docs/Web/XML/XPath/Guides/Introduction_to_using_XPath_in_JavaScript) for more information.
+برای اطلاعات بیشتر، [آشنایی با استفاده از XPath در جاوااسکریپت](/en-US/docs/Web/XML/XPath/Guides/Introduction_to_using_XPath_in_JavaScript) را ببینید.
 
-### Getting element by xml:id
+### دریافت عنصر با xml:id
 
-This function is a replacement for {{domxref("Document.getElementById()")}} for when you need to search by `xml:id` instead.
+این تابع جایگزینی برای {{domxref("Document.getElementById()")}} است برای زمانی که باید به‌جای آن با `xml:id` جست‌وجو کنید.
 
 ```js
 function getElementByIdWrapper(xmlDoc, id) {
@@ -167,15 +115,15 @@ function getElementByIdWrapper(xmlDoc, id) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.createExpression()")}}
 - {{domxref("XPathResult")}}
