@@ -1,7 +1,5 @@
 ---
 title: "HTMLMediaElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,213 +11,213 @@ browser-compat: api.HTMLMediaElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement`** interface adds to {{domxref("HTMLElement")}} the properties and methods needed to support basic media-related capabilities that are common to audio and video.
+رابطِ **`HTMLMediaElement`** ویژگی‌ها و متدهایی را به {{domxref("HTMLElement")}} می‌افزاید که برای پشتیبانی از قابلیت‌های پایه مرتبط با رسانه، که در صدا و ویدیو مشترک هستند، لازم است.
 
-The {{domxref("HTMLVideoElement")}} and {{domxref("HTMLAudioElement")}} elements both inherit this interface.
+عنصرهای {{domxref("HTMLVideoElement")}} و {{domxref("HTMLAudioElement")}} هر دو از این رابط به ارث می‌برند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from its ancestors {{domxref("HTMLElement")}}, {{domxref("Element")}}, {{domxref("Node")}}, and {{domxref("EventTarget")}}._
+_این رابط همچنین ویژگی‌هایی را از اجداد خود، {{domxref("HTMLElement")}}، {{domxref("Element")}}، {{domxref("Node")}} و {{domxref("EventTarget")}} به ارث می‌برد._
 
 - {{domxref("HTMLMediaElement.audioTracks")}} {{ReadOnlyInline}}
-  - : An {{domxref("AudioTrackList")}} that lists the {{domxref("AudioTrack")}} objects contained in the element.
+  - : یک {{domxref("AudioTrackList")}} که فهرست شیءهای {{domxref("AudioTrack")}} موجود در عنصر را فهرست می‌کند.
 - {{domxref("HTMLMediaElement.autoplay")}}
-  - : A boolean value that reflects the [`autoplay`](/en-US/docs/Web/HTML/Reference/Elements/video#autoplay) HTML attribute, indicating whether playback should automatically begin as soon as enough media is available to do so without interruption.
+  - : یک مقدار بولی که ویژگی HTML [`autoplay`](/en-US/docs/Web/HTML/Reference/Elements/video#autoplay) را منعکس می‌کند و نشان می‌دهد که آیا پخش باید به محض فراهم شدن رسانه کافی، بدون وقفه به‌طور خودکار آغاز شود یا نه.
 
     > [!NOTE]
-    > Automatically playing audio when the user doesn't expect or desire it is a poor user experience and should be avoided in most cases, though there are exceptions. See the [Autoplay guide for media and Web Audio APIs](/en-US/docs/Web/Media/Guides/Autoplay) for more information. Keep in mind that browsers may ignore autoplay requests, so you should ensure that your code isn't dependent on autoplay working.
+    > پخش خودکار صدا وقتی کاربر انتظارش را ندارد یا نمی‌خواهد، تجربه کاربری بدی است و در بیشتر موارد باید از آن اجتناب شود، هرچند استثناهایی نیز وجود دارد. برای اطلاعات بیشتر به [راهنمای پخش خودکار برای رسانه و Web Audio APIs](/en-US/docs/Web/Media/Guides/Autoplay) مراجعه کنید. به خاطر داشته باشید که مرورگرها ممکن است درخواست‌های پخش خودکار را نادیده بگیرند، بنابراین باید مطمئن شوید کد شما به کارکرد پخش خودکار وابسته نیست.
 
 - {{domxref("HTMLMediaElement.buffered")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("TimeRanges")}} object that indicates the ranges of the media source that the browser has buffered (if any) at the moment the `buffered` property is accessed.
+  - : یک شیء {{domxref("TimeRanges")}} را برمی‌گرداند که محدوده‌هایی از منبع رسانه را نشان می‌دهد که مرورگر در لحظه دسترسی به ویژگی `buffered` بافر کرده است (در صورت وجود).
 - {{domxref("HTMLMediaElement.controls")}}
-  - : A boolean that reflects the [`controls`](/en-US/docs/Web/HTML/Reference/Elements/video#controls) HTML attribute, indicating whether user interface items for controlling the resource should be displayed.
+  - : یک مقدار بولی که ویژگی HTML [`controls`](/en-US/docs/Web/HTML/Reference/Elements/video#controls) را منعکس می‌کند و نشان می‌دهد که آیا آیتم‌های رابط کاربری برای کنترل منبع باید نمایش داده شوند یا نه.
 - {{domxref("HTMLMediaElement.controlsList")}}
-  - : Returns a {{domxref("DOMTokenList")}} that helps the user agent select what controls to show on the media element whenever the user agent shows its own set of controls. The `DOMTokenList` takes one or more of three possible values: `nodownload`, `nofullscreen`, and `noremoteplayback`.
+  - : یک {{domxref("DOMTokenList")}} را برمی‌گرداند که به عامل کاربر کمک می‌کند تا هنگامی که مجموعه کنترل‌های خودش را نمایش می‌دهد، انتخاب کند کدام کنترل در عنصر رسانه نمایش داده شود. `DOMTokenList` یک یا چند مقدار از سه مقدار ممکن را می‌گیرد: `nodownload`، `nofullscreen` و `noremoteplayback`.
 - {{domxref("HTMLMediaElement.crossOrigin")}}
-  - : A string indicating the [CORS setting](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin) for this media element.
+  - : یک رشته که [تنظیم CORS](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin) را برای این عنصر رسانه نشان می‌دهد.
 - {{domxref("HTMLMediaElement.currentSrc")}} {{ReadOnlyInline}}
-  - : Returns a string with the absolute URL of the chosen media resource.
+  - : یک رشته با URL مطلق منبع رسانه انتخاب‌شده را برمی‌گرداند.
 - {{domxref("HTMLMediaElement.currentTime")}}
-  - : A double-precision floating-point value indicating the current playback time in seconds; if the media has not started to play and has not been seeked, this value is the media's initial playback time. Setting this value seeks the media to the new time. The time is specified relative to the media's timeline.
+  - : یک مقدار ممیز شناور با دقت دوگانه که زمان فعلی پخش را بر حسب ثانیه نشان می‌دهد؛ اگر رسانه شروع به پخش نکرده باشد و جابه‌جایی (seek) انجام نشده باشد، این مقدار زمان پخش اولیه رسانه است. مقداردهی این ویژگی، رسانه را به زمان جدید می‌برد. زمان نسبت به خط زمانی رسانه مشخص می‌شود.
 - {{domxref("HTMLMediaElement.defaultMuted")}}
-  - : A boolean that reflects the [`muted`](/en-US/docs/Web/HTML/Reference/Elements/video#muted) HTML attribute, which indicates whether the media element's audio output should be muted by default.
+  - : یک مقدار بولی که ویژگی HTML [`muted`](/en-US/docs/Web/HTML/Reference/Elements/video#muted) را منعکس می‌کند و نشان می‌دهد که آیا خروجی صوتی عنصر رسانه باید به‌طور پیش‌فرض بی‌صدا باشد یا نه.
 - {{domxref("HTMLMediaElement.defaultPlaybackRate")}}
-  - : A `double` indicating the default playback rate for the media.
+  - : یک `double` که نرخ پخش پیش‌فرض رسانه را نشان می‌دهد.
 - {{domxref("HTMLMediaElement.disableRemotePlayback")}}
-  - : A boolean that sets or returns the remote playback state, indicating whether the media element is allowed to have a remote playback UI.
+  - : یک مقدار بولی که وضعیت پخش از راه دور را تنظیم یا برمی‌گرداند و نشان می‌دهد که آیا عنصر رسانه مجاز به داشتن رابط کاربری پخش از راه دور هست یا نه.
 - {{domxref("HTMLMediaElement.duration")}} {{ReadOnlyInline}}
-  - : A read-only double-precision floating-point value indicating the total duration of the media in seconds. If no media data is available, the returned value is `NaN`. If the media is of indefinite length (such as streamed live media, a WebRTC call's media, or similar), the value is `Infinity`.
+  - : یک مقدار ممیز شناور با دقت دوگانه فقط‌خواندنی که مدت کل رسانه را بر حسب ثانیه نشان می‌دهد. اگر داده رسانه‌ای در دسترس نباشد، مقدار بازگشتی `NaN` است. اگر رسانه دارای طول نامحدود باشد (مانند رسانه پخش زنده، رسانه تماس WebRTC یا موارد مشابه)، مقدار `Infinity` خواهد بود.
 - {{domxref("HTMLMediaElement.ended")}} {{ReadOnlyInline}}
-  - : Returns a boolean that indicates whether the media element has finished playing.
+  - : یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا عنصر رسانه پخش را به پایان رسانده است یا نه.
 - {{domxref("HTMLMediaElement.error")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("MediaError")}} object for the most recent error, or `null` if there has not been an error.
+  - : یک شیء {{domxref("MediaError")}} برای آخرین خطا برمی‌گرداند، یا اگر خطایی رخ نداده باشد `null` را برمی‌گرداند.
 - {{domxref("HTMLMediaElement.loading")}} {{experimental_inline}}
-  - : A string indicating whether the browser should load the media immediately (`eager`) or when it is needed (`lazy`). See [`<video loading>`](/en-US/docs/Web/HTML/Reference/Elements/video#loading) and [`<audio loading>`](/en-US/docs/Web/HTML/Reference/Elements/audio#loading) HTML attributes for more information.
+  - : یک رشته که نشان می‌دهد مرورگر باید رسانه را بلافاصله (`eager`) بارگیری کند یا زمانی که لازم شود (`lazy`). برای اطلاعات بیشتر، ویژگی‌های HTML [`<video loading>`](/en-US/docs/Web/HTML/Reference/Elements/video#loading) و [`<audio loading>`](/en-US/docs/Web/HTML/Reference/Elements/audio#loading) را ببینید.
 - {{domxref("HTMLMediaElement.loop")}}
-  - : A boolean that reflects the [`loop`](/en-US/docs/Web/HTML/Reference/Elements/video#loop) HTML attribute, which indicates whether the media element should start over when it reaches the end.
+  - : یک مقدار بولی که ویژگی HTML [`loop`](/en-US/docs/Web/HTML/Reference/Elements/video#loop) را منعکس می‌کند و نشان می‌دهد که آیا عنصر رسانه باید هنگام رسیدن به پایان، دوباره شروع شود یا نه.
 - {{domxref("HTMLMediaElement.mediaKeys")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns a {{domxref("MediaKeys")}} object, that is a set of keys that the element can use for decryption of media data during playback. If no key is available, it can be `null`.
+  - : یک شیء {{domxref("MediaKeys")}} برمی‌گرداند که مجموعه کلیدهایی است که عنصر می‌تواند برای رمزگشایی داده‌های رسانه در طول پخش از آن‌ها استفاده کند. اگر کلیدی در دسترس نباشد، می‌تواند `null` باشد.
 - {{domxref("HTMLMediaElement.muted")}}
-  - : A boolean that determines whether audio is muted. `true` if the audio is muted and `false` otherwise.
+  - : یک مقدار بولی که تعیین می‌کند صدا بی‌صدا است یا نه. اگر صدا بی‌صدا باشد `true` و در غیر این صورت `false` است.
 - {{domxref("HTMLMediaElement.networkState")}} {{ReadOnlyInline}}
-  - : Returns a `unsigned short` (enumeration) indicating the current state of fetching the media over the network.
+  - : یک `unsigned short` (شمارشی) برمی‌گرداند که وضعیت فعلی دریافت رسانه از طریق شبکه را نشان می‌دهد.
 - {{domxref("HTMLMediaElement.paused")}} {{ReadOnlyInline}}
-  - : Returns a boolean that indicates whether the media element is paused.
+  - : یک مقدار بولی برمی‌گرداند که نشان می‌دهد عنصر رسانه متوقف شده است یا نه.
 - {{domxref("HTMLMediaElement.playbackRate")}}
-  - : A `double` that indicates the rate at which the media is being played back.
+  - : یک `double` که نرخی را نشان می‌دهد که رسانه با آن در حال پخش است.
 - {{domxref("HTMLMediaElement.played")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref('TimeRanges')}} object that contains the ranges of the media source that the browser has played, if any.
+  - : یک شیء {{domxref('TimeRanges')}} برمی‌گرداند که محدوده‌هایی از منبع رسانه را که مرورگر پخش کرده است، در صورت وجود، شامل می‌شود.
 - {{domxref("HTMLMediaElement.preload")}}
-  - : A string that reflects the [`preload`](/en-US/docs/Web/HTML/Reference/Elements/video#preload) HTML attribute, indicating what data should be preloaded, if any. Possible values are: `none`, `metadata`, `auto`.
+  - : یک رشته که ویژگی HTML [`preload`](/en-US/docs/Web/HTML/Reference/Elements/video#preload) را منعکس می‌کند و نشان می‌دهد چه داده‌ای باید از پیش بارگیری شود (در صورت وجود). مقادیر ممکن عبارت‌اند از: `none`، `metadata`، `auto`.
 - {{domxref("HTMLMediaElement.preservesPitch")}}
-  - : A boolean value that determines if the pitch of the sound will be preserved. If set to `false`, the pitch will adjust to the speed of the audio.
+  - : یک مقدار بولی که تعیین می‌کند زیروبمی صدا حفظ شود یا نه. اگر روی `false` تنظیم شود، زیروبمی با سرعت صدا تنظیم می‌شود.
 - {{domxref("HTMLMediaElement.readyState")}} {{ReadOnlyInline}}
-  - : Returns a `unsigned short` (enumeration) indicating the readiness state of the media.
+  - : یک `unsigned short` (شمارشی) برمی‌گرداند که وضعیت آمادگی رسانه را نشان می‌دهد.
 - {{domxref("HTMLMediaElement.remote")}} {{ReadOnlyInline}}
-  - : Return a {{domxref("RemotePlayback")}} object instance associated with the media element.
+  - : یک نمونه از شیء {{domxref("RemotePlayback")}} مرتبط با عنصر رسانه را برمی‌گرداند.
 - {{domxref("HTMLMediaElement.seekable")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref('TimeRanges')}} object that contains the time ranges that the user is able to seek to, if any.
+  - : یک شیء {{domxref('TimeRanges')}} برمی‌گرداند که شامل بازه‌های زمانی است که کاربر می‌تواند به آن‌ها پرش کند (در صورت وجود).
 - {{domxref("HTMLMediaElement.seeking")}} {{ReadOnlyInline}}
-  - : Returns a boolean that indicates whether the media is in the process of seeking to a new position.
+  - : یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا رسانه در حال جابه‌جایی به موقعیت جدید است یا نه.
 - {{domxref("HTMLMediaElement.sinkId")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns a string that is the unique ID of the audio device delivering output, or an empty string if the user agent default audio device is being used.
+  - : یک رشته برمی‌گرداند که شناسه یکتای دستگاه صوتی تحویل‌دهنده خروجی است، یا اگر دستگاه صوتی پیش‌فرض عامل کاربر استفاده می‌شود، یک رشته خالی برمی‌گرداند.
 - {{domxref("HTMLMediaElement.src")}}
-  - : A string that reflects the [`src`](/en-US/docs/Web/HTML/Reference/Elements/video#src) HTML attribute, which contains the URL of a media resource to use.
+  - : یک رشته که ویژگی HTML [`src`](/en-US/docs/Web/HTML/Reference/Elements/video#src) را منعکس می‌کند و شامل URL منبع رسانه‌ای است که باید استفاده شود.
 - {{domxref("HTMLMediaElement.srcObject")}}
-  - : An object which serves as the source of the media associated with the `HTMLMediaElement`, or `null` if not assigned.
+  - : یک شیء که به‌عنوان منبع رسانه مرتبط با `HTMLMediaElement` عمل می‌کند، یا اگر اختصاص نیافته باشد `null` است.
 - {{domxref("HTMLMediaElement.textTracks")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref('TextTrackList')}} object containing the list of {{domxref("TextTrack")}} objects contained in the element.
+  - : یک شیء {{domxref('TextTrackList')}} برمی‌گرداند که شامل فهرستی از شیءهای {{domxref("TextTrack")}} موجود در عنصر است.
 - {{domxref("HTMLMediaElement.videoTracks")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref('VideoTrackList')}} object containing the list of {{domxref("VideoTrack")}} objects contained in the element.
+  - : یک شیء {{domxref('VideoTrackList')}} برمی‌گرداند که شامل فهرستی از شیءهای {{domxref("VideoTrack")}} موجود در عنصر است.
 - {{domxref("HTMLMediaElement.volume")}}
-  - : A `double` indicating the audio volume, from 0.0 (silent) to 1.0 (loudest).
+  - : یک `double` که بلندی صدا را از 0.0 (سکوت) تا 1.0 (بلندترین) نشان می‌دهد.
 
-## Obsolete properties
+## ویژگی‌های منسوخ‌شده
 
-These properties are obsolete and should not be used, even if a browser still supports them.
+این ویژگی‌ها منسوخ‌شده هستند و نباید استفاده شوند، حتی اگر مرورگری همچنان از آن‌ها پشتیبانی کند.
 
 - {{domxref("HTMLMediaElement.controller")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : A {{domxref("MediaController")}} object that represents the media controller assigned to the element, or `null` if none is assigned.
+  - : یک شیء {{domxref("MediaController")}} که کنترلگر رسانه اختصاص‌داده‌شده به عنصر را نشان می‌دهد، یا اگر هیچ کنترلگری اختصاص نیافته باشد `null` است.
 - {{domxref("HTMLMediaElement.mediaGroup")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : A string that reflects the `mediagroup` HTML attribute, which indicates the name of the group of elements it belongs to. A group of media elements shares a common {{domxref('MediaController')}}.
+  - : یک رشته که ویژگی HTML `mediagroup` را منعکس می‌کند و نام گروه عناصری را که به آن تعلق دارد نشان می‌دهد. یک گروه از عناصر رسانه، یک {{domxref('MediaController')}} مشترک دارند.
 - `HTMLMediaElement.mozAudioCaptured` {{ReadOnlyInline}} {{Non-standard_Inline}} {{Deprecated_Inline}}
-  - : Returns a boolean. Related to audio stream capture.
+  - : یک مقدار بولی برمی‌گرداند. مرتبط با ضبط جریان صوتی است.
 - `HTMLMediaElement.mozFragmentEnd` {{Non-standard_Inline}} {{Deprecated_Inline}}
-  - : A `double` that provides access to the fragment end time if the media element has a fragment URI for `currentSrc`, otherwise it is equal to the media duration.
+  - : یک `double` که دسترسی به زمان پایان قطعه را فراهم می‌کند اگر عنصر رسانه یک URI قطعه برای `currentSrc` داشته باشد؛ در غیر این صورت برابر با مدت رسانه است.
 
-## Instance methods
+## متدهای نمونه
 
-_This interface also inherits methods from its ancestors {{domxref("HTMLElement")}}, {{domxref("Element")}}, {{domxref("Node")}}, and {{domxref("EventTarget")}}._
+_این رابط همچنین متدهایی را از اجداد خود، {{domxref("HTMLElement")}}، {{domxref("Element")}}، {{domxref("Node")}} و {{domxref("EventTarget")}} به ارث می‌برد._
 
 - {{domxref("HTMLMediaElement.addTextTrack()")}}
-  - : Adds a new {{domxref("TextTrack")}} object (such as a track for subtitles) to a media element. This is a programmatic interface only and does not affect the DOM.
+  - : یک شیء {{domxref("TextTrack")}} جدید (مانند یک مسیر برای زیرنویس) به عنصر رسانه اضافه می‌کند. این فقط یک رابط برنامه‌ای است و بر DOM تأثیری ندارد.
 - {{domxref("HTMLMediaElement.captureStream()")}}
-  - : Returns {{domxref("MediaStream")}}, captures a stream of the media content.
+  - : یک {{domxref("MediaStream")}} برمی‌گرداند؛ جریانی از محتوای رسانه را ضبط می‌کند.
 - {{domxref("HTMLMediaElement.canPlayType()")}}
-  - : Given a string specifying a MIME media type (potentially with the [`codecs` parameter](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter) included), `canPlayType()` returns the string `probably` if the media should be playable, `maybe` if there's not enough information to determine whether the media will play or not, or an empty string if the media cannot be played.
+  - : با دریافت رشته‌ای که نوع MIME رسانه را مشخص می‌کند (احتمالاً با [پارامتر `codecs`](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter) شامل شده)، `canPlayType()` رشته `probably` را برمی‌گرداند اگر رسانه باید قابل پخش باشد، `maybe` را اگر اطلاعات کافی برای تعیین پخش‌شدن یا نشدن رسانه وجود نداشته باشد، یا یک رشته خالی را اگر رسانه قابل پخش نباشد.
 - {{domxref("HTMLMediaElement.fastSeek()")}}
-  - : Quickly seeks to the given time with low precision.
+  - : به سرعت با دقت کم به زمان داده‌شده می‌پرد.
 - {{domxref("HTMLMediaElement.getStartDate()")}}
-  - : Returns a {{jsxref("Date")}} object representing the real-world date and time corresponding to the beginning of the media. For live streams, this is the time the broadcast began on the server, which may be before the user started watching.
+  - : یک شیء {{jsxref("Date")}} برمی‌گرداند که تاریخ و زمان واقعی جهان را متناظر با آغاز رسانه نشان می‌دهد. برای پخش زنده، این زمان شروع پخش در سرور است که ممکن است پیش از تماشای کاربر باشد.
 - {{domxref("HTMLMediaElement.load()")}}
-  - : Resets the media to the beginning and selects the best available source from the sources provided using the [`src`](/en-US/docs/Web/HTML/Reference/Elements/video#src) attribute or the {{HTMLElement("source")}} element.
+  - : رسانه را به ابتدا بازنشانی می‌کند و بهترین منبع موجود را از میان منابع ارائه‌شده با استفاده از ویژگی [`src`](/en-US/docs/Web/HTML/Reference/Elements/video#src) یا عنصر {{HTMLElement("source")}} انتخاب می‌کند.
 - {{domxref("HTMLMediaElement.pause()")}}
-  - : Pauses the media playback.
+  - : پخش رسانه را متوقف می‌کند.
 - {{domxref("HTMLMediaElement.play()")}}
-  - : Begins playback of the media.
+  - : پخش رسانه را آغاز می‌کند.
 - {{domxref("HTMLMediaElement.seekToNextFrame()")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : Seeks to the next frame in the media. This non-standard, experimental method makes it possible to manually drive reading and rendering of media at a custom speed, or to move through the media frame-by-frame to perform filtering or other operations.
+  - : به فریم بعدی در رسانه می‌پرد. این متد غیراستاندارد و آزمایشی، امکان هدایت دستی خواندن و رندر رسانه با سرعت سفارشی را فراهم می‌کند، یا امکان حرکت فریم‌به‌فریم در رسانه برای انجام فیلتر یا سایر عملیات را می‌دهد.
 - {{domxref("HTMLMediaElement.setMediaKeys()")}} {{SecureContext_Inline}}
-  - : Returns {{jsxref("Promise")}}. Sets the {{domxref("MediaKeys")}} keys to use when decrypting media during playback.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند. کلیدهای {{domxref("MediaKeys")}} مورد استفاده برای رمزگشایی رسانه در طول پخش را تنظیم می‌کند.
 - {{domxref("HTMLMediaElement.setSinkId()")}} {{SecureContext_Inline}}
-  - : Sets the ID of the audio device to use for output and returns a {{jsxref("Promise")}}. This only works when the application is authorized to use the specified device.
+  - : شناسه دستگاه صوتی مورد استفاده برای خروجی را تنظیم می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند. این فقط زمانی کار می‌کند که برنامه مجاز به استفاده از دستگاه مشخص‌شده باشد.
 
-## Obsolete methods
+## متدهای منسوخ‌شده
 
-_These methods are obsolete and should not be used, even if a browser still supports them._
+_این متدها منسوخ‌شده هستند و نباید استفاده شوند، حتی اگر مرورگری همچنان از آن‌ها پشتیبانی کند._
 
 - {{domxref("HTMLMediaElement.captureStream", "HTMLMediaElement.mozCaptureStream()")}} {{Non-standard_Inline}}
-  - : The Firefox-prefixed equivalent of {{domxref("HTMLMediaElement.captureStream()")}}. See its [browser compatibility](/en-US/docs/Web/API/HTMLMediaElement/captureStream#browser_compatibility) for details.
+  - : معادل با پیشوند Firefox از {{domxref("HTMLMediaElement.captureStream()")}}. برای جزئیات به [سازگاری مرورگر](/en-US/docs/Web/API/HTMLMediaElement/captureStream#browser_compatibility) آن مراجعه کنید.
 - `HTMLMediaElement.mozCaptureStreamUntilEnded()` {{Non-standard_Inline}} {{Deprecated_Inline}}
-  - : A non-standard, deprecated, method to capture the steam until it ended.
+  - : یک متد غیراستاندارد و منسوخ برای ضبط جریان تا پایان آن.
 - `HTMLMediaElement.mozGetMetadata()` {{Non-standard_Inline}} {{Deprecated_Inline}}
-  - : Returns {{jsxref('Object')}}, which contains properties that represent metadata from the playing media resource as `{key: value}` pairs. A separate copy of the data is returned each time the method is called. This method must be called after the [`loadedmetadata`](/en-US/docs/Web/API/HTMLMediaElement/loadedmetadata_event) event fires.
+  - : یک {{jsxref('Object')}} برمی‌گرداند که حاوی ویژگی‌هایی است که فراداده منبع رسانه در حال پخش را به‌صورت جفت‌های `{key: value}` نشان می‌دهد. هر بار که متد فراخوانی می‌شود، یک نسخه جداگانه از داده‌ها برگردانده می‌شود. این متد باید پس از رویداد [`loadedmetadata`](/en-US/docs/Web/API/HTMLMediaElement/loadedmetadata_event) فراخوانی شود.
 
-## Events
+## رویدادها
 
-_Inherits events from its parent, {{domxref("HTMLElement")}}_.
+_رویدادها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
-Listen to these events using {{domxref("EventTarget.addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface.
+برای گوش‌دادن به این رویدادها از {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید یا یک شنونده رویداد به ویژگی `oneventname` این رابط نسبت دهید.
 
 - {{domxref("HTMLMediaElement.abort_event", 'abort')}}
-  - : Fired when the resource was not fully loaded, but not as the result of an error.
+  - : هنگامی رخ می‌دهد که منبع به‌طور کامل بارگیری نشده است، اما نه در نتیجه یک خطا.
 - {{domxref("HTMLMediaElement.canplay_event", 'canplay')}}
-  - : Fired when the user agent can play the media, but estimates that **not** enough data has been loaded to play the media up to its end without having to stop for further buffering of content.
+  - : هنگامی رخ می‌دهد که عامل کاربر می‌تواند رسانه را پخش کند، اما تخمین می‌زند که **داده کافی** برای پخش رسانه تا پایان، بدون نیاز به توقف برای بافر بیشتر محتوا، بارگیری نشده است.
 - {{domxref("HTMLMediaElement.canplaythrough_event", 'canplaythrough')}}
-  - : Fired when the user agent can play the media, and estimates that enough data has been loaded to play the media up to its end without having to stop for further buffering of content.
+  - : هنگامی رخ می‌دهد که عامل کاربر می‌تواند رسانه را پخش کند و تخمین می‌زند که داده کافی برای پخش رسانه تا پایان، بدون نیاز به توقف برای بافر بیشتر محتوا، بارگیری شده است.
 - {{domxref("HTMLMediaElement.durationchange_event", 'durationchange')}}
-  - : Fired when the duration property has been updated.
+  - : هنگامی رخ می‌دهد که ویژگی مدت (duration) به‌روزرسانی شده است.
 - {{domxref("HTMLMediaElement.emptied_event", 'emptied')}}
-  - : Fired when the media has become empty; for example, when the media has already been loaded (or partially loaded), and the {{domxref("HTMLMediaElement.load()")}} method is called to reload it.
+  - : هنگامی رخ می‌دهد که رسانه خالی شده است؛ برای مثال، وقتی رسانه قبلاً بارگیری شده (یا به‌طور جزئی بارگیری شده) و متد {{domxref("HTMLMediaElement.load()")}} برای بارگیری دوباره آن فراخوانی می‌شود.
 - {{domxref("HTMLMediaElement.encrypted_event", 'encrypted')}}
-  - : Fired when initialization data is found in the media that indicates the media is encrypted.
+  - : هنگامی رخ می‌دهد که داده‌های اولیه‌سازی (initialization data) در رسانه یافت می‌شود که نشان می‌دهد رسانه رمزگذاری شده است.
 - {{domxref("HTMLMediaElement.ended_event", 'ended')}}
-  - : Fired when playback stops when end of the media (\<audio> or \<video>) is reached or because no further data is available.
+  - : هنگامی رخ می‌دهد که پخش با رسیدن به پایان رسانه (\<audio> یا \<video>) یا به دلیل در دسترس نبودن داده بیشتر متوقف می‌شود.
 - {{domxref("HTMLMediaElement.error_event", 'error')}}
-  - : Fired when the resource could not be loaded due to an error.
+  - : هنگامی رخ می‌دهد که منبع به دلیل یک خطا قابل بارگیری نبود.
 - {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}}
-  - : Fired when the first frame of the media has finished loading.
+  - : هنگامی رخ می‌دهد که اولین فریم رسانه به پایان بارگیری شده است.
 - {{domxref("HTMLMediaElement.loadedmetadata_event", 'loadedmetadata')}}
-  - : Fired when the metadata has been loaded.
+  - : هنگامی رخ می‌دهد که فراداده بارگیری شده است.
 - {{domxref("HTMLMediaElement.loadstart_event", 'loadstart')}}
-  - : Fired when the browser has started to load a resource.
+  - : هنگامی رخ می‌دهد که مرورگر شروع به بارگیری یک منبع کرده است.
 - {{domxref("HTMLMediaElement.pause_event", 'pause')}}
-  - : Fired when a request to pause play is handled and the activity has entered its paused state, most commonly occurring when the media's {{domxref("HTMLMediaElement.pause()")}} method is called.
+  - : هنگامی رخ می‌دهد که درخواست توقف پخش پردازش می‌شود و فعالیت وارد حالت توقف شده است؛ این حالت معمولاً زمانی رخ می‌دهد که متد {{domxref("HTMLMediaElement.pause()")}} رسانه فراخوانی می‌شود.
 - {{domxref("HTMLMediaElement.play_event", 'play')}}
-  - : Fired when the `paused` property is changed from `true` to `false`, as a result of the {{domxref("HTMLMediaElement.play()")}} method, or the `autoplay` attribute.
+  - : هنگامی رخ می‌دهد که ویژگی `paused` در نتیجه متد {{domxref("HTMLMediaElement.play()")}} یا ویژگی `autoplay` از `true` به `false` تغییر می‌کند.
 - {{domxref("HTMLMediaElement.playing_event", "playing")}}
-  - : Fired when playback is ready to start after having been paused or delayed due to lack of data.
+  - : هنگامی رخ می‌دهد که پخش پس از توقف یا تأخیر به دلیل کمبود داده، آماده شروع است.
 - {{domxref("HTMLMediaElement.progress_event", "progress")}}
-  - : Fired periodically as the browser loads a resource.
+  - : به‌طور متناوب در حالی که مرورگر منبع را بارگیری می‌کند رخ می‌دهد.
 - {{domxref("HTMLMediaElement.ratechange_event", 'ratechange')}}
-  - : Fired when the playback rate has changed.
+  - : هنگامی رخ می‌دهد که نرخ پخش تغییر کرده است.
 - {{domxref("HTMLMediaElement.seeked_event", 'seeked')}}
-  - : Fired when a seek operation completes.
+  - : هنگامی رخ می‌دهد که یک عملیات جابه‌جایی (seek) تکمیل می‌شود.
 - {{domxref("HTMLMediaElement.seeking_event", 'seeking')}}
-  - : Fired when a seek operation begins.
+  - : هنگامی رخ می‌دهد که یک عملیات جابه‌جایی آغاز می‌شود.
 - {{domxref("HTMLMediaElement.stalled_event", 'stalled')}}
-  - : Fired when the user agent is trying to fetch media data, but data is unexpectedly not forthcoming.
+  - : هنگامی رخ می‌دهد که عامل کاربر در حال تلاش برای دریافت داده رسانه است، اما به‌طور غیرمنتظره‌ای داده دریافت نمی‌شود.
 - {{domxref("HTMLMediaElement.suspend_event", 'suspend')}}
-  - : Fired when the media data loading has been suspended.
+  - : هنگامی رخ می‌دهد که بارگیری داده رسانه معلق شده است.
 - {{domxref("HTMLMediaElement.timeupdate_event", 'timeupdate')}}
-  - : Fired when the time indicated by the {{domxref("HTMLMediaElement.currentTime", "currentTime")}} property has been updated.
+  - : هنگامی رخ می‌دهد که زمان نشان‌داده‌شده توسط ویژگی {{domxref("HTMLMediaElement.currentTime", "currentTime")}} به‌روزرسانی شده است.
 - {{domxref("HTMLMediaElement.volumechange_event", 'volumechange')}}
-  - : Fired when the volume has changed.
+  - : هنگامی رخ می‌دهد که بلندی صدا تغییر کرده است.
 - {{domxref("HTMLMediaElement.waiting_event", 'waiting')}}
-  - : Fired when playback has stopped because of a temporary lack of data.
+  - : هنگامی رخ می‌دهد که پخش به دلیل کمبود موقت داده متوقف شده است.
 - {{domxref("HTMLMediaElement.waitingforkey_event", 'waitingforkey')}}
-  - : Fired when playback is first blocked while waiting for a key.
+  - : هنگامی رخ می‌دهد که پخش ابتدا در حالی که منتظر کلید است مسدود می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-### References
+### مراجع
 
-- {{HTMLElement("video")}} and {{HTMLElement("audio")}} HTML elements
-- {{domxref("HTMLVideoElement")}} and {{domxref("HTMLAudioElement")}} interfaces, derived from `HTMLMediaElement`
+- عنصرهای HTML {{HTMLElement("video")}} و {{HTMLElement("audio")}}
+- رابط‌های {{domxref("HTMLVideoElement")}} و {{domxref("HTMLAudioElement")}} که از `HTMLMediaElement` مشتق شده‌اند
 
-### Guides
+### راهنماها
 
-- [Web media technologies](/en-US/docs/Web/Media)
-- Learning area: [HTML video and audio](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio)
-- [Media type and format guide](/en-US/docs/Web/Media/Guides/Formats)
-- [Handling media support issues in web content](/en-US/docs/Web/Media/Guides/Formats/Support_issues)
+- [فناوری‌های رسانه وب](/en-US/docs/Web/Media)
+- حوزه یادگیری: [ویدیو و صوت HTML](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio)
+- [راهنمای نوع رسانه و قالب](/en-US/docs/Web/Media/Guides/Formats)
+- [مدیریت مشکلات پشتیبانی از رسانه در محتوای وب](/en-US/docs/Web/Media/Guides/Formats/Support_issues)
