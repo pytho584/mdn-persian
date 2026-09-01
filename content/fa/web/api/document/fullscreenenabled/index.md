@@ -1,11 +1,5 @@
 ---
 title: "Document: fullscreenEnabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenEnabled"
-status: "needs-translation"
----
-
----
-title: "Document: fullscreenEnabled property"
 short-title: fullscreenEnabled
 slug: Web/API/Document/fullscreenEnabled
 page-type: web-api-instance-property
@@ -14,30 +8,19 @@ browser-compat: api.Document.fullscreenEnabled
 
 {{APIRef("Fullscreen API")}}
 
-The read-only **`fullscreenEnabled`**
-property on the {{domxref("Document")}} interface indicates whether or not fullscreen
-mode is available.
+خصوصیتِ فقط‌خواندنی **`fullscreenEnabled`** در رابط {{domxref("Document")}} نشان می‌دهد که آیا حالت تمام‌صفحه در دسترس است یا نه.
 
-fullscreen mode is available only for a page that has no
-windowed plug-ins in any of its documents, and if all {{HTMLElement("iframe")}} elements
-which contain the document have their [`allowfullscreen`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allowfullscreen)
-attribute set.
+حالت تمام‌صفحه فقط برای صفحه‌ای در دسترس است که هیچ پلاگین پنجره‌ای در هیچ‌یک از اسناد آن وجود نداشته باشد و تمام عناصر {{HTMLElement("iframe")}} که سند را در خود دارند، ویژگی [`allowfullscreen`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allowfullscreen) را تنظیم کرده باشند.
 
-Although this property is read-only, it will not throw if it is modified (even in
-strict mode); the setter is a no-operation and it will be ignored.
+اگرچه این خصوصیت فقط‌خواندنی است، اما اگر تغییر داده شود (حتی در حالت سخت‌گیرانه) خطایی پرتاب نمی‌کند؛ تنظیم‌کننده آن یک عملیات بی‌اثر است و نادیده گرفته می‌شود.
 
-## Value
+## مقدار
 
-A boolean value which is `true` if the document and the
-elements within can be placed into fullscreen mode by calling
-{{domxref("Element.requestFullscreen()")}}. If fullscreen mode isn't available, this
-value is `false`.
+یک مقدار بولی که اگر سند و عناصر داخل آن بتوانند با فراخوانی {{domxref("Element.requestFullscreen()")}} در حالت تمام‌صفحه قرار گیرند، `true` است. اگر حالت تمام‌صفحه در دسترس نباشد، این مقدار `false` است.
 
-## Examples
+## مثال‌ها
 
-In this example, before attempting to request fullscreen mode for a
-{{htmlElement("video")}} element, the value of `fullscreenEnabled` is
-checked, in order to avoid making the attempt when not available.
+در این مثال، قبل از تلاش برای درخواست حالت تمام‌صفحه برای یک عنصر {{htmlElement("video")}}، مقدار `fullscreenEnabled` بررسی می‌شود تا در صورت در دسترس نبودن، از انجام این تلاش جلوگیری شود.
 
 ```js
 function requestFullscreen() {
@@ -49,21 +32,20 @@ function requestFullscreen() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Fullscreen API](/en-US/docs/Web/API/Fullscreen_API)
 - [Guide to the Fullscreen API](/en-US/docs/Web/API/Fullscreen_API/Guide)
 - {{domxref("Element.requestFullscreen()")}}
 - {{domxref("Document.exitFullscreen()")}}
 - {{domxref("Document.fullscreenElement")}}
-- {{cssxref(":fullscreen") }} and {{cssxref("::backdrop")}}
-- The {{HTMLElement("iframe")}} [`allowfullscreen`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allowfullscreen)
-  attribute
+- {{cssxref(":fullscreen") }} و {{cssxref("::backdrop")}}
+- ویژگی [`allowfullscreen`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allowfullscreen) در عنصر {{HTMLElement("iframe")}}
