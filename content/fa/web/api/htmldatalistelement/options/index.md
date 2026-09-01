@@ -1,11 +1,5 @@
 ---
 title: "HTMLDataListElement: options property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDataListElement/options"
-status: "needs-translation"
----
-
----
-title: "HTMLDataListElement: options property"
 short-title: options
 slug: Web/API/HTMLDataListElement/options
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.HTMLDataListElement.options
 
 {{APIRef("HTML DOM")}}
 
-The **`options`** read-only property of the {{domxref("HTMLDataListElement")}} interface returns an {{domxref("HTMLCollection")}} of {{domxref("HTMLOptionElement")}} elements contained in a {{htmlelement("datalist")}}. The descendant {{htmlelement("option")}} elements provide predefined options for the {{htmlelement("input")}} control associated with the `<datalist>`.
+خاصیت فقط خواندنی **`options`** از رابط {{domxref("HTMLDataListElement")}} یک {{domxref("HTMLCollection")}} از عناصر {{domxref("HTMLOptionElement")}} که در یک {{htmlelement("datalist")}} قرار دارند را برمی‌گرداند. عناصر فرزند {{htmlelement("option")}} گزینه‌های از پیش‌تعریف‌شده‌ای را برای کنترل {{htmlelement("input")}} مرتبط با `<datalist>` فراهم می‌کنند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLCollection")}} of {{domxref("HTMLOptionElement")}} elements.
+یک {{domxref("HTMLCollection")}} از عناصر {{domxref("HTMLOptionElement")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLDataListElement")}}
 - {{domxref("HTMLOptionElement")}}
