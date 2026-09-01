@@ -1,11 +1,5 @@
 ---
 title: "EventSource: message event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EventSource/message_event"
-status: "needs-translation"
----
-
----
-title: "EventSource: message event"
 short-title: message
 slug: Web/API/EventSource/message_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.EventSource.message_event
 
 {{APIRef("Server Sent Events")}}{{AvailableInWorkers}}
 
-The **`message`** event of the {{domxref("EventSource")}} interface is fired when data is received through an event source.
+رویداد **`message`** از رابط {{domxref("EventSource")}} هنگامی که داده‌ای از طریق یک منبع رویداد دریافت می‌شود، فعال می‌گردد.
 
-This event is not cancelable and does not bubble.
+این رویداد غیرقابل لغو است و انتشار نمی‌یابد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم نمایید.
 
 ```js-nolint
 addEventListener("message", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("message", (event) => { })
 onmessage = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MessageEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("MessageEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("MessageEvent")}}
 
-## Examples
+## مثال‌ها
 
-In this basic example, an `EventSource` is created to receive events from the server; a page with the name `sse.php` is responsible for generating the events.
+در این مثال ساده، یک `EventSource` برای دریافت رویدادها از سرور ایجاد می‌شود؛ صفحه‌ای با نام `sse.php` مسئول تولید رویدادها است.
 
 ```js
 const evtSource = new EventSource("sse.php");
@@ -50,7 +44,7 @@ evtSource.addEventListener("message", (e) => {
 });
 ```
 
-### onmessage equivalent
+### معادل onmessage
 
 ```js
 evtSource.onmessage = (e) => {
@@ -61,16 +55,16 @@ evtSource.onmessage = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using server-sent events](/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)
+- [استفاده از رویدادهای ارسال‌شده از سمت سرور](/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)
 - [`open`](/en-US/docs/Web/API/EventSource/open_event)
 - [`error`](/en-US/docs/Web/API/EventSource/error_event)
