@@ -1,11 +1,5 @@
 ---
 title: "Element: insertAdjacentElement() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement"
-status: "needs-translation"
----
-
----
-title: "Element: insertAdjacentElement() method"
 short-title: insertAdjacentElement()
 slug: Web/API/Element/insertAdjacentElement
 page-type: web-api-instance-method
@@ -14,46 +8,38 @@ browser-compat: api.Element.insertAdjacentElement
 
 {{APIRef("DOM")}}
 
-The **`insertAdjacentElement()`** method of the
-{{domxref("Element")}} interface inserts a given element node at a given position
-relative to the element it is invoked upon.
+متد **`insertAdjacentElement()`** از رابط {{domxref("Element")}} یک گره عنصر مشخص را در موقعیتی معین نسبت به عنصری که بر روی آن فراخوانی شده است، درج می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 insertAdjacentElement(position, element)
 ```
 
-### Parameters
+### پارامترها
 
 - `position`
-  - : A string representing the position relative to the
-    `targetElement`; must match (case-insensitively) one of the following
-    strings:
-    - `'beforebegin'`: Before the
-      `targetElement` itself.
-    - `'afterbegin'`: Just inside the
-      `targetElement`, before its first child.
-    - `'beforeend'`: Just inside the
-      `targetElement`, after its last child.
-    - `'afterend'`: After the
-      `targetElement` itself.
+  - : رشته‌ای که موقعیت را نسبت به `targetElement` مشخص می‌کند. باید (بدون حساسیت به بزرگی/کوچکی حروف) با یکی از رشته‌های زیر مطابقت داشته باشد:
+    - `'beforebegin'`: قبل از خود `targetElement`.
+    - `'afterbegin'': درست داخل `targetElement`، قبل از اولین فرزند آن.
+    - `'beforeend'`: درست داخل `targetElement`، بعد از آخرین فرزند آن.
+    - `'afterend'`: بعد از خود `targetElement`.
 
 - `element`
-  - : The element to be inserted into the tree.
+  - : عنصری که قرار است در درخت درج شود.
 
-### Return value
+### مقدار بازگشتی
 
-The element that was inserted, or `null`, if the insertion failed.
+عنصری که درج شده است، یا `null` در صورت شکست درج.
 
-### Exceptions
+### استثناها
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if the `position` specified is not a recognized value.
+  - : اگر `position` مشخص شده یک مقدار شناخته‌شده نباشد، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if the `element` specified is not a valid element.
+  - : اگر `element` مشخص شده یک عنصر معتبر نباشد، پرتاب می‌شود.
 
-### Visualization of position names
+### نمایش بصری موقعیت‌ها
 
 ```html
 <!-- beforebegin -->
@@ -66,17 +52,15 @@ The element that was inserted, or `null`, if the insertion failed.
 ```
 
 > [!NOTE]
-> The `beforebegin` and
-> `afterend` positions work only if the node is in a tree and has an element
-> parent.
+> موقعیت‌های `beforebegin` و `afterend` فقط زمانی کار می‌کنند که گره در یک درخت باشد و یک عنصر والد داشته باشد.
 
-## Examples
+## مثال‌ها
 
-### Inserting before and after
+### درج قبل و بعد
 
-In this example we have a row of square boxes. The user can select a box by clicking on it: this gives the box a different border, to show that it is selected.
+در این مثال یک ردیف از جعبه‌های مربعی داریم. کاربر می‌تواند با کلیک روی یک جعبه آن را انتخاب کند: این کار یک حاشیه متفاوت به جعبه می‌دهد تا نشان دهد انتخاب شده است.
 
-If a box is selected, and the user presses the "Insert before" or "Insert after" buttons, then the code creates a new box, gives it a random color, and inserts it before or after the selected box.
+اگر یک جعبه انتخاب شده باشد و کاربر دکمه‌های "Insert before" یا "Insert after" را فشار دهد، کد یک جعبه جدید ایجاد می‌کند، یک رنگ تصادفی به آن می‌دهد و آن را قبل یا بعد از جعبه انتخاب شده درج می‌کند.
 
 #### HTML
 
@@ -166,22 +150,21 @@ const resetBtn = document.querySelector(".reset");
 resetBtn.addEventListener("click", () => window.location.reload(true));
 ```
 
-#### Result
+#### نتیجه
 
 {{embedlivesample("Inserting before and after", "", "200")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.insertAdjacentHTML()")}}
 - {{domxref("Element.insertAdjacentText()")}}
-- {{domxref("Node.insertBefore()")}} (similar to `beforebegin`, with
-  different arguments)
-- {{domxref("Node.appendChild()")}} (same effect as `beforeend`)
+- {{domxref("Node.insertBefore()")}} (مشابه `beforebegin`، با آرگومان‌های متفاوت)
+- {{domxref("Node.appendChild()")}} (همان اثر `beforeend`)
