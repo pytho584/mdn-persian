@@ -1,11 +1,5 @@
 ---
 title: "GPUAdapter: requestAdapterInfo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/requestAdapterInfo"
-status: "needs-translation"
----
-
----
-title: "GPUAdapter: requestAdapterInfo() method"
 short-title: requestAdapterInfo()
 slug: Web/API/GPUAdapter/requestAdapterInfo
 page-type: web-api-instance-method
@@ -17,26 +11,25 @@ browser-compat: api.GPUAdapter.requestAdapterInfo
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{deprecated_header}}{{non-standard_header}}{{AvailableInWorkers}}
 
-The **`requestAdapterInfo()`** method of the
-{{domxref("GPUAdapter")}} interface returns a {{jsxref("Promise")}} that fulfills with a {{domxref("GPUAdapterInfo")}} object containing identifying information about an adapter.
+روش **`requestAdapterInfo()`** از رابط {{domxref("GPUAdapter")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء {{domxref("GPUAdapterInfo")}} حاوی اطلاعات شناسایی درباره یک آداپتور تکمیل می‌شود.
 
-`requestAdapterInfo()` has been removed from the WebGPU specification. Use {{domxref("GPUAdapter.info")}} to access adapter information instead.
+`requestAdapterInfo()` از مشخصات WebGPU حذف شده است. برای دسترسی به اطلاعات آداپتور از {{domxref("GPUAdapter.info")}} استفاده کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 requestAdapterInfo()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with a {{domxref("GPUAdapterInfo")}} object instance.
+یک {{jsxref("Promise")}} که با یک نمونه شیء {{domxref("GPUAdapterInfo")}} تکمیل می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function init() {
@@ -57,14 +50,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
-No longer part of the [WebGPU specification](https://gpuweb.github.io/gpuweb/).
+دیگر بخشی از [مشخصات WebGPU](https://gpuweb.github.io/gpuweb/) نیست.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [API WebGPU](/en-US/docs/Web/API/WebGPU_API)
