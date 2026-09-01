@@ -1,7 +1,5 @@
 ---
 title: "Element: ariaAutoComplete property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaAutoComplete"
-status: "needs-translation"
 ---
 
 ---
@@ -14,24 +12,24 @@ browser-compat: api.Element.ariaAutoComplete
 
 {{APIRef("DOM")}}
 
-The **`ariaAutoComplete`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete) attribute, which indicates whether inputting text could trigger display of one or more predictions of the user's intended value for a combobox, searchbox, or textbox and specifies how predictions would be presented if they were made.
+ویژگی **`ariaAutoComplete`** در رابط {{domxref("Element")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete) است؛ این ویژگی نشان می‌دهد که آیا وارد کردن متن می‌تواند نمایش یک یا چند پیش‌بینی از مقدار موردنظر کاربر را برای combobox، searchbox یا textbox فعال کند و همچنین مشخص می‌کند که پیش‌بینی‌ها در صورت ارائه چگونه نمایش داده شوند.
 
 ## Value
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"inline"`
-  - : When a user is providing input, text suggesting one way to complete the provided input may be dynamically inserted after the caret.
+  - : وقتی کاربر در حال وارد کردن ورودی است، متنی که راهی برای تکمیل ورودی ارائه‌شده پیشنهاد می‌کند، ممکن است به‌صورت پویا پس از مکان‌نما درج شود.
 - `"list"`
-  - : When a user is providing input, an element containing a collection of values that could complete the provided input may be displayed.
+  - : وقتی کاربر در حال وارد کردن ورودی است، ممکن است عنصری حاوی مجموعه‌ای از مقادیر که می‌توانند ورودی ارائه‌شده را تکمیل کنند، نمایش داده شود.
 - `"both"`
-  - : When a user is providing input, an element containing a collection of values that could complete the provided input may be displayed. If displayed, one value in the collection is automatically selected, and the text needed to complete the automatically selected value appears after the caret in the input.
+  - : وقتی کاربر در حال وارد کردن ورودی است، ممکن است عنصری حاوی مجموعه‌ای از مقادیر که می‌توانند ورودی ارائه‌شده را تکمیل کنند، نمایش داده شود. در صورت نمایش، یکی از مقادیر موجود در مجموعه به‌صورت خودکار انتخاب می‌شود و متن لازم برای تکمیل مقدار انتخاب‌شده‌به‌صورت‌خودکار، پس از مکان‌نما در ورودی ظاهر می‌شود.
 - `"none"`
-  - : When a user is providing input, there is no display of an automatic suggestion that attempts to predict how the user intends to complete the input.
+  - : وقتی کاربر در حال وارد کردن ورودی است، هیچ پیشنهاد خودکاری برای پیش‌بینی نحوهٔ تکمیل ورودی توسط کاربر نمایش داده نمی‌شود.
 
 ## Examples
 
-In this example, the `aria-autocomplete` attribute on the element with an ID of `animal` is set to `"inline"`. Using `ariaAutoComplete` we update the value to `"list"`, which is the expected value for a combobox that invokes a `listbox` popup.
+در این مثال، ویژگی `aria-autocomplete` روی عنصری با شناسهٔ `animal` روی مقدار `"inline"` تنظیم شده است. با استفاده از `ariaAutoComplete` مقدار را به `"list"` تغییر می‌دهیم؛ این مقدار مورد انتظار برای یک combobox است که یک popup از نوع `listbox` را فراخوانی می‌کند.
 
 ```html
 <div class="animals-combobox">
