@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaHidden property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaHidden"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaHidden property"
 short-title: ariaHidden
 slug: Web/API/ElementInternals/ariaHidden
 page-type: web-api-instance-property
@@ -14,25 +8,25 @@ browser-compat: api.ElementInternals.ariaHidden
 
 {{APIRef("Web Components")}}
 
-The **`ariaHidden`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-hidden`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden) attribute, which indicates whether the element is exposed to an accessibility API.
+ویژگی **`ariaHidden`** در رابط {{domxref("ElementInternals")}} منعکس‌کنندهٔ مقدار صفت [`aria-hidden`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden) است که مشخص می‌کند آیا عنصر در معرض یک API دسترسی‌پذیری قرار می‌گیرد یا خیر.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم صفات aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را روی یک عنصر سفارشی فراهم می‌کند. این موارد ممکن است توسط صفات تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که اگر نویسنده آن صفات را حذف کند یا اصلاً اضافه نکند، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح‌دهندهٔ مدل شیء دسترسی‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The element is hidden from the accessibility API.
+  - : عنصر از API دسترسی‌پذیری پنهان است.
 - `"false"`
-  - : The element is exposed to the accessibility API as if it were rendered.
+  - : عنصر به API دسترسی‌پذیری نمایش داده می‌شود، گویی که رندر شده است.
 - `"undefined"`
-  - : The element's hidden state is determined by the user agent based on whether it is rendered.
+  - : وضعیت پنهان بودن عنصر توسط عامل کاربر بر اساس اینکه آیا رندر شده است تعیین می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaHidden` is set to "true".
+در این مثال، مقدار `ariaHidden` روی `"true"` تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -45,10 +39,10 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
