@@ -1,11 +1,5 @@
 ---
 title: "Document: fragmentDirective property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/fragmentDirective"
-status: "needs-translation"
----
-
----
-title: "Document: fragmentDirective property"
 short-title: fragmentDirective
 slug: Web/API/Document/fragmentDirective
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.Document.fragmentDirective
 
 {{APIRef("URL Fragment Text Directives")}}
 
-The **`fragmentDirective`** read-only property of the {{domxref("Document")}} interface returns the {{domxref("FragmentDirective")}} for the current document.
+ویژگی فقط‌خواندنی **`fragmentDirective`** در رابط {{domxref("Document")}}، شیء {{domxref("FragmentDirective")}} مربوط به سند فعلی را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("FragmentDirective")}} object.
+یک شیء {{domxref("FragmentDirective")}}.
 
-## Examples
+## مثال‌ها
 
-### Checking if text fragments are supported
+### بررسی پشتیبانی از متن‌قطعه‌ها (text fragments)
 
-The code below logs whether or not text fragments are supported in your browser by checking for existence of the object.
-Note that the object is empty, and at present it is mainly intended for feature detection.
-In the future, it might include other information.
+کد زیر با بررسی وجود شیء، مشخص می‌کند که آیا مرورگر شما از متن‌قطعه‌ها پشتیبانی می‌کند یا خیر.
+توجه داشته باشید که این شیء خالی است و در حال حاضر عمدتاً برای تشخیص ویژگی (feature detection) در نظر گرفته شده است.
+در آینده ممکن است اطلاعات دیگری نیز در بر داشته باشد.
 
 ```html hidden
 <pre id="log"></pre>
@@ -55,15 +49,15 @@ if (document.fragmentDirective) {
 
 {{EmbedLiveSample("Checking if text fragments are supported","100%","30px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Text fragments](/en-US/docs/Web/URI/Reference/Fragment/Text_fragments)
+- [متن‌قطعه‌ها (Text fragments)](/en-US/docs/Web/URI/Reference/Fragment/Text_fragments)
 - {{cssxref("::target-text")}}
