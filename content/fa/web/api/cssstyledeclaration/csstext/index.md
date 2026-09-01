@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleDeclaration: cssText property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/cssText"
-status: "needs-translation"
----
-
----
-title: "CSSStyleDeclaration: cssText property"
 short-title: cssText
 slug: Web/API/CSSStyleDeclaration/cssText
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.CSSStyleDeclaration.cssText
 
 {{APIRef("CSSOM")}}
 
-The **`cssText`** property of the {{domxref("CSSStyleDeclaration")}} interface returns or sets the text of the element's **inline** style declaration only.
+ویژگی **`cssText`** در رابط {{domxref("CSSStyleDeclaration")}}، متنِ اعلان استایل **درونخطی (inline)** عنصر را بازمی‌گرداند یا تنظیم می‌کند.
 
-To be able to set a **stylesheet** rule dynamically, see [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information).
+برای تنظیم پویای یک قانون **stylesheet**، به [استفاده از اطلاعات استایل پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information) مراجعه کنید.
 
-Not to be confused with stylesheet style-rule {{domxref("CSSRule.cssText")}}.
+این ویژگی را با {{domxref("CSSRule.cssText")}} که مربوط به قانون‌های استایل در stylesheet است اشتباه نگیرید.
 
-## Value
+## مقدار
 
-A string containing the text of the element's inline style declaration.
+یک رشته (string) شامل متنِ اعلان استایل درونخطی عنصر.
 
-## Example
+## مثال
 
 ```html
 <span id="s1" style="color: red;">Some text</span>
@@ -35,10 +29,10 @@ const elem = document.getElementById("s1");
 console.log(elem.style.cssText); // "color: red;"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
