@@ -1,7 +1,6 @@
 ---
 title: "EventTarget: dispatchEvent() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +13,14 @@ browser-compat: api.EventTarget.dispatchEvent
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`dispatchEvent()`** method of the {{domxref("EventTarget")}} sends an {{domxref("Event")}} to the object, (synchronously) invoking the affected
-event listeners in the appropriate order. The normal event processing
-rules (including the capturing and optional bubbling phase) also apply to events
-dispatched manually with `dispatchEvent()`.
+متد **`dispatchEvent()`** در {{domxref("EventTarget")}} یک {{domxref("Event")}} را به شیء می‌فرستد و به‌صورت همزمان (synchronously) شنونده‌های رویداد مربوطه را به ترتیب مناسب فراخوانی می‌کند. قواعد عادی پردازش رویداد (شامل فازهای capturing و اختیاری bubbling) برای رویدادهایی که به‌صورت دستی با `dispatchEvent()` ارسال می‌شوند نیز اعمال می‌شود.
 
-Calling `dispatchEvent()` is the last step to _firing an event_. The event
-should have already been created and initialized using an {{domxref("Event/Event", "Event()")}} constructor.
+فراخوانی `dispatchEvent()` آخرین گام برای _پدید آوردن یک رویداد_ است. رویداد باید پیش از این با استفاده از سازنده {{domxref("Event/Event", "Event()")}} ساخته و مقداردهی شده باشد.
 
 > [!NOTE]
-> When calling this method, the {{domxref("Event.target")}} property is initialized to the current `EventTarget`.
+> هنگام فراخوانی این متد، ویژگی {{domxref("Event.target")}} به `EventTarget` فعلی مقداردهی می‌شود.
 
-Unlike "native" events, which the browser fires by queuing a task on the [event loop](/en-US/docs/Web/JavaScript/Reference/Execution_model#job_queue_and_event_loop), `dispatchEvent()` invokes all applicable event handlers synchronously before returning. The read-only [`isTrusted`](/en-US/docs/Web/API/Event/isTrusted) property is `true` for native events and `false` for events dispatched with `dispatchEvent()`.
+برخلاف رویدادهای «بومی» که مرورگر با قرار دادن یک کار (task) در [حلقه رویداد](/en-US/docs/Web/JavaScript/Reference/Execution_model#job_queue_and_event_loop) آن‌ها را اجرا می‌کند، `dispatchEvent()` همهٔ مدیریت‌کننده‌های رویدادِ مرتبط را به‌صورت همزمان و پیش از بازگشت فراخوانی می‌کند. ویژگی فقط‌خواندنی [`isTrusted`](/en-US/docs/Web/API/Event/isTrusted) برای رویدادهای بومی `true` و برای رویدادهایی که با `dispatchEvent()` ارسال می‌شوند `false` است.
 
 ## Syntax
 
@@ -36,25 +31,23 @@ dispatchEvent(event)
 ### Parameters
 
 - `event`
-  - : The {{domxref("Event")}} object to dispatch. Its {{domxref("Event.target")}} property will be set to the current {{domxref("EventTarget")}}.
+  - : شیء {{domxref("Event")}} که قرار است ارسال شود. ویژگی {{domxref("Event.target")}} آن روی {{domxref("EventTarget")}} فعلی تنظیم خواهد شد.
 
 ### Return value
 
-`false` if `event` is cancelable, and at least one of the event handlers which received `event` called {{domxref("Event.preventDefault()")}}. Otherwise `true`.
+اگر `event` قابل لغو (cancelable) باشد و حداقل یکی از مدیریت‌کننده‌های رویداد که `event` را دریافت کرده‌اند، {{domxref("Event.preventDefault()")}} را فراخوانده باشد، مقدار `false` برمی‌گردد. در غیر این صورت `true` برمی‌گردد.
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DomException")}}
-  - : Thrown if the event's type was not specified during event initialization.
+  - : اگر نوع رویداد در هنگام مقداردهی اولیه رویداد مشخص نشده باشد، این خطا پرتاب می‌شود.
 
 > [!WARNING]
-> Exceptions thrown by event handlers are reported as uncaught exceptions. The event
-> handlers run on a nested callstack; they block the caller until they complete, but
-> exceptions do not propagate to the caller.
+> استثناهایی که توسط مدیریت‌کننده‌های رویداد پرتاب می‌شوند به‌عنوان استثناهای uncaught گزارش می‌شوند. مدیریت‌کننده‌های رویداد روی یک پشته فراخوانی تو در تو اجرا می‌شوند؛ آن‌ها تا پایان کار، فراخواننده را مسدود می‌کنند، اما استثناها به فراخواننده منتقل نمی‌شوند.
 
 ## Example
 
-See [Creating and dispatching events](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events).
+برای مشاهده مثال، [ساخت و ارسال رویدادها](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) را ببینید.
 
 ## Specifications
 
@@ -66,4 +59,4 @@ See [Creating and dispatching events](/en-US/docs/Web/API/Document_Object_Model/
 
 ## See also
 
-- The [Event object reference](/en-US/docs/Web/API/Event)
+- [مرجع شیء Event](/en-US/docs/Web/API/Event)
