@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrix: skewXSelf() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/skewXSelf"
-status: "needs-translation"
----
-
----
-title: "DOMMatrix: skewXSelf() method"
 short-title: skewXSelf()
 slug: Web/API/DOMMatrix/skewXSelf
 page-type: web-api-instance-method
@@ -14,28 +8,27 @@ browser-compat: api.DOMMatrix.skewXSelf
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The `skewXSelf()` method of the {{domxref("DOMMatrix")}} interface is a mutable transformation method that modifies a matrix. It skews the source matrix by applying the specified skew transformation along the X-axis and returns the skewed matrix.
+متد `skewXSelf()` از رابط {{domxref("DOMMatrix")}} یک متد تغییردهندهٔ تغییرپذیر است که ماتریس را اصلاح می‌کند. این متد با اعمال تبدیل اریب‌سازی مشخص‌شده در امتداد محور X روی ماتریس مبدأ، آن را اریب می‌کند و ماتریس اریب‌شده را بازمی‌گرداند.
 
-To skew a matrix along the X-axis without mutating it, see {{domxref("DOMMatrixReadOnly.skewX()")}}
+برای اریب کردن ماتریس در امتداد محور X بدون تغییر آن، به {{domxref("DOMMatrixReadOnly.skewX()")}} مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 skewXSelf()
 skewXSelf(sX)
 ```
 
-### Parameters
+### پارامترها
 
 - `sX`
-  - : A number; the angle, in degrees, by which to skew the matrix along the X axis.
+  - : یک عدد؛ زاویه بر حسب درجه که ماتریس باید در امتداد محور X بر اساس آن اریب شود.
 
-### Return value
+### مقدار بازگشتی
 
-Returns itself; the [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) skewed along the X-axis by the given
-angle.
+خود ماتریس را بازمی‌گرداند؛ همان [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) که با زاویهٔ داده‌شده در امتداد محور X اریب شده است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const matrix = new DOMMatrix(); // create a matrix
@@ -44,25 +37,25 @@ matrix.skewXSelf(14); // mutate it
 console.log(matrix); // output: "matrix(1, 0, 0.25, 1, 0, 0)"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrixReadOnly.skewX()")}}
-- CSS {{cssxref("transform")}} property
-- CSS {{cssxref("transform-function")}} functions
+- ویژگی CSS {{cssxref("transform")}}
+- توابع {{cssxref("transform-function")}} در CSS
   - {{cssxref("transform-function/skew", "skew()")}}
   - {{cssxref("transform-function/skewX", "skewX()")}}
   - {{cssxref("transform-function/skewY", "skewY()")}}
-- [CSS transforms](/en-US/docs/Web/CSS/Guides/Transforms) module
-- SVG [`transform`](/en-US/docs/Web/SVG/Reference/Attribute/transform) attribute
-- {{domxref("CanvasRenderingContext2D")}} interface methods
+- ماژول [تبدیل‌های CSS](/en-US/docs/Web/CSS/Guides/Transforms)
+- ویژگی [`transform`](/en-US/docs/Web/SVG/Reference/Attribute/transform) در SVG
+- متدهای رابط {{domxref("CanvasRenderingContext2D")}}
   - {{domxref("CanvasRenderingContext2D.transform()")}}
   - {{domxref("CanvasRenderingContext2D.setTransform()")}}
   - {{domxref("CanvasRenderingContext2D.resetTransform()")}}
