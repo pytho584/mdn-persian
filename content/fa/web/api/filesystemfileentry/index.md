@@ -1,10 +1,4 @@
 ---
-title: "FileSystemFileEntry"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileEntry"
-status: "needs-translation"
----
-
----
 title: FileSystemFileEntry
 slug: Web/API/FileSystemFileEntry
 page-type: web-api-interface
@@ -13,29 +7,29 @@ browser-compat: api.FileSystemFileEntry
 
 {{APIRef("File and Directory Entries API")}}
 
-The **`FileSystemFileEntry`** interface of the [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API) represents a file in a file system. It offers properties describing the file's attributes, as well as the {{domxref("FileSystemFileEntry.file", "file()")}} method, which creates a {{domxref("File")}} object that can be used to read the file.
+رابط کاربری **`FileSystemFileEntry`** در [API ورودیهای پرونده و پوشه](/en-US/docs/Web/API/File_and_Directory_Entries_API) یک پرونده را در یک سیستم فایل نشان میدهد. این رابط، ویژگیهایی برای توصیف صفات پرونده و نیز متد {{domxref("FileSystemFileEntry.file", "file()")}} ارائه میکند که یک شیء {{domxref("File")}} میسازد و میتوان از آن برای خواندن پرونده استفاده کرد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگیهای نمونه
 
-_Inherits the properties of its parent interface, {{domxref("FileSystemEntry")}}, but has no properties unique to this interface._
+_ویژگیهای رابط والد خود، یعنی {{domxref("FileSystemEntry")}} را به ارث میبرد، اما هیچ ویژگی منحصربهفردی برای این رابط ندارد._
 
-## Instance methods
+## روشهای نمونه
 
 - {{domxref("FileSystemFileEntry.createWriter", "createWriter()")}} {{deprecated_inline}} {{non-standard_inline}}
-  - : Returns a {{domxref("FileWriter")}} object which can be used to write data into the file represented by the directory entry.
+  - : یک شیء {{domxref("FileWriter")}} برمیگرداند که میتوان از آن برای نوشتن داده درون پروندهٔ نماینشده توسط ورودی پوشه استفاده کرد.
 - {{domxref("FileSystemFileEntry.file", "file()")}}
-  - : Creates a new {{domxref("File")}} object which can be used to read the file.
+  - : یک شیء جدید {{domxref("File")}} میسازد که میتوان از آن برای خواندن پرونده استفاده کرد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
+- [API ورودیهای پرونده و پوشه](/en-US/docs/Web/API/File_and_Directory_Entries_API)
