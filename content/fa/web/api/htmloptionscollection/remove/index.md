@@ -1,11 +1,5 @@
 ---
 title: "HTMLOptionsCollection: remove() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionsCollection/remove"
-status: "needs-translation"
----
-
----
-title: "HTMLOptionsCollection: remove() method"
 short-title: remove()
 slug: Web/API/HTMLOptionsCollection/remove
 page-type: web-api-instance-method
@@ -14,24 +8,24 @@ browser-compat: api.HTMLOptionsCollection.remove
 
 {{ APIRef("HTML DOM") }}
 
-The **`remove()`** method of the {{DOMxRef("HTMLOptionsCollection")}} interface removes the {{HTMLelement("option")}} element specified by the index from this collection.
+متد **`remove()`** از رابط {{DOMxRef("HTMLOptionsCollection")}}، عنصر {{HTMLElement("option")}} مشخص‌شده با ایندکس را از این مجموعه حذف می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 remove(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : A zero-based integer for the index of the {{ domxref("HTMLOptionElement") }} in the {{DOMxRef("HTMLOptionsCollection")}}. If the index is not found the method has no effect.
+  - : یک عدد صحیح مبتنی بر صفر برای ایندکس {{ domxref("HTMLOptionElement") }} در {{DOMxRef("HTMLOptionsCollection")}}. اگر ایندکس یافت نشود، متد هیچ تأثیری ندارد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const optionList = document.querySelector("select").options;
@@ -40,15 +34,15 @@ optionList.remove(listLength - 1); // removes the last item
 optionList.remove(0); // removes the first item
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("HTMLOptionsCollection.add()")}}
 - {{DOMxRef("HTMLOptionsCollection.length")}}
