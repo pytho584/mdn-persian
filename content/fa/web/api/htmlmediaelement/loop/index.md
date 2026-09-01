@@ -1,40 +1,32 @@
+```
 ---
 title: "HTMLMediaElement: loop property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loop"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: loop property"
-short-title: loop
-slug: Web/API/HTMLMediaElement/loop
-page-type: web-api-instance-property
-browser-compat: api.HTMLMediaElement.loop
 ---
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.loop`** property reflects the [`loop`](/en-US/docs/Web/HTML/Reference/Elements/video#loop) HTML attribute, which controls whether the media element should start over when it reaches the end.
+ویژگی **`HTMLMediaElement.loop`** منعکس‌کنندهٔ ویژگی HTML [`loop`](/en-US/docs/Web/HTML/Reference/Elements/video#loop) است که مشخص می‌کند آیا عنصر رسانه‌ای پس از رسیدن به پایان، دوباره از ابتدا شروع شود یا خیر.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی (boolean).
 
-## Examples
+## مثال‌ها
 
 ```js
 const obj = document.createElement("video");
 obj.loop = true; // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.loop` property
+- {{domxref("HTMLMediaElement")}}: واسطی که برای تعریف ویژگی `HTMLMediaElement.loop` استفاده می‌شود.
+```
