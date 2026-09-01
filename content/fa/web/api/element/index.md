@@ -1,9 +1,4 @@
----
-title: "Element"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: Element
 slug: Web/API/Element
@@ -13,521 +8,522 @@ browser-compat: api.Element
 
 {{APIRef("DOM")}}
 
-**`Element`** is the most general base class from which all element objects (i.e., objects that represent elements) in a {{DOMxRef("Document")}} inherit. It only has methods and properties common to all kinds of elements. More specific classes inherit from `Element`.
+**`Element`** عمومی‌ترین کلاس پایه است که تمام اشیاء عنصر (یعنی اشیایی که عناصر را نمایش می‌دهند) در یک {{DOMxRef("Document")}} از آن ارث‌‌بری می‌کنند. این کلاس فقط دارای متدها و ویژگی‌های مشترک بین همه انواع عناصر است. کلاس‌های خاص‌تر از `Element` ارث‌بری می‌کنند.
 
-For example, the {{DOMxRef("HTMLElement")}} interface is the base interface for HTML elements. Similarly, the {{DOMxRef("SVGElement")}} interface is the basis for all SVG elements, and the {{DOMxRef("MathMLElement")}} interface is the base interface for MathML elements. Most functionality is specified further down the class hierarchy.
+برای مثال، رابط {{DOMxRef("HTMLElement")}} رابط پایه برای عناصر HTML است. به طور مشابه، رابط {{DOMxRef("SVGElement")}} پایه تمام عناصر SVG، و رابط {{DOMxRef("MathMLElement")}} رابط پایه عناصر MathML است. بیشتر قابلیت‌ها در سطوح پایین‌تر سلسله‌مراتب کلاس‌ها مشخص می‌شوند.
 
-Languages outside the realm of the Web platform, like XUL through the `XULElement` interface, also implement `Element`.
+زبان‌های خارج از حوزه پلتفرم وب، مانند XUL از طریق رابط `XULElement`، نیز `Element` را پیاده‌سازی می‌کنند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_`Element` inherits properties from its parent interface, {{DOMxRef("Node")}}, and by extension that interface's parent, {{DOMxRef("EventTarget")}}._
+`Element` ویژگی‌ها را از رابط والد خود، {{DOMxRef("Node")}}، و به تبع آن از والد آن رابط، {{DOMxRef("EventTarget")}}، به ارث می‌برد.
 
 - {{DOMxRef("Element.activeViewTransition")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : Returns a {{domxref("ViewTransition")}} instance representing the [view transition](/en-US/docs/Web/API/View_Transition_API) currently active on an element.
+  - : یک نمونه {{domxref("ViewTransition")}} را برمی‌گرداند که نمایانگر [view transition](/en-US/docs/Web/API/View_Transition_API) در حال اجرا بر روی عنصر است.
 - {{DOMxRef("Element.assignedSlot")}} {{ReadOnlyInline}}
-  - : Returns a {{DOMxRef("HTMLSlotElement")}} representing the {{htmlelement("slot")}} the node is inserted in.
+  - : یک {{DOMxRef("HTMLSlotElement")}} را برمی‌گرداند که نمایانگر {{htmlelement("slot")}}ای است که گره در آن درج شده است.
 - {{DOMxRef("Element.attributes")}} {{ReadOnlyInline}}
-  - : Returns a {{DOMxRef("NamedNodeMap")}} object containing the assigned attributes of the corresponding HTML element.
+  - : یک شیء {{DOMxRef("NamedNodeMap")}} شامل ویژگی‌های تخصیص‌یافته عنصر HTML متناظر را برمی‌گرداند.
 - {{domxref("Element.childElementCount")}} {{ReadOnlyInline}}
-  - : Returns the number of child elements of this element.
+  - : تعداد عناصر فرزند این عنصر را برمی‌گرداند.
 - {{domxref("Element.children")}} {{ReadOnlyInline}}
-  - : Returns the child elements of this element.
+  - : عناصر فرزند این عنصر را برمی‌گرداند.
 - {{DOMxRef("Element.classList")}} {{ReadOnlyInline}}
-  - : Returns a {{DOMxRef("DOMTokenList")}} containing the list of class attributes.
+  - : یک {{DOMxRef("DOMTokenList")}} شامل لیست ویژگی‌های کلاس را برمی‌گرداند.
 - {{DOMxRef("Element.className")}}
-  - : A string representing the class of the element.
+  - : یک رشته که کلاس عنصر را نمایش می‌دهد.
 - {{DOMxRef("Element.clientHeight")}} {{ReadOnlyInline}}
-  - : Returns a number representing the inner height of the element.
+  - : یک عدد که ارتفاع داخلی عنصر را نمایش می‌دهد برمی‌گرداند.
 - {{DOMxRef("Element.clientLeft")}} {{ReadOnlyInline}}
-  - : Returns a number representing the width of the left border of the element.
+  - : یک عدد که عرض حاشیه چپ عنصر را نمایش می‌دهد برمی‌گرداند.
 - {{DOMxRef("Element.clientTop")}} {{ReadOnlyInline}}
-  - : Returns a number representing the width of the top border of the element.
+  - : یک عدد که عرض حاشیه بالای عنصر را نمایش می‌دهد برمی‌گرداند.
 - {{DOMxRef("Element.clientWidth")}} {{ReadOnlyInline}}
-  - : Returns a number representing the inner width of the element.
+  - : یک عدد که عرض داخلی عنصر را نمایش می‌دهد برمی‌گرداند.
 - {{DOMxRef("Element.currentCSSZoom")}} {{ReadOnlyInline}}
-  - : A number indicating the effective zoom size of the element, or 1.0 if the element is not rendered.
+  - : یک عدد که اندازه بزرگنمایی مؤثر عنصر را نشان می‌دهد، یا اگر عنصر رندر نشده باشد، 1.0 را برمی‌گرداند.
 - {{DOMxRef("Element.customElementRegistry")}} {{ReadOnlyInline}}
-  - : The {{domxref("CustomElementRegistry")}} object associated with this element, or `null` if one has not been set.
+  - : شیء {{domxref("CustomElementRegistry")}} مرتبط با این عنصر را برمی‌گرداند، یا اگر تنظیم نشده باشد، `null` را.
 - {{DOMxRef("Element.elementTiming")}} {{Experimental_Inline}}
-  - : A string reflecting the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute which marks an element for observation in the {{domxref("PerformanceElementTiming")}} API.
+  - : یک رشته که منعکس‌کننده ویژگی [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) است و عنصر را برای مشاهده در API {{domxref("PerformanceElementTiming")}} علامت‌گذاری می‌کند.
 - {{domxref("Element.firstElementChild")}} {{ReadOnlyInline}}
-  - : Returns the first child element of this element.
+  - : اولین عنصر فرزند این عنصر را برمی‌گرداند.
 - {{DOMxRef("Element.id")}}
-  - : A string representing the id of the element.
+  - : یک رشته که شناسه عنصر را نمایش می‌دهد.
 - {{DOMxRef("Element.innerHTML")}}
-  - : A string representing the markup of the element's content.
+  - : یک رشته که نشانه‌گذاری محتوای عنصر را نمایش می‌دهد.
 - {{domxref("Element.lastElementChild")}} {{ReadOnlyInline}}
-  - : Returns the last child element of this element.
+  - : آخرین عنصر فرزند این عنصر را برمی‌گرداند.
 - {{DOMxRef("Element.localName")}} {{ReadOnlyInline}}
-  - : A string representing the local part of the qualified name of the element.
+  - : یک رشته که بخش محلی نام واجد شرایط عنصر را نمایش می‌دهد.
 - {{DOMxRef("Element.namespaceURI")}} {{ReadOnlyInline}}
-  - : The namespace URI of the element, or `null` if it is no namespace.
+  - : URI فضای نام عنصر، یا اگر فضای نامی نداشته باشد، `null`.
 - {{DOMxRef("Element.nextElementSibling")}} {{ReadOnlyInline}}
-  - : An `Element`, the element immediately following the given one in the tree, or `null` if there's no sibling node.
+  - : یک `Element`، عنصری که بلافاصله بعد از عنصر داده شده در درخت می‌آید، یا اگر خواهر/برادر گره‌ای وجود نداشته باشد، `null`.
 - {{DOMxRef("Element.outerHTML")}}
-  - : A string representing the markup of the element including its content. When used as a setter, replaces the element with nodes parsed from the given string.
+  - : یک رشته که نشانه‌گذاری عنصر شامل محتوای آن را نمایش می‌دهد. هنگامی که به عنوان setter استفاده می‌شود، عنصر را با گره‌های تجزیه شده از رشته داده شده جایگزین می‌کند.
 - {{DOMxRef("Element.part")}}
-  - : Represents the part identifier(s) of the element (i.e., set using the `part` attribute), returned as a {{domxref("DOMTokenList")}}.
+  - : شناسه‌های بخش عنصر (یعنی تنظیم شده با استفاده از ویژگی `part`) را نمایش می‌دهد، که به عنوان یک {{domxref("DOMTokenList")}} برگردانده می‌شود.
 - {{DOMxRef("Element.prefix")}} {{ReadOnlyInline}}
-  - : A string representing the namespace prefix of the element, or `null` if no prefix is specified.
+  - : یک رشته که پیشوند فضای نام عنصر را نمایش می‌دهد، یا اگر پیشوندی مشخص نشده باشد، `null`.
 - {{DOMxRef("Element.previousElementSibling")}} {{ReadOnlyInline}}
-  - : An `Element`, the element immediately preceding the given one in the tree, or `null` if there is no sibling element.
+  - : یک `Element`، عنصری که بلافاصله قبل از عنصر داده شده در درخت می‌آید، یا اگر عنصر خواهر/برادری وجود نداشته باشد، `null`.
 - {{DOMxRef("Element.scrollHeight")}} {{ReadOnlyInline}}
-  - : Returns a number representing the scroll view height of an element.
+  - : یک عدد که ارتفاع نمای پیمایش یک عنصر را برمی‌گرداند.
 - {{DOMxRef("Element.scrollLeft")}}
-  - : A number representing the left scroll offset of the element.
+  - : یک عدد که افست پیمایش چپ عنصر را نمایش می‌دهد.
 - {{DOMxRef("Element.scrollLeftMax")}} {{Non-standard_Inline}} {{ReadOnlyInline}}
-  - : Returns a number representing the maximum left scroll offset possible for the element.
+  - : یک عدد که حداکثر افست پیمایش چپ ممکن برای عنصر را برمی‌گرداند.
 - {{DOMxRef("Element.scrollTop")}}
-  - : A number representing number of pixels the top of the element is scrolled vertically.
+  - : یک عدد که تعداد پیکسل‌های پیمایش عمودی بالای عنصر را نمایش می‌دهد.
 - {{DOMxRef("Element.scrollTopMax")}} {{Non-standard_Inline}} {{ReadOnlyInline}}
-  - : Returns a number representing the maximum top scroll offset possible for the element.
+  - : یک عدد که حداکثر افست پیمایش بالا ممکن برای عنصر را برمی‌گرداند.
 - {{DOMxRef("Element.scrollWidth")}} {{ReadOnlyInline}}
-  - : Returns a number representing the scroll view width of the element.
+  - : یک عدد که عرض نمای پیمایش عنصر را برمی‌گرداند.
 - {{DOMxRef("Element.shadowRoot")}} {{ReadOnlyInline}}
-  - : Returns the open shadow root that is hosted by the element, or null if no open shadow root is present.
+  - : ریشه سایه باز میزبانی شده توسط عنصر را برمی‌گرداند، یا اگر ریشه سایه باز وجود نداشته باشد، null.
 - {{DOMxRef("Element.slot")}}
-  - : Returns the name of the shadow DOM slot the element is inserted in.
+  - : نام slot DOM سایه که عنصر در آن درج شده است را برمی‌گرداند.
 - {{DOMxRef("Element.tagName")}} {{ReadOnlyInline}}
-  - : Returns a string with the name of the tag for the given element.
+  - : یک رشته با نام برچسب برای عنصر داده شده را برمی‌گرداند.
 
-### Instance properties included from ARIA
+### ویژگی‌های نمونه شامل شده از ARIA
 
-_The `Element` interface also includes the following properties._
+_رابط `Element` همچنین شامل ویژگی‌های زیر است._
 
 - {{domxref("Element.ariaAtomic")}}
-  - : A string reflecting the [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic) attribute, which indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) attribute.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic) است، که نشان می‌دهد آیا فناوری‌های کمکی تمام یا فقط بخشی از ناحیه تغییر یافته را بر اساس اعلان‌های تغییر تعریف شده توسط ویژگی [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) ارائه خواهند داد.
 - {{domxref("Element.ariaAutoComplete")}}
-  - : A string reflecting the [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete) attribute, which indicates whether inputting text could trigger display of one or more predictions of the user's intended value for a combobox, searchbox, or textbox and specifies how predictions would be presented if they were made.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete) است، که نشان می‌دهد آیا وارد کردن متن می‌تواند باعث نمایش یک یا چند پیش‌بینی از مقدار مورد نظر کاربر برای یک کادر ترکیبی، کادر جستجو یا کادر متن شود و نحوه ارائه پیش‌بینی‌ها در صورت انجام را مشخص می‌کند.
 - {{domxref("Element.ariaBrailleLabel")}}
-  - : A string reflecting the [`aria-braillelabel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-braillelabel) attribute, which defines the braille label of the element.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-braillelabel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-braillelabel) است، که برچسب بریل عنصر را تعریف می‌کند.
 - {{domxref("Element.ariaBrailleRoleDescription")}}
-  - : A string reflecting the [`aria-brailleroledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-brailleroledescription) attribute, which defines the ARIA braille role description of the element.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-brailleroledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-brailleroledescription) است، که توضیحات نقش بریل ARIA عنصر را تعریف می‌کند.
 - {{domxref("Element.ariaBusy")}}
-  - : A string reflecting the [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) attribute, which indicates whether an element is being modified, as assistive technologies may want to wait until the modifications are complete before exposing them to the user.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-busy`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy) است، که نشان می‌دهد آیا یک عنصر در حال تغییر است، زیرا فناوری‌های کمکی ممکن است بخواهند تا پایان تغییرات صبر کنند تا آنها را به کاربر نمایش دهند.
 - {{domxref("Element.ariaChecked")}}
-  - : A string reflecting the [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) attribute, which indicates the current "checked" state of checkboxes, radio buttons, and other widgets that have a checked state.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) است، که وضعیت فعلی "checked" (علامت‌خورده) چک‌باکس‌ها، دکمه‌های رادیویی و سایر ویجت‌هایی که حالت علامت‌خورده دارند را نشان می‌دهد.
 - {{domxref("Element.ariaColCount")}}
-  - : A string reflecting the [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount) attribute, which defines the number of columns in a table, grid, or treegrid.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-colcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colcount) است، که تعداد ستون‌ها در یک جدول، شبکه یا شبکه درختی را تعریف می‌کند.
 - {{domxref("Element.ariaColIndex")}}
-  - : A string reflecting the [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) attribute, which defines an element's column index or position with respect to the total number of columns within a table, grid, or treegrid.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) است، که ایندکس یا موقعیت ستون یک عنصر را نسبت به تعداد کل ستون‌ها در یک جدول، شبکه یا شبکه درختی تعریف می‌کند.
 - {{domxref("Element.ariaColIndexText")}}
-  - : A string reflecting the [`aria-colindextext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindextext) attribute, which defines a human readable text alternative of aria-colindex.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-colindextext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindextext) است، که یک جایگزین متنی قابل خواندن برای انسان از aria-colindex تعریف می‌کند.
 - {{domxref("Element.ariaColSpan")}}
-  - : A string reflecting the [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan) attribute, which defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colspan) است، که تعداد ستون‌های تحت پوشش یک سلول یا سلول شبکه در یک جدول، شبکه یا شبکه درختی را تعریف می‌کند.
 - {{domxref("Element.ariaCurrent")}}
-  - : A string reflecting the [`aria-current`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current) attribute, which indicates the element that represents the current item within a container or set of related elements.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-current`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current) است، که عنصر نماینده آیتم جاری در یک ظرف یا مجموعه عناصر مرتبط را نشان می‌دهد.
 - {{domxref("Element.ariaDescription")}}
-  - : A string reflecting the [`aria-description`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-description) attribute, which defines a string value that describes or annotates the current element.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-description`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-description) است، که یک مقدار رشته‌ای را تعریف می‌کند که عنصر جاری را توصیف یا حاشیه‌نویسی می‌کند.
 - {{domxref("Element.ariaDisabled")}}
-  - : A string reflecting the [`aria-disabled`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) attribute, which indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-disabled`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) است، که نشان می‌دهد عنصر قابل درک است اما غیرفعال است، بنابراین قابل ویرایش یا عملکرد نیست.
 - {{domxref("Element.ariaExpanded")}}
-  - : A string reflecting the [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) attribute, which indicates whether a grouping element owned or controlled by this element is expanded or collapsed.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) است، که نشان می‌دهد آیا یک عنصر گروه‌بندی که متعلق یا کنترل‌شده توسط این عنصر است، باز یا بسته شده است.
 - {{domxref("Element.ariaHasPopup")}}
-  - : A string reflecting the [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) attribute, which indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) است، که در دسترس بودن و نوع عنصر پاپ‌آپ تعاملی، مانند منو یا دیالوگ، که می‌تواند توسط یک عنصر فعال شود را نشان می‌دهد.
 - {{domxref("Element.ariaHidden")}}
-  - : A string reflecting the [`aria-hidden`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden) attribute, which indicates whether the element is exposed to an accessibility API.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-hidden`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-hidden) است، که نشان می‌دهد آیا عنصر در معرض یک API دسترسی‌پذیری قرار دارد یا خیر.
 - {{domxref("Element.ariaInvalid")}}
-  - : A string reflecting the [`aria-invalid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid) attribute, which indicates the entered value does not conform to the format expected by the application.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-invalid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid) است، که نشان می‌دهد مقدار وارد شده با فرمت مورد انتظار برنامه مطابقت ندارد.
 - {{domxref("Element.ariaKeyShortcuts")}}
-  - : A string reflecting the [`aria-keyshortcuts`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-keyshortcuts) attribute, which indicates keyboard shortcuts that an author has implemented to activate or give focus to an element.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-keyshortcuts`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-keyshortcuts) است، که میانبرهای صفحه‌کلیدی را که نویسنده برای فعال کردن یا تمرکز بر یک عنصر پیاده‌سازی کرده است، نشان می‌دهد.
 - {{domxref("Element.ariaLabel")}}
-  - : A string reflecting the [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) attribute, which defines a string value that labels the current element.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) است، که یک مقدار رشته‌ای را تعریف می‌کند که عنصر جاری را برچسب‌گذاری می‌کند.
 - {{domxref("Element.ariaLevel")}}
-  - : A string reflecting the [`aria-level`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level) attribute, which defines the hierarchical level of an element within a structure.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-level`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level) است، که سطح سلسله‌مراتبی یک عنصر را در یک ساختار تعریف می‌کند.
 - {{domxref("Element.ariaLive")}}
-  - : A string reflecting the [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) attribute, which indicates that an element will be updated, and describes the types of updates the user agents, assistive technologies, and user can expect from the live region.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) است، که نشان می‌دهد یک عنصر به‌روزرسانی خواهد شد، و انواع به‌روزرسانی‌هایی را که عامل کاربر، فناوری‌های کمکی و کاربر می‌توانند از ناحیه زنده انتظار داشته باشند، توصیف می‌کند.
 - {{domxref("Element.ariaModal")}}
-  - : A string reflecting the [`aria-modal`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-modal) attribute, which indicates whether an element is modal when displayed.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-modal`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-modal) است، که نشان می‌دهد آیا یک عنصر هنگام نمایش، مودال است یا خیر.
 - {{domxref("Element.ariaMultiline")}}
-  - : A string reflecting the [`aria-multiline`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiline) attribute, which indicates whether a text box accepts multiple lines of input or only a single line.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-multiline`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiline) است، که نشان می‌دهد آیا یک جعبه متن چند خط ورودی را می‌پذیرد یا فقط یک خط.
 - {{domxref("Element.ariaMultiSelectable")}}
-  - : A string reflecting the [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable) attribute, which indicates that the user may select more than one item from the current selectable descendants.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable) است، که نشان می‌دهد کاربر می‌تواند بیش از یک آیتم را از بین فرزندان قابل انتخاب جاری انتخاب کند.
 - {{domxref("Element.ariaOrientation")}}
-  - : A string reflecting the [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) attribute, which indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-orientation) است، که نشان می‌دهد جهت‌گیری عنصر افقی، عمودی یا نامشخص/مبهم است.
 - {{domxref("Element.ariaPlaceholder")}}
-  - : A string reflecting the [`aria-placeholder`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-placeholder) attribute, which defines a short hint intended to aid the user with data entry when the control has no value.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-placeholder`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-placeholder) است، که یک راهنمای کوتاه را تعریف می‌کند که برای کمک به کاربر در ورود داده‌ها زمانی که کنترل فاقد مقدار است، در نظر گرفته شده است.
 - {{domxref("Element.ariaPosInSet")}}
-  - : A string reflecting the [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) attribute, which defines an element's number or position in the current set of listitems or treeitems.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) است، که تعداد یا موقعیت یک عنصر را در مجموعه فعلی از آیتم‌های لیست یا آیتم‌های درختی تعریف می‌کند.
 - {{domxref("Element.ariaPressed")}}
-  - : A string reflecting the [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) attribute, which indicates the current "pressed" state of toggle buttons.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) است، که وضعیت فعلی "pressed" (فشرده) دکمه‌های تغییر وضعیت را نشان می‌دهد.
 - {{domxref("Element.ariaReadOnly")}}
-  - : A string reflecting the [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly) attribute, which indicates that the element is not editable, but is otherwise operable.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly) است، که نشان می‌دهد عنصر قابل ویرایش نیست، اما در غیر این صورت قابل عملکرد است.
 - {{domxref("Element.ariaRelevant")}} {{Non-standard_Inline}}
-  - : A string reflecting the [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) attribute, which indicates what notifications the user agent will trigger when the accessibility tree within a live region is modified. This is used to describe what changes in an `aria-live` region are relevant and should be announced.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-relevant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-relevant) است، که نشان می‌دهد چه اعلان‌هایی عامل کاربر هنگام تغییر درخت دسترسی‌پذیری در یک ناحیه زنده فعال می‌کند. این برای توصیف تغییراتی در یک ناحیه `aria-live` که مرتبط هستند و باید اعلام شوند، استفاده می‌شود.
 - {{domxref("Element.ariaRequired")}}
-  - : A string reflecting the [`aria-required`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-required) attribute, which indicates that user input is required on the element before a form may be submitted.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-required`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-required) است، که نشان می‌دهد ورودی کاربر قبل از ارسال فرم در عنصر الزامی است.
 - {{domxref("Element.ariaRoleDescription")}}
-  - : A string reflecting the [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) attribute, which defines a human-readable, author-localized description for the role of an element.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) است، که یک توضیح قابل خواندن برای انسان و بومی‌سازی شده توسط نویسنده برای نقش یک عنصر تعریف می‌کند.
 - {{domxref("Element.ariaRowCount")}}
-  - : A string reflecting the [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) attribute, which defines the total number of rows in a table, grid, or treegrid.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) است، که تعداد کل ردیف‌ها را در یک جدول، شبکه یا شبکه درختی تعریف می‌کند.
 - {{domxref("Element.ariaRowIndex")}}
-  - : A string reflecting the [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) attribute, which defines an element's row index or position with respect to the total number of rows within a table, grid, or treegrid.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindex) است، که ایندکس یا موقعیت ردیف یک عنصر را نسبت به تعداد کل ردیف‌ها در یک جدول، شبکه یا شبکه درختی تعریف می‌کند.
 - {{domxref("Element.ariaRowIndexText")}}
-  - : A string reflecting the [`aria-rowindextext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindextext) attribute, which defines a human readable text alternative of aria-rowindex.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-rowindextext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowindextext) است، که یک جایگزین متنی قابل خواندن برای انسان از aria-rowindex تعریف می‌کند.
 - {{domxref("Element.ariaRowSpan")}}
-  - : A string reflecting the [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan) attribute, which defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-rowspan`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowspan) است، که تعداد ردیف‌های تحت پوشش یک سلول یا سلول شبکه در یک جدول، شبکه یا شبکه درختی را تعریف می‌کند.
 - {{domxref("Element.ariaSelected")}}
-  - : A string reflecting the [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) attribute, which indicates the current "selected" state of elements that have a selected state.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) است، که وضعیت فعلی "selected" (انتخاب‌شده) عناصری که حالت انتخاب‌شده دارند را نشان می‌دهد.
 - {{domxref("Element.ariaSetSize")}}
-  - : A string reflecting the [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) attribute, which defines the number of items in the current set of listitems or treeitems.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-setsize`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize) است، که تعداد آیتم‌ها را در مجموعه فعلی از آیتم‌های لیست یا آیتم‌های درختی تعریف می‌کند.
 - {{domxref("Element.ariaSort")}}
-  - : A string reflecting the [`aria-sort`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-sort) attribute, which indicates if items in a table or grid are sorted in ascending or descending order.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-sort`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-sort) است، که نشان می‌دهد آیا آیتم‌ها در یک جدول یا شبکه به ترتیب صعودی یا نزولی مرتب شده‌اند.
 - {{domxref("Element.ariaValueMax")}}
-  - : A string reflecting the [`aria-valueMax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) attribute, which defines the maximum allowed value for a range widget.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-valueMax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) است، که حداکثر مقدار مجاز برای یک ویجت محدوده را تعریف می‌کند.
 - {{domxref("Element.ariaValueMin")}}
-  - : A string reflecting the [`aria-valueMin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) attribute, which defines the minimum allowed value for a range widget.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-valueMin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) است، که حداقل مقدار مجاز برای یک ویجت محدوده را تعریف می‌کند.
 - {{domxref("Element.ariaValueNow")}}
-  - : A string reflecting the [`aria-valueNow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) attribute, which defines the current value for a range widget.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-valueNow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) است، که مقدار فعلی برای یک ویجت محدوده را تعریف می‌کند.
 - {{domxref("Element.ariaValueText")}}
-  - : A string reflecting the [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext) attribute, which defines the human-readable text alternative of `aria-valuenow` for a range widget.
+  - : یک رشته که منعکس‌کننده ویژگی [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext) است، که جایگزین متنی قابل خواندن برای انسان از `aria-valuenow` برای یک ویجت محدوده را تعریف می‌کند.
 - {{domxref("Element.role")}}
-  - : A string reflecting the explicitly set [`role`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) attribute, which provides the semantic role of the element.
+  - : یک رشته که منعکس‌کننده ویژگی [`role`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) به‌صریح تنظیم‌شده است، که نقش معنایی عنصر را ارائه می‌دهد.
 
-#### Instance properties reflected from ARIA element references
+#### ویژگی‌های نمونه منعکس‌شده از ارجاعات عناصر ARIA
 
-The properties reflect the elements specified by `id` reference in the corresponding attributes, but with some caveats. See [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Reflected attributes_ guide for more information.
+این ویژگی‌ها عناصری را که با ارجاع `id` در ویژگی‌های متناظر مشخص شده‌اند منعکس می‌کنند، اما با برخی ملاحظات. برای اطلاعات بیشتر، [ارجاعات عناصر منعکس‌شده](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) را در راهنمای _ویژگی‌های منعکس‌شده_ ببینید.
 
 - {{domxref("Element.ariaActiveDescendantElement")}}
-  - : An element that represents the current active element when focus is on a [`composite`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/composite_role) widget, [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role), [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role), [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role), or [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role).
-    Reflects the [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) attribute.
+  - : عنصری که عنصر فعال فعلی را هنگامی که تمرکز روی یک ویجت [`composite`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/composite_role)، [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)، [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)، [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) یا [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role) است، نشان می‌دهد.
+    منعکس‌کننده ویژگی [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) است.
 - {{domxref("Element.ariaControlsElements")}}
-  - : An array of elements whose contents or presence are controlled by the element it is applied to.
-    Reflects the [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) attribute.
+  - : آرایه‌ای از عناصری که محتوا یا حضور آنها توسط عنصری که روی آن اعمال شده کنترل می‌شود.
+    منعکس‌کننده ویژگی [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) است.
 - {{domxref("Element.ariaDescribedByElements")}}
-  - : An array of elements that contain the accessible description for the element it is applied to.
-    Reflects the [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) attribute.
+  - : آرایه‌ای از عناصری که حاوی توضیحات دسترسی‌پذیر برای عنصری هستند که روی آن اعمال شده است.
+    منعکس‌کننده ویژگی [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-describedby) است.
 - {{domxref("Element.ariaDetailsElements")}}
-  - : An array of elements that provide accessible details for the element it is applied to.
-    Reflects the [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) attribute.
+  - : آرایه‌ای از عناصری که جزئیات دسترسی‌پذیر را برای عنصری که روی آن اعمال شده فراهم می‌کنند.
+    منعکس‌کننده ویژگی [`aria-details`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-details) است.
 - {{domxref("Element.ariaErrorMessageElements")}}
-  - : An array of elements that provide an error message for the element it is applied to.
-    Reflects the [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) attribute.
+  - : آرایه‌ای از عناصری که یک پیام خطا برای عنصری که روی آن اعمال شده فراهم می‌کنند.
+    منعکس‌کننده ویژگی [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) است.
 - {{domxref("Element.ariaFlowToElements")}}
-  - : An array of elements that identify the next element (or elements) in an alternate reading order of content, overriding the general default reading order at the user's discretion.
-    Reflects the [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) attribute.
+  - : آرایه‌ای از عناصری که عنصر بعدی (یا عناصر بعدی) را در یک ترتیب خواندن جایگزین از محتوا شناسایی می‌کنند، که ترتیب خواندن عمومی پیش‌فرض را به صلاحدید کاربر لغو می‌کند.
+    منعکس‌کننده ویژگی [`aria-flowto`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-flowto) است.
 - {{domxref("Element.ariaLabelledByElements")}}
-  - : An array of elements that provide the accessible name for the element it is applied to.
-    Reflects the [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attribute.
+  - : آرایه‌ای از عناصری که نام دسترسی‌پذیر را برای عنصری که روی آن اعمال شده فراهم می‌کنند.
+    منعکس‌کننده ویژگی [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) است.
 - {{domxref("Element.ariaOwnsElements")}}
-  - : An array of elements owned by the element this is applied to.
-    This is used to define a visual, functional, or contextual relationship between a parent and its child elements when the DOM hierarchy cannot be used to represent the relationship.
-    Reflects the [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) attribute.
+  - : آرایه‌ای از عناصر متعلق به عنصری که این روی آن اعمال شده است.
+    این برای تعریف یک رابطه بصری، عملکردی یا زمینه‌ای بین یک والد و عناصر فرزند آن زمانی استفاده می‌شود که سلسله‌مراتب DOM نمی‌تواند برای نمایش رابطه استفاده شود.
+    منعکس‌کننده ویژگی [`aria-owns`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-owns) است.
 
-## Instance methods
+## روش‌های نمونه
 
-_`Element` inherits methods from its parents {{DOMxRef("Node")}}, and its own parent, {{DOMxRef("EventTarget")}}._
+`Element` روش‌ها را از والدین خود {{DOMxRef("Node")}} و والد خود یعنی {{DOMxRef("EventTarget")}} به ارث می‌برد.
 
 - {{DOMxRef("Element.after()")}}
-  - : Inserts a set of {{domxref("Node")}} objects or strings in the children list of the `Element`'s parent, just after the `Element`.
+  - : یک مجموعه از اشیاء {{domxref("Node")}} یا رشته‌ها را در لیست فرزندان والد `Element`، درست بعد از `Element` درج می‌کند.
 - {{DOMxRef("Element.animate()")}}
-  - : A shortcut method to create and run an animation on an element. Returns the created Animation object instance.
+  - : یک روش میانبر برای ایجاد و اجرای یک انیمیشن روی یک عنصر. نمونه شیء Animation ایجاد شده را برمی‌گرداند.
 - {{DOMxRef("Element.ariaNotify()")}}
-  - : Specifies that a given string of text should be announced by a screen reader.
+  - : مشخص می‌کند که یک رشته متن معین باید توسط صفحه‌خوان اعلام شود.
 - {{DOMxRef("Element.append()")}}
-  - : Inserts a set of {{domxref("Node")}} objects or strings after the last child of the element.
+  - : یک مجموعه از اشیاء {{domxref("Node")}} یا رشته‌ها را بعد از آخرین فرزند عنصر درج می‌کند.
 - {{DOMxRef("Element.attachShadow()")}}
-  - : Attaches a shadow DOM tree to the specified element and returns a reference to its {{DOMxRef("ShadowRoot")}}.
+  - : یک درخت DOM سایه را به عنصر مشخص شده متصل می‌کند و یک ارجاع به {{DOMxRef("ShadowRoot")}} آن برمی‌گرداند.
 - {{DOMxRef("Element.before()")}}
-  - : Inserts a set of {{domxref("Node")}} objects or strings in the children list of the `Element`'s parent, just before the `Element`.
+  - : یک مجموعه از اشیاء {{domxref("Node")}} یا رشته‌ها را در لیست فرزندان والد `Element`، درست قبل از `Element` درج می‌کند.
 - {{DOMxRef("Element.checkVisibility()")}}
-  - : Returns whether an element is expected to be visible or not based on configurable checks.
+  - : برمی‌گرداند که آیا یک عنصر انتظار می‌رود قابل مشاهده باشد یا خیر، بر اساس بررسی‌های قابل تنظیم.
 - {{DOMxRef("Element.closest()")}}
-  - : Returns the `Element` which is the closest ancestor of the current element (or the current element itself) which matches the selectors given in parameter.
+  - : `Element`ای را برمی‌گرداند که نزدیک‌ترین جد عنصر جاری (یا خود عنصر جاری) است که با انتخاب‌گرهای داده شده در پارامتر مطابقت دارد.
 - {{DOMxRef("Element.computedStyleMap()")}}
-  - : Returns a {{DOMxRef("StylePropertyMapReadOnly")}} interface which provides a read-only representation of a CSS declaration block that is an alternative to {{DOMxRef("CSSStyleDeclaration")}}.
+  - : یک رابط {{DOMxRef("StylePropertyMapReadOnly")}} را برمی‌گرداند که یک نمایش فقط خواندنی از یک بلوک اعلان CSS ارائه می‌دهد که جایگزینی برای {{DOMxRef("CSSStyleDeclaration")}} است.
 - {{DOMxRef("Element.getAnimations()")}}
-  - : Returns an array of Animation objects currently active on the element.
+  - : یک آرایه از اشیاء Animation را که در حال حاضر روی عنصر فعال هستند، برمی‌گرداند.
 - {{DOMxRef("Element.getAttribute()")}}
-  - : Retrieves the value of the named attribute from the current node and returns it as a string.
+  - : مقدار ویژگی نام‌دار را از گره جاری بازیابی می‌کند و آن را به عنوان یک رشته برمی‌گرداند.
 - {{DOMxRef("Element.getAttributeNames()")}}
-  - : Returns an array of attribute names from the current element.
+  - : یک آرایه از نام ویژگی‌ها را از عنصر جاری برمی‌گرداند.
 - {{DOMxRef("Element.getAttributeNode()")}}
-  - : Retrieves the node representation of the named attribute from the current node and returns it as an {{DOMxRef("Attr")}}.
+  - : نمایش گره‌ای ویژگی نام‌دار را از گره جاری بازیابی می‌کند و آن را به عنوان یک {{DOMxRef("Attr")}} برمی‌گرداند.
 - {{DOMxRef("Element.getAttributeNodeNS()")}}
-  - : Retrieves the node representation of the attribute with the specified name and namespace, from the current node and returns it as an {{DOMxRef("Attr")}}.
+  - : نمایش گره‌ای ویژگی با نام و فضای نام مشخص شده را از گره جاری بازیابی می‌کند و آن را به عنوان یک {{DOMxRef("Attr")}} برمی‌گرداند.
 - {{DOMxRef("Element.getAttributeNS()")}}
-  - : Retrieves the value of the attribute with the specified namespace and name from the current node and returns it as a string.
+  - : مقدار ویژگی با فضای نام و نام مشخص شده را از گره جاری بازیابی می‌کند و آن را به عنوان یک رشته برمی‌گرداند.
 - {{DOMxRef("Element.getBoundingClientRect()")}}
-  - : Returns the size of an element and its position relative to the viewport.
+  - : اندازه یک عنصر و موقعیت آن را نسبت به viewport برمی‌گرداند.
 - {{domxref("Element.getBoxQuads()")}} {{Experimental_Inline}}
-  - : Returns a list of {{domxref("DOMQuad")}} objects representing the CSS fragments of the node.
+  - : یک لیست از اشیاء {{domxref("DOMQuad")}} که نمایانگر قطعات CSS گره هستند را برمی‌گرداند.
 - {{DOMxRef("Element.getClientRects()")}}
-  - : Returns a collection of rectangles that indicate the bounding rectangles for each line of text in a client.
+  - : یک مجموعه از مستطیل‌ها را برمی‌گرداند که مستطیل‌های محدودکننده برای هر خط متن در یک کلاینت را نشان می‌دهند.
 - {{DOMxRef("Element.getElementsByClassName()")}}
-  - : Returns a live {{DOMxRef("HTMLCollection")}} that contains all descendants of the current element that possess the list of classes given in the parameter.
+  - : یک {{DOMxRef("HTMLCollection")}} زنده را برمی‌گرداند که شامل تمام نوادگان عنصر جاری است که دارای لیست کلاس‌های داده شده در پارامتر هستند.
 - {{DOMxRef("Element.getElementsByTagName()")}}
-  - : Returns a live {{DOMxRef("HTMLCollection")}} containing all descendant elements, of a particular tag name, from the current element.
+  - : یک {{DOMxRef("HTMLCollection")}} زنده را برمی‌گرداند که شامل تمام عناصر نواده، از یک نام برچسب خاص، از عنصر جاری است.
 - {{DOMxRef("Element.getElementsByTagNameNS()")}}
-  - : Returns a live {{DOMxRef("HTMLCollection")}} containing all descendant elements, of a particular tag name and namespace, from the current element.
+  - : یک {{DOMxRef("HTMLCollection")}} زنده را برمی‌گرداند که شامل تمام عناصر نواده، از یک نام برچسب و فضای نام خاص، از عنصر جاری است.
 - {{DOMxRef("Element.getHTML()")}}
-  - : Returns the DOM content of the element as an HTML string, optionally including any shadow DOM.
+  - : محتوای DOM عنصر را به عنوان یک رشته HTML، به صورت اختیاری شامل هر DOM سایه، برمی‌گرداند.
 - {{DOMxRef("Element.hasAttribute()")}}
-  - : Returns a boolean value indicating if the element has the specified attribute or not.
+  - : یک مقدار بولی را برمی‌گرداند که نشان می‌دهد آیا عنصر ویژگی مشخص شده را دارد یا خیر.
 - {{DOMxRef("Element.hasAttributeNS()")}}
-  - : Returns a boolean value indicating if the element has the specified attribute, in the specified namespace, or not.
+  - : یک مقدار بولی را برمی‌گرداند که نشان می‌دهد آیا عنصر ویژگی مشخص شده را در فضای نام مشخص شده دارد یا خیر.
 - {{DOMxRef("Element.hasAttributes()")}}
-  - : Returns a boolean value indicating if the element has one or more HTML attributes present.
+  - : یک مقدار بولی را برمی‌گرداند که نشان می‌دهد آیا عنصر یک یا چند ویژگی HTML دارد یا خیر.
 - {{DOMxRef("Element.hasPointerCapture()")}}
-  - : Indicates whether the element on which it is invoked has pointer capture for the pointer identified by the given pointer ID.
+  - : نشان می‌دهد آیا عنصری که روی آن فراخوانی شده است، capture اشاره‌گر را برای اشاره‌گر شناسایی شده توسط شناسه اشاره‌گر داده شده دارد یا خیر.
 - {{DOMxRef("Element.insertAdjacentElement()")}}
-  - : Inserts a given element node at a given position relative to the element it is invoked upon.
+  - : یک گره عنصر داده شده را در موقعیت مشخصی نسبت به عنصری که روی آن فراخوانی شده است، درج می‌کند.
 - {{DOMxRef("Element.insertAdjacentHTML()")}}
-  - : Parses the text as HTML or XML and inserts the resulting nodes into the tree in the position given.
+  - : متن را به عنوان HTML یا XML تجزیه می‌کند و گره‌های حاصل را در موقعیت داده شده در درخت درج می‌کند.
 - {{DOMxRef("Element.insertAdjacentText()")}}
-  - : Inserts a given text node at a given position relative to the element it is invoked upon.
+  - : یک گره متنی داده شده را در موقعیت مشخصی نسبت به عنصری که روی آن فراخوانی شده است، درج می‌کند.
 - {{DOMxRef("Element.matches()")}}
-  - : Returns a boolean value indicating whether or not the element would be selected by the specified selector string.
+  - : یک مقدار بولی را برمی‌گرداند که نشان می‌دهد آیا عنصر با رشته انتخاب‌گر مشخص شده انتخاب می‌شود یا خیر.
 - {{DOMxRef("Element.moveBefore()")}}
-  - : Moves a given {{domxref("Node")}} inside the invoking node as a direct child, before a given reference node, without removing and then inserting the node.
+  - : یک {{domxref("Node")}} داده شده را در داخل گره فراخواننده به عنوان یک فرزند مستقیم، قبل از یک گره مرجع داده شده، بدون حذف و سپس درج گره، جابه‌جا می‌کند.
 - {{DOMxRef("Element.prepend()")}}
-  - : Inserts a set of {{domxref("Node")}} objects or strings before the first child of the element.
+  - : یک مجموعه از اشیاء {{domxref("Node")}} یا رشته‌ها را قبل از اولین فرزند عنصر درج می‌کند.
 - {{DOMxRef("Element.pseudo()")}} {{experimental_inline}}
-  - : Returns a {{domxref("CSSPseudoElement")}} object representing the [CSS](/en-US/docs/Web/CSS) [pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) of the specified type associated with the element.
+  - : یک شیء {{domxref("CSSPseudoElement")}} را برمی‌گرداند که نمایانگر [pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) [CSS](/en-US/docs/Web/CSS) از نوع مشخص شده مرتبط با عنصر است.
 - {{DOMxRef("Element.querySelector()")}}
-  - : Returns the first {{DOMxRef("Node")}} which matches the specified selector string relative to the element.
+  - : اولین {{DOMxRef("Node")}} را که با رشته انتخاب‌گر مشخص شده نسبت به عنصر مطابقت دارد، برمی‌گرداند.
 - {{DOMxRef("Element.querySelectorAll()")}}
-  - : Returns a {{DOMxRef("NodeList")}} of nodes which match the specified selector string relative to the element.
+  - : یک {{DOMxRef("NodeList")}} از گره‌هایی را که با رشته انتخاب‌گر مشخص شده نسبت به عنصر مطابقت دارند، برمی‌گرداند.
 - {{DOMxRef("Element.releasePointerCapture()")}}
-  - : Releases (stops) pointer capture that was previously set for a specific {{DOMxRef("PointerEvent")}}.
+  - : capture اشاره‌گر که قبلاً برای یک {{DOMxRef("PointerEvent")}} خاص تنظیم شده بود را آزاد می‌کند (متوقف می‌کند).
 - {{DOMxRef("Element.remove()")}}
-  - : Removes the element from the children list of its parent.
+  - : عنصر را از لیست فرزندان والدش حذف می‌کند.
 - {{DOMxRef("Element.removeAttribute()")}}
-  - : Removes the named attribute from the current node.
+  - : ویژگی نام‌دار را از گره جاری حذف می‌کند.
 - {{DOMxRef("Element.removeAttributeNode()")}}
-  - : Removes the node representation of the named attribute from the current node.
+  - : نمایش گره‌ای ویژگی نام‌دار را از گره جاری حذف می‌کند.
 - {{DOMxRef("Element.removeAttributeNS()")}}
-  - : Removes the attribute with the specified name and namespace, from the current node.
+  - : ویژگی با نام و فضای نام مشخص شده را از گره جاری حذف می‌کند.
 - {{DOMxRef("Element.replaceChildren()")}}
-  - : Replaces the existing children of a {{domxref("Node")}} with a specified new set of children.
+  - : فرزندان موجود یک {{domxref("Node")}} را با یک مجموعه جدید مشخص شده از فرزندان جایگزین می‌کند.
 - {{DOMxRef("Element.replaceWith()")}}
-  - : Replaces the element in the children list of its parent with a set of {{domxref("Node")}} objects or strings.
+  - : عنصر را در لیست فرزندان والدش با یک مجموعه از اشیاء {{domxref("Node")}} یا رشته‌ها جایگزین می‌کند.
 - {{DOMxRef("Element.requestFullscreen()")}}
-  - : Asynchronously asks the browser to make the element fullscreen.
+  - : به صورت ناهمزمان از مرورگر می‌خواهد تا عنصر را تمام‌صفحه کند.
 - {{DOMxRef("Element.requestPointerLock()")}}
-  - : Allows to asynchronously ask for the pointer to be locked on the given element.
+  - : امکان درخواست ناهمزمان قفل شدن اشاره‌گر روی عنصر داده شده را فراهم می‌کند.
 - {{domxref("Element.scroll()")}}
-  - : Scrolls to a particular set of coordinates inside a given element.
+  - : به یک مجموعه مختصات خاص در داخل یک عنصر داده شده پیمایش می‌کند.
 - {{domxref("Element.scrollBy()")}}
-  - : Scrolls an element by the given amount.
+  - : یک عنصر را به میزان داده شده پیمایش می‌کند.
 - {{DOMxRef("Element.scrollIntoView()")}}
-  - : Scrolls the page until the element gets into the view.
+  - : صفحه را پیمایش می‌کند تا عنصر وارد view شود.
 - {{DOMxRef("Element.scrollIntoViewIfNeeded()")}} {{Non-standard_Inline}}
-  - : Scrolls the current element into the visible area of the browser window if it's not already within the visible area of the browser window. **Use the standard {{DOMxRef("Element.scrollIntoView()")}} instead.**
+  - : عنصر جاری را به ناحیه قابل مشاهده پنجره مرورگر پیمایش می‌کند اگر قبلاً در ناحیه قابل مشاهده پنجره مرورگر نباشد. **به جای آن از استاندارد {{DOMxRef("Element.scrollIntoView()")}} استفاده کنید.**
 - {{domxref("Element.scrollTo()")}}
-  - : Scrolls to a particular set of coordinates inside a given element.
+  - : به یک مجموعه مختصات خاص در داخل یک عنصر داده شده پیمایش می‌کند.
 - {{DOMxRef("Element.setAttribute()")}}
-  - : Sets the value of a named attribute of the current node.
+  - : مقدار یک ویژگی نام‌دار از گره جاری را تنظیم می‌کند.
 - {{DOMxRef("Element.setAttributeNode()")}}
-  - : Sets the node representation of the named attribute from the current node.
+  - : نمایش گره‌ای ویژگی نام‌دار را از گره جاری تنظیم می‌کند.
 - {{DOMxRef("Element.setAttributeNodeNS()")}}
-  - : Sets the node representation of the attribute with the specified name and namespace, from the current node.
+  - : نمایش گره‌ای ویژگی با نام و فضای نام مشخص شده را از گره جاری تنظیم می‌کند.
 - {{DOMxRef("Element.setAttributeNS()")}}
-  - : Sets the value of the attribute with the specified name and namespace, from the current node.
+  - : مقدار ویژگی با نام و فضای نام مشخص شده را از گره جاری تنظیم می‌کند.
 - {{DOMxRef("Element.setCapture()")}} {{Non-standard_Inline}} {{Deprecated_Inline}}
-  - : Sets up mouse event capture, redirecting all mouse events to this element.
+  - : capture رویداد ماوس را تنظیم می‌کند و تمام رویدادهای ماوس را به این عنصر هدایت می‌کند.
 - {{DOMxRef("Element.setHTML()")}} {{SecureContext_Inline}}
-  - : Parses and [sanitizes](/en-US/docs/Web/API/HTML_Sanitizer_API) a string of HTML into a document fragment, which then replaces the element's original subtree in the DOM.
+  - : یک رشته HTML را تجزیه و [پالایش (sanitize)](/en-US/docs/Web/API/HTML_Sanitizer_API) می‌کند تا یک قطعه سند ایجاد کند، که سپس زیردرخت اصلی عنصر را در DOM جایگزین می‌کند.
 - {{DOMxRef("Element.setHTMLUnsafe()")}}
-  - : Parses a string of HTML into a document fragment, without sanitization, which then replaces the element's original subtree in the DOM. The HTML string may include declarative shadow roots, which would be parsed as template elements if the HTML was set using [`Element.innerHTML`](/en-US/docs/Web/API/Element/innerHTML).
+  - : یک رشته HTML را بدون پالایش به یک قطعه سند تجزیه می‌کند، که سپس زیردرخت اصلی عنصر را در DOM جایگزین می‌کند. رشته HTML ممکن است شامل ریشه‌های سایه اعلانی باشد، که اگر HTML با استفاده از [`Element.innerHTML`](/en-US/docs/Web/API/Element/innerHTML) تنظیم می‌شد، به عنوان عناصر template تجزیه می‌شدند.
 - {{DOMxRef("Element.setPointerCapture()")}}
-  - : Designates a specific element as the capture target of future [pointer events](/en-US/docs/Web/API/Pointer_events).
+  - : یک عنصر خاص را به عنوان هدف capture رویدادهای [اشاره‌گر](/en-US/docs/Web/API/Pointer_events) آینده تعیین می‌کند.
 - {{DOMxRef("Element.startViewTransition()")}} {{experimental_inline}}
-  - : Starts a new same-document (SPA) [element-scoped](/en-US/docs/Web/API/View_Transition_API/Using_element-scoped) [view transition](/en-US/docs/Web/API/View_Transition_API) and returns a {{domxref("ViewTransition")}} object to represent it.
+  - : یک [view transition](/en-US/docs/Web/API/View_Transition_API) جدید [در محدوده عنصر](/en-US/docs/Web/API/View_Transition_API/Using_element-scoped) در همان سند (SPA) شروع می‌کند و یک شیء {{domxref("ViewTransition")}} برای نمایش آن برمی‌گرداند.
 - {{DOMxRef("Element.toggleAttribute()")}}
-  - : Toggles a boolean attribute, removing it if it is present and adding it if it is not present, on the specified element.
+  - : یک ویژگی بولی را تغییر می‌دهد، اگر وجود داشته باشد آن را حذف می‌کند و اگر وجود نداشته باشد آن را اضافه می‌کند، روی عنصر مشخص شده.
 
-## Events
+## رویدادها
 
-Listen to these events using `addEventListener()` or by assigning an event listener to the `oneventname` property of this interface.
+با استفاده از `addEventListener()` یا با تخصیص یک شنونده رویداد به ویژگی `oneventname` این رابط به این رویدادها گوش دهید.
 
 - {{domxref("Element/afterscriptexecute_event","afterscriptexecute")}} {{Non-standard_Inline}} {{deprecated_inline}}
-  - : Fired when a script has been executed.
+  - : هنگامی که یک اسکریپت اجرا شده است، فعال می‌شود.
 - {{domxref("Element/beforeinput_event", "beforeinput")}}
-  - : Fired when the value of an input element is about to be modified.
+  - : هنگامی که مقدار یک عنصر ورودی در شرف تغییر است، فعال می‌شود.
 - {{domxref("Element/beforematch_event", "beforematch")}}
-  - : Fires on an element that is in the [_hidden until found_](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) state, when the browser is about to reveal its content because the user has found the content through the "find in page" feature or through fragment navigation.
+  - : روی یک عنصر که در حالت [_hidden until found_](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) است، زمانی که مرورگر در شرف آشکار کردن محتوای آن است زیرا کاربر محتوا را از طریق ویژگی "یافتن در صفحه" یا از طریق پیمایش قطعه پیدا کرده است، فعال می‌شود.
 - {{domxref("Element/beforescriptexecute_event","beforescriptexecute")}} {{Non-standard_Inline}} {{deprecated_inline}}
-  - : Fired when a script is about to be executed.
+  - : هنگامی که یک اسکریپت در شرف اجرا است، فعال می‌شود.
 - {{domxref("Element/beforexrselect_event", "beforexrselect")}} {{Experimental_Inline}}
-  - : Fired before WebXR select events ({{domxref("XRSession/select_event", "select")}}, {{domxref("XRSession/selectstart_event", "selectstart")}}, {{domxref("XRSession/selectend_event", "selectend")}}) are dispatched.
+  - : قبل از ارسال رویدادهای انتخاب WebXR ({{domxref("XRSession/select_event", "select")}}, {{domxref("XRSession/selectstart_event", "selectstart")}}, {{domxref("XRSession/selectend_event", "selectend")}}) فعال می‌شود.
 - {{domxref("Element/contentvisibilityautostatechange_event", "contentvisibilityautostatechange")}}
-  - : Fires on any element with {{cssxref("content-visibility", "content-visibility: auto")}} set on it when it starts or stops being [relevant to the user](/en-US/docs/Web/CSS/Guides/Containment/Using#relevant_to_the_user) and [skipping its contents](/en-US/docs/Web/CSS/Guides/Containment/Using#skips_its_contents).
+  - : روی هر عنصری که {{cssxref("content-visibility", "content-visibility: auto")}} روی آن تنظیم شده است، زمانی که شروع یا توقف می‌کند [برای کاربر مرتبط باشد](/en-US/docs/Web/CSS/Guides/Containment/Using#relevant_to_the_user) و [محتوای خود را رد کند](/en-US/docs/Web/CSS/Guides/Containment/Using#skips_its_contents)، فعال می‌شود.
 - {{domxref("Element/input_event","input")}}
-  - : Fires when an element's value is changed as a direct result of a user action.
+  - : هنگامی که مقدار یک عنصر در نتیجه مستقیم یک اقدام کاربر تغییر می‌کند، فعال می‌شود.
 - {{domxref("Element/securitypolicyviolation_event","securitypolicyviolation")}}
-  - : Fired when a [Content Security Policy](/en-US/docs/Web/HTTP/Guides/CSP) is violated.
+  - : هنگامی که یک [سیاست امنیت محتوا](/en-US/docs/Web/HTTP/Guides/CSP) نقض می‌شود، فعال می‌شود.
 - {{domxref("Element/wheel_event","wheel")}}
-  - : Fired when the user rotates a wheel button on a pointing device (typically a mouse).
+  - : هنگامی که کاربر یک دکمه چرخ روی یک دستگاه اشاره‌گر (معمولاً ماوس) را می‌چرخاند، فعال می‌شود.
 
-### Animation events
+### رویدادهای انیمیشن
 
 - {{domxref("Element/animationcancel_event", "animationcancel")}}
-  - : Fired when an animation unexpectedly aborts.
+  - : هنگامی که یک انیمیشن به طور غیرمنتظره‌ای لغو می‌شود، فعال می‌شود.
 - {{domxref("Element/animationend_event", "animationend")}}
-  - : Fired when an animation has completed normally.
+  - : هنگامی که یک انیمیشن به طور عادی کامل شده است، فعال می‌شود.
 - {{domxref("Element/animationiteration_event", "animationiteration")}}
-  - : Fired when an animation iteration has completed.
+  - : هنگامی که یک تکرار انیمیشن کامل شده است، فعال می‌شود.
 - {{domxref("Element/animationstart_event", "animationstart")}}
-  - : Fired when an animation starts.
+  - : هنگامی که یک انیمیشن شروع می‌شود، فعال می‌شود.
 
-### Clipboard events
+### رویدادهای کلیپ‌بورد
 
 - {{domxref("Element/copy_event", "copy")}}
-  - : Fired when the user initiates a copy action through the browser's user interface.
+  - : هنگامی که کاربر یک اقدام کپی را از طریق رابط کاربری مرورگر آغاز می‌کند، فعال می‌شود.
 - {{domxref("Element/cut_event", "cut")}}
-  - : Fired when the user initiates a cut action through the browser's user interface.
+  - : هنگامی که کاربر یک اقدام برش را از طریق رابط کاربری مرورگر آغاز می‌کند، فعال می‌شود.
 - {{domxref("Element/paste_event", "paste")}}
-  - : Fired when the user initiates a paste action through the browser's user interface.
+  - : هنگامی که کاربر یک اقدام چسباندن را از طریق رابط کاربری مرورگر آغاز می‌کند، فعال می‌شود.
 
-### Composition events
+### رویدادهای ترکیب
 
 - {{domxref("Element/compositionend_event", "compositionend")}}
-  - : Fired when a text composition system such as an {{glossary("input method editor")}} completes or cancels the current composition session.
+  - : هنگامی که یک سیستم ترکیب متن مانند یک {{glossary("input method editor")}} جلسه ترکیب جاری را کامل یا لغو می‌کند، فعال می‌شود.
 - {{domxref("Element/compositionstart_event", "compositionstart")}}
-  - : Fired when a text composition system such as an {{glossary("input method editor")}} starts a new composition session.
+  - : هنگامی که یک سیستم ترکیب متن مانند یک {{glossary("input method editor")}} یک جلسه ترکیب جدید را شروع می‌کند، فعال می‌شود.
 - {{domxref("Element/compositionupdate_event", "compositionupdate")}}
-  - : Fired when a new character is received in the context of a text composition session controlled by a text composition system such as an {{glossary("input method editor")}}.
+  - : هنگامی که یک کاراکتر جدید در زمینه یک جلسه ترکیب متنی که توسط یک سیستم ترکیب متن مانند یک {{glossary("input method editor")}} کنترل می‌شود، دریافت می‌شود، فعال می‌شود.
 
-### Focus events
+### رویدادهای فوکوس
 
 - {{domxref("Element/blur_event", "blur")}}
-  - : Fired when an element has lost focus.
+  - : هنگامی که یک عنصر فوکوس خود را از دست داده است، فعال می‌شود.
 - {{domxref("Element/focus_event", "focus")}}
-  - : Fired when an element has gained focus.
+  - : هنگامی که یک عنصر فوکوس گرفته است، فعال می‌شود.
 - {{domxref("Element/focusin_event", "focusin")}}
-  - : Fired when an element has gained focus, after {{domxref("Element/focus_event", "focus")}}.
+  - : هنگامی که یک عنصر فوکوس گرفته است، پس از {{domxref("Element/focus_event", "focus")}}، فعال می‌شود.
 - {{domxref("Element/focusout_event", "focusout")}}
-  - : Fired when an element has lost focus, after {{domxref("Element/blur_event", "blur")}}.
+  - : هنگامی که یک عنصر فوکوس خود را از دست داده است، پس از {{domxref("Element/blur_event", "blur")}}، فعال می‌شود.
 
-### Fullscreen events
+### رویدادهای تمام‌صفحه
 
 - {{domxref("Element/fullscreenchange_event", "fullscreenchange")}}
-  - : Sent to an `Element` when it transitions into or out of [fullscreen](/en-US/docs/Web/API/Fullscreen_API/Guide) mode.
+  - : به یک `Element` هنگامی که به حالت [تمام‌صفحه](/en-US/docs/Web/API/Fullscreen_API/Guide) وارد یا از آن خارج می‌شود، ارسال می‌شود.
 - {{domxref("Element/fullscreenerror_event", "fullscreenerror")}}
-  - : Sent to an `Element` if an error occurs while attempting to switch it into or out of [fullscreen](/en-US/docs/Web/API/Fullscreen_API/Guide) mode.
+  - : به یک `Element` در صورت بروز خطا در حین تلاش برای تغییر آن به حالت [تمام‌صفحه](/en-US/docs/Web/API/Fullscreen_API/Guide) یا خارج شدن از آن، ارسال می‌شود.
 
-### Keyboard events
+### رویدادهای صفحه‌کلید
 
 - {{domxref("Element/keydown_event", "keydown")}}
-  - : Fired when a key is pressed.
+  - : هنگامی که یک کلید فشار داده می‌شود، فعال می‌شود.
 - {{domxref("Element/keypress_event", "keypress")}} {{Deprecated_Inline}}
-  - : Fired when a key that produces a character value is pressed down.
+  - : هنگامی که یک کلید که یک مقدار کاراکتر تولید می‌کند، فشار داده می‌شود، فعال می‌شود.
 - {{domxref("Element/keyup_event", "keyup")}}
-  - : Fired when a key is released.
+  - : هنگامی که یک کلید رها می‌شود، فعال می‌شود.
 
-### Mouse events
+### رویدادهای ماوس
 
 - {{domxref("Element/auxclick_event", "auxclick")}}
-  - : Fired when a non-primary pointing device button (e.g., any mouse button other than the left button) has been pressed and released on an element.
+  - : هنگامی که یک دکمه دستگاه اشاره‌گر غیراصلی (مثلاً هر دکمه ماوس به جز دکمه چپ) روی یک عنصر فشار داده شده و رها می‌شود، فعال می‌شود.
 - {{domxref("Element/click_event", "click")}}
-  - : Fired when a pointing device button (e.g., a mouse's primary button) is pressed and released on a single element.
+  - : هنگامی که یک دکمه دستگاه اشاره‌گر (مثلاً دکمه اصلی ماوس) روی یک عنصر فشار داده شده و رها می‌شود، فعال می‌شود.
 - {{domxref("Element/contextmenu_event", "contextmenu")}}
-  - : Fired when the user attempts to open a context menu.
+  - : هنگامی که کاربر سعی می‌کند یک منوی زمینه را باز کند، فعال می‌شود.
 - {{domxref("Element/dblclick_event", "dblclick")}}
-  - : Fired when a pointing device button (e.g., a mouse's primary button) is clicked twice on a single element.
+  - : هنگامی که یک دکمه دستگاه اشاره‌گر (مثلاً دکمه اصلی ماوس) دو بار روی یک عنصر کلیک می‌شود، فعال می‌شود.
 - {{domxref("Element/DOMActivate_event", "DOMActivate")}} {{Deprecated_Inline}}
-  - : Occurs when an element is activated, for instance, through a mouse click or a keypress.
+  - : زمانی رخ می‌دهد که یک عنصر فعال می‌شود، برای مثال، از طریق کلیک ماوس یا فشار دادن کلید.
 - {{domxref("Element/DOMMouseScroll_event", "DOMMouseScroll")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Occurs when mouse wheel or similar device is operated and the accumulated scroll amount is over 1 line or 1 page since last event.
+  - : زمانی رخ می‌دهد که چرخ ماوس یا دستگاه مشابهی کار می‌کند و مقدار انباشته پیمایش از آخرین رویداد بیش از 1 خط یا 1 صفحه است.
 - {{domxref("Element/mousedown_event", "mousedown")}}
-  - : Fired when a pointing device button is pressed on an element.
+  - : هنگامی که یک دکمه دستگاه اشاره‌گر روی یک عنصر فشار داده می‌شود، فعال می‌شود.
 - {{domxref("Element/mouseenter_event", "mouseenter")}}
-  - : Fired when a pointing device (usually a mouse) is moved over the element that has the listener attached.
+  - : هنگامی که یک دستگاه اشاره‌گر (معمولاً ماوس) به عنصری که شنونده به آن متصل است منتقل می‌شود، فعال می‌شود.
 - {{domxref("Element/mouseleave_event", "mouseleave")}}
-  - : Fired when the pointer of a pointing device (usually a mouse) is moved out of an element that has the listener attached to it.
+  - : هنگامی که اشاره‌گر یک دستگاه اشاره‌گر (معمولاً ماوس) از عنصری که شنونده به آن متصل است خارج می‌شود، فعال می‌شود.
 - {{domxref("Element/mousemove_event", "mousemove")}}
-  - : Fired when a pointing device (usually a mouse) is moved while over an element.
+  - : هنگامی که یک دستگاه اشاره‌گر (معمولاً ماوس) در حال حرکت بر روی یک عنصر است، فعال می‌شود.
 - {{domxref("Element/mouseout_event", "mouseout")}}
-  - : Fired when a pointing device (usually a mouse) is moved off the element to which the listener is attached or off one of its children.
+  - : هنگامی که یک دستگاه اشاره‌گر (معمولاً ماوس) از عنصری که شنونده به آن متصل است یا از یکی از فرزندان آن خارج می‌شود، فعال می‌شود.
 - {{domxref("Element/mouseover_event", "mouseover")}}
-  - : Fired when a pointing device is moved onto the element to which the listener is attached or onto one of its children.
+  - : هنگامی که یک دستگاه اشاره‌گر به عنصری که شنونده به آن متصل است یا به یکی از فرزندان آن منتقل می‌شود، فعال می‌شود.
 - {{domxref("Element/mouseup_event", "mouseup")}}
-  - : Fired when a pointing device button is released on an element.
+  - : هنگامی که یک دکمه دستگاه اشاره‌گر روی یک عنصر رها می‌شود، فعال می‌شود.
 - {{domxref("Element/mousewheel_event", "mousewheel")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Fired when a mouse wheel or similar device is operated.
+  - : هنگامی که چرخ ماوس یا دستگاه مشابهی کار می‌کند، فعال می‌شود.
 - {{domxref("Element/MozMousePixelScroll_event", "MozMousePixelScroll")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Fired when a mouse wheel or similar device is operated.
+  - : هنگامی که چرخ ماوس یا دستگاه مشابهی کار می‌کند، فعال می‌شود.
 - {{domxref("Element/webkitmouseforcechanged_event", "webkitmouseforcechanged")}} {{Non-standard_Inline}}
-  - : Fired each time the amount of pressure changes on the trackpad touch screen.
+  - : هر بار که مقدار فشار روی صفحه لمسی ترک‌پد تغییر می‌کند، فعال می‌شود.
 - {{domxref("Element/webkitmouseforcedown_event", "webkitmouseforcedown")}} {{Non-standard_Inline}}
-  - : Fired after the mousedown event as soon as sufficient pressure has been applied to qualify as a "force click".
+  - : پس از رویداد mousedown به محض اینکه فشار کافی برای واجد شرایط بودن به عنوان یک "کلیک فشاری" اعمال شده است، فعال می‌شود.
 - {{domxref("Element/webkitmouseforcewillbegin_event", "webkitmouseforcewillbegin")}} {{Non-standard_Inline}}
-  - : Fired before the {{domxref("Element/mousedown_event", "mousedown")}} event.
+  - : قبل از رویداد {{domxref("Element/mousedown_event", "mousedown")}} فعال می‌شود.
 - {{domxref("Element/webkitmouseforceup_event", "webkitmouseforceup")}} {{Non-standard_Inline}}
-  - : Fired after the {{domxref("Element/webkitmouseforcedown_event", "webkitmouseforcedown")}} event as soon as the pressure has been reduced sufficiently to end the "force click".
+  - : پس از رویداد {{domxref("Element/webkitmouseforcedown_event", "webkitmouseforcedown")}} به محض اینکه فشار به اندازه کافی برای پایان دادن به "کلیک فشاری" کاهش یافته است، فعال می‌شود.
 
-### Pointer events
+### رویدادهای اشاره‌گر
 
 - {{domxref("Element/gotpointercapture_event", "gotpointercapture")}}
-  - : Fired when an element captures a pointer using {{domxref("Element/setPointerCapture", "setPointerCapture()")}}.
+  - : هنگامی که یک عنصر یک اشاره‌گر را با استفاده از {{domxref("Element/setPointerCapture", "setPointerCapture()")}} ضبط می‌کند، فعال می‌شود.
 - {{domxref("Element/lostpointercapture_event", "lostpointercapture")}}
-  - : Fired when a [captured pointer](/en-US/docs/Web/API/Pointer_events#pointer_capture) is released.
+  - : هنگامی که یک [اشاره‌گر ضبط‌شده](/en-US/docs/Web/API/Pointer_events#pointer_capture) آزاد می‌شود، فعال می‌شود.
 - {{domxref("Element/pointercancel_event", "pointercancel")}}
-  - : Fired when a pointer event is canceled.
+  - : هنگامی که یک رویداد اشاره‌گر لغو می‌شود، فعال می‌شود.
 - {{domxref("Element/pointerdown_event", "pointerdown")}}
-  - : Fired when a pointer becomes active.
+  - : هنگامی که یک اشاره‌گر فعال می‌شود، فعال می‌شود.
 - {{domxref("Element/pointerenter_event", "pointerenter")}}
-  - : Fired when a pointer is moved into the hit test boundaries of an element or one of its descendants.
+  - : هنگامی که یک اشاره‌گر به داخل مرزهای تست ضربه یک عنصر یا یکی از نوادگان آن منتقل می‌شود، فعال می‌شود.
 - {{domxref("Element/pointerleave_event", "pointerleave")}}
-  - : Fired when a pointer is moved out of the hit test boundaries of an element.
+  - : هنگامی که یک اشاره‌گر از مرزهای تست ضربه یک عنصر خارج می‌شود، فعال می‌شود.
 - {{domxref("Element/pointermove_event", "pointermove")}}
-  - : Fired when a pointer changes coordinates.
+  - : هنگامی که یک اشاره‌گر مختصات خود را تغییر می‌دهد، فعال می‌شود.
 - {{domxref("Element/pointerout_event", "pointerout")}}
-  - : Fired when a pointer is moved out of the _hit test_ boundaries of an element (among other reasons).
+  - : هنگامی که یک اشاره‌گر از مرزهای _تست ضربه_ یک عنصر خارج می‌شود (در میان دلایل دیگر)، فعال می‌شود.
 - {{domxref("Element/pointerover_event", "pointerover")}}
-  - : Fired when a pointer is moved into an element's hit test boundaries.
+  - : هنگامی که یک اشاره‌گر به داخل مرزهای تست ضربه یک عنصر منتقل می‌شود، فعال می‌شود.
 - {{domxref("Element/pointerrawupdate_event", "pointerrawupdate")}}
-  - : Fired when a pointer changes any properties that don't fire {{domxref("Element/pointerdown_event", "pointerdown")}} or {{domxref("Element/pointerup_event", "pointerup")}} events.
+  - : هنگامی که یک اشاره‌گر هر ویژگی‌ای را که باعث فعال شدن رویدادهای {{domxref("Element/pointerdown_event", "pointerdown")}} یا {{domxref("Element/pointerup_event", "pointerup")}} نمی‌شود، تغییر می‌دهد، فعال می‌شود.
 - {{domxref("Element/pointerup_event", "pointerup")}}
-  - : Fired when a pointer is no longer active.
+  - : هنگامی که یک اشاره‌گر دیگر فعال نیست، فعال می‌شود.
 
-### Scroll events
+### رویدادهای پیمایش
 
 - {{domxref("Element/scroll_event", "scroll")}}
-  - : Fired when the document view or an element has been scrolled.
+  - : هنگامی که نمای سند یا یک عنصر پیمایش شده است، فعال می‌شود.
 - {{domxref("Element/scrollend_event", "scrollend")}}
-  - : Fires when the document view has completed scrolling.
+  - : هنگامی که نمای سند پیمایش را کامل کرده است، فعال می‌شود.
 - {{domxref("Element/scrollsnapchange_event", "scrollsnapchange")}} {{experimental_inline}}
-  - : Fired on the scroll container at the end of a scrolling operation when a new scroll snap target has been selected.
+  - : روی ظرف پیمایش در پایان یک عملیات پیمایش زمانی که یک هدف جدید snap پیمایش انتخاب شده است، فعال می‌شود.
 - {{domxref("Element/scrollsnapchanging_event", "scrollsnapchanging")}} {{experimental_inline}}
-  - : Fired on the scroll container when the browser determines a new scroll snap target is pending, i.e., it will be selected when the current scroll gesture ends.
+  - : روی ظرف پیمایش هنگامی که مرورگر تشخیص می‌دهد یک هدف جدید snap پیمایش در انتظار است، یعنی زمانی که حرکت پیمایش فعلی پایان یابد انتخاب خواهد شد، فعال می‌شود.
 
-### Touch events
+### رویدادهای لمسی
 
 - {{domxref("Element/gesturechange_event","gesturechange")}} {{Non-standard_Inline}}
-  - : Fired when digits move during a touch gesture.
+  - : هنگامی که انگشتان در طول یک حرکت لمسی حرکت می‌کنند، فعال می‌شود.
 - {{domxref("Element/gestureend_event","gestureend")}} {{Non-standard_Inline}}
-  - : Fired when there are no longer multiple fingers contacting the touch surface, thus ending the gesture.
+  - : هنگامی که دیگر انگشتان متعددی با سطح لمسی در تماس نیستند، بنابراین حرکت پایان می‌یابد، فعال می‌شود.
 - {{domxref("Element/gesturestart_event","gesturestart")}} {{Non-standard_Inline}}
-  - : Fired when multiple fingers contact the touch surface, thus starting a new gesture.
+  - : هنگامی که انگشتان متعدد با سطح لمسی تماس برقرار می‌کنند، بنابراین یک حرکت جدید شروع می‌شود، فعال می‌شود.
 - {{domxref("Element/touchcancel_event", "touchcancel")}}
-  - : Fired when one or more touch points have been disrupted in an implementation-specific manner (for example, too many touch points are created).
+  - : هنگامی که یک یا چند نقطه لمسی به روشی خاص پیاده‌سازی مختل شده‌اند (به عنوان مثال، تعداد نقاط لمسی بیش از حد ایجاد شده است)، فعال می‌شود.
 - {{domxref("Element/touchend_event", "touchend")}}
-  - : Fired when one or more touch points are removed from the touch surface.
+  - : هنگامی که یک یا چند نقطه لمسی از سطح لمسی حذف می‌شوند، فعال می‌شود.
 - {{domxref("Element/touchmove_event", "touchmove")}}
-  - : Fired when one or more touch points are moved along the touch surface.
+  - : هنگامی که یک یا چند نقطه لمسی در امتداد سطح لمسی حرکت می‌کنند، فعال می‌شود.
 - {{domxref("Element/touchstart_event", "touchstart")}}
-  - : Fired when one or more touch points are placed on the touch surface.
+  - : هنگامی که یک یا چند نقطه لمسی روی سطح لمسی قرار می‌گیرند، فعال می‌شود.
 
-### Transition events
+### رویدادهای انتقال
 
 - {{domxref("Element/transitioncancel_event", "transitioncancel")}}
-  - : An {{domxref("Event")}} fired when a [CSS transition](/en-US/docs/Web/CSS/Guides/Transitions) has been cancelled.
+  - : یک {{domxref("Event")}} که هنگامی که یک [انتقال CSS](/en-US/docs/Web/CSS/Guides/Transitions) لغو شده است، فعال می‌شود.
 - {{domxref("Element/transitionend_event", "transitionend")}}
-  - : An {{domxref("Event")}} fired when a [CSS transition](/en-US/docs/Web/CSS/Guides/Transitions) has finished playing.
+  - : یک {{domxref("Event")}} که هنگامی که یک [انتقال CSS](/en-US/docs/Web/CSS/Guides/Transitions) پخش آن به پایان رسیده است، فعال می‌شود.
 - {{domxref("Element/transitionrun_event", "transitionrun")}}
-  - : An {{domxref("Event")}} fired when a [CSS transition](/en-US/docs/Web/CSS/Guides/Transitions) is created (i.e., when it is added to a set of running transitions), though not necessarily started.
+  - : یک {{domxref("Event")}} که هنگامی که یک [انتقال CSS](/en-US/docs/Web/CSS/Guides/Transitions) ایجاد می‌شود (یعنی زمانی که به مجموعه انتقال‌های در حال اجرا اضافه می‌شود)، هرچند لزوماً شروع نشده است، فعال می‌شود.
 - {{domxref("Element/transitionstart_event", "transitionstart")}}
-  - : An {{domxref("Event")}} fired when a [CSS transition](/en-US/docs/Web/CSS/Guides/Transitions) has started transitioning.
+  - : یک {{domxref("Event")}} که هنگامی که یک [انتقال CSS](/en-US/docs/Web/CSS/Guides/Transitions) شروع به انتقال کرده است، فعال می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
+```
