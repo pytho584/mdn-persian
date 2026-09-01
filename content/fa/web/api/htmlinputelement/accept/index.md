@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: accept property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/accept"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: accept property"
 short-title: accept
 slug: Web/API/HTMLInputElement/accept
 page-type: web-api-instance-property
@@ -14,33 +8,33 @@ browser-compat: api.HTMLInputElement.accept
 
 {{ApiRef("HTML DOM")}}
 
-The **`accept`** property of the {{domxref("HTMLInputElement")}} interface reflects the {{HTMLElement("input")}} element's [`accept`](/en-US/docs/Web/HTML/Reference/Elements/input#accept) attribute, generally a comma-separated list of unique file type specifiers providing a hint for the expected file type for an [`<input>` of type `file`](/en-US/docs/Web/HTML/Reference/Elements/input/file). If the attribute is not explicitly set, the `accept` property is an empty string.
+خاصیت **`accept`** از رابط {{domxref("HTMLInputElement")}} منعکس‌کنندهٔ صفت [`accept`](/en-US/docs/Web/HTML/Reference/Elements/input#accept) عنصر {{HTMLElement("input")}} است. این صفت معمولاً یک فهرست جدا شده با کاما از مشخص‌کننده‌های منحصر‌به‌فرد نوع فایل است که راهنمایی برای نوع فایل مورد انتظار در یک [`<input>` از نوع `file`](/en-US/docs/Web/HTML/Reference/Elements/input/file) فراهم می‌کند. اگر صفت به‌طور صریح تنظیم نشده باشد، خاصیت `accept` یک رشتهٔ خالی خواهد بود.
 
-## Value
+## مقدار
 
-A string representing the element's `accept` value or an empty string if no `accept` is explicitly set.
+یک رشته که مقدار `accept` عنصر را نمایش می‌دهد، یا یک رشتهٔ خالی در صورتی که هیچ `accept`ای به‌طور صریح تنظیم نشده باشد.
 
-## Example
+## مثال
 
 ```js
 const inputElement = document.querySelector("#time");
-console.log(inputElement.accept); // the current value of the accept attribute
-inputElement.accept = ".doc,.docx,.xml,application/msword"; // sets the accept value
+console.log(inputElement.accept); // مقدار فعلی صفت accept
+inputElement.accept = ".doc,.docx,.xml,application/msword"; // تنظیم مقدار accept
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLInputElement.type")}}
 - {{domxref("HTMLInputElement.multiple")}}
 - {{domxref("HTMLInputElement.capture")}}
-- [File type specifiers](/en-US/docs/Web/HTML/Reference/Elements/input/file#unique_file_type_specifiers)
-- [Using files from web applications](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
+- [مشخص‌کننده‌های نوع فایل](/en-US/docs/Web/HTML/Reference/Elements/input/file#unique_file_type_specifiers)
+- [استفاده از فایل‌ها در برنامه‌های وب](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
 - [File API](/en-US/docs/Web/API/File_API)
