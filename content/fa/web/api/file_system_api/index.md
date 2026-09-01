@@ -1,11 +1,5 @@
 ---
 title: "File System API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/File_System_API"
-status: "needs-translation"
----
-
----
-title: File System API
 slug: Web/API/File_System_API
 page-type: web-api-overview
 browser-compat:
@@ -21,98 +15,98 @@ spec-urls:
 
 {{securecontext_header}}{{DefaultAPISidebar("File System API")}}{{AvailableInWorkers}}
 
-The **File System API** — with extensions provided via the [**File System Access API**](https://wicg.github.io/file-system-access/) to access files on the device file system — allows read, write and file management capabilities.
+**File System API** — با افزونه‌هایی که از طریق [**File System Access API**](https://wicg.github.io/file-system-access/) برای دسترسی به فایل‌های سیستم فایل دستگاه ارائه می‌شود — قابلیت‌های خواندن، نوشتن و مدیریت فایل را فراهم می‌کند.
 
-See [Relationship to other file-related APIs](/en-US/docs/Web/API/File_API#relationship_to_other_file-related_apis) for a comparison between this API, the [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API), and the [File API](/en-US/docs/Web/API/File_API).
+برای مقایسه بین این API، [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API) و [File API](/en-US/docs/Web/API/File_API)، به [رابطه با سایر APIهای مرتبط با فایل](/en-US/docs/Web/API/File_API#relationship_to_other_file-related_apis) مراجعه کنید.
 
-## Concepts and Usage
+## مفاهیم و کاربرد
 
-This API allows interaction with files on a user's local device, or on a user-accessible network file system. Core functionality of this API includes reading files, writing or saving files, and access to directory structure.
+این API امکان تعامل با فایل‌های موجود در دستگاه محلی کاربر یا سیستم فایل شبکه‌ای قابل دسترس برای کاربر را فراهم می‌کند. عملکرد اصلی این API شامل خواندن فایل‌ها، نوشتن یا ذخیره فایل‌ها و دسترسی به ساختار دایرکتوری است.
 
-Most of the interaction with files and directories is accomplished through handles. A parent {{domxref('FileSystemHandle')}} class helps define two child classes: {{domxref('FileSystemFileHandle')}} and {{domxref('FileSystemDirectoryHandle')}}, for files and directories respectively.
+بیشتر تعامل با فایل‌ها و دایرکتوری‌ها از طریق دسته‌ها (handles) انجام می‌شود. کلاس والد {{domxref('FileSystemHandle')}} به تعریف دو کلاس فرزند کمک می‌کند: {{domxref('FileSystemFileHandle')}} و {{domxref('FileSystemDirectoryHandle')}} به ترتیب برای فایل‌ها و دایرکتوری‌ها.
 
-The handles represent a file or directory on the user's system. You can first gain access to them by showing the user a file or directory picker using methods such as {{domxref('window.showOpenFilePicker()')}} and {{domxref('window.showDirectoryPicker()')}}. Once these are called, the file picker presents itself and the user selects either a file or directory. Once this happens successfully, a handle is returned.
+دسته‌ها یک فایل یا دایرکتوری را در سیستم کاربر نشان می‌دهند. ابتدا می‌توانید با نمایش یک انتخاب‌گر فایل یا دایرکتوری به کاربر، با استفاده از روش‌هایی مانند {{domxref('window.showOpenFilePicker()')}} و {{domxref('window.showDirectoryPicker()')}} به آن‌ها دسترسی پیدا کنید. پس از فراخوانی این روش‌ها، انتخاب‌گر فایل نمایش داده می‌شود و کاربر یک فایل یا دایرکتوری را انتخاب می‌کند. پس از انجام موفقیت‌آمیز این کار، یک دسته (handle) بازگردانده می‌شود.
 
-You can also gain access to file handles via:
+همچنین می‌توانید از طریق موارد زیر به دسته‌های فایل دسترسی پیدا کنید:
 
-- The {{domxref('DataTransferItem.getAsFileSystemHandle()')}} method of the {{domxref('HTML Drag and Drop API', '', '', 'nocode')}}.
-- The [File Handling API](https://developer.chrome.com/docs/capabilities/web-apis/file-handling).
+- روش {{domxref('DataTransferItem.getAsFileSystemHandle()')}} از [HTML Drag and Drop API](/en-US/docs/Web/API/HTML_Drag_and_Drop_API).
+- [File Handling API](https://developer.chrome.com/docs/capabilities/web-apis/file-handling).
 
-Each handle provides its own functionality and there are a few differences depending on which one you are using (see the [interfaces](#interfaces) section for specific details). You then can access file data, or information (including children) of the directory selected. This API opens up potential functionality the web has been lacking. Still, security has been of utmost concern when designing the API, and access to file/directory data is disallowed unless the user specifically permits it (note that this is not the case with the [Origin private file system](#origin_private_file_system), because it is not visible to the user).
-
-> [!NOTE]
-> The different exceptions that can be thrown when using the features of this API are listed on relevant pages as defined in the spec. However, the situation is made more complex by the interaction of the API and the underlying operating system. A proposal has been made to [list the error mappings in the spec](https://github.com/whatwg/fs/issues/57), which includes useful related information.
+هر دسته عملکرد خاص خود را ارائه می‌دهد و بسته به اینکه از کدام یک استفاده می‌کنید، تفاوت‌های کمی وجود دارد (برای جزئیات خاص به بخش [رابط‌ها](#interfaces) مراجعه کنید). سپس می‌توانید به داده‌های فایل یا اطلاعات (از جمله فرزندان) دایرکتوری انتخاب‌شده دسترسی پیدا کنید. این API قابلیت‌های بالقوه‌ای را که وب فاقد آن بود باز می‌کند. با این حال، امنیت در طراحی این API از اهمیت بالایی برخوردار بوده است و دسترسی به داده‌های فایل/دایرکتوری مجاز نیست مگر اینکه کاربر صریحاً اجازه دهد (توجه داشته باشید که این مورد در مورد [سیستم فایل خصوصی مبدأ](#origin_private_file_system) صدق نمی‌کند، زیرا برای کاربر قابل مشاهده نیست).
 
 > [!NOTE]
-> Objects based on {{domxref("FileSystemHandle")}} can also be serialized into an {{domxref("IndexedDB API", "IndexedDB", "", "nocode")}} database instance, or transferred via {{domxref("window.postMessage", "postMessage()")}}.
+> استثناهای مختلفی که هنگام استفاده از ویژگی‌های این API ممکن است رخ دهند، در صفحات مربوطه طبق مشخصات فهرست شده‌اند. با این حال، وضعیت به دلیل تعامل API و سیستم عامل زیرین پیچیده‌تر می‌شود. پیشنهادی برای [فهرست کردن نگاشت خطاها در مشخصات](https://github.com/whatwg/fs/issues/57) ارائه شده است که شامل اطلاعات مفید مرتبط است.
 
-### Origin private file system
+> [!NOTE]
+> اشیاء مبتنی بر {{domxref("FileSystemHandle")}} می‌توانند در یک نمونه پایگاه داده {{domxref("IndexedDB API", "IndexedDB", "", "nocode")}} سریال‌سازی شوند یا از طریق {{domxref("window.postMessage", "postMessage()")}} منتقل شوند.
 
-The origin private file system (OPFS) is a storage endpoint provided as part of the File System API, which is private to the origin of the page and not visible to the user like the regular file system. It provides access to a special kind of file that is highly optimized for performance and offers in-place write access to its content.
+### سیستم فایل خصوصی مبدأ
 
-The following are some possible use cases:
+سیستم فایل خصوصی مبدأ (OPFS) یک نقطه پایانی ذخیره‌سازی است که به عنوان بخشی از File System API ارائه می‌شود و برای مبدأ صفحه خصوصی است و مانند سیستم فایل معمولی برای کاربر قابل مشاهده نیست. این سیستم دسترسی به نوع خاصی از فایل را فراهم می‌کند که برای عملکرد بهینه‌سازی شده است و دسترسی نوشتن درجا به محتوای آن ارائه می‌دهد.
 
-- Apps with persistent uploader
-  - When a file or directory is selected for upload, you can copy the file into a local sandbox and upload a chunk at a time.
-  - The app can restart uploads after an interruption, such as the browser being closed or crashing, connectivity getting interrupted, or the computer getting shut down.
+برخی از موارد استفاده احتمالی عبارتند از:
 
-- Video game or other apps with lots of media assets
-  - The app downloads one or several large tarballs and expands them locally into a directory structure.
-  - The app pre-fetches assets in the background, so the user can go to the next task or game level without waiting for a download.
+- برنامه‌های دارای آپلودکننده پایدار
+  - وقتی فایل یا دایرکتوری برای آپلود انتخاب می‌شود، می‌توانید فایل را در یک محیط sandbox محلی کپی کرده و بخش به بخش آپلود کنید.
+  - برنامه می‌تواند پس از وقفه، مانند بسته شدن یا خراب شدن مرورگر، قطع شدن اتصال یا خاموش شدن رایانه، آپلود را از سر بگیرد.
 
-- Audio or photo editor with offline access or local cache (great for performance and speed)
-  - The app can write to files in place (for example, overwriting just the ID3/EXIF tags and not the entire file).
+- بازی‌های ویدیویی یا سایر برنامه‌های دارای دارایی‌های رسانه‌ای زیاد
+  - برنامه یک یا چند tarball بزرگ دانلود کرده و آن‌ها را به صورت محلی در یک ساختار دایرکتوری گسترش می‌دهد.
+  - برنامه دارایی‌ها را در پس‌زمینه از پیش دریافت می‌کند، بنابراین کاربر می‌تواند بدون انتظار برای دانلود، به مرحله بعد یا سطح بازی برود.
 
-- Offline video viewer
-  - The app can download large files (>1GB) for later viewing.
-  - The app can access partially downloaded files (so that you can watch the first chapter of your DVD, even if the app is still downloading the rest of the content or if the app didn't complete the download because you had to run to catch a train).
+- ویرایشگر صوتی یا عکس با دسترسی آفلاین یا حافظه پنهان محلی (بسیار عالی برای عملکرد و سرعت)
+  - برنامه می‌تواند درجا در فایل‌ها بنویسد (مثلاً فقط تگ‌های ID3/EXIF را بازنویسی کند و نه کل فایل را).
 
-- Offline web mail client
-  - The client downloads attachments and stores them locally.
-  - The client caches attachments for later upload.
+- نمایش‌دهنده ویدیوی آفلاین
+  - برنامه می‌تواند فایل‌های بزرگ (بیش از ۱ گیگابایت) را برای مشاهده بعدی دانلود کند.
+  - برنامه می‌تواند به فایل‌های نیمه‌دانلودشده دسترسی داشته باشد (تا بتوانید فصل اول DVD خود را تماشا کنید، حتی اگر برنامه همچنان در حال دانلود بقیه محتوا باشد یا اگر دانلود به دلیل عجله شما برای رسیدن به قطار کامل نشده باشد).
 
-Read our [Origin private file system](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) for instructions on how to use it.
+- سرویس‌گیرنده ایمیل وب آفلاین
+  - سرویس گیرنده پیوست‌ها را دانلود کرده و آن‌ها را به صورت محلی ذخیره می‌کند.
+  - سرویس گیرنده پیوست‌ها را برای آپلود بعدی ذخیره می‌کند.
 
-### Saving files
+برای دستورالعمل‌های استفاده از آن، [سیستم فایل خصوصی مبدأ](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) ما را بخوانید.
 
-- In the case of the asynchronous handles, use the {{domxref('FileSystemWritableFileStream')}} interface. Once the data you'd like to save is in a format of {{domxref('Blob')}}, {{jsxref("String")}} object, string literal or {{jsxref('ArrayBuffer', 'buffer')}}, you can open a stream and save the data to a file. This can be the existing file or a new file.
-- In the case of the synchronous {{domxref('FileSystemSyncAccessHandle')}}, you write changes to a file using the {{domxref('FileSystemSyncAccessHandle.write', 'write()')}} method. You can optionally also call {{domxref('FileSystemSyncAccessHandle.flush', 'flush()')}} if you need the changes committed to disk at a specific time (otherwise you can leave the underlying operating system to handle this when it sees fit, which should be OK in most cases).
+### ذخیره فایل‌ها
 
-## Interfaces
+- در مورد دسته‌های ناهمگام، از رابط {{domxref('FileSystemWritableFileStream')}} استفاده کنید. وقتی داده‌هایی که می‌خواهید ذخیره کنید در قالب {{domxref('Blob')}}، شیء {{jsxref("String")}}، رشته‌ی متنی یا {{jsxref('ArrayBuffer', 'buffer')}} قرار دارند، می‌توانید یک جریان باز کرده و داده‌ها را در یک فایل ذخیره کنید. این فایل می‌تواند فایل موجود یا یک فایل جدید باشد.
+- در مورد {{domxref('FileSystemSyncAccessHandle')}} همگام، تغییرات را با استفاده از روش {{domxref('FileSystemSyncAccessHandle.write', 'write()')}} در یک فایل می‌نویسید. در صورت نیاز به ثبت تغییرات بر روی دیسک در زمان مشخص، می‌توانید به صورت اختیاری {{domxref('FileSystemSyncAccessHandle.flush', 'flush()')}} را نیز فراخوانی کنید (در غیر این صورت می‌توانید به سیستم عامل زیرین اجازه دهید تا در زمان مناسب خودش مدیریت کند، که در بیشتر موارد باید کافی باشد).
+
+## رابط‌ها
 
 - {{domxref("FileSystemChangeRecord")}} {{experimental_inline}}
-  - : Contains details of a single change observed by a {{domxref("FileSystemObserver")}}.
+  - : حاوی جزئیات یک تغییر مشاهده‌شده توسط {{domxref("FileSystemObserver")}} است.
 - {{domxref("FileSystemHandle")}}
-  - : An object which represents a file or directory entry. Multiple handles can represent the same entry. For the most part you do not work with `FileSystemHandle` directly but rather its child interfaces {{domxref('FileSystemFileHandle')}} and {{domxref('FileSystemDirectoryHandle')}}.
+  - : شیءای که یک ورودی فایل یا دایرکتوری را نشان می‌دهد. چندین دسته می‌توانند همان ورودی را نشان دهند. در بیشتر موارد مستقیماً با `FileSystemHandle` کار نمی‌کنید، بلکه با رابط‌های فرزند آن یعنی {{domxref('FileSystemFileHandle')}} و {{domxref('FileSystemDirectoryHandle')}} کار می‌کنید.
 - {{domxref("FileSystemFileHandle")}}
-  - : Provides a handle to a file system entry.
+  - : یک دسته به یک ورودی سیستم فایل ارائه می‌دهد.
 - {{domxref("FileSystemDirectoryHandle")}}
-  - : Provides a handle to a file system directory.
+  - : یک دسته به یک دایرکتوری سیستم فایل ارائه می‌دهد.
 - {{domxref("FileSystemObserver")}} {{experimental_inline}}
-  - : Provides a mechanism to observe changes to selected files or directories.
+  - : مکانیزمی برای مشاهده تغییرات در فایل‌ها یا دایرکتوری‌های انتخاب‌شده فراهم می‌کند.
 - {{domxref("FileSystemSyncAccessHandle")}}
-  - : Provides a synchronous handle to a file system entry, which operates in-place on a single file on disk. The synchronous nature of the file reads and writes allows for higher performance for critical methods in contexts where asynchronous operations come with high overhead, e.g., [WebAssembly](/en-US/docs/WebAssembly). This class is only accessible inside dedicated [Web Workers](/en-US/docs/Web/API/Web_Workers_API) for files within the [origin private file system](#origin_private_file_system).
+  - : یک دسته همگام به یک ورودی سیستم فایل ارائه می‌دهد که به صورت درجا روی یک فایل واحد روی دیسک عمل می‌کند. ماهیت همگام خواندن و نوشتن فایل، عملکرد بالاتری را برای روش‌های حیاتی در زمینه‌هایی که عملیات ناهمگام سربار بالایی دارند، مانند [WebAssembly](/en-US/docs/WebAssembly)، فراهم می‌کند. این کلاس فقط در [Web Workers](/en-US/docs/Web/API/Web_Workers_API) اختصاصی برای فایل‌های داخل [سیستم فایل خصوصی مبدأ](#origin_private_file_system) قابل دسترسی است.
 - {{domxref("FileSystemWritableFileStream")}}
-  - : A {{domxref('WritableStream')}} object with additional convenience methods, which operates on a single file on disk.
+  - : یک شیء {{domxref('WritableStream')}} با روش‌های راحتی اضافی که روی یک فایل واحد روی دیسک عمل می‌کند.
 
-### Extensions to other interfaces
+### افزونه‌های رابط‌های دیگر
 
 - {{domxref("Window.showDirectoryPicker()")}}
-  - : Displays a directory picker which allows the user to select a directory.
+  - : یک انتخاب‌گر دایرکتوری نمایش می‌دهد که به کاربر اجازه می‌دهد یک دایرکتوری را انتخاب کند.
 - {{domxref("Window.showOpenFilePicker()")}}
-  - : Shows a file picker that allows a user to select a file or multiple files.
+  - : یک انتخاب‌گر فایل نشان می‌دهد که به کاربر اجازه می‌دهد یک یا چند فایل را انتخاب کند.
 - {{domxref("Window.showSaveFilePicker()")}}
-  - : Shows a file picker that allows a user to save a file.
+  - : یک انتخاب‌گر فایل نشان می‌دهد که به کاربر اجازه می‌دهد یک فایل را ذخیره کند.
 - {{domxref("DataTransferItem.getAsFileSystemHandle()")}}
-  - : Returns a {{jsxref('Promise')}} that fulfills with a {{domxref('FileSystemFileHandle')}} if the dragged item is a file, or fulfills with a {{domxref('FileSystemDirectoryHandle')}} if the dragged item is a directory.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که اگر مورد کشیده‌شده یک فایل باشد با یک {{domxref('FileSystemFileHandle')}} و اگر مورد کشیده‌شده یک دایرکتوری باشد با یک {{domxref('FileSystemDirectoryHandle')}} محقق می‌شود.
 - {{domxref("StorageManager.getDirectory()")}}
-  - : Used to obtain a reference to a {{domxref("FileSystemDirectoryHandle")}} object allowing access to a directory and its contents, stored in the [origin private file system](/en-US/docs/Web/API/File_System_API/Origin_private_file_system). Returns a {{jsxref('Promise')}} that fulfills with a {{domxref("FileSystemDirectoryHandle")}} object.
+  - : برای به دست آوردن ارجاع به یک شیء {{domxref("FileSystemDirectoryHandle")}} استفاده می‌شود که امکان دسترسی به یک دایرکتوری و محتویات آن را فراهم می‌کند و در [سیستم فایل خصوصی مبدأ](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) ذخیره شده است. یک {{jsxref('Promise')}} برمی‌گرداند که با یک شیء {{domxref("FileSystemDirectoryHandle")}} محقق می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Accessing files
+### دسترسی به فایل‌ها
 
-The below code allows the user to choose a file from the file picker.
+کد زیر به کاربر اجازه می‌دهد یک فایل را از انتخاب‌گر فایل انتخاب کند.
 
 ```js
 async function getFile() {
@@ -123,7 +117,7 @@ async function getFile() {
 }
 ```
 
-The following asynchronous function presents a file picker and once a file is chosen, uses the `getFile()` method to retrieve the contents.
+تابع ناهمگام زیر یک انتخاب‌گر فایل ارائه می‌دهد و پس از انتخاب فایل، از روش `getFile()` برای بازیابی محتوا استفاده می‌کند.
 
 ```js
 const pickerOpts = {
@@ -148,9 +142,9 @@ async function getTheFile() {
 }
 ```
 
-### Accessing directories
+### دسترسی به دایرکتوری‌ها
 
-The following example returns a directory handle with the specified name. If the directory does not exist, it is created.
+مثال زیر یک دسته دایرکتوری با نام مشخص‌شده برمی‌گرداند. اگر دایرکتوری وجود نداشته باشد، ایجاد می‌شود.
 
 ```js
 const dirName = "directoryToGetName";
@@ -161,7 +155,7 @@ const subDir = await currentDirHandle.getDirectoryHandle(dirName, {
 });
 ```
 
-The following asynchronous function uses `resolve()` to find the path to a chosen file, relative to a specified directory handle.
+تابع ناهمگام زیر از `resolve()` برای یافتن مسیر فایل انتخاب‌شده نسبت به یک دسته دایرکتوری مشخص استفاده می‌کند.
 
 ```js
 async function returnPathDirectories(directoryHandle) {
@@ -188,11 +182,11 @@ async function returnPathDirectories(directoryHandle) {
 }
 ```
 
-### Writing to files
+### نوشتن در فایل‌ها
 
-The following asynchronous function opens the save file picker, which returns a {{domxref('FileSystemFileHandle')}} once a file is selected. A writable stream is then created using the {{domxref('FileSystemFileHandle.createWritable()')}} method.
+تابع ناهمگام زیر انتخاب‌گر ذخیره فایل را باز می‌کند که پس از انتخاب فایل، یک {{domxref('FileSystemFileHandle')}} برمی‌گرداند. سپس با استفاده از روش {{domxref('FileSystemFileHandle.createWritable()')}} یک جریان قابل نوشتن ایجاد می‌شود.
 
-A user defined {{domxref('Blob')}} is then written to the stream which is subsequently closed.
+یک {{domxref('Blob')}} تعریف‌شده توسط کاربر سپس در جریان نوشته می‌شود که در ادامه بسته می‌شود.
 
 ```js
 async function saveFile() {
@@ -210,7 +204,7 @@ async function saveFile() {
 }
 ```
 
-The following show different examples of options that can be passed into the `write()` method.
+در زیر نمونه‌های مختلفی از گزینه‌هایی که می‌توان به روش `write()` منتقل کرد نشان داده شده است.
 
 ```js
 // just pass in the data (no options)
@@ -226,60 +220,14 @@ writableStream.write({ type: "seek", position });
 writableStream.write({ type: "truncate", size });
 ```
 
-### Synchronously reading and writing files in OPFS
+### خواندن و نوشتن همگام فایل‌ها در OPFS
 
-This example synchronously reads and writes a file to the [origin private file system](#origin_private_file_system).
+این مثال به صورت همگام یک فایل را در [سیستم فایل خصوصی مبدأ](#origin_private_file_system) می‌خواند و می‌نویسد.
 
-The following asynchronous event handler function is contained inside a Web Worker. On receiving a message from the main thread it:
+تابع مدیریت رویداد ناهمگام زیر در یک Web Worker قرار دارد. پس از دریافت پیام از رشته اصلی:
 
-- Creates a synchronous file access handle.
-- Gets the size of the file and creates an {{jsxref("ArrayBuffer")}} to contain it.
-- Reads the file contents into the buffer.
-- Encodes the message and writes it to the end of the file.
-- Persists the changes to disk and closes the access handle.
-
-```js
-onmessage = async (e) => {
-  // retrieve message sent to work from main script
-  const message = e.data;
-
-  // Get handle to draft file in OPFS
-  const root = await navigator.storage.getDirectory();
-  const draftHandle = await root.getFileHandle("draft.txt", { create: true });
-  // Get sync access handle
-  const accessHandle = await draftHandle.createSyncAccessHandle();
-
-  // Get size of the file.
-  const fileSize = accessHandle.getSize();
-  // Read file content to a buffer.
-  const buffer = new DataView(new ArrayBuffer(fileSize));
-  const readBuffer = accessHandle.read(buffer, { at: 0 });
-
-  // Write the message to the end of the file.
-  const encoder = new TextEncoder();
-  const encodedMessage = encoder.encode(message);
-  const writeBuffer = accessHandle.write(encodedMessage, { at: readBuffer });
-
-  // Persist changes to disk.
-  accessHandle.flush();
-
-  // Always close FileSystemSyncAccessHandle if done.
-  accessHandle.close();
-};
-```
-
-> [!NOTE]
-> In earlier versions of the spec, {{domxref("FileSystemSyncAccessHandle.close()", "close()")}}, {{domxref("FileSystemSyncAccessHandle.flush()", "flush()")}}, {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}}, and {{domxref("FileSystemSyncAccessHandle.truncate()", "truncate()")}} were unergonomically specified as asynchronous methods. This has now been [amended](https://github.com/whatwg/fs/issues/7), but some browsers still support the asynchronous versions.
-
-## Specifications
-
-{{Specifications}}
-
-## Browser compatibility
-
-{{Compat}}
-
-## See also
-
-- [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
-- [The origin private file system](https://web.dev/articles/origin-private-file-system)
+- یک دسته دسترسی همگام به فایل ایجاد می‌کند.
+- اندازه فایل را به دست می‌آورد و یک {{jsxref("ArrayBuffer")}} برای نگهداری آن ایجاد می‌کند.
+- محتوای فایل را در بافر می‌خواند.
+- پیام را کدگذاری کرده و در انتهای فایل می‌نویسد.
+- تغییرات را روی دیس
