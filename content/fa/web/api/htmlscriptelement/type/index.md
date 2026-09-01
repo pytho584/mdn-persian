@@ -1,7 +1,5 @@
 ---
 title: "HTMLScriptElement: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/type"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +12,28 @@ browser-compat: api.HTMLScriptElement.type
 
 {{APIRef("HTML DOM")}}
 
-The **`type`** property of the {{domxref("HTMLScriptElement")}} interface is a string that reflects the type of the script.
+ویژگی **`type`** در رابط {{domxref("HTMLScriptElement")}} یک رشته است که نوع اسکریپت را منعکس می‌کند.
 
-It reflects the `type` attribute of the {{HTMLElement("script")}} element.
+این ویژگی بازتاب‌دهنده ویژگی `type` عنصر {{HTMLElement("script")}} است.
 
-## Value
+## مقدار
 
-A string. The value of this property can be one of the following:
+یک رشته. مقدار این ویژگی می‌تواند یکی از موارد زیر باشد:
 
-- **Attribute is not set (default), an empty string, or a JavaScript MIME type**
-  - : Indicates that the script is a "classic script", containing JavaScript code.
+- **ویژگی تنظیم نشده (پیش‌فرض)، یک رشته خالی، یا یک نوع MIME جاوااسکریپت**
+  - : نشان می‌دهد که اسکریپت یک «اسکریپت کلاسیک» است و شامل کد جاوااسکریپت است.
 - `module`
-  - : This value causes the code to be treated as a JavaScript module.
+  - : این مقدار باعث می‌شود کد به‌عنوان یک ماژول جاوااسکریپت در نظر گرفته شود.
 - `importmap`
-  - : This value indicates that the body of the element contains an import map.
+  - : این مقدار نشان می‌دهد که بدنه عنصر شامل یک نقشه واردات (import map) است.
 - `speculationrules` {{experimental_inline}}
-  - : This value indicates that the body of the element contains speculation rules.
-- **Any other value**
-  - : The embedded content is treated as a data block, and won't be processed by the browser.
+  - : این مقدار نشان می‌دهد که بدنه عنصر شامل قوانین حدس‌زنی (speculation rules) است.
+- **هر مقدار دیگری**
+  - : محتوای جاسازی‌شده به‌عنوان یک بلوک داده در نظر گرفته می‌شود و توسط مرورگر پردازش نخواهد شد.
 
-For more information, please refer to the [`type`](/en-US/docs/Web/HTML/Reference/Elements/script/type) attribute of the {{HTMLElement("script")}} element.
+برای اطلاعات بیشتر، به ویژگی [`type`](/en-US/docs/Web/HTML/Reference/Elements/script/type) عنصر {{HTMLElement("script")}} مراجعه کنید.
 
-## Examples
+## نمونه‌ها
 
 ```html
 <script id="el" type="module"></script>
@@ -46,10 +44,10 @@ const el = document.getElementById("el");
 console.log(el.type); // Output: "module"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
