@@ -1,11 +1,5 @@
 ---
 title: "Document: createNSResolver() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createNSResolver"
-status: "needs-translation"
----
-
----
-title: "Document: createNSResolver() method"
 short-title: createNSResolver()
 slug: Web/API/Document/createNSResolver
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.Document.createNSResolver
 
 {{ ApiRef("DOM") }}{{deprecated_header}}
 
-The **`createNSResolver()`** method of the {{domxref("Document")}} interface used to create a custom `XPathNSResolver` object. It now returns the input as-is and is only kept for compatibility reasons.
+متد **`createNSResolver()`** از رابط {{domxref("Document")}} قبلاً برای ایجاد یک شیء سفارشی `XPathNSResolver` استفاده می‌شد. اکنون این متد ورودی را به همان صورت بازمی‌گرداند و تنها به دلایل سازگاری نگه داشته شده است.
 
 ## Syntax
 
@@ -27,11 +21,11 @@ createNSResolver(nodeResolver)
 ### Parameters
 
 - `nodeResolver`
-  - : A {{domxref("Node")}}.
+  - : یک {{domxref("Node")}}.
 
 ### Return value
 
-`nodeResolver` itself.
+خود `nodeResolver`.
 
 ## Specifications
 
@@ -44,4 +38,4 @@ createNSResolver(nodeResolver)
 ## See also
 
 - {{domxref("Document.evaluate()")}}
-- [Introduction to using XPath in JavaScript](/en-US/docs/Web/XML/XPath/Guides/Introduction_to_using_XPath_in_JavaScript)
+- [آشنایی با استفاده از XPath در JavaScript](/en-US/docs/Web/XML/XPath/Guides/Introduction_to_using_XPath_in_JavaScript)
