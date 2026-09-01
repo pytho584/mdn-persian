@@ -1,34 +1,28 @@
 ---
 title: "CSSStyleValue"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleValue"
-status: "needs-translation"
----
-
----
-title: CSSStyleValue
 slug: Web/API/CSSStyleValue
 page-type: web-api-interface
 browser-compat: api.CSSStyleValue
+
 ---
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSStyleValue`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) is the base class of all CSS values accessible through the Typed OM API.
-An instance of this class may be used anywhere a string is expected.
+اینترفیس **`CSSStyleValue`** در [مدل شیء تایپ‌شده CSS](/en-US/docs/Web/API/CSS_Typed_OM_API)، کلاس پایهٔ تمام مقادیر CSS است که از طریق API مدل شیء تایپ‌شده در دسترس هستند. یک نمونه از این کلاس را می‌توان هر جا که یک رشته (string) انتظار می‌رود استفاده کرد.
 
-## Static methods
+## روش‌های ایستا
 
 - [`CSSStyleValue.parse()`](/en-US/docs/Web/API/CSSStyleValue/parse_static)
-  - : Sets a specific CSS property to the specified values and returns the first value as a `CSSStyleValue` object.
+  - : یک ویژگی CSS مشخص را با مقادیر داده‌شده تنظیم می‌کند و اولین مقدار را به‌عنوان یک شیء `CSSStyleValue` برمی‌گرداند.
 - [`CSSStyleValue.parseAll()`](/en-US/docs/Web/API/CSSStyleValue/parseAll_static)
-  - : Sets all occurrences of a specific CSS property to the specified value and returns an array of `CSSStyleValue` objects, each containing one of the supplied values.
+  - : همهٔ رخدادهای یک ویژگی CSS مشخص را با مقدار داده‌شده تنظیم می‌کند و آرایه‌ای از اشیاء `CSSStyleValue` برمی‌گرداند که هر کدام یکی از مقادیر ارائه‌شده را شامل می‌شود.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("CSSStyleValue.toString()")}}
-  - : A {{Glossary("stringifier")}} that returns the value formatted as a string of standard CSS text.
+  - : یک {{Glossary("stringifier")}} که مقدار را به‌صورت رشته‌ای از متن استاندارد CSS برمی‌گرداند.
 
-## Interfaces based on CSSStyleValue
+## اینترفیس‌های مبتنی بر CSSStyleValue
 
 - {{domxref('CSSImageValue')}}
 - {{domxref('CSSKeywordValue')}}
@@ -37,10 +31,10 @@ An instance of this class may be used anywhere a string is expected.
 - {{domxref('CSSTransformValue')}}
 - {{domxref('CSSUnparsedValue')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
