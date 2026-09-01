@@ -1,7 +1,5 @@
 ---
 title: "HTMLObjectElement: setCustomValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/setCustomValidity"
-status: "needs-translation"
 ---
 
 ---
@@ -12,39 +10,30 @@ page-type: web-api-instance-method
 browser-compat: api.HTMLObjectElement.setCustomValidity
 ---
 
-{{APIRef("HTML DOM")}}
+متد **`setCustomValidity()`** از رابط {{domxref("HTMLObjectElement")}} یک پیام اعتبارسنجی سفارشی برای عنصر تنظیم می‌کند.
 
-The **`setCustomValidity()`** method of the
-{{domxref("HTMLObjectElement")}} interface sets a custom validity message for the
-element.
-
-## Syntax
+## سینتکس
 
 ```js-nolint
 setCustomValidity(errorMessage)
 ```
 
-### Parameters
+### پارامترها
 
 - `errorMessage`
-  - : The message to use for validity errors.
+  - : پیامی که برای خطاهای اعتبارسنجی استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
-None.
+هیچ.
 
-## Examples
+## مثال‌ها
 
-In this example, we pass the ID of an input element and set different error
-messages depending on whether the value is missing, too low, or too high. Note
-that the message will not be displayed immediately. Attempting to submit the
-form will display the message, or you can call the
-[`reportValidity()`](/en-US/docs/Web/API/HTMLInputElement/reportValidity) method
-on the element.
+در این مثال، شناسه (ID) یک عنصر ورودی را پاس می‌کنیم و بسته به اینکه مقدار وجود نداشته باشد، بیش از حد کم باشد یا بیش از حد زیاد باشد، پیام‌های خطای متفاوتی تنظیم می‌کنیم. توجه داشته باشید که پیام بلافاصله نمایش داده نمی‌شود. تلاش برای ارسال فرم، پیام را نمایش می‌دهد، یا می‌توانید متد [`reportValidity()`](/en-US/docs/Web/API/HTMLInputElement/reportValidity) را روی عنصر صدا بزنید.
 
 ```js
 function validate(inputID) {
@@ -65,19 +54,17 @@ function validate(inputID) {
 }
 ```
 
-It's vital to set the message to an empty string if there are no errors. As long as the
-error message is not empty, the form will not pass validation and will not be
-submitted.
+ضروری است که در نبود خطا، پیام به یک رشته خالی تنظیم شود. تا زمانی که پیام خطا خالی نباشد، فرم اعتبارسنجی را پاس نمی‌کند و ارسال نخواهد شد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref('validityState')}}
 - {{domxref('validityState.valueMissing')}}
