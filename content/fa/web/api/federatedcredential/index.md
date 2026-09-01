@@ -1,10 +1,4 @@
 ---
-title: "FederatedCredential"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FederatedCredential"
-status: "needs-translation"
----
-
----
 title: FederatedCredential
 slug: Web/API/FederatedCredential
 page-type: web-api-interface
@@ -15,34 +9,34 @@ browser-compat: api.FederatedCredential
 
 {{SeeCompatTable}}{{APIRef("Credential Management API")}}{{SecureContext_Header}}
 
-The **`FederatedCredential`** interface of the [Credential Management API](/en-US/docs/Web/API/Credential_Management_API) provides information about credentials from a federated identity provider. A federated identity provider is an entity that a website trusts to correctly authenticate a user, and that provides an API for that purpose. [OpenID Connect](https://openid.net/developers/specs/) is an example of a federated identity provider framework.
+رابط **`FederatedCredential`** در [Credential Management API](/en-US/docs/Web/API/Credential_Management_API) اطلاعات مربوط به اعتبارنامه‌های یک ارائه‌دهنده هویت فدرال را فراهم می‌کند. ارائه‌دهنده هویت فدرال، موجودیتی است که یک وب‌سایت به آن اعتماد می‌کند تا کاربر را به‌درستی احراز هویت کند و APIای برای این منظور در اختیار قرار می‌دهد. [OpenID Connect](https://openid.net/developers/specs/) نمونه‌ای از چارچوب‌های ارائه‌دهنده هویت فدرال است.
 
 > [!NOTE]
-> The [Federated Credential Management API (FedCM)](/en-US/docs/Web/API/FedCM_API) provides a more complete solution for handling identity federation in the browser, and uses the {{domxref("IdentityCredential")}} type.
+> [Federated Credential Management API (FedCM)](/en-US/docs/Web/API/FedCM_API) راه‌حل کامل‌تری برای مدیریت فدرال‌سازی هویت در مرورگر فراهم می‌کند و از نوع {{domxref("IdentityCredential")}} استفاده می‌کند.
 
-In browsers that support it, an instance of this interface may be passed in the `credential` member of the `init` object for global {{domxref("Window/fetch", "fetch()")}}.
+در مرورگرهایی که از آن پشتیبانی می‌کنند، می‌توان نمونه‌ای از این رابط را در عضو `credential` آبجکت `init` برای {{domxref("Window/fetch", "fetch()")}} سراسری قرار داد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("FederatedCredential.FederatedCredential()","FederatedCredential()")}} {{Experimental_Inline}}
-  - : Creates a new `FederatedCredential` object.
+  - : یک شیء `FederatedCredential` جدید می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestor, {{domxref("Credential")}}._
+_ویژگی‌های نمونه از کلاس والد آن، یعنی {{domxref("Credential")}} به ارث می‌رسند._
 
 - {{domxref("FederatedCredential.provider")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a string containing a credential's federated identity provider.
+  - : یک رشته برمی‌گرداند که شامل ارائه‌دهنده هویت فدرال یک اعتبارنامه است.
 - {{domxref("FederatedCredential.protocol")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a string containing a credential's federated identity protocol.
+  - : یک رشته برمی‌گرداند که شامل پروتکل هویت فدرال یک اعتبارنامه است.
 
-## Instance methods
+## روش‌های نمونه
 
-None.
+هیچ.
 
-## Examples
+## مثال‌ها
 
 ```js
 const cred = new FederatedCredential({
@@ -58,10 +52,10 @@ navigator.credentials.store(cred).then(() => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
