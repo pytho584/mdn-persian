@@ -1,7 +1,5 @@
 ---
 title: "DocumentFragment: getElementById() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/getElementById"
-status: "needs-translation"
 ---
 
 ---
@@ -14,12 +12,12 @@ browser-compat: api.DocumentFragment.getElementById
 
 {{ ApiRef("DOM") }}
 
-The **`getElementById()`** method of the {{domxref("DocumentFragment")}} returns an {{domxref("Element")}} object representing the element whose {{domxref("Element.id", "id")}} property matches the specified string. Since element IDs are required to be unique if specified, they're a useful way to get access to a specific element quickly.
+متد **`getElementById()`** از {{domxref("DocumentFragment")}} یک شیء {{domxref("Element")}} برمی‌گرداند که نشان‌دهندهٔ عنصری است که ویژگی {{domxref("Element.id", "id")}} آن با رشتهٔ مشخص‌شده مطابقت دارد. از آنجا که شناسه‌های عناصر در صورت تعیین باید یکتا باشند، این شناسه‌ها راهی مفید برای دسترسی سریع به یک عنصر خاص فراهم می‌کنند.
 
-If you need to get access to an element which doesn't have an ID, you can use {{domxref("Document.querySelector", "querySelector()")}} to find the element using any {{Glossary("CSS selector", "selector")}}.
+اگر نیاز به دسترسی به عنصری دارید که شناسه ندارد، می‌توانید از {{domxref("Document.querySelector", "querySelector()")}} برای یافتن عنصر با استفاده از هر {{Glossary("CSS selector", "selector")}} استفاده کنید.
 
 > [!NOTE]
-> IDs should be unique inside a document fragment. If two or more elements in a document fragment have the same ID, this method returns the first element found.
+> شناسه‌ها باید درون یک قطعه‌سند یکتا باشند. اگر دو یا چند عنصر در یک قطعه‌سند دارای شناسهٔ یکسان باشند، این متد اولین عنصر یافت‌شده را برمی‌گرداند.
 
 ## Syntax
 
@@ -28,28 +26,28 @@ getElementById(id)
 ```
 
 > [!NOTE]
-> The capitalization of `"Id"` in the name of this method _must_ be correct for the code to function; `getElementByID()` is _not_ valid and will not work, however natural it may seem.
+> بزرگ و کوچک بودن حروف `"Id"` در نام این متد _باید_ برای کار کردن کد درست باشد؛ `getElementByID()` _معتبر نیست_ و کار نخواهد کرد، هرچند که ممکن است طبیعی به نظر برسد.
 
 ### Parameters
 
 - `id`
-  - : The ID of the element to locate. The ID is a case-sensitive string which is unique within the document fragment: only one element should have any given ID.
+  - : شناسهٔ عنصر موردنظر برای مکان‌یابی. این شناسه یک رشتهٔ حساس به بزرگی و کوچکی حروف است که درون قطعه‌سند یکتاست: فقط یک عنصر باید دارای هر شناسهٔ داده‌شده باشد.
 
 ### Return value
 
-An {{domxref("Element")}} object describing the DOM element object matching the specified ID, or `null` if no matching element was found in the document fragment.
+یک شیء {{domxref("Element")}} که عنصر DOM منطبق با شناسهٔ مشخص‌شده را توصیف می‌کند، یا اگر عنصر منطبقی در قطعه‌سند یافت نشود، `null` برمی‌گرداند.
 
 ## Examples
 
 ### Extend a list of elements
 
-In this example, the document contains a list with a single item `Cherry`. We also create a document fragment containing four more items, `Apple`, `Orange`, `Banana`, and `Melon`.
+در این مثال، سند شامل یک فهرست با یک آیتم به نام `Cherry` است. ما همچنین یک قطعه‌سند حاوی چهار آیتم دیگر، یعنی `Apple`، `Orange`، `Banana` و `Melon`، می‌سازیم.
 
-We then log the result of using `getElementById()` to look for `Apple` and `Cherry` in the document and in the fragment. At this point, `Cherry` appears only in the document while `Apple` appears only in the fragment.
+سپس نتیجهٔ استفاده از `getElementById()` را برای جستجوی `Apple` و `Cherry` در سند و در قطعه‌سند ثبت می‌کنیم. در این مرحله، `Cherry` فقط در سند دیده می‌شود، در حالی که `Apple` فقط در قطعه‌سند وجود دارد.
 
-If you click "Add fragment to document", we append the fragment to the list inside the document, and again log the result of looking for both `Apple` and `Cherry` in the document and in the fragment. This time, both `Apple` and `Cherry` appear in the document, and neither appear in the fragment.
+اگر روی دکمهٔ «Add fragment to document» کلیک کنید، قطعه‌سند را به فهرست داخل سند اضافه می‌کنیم و دوباره نتیجهٔ جستجوی `Apple` و `Cherry` را در سند و قطعه‌سند ثبت می‌کنیم. این بار، هر دو `Apple` و `Cherry` در سند دیده می‌شوند و هیچ‌کدام در قطعه‌سند نیستند.
 
-This is because appending a fragment to a document moves the fragment's nodes into the DOM, leaving behind an empty `DocumentFragment`.
+دلیل این است که افزودن یک قطعه‌سند به سند، گره‌های آن را به DOM منتقل می‌کند و یک `DocumentFragment` خالی بر جای می‌گذارد.
 
 #### HTML
 
