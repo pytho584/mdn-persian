@@ -1,11 +1,5 @@
 ---
 title: "FontData: postscriptName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontData/postscriptName"
-status: "needs-translation"
----
-
----
-title: "FontData: postscriptName property"
 short-title: postscriptName
 slug: Web/API/FontData/postscriptName
 page-type: web-api-instance-property
@@ -16,11 +10,11 @@ browser-compat: api.FontData.postscriptName
 
 {{APIRef("Local Font Access API")}}{{SeeCompatTable}}
 
-The **`postscriptName`** read-only property of the {{domxref("FontData")}} interface returns the PostScript name of the font face.
+ویژگی فقط‌خواندنی **`postscriptName`** در رابط {{domxref("FontData")}}، نام PostScript چهرهٔ قلم را برمی‌گرداند.
 
-This is the name used to uniquely identify the PostScript font, and is generally an unbroken sequence of characters that includes the font's name and style.
+این نام برای شناسایی یکتای قلم PostScript استفاده می‌شود و معمولاً دنباله‌ای پیوسته از نویسه‌هاست که نام و سبک قلم را شامل می‌شود.
 
-Examples include:
+نمونه‌ها عبارت‌اند از:
 
 - AppleSDGothicNeo-UltraLight
 - Arial-Black
@@ -28,13 +22,13 @@ Examples include:
 - Katari-MediumItalic
 - YuMin_36pKn-Extrabold
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-The following snippet will query for all available fonts, and log metadata. This could be used, for example, to populate a font-picker control.
+قطعه‌کد زیر همهٔ قلم‌های موجود را جستجو کرده و فرادادهٔ آن‌ها را در کنسول ثبت می‌کند. برای مثال، می‌توان از آن برای پر کردن یک کنترل انتخاب قلم استفاده کرد.
 
 ```js
 async function logFontData() {
@@ -52,15 +46,15 @@ async function logFontData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Use advanced typography with local fonts](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
+- [استفاده از تایپوگرافی پیشرفته با فونت‌های محلی](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
 - {{cssxref("@font-face")}}
