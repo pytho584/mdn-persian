@@ -1,7 +1,6 @@
 ---
 title: "Document: activeViewTransition property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/activeViewTransition"
-status: "needs-translation"
 ---
 
 ---
@@ -14,52 +13,52 @@ browser-compat: api.Document.activeViewTransition
 
 {{APIRef("DOM")}}
 
-The **`activeViewTransition`** read-only property of the {{domxref("Document")}} interface returns a {{domxref("ViewTransition")}} instance representing the [view transition](/en-US/docs/Web/API/View_Transition_API) currently active on the document.
+ویژگی فقط‌خواندنی **`activeViewTransition`** در رابط {{domxref("Document")}}، یک نمونه از {{domxref("ViewTransition")}} را برمی‌گرداند که نمایانگر [انتقال نما](/en-US/docs/Web/API/View_Transition_API) فعالِ فعلی روی سند است.
 
-The current {{domxref("ViewTransition")}} can be accessed in other ways:
+{{domxref("ViewTransition")}} فعلی را می‌توان از راه‌های دیگری نیز به دست آورد:
 
-- The return value of {{domxref("Document.startViewTransition()")}} in the case of same-document view transitions.
-- The `viewTransition` property of the {{domxref("Window.pagereveal_event", "pagereveal")}} and {{domxref("Window.pageswap_event", "pageswap")}} event objects in the case of cross-document view transitions.
+- مقدار بازگشتی {{domxref("Document.startViewTransition()")}} در مورد انتقال‌های نمای هم‌سند (same-document).
+- ویژگی `viewTransition` در اشیاء رویداد {{domxref("Window.pagereveal_event", "pagereveal")}} و {{domxref("Window.pageswap_event", "pageswap")}} در مورد انتقال‌های نمای بین‌سندی (cross-document).
 
-However, the `activeViewTransition` property provides a consistent way to access the active view transition in any context, without having to worry about saving a reference to it for later.
+با این حال، ویژگی `activeViewTransition` روشی سازگار برای دسترسی به انتقال نمای فعال در هر زمینه‌ای فراهم می‌کند، بدون آنکه نگران ذخیره‌سازی ارجاعی به آن برای استفاده بعدی باشید.
 
-## Value
+## مقدار
 
-A {{domxref("ViewTransition")}} or `null` if there is no active view transition.
+یک {{domxref("ViewTransition")}} یا `null` در صورتی که هیچ انتقال نمای فعالی وجود نداشته باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
-// Start a view transition
+// شروع یک انتقال نما
 document.startViewTransition(() => {
-  // Update the UI to reflect the new state
+  // به‌روزرسانی رابط کاربری برای نمایش وضعیت جدید
   updateUI();
 });
 
-// Check if a view transition is currently active
+// بررسی اینکه آیا انتقال نمایی در حال حاضر فعال است
 if (document.activeViewTransition) {
-  console.log("A view transition is currently active");
+  console.log("یک انتقال نما در حال حاضر فعال است");
 }
 
-// Respond to view transition finishing
+// واکنش به پایان یافتن انتقال نما
 document.activeViewTransition.finished.then(() => {
-  console.log("View transition finished");
+  console.log("انتقال نما پایان یافت");
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.startViewTransition()")}}
 - {{domxref("Element.activeViewTransition")}}
-- {{domxref("Window.pagereveal_event", "pagereveal")}} event
-- {{domxref("Window.pageswap_event", "pageswap")}} event
+- رویداد {{domxref("Window.pagereveal_event", "pagereveal")}}
+- رویداد {{domxref("Window.pageswap_event", "pageswap")}}
 - [View Transition API](/en-US/docs/Web/API/View_Transition_API)
 - {{domxref("ViewTransition")}}
