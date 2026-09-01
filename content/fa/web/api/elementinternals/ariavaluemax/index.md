@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaValueMax property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaValueMax"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaValueMax property"
 short-title: ariaValueMax
 slug: Web/API/ElementInternals/ariaValueMax
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.ElementInternals.ariaValueMax
 
 {{APIRef("Web Components")}}
 
-The **`ariaValueMax`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) attribute, which defines the maximum allowed value for a range widget.
+ویژگی **`ariaValueMax`** از رابط {{domxref("ElementInternals")}} منعکس‌کننده مقدار ویژگی [`aria-valuemax`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemax) است که حداکثر مقدار مجاز برای یک ویجت محدوده (range widget) را تعریف می‌کند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` به شما امکان می‌دهد که معناشناسی پیش‌فرض را برای یک عنصر سفارشی تعریف کنید. این ویژگی‌ها ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آنها را اضافه نکند، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح‌دهنده مدل دسترسی‌پذیری اشیا (Accessibility Object Model explainer)](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string which contains a number.
+یک رشته که شامل یک عدد است.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaValueMax` is set to "20".
+در این مثال مقدار `ariaValueMax` روی "20" تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -38,10 +32,10 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
