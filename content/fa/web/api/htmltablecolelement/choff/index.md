@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableColElement: chOff property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableColElement/chOff"
-status: "needs-translation"
----
-
----
-title: "HTMLTableColElement: chOff property"
 short-title: chOff
 slug: Web/API/HTMLTableColElement/chOff
 page-type: web-api-instance-property
@@ -16,25 +10,25 @@ browser-compat: api.HTMLTableColElement.chOff
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The **`chOff`** property of the {{domxref("HTMLTableColElement")}} interface does nothing. It reflects the `charoff` attribute of the {{HTMLElement("col")}} element.
+ویژگی `chOff` در رابط {{domxref("HTMLTableColElement")}} هیچ کاری انجام نمی‌دهد. این ویژگی، صفت `charoff` عنصر {{HTMLElement("col")}} را بازتاب می‌دهد.
 
 > [!NOTE]
-> This property was designed to participate in an ability to align table cell content on a specific character (typically the decimal point), but was never implemented by browsers.
+> این ویژگی برای مشارکت در قابلیت تراز کردن محتوای سلول‌های جدول بر روی یک نویسهٔ خاص (معمولاً نقطهٔ اعشار) طراحی شده بود، اما هرگز توسط مرورگرها پیاده‌سازی نشد.
 >
-> To achieve such alignment, watch for the support of a string value with the {{cssxref("text-align")}} CSS property.
+> برای دستیابی به چنین ترازی، پشتیبانی از مقدار رشته‌ای را در ویژگی CSS {{cssxref("text-align")}} در نظر بگیرید.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("text-align")}}
