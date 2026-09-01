@@ -1,7 +1,5 @@
 ---
 title: "Element: ariaLive property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaLive"
-status: "needs-translation"
 ---
 
 ---
@@ -14,22 +12,22 @@ browser-compat: api.Element.ariaLive
 
 {{APIRef("DOM")}}
 
-The **`ariaLive`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) attribute, which indicates that an element will be updated, and describes the types of updates the user agents, assistive technologies, and user can expect from the [live region](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions).
+ویژگی **`ariaLive`** در رابط {{domxref("Element")}} منعکس‌کننده‌ی مقدار ویژگی [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) است. این ویژگی نشان می‌دهد که یک عنصر به‌روزرسانی خواهد شد و انواع به‌روزرسانی‌هایی را توصیف می‌کند که عامل‌های کاربر (user agents)، فناوری‌های کمکی و کاربر می‌توانند از [منطقه‌ی زنده (live region)](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) انتظار داشته باشند.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته (string) با یکی از مقادیر زیر:
 
 - `"assertive"`
-  - : Indicates that updates to the region have the highest priority and should be presented to the user immediately.
+  - : نشان می‌دهد که به‌روزرسانی‌های منطقه بالاترین اولویت را دارند و باید بلافاصله به کاربر ارائه شوند.
 - `"off"`
-  - : Indicates that updates to the region should not be presented to the user unless the user is currently focused on that region.
+  - : نشان می‌دهد که به‌روزرسانی‌های منطقه نباید به کاربر ارائه شوند، مگر اینکه کاربر در حال حاضر روی آن منطقه تمرکز (فوکوس) داشته باشد.
 - `"polite"`
-  - : Indicates that updates to the region should be presented at the next graceful opportunity, such as at the end of speaking the current sentence or when the user pauses typing.
+  - : نشان می‌دهد که به‌روزرسانی‌های منطقه باید در نخستین فرصت مناسب ارائه شوند؛ مانند پایان جمله‌ی در حال گفتار یا زمانی که کاربر تایپ را متوقف می‌کند.
 
-## Examples
+## مثال‌ها
 
-In this example the [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) attribute on the element with an ID of `planetInfo` is set to `"polite"`. We then update the value to `"assertive"`.
+در این مثال، ویژگی [`aria-live`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-live) روی عنصری با شناسه‌ی `planetInfo` روی `"polite"` تنظیم شده است. سپس مقدار آن را به `"assertive"` تغییر می‌دهیم.
 
 ```html
 <div role="region" id="planetInfo" aria-live="polite">
@@ -45,10 +43,10 @@ el.ariaLive = "assertive";
 console.log(el.ariaLive); // "assertive"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
