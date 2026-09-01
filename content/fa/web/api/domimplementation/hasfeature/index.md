@@ -1,11 +1,5 @@
 ---
 title: "DOMImplementation: hasFeature() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMImplementation/hasFeature"
-status: "needs-translation"
----
-
----
-title: "DOMImplementation: hasFeature() method"
 short-title: hasFeature()
 slug: Web/API/DOMImplementation/hasFeature
 page-type: web-api-instance-method
@@ -16,41 +10,35 @@ browser-compat: api.DOMImplementation.hasFeature
 
 {{ApiRef("DOM")}}{{Deprecated_Header}}
 
-The
-**`DOMImplementation.hasFeature()`** method returns a
-boolean flag indicating if a given feature is supported. It is
-deprecated and modern browsers return `true` in all cases.
+متد **`DOMImplementation.hasFeature()`** یک علامت بولی (boolean) برمی‌گرداند که نشان می‌دهد آیا یک ویژگی خاص پشتیبانی می‌شود یا خیر. این متد منسوخ شده است و مرورگرهای مدرن در همه موارد `true` برمی‌گردانند.
 
-The different implementations fairly diverged in what kind of features were reported.
-The latest version of the spec settled to force this method to always return
-`true`, where the functionality was accurate and in use.
+پیاده‌سازی‌های مختلف تا حد زیادی در نوع ویژگی‌هایی که گزارش می‌دادند اختلاف داشتند. آخرین نسخه مشخصات (spec) تصمیم گرفت که این متد را مجبور کند همیشه `true` برگرداند، جایی که قابلیت مورد نظر دقیق و در حال استفاده بود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 hasFeature(feature, version)
 ```
 
-### Parameters
+### پارامترها
 
 - `feature`
-  - : A string representing the feature name.
+  - : رشته‌ای که نام ویژگی را نشان می‌دهد.
 - `version`
-  - : A string representing the version of the specification defining
-    the feature.
+  - : رشته‌ای که نسخه مشخصات تعریف‌کننده ویژگی را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value of `true`.
+یک مقدار بولی `true`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("DOMImplementation")}} interface it belongs to.
+- رابط {{domxref("DOMImplementation")}} که این متد به آن تعلق دارد.
