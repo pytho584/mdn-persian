@@ -1,9 +1,4 @@
----
-title: "HTMLElement: dir property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "HTMLElement: dir property"
 short-title: dir
@@ -14,45 +9,45 @@ browser-compat: api.HTMLElement.dir
 
 {{ApiRef("HTML DOM")}}
 
-The **`HTMLElement.dir`** property indicates the text writing directionality of the content of the current element. It reflects the element's [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir) attribute.
+ویژگی **`HTMLElement.dir`** جهت نوشتار متنِ محتوای عنصر فعلی را مشخص می‌کند. این ویژگی، بازتابی از ویژگی [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir) عنصر است.
 
-Note that if the `dir` attribute is unspecified, the element itself may still inherit directionality from its parent. However, that inherited directionality is not reflected by this property's value.
+توجه داشته باشید که اگر ویژگی `dir` تنظیم نشده باشد، خودِ عنصر ممکن است جهت را از والد خود به ارث ببرد؛ با این حال، این جهتِ به‌ارث‌برده‌شده در مقدار این ویژگی بازتاب داده نمی‌شود.
 
-The text writing directionality of an element is which direction that text goes (for support of different language systems). Arabic languages and Hebrew are typical languages using the RTL directionality.
+جهت نوشتار متن یک عنصر، جهتی است که متن در آن حرکت می‌کند (برای پشتیبانی از سیستم‌های زبانی مختلف). زبان‌های عربی و عبری نمونه‌های رایج زبان‌هایی هستند که از جهت RTL (راست‌به‌چپ) استفاده می‌کنند.
 
-## Value
+## مقدار
 
-One of the following:
+یکی از موارد زیر:
 
 - `"ltr"`
-  - : Left-to-right writing direction.
+  - : جهت نوشتار از چپ به راست.
 - `"rtl"`
-  - : Right-to-left writing direction.
+  - : جهت نوشتار از راست به چپ.
 - `"auto"`
-  - : The direction of the element must be determined based on the contents of the element.
+  - : جهت عنصر باید بر اساس محتوای داخل عنصر تعیین شود.
 - `""`
-  - : The default value; the directionality is inherited from the parent element.
+  - : مقدار پیش‌فرض؛ جهت‌دهی از عنصر والد به ارث برده می‌شود.
 
-## Examples
+## مثال
 
 ```js
 const para = document.getElementById("para1");
 para.dir = "rtl";
-// change the text direction on a paragraph identified as "para1"
+// تغییر جهت متن در پاراگرافی با شناسه "para1"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("document.dir")}}
-- HTML [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir)
-  global attribute
-- CSS {{cssxref("direction")}} property
-- CSS {{cssxref(":dir")}} pseudo-class
+- ویژگی سراسری [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir) در HTML
+- ویژگی CSS {{cssxref("direction")}}
+- شبه‌کلاس CSS {{cssxref(":dir")}}
+```
