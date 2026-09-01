@@ -1,11 +1,5 @@
 ---
 title: "HTMLDialogElement: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/close"
-status: "needs-translation"
----
-
----
-title: "HTMLDialogElement: close() method"
 short-title: close()
 slug: Web/API/HTMLDialogElement/close
 page-type: web-api-instance-method
@@ -14,36 +8,33 @@ browser-compat: api.HTMLDialogElement.close
 
 {{ APIRef("HTML DOM") }}
 
-The **`close()`** method of the {{domxref("HTMLDialogElement")}} interface closes the {{htmlelement("dialog")}}.
-An optional string may be passed as an argument, updating the {{domxref("HTMLDialogElement.returnValue", "returnValue")}} of the dialog.
+**`close()`** 方法属于 {{domxref("HTMLDialogElement")}} 接口，用于关闭 {{htmlelement("dialog")}} 元素。可以传入一个可选字符串作为参数，用于更新对话框的 {{domxref("HTMLDialogElement.returnValue", "returnValue")}}。
 
-The {{domxref("HTMLDialogElement.close_event", "close")}} event is fired after the dialog has closed.
-Unlike when calling {{domxref("HTMLDialogElement.requestClose()")}}, the close operation cannot be cancelled.
+对话框关闭后会触发 {{domxref("HTMLDialogElement.close_event", "close")}} 事件。与调用 {{domxref("HTMLDialogElement.requestClose()")}} 不同，`close()` 的关闭操作无法被取消。
 
-## Syntax
+## 语法
 
 ```js-nolint
 close()
 close(returnValue)
 ```
 
-### Parameters
+### 参数
 
 - `returnValue` {{optional_inline}}
-  - : A string that replaces the existing value of {{domxref("HTMLDialogElement.returnValue")}}.
+  - : 一个字符串，用于替换 {{domxref("HTMLDialogElement.returnValue")}} 中已有的值。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-## Examples
+## 示例
 
-### Closing a dialog
+### 关闭一个对话框
 
-The following example shows a button that, when clicked, opens a {{htmlelement("dialog")}} via the {{domxref("HTMLDialogElement.showModal()", "showModal()")}} method.
-From there you can click the either _Close_ button to close the dialog (via the `close()` method).
+以下示例展示了一个按钮，点击后会通过 {{domxref("HTMLDialogElement.showModal()", "showModal()")}} 方法打开一个 {{htmlelement("dialog")}}。之后你可以点击 _Close_ 按钮（使用 `close()` 方法）来关闭对话框。
 
-The _Close_ button closes the dialog without a {{domxref("HTMLDialogElement.returnValue", "returnValue")}}, while the _Close w/ return value_ button closes the dialog with a {{domxref("HTMLDialogElement.returnValue", "returnValue")}}.
+_Close_ 按钮关闭对话框时不传入 {{domxref("HTMLDialogElement.returnValue", "returnValue")}}，而 _Close w/ return value_ 按钮关闭对话框时会传入一个 {{domxref("HTMLDialogElement.returnValue", "returnValue")}}。
 
 #### HTML
 
@@ -111,22 +102,22 @@ dialog.addEventListener("close", () => {
 
 > [!NOTE]
 >
-> You know you can also automatically close a `<dialog>` by submitting a {{htmlelement("form")}} element with a [`method="dialog"`](/en-US/docs/Web/HTML/Reference/Elements/form#method) attribute.
+> 需要注意的是，你也可以通过提交一个带有 [`method="dialog"`](/en-US/docs/Web/HTML/Reference/Elements/form#method) 属性的 {{htmlelement("form")}} 元素来自动关闭 `<dialog>`。
 
-### Result
+### 结果
 
 {{ EmbedLiveSample('Closing a dialog', '100%', '250px') }}
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- HTML {{htmlelement("dialog")}} element
-- The {{domxref("HTMLDialogElement.close_event", "close")}} event
+- HTML {{htmlelement("dialog")}} 元素
+- {{domxref("HTMLDialogElement.close_event", "close")}} 事件
 - {{domxref("HTMLDialogElement.requestClose()")}}
