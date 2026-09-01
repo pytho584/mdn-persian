@@ -1,11 +1,5 @@
 ---
 title: "FontFace: stretch property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/stretch"
-status: "needs-translation"
----
-
----
-title: "FontFace: stretch property"
 short-title: stretch
 slug: Web/API/FontFace/stretch
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.FontFace.stretch
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`stretch`** property of the {{domxref("FontFace")}} interface retrieves or sets how the font stretches.
+ویژگی **`stretch`** در رابط {{domxref("FontFace")}} نحوه‌ی کشیدگی (stretch) فونت را بازیابی یا تنظیم می‌کند.
 
-This property is equivalent to the {{cssxref("@font-face/font-stretch", "font-stretch")}} descriptor.
+این ویژگی معادل توصیفگر {{cssxref("@font-face/font-stretch", "font-stretch")}} است.
 
-## Value
+## مقدار
 
-A string containing a descriptor as it would be defined in a style sheet's `@font-face` rule.
+یک رشته (string) شامل یک توصیفگر، همان‌گونه که در قانون `@font-face` در یک شیوه‌نامه (style sheet) تعریف می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
