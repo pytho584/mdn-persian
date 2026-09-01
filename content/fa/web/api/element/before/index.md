@@ -1,11 +1,5 @@
 ---
 title: "Element: before() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/before"
-status: "needs-translation"
----
-
----
-title: "Element: before() method"
 short-title: before()
 slug: Web/API/Element/before
 page-type: web-api-instance-method
@@ -14,12 +8,9 @@ browser-compat: api.Element.before
 
 {{APIRef("DOM")}}
 
-The **`Element.before()`** method inserts a set of
-{{domxref("Node")}} objects or strings in the children list of this
-`Element`'s parent, just before this `Element`.
-Strings are inserted as equivalent {{domxref("Text")}} nodes.
+متد **`Element.before()`** مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را در لیست فرزندان والد این `Element`، درست قبل از این `Element` درج می‌کند. رشته‌ها به صورت گره‌های معادل {{domxref("Text")}} درج می‌شوند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 before(param1)
@@ -27,23 +18,23 @@ before(param1, param2)
 before(param1, param2, /* …, */ paramN)
 ```
 
-### Parameters
+### پارامترها
 
 - `param1`, …, `paramN`
-  - : A set of {{domxref("Node")}} objects or strings to insert.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها برای درج.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the node cannot be inserted at the specified point in the hierarchy.
+  - : زمانی پرتاب می‌شود که گره در نقطه مشخص شده در سلسله‌مراتب قابل درج نباشد.
 
-## Examples
+## مثال‌ها
 
-### Inserting an element
+### درج یک عنصر
 
 ```js
 let container = document.createElement("div");
@@ -57,7 +48,7 @@ console.log(container.outerHTML);
 // "<div><span></span><p></p></div>"
 ```
 
-### Inserting text
+### درج متن
 
 ```js
 let container = document.createElement("div");
@@ -70,7 +61,7 @@ console.log(container.outerHTML);
 // "<div>Text<p></p></div>"
 ```
 
-### Inserting an element and text
+### درج یک عنصر و متن
 
 ```js
 let container = document.createElement("div");
@@ -84,15 +75,15 @@ console.log(container.outerHTML);
 // "<div><span></span>Text<p></p></div>"
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.after()")}}
 - {{domxref("Element.append()")}}
