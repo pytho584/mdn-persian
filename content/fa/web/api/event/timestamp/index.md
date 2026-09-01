@@ -1,11 +1,5 @@
 ---
 title: "Event: timeStamp property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/timeStamp"
-status: "needs-translation"
----
-
----
-title: "Event: timeStamp property"
 short-title: timeStamp
 slug: Web/API/Event/timeStamp
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.Event.timeStamp
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`timeStamp`** read-only property of the {{domxref("Event")}} interface returns the time (in milliseconds) at which the event was created.
+ویژگی فقط‌خواندنی **`timeStamp`** از رابط {{domxref("Event")}} زمان ایجاد رویداد را بر حسب میلی‌ثانیه برمی‌گرداند.
 
-## Value
+## مقدار
 
-This value is the number of milliseconds elapsed from the beginning of the time origin until the event was created.
-If the global object is {{domxref("Window")}}, the time origin is the moment the user clicked on the link, or the script that initiated the loading of the document.
-In a worker, the time origin is the moment of creation of the worker.
+این مقدار تعداد میلی‌ثانیه‌هایی است که از آغاز «مبدأ زمان» تا لحظه ایجاد رویداد سپری شده است.
+اگر شیء سراسری {{domxref("Window")}} باشد، مبدأ زمان لحظه‌ای است که کاربر روی پیوند کلیک کرده، یا لحظه‌ای که اسکریپتِ آغازکننده بارگذاری سند فراخوانی شده است.
+در یک worker، مبدأ زمان لحظه ایجاد آن worker است.
 
-The value is a {{domxref("DOMHighResTimeStamp")}} accurate to 5 microseconds (0.005 ms), but the [precision is reduced](#reduced_time_precision) to prevent [fingerprinting](/en-US/docs/Glossary/Fingerprinting).
+این مقدار یک {{domxref("DOMHighResTimeStamp")}} با دقت ۵ میکروثانیه (۰٫۰۰۵ میلی‌ثانیه) است، اما برای جلوگیری از [اثر انگشت](/en-US/docs/Glossary/Fingerprinting)، [دقت آن کاهش می‌یابد](#reduced_time_precision).
 
-## Example
+## مثال
 
 ### HTML
 
@@ -46,15 +40,15 @@ function getTime(event) {
 document.body.addEventListener("keypress", getTime);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Example", "100%", 100)}}
 
-## Reduced time precision
+## کاهش دقت زمان
 
-To offer protection against timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting), the precision of `event.timeStamp` might get rounded depending on browser settings. In Firefox, the `privacy.reduceTimerPrecision` preference is enabled by default and defaults to 2ms. You can also enable `privacy.resistFingerprinting`, in which case the precision will be 100ms or the value of `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`, whichever is larger.
+برای محافظت در برابر حملات زمان‌بندی و [اثر انگشت](/en-US/docs/Glossary/Fingerprinting)، ممکن است دقت `event.timeStamp` بسته به تنظیمات مرورگر گرد شود. در فایرفاکس، تنظیم `privacy.reduceTimerPrecision` به‌صورت پیش‌فرض فعال است و مقدار پیش‌فرض آن ۲ میلی‌ثانیه است. همچنین می‌توانید `privacy.resistFingerprinting` را فعال کنید؛ در این حالت، دقت، ۱۰۰ میلی‌ثانیه یا مقدار `privacy.resistFingerprinting.reduceTimerPrecision.microseconds` خواهد بود، هر کدام بزرگ‌تر باشد.
 
-For example, with reduced time precision, the result of `event.timeStamp` will always be a multiple of 2, or a multiple of 100 (or `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) with `privacy.resistFingerprinting` enabled.
+برای مثال، با کاهش دقت زمان، نتیجه `event.timeStamp` همیشه مضربی از ۲ خواهد بود، یا با فعال بودن `privacy.resistFingerprinting`، مضربی از ۱۰۰ (یا `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) خواهد بود.
 
 ```js
 // reduced time precision (2ms) in Firefox 60
@@ -74,10 +68,10 @@ event.timeStamp;
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
