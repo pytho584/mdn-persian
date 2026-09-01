@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaReadOnly property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaReadOnly"
-status: "needs-translation"
----
-
----
-title: "Element: ariaReadOnly property"
 short-title: ariaReadOnly
 slug: Web/API/Element/ariaReadOnly
 page-type: web-api-instance-property
@@ -14,26 +8,26 @@ browser-compat: api.Element.ariaReadOnly
 
 {{APIRef("DOM")}}
 
-The **`ariaReadOnly`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly) attribute, which indicates that the element is not editable, but is otherwise operable.
+ویژگی **`ariaReadOnly`** از رابط {{domxref("Element")}} مقدار ویژگی [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly) را منعکس می‌کند که نشان می‌دهد عنصر قابل ویرایش نیست، اما در سایر جنبه‌ها قابل استفاده است.
 
 > [!NOTE]
-> Where possible use an HTML {{htmlelement("input")}} element with `type="text"` or a {{htmlelement("textarea")}} as these have built in semantics and do not require ARIA attributes.
+> در صورت امکان، از عنصر HTML {{htmlelement("input")}} با `type="text"` یا {{htmlelement("textarea")}} استفاده کنید، زیرا این عناصر معنای داخلی دارند و به ویژگی‌های ARIA نیاز ندارند.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The user cannot change the value of the element.
+  - : کاربر نمی‌تواند مقدار عنصر را تغییر دهد.
 - `"false"`
-  - : The user can set the value of the element.
+  - : کاربر می‌تواند مقدار عنصر را تنظیم کند.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-readonly` attribute on the element with an ID of `txtBoxInput` is set to "true" indicating that this input is currently read only. Using `ariaReadOnly` we update the value to "false".
+در این مثال، ویژگی `aria-readonly` روی عنصری با شناسه `txtBoxInput` برابر با «true» قرار داده شده است که نشان می‌دهد این ورودی در حال حاضر فقط‌خواندنی است. با استفاده از `ariaReadOnly` مقدار آن را به «false» تغییر می‌دهیم.
 
 ```html
-<div id="txtboxMultilineLabel">Enter the tags for the article</div>
+<div id="txtboxMultilineLabel">برچسب‌های مقاله را وارد کنید</div>
 <div
   role="textbox"
   id="txtBoxInput"
@@ -50,14 +44,14 @@ el.ariaReadOnly = "false";
 console.log(el.ariaReadOnly); // "false"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: textbox role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
+- [نقش ARIA: textbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
