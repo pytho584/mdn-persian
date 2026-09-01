@@ -1,11 +1,5 @@
 ---
 title: "DOMParser: parseFromString() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMParser/parseFromString"
-status: "needs-translation"
----
-
----
-title: "DOMParser: parseFromString() method"
 short-title: parseFromString()
 slug: Web/API/DOMParser/parseFromString
 page-type: web-api-instance-method
@@ -15,16 +9,15 @@ browser-compat: api.DOMParser.parseFromString
 {{APIRef("DOMParser")}}
 
 > [!WARNING]
-> This method parses its input as HTML, writing the result into the DOM.
-> APIs like this are known as [injection sinks](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage), and are potentially a vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks, if the input originally came from an attacker.
+> این متد ورودی خود را به عنوان HTML تجزیه می‌کند و نتیجه را در DOM می‌نویسد. APIهایی مانند این به عنوان [injection sinks](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage) شناخته می‌شوند و در صورت اصلیت داشتن ورودی از طرف مهاجم، می‌توانند بستری برای حملات [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) باشند.
 >
-> You can mitigate this risk by always passing `TrustedHTML` objects instead of strings and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types).
-> See [Security considerations](#security_considerations) for more information.
+> می‌توانید این خطر را با همیشه ارسال اشیاء `TrustedHTML` به جای رشته‌ها و [اجباری کردن trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) کاهش دهید.
+> برای اطلاعات بیشتر به [ملاحظات امنیتی](#security_considerations) مراجعه کنید.
 
-The **`parseFromString()`** method of the {{domxref("DOMParser")}} interface parses an input containing either HTML or XML, returning a {{domxref("Document")}} with the type given in the {{domxref("Document/contentType","contentType")}} property.
+متد **`parseFromString()`** از رابط {{domxref("DOMParser")}} یک ورودی حاوی HTML یا XML را تجزیه می‌کند و یک {{domxref("Document")}} با نوع مشخص‌شده در ویژگی {{domxref("Document/contentType","contentType")}} برمی‌گرداند.
 
 > [!NOTE]
-> The [`Document.parseHTMLUnsafe()`](/en-US/docs/Web/API/Document/parseHTMLUnsafe_static) static method provides an ergonomic alternative for parsing HTML markup into a {{domxref("Document")}}.
+> متد استاتیک [`Document.parseHTMLUnsafe()`](/en-US/docs/Web/API/Document/parseHTMLUnsafe_static) یک جایگزین ارگونومیک برای تجزیه نشانه‌گذاری HTML به یک {{domxref("Document")}} فراهم می‌کند.
 
 ## Syntax
 
@@ -35,12 +28,9 @@ parseFromString(input, mimeType)
 ### Parameters
 
 - `input`
-  - : A {{domxref("TrustedHTML")}} instance or a string defining HTML to be parsed.
-    The markup must contain either an {{Glossary("HTML")}}, {{Glossary("XML")}}, {{Glossary("XHTML")}}, or {{Glossary("SVG")}} document.
+  - : یک نمونه از {{domxref("TrustedHTML")}} یا یک رشته که HTML مورد نظر برای تجزیه را تعریف می‌کند. نشانه‌گذاری باید حاوی یک سند {{Glossary("HTML")}}، {{Glossary("XML")}}، {{Glossary("XHTML")}} یا {{Glossary("SVG")}} باشد.
 - `mimeType`
-  - : A string that specifies whether the XML parser or the HTML parser is used to parse the string.
-
-    Allowed values are:
+  - : یک رشته که مشخص می‌کند از تجزیه‌کننده XML یا تجزیه‌کننده HTML برای تجزیه رشته استفاده شود. مقادیر مجاز عبارتند از:
     - `text/html`
     - `text/xml`
     - `application/xml`
@@ -49,67 +39,52 @@ parseFromString(input, mimeType)
 
 ### Return value
 
-A {{domxref("Document")}} with {{domxref("Document/contentType","contentType")}} matching the given `mimeType`.
+یک {{domxref("Document")}} با {{domxref("Document/contentType","contentType")}} مطابق با `mimeType` داده شده.
 
 > [!NOTE]
-> The browser may actually return an {{domxref("HTMLDocument")}} or {{domxref("XMLDocument")}} object.
-> These derive from {{domxref("Document")}} and add no attributes: they are essentially equivalent.
+> ممکن است مرورگر در واقع یک شیء {{domxref("HTMLDocument")}} یا {{domxref("XMLDocument")}} برگرداند. این‌ها از {{domxref("Document")}} مشتق شده‌اند و هیچ ویژگی اضافه نمی‌کنند: اساساً معادل هستند.
 
 ### Exceptions
 
 - [`TypeError`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError)
-  - : This is thrown when:
-    - `mimeType` is passed a value that is not one of the [allowed values](#mimetype).
-    - `input` is passed a string value when [Trusted Types](/en-US/docs/Web/API/Trusted_Types_API) are [enforced by a CSP](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) and no default policy is defined.
+  - : این خطا زمانی پرتاب می‌شود که:
+    - `mimeType` مقداری دریافت کند که جزو [مقادیر مجاز](#mimetype) نباشد.
+    - `input` به عنوان یک رشته مقداردهی شود در حالی که [Trusted Types](/en-US/docs/Web/API/Trusted_Types_API) توسط [CSP اجباری شده](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) و هیچ سیاست پیش‌فرضی تعریف نشده باشد.
 
 ## Description
 
-The **`parseFromString()`** method parses an input containing either HTML or XML, returning a {{domxref("Document")}} with the {{domxref("Document/contentType","contentType")}} matching the `mimeType`.
-This `Document` contains a complete in-memory DOM that is separate from the main document in the associated page.
+متد **`parseFromString()`** یک ورودی حاوی HTML یا XML را تجزیه می‌کند و یک {{domxref("Document")}} با {{domxref("Document/contentType","contentType")}} مطابق با `mimeType` برمی‌گرداند. این `Document` شامل یک DOM کامل درون حافظه است که از سند اصلی در صفحه مرتبط جدا است.
 
-If the `mimeType` is `text/html` the input is parsed as HTML and {{htmlelement("script")}} elements are marked as non-executable, events are not fired, and event handlers aren't called to run inline scripts.
-While the document can download resources specified in {{htmlelement("iframe")}} and {{htmlelement("img")}} elements, it is essentially inert.
-This is useful because you can parse HTML inputs that include {{glossary("Shadow tree","declarative shadow roots")}}, and perform operations on the document without affecting the visible page.
-For example, you can use this to sanitize the input tree, and inject parts of the input into the visible DOM when needed.
+اگر `mimeType` برابر با `text/html` باشد، ورودی به عنوان HTML تجزیه می‌شود و عناصر {{htmlelement("script")}} به عنوان غیرقابل اجرا علامت‌گذاری می‌شوند، رویدادها شلیک نمی‌شوند، و کنترل‌کننده‌های رویداد برای اجرای اسکریپت‌های درون خطی فراخوانی نمی‌شوند. در حالی که سند می‌تواند منابع مشخص‌شده در عناصر {{htmlelement("iframe")}} و {{htmlelement("img")}} را دانلود کند، اساساً خنثی (inert) است. این مفید است زیرا می‌توانید ورودی‌های HTML شامل {{glossary("Shadow tree","declarative shadow roots")}} را تجزیه کنید و عملیات‌هایی روی سند انجام دهید بدون اینکه روی صفحه قابل مشاهده تأثیر بگذارید. به عنوان مثال، می‌توانید از این برای پالایش (sanitize) درخت ورودی استفاده کنید و در صورت نیاز بخش‌هایی از ورودی را به DOM قابل مشاهده تزریق کنید.
 
-For the other allowed values (`text/xml`, `application/xml`, `application/xhtml+xml`, and `image/svg+xml`) the input is parsed as XML.
-This is useful if you want to import XML files, validate their structure, and extract data.
-If the input doesn't represent well-formed XML, the returned document will contain a `<parsererror>` node describing the nature of the parsing error.
+برای سایر مقادیر مجاز (`text/xml`، `application/xml`، `application/xhtml+xml` و `image/svg+xml`) ورودی به عنوان XML تجزیه می‌شود. این در صورتی مفید است که می‌خواهید فایل‌های XML را وارد کنید، ساختار آن‌ها را اعتبارسنجی کنید و داده‌ها را استخراج کنید. اگر ورودی یک XML خوش‌فرم (well-formed) نباشد، سند برگشتی حاوی یک گره `<parsererror>` خواهد بود که ماهیت خطای تجزیه را توصیف می‌کند.
 
-Disallowed `mimeType` values cause a [`TypeError`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError) to be thrown.
+مقادیر غیرمجاز `mimeType` باعث پرتاب [`TypeError`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError) می‌شوند.
 
 ### Security considerations
 
-This method parses its input into a separate in-memory DOM, disabling any {{htmlelement("script")}} elements and stopping event handlers from running.
-While the returned document is effectively inert, event handlers and scripts in its DOM will be able to run if they are inserted into the visible DOM.
-The method is therefore a possible vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks, where potentially unsafe input is first parsed into a `Document` without being sanitized, and then injected into the visible/active DOM where code is able to run.
+این متد ورودی خود را به یک DOM جداگانه درون حافظه تجزیه می‌کند، هر عنصر {{htmlelement("script")}} را غیرفعال می‌کند و از اجرای کنترل‌کننده‌های رویداد جلوگیری می‌کند. در حالی که سند برگشتی عملاً خنثی (inert) است، کنترل‌کننده‌های رویداد و اسکریپت‌های موجود در DOM آن در صورت درج شدن در DOM قابل مشاهده، قادر به اجرا خواهند بود. بنابراین این متد یک بستر احتمالی برای حملات [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) است، جایی که ورودی بالقوه ناامن ابتدا بدون پالایش (sanitize) به یک `Document` تجزیه می‌شود و سپس به DOM قابل مشاهده/فعال تزریق می‌شود که در آن کد می‌تواند اجرا شود.
 
-You should mitigate this risk by always passing {{domxref("TrustedHTML")}} objects instead of strings, and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) using the [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) CSP directive.
-This ensures that the input is passed through a transformation function, which has the chance to [sanitize](/en-US/docs/Web/Security/Attacks/XSS#sanitization) the input to remove potentially dangerous markup (such as {{htmlelement("script")}} elements and event handler attributes), before it is injected.
+شما باید این خطر را با همیشه ارسال اشیاء {{domxref("TrustedHTML")}} به جای رشته‌ها و [اجباری کردن trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) با استفاده از دستورالعمل CSP [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) کاهش دهید. این تضمین می‌کند که ورودی از یک تابع تبدیل عبور داده می‌شود که فرصت [پالایش (sanitize)](/en-US/docs/Web/Security/Attacks/XSS#sanitization) ورودی را برای حذف نشانه‌گذاری بالقوه خطرناک (مانند عناصر {{htmlelement("script")}} و ویژگی‌های کنترل‌کننده رویداد) قبل از تزریق دارد.
 
-Using `TrustedHTML` makes it possible to audit and check that sanitization code is effective in just a few places, rather than scattered across all your injection sinks.
-You should not need to pass a sanitizer to the method when using `TrustedHTML`.
+استفاده از `TrustedHTML` امکان ممیزی و بررسی مؤثر بودن کد پالایش را تنها در چند مکان فراهم می‌کند، به جای اینکه در تمام sinkهای تزریق پراکنده باشد. هنگام استفاده از `TrustedHTML` نیازی به ارسال یک پالاینده (sanitizer) به متد ندارید.
 
-Note that even if you sanitize the input of elements and attributes that can execute code, you still need to be careful when taking any user input.
-For example, your page might use data in an XML document to fetch files that it then executes.
+توجه داشته باشید که حتی اگر ورودی عناصر و ویژگی‌هایی را که می‌توانند کد اجرا کنند پالایش کنید، همچنان باید هنگام دریافت هر گونه ورودی کاربر محتاط باشید. به عنوان مثال، صفحه شما ممکن است از داده‌های موجود در یک سند XML برای واکشی فایل‌هایی استفاده کند که سپس اجرا می‌کند.
 
 ## Examples
 
 ### Parsing an input using Trusted Types
 
-In this example we'll safely parse a potentially harmful HTML input and then inject it into the DOM of the visible page.
+در این مثال، یک ورودی HTML بالقوه مضر را به طور ایمن تجزیه کرده و سپس آن را به DOM صفحه قابل مشاهده تزریق می‌کنیم.
 
-To mitigate the risk of XSS, we'll create a `TrustedHTML` object from the string containing the HTML.
-Trusted types are not yet supported on all browsers, so first we define the [trusted types tinyfill](/en-US/docs/Web/API/Trusted_Types_API#trusted_types_tinyfill).
-This acts as a transparent replacement for the trusted types JavaScript API:
+برای کاهش خطر XSS، یک شیء `TrustedHTML` از رشته حاوی HTML ایجاد می‌کنیم. Trusted types هنوز در همه مرورگرها پشتیبانی نمی‌شوند، بنابراین ابتدا [trusted types tinyfill](/en-US/docs/Web/API/Trusted_Types_API#trusted_types_tinyfill) را تعریف می‌کنیم. این به عنوان یک جایگزین شفاف برای API جاوااسکریپت trusted types عمل می‌کند:
 
 ```js
 if (typeof trustedTypes === "undefined")
   trustedTypes = { createPolicy: (n, rules) => rules };
 ```
 
-Next we create a {{domxref("TrustedTypePolicy")}} that defines a {{domxref("TrustedTypePolicy/createHTML", "createHTML()")}} for transforming an input string into {{domxref("TrustedHTML")}} instances.
-Commonly, implementations of `createHTML()` use a library such as [DOMPurify](https://github.com/cure53/DOMPurify) to sanitize the input, as shown below:
+سپس یک {{domxref("TrustedTypePolicy")}} ایجاد می‌کنیم که یک {{domxref("TrustedTypePolicy/createHTML", "createHTML()")}} برای تبدیل رشته ورودی به نمونه‌های {{domxref("TrustedHTML")}} تعریف می‌کند. معمولاً پیاده‌سازی‌های `createHTML()` از کتابخانه‌ای مانند [DOMPurify](https://github.com/cure53/DOMPurify) برای پالایش (sanitize) ورودی استفاده می‌کنند، همانطور که در زیر نشان داده شده است:
 
 ```js
 const policy = trustedTypes.createPolicy("my-policy", {
@@ -117,22 +92,20 @@ const policy = trustedTypes.createPolicy("my-policy", {
 });
 ```
 
-Then we use this `policy` object to create a `TrustedHTML` object from the potentially unsafe input string and parse it into a `Document`.
-Note that the resulting `Document` will represent a complete HTML document with a root `<html>`, `<head>` and `<body>`, even though the input does not have these elements:
+سپس از این شیء `policy` برای ایجاد یک شیء `TrustedHTML` از رشته ورودی بالقوه ناامن استفاده کرده و آن را به یک `Document` تجزیه می‌کنیم. توجه داشته باشید که `Document` حاصل یک سند HTML کامل با ریشه `<html>`، `<head>` و `<body>` را نشان می‌دهد، حتی اگر ورودی این عناصر را نداشته باشد:
 
 ```js
-// The potentially malicious string
+// رشته بالقوه مخرب
 const untrustedString = "<p>I might be XSS</p><img src='x' onerror='alert(1)'>";
 
-// Create a TrustedHTML instance using the policy
+// ایجاد یک نمونه TrustedHTML با استفاده از policy
 const trustedHTML = policy.createHTML(untrustedString);
 
-// Parse the TrustedHTML (which contains a trusted string)
+// تجزیه TrustedHTML (که حاوی یک رشته قابل اعتماد است)
 const safeDocument = parser.parseFromString(trustedHTML, "text/html");
 ```
 
-The `safeDocument` now contains a DOM that is sanitized of harmful elements according to our policy.
-Below we use {{domxref("Element.replaceWith()")}} to replace the `body` of the visible DOM with the body of our document: scripts in the new body will run, as will code when event handlers are triggered.
+اکنون `safeDocument` شامل یک DOM است که طبق policy ما از عناصر مضر پالایش شده است. در زیر از {{domxref("Element.replaceWith()")}} برای جایگزینی `body` DOM قابل مشاهده با body سند خود استفاده می‌کنیم: اسکریپت‌های موجود در body جدید اجرا خواهند شد، همچنین کدهای موجود در کنترل‌کننده‌های رویداد هنگام فعال شدن اجرا می‌شوند.
 
 ```js
 document.body.replaceWith(safeDocument.body);
@@ -140,8 +113,7 @@ document.body.replaceWith(safeDocument.body);
 
 ### Parsing XML, SVG, and HTML
 
-The code below shows how you use the method to parse each of the content types.
-While you should use trusted types in real code, here they are omitted for brevity.
+کد زیر نحوه استفاده از متد برای تجزیه هر یک از انواع محتوا را نشان می‌دهد. در حالی که باید در کد واقعی از trusted types استفاده کنید، در اینجا برای اختصار از آن‌ها صرف‌نظر شده است.
 
 ```js
 const parser = new DOMParser();
@@ -168,11 +140,11 @@ console.log(doc3.body.firstChild.textContent);
 // "Beware of the leopard"
 ```
 
-Note that the `application/xml` and `image/svg+xml` MIME types above are functionally identical — the latter does not include any SVG-specific parsing rules.
+توجه داشته باشید که انواع MIME `application/xml` و `image/svg+xml` در بالا از نظر عملکردی یکسان هستند - دومی شامل هیچ قانون تجزیه خاص SVG نیست.
 
 ### Error handling
 
-When using the XML parser with a string that doesn't represent well-formed XML, the {{domxref("XMLDocument")}} returned by `parseFromString` will contain a `<parsererror>` node describing the nature of the parsing error.
+هنگام استفاده از تجزیه‌کننده XML با رشته‌ای که یک XML خوش‌فرم (well-formed) را نشان نمی‌دهد، {{domxref("XMLDocument")}} برگشتی توسط `parseFromString` حاوی یک گره `<parsererror>` خواهد بود که ماهیت خطای تجزیه را توصیف می‌کند.
 
 ```js
 const parser = new DOMParser();
@@ -181,13 +153,13 @@ const xmlString = "<warning>Beware of the missing closing tag";
 const doc = parser.parseFromString(xmlString, "application/xml");
 const errorNode = doc.querySelector("parsererror");
 if (errorNode) {
-  // parsing failed
+  // تجزیه ناموفق بود
 } else {
-  // parsing succeeded
+  // تجزیه موفقیت‌آمیز بود
 }
 ```
 
-Additionally, the parsing error may be reported to the browser's JavaScript console.
+علاوه بر این، خطای تجزیه ممکن است در کنسول جاوااسکریپت مرورگر گزارش شود.
 
 ## Specifications
 
@@ -200,4 +172,4 @@ Additionally, the parsing error may be reported to the browser's JavaScript cons
 ## See also
 
 - {{domxref("XMLSerializer")}}
-- {{jsxref("JSON.parse()")}} - counterpart for {{jsxref("JSON")}} documents.
+- {{jsxref("JSON.parse()")}} - معادل برای اسناد {{jsxref("JSON")}}.
