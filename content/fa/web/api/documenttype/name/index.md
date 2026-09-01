@@ -1,11 +1,5 @@
 ---
 title: "DocumentType: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/name"
-status: "needs-translation"
----
-
----
-title: "DocumentType: name property"
 short-title: name
 slug: Web/API/DocumentType/name
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.DocumentType.name
 
 {{APIRef("DOM")}}
 
-The read-only **`name`** property of the {{domxref("DocumentType")}} returns the type of the document.
+ویژگی فقط‌خواندنی **`name`** در {{domxref("DocumentType")}} نوع سند را برمی‌گرداند.
 
-For synthetic `DocumentType`, this property reflects the value given in parameter to {{domxref("DOMImplementation.createDocumentType()")}}.
+برای `DocumentType` مصنوعی، این ویژگی مقدار داده‌شده به‌عنوان پارامتر در {{domxref("DOMImplementation.createDocumentType()")}} را منعکس می‌کند.
 
-For HTML documents, browsers always set it up to `html`, whatever the actual `doctype` in the source code is.
+برای اسناد HTML، مرورگرها همیشه آن را روی `html` قرار می‌دهند، صرف‌نظر از اینکه `doctype` واقعی در کد منبع چیست.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const docType = document.implementation.createDocumentType("html", "", "");
 
-console.log(docType.name); // Displays `html`
+console.log(docType.name); // Display می‌شود `html`
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
