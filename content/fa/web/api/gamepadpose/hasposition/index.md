@@ -1,11 +1,5 @@
 ---
 title: "GamepadPose: hasPosition property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/hasPosition"
-status: "needs-translation"
----
-
----
-title: "GamepadPose: hasPosition property"
 short-title: hasPosition
 slug: Web/API/GamepadPose/hasPosition
 page-type: web-api-instance-property
@@ -16,25 +10,25 @@ browser-compat: api.GamepadPose.hasPosition
 
 {{APIRef("WebVR API")}}{{SeeCompatTable}}
 
-The **`hasPosition`** read-only property of the {{domxref("GamepadPose")}} interface returns a boolean value stating whether the {{domxref("Gamepad")}} can track and return position information.
+**`hasPosition`** 是 {{domxref("GamepadPose")}} 接口中的一个只读属性، 它返回一个布尔值، 表示 {{domxref("Gamepad")}} 是否能够跟踪并返回位置信息.
 
-## Value
+## 值
 
-A boolean value.
+一个布尔值.
 
-## Examples
+## 示例
 
-TBD
+待定.
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [WebVR API](/en-US/docs/Web/API/WebVR_API)
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
