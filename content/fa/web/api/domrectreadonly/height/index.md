@@ -1,7 +1,5 @@
 ---
 title: "DOMRectReadOnly: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/height"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,11 @@ browser-compat: api.DOMRectReadOnly.height
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`height`** read-only property of the **`DOMRectReadOnly`** interface represents the height of the `DOMRect`.
+ویژگی فقط‌خواندنی **`height`** در رابط **`DOMRectReadOnly`**، ارتفاعِ `DOMRect` را نشان می‌دهد.
 
 ## Value
 
-A double.
+یک double.
 
 ## Specifications
 
