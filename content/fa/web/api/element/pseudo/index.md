@@ -1,11 +1,5 @@
 ---
 title: "Element: pseudo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/pseudo"
-status: "needs-translation"
----
-
----
-title: "Element: pseudo() method"
 short-title: pseudo()
 slug: Web/API/Element/pseudo
 page-type: web-api-instance-method
@@ -16,39 +10,39 @@ browser-compat: api.Element.pseudo
 
 {{SeeCompatTable}}
 
-{{APIRef("DOM")}}.
+{{APIRef("DOM")}}
 
-The **`pseudo()`** method of the {{domxref("Element")}} interface returns a {{domxref("CSSPseudoElement")}} object representing the [CSS](/en-US/docs/Web/CSS) [pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) of the specified type associated with the element.
+متد **`pseudo()`** در رابط {{domxref("Element")}} یک شیء {{domxref("CSSPseudoElement")}} برمی‌گرداند که نمایانگر [شبه‌عنصر](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) [CSS](/en-US/docs/Web/CSS) از نوع مشخص‌شده و مرتبط با عنصر است.
 
-Provided its `type` parameter contains a valid pseudo-element type, `pseudo()` will always return a `CSSPseudoElement` instance, even if that pseudo-element hasn't been generated on the calling element.
+به شرطی که پارامتر `type` شامل یک نوع شبه‌عنصر معتبر باشد، `pseudo()` همیشه یک نمونه از `CSSPseudoElement` برمی‌گرداند، حتی اگر آن شبه‌عنصر روی عنصر فراخوانی‌شده تولید نشده باشد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 pseudo(type)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the type of pseudo-element to return a representation of. Valid values are:
+  - : یک رشته (string) که نوع شبه‌عنصری را که می‌خواهید نمایشی از آن برگردانده شود مشخص می‌کند. مقادیر معتبر عبارت‌اند از:
     - {{cssxref("::after")}}
     - {{cssxref("::before")}}
     - {{cssxref("::marker")}}
 
-### Return value
+### مقدار برگشتی
 
-A {{domxref("CSSPseudoElement")}} object instance, or `null` if `type` is not equal to a valid pseudo-element type.
+یک نمونه از شیء {{domxref("CSSPseudoElement")}}، یا اگر `type` برابر با یک نوع شبه‌عنصر معتبر نباشد، `null` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-In this example, we demonstrate basic usage of the `pseudo()` method.
+در این مثال، استفاده پایه از متد `pseudo()` را نشان می‌دهیم.
 
 #### HTML
 
-We include a {{htmlelement("p")}} element containing text, and an {{htmlelement("output")}} element to log output from JavaScript.
+یک عنصر {{htmlelement("p")}} شامل متن و یک عنصر {{htmlelement("output")}} برای ثبت خروجی جاوااسکریپت قرار می‌دهیم.
 
 ```html live-sample___basic
 <p>New York's hottest club is...</p>
@@ -57,7 +51,7 @@ We include a {{htmlelement("p")}} element containing text, and an {{htmlelement(
 
 #### CSS
 
-We give the `<p>` element's {{cssxref("::after")}} pseudo-element some {{cssxref("content")}} and apply some basic styles to both.
+به شبه‌عنصر {{cssxref("::after")}} عنصر `<p>` یک {{cssxref("content")}} می‌دهیم و چند استایل پایه به هر دو اعمال می‌کنیم.
 
 ```css hidden live-sample___basic
 body {
@@ -79,9 +73,9 @@ p::after {
 }
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-In our script, we grab references to our `<p>` and `<output>` elements, and retrieve a `CSSPseudoElement` representing the `<p>` element's `::after` pseudo-element via the `pseudo()` method. We then log some details of the pseudo-element to our `<output>` element. We also include some rudimentary error handling via a [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) structure, to print an error message in non-supporting browsers.
+در اسکریپت خود، ارجاع‌هایی به عناصر `<p>` و `<output>` می‌گیریم و یک `CSSPseudoElement` که نمایانگر شبه‌عنصر `::after` عنصر `<p>` است را از طریق متد `pseudo()` دریافت می‌کنیم. سپس برخی جزئیات شبه‌عنصر را در عنصر `<output>` ثبت می‌کنیم. همچنین یک مدیریت خطای ابتدایی با ساختار [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) اضافه می‌کنیم تا در مرورگرهای غیرپشتیبان خطا چاپ شود.
 
 ```js live-sample___basic
 const pElem = document.querySelector("p");
@@ -95,18 +89,18 @@ try {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{embedlivesample("basic", "100%", 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("CSSPseudoElement.pseudo()")}}
