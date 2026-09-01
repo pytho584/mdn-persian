@@ -1,10 +1,4 @@
 ---
-title: "Device Posture API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Device_Posture_API"
-status: "needs-translation"
----
-
----
 title: Device Posture API
 slug: Web/API/Device_Posture_API
 page-type: web-api-overview
@@ -13,55 +7,55 @@ status:
 browser-compat: api.DevicePosture
 ---
 
-{{DefaultAPISidebar("Device Posture API")}}{{seecompattable}}
+{{DefaultAPISidebar("Device Posture API")}}{{seecompatable}}
 
-The **Device Posture API** allows developers to create user interfaces that adapt to a foldable device's posture and respond to posture changes.
+**Device Posture API** به توسعه‌دهندگان امکان می‌دهد تا رابط‌های کاربری‌ای ایجاد کنند که با وضیت (حالت) دستگاه‌های تاشو تطبیق یافته و به تغییات وضیت واکنش نشان دهند.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-Foldable devices present unique design challenges to developers — they can be used like a regular flat screen or like a book. In addition, some of them feature a single folded screen, and some of them feature two screens with a hinged join in the middle. Care must be taken to ensure that content is not hidden by the physical join, or rendered difficult to read due to close proximity to the central fold.
+دستگاه‌های تاشو چالش‌های طراحی منحصربه‌فردی را برای توسعه‌دهندگان ایجاد می‌کنند – می‌توان از آن‌ها مانند یک صفحه‌نمایش تخت معمولی یا مانند یک کتاب استفاده کرد. علاوه بر این، برخی از آن‌ها دارای یک صفحه‌نمایش تاشوی تکی و برخی دارای دو صفحه با یک لولای میانی هستند. باید دقت کرد که محتوا توسط اتصال فیزیکی پنهان نشود یا به دلیل نزدیکی به تای مرکزی خواندن آن دشوار نگردد.
 
-The Device Posture API defines **postures**, which indicate the current physical folding state of a device. The current available postures are:
+Device Posture API **وضعیت‌هایی** (postures) را تعریف می‌کند که حالت فیزیکی فعلی تا شدن دستگاه را نشان می‌دهند. وضعیت‌های موجود عبارتند از:
 
 - `continuous`
-  - : Indicates a flat screen state. Foldable devices are `continuous` while they are flat; either fully opened or fully closed. Non-foldable devices are considered flat and therefore always `continuous` — this includes seamless curved displays and standard desktop, laptop, tablet, and mobile screens.
-    ![A selection of flat screens including mobiles and tablets, and a seamless curved display](continuous-screens.png)
+  - : وضعیت صفحه‌نمایش تختی را نشان می‌دهد. دستاه‌های تاشو در حلی که تخیت هستند، `continuous` هستند؛ چه کاملاً باز و چه کاملاً بسته. دستگاه‌های غیر تاشو تخیت فرض می‌شوند و بنابراین همیشه `continuous` هستند – این شامل نمایشگرهای منحنی بی‌درز و صفحه‌نمایش‌های استاندارد رومیزی، لپ‌تاپ، تبلیت و موبایل می‌شود.
+    ![مجموعه‌ای از صفحه‌نمایش‌های تخت شامل تلفن‌های همراه و تبلت‌ها، و یک نمایشگر منحنی بدون درز](continuous-screens.png)
 - `folded`
-  - : Indicates a folded screen state. Foldable devices are `folded` while used in a book or laptop posture.
-    ![A selection of folded screens, including foldable mobiles and tablets in book and laptop postures](folded-screens.png)
+  - : وضعیت صفحه‌نمایش تا شده را نشان می‌دهد. دستگاه‌های تاشو هنگام استفاده در حالت کتاب یا لپ‌تاپ، `folded` هستند.
+    ![مجموعه‌ای از صفحه‌نمایش‌های تا شده، شامل تلفن‌های همراه و تبلت‌های تاشو در حالت‌های کتاب و لپ‌تاپ](folded-screens.png)
 
-The Device Posture API includes features enabling you to run scripts and vary layouts depending on current device posture and posture changes.
+Device Posture API شامل ویژگی‌هایی است که به شما امکان می‌دهد با توجه به وضعیت فعلی دستگاه و تغییرات وضعیت، اسکریپت‌ها را اجرا کرده و چیدمان‌ها را تغییر دهید.
 
-## CSS features
+## ویژگی‌های CSS
 
-- {{cssxref("@media/device-posture", "device-posture")}} `@media` feature
-  - : Detects the device's current posture.
+- {{cssxref("@media/device-posture", "device-posture")}} ویژگی `@media`
+  - : وضعیت فعلی دستگاه را تشخیص می‌دهد.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("DevicePosture")}}
-  - : Represents the device's posture, providing access to the current posture `type` and a `change` event that fires on posture change.
+  - : نشان‌دهنده وضعیت دستگاه است و دسترسی به `type` وضعیت فعلی و یک رویداد `change` که در تغییر وضعیت رخ می‌دهد فراهم می‌کند.
 
-### Extensions to other interfaces
+### افزونه‌ها به رابط‌های دیگر
 
 - {{domxref("Navigator.devicePosture")}}
-  - : The entry point for the Device Posture API — returns the browser's `DevicePosture` object.
+  - : نقطه ورود برای Device Posture API – شیء `DevicePosture` مرورگر را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-You can find a complete example showing all of the features in action in the [Device Posture API demo](https://mdn.github.io/dom-examples/device-posture-api/).
+می‌توانید یک مثال کامل که تمام ویزگی‌ها را در عمل نشان می‌دهد در [Device Posture API demo](https://mdn.github.io/dom-examples/device-posture-api/) پیدا کنید.
 
-If possible, you should view this on a foldable device. Current browser developer tools enable emulating foldable devices, but don't include emulation of partially folded devices — only fully open or closed — so they will always return `continuous`.
+در صورت امکان، باید این مثال را روی یک دستگاه تاشو مشاهده کنید. ابزارهای توسعه‌دهنده فعلی مرورگر امکان شبیه‌سازی دستگاه‌های تاشو را فراهم می‌کنند، اما شبیه‌سازی دستگاه‌های نیمه‌تا شده را شامل نمی‌شوند – فقط کاملاً باز یا بسته – بنابراین همیشه `continuous` برمی‌گردانند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Viewport Segments API](/en-US/docs/Web/API/Viewport_segments_API)
-- [Origin trial for Foldable APIs](https://developer.chrome.com/blog/foldable-apis-ot) on developer.chrome.com (2024)
+- [Origin trial for Foldable APIs](https://developer.chrome.com/blog/foldable-apis-ot) در developer.chrome.com (2024)
