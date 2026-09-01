@@ -1,11 +1,5 @@
 ---
 title: "Document: createTouch() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createTouch"
-status: "needs-translation"
----
-
----
-title: "Document: createTouch() method"
 short-title: createTouch()
 slug: Web/API/Document/createTouch
 page-type: web-api-instance-method
@@ -17,67 +11,62 @@ browser-compat: api.Document.createTouch
 
 {{APIRef("DOM")}}{{Deprecated_Header}}{{Non-standard_header}}
 
-The **`Document.createTouch()`** method creates and returns a new {{DOMxRef("Touch")}} object.
+متد **`Document.createTouch()`** یک شیء جدید {{DOMxRef("Touch")}} را ایجاد و بازمی‌گرداند.
 
 > [!NOTE]
-> Use the {{domxref("TouchEvent.TouchEvent", "TouchEvent()")}} constructor.
+> از سازنده {{domxref("TouchEvent.TouchEvent", "TouchEvent()")}} استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 createTouch(view, target, identifier, pageX, pageY, screenX, screenY)
 ```
 
-### Parameters
+### پارامترها
 
 > [!NOTE]
-> All parameters are optional.
+> همه پارامترها اختیاری هستند.
 
 - `view`
-  - : The {{DOMxRef("window")}} in which the touch occurred.
+  - : {{DOMxRef("window")}} که رویداد لمس در آن رخ داده است.
 - `target`
-  - : The {{DOMxRef("EventTarget")}} for the touch.
+  - : {{DOMxRef("EventTarget")}} مربوط به لمس.
 - `identifier`
-  - : The value for {{DOMxRef("Touch.identifier")}}.
+  - : مقدار برای {{DOMxRef("Touch.identifier")}}.
 - `pageX`
-  - : The value for {{DOMxRef("Touch.pageX")}}.
+  - : مقدار برای {{DOMxRef("Touch.pageX")}}.
 - `pageY`
-  - : The value for {{DOMxRef("Touch.pageY")}}.
+  - : مقدار برای {{DOMxRef("Touch.pageY")}}.
 - `screenX`
-  - : The value for {{DOMxRef("Touch.screenX")}}.
+  - : مقدار برای {{DOMxRef("Touch.screenX")}}.
 - `screenY`
-  - : The value for {{DOMxRef("Touch.screenY")}}.
+  - : مقدار برای {{DOMxRef("Touch.screenY")}}.
 
 > [!NOTE]
-> Previous versions of this method included the
-> following additional parameters but those parameters are not included in either of the
-> standards listed below. Consequently, these parameters should be considered deprecated
-> and not used.
+> نسخه‌های قبلی این متد شامل پارامترهای اضافی زیر بودند، اما این پارامترها در هیچ‌کدام از استانداردهای ذکر شده در زیر گنجانده نشده‌اند. بنابراین، این پارامترها باید منسوخ (deprecated) در نظر گرفته شوند و نباید استفاده شوند.
 
 - `clientX`
-  - : The value for {{DOMxRef("Touch.clientX")}}.
+  - : مقدار برای {{DOMxRef("Touch.clientX")}}.
 - `clientY`
-  - : The value for {{DOMxRef("Touch.clientY")}}.
+  - : مقدار برای {{DOMxRef("Touch.clientY")}}.
 - `radiusX`
-  - : The value for {{DOMxRef("Touch.radiusX")}}.
+  - : مقدار برای {{DOMxRef("Touch.radiusX")}}.
 - `radiusY`
-  - : The value for {{DOMxRef("Touch.radiusY")}}.
+  - : مقدار برای {{DOMxRef("Touch.radiusY")}}.
 - `rotationAngle`
-  - : The value for {{DOMxRef("Touch.rotationAngle")}}.
+  - : مقدار برای {{DOMxRef("Touch.rotationAngle")}}.
 - `force`
-  - : The value for {{DOMxRef("Touch.force")}}.
+  - : مقدار برای {{DOMxRef("Touch.force")}}.
 
-### Return value
+### مقدار بازگشتی
 
-A {{DOMxRef("Touch")}} object configured as described by the input parameters.
+یک {{DOMxRef("Touch")}} که مطابق با پارامترهای ورودی پیکربندی شده است.
 
-## Examples
+## مثال‌ها
 
-This example illustrates using the `Document.createTouch()` method to
-create {{DOMxRef("Touch")}} objects.
+این مثال نحوه استفاده از متد `Document.createTouch()` را برای ایجاد اشیاء {{DOMxRef("Touch")}} نشان می‌دهد.
 
-In following code snippet, two {{DOMxRef("Touch")}} objects are created for the
-`target` element.
+در قطعه کد زیر، دو شیء {{DOMxRef("Touch")}} برای عنصر `target` ایجاد می‌شود.
 
 ```js
 const target = document.getElementById("target");
@@ -86,17 +75,17 @@ const touch1 = document.createTouch(window, target, 1, 15, 20, 35, 40);
 const touch2 = document.createTouch(window, target, 2, 25, 30, 45, 50);
 ```
 
-## Specifications
+## مشخصات
 
-This feature is not part of any current specification. It is no longer on track to become a standard.
+این ویژگی بخشی از هیچ مشخصات فعلی نیست. دیگر در مسیر تبدیل شدن به استاندارد قرار ندارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Touch events](/en-US/docs/Web/API/Touch_events)
+- [رویدادهای لمس](/en-US/docs/Web/API/Touch_events)
 - {{DOMxRef("TouchList")}}
 - {{DOMxRef("Touch")}}
 - {{DOMxRef("Document.createTouchList()")}}
