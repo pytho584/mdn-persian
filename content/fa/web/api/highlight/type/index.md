@@ -1,11 +1,5 @@
 ---
 title: "Highlight: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Highlight/type"
-status: "needs-translation"
----
-
----
-title: "Highlight: type property"
 short-title: type
 slug: Web/API/Highlight/type
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.Highlight.type
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The `type` property of the {{domxref("Highlight")}} interface is an enumerated {{jsxref("String")}} used to specify the meaning of the highlight. This allows assistive technologies, such as screen readers, to include this meaning when exposing the highlight to users.
+ویژگی `type` از رابط {{domxref("Highlight")}} یک {{jsxref("String")}} شمارشی است که برای تعیین معنای هایلایت به کار می‌رود. این امکان به فناوری‌های کمکی مانند صفحه‌خوان‌ها اجازه می‌دهد تا این معنا را هنگام ارائهٔ هایلایت به کاربران لحاظ کنند.
 
-By default, a highlight object will have its type set to `highlight`, but you can change it to `spelling-error` or `grammar-error`.
+به‌طور پیش‌فرض، نوع یک شیء هایلایت روی `highlight` تنظیم شده است؛ اما می‌توانید آن را به `spelling-error` یا `grammar-error` تغییر دهید.
 
-## Value
+## مقدار
 
-The possible values of the `type` enumerated value are:
+مقادیر ممکن برای مقدار شمارشی `type` عبارت‌اند از:
 
 - `highlight`
-  - : This is the default highlight type. It does not have any specific meaning.
+  - : این نوع پیش‌فرض هایلایت است و معنای خاصی ندارد.
 - `spelling-error`
-  - : Use this type when the highlight is used to emphasize misspelled content.
+  - : زمانی از این نوع استفاده کنید که هایلایت برای برجسته‌کردن محتوایی به کار می‌رود که املای آن اشتباه است.
 - `grammar-error`
-  - : Use this type when the highlight is used to emphasize content that is grammatically incorrect.
+  - : زمانی از این نوع استفاده کنید که هایلایت برای برجسته‌کردن محتوایی به کار می‌رود که از نظر دستوری نادرست است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const spellErrorRange = new Range();
@@ -41,16 +35,16 @@ const spellErrorsHighlight = new Highlight(spellErrorRange);
 spellErrorsHighlight.type = "spelling-error";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
-- [CSS custom highlight API](/en-US/docs/Web/CSS/Guides/Custom_highlight_API) module
+- ماژول [CSS custom highlight API](/en-US/docs/Web/CSS/Guides/Custom_highlight_API)
 - [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
