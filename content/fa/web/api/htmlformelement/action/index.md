@@ -1,9 +1,4 @@
----
-title: "HTMLFormElement: action property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/action"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "HTMLFormElement: action property"
 short-title: action
@@ -14,26 +9,25 @@ browser-compat: api.HTMLFormElement.action
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLFormElement.action`** property represents the action
-of the {{HTMLElement("form")}} element.
+ویژگی **`HTMLFormElement.action`** نمایانگر ویژگی `action` عنصر {{HTMLElement("form")}} است.
 
-The action of a form is the program that is executed on the server when the form is
-submitted. This property can be retrieved or set.
+اکشن یک فرم، برنامهای است که هنگام ارسال فرم روی سرور اجرا میشود. این ویژگی قابل خواندن و تنظیم کردن است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثالها
 
 ```js
 form.action = "/cgi-bin/publish";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
