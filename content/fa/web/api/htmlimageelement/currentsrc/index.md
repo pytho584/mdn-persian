@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: currentSrc property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/currentSrc"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: currentSrc property"
 short-title: currentSrc
 slug: Web/API/HTMLImageElement/currentSrc
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLImageElement.currentSrc
 
 {{APIRef("HTML DOM")}}
 
-The **`currentSrc`** read-only property of the {{domxref("HTMLImageElement")}} interface indicates the URL of the image selected by the browser to load.
+خاصیت فقط خواندنی **`currentSrc`** از رابط {{domxref("HTMLImageElement")}}، نشانی اینترنتی (URL) تصویری را که مرورگر برای بارگذاری انتخاب کرده است، نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string indicating the full URL of the image currently selected by the browser to load. If the image uses the {{domxref("HTMLImageElement.srcset", "srcset")}} attribute, `currentSrc` lets you determine which image from the set of provided images was selected by the browser. The property's value is unrelated to whether the image has successfully loaded or not.
+یک رشته که نشانی کامل اینترنتی تصویری را که در حال حاضر توسط مرورگر برای بارگذاری انتخاب شده است، نشان می‌دهد. اگر تصویر از ویژگی {{domxref("HTMLImageElement.srcset", "srcset")}} استفاده کند، `currentSrc` به شما امکان می‌دهد تعیین کنید کدام تصویر از میان مجموعه تصاویر ارائه‌شده توسط مرورگر انتخاب شده است. مقدار این ویژگی ربطی به موفقیت‌آمیز بودن بارگذاری تصویر ندارد.
 
-## Examples
+## مثال‌ها
 
-### Testing which image is loaded
+### آزمایش اینکه کدام تصویر بارگذاری شده است
 
-In this example, two different sizes are provided for an image of a clock. One is 200px wide and the other is 400px wide. The [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/img#sizes) attribute is provided to indicate that the image should be drawn at 50% of the document width if the viewport is under 400px wide; otherwise, the image is drawn at 90% width of the document.
+در این مثال، دو اندازه متفاوت برای یک تصویر از یک ساعت ارائه شده است. یکی ۲۰۰ پیکسل عرض و دیگری ۴۰۰ پیکسل عرض دارد. ویژگی [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/img#sizes) برای مشخص کردن اینکه اگر viewport کمتر از ۴۰۰ پیکسل عرض داشته باشد، تصویر باید با ۵۰٪ عرض سند رسم شود، و در غیر این صورت با ۹۰٪ عرض سند رسم شود، ارائه شده است.
 
 #### HTML
 
@@ -51,19 +45,19 @@ p.textContent = clockImage.currentSrc.endsWith("200px.png")
 document.body.appendChild(p);
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Testing which image is loaded", 640, 370)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLImageElement.src")}}
 - {{domxref("HTMLImageElement.srcSet")}}
