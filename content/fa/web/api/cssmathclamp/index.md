@@ -1,11 +1,5 @@
 ---
 title: "CSSMathClamp"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathClamp"
-status: "needs-translation"
----
-
----
-title: CSSMathClamp
 slug: Web/API/CSSMathClamp
 page-type: web-api-interface
 browser-compat: api.CSSMathClamp
@@ -13,49 +7,47 @@ browser-compat: api.CSSMathClamp
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSMathClamp`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the CSS {{CSSXref("clamp","clamp()")}} function.
+رابط **`CSSMathClamp`** از [API مدل شیء تایپ‌شده CSS](/en-US/docs/Web/API/CSS_Object_Model) تابع CSS {{CSSXref("clamp","clamp()")}} را نمایش می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSMathClamp.CSSMathClamp", "CSSMathClamp()")}}
-  - : Creates a new `CSSMathClamp` object.
+  - : یک شیء `CSSMathClamp` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین ویژگی‌های رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
 - {{domxref("CSSMathClamp.lower")}} {{readonlyinline}}
-  - : Returns a {{domxref("CSSNumericValue")}} object containing the minimum value.
+  - : یک شیء {{domxref("CSSNumericValue")}} حاوی مقدار حداقل را برمی‌گرداند.
 - {{domxref("CSSMathClamp.value")}} {{readonlyinline}}
-  - : Returns a {{domxref("CSSNumericValue")}} object containing the preferred value.
+  - : یک شیء {{domxref("CSSNumericValue")}} حاوی مقدار ترجیحی را برمی‌گرداند.
 - {{domxref("CSSMathClamp.upper")}} {{readonlyinline}}
-  - : Returns a {{domxref("CSSNumericValue")}} object containing the upper value.
+  - : یک شیء {{domxref("CSSNumericValue")}} حاوی مقدار حداکثر را برمی‌گرداند.
 
-## Static methods
+## روش‌های ایستا
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین روش‌های رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین روش‌های رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
-## Description
+## توضیحات
 
-The CSS {{CSSXref("clamp", "clamp()")}} function takes three arguments: a minimum, preferred, and maximum value, and returns the preferred value, clamped between the minimum and maximum.
+تابع CSS {{CSSXref("clamp", "clamp()")}} سه آرگومان می‌گیرد: یک مقدار حداقل، یک مقدار ترجیحی و یک مقدار حداکثر، و مقدار ترجیحی را برمی‌گرداند که در بین حداقل و حداکثر محدود شده است.
 
-If all three arguments are absolute values, such as pixel lengths, `clamp()` is resolved to a single value at parse time, represented by the CSS Typed Object Model as a {{domxref("CSSUnitValue")}}.
-If the `clamp()` expression can't be resolved to a single value at parse time (say, because one of its arguments uses a relative unit like `vw` or `%`), the function is represented as a `CSSMathClamp` object, and the three arguments passed to `clamp()` (or to the `CSSMathClamp()` constructor) are exposed as the `lower`, `value`, and `upper` properties.
+اگر هر سه آرگومان مقادیر مطلق باشند، مانند طول‌های پیکسلی، `clamp()` در زمان تجزیه به یک مقدار واحد تبدیل می‌شود که توسط مدل شیء تایپ‌شده CSS به صورت یک {{domxref("CSSUnitValue")}} نمایش داده می‌شود. اگر عبارت `clamp()` نتواند در زمان تجزیه به یک مقدار واحد تبدیل شود (مثلاً به دلیل اینکه یکی از آرگومان‌های آن از یک واحد نسبی مانند `vw` یا `%` استفاده می‌کند)، تابع به صورت یک شیء `CSSMathClamp` نمایش داده می‌شود و سه آرگومان ارسال‌شده به `clamp()` (یا به سازنده `CSSMathClamp()`) به عنوان ویژگی‌های `lower`، `value` و `upper` در معرض دید قرار می‌گیرند.
 
-Note that `CSSMathClamp` represents the `clamp()` function, not its resolved value.
-In order to determine the value of a clamped property, you need to read its computed style (for example with {{domxref("Window.getComputedStyle", "getComputedStyle()")}}).
+توجه داشته باشید که `CSSMathClamp` تابع `clamp()` را نمایش می‌دهد، نه مقدار حل‌شده آن. برای تعیین مقدار یک ویژگی محدودشده، باید سبک محاسبه‌شده آن را بخوانید (مثلاً با {{domxref("Window.getComputedStyle", "getComputedStyle()")}}).
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following code creates a `CSSMathClamp` instance from three lengths, then reads back its `lower`, `value`, and `upper` properties.
+کد زیر یک نمونه `CSSMathClamp` از سه طول ایجاد می‌کند و سپس ویژگی‌های `lower`، `value` و `upper` آن را بازخوانی می‌کند.
 
 ```js
 const clamp = new CSSMathClamp(CSS.px(10), CSS.percent(50), CSS.px(500));
@@ -66,13 +58,13 @@ console.log(clamp.value); // CSSUnitValue {value: 50, unit: "percent"}
 console.log(clamp.upper); // CSSUnitValue {value: 500, unit: "px"}
 ```
 
-### `clamp()` representations
+### نمایش‌های `clamp()`
 
-This example shows how {{CSSXref("clamp","clamp()")}} is represented by a {{domxref("CSSUnitValue")}} or a `CSSMathClamp`, depending on whether all of its arguments are absolute values.
+این مثال نشان می‌دهد که چگونه {{CSSXref("clamp","clamp()")}} توسط یک {{domxref("CSSUnitValue")}} یا یک `CSSMathClamp` نمایش داده می‌شود، بسته به اینکه آیا همه آرگومان‌های آن مقادیر مطلق هستند یا خیر.
 
 #### HTML
 
-First we declare a {{htmlelement("div")}} element, `#demoBox`, on which we'll set some clamped properties.
+ابتدا یک عنصر {{htmlelement("div")}} به نام `#demoBox` تعریف می‌کنیم که روی آن برخی ویژگی‌های محدودشده را تنظیم خواهیم کرد.
 
 ```html
 <div id="demoBox">Text</div>
@@ -84,8 +76,7 @@ First we declare a {{htmlelement("div")}} element, `#demoBox`, on which we'll se
 
 #### CSS
 
-The `width` of the box is set using a `clamp()` whose three arguments are all absolute lengths, so the browser can resolve it to a single fixed value immediately.
-`font-size` is set using a `clamp()` whose preferred value uses the relative unit `vw`, so the browser can't resolve it until layout (this will be represented by a `CSSMathClamp`).
+عرض جعبه با استفاده از یک `clamp()` تنظیم شده است که هر سه آرگومان آن طول‌های مطلق هستند، بنابراین مرورگر می‌تواند بلافاصله آن را به یک مقدار ثابت واحد تبدیل کند. `font-size` با استفاده از یک `clamp()` تنظیم شده است که مقدار ترجیحی آن از واحد نسبی `vw` استفاده می‌کند، بنابراین مرورگر نمی‌تواند آن را تا زمان چیدمان حل کند (این به صورت یک `CSSMathClamp` نمایش داده می‌شود).
 
 ```css
 #demoBox {
@@ -112,7 +103,7 @@ function log(text) {
 }
 ```
 
-First we find the demo box's style rule and read its `width` and `font-size` values using {{domxref("CSSStyleRule.styleMap", "styleMap")}}.
+ابتدا قانون سبک جعبه آزمایشی را پیدا می‌کنیم و مقادیر `width` و `font-size` آن را با استفاده از {{domxref("CSSStyleRule.styleMap", "styleMap")}} می‌خوانیم.
 
 ```js
 const demoBox = document.querySelector("#demoBox");
@@ -124,7 +115,7 @@ const width = styleMap.get("width");
 const fontSize = styleMap.get("font-size");
 ```
 
-We then log the type and value of the CSS Typed OM representations, followed by the computed (resolved) values.
+سپس نوع و مقدار نمایش‌های OM تایپ‌شده CSS و به دنبال آن مقادیر محاسبه‌شده (حل‌شده) را ثبت می‌کنیم.
 
 ```js
 log("width");
@@ -140,25 +131,21 @@ log(` upper: ${fontSize.upper}`);
 log(` resolved: ${getComputedStyle(demoBox).fontSize}`);
 ```
 
-#### Result
+#### نتیجه
 
-`width` logs as a single `CSSUnitValue`, and its resolved value matches that value directly.
-`font-size` logs as a `CSSMathClamp`, exposing the `clamp()` function's original operands.
+`width` به صورت یک `CSSUnitValue` واحد ثبت می‌شود، و مقدار حل‌شده آن مستقیماً با آن مقدار مطابقت دارد. `font-size` به صورت یک `CSSMathClamp` ثبت می‌شود و عملوندهای اصلی تابع `clamp()` را آشکار می‌کند.
 
 {{EmbedLiveSample("`clamp()` representations", 300, 300)}}
 
-### Inspecting a clamped value
+### بازرسی یک مقدار محدودشده
 
-This example uses three range sliders to set the `lower`, `preferred`, and `upper` values of a `CSSMathClamp`, then applies it to the width of a box using {{domxref("StylePropertyMap.set", "attributeStyleMap.set()")}}.
-This allows you to see the effect of changing the range on the clamped value of the `width`.
+این مثال از سه لغزنده محدوده برای تنظیم مقادیر `lower`، `preferred` و `upper` یک `CSSMathClamp` استفاده می‌کند، سپس آن را با استفاده از {{domxref("StylePropertyMap.set", "attributeStyleMap.set()")}} به عرض یک جعبه اعمال می‌کند. این به شما امکان می‌دهد اثر تغییر محدوده بر مقدار محدودشده `width` را مشاهده کنید.
 
-Dragging a slider changes what `lower`, `value`, and `upper` report, because they always mirror the three operands passed to the `CSSMathClamp` — note that `value` is reported in `vw`, not the pixels shown on its slider. The output next to the preferred slider shows both its pixel value and the `vw` equivalent actually passed to the constructor, so the conversion stays visible. The box's actual rendered width, by contrast, is the result of clamping that `vw` value between the two pixel bounds, and can differ substantially from `value` itself — for example, when the preferred slider is dragged below the lower slider or above the upper slider.
+کشیدن یک لغزنده، چیزی را که `lower`، `value` و `upper` گزارش می‌دهند تغییر می‌دهد، زیرا آنها همیشه سه عملوند ارسال‌شده به `CSSMathClamp` را منعکس می‌کنند – توجه داشته باشید که `value` بر حسب `vw` گزارش می‌شود، نه پیکسل‌های نشان‌داده‌شده روی لغزنده آن. خروجی کنار لغزنده ترجیحی هم مقدار پیکسلی و هم معادل `vw` که در واقع به سازنده ارسال شده است را نشان می‌دهد، بنابراین تبدیل قابل مشاهده باقی می‌ماند. در مقابل، عرض واقعی رندر شده جعبه، نتیجه محدود کردن آن مقدار `vw` بین دو حد پیکسلی است و می‌تواند تفاوت قابل توجهی با خود `value` داشته باشد – برای مثال، زمانی که لغزنده ترجیحی به زیر لغزنده پایین یا بالای لغزنده بالا کشیده شود.
 
 #### HTML
 
-First we define a {{htmlelement("div")}} element for the resizable box, three sliders to set the minimum, preferred, and upper values of its width, and {{htmlelement("output")}} elements to display the slider values numerically.
-All three sliders share the same 0 to 400 pixel range, so their positions are directly comparable.
-We set the initial values so that `lower < pref < upper`.
+ابتدا یک عنصر {{htmlelement("div")}} برای جعبه قابل تغییر اندازه، سه لغزنده برای تنظیم مقادیر حداقل، ترجیحی و حداکثر عرض آن، و عناصر {{htmlelement("output")}} برای نمایش عددی مقادیر لغزنده تعریف می‌کنیم. هر سه لغزنده محدوده یکسان ۰ تا ۴۰۰ پیکسل را به اشتراک می‌گذارند، بنابراین موقعیت‌های آنها مستقیماً قابل مقایسه است. مقادیر اولیه را طوری تنظیم می‌کنیم که `lower < pref < upper` باشد.
 
 ```html
 <div id="box"></div>
@@ -178,11 +165,11 @@ We set the initial values so that `lower < pref < upper`.
 <pre id="log"></pre>
 ```
 
-At the end we define a `#log` element to output information returned about the box width.
+در انتها یک عنصر `#log` برای خروجی اطلاعات بازگردانده‌شده در مورد عرض جعبه تعریف کرده‌ایم.
 
 #### CSS
 
-The CSS sets the visual properties and alignment of the box, sliders, and other elements.
+CSS ویژگی‌های بصری و تراز جعبه، لغزنده‌ها و سایر عناصر را تنظیم می‌کند.
 
 ```css
 #box {
@@ -215,7 +202,7 @@ The CSS sets the visual properties and alignment of the box, sliders, and other 
 
 #### JavaScript
 
-First we create variables to reference the box, the sliders, and the output elements.
+ابتدا متغیرهایی برای ارجاع به جعبه، لغزنده‌ها و عناصر خروجی ایجاد می‌کنیم.
 
 ```js
 const box = document.querySelector("#box");
@@ -234,8 +221,7 @@ function log(text) {
 }
 ```
 
-Then we call the `update()` function to update the box and output elements based on the slider value.
-We set up a listener so that the function is called whenever the slider positions are changed.
+سپس تابع `update()` را برای به‌روزرسانی جعبه و عناصر خروجی بر اساس مقدار لغزنده فراخوانی می‌کنیم. یک شنونده تنظیم می‌کنیم تا تابع هر زمان که موقعیت لغزنده‌ها تغییر کرد، فراخوانی شود.
 
 ```js
 [lowerInput, prefInput, upperInput].forEach((el) =>
@@ -244,13 +230,9 @@ We set up a listener so that the function is called whenever the slider position
 update();
 ```
 
-The `update()` function is shown below.
-This logs the values of the sliders and uses them when creating a `CSSMathClamp` that is then set on the `width` attribute of the box.
-The attribute styles of the box are then read using {{domxref("HTMLElement.attributeStyleMap")}} and the retrieved values of `width` are also logged, along with the rendered width of the box.
+تابع `update()` در زیر نشان داده شده است. این تابع مقادیر لغزنده‌ها را ثبت می‌کند و از آنها هنگام ایجاد یک `CSSMathClamp` استفاده می‌کند که سپس روی ویژگی `width` جعبه تنظیم می‌شود. سپس سبک‌های ویژگی جعبه با استفاده از {{domxref("HTMLElement.attributeStyleMap")}} خوانده می‌شوند و مقادیر بازیابی‌شده `width` نیز به همراه عرض رندر شده جعبه ثبت می‌شوند.
 
-One complexity in the code is that while `lower` and `upper` are passed to the `CSSMathClamp()` constructor as pixels, exactly matching their sliders, the pixel value of `preferred` is first converted to `vw` (viewport width) units.
-This has been done because if all three operands were absolute lengths (for example, all in pixels), the browser could resolve `clamp()` down to a single fixed number, which would be read back as a {{domxref("CSSUnitValue")}} instead of a `CSSMathClamp`.
-Converting `preferred` to a relative unit like `vw` means the browser can't resolve the expression until layout, so it keeps the value as a live `CSSMathClamp` with all three operands intact.
+یک پیچیدگی در کد این است که در حالی که `lower` و `upper` به عنوان پیکسل به سازنده `CSSMathClamp()` ارسال می‌شوند و دقیقاً با لغزنده‌های خود مطابقت دارند، مقدار پیکسلی `preferred` ابتدا به واحد `vw` (عرض viewport) تبدیل می‌شود. این کار به این دلیل انجام شده است که اگر هر سه عملوند طول‌های مطلق بودند (مثلاً همه بر حسب پیکسل)، مرورگر می‌توانست `clamp()` را به یک عدد ثابت واحد کاهش دهد، که به جای یک `CSSMathClamp` به صورت یک {{domxref("CSSUnitValue")}} بازخوانی می‌شد. تبدیل `preferred` به یک واحد نسبی مانند `vw` به این معنی است که مرورگر نمی‌تواند عبارت را تا زمان چیدمان حل کند، بنابراین مقدار را به عنوان یک `CSSMathClamp` زنده با هر سه عملوند دست نخورده نگه می‌دارد.
 
 ```js
 function update() {
@@ -283,21 +265,21 @@ function update() {
 }
 ```
 
-#### Result
+#### نتیجه
 
-Drag the sliders to see how `lower`, `value`, and `upper` always match the slider positions, while the rendered width is clamped between `lower` and `upper`.
+لغزنده‌ها را بکشید تا ببینید چگونه `lower`، `value` و `upper` همیشه با موقعیت لغزنده‌ها مطابقت دارند، در حالی که عرض رندر شده بین `lower` و `upper` محدود می‌شود.
 
 {{EmbedLiveSample("Inspecting a clamped value", 300, 350)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSMathMax")}}
 - {{domxref("CSSMathMin")}}
