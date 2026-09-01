@@ -1,11 +1,5 @@
 ---
 title: "DocumentType: systemId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/systemId"
-status: "needs-translation"
----
-
----
-title: "DocumentType: systemId property"
 short-title: systemId
 slug: Web/API/DocumentType/systemId
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.DocumentType.systemId
 
 {{APIRef("DOM")}}
 
-The read-only **`systemId`** property of the {{domxref("DocumentType")}} returns the URL of the associated DTD.
+ویژگی فقط‌خواندنی **`systemId`** از رابط {{domxref("DocumentType")}}، URL مربوط به DTD مرتبط را بازمی‌گرداند.
 
-For synthetic `DocumentType`, this property reflects the value given in parameter to {{domxref("DOMImplementation.createDocumentType()")}}.
+برای `DocumentType`های مصنوعی، این ویژگی مقدار داده‌شده به عنوان پارامتر در {{domxref("DOMImplementation.createDocumentType()")}} را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const docType = document.implementation.createDocumentType(
@@ -31,13 +25,13 @@ const docType = document.implementation.createDocumentType(
   "http://www.w3.org/2000/svg",
 );
 
-console.log(docType.systemId); // Displays "http://www.w3.org/2000/svg"
+console.log(docType.systemId); // نمایش می‌دهد "http://www.w3.org/2000/svg"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
