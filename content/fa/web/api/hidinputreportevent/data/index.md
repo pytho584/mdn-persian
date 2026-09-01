@@ -1,11 +1,5 @@
 ---
 title: "HIDInputReportEvent: data property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDInputReportEvent/data"
-status: "needs-translation"
----
-
----
-title: "HIDInputReportEvent: data property"
 short-title: data
 slug: Web/API/HIDInputReportEvent/data
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.HIDInputReportEvent.data
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`data`** property of the {{domxref("HIDInputReportEvent")}} interface returns a {{jsxref("DataView")}} containing the data from the input report, excluding the `reportId` if the HID interface uses report IDs.
+ویژگی **`data`** از رابط {{domxref("HIDInputReportEvent")}} یک {{jsxref("DataView")}} شامل داده‌های گزارش ورودی را برمی‌گرداند، به جز `reportId` در صورتی که رابط HID از شناسه‌های گزارش استفاده کند.
 
-## Value
+## مقدار
 
-A {{jsxref("DataView")}}.
+یک {{jsxref("DataView")}}.
 
-## Examples
+## مثال‌ها
 
-In the following example the returned `data` is logged to the console.
+در مثال زیر، `data` برگشت‌داده‌شده در کنسول ثبت می‌شود.
 
 ```js
 device.addEventListener("inputreport", (event) => {
@@ -33,10 +27,10 @@ device.addEventListener("inputreport", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
