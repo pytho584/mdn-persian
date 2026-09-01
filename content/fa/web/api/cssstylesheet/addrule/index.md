@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleSheet: addRule() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/addRule"
-status: "needs-translation"
----
-
----
-title: "CSSStyleSheet: addRule() method"
 short-title: addRule()
 slug: Web/API/CSSStyleSheet/addRule
 page-type: web-api-instance-method
@@ -16,65 +10,54 @@ browser-compat: api.CSSStyleSheet.addRule
 
 {{APIRef("CSSOM")}}{{deprecated_header}}
 
-The obsolete {{domxref("CSSStyleSheet")}} interface's
-**`addRule()`** _legacy method_ adds a new rule to the
-stylesheet. You should avoid using this method, and should instead use the more standard
-{{domxref("CSSStyleSheet.insertRule", "insertRule()")}} method.
+رابط منسوخ‌شدهٔ {{domxref("CSSStyleSheet")}} دارای متد **`addRule()`** (روش قدیمی) است که یک قاعدهٔ جدید به شیوه‌نامه اضافه می‌کند. باید از استفاده از این متد خودداری کنید و به‌جای آن از متد استانداردتر {{domxref("CSSStyleSheet.insertRule", "insertRule()")}} استفاده نمایید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 addRule(selector, styleBlock, index)
 ```
 
-### Parameters
+### پارامترها
 
 - `selector`
-  - : A string specifying the selector portion of the CSS rule. The
-    default is the string `undefined`.
+  -: یک رشته که بخش انتخاب‌گر (selector) قاعدهٔ CSS را مشخص می‌کند. مقدار پیش‌فرض رشتهٔ `undefined` است.
 - `styleBlock`
-  - : A string indicating the style block to apply to elements matching
-    the `selector`. The default is the string `undefined`.
+  -: یک رشته که بلوک سبک (style block) را برای اعمال به عناصر منطبق با `selector` مشخص می‌کند. مقدار پیش‌فرض رشتهٔ `undefined` است.
 - `index` {{optional_inline}}
-  - : An optional index into the stylesheet's {{domxref("CSSRuleList")}} at which to
-    insert the new rule. If `index` is not specified, the next index after the
-    last item currently in the list is used (that is, the value of
-    `cssStyleSheet.cssRules.length`).
+  -: یک شاخص اختیاری در {{domxref("CSSRuleList")}} شیوه‌نامه که قاعدهٔ جدید در آن درج می‌شود. اگر `index` مشخص نشود، از شاخص بعد از آخرین آیتم موجود در فهرست استفاده می‌شود (یعنی مقدار `cssStyleSheet.cssRules.length`).
 
-### Return value
+### مقدار بازگشتی
 
-Always returns -1.
+همیشه ۱- را برمی‌گرداند.
 
-Note that due to somewhat esoteric rules about where you can legally insert rules,
-it's possible that an exception may be thrown. See {{domxref("CSSStyleSheet.insertRule", "insertRule()")}} for more information.
+توجه داشته باشید که به دلیل قوانین نسبتاً پیچیده در مورد مکان‌های مجاز برای درج قاعده، ممکن است استثنا (exception) صادر شود. برای اطلاعات بیشتر به {{domxref("CSSStyleSheet.insertRule", "insertRule()")}} مراجعه کنید.
 
-## Usage notes
+## نکات استفاده
 
-This method is implemented by browsers by constructing a string using the template
-literal `` `${selector}{${styleBlock}}` ``, then passing it into the standard
-{{domxref("CSSStyleSheet.insertRule", "insertRule()")}} method.
+این متد توسط مرورگرها با ساختن یک رشته با استفاده از الگوی literal `` `${selector}{${styleBlock}}` `` و سپس ارسال آن به متد استاندارد {{domxref("CSSStyleSheet.insertRule", "insertRule()")}} پیاده‌سازی می‌شود.
 
-Therefore, given existing code such as the following:
+بنابراین، با توجه به کد موجود مانند زیر:
 
 ```js
 cssStyleSheet.addRule(selector, styles, 0);
 ```
 
-You can rewrite this to use the more standard `insertRule()` like this:
+می‌توانید این را برای استفاده از `insertRule()` استانداردتر به این صورت بازنویسی کنید:
 
 ```js
 cssStyleSheet.insertRule(`${selector} {${styles}}`, 0);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model)
-- [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
+- [مدل شیء CSS](/en-US/docs/Web/API/CSS_Object_Model)
+- [استفاده از اطلاعات استایل‌دهی پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
