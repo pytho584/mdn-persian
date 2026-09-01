@@ -1,10 +1,4 @@
 ---
-title: "FileSystemDirectoryHandle"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle"
-status: "needs-translation"
----
-
----
 title: FileSystemDirectoryHandle
 slug: Web/API/FileSystemDirectoryHandle
 page-type: web-api-interface
@@ -13,89 +7,89 @@ browser-compat: api.FileSystemDirectoryHandle
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`FileSystemDirectoryHandle`** interface of the {{domxref("File System API", "File System API", "", "nocode")}} provides a handle to a file system directory.
+رابط کاربری **`FileSystemDirectoryHandle`** از {{domxref("File System API", "File System API", "", "nocode")}} یک دسته (handle) به یک دایرکتوری در سیستم فایل فراهم می‌کند.
 
-The interface can be accessed via the {{domxref('window.showDirectoryPicker()')}}, {{domxref('StorageManager.getDirectory()')}}, {{domxref('DataTransferItem.getAsFileSystemHandle()')}}, and {{domxref('FileSystemDirectoryHandle.getDirectoryHandle()')}} methods.
+این رابط از طریق متدهای {{domxref('window.showDirectoryPicker()')}}، {{domxref('StorageManager.getDirectory()')}}، {{domxref('DataTransferItem.getAsFileSystemHandle()')}} و {{domxref('FileSystemDirectoryHandle.getDirectoryHandle()')}} قابل دسترسی است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("FileSystemHandle")}}._
+_ویژگی‌ها را از والد خود، {{DOMxRef("FileSystemHandle")}}، به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{DOMxRef("FileSystemHandle")}}._
+_روش‌ها را از والد خود، {{DOMxRef("FileSystemHandle")}}، به ارث می‌برد._
 
-Regular methods:
+روش‌های عادی:
 
 - {{domxref('FileSystemDirectoryHandle.getDirectoryHandle()')}}
-  - : Returns a {{jsxref('Promise')}} fulfilled with a `FileSystemDirectoryHandle` for a subdirectory with the specified name within the directory handle on which the method is called.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که با یک `FileSystemDirectoryHandle` برای زیرشاخه‌ای با نام مشخص‌شده در داخل دسته دایرکتوری که روش روی آن فراخوانی شده، تکمیل می‌شود.
 - {{domxref('FileSystemDirectoryHandle.getFileHandle()')}}
-  - : Returns a {{jsxref('Promise')}} fulfilled with a {{domxref('FileSystemFileHandle')}} for a file with the specified name, within the directory the method is called.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که با یک {{domxref('FileSystemFileHandle')}} برای فایلی با نام مشخص‌شده، در داخل دایرکتوری که روش روی آن فراخوانی شده، تکمیل می‌شود.
 - {{domxref('FileSystemDirectoryHandle.removeEntry()')}}
-  - : Attempts to asynchronously remove an entry if the directory handle contains a file or directory called the name specified.
+  - : به‌صورت ناهمگام تلاش می‌کند یک ورودی را حذف کند، اگر دسته دایرکتوری شامل فایل یا دایرکتوری با نام مشخص‌شده باشد.
 - {{domxref('FileSystemDirectoryHandle.resolve()')}}
-  - : Returns a {{jsxref('Promise')}} fulfilled with an {{jsxref('Array')}} of directory names from the parent handle to the specified child entry, with the name of the child entry as the last array item.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که با یک {{jsxref('Array')}} از نام دایرکتوری‌ها از دسته والد تا ورودی فرزند مشخص‌شده تکمیل می‌شود، به‌طوری‌که نام ورودی فرزند آخرین آیتم آرایه باشد.
 
-[Asynchronous iterator](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols) methods:
+روش‌های [تکرارگر ناهمگام](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols):
 
 - {{domxref('FileSystemDirectoryHandle.entries()')}}
-  - : Returns a new _async iterator_ of a given object's own enumerable property `[key, value]` pairs.
+  - : یک _تکرارگر ناهمگام_ جدید از جفت‌های `[key, value]` ویژگی‌های قابل شمارش خود شیء برمی‌گرداند.
 - {{domxref('FileSystemDirectoryHandle.keys()')}}
-  - : Returns a new _async iterator_ containing the keys for each item in `FileSystemDirectoryHandle`.
+  - : یک _تکرارگر ناهمگام_ جدید حاوی کلیدهای هر آیتم در `FileSystemDirectoryHandle` برمی‌گرداند.
 - {{domxref('FileSystemDirectoryHandle.values()')}}
-  - : Returns a new _async iterator_ containing the values for each index in the `FileSystemDirectoryHandle` object.
+  - : یک _تکرارگر ناهمگام_ جدید حاوی مقادیر هر ایندکس در شیء `FileSystemDirectoryHandle` برمی‌گرداند.
 - `FileSystemDirectoryHandle[Symbol.asyncIterator]()`
-  - : Returns a new _async iterator_ of a given object's own enumerable property `[key, value]` pairs.
+  - : یک _تکرارگر ناهمگام_ جدید از جفت‌های `[key, value]` ویژگی‌های قابل شمارش خود شیء برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Return directory handle
+### برگرداندن دسته دایرکتوری
 
-The following example returns a directory handle with the specified name; if the directory does not already exist it is created.
+مثال زیر یک دسته دایرکتوری را با نام مشخص‌شده برمی‌گرداند؛ اگر دایرکتوری از قبل وجود نداشته باشد، ایجاد می‌شود.
 
 ```js
 const dirName = "directoryToGetName";
 
-// assuming we have a directory handle: 'currentDirHandle'
+// فرض کنید یک دسته دایرکتوری داریم: 'currentDirHandle'
 const subDir = await currentDirHandle.getDirectoryHandle(dirName, {
   create: true,
 });
 ```
 
-### Return file path
+### برگرداندن مسیر فایل
 
-The following asynchronous function uses `resolve()` to find the path to a chosen file, relative to a specified directory handle.
+تابع ناهمگام زیر از `resolve()` برای یافتن مسیر یک فایل انتخابی، نسبی به یک دسته دایرکتوری مشخص، استفاده می‌کند.
 
 ```js
 async function returnPathDirectories(directoryHandle) {
-  // Get a file handle by showing a file picker:
+  // دریافت دسته فایل با نمایش انتخاب‌گر فایل:
   const handle = await self.showOpenFilePicker();
   if (!handle) {
-    // User cancelled, or otherwise failed to open a file.
+    // کاربر لغو کرد، یا به هر دلیل دیگری فایل باز نشد.
     return;
   }
 
-  // Check if handle exists inside our directory handle
+  // بررسی کنید که آیا دسته در داخل دسته دایرکتوری ما وجود دارد
   const relativePaths = await directoryHandle.resolve(handle);
 
   if (relativePaths === null) {
-    // Not inside directory handle
+    // داخل دسته دایرکتوری نیست
   } else {
-    // relativePath is an array of names, giving the relative path
+    // relativePath آرایه‌ای از نام‌ها است که مسیر نسبی را می‌دهد
 
     for (const name of relativePaths) {
-      // log each entry
+      // هر ورودی را ثبت کنید
       console.log(name);
     }
   }
 }
 ```
 
-### Return handles for all files in a directory
+### برگرداندن دسته‌ها برای همه فایل‌های یک دایرکتوری
 
-The following example scans recursively through a directory to return {{domxref('FileSystemFileHandle')}} objects for each file in that directory:
+مثال زیر به‌صورت بازگشتی یک دایرکتوری را اسکن می‌کند تا شیءهای {{domxref('FileSystemFileHandle')}} را برای هر فایل در آن دایرکتوری برگرداند:
 
 ```js
 async function* getFilesRecursively(entry) {
@@ -116,15 +110,15 @@ for await (const fileHandle of getFilesRecursively(directoryHandle)) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
