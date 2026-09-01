@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: max property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/max"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: max property"
 short-title: max
 slug: Web/API/HTMLInputElement/max
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLInputElement.max
 
 {{ApiRef("HTML DOM")}}
 
-The **`max`** property of the {{domxref("HTMLInputElement")}} interface reflects the {{HTMLElement("input")}} element's [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) attribute, which generally defines the maximum valid value for a numeric or date-time input. If the attribute is not explicitly set, the `max` property is an empty string.
+خاصیت **`max`** از رابط {{domxref("HTMLInputElement")}} منعکس‌کننده ویژگی [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) عنصر {{HTMLElement("input")}} است که به طور کلی حداکثر مقدار معتبر برای یک ورودی عددی یا تاریخ-زمان را تعریف می‌کند. اگر این ویژگی به صراحت تنظیم نشده باشد، خاصیت `max` یک رشته خالی است.
 
-## Value
+## مقدار
 
-A string representing the element's `max` value or an empty string if no `max` is explicitly set.
+یک رشته که مقدار `max` عنصر را نمایش می‌دهد، یا یک رشته خالی اگر `max` به صراحت تنظیم نشده باشد.
 
-## Example
+## مثال
 
 ```js
 const inputElement = document.querySelector("#time");
@@ -28,17 +22,17 @@ console.log(inputElement.max); // the current value of the max attribute
 inputElement.max = "18:00:00"; // sets the max value to 6pm
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{HTMLElement("input")}} of type {{HTMLElement("input/range", "range")}}, {{HTMLElement("input/number", "number")}}, {{HTMLElement("input/date", "date")}}, {{HTMLElement("input/month", "month")}}, {{HTMLElement("input/week", "week")}}, and {{HTMLElement("input/time", "time")}}
+- {{HTMLElement("input")}} از نوع {{HTMLElement("input/range", "range")}}, {{HTMLElement("input/number", "number")}}, {{HTMLElement("input/date", "date")}}, {{HTMLElement("input/month", "month")}}, {{HTMLElement("input/week", "week")}}, و {{HTMLElement("input/time", "time")}}
 - {{domxref("HTMLInputElement.min")}}
 - {{domxref("HTMLInputElement.value")}}
 - {{domxref("HTMLInputElement.type")}}
