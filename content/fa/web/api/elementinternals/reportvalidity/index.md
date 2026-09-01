@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: reportValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/reportValidity"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: reportValidity() method"
 short-title: reportValidity()
 slug: Web/API/ElementInternals/reportValidity
 page-type: web-api-instance-method
@@ -14,36 +8,36 @@ browser-compat: api.ElementInternals.reportValidity
 
 {{APIRef("Web Components")}}
 
-The **`reportValidity()`** method of the {{domxref("ElementInternals")}} interface checks if the element meets any [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) rules applied to it.
+متد **`reportValidity()`** از رابط {{domxref("ElementInternals")}} بررسی می‌کند که آیا عنصر با قوانین [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) اعمال‌شده بر آن مطابقت دارد یا خیر.
 
-If `reportValidity` returns `false` then a cancelable [invalid event](/en-US/docs/Web/API/HTMLInputElement/invalid_event) is fired on the element.
+اگر `reportValidity` مقدار `false` برگرداند، یک رویداد [invalid](/en-US/docs/Web/API/HTMLInputElement/invalid_event) قابل‌لغو روی عنصر فعال می‌شود.
 
-This method behaves in a similar way to {{domxref("ElementInternals.checkValidity()")}}, however it additionally sends the value of {{domxref("ElementInternals.validationMessage")}} to the user agent for display.
+این متد رفتاری مشابه {{domxref("ElementInternals.checkValidity()")}} دارد، اما علاوه بر آن مقدار {{domxref("ElementInternals.validationMessage")}} را برای نمایش به عامل کاربر ارسال می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 reportValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value, `true` if the element meets all validation constraints.
+یک مقدار بولی؛ اگر عنصر با تمام محدودیت‌های اعتبارسنجی مطابقت داشته باشد، `true` است.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the element does not have its `formAssociated` property set to `true`.
+  - : اگر ویژگی `formAssociated` عنصر روی `true` تنظیم نشده باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example {{domxref("ElementInternals.setValidity()")}} is used to indicate that the element does not meet validation rules. Calling `reportValidity()` returns `false`, and the value "my message" is sent to the user agent for display.
+در مثال زیر از {{domxref("ElementInternals.setValidity()")}} برای نشان دادن اینکه عنصر قوانین اعتبارسنجی را برآورده نمی‌کند استفاده شده است. فراخوانی `reportValidity()` مقدار `false` برمی‌گرداند و مقدار «my message» برای نمایش به عامل کاربر ارسال می‌شود.
 
-After calling `setValidity` again, this time indicating that all rules are marked false, `reportValidity()` returns `true`.
+پس از فراخوانی دوباره `setValidity`، این بار با نشان دادن اینکه همه قوانین برآورده شده‌اند، `reportValidity()` مقدار `true` برمی‌گرداند.
 
 ```js
 let element = document.getElementById("join-checkbox");
@@ -53,10 +47,10 @@ element.internals_.setValidity({});
 console.log(element.internals_.reportValidity()); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
