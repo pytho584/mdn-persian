@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement: rel property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/rel"
-status: "needs-translation"
----
-
----
-title: "HTMLFormElement: rel property"
 short-title: rel
 slug: Web/API/HTMLFormElement/rel
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLFormElement.rel
 
 {{APIRef("HTML DOM")}}
 
-The **`rel`** property of the {{domxref("HTMLFormElement")}} interface reflects the [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) attribute. It is a string containing what kinds of links the HTML {{HTMLElement("form")}} element creates, as a space-separated list of enumerated values.
+ویژگی **`rel`** در رابط {{domxref("HTMLFormElement")}} بازتابدهندهٔ ویژگی [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) است. این ویژگی یک رشته است که مشخص می‌کند عنصر HTML {{HTMLElement("form")}} چه نوع پیوندهایی ایجاد می‌کند، به‌صورت فهرستی از مقادیر شمارشی که با فاصله از هم جدا شده‌اند.
 
-To retrieve the value as an array of tokens, use {{domxref("HTMLFormElement.relList")}}.
+برای دریافت مقدار به‌صورت آرایه‌ای از نشانه‌ها (tokens)، از {{domxref("HTMLFormElement.relList")}} استفاده کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const form = document.querySelector("form");
@@ -31,15 +25,15 @@ console.log(form.rel);
 form.rel = "noopener noreferrer";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLFormElement.relList")}}
 - {{domxref("HTMLLinkElement.rel")}}
