@@ -1,10 +1,4 @@
 ---
-title: "GamepadButton"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton"
-status: "needs-translation"
----
-
----
 title: GamepadButton
 slug: Web/API/GamepadButton
 page-type: web-api-interface
@@ -13,22 +7,22 @@ browser-compat: api.GamepadButton
 
 {{APIRef("Gamepad API")}}
 
-The **`GamepadButton`** interface defines an individual button of a gamepad or other controller, allowing access to the current state of different types of buttons available on the control device.
+رابط **`GamepadButton`** یک دکمهٔ مجزای یک گیم‌پد یا کنترل‌کنندهٔ دیگر را تعریف می‌کند و امکان دسترسی به وضعیت فعلی انواع مختلف دکمه‌های موجود روی دستگاه کنترل را فراهم می‌آورد.
 
-A `GamepadButton` object is returned by querying any value of the array returned by the `buttons` property of the {{domxref("Gamepad")}} interface.
+یک شیء `GamepadButton` با پرس‌وجوی هر مقدار از آرایه‌ای که توسط ویژگی `buttons` رابط {{domxref("Gamepad")}} بازگردانده می‌شود، به دست می‌آید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GamepadButton.pressed")}} {{ReadOnlyInline}}
-  - : A boolean value indicating whether the button is currently pressed (`true`) or unpressed (`false`).
+  - : یک مقدار بولی که نشان می‌دهد دکمه در حال حاضر فشرده شده است (`true`) یا فشرده نشده است (`false`).
 - {{domxref("GamepadButton.touched")}} {{ReadOnlyInline}}
-  - : A boolean value indicating whether the button is currently touched (`true`) or not touched (`false`).
+  - : یک مقدار بولی که نشان می‌دهد دکمه در حال حاضر لمس شده است (`true`) یا لمس نشده است (`false`).
 - {{domxref("GamepadButton.value")}} {{ReadOnlyInline}}
-  - : A double value used to represent the current state of analog buttons, such as the triggers on many modern gamepads. The values are normalized to the range 0.0 —1.0, with 0.0 representing a button that is not pressed, and 1.0 representing a button that is fully pressed.
+  - : یک مقدار اعشاری که برای نمایش وضعیت فعلی دکمه‌های آنالوگ، مانند ماشه‌های بسیاری از گیم‌پدهای مدرن، استفاده می‌شود. مقادیر در بازهٔ ۰٫۰ تا ۱٫۰ نرمال‌سازی شده‌اند، که ۰٫۰ نشان‌دهندهٔ دکمه‌ای فشرده‌نشده و ۱٫۰ نشان‌دهندهٔ دکمه‌ای کاملاً فشرده‌شده است.
 
-## Example
+## مثال
 
-The button values in the following example are stored as an array of `GamepadButton` objects. This simple example checks to see if the {{domxref("GamepadButton.value")}} of a button is greater than `0`, or if the {{domxref("GamepadButton.pressed")}} property indicates the button has been pressed.
+مقادیر دکمه‌ها در مثال زیر به عنوان یک آرایه از اشیاء `GamepadButton` ذخیره شده‌اند. این مثال ساده بررسی می‌کند که آیا {{domxref("GamepadButton.value")}} یک دکمه بزرگ‌تر از `0` است یا اینکه ویژگی {{domxref("GamepadButton.pressed")}} نشان می‌دهد دکمه فشرده شده است.
 
 ```js
 function gameLoop() {
@@ -51,14 +45,14 @@ function gameLoop() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-[Using the Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
+[استفاده از رابط Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
