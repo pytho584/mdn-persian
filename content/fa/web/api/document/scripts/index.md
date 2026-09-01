@@ -1,11 +1,5 @@
 ---
 title: "Document: scripts property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/scripts"
-status: "needs-translation"
----
-
----
-title: "Document: scripts property"
 short-title: scripts
 slug: Web/API/Document/scripts
 page-type: web-api-instance-property
@@ -14,19 +8,15 @@ browser-compat: api.Document.scripts
 
 {{APIRef("DOM")}}
 
-The **`scripts`** property of the {{domxref("Document")}}
-interface returns a list of the {{HTMLElement("script")}}
-elements in the document. The returned object is an
-{{domxref("HTMLCollection")}}.
+خاصیت **`scripts`** از رابط {{domxref("Document")}} فهرستی از عناصر {{HTMLElement("script")}} در سند را برمی‌گرداند. شیء برگشتی یک {{domxref("HTMLCollection")}} است.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLCollection")}}. You can use this just like an array to get all the
-elements in the list.
+یک {{domxref("HTMLCollection")}}. می‌توانید از آن مانند یک آرایه برای دریافت تمام عناصر موجود در فهرست استفاده کنید.
 
-## Examples
+## مثال‌ها
 
-This example looks to see if the page has any {{HTMLElement("script")}} elements.
+این مثال بررسی می‌کند که آیا صفحه دارای هرگونه عنصر {{HTMLElement("script")}} است یا خیر.
 
 ```js
 let scripts = document.scripts;
@@ -36,10 +26,10 @@ if (scripts.length) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
