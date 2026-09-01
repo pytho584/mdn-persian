@@ -1,11 +1,5 @@
 ---
 title: "FileReaderSync: readAsText() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReaderSync/readAsText"
-status: "needs-translation"
----
-
----
-title: "FileReaderSync: readAsText() method"
 short-title: readAsText()
 slug: Web/API/FileReaderSync/readAsText
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.FileReaderSync.readAsText
 
 {{APIRef("File API")}} {{AvailableInWorkers("worker_except_service")}}
 
-The **`readAsText()`** method of the {{DOMxRef("FileReaderSync")}} interface allows to read {{DOMxRef("File")}} or {{DOMxRef("Blob")}} objects in a synchronous way into a string. This interface is [only available](/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers) in [workers](/en-US/docs/Web/API/Worker) as it enables synchronous I/O that could potentially block.
+متد **`readAsText()`** از رابط {{DOMxRef("FileReaderSync")}} امکان خواندن اشیاء {{DOMxRef("File")}} یا {{DOMxRef("Blob")}} را به صورت همزمان (synchronous) به یک رشته فراهم می‌کند. این رابط [فقط در workerها](/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers) در دسترس است زیرا I/O همزمان را فعال می‌کند که می‌تواند بالقوه مسدودکننده باشد.
 
 ## Syntax
 
@@ -23,42 +17,42 @@ readAsText(blob)
 readAsText(blob, encoding)
 ```
 
-### Parameters
+### پارامترها
 
 - `blob`
-  - : The {{DOMxRef("File")}} or {{DOMxRef("Blob")}} to read.
+  - : {{DOMxRef("File")}} یا {{DOMxRef("Blob")}} مورد نظر برای خواندن.
 - `encoding` {{optional_inline}}
-  - : The optional parameter specifies encoding to be used (e.g., `iso-8859-1` or `UTF-8`). If not present, the method will apply a detection algorithm for it.
+  - : پارامتر اختیاری که رمزگذاری مورد استفاده را مشخص می‌کند (مثلاً `iso-8859-1` یا `UTF-8`). اگر وجود نداشته باشد، متد یک الگوریتم تشخیص برای آن اعمال می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A string representing the input data.
+یک رشته (string) که داده‌های ورودی را نمایش می‌دهد.
 
-### Exceptions
+### استثناها (Exceptions)
 
-The following exceptions can be raised by this method:
+استثناهای زیر ممکن است توسط این متد ایجاد شوند:
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the resource represented by the DOM {{DOMxRef("File")}} or {{DOMxRef("Blob")}} cannot be found, e.g., because it has been erased.
+  - : اگر منبع نمایش‌داده‌شده توسط {{DOMxRef("File")}} یا {{DOMxRef("Blob")}} DOM یافت نشود، مثلاً به دلیل پاک شدن، پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if one of the following problematic situation is detected:
-    - the resource has been modified by a third party;
-    - too many read are performed simultaneously;
-    - the file pointed by the resource is unsafe for a use from the Web (like it is a system file).
+  - : اگر یکی از موقعیت‌های مشکل‌دار زیر تشخیص داده شود، پرتاب می‌شود:
+    - منبع توسط شخص ثالث تغییر کرده باشد.
+    - تعداد خواندن‌های همزمان بیش از حد باشد.
+    - فایل اشاره‌شده توسط منبع برای استفاده از وب ناامن باشد (مانند فایل سیستمی).
 - `NotReadableError` {{domxref("DOMException")}}
-  - : Thrown if the resource cannot be read due to a permission problem, like a concurrent lock.
+  - : اگر منبع به دلیل مشکل مجوز، مانند قفل همزمان، قابل خواندن نباشد، پرتاب می‌شود.
 - `EncodingError` {{domxref("DOMException")}}
-  - : Thrown if the resource is a data URL and exceed the limit length defined by each browser.
+  - : اگر منبع یک URL داده‌ای (data URL) باشد و از حد طول تعیین‌شده توسط هر مرورگر فراتر رود، پرتاب می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File API](/en-US/docs/Web/API/File_API)
 - {{DOMxRef("File")}}
