@@ -1,11 +1,5 @@
 ---
 title: "GamepadHapticActuator: effects property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator/effects"
-status: "needs-translation"
----
-
----
-title: "GamepadHapticActuator: effects property"
 short-title: effects
 slug: Web/API/GamepadHapticActuator/effects
 page-type: web-api-instance-property
@@ -16,21 +10,21 @@ browser-compat: api.GamepadHapticActuator.effects
 
 {{APIRef("Gamepad API")}}{{SeeCompatTable}}
 
-The **`effects`** read-only property of the {{domxref("GamepadHapticActuator")}} interface returns an array of enumerated values representing the different haptic effects that the actuator supports.
+ویژگی فقط‌خواندنی **`effects`** در رابط {{domxref("GamepadHapticActuator")}} آرایه‌ای از مقادیر شمارشی برمی‌گرداند که نشان‌دهندهٔ جلوه‌های لمسی مختلفی است که عملگر (actuator) از آن‌ها پشتیبانی می‌کند.
 
-## Value
+## مقدار
 
-An array representing the supported haptic effects. Possible included values are:
+آرایه‌ای که جلوه‌های لمسی پشتیبانی‌شده را نشان می‌دهد. مقادیر احتمالی شامل موارد زیر است:
 
 - `"dual-rumble"`
-  - : A positional rumbling effect created by dual vibration motors in each handle of a controller, which can be vibrated independently.
+  - : یک جلوهٔ لرزشی موقعیتی ایجادشده توسط دو موتور لرزشی در هر دستهٔ کنترلر که می‌توانند به‌طور مستقل به لرزش درآیند.
 - `"trigger-rumble"`
-  - : Localized rumbling effects on the surface of a controller's trigger buttons created by vibrational motors located in each button. These buttons most commonly take the form of spring-loaded triggers.
+  - : جلوه‌های لرزشی موضعی روی سطح دکمه‌های ماشهٔ کنترلر که توسط موتورهای لرزشی واقع در هر دکمه ایجاد می‌شوند. این دکمه‌ها معمولاً به شکل ماشه‌های فنری هستند.
 
 > [!NOTE]
-> If an effect is not listed that is known to be supported by the hardware, it may be that the browser does not support playing effects of that type.
+> اگر جلوه‌ای که مشخص است توسط سخت‌افزار پشتیبانی می‌شود در فهرست نباشد، احتمالاً مرورگر از پخش جلوه‌های آن نوع پشتیبانی نمی‌کند.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const gamepad = navigator.getGamepads()[0];
@@ -39,14 +33,14 @@ const gamepad = navigator.getGamepads()[0];
 console.log(gamepad.hapticActuators[0].effects[0]);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
