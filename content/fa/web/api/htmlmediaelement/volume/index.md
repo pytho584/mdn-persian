@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: volume property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/volume"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: volume property"
 short-title: volume
 slug: Web/API/HTMLMediaElement/volume
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.HTMLMediaElement.volume
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.volume`** property sets the volume at
-which the media will be played.
+ویژگی **`HTMLMediaElement.volume`** میزانی صدا را که رسانه با آن پخش می‌شود تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A number between 0 and 1, where 0 is effectively muted, and 1 is the loudest possible value.
+عددی بین ۰ و ۱ است؛ ۰ عملاً بی‌صدا و ۱ بلندترین مقدار ممکن است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const obj = document.createElement("audio");
@@ -29,15 +22,15 @@ console.log(obj.volume); // 1
 obj.volume = 0.75;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.volume` property
+- {{domxref("HTMLMediaElement")}}: رابطی که ویژگی `HTMLMediaElement.volume` را تعریف می‌کند
 - {{domxref("HTMLMediaElement.muted")}}
