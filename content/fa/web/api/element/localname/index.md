@@ -1,11 +1,5 @@
 ---
 title: "Element: localName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/localName"
-status: "needs-translation"
----
-
----
-title: "Element: localName property"
 short-title: localName
 slug: Web/API/Element/localName
 page-type: web-api-instance-property
@@ -14,17 +8,15 @@ browser-compat: api.Element.localName
 
 {{APIRef("DOM")}}
 
-The **`Element.localName`** read-only property returns the
-local part of the qualified name of an element.
+ویژگی فقط‌خواندنی **`Element.localName`** بخش محلی از نام واجد شرایط (qualified name) یک عنصر را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A string representing the local part of the element's qualified name.
+یک رشته (string) که بخش محلی نام واجد شرایط عنصر را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-(Must be served with XML content type, such as `text/xml` or
-`application/xhtml+xml`.)
+(باید با نوع محتوای XML ارائه شود، مانند `text/xml` یا `application/xhtml+xml`.)
 
 ```xml
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -52,13 +44,9 @@ namespaceURI = "${circle.namespaceURI}"`;
 </html>
 ```
 
-## Notes
+## یادداشت‌ها
 
-The local name of a node is that part of the node's qualified name that comes after the
-colon. Qualified names are typically used in XML as part of the namespace(s) of the
-particular XML documents. For example, in the qualified name
-`comm:partners`, `partners` is the local name and
-`comm` is the prefix:
+نام محلی یک گره، بخشی از نام واجد شرایط گره است که بعد از دونقطه می‌آید. نام‌های واجد شرایط معمولاً در XML به‌عنوان بخشی از فضای نام (namespace) اسناد XML خاص استفاده می‌شوند. برای مثال، در نام واجد شرایط `comm:partners`، نام محلی `partners` و پیشوند `comm` است:
 
 ```xml
 <comm:business id="soda_shop" type="brick_n_mortar" xmlns:comm="http://example.com/comm">
@@ -70,17 +58,17 @@ particular XML documents. For example, in the qualified name
 ```
 
 > [!NOTE]
-> While the property returns the case of the internal DOM storage, which is lower case, note that {{domxref("element.tagName","tagName")}} property returns upper case for HTML elements in HTML DOMs.
+> در حالی که این ویژگی نام را با همان حالت حروف ذخیره‌شده در DOM داخلی بازمی‌گرداند که کوچک است، توجه داشته باشید که ویژگی {{domxref("element.tagName","tagName")}} برای عناصر HTML در DOMهای HTML، نام را با حروف بزرگ بازمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.tagName")}}
 - {{domxref("Element.namespaceURI")}}
