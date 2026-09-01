@@ -1,11 +1,5 @@
 ---
 title: "GamepadHapticActuator: reset() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator/reset"
-status: "needs-translation"
----
-
----
-title: "GamepadHapticActuator: reset() method"
 short-title: reset()
 slug: Web/API/GamepadHapticActuator/reset
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.GamepadHapticActuator.reset
 
 {{APIRef("Gamepad API")}}
 
-The **`reset()`** method of the {{domxref("GamepadHapticActuator")}} interface stops the hardware from playing an active vibration effect.
+متد **`reset()`** از رابط {{domxref("GamepadHapticActuator")}}، سخت‌افزار را از ادامه‌ی پخش یک افکت لرزش فعال بازمی‌دارد.
 
 ## Syntax
 
@@ -24,16 +18,16 @@ reset()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-A promise that resolves with `"complete"` if the effect is successfully reset, or `"preempted"` if the effect was stopped or replaced by another effect.
+یک وعده (Promise) که در صورت موفقیت‌آمیز بودن بازنشانی افکت، با مقدار `"complete"` و در صورت توقف یا جایگزینی افکت توسط افکتی دیگر، با مقدار `"preempted"` حل می‌شود.
 
-The promise may reject with the following exception types:
+وعده ممکن است با انواع استثناهای زیر رد شود:
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Promise rejects with `InvalidStateError` if the current document is not active or hidden.
+  - : اگر سند جاری فعال یا پنهان نباشد، وعده با `InvalidStateError` رد می‌شود.
 
 ## Examples
 
