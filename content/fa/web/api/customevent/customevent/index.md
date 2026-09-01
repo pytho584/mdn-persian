@@ -1,11 +1,5 @@
 ---
 title: "CustomEvent: CustomEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent"
-status: "needs-translation"
----
-
----
-title: "CustomEvent: CustomEvent() constructor"
 short-title: CustomEvent()
 slug: Web/API/CustomEvent/CustomEvent
 page-type: web-api-constructor
@@ -14,33 +8,33 @@ browser-compat: api.CustomEvent.CustomEvent
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`CustomEvent()`** constructor creates a new {{domxref("CustomEvent")}} object.
+سازنده **`CustomEvent()`** یک شیء جدید از نوع {{domxref("CustomEvent")}} ایجاد می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new CustomEvent(type)
 new CustomEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string providing the name of the event. Event names are case-sensitive.
+  - : یک رشته (string) که نام رویداد را مشخص می‌کند. نام رویدادها به حروف بزرگ و کوچک حساس هستند (case-sensitive).
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند دارای ویژگی‌های زیر باشد:
     - `detail` {{optional_inline}}
-      - : An event-dependent value associated with the event. This value is then available to the handler using the {{domxref("CustomEvent.detail")}} property.
-        It defaults to `null`.
+      - : یک مقدار وابسته به رویداد که با رویداد مرتبط است. این مقدار سپس در دسترس handler (مدیریت‌کننده) از طریق ویژگی {{domxref("CustomEvent.detail")}} قرار می‌گیرد.
+        مقدار پیش‌فرض آن `null` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("CustomEvent")}} object.
+یک شیء جدید از نوع {{domxref("CustomEvent")}}.
 
-## Example
+## مثال
 
 ```js
-// create custom events
+// ایجاد رویدادهای سفارشی
 const catFound = new CustomEvent("animalfound", {
   detail: {
     name: "cat",
@@ -52,29 +46,29 @@ const dogFound = new CustomEvent("animalfound", {
   },
 });
 
-const element = document.createElement("div"); // create a <div> element
+const element = document.createElement("div"); // ایجاد یک عنصر <div>
 
-// add an appropriate event listener
+// افزودن یک شنونده رویداد مناسب
 element.addEventListener("animalfound", (e) => console.log(e.detail.name));
 
-// dispatch the events
+// ارسال رویدادها
 element.dispatchEvent(catFound);
 element.dispatchEvent(dogFound);
 
-// "cat" and "dog" logged in the console
+// "cat" و "dog" در کنسول ثبت می‌شوند
 ```
 
-Additional examples can be found at [Creating and dispatching events](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events).
+مثال‌های بیشتر را می‌توانید در [ایجاد و ارسال رویدادها](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) پیدا کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CustomEvent")}}
-- [Creating and dispatching events](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events)
+- [ایجاد و ارسال رویدادها](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events)
