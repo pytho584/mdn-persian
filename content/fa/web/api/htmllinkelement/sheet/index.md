@@ -1,11 +1,5 @@
 ---
 title: "HTMLLinkElement: sheet property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/sheet"
-status: "needs-translation"
----
-
----
-title: "HTMLLinkElement: sheet property"
 short-title: sheet
 slug: Web/API/HTMLLinkElement/sheet
 page-type: web-api-instance-property
@@ -14,27 +8,26 @@ browser-compat: api.HTMLLinkElement.sheet
 
 {{APIRef("HTML DOM")}}
 
-The **`sheet`** read-only property of the {{domxref("HTMLLinkElement")}} interface
-contains the stylesheet associated with that element.
+ویژگی فقط‌خواندنی **`sheet`** در رابط {{domxref("HTMLLinkElement")}} شامل شیء stylesheet مرتبط با آن عنصر است.
 
-A stylesheet is associated to an `HTMLLinkElement` if `rel="stylesheet"` is used with `<link>`.
+یک stylesheet با یک `HTMLLinkElement` مرتبط می‌شود اگر برای `<link>` از `rel="stylesheet"` استفاده شود.
 
-## Value
+## مقدار
 
-A {{DOMxRef("StyleSheet")}} object, or `null` if none is associated with the element.
+یک شیء {{DOMxRef("StyleSheet")}}، یا اگر هیچ شیوه‌نامه‌ای با عنصر مرتبط نباشد، مقدار `null` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```html
 <link rel="stylesheet" href="styles.css" />
 ```
 
-The `sheet` property of the `HTMLLinkElement` object will return the {{domxref("StyleSheet")}} object describing `styles.css`.
+ویژگی `sheet` در شیء `HTMLLinkElement`، شیء {{domxref("StyleSheet")}} مربوط به `styles.css` را برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
