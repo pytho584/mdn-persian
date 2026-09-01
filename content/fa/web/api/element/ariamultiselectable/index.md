@@ -1,7 +1,5 @@
 ---
 title: "Element: ariaMultiSelectable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaMultiSelectable"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,23 @@ browser-compat: api.Element.ariaMultiSelectable
 
 {{APIRef("DOM")}}
 
-The **`ariaMultiSelectable`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable) attribute, which indicates that the user may select more than one item from the current selectable descendants.
+خاصیت **`ariaMultiSelectable`** در رابط {{domxref("Element")}} مقدار ویژگی [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable) را منعکس می‌کند. این ویژگی نشان می‌دهد که کاربر می‌تواند بیش از یک مورد را از میان فرزندان قابل‌انتخاب فعلی انتخاب کند.
 
 > [!NOTE]
-> Where possible use an HTML {{htmlelement("select")}} element as this has built in semantics and does not require ARIA attributes.
+> در صورت امکان، از عنصر HTML {{htmlelement("select")}} استفاده کنید، زیرا این عنصر معنای توکار دارد و به ویژگی‌های ARIA نیازی ندارد.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+رشته‌ای با یکی از مقادیر زیر:
 
 - `"true"`
-  - : More than one item may be selected at a time.
+  - بیش از یک مورد می‌تواند همزمان انتخاب شود.
 - `"false"`
-  - : Only one item may be selected.
+  - فقط یک مورد می‌تواند انتخاب شود.
 
-## Examples
+## نمونه‌ها
 
-In this example the `aria-multiselectable` attribute on the element with an ID of `listbox1` is set to "true" indicating that this input accepts multiple selected items. Using `ariaMultiSelectable` we update the value to "false".
+در این مثال، ویژگی `aria-multiselectable` روی عنصری با شناسه `listbox1` به «true» تنظیم شده است که نشان می‌دهد این عنصر انتخاب‌شونده‌های چندتایی را می‌پذیرد. با استفاده از `ariaMultiSelectable` مقدار آن را به «false» تغییر می‌دهیم.
 
 ```html
 <div
@@ -55,14 +53,14 @@ el.ariaMultiSelectable = "false";
 console.log(el.ariaMultiSelectable); // "false"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: listbox role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role)
+- [نقش ARIA: listbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role)
