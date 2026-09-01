@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: blur() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/blur"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: blur() method"
 short-title: blur()
 slug: Web/API/HTMLElement/blur
 page-type: web-api-instance-method
@@ -14,31 +8,31 @@ browser-compat: api.HTMLElement.blur
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLElement.blur()`** method removes keyboard focus from the current element.
+متد **`HTMLElement.blur()`** فوکوس صفحه‌کلید را از عنصر جاری حذف می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 blur()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار برگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Remove focus from a text input
+### حذف فوکوس از یک ورودی متنی
 
 #### HTML
 
 ```html
 <input type="text" id="sampleText" value="Sample Text" /><br /><br />
-<button type="button">Click me to gain focus</button>
+<button type="button">برای دریافت فوکوس کلیک کنید</button>
 ```
 
 #### JavaScript
@@ -50,7 +44,7 @@ const button = document.querySelector("button");
 function focusInput() {
   textField.focus();
 
-  // The input will lose focus after 3 seconds
+  // ورودی پس از ۳ ثانیه فوکوس خود را از دست می‌دهد
   setTimeout(() => {
     textField.blur();
   }, 3000);
@@ -59,18 +53,18 @@ function focusInput() {
 button.addEventListener("click", focusInput);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Remove_focus_from_a_text_input') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLElement.focus")}}
