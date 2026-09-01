@@ -1,9 +1,6 @@
 ---
 title: "EncodedAudioChunk: duration property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedAudioChunk/duration"
-status: "needs-translation"
 ---
-
 ---
 title: "EncodedAudioChunk: duration property"
 short-title: duration
@@ -14,15 +11,15 @@ browser-compat: api.EncodedAudioChunk.duration
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`duration`** read-only property of the {{domxref("EncodedAudioChunk")}} interface returns an integer indicating the duration of the audio in microseconds.
+ویژگی فقط‌خواندنی **`duration`** در رابط {{domxref("EncodedAudioChunk")}} یک عدد صحیح برمی‌گرداند که مدت‌زمان صدا را به میکروثانیه نشان می‌دهد.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In the following example the `duration` is printed to the console.
+در مثال زیر، `duration` در کنسول چاپ می‌شود.
 
 ```js
 const init = {
@@ -36,10 +33,10 @@ const chunk = new EncodedAudioChunk(init);
 console.log(chunk.duration); // 2000000
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
