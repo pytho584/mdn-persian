@@ -1,11 +1,5 @@
 ---
 title: "HTMLSourceElement: media property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSourceElement/media"
-status: "needs-translation"
----
-
----
-title: "HTMLSourceElement: media property"
 short-title: media
 slug: Web/API/HTMLSourceElement/media
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLSourceElement.media
 
 {{APIRef("HTML DOM")}}
 
-The **`media`** property of the {{domxref("HTMLSourceElement")}} interface is a string representing the intended destination medium for the resource. The value is a [media query](/en-US/docs/Web/CSS/Guides/Media_queries/Using), which is a comma separated list of media-types, media-features, and logical operators.
+ویژگی **`media`** از رابط {{domxref("HTMLSourceElement")}} یک رشته است که رسانهٔ مقصدِ در نظر گرفته‌شده برای منبع را مشخص می‌کند. مقدار آن یک [media query](/en-US/docs/Web/CSS/Guides/Media_queries/Using) است؛ فهرستی از انواع رسانه، ویژگی‌های رسانه و عملگرهای منطقی که با کاما از هم جدا می‌شوند.
 
-It reflects the `media` attribute of the {{HTMLElement("source")}} element.
+این ویژگی منعکس‌کنندهٔ ویژگی `media` عنصر {{HTMLElement("source")}} است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```html
 <video>
@@ -40,15 +34,15 @@ console.log(el.media); // Output: "screen and (width >= 600px)"
 el.media = "(width >= 800px)"; // Updates the media value
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLSourceElement.type")}}
 - {{domxref("HTMLSourceElement.sizes")}}
