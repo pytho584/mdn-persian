@@ -1,11 +1,5 @@
 ---
 title: "Gamepad: hand property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/hand"
-status: "needs-translation"
----
-
----
-title: "Gamepad: hand property"
 short-title: hand
 slug: Web/API/Gamepad/hand
 page-type: web-api-instance-property
@@ -16,28 +10,28 @@ browser-compat: api.Gamepad.hand
 
 {{APIRef("Gamepad")}}{{SeeCompatTable}}
 
-The **`hand`** read-only property of the {{domxref("Gamepad")}} interface returns an enum defining what hand the controller is being held in, or is most likely to be held in.
+ویژگی فقط‌خواندنی **`hand`** در رابط {{domxref("Gamepad")}} یک enum برمی‌گرداند که مشخص می‌کند کنترلر در کدام دست نگه داشته شده است، یا به احتمال زیاد در کدام دست نگه داشته می‌شود.
 
-## Value
+## مقدار
 
-A [`GamepadHand`](https://w3c.github.io/gamepad/extensions.html#gamepadhand-enum) enum; possible values are:
+یک enum از نوع [`GamepadHand`](https://w3c.github.io/gamepad/extensions.html#gamepadhand-enum)؛ مقادیر ممکن عبارتند از:
 
-- `left` — the left hand.
-- `right` — the right hand.
-- `""` (Empty string) – if the other values are not applicable. E.g., the controller is held in both hands or would be fine in either.
+- `left` — دست چپ.
+- `right` — دست راست.
+- `""` (رشتهٔ خالی) — اگر سایر مقادیر قابل اعمال نباشند. مثلاً کنترلر با هر دو دست نگه داشته می‌شود یا در هر دو دست به یک اندازه راحت است.
 
-## Examples
+## مثال‌ها
 
-TBC
+به زودی
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
