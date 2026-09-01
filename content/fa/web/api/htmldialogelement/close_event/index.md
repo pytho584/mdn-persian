@@ -1,11 +1,5 @@
 ---
 title: "HTMLDialogElement: close event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/close_event"
-status: "needs-translation"
----
-
----
-title: "HTMLDialogElement: close event"
 short-title: close
 slug: Web/API/HTMLDialogElement/close_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLDialogElement.close_event
 
 {{APIRef("HTML DOM")}}
 
-The `close` event is fired on an `HTMLDialogElement` object when the {{htmlelement("dialog")}} it represents has been closed.
+رویداد `close` روی یک شیء `HTMLDialogElement` زمانی رخ می‌دهد که عنصر {{htmlelement("dialog")}} که آن را نشان می‌دهد بسته شده باشد.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و منتشر نمی‌شود (bubble نمی‌کند).
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("close", (event) => { })
@@ -28,20 +22,19 @@ addEventListener("close", (event) => { })
 onclose = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Handling `close` events
+### مدیریت رویدادهای `close`
 
-This example demonstrates how to listen for `close` events triggered by several different methods for closing a dialog:
+این مثال نشان می‌دهد که چگونه می‌توان به رویدادهای `close` که توسط روش‌های مختلف بستن یک دیالوگ ایجاد می‌شوند گوش داد:
 
-- Calling the {{domxref("HTMLDialogElement.close()", "close()")}} method
-- A form with `method="dialog"`. Submitting the form closes the `dialog` and causes a {{domxref("HTMLFormElement/submit_event", "submit")}} event to be fired, without submitting data or clearing the form
-- The <kbd>Esc</kbd> key.
-  See {{domxref("HTMLDialogElement/cancel_event", "cancel")}} event
+- فراخوانی روش {{domxref("HTMLDialogElement.close()", "close()")}}
+- یک فرم با `method="dialog"`. ارسال فرم، `dialog` را می‌بندد و باعث می‌شود یک رویداد {{domxref("HTMLFormElement/submit_event", "submit")}} رخ دهد، بدون اینکه داده‌ای ارسال شود یا فرم پاک شود.
+- کلید <kbd>Esc</kbd>. به رویداد {{domxref("HTMLDialogElement/cancel_event", "cancel")}} مراجعه کنید.
 
 #### HTML
 
@@ -105,18 +98,18 @@ dialog.addEventListener("close", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Handling `close` events', '100%', '250px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{htmlelement("dialog")}} element
+- عنصر HTML {{htmlelement("dialog")}}
