@@ -1,11 +1,5 @@
 ---
 title: "HTMLFieldSetElement: willValidate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFieldSetElement/willValidate"
-status: "needs-translation"
----
-
----
-title: "HTMLFieldSetElement: willValidate property"
 short-title: willValidate
 slug: Web/API/HTMLFieldSetElement/willValidate
 page-type: web-api-instance-property
@@ -14,24 +8,24 @@ browser-compat: api.HTMLFieldSetElement.willValidate
 
 {{APIRef("HTML DOM")}}
 
-The **`willValidate`** read-only property of the {{domxref("HTMLFieldSetElement")}} interface returns `false`, because {{HTMLElement("fieldset")}} elements are not candidates for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+ویژگی فقط‌خواندنی **`willValidate`** از رابط {{domxref("HTMLFieldSetElement")}} مقدار `false` را برمی‌گرداند، زیرا عناصر {{HTMLElement("fieldset")}} برای [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) کاندید محسوب نمی‌شوند.
 
-## Value
+## مقدار
 
-The boolean value `false`.
+مقدار بولی `false`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLFieldSetElement.checkValidity()")}}
 - {{HTMLElement("fieldset")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
