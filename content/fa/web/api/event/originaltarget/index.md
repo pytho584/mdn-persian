@@ -1,7 +1,6 @@
 ---
 title: "Event: originalTarget property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/originalTarget"
-status: "needs-translation"
 ---
 
 ---
@@ -16,12 +15,12 @@ browser-compat: api.Event.originalTarget
 
 {{APIRef("DOM")}}{{Non-standard_header}}{{AvailableInWorkers}}
 
-The read-only **`originalTarget`** property of the {{domxref("Event")}} interface returns the original target of the event before any retargetings. Unlike {{domxref("Event.explicitOriginalTarget")}} it can also be native anonymous content.
+خاصیتِ فقط‌خواندنی **`originalTarget`** در رابط {{domxref("Event")}}، هدفِ اصلی رویداد را قبل از هرگونه تغییر هدف (retargeting) برمی‌گرداند. برخلاف {{domxref("Event.explicitOriginalTarget")}}، این خاصیت می‌تواند محتوای ناشناس بومی (native anonymous content) را نیز شامل شود.
 
-## Specifications
+## مشخصات
 
-_This is a Mozilla-specific property and is not part of any current specification. It is not on track to become a standard._
+_این یک ویژگی مخصوصِ موزیلاست و بخشی از هیچ مشخصات فعلی نیست. همچنین در مسیر تبدیل شدن به استاندارد قرار ندارد._
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
