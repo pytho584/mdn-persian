@@ -1,11 +1,5 @@
 ---
 title: "CSSKeyframesRule: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/name"
-status: "needs-translation"
----
-
----
-title: "CSSKeyframesRule: name property"
 short-title: name
 slug: Web/API/CSSKeyframesRule/name
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.CSSKeyframesRule.name
 
 {{APIRef("CSSOM") }}
 
-The **`name`** property of the {{domxref("CSSKeyframeRule")}} interface gets and sets the name of the animation as used by the {{cssxref("animation-name")}} property.
+ویژگی **`name`** در رابط {{domxref("CSSKeyframeRule")}} نام انیمیشن را که توسط ویژگی {{cssxref("animation-name")}} استفاده میشود، دریافت و تعیین میکند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثالها
 
-The CSS includes a keyframes at-rule. This will be the first {{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`.
-`myRules[0]` returns a {{domxref("CSSKeyframesRule")}} object, with the `name` set to `"slide-in"`.
+CSS شامل یک at-rule کلیدفریم (keyframes) است. این at-rule اولین {{domxref("CSSRule")}} خواهد بود که توسط `document.styleSheets[0].cssRules` بازگردانده میشود.
+`myRules[0]` یک شیء {{domxref("CSSKeyframesRule")}} برمیگرداند که `name` آن برابر با `"slide-in"` است.
 
 ```css
 @keyframes slide-in {
@@ -43,10 +37,10 @@ let keyframes = myRules[0]; // a CSSKeyframesRule
 console.log(keyframes.name); // "slide-in"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
