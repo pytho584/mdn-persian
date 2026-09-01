@@ -1,10 +1,4 @@
 ---
-title: "CSSMathNegate"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathNegate"
-status: "needs-translation"
----
-
----
 title: CSSMathNegate
 slug: Web/API/CSSMathNegate
 page-type: web-api-interface
@@ -13,48 +7,45 @@ browser-compat: api.CSSMathNegate
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSMathNegate`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the negation of a {{domxref("CSSNumericValue")}}.
+**`CSSMathNegate`** یک رابط (interface) در [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) است که قرینه (نفی) یک {{domxref("CSSNumericValue")}} را نشان میدهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSMathNegate.CSSMathNegate", "CSSMathNegate()")}}
-  - : Creates a new `CSSMathNegate` object.
+  - : یک شیء `CSSMathNegate` جدید می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین ویژگی‌های رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
 - {{domxref("CSSMathNegate.value")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("CSSNumericValue")}} object.
+  - : یک شیء {{domxref("CSSNumericValue")}} برمی‌گرداند.
 
-## Static methods
+## متدهای استاتیک
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین متدهای رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
-## Instance methods
+## متدهای نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین متدهای رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
-## Description
+## توضیحات
 
-`CSSMathNegate` corresponds to applying unary minus to a numeric value (`x` becomes `-x`).
+`CSSMathNegate` معادل اعمال عملگر «منفی یکانی» (unary minus) روی یک مقدار عددی است (`x` به `-x` تبدیل می‌شود).
 
-Generally you won't construct a `CSSMathNegate` directly.
-It's produced by the internal negation step that {{domxref("CSSNumericValue.sub", "sub()")}} applies to its arguments before adding them: negating a {{domxref("CSSMathSum")}}, {{domxref("CSSMathProduct")}}, {{domxref("CSSMathMin")}}, {{domxref("CSSMathMax")}}, {{domxref("CSSMathClamp")}}, or {{domxref("CSSMathInvert")}} wraps it in a `CSSMathNegate`.
-Negating a plain {{domxref("CSSUnitValue")}} (a length, percentage, etc.) instead flips the sign of its `value` directly, so subtracting simple values doesn't normally produce a `CSSMathNegate`.
+به‌طور معمول مستقیماً یک `CSSMathNegate` نمی‌سازید. این شیء در مرحله قرینه‌سازی داخلی ایجاد می‌شود که {{domxref("CSSNumericValue.sub", "sub()")}} قبل از جمع کردن آرگومان‌ها روی آن‌ها اعمال می‌کند: قرینه کردن یک {{domxref("CSSMathSum")}}، {{domxref("CSSMathProduct")}}، {{domxref("CSSMathMin")}}، {{domxref("CSSMathMax")}}، {{domxref("CSSMathClamp")}} یا {{domxref("CSSMathInvert")}} آن را در یک `CSSMathNegate` می‌پیچد. اما قرینه کردن یک {{domxref("CSSUnitValue")}} ساده (یک طول، درصد و غیره) به‌جای آن، علامت `value` آن را مستقیماً برعکس می‌کند؛ بنابراین تفریق مقادیر ساده معمولاً یک `CSSMathNegate` تولید نمی‌کند.
 
-A `CSSMathNegate` can also appear when reading a computed value: for example, {{domxref("StylePropertyMapReadOnly.get", "get()")}} on a property set with a {{cssxref("calc", "calc()")}} expression that subtracts a value returns a {{domxref("CSSMathSum")}} whose operands may include a `CSSMathNegate`.
-You can identify it by checking the {{domxref("CSSMathValue.operator", "operator")}} property for the string `"negate"`.
+همچنین ممکن است هنگام خواندن یک مقدار محاسبه‌شده (computed value) با `CSSMathNegate` مواجه شوید: برای مثال، فراخوانی {{domxref("StylePropertyMapReadOnly.get", "get()")}} روی ویژگی‌ای که با یک عبارت {{cssxref("calc", "calc()")}} حاوی تفریق مقدار تنظیم شده باشد، یک {{domxref("CSSMathSum")}} برمی‌گرداند که عملوندهای آن ممکن است شامل یک `CSSMathNegate` باشند. این نوع شیء را می‌توانید با بررسی خاصیت {{domxref("CSSMathValue.operator", "operator")}} و مقایسه آن با رشته `"negate"` شناسایی کنید.
 
-`CSSMathNegate` serializes using CSS {{CSSXref("calc", "calc()")}} syntax, as `calc(-<value>)`.
+`CSSMathNegate` با استفاده از نحو CSS {{CSSXref("calc", "calc()")}} به صورت `calc(-<value>)` سریال‌سازی می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### کاربرد پایه
 
-The following code creates a `CSSMathNegate` object from a length, then logs the constructor name, `value`, and the object's serialization (from {{domxref("CSSStyleValue/toString","toString()")}}).
+کد زیر یک شیء `CSSMathNegate` از یک طول می‌سازد و سپس نام سازنده، `value` و سریال‌سازی شیء (از طریق {{domxref("CSSStyleValue/toString","toString()")}}) را در کنسول ثبت می‌کند.
 
 ```js
 const negated = new CSSMathNegate(CSS.px(10));
@@ -64,7 +55,7 @@ console.log(negated.value); // CSSUnitValue {value: 10, unit: "px"}
 console.log(negated.toString()); // "calc(-10px)"
 ```
 
-Note that if a plain number is passed to `arg`, the `value` is rectified to a {{domxref("CSSUnitValue")}} with unit `"number"`:
+توجه داشته باشید که اگر یک عدد ساده به `arg` داده شود، `value` به یک {{domxref("CSSUnitValue")}} با واحد `"number"` تبدیل می‌شود:
 
 ```js
 const negatedNumber = new CSSMathNegate(4);
@@ -73,13 +64,11 @@ console.log(negatedNumber.value); // CSSUnitValue {value: 4, unit: "number"}
 console.log(negatedNumber.toString()); // "calc(-4)"
 ```
 
-### Subtracting a composite value
+### تفریق یک مقدار ترکیبی
 
-{{domxref("CSSNumericValue.sub", "sub()")}} produces a `CSSMathNegate` when the value being subtracted is itself a composite value, such as a `CSSMathSum` (rather than a plain {{domxref("CSSUnitValue")}}).
+{{domxref("CSSNumericValue.sub", "sub()")}} زمانی `CSSMathNegate` تولید می‌کند که مقدار مورد تفریق، خود یک مقدار ترکیبی (composite value) باشد، مانند `CSSMathSum` (و نه یک {{domxref("CSSUnitValue")}} ساده).
 
-This is demonstrated by the following code.
-The `px` and `percent` can't be combined into a single value without knowing the containing block size, so the value of `composite` is represented as a `CSSMathSum`.
-When this value is subtracted, the value of `composite` is wrapped in a `CSSMathNegate`.
+این موضوع در کد زیر نشان داده شده است. `px` و `percent` بدون دانستن اندازه بلوک شامل (containing block) نمی‌توانند در یک مقدار واحد ترکیب شوند، بنابراین مقدار `composite` به صورت یک `CSSMathSum` نمایش داده می‌شود. وقتی این مقدار تفریق شود، مقدار `composite` در یک `CSSMathNegate` قرار می‌گیرد.
 
 ```js
 const composite = CSS.px(10).add(CSS.percent(5)); // CSSMathSum: calc(10px + 5%)
@@ -91,12 +80,11 @@ console.log(result.values[1].value); // CSSMathSum {values: CSSNumericArray, ope
 console.log(result.toString()); // "calc(100px - (10px + 5%))"
 ```
 
-### Parsing `calc()`
+### تجزیه‌ی `calc()`
 
-A `CSSMathNegate` can also be created when using {{domxref("CSSStyleValue/parse_static", "CSSStyleValue.parse()")}} to parse a {{cssxref("calc", "calc()")}} expression that can't be resolved to a single value.
+یک `CSSMathNegate` همچنین می‌تواند هنگام استفاده از {{domxref("CSSStyleValue/parse_static", "CSSStyleValue.parse()")}} برای تجزیه یک عبارت {{cssxref("calc", "calc()")}} که نمی‌توان به یک مقدار واحد تقلیل داد، ایجاد شود.
 
-For example, in the following code {{domxref("CSSStyleValue/parse_static", "CSSStyleValue.parse()")}} parses a value for the `width` property that subtracts a length from a percentage (which can't be combined until layout).
-The result is a {{domxref("CSSMathSum")}} where the first value in the array is a `CSSUnitValue`, and the second value is a `CSSMathNegate` object representing negation of the second operand passed to the `calc()` function.
+برای مثال، در کد زیر {{domxref("CSSStyleValue/parse_static", "CSSStyleValue.parse()")}} مقدار ویژگی `width` را تجزیه می‌کند که یک طول را از یک درصد کم می‌کند (این دو تا زمان layout نمی‌توانند ترکیب شوند). نتیجه یک {{domxref("CSSMathSum")}} است که اولین مقدار در آرایه یک `CSSUnitValue` و دومین مقدار یک شیء `CSSMathNegate` است که قرینه عملوند دوم ارسال‌شده به تابع `calc()` را نمایش می‌دهد.
 
 ```js
 const width = CSSStyleValue.parse("width", "calc(50% - 10px)");
@@ -109,15 +97,15 @@ console.log(width.values[1].value); // CSSUnitValue {value: 10, unit: "px"}
 console.log(width.toString()); // "calc(50% - 10px)"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSNumericValue.sub", "sub()")}}
 - {{domxref("CSSStyleValue/parse_static", "CSSStyleValue.parse()")}}
