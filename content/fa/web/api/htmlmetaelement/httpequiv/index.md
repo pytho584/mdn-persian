@@ -1,11 +1,5 @@
 ---
 title: "HTMLMetaElement: httpEquiv property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMetaElement/httpEquiv"
-status: "needs-translation"
----
-
----
-title: "HTMLMetaElement: httpEquiv property"
 short-title: httpEquiv
 slug: Web/API/HTMLMetaElement/httpEquiv
 page-type: web-api-instance-property
@@ -14,22 +8,20 @@ browser-compat: api.HTMLMetaElement.httpEquiv
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMetaElement.httpEquiv`** property gets or sets the pragma directive or an HTTP response header name for the {{domxref("HTMLMetaElement.content")}} attribute.
-For more details on the possible values, see the [http-equiv](/en-US/docs/Web/HTML/Reference/Elements/meta/http-equiv) attribute.
+خاصیت **`HTMLMetaElement.httpEquiv`** مقدار دستور pragma یا نام هدر پاسخ HTTP را برای ویژگی {{domxref("HTMLMetaElement.content")}} دریافت یا تنظیم می‌کند. برای اطلاعات بیشتر در مورد مقادیر ممکن، به ویژگی [http-equiv](/en-US/docs/Web/HTML/Reference/Elements/meta/http-equiv) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-### Reading the `http-equiv` value of a meta element
+### خواندن مقدار `http-equiv` یک عنصر meta
 
-The following example queries a `<meta>` element with an `http-equiv` attribute.
-The `http-equiv` attribute is logged to the console showing a `refresh` [pragma directive](/en-US/docs/Web/HTML/Reference/Elements/meta/http-equiv) that instructs the browser to refresh the page after a number of seconds defined by the `content` attribute:
+مثال زیر یک عنصر `<meta>` با ویژگی `http-equiv` را جستجو می‌کند. مقدار `http-equiv` در کنسول ثبت می‌شود که یک [دستور pragma](/en-US/docs/Web/HTML/Reference/Elements/meta/http-equiv) از نوع `refresh` را نشان می‌دهد که به مرورگر دستور می‌دهد پس از تعداد ثانیه‌های مشخص‌شده در ویژگی `content` صفحه را تازه‌سازی کند:
 
 ```js
-// given <meta http-equiv="refresh" content="10" />
+// با فرض <meta http-equiv="refresh" content="10" />
 const meta = document.querySelector("meta[http-equiv]");
 console.log(meta.httpEquiv);
 // refresh
@@ -37,14 +29,14 @@ console.log(meta.content);
 // 10
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{HTMLElement("meta")}}
