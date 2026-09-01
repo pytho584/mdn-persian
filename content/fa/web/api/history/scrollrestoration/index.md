@@ -1,11 +1,5 @@
 ---
 title: "History: scrollRestoration property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/History/scrollRestoration"
-status: "needs-translation"
----
-
----
-title: "History: scrollRestoration property"
 short-title: scrollRestoration
 slug: Web/API/History/scrollRestoration
 page-type: web-api-instance-property
@@ -14,23 +8,20 @@ browser-compat: api.History.scrollRestoration
 
 {{APIRef("History API")}}
 
-The **`scrollRestoration`** property of the {{DOMxRef("History")}}
-interface allows web applications to explicitly set default scroll restoration behavior
-on history navigation.
+ویژگی **`scrollRestoration`** در رابط {{DOMxRef("History")}} به برنامه‌های وب اجازه می‌دهد تا رفتار پیش‌فرض بازگردانیِ موقعیت اسکرول را هنگام ناوبری در تاریخچه، به‌صورت صریح تنظیم کنند.
 
-## Value
+## مقدار
 
-One of the following:
+یکی از مقادیر زیر:
 
 - `auto`
-  - : The location on the page to which the user has scrolled will be restored.
+  - : موقعیتی از صفحه که کاربر به آن اسکرول کرده بود، بازگردانی می‌شود.
 - `manual`
-  - : The location on the page is not restored. The user will have to scroll to the
-    location manually.
+  - : موقعیت صفحه بازگردانی نمی‌شود و کاربر باید به‌صورت دستی به آن موقعیت اسکرول کند.
 
-## Examples
+## مثال‌ها
 
-### Query the current scroll restoration behavior
+### دریافت رفتار فعلی بازگردانی اسکرول
 
 ```js
 const scrollRestoration = history.scrollRestoration;
@@ -41,16 +32,16 @@ if (scrollRestoration === "manual") {
 }
 ```
 
-### Prevent automatic page location restoration
+### جلوگیری از بازگردانی خودکار موقعیت صفحه
 
 ```js
 history.scrollRestoration = "manual";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
