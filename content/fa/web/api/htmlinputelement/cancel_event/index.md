@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: cancel event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/cancel_event"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: cancel event"
 short-title: cancel
 slug: Web/API/HTMLInputElement/cancel_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLInputElement.cancel_event
 
 {{APIRef("HTML DOM")}}
 
-The **`cancel`** event fires on an {{HTMLElement("input")}} element when the user cancels the file picker dialog via the <kbd>Esc</kbd> key or the cancel button and when the user re-selects the same files that were previously selected of `type="file"`.
+رویداد **`cancel`** روی یک عنصر {{HTMLElement("input")}} زمانی رخ می‌دهد که کاربر گفتگوی انتخاب فایل را از طریق کلید <kbd>Esc</kbd> یا دکمهٔ «انصراف» (cancel) ببندد، و همچنین وقتی کاربر همان فایل‌هایی را که قبلاً برای `type="file"` انتخاب شده بود دوباره انتخاب کند.
 
-This event is not cancelable but can bubble.
+این رویداد قابل لغو (cancelable) نیست، اما می‌تواند حباب (bubble) شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی کنترل‌کنندهٔ رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("cancel", (event) => { })
@@ -28,18 +22,18 @@ addEventListener("cancel", (event) => { })
 oncancel = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Canceling an input element
+### لغو کردن یک عنصر ورودی
 
 #### HTML
 
 ```html
-<label for="file">Select a file. Or don't.</label>
+<label for="file">یک فایل انتخاب کنید. یا نکنید.</label>
 <input type="file" id="file" name="file" />
 
 <div id="result"></div>
@@ -59,30 +53,30 @@ const elem = document.getElementById("file");
 const result = document.getElementById("result");
 
 elem.addEventListener("cancel", () => {
-  result.textContent = "Canceled.";
+  result.textContent = "لغو شد.";
 });
 
 elem.addEventListener("change", () => {
   if (elem.files.length === 1) {
-    result.textContent = "File Selected.";
+    result.textContent = "فایل انتخاب شد.";
   }
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Canceling an input element', '100%', '100px') }}
 
-Open the file selector, then close the selection dialog with the escape key or the cancel button. Both of these will cause the cancel event to be fired. Also, try selecting a local file on your machine; then reopen the file selection window and reselect the same file. This too causes the cancel event to be fired.
+انتخابگر فایل را باز کنید، سپس گفتگوی انتخاب را با کلید Escape یا دکمهٔ «انصراف» ببندید. هر دوی این کارها باعث می‌شوند رویداد `cancel` رخ دهد. همچنین، سعی کنید یک فایل محلی از دستگاه خود انتخاب کنید؛ سپس دوباره پنجرهٔ انتخاب فایل را باز کنید و همان فایل را دوباره انتخاب کنید. این نیز باعث رخ دادن رویداد `cancel` می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement("input")}} element
+- عنصر HTML {{HTMLElement("input")}}
