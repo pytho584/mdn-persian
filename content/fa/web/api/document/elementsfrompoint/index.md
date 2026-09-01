@@ -1,11 +1,5 @@
 ---
 title: "Document: elementsFromPoint() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/elementsFromPoint"
-status: "needs-translation"
----
-
----
-title: "Document: elementsFromPoint() method"
 short-title: elementsFromPoint()
 slug: Web/API/Document/elementsFromPoint
 page-type: web-api-instance-method
@@ -14,12 +8,9 @@ browser-compat: api.Document.elementsFromPoint
 
 {{APIRef("DOM")}}
 
-The **`elementsFromPoint()`** method
-of the {{domxref("Document")}} interface returns an array of all elements
-at the specified coordinates (relative to the viewport).
-The elements are ordered from the topmost to the bottommost box of the viewport.
+متد **`elementsFromPoint()`** از رابط {{domxref("Document")}} آرایه‌ای از همهٔ عناصر موجود در مختصات مشخص‌شده (نسبت به viewport) را بازمی‌گرداند. عناصر به ترتیب از بالاترین جعبه تا پایین‌ترین جعبهٔ viewport مرتب می‌شوند.
 
-It operates in a similar way to the {{domxref("Document.elementFromPoint", "elementFromPoint()")}} method.
+این متد رفتاری مشابه با متد {{domxref("Document.elementFromPoint", "elementFromPoint()")}} دارد.
 
 ## Syntax
 
@@ -30,13 +21,13 @@ elementsFromPoint(x, y)
 ### Parameters
 
 - `x`
-  - : The horizontal coordinate of a point.
+  - : مختصات افقی یک نقطه.
 - `y`
-  - : The vertical coordinate of a point.
+  - : مختصات عمودی یک نقطه.
 
 ### Return value
 
-An array of {{domxref('Element')}} objects, ordered from the topmost to the bottommost box of the viewport.
+یک آرایه از اشیاء {{domxref('Element')}}، مرتب‌شده از بالاترین تا پایین‌ترین جعبهٔ viewport.
 
 ## Examples
 
