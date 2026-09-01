@@ -1,7 +1,5 @@
 ---
 title: "ElementInternals: ariaColIndex property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaColIndex"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,18 @@ browser-compat: api.ElementInternals.ariaColIndex
 
 {{APIRef("Web Components")}}
 
-The **`ariaColIndex`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) attribute, which defines an element's column index or position with respect to the total number of columns within a table, grid, or treegrid.
+**`ariaColIndex`** ویژگیای از رابط {{domxref("ElementInternals")}} است که مقدار ویژگی [`aria-colindex`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-colindex) را منعکس میکند. این ویژگی، ایندکس یا موقعیت ستون یک عنصر را نسبت به تعداد کل ستونها در یک جدول، grid یا treegrid تعریف میکند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگیهای aria روی `ElementInternals` امکان تعریف معناشناسی پیشفرض را روی یک عنصر سفارشی (custom element) فراهم میکند. این ویژگیها ممکن است توسط ویژگیهای تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آن‌ها را اضافه نکند، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string which contains an integer.
+یک رشته (string) که شامل یک عدد صحیح است.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaColIndex` is set to "2".
+در این مثال، مقدار `ariaColIndex` روی «"2"» تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -38,14 +36,14 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
