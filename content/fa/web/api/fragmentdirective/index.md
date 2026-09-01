@@ -1,7 +1,5 @@
 ---
 title: "FragmentDirective"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FragmentDirective"
-status: "needs-translation"
 ---
 
 ---
@@ -13,25 +11,25 @@ browser-compat: api.FragmentDirective
 
 {{APIRef("URL Fragment Text Directives")}}
 
-The **`FragmentDirective`** interface is an object exposed to allow code to check whether or not a browser supports [text fragments](/en-US/docs/Web/URI/Reference/Fragment/Text_fragments).
+رابط **`FragmentDirective`** یک شیء در معرض است که به کد اجازه می‌دهد بررسی کند که آیا مرورگر از [تکه‌های متنی](/en-US/docs/Web/URI/Reference/Fragment/Text_fragments) پشتیبانی می‌کند یا خیر.
 
-It is accessed via the {{domxref("Document.fragmentDirective")}} property.
+از طریق ویژگی {{domxref("Document.fragmentDirective")}} قابل دسترسی است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-None.
+هیچ.
 
-## Instance methods
+## روش‌های نمونه
 
-None.
+هیچ.
 
-## Examples
+## مثال‌ها
 
-### Checking if text fragments are supported
+### بررسی پشتیبانی از تکه‌های متنی
 
-The code below logs whether or not text fragments are supported in your browser by checking that {{domxref("Document.fragmentDirective")}} is defined.
-Note that the object is empty, and at present is mainly intended for feature detection.
-In the future, it might include other information.
+کد زیر با بررسی تعریف‌شدن {{domxref("Document.fragmentDirective")}} مشخص می‌کند که آیا مرورگر شما از تکه‌های متنی پشتیبانی می‌کند یا خیر و آن را در خروجی ثبت می‌کند.
+توجه داشته باشید که این شیء خالی است و در حال حاضر عمدتاً برای تشخیص ویژگی در نظر گرفته شده است.
+در آینده، ممکن است اطلاعات دیگری را شامل شود.
 
 ```html hidden
 <pre id="log"></pre>
@@ -60,14 +58,14 @@ if (document.fragmentDirective) {
 
 {{EmbedLiveSample("Checking if text fragments are supported","100%","30px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("::target-text")}}
