@@ -1,11 +1,5 @@
 ---
 title: "CSSPositionValue: x property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionValue/x"
-status: "needs-translation"
----
-
----
-title: "CSSPositionValue: x property"
 short-title: x
 slug: Web/API/CSSPositionValue/x
 page-type: web-api-instance-property
@@ -17,17 +11,17 @@ browser-compat: api.CSSPositionValue.x
 
 {{deprecated_header}}{{APIRef("CSS Typed Object Model API")}}{{Non-standard_header}}
 
-The **`x`** property of the {{domxref("CSSPositionValue")}} interface returns the item's position along the web page's horizontal axis.
+ویژگی **`x`** در رابط {{domxref("CSSPositionValue")}} موقعیت آیتم را در محور افقی صفحه وب برمیگرداند.
 
-## Value
+## مقدار
 
-A {{domxref('CSSNumericValue')}}.
+یک {{domxref('CSSNumericValue')}}.
 
-## Examples
+## مثالها
 
-### Basic usage
+### استفاده پایه
 
-The following example positions a container `<div>` 5 pixels from the top and 10 pixels from the left of the page.
+مثال زیر یک `<div>` ظرف را ۵ پیکسل از بالا و ۱۰ پیکسل از چپ صفحه قرار میدهد.
 
 ```js
 let someDiv = document.getElementById("container");
@@ -37,13 +31,13 @@ someDiv.attributeStyleMap.set("object-position", position);
 console.log(position.x.value, position.y.value);
 ```
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSPositionValue.CSSPositionValue", "CSSPositionValue()")}}
 - {{domxref("CSSPositionValue.y")}}
-- [Using the CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
+- [استفاده از CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
 - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
