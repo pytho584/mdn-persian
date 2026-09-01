@@ -1,11 +1,5 @@
 ---
 title: "FileReader: abort event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReader/abort_event"
-status: "needs-translation"
----
-
----
-title: "FileReader: abort event"
 short-title: abort
 slug: Web/API/FileReader/abort_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.FileReader.abort_event
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`abort`** event of the {{domxref("FileReader")}} interface is fired when a read has been aborted: for instance because the program called {{domxref("FileReader.abort()")}}.
+رویداد **`abort`** از رابط {{domxref("FileReader")}} زمانی رخ می‌دهد که یک خوانش لغو شده باشد؛ به عنوان مثال به این دلیل که برنامه متد {{domxref("FileReader.abort()")}} را فراخوانی کرده است.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو (cancelable) نیست و حباب‌زنی (bubble) نمی‌کند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی رویدادگردان (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("abort", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("abort", (event) => { })
 onabort = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("ProgressEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("ProgressEvent")}} که از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("ProgressEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -98,7 +92,7 @@ img.preview {
 }
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 const fileInput = document.querySelector('input[type="file"]');
@@ -136,18 +130,18 @@ function handleSelected(e) {
 fileInput.addEventListener("change", handleSelected);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '300px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: {{domxref("FileReader.loadstart_event", "loadstart")}}, {{domxref("FileReader.loadend_event", "loadend")}}, {{domxref("FileReader.progress_event", "progress")}}, {{domxref("FileReader.error_event", "error")}}, {{domxref("FileReader.load_event", "load")}}.
+- رویدادهای مرتبط: {{domxref("FileReader.loadstart_event", "loadstart")}}، {{domxref("FileReader.loadend_event", "loadend")}}، {{domxref("FileReader.progress_event", "progress")}}، {{domxref("FileReader.error_event", "error")}}، {{domxref("FileReader.load_event", "load")}}.
