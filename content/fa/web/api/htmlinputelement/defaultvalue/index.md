@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: defaultValue property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/defaultValue"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: defaultValue property"
 short-title: defaultValue
 slug: Web/API/HTMLInputElement/defaultValue
 page-type: web-api-instance-property
@@ -14,37 +8,37 @@ browser-compat: api.HTMLInputElement.defaultValue
 
 {{ApiRef("HTML DOM")}}
 
-The **`defaultValue`** property of the {{domxref("HTMLInputElement")}} interface indicates the original (or default) value of the {{HTMLElement("input")}} element. It reflects the element's [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) attribute.
+ویژگی **`defaultValue`** در رابط {{domxref("HTMLInputElement")}} مقدار اصلی (یا پیش‌فرض) عنصر {{HTMLElement("input")}} را نشان می‌دهد. این ویژگی منعکس‌کنندهٔ صفت [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) عنصر است.
 
-## Value
+## مقدار
 
-A string representing the default, or original, value of the `<input>` element.
+یک رشته (string) که مقدار پیش‌فرض یا اصلی عنصر `<input>` را نشان می‌دهد.
 
-## Example
+## مثال
 
-Given the following HTML:
+با توجه به HTML زیر:
 
 ```html
 <label for="planet">Which planet were you born on?</label>
 <input id="planet" type="text" value="Azarath" />
 ```
 
-The following will provide the same results, no matter what the user enters into the text input.
+کد زیر صرف‌نظر از اینکه کاربر چه متنی در ورودی متن وارد کند، نتیجهٔ یکسانی را ارائه می‌دهد:
 
 ```js
 const inputElement = document.querySelector("#planet");
 console.log(`Original value: ${inputElement.defaultValue}`); // "Original value: Azarath"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLInputElement.value")}}
 - {{domxref("HTMLInputElement.type")}}
