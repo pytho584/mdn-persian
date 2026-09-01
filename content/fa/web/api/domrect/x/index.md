@@ -1,7 +1,5 @@
 ---
 title: "DOMRect: x property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/x"
-status: "needs-translation"
 ---
 
 ---
@@ -14,22 +12,22 @@ browser-compat: api.DOMRect.x
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`x`** property of the {{domxref("DOMRect")}} interface represents the x-coordinate of the rectangle, which is the horizontal distance between the viewport's left edge and the rectangle's origin.
+ویژگی **`x`** در رابط {{domxref("DOMRect")}} نشان‌دهندهٔ مختصات xِ مستطیل است؛ یعنی فاصلهٔ افقی بین لبهٔ چپ نمایشگر (viewport) و مبدأ مستطیل.
 
-When the rectangle's width is non-negative, the rectangle's horizontal origin is the viewport's left edge. If the width is negative, the rectangle's horizontal origin is the viewport's right edge.
+هنگامی که عرض مستطیل نامنفی باشد، مبدأ افقی مستطیل لبهٔ چپ نمایشگر است. اگر عرض منفی باشد، مبدأ افقی مستطیل لبهٔ راست نمایشگر است.
 
-## Value
+## مقدار
 
-A double.
+یک عدد از نوع double.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMRectReadOnly")}}
