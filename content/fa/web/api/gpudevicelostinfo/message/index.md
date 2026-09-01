@@ -1,11 +1,5 @@
 ---
 title: "GPUDeviceLostInfo: message property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDeviceLostInfo/message"
-status: "needs-translation"
----
-
----
-title: "GPUDeviceLostInfo: message property"
 short-title: message
 slug: Web/API/GPUDeviceLostInfo/message
 page-type: web-api-instance-property
@@ -14,25 +8,24 @@ browser-compat: api.GPUDeviceLostInfo.message
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`message`** read-only property of the
-{{domxref("GPUDeviceLostInfo")}} interface provides a human-readable message that explains why the device was lost.
+ویژگی فقط‌خواندنی **`message`** از رابط {{domxref("GPUDeviceLostInfo")}} یک پیام قابل‌خواندن برای انسان ارائه می‌دهد که دلیل از دست رفتن دستگاه را توضیح می‌دهد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-See the main [`GPUDevice.lost` page](/en-US/docs/Web/API/GPUDevice/lost#examples) for an example.
+برای مشاهده یک مثال، به صفحه اصلی [`GPUDevice.lost` صفحه](/en-US/docs/Web/API/GPUDevice/lost#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
