@@ -1,10 +1,4 @@
 ---
-title: "CSSMathMin"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathMin"
-status: "needs-translation"
----
-
----
 title: CSSMathMin
 slug: Web/API/CSSMathMin
 page-type: web-api-interface
@@ -13,45 +7,45 @@ browser-compat: api.CSSMathMin
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSMathMin`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the CSS {{CSSXref('min','min()')}} function.
+**`CSSMathMin`** رابط [API مدل شیء تایپ‌شده CSS](/en-US/docs/Web/API/CSS_Object_Model) تابع CSS {{CSSXref('min','min()')}} را نشان می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSMathMin.CSSMathMin", "CSSMathMin()")}} {{Experimental_Inline}}
-  - : Creates a new `CSSMathMin` object.
+  - : یک شیء جدید `CSSMathMin` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین ویژگی‌های رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
 - {{domxref('CSSMathMin.values')}} {{ReadOnlyInline}}
-  - : Returns a {{domxref('CSSNumericArray')}} object which contains one or more {{domxref('CSSNumericValue')}} objects.
+  - : یک شیء {{domxref('CSSNumericArray')}} برمی‌گرداند که شامل یک یا چند شیء {{domxref('CSSNumericValue')}} است.
 
-## Static methods
+## روش‌های ایستا
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین روش‌های رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین روش‌های رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
-## Description
+## توضیحات
 
-The CSS {{cssxref("min", "min()")}} function takes one or more comma-separated values as arguments and returns the smallest of them.
+تابع CSS {{cssxref("min", "min()")}} یک یا چند مقدار جدا شده با کاما را به عنوان آرگومان می‌گیرد و کوچک‌ترین آن‌ها را برمی‌گرداند.
 
-If all arguments are absolute values, such as pixel lengths, `min()` is resolved to a single value at parse time, represented by the CSS Typed Object Model as a {{domxref("CSSUnitValue")}}.
-If the `min()` expression can't be resolved to a single value at parse time (say, because one of its arguments uses a relative unit like `vw` or `%`), the function is represented as a `CSSMathMin` object, and the arguments passed to `min()` (or to the `CSSMathMin()` constructor) are exposed as the `values` property.
+اگر همه آرگومان‌ها مقادیر مطلق باشند، مانند طول‌های پیکسلی، `min()` در زمان تجزیه به یک مقدار واحد تبدیل می‌شود که توسط مدل شیء تایپ‌شده CSS به صورت یک {{domxref("CSSUnitValue")}} نمایش داده می‌شود.
+اگر عبارت `min()` را نتوان در زمان تجزیه به یک مقدار واحد تبدیل کرد (مثلاً چون یکی از آرگومان‌های آن از یک واحد نسبی مانند `vw` یا `%` استفاده می‌کند)، آن تابع به صورت یک شیء `CSSMathMin` نمایش داده می‌شود و آرگومان‌های ارسال‌شده به `min()` (یا به سازنده `CSSMathMin()`) به عنوان ویژگی `values` در دسترس هستند.
 
-Note that `CSSMathMin` represents the `min()` function, not its resolved value.
-In order to determine the value of a property using `min()`, you need to read its computed style (for example with {{domxref("Window.getComputedStyle", "getComputedStyle()")}}).
+توجه داشته باشید که `CSSMathMin` تابع `min()` را نشان می‌دهد، نه مقدار نهایی آن را.
+برای تعیین مقدار یک ویژگی با استفاده از `min()`، باید سبک محاسبه‌شده آن را بخوانید (مثلاً با {{domxref("Window.getComputedStyle", "getComputedStyle()")}}).
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده اساسی
 
-The following code creates a `CSSMathMin` instance from three values, then reads back its `operator` and `values` properties.
+کد زیر یک نمونه `CSSMathMin` از سه مقدار ایجاد می‌کند و سپس ویژگی‌های `operator` و `values` آن را بازخوانی می‌کند.
 
 ```js
 const min = new CSSMathMin(CSS.px(10), CSS.em(5), CSS.percent(50));
@@ -63,9 +57,9 @@ console.log(min.values);
 console.log(min.values[0]); // CSSUnitValue {value: 10, unit: "px"}
 ```
 
-### `min()` representations
+### نمایش‌های تابع `min()`
 
-This example shows how {{cssxref("min", "min()")}} is represented by a {{domxref("CSSUnitValue")}} or a `CSSMathMin`, depending on whether all of its arguments are absolute values.
+این مثال نشان می‌دهد که چگونه {{cssxref("min", "min()")}} بسته به اینکه همه آرگومان‌های آن مقادیر مطلق باشند یا نه، توسط یک {{domxref("CSSUnitValue")}} یا یک `CSSMathMin` نمایش داده می‌شود.
 
 #### HTML
 
@@ -79,8 +73,8 @@ This example shows how {{cssxref("min", "min()")}} is represented by a {{domxref
 
 #### CSS
 
-`width` is set using a `min()` whose arguments are all absolute lengths, so the browser can resolve it to a single fixed value immediately.
-`font-size` is set using a `min()` where one argument uses the relative unit `vw`, so the browser can't resolve it until layout (this will be represented by a `CSSMathMin`).
+`width` با استفاده از `min()` تنظیم شده است که همه آرگومان‌های آن طول‌های مطلق هستند، بنابراین مرورگر می‌تواند بلافاصله آن را به یک مقدار ثابت واحد تبدیل کند.
+`font-size` با استفاده از `min()` تنظیم شده است که یک آرگومان آن از واحد نسبی `vw` استفاده می‌کند، بنابراین مرورگر تا زمان چیدمان نمی‌تواند آن را حل کند (این مورد با یک `CSSMathMin` نمایش داده می‌شود).
 
 ```css
 #demoBox {
@@ -107,7 +101,7 @@ function log(text) {
 }
 ```
 
-First we find the demo box's style rule and read its `width` and `font-size` values using {{domxref("CSSStyleRule.styleMap", "styleMap")}}.
+ابتدا شیوه‌نامه عنصر جعبه نمایشی را پیدا می‌کنیم و مقادیر `width` و `font-size` آن را با {{domxref("CSSStyleRule.styleMap", "styleMap")}} می‌خوانیم.
 
 ```js
 const demoBox = document.querySelector("#demoBox");
@@ -119,7 +113,7 @@ const width = styleMap.get("width");
 const fontSize = styleMap.get("font-size");
 ```
 
-We then log the type and value of the CSS Typed OM representations, followed by the computed (resolved) values.
+سپس نوع و مقدار نمایش‌های CSS OM تایپ‌شده را همراه با مقادیر محاسبه‌شده (نهایی) ثبت می‌کنیم.
 
 ```js
 log("width");
@@ -133,17 +127,17 @@ log(` values: [${[...fontSize.values].join(", ")}]`);
 log(` resolved: ${getComputedStyle(demoBox).fontSize}`);
 ```
 
-#### Result
+#### نتیجه
 
-`width` is represented by a `CSSUnitValue` object, which has a value that matches the resolved width.
-`font-size` is represented by a `CSSMathMin` object that exposes the `min()` function's original operands.
+`width` توسط یک شیء `CSSUnitValue` نمایش داده می‌شود که مقدار آن با عرض نهایی مطابقت دارد.
+`font-size` توسط یک شیء `CSSMathMin` نمایش داده می‌شود که عملوندهای اصلی تابع `min()` را در معرض دید قرار می‌دهد.
 
 {{EmbedLiveSample("`min()` representations", 300, 300)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
