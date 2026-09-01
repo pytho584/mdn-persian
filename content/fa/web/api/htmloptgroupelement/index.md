@@ -1,9 +1,4 @@
----
-title: "HTMLOptGroupElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptGroupElement"
-status: "needs-translation"
----
-
+```
 ---
 title: HTMLOptGroupElement
 slug: Web/API/HTMLOptGroupElement
@@ -13,31 +8,32 @@ browser-compat: api.HTMLOptGroupElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLOptGroupElement`** interface provides special properties and methods (beyond the regular {{domxref("HTMLElement")}} object interface they also have available to them by inheritance) for manipulating the layout and presentation of {{HTMLElement("optgroup")}} elements.
+رابط **`HTMLOptGroupElement`** ویژگی‌ها و متدهای خاصی را برای دستکاری چیدمان و نمایش عناصر {{HTMLElement("optgroup")}} فراهم می‌کند (علاوه بر ویژگی‌ها و متدهایی که به صورت ارث‌بری از رابط شیء {{domxref("HTMLElement")}} در دسترس دارند).
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های زیر را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref("HTMLOptGroupElement.disabled")}}
-  - : A boolean value representing whether or not the whole list of children {{HTMLElement("option")}} is disabled (true) or not (false).
+  - : یک مقدار بولی که نشان می‌دهد آیا کل فهرست گزینه‌های فرزند ({{HTMLElement("option")}}) غیرفعال است (`true`) یا نه (`false`).
 - {{domxref("HTMLOptGroupElement.label")}}
-  - : A string representing the label for the group.
+  - : یک رشته که برچسب گروه را نشان می‌دهد.
 
-## Instance methods
+## متدهای نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_متد خاصی ندارد؛ متدهای خود را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{ HTMLElement("optgroup") }}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{ HTMLElement("optgroup") }}.
+```
