@@ -1,11 +1,5 @@
 ---
 title: "FetchEvent: resultingClientId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/resultingClientId"
-status: "needs-translation"
----
-
----
-title: "FetchEvent: resultingClientId property"
 short-title: resultingClientId
 slug: Web/API/FetchEvent/resultingClientId
 page-type: web-api-instance-property
@@ -14,21 +8,15 @@ browser-compat: api.FetchEvent.resultingClientId
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`resultingClientId`** read-only property of the
-{{domxref("FetchEvent")}} interface is the {{domxref("Client.id", "id")}} of the
-{{domxref("Client", "client")}} that replaces the previous client during a page
-navigation.
+ویژگی فقطخواندنی **`resultingClientId`** در رابط {{domxref("FetchEvent")}}، مقدار {{domxref("Client.id", "id")}} از {{domxref("Client", "client")}} است که در حین پیمایش صفحه، جایگزین کلاینت قبلی می‌شود.
 
-For example, when navigating from page A to page B `resultingClientId` is
-the ID of the client associated with page B.
+برای مثال، هنگام پیمایش از صفحه A به صفحه B، `resultingClientId` شناسه کلاینتی است که با صفحه B مرتبط است.
 
-If the fetch request is a subresource request or the request's
-[`destination`](/en-US/docs/Web/API/Request/destination) is
-`report`, `resultingClientId` will be an empty string.
+اگر درخواست fetch یک درخواست زیرمنبع باشد یا [`destination`](/en-US/docs/Web/API/Request/destination) درخواست `report` باشد، `resultingClientId` یک رشته خالی خواهد بود.
 
 ## Value
 
-A string.
+یک رشته.
 
 ## Examples
 
